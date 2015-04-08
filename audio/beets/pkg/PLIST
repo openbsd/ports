@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/01/09 17:15:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/04/08 10:55:31 sthen Exp $
 bin/beet
 lib/python${MODPY_VERSION}/site-packages/beets/
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -10,6 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/beets/__init__.py
 lib/python${MODPY_VERSION}/site-packages/beets/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/beets/art.py
+lib/python${MODPY_VERSION}/site-packages/beets/art.pyc
 lib/python${MODPY_VERSION}/site-packages/beets/autotag/
 lib/python${MODPY_VERSION}/site-packages/beets/autotag/__init__.py
 lib/python${MODPY_VERSION}/site-packages/beets/autotag/__init__.pyc
@@ -35,6 +37,8 @@ lib/python${MODPY_VERSION}/site-packages/beets/importer.py
 lib/python${MODPY_VERSION}/site-packages/beets/importer.pyc
 lib/python${MODPY_VERSION}/site-packages/beets/library.py
 lib/python${MODPY_VERSION}/site-packages/beets/library.pyc
+lib/python${MODPY_VERSION}/site-packages/beets/logging.py
+lib/python${MODPY_VERSION}/site-packages/beets/logging.pyc
 lib/python${MODPY_VERSION}/site-packages/beets/mediafile.py
 lib/python${MODPY_VERSION}/site-packages/beets/mediafile.pyc
 lib/python${MODPY_VERSION}/site-packages/beets/plugins.py
@@ -65,8 +69,6 @@ lib/python${MODPY_VERSION}/site-packages/beets/vfs.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/
 lib/python${MODPY_VERSION}/site-packages/beetsplug/__init__.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/beetsplug/beatport.py
-lib/python${MODPY_VERSION}/site-packages/beetsplug/beatport.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/bench.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/bench.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/bpd/
@@ -82,6 +84,8 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/chroma.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/chroma.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/convert.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/convert.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/cue.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/cue.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/discogs.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/discogs.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/duplicates.py
@@ -92,6 +96,8 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/embedart.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/embedart.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fetchart.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fetchart.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/filefilter.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/filefilter.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/freedesktop.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/freedesktop.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fromfilename.py
@@ -151,6 +157,8 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/spotify.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/spotify.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/the.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/the.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/thumbnails.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/thumbnails.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/types.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/types.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/web/

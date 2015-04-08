@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/02 14:21:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/04/08 10:55:31 sthen Exp $
 
 COMMENT =	CLI tools to manage music collections
 
-MODPY_EGG_VERSION = 1.3.10
+MODPY_EGG_VERSION = 1.3.11
 DISTNAME =	beets-${MODPY_EGG_VERSION}
 CATEGORIES =	audio
 
@@ -25,7 +25,7 @@ RUN_DEPENDS =	audio/py-discogs-client>=2.0.2 \
 		audio/py-last \
 		audio/py-mutagen \
 		devel/py-algorithm-munkres \
-		devel/py-enum34 \
+		devel/py-enum34>=1.0.4 \
 		textproc/py-unidecode \
 		textproc/py-yaml \
 		www/py-requests
