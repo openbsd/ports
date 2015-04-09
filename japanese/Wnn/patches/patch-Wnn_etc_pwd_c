@@ -1,0 +1,12 @@
+$OpenBSD: patch-Wnn_etc_pwd_c,v 1.1 2015/04/09 13:51:38 espie Exp $
+--- Wnn/etc/pwd.c.orig	Thu Apr  9 15:46:37 2015
++++ Wnn/etc/pwd.c	Thu Apr  9 15:47:00 2015
+@@ -84,7 +84,7 @@ char *src, *encd;
+ 	    c += 6;
+ 	xx[i] = c;
+     }
+-    cr = crypt(src, xx);
++    cr = crypt(src, "$2");
+     bzero(encd, WNN_PASSWD_LEN);
+     strncpy(encd, cr, WNN_PASSWD_LEN);
+ }
