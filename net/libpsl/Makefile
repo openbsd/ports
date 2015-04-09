@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/09 11:28:24 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/09 20:04:23 jca Exp $
 
 COMMENT =		public suffix list library
 
 V =			0.7.1
+REVISION =		0
 DISTNAME =		libpsl-$V
 
 SHARED_LIBS +=		psl	0.0	# 2.4
@@ -24,6 +25,8 @@ MODULES =		devel/gettext
 LIB_DEPENDS =		converters/libunistring \
 			devel/libidn
 
+BUILD_DEPENDS =		devel/libtool \
+			sysutils/coreutils
 CONFIGURE_STYLE =	autoconf automake
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-builtin=libidn \
