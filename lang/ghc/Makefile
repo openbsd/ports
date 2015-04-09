@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2015/04/08 21:05:22 kili Exp $
+# $OpenBSD: Makefile,v 1.114 2015/04/09 21:19:50 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -11,12 +11,13 @@ COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
+REVISION-main =		0
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
 CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		7.8.3.20141229
+BIN_VER =		7.8.3.20150409
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
@@ -160,6 +161,7 @@ do-test:
 # It doesn't matter wether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
+# That one is bogus, don't use (7.8.4. needs 7.8.3 to bootstrap):
 BOOTSTRAP_DATE =	20150408
 
 # Create a bootstrapper. This compiles a stripped-down version of
