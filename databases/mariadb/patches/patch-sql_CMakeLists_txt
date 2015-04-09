@@ -1,7 +1,7 @@
-$OpenBSD: patch-sql_CMakeLists_txt,v 1.9 2014/10/03 08:32:53 brad Exp $
---- sql/CMakeLists.txt.orig	Wed Sep 24 18:29:47 2014
-+++ sql/CMakeLists.txt	Fri Sep 26 15:58:22 2014
-@@ -285,7 +285,7 @@ ADD_CUSTOM_TARGET(distclean
+$OpenBSD: patch-sql_CMakeLists_txt,v 1.10 2015/04/09 06:58:12 giovanni Exp $
+--- sql/CMakeLists.txt.orig	Wed Feb 25 10:40:55 2015
++++ sql/CMakeLists.txt	Mon Mar  2 23:11:35 2015
+@@ -286,7 +286,7 @@ ADD_CUSTOM_TARGET(distclean
    VERBATIM
    )
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-sql_CMakeLists_txt,v 1.9 2014/10/03 08:32:53 brad Exp $
  
  # Copy db.opt into data/test/
  SET(DBOPT_FILE ${CMAKE_SOURCE_DIR}/support-files/db.opt ) 
-@@ -327,7 +327,7 @@ ELSE()
+@@ -328,7 +328,7 @@ ELSE()
    # Not windows or cross compiling, just install an empty directory
    INSTALL(FILES ${DUMMY_FILE} DESTINATION data/mysql COMPONENT DataFiles)
  ENDIF(WIN32 AND MYSQLD_EXECUTABLE)

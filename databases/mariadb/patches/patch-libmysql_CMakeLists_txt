@@ -1,7 +1,7 @@
-$OpenBSD: patch-libmysql_CMakeLists_txt,v 1.9 2015/01/30 18:43:12 brad Exp $
---- libmysql/CMakeLists.txt.orig	Sun Jan 25 10:21:37 2015
-+++ libmysql/CMakeLists.txt	Tue Jan 27 17:42:13 2015
-@@ -263,6 +263,8 @@ mariadb_deinitialize_ssl
+$OpenBSD: patch-libmysql_CMakeLists_txt,v 1.10 2015/04/09 06:58:12 giovanni Exp $
+--- libmysql/CMakeLists.txt.orig	Wed Feb 25 10:40:54 2015
++++ libmysql/CMakeLists.txt	Mon Mar  2 23:11:35 2015
+@@ -266,6 +266,8 @@ mysql_net_field_length
  mysql_options4
  )
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-libmysql_CMakeLists_txt,v 1.9 2015/01/30 18:43:12 brad Exp $
  SET(CLIENT_API_FUNCTIONS
    ${CLIENT_API_FUNCTIONS_5_1}
    ${CLIENT_API_FUNCTIONS_5_5}
-@@ -438,8 +440,12 @@ IF(NOT DISABLE_SHARED)
+@@ -441,8 +443,12 @@ IF(NOT DISABLE_SHARED)
      # libtool compatability
      IF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR APPLE)
        SET(OS_SHARED_LIB_VERSION "${SHARED_LIB_MAJOR_VERSION}")
@@ -25,7 +25,7 @@ $OpenBSD: patch-libmysql_CMakeLists_txt,v 1.9 2015/01/30 18:43:12 brad Exp $
      ELSE()
        SET(OS_SHARED_LIB_VERSION "${SHARED_LIB_MAJOR_VERSION}.0.0")
      ENDIF()
-@@ -447,7 +453,7 @@ IF(NOT DISABLE_SHARED)
+@@ -450,7 +456,7 @@ IF(NOT DISABLE_SHARED)
      SET_TARGET_PROPERTIES(libmysql PROPERTIES 
        OUTPUT_NAME mysqlclient 
        VERSION "${OS_SHARED_LIB_VERSION}" 
@@ -34,7 +34,7 @@ $OpenBSD: patch-libmysql_CMakeLists_txt,v 1.9 2015/01/30 18:43:12 brad Exp $
      IF(LINK_FLAG_NO_UNDEFINED OR VERSION_SCRIPT_LINK_FLAGS)
        GET_TARGET_PROPERTY(libmysql_link_flags libmysql LINK_FLAGS)
        IF(NOT libmysql_link_flags)
-@@ -466,18 +472,8 @@ IF(NOT DISABLE_SHARED)
+@@ -469,18 +475,8 @@ IF(NOT DISABLE_SHARED)
      GET_VERSIONED_LIBNAME(
        "${CMAKE_SHARED_LIBRARY_PREFIX}mysqlclient_r"
        "${CMAKE_SHARED_LIBRARY_SUFFIX}"

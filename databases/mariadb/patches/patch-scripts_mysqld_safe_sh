@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.6 2015/01/30 18:43:12 brad Exp $
---- scripts/mysqld_safe.sh.orig	Sun Jan 25 10:21:38 2015
-+++ scripts/mysqld_safe.sh	Tue Jan 27 17:42:13 2015
+$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.7 2015/04/09 06:58:12 giovanni Exp $
+--- scripts/mysqld_safe.sh.orig	Wed Feb 25 10:40:55 2015
++++ scripts/mysqld_safe.sh	Mon Mar  2 23:11:35 2015
 @@ -25,7 +25,8 @@ numa_interleave=0
  logging=init
  want_syslog=0
@@ -10,8 +10,8 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.6 2015/01/30 18:43:12 brad Exp $
 +group='_mysql'
  pid_file=
  err_log=
- 
-@@ -636,8 +637,8 @@ then
+ err_log_base=
+@@ -646,8 +647,8 @@ then
      echo "Fatal error Can't create database directory '$mysql_unix_port'"
      exit 1
    fi
