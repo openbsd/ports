@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_reference_conf,v 1.4 2014/11/06 00:45:31 brad Exp $
---- doc/reference.conf.orig	Sun Aug 24 07:30:49 2014
-+++ doc/reference.conf	Fri Aug 29 20:18:53 2014
-@@ -108,7 +108,7 @@ serverinfo {
+$OpenBSD: patch-doc_reference_conf,v 1.5 2015/04/09 20:01:36 sthen Exp $
+--- doc/reference.conf.orig	Sun Mar 29 12:35:53 2015
++++ doc/reference.conf	Sun Mar 29 15:21:13 2015
+@@ -111,7 +111,7 @@ serverinfo {
  	 *	chown <ircd-user>.<ircd.group> rsa.key
  	 *	chmod 0600 rsa.key
  	 */
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.4 2014/11/06 00:45:31 brad Exp $
  
  	/*
  	 * ssl_certificate_file: the path to the file containing our
-@@ -130,7 +130,7 @@ serverinfo {
+@@ -133,7 +133,7 @@ serverinfo {
  	 *	Common Name: irc.someirc.net
  	 *	E-mail: you@domain.com
  	 */
@@ -19,7 +19,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.4 2014/11/06 00:45:31 brad Exp $
  
  	/*
  	 * ssl_dh_param_file: path to the PEM encoded Diffie-Hellman
-@@ -145,7 +145,7 @@ serverinfo {
+@@ -148,7 +148,7 @@ serverinfo {
  	 * regarding specific OpenSSL dhparam command-line options
  	 * can be found in the OpenSSL manual.
  	 */
@@ -28,7 +28,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.4 2014/11/06 00:45:31 brad Exp $
  
  	/*
  	 * ssl_dh_elliptic_curve: defines the curve to use for the
-@@ -464,7 +464,7 @@ operator {
+@@ -474,7 +474,7 @@ operator {
  	 * A password should not be defined when this is used; see
  	 * doc/challenge.txt for more information.
  	 */
@@ -37,13 +37,15 @@ $OpenBSD: patch-doc_reference_conf,v 1.4 2014/11/06 00:45:31 brad Exp $
  
  	/*
  	 * ssl_certificate_fingerprint: enhances security by additionally checking
-@@ -1335,8 +1335,8 @@ modules {
+@@ -1341,9 +1341,9 @@ modules {
  	 * path: other paths to search for modules specified below
  	 * and in "/module load".
  	 */
 -	path = "lib/ircd-hybrid/modules";
+-#	path = "lib/ircd-hybrid/modules/extra";
 -	path = "lib/ircd-hybrid/modules/autoload";
 +	path = "${TRUEPREFIX}/lib/ircd-hybrid/modules";
++#	path = "${TRUEPREFIX}/lib/ircd-hybrid/modules/extra";
 +	path = "${TRUEPREFIX}/lib/ircd-hybrid/modules/autoload";
  
  	/* module: the name of a module to load on startup/rehash. */

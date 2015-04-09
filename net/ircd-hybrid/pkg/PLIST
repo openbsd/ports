@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/11/06 00:45:31 brad Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/04/09 20:01:36 sthen Exp $
 @conflict bnc-*
 @conflict ircd-ratbox-*
 @newgroup _ircd-hybrid:616
@@ -101,6 +101,8 @@ lib/ircd-hybrid/modules/autoload/m_svsnick.la
 lib/ircd-hybrid/modules/autoload/m_svsnick.so
 lib/ircd-hybrid/modules/autoload/m_svspart.la
 lib/ircd-hybrid/modules/autoload/m_svspart.so
+lib/ircd-hybrid/modules/autoload/m_svstag.la
+lib/ircd-hybrid/modules/autoload/m_svstag.so
 lib/ircd-hybrid/modules/autoload/m_tburst.la
 lib/ircd-hybrid/modules/autoload/m_tburst.so
 lib/ircd-hybrid/modules/autoload/m_time.la
@@ -137,6 +139,9 @@ lib/ircd-hybrid/modules/autoload/m_whowas.la
 lib/ircd-hybrid/modules/autoload/m_whowas.so
 lib/ircd-hybrid/modules/autoload/m_xline.la
 lib/ircd-hybrid/modules/autoload/m_xline.so
+lib/ircd-hybrid/modules/extra/
+lib/ircd-hybrid/modules/extra/m_opme.la
+lib/ircd-hybrid/modules/extra/m_opme.so
 lib/ircd-hybrid/modules/m_bmask.la
 lib/ircd-hybrid/modules/m_bmask.so
 lib/ircd-hybrid/modules/m_die.la
