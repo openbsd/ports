@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/04/23 19:35:26 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/04/09 20:47:15 sthen Exp $
 @bin bin/orc-bugreport
 @bin bin/orcc
 include/orc-0.4/
@@ -46,7 +46,6 @@ lib/liborc-0.4.la
 lib/liborc-test-0.4.a
 lib/liborc-test-0.4.la
 @lib lib/liborc-test-0.4.so.${LIBorc-test-0.4_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/orc-0.4.pc
 share/aclocal/
 share/aclocal/orc.m4
