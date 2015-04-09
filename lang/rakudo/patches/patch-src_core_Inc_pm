@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_core_Inc_pm,v 1.1 2015/04/09 17:35:55 pascal Exp $
+
+https://github.com/rakudo/rakudo/commit/7920c16b8d81f0feaf16ed5ce9620c26ca67e63e
+
+--- src/core/Inc.pm.orig	Fri Mar 20 01:19:53 2015
++++ src/core/Inc.pm	Thu Mar 26 11:04:30 2015
+@@ -94,7 +94,7 @@
+         }
+ #?endif
+ 
+-        my $prefix  := $*VM.prefix ~ '/languages/perl6';
++        my $prefix  := $*VM.prefix ~ '/share/perl6';
+         my $abspath := "$prefix/share/libraries.json";
+         if IO::Path.new-from-absolute-path($abspath).e {
+             my $config = from-json( slurp $abspath );

@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_build_Makefile-common_in,v 1.1 2015/04/09 17:35:55 pascal Exp $
+
+https://github.com/rakudo/rakudo/commit/7920c16b8d81f0feaf16ed5ce9620c26ca67e63e
+
+--- tools/build/Makefile-common.in.orig	Fri Mar 20 01:19:53 2015
++++ tools/build/Makefile-common.in	Thu Mar 26 11:04:30 2015
+@@ -9,7 +9,7 @@ RM_F    = $(PERL) -MExtUtils::Command -e rm_f
+ RM_RF   = $(PERL) -MExtUtils::Command -e rm_rf
+ 
+ PREFIX = @prefix@
+-PERL6_LANG_DIR = $(PREFIX)/languages/perl6
++PERL6_LANG_DIR = $(PREFIX)/share/perl6
+ 
+ BOOTSTRAP_SOURCES = \
+   src/Perl6/Metamodel/BOOTSTRAP.nqp \

@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_build_Makefile-Moar_in,v 1.1 2015/04/09 17:35:55 pascal Exp $
+
+https://github.com/rakudo/rakudo/commit/7920c16b8d81f0feaf16ed5ce9620c26ca67e63e
+
+--- tools/build/Makefile-Moar.in.orig	Fri Mar 20 01:19:53 2015
++++ tools/build/Makefile-Moar.in	Thu Mar 26 11:04:30 2015
+@@ -7,7 +7,7 @@ M_GEN_CAT = tools/build/gen-cat.nqp moar
+ 
+ MOAR   = $(PREFIX)@slash@bin@slash@moar@exe@
+ M_NQP  = $(PREFIX)@slash@bin@slash@nqp-m@runner_suffix@
+-M_LIBPATH = $(PREFIX)@slash@languages@slash@nqp@slash@lib
++M_LIBPATH = $(PREFIX)@slash@share@slash@nqp@slash@lib
+ 
+ M_RUN_PERL6 = $(MOAR) --libpath="$(M_LIBPATH)" perl6.moarvm
+ 

@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_vm_moar_ModuleLoaderVMConfig_nqp,v 1.1 2015/04/09 17:35:55 pascal Exp $
+
+https://github.com/rakudo/rakudo/commit/7920c16b8d81f0feaf16ed5ce9620c26ca67e63e
+
+--- src/vm/moar/ModuleLoaderVMConfig.nqp.orig	Fri Mar 20 01:19:53 2015
++++ src/vm/moar/ModuleLoaderVMConfig.nqp	Thu Mar 26 11:04:30 2015
+@@ -1,9 +1,9 @@
+ role Perl6::ModuleLoaderVMConfig {
+     method vm_search_paths() {
+         my @search_paths;
+-        @search_paths.push(nqp::backendconfig<prefix> ~ '/languages/perl6/lib');
++        @search_paths.push(nqp::backendconfig<prefix> ~ '/share/perl6/lib');
+         # XXX CHEAT: Goes away when we implement :from<nqp>.
+-        @search_paths.push(nqp::backendconfig<prefix> ~ '/languages/nqp/lib');
++        @search_paths.push(nqp::backendconfig<prefix> ~ '/share/nqp/lib');
+         @search_paths
+     }
+     

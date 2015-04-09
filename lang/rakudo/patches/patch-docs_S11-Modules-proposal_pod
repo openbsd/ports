@@ -1,0 +1,15 @@
+$OpenBSD: patch-docs_S11-Modules-proposal_pod,v 1.1 2015/04/09 17:35:55 pascal Exp $
+
+https://github.com/rakudo/rakudo/commit/7920c16b8d81f0feaf16ed5ce9620c26ca67e63e
+
+--- docs/S11-Modules-proposal.pod.orig	Fri Mar 20 01:19:53 2015
++++ docs/S11-Modules-proposal.pod	Thu Mar 26 11:04:30 2015
+@@ -63,7 +63,7 @@ to use your modules, don't use Unicode in your module 
+ Rakudo effectively gives the following output to -e'.say for @*INC'
+ 
+     ~/.perl6/lib
+-    parrot_install/lib/2.1.0-devel/languages/perl6/lib
++    parrot_install/lib/2.1.0-devel/share/perl6/lib
+     .
+ 
+ The . entry may be removed from the default @*INC because it creates a
