@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.108 2014/12/12 07:05:59 ajacoutot Exp $
-# rfc2818_hostname.c:107: error: storage size of 'ipv6' isn't known
+# $OpenBSD: Makefile,v 1.109 2015/04/09 07:07:08 ajacoutot Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
-V=		3.2.21
+V=		3.3.14
 DISTNAME=	gnutls-${V}
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	security
 
-SHARED_LIBS +=  gnutls               41.4     # 58.8
+SHARED_LIBS +=  gnutls               42.0     # 69.6
 SHARED_LIBS +=  gnutlsxx             29.1     # 29.0
-SHARED_LIBS +=  gnutls-xssl          0.0      # 0.0
 SHARED_LIBS +=  gnutls-openssl       27.2     # 27.2
 
 HOMEPAGE=	http://www.gnutls.org/
@@ -42,7 +40,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-guile \
 		--disable-valgrind-tests \
-		--with-default-trust-store-file=/etc/ssl/cert.pem
+		--with-default-trust-store-file=/etc/ssl/cert.pem \
+		--with-unbound-root-key-file=/var/unbound/etc/root.key
 
 # OpenBSD's unbound does not provide libdane
 CONFIGURE_ARGS += --disable-libdane
