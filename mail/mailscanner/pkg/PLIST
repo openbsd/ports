@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/07/22 19:57:20 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/04/09 19:55:09 sthen Exp $
 @conflict clamav-<0.94
 bin/MailScanner
 bin/Quick.Peek
@@ -239,6 +239,8 @@ share/examples/MailScanner/reports/ca/inline.warning.txt
 @sample share/MailScanner/reports/ca/inline.warning.txt
 share/examples/MailScanner/reports/ca/languages.conf
 @sample share/MailScanner/reports/ca/languages.conf
+share/examples/MailScanner/reports/ca/languages.conf.strings
+@sample share/MailScanner/reports/ca/languages.conf.strings
 share/examples/MailScanner/reports/ca/recipient.mcp.report.txt
 @sample share/MailScanner/reports/ca/recipient.mcp.report.txt
 share/examples/MailScanner/reports/ca/recipient.spam.report.txt
@@ -295,6 +297,8 @@ share/examples/MailScanner/reports/cy+en/inline.warning.txt
 @sample share/MailScanner/reports/cy+en/inline.warning.txt
 share/examples/MailScanner/reports/cy+en/languages.conf
 @sample share/MailScanner/reports/cy+en/languages.conf
+share/examples/MailScanner/reports/cy+en/languages.conf.strings
+@sample share/MailScanner/reports/cy+en/languages.conf.strings
 share/examples/MailScanner/reports/cy+en/recipient.mcp.report.txt
 @sample share/MailScanner/reports/cy+en/recipient.mcp.report.txt
 share/examples/MailScanner/reports/cy+en/recipient.spam.report.txt
@@ -351,6 +355,8 @@ share/examples/MailScanner/reports/cz/inline.warning.txt
 @sample share/MailScanner/reports/cz/inline.warning.txt
 share/examples/MailScanner/reports/cz/languages.conf
 @sample share/MailScanner/reports/cz/languages.conf
+share/examples/MailScanner/reports/cz/languages.conf.strings
+@sample share/MailScanner/reports/cz/languages.conf.strings
 share/examples/MailScanner/reports/cz/recipient.mcp.report.txt
 @sample share/MailScanner/reports/cz/recipient.mcp.report.txt
 share/examples/MailScanner/reports/cz/recipient.spam.report.txt
@@ -385,8 +391,6 @@ share/examples/MailScanner/reports/cz/stored.virus.message.txt
 @sample share/MailScanner/reports/cz/stored.virus.message.txt
 share/examples/MailScanner/reports/de/
 @sample share/MailScanner/reports/de/
-share/examples/MailScanner/reports/de/README.1ST
-@sample share/MailScanner/reports/de/README.1ST
 share/examples/MailScanner/reports/de/deleted.content.message.txt
 @sample share/MailScanner/reports/de/deleted.content.message.txt
 share/examples/MailScanner/reports/de/deleted.filename.message.txt
@@ -409,6 +413,8 @@ share/examples/MailScanner/reports/de/inline.warning.txt
 @sample share/MailScanner/reports/de/inline.warning.txt
 share/examples/MailScanner/reports/de/languages.conf
 @sample share/MailScanner/reports/de/languages.conf
+share/examples/MailScanner/reports/de/languages.conf.strings
+@sample share/MailScanner/reports/de/languages.conf.strings
 share/examples/MailScanner/reports/de/recipient.mcp.report.txt
 @sample share/MailScanner/reports/de/recipient.mcp.report.txt
 share/examples/MailScanner/reports/de/recipient.spam.report.txt
@@ -465,6 +471,8 @@ share/examples/MailScanner/reports/dk/inline.warning.txt
 @sample share/MailScanner/reports/dk/inline.warning.txt
 share/examples/MailScanner/reports/dk/languages.conf
 @sample share/MailScanner/reports/dk/languages.conf
+share/examples/MailScanner/reports/dk/languages.conf.strings
+@sample share/MailScanner/reports/dk/languages.conf.strings
 share/examples/MailScanner/reports/dk/recipient.mcp.report.txt
 @sample share/MailScanner/reports/dk/recipient.mcp.report.txt
 share/examples/MailScanner/reports/dk/recipient.spam.report.txt
@@ -521,6 +529,8 @@ share/examples/MailScanner/reports/en/inline.warning.txt
 @sample share/MailScanner/reports/en/inline.warning.txt
 share/examples/MailScanner/reports/en/languages.conf
 @sample share/MailScanner/reports/en/languages.conf
+share/examples/MailScanner/reports/en/languages.conf.strings
+@sample share/MailScanner/reports/en/languages.conf.strings
 share/examples/MailScanner/reports/en/recipient.mcp.report.txt
 @sample share/MailScanner/reports/en/recipient.mcp.report.txt
 share/examples/MailScanner/reports/en/recipient.spam.report.txt
@@ -577,6 +587,8 @@ share/examples/MailScanner/reports/es/inline.warning.txt
 @sample share/MailScanner/reports/es/inline.warning.txt
 share/examples/MailScanner/reports/es/languages.conf
 @sample share/MailScanner/reports/es/languages.conf
+share/examples/MailScanner/reports/es/languages.conf.strings
+@sample share/MailScanner/reports/es/languages.conf.strings
 share/examples/MailScanner/reports/es/recipient.mcp.report.txt
 @sample share/MailScanner/reports/es/recipient.mcp.report.txt
 share/examples/MailScanner/reports/es/recipient.spam.report.txt
@@ -633,6 +645,8 @@ share/examples/MailScanner/reports/fr/inline.warning.txt
 @sample share/MailScanner/reports/fr/inline.warning.txt
 share/examples/MailScanner/reports/fr/languages.conf
 @sample share/MailScanner/reports/fr/languages.conf
+share/examples/MailScanner/reports/fr/languages.conf.strings
+@sample share/MailScanner/reports/fr/languages.conf.strings
 share/examples/MailScanner/reports/fr/recipient.mcp.report.txt
 @sample share/MailScanner/reports/fr/recipient.mcp.report.txt
 share/examples/MailScanner/reports/fr/recipient.spam.report.txt
@@ -689,6 +703,8 @@ share/examples/MailScanner/reports/hu/inline.warning.txt
 @sample share/MailScanner/reports/hu/inline.warning.txt
 share/examples/MailScanner/reports/hu/languages.conf
 @sample share/MailScanner/reports/hu/languages.conf
+share/examples/MailScanner/reports/hu/languages.conf.strings
+@sample share/MailScanner/reports/hu/languages.conf.strings
 share/examples/MailScanner/reports/hu/recipient.mcp.report.txt
 @sample share/MailScanner/reports/hu/recipient.mcp.report.txt
 share/examples/MailScanner/reports/hu/recipient.spam.report.txt
@@ -745,6 +761,8 @@ share/examples/MailScanner/reports/it/inline.warning.txt
 @sample share/MailScanner/reports/it/inline.warning.txt
 share/examples/MailScanner/reports/it/languages.conf
 @sample share/MailScanner/reports/it/languages.conf
+share/examples/MailScanner/reports/it/languages.conf.strings
+@sample share/MailScanner/reports/it/languages.conf.strings
 share/examples/MailScanner/reports/it/recipient.mcp.report.txt
 @sample share/MailScanner/reports/it/recipient.mcp.report.txt
 share/examples/MailScanner/reports/it/recipient.spam.report.txt
@@ -801,6 +819,8 @@ share/examples/MailScanner/reports/nl/inline.warning.txt
 @sample share/MailScanner/reports/nl/inline.warning.txt
 share/examples/MailScanner/reports/nl/languages.conf
 @sample share/MailScanner/reports/nl/languages.conf
+share/examples/MailScanner/reports/nl/languages.conf.strings
+@sample share/MailScanner/reports/nl/languages.conf.strings
 share/examples/MailScanner/reports/nl/recipient.mcp.report.txt
 @sample share/MailScanner/reports/nl/recipient.mcp.report.txt
 share/examples/MailScanner/reports/nl/recipient.spam.report.txt
@@ -857,6 +877,8 @@ share/examples/MailScanner/reports/pt_br/inline.warning.txt
 @sample share/MailScanner/reports/pt_br/inline.warning.txt
 share/examples/MailScanner/reports/pt_br/languages.conf
 @sample share/MailScanner/reports/pt_br/languages.conf
+share/examples/MailScanner/reports/pt_br/languages.conf.strings
+@sample share/MailScanner/reports/pt_br/languages.conf.strings
 share/examples/MailScanner/reports/pt_br/recipient.mcp.report.txt
 @sample share/MailScanner/reports/pt_br/recipient.mcp.report.txt
 share/examples/MailScanner/reports/pt_br/recipient.spam.report.txt
@@ -913,6 +935,8 @@ share/examples/MailScanner/reports/ro/inline.warning.txt
 @sample share/MailScanner/reports/ro/inline.warning.txt
 share/examples/MailScanner/reports/ro/languages.conf
 @sample share/MailScanner/reports/ro/languages.conf
+share/examples/MailScanner/reports/ro/languages.conf.strings
+@sample share/MailScanner/reports/ro/languages.conf.strings
 share/examples/MailScanner/reports/ro/recipient.mcp.report.txt
 @sample share/MailScanner/reports/ro/recipient.mcp.report.txt
 share/examples/MailScanner/reports/ro/recipient.spam.report.txt
@@ -947,8 +971,6 @@ share/examples/MailScanner/reports/ro/stored.virus.message.txt
 @sample share/MailScanner/reports/ro/stored.virus.message.txt
 share/examples/MailScanner/reports/se/
 @sample share/MailScanner/reports/se/
-share/examples/MailScanner/reports/se/README
-@sample share/MailScanner/reports/se/README
 share/examples/MailScanner/reports/se/deleted.content.message.txt
 @sample share/MailScanner/reports/se/deleted.content.message.txt
 share/examples/MailScanner/reports/se/deleted.filename.message.txt
@@ -971,6 +993,8 @@ share/examples/MailScanner/reports/se/inline.warning.txt
 @sample share/MailScanner/reports/se/inline.warning.txt
 share/examples/MailScanner/reports/se/languages.conf
 @sample share/MailScanner/reports/se/languages.conf
+share/examples/MailScanner/reports/se/languages.conf.strings
+@sample share/MailScanner/reports/se/languages.conf.strings
 share/examples/MailScanner/reports/se/recipient.mcp.report.txt
 @sample share/MailScanner/reports/se/recipient.mcp.report.txt
 share/examples/MailScanner/reports/se/recipient.spam.report.txt
@@ -1027,6 +1051,8 @@ share/examples/MailScanner/reports/sk/inline.warning.txt
 @sample share/MailScanner/reports/sk/inline.warning.txt
 share/examples/MailScanner/reports/sk/languages.conf
 @sample share/MailScanner/reports/sk/languages.conf
+share/examples/MailScanner/reports/sk/languages.conf.strings
+@sample share/MailScanner/reports/sk/languages.conf.strings
 share/examples/MailScanner/reports/sk/recipient.mcp.report.txt
 @sample share/MailScanner/reports/sk/recipient.mcp.report.txt
 share/examples/MailScanner/reports/sk/recipient.spam.report.txt

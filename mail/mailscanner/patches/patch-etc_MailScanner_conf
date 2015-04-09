@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_MailScanner_conf,v 1.14 2010/12/29 06:42:16 ajacoutot Exp $
---- etc/MailScanner.conf.orig	Sat Nov 13 16:16:14 2010
-+++ etc/MailScanner.conf	Wed Dec 29 07:36:41 2010
+$OpenBSD: patch-etc_MailScanner_conf,v 1.15 2015/04/09 19:55:09 sthen Exp $
+--- etc/MailScanner.conf.orig	Wed Feb 25 06:38:27 2015
++++ etc/MailScanner.conf	Fri Mar 13 03:55:37 2015
 @@ -43,7 +43,7 @@
  #       normal shell wildcard characters such as "*".
  #       For each setting, the last value read will be used by MailScanner.
@@ -77,7 +77,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.14 2010/12/29 06:42:16 ajacoutot Exp $
  # may be. It helps protect against Denial Of Service attacks in TNEF files.
  # This can also be the filename of a ruleset.
  #TNEF Expander  = internal
--TNEF Expander = /opt/MailScanner/bin/tnef --maxsize=100000000
+-TNEF Expander = /usr/bin/tnef --maxsize=100000000
 +TNEF Expander = %PREFIX%/bin/tnef --maxsize=100000000
  
  # The maximum length of time the TNEF Expander is allowed to run for 1 message.
@@ -145,8 +145,8 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.14 2010/12/29 06:42:16 ajacoutot Exp $
  # detect when a ClamAV update has happened.
  # This is only used by the "clamavmodule" virus scanner, not the "clamav"
  # scanner setting.
--Monitors for ClamAV Updates = /usr/local/share/clamav/*.cld /usr/local/share/clamav/*.cvd
-+Monitors for ClamAV Updates = %PREFIX%/share/clamav/*.cld %PREFIX%/share/clamav/*.cvd
+-Monitors for ClamAV Updates = /usr/local/share/clamav/*.cld /usr/local/share/clamav/*.cvd /var/lib/clamav/*.inc/* /var/lib/clamav/*.?db /var/lib/clamav/*.cvd
++Monitors for ClamAV Updates = %PREFIX%/share/clamav/*.cld %PREFIX%/share/clamav/*.cvd /var/db/clamav/*.inc/* /var/db/clamav/*.?db /var/db/clamav/*.cvd
  
  # ClamAVModule only: set limits when scanning for viruses.
  #
@@ -318,10 +318,13 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.14 2010/12/29 06:42:16 ajacoutot Exp $
  
  # How to lock spool files.
  # Don't set this unless you *know* you need to.
-@@ -3119,5 +3121,5 @@ Minimum Code Status = supported
+@@ -3119,6 +3121,6 @@ Minimum Code Status = supported
  # They will be read and processed in alphabetical order.
  #
  #
 -include /opt/MailScanner/etc/conf.d/*
 +include %SYSCONFDIR%/MailScanner/conf.d/*
  
+-# End Of File
+\ No newline at end of file
++# End Of File

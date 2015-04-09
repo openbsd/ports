@@ -1,8 +1,9 @@
-$OpenBSD: patch-bin_cron_processing_messages_alert_cron,v 1.1 2009/10/07 20:59:29 sthen Exp $
---- bin/cron/processing_messages_alert.cron.orig	Fri Aug 28 18:34:11 2009
-+++ bin/cron/processing_messages_alert.cron	Fri Aug 28 18:34:51 2009
+$OpenBSD: patch-bin_cron_processing_messages_alert_cron,v 1.2 2015/04/09 19:55:09 sthen Exp $
+--- bin/cron/processing_messages_alert.cron.orig	Sun Mar 15 02:06:59 2015
++++ bin/cron/processing_messages_alert.cron	Sun Mar 15 14:21:23 2015
 @@ -1,5 +1,5 @@
- #!/bin/bash
+-#!/bin/bash
++#!/bin/sh
  
 -[ -x /opt/MailScanner/bin/processing_messages_alert ] || exit 0
 -exec /opt/MailScanner/bin/processing_messages_alert > /dev/null 2>&1

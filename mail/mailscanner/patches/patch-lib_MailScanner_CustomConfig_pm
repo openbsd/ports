@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_MailScanner_CustomConfig_pm,v 1.4 2009/10/07 20:59:29 sthen Exp $
---- lib/MailScanner/CustomConfig.pm.orig	Sun Apr  6 12:07:16 2008
-+++ lib/MailScanner/CustomConfig.pm	Fri Aug 28 18:52:24 2009
+$OpenBSD: patch-lib_MailScanner_CustomConfig_pm,v 1.5 2015/04/09 19:55:09 sthen Exp $
+--- lib/MailScanner/CustomConfig.pm.orig	Sun Mar  1 23:13:10 2015
++++ lib/MailScanner/CustomConfig.pm	Sun Mar 15 13:52:19 2015
 @@ -765,7 +765,7 @@ my($hostname);
  
  my $ConfFile = $ARGV[0];
@@ -14,7 +14,7 @@ $OpenBSD: patch-lib_MailScanner_CustomConfig_pm,v 1.4 2009/10/07 20:59:29 sthen 
  #      SO17 1BJ
  #      United Kingdom
  #
--push @INC,"/usr/lib/MailScanner","/opt/MailScanner/lib";
+-push @INC,"/usr/share/MailScanner","/opt/MailScanner/lib";
 +push @INC,"%PREFIX%/lib/MailScanner";
  use FileHandle;
  use Fcntl qw(:DEFAULT :flock);

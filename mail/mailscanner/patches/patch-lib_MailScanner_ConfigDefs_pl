@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_MailScanner_ConfigDefs_pl,v 1.10 2010/06/22 07:38:14 sthen Exp $
---- lib/MailScanner/ConfigDefs.pl.orig	Wed Jun  9 17:21:30 2010
-+++ lib/MailScanner/ConfigDefs.pl	Mon Jun 21 21:49:22 2010
+$OpenBSD: patch-lib_MailScanner_ConfigDefs_pl,v 1.11 2015/04/09 19:55:09 sthen Exp $
+--- lib/MailScanner/ConfigDefs.pl.orig	Wed Mar  4 08:09:15 2015
++++ lib/MailScanner/ConfigDefs.pl	Sun Mar 15 13:51:04 2015
 @@ -360,8 +360,8 @@ qmailintdhashnumber		1
  # filename containing a list of directories.
  [Simple,Other]
  cachetiming		1800,300,10800,172800,600
 -ClamWatchFiles		/usr/local/share/clamav/*.cvd
--CustomFunctionsDir	/usr/lib/MailScanner/MailScanner/CustomFunctions
+-CustomFunctionsDir	/usr/share/MailScanner/MailScanner/CustomFunctions
 +ClamWatchFiles		%PREFIX%/share/clamav/*.cvd
 +CustomFunctionsDir	%PREFIX%/lib/MailScanner/MailScanner/CustomFunctions
  FileCommand		/usr/bin/file

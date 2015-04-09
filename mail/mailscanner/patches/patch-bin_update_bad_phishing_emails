@@ -1,16 +1,26 @@
-$OpenBSD: patch-bin_update_bad_phishing_emails,v 1.3 2012/03/06 20:09:40 pea Exp $
---- bin/update_bad_phishing_emails.orig	Mon Mar  5 10:33:31 2012
-+++ bin/update_bad_phishing_emails	Mon Mar  5 13:05:01 2012
-@@ -39,7 +39,7 @@ use DirHandle;
+$OpenBSD: patch-bin_update_bad_phishing_emails,v 1.4 2015/04/09 19:55:09 sthen Exp $
+--- bin/update_bad_phishing_emails.orig	Wed Feb 18 06:53:04 2015
++++ bin/update_bad_phishing_emails	Fri Mar 13 20:26:56 2015
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w -I/opt/MailScanner/lib
++#!/usr/bin/perl -w -I%PREFIX%/lib/MailScanner
+ 
+ #
+ #   MailScanner - SMTP E-Mail Virus Scanner
+@@ -39,17 +39,17 @@ use MailScanner::Config;
  
  # Work out Quarantine Directory from MailScanner.conf
  my $base = '/var/spool/MailScanner/quarantine'; # Default value
--my $msconf = new FileHandle("< /opt/MailScanner/etc/MailScanner.conf") or warn "Cannot open main configuration file /opt/MailScanner/etc/MailScanner.conf";
-+my $msconf = new FileHandle("< %SYSCONFDIR%/MailScanner/MailScanner.conf") or warn "Cannot open main configuration file %SYSCONFDIR%/MailScanner/MailScanner.conf";
- while(<$msconf>) {
-   $base = $1 if /^\s*Quarantine\s*Dir\s*=\s*(\S+)/;
+-if (-f '/opt/MailScanner/etc/MailScanner.conf') {
+-    $base = MailScanner::Config::QuickPeek('/opt/MailScanner/etc/MailScanner.conf', 'QuarantineDir');
++if (-f '%SYSCONFDIR%/MailScanner/MailScanner.conf') {
++    $base = MailScanner::Config::QuickPeek('%SYSCONFDIR%/MailScanner/MailScanner.conf', 'QuarantineDir');
+ }else{
+-    warn "Default configuration file /opt/MailScanner/etc/MailScanner.conf not found";
++    warn "Default configuration file %SYSCONFDIR%/MailScanner/MailScanner.conf not found";
  }
-@@ -49,7 +49,7 @@ my $current = $base . '/phishingupdate/';
+ 
+ my $current = $base . '/phishingupdate/';
  my $cache = $current . 'emails.cache/';
  my $status = $current . 'emails.status';
  my $urlbase = "http://cdn.mailscanner.info/emails.";

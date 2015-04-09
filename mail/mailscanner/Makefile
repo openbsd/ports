@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.55 2014/07/22 10:55:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2015/04/09 19:55:09 sthen Exp $
 
 COMMENT=	virus/spam scanning framework
 
-V=		4.84
-Vs=		6
+V=		4.85
+Vs=		2
 Vss=		${Vs}-1
-DISTNAME=	mailscanner-${V}.${Vss}
+DISTNAME=	MailScanner-${V}.${Vss}
 PKGNAME=	mailscanner-${V}.${Vss:S/-/./}
-REVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	http://comstyle.com/source/
-
-DISTFILES=	MailScanner-install-${V}.${Vss}${EXTRACT_SUFX}
+MASTER_SITES=	https://s3.amazonaws.com/mailscanner/release/v4/tar/
 
 HOMEPAGE=	http://www.mailscanner.info/
 
@@ -28,13 +25,16 @@ RUN_DEPENDS+=	archivers/lha \
 		converters/p5-Convert-TNEF \
 		databases/p5-DBD-SQLite \
 		databases/p5-DBI \
+		devel/p5-IO-String \
 		devel/p5-OLE-Storage_Lite \
 		devel/p5-Sys-SigAction \
 		mail/p5-MIME-tools \
 		mail/tnef>=1.4.7 \
 		net/p5-Net-CIDR \
+		net/p5-Net-IP \
 		net/p5-Sys-Hostname-Long \
 		net/wget \
+		security/p5-Digest-SHA1 \
 		sysutils/p5-Filesys-Df \
 		textproc/antiword \
 		www/p5-HTML-Parser
@@ -101,7 +101,7 @@ install_share:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc
 	${INSTALL_DATA_DIR} ${PREFIX}/share/MailScanner
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/MailScanner
-	@${INST_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/MailScanner/README
+	@${INST_DATA} ${WRKDIR}/MailScanner-install-${V}.${Vs}/README ${PREFIX}/share/doc/MailScanner/README
 	@cd ${WRKSRC}/etc ; find reports -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}'/share/examples/MailScanner/{}' \;
 	@cd ${WRKSRC}/etc ; find reports -type f ! -name "*.orig" | while read f; do ${INST_DATA} $$f ${PREFIX}/share/examples/MailScanner/$$f; done
 	@cd ${PREFIX}/share/examples/MailScanner/reports ; find . -name "*.bak" -print0 | xargs -0 rm -f

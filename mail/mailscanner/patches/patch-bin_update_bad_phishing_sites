@@ -1,21 +1,18 @@
-$OpenBSD: patch-bin_update_bad_phishing_sites,v 1.3 2012/03/06 20:09:40 pea Exp $
---- bin/update_bad_phishing_sites.orig	Mon Mar  5 10:33:35 2012
-+++ bin/update_bad_phishing_sites	Mon Mar  5 13:05:16 2012
-@@ -39,7 +39,7 @@ use DirHandle;
+$OpenBSD: patch-bin_update_bad_phishing_sites,v 1.4 2015/04/09 19:55:09 sthen Exp $
+--- bin/update_bad_phishing_sites.orig	Thu Mar 12 19:19:12 2015
++++ bin/update_bad_phishing_sites	Sun Mar 15 14:16:04 2015
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ #   MailScanner - SMTP E-Mail Virus Scanner
+ #   Copyright (C) 2002  Julian Field
+@@ -23,7 +23,7 @@
  
- # Work out Quarantine Directory from MailScanner.conf
- my $base = '/var/spool/MailScanner/quarantine'; # Default value
--my $msconf = new FileHandle("< /opt/MailScanner/etc/MailScanner.conf") or warn "Cannot open main configuration file /opt/MailScanner/etc/MailScanner.conf";
-+my $msconf = new FileHandle("< %SYSCONFDIR%/MailScanner/MailScanner.conf") or warn "Cannot open main configuration file %SYSCONFDIR%/MailScanner/MailScanner.conf";
- while(<$msconf>) {
-   $base = $1 if /^\s*Quarantine\s*Dir\s*=\s*(\S+)/;
- }
-@@ -49,7 +49,7 @@ my $current = $base . '/phishingupdate/';
- my $cache = $current . 'cache/';
- my $status = $current . 'status';
- my $urlbase = "http://cdn.mailscanner.info/";
--my $target= "/opt/MailScanner/etc/phishing.bad.sites.conf";
-+my $target= "%SYSCONFDIR%/MailScanner/phishing.bad.sites.conf";
- my $query="msupdate.greylist.bastionmail.com";
+ # set your options here
+ #
+-CONFIGDIR='/opt/MailScanner/etc';
++CONFIGDIR='%SYSCONFDIR%/MailScanner';
+ THEURL='http://phishing.mailborder.com/phishing.bad.sites.conf';
  
- my $baseupdated = 0;
+ 
