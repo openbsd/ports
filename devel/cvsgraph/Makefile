@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/03/17 23:21:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2015/04/09 15:08:19 naddy Exp $
 
 COMMENT=		graphical representation of CVS repository
 
@@ -26,7 +26,6 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 CONFIGURE_ARGS=		--with-gd-inc=${LOCALBASE}/include \
 			--with-gd-lib=${LOCALBASE}/lib \
 			--with-freetype-lib=${X11BASE}/lib
-USE_GROFF =		Yes
 
 NO_TEST=		Yes
 
