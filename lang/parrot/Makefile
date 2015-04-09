@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.30 2014/01/26 11:38:46 pascal Exp $
+# $OpenBSD: Makefile,v 1.31 2015/04/09 18:27:19 pascal Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT=	virtual machine designed for interpreted languages
 
-V=		5.4.0
-REVISION=	2
+V=		7.2.0
 DISTNAME=	parrot-$V
 CATEGORIES=	lang perl6
-SHARED_LIBS=	parrot	8.0
+SHARED_LIBS=	parrot	9.0
 
 HOMEPAGE=	http://www.parrot.org/
 
@@ -22,13 +21,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += GL GLU c glut gmp icudata icuuc m ncurses pthread
 WANTLIB += readline stdc++ util z ffi
 
+MODULES =		devel/gettext
 BUILD_DEPENDS=		graphics/glew \
 			devel/pcre
 LIB_DEPENDS=		textproc/icu4c \
 			devel/gmp \
 			graphics/freeglut \
 			devel/libffi
-TEST_DEPENDS=	devel/p5-TAP-Harness-Multiple \
+TEST_DEPENDS=		devel/p5-TAP-Harness-Multiple \
 			devel/p5-Test-Perl-Critic
 
 CONFIGURE_SCRIPT=	/usr/bin/perl Configure.pl

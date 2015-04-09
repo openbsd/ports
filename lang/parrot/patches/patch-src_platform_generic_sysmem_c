@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_platform_generic_sysmem_c,v 1.1 2015/04/09 18:27:19 pascal Exp $
+--- src/platform/generic/sysmem.c.orig	Tue Feb  3 14:42:48 2015
++++ src/platform/generic/sysmem.c	Tue Feb  3 14:43:21 2015
+@@ -49,6 +49,11 @@ Returns available physical memory in bytes, with respe
+ 
+ */
+ 
++/* XXX same as Darwin */
++#ifndef RLIMIT_AS
++#define RLIMIT_AS RLIMIT_RSS
++#endif
++
+ /*
+  * The POSIX name is _SC_PAGESIZE, but apparently some systems
+  * require _SC_PAGE_SIZE instead.   (Specific citations would

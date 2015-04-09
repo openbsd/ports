@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/06/02 14:02:34 pascal Exp $
-@bin bin/ops2c
+@comment $OpenBSD: PLIST,v 1.18 2015/04/09 18:27:19 pascal Exp $
 @bin bin/parrot
 @bin bin/parrot-nqp
+@bin bin/parrot-ops2c
 @bin bin/parrot-prove
 @bin bin/parrot_config
 @bin bin/parrot_nci_thunk_gen
@@ -67,6 +67,7 @@ include/parrot/${V}/parrot/longopt.h
 include/parrot/${V}/parrot/memory.h
 include/parrot/${V}/parrot/misc.h
 include/parrot/${V}/parrot/multidispatch.h
+include/parrot/${V}/parrot/namealias.h
 include/parrot/${V}/parrot/namespace.h
 include/parrot/${V}/parrot/nci.h
 include/parrot/${V}/parrot/oo.h
@@ -120,7 +121,6 @@ include/parrot/${V}/pmc/pmc_continuation.h
 include/parrot/${V}/pmc/pmc_coroutine.h
 include/parrot/${V}/pmc/pmc_default.h
 include/parrot/${V}/pmc/pmc_env.h
-include/parrot/${V}/pmc/pmc_eval.h
 include/parrot/${V}/pmc/pmc_eventhandler.h
 include/parrot/${V}/pmc/pmc_exception.h
 include/parrot/${V}/pmc/pmc_exceptionhandler.h
@@ -662,13 +662,16 @@ lib/parrot/${V}/tools/lib/Parrot/Test/Util.pm
 lib/parrot/${V}/tools/lib/Parrot/Test/Util/Runloop.pm
 lib/parrot/${V}/tools/lib/Parrot/Vtable.pm
 lib/parrot/${V}/tools/myconfig
-@man man/man1/ops2c.1
 @man man/man1/parrot-nqp.1
+@man man/man1/parrot-ops2c.1
 @man man/man1/parrot-prove.1
 @man man/man1/parrot.1
 @man man/man1/parrot_config.1
 @man man/man1/parrot_nci_thunk_gen.1
 @man man/man1/parrotbug.1
+@man man/man1/pbc_disassemble.1
+@man man/man1/pbc_dump.1
+@man man/man1/pbc_merge.1
 @man man/man1/pbc_to_exe.1
 @man man/man1/plumage.1
 @man man/man1/winxed.1
@@ -699,6 +702,7 @@ share/doc/parrot/${V}/examples/benchmarks/arriter.rb
 share/doc/parrot/${V}/examples/benchmarks/arriter_o1.pir
 share/doc/parrot/${V}/examples/benchmarks/bench_newp.pasm
 share/doc/parrot/${V}/examples/benchmarks/boolean.pir
+share/doc/parrot/${V}/examples/benchmarks/dispatch.winxed
 share/doc/parrot/${V}/examples/benchmarks/fib.cs
 share/doc/parrot/${V}/examples/benchmarks/fib.pir
 share/doc/parrot/${V}/examples/benchmarks/fib.pl
@@ -757,6 +761,7 @@ share/doc/parrot/${V}/examples/benchmarks/primes2.rb
 share/doc/parrot/${V}/examples/benchmarks/primes2_i.pir
 share/doc/parrot/${V}/examples/benchmarks/primes_i.pasm
 share/doc/parrot/${V}/examples/benchmarks/rand.pir
+share/doc/parrot/${V}/examples/benchmarks/run.sh
 share/doc/parrot/${V}/examples/benchmarks/sort_ffa.pir
 share/doc/parrot/${V}/examples/benchmarks/sort_fia.pir
 share/doc/parrot/${V}/examples/benchmarks/sort_rfa.pir
@@ -880,7 +885,6 @@ share/doc/parrot/${V}/examples/nci/QtHelloWorld.pir
 share/doc/parrot/${V}/examples/nci/Xlib.pir
 share/doc/parrot/${V}/examples/nci/Xlibconstants.pir
 share/doc/parrot/${V}/examples/nci/ls.pir
-share/doc/parrot/${V}/examples/nci/sdl_blue_rectangle.pir
 share/doc/parrot/${V}/examples/nci/win32api.pir
 share/doc/parrot/${V}/examples/nci/xlibtest.nqp
 share/doc/parrot/${V}/examples/nci/xlibtest.p6
@@ -1059,6 +1063,7 @@ share/doc/parrot/${V}/examples/tge/branch/lib/Branch.pir
 share/doc/parrot/${V}/examples/tge/branch/lib/Leaf.pir
 share/doc/parrot/${V}/examples/tge/branch/transform.pir
 share/doc/parrot/${V}/examples/threads/
+share/doc/parrot/${V}/examples/threads/alloc_test.pir
 share/doc/parrot/${V}/examples/threads/chameneos.pir
 share/doc/parrot/${V}/examples/threads/matrix_part.winxed
 share/doc/parrot/${V}/examples/threads/moretasks.pir
@@ -1107,8 +1112,8 @@ share/doc/parrot/${V}/pod/
 share/doc/parrot/${V}/pod/README.pod
 share/doc/parrot/${V}/pod/binaries/
 share/doc/parrot/${V}/pod/binaries/README.pod
-share/doc/parrot/${V}/pod/binaries/ops2c.pod
 share/doc/parrot/${V}/pod/binaries/parrot-nqp.pod
+share/doc/parrot/${V}/pod/binaries/parrot-ops2c.pod
 share/doc/parrot/${V}/pod/binaries/parrot-prove.pod
 share/doc/parrot/${V}/pod/binaries/parrot.pod
 share/doc/parrot/${V}/pod/binaries/parrot_config.pod
@@ -1152,6 +1157,7 @@ share/doc/parrot/${V}/pod/dev/c_functions.pod
 share/doc/parrot/${V}/pod/dev/coverage.pod
 share/doc/parrot/${V}/pod/dev/debugging_with_msvc.pod
 share/doc/parrot/${V}/pod/dev/events.pod
+share/doc/parrot/${V}/pod/dev/fuzzing.pod
 share/doc/parrot/${V}/pod/dev/headerizer.pod
 share/doc/parrot/${V}/pod/dev/infant.pod
 share/doc/parrot/${V}/pod/dev/longopt.pod
@@ -1317,7 +1323,6 @@ src/parrot/${V}/pmc/continuation.dump
 src/parrot/${V}/pmc/coroutine.dump
 src/parrot/${V}/pmc/default.dump
 src/parrot/${V}/pmc/env.dump
-src/parrot/${V}/pmc/eval.dump
 src/parrot/${V}/pmc/eventhandler.dump
 src/parrot/${V}/pmc/exception.dump
 src/parrot/${V}/pmc/exceptionhandler.dump
