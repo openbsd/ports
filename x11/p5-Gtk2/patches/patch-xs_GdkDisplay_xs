@@ -1,0 +1,15 @@
+$OpenBSD: patch-xs_GdkDisplay_xs,v 1.1 2015/04/09 13:24:20 jasper Exp $
+
+Fix incorrect memory management in Gtk2::Gdk::Display::list_devices
+https://bugzilla.redhat.com/show_bug.cgi?id=1188219
+
+--- xs/GdkDisplay.xs.orig	Thu Apr  9 15:13:48 2015
++++ xs/GdkDisplay.xs	Thu Apr  9 15:14:01 2015
+@@ -69,7 +69,6 @@ gdk_display_list_devices (display)
+ 	devices = gdk_display_list_devices (display);
+ 	for (i = devices ; i != NULL ; i = i->next)
+ 		XPUSHs (sv_2mortal (newSVGdkDevice (i->data)));
+-	g_list_free (devices);
+ 	
+ 
+ GdkEvent* gdk_display_get_event (GdkDisplay *display) 
