@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.46 2014/10/25 22:06:40 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.47 2015/04/09 21:25:49 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -51,6 +51,7 @@ include/dovecot/auth-worker-client.h
 include/dovecot/auth-worker-server.h
 include/dovecot/auth.h
 include/dovecot/backtrace-string.h
+include/dovecot/base32.h
 include/dovecot/base64.h
 include/dovecot/bits.h
 include/dovecot/bsearch-insert-pos.h
@@ -87,6 +88,7 @@ include/dovecot/dict-sql.h
 include/dovecot/dict-transaction-memory.h
 include/dovecot/dict.h
 include/dovecot/dns-lookup.h
+include/dovecot/doveadm-cmd.h
 include/dovecot/doveadm-dsync.h
 include/dovecot/doveadm-dump.h
 include/dovecot/doveadm-mail-iter.h
@@ -121,6 +123,11 @@ include/dovecot/fs-api-private.h
 include/dovecot/fs-api.h
 include/dovecot/fs-sis-common.h
 include/dovecot/fsync-mode.h
+include/dovecot/fts-api-private.h
+include/dovecot/fts-api.h
+include/dovecot/fts-expunge-log.h
+include/dovecot/fts-indexer.h
+include/dovecot/fts-parser.h
 include/dovecot/guid.h
 include/dovecot/hash-decl.h
 include/dovecot/hash-format.h
@@ -190,6 +197,7 @@ include/dovecot/imapc-connection.h
 include/dovecot/imapc-list.h
 include/dovecot/imapc-mail.h
 include/dovecot/imapc-msgmap.h
+include/dovecot/imapc-search.h
 include/dovecot/imapc-settings.h
 include/dovecot/imapc-storage.h
 include/dovecot/imapc-sync.h
@@ -263,6 +271,7 @@ include/dovecot/mail-cache.h
 include/dovecot/mail-copy.h
 include/dovecot/mail-deliver.h
 include/dovecot/mail-error.h
+include/dovecot/mail-html2text.h
 include/dovecot/mail-index-alloc-cache.h
 include/dovecot/mail-index-modseq.h
 include/dovecot/mail-index-private.h
@@ -359,6 +368,7 @@ include/dovecot/message-part-serialize.h
 include/dovecot/message-part.h
 include/dovecot/message-search.h
 include/dovecot/message-size.h
+include/dovecot/message-snippet.h
 include/dovecot/mkdir-parents.h
 include/dovecot/mmap-util.h
 include/dovecot/module-context.h
@@ -372,6 +382,7 @@ include/dovecot/notify-plugin-private.h
 include/dovecot/notify-plugin.h
 include/dovecot/numpack.h
 include/dovecot/ostream-cmp.h
+include/dovecot/ostream-dot.h
 include/dovecot/ostream-hash.h
 include/dovecot/ostream-metawrap.h
 include/dovecot/ostream-private.h
@@ -430,8 +441,11 @@ include/dovecot/sql-api-private.h
 include/dovecot/sql-api.h
 include/dovecot/sql-db-cache.h
 include/dovecot/ssl-proxy.h
+include/dovecot/stats-parser.h
+include/dovecot/stats.h
 include/dovecot/str-find.h
 include/dovecot/str-sanitize.h
+include/dovecot/str-table.h
 include/dovecot/str.h
 include/dovecot/strescape.h
 include/dovecot/strfuncs.h
@@ -499,6 +513,8 @@ lib/dovecot/lib95_imap_stats_plugin.so
 @lib lib/dovecot/libdovecot.so.${LIBdovecot_VERSION}
 lib/dovecot/libdriver_sqlite.so
 lib/dovecot/libssl_iostream_openssl.so
+lib/dovecot/stats/
+lib/dovecot/stats/libstats_mail.so
 libexec/dovecot/
 @bin libexec/dovecot/aggregator
 @bin libexec/dovecot/anvil
@@ -793,6 +809,7 @@ share/doc/dovecot/wiki/SSL.txt
 share/doc/dovecot/wiki/Sasl.txt
 share/doc/dovecot/wiki/SecurityTuning.txt
 share/doc/dovecot/wiki/Services.txt
+share/doc/dovecot/wiki/SharedMailboxes.ClusterSetup.txt
 share/doc/dovecot/wiki/SharedMailboxes.Permissions.txt
 share/doc/dovecot/wiki/SharedMailboxes.Public.txt
 share/doc/dovecot/wiki/SharedMailboxes.Shared.txt
