@@ -1,0 +1,19 @@
+$OpenBSD: patch-tools_clang_include_clang_Basic_DiagnosticDriverKinds_td,v 1.1 2015/04/09 22:25:02 sthen Exp $
+
+r211785
+Implement the -fuse-ld= option.
+
+This commit implements the -fuse-ld= option, so that the user
+can specify -fuse-ld=bfd to use ld.bfd.
+
+--- tools/clang/include/clang/Basic/DiagnosticDriverKinds.td.orig	Thu Feb 26 07:01:37 2015
++++ tools/clang/include/clang/Basic/DiagnosticDriverKinds.td	Thu Feb 26 07:02:16 2015
+@@ -22,6 +22,8 @@ def err_drv_unknown_stdin_type_clang_cl : Error<
+ def err_drv_unknown_language : Error<"language not recognized: '%0'">;
+ def err_drv_invalid_arch_name : Error<
+   "invalid arch name '%0'">;
++def err_drv_invalid_linker_name : Error<
++  "invalid linker name in argument '%0'">;
+ def err_drv_invalid_rtlib_name : Error<
+   "invalid runtime library name in argument '%0'">;
+ def err_drv_unsupported_rtlib_for_platform : Error<

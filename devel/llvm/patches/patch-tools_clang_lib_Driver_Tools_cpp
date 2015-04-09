@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.23 2014/08/29 14:28:32 brad Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.24 2015/04/09 22:25:02 sthen Exp $
 
 r212838
 Handle SPARC float command line parameters for SPARCv9.
@@ -15,8 +15,14 @@ Use dwarf-2 by default on OpenBSD and FreeBSD.
 r209479
 Don't reduce the stack protector level given -fstack-protector.
 
+r211785
+Implement the -fuse-ld= option.
+
+This commit implements the -fuse-ld= option, so that the user
+can specify -fuse-ld=bfd to use ld.bfd.
+
 --- tools/clang/lib/Driver/Tools.cpp.orig	Sun Mar  2 22:03:41 2014
-+++ tools/clang/lib/Driver/Tools.cpp	Thu Aug  7 19:57:25 2014
++++ tools/clang/lib/Driver/Tools.cpp	Thu Feb 26 07:09:54 2015
 @@ -1150,7 +1150,7 @@ static std::string getR600TargetGPU(const ArgList &Arg
  }
  
@@ -119,6 +125,33 @@ Don't reduce the stack protector level given -fstack-protector.
        StackProtectorLevel = LangOptions::SSPStrong;
      else if (A->getOption().matches(options::OPT_fstack_protector_all))
        StackProtectorLevel = LangOptions::SSPReq;
+@@ -5281,7 +5309,7 @@ void darwin::Link::ConstructJob(Compilation &C, const 
+   Args.AddAllArgs(CmdArgs, options::OPT_F);
+ 
+   const char *Exec =
+-    Args.MakeArgString(getToolChain().GetProgramPath("ld"));
++    Args.MakeArgString(getToolChain().GetLinkerPath());
+   C.addCommand(new Command(JA, *this, Exec, CmdArgs));
+ }
+ 
+@@ -5478,7 +5506,7 @@ void solaris::Link::ConstructJob(Compilation &C, const
+   addProfileRT(getToolChain(), Args, CmdArgs);
+ 
+   const char *Exec =
+-    Args.MakeArgString(getToolChain().GetProgramPath("ld"));
++    Args.MakeArgString(getToolChain().GetLinkerPath());
+   C.addCommand(new Command(JA, *this, Exec, CmdArgs));
+ }
+ 
+@@ -5590,7 +5618,7 @@ void auroraux::Link::ConstructJob(Compilation &C, cons
+   addProfileRT(getToolChain(), Args, CmdArgs);
+ 
+   const char *Exec =
+-    Args.MakeArgString(getToolChain().GetProgramPath("ld"));
++    Args.MakeArgString(getToolChain().GetLinkerPath());
+   C.addCommand(new Command(JA, *this, Exec, CmdArgs));
+ }
+ 
 @@ -5743,6 +5771,7 @@ void openbsd::Link::ConstructJob(Compilation &C, const
                                         "/4.2.1"));
  
@@ -127,3 +160,57 @@ Don't reduce the stack protector level given -fstack-protector.
    Args.AddAllArgs(CmdArgs, options::OPT_T_Group);
    Args.AddAllArgs(CmdArgs, options::OPT_e);
    Args.AddAllArgs(CmdArgs, options::OPT_s);
+@@ -5795,7 +5824,7 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+   }
+ 
+   const char *Exec =
+-    Args.MakeArgString(getToolChain().GetProgramPath("ld"));
++    Args.MakeArgString(getToolChain().GetLinkerPath());
+   C.addCommand(new Command(JA, *this, Exec, CmdArgs));
+ }
+ 
+@@ -5935,7 +5964,7 @@ void bitrig::Link::ConstructJob(Compilation &C, const 
+   }
+ 
+   const char *Exec =
+-    Args.MakeArgString(getToolChain().GetProgramPath("ld"));
++    Args.MakeArgString(getToolChain().GetLinkerPath());
+   C.addCommand(new Command(JA, *this, Exec, CmdArgs));
+ }
+ 
+@@ -6200,7 +6229,7 @@ void freebsd::Link::ConstructJob(Compilation &C, const
+   addProfileRT(ToolChain, Args, CmdArgs);
+ 
+   const char *Exec =
+-    Args.MakeArgString(ToolChain.GetProgramPath("ld"));
++    Args.MakeArgString(ToolChain.GetLinkerPath());
+   C.addCommand(new Command(JA, *this, Exec, CmdArgs));
+ }
+ 
+@@ -6448,7 +6477,7 @@ void netbsd::Link::ConstructJob(Compilation &C, const 
+ 
+   addProfileRT(getToolChain(), Args, CmdArgs);
+ 
+-  const char *Exec = Args.MakeArgString(getToolChain().GetProgramPath("ld"));
++  const char *Exec = Args.MakeArgString(getToolChain().GetLinkerPath());
+   C.addCommand(new Command(JA, *this, Exec, CmdArgs));
+ }
+ 
+@@ -6964,7 +6993,7 @@ void minix::Link::ConstructJob(Compilation &C, const J
+          Args.MakeArgString(getToolChain().GetFilePath("crtend.o")));
+   }
+ 
+-  const char *Exec = Args.MakeArgString(getToolChain().GetProgramPath("ld"));
++  const char *Exec = Args.MakeArgString(getToolChain().GetLinkerPath());
+   C.addCommand(new Command(JA, *this, Exec, CmdArgs));
+ }
+ 
+@@ -7148,7 +7177,7 @@ void dragonfly::Link::ConstructJob(Compilation &C, con
+   addProfileRT(getToolChain(), Args, CmdArgs);
+ 
+   const char *Exec =
+-    Args.MakeArgString(getToolChain().GetProgramPath("ld"));
++    Args.MakeArgString(getToolChain().GetLinkerPath());
+   C.addCommand(new Command(JA, *this, Exec, CmdArgs));
+ }
+ 

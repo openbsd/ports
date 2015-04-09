@@ -1,0 +1,21 @@
+$OpenBSD: patch-tools_clang_include_clang_Driver_ToolChain_h,v 1.1 2015/04/09 22:25:02 sthen Exp $
+
+r211785
+Implement the -fuse-ld= option.
+
+This commit implements the -fuse-ld= option, so that the user
+can specify -fuse-ld=bfd to use ld.bfd.
+
+--- tools/clang/include/clang/Driver/ToolChain.h.orig	Thu Feb 26 07:03:30 2015
++++ tools/clang/include/clang/Driver/ToolChain.h	Thu Feb 26 07:03:53 2015
+@@ -158,6 +158,10 @@ class ToolChain { (public)
+   std::string GetFilePath(const char *Name) const;
+   std::string GetProgramPath(const char *Name) const;
+ 
++  /// Returns the linker path, respecting the -fuse-ld= argument to determine
++  /// the linker suffix or name.
++  std::string GetLinkerPath() const;
++
+   /// \brief Dispatch to the specific toolchain for verbose printing.
+   ///
+   /// This is used when handling the verbose option to print detailed,

@@ -1,0 +1,48 @@
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChain_cpp,v 1.1 2015/04/09 22:25:02 sthen Exp $
+
+r211785
+Implement the -fuse-ld= option.
+
+This commit implements the -fuse-ld= option, so that the user
+can specify -fuse-ld=bfd to use ld.bfd.
+
+--- tools/clang/lib/Driver/ToolChain.cpp.orig	Thu Feb 26 07:04:19 2015
++++ tools/clang/lib/Driver/ToolChain.cpp	Thu Feb 26 07:05:21 2015
+@@ -15,6 +15,7 @@
+ #include "clang/Driver/Options.h"
+ #include "clang/Driver/SanitizerArgs.h"
+ #include "clang/Driver/ToolChain.h"
++#include "llvm/ADT/SmallString.h"
+ #include "llvm/ADT/StringSwitch.h"
+ #include "llvm/Option/Arg.h"
+ #include "llvm/Option/ArgList.h"
+@@ -145,6 +146,29 @@ std::string ToolChain::GetFilePath(const char *Name) c
+ 
+ std::string ToolChain::GetProgramPath(const char *Name) const {
+   return D.GetProgramPath(Name, *this);
++}
++
++std::string ToolChain::GetLinkerPath() const {
++  if (Arg *A = Args.getLastArg(options::OPT_fuse_ld_EQ)) {
++    StringRef Suffix = A->getValue();
++
++    // If we're passed -fuse-ld= with no argument, or with the argument ld,
++    // then use whatever the default system linker is.
++    if (Suffix.empty() || Suffix == "ld")
++      return GetProgramPath("ld");
++
++    llvm::SmallString<8> LinkerName("ld.");
++    LinkerName.append(Suffix);
++
++    std::string LinkerPath(GetProgramPath(LinkerName.c_str()));
++    if (llvm::sys::fs::exists(LinkerPath))
++      return LinkerPath;
++
++    getDriver().Diag(diag::err_drv_invalid_linker_name) << A->getAsString(Args);
++    return "";
++  }
++
++  return GetProgramPath("ld");
+ }
+ 
+ types::ID ToolChain::LookupTypeForExtension(const char *Ext) const {

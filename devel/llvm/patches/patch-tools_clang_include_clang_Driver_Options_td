@@ -1,9 +1,15 @@
-$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.3 2014/06/13 22:29:40 brad Exp $
+$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.4 2015/04/09 22:25:02 sthen Exp $
 
 Alias the command line parameter -p to -pg.
 
+r211785
+Implement the -fuse-ld= option.
+
+This commit implements the -fuse-ld= option, so that the user
+can specify -fuse-ld=bfd to use ld.bfd.
+
 --- tools/clang/include/clang/Driver/Options.td.orig	Sun Mar  2 22:03:58 2014
-+++ tools/clang/include/clang/Driver/Options.td	Thu Jun  5 00:23:11 2014
++++ tools/clang/include/clang/Driver/Options.td	Thu Feb 26 07:03:04 2015
 @@ -253,7 +253,7 @@ def Qn : Flag<["-"], "Qn">;
  def Qunused_arguments : Flag<["-"], "Qunused-arguments">, Flags<[DriverOption, CoreOption]>,
    HelpText<"Don't emit warning for unused driver arguments">;
@@ -22,3 +28,12 @@ Alias the command line parameter -p to -pg.
  def pie : Flag<["-"], "pie">;
  def read__only__relocs : Separate<["-"], "read_only_relocs">;
  def remap : Flag<["-"], "remap">;
+@@ -1495,7 +1495,7 @@ def fprofile_dir : Joined<["-"], "fprofile-dir=">, Gro
+ 
+ defm profile_use : BooleanFFlag<"profile-use">, Group<clang_ignored_f_Group>;
+ def fprofile_use_EQ : Joined<["-"], "fprofile-use=">, Group<clang_ignored_f_Group>;
+-def fuse_ld_EQ : Joined<["-"], "fuse-ld=">, Group<clang_ignored_f_Group>;
++def fuse_ld_EQ : Joined<["-"], "fuse-ld=">, Group<f_Group>;
+ 
+ defm align_functions : BooleanFFlag<"align-functions">, Group<clang_ignored_f_Group>;
+ def falign_functions_EQ : Joined<["-"], "falign-functions=">, Group<clang_ignored_f_Group>;
