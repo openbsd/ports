@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2013/11/06 17:26:08 okan Exp $
+@comment $OpenBSD: PLIST,v 1.25 2015/04/09 15:37:08 okan Exp $
 @newgroup _mailman:504
 @newuser _mailman:504:_mailman:daemon:Mailing List Manager:${PREFIX}/lib/mailman:/sbin/nologin
 @extraunexec rm -fr /var/spool/mailman/*
@@ -610,6 +610,7 @@ lib/mailman/messages/sr/LC_MESSAGES/
 @mode
 lib/mailman/messages/sr/LC_MESSAGES/mailman.mo
 lib/mailman/messages/sr/LC_MESSAGES/mailman.po
+lib/mailman/messages/sr/README.sr
 @mode 775
 lib/mailman/messages/sv/
 lib/mailman/messages/sv/LC_MESSAGES/
@@ -993,6 +994,7 @@ lib/mailman/templates/el/verify.txt
 @mode 775
 lib/mailman/templates/en/
 @mode
+lib/mailman/templates/en/adminaddrchgack.txt
 lib/mailman/templates/en/admindbdetails.html
 lib/mailman/templates/en/admindbpreamble.html
 lib/mailman/templates/en/admindbsummary.html
@@ -1477,6 +1479,7 @@ lib/mailman/templates/hu/verify.txt
 @mode 775
 lib/mailman/templates/ia/
 @mode
+lib/mailman/templates/ia/adminaddrchgack.txt
 lib/mailman/templates/ia/admindbdetails.html
 lib/mailman/templates/ia/admindbpreamble.html
 lib/mailman/templates/ia/admindbsummary.html
@@ -1972,6 +1975,7 @@ lib/mailman/templates/ro/verify.txt
 @mode 775
 lib/mailman/templates/ru/
 @mode
+lib/mailman/templates/ru/adminaddrchgack.txt
 lib/mailman/templates/ru/admindbdetails.html
 lib/mailman/templates/ru/admindbpreamble.html
 lib/mailman/templates/ru/admindbsummary.html
@@ -2501,6 +2505,7 @@ lib/mailman/tests/bounces/simple_36.txt
 lib/mailman/tests/bounces/simple_37.txt
 lib/mailman/tests/bounces/simple_38.txt
 lib/mailman/tests/bounces/simple_39.txt
+lib/mailman/tests/bounces/simple_40.txt
 lib/mailman/tests/bounces/sina_01.txt
 lib/mailman/tests/bounces/smtp32_01.txt
 lib/mailman/tests/bounces/smtp32_02.txt
@@ -2572,7 +2577,5 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/mailman/
 share/examples/mailman/sitelist.cfg
 @sample /var/spool/mailman/data/sitelist.cfg
-@exec ln -sf %D/lib/mailman/mail/mailman /usr/libexec/sm.bin/mailman
-@unexec-delete rm -f /usr/libexec/sm.bin/mailman
 @extra /var/cron/tabs/_mailman
 @rcscript ${RCDIR}/mailman

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Mailman_Defaults_py_in,v 1.12 2013/11/06 17:26:08 okan Exp $
---- Mailman/Defaults.py.in.orig	Thu Oct 17 00:11:34 2013
-+++ Mailman/Defaults.py.in	Mon Oct 21 08:00:02 2013
-@@ -521,7 +521,22 @@ SMTPPORT = 0                                      # de
+$OpenBSD: patch-Mailman_Defaults_py_in,v 1.13 2015/04/09 15:37:08 okan Exp $
+--- Mailman/Defaults.py.in.orig	Sat Feb 28 11:41:04 2015
++++ Mailman/Defaults.py.in	Sun Mar 22 11:55:07 2015
+@@ -539,7 +539,22 @@ SMTPPORT = 0                                      # de
  
  # Command for direct command pipe delivery to sendmail compatible program,
  # when DELIVERY_MODULE is 'Sendmail'.

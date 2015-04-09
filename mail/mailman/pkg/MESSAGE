@@ -1,3 +1,0 @@
-If you are upgrading from mailman 2.0.x make sure to read
-${PREFIX}/share/doc/mailman/UPGRADING and run 
-${PREFIX}/lib/mailman/bin/update as root.

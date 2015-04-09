@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.80 2014/11/22 22:56:42 ian Exp $
+# $OpenBSD: Makefile,v 1.81 2015/04/09 15:37:08 okan Exp $
 
 COMMENT=	mailing list manager with web interface
 
-DISTNAME=	mailman-2.1.17
-REVISION=	0
+DISTNAME=	mailman-2.1.20
 CATEGORIES=	mail www
 
 HOMEPAGE=	https://www.gnu.org/software/mailman/
@@ -16,6 +15,9 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mailman/}
 EXTRACT_SUFX=		.tgz
 
 MODULES=		lang/python
+
+BUILD_DEPENDS=		net/py-dnspython
+RUN_DEPENDS=		net/py-dnspython
 
 NO_TEST=		Yes
 
@@ -52,7 +54,6 @@ CONFIGURE_ARGS+=--with-mail-gid=_smtpd
 SCRIPTS=	Mailman/Archiver/pipermail.py \
 		Mailman/Post.py \
 		bin/msgfmt.py \
-		templates/ru/s2s.py \
 		tests/onebounce.py
 
 pre-configure:

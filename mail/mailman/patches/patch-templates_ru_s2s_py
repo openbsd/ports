@@ -1,9 +1,0 @@
-$OpenBSD: patch-templates_ru_s2s_py,v 1.1 2008/07/09 19:30:24 wcmaier Exp $
---- templates/ru/s2s.py.orig	Thu Oct 10 19:25:58 2002
-+++ templates/ru/s2s.py	Wed Jul  9 13:13:53 2008
-@@ -1,4 +1,4 @@
--#! /usr/bin/python
-+#!${MODPY_BIN}
- 
- # A simple script to check the status of the translation.
- 

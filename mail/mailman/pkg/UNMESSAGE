@@ -1,4 +1,4 @@
-If you don't delete user _mailman, make sure to remove his crontab
+If you don't delete user _mailman, make sure to remove the crontab
 entries with:
 
     crontab -u _mailman -r
