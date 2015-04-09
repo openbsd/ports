@@ -1,4 +1,4 @@
 SHA256 (pypy/pypy-2.5.1-src.tar.bz2) = 3bOlgLHumcWmmRctdL6Rw23amjiUbUcx2MamMSCjuio=
-SHA256 (pypy/pypy-bootstrap-amd64-2.5.1.tar.xz) = NXLoZe2X8R2K1FlT3mMu3axLdLf8xSb7KVIZhTuwiKs=
+SHA256 (pypy/pypy-bootstrap-amd64-2.5.1-1.tar.xz) = fZCf4upTxye9cvYSiYHJCk27kfLcvIzQJT2vJPq90zM=
 SIZE (pypy/pypy-2.5.1-src.tar.bz2) = 16740876
-SIZE (pypy/pypy-bootstrap-amd64-2.5.1.tar.xz) = 21646652
+SIZE (pypy/pypy-bootstrap-amd64-2.5.1-1.tar.xz) = 21629452
