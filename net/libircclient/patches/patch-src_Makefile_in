@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.4 2015/04/09 07:51:44 sthen Exp $
+--- src/Makefile.in.orig	Thu Apr  9 07:58:09 2015
++++ src/Makefile.in	Thu Apr  9 07:58:59 2015
+@@ -27,7 +27,7 @@ install:
+ 	ln -fs libircclient.so.$(APIVERSION) $(DESTDIR)@libdir@/libircclient.so
+ 
+ libircclient.so: libircclient.o
+-	$(CC) -shared -s -Wl,-soname,libircclient.so.$(APIVERSION) -o libircclient.so libircclient.o @LIBS@
++	$(CC) -shared -s -lpthread -Wl,-soname,libircclient.so.$(APIVERSION) -o libircclient.so libircclient.o @LIBS@
+ 
+ libircclient.dll: libircclient.o
+ 	$(CC) -shared -s -o libircclient.dll -Wl,-out-implib,libircclient.lib libircclient.o libircclient.def -lkernel32 -lwsock32 @LIBS@

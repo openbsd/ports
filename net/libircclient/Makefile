@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/05 23:31:08 stsp Exp $ 
+# $OpenBSD: Makefile,v 1.7 2015/04/09 07:51:43 sthen Exp $ 
 
 COMMENT =		library which implements the IRC protocol
 DISTNAME =		libircclient-1.8
+REVISION =		0
 CATEGORIES =		net
 HOMEPAGE =		http://www.ulduzsoft.com/linux/libircclient/
 
@@ -10,7 +11,7 @@ SHARED_LIBS =		ircclient 1.0
 # LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += crypto ssl
+WANTLIB += crypto pthread ssl
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libircclient/}
 
