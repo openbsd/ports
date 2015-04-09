@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/09 11:28:24 jca Exp $
+@bin bin/psl
+include/libpsl.h
+lib/libpsl.a
+lib/libpsl.la
+@lib lib/libpsl.so.${LIBpsl_VERSION}
+lib/pkgconfig/libpsl.pc
+share/libpsl/
+share/libpsl/effective_tld_names.dat
+share/libpsl/test_psl.txt

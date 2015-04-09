@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_psl_c,v 1.1.1.1 2015/04/09 11:28:24 jca Exp $
+
+Missing includes for in6_addr / AF_INET*.
+
+--- src/psl.c.orig	Mon Jan  5 01:08:54 2015
++++ src/psl.c	Mon Jan  5 01:10:16 2015
+@@ -59,6 +59,10 @@
+ #	define ngettext(STRING1,STRING2,N) STRING2
+ #endif
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

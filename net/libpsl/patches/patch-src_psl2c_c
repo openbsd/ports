@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_psl2c_c,v 1.1.1.1 2015/04/09 11:28:24 jca Exp $
+
+Use sha1(1) from base.
+
+--- src/psl2c.c.orig	Sat Feb 21 18:30:52 2015
++++ src/psl2c.c	Mon Apr  6 10:36:35 2015
+@@ -167,7 +167,7 @@ int main(int argc, const char **argv)
+ 		_print_psl_entries(fpout, psl->suffixes, "suffixes");
+ 		_print_psl_entries(fpout, psl->suffix_exceptions, "suffix_exceptions");
+ 
+-		snprintf(cmd, cmdsize, "sha1sum %s", argv[1]);
++		snprintf(cmd, cmdsize, "sha1 -q %s; echo -n \"  %s\"", argv[1]);
+ 		if ((pp = popen(cmd, "r"))) {
+ 			if (fscanf(pp, "%63[0-9a-zA-Z]", checksum) < 1)
+ 				*checksum = 0;

@@ -1,0 +1,15 @@
+$OpenBSD: patch-autogen_sh,v 1.1.1.1 2015/04/09 11:28:24 jca Exp $
+
+Don't pick up gtk-doc
+
+--- autogen.sh.orig	Sat Feb 21 18:30:52 2015
++++ autogen.sh	Mon Apr  6 10:37:21 2015
+@@ -9,7 +9,7 @@ fi
+ # create m4 before gtkdocize
+ mkdir m4 2>/dev/null
+ 
+-GTKDOCIZE=`which gtkdocize 2>/dev/null`
++GTKDOCIZE=`false`
+ if test $? -ne 0; then
+   echo "No gtk-doc support found. You can't build the docs."
+   # rm because gtk-doc.make might be a link to a protected file
