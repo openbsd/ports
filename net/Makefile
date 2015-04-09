@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.895 2015/04/06 14:53:03 stsp Exp $
+# $OpenBSD: Makefile,v 1.896 2015/04/09 11:30:59 jca Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -199,6 +199,7 @@
      SUBDIR += liboping
      SUBDIR += libpcapnav
      SUBDIR += libproxy,
+     SUBDIR += libpsl
      SUBDIR += librest
      SUBDIR += librsync
      SUBDIR += libshout
