@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.116 2014/07/13 20:03:51 brad Exp $
+# $OpenBSD: Makefile,v 1.117 2015/04/09 20:59:31 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.6
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -29,7 +30,12 @@ WANTLIB=	FLAC GL GLU ICE SDL SM X11 Xext Xinerama Xv XvMCW a52 avcodec \
 XINEAPI_REV=	2.5
 SUBST_VARS+=	XINEAPI_REV
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		lang/clang
+
+MODCLANG_ARCHS=	amd64 i386
+
+BUILD_DEPENDS=	textproc/xmlto
 LIB_DEPENDS=	audio/faad \
 		audio/flac \
 		audio/liba52 \

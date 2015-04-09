@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_post_planar_eq2_c,v 1.1 2015/04/09 20:59:31 sthen Exp $
+
+Revert part of 12593:f7c8f59bf518.
+
+--- src/post/planar/eq2.c.orig	Wed Nov  5 00:52:58 2014
++++ src/post/planar/eq2.c	Wed Nov  5 00:53:36 2014
+@@ -129,7 +129,7 @@ void affine_1d_MMX (eq2_param_t *par, unsigned char *d
+     "movq (%1), %%mm4 \n\t"
+     "pxor %%mm0, %%mm0 \n\t"
+     :
+-    : "g" (brvec), "g" (contvec)
++    : "r" (brvec), "r" (contvec)
+   );
+ 
+   while (h-- > 0) {
