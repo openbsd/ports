@@ -1,0 +1,14 @@
+$OpenBSD: patch-iodev_hdimage_hdimage_cc,v 1.1 2015/04/09 20:09:35 sthen Exp $
+
+Fixed bximage compilation on big endian hosts.
+
+--- iodev/hdimage/hdimage.cc.orig	Fri Mar 20 18:59:32 2015
++++ iodev/hdimage/hdimage.cc	Fri Mar 20 18:59:58 2015
+@@ -28,6 +28,7 @@
+ #include "config.h"
+ #include "misc/bxcompat.h"
+ #include "osdep.h"
++#include "misc/bswap.h"
+ #else
+ #include "iodev.h"
+ #include "cdrom.h"
