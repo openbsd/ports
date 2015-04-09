@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.5 2015/02/03 13:24:19 pascal Exp $
+# $OpenBSD: Makefile,v 1.6 2015/04/09 17:20:50 pascal Exp $
 
-ONLY_FOR_ARCHS =	amd64 arm i386 mips64el
+# theoretically supported by dyncall; mips* doesn't have libatomic_ops
+ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc sparc64
 
-SHARED_ONLY =		Yes
-BROKEN-arm =		missing atomic ops
+BROKEN-arm =		missing atomic ops (both AO_* and gcc builtin)
+BROKEN-sparc64 =	undefined reference to `AO_fetch_compare_and_swap_full'
 
 COMMENT =		virtual machine for nqp/rakudo
 
-V =			2015.01
+V =			2015.03
 DISTNAME =		MoarVM-$V
 PKGNAME =		moarvm-$V
 
-SHARED_LIBS =		moar	1.0
+SHARED_LIBS =		moar	2.0
 
 CATEGORIES =		lang
 

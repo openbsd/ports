@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/02/03 13:24:19 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/04/09 17:20:51 pascal Exp $
 @bin bin/moar
 include/dyncall/
 include/dyncall/dyncall.h
@@ -9,6 +9,7 @@ include/dyncall/dyncall_args_arm32_arm.h
 include/dyncall/dyncall_args_arm32_thumb.h
 include/dyncall/dyncall_args_mips.h
 include/dyncall/dyncall_args_ppc32.h
+include/dyncall/dyncall_args_ppc64.h
 include/dyncall/dyncall_args_sparc32.h
 include/dyncall/dyncall_args_sparc64.h
 include/dyncall/dyncall_args_x64.h
@@ -16,12 +17,14 @@ include/dyncall/dyncall_args_x86.h
 include/dyncall/dyncall_call_arm32_arm.h
 include/dyncall/dyncall_call_arm32_arm_armhf.h
 include/dyncall/dyncall_call_arm32_thumb.h
+include/dyncall/dyncall_call_arm64.h
 include/dyncall/dyncall_call_mips.h
 include/dyncall/dyncall_call_mips_eabi.h
 include/dyncall/dyncall_call_mips_n32.h
 include/dyncall/dyncall_call_mips_n64.h
 include/dyncall/dyncall_call_mips_o32.h
 include/dyncall/dyncall_call_ppc32.h
+include/dyncall/dyncall_call_ppc64.h
 include/dyncall/dyncall_call_sparc.h
 include/dyncall/dyncall_call_sparc64.h
 include/dyncall/dyncall_call_sparc_v9.h
@@ -32,6 +35,7 @@ include/dyncall/dyncall_callback_arm32_arm.h
 include/dyncall/dyncall_callback_arm32_thumb.h
 include/dyncall/dyncall_callback_mips.h
 include/dyncall/dyncall_callback_ppc32.h
+include/dyncall/dyncall_callback_ppc64.h
 include/dyncall/dyncall_callback_sparc32.h
 include/dyncall/dyncall_callback_x64.h
 include/dyncall/dyncall_callback_x86.h
@@ -40,11 +44,13 @@ include/dyncall/dyncall_callvm.h
 include/dyncall/dyncall_callvm_arm32_arm.h
 include/dyncall/dyncall_callvm_arm32_arm_armhf.h
 include/dyncall/dyncall_callvm_arm32_thumb.h
+include/dyncall/dyncall_callvm_arm64.h
 include/dyncall/dyncall_callvm_mips.h
 include/dyncall/dyncall_callvm_mips_eabi.h
 include/dyncall/dyncall_callvm_mips_n64.h
 include/dyncall/dyncall_callvm_mips_o32.h
 include/dyncall/dyncall_callvm_ppc32.h
+include/dyncall/dyncall_callvm_ppc64.h
 include/dyncall/dyncall_callvm_sparc.h
 include/dyncall/dyncall_callvm_sparc64.h
 include/dyncall/dyncall_callvm_sparc_v9.h
@@ -57,8 +63,10 @@ include/dyncall/dyncall_struct.h
 include/dyncall/dyncall_thunk.h
 include/dyncall/dyncall_thunk_arm32_arm.h
 include/dyncall/dyncall_thunk_arm32_thumb.h
+include/dyncall/dyncall_thunk_arm64.h
 include/dyncall/dyncall_thunk_mips.h
 include/dyncall/dyncall_thunk_ppc32.h
+include/dyncall/dyncall_thunk_ppc64.h
 include/dyncall/dyncall_thunk_sparc32.h
 include/dyncall/dyncall_thunk_sparc64.h
 include/dyncall/dyncall_thunk_x64.h
@@ -130,6 +138,7 @@ include/moar/6model/reprs/MVMString.h
 include/moar/6model/reprs/MVMThread.h
 include/moar/6model/reprs/NFA.h
 include/moar/6model/reprs/NativeCall.h
+include/moar/6model/reprs/NativeRef.h
 include/moar/6model/reprs/P6bigint.h
 include/moar/6model/reprs/P6int.h
 include/moar/6model/reprs/P6num.h
