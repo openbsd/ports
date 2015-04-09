@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2013/10/11 20:39:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2015/04/09 15:21:19 naddy Exp $
 
 COMMENT=	Mr Do video arcade game for X11
 
 V=		4.04
 DISTNAME=	xmris.${V}
 PKGNAME=	xmris-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
@@ -29,6 +29,5 @@ MAKE_FLAGS=	XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults \
 ALL_TARGET=	xmris xmred xmris._man xmred._man
 
 NO_TEST=	Yes
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

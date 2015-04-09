@@ -1,0 +1,22 @@
+$OpenBSD: patch-xmred_man,v 1.1 2015/04/09 15:21:20 naddy Exp $
+--- xmred.man.orig	Fri Dec 22 13:08:24 1995
++++ xmred.man	Thu Apr  9 17:14:59 2015
+@@ -1,5 +1,5 @@
+-. Copyright (C) 1993 Nathan Sidwell
+-. RCS $Id: patch-xmred_man,v 1.1 2015/04/09 15:21:20 naddy Exp $
++.\" Copyright (C) 1993 Nathan Sidwell
++.\" RCS $Id: patch-xmred_man,v 1.1 2015/04/09 15:21:20 naddy Exp $
+ .TH XMRED 6 "20 December 1993" "X Version 11"
+ .IX xmred#(n) "" "\fLxmred\fP(n)"
+ .SH NAME
+@@ -69,8 +69,8 @@ on a garden. Cherries may be located anywhere on the b
+ This controls where the initial path is. Each location on the board consists
+ of a centre and four edges. Depending on the exact location of the pointer,
+ you will select either the centre, or an edge. Filling a path will place a
+-random apple in the filled location. The four locations immediately below the
+-'EXTRA' letters must be clear.
++random apple in the filled location. The four locations immediately below
++the 'EXTRA' letters must be clear.
+ .TP
+ .B Player
+ This controls where the player starts from. There must be exactly one
