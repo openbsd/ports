@@ -1,27 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/06/02 14:02:59 pascal Exp $
-@bin bin/nqp
-include/parrot/${PARROT_VERSION}/dynpmc/pmc_nqplexinfo.h
-include/parrot/${PARROT_VERSION}/dynpmc/pmc_nqplexpad.h
-include/parrot/${PARROT_VERSION}/dynpmc/pmc_ownedhash.h
-include/parrot/${PARROT_VERSION}/dynpmc/pmc_ownedresizablepmcarray.h
-include/parrot/${PARROT_VERSION}/dynpmc/pmc_qrpa.h
-include/parrot/${PARROT_VERSION}/dynpmc/pmc_serializationcontext.h
-include/parrot/${PARROT_VERSION}/dynpmc/pmc_sixmodelobject.h
-include/parrot/${PARROT_VERSION}/dynpmc/pmc_stable.h
-lib/parrot/${PARROT_VERSION}/dynext/nqp_bigint_ops.so
-lib/parrot/${PARROT_VERSION}/dynext/nqp_dyncall_ops.so
-lib/parrot/${PARROT_VERSION}/dynext/nqp_group.so
-lib/parrot/${PARROT_VERSION}/dynext/nqp_ops.so
-lib/parrot/${PARROT_VERSION}/include/nqp_const.pir
-lib/parrot/${PARROT_VERSION}/languages/nqp/
-lib/parrot/${PARROT_VERSION}/languages/nqp/lib/
-lib/parrot/${PARROT_VERSION}/languages/nqp/lib/NQPCORE.setting.pbc
-lib/parrot/${PARROT_VERSION}/languages/nqp/lib/NQPHLL.pbc
-lib/parrot/${PARROT_VERSION}/languages/nqp/lib/NQPP5QRegex.pbc
-lib/parrot/${PARROT_VERSION}/languages/nqp/lib/NQPP6QRegex.pbc
-lib/parrot/${PARROT_VERSION}/languages/nqp/lib/QAST.pbc
-lib/parrot/${PARROT_VERSION}/languages/nqp/lib/QASTNode.pbc
-lib/parrot/${PARROT_VERSION}/languages/nqp/lib/QRegex.pbc
-lib/parrot/${PARROT_VERSION}/languages/nqp/lib/nqp.pbc
-lib/parrot/${PARROT_VERSION}/languages/nqp/lib/nqpmo.pbc
-lib/parrot/${PARROT_VERSION}/library/ModuleLoader.pbc
+@comment $OpenBSD: PLIST,v 1.5 2015/04/09 17:28:23 pascal Exp $
+bin/nqp-m
+share/nqp/lib/MASTNodes.moarvm
+share/nqp/lib/MASTOps.moarvm
+share/nqp/lib/ModuleLoader.moarvm
+share/nqp/lib/NQPCORE.setting.moarvm
+share/nqp/lib/NQPHLL.moarvm
+share/nqp/lib/NQPP5QRegex.moarvm
+share/nqp/lib/NQPP6QRegex.moarvm
+share/nqp/lib/QAST.moarvm
+share/nqp/lib/QASTNode.moarvm
+share/nqp/lib/QRegex.moarvm
+share/nqp/lib/nqp.moarvm
+share/nqp/lib/nqpmo.moarvm
+share/nqp/lib/profiler/
+share/nqp/lib/profiler/template.html

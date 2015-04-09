@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_build_Makefile-common_in,v 1.1 2015/04/09 17:28:23 pascal Exp $
+
+https://github.com/perl6/nqp/commit/8564111fd25be22c7789adb8867567732b58e626
+
+--- tools/build/Makefile-common.in.orig	Thu Mar 19 23:32:24 2015
++++ tools/build/Makefile-common.in	Thu Mar 26 10:58:27 2015
+@@ -99,7 +99,7 @@ RM_RF         = $(PERL) -MExtUtils::Command -e rm_rf
+ 
+ PREFIX          = @prefix@
+ BIN_DIR         = $(PREFIX)/bin
+-NQP_LANG_DIR    = $(PREFIX)/languages/nqp
++NQP_LANG_DIR    = $(PREFIX)/share/nqp
+ NQP_LIB_DIR     = $(NQP_LANG_DIR)/lib
+ PROVE           = prove
+ 

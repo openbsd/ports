@@ -1,9 +1,9 @@
-This is "Not Quite Perl" -- a compiler for quickly generating PIR
-routines from Perl6-like code.  The key feature of NQP is that it's
-designed to be a very small compiler (as compared with, say, perl6
-or Rakudo) and is focused on being a high-level way to create
-compilers and libraries for virtual machines (such as the Parrot
-Virtual Machine).  Unlike a full-fledged implementation of Perl 6,
-NQP strives to have as small a runtime footprint as it can, while
-still providing a Perl 6 object model and regular expression engine
-for the virtual machine.
+This is "Not Quite Perl" -- a lightweight Perl 6-like environment
+for virtual machines.  The key feature of NQP is that it's designed
+to be a very small environment (as compared with, say, perl6 or
+Rakudo) and is focused on being a high-level way to create compilers
+and libraries for virtual machines (such as the Parrot Virtual
+Machine, the JVM, and MoarVM).  Unlike a full-fledged implementation
+of Perl 6, NQP strives to have as small a runtime footprint as it
+can, while still providing a Perl 6 object model and regular
+expression engine for the virtual machine.

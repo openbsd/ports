@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_vm_moar_HLL_Backend_nqp,v 1.1 2015/04/09 17:28:23 pascal Exp $
+
+https://github.com/perl6/nqp/commit/8564111fd25be22c7789adb8867567732b58e626
+
+--- src/vm/moar/HLL/Backend.nqp.orig	Thu Mar 19 23:32:24 2015
++++ src/vm/moar/HLL/Backend.nqp	Thu Mar 26 10:58:27 2015
+@@ -137,7 +137,7 @@ class HLL::Backend::MoarVM {
+         # Insert it into a template and write it.
+         my $template := try slurp('src/vm/moar/profiler/template.html');
+         unless $template {
+-            $template := slurp(nqp::backendconfig()<prefix> ~ '/languages/nqp/lib/profiler/template.html');
++            $template := slurp(nqp::backendconfig()<prefix> ~ '/share/nqp/lib/profiler/template.html');
+         }
+         my $results  := subst($template, /'{{{PROFIELR_OUTPUT}}}'/, $json);
+         if nqp::defined($filename) {
