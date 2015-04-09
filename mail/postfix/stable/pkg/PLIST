@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2014/01/21 23:52:23 brad Exp $
+@comment $OpenBSD: PLIST,v 1.34 2015/04/09 19:49:59 sthen Exp $
 @conflict postfix-*
 @pkgpath mail/postfix/stable,sqlite
 @newgroup _postfix:507
@@ -19,15 +19,12 @@ libexec/postfix/
 @bin libexec/postfix/flush
 @bin libexec/postfix/lmtp
 @bin libexec/postfix/local
-libexec/postfix/main.cf
 @bin libexec/postfix/master
-libexec/postfix/master.cf
 @bin libexec/postfix/nqmgr
 @bin libexec/postfix/oqmgr
 @bin libexec/postfix/pickup
 @bin libexec/postfix/pipe
 libexec/postfix/post-install
-libexec/postfix/postfix-files
 libexec/postfix/postfix-script
 libexec/postfix/postfix-wrapper
 libexec/postfix/postmulti-script
@@ -333,8 +330,12 @@ share/examples/postfix/generic
 share/examples/postfix/header_checks
 share/examples/postfix/main.cf
 share/examples/postfix/main.cf.default
+share/examples/postfix/main.cf.proto
 share/examples/postfix/makedefs.out
 share/examples/postfix/master.cf
+share/examples/postfix/master.cf.proto
+share/examples/postfix/postfix-files
+@comment share/examples/postfix/postfix-files.d/
 share/examples/postfix/relocated
 share/examples/postfix/transport
 share/examples/postfix/virtual

@@ -1,7 +1,7 @@
-$OpenBSD: patch-conf_main_cf,v 1.5 2013/04/30 11:28:02 sthen Exp $
---- conf/main.cf.orig	Thu Nov 17 18:23:48 2011
-+++ conf/main.cf	Mon Apr 29 16:09:56 2013
-@@ -114,6 +114,9 @@ mail_owner = postfix
+$OpenBSD: patch-conf_main_cf,v 1.6 2015/04/09 19:49:59 sthen Exp $
+--- conf/main.cf.orig	Thu Oct  9 19:46:44 2014
++++ conf/main.cf	Thu Mar 12 01:12:07 2015
+@@ -133,6 +133,9 @@ mail_owner = postfix
  #inet_interfaces = $myhostname
  #inet_interfaces = $myhostname, localhost
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-conf_main_cf,v 1.5 2013/04/30 11:28:02 sthen Exp $
  # The proxy_interfaces parameter specifies the network interface
  # addresses that this mail system receives mail on by way of a
  # proxy or network address translation unit. This setting extends
-@@ -654,4 +657,3 @@ sample_directory =
+@@ -673,4 +676,3 @@ sample_directory =
  # readme_directory: The location of the Postfix README files.
  #
  readme_directory =
