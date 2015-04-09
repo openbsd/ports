@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2014/12/12 19:44:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2015/04/09 14:58:28 naddy Exp $
 
 ONLY_FOR_ARCHS= i386
 
 COMMENT=	color QuickCam control program
 
 DISTNAME=	cqcam-0.91
-REVISION=	6
+REVISION=	7
 CATEGORIES=	graphics
 
 # GPLv2
@@ -39,6 +39,5 @@ post-install:
 		${PREFIX}/share/examples/cqcam/dot.cqcrc
 	${INSTALL_DATA} ${WRKSRC}/webcam/nph-webcam \
 		${PREFIX}/share/examples/cqcam/nph-webcam
-	ln -f ${PREFIX}/man/man1/cqcam.1 ${PREFIX}/man/man1/webcam.1
 
 .include <bsd.port.mk>
