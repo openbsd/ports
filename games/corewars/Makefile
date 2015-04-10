@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2015/04/10 14:43:49 naddy Exp $
 
 COMMENT=	computer simulation game
 
@@ -27,7 +27,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=corewars/}
 
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=autoconf
-USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/corewars

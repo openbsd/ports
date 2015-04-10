@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/10/13 19:04:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2015/04/10 14:43:49 naddy Exp $
 
 COMMENT=	powerful programming editor
 
@@ -21,7 +21,6 @@ DESTDIRNAME=	none
 MAKE_FLAGS=	CFLAGS='${CFLAGS} -I${X11BASE}/include'
 FAKE_FLAGS=	prefix=${WRKINST}${PREFIX} MANDIR=${WRKINST}${PREFIX}/man
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>
