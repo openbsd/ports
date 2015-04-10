@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/17 17:16:47 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/10 19:27:41 pascal Exp $
+
+PORTROACH =		limitw:1,even
 
 SHARED_ONLY =		Yes
 
