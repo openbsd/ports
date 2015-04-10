@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2014/11/12 02:35:29 juanfra Exp $
+# $OpenBSD: Makefile,v 1.21 2015/04/10 16:45:12 juanfra Exp $
+
+# Racket devs use something like "6.1.90.900" for pre-release versions
+PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
 
 BROKEN-hppa =		segfault while racket compiles XFORMS (at xsrc)
 BROKEN-mips64el =	sigbus while racket compiles XFORMS (at xsrc)
