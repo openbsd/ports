@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/12/16 09:55:55 pea Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/04/10 07:11:06 landry Exp $
 dokuwiki/
 dokuwiki/.htaccess.dist
 @sample dokuwiki/.htaccess
@@ -56,6 +56,8 @@ dokuwiki/data/media_meta/_dummy
 dokuwiki/data/meta/
 dokuwiki/data/meta/_dummy
 dokuwiki/data/pages/
+dokuwiki/data/pages/playground/
+dokuwiki/data/pages/playground/playground.txt
 dokuwiki/data/pages/wiki/
 dokuwiki/data/pages/wiki/dokuwiki.txt
 dokuwiki/data/pages/wiki/syntax.txt
