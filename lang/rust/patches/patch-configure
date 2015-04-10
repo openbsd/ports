@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2015/04/10 18:13:06 naddy Exp $
+Remove requirement for curl or wget.
+The snapshot isn't downloaded but copied by post-configure.
+--- configure.orig     Fri Apr 10 18:59:58 2015
++++ configure  Fri Apr 10 19:26:19 2015
+@@ -643,7 +643,7 @@ putvar CFG_BOOTSTRAP_KEY
+ 
+ step_msg "looking for build programs"
+ 
+-probe_need CFG_CURLORWGET  curl wget
++probe CFG_CURLORWGET  curl wget
+ probe_need CFG_PYTHON      python2.7 python2.6 python2 python
+ 
+ python_version=$($CFG_PYTHON -V 2>&1)
