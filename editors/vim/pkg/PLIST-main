@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2014/09/07 19:24:48 chrisz Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2015/04/10 12:25:46 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -370,6 +370,7 @@ share/vim/${P}/ftplugin/jsp.vim
 share/vim/${P}/ftplugin/kconfig.vim
 share/vim/${P}/ftplugin/kwt.vim
 share/vim/${P}/ftplugin/ld.vim
+share/vim/${P}/ftplugin/less.vim
 share/vim/${P}/ftplugin/lftp.vim
 share/vim/${P}/ftplugin/libao.vim
 share/vim/${P}/ftplugin/limits.vim
@@ -537,6 +538,7 @@ share/vim/${P}/indent/javascript.vim
 share/vim/${P}/indent/json.vim
 share/vim/${P}/indent/jsp.vim
 share/vim/${P}/indent/ld.vim
+share/vim/${P}/indent/less.vim
 share/vim/${P}/indent/lifelines.vim
 share/vim/${P}/indent/liquid.vim
 share/vim/${P}/indent/lisp.vim
@@ -1023,6 +1025,7 @@ share/vim/${P}/syntax/latte.vim
 share/vim/${P}/syntax/ld.vim
 share/vim/${P}/syntax/ldapconf.vim
 share/vim/${P}/syntax/ldif.vim
+share/vim/${P}/syntax/less.vim
 share/vim/${P}/syntax/lex.vim
 share/vim/${P}/syntax/lftp.vim
 share/vim/${P}/syntax/lhaskell.vim
@@ -1245,6 +1248,7 @@ share/vim/${P}/syntax/sqlj.vim
 share/vim/${P}/syntax/sqloracle.vim
 share/vim/${P}/syntax/sqr.vim
 share/vim/${P}/syntax/squid.vim
+share/vim/${P}/syntax/srec.vim
 share/vim/${P}/syntax/sshconfig.vim
 share/vim/${P}/syntax/sshdconfig.vim
 share/vim/${P}/syntax/st.vim
@@ -1299,6 +1303,7 @@ share/vim/${P}/syntax/upstart.vim
 share/vim/${P}/syntax/upstreamdat.vim
 share/vim/${P}/syntax/upstreaminstalllog.vim
 share/vim/${P}/syntax/upstreamlog.vim
+share/vim/${P}/syntax/upstreamrpt.vim
 share/vim/${P}/syntax/usserverlog.vim
 share/vim/${P}/syntax/usw2kagtlog.vim
 share/vim/${P}/syntax/valgrind.vim
@@ -1379,5 +1384,4 @@ share/vim/vimfiles/
 share/vim/vimfiles/doc/
 share/vim/vimfiles/syntax/
 share/vim/vimfiles/syntax/openbsd.vim
-share/vim/vimfiles/syntax/pf.vim
 !%%no_x11%%

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_vim_h,v 1.4 2013/10/04 08:44:04 sthen Exp $
---- src/vim.h.orig	Fri Sep 20 19:13:53 2013
-+++ src/vim.h	Sat Sep 21 23:43:48 2013
-@@ -265,6 +265,7 @@
+$OpenBSD: patch-src_vim_h,v 1.5 2015/04/10 12:25:46 sthen Exp $
+--- src/vim.h.orig	Thu Apr  9 21:08:22 2015
++++ src/vim.h	Thu Apr  9 23:41:51 2015
+@@ -276,6 +276,7 @@
  # include "os_beos.h"
  # define __ARGS(x)  x
  #endif

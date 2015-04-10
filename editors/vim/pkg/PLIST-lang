@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lang,v 1.10 2014/09/07 19:24:48 chrisz Exp $
+@comment $OpenBSD: PLIST-lang,v 1.11 2015/04/10 12:25:46 sthen Exp $
 @conflict vim-<7.4
 man/fr/
 man/fr.ISO8859-1/
@@ -503,6 +503,7 @@ share/vim/${P}/tutor/tutor.sv
 share/vim/${P}/tutor/tutor.sv.utf-8
 share/vim/${P}/tutor/tutor.tr.iso9
 share/vim/${P}/tutor/tutor.tr.utf-8
+share/vim/${P}/tutor/tutor.uk.utf-8
 share/vim/${P}/tutor/tutor.vi.utf-8
 share/vim/${P}/tutor/tutor.zh.big5
 share/vim/${P}/tutor/tutor.zh.euc

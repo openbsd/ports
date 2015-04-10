@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.141 2015/02/16 22:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.142 2015/04/10 12:25:46 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-VERSION=	7.4.475
+VERSION=	7.4.692
 DISTNAME=	vim-${VERSION}
 PKGNAME-main=	vim-${VERSION}
 PKGNAME-lang=	vim-lang-${VERSION}
@@ -162,7 +162,7 @@ post-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vimfiles/{doc,syntax}
-	${INSTALL_DATA} ${FILESDIR}/pf.vim ${FILESDIR}/openbsd.vim \
+	${INSTALL_DATA} ${FILESDIR}/openbsd.vim \
 	    ${PREFIX}/share/vim/vimfiles/syntax/
 
 .if ! ${FLAVOR:Mno_x11}

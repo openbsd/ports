@@ -1,6 +1,6 @@
-$OpenBSD: patch-runtime_syntax_make_vim,v 1.4 2013/03/16 22:56:44 sthen Exp $
---- runtime/syntax/make.vim.orig	Thu Mar  7 15:08:35 2013
-+++ runtime/syntax/make.vim	Thu Mar  7 15:31:10 2013
+$OpenBSD: patch-runtime_syntax_make_vim,v 1.5 2015/04/10 12:25:46 sthen Exp $
+--- runtime/syntax/make.vim.orig	Thu Apr  9 21:08:22 2015
++++ runtime/syntax/make.vim	Thu Apr  9 23:48:04 2015
 @@ -26,6 +26,9 @@ syn match makeInclude	"^ *[-s]\=include"
  syn match makeStatement	"^ *vpath"
  syn match makeExport    "^ *\(export\|unexport\)\>"
@@ -20,8 +20,8 @@ $OpenBSD: patch-runtime_syntax_make_vim,v 1.4 2013/03/16 22:56:44 sthen Exp $
 +syn region makeIdent	start="^\. *for\> *"rs=e+1 end=" *\<in\>"he=s contains=makePreCondit
  syn match makeIdent	"\$\$\w*"
  syn match makeIdent	"\$[^({]"
--syn match makeIdent	"^ *\a\w*\s*[:+?!*]="me=e-2
--syn match makeIdent	"^ *\a\w*\s*="me=e-1
+-syn match makeIdent	"^ *[^:#= \t]*\s*[:+?!*]="me=e-2
+-syn match makeIdent	"^ *[^:#= \t]*\s*="me=e-1
 +syn match makeIdent	"^ *[A-Za-z_][-A-Z-a-z0-9_.]*\s*[:+?!][:+?!]="me=e-3
 +syn match makeIdent	"^ *[A-Za-z_][-A-Z-a-z0-9_.]*\s*[:+?!*]="me=e-2
 +syn match makeIdent	"^ *[A-Za-z_][-A-Z-a-z0-9_.]*\s*="me=e-1
@@ -36,13 +36,13 @@ $OpenBSD: patch-runtime_syntax_make_vim,v 1.4 2013/03/16 22:56:44 sthen Exp $
  syn match makeImplicit		"^\.[A-Za-z0-9_./\t -]\+\s*:$"me=e-1 nextgroup=makeSource
  syn match makeImplicit		"^\.[A-Za-z0-9_./\t -]\+\s*:[^=]"me=e-2 nextgroup=makeSource
  
- syn region makeTarget	transparent matchgroup=makeTarget start="^[A-Za-z0-9_./$()%-][A-Za-z0-9_./\t $()%-]*:\{1,2}[^:=]"rs=e-1 end=";"re=e-1,me=e-1 end="[^\\]$" keepend contains=makeIdent,makeSpecTarget,makeNextLine skipnl nextGroup=makeCommands
- syn match makeTarget		"^[A-Za-z0-9_./$()%*@-][A-Za-z0-9_./\t $()%*@-]*::\=\s*$" contains=makeIdent,makeSpecTarget skipnl nextgroup=makeCommands,makeCommandError
+ syn region makeTarget   transparent matchgroup=makeTarget start="^[~A-Za-z0-9_./$()%-][A-Za-z0-9_./\t $()%-]*:\{1,2}[^:=]"rs=e-1 end=";"re=e-1,me=e-1 end="[^\\]$" keepend contains=makeIdent,makeSpecTarget,makeNextLine,makeComment skipnl nextGroup=makeCommands
+ syn match makeTarget		"^[~A-Za-z0-9_./$()%*@-][A-Za-z0-9_./\t $()%*@-]*::\=\s*$" contains=makeIdent,makeSpecTarget,makeComment skipnl nextgroup=makeCommands,makeCommandError
  
--syn region makeSpecTarget	transparent matchgroup=makeSpecTarget start="^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\)\>\s*:\{1,2}[^:=]"rs=e-1 end="[^\\]$" keepend contains=makeIdent,makeSpecTarget,makeNextLine skipnl nextGroup=makeCommands
--syn match makeSpecTarget		"^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\)\>\s*::\=\s*$" contains=makeIdent skipnl nextgroup=makeCommands,makeCommandError
-+syn region makeSpecTarget	transparent matchgroup=makeSpecTarget start="^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\|MAIN\)\>\s*:\{1,2}[^:=]"rs=e-1 end="[^\\]$" keepend contains=makeIdent,makeSpecTarget,makeNextLine skipnl nextGroup=makeCommands
-+syn match makeSpecTarget		"^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\|MAIN\)\>\s*::\=\s*$" contains=makeIdent skipnl nextgroup=makeCommands,makeCommandError
+-syn region makeSpecTarget	transparent matchgroup=makeSpecTarget start="^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\)\>\s*:\{1,2}[^:=]"rs=e-1 end="[^\\]$" keepend contains=makeIdent,makeSpecTarget,makeNextLine,makeComment skipnl nextGroup=makeCommands
+-syn match makeSpecTarget		"^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\)\>\s*::\=\s*$" contains=makeIdent,makeComment skipnl nextgroup=makeCommands,makeCommandError
++syn region makeSpecTarget	transparent matchgroup=makeSpecTarget start="^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\|MAIN\)\>\s*:\{1,2}[^:=]"rs=e-1 end="[^\\]$" keepend contains=makeIdent,makeSpecTarget,makeNextLine,makeComment skipnl nextGroup=makeCommands
++syn match makeSpecTarget		"^\.\(SUFFIXES\|PHONY\|DEFAULT\|PRECIOUS\|IGNORE\|SILENT\|EXPORT_ALL_VARIABLES\|KEEP_STATE\|LIBPATTERNS\|NOTPARALLEL\|DELETE_ON_ERROR\|INTERMEDIATE\|POSIX\|SECONDARY\|MAIN\)\>\s*::\=\s*$" contains=makeIdent,makeComment skipnl nextgroup=makeCommands,makeCommandError
  
  syn match makeCommandError "^\s\+\S.*" contained
  syn region makeCommands start=";"hs=s+1 start="^\t" end="^[^\t#]"me=e-1,re=e-1 end="^$" contained contains=makeCmdNextLine,makeSpecial,makeComment,makeIdent,makePreCondit,makeDefine,makeDString,makeSString nextgroup=makeCommandError
