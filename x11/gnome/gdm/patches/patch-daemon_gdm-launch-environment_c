@@ -1,9 +1,14 @@
-$OpenBSD: patch-daemon_gdm-launch-environment_c,v 1.3 2015/04/03 18:39:06 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-launch-environment_c,v 1.4 2015/04/10 20:43:51 ajacoutot Exp $
 
 XXX fix+push upstream
 
---- daemon/gdm-launch-environment.c.orig	Fri Apr  3 20:27:26 2015
-+++ daemon/gdm-launch-environment.c	Fri Apr  3 20:27:38 2015
+From db9ee470fb16bddd4be9755e91130c4ef099566c Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Tue, 7 Apr 2015 10:57:36 -0400
+Subject: legacy-display: ensure X11 display device is propagated to launch environment
+
+--- daemon/gdm-launch-environment.c.orig	Tue Mar 10 12:46:40 2015
++++ daemon/gdm-launch-environment.c	Fri Apr 10 17:47:34 2015
 @@ -50,7 +50,7 @@
  #include "gdm-settings-direct.h"
  #include "gdm-settings-keys.h"
@@ -13,3 +18,12 @@ XXX fix+push upstream
  #define GNOME_SESSION_SESSIONS_PATH DATADIR "/gnome-session/sessions"
  
  extern char **environ;
+@@ -795,7 +795,7 @@ gdm_launch_environment_class_init (GdmLaunchEnvironmen
+                                                               "device",
+                                                               "device",
+                                                               NULL,
+-                                                              G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
++                                                              G_PARAM_READWRITE));
+         g_object_class_install_property (object_class,
+                                          PROP_X11_DISPLAY_IS_LOCAL,
+                                          g_param_spec_boolean ("x11-display-is-local",

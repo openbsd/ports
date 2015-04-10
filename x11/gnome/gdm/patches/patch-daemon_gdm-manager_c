@@ -1,9 +1,11 @@
-$OpenBSD: patch-daemon_gdm-manager_c,v 1.5 2015/04/03 18:39:06 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-manager_c,v 1.6 2015/04/10 20:43:51 ajacoutot Exp $
 
 XXX fix+push upstream
 
---- daemon/gdm-manager.c.orig	Fri Apr  3 20:28:07 2015
-+++ daemon/gdm-manager.c	Fri Apr  3 20:28:15 2015
+https://bugzilla.gnome.org/show_bug.cgi?id=747351
+
+--- daemon/gdm-manager.c.orig	Fri Apr 10 21:54:41 2015
++++ daemon/gdm-manager.c	Fri Apr 10 21:54:54 2015
 @@ -68,7 +68,7 @@
  #define CK_SEAT_INTERFACE    "org.freedesktop.ConsoleKit.Seat"
  #define CK_SESSION_INTERFACE "org.freedesktop.ConsoleKit.Session"
@@ -13,3 +15,16 @@ XXX fix+push upstream
  
  typedef struct
  {
+@@ -1705,10 +1705,11 @@ on_display_status_changed (GdmDisplay *display,
+ 
+         g_object_get (display,
+                       "is-local", &display_is_local,
+-                      "x11-display-number", &display_number,
+                       NULL);
+         quit_plymouth = display_is_local && manager->priv->plymouth_is_running;
+ #endif
++
++        g_object_get (display, "x11-display-number", &display_number, NULL);
+ 
+         status = gdm_display_get_status (display);
+ 

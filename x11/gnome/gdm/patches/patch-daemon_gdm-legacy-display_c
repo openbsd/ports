@@ -1,0 +1,31 @@
+$OpenBSD: patch-daemon_gdm-legacy-display_c,v 1.1 2015/04/10 20:43:51 ajacoutot Exp $
+
+From db9ee470fb16bddd4be9755e91130c4ef099566c Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Tue, 7 Apr 2015 10:57:36 -0400
+Subject: legacy-display: ensure X11 display device is propagated to launch environment
+
+--- daemon/gdm-legacy-display.c.orig	Tue Mar 10 12:46:40 2015
++++ daemon/gdm-legacy-display.c	Fri Apr 10 17:47:34 2015
+@@ -144,6 +144,21 @@ on_server_ready (GdmServer       *server,
+                 g_debug ("GdmDisplay: could not connect to display");
+                 gdm_display_unmanage (GDM_DISPLAY (self));
+         } else {
++                GdmLaunchEnvironment *launch_environment;
++                char *display_device;
++
++                display_device = gdm_server_get_display_device (server);
++
++                g_object_get (G_OBJECT (self),
++                              "launch-environment", &launch_environment,
++                              NULL);
++                g_object_set (G_OBJECT (launch_environment),
++                              "x11-display-device",
++                              display_device,
++                              NULL);
++                g_clear_pointer(&display_device, g_free);
++                g_clear_object (&launch_environment);
++
+                 g_debug ("GdmDisplay: connected to display");
+                 g_object_set (G_OBJECT (self), "status", GDM_DISPLAY_MANAGED, NULL);
+         }
