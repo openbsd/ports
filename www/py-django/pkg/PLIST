@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2015/03/15 07:15:09 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.24 2015/04/10 04:51:25 rpointel Exp $
 @comment bin/${LNAME}-admin
 bin/${LNAME}-admin.py
 lib/python${MODPY_VERSION}/site-packages/Django-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -7557,6 +7557,7 @@ share/doc/${LNAME}/releases/1.4.17.txt
 share/doc/${LNAME}/releases/1.4.18.txt
 share/doc/${LNAME}/releases/1.4.19.txt
 share/doc/${LNAME}/releases/1.4.2.txt
+share/doc/${LNAME}/releases/1.4.20.txt
 share/doc/${LNAME}/releases/1.4.3.txt
 share/doc/${LNAME}/releases/1.4.4.txt
 share/doc/${LNAME}/releases/1.4.5.txt
@@ -7580,6 +7581,7 @@ share/doc/${LNAME}/releases/1.5.9.txt
 share/doc/${LNAME}/releases/1.5.txt
 share/doc/${LNAME}/releases/1.6.1.txt
 share/doc/${LNAME}/releases/1.6.10.txt
+share/doc/${LNAME}/releases/1.6.11.txt
 share/doc/${LNAME}/releases/1.6.2.txt
 share/doc/${LNAME}/releases/1.6.3.txt
 share/doc/${LNAME}/releases/1.6.4.txt
@@ -7594,6 +7596,7 @@ share/doc/${LNAME}/releases/1.7.2.txt
 share/doc/${LNAME}/releases/1.7.3.txt
 share/doc/${LNAME}/releases/1.7.4.txt
 share/doc/${LNAME}/releases/1.7.5.txt
+share/doc/${LNAME}/releases/1.7.6.txt
 share/doc/${LNAME}/releases/${MODPY_EGG_VERSION}.txt
 share/doc/${LNAME}/releases/1.7.txt
 share/doc/${LNAME}/releases/index.txt
