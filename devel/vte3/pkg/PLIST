@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.23 2015/04/03 11:26:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2015/04/10 10:56:54 ajacoutot Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
+@bin bin/vte-${API_V}
 include/vte-${API_V}/
 include/vte-${API_V}/vte/
 include/vte-${API_V}/vte/vte.h
@@ -142,3 +143,4 @@ share/locale/xh/LC_MESSAGES/vte-${API_V}.mo
 share/locale/zh_CN/LC_MESSAGES/vte-${API_V}.mo
 share/locale/zh_HK/LC_MESSAGES/vte-${API_V}.mo
 share/locale/zh_TW/LC_MESSAGES/vte-${API_V}.mo
+share/vala/vapi/vte-${API_V}.vapi
