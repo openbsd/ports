@@ -1,8 +1,11 @@
-$OpenBSD: patch-daemon_gdm-manager_c,v 1.6 2015/04/10 20:43:51 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-manager_c,v 1.7 2015/04/11 15:32:07 ajacoutot Exp $
 
 XXX fix+push upstream
 
-https://bugzilla.gnome.org/show_bug.cgi?id=747351
+From 172534d4a803d7905c10a76dc7bd6652cebc5f81 Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Tue, 7 Apr 2015 10:57:36 -0400
+Subject: manager: properly query display number when built without plymouth
 
 --- daemon/gdm-manager.c.orig	Fri Apr 10 21:54:41 2015
 +++ daemon/gdm-manager.c	Fri Apr 10 21:54:54 2015
