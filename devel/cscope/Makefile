@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2015/04/11 12:09:25 benoit Exp $
 
-COMMENT=		code browsing program
+COMMENT =		code browsing program
 
-DISTNAME=		cscope-15.8a
-CATEGORIES=     	devel
+DISTNAME =		cscope-15.8b
+CATEGORIES =     	devel
 
-HOMEPAGE=		http://cscope.sourceforge.net/
+HOMEPAGE =		http://cscope.sourceforge.net/
 
-MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
+MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c ncurses
+PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cscope/}
+WANTLIB =		c ncurses
 
-CONFIGURE_STYLE=	gnu
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cscope/}
+
+CONFIGURE_STYLE =	gnu
 
 post-install:
 	@cd ${WRKSRC}; ${INSTALL_SCRIPT} contrib/xcscope/cscope-indexer \
