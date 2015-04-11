@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2014/08/21 08:02:56 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.18 2015/04/11 08:25:10 ajacoutot Exp $
 
 NOT_FOR_ARCHS =		sparc m88k vax
 
 COMMENT =		PCI bus configuration register access tools
 
-DISTNAME =		pciutils-3.2.1
+DISTNAME =		pciutils-3.3.1
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.shtml
@@ -22,11 +22,14 @@ MASTER_SITES =		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 
 USE_GMAKE =		Yes
 
-MAKE_ENV =		CC="${CC}"
+MAKE_FLAGS =		CC="${CC}" OPT="${CFLAGS}"
 FAKE_FLAGS =		PREFIX=${TRUEPREFIX} MANDIR=${TRUEPREFIX}/man
 
 NO_TEST =		Yes
 
 INSTALL_TARGET =	install install-lib
+
+post-install:
+	rm ${PREFIX}/man/man7/pcilib.7
 
 .include <bsd.port.mk>
