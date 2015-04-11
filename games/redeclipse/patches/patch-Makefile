@@ -1,0 +1,111 @@
+$OpenBSD: patch-Makefile,v 1.1 2015/04/11 12:49:30 jsg Exp $
+--- Makefile.orig	Fri Apr  3 17:00:37 2015
++++ Makefile	Sat Apr 11 21:13:21 2015
+@@ -3,7 +3,8 @@ APPCLIENT=$(APPNAME)
+ APPSERVER=$(APPNAME)_server
+ 
+ #CXXFLAGS= -ggdb3
+-CXXFLAGS= -O3 -fomit-frame-pointer -ffast-math
++#CXXFLAGS?= -O3 -fomit-frame-pointer -ffast-math
++CXXFLAGS= -O1 -g
+ override CXXFLAGS+= -Wall -fsigned-char -fno-exceptions -fno-rtti
+ 
+ PLATFORM= $(shell gcc -dumpmachine)
+@@ -31,13 +32,13 @@ TOOLSET_PREFIX=x86_64-w64-mingw32-
+ else
+ TOOLSET_PREFIX=i686-w64-mingw32-
+ endif
+-CXX=g++
++CXX?=g++
+ endif
+ 
+ CXX_TEMP:=$(CXX)
+ override CXX=$(TOOLSET_PREFIX)$(CXX_TEMP)
+ 
+-INCLUDES= -I. -Ishared -Iengine -Igame -Ienet/include
++INCLUDES= -I. -Ishared -Iengine -Igame `pkg-config --cflags libenet`
+ 
+ 
+ STRIP=
+@@ -75,13 +76,13 @@ ifneq (,$(findstring linux,$(PLATFORM)))
+ BIN_SUFFIX=_linux
+ else
+ ifneq (,$(findstring bsd,$(PLATFORM)))
+-BIN_SUFFIX=_bsd
++BIN_SUFFIX=
+ else
+ BIN_SUFFIX=_native
+ endif
+ endif
+-CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
+-CLIENT_LIBS= -Lenet -lenet -L/usr/X11R6/lib -lX11 `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
++CLIENT_INCLUDES= $(INCLUDES) `sdl-config --cflags`
++CLIENT_LIBS= `pkg-config --libs libenet` `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
+ endif
+ ifneq (,$(findstring linux,$(PLATFORM)))
+ CLIENT_LIBS+= -lrt
+@@ -156,7 +157,7 @@ SERVER_INCLUDES= -DSTANDALONE $(INCLUDES) -Iinclude
+ SERVER_LIBS= -mwindows $(STD_LIBS) -L$(WINDLL) -L$(WINLIB) -lzlib1 -lenet -lws2_32 -lwinmm
+ else
+ SERVER_INCLUDES= -DSTANDALONE $(INCLUDES)
+-SERVER_LIBS= -Lenet -lenet -lz
++SERVER_LIBS= `pkg-config --libs libenet` -lz
+ endif
+ SERVER_OBJS= \
+ 	shared/crypto-standalone.o \
+@@ -170,22 +171,17 @@ SERVER_OBJS= \
+ 	engine/server-standalone.o \
+ 	game/server-standalone.o
+ 
+-LIBENET= enet/libenet.a
+-
+ all:
+ 
+ default: all
+ 
+-clean-enet:
+-	$(MAKE) -C enet clean
+-
+ clean-client:
+ 	@rm -fv $(CLIENT_PCH) $(CLIENT_OBJS) $(APPCLIENT)$(BIN_SUFFIX)
+ 
+ clean-server:
+ 	@rm -fv $(SERVER_OBJS) $(APPSERVER)$(BIN_SUFFIX)
+ 
+-clean: clean-enet clean-client clean-server
++clean: clean-client clean-server
+ 
+ %.h.gch: %.h
+ 	$(CXX) $(CXXFLAGS) -x c++-header -o $(subst .h.gch,.tmp.h.gch,$@) $(subst .h.gch,.h,$@)
+@@ -209,10 +205,10 @@ $(APPSERVER)_windows$(BIN_SUFFIX): $(SERVER_OBJS)
+ 	$(WINDRES) -i $(APPNAME).rc -J rc -o $(APPNAME).res -O coff
+ 	$(CXX) $(CXXFLAGS) -o $@ $(APPNAME).res $(SERVER_OBJS) $(SERVER_LIBS)
+ 
+-$(APPCLIENT)$(BIN_SUFFIX): $(LIBENET) $(CLIENT_OBJS)
++$(APPCLIENT)$(BIN_SUFFIX): $(CLIENT_OBJS)
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $(CLIENT_OBJS) $(CLIENT_LIBS)
+ 
+-$(APPSERVER)$(BIN_SUFFIX): $(LIBENET) $(SERVER_OBJS)
++$(APPSERVER)$(BIN_SUFFIX): $(SERVER_OBJS)
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $(SERVER_OBJS) $(SERVER_LIBS)
+ 
+ client: $(APPCLIENT)$(APPMODIFIER)$(BIN_SUFFIX)
+@@ -244,9 +240,6 @@ endif
+ 
+ install: install-client install-server
+ 
+-$(LIBENET):
+-	$(MAKE) -C enet
+-
+ depend:
+ 	makedepend -Y -I. -Ishared -Iengine -Igame $(subst .o,.cpp,$(CLIENT_OBJS))
+ 	makedepend -a -o-standalone.o -Y -I. -Ishared -Iengine -Igame -DSTANDALONE $(subst -standalone.o,.cpp,$(SERVER_OBJS))
+@@ -255,7 +248,7 @@ depend:
+ all: client server
+ 
+ include system-install.mk
+-include dist.mk
++#include dist.mk
+ include wiki.mk
+ 
+ engine/engine.h.gch: version.h shared/cube.h.gch

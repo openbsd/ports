@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/27 08:41:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/11 12:49:30 jsg Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT-main=	redeclipse client
 COMMENT-data=	redeclipse data
 CATEGORIES=	games x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=redeclipse/}
+MASTER_SITES=	https://github.com/red-eclipse/
 
 HOMEPAGE=	http://www.redeclipse.net/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
@@ -13,36 +13,42 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 MULTI_PACKAGES=	-main -data
 
 N=		redeclipse
-V=		1.4
-REVISION-main=	3
-REVISION-data=	3
+V=		1.5.1
 PKGNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}
-DISTNAME=	${N}_${V}_nix
-EXTRACT_SUFX=	.tar.bz2
+
+DISTFILES=	redeclipse-{base/archive/v}${V}${EXTRACT_SUFX} \
+		redeclipse-data-{data/archive/v}${V}${EXTRACT_SUFX}
 
 PKG_ARCH-data=	*
 
-# zlib (code) + CC-BY-SA-3.0 (data)
+# zlib (code) + CC-BY-SA-3.0+ (data)
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS-main +=	${BASE_PKGPATH},-data \
+RUN_DEPENDS-main +=	${BASE_PKGPATH},-data>=${V} \
 			devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-BUILD_DEPENDS=		textproc/gsed
+BUILD_DEPENDS=		textproc/gsed \
+			graphics/GraphicsMagick
 LIB_DEPENDS-main=	devel/sdl-mixer \
 			devel/sdl-image \
-			net/enet
+			net/enet>=1.3.12
 WANTLIB-main+=		GL X11 SDL SDL_image SDL_mixer c enet m pthread stdc++ z
 
-WRKDIST=		${WRKDIR}/${N}-${V}/src
+WRKDIST=		${WRKDIR}/base-${V}/src
 USE_GMAKE=		Yes
 MAKE_ENV+=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 			    TRUEPREFIX="${TRUEPREFIX}"
 NO_TEST=		Yes
 
 INSTALL_TARGET=		system-install
+
+post-extract:
+	@rm -f ${WRKDIR}/data-${V}/.gitattributes
+	@rm -f ${WRKDIR}/data-${V}/.gitignore
+	@rmdir ${WRKDIR}/base-${V}/data
+	@mv ${WRKDIR}/data-${V} ${WRKDIR}/base-${V}/data
 
 .include <bsd.port.mk>

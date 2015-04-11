@@ -1,16 +1,21 @@
-$OpenBSD: patch-system-install_mk,v 1.1.1.1 2013/04/29 01:50:57 jsg Exp $
---- system-install.mk.orig	Thu Mar 21 09:21:57 2013
-+++ system-install.mk	Fri Apr 12 15:56:44 2013
-@@ -6,7 +6,7 @@ appclient=$(APPCLIENT)
- appserver=$(APPSERVER)
- appgamedir=game/$(APPSHORTNAME)
+$OpenBSD: patch-system-install_mk,v 1.2 2015/04/11 12:49:30 jsg Exp $
+--- system-install.mk.orig	Fri Apr  3 17:00:37 2015
++++ system-install.mk	Sat Apr 11 15:16:04 2015
+@@ -1,11 +1,11 @@
+ appname=$(APPNAME)
+-appnamefull=$(shell sed -n 's/.define VERSION_NAME *"\([^"]*\)"/\1/p' version.h)
++appnamefull=$(shell gsed -n 's/.define VERSION_NAME *"\([^"]*\)"/\1/p' version.h)
+ appsrcname=$(APPNAME)
+ cappname=$(shell echo $(appname) | tr '[:lower:]' '[:upper:]')# Captial appname
+ appclient=$(APPCLIENT)$(APPMODIFIER)$(BIN_SUFFIX)
+ appserver=$(APPSERVER)$(APPMODIFIER)$(BIN_SUFFIX)
  
 -prefix=/usr/local
 +prefix=$(TRUEPREFIX)
  games=
  gamesbin=/bin
  bindir=$(DESTDIR)$(prefix)/bin
-@@ -14,7 +14,8 @@ gamesbindir=$(DESTDIR)$(prefix)$(gamesbin)
+@@ -13,7 +13,8 @@ gamesbindir=$(DESTDIR)$(prefix)$(gamesbin)
  libexecdir=$(DESTDIR)$(prefix)/lib$(games)
  datadir=$(DESTDIR)$(prefix)/share$(games)
  docdir=$(DESTDIR)$(prefix)/share/doc
@@ -20,28 +25,24 @@ $OpenBSD: patch-system-install_mk,v 1.1.1.1 2013/04/29 01:50:57 jsg Exp $
  menudir=$(DESTDIR)$(prefix)/share/applications
  icondir=$(DESTDIR)$(prefix)/share/icons/hicolor
  pixmapdir=$(DESTDIR)$(prefix)/share/pixmaps
-@@ -59,7 +60,7 @@ system-install-client: client
- 	install -m755 $(appclient) $(libexecdir)/$(appname)/$(appname)
- 	install -m755 install/nix/$(appsrcname).am \
- 		$(gamesbindir)/$(appname)
--	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
-+	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
- 		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
- 		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
- 		-e 's,@APPNAME@,$(appname),g' \
-@@ -77,7 +78,7 @@ system-install-server: server
- 		$(libexecdir)/$(appname)/$(appname)-server
- 	install -m755 install/nix/$(appsrcname)-server.am \
- 		$(gamesbindir)/$(appname)-server
--	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
-+	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
- 		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
- 		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
- 		-e 's,@APPNAME@,$(appname),g' \
-@@ -94,21 +95,21 @@ system-install-data:
+@@ -89,10 +90,9 @@ system-install-server: server
+ 	g,@APPNAME@,\
+ 	s,@APPNAME@,$(appname),g\n\
+ 	w\n" | ed -s $(gamesbindir)/$(appname)-server
+-	install -m644 ../config/version.cfg \
+-		$(datadir)/$(appname)/version.cfg
+-	ln -s $(patsubst $(DESTDIR)%,%,$(datadir))/$(appname)/version.cfg \
+-		$(libexecdir)/$(appname)/version.cfg
++	cp -R ../config $(datadir)/$(appname)/config
++	ln -s $(patsubst $(DESTDIR)%,%,$(datadir))/$(appname)/config \
++		$(libexecdir)/$(appname)/config
+ 
+ system-install-data:
+ 	cp -r ../data $(datadir)/$(appname)/data
+@@ -101,21 +101,21 @@ system-install-data:
  system-install-docs: $(MANPAGES)
- 	install	-d $(mandir)/man6
- 	install -d $(docdir)/$(appname)
+ 	$(MKDIR) $(mandir)/man6
+ 	$(MKDIR) $(docdir)/$(appname)
 -	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
 +	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
  		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
@@ -51,7 +52,7 @@ $OpenBSD: patch-system-install_mk,v 1.1.1.1 2013/04/29 01:50:57 jsg Exp $
 -		../doc/man/$(appsrcname).6.am | \
 -		gzip -9 -n -c > $(mandir)/man6/$(appname).6.gz
 -	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
-+		../doc/man/$(appsrcname).6.am \
++		../doc/man/$(appsrcname).6.am  \
 +		> $(mandir)/man6/$(appname).6
 +	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
  		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
@@ -67,19 +68,19 @@ $OpenBSD: patch-system-install_mk,v 1.1.1.1 2013/04/29 01:50:57 jsg Exp $
  	cp ../doc/guidelines.txt $(docdir)/$(appname)/guidelines.txt
  
  system-install-menus: icons
-@@ -119,7 +120,7 @@ system-install-menus: icons
- 	install -d $(icondir)/64x64/apps
- 	install -d $(icondir)/128x128/apps
- 	install -d $(pixmapdir)
+@@ -126,7 +126,7 @@ system-install-menus: icons
+ 	$(MKDIR) $(icondir)/64x64/apps
+ 	$(MKDIR) $(icondir)/128x128/apps
+ 	$(MKDIR) $(pixmapdir)
 -	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
 +	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
  		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
  		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
  		-e 's,@APPNAME@,$(appname),g' \
-@@ -144,47 +145,46 @@ system-install-cube2font: cube2font system-install-cub
+@@ -151,47 +151,46 @@ system-install-cube2font: cube2font system-install-cub
  
  system-install-cube2font-docs: ../doc/man/cube2font.1
- 	install -d $(mandir)/man1
+ 	$(MKDIR) $(mandir)/man1
 -	gzip -9 -n -c < ../doc/man/cube2font.1 \
 -		> $(mandir)/man1/cube2font.1.gz
 +	install -m644 ../doc/man/cube2font.1 $(mandir)/man1/cube2font.1
@@ -89,11 +90,11 @@ $OpenBSD: patch-system-install_mk,v 1.1.1.1 2013/04/29 01:50:57 jsg Exp $
  system-uninstall-client:
 -	@rm -fv $(libexecdir)/$(appname)/$(appname)
 -	@rm -fv $(libexecdir)/$(appname)/data
--	@rm -fv $(libexecdir)/$(appname)/game
+-	@rm -fv	$(libexecdir)/$(appname)/version.cfg
 -	@rm -fv $(gamesbindir)/$(appname)
 +	@rm -f $(libexecdir)/$(appname)/$(appname)
 +	@rm -f $(libexecdir)/$(appname)/data
-+	@rm -f $(libexecdir)/$(appname)/game
++	@rm -f	$(libexecdir)/$(appname)/version.cfg
 +	@rm -f $(gamesbindir)/$(appname)
  
  system-uninstall-server:
@@ -104,7 +105,8 @@ $OpenBSD: patch-system-install_mk,v 1.1.1.1 2013/04/29 01:50:57 jsg Exp $
  
  system-uninstall-data:
  	rm -rf $(datadir)/$(appname)/data
- 	rm -rf $(datadir)/$(appname)/game
+-	rm -fv $(datadir)/$(appname)/version.cfg
++	rm -f $(datadir)/$(appname)/version.cfg
  
  system-uninstall-docs:
 -	@rm -rfv $(docdir)/$(appname)/examples
@@ -113,8 +115,8 @@ $OpenBSD: patch-system-install_mk,v 1.1.1.1 2013/04/29 01:50:57 jsg Exp $
 -	@rm -fv $(mandir)/man6/$(appname)-server.6.gz
 +	@rm -rf $(docdir)/$(appname)/examples
 +	@rm -f $(docdir)/$(appname)/guidelines.txt
-+	@rm -f $(mandir)/man6/$(appname).6
-+	@rm -f $(mandir)/man6/$(appname)-server.6
++	@rm -f $(mandir)/man6/$(appname).6.gz
++	@rm -f $(mandir)/man6/$(appname)-server.6.gz
  
  system-uninstall-menus:
 -	@rm -fv $(menudir)/$(appname).desktop
@@ -142,7 +144,7 @@ $OpenBSD: patch-system-install_mk,v 1.1.1.1 2013/04/29 01:50:57 jsg Exp $
  
  system-uninstall-cube2font-docs:
 -	@rm -fv $(mandir)/man1/cube2font.1.gz
-+	@rm -f $(mandir)/man1/cube2font.1
++	@rm -f $(mandir)/man1/cube2font.1.gz
  
  system-uninstall-cube2font: system-uninstall-cube2font-docs
 -	@rm -fv $(bindir)/bin/cube2font

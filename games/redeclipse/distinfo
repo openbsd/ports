@@ -1,2 +1,4 @@
-SHA256 (redeclipse_1.4_nix.tar.bz2) = oN/FJ7D0NxcKQjtV32ipfhtuYNjJ+2yEJRm2Zwweab8=
-SIZE (redeclipse_1.4_nix.tar.bz2) = 678617164
+SHA256 (redeclipse-1.5.1.tar.gz) = KYLEM39LNExtd972srrsOiuZtwqIdSE3R1hF+VxNUZM=
+SHA256 (redeclipse-data-1.5.1.tar.gz) = 66Yy9XtPp21nAZUJByMbNUOYiDYT2jbBfbwGLBdY3Tc=
+SIZE (redeclipse-1.5.1.tar.gz) = 10840487
+SIZE (redeclipse-data-1.5.1.tar.gz) = 796505869
