@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Minecraft
-Exec=${LOCALBASE}/bin/minecraft
+Exec=${TRUEPREFIX}/bin/minecraft
 Icon=minecraft.svg
 Terminal=false
 Type=Application
