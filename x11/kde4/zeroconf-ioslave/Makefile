@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/09 19:54:11 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/12 18:17:18 zhuk Exp $
 
 COMMENT =	KDE monitoring of Zeroconf services
 DISTNAME =	zeroconf-ioslave-${MODKDE4_VERSION}
+REVISION =	0
 
-CATEGORIES =	network
+CATEGORIES =	net
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/zeroconf-ioslave
 
 WANTLIB =  m pthread

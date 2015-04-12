@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/27 08:16:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/12 18:17:18 zhuk Exp $
 
 COMMENT =	dialer and pppd front-end for KDE
 DISTNAME =	kppp-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
-CATEGORIES =	network
+CATEGORIES =	net
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/kppp
 
 WANTLIB =  c m pthread

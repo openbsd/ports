@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/27 08:16:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/12 18:17:18 zhuk Exp $
 
 COMMENT =	KDE remote desktop client
 DISTNAME =	krdc-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
-CATEGORIES =	network
+CATEGORIES =	net
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/krdc
 
 SHARED_LIBS =	krdccore		51.0 # 4.11

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/09 20:03:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/12 18:17:18 zhuk Exp $
 
 COMMENT =	Strigi analyzers of network-related streams for KDE
 DISTNAME =	kdenetwork-strigi-analyzers-${MODKDE4_VERSION}
+REVISION =	0
 
-CATEGORIES =	network devel
+CATEGORIES =	net devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/kdenetwork-strigi-analyzers
 
 WANTLIB =  m pthread

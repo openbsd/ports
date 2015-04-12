@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/01 21:09:43 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/12 18:17:18 zhuk Exp $
 
 COMMENT =	desktop sharing
 DISTNAME =	krfb-${MODKDE4_VERSION}
+REVISION =	0
 
-CATEGORIES =	network
+CATEGORIES =	net
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/krfb
 
 SHARED_LIBS =	krfbprivate		52.0

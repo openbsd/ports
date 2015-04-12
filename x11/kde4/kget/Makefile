@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/03/27 08:16:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/04/12 18:17:18 zhuk Exp $
 
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${MODKDE4_VERSION}
+REVISION =	0
 
-CATEGORIES =	network
+CATEGORIES =	net
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/kget
 
 SHARED_LIBS =	kgetcore		52.0 # 4.11
@@ -24,14 +25,13 @@ MODULES =	devel/gettext multimedia/phonon
 MODKDE4_USE =	pim workspace
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+3,-guic \
+		${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS =	multimedia/libmms \
 		net/libktorrent,${MODKDE4_FLAVOR} \
 		security/qca2 \
 		${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/nepomuk-widgets>=${MODKDE4_DEP_VERSION}
-
-RUN_DEPENDS =	${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>
