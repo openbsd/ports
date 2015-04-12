@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/04/04 09:30:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/04/12 18:18:13 zhuk Exp $
 
 COMMENT-main =		KDE core run-time components
 COMMENT-locale =	KDE locale data files
@@ -6,7 +6,7 @@ DISTNAME =		kde-runtime-${MODKDE4_VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-locale =	kde4-locale-${MODKDE4_VERSION}
 PKG_ARCH-locale =	*
-REVISION-main =		1
+REVISION-main =		2
 
 DPB_PROPERTIES =	parallel
 
@@ -35,7 +35,7 @@ WANTLIB-main += ${KDE4LIB}/kxmlrpcclient ${KDE4LIB}/nepomuk
 WANTLIB-main += ${KDE4LIB}/nepomukutils
 WANTLIB-main += ${KDE4LIB}/plasma ${KDE4LIB}/qgpgme ${KDE4LIB}/solid
 WANTLIB-main += attica canberra exiv2 glib-2.0 jpeg pulse
-WANTLIB-main += pulse-mainloop-glib smbclient ssh soprano webp
+WANTLIB-main += pulse-mainloop-glib lib/samba/smbclient ssh soprano webp
 WANTLIB-main += assuan gcrypt gpg-error gpgme++-pthread gpgme-pthread
 
 WANTLIB-locale =
