@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/04 14:01:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/12 11:55:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -33,6 +33,7 @@ WANTLIB += rsvg-2 xcb xcb-render xcb-shm xml2 z
 MASTER_SITES=		https://distfiles.bsdfrog.org/
 
 MODULES=		devel/gettext \
+			textproc/intltool \
 			x11/gnome
 
 MODGNOME_TOOLS=		vala gobject-introspection
