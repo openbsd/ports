@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/10 09:44:57 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/12 20:53:19 zhuk Exp $
 @bin bin/yakuake
 share/applications/kde4/yakuake.desktop
-share/apps/kconf_update/${PKGNAME}-startupnotification.pl
+share/apps/kconf_update/${DISTNAME}-startupnotification.pl
 share/apps/kconf_update/yakuake.upd
 share/apps/yakuake/
 share/apps/yakuake/skins/
