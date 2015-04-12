@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2014/09/02 14:55:37 dcoppa Exp $
+$OpenBSD: patch-Makefile_in,v 1.6 2015/04/12 18:29:11 zhuk Exp $
 
 Do not build PDF versions of the R manuals
 
@@ -13,26 +13,3 @@ Do not build PDF versions of the R manuals
  	@touch stamp-java
  
  javaconf: R
-@@ -121,7 +119,7 @@ svnonly:
- 	  fi \
- 	fi
- 
--@WANT_R_STATIC_FALSE@libR_la = libR$(DYLIB_EXT)
-+@WANT_R_STATIC_FALSE@libR_la = libR.so.$(LIBR_VERSION)
- @WANT_R_STATIC_TRUE@libR_la = libR.a
- install-libR:
- 	@if test -f lib$(R_ARCH)/$(libR_la); then $(MAKE) install-libR-exists; fi
-@@ -216,13 +214,6 @@ distdir: $(DISTFILES) vignettes
- 	  cp library/$${d}/doc/*.pdf $(distdir)/src/library/$${d}/inst/doc; \
- 	done
- 	@(cd $(distdir); tools/link-recommended)
--
--info pdf:
--	-@(cd doc && $(MAKE) $@)
--install-info install-pdf:
--	-@(cd doc/manual && $(MAKE) $@)
--uninstall-info uninstall-pdf:
--	-@(cd doc/manual && $(MAKE) $@)
- 
- install-tests:
- 	-@(cd tests && $(MAKE) $@)

@@ -1,15 +1,6 @@
-$OpenBSD: patch-src_main_connections_c,v 1.15 2015/01/08 14:14:11 dcoppa Exp $
+$OpenBSD: patch-src_main_connections_c,v 1.16 2015/04/12 18:29:11 zhuk Exp $
 --- src/main/connections.c.orig	Wed Sep 24 17:15:13 2014
 +++ src/main/connections.c	Thu Jan  8 05:51:05 2015
-@@ -2905,7 +2905,7 @@ static int text_vfprintf(Rconnection con, const char *
- 	b = R_alloc(res + already + 1, sizeof(char));
- 	strcpy(b, this->lastline);
- 	p = b + already;
--	vsprintf(p, format, ap);
-+	vsnprintf(p, res + already + 1, format, ap);
-     } else if(res < 0) { /* just a failure indication */
- #define NBUFSIZE (already + 100*BUFSIZE)
- 	vmax = vmaxget();
 @@ -5169,7 +5169,8 @@ static Rboolean gzcon_open(Rconnection con)
  
      if(con->canread) {

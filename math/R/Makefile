@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.65 2015/03/25 18:09:56 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.66 2015/04/12 18:29:11 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-3.1.2
-REVISION=	0
+DISTNAME=	R-3.1.3
 
 SHARED_LIBS=	R	3.0
 SHARED_LIBS+=	Rlapack	31.2 	# 31.2
@@ -99,15 +98,16 @@ CONFIGURE_ENV=	FFLAGS="${FFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -Wl,-R${LOCALBASE}/lib/R/lib" \
 		LIBnn=lib \
+		ac_cv_path_PDFLATEX="" \
 		ac_cv_path_TAR="${LOCALBASE}/bin/gtar" \
 		rdocdir="${PREFIX}/share/doc/R"
 
 MAKE_FLAGS=	INSTALL_DATA='install -c -m 644' \
 		INSTALL_PROGRAM='install -c -s -m 555' \
 		INSTALL_SCRIPT='install -c -m 555' \
-		LIBR_VERSION=${LIBR_VERSION} \
-		LIBRlapack_VERSION=${LIBRlapack_VERSION} \
-		LIBRblas_VERSION=${LIBRblas_VERSION}
+		DYLIB_EXT=".so.${LIBR_VERSION}" \
+		Rblas_la="libRblas.so.${LIBRblas_VERSION}" \
+		Rlapack_la="libRlapack.so.$(LIBRlapack_VERSION)"
 
 FAKE_FLAGS=	PREFIX=${PREFIX} \
 		INSTALL="${INSTALL_DATA}" \

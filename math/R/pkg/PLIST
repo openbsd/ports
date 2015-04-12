@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2015/01/08 14:14:11 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.25 2015/04/12 18:29:11 zhuk Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -556,6 +556,7 @@ lib/R/library/Matrix/po/en@quot/LC_MESSAGES/Matrix.mo
 lib/R/library/Matrix/po/en@quot/LC_MESSAGES/R-Matrix.mo
 lib/R/library/Matrix/po/fr/
 lib/R/library/Matrix/po/fr/LC_MESSAGES/
+lib/R/library/Matrix/po/fr/LC_MESSAGES/Matrix.mo
 lib/R/library/Matrix/po/fr/LC_MESSAGES/R-Matrix.mo
 lib/R/library/Matrix/po/pl/
 lib/R/library/Matrix/po/pl/LC_MESSAGES/
@@ -880,6 +881,7 @@ lib/R/library/base/html/outer.html
 lib/R/library/base/html/parse.html
 lib/R/library/base/html/paste.html
 lib/R/library/base/html/path.expand.html
+lib/R/library/base/html/pcre_config.html
 lib/R/library/base/html/pmatch.html
 lib/R/library/base/html/polyroot.html
 lib/R/library/base/html/pos.to.env.html
@@ -1265,7 +1267,6 @@ lib/R/library/cluster/html/plot.diana.html
 lib/R/library/cluster/html/plot.mona.html
 lib/R/library/cluster/html/plot.partition.html
 lib/R/library/cluster/html/pltree.html
-lib/R/library/cluster/html/pltree.twins.html
 lib/R/library/cluster/html/pluton.html
 lib/R/library/cluster/html/predict.ellipsoid.html
 lib/R/library/cluster/html/print.agnes.html
@@ -2274,6 +2275,7 @@ lib/R/library/mgcv/html/inSide.html
 lib/R/library/mgcv/html/influence.gam.html
 lib/R/library/mgcv/html/initial.sp.html
 lib/R/library/mgcv/html/interpret.gam.html
+lib/R/library/mgcv/html/jagam.html
 lib/R/library/mgcv/html/ldTweedie.html
 lib/R/library/mgcv/html/linear.functional.terms.html
 lib/R/library/mgcv/html/logLik.gam.html
@@ -2929,6 +2931,9 @@ lib/R/library/spatial/po/en@quot/LC_MESSAGES/R-spatial.mo
 lib/R/library/spatial/po/fr/
 lib/R/library/spatial/po/fr/LC_MESSAGES/
 lib/R/library/spatial/po/fr/LC_MESSAGES/R-spatial.mo
+lib/R/library/spatial/po/ko/
+lib/R/library/spatial/po/ko/LC_MESSAGES/
+lib/R/library/spatial/po/ko/LC_MESSAGES/R-spatial.mo
 lib/R/library/spatial/po/pl/
 lib/R/library/spatial/po/pl/LC_MESSAGES/
 lib/R/library/spatial/po/pl/LC_MESSAGES/R-spatial.mo
@@ -3389,6 +3394,7 @@ lib/R/library/survival/Meta/package.rds
 lib/R/library/survival/Meta/vignette.rds
 lib/R/library/survival/NAMESPACE
 lib/R/library/survival/NEWS.Rd
+lib/R/library/survival/NEWS.Rd.orig
 lib/R/library/survival/R/
 lib/R/library/survival/R/survival
 lib/R/library/survival/R/survival.rdb
@@ -3402,8 +3408,13 @@ lib/R/library/survival/doc/
 lib/R/library/survival/doc/adjcurve.R
 lib/R/library/survival/doc/adjcurve.Rnw
 lib/R/library/survival/doc/adjcurve.pdf
+lib/R/library/survival/doc/compete.R
+lib/R/library/survival/doc/compete.Rnw
+lib/R/library/survival/doc/compete.pdf
 lib/R/library/survival/doc/index.html
-lib/R/library/survival/doc/sourcecode.pdf
+lib/R/library/survival/doc/splines.R
+lib/R/library/survival/doc/splines.Rnw
+lib/R/library/survival/doc/splines.pdf
 lib/R/library/survival/doc/tests.R
 lib/R/library/survival/doc/tests.Rnw
 lib/R/library/survival/doc/tests.pdf
@@ -3430,6 +3441,7 @@ lib/R/library/survival/html/basehaz.html
 lib/R/library/survival/html/bladder.html
 lib/R/library/survival/html/cch.html
 lib/R/library/survival/html/cgd.html
+lib/R/library/survival/html/cgd0.html
 lib/R/library/survival/html/clogit.html
 lib/R/library/survival/html/cluster.html
 lib/R/library/survival/html/colon.html
@@ -3449,8 +3461,10 @@ lib/R/library/survival/html/lines.survfit.html
 lib/R/library/survival/html/logan.html
 lib/R/library/survival/html/lung.html
 lib/R/library/survival/html/mgus.html
+lib/R/library/survival/html/mgus2.html
 lib/R/library/survival/html/model.frame.coxph.html
 lib/R/library/survival/html/model.matrix.coxph.html
+lib/R/library/survival/html/neardate.html
 lib/R/library/survival/html/nwtco.html
 lib/R/library/survival/html/ovarian.html
 lib/R/library/survival/html/pbc.html
@@ -3500,7 +3514,9 @@ lib/R/library/survival/html/survreg.html
 lib/R/library/survival/html/survreg.object.html
 lib/R/library/survival/html/survregDtest.html
 lib/R/library/survival/html/tcut.html
+lib/R/library/survival/html/tmerge.html
 lib/R/library/survival/html/tobin.html
+lib/R/library/survival/html/transplant.html
 lib/R/library/survival/html/untangle.specials.html
 lib/R/library/survival/html/uspop2.html
 lib/R/library/survival/html/veteran.html
@@ -4191,6 +4207,7 @@ share/doc/R/NEWS
 share/doc/R/NEWS.0
 share/doc/R/NEWS.1
 share/doc/R/NEWS.2
+share/doc/R/NEWS.pdf
 share/doc/R/NEWS.rds
 share/doc/R/RESOURCES
 share/doc/R/THANKS
