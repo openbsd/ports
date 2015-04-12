@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.88 2015/03/20 14:50:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2015/04/12 11:50:13 sthen Exp $
 
 COMMENT=		download/stream programmes from BBC iPlayer
 
 V=			2.92
 REVISION=		2
-PORTROACH=		limit:[0-9]
 DISTNAME=		get_iplayer-$V
 DISTFILES=		${DISTNAME}{v$V}${EXTRACT_SUFX}
 CATEGORIES=		multimedia
