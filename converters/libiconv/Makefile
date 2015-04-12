@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2015/03/16 18:07:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2015/04/12 20:21:57 naddy Exp $
 
 COMMENT=	character set conversion library
 
 DISTNAME=	libiconv-1.14
-REVISION=	2
+REVISION=	3
 CATEGORIES=	converters devel
 MASTER_SITES=	${MASTER_SITE_GNU:=libiconv/}
 
@@ -18,10 +18,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c
 
-BUILD_DEPENDS=	devel/gperf
-
-MAKE_FLAGS=	INSTALL_DATA=cp
-
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/build-aux ${WRKSRC}/libcharset/build-aux
@@ -29,9 +25,5 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--disable-nls \
 		--enable-extra-encodings \
 		--enable-static
-
-pre-configure:
-	@cd ${WRKSRC}; \
-		${SETENV} ${CONFIGURE_ENV} ${MAKE} -f Makefile.devel lib/aliases.h
 
 .include <bsd.port.mk>
