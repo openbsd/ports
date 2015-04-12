@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/04/05 12:50:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/04/12 11:44:11 jasper Exp $
 @pkgpath misc/portscout
 bin/portroach
 ${P5SITE}/Portroach/
@@ -37,6 +37,8 @@ share/examples/portroach/portroach.conf.dist
 @mode
 share/portroach/
 share/portroach/sql/
+share/portroach/sql/migrations/
+share/portroach/sql/migrations/pgsql_2.0.3.sql
 share/portroach/sql/pgsql_destroy.sql
 share/portroach/sql/pgsql_init.sql
 share/portroach/sql/sqlite_destroy.sql
@@ -53,9 +55,3 @@ share/portroach/templates/dynamic/maintainer.html
 share/portroach/templates/dynamic/restricted-ports.html
 share/portroach/templates/reminder.mail.dist
 @sample share/portroach/templates/reminder.mail
-share/portroach/templates/static/
-share/portroach/templates/static/assets/
-share/portroach/templates/static/assets/portroach.js
-share/portroach/templates/static/index.html
-share/portroach/templates/static/maintainer.html
-share/portroach/templates/static/restricted-ports.html

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/06 16:35:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2015/04/12 11:44:11 jasper Exp $
 
 COMMENT=		OpenBSD ports distfile version scanner
 
 GH_ACCOUNT=		jasperla
 GH_PROJECT=		portroach
-GH_TAGNAME=		2.0.2
+GH_TAGNAME=		2.0.3
 
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES=		misc
@@ -44,7 +44,7 @@ do-install:
 	cd ${WRKSRC}/templates/ && umask 022 && pax -rw . \
 		${PREFIX}/share/portroach/templates/
 	mv ${PREFIX}/share/portroach/templates/reminder.mail{,.dist}
-	${INSTALL_DATA} ${WRKSRC}/sql/* \
+	cd ${WRKSRC}/sql/ && umask 022 && pax -rw . \
 		${PREFIX}/share/portroach/sql/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/portroach/
 	${INSTALL_DATA} ${WRKSRC}/portroach.conf.dist \
