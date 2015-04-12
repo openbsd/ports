@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/12 16:07:13 jca Exp $
+@newgroup _knot:751
+@newuser _knot:751:_knot::Knot DNS Server:/var/empty:/sbin/nologin
+@bin bin/kdig
+@bin bin/khost
+@bin bin/knsec3hash
+@bin bin/knsupdate
+lib/libknot.a
+lib/libknot.la
+@lib lib/libknot.so.${LIBknot_VERSION}
+lib/libzscanner.a
+lib/libzscanner.la
+@lib lib/libzscanner.so.${LIBzscanner_VERSION}
+@man man/man1/kdig.1
+@man man/man1/khost.1
+@man man/man1/knsec3hash.1
+@man man/man1/knsupdate.1
+@man man/man5/knot.conf.5
+@man man/man8/knotc.8
+@man man/man8/knotd.8
+@bin sbin/knotc
+@bin sbin/knotd
+share/examples/knot/
+@sample /etc/knot/
+share/examples/knot/example.com.zone
+@sample /etc/knot/example.com.zone
+share/examples/knot/knot.sample.conf
+@sample /etc/knot/knot.conf
+@mode 750
+@owner _knot
+@sample /var/db/knot/
+@owner
+@mode
+@rcscript ${RCDIR}/knot

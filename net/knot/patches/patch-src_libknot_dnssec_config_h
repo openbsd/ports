@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_libknot_dnssec_config_h,v 1.1.1.1 2015/04/12 16:07:13 jca Exp $
+
+Disable use of the GOST *engine*, not in LibreSSL.
+
+--- src/libknot/dnssec/config.h.orig	Thu Feb 19 09:43:56 2015
++++ src/libknot/dnssec/config.h	Fri Apr  3 02:52:00 2015
+@@ -40,10 +40,6 @@
+   #undef KNOT_ENABLE_ECDSA
+ #endif
+ 
+-#if !defined(OPENSSL_NO_GOST) && OPENSSL_VERSION_NUMBER >= 0x1000001fL
+-  #define KNOT_ENABLE_GOST 1
+-#else
+-  #undef KNOT_ENABLE_GOST
+-#endif
++#undef KNOT_ENABLE_GOST
+ 
+ /*! @} */

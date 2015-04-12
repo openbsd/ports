@@ -1,0 +1,26 @@
+#!/bin/sh
+
+daemon="${PREFIX}/sbin/knotd -d"
+knotc="${PREFIX}/sbin/knotc"
+
+. /etc/rc.d/rc.subr
+
+rc_start() {
+	install -d -o _knot -g wheel -m 750 /var/run/knot/
+	${knotc} checkconf || return 1
+	${daemon} ${daemon_flags}
+}
+
+rc_check() {
+	${knotc} status || return 1
+}
+
+rc_reload() {
+	${knotc} reload || return 1
+}
+
+rc_stop() {
+	${knotc} stop || return 1
+}
+
+rc_cmd $1
