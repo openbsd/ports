@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/12 16:07:13 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/12 16:26:10 jca Exp $
 @newgroup _knot:751
 @newuser _knot:751:_knot::Knot DNS Server:/var/empty:/sbin/nologin
 @bin bin/kdig
@@ -21,14 +21,14 @@ lib/libzscanner.la
 @bin sbin/knotc
 @bin sbin/knotd
 share/examples/knot/
-@sample /etc/knot/
+@sample ${SYSCONFDIR}/knot/
 share/examples/knot/example.com.zone
-@sample /etc/knot/example.com.zone
+@sample ${SYSCONFDIR}/knot/example.com.zone
 share/examples/knot/knot.sample.conf
-@sample /etc/knot/knot.conf
+@sample ${SYSCONFDIR}/knot/knot.conf
 @mode 750
 @owner _knot
-@sample /var/db/knot/
+@sample ${LOCALSTATEDIR}/db/knot/
 @owner
 @mode
 @rcscript ${RCDIR}/knot

@@ -1,4 +1,6 @@
 #!/bin/sh
+#
+# $OpenBSD: knot.rc,v 1.2 2015/04/12 16:26:10 jca Exp $
 
 daemon="${PREFIX}/sbin/knotd -d"
 knotc="${PREFIX}/sbin/knotc"
@@ -6,7 +8,7 @@ knotc="${PREFIX}/sbin/knotc"
 . /etc/rc.d/rc.subr
 
 rc_start() {
-	install -d -o _knot -g wheel -m 750 /var/run/knot/
+	install -d -o _knot -g wheel -m 750 ${LOCALSTATEDIR}/run/knot/
 	${knotc} checkconf || return 1
 	${daemon} ${daemon_flags}
 }

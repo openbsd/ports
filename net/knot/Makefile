@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/12 16:07:13 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/12 16:26:10 jca Exp $
 
 COMMENT =		authoritative DNS server
 
@@ -33,10 +33,10 @@ USE_GMAKE =		Yes
 USE_LIBTOOL=		gnu
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-storage=/var/db/knot \
+			--with-storage=${LOCALSTATEDIR}/db/knot \
 			--with-libidn \
-			--without-dnstap \
-			--without-lmdb
+			--disable-dnstap \
+			--disable-lmdb
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_path_PDFLATEX="false" \
