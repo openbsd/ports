@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/06/14 23:26:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/04/12 11:27:03 jasper Exp $
 bin/tpage
 bin/ttree
 ${P5ARCH}/
@@ -78,7 +78,6 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Template/
 ${P5ARCH}/auto/Template/Stash/
 ${P5ARCH}/auto/Template/Stash/XS/
-@comment ${P5ARCH}/auto/Template/Stash/XS/XS.bs
 ${P5ARCH}/auto/Template/Stash/XS/XS.so
 @man man/man1/tpage.1
 @man man/man1/ttree.1
