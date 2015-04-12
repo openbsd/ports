@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_benchmark_common_sh,v 1.1.1.1 2015/04/12 15:02:32 jca Exp $
+
+Our time(1) doesn't support -a and -o options.
+
+--- tests/benchmark/common.sh.orig	Tue Nov  4 16:04:53 2014
++++ tests/benchmark/common.sh	Fri Apr  3 02:13:56 2015
+@@ -4,8 +4,6 @@
+ 
+ if [ -x "$URCU_TEST_TIME_BIN" ]; then
+ 	test_time_bin="$URCU_TEST_TIME_BIN"
+-elif [ -x "/usr/bin/time" ]; then
+-	test_time_bin="/usr/bin/time"
+ else
+ 	test_time_bin=""
+ fi

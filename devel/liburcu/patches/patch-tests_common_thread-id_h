@@ -1,0 +1,21 @@
+$OpenBSD: patch-tests_common_thread-id_h,v 1.1.1.1 2015/04/12 15:02:32 jca Exp $
+
+XXX not portable, but used by tests only.
+
+--- tests/common/thread-id.h.orig	Tue Nov  4 16:04:53 2014
++++ tests/common/thread-id.h	Fri Apr  3 00:47:51 2015
+@@ -43,6 +43,14 @@ unsigned long urcu_get_thread_id(void)
+ {
+ 	return (unsigned long) pthread_getthreadid_np();
+ }
++#elif defined(__OpenBSD__)
++# include <unistd.h>
++
++static inline
++unsigned long urcu_get_thread_id(void)
++{
++	return (unsigned long) getthrid();
++}
+ #else
+ # warning "use pid as thread ID"
+ static inline
