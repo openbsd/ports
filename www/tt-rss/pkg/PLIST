@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/11/08 14:56:01 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/04/12 17:01:31 landry Exp $
 tt-rss/
 tt-rss/LICENSE
 tt-rss/README.md
@@ -2401,6 +2401,7 @@ tt-rss/plugins/af_comics/filters/af_comics_dilbert.php
 tt-rss/plugins/af_comics/filters/af_comics_explosm.php
 tt-rss/plugins/af_comics/filters/af_comics_gocomics.php
 tt-rss/plugins/af_comics/filters/af_comics_pa.php
+tt-rss/plugins/af_comics/filters/af_comics_tfd.php
 tt-rss/plugins/af_comics/filters/af_comics_twp.php
 tt-rss/plugins/af_comics/init.php
 tt-rss/plugins/af_elreg/
@@ -2415,8 +2416,12 @@ tt-rss/plugins/af_redditimgur/
 tt-rss/plugins/af_redditimgur/init.php
 tt-rss/plugins/af_sciam/
 tt-rss/plugins/af_sciam/init.php
+tt-rss/plugins/af_tumblr_1280/
+tt-rss/plugins/af_tumblr_1280/init.php
 tt-rss/plugins/af_unburn/
 tt-rss/plugins/af_unburn/init.php
+tt-rss/plugins/af_zz_imgsetsizes/
+tt-rss/plugins/af_zz_imgsetsizes/init.php
 tt-rss/plugins/auth_internal/
 tt-rss/plugins/auth_internal/init.php
 tt-rss/plugins/auth_remote/
