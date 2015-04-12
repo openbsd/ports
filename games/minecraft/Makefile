@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/05 12:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/12 07:43:04 sthen Exp $
 
 COMMENT=	wrapper for a game about breaking and placing blocks
 
@@ -7,7 +7,7 @@ GH_PROJECT=	minecraft
 GH_ACCOUNT=	qbit
 GH_TAGNAME=	${GH_PROJECT}-${V}
 DISTNAME=	${GH_TAGNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	games
 
@@ -20,8 +20,10 @@ MODJAVA_VER=	1.7+
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS= 	games/lwjgl \
-		java/javaPathHelper
+RUN_DEPENDS= 	devel/desktop-file-utils \
+		games/lwjgl \
+		java/javaPathHelper \
+		x11/gtk+3,-guic
 
 MAKE_FLAGS=	PREFIX=${PREFIX}
 
@@ -29,6 +31,13 @@ do-configure:
 	${SUBST_CMD} ${WRKSRC}/minecraft
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps/ \
+		${PREFIX}/share/applications/
 	${INSTALL_SCRIPT} ${WRKSRC}/minecraft ${PREFIX}/bin/
+	${INSTALL_DATA} ${FILESDIR}/minecraft.svg \
+		${PREFIX}/share/icons/hicolor/scalable/apps/
+	${SUBST_CMD} -c -m ${SHAREMODE} -o ${SHAREOWN} -g ${SHAREGRP} \
+		${FILESDIR}/minecraft.desktop \
+		${PREFIX}/share/applications/minecraft.desktop
 
 .include <bsd.port.mk>

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Minecraft
+Exec=${LOCALBASE}/bin/minecraft
+Icon=minecraft.svg
+Terminal=false
+Type=Application
+Categories=Application;Game;
+StartupNotify=true
