@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.95 2015/04/04 17:23:52 sthen Exp $
+# $OpenBSD: portcheck,v 1.96 2015/04/12 18:37:23 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -546,11 +546,11 @@ check_port_dir() {
 	# Now gather and check some info via "make show=...".
 	# We request all info at once for speed.
 
-	local dist_subdir distfiles flavor flavors master_sites
+	local dist_subdir distfiles flavor flavors gh_commit master_sites
 	local multi_packages pkgpath_this pseudo_flavor pseudo_flavors
 	local shared_libs subst_cmd
 	local perm_pkg_cdrom perm_pkg_ftp perm_dist_ftp
-	local show_items="DIST_SUBDIR DISTFILES FLAVOR FLAVORS"
+	local show_items="DIST_SUBDIR DISTFILES FLAVOR FLAVORS GH_COMMIT"
 	local show_items="$show_items MASTER_SITES MULTI_PACKAGES PKGPATH"
 	local show_items="$show_items PSEUDO_FLAVOR PSEUDO_FLAVORS"
 	local show_items="$show_items SHARED_LIBS SUBST_CMD"
@@ -564,6 +564,7 @@ check_port_dir() {
 	read -pr distfiles &&
 	read -pr flavor &&
 	read -pr flavors &&
+	read -pr gh_commit &&
 	read -pr master_sites &&
 	read -pr multi_packages &&
 	read -pr pkgpath_this &&
@@ -606,6 +607,13 @@ check_port_dir() {
 	    "$perm_dist_ftp"
 	$pkg_exists && check_pkg_dir "$dir"/pkg "$subst_cmd"
 	$existing_port || check_shlibs_versions "$dir" $shared_libs
+
+	if [[ -n $gh_commit ]]; then
+		local ghclen=$(echo -n "$gh_commit" | wc -c)
+		if ((ghclen != 40)); then
+			err "GH_COMMIT should be in full form (40 characters)"
+		fi
+	fi
 
 	for _s in $multi_packages; do
 		sub_checks "$dir" "$_s" "${check_flavors[@]}"
