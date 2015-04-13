@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2015/04/04 09:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2015/04/13 07:56:39 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
-GNOME_VERSION=		3.16.0
-REVISION=		0
+GNOME_VERSION=		3.16.1
 
 CATEGORIES=		mail
 
@@ -43,7 +42,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 # XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
-# work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
+# work with unversioned solibs (LOCALBASE/lib/evolution/*.so).
 BUILD_DEPENDS +=	mail/evolution
 RUN_DEPENDS +=		mail/evolution
 
