@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.248 2015/04/06 10:06:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.249 2015/04/13 08:55:48 jasper Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -15,6 +15,7 @@
      SUBDIR += calculator
      SUBDIR += calendar
      SUBDIR += caribou
+     SUBDIR += characters
      SUBDIR += clocks
      SUBDIR += code-assistance
      SUBDIR += color-manager
