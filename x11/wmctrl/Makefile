@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/04/13 19:36:57 landry Exp $
 
 COMMENT=	interact with an EWMH/NetWM window manager
 DISTNAME=	wmctrl-1.07
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	x11
-MASTER_SITES=	${HOMEPAGE}/dist/
+MASTER_SITES=	${HOMEPAGE}
 
-HOMEPAGE=	http://tomas.styblo.name/wmctrl/
+HOMEPAGE=	https://sites.google.com/site/tstyblo/wmctrl/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
