@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2015/04/04 09:21:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.186 2015/04/13 07:45:20 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -76,7 +76,7 @@ LIB_DEPENDS=		audio/libcue \
 BUILD_DEPENDS +=	devel/libgee
 
 # XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
-# work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
+# work with unversioned solibs (LOCALBASE/lib/evolution/*.so).
 #BUILD_DEPENDS +=	mail/evolution
 #RUN_DEPENDS +=		mail/evolution
 
