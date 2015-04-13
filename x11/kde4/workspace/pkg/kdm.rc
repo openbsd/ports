@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: kdm.rc,v 1.3 2014/01/30 16:58:58 ajacoutot Exp $
+# $OpenBSD: kdm.rc,v 1.4 2015/04/13 13:30:02 zhuk Exp $
 
 daemon="${TRUEPREFIX}/bin/kdm"
 
@@ -16,6 +16,8 @@ rc_start() {
 		sleep 1
 		[ $((i++)) -ge 10 ] && return 1
 	done
+	# XXX KDM fails to receive input unless getty is given
+	# some more time for initialization.
 	sleep 2
 	${rcexec} "${daemon} ${daemon_flags}" ) &
 }
