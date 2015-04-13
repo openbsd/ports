@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2015/04/04 09:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2015/04/13 07:56:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -48,7 +48,7 @@ LIB_DEPENDS=		www/gtkhtml4 \
 			www/webkit,gtk3
 
 # XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
-# work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
+# work with unversioned solibs (LOCALBASE/lib/evolution/*.so).
 BUILD_DEPENDS +=	mail/evolution
 RUN_DEPENDS +=		mail/evolution
 
