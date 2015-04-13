@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/11 20:41:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/13 09:03:28 jasper Exp $
 
 COMMENT =	US-ASCII transliterations of Unicode text
 
@@ -13,9 +13,8 @@ HOMEPAGE =	https://pypi.python.org/pypi/Unidecode
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	https://pypi.python.org/packages/source/U/Unidecode/
-
 MODULES =	lang/python
+MODPY_PI =	Yes
 
 do-test:
 	@${MODPY_TEST_TARGET}
