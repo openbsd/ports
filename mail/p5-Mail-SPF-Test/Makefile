@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/13 16:21:28 sthen Exp $
 
 COMMENT =		perl SPF test-suite class
 
@@ -10,11 +10,9 @@ CATEGORIES =		mail
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
+CONFIGURE_STYLE =	modbuild
 
 RUN_DEPENDS =		devel/p5-YAML
 BUILD_DEPENDS =		${RUN_DEPENDS}
-
-do-install:
-	cd ${WRKSRC} && ./Build --prefix=${PREFIX} --create_packlist=0 install
 
 .include <bsd.port.mk>
