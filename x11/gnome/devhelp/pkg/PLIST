@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2015/03/29 11:54:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2015/04/13 18:06:53 ajacoutot Exp $
 @bin bin/devhelp
 include/devhelp-3.0/
 include/devhelp-3.0/devhelp/
@@ -42,6 +42,7 @@ share/icons/hicolor/24x24/apps/devhelp.png
 share/icons/hicolor/256x256/apps/devhelp.png
 share/icons/hicolor/32x32/apps/devhelp.png
 share/icons/hicolor/48x48/apps/devhelp.png
+share/icons/hicolor/symbolic/apps/devhelp-symbolic.svg
 share/locale/am/LC_MESSAGES/devhelp.mo
 share/locale/ar/LC_MESSAGES/devhelp.mo
 share/locale/as/LC_MESSAGES/devhelp.mo
