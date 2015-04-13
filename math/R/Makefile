@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2015/04/13 07:20:07 zhuk Exp $
+# $OpenBSD: Makefile,v 1.68 2015/04/13 10:41:13 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-3.1.3
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	R	3.0
 SHARED_LIBS+=	Rlapack	31.2 	# 31.2
