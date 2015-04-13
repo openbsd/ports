@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.897 2015/04/12 17:12:19 jca Exp $
+# $OpenBSD: Makefile,v 1.898 2015/04/13 11:37:43 pascal Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -589,6 +589,7 @@
      SUBDIR += sslh
      SUBDIR += sslsniffer
      SUBDIR += ssvnc
+     SUBDIR += stem
      SUBDIR += supybot
      SUBDIR += synergy
      SUBDIR += tacacs+
