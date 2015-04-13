@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2015/04/03 17:07:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2015/04/13 07:56:06 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -5674,6 +5674,7 @@ share/icons/hicolor/48x48/apps/evolution-mail.png
 share/icons/hicolor/48x48/apps/evolution-memos.png
 share/icons/hicolor/48x48/apps/evolution-tasks.png
 share/icons/hicolor/48x48/apps/evolution.png
+share/icons/hicolor/symbolic/apps/evolution-symbolic.svg
 share/locale/af/LC_MESSAGES/evolution-3.16.mo
 share/locale/am/LC_MESSAGES/evolution-3.16.mo
 share/locale/an/LC_MESSAGES/evolution-3.16.mo
