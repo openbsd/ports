@@ -1,0 +1,6 @@
+Stem is a Python controller library that you can use to interact
+with Tor. With it you can write scripts and applications with
+capabilities similar to Vidalia and arm.
+
+From a technical standpoint, Stem is a Python implementation of
+Tor's directory and control specifications.
