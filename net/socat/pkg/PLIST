@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/05/14 20:58:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/04/13 14:43:28 jasper Exp $
 @bin bin/filan
 @bin bin/procan
 @bin bin/socat
@@ -15,7 +15,6 @@ share/doc/socat/socat-tun.html
 share/doc/socat/socat.html
 share/doc/socat/xio.help
 share/examples/socat/
-share/examples/socat/EXAMPLES
 share/examples/socat/daemon.sh
 share/examples/socat/ftp.sh
 share/examples/socat/gatherinfo.sh
@@ -28,4 +27,3 @@ share/examples/socat/socat_buildscript_for_android.sh
 share/examples/socat/socks4a-echo.sh
 share/examples/socat/socks4echo.sh
 share/examples/socat/test.sh
-share/examples/socat/testcert.conf

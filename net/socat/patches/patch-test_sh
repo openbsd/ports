@@ -1,7 +1,7 @@
-$OpenBSD: patch-test_sh,v 1.1 2014/04/24 15:17:08 sthen Exp $
---- test.sh.orig	Sun Mar  9 14:51:39 2014
-+++ test.sh	Sat Apr 19 16:01:35 2014
-@@ -523,9 +523,6 @@ filloptionvalues() {
+$OpenBSD: patch-test_sh,v 1.2 2015/04/13 14:43:28 jasper Exp $
+--- test.sh.orig	Sat Jan 24 11:15:22 2015
++++ test.sh	Mon Apr 13 14:58:09 2015
+@@ -576,9 +576,6 @@ filloptionvalues() {
      *,dh,*) OPTS=$(echo "$OPTS" |sed "s/,dh,/,dh=/tmp/hugo,/g");;
      esac
      case "$OPTS" in

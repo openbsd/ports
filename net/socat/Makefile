@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2014/07/12 14:30:20 pascal Exp $
+# $OpenBSD: Makefile,v 1.19 2015/04/13 14:43:28 jasper Exp $
 
 COMMENT=	relay for bidirectional data transfer
 
-DISTNAME=	socat-1.7.2.4
-REVISION=	1
+DISTNAME=	socat-1.7.3.0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.dest-unreach.org/socat/
@@ -33,9 +32,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/socat
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/socat
-.for file in EXAMPLES testcert.conf *.sh
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/examples/socat
-.endfor
-
+	${INSTALL_DATA} ${WRKSRC}/*.sh ${PREFIX}/share/examples/socat
 
 .include <bsd.port.mk>

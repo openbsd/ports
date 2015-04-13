@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_socat_1,v 1.6 2014/04/24 15:17:08 sthen Exp $
---- doc/socat.1.orig	Sun Mar  9 20:23:08 2014
-+++ doc/socat.1	Sat Apr 19 17:49:36 2014
-@@ -2884,10 +2884,6 @@ in this file\&.
+$OpenBSD: patch-doc_socat_1,v 1.7 2015/04/13 14:43:28 jasper Exp $
+--- doc/socat.1.orig	Sat Jan 24 17:30:52 2015
++++ doc/socat.1	Mon Apr 13 14:58:09 2015
+@@ -2904,10 +2904,6 @@ in this file\&.
  Specifies the directory with the trusted (root) certificates\&. The directory
  must contain certificates in PEM format and their hashes (see OpenSSL
  documentation) 
@@ -12,7 +12,7 @@ $OpenBSD: patch-doc_socat_1,v 1.6 2014/04/24 15:17:08 sthen Exp $
  .IP "\fB\f(CWpseudo\fP\fP"
  On systems where openssl cannot find an entropy source and where no entropy
  gathering daemon can be utilized, this option activates a mechanism for
-@@ -3365,11 +3361,11 @@ connection, invokes a shell\&. This shell has its stdi
+@@ -3397,11 +3393,11 @@ connection, invokes a shell\&. This shell has its stdi
  connected to the TCP socket (nofork)\&.  The shell starts filan and lets it print the socket addresses to
  stderr (your terminal window)\&.
  .IP 
@@ -26,7 +26,7 @@ $OpenBSD: patch-doc_socat_1,v 1.6 2014/04/24 15:17:08 sthen Exp $
  to make the squid executable from Cygwin run under Windows, actual per May 2004)\&.
  .IP 
  .IP "\fB\f(CWsocat \- tcp:www\&.blackhat\&.org:31337,readbytes=1000\fP\fP"
-@@ -3492,11 +3488,11 @@ error\&. 
+@@ -3524,11 +3520,11 @@ error\&. 
  .SH "FILES"
  
  .PP 
