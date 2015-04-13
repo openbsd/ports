@@ -1,0 +1,31 @@
+$OpenBSD: patch-ext_redcarpet_markdown_c,v 1.1 2015/04/13 12:46:43 jasper Exp $
+
+Security fix for possible XSS via autolinking of untrusted markdown
+https://github.com/vmg/redcarpet/commit/e5a10516d07114d582d13b9125b733008c61c242
+
+--- ext/redcarpet/markdown.c.orig	Mon Apr 13 14:44:18 2015
++++ ext/redcarpet/markdown.c	Mon Apr 13 14:45:16 2015
+@@ -352,7 +352,7 @@ tag_length(uint8_t *data, size_t size, enum mkd_autoli
+ static void
+ parse_inline(struct buf *ob, struct sd_markdown *rndr, uint8_t *data, size_t size)
+ {
+-	size_t i = 0, end = 0;
++	size_t i = 0, end = 0, consumed = 0;
+ 	uint8_t action = 0;
+ 	struct buf work = { 0, 0, 0, 0 };
+ 
+@@ -377,12 +377,13 @@ parse_inline(struct buf *ob, struct sd_markdown *rndr,
+ 		if (end >= size) break;
+ 		i = end;
+ 
+-		end = markdown_char_ptrs[(int)action](ob, rndr, data + i, i, size - i);
++		end = markdown_char_ptrs[(int)action](ob, rndr, data + i, i - consumed , size - i);
+ 		if (!end) /* no action from the callback */
+ 			end = i + 1;
+ 		else {
+ 			i += end;
+ 			end = i;
++			consumed = i;
+ 		}
+ 	}
+ }
