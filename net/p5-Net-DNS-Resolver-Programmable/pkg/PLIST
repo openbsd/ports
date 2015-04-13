@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/21 07:56:16 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/13 16:22:50 sthen Exp $
+${P5SITE}/Net/
 ${P5SITE}/Net/DNS/
 ${P5SITE}/Net/DNS/Resolver/
 ${P5SITE}/Net/DNS/Resolver/Programmable.pm
