@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/01/24 12:11:33 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2015/04/14 09:02:42 bentley Exp $
 
 COMMENT =	Nintendo DS emulator
 
 DISTNAME =	desmume-0.9.10
+REVISION =	0
 
 CATEGORIES =	emulators
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 WANTLIB += agg c m pthread stdc++ z GL GLU X11 Xcomposite
 WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 SDL
+WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 SDL SoundTouch
 WANTLIB += atk-1.0 cairo gdk-x11-2.0 gtk-x11-2.0
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 zzip
 
@@ -25,6 +26,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=desmume/}
 RUN_DEPENDS =	devel/desktop-file-utils
 
 LIB_DEPENDS =	archivers/zziplib \
+		audio/soundtouch \
 		devel/sdl \
 		graphics/agg \
 		graphics/gdk-pixbuf2 \
