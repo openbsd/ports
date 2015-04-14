@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2015/03/16 18:07:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2015/04/14 08:31:43 bentley Exp $
 
 COMMENT=	tempo/pitch audio processing library
 
-DISTNAME=	soundtouch-1.3.1
-REVISION=	1
-SHARED_LIBS +=	BPM		0.0      # .0.0
-SHARED_LIBS +=	SoundTouch	0.0      # .0.0
+DISTNAME=	soundtouch-1.8.0
+SHARED_LIBS +=	SoundTouch	1.0      # .0.0
 CATEGORIES=	audio devel
 
 HOMEPAGE=	http://www.surina.net/soundtouch/
+
+MAINTAINER=	Eric Lalonde <eric.c.lalonde@gmail.com>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,12 +21,13 @@ BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/libtool
 
+WRKDIST=	${WRKDIR}/soundtouch
 
 AUTOCONF_VERSION=2.61
 AUTOMAKE_VERSION=1.9
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} --disable-x86-optimizations
 
 MAKE_FLAGS=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
@@ -37,6 +38,6 @@ pre-configure:
 		touch NEWS README AUTHORS ChangeLog && env \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -i
+		./bootstrap
 
 .include <bsd.port.mk>

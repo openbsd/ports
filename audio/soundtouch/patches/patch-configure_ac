@@ -1,0 +1,11 @@
+--- configure.ac.orig	Tue Jan  7 12:28:51 2014
++++ configure.ac	Mon Jan 19 20:33:09 2015
+@@ -23,7 +23,7 @@ AC_INIT(SoundTouch, 1.8.0, [http://www.surina.net/soun
+ AC_CONFIG_AUX_DIR(config)
+ AM_CONFIG_HEADER([include/soundtouch_config.h])
+ AM_INIT_AUTOMAKE
+-AM_SILENT_RULES([yes])
++m4_ifndef([AM_SILENT_RULES], [m4_define([AM_SILENT_RULES],[])])
+ #AC_DISABLE_SHARED	dnl This makes libtool only build static libs 
+ AC_DISABLE_STATIC	dnl This makes libtool only build shared libs
+ #AC_GNU_SOURCE 		dnl enable posix extensions in glibc
