@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/04/03 16:27:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/04/14 05:50:08 ajacoutot Exp $
 bin/gnome-maps
 lib/gnome-maps/
 lib/gnome-maps/girepository-1.0/
@@ -9,8 +9,8 @@ lib/gnome-maps/libgnome-maps.la
 share/appdata/
 share/appdata/org.gnome.Maps.appdata.xml
 share/applications/org.gnome.Maps.desktop
-share/dbus-1/services/
 share/dbus-1/services/org.gnome.Maps.service
+share/gir-1.0/
 share/gir-1.0/GnomeMaps-1.0.gir
 share/glib-2.0/schemas/org.gnome.Maps.gschema.xml
 share/gnome-maps/
@@ -43,31 +43,13 @@ share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-slightright-symbolic.sv
 share/gnome-maps/org.gnome.Maps
 share/gnome-maps/org.gnome.Maps.data.gresource
 share/gnome-maps/org.gnome.Maps.src.gresource
-share/icons/HighContrast/
-share/icons/HighContrast/16x16/
-share/icons/HighContrast/16x16/apps/
-share/icons/HighContrast/16x16/apps/gnome-maps.png
-share/icons/HighContrast/22x22/
-share/icons/HighContrast/22x22/apps/
-share/icons/HighContrast/22x22/apps/gnome-maps.png
-share/icons/HighContrast/24x24/
-share/icons/HighContrast/24x24/apps/
-share/icons/HighContrast/24x24/apps/gnome-maps.png
-share/icons/HighContrast/256x256/
-share/icons/HighContrast/256x256/apps/
-share/icons/HighContrast/256x256/apps/gnome-maps.png
-share/icons/HighContrast/32x32/
-share/icons/HighContrast/32x32/apps/
-share/icons/HighContrast/32x32/apps/gnome-maps.png
-share/icons/HighContrast/48x48/
-share/icons/HighContrast/48x48/apps/
-share/icons/HighContrast/48x48/apps/gnome-maps.png
 share/icons/hicolor/16x16/apps/gnome-maps.png
 share/icons/hicolor/22x22/apps/gnome-maps.png
 share/icons/hicolor/24x24/apps/gnome-maps.png
 share/icons/hicolor/256x256/apps/gnome-maps.png
 share/icons/hicolor/32x32/apps/gnome-maps.png
 share/icons/hicolor/48x48/apps/gnome-maps.png
+share/icons/hicolor/symbolic/apps/gnome-maps-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-maps.mo
 share/locale/an/LC_MESSAGES/gnome-maps.mo
 share/locale/ar/LC_MESSAGES/gnome-maps.mo
@@ -126,8 +108,6 @@ share/locale/zh_HK/LC_MESSAGES/gnome-maps.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-maps.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
