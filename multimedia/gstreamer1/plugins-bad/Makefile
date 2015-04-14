@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2015/04/04 09:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2015/04/14 08:36:09 bentley Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gstphotography-1.0   1.0      # 405.0
 SHARED_LIBS +=  gstbasecamerabinsrc-1.0 1.0      # 405.0
@@ -16,7 +16,7 @@ SHARED_LIBS +=  gstbadbase-1.0       0.0      # 405.0
 SHARED_LIBS +=  gstbadvideo-1.0      0.0      # 405.0
 SHARED_LIBS +=  gstgl-1.0            0.0      # 405.0
 
-WANTLIB += BPM EGL GL GLU ICE SM SoundTouch X11 X11-xcb Xau Xdamage
+WANTLIB += EGL GL GLU ICE SM SoundTouch X11 X11-xcb Xau Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xrender Xxf86vm ass bz2 cairo croco-0.6
 WANTLIB += drm enca expat ffi fontconfig freetype fribidi gbm
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0
