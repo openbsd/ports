@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/04/03 12:46:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/04/14 05:54:23 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/baobab
 @man man/man1/baobab.1
@@ -266,31 +266,13 @@ share/help/zh_CN/baobab/scan-file-system.page
 share/help/zh_CN/baobab/scan-folder.page
 share/help/zh_CN/baobab/scan-home.page
 share/help/zh_CN/baobab/scan-remote.page
-share/icons/HighContrast/
-share/icons/HighContrast/16x16/
-share/icons/HighContrast/16x16/apps/
-share/icons/HighContrast/16x16/apps/baobab.png
-share/icons/HighContrast/22x22/
-share/icons/HighContrast/22x22/apps/
-share/icons/HighContrast/22x22/apps/baobab.png
-share/icons/HighContrast/24x24/
-share/icons/HighContrast/24x24/apps/
-share/icons/HighContrast/24x24/apps/baobab.png
-share/icons/HighContrast/256x256/
-share/icons/HighContrast/256x256/apps/
-share/icons/HighContrast/256x256/apps/baobab.png
-share/icons/HighContrast/32x32/
-share/icons/HighContrast/32x32/apps/
-share/icons/HighContrast/32x32/apps/baobab.png
-share/icons/HighContrast/48x48/
-share/icons/HighContrast/48x48/apps/
-share/icons/HighContrast/48x48/apps/baobab.png
 share/icons/hicolor/16x16/apps/baobab.png
 share/icons/hicolor/22x22/apps/baobab.png
 share/icons/hicolor/24x24/apps/baobab.png
 share/icons/hicolor/256x256/apps/baobab.png
 share/icons/hicolor/32x32/apps/baobab.png
 share/icons/hicolor/48x48/apps/baobab.png
+share/icons/hicolor/scalable/apps/baobab-symbolic.svg
 share/locale/af/LC_MESSAGES/baobab.mo
 share/locale/am/LC_MESSAGES/baobab.mo
 share/locale/an/LC_MESSAGES/baobab.mo
@@ -390,8 +372,6 @@ share/locale/zh_HK/LC_MESSAGES/baobab.mo
 share/locale/zh_TW/LC_MESSAGES/baobab.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
