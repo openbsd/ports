@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.120 2015/04/04 09:21:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.121 2015/04/14 06:54:49 jasper Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
-GNOME_VERSION=		3.16.0
-REVISION=		0
+GNOME_VERSION=		3.16.1
 
 CATEGORIES=		graphics
 
