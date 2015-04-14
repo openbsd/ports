@@ -1,8 +1,6 @@
-$OpenBSD: patch-e-util_e-spell-checker_h,v 1.1 2015/04/03 17:07:29 ajacoutot Exp $
+$OpenBSD: patch-e-util_e-spell-checker_h,v 1.2 2015/04/14 06:54:54 ajacoutot Exp $
 
-XXX push upstream
-../e-util/e-spell-checker.h:50: error: redefinition of typedef 'ESpellChecker'
-../e-util/e-spell-dictionary.h:53: error: previous declaration of 'ESpellChecker' was here
+https://bugzilla.gnome.org/show_bug.cgi?id=747824
 
 --- e-util/e-spell-checker.h.orig	Fri Apr  3 17:47:03 2015
 +++ e-util/e-spell-checker.h	Fri Apr  3 17:47:09 2015
