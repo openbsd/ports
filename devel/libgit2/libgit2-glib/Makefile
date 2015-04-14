@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2015/04/07 08:51:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2015/04/14 06:55:20 jasper Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
-V=			0.22.4
+V=			0.22.6
 PROJECT=		libgit2-glib
-SHARED_LIBS +=	git2-glib-1.0        2.0      # 0.0
+SHARED_LIBS +=	git2-glib-1.0        2.1      # 0.0
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/${PROJECT}/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=		.tar.xz
