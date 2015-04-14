@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/06 10:06:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/14 07:52:24 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		3.16.0
+GNOME_VERSION=		3.16.1
 
 SHARED_LIBS +=  ide-1.0              0.0      # unknown
 
@@ -48,11 +48,11 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache
 
-LIB_DEPENDS=		devel/libgit2/libgit2-glib \
+LIB_DEPENDS=		devel/libgit2/libgit2-glib>=0.22.6 \
 			devel/llvm \
 			x11/gnome/devhelp \
 			x11/gnome/gjs \
-			x11/gtksourceview3
+			x11/gtksourceview3>=3.16.1
 
 CONFIGURE_ENV=		ac_cv_path_PYTHON3_CONFIG=python${MODPY_VERSION}-config
 

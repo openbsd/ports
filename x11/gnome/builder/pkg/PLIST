@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/06 10:06:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/14 07:52:24 ajacoutot Exp $
 @bin bin/gnome-builder
 lib/girepository-1.0/Ide-1.0.typelib
 lib/libide-1.0.a
@@ -16,6 +16,7 @@ share/gir-1.0/Ide-1.0.gir
 share/glib-2.0/schemas/org.gnome.builder.editor.gschema.xml
 share/glib-2.0/schemas/org.gnome.builder.editor.language.gschema.xml
 share/glib-2.0/schemas/org.gnome.builder.experimental.gschema.xml
+share/glib-2.0/schemas/org.gnome.builder.project-tree.gschema.xml
 share/gtksourceview-3.0/styles/builder-dark.xml
 share/gtksourceview-3.0/styles/builder.xml
 share/icons/hicolor/16x16/apps/builder.png
@@ -24,17 +25,7 @@ share/icons/hicolor/256x256/apps/builder.png
 share/icons/hicolor/32x32/apps/builder.png
 share/icons/hicolor/48x48/apps/builder.png
 share/icons/hicolor/512x512/apps/builder.png
-share/icons/hicolor/scalable/actions/builder-split-tab-symbolic.svg
-share/icons/hicolor/scalable/apps/builder-documentation-symbolic.svg
-share/icons/hicolor/scalable/apps/builder-editor-symbolic.svg
-share/icons/hicolor/scalable/autocomplete/
-share/icons/hicolor/scalable/autocomplete/lang-class-symbolic.svg
-share/icons/hicolor/scalable/autocomplete/lang-enum-symbolic.svg
-share/icons/hicolor/scalable/autocomplete/lang-enum-value-symbolic.svg
-share/icons/hicolor/scalable/autocomplete/lang-function-symbolic.svg
-share/icons/hicolor/scalable/autocomplete/lang-method-symbolic.svg
-share/icons/hicolor/scalable/autocomplete/lang-struct-symbolic.svg
-share/icons/hicolor/scalable/autocomplete/struct-field-symbolic.svg
+share/icons/hicolor/scalable/apps/builder-symbolic.svg
 share/locale/bs/LC_MESSAGES/gnome-builder.mo
 share/locale/cs/LC_MESSAGES/gnome-builder.mo
 share/locale/de/LC_MESSAGES/gnome-builder.mo

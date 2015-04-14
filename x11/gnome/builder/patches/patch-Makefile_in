@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/04/06 10:06:09 ajacoutot Exp $
---- Makefile.in.orig	Mon Apr  6 10:56:01 2015
-+++ Makefile.in	Mon Apr  6 10:56:09 2015
-@@ -1545,7 +1545,6 @@ libide_1_0_la_CXXFLAGS = \
+$OpenBSD: patch-Makefile_in,v 1.2 2015/04/14 07:52:24 ajacoutot Exp $
+--- Makefile.in.orig	Tue Apr 14 01:58:31 2015
++++ Makefile.in	Tue Apr 14 08:14:10 2015
+@@ -1634,7 +1634,6 @@ libide_1_0_la_CXXFLAGS = \
  	$(NULL)
  
  libide_1_0_la_LDFLAGS = \
