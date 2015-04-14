@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2014/12/09 20:29:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2015/04/14 08:38:14 bentley Exp $
 
 COMMENT=	free audio editor
 
 V=		1.3.9
 DISTNAME=	audacity-minsrc-${V}
 PKGNAME=	audacity-${V}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	audio
 
 EXTRACT_SUFX=	.tar.bz2
