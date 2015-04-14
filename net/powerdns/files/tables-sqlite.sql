@@ -1,54 +1,89 @@
--- $OpenBSD: tables-sqlite.sql,v 1.1.1.1 2008/10/02 18:40:41 jasper Exp $
--- Taken from FreeBSD's powerdns port.
-
-CREATE TABLE "domains" (
-	"id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	"name" VARCHAR(255) NOT NULL,
-	"type" VARCHAR(6) NOT NULL,
-	"master" VARCHAR(40) NOT NULL DEFAULT '',
-	"account" VARCHAR(40) NOT NULL DEFAULT '',
-	"notified_serial" INTEGER DEFAULT NULL,
-	"last_check" INTEGER DEFAULT NULL,
-	"status" CHAR(1) NOT NULL DEFAULT 'A',
-CONSTRAINT "unq_domains_name"
-	UNIQUE ("name")
+-- $OpenBSD: tables-sqlite.sql,v 1.2 2015/04/14 18:10:27 florian Exp $
+-- from the powerdns documentation
+-- http://doc.powerdns.com/html/gsqlite.html#idp10048416
+CREATE TABLE domains (
+  id                    INTEGER PRIMARY KEY,
+  name                  VARCHAR(255) NOT NULL COLLATE NOCASE,
+  master                VARCHAR(128) DEFAULT NULL,
+  last_check            INTEGER DEFAULT NULL,
+  type                  VARCHAR(6) NOT NULL,
+  notified_serial       INTEGER DEFAULT NULL,
+  account               VARCHAR(40) DEFAULT NULL
 );
 
-CREATE INDEX "idx_domains_status_type" ON "domains" ("status","type");
+CREATE UNIQUE INDEX name_index ON domains(name);
 
 
-
-CREATE TABLE "records" (
-	"id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	"domain_id" INTEGER NOT NULL,
-	"name" VARCHAR(255) NOT NULL,
-	"type" VARCHAR(6) NOT NULL,
-	"ttl" INTEGER DEFAULT NULL,
-	"prio" INTEGER DEFAULT NULL,
-	"content" VARCHAR(255) NOT NULL,
-	"change_date" INTEGER DEFAULT NULL,
-CONSTRAINT "fk_records_domainid"
-	FOREIGN KEY ("domain_id")
-	REFERENCES "domains" ("id")
-	ON UPDATE CASCADE
-	ON DELETE CASCADE
+CREATE TABLE records (
+  id                    INTEGER PRIMARY KEY,
+  domain_id             INTEGER DEFAULT NULL,
+  name                  VARCHAR(255) DEFAULT NULL,
+  type                  VARCHAR(10) DEFAULT NULL,
+  content               VARCHAR(65535) DEFAULT NULL,
+  ttl                   INTEGER DEFAULT NULL,
+  prio                  INTEGER DEFAULT NULL,
+  change_date           INTEGER DEFAULT NULL,
+  disabled              BOOLEAN DEFAULT 0,
+  ordername             VARCHAR(255),
+  auth                  BOOL DEFAULT 1
 );
 
-CREATE INDEX "idx_records_name_type" ON "records" ("name","type");
-CREATE INDEX "idx_records_type" ON "records" ("type");
+CREATE INDEX rec_name_index ON records(name);
+CREATE INDEX nametype_index ON records(name,type);
+CREATE INDEX domain_id ON records(domain_id);
+CREATE INDEX orderindex ON records(ordername);
 
 
-
-CREATE TABLE "supermasters" (
-	"ip" VARCHAR(40) NOT NULL,
-	"nameserver" VARCHAR(255) NOT NULL,
-	"account" VARCHAR(40) NOT NULL DEFAULT ''
+CREATE TABLE supermasters (
+  ip                    VARCHAR(64) NOT NULL,
+  nameserver            VARCHAR(255) NOT NULL COLLATE NOCASE,
+  account               VARCHAR(40) DEFAULT NULL
 );
 
-CREATE INDEX "idx_smip_smns" ON "supermasters" ("ip","nameserver");
+CREATE UNIQUE INDEX ip_nameserver_pk ON supermasters(ip, nameserver);
 
 
+CREATE TABLE comments (
+  id                    INTEGER PRIMARY KEY,
+  domain_id             INTEGER NOT NULL,
+  name                  VARCHAR(255) NOT NULL,
+  type                  VARCHAR(10) NOT NULL,
+  modified_at           INT NOT NULL,
+  account               VARCHAR(40) DEFAULT NULL,
+  comment               VARCHAR(65535) NOT NULL
+);
 
-GRANT SELECT ON "supermasters" TO "powerdns";
-GRANT ALL ON "domains" TO "powerdns";
-GRANT ALL ON "records" TO "powerdns";
+CREATE INDEX comments_domain_id_index ON comments (domain_id);
+CREATE INDEX comments_nametype_index ON comments (name, type);
+CREATE INDEX comments_order_idx ON comments (domain_id, modified_at);
+
+
+CREATE TABLE domainmetadata (
+ id                     INTEGER PRIMARY KEY,
+ domain_id              INT NOT NULL,
+ kind                   VARCHAR(16) COLLATE NOCASE,
+ content                TEXT
+);
+
+CREATE INDEX domainmetaidindex ON domainmetadata(domain_id);
+
+
+CREATE TABLE cryptokeys (
+ id                     INTEGER PRIMARY KEY,
+ domain_id              INT NOT NULL,
+ flags                  INT NOT NULL,
+ active                 BOOL,
+ content                TEXT
+);
+
+CREATE INDEX domainidindex ON cryptokeys(domain_id);
+
+
+CREATE TABLE tsigkeys (
+ id                     INTEGER PRIMARY KEY,
+ name                   VARCHAR(255) COLLATE NOCASE,
+ algorithm              VARCHAR(50) COLLATE NOCASE,
+ secret                 VARCHAR(255)
+);
+
+CREATE UNIQUE INDEX namealgoindex ON tsigkeys(name, algorithm);

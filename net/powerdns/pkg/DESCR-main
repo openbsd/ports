@@ -1,8 +1,8 @@
-The PowerDNS daemon is a versatile nameserver which supports
-a large number of backends. These backends can either be plain
-zonefiles or be more dynamic in nature. Additionally, through
-use of clever programming techniques, PowerDNS offers very high
-domain resolution performance.
+The PowerDNS daemon is a versatile nameserver which supports a large number
+of backends. These backends can either be plain zonefiles or be more dynamic
+in nature. Additionally, through use of clever programming techniques,
+PowerDNS offers very high domain resolution performance.
 
-Prime examples of backends include relational databases,
-but also (geographical) loadbalancing and failover algorithms. 
+Backends for SQLite databases, BIND files and geographical load-balancing
+are including in the main package. MySQL, PostgreSQL and LDAP back-ends are
+packaged separately.

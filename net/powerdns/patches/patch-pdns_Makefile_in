@@ -1,16 +1,21 @@
-$OpenBSD: patch-pdns_Makefile_in,v 1.4 2012/01/11 01:41:47 sthen Exp $
-
-Remove target that we take care of in post-install.
-
---- pdns/Makefile.in.orig	Thu Jan  5 09:27:41 2012
-+++ pdns/Makefile.in	Tue Jan 10 14:31:26 2012
-@@ -1286,8 +1286,7 @@ install-dvi: install-dvi-recursive
- 
- install-dvi-am:
- 
--install-exec-am: install-binPROGRAMS install-sbinPROGRAMS \
--	install-sysconfDATA
-+install-exec-am: install-binPROGRAMS install-sbinPROGRAMS
- 
- install-html: install-html-recursive
- 
+$OpenBSD: patch-pdns_Makefile_in,v 1.5 2015/04/14 18:10:27 florian Exp $
+--- pdns/Makefile.in.orig	Sat Dec 20 17:42:01 2014
++++ pdns/Makefile.in	Sat Dec 20 17:42:18 2014
+@@ -70,7 +70,7 @@ EXTRA_PROGRAMS = pdns_recursor$(EXEEXT) sdig$(EXEEXT) 
+ 	notify$(EXEEXT) dnsbulktest$(EXEEXT) nsec3dig$(EXEEXT) \
+ 	saxfr$(EXEEXT)
+ @BOTAN110_TRUE@am__append_5 = botan110signers.cc botansigners.cc
+-@BOTAN110_TRUE@am__append_6 = $(BOTAN110_LIBS) -lgmp -lrt
++@BOTAN110_TRUE@am__append_6 = $(BOTAN110_LIBS) -lgmp
+ @BOTAN18_TRUE@am__append_7 = botan18signers.cc botansigners.cc
+ @BOTAN18_TRUE@am__append_8 = $(BOTAN18_LIBS) -lgmp
+ @CRYPTOPP_TRUE@am__append_9 = cryptoppsigners.cc
+@@ -81,7 +81,7 @@ EXTRA_PROGRAMS = pdns_recursor$(EXEEXT) sdig$(EXEEXT) 
+ @PKCS11_TRUE@am__append_14 = $(P11KIT1_LIBS)
+ @LMDB_TRUE@am__append_15 = zone2lmdb
+ @BOTAN110_TRUE@am__append_16 = botan110signers.cc botansigners.cc
+-@BOTAN110_TRUE@am__append_17 = $(BOTAN110_LIBS) -lgmp -lrt
++@BOTAN110_TRUE@am__append_17 = $(BOTAN110_LIBS) -lgmp
+ @BOTAN18_TRUE@am__append_18 = botan18signers.cc botansigners.cc
+ @BOTAN18_TRUE@am__append_19 = $(BOTAN18_LIBS) -lgmp
+ @CRYPTOPP_TRUE@am__append_20 = cryptoppsigners.cc

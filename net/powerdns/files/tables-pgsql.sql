@@ -1,60 +1,98 @@
--- $OpenBSD: tables-pgsql.sql,v 1.1.1.1 2008/10/02 18:40:41 jasper Exp $
--- Taken from FreeBSD's powerdns port.
-
-CREATE TABLE "domains" (
-	"id" SERIAL NOT NULL,
-	"name" VARCHAR(255) NOT NULL,
-	"type" VARCHAR(6) NOT NULL,
-	"master" VARCHAR(40) NOT NULL DEFAULT '',
-	"account" VARCHAR(40) NOT NULL DEFAULT '',
-	"notified_serial" INTEGER DEFAULT NULL,
-	"last_check" INTEGER DEFAULT NULL,
-	"status" CHAR(1) NOT NULL DEFAULT 'A',
-CONSTRAINT "pk_domains_id"
-	PRIMARY KEY ("id"),
-CONSTRAINT "unq_domains_name"
-	UNIQUE ("name")
+-- $OpenBSD: tables-pgsql.sql,v 1.2 2015/04/14 18:10:27 florian Exp $
+-- from the powerdns documentation
+-- http://doc.powerdns.com/html/generic-mypgsql-backends.html#idp9669072
+CREATE TABLE domains (
+  id                    SERIAL PRIMARY KEY,
+  name                  VARCHAR(255) NOT NULL,
+  master                VARCHAR(128) DEFAULT NULL,
+  last_check            INT DEFAULT NULL,
+  type                  VARCHAR(6) NOT NULL,
+  notified_serial       INT DEFAULT NULL,
+  account               VARCHAR(40) DEFAULT NULL,
+  CONSTRAINT c_lowercase_name CHECK (((name)::TEXT = LOWER((name)::TEXT)))
 );
 
-CREATE INDEX "idx_domains_status_type" ON "domains" ("status","type");
+CREATE UNIQUE INDEX name_index ON domains(name);
 
 
-
-CREATE TABLE "records" (
-	"id" SERIAL NOT NULL,
-	"domain_id" INTEGER NOT NULL,
-	"name" VARCHAR(255) NOT NULL,
-	"type" VARCHAR(6) NOT NULL,
-	"ttl" INTEGER DEFAULT NULL,
-	"prio" INTEGER DEFAULT NULL,
-	"content" VARCHAR(255) NOT NULL,
-	"change_date" INTEGER DEFAULT NULL,
-CONSTRAINT "pk_records_id"
-	PRIMARY KEY ("id"),
-CONSTRAINT "fk_records_domainid"
-	FOREIGN KEY ("domain_id")
-	REFERENCES domains ("id")
-	ON UPDATE CASCADE
-	ON DELETE CASCADE
+CREATE TABLE records (
+  id                    SERIAL PRIMARY KEY,
+  domain_id             INT DEFAULT NULL,
+  name                  VARCHAR(255) DEFAULT NULL,
+  type                  VARCHAR(10) DEFAULT NULL,
+  content               VARCHAR(65535) DEFAULT NULL,
+  ttl                   INT DEFAULT NULL,
+  prio                  INT DEFAULT NULL,
+  change_date           INT DEFAULT NULL,
+  disabled              BOOL DEFAULT 'f',
+  ordername             VARCHAR(255),
+  auth                  BOOL DEFAULT 't',
+  CONSTRAINT domain_exists
+  FOREIGN KEY(domain_id) REFERENCES domains(id)
+  ON DELETE CASCADE,
+  CONSTRAINT c_lowercase_name CHECK (((name)::TEXT = LOWER((name)::TEXT)))
 );
 
-CREATE INDEX "idx_records_name_type" ON "records" ("name","type");
-CREATE INDEX "idx_records_type" ON "records" ("type");
+CREATE INDEX rec_name_index ON records(name);
+CREATE INDEX nametype_index ON records(name,type);
+CREATE INDEX domain_id ON records(domain_id);
+CREATE INDEX recordorder ON records (domain_id, ordername text_pattern_ops);
 
 
-
-CREATE TABLE "supermasters" (
-	"ip" VARCHAR(40) NOT NULL,
-	"nameserver" VARCHAR(255) NOT NULL,
-	"account" VARCHAR(40) NOT NULL DEFAULT ''
+CREATE TABLE supermasters (
+  ip                    INET NOT NULL,
+  nameserver            VARCHAR(255) NOT NULL,
+  account               VARCHAR(40) DEFAULT NULL,
+  PRIMARY KEY(ip, nameserver)
 );
 
-CREATE INDEX "idx_smaster_ip_ns" ON "supermasters" ("ip","nameserver");
+
+CREATE TABLE comments (
+  id                    SERIAL PRIMARY KEY,
+  domain_id             INT NOT NULL,
+  name                  VARCHAR(255) NOT NULL,
+  type                  VARCHAR(10) NOT NULL,
+  modified_at           INT NOT NULL,
+  account               VARCHAR(40) DEFAULT NULL,
+  comment               VARCHAR(65535) NOT NULL,
+  CONSTRAINT domain_exists
+  FOREIGN KEY(domain_id) REFERENCES domains(id)
+  ON DELETE CASCADE,
+  CONSTRAINT c_lowercase_name CHECK (((name)::TEXT = LOWER((name)::TEXT)))
+);
+
+CREATE INDEX comments_domain_id_idx ON comments (domain_id);
+CREATE INDEX comments_name_type_idx ON comments (name, type);
+CREATE INDEX comments_order_idx ON comments (domain_id, modified_at);
 
 
+CREATE TABLE domainmetadata (
+  id                    SERIAL PRIMARY KEY,
+  domain_id             INT REFERENCES domains(id) ON DELETE CASCADE,
+  kind                  VARCHAR(16),
+  content               TEXT
+);
 
-GRANT SELECT ON "supermasters" TO "powerdns";
-GRANT ALL ON "domains" TO "powerdns";
-GRANT ALL ON "domains_id_seq" TO "powerdns";
-GRANT ALL ON "records" TO "powerdns";
-GRANT ALL ON "records_id_seq" TO "powerdns";
+CREATE INDEX domainidmetaindex ON domainmetadata(domain_id);
+
+
+CREATE TABLE cryptokeys (
+  id                    SERIAL PRIMARY KEY,
+  domain_id             INT REFERENCES domains(id) ON DELETE CASCADE,
+  flags                 INT NOT NULL,
+  active                BOOL,
+  content               TEXT
+);
+
+CREATE INDEX domainidindex ON cryptokeys(domain_id);
+
+
+CREATE TABLE tsigkeys (
+  id                    SERIAL PRIMARY KEY,
+  name                  VARCHAR(255),
+  algorithm             VARCHAR(50),
+  secret                VARCHAR(255),
+  CONSTRAINT c_lowercase_name CHECK (((name)::TEXT = LOWER((name)::TEXT)))
+);
+
+CREATE UNIQUE INDEX namealgoindex ON tsigkeys(name, algorithm);

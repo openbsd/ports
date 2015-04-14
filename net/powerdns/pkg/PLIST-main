@@ -1,31 +1,34 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2012/05/17 10:27:02 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2015/04/14 18:10:27 florian Exp $
 @conflict powerdns-sqlite-*
 @conflict powerdns-sqlite3-*
 @pkgpath net/powerdns,-sqlite
 @pkgpath net/powerdns,-sqlite3
 @newgroup _powerdns:609
-@newuser _powerdns:609:_powerdns:daemon:Proxy DNS Server:/nonexistent:/sbin/nologin
+@newuser _powerdns:609:_powerdns:daemon:PowerDNS Server:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/pdnsd/*
 @bin bin/pdns_control
+@bin bin/pdnssec
+@bin bin/zone2json
 @bin bin/zone2ldap
 @bin bin/zone2sql
-lib/powerdns/
-@comment lib/powerdns/libgeobackend.a
-@comment lib/powerdns/libgeobackend.la
-lib/powerdns/libgeobackend.so
-@comment lib/powerdns/libgsqlite3backend.a
-@comment lib/powerdns/libgsqlite3backend.la
-lib/powerdns/libgsqlite3backend.so
-@man man/man8/pdns_control.8
-@man man/man8/pdns_server.8
-@man man/man8/zone2sql.8
+lib/pdns/
+lib/pdns/libbindbackend.so
+lib/pdns/libgeobackend.so
+lib/pdns/libgsqlite3backend.so
+@man man/man1/pdns_control.1
+@man man/man1/pdns_server.1
+@man man/man1/pdnssec.1
+@man man/man1/zone2ldap.1
+@man man/man1/zone2sql.1
 @bin sbin/pdns_server
-share/examples/powerdns/
+share/doc/pdns/
+share/doc/pdns/dnssec-3.x_to_3.4.0_schema.sqlite3.sql
+share/doc/pdns/nodnssec-3.x_to_3.4.0_schema.sqlite3.sql
+share/doc/pdns/schema.sqlite3.sql
+share/examples/pdns/
 @sample ${SYSCONFDIR}/
-share/examples/powerdns/pdns.conf
+share/examples/pdns/pdns.conf
 @sample ${SYSCONFDIR}/pdns.conf
-share/examples/powerdns/pdns.conf-dist
-share/examples/powerdns/tables-mysql.sql
-share/examples/powerdns/tables-pgsql.sql
-share/examples/powerdns/tables-sqlite.sql
+share/examples/pdns/pdns.conf-dist
+share/examples/pdns/tables-sqlite.sql
 @rcscript ${RCDIR}/pdns_server

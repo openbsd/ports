@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2015/04/14 18:10:27 florian Exp $
+already fixed upstream in https://github.com/PowerDNS/pdns/pull/2324
+--- configure.orig	Fri Apr  3 17:59:21 2015
++++ configure	Fri Apr  3 17:59:24 2015
+@@ -19748,7 +19748,6 @@ $as_echo_n "checking for PgSQL library directory... " 
+       ;;
+     /*)
+       PGSQL_lib="-L$PGSQL_libdir -Wl,-rpath,$PGSQL_libdir -lpq"
+-      LDFLAGS="$PGSQL_lib $LDFLAGS"
+       ;;
+     *)
+       as_fn_error $? "The PgSQL library directory ($PGSQL_libdir) must be an absolute path." "$LINENO" 5

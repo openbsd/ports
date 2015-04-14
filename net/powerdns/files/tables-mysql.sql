@@ -1,60 +1,95 @@
--- $OpenBSD: tables-mysql.sql,v 1.1.1.1 2008/10/02 18:40:41 jasper Exp $
--- Taken from FreeBSD's powerdns port.
+-- $OpenBSD: tables-mysql.sql,v 1.2 2015/04/14 18:10:27 florian Exp $
+-- from the powerdns documentation
+-- http://doc.powerdns.com/html/generic-mypgsql-backends.html#idp9659216
+CREATE TABLE domains (
+  id                    INT AUTO_INCREMENT,
+  name                  VARCHAR(255) NOT NULL,
+  master                VARCHAR(128) DEFAULT NULL,
+  last_check            INT DEFAULT NULL,
+  type                  VARCHAR(6) NOT NULL,
+  notified_serial       INT DEFAULT NULL,
+  account               VARCHAR(40) DEFAULT NULL,
+  PRIMARY KEY (id)
+) Engine=InnoDB;
 
-SET SESSION sql_mode='ANSI';
-
-CREATE TABLE "domains" (
-	"id" INTEGER NOT NULL AUTO_INCREMENT,
-	"name" VARCHAR(255) NOT NULL,
-	"type" VARCHAR(6) NOT NULL,
-	"master" VARCHAR(40) NOT NULL DEFAULT '',
-	"account" VARCHAR(40) NOT NULL DEFAULT '',
-	"notified_serial" INTEGER DEFAULT NULL,
-	"last_check" INTEGER DEFAULT NULL,
-	"status" CHAR(1) NOT NULL DEFAULT 'A',
-CONSTRAINT "pk_domains_id"
-	PRIMARY KEY ("id"),
-CONSTRAINT "unq_domains_name"
-	UNIQUE ("name")
-) type=InnoDB;
-
-CREATE INDEX "idx_domains_status_type" ON "domains" ("status","type");
+CREATE UNIQUE INDEX name_index ON domains(name);
 
 
+CREATE TABLE records (
+  id                    INT AUTO_INCREMENT,
+  domain_id             INT DEFAULT NULL,
+  name                  VARCHAR(255) DEFAULT NULL,
+  type                  VARCHAR(10) DEFAULT NULL,
+  content               VARCHAR(64000) DEFAULT NULL,
+  ttl                   INT DEFAULT NULL,
+  prio                  INT DEFAULT NULL,
+  change_date           INT DEFAULT NULL,
+  disabled              TINYINT(1) DEFAULT 0,
+  ordername             VARCHAR(255) BINARY DEFAULT NULL,
+  auth                  TINYINT(1) DEFAULT 1,
+  PRIMARY KEY (id),
+  CONSTRAINT `records_ibfk_1` FOREIGN KEY (`domain_id`) REFERENCES `domains`
+    (`id`) ON DELETE CASCADE
+) Engine=InnoDB;
 
-CREATE TABLE "records" (
-	"id" INTEGER NOT NULL AUTO_INCREMENT,
-	"domain_id" INTEGER NOT NULL,
-	"name" VARCHAR(255) NOT NULL,
-	"type" VARCHAR(6) NOT NULL,
-	"ttl" INTEGER DEFAULT NULL,
-	"prio" INTEGER DEFAULT NULL,
-	"content" VARCHAR(255) NOT NULL,
-	"change_date" INTEGER DEFAULT NULL,
-CONSTRAINT "pk_records_id"
-	PRIMARY KEY ("id"),
-CONSTRAINT "fk_records_domainid"
-	FOREIGN KEY ("domain_id")
-	REFERENCES "domains" ("id")
-	ON UPDATE CASCADE
-	ON DELETE CASCADE
-) type=InnoDB;
-
-CREATE INDEX "idx_records_name_type" ON "records" ("name","type");
-CREATE INDEX "idx_records_type" ON "records" ("type");
-
+CREATE INDEX nametype_index ON records(name,type);
+CREATE INDEX domain_id ON records(domain_id);
+CREATE INDEX recordorder ON records (domain_id, ordername);
 
 
-CREATE TABLE "supermasters" (
-	"ip" VARCHAR(40) NOT NULL,
-	"nameserver" VARCHAR(255) NOT NULL,
-	"account" VARCHAR(40) NOT NULL DEFAULT ''
-);
-
-CREATE INDEX "idx_smip_smns" ON "supermasters" ("ip","nameserver");
-
+CREATE TABLE supermasters (
+  ip                    VARCHAR(64) NOT NULL,
+  nameserver            VARCHAR(255) NOT NULL,
+  account               VARCHAR(40) DEFAULT NULL,
+  PRIMARY KEY (ip, nameserver)
+) Engine=InnoDB;
 
 
-GRANT SELECT ON "supermasters" TO "powerdns";
-GRANT ALL ON "domains" TO "powerdns";
-GRANT ALL ON "records" TO "powerdns";
+CREATE TABLE comments (
+  id                    INT AUTO_INCREMENT,
+  domain_id             INT NOT NULL,
+  name                  VARCHAR(255) NOT NULL,
+  type                  VARCHAR(10) NOT NULL,
+  modified_at           INT NOT NULL,
+  account               VARCHAR(40) NOT NULL,
+  comment               VARCHAR(64000) NOT NULL,
+  PRIMARY KEY (id)
+) Engine=InnoDB;
+
+CREATE INDEX comments_domain_id_idx ON comments (domain_id);
+CREATE INDEX comments_name_type_idx ON comments (name, type);
+CREATE INDEX comments_order_idx ON comments (domain_id, modified_at);
+
+
+CREATE TABLE domainmetadata (
+  id                    INT AUTO_INCREMENT,
+  domain_id             INT NOT NULL,
+  kind                  VARCHAR(16),
+  content               TEXT,
+  PRIMARY KEY (id)
+) Engine=InnoDB;
+
+CREATE INDEX domainmetaidindex ON domainmetadata(domain_id);
+
+
+CREATE TABLE cryptokeys (
+  id                    INT AUTO_INCREMENT,
+  domain_id             INT NOT NULL,
+  flags                 INT NOT NULL,
+  active                BOOL,
+  content               TEXT,
+  PRIMARY KEY(id)
+) Engine=InnoDB;
+
+CREATE INDEX domainidindex ON cryptokeys(domain_id);
+
+
+CREATE TABLE tsigkeys (
+  id                    INT AUTO_INCREMENT,
+  name                  VARCHAR(255),
+  algorithm             VARCHAR(50),
+  secret                VARCHAR(255),
+  PRIMARY KEY (id)
+) Engine=InnoDB;
+
+CREATE UNIQUE INDEX namealgoindex ON tsigkeys(name, algorithm);
