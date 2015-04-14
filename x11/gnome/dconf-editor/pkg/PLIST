@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/03 08:46:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/14 05:48:13 ajacoutot Exp $
 @conflict dconf-<0.22.0
 @pkgpath devel/dconf,-editor
 @bin bin/dconf-editor
@@ -10,25 +10,6 @@ share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/ca.desrt.dconf-editor.service
 share/glib-2.0/schemas/ca.desrt.dconf-editor.gschema.xml
-share/icons/HighContrast/
-share/icons/HighContrast/16x16/
-share/icons/HighContrast/16x16/apps/
-share/icons/HighContrast/16x16/apps/dconf-editor.png
-share/icons/HighContrast/22x22/
-share/icons/HighContrast/22x22/apps/
-share/icons/HighContrast/22x22/apps/dconf-editor.png
-share/icons/HighContrast/24x24/
-share/icons/HighContrast/24x24/apps/
-share/icons/HighContrast/24x24/apps/dconf-editor.png
-share/icons/HighContrast/256x256/
-share/icons/HighContrast/256x256/apps/
-share/icons/HighContrast/256x256/apps/dconf-editor.png
-share/icons/HighContrast/32x32/
-share/icons/HighContrast/32x32/apps/
-share/icons/HighContrast/32x32/apps/dconf-editor.png
-share/icons/HighContrast/48x48/
-share/icons/HighContrast/48x48/apps/
-share/icons/HighContrast/48x48/apps/dconf-editor.png
 share/icons/hicolor/16x16/apps/dconf-editor.png
 share/icons/hicolor/22x22/apps/dconf-editor.png
 share/icons/hicolor/24x24/apps/dconf-editor.png
@@ -36,6 +17,7 @@ share/icons/hicolor/256x256/apps/dconf-editor.png
 share/icons/hicolor/32x32/apps/dconf-editor.png
 share/icons/hicolor/48x48/apps/dconf-editor.png
 share/icons/hicolor/64x64/apps/dconf-editor.png
+share/icons/hicolor/scalable/apps/dconf-editor-symbolic.svg
 share/locale/an/LC_MESSAGES/dconf.mo
 share/locale/ar/LC_MESSAGES/dconf.mo
 share/locale/as/LC_MESSAGES/dconf.mo
@@ -101,7 +83,5 @@ share/locale/zh_TW/LC_MESSAGES/dconf.mo
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
