@@ -1,6 +1,9 @@
-$OpenBSD: patch-libide_ide-highlight-index_c,v 1.1 2015/04/14 07:52:24 ajacoutot Exp $
+$OpenBSD: patch-libide_ide-highlight-index_c,v 1.2 2015/04/14 08:32:22 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=747826
+From a7508c8c8b61d1f9c4735021a4e3dcd952dd7fef Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Tue, 14 Apr 2015 09:43:14 +0200
+Subject: portability: use sysconf(3) to get PAGE_SIZE
 
 --- libide/ide-highlight-index.c.orig	Tue Apr 14 09:39:12 2015
 +++ libide/ide-highlight-index.c	Tue Apr 14 09:40:00 2015
