@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2015/04/14 05:39:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2015/04/15 09:40:31 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -14,6 +14,10 @@ PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-cups=		0
+REVISION-cloudprint=	0
 
 CATEGORIES=		x11 devel
 
@@ -40,7 +44,6 @@ MODULES=		devel/gettext \
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/pango \
 			graphics/gdk-pixbuf2 \
-			graphics/libepoxy \
 			x11/gnome/at-spi2-atk
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			x11/hicolor-icon-theme
@@ -93,8 +96,6 @@ WANTLIB-guic += ${WANTLIB} c
 
 MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \
 			desktop-file-utils
-
-MODGNOME_CPPFLAGS=	-I${X11BASE}/include/freetype2
 
 TEST_IS_INTERACTIVE=	x11
 
