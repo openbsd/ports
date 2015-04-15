@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2014/05/28 13:37:25 gonzalo Exp $
+$OpenBSD: README,v 1.5 2015/04/15 13:07:09 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -21,6 +21,7 @@ unprivileged account.
      contain correct timestamps.
 
      # cp -p /etc/{hosts,localtime,resolv.conf} /var/icecast/etc
+     # cp -p /usr/share/misc/mime.types /var/icecast/etc
 
   2. Adjust /var/icecast/icecast.xml.  Consult the documentation and
      comments about the various options.
@@ -54,8 +55,7 @@ unprivileged account.
 
   5. Make Icecast start at boot.
 
-     Add 'icecast' to pkg_scripts in /etc/rc.conf.local. Eg:
-     pkg_scripts="icecast"
+     # rcctl enable icecast
 
 Random hints:
 

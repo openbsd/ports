@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2015/04/14 06:48:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2015/04/15 13:07:09 jasper Exp $
 
 COMMENT=	server for streaming various media formats
 CATEGORIES=	net audio
@@ -6,6 +6,7 @@ CATEGORIES=	net audio
 MAINTAINER=	Eric Lalonde <eric.c.lalonde@gmail.com>
 
 DISTNAME=	icecast-2.4.2
+REVISION=	0
 HOMEPAGE=	http://www.icecast.org/
 
 # GPL
