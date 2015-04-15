@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.96 2015/04/12 18:37:23 zhuk Exp $
+# $OpenBSD: portcheck,v 1.97 2015/04/15 08:15:42 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -205,6 +205,58 @@ skip_dir() {
 	done
 	return 1
 }
+
+############################################################
+# List of well-known top-level port categories
+# in a form usable in pattern matching: "foo|bar|baz"
+#
+
+top_level_categories=$(xargs <<EOF | sed -e 's/ /|/g'
+archivers
+astro
+audio
+base
+benchmarks
+biology
+books
+cad
+chinese
+comms
+converters
+databases
+devel
+editors
+education
+emulators
+fonts
+games
+geo
+graphics
+inputmethods
+japanese
+java
+korean
+lang
+mail
+math
+meta
+misc
+multimedia
+net
+news
+plan9
+print
+productivity
+security
+shells
+sysutils
+telephony
+tests
+textproc
+www
+x11
+EOF
+)
 
 ############################################################
 # Check and fail routines
@@ -546,11 +598,12 @@ check_port_dir() {
 	# Now gather and check some info via "make show=...".
 	# We request all info at once for speed.
 
-	local dist_subdir distfiles flavor flavors gh_commit master_sites
+	local categories dist_subdir distfiles flavor flavors
+	local gh_commit master_sites
 	local multi_packages pkgpath_this pseudo_flavor pseudo_flavors
 	local shared_libs subst_cmd
 	local perm_pkg_cdrom perm_pkg_ftp perm_dist_ftp
-	local show_items="DIST_SUBDIR DISTFILES FLAVOR FLAVORS GH_COMMIT"
+	local show_items="CATEGORIES DIST_SUBDIR DISTFILES FLAVOR FLAVORS GH_COMMIT"
 	local show_items="$show_items MASTER_SITES MULTI_PACKAGES PKGPATH"
 	local show_items="$show_items PSEUDO_FLAVOR PSEUDO_FLAVORS"
 	local show_items="$show_items SHARED_LIBS SUBST_CMD"
@@ -560,6 +613,7 @@ check_port_dir() {
 
 	local read_failed=false
 	(cd -- "$dir"; make "${make_args[@]}" show="$show_items" || true) </dev/null |&
+	read -pr categories &&
 	read -pr dist_subdir &&
 	read -pr distfiles &&
 	read -pr flavor &&
@@ -601,6 +655,7 @@ check_port_dir() {
 		check_flavors[${#check_flavors[@]}]=$f
 	done
 
+	check_categories "$dir" $categories
 	check_distfiles "$dir" "$dist_subdir" $distfiles
 	check_master_sites "$dir" $master_sites
 	check_permit_dist "$dir" "$perm_pkg_cdrom" "$perm_pkg_ftp" \
@@ -653,6 +708,21 @@ check_shlibs_versions() {
 			    "version $libver instead of 0.0"
 		fi
 		shift 2
+	done
+}
+
+# Checks made:
+#   * All top-level category names are well-known.
+check_categories() {
+	$debugging && echo "CALLED: check_categories($*)" >&2
+
+	local dir=$1; shift
+	local portref=$(portref "$dir")
+	for c in "$@"; do
+		c=${c%%/*}
+		if ! echo "$c" | egrep -q "^($top_level_categories)\$"; then
+			err "${portref}non-standard top-level category: $c"
+		fi
 	done
 }
 
