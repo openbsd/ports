@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2014/11/01 04:53:09 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2015/04/15 21:59:38 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=2.1,<2.2
 bin/erb21
@@ -908,6 +908,8 @@ lib/ruby/${RUBYLIBREV}/rubygems/source_specific_file.rb
 lib/ruby/${RUBYLIBREV}/rubygems/spec_fetcher.rb
 lib/ruby/${RUBYLIBREV}/rubygems/specification.rb
 lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/
+lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/AddTrustExternalCARoot-2048.pem
+lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/AddTrustExternalCARoot.pem
 lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/Class3PublicPrimaryCertificationAuthority.pem
 lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/DigiCertHighAssuranceEVRootCA.pem
 lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/EntrustnetSecureServerCertificationAuthority.pem
@@ -1045,7 +1047,7 @@ lib/ruby/gems/${RUBYLIBREV}/gems/test-unit-${VERSION}.0/bin/testrb
 lib/ruby/gems/${RUBYLIBREV}/specifications/
 lib/ruby/gems/${RUBYLIBREV}/specifications/default/
 lib/ruby/gems/${RUBYLIBREV}/specifications/default/bigdecimal-1.2.4.gemspec
-lib/ruby/gems/${RUBYLIBREV}/specifications/default/io-console-0.4.2.gemspec
+lib/ruby/gems/${RUBYLIBREV}/specifications/default/io-console-0.4.3.gemspec
 lib/ruby/gems/${RUBYLIBREV}/specifications/default/json-1.8.1.gemspec
 lib/ruby/gems/${RUBYLIBREV}/specifications/default/minitest-4.7.5.gemspec
 lib/ruby/gems/${RUBYLIBREV}/specifications/default/psych-2.0.5.gemspec

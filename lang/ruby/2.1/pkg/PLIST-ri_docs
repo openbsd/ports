@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.4 2014/09/22 15:15:42 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.5 2015/04/15 21:59:38 jeremy Exp $
 share/ri/
 share/ri/${RUBYLIBREV}/
 share/ri/${RUBYLIBREV}/system/
@@ -9697,6 +9697,7 @@ share/ri/${RUBYLIBREV}/system/REXML/Attribute/%3d%3d-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Attribute/cdesc-Attribute.ri
 share/ri/${RUBYLIBREV}/system/REXML/Attribute/clone-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Attribute/doctype-i.ri
+share/ri/${RUBYLIBREV}/system/REXML/Document/document-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Attribute/element%3d-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Attribute/element-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Attribute/hash-i.ri
