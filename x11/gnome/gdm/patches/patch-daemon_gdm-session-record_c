@@ -1,9 +1,9 @@
-$OpenBSD: patch-daemon_gdm-session-record_c,v 1.4 2014/03/09 21:56:20 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session-record_c,v 1.5 2015/04/15 07:25:46 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=722482
 
---- daemon/gdm-session-record.c.orig	Wed Oct 16 15:59:56 2013
-+++ daemon/gdm-session-record.c	Fri Feb 21 11:04:16 2014
+--- daemon/gdm-session-record.c.orig	Tue Apr  7 16:38:20 2015
++++ daemon/gdm-session-record.c	Wed Apr 15 09:18:13 2015
 @@ -33,6 +33,16 @@
  #include <utmp.h>
  #endif
@@ -116,7 +116,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  void
  gdm_session_record_login (GPid                  session_pid,
                            const char           *user_name,
-@@ -261,8 +352,9 @@ gdm_session_record_login (GPid                  sessio
+@@ -264,8 +355,9 @@ gdm_session_record_login (GPid                  sessio
                  g_debug ("Adding new utmp record");
                  pututxline (&session_record);
          }
@@ -128,7 +128,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  #endif
  }
  
-@@ -333,8 +425,8 @@ gdm_session_record_logout (GPid                  sessi
+@@ -336,8 +428,8 @@ gdm_session_record_logout (GPid                  sessi
          }
  
          endutxent ();

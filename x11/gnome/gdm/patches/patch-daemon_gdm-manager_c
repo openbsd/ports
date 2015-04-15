@@ -1,11 +1,6 @@
-$OpenBSD: patch-daemon_gdm-manager_c,v 1.7 2015/04/11 15:32:07 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-manager_c,v 1.8 2015/04/15 07:25:46 ajacoutot Exp $
 
 XXX fix+push upstream
-
-From 172534d4a803d7905c10a76dc7bd6652cebc5f81 Mon Sep 17 00:00:00 2001
-From: Ray Strode <rstrode@redhat.com>
-Date: Tue, 7 Apr 2015 10:57:36 -0400
-Subject: manager: properly query display number when built without plymouth
 
 --- daemon/gdm-manager.c.orig	Fri Apr 10 21:54:41 2015
 +++ daemon/gdm-manager.c	Fri Apr 10 21:54:54 2015
@@ -18,16 +13,3 @@ Subject: manager: properly query display number when built without plymouth
  
  typedef struct
  {
-@@ -1705,10 +1705,11 @@ on_display_status_changed (GdmDisplay *display,
- 
-         g_object_get (display,
-                       "is-local", &display_is_local,
--                      "x11-display-number", &display_number,
-                       NULL);
-         quit_plymouth = display_is_local && manager->priv->plymouth_is_running;
- #endif
-+
-+        g_object_get (display, "x11-display-number", &display_number, NULL);
- 
-         status = gdm_display_get_status (display);
- 
