@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2015/04/02 18:07:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2015/04/15 19:24:19 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -1252,6 +1252,7 @@ share/locale/he/LC_MESSAGES/orca.mo
 share/locale/hi/LC_MESSAGES/orca.mo
 share/locale/hu/LC_MESSAGES/orca.mo
 share/locale/id/LC_MESSAGES/orca.mo
+share/locale/is/LC_MESSAGES/orca.mo
 share/locale/it/LC_MESSAGES/orca.mo
 share/locale/ja/LC_MESSAGES/orca.mo
 share/locale/kn/LC_MESSAGES/orca.mo
