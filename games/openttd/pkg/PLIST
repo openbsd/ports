@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2014/08/22 02:32:26 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.21 2015/04/15 01:39:16 bentley Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -54,6 +54,7 @@ share/openttd/ai/compat_1.1.nut
 share/openttd/ai/compat_1.2.nut
 share/openttd/ai/compat_1.3.nut
 share/openttd/ai/compat_1.4.nut
+share/openttd/ai/compat_1.5.nut
 share/openttd/baseset/
 share/openttd/baseset/no_music.obm
 share/openttd/baseset/no_sound.obs
@@ -140,6 +141,7 @@ share/openttd/lang/irish.lng
 share/openttd/lang/italian.lng
 share/openttd/lang/japanese.lng
 share/openttd/lang/korean.lng
+share/openttd/lang/latin.lng
 share/openttd/lang/latvian.lng
 share/openttd/lang/lithuanian.lng
 share/openttd/lang/luxembourgish.lng
@@ -205,6 +207,7 @@ share/openttd/media/extra_grf/oneway.png
 share/openttd/media/extra_grf/openttd.nfo
 share/openttd/media/extra_grf/openttdgui.nfo
 share/openttd/media/extra_grf/openttdgui.png
+share/openttd/media/extra_grf/palette.nfo
 share/openttd/media/extra_grf/rivers/
 share/openttd/media/extra_grf/rivers/arctic.nfo
 share/openttd/media/extra_grf/rivers/arctic_brown.png
