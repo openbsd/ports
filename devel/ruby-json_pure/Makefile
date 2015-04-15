@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/10/26 23:55:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/15 13:59:17 sebastia Exp $
 
 COMMENT=		JSON implementation for Ruby
 
-DISTNAME=		json_pure-1.7.6
-REVISION =		0
+DISTNAME=		json_pure-1.8.2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://flori.github.com/json/
