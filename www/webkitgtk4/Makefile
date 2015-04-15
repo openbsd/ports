@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/03/27 18:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/04/15 10:03:16 ajacoutot Exp $
 
 BROKEN-alpha =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
 BROKEN-hppa =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
@@ -9,7 +9,7 @@ SHARED_ONLY =		Yes
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.8.0
+V =			2.8.1
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
@@ -80,6 +80,7 @@ LIB_DEPENDS =		devel/harfbuzz,-icu \
 			x11/gtk+2 \
 			x11/gtk+3
 
+CFLAGS +=		-I${X11BASE}/include
 LDFLAGS =		-L${X11BASE}/lib
 
 CONFIGURE_ARGS =	-DPORT=GTK \
