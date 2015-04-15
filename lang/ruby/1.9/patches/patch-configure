@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.10 2014/01/21 10:06:07 jasper Exp $
+$OpenBSD: patch-configure,v 1.11 2015/04/15 21:58:16 jeremy Exp $
 
 Fix so name.
 
 Override the arch setting to remove OpenBSD version from it,
 so ports don't have to be bumped when OpenBSD version changes.
 
---- configure.orig	Fri Nov 22 05:24:15 2013
-+++ configure	Tue Jan 21 10:02:25 2014
-@@ -16845,7 +16845,7 @@ _ACEOF
+--- configure.orig	Thu Nov 13 05:42:20 2014
++++ configure	Mon Apr 13 19:41:44 2015
+@@ -17004,7 +17004,7 @@ _ACEOF
    openbsd*) :
  
  	SOLIBS='$(LIBS)'
@@ -16,7 +16,7 @@ so ports don't have to be bumped when OpenBSD version changes.
  	 ;; #(
    solaris*) :
  
-@@ -17675,7 +17675,10 @@ _ACEOF
+@@ -17834,7 +17834,10 @@ _ACEOF
  _ACEOF
  
  else
