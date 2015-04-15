@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/04/04 12:53:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2015/04/15 09:40:54 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		personal file-sharing service for GNOME
 
 GNOME_PROJECT=		gnome-user-share
 GNOME_VERSION=		3.14.2
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		www sysutils
 

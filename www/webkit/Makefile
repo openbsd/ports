@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2015/04/10 06:30:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.137 2015/04/15 09:40:52 ajacoutot Exp $
 
 PORTROACH =	limit:^2\.4
 
@@ -13,7 +13,7 @@ EPOCH =		1
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX =	.tar.xz
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/

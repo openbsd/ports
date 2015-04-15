@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2015/04/04 09:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2015/04/15 09:40:52 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
 GNOME_VERSION=		3.16.0
-REVISION=		0
+REVISION=		1
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V

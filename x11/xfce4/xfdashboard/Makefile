@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/12 18:08:15 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2015/04/15 09:40:54 ajacoutot Exp $
 
 COMMENT=	Xfce4 gnome-shell like dashboard
 
 XFCE_GOODIE =	xfdashboard
 XFCE_VERSION =	0.4.0
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

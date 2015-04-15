@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/13 08:52:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/15 09:40:54 ajacoutot Exp $
 
 COMMENT =		GNOME utility to insert unusual characters
 
 GNOME_PROJECT =		gnome-characters
 GNOME_VERSION =		3.16.1
+REVISION =		0
 
 # BSD3/GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

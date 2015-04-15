@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2015/04/13 07:56:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2015/04/15 09:40:52 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.95
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		mail
 
