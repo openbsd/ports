@@ -1,0 +1,3 @@
+kcgi is a minimal CGI library for web applications written in ISO C. It
+was designed to be secure and auditable. kcgi also ships with
+kcgihtml(3), kcgijson(3), kcgixml(3), and kcgi_regress(3) libraries.
