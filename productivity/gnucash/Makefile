@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2015/04/12 06:04:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2015/04/15 14:28:43 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -71,12 +71,13 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-dbi-dbd-dir=${LOCALBASE}/lib/dbd \
 			--with-xdg-data-dirs=${LOCALBASE}/share
 
-# do not pick-up guile2
-CONFIGURE_ENV +=	GUILE_EFFECTIVE_VERSION=1.8
-
 # --disable-ofx until libofx/libsp is fixed to work with .so
 CONFIGURE_ARGS +=	--disable-doxygen \
 			--disable-ofx
+
+# XXX make sure guile2 headers are picked up first (over guile1);
+# cannot use CPPFLAGS/CFLAGS since they get appended last
+MAKE_FLAGS +=		CC="${CC} -I${LOCALBASE}/include/guile/2.0"
 
 MODGNOME_CPPFLAGS =	-I${X11BASE}/include
 
