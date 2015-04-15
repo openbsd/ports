@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2015/01/21 14:41:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2015/04/15 19:24:15 jasper Exp $
 
 COMMENT=	perl module for parsing huge XML documents
 
-DISTNAME=	XML-Twig-3.48
+DISTNAME=	XML-Twig-3.49
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.xmltwig.com/xmltwig/
