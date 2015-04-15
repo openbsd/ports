@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_input_c,v 1.1 2010/04/23 05:54:26 jakemsr Exp $
---- src/input.c.orig	Mon Jan 18 03:06:33 2010
-+++ src/input.c	Mon Jan 18 03:08:36 2010
-@@ -40,6 +40,10 @@
+$OpenBSD: patch-src_input_c,v 1.2 2015/04/15 10:13:21 jasper Exp $
+--- src/input.c.orig	Tue Aug  7 00:22:01 2012
++++ src/input.c	Wed Apr 15 11:13:57 2015
+@@ -47,6 +47,10 @@
  #include "im_oss.h"
  #endif
  
@@ -12,8 +12,8 @@ $OpenBSD: patch-src_input_c,v 1.1 2010/04/23 05:54:26 jakemsr Exp $
  #ifdef HAVE_SUN_AUDIO
  #include "im_sun.h"
  #endif
-@@ -79,6 +83,9 @@ static module modules[] = {
-     { "stdinpcm", stdin_open_module},
+@@ -89,6 +93,9 @@ static module modules[] = {
+ #endif
  #ifdef HAVE_OSS
      { "oss", oss_open_module},
 +#endif

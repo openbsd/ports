@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/21 08:46:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2015/04/15 10:13:21 jasper Exp $
 
 COMMENT=	icecast source for streaming Ogg Vorbis
 
-DISTNAME=	ices-2.0.1
-REVISION=	7
+DISTNAME=	ices-2.0.2
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/ices.php
@@ -13,21 +12,25 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://downloads.xiph.org/releases/ices/
 
-AUTOCONF_VERSION=2.59
-AUTOMAKE_VERSION=1.9
-CONFIGURE_STYLE=autoconf automake
-CONFIGURE_ARGS=	--program-suffix=2 --disable-sun-audio
+WANTLIB += c m ogg pthread shout sndio speex theora vorbis vorbisenc
+WANTLIB += xml2 z
 
-# Needs AC_PROG_LIBTOOL	
-BUILD_DEPENDS += devel/libtool
-MODULES=	converters/libiconv
-WANTLIB=	c m ogg pthread sndio theora vorbis vorbisenc z \
-		shout>=3 speex>=4 xml2>=9
-LIB_DEPENDS=	net/libshout \
-		audio/speex \
-		textproc/libxml
+MODULES=		converters/libiconv
 
-SEPARATE_BUILD=	Yes
+# Needs AC_PROG_LIBTOOL
+BUILD_DEPENDS += 	devel/libtool
+
+LIB_DEPENDS=		audio/speex \
+			net/libshout \
+			textproc/libxml
+
+AUTOCONF_VERSION=	2.61
+AUTOMAKE_VERSION=	1.9
+CONFIGURE_STYLE=	autoconf
+CONFIGURE_ARGS=		--program-suffix=2 \
+			--disable-sun-audio
+
+SEPARATE_BUILD=		Yes
 
 post-extract:
 	cp ${FILESDIR}/im_sndio.{c,h} ${WRKSRC}/src/

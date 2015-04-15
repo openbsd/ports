@@ -1,15 +1,12 @@
-$OpenBSD: patch-Makefile_am,v 1.1 2010/04/23 05:54:26 jakemsr Exp $
---- Makefile.am.orig	Mon Jan 18 03:48:33 2010
-+++ Makefile.am	Mon Jan 18 03:49:20 2010
-@@ -3,9 +3,9 @@
- AUTOMAKE_OPTIONS = foreign 1.6 dist-bzip2
- ACLOCAL_AMFLAGS = -I m4
+$OpenBSD: patch-Makefile_am,v 1.2 2015/04/15 10:13:21 jasper Exp $
+--- Makefile.am.orig	Wed Apr 15 11:07:45 2015
++++ Makefile.am	Wed Apr 15 11:08:59 2015
+@@ -5,7 +5,7 @@ ACLOCAL_AMFLAGS = -I m4
  
--SUBDIRS = debian src conf doc
-+SUBDIRS = src conf doc
+ SUBDIRS = src conf doc
  
 -EXTRA_DIST = README AUTHORS COPYING TODO m4/shout.m4 m4/vorbis.m4 m4/ogg.m4 m4/xiph_compiler.m4 m4/xiph_xml2.m4
-+EXTRA_DIST = AUTHORS TODO m4/shout.m4 m4/vorbis.m4 m4/ogg.m4 m4/xiph_compiler.m4 m4/xiph_xml2.m4
++EXTRA_DIST = AUTHORS COPYING TODO m4/shout.m4 m4/vorbis.m4 m4/ogg.m4 m4/xiph_compiler.m4 m4/xiph_xml2.m4
  
  # SCCS Definitions (for BitKeeper)
  GET = true

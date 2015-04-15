@@ -1,12 +1,14 @@
-$OpenBSD: patch-configure_in,v 1.1 2010/04/23 05:54:26 jakemsr Exp $
---- configure.in.orig	Mon Jan 18 03:43:35 2010
-+++ configure.in	Mon Jan 18 03:46:35 2010
-@@ -63,6 +63,15 @@ if test "$have_oss" = yes; then
-     AC_DEFINE(HAVE_OSS,,[Define to enable OSS input module])
- fi
+$OpenBSD: patch-configure_in,v 1.2 2015/04/15 10:13:21 jasper Exp $
+--- configure.in.orig	Tue Aug  7 00:22:01 2012
++++ configure.in	Wed Apr 15 11:15:31 2015
+@@ -73,7 +73,19 @@ fi
  
+ AM_CONDITIONAL(HAVE_OSS,test "$have_oss" = yes)
+ 
++dnl ================================================================
 +dnl Check for sndio
-+
++dnl ================================================================
+ 
 +AC_CHECK_HEADER(sndio.h, have_sndio=yes, have_sndio=no)
 +AM_CONDITIONAL(HAVE_SNDIO, test "$have_sndio" = yes)
 +if test "$have_sndio" = yes; then
@@ -14,14 +16,24 @@ $OpenBSD: patch-configure_in,v 1.1 2010/04/23 05:54:26 jakemsr Exp $
 +   AC_DEFINE(HAVE_SNDIO,,[Define to enable sndio input module])
 +fi
 +
++AM_CONDITIONAL(HAVE_SNDIO,test "$have_sndio" = yes)
++
+ dnl ================================================================
  dnl Check for Sun audio
- 
- AC_C_BIGENDIAN
-@@ -120,6 +129,7 @@ XIPH_VAR_PREPEND([XIPH_LIBS], [$VORBISENC_LIBS $VORBIS
+ dnl ================================================================
+@@ -173,6 +185,7 @@ XIPH_VAR_PREPEND([XIPH_LIBS], [$VORBISENC_LIBS $VORBIS
  dnl Make substitutions
  
  AC_SUBST(ALSA_LIBS)
 +AC_SUBST(SNDIO_LIBS)
+ AC_SUBST(ROARAUDIO_LIBS)
  AC_SUBST(XML_LIBS)
  AC_SUBST(XML_CFLAGS)
- AC_SUBST(LIBTOOL_DEPS)
+@@ -198,6 +211,7 @@ echo "
+ 
+                 Build with alsa:           $have_alsa
+                 Build with OSS:            $have_oss
++                Build with sndio:          $have_sndio
+                 Build with Sun audio:      $have_sun_audio
+                 Build with RoarAudio:      $have_roaraudio
+ 

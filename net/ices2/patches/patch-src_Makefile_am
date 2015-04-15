@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_am,v 1.1 2010/04/23 05:54:26 jakemsr Exp $
---- src/Makefile.am.orig	Mon Jan 18 03:42:30 2010
-+++ src/Makefile.am	Mon Jan 18 03:47:44 2010
+$OpenBSD: patch-src_Makefile_am,v 1.2 2015/04/15 10:13:21 jasper Exp $
+--- src/Makefile.am.orig	Wed Apr 15 11:10:56 2015
++++ src/Makefile.am	Wed Apr 15 11:11:45 2015
 @@ -14,6 +14,10 @@ if HAVE_OSS
  oss = im_oss.c
  endif
@@ -12,19 +12,19 @@ $OpenBSD: patch-src_Makefile_am,v 1.1 2010/04/23 05:54:26 jakemsr Exp $
  if HAVE_SUN_AUDIO
  sun = im_sun.c
  endif
-@@ -24,13 +28,13 @@ endif
+@@ -28,13 +32,13 @@ endif
  
- dist_noinst_HEADERS = cfgparse.h input.h inputmodule.h im_playlist.h signals.h stream.h reencode.h encode.h playlist_basic.h logging.h im_stdinpcm.h event.h stream_shared.h metadata.h audio.h resample.h im_sun.h im_oss.h im_alsa.h
+ dist_noinst_HEADERS = cfgparse.h input.h inputmodule.h im_playlist.h signals.h stream.h reencode.h encode.h playlist_basic.h logging.h im_stdinpcm.h event.h stream_shared.h metadata.h audio.h resample.h im_sun.h im_oss.h im_alsa.h im_roar.h
  
--ices_SOURCES = input.c cfgparse.c stream.c ices.c signals.c im_playlist.c reencode.c encode.c playlist_basic.c im_stdinpcm.c stream_shared.c metadata.c playlist_script.c audio.c resample.c $(oss) $(sun) $(alsa)
-+ices_SOURCES = input.c cfgparse.c stream.c ices.c signals.c im_playlist.c reencode.c encode.c playlist_basic.c im_stdinpcm.c stream_shared.c metadata.c playlist_script.c audio.c resample.c $(oss) $(sndio) $(sun) $(alsa)
+-ices_SOURCES = input.c cfgparse.c stream.c ices.c signals.c im_playlist.c reencode.c encode.c playlist_basic.c im_stdinpcm.c stream_shared.c metadata.c playlist_script.c audio.c resample.c $(oss) $(sun) $(alsa) $(roar)
++ices_SOURCES = input.c cfgparse.c stream.c ices.c signals.c im_playlist.c reencode.c encode.c playlist_basic.c im_stdinpcm.c stream_shared.c metadata.c playlist_script.c audio.c resample.c $(oss) $(sun) $(alsa) $(roar) $(sndio)
  
  ices_LDADD = log/libicelog.la \
               timing/libicetiming.la \
               thread/libicethread.la \
               avl/libiceavl.la \
--             @ALSA_LIBS@ @XIPH_LIBS@
-+             @ALSA_LIBS@ @SNDIO_LIBS@ @XIPH_LIBS@
+-             @ROARAUDIO_LIBS@ \
++             @ROARAUDIO_LIBS@ @SNDIO_LIBS@ \
+              @ALSA_LIBS@ @XIPH_LIBS@
  
  debug:
- 	$(MAKE) all CFLAGS="@DEBUG@"

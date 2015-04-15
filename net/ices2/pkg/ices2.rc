@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: ices2.rc,v 1.1 2015/04/15 10:13:21 jasper Exp $
+
+daemon="${TRUEPREFIX}/bin/ices2"
+daemon_flags="${SYSCONFDIR}/ices2.xml"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+
+rc_cmd $1
