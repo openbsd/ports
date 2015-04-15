@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2015/04/04 09:21:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2015/04/15 08:08:20 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
-GNOME_VERSION=		3.16.0
-REVISION=		0
+GNOME_VERSION=		3.16.1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,14 +19,13 @@ WANTLIB += goa-1.0 goa-backend-1.0 gobject-2.0 gpg-error graphite2
 WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += gweather-3 harfbuzz harfbuzz-icu hogweed ibus-1.0 icudata
-WANTLIB += icui18n icuuc javascriptcoregtk-3.0 javascriptcoregtk-4.0
-WANTLIB += jpeg json-glib-1.0 lzma m nettle notify orc-0.4 p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png polkit-gobject-1 pthread pthread-stubs pwquality
-WANTLIB += rest-0.7 secret-1 soup-2.4 soup-gnome-2.4 sqlite3 stdc++
-WANTLIB += tasn1 telepathy-glib webkit2gtk-4.0 webkitgtk-3.0 webp
-WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shape xcb-shm xcb-xfixes
-WANTLIB += xml2 xslt z
+WANTLIB += icui18n icuuc javascriptcoregtk-4.0 jpeg json-glib-1.0
+WANTLIB += lzma m nettle notify orc-0.4 p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png polkit-gobject-1 pthread
+WANTLIB += pthread-stubs pwquality rest-0.7 secret-1 soup-2.4
+WANTLIB += soup-gnome-2.4 sqlite3 stdc++ tasn1 telepathy-glib
+WANTLIB += webkit2gtk-4.0 webp xcb xcb-dri2 xcb-glx xcb-render
+WANTLIB += xcb-shape xcb-shm xcb-xfixes xml2 xslt z
 WANTLIB += heimdal/lib/heimsqlite
 
 MODULES=		devel/dconf \
