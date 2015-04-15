@@ -1,0 +1,12 @@
+$OpenBSD: patch-SSLeay_xs,v 1.7 2015/04/15 21:58:42 bluhm Exp $
+--- SSLeay.xs.orig	Fri Jan 16 23:19:24 2015
++++ SSLeay.xs	Mon Jan 19 02:15:01 2015
+@@ -5773,7 +5773,7 @@ OCSP_response_results(rsp,...)
+ 
+ #endif
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10002000L && !defined(OPENSSL_NO_TLSEXT) && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10002000L && !defined(OPENSSL_NO_TLSEXT)
+ 
+ int
+ SSL_CTX_set_alpn_select_cb(ctx,callback,data=&PL_sv_undef)

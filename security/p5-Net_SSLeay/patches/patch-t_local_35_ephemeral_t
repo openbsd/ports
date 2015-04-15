@@ -1,0 +1,19 @@
+$OpenBSD: patch-t_local_35_ephemeral_t,v 1.1 2015/04/15 21:58:42 bluhm Exp $
+--- t/local/35_ephemeral.t.orig	Tue Dec  4 02:49:11 2012
++++ t/local/35_ephemeral.t	Mon Jan 19 02:20:29 2015
+@@ -2,8 +2,14 @@
+ 
+ use strict;
+ use warnings;
+-use Test::More tests => 3;
++use Test::More;
+ use Net::SSLeay;
++
++BEGIN {
++  plan skip_all => "libressl removed support for ephemeral/temporary RSA private keys" if defined Net::SSLeay::LIBRESSL_VERSION_NUMBER();
++}
++
++plan tests => 3;
+ 
+ Net::SSLeay::randomize();
+ Net::SSLeay::load_error_strings();
