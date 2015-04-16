@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.108 2015/04/07 17:05:57 sebastia Exp $
+# $OpenBSD: Makefile,v 1.109 2015/04/16 07:19:12 jasper Exp $
+
+PORTROACH=	limit:^3
 
 VERSION=	3.7.4
 REVISION=	2
