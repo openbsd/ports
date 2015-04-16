@@ -1,8 +1,8 @@
-$OpenBSD: patch-config_mk,v 1.1.1.1 2012/11/01 14:39:36 zinke Exp $
---- config.mk.orig	Tue Jul 10 21:17:34 2012
-+++ config.mk	Tue Jul 10 21:19:18 2012
+$OpenBSD: patch-config_mk,v 1.2 2015/04/16 10:16:35 jung Exp $
+--- config.mk.orig	Sat Nov 29 17:18:56 2014
++++ config.mk	Wed Apr 15 22:13:22 2015
 @@ -2,20 +2,20 @@
- VERSION = 0.2
+ VERSION = 0.3
  
  # paths
 -PREFIX = /usr/local

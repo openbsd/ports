@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/07/17 03:27:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/16 10:16:35 jung Exp $
 
 COMMENT=		list titles of runnnig X windows
 
-DISTNAME=		lsw-0.2
-REVISION =		0
+DISTNAME=		lsw-0.3
 
 CATEGORIES=		x11
 
