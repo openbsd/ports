@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_mk,v 1.6 2012/10/30 17:14:53 zinke Exp $
---- config.mk.orig	Thu Oct 25 21:00:04 2012
-+++ config.mk	Sun Oct 28 19:34:29 2012
-@@ -4,27 +4,26 @@ VERSION = 1.1
+$OpenBSD: patch-config_mk,v 1.7 2015/04/16 19:00:09 jung Exp $
+--- config.mk.orig	Wed Apr 15 21:51:53 2015
++++ config.mk	Wed Apr 15 21:55:01 2015
+@@ -4,27 +4,26 @@ VERSION = 1.2
  # Customize below to fit your system
  
  # paths
@@ -20,10 +20,10 @@ $OpenBSD: patch-config_mk,v 1.6 2012/10/30 17:14:53 zinke Exp $
 +LIBS = -L${X11LIB} -lX11 -lXext
  
  # flags
--CPPFLAGS = -DVERSION=\"${VERSION}\" -DHAVE_SHADOW_H -DCOLOR1=\"black\" -DCOLOR2=\"\#005577\"
+-CPPFLAGS = -DVERSION=\"${VERSION}\" -DHAVE_SHADOW_H
 -CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
 -LDFLAGS = -s ${LIBS}
-+CFLAGS += ${INCS} -DVERSION=\"${VERSION}\" -DCOLOR1=\"black\" -DCOLOR2=\"\#404040\" -DHAVE_BSD_AUTH
++CFLAGS += -std=c99 -pedantic -Wall ${INCS} -DVERSION=\"${VERSION}\" -DHAVE_BSD_AUTH
 +LDFLAGS += ${LIBS}
  
  # On *BSD remove -DHAVE_SHADOW_H from CPPFLAGS and add -DHAVE_BSD_AUTH

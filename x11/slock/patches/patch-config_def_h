@@ -1,0 +1,7 @@
+$OpenBSD: patch-config_def_h,v 1.1 2015/04/16 19:00:09 jung Exp $
+--- config.def.h.orig	Wed Apr 15 22:07:07 2015
++++ config.def.h	Wed Apr 15 22:07:24 2015
+@@ -1,2 +1,2 @@
+ #define COLOR1 "black"
+-#define COLOR2 "#005577"
++#define COLOR2 "#404040"
