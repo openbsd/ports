@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1324 2015/04/12 15:06:37 jca Exp $
+# $OpenBSD: Makefile,v 1.1325 2015/04/16 17:51:45 sebastia Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1345,7 +1345,9 @@
      SUBDIR += ruby-clio
      SUBDIR += ruby-color-tools
      SUBDIR += ruby-colorator
+     SUBDIR += ruby-colored
      SUBDIR += ruby-commander
+     SUBDIR += ruby-cri
      SUBDIR += ruby-cucumber
      SUBDIR += ruby-daemon_controller
      SUBDIR += ruby-daemons
@@ -1372,6 +1374,7 @@
      SUBDIR += ruby-kgio,ruby21
      SUBDIR += ruby-kgio,ruby22
      SUBDIR += ruby-locale
+     SUBDIR += ruby-log4r
      SUBDIR += ruby-metaclass
      SUBDIR += ruby-minitest
      SUBDIR += ruby-mocha
@@ -1403,6 +1406,7 @@
      SUBDIR += ruby-ruby_parser
      SUBDIR += ruby-rubyinline
      SUBDIR += ruby-safe_yaml
+     SUBDIR += ruby-semantic_puppet
      SUBDIR += ruby-sexp_processor
      SUBDIR += ruby-stringex
      SUBDIR += ruby-subset_sum,ruby20
