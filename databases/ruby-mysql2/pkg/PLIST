@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/07/09 17:13:07 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/04/16 20:34:29 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/eventmachine.rb
@@ -29,6 +28,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/rcov.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/test_data
 ${GEM_LIB}/gems/${DISTNAME}/support/
+${GEM_LIB}/gems/${DISTNAME}/support/libmysql.def
 ${GEM_LIB}/gems/${DISTNAME}/support/mysql_enc_to_ruby.rb
 ${GEM_LIB}/gems/${DISTNAME}/support/ruby_enc_to_mysql.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
