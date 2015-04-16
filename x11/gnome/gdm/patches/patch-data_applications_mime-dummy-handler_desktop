@@ -1,6 +1,6 @@
-$OpenBSD: patch-data_applications_mime-dummy-handler_desktop,v 1.1 2013/05/19 09:46:02 ajacoutot Exp $
+$OpenBSD: patch-data_applications_mime-dummy-handler_desktop,v 1.2 2015/04/16 11:34:37 ajacoutot Exp $
 
-XXX push upstream
+https://bugzilla.gnome.org/show_bug.cgi?id=747987
 
 --- data/applications/mime-dummy-handler.desktop.orig	Sun May 19 11:25:46 2013
 +++ data/applications/mime-dummy-handler.desktop	Sun May 19 11:26:36 2013
