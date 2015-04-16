@@ -1,12 +1,15 @@
-$OpenBSD: patch-src_fr-command-rpm_c,v 1.6 2012/09/28 09:10:40 jasper Exp $
---- src/fr-command-rpm.c.orig	Fri Sep 28 09:59:36 2012
-+++ src/fr-command-rpm.c	Fri Sep 28 09:59:57 2012
+$OpenBSD: patch-src_fr-command-rpm_c,v 1.7 2015/04/16 11:14:58 jasper Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=747984
+
+--- src/fr-command-rpm.c.orig	Wed Aug 13 07:21:20 2014
++++ src/fr-command-rpm.c	Thu Apr 16 12:08:29 2015
 @@ -234,7 +234,7 @@ fr_command_rpm_get_capabilities (FrArchive  *archive,
  	FrArchiveCap capabilities;
  
  	capabilities = FR_ARCHIVE_CAN_STORE_MANY_FILES;
 -	if (_g_program_is_available ("cpio", check_command))
-+	if (_g_program_is_available ("gcpio", check_command))
++	if (_g_program_is_available (CPIO_PATH, check_command))
  		capabilities |= FR_ARCHIVE_CAN_READ;
  
  	return capabilities;
@@ -15,7 +18,7 @@ $OpenBSD: patch-src_fr-command-rpm_c,v 1.6 2012/09/28 09:10:40 jasper Exp $
  			     const char *mime_type)
  {
 -	return PACKAGES ("cpio,rpm");
-+	return PACKAGES ("gcpio,rpm");
++	return PACKAGES (CPIO_PATH ",rpm");
  }
  
  

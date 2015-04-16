@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure_ac,v 1.1 2015/04/16 11:14:58 jasper Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=747984
+
+--- configure.ac.orig	Mon Apr 13 20:52:16 2015
++++ configure.ac	Thu Apr 16 12:52:47 2015
+@@ -243,6 +243,10 @@ AC_SUBST(LIBARCHIVE_LIBS)
+ AC_SUBST(LIBARCHIVE_CFLAGS)
+ AM_CONDITIONAL(ENABLE_LIBARCHIVE, test x"$enable_libarchive" = xyes)
+ 
++AC_ARG_VAR([CPIO], [Path to the `cpio` command])
++AC_PATH_PROGS(CPIO, gcpio cpio)
++AC_DEFINE_UNQUOTED(CPIO_PATH, "${CPIO}", [Path to cpio])
++
+ dnl ******************************
+ 
+ IT_PROG_INTLTOOL([0.40.0])

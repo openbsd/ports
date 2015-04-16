@@ -1,12 +1,24 @@
-$OpenBSD: patch-src_fr-command-cpio_c,v 1.5 2012/09/28 09:10:40 jasper Exp $
---- src/fr-command-cpio.c.orig	Fri Sep 28 10:03:27 2012
-+++ src/fr-command-cpio.c	Fri Sep 28 10:03:36 2012
+$OpenBSD: patch-src_fr-command-cpio_c,v 1.6 2015/04/16 11:14:58 jasper Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=747984
+
+--- src/fr-command-cpio.c.orig	Wed Aug 13 07:21:20 2014
++++ src/fr-command-cpio.c	Thu Apr 16 13:01:44 2015
+@@ -168,7 +168,7 @@ fr_command_cpio_list (FrCommand  *comm)
+ 
+ 	fr_process_begin_command (comm->process, "sh");
+ 	fr_process_add_arg (comm->process, "-c");
+-	fr_process_add_arg_concat (comm->process, "cpio -itv < ", comm->e_filename, NULL);
++	fr_process_add_arg_concat (comm->process, CPIO_PATH " -itv < ", comm->e_filename, NULL);
+ 	fr_process_end_command (comm->process);
+ 
+ 	return TRUE;
 @@ -233,7 +233,7 @@ fr_command_cpio_get_capabilities (FrArchive  *archive,
  	FrArchiveCap capabilities;
  
  	capabilities = FR_ARCHIVE_CAN_STORE_MANY_FILES;
 -	if (_g_program_is_available ("cpio", check_command))
-+	if (_g_program_is_available ("gcpio", check_command))
++	if (_g_program_is_available (CPIO_PATH, check_command))
  		capabilities |= FR_ARCHIVE_CAN_READ;
  
  	return capabilities;

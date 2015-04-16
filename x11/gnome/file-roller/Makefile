@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2015/04/15 09:40:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2015/04/16 11:14:57 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller
 GNOME_VERSION=	3.16.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	archivers
 
@@ -45,7 +45,13 @@ LIB_DEPENDS=	archivers/libarchive>=3.1.2 \
 
 MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
 
+CONFIGURE_ENV=		CPIO=${LOCALBASE}/bin/gcpio
+
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
+
+# XXX: Remove when patch-configure_ac is merged
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 
 .include <bsd.port.mk>
