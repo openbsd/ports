@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Util.pm,v 1.5 2014/12/07 15:18:50 espie Exp $
+# $OpenBSD: Util.pm,v 1.6 2015/04/16 15:49:29 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -56,7 +56,7 @@ sub die
 	my ($class, $msg) = @_;
 	if (@_ > 0) {
 		require Data::Dumper;
-		say STDERR Data::Dumper::Dump(@_);
+		say STDERR Data::Dumper::Dumper(@_);
 	}
 	$DB::single = 1;
 	CORE::die("$msg\n");
