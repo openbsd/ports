@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2015/04/15 09:40:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2015/04/16 09:34:33 jasper Exp $
 
 COMMENT=		GNOME power manager
 
@@ -30,8 +30,7 @@ LIB_DEPENDS=		sysutils/upower \
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-CONFIGURE_ENV=		ac_cv_path_DOCBOOK2MAN=no \
-			ac_cv_path_XMLTO=no
+CONFIGURE_ENV=		ac_cv_path_DOCBOOK2MAN=no
 
 # our old gcc does not handle some of the warning flags
 MAKE_FLAGS=		WARNINGFLAGS=
