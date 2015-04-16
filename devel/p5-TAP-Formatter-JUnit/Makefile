@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/26 00:07:29 schwarze Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/16 19:43:30 schwarze Exp $
 
 COMMENT =	format TAP::Harness output as JUnit XML
 
 MODULES =	cpan
-DISTNAME =	TAP-Formatter-JUnit-0.09
+DISTNAME =	TAP-Formatter-JUnit-0.11
 CATEGORIES =	devel
-MAINTAINER =	Ingo Schwarze <schwarze@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,9 +17,8 @@ RUN_DEPENDS =	devel/p5-File-Slurp \
 		textproc/p5-XML-Generator
 TEST_DEPENDS =	devel/p5-File-Slurp \
 		devel/p5-IO-stringy \
-		devel/p5-Test-Pod \
-		devel/p5-Test-Pod-Coverage \
-		devel/p5-Test-Differences
+		devel/p5-IPC-Run \
+		devel/p5-Test-XML
 
 CONFIGURE_STYLE = modbuild
 

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/26 00:02:52 schwarze Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/16 19:43:30 schwarze Exp $
 
 COMMENT =	generate JUnit compatible output from TAP results
 
 MODULES =	cpan
-DISTNAME =	TAP-Harness-JUnit-0.41
+DISTNAME =	TAP-Harness-JUnit-0.42
 CATEGORIES =	devel
-MAINTAINER =	Ingo Schwarze <schwarze@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
