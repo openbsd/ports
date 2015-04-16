@@ -1,0 +1,2 @@
+Tools used by Puppet to parse, validate, and compare Semantic Versions
+and Version Ranges and to query and resolve module dependencies.
