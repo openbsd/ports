@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/04 10:27:15 jasper Exp $
-@pkgpath x11/gnome/california
+@comment $OpenBSD: PLIST,v 1.2 2015/04/16 07:07:33 jasper Exp $
 @conflict california-*
+@pkgpath x11/gnome/california
 @bin bin/gnome-calendar
 share/appdata/
 share/appdata/org.gnome.Calendar.appdata.xml
@@ -8,8 +8,6 @@ share/applications/org.gnome.Calendar.desktop
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/org.gnome.Calendar.service
-share/glib-2.0/
-share/glib-2.0/schemas/
 share/glib-2.0/schemas/org.gnome.calendar.enums.xml
 share/glib-2.0/schemas/org.gnome.calendar.gschema.xml
 share/gnome-shell/
@@ -22,8 +20,7 @@ share/icons/hicolor/256x256/apps/gnome-calendar.png
 share/icons/hicolor/32x32/apps/gnome-calendar.png
 share/icons/hicolor/48x48/apps/gnome-calendar.png
 share/icons/hicolor/512x512/apps/gnome-calendar.png
-share/locale/bs/
-share/locale/bs/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/gnome-calendar.mo
 share/locale/bs/LC_MESSAGES/gnome-calendar.mo
 share/locale/ca/LC_MESSAGES/gnome-calendar.mo
 share/locale/cs/LC_MESSAGES/gnome-calendar.mo
@@ -33,8 +30,6 @@ share/locale/el/LC_MESSAGES/gnome-calendar.mo
 share/locale/eo/LC_MESSAGES/gnome-calendar.mo
 share/locale/es/LC_MESSAGES/gnome-calendar.mo
 share/locale/eu/LC_MESSAGES/gnome-calendar.mo
-share/locale/fa/
-share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/gnome-calendar.mo
 share/locale/fi/LC_MESSAGES/gnome-calendar.mo
 share/locale/fr/LC_MESSAGES/gnome-calendar.mo
@@ -43,12 +38,8 @@ share/locale/he/LC_MESSAGES/gnome-calendar.mo
 share/locale/hu/LC_MESSAGES/gnome-calendar.mo
 share/locale/id/LC_MESSAGES/gnome-calendar.mo
 share/locale/it/LC_MESSAGES/gnome-calendar.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/gnome-calendar.mo
 share/locale/ko/LC_MESSAGES/gnome-calendar.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gnome-calendar.mo
 share/locale/nb/LC_MESSAGES/gnome-calendar.mo
 share/locale/pa/LC_MESSAGES/gnome-calendar.mo
@@ -59,10 +50,9 @@ share/locale/ru/LC_MESSAGES/gnome-calendar.mo
 share/locale/sk/LC_MESSAGES/gnome-calendar.mo
 share/locale/sl/LC_MESSAGES/gnome-calendar.mo
 share/locale/sr/LC_MESSAGES/gnome-calendar.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/gnome-calendar.mo
 share/locale/sv/LC_MESSAGES/gnome-calendar.mo
+share/locale/th/LC_MESSAGES/gnome-calendar.mo
 share/locale/tr/LC_MESSAGES/gnome-calendar.mo
 share/locale/uk/LC_MESSAGES/gnome-calendar.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-calendar.mo

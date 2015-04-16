@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/15 09:40:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/16 07:07:33 jasper Exp $
 
 COMMENT =		GNOME calendar
 
 GNOME_PROJECT =		gnome-calendar
-GNOME_VERSION =		3.16.0
-REVISION =		0
+GNOME_VERSION =		3.16.1
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
