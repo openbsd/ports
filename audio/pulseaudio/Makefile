@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2015/04/05 10:12:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2015/04/16 06:38:50 ajacoutot Exp $
 
 # XXX
 # util.c: implement pa_get_binary_name()
@@ -19,7 +19,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		6.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  pulse                4.0      # .18.0
 SHARED_LIBS +=  pulse-simple         0.0      # .1.0
@@ -133,6 +133,8 @@ pre-configure:
 		intltoolize --force
 ### END SNDIO ###
 	${SUBST_CMD} ${WRKSRC}/src/daemon/default.pa.in
+	perl -pi -e 's,/bin/bash,/usr/bin/env bash,' \
+		${WRKSRC}/shell-completion/bash/pulseaudio
 
 post-install:
 	rm ${PREFIX}/lib/pulse-${VERSION}/modules/*.a
