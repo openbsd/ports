@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2013/05/20 18:36:06 abieber Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/17 11:43:09 jca Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
-VERSION =			0.7.11
+VERSION =			0.7.20
 DISTNAME =			SABnzbd-${VERSION}-src
 PKGNAME =			sabnzbd-${VERSION}
 CATEGORIES =			news
