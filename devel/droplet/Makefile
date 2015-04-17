@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/09/27 07:53:31 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/17 12:55:16 jasper Exp $
 
 SHARED_ONLY=		Yes
 BROKEN-hppa=		no atomic ops in json-c
+BROKEN-mips64=		no atomic ops in json-c
 
 CATEGORIES=		devel
 COMMENT=		high performance Cloud Storage client library
