@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.200 2015/02/18 17:49:56 jca Exp $
+# $OpenBSD: Makefile,v 1.201 2015/04/17 07:59:19 phessler Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
 COMMENT-docs=	PostgreSQL RDBMS documentation
 COMMENT-contrib=PostgreSQL RDBMS contributions
 COMMENT-plpython=Python procedural language for PostgreSQL
+
+BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
 
 # DO NOT FORGET to also change the @ask-update entry in pkg/PLIST-server
 # in case a dump before / restore after pkg_add -u is required!

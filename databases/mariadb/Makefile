@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2015/04/09 06:58:12 giovanni Exp $
+# $OpenBSD: Makefile,v 1.25 2015/04/17 07:59:19 phessler Exp $
 
 SHARED_ONLY=	Yes
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha amd64 i386 powerpc sparc64
 ONLY_FOR_ARCHS-tests=	${ONLY_FOR_ARCHS-server}
+BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
