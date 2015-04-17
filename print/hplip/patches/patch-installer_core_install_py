@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot Exp $
---- installer/core_install.py.orig	Thu Jan 29 13:20:24 2015
-+++ installer/core_install.py	Thu Mar 12 12:12:17 2015
+$OpenBSD: patch-installer_core_install_py,v 1.23 2015/04/17 04:18:13 ajacoutot Exp $
+--- installer/core_install.py.orig	Tue Apr 14 11:53:21 2015
++++ installer/core_install.py	Fri Apr 17 05:53:22 2015
 @@ -110,7 +110,7 @@ HPLIP_LIST=['*.py','*.pyc', 'base', 'copier','data','i
  
  PLUGIN_LIST=['fax/plugins/','prnt/plugins/','scan/plugins/']
@@ -19,7 +19,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot E
          self.hplip_present = False
          self.have_dependencies = {}
          self.native_cups = True
-@@ -328,7 +328,7 @@ class CoreInstall(object):
+@@ -327,7 +327,7 @@ class CoreInstall(object):
              'cups-devel':       (True,  ['base'], CUPS_DEV_STR, self.check_cups_devel, DEPENDENCY_COMPILE_TIME,'-','cups-config --version', GENERALDEP),
              'cups-image':       (True,  ['base'], CUPS_IMG_STR, self.check_cups_image, DEPENDENCY_COMPILE_TIME,'-','cups-config --version', GENERALDEP),
              'gcc' :             (True,  ['base'], GCC_STR, self.check_gcc, DEPENDENCY_COMPILE_TIME, '-','gcc --version',COMPILEDEP),
@@ -28,7 +28,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot E
              'libpthread' :      (True,  ['base'], THREAD_STR, self.check_libpthread, DEPENDENCY_RUN_AND_COMPILE_TIME, '-','FUNC#get_libpthread_version', GENERALDEP),
              'gs':               (True,  ['base'], GS_STR, self.check_gs, DEPENDENCY_RUN_TIME, '7.05','gs --version', EXTERNALDEP),
              'libusb':           (True,  ['base'], USB_STR, self.check_libusb, DEPENDENCY_RUN_AND_COMPILE_TIME, '-','FUNC#get_libusb_version', GENERALDEP),
-@@ -359,13 +359,13 @@ class CoreInstall(object):
+@@ -358,13 +358,13 @@ class CoreInstall(object):
          }
          
          python2_dep = {
@@ -44,7 +44,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot E
              'pil':              (False, ['scan'], PIL_STR, self.check_pil, DEPENDENCY_RUN_TIME,'-','FUNC#get_pil_version',GENERALDEP),
              # Optional fax packages
              'reportlab':        (False, ['fax'], REPORTLAB_STR, self.check_reportlab, DEPENDENCY_RUN_TIME,'2.0','FUNC#get_reportlab_version',GENERALDEP),
-@@ -838,7 +838,7 @@ class CoreInstall(object):
+@@ -837,7 +837,7 @@ class CoreInstall(object):
  
  
      def check_make(self):
@@ -53,7 +53,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot E
  
  
      def check_libusb(self):
-@@ -847,14 +847,14 @@ class CoreInstall(object):
+@@ -846,14 +846,14 @@ class CoreInstall(object):
              if not check_lib('libusb'):
                  return False
              if self.distro_name != "rhel":
@@ -70,7 +70,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot E
              else:
                  return True
  
-@@ -864,11 +864,10 @@ class CoreInstall(object):
+@@ -863,11 +863,10 @@ class CoreInstall(object):
  
  
      def check_libcrypto(self):
@@ -84,7 +84,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot E
  
  
      def check_libnetsnmp(self):
-@@ -920,7 +919,7 @@ class CoreInstall(object):
+@@ -913,7 +912,7 @@ class CoreInstall(object):
  
  
      def check_sane_devel(self):
@@ -93,7 +93,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot E
  
  
      def check_xsane(self):
-@@ -977,7 +976,7 @@ class CoreInstall(object):
+@@ -970,7 +969,7 @@ class CoreInstall(object):
  
  
      def check_python_devel(self):
@@ -102,7 +102,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot E
          Found = False
          for p in dir_list:
                if check_file('Python.h',dir=p):
-@@ -1031,9 +1030,8 @@ class CoreInstall(object):
+@@ -1024,9 +1023,8 @@ class CoreInstall(object):
  
  
      def check_dbus(self):
@@ -114,7 +114,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot E
  
  
      def check_cups_devel(self):
-@@ -1051,12 +1049,12 @@ class CoreInstall(object):
+@@ -1044,12 +1042,12 @@ class CoreInstall(object):
  
  
      def check_cups_image(self):
@@ -129,7 +129,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot E
  
  
      def check_libtool(self):
-@@ -1076,9 +1074,9 @@ class CoreInstall(object):
+@@ -1069,9 +1067,9 @@ class CoreInstall(object):
      def check_cupsddk(self):
          log.debug("Checking for cups-ddk...")
          # TODO: Compute these paths some way or another...
@@ -142,7 +142,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot E
  
  
      def check_policykit(self):
-@@ -1128,7 +1126,7 @@ class CoreInstall(object):
+@@ -1121,7 +1119,7 @@ class CoreInstall(object):
  
      def check_hpaio(self):
          found = False
@@ -151,7 +151,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot E
              log.debug("'Checking for hpaio' in '%s'..." % path)
              try:
                  f = open(path, 'r')
-@@ -1157,12 +1155,12 @@ class CoreInstall(object):
+@@ -1150,12 +1148,12 @@ class CoreInstall(object):
          if pat.match(home_dir) is not None:
              usrlib_dir= pat.match(home_dir).group(1) + "lib/"
              if os.path.exists(usrlib_dir+'sane/libsane-hpaio.so.1'):
@@ -168,7 +168,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot E
                      log.debug("cmd=%s"%cmd)
                      utils.run(cmd, self.passwordObj)
                  else:
-@@ -1175,19 +1173,19 @@ class CoreInstall(object):
+@@ -1168,19 +1166,19 @@ class CoreInstall(object):
                      f.close()
  
                  if not found:
@@ -193,7 +193,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot E
                      cmd= self.passwordObj.getAuthCmd()%cmd
                      log.debug("cmd=%s"%cmd)
                      utils.run(cmd, self.passwordObj)
-@@ -1580,11 +1578,14 @@ class CoreInstall(object):
+@@ -1570,11 +1568,14 @@ class CoreInstall(object):
  
  
      def check_wget(self):
@@ -212,7 +212,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.22 2015/03/15 08:46:52 ajacoutot E
  
      def check_avahi_utils(self):
          if utils.which("avahi-browse"):
-@@ -1667,7 +1668,7 @@ class CoreInstall(object):
+@@ -1657,7 +1658,7 @@ class CoreInstall(object):
      def pre_build(self,distro_ver=None):
          cmds = []
          if self.get_distro_ver_data('fix_ppd_symlink', False,distro_ver):

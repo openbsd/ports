@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_pluginhandler_py,v 1.4 2015/02/05 17:34:33 ajacoutot Exp $
---- installer/pluginhandler.py.orig	Thu Jan 29 13:20:24 2015
-+++ installer/pluginhandler.py	Thu Feb  5 16:44:37 2015
+$OpenBSD: patch-installer_pluginhandler_py,v 1.5 2015/04/17 04:18:13 ajacoutot Exp $
+--- installer/pluginhandler.py.orig	Tue Apr 14 11:53:21 2015
++++ installer/pluginhandler.py	Fri Apr 17 05:53:22 2015
 @@ -42,7 +42,7 @@ except ImportError:
          return sha.new(s).hexdigest()
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-installer_pluginhandler_py,v 1.4 2015/02/05 17:34:33 ajacoutot E
  PLUGIN_FALLBACK_LOCATION = 'http://hplipopensource.com/hplip-web/plugin/'
  
  
-@@ -95,11 +95,11 @@ class PluginHandle(object):
+@@ -97,11 +97,11 @@ class PluginHandle(object):
              ARCH = 'x86_%d' % BITNESS
  
          if BITNESS == 64:
@@ -26,7 +26,7 @@ $OpenBSD: patch-installer_pluginhandler_py,v 1.4 2015/02/05 17:34:33 ajacoutot E
  
          copies = []
  
-@@ -234,8 +234,8 @@ class PluginHandle(object):
+@@ -236,8 +236,8 @@ class PluginHandle(object):
      def __setPluginConfFile(self):
          home = sys_conf.get('dirs', 'home')
  
