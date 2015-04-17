@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/17 18:39:00 ajacoutot Exp $
+include/dleyna-1.0/
+include/dleyna-1.0/libdleyna/
+include/dleyna-1.0/libdleyna/core/
+include/dleyna-1.0/libdleyna/core/connector-mgr.h
+include/dleyna-1.0/libdleyna/core/connector.h
+include/dleyna-1.0/libdleyna/core/control-point.h
+include/dleyna-1.0/libdleyna/core/error.h
+include/dleyna-1.0/libdleyna/core/log.h
+include/dleyna-1.0/libdleyna/core/main-loop.h
+include/dleyna-1.0/libdleyna/core/service-task.h
+include/dleyna-1.0/libdleyna/core/settings.h
+include/dleyna-1.0/libdleyna/core/task-atom.h
+include/dleyna-1.0/libdleyna/core/task-processor.h
+include/dleyna-1.0/libdleyna/core/white-list.h
+lib/libdleyna-core-1.0.la
+@lib lib/libdleyna-core-1.0.so.${LIBdleyna-core-1.0_VERSION}
+lib/pkgconfig/dleyna-core-1.0.pc

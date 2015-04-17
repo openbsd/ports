@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/17 18:39:00 ajacoutot Exp $
+lib/dleyna-1.0/
+lib/dleyna-1.0/connectors/
+lib/dleyna-1.0/connectors/libdleyna-connector-dbus.so
+lib/pkgconfig/dleyna-connector-dbus-1.0.pc

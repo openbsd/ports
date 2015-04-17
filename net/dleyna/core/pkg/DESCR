@@ -1,0 +1,5 @@
+dLeyna-core is a library of utility functions that are used by the
+higher level dLeyna libraries that communicate with DLNA devices, e.g.,
+dleyna-server.
+In brief, it provides APIs for logging, error, settings and task
+management and an IPC abstraction API.

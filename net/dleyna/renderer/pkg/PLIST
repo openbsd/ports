@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/17 18:39:00 ajacoutot Exp $
+include/dleyna-1.0/libdleyna/renderer/
+include/dleyna-1.0/libdleyna/renderer/control-point-renderer.h
+lib/dleyna-renderer/
+lib/dleyna-renderer/libdleyna-renderer-1.0.la
+@lib lib/dleyna-renderer/libdleyna-renderer-1.0.so.${LIBdleyna-renderer-1.0_VERSION}
+lib/pkgconfig/dleyna-renderer-service-1.0.pc
+@bin libexec/dleyna-renderer-service
+share/dbus-1/services/com.intel.dleyna-renderer.service
+share/examples/dleyna-renderer/
+share/examples/dleyna-renderer/dleyna-renderer-service.conf
+@sample ${SYSCONFDIR}/dleyna-renderer-service.conf

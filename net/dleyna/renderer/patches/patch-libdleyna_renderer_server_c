@@ -1,0 +1,20 @@
+$OpenBSD: patch-libdleyna_renderer_server_c,v 1.1.1.1 2015/04/17 18:39:00 ajacoutot Exp $
+
+From 2f9fdf97082b63fcd0809905d29d0f8a49bb5c43 Mon Sep 17 00:00:00 2001
+From: Debarshi Ray <debarshir@freedesktop.org>
+Date: Tue, 20 Jan 2015 11:20:07 +0100
+Subject: [PATCH] [Server] Ensure that g_context.watchers has a valid value
+
+--- libdleyna/renderer/server.c.orig	Sat Dec  6 12:52:28 2014
++++ libdleyna/renderer/server.c	Fri Apr 17 14:34:54 2015
+@@ -688,7 +688,9 @@ static void prv_remove_client(const gchar *name)
+ 
+ 	dlr_upnp_lost_client(g_context.upnp, name);
+ 
+-	g_context.watchers--;
++	if (g_context.watchers > 0)
++		g_context.watchers--;
++
+ 	if (g_context.watchers == 0)
+ 		if (!dleyna_settings_is_never_quit(g_context.settings))
+ 			dleyna_task_processor_set_quitting(g_context.processor);

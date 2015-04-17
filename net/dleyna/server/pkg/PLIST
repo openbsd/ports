@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/17 18:39:00 ajacoutot Exp $
+include/dleyna-1.0/libdleyna/server/
+include/dleyna-1.0/libdleyna/server/control-point-server.h
+lib/dleyna-server/
+lib/dleyna-server/libdleyna-server-1.0.la
+@lib lib/dleyna-server/libdleyna-server-1.0.so.${LIBdleyna-server-1.0_VERSION}
+lib/pkgconfig/dleyna-server-service-1.0.pc
+@bin libexec/dleyna-server-service
+share/dbus-1/services/com.intel.dleyna-server.service
+share/examples/dleyna-server/
+share/examples/dleyna-server/dleyna-server-service.conf
+@sample ${SYSCONFDIR}/dleyna-server-service.conf

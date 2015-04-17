@@ -1,0 +1,54 @@
+$OpenBSD: patch-libdleyna_renderer_upnp_c,v 1.1.1.1 2015/04/17 18:39:00 ajacoutot Exp $
+
+From ae4a03a2c6928d0d3c8fbcdba4831ce1d212f50b Mon Sep 17 00:00:00 2001
+From: Debarshi Ray <debarshir@freedesktop.org>
+Date: Tue, 20 Jan 2015 13:59:33 +0100
+Subject: [PATCH] [UPnP] Disconnect signal handlers during destruction
+
+--- libdleyna/renderer/upnp.c.orig	Sat Dec  6 12:52:28 2014
++++ libdleyna/renderer/upnp.c	Fri Apr 17 14:35:18 2015
+@@ -45,6 +45,7 @@ struct dlr_upnp_t_ {
+ 	void *user_data;
+ 	GHashTable *server_udn_map;
+ 	GHashTable *server_uc_map;
++	GList *cps;
+ 	guint counter;
+ 	dlr_host_service_t *host_service;
+ };
+@@ -357,6 +358,7 @@ static void prv_on_context_available(GUPnPContextManag
+ 
+ 	gssdp_resource_browser_set_active(GSSDP_RESOURCE_BROWSER(cp), TRUE);
+ 	gupnp_context_manager_manage_control_point(upnp->context_manager, cp);
++	upnp->cps = g_list_prepend (upnp->cps, g_object_ref (cp));
+ 	g_object_unref(cp);
+ }
+ 
+@@ -395,10 +397,28 @@ dlr_upnp_t *dlr_upnp_new(dleyna_connector_id_t connect
+ void dlr_upnp_delete(dlr_upnp_t *upnp)
+ {
+ 	if (upnp) {
++		GList *l;
++
++		for (l = upnp->cps; l != NULL; l = l->next) {
++			GUPnPControlPoint *cp = GUPNP_CONTROL_POINT (l->data);
++
++			g_signal_handlers_disconnect_by_func (cp,
++							      prv_server_available_cb,
++							      upnp);
++			g_signal_handlers_disconnect_by_func (cp,
++							      prv_server_unavailable_cb,
++							      upnp);
++		}
++
++		g_signal_handlers_disconnect_by_func (upnp->context_manager,
++						      prv_on_context_available,
++						      upnp);
++
+ 		dlr_host_service_delete(upnp->host_service);
+ 		g_object_unref(upnp->context_manager);
+ 		g_hash_table_unref(upnp->server_udn_map);
+ 		g_hash_table_unref(upnp->server_uc_map);
++		g_list_free_full (upnp->cps, g_object_unref);
+ 
+ 		g_free(upnp);
+ 	}

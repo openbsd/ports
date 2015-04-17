@@ -1,0 +1,14 @@
+$OpenBSD: patch-libdleyna_server_device_c,v 1.1.1.1 2015/04/17 18:39:00 ajacoutot Exp $
+--- libdleyna/server/device.c.orig	Fri Apr 17 14:51:35 2015
++++ libdleyna/server/device.c	Fri Apr 17 14:48:42 2015
+@@ -6054,8 +6054,8 @@ static gchar *prv_get_broadcast_ip_address(gchar *ip_a
+ 			continue;
+ 
+ 		if ((ifa->ifa_flags & IFF_BROADCAST) &&
+-		    (ifa->ifa_ifu.ifu_broadaddr != NULL) &&
+-		    prv_get_interface_ip_address(ifa->ifa_ifu.ifu_broadaddr,
++		    (ifa->ifa_broadaddr != NULL) &&
++		    prv_get_interface_ip_address(ifa->ifa_broadaddr,
+ 						 host)) {
+ 			broadcast_ip_address = g_strdup(host);
+ 

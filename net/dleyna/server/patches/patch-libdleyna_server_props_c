@@ -1,0 +1,18 @@
+$OpenBSD: patch-libdleyna_server_props_c,v 1.1.1.1 2015/04/17 18:39:00 ajacoutot Exp $
+
+From 00ca5e70e755954c510cb4e2e42a8a5a52a071c0 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Thu, 17 Jul 2014 17:52:13 +0200
+Subject: [PATCH] [Device] Fix ChildCount property type
+
+--- libdleyna/server/props.c.orig	Sat Dec  6 12:52:12 2014
++++ libdleyna/server/props.c	Fri Apr 17 14:55:08 2015
+@@ -622,7 +622,7 @@ static void prv_add_variant_prop(GVariantBuilder *vb, 
+ 
+ void dls_props_add_child_count(GVariantBuilder *item_vb, gint value)
+ {
+-	prv_add_int_prop(item_vb, DLS_INTERFACE_PROP_CHILD_COUNT, value);
++	prv_add_uint_prop(item_vb, DLS_INTERFACE_PROP_CHILD_COUNT, value);
+ }
+ 
+ static void prv_add_bool_prop(GVariantBuilder *vb, const gchar *key,
