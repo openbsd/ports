@@ -1,7 +1,4 @@
-$OpenBSD: patch-util_rarian-sk-rebuild_in,v 1.1.1.1 2008/12/16 10:01:38 jasper Exp $
-
-Fix location to rarian's localstatedir.
-
+$OpenBSD: patch-util_rarian-sk-rebuild_in,v 1.2 2015/04/17 09:54:10 ajacoutot Exp $
 --- util/rarian-sk-rebuild.in.orig	Sat Nov 22 16:51:42 2008
 +++ util/rarian-sk-rebuild.in	Sat Nov 22 16:51:59 2008
 @@ -9,7 +9,7 @@ exec_prefix=@exec_prefix@

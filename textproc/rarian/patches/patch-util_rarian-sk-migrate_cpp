@@ -1,6 +1,6 @@
-$OpenBSD: patch-util_rarian-sk-migrate_cpp,v 1.1 2009/02/15 13:41:41 ajacoutot Exp $
+$OpenBSD: patch-util_rarian-sk-migrate_cpp,v 1.2 2015/04/17 09:54:10 ajacoutot Exp $
 
-Fix a Segmentation fault when argc is not fulfilled.
+Fix segfault when argc is not fulfilled.
 
 --- util/rarian-sk-migrate.cpp.orig	Mon Sep  1 20:40:21 2008
 +++ util/rarian-sk-migrate.cpp	Sun Feb 15 14:31:15 2009

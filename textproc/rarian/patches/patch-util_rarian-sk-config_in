@@ -1,7 +1,4 @@
-$OpenBSD: patch-util_rarian-sk-config_in,v 1.1.1.1 2008/12/16 10:01:38 jasper Exp $
-
-Fix location to rarian's localstatedir.
-
+$OpenBSD: patch-util_rarian-sk-config_in,v 1.2 2015/04/17 09:54:10 ajacoutot Exp $
 --- util/rarian-sk-config.in.orig	Sat Nov 22 16:51:42 2008
 +++ util/rarian-sk-config.in	Sat Nov 22 16:52:06 2008
 @@ -8,7 +8,7 @@ prefix=@prefix@

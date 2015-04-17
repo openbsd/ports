@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/03/16 18:07:57 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/04/17 09:54:10 ajacoutot Exp $
 @conflict scrollkeeper-*
 @pkgpath textproc/scrollkeeper
-@extraunexec rm -rf /var/db/rarian/*
-@extraunexec rm -rf /var/db/scrollkeeper/
 @bin bin/rarian-example
 bin/rarian-sk-config
 bin/rarian-sk-extract
@@ -53,4 +51,3 @@ share/librarian/manual/rar-lib.xhtml
 share/librarian/manual/rar-mdf.xhtml
 share/librarian/manual/rar-skcompat.xhtml
 share/librarian/rarian-sk-cl.xml
-@sample /var/db/rarian/
