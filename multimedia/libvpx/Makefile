@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/02/11 00:07:47 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2015/04/17 07:58:12 phessler Exp $
 
 COMMENT=	Google VP8/VP9 video codec
 
@@ -38,7 +38,7 @@ MAKE_FLAGS=	LIBVPX_VERSION=${LIBvpx_VERSION} verbose=yes
 
 # compiler spins at 100% CPU on vp9/vp9_cx_iface.c. using -O1
 # works around the issue.
-.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "sparc64" ||${MACHINE_ARCH} == "sparc"
 CFLAGS+=	-O1
 .endif
 
