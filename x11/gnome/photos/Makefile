@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/04/15 09:40:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2015/04/17 13:36:19 ajacoutot Exp $
 
 # XXX should RUN_DEPENDS on dleyna-renderer; not ported (signalfd)
 
@@ -8,7 +8,7 @@ COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		3.16.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		graphics
 
@@ -46,6 +46,9 @@ LIB_DEPENDS=		devel/libgdata \
 			x11/gnome/grilo \
 			x11/gnome/online-accounts \
 			x11/gnome/tracker
+
+# src/photos-application.c
+RUN_DEPENDS +=		x11/gnome/online-miners
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
