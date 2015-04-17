@@ -1,0 +1,34 @@
+$OpenBSD: patch-libguile_gsubr_c,v 1.1 2015/04/17 05:23:30 ajacoutot Exp $
+
+From 156119b0223cf14d335ebda84701a69b2ba95757 Mon Sep 17 00:00:00 2001
+From: Mark H Weaver <mhw@netris.org>
+Date: Sat, 20 Sep 2014 03:49:46 -0400
+Subject: [PATCH] Do not assume that 64-bit integers will be 64-bit aligned.
+
+--- libguile/gsubr.c.orig	Mon Jul  2 11:28:13 2012
++++ libguile/gsubr.c	Fri Apr 17 06:56:07 2015
+@@ -1,4 +1,5 @@
+-/* Copyright (C) 1995,1996,1997,1998,1999,2000,2001, 2006, 2008, 2009, 2010, 2011 Free Software Foundation, Inc.
++/* Copyright (C) 1995-2001, 2006, 2008-2011,
++ *   2014 Free Software Foundation, Inc.
+  *
+  * This library is free software; you can redistribute it and/or
+  * modify it under the terms of the GNU Lesser General Public License
+@@ -213,7 +214,7 @@
+ */
+ static const struct
+ {
+-  scm_t_uint64 dummy; /* ensure 8-byte alignment; perhaps there's a better way */
++  SCM_ALIGNED (8) scm_t_uint64 dummy; /* alignment */
+   const scm_t_uint8 bytes[121 * (sizeof (struct scm_objcode) + 16
+                                  + sizeof (struct scm_objcode) + 32)];
+ } raw_bytecode = {
+@@ -317,7 +318,7 @@ static const struct
+ 
+ static const struct
+ {
+-  scm_t_uint64 dummy; /* alignment */
++  SCM_ALIGNED (8) scm_t_uint64 dummy; /* alignment */
+   scm_t_cell cells[121 * 2]; /* 11*11 double cells */
+ } objcode_cells = {
+   0,
