@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2015/04/04 09:21:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2015/04/17 18:40:20 ajacoutot Exp $
 
 TRACKER_API=	1.0
 
@@ -8,7 +8,7 @@ COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
 GNOME_VERSION=	0.2.14
-REVISION=	0
+REVISION=	1
 
 API=		0.2
 SUBST_VARS=	API
@@ -26,7 +26,7 @@ WANTLIB += grlpls-0.2 gthread-2.0 icudata icui18n icuuc idn json-glib-1.0
 WANTLIB += kvm lzma m mediaart-2.0 nspr4 nss3 oauth p11-kit pcre
 WANTLIB += plc4 plds4 png pthread rest-0.7 smime3 softokn3 soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 ssl ssl3 totem-plparser uuid
-WANTLIB += xml2 z
+WANTLIB += xml2 z lzo2
 WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
@@ -41,10 +41,10 @@ LIB_DEPENDS=	devel/libgdata \
 		x11/gnome/libmediaart \
 		x11/gnome/tracker
 
-MODGNOME_TOOLS=	yelp
+# com.intel.dleyna-server
+RUN_DEPENDS +=	net/dleyna/server
 
-# XXX: Requires dleyna-connector-dbus
-CONFIGURE_ARGS +=	--disable-dleyna
+MODGNOME_TOOLS=	yelp
 
 post-install:
 	rm ${PREFIX}/lib/grilo-${API}/*.{a,la}

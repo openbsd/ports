@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/04/15 07:13:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2015/04/17 18:40:20 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
@@ -8,6 +8,7 @@ COMMENT=		crawls through your online content
 
 GNOME_PROJECT=		gnome-online-miners
 GNOME_VERSION=		3.14.2
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,6 +34,9 @@ LIB_DEPENDS=		devel/libgdata \
 			x11/gnome/grilo \
 			x11/gnome/libzapojit \
 			x11/gnome/tracker
+
+# com.intel.dleyna-server
+RUN_DEPENDS +=		net/dleyna/server
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
