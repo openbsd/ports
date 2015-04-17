@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.109 2015/04/04 09:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2015/04/17 03:42:51 ajacoutot Exp $
 
 GOFFICE_API_VERSION=	0.10
-GOFFICE_VERSION=	0.10.21
+GOFFICE_VERSION=	0.10.22
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
-GNOME_VERSION=		1.12.21
-REVISION=		1
+GNOME_VERSION=		1.12.22
 
 GNUMERIC_API_VERSION=	${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_GNOME_VERSION GOFFICE_API_VERSION GNUMERIC_API_VERSION
@@ -22,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += avahi-common bz2 c cairo cairo-gobject croco-0.6 dbus-1
-WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += epoxy expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gobject-2.0 goffice-0.10
 WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz hogweed
 WANTLIB += jpeg lzma m nettle p11-kit pango-1.0 pangocairo-1.0
