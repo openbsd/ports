@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/03/19 20:25:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2015/04/17 16:15:59 bluhm Exp $
 
 COMMENT-main=	portable low-level networking library
 COMMENT-python= python interface to libdnet
@@ -8,6 +8,7 @@ DISTNAME=	libdnet-${MODPY_EGG_VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-python= py-${DISTNAME}
 REVISION=	10
+REVISION-python=	11
 
 SHARED_LIBS=	dnet	1.0
 
@@ -42,7 +43,7 @@ CONFIGURE_ARGS+=	--with-python
 MAKE_FLAGS=		PYTHON=${MODPY_BIN}
 TEST_DEPENDS=		net/libdnet,-python
 TEST_FLAGS=		TESTS_ENVIRONMENT=${MODPY_BIN}
-WANTLIB-python=
+WANTLIB-python=		${MODPY_WANTLIB} m pthread util
 .else
 CONFIGURE_ARGS+=	--without-python
 .endif

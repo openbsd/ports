@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2015/04/17 16:15:59 bluhm Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,14 +6,14 @@ COMMENT=	libpcap bindings for Python
 
 DISTNAME=	pylibpcap-0.6.2
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	net
 
 HOMEPAGE=	http://pylibpcap.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		pcap
+WANTLIB=		${MODPY_WANTLIB} m pcap pthread util
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pylibpcap/}
 
