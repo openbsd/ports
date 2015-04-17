@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/04/06 08:48:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2015/04/17 12:57:11 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -14,7 +14,7 @@ MOZILLA_VERSION =	24
 SUBST_VARS +=		MOZILLA_VERSION
 
 DISTNAME =		mozjs-${MOZILLA_VERSION}.2.0
-EXTRACT_SUFX =		.tar.bz2 
+EXTRACT_SUFX =		.tar.bz2
 PKGNAME =		spidermonkey-${MOZILLA_VERSION}.2.0
 PKGSPEC =		spidermonkey->=24.0,<25.0
 REVISION =		1
