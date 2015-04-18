@@ -326,11 +326,10 @@ use strict;
 use warnings;
 use v5.14;
 
-use Getopt::Std;
-$Getopt::Std::STANDARD_HELP_VERSION = 1;
+use OpenBSD::Getopt;
 
 sub usage {
-	print join("\n", @_)."\n" if scalar @_;
+	print join("\n", @_) if scalar @_;
 	print STDERR "usage: portbump [-dMmrnv] [dir] ...\n";
 	print STDERR "       portbump [-dMmrnov] [dir]\n";
 	exit 1;
@@ -338,7 +337,16 @@ sub usage {
 
 our ($opt_d, $opt_M, $opt_m, $opt_n, $opt_o, $opt_r, $opt_v) =
     (0, 0, 0, 0, undef, undef, 0);
-getopts('dMmno:rv') or usage;
+
+eval { getopts('dMmno:rv', {
+	'd' => sub { $opt_d++; },
+	'M' => sub { $opt_M++; },
+	'm' => sub { $opt_m++; },
+	'n' => sub { $opt_n++; },
+	'o' => sub { $opt_o = shift; },
+	'v' => sub { $opt_v++; },
+	'r' => sub { $opt_r++; },
+}) } // usage $@;
 
 $opt_d && $opt_r and usage "cannot mix -d and -r options";
 $opt_m && $opt_M and usage "cannot mix -M and -m options";
