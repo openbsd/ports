@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/18 12:28:39 schwarze Exp $
+${P5SITE}/XML/
+${P5SITE}/XML/SemanticDiff/
+${P5SITE}/XML/SemanticDiff.pm
+${P5SITE}/XML/SemanticDiff/BasicHandler.pm
+@man man/man3p/XML::SemanticDiff.3p
+@man man/man3p/XML::SemanticDiff::BasicHandler.3p
