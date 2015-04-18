@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/18 12:38:20 schwarze Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/XML/
+${P5SITE}/Test/XML.pm
+${P5SITE}/Test/XML/SAX.pm
+${P5SITE}/Test/XML/Twig.pm
+${P5SITE}/Test/XML/XPath.pm
+@man man/man3p/Test::XML.3p
+@man man/man3p/Test::XML::SAX.3p
+@man man/man3p/Test::XML::Twig.3p
+@man man/man3p/Test::XML::XPath.3p
