@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/08 13:02:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/18 12:19:09 landry Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -7,8 +7,8 @@ PKG_ARCH-doc =		*
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.0.0beta
-DISTNAME =		rustc-1.0.0-beta-src
+V =			1.0.0beta2
+DISTNAME =		rustc-1.0.0-beta.2-src
 
 PKGNAME =		rust-${V}
 PKGNAME-main =		rust-${V}
@@ -29,7 +29,6 @@ MAINTAINER =		Sebastien Marie <semarie-openbsd@latrappe.fr>
 # with portions covered by various BSD-like licenses
 PERMIT_PACKAGE_CDROM =	Yes
 
-# "make port-lib-depends-check" can help
 WANTLIB-main =		${WANTLIB} c m pthread
 WANTLIB-doc =
 
@@ -59,16 +58,18 @@ MODULES +=		gcc4 \
 MODGCC4_LANGS =		c++
 MODGCC4_ARCHS =		*
 
-#TEST_DEPENDS =		???
+# need to be keep in sync
+LIBESTDC_VERSION =	16.0
 
 # note: VERBOSE permit to unhide Makefile processing
 # 	RUSTFLAGS extra flags passed to rust
+# 		-L modgcc-libs : disambiguate libestdc++.so
 # 		-Z print-link-args : unhide link call
 #       RUSTFLAGS_STAGE0 extra flags passed to stage0
 #       	--sysroot force sysroot (due to limitation of us bootstrapper)
 #       RUST_LOG helper
 MAKE_ENV =		VERBOSE=1 \
-			RUSTFLAGS="-Z print-link-args" \
+			RUSTFLAGS="-L ${WRKDIR}/modgcc-libs -Z print-link-args" \
 			RUSTFLAGS_STAGE0="--sysroot ${WRKBUILD}/${TRIPLE_ARCH}/stage0" \
 			RUST_LOG="${RUST_LOG}"
 
@@ -104,6 +105,9 @@ pre-configure:
 		exit 1; fi
 
 # - remove autodetected programs
+# - copy libestdc++ from MODGCC4 to specific directory
+#   in order to disambiguate version linking (having multiple libestdc++
+#   at build time)
 # - copy snapshot in stage0 (avoid downloading a snapshot)
 post-configure:
 .for _v in CFG_CURLORWGET CFG_GIT CFG_CLANG CFG_VALGRIND CFG_PERF CFG_ISCC \
@@ -111,6 +115,8 @@ post-configure:
 	CFG_GDB_VERSION CFG_ADB
 	perl -pi -e 's/^${_v} .*/${_v} := /' ${WRKBUILD}/config.mk
 .endfor
+	mkdir ${WRKDIR}/modgcc-libs
+	cp ${LOCALBASE}/lib/libestdc++.so.${LIBESTDC_VERSION} ${WRKDIR}/modgcc-libs
 	cp ${WRKDIR}/rust-stage0/bin/rustc \
 		${WRKBUILD}/${TRIPLE_ARCH}/stage0/bin
 	cp ${WRKDIR}/rust-stage0/lib/lib*.so* \
