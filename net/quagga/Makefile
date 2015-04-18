@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2015/01/19 15:44:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2015/04/18 10:39:34 sthen Exp $
 
 COMMENT=	multi-threaded routing daemon
 
-DISTNAME=	quagga-0.99.23.1
-REVISION=	0
+DISTNAME=	quagga-0.99.24.1
 CATEGORIES=	net
 MASTER_SITES=	http://download.savannah.gnu.org/releases/quagga/
 EXTRACT_SUFX=	.tar.xz
@@ -29,7 +28,6 @@ SYSCONFDIR=	${BASESYSCONFDIR}/quagga
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --includedir=${LOCALBASE}/include/quagga \
-		--enable-isisd \
 		--enable-user=_quagga \
 		--enable-group=_quagga \
 		--enable-vty-group=_quagga \
