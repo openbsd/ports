@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_emu_luaengine_c,v 1.1 2015/04/18 15:13:35 bcallah Exp $
+
+Ugh...
+
+--- src/emu/luaengine.c.orig	Sat Apr  4 13:12:44 2015
++++ src/emu/luaengine.c	Sat Apr  4 13:14:14 2015
+@@ -130,7 +130,7 @@ lua_engine::hook::hook()
+ 	cb = -1;
+ }
+ 
+-#if defined(SDLMAME_SOLARIS) || defined(__ANDROID__)
++#if defined(SDLMAME_SOLARIS) || defined(__ANDROID__) || defined(__OpenBSD__)
+ #undef _L
+ #endif
+ 

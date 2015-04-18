@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_mame_machine_n64_c,v 1.1 2015/04/18 15:13:35 bcallah Exp $
+--- src/mame/machine/n64.c.orig	Sat Apr  4 11:41:03 2015
++++ src/mame/machine/n64.c	Sat Apr  4 11:41:16 2015
+@@ -194,7 +194,7 @@ void n64_periphs::device_reset()
+ 	memset(pif_cmd, 0, sizeof(pif_cmd));
+ 	si_dram_addr = 0;
+ 	si_pif_addr = 0;
+-	si_status = 0;
++	esi_status = 0;
+ 
+ 	memset(m_save_data.eeprom, 0, 2048);
+ 
+@@ -1997,7 +1997,7 @@ void n64_periphs::pif_dma(int direction)
+ 		}
+ 	}
+ 
+-	si_status |= 0x1000;
++	esi_status |= 0x1000;
+ 	signal_rcp_interrupt(SI_INTERRUPT);
+ }
+ 
+@@ -2010,7 +2010,7 @@ READ32_MEMBER( n64_periphs::si_reg_r )
+ 			//return si_dram_addr;
+ 
+ 		case 0x18/4:        // SI_STATUS_REG
+-			ret = si_status;
++			ret = esi_status;
+ 	}
+ 
+ 	return ret;
+@@ -2039,7 +2039,7 @@ WRITE32_MEMBER( n64_periphs::si_reg_w )
+ 			break;
+ 
+ 		case 0x18/4:        // SI_STATUS_REG
+-			si_status &= ~0x1000;
++			esi_status &= ~0x1000;
+ 			clear_rcp_interrupt(SI_INTERRUPT);
+ 			break;
+ 

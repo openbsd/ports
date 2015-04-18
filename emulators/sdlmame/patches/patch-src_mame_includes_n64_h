@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mame_includes_n64_h,v 1.1 2015/04/18 15:13:35 bcallah Exp $
+--- src/mame/includes/n64.h.orig	Sat Apr  4 11:39:24 2015
++++ src/mame/includes/n64.h	Sat Apr  4 11:39:29 2015
+@@ -227,7 +227,7 @@ class n64_periphs : public device_t, (private)
+ 	UINT32 si_pif_addr;
+ 	UINT32 si_pif_addr_rd64b;
+ 	UINT32 si_pif_addr_wr64b;
+-	UINT32 si_status;
++	UINT32 esi_status;
+ 	UINT32 cic_status;
+ 	int cic_type;
+ 

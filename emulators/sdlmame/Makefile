@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/12/01 15:13:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2015/04/18 15:13:35 bcallah Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,7 +8,7 @@ MULTI_PACKAGES =	-main -tools
 COMMENT-main =		emulates a massive variety of arcades machines
 COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
-V =			153
+V =			160
 DISTNAME =		mame0${V}s
 PKGNAME-main =		sdlmame-0.${V}
 PKGNAME-tools =		sdlmame-tools-0.${V}
@@ -19,13 +19,13 @@ HOMEPAGE =		http://mamedev.org/
 
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
-# MAME Distribution License, see http://mamedev.org/license.html
+# MAME Distribution License, see http://mamedev.org/legal.html
 # history.dat : Creative Commons Attribution 3.0
-PERMIT_PACKAGE_CDROM =		may not sell
-PERMIT_PACKAGE_FTP =		Yes
+PERMIT_PACKAGE_CDROM =	unclear license
+PERMIT_PACKAGE_FTP =	unclear license
+PERMIT_DISTFILES_FTP =	unclear license
 
-WANTLIB += SDL SDL_ttf X11 Xinerama c expat fontconfig m pthread
-WANTLIB += stdc++ util z
+WANTLIB += SDL X11 c m pthread stdc++ util z
 
 MASTER_SITES =		http://mamedev.org/downloader.php?file=releases/ \
 			http://whiper.com/mame/${V}/
@@ -43,13 +43,14 @@ MODULES =		devel/gettext \
 			lang/python
 
 RUN_DEPENDS-main =	fonts/liberation-fonts
-LIB_DEPENDS =		devel/sdl-ttf
+LIB_DEPENDS =		devel/sdl
 
 MAKE_FLAGS =		OPT_FLAGS='-DINI_PATH="\"${SYSCONFDIR}/mame;\""'
 MAKE_ENV =		ARCH=$(ARCH) CC=$(CC) CFLAGS="$(CFLAGS)" \
 			TARGETOS=openbsd \
 			NO_USE_QTDEBUG=1 \
-			NOWERROR=1
+			NOWERROR=1 \
+			SDL_LIBVER=sdl
 .if ${MACHINE_ARCH} == "amd64"
 MAKE_ENV +=		PTR64=1
 .endif
@@ -65,9 +66,6 @@ post-extract:
 	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}
 
 pre-patch:
-#.for v in 1
-#	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/0${V}u${v}.diff
-#.endfor
 	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
 	    ${WRKDIST}/src/emu/fileio.h \
 	    ${WRKDIST}/src/emu/cpu/m68000/m68kmake.c \
