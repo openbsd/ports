@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.441 2015/04/05 20:35:00 landry Exp $
+# $OpenBSD: Makefile,v 1.442 2015/04/18 12:42:45 schwarze Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -276,6 +276,7 @@
      SUBDIR += p5-XML-SAX-Expat-Incremental
      SUBDIR += p5-XML-SAX-ExpatXS
      SUBDIR += p5-XML-SAX-Writer
+     SUBDIR += p5-XML-SemanticDiff
      SUBDIR += p5-XML-Simple
      SUBDIR += p5-XML-Smart
      SUBDIR += p5-XML-Stream
