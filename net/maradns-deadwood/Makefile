@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/04/29 17:21:27 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/18 09:13:07 sthen Exp $
 
 COMMENT=	recursive DNS resolver
 
-DISTNAME=	deadwood-3.2.05
+DISTNAME=	deadwood-3.2.07
 PKGNAME=	${DISTNAME:S/^/maradns-/}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	net
