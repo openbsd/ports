@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2015/04/04 09:53:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2015/04/18 13:35:27 schwarze Exp $
 
 COMMENT=	real-time, concurrent and distributed functional language
 BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
@@ -36,7 +36,6 @@ CONFIGURE_ARGS=	--disable-jinterface	\
 		--enable-smp-support
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE=autoconf no-autoheader
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -pthread"
 AUTOCONF_VERSION=2.59

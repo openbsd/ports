@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/06/04 13:15:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2015/04/18 13:35:27 schwarze Exp $
 
 COMMENT=		DICOM toolkit
 
@@ -37,9 +37,6 @@ FAKE_FLAGS=		DESTDIR=${WRKINST} \
 			etcdir=${WRKINST}${PREFIX}/share/examples/dcmtk \
 			datadir=${WRKINST}${PREFIX}/share/dcmtk \
 			docdir=${WRKINST}${PREFIX}/share/doc/dcmtk
-USE_GROFF =		Yes
-
-
 NO_TEST=		Yes
 
 .include <bsd.port.mk>
