@@ -1,15 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/18 08:39:47 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/18 09:29:36 bentley Exp $
+@bin bin/megacopy
 @bin bin/megadf
 @bin bin/megadl
 @bin bin/megafs
 @bin bin/megaget
 @bin bin/megals
 @bin bin/megamkdir
-@bin bin/megamv
 @bin bin/megaput
 @bin bin/megareg
 @bin bin/megarm
-@bin bin/megasync
 include/mega/
 include/mega/mega-aes-ctr-encryptor.h
 include/mega/mega-aes-key.h
@@ -27,17 +26,16 @@ lib/libmega.a
 lib/libmega.la
 @lib lib/libmega.so.${LIBmega_VERSION}
 lib/pkgconfig/libmega.pc
+@man man/man1/megacopy.1
 @man man/man1/megadf.1
 @man man/man1/megadl.1
 @man man/man1/megafs.1
 @man man/man1/megaget.1
 @man man/man1/megals.1
 @man man/man1/megamkdir.1
-@man man/man1/megamv.1
 @man man/man1/megaput.1
 @man man/man1/megareg.1
 @man man/man1/megarm.1
-@man man/man1/megasync.1
 @man man/man5/megarc.5
 @man man/man7/megatools.7
 share/doc/megatools/
