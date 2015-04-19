@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/19 12:49:54 rpe Exp $
 
 COMMENT=	online Image GALlery generator
 
-DISTNAME=	igal2-2.0
-REVISION=	0
+DISTNAME=	igal2-2.1
 CATEGORIES=	www graphics
 
 HOMEPAGE=	http://igal.trexler.at/
@@ -15,7 +14,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 RUN_DEPENDS=	graphics/ImageMagick \
 		graphics/jpeg \
-		graphics/jhead
+		graphics/p5-Image-ExifTool
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
