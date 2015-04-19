@@ -1,6 +1,7 @@
-$OpenBSD: patch-par2creatorsourcefile_cpp,v 1.1 2015/04/19 17:52:47 jca Exp $
+$OpenBSD: patch-par2creatorsourcefile_cpp,v 1.2 2015/04/19 17:53:59 jca Exp $
 
-- par2 crash with -q or -qq: https://bugs.debian.org/299658 and http://sf.net/p/parchive/bugs/37/
+- par2 crash with -q or -qq: https://bugs.debian.org/299658 and
+  http://sf.net/p/parchive/bugs/37/
 
 --- par2creatorsourcefile.cpp.orig	Thu Apr 15 14:45:23 2004
 +++ par2creatorsourcefile.cpp	Sun Apr 19 10:57:32 2015
