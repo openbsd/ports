@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/03/22 20:54:08 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/04/19 18:34:34 bcallah Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -121,6 +121,7 @@ lib/seed7/lib/hashsetof.s7i
 lib/seed7/lib/hmac.s7i
 lib/seed7/lib/html.s7i
 lib/seed7/lib/html_ent.s7i
+lib/seed7/lib/httpserv.s7i
 lib/seed7/lib/idxarray.s7i
 lib/seed7/lib/image.s7i
 lib/seed7/lib/inflate.s7i
@@ -321,6 +322,7 @@ share/examples/seed7/tst_cli.sd7
 share/examples/seed7/tst_srv.sd7
 share/examples/seed7/violet.dna
 share/examples/seed7/wator.sd7
+share/examples/seed7/which.sd7
 share/examples/seed7/white.dna
 share/examples/seed7/wiz.sd7
 share/examples/seed7/wordcnt.sd7
