@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2015/01/03 07:53:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2015/04/19 09:02:06 ajacoutot Exp $
 
 # XXX re-rolled tarball: drop at next release
 DIST_SUBDIR=		icu4c
@@ -10,7 +10,7 @@ COMMENT=		International Components for Unicode
 VERSION=		54.1
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME=		icu4c-${VERSION}
-REVISION=		3
+REVISION=		4
 
 MAJ_V=			${VERSION:R}
 SO_VERSION=		8.0
