@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/09/17 10:51:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/04/19 12:44:40 rpe Exp $
 @bin bin/wdiff
 @info info/wdiff.info
 @man man/man1/wdiff.1
@@ -21,6 +21,7 @@ share/locale/en@quot/LC_MESSAGES/wdiff.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/wdiff.mo
+share/locale/eo/LC_MESSAGES/wdiff-gnulib.mo
 share/locale/es/LC_MESSAGES/wdiff-gnulib.mo
 share/locale/es/LC_MESSAGES/wdiff.mo
 share/locale/et/LC_MESSAGES/wdiff-gnulib.mo
@@ -65,6 +66,7 @@ share/locale/sk/LC_MESSAGES/wdiff-gnulib.mo
 share/locale/sk/LC_MESSAGES/wdiff.mo
 share/locale/sl/LC_MESSAGES/wdiff-gnulib.mo
 share/locale/sl/LC_MESSAGES/wdiff.mo
+share/locale/sr/LC_MESSAGES/wdiff-gnulib.mo
 share/locale/sv/LC_MESSAGES/wdiff-gnulib.mo
 share/locale/sv/LC_MESSAGES/wdiff.mo
 share/locale/tr/LC_MESSAGES/wdiff-gnulib.mo

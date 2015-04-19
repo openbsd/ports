@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2015/04/19 12:44:40 rpe Exp $
 
 COMMENT=	word differences between text files
 
-DISTNAME=	wdiff-1.1.2
-REVISION=	0
+DISTNAME=	wdiff-1.2.2
 CATEGORIES=	textproc
 HOMEPAGE=	https://www.gnu.org/software/wdiff
 MASTER_SITES=	${MASTER_SITE_GNU:=wdiff/}
