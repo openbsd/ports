@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/04/18 15:13:35 bcallah Exp $
+# $OpenBSD: Makefile,v 1.43 2015/04/19 16:22:20 bcallah Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -12,6 +12,7 @@ V =			160
 DISTNAME =		mame0${V}s
 PKGNAME-main =		sdlmame-0.${V}
 PKGNAME-tools =		sdlmame-tools-0.${V}
+REVISION =		0
 
 CATEGORIES =		emulators games
 
@@ -25,7 +26,8 @@ PERMIT_PACKAGE_CDROM =	unclear license
 PERMIT_PACKAGE_FTP =	unclear license
 PERMIT_DISTFILES_FTP =	unclear license
 
-WANTLIB += SDL X11 c m pthread stdc++ util z
+WANTLIB += SDL SDL_ttf X11 Xinerama c expat fontconfig freetype
+WANTLIB += m pthread stdc++ util z
 
 MASTER_SITES =		http://mamedev.org/downloader.php?file=releases/ \
 			http://whiper.com/mame/${V}/
@@ -43,7 +45,7 @@ MODULES =		devel/gettext \
 			lang/python
 
 RUN_DEPENDS-main =	fonts/liberation-fonts
-LIB_DEPENDS =		devel/sdl
+LIB_DEPENDS =		devel/sdl-ttf
 
 MAKE_FLAGS =		OPT_FLAGS='-DINI_PATH="\"${SYSCONFDIR}/mame;\""'
 MAKE_ENV =		ARCH=$(ARCH) CC=$(CC) CFLAGS="$(CFLAGS)" \
