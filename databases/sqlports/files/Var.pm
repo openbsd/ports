@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.23 2014/11/04 10:44:33 espie Exp $
+# $OpenBSD: Var.pm,v 1.24 2015/04/19 12:08:02 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -291,6 +291,7 @@ sub add
 		}
 		my $p = PkgPath->new($pkgpath2);
 		$p->{want} = 1;
+		$p->{parent} //= $ins->current_path;
 		$self->normal_insert($ins, $depends,
 		    $ins->find_pathkey($p->fullpkgpath),
 		    $ins->convert_depends($self->depends_type),

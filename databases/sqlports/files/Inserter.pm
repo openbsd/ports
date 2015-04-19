@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.12 2013/03/11 11:53:51 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.13 2015/04/19 12:08:02 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -91,6 +91,18 @@ sub add_error
 
 sub write_log
 {
+}
+
+sub current_path
+{
+	my $self = shift;
+	return $self->{current_path};
+}
+
+sub set_newkey
+{
+	my ($self, $key) = @_;
+	$self->{current_path} = $key;
 }
 
 sub create_tables
@@ -390,6 +402,7 @@ sub set_newkey
 	my ($self, $key) = @_;
 
 	$self->set($self->find_pathkey($key));
+	$self->SUPER::set_newkey($key);
 }
 
 sub find_keyword_id
@@ -493,6 +506,7 @@ sub set_newkey
 {
 	my ($self, $key) = @_;
 
+	$self->SUPER::set_newkey($key);
 	my $path = $key;
 	$path =~ s/\,.*//;
 	$self->insert('Paths', $key, $path, $key);
