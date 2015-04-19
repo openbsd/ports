@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/05/07 11:39:16 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/04/19 17:01:40 bcallah Exp $
 bin/veusz
 bin/veusz_listen
 lib/python${MODPY_VERSION}/site-packages/veusz/
 lib/python${MODPY_VERSION}/site-packages/veusz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/veusz/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/veusz/COPYING
+lib/python${MODPY_VERSION}/site-packages/veusz/ChangeLog
 lib/python${MODPY_VERSION}/site-packages/veusz/VERSION
 lib/python${MODPY_VERSION}/site-packages/veusz/__init__.py
 lib/python${MODPY_VERSION}/site-packages/veusz/__init__.pyc
@@ -62,6 +65,10 @@ lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/errorloading.py
 lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/errorloading.pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/exceptiondialog.py
 lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/exceptiondialog.pyc
+lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/export.py
+lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/export.pyc
+lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/filterdialog.py
+lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/filterdialog.pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/histodata.py
 lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/histodata.pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/dialogs/importdialog.py
@@ -85,6 +92,8 @@ lib/python${MODPY_VERSION}/site-packages/veusz/document/commandinterface.py
 lib/python${MODPY_VERSION}/site-packages/veusz/document/commandinterface.pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/document/commandinterpreter.py
 lib/python${MODPY_VERSION}/site-packages/veusz/document/commandinterpreter.pyc
+lib/python${MODPY_VERSION}/site-packages/veusz/document/dataset_filtered.py
+lib/python${MODPY_VERSION}/site-packages/veusz/document/dataset_filtered.pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/document/dataset_histo.py
 lib/python${MODPY_VERSION}/site-packages/veusz/document/dataset_histo.pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/document/datasets.py
@@ -140,6 +149,7 @@ lib/python${MODPY_VERSION}/site-packages/veusz/examples/example_csv.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/example_import.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/example_import_1.dat
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/example_import_2.dat
+lib/python${MODPY_VERSION}/site-packages/veusz/examples/filtered.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/fit.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/fixed_aspect.vsz
 lib/python${MODPY_VERSION}/site-packages/veusz/examples/functions.vsz
@@ -241,11 +251,13 @@ lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-edit-rename.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-edit-undo.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-edit-veuszedit.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-edit.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-filter.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-go-down.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-go-next.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-go-previous.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-go-up.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-mouse-pointer.svg
+lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-search-jss.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-view-refresh.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-vzdata-import.svg
 lib/python${MODPY_VERSION}/site-packages/veusz/icons/kde-window-close.svg
@@ -358,6 +370,8 @@ lib/python${MODPY_VERSION}/site-packages/veusz/ui/dataedit.ui
 lib/python${MODPY_VERSION}/site-packages/veusz/ui/errorloading.ui
 lib/python${MODPY_VERSION}/site-packages/veusz/ui/exceptionlist.ui
 lib/python${MODPY_VERSION}/site-packages/veusz/ui/exceptionsend.ui
+lib/python${MODPY_VERSION}/site-packages/veusz/ui/export.ui
+lib/python${MODPY_VERSION}/site-packages/veusz/ui/filter.ui
 lib/python${MODPY_VERSION}/site-packages/veusz/ui/histodata.ui
 lib/python${MODPY_VERSION}/site-packages/veusz/ui/import.ui
 lib/python${MODPY_VERSION}/site-packages/veusz/ui/import_2d.ui
@@ -388,8 +402,6 @@ lib/python${MODPY_VERSION}/site-packages/veusz/utils/fitlm.py
 lib/python${MODPY_VERSION}/site-packages/veusz/utils/fitlm.pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/utils/formatting.py
 lib/python${MODPY_VERSION}/site-packages/veusz/utils/formatting.pyc
-lib/python${MODPY_VERSION}/site-packages/veusz/utils/pdf.py
-lib/python${MODPY_VERSION}/site-packages/veusz/utils/pdf.pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/utils/points.py
 lib/python${MODPY_VERSION}/site-packages/veusz/utils/points.pyc
 lib/python${MODPY_VERSION}/site-packages/veusz/utils/safe_eval.py
