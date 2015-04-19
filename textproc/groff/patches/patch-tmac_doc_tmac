@@ -1,7 +1,17 @@
-$OpenBSD: patch-tmac_doc_tmac,v 1.4 2014/11/06 22:15:23 schwarze Exp $
-Always format .Pa the same way, as requested by jmc@ (local change).
---- tmac/doc.tmac.orig	Sun Oct 12 23:00:09 2014
-+++ tmac/doc.tmac	Sun Oct 12 23:27:06 2014
+$OpenBSD: patch-tmac_doc_tmac,v 1.5 2015/04/19 15:20:43 schwarze Exp $
+chunk 1: Trailing -width/-offset must not pick up old args (merged upstream).
+chunk 2: Always format .Pa the same way, as requested by jmc@ (local change).
+--- tmac/doc.tmac.orig	Tue Nov  4 09:38:35 2014
++++ tmac/doc.tmac	Fri Apr 17 01:03:11 2015
+@@ -3126,7 +3126,7 @@
+ .
+ .  \" avoid a warning message in case e.g. `-offset' has no parameter
+ .  nr doc-reg-dBla (\n[doc-arg-ptr] + 1)
+-.  if !d doc-arg\n[doc-reg-dBla] \
++.  if (\n[doc-arg-limit] < \n[doc-reg-dBla]) \
+ .    ds doc-arg\n[doc-reg-dBla]
+ .
+ .  nr doc-reg-dBla 1
 @@ -3765,8 +3765,6 @@
  .
  .        if \n[doc-in-files-section] \{\
