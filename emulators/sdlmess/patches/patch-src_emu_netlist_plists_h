@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_emu_netlist_plists_h,v 1.1 2015/04/19 16:20:26 bcallah Exp $
+
+Ugh...
+
+--- src/emu/netlist/plists.h.orig	Sat Apr  4 10:46:33 2015
++++ src/emu/netlist/plists.h	Sat Apr  4 10:47:00 2015
+@@ -199,7 +199,7 @@ class plinearlist_t (private)
+ // pnamedlist_t: a simple list
+ // ----------------------------------------------------------------------------------------
+ 
+-#if defined(SDLMAME_SOLARIS) || defined(__ANDROID__)
++#if defined(SDLMAME_SOLARIS) || defined(__ANDROID__) || defined(__OpenBSD__)
+ #undef _C
+ #endif
+ 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-makefile,v 1.5 2014/05/14 23:11:41 bcallah Exp $
---- makefile.orig	Thu Apr 17 11:29:59 2014
-+++ makefile	Thu Apr 17 11:29:59 2014
+$OpenBSD: patch-makefile,v 1.6 2015/04/19 16:20:26 bcallah Exp $
+--- makefile.orig	Sat Apr 18 11:21:38 2015
++++ makefile	Sat Apr 18 11:22:40 2015
 @@ -24,7 +24,7 @@
  #-------------------------------------------------
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-makefile,v 1.5 2014/05/14 23:11:41 bcallah Exp $
  endif
  
  ifndef SUBTARGET
-@@ -217,10 +217,10 @@ endif
+@@ -227,10 +227,10 @@ endif
  # BIGENDIAN = 1
  
  # uncomment next line to build expat as part of MAME build
@@ -23,7 +23,7 @@ $OpenBSD: patch-makefile,v 1.5 2014/05/14 23:11:41 bcallah Exp $
  
  # uncomment next line to build libflac as part of MAME build
  BUILD_FLAC = 1
-@@ -337,7 +337,7 @@ endif
+@@ -364,7 +364,7 @@ endif
  # compiler, linker and utilities
  ifneq ($(TARGETOS),emscripten)
  AR = @ar
@@ -31,31 +31,31 @@ $OpenBSD: patch-makefile,v 1.5 2014/05/14 23:11:41 bcallah Exp $
 +CC ?= @gcc
  LD = @g++
  endif
- MD = -mkdir$(EXE)
-@@ -387,7 +387,7 @@ NAME = $(TARGET)$(SUBTARGET)
+ MD = -mkdir$(BUILD_EXE)
+@@ -417,7 +417,7 @@ NAME = $(TARGET)$(SUBTARGET)
  endif
  
  # fullname is prefix+name+suffix+suffix64+suffixdebug
--FULLNAME ?= $(PREFIX)$(PREFIXSDL)$(NAME)$(SUFFIX)$(SUFFIX64)$(SUFFIXDEBUG)$(SUFFIXPROFILE)
+-FULLNAME ?= $(BIN)$(PREFIX)$(PREFIXSDL)$(NAME)$(SUFFIX)$(SUFFIX64)$(SUFFIXDEBUG)$(SUFFIXPROFILE)
 +FULLNAME = $(PREFIXSDL)$(NAME)$(SUFFIX)$(SUFFIXDEBUG)$(SUFFIXPROFILE)
  
  # add an EXE suffix to get the final emulator name
  EMULATOR = $(FULLNAME)$(EXE)
-@@ -486,7 +486,7 @@ CPPONLYFLAGS =
+@@ -520,7 +520,7 @@ CPPONLYFLAGS =
  
  # CFLAGS is defined based on C or C++ targets
  # (remember, expansion only happens when used, so doing it here is ok)
--CFLAGS = $(CCOMFLAGS) $(CPPONLYFLAGS)
-+CFLAGS += $(CCOMFLAGS) $(CPPONLYFLAGS)
+-CFLAGS = $(CCOMFLAGS) $(CPPONLYFLAGS) $(INCPATH)
++CFLAGS += $(CCOMFLAGS) $(CPPONLYFLAGS) $(INCPATH)
  
  # we compile C-only to C89 standard with GNU extensions
  # we compile C++ code to C++98 standard with GNU extensions
-@@ -519,7 +519,7 @@ CCOMFLAGS += -pg
+@@ -562,7 +562,7 @@ CCOMFLAGS += -pg
  endif
  
  # add the optimization flag
 -CCOMFLAGS += -O$(OPTIMIZE)
-+#CCOMFLAGS += -O$(OPTIMIZE)
++# CCOMFLAGS += -O$(OPTIMIZE)
  
  # add the error warning flag
  ifndef NOWERROR
