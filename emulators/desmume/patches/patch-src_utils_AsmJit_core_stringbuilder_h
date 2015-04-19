@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_utils_AsmJit_core_stringbuilder_h,v 1.1 2013/09/06 03:06:45 bentley Exp $
---- src/utils/AsmJit/core/stringbuilder.h.orig	Wed Aug 21 22:55:37 2013
-+++ src/utils/AsmJit/core/stringbuilder.h	Wed Aug 21 22:55:48 2013
-@@ -8,6 +8,8 @@
+$OpenBSD: patch-src_utils_AsmJit_core_stringbuilder_h,v 1.2 2015/04/19 04:11:16 bentley Exp $
+--- src/utils/AsmJit/core/stringbuilder.h.orig	Tue Apr 14 22:45:30 2015
++++ src/utils/AsmJit/core/stringbuilder.h	Tue Apr 14 22:45:45 2015
+@@ -10,6 +10,8 @@
  #ifndef _ASMJIT_CORE_STRINGBUILDER_H
  #define _ASMJIT_CORE_STRINGBUILDER_H
  
