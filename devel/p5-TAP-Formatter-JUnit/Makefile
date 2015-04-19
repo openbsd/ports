@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/18 14:28:20 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/19 17:22:17 jca Exp $
 
 COMMENT =	format TAP::Harness output as JUnit XML
 
@@ -17,7 +17,8 @@ RUN_DEPENDS =	devel/p5-File-Slurp \
 		textproc/p5-XML-Generator
 TEST_DEPENDS =	devel/p5-File-Slurp \
 		devel/p5-IO-stringy \
-		devel/p5-IPC-Run
+		devel/p5-IPC-Run \
+		devel/p5-Test-XML
 
 CONFIGURE_STYLE = modbuild
 
