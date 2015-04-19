@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2015/03/14 20:52:23 jturner Exp $
+# $OpenBSD: Makefile,v 1.47 2015/04/19 14:39:12 jturner Exp $
 
 COMMENT =		simple distributed software configuration management
 
-DISTNAME =		fossil-src-20150119112900
-PKGNAME =		fossil-1.30
-REVISION =		0
+DISTNAME =		fossil-src-1.32
+PKGNAME =		fossil-1.32
 EPOCH =			0
 CATEGORIES =		devel www
 
@@ -19,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 FLAVORS=		static
 FLAVOR?=
 
-WANTLIB =		c crypto fuse ssl sqlite3>=28.0 z
+WANTLIB =		c crypto fuse ssl sqlite3>=30.1 z
 
 MODULES =		lang/tcl
 
@@ -34,6 +33,8 @@ CONFIGURE_ARGS +=	--static --with-openssl=none
 PREFIX =		${VARBASE}/www
 CONFLICT_MARKER =	fossil-*-static
 .endif
+
+WRKDIST =		${WRKDIR}/${PKGNAME}
 
 SUBST_VARS +=		CONFLICT_MARKER STATIC
 

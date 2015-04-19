@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_mk,v 1.20 2015/01/19 16:07:12 jturner Exp $
---- src/main.mk.orig	Mon Jan 19 06:29:00 2015
-+++ src/main.mk	Mon Jan 19 10:28:59 2015
-@@ -600,7 +600,6 @@ $(OBJDIR)/headers:	$(OBJDIR)/page_index.h $(OBJDIR)/bu
+$OpenBSD: patch-src_main_mk,v 1.21 2015/04/19 14:39:12 jturner Exp $
+--- src/main.mk.orig	Sat Mar 14 09:20:34 2015
++++ src/main.mk	Sat Mar 14 16:58:41 2015
+@@ -634,7 +634,6 @@ $(OBJDIR)/headers:	$(OBJDIR)/page_index.h $(OBJDIR)/bu
  	$(OBJDIR)/xfer_.c:$(OBJDIR)/xfer.h \
  	$(OBJDIR)/xfersetup_.c:$(OBJDIR)/xfersetup.h \
  	$(OBJDIR)/zip_.c:$(OBJDIR)/zip.h \
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_main_mk,v 1.20 2015/01/19 16:07:12 jturner Exp $
  	$(SRCDIR)/th.h \
  	$(OBJDIR)/VERSION.h
  	touch $(OBJDIR)/headers
-@@ -1546,7 +1545,7 @@ $(OBJDIR)/zip.h:	$(OBJDIR)/headers
+@@ -1588,7 +1587,7 @@ $(OBJDIR)/zip.h:	$(OBJDIR)/headers
  $(OBJDIR)/sqlite3.o:	$(SRCDIR)/sqlite3.c
  	$(XTCC) $(SQLITE_OPTIONS) $(SQLITE_CFLAGS) -c $(SRCDIR)/sqlite3.c -o $@
  
