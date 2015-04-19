@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/08/09 05:41:50 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2015/04/19 09:39:08 rpointel Exp $
 
 COMMENT=		RCS parsing library for Python
 
@@ -8,7 +8,7 @@ VERSION=		20090807
 DISTNAME=		${CHANGESET}
 EXTRACT_SUFX=		.tar.bz2
 PKGNAME=		rcsparse-${VERSION}
-REVISION=		1
+REVISION=		2
 CATEGORIES=     	devel
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,6 +21,7 @@ USE_GMAKE=		Yes
 MODULES=		lang/python
 NO_TEST=		Yes
 
-WANTLIB +=		${MODPY_WANTLIB}
+WANTLIB +=		${MODPY_WANTLIB} pthread
+
 
 .include <bsd.port.mk>
