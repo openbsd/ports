@@ -1,7 +1,7 @@
-$OpenBSD: patch-qtwebkit_Tools_qmake_mkspecs_features_default_pre_prf,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+$OpenBSD: patch-qtwebkit_Tools_qmake_mkspecs_features_default_pre_prf,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Use gflex instead of flex from base system, or things won't work.
---- qtwebkit/Tools/qmake/mkspecs/features/default_pre.prf.ports.orig	Thu Nov  6 12:54:13 2014
-+++ qtwebkit/Tools/qmake/mkspecs/features/default_pre.prf	Thu Nov  6 12:55:52 2014
+--- qtwebkit/Tools/qmake/mkspecs/features/default_pre.prf.ports.orig	Tue Feb 17 07:57:00 2015
++++ qtwebkit/Tools/qmake/mkspecs/features/default_pre.prf	Wed Apr  8 00:41:38 2015
 @@ -105,7 +105,11 @@ if(win32|mac):!macx-xcode {
  
  # A newer version of flex is required on Windows. At the moment the only
@@ -11,6 +11,6 @@ Use gflex instead of flex from base system, or things won't work.
 +# The flex program from base system won't satisfy our needs.
  FLEX = flex
 +openbsd: FLEX = gflex
- win32: FLEX = win_flex
+ equals(QMAKE_HOST.os, Windows): FLEX = win_flex
  
  BIN_EXTENSION =

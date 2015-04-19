@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtwebkit_Tools_qmake_config_tests_gccdepends_gccdepends_pro,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+$OpenBSD: patch-qtwebkit_Tools_qmake_config_tests_gccdepends_gccdepends_pro,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Unbreak configure stage.
---- qtwebkit/Tools/qmake/config.tests/gccdepends/gccdepends.pro.ports.orig	Fri Nov  7 02:15:40 2014
-+++ qtwebkit/Tools/qmake/config.tests/gccdepends/gccdepends.pro	Fri Nov  7 13:07:15 2014
-@@ -3,25 +3,20 @@
+--- qtwebkit/Tools/qmake/config.tests/gccdepends/gccdepends.pro.ports.orig	Tue Feb 17 07:57:00 2015
++++ qtwebkit/Tools/qmake/config.tests/gccdepends/gccdepends.pro	Wed Apr  8 00:38:31 2015
+@@ -3,25 +3,20 @@ OBJECTS_DIR = obj
  QMAKE_CXXFLAGS += -MD
  
  base_filename = empty

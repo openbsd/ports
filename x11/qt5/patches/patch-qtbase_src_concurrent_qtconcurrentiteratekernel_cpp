@@ -1,9 +1,9 @@
-$OpenBSD: patch-qtbase_src_concurrent_qtconcurrentiteratekernel_cpp,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+$OpenBSD: patch-qtbase_src_concurrent_qtconcurrentiteratekernel_cpp,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Tests fail due to incorrect _POSIX_TIMERS value in <unistd.h>.
 Allow functions to be actually used.
---- qtbase/src/concurrent/qtconcurrentiteratekernel.cpp.ports.orig	Mon Nov  3 22:55:57 2014
-+++ qtbase/src/concurrent/qtconcurrentiteratekernel.cpp	Mon Nov  3 22:56:56 2014
-@@ -79,7 +79,7 @@ static qint64 getticks()
+--- qtbase/src/concurrent/qtconcurrentiteratekernel.cpp.ports.orig	Tue Feb 17 07:56:53 2015
++++ qtbase/src/concurrent/qtconcurrentiteratekernel.cpp	Wed Apr  8 00:38:30 2015
+@@ -71,7 +71,7 @@ static qint64 getticks()
  
  static qint64 getticks()
  {

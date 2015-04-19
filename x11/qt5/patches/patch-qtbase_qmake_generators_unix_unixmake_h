@@ -1,0 +1,13 @@
+$OpenBSD: patch-qtbase_qmake_generators_unix_unixmake_h,v 1.1 2015/04/19 13:18:28 zhuk Exp $
+Always prepend project directory to list of linking directories,
+to avoid picking up wrong library from system.
+--- qtbase/qmake/generators/unix/unixmake.h.ports.orig	Fri Apr 17 20:16:34 2015
++++ qtbase/qmake/generators/unix/unixmake.h	Fri Apr 17 20:38:27 2015
+@@ -68,6 +68,7 @@ class UnixMakefileGenerator : public MakefileGenerator
+ 
+ private:
+     void init2();
++    void separateInternalLibdirs(ProStringList &libs, ProStringList &libdirsInt, QString prefix);
+ };
+ 
+ inline UnixMakefileGenerator::~UnixMakefileGenerator()

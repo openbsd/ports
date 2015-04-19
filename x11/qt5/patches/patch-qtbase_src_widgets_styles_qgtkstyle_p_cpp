@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtbase_src_widgets_styles_qgtkstyle_p_cpp,v 1.1 2014/12/25 23:35:44 zhuk Exp $
+$OpenBSD: patch-qtbase_src_widgets_styles_qgtkstyle_p_cpp,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Fix Qt5 in situation GTK+ shared library version is overridden.
---- qtbase/src/widgets/styles/qgtkstyle_p.cpp.ports.orig	Fri Dec 26 02:21:40 2014
-+++ qtbase/src/widgets/styles/qgtkstyle_p.cpp	Fri Dec 26 02:25:50 2014
-@@ -333,8 +333,7 @@ void QGtkStylePrivate::gtkWidgetSetFocus(GtkWidget *wi
+--- qtbase/src/widgets/styles/qgtkstyle_p.cpp.ports.orig	Tue Feb 17 07:56:39 2015
++++ qtbase/src/widgets/styles/qgtkstyle_p.cpp	Wed Apr  8 00:38:30 2015
+@@ -325,8 +325,7 @@ void QGtkStylePrivate::gtkWidgetSetFocus(GtkWidget *wi
   */
  void QGtkStylePrivate::resolveGtk() const
  {
@@ -12,7 +12,7 @@ Fix Qt5 in situation GTK+ shared library version is overridden.
  
      gtk_init = (Ptr_gtk_init)libgtk.resolve("gtk_init");
      gtk_window_new = (Ptr_gtk_window_new)libgtk.resolve("gtk_window_new");
-@@ -432,8 +431,8 @@ void QGtkStylePrivate::resolveGtk() const
+@@ -424,8 +423,8 @@ void QGtkStylePrivate::resolveGtk() const
      pango_font_description_get_family = (Ptr_pango_font_description_get_family)libgtk.resolve("pango_font_description_get_family");
      pango_font_description_get_style = (Ptr_pango_font_description_get_style)libgtk.resolve("pango_font_description_get_style");
  
@@ -23,7 +23,7 @@ Fix Qt5 in situation GTK+ shared library version is overridden.
  }
  
  /* \internal
-@@ -601,9 +600,9 @@ void QGtkStylePrivate::cleanupGtkWidgets()
+@@ -593,9 +592,9 @@ void QGtkStylePrivate::cleanupGtkWidgets()
  static bool resolveGConf()
  {
      if (!QGtkStylePrivate::gconf_client_get_default) {

@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtbase_tests_auto_corelib_tools_qbytearray_tst_qbytearray_cpp,v 1.1 2014/12/13 05:47:37 zhuk Exp $
+$OpenBSD: patch-qtbase_tests_auto_corelib_tools_qbytearray_tst_qbytearray_cpp,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Get rid of strcpy().
---- qtbase/tests/auto/corelib/tools/qbytearray/tst_qbytearray.cpp.ports.orig	Sat Dec 13 00:40:19 2014
-+++ qtbase/tests/auto/corelib/tools/qbytearray/tst_qbytearray.cpp	Sat Dec 13 00:39:38 2014
-@@ -84,7 +84,9 @@ private slots:
+--- qtbase/tests/auto/corelib/tools/qbytearray/tst_qbytearray.cpp.ports.orig	Tue Feb 17 07:56:31 2015
++++ qtbase/tests/auto/corelib/tools/qbytearray/tst_qbytearray.cpp	Wed Apr  8 00:38:30 2015
+@@ -76,7 +76,9 @@ private slots:
      void qvsnprintf();
      void qstrlen();
      void qstrnlen();
@@ -12,7 +12,7 @@ Get rid of strcpy().
      void qstrncpy();
      void qstricmp_data();
      void qstricmp();
-@@ -766,6 +768,7 @@ void tst_QByteArray::qstrnlen()
+@@ -762,6 +764,7 @@ void tst_QByteArray::qstrnlen()
      QCOMPARE(::qstrnlen(src, 20), (uint)20);
  }
  
@@ -20,7 +20,7 @@ Get rid of strcpy().
  void tst_QByteArray::qstrcpy()
  {
      const char *src = "Something about ... \0 a string.";
-@@ -778,6 +781,7 @@ void tst_QByteArray::qstrcpy()
+@@ -774,6 +777,7 @@ void tst_QByteArray::qstrcpy()
      QCOMPARE(::qstrcpy(dst ,src), (char *)dst);
      QCOMPARE((char *)dst, const_cast<char *>(expected));
  }

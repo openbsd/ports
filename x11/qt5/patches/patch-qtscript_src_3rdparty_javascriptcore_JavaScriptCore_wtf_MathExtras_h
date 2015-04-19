@@ -1,0 +1,26 @@
+$OpenBSD: patch-qtscript_src_3rdparty_javascriptcore_JavaScriptCore_wtf_MathExtras_h,v 1.1 2015/04/19 13:18:28 zhuk Exp $
+Unbreak compilation.
+--- qtscript/src/3rdparty/javascriptcore/JavaScriptCore/wtf/MathExtras.h.ports.orig	Tue Apr 14 18:46:12 2015
++++ qtscript/src/3rdparty/javascriptcore/JavaScriptCore/wtf/MathExtras.h	Tue Apr 14 18:46:28 2015
+@@ -95,21 +95,6 @@ inline bool isinf(double x) { return !finite(x) && !is
+ 
+ #endif
+ 
+-#if OS(OPENBSD)
+-
+-namespace std {
+-
+-#ifndef isfinite
+-inline bool isfinite(double x) { return finite(x); }
+-#endif
+-#ifndef signbit
+-inline bool signbit(double x) { struct ieee_double *p = (struct ieee_double *)&x; return p->dbl_sign; }
+-#endif
+-
+-} // namespace std
+-
+-#endif
+-
+ #if (COMPILER(MSVC) && _MSC_VER < 1800) || COMPILER(RVCT)
+ 
+ // We must not do 'num + 0.5' or 'num - 0.5' because they can cause precision loss.

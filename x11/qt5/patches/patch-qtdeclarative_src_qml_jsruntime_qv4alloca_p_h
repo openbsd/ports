@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtdeclarative_src_qml_jsruntime_qv4alloca_p_h,v 1.1 2014/12/10 22:42:17 zhuk Exp $
+$OpenBSD: patch-qtdeclarative_src_qml_jsruntime_qv4alloca_p_h,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Unbreak compilation for C++11 mode (GCC 4.8.6 bug?).
---- qtdeclarative/src/qml/jsruntime/qv4alloca_p.h.ports.orig	Tue Dec  9 20:54:45 2014
-+++ qtdeclarative/src/qml/jsruntime/qv4alloca_p.h	Wed Dec 10 01:12:49 2014
-@@ -49,6 +49,10 @@
+--- qtdeclarative/src/qml/jsruntime/qv4alloca_p.h.ports.orig	Tue Feb 17 07:57:27 2015
++++ qtdeclarative/src/qml/jsruntime/qv4alloca_p.h	Wed Apr  8 00:38:30 2015
+@@ -41,6 +41,10 @@
  #  ifndef __GNUC__
  #    define alloca _alloca
  #  endif

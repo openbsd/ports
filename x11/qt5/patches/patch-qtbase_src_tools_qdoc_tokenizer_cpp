@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtbase_src_tools_qdoc_tokenizer_cpp,v 1.1 2014/12/13 05:47:37 zhuk Exp $
+$OpenBSD: patch-qtbase_src_tools_qdoc_tokenizer_cpp,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Get rid of strcpy().
---- qtbase/src/tools/qdoc/tokenizer.cpp.ports.orig	Sat Dec 13 00:40:41 2014
-+++ qtbase/src/tools/qdoc/tokenizer.cpp	Sat Dec 13 00:45:04 2014
-@@ -490,7 +490,7 @@ int Tokenizer::getToken()
+--- qtbase/src/tools/qdoc/tokenizer.cpp.ports.orig	Tue Feb 17 07:56:38 2015
++++ qtbase/src/tools/qdoc/tokenizer.cpp	Wed Apr  8 00:38:30 2015
+@@ -482,7 +482,7 @@ int Tokenizer::getToken()
          }
      }
  
@@ -11,7 +11,7 @@ Get rid of strcpy().
      yyLexLen = strlen(yyLex);
      return Tok_Eoi;
  }
-@@ -580,8 +580,8 @@ void Tokenizer::start(const Location& loc)
+@@ -572,8 +572,8 @@ void Tokenizer::start(const Location& loc)
      yyTokLoc = loc;
      yyCurLoc = loc;
      yyCurLoc.start();
@@ -22,7 +22,7 @@ Get rid of strcpy().
      yyLexLen = strlen(yyLex);
      yyBraceDepth = 0;
      yyParenDepth = 0;
-@@ -673,7 +673,7 @@ int Tokenizer::getTokenAfterPreprocessor()
+@@ -665,7 +665,7 @@ int Tokenizer::getTokenAfterPreprocessor()
            yyPrevLex. This way, we skip over the preprocessor
            directive.
          */

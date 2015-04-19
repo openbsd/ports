@@ -1,11 +1,11 @@
-$OpenBSD: patch-qtbase_configure,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+$OpenBSD: patch-qtbase_configure,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 1. Tests fail due to incorrect _POSIX_TIMERS value in <unistd.h>.
    Allow functions to be actually used.
 2. Unbreak disabling build parts.
 3. Pass parameters to make(1) invocation.
---- qtbase/configure.ports.orig	Thu Sep 11 14:47:55 2014
-+++ qtbase/configure	Tue Nov 11 11:55:06 2014
-@@ -686,8 +686,8 @@ CFG_IWMMXT=no
+--- qtbase/configure.ports.orig	Tue Feb 17 07:56:22 2015
++++ qtbase/configure	Wed Apr  8 00:38:30 2015
+@@ -679,8 +679,8 @@ CFG_ACCESSIBILITY_ATSPI_BRIDGE=no # will be enabled de
  CFG_NEON=auto
  CFG_MIPS_DSP=auto
  CFG_MIPS_DSPR2=auto
@@ -16,7 +16,7 @@ $OpenBSD: patch-qtbase_configure,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
  CFG_POSIX_FALLOCATE=auto
  CFG_MREMAP=auto
  CFG_GETADDRINFO=auto
-@@ -3339,7 +3339,7 @@ if [ -z "$CFG_BUILD_PARTS" ]; then
+@@ -3388,7 +3388,7 @@ if [ -z "$CFG_BUILD_PARTS" ]; then
      fi
  fi
  for nobuild in $CFG_NOBUILD_PARTS; do
@@ -25,7 +25,7 @@ $OpenBSD: patch-qtbase_configure,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
  done
  if echo $CFG_BUILD_PARTS | grep -v libs >/dev/null 2>&1; then
  #    echo
-@@ -3782,7 +3782,7 @@ if true; then ###[ '!' -f "$outpath/bin/qmake" ];
+@@ -3831,7 +3831,7 @@ if true; then ###[ '!' -f "$outpath/bin/qmake" ];
          fi
      done
  

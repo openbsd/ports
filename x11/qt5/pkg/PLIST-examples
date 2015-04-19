@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2014/12/08 20:33:46 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 @lib lib/libfftreal.so.${LIBfftreal_VERSION}
 @lib lib/libgruesensor.so.${LIBgruesensor_VERSION}
 lib/qt5/examples/
@@ -65,6 +65,7 @@ lib/qt5/examples/bluetooth/btchat/remoteselector.cpp
 lib/qt5/examples/bluetooth/btchat/remoteselector.h
 lib/qt5/examples/bluetooth/btchat/remoteselector.ui
 lib/qt5/examples/bluetooth/btfiletransfer/
+@bin lib/qt5/examples/bluetooth/btfiletransfer/btfiletransfer
 lib/qt5/examples/bluetooth/btfiletransfer/btfiletransfer.pro
 lib/qt5/examples/bluetooth/btfiletransfer/btfiletransfer.qrc
 lib/qt5/examples/bluetooth/btfiletransfer/busy.gif
@@ -89,6 +90,62 @@ lib/qt5/examples/bluetooth/btscanner/main.cpp
 lib/qt5/examples/bluetooth/btscanner/service.cpp
 lib/qt5/examples/bluetooth/btscanner/service.h
 lib/qt5/examples/bluetooth/btscanner/service.ui
+lib/qt5/examples/bluetooth/chat/
+lib/qt5/examples/bluetooth/chat/Button.qml
+lib/qt5/examples/bluetooth/chat/InputBox.qml
+lib/qt5/examples/bluetooth/chat/Search.qml
+lib/qt5/examples/bluetooth/chat/chat.pro
+lib/qt5/examples/bluetooth/chat/chat.qml
+lib/qt5/examples/bluetooth/chat/chat.qrc
+lib/qt5/examples/bluetooth/chat/images/
+lib/qt5/examples/bluetooth/chat/images/clear.png
+lib/qt5/examples/bluetooth/chat/images/default.png
+lib/qt5/examples/bluetooth/chat/images/lineedit-bg.png
+lib/qt5/examples/bluetooth/chat/qmlchat.cpp
+lib/qt5/examples/bluetooth/heartlistener/
+lib/qt5/examples/bluetooth/heartlistener/assets/
+lib/qt5/examples/bluetooth/heartlistener/assets/Button.qml
+lib/qt5/examples/bluetooth/heartlistener/assets/Point.qml
+lib/qt5/examples/bluetooth/heartlistener/assets/blue_heart.png
+lib/qt5/examples/bluetooth/heartlistener/assets/blue_heart_small.png
+lib/qt5/examples/bluetooth/heartlistener/assets/busy_dark.png
+lib/qt5/examples/bluetooth/heartlistener/assets/dialog.qml
+lib/qt5/examples/bluetooth/heartlistener/assets/draw.js
+lib/qt5/examples/bluetooth/heartlistener/assets/home.qml
+lib/qt5/examples/bluetooth/heartlistener/assets/main.qml
+lib/qt5/examples/bluetooth/heartlistener/assets/monitor.qml
+lib/qt5/examples/bluetooth/heartlistener/assets/results.qml
+lib/qt5/examples/bluetooth/heartlistener/assets/star.png
+lib/qt5/examples/bluetooth/heartlistener/deviceinfo.cpp
+lib/qt5/examples/bluetooth/heartlistener/deviceinfo.h
+@bin lib/qt5/examples/bluetooth/heartlistener/heartlistener
+lib/qt5/examples/bluetooth/heartlistener/heartlistener.pro
+lib/qt5/examples/bluetooth/heartlistener/heartrate.cpp
+lib/qt5/examples/bluetooth/heartlistener/heartrate.h
+lib/qt5/examples/bluetooth/heartlistener/main.cpp
+lib/qt5/examples/bluetooth/heartlistener/resources.qrc
+lib/qt5/examples/bluetooth/lowenergyscanner/
+lib/qt5/examples/bluetooth/lowenergyscanner/assets/
+lib/qt5/examples/bluetooth/lowenergyscanner/assets/Characteristics.qml
+lib/qt5/examples/bluetooth/lowenergyscanner/assets/Dialog.qml
+lib/qt5/examples/bluetooth/lowenergyscanner/assets/Header.qml
+lib/qt5/examples/bluetooth/lowenergyscanner/assets/Label.qml
+lib/qt5/examples/bluetooth/lowenergyscanner/assets/Menu.qml
+lib/qt5/examples/bluetooth/lowenergyscanner/assets/Services.qml
+lib/qt5/examples/bluetooth/lowenergyscanner/assets/busy_dark.png
+lib/qt5/examples/bluetooth/lowenergyscanner/assets/main.qml
+lib/qt5/examples/bluetooth/lowenergyscanner/characteristicinfo.cpp
+lib/qt5/examples/bluetooth/lowenergyscanner/characteristicinfo.h
+lib/qt5/examples/bluetooth/lowenergyscanner/device.cpp
+lib/qt5/examples/bluetooth/lowenergyscanner/device.h
+lib/qt5/examples/bluetooth/lowenergyscanner/deviceinfo.cpp
+lib/qt5/examples/bluetooth/lowenergyscanner/deviceinfo.h
+@bin lib/qt5/examples/bluetooth/lowenergyscanner/lowenergyscanner
+lib/qt5/examples/bluetooth/lowenergyscanner/lowenergyscanner.pro
+lib/qt5/examples/bluetooth/lowenergyscanner/main.cpp
+lib/qt5/examples/bluetooth/lowenergyscanner/resources.qrc
+lib/qt5/examples/bluetooth/lowenergyscanner/serviceinfo.cpp
+lib/qt5/examples/bluetooth/lowenergyscanner/serviceinfo.h
 lib/qt5/examples/bluetooth/picturetransfer/
 lib/qt5/examples/bluetooth/picturetransfer/Button.qml
 lib/qt5/examples/bluetooth/picturetransfer/DeviceDiscovery.qml
@@ -115,13 +172,93 @@ lib/qt5/examples/bluetooth/pingpong/pingpong.pro
 lib/qt5/examples/bluetooth/pingpong/resource.qrc
 lib/qt5/examples/bluetooth/scanner/
 lib/qt5/examples/bluetooth/scanner/Button.qml
-@bin lib/qt5/examples/bluetooth/scanner/btfiletransfer
 lib/qt5/examples/bluetooth/scanner/default.png
 @bin lib/qt5/examples/bluetooth/scanner/qml_scanner
 lib/qt5/examples/bluetooth/scanner/qmlscanner.cpp
 lib/qt5/examples/bluetooth/scanner/scanner.pro
 lib/qt5/examples/bluetooth/scanner/scanner.qml
 lib/qt5/examples/bluetooth/scanner/scanner.qrc
+lib/qt5/examples/corelib/
+lib/qt5/examples/corelib/corelib.pro
+lib/qt5/examples/corelib/ipc/
+lib/qt5/examples/corelib/ipc/README
+lib/qt5/examples/corelib/ipc/ipc.pro
+lib/qt5/examples/corelib/ipc/localfortuneclient/
+lib/qt5/examples/corelib/ipc/localfortuneclient/client.cpp
+lib/qt5/examples/corelib/ipc/localfortuneclient/client.h
+@bin lib/qt5/examples/corelib/ipc/localfortuneclient/localfortuneclient
+lib/qt5/examples/corelib/ipc/localfortuneclient/localfortuneclient.pro
+lib/qt5/examples/corelib/ipc/localfortuneclient/main.cpp
+lib/qt5/examples/corelib/ipc/localfortuneserver/
+@bin lib/qt5/examples/corelib/ipc/localfortuneserver/localfortuneserver
+lib/qt5/examples/corelib/ipc/localfortuneserver/localfortuneserver.pro
+lib/qt5/examples/corelib/ipc/localfortuneserver/main.cpp
+lib/qt5/examples/corelib/ipc/localfortuneserver/server.cpp
+lib/qt5/examples/corelib/ipc/localfortuneserver/server.h
+lib/qt5/examples/corelib/ipc/sharedmemory/
+lib/qt5/examples/corelib/ipc/sharedmemory/dialog.cpp
+lib/qt5/examples/corelib/ipc/sharedmemory/dialog.h
+lib/qt5/examples/corelib/ipc/sharedmemory/dialog.ui
+lib/qt5/examples/corelib/ipc/sharedmemory/image.png
+lib/qt5/examples/corelib/ipc/sharedmemory/main.cpp
+lib/qt5/examples/corelib/ipc/sharedmemory/qt.png
+@bin lib/qt5/examples/corelib/ipc/sharedmemory/sharedmemory
+lib/qt5/examples/corelib/ipc/sharedmemory/sharedmemory.pro
+lib/qt5/examples/corelib/json/
+lib/qt5/examples/corelib/json/json.pro
+lib/qt5/examples/corelib/json/savegame/
+lib/qt5/examples/corelib/json/savegame/character.cpp
+lib/qt5/examples/corelib/json/savegame/character.h
+lib/qt5/examples/corelib/json/savegame/game.cpp
+lib/qt5/examples/corelib/json/savegame/game.h
+lib/qt5/examples/corelib/json/savegame/level.cpp
+lib/qt5/examples/corelib/json/savegame/level.h
+lib/qt5/examples/corelib/json/savegame/main.cpp
+@bin lib/qt5/examples/corelib/json/savegame/savegame
+lib/qt5/examples/corelib/json/savegame/savegame.pro
+lib/qt5/examples/corelib/threads/
+lib/qt5/examples/corelib/threads/README
+lib/qt5/examples/corelib/threads/mandelbrot/
+lib/qt5/examples/corelib/threads/mandelbrot/main.cpp
+@bin lib/qt5/examples/corelib/threads/mandelbrot/mandelbrot
+lib/qt5/examples/corelib/threads/mandelbrot/mandelbrot.pro
+lib/qt5/examples/corelib/threads/mandelbrot/mandelbrotwidget.cpp
+lib/qt5/examples/corelib/threads/mandelbrot/mandelbrotwidget.h
+lib/qt5/examples/corelib/threads/mandelbrot/renderthread.cpp
+lib/qt5/examples/corelib/threads/mandelbrot/renderthread.h
+lib/qt5/examples/corelib/threads/semaphores/
+@bin lib/qt5/examples/corelib/threads/semaphores/semaphores
+lib/qt5/examples/corelib/threads/semaphores/semaphores.cpp
+lib/qt5/examples/corelib/threads/semaphores/semaphores.pro
+lib/qt5/examples/corelib/threads/threads.pro
+lib/qt5/examples/corelib/threads/waitconditions/
+@bin lib/qt5/examples/corelib/threads/waitconditions/waitconditions
+lib/qt5/examples/corelib/threads/waitconditions/waitconditions.cpp
+lib/qt5/examples/corelib/threads/waitconditions/waitconditions.pro
+lib/qt5/examples/corelib/tools/
+lib/qt5/examples/corelib/tools/README
+lib/qt5/examples/corelib/tools/contiguouscache/
+@bin lib/qt5/examples/corelib/tools/contiguouscache/contiguouscache
+lib/qt5/examples/corelib/tools/contiguouscache/contiguouscache.pro
+lib/qt5/examples/corelib/tools/contiguouscache/main.cpp
+lib/qt5/examples/corelib/tools/contiguouscache/randomlistmodel.cpp
+lib/qt5/examples/corelib/tools/contiguouscache/randomlistmodel.h
+lib/qt5/examples/corelib/tools/customcompleter/
+@bin lib/qt5/examples/corelib/tools/customcompleter/customtype
+@bin lib/qt5/examples/corelib/tools/customcompleter/customtypesending
+lib/qt5/examples/corelib/tools/customtype/
+lib/qt5/examples/corelib/tools/customtype/customtype.pro
+lib/qt5/examples/corelib/tools/customtype/main.cpp
+lib/qt5/examples/corelib/tools/customtype/message.cpp
+lib/qt5/examples/corelib/tools/customtype/message.h
+lib/qt5/examples/corelib/tools/customtypesending/
+lib/qt5/examples/corelib/tools/customtypesending/customtypesending.pro
+lib/qt5/examples/corelib/tools/customtypesending/main.cpp
+lib/qt5/examples/corelib/tools/customtypesending/message.cpp
+lib/qt5/examples/corelib/tools/customtypesending/message.h
+lib/qt5/examples/corelib/tools/customtypesending/window.cpp
+lib/qt5/examples/corelib/tools/customtypesending/window.h
+lib/qt5/examples/corelib/tools/tools.pro
 lib/qt5/examples/dbus/
 lib/qt5/examples/dbus/chat/
 @bin lib/qt5/examples/dbus/chat/chat
@@ -1920,42 +2057,6 @@ lib/qt5/examples/help/contextsensitivehelp/wateringconfigdialog.cpp
 lib/qt5/examples/help/contextsensitivehelp/wateringconfigdialog.h
 lib/qt5/examples/help/contextsensitivehelp/wateringconfigdialog.ui
 lib/qt5/examples/help/help.pro
-lib/qt5/examples/ipc/
-lib/qt5/examples/ipc/README
-lib/qt5/examples/ipc/ipc.pro
-lib/qt5/examples/ipc/localfortuneclient/
-lib/qt5/examples/ipc/localfortuneclient/client.cpp
-lib/qt5/examples/ipc/localfortuneclient/client.h
-@bin lib/qt5/examples/ipc/localfortuneclient/localfortuneclient
-lib/qt5/examples/ipc/localfortuneclient/localfortuneclient.pro
-lib/qt5/examples/ipc/localfortuneclient/main.cpp
-lib/qt5/examples/ipc/localfortuneserver/
-@bin lib/qt5/examples/ipc/localfortuneserver/localfortuneserver
-lib/qt5/examples/ipc/localfortuneserver/localfortuneserver.pro
-lib/qt5/examples/ipc/localfortuneserver/main.cpp
-lib/qt5/examples/ipc/localfortuneserver/server.cpp
-lib/qt5/examples/ipc/localfortuneserver/server.h
-lib/qt5/examples/ipc/sharedmemory/
-lib/qt5/examples/ipc/sharedmemory/dialog.cpp
-lib/qt5/examples/ipc/sharedmemory/dialog.h
-lib/qt5/examples/ipc/sharedmemory/dialog.ui
-lib/qt5/examples/ipc/sharedmemory/image.png
-lib/qt5/examples/ipc/sharedmemory/main.cpp
-lib/qt5/examples/ipc/sharedmemory/qt.png
-@bin lib/qt5/examples/ipc/sharedmemory/sharedmemory
-lib/qt5/examples/ipc/sharedmemory/sharedmemory.pro
-lib/qt5/examples/json/
-lib/qt5/examples/json/json.pro
-lib/qt5/examples/json/savegame/
-lib/qt5/examples/json/savegame/character.cpp
-lib/qt5/examples/json/savegame/character.h
-lib/qt5/examples/json/savegame/game.cpp
-lib/qt5/examples/json/savegame/game.h
-lib/qt5/examples/json/savegame/level.cpp
-lib/qt5/examples/json/savegame/level.h
-lib/qt5/examples/json/savegame/main.cpp
-@bin lib/qt5/examples/json/savegame/savegame
-lib/qt5/examples/json/savegame/savegame.pro
 lib/qt5/examples/linguist/
 lib/qt5/examples/linguist/README
 lib/qt5/examples/linguist/arrowpad/
@@ -1980,6 +2081,136 @@ lib/qt5/examples/linguist/trollprint/printpanel.h
 @bin lib/qt5/examples/linguist/trollprint/trollprint
 lib/qt5/examples/linguist/trollprint/trollprint.pro
 lib/qt5/examples/linguist/trollprint/trollprint_pt.ts
+lib/qt5/examples/location/
+lib/qt5/examples/location/common/
+lib/qt5/examples/location/common/common/
+lib/qt5/examples/location/common/common/common.pri
+lib/qt5/examples/location/common/common/common.qrc
+lib/qt5/examples/location/common/common/imports/
+lib/qt5/examples/location/common/common/imports/QtLocation/
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/components/
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/components/BusyIndicator.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/components/Button.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/components/Checkbox.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/components/Fader.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/components/IconButton.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/components/Menu.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/components/Optionbutton.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/components/Slider.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/components/TextWithLabel.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/components/TitleBar.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/components/style/
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/components/style/ButtonStyle.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/components/style/HMenuItemStyle.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/components/style/VMenuItemStyle.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/dialogs/
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/dialogs/Dialog.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/dialogs/ErrorDialog.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/dialogs/InputDialog.qml
+lib/qt5/examples/location/common/common/imports/QtLocation/examples/qmldir
+lib/qt5/examples/location/common/common/resources/
+lib/qt5/examples/location/common/common/resources/busy.png
+lib/qt5/examples/location/common/common/resources/button.png
+lib/qt5/examples/location/common/common/resources/button_pressed.png
+lib/qt5/examples/location/common/common/resources/catch.png
+lib/qt5/examples/location/common/common/resources/categories.png
+lib/qt5/examples/location/common/common/resources/categories_pressed.png
+lib/qt5/examples/location/common/common/resources/checkbox.png
+lib/qt5/examples/location/common/common/resources/checkbox_selected.png
+lib/qt5/examples/location/common/common/resources/cross.png
+lib/qt5/examples/location/common/common/resources/cross_hovered.png
+lib/qt5/examples/location/common/common/resources/cross_pressed.png
+lib/qt5/examples/location/common/common/resources/hmenuItem.png
+lib/qt5/examples/location/common/common/resources/hmenuItem_pressed.png
+lib/qt5/examples/location/common/common/resources/left.png
+lib/qt5/examples/location/common/common/resources/left_pressed.png
+lib/qt5/examples/location/common/common/resources/marker.png
+lib/qt5/examples/location/common/common/resources/marker_hovered.png
+lib/qt5/examples/location/common/common/resources/marker_selected.png
+lib/qt5/examples/location/common/common/resources/node.png
+lib/qt5/examples/location/common/common/resources/node_selected.png
+lib/qt5/examples/location/common/common/resources/option_button.png
+lib/qt5/examples/location/common/common/resources/option_button_selected.png
+lib/qt5/examples/location/common/common/resources/pencil.png
+lib/qt5/examples/location/common/common/resources/pencil_hovered.png
+lib/qt5/examples/location/common/common/resources/pencil_pressed.png
+lib/qt5/examples/location/common/common/resources/quit.png
+lib/qt5/examples/location/common/common/resources/quit_hovered.png
+lib/qt5/examples/location/common/common/resources/quit_pressed.png
+lib/qt5/examples/location/common/common/resources/right.png
+lib/qt5/examples/location/common/common/resources/right_pressed.png
+lib/qt5/examples/location/common/common/resources/scale.png
+lib/qt5/examples/location/common/common/resources/scale_end.png
+lib/qt5/examples/location/common/common/resources/search.png
+lib/qt5/examples/location/common/common/resources/search_pressed.png
+lib/qt5/examples/location/common/common/resources/star.png
+lib/qt5/examples/location/common/common/resources/titlebar.png
+lib/qt5/examples/location/common/common/resources/titlebar.sci
+lib/qt5/examples/location/common/common/resources/vmenuItem.png
+lib/qt5/examples/location/location.pro
+lib/qt5/examples/location/mapviewer/
+lib/qt5/examples/location/mapviewer/content/
+lib/qt5/examples/location/mapviewer/content/dialogs/
+lib/qt5/examples/location/mapviewer/content/dialogs/Message.qml
+lib/qt5/examples/location/mapviewer/content/dialogs/RouteDialog.qml
+lib/qt5/examples/location/mapviewer/content/map/
+lib/qt5/examples/location/mapviewer/content/map/3dItem.qml
+lib/qt5/examples/location/mapviewer/content/map/CircleItem.qml
+lib/qt5/examples/location/mapviewer/content/map/ImageItem.qml
+lib/qt5/examples/location/mapviewer/content/map/MapComponent.qml
+lib/qt5/examples/location/mapviewer/content/map/Marker.qml
+lib/qt5/examples/location/mapviewer/content/map/MiniMap.qml
+lib/qt5/examples/location/mapviewer/content/map/PolygonItem.qml
+lib/qt5/examples/location/mapviewer/content/map/PolylineItem.qml
+lib/qt5/examples/location/mapviewer/content/map/RectangleItem.qml
+lib/qt5/examples/location/mapviewer/content/map/VideoItem.qml
+lib/qt5/examples/location/mapviewer/demo.ogv
+lib/qt5/examples/location/mapviewer/icon.png
+lib/qt5/examples/location/mapviewer/mapviewer.pro
+lib/qt5/examples/location/mapviewer/mapviewer.qml
+lib/qt5/examples/location/mapviewer/mapviewerwrapper.qrc
+@bin lib/qt5/examples/location/mapviewer/qml_location_mapviewer
+lib/qt5/examples/location/mapviewer/qmlmapviewerwrapper.cpp
+lib/qt5/examples/location/places/
+lib/qt5/examples/location/places/content/
+lib/qt5/examples/location/places/content/places/
+lib/qt5/examples/location/places/content/places/CategoryDelegate.qml
+lib/qt5/examples/location/places/content/places/CategoryDialog.qml
+lib/qt5/examples/location/places/content/places/CategoryView.qml
+lib/qt5/examples/location/places/content/places/EditorialDelegate.qml
+lib/qt5/examples/location/places/content/places/EditorialPage.qml
+lib/qt5/examples/location/places/content/places/Group.qml
+lib/qt5/examples/location/places/content/places/MapComponent.qml
+lib/qt5/examples/location/places/content/places/OptionsDialog.qml
+lib/qt5/examples/location/places/content/places/PlaceDelegate.qml
+lib/qt5/examples/location/places/content/places/PlaceDialog.qml
+lib/qt5/examples/location/places/content/places/PlaceEditorials.qml
+lib/qt5/examples/location/places/content/places/PlaceImages.qml
+lib/qt5/examples/location/places/content/places/PlaceReviews.qml
+lib/qt5/examples/location/places/content/places/PlacesUtils.js
+lib/qt5/examples/location/places/content/places/RatingView.qml
+lib/qt5/examples/location/places/content/places/ReviewDelegate.qml
+lib/qt5/examples/location/places/content/places/ReviewPage.qml
+lib/qt5/examples/location/places/content/places/SearchBox.qml
+lib/qt5/examples/location/places/content/places/SearchResultDelegate.qml
+lib/qt5/examples/location/places/content/places/SearchResultView.qml
+lib/qt5/examples/location/places/places.pro
+lib/qt5/examples/location/places/places.qml
+lib/qt5/examples/location/places/placeswrapper.qrc
+@bin lib/qt5/examples/location/places/qml_location_places
+lib/qt5/examples/location/places/qmlplaceswrapper.cpp
+lib/qt5/examples/location/places_list/
+lib/qt5/examples/location/places_list/main.cpp
+@bin lib/qt5/examples/location/places_list/places_list
+lib/qt5/examples/location/places_list/places_list.pro
+lib/qt5/examples/location/places_list/places_list.qml
+lib/qt5/examples/location/places_map/
+lib/qt5/examples/location/places_map/main.cpp
+lib/qt5/examples/location/places_map/marker.png
+@bin lib/qt5/examples/location/places_map/places_map
+lib/qt5/examples/location/places_map/places_map.pro
+lib/qt5/examples/location/places_map/places_map.qml
 lib/qt5/examples/multimedia/
 lib/qt5/examples/multimedia/audiodecoder/
 @bin lib/qt5/examples/multimedia/audiodecoder/audiodecoder
@@ -2026,11 +2257,14 @@ lib/qt5/examples/multimedia/audiorecorder/qaudiolevel.cpp
 lib/qt5/examples/multimedia/audiorecorder/qaudiolevel.h
 lib/qt5/examples/multimedia/declarative-camera/
 lib/qt5/examples/multimedia/declarative-camera/CameraButton.qml
+lib/qt5/examples/multimedia/declarative-camera/CameraListButton.qml
+lib/qt5/examples/multimedia/declarative-camera/CameraListPopup.qml
 lib/qt5/examples/multimedia/declarative-camera/CameraPropertyButton.qml
 lib/qt5/examples/multimedia/declarative-camera/CameraPropertyPopup.qml
 lib/qt5/examples/multimedia/declarative-camera/FocusButton.qml
 lib/qt5/examples/multimedia/declarative-camera/PhotoCaptureControls.qml
 lib/qt5/examples/multimedia/declarative-camera/PhotoPreview.qml
+lib/qt5/examples/multimedia/declarative-camera/Popup.qml
 lib/qt5/examples/multimedia/declarative-camera/VideoCaptureControls.qml
 lib/qt5/examples/multimedia/declarative-camera/VideoPreview.qml
 lib/qt5/examples/multimedia/declarative-camera/ZoomControl.qml
@@ -2134,13 +2368,8 @@ lib/qt5/examples/multimedia/spectrum/spectrum.pro
 lib/qt5/examples/multimedia/video/
 lib/qt5/examples/multimedia/video/qmlvideo/
 lib/qt5/examples/multimedia/video/qmlvideo/images/
-lib/qt5/examples/multimedia/video/qmlvideo/images/close.png
 lib/qt5/examples/multimedia/video/qmlvideo/images/folder.png
 lib/qt5/examples/multimedia/video/qmlvideo/images/leaves.jpg
-lib/qt5/examples/multimedia/video/qmlvideo/images/progress_handle.svg
-lib/qt5/examples/multimedia/video/qmlvideo/images/progress_handle_pressed.svg
-lib/qt5/examples/multimedia/video/qmlvideo/images/titlebar.png
-lib/qt5/examples/multimedia/video/qmlvideo/images/titlebar.sci
 lib/qt5/examples/multimedia/video/qmlvideo/images/up.png
 lib/qt5/examples/multimedia/video/qmlvideo/main.cpp
 lib/qt5/examples/multimedia/video/qmlvideo/qml/
@@ -2158,7 +2387,6 @@ lib/qt5/examples/multimedia/video/qmlvideo/qml/qmlvideo/CameraResize.qml
 lib/qt5/examples/multimedia/video/qmlvideo/qml/qmlvideo/CameraRotate.qml
 lib/qt5/examples/multimedia/video/qmlvideo/qml/qmlvideo/CameraSpin.qml
 lib/qt5/examples/multimedia/video/qmlvideo/qml/qmlvideo/Content.qml
-lib/qt5/examples/multimedia/video/qmlvideo/qml/qmlvideo/DisableScreenSaver.qml
 lib/qt5/examples/multimedia/video/qmlvideo/qml/qmlvideo/ErrorDialog.qml
 lib/qt5/examples/multimedia/video/qmlvideo/qml/qmlvideo/FileBrowser.qml
 lib/qt5/examples/multimedia/video/qmlvideo/qml/qmlvideo/Scene.qml
@@ -2212,11 +2440,9 @@ lib/qt5/examples/multimedia/video/qmlvideofx/qml/
 lib/qt5/examples/multimedia/video/qmlvideofx/qml/qmlvideofx/
 lib/qt5/examples/multimedia/video/qmlvideofx/qml/qmlvideofx/Button.qml
 lib/qt5/examples/multimedia/video/qmlvideofx/qml/qmlvideofx/Content.qml
-lib/qt5/examples/multimedia/video/qmlvideofx/qml/qmlvideofx/ContentCamera.qml
 lib/qt5/examples/multimedia/video/qmlvideofx/qml/qmlvideofx/ContentImage.qml
 lib/qt5/examples/multimedia/video/qmlvideofx/qml/qmlvideofx/ContentVideo.qml
 lib/qt5/examples/multimedia/video/qmlvideofx/qml/qmlvideofx/Curtain.qml
-lib/qt5/examples/multimedia/video/qmlvideofx/qml/qmlvideofx/DisableScreenSaver.qml
 lib/qt5/examples/multimedia/video/qmlvideofx/qml/qmlvideofx/Divider.qml
 lib/qt5/examples/multimedia/video/qmlvideofx/qml/qmlvideofx/Effect.qml
 lib/qt5/examples/multimedia/video/qmlvideofx/qml/qmlvideofx/EffectBillboard.qml
@@ -2590,32 +2816,18 @@ lib/qt5/examples/opengl/cube/mainwidget.h
 lib/qt5/examples/opengl/cube/shaders.qrc
 lib/qt5/examples/opengl/cube/textures.qrc
 lib/qt5/examples/opengl/cube/vshader.glsl
-lib/qt5/examples/opengl/framebufferobject2/
-lib/qt5/examples/opengl/framebufferobject2/cubelogo.png
-@bin lib/qt5/examples/opengl/framebufferobject2/framebufferobject2
-lib/qt5/examples/opengl/framebufferobject2/framebufferobject2.pro
-lib/qt5/examples/opengl/framebufferobject2/framebufferobject2.qrc
-lib/qt5/examples/opengl/framebufferobject2/glwidget.cpp
-lib/qt5/examples/opengl/framebufferobject2/glwidget.h
-lib/qt5/examples/opengl/framebufferobject2/main.cpp
-lib/qt5/examples/opengl/grabber/
-lib/qt5/examples/opengl/grabber/glwidget.cpp
-lib/qt5/examples/opengl/grabber/glwidget.h
-@bin lib/qt5/examples/opengl/grabber/grabber
-lib/qt5/examples/opengl/grabber/grabber.pro
-lib/qt5/examples/opengl/grabber/main.cpp
-lib/qt5/examples/opengl/grabber/mainwindow.cpp
-lib/qt5/examples/opengl/grabber/mainwindow.h
-lib/qt5/examples/opengl/hellogl/
-lib/qt5/examples/opengl/hellogl/glwidget.cpp
-lib/qt5/examples/opengl/hellogl/glwidget.h
-@bin lib/qt5/examples/opengl/hellogl/hellogl
-lib/qt5/examples/opengl/hellogl/hellogl.pro
-lib/qt5/examples/opengl/hellogl/main.cpp
-lib/qt5/examples/opengl/hellogl/qtlogo.cpp
-lib/qt5/examples/opengl/hellogl/qtlogo.h
-lib/qt5/examples/opengl/hellogl/window.cpp
-lib/qt5/examples/opengl/hellogl/window.h
+lib/qt5/examples/opengl/hellogl2/
+lib/qt5/examples/opengl/hellogl2/glwidget.cpp
+lib/qt5/examples/opengl/hellogl2/glwidget.h
+@bin lib/qt5/examples/opengl/hellogl2/hellogl2
+lib/qt5/examples/opengl/hellogl2/hellogl2.pro
+lib/qt5/examples/opengl/hellogl2/logo.cpp
+lib/qt5/examples/opengl/hellogl2/logo.h
+lib/qt5/examples/opengl/hellogl2/main.cpp
+lib/qt5/examples/opengl/hellogl2/mainwindow.cpp
+lib/qt5/examples/opengl/hellogl2/mainwindow.h
+lib/qt5/examples/opengl/hellogl2/window.cpp
+lib/qt5/examples/opengl/hellogl2/window.h
 lib/qt5/examples/opengl/hellowindow/
 @bin lib/qt5/examples/opengl/hellowindow/hellowindow
 lib/qt5/examples/opengl/hellowindow/hellowindow.cpp
@@ -2623,41 +2835,32 @@ lib/qt5/examples/opengl/hellowindow/hellowindow.h
 lib/qt5/examples/opengl/hellowindow/hellowindow.pro
 lib/qt5/examples/opengl/hellowindow/main.cpp
 lib/qt5/examples/opengl/opengl.pro
-lib/qt5/examples/opengl/overpainting/
-lib/qt5/examples/opengl/overpainting/bubble.cpp
-lib/qt5/examples/opengl/overpainting/bubble.h
-lib/qt5/examples/opengl/overpainting/glwidget.cpp
-lib/qt5/examples/opengl/overpainting/glwidget.h
-lib/qt5/examples/opengl/overpainting/main.cpp
-@bin lib/qt5/examples/opengl/overpainting/overpainting
-lib/qt5/examples/opengl/overpainting/overpainting.pro
-lib/qt5/examples/opengl/overpainting/qtlogo.cpp
-lib/qt5/examples/opengl/overpainting/qtlogo.h
 lib/qt5/examples/opengl/paintedwindow/
 lib/qt5/examples/opengl/paintedwindow/main.cpp
 @bin lib/qt5/examples/opengl/paintedwindow/paintedwindow
 lib/qt5/examples/opengl/paintedwindow/paintedwindow.cpp
 lib/qt5/examples/opengl/paintedwindow/paintedwindow.h
 lib/qt5/examples/opengl/paintedwindow/paintedwindow.pro
-lib/qt5/examples/opengl/pbuffers/
-lib/qt5/examples/opengl/pbuffers/cube.cpp
-lib/qt5/examples/opengl/pbuffers/cube.h
-lib/qt5/examples/opengl/pbuffers/cubelogo.png
-lib/qt5/examples/opengl/pbuffers/glwidget.cpp
-lib/qt5/examples/opengl/pbuffers/glwidget.h
-lib/qt5/examples/opengl/pbuffers/main.cpp
-@bin lib/qt5/examples/opengl/pbuffers/pbuffers
-lib/qt5/examples/opengl/pbuffers/pbuffers.pro
-lib/qt5/examples/opengl/pbuffers/pbuffers.qrc
-lib/qt5/examples/opengl/samplebuffers/
-lib/qt5/examples/opengl/samplebuffers/glwidget.cpp
-lib/qt5/examples/opengl/samplebuffers/glwidget.h
-lib/qt5/examples/opengl/samplebuffers/main.cpp
-@bin lib/qt5/examples/opengl/samplebuffers/samplebuffers
-lib/qt5/examples/opengl/samplebuffers/samplebuffers.pro
-lib/qt5/examples/opengl/shared/
-lib/qt5/examples/opengl/shared/qtlogo.cpp
-lib/qt5/examples/opengl/shared/qtlogo.h
+lib/qt5/examples/opengl/qopenglwidget/
+lib/qt5/examples/opengl/qopenglwidget/bubble.cpp
+lib/qt5/examples/opengl/qopenglwidget/bubble.h
+lib/qt5/examples/opengl/qopenglwidget/glwidget.cpp
+lib/qt5/examples/opengl/qopenglwidget/glwidget.h
+lib/qt5/examples/opengl/qopenglwidget/main.cpp
+lib/qt5/examples/opengl/qopenglwidget/mainwindow.cpp
+lib/qt5/examples/opengl/qopenglwidget/mainwindow.h
+@bin lib/qt5/examples/opengl/qopenglwidget/qopenglwidget
+lib/qt5/examples/opengl/qopenglwidget/qopenglwidget.pro
+lib/qt5/examples/opengl/qopenglwidget/qt.png
+lib/qt5/examples/opengl/qopenglwidget/texture.qrc
+lib/qt5/examples/opengl/qopenglwindow/
+lib/qt5/examples/opengl/qopenglwindow/background.frag
+lib/qt5/examples/opengl/qopenglwindow/background_renderer.cpp
+lib/qt5/examples/opengl/qopenglwindow/background_renderer.h
+lib/qt5/examples/opengl/qopenglwindow/main.cpp
+@bin lib/qt5/examples/opengl/qopenglwindow/qopenglwindow
+lib/qt5/examples/opengl/qopenglwindow/qopenglwindow.pro
+lib/qt5/examples/opengl/qopenglwindow/shaders.qrc
 lib/qt5/examples/opengl/textures/
 lib/qt5/examples/opengl/textures/glwidget.cpp
 lib/qt5/examples/opengl/textures/glwidget.h
@@ -2674,6 +2877,14 @@ lib/qt5/examples/opengl/textures/textures.pro
 lib/qt5/examples/opengl/textures/textures.qrc
 lib/qt5/examples/opengl/textures/window.cpp
 lib/qt5/examples/opengl/textures/window.h
+lib/qt5/examples/opengl/threadedqopenglwidget/
+lib/qt5/examples/opengl/threadedqopenglwidget/glwidget.cpp
+lib/qt5/examples/opengl/threadedqopenglwidget/glwidget.h
+lib/qt5/examples/opengl/threadedqopenglwidget/main.cpp
+lib/qt5/examples/opengl/threadedqopenglwidget/mainwindow.cpp
+lib/qt5/examples/opengl/threadedqopenglwidget/mainwindow.h
+@bin lib/qt5/examples/opengl/threadedqopenglwidget/threadedqopenglwidget
+lib/qt5/examples/opengl/threadedqopenglwidget/threadedqopenglwidget.pro
 lib/qt5/examples/positioning/
 lib/qt5/examples/positioning/flickr/
 lib/qt5/examples/positioning/flickr/flickr-90.qml
@@ -2713,6 +2924,7 @@ lib/qt5/examples/positioning/flickr/qmllocationflickr.cpp
 lib/qt5/examples/positioning/logfilepositionsource/
 lib/qt5/examples/positioning/logfilepositionsource/clientapplication.cpp
 lib/qt5/examples/positioning/logfilepositionsource/clientapplication.h
+lib/qt5/examples/positioning/logfilepositionsource/logfile.qrc
 @bin lib/qt5/examples/positioning/logfilepositionsource/logfilepositionsource
 lib/qt5/examples/positioning/logfilepositionsource/logfilepositionsource.cpp
 lib/qt5/examples/positioning/logfilepositionsource/logfilepositionsource.h
@@ -2949,6 +3161,10 @@ lib/qt5/examples/qmltest/qmltest/tst_qmltest.cpp
 @bin lib/qt5/examples/qmltest/qmltest/tst_qmltestexample
 lib/qt5/examples/qpa/
 lib/qt5/examples/qpa/qpa.pro
+lib/qt5/examples/qpa/qrasterwindow/
+lib/qt5/examples/qpa/qrasterwindow/main.cpp
+@bin lib/qt5/examples/qpa/qrasterwindow/qrasterwindow
+lib/qt5/examples/qpa/qrasterwindow/qrasterwindow.pro
 lib/qt5/examples/qpa/windows/
 lib/qt5/examples/qpa/windows/main.cpp
 lib/qt5/examples/qpa/windows/window.cpp
@@ -3077,13 +3293,16 @@ lib/qt5/examples/quick/customitems/dialcontrol/content/needle.png
 lib/qt5/examples/quick/customitems/dialcontrol/content/needle_shadow.png
 lib/qt5/examples/quick/customitems/dialcontrol/content/overlay.png
 lib/qt5/examples/quick/customitems/dialcontrol/content/quit.png
+lib/qt5/examples/quick/customitems/dialcontrol/dialcontrol.pro
 lib/qt5/examples/quick/customitems/dialcontrol/dialcontrol.qml
 lib/qt5/examples/quick/customitems/dialcontrol/dialcontrol.qmlproject
+lib/qt5/examples/quick/customitems/dialcontrol/dialcontrol.qrc
 lib/qt5/examples/quick/customitems/dialcontrol/doc/
 lib/qt5/examples/quick/customitems/dialcontrol/doc/images/
 lib/qt5/examples/quick/customitems/dialcontrol/doc/images/qml-dialcontrol-example.png
 lib/qt5/examples/quick/customitems/dialcontrol/doc/src/
 lib/qt5/examples/quick/customitems/dialcontrol/doc/src/dialcontrol.qdoc
+lib/qt5/examples/quick/customitems/dialcontrol/main.cpp
 lib/qt5/examples/quick/customitems/flipable/
 lib/qt5/examples/quick/customitems/flipable/content/
 lib/qt5/examples/quick/customitems/flipable/content/5_heart.png
@@ -3765,6 +3984,14 @@ lib/qt5/examples/quick/quickwidgets/quickwidget/quickwidget.pro
 lib/qt5/examples/quick/quickwidgets/quickwidget/quickwidget.qrc
 lib/qt5/examples/quick/quickwidgets/quickwidget/rotatingsquare.qml
 lib/qt5/examples/quick/quickwidgets/quickwidgets.pro
+lib/qt5/examples/quick/rendercontrol/
+lib/qt5/examples/quick/rendercontrol/demo.qml
+lib/qt5/examples/quick/rendercontrol/main.cpp
+@bin lib/qt5/examples/quick/rendercontrol/rendercontrol
+lib/qt5/examples/quick/rendercontrol/rendercontrol.pro
+lib/qt5/examples/quick/rendercontrol/rendercontrol.qrc
+lib/qt5/examples/quick/rendercontrol/window.cpp
+lib/qt5/examples/quick/rendercontrol/window.h
 lib/qt5/examples/quick/righttoleft/
 lib/qt5/examples/quick/righttoleft/layoutdirection/
 lib/qt5/examples/quick/righttoleft/layoutdirection/layoutdirection.qml
@@ -3799,6 +4026,14 @@ lib/qt5/examples/quick/scenegraph/openglunderqml/openglunderqml.qrc
 lib/qt5/examples/quick/scenegraph/openglunderqml/squircle.cpp
 lib/qt5/examples/quick/scenegraph/openglunderqml/squircle.h
 lib/qt5/examples/quick/scenegraph/scenegraph.pro
+lib/qt5/examples/quick/scenegraph/sgengine/
+lib/qt5/examples/quick/scenegraph/sgengine/face-smile.png
+lib/qt5/examples/quick/scenegraph/sgengine/main.cpp
+@bin lib/qt5/examples/quick/scenegraph/sgengine/sgengine
+lib/qt5/examples/quick/scenegraph/sgengine/sgengine.pro
+lib/qt5/examples/quick/scenegraph/sgengine/sgengine.qrc
+lib/qt5/examples/quick/scenegraph/sgengine/window.cpp
+lib/qt5/examples/quick/scenegraph/sgengine/window.h
 lib/qt5/examples/quick/scenegraph/simplematerial/
 lib/qt5/examples/quick/scenegraph/simplematerial/main.qml
 @bin lib/qt5/examples/quick/scenegraph/simplematerial/simplematerial
@@ -3831,6 +4066,14 @@ lib/qt5/examples/quick/scenegraph/threadedanimation/spinner.png
 @bin lib/qt5/examples/quick/scenegraph/threadedanimation/threadedanimation
 lib/qt5/examples/quick/scenegraph/threadedanimation/threadedanimation.pro
 lib/qt5/examples/quick/scenegraph/threadedanimation/threadedanimation.qrc
+lib/qt5/examples/quick/scenegraph/twotextureproviders/
+lib/qt5/examples/quick/scenegraph/twotextureproviders/main.cpp
+lib/qt5/examples/quick/scenegraph/twotextureproviders/main.qml
+@bin lib/qt5/examples/quick/scenegraph/twotextureproviders/twotextureproviders
+lib/qt5/examples/quick/scenegraph/twotextureproviders/twotextureproviders.pro
+lib/qt5/examples/quick/scenegraph/twotextureproviders/twotextureproviders.qrc
+lib/qt5/examples/quick/scenegraph/twotextureproviders/xorblender.cpp
+lib/qt5/examples/quick/scenegraph/twotextureproviders/xorblender.h
 lib/qt5/examples/quick/shadereffects/
 lib/qt5/examples/quick/shadereffects/content/
 lib/qt5/examples/quick/shadereffects/content/Slider.qml
@@ -4134,6 +4377,20 @@ lib/qt5/examples/quick/window/main.cpp
 lib/qt5/examples/quick/window/window.pro
 lib/qt5/examples/quick/window/window.qml
 lib/qt5/examples/quick/window/window.qrc
+lib/qt5/examples/qwebchannel/
+lib/qt5/examples/qwebchannel/chatclient-html/
+lib/qt5/examples/qwebchannel/chatclient-html/chatclient.html
+lib/qt5/examples/qwebchannel/chatclient-html/qwebchannel.js
+lib/qt5/examples/qwebchannel/chatclient-qml/
+lib/qt5/examples/qwebchannel/chatclient-qml/qmlchatclient.qml
+lib/qt5/examples/qwebchannel/chatclient-qml/qwebchannel.js
+lib/qt5/examples/qwebchannel/nodejs/
+lib/qt5/examples/qwebchannel/nodejs/chatclient.js
+lib/qt5/examples/qwebchannel/nodejs/package.json
+lib/qt5/examples/qwebchannel/nodejs/qwebchannel.js
+lib/qt5/examples/qwebchannel/standalone/
+lib/qt5/examples/qwebchannel/standalone/index.html
+lib/qt5/examples/qwebchannel/standalone/qwebchannel.js
 lib/qt5/examples/script/
 lib/qt5/examples/script/README
 lib/qt5/examples/script/calculator/
@@ -4244,6 +4501,8 @@ lib/qt5/examples/sensors/grue/libgruesensor.prl
 @lib lib/qt5/examples/sensors/grue/libgruesensor.so.${LIBgruesensor_VERSION}
 lib/qt5/examples/sensors/grue/sensors/
 lib/qt5/examples/sensors/grue/sensors/libqtsensors_grue.so
+lib/qt5/examples/sensors/maze/
+@bin lib/qt5/examples/sensors/maze/maze
 lib/qt5/examples/sensors/qmlqtsensors/
 @bin lib/qt5/examples/sensors/qmlqtsensors/qmlqtsensors
 lib/qt5/examples/sensors/qmlsensorgestures/
@@ -4389,6 +4648,7 @@ lib/qt5/examples/svg/embedded/fluidlauncher/demoapplication.h
 lib/qt5/examples/svg/embedded/fluidlauncher/fluidlauncher.cpp
 lib/qt5/examples/svg/embedded/fluidlauncher/fluidlauncher.h
 lib/qt5/examples/svg/embedded/fluidlauncher/fluidlauncher.pro
+lib/qt5/examples/svg/embedded/fluidlauncher/fluidlauncher.qrc
 lib/qt5/examples/svg/embedded/fluidlauncher/main.cpp
 lib/qt5/examples/svg/embedded/fluidlauncher/pictureflow.cpp
 lib/qt5/examples/svg/embedded/fluidlauncher/pictureflow.h
@@ -4532,49 +4792,6 @@ lib/qt5/examples/svg/svgviewer/svgview.h
 @bin lib/qt5/examples/svg/svgviewer/svgviewer
 lib/qt5/examples/svg/svgviewer/svgviewer.pro
 lib/qt5/examples/svg/svgviewer/svgviewer.qrc
-lib/qt5/examples/threads/
-lib/qt5/examples/threads/README
-lib/qt5/examples/threads/mandelbrot/
-lib/qt5/examples/threads/mandelbrot/main.cpp
-@bin lib/qt5/examples/threads/mandelbrot/mandelbrot
-lib/qt5/examples/threads/mandelbrot/mandelbrot.pro
-lib/qt5/examples/threads/mandelbrot/mandelbrotwidget.cpp
-lib/qt5/examples/threads/mandelbrot/mandelbrotwidget.h
-lib/qt5/examples/threads/mandelbrot/renderthread.cpp
-lib/qt5/examples/threads/mandelbrot/renderthread.h
-lib/qt5/examples/threads/semaphores/
-@bin lib/qt5/examples/threads/semaphores/semaphores
-lib/qt5/examples/threads/semaphores/semaphores.cpp
-lib/qt5/examples/threads/semaphores/semaphores.pro
-lib/qt5/examples/threads/threads.pro
-lib/qt5/examples/threads/waitconditions/
-@bin lib/qt5/examples/threads/waitconditions/waitconditions
-lib/qt5/examples/threads/waitconditions/waitconditions.cpp
-lib/qt5/examples/threads/waitconditions/waitconditions.pro
-lib/qt5/examples/tools/
-lib/qt5/examples/tools/README
-lib/qt5/examples/tools/contiguouscache/
-@bin lib/qt5/examples/tools/contiguouscache/contiguouscache
-lib/qt5/examples/tools/contiguouscache/contiguouscache.pro
-lib/qt5/examples/tools/contiguouscache/main.cpp
-lib/qt5/examples/tools/contiguouscache/randomlistmodel.cpp
-lib/qt5/examples/tools/contiguouscache/randomlistmodel.h
-lib/qt5/examples/tools/customcompleter/
-@bin lib/qt5/examples/tools/customcompleter/customtype
-@bin lib/qt5/examples/tools/customcompleter/customtypesending
-lib/qt5/examples/tools/customtype/
-lib/qt5/examples/tools/customtype/customtype.pro
-lib/qt5/examples/tools/customtype/main.cpp
-lib/qt5/examples/tools/customtype/message.cpp
-lib/qt5/examples/tools/customtype/message.h
-lib/qt5/examples/tools/customtypesending/
-lib/qt5/examples/tools/customtypesending/customtypesending.pro
-lib/qt5/examples/tools/customtypesending/main.cpp
-lib/qt5/examples/tools/customtypesending/message.cpp
-lib/qt5/examples/tools/customtypesending/message.h
-lib/qt5/examples/tools/customtypesending/window.cpp
-lib/qt5/examples/tools/customtypesending/window.h
-lib/qt5/examples/tools/tools.pro
 lib/qt5/examples/touch/
 lib/qt5/examples/touch/dials/
 @bin lib/qt5/examples/touch/dials/dials
@@ -4626,6 +4843,25 @@ lib/qt5/examples/uitools/textfinder/textfinder.h
 lib/qt5/examples/uitools/textfinder/textfinder.pro
 lib/qt5/examples/uitools/textfinder/textfinder.qrc
 lib/qt5/examples/uitools/uitools.pro
+lib/qt5/examples/webchannel/
+lib/qt5/examples/webchannel/chatclient-html/
+lib/qt5/examples/webchannel/chatclient-html/chatclient-html.pro
+lib/qt5/examples/webchannel/chatclient-qml/
+lib/qt5/examples/webchannel/chatclient-qml/chatclient-qml.pro
+lib/qt5/examples/webchannel/chatserver-cpp/
+lib/qt5/examples/webchannel/chatserver-cpp/chatserver-cpp.pro
+lib/qt5/examples/webchannel/chatserver-cpp/chatserver.cpp
+lib/qt5/examples/webchannel/chatserver-cpp/chatserver.h
+lib/qt5/examples/webchannel/chatserver-cpp/main.cpp
+lib/qt5/examples/webchannel/exampleassets.pri
+lib/qt5/examples/webchannel/nodejs/
+lib/qt5/examples/webchannel/nodejs/README
+lib/qt5/examples/webchannel/nodejs/nodejs.pro
+lib/qt5/examples/webchannel/standalone/
+lib/qt5/examples/webchannel/standalone/dialog.ui
+lib/qt5/examples/webchannel/standalone/main.cpp
+lib/qt5/examples/webchannel/standalone/standalone.pro
+lib/qt5/examples/webchannel/webchannel.pro
 lib/qt5/examples/webkitqml/
 lib/qt5/examples/webkitqml/flickrview/
 @bin lib/qt5/examples/webkitqml/flickrview/flickrview
@@ -4879,6 +5115,13 @@ lib/qt5/examples/websockets/qmlwebsocketclient/qml/
 lib/qt5/examples/websockets/qmlwebsocketclient/qml/qmlwebsocketclient/
 lib/qt5/examples/websockets/qmlwebsocketclient/qml/qmlwebsocketclient/main.qml
 lib/qt5/examples/websockets/qmlwebsocketclient/qmlwebsocketclient.pro
+lib/qt5/examples/websockets/qmlwebsocketserver/
+lib/qt5/examples/websockets/qmlwebsocketserver/data.qrc
+lib/qt5/examples/websockets/qmlwebsocketserver/main.cpp
+lib/qt5/examples/websockets/qmlwebsocketserver/qml/
+lib/qt5/examples/websockets/qmlwebsocketserver/qml/qmlwebsocketserver/
+lib/qt5/examples/websockets/qmlwebsocketserver/qml/qmlwebsocketserver/main.qml
+lib/qt5/examples/websockets/qmlwebsocketserver/qmlwebsocketserver.pro
 lib/qt5/examples/websockets/simplechat/
 lib/qt5/examples/websockets/simplechat/chatserver.cpp
 lib/qt5/examples/websockets/simplechat/chatserver.h
@@ -5624,6 +5867,11 @@ lib/qt5/examples/widgets/itemviews/stardelegate/stareditor.cpp
 lib/qt5/examples/widgets/itemviews/stardelegate/stareditor.h
 lib/qt5/examples/widgets/itemviews/stardelegate/starrating.cpp
 lib/qt5/examples/widgets/itemviews/stardelegate/starrating.h
+lib/qt5/examples/widgets/itemviews/storageview/
+lib/qt5/examples/widgets/itemviews/storageview/main.cpp
+lib/qt5/examples/widgets/itemviews/storageview/storagemodel.cpp
+lib/qt5/examples/widgets/itemviews/storageview/storagemodel.h
+lib/qt5/examples/widgets/itemviews/storageview/storageview.pro
 lib/qt5/examples/widgets/layouts/
 lib/qt5/examples/widgets/layouts/README
 lib/qt5/examples/widgets/layouts/basiclayouts/
@@ -6455,10 +6703,10 @@ lib/qt5/examples/widgets/widgets/lineedits/main.cpp
 lib/qt5/examples/widgets/widgets/lineedits/window.cpp
 lib/qt5/examples/widgets/widgets/lineedits/window.h
 lib/qt5/examples/widgets/widgets/mousebuttons/
-@bin lib/qt5/examples/widgets/widgets/mousebuttons/buttontester
 lib/qt5/examples/widgets/widgets/mousebuttons/buttontester.cpp
 lib/qt5/examples/widgets/widgets/mousebuttons/buttontester.h
 lib/qt5/examples/widgets/widgets/mousebuttons/main.cpp
+@bin lib/qt5/examples/widgets/widgets/mousebuttons/mousebuttons
 lib/qt5/examples/widgets/widgets/mousebuttons/mousebuttons.pro
 lib/qt5/examples/widgets/widgets/movie/
 lib/qt5/examples/widgets/widgets/movie/animation.gif

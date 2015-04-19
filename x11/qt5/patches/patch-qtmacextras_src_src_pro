@@ -1,0 +1,10 @@
+$OpenBSD: patch-qtmacextras_src_src_pro,v 1.1 2015/04/19 13:18:28 zhuk Exp $
+Unbreak build of documentation.
+--- qtmacextras/src/src.pro.ports.orig	Fri Apr 17 00:03:12 2015
++++ qtmacextras/src/src.pro	Fri Apr 17 00:05:29 2015
+@@ -6,4 +6,5 @@ else {
+     # fake project for creating the documentation
+     TEMPLATE = aux
+     QMAKE_DOCS = $$PWD/macextras/doc/qtmacextras.qdocconf
++    tagfile = macextras/doc/qtmacextras.tags
+ }

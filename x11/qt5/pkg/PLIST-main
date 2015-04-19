@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2015/01/06 21:32:41 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2015/04/19 13:18:29 zhuk Exp $
 bin/assistant-qt5
 bin/designer-qt5
 bin/linguist-qt5
@@ -15,18 +15,18 @@ bin/rcc-qt5
 bin/uic-qt5
 include/X11/qt5/
 include/X11/qt5/Enginio/
-include/X11/qt5/Enginio/1.0.6/
-include/X11/qt5/Enginio/1.0.6/Enginio/
-include/X11/qt5/Enginio/1.0.6/Enginio/private/
-include/X11/qt5/Enginio/1.0.6/Enginio/private/chunkdevice_p.h
-include/X11/qt5/Enginio/1.0.6/Enginio/private/enginiobackendconnection_p.h
-include/X11/qt5/Enginio/1.0.6/Enginio/private/enginiobasemodel_p.h
-include/X11/qt5/Enginio/1.0.6/Enginio/private/enginioclient_p.h
-include/X11/qt5/Enginio/1.0.6/Enginio/private/enginiodummyreply_p.h
-include/X11/qt5/Enginio/1.0.6/Enginio/private/enginiofakereply_p.h
-include/X11/qt5/Enginio/1.0.6/Enginio/private/enginioobjectadaptor_p.h
-include/X11/qt5/Enginio/1.0.6/Enginio/private/enginioreply_p.h
-include/X11/qt5/Enginio/1.0.6/Enginio/private/enginiostring_p.h
+include/X11/qt5/Enginio/${ENGINIO_VERSION}/
+include/X11/qt5/Enginio/${ENGINIO_VERSION}/Enginio/
+include/X11/qt5/Enginio/${ENGINIO_VERSION}/Enginio/private/
+include/X11/qt5/Enginio/${ENGINIO_VERSION}/Enginio/private/chunkdevice_p.h
+include/X11/qt5/Enginio/${ENGINIO_VERSION}/Enginio/private/enginiobackendconnection_p.h
+include/X11/qt5/Enginio/${ENGINIO_VERSION}/Enginio/private/enginiobasemodel_p.h
+include/X11/qt5/Enginio/${ENGINIO_VERSION}/Enginio/private/enginioclient_p.h
+include/X11/qt5/Enginio/${ENGINIO_VERSION}/Enginio/private/enginiodummyreply_p.h
+include/X11/qt5/Enginio/${ENGINIO_VERSION}/Enginio/private/enginiofakereply_p.h
+include/X11/qt5/Enginio/${ENGINIO_VERSION}/Enginio/private/enginioobjectadaptor_p.h
+include/X11/qt5/Enginio/${ENGINIO_VERSION}/Enginio/private/enginioreply_p.h
+include/X11/qt5/Enginio/${ENGINIO_VERSION}/Enginio/private/enginiostring_p.h
 include/X11/qt5/Enginio/Enginio
 include/X11/qt5/Enginio/EnginioDepends
 include/X11/qt5/Enginio/EnginioVersion
@@ -45,21 +45,31 @@ include/X11/qt5/QtBluetooth/
 include/X11/qt5/QtBluetooth/${VERSION}/
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/adapter1_bluez5_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/adapter_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/agent_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/androidbroadcastreceiver_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/bluez5_helper_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/bluez_data_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/device1_bluez5_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/device_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/devicediscoverybroadcastreceiver_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/hcimanager_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/inputstreamthread_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/jni_android_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/localdevicebroadcastreceiver_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/manager_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/obex_agent_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/obex_client1_bluez5_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/obex_client_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/obex_manager_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/obex_objectpush1_bluez5_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/obex_transfer1_bluez5_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/obex_transfer_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/objectmanager_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/ppshelpers_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/profile1_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/properties_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothaddress_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothdevicediscoveryagent_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothdeviceinfo_p.h
@@ -73,6 +83,8 @@ include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothtransferrep
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothtransferreply_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothtransferreply_qnx_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qbluetoothtransferrequest_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontroller_p.h
+include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergyserviceprivate_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/qprivatelinearbuffer_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/serveracceptancethread_p.h
 include/X11/qt5/QtBluetooth/${VERSION}/QtBluetooth/private/service_p.h
@@ -91,6 +103,11 @@ include/X11/qt5/QtBluetooth/QBluetoothTransferManager
 include/X11/qt5/QtBluetooth/QBluetoothTransferReply
 include/X11/qt5/QtBluetooth/QBluetoothTransferRequest
 include/X11/qt5/QtBluetooth/QBluetoothUuid
+include/X11/qt5/QtBluetooth/QLowEnergyCharacteristic
+include/X11/qt5/QtBluetooth/QLowEnergyController
+include/X11/qt5/QtBluetooth/QLowEnergyDescriptor
+include/X11/qt5/QtBluetooth/QLowEnergyHandle
+include/X11/qt5/QtBluetooth/QLowEnergyService
 include/X11/qt5/QtBluetooth/QtBluetooth
 include/X11/qt5/QtBluetooth/QtBluetoothDepends
 include/X11/qt5/QtBluetooth/QtBluetoothVersion
@@ -109,6 +126,10 @@ include/X11/qt5/QtBluetooth/qbluetoothtransfermanager.h
 include/X11/qt5/QtBluetooth/qbluetoothtransferreply.h
 include/X11/qt5/QtBluetooth/qbluetoothtransferrequest.h
 include/X11/qt5/QtBluetooth/qbluetoothuuid.h
+include/X11/qt5/QtBluetooth/qlowenergycharacteristic.h
+include/X11/qt5/QtBluetooth/qlowenergycontroller.h
+include/X11/qt5/QtBluetooth/qlowenergydescriptor.h
+include/X11/qt5/QtBluetooth/qlowenergyservice.h
 include/X11/qt5/QtBluetooth/qtbluetoothversion.h
 include/X11/qt5/QtCLucene/
 include/X11/qt5/QtCLucene/${VERSION}/
@@ -220,6 +241,7 @@ include/X11/qt5/QtCore/${VERSION}/QtCore/private/qfuturewatcher_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qgb18030codec_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qharfbuzz_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qhistorystate_p.h
+include/X11/qt5/QtCore/${VERSION}/QtCore/private/qhooks_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qiconvcodec_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qicucodec_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qiodevice_p.h
@@ -239,7 +261,6 @@ include/X11/qt5/QtCore/${VERSION}/QtCore/private/qlocale_data_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qlocale_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qlocale_tools_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qlockfile_p.h
-include/X11/qt5/QtCore/${VERSION}/QtCore/private/qloggingcategory_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qloggingregistry_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qmachparser_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qmetaobject_moc_p.h
@@ -284,6 +305,7 @@ include/X11/qt5/QtCore/${VERSION}/QtCore/private/qsimplecodec_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qsjiscodec_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qstate_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qstatemachine_p.h
+include/X11/qt5/QtCore/${VERSION}/QtCore/private/qstorageinfo_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qstringiterator_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qsystemerror_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qsystemlibrary_p.h
@@ -308,6 +330,7 @@ include/X11/qt5/QtCore/${VERSION}/QtCore/private/qurltlds_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qutfcodec_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qvariant_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qvariantanimation_p.h
+include/X11/qt5/QtCore/${VERSION}/QtCore/private/qversionnumber_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qwindowscodec_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qwindowspipereader_p.h
 include/X11/qt5/QtCore/${VERSION}/QtCore/private/qwindowspipewriter_p.h
@@ -342,6 +365,8 @@ include/X11/qt5/QtCore/QBuffer
 include/X11/qt5/QtCore/QByteArray
 include/X11/qt5/QtCore/QByteArrayData
 include/X11/qt5/QtCore/QByteArrayDataPtr
+include/X11/qt5/QtCore/QByteArrayList
+include/X11/qt5/QtCore/QByteArrayListIterator
 include/X11/qt5/QtCore/QByteArrayMatcher
 include/X11/qt5/QtCore/QByteRef
 include/X11/qt5/QtCore/QCache
@@ -368,6 +393,7 @@ include/X11/qt5/QtCore/QDirIterator
 include/X11/qt5/QtCore/QDynamicPropertyChangeEvent
 include/X11/qt5/QtCore/QEasingCurve
 include/X11/qt5/QtCore/QElapsedTimer
+include/X11/qt5/QtCore/QEnableSharedFromThis
 include/X11/qt5/QtCore/QEvent
 include/X11/qt5/QtCore/QEventLoop
 include/X11/qt5/QtCore/QEventLoopLocker
@@ -398,7 +424,6 @@ include/X11/qt5/QtCore/QGenericReturnArgument
 include/X11/qt5/QtCore/QGlobalStatic
 include/X11/qt5/QtCore/QHash
 include/X11/qt5/QtCore/QHashData
-include/X11/qt5/QtCore/QHashDummyNode
 include/X11/qt5/QtCore/QHashDummyValue
 include/X11/qt5/QtCore/QHashIterator
 include/X11/qt5/QtCore/QHashNode
@@ -416,7 +441,9 @@ include/X11/qt5/QtCore/QJsonDocument
 include/X11/qt5/QtCore/QJsonObject
 include/X11/qt5/QtCore/QJsonParseError
 include/X11/qt5/QtCore/QJsonValue
+include/X11/qt5/QtCore/QJsonValuePtr
 include/X11/qt5/QtCore/QJsonValueRef
+include/X11/qt5/QtCore/QJsonValueRefPtr
 include/X11/qt5/QtCore/QLatin1Char
 include/X11/qt5/QtCore/QLatin1Literal
 include/X11/qt5/QtCore/QLatin1String
@@ -431,6 +458,7 @@ include/X11/qt5/QtCore/QLinkedListNode
 include/X11/qt5/QtCore/QList
 include/X11/qt5/QtCore/QListData
 include/X11/qt5/QtCore/QListIterator
+include/X11/qt5/QtCore/QListSpecialMethods
 include/X11/qt5/QtCore/QLocale
 include/X11/qt5/QtCore/QLockFile
 include/X11/qt5/QtCore/QLoggingCategory
@@ -461,6 +489,7 @@ include/X11/qt5/QtCore/QModelIndex
 include/X11/qt5/QtCore/QModelIndexList
 include/X11/qt5/QtCore/QMultiHash
 include/X11/qt5/QtCore/QMultiMap
+include/X11/qt5/QtCore/QMutableByteArrayListIterator
 include/X11/qt5/QtCore/QMutableFutureIterator
 include/X11/qt5/QtCore/QMutableHashIterator
 include/X11/qt5/QtCore/QMutableLinkedListIterator
@@ -535,6 +564,7 @@ include/X11/qt5/QtCore/QStaticAssertFailure
 include/X11/qt5/QtCore/QStaticByteArrayData
 include/X11/qt5/QtCore/QStaticPlugin
 include/X11/qt5/QtCore/QStaticStringData
+include/X11/qt5/QtCore/QStorageInfo
 include/X11/qt5/QtCore/QString
 include/X11/qt5/QtCore/QStringBuilder
 include/X11/qt5/QtCore/QStringData
@@ -645,6 +675,7 @@ include/X11/qt5/QtCore/qbasictimer.h
 include/X11/qt5/QtCore/qbitarray.h
 include/X11/qt5/QtCore/qbuffer.h
 include/X11/qt5/QtCore/qbytearray.h
+include/X11/qt5/QtCore/qbytearraylist.h
 include/X11/qt5/QtCore/qbytearraymatcher.h
 include/X11/qt5/QtCore/qcache.h
 include/X11/qt5/QtCore/qchar.h
@@ -772,6 +803,7 @@ include/X11/qt5/QtCore/qstack.h
 include/X11/qt5/QtCore/qstandardpaths.h
 include/X11/qt5/QtCore/qstate.h
 include/X11/qt5/QtCore/qstatemachine.h
+include/X11/qt5/QtCore/qstorageinfo.h
 include/X11/qt5/QtCore/qstring.h
 include/X11/qt5/QtCore/qstringbuilder.h
 include/X11/qt5/QtCore/qstringlist.h
@@ -810,6 +842,7 @@ include/X11/qt5/QtDBus/
 include/X11/qt5/QtDBus/${VERSION}/
 include/X11/qt5/QtDBus/${VERSION}/QtDBus/
 include/X11/qt5/QtDBus/${VERSION}/QtDBus/private/
+include/X11/qt5/QtDBus/${VERSION}/QtDBus/private/dbus_minimal_p.h
 include/X11/qt5/QtDBus/${VERSION}/QtDBus/private/qdbus_symbols_p.h
 include/X11/qt5/QtDBus/${VERSION}/QtDBus/private/qdbusabstractadaptor_p.h
 include/X11/qt5/QtDBus/${VERSION}/QtDBus/private/qdbusabstractinterface_p.h
@@ -1307,7 +1340,7 @@ include/X11/qt5/QtGui/${VERSION}/QtGui/private/qfixed_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qfont_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qfontengine_ft_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qfontengine_p.h
-include/X11/qt5/QtGui/${VERSION}/QtGui/private/qfontengine_qpa_p.h
+include/X11/qt5/QtGui/${VERSION}/QtGui/private/qfontengine_qpf2_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qfontengineglyphcache_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qfontsubset_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qfragmentmap_p.h
@@ -1340,6 +1373,7 @@ include/X11/qt5/QtGui/${VERSION}/QtGui/private/qopenglengineshadersource_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qopenglextensions_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qopenglframebufferobject_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qopenglgradientcache_p.h
+include/X11/qt5/QtGui/${VERSION}/QtGui/private/qopenglpaintdevice_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qopenglpaintengine_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qopenglqueryhelper_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qopenglshadercache_meego_p.h
@@ -1350,9 +1384,11 @@ include/X11/qt5/QtGui/${VERSION}/QtGui/private/qopengltexturecache_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qopengltextureglyphcache_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qopengltexturehelper_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qopenglversionfunctionsfactory_p.h
+include/X11/qt5/QtGui/${VERSION}/QtGui/private/qopenglvertexarrayobject_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qoutlinemapper_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qpagedpaintdevice_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qpaintbuffer_p.h
+include/X11/qt5/QtGui/${VERSION}/QtGui/private/qpaintdevicewindow_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qpaintengine_blitter_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qpaintengine_p.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/private/qpaintengine_pic_p.h
@@ -1428,7 +1464,6 @@ include/X11/qt5/QtGui/${VERSION}/QtGui/qpa/qplatformopenglcontext.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/qpa/qplatformpixmap.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/qpa/qplatformscreen.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/qpa/qplatformscreen_p.h
-include/X11/qt5/QtGui/${VERSION}/QtGui/qpa/qplatformscreenpageflipper.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/qpa/qplatformservices.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/qpa/qplatformsessionmanager.h
 include/X11/qt5/QtGui/${VERSION}/QtGui/qpa/qplatformsharedgraphicscache.h
@@ -1583,10 +1618,12 @@ include/X11/qt5/QtGui/QOpenGLTimerQuery
 include/X11/qt5/QtGui/QOpenGLVersionFunctions
 include/X11/qt5/QtGui/QOpenGLVersionProfile
 include/X11/qt5/QtGui/QOpenGLVertexArrayObject
+include/X11/qt5/QtGui/QOpenGLWindow
 include/X11/qt5/QtGui/QPageLayout
 include/X11/qt5/QtGui/QPageSize
 include/X11/qt5/QtGui/QPagedPaintDevice
 include/X11/qt5/QtGui/QPaintDevice
+include/X11/qt5/QtGui/QPaintDeviceWindow
 include/X11/qt5/QtGui/QPaintEngine
 include/X11/qt5/QtGui/QPaintEngineState
 include/X11/qt5/QtGui/QPaintEvent
@@ -1599,12 +1636,14 @@ include/X11/qt5/QtGui/QPen
 include/X11/qt5/QtGui/QPicture
 include/X11/qt5/QtGui/QPictureFormatPlugin
 include/X11/qt5/QtGui/QPictureIO
+include/X11/qt5/QtGui/QPixelFormat
 include/X11/qt5/QtGui/QPixmap
 include/X11/qt5/QtGui/QPixmapCache
 include/X11/qt5/QtGui/QPolygon
 include/X11/qt5/QtGui/QPolygonF
 include/X11/qt5/QtGui/QQuaternion
 include/X11/qt5/QtGui/QRadialGradient
+include/X11/qt5/QtGui/QRasterWindow
 include/X11/qt5/QtGui/QRawFont
 include/X11/qt5/QtGui/QRegExpValidator
 include/X11/qt5/QtGui/QRegion
@@ -1750,10 +1789,12 @@ include/X11/qt5/QtGui/qopengltexture.h
 include/X11/qt5/QtGui/qopengltimerquery.h
 include/X11/qt5/QtGui/qopenglversionfunctions.h
 include/X11/qt5/QtGui/qopenglvertexarrayobject.h
+include/X11/qt5/QtGui/qopenglwindow.h
 include/X11/qt5/QtGui/qpagedpaintdevice.h
 include/X11/qt5/QtGui/qpagelayout.h
 include/X11/qt5/QtGui/qpagesize.h
 include/X11/qt5/QtGui/qpaintdevice.h
+include/X11/qt5/QtGui/qpaintdevicewindow.h
 include/X11/qt5/QtGui/qpaintengine.h
 include/X11/qt5/QtGui/qpainter.h
 include/X11/qt5/QtGui/qpainterpath.h
@@ -1762,10 +1803,12 @@ include/X11/qt5/QtGui/qpdfwriter.h
 include/X11/qt5/QtGui/qpen.h
 include/X11/qt5/QtGui/qpicture.h
 include/X11/qt5/QtGui/qpictureformatplugin.h
+include/X11/qt5/QtGui/qpixelformat.h
 include/X11/qt5/QtGui/qpixmap.h
 include/X11/qt5/QtGui/qpixmapcache.h
 include/X11/qt5/QtGui/qpolygon.h
 include/X11/qt5/QtGui/qquaternion.h
+include/X11/qt5/QtGui/qrasterwindow.h
 include/X11/qt5/QtGui/qrawfont.h
 include/X11/qt5/QtGui/qregion.h
 include/X11/qt5/QtGui/qrgb.h
@@ -1838,6 +1881,153 @@ include/X11/qt5/QtHelp/qhelpsearchengine.h
 include/X11/qt5/QtHelp/qhelpsearchquerywidget.h
 include/X11/qt5/QtHelp/qhelpsearchresultwidget.h
 include/X11/qt5/QtHelp/qthelpversion.h
+include/X11/qt5/QtLocation/
+include/X11/qt5/QtLocation/${VERSION}/
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qcache3q_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeocameracapabilities_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeocameradata_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeocameratiles_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeocodereply_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeocodingmanager_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeocodingmanagerengine_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomaneuver_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomap_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomapcontroller_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomapdata_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomapdata_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomappingmanager_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomappingmanager_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomappingmanagerengine_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomappingmanagerengine_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomapscene_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomaptype_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeomaptype_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeoroute_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeoroutereply_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeorouterequest_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeoroutesegment_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeoroutingmanager_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeoroutingmanagerengine_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeoserviceprovider_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotilecache_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotiledmapdata_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotiledmapdata_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotiledmappingmanagerengine_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotiledmappingmanagerengine_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotiledmapreply_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotiledmapreply_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotilefetcher_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotilefetcher_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotilerequestmanager_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotilespec_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qgeotilespec_p_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplace_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplaceattribute_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacecategory_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacecontactdetail_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacecontent_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacecontentrequest_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplaceeditorial_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplaceicon_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplaceimage_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacemanagerengine_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplaceproposedsearchresult_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplaceratings_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacereply_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplaceresult_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacereview_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacesearchresult_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplacesupplier_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/qplaceuser_p.h
+include/X11/qt5/QtLocation/${VERSION}/QtLocation/private/unsupportedreplies_p.h
+include/X11/qt5/QtLocation/QGeoCodeReply
+include/X11/qt5/QtLocation/QGeoCodingManager
+include/X11/qt5/QtLocation/QGeoCodingManagerEngine
+include/X11/qt5/QtLocation/QGeoManeuver
+include/X11/qt5/QtLocation/QGeoRoute
+include/X11/qt5/QtLocation/QGeoRouteReply
+include/X11/qt5/QtLocation/QGeoRouteRequest
+include/X11/qt5/QtLocation/QGeoRouteSegment
+include/X11/qt5/QtLocation/QGeoRoutingManager
+include/X11/qt5/QtLocation/QGeoRoutingManagerEngine
+include/X11/qt5/QtLocation/QGeoServiceProvider
+include/X11/qt5/QtLocation/QGeoServiceProviderFactory
+include/X11/qt5/QtLocation/QLocation
+include/X11/qt5/QtLocation/QPlace
+include/X11/qt5/QtLocation/QPlaceAttribute
+include/X11/qt5/QtLocation/QPlaceCategory
+include/X11/qt5/QtLocation/QPlaceContactDetail
+include/X11/qt5/QtLocation/QPlaceContent
+include/X11/qt5/QtLocation/QPlaceContentReply
+include/X11/qt5/QtLocation/QPlaceContentRequest
+include/X11/qt5/QtLocation/QPlaceDetailsReply
+include/X11/qt5/QtLocation/QPlaceEditorial
+include/X11/qt5/QtLocation/QPlaceIcon
+include/X11/qt5/QtLocation/QPlaceIdReply
+include/X11/qt5/QtLocation/QPlaceImage
+include/X11/qt5/QtLocation/QPlaceManager
+include/X11/qt5/QtLocation/QPlaceManagerEngine
+include/X11/qt5/QtLocation/QPlaceMatchReply
+include/X11/qt5/QtLocation/QPlaceMatchRequest
+include/X11/qt5/QtLocation/QPlaceProposedSearchResult
+include/X11/qt5/QtLocation/QPlaceRatings
+include/X11/qt5/QtLocation/QPlaceReply
+include/X11/qt5/QtLocation/QPlaceResult
+include/X11/qt5/QtLocation/QPlaceReview
+include/X11/qt5/QtLocation/QPlaceSearchReply
+include/X11/qt5/QtLocation/QPlaceSearchRequest
+include/X11/qt5/QtLocation/QPlaceSearchResult
+include/X11/qt5/QtLocation/QPlaceSearchSuggestionReply
+include/X11/qt5/QtLocation/QPlaceSupplier
+include/X11/qt5/QtLocation/QPlaceUser
+include/X11/qt5/QtLocation/QtLocation
+include/X11/qt5/QtLocation/QtLocationDepends
+include/X11/qt5/QtLocation/QtLocationVersion
+include/X11/qt5/QtLocation/placemacro.h
+include/X11/qt5/QtLocation/qgeocodereply.h
+include/X11/qt5/QtLocation/qgeocodingmanager.h
+include/X11/qt5/QtLocation/qgeocodingmanagerengine.h
+include/X11/qt5/QtLocation/qgeomaneuver.h
+include/X11/qt5/QtLocation/qgeoroute.h
+include/X11/qt5/QtLocation/qgeoroutereply.h
+include/X11/qt5/QtLocation/qgeorouterequest.h
+include/X11/qt5/QtLocation/qgeoroutesegment.h
+include/X11/qt5/QtLocation/qgeoroutingmanager.h
+include/X11/qt5/QtLocation/qgeoroutingmanagerengine.h
+include/X11/qt5/QtLocation/qgeoserviceprovider.h
+include/X11/qt5/QtLocation/qgeoserviceproviderfactory.h
+include/X11/qt5/QtLocation/qlocation.h
+include/X11/qt5/QtLocation/qlocationglobal.h
+include/X11/qt5/QtLocation/qplace.h
+include/X11/qt5/QtLocation/qplaceattribute.h
+include/X11/qt5/QtLocation/qplacecategory.h
+include/X11/qt5/QtLocation/qplacecontactdetail.h
+include/X11/qt5/QtLocation/qplacecontent.h
+include/X11/qt5/QtLocation/qplacecontentreply.h
+include/X11/qt5/QtLocation/qplacecontentrequest.h
+include/X11/qt5/QtLocation/qplacedetailsreply.h
+include/X11/qt5/QtLocation/qplaceeditorial.h
+include/X11/qt5/QtLocation/qplaceicon.h
+include/X11/qt5/QtLocation/qplaceidreply.h
+include/X11/qt5/QtLocation/qplaceimage.h
+include/X11/qt5/QtLocation/qplacemanager.h
+include/X11/qt5/QtLocation/qplacemanagerengine.h
+include/X11/qt5/QtLocation/qplacematchreply.h
+include/X11/qt5/QtLocation/qplacematchrequest.h
+include/X11/qt5/QtLocation/qplaceproposedsearchresult.h
+include/X11/qt5/QtLocation/qplaceratings.h
+include/X11/qt5/QtLocation/qplacereply.h
+include/X11/qt5/QtLocation/qplaceresult.h
+include/X11/qt5/QtLocation/qplacereview.h
+include/X11/qt5/QtLocation/qplacesearchreply.h
+include/X11/qt5/QtLocation/qplacesearchrequest.h
+include/X11/qt5/QtLocation/qplacesearchresult.h
+include/X11/qt5/QtLocation/qplacesearchsuggestionreply.h
+include/X11/qt5/QtLocation/qplacesupplier.h
+include/X11/qt5/QtLocation/qplaceuser.h
+include/X11/qt5/QtLocation/qtlocationversion.h
 include/X11/qt5/QtMultimedia/
 include/X11/qt5/QtMultimedia/${VERSION}/
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/
@@ -1871,6 +2061,7 @@ include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qimagevideobuffer_p
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qmediacontrol_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qmedianetworkplaylistprovider_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qmediaobject_p.h
+include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qmediaopenglhelper_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qmediaplaylist_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qmediaplaylistcontrol_p.h
 include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qmediaplaylistioplugin_p.h
@@ -1898,6 +2089,7 @@ include/X11/qt5/QtMultimedia/${VERSION}/QtMultimedia/private/qwavedecoder_p.h
 include/X11/qt5/QtMultimedia/QAbstractAudioDeviceInfo
 include/X11/qt5/QtMultimedia/QAbstractAudioInput
 include/X11/qt5/QtMultimedia/QAbstractAudioOutput
+include/X11/qt5/QtMultimedia/QAbstractPlanarVideoBuffer
 include/X11/qt5/QtMultimedia/QAbstractVideoBuffer
 include/X11/qt5/QtMultimedia/QAbstractVideoSurface
 include/X11/qt5/QtMultimedia/QAudio
@@ -2114,6 +2306,7 @@ include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qabstractnetworkcache_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qabstractprotocolhandler_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qabstractsocket_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qabstractsocketengine_p.h
+include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qasn1element_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qauthenticator_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qbearerengine_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qbearerplugin_p.h
@@ -2162,15 +2355,17 @@ include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qnetworksession_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qsharednetworksession_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qsocks5socketengine_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qspdyprotocolhandler_p.h
+include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qssl_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qsslcertificate_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qsslcertificateextension_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qsslcipher_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qsslconfiguration_p.h
-include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qsslcontext_p.h
+include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qsslcontext_openssl_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qsslkey_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qsslsocket_openssl_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qsslsocket_openssl_symbols_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qsslsocket_p.h
+include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qsslsocket_winrt_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qtcpsocket_p.h
 include/X11/qt5/QtNetwork/${VERSION}/QtNetwork/private/qurlinfo_p.h
 include/X11/qt5/QtNetwork/QAbstractNetworkCache
@@ -2368,6 +2563,23 @@ include/X11/qt5/QtOpenGLExtensions/QtOpenGLExtensionsDepends
 include/X11/qt5/QtOpenGLExtensions/QtOpenGLExtensionsVersion
 include/X11/qt5/QtOpenGLExtensions/qopenglextensions.h
 include/X11/qt5/QtOpenGLExtensions/qtopenglextensionsversion.h
+include/X11/qt5/QtPlatformHeaders/
+include/X11/qt5/QtPlatformHeaders/QCocoaNativeContext
+include/X11/qt5/QtPlatformHeaders/QEGLNativeContext
+include/X11/qt5/QtPlatformHeaders/QEglFSFunctions
+include/X11/qt5/QtPlatformHeaders/QGLXNativeContext
+include/X11/qt5/QtPlatformHeaders/QWGLNativeContext
+include/X11/qt5/QtPlatformHeaders/QXcbWindowFunctions
+include/X11/qt5/QtPlatformHeaders/QtPlatformHeaders
+include/X11/qt5/QtPlatformHeaders/QtPlatformHeadersDepends
+include/X11/qt5/QtPlatformHeaders/QtPlatformHeadersVersion
+include/X11/qt5/QtPlatformHeaders/qcocoanativecontext.h
+include/X11/qt5/QtPlatformHeaders/qeglfsfunctions.h
+include/X11/qt5/QtPlatformHeaders/qeglnativecontext.h
+include/X11/qt5/QtPlatformHeaders/qglxnativecontext.h
+include/X11/qt5/QtPlatformHeaders/qtplatformheadersversion.h
+include/X11/qt5/QtPlatformHeaders/qwglnativecontext.h
+include/X11/qt5/QtPlatformHeaders/qxcbwindowfunctions.h
 include/X11/qt5/QtPlatformSupport/
 include/X11/qt5/QtPlatformSupport/${VERSION}/
 include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/
@@ -2379,10 +2591,14 @@ include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/private/cache_p.h
 include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/private/cglconvenience_p.h
 include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/private/constant_mappings_p.h
 include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/private/dbusconnection_p.h
+include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/private/qaccessiblebridgeutils_p.h
 include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/private/qbasicfontdatabase_p.h
 include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/private/qcfsocketnotifier_p.h
 include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/private/qcoretextfontdatabase_p.h
+include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/private/qdevicediscovery_dummy_p.h
 include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/private/qdevicediscovery_p.h
+include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/private/qdevicediscovery_static_p.h
+include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/private/qdevicediscovery_udev_p.h
 include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/private/qeglcompositor_p.h
 include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/private/qeglconvenience_p.h
 include/X11/qt5/QtPlatformSupport/${VERSION}/QtPlatformSupport/private/qeglpbuffer_p.h
@@ -2699,6 +2915,7 @@ include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4qobjectwrapper_p.h
 include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4regalloc_p.h
 include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4regexp_p.h
 include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4regexpobject_p.h
+include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4registerinfo_p.h
 include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4runtime_p.h
 include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4scopedvalue_p.h
 include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4script_p.h
@@ -2709,6 +2926,7 @@ include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4sqlerrors_p.h
 include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4ssa_p.h
 include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4string_p.h
 include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4stringobject_p.h
+include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4targetplatform_p.h
 include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4unop_p.h
 include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4util_p.h
 include/X11/qt5/QtQml/${VERSION}/QtQml/private/qv4value_inl_p.h
@@ -2785,7 +3003,11 @@ include/X11/qt5/QtQuick/${VERSION}/
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/designerwindowmanager_p.h
+include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qaccessiblequickitem_p.h
+include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qaccessiblequickview_p.h
+include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qqmlaccessible_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickaccessibleattached_p.h
+include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickaccessiblefactory_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickanchors_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickanchors_p_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickanimatedimage_p.h
@@ -2818,6 +3040,7 @@ include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickflickablebehavior_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickflipable_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickfocusscope_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickfontloader_p.h
+include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickfontmetrics_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickgridview_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickimage_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickimage_p_p.h
@@ -2839,6 +3062,7 @@ include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickloader_p_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickmousearea_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickmousearea_p_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickmultipointtoucharea_p.h
+include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickopenglinfo_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickpainteditem_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickpath_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickpath_p_p.h
@@ -2885,6 +3109,7 @@ include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquicktextedit_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquicktextedit_p_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquicktextinput_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquicktextinput_p_p.h
+include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquicktextmetrics_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquicktextnode_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquicktextnodeengine_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquicktextutil_p.h
@@ -2896,7 +3121,9 @@ include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickutilmodule_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickvaluetypes_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickview_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickwindow_p.h
+include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickwindowattached_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qquickwindowmodule_p.h
+include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgabstractrenderer_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgadaptationlayer_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgareaallocator_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgatlastexture_p.h
@@ -2907,16 +3134,18 @@ include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgdefaultdistancefieldglyphc
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgdefaultglyphnode_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgdefaultglyphnode_p_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgdefaultimagenode_p.h
+include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgdefaultlayer_p.h
+include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgdefaultpainternode_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgdefaultrectanglenode_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgdepthstencilbuffer_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgdistancefieldglyphnode_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgdistancefieldglyphnode_p_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgdistancefieldutil_p.h
+include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgengine_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsggeometry_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgmaterialshader_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgnode_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgnodeupdater_p.h
-include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgpainternode_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgrenderer_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgrenderloop_p.h
 include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qsgrendernode_p.h
@@ -2931,15 +3160,19 @@ include/X11/qt5/QtQuick/${VERSION}/QtQuick/private/qtquickglobal_p.h
 include/X11/qt5/QtQuick/QQuickFramebufferObject
 include/X11/qt5/QtQuick/QQuickImageProvider
 include/X11/qt5/QtQuick/QQuickItem
+include/X11/qt5/QtQuick/QQuickItemGrabResult
 include/X11/qt5/QtQuick/QQuickPaintedItem
+include/X11/qt5/QtQuick/QQuickRenderControl
 include/X11/qt5/QtQuick/QQuickTextDocument
 include/X11/qt5/QtQuick/QQuickTextureFactory
 include/X11/qt5/QtQuick/QQuickTransform
 include/X11/qt5/QtQuick/QQuickView
 include/X11/qt5/QtQuick/QQuickWindow
+include/X11/qt5/QtQuick/QSGAbstractRenderer
 include/X11/qt5/QtQuick/QSGBasicGeometryNode
 include/X11/qt5/QtQuick/QSGClipNode
 include/X11/qt5/QtQuick/QSGDynamicTexture
+include/X11/qt5/QtQuick/QSGEngine
 include/X11/qt5/QtQuick/QSGFlatColorMaterial
 include/X11/qt5/QtQuick/QSGGeometry
 include/X11/qt5/QtQuick/QSGGeometryNode
@@ -2968,10 +3201,14 @@ include/X11/qt5/QtQuick/designersupport.h
 include/X11/qt5/QtQuick/qquickframebufferobject.h
 include/X11/qt5/QtQuick/qquickimageprovider.h
 include/X11/qt5/QtQuick/qquickitem.h
+include/X11/qt5/QtQuick/qquickitemgrabresult.h
 include/X11/qt5/QtQuick/qquickpainteditem.h
+include/X11/qt5/QtQuick/qquickrendercontrol.h
 include/X11/qt5/QtQuick/qquicktextdocument.h
 include/X11/qt5/QtQuick/qquickview.h
 include/X11/qt5/QtQuick/qquickwindow.h
+include/X11/qt5/QtQuick/qsgabstractrenderer.h
+include/X11/qt5/QtQuick/qsgengine.h
 include/X11/qt5/QtQuick/qsgflatcolormaterial.h
 include/X11/qt5/QtQuick/qsggeometry.h
 include/X11/qt5/QtQuick/qsgmaterial.h
@@ -3214,6 +3451,7 @@ include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qaltimeter_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qambientlightsensor_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qambienttemperaturesensor_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qcompass_p.h
+include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qdistancesensor_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qgyroscope_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qholstersensor_p.h
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/private/qirproximitysensor_p.h
@@ -3246,6 +3484,9 @@ include/X11/qt5/QtSensors/QAmbientTemperatureSensor
 include/X11/qt5/QtSensors/QCompass
 include/X11/qt5/QtSensors/QCompassFilter
 include/X11/qt5/QtSensors/QCompassReading
+include/X11/qt5/QtSensors/QDistanceFilter
+include/X11/qt5/QtSensors/QDistanceReading
+include/X11/qt5/QtSensors/QDistanceSensor
 include/X11/qt5/QtSensors/QGyroscope
 include/X11/qt5/QtSensors/QGyroscopeFilter
 include/X11/qt5/QtSensors/QGyroscopeReading
@@ -3299,6 +3540,7 @@ include/X11/qt5/QtSensors/qaltimeter.h
 include/X11/qt5/QtSensors/qambientlightsensor.h
 include/X11/qt5/QtSensors/qambienttemperaturesensor.h
 include/X11/qt5/QtSensors/qcompass.h
+include/X11/qt5/QtSensors/qdistancesensor.h
 include/X11/qt5/QtSensors/qgyroscope.h
 include/X11/qt5/QtSensors/qholstersensor.h
 include/X11/qt5/QtSensors/qirproximitysensor.h
@@ -3414,6 +3656,7 @@ include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvgnode_p.h
 include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvgstructure_p.h
 include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvgstyle_p.h
 include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qsvgtinydocument_p.h
+include/X11/qt5/QtSvg/${VERSION}/QtSvg/private/qtsvgglobal_p.h
 include/X11/qt5/QtSvg/QGraphicsSvgItem
 include/X11/qt5/QtSvg/QSvgGenerator
 include/X11/qt5/QtSvg/QSvgRenderer
@@ -3444,6 +3687,7 @@ include/X11/qt5/QtTest/${VERSION}/QtTest/private/qbenchmarkvalgrind_p.h
 include/X11/qt5/QtTest/${VERSION}/QtTest/private/qcsvbenchmarklogger_p.h
 include/X11/qt5/QtTest/${VERSION}/QtTest/private/qplaintestlogger_p.h
 include/X11/qt5/QtTest/${VERSION}/QtTest/private/qsignaldumper_p.h
+include/X11/qt5/QtTest/${VERSION}/QtTest/private/qtestblacklist_p.h
 include/X11/qt5/QtTest/${VERSION}/QtTest/private/qtestcoreelement_p.h
 include/X11/qt5/QtTest/${VERSION}/QtTest/private/qtestcorelist_p.h
 include/X11/qt5/QtTest/${VERSION}/QtTest/private/qtestelement_p.h
@@ -3503,6 +3747,26 @@ include/X11/qt5/QtUiTools/QtUiToolsDepends
 include/X11/qt5/QtUiTools/QtUiToolsVersion
 include/X11/qt5/QtUiTools/qtuitoolsversion.h
 include/X11/qt5/QtUiTools/quiloader.h
+include/X11/qt5/QtWebChannel/
+include/X11/qt5/QtWebChannel/${VERSION}/
+include/X11/qt5/QtWebChannel/${VERSION}/QtWebChannel/
+include/X11/qt5/QtWebChannel/${VERSION}/QtWebChannel/private/
+include/X11/qt5/QtWebChannel/${VERSION}/QtWebChannel/private/qmetaobjectpublisher_p.h
+include/X11/qt5/QtWebChannel/${VERSION}/QtWebChannel/private/qqmlwebchannelattached_p.h
+include/X11/qt5/QtWebChannel/${VERSION}/QtWebChannel/private/qwebchannel_p.h
+include/X11/qt5/QtWebChannel/${VERSION}/QtWebChannel/private/signalhandler_p.h
+include/X11/qt5/QtWebChannel/${VERSION}/QtWebChannel/private/variantargument_p.h
+include/X11/qt5/QtWebChannel/QQmlWebChannel
+include/X11/qt5/QtWebChannel/QWebChannel
+include/X11/qt5/QtWebChannel/QWebChannelAbstractTransport
+include/X11/qt5/QtWebChannel/QtWebChannel
+include/X11/qt5/QtWebChannel/QtWebChannelDepends
+include/X11/qt5/QtWebChannel/QtWebChannelVersion
+include/X11/qt5/QtWebChannel/qqmlwebchannel.h
+include/X11/qt5/QtWebChannel/qtwebchannelversion.h
+include/X11/qt5/QtWebChannel/qwebchannel.h
+include/X11/qt5/QtWebChannel/qwebchannelabstracttransport.h
+include/X11/qt5/QtWebChannel/qwebchannelglobal.h
 include/X11/qt5/QtWebKit/
 include/X11/qt5/QtWebKit/${VERSION}/
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/
@@ -3519,6 +3783,7 @@ include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qquickwebview_p_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qrawwebview_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qrawwebview_p_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qtwebsecurityorigin_p.h
+include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qwebchannelwebkittransport_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qwebdatabase_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qwebdownloaditem_p.h
 include/X11/qt5/QtWebKit/${VERSION}/QtWebKit/private/qwebdownloaditem_p_p.h
@@ -3630,13 +3895,13 @@ include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qabstractitemview_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qabstractscrollarea_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qabstractslider_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qabstractspinbox_p.h
+include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qaccessiblewidgetfactory_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qaction_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qandroidstyle_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qapplication_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qbasickeyeventtransition_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qbasicmouseeventtransition_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qbsptree_p.h
-include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qcalendartextnavigator_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qcolordialog_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qcolumnview_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qcolumnviewgrip_p.h
@@ -3645,7 +3910,7 @@ include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qcommonstyle_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qcommonstylepixmaps_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qcompleter_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qdatetimeedit_p.h
-include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qdesktopwidget_qpa_p.h
+include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qdesktopwidget_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qdialog_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qdockarealayout_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qdockwidget_p.h
@@ -3702,7 +3967,6 @@ include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qmdisubwindow_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qmenu_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qmenu_wince_resource_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qmenubar_p.h
-include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qopenglwidget_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qpixmapfilter_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qplaintextedit_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qproxystyle_p.h
@@ -3743,7 +4007,7 @@ include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qwidgetlinecontrol_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qwidgetresizehandler_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qwidgettextcontrol_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qwidgettextcontrol_p_p.h
-include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qwidgetwindow_qpa_p.h
+include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qwidgetwindow_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qwindowcontainer_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qwindowscestyle_p.h
 include/X11/qt5/QtWidgets/${VERSION}/QtWidgets/private/qwindowscestyle_p_p.h
@@ -3763,7 +4027,45 @@ include/X11/qt5/QtWidgets/QAbstractItemView
 include/X11/qt5/QtWidgets/QAbstractScrollArea
 include/X11/qt5/QtWidgets/QAbstractSlider
 include/X11/qt5/QtWidgets/QAbstractSpinBox
+include/X11/qt5/QtWidgets/QAccessibleAbstractScrollArea
+include/X11/qt5/QtWidgets/QAccessibleAbstractSlider
+include/X11/qt5/QtWidgets/QAccessibleAbstractSpinBox
+include/X11/qt5/QtWidgets/QAccessibleButton
+include/X11/qt5/QtWidgets/QAccessibleCalendarWidget
+include/X11/qt5/QtWidgets/QAccessibleComboBox
+include/X11/qt5/QtWidgets/QAccessibleDial
+include/X11/qt5/QtWidgets/QAccessibleDialogButtonBox
+include/X11/qt5/QtWidgets/QAccessibleDisplay
+include/X11/qt5/QtWidgets/QAccessibleDockWidget
+include/X11/qt5/QtWidgets/QAccessibleDoubleSpinBox
+include/X11/qt5/QtWidgets/QAccessibleGroupBox
+include/X11/qt5/QtWidgets/QAccessibleLineEdit
+include/X11/qt5/QtWidgets/QAccessibleMainWindow
+include/X11/qt5/QtWidgets/QAccessibleMdiArea
+include/X11/qt5/QtWidgets/QAccessibleMdiSubWindow
+include/X11/qt5/QtWidgets/QAccessibleMenu
+include/X11/qt5/QtWidgets/QAccessibleMenuBar
+include/X11/qt5/QtWidgets/QAccessibleMenuItem
+include/X11/qt5/QtWidgets/QAccessiblePlainTextEdit
+include/X11/qt5/QtWidgets/QAccessibleProgressBar
+include/X11/qt5/QtWidgets/QAccessibleScrollArea
+include/X11/qt5/QtWidgets/QAccessibleScrollBar
+include/X11/qt5/QtWidgets/QAccessibleSlider
+include/X11/qt5/QtWidgets/QAccessibleSpinBox
+include/X11/qt5/QtWidgets/QAccessibleStackedWidget
+include/X11/qt5/QtWidgets/QAccessibleTabBar
+include/X11/qt5/QtWidgets/QAccessibleTable
+include/X11/qt5/QtWidgets/QAccessibleTableCell
+include/X11/qt5/QtWidgets/QAccessibleTableCornerButton
+include/X11/qt5/QtWidgets/QAccessibleTableHeaderCell
+include/X11/qt5/QtWidgets/QAccessibleTextBrowser
+include/X11/qt5/QtWidgets/QAccessibleTextEdit
+include/X11/qt5/QtWidgets/QAccessibleTextWidget
+include/X11/qt5/QtWidgets/QAccessibleToolBox
+include/X11/qt5/QtWidgets/QAccessibleToolButton
+include/X11/qt5/QtWidgets/QAccessibleTree
 include/X11/qt5/QtWidgets/QAccessibleWidget
+include/X11/qt5/QtWidgets/QAccessibleWindowContainer
 include/X11/qt5/QtWidgets/QAction
 include/X11/qt5/QtWidgets/QActionGroup
 include/X11/qt5/QtWidgets/QApplication
@@ -3867,6 +4169,7 @@ include/X11/qt5/QtWidgets/QMenu
 include/X11/qt5/QtWidgets/QMenuBar
 include/X11/qt5/QtWidgets/QMessageBox
 include/X11/qt5/QtWidgets/QMouseEventTransition
+include/X11/qt5/QtWidgets/QOpenGLWidget
 include/X11/qt5/QtWidgets/QPanGesture
 include/X11/qt5/QtWidgets/QPinchGesture
 include/X11/qt5/QtWidgets/QPlainTextDocumentLayout
@@ -3976,13 +4279,17 @@ include/X11/qt5/QtWidgets/QWizardPage
 include/X11/qt5/QtWidgets/QtWidgets
 include/X11/qt5/QtWidgets/QtWidgetsDepends
 include/X11/qt5/QtWidgets/QtWidgetsVersion
+include/X11/qt5/QtWidgets/complexwidgets.h
+include/X11/qt5/QtWidgets/itemviews.h
 include/X11/qt5/QtWidgets/qabstractbutton.h
 include/X11/qt5/QtWidgets/qabstractitemdelegate.h
 include/X11/qt5/QtWidgets/qabstractitemview.h
 include/X11/qt5/QtWidgets/qabstractscrollarea.h
 include/X11/qt5/QtWidgets/qabstractslider.h
 include/X11/qt5/QtWidgets/qabstractspinbox.h
+include/X11/qt5/QtWidgets/qaccessiblemenu.h
 include/X11/qt5/QtWidgets/qaccessiblewidget.h
+include/X11/qt5/QtWidgets/qaccessiblewidgets.h
 include/X11/qt5/QtWidgets/qaction.h
 include/X11/qt5/QtWidgets/qactiongroup.h
 include/X11/qt5/QtWidgets/qapplication.h
@@ -4055,6 +4362,7 @@ include/X11/qt5/QtWidgets/qmenu.h
 include/X11/qt5/QtWidgets/qmenubar.h
 include/X11/qt5/QtWidgets/qmessagebox.h
 include/X11/qt5/QtWidgets/qmouseeventtransition.h
+include/X11/qt5/QtWidgets/qopenglwidget.h
 include/X11/qt5/QtWidgets/qplaintextedit.h
 include/X11/qt5/QtWidgets/qprogressbar.h
 include/X11/qt5/QtWidgets/qprogressdialog.h
@@ -4105,6 +4413,8 @@ include/X11/qt5/QtWidgets/qwidget.h
 include/X11/qt5/QtWidgets/qwidgetaction.h
 include/X11/qt5/QtWidgets/qwidgetsfunctions_wince.h
 include/X11/qt5/QtWidgets/qwizard.h
+include/X11/qt5/QtWidgets/rangecontrols.h
+include/X11/qt5/QtWidgets/simplewidgets.h
 include/X11/qt5/QtX11Extras/
 include/X11/qt5/QtX11Extras/QX11Info
 include/X11/qt5/QtX11Extras/QtX11Extras
@@ -4573,6 +4883,7 @@ include/X11/qt5/QtXmlPatterns/qxmlserializer.h
 @lib lib/libQt5DesignerComponents.so.${LIBQt5DesignerComponents_VERSION}
 @lib lib/libQt5Gui.so.${LIBQt5Gui_VERSION}
 @lib lib/libQt5Help.so.${LIBQt5Help_VERSION}
+@lib lib/libQt5Location.so.${LIBQt5Location_VERSION}
 @lib lib/libQt5Multimedia.so.${LIBQt5Multimedia_VERSION}
 @lib lib/libQt5MultimediaQuick_p.so.${LIBQt5MultimediaQuick_p_VERSION}
 @lib lib/libQt5MultimediaWidgets.so.${LIBQt5MultimediaWidgets_VERSION}
@@ -4593,6 +4904,7 @@ include/X11/qt5/QtXmlPatterns/qxmlserializer.h
 @lib lib/libQt5Sql.so.${LIBQt5Sql_VERSION}
 @lib lib/libQt5Svg.so.${LIBQt5Svg_VERSION}
 @lib lib/libQt5Test.so.${LIBQt5Test_VERSION}
+@lib lib/libQt5WebChannel.so.${LIBQt5WebChannel_VERSION}
 @lib lib/libQt5WebKit.so.${LIBQt5WebKit_VERSION}
 @lib lib/libQt5WebKitWidgets.so.${LIBQt5WebKitWidgets_VERSION}
 @lib lib/libQt5WebSockets.so.${LIBQt5WebSockets_VERSION}
@@ -4612,6 +4924,7 @@ lib/pkgconfig/Qt5Designer.pc
 lib/pkgconfig/Qt5DesignerComponents.pc
 lib/pkgconfig/Qt5Gui.pc
 lib/pkgconfig/Qt5Help.pc
+lib/pkgconfig/Qt5Location.pc
 lib/pkgconfig/Qt5Multimedia.pc
 lib/pkgconfig/Qt5MultimediaQuick_p.pc
 lib/pkgconfig/Qt5MultimediaWidgets.pc
@@ -4636,6 +4949,7 @@ lib/pkgconfig/Qt5Sql.pc
 lib/pkgconfig/Qt5Svg.pc
 lib/pkgconfig/Qt5Test.pc
 lib/pkgconfig/Qt5UiTools.pc
+lib/pkgconfig/Qt5WebChannel.pc
 lib/pkgconfig/Qt5WebKit.pc
 lib/pkgconfig/Qt5WebKitWidgets.pc
 lib/pkgconfig/Qt5WebSockets.pc
@@ -4666,7 +4980,9 @@ lib/qt5/bin/
 @bin lib/qt5/bin/qml
 @bin lib/qt5/bin/qml1plugindump
 @bin lib/qt5/bin/qmlbundle
+@bin lib/qt5/bin/qmleasing
 @bin lib/qt5/bin/qmlimportscanner
+@bin lib/qt5/bin/qmllint
 @bin lib/qt5/bin/qmlmin
 @bin lib/qt5/bin/qmlplugindump
 @bin lib/qt5/bin/qmlprofiler
@@ -4751,6 +5067,11 @@ lib/qt5/cmake/Qt5LinguistTools/
 lib/qt5/cmake/Qt5LinguistTools/Qt5LinguistToolsConfig.cmake
 lib/qt5/cmake/Qt5LinguistTools/Qt5LinguistToolsConfigVersion.cmake
 lib/qt5/cmake/Qt5LinguistTools/Qt5LinguistToolsMacros.cmake
+lib/qt5/cmake/Qt5Location/
+lib/qt5/cmake/Qt5Location/Qt5LocationConfig.cmake
+lib/qt5/cmake/Qt5Location/Qt5LocationConfigVersion.cmake
+lib/qt5/cmake/Qt5Location/Qt5Location_QGeoServiceProviderFactoryNokia.cmake
+lib/qt5/cmake/Qt5Location/Qt5Location_QGeoServiceProviderFactoryOsm.cmake
 lib/qt5/cmake/Qt5Multimedia/
 lib/qt5/cmake/Qt5Multimedia/Qt5MultimediaConfig.cmake
 lib/qt5/cmake/Qt5Multimedia/Qt5MultimediaConfigVersion.cmake
@@ -4789,7 +5110,6 @@ lib/qt5/cmake/Qt5Qml/Qt5Qml_QtQuick2Plugin.cmake
 lib/qt5/cmake/Qt5Quick/
 lib/qt5/cmake/Qt5Quick/Qt5QuickConfig.cmake
 lib/qt5/cmake/Qt5Quick/Qt5QuickConfigVersion.cmake
-lib/qt5/cmake/Qt5Quick/Qt5Quick_AccessibleQuickFactory.cmake
 lib/qt5/cmake/Qt5QuickTest/
 lib/qt5/cmake/Qt5QuickTest/Qt5QuickTestConfig.cmake
 lib/qt5/cmake/Qt5QuickTest/Qt5QuickTestConfigVersion.cmake
@@ -4808,7 +5128,6 @@ lib/qt5/cmake/Qt5Sensors/Qt5SensorsConfigVersion.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5Sensors_QCounterGesturePlugin.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5Sensors_QShakeSensorGesturePlugin.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5Sensors_QtSensorGesturePlugin.cmake
-lib/qt5/cmake/Qt5Sensors/Qt5Sensors_dummySensorPlugin.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5Sensors_genericSensorPlugin.cmake
 lib/qt5/cmake/Qt5SerialPort/
 lib/qt5/cmake/Qt5SerialPort/Qt5SerialPortConfig.cmake
@@ -4829,6 +5148,9 @@ lib/qt5/cmake/Qt5Test/Qt5TestConfigVersion.cmake
 lib/qt5/cmake/Qt5UiTools/
 lib/qt5/cmake/Qt5UiTools/Qt5UiToolsConfig.cmake
 lib/qt5/cmake/Qt5UiTools/Qt5UiToolsConfigVersion.cmake
+lib/qt5/cmake/Qt5WebChannel/
+lib/qt5/cmake/Qt5WebChannel/Qt5WebChannelConfig.cmake
+lib/qt5/cmake/Qt5WebChannel/Qt5WebChannelConfigVersion.cmake
 lib/qt5/cmake/Qt5WebKit/
 lib/qt5/cmake/Qt5WebKit/Qt5WebKitConfig.cmake
 lib/qt5/cmake/Qt5WebKit/Qt5WebKitConfigVersion.cmake
@@ -4843,7 +5165,6 @@ lib/qt5/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake
 lib/qt5/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake
 lib/qt5/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake
 lib/qt5/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake
-lib/qt5/cmake/Qt5Widgets/Qt5Widgets_AccessibleFactory.cmake
 lib/qt5/cmake/Qt5X11Extras/
 lib/qt5/cmake/Qt5X11Extras/Qt5X11ExtrasConfig.cmake
 lib/qt5/cmake/Qt5X11Extras/Qt5X11ExtrasConfigVersion.cmake
@@ -4914,6 +5235,9 @@ lib/qt5/libQt5Gui.prl
 lib/qt5/libQt5Help.la
 lib/qt5/libQt5Help.prl
 @lib lib/qt5/libQt5Help.so.${LIBQt5Help_VERSION}
+lib/qt5/libQt5Location.la
+lib/qt5/libQt5Location.prl
+@lib lib/qt5/libQt5Location.so.${LIBQt5Location_VERSION}
 lib/qt5/libQt5Multimedia.la
 lib/qt5/libQt5Multimedia.prl
 @lib lib/qt5/libQt5Multimedia.so.${LIBQt5Multimedia_VERSION}
@@ -4986,6 +5310,9 @@ lib/qt5/libQt5Test.prl
 lib/qt5/libQt5UiTools.a
 lib/qt5/libQt5UiTools.la
 lib/qt5/libQt5UiTools.prl
+lib/qt5/libQt5WebChannel.la
+lib/qt5/libQt5WebChannel.prl
+@lib lib/qt5/libQt5WebChannel.so.${LIBQt5WebChannel_VERSION}
 lib/qt5/libQt5WebKit.la
 lib/qt5/libQt5WebKit.prl
 @lib lib/qt5/libQt5WebKit.so.${LIBQt5WebKit_VERSION}
@@ -5076,6 +5403,8 @@ lib/qt5/mkspecs/common/qcc-base-qnx-armv7le.conf
 lib/qt5/mkspecs/common/qcc-base-qnx-x86.conf
 lib/qt5/mkspecs/common/qcc-base-qnx.conf
 lib/qt5/mkspecs/common/qcc-base.conf
+lib/qt5/mkspecs/common/qnx/
+lib/qt5/mkspecs/common/qnx/qplatformdefs.h
 lib/qt5/mkspecs/common/shell-unix.conf
 lib/qt5/mkspecs/common/shell-win32.conf
 lib/qt5/mkspecs/common/unix.conf
@@ -5148,9 +5477,6 @@ lib/qt5/mkspecs/devices/linux-imx6-g++/
 lib/qt5/mkspecs/devices/linux-imx6-g++/qeglfshooks_imx6.cpp
 lib/qt5/mkspecs/devices/linux-imx6-g++/qmake.conf
 lib/qt5/mkspecs/devices/linux-imx6-g++/qplatformdefs.h
-lib/qt5/mkspecs/devices/linux-maemo-n9-g++/
-lib/qt5/mkspecs/devices/linux-maemo-n9-g++/qmake.conf
-lib/qt5/mkspecs/devices/linux-maemo-n9-g++/qplatformdefs.h
 lib/qt5/mkspecs/devices/linux-mipsel-broadcom-97425-g++/
 lib/qt5/mkspecs/devices/linux-mipsel-broadcom-97425-g++/qdirectfbeglhooks_bcm97425.cpp
 lib/qt5/mkspecs/devices/linux-mipsel-broadcom-97425-g++/qmake.conf
@@ -5177,6 +5503,7 @@ lib/qt5/mkspecs/features/android/android.prf
 lib/qt5/mkspecs/features/android/android_deployment_settings.prf
 lib/qt5/mkspecs/features/build_pass.prf
 lib/qt5/mkspecs/features/c++11.prf
+lib/qt5/mkspecs/features/c++14.prf
 lib/qt5/mkspecs/features/cmake_functions.prf
 lib/qt5/mkspecs/features/configure.prf
 lib/qt5/mkspecs/features/create_cmake.prf
@@ -5211,7 +5538,9 @@ lib/qt5/mkspecs/features/include_source_dir.prf
 lib/qt5/mkspecs/features/incredibuild_xge.prf
 lib/qt5/mkspecs/features/java.prf
 lib/qt5/mkspecs/features/lex.prf
+lib/qt5/mkspecs/features/link_ltcg.prf
 lib/qt5/mkspecs/features/link_pkgconfig.prf
+lib/qt5/mkspecs/features/ltcg.prf
 lib/qt5/mkspecs/features/mac/
 lib/qt5/mkspecs/features/mac/default_post.prf
 lib/qt5/mkspecs/features/mac/default_pre.prf
@@ -5288,7 +5617,6 @@ lib/qt5/mkspecs/features/win32/console.prf
 lib/qt5/mkspecs/features/win32/default_pre.prf
 lib/qt5/mkspecs/features/win32/dumpcpp.prf
 lib/qt5/mkspecs/features/win32/idcidl.prf
-lib/qt5/mkspecs/features/win32/ltcg.prf
 lib/qt5/mkspecs/features/win32/msvc_mp.prf
 lib/qt5/mkspecs/features/win32/opengl.prf
 lib/qt5/mkspecs/features/win32/openvg.prf
@@ -5372,9 +5700,6 @@ lib/qt5/mkspecs/linux-g++-32/qplatformdefs.h
 lib/qt5/mkspecs/linux-g++-64/
 lib/qt5/mkspecs/linux-g++-64/qmake.conf
 lib/qt5/mkspecs/linux-g++-64/qplatformdefs.h
-lib/qt5/mkspecs/linux-g++-maemo/
-lib/qt5/mkspecs/linux-g++-maemo/qmake.conf
-lib/qt5/mkspecs/linux-g++-maemo/qplatformdefs.h
 lib/qt5/mkspecs/linux-g++/qmake.conf
 lib/qt5/mkspecs/linux-g++/qplatformdefs.h
 lib/qt5/mkspecs/linux-icc/
@@ -5440,12 +5765,14 @@ lib/qt5/mkspecs/macx-ios-clang/
 lib/qt5/mkspecs/macx-ios-clang/Default-568h@2x.png
 lib/qt5/mkspecs/macx-ios-clang/Info.plist.app
 lib/qt5/mkspecs/macx-ios-clang/Info.plist.lib
+lib/qt5/mkspecs/macx-ios-clang/LaunchScreen.xib
 lib/qt5/mkspecs/macx-ios-clang/features/
 lib/qt5/mkspecs/macx-ios-clang/features/default_post.prf
 lib/qt5/mkspecs/macx-ios-clang/features/default_pre.prf
 lib/qt5/mkspecs/macx-ios-clang/features/qt.prf
 lib/qt5/mkspecs/macx-ios-clang/features/qt_config.prf
 lib/qt5/mkspecs/macx-ios-clang/features/qt_parts.prf
+lib/qt5/mkspecs/macx-ios-clang/features/sdk.prf
 lib/qt5/mkspecs/macx-ios-clang/qmake.conf
 lib/qt5/mkspecs/macx-ios-clang/qplatformdefs.h
 lib/qt5/mkspecs/macx-ios-clang/rename_main.sh
@@ -5479,6 +5806,8 @@ lib/qt5/mkspecs/modules/qt_lib_gui.pri
 lib/qt5/mkspecs/modules/qt_lib_gui_private.pri
 lib/qt5/mkspecs/modules/qt_lib_help.pri
 lib/qt5/mkspecs/modules/qt_lib_help_private.pri
+lib/qt5/mkspecs/modules/qt_lib_location.pri
+lib/qt5/mkspecs/modules/qt_lib_location_private.pri
 lib/qt5/mkspecs/modules/qt_lib_multimedia.pri
 lib/qt5/mkspecs/modules/qt_lib_multimedia_private.pri
 lib/qt5/mkspecs/modules/qt_lib_multimediawidgets.pri
@@ -5523,6 +5852,8 @@ lib/qt5/mkspecs/modules/qt_lib_testlib.pri
 lib/qt5/mkspecs/modules/qt_lib_testlib_private.pri
 lib/qt5/mkspecs/modules/qt_lib_uitools.pri
 lib/qt5/mkspecs/modules/qt_lib_uitools_private.pri
+lib/qt5/mkspecs/modules/qt_lib_webchannel.pri
+lib/qt5/mkspecs/modules/qt_lib_webchannel_private.pri
 lib/qt5/mkspecs/modules/qt_lib_webkit.pri
 lib/qt5/mkspecs/modules/qt_lib_webkit_private.pri
 lib/qt5/mkspecs/modules/qt_lib_webkitwidgets.pri
@@ -5609,9 +5940,6 @@ lib/qt5/mkspecs/unsupported/linux-armcc/qplatformdefs.h
 lib/qt5/mkspecs/unsupported/linux-host-g++/
 lib/qt5/mkspecs/unsupported/linux-host-g++/qmake.conf
 lib/qt5/mkspecs/unsupported/linux-host-g++/qplatformdefs.h
-lib/qt5/mkspecs/unsupported/linux-libc++-clang/
-lib/qt5/mkspecs/unsupported/linux-libc++-clang/qmake.conf
-lib/qt5/mkspecs/unsupported/linux-libc++-clang/qplatformdefs.h
 lib/qt5/mkspecs/unsupported/linux-scratchbox2-g++/
 lib/qt5/mkspecs/unsupported/linux-scratchbox2-g++/qmake.conf
 lib/qt5/mkspecs/unsupported/linux-scratchbox2-g++/qplatformdefs.h
@@ -5718,9 +6046,6 @@ lib/qt5/phrasebooks/spanish.qph
 lib/qt5/phrasebooks/swedish.qph
 lib/qt5/pkgconfig/
 lib/qt5/plugins/
-lib/qt5/plugins/accessible/
-lib/qt5/plugins/accessible/libqtaccessiblequick.so
-lib/qt5/plugins/accessible/libqtaccessiblewidgets.so
 lib/qt5/plugins/audio/
 lib/qt5/plugins/audio/libqtmedia_pulse.so
 lib/qt5/plugins/bearer/
@@ -5733,6 +6058,9 @@ lib/qt5/plugins/designer/libqquickwidget.so
 lib/qt5/plugins/designer/libqwebview.so
 lib/qt5/plugins/designer/libtaskmenuextension.so
 lib/qt5/plugins/designer/libworldtimeclockplugin.so
+lib/qt5/plugins/geoservices/
+lib/qt5/plugins/geoservices/libqtgeoservices_nokia.so
+lib/qt5/plugins/geoservices/libqtgeoservices_osm.so
 lib/qt5/plugins/iconengines/
 lib/qt5/plugins/iconengines/libqsvgicon.so
 lib/qt5/plugins/imageformats/
@@ -5778,7 +6106,6 @@ lib/qt5/plugins/sensorgestures/libqtsensorgestures_counterplugin.so
 lib/qt5/plugins/sensorgestures/libqtsensorgestures_plugin.so
 lib/qt5/plugins/sensorgestures/libqtsensorgestures_shakeplugin.so
 lib/qt5/plugins/sensors/
-lib/qt5/plugins/sensors/libqtsensors_dummy.so
 lib/qt5/plugins/sensors/libqtsensors_generic.so
 lib/qt5/plugins/sqldrivers/
 lib/qt5/plugins/sqldrivers/libqsqlite.so
@@ -5846,6 +6173,10 @@ lib/qt5/qml/QtGraphicalEffects/private/GaussianInnerShadow.qml
 lib/qt5/qml/QtGraphicalEffects/private/GaussianMaskedBlur.qml
 lib/qt5/qml/QtGraphicalEffects/private/SourceProxy.qml
 lib/qt5/qml/QtGraphicalEffects/qmldir
+lib/qt5/qml/QtLocation/
+lib/qt5/qml/QtLocation/libdeclarative_location.so
+lib/qt5/qml/QtLocation/plugins.qmltypes
+lib/qt5/qml/QtLocation/qmldir
 lib/qt5/qml/QtMultimedia/
 lib/qt5/qml/QtMultimedia/Video.qml
 lib/qt5/qml/QtMultimedia/libdeclarative_multimedia.so
@@ -5863,6 +6194,10 @@ lib/qt5/qml/QtQml/
 lib/qt5/qml/QtQml/Models.2/
 lib/qt5/qml/QtQml/Models.2/libmodelsplugin.so
 lib/qt5/qml/QtQml/Models.2/qmldir
+lib/qt5/qml/QtQml/StateMachine/
+lib/qt5/qml/QtQml/StateMachine/libqtqmlstatemachine.so
+lib/qt5/qml/QtQml/StateMachine/plugins.qmltypes
+lib/qt5/qml/QtQml/StateMachine/qmldir
 lib/qt5/qml/QtQuick/
 lib/qt5/qml/QtQuick.2/
 lib/qt5/qml/QtQuick.2/libqtquick2plugin.so
@@ -5887,6 +6222,9 @@ lib/qt5/qml/QtQuick/Controls/Private/CalendarUtils.js
 lib/qt5/qml/QtQuick/Controls/Private/ColumnMenuContent.qml
 lib/qt5/qml/QtQuick/Controls/Private/ContentItem.qml
 lib/qt5/qml/QtQuick/Controls/Private/Control.qml
+lib/qt5/qml/QtQuick/Controls/Private/EditMenu.qml
+lib/qt5/qml/QtQuick/Controls/Private/EditMenu_base.qml
+lib/qt5/qml/QtQuick/Controls/Private/EditMenu_ios.qml
 lib/qt5/qml/QtQuick/Controls/Private/FastGlow.qml
 lib/qt5/qml/QtQuick/Controls/Private/FocusFrame.qml
 lib/qt5/qml/QtQuick/Controls/Private/HoverButton.qml
@@ -5903,7 +6241,10 @@ lib/qt5/qml/QtQuick/Controls/Private/Style.qml
 lib/qt5/qml/QtQuick/Controls/Private/SystemPaletteSingleton.qml
 lib/qt5/qml/QtQuick/Controls/Private/TabBar.qml
 lib/qt5/qml/QtQuick/Controls/Private/TableViewSelection.qml
+lib/qt5/qml/QtQuick/Controls/Private/TextHandle.qml
+lib/qt5/qml/QtQuick/Controls/Private/TextInputWithHandles.qml
 lib/qt5/qml/QtQuick/Controls/Private/TextSingleton.qml
+lib/qt5/qml/QtQuick/Controls/Private/ToolMenuButton.qml
 lib/qt5/qml/QtQuick/Controls/Private/qmldir
 lib/qt5/qml/QtQuick/Controls/Private/style.js
 lib/qt5/qml/QtQuick/Controls/ProgressBar.qml
@@ -5918,6 +6259,7 @@ lib/qt5/qml/QtQuick/Controls/StackViewTransition.qml
 lib/qt5/qml/QtQuick/Controls/StatusBar.qml
 lib/qt5/qml/QtQuick/Controls/Styles/
 lib/qt5/qml/QtQuick/Controls/Styles/Base/
+lib/qt5/qml/QtQuick/Controls/Styles/Base/ApplicationWindowStyle.qml
 lib/qt5/qml/QtQuick/Controls/Styles/Base/BusyIndicatorStyle.qml
 lib/qt5/qml/QtQuick/Controls/Styles/Base/ButtonStyle.qml
 lib/qt5/qml/QtQuick/Controls/Styles/Base/CalendarStyle.qml
@@ -5971,6 +6313,7 @@ lib/qt5/qml/QtQuick/Controls/Styles/Base/images/spinner_small.png
 lib/qt5/qml/QtQuick/Controls/Styles/Base/images/tab.png
 lib/qt5/qml/QtQuick/Controls/Styles/Base/images/tab_selected.png
 lib/qt5/qml/QtQuick/Controls/Styles/Desktop/
+lib/qt5/qml/QtQuick/Controls/Styles/Desktop/ApplicationWindowStyle.qml
 lib/qt5/qml/QtQuick/Controls/Styles/Desktop/BusyIndicatorStyle.qml
 lib/qt5/qml/QtQuick/Controls/Styles/Desktop/ButtonStyle.qml
 lib/qt5/qml/QtQuick/Controls/Styles/Desktop/CalendarStyle.qml
@@ -6050,6 +6393,10 @@ lib/qt5/qml/QtTest/libqmltestplugin.so
 lib/qt5/qml/QtTest/plugins.qmltypes
 lib/qt5/qml/QtTest/qmldir
 lib/qt5/qml/QtTest/testlogger.js
+lib/qt5/qml/QtWebChannel/
+lib/qt5/qml/QtWebChannel/libdeclarative_webchannel.so
+lib/qt5/qml/QtWebChannel/plugins.qmltypes
+lib/qt5/qml/QtWebChannel/qmldir
 lib/qt5/qml/QtWebKit/
 lib/qt5/qml/QtWebKit/experimental/
 lib/qt5/qml/QtWebKit/experimental/libqmlwebkitexperimentalplugin.so
@@ -6106,6 +6453,7 @@ lib/qt5/translations/qmlviewer_ru.qm
 lib/qt5/translations/qmlviewer_sk.qm
 lib/qt5/translations/qmlviewer_uk.qm
 lib/qt5/translations/qt_ar.qm
+lib/qt5/translations/qt_ca.qm
 lib/qt5/translations/qt_cs.qm
 lib/qt5/translations/qt_da.qm
 lib/qt5/translations/qt_de.qm
@@ -6145,6 +6493,7 @@ lib/qt5/translations/qt_sv.qm
 lib/qt5/translations/qt_uk.qm
 lib/qt5/translations/qt_zh_CN.qm
 lib/qt5/translations/qt_zh_TW.qm
+lib/qt5/translations/qtbase_ca.qm
 lib/qt5/translations/qtbase_cs.qm
 lib/qt5/translations/qtbase_de.qm
 lib/qt5/translations/qtbase_fi.qm
@@ -6174,6 +6523,7 @@ lib/qt5/translations/qtdeclarative_sk.qm
 lib/qt5/translations/qtdeclarative_uk.qm
 lib/qt5/translations/qtlocation_de.qm
 lib/qt5/translations/qtlocation_uk.qm
+lib/qt5/translations/qtmultimedia_ca.qm
 lib/qt5/translations/qtmultimedia_cs.qm
 lib/qt5/translations/qtmultimedia_de.qm
 lib/qt5/translations/qtmultimedia_fi.qm
@@ -6183,6 +6533,7 @@ lib/qt5/translations/qtmultimedia_ja.qm
 lib/qt5/translations/qtmultimedia_ru.qm
 lib/qt5/translations/qtmultimedia_sk.qm
 lib/qt5/translations/qtmultimedia_uk.qm
+lib/qt5/translations/qtquick1_ca.qm
 lib/qt5/translations/qtquick1_cs.qm
 lib/qt5/translations/qtquick1_de.qm
 lib/qt5/translations/qtquick1_fi.qm
@@ -6192,6 +6543,11 @@ lib/qt5/translations/qtquick1_ja.qm
 lib/qt5/translations/qtquick1_ru.qm
 lib/qt5/translations/qtquick1_sk.qm
 lib/qt5/translations/qtquick1_uk.qm
+lib/qt5/translations/qtquickcontrols_de.qm
+lib/qt5/translations/qtquickcontrols_ja.qm
+lib/qt5/translations/qtquickcontrols_ru.qm
+lib/qt5/translations/qtquickcontrols_uk.qm
+lib/qt5/translations/qtscript_ca.qm
 lib/qt5/translations/qtscript_cs.qm
 lib/qt5/translations/qtscript_de.qm
 lib/qt5/translations/qtscript_fi.qm
@@ -6201,6 +6557,7 @@ lib/qt5/translations/qtscript_ja.qm
 lib/qt5/translations/qtscript_ru.qm
 lib/qt5/translations/qtscript_sk.qm
 lib/qt5/translations/qtscript_uk.qm
+lib/qt5/translations/qtxmlpatterns_ca.qm
 lib/qt5/translations/qtxmlpatterns_cs.qm
 lib/qt5/translations/qtxmlpatterns_de.qm
 lib/qt5/translations/qtxmlpatterns_hu.qm
@@ -6214,17 +6571,20 @@ share/doc/qt5/global/
 share/doc/qt5/global/compat.qdocconf
 share/doc/qt5/global/config.qdocconf
 share/doc/qt5/global/externalsites/
+share/doc/qt5/global/externalsites.qdocconf
 share/doc/qt5/global/externalsites/external-resources.qdoc
-share/doc/qt5/global/externalsites/qch-urls.qdoc
 share/doc/qt5/global/externalsites/qt-webpages.qdoc
 share/doc/qt5/global/externalsites/qtcreator.qdoc
 share/doc/qt5/global/externalsites/rfc.qdoc
 share/doc/qt5/global/fileextensions.qdocconf
 share/doc/qt5/global/html-config.qdocconf
+share/doc/qt5/global/html-footer-online.qdocconf
 share/doc/qt5/global/html-footer.qdocconf
 share/doc/qt5/global/html-header-offline.qdocconf
 share/doc/qt5/global/html-header-online.qdocconf
 share/doc/qt5/global/includes/
+share/doc/qt5/global/includes-online/
+share/doc/qt5/global/includes-online/search.qdoc
 share/doc/qt5/global/includes/examples-run.qdocinc
 share/doc/qt5/global/macros.qdocconf
 share/doc/qt5/global/manifest-meta.qdocconf
@@ -6232,6 +6592,7 @@ share/doc/qt5/global/qt-cpp-defines.qdocconf
 share/doc/qt5/global/qt-html-templates-offline.qdocconf
 share/doc/qt5/global/qt-html-templates-online.qdocconf
 share/doc/qt5/global/qt-module-defaults-offline.qdocconf
+share/doc/qt5/global/qt-module-defaults-online-commercial.qdocconf
 share/doc/qt5/global/qt-module-defaults-online.qdocconf
 share/doc/qt5/global/qt-module-defaults.qdocconf
 share/doc/qt5/global/template/
@@ -6272,6 +6633,16 @@ share/doc/qt5/global/template/images/page.png
 share/doc/qt5/global/template/images/page_bg.png
 share/doc/qt5/global/template/images/spinner.gif
 share/doc/qt5/global/template/images/sprites-combined.png
+share/doc/qt5/global/template/scripts/
+share/doc/qt5/global/template/scripts/extras.js
+share/doc/qt5/global/template/scripts/main.js
 share/doc/qt5/global/template/style/
+share/doc/qt5/global/template/style/doc_search.png
+share/doc/qt5/global/template/style/gsc.css
+share/doc/qt5/global/template/style/icomoon.eot
+share/doc/qt5/global/template/style/icomoon.svg
+share/doc/qt5/global/template/style/icomoon.ttf
+share/doc/qt5/global/template/style/icomoon.woff
+share/doc/qt5/global/template/style/list_arrow.png
 share/doc/qt5/global/template/style/offline.css
 share/doc/qt5/global/template/style/online.css

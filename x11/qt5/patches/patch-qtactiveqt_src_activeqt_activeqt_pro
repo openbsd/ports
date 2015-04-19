@@ -1,0 +1,11 @@
+$OpenBSD: patch-qtactiveqt_src_activeqt_activeqt_pro,v 1.1 2015/04/19 13:18:28 zhuk Exp $
+Unbreak build of documentation.
+--- qtactiveqt/src/activeqt/activeqt.pro.ports.orig	Fri Apr 17 00:00:07 2015
++++ qtactiveqt/src/activeqt/activeqt.pro	Fri Apr 17 00:00:10 2015
+@@ -9,5 +9,6 @@ win32:!winrt {
+     # fake project for creating the documentation
+     TEMPLATE = aux
+     QMAKE_DOCS = $$PWD/doc/activeqt.qdocconf
++    tagfile = ../../doc/activeqt/activeqt.tags
+ }
+ 

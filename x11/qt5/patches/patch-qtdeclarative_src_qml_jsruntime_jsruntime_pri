@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtdeclarative_src_qml_jsruntime_jsruntime_pri,v 1.1 2014/12/26 00:02:32 zhuk Exp $
+$OpenBSD: patch-qtdeclarative_src_qml_jsruntime_jsruntime_pri,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Enable W^X in JIT.
---- qtdeclarative/src/qml/jsruntime/jsruntime.pri.ports.orig	Thu Dec 25 23:26:54 2014
-+++ qtdeclarative/src/qml/jsruntime/jsruntime.pri	Thu Dec 25 23:27:08 2014
-@@ -116,6 +116,6 @@ valgrind {
+--- qtdeclarative/src/qml/jsruntime/jsruntime.pri.ports.orig	Tue Feb 17 07:57:27 2015
++++ qtdeclarative/src/qml/jsruntime/jsruntime.pri	Wed Apr  8 00:38:30 2015
+@@ -109,6 +109,6 @@ valgrind {
      DEFINES += V4_USE_VALGRIND
  }
  

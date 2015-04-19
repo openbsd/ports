@@ -1,0 +1,15 @@
+$OpenBSD: patch-qtbase_src_tools_qdoc_htmlgenerator_cpp,v 1.1 2015/04/19 13:18:28 zhuk Exp $
+Unbreak build of documentation.
+BUG: https://bugreports.qt.io/browse/QTBUG-45643
+--- qtbase/src/tools/qdoc/htmlgenerator.cpp.ports.orig	Thu Apr 16 12:08:37 2015
++++ qtbase/src/tools/qdoc/htmlgenerator.cpp	Thu Apr 16 20:54:07 2015
+@@ -3378,7 +3378,8 @@ QString HtmlGenerator::highlightedCode(const QString& 
+             bool handled = false;
+             for (int k = 0; k != 18; ++k) {
+                 const QString & tag = spanTags[2 * k];
+-                if (tag == QStringRef(&src, i, tag.length())) {
++                if (i + tag.length() <= src.length() &&
++                        tag == QStringRef(&src, i, tag.length())) {
+                     html += spanTags[2 * k + 1];
+                     i += tag.length();
+                     handled = true;

@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtbase_src_corelib_tools_qbytearray_h,v 1.1 2014/12/13 05:47:37 zhuk Exp $
+$OpenBSD: patch-qtbase_src_corelib_tools_qbytearray_h,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Get rid of strcpy().
---- qtbase/src/corelib/tools/qbytearray.h.ports.orig	Sat Dec 13 00:45:40 2014
-+++ qtbase/src/corelib/tools/qbytearray.h	Sat Dec 13 00:46:00 2014
-@@ -94,7 +94,9 @@ inline uint qstrnlen(const char *str, uint maxlen)
+--- qtbase/src/corelib/tools/qbytearray.h.ports.orig	Tue Feb 17 07:56:49 2015
++++ qtbase/src/corelib/tools/qbytearray.h	Wed Apr  8 00:38:30 2015
+@@ -88,7 +88,9 @@ inline uint qstrnlen(const char *str, uint maxlen)
      return length;
  }
  

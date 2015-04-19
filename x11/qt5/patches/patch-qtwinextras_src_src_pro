@@ -1,0 +1,10 @@
+$OpenBSD: patch-qtwinextras_src_src_pro,v 1.1 2015/04/19 13:18:28 zhuk Exp $
+Unbreak build of documentation.
+--- qtwinextras/src/src.pro.ports.orig	Fri Apr 17 00:04:19 2015
++++ qtwinextras/src/src.pro	Fri Apr 17 00:05:24 2015
+@@ -7,4 +7,5 @@ win32 {
+     # fake project for creating the documentation
+     TEMPLATE = aux
+     QMAKE_DOCS = $$PWD/winextras/doc/qtwinextras.qdocconf
++    tagfile = winextras/doc/qtwinextras.tags
+ }

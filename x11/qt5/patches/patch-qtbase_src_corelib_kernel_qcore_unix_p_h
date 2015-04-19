@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtbase_src_corelib_kernel_qcore_unix_p_h,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+$OpenBSD: patch-qtbase_src_corelib_kernel_qcore_unix_p_h,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Unbreak compilation.
---- qtbase/src/corelib/kernel/qcore_unix_p.h.ports.orig	Sun Nov  2 17:11:43 2014
-+++ qtbase/src/corelib/kernel/qcore_unix_p.h	Sun Nov  2 17:11:57 2014
-@@ -62,6 +62,7 @@
+--- qtbase/src/corelib/kernel/qcore_unix_p.h.ports.orig	Tue Feb 17 07:56:50 2015
++++ qtbase/src/corelib/kernel/qcore_unix_p.h	Wed Apr  8 00:38:30 2015
+@@ -54,6 +54,7 @@
  
  #include <string.h>
  #include <sys/types.h>

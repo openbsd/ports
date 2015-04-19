@@ -1,0 +1,12 @@
+$OpenBSD: patch-qtbase_src_platformheaders_platformheaders_pro,v 1.1 2015/04/19 13:18:28 zhuk Exp $
+Unbreak build of documentation.
+--- qtbase/src/platformheaders/platformheaders.pro.ports.orig	Fri Apr 17 00:03:39 2015
++++ qtbase/src/platformheaders/platformheaders.pro	Fri Apr 17 00:02:47 2015
+@@ -8,6 +8,7 @@ include(xcbfunctions/xcbfunctions.pri)
+ include(eglfsfunctions/eglfsfunctions.pri)
+ 
+ QMAKE_DOCS = $$PWD/doc/qtplatformheaders.qdocconf
++tagfile = doc/qtplatformheaders.tags
+ 
+ load(qt_module_headers)
+ load(qt_docs)

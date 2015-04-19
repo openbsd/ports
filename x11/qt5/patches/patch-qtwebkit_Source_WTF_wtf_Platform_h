@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtwebkit_Source_WTF_wtf_Platform_h,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+$OpenBSD: patch-qtwebkit_Source_WTF_wtf_Platform_h,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Use system malloc(3).
---- qtwebkit/Source/WTF/wtf/Platform.h.ports.orig	Tue Nov 11 00:30:55 2014
-+++ qtwebkit/Source/WTF/wtf/Platform.h	Tue Nov 11 00:32:54 2014
-@@ -714,6 +714,10 @@
+--- qtwebkit/Source/WTF/wtf/Platform.h.ports.orig	Tue Feb 17 07:57:01 2015
++++ qtwebkit/Source/WTF/wtf/Platform.h	Wed Apr  8 00:38:31 2015
+@@ -724,6 +724,10 @@
  #endif
  #endif
  

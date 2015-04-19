@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtbase_qmake_Makefile_unix,v 1.1.1.1 2014/12/08 20:33:41 zhuk Exp $
+$OpenBSD: patch-qtbase_qmake_Makefile_unix,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Allow to build with OpenBSD make.
---- qtbase/qmake/Makefile.unix.ports.orig	Tue Nov 11 12:17:07 2014
-+++ qtbase/qmake/Makefile.unix	Tue Nov 11 12:21:05 2014
-@@ -105,6 +105,11 @@ CPPFLAGS = -g $(EXTRA_CPPFLAGS) \
+--- qtbase/qmake/Makefile.unix.ports.orig	Tue Feb 17 07:56:37 2015
++++ qtbase/qmake/Makefile.unix	Wed Apr  8 00:38:30 2015
+@@ -107,6 +107,11 @@ CPPFLAGS = -g $(EXTRA_CPPFLAGS) \
  
  CXXFLAGS = $(EXTRA_CXXFLAGS) $(CPPFLAGS)
  

@@ -1,0 +1,10 @@
+$OpenBSD: patch-qtandroidextras_src_src_pro,v 1.1 2015/04/19 13:18:28 zhuk Exp $
+Unbreak build of documentation.
+--- qtandroidextras/src/src.pro.ports.orig	Fri Apr 17 00:03:58 2015
++++ qtandroidextras/src/src.pro	Fri Apr 17 00:02:17 2015
+@@ -4,4 +4,5 @@ android {
+ } else {
+     TEMPLATE = aux
+     QMAKE_DOCS = $$PWD/androidextras/doc/qtandroidextras.qdocconf
++    tagfile = androidextras/doc/qtandroidextras.tags
+ }

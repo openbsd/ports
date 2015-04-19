@@ -1,0 +1,16 @@
+$OpenBSD: patch-qttools_src_assistant_qhelpgenerator_qhelpgenerator_pro,v 1.1 2015/04/19 13:18:28 zhuk Exp $
+Make sure qthelpgenerator doesn't pick up system libraries when run
+during documentation build.
+--- qttools/src/assistant/qhelpgenerator/qhelpgenerator.pro.ports.orig	Sat Apr 18 22:56:18 2015
++++ qttools/src/assistant/qhelpgenerator/qhelpgenerator.pro	Sat Apr 18 23:56:41 2015
+@@ -8,3 +8,10 @@ SOURCES += ../shared/helpgenerator.cpp \
+ HEADERS += ../shared/helpgenerator.h
+ 
+ load(qt_tool)
++
++# Make sure plugins are loaded from build directory rather than
++# from system one: qhelpgenerator may be called during normal build.
++QT_CONF_CONTENTS = \
++    "[Paths]" \
++    "Plugins = ../../qtbase/plugins"
++write_file("$$DESTDIR/qt.conf", QT_CONF_CONTENTS)|error("Aborting.")

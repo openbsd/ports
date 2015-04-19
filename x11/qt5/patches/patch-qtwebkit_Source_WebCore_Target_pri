@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtwebkit_Source_WebCore_Target_pri,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+$OpenBSD: patch-qtwebkit_Source_WebCore_Target_pri,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Unbreak compilation.
---- qtwebkit/Source/WebCore/Target.pri.ports.orig	Mon Nov 10 00:45:47 2014
-+++ qtwebkit/Source/WebCore/Target.pri	Mon Nov 10 01:24:43 2014
-@@ -4272,6 +4272,12 @@ win32:!mingw:contains(QMAKE_HOST.arch, x86_64):{
+--- qtwebkit/Source/WebCore/Target.pri.ports.orig	Tue Feb 17 07:57:09 2015
++++ qtwebkit/Source/WebCore/Target.pri	Wed Apr  8 00:38:31 2015
+@@ -4280,6 +4280,12 @@ win32:!mingw:contains(QMAKE_HOST.arch, x86_64):{
     }
  }
  

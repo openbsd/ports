@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtbase_qmake_generators_makefile_cpp,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+$OpenBSD: patch-qtbase_qmake_generators_makefile_cpp,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Don't special case GNU make, BSD make isn't that bad, too.
---- qtbase/qmake/generators/makefile.cpp.ports.orig	Tue Nov 11 12:08:36 2014
-+++ qtbase/qmake/generators/makefile.cpp	Tue Nov 11 12:08:47 2014
-@@ -685,7 +685,7 @@ MakefileGenerator::init()
+--- qtbase/qmake/generators/makefile.cpp.ports.orig	Tue Feb 17 07:56:37 2015
++++ qtbase/qmake/generators/makefile.cpp	Wed Apr  8 00:38:30 2015
+@@ -707,7 +707,7 @@ MakefileGenerator::init()
          }
      }
  

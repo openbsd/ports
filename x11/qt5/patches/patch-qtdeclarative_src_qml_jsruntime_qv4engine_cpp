@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtdeclarative_src_qml_jsruntime_qv4engine_cpp,v 1.1.1.1 2014/12/08 20:33:38 zhuk Exp $
+$OpenBSD: patch-qtdeclarative_src_qml_jsruntime_qv4engine_cpp,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Add support for OpenBSD.
---- qtdeclarative/src/qml/jsruntime/qv4engine.cpp.ports.orig	Wed Nov  5 00:15:07 2014
-+++ qtdeclarative/src/qml/jsruntime/qv4engine.cpp	Wed Nov  5 01:00:45 2014
-@@ -81,6 +81,9 @@
+--- qtdeclarative/src/qml/jsruntime/qv4engine.cpp.ports.orig	Tue Feb 17 07:57:27 2015
++++ qtdeclarative/src/qml/jsruntime/qv4engine.cpp	Wed Apr  8 00:38:31 2015
+@@ -74,6 +74,9 @@
  #if USE(PTHREADS)
  #  include <pthread.h>
  #  include <sys/resource.h>
@@ -12,7 +12,7 @@ Add support for OpenBSD.
  #if HAVE(PTHREAD_NP_H)
  #  include <pthread_np.h>
  #endif
-@@ -113,6 +116,12 @@ quintptr getStackLimit()
+@@ -108,6 +111,12 @@ quintptr getStackLimit()
      } else
          size = pthread_get_stacksize_np(thread_self);
      stackLimit -= size;

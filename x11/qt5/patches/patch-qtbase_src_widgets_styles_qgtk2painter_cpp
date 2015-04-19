@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtbase_src_widgets_styles_qgtk2painter_cpp,v 1.1 2014/12/25 23:35:44 zhuk Exp $
+$OpenBSD: patch-qtbase_src_widgets_styles_qgtk2painter_cpp,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Fix Qt5 in situation GTK+ shared library version is overridden.
---- qtbase/src/widgets/styles/qgtk2painter.cpp.ports.orig	Fri Dec 26 02:24:43 2014
-+++ qtbase/src/widgets/styles/qgtk2painter.cpp	Fri Dec 26 02:25:21 2014
-@@ -103,8 +103,7 @@ static void initGtk()
+--- qtbase/src/widgets/styles/qgtk2painter.cpp.ports.orig	Tue Feb 17 07:56:39 2015
++++ qtbase/src/widgets/styles/qgtk2painter.cpp	Wed Apr  8 00:38:30 2015
+@@ -95,8 +95,7 @@ static void initGtk()
  {
      static bool initialized = false;
      if (!initialized) {

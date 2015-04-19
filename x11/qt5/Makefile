@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2015/04/04 09:21:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2015/04/19 13:18:28 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
-IGNORE-html =		qdoc segfaults
-BROKEN-sparc64 =	tries to include a non-existent qatomic_sparc.h in src/corelib/thread/qbasicatomic.h
 
-VERSION =		5.3.2
+VERSION =		5.4.1
+ENGINIO_VERSION =	1.1.1
 DISTNAME =		qt-everywhere-opensource-src-${VERSION}
 
 COMMENT-main =		C++ general-purpose toolkit
@@ -13,6 +12,7 @@ COMMENT-examples =	examples for Qt5
 COMMENT-html =		offline HTML documentation for Qt5
 COMMENT-mysql =		MySQL plugin for Qt5
 COMMENT-psql =		PostgresSQL plugin for Qt5
+COMMENT-qch =		offline QCH documentation for Qt5
 COMMENT-sqlite2 =	SQLite 2.x plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
@@ -21,64 +21,62 @@ PKGNAME-examples =	qt5-examples-${VERSION}
 PKGNAME-html =		qt5-html-${VERSION}
 PKGNAME-mysql =		qt5-mysql-${VERSION}
 PKGNAME-psql =		qt5-postgresql-${VERSION}
+PKGNAME-qch =		qt5-qch-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
-REVISION-main =		12
-REVISION-mysql =	1
-REVISION-psql =		1
-REVISION-sqlite2 =	1
-REVISION-tds =		1
-REVISION-examples =	0
-REVISION-html =		0
-
 PKG_ARCH-html =		*
+PKG_ARCH-qch =		*
 
 DPB_PROPERTIES =	parallel nojunk
 
-SHARED_LIBS =		Enginio			0.0
-SHARED_LIBS +=		Qt5Bluetooth		0.0
-SHARED_LIBS +=		Qt5CLucene		0.0
-SHARED_LIBS +=		Qt5Concurrent		0.0
-SHARED_LIBS +=		Qt5Core			0.0
-SHARED_LIBS +=		Qt5DBus			0.0
-SHARED_LIBS +=		Qt5Declarative		0.0
-SHARED_LIBS +=		Qt5Designer		0.0
-SHARED_LIBS +=		Qt5DesignerComponents	0.0
-SHARED_LIBS +=		Qt5Gui			0.0
-SHARED_LIBS +=		Qt5Help			0.0
-SHARED_LIBS +=		Qt5Multimedia		0.0
-SHARED_LIBS +=		Qt5MultimediaQuick_p	0.0
-SHARED_LIBS +=		Qt5MultimediaWidgets	0.0
-SHARED_LIBS +=		Qt5Network		0.0
-SHARED_LIBS +=		Qt5Nfc			0.0
-SHARED_LIBS +=		Qt5OpenGL		0.0
-SHARED_LIBS +=		Qt5Positioning		0.0
-SHARED_LIBS +=		Qt5PrintSupport		0.0
-SHARED_LIBS +=		Qt5Qml			0.0
-SHARED_LIBS +=		Qt5Quick		0.0
-SHARED_LIBS +=		Qt5QuickParticles	0.0
-SHARED_LIBS +=		Qt5QuickTest		0.0
-SHARED_LIBS +=		Qt5QuickWidgets		0.0
-SHARED_LIBS +=		Qt5Script		0.0
-SHARED_LIBS +=		Qt5ScriptTools		0.0
-SHARED_LIBS +=		Qt5Sensors		0.0
-SHARED_LIBS +=		Qt5SerialPort		0.0
-SHARED_LIBS +=		Qt5Sql			0.0
-SHARED_LIBS +=		Qt5Svg			0.0
-SHARED_LIBS +=		Qt5Test			0.0
-SHARED_LIBS +=		Qt5WebKit		0.0
-SHARED_LIBS +=		Qt5WebKitWidgets	0.0
-SHARED_LIBS +=		Qt5WebSockets		0.0
-SHARED_LIBS +=		Qt5Widgets		0.0
-SHARED_LIBS +=		Qt5X11Extras		0.0
-SHARED_LIBS +=		Qt5Xml			0.0
-SHARED_LIBS +=		Qt5XmlPatterns		0.0
+SHARED_LIBS =		Enginio			1.0
+SHARED_LIBS +=		Qt5Bluetooth		1.0
+SHARED_LIBS +=		Qt5CLucene		1.0
+SHARED_LIBS +=		Qt5Concurrent		1.0
+SHARED_LIBS +=		Qt5Core			1.0
+SHARED_LIBS +=		Qt5DBus			1.0
+SHARED_LIBS +=		Qt5Declarative		1.0
+SHARED_LIBS +=		Qt5Designer		1.0
+SHARED_LIBS +=		Qt5DesignerComponents	1.0
+SHARED_LIBS +=		Qt5Gui			1.0
+SHARED_LIBS +=		Qt5Help			1.0
+SHARED_LIBS +=		Qt5Multimedia		1.0
+SHARED_LIBS +=		Qt5MultimediaQuick_p	1.0
+SHARED_LIBS +=		Qt5MultimediaWidgets	1.0
+SHARED_LIBS +=		Qt5Network		1.0
+SHARED_LIBS +=		Qt5Nfc			1.0
+SHARED_LIBS +=		Qt5OpenGL		1.0
+SHARED_LIBS +=		Qt5Positioning		1.0
+SHARED_LIBS +=		Qt5PrintSupport		1.0
+SHARED_LIBS +=		Qt5Qml			1.0
+SHARED_LIBS +=		Qt5Quick		1.0
+SHARED_LIBS +=		Qt5QuickParticles	1.0
+SHARED_LIBS +=		Qt5QuickTest		1.0
+SHARED_LIBS +=		Qt5QuickWidgets		1.0
+SHARED_LIBS +=		Qt5Script		1.0
+SHARED_LIBS +=		Qt5ScriptTools		1.0
+SHARED_LIBS +=		Qt5Sensors		1.0
+SHARED_LIBS +=		Qt5SerialPort		1.0
+SHARED_LIBS +=		Qt5Sql			1.0
+SHARED_LIBS +=		Qt5Svg			1.0
+SHARED_LIBS +=		Qt5Test			1.0
+SHARED_LIBS +=		Qt5WebKit		1.0
+SHARED_LIBS +=		Qt5WebKitWidgets	1.0
+SHARED_LIBS +=		Qt5WebSockets		1.0
+SHARED_LIBS +=		Qt5Widgets		1.0
+SHARED_LIBS +=		Qt5X11Extras		1.0
+SHARED_LIBS +=		Qt5Xml			1.0
+SHARED_LIBS +=		Qt5XmlPatterns		1.0
 #SHARED_LIBS +=		qgsttools_p		0.0
 
-SHARED_LIBS-examples =	fftreal			0.0
-SHARED_LIBS-examples +=	gruesensor		0.0
+SHARED_LIBS-examples =	fftreal			1.0
+SHARED_LIBS-examples +=	gruesensor		1.0
 SHARED_LIBS +=		${SHARED_LIBS-examples}
+
+# since 5.4
+SHARED_LIBS +=		Qt5Location		0.0
+SHARED_LIBS +=		Qt5WebChannel		0.0
 
 CATEGORIES =		x11 devel
 HOMEPAGE =		http://www.qt-project.org/
@@ -88,8 +86,8 @@ MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 WANTLIB-main =  ${WANTLIB}
 WANTLIB-main += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
-WANTLIB-main += cups dbus-1 fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB-main += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gstapp-1.0
+WANTLIB-main += cups fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0
 WANTLIB-main += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB-main += gstvideo-1.0 gthread-2.0 gtk-x11-2.0 icudata icui18n
 WANTLIB-main += icuuc iodbc jasper jpeg m mng openal pango-1.0 pangocairo-1.0
@@ -114,6 +112,8 @@ WANTLIB-mysql +=	crypto m pthread mysqlclient_r ssl z
 WANTLIB-psql =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
 WANTLIB-psql +=		m pthread pq
 
+WANTLIB-qch =
+
 WANTLIB-sqlite2 =	${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
 WANTLIB-sqlite2 +=	m pthread sqlite
 
@@ -121,13 +121,14 @@ WANTLIB-tds =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
 WANTLIB-tds +=		m pthread sybdb
 
 
-# Mostly LGPLv2.1 for code; FDLv1.3 for documentation.
+# Mostly LGPLv2.1 or LGPLv3 for code; FDLv1.3 for documentation.
 # Some third-party parts are BSD-licensed.
 # Also, many parts have are dual-licensed having either commercial, GPL,
 # Apache 2.0 or other type of license as an alternative option.
+# A few components, including QtWebEngine, are LGPLv3 only, no LGPLv2.1.
 PERMIT_PACKAGE_CDROM =	Yes
 
-MULTI_PACKAGES =	-main -examples -html -mysql -psql -sqlite2 -tds
+MULTI_PACKAGES =	-main -examples -html -mysql -psql -qch -sqlite2 -tds
 
 MASTER_SITES =		http://master.qt-project.org/archive/qt/${VERSION:R}/${VERSION}/single/
 
@@ -157,36 +158,41 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			x11/gtk+2 \
 			x11/xkbcommon
 
-LIB_DEPENDS-examples =	${BUILD_PKGPATH},-main \
+LIB_DEPENDS-examples =	${BUILD_PKGPATH},-main>=${VERSION:R} \
 			${MODGCC4_CPPLIBDEP}
 
 LIB_DEPENDS-html =
 
-LIB_DEPENDS-mysql =	${BUILD_PKGPATH},-main \
+LIB_DEPENDS-mysql =	${BUILD_PKGPATH},-main>=${VERSION:R} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/mariadb
 
-LIB_DEPENDS-psql =	${BUILD_PKGPATH},-main \
+LIB_DEPENDS-psql =	${BUILD_PKGPATH},-main>=${VERSION:R} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/postgresql
 
-LIB_DEPENDS-sqlite2 =	${BUILD_PKGPATH},-main \
+LIB_DEPENDS-qch =
+
+LIB_DEPENDS-sqlite2 =	${BUILD_PKGPATH},-main>=${VERSION:R} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/sqlite
 
-LIB_DEPENDS-tds =	${BUILD_PKGPATH},-main \
+LIB_DEPENDS-tds =	${BUILD_PKGPATH},-main>=${VERSION:R} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/freetds
 
+BUILD_DEPENDS =		x11/dbus
 # QtWebKit & Co. requirements
-BUILD_DEPENDS =		devel/flex \
-			devel/bison
+BUILD_DEPENDS +=	devel/flex \
+			devel/bison \
 
-RUN_DEPENDS-main =
+RUN_DEPENDS-main =	${RUN_DEPENDS} \
+			x11/dbus
 RUN_DEPENDS-examples =
 RUN_DEPENDS-html =
 RUN_DEPENDS-mysql =
 RUN_DEPENDS-psql =
+RUN_DEPENDS-qch =
 RUN_DEPENDS-sqlite2 =
 RUN_DEPENDS-tds =
 
@@ -202,6 +208,7 @@ RUN_DEPENDS-main +=	devel/gperf \
 DESTDIRNAME =		INSTALL_ROOT
 
 MAKE_ENV =		LD_LIBRARY_PATH=${WRKBUILD}/qtbase/lib \
+			NINJA_PATH="${LOCALBASE}/bin/ninja" \
 			PYTHON=${MODPY_BIN} \
 			RUBY=${RUBY} \
 			REAL_BUILD_ROOT=${WRKBUILD} \
@@ -284,8 +291,14 @@ CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
 # dependencies, so we'd better use the target qmake always creates
 # first, named "first".
 ALL_TARGET =		first
+FAKE_TARGET =		install
 .if ${BUILD_PACKAGES:M-html}
-ALL_TARGET +=		docs
+ALL_TARGET +=		html_docs
+FAKE_TARGET +=		install_html_docs
+.endif
+.if ${BUILD_PACKAGES:M-qch}
+ALL_TARGET +=		qch_docs
+FAKE_TARGET +=		install_qch_docs
 .endif
 
 .if !${BUILD_PACKAGES:M-examples}
@@ -336,7 +349,7 @@ TEST_DEPENDS =		${MODPY_RUN_DEPENDS} \
 
 PATCHORIG =		.ports.orig
 
-SUBST_VARS =		VERSION
+SUBST_VARS =		VERSION ENGINIO_VERSION
 
 post-extract:
 .if ${FLAVOR:Mno_examples}

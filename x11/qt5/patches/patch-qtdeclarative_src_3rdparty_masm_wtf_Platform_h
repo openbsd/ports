@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtdeclarative_src_3rdparty_masm_wtf_Platform_h,v 1.1.1.1 2014/12/08 20:33:41 zhuk Exp $
+$OpenBSD: patch-qtdeclarative_src_3rdparty_masm_wtf_Platform_h,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Use system malloc(3).
---- qtdeclarative/src/3rdparty/masm/wtf/Platform.h.ports.orig	Tue Nov 11 00:27:12 2014
-+++ qtdeclarative/src/3rdparty/masm/wtf/Platform.h	Tue Nov 11 00:28:39 2014
-@@ -669,7 +669,7 @@
+--- qtdeclarative/src/3rdparty/masm/wtf/Platform.h.ports.orig	Tue Feb 17 07:57:29 2015
++++ qtdeclarative/src/3rdparty/masm/wtf/Platform.h	Wed Apr  8 00:38:30 2015
+@@ -670,7 +670,7 @@
  #if PLATFORM(QT)
  /* We must not customize the global operator new and delete for the Qt port. */
  #define ENABLE_GLOBAL_FASTMALLOC_NEW 0

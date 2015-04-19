@@ -1,11 +1,11 @@
-$OpenBSD: patch-qtwebkit_Source_JavaScriptCore_jit_ExecutableAllocator_h,v 1.1 2015/01/20 13:38:42 zhuk Exp $
+$OpenBSD: patch-qtwebkit_Source_JavaScriptCore_jit_ExecutableAllocator_h,v 1.2 2015/04/19 13:18:28 zhuk Exp $
 Taken from www/webkitgtk4 port, see also:
 https://bugs.webkit.org/show_bug.cgi?id=61137
---- qtwebkit/Source/JavaScriptCore/jit/ExecutableAllocator.h.ports.orig	Tue Jan  6 11:35:36 2015
-+++ qtwebkit/Source/JavaScriptCore/jit/ExecutableAllocator.h	Tue Jan  6 11:37:35 2015
+--- qtwebkit/Source/JavaScriptCore/jit/ExecutableAllocator.h.ports.orig	Tue Feb 17 07:57:12 2015
++++ qtwebkit/Source/JavaScriptCore/jit/ExecutableAllocator.h	Wed Apr  8 00:38:31 2015
 @@ -104,7 +104,8 @@ class DemandExecutableAllocator;
  #if ENABLE(EXECUTABLE_ALLOCATOR_FIXED)
- #if CPU(ARM)
+ #if CPU(ARM) || CPU(MIPS)
  static const size_t fixedExecutableMemoryPoolSize = 16 * 1024 * 1024;
 -#elif CPU(X86_64) && !CPU(X32)
 +#elif CPU(X86_64) && !CPU(X32) && !OS(OPENBSD)
