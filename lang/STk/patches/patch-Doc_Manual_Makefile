@@ -1,0 +1,13 @@
+$OpenBSD: patch-Doc_Manual_Makefile,v 1.1 2015/04/20 20:08:19 schwarze Exp $
+Install the custom macros to the right directory such that .so works.
+--- Doc/Manual/Makefile.orig	Fri Sep  3 22:21:32 1999
++++ Doc/Manual/Makefile	Mon Apr 20 14:07:05 2015
+@@ -53,7 +53,7 @@ install.man:
+ 	(cd $(stkdir) ; ln -s $(VERSION)/man ./man)
+ 	-if [ ! -d $(MAN1_DIR) ] ; then mkdir -p $(MAN1_DIR); fi
+ 	rm -f $(MAN1_DIR)/*.n $(MAN1_DIR)/stk.1 $(MAN1_DIR)/snow.1
+-	$(CP) STk-man.macros $(MAN1_DIR)
++	$(CP) STk-man.macros $(mandir)
+ 	$(CP) stk.1 $(MAN1_DIR)/stk.1
+ 	ln $(MAN1_DIR)/stk.1 $(MAN1_DIR)/snow.1
+ 	chmod 444 $(MAN1_DIR)/*

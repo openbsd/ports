@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/08/19 22:45:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/04/20 20:08:19 schwarze Exp $
 %%SHARED%%
 bin/snow
 bin/snow-${STK_VERSION}
@@ -486,8 +486,8 @@ lib/stk/${STK_VERSION}/STk/www-txt.stk
 lib/stk/${STK_VERSION}/STk/www-url.stk
 lib/stk/${STK_VERSION}/STk/www.stk
 @mandir lib/stk/${STK_VERSION}/man/
+lib/stk/${STK_VERSION}/man/STk-man.macros
 lib/stk/${STK_VERSION}/man/man1/
-lib/stk/${STK_VERSION}/man/man1/STk-man.macros
 @man lib/stk/${STK_VERSION}/man/man1/snow.1
 @man lib/stk/${STK_VERSION}/man/man1/stk.1
 lib/stk/${STK_VERSION}/man/mann/

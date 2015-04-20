@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/03/11 11:20:26 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2015/04/20 20:08:18 schwarze Exp $
 
 BROKEN-sparc64=	fails in mpn_dm_1.c, error: lvalue required in asm statement
 
@@ -6,7 +6,7 @@ COMMENT=	Scheme interpreter with Tk interface
 
 STK_VERSION=	4.0.1
 DISTNAME=	STk-${STK_VERSION}
-REVISION=	16
+REVISION=	17
 CATEGORIES=	lang
 
 HOMEPAGE=	http://kaolin.unice.fr/STk/
@@ -17,8 +17,6 @@ MASTER_SITES=	ftp://kaolin.unice.fr/pub/STk/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	ICE SM X11 c m pthread-stubs xcb
-
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 
