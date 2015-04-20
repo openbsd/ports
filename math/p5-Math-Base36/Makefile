@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/19 06:54:37 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2015/04/20 05:44:27 benoit Exp $
 
 COMMENT =		encoding and decoding of base36 strings
 
 MODULES =		cpan
-DISTNAME =		Math-Base36-0.13
+DISTNAME =		Math-Base36-0.14
 CATEGORIES =		math
 
 MAINTAINER =		Mikolaj Kucharski <mikolaj@kucharski.name>
