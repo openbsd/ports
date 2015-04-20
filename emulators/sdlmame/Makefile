@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2015/04/19 16:22:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.44 2015/04/20 15:38:25 sthen Exp $
 
 # Other archs have not been tested
-ONLY_FOR_ARCHS =	amd64 i386
+ONLY_FOR_ARCHS =	amd64
+
+# i386: src/emu/cpu/i386/pentops.inc: error: integer constant is too large for 'long' type
 
 MULTI_PACKAGES =	-main -tools
 
