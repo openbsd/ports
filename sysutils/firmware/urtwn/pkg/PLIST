@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/09 17:08:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/20 09:03:50 sthen Exp $
 @pkgpath sysutils/urtwn-firmware
 @ask-update utwrn-firmware-<1.1 Make sure you have a matching kernel
 firmware/urtwn-license
+firmware/urtwn-rtl8188eufw
 firmware/urtwn-rtl8192cfwT
 firmware/urtwn-rtl8192cfwU
 firmware/urtwn-rtl8723fw
