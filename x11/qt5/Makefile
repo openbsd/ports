@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2015/04/19 13:18:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.26 2015/04/20 19:32:38 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
+IGNORE-qch =		tries to run ${LOCALBASE}/qt5/bin/qhelpgenerator
 
 VERSION =		5.4.1
 ENGINIO_VERSION =	1.1.1
