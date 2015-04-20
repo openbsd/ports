@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2015/01/09 18:04:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2015/04/20 12:04:22 sthen Exp $
 
 COMMENT=		web-based front end for the nfdump netflow tools
 
 V=			1.3.7
+REVISION=		0
 DISTNAME=		nfsen-$V
 CATEGORIES=		net www
 HOMEPAGE=		http://nfsen.sourceforge.net/
