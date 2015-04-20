@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/04/20 20:20:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/04/20 20:29:09 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -191,6 +191,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/bond.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/bridge.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/fstab.rb

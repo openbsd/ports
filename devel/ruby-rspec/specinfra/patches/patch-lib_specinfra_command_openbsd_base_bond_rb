@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_specinfra_command_openbsd_base_bond_rb,v 1.1 2015/04/20 20:29:09 jasper Exp $
+--- lib/specinfra/command/openbsd/base/bond.rb.orig	Mon Apr 20 22:24:56 2015
++++ lib/specinfra/command/openbsd/base/bond.rb	Mon Apr 20 22:26:33 2015
+@@ -0,0 +1,11 @@
++class Specinfra::Command::Openbsd::Base::Bond < Specinfra::Command::Base::Bond
++  class << self
++    def check_exists(name)
++      "ifconfig #{name}"
++    end
++
++    def check_has_interface(name, interface)
++      "ifconfig #{name} | grep -o #{interface}"
++    end
++  end
++end
