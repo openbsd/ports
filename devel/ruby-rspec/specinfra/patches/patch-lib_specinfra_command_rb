@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_specinfra_command_rb,v 1.6 2015/04/20 20:20:37 jasper Exp $
+
+https://github.com/serverspec/specinfra/pull/370
+
+--- lib/specinfra/command.rb.orig	Mon Apr 20 22:07:36 2015
++++ lib/specinfra/command.rb	Mon Apr 20 22:07:44 2015
+@@ -194,6 +194,7 @@ require 'specinfra/command/openbsd'
+ require 'specinfra/command/openbsd/base'
+ require 'specinfra/command/openbsd/base/bridge'
+ require 'specinfra/command/openbsd/base/file'
++require 'specinfra/command/openbsd/base/fstab'
+ require 'specinfra/command/openbsd/base/interface'
+ require 'specinfra/command/openbsd/base/mail_alias'
+ require 'specinfra/command/openbsd/base/package'
