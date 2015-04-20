@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2014/10/31 13:43:59 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.17 2015/04/20 14:02:34 gonzalo Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
-DISTNAME =	haproxy-1.5.6
+DISTNAME =	haproxy-1.5.11
 CATEGORIES =	net www
-HOMEPAGE =	http://haproxy.1wt.eu/
+HOMEPAGE =	http://www.haproxy.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB =	c pcre pcreposix
+WANTLIB =	c crypto pcre pcreposix ssl
 
 MASTER_SITES =	${HOMEPAGE}/download/1.5/src/
 
@@ -21,7 +21,9 @@ SUBST_VARS =	HAPROXYCONF HAPROXYSTATE \
 		HAPROXYUID HAPROXYGID
 
 USE_GMAKE =	Yes
-MAKE_FLAGS +=	CC="${CC}" LD="${CC}"
+MAKE_FLAGS +=	CFLAGS="${CFLAGS} -fno-strict-aliasing" LDFLAGS="${LDFLAGS}"
+MAKE_FLAGS +=	CC="${CC}" LD="${CC}" TARGET="openbsd"
+MAKE_FLAGS +=	USE_OPENSSL=1 USE_PCRE=1
 
 NO_TEST =	Yes
 LIB_DEPENDS =	devel/pcre
