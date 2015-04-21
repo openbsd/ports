@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2015/03/16 18:07:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2015/04/21 18:53:16 sthen Exp $
 
 COMMENT =		flickr API library and utility
 
 DISTNAME =		flickcurl-1.25
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  	flickcurl   1.1      # 0.0
 CATEGORIES =		net
@@ -14,10 +14,11 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # LGPLv2.1/GPLv2/Apachev2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += c crypto curl>=10 idn>=16 lzma m pthread raptor2 ssl xml2>=9
+WANTLIB += xslt yajl z
+
 MODULES =		devel/gettext
 
-WANTLIB =		c crypto curl>=10 idn>=16 m raptor2 ssl \
-			xml2>=9 xslt yajl z
 
 MASTER_SITES =		http://download.dajobe.org/flickcurl/
 

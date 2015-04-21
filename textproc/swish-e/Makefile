@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/03/16 18:07:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2015/04/21 18:53:16 sthen Exp $
 
 COMMENT =		web/text search engine
 
 DISTNAME =		swish-e-2.4.7
-REVISION =		2
+REVISION =		3
 SHARED_LIBS =		swish-e	2.1
 CATEGORIES =		textproc www
 
@@ -15,8 +15,9 @@ MAINTAINER =		Michael Erdely <merdely@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += c lzma m pcre pcreposix pthread xml2 z
+
 MODULES =		converters/libiconv
-WANTLIB =		c m z pcre pcreposix xml2
 
 LIB_DEPENDS =		devel/pcre \
 			textproc/libxml

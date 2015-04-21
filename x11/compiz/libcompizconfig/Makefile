@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.1 2013/12/03 00:49:44 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2015/04/21 18:53:16 sthen Exp $
 
 COMMENT =	compiz configuration system library
 
 V =		0.8.8
 DISTNAME =	libcompizconfig-${V}
+REVISION =	0
 
 SHARED_LIBS =	compizconfig	0.0 # 0.0
 
 MASTER_SITES =	http://releases.compiz.org/${V}/
 
-WANTLIB =	X11 m stdc++ xcb xml2 z
+WANTLIB += X11 lzma m pthread stdc++ xcb xml2 z
 
 MODULES =	converters/libiconv \
 		textproc/intltool

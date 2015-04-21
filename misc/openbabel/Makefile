@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2015/04/21 18:53:15 sthen Exp $
 
 COMMENT=	chemistry file translation program
 
 V=		2.2.3
 DISTNAME=	openbabel-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	misc
 
 SUBST_VARS=	V
@@ -16,9 +16,10 @@ HOMEPAGE=	http://openbabel.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += c lzma m pthread stdc++ xml2 z
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openbabel/}
 
-WANTLIB=	c m stdc++ xml2 z
 
 MODULES=	converters/libiconv
 
