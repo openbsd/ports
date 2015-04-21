@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.22 2015/04/16 11:50:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2015/04/21 18:51:25 sthen Exp $
 
 COMMENT=	icecast source for streaming Ogg Vorbis
 
 DISTNAME=	ices-2.0.2
 CATEGORIES=	net audio
+REVISION=	0
 
 HOMEPAGE=	http://www.icecast.org/ices.php
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += c lzma m ogg pthread shout sndio speex theora vorbis
+WANTLIB += vorbisenc xml2 z
+
 MASTER_SITES=	http://downloads.xiph.org/releases/ices/
 
-WANTLIB += c m ogg pthread shout sndio speex theora vorbis vorbisenc
-WANTLIB += xml2 z
 
 MODULES=		converters/libiconv
 

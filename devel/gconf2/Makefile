@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2015/04/04 09:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2015/04/21 18:51:24 sthen Exp $
 
 COMMENT=	configuration database system for GNOME
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=	GConf
 GNOME_VERSION=	3.2.6
 PKGNAME=	gconf2-${GNOME_VERSION}
 
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS +=	gconf-2              6.2      # 5.5
 
@@ -18,9 +18,8 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c gio-2.0 glib-2.0 gmodule-2.0 ffi
-WANTLIB += gobject-2.0 gthread-2.0 pcre pthread z
-WANTLIB += m xml2 dbus-1 dbus-glib-1
+WANTLIB += c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 lzma m pcre pthread xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome

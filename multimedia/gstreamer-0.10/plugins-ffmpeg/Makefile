@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.35 2014/04/01 16:31:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2015/04/21 18:51:25 sthen Exp $
 
 COMMENT=		ffmpeg element for GStreamer
 
 V=			0.10.13
 DISTNAME=		gst-ffmpeg-${V}
 PKGNAME=		gstreamer-ffmpeg-${V}
-REVISION=		8
+REVISION=		9
 
 # sync with graphics/ffmpeg
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += bz2 ffi glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-0.10
-WANTLIB += gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10
-WANTLIB += gstvideo-0.10 gthread-2.0 m orc-0.4 pcre pthread xml2
-WANTLIB += z
+WANTLIB += gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10
+WANTLIB += gstreamer-0.10 gstvideo-0.10 gthread-2.0 lzma m orc-0.4 pcre
+WANTLIB += pthread xml2 z
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-ffmpeg/}
 

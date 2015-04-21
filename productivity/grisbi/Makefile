@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2015/04/04 09:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2015/04/21 18:51:26 sthen Exp $
 
 COMMENT=	personal accounting application
 SHARED_ONLY =	Yes
 
 DISTNAME=	grisbi-1.0.0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	productivity x11
 
@@ -17,16 +17,15 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grisbi/}
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 bz2 c cairo crypto dbus-1 dbus-glib-1 expat
+WANTLIB += ffi fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 goffice-0.8
+WANTLIB += graphite2 gsf-1 gthread-2.0 gtk-x11-2.0 harfbuzz lzma m ofx
+WANTLIB += osp pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
+WANTLIB += pthread pthread-stubs stdc++ xcb xcb-render xcb-shm xml2 z
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += m osp pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += pthread pthread-stubs stdc++ xcb z pcre crypto gdk_pixbuf-2.0
-WANTLIB += xml2 gdk-x11-2.0 gtk-x11-2.0 ofx gthread-2.0
-WANTLIB += xcb-render xcb-shm ffi graphite2 harfbuzz
-WANTLIB += bz2 dbus-1 dbus-glib-1 gconf-2 goffice-0.8 gsf-1
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grisbi/}
 
 
 MODULES=	devel/gettext \

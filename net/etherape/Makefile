@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2015/04/04 09:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2015/04/21 18:51:25 sthen Exp $
 
 COMMENT =		graphical network monitor
 
 DISTNAME =		etherape-0.9.13
 CATEGORIES =		net
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		http://etherape.sourceforge.net/
 
@@ -13,19 +13,17 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xcomposite
-WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 canberra
-WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c
-WANTLIB += cairo crypto dbus-1 dbus-glib-1 expat fontconfig freetype
-WANTLIB += gconf-2 gio-2.0 glib-2.0 gmodule-2.0 gnome-2
-WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
-WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcap pcre pixman-1 png popt pthread pthread-stubs ssl
-WANTLIB += util xcb xml2 z gnomeui-2 glade-2.0 gtk-x11-2.0
-WANTLIB += gailutil gdk-x11-2.0 gdk_pixbuf-2.0 xcb-shm
-WANTLIB += gcrypt gpg-error xcb-render ltdl ogg vorbis vorbisfile
-WANTLIB += ffi harfbuzz graphite2
+WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xcomposite Xcursor
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2
+WANTLIB += atk-1.0 bonobo-2 bonobo-activation bonoboui-2 c cairo
+WANTLIB += canberra crypto dbus-1 dbus-glib-1 expat ffi fontconfig
+WANTLIB += freetype gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 gnome-2 gnome-keyring
+WANTLIB += gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gpg-error
+WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz ltdl lzma m ogg
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcap pcre pixman-1 png
+WANTLIB += popt pthread pthread-stubs ssl util vorbis vorbisfile xcb
+WANTLIB += xcb-render xcb-shm xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=etherape/}
 

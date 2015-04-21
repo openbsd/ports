@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/04/17 12:55:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/04/21 18:51:24 sthen Exp $
 
 SHARED_ONLY=		Yes
 BROKEN-hppa=		no atomic ops in json-c
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 COMMENT=		high performance Cloud Storage client library
 
 VERSION=		1.1
-REVISION=		2
+REVISION=		3
 DISTNAME=		droplet-${VERSION}
 HOMEPAGE=		https://github.com/scality/Droplet
 
@@ -19,7 +19,7 @@ MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		crypto json-c m pthread ssl xml2 z
+WANTLIB += crypto json-c lzma m pthread ssl xml2 z
 
 MASTER_SITES=		http://www.sizeofvoid.org/pub/OpenBSD/distfiles/
 

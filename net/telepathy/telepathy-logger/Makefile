@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2015/04/04 09:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2015/04/21 18:51:26 sthen Exp $
 
 COMMENT=	flexible communications framework, logger component
 
 DISTNAME=	telepathy-logger-0.8.1
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  telepathy-logger     4.1      # 6.0
 
@@ -13,8 +13,7 @@ MASTER_SITES=	${MASTER_SITES_TP:=telepathy-logger/}
 EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB += c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 m pcre pthread sqlite3 telepathy-glib xml2
-WANTLIB += z
+WANTLIB += gobject-2.0 lzma m pcre pthread sqlite3 telepathy-glib xml2 z
 
 MODULES=	devel/dconf \
 		devel/gettext \

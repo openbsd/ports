@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2014/04/02 09:36:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/21 18:51:26 sthen Exp $
 
 COMMENT=		GObject library for Facebook Graph API
 
 GNOME_PROJECT=		gfbgraph
 GNOME_VERSION=		0.2.2
 PKGNAME=		lib${GNOME_PROJECT}-${GNOME_VERSION}
+REVISION=		0
 
 SHARED_LIBS +=  gfbgraph-0.2              0.0 # 0.0
 
@@ -14,8 +15,8 @@ CATEGORIES=		net
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0
-WANTLIB += gthread-2.0 json-glib-1.0 m pcre pthread rest-0.7 soup-2.4
-WANTLIB += soup-gnome-2.4 sqlite3 xml2 z
+WANTLIB += gthread-2.0 json-glib-1.0 lzma m pcre pthread rest-0.7
+WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome

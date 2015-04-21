@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.68 2015/04/04 09:21:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2015/04/21 18:51:26 sthen Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.6
 EPOCH=			0
-REVISION=		4
+REVISION=		5
 
 # Fedora patches as of 2013-08-04 04:26:11 (GMT)
 MASTER_SITES0=		http://pkgs.fedoraproject.org/cgit/planner.git/plain/
@@ -37,14 +37,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2
 WANTLIB += atk-1.0 bonobo-2 bonobo-activation bonoboui-2 c cairo
-WANTLIB += canberra crypto dbus-1 dbus-glib-1 expat exslt ffi
-WANTLIB += fontconfig freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 gnome-2 gnome-keyring
+WANTLIB += canberra crypto dbus-1 dbus-glib-1 expat exslt ffi fontconfig
+WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glade-2.0 glib-2.0 gmodule-2.0 gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gpg-error
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz ltdl m ogg
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png popt pthread pthread-stubs ssl util vorbis vorbisfile
-WANTLIB += xcb xcb-render xcb-shm xml2 xslt z
+WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz ltdl lzma m ogg
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt
+WANTLIB += pthread pthread-stubs ssl util vorbis vorbisfile xcb
+WANTLIB += xcb-render xcb-shm xml2 xslt z
 
 MODULES=		devel/gettext \
 			x11/gnome \
