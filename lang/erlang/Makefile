@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2015/04/18 13:35:27 schwarze Exp $
+# $OpenBSD: Makefile,v 1.61 2015/04/21 22:57:01 sthen Exp $
 
 COMMENT=	real-time, concurrent and distributed functional language
 BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
@@ -8,7 +8,7 @@ BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_in
 V=		R16B03-1
 DISTNAME=	otp_src_${V}
 PKGNAME=	erlang-16b.03
-REVISION=	0
+REVISION=	1
 EPOCH=		0
 CATEGORIES=	lang
 
