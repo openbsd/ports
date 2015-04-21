@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2015/04/19 16:20:26 bcallah Exp $
+# $OpenBSD: Makefile,v 1.37 2015/04/21 01:43:06 bcallah Exp $
 
 # Other archs have not been tested
-ONLY_FOR_ARCHS =	amd64 i386
+ONLY_FOR_ARCHS =	amd64
+
+# i386: src/emu/cpu/i386/pentops.inc: error: integer constant is too large for 'long' type
 
 COMMENT =		emulates game consoles and old home computers
 
