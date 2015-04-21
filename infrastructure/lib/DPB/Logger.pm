@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.14 2014/12/07 15:18:50 espie Exp $
+# $OpenBSD: Logger.pm,v 1.15 2015/04/21 09:53:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -26,8 +26,8 @@ use Fcntl;
 
 sub new
 {
-	my ($class, $logdir, $clean) = @_;
-	bless {logdir => $logdir, clean => $clean}, $class;
+	my ($class, $state) = @_;
+	bless {logdir => $state->logdir, clean => $state->opt('c')}, $class;
 }
 
 sub logfile

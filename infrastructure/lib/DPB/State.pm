@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.9 2015/03/14 20:45:11 espie Exp $
+# $OpenBSD: State.pm,v 1.10 2015/04/21 09:53:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -139,8 +139,9 @@ sub handle_options
 {
 	my $state = shift;
 	DPB::Config->parse_command_line($state);
-	$state->{logger} = DPB::Logger->new($state->logdir, $state->opt('c'));
-	$state->{locker} = DPB::Locks->new($state, $state->{lockdir});
+	# at this point, we should know all our ids!
+	$state->{logger} = DPB::Logger->new($state);
+	$state->{locker} = DPB::Locks->new($state);
 	DPB::Core::Init->init_cores($state);
 	DPB::Core->reap;
 	$state->sizer->parse_size_file;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.32 2015/04/21 09:23:57 espie Exp $
+# $OpenBSD: Config.pm,v 1.33 2015/04/21 09:53:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -75,6 +75,9 @@ sub parse_command_line
 	$state->{base_user} = DPB::Id->from_uid($<);
 	if (!defined $state->{base_user}) {
 		$state->usage("Can't figure out who I am");
+	}
+	if ($state->defines('BUILD_USER')) {
+		$state->{build_user} = DPB::Id->new($state->defines('BUILD_USER'));
 	}
 
 	my $p;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.27 2014/03/09 20:09:53 espie Exp $
+# $OpenBSD: Locks.pm,v 1.28 2015/04/21 09:53:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -26,8 +26,9 @@ require 'fcntl.ph';
 
 sub new
 {
-	my ($class, $state, $lockdir) = @_;
+	my ($class, $state) = @_;
 
+	my $lockdir = $state->{lockdir};
 	File::Path::make_path($lockdir);
 	my $o = bless {lockdir => $lockdir, 
 		dpb_pid => $$, 
