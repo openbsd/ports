@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/03/16 01:59:27 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/04/21 04:21:40 jsg Exp $
 bin/afl-clang
 bin/afl-clang++
 bin/afl-cmin
@@ -15,6 +15,7 @@ libexec/afl/
 libexec/afl/as
 share/afl/
 share/afl/testcases/
+share/afl/testcases/README.testcases
 share/afl/testcases/_extras/
 share/afl/testcases/_extras/gif/
 share/afl/testcases/_extras/gif/header_87a
@@ -624,7 +625,6 @@ share/afl/testcases/others/text/
 share/afl/testcases/others/text/hello_world.txt
 share/afl/testcases/others/xml/
 share/afl/testcases/others/xml/small_document.xml
-share/afl/testcases/testcases_readme.txt
 share/doc/afl/
 share/doc/afl/ChangeLog
 share/doc/afl/README
