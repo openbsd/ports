@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.31 2015/04/21 08:19:52 espie Exp $
+# $OpenBSD: Config.pm,v 1.32 2015/04/21 09:23:57 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -72,13 +72,11 @@ sub parse_command_line
 		}
 	}
     	$state->{chroot} = $state->opt('B');
-	if (my ($l, $p, $uid, $gid) = getpwuid $<) {
-		$state->{user} = $l;
-		$state->{uid} = $uid;
-		$state->{gid} = $gid;
-	} else {
+	$state->{base_user} = DPB::Id->from_uid($<);
+	if (!defined $state->{base_user}) {
 		$state->usage("Can't figure out who I am");
 	}
+
 	my $p;
 	($state->{ports}, $state->{portspath}, $state->{repo}, $state->{localarch},
 	    $state->{distdir}, $state->{localbase}, $state->{xenocara}, $p) =
@@ -229,10 +227,8 @@ sub command_line_overrides
 
 	my $override_prop = DPB::HostProperties->new;
 
-	for my $k (qw(user uid gid)) {
-		if (defined $state->{$k}) {
-			$override_prop->{$k} = $state->{$k};
-		}
+	if (defined $state->{base_user}) {
+		$override_prop->{base_user} = $state->{base_user};
 	}
 	if (!$state->{subst}->empty('HISTORY_ONLY')) {
 		$state->{want_fetchinfo} = 1;
@@ -347,6 +343,35 @@ sub parse_hosts_file
 		$prop->add_overrides($override);
 		DPB::Core::Init->new($host, $prop);
 	}
+}
+
+package DPB::Id;
+
+sub from_uid
+{
+	my ($class, $u) = @_;
+	if (my ($l, undef, $uid, $gid) = getpwuid $u) {
+		bless { user => $l, uid => $uid, gid => $gid }, $class;
+	} else {
+		return undef;
+	}
+}
+
+sub new
+{
+	my ($class, $u) = @_;
+	# XXX getpwnam for local access, distant access is different
+	if (my ($l, undef, $uid, $gid) = getpwnam $u) {
+		bless { user => $l, uid => $uid, gid => $gid }, $class;
+	} else {
+		bless { user => $u}, $class;
+	}
+}
+
+sub user
+{
+	my $self = shift;
+	return $self->{user};
 }
 
 1;

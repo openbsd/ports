@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.1 2014/12/25 15:14:14 espie Exp $
+# $OpenBSD: Shell.pm,v 1.2 2015/04/21 09:23:57 espie Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -143,8 +143,8 @@ sub exec
 		if (!$self->prop->{iamroot}) {
 			unshift(@cmd2, OpenBSD::Paths->sudo, "-E");
 		}
-		if (!$self->{sudo} && defined $self->prop->{chroot_user}) {
-			push(@cmd2, "-u", $self->prop->{chroot_user});
+		if (!$self->{sudo} && defined $self->prop->{build_user}) {
+			push(@cmd2, "-u", $self->prop->{build_user}->user);
 		}
 		$self->_run(@cmd2, $chroot, "/bin/sh", "-c", $self->quote($cmd));
 	} else {
