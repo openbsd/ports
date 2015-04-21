@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2014/01/01 20:46:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2015/04/21 18:13:09 sthen Exp $
 
 COMMENT=	fast-light window manager
 
 DISTNAME=	flwm-1.00
 PKGNAME=	flwm-1.0.0
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${HOMEPAGE}
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	x11/fltk
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		X11 Xext c m stdc++ fltk
+WANTLIB += X11 Xext c fltk m pthread stdc++
 
 NO_TEST=	Yes
 
