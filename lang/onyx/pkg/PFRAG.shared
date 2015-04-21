@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/03/07 19:26:28 jasper Exp $
-lib/libonyx.so
-@lib lib/libonyx.so.${LIBonyx_VERSION}
