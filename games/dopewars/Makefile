@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2015/03/15 10:05:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.62 2015/04/21 18:45:27 sthen Exp $
 
 COMMENT=	game where you deal drugs on the streets of NY
 
 DISTNAME=	dopewars-1.5.12
-REVISION=	11
+REVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dopewars/}
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://dopewars.sourceforge.net/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c glib-2.0 ncurses
+WANTLIB += c glib-2.0 ncurses pthread
 
 MODULES+=	devel/gettext
 
