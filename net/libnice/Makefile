@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.30 2015/01/29 07:02:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2015/04/21 06:22:52 ajacoutot Exp $
 
-SHARED_ONLY =	Yes
+SHARED_ONLY =		Yes
 
-COMMENT =	GLib ICE implementation
+COMMENT =		GLib ICE implementation
 
-DISTNAME =	libnice-0.1.10
+DISTNAME =		libnice-0.1.11
 
-SHARED_LIBS +=  nice                 2.3      # 15.1
+SHARED_LIBS +=  nice                 2.4      # 16.0
 
-CATEGORIES =	net
+CATEGORIES =		net
 
-HOMEPAGE =	http://nice.freedesktop.org/
+HOMEPAGE =		http://nice.freedesktop.org/
 
-MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1/MPLv1.1
 PERMIT_PACKAGE_CDROM =	Yes
