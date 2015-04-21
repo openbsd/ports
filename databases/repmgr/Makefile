@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2014/04/21 15:37:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/21 18:40:21 sthen Exp $
 
 COMMENT =	HA and replication cluster management for PostgreSQL
 
 DISTNAME =	repmgr-1.2.0
 CATEGORIES =	databases
 HOMEPAGE =	http://www.repmgr.org/
-REVISION=	0
+REVISION=	1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += c crypto m pq pthread readline ssl termcap xml2 z
 
 MASTER_SITES =	${HOMEPAGE}download/
 USE_GMAKE =	Yes
@@ -20,7 +22,6 @@ LIB_DEPENDS =	databases/postgresql
 RUN_DEPENDS =	net/rsync
 NO_TEST =	Yes
 
-WANTLIB += c crypto m pq readline ssl termcap xml2 z
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/repmgr

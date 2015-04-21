@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2015/04/21 18:40:20 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Python interface to XMMS
 
 DISTNAME=	pyxmms-1.06
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION =	7
+REVISION =	8
 CATEGORIES=	audio
 
 HOMEPAGE=	http://people.via.ecp.fr/~flo/2002/PyXMMS/doc/xmms.html
@@ -15,9 +15,11 @@ MASTER_SITES=	http://people.via.ecp.fr/~flo/2002/PyXMMS/dist/
 # GPL 
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += pthread xmms
+
 MODULES=	lang/python
 
-WANTLIB += xmms ${MODPY_WANTLIB}
 LIB_DEPENDS=	audio/xmms
 
 MODPY_DISTUTILS_BUILD=		build_ext

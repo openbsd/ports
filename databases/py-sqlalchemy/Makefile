@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2015/04/21 18:40:20 sthen Exp $
 
 COMMENT =		database toolkit for Python
 
 MODPY_EGG_VERSION =	0.7.1
 DISTNAME =		SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME =		py-sqlalchemy-${MODPY_EGG_VERSION:S/p/./}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		databases
 
@@ -16,18 +16,18 @@ MAINTAINER =		Will Maier <wcmaier@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += pthread
+
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sqlalchemy/}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-PKG_ARCH =		*
-
-WANTLIB+=		${MODPY_WANTLIB}
 
 MAKE_ENV +=		PYTHONPATH=.
 
 # Other DB connectors would work, too.
-TEST_DEPENDS =	databases/py-sqlite2 \
+TEST_DEPENDS =		databases/py-sqlite2 \
 			devel/py-nose
 
 post-install:

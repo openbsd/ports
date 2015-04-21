@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2015/04/02 14:21:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2015/04/21 18:40:20 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		PostgreSQL database adapter for Python
 
 MODPY_EGG_VERSION =	2.5.2
-REVISION = 0
+REVISION = 1
 DISTNAME =		psycopg2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		databases
@@ -17,11 +17,13 @@ MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += pq pthread
+
 MODPY_PI =	Yes
 
 MODULES =	lang/python
 LIB_DEPENDS =	databases/postgresql
-WANTLIB +=	pq ${MODPY_WANTLIB}
 RUN_DEPENDS =	databases/postgresql
 TEST_DEPENDS = ${RUN_DEPENDS}
 
