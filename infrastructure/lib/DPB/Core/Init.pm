@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.17 2014/10/11 09:03:18 espie Exp $
+# $OpenBSD: Init.pm,v 1.18 2015/04/21 13:00:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -73,10 +73,9 @@ use DPB::Signature;
 
 sub new
 {
-	my ($class, $logger, $xenocara) = @_;
+	my ($class, $logger) = @_;
 	my $o = $class->SUPER::new('init');
 	$o->{logger} = $logger;
-	DPB::Signature->add_tasks($xenocara, $o);
 	return $o;
 }
 
@@ -183,11 +182,12 @@ sub init_cores
 		$state->fatal("configuration error: no job runner");
 	}
 	for my $core (values %$init) {
-		my $job = DPB::Job::Init->new($logger, $state->{xenocara});
+		my $job = DPB::Job::Init->new($logger);
 		$job->add_tasks(DPB::Task::WhoAmI->new);
 		if (!defined $core->prop->{jobs}) {
 			$job->add_tasks(DPB::Task::Ncpu->new);
 		}
+		DPB::Signature->add_tasks($state->{xenocara}, $job);
 		if (defined $startup) {
 			my @args = split(/\s+/, $startup);
 			$job->add_tasks(DPB::Task::Fork->new(
