@@ -1,2 +1,0 @@
-ntop is a tool that shows the network usage, similar to what the popular top
-Unix command does. ntop is based on libpcap.

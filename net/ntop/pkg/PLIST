@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/01/23 17:21:26 espie Exp $
-@man man/man8/ntop.8
-@mode 0700
-@owner root
-@bin sbin/ntop
