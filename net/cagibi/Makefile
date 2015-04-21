@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/04 09:30:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/21 18:24:23 sthen Exp $
 
 CATEGORIES =	net
 COMMENT =	SSDP cache/proxy daemon for KDE
 HOMEPAGE =	https://projects.kde.org/projects/kdesupport/cagibi
 DISTNAME =	cagibi-0.2.0
-REVISION =	1
+REVISION =	2
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/cagibi/}
 EXTRACT_SUFX =	.tar.bz2
@@ -12,8 +12,8 @@ EXTRACT_SUFX =	.tar.bz2
 # GPLv2+ and LGPLv2.1+
 PERMIT_PACKAGE_CDROM =          Yes
 
-WANTLIB =	c m stdc++
-WANTLIB +=	lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml
+WANTLIB += c lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml m pthread
+WANTLIB += stdc++
 
 MODULES =	x11/kde4
 MODKDE4_USE =

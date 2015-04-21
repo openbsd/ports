@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2015/03/16 18:07:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2015/04/21 18:24:22 sthen Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -8,7 +8,7 @@ COMMENT =	high-level language for numerical computations
 
 VERSION =	3.0.5
 DISTNAME =	octave-${VERSION}
-REVISION =	16
+REVISION =	17
 CATEGORIES =	math
 
 SHARED_LIBS =	cruft		5.0 \
@@ -22,8 +22,9 @@ MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 # GPL v3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB=	c m ncurses readline stdc++ z ${MODFORTRAN_WANTLIB} \
-		fftw3>=3 lapack>=3 blas>=1 amd umfpack pcre>=1 curl>=6
+WANTLIB += ${MODFORTRAN_WANTLIB}
+WANTLIB += amd blas>=1 c curl>=6 fftw3>=3 lapack>=3 m ncurses pcre>=1
+WANTLIB += pthread readline stdc++ umfpack z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
 

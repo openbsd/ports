@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/09/16 19:56:10 miod Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/21 18:24:22 sthen Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -9,7 +9,7 @@ VERSION=	1.10.0
 DISTNAME=	pycairo-${VERSION}
 PKGNAME=	py3-cairo-${VERSION}
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	graphics
 
@@ -18,13 +18,14 @@ HOMEPAGE=	http://cairographics.org/pycairo/
 # LGPLv2.1 / MPL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm cairo
+WANTLIB += drm expat fontconfig freetype glib-2.0 gobject-2.0 m pcre
+WANTLIB += pixman-1 png pthread pthread-stubs util xcb xcb-render
+WANTLIB += xcb-shm z
+
 MASTER_SITES=	http://cairographics.org/releases/
 
-WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
-WANTLIB += cairo drm expat fontconfig freetype glib-2.0 gobject-2.0
-WANTLIB += m pcre pixman-1 png pthread-stubs util xcb xcb-render
-WANTLIB += xcb-shm z
 
 MODULES=	lang/python \
 		devel/gettext
