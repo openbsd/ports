@@ -1,15 +1,15 @@
-$OpenBSD: patch-setup_py,v 1.7 2012/09/04 15:47:38 ajacoutot Exp $
---- setup.py.orig	Wed Jan 25 15:01:19 2012
-+++ setup.py	Tue Sep  4 17:45:44 2012
-@@ -25,8 +25,8 @@ setup(name = "pymetar", version = pymetar.__version__,
-       url = "http://www.schwarzvogel.de/software-pymetar.shtml",
-       packages= [ "" ],
+$OpenBSD: patch-setup_py,v 1.8 2015/04/21 07:29:30 benoit Exp $
+--- setup.py.orig	Mon Apr 20 10:17:26 2015
++++ setup.py	Tue Apr 21 09:10:31 2015
+@@ -25,8 +25,8 @@
+       url="http://www.schwarzvogel.de/software-pymetar.shtml",
+       packages=[""],
        py_modules=["pymetar"],
--      scripts = [ "bin/pymetar" ], 
--      data_files = [("share/doc/pymetar-%s"%pymetar.__version__,
-+      scripts = [ "bin/pymet" ], 
-+      data_files = [("share/doc/py-metar",
-        ['README', 'COPYING', 'THANKS', 'librarydoc.txt']),
--       ("share/man/man1", ['pymetar.1'])]
-+       ("man/man1", ['pymetar.1'])]
+-      scripts=["bin/pymetar"],
+-      data_files=[("share/doc/pymetar-%s" % pymetar.__version__,
++      scripts=["bin/pymet"],
++      data_files=[("share/doc/py-metar",
+                    ['README', 'COPYING', 'THANKS', 'librarydoc.txt']),
+-                  ("share/man/man1", ['pymetar.1'])]
++                  ("man/man1", ['pymetar.1'])]
        )
