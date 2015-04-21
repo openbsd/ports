@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/07/12 12:36:10 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/04/21 02:38:50 afresh1 Exp $
 bin/sqlt
 bin/sqlt-diagram
 bin/sqlt-diff
@@ -14,6 +14,7 @@ ${P5SITE}/SQL/Translator/Filter/Globals.pm
 ${P5SITE}/SQL/Translator/Filter/Names.pm
 ${P5SITE}/SQL/Translator/Generator/
 ${P5SITE}/SQL/Translator/Generator/DDL/
+${P5SITE}/SQL/Translator/Generator/DDL/MySQL.pm
 ${P5SITE}/SQL/Translator/Generator/DDL/PostgreSQL.pm
 ${P5SITE}/SQL/Translator/Generator/DDL/SQLServer.pm
 ${P5SITE}/SQL/Translator/Generator/DDL/SQLite.pm
@@ -127,6 +128,7 @@ ${P5SITE}/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent/DDL
 @man man/man3p/SQL::Translator::Filter::DefaultExtra.3p
 @man man/man3p/SQL::Translator::Filter::Globals.3p
 @man man/man3p/SQL::Translator::Filter::Names.3p
+@man man/man3p/SQL::Translator::Generator::DDL::MySQL.3p
 @man man/man3p/SQL::Translator::Generator::DDL::PostgreSQL.3p
 @man man/man3p/SQL::Translator::Generator::DDL::SQLServer.3p
 @man man/man3p/SQL::Translator::Generator::DDL::SQLite.3p

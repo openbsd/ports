@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2014/07/12 12:36:09 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/21 02:38:50 afresh1 Exp $
 
-COMMENT =	database schema manipulation
+COMMENT =	SQL DDL transformations and more
 
-DISTNAME =	SQL-Translator-0.11018
-CATEGORIES =	databases devel
-MODULES =	cpan
+DISTNAME =	SQL-Translator-0.11021
+CATEGORIES =	databases
+MODULES =	cpan databases/postgresql
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://sqlfairy.sourceforge.net/
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-CONFIGURE_ARGS =        --skipdeps
+CONFIGURE_ARGS =	--skipdeps
 
 RUN_DEPENDS =	databases/p5-DBI>=1.54 \
 		devel/p5-Carp-Clan>=0 \
@@ -35,8 +35,16 @@ TEST_DEPENDS += graphics/p5-GD \
 		misc/p5-Spreadsheet-ParseExcel \
 		textproc/p5-Template \
 		textproc/p5-Text-RecordParser \
-		textproc/p5-XML-LibXML 
+		textproc/p5-XML-LibXML \
+		databases/p5-DBD-Pg \
+		databases/p5-DBD-SQLite
+
+MODPOSTGRESQL_TEST_DBNAME =	sql-translator-test
+MAKE_ENV +=	DBICTEST_PG_DSN='dbi:Pg:dbname=${MODPOSTGRESQL_TEST_DBNAME}' \
+		DBICTEST_PG_USER=${USER} \
+		DBICTEST_PG_PASS=1
 
 # If someone ports p5-Graph-Directed, that will enable more tests
+# Tests require CGI and CGI::Utils
 
 .include <bsd.port.mk>
