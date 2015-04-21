@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/13 15:19:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/21 02:34:36 afresh1 Exp $
+${P5SITE}/Spiffy/
 ${P5SITE}/Spiffy.pm
+${P5SITE}/Spiffy.pod
+${P5SITE}/Spiffy/mixin.pm
 @man man/man3p/Spiffy.3p
