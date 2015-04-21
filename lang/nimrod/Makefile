@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/05/08 01:05:50 jturner Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/21 15:22:35 jturner Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -6,6 +6,7 @@ COMMENT =		statically typed, imperative programming language
 
 VERSION =		0.9.4
 DISTNAME =		nimrod-${VERSION}
+REVISION =		0
 
 DISTFILES =		${DISTNAME}{v${VERSION}}.tar.gz \
 			nimrod-c-${VERSION}{v${VERSION}}.tar.gz:0
@@ -23,7 +24,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m
 
-WRKDIST =		${WRKDIR}/Nimrod-${VERSION}
+WRKDIST =		${WRKDIR}/Nim-${VERSION}
 NO_TEST =		Yes
 
 post-extract:
