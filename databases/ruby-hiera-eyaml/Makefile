@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/03/19 21:15:19 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/21 06:39:31 sebastia Exp $
 
 COMMENT =	Hiera backend for decrypting encrypted yaml properties
 
-DISTNAME =	hiera-eyaml-2.0.7
+DISTNAME =	hiera-eyaml-2.0.8
 CATEGORIES =	databases
 
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
