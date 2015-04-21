@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/05 13:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/04/21 02:07:38 bcallah Exp $
 
-V =		4.1.15
+V =		4.1.16
 COMMENT =	query for a selection and print to stdout (select operation)
 DISTNAME =	slop-${V}
 CATEGORIES =	graphics x11
