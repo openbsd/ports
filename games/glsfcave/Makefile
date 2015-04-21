@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/21 18:33:49 sthen Exp $
 
 COMMENT=	control a ribbon to avoid hitting walls
 
 V=		1.0
 DISTNAME= 	glsfcave-$V-mitl
 PKGNAME=	glsfcave-$V
-REVISION =	2
+REVISION =	3
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
 
@@ -17,7 +17,7 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	GL GLU X11 Xext Xi Xmu c m pthread-stubs xcb glut>=4
+WANTLIB += GL GLU X11 Xext Xi Xmu c glut>=4 m pthread pthread-stubs xcb
 
 LIB_DEPENDS=	graphics/freeglut
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/04/21 11:35:53 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2015/04/21 18:33:49 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	python interface to libusb
 
 MODPY_EGG_VERSION=	0.4.3
 DISTNAME=	pyusb-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -14,7 +15,8 @@ HOMEPAGE=	http://walac.github.io/pyusb/
 # BSD 3-clause
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =	pthread usb ${MODPY_WANTLIB}
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += pthread usb
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyusb/}
 
