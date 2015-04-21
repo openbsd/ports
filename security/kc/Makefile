@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2015/04/05 13:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/04/21 18:19:27 sthen Exp $
 
 COMMENT =	console based password storing application
 
 GH_ACCOUNT =	levaidaniel
 GH_PROJECT =	kc
 GH_TAGNAME =	2.3.2
-REVISION =	0
+REVISION =	1
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 
 CATEGORIES =	security
@@ -17,7 +17,7 @@ MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
 # BSD
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB =	c crypto edit ncursesw xml2 pcre
+WANTLIB += c crypto edit ncursesw pcre pthread xml2
 
 LIB_DEPENDS =	textproc/libxml \
 		devel/pcre

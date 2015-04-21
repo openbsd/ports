@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2014/06/14 23:26:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/04/21 18:19:27 sthen Exp $
 
 COMMENT=	apache HTTP server request library
 SHARED_ONLY=	Yes
 
 DISTNAME=	libapreq2-2.08
 PKGNAME=	p5-${DISTNAME}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	www
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/J/JO/JOESUF/}
@@ -16,8 +16,8 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Artistic + GPL
 PERMIT_PACKAGE_CDROM=  Yes
-WANTLIB=	apr-1 aprutil-1 db expat
 
+WANTLIB += apr-1 aprutil-1 db expat pthread
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-perl-glue \

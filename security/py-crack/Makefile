@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/04/21 18:19:27 sthen Exp $
 
 COMMENT =		Python bindings for cracklib
 
 MODPY_EGG_VERSION =	0.5.1
 DISTNAME =		python-crack-${MODPY_EGG_VERSION}
 PKGNAME =		py-crack-${MODPY_EGG_VERSION}
-REVISION=		3
+REVISION=		4
 CATEGORIES =   		security devel
 
 HOMEPAGE =		http://www.nongnu.org/python-crack/
@@ -15,11 +15,13 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # MIT/X Consortium License
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += crack pthread
+
 MASTER_SITES =		http://download.savannah.gnu.org/releases/python-crack/
 
 MODULES =		lang/python
 LIB_DEPENDS =		security/cracklib
-WANTLIB =		crack ${MODPY_WANTLIB}
 
 MAKE_FLAGS =		CC="${CC}" \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

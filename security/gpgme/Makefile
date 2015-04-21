@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2015/01/20 20:43:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2015/04/21 18:19:27 sthen Exp $
 
 COMMENT=		GnuPG Made Easy
 
 DISTNAME=		gpgme-1.5.1
-REVISION=		0
+REVISION=		1
 CATEGORIES=		security devel
 
 SHARED_LIBS +=  gpgme                19.0     # 24.0
@@ -14,7 +14,7 @@ HOMEPAGE=		http://www.gnupg.org/gpgme.html
 # GPLv2 - LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += assuan gpg-error
+WANTLIB += assuan gpg-error pthread
 
 MASTER_SITES=		${MASTER_SITES_GNUPG:=gpgme/}
 EXTRACT_SUFX=		.tar.bz2

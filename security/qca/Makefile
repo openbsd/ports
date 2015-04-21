@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2015/03/16 18:07:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2015/04/21 18:19:27 sthen Exp $
 
 COMMENT=	Qt Cryptographic Architecture
 
 DISTNAME=	qca-1.0
-REVISION=	7
+REVISION=	8
 CATEGORIES=	security
 SHARED_LIBS=	qca	2.0
 
@@ -14,11 +14,12 @@ MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += m pthread stdc++
+
 MASTER_SITES=		http://delta.affinix.com/download/qca/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		x11/qt3
-WANTLIB=		m stdc++
 
 NO_TEST=		Yes
 USE_GMAKE=		Yes
