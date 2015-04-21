@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/03/09 22:22:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/04/21 13:37:31 ajacoutot Exp $
 @bin bin/secret-tool
 include/libsecret-1/
 include/libsecret-1/libsecret/
@@ -20,7 +20,6 @@ lib/girepository-1.0/Secret-1.typelib
 lib/libsecret-1.a
 lib/libsecret-1.la
 @lib lib/libsecret-1.so.${LIBsecret-1_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libsecret-1.pc
 lib/pkgconfig/libsecret-unstable.pc
 @man man/man1/secret-tool.1
@@ -86,8 +85,10 @@ share/gtk-doc/html/libsecret-1/vala-lookup-example.html
 share/gtk-doc/html/libsecret-1/vala-remove-example.html
 share/gtk-doc/html/libsecret-1/vala-store-example.html
 share/locale/an/LC_MESSAGES/libsecret.mo
+share/locale/ar/LC_MESSAGES/libsecret.mo
 share/locale/as/LC_MESSAGES/libsecret.mo
 share/locale/be/LC_MESSAGES/libsecret.mo
+share/locale/bs/LC_MESSAGES/libsecret.mo
 share/locale/ca/LC_MESSAGES/libsecret.mo
 share/locale/ca@valencia/LC_MESSAGES/libsecret.mo
 share/locale/cs/LC_MESSAGES/libsecret.mo
@@ -96,7 +97,10 @@ share/locale/de/LC_MESSAGES/libsecret.mo
 share/locale/el/LC_MESSAGES/libsecret.mo
 share/locale/eo/LC_MESSAGES/libsecret.mo
 share/locale/es/LC_MESSAGES/libsecret.mo
+share/locale/eu/LC_MESSAGES/libsecret.mo
 share/locale/fr/LC_MESSAGES/libsecret.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/libsecret.mo
 share/locale/gl/LC_MESSAGES/libsecret.mo
 share/locale/he/LC_MESSAGES/libsecret.mo
@@ -104,6 +108,7 @@ share/locale/hu/LC_MESSAGES/libsecret.mo
 share/locale/id/LC_MESSAGES/libsecret.mo
 share/locale/it/LC_MESSAGES/libsecret.mo
 share/locale/ja/LC_MESSAGES/libsecret.mo
+share/locale/kk/LC_MESSAGES/libsecret.mo
 share/locale/ko/LC_MESSAGES/libsecret.mo
 share/locale/lt/LC_MESSAGES/libsecret.mo
 share/locale/lv/LC_MESSAGES/libsecret.mo
@@ -119,7 +124,9 @@ share/locale/sk/LC_MESSAGES/libsecret.mo
 share/locale/sl/LC_MESSAGES/libsecret.mo
 share/locale/sr/LC_MESSAGES/libsecret.mo
 share/locale/sr@latin/LC_MESSAGES/libsecret.mo
+share/locale/sv/LC_MESSAGES/libsecret.mo
 share/locale/tg/LC_MESSAGES/libsecret.mo
+share/locale/tr/LC_MESSAGES/libsecret.mo
 share/locale/uk/LC_MESSAGES/libsecret.mo
 share/locale/zh_CN/LC_MESSAGES/libsecret.mo
 share/locale/zh_HK/LC_MESSAGES/libsecret.mo
