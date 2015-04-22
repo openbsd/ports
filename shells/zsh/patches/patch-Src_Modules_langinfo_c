@@ -1,4 +1,8 @@
-$OpenBSD: patch-Src_Modules_langinfo_c,v 1.1 2015/04/22 11:52:40 jca Exp $
+$OpenBSD: patch-Src_Modules_langinfo_c,v 1.2 2015/04/22 12:00:47 jca Exp $
+
+Fixed upstream:
+  http://sourceforge.net/p/zsh/code/ci/b4aa9cdc7641c6c923c1bda1c73111d80be79ba1/
+
 --- Src/Modules/langinfo.c.orig	Sat Mar 28 11:55:39 2015
 +++ Src/Modules/langinfo.c	Sat Mar 28 11:56:37 2015
 @@ -395,7 +395,8 @@ liitem(const char *name)
