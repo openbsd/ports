@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1326 2015/04/18 12:42:45 schwarze Exp $
+# $OpenBSD: Makefile,v 1.1327 2015/04/22 11:43:01 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -385,7 +385,6 @@
      SUBDIR += libspectrum
      SUBDIR += libtalloc
      SUBDIR += libtool
-     SUBDIR += libunicode
      SUBDIR += libunique
      SUBDIR += libunique3
      SUBDIR += liburcu

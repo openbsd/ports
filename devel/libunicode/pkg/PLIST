@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:43 naddy Exp $
-bin/unicode-config
-include/unicode.h
-lib/libunicode.a
-lib/libunicode.la
-@lib lib/libunicode.so.${LIBunicode_VERSION}
