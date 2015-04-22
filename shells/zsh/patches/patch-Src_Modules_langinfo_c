@@ -1,0 +1,13 @@
+$OpenBSD: patch-Src_Modules_langinfo_c,v 1.1 2015/04/22 11:52:40 jca Exp $
+--- Src/Modules/langinfo.c.orig	Sat Mar 28 11:55:39 2015
++++ Src/Modules/langinfo.c	Sat Mar 28 11:56:37 2015
+@@ -395,7 +395,8 @@ liitem(const char *name)
+ static HashNode
+ getlanginfo(UNUSED(HashTable ht), const char *name)
+ {
+-    int len, *elem;
++    nl_item *elem;
++    int len;
+     char *listr, *nameu;
+     Param pm = NULL;
+ 

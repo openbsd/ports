@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2014/04/20 21:26:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.40 2015/04/22 11:52:40 jca Exp $
 @pkgpath shells/zsh,-main
 @shell bin/zsh
 %%SHARED%%
@@ -59,7 +59,7 @@ share/zsh/${V}/functions/VCS_INFO_quilt
 share/zsh/${V}/functions/VCS_INFO_realpath
 share/zsh/${V}/functions/VCS_INFO_reposub
 share/zsh/${V}/functions/VCS_INFO_set
-share/zsh/${V}/functions/_SuSEconfig
+share/zsh/${V}/functions/_SUSEconfig
 share/zsh/${V}/functions/_a2ps
 share/zsh/${V}/functions/_a2utils
 share/zsh/${V}/functions/_aap
@@ -93,6 +93,7 @@ share/zsh/${V}/functions/_arrays
 share/zsh/${V}/functions/_assign
 share/zsh/${V}/functions/_at
 share/zsh/${V}/functions/_attr
+share/zsh/${V}/functions/_augeas
 share/zsh/${V}/functions/_auto-apt
 share/zsh/${V}/functions/_autocd
 share/zsh/${V}/functions/_awk
@@ -106,6 +107,7 @@ share/zsh/${V}/functions/_bindkey
 share/zsh/${V}/functions/_bison
 share/zsh/${V}/functions/_bittorrent
 share/zsh/${V}/functions/_bogofilter
+share/zsh/${V}/functions/_bpython
 share/zsh/${V}/functions/_brace_parameter
 share/zsh/${V}/functions/_brctl
 share/zsh/${V}/functions/_bsd_pkg
@@ -134,6 +136,7 @@ share/zsh/${V}/functions/_chkconfig
 share/zsh/${V}/functions/_chmod
 share/zsh/${V}/functions/_chown
 share/zsh/${V}/functions/_chrt
+share/zsh/${V}/functions/_chsh
 share/zsh/${V}/functions/_clay
 share/zsh/${V}/functions/_combination
 share/zsh/${V}/functions/_comm
@@ -207,6 +210,7 @@ share/zsh/${V}/functions/_django
 share/zsh/${V}/functions/_dladm
 share/zsh/${V}/functions/_dlocate
 share/zsh/${V}/functions/_dmidecode
+share/zsh/${V}/functions/_docker
 share/zsh/${V}/functions/_domains
 share/zsh/${V}/functions/_dpatch-edit-patch
 share/zsh/${V}/functions/_dpkg
@@ -215,6 +219,7 @@ share/zsh/${V}/functions/_dpkg-cross
 share/zsh/${V}/functions/_dpkg-repack
 share/zsh/${V}/functions/_dpkg_source
 share/zsh/${V}/functions/_dput
+share/zsh/${V}/functions/_dsh
 share/zsh/${V}/functions/_dtrace
 share/zsh/${V}/functions/_du
 share/zsh/${V}/functions/_dumpadm
@@ -239,6 +244,7 @@ share/zsh/${V}/functions/_ethtool
 share/zsh/${V}/functions/_expand
 share/zsh/${V}/functions/_expand_alias
 share/zsh/${V}/functions/_expand_word
+share/zsh/${V}/functions/_extensions
 share/zsh/${V}/functions/_fakeroot
 share/zsh/${V}/functions/_fc
 share/zsh/${V}/functions/_feh
@@ -411,6 +417,7 @@ share/zsh/${V}/functions/_module_math_func
 share/zsh/${V}/functions/_modutils
 share/zsh/${V}/functions/_mondo
 share/zsh/${V}/functions/_monotone
+share/zsh/${V}/functions/_moosic
 share/zsh/${V}/functions/_mosh
 share/zsh/${V}/functions/_most_recent_file
 share/zsh/${V}/functions/_mount
@@ -446,6 +453,7 @@ share/zsh/${V}/functions/_notmuch
 share/zsh/${V}/functions/_npm
 share/zsh/${V}/functions/_nslookup
 share/zsh/${V}/functions/_object_classes
+share/zsh/${V}/functions/_od
 share/zsh/${V}/functions/_okular
 share/zsh/${V}/functions/_oldlist
 share/zsh/${V}/functions/_open
@@ -558,6 +566,7 @@ share/zsh/${V}/functions/_schroot
 share/zsh/${V}/functions/_screen
 share/zsh/${V}/functions/_sed
 share/zsh/${V}/functions/_sep_parts
+share/zsh/${V}/functions/_sequence
 share/zsh/${V}/functions/_service
 share/zsh/${V}/functions/_services
 share/zsh/${V}/functions/_set
@@ -581,6 +590,7 @@ share/zsh/${V}/functions/_source
 share/zsh/${V}/functions/_spamassassin
 share/zsh/${V}/functions/_sqlite
 share/zsh/${V}/functions/_sqsh
+share/zsh/${V}/functions/_ss
 share/zsh/${V}/functions/_ssh
 share/zsh/${V}/functions/_sshfs
 share/zsh/${V}/functions/_stat
@@ -603,6 +613,8 @@ share/zsh/${V}/functions/_svcs
 share/zsh/${V}/functions/_svcs_fmri
 share/zsh/${V}/functions/_svn-buildpackage
 share/zsh/${V}/functions/_sysctl
+share/zsh/${V}/functions/_sysstat
+share/zsh/${V}/functions/_system_profiler
 share/zsh/${V}/functions/_systemd
 share/zsh/${V}/functions/_tags
 share/zsh/${V}/functions/_tar
@@ -648,7 +660,6 @@ share/zsh/${V}/functions/_unhash
 share/zsh/${V}/functions/_uniq
 share/zsh/${V}/functions/_unison
 share/zsh/${V}/functions/_units
-share/zsh/${V}/functions/_unsetopt
 share/zsh/${V}/functions/_update-alternatives
 share/zsh/${V}/functions/_update-rc.d
 share/zsh/${V}/functions/_urls
@@ -795,6 +806,7 @@ share/zsh/${V}/functions/delete-whole-word-match
 share/zsh/${V}/functions/down-case-word-match
 share/zsh/${V}/functions/down-line-or-beginning-search
 share/zsh/${V}/functions/edit-command-line
+share/zsh/${V}/functions/expand-absolute-path
 share/zsh/${V}/functions/forward-word-match
 share/zsh/${V}/functions/getjobs
 share/zsh/${V}/functions/harden
@@ -843,6 +855,7 @@ share/zsh/${V}/functions/quote-and-complete-word
 share/zsh/${V}/functions/read-from-minibuffer
 share/zsh/${V}/functions/regexp-replace
 share/zsh/${V}/functions/relative
+share/zsh/${V}/functions/replace-argument
 share/zsh/${V}/functions/replace-string
 share/zsh/${V}/functions/replace-string-again
 share/zsh/${V}/functions/run-help
@@ -892,6 +905,7 @@ share/zsh/${V}/functions/which-command
 share/zsh/${V}/functions/xtermctl
 share/zsh/${V}/functions/zargs
 share/zsh/${V}/functions/zcalc
+share/zsh/${V}/functions/zcalc-auto-insert
 share/zsh/${V}/functions/zed
 share/zsh/${V}/functions/zed-set-file-name
 share/zsh/${V}/functions/zfanon
