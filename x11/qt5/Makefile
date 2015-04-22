@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.27 2015/04/22 12:29:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.28 2015/04/22 14:12:03 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
-IGNORE-qch =		tries to run ${LOCALBASE}/qt5/bin/qhelpgenerator
 
 VERSION =		5.4.1
 ENGINIO_VERSION =	1.1.1
@@ -362,13 +361,18 @@ post-extract:
 .endif
 
 post-configure:
-	# Fake qdoc configuration to make sure no Makefile will
-	# try to use /usr/local/lib/qt5/bin/qdoc instead of
-	# ${WRKBUILD}/qtbase/bin/qdoc.
+	# Fake configuration to make sure no Makefile will
+	# try to use /usr/local/lib/qt5/bin/qdoc or
+	# /usr/local/lib/qt5/bin/qhelpgenerator instead of
+	# ${WRKBUILD}/qtbase/bin/* ones.
 	mkdir -p ${WRKBUILD}/qtbase/mkspecs/modules
 	(   echo "QT_TOOL.qdoc.binary  = ${WRKBUILD}/qtbase/bin/qdoc"; \
 	    echo "QT_TOOL.qdoc.depends = core xml") \
 	    >>${WRKBUILD}/qtbase/mkspecs/modules/qt_tool_qdoc.pri
+	mkdir -p ${WRKBUILD}/qtbase/mkspecs/modules
+	(   echo "QT_TOOL.qhelpgenerator.binary  = ${WRKBUILD}/qttools/bin/qhelpgenerator"; \
+	    echo "QT_TOOL.qhelpgenerator.depends = core gui network help_private") \
+	    >>${WRKBUILD}/qtbase/mkspecs/modules/qt_tool_qhelpgenerator.pri
 
 post-install:
 	# programs
