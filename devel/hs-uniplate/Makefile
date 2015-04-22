@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2014/12/14 11:36:10 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2015/04/22 20:24:11 sthen Exp $
+
+BROKEN-i386=	duplicate definition for symbol __i686.get_pc_thunk.bx
 
 COMMENT=	help writing simple, concise and fast operations
 

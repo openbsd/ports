@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2014/11/22 20:52:12 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2015/04/22 20:24:11 sthen Exp $
 
-# BROKEN-i386 =		duplicate definition for symbol __i686.get_pc_thunk.bx
+BROKEN-i386 =		duplicate definition for symbol __i686.get_pc_thunk.bx
 
 COMMENT =		Int-indexed arrays
 
