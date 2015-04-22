@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2014/12/11 10:23:39 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2015/04/22 07:35:36 ajacoutot Exp $
 
 COMMENT =	browse LDAP server with a shell-like CLI
 
-DISTNAME =	shelldap-1.3.0
-HG_COMMIT =	ceb8bd75e05b
+DISTNAME =	shelldap-1.3.1
+HG_COMMIT =	377bd38ab38c
 EPOCH =	0
 CATEGORIES =	sysutils
 
@@ -17,6 +17,7 @@ MASTER_SITES =	http://code.martini.nu/shelldap/archive/
 WRKDIST =	${WRKDIR}/shelldap-${HG_COMMIT}
 
 NO_BUILD =	Yes
+NO_TEST =	Yes
 RUN_DEPENDS =	databases/p5-ldap \
 		devel/p5-Algorithm-Diff \
 		devel/p5-Term-ReadKey \
