@@ -1,0 +1,9 @@
+$OpenBSD: patch-scripts_postfix-queues,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
+--- scripts/postfix-queues.orig	Fri Mar 20 15:17:16 2015
++++ scripts/postfix-queues	Fri Mar 20 15:17:16 2015
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/bash
++#!/bin/sh
+ 
+ #Written by Valec 2006. Steal and share.
+ #Get postfix queue lengths

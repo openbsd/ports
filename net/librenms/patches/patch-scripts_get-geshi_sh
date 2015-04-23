@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_get-geshi_sh,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
+--- scripts/get-geshi.sh.orig	Fri Mar 20 15:17:16 2015
++++ scripts/get-geshi.sh	Fri Mar 20 15:17:16 2015
+@@ -1,6 +1,4 @@
+-#!/usr/local/bin/bash
+-wget http://surfnet.dl.sourceforge.net/sourceforge/geshi/GeSHi-1.0.8.3.tar.gz
+-tar zxf GeSHi-1.0.8.3.tar.gz
++#!/bin/sh
++ftp -o- http://surfnet.dl.sourceforge.net/sourceforge/geshi/GeSHi-1.0.8.3.tar.gz | tar xzf -
+ mv geshi html/includes
+ ln scripts/geshi-ios.php html/includes/geshi/geshi/ios.php
+-rm GeSHi-1.0.8.3.tar.gz

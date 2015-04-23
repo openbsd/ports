@@ -1,0 +1,26 @@
+$OpenBSD: patch-daily_sh,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
+--- daily.sh.orig	Tue Apr 21 17:37:09 2015
++++ daily.sh	Tue Apr 21 17:37:12 2015
+@@ -1,14 +1,14 @@
+-#!/usr/local/bin/bash
++#!/bin/ksh
+ 
+ cd $(dirname $0) || exit 1
+ 
+-if [ $(php daily.php -f update) -eq 1 ]; then 
++if [ $(%PHP% daily.php -f update) -eq 1 ]; then 
+   git pull --quiet
+-  php includes/sql-schema/update.php
++  %PHP% includes/sql-schema/update.php
+ fi
+ 
+-php daily.php -f syslog
+-php daily.php -f eventlog
+-php daily.php -f authlog
+-php daily.php -f perf_times 
+-php daily.php -f callback
++%PHP% daily.php -f syslog
++%PHP% daily.php -f eventlog
++%PHP% daily.php -f authlog
++%PHP% daily.php -f perf_times 
++%PHP% daily.php -f callback

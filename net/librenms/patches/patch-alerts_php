@@ -1,0 +1,20 @@
+$OpenBSD: patch-alerts_php,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
+--- alerts.php.orig	Tue Apr 21 15:00:22 2015
++++ alerts.php	Tue Apr 21 15:04:04 2015
+@@ -25,6 +25,7 @@
+ 
+ include_once("includes/defaults.inc.php");
+ include_once("config.php");
++include_once("includes/definitions.inc.php");
+ 
+ $lock = false;
+ if( file_exists($config['install_dir']."/.alerts.lock") ) {
+@@ -40,8 +41,6 @@ if( $lock === true ) {
+ } else {
+ 	file_put_contents($config['install_dir']."/.alerts.lock", getmypid());
+ }
+-
+-include_once($config['install_dir']."/includes/definitions.inc.php");
+ include_once($config['install_dir']."/includes/functions.php");
+ include_once($config['install_dir']."/includes/alerts.inc.php");
+ 

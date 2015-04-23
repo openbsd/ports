@@ -1,0 +1,84 @@
+$OpenBSD: patch-includes_defaults_inc_php,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
+--- includes/defaults.inc.php.orig	Wed Apr 22 09:32:45 2015
++++ includes/defaults.inc.php	Wed Apr 22 23:41:04 2015
+@@ -31,7 +31,7 @@ $config['project_name']     = "LibreNMS";
+ $config['project_id']     = strtolower($config['project_name']);
+ 
+ $config['temp_dir']      = "/tmp";
+-$config['install_dir']   = "/opt/" . $config['project_id'];
++$config['install_dir']   = "/var/www/librenms";
+ $config['log_dir']       = $config['install_dir'] . "/logs";
+ 
+ // What is my own hostname (used to identify this host in its own database)
+@@ -39,26 +39,26 @@ $config['own_hostname'] = "localhost";
+ 
+ // Location of executables
+ 
+-$config['rrdtool']          = "/usr/bin/rrdtool";
+-$config['fping']            = "/usr/bin/fping";
++$config['rrdtool']          = "/usr/local/bin/rrdtool";
++$config['fping']            = "/usr/local/sbin/fping";
+ $config['fping_options']['retries'] = 3;
+ $config['fping_options']['timeout'] = 500;
+-$config['fping6']           = "/usr/bin/fping6";
+-$config['snmpwalk']         = "/usr/bin/snmpwalk";
+-$config['snmpget']          = "/usr/bin/snmpget";
+-$config['snmpbulkwalk']     = "/usr/bin/snmpbulkwalk";
++$config['fping6']           = "/usr/local/sbin/fping6";
++$config['snmpwalk']         = "/usr/local/bin/snmpwalk";
++$config['snmpget']          = "/usr/local/bin/snmpget";
++$config['snmpbulkwalk']     = "/usr/local/bin/snmpbulkwalk";
+ $config['whois']            = "/usr/bin/whois";
+-$config['ping']             = "/bin/ping";
+-$config['mtr']              = "/usr/bin/mtr";
+-$config['nmap']             = "/usr/bin/nmap";
+-$config['nagios_plugins']   = "/usr/lib/nagios/plugins";
+-$config['ipmitool']         = "/usr/bin/ipmitool";
+-$config['virsh']            = "/usr/bin/virsh";
+-$config['dot']              = "/usr/bin/dot";
+-$config['unflatten']        = "/usr/bin/unflatten";
+-$config['neato']            = "/usr/bin/neato";
+-$config['sfdp']             = "/usr/bin/sfdp";
+-$config['svn']              = "/usr/bin/svn";
++$config['ping']             = "/sbin/ping";
++$config['mtr']              = "/usr/local/sbin/mtr";
++$config['nmap']             = "/usr/local/bin/nmap";
++$config['nagios_plugins']   = "/usr/local/libexec/nagios/plugins";
++$config['ipmitool']         = "/usr/local/bin/ipmitool";
++$config['virsh']            = "/usr/local/bin/virsh";
++$config['dot']              = "/usr/local/bin/dot";
++$config['unflatten']        = "/usr/local/bin/unflatten";
++$config['neato']            = "/usr/local/bin/neato";
++$config['sfdp']             = "/usr/local/bin/sfdp";
++$config['svn']              = "/usr/local/bin/svn";
+ 
+ // Memcached - Keep immediate statistics
+ 
+@@ -299,15 +299,15 @@ $config['billing']['base']              = 1000; # Set 
+ 
+ // External Integration
+ 
+-#$config['rancid_configs'][]             = '/var/lib/rancid/network/configs/';
++#$config['rancid_configs'][]             = '/var/rancid/network/configs/';
+ $config['rancid_ignorecomments']        = 0; # Ignore lines starting with #
+ #$config['collectd_dir']                 = '/var/lib/collectd/rrd';
+-#$config['smokeping']['dir']             = "/var/lib/smokeping/";
++#$config['smokeping']['dir']             = "/var/db/smokeping/";
+ 
+ # NFSen RRD dir.
+ $config['nfsen_enable'] = 0;
+ #$config['nfsen_split_char']   = "_";
+-#$config['nfsen_rrds']   = "/var/nfsen/profiles-stat/live/";
++#$config['nfsen_rrds']   = "/var/db/nfsen/profiles-stat/live/";
+ #$config['nfsen_suffix']   = "_yourdomain_com";
+ 
+ // Location Mapping
+@@ -597,7 +597,7 @@ $config['api_demo']                                   
+ 
+ // Distributed Poller-Settings
+ $config['distributed_poller']                            = false;
+-$config['distributed_poller_name']                       = file_get_contents('/proc/sys/kernel/hostname');
++$config['distributed_poller_name']                       = file_get_contents('/etc/myname');
+ $config['distributed_poller_group']                      = 0;
+ $config['distributed_poller_memcached_host']             = 'example.net';
+ $config['distributed_poller_memcached_port']             = '11211';

@@ -1,0 +1,14 @@
+$OpenBSD: patch-scripts_ntpd-server_php,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
+--- scripts/ntpd-server.php.orig	Fri Mar 20 15:18:34 2015
++++ scripts/ntpd-server.php	Fri Mar 20 15:20:05 2015
+@@ -18,8 +18,8 @@
+ 
+     // START SETTINGS ///
+ 
+-	$ntpq		= "/usr/sbin/ntpq";
+-	$ntpdc		= "/usr/sbin/ntpdc";
++	$ntpq		= "/usr/local/sbin/ntpq";
++	$ntpdc		= "/usr/local/sbin/ntpdc";
+ 	
+ 	# Change this to true if you have clk_jitter, sys_jitter in the ntpq -c rv output
+ 	$newstats_style	= false;

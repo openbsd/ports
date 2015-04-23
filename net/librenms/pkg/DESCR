@@ -1,0 +1,10 @@
+LibreNMS is an autodiscovering PHP/MySQL/SNMP based network monitoring
+which includes support for a wide range of network hardware and
+operating systems including Cisco, Linux, FreeBSD, Juniper, Brocade,
+Foundry, HP and many more. LibreNMS is a community-based fork of
+Observium.
+
+LibreNMS is not intended to replace a Nagios-type up/down monitoring
+system, but rather to complement it with an easy to manage, intuitive
+representation of historical and current performance statistics,
+configuration visualisation and syslog capture.

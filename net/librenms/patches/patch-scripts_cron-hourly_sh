@@ -1,0 +1,9 @@
+$OpenBSD: patch-scripts_cron-hourly_sh,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
+--- scripts/cron-hourly.sh.orig	Fri Mar 20 15:17:16 2015
++++ scripts/cron-hourly.sh	Fri Mar 20 15:17:16 2015
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/bash
++#!/bin/sh
+ ./discovery.php -h even &
+ ./discovery.php -h odd &
+ ./generate-map.sh

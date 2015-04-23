@@ -1,0 +1,140 @@
+$OpenBSD: README,v 1.1.1.1 2015/04/23 16:44:35 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+LibreNMS is primarily PHP-based, however it relies on running a number of
+other programs during normal operation. As such it is not suitable for
+running in the typical chroot jail used by default on OpenBSD (a chrooted
+web server process is OK, provided that PHP is run separately, e.g. via
+FastCGI, and PHP itself is not chrooted). 
+
+System loads during SNMP polling can be heavy; beyond initial testing and
+evaluation, it is probably happier run on a dedicated system.
+
+Database configuration
+======================
+If the database will be running on the same host as LibreNMS, install
+mariadb-server and follow MariaDB's pkg-readmes documentation to create
+and secure an initial database.
+
+On the database server, create a database and user account for LibreNMS:
+
+CREATE DATABASE librenms;
+GRANT ALL PRIVILEGES ON librenms.*
+  TO 'librenms'@'<ip>'
+  IDENTIFIED BY '<password>';
+FLUSH PRIVILEGES;
+exit
+
+Webserver configuration
+=======================
+LibreNMS should be run on a dedicated vhost. Sample configuration sections
+for NGINX and Apache httpd 2.x are shown below.
+
+If using php-fpm, disable any "chroot" line from ${SYSCONFDIR}/php-fpm.conf,
+or add a new pool for LibreNMS which does not use chroot.
+
+If using Apache mod_php, avoid using chroot.
+
+If you wish to use memcache, install the pecl-memcached package.
+
+Ensure that symbolic links have been created to enable the required
+PHP modules; to do this in bulk:
+
+  cd ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample
+  for i in *; do ln -fs ../php-${MODPHP_VERSION}.sample/$i ../php-${MODPHP_VERSION}/; done
+
+Reload your web server and/or php_fpm so that changes take effect.
+
+Sample NGINX configuration
+--------------------------
+server {
+  listen	80;
+  server_name	librenms.example.com;
+  root		${INSTDIR}/html;
+  index		index.php;
+  location / {
+    try_files	$uri $uri/ @librenms;
+  }
+  location ~ \.php {
+    fastcgi_pass	unix:run/php-fpm.sock;
+    fastcgi_index	index.php;
+    fastcgi_param	SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    include		fastcgi_params;
+  }
+  location ~ \.ht {
+    deny	all;
+  }
+  location @librenms {
+    rewrite	^api/v0(.*)$ /api_v0.php/$1 last;
+    rewrite	^(.+)$ /index.php/$1 last;
+  }
+}
+
+Sample Apache httpd 2.x configuration
+-------------------------------------
+<VirtualHost *:80>
+  DocumentRoot	${INSTDIR}/html/
+  ServerName	librenms.example.com
+  CustomLog	${INSTDIR}/logs/access_log combined
+  ErrorLog	${INSTDIR}/logs/error_log
+  AllowEncodedSlashes NoDecode
+  <Directory "${INSTDIR}/html/">
+    Require all granted    # for Apache 2.3 or newer
+    AllowOverride All
+    Options FollowSymLinks MultiViews
+  </Directory>
+</VirtualHost>
+
+Initial LibreNMS configuration
+==============================
+After creating the database user account and configuring the web server,
+it is time to install the database schema and make an initial configuration
+of LibreNMS. This can either be done from the CLI, or by using the web-based
+installer which carries out additional checks. Choose *one* of the following:
+
+Option 1: CLI
+-------------
+cd ${INSTDIR}
+$EDITOR config.php   # set database username/password etc.
+sudo -u www php-5.5 build-base.php
+sudo -u www ./adduser.php <name> <pass> 10			# 10=admin priv
+sudo -u www ./addhost.php localhost public v2c
+sudo -u www ./discovery.php -h all
+sudo -u www ./poller.php -h all
+
+Option 2: Web-based
+-------------------
+In order to use the web-based installer, you must first remove the default
+configuration file:
+
+rm ${INSTDIR}/config.php
+chown www ${INSTDIR}	# allow the installer to write config.php
+xdg-open http://localhost/install.php
+chown root ${INSTDIR}	# protect again
+
+Periodic tasks
+==============
+Cron jobs are used to discover and poll hosts, send alerts, and carry out
+other housekeeping. Samples are provided in ${INSTDIR}/librenms.cron
+and should be added to /etc/crontab (creating the file if necessary).
+The parameter to poller-wrapper.py sets the number of threads running
+SNMP queries in parallel; you may need to adjust this e.g. if you fetch
+results from many hosts and the queries do not finish in time.
+
+Further configuration
+=====================
+See ${INSTDIR}/includes/defaults.php for additional lines that can
+be added to ${INSTDIR}/config.php.
+
+LibreNMS is capable of auto-discovery based on CDP/LLDP information from
+supported devices (this is possible with many switches); if you have such
+a switch and plan to use LibreNMS to monitor servers, running an LLDP agent
+(such as ladvd or lldpd) as well as snmpd on on servers will allow them
+to be found.
+
+Upstream documentation is present in ${INSTDIR}/doc and also online at
+http://docs.librenms.org/.

@@ -1,0 +1,9 @@
+$OpenBSD: patch-scripts_agent-local_dmi,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
+--- scripts/agent-local/dmi.orig	Fri Mar 20 15:17:16 2015
++++ scripts/agent-local/dmi	Fri Mar 20 15:17:16 2015
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/bash
++#!/bin/sh
+ 
+ echo '<<<dmi>>>'
+ 

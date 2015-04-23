@@ -1,0 +1,34 @@
+$OpenBSD: patch-html_install_php,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
+--- html/install.php.orig	Wed Apr 22 09:32:45 2015
++++ html/install.php	Thu Apr 23 13:41:32 2015
+@@ -33,7 +33,6 @@ include("../includes/defaults.inc.php");
+ // Work out the install directory
+ $cur_dir = explode('/',$_SERVER['DOCUMENT_ROOT']);
+ $install_dir = array_pop($cur_dir);
+-$install_dir = array_pop($cur_dir);
+ $install_dir = implode('/',$cur_dir);
+ $config['install_dir'] = $install_dir;
+ $config['log_dir'] = $install_dir.'/logs';
+@@ -384,8 +383,9 @@ $config_file = <<<"EOD"
+ #\$config\['base_url'\]        = "http://librenms.company.com";
+ 
+ ### Enable this to use rrdcached. Be sure rrd_dir is within the rrdcached dir
+-### and that your web server has permission to talk to rrdcached.
+-#\$config\['rrdcached'\]    = "unix:/var/run/rrdcached.sock";
++### (if using -b in rrdcached_flags, use "-b /var/www/librenms/rrd"), and that
++### socket permissions allow access to your web server uid/gid.
++#\$config\['rrdcached'\]    = "unix:/var/run/rrd/rrdcached.sock";
+ 
+ ### Default community
+ \$config\['snmp'\]\['community'\] = array("public");
+@@ -402,8 +402,8 @@ $config_file = <<<"EOD"
+ # following is necessary for poller-wrapper
+ # poller-wrapper is released public domain
+ \$config\['poller-wrapper'\]\['alerter'\] = FALSE;
+-# Uncomment the next line to disable daily updates
+-#\$config\['update'\] = 0;
++# Disable daily updates (enabled by default upstream).
++\$config\['update'\] = 0;
+ ?>
+ EOD;
+ 

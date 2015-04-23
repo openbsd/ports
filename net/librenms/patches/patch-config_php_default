@@ -1,0 +1,26 @@
+$OpenBSD: patch-config_php_default,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
+--- config.php.default.orig	Wed Apr 22 09:32:44 2015
++++ config.php.default	Thu Apr 23 13:41:45 2015
+@@ -21,8 +21,9 @@ $config['memcached']['port']    = 11211;
+ #$config['base_url']        = "http://librenms.company.com";
+ 
+ ### Enable this to use rrdcached. Be sure rrd_dir is within the rrdcached dir
+-### and that your web server has permission to talk to rrdcached.
+-#$config['rrdcached']    = "unix:/var/run/rrdcached.sock";
++### (if using -b in rrdcached_flags, use "-b /var/www/librenms/rrd"), and that
++### socket permissions allow access to your web server uid/gid.
++#$config['rrdcached']    = "unix:/var/run/rrd/rrdcached.sock";
+ 
+ ### Default community
+ $config['snmp']['community'] = array("public");
+@@ -39,8 +40,8 @@ $config['auth_mechanism'] = "mysql"; # default, other 
+ # following is necessary for poller-wrapper
+ # poller-wrapper is released public domain
+ $config['poller-wrapper']['alerter'] = FALSE;
+-# Uncomment the next line to disable daily updates
+-#$config['update'] = 0;
++# Disable daily updates (enabled by default upstream). 
++$config['update'] = 0;
+ 
+ # Uncomment to submit callback stats via proxy
+ #$config['callback_proxy'] = "hostname:port";

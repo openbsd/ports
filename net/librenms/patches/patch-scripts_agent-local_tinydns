@@ -1,0 +1,9 @@
+$OpenBSD: patch-scripts_agent-local_tinydns,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
+--- scripts/agent-local/tinydns.orig	Fri Mar 20 15:17:16 2015
++++ scripts/agent-local/tinydns	Fri Mar 20 15:17:16 2015
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/bash
++#!/bin/sh
+ # (c) 2015, f0o@devilcode.org
+ # This program is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License as published by
