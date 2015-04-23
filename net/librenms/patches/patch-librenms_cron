@@ -1,4 +1,4 @@
-$OpenBSD: patch-librenms_cron,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
+$OpenBSD: patch-librenms_cron,v 1.2 2015/04/23 16:53:03 sthen Exp $
 --- librenms.cron.orig	Tue Apr 21 14:44:39 2015
 +++ librenms.cron	Tue Apr 21 14:44:50 2015
 @@ -1,5 +1,5 @@
@@ -9,6 +9,6 @@ $OpenBSD: patch-librenms_cron,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
 -*    *    * * *   root    /var/www/librenms/alerts.php >> /dev/null 2>&1
 +33  */6   * * *   www    /var/www/librenms/discovery.php -h all >> /dev/null 2>&1
 +*/5  *    * * *   www    /var/www/librenms/discovery.php -h new >> /dev/null 2>&1
-+*/5  *    * * *   www    /var/www/librenms/poller-wrapper.py 16 >> /dev/null 2>&1
++*/5  *    * * *   www    /var/www/librenms/poller-wrapper.py 8 >> /dev/null 2>&1
 +15   0    * * *   www    sh /var/www/librenms/daily.sh >> /dev/null 2>&1
 +*    *    * * *   www    /var/www/librenms/alerts.php >> /dev/null 2>&1

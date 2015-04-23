@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2015/04/23 16:44:35 sthen Exp $
+$OpenBSD: README,v 1.2 2015/04/23 16:53:03 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -123,7 +123,8 @@ other housekeeping. Samples are provided in ${INSTDIR}/librenms.cron
 and should be added to /etc/crontab (creating the file if necessary).
 The parameter to poller-wrapper.py sets the number of threads running
 SNMP queries in parallel; you may need to adjust this e.g. if you fetch
-results from many hosts and the queries do not finish in time.
+results from many hosts and the queries do not finish in time, or if
+the machine is getting overloaded.
 
 Further configuration
 =====================
