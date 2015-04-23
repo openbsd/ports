@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/08/07 03:40:44 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/04/23 07:38:01 ajacoutot Exp $
 @conflict gnocatan-*
 @pkgpath games/gnocatan
 @bin bin/pioneers
@@ -192,6 +192,7 @@ share/pioneers/themes/ccFlickr/theme.cfg
 share/pioneers/themes/ccFlickr/wool.png
 share/pioneers/ubuntuland.game
 share/pioneers/x.game
+share/pixmaps/
 share/pixmaps/pioneers/
 share/pixmaps/pioneers-editor.png
 share/pixmaps/pioneers-server.png
