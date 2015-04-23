@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2015/03/26 01:07:32 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2015/04/23 22:38:55 sthen Exp $
 @conflict nut-<2.6.2p0
 @conflict nut-scanner-*
 @conflict upsd-*
@@ -193,6 +193,7 @@ share/doc/nut/images/cables/mac-940-0024C.png
 share/doc/nut/images/cables/mge-66049.png
 share/doc/nut/images/cables/mge-db9-rj12.jpg
 share/doc/nut/images/cables/mge-db9-rj45.jpg
+share/doc/nut/images/cables/mge-usb-rj45.jpg
 share/doc/nut/images/hostedby.png
 share/doc/nut/images/note.png
 share/doc/nut/images/nut-logo.png

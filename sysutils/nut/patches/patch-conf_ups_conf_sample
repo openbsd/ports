@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_ups_conf_sample,v 1.2 2011/03/09 11:00:55 sthen Exp $
---- conf/ups.conf.sample.orig	Fri Dec 24 13:23:32 2010
-+++ conf/ups.conf.sample	Mon Mar  7 11:33:52 2011
+$OpenBSD: patch-conf_ups_conf_sample,v 1.3 2015/04/23 22:38:55 sthen Exp $
+--- conf/ups.conf.sample.orig	Wed Apr 22 09:29:39 2015
++++ conf/ups.conf.sample	Thu Apr 23 15:05:19 2015
 @@ -47,7 +47,7 @@
  #          apcsmart, bestups, and sec are some examples.
  #
@@ -10,7 +10,7 @@ $OpenBSD: patch-conf_ups_conf_sample,v 1.2 2011/03/09 11:00:55 sthen Exp $
  #
  # sdorder: optional.  When you have multiple UPSes on your system, you
  #          usually need to turn them off in a certain order.  upsdrvctl
-@@ -83,11 +83,11 @@
+@@ -98,11 +98,11 @@
  # --------
  #
  # A simple example for a UPS called "powerpal" that uses the blazer_ser
@@ -24,7 +24,7 @@ $OpenBSD: patch-conf_ups_conf_sample,v 1.2 2011/03/09 11:00:55 sthen Exp $
  #	desc = "Web server"
  #
  # If your UPS driver requires additional settings, you can specify them
-@@ -96,9 +96,23 @@
+@@ -111,9 +111,23 @@
  # 
  # [myups]
  # 	driver = mydriver

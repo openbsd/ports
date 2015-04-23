@@ -1,7 +1,7 @@
-$OpenBSD: patch-drivers_usbhid-ups_c,v 1.7 2014/04/21 11:41:11 sthen Exp $
---- drivers/usbhid-ups.c.orig	Thu Feb 27 21:17:32 2014
-+++ drivers/usbhid-ups.c	Mon Apr 21 11:51:56 2014
-@@ -941,7 +941,7 @@ void upsdrv_initups(void)
+$OpenBSD: patch-drivers_usbhid-ups_c,v 1.8 2015/04/23 22:38:55 sthen Exp $
+--- drivers/usbhid-ups.c.orig	Tue Mar 10 09:21:44 2015
++++ drivers/usbhid-ups.c	Thu Apr 23 15:05:19 2015
+@@ -955,7 +955,7 @@ void upsdrv_initups(void)
  	   regular expression (USB) or device_path (SHUT) */
  	ret = comm_driver->open(&udev, &curDevice, subdriver_matcher, &callback);
  	if (ret < 1)
