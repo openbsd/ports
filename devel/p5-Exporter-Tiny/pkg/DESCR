@@ -1,0 +1,6 @@
+Exporter::Tiny supports many of Sub::Exporter's external-facing
+features including renaming imported functions with the -as, -prefix
+and -suffix options; explicit destinations with the into option;
+and alternative installers with the installler option.  But it's
+written in only about 40% as many lines of code and with zero
+non-core dependencies.
