@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_feh_pre,v 1.25 2014/05/19 08:45:49 dcoppa Exp $
---- man/feh.pre.orig	Thu May 15 23:43:07 2014
-+++ man/feh.pre	Mon May 19 10:34:56 2014
+$OpenBSD: patch-man_feh_pre,v 1.26 2015/04/23 05:54:04 dcoppa Exp $
+--- man/feh.pre.orig	Wed Apr  8 11:21:11 2015
++++ man/feh.pre	Thu Apr 23 07:46:02 2015
 @@ -956,7 +956,7 @@ which
  defaults to
  .Pa ~/.config/feh/ .
@@ -10,7 +10,7 @@ $OpenBSD: patch-man_feh_pre,v 1.25 2014/05/19 08:45:49 dcoppa Exp $
  .Pp
  All config files treat lines starting with a
  .Qq #
-@@ -1514,7 +1514,7 @@ order it finds them on the hard disk, which is usually
+@@ -1515,7 +1515,7 @@ order it finds them on the hard disk, which is usually
  .
  Show 128x128 pixel thumbnails, limit window width to 1024 pixels.
  .

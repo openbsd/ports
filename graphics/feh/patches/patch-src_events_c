@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_events_c,v 1.7 2014/03/12 11:41:43 dcoppa Exp $
---- src/events.c.orig	Wed Mar 12 12:32:52 2014
-+++ src/events.c	Wed Mar 12 12:33:41 2014
-@@ -124,7 +124,7 @@ void init_buttonbindings(void)
+$OpenBSD: patch-src_events_c,v 1.8 2015/04/23 05:54:04 dcoppa Exp $
+--- src/events.c.orig	Wed Apr  8 11:21:11 2015
++++ src/events.c	Thu Apr 23 07:46:02 2015
+@@ -123,7 +123,7 @@ void init_buttonbindings(void)
  
  	free(confpath);
  
