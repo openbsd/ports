@@ -1,0 +1,30 @@
+$OpenBSD: patch-doc_udp_n,v 1.1 2015/04/23 09:06:30 schwarze Exp $
+Delete undefined macros and a reference to a non-existent file
+to avoid error messages.
+--- doc/udp.n.orig	Sun Aug 24 10:14:50 2014
++++ doc/udp.n	Mon Apr 20 13:17:15 2015
+@@ -2,9 +2,7 @@
+ '\" Generated from file './doc/udp.man' by tcllib/doctools with format 'nroff'
+ '\" Copyright (c) 1999-2000 Columbia University; all rights reserved
+ '\"
+-.so man.macros
+ .TH "udp" n 1.0.11  "Tcl UDP extension"
+-.BS
+ .SH NAME
+ udp \- Create UDP sockets in Tcl
+ .SH SYNOPSIS
+@@ -20,7 +18,6 @@ package require \fBudp  1.0.11\fR
+ .sp
+ \fBudp_peek\fR \fIsock\fR ?\fIbuffersize\fR?
+ .sp
+-.BE
+ .SH DESCRIPTION
+ This package provides support for using UDP through Tcl. The package provides
+ a new channel type and attempts to permit the use of packet oriented UDP
+@@ -205,4 +202,4 @@ networking, socket, udp
+ .nf
+ Copyright (c) 1999-2000 Columbia University; all rights reserved
+ 
+-.fi
+\ No newline at end of file
++.fi
