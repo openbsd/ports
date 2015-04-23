@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2015/04/14 08:36:09 bentley Exp $
+# $OpenBSD: Makefile,v 1.37 2015/04/23 11:55:02 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  gstphotography-1.0   1.0      # 405.0
 SHARED_LIBS +=  gstbasecamerabinsrc-1.0 1.0      # 405.0
@@ -24,7 +24,7 @@ WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gstrtp-1.0 gstsdp-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 harfbuzz jpeg lzma m
 WANTLIB += mms nettle opus orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs rsvg-2 schroedinger-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs rsvg-2
 WANTLIB += stdc++ xcb xcb-dri2 xcb-glx xcb-render xcb-shape xcb-shm
 WANTLIB += xcb-xfixes xml2 z
 
@@ -41,8 +41,7 @@ LIB_DEPENDS=		${P}/plugins-base=${V} \
 			audio/opus \
 			audio/soundtouch \
 			multimedia/libass \
-			multimedia/libmms \
-			multimedia/schroedinger
+			multimedia/libmms
 
 # each plugin that has an external dependency is disabled unless proved useful
 CONFIGURE_ARGS=		--disable-cdaudio \
@@ -77,6 +76,7 @@ CONFIGURE_ARGS=		--disable-cdaudio \
 			--disable-pvr \
 			--disable-resindvd \
 			--disable-rtmp \
+			--disable-schro \
 			--disable-sndfile \
 			--disable-spandsp \
 			--disable-spc \

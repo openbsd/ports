@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2014/04/01 16:31:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2015/04/23 11:55:02 ajacoutot Exp $
 @conflict gstreamer-plugins-base-<0.10.25
 @conflict gstreamer-bz2-*
 @conflict gstreamer-faac-*
@@ -113,7 +113,6 @@ lib/gstreamer-${VERSION}/libgstrsvg.so
 lib/gstreamer-${VERSION}/libgstrtpmux.so
 lib/gstreamer-${VERSION}/libgstrtpvp8.so
 lib/gstreamer-${VERSION}/libgstscaletempoplugin.so
-lib/gstreamer-${VERSION}/libgstschro.so
 lib/gstreamer-${VERSION}/libgstsdi.so
 lib/gstreamer-${VERSION}/libgstsdl.so
 lib/gstreamer-${VERSION}/libgstsdpelem.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2015/04/14 08:36:09 bentley Exp $
+# $OpenBSD: Makefile,v 1.88 2015/04/23 11:55:02 ajacoutot Exp $
 
 COMMENT-main=		bad elements for GStreamer
 COMMENT-neon=		neon element for GStreamer (plugins-bad)
@@ -12,7 +12,7 @@ PKGNAME-main=		gstreamer-plugins-bad-${V}
 PKGNAME-neon=		gstreamer-neon-${V}
 PKGNAME-mjpeg=		gstreamer-mjpeg-${V}
 
-REVISION-main=		18
+REVISION-main=		19
 REVISION-mjpeg=		8
 REVISION-neon=		9
 
@@ -40,7 +40,7 @@ WANTLIB-main += gstbase-0.10 gstcontroller-0.10 gstfft-0.10 gstinterfaces-0.10
 WANTLIB-main += gstpbutils-0.10 gstriff-0.10 gstrtp-0.10 gstsdp-0.10
 WANTLIB-main += gsttag-0.10 gstvideo-0.10 idn jasper jpeg lrdf mms
 WANTLIB-main += mpcdec opus orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-main += pixman-1 png pthread-stubs raptor2 rsvg-2 schroedinger-1.0
+WANTLIB-main += pixman-1 png pthread-stubs raptor2 rsvg-2
 WANTLIB-main += sndfile sndio spandsp ssl stdc++ tiff usbhid vpx xcb
 WANTLIB-main += xcb-render xcb-shm xslt harfbuzz
 WANTLIB-main += yajl FLAC dvdcss graphite2 ogg vorbis vorbisenc
@@ -70,7 +70,6 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			multimedia/libdvdnav \
 			multimedia/libmms \
 			multimedia/libvpx \
-			multimedia/schroedinger \
 			telephony/spandsp \
 			textproc/liblrdf \
 			x11/gnome/librsvg
@@ -108,6 +107,7 @@ CONFIGURE_ARGS=		--disable-acm \
 			--disable-quicktime \
 			--disable-real \
 			--disable-rtmp \
+			--disable-schro \
 			--disable-spc \
 			--disable-vcd \
 			--disable-vdpau \
