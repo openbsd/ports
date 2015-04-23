@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2015/04/22 14:12:03 zhuk Exp $
+# $OpenBSD: Makefile,v 1.29 2015/04/23 11:49:07 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
+IGNORE-html =		possible hidden dependency, packaging problems
+IGNORE-qch =		missing one more LD_LIBRARY_PATH
 
 VERSION =		5.4.1
 ENGINIO_VERSION =	1.1.1
