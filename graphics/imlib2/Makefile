@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2013/09/25 07:56:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2015/04/23 17:31:21 dcoppa Exp $
 
 COMMENT=	image manipulation library
 
-DISTNAME=	imlib2-1.4.2
-REVISION=	3
-SHARED_LIBS=	Imlib2	6.0	# .5.0
+DISTNAME=	imlib2-1.4.7
+SHARED_LIBS=	Imlib2	6.0	# .5.7
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.enlightenment.org/p.php?p=about/libs/imlib2&l=en

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/04/30 10:09:49 simon Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/04/23 17:31:21 dcoppa Exp $
 bin/imlib2-config
 @bin bin/imlib2_bumpmap
 @bin bin/imlib2_colorspace
@@ -46,7 +46,6 @@ lib/imlib2/loaders/zlib.a
 lib/imlib2/loaders/zlib.la
 lib/libImlib2.a
 lib/libImlib2.la
-lib/pkgconfig/
 lib/pkgconfig/imlib2.pc
 %%SHARED%%
 share/imlib2/

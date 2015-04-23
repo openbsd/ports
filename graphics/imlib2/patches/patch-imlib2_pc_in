@@ -1,4 +1,4 @@
-$OpenBSD: patch-imlib2_pc_in,v 1.1 2010/05/11 09:56:26 dcoppa Exp $
+$OpenBSD: patch-imlib2_pc_in,v 1.2 2015/04/23 17:31:21 dcoppa Exp $
 --- imlib2.pc.in.orig	Sun Aug 17 11:39:14 2008
 +++ imlib2.pc.in	Mon May 10 18:33:26 2010
 @@ -6,6 +6,6 @@ includedir=@includedir@
@@ -7,6 +7,6 @@ $OpenBSD: patch-imlib2_pc_in,v 1.1 2010/05/11 09:56:26 dcoppa Exp $
  Version: @VERSION@
 -Libs: -L${libdir} -lImlib2
 -Cflags: -I${includedir}
-+Libs: -L${libdir} -lImlib2 @my_libs@
-+Cflags: -I${includedir} @my_includes@
++Libs: -L${libdir} -lImlib2 @FREETYPE_LIBS@ -lX11 -lXext -lm
++Cflags: -I${includedir} @FREETYPE_CFLAGS@ @X_CFLAGS@
  

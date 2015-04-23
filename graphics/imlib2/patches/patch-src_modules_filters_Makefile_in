@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_modules_filters_Makefile_in,v 1.1 2015/04/23 17:31:21 dcoppa Exp $
+
+Revert commit 5b60182d96fa136366e1f5ae6329edcbc886d47f (Don't build
+static libs for modules)
+
+--- src/modules/filters/Makefile.in.orig	Sat Apr  4 20:19:48 2015
++++ src/modules/filters/Makefile.in	Thu Apr 23 10:07:58 2015
+@@ -369,15 +369,12 @@ EXTRA_DIST = filter_common.h
+ testfilter_la_SOURCES = filter_test.c
+ testfilter_la_LDFLAGS = -module -avoid-version
+ testfilter_la_LIBADD = $(top_builddir)/src/lib/libImlib2.la
+-testfilter_la_LIBTOOLFLAGS = --tag=disable-static
+ bumpmap_la_SOURCES = filter_bumpmap.c
+ bumpmap_la_LDFLAGS = -module -avoid-version
+ bumpmap_la_LIBADD = $(top_builddir)/src/lib/libImlib2.la -lm
+-bumpmap_la_LIBTOOLFLAGS = --tag=disable-static
+ colormod_la_SOURCES = filter_colormod.c
+ colormod_la_LDFLAGS = -module -avoid-version
+ colormod_la_LIBADD = $(top_builddir)/src/lib/libImlib2.la
+-colormod_la_LIBTOOLFLAGS = --tag=disable-static
+ all: all-am
+ 
+ .SUFFIXES:
