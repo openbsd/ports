@@ -1,6 +1,6 @@
-$OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.6 2013/09/09 22:09:58 sthen Exp $
+$OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.7 2015/04/23 08:23:54 sthen Exp $
 --- clamav-unofficial-sigs.conf.orig	Tue Aug 27 17:08:25 2013
-+++ clamav-unofficial-sigs.conf	Mon Sep  9 22:42:20 2013
++++ clamav-unofficial-sigs.conf	Thu Apr 23 09:19:15 2015
 @@ -28,14 +28,14 @@
  # and optionally socat.  It's been reported that on Sun systems, the GNU utilities
  # should be used rather than the default Sun OS versions of these utilities.
@@ -28,7 +28,35 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.6 2013/09/09 22:09:58 sthen Exp 
  
  # Set path to clamd.pid file (see clamd.conf for path location).
  clamd_pid="/var/run/clamd.pid"
-@@ -179,11 +179,11 @@ si_update_hours="4"   # Default is 4 hours (6 update c
+@@ -151,39 +151,16 @@ ss_dbs="
+    porcupine.ndb
+ "
+ 
+-# ========================
+-# SecuriteInfo Database(s)
+-# ========================
+-# Add or remove database file names between quote marks as needed.  To
+-# disable any SecuriteInfo database downloads, remove the appropriate
+-# lines below.  To disable all SecuriteInfo database file downloads,
+-# comment all of the following lines.
+-si_dbs="
+-   honeynet.hdb
+-   securiteinfo.hdb
+-   securiteinfobat.hdb
+-   securiteinfodos.hdb
+-   securiteinfoelf.hdb
+-   securiteinfohtml.hdb
+-   securiteinfooffice.hdb
+-   securiteinfopdf.hdb
+-   securiteinfosh.hdb
+-"
+-
+-# Since the SecuriteInfo databases are only updated a few time each
+-# month, set a time interval to do database update checks.
+-si_update_hours="4"   # Default is 4 hours (6 update checks daily).
+-
+ # =========================
+ # MalwarePatrol Database(s)
  # =========================
  # Add or remove database file names between quote marks as needed.  To
  # disable any of the MalwarePatrol database file downloads, remove the
@@ -45,7 +73,7 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.6 2013/09/09 22:09:58 sthen Exp 
  
  # Since the MalwarePatrol database file is dynamically created,
  # there is no way to test for changes prior to downloading.  For this
-@@ -227,7 +227,7 @@ curl_max_time="90"
+@@ -227,7 +204,7 @@ curl_max_time="90"
  # Set working directory paths (edit to meet your own needs). If these
  # directories do not exist, the script will attempt to create them.
  # Top level working directory path:
