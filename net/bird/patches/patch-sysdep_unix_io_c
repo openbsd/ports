@@ -1,6 +1,6 @@
-$OpenBSD: patch-sysdep_unix_io_c,v 1.1 2014/07/09 23:14:21 sthen Exp $
---- sysdep/unix/io.c.orig	Wed Jul  9 23:59:51 2014
-+++ sysdep/unix/io.c	Thu Jul 10 00:01:56 2014
+$OpenBSD: patch-sysdep_unix_io_c,v 1.2 2015/04/23 22:39:28 sthen Exp $
+--- sysdep/unix/io.c.orig	Wed Apr 22 15:41:44 2015
++++ sysdep/unix/io.c	Wed Apr 22 20:50:58 2015
 @@ -261,7 +261,7 @@ tm_start(timer *t, unsigned after)
    bird_clock_t when;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-sysdep_unix_io_c,v 1.1 2014/07/09 23:14:21 sthen Exp $
    when = now + after;
    if (t->expires == when)
      return;
-@@ -1826,7 +1826,6 @@ io_init(void)
+@@ -2038,7 +2038,6 @@ io_init(void)
    init_times();
    update_times();
    boot_time = now;
