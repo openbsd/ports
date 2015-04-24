@@ -1,18 +1,18 @@
-$OpenBSD: patch-man_i3-migrate-config-to-v4_1,v 1.16 2015/03/30 16:30:37 dcoppa Exp $
+$OpenBSD: patch-man_i3-migrate-config-to-v4_1,v 1.17 2015/04/24 09:30:15 dcoppa Exp $
 
 The escape sequence \" introduces a comment.
 Consequently, the rest of the input line is ignored.
 That means the information that this is a section 1 manual page and
 the date of the last change is lost.
 
---- man/i3-migrate-config-to-v4.1.orig	Mon Mar 30 18:04:05 2015
-+++ man/i3-migrate-config-to-v4.1	Mon Mar 30 18:04:15 2015
+--- man/i3-migrate-config-to-v4.1.orig	Thu Apr 16 09:03:17 2015
++++ man/i3-migrate-config-to-v4.1	Fri Apr 24 11:27:00 2015
 @@ -7,7 +7,7 @@
- .\"    Source: i3 4.10.1
+ .\"    Source: i3 4.10.2
  .\"  Language: English
  .\"
--.TH "I3\-MIGRATE\-CONFIG\" "1" "03/29/2015" "i3 4\&.10\&.1" "i3 Manual"
-+.TH "I3\-MIGRATE\-CONFIG" "1" "03/29/2015" "i3 4\&.10\&.1" "i3 Manual"
+-.TH "I3\-MIGRATE\-CONFIG\" "1" "04/16/2015" "i3 4\&.10\&.2" "i3 Manual"
++.TH "I3\-MIGRATE\-CONFIG" "1" "04/16/2015" "i3 4\&.10\&.2" "i3 Manual"
  .\" -----------------------------------------------------------------
  .\" * Define some portability stuff
  .\" -----------------------------------------------------------------
