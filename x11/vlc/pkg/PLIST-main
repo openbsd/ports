@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.35 2014/03/16 11:38:47 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.36 2015/04/24 13:10:04 ajacoutot Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -188,7 +188,6 @@ lib/vlc/plugins/codec/libopus_plugin.so
 lib/vlc/plugins/codec/libpng_plugin.so
 lib/vlc/plugins/codec/librawvideo_plugin.so
 lib/vlc/plugins/codec/librealvideo_plugin.so
-lib/vlc/plugins/codec/libschroedinger_plugin.so
 lib/vlc/plugins/codec/libsdl_image_plugin.so
 lib/vlc/plugins/codec/libspeex_plugin.so
 lib/vlc/plugins/codec/libspudec_plugin.so

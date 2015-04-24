@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2015/04/04 09:21:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.184 2015/04/24 13:10:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ V=		2.0.10
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	3
+REVISION-main=	4
 REVISION-jack=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
@@ -33,13 +33,13 @@ WANTLIB-main=	GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 Xcomposite \
 		dvdnav dvdread ebml enca expat ffi fontconfig freetype fribidi \
 		gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 		gmp gnutls gobject-2.0 gpg-error graphite2 gthread-2.0 \
-		gtk-x11-2.0 harfbuzz hogweed jpeg matroska nettle notify opus \
-		orc-0.4 ogg p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-		pixman-1 png postproc pthread-stubs samplerate \
-		schroedinger-1.0>=2.0 sndio speex speexdsp stdc++ swscale tag tar \
-		tasn1 tiff usbhid vorbis vorbisenc webp x264 xcb-composite \
-		xcb-keysyms xcb-randr xcb-render xcb-shape xcb-shm xcb-xfixes \
-		xcb-xv xcb xml2 z ${WANTLIB-common}
+		gtk-x11-2.0 harfbuzz hogweed jpeg lzma matroska nettle notify \
+		opus ogg p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
+		pixman-1 png postproc pthread-stubs samplerate sndio speex \
+		speexdsp stdc++ swscale tag tar tasn1 tiff usbhid vorbis \
+		vorbisenc webp x264 xcb-composite xcb-keysyms xcb-randr \
+		xcb-render xcb-shape xcb-shm xcb-xfixes xcb-xv xcb xml2 z \
+		${WANTLIB-common}
 WANTLIB-jack=	jack vlccore ${WANTLIB-common}
 
 AUTOCONF_VERSION= 2.69
@@ -71,7 +71,6 @@ LIB_DEPENDS-main= ${MODQT4_LIB_DEPENDS} \
 		multimedia/libbluray \
 		multimedia/libdvdnav>=4.2.0 \
 		multimedia/libmatroska \
-		multimedia/schroedinger>=1.0.10 \
 		multimedia/x264 \
 		security/gnutls \
 		security/libgcrypt \
@@ -131,6 +130,7 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-projectm \
 		--disable-portaudio \
 		--disable-pulse \
+		--disable-schroedinger \
 		--disable-shout \
 		--disable-sid \
 		--disable-smb \
