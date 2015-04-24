@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/12 11:55:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/24 06:28:16 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -51,6 +51,7 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_header_execinfo_h="no" \
 			ac_cv_path_ASCIIDOC="no" \
 			ac_cv_path_W3M="no" \
 			ac_cv_path_ENSCRIPT="no" \
