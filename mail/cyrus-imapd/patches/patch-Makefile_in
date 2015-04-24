@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2015/03/15 08:51:07 ajacoutot Exp $
---- Makefile.in.orig	Thu Mar 12 14:50:25 2015
-+++ Makefile.in	Thu Mar 12 14:51:17 2015
-@@ -566,7 +566,7 @@ imap_libcyrus_imap_la_OBJECTS = $(am_imap_libcyrus_ima
- imap_libcyrus_imap_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
- 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+$OpenBSD: patch-Makefile_in,v 1.2 2015/04/24 14:51:26 ajacoutot Exp $
+--- Makefile.in.orig	Fri Apr 24 04:11:16 2015
++++ Makefile.in	Fri Apr 24 15:47:27 2015
+@@ -528,7 +528,7 @@ imap_libcyrus_imap_la_OBJECTS = $(am_imap_libcyrus_ima
+ imap_libcyrus_imap_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) \
  	$(imap_libcyrus_imap_la_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 -	$(LDFLAGS) -o $@
 +	$(LDFLAGS) -lpthread -o $@

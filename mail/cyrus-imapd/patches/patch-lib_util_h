@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_util_h,v 1.1 2015/04/24 14:51:26 ajacoutot Exp $
+
+https://bugzilla.cyrusimap.org/show_bug.cgi?id=3892
+
+--- lib/util.h.orig	Fri Apr 24 16:05:34 2015
++++ lib/util.h	Fri Apr 24 16:05:40 2015
+@@ -66,9 +66,7 @@
+ # endif /* HAVE_PCREPOSIX_H */
+ #endif /* ENABLE_REGEX */
+ 
+-#ifndef __GNUC__
+ typedef int (*__compar_fn_t)(const void *, const void *);
+-#endif
+ 
+ #define BIT32_MAX 4294967295U
+ 

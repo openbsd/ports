@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2015/03/15 08:51:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2015/04/24 14:51:26 ajacoutot Exp $
 
 # WARNING: mmap(2) is not fully POSIX on OpenBSD so cyrus needs to
 # map_refresh on every lock which will incure a performance penalty
@@ -9,7 +9,7 @@ SHARED_ONLY=	Yes
 
 COMMENT=	Cyrus IMAP server
 
-V=		2.5.0
+V=		2.5.1
 DISTNAME=	cyrus-imapd-${V}
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0
@@ -23,7 +23,7 @@ HOMEPAGE=	http://www.cyrusimap.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# CMU - see COPYRIGHT file in package
+# CMU - see COPYING file in package
 PERMIT_PACKAGE_CDROM=	yes
 
 WANTLIB += c crypto db jansson m pcre pcreposix pthread sasl2
@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=--without-clamav \
 SENDMAILREF=	lib/imapoptions lib/imapopts.c man/imapd.conf.5
 SIEVEREF=	lib/imapoptions man/imapd.conf.5 \
 		tools/masssievec tools/rehash tools/translatesieve \
-		tools/upgradesieve doc/text/install-upgrade
+		tools/upgradesieve doc/install-upgrade.html
 
 pre-configure:
 .for i in lib/imapoptions man/imapd.conf.5
@@ -85,21 +85,18 @@ pre-configure:
 .endfor
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cyrus-imapd
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/cyrus-imapd
-	cd ${WRKSRC}/doc; tar cf - text | \
-		tar xf - -C ${PREFIX}/share/doc/cyrus-imapd
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cyrus-imapd
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples/cyrus-imapd}
+	cp -R ${WRKSRC}/doc ${PREFIX}/share/doc/cyrus-imapd
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/cyrus-imapd
+	cp -R ${WRKSRC}/tools ${PREFIX}/share/examples/cyrus-imapd/
 	${INSTALL_DATA} ${WRKSRC}/master/conf/*.conf \
 		${PREFIX}/share/examples/cyrus-imapd/
 	${INSTALL_DATA} ${FILESDIR}/imapd.conf \
 		${PREFIX}/share/examples/cyrus-imapd/
-	cd ${WRKSRC}; tar cf - tools | \
-		tar xf - -C ${PREFIX}/share/examples/cyrus-imapd
-	${INSTALL_DATA_DIR} ${PREFIX}/cyrus/man
-	mv ${PREFIX}/man/man* ${PREFIX}/cyrus/man/
+	mv ${PREFIX}/man ${PREFIX}/cyrus/man
 	rm -rf ${PREFIX}/libdata/perl5/${MACHINE_ARCH}-openbsd \
-		${PREFIX}/share/doc/cyrus-imapd/text/{.deps,.gitignore,.libs} \
-		${PREFIX}/share/examples/cyrus-imapd/tools/vzic
+		${PREFIX}/share/doc/cyrus-imapd/text \
+		${PREFIX}/share/examples/cyrus-imapd/tools/vzic \
+		${PREFIX}/cyrus/man/[!man]*
 
 .include <bsd.port.mk>
