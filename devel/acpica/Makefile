@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2014/12/17 00:27:23 daniel Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/24 12:51:23 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		reference implementation of ACPI tools
-DISTNAME =		acpica-unix2-20141107
+DISTNAME =		acpica-unix2-20150410
 PKGNAME =		${DISTNAME:S/-unix2//}
 CATEGORIES =		devel
 
