@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.31 2015/04/24 07:27:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.32 2015/04/24 16:16:39 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
-IGNORE-html =		possible hidden dependency, packaging problems
-IGNORE-qch =		missing one more LD_LIBRARY_PATH
 
 VERSION =		5.4.1
 ENGINIO_VERSION =	1.1.1
@@ -26,7 +24,7 @@ PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-qch =		qt5-qch-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
-REVISION-main =		2
+REVISION-main =		3
 REVISION-examples =	0
 
 PKG_ARCH-html =		*

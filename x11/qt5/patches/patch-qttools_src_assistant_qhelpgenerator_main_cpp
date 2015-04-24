@@ -1,0 +1,35 @@
+$OpenBSD: patch-qttools_src_assistant_qhelpgenerator_main_cpp,v 1.1 2015/04/24 16:16:40 zhuk Exp $
+Temporary patch for determining source of documentation build failures
+observed during bulk builds.
+--- qttools/src/assistant/qhelpgenerator/main.cpp.ports.orig	Fri Apr 24 17:18:36 2015
++++ qttools/src/assistant/qhelpgenerator/main.cpp	Fri Apr 24 17:32:52 2015
+@@ -153,6 +153,7 @@ int main(int argc, char *argv[])
+     }
+ 
+     QHelpProjectData *helpData = new QHelpProjectData();
++fprintf(stderr, "DEBUG reading project file %s.\n", projectFile.toLocal8Bit().constData());
+     if (!helpData->readData(projectFile)) {
+         fprintf(stderr, "%s\n", qPrintable(helpData->errorMessage()));
+         return -1;
+@@ -160,12 +161,19 @@ int main(int argc, char *argv[])
+ 
+     HelpGenerator generator;
+     bool success = true;
+-    if (checkLinks)
++    if (checkLinks) {
++fprintf(stderr, "DEBUG checking links... ");
+         success = generator.checkLinks(*helpData);
+-    if (success && !compressedFile.isEmpty())
++fprintf(stderr, "%s\n", (success ? "OK" : "FAIL"));
++    }
++    if (success && !compressedFile.isEmpty()) {
++fprintf(stderr, "DEBUG generating compressed file %s... ");
+         success = generator.generate(helpData, compressedFile);
++fprintf(stderr, "%s\n", (success ? "OK" : "FAIL"));
++}
+     delete helpData;
+     if (!success) {
++fprintf(stderr, "DEBUG FAILING WITH ERROR: ");
+         fprintf(stderr, "%s\n", qPrintable(generator.error()));
+         return -1;
+     }
