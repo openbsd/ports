@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2014/04/06 20:24:01 brad Exp $
+# $OpenBSD: Makefile,v 1.45 2015/04/24 13:10:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	library for reading and writing QuickTime files
 
 DISTNAME=	libquicktime-1.2.4
-REVISION=	2
+REVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 
@@ -16,16 +16,16 @@ HOMEPAGE=	http://libquicktime.sourceforge.net/
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt Xv
-WANTLIB += Xxf86vm atk-1.0 avcodec avutil c cairo drm dv expat
-WANTLIB += ffi faad fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsm gthread-2.0
-WANTLIB += gtk-x11-2.0 jpeg m mp3lame ogg orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += schroedinger-1.0 sndio speex stdc++ swscale theoradec
-WANTLIB += theoraenc vorbis vorbisenc vorbisfile vpx x264 xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += GL ICE SM X11 X11-xcb Xau Xaw Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender
+WANTLIB += Xt Xv Xxf86vm avcodec avutil c cairo drm dv expat faad
+WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gsm gthread-2.0 gtk-x11-2.0 harfbuzz jpeg m mp3lame
+WANTLIB += ogg opus pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs sndio speex stdc++
+WANTLIB += swresample swscale vorbisenc vorbisfile vpx x264 x265
+WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xvidcore z
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	devel/doxygen>=1.7.2
@@ -36,7 +36,6 @@ LIB_DEPENDS=	audio/faad \
 		graphics/jpeg \
 		graphics/png \
 		multimedia/libdv \
-		multimedia/schroedinger \
 		multimedia/x264 \
 		x11/gtk+2
 
@@ -47,7 +46,8 @@ CONFIGURE_ARGS=	--enable-gpl \
 		--enable-static \
 		--with-libdv \
 		--without-alsa \
-		--without-faac
+		--without-faac \
+		--without-schroedinger
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		ac_cv_lib_ossaudio__oss_ioctl=no \
