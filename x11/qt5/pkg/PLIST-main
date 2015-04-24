@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2015/04/19 13:18:29 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2015/04/24 07:16:39 zhuk Exp $
 bin/assistant-qt5
 bin/designer-qt5
 bin/linguist-qt5
@@ -5026,13 +5026,9 @@ lib/qt5/cmake/Qt5Declarative/Qt5Declarative_QtQuick1Plugin.cmake
 lib/qt5/cmake/Qt5Designer/
 lib/qt5/cmake/Qt5Designer/Qt5DesignerConfig.cmake
 lib/qt5/cmake/Qt5Designer/Qt5DesignerConfigVersion.cmake
-lib/qt5/cmake/Qt5Designer/Qt5Designer_AnalogClockPlugin.cmake
-lib/qt5/cmake/Qt5Designer/Qt5Designer_MultiPageWidgetPlugin.cmake
 lib/qt5/cmake/Qt5Designer/Qt5Designer_QDeclarativeViewPlugin.cmake
 lib/qt5/cmake/Qt5Designer/Qt5Designer_QQuickWidgetPlugin.cmake
 lib/qt5/cmake/Qt5Designer/Qt5Designer_QWebViewPlugin.cmake
-lib/qt5/cmake/Qt5Designer/Qt5Designer_TicTacToePlugin.cmake
-lib/qt5/cmake/Qt5Designer/Qt5Designer_WorldTimeClockPlugin.cmake
 lib/qt5/cmake/Qt5Enginio/
 lib/qt5/cmake/Qt5Enginio/Qt5EnginioConfig.cmake
 lib/qt5/cmake/Qt5Enginio/Qt5EnginioConfigVersion.cmake
@@ -5125,7 +5121,6 @@ lib/qt5/cmake/Qt5ScriptTools/Qt5ScriptToolsConfigVersion.cmake
 lib/qt5/cmake/Qt5Sensors/
 lib/qt5/cmake/Qt5Sensors/Qt5SensorsConfig.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5SensorsConfigVersion.cmake
-lib/qt5/cmake/Qt5Sensors/Qt5Sensors_QCounterGesturePlugin.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5Sensors_QShakeSensorGesturePlugin.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5Sensors_QtSensorGesturePlugin.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5Sensors_genericSensorPlugin.cmake
@@ -6102,7 +6097,6 @@ lib/qt5/plugins/qmltooling/
 lib/qt5/plugins/qmltooling/libqmldbg_qtquick2.so
 lib/qt5/plugins/qmltooling/libqmldbg_tcp.so
 lib/qt5/plugins/sensorgestures/
-lib/qt5/plugins/sensorgestures/libqtsensorgestures_counterplugin.so
 lib/qt5/plugins/sensorgestures/libqtsensorgestures_plugin.so
 lib/qt5/plugins/sensorgestures/libqtsensorgestures_shakeplugin.so
 lib/qt5/plugins/sensors/

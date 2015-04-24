@@ -1,6 +1,11 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2015/04/19 13:18:28 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.3 2015/04/24 07:16:39 zhuk Exp $
 @lib lib/libfftreal.so.${LIBfftreal_VERSION}
 @lib lib/libgruesensor.so.${LIBgruesensor_VERSION}
+lib/qt5/cmake/Qt5Designer/Qt5Designer_AnalogClockPlugin.cmake
+lib/qt5/cmake/Qt5Designer/Qt5Designer_MultiPageWidgetPlugin.cmake
+lib/qt5/cmake/Qt5Designer/Qt5Designer_TicTacToePlugin.cmake
+lib/qt5/cmake/Qt5Designer/Qt5Designer_WorldTimeClockPlugin.cmake
+@comment lib/qt5/cmake/Qt5Sensors/Qt5Sensors_QCounterGesturePlugin.cmake
 lib/qt5/examples/
 lib/qt5/examples/README
 lib/qt5/examples/assistant/
@@ -6992,3 +6997,8 @@ lib/qt5/examples/xmlpatterns/xquery/globalVariables/globals.gccxml
 lib/qt5/examples/xmlpatterns/xquery/globalVariables/globals.html
 lib/qt5/examples/xmlpatterns/xquery/globalVariables/reportGlobals.xq
 lib/qt5/examples/xmlpatterns/xquery/xquery.pro
+lib/qt5/plugins/designer/libcontainerextension.so
+lib/qt5/plugins/designer/libcustomwidgetplugin.so
+lib/qt5/plugins/designer/libtaskmenuextension.so
+lib/qt5/plugins/designer/libworldtimeclockplugin.so
+@comment lib/qt5/plugins/sensorgestures/libqtsensorgestures_counterplugin.so
