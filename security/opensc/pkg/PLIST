@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/03/20 22:47:42 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/04/24 12:53:24 dcoppa Exp $
 @bin bin/cardos-tool
 @bin bin/cryptoflex-tool
 @bin bin/dnie-tool
@@ -31,6 +31,7 @@ lib/pkcs11/pkcs11-spy.so
 lib/pkgconfig/libopensc.pc
 @man man/man1/cardos-tool.1
 @man man/man1/cryptoflex-tool.1
+@man man/man1/dnie-tool.1
 @man man/man1/eidenv.1
 @man man/man1/iasecc-tool.1
 @man man/man1/netkey-tool.1
@@ -69,6 +70,7 @@ share/opensc/iasecc_admin_eid.profile
 share/opensc/iasecc_generic_oberthur.profile
 share/opensc/iasecc_generic_pki.profile
 share/opensc/incrypto34.profile
+share/opensc/isoApplet.profile
 share/opensc/jcop.profile
 share/opensc/miocos.profile
 share/opensc/muscle.profile

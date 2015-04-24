@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_pkcs11_Makefile_in,v 1.2 2014/08/13 06:18:47 dcoppa Exp $
+$OpenBSD: patch-src_pkcs11_Makefile_in,v 1.3 2015/04/24 12:53:24 dcoppa Exp $
 
 Do not install shared modules under ${PREFIX}/lib/ and avoid the
 nasty symlink dance
@@ -6,8 +6,8 @@ nasty symlink dance
 Use --tag=disable-static to disable libtool static archives for
 modules
 
---- src/pkcs11/Makefile.in.orig	Mon Jun 30 20:38:01 2014
-+++ src/pkcs11/Makefile.in	Wed Aug 13 07:42:08 2014
+--- src/pkcs11/Makefile.in.orig	Wed Apr  8 18:11:24 2015
++++ src/pkcs11/Makefile.in	Fri Apr 24 13:21:34 2015
 @@ -77,7 +77,7 @@ am__nobase_list = $(am__nobase_strip_setup); \
  am__base_list = \
    sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
@@ -17,7 +17,7 @@ modules
  LTLIBRARIES = $(lib_LTLIBRARIES)
  am__DEPENDENCIES_1 =
  am__DEPENDENCIES_2 = $(top_builddir)/src/libopensc/libopensc.la \
-@@ -212,6 +212,7 @@ LIBOBJS = @LIBOBJS@
+@@ -213,6 +213,7 @@ LIBOBJS = @LIBOBJS@
  LIBRARY_BITNESS = @LIBRARY_BITNESS@
  LIBS = @LIBS@
  LIBTOOL = @LIBTOOL@
@@ -25,7 +25,7 @@ modules
  LIPO = @LIPO@
  LN_S = @LN_S@
  LTLIBOBJS = @LTLIBOBJS@
-@@ -423,25 +424,25 @@ versioninfo-pkcs11-spy.rc: $(top_builddir)/config.stat
+@@ -424,25 +425,25 @@ versioninfo-pkcs11-spy.rc: $(top_builddir)/config.stat
  	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
  install-libLTLIBRARIES: $(lib_LTLIBRARIES)
  	@$(NORMAL_INSTALL)
@@ -58,7 +58,7 @@ modules
  	done
  
  clean-libLTLIBRARIES:
-@@ -455,9 +456,9 @@ clean-libLTLIBRARIES:
+@@ -456,9 +457,9 @@ clean-libLTLIBRARIES:
  onepin-opensc-pkcs11.la: $(onepin_opensc_pkcs11_la_OBJECTS) $(onepin_opensc_pkcs11_la_DEPENDENCIES) 
  	$(AM_V_CCLD)$(onepin_opensc_pkcs11_la_LINK) -rpath $(libdir) $(onepin_opensc_pkcs11_la_OBJECTS) $(onepin_opensc_pkcs11_la_LIBADD) $(LIBS)
  opensc-pkcs11.la: $(opensc_pkcs11_la_OBJECTS) $(opensc_pkcs11_la_DEPENDENCIES) 
@@ -70,7 +70,7 @@ modules
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)
-@@ -693,7 +694,7 @@ check-am: all-am
+@@ -694,7 +695,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile $(LTLIBRARIES) $(SCRIPTS)
  installdirs:
@@ -79,7 +79,7 @@ modules
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -753,7 +754,6 @@ install-dvi-am:
+@@ -754,7 +755,6 @@ install-dvi-am:
  
  install-exec-am: install-libLTLIBRARIES
  	@$(NORMAL_INSTALL)
@@ -87,7 +87,7 @@ modules
  install-html: install-html-am
  
  install-html-am:
-@@ -801,7 +801,7 @@ uninstall-am: uninstall-libLTLIBRARIES
+@@ -802,7 +802,7 @@ uninstall-am: uninstall-libLTLIBRARIES
  	distclean-compile distclean-generic distclean-libtool \
  	distclean-tags distdir dvi dvi-am html html-am info info-am \
  	install install-am install-data install-data-am install-dvi \
@@ -96,7 +96,7 @@ modules
  	install-html install-html-am install-info install-info-am \
  	install-libLTLIBRARIES install-man install-pdf install-pdf-am \
  	install-ps install-ps-am install-strip installcheck \
-@@ -825,18 +825,6 @@ pkcs11-jar: jar-dir
+@@ -826,18 +826,6 @@ pkcs11-jar: jar-dir
  	cp opensc_pkcs11_install.js jar-dir
  	signtool -Z"opensc-pkcs11.jar" -i"opensc_pkcs11_install.js" \
  		 -k"testcert" jar-dir

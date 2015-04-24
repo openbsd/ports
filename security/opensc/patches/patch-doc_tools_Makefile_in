@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_tools_Makefile_in,v 1.1 2015/04/24 12:53:24 dcoppa Exp $
+
+Do not install bash completion files
+
+--- doc/tools/Makefile.in.orig	Fri Apr 24 13:35:33 2015
++++ doc/tools/Makefile.in	Fri Apr 24 13:36:14 2015
+@@ -507,7 +507,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-completionDATA install-htmlDATA install-man
++install-data-am: install-htmlDATA install-man
+ 
+ install-dvi: install-dvi-am
+ 
