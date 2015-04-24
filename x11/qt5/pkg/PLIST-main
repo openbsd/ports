@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2015/04/24 07:16:39 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2015/04/24 07:27:34 zhuk Exp $
 bin/assistant-qt5
 bin/designer-qt5
 bin/linguist-qt5
@@ -6046,13 +6046,9 @@ lib/qt5/plugins/audio/libqtmedia_pulse.so
 lib/qt5/plugins/bearer/
 lib/qt5/plugins/bearer/libqgenericbearer.so
 lib/qt5/plugins/designer/
-lib/qt5/plugins/designer/libcontainerextension.so
-lib/qt5/plugins/designer/libcustomwidgetplugin.so
 lib/qt5/plugins/designer/libqdeclarativeview.so
 lib/qt5/plugins/designer/libqquickwidget.so
 lib/qt5/plugins/designer/libqwebview.so
-lib/qt5/plugins/designer/libtaskmenuextension.so
-lib/qt5/plugins/designer/libworldtimeclockplugin.so
 lib/qt5/plugins/geoservices/
 lib/qt5/plugins/geoservices/libqtgeoservices_nokia.so
 lib/qt5/plugins/geoservices/libqtgeoservices_osm.so

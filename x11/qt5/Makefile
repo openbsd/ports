@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/04/24 07:16:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.31 2015/04/24 07:27:34 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -26,7 +26,7 @@ PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-qch =		qt5-qch-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
-REVISION-main =		1
+REVISION-main =		2
 REVISION-examples =	0
 
 PKG_ARCH-html =		*
