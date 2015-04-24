@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.25 2015/02/09 08:16:01 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.26 2015/04/24 15:31:37 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -406,6 +406,7 @@ webapps/docs/api/org/apache/catalina/mbeans/GlobalResourcesLifecycleListener.htm
 webapps/docs/api/org/apache/catalina/mbeans/GroupMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.RmiClientLocalhostSocketFactory.html
 webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.RmiServerBindSocketFactory.html
+webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.SslRmiServerBindSocketFactory.html
 webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanDumper.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanFactory.html
@@ -1386,6 +1387,7 @@ webapps/docs/api/org/apache/tomcat/jni/File.html
 webapps/docs/api/org/apache/tomcat/jni/FileInfo.html
 webapps/docs/api/org/apache/tomcat/jni/Global.html
 webapps/docs/api/org/apache/tomcat/jni/Library.html
+webapps/docs/api/org/apache/tomcat/jni/LibraryNotFoundError.html
 webapps/docs/api/org/apache/tomcat/jni/Local.html
 webapps/docs/api/org/apache/tomcat/jni/Lock.html
 webapps/docs/api/org/apache/tomcat/jni/Mmap.html
@@ -1500,6 +1502,11 @@ webapps/docs/api/org/apache/tomcat/util/collections/ConcurrentCache.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-tree.html
+webapps/docs/api/org/apache/tomcat/util/compat/
+webapps/docs/api/org/apache/tomcat/util/compat/JreCompat.html
+webapps/docs/api/org/apache/tomcat/util/compat/package-frame.html
+webapps/docs/api/org/apache/tomcat/util/compat/package-summary.html
+webapps/docs/api/org/apache/tomcat/util/compat/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/descriptor/
 webapps/docs/api/org/apache/tomcat/util/descriptor/Constants.html
 webapps/docs/api/org/apache/tomcat/util/descriptor/DigesterFactory.html
@@ -2538,8 +2545,8 @@ webapps/examples/WEB-INF/jsp/example-taglib.tld
 webapps/examples/WEB-INF/jsp2/
 webapps/examples/WEB-INF/jsp2/jsp2-example-taglib.tld
 webapps/examples/WEB-INF/lib/
-webapps/examples/WEB-INF/lib/jstl.jar
-webapps/examples/WEB-INF/lib/standard.jar
+webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar
+webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar
 webapps/examples/WEB-INF/tags/
 webapps/examples/WEB-INF/tags/displayProducts.tag
 webapps/examples/WEB-INF/tags/helloWorld.tag
