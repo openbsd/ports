@@ -1,14 +1,14 @@
-$OpenBSD: patch-Makefile,v 1.8 2014/05/07 09:10:15 sthen Exp $
---- Makefile.orig	Fri Apr 11 16:10:41 2014
-+++ Makefile	Wed May  7 09:55:03 2014
-@@ -128,9 +128,10 @@ $(TIFF_OBJ) : $(FITZ_HDR) $(IMG_HDR) $(TIFF_SRC_HDR)
+$OpenBSD: patch-Makefile,v 1.9 2015/04/25 23:04:54 sthen Exp $
+--- Makefile.orig	Thu Apr 16 09:57:45 2015
++++ Makefile	Sat Apr 25 23:26:07 2015
+@@ -123,9 +123,10 @@ $(HTML_OBJ) : $(FITZ_HDR) $(HTML_HDR) $(HTML_SRC_HDR)
  
  # --- Library ---
  
 -MUPDF_LIB := $(OUT)/libmupdf.a
 +MUPDF_LIB := libmupdf.so.${LIBmupdf_VERSION}
  
- $(MUPDF_LIB) : $(FITZ_OBJ) $(PDF_OBJ) $(XPS_OBJ) $(CBZ_OBJ) $(IMG_OBJ) $(TIFF_OBJ)
+ $(MUPDF_LIB) : $(FITZ_OBJ) $(PDF_OBJ) $(XPS_OBJ) $(CBZ_OBJ) $(HTML_OBJ)
 +	$(CC) $(LDFLAGS) --shared -o $@ $^ $(LIBS)
  
  INSTALL_LIBS := $(MUPDF_LIB)

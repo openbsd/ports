@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makerules,v 1.12 2014/06/12 14:07:19 sthen Exp $
---- Makerules.orig	Tue Jun 10 16:09:28 2014
-+++ Makerules	Thu Jun 12 14:59:25 2014
+$OpenBSD: patch-Makerules,v 1.13 2015/04/25 23:04:54 sthen Exp $
+--- Makerules.orig	Thu Apr 16 09:57:45 2015
++++ Makerules	Sat Apr 25 23:31:58 2015
 @@ -7,6 +7,7 @@ OS := $(OS:Darwin=MACOS)
  
  CFLAGS += -Wall
@@ -37,7 +37,7 @@ $OpenBSD: patch-Makerules,v 1.12 2014/06/12 14:07:19 sthen Exp $
  SYS_X11_LIBS = $(shell pkg-config --libs x11 xext)
  
 -SYS_FREETYPE_CFLAGS = $(shell pkg-config --cflags freetype2)
-+SYS_FREETYPE_CFLAGS = $(shell pkg-config --cflags freetype2) -I${LOCALBASE}/include
++SYS_FREETYPE_CFLAGS = $(shell pkg-config --cflags freetype2) -I/usr/local/include
  SYS_FREETYPE_LIBS = $(shell pkg-config --libs freetype2)
  SYS_OPENJPEG_CFLAGS = $(shell pkg-config --cflags libopenjp2)
  SYS_OPENJPEG_LIBS = $(shell pkg-config --libs libopenjp2)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/10/03 17:39:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/04/25 23:04:54 sthen Exp $
 @bin bin/mudraw
 @bin bin/mujstest
 bin/mupdf
@@ -6,7 +6,6 @@ bin/mupdf
 @bin bin/mupdf-x11-curl
 @bin bin/mutool
 include/mupdf/
-include/mupdf/cbz.h
 include/mupdf/fitz/
 include/mupdf/fitz.h
 include/mupdf/fitz/annotation.h
@@ -29,7 +28,6 @@ include/mupdf/fitz/hash.h
 include/mupdf/fitz/image.h
 include/mupdf/fitz/link.h
 include/mupdf/fitz/math.h
-include/mupdf/fitz/meta.h
 include/mupdf/fitz/outline.h
 include/mupdf/fitz/output-pcl.h
 include/mupdf/fitz/output-png.h
@@ -49,23 +47,27 @@ include/mupdf/fitz/system.h
 include/mupdf/fitz/text.h
 include/mupdf/fitz/transition.h
 include/mupdf/fitz/tree.h
+include/mupdf/fitz/unzip.h
 include/mupdf/fitz/version.h
 include/mupdf/fitz/write-document.h
 include/mupdf/fitz/xml.h
-include/mupdf/img.h
+include/mupdf/html.h
 include/mupdf/memento.h
 include/mupdf/pdf/
 include/mupdf/pdf-tools.h
 include/mupdf/pdf.h
 include/mupdf/pdf/annot.h
 include/mupdf/pdf/appearance.h
+include/mupdf/pdf/clean.h
 include/mupdf/pdf/cmap.h
 include/mupdf/pdf/crypt.h
 include/mupdf/pdf/document.h
 include/mupdf/pdf/event.h
 include/mupdf/pdf/field.h
 include/mupdf/pdf/font.h
+include/mupdf/pdf/interpret.h
 include/mupdf/pdf/javascript.h
+include/mupdf/pdf/name-table.h
 include/mupdf/pdf/object.h
 include/mupdf/pdf/output-pdf.h
 include/mupdf/pdf/page.h
@@ -73,7 +75,6 @@ include/mupdf/pdf/parse.h
 include/mupdf/pdf/resource.h
 include/mupdf/pdf/widget.h
 include/mupdf/pdf/xref.h
-include/mupdf/tiff.h
 include/mupdf/xps.h
 @lib lib/libmupdf.so.${LIBmupdf_VERSION}
 @man man/man1/mudraw.1
