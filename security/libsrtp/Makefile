@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.5 2014/10/22 09:44:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/04/25 23:40:48 sthen Exp $
 
 COMMENT=	secure RTP library
 
-DISTNAME=	srtp-1.4.4
-REVISION=	1
+V=		1.5.2
+DISTNAME=	srtp-$V
+DISTFILES=	${DISTNAME}{v$V}${EXTRACT_SUFX}
 PKGNAME=	lib${DISTNAME}
 CATEGORIES=	security telephony
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	David Hill <dhill@mindcry.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 HOMEPAGE=	http://srtp.sourceforge.net/srtp.html
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=srtp/}
+MASTER_SITES=	https://github.com/cisco/libsrtp/archive/
 
-WRKDIST=	${WRKDIR}/srtp
+WRKDIST=	${WRKDIR}/${PKGNAME}
 
 CONFIGURE_STYLE=	gnu
 CFLAGS+=		-fPIC

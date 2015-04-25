@@ -1,10 +1,10 @@
-$OpenBSD: patch-test_srtp_driver_c,v 1.1 2012/05/09 16:29:23 jasper Exp $
+$OpenBSD: patch-test_srtp_driver_c,v 1.2 2015/04/25 23:40:49 sthen Exp $
 
 Unbreak build on mips64 arches.
 
---- test/srtp_driver.c.orig	Wed May  9 17:29:13 2012
-+++ test/srtp_driver.c	Wed May  9 17:43:31 2012
-@@ -314,7 +314,7 @@ main (int argc, char *argv[]) {
+--- test/srtp_driver.c.orig	Mon Oct 13 15:35:33 2014
++++ test/srtp_driver.c	Mon Nov 10 20:34:33 2014
+@@ -341,7 +341,7 @@ main (int argc, char *argv[]) {
    if (do_codec_timing) {
      srtp_policy_t policy;
      int ignore;
@@ -13,8 +13,8 @@ Unbreak build on mips64 arches.
  
      crypto_policy_set_rtp_default(&policy.rtp);
      crypto_policy_set_rtcp_default(&policy.rtcp);
-@@ -323,33 +323,33 @@ main (int argc, char *argv[]) {
-     policy.key  = test_key;
+@@ -353,33 +353,33 @@ main (int argc, char *argv[]) {
+     policy.allow_repeat_tx = 0;
      policy.next = NULL;
  
 -    printf("mips estimate: %e\n", mips);
