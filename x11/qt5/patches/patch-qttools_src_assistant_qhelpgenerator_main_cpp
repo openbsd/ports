@@ -1,8 +1,8 @@
-$OpenBSD: patch-qttools_src_assistant_qhelpgenerator_main_cpp,v 1.1 2015/04/24 16:16:40 zhuk Exp $
+$OpenBSD: patch-qttools_src_assistant_qhelpgenerator_main_cpp,v 1.2 2015/04/25 18:41:30 zhuk Exp $
 Temporary patch for determining source of documentation build failures
 observed during bulk builds.
 --- qttools/src/assistant/qhelpgenerator/main.cpp.ports.orig	Fri Apr 24 17:18:36 2015
-+++ qttools/src/assistant/qhelpgenerator/main.cpp	Fri Apr 24 17:32:52 2015
++++ qttools/src/assistant/qhelpgenerator/main.cpp	Fri Apr 24 18:20:17 2015
 @@ -153,6 +153,7 @@ int main(int argc, char *argv[])
      }
  
@@ -23,7 +23,7 @@ observed during bulk builds.
 +fprintf(stderr, "%s\n", (success ? "OK" : "FAIL"));
 +    }
 +    if (success && !compressedFile.isEmpty()) {
-+fprintf(stderr, "DEBUG generating compressed file %s... ");
++fprintf(stderr, "DEBUG generating compressed file %s... ", compressedFile.toLocal8Bit().constData());
          success = generator.generate(helpData, compressedFile);
 +fprintf(stderr, "%s\n", (success ? "OK" : "FAIL"));
 +}
