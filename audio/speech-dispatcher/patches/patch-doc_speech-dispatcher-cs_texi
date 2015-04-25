@@ -1,0 +1,16 @@
+$OpenBSD: patch-doc_speech-dispatcher-cs_texi,v 1.1 2015/04/25 19:33:20 jasper Exp $
+
+Silence install-info warning:
+install-info: menu item `Speech Dispatcher cs' already exists, for file `speechd-cs'
+
+--- doc/speech-dispatcher-cs.texi.orig	Sat Apr 25 21:31:34 2015
++++ doc/speech-dispatcher-cs.texi	Sat Apr 25 21:31:38 2015
+@@ -18,7 +18,7 @@
+ @dircategory Development
+ 
+ @direntry
+-* Speech Dispatcher cs: (speechd-cs).     Speech Dispatcher (in Czech).
++* Speech Dispatcher cs: (speech-dispatcher-cs).     Speech Dispatcher (in Czech).
+ @end direntry
+ 
+ @titlepage
