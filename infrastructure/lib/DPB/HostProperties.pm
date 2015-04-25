@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.3 2015/04/25 11:23:20 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.4 2015/04/25 11:32:42 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -79,6 +79,25 @@ sub finalize
 	} else {
 		$prop->{build_user} = $prop->{base_user};
 	}
+	if (defined $prop->{log_user}) {
+		$prop->{log_user} =
+		    DPB::Id->new($prop->{log_user});
+	} else {
+		$prop->{log_user} = $prop->{build_user};
+	}
+	if (defined $prop->{lock_user}) {
+		$prop->{lock_user} =
+		    DPB::Id->new($prop->{lock_user});
+	} else {
+		$prop->{lock_user} = $prop->{log_user};
+	}
+	if (defined $prop->{fetch_user}) {
+		$prop->{fetch_user} =
+		    DPB::Id->new($prop->{fetch_user});
+	} else {
+		$prop->{fetch_user} = $prop->{build_user};
+	}
+
 	if (defined $prop->{memory}) {
 		my $m = $prop->{memory};
 		if ($m =~ s/K$//) {
