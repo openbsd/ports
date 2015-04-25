@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2014/09/04 21:28:56 zhuk Exp $
-COMMENT =		RTP (RFC3550) library
-DISTNAME =		ortp-0.23.0
+# $OpenBSD: Makefile,v 1.6 2015/04/25 23:40:33 sthen Exp $
 
-SHARED_LIBS =		ortp		1.0
+COMMENT =		RTP (RFC3550) library
+DISTNAME =		ortp-0.24.1
+
+SHARED_LIBS +=	ortp                 2.0      # 9.0
 
 CATEGORIES =		net multimedia
 HOMEPAGE =		http://www.linphone.org/eng/documentation/dev/ortp.html
@@ -15,24 +16,16 @@ WANTLIB =		crypto m pthread
 
 MASTER_SITES =		http://download.savannah.nongnu.org/releases/linphone/ortp/sources/
 
-BUILD_DEPENDS =		devel/doxygen \
-			security/libsrtp
+BUILD_DEPENDS =		devel/doxygen
 
 SEPARATE_BUILD =	Yes
 
-# TODO: remove "autoconf" when arc4random() patches get accepted upstream
-CONFIGURE_STYLE =	gnu autoconf
-AUTOCONF_VERSION =	2.68
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--disable-zrtp \
-			--enable-ssl-hmac \
-			--with-srtp=${LOCALBASE}
+			--enable-ssl-hmac
 
-# the test being disabled is needed for PolarSSL only
-CONFIGURE_ARGS +=	--enable-broken-srtp
-
-# no support for AI_V4MAPPED yet
-CONFIGURE_ENV =		CFLAGS="${CFLAGS} -DAI_V4MAPPED=0"
+# OpenBSD does not support AI_V4MAPPED/AI_ALL
+CONFIGURE_ENV =		CFLAGS="${CFLAGS} -DAI_V4MAPPED=0 -DAI_ALL"
 
 post-install:
 	rm -Rf ${PREFIX}/share/doc/ortp
