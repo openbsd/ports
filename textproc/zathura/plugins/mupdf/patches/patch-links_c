@@ -1,0 +1,18 @@
+$OpenBSD: patch-links_c,v 1.1 2015/04/25 23:05:41 sthen Exp $
+
+From f96dd48825c049bbccb2e25a814c49d03fedf86c Mon Sep 17 00:00:00 2001
+From: Moritz Lipp <mlq@pwmt.org>
+Date: Sun, 19 Apr 2015 10:39:02 +0200
+Subject: [PATCH] Update for 1.7 API changes
+
+--- links.c.orig	Thu Oct 16 23:21:41 2014
++++ links.c	Sat Apr 25 23:47:26 2015
+@@ -31,7 +31,7 @@ pdf_page_links_get(zathura_page_t* page, mupdf_page_t*
+     goto error_free;
+   }
+ 
+-  fz_link* link = fz_load_links(mupdf_document->document, mupdf_page->page);
++  fz_link* link = fz_load_links(mupdf_document->ctx, mupdf_page->page);
+   for (; link != NULL; link = link->next) {
+     /* extract position */
+     zathura_rectangle_t position;

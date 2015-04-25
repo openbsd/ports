@@ -1,0 +1,18 @@
+$OpenBSD: patch-search_c,v 1.1 2015/04/25 23:05:41 sthen Exp $
+
+From e2dbf4be4709c54d3e3859eba4ceb9cdab8e6b43 Mon Sep 17 00:00:00 2001
+From: Moritz Lipp <mlq@pwmt.org>
+Date: Thu, 20 Nov 2014 13:58:42 +0100
+Subject: [PATCH] Use correct free function for search results
+
+--- search.c.orig	Thu Oct 16 23:21:41 2014
++++ search.c	Sat Apr 25 23:42:00 2015
+@@ -26,7 +26,7 @@ pdf_page_search_text(zathura_page_t* page, mupdf_page_
+ 
+   mupdf_document_t* mupdf_document = zathura_document_get_data(document);;
+ 
+-  girara_list_t* list = girara_list_new2((girara_free_function_t) zathura_link_free);
++  girara_list_t* list = girara_list_new2(g_free);
+   if (list == NULL) {
+     if (error != NULL) {
+       *error = ZATHURA_ERROR_OUT_OF_MEMORY;

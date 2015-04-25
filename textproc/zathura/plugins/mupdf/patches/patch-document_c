@@ -1,0 +1,80 @@
+$OpenBSD: patch-document_c,v 1.1 2015/04/25 23:05:41 sthen Exp $
+
+From 00792eae08aafb5ba2f429b1cdee0a5fe9c25c61 Mon Sep 17 00:00:00 2001
+From: Moritz Lipp <mlq@pwmt.org>
+Date: Sun, 19 Apr 2015 10:49:20 +0200
+Subject: [PATCH] Enable EPUB support
+
+From f96dd48825c049bbccb2e25a814c49d03fedf86c Mon Sep 17 00:00:00 2001
+From: Moritz Lipp <mlq@pwmt.org>
+Date: Sun, 19 Apr 2015 10:39:02 +0200
+Subject: [PATCH] Update for 1.7 API changes
+
+--- document.c.orig	Sat Apr 25 23:50:55 2015
++++ document.c	Sat Apr 25 23:50:29 2015
+@@ -34,11 +34,9 @@ pdf_document_open(zathura_document_t* document)
+   const char* password = zathura_document_get_password(document);
+ 
+   fz_try(mupdf_document->ctx){
+-    if (strstr(path, ".xps") != 0 || strstr(path, ".XPS") != 0 || strstr(path, ".rels") != 0) {
+-      mupdf_document->document = (fz_document*) xps_open_document(mupdf_document->ctx, (char*) path);
+-    } else {
+-      mupdf_document->document = (fz_document*) pdf_open_document(mupdf_document->ctx, (char*) path);
+-    }
++    fz_register_document_handlers(mupdf_document->ctx);
++
++    mupdf_document->document = fz_open_document(mupdf_document->ctx, path);
+   }
+   fz_catch(mupdf_document->ctx){
+     error = ZATHURA_ERROR_UNKNOWN;
+@@ -51,14 +49,14 @@ pdf_document_open(zathura_document_t* document)
+   }
+ 
+   /* authenticate if password is required and given */
+-  if (fz_needs_password(mupdf_document->document) != 0) {
+-    if (password == NULL || fz_authenticate_password(mupdf_document->document, (char*) password) == 0) {
++  if (fz_needs_password(mupdf_document->ctx, mupdf_document->document) != 0) {
++    if (password == NULL || fz_authenticate_password(mupdf_document->ctx, mupdf_document->document, (char*) password) == 0) {
+       error = ZATHURA_ERROR_INVALID_PASSWORD;
+       goto error_free;
+     }
+   }
+ 
+-  zathura_document_set_number_of_pages(document, fz_count_pages(mupdf_document->document));
++  zathura_document_set_number_of_pages(document, fz_count_pages(mupdf_document->ctx, mupdf_document->document));
+   zathura_document_set_data(document, mupdf_document);
+ 
+   return error;
+@@ -67,10 +65,10 @@ error_free:
+ 
+   if (mupdf_document != NULL) {
+     if (mupdf_document->document != NULL) {
+-      fz_close_document(mupdf_document->document);
++      fz_drop_document(mupdf_document->ctx, mupdf_document->document);
+     }
+     if (mupdf_document->ctx != NULL) {
+-      fz_free_context(mupdf_document->ctx);
++      fz_drop_context(mupdf_document->ctx);
+     }
+ 
+     free(mupdf_document);
+@@ -90,8 +88,8 @@ pdf_document_free(zathura_document_t* document, mupdf_
+     return ZATHURA_ERROR_INVALID_ARGUMENTS;
+   }
+ 
+-  fz_close_document(mupdf_document->document);
+-  fz_free_context(mupdf_document->ctx);
++  fz_drop_document(mupdf_document->ctx, mupdf_document->document);
++  fz_drop_context(mupdf_document->ctx);
+   free(mupdf_document);
+   zathura_document_set_data(document, NULL);
+ 
+@@ -112,7 +110,7 @@ pdf_document_save_as(zathura_document_t* document, mup
+      * options. */
+ 
+     fz_write_options opts = { 0 }; /* just use the default options */
+-    fz_write_document(mupdf_document->document, (char*) path, &opts);
++    fz_write_document(mupdf_document->ctx, mupdf_document->document, (char*) path, &opts);
+   } fz_catch (mupdf_document->ctx) {
+     return ZATHURA_ERROR_UNKNOWN;
+   }

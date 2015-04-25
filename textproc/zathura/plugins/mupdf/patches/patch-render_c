@@ -1,0 +1,35 @@
+$OpenBSD: patch-render_c,v 1.1 2015/04/25 23:05:41 sthen Exp $
+
+From f96dd48825c049bbccb2e25a814c49d03fedf86c Mon Sep 17 00:00:00 2001
+From: Moritz Lipp <mlq@pwmt.org>
+Date: Sun, 19 Apr 2015 10:39:02 +0200
+Subject: [PATCH] Update for 1.7 API changes
+
+--- render.c.orig	Thu Oct 16 23:21:41 2014
++++ render.c	Sat Apr 25 23:47:26 2015
+@@ -26,12 +26,12 @@ pdf_page_render_to_buffer(mupdf_document_t* mupdf_docu
+   fz_try (mupdf_document->ctx) {
+     fz_matrix m;
+     fz_scale(&m, scalex, scaley);
+-    fz_run_page(mupdf_document->document, mupdf_page->page, device, &m, NULL);
++    fz_run_page(mupdf_document->ctx, mupdf_page->page, device, &m, NULL);
+   } fz_catch (mupdf_document->ctx) {
+     return ZATHURA_ERROR_UNKNOWN;
+   }
+ 
+-  fz_free_device(device);
++  fz_drop_device(mupdf_page->ctx, device);
+ 
+   fz_irect irect = { .x1 = page_width, .y1 = page_height };
+   fz_rect rect = { .x1 = page_width, .y1 = page_height };
+@@ -41,8 +41,8 @@ pdf_page_render_to_buffer(mupdf_document_t* mupdf_docu
+   fz_clear_pixmap_with_value(mupdf_page->ctx, pixmap, 0xFF);
+ 
+   device = fz_new_draw_device(mupdf_page->ctx, pixmap);
+-  fz_run_display_list(display_list, device, &fz_identity, &rect, NULL);
+-  fz_free_device(device);
++  fz_run_display_list(mupdf_page->ctx, display_list, device, &fz_identity, &rect, NULL);
++  fz_drop_device(mupdf_page->ctx, device);
+ 
+   unsigned char* s = fz_pixmap_samples(mupdf_page->ctx, pixmap);
+   unsigned int n   = fz_pixmap_components(mupdf_page->ctx, pixmap);

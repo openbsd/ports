@@ -1,0 +1,18 @@
+$OpenBSD: patch-plugin_c,v 1.1 2015/04/25 23:05:41 sthen Exp $
+
+From 00792eae08aafb5ba2f429b1cdee0a5fe9c25c61 Mon Sep 17 00:00:00 2001
+From: Moritz Lipp <mlq@pwmt.org>
+Date: Sun, 19 Apr 2015 10:49:20 +0200
+Subject: [PATCH] Enable EPUB support
+
+--- plugin.c.orig	Thu Oct 16 23:21:41 2014
++++ plugin.c	Sat Apr 25 23:56:39 2015
+@@ -32,6 +32,7 @@ ZATHURA_PLUGIN_REGISTER(
+   register_functions,
+   ZATHURA_PLUGIN_MIMETYPES({
+     "application/pdf",
+-    "application/oxps"
++    "application/oxps",
++    "application/epub+zip"
+   })
+ )

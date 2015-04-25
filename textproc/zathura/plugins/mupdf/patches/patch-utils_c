@@ -1,0 +1,21 @@
+$OpenBSD: patch-utils_c,v 1.1 2015/04/25 23:05:41 sthen Exp $
+
+From f96dd48825c049bbccb2e25a814c49d03fedf86c Mon Sep 17 00:00:00 2001
+From: Moritz Lipp <mlq@pwmt.org>
+Date: Sun, 19 Apr 2015 10:39:02 +0200
+Subject: [PATCH] Update for 1.7 API changes
+
+--- utils.c.orig	Thu Oct 16 23:21:41 2014
++++ utils.c	Sun Apr 26 00:02:06 2015
+@@ -17,9 +17,9 @@ mupdf_page_extract_text(mupdf_document_t* mupdf_docume
+     text_device = fz_new_text_device(mupdf_page->ctx, mupdf_page->sheet, mupdf_page->text);
+     fz_matrix ctm;
+     fz_scale(&ctm, 1.0, 1.0);
+-    fz_run_page(mupdf_document->document, mupdf_page->page, text_device, &ctm, NULL);
++    fz_run_page(mupdf_page->ctx, mupdf_page->page, text_device, &ctm, NULL);
+   } fz_always (mupdf_document->ctx) {
+-    fz_free_device(text_device);
++    fz_drop_device(mupdf_page->ctx, text_device);
+   } fz_catch(mupdf_document->ctx) {
+   }
+ 
