@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/10/17 08:35:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/04/25 10:16:15 ajacoutot Exp $
 @bin bin/derb
 @bin bin/genbrk
 @bin bin/gencfu
@@ -95,7 +95,7 @@ include/unicode/reldatefmt.h
 include/unicode/rep.h
 include/unicode/resbund.h
 include/unicode/schriter.h
-include/unicode/scientificformathelper.h
+include/unicode/scientificnumberformatter.h
 include/unicode/search.h
 include/unicode/selfmt.h
 include/unicode/simpletz.h
@@ -142,11 +142,13 @@ include/unicode/udateintervalformat.h
 include/unicode/udatpg.h
 include/unicode/udisplaycontext.h
 include/unicode/uenum.h
+include/unicode/ufieldpositer.h
 include/unicode/uformattable.h
 include/unicode/ugender.h
 include/unicode/uidna.h
 include/unicode/uiter.h
 include/unicode/uldnames.h
+include/unicode/ulistformatter.h
 include/unicode/uloc.h
 include/unicode/ulocdata.h
 include/unicode/umachine.h

@@ -1,7 +1,4 @@
-$OpenBSD: patch-source_config_mh-bsd-gcc,v 1.3 2010/04/05 21:40:24 landry Exp $
-
-Prevents build system from setting DT_SONAME into shared libs.
-
+$OpenBSD: patch-source_config_mh-bsd-gcc,v 1.4 2015/04/25 10:16:15 ajacoutot Exp $
 --- source/config/mh-bsd-gcc.orig	Tue Mar 16 06:14:02 2010
 +++ source/config/mh-bsd-gcc	Sat Mar 20 11:16:31 2010
 @@ -21,7 +21,7 @@ LD_RPATH=	

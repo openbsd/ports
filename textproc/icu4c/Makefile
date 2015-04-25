@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2015/04/19 09:02:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2015/04/25 10:16:15 ajacoutot Exp $
 
 # XXX re-rolled tarball: drop at next release
 DIST_SUBDIR=		icu4c
@@ -7,13 +7,12 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 COMMENT=		International Components for Unicode
 
-VERSION=		54.1
+VERSION=		55.1
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME=		icu4c-${VERSION}
-REVISION=		4
 
 MAJ_V=			${VERSION:R}
-SO_VERSION=		8.0
+SO_VERSION=		8.1
 .for _lib in icudata icui18n icuio icule iculx icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
