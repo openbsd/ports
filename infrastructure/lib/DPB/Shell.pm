@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.2 2015/04/21 09:23:57 espie Exp $
+# $OpenBSD: Shell.pm,v 1.3 2015/04/25 10:07:19 espie Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -180,5 +180,45 @@ sub nochroot
 	my $self = shift;
 	bless $self, 'DPB::Shell::Local';
 }
+
+package DPB::Shell::Local::Root;
+our @ISA = qw(DPB::Shell::Abstract);
+use POSIX;
+
+sub exec
+{
+	my ($self, @argv) = @_;
+	my $chroot = $self->prop->{chroot};
+	if ($self->{nochroot}) {
+		undef $chroot;
+	}
+	if (defined $chroot) {
+		chroot($chroot);
+	}
+	if (!$self->{sudo} && defined $self->prop->{build_user}) {
+		setuid($self->prop->{build_user}{uid});
+		setgid($self->prop->{build_user}{gid});
+	}
+	if ($self->{env}) {
+		while (my ($k, $v) = each %{$self->{env}}) {
+			$v //= '';
+			$ENV{$k} = $v;
+		}
+	}
+	if ($self->{dir}) {
+		CORE::chdir($self->{dir}) or 
+		    DPB::Util->die_bang("Can't chdir to $self->{dir}");
+	}
+
+	if (defined $self->prop->{umask}) {
+		umask($self->prop->{umask});
+	}
+	if (-t STDIN) {
+		close(STDIN);
+		open STDIN, '</dev/null';
+	}
+	exec {$argv[0]} @argv;
+}
+
 
 1;

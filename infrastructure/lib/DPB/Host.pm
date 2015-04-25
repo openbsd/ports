@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Host.pm,v 1.1 2014/12/25 15:14:14 espie Exp $
+# $OpenBSD: Host.pm,v 1.2 2015/04/25 10:07:19 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -90,7 +90,9 @@ sub is_alive
 sub shellclass
 {
 	my $self = shift;
-	if ($self->{prop}->{chroot}) {
+	if ($self->{prop}{iamroot}) {
+		return "DPB::Shell::Local::Root";
+	} elsif ($self->{prop}{chroot}) {
 		return "DPB::Shell::Local::Chroot";
 	} else {
 		return "DPB::Shell::Local";
