@@ -1,5 +1,5 @@
---- ext/openssl/config0.m4.orig.port	Wed Nov 12 14:52:21 2014
-+++ ext/openssl/config0.m4	Sat Nov 15 10:45:12 2014
+--- ext/openssl/config0.m4.orig.port	Wed Apr 15 20:05:57 2015
++++ ext/openssl/config0.m4	Sat Apr 25 18:10:11 2015
 @@ -19,7 +19,7 @@ if test "$PHP_OPENSSL" != "no"; then
      PHP_SETUP_KERBEROS(OPENSSL_SHARED_LIBADD)
    fi
@@ -7,5 +7,5 @@
 -  AC_CHECK_LIB(ssl, DSA_get_default_method, AC_DEFINE(HAVE_DSA_DEFAULT_METHOD, 1, [OpenSSL 0.9.7 or later]))
 +  AC_CHECK_LIB(ssl, DSA_get_default_method, AC_DEFINE(HAVE_DSA_DEFAULT_METHOD, 1, [OpenSSL 0.9.7 or later]),, [-lcrypto])
    AC_CHECK_LIB(crypto, X509_free, AC_DEFINE(HAVE_DSA_DEFAULT_METHOD, 1, [OpenSSL 0.9.7 or later]))
+   AC_CHECK_FUNCS([RAND_egd])
  
-   PHP_SETUP_OPENSSL(OPENSSL_SHARED_LIBADD, 
