@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Host.pm,v 1.2 2015/04/25 10:07:19 espie Exp $
+# $OpenBSD: Host.pm,v 1.3 2015/04/25 11:23:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -39,7 +39,7 @@ sub new
 	}
 	if (!defined $hosts->{$name}) {
 		my $h = bless {host => $name, 
-			prop => DPB::HostProperties->finalize($prop) }, $class;
+			prop => $prop }, $class;
 		# XXX have to register *before* creating the shell
 		$hosts->{$name} = $h;
 		$h->{shell} = $h->shellclass->new($h);

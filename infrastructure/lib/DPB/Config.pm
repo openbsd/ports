@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.33 2015/04/21 09:53:13 espie Exp $
+# $OpenBSD: Config.pm,v 1.34 2015/04/25 11:23:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -302,21 +302,20 @@ sub parse_config_files
 	if ($state->{config_files}) {
 		for my $config (@{$state->{config_files}}) {
 			$class->parse_hosts_file($config, $state, 
-			    $default_prop, $override_prop);
+			    \$default_prop, $override_prop);
 		}
 	}
-	$state->{default_prop} = $default_prop;
-	$state->{override_prop} = $override_prop;
+	my $prop = DPB::HostProperties->new($default_prop);
+	$prop->finalize_with_overrides($override_prop);
 	if (!$state->{config_files}) {
-		my $prop = DPB::HostProperties->new($state->{default_prop});
-		$prop->add_overrides($state->{override_prop});
 		DPB::Core::Init->new('localhost', $prop);
 	}
+	$state->{build_user} //= $prop->{build_user};
 }
 
 sub parse_hosts_file
 {
-	my ($class, $filename, $state, $default, $override) = @_;
+	my ($class, $filename, $state, $rdefault, $override) = @_;
 	open my $fh, '<', $filename or
 		$state->fatal("Can't read host files #1: #2", $filename, $!);
 	my $cores = {};
@@ -329,7 +328,7 @@ sub parse_hosts_file
 			next;
 		}
 		# copy default properties
-		my $prop = DPB::HostProperties->new($default);
+		my $prop = DPB::HostProperties->new($$rdefault);
 		my ($host, @properties) = split(/\s+/, $_);
 		for my $arg (@properties) {
 			if ($arg =~ m/^(.*?)=(.*)$/) {
@@ -340,10 +339,10 @@ sub parse_hosts_file
 			next;
 		}
 		if ($host eq 'DEFAULT') {
-			$default = { %$prop };
+			$$rdefault = { %$prop };
 			next;
 		}
-		$prop->add_overrides($override);
+		$prop->finalize_with_overrides($override);
 		DPB::Core::Init->new($host, $prop);
 	}
 }
@@ -375,6 +374,13 @@ sub user
 {
 	my $self = shift;
 	return $self->{user};
+}
+
+sub run_as
+{
+	my ($self, $code) = @_;
+	local ($>, $)) = ($self->{uid}, $self->{gid});
+	&$code;
 }
 
 1;

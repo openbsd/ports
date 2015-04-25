@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.2 2015/04/21 09:23:57 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.3 2015/04/25 11:23:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -53,10 +53,9 @@ sub has_mem
 	return $has_mem;
 }
 
-my $default_user;
 sub finalize
 {
-	my ($class, $prop) = @_;
+	my $prop = shift;
 	$prop->{sf} //= 1;
 	$prop->{umask} //= sprintf("0%o", umask);
 	if (defined $prop->{stuck}) {
@@ -96,6 +95,13 @@ sub finalize
 	$prop->{small} //= 120;
 	$prop->{small_timeout} = $prop->{small} * $prop->{sf};
 	return $prop;
+}
+
+sub finalize_with_overrides
+{
+	my ($self, $overrides) = @_;
+	$self->add_overrides($overrides);
+	$self->finalize;
 }
 
 1;
