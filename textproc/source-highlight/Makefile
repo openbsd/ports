@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2015/02/16 22:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2015/04/25 22:16:26 rpe Exp $
 
 COMMENT=	create a document with syntax highlighting
 
-DISTNAME=	source-highlight-3.1.7
-REVISION=	0
-SHARED_LIBS +=	source-highlight     1.0      # 4.0
+DISTNAME=	source-highlight-3.1.8
+SHARED_LIBS +=	source-highlight     1.1      # 4.1
 CATEGORIES=	textproc
 
 HOMEPAGE=	https://www.gnu.org/software/src-highlite/
@@ -17,16 +16,16 @@ WANTLIB=	c m stdc++ boost_regex-mt pthread
 MASTER_SITES=	${MASTER_SITE_GNU:=src-highlite/}
 
 LIB_DEPENDS=	devel/boost
-BUILD_DEPENDS=	devel/doxygen \
-		devel/help2man \
+BUILD_DEPENDS=	devel/help2man \
 		textproc/texi2html
 TEST_DEPENDS=	textproc/gsed
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		--with-bash-completion="${PREFIX}/share/source-highlight/bash_completion.d/"
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+FAKE_FLAGS=	bash_completiondir=${PREFIX}/share/examples/source-highlight/bash_completion.d
 
 TEST_TARGET=	check
 
