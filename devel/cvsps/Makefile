@@ -1,7 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/04/25 09:13:57 sthen Exp $
 
 COMMENT=	generate patchsets from CVS repositories
 
+# note that this was maintained for a while by esr, who made a couple of
+# releases which have segfaults with OpenBSD src, and then broke diff
+# support, before removing diff support completely, and ceasing development.
+# deliberately holding at 2.1 for now.
 DISTNAME=	cvsps-2.1
 REVISION=	0
 CATEGORIES=     devel
