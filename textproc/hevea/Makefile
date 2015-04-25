@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/08/22 22:49:07 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2015/04/25 08:14:35 espie Exp $
 
 COMMENT=	LaTeX to html translator
 
@@ -8,9 +8,8 @@ CATEGORIES=	textproc print
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m
 
-DISTNAME =	hevea-2.00
+DISTNAME =	hevea-2.23
 MASTER_SITES =	http://para.inria.fr/~maranget/hevea/distri/
-REVISION =	0
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-manual${EXTRACT_SUFX}
 

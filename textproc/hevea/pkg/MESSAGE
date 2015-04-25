@@ -1,4 +1,4 @@
 The imagen script needs LaTeX, dvips, ghostscript and tools from netpbm.
 
-Thus, Hevea does not require tetex, ghostscript, nor netpbm, but its
+Thus, Hevea does not require texlive, ghostscript, nor netpbm, but its
 full functionality can only be achieved if you install those packages.
