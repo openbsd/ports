@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.34 2015/04/25 11:23:20 espie Exp $
+# $OpenBSD: Config.pm,v 1.35 2015/04/25 11:40:06 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -310,7 +310,9 @@ sub parse_config_files
 	if (!$state->{config_files}) {
 		DPB::Core::Init->new('localhost', $prop);
 	}
-	$state->{build_user} //= $prop->{build_user};
+	for my $u (qw(build_user log_user lock_user fetch_user)) {
+		$state->{$u} //= $prop->{$u};
+	}
 }
 
 sub parse_hosts_file
