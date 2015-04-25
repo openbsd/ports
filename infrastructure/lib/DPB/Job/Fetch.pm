@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.2 2013/12/07 15:45:15 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.3 2015/04/25 11:24:24 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -109,7 +109,6 @@ sub run
 		exit(1);
 	}
 	my $ftp = OpenBSD::Paths->ftp;
-	$self->redirect($job->{log});
 	my @cmd = ('-C', '-o', $job->{file}->tempfilename, '-v',
 	    $site.$job->{file}->{short});
 	if ($ftp =~ /\s/) {
