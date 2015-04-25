@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/04/03 16:48:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/04/25 10:48:52 jasper Exp $
 @bin bin/gnome-contacts
 @bin libexec/gnome-contacts-search-provider
 @man man/man1/gnome-contacts.1
@@ -50,6 +50,7 @@ share/locale/he/LC_MESSAGES/gnome-contacts.mo
 share/locale/hi/LC_MESSAGES/gnome-contacts.mo
 share/locale/hu/LC_MESSAGES/gnome-contacts.mo
 share/locale/id/LC_MESSAGES/gnome-contacts.mo
+share/locale/is/LC_MESSAGES/gnome-contacts.mo
 share/locale/it/LC_MESSAGES/gnome-contacts.mo
 share/locale/ja/LC_MESSAGES/gnome-contacts.mo
 share/locale/kk/LC_MESSAGES/gnome-contacts.mo
