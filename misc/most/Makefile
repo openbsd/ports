@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2015/04/25 21:56:38 rpe Exp $
+
+PORTROACH=	limit:.*[^a]$$
 
 COMMENT=	browse or page through a text file
 
