@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.10 2013/12/30 17:32:26 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.11 2015/04/25 11:40:58 espie Exp $
 #
 # Copyright (c) 2012-2013 Marc Espie <espie@openbsd.org>
 #
@@ -28,12 +28,21 @@ package DPB::Affinity;
 use File::Path;
 use DPB::PkgPath;
 
+sub run_as
+{
+	my ($self, $code) = @_;
+	$self->{user}->run_as($code);
+}
+
 sub new
 {
 	my ($class, $state, $dir) = @_;
 
-	File::Path::make_path($dir);
-	my $o = bless {dir => $dir}, $class;
+	my $o = bless {dir => $dir, user => $state->{lock_user}}, $class;
+	$o->run_as(
+	    sub {
+		File::Path::make_path($dir);
+	    });
 	$o->retrieve_existing_markers($state->logger);
 	return $o;
 }
@@ -52,19 +61,22 @@ sub affinity_marker
 sub start
 {
 	my ($self, $v, $core) = @_;
-	my $host = $core->hostname;
-	for my $w ($v->build_path_list) {
-		next if $w->{info}->is_stub;
-		open(my $fh, '>', $self->affinity_marker($w)) or next;
-		$w->{affinity} = $host;
-		print $fh "host=$host\n";
-		print $fh "path=", $w->fullpkgpath, "\n";
-		if ($core->{inmem}) {
-			print $fh "mem=$core->{inmem}\n";
-			$w->{mem_affinity} = $core->{inmem};
+	$self->run_as(
+	    sub {
+		my $host = $core->hostname;
+		for my $w ($v->build_path_list) {
+			next if $w->{info}->is_stub;
+			open(my $fh, '>', $self->affinity_marker($w)) or next;
+			$w->{affinity} = $host;
+			print $fh "host=$host\n";
+			print $fh "path=", $w->fullpkgpath, "\n";
+			if ($core->{inmem}) {
+				print $fh "mem=$core->{inmem}\n";
+				$w->{mem_affinity} = $core->{inmem};
+			}
+			close $fh;
 		}
-		close $fh;
-	}
+	    });
 }
 
 # when we see a package is already done, we have no way of knowing which
@@ -72,9 +84,12 @@ sub start
 sub unmark
 {
 	my ($self, $v) = @_;
-	unlink($self->affinity_marker($v));
-	delete $v->{affinity};
-	delete $v->{mem_affinity};
+	$self->run_as(
+	    sub {
+		unlink($self->affinity_marker($v));
+		delete $v->{affinity};
+		delete $v->{mem_affinity};
+	    });
 }
 
 # on the other hand, when we finish building a port, we can unmark all paths.

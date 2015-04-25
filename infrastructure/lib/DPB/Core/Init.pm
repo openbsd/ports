@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.19 2015/04/25 10:07:19 espie Exp $
+# $OpenBSD: Init.pm,v 1.20 2015/04/25 11:40:58 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -194,8 +194,12 @@ sub init_cores
 			$job->add_tasks(DPB::Task::Fork->new(
 			    sub {
 				my $shell = shift;
-				DPB::Task->redirect($logger->logfile("init.".
-				    $core->hostname));
+				$state->{log_user}->run_as(
+				    sub {
+					DPB::Task->redirect(
+					    $logger->logfile("init.".
+					    $core->hostname));
+				    });
 				$shell
 				    ->chdir($state->ports)
 				    ->sudo

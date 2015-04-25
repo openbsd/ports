@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.28 2015/04/21 09:53:13 espie Exp $
+# $OpenBSD: Locks.pm,v 1.29 2015/04/25 11:40:58 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -24,18 +24,28 @@ use File::Path;
 use Fcntl;
 require 'fcntl.ph';
 
+sub run_as
+{
+	my ($self, $code) = @_;
+	$self->{user}->run_as($code);
+}
+
 sub new
 {
 	my ($class, $state) = @_;
 
 	my $lockdir = $state->{lockdir};
-	File::Path::make_path($lockdir);
 	my $o = bless {lockdir => $lockdir, 
 		dpb_pid => $$, 
+		user => $state->{lock_user},
 		dpb_host => DPB::Core::Local->hostname}, $class;
-	if (!$state->defines("DONT_CLEAN_LOCKS")) {
-		$o->{stalelocks} = $o->clean_old_locks($state);
-	}
+	$o->run_as(
+	    sub {
+		File::Path::make_path($lockdir);
+		if (!$state->defines("DONT_CLEAN_LOCKS")) {
+			$o->{stalelocks} = $o->clean_old_locks($state);
+		}
+	    });
 	return $o;
 }
 
@@ -129,16 +139,20 @@ sub lockname
 sub dolock
 {
 	my ($self, $name, $v) = @_;
-	if (sysopen my $fh, $name, O_CREAT|O_EXCL|O_WRONLY|O_CLOEXEC(), 0666) {
-		DPB::Util->make_hot($fh);
-		print $fh "locked=", $v->logname, "\n";
-		print $fh "dpb=", $self->{dpb_pid}, " on ", 
-		    $self->{dpb_host}, "\n";
-		$v->print_parent($fh);
-		return $fh;
-	} else {
-		return 0;
-	}
+	$self->run_as(
+	    sub {
+		if (sysopen my $fh, $name, 
+		    O_CREAT|O_EXCL|O_WRONLY|O_CLOEXEC(), 0666) {
+			DPB::Util->make_hot($fh);
+			print $fh "locked=", $v->logname, "\n";
+			print $fh "dpb=", $self->{dpb_pid}, " on ", 
+			    $self->{dpb_host}, "\n";
+			$v->print_parent($fh);
+			return $fh;
+		} else {
+			return 0;
+		}
+	    });
 }
 
 sub lock
@@ -155,7 +169,10 @@ sub lock
 sub unlock
 {
 	my ($self, $v) = @_;
-	unlink($self->lockname($v));
+	$self->run_as(
+	    sub {
+		unlink($self->lockname($v));
+	    });
 }
 
 sub locked

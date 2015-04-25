@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.15 2015/04/21 09:53:13 espie Exp $
+# $OpenBSD: Logger.pm,v 1.16 2015/04/25 11:40:58 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -27,14 +27,27 @@ use Fcntl;
 sub new
 {
 	my ($class, $state) = @_;
-	bless {logdir => $state->logdir, clean => $state->opt('c')}, $class;
+	if (!defined $state->{build_user}) {
+		die "Too early";
+	}
+	bless {logdir => $state->logdir, user => $state->{log_user}, 
+	    clean => $state->opt('c')}, $class;
+}
+
+sub run_as
+{
+	my ($self, $code) = @_;
+	return $self->{user}->run_as($code);
 }
 
 sub logfile
 {
 	my ($self, $name) = @_;
 	my $log = "$self->{logdir}/$name.log";
-	File::Path::mkpath(File::Basename::dirname($log));
+	$self->run_as(
+	    sub {
+		File::Path::mkpath(File::Basename::dirname($log));
+	    });
 	return $log;
 }
 
@@ -42,11 +55,14 @@ sub _open
 {
 	my ($self, $mode, $name) = @_;
 	my $log = $self->logfile($name);
-	my $fh = IO::File->new($log, $mode) or 
-	    DPB::Util->die_bang("Can't write to $log");
-	my $flags = $fh->fcntl(F_GETFL, 0);
-	$fh->fcntl(F_SETFL, $flags | FD_CLOEXEC);
-	return $fh;
+	$self->run_as(
+	    sub {
+		my $fh = IO::File->new($log, $mode) or 
+		    DPB::Util->die_bang("Can't write to $log");
+		my $flags = $fh->fcntl(F_GETFL, 0);
+		$fh->fcntl(F_SETFL, $flags | FD_CLOEXEC);
+		return $fh;
+	    });
 }
 
 sub open
@@ -86,48 +102,61 @@ sub log_pkgname
 sub link
 {
 	my ($self, $a, $b) = @_;
-	if ($self->{clean}) {
-		unlink($b);
-	}
-	my $src = File::Spec->catfile(
-	    File::Spec->abs2rel($self->{logdir}, File::Basename::dirname($b)),
-	    File::Spec->abs2rel($a, $self->{logdir}));
-	symlink($src, $b);
+	$self->run_as(
+	    sub {
+		if ($self->{clean}) {
+			unlink($b);
+		}
+	    my $src = File::Spec->catfile(
+		File::Spec->abs2rel($self->{logdir}, 
+		File::Basename::dirname($b)),
+		File::Spec->abs2rel($a, $self->{logdir}));
+	    symlink($src, $b);
+	});
 }
 
 sub make_logs
 {
 	my ($self, $v) = @_;
-	my $log = $self->log_pkgpath($v);
-	if ($self->{clean}) {
-		unlink($log);
-	}
-	for my $w ($v->build_path_list) {
-		$self->link($log, $self->log_pkgname($w));
-	}
-	return $log;
+	$self->run_as(
+	    sub {
+		my $log = $self->log_pkgpath($v);
+		if ($self->{clean}) {
+			unlink($log);
+		}
+		for my $w ($v->build_path_list) {
+			$self->link($log, $self->log_pkgname($w));
+		}
+		return $log;
+	    });
 }
 
 sub make_test_logs
 {
 	my ($self, $v) = @_;
 	my $log = $self->testlog_pkgpath($v);
-	if ($self->{clean}) {
-		unlink($log);
-	}
-	return $log;
+	self->run_as(
+	    sub {
+		if ($self->{clean}) {
+			unlink($log);
+		}
+		return $log;
+	    });
 }
 
 sub log_error
 {
 	my ($self, $v, @messages) = @_;
 	my $log = $self->make_logs($v);
-	CORE::open my $fh, ">>", $log or 
-	    DPB::Util->die_bang("Can't write to $log");
-	for my $msg (@messages) {
-		print $fh $msg, "\n";
-	}
-	$v->print_parent($fh);
+	$self->run_as(
+	    sub {
+		CORE::open my $fh, ">>", $log or 
+		    DPB::Util->die_bang("Can't write to $log");
+		for my $msg (@messages) {
+			print $fh $msg, "\n";
+		}
+		$v->print_parent($fh);
+	    });
 }
 
 sub make_distlogs
@@ -139,17 +168,21 @@ sub make_distlogs
 sub make_log_link
 {
 	my ($self, $v) = @_;
-	my $file = $self->log_pkgname($v);
-	# we were built, but we don't link, so try the main pkgpath.
-	if (!-e $file) {
-		my $mainlog = $self->log_pkgpath(DPB::PkgPath->new($v->pkgpath_and_flavors));
-		if (-e $mainlog) {
-			$self->link($mainlog, $file);
+	$self->run_as(
+	    sub {
+		my $file = $self->log_pkgname($v);
+		# we were built, but we don't link, so try the main pkgpath.
+		if (!-e $file) {
+			my $mainlog = $self->log_pkgpath(DPB::PkgPath->new($v->pkgpath_and_flavors));
+			if (-e $mainlog) {
+				$self->link($mainlog, $file);
+			}
+			# okay, so it was built through another flavor, 
+			# don't bother for now, 
+			# it will all solve itself eventually
 		}
-		# okay, so it was built through another flavor, don't bother
-		# for now, it will all solve itself eventually
-	}
-	$self->link($file, $self->log_pkgpath($v));
+		$self->link($file, $self->log_pkgpath($v));
+	    });
 }
 
 1;

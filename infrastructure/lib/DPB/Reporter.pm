@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.24 2013/10/06 13:33:34 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.25 2015/04/25 11:40:58 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -125,7 +125,10 @@ sub make_singleton
 	    timeout => $state->{display_timeout} // 10,
 	    continued => 0}, $class;
     	if ($state->{record}) {
-		open $singleton->{record}, '>>', $state->{record};
+		$state->{log_user}->run_as(
+		    sub {
+			open $singleton->{record}, '>>', $state->{record};
+		    });
 	}
 	return $singleton;
 }
