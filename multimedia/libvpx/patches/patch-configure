@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.9 2014/04/29 23:58:06 brad Exp $
---- configure.orig	Fri Jan 10 15:12:42 2014
-+++ configure	Mon Feb 17 14:39:50 2014
-@@ -108,6 +108,7 @@ all_platforms="${all_platforms} ppc32-linux-gcc"
+$OpenBSD: patch-configure,v 1.10 2015/04/26 07:58:22 ajacoutot Exp $
+--- configure.orig	Tue Mar 31 11:01:15 2015
++++ configure	Tue Mar 31 11:08:39 2015
+@@ -118,6 +118,7 @@ all_platforms="${all_platforms} ppc32-linux-gcc"
  all_platforms="${all_platforms} ppc64-darwin8-gcc"
  all_platforms="${all_platforms} ppc64-darwin9-gcc"
  all_platforms="${all_platforms} ppc64-linux-gcc"
@@ -9,9 +9,9 @@ $OpenBSD: patch-configure,v 1.9 2014/04/29 23:58:06 brad Exp $
  all_platforms="${all_platforms} sparc-solaris-gcc"
  all_platforms="${all_platforms} x86-android-gcc"
  all_platforms="${all_platforms} x86-darwin8-gcc"
-@@ -160,19 +161,6 @@ for t in ${all_targets}; do
-     [ -f ${source_path}/${t}.mk ] && enable_feature ${t}
- done
+@@ -187,19 +188,6 @@ if [ "`cd \"${source_path}\" && pwd`" != "`pwd`" ]; th
+   fi
+ fi
  
 -# check installed doxygen version
 -doxy_version=$(doxygen --version 2>/dev/null)
@@ -29,7 +29,7 @@ $OpenBSD: patch-configure,v 1.9 2014/04/29 23:58:06 brad Exp $
  # install everything except the sources, by default. sources will have
  # to be enabled when doing dist builds, since that's no longer a common
  # case.
-@@ -501,18 +489,6 @@ EOF
+@@ -543,18 +531,6 @@ EOF
  }
  
  process_detect() {

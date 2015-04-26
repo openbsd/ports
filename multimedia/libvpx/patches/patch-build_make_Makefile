@@ -1,16 +1,7 @@
-$OpenBSD: patch-build_make_Makefile,v 1.6 2014/04/29 23:58:06 brad Exp $
---- build/make/Makefile.orig	Fri Jan 10 15:12:42 2014
-+++ build/make/Makefile	Sun Apr 20 03:09:26 2014
-@@ -158,7 +158,7 @@ $(BUILD_PFX)%.s.o: %.s
- 	$(qexec)$(AS) $(ASFLAGS) -o $@ $<
- 
- .PRECIOUS: %.c.S
--%.c.S: CFLAGS += -DINLINE_ASM
-+%.c.S: CFLAGS += -DINLINE_ASM -fno-integrated-as
- $(BUILD_PFX)%.c.S: %.c
- 	$(if $(quiet),@echo "    [GEN] $@")
- 	$(qexec)$(CC) -S $(CFLAGS) -o $@ $<
-@@ -267,8 +267,7 @@ define so_template
+$OpenBSD: patch-build_make_Makefile,v 1.7 2015/04/26 07:58:22 ajacoutot Exp $
+--- build/make/Makefile.orig	Tue Mar 31 11:01:15 2015
++++ build/make/Makefile	Tue Mar 31 11:13:38 2015
+@@ -294,8 +294,7 @@ define so_template
  # This needs further abstraction for dealing with non-GNU linkers.
  $(1):
  	$(if $(quiet),@echo "    [LD] $$@")
@@ -20,12 +11,12 @@ $OpenBSD: patch-build_make_Makefile,v 1.6 2014/04/29 23:58:06 brad Exp $
              -Wl,--version-script,$$(EXPORTS_FILE) -o $$@ \
              $$(filter %.o,$$^) $$(extralibs)
  endef
-@@ -351,7 +350,7 @@ LIBS=$(call enabled,LIBS)
+@@ -383,7 +382,7 @@ LIBS=$(call enabled,LIBS)
  .libs: $(LIBS)
  	@touch $@
  $(foreach lib,$(filter %_g.a,$(LIBS)),$(eval $(call archive_template,$(lib))))
--$(foreach lib,$(filter %so.$(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_PATCH),$(LIBS)),$(eval $(call so_template,$(lib))))
+-$(foreach lib,$(filter %so.$(SO_VERSION_MAJOR).$(SO_VERSION_MINOR).$(SO_VERSION_PATCH),$(LIBS)),$(eval $(call so_template,$(lib))))
 +$(foreach lib,$(filter %so.$(LIBVPX_VERSION),$(LIBS)),$(eval $(call so_template,$(lib))))
- $(foreach lib,$(filter %$(VERSION_MAJOR).dylib,$(LIBS)),$(eval $(call dl_template,$(lib))))
+ $(foreach lib,$(filter %$(SO_VERSION_MAJOR).dylib,$(LIBS)),$(eval $(call dl_template,$(lib))))
  
  INSTALL-LIBS=$(call cond_enabled,CONFIG_INSTALL_LIBS,INSTALL-LIBS)

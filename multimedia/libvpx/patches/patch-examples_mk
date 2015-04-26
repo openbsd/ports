@@ -1,7 +1,7 @@
-$OpenBSD: patch-examples_mk,v 1.3 2014/04/29 23:58:06 brad Exp $
---- examples.mk.orig	Fri Jan 10 15:12:42 2014
-+++ examples.mk	Mon Feb 17 14:41:02 2014
-@@ -192,7 +192,7 @@ BINS-$(NOT_MSVS)           += $(addprefix $(BUILD_PFX)
+$OpenBSD: patch-examples_mk,v 1.4 2015/04/26 07:58:22 ajacoutot Exp $
+--- examples.mk.orig	Tue Mar 31 11:00:47 2015
++++ examples.mk	Tue Mar 31 11:08:39 2015
+@@ -276,7 +276,7 @@ BINS-$(NOT_MSVS)           += $(addprefix $(BUILD_PFX)
  # Instantiate linker template for all examples.
  CODEC_LIB=$(if $(CONFIG_DEBUG_LIBS),vpx_g,vpx)
  SHARED_LIB_SUF=$(if $(filter darwin%,$(TGT_OS)),.dylib,.so)

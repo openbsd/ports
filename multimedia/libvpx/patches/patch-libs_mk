@@ -1,17 +1,17 @@
-$OpenBSD: patch-libs_mk,v 1.8 2014/04/29 23:58:06 brad Exp $
---- libs.mk.orig	Fri Jan 10 15:12:42 2014
-+++ libs.mk	Mon Feb 17 15:19:19 2014
-@@ -271,19 +271,14 @@ EXPORT_FILE             := libvpx.syms
+$OpenBSD: patch-libs_mk,v 1.9 2015/04/26 07:58:22 ajacoutot Exp $
+--- libs.mk.orig	Tue Mar 31 11:01:15 2015
++++ libs.mk	Tue Mar 31 11:15:46 2015
+@@ -239,18 +239,14 @@ EXPORT_FILE             := libvpx.syms
  LIBVPX_SO_SYMLINKS      := $(addprefix $(LIBSUBDIR)/, \
                               libvpx.dylib  )
  else
--LIBVPX_SO               := libvpx.so.$(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_PATCH)
+-LIBVPX_SO               := libvpx.so.$(SO_VERSION_MAJOR).$(SO_VERSION_MINOR).$(SO_VERSION_PATCH)
++
 +LIBVPX_SO               := libvpx.so.$(LIBVPX_VERSION)
  EXPORT_FILE             := libvpx.ver
- SYM_LINK                := libvpx.so
 -LIBVPX_SO_SYMLINKS      := $(addprefix $(LIBSUBDIR)/, \
--                             libvpx.so libvpx.so.$(VERSION_MAJOR) \
--                             libvpx.so.$(VERSION_MAJOR).$(VERSION_MINOR))
+-                             libvpx.so libvpx.so.$(SO_VERSION_MAJOR) \
+-                             libvpx.so.$(SO_VERSION_MAJOR).$(SO_VERSION_MINOR))
  endif
  
 -LIBS-$(BUILD_LIBVPX_SO) += $(BUILD_PFX)$(LIBVPX_SO)\
@@ -19,11 +19,11 @@ $OpenBSD: patch-libs_mk,v 1.8 2014/04/29 23:58:06 brad Exp $
 +LIBS-$(BUILD_LIBVPX_SO) += $(BUILD_PFX)$(LIBVPX_SO)
  $(BUILD_PFX)$(LIBVPX_SO): $(LIBVPX_OBJS) $(EXPORT_FILE)
  $(BUILD_PFX)$(LIBVPX_SO): extralibs += -lm
--$(BUILD_PFX)$(LIBVPX_SO): SONAME = libvpx.so.$(VERSION_MAJOR)
+-$(BUILD_PFX)$(LIBVPX_SO): SONAME = libvpx.so.$(SO_VERSION_MAJOR)
  $(BUILD_PFX)$(LIBVPX_SO): EXPORTS_FILE = $(EXPORT_FILE)
  
  libvpx.ver: $(call enabled,CODEC_EXPORTS)
-@@ -305,15 +300,7 @@ $(1): $(2)
+@@ -272,15 +268,7 @@ $(1): $(2)
  	$(qexec)ln -sf $(2) $$@
  endef
  
