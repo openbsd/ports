@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2014/12/20 12:28:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/26 19:02:57 jasper Exp $
 
 COMMENT=		tool for managing events and logs
 
-# built with https://github.com/elasticsearch/logstash/pull/2236
-DISTNAME=		logstash-1.5.0.beta1
-REVISION=		1
+V=			1.5.0-rc3
+DISTNAME=		logstash-$V
+PKGNAME=		logstash-${V:S/-/./}
 
-MASTER_SITES=		http://distfiles.nl/ \
-			https://download.elasticsearch.org/logstash/logstash/
+# tarball is a result of 'rake artifact:tar'
+MASTER_SITES=		http://distfiles.nl/
 
 MODULES=		java \
 			lang/ruby
@@ -32,12 +32,13 @@ do-build:
 	find ${WRKSRC}/vendor/ -type f -exec chmod 0644 {} \;
 
 do-install:
-	${INSTALL_DATA_DIR} ${LS_BASE}/{bin,lib,locales,patterns,vendor}/
-.for b in logstash logstash-web logstash.lib.sh plugin
+	${INSTALL_DATA_DIR} ${LS_BASE}/{bin,lib,locales,vendor}/
+	${INSTALL_DATA} ${WRKSRC}/Gemfile* ${LS_BASE}
+.for b in logstash logstash.lib.sh plugin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/$b ${LS_BASE}/bin/
 .endfor
-	rm ${WRKSRC}/vendor/bundle/jruby/1.9/gems/filewatch-0.5.1/lib/filewatch/*.orig
-	cd ${WRKSRC} && cp -R lib locales patterns vendor ${LS_BASE}
+	rm ${WRKSRC}/vendor/bundle/jruby/1.9/gems/filewatch-0.6.1/lib/filewatch/*.orig
+	cd ${WRKSRC} && cp -R lib locales vendor ${LS_BASE}
 	cd ${LS_BASE}/vendor/ && ln -sf ${LOCALBASE}/jruby
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/logstash/
 	${SUBST_CMD} -c ${FILESDIR}/logstash.conf \
