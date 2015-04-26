@@ -1,30 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/03/29 13:23:50 ajacoutot Exp $
-@bin bin/mtp-albumart
-@bin bin/mtp-albums
-@bin bin/mtp-connect
+@comment $OpenBSD: PLIST,v 1.12 2015/04/26 19:08:05 phessler Exp $
+bin/mtp-albumart
+bin/mtp-albums
+bin/mtp-connect
 bin/mtp-delfile
-@bin bin/mtp-detect
-@bin bin/mtp-emptyfolders
-@bin bin/mtp-files
-@bin bin/mtp-filetree
-@bin bin/mtp-folders
-@bin bin/mtp-format
+bin/mtp-detect
+bin/mtp-emptyfolders
+bin/mtp-files
+bin/mtp-filetree
+bin/mtp-folders
+bin/mtp-format
 bin/mtp-getfile
-@bin bin/mtp-getplaylist
+bin/mtp-getplaylist
 bin/mtp-newfolder
-@bin bin/mtp-newplaylist
-@bin bin/mtp-playlists
-@bin bin/mtp-reset
+bin/mtp-newplaylist
+bin/mtp-playlists
+bin/mtp-reset
 bin/mtp-sendfile
 bin/mtp-sendtr
-@bin bin/mtp-thumb
-@bin bin/mtp-tracks
-@bin bin/mtp-trexist
+bin/mtp-thumb
+bin/mtp-tracks
+bin/mtp-trexist
 include/libmtp.h
 lib/libmtp.a
 lib/libmtp.la
 @lib lib/libmtp.so.${LIBmtp_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libmtp.pc
 share/doc/libmtp/
 share/doc/libmtp/html/
@@ -32,6 +31,8 @@ share/doc/libmtp/html/__stdint_8h_source.html
 share/doc/libmtp/html/annotated.html
 share/doc/libmtp/html/bc_s.png
 share/doc/libmtp/html/bdwn.png
+share/doc/libmtp/html/chdk__live__view_8h_source.html
+share/doc/libmtp/html/chdk__ptp_8h_source.html
 share/doc/libmtp/html/classes.html
 share/doc/libmtp/html/closed.png
 share/doc/libmtp/html/delfile_8c-example.html
@@ -77,6 +78,7 @@ share/doc/libmtp/html/globals_0x73.html
 share/doc/libmtp/html/globals_0x75.html
 share/doc/libmtp/html/globals_defs.html
 share/doc/libmtp/html/globals_enum.html
+share/doc/libmtp/html/globals_eval.html
 share/doc/libmtp/html/globals_func.html
 share/doc/libmtp/html/globals_func_0x64.html
 share/doc/libmtp/html/globals_func_0x67.html
@@ -150,6 +152,7 @@ share/doc/libmtp/html/struct__PTPContainer.html
 share/doc/libmtp/html/struct__PTPDataHandler.html
 share/doc/libmtp/html/struct__PTPDeviceInfo.html
 share/doc/libmtp/html/struct__PTPDevicePropDesc.html
+share/doc/libmtp/html/struct__PTPDeviceProperty.html
 share/doc/libmtp/html/struct__PTPEKTextParams.html
 share/doc/libmtp/html/struct__PTPIPHeader.html
 share/doc/libmtp/html/struct__PTPNIKONCoordinatePair.html
@@ -170,9 +173,13 @@ share/doc/libmtp/html/struct__PTPUSBBulkContainer.html
 share/doc/libmtp/html/struct__PTPUSBEventContainer.html
 share/doc/libmtp/html/struct__PTP__USB.html
 share/doc/libmtp/html/structfilemap__struct.html
+share/doc/libmtp/html/structlv__data__header.html
+share/doc/libmtp/html/structlv__framebuffer__desc.html
 share/doc/libmtp/html/structmtpdevice__list__struct.html
 share/doc/libmtp/html/structmtpz__rsa__struct.html
 share/doc/libmtp/html/structpropertymap__struct.html
+share/doc/libmtp/html/structptp__chdk__rc__chunk.html
+share/doc/libmtp/html/structptp__chdk__script__msg.html
 share/doc/libmtp/html/structtagptp__chdk__videosettings.html
 share/doc/libmtp/html/structtext__struct.html
 share/doc/libmtp/html/sync_off.png
