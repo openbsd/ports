@@ -24,6 +24,12 @@ sub expand_tabs {
 	return $line;
 }
 
+sub w_stem {
+	my @v = @_;
+	s,^(?:.*/)?([^<>=]+)(?:[<>=].*)$,$1, for @v;
+	return @v;
+}
+
 #################################################################
 
 package PortHandler;
@@ -312,15 +318,14 @@ sub _put_wantlib_lines {
 			next unless exists $self->{wantlib_resolved}->{$subpkg};
 			for my $w (@{$self->{wantlib_extra}->{$subpkg}}) {
 				for my $w2 (keys %{$self->{wantlib_resolved}->{$subpkg}}) {
-					my $w_short = $w2;
-					$w_short =~ s/[<>=].*//;
+					my $w_short = Util::w_stem($w2);
 					delete $self->{wantlib_resolved}->{$subpkg}->{$w2}
 					    if $w_short eq $w;
 				}
 			}
 		}
 	} else {
-		%wl_del_hash = map { my $v = $_; $v =~ s/[<>=].*//; $v => 1; }
+		%wl_del_hash = map { Util::w_stem($_) => 1; }
 		    @$wl_add, @$wl_del;
 	}
 
@@ -397,9 +402,7 @@ sub _put_wantlib_lines {
 			}
 		} else {
 			@libs = grep {
-				my $wstem = $_;
-				$wstem =~ s/[<>=].*//;
-				!exists $wl_del_hash{$wstem}
+				!exists $wl_del_hash{Util::w_stem($_)}
 			    } @{$self->{wantlib}->{$subpkg}->{libs}};
 		}
 
@@ -415,7 +418,7 @@ sub _put_wantlib_lines {
 
 		if ($wantlib_auto) {
 			for my $w (@{$self->{wantlib_extra}->{$subpkg} // [] }) {
-				@libs = grep { $_ !~ /^\Q$w\E([<>=].*)?$/ } @libs;
+				@libs = grep { $_ !~ m,^(?:.*/)?\Q$w\E(?:[<>=].*)?$, } @libs;
 			}
 			push(@libs, @{$self->{wantlib_missing}->{$subpkg} // [] });
 		}
