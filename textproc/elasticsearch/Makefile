@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/03/16 17:55:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/26 19:01:51 jasper Exp $
 
 COMMENT=		distributed RESTful search and analytics
 
-DISTNAME=		elasticsearch-1.4.4
-REVISION=		0
+DISTNAME=		elasticsearch-1.5.1
 CATEGORIES=		textproc
 
 HOMEPAGE=		https://www.elastic.co/products/elasticsearch
@@ -28,7 +27,8 @@ ES_BASE=		${PREFIX}/elasticsearch/
 SUBST_VARS+=		VARBASE
 
 do-install:
-	${SUBST_CMD} ${WRKSRC}/config/elasticsearch.yml
+	${SUBST_CMD} ${WRKSRC}/config/elasticsearch.yml \
+			${WRKSRC}/bin/plugin
 	${INSTALL_DATA_DIR} ${ES_BASE}/{bin,lib}/ \
 		${PREFIX}/share/{doc,examples}/elasticsearch/
 .for b in elasticsearch plugin

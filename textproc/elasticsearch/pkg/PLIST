@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/02/20 07:09:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/04/26 19:01:51 jasper Exp $
 @newgroup _elasticsearch:748
 @newuser _elasticsearch:748:_elasticsearch:daemon:Elasticsearch Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/elasticsearch/*
@@ -8,26 +8,27 @@ elasticsearch/bin/elasticsearch
 elasticsearch/bin/plugin
 elasticsearch/lib/
 elasticsearch/lib/antlr-runtime-3.5.jar
+elasticsearch/lib/apache-log4j-extras-1.2.17.jar
 elasticsearch/lib/asm-4.1.jar
 elasticsearch/lib/asm-commons-4.1.jar
-elasticsearch/lib/elasticsearch-1.4.4.jar
-elasticsearch/lib/groovy-all-2.3.2.jar
+elasticsearch/lib/elasticsearch-1.5.1.jar
+elasticsearch/lib/groovy-all-2.4.0.jar
 elasticsearch/lib/jna-4.1.0.jar
 elasticsearch/lib/jts-1.13.jar
 elasticsearch/lib/log4j-1.2.17.jar
-elasticsearch/lib/lucene-analyzers-common-4.10.3.jar
-elasticsearch/lib/lucene-core-4.10.3.jar
-elasticsearch/lib/lucene-expressions-4.10.3.jar
-elasticsearch/lib/lucene-grouping-4.10.3.jar
-elasticsearch/lib/lucene-highlighter-4.10.3.jar
-elasticsearch/lib/lucene-join-4.10.3.jar
-elasticsearch/lib/lucene-memory-4.10.3.jar
-elasticsearch/lib/lucene-misc-4.10.3.jar
-elasticsearch/lib/lucene-queries-4.10.3.jar
-elasticsearch/lib/lucene-queryparser-4.10.3.jar
-elasticsearch/lib/lucene-sandbox-4.10.3.jar
-elasticsearch/lib/lucene-spatial-4.10.3.jar
-elasticsearch/lib/lucene-suggest-4.10.3.jar
+elasticsearch/lib/lucene-analyzers-common-4.10.4.jar
+elasticsearch/lib/lucene-core-4.10.4.jar
+elasticsearch/lib/lucene-expressions-4.10.4.jar
+elasticsearch/lib/lucene-grouping-4.10.4.jar
+elasticsearch/lib/lucene-highlighter-4.10.4.jar
+elasticsearch/lib/lucene-join-4.10.4.jar
+elasticsearch/lib/lucene-memory-4.10.4.jar
+elasticsearch/lib/lucene-misc-4.10.4.jar
+elasticsearch/lib/lucene-queries-4.10.4.jar
+elasticsearch/lib/lucene-queryparser-4.10.4.jar
+elasticsearch/lib/lucene-sandbox-4.10.4.jar
+elasticsearch/lib/lucene-spatial-4.10.4.jar
+elasticsearch/lib/lucene-suggest-4.10.4.jar
 elasticsearch/lib/spatial4j-0.4.1.jar
 share/doc/elasticsearch/
 share/doc/elasticsearch/README.textile
