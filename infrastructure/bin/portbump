@@ -46,8 +46,19 @@ my @_REV_NEIGHBORS = qw(
 my $_rev_neighbors_plain = join('|', @_REV_NEIGHBORS);
 
 sub new {
-	my ($class, $dir) = (shift, shift);
-	my $self = { dir => $dir, shlibs => {}, verbose => 0 };
+	my ($class, $dir, $tweak_wantlib, $lib_depends_tgt) = @_;
+	die "lib depends target specified without WANTLIB tweaking"
+	    if !$tweak_wantlib and defined($lib_depends_tgt);
+
+	my $self = {
+		dir => $dir,
+		modules => [],
+		noarch => {},
+		shlibs => {},
+		tweak_wantlib => $tweak_wantlib,
+		wantlib_mod => {},
+		verbose => 0,
+	};
 
 	#
 	# Get actual information about subpackages (including their
@@ -57,7 +68,7 @@ sub new {
 		die "cannot run make dump-vars";
 	while (<$dumpvars>) {
 		chomp;
-		next unless /^[^,]*(?:,-([^.]+))?\.([^=.]+)=(.*)$/;
+		next unless /^[^,]*(?:,(-[^.]+))?\.([^=.]+)=(.*)$/;
 		my ($subpkg, $var, $value) = ($1, $2, $3);
 		$subpkg //= "";
 
@@ -66,12 +77,106 @@ sub new {
 		} elsif ($var eq "SHARED_LIBS") {
 			# perhaps direct " = split (...)" would be enough?
 			$self->{shlibs} = { %{$self->{shlibs}}, split(/\s+/, $value) };
+		} elsif ($var eq "SUBPACKAGE") {
+			$self->{defsubpkg} = $value;
+		} elsif ($var eq "PKG_ARCH") {
+			$self->{noarch}->{$subpkg} = 1 if $value eq "*";
+		} elsif ($var eq "WANTLIB") {
+			$self->{wantlib_resolved} //= {};
+			$self->{wantlib_resolved}->{$subpkg} =
+			    { map { $_ => 1 } split(/\s+/, $value) };
+		} elsif ($var eq "MODULES") {
+			$self->{modules} = [ split(/\s+/, $value) ];
 		}
 	}
 	close $dumpvars;
 
 	if (scalar(keys %{$self->{mpkgs}}) == 1 and exists($self->{mpkgs}->{"-"})) {
 		$self->{mpkgs} = { "" => 1 };
+	}
+
+	if ($tweak_wantlib and _is_mpkg_port($self)) {
+		$self->{wantlib_resolved} //= {};
+		#
+		# Get actual value of WANTLIB (not the one of WANTLIB-foo or WANTLIB-),
+		# to be used to avoid extra WANTLIB-* lines.
+		#
+		open ($dumpvars, '-|', "make", "SUBDIR=$dir", "show=WANTLIB") or
+			die "cannot run make show=WANTLIB";
+		while (<$dumpvars>) {
+			chomp;
+			next if /^===>/;
+			$_ =~ s/^\s*//;
+			$self->{wantlib_resolved}->{""} =
+			    { map { $_ => 1 } split(/\s+/, $_) };
+		}
+		close $dumpvars;
+	}
+	if (defined $lib_depends_tgt) {
+		my $dirref = ($dir eq ".") ? "" : " in $dir";
+		# first, make sure we don't have to build/install anything
+		if ($lib_depends_tgt eq 'lib-depends-check') {
+			open ($dumpvars, '-|', qw(make show=PKGFILES)) or
+				die "cannot run make show=PKGFILES";
+			my @missing;
+			while (<$dumpvars>) {
+				chomp;
+				unless (-e $_) {
+					$_ =~ s,.*/,,;
+					push(@missing, $_);
+				}
+			}
+			close $dumpvars;
+			if (scalar(@missing)) {
+				print STDERR "cannot tweak WANTLIB$dirref,"
+				    . "missing packages: "
+				    . join(", ", @missing) . "\n";
+				return undef;
+			}
+		} else {
+			open ($dumpvars, '-|', qw(make show=_FAKE_COOKIE)) or
+				die "cannot run make show=_FAKE_COOKIE";
+			my $cookie = <$dumpvars>;
+			close $dumpvars;
+			chomp $cookie;
+			unless (-e $cookie) {
+				print STDERR "cannot tweak WANTLIB$dirref,"
+				    . " run 'make fake' first\n";
+				return undef;
+			}
+		}
+
+		$self->{wantlib_extra} = { "" => [] };
+		$self->{wantlib_missing} = { "" => [] };
+		open ($dumpvars, '-|', "make", "SUBDIR=$dir", $lib_depends_tgt) or
+			die "cannot run make $lib_depends_tgt";
+		my $subpkg = "";
+		my %not_reachable;
+		while (<$dumpvars>) {
+			chomp;
+			if (/^[^\s\(]+\([^\)]+,(-[^\)]+)\):$/) {
+				$subpkg = $1;
+				$self->{wantlib_extra}->{$subpkg} = [];
+				$self->{wantlib_missing}->{$subpkg} = [];
+			} elsif (/^WANTLIB.* \+= (.+)/) {
+				push(@{$self->{wantlib_missing}->{$subpkg}},
+				    split(/\s+/, $1));
+			} elsif (/^Extra:\s*(\S+)/) {
+				push(@{$self->{wantlib_extra}->{$subpkg}},
+				    map { s/\.[0-9]+$//; $_ } split(/\s+/, $1));
+			} elsif (/^Bogus WANTLIB:\s*(\S+).*NOT REACHABLE/) {
+				$not_reachable{$1} = 1;
+			} elsif (/^Asking ports for dependency/) {
+				print STDERR "$_\n";
+			}
+		}
+		close $dumpvars;
+		if (scalar(keys %not_reachable)) {
+			print STDERR "cannot tweak WANTLIB$dirref,"
+			    . " not reachable missing libraries detected: "
+			    . join(", ", sort keys %not_reachable) . "\n";
+			return undef;
+		}
 	}
 
 	return bless($self, $class);
@@ -130,9 +235,12 @@ sub _adj_whitespace {
 
 sub _is_mpkg_port {
 	my $self = shift;
-	return 1 if scalar(keys %{$self->{mpkgs}}) != 1;
-	my $k = each %{$self->{mpkgs}};
-	return 1 if $k ne "";
+
+	for my $subpkg (keys %{$self->{mpkgs}}) {
+		next if $subpkg eq "";
+		next if $subpkg eq "-";
+		return 1;
+	}
 	return 0;
 }
 
@@ -165,11 +273,219 @@ sub _add_new_revs {
 	return $nchanges;
 }
 
+# un-expand ${MOD*}
+sub _unexpand_mod_wantlib {
+	my $self = shift;
+	my @libs = @_;
+
+	for my $m (keys %{$self->{wantlib_mod}}) {
+		my $nlibs = keys %{$self->{wantlib_mod}->{$m}};
+		if ($nlibs == 0) {
+			print STDERR "warning: empty $m is used in ".
+			    $self->{dir}.", it may don't get somewhere\n"
+			    if $self->{verbose};
+			next;
+		}
+		my @compacted = grep { !exists $self->{wantlib_mod}->{$m}->{$_} } @libs;
+		if (scalar(@libs) - scalar(@compacted) == $nlibs) {
+			@libs = ("\${$m}", @compacted);
+		}
+	}
+	return @libs;
+}
+
+sub _put_wantlib_lines {
+	my ($self, $out, $bumppkgs, $wl_add, $wl_del, $empty_line)
+	    = @_;
+
+	my $wantlib_auto = exists $self->{wantlib_extra};
+	my %wl_del_hash;
+	if ($wantlib_auto) {
+		# adjust wantlib_resolved according to wantlib_missing
+		for my $subpkg (keys %{$self->{wantlib_missing}}) {
+			$self->{wantlib_resolved}->{$subpkg} //= {};
+			for my $w (@{$self->{wantlib_missing}->{$subpkg}}) {
+				$self->{wantlib_resolved}->{$subpkg}->{$w} = 1;
+			}
+		}
+		for my $subpkg (keys %{$self->{wantlib_extra}}) {
+			next unless exists $self->{wantlib_resolved}->{$subpkg};
+			for my $w (@{$self->{wantlib_extra}->{$subpkg}}) {
+				for my $w2 (keys %{$self->{wantlib_resolved}->{$subpkg}}) {
+					my $w_short = $w2;
+					$w_short =~ s/[<>=].*//;
+					delete $self->{wantlib_resolved}->{$subpkg}->{$w2}
+					    if $w_short eq $w;
+				}
+			}
+		}
+	} else {
+		%wl_del_hash = map { my $v = $_; $v =~ s/[<>=].*//; $v => 1; }
+		    @$wl_add, @$wl_del;
+	}
+
+	# build list of WANTLIB items common to all subpackages;
+	# also used to populate WANTLIB in case there is only
+	# WANTLIB declaration used.
+	my %wl_common = map { $_ => 1 } (@{$wl_add // []});
+	for my $subpkg (keys %{$self->{wantlib_resolved}}) {
+		next if exists $self->{noarch}->{$subpkg};
+		%wl_common = (%wl_common, %{$self->{wantlib_resolved}->{$subpkg}});
+	}
+	for my $w (keys %wl_common) {
+		WLC_REMOVAL: for my $subpkg (keys %{$self->{wantlib_resolved}}) {
+			next if $subpkg eq "";
+			next if exists $self->{noarch}->{$subpkg};
+			next if exists $self->{wantlib_resolved}->{$subpkg}->{$w};
+			if (exists $bumppkgs->{$subpkg} and defined $wl_add) {
+				for my $w2 (@$wl_add) {
+					next WLC_REMOVAL if $w2 eq $w;
+				}
+			}
+			delete $wl_common{$w};
+			last;
+		}
+	}
+
+	$self->_init_wantlib("");
+	# TODO
+	#my $common_created = 0;
+	#if (scalar @{$self->{wantlib}->{""}->{libs}} == 0) {
+	#	$common_created = 1;
+	#	$self->{wantlib}->{""}->{libs} = [ keys %wl_common ];
+	#}
+
+	my %all_subpkgs_hash = map { $_ => 1 }
+	    keys(%{$self->{wantlib}}), keys(%{$self->{noarch}});
+	my @sorted_subpkgs = sort {
+		return -1 if $a eq "";
+		return 1 if $b eq "";
+		return -1 if $a eq $self->{defsubpkg};
+		return 1 if $b eq $self->{defsubpkg};
+		$a cmp $b;
+	    } keys %all_subpkgs_hash;
+	my $defpkgchanged = 0;
+	my $nlines = 0;
+	for my $subpkg (@sorted_subpkgs) {
+		if (exists $self->{noarch}->{$subpkg}) {
+			#
+			# Catch both situations when WANTLIB is populated from
+			# outside and when some ${MOD*} inside ${WANTLIB}
+			# could be empty in default case.
+			#
+			if (keys(%{$self->{wantlib_resolved}->{""}}) > 0 or
+			    scalar(@{$self->{wantlib}->{""}->{libs}}) > 0) {
+				print $out "\n" unless $empty_line;
+				$empty_line = 0;
+				print $out "WANTLIB${subpkg} = # no-arch package\n";
+				$nlines++;
+			}
+			next;
+		}
+
+		$self->{wantlib}->{$subpkg}->{wssample} =~ /^ *WANTLIB(?:-[A-Za-z_0-9]*)?(\s*)[\+\?\!]*=/;
+		my $ws = $1;
+
+		my @libs;
+		if ($wantlib_auto) {
+			$self->{wantlib}->{$subpkg}->{inherits_global} = 1
+			    if $self->_init_wantlib($subpkg);
+			@libs = keys(%{$self->{wantlib_resolved}->{$subpkg}});
+			if ($self->{wantlib}->{$subpkg}->{inherits_global}) {
+				@libs = grep { !exists $wl_common{$_} } @libs;
+				unshift(@libs, '${WANTLIB}');
+			}
+		} else {
+			@libs = grep {
+				my $wstem = $_;
+				$wstem =~ s/[<>=].*//;
+				!exists $wl_del_hash{$wstem}
+			    } @{$self->{wantlib}->{$subpkg}->{libs}};
+		}
+
+		# find the difference between resolved and found in Makefile
+		# items; that should be inherited from ${MOD*} and thus
+		# do not go into WANTLIB explicitly.
+		@libs = $self->_unexpand_mod_wantlib(@libs);
+		my %libs_inherited = map { $_ => 1 } @libs;
+		for my $w (@{$self->{wantlib}->{$subpkg}->{libs}}) {
+			delete $libs_inherited{$w};
+		}
+		@libs = grep { !exists $libs_inherited{$_} } @libs;
+
+		if ($wantlib_auto) {
+			for my $w (@{$self->{wantlib_extra}->{$subpkg} // [] }) {
+				@libs = grep { $_ !~ /^\Q$w\E([<>=].*)?$/ } @libs;
+			}
+			push(@libs, @{$self->{wantlib_missing}->{$subpkg} // [] });
+		}
+
+		if ($subpkg eq "") {
+			next if scalar(@libs) == 0;
+		} else {
+			next if $self->{wantlib}->{$subpkg}->{inherits_global}
+			   and scalar(@libs) == 1
+			   and $libs[0] eq '${WANTLIB}';
+		}
+		if ($subpkg eq "" or !$defpkgchanged or
+		    !$self->{wantlib}->{$subpkg}->{inherits_global}) {
+			push(@libs, @$wl_add);
+		}
+
+		@libs = sort $self->_unexpand_mod_wantlib(@libs);
+
+		print $out "\n" unless $empty_line;
+		$empty_line = 0;
+		$nlines++;
+		my $line = "WANTLIB${subpkg}${ws}= ";
+		my $expanded = 0;
+		for my $w (@libs) {
+			if ($w =~ /^\$/ and $w !~ /^\$[\{\(]WANTLIB/) {
+				$expanded = 1;
+			} else {
+				if ($expanded) {
+					print $out $line."\n";
+					$nlines++;
+					$line = "WANTLIB${subpkg}${ws}+=";
+				}
+				$expanded = 0;
+			}
+			if (length($line) + 1 + length($w) > 72) {
+				print $out $line."\n";
+				$nlines++;
+				$line = "WANTLIB${subpkg}${ws}+=";
+			}
+			$line .= " ".$w;
+		}
+		print $out $line."\n";
+		$nlines++;
+		$defpkgchanged = 1 if $subpkg eq "";
+	}
+	return $nlines;
+}
+
+sub _init_wantlib {
+	my ($self, $subpkg) = @_;
+	my $rv = 0;
+	if (!exists $self->{wantlib}->{$subpkg}) {
+		$rv = 1;
+		$self->{wantlib}->{$subpkg} = {
+			libs => [],
+			wssample => "WANTLIB += foo",
+			permitline => -1,
+			reqmanual => 0,
+			wantlibline => 0,
+			inherits_global => 0,
+		}
+	}
+	return $rv;
+}
+
 #
-# Parse makefile, searching for places where new REVISION marks
-# should be added, and with what whitespace.
+# Search for places where new REVISION and WANTLIB marks should be added,
+# in given makefile, and with what whitespace.
 #
-sub parse_for_revisions {
+sub process_makefile {
 	my ($self, $in) = (shift, shift);
 
 	# subpkg => {
@@ -183,14 +499,72 @@ sub parse_for_revisions {
 	my $revsincurblock = 0;
 	my ($block1begin, $block1end) = (0, 0);
 
+	# subpkg => {
+	#   libs => [ wantlib items ... ]
+	#   wssample => a line to look for whitespace sample in
+	#   permitline => number of last line where PERMIT_* variable was set + 1
+	#   reqmanual => 1 if WANTLIB-foo requires manual intervention
+	#   wantlibline => number of last line where WANTLIB$subpkg is mentioned
+	#   inherits_global => 1 if WANTLIB-foo inherits WANTLIB
+	# }
+	$self->{wantlib} = {};
+
+	# indicator if we're in .if or .for block
+	my $looplevel = 0;
+
+	# list of PERMIT_* variables assigned inside .if/.for,
+	# used to set permitline at the end of .if/.for block.
+	my @permits_in_loop = ();
+
+	# indicator if last non-empty line was a PERMIT_* one
+	my $last_was_permit = 0;
+
+	# indicator if we're continuing WANTLIB line
+	my $wantlib_block = 0;
+
+	# used for wantlib_blocks to track initial subpackage and whole
+	# WANTLIB$w_subpkg value
+	my ($w_subpkg, $w_value);
+
+	# list of ${MOD*} variables mentioned in WANTLIBs
+	my @mod_wantlib_seen;
+
 	my @mentionedsubpkgs;
 	$self->{has_global_rev} = 0;
 	while (<$in>) {
+		chomp;
+
 		if (/^ *REVISION(\s*)[\+\?\!]*=/) {
 			$self->{has_global_rev} = 1;
 		}
 
-		if (/^ *(${_rev_neighbors_plain})(-[A-Za-z_0-9]*)?(\s*)[\+\?\!]*=(\s*)(.*)$/o) {
+		if (/^ *PERMIT_(?:PACKAGE_(?:CDROM|FTP)|DISTFILES_FTP)(-[A-Za-z_0-9]*)?\b/) {
+			$last_was_permit = 1;
+			for my $subpkg(keys %{$self->{wantlib}}) {
+				$self->{wantlib}->{$subpkg}->{permitline}++
+				    if $self->{wantlib}->{$subpkg}->{permitline}
+				    == $in->input_line_number();
+			}
+		} elsif (/^ *(?:#.*)?#/) {
+			for my $subpkg(keys %{$self->{wantlib}}) {
+				$self->{wantlib}->{$subpkg}->{permitline}++
+				    if $self->{wantlib}->{$subpkg}->{permitline}
+				    == $in->input_line_number();
+			}
+		} else {
+			$last_was_permit = 0;
+		}
+
+		if (/^\. *(if|for)/) {
+			$looplevel++;
+		} elsif (/^\. *end(if|for)/) {
+			$looplevel--;
+			while (scalar @permits_in_loop) {
+				my $subpkg = shift @permits_in_loop;
+				$self->_init_wantlib($subpkg);
+				$self->{wantlib}->{$subpkg}->{permitline} = $in->input_line_number();
+			}
+		} elsif (/^ *(${_rev_neighbors_plain})(-[A-Za-z_0-9]*)?(\s*)[\+\?\!]*=(\s*)(.*)$/o) {
 			my $var = $1;
 			my $subpkg = $2 // "";
 			$self->{newrevplace}->{$subpkg} //= {};
@@ -205,6 +579,48 @@ sub parse_for_revisions {
 				}
 			}
 			$block1begin = $in->input_line_number() if !$block1begin;
+		} elsif ($wantlib_block or /^ *WANTLIB(-[A-Za-z_0-9]*)?\s*[\+\?\!]*=\s*(.*)$/) {
+			if ($wantlib_block) {
+				$_ =~ s/#.*$//;
+				$w_value .= " ".$_;
+			} else {
+				$w_subpkg = $1 // "";
+				$w_value = $2;
+				$self->_init_wantlib($w_subpkg);
+				$self->{wantlib}->{$w_subpkg}->{wssample} = $_;
+				$self->{wantlib}->{$w_subpkg}->{reqmanual} = 1
+				    if !exists $self->{mpkgs}->{$w_subpkg};
+			}
+			$wantlib_block = $w_value =~ s/\s*\\$//;
+			next if $wantlib_block;
+
+			$w_value =~ s/\s*#.*$//;
+
+			if ($looplevel) {
+				$self->{wantlib}->{$w_subpkg}->{reqmanual} = 1;
+			} else {
+				$self->{wantlib}->{$w_subpkg}->{line} = $in->input_line_number();
+				next if $self->{wantlib}->{$w_subpkg}->{reqmanual};
+				while ($w_value =~ /(\S+)/g) {
+					my $w = $1;
+					if ($w !~ /^\$[\{\(].*[\}\)]$/) {
+						# no problems
+					} elsif ($w =~ /^\$[\{\(]WANTLIB[\}\)]$/) {
+						$self->{wantlib}->{$w_subpkg}->{inherits_global} = 1;
+					} elsif ($w =~ /^\$[\{\(](MOD.+)[\}\)]$/) {
+						push(@mod_wantlib_seen, $1);
+					} else {
+						$self->{wantlib}->{$w_subpkg}->{reqmanual} = 1;
+					}
+					push @{$self->{wantlib}->{$w_subpkg}->{libs}}, $w;
+				}
+				delete $self->{wantlib}->{$w_subpkg}->{blockend};
+			}
+		} elsif (/^ *PERMIT_(?:PACKAGE_(?:CDROM|FTP)|DISTFILES_FTP)(-[A-Za-z_0-9]*)?\b/) {
+			my $subpkg = $1 // "";
+			$self->_init_wantlib($subpkg);
+			$self->{wantlib}->{$subpkg}->{permitline} = $in->input_line_number();
+			push(@permits_in_loop, $subpkg) if $looplevel;
 		} elsif (/^\s*$/) {
 			for my $subpkg(@mentionedsubpkgs) {
 				$self->{newrevplace}->{$subpkg}->{blockend} = $in->input_line_number();
@@ -213,7 +629,6 @@ sub parse_for_revisions {
 			    if $self->{maxrevsin}->{blockend} == 0;
 			@mentionedsubpkgs = ();
 			$revsincurblock = 0;
-
 			$block1end = $in->input_line_number()
 			    if $block1begin && !$block1end;
 		} elsif (!/^ *(\#|BROKEN|COMES_WITH|IGNORE|NOT_FOR_ARCHS|ONLY_FOR_ARCHS|SHARED_ONLY)/) {
@@ -227,10 +642,67 @@ sub parse_for_revisions {
 		$self->{maxrevsin}->{blockend} = $block1end ? $block1end :
 		    $in->input_line_number();
 	}
+
+	return unless $self->{tweak_wantlib};
+
+	my $wstart = -1;
+	# first, try to find a place for WANTLIB after PERMIT_* lines
+	for my $subpkg(keys %{$self->{wantlib}}) {
+		if ($self->{wantlib}->{$subpkg}->{permitline} > $wstart) {
+			$wstart = $self->{wantlib}->{$subpkg}->{permitline};
+		}
+	}
+	# next, find first WANTLIB line and use it
+	if ($wstart == -1) {
+		$wstart = $in->input_line_number();
+		for my $subpkg(keys %{$self->{wantlib}}) {
+			if ($self->{wantlib}->{$subpkg}->{line} < $wstart) {
+				$wstart = $self->{wantlib}->{$subpkg}->{line};
+			}
+		}
+	}
+	# finally, try to anchor to @_REV_NEIGHBORS items
+	if ($wstart == $in->input_line_number()) {
+		$wstart = -1;
+		for my $subpkg(keys %{$self->{newrevplace}}) {
+			if ($self->{newrevplace}->{$subpkg}->{line} > $wstart) {
+				$wstart = $self->{newrevplace}->{$subpkg}->{line};
+			}
+		}
+		if ($wstart == -1) {
+			$self->_init_wantlib("");
+			$self->{wantlib}->{""}->{reqmanual} = 1;
+		} else {
+			$wstart++;
+		}
+	}
+	$self->{wantlib_start} = $wstart;
+
+	my $gcc4_seen = 0;
+	push(@mod_wantlib_seen, map {
+		$gcc4_seen = 1 if $_ eq "gcc4";
+		my $v = uc($_);
+		$v =~ s,.*/,,g;
+		$v =~ s,^PYTHON$,PY,g;
+		"MOD${v}_WANTLIB"
+	    } @{$self->{modules}});
+	push(@mod_wantlib_seen, "MODGCC4_CPPWANTLIB", "MODGCC4_GCJWANTLIB")
+	    if $gcc4_seen;
+	if (scalar(@mod_wantlib_seen)) {
+		my $show = 'show='.join(' ', @mod_wantlib_seen);
+		open (my $makeh, '-|', 'make', $show)
+		    or die "cannot run make $show";
+		while (<$makeh>) {
+			chomp;
+			my $m = shift @mod_wantlib_seen;
+			$self->{wantlib_mod}->{$m} = { map { $_ => 1 } split(/\s+/, $_) };
+		}
+		close $makeh;
+	}
 }
 
 { my %manual_noticed;
-sub _update_libs {
+sub _update_shlibs {
 	my ($self, $shline) = @_;
 	my @splitres = split(/\s+/, $shline);
 	my $nchanges = 0;
@@ -256,15 +728,33 @@ sub _update_libs {
 } }
 
 sub update {
-	my ($self, $in, $out, $bumppkgs, $removerevs, $bumplibs) = @_;
+	my ($self, $in, $out, $bumppkgs, $bumprevs, $removerevs, $bumpshlibs,
+	    $wl_add, $wl_del) = @_;
+
+	if ($self->{tweak_wantlib}) {
+		for my $subpkg (keys %$bumppkgs) {
+			next unless exists $bumppkgs->{$subpkg};
+			next unless exists $self->{wantlib}->{$subpkg};
+			next unless $self->{wantlib}->{$subpkg}->{reqmanual};
+			printf STDERR "%s requires manual WANTLIB handling\n",
+				      $self->{dir};
+			return -1;
+		}
+	}
 
 	my $defbumped = 0;
-	my $shlib_block = 0;
+	my ($shlib_block, $wantlib_block) = (0, 0);
 	my $nchanges = 0;
+	my $wl_ws_removal;
+	my ($empty_line, $prev_line_was_empty) = (1, 1);
+
 	while (<$in>) {
 		chomp;
+		$prev_line_was_empty = $empty_line;
+		$empty_line = 0;
 
 		if ($shlib_block or /^ *SHARED_LIBS/) {
+			$wl_ws_removal = undef;
 			my $shline = $_;
 
 			# N.B.: Some ports define SHARED_LIBS in subpackage-
@@ -274,21 +764,30 @@ sub update {
 			# for additional tasks.
 
 			$shlib_block or $shline =~ s/^ *SHARED_LIBS(?:\S+)?\s*\+?=\s*//;
-			$shlib_block = $shline =~ s/\\$//;
-			if ($bumplibs) {
+			$shlib_block = $shline =~ s/\s*\\$//;
+			if ($bumpshlibs) {
 				# XXX will misbehave after "<...> # \"
 				$shline =~ s/\\s*#.*//;
 				$shline =~ s/^\s*//;
-				$nchanges += $self->_update_libs($shline);
+				$nchanges += $self->_update_shlibs($shline);
+			}
+		} elsif ($wantlib_block or /^ *WANTLIB(?:-[a-zA-Z0-9_]*)?\s*[\+\?\!]*=/) {
+			my $line = $_;
+			$wantlib_block = $line =~ s/\s*\\$//;
+			if ($self->{tweak_wantlib}) {
+				$_ = undef;
+				$empty_line = $prev_line_was_empty;
+				$wl_ws_removal = 0 unless defined $wl_ws_removal;
 			}
 		} elsif (/^ *REVISION(-[a-zA-Z0-9_]+)?.*=\s*([0-9]*)$/) {
+			$wl_ws_removal = undef;
 			my $subpkg = $1 // "";
 			if ($removerevs) {
 				$nchanges++;
-				next;
-			} elsif (!defined($bumppkgs)) {
-				print $out "$_\n";
-				next;
+				$_ = undef;
+				$empty_line = $prev_line_was_empty;
+			} elsif (!$bumprevs) {
+				# do nothing
 			} elsif (exists $bumppkgs->{$subpkg} or
 			    ($subpkg eq "" and scalar(keys %{$self->{mpkgs}}) ==
 			     scalar(keys %{$bumppkgs}))) {
@@ -301,19 +800,50 @@ sub update {
 				delete $bumppkgs->{$subpkg};
 				$defbumped = 1 if $subpkg eq "";
 			}
+		} elsif (/^\s*$/) {
+			$empty_line = 1;
+			if (defined $wl_ws_removal) {
+				$_ = undef if $wl_ws_removal > 0;
+				$wl_ws_removal++;
+			}
+		} elsif (defined($wl_ws_removal) and $wl_ws_removal != -1) {
+			$wl_ws_removal = undef;
+		}
+		if (!$empty_line and defined($wl_ws_removal) and $wl_ws_removal == -1) {
+			print $out "\n";
+			$wl_ws_removal = undef;
 		}
 
-		$nchanges += $self->_add_new_revs($out, $in->input_line_number(), $bumppkgs)
-		    unless $defbumped;
+		if ($bumprevs and !$defbumped) {
+			my $n = $self->_add_new_revs($out,
+			    $in->input_line_number(), $bumppkgs);
+			$wl_ws_removal = undef if $n;
+			$nchanges += $n;
+		}
 
-		print $out "$_\n";
+		if (defined $_) {
+			print $out "$_\n";
+			print STDERR "$_\n" if $self->{verbose};
+		} elsif ($self->{verbose}) {
+			print STDERR "<skipping line>\n";
+		}
+
+		if ($self->{tweak_wantlib} and
+		    $in->input_line_number() == $self->{wantlib_start}) {
+			print STDERR "putting new WANTLIB lines at $self->{wantlib_start}\n" if $self->{verbose};
+			$nchanges += $self->_put_wantlib_lines($out, $bumppkgs,
+			    $wl_add, $wl_del, $empty_line);
+			$wl_ws_removal = 0;
+		}
 	}
 
-	for my $subpkg(sort keys %{$bumppkgs}) {
-		next if defined $self->{newrevplace}->{$subpkg}->{blockend};
-		print STDERR "can't find a suitable place for ".
-		             "REVISION${subpkg} mark in ".$self->{dir}."\n";
-		exit 2;
+	if ($bumprevs) {
+		for my $subpkg(sort keys %{$bumppkgs}) {
+			next if defined $self->{newrevplace}->{$subpkg}->{blockend};
+			print STDERR "can't find a suitable place for ".
+				     "REVISION${subpkg} mark in ".$self->{dir}."\n";
+			return -1;
+		}
 	}
 
 	return $nchanges;
@@ -330,27 +860,33 @@ use OpenBSD::Getopt;
 
 sub usage {
 	print join("\n", @_) if scalar @_;
-	print STDERR "usage: portbump [-dMmrnv] [dir] ...\n";
-	print STDERR "       portbump [-dMmrnov] [dir]\n";
+	print STDERR
+"usage: portbump [-dMmrnv] [-o outfile] [-W lib] [-w lib] [dir ...]\n";
 	exit 1;
 }
 
-our ($opt_d, $opt_M, $opt_m, $opt_n, $opt_o, $opt_r, $opt_v) =
-    (0, 0, 0, 0, undef, undef, 0);
+our ($opt_d, $opt_l, $opt_M, $opt_m, $opt_n, $opt_o, $opt_r, $opt_v) =
+    (0, 0, 0, 0, 0, undef, undef, 0);
+my (@wl_add, @wl_del);
 
-eval { getopts('dMmno:rv', {
+eval { getopts('dlMmno:rW:w:v', {
 	'd' => sub { $opt_d++; },
+	'l' => sub { $opt_l++; },
 	'M' => sub { $opt_M++; },
 	'm' => sub { $opt_m++; },
 	'n' => sub { $opt_n++; },
 	'o' => sub { $opt_o = shift; },
 	'v' => sub { $opt_v++; },
 	'r' => sub { $opt_r++; },
+	'W' => sub { push(@wl_add, shift); },
+	'w' => sub { push(@wl_del, shift); },
 }) } // usage $@;
 
 $opt_d && $opt_r and usage "cannot mix -d and -r options";
 $opt_m && $opt_M and usage "cannot mix -M and -m options";
-!$opt_M && !$opt_m && !$opt_d && !defined($opt_r) and $opt_r = 1;
+scalar(@wl_add) || scalar(@wl_del) and $opt_l = 1;
+!defined($opt_r) && !$opt_M && !$opt_m && !$opt_d && !$opt_l
+    and $opt_r = 1;
 
 my %allpkgs;     # dir => { subpkg => 1, ... };
 
@@ -396,8 +932,20 @@ if ($opt_v) {
 	}
 }
 
+my $exitstatus = 0;
 for my $dir (keys %allpkgs) {
-	my $port = PortHandler->new($dir);
+	my $scan_lib_depends = $opt_l;
+	$scan_lib_depends = 0 if scalar(@wl_add) || scalar(@wl_del);
+	my $lib_depends_tgt;
+	if ($scan_lib_depends) {
+		$lib_depends_tgt = ($scan_lib_depends == 1) ?
+		    'port-lib-depends-check' : 'lib-depends-check';
+	}
+	my $port = PortHandler->new($dir, $opt_l, $lib_depends_tgt);
+	if (!defined $port) {
+		$exitstatus = 1;
+		next;
+	}
 	$port->verbose(1) if $opt_v;
 
 	#
@@ -424,12 +972,10 @@ for my $dir (keys %allpkgs) {
 	open (my $in, '<', "$dir/Makefile") or
 		die "cannot open input file $dir/Makefile";
 
-	$port->parse_for_revisions($in);
+	$port->process_makefile($in);
 
 	my $bumppkgs;
-	if (!$opt_r) {
-		$bumppkgs = undef;
-	} elsif (scalar(keys %{$allpkgs{$dir}}) != 0) {
+	if (scalar(keys %{$allpkgs{$dir}}) != 0) {
 		for my $subpkg (keys %{$allpkgs{$dir}}) {
 			next if exists $port->{mpkgs}->{$subpkg};
 			die "there is no $dir,$subpkg package";
@@ -443,20 +989,27 @@ for my $dir (keys %allpkgs) {
 	# Actual update process.
 	#
 
-	open (my $out, '>', $opt_o // "$dir/Makefile.bump") or
-		die "cannot open output file $dir/Makefile.bump";
+	my $outpath = $opt_o // "$dir/Makefile.bump";
+	open (my $out, '>', $outpath) or
+		die "cannot open output file $outpath";
 	seek($in, 0, 0);
 	$in->input_line_number(0);
-	my $nchanges = $port->update($in, $out, $bumppkgs, $opt_d, $opt_m|$opt_M);
+	my $nchanges = $port->update($in, $out, $bumppkgs, $opt_r, $opt_d,
+	    $opt_m|$opt_M, \@wl_add, \@wl_del);
 	close($in);
 	close($out);
-	if (!defined $opt_o) {
+	if ($nchanges == -1) {
+		# warning message should be printed already
+		unlink $outpath;
+		$exitstatus = 1;
+	} elsif (!defined $opt_o) {
 		if (!$nchanges) {
 			print STDERR "nothing to do in $dir\n" if $opt_v;
-			unlink "$dir/Makefile.bump";
+			unlink $outpath;
 		} elsif (!$opt_n) {
-			rename("$dir/Makefile.bump", "$dir/Makefile") or
-			    die "cannot move $dir/Makefile.bump to $dir/Makefile"
+			rename($outpath, "$dir/Makefile") or
+			    die "cannot move $outpath to $dir/Makefile"
 		}
 	}
 }
+exit $exitstatus;

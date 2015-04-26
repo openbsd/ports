@@ -1,4 +1,4 @@
-.\"     $OpenBSD: portbump.1,v 1.2 2014/08/12 00:53:38 zhuk Exp $
+.\"     $OpenBSD: portbump.1,v 1.3 2015/04/26 12:22:49 zhuk Exp $
 .\"
 .\" Copyright (c) 2014 Vadim Zhukov
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: August 12 2014 $
+.Dd $Mdocdate: April 26 2015 $
 .Dt PORTBUMP 1
 .Os
 .Sh NAME
@@ -22,13 +22,17 @@
 .Nd tweaks port revisions and library versions
 .Sh SYNOPSIS
 .Nm
-.Op Fl Mmnrv
+.Op Fl lMmnrv
+.Op Fl W Ar wlib
+.Op Fl w Ar wlib
 .Op Ar portref ...
 .Pp
 .Nm
-.Op Fl Mmnrv
-.Op Fl o Ar file
-.Op Ar portref
+.Fl o Ar file
+.Op Fl lMmnrv
+.Op Fl W Ar addlib
+.Op Fl w Ar rmlib
+.Op Ar portref ...
 .Sh DESCRIPTION
 .Nm
 is used to increase ('bump')
@@ -40,7 +44,9 @@ values in
 ports.
 It also can remove
 .Ev REVISION
-marks.
+marks and add, update or remove
+.Ev WANTLIB
+items.
 .Pp
 .Ar portref
 has the same syntax as
@@ -81,6 +87,20 @@ marks in
 .Pa Makefile .
 Mutally exclusive with
 .Fl r .
+.It Fl l
+Recreate all
+.Ev WANTLIB
+items based on output of
+.Sq make port-lib-depends-check .
+If used twice or more, the
+.Sq make lib-depends-check
+will be used instead.
+The
+.Fl l
+mode is incompatible with
+.Fl W
+and
+.Fl w .
 .It Fl M
 Increment by one major component of all
 .Ev SHARED_LIBS ,
@@ -110,6 +130,22 @@ Increment
 values for all subpackages, or only for given ones.
 Mutally exclusive with
 .Fl d .
+.It Fl W Ar wlib
+.It Fl w Ar wlib
+Adds or updates (the
+.Fl W
+flag) or removes (the
+.Fl w
+flag)
+.Ev WANTLIB
+items in whole port, or in particular subpackages, if given.
+Both options could be specified multiple times, accumulating
+corresponding lists.
+The
+.Ev WANTLIB
+entries will be fully re-generated based on previous contents.
+Those modes are incompatible with
+.Fl l .
 .It Fl v
 Enable printing of diagnostic messages to stdandard error output.
 .El
