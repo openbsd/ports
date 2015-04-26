@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.36 2015/04/25 14:24:03 espie Exp $
+# $OpenBSD: Config.pm,v 1.37 2015/04/26 17:36:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -325,6 +325,7 @@ sub parse_config_files
 	for my $u (qw(build_user log_user lock_user fetch_user)) {
 		$state->{$u} //= $prop->{$u};
 	}
+	$state->{default_prop} = $prop;
 }
 
 sub parse_hosts_file
@@ -395,6 +396,38 @@ sub run_as
 	my ($self, $code) = @_;
 	local ($>, $)) = ($self->{uid}, $self->{gid});
 	&$code;
+}
+
+sub make_path
+{
+	my ($self, @directories) = @_;
+	require File::Path;
+	my $p = {};
+	if ($self->{uid}) {
+		$p->{uid} = $self->{uid};
+	} else {
+		$p->{owner} = $self->{user};
+	}
+	if ($self->{gid}) {
+		$p->{gid} = $self->{gid};
+	}
+	if ($self->{dirmode}) {
+		$p->{mode} = $self->{dirmode};
+	}
+	File::Path::make_path(@directories, $p);
+}
+
+package DPB::UserProxy;
+sub run_as
+{
+	my ($self, $code) = @_;
+	$self->{user}->run_as($code);
+}
+
+sub make_path
+{
+	my ($self, @dirs) = @_;
+	$self->{user}->make_path(@dirs);
 }
 
 1;

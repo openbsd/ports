@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.3 2015/04/25 10:07:19 espie Exp $
+# $OpenBSD: Shell.pm,v 1.4 2015/04/26 17:36:20 espie Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -64,6 +64,13 @@ sub sudo
 		$val = 1;
 	}
 	$self->{sudo} = $val;
+	return $self;
+}
+
+sub run_as
+{
+	my ($self, $user) = @_;
+	$self->{user} = $user;
 	return $self;
 }
 
@@ -195,9 +202,10 @@ sub exec
 	if (defined $chroot) {
 		chroot($chroot);
 	}
-	if (!$self->{sudo} && defined $self->prop->{build_user}) {
-		setuid($self->prop->{build_user}{uid});
-		setgid($self->prop->{build_user}{gid});
+	$self->{user} //= $self->prop->{build_user};
+	if (!$self->{sudo} && defined $self->{user}) {
+		setuid($self->{user}{uid});
+		setgid($self->{user}{gid});
 	}
 	if ($self->{env}) {
 		while (my ($k, $v) = each %{$self->{env}}) {
@@ -219,6 +227,5 @@ sub exec
 	}
 	exec {$argv[0]} @argv;
 }
-
 
 1;
