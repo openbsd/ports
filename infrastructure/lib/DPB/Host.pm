@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Host.pm,v 1.3 2015/04/25 11:23:20 espie Exp $
+# $OpenBSD: Host.pm,v 1.4 2015/04/26 18:00:19 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -102,10 +102,19 @@ sub shellclass
 sub getshell
 {
 	my ($class, $state) = @_;
-	my $h = bless { prop => {}}, $class;
-	if ($state->{chroot}) {
-		$h->{prop}{chroot} = $state->{chroot};
+	my $prop;
+
+	if ($state->{default_prop}) {
+		$prop = $state->{default_prop};
+	} else {
+		$prop = {};
+		if ($state->{chroot}) {
+			$prop->{chroot} = $state->{chroot};
+		}
 	}
+	$prop->{iamroot} = $< == 0;
+
+	my $h = bless { prop => $prop }, $class;
 	return $h->shellclass->new($h);
 }
 

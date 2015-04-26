@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.16 2015/04/25 11:40:58 espie Exp $
+# $OpenBSD: Logger.pm,v 1.17 2015/04/26 18:00:19 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -17,8 +17,10 @@
 
 use strict;
 use warnings;
+use DPB::Config;
 
 package DPB::Logger;
+our @ISA = (qw(DPB::UserProxy));
 use File::Path;
 use File::Basename;
 use IO::File;
@@ -34,20 +36,11 @@ sub new
 	    clean => $state->opt('c')}, $class;
 }
 
-sub run_as
-{
-	my ($self, $code) = @_;
-	return $self->{user}->run_as($code);
-}
-
 sub logfile
 {
 	my ($self, $name) = @_;
 	my $log = "$self->{logdir}/$name.log";
-	$self->run_as(
-	    sub {
-		File::Path::mkpath(File::Basename::dirname($log));
-	    });
+	$self->make_path(File::Basename::dirname($log));
 	return $log;
 }
 
@@ -135,7 +128,7 @@ sub make_test_logs
 {
 	my ($self, $v) = @_;
 	my $log = $self->testlog_pkgpath($v);
-	self->run_as(
+	$self->run_as(
 	    sub {
 		if ($self->{clean}) {
 			unlink($log);

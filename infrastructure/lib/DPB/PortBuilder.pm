@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.63 2014/12/07 15:18:50 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.64 2015/04/26 18:00:19 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -113,7 +113,7 @@ sub make_args
 sub init
 {
 	my $self = shift;
-	File::Path::make_path($self->{realfullrepo});
+	$self->{state}{build_user}->make_path($self->{realfullrepo});
 	$self->{global} = $self->logger->open("build");
 	$self->{lockperf} = 
 	    DPB::Util->make_hot($self->logger->open("awaiting-locks"));

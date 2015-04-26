@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.11 2015/04/25 11:40:58 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.12 2015/04/26 18:00:19 espie Exp $
 #
 # Copyright (c) 2012-2013 Marc Espie <espie@openbsd.org>
 #
@@ -23,26 +23,19 @@ use warnings;
 
 # note that this is only superficially similar to locks
 
+use DPB::Config;
 package DPB::Affinity;
+our @ISA = (qw(DPB::UserProxy));
 
 use File::Path;
 use DPB::PkgPath;
-
-sub run_as
-{
-	my ($self, $code) = @_;
-	$self->{user}->run_as($code);
-}
 
 sub new
 {
 	my ($class, $state, $dir) = @_;
 
 	my $o = bless {dir => $dir, user => $state->{lock_user}}, $class;
-	$o->run_as(
-	    sub {
-		File::Path::make_path($dir);
-	    });
+	$o->make_path($dir);
 	$o->retrieve_existing_markers($state->logger);
 	return $o;
 }

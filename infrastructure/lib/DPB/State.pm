@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.10 2015/04/21 09:53:13 espie Exp $
+# $OpenBSD: State.pm,v 1.11 2015/04/26 18:00:19 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -287,19 +287,23 @@ sub add_build_info
 sub rewrite_build_info
 {
 	my $state = shift;
-	File::Path::mkpath(File::Basename::dirname($state->{permanent_log}));
-	open my $f, '>', $state->{permanent_log}.'.part' or return;
-	for my $p (sort {$a->fullpkgpath cmp $b->fullpkgpath}
-	    DPB::PkgPath->seen) {
-		next unless defined $p->{stats};
-		shift @{$p->{stats}} while @{$p->{stats}} > 10;
-		for my $s (@{$p->{stats}}) {
-			print $f DPB::Serialize::Build->write($s), "\n";
+	$state->{log_user}->make_path(File::Basename::dirname(
+	    $state->{permanent_log}));
+	$state->{log_user}->run_as(
+	    sub {
+		open my $f, '>', $state->{permanent_log}.'.part' or return;
+		for my $p (sort {$a->fullpkgpath cmp $b->fullpkgpath}
+		    DPB::PkgPath->seen) {
+			next unless defined $p->{stats};
+			shift @{$p->{stats}} while @{$p->{stats}} > 10;
+			for my $s (@{$p->{stats}}) {
+				print $f DPB::Serialize::Build->write($s), "\n";
+			}
+			delete $p->{stats};
 		}
-		delete $p->{stats};
-	}
-	close $f;
-	rename $state->{permanent_log}.'.part', $state->{permanent_log};
+		close $f;
+		rename $state->{permanent_log}.'.part', $state->{permanent_log};
+	    });
 }
 
 sub handle_build_files

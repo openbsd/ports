@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.29 2015/04/25 11:40:58 espie Exp $
+# $OpenBSD: Locks.pm,v 1.30 2015/04/26 18:00:19 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -17,18 +17,14 @@
 
 use strict;
 use warnings;
+use DPB::Config;
 
 package DPB::Locks;
+our @ISA = (qw(DPB::UserProxy));
 
 use File::Path;
 use Fcntl;
 require 'fcntl.ph';
-
-sub run_as
-{
-	my ($self, $code) = @_;
-	$self->{user}->run_as($code);
-}
 
 sub new
 {
@@ -39,9 +35,9 @@ sub new
 		dpb_pid => $$, 
 		user => $state->{lock_user},
 		dpb_host => DPB::Core::Local->hostname}, $class;
+	$o->make_path($lockdir);
 	$o->run_as(
 	    sub {
-		File::Path::make_path($lockdir);
 		if (!$state->defines("DONT_CLEAN_LOCKS")) {
 			$o->{stalelocks} = $o->clean_old_locks($state);
 		}
