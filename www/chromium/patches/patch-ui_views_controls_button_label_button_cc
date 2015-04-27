@@ -1,6 +1,6 @@
-$OpenBSD: patch-ui_views_controls_button_label_button_cc,v 1.3 2014/10/13 06:49:19 robert Exp $
---- ui/views/controls/button/label_button.cc.orig.port	Thu Oct  2 19:19:03 2014
-+++ ui/views/controls/button/label_button.cc	Fri Oct 10 16:10:31 2014
+$OpenBSD: patch-ui_views_controls_button_label_button_cc,v 1.4 2015/04/27 16:38:25 robert Exp $
+--- ui/views/controls/button/label_button.cc.orig.port	Wed Apr 15 00:31:23 2015
++++ ui/views/controls/button/label_button.cc	Wed Apr 15 08:32:50 2015
 @@ -16,7 +16,7 @@
  #include "ui/views/painter.h"
  #include "ui/views/window/dialog_delegate.h"
@@ -19,7 +19,7 @@ $OpenBSD: patch-ui_views_controls_button_label_button_cc,v 1.3 2014/10/13 06:49:
  // Default text and shadow colors for STYLE_BUTTON.
  const SkColor kStyleButtonTextColor = SK_ColorBLACK;
  const SkColor kStyleButtonShadowColor = SK_ColorWHITE;
-@@ -399,7 +399,7 @@ void LabelButton::ResetColorsFromNativeTheme() {
+@@ -405,7 +405,7 @@ void LabelButton::ResetColorsFromNativeTheme() {
      // confusion. These details should either be pushed into ui::NativeThemeWin
      // or should be obsoleted by rendering buttons with paint calls instead of
      // with static assets. http://crbug.com/350498
@@ -28,7 +28,7 @@ $OpenBSD: patch-ui_views_controls_button_label_button_cc,v 1.3 2014/10/13 06:49:
      constant_text_color = true;
      colors[STATE_NORMAL] = kStyleButtonTextColor;
      label_->SetBackgroundColor(theme->GetSystemColor(
-@@ -436,7 +436,7 @@ void LabelButton::UpdateThemedBorder() {
+@@ -442,7 +442,7 @@ void LabelButton::UpdateThemedBorder() {
  
    scoped_ptr<LabelButtonBorder> label_button_border = CreateDefaultBorder();
  

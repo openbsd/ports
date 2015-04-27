@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2015/03/18 19:26:29 robert Exp $
+@comment $OpenBSD: PLIST,v 1.48 2015/04/27 16:38:25 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -9,7 +9,6 @@ chrome/icudtl.dat
 chrome/keyboard_resources.pak
 chrome/libexif.so
 chrome/libffmpegsumo.so
-${I386_DISABLE}chrome/libpdf.so
 chrome/locales/
 chrome/locales/am.pak
 chrome/locales/ar.pak
@@ -75,7 +74,6 @@ chrome/resources/extension/demo/library.js
 chrome/resources/inspector/
 chrome/resources/inspector/Images/
 chrome/resources/inspector/Images/applicationCache.png
-chrome/resources/inspector/Images/back.png
 chrome/resources/inspector/Images/breakpoint.png
 chrome/resources/inspector/Images/breakpointConditional.png
 chrome/resources/inspector/Images/breakpointConditional_2x.png
@@ -147,6 +145,7 @@ chrome/resources/inspector/Images/touchCursor_2x.png
 chrome/resources/inspector/InspectorBackendCommands.js
 chrome/resources/inspector/SupportedCSSProperties.js
 chrome/resources/inspector/audits_module.js
+chrome/resources/inspector/components_lazy_module.js
 chrome/resources/inspector/console_module.js
 chrome/resources/inspector/devices_module.js
 chrome/resources/inspector/devtools.css
@@ -172,6 +171,7 @@ chrome/resources/inspector/timeline_module.js
 chrome/resources/inspector/toolbox.css
 chrome/resources/inspector/toolbox.html
 chrome/resources/inspector/toolbox.js
+chrome/resources/inspector/ui_lazy_module.js
 @man man/man1/chrome.1
 share/applications/chromium-browser.desktop
 share/icons/hicolor/128x128/apps/chrome.png

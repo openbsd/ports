@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_libjingle_libjingle_gyp,v 1.18 2015/03/18 19:26:29 robert Exp $
---- third_party/libjingle/libjingle.gyp.orig.port	Tue Mar 10 23:41:42 2015
-+++ third_party/libjingle/libjingle.gyp	Wed Mar 11 07:22:50 2015
-@@ -490,7 +490,7 @@
-               ],
-             }],
+$OpenBSD: patch-third_party_libjingle_libjingle_gyp,v 1.19 2015/04/27 16:38:25 robert Exp $
+--- third_party/libjingle/libjingle.gyp.orig.port	Wed Apr 15 00:31:23 2015
++++ third_party/libjingle/libjingle.gyp	Wed Apr 15 08:32:50 2015
+@@ -482,7 +482,7 @@
+           ],
+           'conditions': [
              # TODO(mallinath) - Enable SCTP for iOS.
 -            ['OS!="ios"', {
 +            ['OS!="ios" and os_bsd!=1', {

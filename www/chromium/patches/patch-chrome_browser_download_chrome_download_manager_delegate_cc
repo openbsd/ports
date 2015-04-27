@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_download_chrome_download_manager_delegate_cc,v 1.1 2015/02/15 19:51:28 robert Exp $
---- chrome/browser/download/chrome_download_manager_delegate.cc.orig.port	Sun Feb 15 11:06:29 2015
-+++ chrome/browser/download/chrome_download_manager_delegate.cc	Sun Feb 15 11:06:44 2015
-@@ -719,7 +719,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
+$OpenBSD: patch-chrome_browser_download_chrome_download_manager_delegate_cc,v 1.2 2015/04/27 16:38:25 robert Exp $
+--- chrome/browser/download/chrome_download_manager_delegate.cc.orig.port	Wed Apr 15 00:31:21 2015
++++ chrome/browser/download/chrome_download_manager_delegate.cc	Wed Apr 15 08:32:50 2015
+@@ -720,7 +720,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
  
  bool ChromeDownloadManagerDelegate::IsOpenInBrowserPreferreredForFile(
      const base::FilePath& path) {

@@ -1,0 +1,29 @@
+$OpenBSD: patch-dbus_property_cc,v 1.1 2015/04/27 16:38:25 robert Exp $
+--- dbus/property.cc.orig.port	Wed Apr 15 15:43:18 2015
++++ dbus/property.cc	Thu Apr 23 08:39:00 2015
+@@ -478,6 +478,7 @@ void Property<std::vector<uint8> >::AppendSetValueToWr
+   writer->CloseContainer(&variant_writer);
+ }
+ 
++#if !defined(OS_BSD)
+ //
+ // Property<std::map<std::string, std::string>> specialization.
+ //
+@@ -574,6 +575,7 @@ void Property<std::vector<std::pair<std::vector<uint8_
+   variant_writer.CloseContainer(&array_writer);
+   writer->CloseContainer(&variant_writer);
+ }
++#endif
+ 
+ template class Property<uint8>;
+ template class Property<bool>;
+@@ -589,7 +591,9 @@ template class Property<ObjectPath>;
+ template class Property<std::vector<std::string> >;
+ template class Property<std::vector<ObjectPath> >;
+ template class Property<std::vector<uint8> >;
++#if !defined(OS_BSD)
+ template class Property<std::map<std::string, std::string>>;
+ template class Property<std::vector<std::pair<std::vector<uint8_t>, uint16_t>>>;
++#endif
+ 
+ }  // namespace dbus

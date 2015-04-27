@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_cc,v 1.6 2015/03/18 19:26:29 robert Exp $
---- chrome/browser/ui/views/apps/chrome_native_app_window_views.cc.orig.port	Tue Mar 10 23:41:40 2015
-+++ chrome/browser/ui/views/apps/chrome_native_app_window_views.cc	Wed Mar 11 07:22:50 2015
+$OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_cc,v 1.7 2015/04/27 16:38:25 robert Exp $
+--- chrome/browser/ui/views/apps/chrome_native_app_window_views.cc.orig.port	Wed Apr 15 00:31:21 2015
++++ chrome/browser/ui/views/apps/chrome_native_app_window_views.cc	Wed Apr 15 08:32:50 2015
 @@ -30,7 +30,7 @@
  #include "ui/wm/core/easy_resize_window_targeter.h"
  #include "ui/wm/core/shadow_types.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_cc,v
  #include "chrome/browser/shell_integration_linux.h"
  #endif
  
-@@ -223,7 +223,7 @@ void ChromeNativeAppWindowViews::InitializeDefaultWind
+@@ -230,7 +230,7 @@ void ChromeNativeAppWindowViews::InitializeDefaultWind
    init_params.visible_on_all_workspaces =
        create_params.visible_on_all_workspaces;
  

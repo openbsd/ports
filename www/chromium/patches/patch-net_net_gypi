@@ -1,7 +1,7 @@
-$OpenBSD: patch-net_net_gypi,v 1.6 2015/03/18 19:26:29 robert Exp $
---- net/net.gypi.orig.port	Tue Mar 10 23:41:41 2015
-+++ net/net.gypi	Wed Mar 11 07:22:50 2015
-@@ -188,8 +188,6 @@
+$OpenBSD: patch-net_net_gypi,v 1.7 2015/04/27 16:38:25 robert Exp $
+--- net/net.gypi.orig.port	Wed Apr 15 00:31:22 2015
++++ net/net.gypi	Wed Apr 15 08:32:50 2015
+@@ -187,8 +187,6 @@
        'android/network_change_notifier_factory_android.h',
        'android/network_library.cc',
        'android/network_library.h',

@@ -1,12 +1,7 @@
-$OpenBSD: patch-gpu_config_gpu_info_collector_x11_cc,v 1.1 2015/02/22 11:33:57 robert Exp $
---- gpu/config/gpu_info_collector_x11.cc.orig.port	Fri Feb 20 05:24:00 2015
-+++ gpu/config/gpu_info_collector_x11.cc	Sun Feb 22 12:13:30 2015
-@@ -4,12 +4,22 @@
- 
- #include <X11/Xlib.h>
- 
-+#include "base/debug/trace_event.h"
- #include "base/logging.h"
+$OpenBSD: patch-gpu_config_gpu_info_collector_x11_cc,v 1.2 2015/04/27 16:38:25 robert Exp $
+--- gpu/config/gpu_info_collector_x11.cc.orig.port	Wed Apr 15 00:18:55 2015
++++ gpu/config/gpu_info_collector_x11.cc	Wed Apr 15 15:34:00 2015
+@@ -8,8 +8,17 @@
  #include "gpu/config/gpu_info_collector_linux.h"
  #include "third_party/libXNVCtrl/NVCtrl.h"
  #include "third_party/libXNVCtrl/NVCtrlLib.h"
@@ -24,7 +19,7 @@ $OpenBSD: patch-gpu_config_gpu_info_collector_x11_cc,v 1.1 2015/02/22 11:33:57 r
  namespace gpu {
  
  // Use NVCtrl extention to query NV driver version.
-@@ -39,5 +49,42 @@ std::string CollectDriverVersionNVidia() {
+@@ -39,5 +48,42 @@ std::string CollectDriverVersionNVidia() {
    }
    return std::string();
  }

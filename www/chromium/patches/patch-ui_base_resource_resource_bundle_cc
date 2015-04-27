@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.9 2015/03/18 19:26:29 robert Exp $
---- ui/base/resource/resource_bundle.cc.orig.port	Tue Mar 10 23:41:42 2015
-+++ ui/base/resource/resource_bundle.cc	Wed Mar 11 07:22:50 2015
-@@ -628,7 +628,7 @@ void ResourceBundle::InitSharedInstance(Delegate* dele
+$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.10 2015/04/27 16:38:25 robert Exp $
+--- ui/base/resource/resource_bundle.cc.orig.port	Wed Apr 15 00:18:59 2015
++++ ui/base/resource/resource_bundle.cc	Wed Apr 15 08:32:50 2015
+@@ -611,7 +611,7 @@ void ResourceBundle::InitSharedInstance(Delegate* dele
  #elif defined(OS_CHROMEOS)
    // TODO(oshima): Include 200P only if the device support 200P
    supported_scale_factors.push_back(SCALE_FACTOR_200P);

@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_pdfium_core_src_fxcodec_fx_libopenjpeg_libopenjpeg20_opj_malloc_h,v 1.1 2015/04/27 16:38:25 robert Exp $
+--- third_party/pdfium/core/src/fxcodec/fx_libopenjpeg/libopenjpeg20/opj_malloc.h.orig.port	Sun Apr 26 12:00:47 2015
++++ third_party/pdfium/core/src/fxcodec/fx_libopenjpeg/libopenjpeg20/opj_malloc.h	Sun Apr 26 12:00:59 2015
+@@ -98,7 +98,7 @@ Allocate memory aligned to a 16 byte boundry
+ #else /* Not _WIN32 */
+ 	#if defined(__sun)
+ 		#define HAVE_MEMALIGN
+-  #elif defined(__FreeBSD__)
++  #elif defined(__FreeBSD__) || defined(__OpenBSD__)
+     #define HAVE_POSIX_MEMALIGN
+ 	/* Linux x86_64 and OSX always align allocations to 16 bytes */
+ 	#elif !defined(__amd64__) && !defined(__APPLE__) && !defined(_AIX)

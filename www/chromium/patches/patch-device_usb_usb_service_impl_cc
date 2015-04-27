@@ -1,41 +1,15 @@
-$OpenBSD: patch-device_usb_usb_service_impl_cc,v 1.1 2015/03/21 14:11:19 robert Exp $
---- device/usb/usb_service_impl.cc.orig.port	Fri Mar 20 04:21:23 2015
-+++ device/usb/usb_service_impl.cc	Sat Mar 21 12:29:48 2015
-@@ -60,11 +60,13 @@ class UsbServiceImpl : public UsbService,
-   // Adds a new UsbDevice to the devices_ map based on the given libusb device.
-   scoped_refptr<UsbDeviceImpl> AddDevice(PlatformUsbDevice platform_device);
- 
-+#if !defined(OS_BSD)
-   // Handle hotplug events from libusb.
-   static int LIBUSB_CALL HotplugCallback(libusb_context* context,
-                                          PlatformUsbDevice device,
-                                          libusb_hotplug_event event,
-                                          void* user_data);
-+#endif
-   // These functions release a reference to the provided platform device.
-   void OnDeviceAdded(PlatformUsbDevice platform_device);
-   void OnDeviceRemoved(PlatformUsbDevice platform_device);
-@@ -85,7 +87,9 @@ class UsbServiceImpl : public UsbService,
-   // connected instead of only when a full enumeration is requested.
-   // TODO(reillyg): Support this on all platforms. crbug.com/411715
-   bool hotplug_enabled_;
-+#if !defined(OS_BSD)
-   libusb_hotplug_callback_handle hotplug_handle_;
-+#endif
- 
-   // The map from unique IDs to UsbDevices.
-   typedef std::map<uint32, scoped_refptr<UsbDeviceImpl> > DeviceMap;
-@@ -177,6 +181,9 @@ UsbServiceImpl::UsbServiceImpl(
+$OpenBSD: patch-device_usb_usb_service_impl_cc,v 1.2 2015/04/27 16:38:25 robert Exp $
+--- device/usb/usb_service_impl.cc.orig.port	Wed Apr 15 09:33:55 2015
++++ device/usb/usb_service_impl.cc	Wed Apr 22 21:25:53 2015
+@@ -112,6 +112,7 @@ UsbServiceImpl::UsbServiceImpl(
        next_unique_id_(0),
        hotplug_enabled_(false),
        weak_factory_(this) {
-+#if defined(OS_BSD)
-+  hotplug_enabled_ = false;
-+#else
-   base::MessageLoop::current()->AddDestructionObserver(this);
++#if !defined(OS_BSD)
    task_runner_ = base::ThreadTaskRunnerHandle::Get();
    int rv = libusb_hotplug_register_callback(
-@@ -196,9 +203,11 @@ UsbServiceImpl::UsbServiceImpl(
+       context_->context(),
+@@ -130,9 +131,11 @@ UsbServiceImpl::UsbServiceImpl(
                                           base::Unretained(ui_thread_helper_)));
  #endif  // OS_WIN
    }
@@ -44,10 +18,10 @@ $OpenBSD: patch-device_usb_usb_service_impl_cc,v 1.1 2015/03/21 14:11:19 robert 
  
  UsbServiceImpl::~UsbServiceImpl() {
 +#if !defined(OS_BSD)
-   base::MessageLoop::current()->RemoveDestructionObserver(this);
    if (hotplug_enabled_) {
      libusb_hotplug_deregister_callback(context_->context(), hotplug_handle_);
-@@ -211,6 +220,7 @@ UsbServiceImpl::~UsbServiceImpl() {
+   }
+@@ -144,6 +147,7 @@ UsbServiceImpl::~UsbServiceImpl() {
    for (const auto& map_entry : devices_) {
      map_entry.second->OnDisconnect();
    }
@@ -55,7 +29,7 @@ $OpenBSD: patch-device_usb_usb_service_impl_cc,v 1.1 2015/03/21 14:11:19 robert 
  }
  
  void UsbServiceImpl::RefreshDevices() {
-@@ -286,6 +296,7 @@ scoped_refptr<UsbDeviceImpl> UsbServiceImpl::AddDevice
+@@ -219,6 +223,7 @@ scoped_refptr<UsbDeviceImpl> UsbServiceImpl::AddDevice
    }
  }
  
@@ -63,7 +37,7 @@ $OpenBSD: patch-device_usb_usb_service_impl_cc,v 1.1 2015/03/21 14:11:19 robert 
  // static
  int LIBUSB_CALL UsbServiceImpl::HotplugCallback(libusb_context* context,
                                                  PlatformUsbDevice device,
-@@ -323,6 +334,7 @@ int LIBUSB_CALL UsbServiceImpl::HotplugCallback(libusb
+@@ -256,6 +261,7 @@ int LIBUSB_CALL UsbServiceImpl::HotplugCallback(libusb
  
    return 0;
  }

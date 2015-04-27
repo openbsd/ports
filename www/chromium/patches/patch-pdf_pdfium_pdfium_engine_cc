@@ -1,0 +1,48 @@
+$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.1 2015/04/27 16:38:25 robert Exp $
+--- pdf/pdfium/pdfium_engine.cc.orig.port	Thu Apr 23 11:26:23 2015
++++ pdf/pdfium/pdfium_engine.cc	Thu Apr 23 11:26:42 2015
+@@ -126,7 +126,7 @@ std::vector<uint32_t> GetPageNumbersFromPrintPageNumbe
+   return page_numbers;
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ 
+ PP_Instance g_last_instance_id;
+ 
+@@ -559,7 +559,7 @@ pp::VarDictionary TraverseBookmarks(FPDF_DOCUMENT doc,
+ bool InitializeSDK() {
+   FPDF_InitLibrary();
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Font loading doesn't work in the renderer sandbox in Linux.
+   FPDF_SetSystemFontInfo(&g_font_info);
+ #endif
+@@ -1461,7 +1461,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPDF(
+     FPDF_ClosePage(pdf_page);
+   }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   g_last_instance_id = client_->GetPluginInstance()->pp_instance();
+ #endif
+ 
+@@ -2823,7 +2823,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
+   DCHECK_LT(static_cast<size_t>(progressive_index), progressive_paints_.size());
+   DCHECK(image_data);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   g_last_instance_id = client_->GetPluginInstance()->pp_instance();
+ #endif
+ 
+@@ -3279,7 +3279,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+     FORM_DoPageAAction(old_page, form_, FPDFPAGE_AACTION_CLOSE);
+   }
+   most_visible_page_ = index;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     g_last_instance_id = client_->GetPluginInstance()->pp_instance();
+ #endif
+   if (most_visible_page_ != -1 && called_do_document_action_) {

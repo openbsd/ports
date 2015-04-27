@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.209 2015/04/04 09:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.210 2015/04/27 16:38:25 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			41.0.2272.118
+V=			42.0.2311.90
 DISTNAME=		chromium-${V}
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -121,6 +120,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Dwerror= \
 		-Dno_gc_sections=1 \
 		-Ddisable_fatal_linker_warnings=1 \
+		-Dv8_use_external_startup_data=0 \
 		-DOS=openbsd
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,

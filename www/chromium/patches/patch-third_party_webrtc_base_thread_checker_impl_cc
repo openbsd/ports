@@ -1,0 +1,17 @@
+$OpenBSD: patch-third_party_webrtc_base_thread_checker_impl_cc,v 1.1 2015/04/27 16:38:25 robert Exp $
+--- third_party/webrtc/base/thread_checker_impl.cc.orig.port	Wed Apr 15 15:47:10 2015
++++ third_party/webrtc/base/thread_checker_impl.cc	Wed Apr 15 15:49:20 2015
+@@ -27,10 +27,12 @@ PlatformThreadId CurrentThreadId() {
+ #elif defined(WEBRTC_POSIX)
+ #if defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
+   ret = pthread_mach_thread_np(pthread_self());
+-#elif defined(WEBRTC_LINUX)
++#elif defined(WEBRTC_LINUX) && !defined(__OpenBSD__)
+   ret =  syscall(__NR_gettid);
+ #elif defined(WEBRTC_ANDROID)
+   ret = gettid();
++#elif defined(__OpenBSD__)
++  ret = reinterpret_cast<uint64_t>(pthread_self());
+ #else
+   // Default implementation for nacl and solaris.
+   ret = reinterpret_cast<pid_t>(pthread_self());

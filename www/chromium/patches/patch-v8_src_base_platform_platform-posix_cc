@@ -1,8 +1,8 @@
-$OpenBSD: patch-v8_src_base_platform_platform-posix_cc,v 1.5 2015/04/03 10:32:04 robert Exp $
---- v8/src/base/platform/platform-posix.cc.orig.port	Fri Apr  3 08:03:05 2015
-+++ v8/src/base/platform/platform-posix.cc	Fri Apr  3 08:03:35 2015
-@@ -262,6 +262,8 @@ int OS::GetCurrentThreadId() {
-   return static_cast<int>(gettid());
+$OpenBSD: patch-v8_src_base_platform_platform-posix_cc,v 1.6 2015/04/27 16:38:25 robert Exp $
+--- v8/src/base/platform/platform-posix.cc.orig.port	Wed Apr 15 00:32:36 2015
++++ v8/src/base/platform/platform-posix.cc	Wed Apr 15 08:32:50 2015
+@@ -275,6 +275,8 @@ int OS::GetCurrentThreadId() {
+   return static_cast<int>(thread_self());
  #elif V8_OS_SOLARIS
    return static_cast<int>(pthread_self());
 +#elif V8_OS_OPENBSD

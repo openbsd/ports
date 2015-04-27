@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_app_list_app_list_constants_h,v 1.5 2015/03/18 19:26:29 robert Exp $
---- ui/app_list/app_list_constants.h.orig.port	Tue Mar 10 23:41:42 2015
-+++ ui/app_list/app_list_constants.h	Wed Mar 11 07:22:50 2015
-@@ -79,7 +79,7 @@ APP_LIST_EXPORT extern const size_t kMaxFolderNameChar
- 
- APP_LIST_EXPORT extern const ui::ResourceBundle::FontStyle kItemTextFontStyle;
+$OpenBSD: patch-ui_app_list_app_list_constants_h,v 1.6 2015/04/27 16:38:25 robert Exp $
+--- ui/app_list/app_list_constants.h.orig.port	Wed Apr 15 00:18:59 2015
++++ ui/app_list/app_list_constants.h	Wed Apr 15 08:32:50 2015
+@@ -84,7 +84,7 @@ APP_LIST_EXPORT extern const ui::ResourceBundle::FontS
+ APP_LIST_EXPORT extern const char kPageOpenedHistogram[];
+ APP_LIST_EXPORT extern const char kSearchResultOpenDisplayTypeHistogram[];
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

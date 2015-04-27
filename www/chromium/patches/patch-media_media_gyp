@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_media_gyp,v 1.34 2015/03/18 19:26:29 robert Exp $
---- media/media.gyp.orig.port	Tue Mar 10 23:41:41 2015
-+++ media/media.gyp	Wed Mar 11 07:22:50 2015
+$OpenBSD: patch-media_media_gyp,v 1.35 2015/04/27 16:38:25 robert Exp $
+--- media/media.gyp.orig.port	Wed Apr 15 00:31:22 2015
++++ media/media.gyp	Wed Apr 15 08:32:50 2015
 @@ -21,7 +21,7 @@
          'media_use_libvpx%': 1,
        }],
@@ -30,7 +30,7 @@ $OpenBSD: patch-media_media_gyp,v 1.34 2015/03/18 19:26:29 robert Exp $
          'audio/pulse/pulse_util.cc',
          'audio/pulse/pulse_util.h',
          'audio/sample_rates.cc',
-@@ -725,6 +731,24 @@
+@@ -735,6 +741,24 @@
              'filters/h264_bitstream_buffer.h',
            ],
          }],
@@ -55,7 +55,7 @@ $OpenBSD: patch-media_media_gyp,v 1.34 2015/03/18 19:26:29 robert Exp $
          ['use_alsa==1', {
            'link_settings': {
              'libraries': [
-@@ -746,7 +770,7 @@
+@@ -756,7 +780,7 @@
              'audio/openbsd/audio_manager_openbsd.h',
            ],
          }],
@@ -64,7 +64,7 @@ $OpenBSD: patch-media_media_gyp,v 1.34 2015/03/18 19:26:29 robert Exp $
            'conditions': [
              ['use_x11==1', {
                'dependencies': [
-@@ -836,7 +860,7 @@
+@@ -847,7 +871,7 @@
              'ozone/media_ozone_platform.h',
            ]
          }],
@@ -73,7 +73,7 @@ $OpenBSD: patch-media_media_gyp,v 1.34 2015/03/18 19:26:29 robert Exp $
            'sources!': [
              'audio/cras/audio_manager_cras.cc',
              'audio/cras/audio_manager_cras.h',
-@@ -1056,7 +1080,7 @@
+@@ -1067,7 +1091,7 @@
              'base/simd/convert_yuv_to_rgb_x86.cc',
            ],
          }],
@@ -82,7 +82,7 @@ $OpenBSD: patch-media_media_gyp,v 1.34 2015/03/18 19:26:29 robert Exp $
            'sources!': [
              'base/keyboard_event_counter.cc',
              'base/keyboard_event_counter.h',
-@@ -1299,7 +1323,7 @@
+@@ -1314,7 +1338,7 @@
              'USE_PULSEAUDIO',
            ],
          }],
@@ -91,7 +91,7 @@ $OpenBSD: patch-media_media_gyp,v 1.34 2015/03/18 19:26:29 robert Exp $
            'conditions': [
              ['use_allocator!="none"', {
                'dependencies': [
-@@ -1823,7 +1847,7 @@
+@@ -1841,7 +1865,7 @@
              'test/pipeline_integration_test_base.cc',
            ],
            'conditions': [

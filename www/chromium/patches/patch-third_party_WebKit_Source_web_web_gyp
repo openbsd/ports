@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_WebKit_Source_web_web_gyp,v 1.7 2014/10/13 06:49:19 robert Exp $
---- third_party/WebKit/Source/web/web.gyp.orig.port	Thu Oct  2 20:00:38 2014
-+++ third_party/WebKit/Source/web/web.gyp	Fri Oct 10 16:10:31 2014
-@@ -145,7 +145,7 @@
-                       },
-                     },
+$OpenBSD: patch-third_party_WebKit_Source_web_web_gyp,v 1.8 2015/04/27 16:38:25 robert Exp $
+--- third_party/WebKit/Source/web/web.gyp.orig.port	Wed Apr 15 00:44:38 2015
++++ third_party/WebKit/Source/web/web.gyp	Wed Apr 15 08:32:50 2015
+@@ -163,7 +163,7 @@
+                         '../core/core.gyp:webcore',
+                      ],
                  }],
 -                ['OS == "linux"', {
 +                ['OS == "linux" or os_bsd == 1', {

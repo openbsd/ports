@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ssl_ssl_blocking_page_cc,v 1.4 2015/03/18 19:26:29 robert Exp $
---- chrome/browser/ssl/ssl_blocking_page.cc.orig.port	Wed Mar 11 07:31:17 2015
-+++ chrome/browser/ssl/ssl_blocking_page.cc	Wed Mar 11 07:31:39 2015
-@@ -236,7 +236,7 @@ void LaunchDateAndTimeSettings() {
+$OpenBSD: patch-chrome_browser_ssl_ssl_blocking_page_cc,v 1.5 2015/04/27 16:38:25 robert Exp $
+--- chrome/browser/ssl/ssl_blocking_page.cc.orig.port	Wed Apr 15 00:31:21 2015
++++ chrome/browser/ssl/ssl_blocking_page.cc	Wed Apr 15 08:32:50 2015
+@@ -132,7 +132,7 @@ void LaunchDateAndTimeSettings() {
    // iOS does not have a way to launch the date and time settings.
    NOTREACHED();
  

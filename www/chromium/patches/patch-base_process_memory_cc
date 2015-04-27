@@ -1,0 +1,13 @@
+$OpenBSD: patch-base_process_memory_cc,v 1.1 2015/04/27 16:38:25 robert Exp $
+--- base/process/memory.cc.orig.port	Thu Apr 23 16:15:00 2015
++++ base/process/memory.cc	Thu Apr 23 16:15:41 2015
+@@ -27,4 +27,9 @@ bool UncheckedCalloc(size_t num_items, size_t size, vo
+ 
+ #endif
+ 
++bool UncheckedMalloc(size_t size, void** result) {
++  *result = malloc(size);
++  return *result != NULL;
++}
++
+ }

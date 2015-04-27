@@ -1,0 +1,45 @@
+$OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_h,v 1.1 2015/04/27 16:38:25 robert Exp $
+--- ui/gl/gl_bindings_autogen_glx.h.orig.port	Thu Apr 23 10:58:18 2015
++++ ui/gl/gl_bindings_autogen_glx.h	Thu Apr 23 10:58:25 2015
+@@ -102,6 +102,8 @@ typedef bool(GL_BINDING_CALL* glXGetMscRateOMLProc)(Di
+                                                     GLXDrawable drawable,
+                                                     int32* numerator,
+                                                     int32* denominator);
++typedef __GLXextFuncPtr(GL_BINDING_CALL* glXGetProcAddressARBProc)(
++    const GLubyte* procName);
+ typedef void(GL_BINDING_CALL* glXGetSelectedEventProc)(Display* dpy,
+                                                        GLXDrawable drawable,
+                                                        unsigned long* mask);
+@@ -164,6 +166,7 @@ typedef void(GL_BINDING_CALL* glXWaitXProc)(void);
+ 
+ struct ExtensionsGLX {
+   bool b_GLX_ARB_create_context;
++  bool b_GLX_ARB_get_proc_address;
+   bool b_GLX_EXT_swap_control;
+   bool b_GLX_EXT_texture_from_pixmap;
+   bool b_GLX_MESA_copy_sub_buffer;
+@@ -201,6 +204,7 @@ struct ProcsGLX {
+   glXGetFBConfigFromVisualSGIXProc glXGetFBConfigFromVisualSGIXFn;
+   glXGetFBConfigsProc glXGetFBConfigsFn;
+   glXGetMscRateOMLProc glXGetMscRateOMLFn;
++  glXGetProcAddressARBProc glXGetProcAddressARBFn;
+   glXGetSelectedEventProc glXGetSelectedEventFn;
+   glXGetSyncValuesOMLProc glXGetSyncValuesOMLFn;
+   glXGetVisualFromFBConfigProc glXGetVisualFromFBConfigFn;
+@@ -306,6 +310,7 @@ class GL_EXPORT GLXApi {
+                                   GLXDrawable drawable,
+                                   int32* numerator,
+                                   int32* denominator) = 0;
++  virtual __GLXextFuncPtr glXGetProcAddressARBFn(const GLubyte* procName) = 0;
+   virtual void glXGetSelectedEventFn(Display* dpy,
+                                      GLXDrawable drawable,
+                                      unsigned long* mask) = 0;
+@@ -394,6 +399,8 @@ class GL_EXPORT GLXApi {
+   ::gfx::g_current_glx_context->glXGetFBConfigFromVisualSGIXFn
+ #define glXGetFBConfigs ::gfx::g_current_glx_context->glXGetFBConfigsFn
+ #define glXGetMscRateOML ::gfx::g_current_glx_context->glXGetMscRateOMLFn
++#define glXGetProcAddressARB \
++  ::gfx::g_current_glx_context->glXGetProcAddressARBFn
+ #define glXGetSelectedEvent ::gfx::g_current_glx_context->glXGetSelectedEventFn
+ #define glXGetSyncValuesOML ::gfx::g_current_glx_context->glXGetSyncValuesOMLFn
+ #define glXGetVisualFromFBConfig \

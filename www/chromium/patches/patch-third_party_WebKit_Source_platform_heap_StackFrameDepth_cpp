@@ -1,0 +1,43 @@
+$OpenBSD: patch-third_party_WebKit_Source_platform_heap_StackFrameDepth_cpp,v 1.1 2015/04/27 16:38:25 robert Exp $
+--- third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp.orig.port	Wed Apr 15 09:41:19 2015
++++ third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp	Wed Apr 22 22:49:42 2015
+@@ -14,6 +14,10 @@
+ #elif defined(__GLIBC__)
+ extern "C" void* __libc_stack_end;  // NOLINT
+ #endif
++#if OS(OPENBSD)
++#include <sys/signal.h>
++#include <pthread_np.h>
++#endif
+ 
+ namespace blink {
+ 
+@@ -39,7 +43,7 @@ void StackFrameDepth::configureLimit()
+ 
+ size_t StackFrameDepth::getUnderestimatedStackSize()
+ {
+-#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD)
++#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD) || OS(OPENBSD)
+     // We cannot get the stack size in these platforms because
+     // pthread_getattr_np() can fail for the main thread.
+     // This is OK because ThreadState::current() doesn't use the stack size
+@@ -63,12 +67,18 @@ size_t StackFrameDepth::getUnderestimatedStackSize()
+ 
+ void* StackFrameDepth::getStackStart()
+ {
+-#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD)
++#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD) || OS(OPENBSD)
+     pthread_attr_t attr;
+     int error;
+ #if OS(FREEBSD)
+     pthread_attr_init(&attr);
+     error = pthread_attr_get_np(pthread_self(), &attr);
++#elif OS(OPENBSD)
++    stack_t ss;
++    void *base;
++    error = pthread_stackseg_np(pthread_self(), &ss);
++    base = (void*)((size_t) ss.ss_sp - ss.ss_size);
++    return reinterpret_cast<Address>(base) + ss.ss_size;
+ #else
+     error = pthread_getattr_np(pthread_self(), &attr);
+ #endif
