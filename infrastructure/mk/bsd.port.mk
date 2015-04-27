@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1290 2015/04/22 07:07:19 zhuk Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1291 2015/04/27 12:52:01 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -822,7 +822,7 @@ TEST_ENV += DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 XAUTHORITY ?= ${HOME}/.Xauthority
 .endif
 
-_PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
+_PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 
 .for _s in ${BUILD_PACKAGES}
 PKGNAMES += ${FULLPKGNAME${_s}}
@@ -897,12 +897,13 @@ _FULLPKGPATH = ${PKGPATH},${SUBPACKAGE}${_FLAVOR_EXT2:S/-/,/g}
 
 FAKE_AS_ROOT ?= No
 .if ${FAKE_AS_ROOT:L} == "yes"
-_FAKESUDO = ${SUDO}
+_FAKESUDO_CHECK_COOKIE = ${WRKDIR}/.test-sudo
 _BINOWNGRP = -o ${BINOWN} -g ${BINGRP}
 _SHAREOWNGRP = -o ${SHAREOWN} -g ${SHAREGRP}
 _MANOWNGRP = -o ${MANOWN} -g ${MANGRP}
 .else
 _FAKESUDO =
+_FAKESUDO_CHECK_COOKIE =
 _BINOWNGRP = 
 _SHAREOWNGRP =
 _MANOWNGRP =
@@ -2276,7 +2277,7 @@ lib-depends-check:
 	@${_cache_fragment}; cd ${.CURDIR} && ${MAKE} package; \
 	${_CHECK_LIB_DEPENDS} ${_PACKAGE_COOKIE}
 
-${WRKINST}/.saved_libs: ${_FAKE_COOKIE}
+${WRKINST}/.saved_libs: ${_FAKE_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 	@${_FAKESUDO} ${_CHECK_LIB_DEPENDS} -O $@t && ${_FAKESUDO} mv $@t $@
 
 port-lib-depends-check: ${WRKINST}/.saved_libs
@@ -2287,7 +2288,7 @@ port-lib-depends-check: ${WRKINST}/.saved_libs
 			${_CHECK_LIB_DEPENDS} -i -s ${WRKINST}/.saved_libs; \
 	done
 
-_internal-manpages-check: ${_FAKE_COOKIE}
+_internal-manpages-check: ${_FAKE_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 	@cd ${WRKINST}${TRUEPREFIX}/man && \
 		${_FAKESUDO} /usr/libexec/makewhatis -p . && \
 		cat mandoc.db
@@ -2433,7 +2434,7 @@ _extra_info += PLIST${_s}='${PLIST${_s}}'
 _extra_info += DEPPATHS${_s}="$$(${SETENV} FLAVOR=${FLAVOR:Q} SUBPACKAGE=${_s} PKGPATH=${PKGPATH} ${MAKE} show-run-depends ${_do_libs_too})"
 .  endfor
 
-_internal-plist _internal-update-plist: _internal-fake
+_internal-plist _internal-update-plist: _internal-fake ${_FAKESUDO_CHECK_COOKIE}
 	@${ECHO_MSG} "===>  Updating plist for ${FULLPKGNAME}${_MASTER}"
 	@mkdir -p ${PKGDIR}
 	@DESTDIR=${WRKINST} \
@@ -2524,6 +2525,14 @@ ${_BULK_COOKIE}:
 # The real targets. Note that some parts always get run, some parts can be
 # disabled, and there are hooks to override behavior.
 
+${WRKDIR}/.test-sudo:
+	@if [ x`SUDO_PORT_V1=ah ${SUDO} /bin/sh -c 'eval echo $${SUDO_PORT_V1}'` \
+		!= xah ]; then \
+			echo >&2 "Error: sudo does not let env variables through"; \
+			exit 1; \
+	fi
+	@${_MAKE_COOKIE} $@
+
 ${_WRKDIR_COOKIE}:
 	@rm -rf ${WRKDIR}
 .if ${PORTS_BUILD_XENOCARA_TOO:L} != "yes"
@@ -2533,11 +2542,6 @@ ${_WRKDIR_COOKIE}:
 		exit 1; \
 	fi
 .endif
-	@if [ x`SUDO_PORT_V1=ah ${SUDO} /bin/sh -c 'eval echo $${SUDO_PORT_V1}'` \
-		!= xah ]; then \
-			echo >&2 "Error: sudo does not let env variables through"; \
-			exit 1; \
-	fi
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin ${DEPDIR}
 #	@ln -s ${LOCALBASE}/bin/pkg-config ${WRKDIR}/bin
 .if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
@@ -2801,7 +2805,7 @@ _hook-post-install::
 .  endif
 .endfor
 
-${_FAKE_COOKIE}: ${_BUILD_COOKIE}
+${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 	@${ECHO_MSG} "===>  Faking installation for ${FULLPKGNAME}${_MASTER}"
 	@if [ x`umask 022;${_FAKESUDO} /bin/sh -c umask` != x022 ]; then \
 		echo >&2 "Error: your umask is \"`${_FAKESUDO} /bin/sh -c umask`"\".; \
