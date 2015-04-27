@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/05/15 22:30:08 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/04/27 19:27:47 afresh1 Exp $
 @conflict p5-Mojo-*
 bin/hypnotoad
 bin/mojo
@@ -37,8 +37,6 @@ ${P5SITE}/Mojo/IOLoop/Client.pm
 ${P5SITE}/Mojo/IOLoop/Delay.pm
 ${P5SITE}/Mojo/IOLoop/Server.pm
 ${P5SITE}/Mojo/IOLoop/Stream.pm
-${P5SITE}/Mojo/IOLoop/server.crt
-${P5SITE}/Mojo/IOLoop/server.key
 ${P5SITE}/Mojo/JSON/
 ${P5SITE}/Mojo/JSON.pm
 ${P5SITE}/Mojo/JSON/Pointer.pm
@@ -76,7 +74,6 @@ ${P5SITE}/Mojo/UserAgent/Proxy.pm
 ${P5SITE}/Mojo/UserAgent/Server.pm
 ${P5SITE}/Mojo/UserAgent/Transactor.pm
 ${P5SITE}/Mojo/Util.pm
-${P5SITE}/Mojo/entities.txt
 ${P5SITE}/Mojolicious/
 ${P5SITE}/Mojolicious.pm
 ${P5SITE}/Mojolicious/Command/
@@ -108,6 +105,7 @@ ${P5SITE}/Mojolicious/Guides/FAQ.pod
 ${P5SITE}/Mojolicious/Guides/Growing.pod
 ${P5SITE}/Mojolicious/Guides/Rendering.pod
 ${P5SITE}/Mojolicious/Guides/Routing.pod
+${P5SITE}/Mojolicious/Guides/Tutorial.pod
 ${P5SITE}/Mojolicious/Lite.pm
 ${P5SITE}/Mojolicious/Plugin/
 ${P5SITE}/Mojolicious/Plugin.pm
@@ -147,38 +145,8 @@ ${P5SITE}/Mojolicious/public/mojo/notfound.png
 ${P5SITE}/Mojolicious/public/mojo/pinstripe-dark.png
 ${P5SITE}/Mojolicious/public/mojo/pinstripe-light.png
 ${P5SITE}/Mojolicious/public/mojo/prettify/
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-apollo.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-basic.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-clj.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-css.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-dart.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-erlang.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-go.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-hs.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-lisp.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-llvm.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-lua.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-matlab.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-ml.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-mumps.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-n.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-pascal.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-proto.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-r.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-rd.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-scala.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-sql.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-tcl.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-tex.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-vb.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-vhdl.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-wiki.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-xq.js
-${P5SITE}/Mojolicious/public/mojo/prettify/lang-yaml.js
 ${P5SITE}/Mojolicious/public/mojo/prettify/prettify-mojo-dark.css
 ${P5SITE}/Mojolicious/public/mojo/prettify/prettify-mojo-light.css
-${P5SITE}/Mojolicious/public/mojo/prettify/prettify.css
-${P5SITE}/Mojolicious/public/mojo/prettify/prettify.js
 ${P5SITE}/Mojolicious/public/mojo/prettify/run_prettify.js
 ${P5SITE}/Mojolicious/public/mojo/stripes.png
 ${P5SITE}/Mojolicious/templates/
@@ -279,6 +247,7 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojolicious::Guides::Growing.3p
 @man man/man3p/Mojolicious::Guides::Rendering.3p
 @man man/man3p/Mojolicious::Guides::Routing.3p
+@man man/man3p/Mojolicious::Guides::Tutorial.3p
 @man man/man3p/Mojolicious::Lite.3p
 @man man/man3p/Mojolicious::Plugin.3p
 @man man/man3p/Mojolicious::Plugin::Charset.3p
@@ -304,3 +273,4 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojolicious::Validator::Validation.3p
 @man man/man3p/Test::Mojo.3p
 @man man/man3p/ojo.3p
+share/doc/pkg-readmes/${FULLPKGNAME}

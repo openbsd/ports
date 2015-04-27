@@ -1,0 +1,14 @@
+$OpenBSD: README,v 1.1 2015/04/27 19:27:47 afresh1 Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+* SSL
+For having Mojolicious listen on SSL, you should create your own
+certificate first. See ssl(8) for details.
+
+For a quick test, you can point 'morbo' to your certificate and key.
+
+# morbo -l "https://*:443?cert=/etc/ssl/www.example.com.crt&amp;key= \
+ /etc/ssl/private/www.example.com.key" ./myapp.pl
