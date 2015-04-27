@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2014/12/30 15:02:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/04/27 18:20:47 rpe Exp $
 
 COMMENT=	RTF document converter
 
-DISTNAME=	unrtf-0.21.8
+DISTNAME=	unrtf-0.21.9
 CATEGORIES=	textproc
 
 HOMEPAGE=	https://www.gnu.org/software/unrtf/unrtf.html
@@ -27,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 AUTOCONF_VERSION= 2.69
-AUTOMAKE_VERSION= 1.11
+AUTOMAKE_VERSION= 1.13
 
 post-patch:
 	rm ${WRKSRC}/config/*
