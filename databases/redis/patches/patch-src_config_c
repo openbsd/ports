@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_config_c,v 1.4 2014/11/06 09:21:28 dcoppa Exp $
+$OpenBSD: patch-src_config_c,v 1.5 2015/04/27 08:53:17 dcoppa Exp $
 
 Recognize LOG_DAEMON as a valid facility
 
---- src/config.c.orig	Fri Sep 19 17:49:16 2014
-+++ src/config.c	Thu Nov  6 09:33:51 2014
-@@ -37,6 +37,7 @@ static struct {
+--- src/config.c.orig	Wed Apr  1 16:01:44 2015
++++ src/config.c	Mon Apr 27 10:37:39 2015
+@@ -38,6 +38,7 @@ static struct {
      const char     *name;
      const int       value;
  } validSyslogFacilities[] = {
@@ -12,7 +12,7 @@ Recognize LOG_DAEMON as a valid facility
      {"user",    LOG_USER},
      {"local0",  LOG_LOCAL0},
      {"local1",  LOG_LOCAL1},
-@@ -207,7 +208,7 @@ void loadServerConfigFromString(char *config) {
+@@ -209,7 +210,7 @@ void loadServerConfigFromString(char *config) {
              }
  
              if (!validSyslogFacilities[i].name) {
