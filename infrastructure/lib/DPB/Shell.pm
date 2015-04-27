@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.4 2015/04/26 17:36:20 espie Exp $
+# $OpenBSD: Shell.pm,v 1.5 2015/04/27 17:01:37 espie Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -219,7 +219,7 @@ sub exec
 	}
 
 	if (defined $self->prop->{umask}) {
-		umask($self->prop->{umask});
+		umask(oct($self->prop->{umask}));
 	}
 	if (-t STDIN) {
 		close(STDIN);
