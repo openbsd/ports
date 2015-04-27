@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.37 2015/04/26 17:36:20 espie Exp $
+# $OpenBSD: Config.pm,v 1.38 2015/04/27 08:14:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -124,6 +124,7 @@ sub parse_command_line
 	while (my ($k, $v) = each %cmdline) {
 		$state->{subst}->{$k} = $v;
 	}
+	$state->{chroot} = $state->{default_prop}{chroot};
 	# reparse things properly now that we can chroot
 	my $p;
 	($state->{ports}, $state->{portspath}, $state->{repo}, $state->{localarch},
