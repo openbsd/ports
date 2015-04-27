@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2014/08/10 09:58:06 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/04/27 18:30:46 rpe Exp $
 
 COMMENT=	mail anomalies in the system logfiles to the administrator
 
-V=		1.3.14
+V=		1.3.17
 DISTNAME=	logcheck_${V}
-REVISION=	1
 PKGNAME=	logtail-${V}
+EXTRACT_SUFX=	.tar.xz
+
 CATEGORIES=	sysutils
 
 MAINTAINER=	William Yodlowsky <william@openbsd.org>
