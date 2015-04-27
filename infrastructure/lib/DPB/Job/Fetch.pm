@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.3 2015/04/25 11:24:24 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.4 2015/04/27 13:32:57 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -30,7 +30,10 @@ sub run
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
-	$self->redirect_fh($job->{logfh}, $job->{log});
+	$job->{logger}->run_as(
+	    sub {
+		$self->redirect_fh($job->{logfh}, $job->{log});
+	    });
 	exit(!$job->{file}->checksum($job->{file}->tempfilename));
 }
 
@@ -44,13 +47,19 @@ sub finalize
 		# got a stupid error message instead, so retry for
 		# full size.
 		if (defined $self->{fetcher}->{initial_sz}) {
-			unlink($job->{file}->tempfilename);
+			$job->{fetcher}->run_as(
+			    sub {
+				unlink($job->{file}->tempfilename);
+			    });
 		} else {
 			shift @{$job->{sites}};
 		}
 		return $job->bad_file($self->{fetcher}, $core);
 	}
-	rename($job->{file}->tempfilename, $job->{file}->filename);
+	$job->{fetcher}->run_as(
+	    sub {
+		rename($job->{file}->tempfilename, $job->{file}->filename);
+	    });
 	print {$job->{logfh}} "Renamed to ", $job->{file}->filename, "\n";
 	$job->{file}->cache;
 	my $sz = $job->{file}->{sz};
@@ -103,7 +112,10 @@ sub run
 	my $shell = $core->shell;
 	my $site = $self->{site};
 	$site =~ s/^\"(.*)\"$/$1/;
-	$self->redirect($job->{log});
+	$job->{logger}->run_as(
+	    sub {
+		$self->redirect($job->{log});
+	    });
 	if ($job->{file}{sz} == 0) {
 		print STDERR "No size in distinfo\n";
 		exit(1);
@@ -119,7 +131,7 @@ sub run
 	print STDERR "===> Trying $site\n";
 	print STDERR join(' ', @cmd), "\n";
 	# run ftp;
-	$core->shell->nochroot->exec(@cmd);
+	$core->shell->nochroot->run_as($job->{fetcher}{user})->exec(@cmd);
 }
 
 sub finalize
@@ -139,7 +151,10 @@ sub finalize
 		# definite error also if file is too large
 		    stat($job->{file}->tempfilename) &&
 		    (stat _)[7] > $job->{file}->{sz}) {
-			unlink($job->{file}->tempfilename);
+		    	$job->{fetcher}->run_as(
+			    sub {
+				unlink($job->{file}->tempfilename);
+			    });
 		}
 		# if we got suspended, well, might have to retry same site
 		if (!$self->{got_suspended}) {
@@ -190,17 +205,22 @@ sub new_checksum_task
 
 sub new
 {
-	my ($class, $file, $e) = @_;
+	my ($class, $file, $e, $fetcher, $logger) = @_;
 	my $job = bless {
 		sites => [@{$file->{site}}],
 		file => $file,
 		tasks => [],
 		endcode => $e,
+		fetcher => $fetcher,
+		logger => $logger,
 		log => $file->logger->make_distlogs($file),
 	}, $class;
-	open $job->{logfh}, '>>', $job->{log};
+	$job->{logger}->run_as(
+	    sub {
+		open $job->{logfh}, '>>', $job->{log};
+	    });
 	print {$job->{logfh}} ">>> From ", $file->fullpkgpath, "\n";
-	File::Path::mkpath(File::Basename::dirname($file->filename));
+	$job->{fetcher}->make_path(File::Basename::dirname($file->filename));
 	$job->{watched} = DPB::Watch->new($file->tempfilename,
 		$file->{sz}, undef, $job->{started});
 	$job->new_fetch_task;

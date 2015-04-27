@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.11 2015/04/26 18:00:19 espie Exp $
+# $OpenBSD: State.pm,v 1.12 2015/04/27 13:32:57 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -193,6 +193,11 @@ sub engine
 sub grabber
 {
 	return shift->{grabber};
+}
+
+sub fetch
+{
+	return shift->{grabber}{fetch};
 }
 
 sub make

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.63 2014/03/17 10:48:40 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.64 2015/04/27 13:32:57 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -22,6 +22,7 @@ use OpenBSD::md5;
 
 # handles fetch information, if required
 package DPB::Fetch;
+our @ISA = (qw(DPB::UserProxy));
 
 sub new
 {
@@ -30,6 +31,7 @@ sub new
 	    logger => $logger,
 	    known_sha => {}, known_files => {},
 	    known_short => {},
+	    user => $state->{fetch_user},
 	    fetch_only => $state->{fetch_only}}, $class;
 	if (defined $state->{subst}->value('FTP_ONLY')) {
 		$o->{ftp_only} = 1;
@@ -105,7 +107,7 @@ sub run_expire_old
 	$core->unsquiggle;
 	$core->start_job(DPB::Job::Normal->new(
 	    sub {
-		$self->expire_old;
+	    	$self->run_as(sub { $self->expire_old; });
 	    },
 	    sub {
 		# and we will never need this again
@@ -292,7 +294,8 @@ sub fetch
 {
 	my ($self, $file, $core, $endcode) = @_;
 	require DPB::Job::Fetch;
-	my $job = DPB::Job::Fetch->new($file, $endcode);
+	my $job = DPB::Job::Fetch->new($file, $endcode, $self, 
+	    $self->{logger});
 	$core->start_job($job, $file);
 }
 
