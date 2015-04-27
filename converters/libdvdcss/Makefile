@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2014/11/29 07:38:18 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2015/04/27 12:16:01 ajacoutot Exp $
 
 COMMENT=	descramble scrambled DVDs
 
-VER=		1.3.0
+VER=		1.3.99
 DISTNAME=	libdvdcss-${VER}
 CATEGORIES=	converters
 MASTER_SITES=	http://download.videolan.org/pub/videolan/libdvdcss/${VER}/
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	dvdcss	4.0
+SHARED_LIBS=	dvdcss	4.1
 
 HOMEPAGE=	http://www.videolan.org/developers/libdvdcss.html
 

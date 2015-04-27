@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_css_c,v 1.4 2014/11/29 07:38:18 brad Exp $
---- src/css.c.orig	Sun Mar 17 10:45:09 2013
-+++ src/css.c	Wed Oct 22 20:09:31 2014
-@@ -221,10 +221,13 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
+$OpenBSD: patch-src_css_c,v 1.5 2015/04/27 12:16:02 ajacoutot Exp $
+--- src/css.c.orig	Tue Jan 27 08:56:05 2015
++++ src/css.c	Tue Feb 10 14:33:01 2015
+@@ -230,10 +230,13 @@ int dvdcss_title ( dvdcss_t dvdcss, int i_block )
          {
              char psz_key[PSZ_KEY_SIZE];
              unsigned int k0, k1, k2, k3, k4;
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_css_c,v 1.4 2014/11/29 07:38:18 brad Exp $
                   && sscanf( psz_key, "%x:%x:%x:%x:%x",
                              &k0, &k1, &k2, &k3, &k4 ) == 5 )
              {
-@@ -238,9 +241,12 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
+@@ -247,9 +250,12 @@ int dvdcss_title ( dvdcss_t dvdcss, int i_block )
                  /* Don't try to save it again */
                  b_cache = 0;
                  i_ret = 1;
@@ -32,10 +32,10 @@ $OpenBSD: patch-src_css_c,v 1.4 2014/11/29 07:38:18 brad Exp $
          }
      }
  
-@@ -252,6 +258,15 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
-         if( i_ret < 0 )
+@@ -263,6 +269,15 @@ int dvdcss_title ( dvdcss_t dvdcss, int i_block )
          {
-             print_error( dvdcss, "fatal error in VTS CSS key" );
+             print_error( dvdcss, "fatal error in Video Title Set (VTS) "
+                                  "Content Scrambling System (CSS) key" );
 +            i_fd = open( dvdcss->psz_cachefile, O_RDWR|O_CREAT, 0644 );
 +            if( i_fd >= 0 )
 +            {
