@@ -4,6 +4,11 @@ package Util;
 use strict;
 use warnings;
 
+sub plibs {
+	my $prefix = shift;
+	print STDERR "$prefix: ".join(", ", @_)."\n";
+}
+
 # prints hash in compact form, for debugging purposes
 sub phash {
 	my $h = shift;
