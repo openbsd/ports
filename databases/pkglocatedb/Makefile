@@ -1,16 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/08/10 09:58:04 espie Exp $
-
-# NOTE for FLAVOR=src
-# - you can have up-to-date ${BSDSRCDIR}/distrib/sets/lists 
-# and ${XSRCDIR}/distrrib/sets/lists prior to building
-# - or you can fetch them on the fly through anoncvs
-# you need to set PKGLOCATEDB_WANTANONCVS=Yes in /etc/mk.conf
-# and you may possibly want to set PKG_LOCATEDB_CVSROOT
-# The port *will go interactive* the first time around, until you
-# have the correct key in your ssh config !
-#
-# The port *will fail if the installation is not more or less uptodate wrt to
-# the set lists...
+# $OpenBSD: Makefile,v 1.29 2015/04/28 17:03:00 espie Exp $
 
 COMMENT =		database of packages for use with locate(1)
 
@@ -48,4 +36,4 @@ do-build: ${WRKBUILD}/pkglocatedb
 
 ${WRKBUILD}/pkglocatedb:
 	unset REPORT_PROBLEM; \
-	SUBDIRLIST=${LOCALBASE}/share/sqlports.list REPORT_PROBLEM_LOGFILE=${WRKBUILD}/ouch ${SUDO} pkg_mklocatedb ${ARGS} > $@.tmp && mv $@.tmp $@
+	SUBDIRLIST=${LOCALBASE}/share/sqlports.list REPORT_PROBLEM_LOGFILE=${WRKBUILD}/ouch pkg_mklocatedb ${ARGS} > $@.tmp && mv $@.tmp $@
