@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.95 2014/08/27 06:58:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2015/04/28 07:20:02 giovanni Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
-V=			4.15
+V=			4.16.0
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
-REVISION-main=		0
 
 CATEGORIES=		mail
 
@@ -89,12 +88,12 @@ CONFIGURE_ARGS+=	--disable-workarounds-for-imap-client-bugs
 
 MULTI_PACKAGES=		-main -pop3
 
-BUILD_DEPENDS=		devel/pcre
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			mail/courier-unicode \
 			databases/gdbm
 RUN_DEPENDS-pop3=	mail/courier-imap,-main
 
-WANTLIB-main=		${WANTLIB} ssl crypto
+WANTLIB-main=		${WANTLIB} ssl crypto unicode
 
 MODULES=		devel/gettext
 
@@ -118,8 +117,6 @@ post-extract:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/courier
-	${INSTALL_DATA} ${WRKSRC}/libs/unicode/README \
-	    ${PREFIX}/share/doc/courier/README.unicode.txt
 	${INSTALL_DATA} ${WRKSRC}/libs/imap/README \
 	    ${PREFIX}/share/doc/courier/README.imap.txt
 .	for i in ${DOCS}

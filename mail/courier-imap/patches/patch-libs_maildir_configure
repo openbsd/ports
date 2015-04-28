@@ -1,7 +1,7 @@
-$OpenBSD: patch-libs_maildir_configure,v 1.1 2014/06/05 20:45:35 giovanni Exp $
---- libs/maildir/configure.orig	Sun Aug 25 20:53:34 2013
-+++ libs/maildir/configure	Sun Jun  1 18:11:15 2014
-@@ -16396,7 +16396,7 @@ $as_echo "#define TIME_WITH_SYS_TIME 1" >>confdefs.h
+$OpenBSD: patch-libs_maildir_configure,v 1.2 2015/04/28 07:20:02 giovanni Exp $
+--- libs/maildir/configure.orig	Sat Dec 13 15:21:34 2014
++++ libs/maildir/configure	Sat Apr  4 23:23:26 2015
+@@ -16561,7 +16561,7 @@ $as_echo "#define TIME_WITH_SYS_TIME 1" >>confdefs.h
  
  fi
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-libs_maildir_configure,v 1.1 2014/06/05 20:45:35 giovanni Exp $
  do :
    as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
  ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
-@@ -16416,16 +16416,6 @@ if test "x$ac_cv_header_pcre_h" = xyes; then :
+@@ -16581,16 +16581,6 @@ if test "x$ac_cv_header_pcre_h" = xyes; then :
  fi
  
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-libs_maildir_configure,v 1.1 2014/06/05 20:45:35 giovanni Exp $
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for sys/wait.h that is POSIX.1 compatible" >&5
  $as_echo_n "checking for sys/wait.h that is POSIX.1 compatible... " >&6; }
  if ${ac_cv_header_sys_wait_h+:} false; then :
-@@ -16890,7 +16880,7 @@ if ${ac_cv_lib_fam_FAMOpen+:} false; then :
+@@ -17055,7 +17045,7 @@ if ${ac_cv_lib_fam_FAMOpen+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -36,7 +36,7 @@ $OpenBSD: patch-libs_maildir_configure,v 1.1 2014/06/05 20:45:35 giovanni Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -16925,7 +16915,7 @@ if test "x$ac_cv_lib_fam_FAMOpen" = xyes; then :
+@@ -17090,7 +17080,7 @@ if test "x$ac_cv_lib_fam_FAMOpen" = xyes; then :
  			LIBFAM=-lfam
  
  cat >>confdefs.h <<_ACEOF
@@ -45,7 +45,7 @@ $OpenBSD: patch-libs_maildir_configure,v 1.1 2014/06/05 20:45:35 giovanni Exp $
  _ACEOF
  
  
-@@ -16955,7 +16945,6 @@ fi
+@@ -17120,7 +17110,6 @@ fi
  
  
  
