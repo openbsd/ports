@@ -1,0 +1,19 @@
+$OpenBSD: patch-Completion_Base_Utility__call_program,v 1.1 2015/04/28 06:30:13 jasper Exp $
+
+be conservative about redirecting _call_program stderr, the caller may have
+already done so
+http://sourceforge.net/p/zsh/code/ci/22c4ea424ce2e8febce04d324c5ec9898f5d534b/
+
+--- Completion/Base/Utility/_call_program.orig	Sat Apr 25 20:20:25 2015
++++ Completion/Base/Utility/_call_program	Sat Apr 25 20:20:38 2015
+@@ -2,8 +2,8 @@
+ 
+ local tmp err_fd=-1
+ 
+-if (( ${debug_fd:--1} > 2 ))
+-then exec {err_fd}>&2	# debug_fd is saved stderr, 2 is log file
++if (( ${debug_fd:--1} > 2 )) || [[ ! -t 2 ]]
++then exec {err_fd}>&2	# debug_fd is saved stderr, 2 is trace or redirect
+ else exec {err_fd}>/dev/null
+ fi
+ 
