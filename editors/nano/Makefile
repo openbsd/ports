@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.73 2015/03/25 20:27:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.74 2015/04/28 21:05:30 naddy Exp $
 
 COMMENT=	Pico editor clone with enhancements
 
-DISTNAME=	nano-2.4.0
+DISTNAME=	nano-2.4.1
 CATEGORIES=	editors
 HOMEPAGE=	http://www.nano-editor.org/
 
@@ -17,14 +17,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	devel/gettext
 WANTLIB=	c ncursesw
 
-# required to build HTML version of man pages
-BUILD_DEPENDS=	textproc/groff>=1.21
-
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-libmagic
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# configure tests for groff -Thtml, but assumes the existence of groff
+pre-configure:
+	@ln -s /usr/bin/false ${WRKDIR}/bin/groff
 
 post-install:
 	perl -i -pe 's:/etc:${SYSCONFDIR}:g; s:PREFIX:${TRUEPREFIX}:g;' \
