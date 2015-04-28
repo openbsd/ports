@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2015/04/06 16:03:00 schwarze Exp $
+# $OpenBSD: Makefile,v 1.60 2015/04/28 06:35:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.7
-REVISION=	5
+REVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 EXTRACT_SUFX=	.tar.bz2
@@ -17,10 +17,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SDL SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt Xv a52 avcodec
 WANTLIB += avformat avutil bz2 c crypto dv dvdcss dvdread freetype gsm jpeg
-WANTLIB += m mp3lame mpeg2 mpeg2convert ogg opus orc-0.4 postproc pthread
-WANTLIB += pthread-stubs quicktime schroedinger-1.0 sndio speex ssl theora
-WANTLIB += theoradec theoraenc usbhid vorbis vorbisenc vorbisfile vpx x264
-WANTLIB += xcb xml2 z
+WANTLIB += m mp3lame mpeg2 mpeg2convert ogg opus postproc pthread
+WANTLIB += pthread-stubs quicktime sndio speex ssl theora
+WANTLIB += usbhid vorbis vorbisenc vorbisfile vpx x264 xcb xml2 z
 
 # xvidcore is dlopen()d so check-lib-depends shows it as Extra, however we
 # want to track changes to the ABI to ensure transcode is updated if needed.

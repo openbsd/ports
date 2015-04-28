@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2015/04/26 08:30:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2015/04/28 06:35:06 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -18,7 +18,7 @@ PKGNAME-main=		gegl-${V}
 PKGNAME-plugins=	gegl-plugins-${V}
 
 REVISION-main=		3
-REVISION-plugins=	3
+REVISION-plugins=	4
 
 SHARED_LIBS +=  gegl-${API_VERSION}		0.0 # 199.1
 
@@ -54,8 +54,7 @@ LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 			graphics/babl>=0.1.10
 
 WANTLIB-plugins += ${WANTLIB}
-WANTLIB-plugins += gsm mp3lame ogg orc-0.4 IlmImf avutil bz2
-WANTLIB-plugins += schroedinger-1.0 speex theoradec theoraenc
+WANTLIB-plugins += gsm mp3lame ogg IlmImf avutil bz2 speex
 WANTLIB-plugins += vorbis vorbisenc x264 avcodec avformat vpx
 WANTLIB-plugins += Half Iex IlmThread Imath xvidcore
 WANTLIB-plugins += crypto opus pthread stdc++ ssl swresample x265

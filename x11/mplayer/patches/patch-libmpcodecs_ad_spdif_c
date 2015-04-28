@@ -1,0 +1,24 @@
+$OpenBSD: patch-libmpcodecs_ad_spdif_c,v 1.1 2015/04/28 06:35:06 ajacoutot Exp $
+
+Adapt for FFmpeg change. Internal API was moved but MPlayer
+touches FFmpeg internals.
+
+--- libmpcodecs/ad_spdif.c.orig	Thu Mar 26 20:08:16 2015
++++ libmpcodecs/ad_spdif.c	Thu Mar 26 20:08:28 2015
+@@ -23,6 +23,7 @@
+ #include "ad_internal.h"
+ #include "av_helpers.h"
+ #include "libavformat/avformat.h"
++#include "libavformat/internal.h"
+ #include "libavcodec/avcodec.h"
+ #include "libavutil/opt.h"
+ 
+@@ -129,7 +130,7 @@ static int init(sh_audio_t *sh)
+             break;
+         }
+     }
+-    lavf_ctx->raw_packet_buffer_remaining_size = RAW_PACKET_BUFFER_SIZE;
++    lavf_ctx->internal->raw_packet_buffer_remaining_size = RAW_PACKET_BUFFER_SIZE;
+     if (AVERROR_PATCHWELCOME == lavf_ctx->oformat->write_header(lavf_ctx)) {
+         mp_msg(MSGT_DECAUDIO,MSGL_INFO,
+                "This codec is not supported by spdifenc.\n");

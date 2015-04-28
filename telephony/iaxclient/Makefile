@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/03/19 20:25:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2015/04/28 06:35:06 ajacoutot Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -6,11 +6,11 @@ COMMENT-iaxcomm=IAX softphone
 
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	13
+REVISION-main=	14
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION-tcl=	14
+REVISION-tcl=	15
 PKGNAME-iaxcomm= iaxcomm-1.1.0
-REVISION-iaxcomm= 16
+REVISION-iaxcomm= 17
 
 CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \
@@ -26,29 +26,31 @@ PERMIT_PACKAGE_CDROM=	Yes
 MULTI_PACKAGES=	-main -tcl -iaxcomm
 MODULES=	devel/gettext x11/tk
 
-cWANTLIB	+= avcodec gsm m ogg orc-0.4 ossaudio portaudio pthread speex
-cWANTLIB	+= speexdsp sndio theora vidcap z
+cWANTLIB	+= avcodec gsm m ogg ossaudio portaudio pthread speex
+cWANTLIB	+= speexdsp sndio vidcap z
 
-WANTLIB-main 	+= avutil c mp3lame schroedinger-1.0 theoradec theoraenc vorbis
-WANTLIB-main	+= vorbisenc vpx x264 ${cWANTLIB}
+WANTLIB-main 	+= avutil c mp3lame vorbis vorbisenc vpx x264 ${cWANTLIB}
+WANTLIB-main 	+= opus stdc++ swresample x265 xvidcore
 
-WANTLIB-tcl	+= GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB-tcl	+= Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB-tcl	+= drm expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB-tcl	+= X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB-tcl	+= Xi Xinerama Xrandr Xrender atk-1.0 c cairo
+WANTLIB-tcl	+= expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-tcl	+= gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-tcl	+= gtk-x11-2.0 iaxclient pango-1.0 pangocairo-1.0
 WANTLIB-tcl	+= pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xcb-render
-WANTLIB-tcl	+= xcb-shm ffi stdc++ ${cWANTLIB} ${MODGETTEXT_WANTLIB}
+WANTLIB-tcl	+= graphite2 harfbuzz vorbis
+WANTLIB-tcl	+= xcb-shm ffi ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 
-WANTLIB-iaxcomm	+= GL ICE SDL SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB-iaxcomm	+= ICE SDL SM X11 Xcomposite Xcursor Xdamage
 WANTLIB-iaxcomm	+= Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB-iaxcomm	+= c cairo drm expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB-iaxcomm	+= c cairo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-iaxcomm	+= gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-iaxcomm	+= gtk-x11-2.0 iaxclient iodbc jpeg mspack ${MODGETTEXT_WANTLIB}
 WANTLIB-iaxcomm	+= pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB-iaxcomm	+= png pthread-stubs stdc++ tiff usbhid wx_base wx_base_net
 WANTLIB-iaxcomm	+= wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core
 WANTLIB-iaxcomm	+= wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext
+WANTLIB-iaxcomm	+= graphite2 harfbuzz vorbis
 WANTLIB-iaxcomm	+= wx_gtk2_xrc xcb xcb-render xcb-shm ffi ${cWANTLIB}
 
 BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS}

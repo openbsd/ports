@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2015/02/16 22:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2015/04/28 06:35:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,7 @@ REVISION-main =		4
 REVISION-geoip =	2
 REVISION-ldap =		6
 REVISION-mysql =	5
-REVISION-streaming =	3
+REVISION-streaming =	4
 
 SHARED_LIBS =	cherokee-base		0.0 \
 		cherokee-client		0.0 \
@@ -71,9 +71,8 @@ RUN_DEPENDS-mysql =	${BASE_PKGPATH}
 LIB_DEPENDS-streaming =	graphics/ffmpeg>=20121026 \
 			archivers/bzip2
 WANTLIB-streaming += avcodec avformat avutil bz2 crypto m gsm
-WANTLIB-streaming += mp3lame ogg orc-0.4 pthread schroedinger-1.0
-WANTLIB-streaming += speex theoradec theoraenc vorbis vorbisenc vpx
-WANTLIB-streaming += x264 xvidcore z opus ssl
+WANTLIB-streaming += mp3lame ogg pthread speex vorbis vorbisenc
+WANTLIB-streaming += vpx x264 xvidcore z opus ssl
 RUN_DEPENDS-streaming = ${BASE_PKGPATH}
 
 USE_GMAKE =	Yes

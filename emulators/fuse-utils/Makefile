@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2014/06/09 08:55:16 bentley Exp $
+# $OpenBSD: Makefile,v 1.20 2015/04/28 06:35:06 ajacoutot Exp $
 
 COMMENT=		Free Unix Spectrum Emulator utilities
 
 DISTNAME =		fuse-utils-1.1.1
+REVISION=		0
 CATEGORIES=		emulators
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/
 
@@ -12,9 +13,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=		devel/gettext
 
 WANTLIB += FLAC audiofile avcodec avformat avutil bz2 c crypto
-WANTLIB += gcrypt glib-2.0 gpg-error gsm m mp3lame ogg opus orc-0.4
-WANTLIB += pcre pthread schroedinger-1.0 speex ssl stdc++ swscale
-WANTLIB += theoradec theoraenc vorbis vorbisenc vpx x264 xvidcore z
+WANTLIB += gcrypt glib-2.0 gpg-error gsm m mp3lame ogg opus
+WANTLIB += pcre pthread speex ssl stdc++ swscale vorbis vorbisenc
+WANTLIB += vpx x264 xvidcore z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
