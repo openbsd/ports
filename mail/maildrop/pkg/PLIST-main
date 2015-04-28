@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2014/06/05 21:04:51 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2015/04/28 07:24:43 giovanni Exp $
 @pkgpath mail/maildrop
 @newgroup _courier:571
 @newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
@@ -22,6 +22,7 @@ bin/makedat
 @man man/man1/lockmail.1
 @man man/man1/mailbot.1
 @man man/man1/maildrop.1
+@man man/man1/makedat.1
 @man man/man1/makemime.1
 @man man/man1/reformail.1
 @man man/man1/reformime.1
@@ -36,7 +37,6 @@ share/doc/maildrop/README
 share/doc/maildrop/README.maildirquota.txt
 share/doc/maildrop/README.postfix
 share/doc/maildrop/README.sharedfolders.txt
-share/doc/maildrop/README.unicode.txt
 share/doc/maildrop/UPGRADE
 share/doc/maildrop/html/
 share/doc/maildrop/html/deliverquota.html
@@ -65,4 +65,7 @@ share/doc/maildrop/quotawarnmsg
 @owner _courier
 @group _courier
 @sample ${SYSCONFDIR}/maildrop/quotawarnmsg
+@mode
+@owner
+@group
 share/doc/pkg-readmes/${FULLPKGNAME}

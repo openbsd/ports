@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2014/11/22 22:20:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2015/04/28 07:24:43 giovanni Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
 
-V=			2.7.1
-REVISION=		0
+V=			2.8.1
 DISTNAME=		maildrop-$V
 PKGNAME-main=		maildrop-$V
 FULLPKGNAME-utils=	courier-utils-$V
@@ -91,9 +90,10 @@ CONFIGURE_ARGS+=	--with-trashquota
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		devel/libidn
+LIB_DEPENDS=		devel/libidn \
+			mail/courier-unicode
 
-WANTLIB =		c idn
+WANTLIB =		c idn unicode
 
 WANTLIB-main=		${WANTLIB} gdbm m stdc++ gdbm>=3 pcre>=1 courierauth
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
@@ -110,7 +110,5 @@ post-install:
 		${INSTALL_DATA} $$i ${PREFIX}/share/doc/maildrop ;\
 	    fi \
 	done
-	${INSTALL_DATA} ${WRKSRC}/libs/unicode/README \
-	    ${PREFIX}/share/doc/maildrop/README.unicode.txt
 
 .include <bsd.port.mk>
