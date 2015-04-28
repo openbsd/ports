@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2015/04/06 15:43:05 landry Exp $
+# $OpenBSD: Makefile,v 1.88 2015/04/28 07:31:17 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -64,7 +64,6 @@
      SUBDIR += py-pafy
      SUBDIR += qt-gstreamer
      SUBDIR += regionset
-     SUBDIR += schroedinger
      SUBDIR += sfml
      SUBDIR += shrip
      SUBDIR += streamdvd
