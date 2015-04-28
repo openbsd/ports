@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.324 2015/03/15 11:40:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.325 2015/04/28 07:09:14 giovanni Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -26,6 +26,7 @@
      SUBDIR += cmail
      SUBDIR += courier-authlib
      SUBDIR += courier-imap
+     SUBDIR += courier-unicode
      SUBDIR += cucipop
      SUBDIR += cue
      SUBDIR += cyrus-imapd
