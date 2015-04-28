@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2015/04/27 06:08:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2015/04/28 07:02:26 ajacoutot Exp $
 
 COMMENT=		weather application for GNOME
 
 GNOME_PROJECT=		gnome-weather
-GNOME_VERSION=		3.16.2
+GNOME_VERSION=		3.16.2.1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

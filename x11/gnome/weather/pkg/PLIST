@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/04/03 10:59:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/04/28 07:02:26 ajacoutot Exp $
 bin/gnome-weather
 share/appdata/
 share/appdata/org.gnome.Weather.Application.appdata.xml
@@ -11,30 +11,12 @@ share/glib-2.0/schemas/org.gnome.Weather.Application.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/org.gnome.Weather.Application.search-provider.ini
-share/icons/HighContrast/
-share/icons/HighContrast/16x16/
-share/icons/HighContrast/16x16/apps/
-share/icons/HighContrast/16x16/apps/org.gnome.Weather.Application.png
-share/icons/HighContrast/22x22/
-share/icons/HighContrast/22x22/apps/
-share/icons/HighContrast/22x22/apps/org.gnome.Weather.Application.png
-share/icons/HighContrast/24x24/
-share/icons/HighContrast/24x24/apps/
-share/icons/HighContrast/24x24/apps/org.gnome.Weather.Application.png
-share/icons/HighContrast/256x256/
-share/icons/HighContrast/256x256/apps/
-share/icons/HighContrast/256x256/apps/org.gnome.Weather.Application.png
-share/icons/HighContrast/32x32/
-share/icons/HighContrast/32x32/apps/
-share/icons/HighContrast/32x32/apps/org.gnome.Weather.Application.png
-share/icons/HighContrast/48x48/
-share/icons/HighContrast/48x48/apps/
-share/icons/HighContrast/48x48/apps/org.gnome.Weather.Application.png
 share/icons/hicolor/16x16/apps/org.gnome.Weather.Application.png
 share/icons/hicolor/22x22/apps/org.gnome.Weather.Application.png
 share/icons/hicolor/256x256/apps/org.gnome.Weather.Application.png
 share/icons/hicolor/32x32/apps/org.gnome.Weather.Application.png
 share/icons/hicolor/48x48/apps/org.gnome.Weather.Application.png
+share/icons/hicolor/symbolic/apps/org.gnome.Weather.Application-symbolic.svg
 share/locale/an/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ar/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/as/LC_MESSAGES/org.gnome.Weather.mo
@@ -105,7 +87,5 @@ share/org.gnome.Weather/org.gnome.Weather.BackgroundService.src.gresource
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
