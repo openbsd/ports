@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.43 2015/01/10 10:46:37 brad Exp $
---- configure.orig	Wed Jan  7 04:31:28 2015
-+++ configure	Wed Jan  7 04:42:09 2015
-@@ -3992,7 +3992,7 @@ case $target_os in
+$OpenBSD: patch-configure,v 1.44 2015/04/28 06:32:47 ajacoutot Exp $
+--- configure.orig	Wed Mar 25 18:11:38 2015
++++ configure	Wed Mar 25 18:16:17 2015
+@@ -4057,7 +4057,7 @@ case $target_os in
      openbsd|bitrig)
          disable symver
          SHFLAGS='-shared'
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.43 2015/01/10 10:46:37 brad Exp $
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -4323,7 +4323,7 @@ die_license_disabled version3 libvo_amrwbenc
+@@ -4404,7 +4404,7 @@ die_license_disabled version3 libvo_amrwbenc
  
  enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.43 2015/01/10 10:46:37 brad Exp $
  
  enable_weak_pic() {
      disabled pic && return
-@@ -5054,7 +5054,6 @@ check_disable_warning -Wno-pointer-sign
+@@ -5203,7 +5203,6 @@ check_disable_warning -Wno-pointer-sign
  check_ldflags -Wl,--warn-common
  check_ldflags -Wl,-rpath-link=libpostproc:libswresample:libswscale:libavfilter:libavdevice:libavformat:libavcodec:libavutil:libavresample
  enabled rpath && add_ldexeflags -Wl,-rpath,$libdir
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.43 2015/01/10 10:46:37 brad Exp $
  
  # add some strip flags
  # -wN '..@*' is more selective than -x, but not available everywhere.
-@@ -5675,8 +5674,8 @@ pkgconfig_generate(){
+@@ -5823,8 +5822,8 @@ pkgconfig_generate(){
      comment=$2
      version=$3
      libs=$4
@@ -38,7 +38,7 @@ $OpenBSD: patch-configure,v 1.43 2015/01/10 10:46:37 brad Exp $
      enabled ${name#lib} || return 0
      mkdir -p $name
      cat <<EOF > $name/$name${build_suffix}.pc
-@@ -5691,7 +5690,7 @@ Version: $version
+@@ -5839,7 +5838,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -47,7 +47,7 @@ $OpenBSD: patch-configure,v 1.43 2015/01/10 10:46:37 brad Exp $
  Libs.private: $(enabled shared && echo $libs)
  Cflags: -I\${includedir}
  EOF
-@@ -5724,3 +5723,13 @@ pkgconfig_generate libpostproc   "FFmpeg postprocessin
+@@ -5872,3 +5871,13 @@ pkgconfig_generate libpostproc   "FFmpeg postprocessin
  pkgconfig_generate libavresample "Libav audio resampling library"       "$LIBAVRESAMPLE_VERSION" "$LIBM"
  pkgconfig_generate libswscale    "FFmpeg image rescaling library"       "$LIBSWSCALE_VERSION"    "$LIBM"
  pkgconfig_generate libswresample "FFmpeg audio resampling library"      "$LIBSWRESAMPLE_VERSION" "$LIBM"
