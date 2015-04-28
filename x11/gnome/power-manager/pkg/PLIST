@@ -1,31 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/04/03 11:49:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/04/28 07:06:21 ajacoutot Exp $
 @bin bin/gnome-power-statistics
 share/appdata/
 share/appdata/gnome-power-statistics.appdata.xml
 share/applications/gnome-power-statistics.desktop
 share/glib-2.0/schemas/org.gnome.power-manager.gschema.xml
-share/icons/HighContrast/
-share/icons/HighContrast/16x16/
-share/icons/HighContrast/16x16/apps/
-share/icons/HighContrast/16x16/apps/gnome-power-statistics.png
-share/icons/HighContrast/22x22/
-share/icons/HighContrast/22x22/apps/
-share/icons/HighContrast/22x22/apps/gnome-power-statistics.png
-share/icons/HighContrast/24x24/
-share/icons/HighContrast/24x24/apps/
-share/icons/HighContrast/24x24/apps/gnome-power-statistics.png
-share/icons/HighContrast/256x256/
-share/icons/HighContrast/256x256/apps/
-share/icons/HighContrast/256x256/apps/gnome-power-statistics.png
-share/icons/HighContrast/48x48/
-share/icons/HighContrast/48x48/apps/
-share/icons/HighContrast/48x48/apps/gnome-power-statistics.png
 share/icons/hicolor/16x16/apps/gnome-power-statistics.png
 share/icons/hicolor/22x22/apps/gnome-power-statistics.png
 share/icons/hicolor/24x24/apps/gnome-power-statistics.png
 share/icons/hicolor/32x32/apps/gnome-power-statistics.png
 share/icons/hicolor/48x48/apps/gnome-power-statistics.png
 share/icons/hicolor/scalable/apps/gnome-power-statistics.svg
+share/icons/hicolor/symbolic/apps/gnome-power-statistics-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ar/LC_MESSAGES/gnome-power-manager.mo
 share/locale/as/LC_MESSAGES/gnome-power-manager.mo
@@ -117,7 +102,5 @@ share/locale/zh_TW/LC_MESSAGES/gnome-power-manager.mo
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
