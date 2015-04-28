@@ -31,8 +31,11 @@ sub expand_tabs {
 
 sub w_stem {
 	my @v = @_;
-	s,^(?:.*/)?([^<>=]+)(?:[<>=].*)$,$1, for @v;
-	return @v;
+	for (@v) {
+		s,^.*/,,;
+		s,^([^/<>=]+)(?:[<>=].*)$,$1,;
+	}
+	return wantarray ? @v : $v[0];
 }
 
 #################################################################
@@ -297,7 +300,7 @@ sub _unexpand_mod_wantlib {
 			    if $self->{verbose};
 			next;
 		}
-		my @compacted = grep { !exists $self->{wantlib_mod}->{$m}->{$_} } @libs;
+		my @compacted = grep { !exists $self->{wantlib_mod}->{$m}->{Util::w_stem($_)} } @libs;
 		if (scalar(@libs) - scalar(@compacted) == $nlibs) {
 			@libs = ("\${$m}", @compacted);
 		}
@@ -416,7 +419,7 @@ sub _put_wantlib_lines {
 		# do not go into WANTLIB explicitly.
 		@libs = $self->_unexpand_mod_wantlib(@libs);
 		my %libs_inherited = map { $_ => 1 } @libs;
-		for my $w (@{$self->{wantlib}->{$subpkg}->{libs}}) {
+		for my $w ($self->_unexpand_mod_wantlib(@{$self->{wantlib}->{$subpkg}->{libs}})) {
 			delete $libs_inherited{$w};
 		}
 		@libs = grep { !exists $libs_inherited{$_} } @libs;
@@ -703,7 +706,9 @@ sub process_makefile {
 		while (<$makeh>) {
 			chomp;
 			my $m = shift @mod_wantlib_seen;
-			$self->{wantlib_mod}->{$m} = { map { $_ => 1 } split(/\s+/, $_) };
+			$self->{wantlib_mod}->{$m} = { map {
+				Util::w_stem($_) => $_
+			    } split(/\s+/, $_) };
 		}
 		close $makeh;
 	}
