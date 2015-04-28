@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/04/26 19:01:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/04/28 06:29:45 jasper Exp $
 
 COMMENT=		distributed RESTful search and analytics
 
@@ -12,7 +12,8 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		https://download.elasticsearch.org/elasticsearch/elasticsearch/
+MASTER_SITES=		http://distfiles.nl/ \
+			https://download.elasticsearch.org/elasticsearch/elasticsearch/
 
 MODULES=		java
 MODJAVA_VER=		1.7+
