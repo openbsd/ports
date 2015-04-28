@@ -1,2 +1,8 @@
-The SI6 Networks' IPv6 toolkit is a set of IPv6 security/trouble-shooting
-tools, that can send arbitrary IPv6-based packets.
+The SI6 Networks' IPv6 toolkit is a set of IPv6 security assessment
+and trouble-shooting tools.  It can be leveraged to perform security
+assessments of IPv6 networks, assess the resiliency of IPv6 devices
+by performing real-world attacks against them, and to trouble-shoot
+IPv6 networking problems.  The tools comprising the toolkit range
+from packet-crafting tools to send arbitrary Neighbor Discovery
+packets to the most comprehensive IPv6 network scanning tool out
+there (our scan6 tool).

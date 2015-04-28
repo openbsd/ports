@@ -1,18 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/30 23:41:15 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/28 23:16:20 bluhm Exp $
+@conflict ipv6-toolkit-*
 @bin bin/addr6
-@bin bin/flow6
-@bin bin/frag6
-@bin bin/icmp6
-@bin bin/jumbo6
-@bin bin/na6
-@bin bin/ni6
-@bin bin/ns6
-@bin bin/ra6
-@bin bin/rd6
-@bin bin/rs6
-@bin bin/scan6
-@bin bin/tcp6
 @man man/man1/addr6.1
+@man man/man1/blackhole6.1
 @man man/man1/flow6.1
 @man man/man1/frag6.1
 @man man/man1/icmp6.1
@@ -20,15 +10,35 @@
 @man man/man1/na6.1
 @man man/man1/ni6.1
 @man man/man1/ns6.1
+@man man/man1/path6.1
 @man man/man1/ra6.1
 @man man/man1/rd6.1
 @man man/man1/rs6.1
 @man man/man1/scan6.1
+@man man/man1/script6.1
 @man man/man1/tcp6.1
+@man man/man1/udp6.1
 @man man/man5/ipv6toolkit.conf.5
 @man man/man7/ipv6toolkit.7
-share/examples/ipv6-toolkit/
-share/examples/ipv6-toolkit/ipv6toolkit.conf
+sbin/blackhole6
+@bin sbin/flow6
+@bin sbin/frag6
+@bin sbin/icmp6
+@bin sbin/jumbo6
+@bin sbin/na6
+@bin sbin/ni6
+@bin sbin/ns6
+@bin sbin/path6
+@bin sbin/ra6
+@bin sbin/rd6
+@bin sbin/rs6
+@bin sbin/scan6
+sbin/script6
+@bin sbin/tcp6
+@bin sbin/udp6
+share/examples/ipv6toolkit/
+share/examples/ipv6toolkit/ipv6toolkit.conf
 @sample ${SYSCONFDIR}/ipv6toolkit.conf
 share/ipv6toolkit/
 share/ipv6toolkit/oui.txt
+share/ipv6toolkit/service-names-port-numbers.csv
