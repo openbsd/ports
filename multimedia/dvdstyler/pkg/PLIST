@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/04/07 06:43:12 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/04/28 07:40:36 ajacoutot Exp $
 @bin bin/dvdstyler
 @man man/man1/dvdstyler.1
 share/applications/dvdstyler.desktop
@@ -30,6 +30,7 @@ share/dvdstyler/backgrounds/32_blue_fractal.jpg
 share/dvdstyler/backgrounds/40_swans.jpg
 share/dvdstyler/backgrounds/45_nevado.jpg
 share/dvdstyler/backgrounds/46_paisaje.jpg
+share/dvdstyler/backgrounds/Cake.jpg
 share/dvdstyler/backgrounds/blue_treetops.jpg
 share/dvdstyler/backgrounds/dark_wedding.jpg
 share/dvdstyler/backgrounds/frosty_forest.jpg
@@ -132,12 +133,15 @@ share/dvdstyler/objects/ellipse-v3.xml
 share/dvdstyler/objects/ellipse45.xml
 share/dvdstyler/objects/frame-v3.xml
 share/dvdstyler/objects/frame45.xml
+share/dvdstyler/objects/gold-frame.xml
 share/dvdstyler/objects/image.xml
 share/dvdstyler/objects/rectangle-v2.xml
 share/dvdstyler/objects/text-v2.xml
 share/dvdstyler/rc/
 share/dvdstyler/rc/add.png
+share/dvdstyler/rc/addVideo.png
 share/dvdstyler/rc/dvdstyler.png
+share/dvdstyler/rc/error.png
 share/dvdstyler/rc/files.png
 share/dvdstyler/rc/help.png
 share/dvdstyler/rc/justifyCenter.png
@@ -154,10 +158,13 @@ share/dvdstyler/rc/nesw.cur
 share/dvdstyler/rc/new.png
 share/dvdstyler/rc/noaudio.png
 share/dvdstyler/rc/nwse.cur
+share/dvdstyler/rc/ok.png
 share/dvdstyler/rc/open.png
 share/dvdstyler/rc/plus.png
 share/dvdstyler/rc/preferences.png
+share/dvdstyler/rc/refresh.png
 share/dvdstyler/rc/remove.png
+share/dvdstyler/rc/rotate.cur
 share/dvdstyler/rc/run.png
 share/dvdstyler/rc/save.png
 share/dvdstyler/templates/

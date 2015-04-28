@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2014/04/07 06:43:12 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2015/04/28 07:40:36 ajacoutot Exp $
 
 COMMENT=		DVD authoring application
 
-DISTNAME=		DVDStyler-2.7.1
+DISTNAME=		DVDStyler-2.9.2
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dvdstyler/}
@@ -39,7 +39,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 LIB_DEPENDS=		graphics/ffmpeg>=20121026 \
 			graphics/libexif \
 			x11/gnome/libgnomeui \
-			x11/wxSVG>=1.2.1 \
+			x11/wxSVG>=1.4.2 \
 			x11/wxWidgets>=2.8.12p3 \
 			x11/wxWidgets,-media>=2.8.12p0
 
