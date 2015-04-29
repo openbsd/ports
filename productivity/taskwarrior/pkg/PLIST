@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/01/15 15:47:05 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/04/29 16:00:45 kspillner Exp $
 @bin bin/task
 @man man/man1/task.1
 @man man/man5/task-color.5
@@ -75,9 +75,11 @@ share/taskwarrior/scripts/add-ons/export-csv.pl
 share/taskwarrior/scripts/add-ons/export-html.pl
 share/taskwarrior/scripts/add-ons/export-ical.pl
 share/taskwarrior/scripts/add-ons/export-sql.py
+share/taskwarrior/scripts/add-ons/export-sql.pyc
 share/taskwarrior/scripts/add-ons/export-tsv.pl
 share/taskwarrior/scripts/add-ons/export-xml.pl
 share/taskwarrior/scripts/add-ons/export-xml.py
+share/taskwarrior/scripts/add-ons/export-xml.pyc
 share/taskwarrior/scripts/add-ons/export-xml.rb
 share/taskwarrior/scripts/add-ons/export-yad.pl
 share/taskwarrior/scripts/add-ons/export-yaml.pl
