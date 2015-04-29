@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/12/23 09:39:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2015/04/29 17:12:03 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
@@ -33,8 +33,7 @@ BUILD_DEPENDS=		devel/iso-codes \
 RUN_DEPENDS=		devel/iso-codes
 
 # needed for ${WRKSRC}/tests/
-BUILD_DEPENDS +=	x11/gtk+2 \
-			x11/gtk+3
+BUILD_DEPENDS +=	x11/gtk+3
 
 LIB_DEPENDS=		${P}/core=${V} \
 			audio/cdparanoia \
