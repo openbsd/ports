@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.442 2015/04/18 12:42:45 schwarze Exp $
+# $OpenBSD: Makefile,v 1.443 2015/04/29 12:02:20 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -14,6 +14,7 @@
      SUBDIR += calibre
      SUBDIR += catdoc
      SUBDIR += catfish
+     SUBDIR += cdiff
      SUBDIR += clo++
      SUBDIR += cloc
      SUBDIR += clucene
