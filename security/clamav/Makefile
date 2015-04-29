@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.97 2015/01/28 15:13:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.98 2015/04/29 21:27:39 sthen Exp $
 
 COMMENT=		virus scanner
-DISTNAME=		clamav-0.98.6
+DISTNAME=		clamav-0.98.7
 
 CATEGORIES=		security
 
-SHARED_LIBS +=	clamav               22.1     # 7.25
-SHARED_LIBS +=	clamunrar            3.0      # 7.25
+SHARED_LIBS +=	clamav               22.1     # 7.26
+SHARED_LIBS +=	clamunrar            3.0      # 7.26
 SHARED_LIBS +=	clamunrar_iface      3.0
 
 HOMEPAGE=		http://www.clamav.net/
@@ -17,7 +17,7 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += bz2 c crypto curl idn ltdl lzma m milter ncurses
-WANTLIB += pthread ssl xml2 z
+WANTLIB += pthread ssl stdc++ xml2 z
 
 BUILD_DEPENDS=		devel/check \
 			devel/libexecinfo
@@ -61,10 +61,13 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/clamav
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mllvm}
-BUILD_DEPENDS+=		devel/llvm
-
-pre-configure:
-	rm -rf ${WRKSRC}/libclamav/c++/llvm
+CONFIGURE_ARGS+=	--enable-llvm
+# At present (20140228 snapshot of LLVM, which is pre-3.5 but advertising a 3.5
+# version number), system LLVM does not work with ClamAV. To attempt using system
+# LLVM, try this:
+#			--with-llvm-linking=dynamic \
+#			--with-system-llvm=${LOCALBASE}/bin/llvm-config
+# And add LIB_DEPENDS etc.
 .endif
 
 post-install:
