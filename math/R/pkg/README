@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2015/01/08 14:14:11 dcoppa Exp $
+$OpenBSD: README,v 1.2 2015/04/29 21:53:43 zhuk Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,3 +16,11 @@ Running:
 
 as root, will update both ${TRUEPREFIX}/lib/R/etc/Makeconf and
 ${TRUEPREFIX}/lib/R/etc/ldpaths with the right settings.
+
+Customizing package compilation
+===============================
+Make variables to be used by R packages compiling code at installation time
+can be customized via ~/.R/Makevars:
+
+CFLAGS=-I${LOCALBASE}/include
+LDFLAGS=-L${LOCALBASE}/lib

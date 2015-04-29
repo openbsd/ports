@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2015/04/12 18:29:11 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.26 2015/04/29 21:53:43 zhuk Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -370,6 +370,7 @@ lib/R/library/Matrix/Meta/nsInfo.rds
 lib/R/library/Matrix/Meta/package.rds
 lib/R/library/Matrix/Meta/vignette.rds
 lib/R/library/Matrix/NAMESPACE
+lib/R/library/Matrix/NEWS.Rd
 lib/R/library/Matrix/R/
 lib/R/library/Matrix/R/Matrix
 lib/R/library/Matrix/R/Matrix.rdb
@@ -454,6 +455,7 @@ lib/R/library/Matrix/html/atomicVector-class.html
 lib/R/library/Matrix/html/band.html
 lib/R/library/Matrix/html/bandSparse.html
 lib/R/library/Matrix/html/bdiag.html
+lib/R/library/Matrix/html/boolean-matprod.html
 lib/R/library/Matrix/html/cBind.html
 lib/R/library/Matrix/html/chol.html
 lib/R/library/Matrix/html/chol2inv-methods.html
@@ -536,6 +538,7 @@ lib/R/library/Matrix/html/sparseVector.html
 lib/R/library/Matrix/html/symmetricMatrix-class.html
 lib/R/library/Matrix/html/symmpart.html
 lib/R/library/Matrix/html/triangularMatrix-class.html
+lib/R/library/Matrix/html/uniqTsparse.html
 lib/R/library/Matrix/html/unpack.html
 lib/R/library/Matrix/html/unused-classes.html
 lib/R/library/Matrix/html/updown.html
@@ -558,6 +561,9 @@ lib/R/library/Matrix/po/fr/
 lib/R/library/Matrix/po/fr/LC_MESSAGES/
 lib/R/library/Matrix/po/fr/LC_MESSAGES/Matrix.mo
 lib/R/library/Matrix/po/fr/LC_MESSAGES/R-Matrix.mo
+lib/R/library/Matrix/po/ko/
+lib/R/library/Matrix/po/ko/LC_MESSAGES/
+lib/R/library/Matrix/po/ko/LC_MESSAGES/R-Matrix.mo
 lib/R/library/Matrix/po/pl/
 lib/R/library/Matrix/po/pl/LC_MESSAGES/
 lib/R/library/Matrix/po/pl/LC_MESSAGES/Matrix.mo
@@ -724,6 +730,8 @@ lib/R/library/base/html/contributors.html
 lib/R/library/base/html/copyright.html
 lib/R/library/base/html/crossprod.html
 lib/R/library/base/html/cumsum.html
+lib/R/library/base/html/curlGetHeaders.html
+lib/R/library/base/html/curlVersion.html
 lib/R/library/base/html/cut.POSIXt.html
 lib/R/library/base/html/cut.html
 lib/R/library/base/html/data.class.html
@@ -761,6 +769,7 @@ lib/R/library/base/html/eval.html
 lib/R/library/base/html/exists.html
 lib/R/library/base/html/expand.grid.html
 lib/R/library/base/html/expression.html
+lib/R/library/base/html/extSoftVersion.html
 lib/R/library/base/html/factor.html
 lib/R/library/base/html/file.access.html
 lib/R/library/base/html/file.choose.html
@@ -772,6 +781,7 @@ lib/R/library/base/html/files2.html
 lib/R/library/base/html/find.package.html
 lib/R/library/base/html/findInterval.html
 lib/R/library/base/html/force.html
+lib/R/library/base/html/forceAndCall.html
 lib/R/library/base/html/formals.html
 lib/R/library/base/html/format.html
 lib/R/library/base/html/format.info.html
@@ -823,6 +833,7 @@ lib/R/library/base/html/labels.html
 lib/R/library/base/html/lapply.html
 lib/R/library/base/html/lazyload.html
 lib/R/library/base/html/length.html
+lib/R/library/base/html/lengths.html
 lib/R/library/base/html/levels.html
 lib/R/library/base/html/libPaths.html
 lib/R/library/base/html/library.dynam.html
@@ -987,6 +998,7 @@ lib/R/library/base/html/trace.html
 lib/R/library/base/html/traceback.html
 lib/R/library/base/html/tracemem.html
 lib/R/library/base/html/transform.html
+lib/R/library/base/html/trimws.html
 lib/R/library/base/html/try.html
 lib/R/library/base/html/typeof.html
 lib/R/library/base/html/unique.html
@@ -1702,6 +1714,7 @@ lib/R/library/grDevices/html/embedFonts.html
 lib/R/library/grDevices/html/extendrange.html
 lib/R/library/grDevices/html/getGraphicsEvent.html
 lib/R/library/grDevices/html/grDevices-package.html
+lib/R/library/grDevices/html/grSoftVersion.html
 lib/R/library/grDevices/html/gray.colors.html
 lib/R/library/grDevices/html/gray.html
 lib/R/library/grDevices/html/hcl.html
@@ -1825,6 +1838,7 @@ lib/R/library/graphics/html/plot.design.html
 lib/R/library/graphics/html/plot.factor.html
 lib/R/library/graphics/html/plot.formula.html
 lib/R/library/graphics/html/plot.html
+lib/R/library/graphics/html/plot.raster.html
 lib/R/library/graphics/html/plot.table.html
 lib/R/library/graphics/html/plot.window.html
 lib/R/library/graphics/html/plot.xy.html
@@ -2310,8 +2324,10 @@ lib/R/library/mgcv/html/rTweedie.html
 lib/R/library/mgcv/html/random.effects.html
 lib/R/library/mgcv/html/residuals.gam.html
 lib/R/library/mgcv/html/rig.html
+lib/R/library/mgcv/html/rmvn.html
 lib/R/library/mgcv/html/s.html
 lib/R/library/mgcv/html/scat.html
+lib/R/library/mgcv/html/single.index.html
 lib/R/library/mgcv/html/slanczos.html
 lib/R/library/mgcv/html/smooth.construct.ad.smooth.spec.html
 lib/R/library/mgcv/html/smooth.construct.cr.smooth.spec.html
@@ -2342,6 +2358,31 @@ lib/R/library/mgcv/html/ziP.html
 lib/R/library/mgcv/html/ziplss.html
 lib/R/library/mgcv/libs/
 lib/R/library/mgcv/libs/mgcv.so
+lib/R/library/mgcv/po/
+lib/R/library/mgcv/po/de/
+lib/R/library/mgcv/po/de/LC_MESSAGES/
+lib/R/library/mgcv/po/de/LC_MESSAGES/R-mgcv.mo
+lib/R/library/mgcv/po/de/LC_MESSAGES/mgcv.mo
+lib/R/library/mgcv/po/en@quot/
+lib/R/library/mgcv/po/en@quot/LC_MESSAGES/
+lib/R/library/mgcv/po/en@quot/LC_MESSAGES/R-mgcv.mo
+lib/R/library/mgcv/po/en@quot/LC_MESSAGES/mgcv.mo
+lib/R/library/mgcv/po/fr/
+lib/R/library/mgcv/po/fr/LC_MESSAGES/
+lib/R/library/mgcv/po/fr/LC_MESSAGES/R-mgcv.mo
+lib/R/library/mgcv/po/fr/LC_MESSAGES/mgcv.mo
+lib/R/library/mgcv/po/ko/
+lib/R/library/mgcv/po/ko/LC_MESSAGES/
+lib/R/library/mgcv/po/ko/LC_MESSAGES/R-mgcv.mo
+lib/R/library/mgcv/po/ko/LC_MESSAGES/mgcv.mo
+lib/R/library/mgcv/po/pl/
+lib/R/library/mgcv/po/pl/LC_MESSAGES/
+lib/R/library/mgcv/po/pl/LC_MESSAGES/R-mgcv.mo
+lib/R/library/mgcv/po/pl/LC_MESSAGES/mgcv.mo
+lib/R/library/mgcv/po/po/
+lib/R/library/mgcv/po/po/LC_MESSAGES/
+lib/R/library/mgcv/po/po/LC_MESSAGES/R-mgcv.mo
+lib/R/library/mgcv/po/po/LC_MESSAGES/mgcv.mo
 lib/R/library/nlme/
 lib/R/library/nlme/CITATION
 lib/R/library/nlme/DESCRIPTION
@@ -3591,6 +3632,8 @@ lib/R/library/tools/Meta/nsInfo.rds
 lib/R/library/tools/Meta/package.rds
 lib/R/library/tools/NAMESPACE
 lib/R/library/tools/R/
+lib/R/library/tools/R/sysdata.rdb
+lib/R/library/tools/R/sysdata.rdx
 lib/R/library/tools/R/tools
 lib/R/library/tools/R/tools.rdb
 lib/R/library/tools/R/tools.rdx
@@ -3637,6 +3680,7 @@ lib/R/library/tools/html/find_gs_cmd.html
 lib/R/library/tools/html/getDepList.html
 lib/R/library/tools/html/getVignetteInfo.html
 lib/R/library/tools/html/installFoundDepends.html
+lib/R/library/tools/html/loadRdMacros.html
 lib/R/library/tools/html/makeLazyLoading.html
 lib/R/library/tools/html/make_translations_pkg.html
 lib/R/library/tools/html/md5sum.html
@@ -3654,6 +3698,7 @@ lib/R/library/tools/html/testInstalledPackage.html
 lib/R/library/tools/html/texi2dvi.html
 lib/R/library/tools/html/toHTML.html
 lib/R/library/tools/html/toRd.html
+lib/R/library/tools/html/toTitleCase.html
 lib/R/library/tools/html/tools-defunct.html
 lib/R/library/tools/html/tools-deprecated.html
 lib/R/library/tools/html/tools-package.html
@@ -4082,6 +4127,7 @@ lib/R/library/utils/html/help.html
 lib/R/library/utils/html/help.request.html
 lib/R/library/utils/html/help.search.html
 lib/R/library/utils/html/help.start.html
+lib/R/library/utils/html/hsearch-utils.html
 lib/R/library/utils/html/install.packages.html
 lib/R/library/utils/html/installed.packages.html
 lib/R/library/utils/html/localeToCharset.html
@@ -4152,7 +4198,6 @@ lib/R/modules/R_X11.so
 lib/R/modules/R_de.so
 lib/R/modules/internet.so
 lib/R/modules/lapack.so
-lib/R/modules/vfonts.so
 lib/R/share/
 lib/R/share/R/
 lib/R/share/R/REMOVE.R
@@ -4160,6 +4205,9 @@ lib/R/share/R/examples-footer.R
 lib/R/share/R/examples-header.R
 lib/R/share/R/nspackloader.R
 lib/R/share/R/tests-startup.R
+lib/R/share/Rd/
+lib/R/share/Rd/macros/
+lib/R/share/Rd/macros/system.Rd
 lib/R/share/dictionaries/
 lib/R/share/dictionaries/en_stats.rds
 lib/R/share/encodings/
@@ -4229,13 +4277,6 @@ share/doc/R/html/resources.html
 share/doc/R/html/right.jpg
 share/doc/R/html/up.jpg
 share/doc/R/manual/
-share/doc/R/manual/R-FAQ.html
-share/doc/R/manual/R-admin.html
-share/doc/R/manual/R-data.html
-share/doc/R/manual/R-exts.html
-share/doc/R/manual/R-intro.html
-share/doc/R/manual/R-ints.html
-share/doc/R/manual/R-lang.html
 share/doc/R/manual/images/
 share/doc/R/manual/images/QQ.png
 share/doc/R/manual/images/ecdf.png
