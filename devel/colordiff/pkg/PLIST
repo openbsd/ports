@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/18 17:32:40 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/04/29 12:03:20 ajacoutot Exp $
+@conflict cdiff-*
 bin/cdiff
 bin/colordiff
 @man man/man1/cdiff.1

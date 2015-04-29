@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2014/08/18 19:28:50 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2015/04/29 12:03:20 ajacoutot Exp $
 
 COMMENT =		colorized diff tool
 DISTNAME =		colordiff-1.0.13
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 HOMEPAGE =		http://www.colordiff.org/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
