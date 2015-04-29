@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.64 2015/04/27 13:32:57 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.65 2015/04/29 13:28:36 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -39,7 +39,8 @@ sub new
 	if (defined $state->{subst}->value('CDROM_ONLY')) {
 		$o->{cdrom_only} = 1;
 	}
-	if (open(my $fh, '<', "$distdir/distinfo")) {
+	my $fh = $o->open('<', "$distdir/distinfo");
+	if ($fh) {
 		print "Reading distinfo...";
 		while (<$fh>) {
 			if (m/^SHA256\s*\((.*)\) \= (.*)/) {
@@ -52,16 +53,21 @@ sub new
 	print "zap duplicates...";
 	# rewrite "more or less" the same info, so we flush duplicates,
 	# e.g., keep only most recent checksum seen
-	File::Path::make_path($distdir);
-	open(my $fh, '>', "$distdir/distinfo.new");
-	for my $k (sort keys %{$o->{sha}}) {
-		print $fh "SHA256 ($k) = ", $o->{sha}{$k}->stringize,
-		    "\n";
+	$o->make_path($distdir);
+	$fh = $o->open('>', "$distdir/distinfo.new");
+	if ($fh) {
+		for my $k (sort keys %{$o->{sha}}) {
+			print $fh "SHA256 ($k) = ", $o->{sha}{$k}->stringize,
+			    "\n";
+		}
+		close ($fh);
 	}
-	close ($fh);
 	print "Done\n";
-	rename("$distdir/distinfo.new", "$distdir/distinfo");
-	open($o->{log}, ">>", "$distdir/distinfo");
+	$o->run_as(
+	    sub {
+		rename("$distdir/distinfo.new", "$distdir/distinfo");
+	    });
+	$o->{log} = $o->open(">>", "$distdir/distinfo");
 	DPB::Util->make_hot($o->{log});
 	return $o;
 }
@@ -107,7 +113,7 @@ sub run_expire_old
 	$core->unsquiggle;
 	$core->start_job(DPB::Job::Normal->new(
 	    sub {
-	    	$self->run_as(sub { $self->expire_old; });
+		$self->expire_old;
 	    },
 	    sub {
 		# and we will never need this again
@@ -128,8 +134,10 @@ sub expire_old
 	my $self = shift;
 	my $ts = time();
 	my $distdir = $self->distdir;
-	open my $fh2, ">", "$distdir/history.new" or return;
-	if (open(my $fh, '<', "$distdir/history")) {
+	my $fh2 = $self->open(">", "$distdir/history.new");
+	return if !$fh2;
+	my $fh = $self->open('<', "$distdir/history");
+	if ($fh) {
 		while (<$fh>) {
 			if (m/^\d+\s+SHA256\s*\((.*)\) \= (.*\=)$/) {
 				my ($file, $sha) = ($1, $2);
@@ -187,7 +195,10 @@ sub expire_old
 	}
 
 	close $fh2;
-	rename("$distdir/history.new", "$distdir/history");
+	$self->run_as(
+	    sub {
+		rename("$distdir/history.new", "$distdir/history");
+	    });
 }
 
 sub distdir

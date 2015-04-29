@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.38 2015/04/27 08:14:20 espie Exp $
+# $OpenBSD: Config.pm,v 1.39 2015/04/29 13:28:36 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -418,6 +418,17 @@ sub make_path
 	File::Path::make_path(@directories, $p);
 }
 
+sub open
+{
+	my ($self, $mode, $filename) = @_;
+	my $fh;
+	$self->run_as(
+	    sub {
+	    	open $fh, $mode, $filename;
+	    });
+	return $fh;
+}
+
 package DPB::UserProxy;
 sub run_as
 {
@@ -429,6 +440,12 @@ sub make_path
 {
 	my ($self, @dirs) = @_;
 	$self->{user}->make_path(@dirs);
+}
+
+sub open
+{
+	my ($self, @parms) = @_;
+	return $self->{user}->open(@parms);
 }
 
 1;
