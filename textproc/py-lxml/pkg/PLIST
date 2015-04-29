@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/06/05 06:57:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/04/29 16:09:54 jca Exp $
 lib/python${MODPY_VERSION}/site-packages/lxml/
 lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -271,6 +271,7 @@ share/doc/py-lxml/html/api/lxml.etree._Validator-class.html
 share/doc/py-lxml/html/api/lxml.etree._XPathEvaluatorBase-class.html
 share/doc/py-lxml/html/api/lxml.etree._XSLTProcessingInstruction-class.html
 share/doc/py-lxml/html/api/lxml.etree._XSLTResultTree-class.html
+share/doc/py-lxml/html/api/lxml.etree.htmlfile-class.html
 share/doc/py-lxml/html/api/lxml.etree.iterparse-class.html
 share/doc/py-lxml/html/api/lxml.etree.iterwalk-class.html
 share/doc/py-lxml/html/api/lxml.etree.xmlfile-class.html
@@ -383,6 +384,10 @@ share/doc/py-lxml/html/api/lxml.tests.test_doctestcompare.DummyInput-class.html
 share/doc/py-lxml/html/api/lxml.tests.test_dtd-module.html
 share/doc/py-lxml/html/api/lxml.tests.test_dtd-pysrc.html
 share/doc/py-lxml/html/api/lxml.tests.test_dtd.ETreeDtdTestCase-class.html
+share/doc/py-lxml/html/api/lxml.tests.test_elementpath-module.html
+share/doc/py-lxml/html/api/lxml.tests.test_elementpath-pysrc.html
+share/doc/py-lxml/html/api/lxml.tests.test_elementpath.ElementTreeElementPathTestCase-class.html
+share/doc/py-lxml/html/api/lxml.tests.test_elementpath.EtreeElementPathTestCase-class.html
 share/doc/py-lxml/html/api/lxml.tests.test_elementtree-module.html
 share/doc/py-lxml/html/api/lxml.tests.test_elementtree-pysrc.html
 share/doc/py-lxml/html/api/lxml.tests.test_elementtree.CElementTreeTestCase-class.html
@@ -413,8 +418,10 @@ share/doc/py-lxml/html/api/lxml.tests.test_http_io.HttpIOTestCase-class.html
 share/doc/py-lxml/html/api/lxml.tests.test_incremental_xmlfile-module.html
 share/doc/py-lxml/html/api/lxml.tests.test_incremental_xmlfile-pysrc.html
 share/doc/py-lxml/html/api/lxml.tests.test_incremental_xmlfile.BytesIOXmlFileTestCase-class.html
+share/doc/py-lxml/html/api/lxml.tests.test_incremental_xmlfile.HtmlFileTestCase-class.html
 share/doc/py-lxml/html/api/lxml.tests.test_incremental_xmlfile.SimpleFileLikeXmlFileTestCase-class.html
 share/doc/py-lxml/html/api/lxml.tests.test_incremental_xmlfile.SimpleFileLikeXmlFileTestCase.SimpleFileLike-class.html
+share/doc/py-lxml/html/api/lxml.tests.test_incremental_xmlfile.TempPathXmlFileTestCase-class.html
 share/doc/py-lxml/html/api/lxml.tests.test_incremental_xmlfile.TempXmlFileTestCase-class.html
 share/doc/py-lxml/html/api/lxml.tests.test_incremental_xmlfile._XmlFileTestCaseBase-class.html
 share/doc/py-lxml/html/api/lxml.tests.test_io-module.html
@@ -458,6 +465,7 @@ share/doc/py-lxml/html/api/lxml.tests.test_threading.ThreadPipelineTestCase.Work
 share/doc/py-lxml/html/api/lxml.tests.test_threading.ThreadingTestCase-class.html
 share/doc/py-lxml/html/api/lxml.tests.test_unicode-module.html
 share/doc/py-lxml/html/api/lxml.tests.test_unicode-pysrc.html
+share/doc/py-lxml/html/api/lxml.tests.test_unicode.EncodingsTestCase-class.html
 share/doc/py-lxml/html/api/lxml.tests.test_unicode.UnicodeTestCase-class.html
 share/doc/py-lxml/html/api/lxml.tests.test_xmlschema-module.html
 share/doc/py-lxml/html/api/lxml.tests.test_xmlschema-pysrc.html
@@ -513,6 +521,7 @@ share/doc/py-lxml/html/api/toc-lxml.tests.test_classlookup-module.html
 share/doc/py-lxml/html/api/toc-lxml.tests.test_css-module.html
 share/doc/py-lxml/html/api/toc-lxml.tests.test_doctestcompare-module.html
 share/doc/py-lxml/html/api/toc-lxml.tests.test_dtd-module.html
+share/doc/py-lxml/html/api/toc-lxml.tests.test_elementpath-module.html
 share/doc/py-lxml/html/api/toc-lxml.tests.test_elementtree-module.html
 share/doc/py-lxml/html/api/toc-lxml.tests.test_errors-module.html
 share/doc/py-lxml/html/api/toc-lxml.tests.test_etree-module.html

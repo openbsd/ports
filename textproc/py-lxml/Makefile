@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.22 2015/04/17 08:06:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2015/04/29 16:09:54 jca Exp $
 
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 BROKEN-hppa=	OOM on src/lxml/lxml.etree.c
 
-MODPY_EGG_VERSION=	3.3.5
-REVISION=	0
+MODPY_EGG_VERSION=	3.4.3
 DISTNAME=	lxml-${MODPY_EGG_VERSION}
 PKGNAME=	py-lxml-${MODPY_EGG_VERSION}
 CATEGORIES=	textproc devel
 
 HOMEPAGE=	http://lxml.de/
 
+MAINTAINER =	Sean Levy <attila@stalphonsos.com>
+
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODPY_PI =	Yes
-EXTRACT_SUFX=	.tar.gz
 
 WANTLIB=	${MODPY_WANTLIB} exslt m pthread xml2 xslt z
 
