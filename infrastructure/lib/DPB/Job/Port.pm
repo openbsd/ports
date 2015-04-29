@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.152 2015/03/14 20:45:11 espie Exp $
+# $OpenBSD: Port.pm,v 1.153 2015/04/29 10:59:03 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -1134,6 +1134,9 @@ sub add_normal_tasks
 		my $fh = $self->{builder}->logger->open("junk");
 		print $fh "$$@", CORE::time(), ": ", $core->hostname,
 		    ": forced junking -> $self->{path}\n";
+		for my $j ($core->same_host_jobs) {
+			print $fh "\t$j->{path}\n";
+		}
 	}
 	if ($c) {
 		$hostprop->{junk_count}++;
@@ -1147,6 +1150,9 @@ sub add_normal_tasks
 		    ": depends=$hostprop->{depends_count} ",
 		    " ports=$hostprop->{ports_count} ",
 		    " junk=$hostprop->{junk_count} -> $self->{path}\n";
+		for my $j ($core->same_host_jobs) {
+			print $fh "\t$j->{path}\n";
+		}
 		push(@todo, 'junk');
 	}
 	if ($builder->{fetch}) {
