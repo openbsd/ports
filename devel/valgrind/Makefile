@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/12 05:18:30 uebayasi Exp $
+# $OpenBSD: Makefile,v 1.3 2015/04/30 09:27:39 ajacoutot Exp $
+
+BROKEN =		relocation R_X86_64_32S can not be used ...
 
 ONLY_FOR_ARCHS =	amd64
 
