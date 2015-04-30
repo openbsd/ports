@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/30 09:27:39 ajacoutot Exp $
-
-BROKEN =		relocation R_X86_64_32S can not be used ...
+# $OpenBSD: Makefile,v 1.4 2015/04/30 13:06:10 jca Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -8,6 +6,7 @@ COMMENT =		instrumentation framework for dynamic analysis tools
 CATEGORIES =		devel
 
 V =			3.10.1
+REVISION =		0
 DISTNAME =		valgrind-${V}
 EXTRACT_SUFX =		.tar.bz2
 

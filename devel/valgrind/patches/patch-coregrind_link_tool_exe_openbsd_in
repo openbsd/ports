@@ -1,0 +1,20 @@
+$OpenBSD: patch-coregrind_link_tool_exe_openbsd_in,v 1.1 2015/04/30 13:06:10 jca Exp $
+--- coregrind/link_tool_exe_openbsd.in.orig	Thu Apr 30 13:37:16 2015
++++ coregrind/link_tool_exe_openbsd.in	Thu Apr 30 13:42:34 2015
+@@ -77,14 +77,14 @@ chomp($temp);
+ my $origbase = 0x400000;
+ system(sprintf "sed -e 's|%x|%x|g' < $ldscript > $temp", $origbase, $notebase);
+ 
+-my $cmd = sprintf "$cc -static -Wl,-Ttext=0x%x -Wl,-T,$temp", $textbase;
++my $cmd = sprintf "$cc -static -nopie -Wl,-Ttext=0x%x -Wl,-T,$temp", $textbase;
+ 
+ # Add the rest of the parameters
+ foreach my $n (2 .. $#ARGV) {
+    $cmd = "$cmd $ARGV[$n]";
+ }
+ 
+-#print "link_tool_exe_linux: $cmd\n";
++print "link_tool_exe_openbsd: $cmd\n";
+ 
+ 
+ # Execute the command:
