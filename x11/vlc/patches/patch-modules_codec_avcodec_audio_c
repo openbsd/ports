@@ -1,10 +1,21 @@
-$OpenBSD: patch-modules_codec_avcodec_audio_c,v 1.5 2014/05/05 08:34:08 brad Exp $
+$OpenBSD: patch-modules_codec_avcodec_audio_c,v 1.6 2015/04/30 06:32:21 ajacoutot Exp $
 
 Deal with newer FFmpeg API.
 
 --- modules/codec/avcodec/audio.c.orig	Fri Feb 21 10:27:16 2014
-+++ modules/codec/avcodec/audio.c	Thu Apr 24 21:38:21 2014
-@@ -57,10 +57,6 @@ struct decoder_sys_t
++++ modules/codec/avcodec/audio.c	Tue Apr 28 20:32:43 2015
+@@ -44,9 +44,7 @@
+ #   include <avcodec.h>
+ #endif
+ 
+-#if LIBAVUTIL_VERSION_INT >= ((50<<16)+(38<<8)+0)
+-# include "libavutil/audioconvert.h"
+-#endif
++#include "libavutil/audioconvert.h"
+ 
+ #include "avcodec.h"
+ 
+@@ -57,10 +55,6 @@ struct decoder_sys_t
  {
      AVCODEC_COMMON_MEMBERS
  
@@ -15,7 +26,7 @@ Deal with newer FFmpeg API.
      /*
       * Output properties
       */
-@@ -116,6 +112,7 @@ do { \
+@@ -116,6 +110,7 @@ do { \
  #define BLOCK_FLAG_PRIVATE_REALLOCATED (1 << BLOCK_FLAG_PRIVATE_SHIFT)
  
  static void SetupOutputFormat( decoder_t *p_dec, bool b_trust );
@@ -23,7 +34,7 @@ Deal with newer FFmpeg API.
  
  static void InitDecoderConfig( decoder_t *p_dec, AVCodecContext *p_context )
  {
-@@ -190,6 +187,7 @@ int InitAudioDec( decoder_t *p_dec, AVCodecContext *p_
+@@ -190,6 +185,7 @@ int InitAudioDec( decoder_t *p_dec, AVCodecContext *p_
      p_codec->type = AVMEDIA_TYPE_AUDIO;
      p_context->codec_type = AVMEDIA_TYPE_AUDIO;
      p_context->codec_id = i_codec_id;
@@ -31,7 +42,7 @@ Deal with newer FFmpeg API.
      p_sys->p_context = p_context;
      p_sys->p_codec = p_codec;
      p_sys->i_codec_id = i_codec_id;
-@@ -208,31 +206,6 @@ int InitAudioDec( decoder_t *p_dec, AVCodecContext *p_
+@@ -208,31 +204,6 @@ int InitAudioDec( decoder_t *p_dec, AVCodecContext *p_
          return VLC_EGENERIC;
      }
  
@@ -63,7 +74,7 @@ Deal with newer FFmpeg API.
      p_sys->i_reject_count = 0;
      p_sys->b_extract = false;
      p_sys->i_previous_channels = 0;
-@@ -252,14 +225,59 @@ int InitAudioDec( decoder_t *p_dec, AVCodecContext *p_
+@@ -252,14 +223,59 @@ int InitAudioDec( decoder_t *p_dec, AVCodecContext *p_
      return VLC_SUCCESS;
  }
  
@@ -125,7 +136,7 @@ Deal with newer FFmpeg API.
  
      if( !pp_block || !*pp_block ) return NULL;
  
-@@ -298,47 +316,37 @@ aout_buffer_t * DecodeAudio ( decoder_t *p_dec, block_
+@@ -298,47 +314,37 @@ aout_buffer_t * DecodeAudio ( decoder_t *p_dec, block_
          p_block = block_Realloc( p_block, 0, p_block->i_buffer + FF_INPUT_BUFFER_PADDING_SIZE );
          if( !p_block )
              return NULL;
@@ -189,7 +200,7 @@ Deal with newer FFmpeg API.
      if( p_sys->p_context->channels <= 0 || p_sys->p_context->channels > 8 ||
          p_sys->p_context->sample_rate <= 0 )
      {
-@@ -356,58 +364,77 @@ aout_buffer_t * DecodeAudio ( decoder_t *p_dec, block_
+@@ -356,58 +362,77 @@ aout_buffer_t * DecodeAudio ( decoder_t *p_dec, block_
          date_Set( &p_sys->end_date, p_block->i_pts );
      }
  
@@ -297,7 +308,7 @@ Deal with newer FFmpeg API.
   *
   *****************************************************************************/
  
-@@ -419,13 +446,11 @@ vlc_fourcc_t GetVlcAudioFormat( int fmt )
+@@ -419,13 +444,11 @@ vlc_fourcc_t GetVlcAudioFormat( int fmt )
          [AV_SAMPLE_FMT_S32]   = VLC_CODEC_S32N,
          [AV_SAMPLE_FMT_FLT]   = VLC_CODEC_FL32,
          [AV_SAMPLE_FMT_DBL]   = VLC_CODEC_FL64,

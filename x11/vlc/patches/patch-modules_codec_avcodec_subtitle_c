@@ -1,0 +1,15 @@
+$OpenBSD: patch-modules_codec_avcodec_subtitle_c,v 1.1 2015/04/30 06:32:21 ajacoutot Exp $
+--- modules/codec/avcodec/subtitle.c.orig	Tue Apr 28 20:04:24 2015
++++ modules/codec/avcodec/subtitle.c	Tue Apr 28 20:04:54 2015
+@@ -93,11 +93,7 @@ int InitSubtitleDec(decoder_t *dec, AVCodecContext *co
+     /* */
+     int ret;
+     vlc_avcodec_lock();
+-#if LIBAVCODEC_VERSION_MAJOR < 54
+-    ret = avcodec_open(context, codec);
+-#else
+     ret = avcodec_open2(context, codec, NULL /* options */);
+-#endif
+     if (ret < 0) {
+         vlc_avcodec_unlock();
+         msg_Err(dec, "cannot open codec (%s)", namecodec);

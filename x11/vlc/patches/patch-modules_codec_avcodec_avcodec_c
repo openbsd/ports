@@ -1,13 +1,35 @@
-$OpenBSD: patch-modules_codec_avcodec_avcodec_c,v 1.6 2014/05/05 08:34:08 brad Exp $
+$OpenBSD: patch-modules_codec_avcodec_avcodec_c,v 1.7 2015/04/30 06:32:21 ajacoutot Exp $
 
 Deal with newer FFmpeg API.
 
 --- modules/codec/avcodec/avcodec.c.orig	Fri Feb 21 10:27:16 2014
-+++ modules/codec/avcodec/avcodec.c	Thu Apr 24 21:19:30 2014
-@@ -274,44 +274,11 @@ static int OpenDecoder( vlc_object_t *p_this )
++++ modules/codec/avcodec/avcodec.c	Wed Apr 29 00:46:46 2015
+@@ -47,10 +47,6 @@
+ #include "avcodec.h"
+ #include "chroma.h"
+ 
+-#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT( 52, 25, 0 )
+-#   error You must update libavcodec to a version >= 52.25.0
+-#endif
+-
+ /*****************************************************************************
+  * decoder_sys_t: decoder descriptor
+  *****************************************************************************/
+@@ -263,56 +259,12 @@ static int OpenDecoder( vlc_object_t *p_this )
+     }
+ 
+     /* *** get a p_context *** */
+-#if LIBAVCODEC_VERSION_MAJOR >= 54
+     p_context = avcodec_alloc_context3(p_codec);
+-#else
+-    p_context = avcodec_alloc_context();
+-#endif
+     if( !p_context )
+         return VLC_ENOMEM;
+     p_context->debug = var_InheritInteger( p_dec, "ffmpeg-debug" );
      p_context->opaque = (void *)p_this;
  
-     /* Set CPU capabilities */
+-    /* Set CPU capabilities */
 -    unsigned i_cpu = vlc_CPU();
 -    p_context->dsp_mask = 0;
 -    if( !(i_cpu & CPU_CAPABILITY_MMX) )
@@ -33,11 +55,7 @@ Deal with newer FFmpeg API.
 -#ifdef AV_CPU_FLAG_SSE3
 -    if( !(i_cpu & CPU_CAPABILITY_SSE3) )
 -        p_context->dsp_mask |= AV_CPU_FLAG_SSE3;
-+#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT( 51, 25, 0 )
-+    av_set_cpu_flags_mask( INT_MAX & ~GetVlcDspMask() );
-+#else
-+    p_context->dsp_mask = GetVlcDspMask();
- #endif
+-#endif
 -#ifdef AV_CPU_FLAG_SSSE3
 -    if( !(i_cpu & CPU_CAPABILITY_SSSE3) )
 -        p_context->dsp_mask |= AV_CPU_FLAG_SSSE3;
@@ -50,10 +68,11 @@ Deal with newer FFmpeg API.
 -    if( !(i_cpu & CPU_CAPABILITY_SSE4_2) )
 -        p_context->dsp_mask |= AV_CPU_FLAG_SSE42;
 -#endif
- 
+-
      p_dec->b_need_packetized = true;
      switch( i_cat )
-@@ -357,9 +324,6 @@ static void CloseDecoder( vlc_object_t *p_this )
+     {
+@@ -357,9 +309,6 @@ static void CloseDecoder( vlc_object_t *p_this )
  
      switch( p_sys->i_cat )
      {
@@ -63,3 +82,25 @@ Deal with newer FFmpeg API.
      case VIDEO_ES:
           EndVideoDec ( p_dec );
          break;
+@@ -395,9 +344,6 @@ void InitLibavcodec( vlc_object_t *p_object )
+     /* *** init ffmpeg library (libavcodec) *** */
+     if( !b_ffmpeginit )
+     {
+-#if LIBAVCODEC_VERSION_MAJOR < 54
+-        avcodec_init();
+-#endif
+         avcodec_register_all();
+         b_ffmpeginit = true;
+ 
+@@ -454,11 +400,7 @@ int ffmpeg_OpenCodec( decoder_t *p_dec )
+     }
+     int ret;
+     vlc_avcodec_lock();
+-#if LIBAVCODEC_VERSION_MAJOR >= 54
+     ret = avcodec_open2( p_sys->p_context, p_sys->p_codec, NULL /* options */ );
+-#else
+-    ret = avcodec_open( p_sys->p_context, p_sys->p_codec );
+-#endif
+     vlc_avcodec_unlock();
+     if( ret < 0 )
+         return VLC_EGENERIC;

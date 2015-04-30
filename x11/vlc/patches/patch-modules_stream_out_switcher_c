@@ -1,0 +1,75 @@
+$OpenBSD: patch-modules_stream_out_switcher_c,v 1.1 2015/04/30 06:32:21 ajacoutot Exp $
+--- modules/stream_out/switcher.c.orig	Tue Apr 28 20:11:06 2015
++++ modules/stream_out/switcher.c	Tue Apr 28 20:15:26 2015
+@@ -288,9 +288,6 @@ static int Open( vlc_object_t *p_this )
+     p_stream->pf_send   = Send;
+     p_stream->p_sys     = p_sys;
+ 
+-#if LIBAVCODEC_VERSION_MAJOR < 54
+-    avcodec_init();
+-#endif
+     avcodec_register_all();
+ 
+     return VLC_SUCCESS;
+@@ -353,11 +350,7 @@ static sout_stream_id_t *Add( sout_stream_t *p_stream,
+             return NULL;
+         }
+ 
+-#if LIBAVCODEC_VERSION_MAJOR < 54
+-        id->ff_enc_c = avcodec_alloc_context();
+-#else
+         id->ff_enc_c = avcodec_alloc_context3( id->ff_enc );
+-#endif
+ 
+         /* Set CPU capabilities */
+         unsigned i_cpu = vlc_CPU();
+@@ -390,11 +383,7 @@ static sout_stream_id_t *Add( sout_stream_t *p_stream,
+         id->ff_enc_c->bit_rate    = p_fmt->i_bitrate;
+ 
+         vlc_avcodec_lock();
+-#if LIBAVCODEC_VERSION_MAJOR >= 54
+         if( avcodec_open2( id->ff_enc_c, id->ff_enc, NULL /* options */ ) )
+-#else
+-        if( avcodec_open( id->ff_enc_c, id->ff_enc ) )
+-#endif
+         {
+             vlc_avcodec_unlock();
+             msg_Err( p_stream, "cannot open encoder" );
+@@ -754,11 +743,7 @@ static mtime_t VideoCommand( sout_stream_t *p_stream, 
+             return 0;
+         }
+ 
+-#if LIBAVCODEC_VERSION_MAJOR < 54
+-        id->ff_enc_c = avcodec_alloc_context();
+-#else
+         id->ff_enc_c = avcodec_alloc_context3( id->ff_enc );
+-#endif
+ 
+         /* Set CPU capabilities */
+         unsigned i_cpu = vlc_CPU();
+@@ -794,13 +779,8 @@ static mtime_t VideoCommand( sout_stream_t *p_stream, 
+                    i_aspect_num * (int64_t)id->ff_enc_c->height,
+                    i_aspect_den * (int64_t)id->ff_enc_c->width, 1 << 30 );
+ 
+-#if LIBAVCODEC_BUILD >= 4754
+         id->ff_enc_c->time_base.num = 1;
+         id->ff_enc_c->time_base.den = 25; /* FIXME */
+-#else
+-        id->ff_enc_c->frame_rate    = 25; /* FIXME */
+-        id->ff_enc_c->frame_rate_base = 1;
+-#endif
+ 
+         id->ff_enc_c->gop_size = 200;
+         id->ff_enc_c->max_b_frames = 0;
+@@ -813,11 +793,7 @@ static mtime_t VideoCommand( sout_stream_t *p_stream, 
+         id->ff_enc_c->pix_fmt = PIX_FMT_YUV420P;
+ 
+         vlc_avcodec_lock();
+-#if LIBAVCODEC_VERSION_MAJOR >= 54
+         if( avcodec_open2( id->ff_enc_c, id->ff_enc, NULL /* options */ ) )
+-#else
+-        if( avcodec_open( id->ff_enc_c, id->ff_enc ) )
+-#endif
+         {
+             vlc_avcodec_unlock();
+             msg_Err( p_stream, "cannot open encoder" );
