@@ -1,7 +1,15 @@
-$OpenBSD: patch-libhttpd_makegen_library_unix_mm,v 1.1.1.1 2005/01/21 06:49:11 jolan Exp $
---- libhttpd/makegen/library_unix.mm.orig	Tue Jan  4 17:18:47 2005
-+++ libhttpd/makegen/library_unix.mm	Thu Jan 20 23:17:42 2005
-@@ -32,7 +32,7 @@ do
+$OpenBSD: patch-libhttpd_makegen_library_unix_mm,v 1.2 2015/04/30 21:33:45 naddy Exp $
+--- libhttpd/makegen/library_unix.mm.orig	Sun Mar  5 14:39:36 2006
++++ libhttpd/makegen/library_unix.mm	Thu Apr 30 23:31:07 2015
+@@ -24,15 +24,11 @@ libobj=`echo $3 | sed "s/,/ /g"`
+ 
+ for src in $libsrc
+ do
+-	if test -c /dev/tty
+-	then
+-		$ECHO_N ".$ECHO_C" > /dev/tty
+-	fi
+ 	base=`echo $src | sed "s/\..*//"`
  	obj=`echo $src | sed "s/\.c\$/.o/"`
  	libobj="$libobj $obj"
  	echo	"$obj : $src Makefile.full"
