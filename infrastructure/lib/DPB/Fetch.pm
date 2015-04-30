@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.65 2015/04/29 13:28:36 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.66 2015/04/30 21:43:28 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -49,6 +49,7 @@ sub new
 				$o->{reverse}{$2} = $1;
 			}
 		}
+		close $fh;
 	}
 	print "zap duplicates...";
 	# rewrite "more or less" the same info, so we flush duplicates,
