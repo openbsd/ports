@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2014/03/16 12:39:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.34 2015/04/30 14:41:54 sthen Exp $
 @pkgpath mail/p5-Mail-SpamAssassin
 @newgroup _spamdaemon:506
 @newuser _spamdaemon:506:506:daemon:SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
@@ -87,6 +87,7 @@ ${P5SITE}/Mail/SpamAssassin/Plugin/ImageInfo.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/MIMEEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/MIMEHeader.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/OneLineBodyRuleType.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/PDFInfo.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/PhishTag.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Pyzor.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Razor2.pm
@@ -100,13 +101,16 @@ ${P5SITE}/Mail/SpamAssassin/Plugin/Shortcircuit.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/SpamCop.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Test.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/TextCat.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/TxRep.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/URIDNSBL.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/URIDetail.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/URIEval.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/URILocalBL.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/VBounce.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/WLBLEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/WhiteListSubject.pm
 ${P5SITE}/Mail/SpamAssassin/PluginHandler.pm
+${P5SITE}/Mail/SpamAssassin/RegistryBoundaries.pm
 ${P5SITE}/Mail/SpamAssassin/Reporter.pm
 ${P5SITE}/Mail/SpamAssassin/SQLBasedAddrList.pm
 ${P5SITE}/Mail/SpamAssassin/SpamdForkScaling.pm
@@ -171,8 +175,10 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::Plugin::DKIM.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::DNSEval.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Hashcash.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::MIMEEval.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::MIMEHeader.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::OneLineBodyRuleType.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::PDFInfo.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::PhishTag.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Pyzor.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Razor2.3p
@@ -185,11 +191,14 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::Plugin::SpamCop.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Test.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::TextCat.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::TxRep.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::URIDNSBL.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::URIDetail.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::URILocalBL.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::VBounce.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::WhiteListSubject.3p
 @man man/man3p/Mail::SpamAssassin::PluginHandler.3p
+@man man/man3p/Mail::SpamAssassin::RegistryBoundaries.3p
 @man man/man3p/Mail::SpamAssassin::SQLBasedAddrList.3p
 @man man/man3p/Mail::SpamAssassin::SubProcBackChannel.3p
 @man man/man3p/Mail::SpamAssassin::Timeout.3p
@@ -213,10 +222,13 @@ share/doc/SpamAssassin/sql/
 share/doc/SpamAssassin/sql/README
 share/doc/SpamAssassin/sql/README.awl
 share/doc/SpamAssassin/sql/README.bayes
+share/doc/SpamAssassin/sql/README.txrep
 share/doc/SpamAssassin/sql/awl_mysql.sql
 share/doc/SpamAssassin/sql/awl_pg.sql
 share/doc/SpamAssassin/sql/bayes_mysql.sql
 share/doc/SpamAssassin/sql/bayes_pg.sql
+share/doc/SpamAssassin/sql/txrep_mysql.sql
+share/doc/SpamAssassin/sql/txrep_pg.sql
 share/doc/SpamAssassin/sql/userpref_mysql.sql
 share/doc/SpamAssassin/sql/userpref_pg.sql
 share/doc/pkg-readmes/${FULLPKGNAME}
@@ -236,6 +248,8 @@ share/examples/SpamAssassin/v330.pre
 @sample ${CONFDIR}/v330.pre
 share/examples/SpamAssassin/v340.pre
 @sample ${CONFDIR}/v340.pre
+share/examples/SpamAssassin/v341.pre
+@sample ${CONFDIR}/v341.pre
 share/spamassassin/
 share/spamassassin/10_default_prefs.cf
 share/spamassassin/10_hasbase.cf
@@ -249,12 +263,14 @@ share/spamassassin/20_dynrdns.cf
 share/spamassassin/20_fake_helo_tests.cf
 share/spamassassin/20_freemail.cf
 share/spamassassin/20_freemail_domains.cf
+share/spamassassin/20_freemail_mailcom_domains.cf
 share/spamassassin/20_head_tests.cf
 share/spamassassin/20_html_tests.cf
 share/spamassassin/20_imageinfo.cf
 share/spamassassin/20_mailspike.cf
 share/spamassassin/20_meta_tests.cf
 share/spamassassin/20_net_tests.cf
+share/spamassassin/20_pdfinfo.cf
 share/spamassassin/20_phrases.cf
 share/spamassassin/20_porn.cf
 share/spamassassin/20_ratware.cf
