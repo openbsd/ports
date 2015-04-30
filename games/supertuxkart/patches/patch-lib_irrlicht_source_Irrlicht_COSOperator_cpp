@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_irrlicht_source_Irrlicht_COSOperator_cpp,v 1.1 2012/12/16 15:31:40 pascal Exp $
---- lib/irrlicht/source/Irrlicht/COSOperator.cpp.orig	Thu Dec 13 12:16:29 2012
-+++ lib/irrlicht/source/Irrlicht/COSOperator.cpp	Thu Dec 13 12:16:41 2012
+$OpenBSD: patch-lib_irrlicht_source_Irrlicht_COSOperator_cpp,v 1.2 2015/04/30 22:29:49 pascal Exp $
+--- lib/irrlicht/source/Irrlicht/COSOperator.cpp.orig	Wed Apr  1 03:51:46 2015
++++ lib/irrlicht/source/Irrlicht/COSOperator.cpp	Mon Apr  6 21:37:59 2015
 @@ -12,6 +12,7 @@
  #include <string.h>
  #include <unistd.h>
- #ifndef _IRR_SOLARIS_PLATFORM_
+ #if !defined(_IRR_SOLARIS_PLATFORM_) && !defined(__CYGWIN__)
 +#include <sys/param.h>
  #include <sys/types.h>
  #include <sys/sysctl.h>
