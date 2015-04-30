@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2014/04/06 06:37:56 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.24 2015/04/30 22:09:55 ajacoutot Exp $
 @bin bin/bluefish
 lib/bluefish/
 lib/bluefish/about.so
@@ -88,6 +88,7 @@ share/bluefish/default_accelmap
 share/bluefish/encodings
 share/bluefish/jsbeautifier/
 share/bluefish/jsbeautifier/__init__.py
+share/bluefish/jsbeautifier/__version__.py
 share/bluefish/jsbeautifier/unpackers/
 share/bluefish/jsbeautifier/unpackers/__init__.py
 share/bluefish/jsbeautifier/unpackers/evalbased.py
@@ -175,6 +176,14 @@ share/icons/hicolor/96x96/apps/bluefish.png
 share/icons/hicolor/96x96/mimetypes/application-x-bluefish-project.png
 share/icons/hicolor/scalable/apps/bluefish-icon.svg
 share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
+share/locale/ar/LC_MESSAGES/bluefish.mo
+share/locale/ar/LC_MESSAGES/bluefish_plugin_about.mo
+share/locale/ar/LC_MESSAGES/bluefish_plugin_charmap.mo
+share/locale/ar/LC_MESSAGES/bluefish_plugin_entities.mo
+share/locale/ar/LC_MESSAGES/bluefish_plugin_htmlbar.mo
+share/locale/ar/LC_MESSAGES/bluefish_plugin_infbrowser.mo
+share/locale/ar/LC_MESSAGES/bluefish_plugin_snippets.mo
+share/locale/ar/LC_MESSAGES/bluefish_plugin_zencoding.mo
 share/locale/bg/LC_MESSAGES/bluefish.mo
 share/locale/bg/LC_MESSAGES/bluefish_plugin_about.mo
 share/locale/bg/LC_MESSAGES/bluefish_plugin_charmap.mo
