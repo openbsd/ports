@@ -1,4 +1,7 @@
-$OpenBSD: patch-modules_codec_avcodec_video_c,v 1.1 2015/04/30 06:32:21 ajacoutot Exp $
+$OpenBSD: patch-modules_codec_avcodec_video_c,v 1.2 2015/04/30 08:01:58 ajacoutot Exp $
+
+Deal with newer FFmpeg API.
+
 --- modules/codec/avcodec/video.c.orig	Fri Feb 21 10:27:16 2014
 +++ modules/codec/avcodec/video.c	Tue Apr 28 23:54:02 2015
 @@ -237,11 +237,7 @@ int InitVideoDec( decoder_t *p_dec, AVCodecContext *p_

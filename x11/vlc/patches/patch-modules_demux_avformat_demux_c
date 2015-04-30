@@ -1,4 +1,7 @@
-$OpenBSD: patch-modules_demux_avformat_demux_c,v 1.1 2015/04/30 06:32:21 ajacoutot Exp $
+$OpenBSD: patch-modules_demux_avformat_demux_c,v 1.2 2015/04/30 08:01:58 ajacoutot Exp $
+
+Deal with newer FFmpeg API.
+
 --- modules/demux/avformat/demux.c.orig	Fri Feb 21 10:27:16 2014
 +++ modules/demux/avformat/demux.c	Wed Apr 29 01:07:11 2015
 @@ -58,19 +58,13 @@

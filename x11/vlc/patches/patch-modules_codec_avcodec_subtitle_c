@@ -1,4 +1,7 @@
-$OpenBSD: patch-modules_codec_avcodec_subtitle_c,v 1.1 2015/04/30 06:32:21 ajacoutot Exp $
+$OpenBSD: patch-modules_codec_avcodec_subtitle_c,v 1.2 2015/04/30 08:01:58 ajacoutot Exp $
+
+Deal with newer FFmpeg API.
+
 --- modules/codec/avcodec/subtitle.c.orig	Tue Apr 28 20:04:24 2015
 +++ modules/codec/avcodec/subtitle.c	Tue Apr 28 20:04:54 2015
 @@ -93,11 +93,7 @@ int InitSubtitleDec(decoder_t *dec, AVCodecContext *co

@@ -1,4 +1,7 @@
-$OpenBSD: patch-modules_codec_avcodec_fourcc_c,v 1.1 2015/04/30 06:32:21 ajacoutot Exp $
+$OpenBSD: patch-modules_codec_avcodec_fourcc_c,v 1.2 2015/04/30 08:01:58 ajacoutot Exp $
+
+Deal with newer FFmpeg API.
+
 --- modules/codec/avcodec/fourcc.c.orig	Tue Apr 28 19:46:30 2015
 +++ modules/codec/avcodec/fourcc.c	Tue Apr 28 20:03:15 2015
 @@ -87,9 +87,7 @@ static const struct
