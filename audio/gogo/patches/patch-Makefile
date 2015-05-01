@@ -1,6 +1,7 @@
---- ../virgin/gogo224b/Makefile	Fri Jan 21 19:28:35 2000
-+++ ./Makefile	Sun Jan 30 17:11:46 2000
-@@ -40,8 +40,13 @@
+$OpenBSD: patch-Makefile,v 1.1 2015/05/01 16:44:06 ajacoutot Exp $
+--- Makefile.orig	Fri Mar  3 06:21:19 2000
++++ Makefile	Fri May  1 18:42:53 2015
+@@ -42,8 +42,13 @@ CC=gcc -c -m486 -O3 -finline-functions -fomit-frame-po
  
  # NetBSD/i386 1.4.1
  #CC=gcc -D__unix__ -c -mcpu=pentiumpro -malign-double -O6 -fstrength-reduce -fexpensive-optimizations  -finline-functions -fomit-frame-pointer -funroll-loops
@@ -14,7 +15,7 @@
  AS=nasm
  LD=gcc
  
-@@ -150,3 +155,6 @@
+@@ -151,3 +156,6 @@ align.o    : align.nas nasm.h
  msubtbl.o  : msubtbl.nas nasm.h
  msub3dn.o  : msub3dn.nas nasm.h
  msubfpu.o  : msubfpu.nas nasm.h
