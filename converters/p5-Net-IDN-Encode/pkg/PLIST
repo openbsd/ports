@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/09/07 10:59:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/05/01 13:16:54 ajacoutot Exp $
 @conflict converters/p5-IDNA-Punycode-*
 @pkgpath converters/p5-IDNA-Punycode
 ${P5ARCH}/
@@ -17,7 +17,7 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/IDN/
 ${P5ARCH}/auto/Net/IDN/Punycode/
-@comment ${P5ARCH}/auto/Net/IDN/Punycode/Punycode.bs
+${P5ARCH}/auto/Net/IDN/Punycode/Punycode.bs
 ${P5ARCH}/auto/Net/IDN/Punycode/Punycode.so
 @man man/man3p/Net::IDN::Encode.3p
 @man man/man3p/Net::IDN::Overview.3p
