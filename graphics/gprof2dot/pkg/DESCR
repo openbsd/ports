@@ -1,0 +1,20 @@
+This is a Python script to convert the output from many profilers into a dot
+graph.
+
+It has the following features:
+
+- reads output from:
+- Linux perf
+- Valgrind's callgrind tool
+- oprofile
+- sysprof
+- xperf
+- VTune Amplifier XE
+- Very Sleepy
+- python profilers
+- Java's HPROF
+- prof, gprof
+- prunes nodes and edges below a certain threshold;
+- uses an heuristic to propagate time inside mutually recursive functions;
+- uses color efficiently to draw attention to hot-spots;
+- works on any platform where Python and graphviz is available, i.e, virtually anywhere.
