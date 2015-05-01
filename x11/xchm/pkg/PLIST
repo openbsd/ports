@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/12/21 20:46:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/05/01 07:49:23 ajacoutot Exp $
 @bin bin/xchm
 share/applications/xchm.desktop
 share/locale/be/LC_MESSAGES/xchm.mo
@@ -7,6 +7,9 @@ share/locale/cs/LC_MESSAGES/xchm.mo
 share/locale/de/LC_MESSAGES/xchm.mo
 share/locale/es/LC_MESSAGES/xchm.mo
 share/locale/fr/LC_MESSAGES/xchm.mo
+share/locale/gr/
+share/locale/gr/LC_MESSAGES/
+share/locale/gr/LC_MESSAGES/xchm.mo
 share/locale/hu/LC_MESSAGES/xchm.mo
 share/locale/it/LC_MESSAGES/xchm.mo
 share/locale/lv/LC_MESSAGES/xchm.mo
@@ -23,13 +26,21 @@ share/locale/uk/LC_MESSAGES/xchm.mo
 share/locale/zh_CN/LC_MESSAGES/xchm.mo
 share/locale/zh_TW/LC_MESSAGES/xchm.mo
 share/pixmaps/
+share/pixmaps/xchm-128.png
 share/pixmaps/xchm-128.xpm
+share/pixmaps/xchm-16.png
 share/pixmaps/xchm-16.xpm
+share/pixmaps/xchm-32.png
 share/pixmaps/xchm-32.xpm
+share/pixmaps/xchm-48.png
 share/pixmaps/xchm-48.xpm
+share/pixmaps/xchmdoc-128.png
 share/pixmaps/xchmdoc-128.xpm
+share/pixmaps/xchmdoc-16.png
 share/pixmaps/xchmdoc-16.xpm
+share/pixmaps/xchmdoc-32.png
 share/pixmaps/xchmdoc-32.xpm
+share/pixmaps/xchmdoc-48.png
 share/pixmaps/xchmdoc-48.xpm
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2015/05/01 07:49:23 ajacoutot Exp $
 
 COMMENT=	display chm files
 
-DISTNAME=	xchm-1.20
+DISTNAME=	xchm-1.23
 
 CATEGORIES=	devel textproc x11
 
