@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/09 13:07:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/01 16:05:07 zhuk Exp $
 COMMENT =		common classes for finance KDE 4 apps
 CATEGORIES =		productivity x11
 HOMEPAGE =		http://kmymoney2.sourceforge.net
@@ -17,6 +17,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		x11/kde4
 MODKDE4_USE =
+KDE4_ONLY =		Yes
 
 BUILD_DEPENDS =		devel/doxygen \
 			${MODKDE4_DEP_DIR}/libs
