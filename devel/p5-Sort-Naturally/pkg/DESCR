@@ -1,0 +1,4 @@
+This module exports two functions, nsort and ncmp; they are used in
+implementing my idea of a "natural sorting" algorithm. Under natural
+sorting, numeric substrings are compared numerically, and other
+word-characters are compared lexically.
