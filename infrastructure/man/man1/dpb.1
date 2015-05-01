@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.99 2015/05/01 18:07:31 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.100 2015/05/01 18:29:02 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -812,6 +812,9 @@ is used to fetch distfiles and handle corresponding log info.
 Thus,
 .Xr ftp 1
 does not happen as root.
+.It
+.Nm
+creates local directories as root, then gives them to the appropriate user.
 .It
 Neither of those users require
 .Xr sudo 8
