@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_irrlicht_source_Irrlicht_os_cpp,v 1.1 2012/12/16 15:31:40 pascal Exp $
+$OpenBSD: patch-lib_irrlicht_source_Irrlicht_os_cpp,v 1.2 2015/05/01 16:00:44 ajacoutot Exp $
 --- lib/irrlicht/source/Irrlicht/os.cpp.orig	Thu Dec 13 12:16:50 2012
 +++ lib/irrlicht/source/Irrlicht/os.cpp	Thu Dec 13 12:17:44 2012
 @@ -22,10 +22,14 @@
@@ -11,7 +11,7 @@ $OpenBSD: patch-lib_irrlicht_source_Irrlicht_os_cpp,v 1.1 2012/12/16 15:31:40 pa
  	#define bswap_16(X) bswap16(X)
  	#define bswap_32(X) bswap32(X)
 +#elif defined(__OpenBSD__)
-+	#include <sys/endian.h>
++	#include <endian.h>
 +	#define bswap_16(x) letoh16(x)
 +	#define bswap_32(x) letoh32(x)
  #elif !defined(_IRR_SOLARIS_PLATFORM_) && !defined(__PPC__) && !defined(_IRR_WINDOWS_API_)
