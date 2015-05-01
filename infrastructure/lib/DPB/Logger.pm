@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.17 2015/04/26 18:00:19 espie Exp $
+# $OpenBSD: Logger.pm,v 1.18 2015/05/01 20:49:46 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -114,13 +114,15 @@ sub make_logs
 	$self->run_as(
 	    sub {
 		my $log = $self->log_pkgpath($v);
+		CORE::open my $fh, ">>", $log or 
+		    DPB::Util->die_bang("Can't write to $log");
 		if ($self->{clean}) {
 			unlink($log);
 		}
 		for my $w ($v->build_path_list) {
 			$self->link($log, $self->log_pkgname($w));
 		}
-		return $log;
+		return ($log, $fh);
 	    });
 }
 
@@ -140,11 +142,9 @@ sub make_test_logs
 sub log_error
 {
 	my ($self, $v, @messages) = @_;
-	my $log = $self->make_logs($v);
+	my ($log, $fh) = $self->make_logs($v);
 	$self->run_as(
 	    sub {
-		CORE::open my $fh, ">>", $log or 
-		    DPB::Util->die_bang("Can't write to $log");
 		for my $msg (@messages) {
 			print $fh $msg, "\n";
 		}

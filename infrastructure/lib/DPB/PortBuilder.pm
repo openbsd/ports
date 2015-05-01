@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.64 2015/04/26 18:00:19 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.65 2015/05/01 20:49:46 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -205,8 +205,7 @@ sub build
 {
 	my ($self, $v, $core, $lock, $final_sub) = @_;
 	my $start = time();
-	my $log = $self->logger->make_logs($v);
-	open my $fh, ">>", $log or DPB::Util->die_bang("can't open $log");
+	my ($log, $fh) = $self->logger->make_logs($v);
 	my $memsize = $self->{sizer}->build_in_memory($fh, $core, $v);
 	my $meminfo;
 
@@ -281,8 +280,7 @@ sub test
 sub install
 {
 	my ($self, $v, $core) = @_;
-	my $log = $self->logger->make_logs($v);
-	open my $fh, ">>", $log or DPB::Util->die_bang("can't open $log");
+	my ($log, $fh) = $self->logger->make_logs($v);
 	print $fh ">>> Installing under ";
 	$v->quick_dump($fh);
 	my $job = DPB::Job::Port::Install->new($log, $fh, $v, $self,
