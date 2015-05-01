@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/22 04:16:31 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/01 06:55:32 ajacoutot Exp $
 bin/ETL-config
 include/ETL/
 include/ETL/_angle.h
@@ -66,5 +66,4 @@ include/ETL/surface
 include/ETL/thread
 include/ETL/trivial
 include/ETL/value
-lib/pkgconfig/
 lib/pkgconfig/ETL.pc
