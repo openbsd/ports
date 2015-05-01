@@ -1,11 +1,11 @@
-$OpenBSD: patch-utils_h,v 1.2 2008/04/10 15:22:17 sthen Exp $
+$OpenBSD: patch-utils_h,v 1.3 2015/05/01 14:17:37 ajacoutot Exp $
 --- utils.h.orig	Sun Oct 14 09:43:07 2007
 +++ utils.h	Wed Apr  9 11:05:18 2008
 @@ -14,6 +14,7 @@
  #include <netinet/in.h>
  #include <pthread.h>
  #include <signal.h>
-+#include <machine/endian.h>
++#include <endian.h>
  
  /* True/False definitions */
  #ifndef FALSE

@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_Main_cpp,v 1.1 2013/09/05 03:26:32 bentley Exp $
+$OpenBSD: patch-src_Main_cpp,v 1.2 2015/05/01 14:17:37 ajacoutot Exp $
 --- src/Main.cpp.orig	Sun Jul  7 20:07:53 2013
 +++ src/Main.cpp	Sun Jul  7 20:08:12 2013
 @@ -54,6 +54,8 @@
  #include <sys/time.h>
  #endif
  
-+#include <sys/endian.h>
++#include <endian.h>
 +
  #include "osal_dynamiclib.h"
  
