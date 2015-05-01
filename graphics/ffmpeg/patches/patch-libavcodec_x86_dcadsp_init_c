@@ -1,0 +1,21 @@
+$OpenBSD: patch-libavcodec_x86_dcadsp_init_c,v 1.1 2015/05/01 08:41:30 ajacoutot Exp $
+
+Disable AVX / FMA3 DTS SIMD functions for now which are currently
+crashing when using VLC with DTS.
+
+--- libavcodec/x86/dcadsp_init.c.orig	Sat May 31 21:16:47 2014
++++ libavcodec/x86/dcadsp_init.c	Fri May  1 04:12:19 2015
+@@ -103,11 +103,13 @@ av_cold void ff_synth_filter_init_x86(SynthFilterConte
+     if (EXTERNAL_SSE2(cpu_flags)) {
+         s->synth_filter_float = synth_filter_sse2;
+     }
++#if 0
+     if (EXTERNAL_AVX(cpu_flags)) {
+         s->synth_filter_float = synth_filter_avx;
+     }
+     if (EXTERNAL_FMA3(cpu_flags)) {
+         s->synth_filter_float = synth_filter_fma3;
+     }
++#endif
+ #endif /* HAVE_YASM */
+ }
