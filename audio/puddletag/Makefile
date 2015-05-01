@@ -1,23 +1,28 @@
-# $OpenBSD: Makefile,v 1.2 2014/05/07 12:17:29 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/01 12:55:38 ajacoutot Exp $
 
-COMMENT =	spreadsheet-like audio file tagger
+COMMENT =		spreadsheet-like audio file tagger
 
-MODPY_EGG_VERSION = 1.0.3
-DISTNAME =	puddletag-${MODPY_EGG_VERSION}
-CATEGORIES =	audio
-REVISION =	0
+MODPY_EGG_VERSION = 1.0.5
+DISTNAME =		puddletag-${MODPY_EGG_VERSION}
+CATEGORIES =		audio
 
+HOMEPAGE =		http://puddletag.sourceforge.net
+
+# XXX
 PERMIT_PACKAGE_CDROM =	Yes
 
-HOMEPAGE =	http://puddletag.sourceforge.net
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=puddletag/}
+MODULES =		lang/python
 
-NO_TEST =	Yes
-MODULES =	lang/python
-RUN_DEPENDS =	audio/py-mutagen \
-		devel/py-configobj \
-		devel/py-parsing \
-		devel/desktop-file-utils \
-		x11/py-qt4
+MODPY_SETUPTOOLS =	Yes
+
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=puddletag/}
+
+RUN_DEPENDS =		audio/py-mutagen \
+			devel/py-configobj \
+			devel/py-parsing \
+			devel/desktop-file-utils \
+			x11/py-qt4
+
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

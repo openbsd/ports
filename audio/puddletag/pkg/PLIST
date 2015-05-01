@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/06 14:01:16 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/01 12:55:38 ajacoutot Exp $
 bin/puddletag
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/__init__.py
@@ -138,7 +138,11 @@ lib/python${MODPY_VERSION}/site-packages/puddlestuff/util.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/util.pyc
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/webdb.py
 lib/python${MODPY_VERSION}/site-packages/puddlestuff/webdb.pyc
-lib/python${MODPY_VERSION}/site-packages/puddletag-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/puddletag-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/puddletag-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/puddletag-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/puddletag-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/puddletag-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 @man man/man1/puddletag.1
 share/applications/puddletag.desktop
 share/pixmaps/
