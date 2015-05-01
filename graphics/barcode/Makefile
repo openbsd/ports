@@ -1,19 +1,26 @@
-# $OpenBSD: Makefile,v 1.11 2015/02/16 22:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2015/05/01 07:34:01 ajacoutot Exp $
 
-COMMENT=	convert text strings to printed bars
+COMMENT=		convert text strings to printed bars
 
-DISTNAME=	barcode-0.98
-REVISION =	2
-CATEGORIES=	graphics
+DISTNAME=		barcode-0.99
+CATEGORIES=		graphics
 
-# GPLv2
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB+= c
 
-MASTER_SITES=	${MASTER_SITE_GNU:=barcode/}
+WANTLIB += c m paper
 
-CONFIGURE_STYLE= gnu dest
+MASTER_SITES=		${MASTER_SITE_GNU:=barcode/}
 
-NO_TEST=Yes
+MODULES=		devel/gettext
+
+LIB_DEPENDS=		print/libpaper
+
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
+post-install:
+	rm ${PREFIX}/bin/sample
 
 .include <bsd.port.mk>

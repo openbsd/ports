@@ -1,7 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/11/22 09:39:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/05/01 07:34:02 ajacoutot Exp $
 @bin bin/barcode
-include/barcode.h
 @info info/barcode.info
-lib/libbarcode.a
-@man man/man1/barcode.1
-@man man/man3/barcode.3

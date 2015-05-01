@@ -1,0 +1,18 @@
+$OpenBSD: patch-doc_barcode_texi,v 1.1 2015/05/01 07:34:02 ajacoutot Exp $
+
+install-info: warning: no info dir entry in `/usr/local/info/barcode.info'
+
+--- doc/barcode.texi.orig	Fri Mar 29 22:51:08 2013
++++ doc/barcode.texi	Fri May  1 09:15:47 2015
+@@ -17,6 +17,11 @@ n\input texinfo    @c -*-texinfo-*-
+ 
+ @comment %**start of header
+ @setfilename barcode.info
++@dircategory Text creation and manipulation
++@dircategory GNU libraries
++@direntry
++* Barcode: (barcode).           Barcode generation from text strings.
++@end direntry
+ @settitle Barcode @value{version}
+ @iftex
+ @afourpaper
