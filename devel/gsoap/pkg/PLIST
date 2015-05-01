@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/04/05 15:25:51 robert Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/05/01 06:52:58 ajacoutot Exp $
 @bin bin/soapcpp2
 @bin bin/wsdl2h
 include/stdsoap2.h
@@ -70,9 +70,6 @@ share/gsoap/custom/struct_timeval.c
 share/gsoap/custom/struct_timeval.h
 share/gsoap/custom/struct_tm.c
 share/gsoap/custom/struct_tm.h
-share/gsoap/custom/wsrmdemo-duration.o
-share/gsoap/custom/wsrmdemo_ssl-duration.o
-share/gsoap/custom/wsrmdemo_udp-duration.o
 share/gsoap/extras/
 share/gsoap/extras/README.txt
 share/gsoap/extras/ckdb.c
@@ -110,6 +107,7 @@ share/gsoap/import/wsc.h
 share/gsoap/import/wsc2.h
 share/gsoap/import/wsdd.h
 share/gsoap/import/wsdd10.h
+share/gsoap/import/wsdd5.h
 share/gsoap/import/wsdx.h
 share/gsoap/import/wsp.h
 share/gsoap/import/wsrm.h
@@ -147,7 +145,6 @@ share/gsoap/plugin/httpform.c
 share/gsoap/plugin/httpform.h
 share/gsoap/plugin/httpget.c
 share/gsoap/plugin/httpget.h
-share/gsoap/plugin/httpget.o
 share/gsoap/plugin/httpgettest.c
 share/gsoap/plugin/httpgettest.h
 share/gsoap/plugin/httpmd5.c
@@ -156,7 +153,6 @@ share/gsoap/plugin/httpmd5test.c
 share/gsoap/plugin/httpmd5test.h
 share/gsoap/plugin/httppost.c
 share/gsoap/plugin/httppost.h
-share/gsoap/plugin/httppost.o
 share/gsoap/plugin/httpposttest.c
 share/gsoap/plugin/httpposttest.h
 share/gsoap/plugin/logging.c
@@ -171,30 +167,18 @@ share/gsoap/plugin/plugin.c
 share/gsoap/plugin/plugin.h
 share/gsoap/plugin/smdevp.c
 share/gsoap/plugin/smdevp.h
-share/gsoap/plugin/sslserver-threads.o
 share/gsoap/plugin/threads.c
 share/gsoap/plugin/threads.h
 share/gsoap/plugin/wsaapi.c
 share/gsoap/plugin/wsaapi.h
-share/gsoap/plugin/wsademo-wsaapi.o
 share/gsoap/plugin/wsddapi.c
 share/gsoap/plugin/wsddapi.h
 share/gsoap/plugin/wsrmapi.c
 share/gsoap/plugin/wsrmapi.h
-share/gsoap/plugin/wsrmdemo-threads.o
-share/gsoap/plugin/wsrmdemo-wsaapi.o
-share/gsoap/plugin/wsrmdemo-wsrmapi.o
-share/gsoap/plugin/wsrmdemo_ssl-threads.o
-share/gsoap/plugin/wsrmdemo_ssl-wsaapi.o
-share/gsoap/plugin/wsrmdemo_ssl-wsrmapi.o
-share/gsoap/plugin/wsrmdemo_udp-threads.o
-share/gsoap/plugin/wsrmdemo_udp-wsaapi.o
-share/gsoap/plugin/wsrmdemo_udp-wsrmapi.o
 share/gsoap/plugin/wsse2api.c
 share/gsoap/plugin/wsse2api.h
+share/gsoap/plugin/wsseapi-lite.c
+share/gsoap/plugin/wsseapi-lite.h
 share/gsoap/plugin/wsseapi.c
 share/gsoap/plugin/wsseapi.cpp
 share/gsoap/plugin/wsseapi.h
-share/gsoap/plugin/wssedemo-mecevp.o
-share/gsoap/plugin/wssedemo-smdevp.o
-share/gsoap/plugin/wssedemo-wsseapi.o
