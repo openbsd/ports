@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/11/02 15:26:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2015/05/01 18:25:59 ajacoutot Exp $
 
 COMMENT=	texas hold'em poker game with online capabilities
 BROKEN-hppa =	needs atomic ops
@@ -8,13 +8,11 @@ V=		1.1.1
 DISTNAME=	PokerTH-${V}-src
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	pokerth-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.pokerth.net/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
