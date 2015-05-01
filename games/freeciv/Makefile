@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2015/04/10 14:43:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.101 2015/05/01 21:53:07 naddy Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
@@ -59,7 +59,8 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv" \
 		LUA_CFLAGS=-I${MODLUA_INCL_DIR} \
-		LUA_LIBS="${MODLUA_LIB} -lm"
+		LUA_LIBS="${MODLUA_LIB} -lm" \
+		ac_cv_header_execinfo_h=no
 
 CONFIGURE_ARGS=	--with-ggz-client=no \
 		--enable-mapimg=no \
