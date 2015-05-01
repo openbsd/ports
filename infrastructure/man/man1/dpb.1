@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.98 2015/05/01 17:52:00 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.99 2015/05/01 18:07:31 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -335,16 +335,27 @@ Set to 0 or 1 on per-host basis.
 See
 .Ar ALWAYS_CLEAN
 parameter.
+.It build_user=user
+Use
+.Ar user
+for non root jobs if possible (defaults to
+.Xr whoami 1
+value).
 .It chroot=dir
 Chroot to
 .Ar dir
-before building (only available for distant hosts currently).
+before building.
 .It chroot_user=user
+Synonym for
+.Ar build_user
+(compatibility).
+.It fetch_user=user
 Use
 .Ar user
-for non sudo jobs on distant host (defaults to
-.Xr whoami 1
-value).
+for all fetch activities if possible
+.Po defaults to
+.Ar build_user
+.Pc .
 .It jobs=n
 Number of jobs to run on that host, defaults to hw.ncpu.
 .It junk=n
@@ -352,6 +363,20 @@ Junk unused packages each n steps.
 See
 .Fl J
 option.
+.It lock_user=user
+Use
+.Ar user
+for local lock files  if possible
+.Po defaults to
+.Ar log_user
+.Pc .
+.It log_user=user
+Use
+.Ar user
+for all log files if possible
+.Po defaults to
+.Ar build_user
+.Pc .
 .It memory=thr
 Build everything below that wrkdir threshold with
 .Ev USE_MFS Ns = Ns Sq Yes ,
@@ -746,6 +771,58 @@ can be a non-integral value, usually lower than 1, in which case they
 represent the fraction of cores that should be affected to squiggles,
 as decided randomly at the start of each build.
 0.7 or 0.8 might be a good choice for dual core machines.
+.Sh BUILDING WITHOUT SUDO
+.Nm
+can use a privilege drop model where it doesn't need
+.Xr sudo 8 .
+.Bl -bullet
+.It
+Start
+.Nm
+as root.
+.It
+Provide an
+.Xr ssh 1
+connection to distant hosts from root as root.
+.It
+.Nm
+will drop privileges whenever it tries to build or fetch or log something.
+.It
+.Ar build_user
+is used to build stuff locally or distantly (can be per-host), using:
+.Li chroot -u user /build_root
+(with
+.Pa /build_root
+=
+.Pa /
+if there is no actual chroot needed).
+.Pp
+Note that
+.Nm
+will not start as root without a
+.Ar build_user .
+.It
+.Ar log_user
+is used to open all log files.
+.Ar log_user
+only needs to exist locally.
+.It
+.Ar fetch_user
+is used to fetch distfiles and handle corresponding log info.
+Thus,
+.Xr ftp 1
+does not happen as root.
+.It
+Neither of those users require
+.Xr sudo 8
+privileges.
+.Pp
+.Nm
+will still run the
+.Ar STARTUP
+script as root,
+as well as all operations that involve adding and removing packages.
+.El
 .Sh LOCKS AND ERRORS
 .Nm
 still uses the normal ports tree mechanism while building, which includes
@@ -1012,7 +1089,7 @@ Note that the actual build time starts at
 and finishes at
 .Sq package .
 .It Pa clean.log
-Paths that do not clean correctly, and required sudo to clean the directory.
+Paths that do not clean correctly, and required root to clean the directory.
 .It Pa concurrent.log
 Shows the actual concurrency achieved as a result of job starvation /
 parallel handling.
