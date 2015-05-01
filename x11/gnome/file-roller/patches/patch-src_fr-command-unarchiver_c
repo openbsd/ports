@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_fr-command-unarchiver_c,v 1.1 2015/04/03 12:31:10 jasper Exp $
+$OpenBSD: patch-src_fr-command-unarchiver_c,v 1.2 2015/05/01 15:55:41 ajacoutot Exp $
 
 Don't define _XOPEN_SOURCE which would mask the declaration of strptime()
 
@@ -8,7 +8,7 @@ Don't define _XOPEN_SOURCE which would mask the declaration of strptime()
   */
  
  #include <config.h>
-+#ifndef __linux__
++#ifdef __linux__
  #define _XOPEN_SOURCE       /* See feature_test_macros(7) */
 +#endif
  #include <time.h>
