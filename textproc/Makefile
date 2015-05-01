@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.443 2015/04/29 12:02:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.444 2015/05/01 15:46:03 landry Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -138,9 +138,11 @@
      SUBDIR += p5-Catalyst-View-TT-ForceUTF8
      SUBDIR += p5-Catalyst-View-TT-FunctionGenerator
      SUBDIR += p5-Catalyst-View-XSLT
+     SUBDIR += p5-Data-Password
      SUBDIR += p5-Email-Find
      SUBDIR += p5-Encode-Detect
      SUBDIR += p5-Encode-Locale
+     SUBDIR += p5-File-KeePass
      SUBDIR += p5-Font-AFM
      SUBDIR += p5-Font-TTF
      SUBDIR += p5-HTML-Summary

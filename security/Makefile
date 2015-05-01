@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.362 2015/03/16 11:10:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.363 2015/05/01 15:46:03 landry Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -86,6 +86,7 @@
      SUBDIR += keepassx
      SUBDIR += keychain
      SUBDIR += klaxon
+     SUBDIR += kpcli
      SUBDIR += kqoauth
      SUBDIR += l0phtcrack
      SUBDIR += libassuan
