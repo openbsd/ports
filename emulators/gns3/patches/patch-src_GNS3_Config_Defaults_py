@@ -1,45 +1,39 @@
-$OpenBSD: patch-src_GNS3_Config_Defaults_py,v 1.5 2014/06/27 06:19:43 ajacoutot Exp $
---- src/GNS3/Config/Defaults.py.orig	Wed Oct 23 04:57:46 2013
-+++ src/GNS3/Config/Defaults.py	Fri Jun 27 08:08:30 2014
-@@ -29,6 +29,8 @@ elif sys.platform.startswith('darwin'):
-         DYNAMIPS_DEFAULT_PATH = os.getcwdu() + os.sep + '../Resources/dynamips-0.2.10-OSX.intel64.bin'
-     else:
-         DYNAMIPS_DEFAULT_PATH = os.getcwdu() + os.sep + 'dynamips-0.2.10-OSX.intel64.bin'
-+elif sys.platform.startswith('openbsd'):
-+    DYNAMIPS_DEFAULT_PATH = unicode('${LOCALBASE}/bin/dynamips')
+$OpenBSD: patch-src_GNS3_Config_Defaults_py,v 1.6 2015/05/01 09:16:51 ajacoutot Exp $
+--- src/GNS3/Config/Defaults.py.orig	Tue Jul  8 04:28:58 2014
++++ src/GNS3/Config/Defaults.py	Fri May  1 11:09:44 2015
+@@ -48,7 +48,7 @@ if sys.platform.startswith('darwin'):
+ elif sys.platform.startswith('win'):
+     BASECONFIG_DIR = ''
  else:
-     DYNAMIPS_DEFAULT_PATH = unicode('dynamips')
+-    BASECONFIG_DIR = '/usr/local/share/examples/gns3/'
++    BASECONFIG_DIR = '${PREFIX}/share/examples/gns3/'
  
-@@ -55,6 +57,8 @@ if sys.platform.startswith('win'):
-     QEMUWRAPPER_DEFAULT_PATH = unicode('qemuwrapper.exe')
- elif sys.platform.startswith('darwin') and hasattr(sys, "frozen"):
-     QEMUWRAPPER_DEFAULT_PATH = os.getcwdu() + os.sep + '../Resources/qemuwrapper.py'
-+elif sys.platform.startswith('openbsd'):
-+    QEMUWRAPPER_DEFAULT_PATH = unicode('${LOCALBASE}/libexec/gns3/qemuwrapper.py')
- else:
-     # look for qemuwrapper in the current working directory
-     qemuwrapper_path = os.getcwdu() + os.sep + 'qemuwrapper/qemuwrapper.py'
-@@ -86,18 +90,20 @@ elif sys.platform.startswith('darwin') and hasattr(sys
-         QEMU_DEFAULT_PATH = os.getcwdu() + os.sep + '../Resources/Qemu-0.11.0/bin/qemu'
+ # Default path to qemuwrapper
+ if sys.platform.startswith('win'):
+@@ -63,7 +63,7 @@ else:
+     elif platform.system() == 'Linux':
+         QEMUWRAPPER_DEFAULT_PATH = unicode("/usr/share/gns3/qemuwrapper.py")
+     else:
+-        QEMUWRAPPER_DEFAULT_PATH = unicode("/usr/local/libexec/gns3/qemuwrapper.py")
++        QEMUWRAPPER_DEFAULT_PATH = unicode("${PREFIX}/libexec/gns3/qemuwrapper.py")
+ 
+ # Default path to qemuwrapper working directory
+ if os.environ.has_key("TEMP"):
+@@ -87,7 +87,7 @@ elif sys.platform.startswith('darwin') and hasattr(sys
          QEMU_IMG_DEFAULT_PATH = os.getcwdu() + os.sep + '../Resources/Qemu-0.11.0/bin/qemu-img'
  else:
--    QEMU_IMG_DEFAULT_PATH = unicode('qemu-img')
+     QEMU_IMG_DEFAULT_PATH = unicode('qemu-img')
 -    QEMU_DEFAULT_PATH = unicode('qemu')
-+    QEMU_DEFAULT_PATH = unicode('${LOCALBASE}/bin/qemu-system-i386')
-+    QEMU_IMG_DEFAULT_PATH = unicode('${LOCALBASE}/bin/qemu-img')
++    QEMU_DEFAULT_PATH = unicode('qemu-i386')
  
  # Default path to vboxwrapper
  if sys.platform.startswith('win'):
-     VBOXWRAPPER_DEFAULT_PATH = unicode('vboxwrapper.exe')
- elif sys.platform.startswith('darwin') and hasattr(sys, "frozen"):
-     VBOXWRAPPER_DEFAULT_PATH = os.getcwdu() + os.sep + '../Resources/VBoxWrapper/Contents/MacOS/VBoxWrapper'
-+elif sys.platform.startswith('openbsd'):
-+    VBOXWRAPPER_DEFAULT_PATH = unicode('${LOCALBASE}/libexec/gns3/vboxwrapper.py')
- else:
-     # look for vboxwrapper in the current working directory
-     vboxwrapper_path = os.getcwdu() + os.sep + 'vboxwrapper/vboxwrapper.py'
--    if os.path.exists(qemuwrapper_path):
-+    if os.path.exists(vboxwrapper_path):
-         VBOXWRAPPER_DEFAULT_PATH = vboxwrapper_path
+@@ -102,7 +102,7 @@ else:
      elif platform.system() == 'Linux':
          VBOXWRAPPER_DEFAULT_PATH = unicode("/usr/share/gns3/vboxwrapper.py")
+     else:
+-        VBOXWRAPPER_DEFAULT_PATH = unicode("/usr/local/libexec/gns3/vboxwrapper.py")
++        VBOXWRAPPER_DEFAULT_PATH = unicode("${PREFIX}/libexec/gns3/vboxwrapper.py")
+ 
+ # Default path to vboxwrapper working directory
+ if os.environ.has_key("TEMP"):

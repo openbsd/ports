@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2014/06/27 06:19:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/05/01 09:16:51 ajacoutot Exp $
 
 COMMENT=	graphical network simulator
 
-MODPY_EGG_VERSION = 0.8.6
+MODPY_EGG_VERSION = 0.8.7
 DISTNAME=	GNS3-${MODPY_EGG_VERSION}-src
 PKGNAME=	gns3-${MODPY_EGG_VERSION}
 
