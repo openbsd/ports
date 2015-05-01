@@ -1,0 +1,7 @@
+This module checks potential passwords for crackability. It checks that
+the password is in the appropriate length, that it has enough character
+groups, that it does not contain the same characters repeatedly or
+ascending or descending characters, or charcters close to each other in
+the keyboard. It will also attempt to search the ispell word file for
+existance of whole words. The module's policies can be modified by
+changing its variables.
