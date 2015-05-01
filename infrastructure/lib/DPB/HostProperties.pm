@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.5 2015/05/01 09:03:20 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.6 2015/05/01 19:42:54 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -88,7 +88,6 @@ sub finalize
 	}
 	$prop->set_user('build', 'base');
 	$prop->set_user('log', 'build');
-	$prop->set_user('lock', 'log');
 	$prop->set_user('fetch', 'build');
 
 	if (defined $prop->{memory}) {

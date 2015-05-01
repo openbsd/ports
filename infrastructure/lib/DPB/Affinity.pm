@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.12 2015/04/26 18:00:19 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.13 2015/05/01 19:42:54 espie Exp $
 #
 # Copyright (c) 2012-2013 Marc Espie <espie@openbsd.org>
 #
@@ -34,7 +34,7 @@ sub new
 {
 	my ($class, $state, $dir) = @_;
 
-	my $o = bless {dir => $dir, user => $state->{lock_user}}, $class;
+	my $o = bless {dir => $dir, user => $state->{log_user}}, $class;
 	$o->make_path($dir);
 	$o->retrieve_existing_markers($state->logger);
 	return $o;
