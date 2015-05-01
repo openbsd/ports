@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.4 2015/04/25 11:32:42 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.5 2015/05/01 09:03:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -53,6 +53,19 @@ sub has_mem
 	return $has_mem;
 }
 
+sub set_user
+{
+	my ($prop, $tag, $default) = @_;
+	my $user = $tag."_user";
+	my $mode = $tag."_dirmode";
+	if (defined $prop->{$user}) {
+		$prop->{$user} = 
+		    DPB::Id->new($prop->{$user});
+	} else {
+		$prop->{$user} = $prop->{$default."_user"};
+	}
+}
+
 sub finalize
 {
 	my $prop = shift;
@@ -73,30 +86,10 @@ sub finalize
 		} else {
 		}
 	}
-	if (defined $prop->{build_user}) {
-		$prop->{build_user} = 
-		    DPB::Id->new($prop->{build_user});
-	} else {
-		$prop->{build_user} = $prop->{base_user};
-	}
-	if (defined $prop->{log_user}) {
-		$prop->{log_user} =
-		    DPB::Id->new($prop->{log_user});
-	} else {
-		$prop->{log_user} = $prop->{build_user};
-	}
-	if (defined $prop->{lock_user}) {
-		$prop->{lock_user} =
-		    DPB::Id->new($prop->{lock_user});
-	} else {
-		$prop->{lock_user} = $prop->{log_user};
-	}
-	if (defined $prop->{fetch_user}) {
-		$prop->{fetch_user} =
-		    DPB::Id->new($prop->{fetch_user});
-	} else {
-		$prop->{fetch_user} = $prop->{build_user};
-	}
+	$prop->set_user('build', 'base');
+	$prop->set_user('log', 'build');
+	$prop->set_user('lock', 'log');
+	$prop->set_user('fetch', 'build');
 
 	if (defined $prop->{memory}) {
 		my $m = $prop->{memory};
