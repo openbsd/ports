@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/01 00:38:29 daniel Exp $
+bin/compiler_test.pl
+@bin bin/csmith
+include/csmith/
+include/csmith/runtime/
+include/csmith/runtime/csmith.h
+include/csmith/runtime/csmith_minimal.h
+include/csmith/runtime/custom_limits.h
+include/csmith/runtime/custom_stdint_x86.h
+include/csmith/runtime/platform_avr.h
+include/csmith/runtime/platform_generic.h
+include/csmith/runtime/platform_msp430.h
+include/csmith/runtime/random_inc.h
+include/csmith/runtime/safe_abbrev.h
+include/csmith/runtime/safe_math.h
+include/csmith/runtime/safe_math_macros.h
+include/csmith/runtime/safe_math_macros_notmp.h
+include/csmith/runtime/stdint_avr.h
+include/csmith/runtime/stdint_ia32.h
+include/csmith/runtime/stdint_ia64.h
+include/csmith/runtime/stdint_msp430.h
+include/csmith/runtime/volatile_runtime.c
+include/csmith/runtime/volatile_runtime.h
+include/csmith/runtime/windows/
+include/csmith/runtime/windows/stdint.h
+lib/libcsmith.a
+lib/libcsmith.la
+@lib lib/libcsmith.so.${LIBcsmith_VERSION}
+share/doc/csmith/
+share/doc/csmith/probabilities.txt
+share/examples/csmith.conf

@@ -1,0 +1,21 @@
+$OpenBSD: patch-runtime_Makefile_in,v 1.1.1.1 2015/05/01 00:38:29 daniel Exp $
+--- runtime/Makefile.in.orig	Thu Jan 22 00:39:04 2015
++++ runtime/Makefile.in	Thu Jan 22 00:39:21 2015
+@@ -339,7 +339,7 @@ libcsmith_a_SOURCES = \
+ 
+ # XXX --- This does not work; the library is still installed to $(libdir).
+ # libcsmith_a_libdir = \
+-# 	$(libdir)/$(PACKAGE)-$(VERSION)
++# 	$(libdir)/$(PACKAGE)
+ 
+ # Build a shared library, too, in case someone wants this.
+ lib_LTLIBRARIES = libcsmith.la
+@@ -356,7 +356,7 @@ libcsmith_la_CPPFLAGS = \
+ 	$(libcsmith_a_CPPFLAGS)
+ 
+ libcsmith_a_includedir = \
+-	$(includedir)/$(PACKAGE)-$(VERSION)
++	$(includedir)/$(PACKAGE)/runtime
+ 
+ nobase_libcsmith_a_include_HEADERS = \
+ 	csmith.h \
