@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/11/30 23:11:04 edd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/05/01 08:39:11 ajacoutot Exp $
 include/girara/
 include/girara/callbacks.h
 include/girara/commands.h
@@ -22,14 +22,14 @@ include/girara/version.h
 lib/libgirara-gtk3.a
 @lib lib/libgirara-gtk3.so.${LIBgirara-gtk3_VERSION}
 lib/pkgconfig/girara-gtk3.pc
-share/locale/de/LC_MESSAGES/libgirara-gtk3-1.mo
-share/locale/el/LC_MESSAGES/libgirara-gtk3-1.mo
-share/locale/eo/LC_MESSAGES/libgirara-gtk3-1.mo
-share/locale/es/LC_MESSAGES/libgirara-gtk3-1.mo
-share/locale/fr/LC_MESSAGES/libgirara-gtk3-1.mo
-share/locale/he/LC_MESSAGES/libgirara-gtk3-1.mo
-share/locale/it/LC_MESSAGES/libgirara-gtk3-1.mo
-share/locale/pl/LC_MESSAGES/libgirara-gtk3-1.mo
-share/locale/pt_BR/LC_MESSAGES/libgirara-gtk3-1.mo
-share/locale/ru/LC_MESSAGES/libgirara-gtk3-1.mo
-share/locale/tr/LC_MESSAGES/libgirara-gtk3-1.mo
+share/locale/de/LC_MESSAGES/libgirara-gtk3-2.mo
+share/locale/el/LC_MESSAGES/libgirara-gtk3-2.mo
+share/locale/eo/LC_MESSAGES/libgirara-gtk3-2.mo
+share/locale/es/LC_MESSAGES/libgirara-gtk3-2.mo
+share/locale/fr/LC_MESSAGES/libgirara-gtk3-2.mo
+share/locale/he/LC_MESSAGES/libgirara-gtk3-2.mo
+share/locale/it/LC_MESSAGES/libgirara-gtk3-2.mo
+share/locale/pl/LC_MESSAGES/libgirara-gtk3-2.mo
+share/locale/pt_BR/LC_MESSAGES/libgirara-gtk3-2.mo
+share/locale/ru/LC_MESSAGES/libgirara-gtk3-2.mo
+share/locale/tr/LC_MESSAGES/libgirara-gtk3-2.mo
