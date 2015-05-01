@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/06/04 23:11:51 fgsch Exp $
-bin/cdrdao
-bin/cue2toc
-bin/toc2cddb
-bin/toc2cue
+@comment $OpenBSD: PLIST,v 1.8 2015/05/01 06:15:46 ajacoutot Exp $
+@bin bin/cdrdao
+@bin bin/cue2toc
+@bin bin/toc2cddb
+@bin bin/toc2cue
 %%audio%%
 @man man/man1/cdrdao.1
 @man man/man1/cue2toc.1

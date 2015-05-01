@@ -1,12 +1,12 @@
-$OpenBSD: patch-scsilib_include_btorder_h,v 1.4 2010/05/21 20:30:52 espie Exp $
+$OpenBSD: patch-scsilib_include_btorder_h,v 1.5 2015/05/01 06:15:46 ajacoutot Exp $
 --- scsilib/include/btorder.h.orig	Sun Jun 15 23:41:22 2003
-+++ scsilib/include/btorder.h	Fri May 21 21:05:09 2010
++++ scsilib/include/btorder.h	Fri May  1 08:11:47 2015
 @@ -28,6 +28,9 @@
  #include <sys/types.h>			/* try to load isa_defs.h on Solaris */
  #define	_INCL_SYS_TYPES_H
  #endif
 +#ifdef __OpenBSD__
-+#include <machine/endian.h>
++#include <endian.h>
 +#endif
  
  #ifndef _MCONFIG_H
