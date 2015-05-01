@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.211 2015/04/30 22:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.212 2015/05/01 12:45:04 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 BROKEN-i386=		ld from binutils-2.15 uses too much RAM
@@ -6,7 +6,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			42.0.2311.90
+V=			42.0.2311.135
 DISTNAME=		chromium-${V}
 
 CATEGORIES=		www
