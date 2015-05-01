@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_sqliteInt_h,v 1.12 2013/11/28 15:25:51 stu Exp $
+$OpenBSD: patch-src_sqliteInt_h,v 1.13 2015/05/01 16:51:24 ajacoutot Exp $
 --- src/sqliteInt.h.orig	Wed Nov 27 23:31:08 2013
 +++ src/sqliteInt.h	Wed Nov 27 23:30:35 2013
 @@ -61,10 +61,6 @@
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_sqliteInt_h,v 1.12 2013/11/28 15:25:51 stu Exp $
 -*/
 -#ifdef SQLITE_AMALGAMATION
 -const int sqlite3one = 1;
-+#include <sys/endian.h>
++#include <endian.h>
 +#if _BYTE_ORDER == _BIG_ENDIAN
 +#define SQLITE_BIGENDIAN	1
 +#define SQLITE_LITTLEENDIAN	0

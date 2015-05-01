@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_include_compat_h,v 1.1 2012/08/21 00:50:27 rfreeman Exp $
+$OpenBSD: patch-build_include_compat_h,v 1.2 2015/05/01 16:51:25 ajacoutot Exp $
 
 this is committed upstream as of 2012-08-18, fixes build on hppa, ppc
 
@@ -10,7 +10,7 @@ this is committed upstream as of 2012-08-18, fixes build on hppa, ppc
  
 -#elif defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 +#elif defined(__OpenBSD__)
-+# include <machine/endian.h>
++# include <endian.h>
 +# if _BYTE_ORDER == _LITTLE_ENDIAN
 +#  define B_LITTLE_ENDIAN 1
 +#  define B_BIG_ENDIAN    0

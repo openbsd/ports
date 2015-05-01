@@ -13,7 +13,7 @@
 +#include <sys/stat.h>
 +#include <sys/ioctl.h>
 +#include <sys/ioccom.h>
-+#include <machine/endian.h>
++#include <endian.h>
 +#endif
  
  /*********************** LINUX INCLUDES ********************************/
