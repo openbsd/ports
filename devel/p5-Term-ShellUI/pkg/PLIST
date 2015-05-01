@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/01 15:41:21 landry Exp $
+${P5SITE}/Term/
+${P5SITE}/Term/ShellUI.pm
+${P5SITE}/Text/
+${P5SITE}/Text/Shellwords/
+${P5SITE}/Text/Shellwords/Cursor.pm
+@man man/man3p/Term::ShellUI.3p
+@man man/man3p/Text::Shellwords::Cursor.3p
