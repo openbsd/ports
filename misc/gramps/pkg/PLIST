@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2014/10/29 10:49:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2015/05/01 07:42:13 ajacoutot Exp $
 bin/gramps
 lib/python${MODPY_VERSION}/site-packages/gramps/
 lib/python${MODPY_VERSION}/site-packages/gramps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -126,6 +126,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/display/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/display/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/display/name.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/display/name.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/display/place.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/display/place.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/errors.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/errors.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/
@@ -589,6 +591,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_changed
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_changedsince.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hascitation.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hascitation.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hasdata.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hasdata.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hasgallery.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hasgallery.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hasidof.py
@@ -611,6 +615,8 @@ lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hassour
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hassourceof.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hastag.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hastag.pyc
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hastitle.py
+lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_hastitle.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_inlatlonneighborhood.py
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_inlatlonneighborhood.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/gen/filters/rules/place/_matcheseventfilter.py
@@ -2550,6 +2556,7 @@ share/locale/fr/LC_MESSAGES/gramps.mo
 share/locale/he/LC_MESSAGES/gramps.mo
 share/locale/hr/LC_MESSAGES/gramps.mo
 share/locale/hu/LC_MESSAGES/gramps.mo
+share/locale/is/LC_MESSAGES/gramps.mo
 share/locale/it/LC_MESSAGES/gramps.mo
 share/locale/ja/LC_MESSAGES/gramps.mo
 share/locale/lt/LC_MESSAGES/gramps.mo
@@ -2567,6 +2574,7 @@ share/locale/sl/LC_MESSAGES/gramps.mo
 share/locale/sq/LC_MESSAGES/gramps.mo
 share/locale/sr/LC_MESSAGES/gramps.mo
 share/locale/sv/LC_MESSAGES/gramps.mo
+share/locale/tr/LC_MESSAGES/gramps.mo
 share/locale/uk/LC_MESSAGES/gramps.mo
 share/locale/vi/LC_MESSAGES/gramps.mo
 share/locale/zh_CN/LC_MESSAGES/gramps.mo
