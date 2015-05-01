@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_display_img_h,v 1.1 2013/06/24 16:48:43 sebastia Exp $
+$OpenBSD: patch-src_display_img_h,v 1.2 2015/05/01 18:04:07 ajacoutot Exp $
 --- src/display/img.h.orig	Fri Jun 21 08:45:24 2013
 +++ src/display/img.h	Fri Jun 21 08:46:00 2013
 @@ -19,11 +19,13 @@
  
  #include <stdio.h>
  
-+#include <sys/endian.h>
++#include <endian.h>
 +
  typedef uint8_t chan;
  typedef uint32_t pel;

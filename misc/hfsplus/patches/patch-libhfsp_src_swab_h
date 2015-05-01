@@ -1,20 +1,17 @@
-$OpenBSD: patch-libhfsp_src_swab_h,v 1.5 2011/04/22 11:37:46 sthen Exp $
---- libhfsp/src/swab.h.orig	Tue Mar  5 19:50:29 2002
-+++ libhfsp/src/swab.h	Sun Apr 17 09:50:06 2011
-@@ -25,7 +25,12 @@
+$OpenBSD: patch-libhfsp_src_swab_h,v 1.6 2015/05/01 18:04:07 ajacoutot Exp $
+--- libhfsp/src/swab.h.orig	Tue Mar  5 20:50:29 2002
++++ libhfsp/src/swab.h	Fri May  1 20:00:11 2015
+@@ -25,7 +25,9 @@
   */
  
-+#if defined(__OpenBSD__)
-+#include <sys/types.h>
-+#include <sys/endian.h>
-+#else
  #include <endian.h>
++#ifndef __OpenBSD__
  #include <byteswap.h> 
 +#endif
  
   /* basic fuction:
      value = swab_inc(ptr);
-@@ -34,30 +39,58 @@
+@@ -34,30 +36,58 @@
  
  #if BYTE_ORDER == LITTLE_ENDIAN
  

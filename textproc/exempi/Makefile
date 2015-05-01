@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2014/09/16 19:56:10 miod Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/01 18:04:07 ajacoutot Exp $
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT =		implementation of XMP
 DISTNAME =		exempi-2.2.1
+REVISION =		0
 
 CATEGORIES =		textproc
 
