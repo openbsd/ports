@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.100 2015/05/01 18:29:02 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.101 2015/05/01 19:41:42 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -363,13 +363,6 @@ Junk unused packages each n steps.
 See
 .Fl J
 option.
-.It lock_user=user
-Use
-.Ar user
-for local lock files  if possible
-.Po defaults to
-.Ar log_user
-.Pc .
 .It log_user=user
 Use
 .Ar user
@@ -1035,11 +1028,18 @@ will force
 .Nm
 into checking all files again.
 .Pp
+All those files belong to the
+.Ar fetch_user
+if it is defined.
+.Pp
 .Nm
 also records rolling build statistics under
 .Pa ${DISTDIR}/build-stats/${ARCH} ,
 and uses them automatically in the absence of
 .Fl b Ar logfile .
+That file belongs to the
+.Ar log_user
+if it is defined.
 .Pp
 If
 .Fl s
@@ -1050,10 +1050,17 @@ by default, location adjustable with
 .Fl S Ar sizelog
 .Pc .
 This is then reused for the mfs threshold option.
+That file also belongs to the
+.Ar log_user
+if it is defined.
 .Pp
 .Nm
 will also create a large number of log files under
-.Pa ${PORTSDIR}/logs/{$ARCH} :
+.Pa ${PORTSDIR}/logs/{$ARCH} ,
+which will belong
+to
+.Ar log_user
+if it is defined:
 .Bl -tag -width engine.log
 .It Pa affinity/
 Affinity information.
