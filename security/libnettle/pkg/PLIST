@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/05/07 06:39:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/05/01 16:03:35 ajacoutot Exp $
 @bin bin/nettle-hash
 @bin bin/nettle-lfib-stream
 @bin bin/pkcs1-conv
@@ -58,6 +58,5 @@ lib/libhogweed.a
 @lib lib/libhogweed.so.${LIBhogweed_VERSION}
 lib/libnettle.a
 @lib lib/libnettle.so.${LIBnettle_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/hogweed.pc
 lib/pkgconfig/nettle.pc

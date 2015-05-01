@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2014/09/18 06:15:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/05/01 16:03:35 ajacoutot Exp $
 
 COMMENT=	cryptographic library
 
 DISTNAME=	nettle-2.7.1
 PKGNAME=	lib${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  hogweed                   1.1 # 2.3
 SHARED_LIBS +=  nettle                    1.2 # 4.5
