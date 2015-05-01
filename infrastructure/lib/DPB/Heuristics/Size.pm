@@ -1,6 +1,6 @@
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Size.pm,v 1.5 2014/03/17 10:48:40 espie Exp $
+# $OpenBSD: Size.pm,v 1.6 2015/05/01 18:27:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -102,7 +102,7 @@ sub parse_size_file
 	open my $fh, '<', $state->opt('S') // $state->{size_log}  or return;
 
 	print "Reading size stats...";
-	File::Path::mkpath(File::Basename::dirname($state->{size_log}));
+	$state->{log_user}->make_path(File::Basename::dirname($state->{size_log}));
 
 	my @rewrite = ();
 	while (<$fh>) {
@@ -114,13 +114,19 @@ sub parse_size_file
 	}
 	close $fh;
 	print "zapping old stuff...";
-	open $fh, '>', $state->{size_log}.'.part' or return;
+	$fh = $state->{log_user}->open('>', $state->{size_log}.'.part');
+	if (!$fh) {
+		return;
+	}
 	for my $p (sort {$a->{pkgpath} cmp $b->{pkgpath}} @rewrite) {
 		print $fh DPB::Serialize::Size->write($p), "\n";
 	}
 	close $fh;
 	print "Done\n";
-	rename $state->{size_log}.'.part', $state->{size_log};
+	$state->{log_user}->run_as(
+	    sub {
+		rename $state->{size_log}.'.part', $state->{size_log};
+	    });
 }
 
 1;
