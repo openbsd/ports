@@ -1,0 +1,14 @@
+$OpenBSD: patch-header_c,v 1.1 2015/05/01 14:54:41 ajacoutot Exp $
+
+header.c:26: warning: incompatible implicit declaration of built-in function 'exit'
+
+--- header.c.orig	Fri May  1 16:52:23 2015
++++ header.c	Fri May  1 16:52:45 2015
+@@ -8,6 +8,7 @@
+  ******************************************************************/
+ 
+ #include <unistd.h>
++#include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
+ 
