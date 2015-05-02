@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/02 18:22:24 ajacoutot Exp $
 
 COMMENT =	Palm Databook/Calendar export to iCalendar
 
-DISTNAME =	palm2ical-1.8
-REVISION =	1
+DISTNAME =	palm2ical-1.9
 CATEGORIES =	productivity textproc
 
 HOMEPAGE =	http://hepunx.rl.ac.uk/~adye/software/palm/palm2ical/
