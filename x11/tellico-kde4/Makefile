@@ -1,11 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/27 08:16:23 ajacoutot Exp $
-
-# XXX remove patch-src_gui_CMakeLists_txt on the next update,
-# upstream removed dependency of GUI on tellico-config.h.
+# $OpenBSD: Makefile,v 1.4 2015/05/02 15:30:31 zhuk Exp $
 
 COMMENT =	organizer for book/music/video collections for KDE4
-DISTNAME =	tellico-2.3.9
-REVISION =	0
+DISTNAME =	tellico-2.3.10
 
 CATEGORIES =	productivity x11
 HOMEPAGE =	http://tellico-project.org/
@@ -20,7 +16,7 @@ WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kcal ${KDE4LIB}/kcddb
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/khtml ${KDE4LIB}/kio ${KDE4LIB}/kjs
 WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/kparts ${KDE4LIB}/kresources
-WANTLIB += ${KDE4LIB}/ksane ${KDE4LIB}/kxmlrpcclient ${KDE4LIB}/nepomuk
+WANTLIB += ${KDE4LIB}/ksane ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
 WANTLIB += exempi exslt gcrypt gpg-error poppler-qt4 qimageblitz qjson
 WANTLIB += soprano tag xml2 xslt yaz

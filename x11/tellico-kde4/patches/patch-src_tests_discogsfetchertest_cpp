@@ -1,0 +1,59 @@
+$OpenBSD: patch-src_tests_discogsfetchertest_cpp,v 1.1 2015/05/02 15:30:31 zhuk Exp $
+Unbreak fetching Discogs images (upstream 61c9b539).
+--- src/tests/discogsfetchertest.cpp.orig	Sun Feb 15 22:23:56 2015
++++ src/tests/discogsfetchertest.cpp	Sat May  2 18:10:19 2015
+@@ -86,12 +86,9 @@ void DiscogsFetcherTest::testTitle() {
+   QVERIFY(!entry->field(QLatin1String("year")).isEmpty());
+   QVERIFY(!entry->field(QLatin1String("track")).isEmpty());
+ 
+-  //OAuth is now required
+-  /*
+   QVERIFY(!entry->field(QLatin1String("cover")).isEmpty());
+   const Tellico::Data::Image& img = Tellico::ImageFactory::imageById(entry->field(QLatin1String("cover")));
+   QVERIFY(!img.isNull());
+-*/
+ }
+ 
+ void DiscogsFetcherTest::testPerson() {
+@@ -114,12 +111,10 @@ void DiscogsFetcherTest::testPerson() {
+   QCOMPARE(entry->field(QLatin1String("artist")), QLatin1String("Evanescence"));
+   QVERIFY(!entry->field(QLatin1String("title")).isEmpty());
+   QVERIFY(!entry->field(QLatin1String("label")).isEmpty());
+-  //OAuth is now required
+-  /*
++
+   QVERIFY(!entry->field(QLatin1String("cover")).isEmpty());
+   const Tellico::Data::Image& img = Tellico::ImageFactory::imageById(entry->field(QLatin1String("cover")));
+   QVERIFY(!img.isNull());
+-  */
+ }
+ 
+ void DiscogsFetcherTest::testKeyword() {
+@@ -143,12 +138,10 @@ void DiscogsFetcherTest::testKeyword() {
+   QCOMPARE(entry->field(QLatin1String("artist")), QLatin1String("Evanescence"));
+   QVERIFY(!entry->field(QLatin1String("label")).isEmpty());
+   QVERIFY(!entry->field(QLatin1String("year")).isEmpty());
+-  // OAuth is now required
+-  /*
++
+   QVERIFY(!entry->field(QLatin1String("cover")).isEmpty());
+   const Tellico::Data::Image& img = Tellico::ImageFactory::imageById(entry->field(QLatin1String("cover")));
+   QVERIFY(!img.isNull());
+-  */
+ }
+ 
+ // use the Raw query type to fully test the data for a Discogs release
+@@ -181,13 +174,6 @@ void DiscogsFetcherTest::testRawData() {
+   QStringList trackList = Tellico::FieldFormat::splitTable(entry->field("track"));
+   QCOMPARE(trackList.count(), 14);
+   QCOMPARE(trackList.at(0), QLatin1String("Haunted::Evanescence::4:04"));
+-
+-  // OAuth is now required
+-  /*
+-  QVERIFY(!entry->field(QLatin1String("cover")).isEmpty());
+-  const Tellico::Data::Image& img = Tellico::ImageFactory::imageById(entry->field(QLatin1String("cover")));
+-  QVERIFY(!img.isNull());
+-*/
+ }
+ 
+ // do another check to make sure the Vinyl format is captured

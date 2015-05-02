@@ -1,0 +1,72 @@
+$OpenBSD: patch-src_fetch_discogsfetcher_cpp.orig,v 1.1 2015/05/02 15:30:31 zhuk Exp $
+1. Unbreak build.
+2. Unbreak fetching Discogs images (upstream 61c9b539).
+3. Be sure to download image data in fetchers before setting field
+  (upstream 2510d692).
+--- src/fetch/discogsfetcher.cpp.orig	Sat May  2 18:08:26 2015
++++ src/fetch/discogsfetcher.cpp	Sat May  2 18:10:19 2015
+@@ -25,6 +25,7 @@
+ #include <config.h>
+ #include "discogsfetcher.h"
+ #include "../collections/musiccollection.h"
++#include "../images/imagefactory.h"
+ #include "../gui/guiproxy.h"
+ #include "../core/filehandler.h"
+ #include "../tellico_utils.h"
+@@ -117,7 +118,6 @@ void DiscogsFetcher::search() {
+     case Keyword:
+       u.setPath(QLatin1String("/database/search"));
+       u.addQueryItem(QLatin1String("q"), request().value);
+-      //u.addQueryItem(QLatin1String("type"), QLatin1String("all"));
+       break;
+ 
+     case Raw:
+@@ -187,6 +187,17 @@ Tellico::Data::EntryPtr DiscogsFetcher::fetchEntryHook
+   }
+ #endif
+ 
++  const QString image_id = entry->field(QLatin1String("cover"));
++  // if it's still a url, we need to load it
++  if(image_id.contains(QLatin1Char('/'))) {
++    const QString id = ImageFactory::addImage(image_id, true /* quiet */);
++    if(id.isEmpty()) {
++      message(i18n("The cover image could not be loaded."), MessageHandler::Warning);
++    }
++    // empty image ID is ok
++    entry->setField(QLatin1String("cover"), id);
++  }
++
+   // don't want to include ID field
+   entry->setField(QLatin1String("discogs-id"), QString());
+ 
+@@ -313,6 +324,13 @@ void DiscogsFetcher::populateEntry(Data::EntryPtr entr
+   }
+   entry_->setField(QLatin1String("label"), labels.join(FieldFormat::delimiterString()));
+ 
++  // thumb images are only returned in search, not in a full request
++  // so include them now, even though they're only needed for full data
++  const QString coverUrl = value(resultMap_, "thumb");
++  if(!coverUrl.isEmpty()) {
++    entry_->setField(QLatin1String("cover"), coverUrl);
++  }
++
+   // if we only need cursory data, then we're done
+   if(!fullData_) {
+     return;
+@@ -384,16 +402,6 @@ void DiscogsFetcher::populateEntry(Data::EntryPtr entr
+   }
+ 
+   entry_->setField(QLatin1String("comments"),  value(resultMap_, "notes"));
+-
+-
+-  /* cover image authentication with personal token does not work yet
+-  QUrl coverUrl = value(resultMap_, "thumb");
+-  if(!coverUrl.isEmpty()) {
+-    // also need authentication
+-    coverUrl.addQueryItem(QLatin1String("token"), m_apiKey);
+-    entry_->setField(QLatin1String("cover"), coverUrl.toString());
+-  }
+-  */
+ }
+ 
+ Tellico::Fetch::ConfigWidget* DiscogsFetcher::configWidget(QWidget* parent_) const {

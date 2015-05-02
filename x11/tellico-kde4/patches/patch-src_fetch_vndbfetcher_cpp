@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_fetch_vndbfetcher_cpp,v 1.1 2015/05/02 15:30:31 zhuk Exp $
+Be sure to download image data in fetchers before setting field
+(upstream 2510d692).
+--- src/fetch/vndbfetcher.cpp.orig	Sun Feb 15 22:23:56 2015
++++ src/fetch/vndbfetcher.cpp	Sat May  2 18:10:19 2015
+@@ -161,6 +161,17 @@ Tellico::Data::EntryPtr VNDBFetcher::fetchEntryHook(ui
+     return Data::EntryPtr();
+   }
+ 
++  // image might still be a URL
++  const QString image_id = entry->field(QLatin1String("cover"));
++  if(image_id.contains(QLatin1Char('/'))) {
++    const QString id = ImageFactory::addImage(image_id, true /* quiet */);
++    if(id.isEmpty()) {
++      message(i18n("The cover image could not be loaded."), MessageHandler::Warning);
++    }
++    // empty image ID is ok
++    entry->setField(QLatin1String("cover"), id);
++  }
++
+   return entry;
+ }
+ 

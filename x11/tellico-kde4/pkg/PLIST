@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/13 12:30:14 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/02 15:30:31 zhuk Exp $
 @bin bin/tellico
 share/appdata/
 share/appdata/tellico.appdata.xml
@@ -15,6 +15,7 @@ share/apps/tellico/arxiv2tellico.xsl
 share/apps/tellico/biblioshare2tellico.xsl
 share/apps/tellico/bibtex-translation.xml
 share/apps/tellico/bluray-logo.png
+share/apps/tellico/boardgamegeek2tellico.xsl
 share/apps/tellico/cassette-logo.png
 share/apps/tellico/cd-logo.png
 share/apps/tellico/crossref2tellico.xsl
@@ -23,7 +24,6 @@ share/apps/tellico/data-sources/bedetheque.py
 share/apps/tellico/data-sources/bedetheque.py.spec
 share/apps/tellico/data-sources/bedetheque.pyc
 share/apps/tellico/data-sources/boardgamegeek.rb
-share/apps/tellico/data-sources/boardgamegeek.rb.spec
 share/apps/tellico/data-sources/dark_horse_comics.py
 share/apps/tellico/data-sources/dark_horse_comics.py.spec
 share/apps/tellico/data-sources/dark_horse_comics.pyc
@@ -35,7 +35,6 @@ share/apps/tellico/data-sources/ministerio_de_cultura.py.spec
 share/apps/tellico/data-sources/ministerio_de_cultura.pyc
 share/apps/tellico/dblp2tellico.xsl
 share/apps/tellico/delicious2tellico.xsl
-share/apps/tellico/discogs2tellico.xsl
 share/apps/tellico/douban2tellico.xsl
 share/apps/tellico/dvd-logo.png
 share/apps/tellico/dvdfr2tellico.xsl
@@ -62,6 +61,7 @@ share/apps/tellico/pics/alexandria.png
 share/apps/tellico/pics/amc.png
 share/apps/tellico/pics/bibtex.png
 share/apps/tellico/pics/boardgame.png
+share/apps/tellico/pics/boardgamegeek.png
 share/apps/tellico/pics/book.png
 share/apps/tellico/pics/card.png
 share/apps/tellico/pics/checkmark.png
@@ -403,9 +403,6 @@ share/locale/uk/LC_MESSAGES/tellico.mo
 share/locale/zh_CN/LC_MESSAGES/tellico.mo
 share/locale/zh_TW/LC_MESSAGES/tellico.mo
 share/mime/packages/tellico.xml
-share/mimelnk/
-share/mimelnk/application/
-share/mimelnk/application/x-tellico.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
