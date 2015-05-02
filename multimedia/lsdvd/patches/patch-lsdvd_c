@@ -1,23 +1,23 @@
-$OpenBSD: patch-lsdvd_c,v 1.6 2012/05/03 08:14:59 ajacoutot Exp $
---- lsdvd.c.orig	Thu Mar  2 08:48:11 2006
-+++ lsdvd.c	Thu May  3 03:29:12 2012
-@@ -14,6 +14,7 @@
-  *			  output info structures in form of a Perl module, by Henk Vergonet.
-  */
+$OpenBSD: patch-lsdvd_c,v 1.7 2015/05/02 19:58:47 ajacoutot Exp $
+--- lsdvd.c.orig	Sat Oct  4 07:09:14 2014
++++ lsdvd.c	Sat May  2 21:56:45 2015
+@@ -21,6 +21,7 @@
+ #include <unistd.h>
+ #include <getopt.h>
  #include <dvdread/ifo_read.h>
 +#include <dvdread/ifo_print.h>
- #include <string.h>
- #include <sys/stat.h>
- #include <stdio.h>
-@@ -119,6 +120,7 @@ void converttime(playback_time_t *pt, dvd_time_t *dt)
+ #include "lsdvd.h"
+ #include "ocode.h"
+ 
+@@ -122,6 +123,7 @@ static void converttime(playback_time_t *pt, dvd_time_
  
  /*
   *  The following method is based on code from vobcopy, by Robos, with thanks.
 + *  It fails opening a directory (like /home/movies/casablanca/VIDEO_TS/)
   */
- int get_title_name(const char* dvd_device, char* title)
+ static int get_title_name(const char* dvd_device, char* title)
  {
-@@ -130,20 +132,28 @@ int get_title_name(const char* dvd_device, char* title
+@@ -133,20 +135,28 @@ static int get_title_name(const char* dvd_device, char
  		strcpy(title, "unknown");
  		return -1;
  	}
@@ -48,7 +48,7 @@ $OpenBSD: patch-lsdvd_c,v 1.6 2012/05/03 08:14:59 ajacoutot Exp $
  
  	fclose (filehandle);
  
-@@ -196,7 +206,7 @@ void usage()
+@@ -199,7 +209,7 @@ static void usage(void)
  	fprintf(stderr, "\n");
  }
  
@@ -56,17 +56,17 @@ $OpenBSD: patch-lsdvd_c,v 1.6 2012/05/03 08:14:59 ajacoutot Exp $
 +int opt_a=0, opt_c=0, opt_m=0, opt_n=0, opt_p=0, opt_q=0, opt_s=0, opt_t=0, opt_v=0, opt_x=0, opt_d=0, opt_P=0;
  char opt_O='h';
  
- char output_option(char *arg)
-@@ -235,7 +245,7 @@ int main(int argc, char *argv[])
+ static char output_option(char *arg)
+@@ -238,7 +248,7 @@ int main(int argc, char *argv[])
  	pgc_t *pgc;
- 	int i, j, c, titles, cell, vts_ttn, title_set_nr;
+ 	int i, j, k, c, titles, cell, vts_ttn, title_set_nr;
   	char lang_code[3];
 -	char *dvd_device = "/dev/dvd";
 +	char *dvd_device = "/dev/rcd0c";
  	int has_title = 0, ret = 0;
  	int max_length = 0, max_track = 0;
  	struct stat dvd_stat;
-@@ -252,18 +262,20 @@ int main(int argc, char *argv[])
+@@ -255,18 +265,20 @@ int main(int argc, char *argv[])
  		case 's':	opt_s = 1;		break;
  		case 'q':	opt_q = 1;		break;
  		case 'c':	opt_c = 1;		break;
@@ -88,17 +88,17 @@ $OpenBSD: patch-lsdvd_c,v 1.6 2012/05/03 08:14:59 ajacoutot Exp $
  				opt_n = 1;
  				opt_v = 1;		break;
  		}
-@@ -277,6 +289,9 @@ int main(int argc, char *argv[])
+@@ -280,6 +292,9 @@ int main(int argc, char *argv[])
  		return 1;
  	}
- 	
+ 
 +	/* On at least NetBSD this fails if called after DVDOpen */
 +	has_title = get_title_name(dvd_device, title);
 +
  	dvd = DVDOpen(dvd_device);
  	if( !dvd ) {
  		fprintf( stderr, "Can't open disc %s!\n", dvd_device);
-@@ -287,6 +302,12 @@ int main(int argc, char *argv[])
+@@ -290,6 +305,12 @@ int main(int argc, char *argv[])
  		fprintf( stderr, "Can't open main ifo!\n");
  		return 3;
  	}
@@ -111,7 +111,7 @@ $OpenBSD: patch-lsdvd_c,v 1.6 2012/05/03 08:14:59 ajacoutot Exp $
  
  	ifo = (ifo_handle_t **)malloc((ifo_zero->vts_atrt->nr_of_vtss + 1) * sizeof(ifo_handle_t *));
  
-@@ -296,6 +317,12 @@ int main(int argc, char *argv[])
+@@ -299,6 +320,12 @@ int main(int argc, char *argv[])
  			fprintf( stderr, "Can't open ifo %d!\n", i);
  			return 4;
  		}
@@ -124,7 +124,7 @@ $OpenBSD: patch-lsdvd_c,v 1.6 2012/05/03 08:14:59 ajacoutot Exp $
  	}
  
  	titles = ifo_zero->tt_srpt->nr_of_srpts;
-@@ -305,8 +332,6 @@ int main(int argc, char *argv[])
+@@ -308,8 +335,6 @@ int main(int argc, char *argv[])
  		return 5;
  	}
  
@@ -133,15 +133,15 @@ $OpenBSD: patch-lsdvd_c,v 1.6 2012/05/03 08:14:59 ajacoutot Exp $
  	vmgi_mat = ifo_zero->vmgi_mat;
  
  	struct dvd_info dvd_info;
-@@ -377,6 +402,11 @@ int main(int argc, char *argv[])
- 			dvd_info.titles[j].angle_count = ifo_zero->tt_srpt->title[j].nr_of_angles;
- 		} else {
- 			dvd_info.titles[j].angle_count = 0;
-+		}
+@@ -404,6 +429,11 @@ int main(int argc, char *argv[])
+ 					dvd_info.titles[j].angle_count = ifo_zero->tt_srpt->title[j].nr_of_angles;
+ 				} else {
+ 					dvd_info.titles[j].angle_count = 0;
++				}
 +
-+		// MENU STRUCTURE
-+		if (opt_m) {
-+			// void ifo_print(dvd_reader_t *, int);
- 		}
++				// MENU STRUCTURE
++				if (opt_m) {
++					// void ifo_print(dvd_reader_t *, int);
+ 				}
  
- 		// AUDIO
+ 				/* AUDIO */
