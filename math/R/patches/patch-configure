@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.22 2015/04/12 18:29:11 zhuk Exp $
+$OpenBSD: patch-configure,v 1.23 2015/05/02 09:22:58 zhuk Exp $
 
 Use GNU readline instead of our base readline
 
@@ -8,9 +8,9 @@ Fix "--export-dynamic" linker flag
 
 Fix linking with external libintl
 
---- configure.orig	Thu Oct 23 17:16:36 2014
-+++ configure	Thu Jan  8 05:51:05 2015
-@@ -20903,12 +20903,12 @@ done
+--- configure.orig	Thu Apr  9 01:16:36 2015
++++ configure	Sat May  2 11:47:48 2015
+@@ -20921,12 +20921,12 @@ done
    ## don't use the cached value as we need to rebuild LIBS
    unset ac_cv_lib_readline_rl_callback_read_char
    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for rl_callback_read_char in -lreadline" >&5
@@ -25,7 +25,7 @@ Fix linking with external libintl
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -20943,7 +20943,7 @@ if test "x$ac_cv_lib_readline_rl_callback_read_char" =
+@@ -20961,7 +20961,7 @@ if test "x$ac_cv_lib_readline_rl_callback_read_char" =
  #define HAVE_LIBREADLINE 1
  _ACEOF
  
@@ -34,7 +34,7 @@ Fix linking with external libintl
  
  fi
  
-@@ -21070,13 +21070,13 @@ fi
+@@ -21088,13 +21088,13 @@ fi
  
  fi
  
@@ -51,7 +51,7 @@ Fix linking with external libintl
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -21111,7 +21111,7 @@ if test "x$ac_cv_lib_readline_rl_callback_read_char" =
+@@ -21129,7 +21129,7 @@ if test "x$ac_cv_lib_readline_rl_callback_read_char" =
  #define HAVE_LIBREADLINE 1
  _ACEOF
  
@@ -60,7 +60,7 @@ Fix linking with external libintl
  
  fi
  
-@@ -26244,7 +26244,7 @@ if test "${GCC}" = yes; then
+@@ -26276,7 +26276,7 @@ if test "${GCC}" = yes; then
  ## has 32k and so can use -fpic.
  ## However, although the gcc docs do not mention it, it seems s390/s390x
  ## also supports and needs -fPIC
@@ -69,7 +69,7 @@ Fix linking with external libintl
        cpicflags="-fPIC"
        ;;
      *)
-@@ -26255,7 +26255,7 @@ if test "${GCC}" = yes; then
+@@ -26287,7 +26287,7 @@ if test "${GCC}" = yes; then
  fi
  if test "${G77}" = yes; then
    case "${host_cpu}" in
@@ -78,7 +78,7 @@ Fix linking with external libintl
        fpicflags="-fPIC"
        ;;
      *)
-@@ -26265,7 +26265,7 @@ if test "${G77}" = yes; then
+@@ -26297,7 +26297,7 @@ if test "${G77}" = yes; then
  fi
  if test "${GXX}" = yes; then
    case "${host_cpu}" in
@@ -87,7 +87,7 @@ Fix linking with external libintl
        cxxpicflags="-fPIC"
        ;;
      *)
-@@ -38743,7 +38736,7 @@ fi
+@@ -38862,7 +38862,7 @@ fi
  ## use this to pick out gfortran (even though it is unreliable).
  if test "${ac_cv_fc_compiler_gnu}" = yes; then
    case "${host_cpu}" in
@@ -96,7 +96,7 @@ Fix linking with external libintl
        fcpicflags="-fPIC"
        ;;
      *)
-@@ -42497,7 +42490,7 @@ else
+@@ -42616,7 +42616,7 @@ else
    gt_save_CPPFLAGS="$CPPFLAGS"
              CPPFLAGS="$CPPFLAGS $INCINTL"
              gt_save_LIBS="$LIBS"
@@ -105,7 +105,7 @@ Fix linking with external libintl
                          cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <libintl.h>
-@@ -42654,8 +42647,8 @@ $as_echo "$gt_source" >&6; }
+@@ -42773,8 +42773,8 @@ $as_echo "$gt_source" >&6; }
        if { eval "gt_val=\$$gt_func_gnugettext_libintl"; test "$gt_val" = "yes"; }; then
          { $as_echo "$as_me:${as_lineno-$LINENO}: checking how to link with libintl" >&5
  $as_echo_n "checking how to link with libintl... " >&6; }

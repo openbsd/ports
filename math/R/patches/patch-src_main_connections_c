@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_connections_c,v 1.16 2015/04/12 18:29:11 zhuk Exp $
---- src/main/connections.c.orig	Wed Sep 24 17:15:13 2014
-+++ src/main/connections.c	Thu Jan  8 05:51:05 2015
-@@ -5169,7 +5169,8 @@ static Rboolean gzcon_open(Rconnection con)
+$OpenBSD: patch-src_main_connections_c,v 1.17 2015/05/02 09:22:58 zhuk Exp $
+--- src/main/connections.c.orig	Thu Mar 19 02:03:55 2015
++++ src/main/connections.c	Sat May  2 11:47:48 2015
+@@ -5249,7 +5249,8 @@ static Rboolean gzcon_open(Rconnection con)
  
      if(con->canread) {
  	/* read header */
