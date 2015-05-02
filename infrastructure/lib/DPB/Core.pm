@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.76 2015/05/02 11:04:38 espie Exp $
+# $OpenBSD: Core.pm,v 1.77 2015/05/02 12:55:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -758,6 +758,14 @@ sub may_unsquiggle
 sub can_be_swallowed
 {
 	return 0;
+}
+
+sub new
+{
+	my ($class, $host, $prop) = @_;
+	my $c = $class->SUPER::new($host, $prop);
+	$c->{user} = $prop->{fetch_user};
+	return $c;
 }
 
 package DPB::Core::Clock;

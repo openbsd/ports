@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.4 2015/04/27 13:32:57 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.5 2015/05/02 12:55:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -131,7 +131,7 @@ sub run
 	print STDERR "===> Trying $site\n";
 	print STDERR join(' ', @cmd), "\n";
 	# run ftp;
-	$core->shell->nochroot->run_as($job->{fetcher}{user})->exec(@cmd);
+	$core->shell->nochroot->exec(@cmd);
 }
 
 sub finalize

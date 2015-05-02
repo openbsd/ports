@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.20 2015/04/25 11:40:58 espie Exp $
+# $OpenBSD: Init.pm,v 1.21 2015/05/02 12:55:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -231,7 +231,8 @@ sub init_cores
 	}
 	if ($state->opt('f')) {
 		for (1 .. $state->opt('f')) {
-			DPB::Core::Fetcher->new('localhost', {})->mark_ready;
+			DPB::Core::Fetcher->new('localhost', 
+			    $state->{default_prop})->mark_ready;
 		}
 	}
 }
