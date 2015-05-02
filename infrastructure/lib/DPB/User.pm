@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.4 2015/05/02 16:41:20 espie Exp $
+# $OpenBSD: User.pm,v 1.5 2015/05/02 17:14:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -54,8 +54,7 @@ sub next_user
 			die "Can't figure out user template";
 		}
     	}
-	$user->{gen}++;
-	return ref($user)->new($user->{template}.$user->{gen});
+	return ref($user)->new($user->{template}.$user->{gen}++);
 }
 
 sub user
