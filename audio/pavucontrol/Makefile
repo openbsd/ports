@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/01 11:25:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/02 05:47:57 ajacoutot Exp $
 
 COMMENT =		Pulseaudio volume mixer
 
@@ -20,6 +20,8 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 FLAVORS =		gtk3
 FLAVOR ?=
+
+BUILD_DEPENDS =		www/lynx
 
 RUN_DEPENDS +=		devel/desktop-file-utils
 LIB_DEPENDS +=		audio/pulseaudio
