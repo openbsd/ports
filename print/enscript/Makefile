@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2013/11/02 09:02:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2015/05/02 09:39:05 ajacoutot Exp $
 
 COMMENT=		convert ASCII files to PostScript
 
 DISTNAME=		enscript-1.6.3
-REVISION=		3
+REVISION=		4
 CATEGORIES=     	print
 
 HOMEPAGE=		http://www.codento.com/people/mtr/genscript/
