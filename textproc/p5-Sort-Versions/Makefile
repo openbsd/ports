@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/12/14 17:13:35 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/02 15:32:09 ajacoutot Exp $
 
 COMMENT=	sorting of revision-like numbers
 
 MODULES=	cpan
-DISTNAME =	Sort-Versions-1.60
+DISTNAME =	Sort-Versions-1.61
 CATEGORIES=	textproc
 
 # GPL/Artistic
