@@ -1,7 +1,7 @@
-$OpenBSD: patch-dracauth_3,v 1.1.1.1 2005/01/27 20:51:41 alek Exp $
---- dracauth.3.orig	Thu Jan 27 21:39:23 2005
-+++ dracauth.3	Thu Jan 27 21:39:30 2005
-@@ -85,7 +85,7 @@ or non-zero and an error message pointer
+$OpenBSD: patch-dracauth_3,v 1.2 2015/05/02 08:31:21 ajacoutot Exp $
+--- dracauth.3.orig	Sun Oct  4 17:26:53 1998
++++ dracauth.3	Sat May  2 10:30:19 2015
+@@ -85,7 +85,7 @@ or non-zero and an error message pointer if the operat
  .B libdrac.a
  .PD
  .SH "SEE ALSO"
