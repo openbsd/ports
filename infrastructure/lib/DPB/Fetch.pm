@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.66 2015/04/30 21:43:28 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.67 2015/05/02 09:44:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -19,6 +19,7 @@ use warnings;
 use DPB::Clock;
 use DPB::Distfile;
 use OpenBSD::md5;
+use DPB::User;
 
 # handles fetch information, if required
 package DPB::Fetch;
@@ -40,7 +41,7 @@ sub new
 		$o->{cdrom_only} = 1;
 	}
 	my $fh = $o->open('<', "$distdir/distinfo");
-	if ($fh) {
+	if (defined $fh) {
 		print "Reading distinfo...";
 		while (<$fh>) {
 			if (m/^SHA256\s*\((.*)\) \= (.*)/) {
@@ -56,7 +57,7 @@ sub new
 	# e.g., keep only most recent checksum seen
 	$o->make_path($distdir);
 	$fh = $o->open('>', "$distdir/distinfo.new");
-	if ($fh) {
+	if (defined $fh) {
 		for my $k (sort keys %{$o->{sha}}) {
 			print $fh "SHA256 ($k) = ", $o->{sha}{$k}->stringize,
 			    "\n";

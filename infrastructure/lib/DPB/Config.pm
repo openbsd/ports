@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.41 2015/05/01 19:42:54 espie Exp $
+# $OpenBSD: Config.pm,v 1.42 2015/05/02 09:44:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -22,6 +22,8 @@ use warnings;
 # config file.
 
 package DPB::Config;
+use DPB::User;
+
 sub parse_command_line
 {
 	my ($class, $state) = @_;
@@ -72,12 +74,12 @@ sub parse_command_line
 		}
 	}
     	$state->{chroot} = $state->opt('B');
-	$state->{base_user} = DPB::Id->from_uid($<);
+	$state->{base_user} = DPB::User->from_uid($<);
 	if (!defined $state->{base_user}) {
 		$state->usage("Can't figure out who I am");
 	}
 	if ($state->defines('BUILD_USER')) {
-		$state->{build_user} = DPB::Id->new($state->defines('BUILD_USER'));
+		$state->{build_user} = DPB::User->new($state->defines('BUILD_USER'));
 	}
 
 	($state->{ports}, $state->{localarch},
@@ -361,88 +363,6 @@ sub parse_hosts_file
 		$prop->finalize_with_overrides($override);
 		DPB::Core::Init->new($host, $prop);
 	}
-}
-
-package DPB::Id;
-
-sub from_uid
-{
-	my ($class, $u) = @_;
-	if (my ($l, undef, $uid, $gid) = getpwuid $u) {
-		bless { user => $l, uid => $uid, gid => $gid }, $class;
-	} else {
-		return undef;
-	}
-}
-
-sub new
-{
-	my ($class, $u) = @_;
-	# XXX getpwnam for local access, distant access is different
-	if (my ($l, undef, $uid, $gid) = getpwnam $u) {
-		bless { user => $l, uid => $uid, gid => $gid }, $class;
-	} else {
-		bless { user => $u}, $class;
-	}
-}
-
-sub user
-{
-	my $self = shift;
-	return $self->{user};
-}
-
-sub run_as
-{
-	my ($self, $code) = @_;
-	local ($>, $)) = ($self->{uid}, $self->{gid});
-	&$code;
-}
-
-sub make_path
-{
-	my ($self, @directories) = @_;
-	require File::Path;
-	my $p = {};
-	if ($self->{uid}) {
-		$p->{uid} = $self->{uid};
-	} else {
-		$p->{owner} = $self->{user};
-	}
-	if ($self->{gid}) {
-		$p->{gid} = $self->{gid};
-	}
-	File::Path::make_path(@directories, $p);
-}
-
-sub open
-{
-	my ($self, $mode, $filename) = @_;
-	my $fh;
-	$self->run_as(
-	    sub {
-	    	open $fh, $mode, $filename;
-	    });
-	return $fh;
-}
-
-package DPB::UserProxy;
-sub run_as
-{
-	my ($self, $code) = @_;
-	$self->{user}->run_as($code);
-}
-
-sub make_path
-{
-	my ($self, @dirs) = @_;
-	$self->{user}->make_path(@dirs);
-}
-
-sub open
-{
-	my ($self, @parms) = @_;
-	return $self->{user}->open(@parms);
 }
 
 1;

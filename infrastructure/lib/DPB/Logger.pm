@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.18 2015/05/01 20:49:46 espie Exp $
+# $OpenBSD: Logger.pm,v 1.19 2015/05/02 09:44:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -17,7 +17,7 @@
 
 use strict;
 use warnings;
-use DPB::Config;
+use DPB::User;
 
 package DPB::Logger;
 our @ISA = (qw(DPB::UserProxy));

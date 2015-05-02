@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.13 2015/05/01 19:42:54 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.14 2015/05/02 09:44:40 espie Exp $
 #
 # Copyright (c) 2012-2013 Marc Espie <espie@openbsd.org>
 #
@@ -23,7 +23,7 @@ use warnings;
 
 # note that this is only superficially similar to locks
 
-use DPB::Config;
+use DPB::User;
 package DPB::Affinity;
 our @ISA = (qw(DPB::UserProxy));
 

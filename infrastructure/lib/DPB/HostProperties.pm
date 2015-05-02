@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.6 2015/05/01 19:42:54 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.7 2015/05/02 09:44:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -19,6 +19,7 @@ use strict;
 use warnings;
 
 package DPB::HostProperties;
+use DPB::User;
 
 my $has_sf = 0;
 my $has_mem = 0;
@@ -60,7 +61,7 @@ sub set_user
 	my $mode = $tag."_dirmode";
 	if (defined $prop->{$user}) {
 		$prop->{$user} = 
-		    DPB::Id->new($prop->{$user});
+		    DPB::User->new($prop->{$user});
 	} else {
 		$prop->{$user} = $prop->{$default."_user"};
 	}
