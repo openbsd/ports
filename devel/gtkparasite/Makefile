@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/05/02 11:02:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2015/05/02 12:43:59 ajacoutot Exp $
 
 COMMENT =	Gtk debugging tool
 
@@ -7,6 +7,7 @@ GH_PROJECT =	gtkparasite
 GH_COMMIT =	58e57ddaf6666753bd403c40da14bc919bec9589
 DISTNAME =	${GH_PROJECT}-0.2.0
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	http://chipx86.github.com/gtkparasite/
 
@@ -24,11 +25,11 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		x11/gtk+2
 
 RUN_DEPENDS =	x11/py-gtk2
-BUILD_DEPENDS+=	${RUN_DEPENDS} \
-		${MODGNU_AUTOCONF_DEPENDS} \
+
+BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/libtool \
-		x11/gnome/common
+		x11/py-gtk2
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi fontconfig
@@ -41,7 +42,9 @@ WANTLIB += graphite2 harfbuzz pthread
 CONFIGURE_STYLE =	gnu
 
 pre-configure:
-	cd ${WRKSRC} && env AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} sh ./autogen.sh
+	cd ${WRKSRC} && env \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		autoreconf -fi
 
 .include <bsd.port.mk>
