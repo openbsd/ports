@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.41 2015/03/14 20:45:11 espie Exp $
+# $OpenBSD: Vars.pm,v 1.42 2015/05/02 17:43:27 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -127,8 +127,8 @@ sub grab_list
 			my $dir = DPB::PkgPath->new($1);
 			$dir->break("exiting with an error");
 			$h->{$dir} = $dir;
-			open my $quicklog,  '>>',
-			    $grabber->logger->log_pkgpath($dir);
+			my $quicklog = $grabber->logger->open('>>',
+			    $grabber->logger->log_pkgpath($dir));
 			print $quicklog @current;
 			&$reset;
 			next;
