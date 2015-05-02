@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/10/26 20:42:57 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/05/02 15:42:02 ajacoutot Exp $
 @newgroup _hiawatha:579
 @newuser _hiawatha:579:579:daemon:Hiawatha HTTP Server:/nonexistent:/sbin/nologin
-@lib lib/hiawatha/libpolarssl.so.${LIBpolarssl_VERSION}
 @bin bin/ssi-cgi
+lib/hiawatha/
+@lib lib/hiawatha/libmbedtls.so.${LIBmbedtls_VERSION}
 @man man/man1/cgi-wrapper.1
 @man man/man1/hiawatha.1
 @man man/man1/ssi-cgi.1
@@ -17,6 +18,8 @@ share/examples/hiawatha/
 share/examples/hiawatha/cgi-wrapper.conf
 @sample ${SYSCONFDIR}/hiawatha/cgi-wrapper.conf
 @sample /var/hiawatha/
+share/examples/hiawatha/error.xslt
+@sample ${SYSCONFDIR}/hiawatha/error.xslt
 share/examples/hiawatha/hiawatha.conf
 @sample ${SYSCONFDIR}/hiawatha/hiawatha.conf
 share/examples/hiawatha/index.html

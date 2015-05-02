@@ -1,16 +1,15 @@
-$OpenBSD: patch-config_hiawatha_conf_in,v 1.2 2013/04/14 20:21:15 sthen Exp $
---- config/hiawatha.conf.in.orig	Sat Mar 30 22:41:13 2013
-+++ config/hiawatha.conf.in	Sun Apr 14 21:06:01 2013
-@@ -4,7 +4,7 @@
- 
+$OpenBSD: patch-config_hiawatha_conf_in,v 1.3 2015/05/02 15:42:02 ajacoutot Exp $
+--- config/hiawatha.conf.in.orig	Sat Jan 17 10:53:00 2015
++++ config/hiawatha.conf.in	Sat May  2 17:36:56 2015
+@@ -12,6 +12,7 @@
  # GENERAL SETTINGS
  #
--#ServerId = www-data
+ #ServerId = www-data
 +ServerId = _hiawatha:_hiawatha
- ConnectionsTotal = 250
+ ConnectionsTotal = 1000
  ConnectionsPerIP = 25
  SystemLogfile = @LOG_DIR@/system.log
-@@ -43,12 +43,13 @@ Binding {
+@@ -50,12 +51,13 @@ Binding {
  # COMMON GATEWAY INTERFACE (CGI) SETTINGS
  # These settings can be used to run CGI applications.
  #

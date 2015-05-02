@@ -1,11 +1,11 @@
-$OpenBSD: patch-man_hiawatha_1_in,v 1.3 2013/04/26 09:15:24 sthen Exp $
---- man/hiawatha.1.in.orig	Tue Apr 16 12:10:26 2013
-+++ man/hiawatha.1.in	Fri Apr 26 10:04:40 2013
-@@ -147,12 +147,12 @@ Example: CGIextension = cgi
+$OpenBSD: patch-man_hiawatha_1_in,v 1.4 2015/05/02 15:42:02 ajacoutot Exp $
+--- man/hiawatha.1.in.orig	Thu Feb 12 11:39:30 2015
++++ man/hiawatha.1.in	Sat May  2 17:36:33 2015
+@@ -158,12 +158,12 @@ Example: CGIextension = cgi
  .B CGIhandler = <CGI handler>:<extension>[, <extension>, ...]
- Specify the handler for a CGI extension. A handler is an executable which will 'run' the CGI script.
+ Specify the handler for a CGI extension. A handler is an executable which will run the CGI script.
  .br
--Example: CGIhandler = /usr/bin/php4-cgi:php,php4
+-Example: CGIhandler = /usr/bin/php5-cgi:php,php5
 +Example: CGIhandler = ${LOCALBASE}/bin/php-fastcgi:php,php5
  .TP
  .B CGIwrapper = <CGI wrapper>
@@ -14,19 +14,19 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.3 2013/04/26 09:15:24 sthen Exp $
 -Default = @CMAKE_INSTALL_FULL_SBINDIR@/cgi-wrapper, example: CGIwrapper = /bin/cgi-wrapper
 +Default = @CMAKE_INSTALL_FULL_SBINDIR@/cgi-wrapper, example: CGIwrapper = ${PREFIX}/sbin/cgi-wrapper/cgi-wrapper
  .TP
- .B ConnectionsPerIP = <number>
- Maximum number of simultaneous connections per IP address.
-@@ -187,7 +187,7 @@ Example: HideProxy = 192.168.10.20
+ .B ChallengeClient = <threshold>, (httpheader|javascript), <ban-time>[, <secret>]
+ Challenge the client to verify that it's a real web browser and not an HTTP bot. When the total amount of connections reaches <threshold>, Hiawatha sends a response to the first request in a connection which will make the client resend the request, but now with a cookie. The cookie can be set via a HTTP Set-Cookie header or a Javascript. Further requests are only accepted when the client sends this cookie. Otherwise, the client is banned for <ban-time> seconds. This feature can be used to reduce the effects of a DDoS attack. The <secret> can be a random string of up to 20 characters (the rest is ignored) and is used to generate the cookie. When not set, Hiawatha will generate a random secret.
+@@ -203,7 +203,7 @@ Example: HideProxy = 192.168.10.20
  .B Include <filename>|<directory>
- Include another configurationfile or configurationfiles in a directory.
+ Include another configuration file or configuration files in a directory.
  .br
 -Example: Include /etc/hiawatha/hosts.conf
 +Example: Include ${SYSCONFDIR}/hiawatha/hosts.conf
  .TP
  .B KickOnBan = yes|no
  Close all other connections that originate from the same IP in case of a ban.
-@@ -272,7 +272,7 @@ Example: RequestLimitMask = deny 192.168.0.1
- .B ServerId = <userid>|<userid>:<groupid>[,<groupid>, ...]
+@@ -283,7 +283,7 @@ Example: RequestLimitMask = deny 192.168.0.1
+ .B ServerId = <userid>|<userid>:<groupid>[, <groupid>, ...]
  The userid and groupid(s) the server will change to. If only a userid is specified, the groupid(s) will be looked up in /etc/passwd and /etc/group. The userid en groupid of user root are not allowed here. The userid or groupid can also be a name.
  .br
 -Default = 65534:65534, example: ServerId = www-data
@@ -34,17 +34,17 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.3 2013/04/26 09:15:24 sthen Exp $
  .TP
  .B ServerString = <text>
  The text behind 'Server:' in the HTTP header of a response. Use 'none' to completely remove the Server string from the HTTP header.
-@@ -562,7 +562,7 @@ Example: Setenv PHPRC = /var/www/conf
+@@ -626,7 +626,7 @@ Example: ScriptAlias = /script.cgi:/usr/lib/script.cgi
  .B ShowIndex = yes|no|<XSLT file with full path>|xml
- Return a directory listing in HTML format for a directory request when the startfile does not exist. If you want to change the index layout completely, specify the path of a XSLT file. If the XSLT file is not found or 'xml' is used, Hiawatha will output the XML of the directory index. The content of a .hiawatha_index in that directory will be included in the XML.
+ Return a directory listing in HTML format for a directory request when the startfile does not exist. If you want to change the index layout completely, specify the path of a XSLT file. If the XSLT file is not found or 'xml' is used, Hiawatha will output the XML of the directory index. An example of the XML output can be found in extra/index.xml inside the source package.
  .br
 -Default = no, example: ShowIndex = /etc/hiawatha/index.xslt
 +Default = no, example: ShowIndex = ${SYSCONFDIR}/hiawatha/index.xslt
  .br
  
  (requires that Hiawatha was not compiled with -DENABLE_XSLT=off)
-@@ -924,7 +924,7 @@ and
- .B UseGZfile
+@@ -1009,7 +1009,7 @@ and
+ (only valid in the root directory of a website)
  
  .SH MIMETYPES
 -Specify the mimetypes of files in /etc/hiawatha/mimetypes.conf.
@@ -52,7 +52,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.3 2013/04/26 09:15:24 sthen Exp $
  .TP
  .B <mimetype> <extension> [<extension> ...]
  Example: image/jpeg jpg jpeg jpe
-@@ -951,13 +951,13 @@ Unban all IP addresses.
+@@ -1036,13 +1036,13 @@ Unban all IP addresses.
  Clear the internal cache (requires that Hiawatha was not compiled with -DENABLE_CACHE=off).
  
  .SH FILES
