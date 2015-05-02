@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_getopt_c,v 1.1 2015/05/02 12:51:28 ajacoutot Exp $
+
+warning: implicit declaration of function 'getpid'
+warning: implicit declaration of function 'strlen'
+warning: implicit declaration of function 'strcmp'
+warning: implicit declaration of function 'strncmp'
+
+--- lib/getopt.c.orig	Wed Mar  3 00:14:45 1999
++++ lib/getopt.c	Sat May  2 14:49:21 2015
+@@ -30,6 +30,9 @@
+ #include <config.h>
+ #endif
+ 
++#include <string.h>
++#include <unistd.h>
++
+ #if !defined (__STDC__) || !__STDC__
+ /* This is a separate conditional since some stdc systems
+    reject `defined (const)'.  */
