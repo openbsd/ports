@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_ac,v 1.1 2015/05/02 14:24:12 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=748799
+
+--- configure.ac.orig	Sat May  2 16:13:07 2015
++++ configure.ac	Sat May  2 16:13:25 2015
+@@ -102,7 +102,7 @@ AS_IF([test "x$have_spice" = "xyes"],
+ AM_CONDITIONAL([VINAGRE_ENABLE_SPICE], [test "x$have_spice" = "xyes"])
+ 
+ # Checks for header files. See vinagre/pyt_open.c for usage.
+-AC_CHECK_HEADERS([ifaddrs.h sys/un.h stropts.h termios.h utmp.h])
++AC_CHECK_HEADERS([ifaddrs.h sys/un.h stropts.h termios.h util.h utmp.h])
+ 
+ # Internationalization.
+ AC_SUBST([GETTEXT_PACKAGE], [$PACKAGE_TARNAME])

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2015/04/04 09:21:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.93 2015/05/02 14:24:12 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		remote desktop viewer for GNOME
 
 GNOME_PROJECT=		vinagre
 GNOME_VERSION=		3.16.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -37,5 +37,8 @@ LIB_DEPENDS=		devel/vte3 \
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			shared-mime-info yelp
+
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 
 .include <bsd.port.mk>

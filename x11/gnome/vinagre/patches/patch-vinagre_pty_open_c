@@ -1,0 +1,14 @@
+$OpenBSD: patch-vinagre_pty_open_c,v 1.1 2015/05/02 14:24:12 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=748799
+
+--- vinagre/pty_open.c.orig	Sat May  2 16:12:06 2015
++++ vinagre/pty_open.c	Sat May  2 16:12:16 2015
+@@ -43,6 +43,7 @@
+ 
+ #define _XOPEN_SOURCE
+ #define _GNU_SOURCE
++#define _BSD_SOURCE
+ 
+ #include "config.h"
+ #include <sys/types.h>
