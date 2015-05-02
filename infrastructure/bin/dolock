@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: dolock,v 1.2 2011/04/13 08:37:16 espie Exp $
+# $OpenBSD: dolock,v 1.3 2015/05/02 11:00:37 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -22,13 +22,21 @@ use File::Basename;
 if (@ARGV == 0) {
 	exit(1);
 }
+
+my $p = {};
+if ($ARGV[0] eq '-m') {
+	$p->{mode} = oct($ARGV[1]);
+	shift;
+	shift;
+}
+
 my $fname = shift;
 my $dname = dirname $fname;
 my $done = 0;
 
 unless (-e $dname) {
 	require File::Path;
-	File::Path::mkpath($dname);
+	File::Path::make_path($dname, $p);
 }
 if (!-d $dname) {
 	print STDERR "lock directory location $dname is not a directory\n";
@@ -50,6 +58,6 @@ while(1) {
 	unless ($done) {
 		print STDERR "Awaiting lock $fname\n";
 		$done = 1;
-	}
+}
 	sleep(1);
 }
