@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.75 2014/12/25 15:14:14 espie Exp $
+# $OpenBSD: Core.pm,v 1.76 2015/05/02 11:04:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -81,7 +81,11 @@ sub is_alive
 sub shell
 {
 	my $self = shift;
-	return $self->host->shell;
+	if ($self->{user}) {
+		return $self->host->shell->run_as($self->{user});
+	} else {
+		return $self->host->shell;
+	}
 }
 
 sub new
