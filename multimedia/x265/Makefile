@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/04/09 20:47:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/05/02 07:36:16 ajacoutot Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_or_4'
@@ -11,7 +11,7 @@ VER=		1.6
 DISTNAME=	x265_${VER}
 PKGNAME=	x265-${VER}
 CATEGORIES=	multimedia
-MASTER_SITES=	https://bitbucket.org/multicoreware/x265/downloads/
+MASTER_SITES=	https://ftp.videolan.org/pub/videolan/x265/
 
 SHARED_LIBS=	x265	3.0
 
