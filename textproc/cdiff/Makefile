@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/29 12:01:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/02 20:00:54 ajacoutot Exp $
 
 COMMENT=		inline and side-by-side colored and incremental diff
 
 MODPY_EGG_VERSION=	0.9.7
 DISTNAME=		cdiff-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		textproc
 
 HOMEPAGE=		https://github.com/ymattw/cdiff
-
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
