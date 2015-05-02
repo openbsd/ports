@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/07/09 09:50:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/02 18:37:51 ajacoutot Exp $
 
 COMMENT =		turn-based empire game
 
-DISTNAME =		vms-empire-1.12
+DISTNAME =		vms-empire-1.13
 
 CATEGORIES =		games
 
@@ -18,14 +18,16 @@ MASTER_SITES =		http://www.catb.org/~esr/vms-empire/
 MAKE_FLAGS =		CC="${CC}" \
 			CFLAGS="${CFLAGS}"
 
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+3,-guic
+
 # docbook-generated lists using \h
 USE_GROFF =		Yes
 
 NO_TEST =		Yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKDIST}/vms-empire ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/man/man6
-	${INSTALL_MAN} ${WRKDIST}/empire.6 ${PREFIX}/man/man6/vms-empire.6
+pre-configure:
+	perl -pi -e 's,/usr,${PREFIX},g;' \
+		-e 's,share/man,man,g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
