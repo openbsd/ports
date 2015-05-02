@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.2 2015/05/02 13:12:39 espie Exp $
+# $OpenBSD: User.pm,v 1.3 2015/05/02 16:07:44 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -83,7 +83,7 @@ sub make_path
 		$p->{owner} = $self->{user};
 	}
 	if ($self->{gid}) {
-		$p->{gid} = $self->{gid};
+		$p->{group} = $self->{gid};
 	}
 	if ($p->{mode}) {
 		my $m = umask(0);
