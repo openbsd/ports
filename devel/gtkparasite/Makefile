@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/01 09:19:19 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2015/05/02 11:02:45 sthen Exp $
 
 COMMENT =	Gtk debugging tool
 
@@ -27,6 +27,7 @@ RUN_DEPENDS =	x11/py-gtk2
 BUILD_DEPENDS+=	${RUN_DEPENDS} \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/libtool \
 		x11/gnome/common
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
