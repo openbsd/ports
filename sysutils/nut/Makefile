@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2015/04/23 22:38:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.86 2015/05/02 21:52:19 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -6,6 +6,7 @@ COMMENT-snmp=		driver for monitoring UPS via SNMP
 COMMENT-xml=		driver for monitoring UPS via XML/HTTP
 
 DISTNAME=		nut-2.7.3
+REVISION-main=		0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
@@ -44,22 +45,22 @@ BUILD_DEPENDS+=		textproc/asciidoc>=8.6.8 \
 			textproc/docbook-xsl
 
 WEB_ROOT=		/var/www
-NUT_USER=		_ups
-NUT_ID=			529
-SUBST_VARS=		BASESYSCONFDIR NUT_USER NUT_ID WEB_ROOT
+SUBST_VARS=		BASESYSCONFDIR WEB_ROOT
 USE_GROFF=		Yes
 
 CONFIGURE_STYLE=	gnu
 SYSCONFDIR=		${BASESYSCONFDIR}/nut
 LDFLAGS+=		-L${LOCALBASE}/lib -pthread
-CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/ups \
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/nut \
 			--htmldir=${PREFIX}/share/doc/nut \
+			--includedir=${PREFIX}/include/nut \
+			--with-dev \
 			--with-doc=html-single \
 			--with-hal-libs="" \
 			--with-ssl \
 			--with-statepath=/var/db/nut \
-			--with-user=${NUT_USER} \
-			--with-group=${NUT_USER} \
+			--with-user=_ups \
+			--with-group=_ups \
 			CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS}"
 

@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.7 2015/01/22 16:42:09 sthen Exp $
+$OpenBSD: README-main,v 1.8 2015/05/02 21:52:19 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -59,14 +59,13 @@ should monitor. It also contains passwords to authenticate to upsd(8).
 Device permissions
 ------------------
 For locally connected UPS devices, the userid running NUT (normally
-${NUT_USER}) must have access to the relevant device nodes.
+_ups) must have access to the relevant device nodes.
 
-RS232: Either add ${NUT_USER} to group "dialer" or change the group
-ownership of the relevant /dev/tty* device to ${NUT_USER}.
+RS232: Either add _ups to group "dialer" or change the group ownership
+of the relevant /dev/tty* device to _ups.
 
-USB: Change the group of the relevant /dev/ugen* and /dev/usb* devices
-to ${NUT_USER}; to identify the specific controller and ugen device
-names, use "sudo usbdevs -vd".
+USB: Use "usbdevs -vd" (as root) to identify the specific controller
+(/dev/usbXX) and ugen (/dev/ugenXX) device nodes, then chgrp these to _ups.
 
 Special notice for APC USB devices
 ----------------------------------

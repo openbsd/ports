@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2015/04/23 22:38:55 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2015/05/02 21:52:19 sthen Exp $
 @conflict nut-<2.6.2p0
 @conflict nut-scanner-*
 @conflict upsd-*
@@ -7,8 +7,8 @@
 @pkgpath sysutils/nut,no_cgi
 @pkgpath sysutils/nut,snmp
 @pkgpath sysutils/nut,no_cgi,snmp
-@newgroup ${NUT_USER}:${NUT_ID}
-@newuser ${NUT_USER}:${NUT_ID}:${NUT_ID}:daemon:UPS User:/var/empty:/sbin/nologin
+@newgroup _ups:529
+@newuser _ups:529:529:daemon:UPS User:/var/empty:/sbin/nologin
 @bin bin/al175
 @bin bin/apcsmart
 @bin bin/apcsmart-old
@@ -70,6 +70,14 @@ bin/upssched-cmd
 @comment html/header.html
 @comment html/index.html
 @comment html/nut-banner.png
+include/nut/
+include/nut/nut-scan.h
+include/nut/nutclient.h
+include/nut/nutscan-device.h
+include/nut/nutscan-init.h
+include/nut/nutscan-ip.h
+include/nut/parseconf.h
+include/nut/upsclient.h
 lib/libnutclient.a
 lib/libnutclient.la
 @lib lib/libnutclient.so.${LIBnutclient_VERSION}
@@ -79,6 +87,78 @@ lib/libnutscan.la
 lib/libupsclient.a
 lib/libupsclient.la
 @lib lib/libupsclient.so.${LIBupsclient_VERSION}
+lib/pkgconfig/libnutclient.pc
+lib/pkgconfig/libnutscan.pc
+lib/pkgconfig/libupsclient.pc
+@man man/man3/libnutclient.3
+@man man/man3/libnutclient_commands.3
+@man man/man3/libnutclient_devices.3
+@man man/man3/libnutclient_general.3
+@man man/man3/libnutclient_misc.3
+@man man/man3/libnutclient_tcp.3
+@man man/man3/libnutclient_variables.3
+@comment following pages are .so and not handled correctly by ports infra/groff
+@comment @man man/man3/nutclient_authenticate.3
+@comment @man man/man3/nutclient_destroy.3
+@comment @man man/man3/nutclient_device_forced_shutdown.3
+@comment @man man/man3/nutclient_device_login.3
+@comment @man man/man3/nutclient_device_master.3
+@comment @man man/man3/nutclient_execute_device_command.3
+@comment @man man/man3/nutclient_get_device_command_description.3
+@comment @man man/man3/nutclient_get_device_commands.3
+@comment @man man/man3/nutclient_get_device_description.3
+@comment @man man/man3/nutclient_get_device_num_logins.3
+@comment @man man/man3/nutclient_get_device_rw_variables.3
+@comment @man man/man3/nutclient_get_device_variable_description.3
+@comment @man man/man3/nutclient_get_device_variable_values.3
+@comment @man man/man3/nutclient_get_device_variables.3
+@comment @man man/man3/nutclient_get_devices.3
+@comment @man man/man3/nutclient_has_device.3
+@comment @man man/man3/nutclient_has_device_command.3
+@comment @man man/man3/nutclient_has_device_variable.3
+@comment @man man/man3/nutclient_logout.3
+@comment @man man/man3/nutclient_set_device_variable_value.3
+@comment @man man/man3/nutclient_set_device_variable_values.3
+@comment @man man/man3/nutclient_tcp_create_client.3
+@comment @man man/man3/nutclient_tcp_disconnect.3
+@comment @man man/man3/nutclient_tcp_get_timeout.3
+@comment @man man/man3/nutclient_tcp_is_connected.3
+@comment @man man/man3/nutclient_tcp_reconnect.3
+@comment @man man/man3/nutclient_tcp_set_timeout.3
+@man man/man3/nutscan.3
+@man man/man3/nutscan_add_device_to_device.3
+@man man/man3/nutscan_add_option_to_device.3
+@man man/man3/nutscan_cidr_to_ip.3
+@man man/man3/nutscan_display_parsable.3
+@man man/man3/nutscan_display_ups_conf.3
+@man man/man3/nutscan_free_device.3
+@man man/man3/nutscan_get_serial_ports_list.3
+@man man/man3/nutscan_init.3
+@man man/man3/nutscan_new_device.3
+@man man/man3/nutscan_scan_avahi.3
+@man man/man3/nutscan_scan_eaton_serial.3
+@man man/man3/nutscan_scan_ipmi.3
+@man man/man3/nutscan_scan_nut.3
+@man man/man3/nutscan_scan_snmp.3
+@man man/man3/nutscan_scan_usb.3
+@man man/man3/nutscan_scan_xml_http.3
+@man man/man3/upscli_add_host_cert.3
+@man man/man3/upscli_cleanup.3
+@man man/man3/upscli_connect.3
+@man man/man3/upscli_disconnect.3
+@man man/man3/upscli_fd.3
+@man man/man3/upscli_get.3
+@man man/man3/upscli_init.3
+@man man/man3/upscli_list_next.3
+@man man/man3/upscli_list_start.3
+@man man/man3/upscli_readline.3
+@man man/man3/upscli_sendline.3
+@man man/man3/upscli_splitaddr.3
+@man man/man3/upscli_splitname.3
+@man man/man3/upscli_ssl.3
+@man man/man3/upscli_strerror.3
+@man man/man3/upscli_upserror.3
+@man man/man3/upsclient.3
 @man man/man5/hosts.conf.5
 @man man/man5/nut.conf.5
 @man man/man5/ups.conf.5
@@ -212,7 +292,7 @@ share/examples/nut/nut.service
 @sample ${BASESYSCONFDIR}/avahi/
 @sample ${BASESYSCONFDIR}/avahi/services/
 @sample ${BASESYSCONFDIR}/avahi/services/nut.service
-@owner ${NUT_USER}
+@owner _ups
 share/examples/nut/ups.conf.sample
 @mode 600
 @sample ${SYSCONFDIR}/ups.conf
@@ -239,9 +319,9 @@ share/examples/nut/upsset.conf.sample
 @comment share/examples/nut/upsstats.html.sample
 @mode
 @owner
-share/ups/
-share/ups/cmdvartab
-share/ups/driver.list
+share/nut/
+share/nut/cmdvartab
+share/nut/driver.list
 @rcscript ${RCDIR}/nut
 @rcscript ${RCDIR}/upsd
 @rcscript ${RCDIR}/upsmon
