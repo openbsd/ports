@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2015/05/01 14:54:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2015/05/02 09:42:43 ajacoutot Exp $
 
 COMMENT=	CDDA reading utility with extra data verification features
 
 DISTNAME=	cdparanoia-III-alpha9.8
 PKGNAME=	cdparanoia-3.a9.8
-REVISION=	2
+REVISION=	3
 CATEGORIES=	audio
 SHARED_LIBS=	cdda_interface	0.0 \
 		cdda_paranoia	0.0
