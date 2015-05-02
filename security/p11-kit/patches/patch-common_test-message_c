@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_test-message_c,v 1.1 2015/05/02 10:25:47 ajacoutot Exp $
+
+https://bugs.freedesktop.org/show_bug.cgi?id=86080
+
+--- common/test-message.c.orig	Sat May  2 12:16:29 2015
++++ common/test-message.c	Sat May  2 12:16:38 2015
+@@ -39,6 +39,7 @@
+ 
+ #include <errno.h>
+ #include <stdlib.h>
++#include <stdio.h>
+ 
+ static void
+ test_with_err (void)
