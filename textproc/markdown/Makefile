@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/02 14:21:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/05/02 13:36:44 rpe Exp $
 
 COMMENT=		text-to-HTML conversion tool
 
-MODPY_EGG_VERSION =	2.4.1
+MODPY_EGG_VERSION =	2.6.1
 DISTNAME=		Markdown-${MODPY_EGG_VERSION}
 PKGNAME=		markdown-${MODPY_EGG_VERSION}
 CATEGORIES=		textproc
@@ -15,7 +15,8 @@ MAINTAINER=		Will Maier <wcmaier@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/python
-TEST_DEPENDS=	devel/py-nose
+TEST_DEPENDS=	devel/py-nose \
+		textproc/py-yaml
 
 MODPY_PI =	Yes
 
