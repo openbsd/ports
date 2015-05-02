@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/01 19:23:13 rpe Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/02 17:18:30 ajacoutot Exp $
 
 COMMENT =		URI parsing library
 
-DISTNAME =		uriparser-0.8.1
+DISTNAME =		uriparser-0.8.2
 
 SHARED_LIBS +=  uriparser                 0.1 # 1.17
 
@@ -24,7 +24,7 @@ TEST_DEPENDS =		devel/cpptest
 
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--disable-doc
+CONFIGURE_ARGS =	--disable-doc
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 .include <bsd.port.mk>

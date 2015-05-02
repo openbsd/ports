@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/24 20:43:25 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/02 17:18:30 ajacoutot Exp $
 @bin bin/uriparse
 include/uriparser/
 include/uriparser/Uri.h
@@ -10,5 +10,4 @@ include/uriparser/UriIp4.h
 lib/liburiparser.a
 lib/liburiparser.la
 @lib lib/liburiparser.so.${LIBuriparser_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/liburiparser.pc
