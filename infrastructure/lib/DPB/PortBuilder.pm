@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.65 2015/05/01 20:49:46 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.66 2015/05/02 15:59:35 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -220,7 +220,11 @@ sub build
 	if ($v->{info}->has_property('tag')) {
 		print $lock "tag=".$v->{info}->has_property('tag')."\n";
 	}
-	print $fh ">>> Building on ", $core->hostname, $meminfo, " under ";
+	print $fh ">>> Building on ", $core->hostname;
+	if (defined $core->{user}) {
+		print $fh " as ", $core->{user}->user, " ";
+	}
+	print $fh $meminfo, " under ";
 	$v->quick_dump($fh);
 
 	my $job;
