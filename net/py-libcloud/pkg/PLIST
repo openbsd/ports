@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/07/15 15:34:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/05/02 15:29:49 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/libcloud/
 lib/python${MODPY_VERSION}/site-packages/libcloud/__init__.py
@@ -37,8 +38,12 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/common/linode.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/linode.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/openstack.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/openstack.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/common/openstack_identity.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/common/openstack_identity.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/rackspace.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/rackspace.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/common/softlayer.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/common/softlayer.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/types.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/types.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/common/xmlrpc.py
@@ -117,6 +122,8 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/openstack.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/openstack.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/opsource.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/opsource.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/profitbricks.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/profitbricks.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/rackspace.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/rackspace.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/rimuhosting.py
@@ -135,6 +142,10 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/voxel.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/voxel.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/vpsnet.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/vpsnet.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/vsphere.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/vsphere.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/vultr.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/compute/drivers/vultr.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/providers.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/providers.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/compute/ssh.py
@@ -165,6 +176,8 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/rackspace.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/rackspace.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/route53.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/route53.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/softlayer.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/softlayer.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/zerigo.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/drivers/zerigo.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/dns/providers.py
@@ -242,6 +255,8 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/utils/compression.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/compression.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/connection.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/connection.pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/utils/decorators.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/utils/decorators.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/dist.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/dist.pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/files.py
