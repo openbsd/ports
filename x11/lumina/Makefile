@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2015/04/01 13:45:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/05/02 07:39:02 ajacoutot Exp $
 
 COMMENT=	Lumina Desktop Environment
 
-GITV=		1427733141
-DISTNAME=	lumina-${GITV}
-PKGNAME=	lumina-0.8.3.${GITV}
-EXTRACT_SUFX=	.tar.bz2
-WRKDIST=	${WRKDIR}/lumina
+
+V=		0.8.4
+GH_ACCOUNT=	pcbsd
+GH_PROJECT=	lumina
+GH_TAGNAME=	v${V}-Release-P1
+DISTNAME=	lumina-${V}
 
 SHARED_LIBS +=  LuminaUtils               1.0 # 1.0
 
@@ -23,9 +24,6 @@ WANTLIB += GL Qt5Core Qt5Gui Qt5Multimedia Qt5MultimediaWidgets
 WANTLIB += Qt5Network Qt5Widgets Qt5X11Extras X11 Xcomposite Xdamage
 WANTLIB += Xrender c m pthread xcb xcb-composite xcb-damage xcb-ewmh
 WANTLIB += xcb-icccm xcb-image
-
-MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
-		ftp://ftp.pcbsd.org/pub/software/
 
 MODULES=	x11/qt5
 
