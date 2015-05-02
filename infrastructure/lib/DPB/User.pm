@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.3 2015/05/02 16:07:44 espie Exp $
+# $OpenBSD: User.pm,v 1.4 2015/05/02 16:41:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -76,14 +76,20 @@ sub make_path
 	my ($self, @directories) = @_;
 	require File::Path;
 	my $p = {};
-#	my $p = {mode => 0775};
-	if ($self->{uid}) {
-		$p->{uid} = $self->{uid};
-	} else {
-		$p->{owner} = $self->{user};
+	if ($self->{dirmode}) {
+		$p->{mode} = $self->{dirmode};
 	}
-	if ($self->{gid}) {
-		$p->{group} = $self->{gid};
+	if ($self->{droppriv}) {
+		local ($>, $)) = ($self->{uid}, $self->{gid});
+	} else {
+		if ($self->{uid}) {
+			$p->{uid} = $self->{uid};
+		} else {
+			$p->{owner} = $self->{user};
+		}
+		if ($self->{gid}) {
+			$p->{group} = $self->{gid};
+		}
 	}
 	if ($p->{mode}) {
 		my $m = umask(0);

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.7 2015/05/02 09:44:40 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.8 2015/05/02 16:41:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -65,6 +65,12 @@ sub set_user
 	} else {
 		$prop->{$user} = $prop->{$default."_user"};
 	}
+	if (defined $prop->{dirmode}) {
+		$prop->{$user}{dirmode} = oct($prop->{dirmode});
+	}
+	if (defined $prop->{droppriv}) {
+		$prop->{$user}{droppriv} = $prop->{droppriv};
+    	}
 }
 
 sub finalize
