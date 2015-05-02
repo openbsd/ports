@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.1 2015/05/02 09:44:40 espie Exp $
+# $OpenBSD: User.pm,v 1.2 2015/05/02 13:12:39 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -43,6 +43,21 @@ sub new
 	}
 }
 
+sub next_user
+{
+	my $user = shift;
+	if (!defined $user->{gen}) {
+		if ($user->{user} =~ m/^(.*\D)(\d+)$/) {
+			$user->{template} = $1;
+			$user->{gen} = $2;
+		} else {
+			die "Can't figure out user template";
+		}
+    	}
+	$user->{gen}++;
+	return ref($user)->new($user->{template}.$user->{gen});
+}
+
 sub user
 {
 	my $self = shift;
@@ -61,6 +76,7 @@ sub make_path
 	my ($self, @directories) = @_;
 	require File::Path;
 	my $p = {};
+#	my $p = {mode => 0775};
 	if ($self->{uid}) {
 		$p->{uid} = $self->{uid};
 	} else {
@@ -69,7 +85,13 @@ sub make_path
 	if ($self->{gid}) {
 		$p->{gid} = $self->{gid};
 	}
-	File::Path::make_path(@directories, $p);
+	if ($p->{mode}) {
+		my $m = umask(0);
+		File::Path::make_path(@directories, $p);
+		umask($m);
+	} else {
+		File::Path::make_path(@directories, $p);
+	}
 }
 
 sub open

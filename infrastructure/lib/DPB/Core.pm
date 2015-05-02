@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.77 2015/05/02 12:55:43 espie Exp $
+# $OpenBSD: Core.pm,v 1.78 2015/05/02 13:12:39 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -99,7 +99,11 @@ sub new
 sub clone
 {
 	my $self = shift;
-	return ref($self)->new($self->hostname, $self->prop);
+	my $c = ref($self)->new($self->hostname, $self->prop);
+	if ($self->prop->{round_robin}) {
+		$c->{user} = $self->prop->{build_user}->next_user;
+	}
+	return $c;
 }
 
 sub host
