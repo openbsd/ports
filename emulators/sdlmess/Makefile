@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/04/21 01:43:06 bcallah Exp $
+# $OpenBSD: Makefile,v 1.38 2015/05/02 18:22:23 bcallah Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64
@@ -10,12 +10,11 @@ COMMENT =		emulates game consoles and old home computers
 V =			160
 DISTNAME =		mame0${V}s
 PKGNAME =		sdlmess-0.${V}
+REVISION =		0
 
 CATEGORIES =		emulators games
 
 HOMEPAGE =		http://messdev.org/
-
-MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
 # MAME Distribution License, see http://mamedev.org/legal.html
 # history.dat : Creative Commons Attribution 3.0
