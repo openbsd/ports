@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Host.pm,v 1.4 2015/04/26 18:00:19 espie Exp $
+# $OpenBSD: Host.pm,v 1.5 2015/05/03 10:32:28 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -99,6 +99,7 @@ sub shellclass
 	}
 }
 
+# XXX this is a "quicky" shell before we set up hosts properly
 sub getshell
 {
 	my ($class, $state) = @_;
