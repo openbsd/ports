@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2015/05/02 14:24:12 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2015/05/03 06:44:38 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=748799
+From 5dbcf9704e1b1529172c2894182389d11fde55a5 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sat, 2 May 2015 16:18:48 +0200
+Subject: BSD: fix a couple of implicit declaration
 
 --- configure.ac.orig	Sat May  2 16:13:07 2015
 +++ configure.ac	Sat May  2 16:13:25 2015
