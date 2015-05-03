@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2015/04/04 09:21:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2015/05/03 14:16:29 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	code assistance for Gedit
 
 GNOME_PROJECT=	gedit-code-assistance
-GNOME_VERSION=	3.14.3
-REVISION=	0
+GNOME_VERSION=	3.16.0
 
 CATEGORIES=	editors devel
 
@@ -21,7 +20,7 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += cairo cairo-gobject dbus-1 expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 girepository-1.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz
+WANTLIB += gtk-3 gtksourceview-3.0 harfbuzz epoxy
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
 WANTLIB += peas-gtk-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm xml2 z lzma
