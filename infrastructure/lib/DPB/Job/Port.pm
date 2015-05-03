@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.154 2015/05/01 15:41:52 espie Exp $
+# $OpenBSD: Port.pm,v 1.155 2015/05/03 08:15:35 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -62,7 +62,7 @@ sub finalize
 }
 
 # note that tasks are using the "flyweight" pattern: they're
-# just a name + behavior, and all the date is in job (which is
+# just a name + behavior, and all the data is in job (which is
 # obtained thru core)
 sub new
 {
