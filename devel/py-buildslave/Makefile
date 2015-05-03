@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/02 14:21:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2015/05/03 08:28:07 landry Exp $
 
 COMMENT=	buildslave for the buildbot CI system
 
-MODPY_EGG_VERSION=	0.8.10
+MODPY_EGG_VERSION=	0.8.12
 DISTNAME=	buildbot-slave-${MODPY_EGG_VERSION}
 PKGNAME=	py-buildslave-${MODPY_EGG_VERSION:S/p/pl/}
 
