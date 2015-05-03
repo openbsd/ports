@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/03/26 14:30:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/05/03 14:30:30 jasper Exp $
 include/telepathy-logger-0.2/
 include/telepathy-logger-0.2/telepathy-logger/
 include/telepathy-logger-0.2/telepathy-logger/call-event.h
@@ -29,10 +29,13 @@ share/gtk-doc/html/telepathy-logger/ch-public.html
 share/gtk-doc/html/telepathy-logger/home.png
 share/gtk-doc/html/telepathy-logger/index.html
 share/gtk-doc/html/telepathy-logger/index.sgml
+share/gtk-doc/html/telepathy-logger/left-insensitive.png
 share/gtk-doc/html/telepathy-logger/left.png
+share/gtk-doc/html/telepathy-logger/right-insensitive.png
 share/gtk-doc/html/telepathy-logger/right.png
 share/gtk-doc/html/telepathy-logger/style.css
 share/gtk-doc/html/telepathy-logger/telepathy-logger.devhelp2
+share/gtk-doc/html/telepathy-logger/up-insensitive.png
 share/gtk-doc/html/telepathy-logger/up.png
 share/telepathy/
 share/telepathy/clients/
