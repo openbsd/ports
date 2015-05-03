@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/04/30 21:39:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.35 2015/05/03 13:00:53 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -24,7 +24,7 @@ PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-qch =		qt5-qch-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
-REVISION-main =		4
+REVISION-main =		5
 REVISION-examples =	0
 REVISION-html =		0
 
@@ -105,7 +105,7 @@ WANTLIB-examples += Qt5Gui Qt5Help Qt5Multimedia Qt5MultimediaWidgets Qt5Network
 WANTLIB-examples += Qt5Nfc Qt5OpenGL Qt5Positioning Qt5PrintSupport Qt5Qml
 WANTLIB-examples += Qt5Quick Qt5QuickTest Qt5Script Qt5ScriptTools Qt5Sensors
 WANTLIB-examples += Qt5Sql Qt5Svg Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets
-WANTLIB-examples += Qt5Xml Qt5XmlPatterns
+WANTLIB-examples += Qt5Xml Qt5XmlPatterns Qt5Designer
 
 WANTLIB-html =
 
@@ -184,12 +184,14 @@ LIB_DEPENDS-tds =	${BUILD_PKGPATH},-main>=${VERSION:R} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/freetds
 
-BUILD_DEPENDS =		x11/dbus
+BUILD_DEPENDS =		geo/geoclue \
+			x11/dbus
 # QtWebKit & Co. requirements
 BUILD_DEPENDS +=	devel/flex \
 			devel/bison \
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
+			geo/geoclue \
 			x11/dbus
 RUN_DEPENDS-examples =
 RUN_DEPENDS-html =
@@ -390,8 +392,10 @@ post-install:
 	# pkg-config files
 	@if [ -d ${QT_PKGCFGDIR} ]; then \
 		for f in ${QT_PKGCFGDIR}/*; do \
-			echo "mv -- $$f ${PREFIX}/lib/pkgconfig"; \
-			mv -- "$$f" ${PREFIX}/lib/pkgconfig; \
+			echo $${f##*/}; \
+			perl -p -e 's@ -L$${WRKBUILD}\S+@@g;' \
+			        -e 's@ -Wl,-whole-archive.*@@;' \
+			    $$f >${PREFIX}/lib/pkgconfig/$${f##*/}; \
 		done; \
 	fi
 	# CMake files get values from QMake config "as is"
