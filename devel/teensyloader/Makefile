@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/10 02:08:22 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2015/05/03 13:31:49 bmercer Exp $
 
 COMMENT=	in-system programmer for Teensy boards
-
-DISTNAME=	teensy_loader_cli.2.0
-PKGNAME=	teensyloader-2.0
-REVISION=	1
+V=		2.1
+DISTNAME=	teensy_loader_cli.${V}
+PKGNAME=	teensyloader-${V}
 CATEGORIES=	devel
-
+EXTRACT_SUFX=	.zip
 HOMEPAGE=	http://www.pjrc.com/teensy/
 
 # GPLv3
@@ -19,7 +18,6 @@ MASTER_SITES=		${HOMEPAGE}
 CONFIGURE_STYLE=	None
 WRKDIST=		${WRKDIR}/teensy_loader_cli
 MAKE_FILE=		Makefile.bsd
-
 NO_TEST=		Yes
 
 do-install:

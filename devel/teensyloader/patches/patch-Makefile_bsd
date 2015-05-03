@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_bsd,v 1.1 2010/06/26 21:22:00 ckuethe Exp $
---- Makefile.bsd.orig	Mon Feb 15 18:27:15 2010
-+++ Makefile.bsd	Mon Feb 15 18:28:31 2010
+$OpenBSD: patch-Makefile_bsd,v 1.2 2015/05/03 13:31:49 bmercer Exp $
+--- Makefile.bsd.orig	Sun Apr 19 21:29:46 2015
++++ Makefile.bsd	Thu Apr 23 16:53:05 2015
 @@ -1,6 +1,6 @@
 -OS ?= FreeBSD
 +#OS ?= FreeBSD
@@ -10,17 +10,17 @@ $OpenBSD: patch-Makefile_bsd,v 1.1 2010/06/26 21:22:00 ckuethe Exp $
  
  CFLAGS ?= -O2 -Wall
  CC ?= gcc
-@@ -14,8 +14,10 @@ LIBS =
+@@ -13,9 +13,9 @@ CFLAGS += -DUSE_UHID
+ LIBS =
  .endif
  
++all: teensyloader
++teensyloader: teensy_loader_cli.c
++	$(CC) $(CFLAGS) -s -o teensyloader teensy_loader_cli.c $(LIBS)
  
 -teensy_loader_cli: teensy_loader_cli.c
 -	$(CC) $(CFLAGS) -s -o teensy_loader_cli teensy_loader_cli.c $(LIBS)
-+all: teensyloader
- 
-+teensyloader: teensy_loader_cli.c
-+	$(CC) $(CFLAGS) -s -o teensyloader teensy_loader_cli.c $(LIBS)
-+
+-
  clean:
 -	rm -f teensy_loader_cli
 +	rm -f teensyloader
