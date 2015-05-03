@@ -1,0 +1,30 @@
+$OpenBSD: patch-chrome_browser_ui_aura_chrome_browser_main_extra_parts_aura_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+--- chrome/browser/ui/aura/chrome_browser_main_extra_parts_aura.cc.orig.port	Wed Mar 11 07:31:46 2015
++++ chrome/browser/ui/aura/chrome_browser_main_extra_parts_aura.cc	Wed Mar 11 07:32:43 2015
+@@ -69,7 +69,7 @@ chrome::HostDesktopType GetInitialDesktop() {
+       command_line->HasSwitch(switches::kViewerLaunchViaAppId)) {
+     return chrome::HOST_DESKTOP_TYPE_ASH;
+   }
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   const base::CommandLine* command_line =
+       base::CommandLine::ForCurrentProcess();
+   if (command_line->HasSwitch(switches::kOpenAsh))
+@@ -130,7 +130,7 @@ void ChromeBrowserMainExtraPartsAura::PreCreateThreads
+ }
+ 
+ void ChromeBrowserMainExtraPartsAura::PreProfileInit() {
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   // Now that we have some minimal ui initialized, check to see if we're
+   // running as root and bail if we are.
+   DetectRunningAsRoot();
+@@ -144,7 +144,7 @@ void ChromeBrowserMainExtraPartsAura::PostMainMessageL
+   // after the metrics service is deleted.
+ }
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ void ChromeBrowserMainExtraPartsAura::DetectRunningAsRoot() {
+   if (getuid() == 0) {
+     const base::CommandLine& command_line =

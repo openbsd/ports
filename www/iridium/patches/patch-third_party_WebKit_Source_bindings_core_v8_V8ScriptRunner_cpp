@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_bindings_core_v8_V8ScriptRunner_cpp,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- third_party/WebKit/Source/bindings/core/v8/V8ScriptRunner.cpp.orig.port	Fri Mar 20 04:34:27 2015
++++ third_party/WebKit/Source/bindings/core/v8/V8ScriptRunner.cpp	Sat Mar 21 13:30:34 2015
+@@ -41,7 +41,7 @@
+ 
+ #if defined(WTF_OS_WIN)
+ #include <malloc.h>
+-#else
++#elif !defined(WTF_OS_OPENBSD)
+ #include <alloca.h>
+ #endif
+ 

@@ -1,0 +1,11 @@
+$OpenBSD: patch-content_content_renderer_gypi,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- content/content_renderer.gypi.orig.port	Wed Dec  3 03:32:12 2014
++++ content/content_renderer.gypi	Sat Dec  6 11:34:27 2014
+@@ -26,6 +26,7 @@
+     '../third_party/icu/icu.gyp:icui18n',
+     '../third_party/icu/icu.gyp:icuuc',
+     '../third_party/libjingle/libjingle.gyp:libjingle',
++    '../third_party/libyuv/libyuv.gyp:libyuv',
+     '../third_party/npapi/npapi.gyp:npapi',
+     '../third_party/widevine/cdm/widevine_cdm.gyp:widevine_cdm_version_h',
+     '../ui/accessibility/accessibility.gyp:accessibility',

@@ -1,0 +1,30 @@
+$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+--- chrome/browser/memory_details.cc.orig.port	Tue Mar 10 23:41:40 2015
++++ chrome/browser/memory_details.cc	Wed Mar 11 07:22:50 2015
+@@ -27,7 +27,7 @@
+ #include "content/public/common/content_constants.h"
+ #include "ui/base/l10n/l10n_util.h"
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+ #include "content/public/browser/zygote_host_linux.h"
+ #endif
+ 
+@@ -247,7 +247,7 @@ void MemoryDetails::CollectChildInfoOnIOThread() {
+ void MemoryDetails::CollectChildInfoOnUIThread() {
+   DCHECK(BrowserThread::CurrentlyOn(BrowserThread::UI));
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+   const pid_t zygote_pid = content::ZygoteHost::GetInstance()->GetPid();
+ #endif
+ 
+@@ -389,7 +389,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+       }
+     }
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+     if (process.pid == zygote_pid) {
+       process.process_type = content::PROCESS_TYPE_ZYGOTE;
+     }

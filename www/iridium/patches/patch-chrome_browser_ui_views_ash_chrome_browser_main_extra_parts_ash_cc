@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_views_ash_chrome_browser_main_extra_parts_ash_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+--- chrome/browser/ui/views/ash/chrome_browser_main_extra_parts_ash.cc.orig.port	Sat Dec 27 12:59:28 2014
++++ chrome/browser/ui/views/ash/chrome_browser_main_extra_parts_ash.cc	Sat Dec 27 13:07:28 2014
+@@ -75,7 +75,7 @@ void ChromeBrowserMainExtraPartsAsh::PreProfileInit() 
+   if (chrome::ShouldOpenAshOnStartup()) {
+     chrome::OpenAsh(gfx::kNullAcceleratedWidget);
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   ash::Shell::GetInstance()->CreateShelf();
+   ash::Shell::GetInstance()->ShowShelf();
+ #endif

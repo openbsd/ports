@@ -1,0 +1,35 @@
+$OpenBSD: patch-media_video_capture_linux_video_capture_device_factory_linux_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- media/video/capture/linux/video_capture_device_factory_linux.cc.orig.port	Wed Mar 11 07:45:18 2015
++++ media/video/capture/linux/video_capture_device_factory_linux.cc	Wed Mar 11 07:45:58 2015
+@@ -131,10 +131,7 @@ void VideoCaptureDeviceFactoryLinux::GetDeviceSupporte
+     for (; HANDLE_EINTR(ioctl(fd.get(), VIDIOC_ENUM_FRAMESIZES,
+                         &frame_size)) == 0;
+          ++frame_size.index) {
+-      if (frame_size.type == V4L2_FRMSIZE_TYPE_DISCRETE) {
+-        supported_format.frame_size.SetSize(
+-            frame_size.discrete.width, frame_size.discrete.height);
+-      } else if (frame_size.type == V4L2_FRMSIZE_TYPE_STEPWISE ||
++      if (frame_size.type == V4L2_FRMSIZE_TYPE_STEPWISE ||
+                  frame_size.type == V4L2_FRMSIZE_TYPE_CONTINUOUS) {
+         // TODO(mcasas): see http://crbug.com/249953, support these devices.
+         NOTIMPLEMENTED();
+@@ -142,18 +139,11 @@ void VideoCaptureDeviceFactoryLinux::GetDeviceSupporte
+ 
+       v4l2_frmivalenum frame_interval = {};
+       frame_interval.pixel_format = pixel_format.pixelformat;
+-      frame_interval.width = frame_size.discrete.width;
+-      frame_interval.height = frame_size.discrete.height;
+       std::list<float> frame_rates;
+       for (; HANDLE_EINTR(ioctl(fd.get(), VIDIOC_ENUM_FRAMEINTERVALS,
+                           &frame_interval)) == 0;
+            ++frame_interval.index) {
+-        if (frame_interval.type == V4L2_FRMIVAL_TYPE_DISCRETE) {
+-          if (frame_interval.discrete.numerator != 0) {
+-            frame_rates.push_back(frame_interval.discrete.denominator /
+-                static_cast<float>(frame_interval.discrete.numerator));
+-          }
+-        } else if (frame_interval.type == V4L2_FRMIVAL_TYPE_CONTINUOUS ||
++        if (frame_interval.type == V4L2_FRMIVAL_TYPE_CONTINUOUS ||
+                    frame_interval.type == V4L2_FRMIVAL_TYPE_STEPWISE) {
+           // TODO(mcasas): see http://crbug.com/249953, support these devices.
+           NOTIMPLEMENTED();

@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_web_PopupListBox_cpp,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- third_party/WebKit/Source/web/PopupListBox.cpp.orig.port	Fri Dec 26 18:03:24 2014
++++ third_party/WebKit/Source/web/PopupListBox.cpp	Fri Dec 26 18:03:29 2014
+@@ -434,7 +434,7 @@ void PopupListBox::paintRow(GraphicsContext* gc, const
+     } else {
+         backColor = style.backgroundColor();
+         textColor = style.foregroundColor();
+-#if OS(LINUX) || OS(ANDROID)
++#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
+         // On other platforms, the <option> background color is the same as the
+         // <select> background color. On Linux, that makes the <option>
+         // background color very dark, so by default, try to use a lighter

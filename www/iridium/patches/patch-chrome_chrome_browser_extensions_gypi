@@ -1,0 +1,24 @@
+$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+--- chrome/chrome_browser_extensions.gypi.orig.port	Tue Mar 10 23:41:40 2015
++++ chrome/chrome_browser_extensions.gypi	Wed Mar 11 07:22:50 2015
+@@ -971,6 +971,11 @@
+         '<@(chrome_browser_extensions_enabled_sources)',
+       ],
+       'conditions': [
++        ['os_bsd==1', {
++          'sources/': [
++            ['exclude', '^browser/extensions/api/image_writer_private/removable_storage_provider_linux.cc'],
++          ],
++        }],
+         ['chromeos==1', {
+           'include_dirs': [
+             '../third_party/libjingle/source',
+@@ -1009,7 +1014,7 @@
+         }, {
+           'sources': ['<@(chrome_browser_extensions_non_athena_sources)'],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="openbsd"', {
+           'conditions': [
+             ['use_aura==1', {
+               'dependencies': [

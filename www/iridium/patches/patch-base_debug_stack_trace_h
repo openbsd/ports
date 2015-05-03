@@ -1,0 +1,11 @@
+$OpenBSD: patch-base_debug_stack_trace_h,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+--- base/debug/stack_trace.h.orig.port	Fri Mar 22 02:13:43 2013
++++ base/debug/stack_trace.h	Tue Apr  2 21:05:17 2013
+@@ -12,6 +12,7 @@
+ #include "build/build_config.h"
+ 
+ #if defined(OS_POSIX)
++#include <sys/stdint.h>
+ #include <unistd.h>
+ #endif
+ 

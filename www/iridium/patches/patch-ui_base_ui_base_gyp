@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_base_ui_base_gyp,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- ui/base/ui_base.gyp.orig.port	Tue Mar 10 23:41:42 2015
++++ ui/base/ui_base.gyp	Wed Mar 11 07:22:50 2015
+@@ -471,7 +471,7 @@
+             'x/selection_utils.h',
+           ]
+         }],
+-        ['use_aura==0 or OS!="linux"', {
++        ['use_aura==0 or (OS!="linux" and OS!="openbsd")', {
+           'sources!': [
+             'resource/resource_bundle_auralinux.cc',
+           ],

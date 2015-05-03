@@ -1,0 +1,13 @@
+$OpenBSD: patch-net_base_address_tracker_linux_h,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- net/base/address_tracker_linux.h.orig.port	Sat Dec  6 13:01:29 2014
++++ net/base/address_tracker_linux.h	Sat Dec  6 13:01:41 2014
+@@ -7,9 +7,6 @@
+ 
+ #include <sys/socket.h>  // Needed to include netlink.
+ // Mask superfluous definition of |struct net|. This is fixed in Linux 2.6.38.
+-#define net net_kernel
+-#include <linux/rtnetlink.h>
+-#undef net
+ 
+ #include <map>
+ 

@@ -1,0 +1,92 @@
+$OpenBSD: patch-base_process_process_handle_openbsd_cc,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+--- base/process/process_handle_openbsd.cc.orig.port	Fri Oct 18 20:52:30 2013
++++ base/process/process_handle_openbsd.cc	Fri Oct 18 23:28:42 2013
+@@ -4,6 +4,8 @@
+ 
+ #include "base/process/process_handle.h"
+ 
++#include <sys/param.h>
++#include <sys/proc.h>
+ #include <sys/sysctl.h>
+ #include <sys/types.h>
+ #include <unistd.h>
+@@ -11,39 +13,64 @@
+ namespace base {
+ 
+ ProcessId GetParentProcessId(ProcessHandle process) {
+-  struct kinfo_proc info;
++  struct kinfo_proc *info;
+   size_t length;
++  pid_t ppid;
+   int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process,
+                 sizeof(struct kinfo_proc), 0 };
+ 
+   if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
+     return -1;
+ 
+-  mib[5] = (length / sizeof(struct kinfo_proc));
++  info = (struct kinfo_proc *)malloc(length);
+ 
+-  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
++  if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
+     return -1;
+ 
+-  return info.p_ppid;
++  info = (struct kinfo_proc *)malloc(length);
++
++  mib[5] = (length / sizeof(struct kinfo_proc));
++
++  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0) {
++    ppid = -1;
++    goto out;
++  }
++
++  ppid = info->p_ppid;
++
++out:
++  free(info);
++  return ppid;
+ }
+ 
+ FilePath GetProcessExecutablePath(ProcessHandle process) {
+-  struct kinfo_proc kp;
+-  size_t len;
++  struct kinfo_proc *info;
++  size_t length;
++  char *path = NULL;
+   int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process,
+                 sizeof(struct kinfo_proc), 0 };
+ 
+-  if (sysctl(mib, arraysize(mib), NULL, &len, NULL, 0) == -1)
++  if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) == -1)
+     return FilePath();
+-  mib[5] = (len / sizeof(struct kinfo_proc));
+-  if (sysctl(mib, arraysize(mib), &kp, &len, NULL, 0) < 0)
+-    return FilePath();
+-  if ((kp.p_flag & P_SYSTEM) != 0)
+-    return FilePath();
+-  if (strcmp(kp.p_comm, "chrome") == 0)
+-    return FilePath(kp.p_comm);
+ 
+-  return FilePath();
++  info = (struct kinfo_proc *)malloc(length);
++
++  mib[5] = (length / sizeof(struct kinfo_proc));
++
++  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0)
++    goto out;
++
++  if ((info->p_flag & P_SYSTEM) != 0)
++    goto out;
++
++  if (strcmp(info->p_comm, "chrome") == 0) {
++    path = info->p_comm;
++    goto out;
++  }
++
++out:
++  free(info);
++  return FilePath(path);
+ }
+ 
+ }  // namespace base

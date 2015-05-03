@@ -1,0 +1,12 @@
+$OpenBSD: patch-gpu_command_buffer_service_async_pixel_transfer_manager_share_group_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- gpu/command_buffer/service/async_pixel_transfer_manager_share_group.cc.orig.port	Fri Dec 26 19:54:22 2014
++++ gpu/command_buffer/service/async_pixel_transfer_manager_share_group.cc	Fri Dec 26 19:54:30 2014
+@@ -46,7 +46,7 @@ class TransferThread : public base::Thread {
+       : base::Thread(kAsyncTransferThreadName),
+         initialized_(false) {
+     Start();
+-#if defined(OS_ANDROID) || defined(OS_LINUX)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+     SetPriority(base::kThreadPriority_Background);
+ #endif
+   }

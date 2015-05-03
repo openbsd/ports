@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_views_views_gyp,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+--- ui/views/views.gyp.orig.port	Tue Mar 10 23:41:42 2015
++++ ui/views/views.gyp	Wed Mar 11 07:22:50 2015
+@@ -625,7 +625,7 @@
+             '../display/display.gyp:display_util',
+           ],
+         }],
+-        ['OS=="linux" and chromeos==0', {
++        ['(OS=="linux" or os_bsd==1) and chromeos==0', {
+           'dependencies': [
+             '../shell_dialogs/shell_dialogs.gyp:shell_dialogs',
+           ],

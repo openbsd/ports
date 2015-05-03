@@ -1,0 +1,39 @@
+$OpenBSD: patch-base_posix_unix_domain_socket_linux_cc,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+--- base/posix/unix_domain_socket_linux.cc.orig.port	Sat Dec  6 12:35:07 2014
++++ base/posix/unix_domain_socket_linux.cc	Sun Dec  7 15:27:39 2014
+@@ -5,7 +5,10 @@
+ #include "base/posix/unix_domain_socket_linux.h"
+ 
+ #include <errno.h>
++#include <sys/types.h>
++#include <sys/param.h>
+ #include <sys/socket.h>
++#include <sys/ucred.h>
+ #include <unistd.h>
+ 
+ #include <vector>
+@@ -23,6 +26,14 @@
+ 
+ const size_t UnixDomainSocket::kMaxFileDescriptors = 16;
+ 
++#ifndef SCM_CREDENTIALS
++#  define SCM_CREDENTIALS      0x9001
++#endif
++
++#ifndef SO_PASSCRED
++#  define SO_PASSCRED  0x9002
++#endif
++
+ #if !defined(OS_NACL_NONSFI)
+ // Creates a connected pair of UNIX-domain SOCK_SEQPACKET sockets, and passes
+ // ownership of the newly allocated file descriptors to |one| and |two|.
+@@ -148,7 +159,8 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+           cmsg->cmsg_type == SCM_CREDENTIALS) {
+         DCHECK(payload_len == sizeof(struct ucred));
+         DCHECK(pid == -1);
+-        pid = reinterpret_cast<struct ucred*>(CMSG_DATA(cmsg))->pid;
++//        pid = reinterpret_cast<struct ucred*>(CMSG_DATA(cmsg))->pid;
++        pid = getpid();
+       }
+ #endif
+     }

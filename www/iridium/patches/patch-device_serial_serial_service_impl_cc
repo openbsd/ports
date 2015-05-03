@@ -1,0 +1,18 @@
+$OpenBSD: patch-device_serial_serial_service_impl_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- device/serial/serial_service_impl.cc.orig.port	Sat Dec  6 18:28:30 2014
++++ device/serial/serial_service_impl.cc	Sun Dec  7 14:48:40 2014
+@@ -72,9 +72,14 @@ void SerialServiceImpl::Connect(
+ }
+ 
+ SerialDeviceEnumerator* SerialServiceImpl::GetDeviceEnumerator() {
++#if defined(OS_BSD)
++  NOTIMPLEMENTED();
++  return NULL;
++#else
+   if (!device_enumerator_)
+     device_enumerator_ = SerialDeviceEnumerator::Create();
+   return device_enumerator_.get();
++#endif
+ }
+ 
+ bool SerialServiceImpl::IsValidPath(const mojo::String& path) {

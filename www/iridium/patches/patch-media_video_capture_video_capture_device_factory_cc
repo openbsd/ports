@@ -1,0 +1,12 @@
+$OpenBSD: patch-media_video_capture_video_capture_device_factory_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- media/video/capture/video_capture_device_factory.cc.orig.port	Wed Mar 11 07:46:10 2015
++++ media/video/capture/video_capture_device_factory.cc	Wed Mar 11 07:46:27 2015
+@@ -50,7 +50,7 @@ void VideoCaptureDeviceFactory::EnumerateDeviceNames(c
+   callback.Run(device_names.Pass());
+ }
+ 
+-#if !defined(OS_MACOSX) && !defined(OS_LINUX) && !defined(OS_ANDROID) && !defined(OS_WIN)
++#if !defined(OS_MACOSX) && !defined(OS_LINUX) && !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_BSD)
+ // static
+ VideoCaptureDeviceFactory*
+ VideoCaptureDeviceFactory::CreateVideoCaptureDeviceFactory(

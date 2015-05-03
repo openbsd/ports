@@ -1,0 +1,15 @@
+$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig.port	Wed Dec  3 03:13:20 2014
++++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc	Sat Dec  6 11:34:25 2014
+@@ -26,8 +26,10 @@
+ #include "ui/events/event_switches.h"
+ #include "ui/gfx/screen.h"
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if !defined(OS_BSD)
+ #include <gnu/libc-version.h>
++#endif
+ 
+ #include "base/version.h"
+ #if defined(USE_X11)

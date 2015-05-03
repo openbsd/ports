@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_aura_chrome_browser_main_extra_parts_aura_h,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+--- chrome/browser/ui/aura/chrome_browser_main_extra_parts_aura.h.orig.port	Wed Dec  3 03:13:21 2014
++++ chrome/browser/ui/aura/chrome_browser_main_extra_parts_aura.h	Sat Dec  6 11:34:25 2014
+@@ -25,7 +25,7 @@ class ChromeBrowserMainExtraPartsAura : public ChromeB
+   void PostMainMessageLoopRun() override;
+ 
+  private:
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   // On the Linux desktop, we want to prevent the user from logging in as root,
+   // so that we don't destroy the profile.
+   void DetectRunningAsRoot();

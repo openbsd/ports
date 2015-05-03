@@ -1,0 +1,69 @@
+$OpenBSD: patch-gpu_config_gpu_info_collector_x11_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- gpu/config/gpu_info_collector_x11.cc.orig.port	Fri Feb 20 05:24:00 2015
++++ gpu/config/gpu_info_collector_x11.cc	Sun Feb 22 12:13:30 2015
+@@ -4,12 +4,22 @@
+ 
+ #include <X11/Xlib.h>
+ 
++#include "base/debug/trace_event.h"
+ #include "base/logging.h"
+ #include "gpu/config/gpu_info_collector_linux.h"
+ #include "third_party/libXNVCtrl/NVCtrl.h"
+ #include "third_party/libXNVCtrl/NVCtrlLib.h"
++#include "ui/gl/gl_bindings.h"
++#include "ui/gl/gl_context.h"
++#include "ui/gl/gl_implementation.h"
++#include "ui/gl/gl_surface.h"
+ #include "ui/gfx/x/x11_types.h"
+ 
++typedef bool (*PFNGLXQUERYRENDERERINTEGERMESAPROC) (Display *dpy, int screen, int renderer, int attribute, unsigned int *value);
++
++#define GLX_RENDERER_VENDOR_ID_MESA     0x8183
++#define GLX_RENDERER_DEVICE_ID_MESA     0x8184
++
+ namespace gpu {
+ 
+ // Use NVCtrl extention to query NV driver version.
+@@ -39,5 +49,42 @@ std::string CollectDriverVersionNVidia() {
+   }
+   return std::string();
+ }
++
++CollectInfoResult CollectMesaCardInfo(GPUInfo* gpu_info) {
++  unsigned int vid[3], did[3];
++
++  Display* display = gfx::GetXDisplay();
++  if (!display) {
++    LOG(ERROR) << "XOpenDisplay failed.";
++    return kCollectInfoNonFatalFailure;
++  }
++
++  bool initialized =
++      gfx::InitializeStaticGLBindings(gfx::kGLImplementationDesktopGL);
++
++  if (!initialized)
++    return kCollectInfoNonFatalFailure;
++
++  PFNGLXQUERYRENDERERINTEGERMESAPROC queryInteger =
++      (PFNGLXQUERYRENDERERINTEGERMESAPROC) glXGetProcAddressARB((const GLubyte *)
++      "glXQueryRendererIntegerMESA");
++
++  bool vendor_ret =
++      queryInteger(display, 0, 0, GLX_RENDERER_VENDOR_ID_MESA, vid);
++  bool device_ret =
++      queryInteger(display, 0, 0, GLX_RENDERER_DEVICE_ID_MESA, did);
++
++  if (vendor_ret && device_ret) {
++    GPUInfo::GPUDevice gpu;
++    gpu.vendor_id = vid[0];
++    gpu.device_id = did[0];
++    gpu_info->gpu = gpu;
++  }
++
++  if (initialized)
++    gfx::ClearGLBindings();
++
++  return kCollectInfoSuccess;
++ }
+ 
+ }  // namespace gpu

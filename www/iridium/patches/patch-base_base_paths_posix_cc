@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_base_paths_posix_cc,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+--- base/base_paths_posix.cc.orig.port	Sun May  3 14:57:33 2015
++++ base/base_paths_posix.cc	Sun May  3 14:57:50 2015
+@@ -69,7 +69,7 @@ bool PathProviderPosix(int key, FilePath* result) {
+       if ((cpath = getenv("CHROME_EXE_PATH")) != NULL)
+         *result = FilePath(cpath);
+       else
+-        *result = FilePath("/usr/local/chrome/chrome");
++        *result = FilePath("/usr/local/iridium/iridium");
+       return true;
+ #endif
+     }

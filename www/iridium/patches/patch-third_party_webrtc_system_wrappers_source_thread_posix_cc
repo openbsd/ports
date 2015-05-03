@@ -1,0 +1,62 @@
+$OpenBSD: patch-third_party_webrtc_system_wrappers_source_thread_posix_cc,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+--- third_party/webrtc/system_wrappers/source/thread_posix.cc.orig.port	Wed Dec  3 03:32:47 2014
++++ third_party/webrtc/system_wrappers/source/thread_posix.cc	Sat Dec  6 11:34:27 2014
+@@ -51,12 +51,16 @@
+ #include <string.h>  // strncpy
+ #include <unistd.h>
+ #ifdef WEBRTC_LINUX
++#if defined(__OpenBSD__)
++#include <sys/unistd.h>
++#else
+ #include <linux/unistd.h>
+ #include <sched.h>
+ #include <sys/prctl.h>
+ #include <sys/syscall.h>
+ #include <sys/types.h>
+ #endif
++#endif
+ 
+ #include "webrtc/system_wrappers/interface/critical_section_wrapper.h"
+ #include "webrtc/system_wrappers/interface/event_wrapper.h"
+@@ -136,12 +140,12 @@ ThreadPosix::ThreadPosix(ThreadRunFunction func, Threa
+ }
+ 
+ uint32_t ThreadWrapper::GetThreadId() {
+-#if defined(WEBRTC_ANDROID) || defined(WEBRTC_LINUX)
++#if (defined(WEBRTC_ANDROID) || defined(WEBRTC_LINUX)) && !defined(__OpenBSD__)
+   return static_cast<uint32_t>(syscall(__NR_gettid));
+ #elif defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
+   return pthread_mach_thread_np(pthread_self());
+ #else
+-  return reinterpret_cast<uint32_t>(pthread_self());
++  return reinterpret_cast<uint64_t>(pthread_self());
+ #endif
+ }
+ 
+@@ -171,7 +175,7 @@ ThreadPosix::~ThreadPosix() {
+   delete crit_state_;
+ }
+ 
+-#define HAS_THREAD_ID !defined(WEBRTC_IOS) && !defined(WEBRTC_MAC)
++#define HAS_THREAD_ID !defined(WEBRTC_IOS) && !defined(WEBRTC_MAC) && !defined(__OpenBSD__)
+ 
+ bool ThreadPosix::Start(unsigned int& thread_id)
+ {
+@@ -210,7 +214,7 @@ bool ThreadPosix::Start(unsigned int& thread_id)
+ 
+ // CPU_ZERO and CPU_SET are not available in NDK r7, so disable
+ // SetAffinity on Android for now.
+-#if (defined(WEBRTC_LINUX) && (!defined(WEBRTC_ANDROID)))
++#if (defined(WEBRTC_LINUX) && (!defined(WEBRTC_ANDROID) && !defined(__OpenBSD__)))
+ bool ThreadPosix::SetAffinity(const int* processor_numbers,
+                               const unsigned int amount_of_processors) {
+   if (!processor_numbers || (amount_of_processors == 0)) {
+@@ -292,7 +296,7 @@ void ThreadPosix::Run() {
+   event_->Set();
+ 
+   if (set_thread_name_) {
+-#ifdef WEBRTC_LINUX
++#if defined(WEBRTC_LINUX) && !defined(__OpenBSD__)
+     prctl(PR_SET_NAME, (unsigned long)name_, 0, 0, 0);
+ #endif
+     WEBRTC_TRACE(kTraceStateInfo, kTraceUtility, -1,

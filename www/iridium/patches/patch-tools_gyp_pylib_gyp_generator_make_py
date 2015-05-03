@@ -1,0 +1,36 @@
+$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+--- tools/gyp/pylib/gyp/generator/make.py.orig.port	Thu Oct  2 19:40:30 2014
++++ tools/gyp/pylib/gyp/generator/make.py	Fri Oct 10 16:10:31 2014
+@@ -136,7 +136,7 @@ quiet_cmd_alink = AR($(TOOLSET)) $@
+ cmd_alink = rm -f $@ && $(AR.$(TOOLSET)) crs $@ $(filter %.o,$^)
+ 
+ quiet_cmd_alink_thin = AR($(TOOLSET)) $@
+-cmd_alink_thin = rm -f $@ && $(AR.$(TOOLSET)) crsT $@ $(filter %.o,$^)
++cmd_alink_thin = rm -f $@ && $(AR.$(TOOLSET)) crs $@ $(filter %.o,$^)
+ 
+ # Due to circular dependencies between libraries :(, we wrap the
+ # special "figure out circular dependencies" flags around the entire
+@@ -186,7 +186,7 @@ quiet_cmd_alink = AR($(TOOLSET)) $@
+ cmd_alink = rm -f $@ && $(AR.$(TOOLSET)) crs $@ $(filter %.o,$^)
+ 
+ quiet_cmd_alink_thin = AR($(TOOLSET)) $@
+-cmd_alink_thin = rm -f $@ && $(AR.$(TOOLSET)) crsT $@ $(filter %.o,$^)
++cmd_alink_thin = rm -f $@ && $(AR.$(TOOLSET)) crs $@ $(filter %.o,$^)
+ 
+ # Due to circular dependencies between libraries :(, we wrap the
+ # special "figure out circular dependencies" flags around the entire
+@@ -294,11 +294,11 @@ LINK ?= %(flock)s $(builddir)/linker.lock $(CXX.target
+ # TODO(evan): move all cross-compilation logic to gyp-time so we don't need
+ # to replicate this environment fallback in make as well.
+ CC.host ?= %(CC.host)s
+-CFLAGS.host ?=
++CFLAGS.host ?= $(CFLAGS)
+ CXX.host ?= %(CXX.host)s
+-CXXFLAGS.host ?=
++CXXFLAGS.host ?= $(CXXFLAGS)
+ LINK.host ?= %(LINK.host)s
+-LDFLAGS.host ?=
++LDFLAGS.host ?= $(LDFLAGS)
+ AR.host ?= %(AR.host)s
+ 
+ # Define a dir function that can handle spaces.

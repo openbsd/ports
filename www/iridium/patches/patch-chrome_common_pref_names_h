@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+--- chrome/common/pref_names.h.orig.port	Tue Mar 10 23:41:40 2015
++++ chrome/common/pref_names.h	Wed Mar 11 07:22:50 2015
+@@ -296,7 +296,7 @@ extern const char kForceYouTubeSafetyMode[];
+ extern const char kRecordHistory[];
+ extern const char kDeleteTimePeriod[];
+ extern const char kLastClearBrowsingDataTime[];
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ extern const char kUsesSystemTheme[];
+ #endif
+ extern const char kCurrentThemePackFilename[];
+@@ -493,7 +493,7 @@ extern const char kAppWindowPlacement[];
+ extern const char kDownloadDefaultDirectory[];
+ extern const char kDownloadExtensionsToOpen[];
+ extern const char kDownloadDirUpgraded[];
+-#if defined(OS_WIN) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \
+     (defined(OS_MACOSX) && !defined(OS_IOS))
+ extern const char kOpenPdfDownloadInSystemReader[];
+ #endif

@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_test_perf_perf_test_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- chrome/test/perf/perf_test.cc.orig.port	Wed Dec  4 21:55:17 2013
++++ chrome/test/perf/perf_test.cc	Thu Dec  5 15:32:45 2013
+@@ -352,7 +352,7 @@ std::string MemoryUsageInfoToString(const std::string&
+   AppendResult(output, "ws_final_t", "", "ws_f_t" + trace_name,
+                total_working_set_size, "bytes",
+                false /* not important */);
+-#elif defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_ANDROID)
++#elif defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_ANDROID) || defined(OS_BSD)
+   AppendResult(output,
+                "vm_size_final_b",
+                std::string(),

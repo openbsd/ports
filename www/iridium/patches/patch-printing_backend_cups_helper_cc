@@ -1,0 +1,15 @@
+$OpenBSD: patch-printing_backend_cups_helper_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- printing/backend/cups_helper.cc.orig.port	Thu Oct  2 19:39:47 2014
++++ printing/backend/cups_helper.cc	Fri Oct 10 16:10:31 2014
+@@ -289,10 +289,7 @@ bool GetColorModelSettings(ppd_file_t* ppd,
+                            ColorModel* cm_black,
+                            ColorModel* cm_color,
+                            bool* is_color) {
+-  bool is_color_device = false;
+-  ppd_attr_t* attr = ppdFindAttr(ppd, kColorDevice, NULL);
+-  if (attr && attr->value)
+-    is_color_device = ppd->color_device;
++  bool is_color_device = ppd->color_device;
+ 
+   *is_color = is_color_device;
+   return (is_color_device &&

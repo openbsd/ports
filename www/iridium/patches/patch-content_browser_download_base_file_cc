@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_download_base_file_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- content/browser/download/base_file.cc.orig.port	Wed Nov 19 05:53:03 2014
++++ content/browser/download/base_file.cc	Wed Nov 19 08:38:25 2014
+@@ -208,7 +208,7 @@ void BaseFile::SetClientGuid(const std::string& guid) 
+ }
+ 
+ // OS_WIN, OS_MACOSX and OS_LINUX have specialized implementations.
+-#if !defined(OS_WIN) && !defined(OS_MACOSX) && !defined(OS_LINUX)
++#if !defined(OS_WIN) && !defined(OS_MACOSX) && !defined(OS_LINUX) && !defined(OS_BSD)
+ DownloadInterruptReason BaseFile::AnnotateWithSourceInformation() {
+   return DOWNLOAD_INTERRUPT_REASON_NONE;
+ }

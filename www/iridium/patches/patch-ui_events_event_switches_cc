@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_events_event_switches_cc,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+--- ui/events/event_switches.cc.orig.port	Wed Nov 19 06:13:11 2014
++++ ui/events/event_switches.cc	Wed Nov 19 08:38:27 2014
+@@ -27,7 +27,7 @@ const char kTouchEventsDisabled[] = "disabled";
+ const char kCompensateForUnstablePinchZoom[] =
+     "compensate-for-unstable-pinch-zoom";
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ // Tells chrome to interpret events from these devices as touch events. Only
+ // available with XInput 2 (i.e. X server 1.8 or above). The id's of the
+ // devices can be retrieved from 'xinput list'.

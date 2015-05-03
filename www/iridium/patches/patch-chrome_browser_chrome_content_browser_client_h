@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+--- chrome/browser/chrome_content_browser_client.h.orig.port	Tue Mar 10 23:41:40 2015
++++ chrome/browser/chrome_content_browser_client.h	Wed Mar 11 07:22:50 2015
+@@ -258,7 +258,7 @@ class ChromeContentBrowserClient : public content::Con
+   net::CookieStore* OverrideCookieStoreForRenderProcess(
+       int render_process_id) override;
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+   void GetAdditionalMappedFilesForChildProcess(
+       const base::CommandLine& command_line,
+       int child_process_id,

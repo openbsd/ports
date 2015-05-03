@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_ui_views_message_center_web_notification_tray_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+--- chrome/browser/ui/views/message_center/web_notification_tray.cc.orig.port	Sat Dec 27 12:59:28 2014
++++ chrome/browser/ui/views/message_center/web_notification_tray.cc	Sat Dec 27 13:07:51 2014
+@@ -31,7 +31,7 @@
+ #include "ui/strings/grit/ui_strings.h"
+ #include "ui/views/widget/widget.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "base/environment.h"
+ #include "base/nix/xdg_util.h"
+ #endif
+@@ -66,7 +66,7 @@ gfx::ImageSkia* GetIcon(int unread_count, bool is_quie
+ }
+ 
+ bool CanDestroyStatusIcon() {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Avoid creating multiple system tray icons on KDE4 and newer versions of KDE
+   // because the OS does not support removing system tray icons.
+   // TODO(pkotwicz): This is a hack for the sake of M40. Fix this properly.

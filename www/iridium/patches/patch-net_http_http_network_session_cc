@@ -1,0 +1,13 @@
+$OpenBSD: patch-net_http_http_network_session_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- net/http/http_network_session.cc.orig.port	Wed Sep 18 10:14:07 2013
++++ net/http/http_network_session.cc	Sun Sep 22 16:09:42 2013
+@@ -12,7 +12,9 @@
+ #include "base/stl_util.h"
+ #include "base/strings/string_util.h"
+ #include "base/values.h"
++#if defined(USE_KERBEROS)
+ #include "net/http/http_auth_handler_factory.h"
++#endif
+ #include "net/http/http_response_body_drainer.h"
+ #include "net/http/http_stream_factory_impl.h"
+ #include "net/http/url_security_manager.h"

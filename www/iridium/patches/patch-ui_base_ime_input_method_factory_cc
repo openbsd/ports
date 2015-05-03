@@ -1,0 +1,21 @@
+$OpenBSD: patch-ui_base_ime_input_method_factory_cc,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+--- ui/base/ime/input_method_factory.cc.orig.port	Wed Mar 11 07:50:37 2015
++++ ui/base/ime/input_method_factory.cc	Wed Mar 11 07:51:03 2015
+@@ -14,7 +14,7 @@
+ #include "ui/base/ime/remote_input_method_win.h"
+ #elif defined(OS_MACOSX)
+ #include "ui/base/ime/input_method_mac.h"
+-#elif defined(USE_AURA) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#elif defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ #include "ui/base/ime/input_method_auralinux.h"
+ #else
+ #include "ui/base/ime/input_method_minimal.h"
+@@ -47,7 +47,7 @@ scoped_ptr<InputMethod> CreateInputMethod(
+   return make_scoped_ptr(new InputMethodWin(delegate, widget));
+ #elif defined(OS_MACOSX)
+   return make_scoped_ptr(new InputMethodMac(delegate));
+-#elif defined(USE_AURA) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#elif defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   return make_scoped_ptr(new InputMethodAuraLinux(delegate));
+ #else
+   return make_scoped_ptr(new InputMethodMinimal(delegate));

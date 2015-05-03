@@ -1,0 +1,30 @@
+$OpenBSD: patch-third_party_WebKit_Source_platform_fonts_SimpleFontData_cpp,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- third_party/WebKit/Source/platform/fonts/SimpleFontData.cpp.orig.port	Tue Mar 10 23:55:07 2015
++++ third_party/WebKit/Source/platform/fonts/SimpleFontData.cpp	Wed Mar 11 07:22:50 2015
+@@ -48,7 +48,7 @@ namespace blink {
+ const float smallCapsFontSizeMultiplier = 0.7f;
+ const float emphasisMarkFontSizeMultiplier = 0.5f;
+ 
+-#if OS(LINUX) || OS(ANDROID)
++#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
+ // This is the largest VDMX table which we'll try to load and parse.
+ static const size_t maxVDMXTableSize = 1024 * 1024; // 1 MB
+ #endif
+@@ -105,7 +105,7 @@ void SimpleFontData::platformInit()
+     int vdmxAscent = 0, vdmxDescent = 0;
+     bool isVDMXValid = false;
+ 
+-#if OS(LINUX) || OS(ANDROID)
++#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
+     // Manually digging up VDMX metrics is only applicable when bytecode hinting using FreeType.
+     // With GDI, the metrics will already have taken this into account (as needed).
+     // With DirectWrite or CoreText, no bytecode hinting is ever done.
+@@ -139,7 +139,7 @@ void SimpleFontData::platformInit()
+     } else {
+         ascent = SkScalarRoundToInt(-metrics.fAscent);
+         descent = SkScalarRoundToInt(metrics.fDescent);
+-#if OS(LINUX) || OS(ANDROID)
++#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
+         // When subpixel positioning is enabled, if the descent is rounded down, the descent part
+         // of the glyph may be truncated when displayed in a 'overflow: hidden' container.
+         // To avoid that, borrow 1 unit from the ascent when possible.

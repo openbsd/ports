@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_download_chrome_download_manager_delegate_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+--- chrome/browser/download/chrome_download_manager_delegate.cc.orig.port	Sun Feb 15 11:06:29 2015
++++ chrome/browser/download/chrome_download_manager_delegate.cc	Sun Feb 15 11:06:44 2015
+@@ -719,7 +719,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
+ 
+ bool ChromeDownloadManagerDelegate::IsOpenInBrowserPreferreredForFile(
+     const base::FilePath& path) {
+-#if defined(OS_WIN) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \
+     (defined(OS_MACOSX) && !defined(OS_IOS))
+   if (path.MatchesExtension(FILE_PATH_LITERAL(".pdf"))) {
+     return !download_prefs_->ShouldOpenPdfInSystemReader();

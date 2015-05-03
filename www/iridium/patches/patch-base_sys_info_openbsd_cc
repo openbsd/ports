@@ -1,0 +1,15 @@
+$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+--- base/sys_info_openbsd.cc.orig.port	Wed Jun 12 09:28:39 2013
++++ base/sys_info_openbsd.cc	Sun Jul 14 10:59:41 2013
+@@ -44,11 +44,6 @@ int64 SysInfo::AmountOfPhysicalMemory() {
+ }
+ 
+ // static
+-int64 SysInfo::AmountOfAvailablePhysicalMemory() {
+-  return AmountOfMemory(_SC_AVPHYS_PAGES);
+-}
+-
+-// static
+ size_t SysInfo::MaxSharedMemorySize() {
+   int mib[] = { CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX };
+   size_t limit;

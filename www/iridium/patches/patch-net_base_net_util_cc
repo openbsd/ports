@@ -1,0 +1,11 @@
+$OpenBSD: patch-net_base_net_util_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- net/base/net_util.cc.orig.port	Tue Mar 10 23:29:13 2015
++++ net/base/net_util.cc	Wed Mar 11 07:22:50 2015
+@@ -25,6 +25,7 @@
+ #include <netdb.h>
+ #include <netinet/in.h>
+ #include <unistd.h>
++#include <sys/socket.h>
+ #if !defined(OS_NACL)
+ #include <net/if.h>
+ #if !defined(OS_ANDROID)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_notifications_message_center_notification_manager_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+--- chrome/browser/notifications/message_center_notification_manager.cc.orig.port	Sat Dec 27 12:59:28 2014
++++ chrome/browser/notifications/message_center_notification_manager.cc	Sat Dec 27 13:04:12 2014
+@@ -83,7 +83,7 @@ MessageCenterNotificationManager::MessageCenterNotific
+ #endif
+   blockers_.push_back(new FullscreenNotificationBlocker(message_center));
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) \
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD) \
+   || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+   // On Windows, Linux and Mac, the notification manager owns the tray icon and
+   // views.Other platforms have global ownership and Create will return NULL.

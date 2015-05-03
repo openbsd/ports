@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_common_pref_names_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+--- chrome/common/pref_names.cc.orig.port	Tue Mar 10 23:41:40 2015
++++ chrome/common/pref_names.cc	Wed Mar 11 07:22:50 2015
+@@ -896,7 +896,7 @@ const char kForceYouTubeSafetyMode[] = "settings.force
+ // supervised users.
+ const char kRecordHistory[] = "settings.history_recorded";
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // Linux specific preference on whether we should match the system theme.
+ const char kUsesSystemTheme[] = "extensions.theme.use_system";
+ #endif
+@@ -1428,7 +1428,7 @@ const char kDownloadDefaultDirectory[] = "download.def
+ // upgrade a unsafe location to a safe location.
+ const char kDownloadDirUpgraded[] = "download.directory_upgrade";
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \
+     (defined(OS_MACOSX) && !defined(OS_IOS))
+ const char kOpenPdfDownloadInSystemReader[] =
+     "download.open_pdf_in_system_reader";

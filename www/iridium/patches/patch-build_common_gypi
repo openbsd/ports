@@ -1,0 +1,74 @@
+$OpenBSD: patch-build_common_gypi,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+--- build/common.gypi.orig.port	Tue Mar 10 23:41:39 2015
++++ build/common.gypi	Wed Mar 11 07:22:50 2015
+@@ -94,7 +94,7 @@
+ 
+           'conditions': [
+             # ChromeOS and Windows use Aura and Ash.
+-            ['chromeos==1 or OS=="win" or OS=="linux"', {
++            ['chromeos==1 or OS=="win" or OS=="linux" or OS=="openbsd"', {
+               'use_ash%': 1,
+               'use_aura%': 1,
+             }],
+@@ -800,7 +800,7 @@
+ 
+         # Use GPU accelerated cross process image transport by default
+         # on linux builds with the Aura window manager
+-        ['use_aura==1 and OS=="linux"', {
++        ['use_aura==1 and (OS=="linux" or OS=="openbsd")', {
+           'ui_compositor_image_transport%': 1,
+         }, {
+           'ui_compositor_image_transport%': 0,
+@@ -925,7 +925,7 @@
+         # --help for more information. Meant to be overriden with GYP_DEFINES.
+         # TODO(maruel): Remove the conditions as more configurations are
+         # supported.
+-        ['OS!="ios" and OS!="android" and chromeos==0', {
++        ['OS!="ios" and OS!="android" and chromeos==0 and OS!="openbsd"', {
+           'test_isolation_mode%': 'check',
+         }, {
+           'test_isolation_mode%': 'noop',
+@@ -941,7 +941,7 @@
+         }, {
+           'use_openmax_dl_fft%': 0,
+         }],
+-        ['OS=="win" or OS=="linux"', {
++        ['OS=="win" or OS=="linux" or OS=="openbsd"', {
+             'enable_mdns%' : 1,
+         }],
+ 
+@@ -3510,6 +3510,14 @@
+     },
+   },
+   'conditions': [
++    ['OS=="openbsd"', {
++      'target_defaults': {
++        'cflags': [
++          '-fno-stack-protector',
++          '-Wno-unknown-warning-option',
++        ],
++      },
++    }],
+     ['os_posix==1', {
+       'target_defaults': {
+         'ldflags': [
+@@ -4460,7 +4468,7 @@
+     }],
+     # FreeBSD-specific options; note that most FreeBSD options are set above,
+     # with Linux.
+-    ['OS=="freebsd"', {
++    ['OS=="openbsd"', {
+       'target_defaults': {
+         'ldflags': [
+           '-Wl,--no-keep-memory',
+@@ -5696,8 +5704,8 @@
+     ['clang==1 and ((OS!="mac" and OS!="ios") or clang_xcode==0) '
+         'and OS!="win"', {
+       'make_global_settings': [
+-        ['CC', '<(make_clang_dir)/bin/clang'],
+-        ['CXX', '<(make_clang_dir)/bin/clang++'],
++        ['CC', '/usr/local/bin/clang'],
++        ['CXX', '/usr/local/bin/clang++'],
+         ['CC.host', '$(CC)'],
+         ['CXX.host', '$(CXX)'],
+       ],

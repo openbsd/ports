@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_gpu_gpu_data_manager_impl_private_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- content/browser/gpu/gpu_data_manager_impl_private.cc.orig.port	Thu Oct  2 19:39:47 2014
++++ content/browser/gpu/gpu_data_manager_impl_private.cc	Fri Oct 10 16:10:30 2014
+@@ -351,7 +351,7 @@ bool GpuDataManagerImplPrivate::GpuAccessAllowed(
+     // strings even if all features are blacklisted. If all GPU features are
+     // disabled, the GPU process will only initialize GL bindings, create a GL
+     // context, and collect full GPU info.
+-#if !defined(OS_LINUX)
++#if !defined(OS_LINUX) && !defined(OS_BSD)
+     if (reason) {
+       *reason = "All GPU features are blacklisted.";
+     }

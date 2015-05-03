@@ -1,0 +1,54 @@
+$OpenBSD: patch-net_base_net_util_linux_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- net/base/net_util_linux.cc.orig.port	Fri Mar 20 04:21:23 2015
++++ net/base/net_util_linux.cc	Sat Mar 21 12:14:10 2015
+@@ -33,6 +33,7 @@ namespace {
+ // application layer.
+ bool TryConvertNativeToNetIPAttributes(int native_attributes,
+                                        int* net_attributes) {
++#if !defined(OS_BSD)
+   // For Linux/ChromeOS/Android, we disallow addresses with attributes
+   // IFA_F_OPTIMISTIC, IFA_F_DADFAILED, and IFA_F_TENTATIVE as these
+   // are still progressing through duplicated address detection (DAD)
+@@ -55,6 +56,9 @@ bool TryConvertNativeToNetIPAttributes(int native_attr
+   }
+ 
+   return true;
++#else
++  return false;
++#endif
+ }
+ 
+ }  // namespace
+@@ -69,6 +73,7 @@ inline const unsigned char* GetIPAddressData(const IPA
+ #endif
+ }
+ 
++#if !defined(OS_BSD)
+ bool GetNetworkListImpl(
+     NetworkInterfaceList* networks,
+     int policy,
+@@ -136,6 +141,7 @@ bool GetNetworkListImpl(
+ 
+   return true;
+ }
++#endif
+ 
+ }  // namespace internal
+ 
+@@ -143,12 +149,16 @@ bool GetNetworkList(NetworkInterfaceList* networks, in
+   if (networks == NULL)
+     return false;
+ 
++#if !defined(OS_BSD)
+   internal::AddressTrackerLinux tracker;
+   tracker.Init();
+ 
+   return internal::GetNetworkListImpl(networks, policy,
+                                       tracker.GetOnlineLinks(),
+                                       tracker.GetAddressMap(), &if_indextoname);
++#else
++  return false;
++#endif
+ }
+ 
+ }  // namespace net

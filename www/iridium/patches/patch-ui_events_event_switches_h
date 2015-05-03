@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_events_event_switches_h,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+--- ui/events/event_switches.h.orig.port	Wed Nov 19 06:13:11 2014
++++ ui/events/event_switches.h	Wed Nov 19 08:38:27 2014
+@@ -17,7 +17,7 @@ EVENTS_BASE_EXPORT extern const char kTouchEventsEnabl
+ EVENTS_BASE_EXPORT extern const char kTouchEventsDisabled[];
+ EVENTS_BASE_EXPORT extern const char kCompensateForUnstablePinchZoom[];
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ EVENTS_BASE_EXPORT extern const char kTouchDevices[];
+ #endif
+ 

@@ -1,0 +1,37 @@
+$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+--- chrome/browser/ui/webui/about_ui.cc.orig.port	Tue Mar 10 23:41:40 2015
++++ chrome/browser/ui/webui/about_ui.cc	Wed Mar 11 07:22:50 2015
+@@ -65,7 +65,7 @@
+ #include "chrome/browser/ui/webui/theme_source.h"
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_OPENBSD)
++#if defined(OS_LINUX)
+ #include "content/public/browser/zygote_host_linux.h"
+ #include "content/public/common/sandbox_linux.h"
+ #endif
+@@ -844,6 +844,7 @@ std::string AboutLinuxProxyConfig() {
+   return data;
+ }
+ 
++#if !defined(OS_OPENBSD)
+ void AboutSandboxRow(std::string* data, const std::string& prefix, int name_id,
+                      bool good) {
+   data->append("<tr><td>");
+@@ -918,6 +919,7 @@ std::string AboutSandbox() {
+   return data;
+ }
+ #endif
++#endif
+ 
+ // AboutMemoryHandler ----------------------------------------------------------
+ 
+@@ -1103,7 +1105,7 @@ void AboutUIHTMLSource::StartDataRequest(
+     ChromeOSCreditsHandler::Start(path, callback);
+     return;
+ #endif
+-#if defined(OS_LINUX) || defined(OS_OPENBSD)
++#if defined(OS_LINUX)
+   } else if (source_name_ == chrome::kChromeUISandboxHost) {
+     response = AboutSandbox();
+ #endif

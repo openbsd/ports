@@ -1,0 +1,15 @@
+$OpenBSD: patch-skia_skia_chrome_gypi,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- skia/skia_chrome.gypi.orig.port	Tue Mar 10 23:41:42 2015
++++ skia/skia_chrome.gypi	Wed Mar 11 07:22:50 2015
+@@ -82,6 +82,11 @@
+     'ext/vector_platform_device_emf_win.h',
+   ],
+   'conditions': [
++    [ 'use_cairo == 1', {
++      'dependencies': [
++        '../build/linux/system.gyp:pangocairo',
++      ],
++    }],
+     [ 'OS == "android" and '
+       'enable_basic_printing==0 and enable_print_preview==0', {
+       'sources!': [

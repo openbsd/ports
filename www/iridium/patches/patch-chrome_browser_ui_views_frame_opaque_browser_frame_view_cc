@@ -1,0 +1,48 @@
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig.port	Wed Dec  3 03:32:11 2014
++++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc	Sat Dec  6 11:34:25 2014
+@@ -54,7 +54,7 @@
+ #include "chrome/browser/ui/views/profiles/supervised_user_avatar_label.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "ui/views/controls/menu/menu_runner.h"
+ #endif
+ 
+@@ -79,7 +79,7 @@ const int kContentEdgeShadowThickness = 2;
+ // The icon never shrinks below 16 px on a side.
+ const int kIconMinimumSize = 16;
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ // The number of pixels to move the frame background image upwards when using
+ // the GTK+ theme and the titlebar is condensed.
+ const int kGTKThemeCondensedFrameTopInset = 15;
+@@ -335,7 +335,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
+ 
+ void OpaqueBrowserFrameView::OnMenuButtonClicked(views::View* source,
+                                                  const gfx::Point& point) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   views::MenuRunner menu_runner(frame()->GetSystemMenuModel(),
+                                 views::MenuRunner::HAS_MNEMONICS);
+   ignore_result(menu_runner.RunMenuAt(browser_view()->GetWidget(),
+@@ -588,7 +588,7 @@ gfx::Rect OpaqueBrowserFrameView::IconBounds() const {
+ }
+ 
+ bool OpaqueBrowserFrameView::ShouldShowWindowTitleBar() const {
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   // Do not show the custom title bar if the system title bar option is enabled.
+   if (!frame()->UseCustomFrame())
+     return false;
+@@ -633,7 +633,7 @@ void OpaqueBrowserFrameView::PaintMaximizedFrameBorder
+   frame_background_->set_theme_image(GetFrameImage());
+   frame_background_->set_theme_overlay_image(GetFrameOverlayImage());
+   frame_background_->set_top_area_height(GetTopAreaHeight());
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   // The window manager typically shows a gradient in the native title bar (when
+   // the system title bar pref is set, or when maximized on Ubuntu). Hide the
+   // gradient in the tab strip (by shifting it up vertically) to avoid a

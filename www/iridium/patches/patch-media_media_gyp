@@ -1,0 +1,102 @@
+$OpenBSD: patch-media_media_gyp,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- media/media.gyp.orig.port	Tue Mar 10 23:41:41 2015
++++ media/media.gyp	Wed Mar 11 07:22:50 2015
+@@ -21,7 +21,7 @@
+         'media_use_libvpx%': 1,
+       }],
+       # Enable ALSA and Pulse for runtime selection.
+-      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and (embedded!=1 or (chromecast==1 and target_arch!="arm"))', {
++      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and (embedded!=1 or (chromecast==1 and target_arch!="arm")) and os_bsd != 1', {
+         # ALSA is always needed for Web MIDI even if the cras is enabled.
+         'use_alsa%': 1,
+         'conditions': [
+@@ -35,6 +35,10 @@
+         'use_alsa%': 0,
+         'use_pulseaudio%': 0,
+       }],
++      # Override to dynamically link the sndio library.
++      ['OS=="openbsd"', {
++        'use_sndioaudio%': 0,
++      }],
+       ['sysroot!=""', {
+         'pkg-config': '../build/linux/pkg-config-wrapper "<(sysroot)" "<(target_arch)" "<(system_libdir)"',
+       }, {
+@@ -171,6 +175,8 @@
+         'audio/pulse/pulse_input.h',
+         'audio/pulse/pulse_output.cc',
+         'audio/pulse/pulse_output.h',
++        'audio/sndio/sndio_output.cc',
++        'audio/sndio/sndio_output.h',
+         'audio/pulse/pulse_util.cc',
+         'audio/pulse/pulse_util.h',
+         'audio/sample_rates.cc',
+@@ -725,6 +731,24 @@
+             'filters/h264_bitstream_buffer.h',
+           ],
+         }],
++        ['use_sndio == 1', {
++          'link_settings': {
++            'libraries': [
++              '-lsndio',
++            ],
++          },
++          'defines': [
++            'USE_SNDIO',
++          ],
++          'sources!': [
++            'audio/linux/audio_manager_linux.cc',
++          ],
++        }, {  # else: use_sndio == 0
++          'sources!': [
++            'audio/sndio/sndio_output.cc',
++            'audio/sndio/sndio_output.h',
++          ],
++        }],
+         ['use_alsa==1', {
+           'link_settings': {
+             'libraries': [
+@@ -746,7 +770,7 @@
+             'audio/openbsd/audio_manager_openbsd.h',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="openbsd"', {
+           'conditions': [
+             ['use_x11==1', {
+               'dependencies': [
+@@ -836,7 +860,7 @@
+             'ozone/media_ozone_platform.h',
+           ]
+         }],
+-        ['OS!="linux"', {
++        ['OS!="linux" and OS!="openbsd"', {
+           'sources!': [
+             'audio/cras/audio_manager_cras.cc',
+             'audio/cras/audio_manager_cras.h',
+@@ -1056,7 +1080,7 @@
+             'base/simd/convert_yuv_to_rgb_x86.cc',
+           ],
+         }],
+-        ['OS!="linux" and OS!="win"', {
++        ['OS!="linux" and OS!="win" and os_bsd!=1', {
+           'sources!': [
+             'base/keyboard_event_counter.cc',
+             'base/keyboard_event_counter.h',
+@@ -1299,7 +1323,7 @@
+             'USE_PULSEAUDIO',
+           ],
+         }],
+-        ['os_posix==1 and OS!="mac"', {
++        ['os_posix==1 and OS!="mac" and OS!="openbsd"', {
+           'conditions': [
+             ['use_allocator!="none"', {
+               'dependencies': [
+@@ -1823,7 +1847,7 @@
+             'test/pipeline_integration_test_base.cc',
+           ],
+           'conditions': [
+-            ['os_posix==1 and OS!="mac"', {
++            ['os_posix==1 and OS!="mac" and OS!="openbsd"', {
+               'conditions': [
+                 ['use_allocator!="none"', {
+                   'dependencies': [

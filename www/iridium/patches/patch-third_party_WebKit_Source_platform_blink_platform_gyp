@@ -1,0 +1,39 @@
+$OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- third_party/WebKit/Source/platform/blink_platform.gyp.orig.port	Sat Dec  6 11:49:33 2014
++++ third_party/WebKit/Source/platform/blink_platform.gyp	Sat Dec  6 11:50:13 2014
+@@ -248,7 +248,7 @@
+     # compiler optimizations, see crbug.com/237063
+     'msvs_disabled_warnings': [ 4267, 4334, 4724 ],
+     'conditions': [
+-      ['OS=="linux" or OS=="android" or OS=="win"', {
++      ['OS=="linux" or OS=="android" or OS=="win" or os_bsd==1', {
+         'sources/': [
+           # Cherry-pick files excluded by the broader regular expressions above.
+           ['include', 'fonts/opentype/OpenTypeTypes\\.h$'],
+@@ -259,7 +259,7 @@
+         ],
+       },
+       ],
+-      ['OS=="linux" or OS=="android"', {
++      ['OS=="linux" or OS=="android" or os_bsd==1', {
+         'sources/': [
+           ['include', 'fonts/linux/FontPlatformDataLinux\\.cpp$'],
+         ]
+@@ -350,7 +350,7 @@
+           ['exclude', 'scroll/ScrollbarThemeMac'],
+         ],
+       }],
+-      ['OS != "linux" and OS != "mac" and OS != "win"', {
++      ['OS != "linux" and OS != "mac" and OS != "win" and os_bsd != 1', {
+         'sources/': [
+           ['exclude', 'VDMX[^/]+\\.(cpp|h)$'],
+         ],
+@@ -395,7 +395,7 @@
+           ['exclude', 'Android\\.cpp$'],
+         ],
+       }],
+-      ['OS=="linux"', {
++      ['OS=="linux" or os_bsd==1', {
+         'dependencies': [
+           '<(DEPTH)/build/linux/system.gyp:fontconfig',
+         ],

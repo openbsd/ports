@@ -1,0 +1,43 @@
+#!/bin/sh
+# $OpenBSD: iridium,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+
+DATASIZE="716800"
+OPENFILES="400"
+
+xm_log() {
+	echo -n "$@\nDo you want to run Iridium anyway?\n\
+(If you don't increase these limits, Iridium might fail to work properly.)" | \
+		${X11BASE}/bin/xmessage -file - -center -buttons yes:0,no:1 -default no
+}
+
+if [ $(ulimit -Sd) -lt ${DATASIZE} ]; then
+	ulimit -Sd ${DATASIZE} || \
+		xm_log "Cannot increase datasize-cur to at least ${DATASIZE}"
+		[ $? -eq 0 ] || exit
+fi
+
+if [ $(ulimit -Sn) -lt ${OPENFILES} ]; then
+	ulimit -Sn ${OPENFILES} || \
+		xm_log "Cannot increase openfiles-cur to at least ${OPENFILES}"
+		[ $? -eq 0 ] || exit
+fi
+
+#
+# Temporary workaround for the case when chromium crashes and leaves
+# the SingletonLock, which prevents chromium to start up.
+#
+if [ -h ${HOME}/.config/chromium/SingletonLock ]; then
+	_pid=`readlink ${HOME}/.config/chromium/SingletonLock | cut -d '-' -f 2`
+	kill -0 ${_pid} 2>/dev/null
+	if [ $? -gt 0 ]; then
+		rm ${HOME}/.config/chromium/SingletonLock
+	fi
+fi
+
+#
+# Issue #395446
+# https://code.google.com/p/chromium/issues/detail?id=395446
+#
+[ -z ${LANG} ] && _l=en_US.UTF-8 || _l=${LANG}
+
+LANG=${_l} exec "/usr/local/iridium/iridium" "${@}"

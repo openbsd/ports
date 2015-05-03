@@ -1,0 +1,29 @@
+$OpenBSD: patch-gpu_command_buffer_service_async_pixel_transfer_manager_egl_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- gpu/command_buffer/service/async_pixel_transfer_manager_egl.cc.orig.port	Fri Dec 26 19:54:36 2014
++++ gpu/command_buffer/service/async_pixel_transfer_manager_egl.cc	Fri Dec 26 19:54:53 2014
+@@ -89,7 +89,7 @@ class TransferThread : public base::Thread {
+  public:
+   TransferThread() : base::Thread(kAsyncTransferThreadName) {
+     Start();
+-#if defined(OS_ANDROID) || defined(OS_LINUX)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+     SetPriority(base::kThreadPriority_Background);
+ #endif
+   }
+@@ -467,14 +467,14 @@ bool AsyncPixelTransferDelegateEGL::TransferIsInProgre
+ 
+ void AsyncPixelTransferDelegateEGL::WaitForTransferCompletion() {
+   if (state_->TransferIsInProgress()) {
+-#if defined(OS_ANDROID) || defined(OS_LINUX)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+     g_transfer_thread.Pointer()->SetPriority(base::kThreadPriority_Display);
+ #endif
+ 
+     state_->WaitForTransferCompletion();
+     DCHECK(!state_->TransferIsInProgress());
+ 
+-#if defined(OS_ANDROID) || defined(OS_LINUX)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+     g_transfer_thread.Pointer()->SetPriority(base::kThreadPriority_Background);
+ #endif
+   }

@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_geolocation_location_arbitrator_impl_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+--- content/browser/geolocation/location_arbitrator_impl.cc.orig.port	Thu Oct  2 19:18:57 2014
++++ content/browser/geolocation/location_arbitrator_impl.cc	Fri Oct 10 16:10:30 2014
+@@ -159,7 +159,7 @@ LocationProvider* LocationArbitratorImpl::NewNetworkLo
+ }
+ 
+ LocationProvider* LocationArbitratorImpl::NewSystemLocationProvider() {
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+   return NULL;
+ #else
+   return content::NewSystemLocationProvider();
