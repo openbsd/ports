@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.5 2015/05/02 17:14:50 espie Exp $
+# $OpenBSD: User.pm,v 1.6 2015/05/03 10:33:02 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -101,13 +101,38 @@ sub make_path
 
 sub open
 {
-	my ($self, $mode, $filename) = @_;
+	my ($self, $mode, @parms) = @_;
 	local ($>, $)) = ($self->{uid}, $self->{gid});
-	if (open(my $fh, $mode, $filename)) {
+	if (open(my $fh, $mode, @parms)) {
 		return $fh;
 	} else {
 		return undef;
     	}
+}
+
+sub opendir
+{
+	my ($self, $dirname) = @_;
+	local ($>, $)) = ($self->{uid}, $self->{gid});
+	if (opendir(my $fh, $dirname)) {
+		return $fh;
+	} else {
+		return undef;
+    	}
+}
+
+sub unlink
+{
+	my ($self, @links) = @_;
+	local ($>, $)) = ($self->{uid}, $self->{gid});
+	unlink(@links);
+}
+
+sub rename
+{
+	my ($self, $o, $n) = @_;
+	local ($>, $)) = ($self->{uid}, $self->{gid});
+	rename($o, $n);
 }
 
 package DPB::UserProxy;
@@ -127,6 +152,24 @@ sub open
 {
 	my ($self, @parms) = @_;
 	return $self->{user}->open(@parms);
+}
+
+sub opendir
+{
+	my ($self, $dirname) = @_;
+	return $self->{user}->opendir($dirname);
+}
+
+sub unlink
+{
+	my ($self, @links) = @_;
+	return $self->{user}->unlink(@links);
+}
+
+sub rename
+{
+	my ($self, @parms) = @_;
+	return $self->{user}->rename(@parms);
 }
 
 1;
