@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.6 2014/09/25 20:10:13 landry Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.7 2015/05/03 10:41:35 landry Exp $
 Install config file in examples/
---- src/Makefile.in.orig	Sun Jan 26 09:09:56 2014
-+++ src/Makefile.in	Mon Sep 22 17:27:47 2014
-@@ -36,7 +36,7 @@ POST_UNINSTALL = :
+--- src/Makefile.in.orig	Thu Feb 26 15:07:47 2015
++++ src/Makefile.in	Sat May  2 20:11:03 2015
+@@ -80,7 +80,7 @@ POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
  @BUILD_WITH_OWN_LIBOCONFIG_TRUE@am__append_1 = liboconfig
@@ -11,7 +11,7 @@ Install config file in examples/
  sbin_PROGRAMS = collectd$(EXEEXT) collectdmon$(EXEEXT)
  bin_PROGRAMS = collectd-nagios$(EXEEXT) collectdctl$(EXEEXT) \
  	collectd-tg$(EXEEXT) $(am__EXEEXT_1)
-@@ -2235,11 +2235,11 @@ top_build_prefix = @top_build_prefix@
+@@ -2316,11 +2316,11 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  SUBDIRS = libcollectdclient $(am__append_1)
@@ -25,7 +25,7 @@ Install config file in examples/
  	$(am__append_2) -DPLUGINDIR='"${pkglibdir}"' \
  	-DPKGDATADIR='"${pkgdatadir}"'
  collectd_SOURCES = collectd.c collectd.h \
-@@ -2655,7 +2655,7 @@ CLEANFILES = $(am__append_449)
+@@ -2736,7 +2736,7 @@ CLEANFILES = $(am__append_449)
  @BUILD_PLUGIN_NOTIFY_DESKTOP_TRUE@notify_desktop_la_LIBADD = $(LIBNOTIFY_LIBS)
  @BUILD_PLUGIN_NOTIFY_EMAIL_TRUE@notify_email_la_SOURCES = notify_email.c
  @BUILD_PLUGIN_NOTIFY_EMAIL_TRUE@notify_email_la_LDFLAGS = -module -avoid-version
@@ -34,7 +34,7 @@ Install config file in examples/
  @BUILD_PLUGIN_NTPD_TRUE@ntpd_la_SOURCES = ntpd.c
  @BUILD_PLUGIN_NTPD_TRUE@ntpd_la_LDFLAGS = -module -avoid-version
  @BUILD_PLUGIN_NTPD_TRUE@ntpd_la_LIBADD = $(am__append_254)
-@@ -4856,13 +4856,8 @@ uninstall-man: uninstall-man1 uninstall-man5
+@@ -5039,13 +5039,8 @@ uninstall-man: uninstall-man1 uninstall-man5
  @HAVE_PROTOC_C_TRUE@	protoc-c -I$(srcdir) --c_out . $(srcdir)/riemann.proto
  
  install-exec-hook:

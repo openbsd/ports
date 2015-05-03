@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.6 2014/10/27 09:07:07 landry Exp $
+$OpenBSD: patch-configure,v 1.7 2015/05/03 10:41:35 landry Exp $
 no Werror, breaks with gcrypt deprecation warnings
 dont check for pcap-bpf.h, not installed on openbsd
 need to include sys/param.h and unistd.h to properly reach swapctl() prototype
 https://github.com/collectd/collectd/pull/779
---- configure.orig	Sun Jan 26 09:10:00 2014
-+++ configure	Fri Oct 24 10:41:43 2014
-@@ -12793,7 +12793,7 @@ eval "LTDLOPEN=\"$libname_spec\""
+--- configure.orig	Thu Feb 26 15:07:49 2015
++++ configure	Sat May  2 20:22:14 2015
+@@ -12873,7 +12873,7 @@ eval "LTDLOPEN=\"$libname_spec\""
  
  
  
@@ -14,7 +14,7 @@ https://github.com/collectd/collectd/pull/779
  
  
  
-@@ -16812,7 +16812,7 @@ SAVE_CFLAGS="$CFLAGS"
+@@ -16954,7 +16954,7 @@ SAVE_CFLAGS="$CFLAGS"
  # Emulate behavior of src/Makefile.am
  if test "x$GCC" = "xyes"
  then
@@ -23,7 +23,7 @@ https://github.com/collectd/collectd/pull/779
  fi
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for strtok_r" >&5
-@@ -17524,8 +17524,11 @@ else
+@@ -17666,8 +17666,11 @@ else
  #  undef _LARGEFILE64_SOURCE
  #endif
  #include <sys/stat.h>
@@ -35,7 +35,7 @@ https://github.com/collectd/collectd/pull/779
  int
  main ()
  {
-@@ -17561,7 +17564,9 @@ else
+@@ -17703,7 +17706,9 @@ else
  #  undef _LARGEFILE64_SOURCE
  #endif
  #include <sys/stat.h>
@@ -45,7 +45,7 @@ https://github.com/collectd/collectd/pull/779
  
  int
  main ()
-@@ -18562,16 +18567,16 @@ else
+@@ -18740,16 +18745,16 @@ else
  fi
  
  
@@ -65,7 +65,7 @@ https://github.com/collectd/collectd/pull/779
  _ACEOF
  
  
-@@ -18585,16 +18590,16 @@ else
+@@ -18763,16 +18768,16 @@ else
  		have_struct_kinfo_proc_openbsd="no"
  
  fi
@@ -85,7 +85,7 @@ https://github.com/collectd/collectd/pull/779
  _ACEOF
  
  
-@@ -22812,23 +22817,7 @@ fi
+@@ -22990,23 +22995,7 @@ fi
  done
  
  fi
@@ -109,16 +109,16 @@ https://github.com/collectd/collectd/pull/779
  if test "x$with_libpcap" = "xyes"
  then
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether libpcap has PCAP_ERROR_IFACE_NOT_UP" >&5
-@@ -23057,7 +23046,7 @@ then
- 	SAVE_LDFLAGS="$LDFLAGS"
+@@ -23235,7 +23224,7 @@ then
+ 	SAVE_LIBS="$LIBS"
  	# trigger an error if Perl_load_module*() uses __attribute__nonnull__(3)
  	# (see issues #41 and #42)
 -	CFLAGS="$CFLAGS $PERL_CFLAGS -Wall -Werror"
 +	CFLAGS="$CFLAGS $PERL_CFLAGS -Wall"
- 	LDFLAGS="$LDFLAGS $PERL_LDFLAGS"
+ 	LIBS="$LIBS $PERL_LIBS"
  
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for broken Perl_load_module()" >&5
-@@ -26629,7 +26618,7 @@ then
+@@ -26803,7 +26792,7 @@ then
  	plugin_processes="yes"
  fi
  

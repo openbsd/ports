@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_tcpconns_c,v 1.4 2014/11/17 15:23:12 landry Exp $
+$OpenBSD: patch-src_tcpconns_c,v 1.5 2015/05/03 10:41:35 landry Exp $
 https://github.com/collectd/collectd/pull/779
 https://github.com/collectd/collectd/pull/808
---- src/tcpconns.c.orig	Sun Jan 26 09:09:14 2014
-+++ src/tcpconns.c	Mon Sep 22 16:59:13 2014
-@@ -896,7 +896,6 @@ static int conn_init (void)
+--- src/tcpconns.c.orig	Thu Feb 26 11:43:48 2015
++++ src/tcpconns.c	Sat May  2 20:11:03 2015
+@@ -909,7 +909,6 @@ static int conn_init (void)
  static int conn_read (void)
  {
    struct inpcbtable table;
@@ -11,7 +11,7 @@ https://github.com/collectd/collectd/pull/808
    struct inpcb *next;
    struct inpcb inpcb;
    struct tcpcb tcpcb;
-@@ -909,18 +908,16 @@ static int conn_read (void)
+@@ -922,18 +921,16 @@ static int conn_read (void)
    if (status != 0)
      return (-1);
  
@@ -33,7 +33,7 @@ https://github.com/collectd/collectd/pull/808
  
      /* Ignore sockets, that are not connected. */
  #ifdef __NetBSD__
-@@ -937,7 +934,7 @@ static int conn_read (void)
+@@ -950,7 +947,7 @@ static int conn_read (void)
  
      kread ((u_long) inpcb.inp_ppcb, &tcpcb, sizeof (tcpcb));
      conn_handle_ports (ntohs(inpcb.inp_lport), ntohs(inpcb.inp_fport), tcpcb.t_state);
