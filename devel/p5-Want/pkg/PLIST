@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/12/03 07:46:15 jasper Exp $
-@comment ${P5ARCH}/auto/Want/Want.bs
+@comment $OpenBSD: PLIST,v 1.5 2015/05/03 14:19:00 jasper Exp $
 ${P5ARCH}/
 ${P5ARCH}/Want.pm
 ${P5ARCH}/auto/
