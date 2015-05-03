@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2015/04/06 14:57:15 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2015/05/03 12:57:01 ajacoutot Exp $
 
 CATEGORIES =	games
 PKGNAME ?=	${DISTNAME:S/-src//}
@@ -29,6 +29,8 @@ RUN_DEPENDS +=	devel/desktop-file-utils x11/gtk+3,-guic
 MAKE_FLAGS +=	CXX=${CXX} \
 		QMAKE_CXXFLAGS="${CXXFLAGS}"
 FAKE_FLAGS +=	INSTALL_ROOT=${DESTDIR}
+
+NO_TEST =	Yes
 
 do-configure:
 .if ${QT5} == "Yes"

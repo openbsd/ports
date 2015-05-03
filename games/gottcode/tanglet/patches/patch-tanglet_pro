@@ -1,0 +1,17 @@
+$OpenBSD: patch-tanglet_pro,v 1.1 2015/05/03 12:57:01 ajacoutot Exp $
+
+XXX link_pkgconfig does not work properly when WRKOBJDIR is not set to the default
+(talk to zhuk@ landry@ aja@)
+
+--- tanglet.pro.orig	Sun May  3 14:51:52 2015
++++ tanglet.pro	Sun May  3 14:52:00 2015
+@@ -12,8 +12,7 @@ macx {
+ } else:win32 {
+ 	LIBS += -lz
+ } else:unix {
+-	CONFIG += link_pkgconfig
+-	PKGCONFIG += zlib
++	LIBS += -lz
+ }
+ 
+ # Allow in-tree builds
