@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/04/19 18:34:34 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.17 2015/05/03 19:44:48 bcallah Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -232,6 +232,7 @@ share/examples/seed7/calc7.sd7
 share/examples/seed7/carddemo.sd7
 share/examples/seed7/castle.dat
 share/examples/seed7/castle.sd7
+share/examples/seed7/cat.sd7
 share/examples/seed7/cellauto.sd7
 share/examples/seed7/celsius.sd7
 share/examples/seed7/chk_all.sd7
