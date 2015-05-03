@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/03/23 16:09:39 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/05/03 02:51:35 bcallah Exp $
 bin/livestreamer
 lib/python${MODPY_VERSION}/site-packages/livestreamer/
 lib/python${MODPY_VERSION}/site-packages/livestreamer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -145,6 +145,8 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/livestation.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/livestation.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/livestream.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/livestream.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/media_ccc_de.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/media_ccc_de.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/mips.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/mips.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/mlgtv.py
@@ -159,14 +161,20 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/nrk.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/nrk.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/oldlivestream.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/oldlivestream.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/periscope.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/periscope.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/picarto.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/picarto.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/rtve.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/rtve.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/sbsdiscovery.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/sbsdiscovery.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/seemeplay.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/seemeplay.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/speedrunslive.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/speedrunslive.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ssh101.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ssh101.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/stream.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/stream.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/streamingvideoprovider.py
