@@ -1,0 +1,16 @@
+$OpenBSD: patch-vcl_Executable_vcldemo_mk,v 1.1 2015/05/03 11:30:33 robert Exp $
+--- vcl/Executable_vcldemo.mk.orig.port	Mon Apr  6 15:44:30 2015
++++ vcl/Executable_vcldemo.mk	Mon Apr  6 15:44:47 2015
+@@ -42,10 +42,10 @@ $(eval $(call gb_Executable_use_static_libraries,vclde
+     vclmain \
+ ))
+ 
+-ifeq ($(OS),LINUX)
++ifneq (,$(filter LINUX OPENBSD,$(OS)))
+ $(eval $(call gb_Executable_add_libs,vcldemo,\
+ 	-lm \
+-	-ldl \
++	$(if $(filter LINUX,$(OS)),-ldl) \
+ 	-lpthread \
+     -lGL \
+     -lGLU \

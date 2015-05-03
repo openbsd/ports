@@ -1,11 +1,11 @@
-$OpenBSD: patch-external_lpsolve_UnpackedTarball_lpsolve_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
---- external/lpsolve/UnpackedTarball_lpsolve.mk.orig.port	Wed Jul  9 11:32:59 2014
-+++ external/lpsolve/UnpackedTarball_lpsolve.mk	Wed Jul  9 11:33:43 2014
+$OpenBSD: patch-external_lpsolve_UnpackedTarball_lpsolve_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
+--- external/lpsolve/UnpackedTarball_lpsolve.mk.orig.port	Thu Jan 22 21:05:28 2015
++++ external/lpsolve/UnpackedTarball_lpsolve.mk	Sat Jan 31 16:03:15 2015
 @@ -25,6 +25,7 @@ else
  $(eval $(call gb_UnpackedTarball_add_patches,lpsolve,\
  	external/lpsolve/lp_solve-aix.patch \
  	external/lpsolve/lp_solve-fixed-warn.patch \
 +	external/lpsolve/lp_solve-timeb.patch \
  	external/lpsolve/lp_solve_5.5.patch \
+ 	external/lpsolve/lpsolve-ubsan.patch.0 \
  ))
- 

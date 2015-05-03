@@ -1,0 +1,16 @@
+$OpenBSD: patch-vcl_Library_vclplug_gen_mk,v 1.1 2015/05/03 11:30:33 robert Exp $
+--- vcl/Library_vclplug_gen.mk.orig.port	Sat May  2 17:04:07 2015
++++ vcl/Library_vclplug_gen.mk	Sat May  2 17:05:32 2015
+@@ -143,10 +143,10 @@ $(eval $(call gb_Library_add_libs,vclplug_gen,\
+ endif
+ endif # USE_XINERAMA
+ 
+-ifeq ($(OS),LINUX)
++ifneq (,$(filter LINUX OPENBSD,$(OS)))
+ $(eval $(call gb_Library_add_libs,vclplug_gen,\
+ 	-lm \
+-	-ldl \
++	$(if $(filter LINUX,$(OS)),-ldl) \
+ 	-lpthread \
+ ))
+ endif

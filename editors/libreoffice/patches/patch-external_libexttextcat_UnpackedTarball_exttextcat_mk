@@ -1,11 +1,12 @@
-$OpenBSD: patch-external_libexttextcat_UnpackedTarball_exttextcat_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
---- external/libexttextcat/UnpackedTarball_exttextcat.mk.orig.port	Mon Sep  1 23:31:27 2014
-+++ external/libexttextcat/UnpackedTarball_exttextcat.mk	Mon Sep  1 23:31:46 2014
-@@ -13,6 +13,7 @@ $(eval $(call gb_UnpackedTarball_set_tarball,exttextca
+$OpenBSD: patch-external_libexttextcat_UnpackedTarball_exttextcat_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
+--- external/libexttextcat/UnpackedTarball_exttextcat.mk.orig.port	Sat Jan 31 16:11:21 2015
++++ external/libexttextcat/UnpackedTarball_exttextcat.mk	Sat Jan 31 16:11:46 2015
+@@ -11,4 +11,8 @@ $(eval $(call gb_UnpackedTarball_UnpackedTarball,extte
  
- $(eval $(call gb_UnpackedTarball_add_patches,exttextcat,\
-     external/libexttextcat/exttextcat-msvc-stdint.patch \
-+	external/libexttextcat/openbsd.patch \
- ))
+ $(eval $(call gb_UnpackedTarball_set_tarball,exttextcat,$(LIBEXTTEXTCAT_TARBALL)))
  
++$(eval $(call gb_UnpackedTarball_add_patches,exttextcat,\
++    external/libexttextcat/openbsd.patch \
++))
++
  # vim: set noet sw=4 ts=4:

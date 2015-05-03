@@ -1,0 +1,16 @@
+$OpenBSD: patch-vcl_Library_vclplug_tde_mk,v 1.1 2015/05/03 11:30:33 robert Exp $
+--- vcl/Library_vclplug_tde.mk.orig.port	Sat May  2 17:04:07 2015
++++ vcl/Library_vclplug_tde.mk	Sat May  2 17:07:00 2015
+@@ -76,10 +76,10 @@ $(eval $(call gb_Library_add_cxxflags,vclplug_tde,\
+ 
+ $(eval $(call gb_Library_set_warnings_not_errors,vclplug_tde))
+ 
+-ifeq ($(OS),LINUX)
++ifneq (,$(filter LINUX OPENBSD,$(OS)))
+ $(eval $(call gb_Library_add_libs,vclplug_tde,\
+ 	-lm \
+-	-ldl \
++	$(if $(filter LINUX,$(OS)),-ldl) \
+ 	-lpthread \
+ ))
+ endif

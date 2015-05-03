@@ -1,0 +1,12 @@
+$OpenBSD: patch-libreofficekit_Executable_tilebench_mk,v 1.1 2015/05/03 11:30:33 robert Exp $
+--- libreofficekit/Executable_tilebench.mk.orig.port	Sun May  3 12:46:36 2015
++++ libreofficekit/Executable_tilebench.mk	Sun May  3 12:47:15 2015
+@@ -21,7 +21,7 @@ $(eval $(call gb_Executable_use_libraries,tilebench,\
+ 
+ $(eval $(call gb_Executable_add_libs,tilebench,\
+     -lm \
+-    -ldl \
++	$(if $(filter LINUX,$(OS)),-ldl) \
+     -lpthread \
+ ))
+ 

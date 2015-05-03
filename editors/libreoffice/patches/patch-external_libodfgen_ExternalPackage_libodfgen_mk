@@ -1,12 +1,12 @@
-$OpenBSD: patch-external_libodfgen_ExternalPackage_libodfgen_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
---- external/libodfgen/ExternalPackage_libodfgen.mk.orig.port	Sun Oct  5 23:55:41 2014
-+++ external/libodfgen/ExternalPackage_libodfgen.mk	Sun Oct  5 23:55:46 2014
+$OpenBSD: patch-external_libodfgen_ExternalPackage_libodfgen_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
+--- external/libodfgen/ExternalPackage_libodfgen.mk.orig.port	Wed Apr  8 16:38:49 2015
++++ external/libodfgen/ExternalPackage_libodfgen.mk	Wed Apr  8 16:39:04 2015
 @@ -16,7 +16,7 @@ $(eval $(call gb_ExternalPackage_add_file,libodfgen,$(
  else ifeq ($(OS),WNT)
  $(eval $(call gb_ExternalPackage_add_file,libodfgen,$(LIBO_LIB_FOLDER)/libodfgen-0.1.dll,src/.libs/libodfgen-0.1.dll))
  else ifeq ($(filter IOS ANDROID,$(OS)),)
--$(eval $(call gb_ExternalPackage_add_file,libodfgen,$(LIBO_LIB_FOLDER)/libodfgen-0.1.so.1,src/.libs/libodfgen-0.1.so.1.0.1))
-+$(eval $(call gb_ExternalPackage_add_file,libodfgen,$(LIBO_LIB_FOLDER)/libodfgen-0.1.so.1,src/.libs/libodfgen-0.1.so.1.1))
+-$(eval $(call gb_ExternalPackage_add_file,libodfgen,$(LIBO_LIB_FOLDER)/libodfgen-0.1.so.1,src/.libs/libodfgen-0.1.so.1.0.3))
++$(eval $(call gb_ExternalPackage_add_file,libodfgen,$(LIBO_LIB_FOLDER)/libodfgen-0.1.so.1,src/.libs/libodfgen-0.1.so.1.3))
  endif
  
  # vim: set noet sw=4 ts=4:

@@ -1,0 +1,12 @@
+$OpenBSD: patch-external_libpagemaker_UnpackedTarball_libpagemaker_mk,v 1.1 2015/05/03 11:30:33 robert Exp $
+--- external/libpagemaker/UnpackedTarball_libpagemaker.mk.orig.port	Mon Apr 13 08:23:52 2015
++++ external/libpagemaker/UnpackedTarball_libpagemaker.mk	Mon Apr 13 08:24:06 2015
+@@ -11,4 +11,8 @@ $(eval $(call gb_UnpackedTarball_UnpackedTarball,libpa
+ 
+ $(eval $(call gb_UnpackedTarball_set_tarball,libpagemaker,$(PAGEMAKER_TARBALL)))
+ 
++$(eval $(call gb_UnpackedTarball_add_patches,libpagemaker,\
++		external/libpagemaker/patch-ldflags \
++))
++
+ # vim: set noet sw=4 ts=4:

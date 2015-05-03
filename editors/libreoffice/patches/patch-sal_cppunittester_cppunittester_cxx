@@ -1,7 +1,7 @@
-$OpenBSD: patch-sal_cppunittester_cppunittester_cxx,v 1.1 2014/10/10 17:13:10 robert Exp $
---- sal/cppunittester/cppunittester.cxx.orig.port	Tue Sep 16 22:10:41 2014
-+++ sal/cppunittester/cppunittester.cxx	Fri Oct  3 19:58:20 2014
-@@ -258,6 +258,7 @@ class CPPUNIT_API ProtectedFixtureFunctor (public)
+$OpenBSD: patch-sal_cppunittester_cppunittester_cxx,v 1.2 2015/05/03 11:30:33 robert Exp $
+--- sal/cppunittester/cppunittester.cxx.orig.port	Thu Jan 22 21:05:28 2015
++++ sal/cppunittester/cppunittester.cxx	Sat Jan 31 16:03:15 2015
+@@ -267,6 +267,7 @@ class CPPUNIT_API ProtectedFixtureFunctor (public)
  }
  
  SAL_IMPLEMENT_MAIN() {

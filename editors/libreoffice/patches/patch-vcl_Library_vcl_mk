@@ -1,6 +1,6 @@
-$OpenBSD: patch-vcl_Library_vcl_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
---- vcl/Library_vcl.mk.orig.port	Tue Sep  2 20:28:15 2014
-+++ vcl/Library_vcl.mk	Tue Sep  2 20:33:29 2014
+$OpenBSD: patch-vcl_Library_vcl_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
+--- vcl/Library_vcl.mk.orig.port	Thu Mar 26 12:51:14 2015
++++ vcl/Library_vcl.mk	Mon Apr  6 15:44:07 2015
 @@ -40,6 +40,7 @@ $(eval $(call gb_Library_use_custom_headers,vcl,office
  $(eval $(call gb_Library_set_include,vcl,\
      $$(INCLUDE) \
@@ -9,3 +9,16 @@ $OpenBSD: patch-vcl_Library_vcl_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
  	$(if $(filter WNTGCC,$(OS)$(COM)),-I$(MINGW_SYSROOT)/include/gdiplus) \
  ))
  
+@@ -703,10 +704,10 @@ endif
+ endif
+ endif
+ 
+-ifeq ($(OS),LINUX)
++ifneq (,$(filter LINUX OPENBSD,$(OS)))
+ $(eval $(call gb_Library_add_libs,vcl,\
+ 	-lm \
+-	-ldl \
++    $(if $(filter LINUX,$(OS)),-ldl) \
+ 	-lpthread \
+     -lGL \
+     -lGLU \

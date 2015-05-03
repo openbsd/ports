@@ -1,0 +1,16 @@
+$OpenBSD: patch-vcl_Library_vclplug_kde4_mk,v 1.1 2015/05/03 11:30:33 robert Exp $
+--- vcl/Library_vclplug_kde4.mk.orig.port	Sat May  2 17:04:07 2015
++++ vcl/Library_vclplug_kde4.mk	Sat May  2 17:06:33 2015
+@@ -87,10 +87,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
+     vcl/unx/kde4/VCLKDEApplication \
+ ))
+ 
+-ifeq ($(OS),LINUX)
++ifneq (,$(filter LINUX OPENBSD,$(OS)))
+ $(eval $(call gb_Library_add_libs,vclplug_kde4,\
+ 	-lm \
+-	-ldl \
++	$(if $(filter LINUX,$(OS)),-ldl) \
+ 	-lpthread \
+ ))
+ endif

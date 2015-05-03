@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_LibreOfficeKit_LibreOfficeKitInit_h,v 1.1 2015/05/03 11:30:33 robert Exp $
+--- include/LibreOfficeKit/LibreOfficeKitInit.h.orig.port	Sun May  3 12:45:55 2015
++++ include/LibreOfficeKit/LibreOfficeKitInit.h	Sun May  3 12:46:05 2015
+@@ -17,7 +17,7 @@ extern "C"
+ {
+ #endif
+ 
+-#if defined(__linux__) || defined (__FreeBSD_kernel__) || defined(_AIX) || defined(_WIN32)
++#if defined(__linux__) || defined (__FreeBSD_kernel__) || defined(_AIX) || defined(_WIN32) || defined(__OpenBSD__)
+ 
+ #include <stdio.h>
+ #include <stdlib.h>

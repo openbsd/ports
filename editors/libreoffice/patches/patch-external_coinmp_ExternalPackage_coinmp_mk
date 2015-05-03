@@ -1,9 +1,9 @@
-$OpenBSD: patch-external_coinmp_ExternalPackage_coinmp_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
---- external/coinmp/ExternalPackage_coinmp.mk.orig.port	Sun Oct  5 22:55:37 2014
-+++ external/coinmp/ExternalPackage_coinmp.mk	Sun Oct  5 23:02:00 2014
+$OpenBSD: patch-external_coinmp_ExternalPackage_coinmp_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
+--- external/coinmp/ExternalPackage_coinmp.mk.orig.port	Thu Jan 22 21:05:28 2015
++++ external/coinmp/ExternalPackage_coinmp.mk	Sat Jan 31 16:03:15 2015
 @@ -25,14 +25,14 @@ $(eval $(call gb_ExternalPackage_add_file,coinmp,$(LIB
- $(eval $(call gb_ExternalPackage_add_file,coinmp,$(LIBO_LIB_FOLDER)/libCoinUtils.3.dylib,CoinUtils/src/.libs/libCoinUtils.3.dylib))
- $(eval $(call gb_ExternalPackage_add_file,coinmp,$(LIBO_LIB_FOLDER)/libOsi.1.dylib,Osi/src/Osi/.libs/libOsi.1.dylib))
+ $(eval $(call gb_ExternalPackage_add_file,coinmp,$(LIBO_LIB_FOLDER)/libCoinUtils.3.dylib,CoinUtils/src/.libs/libCoinUtils.3.9.11.dylib))
+ $(eval $(call gb_ExternalPackage_add_file,coinmp,$(LIBO_LIB_FOLDER)/libOsi.1.dylib,Osi/src/Osi/.libs/libOsi.1.11.5.dylib))
  else
 -$(eval $(call gb_ExternalPackage_add_file,coinmp,$(LIBO_LIB_FOLDER)/libCbc.so.3,Cbc/src/.libs/libCbc.so.3.8.8))
 -$(eval $(call gb_ExternalPackage_add_file,coinmp,$(LIBO_LIB_FOLDER)/libCbcSolver.so.3,Cbc/src/.libs/libCbcSolver.so.3.8.8))

@@ -1,12 +1,12 @@
-$OpenBSD: patch-external_librevenge_ExternalPackage_librevenge_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
---- external/librevenge/ExternalPackage_librevenge.mk.orig.port	Sun Oct  5 23:07:58 2014
-+++ external/librevenge/ExternalPackage_librevenge.mk	Sun Oct  5 23:08:15 2014
+$OpenBSD: patch-external_librevenge_ExternalPackage_librevenge_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
+--- external/librevenge/ExternalPackage_librevenge.mk.orig.port	Wed Apr  8 13:37:49 2015
++++ external/librevenge/ExternalPackage_librevenge.mk	Wed Apr  8 13:40:07 2015
 @@ -16,7 +16,7 @@ $(eval $(call gb_ExternalPackage_add_file,librevenge,$
  else ifeq ($(OS),WNT)
  $(eval $(call gb_ExternalPackage_add_file,librevenge,$(LIBO_LIB_FOLDER)/librevenge-0.0.dll,src/lib/.libs/librevenge-0.0.dll))
  else ifeq ($(filter IOS ANDROID,$(OS)),)
--$(eval $(call gb_ExternalPackage_add_file,librevenge,$(LIBO_LIB_FOLDER)/librevenge-0.0.so.0,src/lib/.libs/librevenge-0.0.so.0.0.1))
-+$(eval $(call gb_ExternalPackage_add_file,librevenge,$(LIBO_LIB_FOLDER)/librevenge-0.0.so.0,src/lib/.libs/librevenge-0.0.so.0.1))
+-$(eval $(call gb_ExternalPackage_add_file,librevenge,$(LIBO_LIB_FOLDER)/librevenge-0.0.so.0,src/lib/.libs/librevenge-0.0.so.0.0.2))
++$(eval $(call gb_ExternalPackage_add_file,librevenge,$(LIBO_LIB_FOLDER)/librevenge-0.0.so.0,src/lib/.libs/librevenge-0.0.so.0.2))
  endif
  
  # vim: set noet sw=4 ts=4:

@@ -1,0 +1,15 @@
+$OpenBSD: patch-external_libpagemaker_patch-ldflags,v 1.1 2015/05/03 11:30:33 robert Exp $
+--- external/libpagemaker/patch-ldflags.orig.port	Mon Apr 13 08:20:15 2015
++++ external/libpagemaker/patch-ldflags	Mon Apr 13 08:27:19 2015
+@@ -0,0 +1,11 @@
++--- a/b/src/lib/Makefile.in.orig	Mon Apr 13 08:19:08 2015
+++++ a/b/src/lib/Makefile.in	Mon Apr 13 08:19:17 2015
++@@ -354,7 +354,7 @@
++ AM_CXXFLAGS = -I$(top_srcdir)/inc $(REVENGE_CFLAGS) $(REVENGE_STREAM_CFLAGS) $(DEBUG_CXXFLAGS) -DLIBPAGEMAKER_BUILD
++ libpagemaker_@PMD_MAJOR_VERSION@_@PMD_MINOR_VERSION@_la_LIBADD = $(REVENGE_LIBS) @LIBPMD_WIN32_RESOURCE@
++ libpagemaker_@PMD_MAJOR_VERSION@_@PMD_MINOR_VERSION@_la_DEPENDENCIES = @LIBPMD_WIN32_RESOURCE@
++-libpagemaker_@PMD_MAJOR_VERSION@_@PMD_MINOR_VERSION@_la_LDFLAGS = $(version_info) -export-dynamic -no-undefines
+++libpagemaker_@PMD_MAJOR_VERSION@_@PMD_MINOR_VERSION@_la_LDFLAGS = $(version_info) -export-dynamic
++ libpagemaker_@PMD_MAJOR_VERSION@_@PMD_MINOR_VERSION@_la_SOURCES = \
++ 	OutputShape.cpp \
++ 	OutputShape.h \

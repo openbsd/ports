@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.14 2015/03/20 22:47:41 naddy Exp $
+@comment $OpenBSD: PLIST-java,v 1.15 2015/05/03 11:30:34 robert Exp $
 lib/libreoffice/program/classes/
 lib/libreoffice/program/classes/ScriptFramework.jar
 lib/libreoffice/program/classes/ScriptProviderForBeanShell.jar
@@ -6,7 +6,7 @@ lib/libreoffice/program/classes/ScriptProviderForJava.jar
 lib/libreoffice/program/classes/ScriptProviderForJavaScript.jar
 lib/libreoffice/program/classes/XMergeBridge.jar
 lib/libreoffice/program/classes/bsh.jar
-lib/libreoffice/program/classes/commons-logging-1.1.3.jar
+lib/libreoffice/program/classes/commons-logging-1.2.jar
 lib/libreoffice/program/classes/commonwizards.jar
 lib/libreoffice/program/classes/flow-engine.jar
 lib/libreoffice/program/classes/flute-1.1.6.jar
@@ -99,8 +99,8 @@ lib/libreoffice/share/extensions/wiki-publisher/WikiExtension.xcs
 lib/libreoffice/share/extensions/wiki-publisher/WikiExtension.xcu
 lib/libreoffice/share/extensions/wiki-publisher/commons-codec-1.9.jar
 lib/libreoffice/share/extensions/wiki-publisher/commons-httpclient${MODPY_BIN_SUFFIX}.1.jar
-lib/libreoffice/share/extensions/wiki-publisher/commons-lang3-3.3.1.jar
-lib/libreoffice/share/extensions/wiki-publisher/commons-logging-1.1.3.jar
+lib/libreoffice/share/extensions/wiki-publisher/commons-lang3${MODPY_BIN_SUFFIX}.3.1.jar
+lib/libreoffice/share/extensions/wiki-publisher/commons-logging-1.2.jar
 lib/libreoffice/share/extensions/wiki-publisher/components.rdb
 lib/libreoffice/share/extensions/wiki-publisher/description-en-US.txt
 lib/libreoffice/share/extensions/wiki-publisher/description.xml
@@ -181,7 +181,6 @@ lib/libreoffice/ure/lib/libjavavmlo.so
 lib/libreoffice/ure/lib/libjpipe.so
 lib/libreoffice/ure/lib/libjuh.so
 lib/libreoffice/ure/lib/libjuhx.so
-lib/libreoffice/ure/lib/libsunjavapluginlo.so
 lib/libreoffice/ure/share/java/
 lib/libreoffice/ure/share/java/java_uno.jar
 lib/libreoffice/ure/share/java/juh.jar

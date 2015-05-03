@@ -1,13 +1,17 @@
-$OpenBSD: patch-sw_Executable_tiledrendering_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
---- sw/Executable_tiledrendering.mk.orig.port	Sat Sep 13 14:45:07 2014
-+++ sw/Executable_tiledrendering.mk	Sat Sep 13 14:45:21 2014
-@@ -42,4 +42,9 @@ $(eval $(call gb_Executable_add_exception_objects,tile
+$OpenBSD: patch-sw_Executable_tiledrendering_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
+--- sw/Executable_tiledrendering.mk.orig.port	Thu Mar 26 12:51:14 2015
++++ sw/Executable_tiledrendering.mk	Sun May  3 11:52:29 2015
+@@ -42,11 +42,11 @@ $(eval $(call gb_Executable_add_exception_objects,tile
      sw/qa/tiledrendering/tiledrendering \
  ))
  
-+$(eval $(call gb_Executable_add_libs,tiledrendering,\
-+    -lharfbuzz \
-+    -lharfbuzz-icu \
-+))
-+
- # vim: set noet sw=4 ts=4:
+-ifeq ($(OS),LINUX)
++ifneq (,$(filter LINUX OPENBSD,$(OS)))
+ 
+ $(eval $(call gb_Executable_add_libs,tiledrendering,\
+ 	-lm \
+-	-ldl \
++	$(if $(filter LINUX,$(OS)),-ldl) \
+ 	-lpthread \
+     -lGL \
+     -lGLU \

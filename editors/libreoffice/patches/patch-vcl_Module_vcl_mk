@@ -1,0 +1,12 @@
+$OpenBSD: patch-vcl_Module_vcl_mk,v 1.1 2015/05/03 11:30:33 robert Exp $
+--- vcl/Module_vcl.mk.orig.port	Thu Mar 26 12:51:14 2015
++++ vcl/Module_vcl.mk	Sat May  2 17:07:19 2015
+@@ -26,7 +26,7 @@ $(eval $(call gb_Module_add_targets,vcl,\
+     $(if $(filter DESKTOP,$(BUILD_TYPE)), \
+         StaticLibrary_vclmain \
+         Executable_ui-previewer \
+-		$(if $(filter LINUX MACOSX WNT,$(OS)), \
++		$(if $(filter OPENBSD LINUX MACOSX WNT,$(OS)), \
+ 			Executable_icontest \
+ 			Executable_outdevgrind \
+ 			Executable_vcldemo )) \

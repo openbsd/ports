@@ -1,0 +1,15 @@
+$OpenBSD: patch-svx_Executable_gengal_mk,v 1.1 2015/05/03 11:30:33 robert Exp $
+--- svx/Executable_gengal.mk.orig.port	Sun May  3 00:38:55 2015
++++ svx/Executable_gengal.mk	Sun May  3 00:39:21 2015
+@@ -61,9 +61,9 @@ $(eval $(call gb_Executable_use_system_win32_libs,geng
+ ))
+ endif
+ 
+-ifeq ($(OS),LINUX)
++ifneq (,$(filter LINUX OPENBSD,$(OS)))
+ $(eval $(call gb_Executable_add_libs,gengal,\
+-	-ldl \
++	$(if $(filter LINUX,$(OS)),-ldl) \
+ 	-lpthread \
+     -lGL \
+     -lGLU \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-solenv_gbuild_platform_com_GCC_defs_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
---- solenv/gbuild/platform/com_GCC_defs.mk.orig.port	Sun Oct  5 13:58:21 2014
-+++ solenv/gbuild/platform/com_GCC_defs.mk	Sun Oct  5 13:58:49 2014
-@@ -57,6 +57,7 @@ gb_CFLAGS_COMMON := \
+$OpenBSD: patch-solenv_gbuild_platform_com_GCC_defs_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
+--- solenv/gbuild/platform/com_GCC_defs.mk.orig.port	Thu Jan 22 21:05:28 2015
++++ solenv/gbuild/platform/com_GCC_defs.mk	Sat Jan 31 16:03:15 2015
+@@ -58,6 +58,7 @@ gb_CFLAGS_COMMON := \
  	-Wunused-macros \
  	-fmessage-length=0 \
  	-fno-common \
@@ -9,11 +9,11 @@ $OpenBSD: patch-solenv_gbuild_platform_com_GCC_defs_mk,v 1.1 2014/10/10 17:13:10
  	-pipe \
  
  gb_CXXFLAGS_COMMON := \
-@@ -67,6 +68,7 @@ gb_CXXFLAGS_COMMON := \
+@@ -69,6 +70,7 @@ gb_CXXFLAGS_COMMON := \
  	-Wunused-macros \
  	-fmessage-length=0 \
  	-fno-common \
 +	-fno-stack-protector \
  	-pipe \
  
- ifneq ($(HAVE_THREADSAFE_STATICS),TRUE)
+ gb_CXXFLAGS_Wundef = -Wno-undef

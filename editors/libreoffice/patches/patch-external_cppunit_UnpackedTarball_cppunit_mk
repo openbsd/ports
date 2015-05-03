@@ -1,7 +1,7 @@
-$OpenBSD: patch-external_cppunit_UnpackedTarball_cppunit_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
---- external/cppunit/UnpackedTarball_cppunit.mk.orig.port	Tue Sep 16 22:10:41 2014
-+++ external/cppunit/UnpackedTarball_cppunit.mk	Fri Oct  3 19:58:20 2014
-@@ -23,6 +23,10 @@ ifeq ($(DISABLE_DYNLOADING),TRUE)
+$OpenBSD: patch-external_cppunit_UnpackedTarball_cppunit_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
+--- external/cppunit/UnpackedTarball_cppunit.mk.orig.port	Thu Jan 22 21:05:28 2015
++++ external/cppunit/UnpackedTarball_cppunit.mk	Sat Jan 31 16:03:15 2015
+@@ -24,6 +24,10 @@ ifeq ($(DISABLE_DYNLOADING),TRUE)
  $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
  	external/cppunit/disable-dynloading.patch \
  ))

@@ -1,11 +1,11 @@
-$OpenBSD: patch-basic_source_runtime_methods_cxx,v 1.1 2014/10/10 17:13:10 robert Exp $
---- basic/source/runtime/methods.cxx.orig.port	Tue Sep 16 22:10:41 2014
-+++ basic/source/runtime/methods.cxx	Fri Oct  3 19:58:20 2014
-@@ -82,6 +82,7 @@ using namespace com::sun::star::uno;
+$OpenBSD: patch-basic_source_runtime_methods_cxx,v 1.2 2015/05/03 11:30:33 robert Exp $
+--- basic/source/runtime/methods.cxx.orig.port	Thu Jan 22 21:05:28 2015
++++ basic/source/runtime/methods.cxx	Sat Jan 31 16:03:14 2015
+@@ -85,6 +85,7 @@ using namespace com::sun::star::uno;
  #include <stdlib.h>
  #include <ctype.h>
  #include <errno.h>
 +#include <unistd.h>
  
- SbxVariable* getDefaultProp( SbxVariable* pRef );
- 
+ #include "sbobjmod.hxx"
+ #include "sbxmod.hxx"

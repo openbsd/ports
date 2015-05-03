@@ -1,12 +1,12 @@
-$OpenBSD: patch-external_libwps_ExternalPackage_libwps_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
---- external/libwps/ExternalPackage_libwps.mk.orig.port	Mon Oct  6 08:46:53 2014
-+++ external/libwps/ExternalPackage_libwps.mk	Mon Oct  6 08:46:58 2014
+$OpenBSD: patch-external_libwps_ExternalPackage_libwps_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
+--- external/libwps/ExternalPackage_libwps.mk.orig.port	Mon Apr 13 11:13:34 2015
++++ external/libwps/ExternalPackage_libwps.mk	Mon Apr 13 11:13:58 2015
 @@ -16,7 +16,7 @@ $(eval $(call gb_ExternalPackage_add_file,libwps,$(LIB
  else ifeq ($(OS),WNT)
  $(eval $(call gb_ExternalPackage_add_file,libwps,$(LIBO_LIB_FOLDER)/libwps-0.3.dll,src/lib/.libs/libwps-0.3.dll))
  else ifeq ($(filter IOS ANDROID,$(OS)),)
--$(eval $(call gb_ExternalPackage_add_file,libwps,$(LIBO_LIB_FOLDER)/libwps-0.3.so.3,src/lib/.libs/libwps-0.3.so.3.0.0))
-+$(eval $(call gb_ExternalPackage_add_file,libwps,$(LIBO_LIB_FOLDER)/libwps-0.3.so.3,src/lib/.libs/libwps-0.3.so.3.0))
+-$(eval $(call gb_ExternalPackage_add_file,libwps,$(LIBO_LIB_FOLDER)/libwps-0.3.so.3,src/lib/.libs/libwps-0.3.so.3.0.1))
++$(eval $(call gb_ExternalPackage_add_file,libwps,$(LIBO_LIB_FOLDER)/libwps-0.3.so.3,src/lib/.libs/libwps-0.3.so.3.1))
  endif
  
  # vim: set noet sw=4 ts=4:
