@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1291 2015/04/27 12:52:01 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1292 2015/05/03 08:06:03 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -941,6 +941,12 @@ INSTALL_DATA_DIR = \
 INSTALL_MAN_DIR = \
 	${_INSTALL} -d ${_MANOWNGRP} -m ${DIRMODE}
 
+WRKOBJDIR_MODE ?=
+DISTDIR_MODE ?= ${WRKOBJDIR_MODE}
+PACKAGE_REPOSITORY_MODE ?= ${WRKOBJDIR_MODE}
+LOCKDIR_MODE ?= ${WRKOBJDIR_MODE}
+PLISTDIR_MODE ?= ${WRKOBJDIR_MODE}
+
 _INSTALL_MACROS = BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	BSD_INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 	BSD_INSTALL_DATA="${INSTALL_DATA}" \
@@ -1685,10 +1691,10 @@ _LOCKS_HELD ?=
 LOCK_VERBOSE ?= No
 .if !empty(LOCKDIR)
 .  if ${LOCK_VERBOSE:L} == "yes"
-_LOCK = echo "Locking $$lock (${BUILD_PKGPATH}) from $@"; ${LOCK_CMD} ${LOCKDIR}/$$lock.lock ${BUILD_PKGPATH}
+_LOCK = echo "Locking $$lock (${BUILD_PKGPATH}) from $@"; ${LOCK_CMD} ${LOCKDIR_MODE} ${LOCKDIR}/$$lock.lock ${BUILD_PKGPATH}
 _UNLOCK = echo "Unlocking $$lock from $@"; ${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
 .  else
-_LOCK = ${LOCK_CMD} ${LOCKDIR}/$$lock.lock ${BUILD_PKGPATH}
+_LOCK = ${LOCK_CMD} ${LOCKDIR_MODE} ${LOCKDIR}/$$lock.lock ${BUILD_PKGPATH}
 _UNLOCK = ${UNLOCK_CMD} ${LOCKDIR}/$$lock.lock
 .  endif
 .  if ${SEPARATE_BUILD:L:Mflavored}
@@ -1719,7 +1725,7 @@ CHECKSUM_PACKAGES ?= No
 _PACKAGE_CHECKSUM_DIR = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cksums
 
 _do_checksum_package = \
-	mkdir -p ${_PACKAGE_CHECKSUM_DIR} && \
+	install -d ${PACKAGE_REPOSITORY_MODE} ${_PACKAGE_CHECKSUM_DIR} && \
 	cd ${_TMP_REPO} && \
 	cksum -b -a sha256 $$pkgname \
 		>${_PACKAGE_CHECKSUM_DIR}/$$(basename $$pkgname .tgz).sha256
@@ -1848,7 +1854,7 @@ _list_port_libs = \
 .if empty(PLIST_DB)
 _register_plist =:
 .else
-_register_plist = mkdir -p ${PLIST_DB:S/:/ /g} && ${_PERLSCRIPT}/register-plist ${PLIST_DB}
+_register_plist = install -d ${PLISTDIR_MODE} ${PLIST_DB:S/:/ /g} && ${_PERLSCRIPT}/register-plist ${PLIST_DB}
 .endif
 .if ${CHECK_LIB_DEPENDS:L} == "yes"
 _check_lib_depends = ${_CHECK_LIB_DEPENDS}
@@ -1929,7 +1935,7 @@ check-register-all:
 .for _S in ${MULTI_PACKAGES}
 
 ${_CACHE_REPO}/${_PKGFILE${_S}}:
-	@mkdir -p ${@D}
+	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D}
 	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${_S}} in \$$PKG_PATH - "
 	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${PKG_PATH} ${_PKG_ADD} -n -q ${_PKG_ADD_FORCE} -D installed -D downgrade ${_PKGFILE${_S}} >/dev/null 2>&1; then \
 		${ECHO_MSG} "found"; \
@@ -1943,7 +1949,7 @@ ${_CACHE_REPO}/${_PKGFILE${_S}}:
 # The real package
 
 ${_PACKAGE_COOKIE${_S}}:
-	@mkdir -p ${@D} ${_TMP_REPO}
+	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D} ${_TMP_REPO}
 .  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
 	@f=${_CACHE_REPO}/${_PKGFILE${_S}}; \
 	cd ${.CURDIR} && ${MAKE} $$f && \
@@ -2112,6 +2118,7 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 		Xpackage|Xfake) wantsub=false; check_installed=true; try_install=false;; \
 		Xpatch|Xconfigure|Xbuild) \
 			wantsub=true; check_installed=false; try_install=false; \
+			install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`; \
 			mkdir -p ${WRKDIR}/$$dir; \
 			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' WRKDIR=${WRKDIR}/$$dir";; \
 		*) \
@@ -2177,6 +2184,7 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 			$$try_install || break; \
 		done; \
 	done
+	@install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
 	@${_MAKE_COOKIE} $@
 .  endif
@@ -2542,6 +2550,7 @@ ${_WRKDIR_COOKIE}:
 		exit 1; \
 	fi
 .endif
+	@install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin ${DEPDIR}
 #	@ln -s ${LOCALBASE}/bin/pkg-config ${WRKDIR}/bin
 .if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
@@ -2939,7 +2948,7 @@ ${DISTDIR}/$p:
 .    endfor
 	@exit 1
 .  else
-	@lock=${@:T}.dist; ${_SIMPLE_LOCK}; mkdir -p ${@:H}; \
+	@lock=${@:T}.dist; ${_SIMPLE_LOCK}; install -d ${DISTDIR_MODE} ${@:H}; \
 	cd ${@:H}; \
 	test -f ${@:T} && exit 0; \
 	f=$f; \
@@ -2974,7 +2983,7 @@ ${DISTDIR}/$p:
 .for _l _o in ${_PACKAGE_LINKS}
 ${PACKAGE_REPOSITORY}/${_l}: ${PACKAGE_REPOSITORY}/${_o}
 	@echo "Link to $@"
-	@mkdir -p ${@D}
+	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D}
 	@rm -f $@
 	@ln $? $@ 2>/dev/null || \
 	  cp -p $? $@
@@ -3466,7 +3475,8 @@ uninstall deinstall:
 
 peek-ftp:
 	@echo "DISTFILES=${DISTFILES}"
-	@mkdir -p ${FULLDISTDIR}; cd ${FULLDISTDIR}; echo "cd ${FULLDISTDIR}"; \
+	@install -d ${DISTDIR_MODE} ${FULLDISTDIR}; \
+	cd ${FULLDISTDIR}; echo "cd ${FULLDISTDIR}"; \
 	for i in ${MASTER_SITES:Mftp*}; do \
 		echo "Connecting to $$i"; ${FETCH_CMD} $$i ; break; \
 	done
