@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.711 2015/04/28 15:15:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.712 2015/05/03 15:37:04 robert Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -84,6 +84,7 @@
      SUBDIR += icedtea-web
      SUBDIR += igal
      SUBDIR += igal2
+     SUBDIR += iridium
      SUBDIR += japana
      SUBDIR += jesred
      SUBDIR += junkbuster
