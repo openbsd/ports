@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.10 2014/03/09 20:15:10 espie Exp $
+# $OpenBSD: Build.pm,v 1.11 2015/05/03 12:26:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -68,11 +68,18 @@ sub can_start_build
 		}
 	}
 	# keep affinity mismatches for later
-	if (defined $v->{affinity} && !$core->matches($v->{affinity})) {
-		$self->log('A', $v, 
-		    " ".$core->hostname." ".$v->{affinity});
+	if (defined $v->{affinity} && !$core->matches_affinity($v)) {
+		my $s = " ".$core->hostname;
+		if (defined $core->{user}) {
+			$s .= "/".$core->{user}->user;
+	    	}
+		$s .= " ".$v->{affinity};
+		if (defined $v->{user_affinity}) {
+			$s .= "/".$v->{user_affinity};
+		}
+		$self->log('A', $v, $s);
 		# try to start them anyways, on the "right" core
-		my $core2 = DPB::Core->get_affinity($v->{affinity});
+		my $core2 = DPB::Core->get_affinity($v);
 		if (defined $core2) {
 			if ($self->lock_and_start_build($core2, $v)) {
 				return 0;

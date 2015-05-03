@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.78 2015/05/02 13:12:39 espie Exp $
+# $OpenBSD: Core.pm,v 1.79 2015/05/03 12:26:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -36,18 +36,30 @@ use DPB::Job;
 
 # need to know which host are around for affinity purposes
 my %allhosts;
-sub matches
-{
-	my ($self, $hostname) = @_;
 
+sub matches_affinity
+{
+	my ($self, $v) = @_;
+	my $hostname = $v->{affinity};
 	# same host
-	return 1 if $self->hostname eq $hostname;
+	if ($self->hostname eq $hostname) {
+		# if user required, only okay if same user
+		if (defined $v->{user_affinity}) {
+			if (defined $self->{user} && $self->{user}->user
+			    eq $v->{user_affinity}) {
+				return 1;
+			} else {
+				return 0;
+			}
+		} else {
+			return 1;
+		}
+	}
 	# ... or host isn't around
 	return 1 if !defined $allhosts{$hostname};
 	# okay, try to avoid this
 	return 0;
 }
-
 
 # note that we play dangerously, e.g., we only keep cores that are running
 # something in there, the code can keep some others.
@@ -679,13 +691,22 @@ sub unsquiggle
 
 sub get_affinity
 {
-	my ($self, $host) = @_;
+	my ($self, $v) = @_;
+	my $host = $v->{affinity};
 	my $l = [];
 	while (@$available > 0) {
 		my $core = shift @$available;
 		if ($core->hostname eq $host) {
-			push(@$available, @$l);
-			return $core;
+			if (defined $v->{user_affinity}) {
+				if (defined $core->{user} && 
+				    $core->{user}->user eq $v->{user_affinity}) {
+					push(@$available, @$l);
+					return $core;
+				}
+			} else {
+				push(@$available, @$l);
+				return $core;
+			}
 		}
 		push(@$l, $core);
 	}
