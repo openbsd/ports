@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/03 20:19:09 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -24,7 +24,8 @@ FLAVOR?=
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP =	Yes
 
-MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
+MASTER_SITES=	https://downloads.iridiumbrowser.de/source/ \
+		http://nerd.hu/distfiles/
 
 MODULES=	lang/clang lang/python
 
