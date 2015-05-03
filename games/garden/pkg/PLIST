@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/21 03:30:08 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/03 10:49:48 bentley Exp $
 @bin bin/garden
+share/appdata/
+share/appdata/garden.appdata.xml
 share/applications/garden.desktop
 share/garden/
 share/garden/beat/
