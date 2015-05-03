@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.32 2015/05/02 09:44:40 espie Exp $
+# $OpenBSD: Locks.pm,v 1.33 2015/05/03 10:33:59 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -53,11 +53,12 @@ sub clean_old_locks
 	my $info = {};
 	my @problems = ();
 	my $locks = {};
-	opendir(my $dir, $self->{lockdir});
+	my $dir = $self->opendir($self->{lockdir});
 	DIR: while (my $e = readdir($dir)) {
 		next if $e eq '..' or $e eq '.';
 		my $f = "$self->{lockdir}/$e";
-		if (open my $fh, '<', $f) {
+		my $fh = $self->open('<', $f);
+		if (defined $fh) {
 			my ($pid, $host);
 			my $client = DPB::Core::Local->hostname;
 			my $path;
@@ -105,7 +106,7 @@ sub clean_old_locks
 			for my $l (@$list) {
 				my ($host, $path) = @{$info->{$l}};
 				push(@{$hostpaths->{$host}}, $path);
-				unlink($l);
+				$self->unlink($l);
 			}
 		}
 	}
@@ -165,10 +166,7 @@ sub lock
 sub unlock
 {
 	my ($self, $v) = @_;
-	$self->run_as(
-	    sub {
-		unlink($self->lockname($v));
-	    });
+	$self->unlink($self->lockname($v));
 }
 
 sub locked
@@ -180,13 +178,13 @@ sub locked
 sub find_dependencies
 {
 	my ($self, $hostname) = @_;
-	opendir(my $dir, $self->{lockdir});
+	my $dir = $self->opendir($self->{lockdir});
 	my $h = {};
 	while (my $name = readdir($dir)) {
 		my $fullname = $self->{lockdir}."/".$name;
 		next if -d $fullname;
 		next if $name =~ m/^host:/;
-		open(my $f, '<', $fullname);
+		my $f = $self->open('<', $fullname);
 		my $nojunk = 0;
 		my $host;
 		my $path;
@@ -224,12 +222,12 @@ sub find_dependencies
 sub find_tag
 {
 	my ($self, $hostname) = @_;
-	opendir(my $dir, $self->{lockdir});
+	my $dir = $self->opendir($self->{lockdir});
 	while (my $name = readdir($dir)) {
 		my $fullname = $self->{lockdir}."/".$name;
 		next if -d $fullname;
 		next if $name =~ m/^host:/;
-		open(my $f, '<', $fullname);
+		my $f = $self->open('<', $fullname);
 		my ($host, $cleaned, $tag);
 		while (<$f>) {
 			if (m/^host=(.*)/) {

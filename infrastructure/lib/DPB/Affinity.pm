@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.14 2015/05/02 09:44:40 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.15 2015/05/03 10:33:59 espie Exp $
 #
 # Copyright (c) 2012-2013 Marc Espie <espie@openbsd.org>
 #
@@ -54,22 +54,20 @@ sub affinity_marker
 sub start
 {
 	my ($self, $v, $core) = @_;
-	$self->run_as(
-	    sub {
-		my $host = $core->hostname;
-		for my $w ($v->build_path_list) {
-			next if $w->{info}->is_stub;
-			open(my $fh, '>', $self->affinity_marker($w)) or next;
-			$w->{affinity} = $host;
-			print $fh "host=$host\n";
-			print $fh "path=", $w->fullpkgpath, "\n";
-			if ($core->{inmem}) {
-				print $fh "mem=$core->{inmem}\n";
-				$w->{mem_affinity} = $core->{inmem};
-			}
-			close $fh;
+	my $host = $core->hostname;
+	for my $w ($v->build_path_list) {
+		next if $w->{info}->is_stub;
+		my $fh = $self->open('>', $self->affinity_marker($w));
+		next if !defined $fh;
+		$w->{affinity} = $host;
+		print $fh "host=$host\n";
+		print $fh "path=", $w->fullpkgpath, "\n";
+		if ($core->{inmem}) {
+			print $fh "mem=$core->{inmem}\n";
+			$w->{mem_affinity} = $core->{inmem};
 		}
-	    });
+		close $fh;
+	}
 }
 
 # when we see a package is already done, we have no way of knowing which
@@ -77,12 +75,9 @@ sub start
 sub unmark
 {
 	my ($self, $v) = @_;
-	$self->run_as(
-	    sub {
-		unlink($self->affinity_marker($v));
-		delete $v->{affinity};
-		delete $v->{mem_affinity};
-	    });
+	$self->unlink($self->affinity_marker($v));
+	delete $v->{affinity};
+	delete $v->{mem_affinity};
 }
 
 # on the other hand, when we finish building a port, we can unmark all paths.
@@ -98,10 +93,12 @@ sub retrieve_existing_markers
 {
 	my ($self, $logger) = @_;
 	my $log = $logger->open('affinity');
-	opendir(my $d, $self->{dir}) or return;
+	my $d = $self->opendir($self->{dir});
+	return if !defined $d;
 	while (my $e = readdir $d) {
 		next unless -f "$self->{dir}/$e";
-		open my $fh, '<', "$self->{dir}/$e" or return;
+		my $fh = $self->open('<', "$self->{dir}/$e");
+		return if !defined $fh;
 		my ($hostname, $pkgpath, $memory);
 		while (<$fh>) {
 			chomp;

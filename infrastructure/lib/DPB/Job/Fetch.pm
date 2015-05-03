@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.5 2015/05/02 12:55:43 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.6 2015/05/03 10:33:59 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -215,10 +215,7 @@ sub new
 		logger => $logger,
 		log => $file->logger->make_distlogs($file),
 	}, $class;
-	$job->{logger}->run_as(
-	    sub {
-		open $job->{logfh}, '>>', $job->{log};
-	    });
+	$job->{logfh} = $job->{logger}->open('>>', $job->{log});
 	print {$job->{logfh}} ">>> From ", $file->fullpkgpath, "\n";
 	$job->{fetcher}->make_path(File::Basename::dirname($file->filename));
 	$job->{watched} = DPB::Watch->new($file->tempfilename,

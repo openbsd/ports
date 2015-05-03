@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.67 2015/05/02 09:44:40 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.68 2015/05/03 10:33:59 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -65,10 +65,7 @@ sub new
 		close ($fh);
 	}
 	print "Done\n";
-	$o->run_as(
-	    sub {
-		rename("$distdir/distinfo.new", "$distdir/distinfo");
-	    });
+	$o->rename("$distdir/distinfo.new", "$distdir/distinfo");
 	$o->{log} = $o->open(">>", "$distdir/distinfo");
 	DPB::Util->make_hot($o->{log});
 	return $o;
@@ -197,10 +194,7 @@ sub expire_old
 	}
 
 	close $fh2;
-	$self->run_as(
-	    sub {
-		rename("$distdir/history.new", "$distdir/history");
-	    });
+	$self->rename("$distdir/history.new", "$distdir/history");
 }
 
 sub distdir
