@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/04/04 09:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2015/05/04 10:08:47 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -9,8 +9,8 @@ VERSION =	11.8.16
 DISTNAME =	gmpc-plugins-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}
-REVISION-main =		5
-REVISION-wikipedia =	7
+REVISION-main =		6
+REVISION-wikipedia =	8
 
 CATEGORIES =	audio
 
@@ -45,7 +45,7 @@ LIB_DEPENDS-wikipedia =	${LIB_DEPENDS} \
 WANTLIB-wikipedia =	${WANTLIB} \
 			ICE SM Xt enchant gstapp-1.0 gstbase-1.0 icui18n \
 			gstpbutils-1.0 gstreamer-1.0 gstvideo-1.0 orc-0.4 \
-			jpeg soup-2.4 webkitgtk-1.0 xslt javascriptcoregtk-1.0 dbus-1 \
+			jpeg soup-2.4 webkitgtk-1.0 xslt javascriptcoregtk-1.0 \
 			gstaudio-1.0 gstfft-1.0 pthread GL \
 			gbm gcrypt gpg-error gsttag-1.0 harfbuzz-icu \
 			icudata icuuc secret-1 webp EGL
@@ -65,6 +65,8 @@ BUILD_DEPENDS =	${RUN_DEPENDS} \
 		x11/gob2
 USE_GMAKE =	Yes
 
+LIBTOOL_FLAGS =	--tag=disable-static
+
 CONFIGURE_STYLE =gnu
 CONFIGURE_ARGS+=--disable-mserver \
 		--disable-mmkeys \
@@ -72,5 +74,8 @@ CONFIGURE_ARGS+=--disable-mserver \
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
+
+post-install:
+	rm ${PREFIX}/lib/gmpc/plugins/*.la
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2011/08/23 08:43:48 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2015/05/04 10:08:47 ajacoutot Exp $
 @conflict gmpc-coveramazon-*
 @conflict gmpc-osd-*
 @conflict gmpc-lyrics-*
@@ -14,35 +14,15 @@
 @pkgpath audio/gmpc-plugins
 lib/gmpc/
 lib/gmpc/plugins/
-lib/gmpc/plugins/alarmplugin.a
-lib/gmpc/plugins/alarmplugin.la
 lib/gmpc/plugins/alarmplugin.so
-lib/gmpc/plugins/albumviewplugin.a
-lib/gmpc/plugins/albumviewplugin.la
 lib/gmpc/plugins/albumviewplugin.so
-lib/gmpc/plugins/avahiplugin.a
-lib/gmpc/plugins/avahiplugin.la
 lib/gmpc/plugins/avahiplugin.so
-lib/gmpc/plugins/awnplugin.a
-lib/gmpc/plugins/awnplugin.la
 lib/gmpc/plugins/awnplugin.so
-lib/gmpc/plugins/gmpctageditplugin.a
-lib/gmpc/plugins/gmpctageditplugin.la
 lib/gmpc/plugins/gmpctageditplugin.so
-lib/gmpc/plugins/jamendoplugin.a
-lib/gmpc/plugins/jamendoplugin.la
 lib/gmpc/plugins/jamendoplugin.so
-lib/gmpc/plugins/lyricsplugin.a
-lib/gmpc/plugins/lyricsplugin.la
 lib/gmpc/plugins/lyricsplugin.so
-lib/gmpc/plugins/lyricwikiplugin.a
-lib/gmpc/plugins/lyricwikiplugin.la
 lib/gmpc/plugins/lyricwikiplugin.so
-lib/gmpc/plugins/magnatuneplugin.a
-lib/gmpc/plugins/magnatuneplugin.la
 lib/gmpc/plugins/magnatuneplugin.so
-lib/gmpc/plugins/shoutplugin.a
-lib/gmpc/plugins/shoutplugin.la
 lib/gmpc/plugins/shoutplugin.so
 share/gmpc-albumview/
 share/gmpc-albumview/icons/
