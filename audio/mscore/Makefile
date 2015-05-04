@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/04/14 18:15:57 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2015/05/04 16:45:30 zhuk Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 BROKEN-powerpc = libmscore/pitchspelling.h:56:42: error: enumerator value -1 is too large for underlying type 'char'
@@ -33,12 +33,6 @@ MODULES =	devel/cmake \
 		x11/qt5
 # pch confuses Ninja
 USE_NINJA =	No
-
-# ICE building moc_qtsingleapplication.cxx with base gcc 4.2.1 on amd64.
-# possible problems with ppc. unsure about other arch.
-MODULES +=		gcc4
-MODGCC4_ARCHS +=	*
-MODGCC4_LANGS +=	c++
 
 BUILD_DEPENDS =	audio/lame \
 		misc/findutils
