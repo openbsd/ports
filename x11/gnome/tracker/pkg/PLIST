@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.35 2015/03/28 18:04:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2015/05/04 11:37:08 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
+@conflict tracker-*
 @pkgpath x11/gnome/tracker,-evolution
 @pkgpath x11/gnome/tracker,-nautilus
 @bin bin/tracker
