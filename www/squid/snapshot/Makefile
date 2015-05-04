@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2015/04/03 19:23:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2015/05/04 11:04:24 sthen Exp $
 
-V=		3.5.3
+V=		3.5.4
 
 # needs c++11. other parts for gcc MODULES are in ../Makefile.inc.
-MODGCC_ARCHS=	*
+MODGCC4_ARCHS=	*
 
 # uncommenting the following would use clang where possible, otherwise fallback
 # to gcc, but at present linking fails with clang ("local symbol 0: discarded
