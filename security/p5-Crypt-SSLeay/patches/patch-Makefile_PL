@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile_PL,v 1.7 2015/05/04 21:52:31 bluhm Exp $
+
+Devel::CheckLib is never successful for libssl on OpenBSD.  You
+must specify -lssl and -lcrypto together, but Devel::CheckLib is
+checking them individually.  So the dependency on libssl was missing
+if p5-Crypt-SSLeay was compiled when p5-Devel-CheckLib was installed.
+
+Use the libraries we have on OpenBSD and do not use Devel::CheckLib.
+
+--- Makefile.PL.orig	Thu Apr 24 16:50:29 2014
++++ Makefile.PL	Sun May  3 14:35:59 2015
+@@ -11,7 +11,7 @@ use Try::Tiny;
+ use inc::IO::Interactive::Tiny;
+ 
+ caller
+-    or run(\@ARGV, [qw{ssl crypto ssl32 ssleay32 eay32 libeay32 z}]);
++    or run(\@ARGV, [qw{ssl crypto z}]);
+ 
+ sub run {
+     my $argv = shift;
+@@ -76,8 +76,6 @@ sub run {
+         };
+     }
+ 
+-    $libs = filter_libs(\%opt, $libs);
+-
+     unless ($ENV{AUTOMATED_TESTING}) {
+         show_do_you_need_crypt_ssleay();
+     }

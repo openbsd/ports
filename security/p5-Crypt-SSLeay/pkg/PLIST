@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/10/23 20:02:40 nigel Exp $
-${P5ARCH}/
+@comment $OpenBSD: PLIST,v 1.14 2015/05/04 21:52:31 bluhm Exp $
 ${P5ARCH}/Crypt/
 ${P5ARCH}/Crypt/SSLeay/
 ${P5ARCH}/Crypt/SSLeay.pm
@@ -9,12 +8,9 @@ ${P5ARCH}/Crypt/SSLeay/Err.pm
 ${P5ARCH}/Crypt/SSLeay/MainContext.pm
 ${P5ARCH}/Crypt/SSLeay/Version.pm
 ${P5ARCH}/Crypt/SSLeay/X509.pm
-${P5ARCH}/Net/
 ${P5ARCH}/Net/SSL.pm
-${P5ARCH}/auto/
 ${P5ARCH}/auto/Crypt/
 ${P5ARCH}/auto/Crypt/SSLeay/
-@comment ${P5ARCH}/auto/Crypt/SSLeay/SSLeay.bs
 ${P5ARCH}/auto/Crypt/SSLeay/SSLeay.so
 @man man/man3p/Crypt::SSLeay.3p
 @man man/man3p/Crypt::SSLeay::Version.3p

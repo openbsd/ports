@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2014/10/23 20:02:40 nigel Exp $
+# $OpenBSD: Makefile,v 1.37 2015/05/04 21:52:31 bluhm Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		library to provide LWP https support via OpenSSL
 
 DISTNAME =		Crypt-SSLeay-0.72
+REVISION =		1
 
 CATEGORIES =		security
 
@@ -21,12 +22,13 @@ MODULES =		cpan
 # dependency for p5-Net-HTTP must be before
 # p5-LWP-Protcol-https must be present and
 # in this order to avoid looping dependencies
-BUILD_DEPENDS =		devel/p5-Path-Class>=0.26 \
+BUILD_DEPENDS =		devel/p5-Devel-CheckLib>=0.99 \
+			devel/p5-Path-Class>=0.26 \
 			devel/p5-Try-Tiny>=0.19 \
 			security/p5-IO-Socket-SSL \
 			www/p5-LWP-Protocol-https>=6.02
-
 RUN_DEPENDS =		www/p5-LWP-Protocol-https>=6.02
+TEST_DEPENDS =		devel/p5-Try-Tiny>=0.19
 
 CONFIGURE_ARGS +=	--lib=/usr
 
