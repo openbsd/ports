@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/04 10:49:16 henning Exp $
+roundcubemail/plugins/dkimstatus/
+roundcubemail/plugins/dkimstatus/INSTALL
+roundcubemail/plugins/dkimstatus/LICENSE
+roundcubemail/plugins/dkimstatus/dkimstatus.php
+roundcubemail/plugins/dkimstatus/images/
+roundcubemail/plugins/dkimstatus/images/BIGICONS.TXT
+roundcubemail/plugins/dkimstatus/images/authorsign.png
+roundcubemail/plugins/dkimstatus/images/bigicons.tar
+roundcubemail/plugins/dkimstatus/images/invalidsig.png
+roundcubemail/plugins/dkimstatus/images/nosiginfo.png
+roundcubemail/plugins/dkimstatus/images/thirdpty.png
+roundcubemail/plugins/dkimstatus/localization/
+roundcubemail/plugins/dkimstatus/localization/cs_CZ.inc
+roundcubemail/plugins/dkimstatus/localization/de_DE.inc
+roundcubemail/plugins/dkimstatus/localization/en_US.inc
+roundcubemail/plugins/dkimstatus/localization/es_ES.inc
+roundcubemail/plugins/dkimstatus/localization/fr_FR.inc
+roundcubemail/plugins/dkimstatus/localization/it_IT.inc
+roundcubemail/plugins/dkimstatus/localization/ja_JP.inc
+roundcubemail/plugins/dkimstatus/localization/pl_PL.inc
+roundcubemail/plugins/dkimstatus/localization/pt_BR.inc
+roundcubemail/plugins/dkimstatus/localization/ro_RO.inc
+roundcubemail/plugins/dkimstatus/localization/ru_RU.inc
