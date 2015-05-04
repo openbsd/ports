@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.235 2015/04/28 23:23:22 bluhm Exp $
+# $OpenBSD: Quirks.pm,v 1.236 2015/05/04 11:44:15 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -376,6 +376,7 @@ my @msg = (
 	"no longer maintained upstream", #3
 	"superseded by base component", #4
 	"outdated and/or no longer required by other ports", #5
+	"no longer useful", #6
 );
 
 my $obsolete_reason = {
@@ -524,6 +525,7 @@ my $obsolete_reason = {
 	'cook' => 3,
 	'schroedinger' => 3,
 	'wordpress' => 1,
+	'polari' => 6,
 };
 
 # ->is_base_system($handle, $state):
