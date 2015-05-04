@@ -1,0 +1,4 @@
+Adds a new button to Roundcube's mailbox toolbar to mark the selected
+messages as Junk/Not Junk, optionally detaching original messages from
+spam reports if the message is not junk and learning junk/not junk using
+various methods (sa-learn, etc.).
