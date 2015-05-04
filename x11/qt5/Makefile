@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/05/03 13:10:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.37 2015/05/04 10:37:01 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -24,7 +24,7 @@ PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-qch =		qt5-qch-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
-REVISION-main =		5
+REVISION-main =		6
 REVISION-examples =	1
 REVISION-html =		0
 
@@ -216,9 +216,7 @@ MAKE_ENV =		LD_LIBRARY_PATH=${WRKBUILD}/qtbase/lib \
 			NINJA_PATH="${LOCALBASE}/bin/ninja" \
 			PYTHON=${MODPY_BIN} \
 			RUBY=${RUBY} \
-			REAL_BUILD_ROOT=${WRKBUILD} \
-			OPENBSD_CPPFLAGS="-isystem ${WRKDIR}/gcc-include"
-#MAKE_ENV +=		CCACHE_RECACHE=1
+			REAL_BUILD_ROOT=${WRKBUILD}
 
 MAKE_FLAGS =		-B -j ${MAKE_JOBS} \
 			PYTHON=${MODPY_BIN} \
@@ -458,11 +456,8 @@ pre-configure:
 		-e 's/^OBJECTS_DIR/#$$&/;' \
 		*/*.pro
 
-	@gccbasedir=`echo ${LOCALBASE}/lib/gcc/*-openbsd${OSREV}/${MODGCC4_VERSION}.*`; \
-	cd ${WRKSRC}/qtwebkit/Source/WebCore; \
-	for f in $$gccbasedir/include/*; do \
-		echo ln -sf $$f >&2; \
-		ln -sf $$f; \
-	done;
+	@gccbasedir=`ecpp -print-search-dirs | awk '/^install:/{print $$2}'`
+	pkg_subst -D OPENBSD_INCDIR_PREPEND="$${gccbasedir}include" \
+	    ${WRKSRC}/qtbase/mkspecs/openbsd-g++/qmake.conf
 
 .include <bsd.port.mk>
