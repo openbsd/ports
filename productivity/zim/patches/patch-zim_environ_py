@@ -1,0 +1,14 @@
+$OpenBSD: patch-zim_environ_py,v 1.1 2015/05/04 19:28:16 benno Exp $
+--- zim/environ.py.orig	Sun Apr 26 17:10:58 2015
++++ zim/environ.py	Sun Apr 26 17:10:58 2015
+@@ -98,8 +98,8 @@
+ 	if not 'APPDATA' in environ or not environ['APPDATA']:
+ 		environ['APPDATA'] = environ['HOME'] + '\\Application Data'
+ 
+-assert isdir(environ['HOME']), \
+-	'ERROR: environment variable $HOME not set correctly value is "%s"'
++#assert isdir(environ['HOME']), \
++#	'ERROR: environment variable $HOME not set correctly value is "%s"'
+ 	# using our own environ here to ensure encoding
+ 
+ if not 'USER' in environ or not environ['USER']:
