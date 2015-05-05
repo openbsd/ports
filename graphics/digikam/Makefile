@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2015/03/27 08:11:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2015/05/05 17:00:17 sthen Exp $
 
 COMMENT =		digital image kde application
 CATEGORIES =		graphics x11 x11/kde
 V =			0.9.6
 DISTNAME =		digikam-$V
-REVISION =		14
+REVISION =		15
 PKGSPEC =		digikam-<1
 
 SHARED_LIBS +=		digikam              3.0      # .0.0
@@ -25,18 +25,6 @@ LIB_DEPENDS =	x11/kde/libs3 \
 		graphics/libkdcraw \
 		graphics/lcms
 
-WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
-WANTLIB += Xmu Xrandr Xt Xxf86vm Xrender art_lgpl_2 c drm fam
-WANTLIB += fontconfig freetype exif expat exiv2 gphoto2 gphoto2_port
-WANTLIB += idn jasper jpeg lcms ltdl m mng pcre pcreposix png pthread
-WANTLIB += stdc++ tiff util xcb z
-WANTLIB += lib/qt3/qt-mt>=3.33
-WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kparts ${KDE}/kdeui
-WANTLIB += ${KDE}/kdesu ${KDE}/kio ${KDE}/kdefx ${KDE}/kdcraw
-WANTLIB += ${KDE}/kdeprint ${KDE}/kexiv2>=1 ${KDE}/kipi ${KDE}/kutils
-WANTLIB += ${KDE}/kabc ${KDE}/kresources ${KDE}/khtml ${KDE}/kjs
-WANTLIB += ${KDE}/kwalletclient ${KDE}/vcard
-
 MODULES =	devel/gettext \
 		x11/kde
 
@@ -46,7 +34,6 @@ AUTOCONF_VERSION =	2.61
 CONFIGURE_ARGS +=	${MODKDE_CONFIGURE_ARGS}
 
 CONFIGURE_ARGS +=	--without-included-sqlite3
-WANTLIB +=		sqlite3
 
 USE_GMAKE ?=		Yes
 CONFIGURE_ENV +=	${MODKDE_CONFIGURE_ENV}
@@ -59,5 +46,17 @@ MAKE_FLAGS +=		LIBRESOLV=
  
 # GPL
 PERMIT_PACKAGE_CDROM =		Yes
+
+WANTLIB += ${KDE}/DCOP ${KDE}/kabc ${KDE}/kdcraw ${KDE}/kdecore>=6
+WANTLIB += ${KDE}/kdefx ${KDE}/kdeprint ${KDE}/kdesu ${KDE}/kdeui
+WANTLIB += ${KDE}/kexiv2>=1 ${KDE}/khtml ${KDE}/kio ${KDE}/kipi
+WANTLIB += ${KDE}/kjs ${KDE}/kparts ${KDE}/kresources ${KDE}/kutils
+WANTLIB += ${KDE}/kwalletclient ${KDE}/vcard ${MODQT3_WANTLIB}
+WANTLIB += GL ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c
+WANTLIB += drm exif exiv2 expat fam fontconfig freetype glapi gphoto2
+WANTLIB += gphoto2_port idn jasper jpeg lcms ltdl m mng pcre pcreposix
+WANTLIB += png pthread pthread-stubs sqlite3 stdc++ tiff util xcb
+WANTLIB += xcb-dri2 xcb-glx z
 
 .include <bsd.port.mk>

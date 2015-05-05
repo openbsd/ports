@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2015/03/27 08:16:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2015/05/05 17:00:20 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	twin panel file manager for KDE
 
 DISTNAME=	krusader-1.80.0
-REVISION=	14
+REVISION=	15
 
 CATEGORIES=	x11 x11/kde
 
@@ -14,16 +14,17 @@ HOMEPAGE=	http://krusader.sourceforge.net/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=krusader/}
-
-WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft
-WANTLIB += Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm
-WANTLIB += expat fam fontconfig freetype idn jpeg lcms m mng pcre
-WANTLIB += pcreposix png pthread pthread-stubs qui-mt stdc++ util xcb z
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdeprint
-WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/khtml ${KDE}/kio
-WANTLIB += ${KDE}/kjs ${KDE}/kjsembed ${KDE}/konq ${KDE}/kparts
-WANTLIB += ${KDE}/kutils ${KDE}/kwalletclient
+WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/khtml ${KDE}/kio ${KDE}/kjs
+WANTLIB += ${KDE}/kjsembed ${KDE}/konq ${KDE}/kparts ${KDE}/kutils
+WANTLIB += ${KDE}/kwalletclient
+WANTLIB += GL ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c
+WANTLIB += drm expat fam fontconfig freetype glapi idn jpeg lcms m mng
+WANTLIB += pcre pcreposix png pthread pthread-stubs qui-mt stdc++ util
+WANTLIB += xcb xcb-dri2 xcb-glx z
+
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=krusader/}
 
 PORTHOME=	${WRKDIR}
 

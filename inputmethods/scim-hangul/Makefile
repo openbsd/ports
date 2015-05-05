@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.16 2015/05/05 17:00:18 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	scim input method module for hangul
 
 DISTNAME=	scim-hangul-0.3.2
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	inputmethods korean
 
@@ -14,14 +14,14 @@ HOMEPAGE=	http://www.scim-im.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
-		freetype glib-2.0 gmodule-2.0 gobject-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png stdc++ z \
-		gio-2.0 pthread-stubs xcb hangul gtk-x11-2.0 \
-		gdk-x11-2.0 gdk_pixbuf-2.0 scim-1.0 scim-gtkutils-1.0 \
-		scim-x11utils-1.0 gthread-2.0 xcb-render \
-		GL Xxf86vm drm ffi xcb-shm
+WANTLIB+= GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB+= Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi
+WANTLIB+= fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB+= glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB+= gtk-x11-2.0 hangul harfbuzz m pango-1.0 pangocairo-1.0
+WANTLIB+= pangoft2-1.0 pcre pixman-1 png pthread-stubs pthread scim-1.0
+WANTLIB+= scim-gtkutils-1.0 scim-x11utils-1.0 stdc++ xcb xcb-render
+WANTLIB+= xcb-shm z
 
 MODULES=	devel/gettext
 

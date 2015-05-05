@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2014/04/01 14:52:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2015/05/05 17:00:20 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	beautiful glass-like GTK+ 2.x engine and themes
 GNOME_VERSION =	0.98.2
 GNOME_PROJECT =	murrine
 PKGNAME =	gtk2-murrine-engine-${GNOME_VERSION}
-REVISION =	2
+REVISION =	3
 CATEGORIES =	x11
 
 HOMEPAGE =	http://cimitan.com/murrine/
@@ -16,6 +16,14 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread-stubs pthread stdc++ xcb
+WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES0 =	${HOMEPAGE}files/
 DIST_SUBDIR =	murrine
@@ -35,14 +43,6 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		MurrinaAquaIsh.tar.bz2:0 \
 		MurrinaGilouche.tar.bz2:0 \
 		MurrinaLoveGray.tar.bz2:0
-
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm
-WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread-stubs stdc++ xcb xcb-render
-WANTLIB += xcb-shm z
 
 MODULES =	devel/gettext \
 		x11/gnome

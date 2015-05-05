@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2015/03/27 08:11:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2015/05/05 17:00:17 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	XML editor for KDE
 
 DISTNAME=	kxmleditor-1.1.3
-REVISION=	13
+REVISION=	14
 CATEGORIES=	editors x11 x11/kde
 
 SHARED_LIBS=	kxmleditorpart	2.0
@@ -15,13 +15,13 @@ HOMEPAGE=	http://kxmleditor.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=  Yes
 
-WANTLIB =	GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi
-WANTLIB +=	Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm
-WANTLIB +=	expat fam fontconfig freetype idn jpeg lcms m mng png
-WANTLIB +=	pthread pthread-stubs stdc++ util xcb z
-WANTLIB +=	${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdeprint
-WANTLIB +=	${KDE}/kdesu ${KDE}/kdeui ${KDE}/kio ${KDE}/kparts
-WANTLIB +=	${KDE}/kwalletclient
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdeprint
+WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/kio ${KDE}/kparts
+WANTLIB += ${KDE}/kwalletclient
+WANTLIB += GL ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c
+WANTLIB += drm expat fam fontconfig freetype glapi idn jpeg lcms m mng
+WANTLIB += png pthread pthread-stubs stdc++ util xcb xcb-dri2 xcb-glx z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kxmleditor/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/03/27 08:11:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2015/05/05 17:00:16 sthen Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -6,22 +6,20 @@ CATEGORIES =		cad
 HOMEPAGE =		http://geda.seul.org
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
-REVISION =		7
+REVISION =		8
 
 SHARED_LIBS = 		geda	0.0	# 38.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-			Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
-			expat fontconfig freetype ltdl m \
-			pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-			png pthread pthread-stubs xcb xcb-render \
-			z gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-			gobject-2.0 gmodule-2.0 guile gmp gtk-x11-2.0 \
-			gdk-x11-2.0 gthread-2.0 \
-			GL Xxf86vm drm ffi stdc++ xcb-shm
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm expat ffi
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-x11-2.0 guile harfbuzz ltdl m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs stdc++
+WANTLIB += xcb xcb-render xcb-shm z
 
 MASTER_SITES =		http://geda.seul.org/release/v1.6/1.6.0/
 

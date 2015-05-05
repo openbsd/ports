@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2015/03/27 08:14:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2015/05/05 17:00:19 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	powerful KDE batch file renamer
 
 DISTNAME =	krename-3.0.14
-REVISION =	13
+REVISION =	14
 
 SRCFILES =	${DISTNAME}.tar.bz2
 DOCFILES =	krename-3.0.12.pdf \
@@ -25,12 +25,13 @@ PORTROACH =	limit:^3\.0
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  GL Xcursor Xdamage Xfixes Xft Xi Xinerama Xmu Xrandr Xt Xxf86vm
-WANTLIB += drm expat fam fontconfig freetype lcms mng ICE SM X11 Xext
-WANTLIB += Xrender c jpeg m png pthread stdc++ util xcb z
-WANTLIB += art_lgpl_2>=5 idn>=16.30
 WANTLIB += ${KDE}/DCOP>=7 ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kparts ${KDE}/kwalletclient
+WANTLIB += GL ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2>=5 c
+WANTLIB += drm expat fam fontconfig freetype glapi idn>=16.30 jpeg lcms
+WANTLIB += m mng png pthread pthread-stubs stdc++ util xcb xcb-dri2
+WANTLIB += xcb-glx z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=krename/}
 

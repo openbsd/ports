@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2014/03/31 07:33:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/05/05 17:00:18 sthen Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
 DISTNAME =	mapnik-v2.2.0
 PKGNAME =	${DISTNAME:S/v//}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	mapnik 2.0 #2.0
 CATEGORIES =	graphics geo
@@ -16,6 +16,13 @@ DPB_PROPERTIES = nojunk
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += X11 Xau Xdmcp Xext Xrender boost_filesystem-mt
+WANTLIB += boost_program_options-mt boost_python-mt boost_regex-mt
+WANTLIB += boost_system-mt boost_thread-mt c cairo curl expat fontconfig
+WANTLIB += freetype gdal glib-2.0 gobject-2.0 icuuc jpeg m pcre pixman-1
+WANTLIB += png>=17.0 pq proj pthread pthread-stubs sqlite3 stdc++ tiff
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 MASTER_SITES =	http://mapnik.s3.amazonaws.com/dist/v2.2.0/
 MODULES =	devel/gettext \
@@ -33,15 +40,6 @@ LIB_DEPENDS =	devel/boost>=1.47 \
 		devel/proj \
 		geo/gdal \
 		textproc/icu4c
-
-WANTLIB =	cairo icuuc png>=17.0 pq proj jpeg \
-		boost_filesystem-mt tiff sqlite3 \
-		boost_program_options-mt boost_python-mt \
-		boost_regex-mt boost_system-mt boost_thread-mt \
-		c freetype m stdc++ xml2 z curl gdal \
-		X11 Xau Xdmcp Xext Xrender fontconfig glib-2.0 \
-		gobject-2.0 pcre pixman-1 pthread-stubs \
-		xcb xcb-render xcb-shm pthread
 
 MODSCONS_FLAGS =	PREFIX="${TRUEPREFIX}" \
 			DESTDIR="${WRKINST}" \

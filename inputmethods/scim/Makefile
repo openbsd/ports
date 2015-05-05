@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.23 2015/05/05 17:00:18 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	smart common input method platform
 
 DISTNAME =	scim-1.4.9
-REVISION =	13
+REVISION =	14
 
 SHARED_LIBS +=  scim-1.0           0.0           # .10.4
 SHARED_LIBS +=  scim-x11utils-1.0  0.0           # .10.4
@@ -18,13 +18,13 @@ HOMEPAGE =	http://www.scim-im.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
-		freetype glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-		gio-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png pthread pthread-stubs stdc++ xcb z gtk-x11-2.0 \
-		gdk-x11-2.0 gdk_pixbuf-2.0 xcb-render \
-		GL Xxf86vm drm ffi xcb-shm
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm expat ffi
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb xcb-render
+WANTLIB += xcb-shm z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=scim/}
 

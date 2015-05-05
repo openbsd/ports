@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.13 2013/08/09 19:04:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/05/05 17:00:17 sthen Exp $
 
 COMMENT=	total conversion of the Space Hulk board game
 
 DISTNAME=	spacehulk-1.5-beta1
 PKGNAME=	spacehulk-1.5beta1
-REVISION =	5
+REVISION =	6
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://r.vinot.free.fr/spacehulk/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		m c z stdc++ pthread
-WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
-WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm drm expat freetype fontconfig jpeg
-WANTLIB += lcms mng png pthread-stubs xcb
+
+WANTLIB += GL ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm c drm expat
+WANTLIB += fontconfig freetype glapi jpeg lcms m mng png pthread
+WANTLIB += pthread-stubs stdc++ xcb xcb-dri2 xcb-glx z
 
 MASTER_SITES=	${HOMEPAGE}
 

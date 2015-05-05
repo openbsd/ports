@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/05 07:55:11 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/05 17:00:19 sthen Exp $
 
 COMMENT =		forensic data recovery program
 
 DISTNAME =		foremost-1.5.7
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security
 

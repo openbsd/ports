@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2013/01/23 21:10:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.78 2015/05/05 17:00:20 sthen Exp $
 
 COMMENT =		K Desktop Environment, aRTs
 CATEGORIES =		x11 x11/kde
@@ -38,12 +38,13 @@ CONFIGURE_ARGS +=	${ENABLE_SHARED} \
 			--without-jack \
 			--without-esd
 
-REVISION =	7
-WANTLIB = ICE SM X11 Xext audiofile c glib-2.0 gmodule-2.0 \
-	gthread-2.0 jpeg m mad ogg pcre png pthread sndio stdc++ \
-	vorbis vorbisenc vorbisfile xcb z mng Xrender Xt Xxf86vm \
-	GL Xcursor Xdamage Xfixes Xft Xi Xinerama Xmu Xrandr \
-	drm expat fontconfig freetype lcms
+REVISION =	8
+
+WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu
+WANTLIB += Xrandr Xrender Xt Xxf86vm audiofile c drm expat fontconfig
+WANTLIB += freetype glib-2.0 gmodule-2.0 gthread-2.0 jpeg lcms m mad mng
+WANTLIB += ogg pcre png pthread sndio stdc++ vorbis vorbisenc vorbisfile
+WANTLIB += xcb xcb-glx z
 
 post-patch:
 	cp ${FILESDIR}/audioiosndio.cc ${WRKSRC}/flow

@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.15 2013/10/15 14:55:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2015/05/05 17:00:17 sthen Exp $
 
 COMMENT=	go client and fully featured sgf editor
 
 DISTNAME=	qgo-1.5.4
-REVISION =	4
+REVISION =	5
 CATEGORIES=	games
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB = GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
-WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm c drm expat fontconfig
-WANTLIB += freetype jpeg lcms m mng png pthread pthread-stubs
-WANTLIB += stdc++ xcb z
+
+WANTLIB += GL ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm c drm expat
+WANTLIB += fontconfig freetype glapi jpeg lcms m mng png pthread
+WANTLIB += pthread-stubs stdc++ xcb xcb-dri2 xcb-glx z
 
 MODULES=	x11/qt3
 

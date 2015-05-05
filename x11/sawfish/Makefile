@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2015/03/27 08:16:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2015/05/05 17:00:21 sthen Exp $
 
 COMMENT=	extensible window manager
 
@@ -6,7 +6,7 @@ SHARED_ONLY=	Yes
 
 VERSION=	1.9.1
 DISTNAME=	sawfish-${VERSION}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	x11
 
@@ -19,6 +19,15 @@ HOMEPAGE=	http://sawfish.wikia.com/
 # Sounds: Artistic License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xft Xi
+WANTLIB += Xinerama Xrandr Xrender Xtst atk-1.0 c cairo expat ffi
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gdk_pixbuf_xlib-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz m
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0 pangoxft-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs rep xcb xcb-render
+WANTLIB += xcb-shm z
+
 BUILD_DEPENDS=	archivers/gtar \
 		x11/rep-gtk>=0.90.8.1
 RUN_DEPENDS=	devel/desktop-file-utils \
@@ -28,15 +37,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 LIB_DEPENDS=	devel/pangox-compat>=0.0.2 \
 		lang/librep \
 		x11/gtk+2
-
-WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xft Xi Xinerama Xrandr Xrender Xtst atk-1.0 c cairo
-WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gdk_pixbuf_xlib-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp
-WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 harfbuzz
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pangoxft-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += rep xcb xcb-render xcb-shm z pangox-1.0
 
 MODULES=	devel/gettext
 

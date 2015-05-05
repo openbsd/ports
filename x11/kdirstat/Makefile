@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2015/03/27 08:16:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2015/05/05 17:00:20 sthen Exp $
 
 COMMENT=	graphical disk usage utility for KDE
 
 DISTNAME=	kdirstat-2.4.0
-REVISION=	11
+REVISION=	12
 
 CATEGORIES=	x11
 
@@ -12,12 +12,12 @@ HOMEPAGE=	http://kdirstat.sourceforge.net/
 # GPL
 PERMIT_PACKAGE_CDROM=  Yes
 
-WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft
-WANTLIB += Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm
-WANTLIB += expat fam fontconfig freetype idn jpeg lcms m mng png
-WANTLIB += pthread pthread-stubs stdc++ util xcb z
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
+WANTLIB += GL ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c
+WANTLIB += drm expat fam fontconfig freetype glapi idn jpeg lcms m mng
+WANTLIB += png pthread pthread-stubs stdc++ util xcb xcb-dri2 xcb-glx z
 
 MASTER_SITES=	${HOMEPAGE}/download/
 EXTRACT_SUFX=	.tar.bz2

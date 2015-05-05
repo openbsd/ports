@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2015/04/04 09:21:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2015/05/05 17:00:20 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-1.06
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  xapianbackend             0.0 # 1.0
 
@@ -16,17 +16,16 @@ HOMEPAGE=	https://code.google.com/p/pinot-search/
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atkmm-1.6
-WANTLIB += atspi c cairo cairo-gobject cairomm-1.0 crypto curl
-WANTLIB += dbus-1 dbus-glib-1 uuid exiv2 expat ffi fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4
-WANTLIB += glib-2.0 glibmm-2.4 gmime-2.6 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 gtkmm-3.0 harfbuzz idn
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
-WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 sqlite3
-WANTLIB += ssl stdc++ tag textcat xapian xcb xcb-render xcb-shm
-WANTLIB += xml++-2.6 xml2 z
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atkmm-1.6 atspi c cairo
+WANTLIB += cairo-gobject cairomm-1.0 crypto curl dbus-1 dbus-glib-1
+WANTLIB += epoxy exiv2 expat ffi fontconfig freetype gdk-3
+WANTLIB += gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0
+WANTLIB += glibmm-2.4 gmime-2.6 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 harfbuzz idn lzma m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1 png
+WANTLIB += pthread pthread-stubs sigc-2.0 sqlite3 ssl stdc++ tag textcat
+WANTLIB += uuid xapian xcb xcb-render xcb-shm xml++-2.6 xml2 z
 
 MASTER_SITES=	https://pinot-search.googlecode.com/files/
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2015/03/27 08:16:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2015/05/05 17:00:21 sthen Exp $
 
 COMMENT=	organizer for book/dvd/music collections
 
 DISTNAME=	tellico-1.3.6
-REVISION=	12
+REVISION=	13
 
 CATEGORIES=	x11 databases
 
@@ -13,18 +13,16 @@ MASTER_SITES=	${HOMEPAGE}download/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
-WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm exempi expat
-WANTLIB += exslt fam fontconfig freetype gcrypt gpg-error idn jpeg
-WANTLIB += lcms lcms2 m mng openjpeg pcre pcreposix png poppler
-WANTLIB += poppler-qt>=3 pthread stdc++ tag tiff util xcb xml2 xslt
-WANTLIB += yaz z
 WANTLIB += ${KDE}/DCOP ${KDE}/kabc ${KDE}/kcal ${KDE}/kcddb
 WANTLIB += ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdeprint ${KDE}/kdesu
-WANTLIB += ${KDE}/kdeui ${KDE}/khtml ${KDE}/kio ${KDE}/kjs
-WANTLIB += ${KDE}/kmime ${KDE}/knewstuff ${KDE}/kparts
-WANTLIB += ${KDE}/kresources ${KDE}/ktnef ${KDE}/kutils
-WANTLIB += ${KDE}/kwalletclient ${KDE}/vcard
+WANTLIB += ${KDE}/kdeui ${KDE}/khtml ${KDE}/kio ${KDE}/kjs ${KDE}/kmime
+WANTLIB += ${KDE}/knewstuff ${KDE}/kparts ${KDE}/kresources ${KDE}/ktnef
+WANTLIB += ${KDE}/kutils ${KDE}/kwalletclient ${KDE}/vcard
+WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu
+WANTLIB += Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm exempi expat exslt
+WANTLIB += fam fontconfig freetype gcrypt gpg-error idn jpeg lcms lcms2
+WANTLIB += m mng openjpeg pcre pcreposix png poppler poppler-qt>=3
+WANTLIB += pthread stdc++ tag tiff util xcb xcb-glx xml2 xslt yaz z
 
 MODULES=	x11/kde \
 		lang/python \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2011/07/07 00:08:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2015/05/05 17:00:19 sthen Exp $
 
 COMMENT=	GKrellM2 will remind you to do important events
 
 V=		2.0.0
 DISTNAME=	gkrellm-reminder-${V}
 PKGNAME=	gkrellmreminder-${V}
-REVISION=	7
+REVISION=	8
 CATEGORIES=	misc
 
 HOMEPAGE=	http://members.dslextreme.com/users/billw/gkrellm/Plugins.html\#REMINDER

@@ -1,29 +1,29 @@
-# $OpenBSD: Makefile,v 1.60 2015/04/04 09:21:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2015/05/05 17:00:20 sthen Exp $
 
 COMMENT=		user interface components for GNOME
 
 GNOME_PROJECT=		libgnomeui
 GNOME_VERSION=		2.24.5
-REVISION=		6
+REVISION=		7
 
 SHARED_LIBS +=	gnomeui-2      2400.0         # .2400.2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
+WANTLIB += GL ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation bonoboui-2
+WANTLIB += cairo canberra crypto dbus-1 dbus-glib-1 drm expat ffi
+WANTLIB += fontconfig freetype gailutil gconf-2 gcrypt gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 gnome-2
+WANTLIB += gnome-keyring>=6 gnomecanvas-2 gnomevfs-2 gobject-2.0
+WANTLIB += gpg-error graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz ltdl
+WANTLIB += lzma m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png popt pthread pthread-stubs ssl stdc++ util
+WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm xml2 z
 
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
-WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation cairo crypto
-WANTLIB += dbus-1 dbus-glib-1 expat fontconfig freetype gailutil
-WANTLIB += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png popt pthread-stubs ssl util xcb xml2
-WANTLIB += gcrypt gpg-error xcb-render GL Xxf86vm drm xcb-shm
-WANTLIB += gnome-keyring>=6 gnome-2 gnomecanvas-2 bonoboui-2
-WANTLIB += canberra ltdl ogg vorbis vorbisfile z ffi stdc++
+EXTRACT_SUFX=		.tar.bz2
 
 MODULES=	devel/gettext \
 		x11/gnome

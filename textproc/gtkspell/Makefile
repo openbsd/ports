@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2015/03/16 18:07:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2015/05/05 17:00:19 sthen Exp $
 
 PORTROACH+=	limit:^2
 
@@ -7,7 +7,7 @@ DISTNAME=	gtkspell-2.0.16
 
 SHARED_LIBS=	gtkspell 1.0 # .0.0
 
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	textproc x11
 
@@ -18,13 +18,13 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm
-WANTLIB += enchant expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread-stubs stdc++ xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm enchant
+WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs pthread stdc++
+WANTLIB += xcb xcb-render xcb-shm z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkspell/}
 

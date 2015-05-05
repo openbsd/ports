@@ -1,19 +1,12 @@
-# $OpenBSD: Makefile,v 1.33 2015/03/27 08:11:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2015/05/05 17:00:17 sthen Exp $
 
 COMMENT=		kde image database
 CATEGORIES=		graphics x11 x11/kde
 DISTNAME=		kphotoalbum-3.0
-REVISION =		15
+REVISION =		16
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://www.kphotoalbum.org/
 MASTER_SITES=		${HOMEPAGE}data/download/
-
-WANTLIB =  ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c exiv2 expat
-WANTLIB += fam fontconfig freetype idn jpeg m png pthread stdc++ util
-WANTLIB += xcb z 
-WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdesu
-WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kipi ${KDE}/kmediaplayer
-WANTLIB += ${KDE}/kparts ${KDE}/kwalletclient
 
 LIB_DEPENDS=	x11/kde/libs3 \
 		graphics/libkipi \
@@ -36,5 +29,12 @@ MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
 
 # GPL
 PERMIT_PACKAGE_CDROM=		Yes
+
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdesu
+WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kipi ${KDE}/kmediaplayer
+WANTLIB += ${KDE}/kparts ${KDE}/kwalletclient
+WANTLIB += ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c exiv2 expat
+WANTLIB += fam fontconfig freetype idn jpeg m png pthread pthread-stubs
+WANTLIB += stdc++ util xcb z
 
 .include <bsd.port.mk>

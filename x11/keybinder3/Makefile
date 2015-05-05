@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/04 09:21:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/05 17:00:20 sthen Exp $
 
 COMMENT =	GTK+3 library for registering keyboard shortcuts
 DISTNAME =	keybinder3-0.3.0
 CATEGORIES =	x11 devel
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	keybinder-3.0		0.0	# 0.0
 
@@ -13,15 +13,15 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv2+ 
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
-
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi cairo
+WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
+
+MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
 
 MODULES =	devel/gettext \
 		x11/gnome

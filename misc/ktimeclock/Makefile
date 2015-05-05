@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2015/03/27 08:41:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2015/05/05 17:00:18 sthen Exp $
 
 COMMENT=	task-based timeclock for KDE
 
 VERSION=	2.0.2
 DISTNAME=	ktimeclock-${VERSION}
-REVISION=	9
+REVISION=	10
 CATEGORIES=	misc x11
 
 HOMEPAGE=	http://www.howlingfrog.com/opensource/ktimeclock/
@@ -12,10 +12,11 @@ HOMEPAGE=	http://www.howlingfrog.com/opensource/ktimeclock/
 # GPL
 PERMIT_PACKAGE_CDROM=  Yes
 
-WANTLIB =  ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c expat fam
-WANTLIB += fontconfig freetype idn m png pthread stdc++ util xcb z 
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
+WANTLIB += ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c expat fam
+WANTLIB += fontconfig freetype idn m png pthread pthread-stubs stdc++
+WANTLIB += util xcb z
 
 MASTER_SITES=	${HOMEPAGE}/downloads/v${VERSION}/tarball/
 

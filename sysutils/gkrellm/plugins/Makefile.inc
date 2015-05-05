@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.30 2013/05/16 20:47:49 rpe Exp $
+# $OpenBSD: Makefile.inc,v 1.31 2015/05/05 17:00:19 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,7 +16,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png pthread-stubs xcb xcb-render z \
+		pixman-1 png pthread pthread-stubs xcb xcb-render z \
 		GL X11-xcb Xxf86vm drm xcb-shm ${MODGETTEXT_WANTLIB}
 .endif
 

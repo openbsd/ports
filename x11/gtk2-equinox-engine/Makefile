@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/04/01 14:52:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/05/05 17:00:20 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	Equinox GTK+2 engine
 V=		1.50
 DISTNAME=	121881-equinox-${V}
 PKGNAME=	gtk2-equinox-engine-${V}
-REVISION=	2
+REVISION=	3
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		140449-equinox-themes-${V}${EXTRACT_SUFX}
@@ -19,16 +19,15 @@ HOMEPAGE=	http://gnome-look.org/content/show.php/Equinox+Gtk+Engine?content=1218
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm
-WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += z ffi stdc++
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread-stubs pthread stdc++ xcb
+WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES=	http://gnome-look.org/CONTENT/content-files/
-
 
 MODULES=	devel/gettext
 

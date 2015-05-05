@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2015/04/04 09:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2015/05/05 17:00:17 sthen Exp $
 
 BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
@@ -8,7 +8,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	3.0.1
 DISTNAME=	abiword-${VERSION}
-REVISION=	1
+REVISION=	2
 
 MAJORVER=	${VERSION:C/..$//}
 SUBST_VARS=	MAJORVER
@@ -22,18 +22,17 @@ HOMEPAGE=	http://www.abisource.com/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += avahi-common bz2 c cairo cairo-gobject croco-0.6 crypto
-WANTLIB += curl dbus-1 enchant expat ffi fontconfig freetype fribidi
-WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gmp gobject-2.0 goffice-0.10 gpg-error graphite2 gs
-WANTLIB += gsf-1 gthread-2.0 gtk-3 harfbuzz hogweed idn jpeg ltdl
-WANTLIB += lzma m mpfr nettle p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += raptor2 rasqal rdf rsvg-2 spectre ssl stdc++ tasn1
-WANTLIB += uuid wmf-0.2 wmflite-0.2 wv-1.2 xcb xcb-render xcb-shm
-WANTLIB += xml2 xslt yajl z
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi avahi-common bz2
+WANTLIB += c cairo cairo-gobject croco-0.6 crypto curl dbus-1 enchant
+WANTLIB += epoxy expat ffi fontconfig freetype fribidi gcrypt gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gobject-2.0
+WANTLIB += goffice-0.10 gpg-error graphite2 gs gsf-1 gthread-2.0 gtk-3
+WANTLIB += harfbuzz hogweed idn jpeg ltdl lzma m mpfr nettle p11-kit
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
+WANTLIB += pthread pthread-stubs raptor2 rasqal rdf rsvg-2 spectre ssl
+WANTLIB += stdc++ tasn1 uuid wmf-0.2 wmflite-0.2 wv-1.2 xcb xcb-render
+WANTLIB += xcb-shm xml2 xslt yajl z
 
 MASTER_SITES=   http://www.abisource.com/downloads/abiword/${VERSION}/source/
 

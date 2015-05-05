@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/06/04 18:41:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2015/05/05 17:00:17 sthen Exp $
 
 COMMENT=	library to adjust for photographic lens characteristics
 DISTNAME=	lensfun-0.2.7
 SHARED_LIBS=	lensfun 1.0
+REVISION=	0
 
 CATEGORIES=	graphics
 HOMEPAGE=	http://lensfun.berlios.de/
@@ -10,7 +11,7 @@ HOMEPAGE=	http://lensfun.berlios.de/
 # library LGPLv3, lens db CC-BY-SA, build infrastructure/applications GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c glib-2.0 m png stdc++ z
+WANTLIB += c glib-2.0 m png pthread stdc++ z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lensfun.berlios/}
 EXTRACT_SUFX=		.tar.bz2

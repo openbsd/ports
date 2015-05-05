@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2015/05/05 17:00:21 sthen Exp $
 
 COMMENT=		neat theme manager for Window Maker
 
 DISTNAME=		wmthemeinstall-0.62
 CATEGORIES=		x11 x11/windowmaker
 
-REVISION=		2
+REVISION=		3
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		X11 Xext Xi c glib gmodule gdk m z gtk
+WANTLIB+= X11 Xext Xi c gdk glib gmodule gtk m xcb z
 
 MODULES=		devel/gettext
 

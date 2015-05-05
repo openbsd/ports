@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2015/04/04 09:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2015/05/05 17:00:18 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	intelligent input bus framework
 
 DISTNAME =	ibus-1.5.5
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	ibus-1.0	4.0 # 5.504
 
@@ -18,14 +18,14 @@ MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB = 	ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
-		Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi \
-		c cairo cairo-gobject dbus-1 dconf expat ffi fontconfig \
-		freetype gdk-3 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3 \
-		gtk-x11-2.0 harfbuzz m notify pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
-		xcb xcb-render xcb-shm z
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
+WANTLIB += cairo-gobject dbus-1 dconf epoxy expat ffi fontconfig
+WANTLIB += freetype gdk-3 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += gtk-x11-2.0 harfbuzz m notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb
+WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES =	https://ibus.googlecode.com/files/
 

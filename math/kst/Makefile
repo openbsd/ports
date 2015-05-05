@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2015/03/27 08:13:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2015/05/05 17:00:18 sthen Exp $
 
 CATEGORIES=	math x11/kde
 COMMENT=	data viewing/plotting tool
 
 DISTNAME=	kst-1.2.1
-REVISION=	11
+REVISION=	12
 SHARED_ONLY=	Yes
 SHARED_LIBS=	kst		4.0 \
 		kstapp		4.0 \
@@ -17,6 +17,15 @@ HOMEPAGE=	http://kst-plot.kde.org/kst1/
 
 # GPLv2+, LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdeprint
+WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/khtml ${KDE}/kio ${KDE}/kjs
+WANTLIB += ${KDE}/kmdi ${KDE}/kparts ${KDE}/kutils ${KDE}/kwalletclient
+WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu
+WANTLIB += Xrandr Xrender Xt Xxf86vm art_lgpl_2 c cfitsio drm expat
+WANTLIB += fontconfig freetype gsl>=7 gslcblas idn jpeg lcms lib/qt3/qui
+WANTLIB += m mng ncurses netcdf netcdf_c++ pcre pcreposix png pthread
+WANTLIB += readline stdc++ util xcb xcb-glx z
 
 MODULES=		x11/kde devel/gettext
 MODKDE_VERSION=		3.5.3
@@ -38,15 +47,5 @@ LIB_DEPENDS =	x11/kde/libs3 \
 		devel/gsl>=1.6 \
 		math/netcdf \
 		math/cfitsio
-
-WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
-WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c cfitsio drm
-WANTLIB += expat fontconfig freetype gsl>=7 gslcblas idn jpeg lcms m
-WANTLIB += mng ncurses netcdf netcdf_c++ pcre pcreposix png pthread
-WANTLIB += readline stdc++ util xcb z
-WANTLIB += lib/qt3/qui
-WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdeprint
-WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/khtml ${KDE}/kio ${KDE}/kjs
-WANTLIB += ${KDE}/kmdi ${KDE}/kparts ${KDE}/kutils ${KDE}/kwalletclient
 
 .include <bsd.port.mk>
