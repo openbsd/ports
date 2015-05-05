@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/05/04 21:31:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2015/05/05 17:43:42 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -456,7 +456,7 @@ pre-configure:
 		-e 's/^OBJECTS_DIR/#$$&/;' \
 		*/*.pro
 
-	@gccbasedir=`ecpp -print-search-dirs | awk '/^install:/{print $$2}'`
+	@gccbasedir=`ecpp -print-search-dirs | awk '/^install:/{print $$2}'`; \
 	perl ${PORTSDIR}/infrastructure/bin/pkg_subst \
 	    -D OPENBSD_INCDIR_PREPEND="$${gccbasedir}include" \
 	    ${WRKSRC}/qtbase/mkspecs/openbsd-g++/qmake.conf
