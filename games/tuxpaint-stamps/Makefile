@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/08/30 08:32:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/05/05 12:09:22 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -6,6 +6,7 @@ COMMENT=	rubber stamps collection for Tux Paint
 
 DISTNAME=	tuxpaint-stamps-2014-08-23
 PKGNAME=	tuxpaint-stamps-20140823
+REVISION=	0
 EXTRACT_SUFX=	.zip
 WRKDIST=	${WRKDIR}/TuxPaint
 
@@ -30,5 +31,6 @@ do-install:
 	cp -R ${WRKSRC}/data/stamps/* ${PREFIX}/share/tuxpaint/stamps/
 	@find ${PREFIX}/share/tuxpaint/stamps/ -type f ! -perm 644 -exec chmod 644 {} \;
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/tuxpaint/stamps/
+	rm -rf ${PREFIX}/share/tuxpaint/stamps/cartoon/tux
 
 .include <bsd.port.mk>

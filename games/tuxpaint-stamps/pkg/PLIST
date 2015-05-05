@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/08/30 08:32:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/05/05 12:09:22 sthen Exp $
 share/tuxpaint/stamps/animals/
 share/tuxpaint/stamps/animals/amphibians/
 share/tuxpaint/stamps/animals/amphibians/frog-1.png
@@ -1871,18 +1871,6 @@ share/tuxpaint/stamps/animals/shellfish/murray-mussel_desc_es.ogg
 share/tuxpaint/stamps/animals/shellfish/murray-mussel_desc_fr.ogg
 share/tuxpaint/stamps/animals/shellfish/murray-mussel_desc_ro.ogg
 share/tuxpaint/stamps/animals/shellfish/murray-mussel_desc_ru.ogg
-share/tuxpaint/stamps/cartoon/tux/tux-drat.dat
-share/tuxpaint/stamps/cartoon/tux/tux-drat.png
-share/tuxpaint/stamps/cartoon/tux/tux-kiss1.dat
-share/tuxpaint/stamps/cartoon/tux/tux-kiss1.png
-share/tuxpaint/stamps/cartoon/tux/tux-kiss2.dat
-share/tuxpaint/stamps/cartoon/tux/tux-kiss2.png
-share/tuxpaint/stamps/cartoon/tux/tux-yay2.dat
-share/tuxpaint/stamps/cartoon/tux/tux-yay2.png
-share/tuxpaint/stamps/cartoon/tux/tux-yes1.dat
-share/tuxpaint/stamps/cartoon/tux/tux-yes1.png
-share/tuxpaint/stamps/cartoon/tux/tux-yes2.dat
-share/tuxpaint/stamps/cartoon/tux/tux-yes2.png
 share/tuxpaint/stamps/clothes/
 share/tuxpaint/stamps/clothes/armor/
 share/tuxpaint/stamps/clothes/armor/cartoon/
