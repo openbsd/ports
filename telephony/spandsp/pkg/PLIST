@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/11/15 23:01:20 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/05/05 17:19:57 chris Exp $
 include/spandsp/
 include/spandsp.h
+include/spandsp/ademco_contactid.h
 include/spandsp/adsi.h
 include/spandsp/arctan2.h
 include/spandsp/async.h
@@ -36,6 +37,7 @@ include/spandsp/ima_adpcm.h
 include/spandsp/image_translate.h
 include/spandsp/logging.h
 include/spandsp/lpc10.h
+include/spandsp/math_fixed.h
 include/spandsp/modem_connect_tones.h
 include/spandsp/modem_echo.h
 include/spandsp/noise.h
@@ -44,6 +46,7 @@ include/spandsp/playout.h
 include/spandsp/plc.h
 include/spandsp/power_meter.h
 include/spandsp/private/
+include/spandsp/private/ademco_contactid.h
 include/spandsp/private/adsi.h
 include/spandsp/private/async.h
 include/spandsp/private/at_interpreter.h
@@ -107,6 +110,7 @@ include/spandsp/saturated.h
 include/spandsp/schedule.h
 include/spandsp/sig_tone.h
 include/spandsp/silence_gen.h
+include/spandsp/stdbool.h
 include/spandsp/super_tone_rx.h
 include/spandsp/super_tone_tx.h
 include/spandsp/swept_tone.h
@@ -147,7 +151,6 @@ include/spandsp/version.h
 lib/libspandsp.a
 lib/libspandsp.la
 @lib lib/libspandsp.so.${LIBspandsp_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/spandsp.pc
 share/doc/spandsp/
 share/doc/spandsp/DueDiligence

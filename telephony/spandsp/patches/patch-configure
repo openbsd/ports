@@ -1,12 +1,15 @@
-$OpenBSD: patch-configure,v 1.1 2011/03/10 09:36:43 sthen Exp $
---- configure.orig	Sat Jan 22 02:49:54 2011
-+++ configure	Wed Mar  9 20:40:19 2011
-@@ -28626,8 +28626,6 @@ fi
+$OpenBSD	$
+
+our gnu C has not this option!
+
+--- ../spandsp-0.0.6a/configure	Mon May  4 21:05:00 2015
++++ configure	Mon May  4 21:04:00 2015
+@@ -19658,7 +19658,7 @@
  
- fi
- 
--        # The very oldest AMD 64 bit chips support SSE2, SSE and MMX
--        enable_sse2="yes"
-         ;;
-     esac
- fi
+ case "${ax_cv_c_compiler_vendor}" in
+ gnu)
+-    COMP_VENDOR_CFLAGS="-std=gnu99 -ffast-math -Wall -Wunused-variable -Wunused-but-set-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes $COMP_VENDOR_CFLAGS"
++    COMP_VENDOR_CFLAGS="-std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes $COMP_VENDOR_CFLAGS"
+     if test "$enable_avx" = "yes" ; then
+         COMP_VENDOR_CFLAGS="-mavx $COMP_VENDOR_CFLAGS"
+     fi
