@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/02 07:39:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/05/05 05:53:54 zhuk Exp $
 
 COMMENT=	Lumina Desktop Environment
 
@@ -8,6 +8,7 @@ GH_ACCOUNT=	pcbsd
 GH_PROJECT=	lumina
 GH_TAGNAME=	v${V}-Release-P1
 DISTNAME=	lumina-${V}
+REVISION=	0
 
 SHARED_LIBS +=  LuminaUtils               1.0 # 1.0
 
