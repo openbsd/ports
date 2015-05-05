@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.6 2015/05/03 10:33:02 espie Exp $
+# $OpenBSD: User.pm,v 1.7 2015/05/05 08:55:25 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -70,6 +70,19 @@ sub run_as
 	&$code;
 }
 
+sub _make_path
+{
+	my ($self, @directories) = @_;
+	my $p = pop @directories;
+	if ($p->{mode}) {
+		my $m = umask(0);
+		File::Path::make_path(@directories, $p);
+		umask($m);
+	} else {
+		File::Path::make_path(@directories, $p);
+	}
+}
+
 sub make_path
 {
 	my ($self, @directories) = @_;
@@ -80,6 +93,7 @@ sub make_path
 	}
 	if ($self->{droppriv}) {
 		local ($>, $)) = ($self->{uid}, $self->{gid});
+		$self->_make_path(@directories, $p);
 	} else {
 		if ($self->{uid}) {
 			$p->{uid} = $self->{uid};
@@ -89,13 +103,8 @@ sub make_path
 		if ($self->{gid}) {
 			$p->{group} = $self->{gid};
 		}
-	}
-	if ($p->{mode}) {
-		my $m = umask(0);
-		File::Path::make_path(@directories, $p);
-		umask($m);
-	} else {
-		File::Path::make_path(@directories, $p);
+#		local ($>, $)) = (0, 0);
+		$self->_make_path(@directories, $p);
 	}
 }
 
