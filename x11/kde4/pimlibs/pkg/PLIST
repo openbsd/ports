@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/03/30 17:11:45 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/05/05 12:35:49 zhuk Exp $
 @conflict kdepim-runtime-<4.13
 @bin bin/akonadi2xml
-@bin bin/akonadi_benchmarker
 @bin bin/akonaditest
 include/kde4/KDE/Akonadi/
 include/kde4/KDE/Akonadi/AgentBase
@@ -950,9 +949,6 @@ include/kde4/kimap/setquotajob.h
 include/kde4/kimap/storejob.h
 include/kde4/kimap/subscribejob.h
 include/kde4/kimap/unsubscribejob.h
-include/kde4/kimaptest/
-include/kde4/kimaptest/fakeserver.h
-include/kde4/kimaptest/mockjob.h
 include/kde4/kldap/
 include/kde4/kldap/ber.h
 include/kde4/kldap/kldap_export.h
@@ -1160,9 +1156,6 @@ lib/cmake/KdepimLibs/KdepimLibsConfigVersion.cmake
 lib/gpgmepp/
 lib/gpgmepp/GpgmeppConfig.cmake
 lib/gpgmepp/GpgmeppLibraryDepends.cmake
-lib/kde4/akonadi/
-lib/kde4/akonadi/akonadi_test_searchplugin.so
-lib/kde4/akonadi/akonaditestsearchplugin.desktop
 lib/kde4/akonadi_knut_resource.so
 lib/kde4/akonadi_serializer_socialfeeditem.so
 lib/kde4/kabc_directory.so
@@ -1238,7 +1231,6 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libkcalutils.so.${LIBkcalutils_VERSION}
 @lib lib/libkholidays.so.${LIBkholidays_VERSION}
 @lib lib/libkimap.so.${LIBkimap_VERSION}
-lib/libkimaptest.a
 @lib lib/libkldap.so.${LIBkldap_VERSION}
 @lib lib/libkmbox.so.${LIBkmbox_VERSION}
 @lib lib/libkmime.so.${LIBkmime_VERSION}
