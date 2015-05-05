@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.102 2015/05/02 22:26:00 landry Exp $
+.\"	$OpenBSD: dpb.1,v 1.103 2015/05/05 13:38:19 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 2 2015 $
+.Dd $Mdocdate: May 5 2015 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -1031,6 +1031,8 @@ into checking all files again.
 All those files belong to the
 .Ar fetch_user
 if it is defined.
+They should be readable for the
+.Ar build_user .
 .Pp
 .Nm
 also records rolling build statistics under
