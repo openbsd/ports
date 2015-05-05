@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2015/04/29 21:27:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.99 2015/05/05 15:03:21 sthen Exp $
 
 COMMENT=		virus scanner
 DISTNAME=		clamav-0.98.7
@@ -60,14 +60,17 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/clamav
 
 .include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mllvm}
+.if ${PROPERTIES:Mllvm} && ! ${ARCH:Msparc64}
 CONFIGURE_ARGS+=	--enable-llvm
-# At present (20140228 snapshot of LLVM, which is pre-3.5 but advertising a 3.5
-# version number), system LLVM does not work with ClamAV. To attempt using system
-# LLVM, try this:
+# At present (20140228 snapshot of LLVM, which is pre-3.5 but advertising a
+# 3.5 version number), system LLVM does not work with ClamAV. To attempt
+# using system LLVM, try this:
 #			--with-llvm-linking=dynamic \
 #			--with-system-llvm=${LOCALBASE}/bin/llvm-config
-# And add LIB_DEPENDS etc.
+# And add LIB_DEPENDS etc. sparc64 should work with ports LLVM, but not the
+# bundled internal one.
+.else
+CONFIGURE_ARGS+=	--disable-llvm
 .endif
 
 post-install:
