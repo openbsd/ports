@@ -1,0 +1,15 @@
+$OpenBSD: patch-main_utils_c,v 1.2 2015/05/05 12:47:02 sthen Exp $
+
+Store p_tid that can be tied through to gdb or kern_procinfo.
+
+--- main/utils.c.orig	Tue Mar 17 22:28:41 2015
++++ main/utils.c	Tue May  5 13:35:32 2015
+@@ -2441,6 +2441,8 @@ int ast_get_tid(void)
+ 	long lwpid;
+ 	thr_self(&lwpid); /* available since sys/thr.h creation 2003 */
+ 	ret = lwpid;
++#elif defined(__OpenBSD__)
++	ret = getthrid();
+ #endif
+ 	return ret;
+ }
