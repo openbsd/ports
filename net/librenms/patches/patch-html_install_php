@@ -1,6 +1,6 @@
-$OpenBSD: patch-html_install_php,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
---- html/install.php.orig	Wed Apr 22 09:32:45 2015
-+++ html/install.php	Thu Apr 23 13:41:32 2015
+$OpenBSD: patch-html_install_php,v 1.2 2015/05/05 09:20:30 sthen Exp $
+--- html/install.php.orig	Tue May  5 09:10:13 2015
++++ html/install.php	Tue May  5 09:11:04 2015
 @@ -33,7 +33,6 @@ include("../includes/defaults.inc.php");
  // Work out the install directory
  $cur_dir = explode('/',$_SERVER['DOCUMENT_ROOT']);
@@ -21,14 +21,3 @@ $OpenBSD: patch-html_install_php,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
  
  ### Default community
  \$config\['snmp'\]\['community'\] = array("public");
-@@ -402,8 +402,8 @@ $config_file = <<<"EOD"
- # following is necessary for poller-wrapper
- # poller-wrapper is released public domain
- \$config\['poller-wrapper'\]\['alerter'\] = FALSE;
--# Uncomment the next line to disable daily updates
--#\$config\['update'\] = 0;
-+# Disable daily updates (enabled by default upstream).
-+\$config\['update'\] = 0;
- ?>
- EOD;
- 
