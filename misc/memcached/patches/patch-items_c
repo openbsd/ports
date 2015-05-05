@@ -1,10 +1,10 @@
-$OpenBSD: patch-items_c,v 1.9 2015/02/19 08:01:59 giovanni Exp $
+$OpenBSD: patch-items_c,v 1.10 2015/05/05 15:43:03 giovanni Exp $
 
 printf format string fix for long long time_t
 
---- items.c.orig	Mon Oct 13 05:33:10 2014
-+++ items.c	Fri Oct 31 14:56:50 2014
-@@ -440,9 +440,9 @@ char *do_item_cachedump(const unsigned int slabs_clsid
+--- items.c.orig	Sat Apr 25 22:47:33 2015
++++ items.c	Mon May  4 12:52:52 2015
+@@ -459,9 +459,9 @@ char *item_cachedump(const unsigned int slabs_clsid, c
          /* Copy the key since it may not be null-terminated in the struct */
          strncpy(key_temp, ITEM_key(it), it->nkey);
          key_temp[it->nkey] = 0x00; /* terminate */
