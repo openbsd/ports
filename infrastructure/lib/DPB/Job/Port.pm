@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.155 2015/05/03 08:15:35 espie Exp $
+# $OpenBSD: Port.pm,v 1.156 2015/05/05 08:52:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -705,7 +705,7 @@ sub finalize
 			# so it can be rewritten and sorted
 			# don't keep a handle on it, so that we always
 			# append new information to the correct filename
-		    	open(my $fh2, '>>', $job->{builder}{state}{size_log});
+			my $fh2 = $job->{builder}->logger->open('>>', $job->{builder}{state}{size_log});
 			print $fh2 $info."\n";
 		}
 	}

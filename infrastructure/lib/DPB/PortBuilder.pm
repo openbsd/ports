@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.66 2015/05/02 15:59:35 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.67 2015/05/05 08:52:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -137,7 +137,10 @@ sub pkgfile
 sub check
 {
 	my ($self, $v) = @_;
-	return -f $self->pkgfile($v);
+	return $self->{state}{build_user}->run_as(
+	    sub { 
+	    	return -f $self->pkgfile($v); 
+	    });
 }
 
 sub end_check
@@ -175,7 +178,8 @@ sub report
 		print $log  "!\n";
 	} else {
 		print $log  "\n";
-		open my $fh, '>>', $self->{state}{permanent_log};
+		my $fh = $self->logger->open(
+		    '>>', $self->{state}{permanent_log});
 		print $fh DPB::Serialize::Build->write({
 		    pkgpath => $pkgpath, 
 		    host => $host, 
