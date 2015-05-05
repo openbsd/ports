@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2015/05/01 08:41:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.115 2015/05/05 16:04:18 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
@@ -61,9 +61,6 @@ LIBavutil_EXTRALIBS=-lm -pthread
 LIBpostproc_EXTRALIBS=
 LIBswresample_EXTRALIBS=-lm
 LIBswscale_EXTRALIBS=-lm
-
-# configure wants a directory it can execute files in 
-WRKTMP=		${WRKDIR}/tmp
 
 .if ${MACHINE_ARCH:Marm}
 # uses ARM EABI
@@ -152,7 +149,7 @@ CONFIGURE_ENV+=	LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
 		LIBpostproc_REQUIRES="libavutil" \
 		LIBswresample_REQUIRES="libavutil" \
 		LIBswscale_REQUIRES="libavutil" \
-		TMPDIR=${WRKTMP}
+		TMPDIR=${WRKBUILD}
 
 VERSION_FLAGS=	libavcodec_VERSION=${LIBavcodec_VERSION} \
 		libavdevice_VERSION=${LIBavdevice_VERSION} \
@@ -187,9 +184,6 @@ ALL_TARGET=	all tools/qt-faststart
 TEST_TARGET=	check
 
 HTML_DOCS=	developer faq ffmpeg ffplay ffprobe ffserver general libavfilter
-
-pre-configure:
-	@mkdir -p ${WRKTMP}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ffmpeg
