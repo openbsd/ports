@@ -1,0 +1,10 @@
+--- libjack/port.c.orig	Sun May  3 21:20:54 2015
++++ libjack/port.c	Sun May  3 21:21:57 2015
+@@ -24,7 +24,6 @@
+ 
+ #include <config.h>
+ #include <sys/mman.h>
+-#include <uuid/uuid.h>
+ 
+ #include <jack/jack.h>
+ #include <jack/types.h>

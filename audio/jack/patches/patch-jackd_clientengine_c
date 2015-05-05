@@ -1,0 +1,10 @@
+--- jackd/clientengine.c.orig	Sun May  3 21:23:33 2015
++++ jackd/clientengine.c	Sun May  3 21:23:39 2015
+@@ -28,7 +28,6 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <signal.h>
+-#include <uuid/uuid.h>
+ 
+ #include "internal.h"
+ #include "engine.h"

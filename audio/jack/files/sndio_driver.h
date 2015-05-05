@@ -23,7 +23,7 @@
 
 #include <jack/types.h>
 #include <jack/jslist.h>
-#include <jack/driver.h>
+#include <driver.h>
 #include <jack/jack.h>
 
 #define SNDIO_DRIVER_DEF_DEV		"default"

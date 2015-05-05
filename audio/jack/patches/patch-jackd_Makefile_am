@@ -1,0 +1,11 @@
+--- jackd/Makefile.am.orig	Sun May  3 23:16:40 2015
++++ jackd/Makefile.am	Sun May  3 23:16:52 2015
+@@ -35,7 +35,7 @@ jack_md5.h: jackd
+ if STRIPPED_JACKD
+ 	strip -R .note -R .comment .libs/jackd
+ endif
+-	echo "#define JACKD_MD5_SUM \"`md5sum .libs/jackd | awk '{print $$1}'`\"" > jack_md5.h
++	echo "#define JACKD_MD5_SUM \"`md5 -q .libs/jackd | awk '{print $$1}'`\"" > jack_md5.h
+ 
+ jackstart_SOURCES = jackstart.c md5.c
+ jackstart_LDFLAGS = -lcap

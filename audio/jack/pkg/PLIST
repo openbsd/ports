@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/01/24 08:03:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/05/05 19:45:19 sthen Exp $
 @bin bin/jack_alias
 @bin bin/jack_bufsize
 @bin bin/jack_connect
@@ -17,6 +17,7 @@
 @bin bin/jack_midisine
 @bin bin/jack_monitor_client
 @bin bin/jack_netsource
+@bin bin/jack_property
 @bin bin/jack_rec
 @bin bin/jack_samplerate
 @bin bin/jack_server_control
@@ -33,14 +34,16 @@ include/jack/
 include/jack/control.h
 include/jack/intclient.h
 include/jack/jack.h
+include/jack/jslist.h
+include/jack/metadata.h
 include/jack/midiport.h
 include/jack/ringbuffer.h
 include/jack/session.h
 include/jack/statistics.h
 include/jack/thread.h
-include/jack/timestamps.h
 include/jack/transport.h
 include/jack/types.h
+include/jack/uuid.h
 include/jack/weakjack.h
 include/jack/weakmacros.h
 lib/jack/

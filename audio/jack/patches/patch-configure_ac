@@ -1,7 +1,15 @@
-$OpenBSD: patch-configure_ac,v 1.7 2012/01/24 08:03:52 ajacoutot Exp $
---- configure.ac.orig	Wed Sep 28 15:09:59 2011
-+++ configure.ac	Mon Jan 23 14:21:11 2012
-@@ -765,7 +765,7 @@ AC_SUBST(NETJACK_CFLAGS)
+--- configure.ac.orig	Wed Jan 22 12:23:36 2014
++++ configure.ac	Sun Apr 19 15:03:55 2015
+@@ -207,7 +207,7 @@ if test "x$JACK_USE_MACH_THREADS" != "x"; then
+ fi
+ 
+ # headers
+-AC_CHECK_HEADERS(string.h strings.h alloca.h db.h, [],
++AC_CHECK_HEADERS(string.h strings.h db.h, [],
+      AC_MSG_ERROR([*** a required header file is missing]))
+ 
+ AC_CHECK_HEADERS(getopt.h, [], [
+@@ -761,7 +761,7 @@ AC_SUBST(NETJACK_CFLAGS)
  
  # Check which backend drivers can be built.  The last one successfully
  # configured becomes the default JACK driver; so the order of
@@ -10,7 +18,7 @@ $OpenBSD: patch-configure_ac,v 1.7 2012/01/24 08:03:52 ajacoutot Exp $
  
  JACK_DEFAULT_DRIVER=\"dummy\"
  
-@@ -825,6 +825,20 @@ then
+@@ -821,6 +821,20 @@ then
  fi
  AM_CONDITIONAL(HAVE_SUN, $HAVE_SUN)
  
@@ -31,7 +39,7 @@ $OpenBSD: patch-configure_ac,v 1.7 2012/01/24 08:03:52 ajacoutot Exp $
  AC_ARG_ENABLE(freebob, AC_HELP_STRING([--disable-freebob],[ignore FreeBob driver ]),
  			TRY_FREEBOB=$enableval , TRY_FREEBOB=yes ) 
  HAVE_FREEBOB="false"
-@@ -957,6 +971,7 @@ drivers/a2j/Makefile
+@@ -953,6 +967,7 @@ drivers/alsa_midi/Makefile
  drivers/dummy/Makefile
  drivers/oss/Makefile
  drivers/sun/Makefile
@@ -39,7 +47,7 @@ $OpenBSD: patch-configure_ac,v 1.7 2012/01/24 08:03:52 ajacoutot Exp $
  drivers/portaudio/Makefile
  drivers/coreaudio/Makefile
  drivers/freebob/Makefile
-@@ -987,6 +1002,7 @@ echo \| Build with old FireWire \(FreeBob\) support...
+@@ -984,6 +999,7 @@ echo \| Build with old FireWire \(FreeBob\) support...
  echo \| Build with new FireWire \(FFADO\) support............... : $HAVE_FIREWIRE
  echo \| Build with OSS support................................ : $HAVE_OSS
  echo \| Build with Sun audio support.......................... : $HAVE_SUN

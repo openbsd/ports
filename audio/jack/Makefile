@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.29 2015/01/24 11:07:57 schwarze Exp $
+# $OpenBSD: Makefile,v 1.30 2015/05/05 19:45:19 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		low latency sound server
 
-V =			0.121.3
+V =			0.124.1
 DISTNAME =		jack-audio-connection-kit-${V}
 PKGNAME =		jack-${V}
-REVISION =		4
 CATEGORIES =		audio
 
-SHARED_LIBS +=		jack		0.0	# 0.28
-SHARED_LIBS +=		jackserver	0.0	# 0.28
+SHARED_LIBS +=		jack		1.0	# 0.28
+SHARED_LIBS +=		jackserver	1.0	# 0.28
 
 HOMEPAGE =		http://jackaudio.org/
 
@@ -27,8 +26,11 @@ LIB_DEPENDS =		audio/libsndfile \
 			audio/libsamplerate \
 			audio/celt>=0.11.0
 
+
 # uses macros from libtool.m4
-BUILD_DEPENDS =		devel/libtool
+BUILD_DEPENDS =		devel/libtool \
+			databases/db/v4
+
 LIBTOOL_FLAGS +=	--tag=disable-static
 
 AUTOCONF_VERSION =	2.65
@@ -40,7 +42,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-portaudio \
 			--disable-optimize
 
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			HAVE_DOXYGEN="false"
 

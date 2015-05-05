@@ -1,0 +1,10 @@
+--- jack/types.h.orig	Sun May  3 21:32:30 2015
++++ jack/types.h	Sun May  3 21:32:36 2015
+@@ -23,7 +23,6 @@
+ 
+ #include <inttypes.h>
+ #include <pthread.h>
+-#include <uuid/uuid.h>
+ 
+ typedef uint64_t jack_uuid_t;
+ 
