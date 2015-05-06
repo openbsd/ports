@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.352 2015/04/05 22:47:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.353 2015/05/06 08:19:39 jasper Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -226,7 +226,6 @@
      SUBDIR += ruby-vorbis_comment,ruby22
      SUBDIR += schismtracker
      SUBDIR += scmpc
-     SUBDIR += shell-fm
      SUBDIR += shntool
      SUBDIR += shorten
      SUBDIR += sidplay
