@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/09/11 18:13:24 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/05/06 08:47:14 ajacoutot Exp $
 @bin bin/glewinfo
 @bin bin/visualinfo
 include/GL/
@@ -9,7 +9,6 @@ lib/libGLEW.a
 @lib lib/libGLEW.so.${LIBGLEW_VERSION}
 lib/libGLEWmx.a
 @lib lib/libGLEWmx.so.${LIBGLEWmx_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/glew.pc
 lib/pkgconfig/glewmx.pc
 share/doc/glew/
@@ -17,6 +16,7 @@ share/doc/glew/advanced.html
 share/doc/glew/basic.html
 share/doc/glew/build.html
 share/doc/glew/credits.html
+share/doc/glew/github.png
 share/doc/glew/glew.css
 share/doc/glew/glew.html
 share/doc/glew/glew.png
