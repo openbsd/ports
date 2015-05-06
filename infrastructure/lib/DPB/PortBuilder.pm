@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.67 2015/05/05 08:52:05 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.68 2015/05/06 10:58:19 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -173,7 +173,7 @@ sub report
 	print $log "$pkgpath $host ", $job->totaltime, " ", $sz, " ",
 	    $job->timings;
 	if ($job->{failed}) {
-		open my $fh, '>>', $job->{log};
+		my $fh = $self->logger->open('>>', $job->{log});
 		print $fh "Error: job failed $job->{failed}\n";
 		print $log  "!\n";
 	} else {
