@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2015/03/27 08:13:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2015/05/06 06:51:03 czarkoff Exp $
 
 # requires 64-bit atomic ops.
 # some other arch could probably be added..certainly fails on i386
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		movie player based on MPlayer/mplayer2
-V =			0.8.3
+V =			0.9.1
 DISTNAME =		mpv-${V}
-REVISION =		0
 
 GH_ACCOUNT=		mpv-player
 GH_PROJECT=		mpv
@@ -62,12 +61,12 @@ CONFIGURE_ARGS +=	--confdir=${SYSCONFDIR}/mpv \
 			--disable-enca \
 			--disable-jack \
 			--disable-libguess \
-			--disable-mpg123 \
 			--disable-ossaudio \
 			--disable-optimization \
 			--disable-openal \
 			--disable-pulse \
 			--disable-rsound
+CONFIGURE_ENV +=	TMPDIR=${WRKBUILD}
 
 # pkg-config says smbclient's version is 0
 CONFIGURE_ARGS +=	--enable-smb \
