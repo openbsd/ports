@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.7 2015/05/05 08:55:25 espie Exp $
+# $OpenBSD: User.pm,v 1.8 2015/05/06 09:16:32 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -66,7 +66,9 @@ sub user
 sub run_as
 {
 	my ($self, $code) = @_;
-	local ($>, $)) = ($self->{uid}, $self->{gid});
+	local $> = 0;
+	local $) = $self->{gid};
+	$> = $self->{uid};
 	&$code;
 }
 
@@ -92,7 +94,9 @@ sub make_path
 		$p->{mode} = $self->{dirmode};
 	}
 	if ($self->{droppriv}) {
-		local ($>, $)) = ($self->{uid}, $self->{gid});
+		local $> = 0;
+		local $) = $self->{gid};
+		$> = $self->{uid};
 		$self->_make_path(@directories, $p);
 	} else {
 		if ($self->{uid}) {
@@ -103,7 +107,7 @@ sub make_path
 		if ($self->{gid}) {
 			$p->{group} = $self->{gid};
 		}
-#		local ($>, $)) = (0, 0);
+		local ($>, $)) = (0, 0);
 		$self->_make_path(@directories, $p);
 	}
 }
@@ -111,7 +115,9 @@ sub make_path
 sub open
 {
 	my ($self, $mode, @parms) = @_;
-	local ($>, $)) = ($self->{uid}, $self->{gid});
+	local $> = 0;
+	local $) = $self->{gid};
+	$> = $self->{uid};
 	if (open(my $fh, $mode, @parms)) {
 		return $fh;
 	} else {
@@ -122,7 +128,9 @@ sub open
 sub opendir
 {
 	my ($self, $dirname) = @_;
-	local ($>, $)) = ($self->{uid}, $self->{gid});
+	local $> = 0;
+	local $) = $self->{gid};
+	$> = $self->{uid};
 	if (opendir(my $fh, $dirname)) {
 		return $fh;
 	} else {
@@ -133,14 +141,18 @@ sub opendir
 sub unlink
 {
 	my ($self, @links) = @_;
-	local ($>, $)) = ($self->{uid}, $self->{gid});
+	local $> = 0;
+	local $) = $self->{gid};
+	$> = $self->{uid};
 	unlink(@links);
 }
 
 sub rename
 {
 	my ($self, $o, $n) = @_;
-	local ($>, $)) = ($self->{uid}, $self->{gid});
+	local $> = 0;
+	local $) = $self->{gid};
+	$> = $self->{uid};
 	rename($o, $n);
 }
 
