@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_views_delegate_h,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-ui_views_views_delegate_h,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- ui/views/views_delegate.h.orig.port	Tue Mar 10 23:29:17 2015
 +++ ui/views/views_delegate.h	Wed Mar 11 07:22:50 2015
 @@ -100,7 +100,7 @@ class VIEWS_EXPORT ViewsDelegate {

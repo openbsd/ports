@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_skia_src_core_SkVarAlloc_cpp,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-third_party_skia_src_core_SkVarAlloc_cpp,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- third_party/skia/src/core/SkVarAlloc.cpp.orig.port	Wed Mar 11 08:55:27 2015
 +++ third_party/skia/src/core/SkVarAlloc.cpp	Wed Mar 11 09:23:37 2015
 @@ -4,8 +4,10 @@

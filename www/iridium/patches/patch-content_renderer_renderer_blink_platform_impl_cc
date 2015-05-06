@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
---- content/renderer/renderer_blink_platform_impl.cc.orig.port	Tue Mar 10 23:41:41 2015
-+++ content/renderer/renderer_blink_platform_impl.cc	Wed Mar 11 07:22:50 2015
+$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
+--- content/renderer/renderer_blink_platform_impl.cc.orig.port	Wed Apr 15 00:31:22 2015
++++ content/renderer/renderer_blink_platform_impl.cc	Wed Apr 15 08:32:50 2015
 @@ -96,7 +96,7 @@
  
  #if defined(OS_POSIX)
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.1.1.1 2015/
  #include <map>
  #include <string>
  
-@@ -190,7 +190,7 @@ class RendererBlinkPlatformImpl::FileUtilities : publi
+@@ -187,7 +187,7 @@ class RendererBlinkPlatformImpl::FileUtilities : publi
    scoped_refptr<ThreadSafeSender> thread_safe_sender_;
  };
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.1.1.1 2015/
  // WebKit doesn't use WebSandboxSupport on android so we don't need to
  // implement anything here.
  class RendererBlinkPlatformImpl::SandboxSupport {};
-@@ -287,7 +287,7 @@ blink::WebFileUtilities* RendererBlinkPlatformImpl::fi
+@@ -284,7 +284,7 @@ blink::WebFileUtilities* RendererBlinkPlatformImpl::fi
  }
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::sandboxSupport() {
@@ -28,7 +28,7 @@ $OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.1.1.1 2015/
    // WebKit doesn't use WebSandboxSupport on android.
    return NULL;
  #else
-@@ -578,7 +578,7 @@ bool RendererBlinkPlatformImpl::SandboxSupport::loadFo
+@@ -563,7 +563,7 @@ bool RendererBlinkPlatformImpl::SandboxSupport::loadFo
    return FontLoader::CGFontRefFromBuffer(font_data, font_data_size, out);
  }
  

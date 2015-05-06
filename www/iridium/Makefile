@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/03 20:19:09 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/06 14:27:23 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
 
-V=			41.2
+V=			42.0
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 
@@ -122,6 +122,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Dwerror= \
 		-Dno_gc_sections=1 \
 		-Ddisable_fatal_linker_warnings=1 \
+		-Dv8_use_external_startup_data=0 \
 		-DOS=openbsd
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
@@ -136,6 +137,19 @@ GYP_DEFS+=	-Dgoogle_api_key='AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI' \
 GYP_DEFS+=	-Dremove_webcore_debug_symbols=1
 MAKE_ENV+=	V=1
 .endif
+
+BB_VER=		20150502
+.if ${MACHINE_ARCH} == "i386" || ${FLAVOR:Mdebug}
+GYP_DEFS+=	-Dlinux_use_bundled_binutils=1
+DISTFILES+=	binutils-2.17-${MACHINE_ARCH}-${BB_VER}.tar.gz:0
+
+pre-patch:
+	@mkdir -p ${WRKSRC}/third_party/binutils/Linux_x64/Release
+	@ln -fs ${WRKDIR}/binutils-2.17-${MACHINE_ARCH}-${BB_VER}/bin \
+		${WRKSRC}/third_party/binutils/Linux_x64/Release/bin
+.endif
+SUPDISTFILES+=	binutils-2.17-amd64-${BB_VER}.tar.gz:0 \
+		binutils-2.17-i386-${BB_VER}.tar.gz:0
 
 MODPY_ADJ_FILES=build/linux/unbundle/replace_gyp_files.py
 
@@ -186,13 +200,5 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/iridium-browser.desktop \
 		${PREFIX}/share/applications/iridium-browser.desktop
-
-.include <bsd.port.arch.mk>
-
-.if ${ARCH} == i386
-PKG_ARGS= -DI386_DISABLE="@comment "
-.else
-PKG_ARGS= -DI386_DISABLE=""
-.endif
 
 .include <bsd.port.mk>

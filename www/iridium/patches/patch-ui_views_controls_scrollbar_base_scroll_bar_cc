@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_controls_scrollbar_base_scroll_bar_cc,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-ui_views_controls_scrollbar_base_scroll_bar_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- ui/views/controls/scrollbar/base_scroll_bar.cc.orig.port	Wed Mar 18 19:58:38 2015
 +++ ui/views/controls/scrollbar/base_scroll_bar.cc	Wed Mar 18 19:58:47 2015
 @@ -24,7 +24,7 @@

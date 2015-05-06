@@ -1,4 +1,4 @@
-$OpenBSD: patch-native_client_build_compiler_version_py,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-native_client_build_compiler_version_py,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- native_client/build/compiler_version.py.orig.port	Sat Oct 11 11:50:40 2014
 +++ native_client/build/compiler_version.py	Sat Oct 11 11:50:50 2014
 @@ -62,7 +62,7 @@ def GetVersion(compiler, tool):

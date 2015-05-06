@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_media_galleries_fileapi_mtp_device_map_service_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+$OpenBSD: patch-chrome_browser_media_galleries_fileapi_mtp_device_map_service_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc.orig.port	Thu Jan 16 21:01:41 2014
 +++ chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc	Thu Jan 16 21:01:53 2014
 @@ -33,9 +33,11 @@ void MTPDeviceMapService::RegisterMTPFileSystem(

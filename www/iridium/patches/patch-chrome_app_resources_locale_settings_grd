@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_resources_locale_settings_grd,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+$OpenBSD: patch-chrome_app_resources_locale_settings_grd,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- chrome/app/resources/locale_settings.grd.orig.port	Thu Sep 11 10:09:11 2014
 +++ chrome/app/resources/locale_settings.grd	Thu Sep 11 10:09:27 2014
 @@ -264,7 +264,7 @@

@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- base/debug/stack_trace_posix.cc.orig.port	Wed Dec  3 03:13:19 2014
 +++ base/debug/stack_trace_posix.cc	Sat Dec  6 11:34:24 2014
 @@ -586,6 +586,9 @@ class SandboxSymbolizeHelper {

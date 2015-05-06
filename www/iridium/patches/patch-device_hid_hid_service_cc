@@ -1,4 +1,4 @@
-$OpenBSD: patch-device_hid_hid_service_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-device_hid_hid_service_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- device/hid/hid_service.cc.orig.port	Wed Nov 19 10:53:13 2014
 +++ device/hid/hid_service.cc	Wed Nov 19 15:58:29 2014
 @@ -14,7 +14,7 @@

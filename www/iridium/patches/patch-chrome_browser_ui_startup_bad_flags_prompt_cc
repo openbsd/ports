@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_startup_bad_flags_prompt_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_startup_bad_flags_prompt_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- chrome/browser/ui/startup/bad_flags_prompt.cc.orig.port	Thu Oct  2 19:39:46 2014
 +++ chrome/browser/ui/startup/bad_flags_prompt.cc	Sat Oct 11 15:56:33 2014
 @@ -69,7 +69,7 @@ void ShowBadFlagsPrompt(Browser* browser) {

@@ -1,0 +1,12 @@
+$OpenBSD: patch-skia_ext_SkMemory_new_handler_cpp,v 1.1 2015/05/06 14:27:24 robert Exp $
+--- skia/ext/SkMemory_new_handler.cpp.orig.port	Thu Apr 23 09:49:23 2015
++++ skia/ext/SkMemory_new_handler.cpp	Thu Apr 23 09:49:31 2015
+@@ -53,7 +53,7 @@ void* sk_malloc_throw(size_t size) {
+ static void* sk_malloc_nothrow(size_t size) {
+     // TODO(b.kelemen): we should always use UncheckedMalloc but currently it
+     // doesn't work as intended everywhere.
+-#if  defined(OS_IOS)
++#if  defined(OS_IOS) || defined(OS_BSD)
+     return malloc(size);
+ #else
+     void* result;

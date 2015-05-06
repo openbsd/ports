@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
---- chrome/browser/ui/browser_command_controller.cc.orig.port	Tue Mar 10 23:41:40 2015
-+++ chrome/browser/ui/browser_command_controller.cc	Wed Mar 11 07:22:50 2015
-@@ -68,7 +68,7 @@
- #include "chrome/browser/ui/ash/multi_user/multi_user_window_manager.h"
+$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
+--- chrome/browser/ui/browser_command_controller.cc.orig.port	Wed Apr 15 00:31:21 2015
++++ chrome/browser/ui/browser_command_controller.cc	Wed Apr 15 08:32:50 2015
+@@ -69,7 +69,7 @@
+ #include "chrome/browser/ui/browser_commands_chromeos.h"
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.1.1.1 2015/0
  #include "ui/events/linux/text_edit_key_bindings_delegate_auralinux.h"
  #endif
  
-@@ -280,7 +280,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+@@ -281,7 +281,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
    if (window()->IsFullscreen() && command_id == IDC_FULLSCREEN)
      return true;
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.1.1.1 2015/0
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
-@@ -473,7 +473,7 @@ void BrowserCommandController::ExecuteCommandWithDispo
+@@ -474,7 +474,7 @@ void BrowserCommandController::ExecuteCommandWithDispo
        break;
  #endif
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.1.1.1 2015/0
      case IDC_USE_SYSTEM_TITLE_BAR: {
        PrefService* prefs = browser_->profile()->GetPrefs();
        prefs->SetBoolean(prefs::kUseCustomChromeFrame,
-@@ -897,7 +897,7 @@ void BrowserCommandController::InitCommandState() {
+@@ -903,7 +903,7 @@ void BrowserCommandController::InitCommandState() {
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_2, true);
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_3, true);
  #endif

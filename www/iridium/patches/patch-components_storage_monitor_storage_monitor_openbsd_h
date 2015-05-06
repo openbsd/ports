@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_storage_monitor_storage_monitor_openbsd_h,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-components_storage_monitor_storage_monitor_openbsd_h,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- components/storage_monitor/storage_monitor_openbsd.h.orig.port	Sat Dec  6 11:34:26 2014
 +++ components/storage_monitor/storage_monitor_openbsd.h	Sat Dec  6 12:56:39 2014
 @@ -0,0 +1,47 @@

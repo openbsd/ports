@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Mar 11 07:29:41 2015
-+++ chrome/browser/chrome_content_browser_client.cc	Wed Mar 11 07:30:28 2015
-@@ -167,7 +167,7 @@
- #include "chrome/browser/chrome_browser_main_posix.h"
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Apr 15 09:22:59 2015
++++ chrome/browser/chrome_content_browser_client.cc	Wed Apr 15 09:23:54 2015
+@@ -171,7 +171,7 @@
+ #include "chrome/browser/media/protected_media_identifier_permission_context_factory.h"
  #endif
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.1.1.1 2015/0
  #include "base/debug/leak_annotations.h"
  #include "components/crash/app/breakpad_linux.h"
  #include "components/crash/browser/crash_handler_host_linux.h"
-@@ -443,7 +443,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
+@@ -446,7 +446,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
    return false;
  }
  
@@ -19,16 +19,16 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.1.1.1 2015/0
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -1232,7 +1232,7 @@ bool IsAutoReloadVisibleOnlyEnabled() {
- void ChromeContentBrowserClient::AppendExtraCommandLineSwitches(
-     base::CommandLine* command_line,
-     int child_process_id) {
--#if defined(OS_POSIX)
-+#if defined(OS_POSIX) && !defined(OS_BSD)
+@@ -1295,7 +1295,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+     command_line->AppendSwitchASCII(switches::kMetricsClientID,
+                                     client_info->client_id);
+   }
+-#elif defined(OS_POSIX)
++#elif defined(OS_POSIX) && !defined(OS_BSD)
    if (breakpad::IsCrashReporterEnabled()) {
      scoped_ptr<metrics::ClientInfo> client_info =
          GoogleUpdateSettings::LoadMetricsClientInfo();
-@@ -2434,7 +2434,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -2409,7 +2409,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  

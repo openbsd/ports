@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_storage_monitor_gypi,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-components_storage_monitor_gypi,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- components/storage_monitor.gypi.orig.port	Thu Oct  2 19:18:56 2014
 +++ components/storage_monitor.gypi	Fri Oct 10 16:10:30 2014
 @@ -50,6 +50,22 @@

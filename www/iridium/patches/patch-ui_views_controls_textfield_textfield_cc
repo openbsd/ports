@@ -1,6 +1,6 @@
-$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
---- ui/views/controls/textfield/textfield.cc.orig.port	Tue Mar 10 23:41:42 2015
-+++ ui/views/controls/textfield/textfield.cc	Wed Mar 11 07:22:50 2015
+$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
+--- ui/views/controls/textfield/textfield.cc.orig.port	Wed Apr 15 00:31:23 2015
++++ ui/views/controls/textfield/textfield.cc	Wed Apr 15 08:32:50 2015
 @@ -41,7 +41,7 @@
  #include "base/win/win_util.h"
  #endif
@@ -37,7 +37,7 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.1.1.1 2015/05/03 15
  // Convert a custom text edit |command| to the equivalent views command ID.
  int GetViewsCommand(const ui::TextEditCommandAuraLinux& command, bool rtl) {
    const bool select = command.extend_selection();
-@@ -611,7 +611,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
+@@ -612,7 +612,7 @@ bool Textfield::OnMousePressed(const ui::MouseEvent& e
        OnAfterUserAction();
      }
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.1.1.1 2015/05/03 15
      if (event.IsOnlyMiddleMouseButton()) {
        if (GetRenderText()->IsPointInSelection(event.location())) {
          OnBeforeUserAction();
-@@ -674,7 +674,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -678,7 +678,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
    if (!textfield)
      return handled;
  
@@ -55,7 +55,7 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.1.1.1 2015/05/03 15
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -799,7 +799,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+@@ -805,7 +805,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
  }
  
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
@@ -64,7 +64,7 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.1.1.1 2015/05/03 15
    // Skip any accelerator handling that conflicts with custom keybindings.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
-@@ -1053,7 +1053,7 @@ void Textfield::WriteDragDataForView(View* sender,
+@@ -1061,7 +1061,7 @@ void Textfield::WriteDragDataForView(View* sender,
    scoped_ptr<gfx::Canvas> canvas(
        GetCanvasForDragImage(GetWidget(), label.size()));
    label.SetEnabledColor(GetTextColor());
@@ -73,7 +73,7 @@ $OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.1.1.1 2015/05/03 15
    // Desktop Linux Aura does not yet support transparency in drag images.
    canvas->DrawColor(GetBackgroundColor());
  #endif
-@@ -1842,7 +1842,7 @@ void Textfield::CreateTouchSelectionControllerAndNotif
+@@ -1855,7 +1855,7 @@ void Textfield::CreateTouchSelectionControllerAndNotif
  }
  
  void Textfield::UpdateSelectionClipboard() const {

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_iccjpeg_iccjpeg_gyp,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-third_party_iccjpeg_iccjpeg_gyp,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- third_party/iccjpeg/iccjpeg.gyp.orig.port	Fri Mar 22 02:13:38 2013
 +++ third_party/iccjpeg/iccjpeg.gyp	Tue Apr  2 21:05:17 2013
 @@ -14,6 +14,13 @@

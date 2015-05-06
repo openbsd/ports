@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_ash_chrome_browser_main_extra_parts_ash_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_ash_chrome_browser_main_extra_parts_ash_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- chrome/browser/ui/views/ash/chrome_browser_main_extra_parts_ash.cc.orig.port	Sat Dec 27 12:59:28 2014
 +++ chrome/browser/ui/views/ash/chrome_browser_main_extra_parts_ash.cc	Sat Dec 27 13:07:28 2014
 @@ -75,7 +75,7 @@ void ChromeBrowserMainExtraPartsAsh::PreProfileInit() 

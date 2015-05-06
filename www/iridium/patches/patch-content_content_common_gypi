@@ -1,25 +1,36 @@
-$OpenBSD: patch-content_content_common_gypi,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
---- content/content_common.gypi.orig.port	Tue Mar 10 23:41:41 2015
-+++ content/content_common.gypi	Wed Mar 11 07:22:50 2015
-@@ -695,6 +695,23 @@
+$OpenBSD: patch-content_content_common_gypi,v 1.2 2015/05/06 14:27:24 robert Exp $
+--- content/content_common.gypi.orig.port	Wed Apr 15 00:31:22 2015
++++ content/content_common.gypi	Thu Apr 23 08:21:24 2015
+@@ -701,6 +701,34 @@
          'content.gyp:common_aidl',
        ],
      }],
 +    ['os_bsd==1', {
 +      'sources!': [
++        'common/sandbox_linux/bpf_cros_arm_gpu_policy_linux.cc',
++        'common/sandbox_linux/bpf_cros_arm_gpu_policy_linux.h',
++        'common/sandbox_linux/bpf_gpu_policy_linux.cc',
++        'common/sandbox_linux/bpf_gpu_policy_linux.h',
++        'common/sandbox_linux/bpf_ppapi_policy_linux.cc',
++        'common/sandbox_linux/bpf_ppapi_policy_linux.h',
++        'common/sandbox_linux/bpf_renderer_policy_linux.cc',
++        'common/sandbox_linux/bpf_renderer_policy_linux.h',
++        'common/sandbox_linux/bpf_utility_policy_linux.cc',
++        'common/sandbox_linux/bpf_utility_policy_linux.h',
++        'common/sandbox_linux/sandbox_bpf_base_policy_linux.cc',
++        'common/sandbox_linux/sandbox_bpf_base_policy_linux.h',
++        'common/sandbox_linux/sandbox_debug_handling_linux.cc',
++        'common/sandbox_linux/sandbox_debug_handling_linux.h',
++        'common/sandbox_linux/sandbox_init_linux.cc',
++        'common/sandbox_linux/sandbox_linux.cc',
++        'common/sandbox_linux/sandbox_linux.h',
++        'common/sandbox_linux/sandbox_seccomp_bpf_linux.cc',
++        'common/sandbox_linux/sandbox_seccomp_bpf_linux.h',
 +        'common/sandbox_linux.cc',
 +        'common/sandbox_linux.h',
 +        'common/sandbox_init_linux.cc',
 +        'common/sandbox_seccomp_bpf_linux.cc',
 +        'common/sandbox_seccomp_bpf_linux.h',
-+        'common/sandbox_linux/bpf_cros_arm_gpu_policy_linux.cc',
-+        'common/sandbox_linux/bpf_gpu_policy_linux.cc',
-+        'common/sandbox_linux/bpf_ppapi_policy_linux.cc',
-+        'common/sandbox_linux/bpf_renderer_policy_linux.cc',
-+        'common/sandbox_linux/sandbox_bpf_base_policy_linux.cc',
-+        'common/sandbox_linux/sandbox_seccomp_bpf_linux.cc',
-+        'common/sandbox_linux/sandbox_linux.cc',
-+        'common/sandbox_linux/sandbox_linux.h',
 +      ],
 +    }],
      ['use_pango == 1', {

@@ -1,4 +1,4 @@
-$OpenBSD: patch-skia_skia_gyp,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-skia_skia_gyp,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- skia/skia.gyp.orig.port	Wed Dec  3 03:13:27 2014
 +++ skia/skia.gyp	Sat Dec  6 11:34:27 2014
 @@ -104,12 +104,12 @@

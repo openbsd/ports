@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_controls_menu_menu_scroll_view_container_cc,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-ui_views_controls_menu_menu_scroll_view_container_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- ui/views/controls/menu/menu_scroll_view_container.cc.orig.port	Wed Sep 10 22:24:23 2014
 +++ ui/views/controls/menu/menu_scroll_view_container.cc	Wed Sep 10 22:25:18 2014
 @@ -281,7 +281,7 @@ void MenuScrollViewContainer::CreateDefaultBorder() {

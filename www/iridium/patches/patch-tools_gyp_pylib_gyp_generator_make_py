@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
---- tools/gyp/pylib/gyp/generator/make.py.orig.port	Thu Oct  2 19:40:30 2014
-+++ tools/gyp/pylib/gyp/generator/make.py	Fri Oct 10 16:10:31 2014
+$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.2 2015/05/06 14:27:24 robert Exp $
+--- tools/gyp/pylib/gyp/generator/make.py.orig.port	Wed Apr 15 00:32:04 2015
++++ tools/gyp/pylib/gyp/generator/make.py	Wed Apr 15 08:32:50 2015
 @@ -136,7 +136,7 @@ quiet_cmd_alink = AR($(TOOLSET)) $@
  cmd_alink = rm -f $@ && $(AR.$(TOOLSET)) crs $@ $(filter %.o,$^)
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.1.1.1 2015/05/03 15:35
  
  # Due to circular dependencies between libraries :(, we wrap the
  # special "figure out circular dependencies" flags around the entire
-@@ -294,11 +294,11 @@ LINK ?= %(flock)s $(builddir)/linker.lock $(CXX.target
+@@ -286,11 +286,11 @@ LINK ?= $(CXX.target)
  # TODO(evan): move all cross-compilation logic to gyp-time so we don't need
  # to replicate this environment fallback in make as well.
  CC.host ?= %(CC.host)s

@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_common_set_process_title_linux_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-content_common_set_process_title_linux_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- content/common/set_process_title_linux.cc.orig.port	Sun Oct 20 18:59:28 2013
 +++ content/common/set_process_title_linux.cc	Sun Oct 20 18:59:54 2013
 @@ -48,6 +48,8 @@

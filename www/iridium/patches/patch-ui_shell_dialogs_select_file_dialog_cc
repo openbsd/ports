@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_shell_dialogs_select_file_dialog_cc,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-ui_shell_dialogs_select_file_dialog_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- ui/shell_dialogs/select_file_dialog.cc.orig.port	Wed Dec  3 03:13:29 2014
 +++ ui/shell_dialogs/select_file_dialog.cc	Sat Dec  6 11:34:27 2014
 @@ -19,7 +19,7 @@

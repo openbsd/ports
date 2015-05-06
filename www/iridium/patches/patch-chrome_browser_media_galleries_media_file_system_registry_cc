@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_media_galleries_media_file_system_registry_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+$OpenBSD: patch-chrome_browser_media_galleries_media_file_system_registry_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- chrome/browser/media_galleries/media_file_system_registry.cc.orig.port	Tue Mar 10 23:41:40 2015
 +++ chrome/browser/media_galleries/media_file_system_registry.cc	Wed Mar 11 07:22:50 2015
 @@ -735,7 +735,12 @@ class MediaFileSystemRegistry::MediaFileSystemContextI

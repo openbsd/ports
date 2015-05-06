@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_test_launcher_test_launcher_cc,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+$OpenBSD: patch-base_test_launcher_test_launcher_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- base/test/launcher/test_launcher.cc.orig.port	Thu Jan 16 13:11:58 2014
 +++ base/test/launcher/test_launcher.cc	Thu Jan 16 13:12:20 2014
 @@ -7,6 +7,9 @@

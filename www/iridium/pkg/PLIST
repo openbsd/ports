@@ -1,14 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/06 14:27:24 robert Exp $
 bin/iridium
 iridium/
-@bin iridium/iridium
 iridium/chrome_100_percent.pak
 iridium/content_resources.pak
 iridium/icudtl.dat
+iridium/iridium
 iridium/keyboard_resources.pak
 iridium/libexif.so
 iridium/libffmpegsumo.so
-${I386_DISABLE}iridium/libpdf.so
 iridium/locales/
 iridium/locales/am.pak
 iridium/locales/ar.pak
@@ -74,7 +73,6 @@ iridium/resources/extension/demo/library.js
 iridium/resources/inspector/
 iridium/resources/inspector/Images/
 iridium/resources/inspector/Images/applicationCache.png
-iridium/resources/inspector/Images/back.png
 iridium/resources/inspector/Images/breakpoint.png
 iridium/resources/inspector/Images/breakpointConditional.png
 iridium/resources/inspector/Images/breakpointConditional_2x.png
@@ -146,6 +144,7 @@ iridium/resources/inspector/Images/touchCursor_2x.png
 iridium/resources/inspector/InspectorBackendCommands.js
 iridium/resources/inspector/SupportedCSSProperties.js
 iridium/resources/inspector/audits_module.js
+iridium/resources/inspector/components_lazy_module.js
 iridium/resources/inspector/console_module.js
 iridium/resources/inspector/devices_module.js
 iridium/resources/inspector/devtools.css
@@ -171,6 +170,7 @@ iridium/resources/inspector/timeline_module.js
 iridium/resources/inspector/toolbox.css
 iridium/resources/inspector/toolbox.html
 iridium/resources/inspector/toolbox.js
+iridium/resources/inspector/ui_lazy_module.js
 @man man/man1/iridium.1
 share/applications/iridium-browser.desktop
 share/icons/hicolor/128x128/apps/iridium.png

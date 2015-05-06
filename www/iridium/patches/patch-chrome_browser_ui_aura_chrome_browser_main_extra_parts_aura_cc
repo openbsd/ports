@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_aura_chrome_browser_main_extra_parts_aura_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_aura_chrome_browser_main_extra_parts_aura_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- chrome/browser/ui/aura/chrome_browser_main_extra_parts_aura.cc.orig.port	Wed Mar 11 07:31:46 2015
 +++ chrome/browser/ui/aura/chrome_browser_main_extra_parts_aura.cc	Wed Mar 11 07:32:43 2015
 @@ -69,7 +69,7 @@ chrome::HostDesktopType GetInitialDesktop() {

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_views_switches_cc,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-ui_views_views_switches_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- ui/views/views_switches.cc.orig.port	Wed Mar 11 07:51:36 2015
 +++ ui/views/views_switches.cc	Wed Mar 11 07:51:44 2015
 @@ -26,7 +26,7 @@ const char kEnableTransparentVisuals[] = "enable-trans

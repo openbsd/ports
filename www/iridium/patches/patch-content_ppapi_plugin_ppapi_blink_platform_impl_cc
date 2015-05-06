@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- content/ppapi_plugin/ppapi_blink_platform_impl.cc.orig.port	Sun Dec  7 21:55:00 2014
 +++ content/ppapi_plugin/ppapi_blink_platform_impl.cc	Sun Dec  7 21:57:56 2014
 @@ -20,7 +20,7 @@

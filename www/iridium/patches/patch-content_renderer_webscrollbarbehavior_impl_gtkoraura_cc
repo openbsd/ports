@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_webscrollbarbehavior_impl_gtkoraura_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-content_renderer_webscrollbarbehavior_impl_gtkoraura_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- content/renderer/webscrollbarbehavior_impl_gtkoraura.cc.orig.port	Tue Mar 10 23:29:11 2015
 +++ content/renderer/webscrollbarbehavior_impl_gtkoraura.cc	Wed Mar 18 20:01:29 2015
 @@ -13,7 +13,7 @@ bool WebScrollbarBehaviorImpl::shouldCenterOnThumb(

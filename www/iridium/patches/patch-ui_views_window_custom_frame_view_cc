@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_window_custom_frame_view_cc,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-ui_views_window_custom_frame_view_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- ui/views/window/custom_frame_view.cc.orig.port	Sat Dec 27 12:54:25 2014
 +++ ui/views/window/custom_frame_view.cc	Sat Dec 27 12:56:51 2014
 @@ -283,7 +283,7 @@ int CustomFrameView::NonClientTopBorderHeight() const 

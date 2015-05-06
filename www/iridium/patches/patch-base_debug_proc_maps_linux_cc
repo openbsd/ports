@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_debug_proc_maps_linux_cc,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+$OpenBSD: patch-base_debug_proc_maps_linux_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- base/debug/proc_maps_linux.cc.orig.port	Thu May 22 21:44:40 2014
 +++ base/debug/proc_maps_linux.cc	Thu May 22 21:45:00 2014
 @@ -14,7 +14,7 @@

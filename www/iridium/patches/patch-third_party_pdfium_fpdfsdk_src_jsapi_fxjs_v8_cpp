@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_pdfium_fpdfsdk_src_jsapi_fxjs_v8_cpp,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-third_party_pdfium_fpdfsdk_src_jsapi_fxjs_v8_cpp,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- third_party/pdfium/fpdfsdk/src/jsapi/fxjs_v8.cpp.orig.port	Thu Sep 11 10:27:45 2014
 +++ third_party/pdfium/fpdfsdk/src/jsapi/fxjs_v8.cpp	Thu Sep 11 10:27:45 2014
 @@ -753,12 +753,16 @@ void JS_ValueCopy(v8::Handle<v8::Value>& pTo, v8::Hand

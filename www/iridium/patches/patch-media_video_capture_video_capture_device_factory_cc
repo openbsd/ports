@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_video_capture_video_capture_device_factory_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-media_video_capture_video_capture_device_factory_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- media/video/capture/video_capture_device_factory.cc.orig.port	Wed Mar 11 07:46:10 2015
 +++ media/video/capture/video_capture_device_factory.cc	Wed Mar 11 07:46:27 2015
 @@ -50,7 +50,7 @@ void VideoCaptureDeviceFactory::EnumerateDeviceNames(c

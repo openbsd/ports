@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_protobuf_src_google_protobuf_stubs_strutil_h,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-third_party_protobuf_src_google_protobuf_stubs_strutil_h,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- third_party/protobuf/src/google/protobuf/stubs/strutil.h.orig.port	Fri Oct 11 19:29:11 2013
 +++ third_party/protobuf/src/google/protobuf/stubs/strutil.h	Fri Oct 18 20:47:20 2013
 @@ -317,13 +317,13 @@ inline uint32 strtou32(const char *nptr, char **endptr

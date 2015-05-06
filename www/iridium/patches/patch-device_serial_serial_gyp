@@ -1,4 +1,4 @@
-$OpenBSD: patch-device_serial_serial_gyp,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-device_serial_serial_gyp,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- device/serial/serial.gyp.orig.port	Wed Dec  3 03:32:12 2014
 +++ device/serial/serial.gyp	Sat Dec  6 11:34:27 2014
 @@ -39,6 +39,12 @@

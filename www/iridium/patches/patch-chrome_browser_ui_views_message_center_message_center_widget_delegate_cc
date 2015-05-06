@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_message_center_message_center_widget_delegate_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_message_center_message_center_widget_delegate_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- chrome/browser/ui/views/message_center/message_center_widget_delegate.cc.orig.port	Wed Sep 10 01:47:12 2014
 +++ chrome/browser/ui/views/message_center/message_center_widget_delegate.cc	Wed Sep 10 22:05:40 2014
 @@ -97,7 +97,7 @@ void MessageCenterWidgetDelegate::OnWidgetActivationCh

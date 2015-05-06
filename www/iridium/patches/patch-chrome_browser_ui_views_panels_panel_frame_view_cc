@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_panels_panel_frame_view_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_panels_panel_frame_view_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- chrome/browser/ui/views/panels/panel_frame_view.cc.orig.port	Tue Mar 10 23:41:40 2015
 +++ chrome/browser/ui/views/panels/panel_frame_view.cc	Wed Mar 11 07:22:50 2015
 @@ -581,7 +581,7 @@ bool PanelFrameView::OnMousePressed(const ui::MouseEve

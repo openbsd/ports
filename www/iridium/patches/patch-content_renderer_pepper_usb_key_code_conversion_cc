@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_pepper_usb_key_code_conversion_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-content_renderer_pepper_usb_key_code_conversion_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- content/renderer/pepper/usb_key_code_conversion.cc.orig.port	Thu Feb 20 21:28:18 2014
 +++ content/renderer/pepper/usb_key_code_conversion.cc	Fri Feb 21 19:39:55 2014
 @@ -10,7 +10,7 @@ using blink::WebKeyboardEvent;

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ppapi_shared_impl_private_net_address_private_impl_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-ppapi_shared_impl_private_net_address_private_impl_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- ppapi/shared_impl/private/net_address_private_impl.cc.orig.port	Fri Mar 22 02:13:12 2013
 +++ ppapi/shared_impl/private/net_address_private_impl.cc	Tue Apr  2 21:05:17 2013
 @@ -28,7 +28,10 @@

@@ -1,28 +1,28 @@
-$OpenBSD: patch-chrome_browser_download_download_shelf_context_menu_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
---- chrome/browser/download/download_shelf_context_menu.cc.orig.port	Sat Dec  6 16:55:11 2014
-+++ chrome/browser/download/download_shelf_context_menu.cc	Sat Dec  6 16:56:00 2014
-@@ -122,7 +122,7 @@ bool DownloadShelfContextMenu::IsCommandIdChecked(int 
-       return download_item_->GetOpenWhenComplete() ||
+$OpenBSD: patch-chrome_browser_download_download_shelf_context_menu_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
+--- chrome/browser/download/download_shelf_context_menu.cc.orig.port	Wed Apr 15 09:23:59 2015
++++ chrome/browser/download/download_shelf_context_menu.cc	Wed Apr 15 09:24:37 2015
+@@ -123,7 +123,7 @@ bool DownloadShelfContextMenu::IsCommandIdChecked(int 
            download_crx_util::IsExtensionDownload(*download_item_);
      case ALWAYS_OPEN_TYPE:
--#if defined(OS_WIN) || defined(OS_LINUX) || \
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \
-     (defined(OS_MACOSX) && !defined(OS_IOS))
+ #if defined(OS_WIN) || defined(OS_LINUX) || \
+-    (defined(OS_MACOSX) && !defined(OS_IOS))
++    (defined(OS_MACOSX) && !defined(OS_IOS)) || defined(OS_BSD)
        if (CanOpenPdfInSystemViewer()) {
          DownloadPrefs* prefs = DownloadPrefs::FromBrowserContext(
-@@ -162,7 +162,7 @@ void DownloadShelfContextMenu::ExecuteCommand(int comm
-       bool is_checked = IsCommandIdChecked(ALWAYS_OPEN_TYPE);
+             download_item_->GetBrowserContext());
+@@ -163,7 +163,7 @@ void DownloadShelfContextMenu::ExecuteCommand(int comm
        DownloadPrefs* prefs = DownloadPrefs::FromBrowserContext(
            download_item_->GetBrowserContext());
--#if defined(OS_WIN) || defined(OS_LINUX) || \
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \
-     (defined(OS_MACOSX) && !defined(OS_IOS))
+ #if defined(OS_WIN) || defined(OS_LINUX) || \
+-    (defined(OS_MACOSX) && !defined(OS_IOS))
++    (defined(OS_MACOSX) && !defined(OS_IOS)) || defined(OS_BSD)
        if (CanOpenPdfInSystemViewer()) {
          prefs->SetShouldOpenPdfInSystemReader(!is_checked);
-@@ -390,14 +390,14 @@ int DownloadShelfContextMenu::GetAlwaysOpenStringId() 
- #if defined(OS_WIN)
-   if (CanOpenPdfInSystemViewer())
-     return IDS_DOWNLOAD_MENU_ALWAYS_OPEN_PDF_IN_READER;
+         DownloadItemModel(download_item_).SetShouldPreferOpeningInBrowser(
+@@ -392,14 +392,14 @@ int DownloadShelfContextMenu::GetAlwaysOpenStringId() 
+     return IsAdobeReaderDefaultPDFViewer()
+                ? IDS_DOWNLOAD_MENU_ALWAYS_OPEN_PDF_IN_READER
+                : IDS_DOWNLOAD_MENU_PLATFORM_OPEN_ALWAYS;
 -#elif defined(OS_MACOSX) || defined(OS_LINUX)
 +#elif defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
    if (CanOpenPdfInSystemViewer())
@@ -36,7 +36,7 @@ $OpenBSD: patch-chrome_browser_download_download_shelf_context_menu_cc,v 1.1.1.1
  bool DownloadShelfContextMenu::IsDownloadPdf() const {
    base::FilePath path = download_item_->GetTargetFilePath();
    return path.MatchesExtension(FILE_PATH_LITERAL(".pdf"));
-@@ -409,7 +409,7 @@ bool DownloadShelfContextMenu::CanOpenPdfInSystemViewe
+@@ -411,7 +411,7 @@ bool DownloadShelfContextMenu::CanOpenPdfInSystemViewe
    return IsDownloadPdf() &&
           (IsAdobeReaderDefaultPDFViewer() ? is_adobe_pdf_reader_up_to_date_ :
                                              true);

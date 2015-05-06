@@ -1,4 +1,4 @@
-$OpenBSD: patch-apps_apps_gypi,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+$OpenBSD: patch-apps_apps_gypi,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- apps/apps.gypi.orig.port	Wed Nov 19 06:13:07 2014
 +++ apps/apps.gypi	Wed Nov 19 08:38:24 2014
 @@ -19,6 +19,7 @@

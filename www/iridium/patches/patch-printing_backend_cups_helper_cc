@@ -1,4 +1,4 @@
-$OpenBSD: patch-printing_backend_cups_helper_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-printing_backend_cups_helper_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- printing/backend/cups_helper.cc.orig.port	Thu Oct  2 19:39:47 2014
 +++ printing/backend/cups_helper.cc	Fri Oct 10 16:10:31 2014
 @@ -289,10 +289,7 @@ bool GetColorModelSettings(ppd_file_t* ppd,

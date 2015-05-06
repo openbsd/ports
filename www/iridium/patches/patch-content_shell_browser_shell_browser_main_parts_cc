@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- content/shell/browser/shell_browser_main_parts.cc.orig.port	Tue Mar 10 23:41:41 2015
 +++ content/shell/browser/shell_browser_main_parts.cc	Wed Mar 11 07:22:50 2015
 @@ -38,7 +38,7 @@

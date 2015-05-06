@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_ffmpeg_ffmpeg_gyp,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-third_party_ffmpeg_ffmpeg_gyp,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- third_party/ffmpeg/ffmpeg.gyp.orig.port	Wed Mar 11 19:16:25 2015
 +++ third_party/ffmpeg/ffmpeg.gyp	Wed Mar 11 19:16:29 2015
 @@ -328,7 +328,6 @@

@@ -1,4 +1,4 @@
-$OpenBSD: patch-printing_printing_gyp,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-printing_printing_gyp,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- printing/printing.gyp.orig.port	Wed Nov 19 06:13:10 2014
 +++ printing/printing.gyp	Wed Nov 19 08:38:26 2014
 @@ -187,7 +187,7 @@

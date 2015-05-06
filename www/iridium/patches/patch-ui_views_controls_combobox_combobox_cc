@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_controls_combobox_combobox_cc,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-ui_views_controls_combobox_combobox_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- ui/views/controls/combobox/combobox.cc.orig.port	Sat Dec 27 12:54:25 2014
 +++ ui/views/controls/combobox/combobox.cc	Sat Dec 27 12:56:07 2014
 @@ -848,7 +848,7 @@ int Combobox::GetDisclosureArrowRightPadding() const {

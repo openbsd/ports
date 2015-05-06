@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_events_x_keysym_to_unicode_cc,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-ui_events_x_keysym_to_unicode_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- ui/events/x/keysym_to_unicode.cc.orig.port	Sat Oct 11 19:35:42 2014
 +++ ui/events/x/keysym_to_unicode.cc	Sat Oct 11 19:57:17 2014
 @@ -35,7 +35,7 @@

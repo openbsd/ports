@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- net/base/network_change_notifier.cc.orig.port	Tue Mar 10 23:41:41 2015
 +++ net/base/network_change_notifier.cc	Wed Mar 11 07:22:50 2015
 @@ -523,7 +523,6 @@ NetworkChangeNotifier* NetworkChangeNotifier::Create()

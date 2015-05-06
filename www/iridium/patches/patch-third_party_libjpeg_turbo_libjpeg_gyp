@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_libjpeg_turbo_libjpeg_gyp,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-third_party_libjpeg_turbo_libjpeg_gyp,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- third_party/libjpeg_turbo/libjpeg.gyp.orig.port	Fri Oct 10 16:31:04 2014
 +++ third_party/libjpeg_turbo/libjpeg.gyp	Fri Oct 10 16:32:23 2014
 @@ -246,7 +246,7 @@

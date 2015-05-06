@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_examples_widget_example_cc,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-ui_views_examples_widget_example_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- ui/views/examples/widget_example.cc.orig.port	Sat Dec 27 12:54:25 2014
 +++ ui/views/examples/widget_example.cc	Sat Dec 27 12:56:24 2014
 @@ -70,7 +70,7 @@ void WidgetExample::CreateExampleView(View* container)

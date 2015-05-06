@@ -1,0 +1,12 @@
+$OpenBSD: patch-components_audio_modem_modem_impl_cc,v 1.1 2015/05/06 14:27:24 robert Exp $
+--- components/audio_modem/modem_impl.cc.orig.port	Wed Apr 15 15:37:11 2015
++++ components/audio_modem/modem_impl.cc	Wed Apr 15 15:41:00 2015
+@@ -8,6 +8,8 @@
+ #include <limits>
+ #include <vector>
+ 
++#include <math.h>
++
+ #include "base/bind.h"
+ #include "base/bind_helpers.h"
+ #include "base/command_line.h"

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_system_menu_model_builder_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_system_menu_model_builder_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig.port	Sat Jul 19 03:24:41 2014
 +++ chrome/browser/ui/views/frame/system_menu_model_builder.cc	Sat Jul 19 03:25:00 2014
 @@ -65,7 +65,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser

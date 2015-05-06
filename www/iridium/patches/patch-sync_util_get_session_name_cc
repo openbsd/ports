@@ -1,4 +1,4 @@
-$OpenBSD: patch-sync_util_get_session_name_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-sync_util_get_session_name_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- sync/util/get_session_name.cc.orig.port	Wed Nov 19 05:53:06 2014
 +++ sync/util/get_session_name.cc	Wed Nov 19 08:38:26 2014
 @@ -12,7 +12,7 @@

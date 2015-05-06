@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_filename_rules_gypi,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+$OpenBSD: patch-build_filename_rules_gypi,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- build/filename_rules.gypi.orig.port	Fri Jul 18 23:35:30 2014
 +++ build/filename_rules.gypi	Fri Jul 18 23:41:13 2014
 @@ -85,7 +85,7 @@

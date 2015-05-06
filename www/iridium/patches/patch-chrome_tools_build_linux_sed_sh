@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_tools_build_linux_sed_sh,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-chrome_tools_build_linux_sed_sh,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- chrome/tools/build/linux/sed.sh.orig.port	Fri Mar 22 02:14:04 2013
 +++ chrome/tools/build/linux/sed.sh	Tue Apr  2 21:05:17 2013
 @@ -1,4 +1,4 @@

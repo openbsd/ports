@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- content/renderer/renderer_main_platform_delegate_linux.cc.orig.port	Tue Mar 10 23:29:11 2015
 +++ content/renderer/renderer_main_platform_delegate_linux.cc	Wed Mar 11 07:22:50 2015
 @@ -35,6 +35,7 @@ bool RendererMainPlatformDelegate::EnableSandbox() {

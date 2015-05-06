@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_pdfium_fpdfsdk_src_javascript_PublicMethods_cpp,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-third_party_pdfium_fpdfsdk_src_javascript_PublicMethods_cpp,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp.orig.port	Thu Oct  2 19:40:24 2014
 +++ third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp	Fri Oct 10 16:10:31 2014
 @@ -1052,7 +1052,7 @@ CFX_WideString CJS_PublicMethods::MakeFormatDate(doubl

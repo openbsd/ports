@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_renderer_host_p2p_socket_dispatcher_host_h,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_p2p_socket_dispatcher_host_h,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- content/browser/renderer_host/p2p/socket_dispatcher_host.h.orig.port	Wed Dec  3 03:13:24 2014
 +++ content/browser/renderer_host/p2p/socket_dispatcher_host.h	Sat Dec  6 11:34:26 2014
 @@ -46,12 +46,6 @@ class P2PSocketDispatcherHost

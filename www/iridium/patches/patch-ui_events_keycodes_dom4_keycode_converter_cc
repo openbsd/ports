@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_events_keycodes_dom4_keycode_converter_cc,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-ui_events_keycodes_dom4_keycode_converter_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- ui/events/keycodes/dom4/keycode_converter.cc.orig.port	Wed Mar 11 07:51:18 2015
 +++ ui/events/keycodes/dom4/keycode_converter.cc	Wed Mar 11 07:51:28 2015
 @@ -15,7 +15,7 @@ namespace {

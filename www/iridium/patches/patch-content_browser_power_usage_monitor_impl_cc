@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_power_usage_monitor_impl_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-content_browser_power_usage_monitor_impl_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- content/browser/power_usage_monitor_impl.cc.orig.port	Wed Mar 11 22:02:40 2015
 +++ content/browser/power_usage_monitor_impl.cc	Wed Mar 11 22:02:54 2015
 @@ -18,6 +18,8 @@

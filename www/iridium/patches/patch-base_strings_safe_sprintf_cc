@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_strings_safe_sprintf_cc,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+$OpenBSD: patch-base_strings_safe_sprintf_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- base/strings/safe_sprintf.cc.orig.port	Fri Oct 10 16:13:35 2014
 +++ base/strings/safe_sprintf.cc	Fri Oct 10 16:13:44 2014
 @@ -115,7 +115,7 @@ class Buffer {

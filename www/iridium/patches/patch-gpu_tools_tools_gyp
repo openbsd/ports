@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_tools_tools_gyp,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-gpu_tools_tools_gyp,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- gpu/tools/tools.gyp.orig.port	Wed Nov 19 15:30:44 2014
 +++ gpu/tools/tools.gyp	Wed Nov 19 15:30:54 2014
 @@ -9,7 +9,7 @@

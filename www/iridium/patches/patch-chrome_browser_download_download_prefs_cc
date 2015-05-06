@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- chrome/browser/download/download_prefs.cc.orig.port	Sat Dec  6 17:13:45 2014
 +++ chrome/browser/download/download_prefs.cc	Sat Dec  6 17:14:24 2014
 @@ -51,7 +51,7 @@ namespace {

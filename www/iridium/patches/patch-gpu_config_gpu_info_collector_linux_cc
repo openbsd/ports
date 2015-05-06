@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_config_gpu_info_collector_linux_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-gpu_config_gpu_info_collector_linux_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- gpu/config/gpu_info_collector_linux.cc.orig.port	Tue Mar 10 23:41:41 2015
 +++ gpu/config/gpu_info_collector_linux.cc	Wed Mar 11 07:22:50 2015
 @@ -77,6 +77,10 @@ const uint32 kVendorIDAMD = 0x1002;

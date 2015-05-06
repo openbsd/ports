@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_message_center_views_message_center_button_bar_cc,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-ui_message_center_views_message_center_button_bar_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- ui/message_center/views/message_center_button_bar.cc.orig.port	Thu Oct  2 19:39:48 2014
 +++ ui/message_center/views/message_center_button_bar.cc	Fri Oct 10 16:10:31 2014
 @@ -94,7 +94,7 @@ MessageCenterButtonBar::MessageCenterButtonBar(

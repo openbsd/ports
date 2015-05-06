@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig.port	Wed Dec  3 03:13:20 2014
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc	Sat Dec  6 11:34:25 2014
 @@ -26,8 +26,10 @@

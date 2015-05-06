@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_gpu_gpu_internals_ui_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
+$OpenBSD: patch-content_browser_gpu_gpu_internals_ui_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- content/browser/gpu/gpu_internals_ui.cc.orig.port	Sun Feb 15 10:56:09 2015
 +++ content/browser/gpu/gpu_internals_ui.cc	Sun Feb 15 10:56:33 2015
 @@ -4,7 +4,7 @@

@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_heap_ThreadState_cpp,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
---- third_party/WebKit/Source/platform/heap/ThreadState.cpp.orig.port	Thu Dec 18 10:59:05 2014
-+++ third_party/WebKit/Source/platform/heap/ThreadState.cpp	Fri Dec 26 18:06:47 2014
-@@ -56,7 +56,7 @@ extern "C" void* __libc_stack_end;  // NOLINT
- #include <sanitizer/msan_interface.h>
+$OpenBSD: patch-third_party_WebKit_Source_platform_heap_ThreadState_cpp,v 1.2 2015/05/06 14:27:24 robert Exp $
+--- third_party/WebKit/Source/platform/heap/ThreadState.cpp.orig.port	Wed Apr 15 09:40:42 2015
++++ third_party/WebKit/Source/platform/heap/ThreadState.cpp	Wed Apr 15 09:41:05 2015
+@@ -62,7 +62,7 @@ extern "C" void* __libc_stack_end;  // NOLINT
+ #include <limits>
  #endif
  
 -#if OS(FREEBSD)
@@ -10,23 +10,3 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_heap_ThreadState_cpp,v 1.1.1.
  #include <pthread_np.h>
  #endif
  
-@@ -64,12 +64,18 @@ namespace blink {
- 
- static void* getStackStart()
- {
--#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD)
-+#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD) || OS(OPENBSD)
-     pthread_attr_t attr;
-     int error;
- #if OS(FREEBSD)
-     pthread_attr_init(&attr);
-     error = pthread_attr_get_np(pthread_self(), &attr);
-+#elif OS(OPENBSD)
-+    stack_t ss;
-+    void *base;
-+    error = pthread_stackseg_np(pthread_self(), &ss);
-+    base = (void*)((size_t) ss.ss_sp - ss.ss_size);
-+    return reinterpret_cast<Address>(base) + ss.ss_size;
- #else
-     error = pthread_getattr_np(pthread_self(), &attr);
- #endif

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_libyuv_libyuv_gyp,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-third_party_libyuv_libyuv_gyp,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- third_party/libyuv/libyuv.gyp.orig.port	Wed Dec  3 03:32:35 2014
 +++ third_party/libyuv/libyuv.gyp	Sat Dec  6 11:34:27 2014
 @@ -110,11 +110,15 @@

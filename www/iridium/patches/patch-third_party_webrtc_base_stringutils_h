@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_webrtc_base_stringutils_h,v 1.1.1.1 2015/05/03 15:35:38 robert Exp $
+$OpenBSD: patch-third_party_webrtc_base_stringutils_h,v 1.2 2015/05/06 14:27:24 robert Exp $
 --- third_party/webrtc/base/stringutils.h.orig.port	Thu Oct  2 19:40:33 2014
 +++ third_party/webrtc/base/stringutils.h	Fri Oct 10 19:52:11 2014
 @@ -20,14 +20,14 @@

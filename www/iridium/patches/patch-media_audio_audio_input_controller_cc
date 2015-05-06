@@ -1,8 +1,8 @@
-$OpenBSD: patch-media_audio_audio_input_controller_cc,v 1.1.1.1 2015/05/03 15:35:37 robert Exp $
---- media/audio/audio_input_controller.cc.orig.port	Sat Dec  6 14:44:50 2014
-+++ media/audio/audio_input_controller.cc	Sat Dec  6 14:44:57 2014
+$OpenBSD: patch-media_audio_audio_input_controller_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
+--- media/audio/audio_input_controller.cc.orig.port	Wed Apr 15 00:18:55 2015
++++ media/audio/audio_input_controller.cc	Wed Apr 15 08:32:50 2015
 @@ -13,6 +13,8 @@
- #include "media/base/scoped_histogram_timer.h"
+ #include "media/audio/audio_parameters.h"
  #include "media/base/user_input_monitor.h"
  
 +#include <math.h>

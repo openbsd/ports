@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- base/sys_info_openbsd.cc.orig.port	Wed Jun 12 09:28:39 2013
 +++ base/sys_info_openbsd.cc	Sun Jul 14 10:59:41 2013
 @@ -44,11 +44,6 @@ int64 SysInfo::AmountOfPhysicalMemory() {

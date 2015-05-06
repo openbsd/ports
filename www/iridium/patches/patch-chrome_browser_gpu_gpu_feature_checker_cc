@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_gpu_gpu_feature_checker_cc,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+$OpenBSD: patch-chrome_browser_gpu_gpu_feature_checker_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- chrome/browser/gpu/gpu_feature_checker.cc.orig.port	Sun Oct 20 17:02:12 2013
 +++ chrome/browser/gpu/gpu_feature_checker.cc	Sun Oct 20 17:02:21 2013
 @@ -33,7 +33,7 @@ void GPUFeatureChecker::CheckGPUFeatureAvailability() 

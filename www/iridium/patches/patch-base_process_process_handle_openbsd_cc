@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_handle_openbsd_cc,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+$OpenBSD: patch-base_process_process_handle_openbsd_cc,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- base/process/process_handle_openbsd.cc.orig.port	Fri Oct 18 20:52:30 2013
 +++ base/process/process_handle_openbsd.cc	Fri Oct 18 23:28:42 2013
 @@ -4,6 +4,8 @@

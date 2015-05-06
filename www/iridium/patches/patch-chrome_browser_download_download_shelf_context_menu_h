@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_shelf_context_menu_h,v 1.1.1.1 2015/05/03 15:35:36 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_shelf_context_menu_h,v 1.2 2015/05/06 14:27:23 robert Exp $
 --- chrome/browser/download/download_shelf_context_menu.h.orig.port	Sat Dec  6 16:56:09 2014
 +++ chrome/browser/download/download_shelf_context_menu.h	Sat Dec  6 16:56:22 2014
 @@ -75,7 +75,7 @@ class DownloadShelfContextMenu : public ui::SimpleMenu
