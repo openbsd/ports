@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.68 2015/05/03 10:33:59 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.69 2015/05/06 09:17:28 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -33,6 +33,7 @@ sub new
 	    known_sha => {}, known_files => {},
 	    known_short => {},
 	    user => $state->{fetch_user},
+	    build_user => $state->{build_user},
 	    fetch_only => $state->{fetch_only}}, $class;
 	if (defined $state->{subst}->value('FTP_ONLY')) {
 		$o->{ftp_only} = 1;
@@ -205,8 +206,10 @@ sub distdir
 
 sub read_checksums
 {
-	my $filename = shift;
-	open my $fh, '<', $filename or return;
+	my ($self, $filename) = @_;
+	# XXX the fetch user might not have read access there ?
+	my $fh = $self->{build_user}->open('<', $filename);
+	return if !defined $fh;
 	my $r = { size => {}, sha => {}};
 	while (<$fh>) {
 		next if m/^(?:MD5|RMD160|SHA1)/;
@@ -240,7 +243,7 @@ sub build_distinfo
 		}
 		$checksum_file = $checksum_file->string;
 		$distinfo->{$checksum_file} //=
-		    read_checksums($checksum_file);
+		    $self->read_checksums($checksum_file);
 		my $checksums = $distinfo->{$checksum_file};
 
 		my $files = {};
