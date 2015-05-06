@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.76 2015/04/29 08:04:47 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.77 2015/05/06 12:23:29 dcoppa Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -87,6 +87,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/audiomack.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/audiomack.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/azubu.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/azubu.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/baidu.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/baidu.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bambuser.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bambuser.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bandcamp.py
@@ -301,6 +303,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/foxgay.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/foxgay.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/foxnews.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/foxnews.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/foxsports.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/foxsports.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/franceculture.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/franceculture.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/franceinter.py
@@ -357,8 +361,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/gorillavid.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/gorillavid.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/goshgay.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/goshgay.pyc
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/grooveshark.py
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/grooveshark.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/groupon.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/groupon.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/hark.py
