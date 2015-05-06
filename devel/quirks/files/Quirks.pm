@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.237 2015/05/05 19:38:41 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.238 2015/05/06 08:20:27 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -527,6 +527,7 @@ my $obsolete_reason = {
 	'wordpress' => 1,
 	'polari' => 6,
 	'gtk3-xfce-engine' => 3,
+	'shell-fm' => 6,
 };
 
 # ->is_base_system($handle, $state):
