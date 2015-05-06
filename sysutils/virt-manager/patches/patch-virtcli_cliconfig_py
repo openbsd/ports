@@ -1,15 +1,15 @@
-$OpenBSD: patch-virtcli_cliconfig_py,v 1.2 2014/09/08 08:06:34 jasper Exp $
+$OpenBSD: patch-virtcli_cliconfig_py,v 1.3 2015/05/06 09:59:14 jasper Exp $
 
 Set correct $PREFIX
 
---- virtcli/cliconfig.py.orig	Sun Sep  7 22:19:45 2014
-+++ virtcli/cliconfig.py	Mon Sep  8 10:06:05 2014
-@@ -75,7 +75,7 @@ if _usr_version is not None and _usr_version != "":
-     __version__ = _usr_version
+--- virtcli/cliconfig.py.orig	Mon May  4 20:59:43 2015
++++ virtcli/cliconfig.py	Wed May  6 11:29:13 2015
+@@ -92,7 +92,7 @@ class _CLIConfig(object):
+         self.gettext_dir = None
+         self.ui_dir = None
+         self.icon_dir = None
+-        self.set_paths_by_prefix(_get_param("prefix", "/usr"),
++        self.set_paths_by_prefix(_get_param("prefix", "${PREFIX}"),
+             check_source_dir=True)
  
- # We should map this into the config somehow but I question if anyone cares
--prefix = _get_param("prefix", "/usr")
-+prefix = _get_param("prefix", "${PREFIX}")
- gettext_dir = os.path.join(prefix, "share", "locale")
- install_asset_dir = os.path.join(prefix, "share", "virt-manager")
- if os.getcwd() == _srcdir:
+     def set_paths_by_prefix(self, prefix, check_source_dir=False):

@@ -1,0 +1,22 @@
+$OpenBSD: patch-virtManager_domain_py,v 1.1 2015/05/06 09:59:14 jasper Exp $
+
+From 848123e6c8850bafad28767a165bbbf8dc746a09 Mon Sep 17 00:00:00 2001
+From: Cole Robinson <crobinso@redhat.com>
+Date: Mon, 4 May 2015 15:50:01 -0400
+Subject: domain: Fix memory stats for shutoff VM (bz 1215453)
+
+--- virtManager/domain.py.orig	Wed May  6 11:45:18 2015
++++ virtManager/domain.py	Wed May  6 11:45:40 2015
+@@ -1699,8 +1699,10 @@ class vmmDomain(vmmLibvirtObject):
+             cpudata = cpudata[0:limit]
+         return cpudata
+     def memory_usage_vector_limit(self, limit):
+-        return self.in_out_vector_limit(self.stats_memory_vector(),
+-                                        limit)
++        data = self.stats_memory_vector()
++        if len(data) > limit:
++            data = data[0:limit]
++        return data
+     def network_traffic_vector_limit(self, limit, ceil=None):
+         return self.in_out_vector_limit(self.network_traffic_vector(ceil),
+                                         limit)
