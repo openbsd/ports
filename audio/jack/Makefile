@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/05/05 19:45:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2015/05/06 10:22:07 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -8,6 +8,7 @@ V =			0.124.1
 DISTNAME =		jack-audio-connection-kit-${V}
 PKGNAME =		jack-${V}
 CATEGORIES =		audio
+REVISION =		0
 
 SHARED_LIBS +=		jack		1.0	# 0.28
 SHARED_LIBS +=		jackserver	1.0	# 0.28
@@ -17,19 +18,19 @@ HOMEPAGE =		http://jackaudio.org/
 # LGPLv2/GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c celt0>=1 m pthread readline samplerate sndfile
+WANTLIB += c celt0>=1 db m pthread readline samplerate sndfile
 WANTLIB += sndio termcap FLAC ogg vorbis vorbisenc
 
 MASTER_SITES =		${HOMEPAGE}downloads/
 
 LIB_DEPENDS =		audio/libsndfile \
 			audio/libsamplerate \
-			audio/celt>=0.11.0
+			audio/celt>=0.11.0 \
+			databases/db/v4
 
 
 # uses macros from libtool.m4
-BUILD_DEPENDS =		devel/libtool \
-			databases/db/v4
+BUILD_DEPENDS =		devel/libtool
 
 LIBTOOL_FLAGS +=	--tag=disable-static
 
