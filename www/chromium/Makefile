@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.212 2015/05/01 12:45:04 robert Exp $
+# $OpenBSD: Makefile,v 1.213 2015/05/07 12:29:07 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
-BROKEN-i386=		ld from binutils-2.15 uses too much RAM
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
 V=			42.0.2311.135
 DISTNAME=		chromium-${V}
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
 CATEGORIES=		www
 
@@ -25,6 +25,7 @@ PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP =	Yes
 
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
+MASTER_SITES0=	http://nerd.hu/distfiles/
 
 MODULES=	lang/clang lang/python
 
@@ -137,6 +138,19 @@ GYP_DEFS+=	-Dremove_webcore_debug_symbols=1
 MAKE_ENV+=	V=1
 .endif
 
+BB_VER=		20150502
+.if ${MACHINE_ARCH} == "i386" || ${FLAVOR:Mdebug}
+GYP_DEFS+=	-Dlinux_use_bundled_binutils=1
+DISTFILES+=	binutils-2.17-${MACHINE_ARCH}-${BB_VER}.tar.gz:0
+
+pre-patch:
+	@mkdir -p ${WRKSRC}/third_party/binutils/Linux_x64/Release
+	@ln -fs ${WRKDIR}/binutils-2.17-${MACHINE_ARCH}-${BB_VER}/bin \
+		${WRKSRC}/third_party/binutils/Linux_x64/Release/bin
+.endif
+SUPDISTFILES+=	binutils-2.17-amd64-${BB_VER}.tar.gz:0 \
+		binutils-2.17-i386-${BB_VER}.tar.gz:0
+
 MODPY_ADJ_FILES=build/linux/unbundle/replace_gyp_files.py
 
 pre-configure:
@@ -186,13 +200,5 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/chromium-browser.desktop \
 		${PREFIX}/share/applications/chromium-browser.desktop
-
-.include <bsd.port.arch.mk>
-
-.if ${ARCH} == i386
-PKG_ARGS= -DI386_DISABLE="@comment "
-.else
-PKG_ARGS= -DI386_DISABLE=""
-.endif
 
 .include <bsd.port.mk>
