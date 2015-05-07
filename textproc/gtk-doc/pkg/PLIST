@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/07/18 09:26:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2015/05/07 09:39:20 ajacoutot Exp $
 bin/gtkdoc-check
 bin/gtkdoc-depscan
 bin/gtkdoc-fixxref
@@ -60,6 +60,10 @@ share/help/fr/
 share/help/fr/gtk-doc-manual/
 share/help/fr/gtk-doc-manual/fdl-appendix.xml
 share/help/fr/gtk-doc-manual/index.docbook
+share/help/gl/
+share/help/gl/gtk-doc-manual/
+share/help/gl/gtk-doc-manual/fdl-appendix.xml
+share/help/gl/gtk-doc-manual/index.docbook
 share/help/gu/
 share/help/gu/gtk-doc-manual/
 share/help/gu/gtk-doc-manual/fdl-appendix.xml
