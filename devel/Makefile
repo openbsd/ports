@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1331 2015/05/01 15:46:03 landry Exp $
+# $OpenBSD: Makefile,v 1.1332 2015/05/07 14:20:33 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -8,6 +8,7 @@
      SUBDIR += ald
      SUBDIR += alex
      SUBDIR += apache-ant
+     SUBDIR += apktool
      SUBDIR += appstream-glib
      SUBDIR += apr
      SUBDIR += apr-util
