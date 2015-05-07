@@ -1,0 +1,5 @@
+#!/bin/sh
+
+JAVA_CMD=$(javaPathHelper -c apktool)
+
+${JAVA_CMD} -jar ${TRUEPREFIX}/share/apktool/${DISTNAME}.jar "$@"
