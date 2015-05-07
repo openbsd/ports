@@ -1,13 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:40 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/05/07 17:28:33 okan Exp $
 @bin bin/glpsol
 include/glpk.h
 lib/libglpk.a
 lib/libglpk.la
 @lib lib/libglpk.so.${LIBglpk_VERSION}
 share/doc/glpk/
+share/doc/glpk/cnfsat.pdf
 share/doc/glpk/glpk.pdf
-share/doc/glpk/glpk_faq.txt
 share/doc/glpk/gmpl.pdf
+share/doc/glpk/gmpl_es.pdf
 share/doc/glpk/graphs.pdf
 share/doc/glpk/miplib2.txt
 share/doc/glpk/miplib3.txt
@@ -16,9 +17,6 @@ share/doc/glpk/notes/
 share/doc/glpk/notes/dfeas.pdf
 share/doc/glpk/notes/gomory.pdf
 share/doc/glpk/notes/keller.pdf
-share/doc/glpk/notes/prepro.pdf
 share/doc/glpk/notes/scaling.pdf
-share/doc/glpk/notes/subset.pdf
-share/doc/glpk/notes/updating.pdf
-share/doc/glpk/opb.txt
-share/doc/glpk/tables.pdf
+share/doc/glpk/notes/scf.pdf
+share/doc/glpk/notes/simplex.pdf

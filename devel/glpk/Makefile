@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/03/16 18:07:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2015/05/07 17:28:33 okan Exp $
 
 COMMENT=	GNU Linear Programming Kit
 
-DISTNAME=	glpk-4.44
-REVISION=	1
-SHARED_LIBS=	glpk		6.0	# 29.0
+DISTNAME=	glpk-4.55
+SHARED_LIBS=	glpk		7.0	# 37.2
 
 CATEGORIES=	devel
 HOMEPAGE=	https://www.gnu.org/software/glpk/index.html
@@ -15,15 +14,13 @@ MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m gmp>=7 z
+WANTLIB=		c m gmp
 
 LIB_DEPENDS=		devel/gmp
 
-
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-gmp \
-			--with-zlib
+			--with-gmp
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
