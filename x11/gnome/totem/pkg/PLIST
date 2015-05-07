@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2015/04/04 10:17:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2015/05/07 13:23:30 ajacoutot Exp $
 @conflict nautilus-totem-*
 @pkgpath x11/gnome/totem,nautilus
 @pkgpath x11/gnome/totem,xine
@@ -28,9 +28,6 @@ lib/totem/plugins/autoload-subtitles/libautoload-subtitles.so
 lib/totem/plugins/brasero-disc-recorder/
 lib/totem/plugins/brasero-disc-recorder/brasero-disc-recorder.plugin
 lib/totem/plugins/brasero-disc-recorder/libbrasero-disc-recorder.so
-lib/totem/plugins/chapters/
-lib/totem/plugins/chapters/chapters-edit.ui
-lib/totem/plugins/chapters/chapters-list.ui
 lib/totem/plugins/dbus/
 lib/totem/plugins/dbus/dbusservice.plugin
 lib/totem/plugins/dbus/dbusservice.py
@@ -493,17 +490,12 @@ share/help/zh_TW/totem/figures/totem_volume_mute_button.png
 share/help/zh_TW/totem/index.docbook
 share/help/zh_TW/totem/legal.xml
 share/icons/hicolor/16x16/apps/totem.png
-share/icons/hicolor/16x16/devices/totem-tv.png
 share/icons/hicolor/22x22/apps/totem.png
-share/icons/hicolor/22x22/devices/totem-tv.png
 share/icons/hicolor/24x24/apps/totem.png
-share/icons/hicolor/24x24/devices/totem-tv.png
 share/icons/hicolor/256x256/apps/totem.png
 share/icons/hicolor/32x32/apps/totem.png
-share/icons/hicolor/32x32/devices/totem-tv.png
 share/icons/hicolor/48x48/apps/totem.png
-share/icons/hicolor/48x48/devices/totem-tv.png
-share/icons/hicolor/scalable/devices/totem-tv.svg
+share/icons/hicolor/scalable/apps/totem-symbolic.svg
 share/locale/af/LC_MESSAGES/totem.mo
 share/locale/am/LC_MESSAGES/totem.mo
 share/locale/ar/LC_MESSAGES/totem.mo
