@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_encoder_plugins_OpusEncoderPlugin_cxx,v 1.1 2015/05/07 16:15:41 dcoppa Exp $
+
+commit 0d7ee2b014db4f5072ac17839d0c7f3535c60675
+Author: Michal Nazarewicz <mina86@mina86.com>
+Date:   Mon Mar 23 19:14:54 2015 +0100
+
+OpusEncoderPlugin: initialise granulepos so we end up with sane values
+
+Not initialising granulepos leads to it having arbitrary values in the
+encoded stream including possibly negative values which are not valid
+and confuse opusdec.  Explicitly initialise opus_encoder::granulepos
+to avoid that problem.
+
+--- src/encoder/plugins/OpusEncoderPlugin.cxx.orig	Sat Oct 25 00:28:53 2014
++++ src/encoder/plugins/OpusEncoderPlugin.cxx	Thu May  7 18:05:01 2015
+@@ -66,7 +66,7 @@ struct opus_encoder {
+ 
+ 	ogg_int64_t granulepos;
+ 
+-	opus_encoder():encoder(opus_encoder_plugin) {}
++	opus_encoder():encoder(opus_encoder_plugin), granulepos(0) {}
+ };
+ 
+ static constexpr Domain opus_encoder_domain("opus_encoder");
