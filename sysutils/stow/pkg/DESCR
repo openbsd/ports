@@ -1,13 +1,14 @@
-GNU Stow is a Perl program for managing the installation of
-software packages, keeping them separated from each other while
-making them appear to be installed in the same place by using
-symbolic links.
+GNU Stow is a Perl program for managing the installation of software
+packages, keeping them separated from each other while making them
+appear to be installed in the same place by using symbolic links.
 
-Stow is particularly useful when installing software distributed
-with a GNU "configure" script (use the --prefix=path option).
+Stow is particularly useful when installing software distributed with
+a GNU "configure" script (use the --prefix=path option) or any other
+software that installs in a standard hierarchy beneath a configurable
+prefix path.
 
-Stow may be used by non-root users to set up a private hierarchy
-under e.g. $HOME/local, or by local administrators who wants
-to install software that is not managed by the native package
-or port system, and make it available under e.g. /opt/local or
-/usr/pkg.
+Stow may be used by non-root users to set up a private software
+hierarchy under e.g. $HOME/local, or by local administrators who wants
+to install software that is not managed by the native package or port
+system, and make it available under /opt/local, /sw, or any other
+similar location.

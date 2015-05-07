@@ -1,4 +1,45 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/09/04 23:35:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/05/07 11:27:59 jca Exp $
+bin/chkstow
 bin/stow
 @info info/stow.info
+libdata/perl5/site_perl/Stow/
+libdata/perl5/site_perl/Stow.pm
+libdata/perl5/site_perl/Stow/Util.pm
 @man man/man8/stow.8
+share/doc/stow/
+share/doc/stow/ChangeLog
+share/doc/stow/ChangeLog.OLD
+share/doc/stow/README
+share/doc/stow/manual-single.html
+share/doc/stow/manual-split/
+share/doc/stow/manual-split/Bootstrapping.html
+share/doc/stow/manual-split/Compile_002dtime-vs-Install_002dtime.html
+share/doc/stow/manual-split/Conflicts.html
+share/doc/stow/manual-split/Cygnus-Software.html
+share/doc/stow/manual-split/Deferred-Operation.html
+share/doc/stow/manual-split/Deleting-Packages.html
+share/doc/stow/manual-split/GNU-Emacs.html
+share/doc/stow/manual-split/GNU-General-Public-License.html
+share/doc/stow/manual-split/Ignore-Lists.html
+share/doc/stow/manual-split/Index.html
+share/doc/stow/manual-split/Installing-Packages.html
+share/doc/stow/manual-split/Introduction.html
+share/doc/stow/manual-split/Invoking-Stow.html
+share/doc/stow/manual-split/Justification-For-Yet-Another-Set-Of-Ignore-Files.html
+share/doc/stow/manual-split/Known-Bugs.html
+share/doc/stow/manual-split/Mixing-Operations.html
+share/doc/stow/manual-split/Motivation-For-Ignore-Lists.html
+share/doc/stow/manual-split/Multiple-Stow-Directories.html
+share/doc/stow/manual-split/Other-FSF-Software.html
+share/doc/stow/manual-split/Perl-and-Perl-5-Modules.html
+share/doc/stow/manual-split/Reporting-Bugs.html
+share/doc/stow/manual-split/Resource-Files.html
+share/doc/stow/manual-split/Target-Maintenance.html
+share/doc/stow/manual-split/Terminology.html
+share/doc/stow/manual-split/Tree-unfolding.html
+share/doc/stow/manual-split/Types-And-Syntax-Of-Ignore-Lists.html
+share/doc/stow/manual-split/index.html
+share/doc/stow/manual-split/tree-folding.html
+share/doc/stow/manual-split/tree-refolding.html
+share/doc/stow/manual.pdf
+share/doc/stow/version.texi
