@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/07 14:18:59 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/07 15:22:57 sthen Exp $
 
 COMMENT =		tool for reverse engineering Android apk files
 
 DISTNAME =		apktool_2.0.0
 PKGNAME =		apktool-2.0.0
+REVISION =		0
 
 CATEGORIES =		devel security java
 
@@ -19,7 +20,7 @@ EXTRACT_SUFX =		.jar
 
 INSTALL_DIR =		${PREFIX}/share/apktool/
 
-SUBST_VARS +=           DISTNAME
+SUBST_VARS +=		DISTNAME
 
 MODULES =		java
 MODJAVA_VER =		1.7
@@ -39,6 +40,5 @@ NO_TEST =		Yes
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/apktool/
 	cp ${WRKSRC}/${DISTNAME} ${PREFIX}/share/apktool/
-		
 
 .include <bsd.port.mk>
