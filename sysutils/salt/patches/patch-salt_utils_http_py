@@ -1,0 +1,15 @@
+$OpenBSD: patch-salt_utils_http_py,v 1.1 2015/05/07 09:15:55 ajacoutot Exp $
+
+https://github.com/saltstack/salt/pull/23445
+
+--- salt/utils/http.py.orig	Thu May  7 10:56:37 2015
++++ salt/utils/http.py	Thu May  7 10:56:50 2015
+@@ -460,6 +460,8 @@ def get_ca_bundle(opts=None):
+         '/etc/ssl/certs/ca-bundle.crt',
+         # Suse has an unusual path
+         '/var/lib/ca-certificates/ca-bundle.pem',
++        # OpenBSD has an unusual path
++        '/etc/ssl/cert.pem',
+     ):
+         if os.path.exists(path):
+             return path
