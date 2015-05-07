@@ -1,20 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/17 23:44:04 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/07 17:29:08 sebastia Exp $
 include/netclasses
 lib/GNUstep/Frameworks/
 lib/GNUstep/Frameworks/netclasses.framework/
 lib/GNUstep/Frameworks/netclasses.framework/Headers
 lib/GNUstep/Frameworks/netclasses.framework/Resources
 lib/GNUstep/Frameworks/netclasses.framework/Versions/
-lib/GNUstep/Frameworks/netclasses.framework/Versions/1.06/
-lib/GNUstep/Frameworks/netclasses.framework/Versions/1.06/Headers/
-lib/GNUstep/Frameworks/netclasses.framework/Versions/1.06/Headers/IRCObject.h
-lib/GNUstep/Frameworks/netclasses.framework/Versions/1.06/Headers/LineObject.h
-lib/GNUstep/Frameworks/netclasses.framework/Versions/1.06/Headers/NetBase.h
-lib/GNUstep/Frameworks/netclasses.framework/Versions/1.06/Headers/NetTCP.h
-lib/GNUstep/Frameworks/netclasses.framework/Versions/1.06/Resources/
-lib/GNUstep/Frameworks/netclasses.framework/Versions/1.06/Resources/Info-gnustep.plist
-@lib lib/GNUstep/Frameworks/netclasses.framework/Versions/1.06/libnetclasses.so.${LIBnetclasses_VERSION}
-lib/GNUstep/Frameworks/netclasses.framework/Versions/1.06/netclasses
+lib/GNUstep/Frameworks/netclasses.framework/Versions/0.0/
+lib/GNUstep/Frameworks/netclasses.framework/Versions/0.0/Headers/
+lib/GNUstep/Frameworks/netclasses.framework/Versions/0.0/Headers/IRCObject.h
+lib/GNUstep/Frameworks/netclasses.framework/Versions/0.0/Headers/LineObject.h
+lib/GNUstep/Frameworks/netclasses.framework/Versions/0.0/Headers/NetBase.h
+lib/GNUstep/Frameworks/netclasses.framework/Versions/0.0/Headers/NetTCP.h
+lib/GNUstep/Frameworks/netclasses.framework/Versions/0.0/Resources/
+lib/GNUstep/Frameworks/netclasses.framework/Versions/0.0/Resources/Info-gnustep.plist
+@lib lib/GNUstep/Frameworks/netclasses.framework/Versions/0.0/libnetclasses.so.${LIBnetclasses_VERSION}
+lib/GNUstep/Frameworks/netclasses.framework/Versions/0.0/netclasses
 lib/GNUstep/Frameworks/netclasses.framework/Versions/Current
 @lib lib/GNUstep/Frameworks/netclasses.framework/libnetclasses.so.${LIBnetclasses_VERSION}
 lib/GNUstep/Frameworks/netclasses.framework/netclasses

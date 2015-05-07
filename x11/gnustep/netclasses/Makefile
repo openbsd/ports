@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/21 18:21:22 sebastia Exp $
+# $OpenBSD: Makefile,v 1.8 2015/05/07 17:29:08 sebastia Exp $
 
 COMMENT =	asynchronous networking framework for GNUstep
 
-VERSION =	1.06
+VERSION =	1.1.0
 DISTNAME =	netclasses-${VERSION}
-REVISION =	5
 PKGNAME =	gnustep-netclasses-${VERSION}
 CATEGORIES =	net
 SHARED_LIBS +=  netclasses	0.0
 
-HOMEPAGE =	http://netclasses.aeruder.net/
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=netclasses/}
+HOMEPAGE =	http://gap.nongnu.org/talksoup/
+MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
 
 MODULES =		x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK = Yes
