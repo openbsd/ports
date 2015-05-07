@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2014/05/09 21:33:44 kili Exp $
+# $OpenBSD: Makefile,v 1.78 2015/05/07 19:19:23 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -11,11 +11,11 @@ ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
 PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}
-REVISION-main=		22
+REVISION-main=		23
 PKGNAME-swt=		swt-${ECLIPSE_VER}
-REVISION-swt=		6
+REVISION-swt=		7
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}
-REVISION-gnome=		5
+REVISION-gnome=		6
 SHARED_LIBS=		swt-atk-gtk-3236	4.0 \
 			swt-awt-gtk-3236	4.0 \
 			swt-gtk-3236		4.0 \
@@ -27,8 +27,6 @@ SHARED_LIBS=		swt-atk-gtk-3236	4.0 \
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.eclipse.org/
-
-MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
 # Eclipse Public License Version 1.0 (http://www.eclipse.org/legal/epl-v10.html)
 # Apache Software License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
@@ -56,7 +54,8 @@ MULTI_PACKAGES=		-main -swt -gnome
 
 RUN_DEPENDS-main=	java/javaPathHelper \
 			${MODJAVA_RUN_DEPENDS} \
-			devel/desktop-file-utils
+			devel/desktop-file-utils \
+			devel/eclipse/sdk,-swt
 LIB_DEPENDS-main=	x11/gtk+2
 
 WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
