@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.156 2015/05/05 08:52:05 espie Exp $
+# $OpenBSD: Port.pm,v 1.157 2015/05/07 12:30:46 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -293,7 +293,7 @@ sub is_serialized { 1 }
 sub want_percent { 0 }
 
 # note that serialized's setup will return its task only if lock
-# happened succesfully, so we can use that in serialized taks
+# happened succesfully, so we can use that in serialized tasks
 sub setup
 {
 	my ($task, $core) = @_;
@@ -1046,6 +1046,7 @@ sub watched
 	my $stuck = $core->stuck_timeout;
 	if (defined $stuck) {
 		if ($diff > $stuck) {
+			local $> = 0;
 			$self->{stuck} =
 			    "KILLED: $self->{current} stuck at $msg";
 			kill 9, $core->{pid};
@@ -1192,6 +1193,7 @@ sub wake_others
 		}
 	    });
 	if (defined $minjob) {
+		local $> = 0;
 		kill IO => $minpid;
 		print {$core->job->{logfh}} "Woken up $minjob->{path}\n";
 	}

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.6 2015/05/03 10:33:59 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.7 2015/05/07 12:30:46 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -241,6 +241,7 @@ sub watched
 		if ($diff > $to) {
 			$self->{stuck} =
 			    "KILLED: $self->{current} stuck at $msg";
+			local $> = 0;
 			kill 9, $core->{pid};
 			return $self->{stuck};
 		}

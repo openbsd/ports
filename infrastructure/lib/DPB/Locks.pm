@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.33 2015/05/03 10:33:59 espie Exp $
+# $OpenBSD: Locks.pm,v 1.34 2015/05/07 12:30:46 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -172,7 +172,10 @@ sub unlock
 sub locked
 {
 	my ($self, $v) = @_;
-	return -e $self->lockname($v);
+	return $self->run_as(
+	    sub {
+	    	return -e $self->lockname($v);
+	    });
 }
 
 sub find_dependencies
@@ -181,9 +184,10 @@ sub find_dependencies
 	my $dir = $self->opendir($self->{lockdir});
 	my $h = {};
 	while (my $name = readdir($dir)) {
-		my $fullname = $self->{lockdir}."/".$name;
-		next if -d $fullname;
+		next if $name eq '.' or $name eq '..';
 		next if $name =~ m/^host:/;
+		#next if -d $fullname;
+		my $fullname = $self->{lockdir}."/".$name;
 		my $f = $self->open('<', $fullname);
 		my $nojunk = 0;
 		my $host;
@@ -224,9 +228,10 @@ sub find_tag
 	my ($self, $hostname) = @_;
 	my $dir = $self->opendir($self->{lockdir});
 	while (my $name = readdir($dir)) {
-		my $fullname = $self->{lockdir}."/".$name;
-		next if -d $fullname;
+		next if $name eq '.' or $name eq '..';
 		next if $name =~ m/^host:/;
+		#next if -d $fullname;
+		my $fullname = $self->{lockdir}."/".$name;
 		my $f = $self->open('<', $fullname);
 		my ($host, $cleaned, $tag);
 		while (<$f>) {

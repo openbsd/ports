@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.80 2015/05/06 12:20:35 espie Exp $
+# $OpenBSD: Core.pm,v 1.81 2015/05/07 12:30:46 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -249,7 +249,7 @@ sub reap_wait
 sub cleanup
 {
 	my $class = shift;
-	$< = 0;
+	local $> = 0;
 	for my $repo ($class->repositories) {
 		for my $pid (keys %$repo) {
 			kill INT => $pid;
