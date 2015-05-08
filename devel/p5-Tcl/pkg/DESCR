@@ -1,0 +1,5 @@
+The Tcl extension provides a small but complete interface into libtcl
+and any other Tcl-based library. It lets you create Tcl interpreters
+(as perl5 objects), bind in commands to them (either perl subroutines
+or C functions dynamically loaded with the DynaLoader extension) and
+execute Tcl code in those interpreters.
