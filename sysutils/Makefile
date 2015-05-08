@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.341 2015/04/16 17:55:19 sebastia Exp $
+# $OpenBSD: Makefile,v 1.342 2015/05/08 19:36:06 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -85,6 +85,7 @@
      SUBDIR += libstatgrab
      SUBDIR += libvirt
      SUBDIR += libvirt-python
+     SUBDIR += lockfile
      SUBDIR += logfmon
      SUBDIR += login_duo
      SUBDIR += login_fingerprint
