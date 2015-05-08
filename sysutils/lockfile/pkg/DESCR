@@ -1,0 +1,9 @@
+This package contains the lockfile(1) program, originally distributed
+as part of procmail.
+
+lockfile can be used to create one or more semaphore files. If lockfile
+can't create all the specified files (in the specified order), it waits
+sleeptime (defaults to 8) seconds and retries the last file that didn't
+succeed. You can specify the number of retries to do until failure is
+returned. If the number of retries is -1 (default, i.e., -r-1) lockfile
+will retry forever.
