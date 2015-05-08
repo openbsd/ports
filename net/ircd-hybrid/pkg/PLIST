@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/04/09 20:01:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/05/08 07:48:43 ajacoutot Exp $
 @conflict bnc-*
 @conflict ircd-ratbox-*
 @newgroup _ircd-hybrid:616
@@ -194,14 +194,12 @@ share/ircd-hybrid/help/
 share/ircd-hybrid/help/accept
 share/ircd-hybrid/help/admin
 share/ircd-hybrid/help/away
-share/ircd-hybrid/help/capab
 share/ircd-hybrid/help/challenge
 share/ircd-hybrid/help/close
 share/ircd-hybrid/help/cmode
 share/ircd-hybrid/help/connect
 share/ircd-hybrid/help/die
 share/ircd-hybrid/help/dline
-share/ircd-hybrid/help/eob
 share/ircd-hybrid/help/error
 share/ircd-hybrid/help/etrace
 share/ircd-hybrid/help/gline
@@ -238,12 +236,9 @@ share/ircd-hybrid/help/quit
 share/ircd-hybrid/help/rehash
 share/ircd-hybrid/help/restart
 share/ircd-hybrid/help/resv
-share/ircd-hybrid/help/server
 share/ircd-hybrid/help/set
-share/ircd-hybrid/help/sjoin
 share/ircd-hybrid/help/squit
 share/ircd-hybrid/help/stats
-share/ircd-hybrid/help/svinfo
 share/ircd-hybrid/help/time
 share/ircd-hybrid/help/topic
 share/ircd-hybrid/help/trace
