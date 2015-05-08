@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2015/04/27 19:15:10 landry Exp $
+# $OpenBSD: Makefile,v 1.52 2015/05/08 09:08:44 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -55,7 +55,8 @@ do-install:
 	${INSTALL_DATA} ${NSSOBJ}/lib/*.so.${SO_VERSION} ${PREFIX}/lib/
 	${INSTALL_DATA} ${NSSOBJ}/lib/{libcrmf.a,*.chk} ${PREFIX}/lib/
 	cd ${NSSOBJ}/bin && ${INSTALL_PROGRAM} ${MAIN_TOOLS} ${PREFIX}/bin/
-	${SUBST_CMD} -c ${FILESDIR}/nss.pc ${PREFIX}/lib/pkgconfig/nss.pc \
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/nss.pc \
+		${PREFIX}/lib/pkgconfig/nss.pc \
 		${FILESDIR}/nss-config ${PREFIX}/bin/nss-config
 	chown ${BINOWN}:${BINGRP} ${PREFIX}/{bin/nss-config,lib/pkgconfig/nss.pc}
 	chmod +x ${PREFIX}/bin/nss-config

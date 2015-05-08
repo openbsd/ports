@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/04/13 01:01:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2015/05/08 09:08:44 espie Exp $
 
 
 COMMENT=		mod_perl Apache gallery handler
@@ -44,7 +44,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/{README,INSTALL} ${DOCSDIR}
 
-	${SUBST_CMD} -c ${FILESDIR}/apache-gallery.conf \
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/apache-gallery.conf \
 		${DOCSDIR}/apache-gallery.conf.dist
 	chown ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/apache-gallery.conf.dist
 

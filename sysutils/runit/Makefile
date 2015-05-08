@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/11/01 14:54:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2015/05/08 09:08:45 espie Exp $
 
 COMMENT=		daemontools alike replacement for init
 
@@ -54,7 +54,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/package/${doc} ${PREFIX}/share/doc/runit/
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/runit
-	${SUBST_CMD} -c ${FILESDIR}/rc.shutdown \
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/rc.shutdown \
 		${PREFIX}/share/examples/runit/rc.shutdown
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/runit/init
 .for file in ${EXAMPLES}

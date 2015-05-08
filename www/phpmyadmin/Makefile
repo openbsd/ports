@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2015/03/30 20:40:31 giovanni Exp $
+# $OpenBSD: Makefile,v 1.114 2015/05/08 09:08:44 espie Exp $
 
 COMMENT=	tool to handle the administration of MySQL over the web
 
@@ -30,7 +30,7 @@ RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-mysqli \
 		lang/php/${MODPHP_VERSION},-gd
 
 post-extract:
-	${SUBST_CMD} -c ${FILESDIR}/phpMyAdmin-httpd.conf \
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/phpMyAdmin-httpd.conf \
 	    ${WRKSRC}/examples/phpMyAdmin-httpd.conf
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/26 19:02:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/08 09:08:44 espie Exp $
 
 COMMENT=		tool for managing events and logs
 
@@ -41,7 +41,7 @@ do-install:
 	cd ${WRKSRC} && cp -R lib locales vendor ${LS_BASE}
 	cd ${LS_BASE}/vendor/ && ln -sf ${LOCALBASE}/jruby
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/logstash/
-	${SUBST_CMD} -c ${FILESDIR}/logstash.conf \
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/logstash.conf \
 		${PREFIX}/share/examples/logstash/logstash.conf
 
 .include <bsd.port.mk>

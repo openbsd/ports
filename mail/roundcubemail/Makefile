@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2015/04/26 22:44:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2015/05/08 09:08:44 espie Exp $
 
 COMMENT=	imap4 webmail client
 
@@ -58,7 +58,7 @@ do-install:
 .for i in .htaccess config/mimetypes.php
 	mv ${INSTDIR}/$i ${INSTDIR}/$i.dist
 .endfor
-	@${SUBST_CMD} -c ${FILESDIR}/roundcubemail.conf \
+	@${SUBST_CMD} -m 0644 -c ${FILESDIR}/roundcubemail.conf \
 	    ${INSTDIR}/roundcubemail.conf.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}; \
 	chgrp -R wheel ${INSTDIR}/bin; \

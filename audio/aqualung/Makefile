@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/03/27 21:38:10 brad Exp $
+# $OpenBSD: Makefile,v 1.39 2015/05/08 09:08:44 espie Exp $
 
 COMMENT=	advanced music player
 
@@ -100,7 +100,7 @@ post-patch:
 post-install:
 	mv ${PREFIX}/share/aqualung/doc ${PREFIX}/share/doc/aqualung
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	@${SUBST_CMD} -c ${FILESDIR}/aqualung.desktop \
+	@${SUBST_CMD} -m 0644 -c ${FILESDIR}/aqualung.desktop \
 		${PREFIX}/share/applications/aqualung.desktop
 	@chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/applications/aqualung.desktop
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/04/18 13:35:27 schwarze Exp $
+# $OpenBSD: Makefile,v 1.23 2015/05/08 09:08:44 espie Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
@@ -54,7 +54,7 @@ post-install:
 			${PREFIX}/share/doc/rabbitmq; \
 	done
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rabbitmq
-	${SUBST_CMD} -c ${FILESDIR}/rabbitmq.conf \
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/rabbitmq.conf \
 		${PREFIX}/share/examples/rabbitmq/rabbitmq-env.conf
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2015/05/04 07:43:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2015/05/08 09:08:44 espie Exp $
 
 COMMENT=	easy and universal access to shared and/or personal files
 
@@ -51,7 +51,7 @@ do-install:
 	chown -R ${BINOWN}:${BINGRP} ${INSTDIR}
 
 	${INSTALL_DATA_DIR} ${PREFIX}/conf/modules.sample
-	${SUBST_CMD} -c ${FILESDIR}/httpd-owncloud.conf.dist.in \
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/httpd-owncloud.conf.dist.in \
 		${PREFIX}/conf/modules.sample/httpd-owncloud.conf.dist
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/03/23 14:36:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/05/08 09:08:44 espie Exp $
 
 COMMENT=	c++ validating XML parser
 
@@ -47,6 +47,7 @@ post-extract:
 		${WRKSRC}/util/Platforms/OpenBSD/OpenBSDPlatformUtils.cpp
 	cp ${FILESDIR}/{Makefile.in,OpenBSDDefs.hpp} \
 		${WRKSRC}/util/Platforms/OpenBSD/
+	chmod 0644 ${WRKSRC}/util/Platforms/OpenBSD/{Makefile.in,OpenBSDDefs.hpp}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile.incl

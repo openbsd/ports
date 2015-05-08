@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/11/11 08:40:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2015/05/08 09:08:45 espie Exp $
 
 COMMENT=	software project management and comprehension tool
 
@@ -43,7 +43,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/settings.xml ${SAMPLEDIR}/
 	ln -s ${SYSCONFDIR}/maven ${PREFIX}/maven/conf
 	${SUBST_CMD} ${WRKSRC}/bin/mvn
-	${SUBST_CMD} -c ${FILESDIR}/maven.rc ${SAMPLEDIR}/maven.rc
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/maven.rc ${SAMPLEDIR}/maven.rc
 	${SUBST_CMD} -m 755 -c ${FILESDIR}/mvn ${PREFIX}/bin/mvn
 
 .include <bsd.port.mk>

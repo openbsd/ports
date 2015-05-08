@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2014/09/28 13:44:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2015/05/08 09:08:44 espie Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -135,7 +135,7 @@ post-build:
 
 post-install:
 # install pre-generated config6 to avoid @exec/@unexec-delete
-	${SUBST_CMD} -c ${FILESDIR}/config6 ${PREFIX}/lib/graphviz/config6
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/config6 ${PREFIX}/lib/graphviz/config6
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/graphviz/config6
 # Once upon a time, graphviz used to install the symlink:
 # ${PREFIX}/lib/tcl${MODTCL_VERSION}/graphviz -> ${PREFIX}/lib/tcl/graphviz

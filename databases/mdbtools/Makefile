@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/25 07:13:02 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/08 09:08:44 espie Exp $
 
 COMMENT-main =		read microsoft Access MDB
 COMMENT-gmdb =		graphical interface to MDB tools
@@ -87,7 +87,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${SUBST_CMD} -c ${FILESDIR}/gmdb2.desktop \
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/gmdb2.desktop \
 			${PREFIX}/share/applications/gmdb2.desktop
 
 .include <bsd.port.mk>

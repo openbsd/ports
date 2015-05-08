@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.228 2015/04/16 14:55:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.229 2015/05/08 09:08:44 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -98,7 +98,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/{etc/pam.d,var/db}
 	${INSTALL_DATA} ${FILESDIR}/gdm-* \
 		${PREFIX}/share/examples/gdm/etc/pam.d
-	${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} \
+	${SUBST_CMD} -m 0644 -c -o ${SHAREOWN} -g ${SHAREGRP} \
 		${FILESDIR}/10_org.gnome.login-screen.gschema.override \
 		${PREFIX}/share/glib-2.0/schemas/10_org.gnome.login-screen.gschema.override
 	mv ${WRKINST}/etc/gdm ${PREFIX}/share/examples/gdm/etc

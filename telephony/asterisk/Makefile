@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.216 2015/05/05 12:47:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.217 2015/05/08 09:08:44 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -249,7 +249,7 @@ post-install:
 		${PREFIX}/share/doc/asterisk
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/openbsd
 .for i in ${EXAMPLEFILES}
-	@${SUBST_CMD} -c ${FILESDIR}/$i.sample \
+	@${SUBST_CMD} -m 0644 -c ${FILESDIR}/$i.sample \
 	    ${EXAMPLEDIR}/openbsd/$i.sample
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/contrib/scripts/asterisk.ldif \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/11/23 08:48:27 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2015/05/08 09:08:45 espie Exp $
 
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
@@ -39,7 +39,7 @@ PKG_ARCH =	*
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cp -Rp ${WRKSRC}/{README,INSTALL,dba,inc,config,htdocs,po,scripts} ${INSTDIR}
-	${SUBST_CMD} -c ${FILESDIR}/davical.conf ${INSTDIR}/davical.conf
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/davical.conf ${INSTDIR}/davical.conf
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

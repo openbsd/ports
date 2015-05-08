@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/09/13 18:09:20 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2015/05/08 09:08:44 espie Exp $
 
 COMMENT =	streaming audio server for Squeezebox network music players
 
@@ -96,7 +96,7 @@ pre-configure:
 	@ln -s ${TRUEPREFIX}/share/mysql/english/errmsg.sys \
 	    ${WRKSRC}/MySQL/errmsg.sys  
 	@rm -rf ${WRKSRC}/CPAN
-	@${SUBST_CMD} -c ${FILESDIR}/Custom.pm \
+	@${SUBST_CMD} -m 0644 -c ${FILESDIR}/Custom.pm \
 	    ${WRKSRC}/Slim/Utils/OS/Custom.pm
 
 NO_BUILD =	yes

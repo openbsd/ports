@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/04/05 22:26:17 robert Exp $
+# $OpenBSD: Makefile,v 1.37 2015/05/08 09:08:45 espie Exp $
 
 COMMENT=	ActiveSync protocol implementation
 
@@ -34,7 +34,7 @@ do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
 	find ${INSTDIR} -type f -name \*.orig -exec rm -f {} \;
 	mv ${INSTDIR}/config.php ${INSTDIR}/config.php.dist
-	${SUBST_CMD} -c ${FILESDIR}/z-push.conf \
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/z-push.conf \
 		${INSTDIR}/z-push.conf.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 

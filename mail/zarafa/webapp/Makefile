@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/05 22:25:53 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2015/05/08 09:08:44 espie Exp $
 
 COMMENT=	next generation web interface for Zarafa
 
@@ -81,7 +81,7 @@ pre-configure:
 
 do-install:
 	cp -Rp ${WRKSRC}/usr/share/zarafa-webapp ${PREFIX}
-	${SUBST_CMD} -c ${FILESDIR}/zarafa-webapp.conf \
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/zarafa-webapp.conf \
 		${INSTDIR}/zarafa-webapp.conf.dist
 	cat ${WRKSRC}/etc/zarafa/webapp/config.php > \
 		${INSTDIR}/config.php.dist

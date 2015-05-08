@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/11/06 17:13:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/05/08 09:08:44 espie Exp $
 
 COMMENT=		rss reader, live stream, mashup, aggregation webapp
 
@@ -39,7 +39,7 @@ do-extract:
 do-install:
 	perl -i -pe 's,^#(RewriteBase /selfoss.*),\1,' ${WRKDIST}/.htaccess
 	cp -Rp ${WRKDIST} ${INSTDIR}
-	${SUBST_CMD} -c ${FILESDIR}/selfoss.conf ${INSTDIR}/selfoss.conf.dist
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/selfoss.conf ${INSTDIR}/selfoss.conf.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

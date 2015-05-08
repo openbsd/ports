@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/03/16 12:56:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/08 09:08:44 espie Exp $
 
 COMMENT-main =		mother of Mail Transfer Agents
 COMMENT-libmilter =	mail filter support library for sendmail
@@ -69,10 +69,12 @@ WRKDIST =		${WRKDIR}/sendmail-${V}
 
 post-extract:
 	cp ${FILESDIR}/cf/*.mc ${WRKSRC}/cf/cf
+	chmod 0644 ${WRKSRC}/cf/cf/*.mc
 	cp ${FILESDIR}/sharedlibrary.m4 ${WRKSRC}/devtools/M4/UNIX/
+	chmod 0644 ${WRKSRC}/devtools/M4/UNIX/sharedlibrary.m4
 	cp -R ${WRKSRC}/libmilter ${WRKSRC}/libsharedmilter
 	perl -pi -e 's=`library=`sharedlibrary=' ${WRKSRC}/libsharedmilter/Makefile.m4
-	${SUBST_CMD} -c ${FILESDIR}/site.OS.m4 \
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/site.OS.m4 \
 	    ${WRKSRC}/devtools/Site/site.config.m4
 
 opfiles =		op.ps op.txt
@@ -96,14 +98,14 @@ post-install:
 	mv ${PREFIX}/sbin/makemap ${PREFIX}/libexec/sendmail
 .for file in sendmail-enable sendmail-disable
 	@echo "Installing ${PREFIX}/sbin/${file}"
-	@${SUBST_CMD} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
+	@${SUBST_CMD} -c -m 0755 -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 	    ${FILESDIR}/${file} ${PREFIX}/sbin/${file}
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sendmail/
 .for file in access genericstable local-host-names mailertable relay-domains \
 	    trusted-users virtusertable
 	@echo "Installing ${PREFIX}/share/examples/sendmail/${file}"
-	@${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} \
+	@${SUBST_CMD} -m 0644 -c -o ${SHAREOWN} -g ${SHAREGRP} \
 	    ${FILESDIR}/${file} ${PREFIX}/share/examples/sendmail/${file}
 .endfor
 	${INSTALL_DATA_DIR} ${docdir}
@@ -111,7 +113,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${docdir}
 .endfor
 	@echo "Installing ${docdir}/mailer.conf.sendmail"
-	@${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} \
+	@${SUBST_CMD} -m 0644 -c -o ${SHAREOWN} -g ${SHAREGRP} \
 	    ${FILESDIR}/mailer.conf.sendmail ${docdir}/mailer.conf.sendmail
 	${INSTALL_DATA_DIR} ${docdir}/op
 .for file in op.me Makefile ${opfiles}

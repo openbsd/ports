@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2014/11/20 23:09:44 kurt Exp $
+# $OpenBSD: Makefile,v 1.73 2015/05/08 09:08:44 espie Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -140,6 +140,7 @@ post-extract:
 		sed 's/linux/bsd/g; s/Linux/Bsd/g' < ${WRKDIST}/$$f > ${WRKDIST}/$$t; \
 	done
 	@cp -f ${FILESDIR}/cacerts ${WRKDIST}/jdk/src/share/lib/security
+	@chmod 0644 ${WRKDIST}/jdk/src/share/lib/security/cacerts
 	@cp -f ${FILESDIR}/PLATFORM_API_BSDOS_PCM.c \
 		${WRKDIST}/jdk/src/solaris/native/com/sun/media/sound
 	@cd ${WRKDIST} && \
