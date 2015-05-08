@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1332 2015/05/07 14:20:33 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1333 2015/05/08 17:43:36 stu Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1010,6 +1010,7 @@
      SUBDIR += p5-TAP-Harness-Multiple
      SUBDIR += p5-Taint-Runtime
      SUBDIR += p5-Task-Weaken
+     SUBDIR += p5-Tcl
      SUBDIR += p5-Term-Encoding
      SUBDIR += p5-Term-ProgressBar
      SUBDIR += p5-Term-Prompt
