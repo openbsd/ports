@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/04/14 18:10:27 florian Exp $
+# $OpenBSD: Makefile,v 1.37 2015/05/08 13:13:14 florian Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PGSQL database access module for PowerDNS
 COMMENT-ldap=		LDAP module for PowerDNS
 
-V=			3.4.3
+V=			3.4.4
 DISTNAME=		pdns-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME=		powerdns-${V}
