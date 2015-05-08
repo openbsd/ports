@@ -1,6 +1,6 @@
-$OpenBSD: patch-salt_utils_http_py,v 1.1 2015/05/07 09:15:55 ajacoutot Exp $
+$OpenBSD: patch-salt_utils_http_py,v 1.2 2015/05/08 07:46:17 ajacoutot Exp $
 
-https://github.com/saltstack/salt/pull/23445
+https://github.com/saltstack/salt/commit/c995d52190a2bf63609309c0a6ea00e8921b80da
 
 --- salt/utils/http.py.orig	Thu May  7 10:56:37 2015
 +++ salt/utils/http.py	Thu May  7 10:56:50 2015
