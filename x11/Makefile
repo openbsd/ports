@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.549 2015/04/04 13:19:00 landry Exp $
+# $OpenBSD: Makefile,v 1.550 2015/05/08 17:43:59 stu Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -196,6 +196,7 @@
      SUBDIR += p5-Tk-Splash
      SUBDIR += p5-Tk-Stderr
      SUBDIR += p5-Tk-TableMatrix
+     SUBDIR += p5-Tkx
      SUBDIR += p5-Wx
      SUBDIR += p5-X-Osd
      SUBDIR += p5-X11-Protocol
