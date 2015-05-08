@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.103 2015/05/05 13:38:19 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.104 2015/05/08 12:47:25 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 5 2015 $
+.Dd $Mdocdate: May 8 2015 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -162,6 +162,13 @@ Known parameters are as follows:
 Set to 1 if
 .Nm
 should clean work directories even if the port errored out.
+.It Ar BUILD_USER
+Default value for
+.Ar build_user
+if you want to specify it on the command line, and want to ensure even
+the small "discover PORTSDIR" activity at the beginning of
+.Nm
+is not run as root.
 .It Ar CDROM_ONLY
 Don't fetch distfiles that are not allowed for cdrom.
 .It Ar COLOR
@@ -200,6 +207,11 @@ abruptly.
 Sometimes, one may want manual control over which locks to remove.
 .It Ar FETCH_JOBS
 Alternate way to specify the number of fetch jobs.
+.It Ar FETCH_USER
+User for all fetch activities if possible
+.Po defaults to
+.Ar build_user
+.Pc .
 .It Ar FETCH_TIMEOUT
 Timeout (in seconds) after which fetches that don't show
 any progress will be killed.
@@ -213,6 +225,12 @@ to figure out old distfiles and update
 .Pa ${FULLDISTDIR}/history .
 .It Ar LOGDIR
 Alternate way to specify the logging directory.
+.It Ar LOG_USER
+User
+for all log files if possible
+.Po defaults to
+.Ar build_user
+.Pc .
 .It Ar LOCKDIR
 Alternate way to specify the locking directory.
 .It Ar MIRROR
@@ -265,6 +283,12 @@ call
 on every task start/end while creating packages.
 This does produce lots of messages, it is intended to route the logging
 on another machine, while tracking down panics and other hangs.
+.It Ar UNPRIV_USER
+.Nm
+should normally be run as root.
+As far as possible, it will drop privileges to
+.Ar UNPRIV_USER
+which should be a fairly restricted user.
 .It Ar WANTSIZE
 Alternate way to specify
 .Fl s .
@@ -349,13 +373,6 @@ before building.
 Synonym for
 .Ar build_user
 (compatibility).
-.It fetch_user=user
-Use
-.Ar user
-for all fetch activities if possible
-.Po defaults to
-.Ar build_user
-.Pc .
 .It jobs=n
 Number of jobs to run on that host, defaults to hw.ncpu.
 .It junk=n
@@ -363,13 +380,6 @@ Junk unused packages each n steps.
 See
 .Fl J
 option.
-.It log_user=user
-Use
-.Ar user
-for all log files if possible
-.Po defaults to
-.Ar build_user
-.Pc .
 .It memory=thr
 Build everything below that wrkdir threshold with
 .Ev USE_MFS Ns = Ns Sq Yes ,
@@ -768,6 +778,14 @@ as decided randomly at the start of each build.
 .Nm
 can use a privilege drop model where it doesn't need
 .Xr sudo 8 .
+.Pp
+Setting up
+.Nm
+with that model is highly recommended, since
+.Xr sudo 8
+support in
+.Nm
+will be removed soon.
 .Bl -bullet
 .It
 Start
@@ -783,7 +801,7 @@ will drop privileges whenever it tries to build or fetch or log something.
 .It
 .Ar build_user
 is used to build stuff locally or distantly (can be per-host), using:
-.Li chroot -u user /build_root
+.Li chroot -u pbuild /build_root
 (with
 .Pa /build_root
 =
@@ -795,21 +813,24 @@ Note that
 will not start as root without a
 .Ar build_user .
 .It
-.Ar log_user
+.Ar LOG_USER
 is used to open all log files.
-.Ar log_user
+.Ar LOG_USER
 only needs to exist locally.
 .It
-.Ar fetch_user
+.Ar FETCH_USER
 is used to fetch distfiles and handle corresponding log info.
 Thus,
 .Xr ftp 1
 does not happen as root.
 .It
+.Ar UNPRIV_USER
+is used for other activities that do not require any rights.
+.It
 .Nm
 creates local directories as root, then gives them to the appropriate user.
 .It
-Neither of those users require
+None of those users require
 .Xr sudo 8
 privileges.
 .Pp
@@ -1029,7 +1050,7 @@ will force
 into checking all files again.
 .Pp
 All those files belong to the
-.Ar fetch_user
+.Ar FETCH_USER
 if it is defined.
 They should be readable for the
 .Ar build_user .
@@ -1040,7 +1061,7 @@ also records rolling build statistics under
 and uses them automatically in the absence of
 .Fl b Ar logfile .
 That file belongs to the
-.Ar log_user
+.Ar LOG_USER
 if it is defined.
 .Pp
 If
@@ -1053,7 +1074,7 @@ by default, location adjustable with
 .Pc .
 This is then reused for the mfs threshold option.
 That file also belongs to the
-.Ar log_user
+.Ar LOG_USER
 if it is defined.
 .Pp
 .Nm
@@ -1061,7 +1082,7 @@ will also create a large number of log files under
 .Pa ${PORTSDIR}/logs/{$ARCH} ,
 which will belong
 to
-.Ar log_user
+.Ar LOG_USER
 if it is defined:
 .Bl -tag -width engine.log
 .It Pa affinity/
