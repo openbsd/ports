@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/08 03:11:18 stu Exp $
+${P5SITE}/Tkx/
+${P5SITE}/Tkx.pm
+${P5SITE}/Tkx/LabEntry.pm
+${P5SITE}/Tkx/MegaConfig.pm
+${P5SITE}/Tkx/Tutorial.pod
+@man man/man1/tkx-ed.1
+@man man/man3p/Tkx.3p
+@man man/man3p/Tkx::LabEntry.3p
+@man man/man3p/Tkx::MegaConfig.3p
+@man man/man3p/Tkx::Tutorial.3p
+share/examples/p5-Tkx/
+share/examples/p5-Tkx/menu
+share/examples/p5-Tkx/tkx-ed
+share/examples/p5-Tkx/tkx-prove

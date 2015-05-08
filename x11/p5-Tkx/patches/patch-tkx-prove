@@ -1,0 +1,42 @@
+$OpenBSD: patch-tkx-prove,v 1.1.1.1 2015/05/08 03:11:18 stu Exp $
+--- tkx-prove.orig	Sun Nov 29 15:34:20 2009
++++ tkx-prove	Thu May  7 05:46:07 2015
+@@ -112,8 +112,7 @@ sub set_dir {
+     }, "$dir/t");
+ }
+ 
+-use Test::Harness::Straps;
+-my $strap = Test::Harness::Straps->new;
++use TAP::Parser;
+ 
+ $tree->g_bind("<<TreeviewSelect>>", \&tree_select);
+ 
+@@ -134,16 +133,19 @@ sub run_tests {
+ 	$tree->set($item, "time", "-");
+ 	Tkx::update();
+ 
+-	my $cmd = $strap->_command_line("$dir/$test");
+-	my $before = time;
+-	my @output = qx($cmd);
+-	my $used = time - $before;
+-	my $status = $?;
+-	my %res = $strap->analyze($item, \@output);
+-	$res{output} = join("", @output);
+-	$res{start_time} = $before;
++	my %res;
++	my $parser = TAP::Parser->new( { source => "$dir/$test" } );
++	while ( my $pres = $parser->next ) {
++		$res{output} .= $pres->as_string . "\n";
++	}
++	my $used = $parser->end_time - $parser->start_time;
+ 	$res{used_time} = sprintf "%.03f", $used;
+-	$res{status} = $status;
++	$res{skip_all} = $parser->skipped;
++	$res{passing} = ($parser->passed == $parser->tests_run);
++	$res{status} = $parser->exit;
++	$res{max} = $parser->tests_run;
++	$res{ok} = $parser->passed;
++
+ 	#use Data::Dump; print Data::Dump::dump(\%res), "\n";
+ 	$result{$item} = \%res;
+ 
