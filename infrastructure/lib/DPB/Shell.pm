@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.8 2015/05/05 08:54:22 espie Exp $
+# $OpenBSD: Shell.pm,v 1.9 2015/05/08 12:35:53 espie Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -26,7 +26,7 @@ sub new
 {
 	my ($class, $host) = @_;
 	$host //= {}; # this makes it possible to build "localhost" shells
-	bless {sudo => 0, prop => $host->{prop}}, $class;
+	bless {as_root => 0, prop => $host->{prop}}, $class;
 }
 
 sub prop
@@ -56,14 +56,14 @@ sub env
 	return $self;
 }
 
-sub sudo
+sub as_root
 {
 	my ($self, $val) = @_;
-	# XXX calling sudo without parms is equivalent to saying "1"
+	# XXX calling as_root without parms is equivalent to saying "1"
 	if (@_ == 1) {
 		$val = 1;
 	}
-	$self->{sudo} = $val;
+	$self->{as_root} = $val;
 	return $self;
 }
 
@@ -108,7 +108,7 @@ sub env
 sub exec
 {
 	my ($self, @argv) = @_;
-	if ($self->{sudo}) {
+	if ($self->{as_root}) {
 		unshift(@argv, OpenBSD::Paths->sudo, "-E");
 	}
 	if (-t STDIN) {
@@ -127,14 +127,14 @@ sub exec
 	if ($self->{nochroot}) {
 		undef $chroot;
 	}
-	unshift @argv, 'exec' unless $self->{sudo} && !$chroot;
+	unshift @argv, 'exec' unless $self->{as_root} && !$chroot;
 	if ($self->{env}) {
 		while (my ($k, $v) = each %{$self->{env}}) {
 			$v //= '';
 			unshift @argv, "$k=\'$v\'";
 		}
 	}
-	if ($self->{sudo} && !$chroot) {
+	if ($self->{as_root} && !$chroot) {
 		unshift(@argv, 'exec', OpenBSD::Paths->sudo, "-E");
 	}
 	my $cmd = join(' ', @argv);
@@ -151,7 +151,7 @@ sub exec
 		if (!$self->prop->{iamroot}) {
 			unshift(@cmd2, OpenBSD::Paths->sudo, "-E");
 		}
-		if (!$self->{sudo} && defined $self->{user}) {
+		if (!$self->{as_root} && defined $self->{user}) {
 			push(@cmd2, "-u", $self->{user}->user);
 		}
 		$self->_run(@cmd2, $chroot, "/bin/sh", "-c", $self->quote($cmd));
@@ -205,7 +205,7 @@ sub exec
 		chroot($chroot);
 	}
 	$self->{user} //= $self->prop->{build_user};
-	if (!$self->{sudo} && defined $self->{user}) {
+	if (!$self->{as_root} && defined $self->{user}) {
 		setgid($self->{user}{gid});
 		setuid($self->{user}{uid});
 	}

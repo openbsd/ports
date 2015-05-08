@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.157 2015/05/07 12:30:46 espie Exp $
+# $OpenBSD: Port.pm,v 1.158 2015/05/08 12:35:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -133,7 +133,7 @@ sub run
 
 	unshift(@args, @l);
 	$core->shell
-	    ->sudo($self->{sudo})
+	    ->as_root($self->{as_root})
 	    ->env(SUBDIR => $fullpkgpath, 
 		PHASE => $t, 
 		@env)
@@ -487,7 +487,7 @@ sub run
 	print "was: ", join(' ', @cmd, (sort keys %{$job->{depends}})), "\n";
 	print join(' ', @cmd, @l), "\n";
 	my $path = $job->{builder}{fullrepo}.'/';
-	$core->shell->env(PKG_PATH => $path)->sudo->exec(@cmd, @l);
+	$core->shell->env(PKG_PATH => $path)->as_root->exec(@cmd, @l);
 	exit(1);
 }
 
@@ -633,7 +633,7 @@ sub run
 		}
 		my @cmd = ('/usr/sbin/pkg_delete', $opt, sort keys %$h);
 		print join(' ', @cmd, "\n");
-		$core->shell->sudo->exec(@cmd);
+		$core->shell->as_root->exec(@cmd);
 		exit(1);
 	} else {
 		exit(2);
@@ -743,7 +743,7 @@ sub run
 	print join(' ', @cmd, $v->fullpkgname, "\n");
 	my $path = $job->{builder}->{fullrepo}.'/';
 	$ENV{PKG_PATH} = $path;
-	$core->shell->nochroot->env(PKG_PATH => $path)->sudo
+	$core->shell->nochroot->env(PKG_PATH => $path)->as_root
 	    ->exec(@cmd, $v->fullpkgname);
 	exit(1);
 }
