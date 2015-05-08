@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.42 2015/05/02 09:44:40 espie Exp $
+# $OpenBSD: Config.pm,v 1.43 2015/05/08 12:37:16 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -23,6 +23,21 @@ use warnings;
 
 package DPB::Config;
 use DPB::User;
+
+sub setup_users
+{
+	my ($class, $state) = @_;
+	for my $u (qw(unpriv_user build_user log_user fetch_user)) {
+		my $U = uc($u);
+		if ($state->defines($U)) {
+			$state->{$u} = DPB::User->new($state->defines($U));
+		}
+	}
+	if (defined $state->{unpriv_user}) {
+		$> = $state->{unpriv_user}{uid};
+		$) = $state->{unpriv_user}{gid};
+	}
+}
 
 sub parse_command_line
 {
@@ -78,9 +93,7 @@ sub parse_command_line
 	if (!defined $state->{base_user}) {
 		$state->usage("Can't figure out who I am");
 	}
-	if ($state->defines('BUILD_USER')) {
-		$state->{build_user} = DPB::User->new($state->defines('BUILD_USER'));
-	}
+	$class->setup_users($state);
 
 	($state->{ports}, $state->{localarch},
 	    $state->{distdir}, $state->{xenocara}) =
@@ -126,6 +139,7 @@ sub parse_command_line
 	while (my ($k, $v) = each %cmdline) {
 		$state->{subst}->{$k} = $v;
 	}
+
 	$state->{chroot} = $state->{default_prop}{chroot};
 	# reparse things properly now that we can chroot
 	my $p;
