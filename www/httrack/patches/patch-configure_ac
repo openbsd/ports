@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2014/10/03 13:06:33 zhuk Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2015/05/09 12:04:19 jasper Exp $
 Fix SSL library detection.
---- configure.ac.ports.orig	Tue Jul 29 01:02:04 2014
-+++ configure.ac	Thu Aug  7 07:55:14 2014
-@@ -160,7 +160,8 @@ AC_CHECK_LIB(ssl, SSL_library_init,
+--- configure.ac.ports.orig	Sun Mar 15 17:47:27 2015
++++ configure.ac	Sat May  9 13:49:28 2015
+@@ -171,7 +171,8 @@ AC_CHECK_LIB(ssl, SSL_library_init,
  	else
  	AC_MSG_RESULT([not available])
  	fi
@@ -10,5 +10,5 @@ Fix SSL library detection.
 +	],
 +	[-lcrypto]
  	)
+ LIBS=$SAVE_LIBS
  AC_SUBST(OPENSSL_LIBS)
- fi

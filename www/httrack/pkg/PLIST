@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/03 13:06:33 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/09 12:04:19 jasper Exp $
 @bin bin/htsserver
 @bin bin/httrack
 @bin bin/proxytrack
@@ -153,13 +153,12 @@ share/doc/httrack/server/option6.html
 share/doc/httrack/server/option7.html
 share/doc/httrack/server/option8.html
 share/doc/httrack/server/option9.html
+share/doc/httrack/server/ping.js
 share/doc/httrack/server/refresh.html
-share/doc/httrack/server/sfx/
-share/doc/httrack/server/sfx/finished.wav
-share/doc/httrack/server/sfx/silent.wav
 share/doc/httrack/server/step2.html
 share/doc/httrack/server/step3.html
 share/doc/httrack/server/step4.html
+share/doc/httrack/server/style.css
 share/doc/httrack/shelldoc.html
 share/doc/httrack/start.html
 share/doc/httrack/step.html

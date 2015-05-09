@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/27 08:15:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/09 12:04:19 jasper Exp $
 
 COMMENT =		offline browser
-DISTNAME =		httrack-3.48.19
-REVISION =		0
+DISTNAME =		httrack-3.48.21
 
 # "main" application libraries
-SHARED_LIBS +=  htsjava                   0.0 # 2.47
-SHARED_LIBS +=  httrack                   0.0 # 2.47
+SHARED_LIBS +=  htsjava                   0.0 # 2.48
+SHARED_LIBS +=  httrack                   0.0 # 2.48
 
 # sample libraries, provided in a separate directory
 SHARED_LIBS +=  baselinks                 0.0 # 1.0

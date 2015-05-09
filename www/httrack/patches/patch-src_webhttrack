@@ -1,38 +1,20 @@
-$OpenBSD: patch-src_webhttrack,v 1.1.1.1 2014/10/03 13:06:33 zhuk Exp $
+$OpenBSD: patch-src_webhttrack,v 1.2 2015/05/09 12:04:19 jasper Exp $
 1. Make it recognize SeaMonkey as a browser, too.
 2. Get rid of some unnecessary bashisms.
 3. Add a hack based on xmessage to avoid stopping WebHTTrack
    right after starting in case of browser already running.
---- src/webhttrack.ports.orig	Mon May 13 13:31:30 2013
-+++ src/webhttrack	Thu Aug 21 17:32:33 2014
+--- src/webhttrack.ports.orig	Sun Mar 15 16:42:09 2015
++++ src/webhttrack	Sat May  9 13:55:56 2015
 @@ -4,7 +4,7 @@
  # Initializes the htsserver GUI frontend and launch the default browser
  
  BROWSEREXE=
--SRCHBROWSEREXE="x-www-browser www-browser iceape mozilla firefox icecat iceweasel abrowser firebird galeon konqueror opera chrome chromium chromium-browser netscape"
-+SRCHBROWSEREXE="x-www-browser www-browser iceape seamonkey mozilla firefox icecat iceweasel abrowser firebird galeon konqueror opera chrome chromium chromium-browser netscape"
+-SRCHBROWSEREXE="x-www-browser www-browser iceape mozilla firefox icecat iceweasel abrowser firebird galeon konqueror opera google-chrome chrome chromium chromium-browser netscape"
++SRCHBROWSEREXE="x-www-browser www-browser iceape seamonkey mozilla firefox icecat iceweasel abrowser firebird galeon konqueror opera google-chrome chrome chromium chromium-browser netscape"
  if test -n "${BROWSER}"; then
  # sensible-browser will f up if BROWSER is not set
  SRCHBROWSEREXE="xdg-open sensible-browser ${SRCHBROWSEREXE}"
-@@ -33,6 +33,8 @@ function mozillabrowser {
- # returns 0, if the browser is mozilla type
- echo "$1" | grep -q "iceape"
- [ $? -eq 0 ] && return 0 
-+echo "$1" | grep -q "seamonkey"
-+[ $? -eq 0 ] && return 0 
- echo "$1" | grep -q "mozilla"
- [ $? -eq 0 ] && return 0 
- echo "$1" | grep -q "netscape"
-@@ -90,7 +92,7 @@ fi
- # this loop is the only reliable solution AFAIK
- end_t=`date +%s`
- if test -n "$start_t" -a -n "$end_t"; then
--	int_t=$[$end_t-$start_t]
-+	int_t=$((end_t - start_t))
- else
- 	int_t=0
- fi
-@@ -169,7 +171,7 @@ TMPSRVFILE="$(mktemp ${TMPDIR:-/tmp}/.webhttrack.XXXXX
+@@ -103,7 +103,7 @@ TMPSRVFILE="$(mktemp ${TMPDIR:-/tmp}/.webhttrack.XXXXX
  SRVURL=
  MAXCOUNT=60
  while ! test -n "$SRVURL"; do
@@ -41,7 +23,7 @@ $OpenBSD: patch-src_webhttrack,v 1.1.1.1 2014/10/03 13:06:33 zhuk Exp $
  test $MAXCOUNT -gt 0 || exit 1
  test $MAXCOUNT -lt 50 && echo "waiting for server to reply.."
  SRVURL=`grep -E URL= ${TMPSRVFILE} | cut -f2- -d=`
-@@ -191,7 +193,18 @@ return 0
+@@ -126,7 +126,18 @@ return 0
  trap "cleanup now; exit" 1 2 3 4 5 6 7 8 9 11 13 14 15 16 19 24 25
  
  # Got SRVURL, launch browser
