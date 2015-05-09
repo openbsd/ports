@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/06/22 06:48:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/05/09 08:54:43 jasper Exp $
 @bin bin/vym
 @man man/man1/vym.1
 share/doc/vym/
@@ -6,6 +6,7 @@ share/doc/vym/vym.pdf
 share/doc/vym/vym_es.pdf
 share/doc/vym/vym_fr.pdf
 share/examples/vym/
+share/examples/vym/ao-report-example.vym
 share/examples/vym/frames.vym
 share/examples/vym/lifeforms.vym
 share/examples/vym/math.vym
@@ -19,10 +20,11 @@ share/vym/flags/bell.png
 share/vym/flags/bookmark.png
 share/vym/flags/clanbomber.png
 share/vym/flags/desktopnew.png
-share/vym/flags/flag-arrow-2down.png
-share/vym/flags/flag-arrow-2up.png
+share/vym/flags/flag-2arrow-down.png
+share/vym/flags/flag-2arrow-up.png
 share/vym/flags/flag-arrow-down.png
 share/vym/flags/flag-arrow-up.png
+share/vym/flags/flag-clock.png
 share/vym/flags/flag-cross-red.png
 share/vym/flags/flag-exclamationmark.png
 share/vym/flags/flag-flash.png
@@ -40,7 +42,7 @@ share/vym/flags/flag-questionmark.png
 share/vym/flags/flag-rose.png
 share/vym/flags/flag-scrolled-right.png
 share/vym/flags/flag-smiley-good.png
-share/vym/flags/flag-smiley-omg.png
+share/vym/flags/flag-smiley-omb.png
 share/vym/flags/flag-smiley-sad.png
 share/vym/flags/flag-stopsign.png
 share/vym/flags/flag-target.png
@@ -200,7 +202,9 @@ share/vym/icons/vym.png
 share/vym/icons/vym.xpm
 share/vym/scripts/
 share/vym/scripts/bugger
+share/vym/scripts/getbinaries
 share/vym/scripts/makedist-vym
+share/vym/scripts/screencast
 share/vym/scripts/vivym
 share/vym/scripts/vym-addmail.rb
 share/vym/scripts/vym-ruby.rb
