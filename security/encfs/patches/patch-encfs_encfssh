@@ -1,0 +1,13 @@
+$OpenBSD: patch-encfs_encfssh,v 1.1 2015/05/09 12:18:58 jca Exp $
+
+- no fusermount(1) on OpenBSD, umount(8) is enough
+
+--- encfs/encfssh.orig	Sun Nov 29 23:04:12 2009
++++ encfs/encfssh	Thu May  7 19:58:09 2015
+@@ -63,5 +63,5 @@ orig_dir=$(pwd)
+ cd $unenc_dir
+ 
+ # Set the shell up
+-exec /bin/sh -c "$SHELL ; cd $orig_dir ; fusermount -u $unenc_dir ; if ! $unenc_dir_given; then rmdir $unenc_dir; fi"
++exec /bin/sh -c "$SHELL ; cd $orig_dir ; umount $unenc_dir ; if ! $unenc_dir_given; then rmdir $unenc_dir; fi"
+ 
