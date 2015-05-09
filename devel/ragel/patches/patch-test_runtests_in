@@ -1,12 +1,12 @@
-$OpenBSD: patch-test_runtests_in,v 1.1.1.1 2011/11/15 16:35:15 jeremy Exp $
+$OpenBSD: patch-test_runtests_in,v 1.2 2015/05/09 15:08:24 ajacoutot Exp $
 
 Fix bug not respecting ruby version you pass to configure.
 
 Use gdiff since our diff doesn't implement --strip-trailing-cr.
 
---- test/runtests.in.orig	Mon Nov 14 16:38:12 2011
-+++ test/runtests.in	Mon Nov 14 16:41:51 2011
-@@ -118,11 +118,11 @@ function run_test()
+--- test/runtests.in.orig	Mon Oct 13 20:00:59 2014
++++ test/runtests.in	Sat May  9 16:56:59 2015
+@@ -119,11 +119,11 @@ function run_test()
  		
  		exec_cmd=./$binary
  		[ $lang = java ] && exec_cmd="java ${root}"

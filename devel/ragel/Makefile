@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2014/04/18 09:55:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/09 15:08:24 ajacoutot Exp $
 
-COMMENT =	state machine compiler
+COMMENT =		state machine compiler
 
-DISTNAME =	ragel-6.7
-CATEGORIES =	devel
-REVISION =	0
+DISTNAME =		ragel-6.9
+CATEGORIES =		devel
 
-HOMEPAGE =	http://www.complang.org/ragel/
+HOMEPAGE =		http://www.colm.net/open-source/ragel/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM = Yes
 
-MASTER_SITES =		${HOMEPAGE}
+WANTLIB += c m stdc++
 
-WANTLIB =		c m stdc++
+MASTER_SITES =		http://www.colm.net/files/ragel/
 
 MODULES =		lang/ruby
 
@@ -22,7 +21,12 @@ MODRUBY_RUNDEP =	No
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		ac_cv_prog_RUBY=${RUBY}
+CONFIGURE_ENV =		ac_cv_prog_RUBY=${RUBY} \
+			ac_cv_prog_GDC= \
+			ac_cv_prog_GMCS= \
+			ac_cv_prog_GO= \
+			ac_cv_prog_JAVAC= \
+			ac_cv_prog_TXL=
 
 TEST_DEPENDS =		shells/bash \
 			textproc/gdiff
