@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/09 12:31:55 mcbride Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/09 12:15:29 czarkoff Exp $
 bin/gorilla
 lib/password-gorilla/
 lib/password-gorilla/blowfish/
@@ -6,6 +6,8 @@ lib/password-gorilla/blowfish/LICENSE.txt
 lib/password-gorilla/blowfish/blowfish.tcl
 lib/password-gorilla/blowfish/blowtest.tcl
 lib/password-gorilla/blowfish/pkgIndex.tcl
+lib/password-gorilla/gorilla.tcl
+lib/password-gorilla/help.txt
 lib/password-gorilla/isaac.tcl
 lib/password-gorilla/modules/
 lib/password-gorilla/modules/PWGprogress-1.0.0.tm
@@ -16,16 +18,21 @@ lib/password-gorilla/msgs/es.msg
 lib/password-gorilla/msgs/fr.msg
 lib/password-gorilla/msgs/help/
 lib/password-gorilla/msgs/help/it.msg
+lib/password-gorilla/msgs/help/pt.msg
 lib/password-gorilla/msgs/it.msg
+lib/password-gorilla/msgs/pt.msg
 lib/password-gorilla/msgs/ru.msg
 lib/password-gorilla/pics/
+lib/password-gorilla/pics/application.gif
 lib/password-gorilla/pics/browse.gif
 lib/password-gorilla/pics/gorilla-16x16.gif
 lib/password-gorilla/pics/gorilla-32x32.gif
 lib/password-gorilla/pics/gorilla-48x48.gif
 lib/password-gorilla/pics/gorilla-logo.jpg
 lib/password-gorilla/pics/gorilla-splash.gif
-lib/password-gorilla/pics/gorilla.ico
+lib/password-gorilla/pics/group.gif
+lib/password-gorilla/pics/login.gif
+lib/password-gorilla/pics/splash.gif
 lib/password-gorilla/pics/vector-logo/
 lib/password-gorilla/pics/vector-logo/gorilla-logo-lines.pbm
 lib/password-gorilla/pics/vector-logo/gorilla-logo.fig
@@ -43,10 +50,7 @@ lib/password-gorilla/pwsafe/pwsafe.tcl
 lib/password-gorilla/pwsafe/pwtest.tcl
 lib/password-gorilla/twofish/
 lib/password-gorilla/twofish/LICENSE.txt
-lib/password-gorilla/twofish/f32-Darwin-x86.dylib
-lib/password-gorilla/twofish/f32-Windows-x86.dll
 lib/password-gorilla/twofish/f32-critcl.tcl
 lib/password-gorilla/twofish/pkgIndex.tcl
 lib/password-gorilla/twofish/twofish.tcl
-lib/password-gorilla/twofish/twotest.tcl
 lib/password-gorilla/viewhelp.tcl

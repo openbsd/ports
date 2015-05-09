@@ -1,0 +1,20 @@
+$OpenBSD: patch-sources_gorilla_tcl,v 1.1 2015/05/09 12:15:29 czarkoff Exp $
+--- sources/gorilla.tcl.orig	Sat Mar  9 15:13:00 2013
++++ sources/gorilla.tcl	Mon Apr 13 18:54:54 2015
+@@ -34,15 +34,7 @@ package provide app-gorilla 1.0
+ 
+ namespace eval ::gorilla {
+ 	variable Version {$Revision: 1.1 $}
+-
+-	# find the location of the install directory even when "executing" a symlink
+-	# pointing to the gorilla.tcl file
+-	if { [ file type [ info script ] ] eq "link" } {
+-		variable Dir [ file normalize [ file dirname [ file join [ file dirname [ info script ] ] [ file readlink [ info script ] ] ] ] ]
+-	} else {
+-		variable Dir [ file normalize [ file dirname [ info script ] ] ]
+-	}
+-
++	variable Dir "${TRUEPREFIX}/lib/password-gorilla"
+ 	variable PicsDir [ file join $::gorilla::Dir pics ]
+ }
+ 
