@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2015/04/15 15:15:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2015/05/09 08:04:30 jasper Exp $
 
 COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
 
-V=		2.3.3
+V=		2.3.4
 DISTNAME=	puppetdb-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-plugin= puppetdb-terminus-$V
