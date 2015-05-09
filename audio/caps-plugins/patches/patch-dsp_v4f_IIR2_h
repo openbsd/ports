@@ -1,0 +1,12 @@
+$OpenBSD: patch-dsp_v4f_IIR2_h,v 1.1 2015/05/09 08:00:55 robert Exp $
+--- dsp/v4f_IIR2.h.orig	Tue Apr 28 08:36:38 2015
++++ dsp/v4f_IIR2.h	Tue Apr 28 08:37:03 2015
+@@ -32,7 +32,7 @@
+ 
+ namespace DSP {
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ inline float pow10f(float f) {return pow(10,f);}
+ #endif
+ 

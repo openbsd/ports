@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 22:55:01 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/09 08:00:55 robert Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		CAPS LADSPA plugins
 
-V =			0.4.4
+V =			0.9.24
 DISTNAME =		caps_${V}
 PKGNAME =		caps-plugins-${V}
-REVISION =		0
 CATEGORIES =		audio
+EXTRACT_SUFX =		.tar.bz2
 
-HOMEPAGE =		http://quite.de/dsp/caps.html
+HOMEPAGE =		http://quitte.de/dsp/caps.html
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -21,7 +21,7 @@ MASTER_SITES =		http://quitte.de/dsp/
 
 MAKE_FLAGS =		CC=${CXX} \
 			OPTS="${CFLAGS} -fPIC -DPIC"
-FAKE_FLAGS =		PREFIX="${DESTDIR}${PREFIX}"
+FAKE_FLAGS =		PREFIX="${PREFIX}"
 
 USE_GMAKE =		Yes
 
