@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2015/01/03 17:58:53 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.26 2015/05/09 22:49:59 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -109,6 +109,7 @@ share/manaplus/data/graphics/gui/keyboard_icon.xml
 share/manaplus/data/graphics/gui/label.xml
 share/manaplus/data/graphics/gui/listbox.xml
 share/manaplus/data/graphics/gui/lock.png
+share/manaplus/data/graphics/gui/mailedit.xml
 share/manaplus/data/graphics/gui/ministatus.xml
 share/manaplus/data/graphics/gui/mouse.png
 share/manaplus/data/graphics/gui/npc.xml
@@ -280,6 +281,7 @@ share/manaplus/data/themes/enchilado/colors.xml
 share/manaplus/data/themes/enchilado/equipment.xml
 share/manaplus/data/themes/enchilado/info.xml
 share/manaplus/data/themes/enchilado/inventory.xml
+share/manaplus/data/themes/enchilado/mailedit.xml
 share/manaplus/data/themes/enchilado/npc.xml
 share/manaplus/data/themes/enchilado/ok.xml
 share/manaplus/data/themes/enchilado/outfits.xml
@@ -347,6 +349,7 @@ share/manaplus/data/themes/golden-delicious/listbox_medium.xml
 share/manaplus/data/themes/golden-delicious/listbox_xhigh.xml
 share/manaplus/data/themes/golden-delicious/listbox_xxhigh.xml
 share/manaplus/data/themes/golden-delicious/login.xml
+share/manaplus/data/themes/golden-delicious/mailedit.xml
 share/manaplus/data/themes/golden-delicious/map.xml
 share/manaplus/data/themes/golden-delicious/ministatus.xml
 share/manaplus/data/themes/golden-delicious/mouse.png
@@ -457,6 +460,7 @@ share/manaplus/data/themes/jewelry/listbox_medium.xml
 share/manaplus/data/themes/jewelry/listbox_xhigh.xml
 share/manaplus/data/themes/jewelry/listbox_xxhigh.xml
 share/manaplus/data/themes/jewelry/login.xml
+share/manaplus/data/themes/jewelry/mailedit.xml
 share/manaplus/data/themes/jewelry/map.xml
 share/manaplus/data/themes/jewelry/ministatus.xml
 share/manaplus/data/themes/jewelry/mouse.png
@@ -540,6 +544,7 @@ share/manaplus/data/themes/pink/colors.xml
 share/manaplus/data/themes/pink/equipment.xml
 share/manaplus/data/themes/pink/info.xml
 share/manaplus/data/themes/pink/inventory.xml
+share/manaplus/data/themes/pink/mailedit.xml
 share/manaplus/data/themes/pink/npc.xml
 share/manaplus/data/themes/pink/ok.xml
 share/manaplus/data/themes/pink/outfits.xml
@@ -561,6 +566,7 @@ share/manaplus/data/themes/unity/colors.xml
 share/manaplus/data/themes/unity/equipment.xml
 share/manaplus/data/themes/unity/info.xml
 share/manaplus/data/themes/unity/inventory.xml
+share/manaplus/data/themes/unity/mailedit.xml
 share/manaplus/data/themes/unity/npc.xml
 share/manaplus/data/themes/unity/ok.xml
 share/manaplus/data/themes/unity/outfits.xml
@@ -581,6 +587,7 @@ share/manaplus/data/themes/wood/equipment.xml
 share/manaplus/data/themes/wood/info.xml
 share/manaplus/data/themes/wood/inventory.xml
 share/manaplus/data/themes/wood/item_shortcut_bgr.png
+share/manaplus/data/themes/wood/mailedit.xml
 share/manaplus/data/themes/wood/mouse.png
 share/manaplus/data/themes/wood/npc.xml
 share/manaplus/data/themes/wood/ok.xml
