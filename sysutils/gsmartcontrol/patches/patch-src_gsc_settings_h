@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gsc_settings_h,v 1.1.1.1 2011/07/08 18:17:12 sthen Exp $
---- src/gsc_settings.h.orig	Sun May  1 14:13:09 2011
-+++ src/gsc_settings.h	Fri Jul  8 15:19:14 2011
-@@ -31,7 +31,7 @@ inline void init_default_settings()
+$OpenBSD: patch-src_gsc_settings_h,v 1.2 2015/05/09 15:24:44 ajacoutot Exp $
+--- src/gsc_settings.h.orig	Fri Aug 10 11:18:00 2012
++++ src/gsc_settings.h	Sat May  9 17:11:09 2015
+@@ -32,7 +32,7 @@ inline void init_default_settings()
  
  
  #ifndef _WIN32

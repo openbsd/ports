@@ -1,21 +1,13 @@
-$OpenBSD: patch-data_gsmartcontrol-root_in,v 1.1.1.1 2011/07/08 18:17:12 sthen Exp $
---- data/gsmartcontrol-root.in.orig	Sat Apr 30 20:39:54 2011
-+++ data/gsmartcontrol-root.in	Fri Jul  8 13:04:54 2011
+$OpenBSD: patch-data_gsmartcontrol-root_in,v 1.2 2015/05/09 15:24:44 ajacoutot Exp $
+--- data/gsmartcontrol-root.in.orig	Sun Feb 19 15:57:50 2012
++++ data/gsmartcontrol-root.in	Sat May  9 17:14:41 2015
 @@ -1,4 +1,4 @@
--#!/bin/bash
+-#!/usr/bin/env bash
 +#!/bin/sh
  ############################################################################
  # Copyright:
- #      (C) 2008 - 2010  Alexander Shaduri <ashaduri 'at' gmail.com>
-@@ -22,7 +22,6 @@ elif [ "$DESKTOP" != "auto" ] && [ "$DESKTOP" != "kde"
- 	echo "Usage: $0 [<auto|kde|gnome|other> [<${prog_name}_options>] ]";
- 	exit 1;
- fi
--shift;  # remove $1
- 
- 
- # Auto-detect current desktop if auto was specified.
-@@ -46,8 +45,8 @@ fi
+ #      (C) 2008 - 2012  Alexander Shaduri <ashaduri 'at' gmail.com>
+@@ -74,8 +74,8 @@ fi
  # sux requires xterm to ask for the password.
  # xdg-su is basically like this script, except worse :)
  # su-to-root is a debian/ubuntu official method (although gksu is available).
@@ -26,7 +18,7 @@ $OpenBSD: patch-data_gsmartcontrol-root_in,v 1.1.1.1 2011/07/08 18:17:12 sthen E
  other_sus="$gnome_sus";
  
  
-@@ -64,7 +63,7 @@ fi
+@@ -92,7 +92,7 @@ fi
  
  if [ "$GSMARTCONTROL_SU" = "" ]; then
  	for subin in $candidates; do
@@ -35,7 +27,7 @@ $OpenBSD: patch-data_gsmartcontrol-root_in,v 1.1.1.1 2011/07/08 18:17:12 sthen E
  		if [ $? -eq 0 ]; then
  			found_su="$subin";
  			break;
-@@ -73,7 +72,7 @@ if [ "$GSMARTCONTROL_SU" = "" ]; then
+@@ -101,7 +101,7 @@ if [ "$GSMARTCONTROL_SU" = "" ]; then
  
  	if [ "$found_su" = "" ]; then
  		xmessage "Error launching ${prog_name}: No suitable su mechanism found.
@@ -44,24 +36,14 @@ $OpenBSD: patch-data_gsmartcontrol-root_in,v 1.1.1.1 2011/07/08 18:17:12 sthen E
  		exit 1;
  	fi
  fi
-@@ -88,7 +87,7 @@ fi
- # the user's env after all).
- # Note that beesu won't show a GUI login box if /usr/sbin is before /usr/bin,
- # so add it first as well.
--EXTRA_PATHS="/usr/bin:/usr/sbin:/usr/local/sbin";
-+EXTRA_PATHS="/usr/bin:/usr/sbin:@prefix@/sbin";
- export PATH="$EXTRA_PATHS:$PATH"
- 
- 
-@@ -118,7 +117,10 @@ elif [ "$found_su" = "beesu" ]; then
+@@ -148,7 +148,9 @@ elif [ "$found_su" = "beesu" ]; then
  elif [ "$found_su" = "su-to-root" ]; then
- 	full_cmd="$found_su -X -c '$EXEC_BIN $@'";
+ 	full_cmd="$found_su -X -c '$EXEC_BIN $final_args_quoted'";
  
 -else  # gnomesu, kdesu, xdg-su
 +elif [ "$found_su" = "$gnome_sus" ]; then
 +	full_cmd="$found_su $EXEC_BIN $@";
-+
 +else  # kdesu, xdg-su
- 	full_cmd="$found_su -c '$EXEC_BIN $@'";
+ 	full_cmd="$found_su -c '$EXEC_BIN $final_args_quoted'";
  fi
  
