@@ -1,13 +1,13 @@
-$OpenBSD: patch-Makefile,v 1.6 2015/03/15 17:32:48 benoit Exp $
+$OpenBSD: patch-Makefile,v 1.7 2015/05/09 06:50:02 benoit Exp $
 
 1. Do not force some compilation flags.
 2. Set library version, respecting OpenBSD policy.
 3. Avoid duplication of defines, linked to (2).
 4. Do not use $(INSTALL_*) at the build stage.
 
---- Makefile.orig	Wed Mar 11 07:51:16 2015
-+++ Makefile	Sat Mar 14 11:38:13 2015
-@@ -30,7 +30,7 @@
+--- Makefile.orig	Fri May  8 11:06:59 2015
++++ Makefile	Sat May  9 08:34:16 2015
+@@ -30,7 +30,7 @@ ifneq (,$(findstring yes,$(CAPSTONE_DIET)))
  CFLAGS ?= -Os
  CFLAGS += -DCAPSTONE_DIET
  else
@@ -16,7 +16,7 @@ $OpenBSD: patch-Makefile,v 1.6 2015/03/15 17:32:48 benoit Exp $
  endif
  
  ifneq (,$(findstring yes,$(CAPSTONE_X86_ATT_DISABLE)))
-@@ -78,8 +78,11 @@
+@@ -82,8 +82,11 @@ INSTALL_DATA ?= $(INSTALL_BIN) -m0644
  INSTALL_LIB ?= $(INSTALL_BIN) -m0755
  
  LIBNAME = capstone
@@ -29,7 +29,7 @@ $OpenBSD: patch-Makefile,v 1.6 2015/03/15 17:32:48 benoit Exp $
  DEP_ARM =
  DEP_ARM += arch/ARM/ARMGenAsmWriter.inc
  DEP_ARM += arch/ARM/ARMGenDisassemblerTables.inc
-@@ -278,7 +281,7 @@
+@@ -282,7 +285,7 @@ else
  EXT = so
  VERSION_EXT = $(EXT).$(API_MAJOR)
  AR_EXT = a
@@ -38,7 +38,7 @@ $OpenBSD: patch-Makefile,v 1.6 2015/03/15 17:32:48 benoit Exp $
  endif
  endif
  endif
-@@ -289,7 +292,7 @@
+@@ -293,7 +296,7 @@ LIBRARY = $(BLDIR)/$(LIBNAME).$(EXT)
  else ifeq ($(IS_CYGWIN),1)
  LIBRARY = $(BLDIR)/$(LIBNAME).$(EXT)
  else	# *nix
@@ -47,7 +47,7 @@ $OpenBSD: patch-Makefile,v 1.6 2015/03/15 17:32:48 benoit Exp $
  CFLAGS += -fvisibility=hidden
  endif
  endif
-@@ -316,7 +319,7 @@
+@@ -320,7 +323,7 @@ else
  	cd tests && $(MAKE) BUILDDIR=$(BLDIR)
  endif
  ifeq ($(CAPSTONE_SHARED),yes)
@@ -56,7 +56,7 @@ $OpenBSD: patch-Makefile,v 1.6 2015/03/15 17:32:48 benoit Exp $
  endif
  endif
  
-@@ -363,13 +366,9 @@
+@@ -367,13 +370,9 @@ endif
  install: $(PKGCFGF) $(ARCHIVE) $(LIBRARY)
  	mkdir -p $(LIBDIR)
  ifeq ($(CAPSTONE_SHARED),yes)
@@ -72,7 +72,7 @@ $OpenBSD: patch-Makefile,v 1.6 2015/03/15 17:32:48 benoit Exp $
  ifeq ($(CAPSTONE_STATIC),yes)
  	$(INSTALL_DATA) $(ARCHIVE) $(LIBDIR)
  endif
-@@ -379,13 +378,12 @@
+@@ -383,13 +382,12 @@ endif
  	$(INSTALL_DATA) $(PKGCFGF) $(PKGCFGDIR)/
  
  uninstall:

@@ -1,11 +1,11 @@
-$OpenBSD: patch-cs_c,v 1.3 2015/02/04 07:33:11 benoit Exp $
+$OpenBSD: patch-cs_c,v 1.4 2015/05/09 06:50:02 benoit Exp $
 
 The 'mips' symbol is special on MIPS platforms, so rename it to prevent a
 conflict.
 
---- cs.c.orig	Tue Feb  3 15:41:07 2015
-+++ cs.c	Wed Feb  4 08:05:44 2015
-@@ -914,8 +914,8 @@ int cs_op_count(csh ud, const cs_insn *insn, unsigned 
+--- cs.c.orig	Fri May  8 11:06:59 2015
++++ cs.c	Sat May  9 08:34:16 2015
+@@ -919,8 +919,8 @@ int cs_op_count(csh ud, const cs_insn *insn, unsigned 
  					count++;
  			break;
  		case CS_ARCH_MIPS:
@@ -16,7 +16,7 @@ conflict.
  					count++;
  			break;
  		case CS_ARCH_PPC:
-@@ -1000,8 +1000,8 @@ int cs_op_index(csh ud, const cs_insn *insn, unsigned 
+@@ -1005,8 +1005,8 @@ int cs_op_index(csh ud, const cs_insn *insn, unsigned 
  			}
  			break;
  		case CS_ARCH_MIPS:
