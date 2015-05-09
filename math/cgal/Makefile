@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/03/13 21:05:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/09 20:03:49 naddy Exp $
 
 # vax:	no fenv.h support
 NOT_FOR_ARCHS =		vax
@@ -38,7 +38,7 @@ LIB_DEPENDS =		devel/boost \
 			devel/gmp \
 			devel/mpfr
 
-CFLAGS +=		-I${X11BASE}/include
+CXXFLAGS +=		-I${X11BASE}/include
 
 CONFIGURE_ARGS +=	-DCGAL_INSTALL_MAN_DIR="man/man1"
 CONFIGURE_ENV =		LDFLAGS="-L${X11BASE}/lib"
