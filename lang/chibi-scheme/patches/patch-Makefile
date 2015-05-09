@@ -1,0 +1,78 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2015/05/09 21:04:58 juanfra Exp $
+--- Makefile.orig	Sun Nov 16 12:10:46 2014
++++ Makefile	Sat May  2 19:51:08 2015
+@@ -3,7 +3,8 @@
+ .PHONY: dist mips-dist cleaner test test-all test-dist checkdefs
+ .DEFAULT_GOAL := all
+ 
+-SOVERSION ?= $(shell cat VERSION)
++VERSION ?= $(shell cat VERSION)
++SOVERSION ?= $(VERSION)
+ SOVERSION_MAJOR ?= $(shell echo "$(SOVERSION)" | sed "s/\..*//")
+ 
+ CHIBI_FFI ?= $(CHIBI) -q tools/chibi-ffi
+@@ -66,10 +67,10 @@ endif
+ 
+ ifeq ($(SEXP_USE_DL),0)
+ XLDFLAGS  := $(LDFLAGS) $(RLDFLAGS) $(GCLDFLAGS) -lm
+-XCFLAGS   := -Wall -DSEXP_USE_DL=0 -g -g3 -O3 $(CFLAGS)
++XCFLAGS   := -Wall -DSEXP_USE_DL=0 -g -g3 $(CFLAGS)
+ else
+ XLDFLAGS  := $(LDFLAGS) $(RLDFLAGS) $(GCLDFLAGS) $(LIBDL) -lm
+-XCFLAGS   := -Wall -g -g3 -O3 $(CFLAGS)
++XCFLAGS   := -Wall -g -g3 $(CFLAGS)
+ endif
+ 
+ ########################################################################
+@@ -80,7 +81,7 @@ include/chibi/install.h: Makefile
+ 	echo '#define sexp_so_extension "'$(SO)'"' > $@
+ 	echo '#define sexp_default_module_path "'$(MODDIR):$(BINMODDIR)'"' >> $@
+ 	echo '#define sexp_platform "'$(PLATFORM)'"' >> $@
+-	echo '#define sexp_version "'`cat VERSION`'"' >> $@
++	echo '#define sexp_version "'$(VERSION)'"' >> $@
+ 	echo '#define sexp_release_name "'`cat RELEASE`'"' >> $@
+ 
+ %.o: %.c $(BASE_INCLUDES)
+@@ -148,7 +149,7 @@ doc: doc/chibi.html doc-libs
+ 
+ lib/.%.meta: lib/%/ tools/generate-install-meta.scm
+ 	-$(FIND) $< -name \*.sld | \
+-	 $(CHIBI) tools/generate-install-meta.scm `cat VERSION` > $@
++	 $(CHIBI) tools/generate-install-meta.scm $(VERSION) > $@
+ 
+ ########################################################################
+ # Dist builds - rules to build generated files included in distribution
+@@ -332,16 +333,12 @@ install: all
+ 	$(MKDIR) $(DESTDIR)$(LIBDIR)
+ 	$(MKDIR) $(DESTDIR)$(SOLIBDIR)
+ 	$(INSTALL) -m0755 libchibi-scheme$(SO_VERSIONED_SUFFIX) $(DESTDIR)$(SOLIBDIR)/
+-	$(LN) -s -f libchibi-scheme$(SO_VERSIONED_SUFFIX) $(DESTDIR)$(SOLIBDIR)/libchibi-scheme$(SO_MAJOR_VERSIONED_SUFFIX)
+-	$(LN) -s -f libchibi-scheme$(SO_VERSIONED_SUFFIX) $(DESTDIR)$(SOLIBDIR)/libchibi-scheme$(SO)
+-	-$(INSTALL) -m0644 libchibi-scheme.a $(DESTDIR)$(SOLIBDIR)/
+ 	$(MKDIR) $(DESTDIR)$(SOLIBDIR)/pkgconfig
+ 	$(INSTALL) -m0644 chibi-scheme.pc $(DESTDIR)$(SOLIBDIR)/pkgconfig/
+ 	$(MKDIR) $(DESTDIR)$(MANDIR)
+ 	$(INSTALL) -m0644 doc/chibi-scheme.1 $(DESTDIR)$(MANDIR)/
+ 	$(INSTALL) -m0644 doc/chibi-ffi.1 $(DESTDIR)$(MANDIR)/
+ 	$(INSTALL) -m0644 doc/chibi-doc.1 $(DESTDIR)$(MANDIR)/
+-	-if type ldconfig >/dev/null 2>/dev/null; then ldconfig; fi
+ 
+ uninstall:
+ 	-$(RM) $(DESTDIR)$(BINDIR)/chibi-scheme$(EXE)
+@@ -394,11 +391,11 @@ uninstall:
+ 	-$(RM) $(DESTDIR)$(SOLIBDIR)/pkgconfig/chibi-scheme.pc
+ 
+ dist: dist-clean
+-	$(RM) chibi-scheme-`cat VERSION`.tgz
+-	$(MKDIR) chibi-scheme-`cat VERSION`
+-	@for f in `hg manifest | grep -v ^benchmarks/`; do $(MKDIR) chibi-scheme-`cat VERSION`/`dirname $$f`; $(SYMLINK) `pwd`/$$f chibi-scheme-`cat VERSION`/$$f; done
+-	$(TAR) cphzvf chibi-scheme-`cat VERSION`.tgz chibi-scheme-`cat VERSION`
+-	$(RM) -r chibi-scheme-`cat VERSION`
++	$(RM) chibi-scheme-$(VERSION).tgz
++	$(MKDIR) chibi-scheme-$(VERSION)
++	@for f in `hg manifest | grep -v ^benchmarks/`; do $(MKDIR) chibi-scheme-$(VERSION)/`dirname $$f`; $(SYMLINK) `pwd`/$$f chibi-scheme-$(VERSION)/$$f; done
++	$(TAR) cphzvf chibi-scheme-$(VERSION).tgz chibi-scheme-$(VERSION)
++	$(RM) -r chibi-scheme-$(VERSION)
+ 
+ mips-dist: dist-clean
+ 	$(RM) chibi-scheme-`date +%Y%m%d`-`hg tags|head -1|sed -n 's/.* \([0-9]*\):.*/\1/p'`.tgz

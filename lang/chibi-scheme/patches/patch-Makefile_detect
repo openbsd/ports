@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_detect,v 1.1.1.1 2015/05/09 21:04:58 juanfra Exp $
+--- Makefile.detect.orig	Sun Mar  1 10:43:27 2015
++++ Makefile.detect	Sun Mar  1 10:49:48 2015
+@@ -61,6 +61,7 @@ LIBCHIBI_FLAGS = -install_name $(DESTDIR)$(SOLIBDIR)/l
+ else
+ ifeq ($(PLATFORM),bsd)
+ SO  = .so
++SO_VERSIONED_SUFFIX = $(SO).$(LIBchibi-scheme_VERSION)
+ EXE =
+ CLIBFLAGS = -fPIC
+ CLINKFLAGS = -shared
