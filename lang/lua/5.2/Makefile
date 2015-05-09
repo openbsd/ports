@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2015/03/25 13:55:45 jturner Exp $
+# $OpenBSD: Makefile,v 1.8 2015/05/09 08:35:02 jasper Exp $
+
+PORTROACH=	limit:^5\.2
 
 VERSION=	5.2.4
 PKGSPEC=	lua->=5.2,<5.3
