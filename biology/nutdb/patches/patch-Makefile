@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile,v 1.12 2011/08/24 19:29:24 naddy Exp $
---- Makefile.orig	Sun May 22 01:13:30 2011
-+++ Makefile	Wed Aug 24 21:24:50 2011
-@@ -24,7 +24,7 @@ else
- CC = gcc
+$OpenBSD: patch-Makefile,v 1.13 2015/05/09 08:31:34 jasper Exp $
+--- Makefile.orig	Sat May  9 10:10:14 2015
++++ Makefile	Sat May  9 10:10:51 2015
+@@ -28,7 +28,7 @@ endif
+ ifeq ($(OS),HP-UX)
+ CFLAGS := $(OPT) -DNUTDIR=$(NUTDIR) -DFOODDIR=$(FOODDIR)
+ else
+-CFLAGS := $(OPT) -DNUTDIR=$(NUTDIR) -DFOODDIR=$(FOODDIR)
++CFLAGS += $(OPT) -DNUTDIR=$(NUTDIR) -DFOODDIR=$(FOODDIR)
  endif
  
--CFLAGS := -O -DNUTDIR=$(NUTDIR) -DFOODDIR=$(FOODDIR)
-+CFLAGS += -DNUTDIR=$(NUTDIR) -DFOODDIR=$(FOODDIR)
- ifeq ($(CC),gcc)
- CFLAGS += -Wall -fno-inline -ansi
- endif
+ CXXFLAGS := $(CFLAGS) `fltk-config --cxxflags`
