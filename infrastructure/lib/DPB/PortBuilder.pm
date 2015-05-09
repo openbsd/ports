@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.68 2015/05/06 10:58:19 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.69 2015/05/09 19:10:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -173,13 +173,13 @@ sub report
 	print $log "$pkgpath $host ", $job->totaltime, " ", $sz, " ",
 	    $job->timings;
 	if ($job->{failed}) {
-		my $fh = $self->logger->open('>>', $job->{log});
+		my $fh = $self->logger->{user}->open('>>', $job->{log});
 		print $fh "Error: job failed $job->{failed}\n";
 		print $log  "!\n";
 	} else {
 		print $log  "\n";
-		my $fh = $self->logger->open(
-		    '>>', $self->{state}{permanent_log});
+		my $fh = $self->logger->{user}->open('>>', 
+		    $self->{state}{permanent_log});
 		print $fh DPB::Serialize::Build->write({
 		    pkgpath => $pkgpath, 
 		    host => $host, 
