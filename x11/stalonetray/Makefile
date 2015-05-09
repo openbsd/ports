@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/05/09 10:17:36 jasper Exp $
 
 COMMENT=		stand-alone tray for EWMH-compliant window managers
 
-DISTNAME=		stalonetray-0.8.1
+DISTNAME=		stalonetray-0.8.3
 CATEGORIES=		x11 sysutils
 
 HOMEPAGE=		http://stalonetray.sourceforge.net/
