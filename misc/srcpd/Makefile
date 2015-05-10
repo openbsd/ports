@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/16 11:39:44 sebastia Exp $
+# $OpenBSD: Makefile,v 1.10 2015/05/10 11:09:47 sebastia Exp $
 
 COMMENT =	daemon to control digital model railroad systems
 
-DISTNAME =	srcpd-2.1.2
+DISTNAME =	srcpd-2.1.3
 CATEGORIES =	misc net
 
 HOMEPAGE =	http://srcpd.sourceforge.net/
@@ -17,7 +17,7 @@ MODULES +=		converters/libiconv
 WANTLIB += 		c m pthread z xml2
 LIB_DEPENDS +=		textproc/libxml
 
-AUTOCONF_VERSION =	2.64
+AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE =	autoconf
 
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/srcpd
