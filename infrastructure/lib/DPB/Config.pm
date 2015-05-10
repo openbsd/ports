@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.43 2015/05/08 12:37:16 espie Exp $
+# $OpenBSD: Config.pm,v 1.44 2015/05/10 07:55:35 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -139,6 +139,7 @@ sub parse_command_line
 	while (my ($k, $v) = each %cmdline) {
 		$state->{subst}->{$k} = $v;
 	}
+	$class->setup_users($state);
 
 	$state->{chroot} = $state->{default_prop}{chroot};
 	# reparse things properly now that we can chroot
