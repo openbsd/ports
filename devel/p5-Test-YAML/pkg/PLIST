@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/10 16:47:01 afresh1 Exp $
+@conflict p5-YAML-<1.15
+bin/test-yaml
+${P5SITE}/Test/YAML.pm
+${P5SITE}/Test/YAML.pod
+@man man/man3p/Test::YAML.3p
