@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2015/04/29 09:15:28 giovanni Exp $
+# $OpenBSD: Makefile,v 1.46 2015/05/10 11:41:12 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
-VERSION =	2.2.13
-REVISION =	0
-DISTNAME =	SOGo-${VERSION}
-PKGNAME =	sogo-${VERSION}
+VERSION =	2.2.17
+DISTNAME =	SOGo-${VERSION}a
+PKGNAME =	sogo-${VERSION}.0
 
 SHARED_LIBS +=	GDLContentStore 2.0
 SHARED_LIBS +=	NGCards		2.0
@@ -26,7 +25,7 @@ MODGNUSTEP_NEEDS_GUI =	No
 WANTLIB +=		c m pthread crypto memcached SBJson
 WANTLIB +=		DOM EOControl GDLAccess NGExtensions NGLdap
 WANTLIB +=		NGMime NGObjWeb NGStreams SaxObjC WEExtensions
-WANTLIB +=		objc2 gnustep-base curl gnutls
+WANTLIB +=		objc2 gnustep-base curl
 
 LIB_DEPENDS +=		devel/libmemcached \
 			net/curl \
@@ -40,7 +39,7 @@ PATCH_LIST =		patch-* gcc-*
 
 CONFIGURE_STYLE =	simple dest
 CONFIGURE_ARGS +=	--gsmake=`gnustep-config --variable=GNUSTEP_MAKEFILES` \
-			--with-ssl=gnutls
+			--with-ssl=ssl
 MAKE_FLAGS +=		libGDLContentStore_INTERFACE_VERSION=${LIBGDLContentStore_VERSION} \
 			libNGCards_INTERFACE_VERSION=${LIBNGCards_VERSION} \
 			libOGoContentStore_INTERFACE_VERSION=${LIBOGoContentStore_VERSION} \
