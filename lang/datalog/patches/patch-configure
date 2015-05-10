@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.3 2013/08/06 18:08:16 jasper Exp $
+$OpenBSD: patch-configure,v 1.4 2015/05/10 19:12:25 jasper Exp $
 
 Correctly link with -lreadline as it need -ltermcap.
 
---- configure.orig	Sat Mar 23 22:07:11 2013
-+++ configure	Mon Jul 29 19:26:29 2013
-@@ -11565,7 +11565,7 @@ for ac_lib in '' readline; do
+--- configure.orig	Thu May  7 14:55:37 2015
++++ configure	Sun May 10 21:10:51 2015
+@@ -11720,7 +11720,7 @@ for ac_lib in '' readline; do
      ac_res="none required"
    else
      ac_res=-l$ac_lib
@@ -13,7 +13,7 @@ Correctly link with -lreadline as it need -ltermcap.
    fi
    if ac_fn_c_try_link "$LINENO"; then :
    ac_cv_search_readline=$ac_res
-@@ -11588,7 +11588,7 @@ fi
+@@ -11743,7 +11743,7 @@ fi
  $as_echo "$ac_cv_search_readline" >&6; }
  ac_res=$ac_cv_search_readline
  if test "$ac_res" != no; then :
