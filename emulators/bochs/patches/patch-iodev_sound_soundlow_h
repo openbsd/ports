@@ -1,0 +1,17 @@
+$OpenBSD: patch-iodev_sound_soundlow_h,v 1.1 2015/05/10 08:01:58 ajacoutot Exp $
+
+Include pthreads library header in soundlow.h (fixes SF bug #1373).
+
+--- iodev/sound/soundlow.h.orig	Sat May  9 07:37:12 2015
++++ iodev/sound/soundlow.h	Sat May  9 07:37:40 2015
+@@ -20,6 +20,10 @@
+ 
+ // Common code for sound lowlevel modules
+ 
++#ifndef WIN32
++#include <pthread.h>
++#endif
++
+ // This is the maximum size of a wave data packet.
+ // It should be large enough for 0.1 seconds of playback or recording.
+ #define BX_SOUNDLOW_WAVEPACKETSIZE  19200

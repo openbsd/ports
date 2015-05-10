@@ -1,0 +1,17 @@
+$OpenBSD: patch-iodev_sound_soundfile_cc,v 1.1 2015/05/10 08:01:58 ajacoutot Exp $
+
+Include pthreads library header in soundlow.h (fixes SF bug #1373).
+
+--- iodev/sound/soundfile.cc.orig	Sat May  9 07:36:08 2015
++++ iodev/sound/soundfile.cc	Sat May  9 07:36:25 2015
+@@ -32,10 +32,6 @@
+ 
+ #if BX_SUPPORT_SOUNDLOW
+ 
+-#ifndef WIN32
+-#include <pthread.h>
+-#endif
+-
+ #define BX_SOUNDFILE_RAW 0
+ #define BX_SOUNDFILE_VOC 1
+ #define BX_SOUNDFILE_WAV 2

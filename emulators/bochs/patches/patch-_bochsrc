@@ -1,7 +1,7 @@
-$OpenBSD: patch-_bochsrc,v 1.12 2014/11/04 06:01:41 brad Exp $
---- .bochsrc.orig	Sun Oct 19 04:54:16 2014
-+++ .bochsrc	Tue Nov  4 00:08:55 2014
-@@ -559,7 +559,7 @@ pci: enabled=1, chipset=i440fx
+$OpenBSD: patch-_bochsrc,v 1.13 2015/05/10 08:01:58 ajacoutot Exp $
+--- .bochsrc.orig	Sat May  2 11:40:11 2015
++++ .bochsrc	Fri May  8 15:06:13 2015
+@@ -568,7 +568,7 @@ pci: enabled=1, chipset=i440fx
  #
  # Default value are sync=none, rtc_sync=0, time0=local
  #=======================================================================
@@ -10,7 +10,7 @@ $OpenBSD: patch-_bochsrc,v 1.12 2014/11/04 06:01:41 brad Exp $
  
  #=======================================================================
  # CMOSIMAGE:
-@@ -614,13 +614,13 @@ private_colormap: enabled=0
+@@ -623,13 +623,13 @@ private_colormap: enabled=0
  # The optional parameter 'write_protected' can be used to control the media
  # write protect switch. By default it is turned off.
  #=======================================================================
@@ -26,7 +26,7 @@ $OpenBSD: patch-_bochsrc,v 1.12 2014/11/04 06:01:41 brad Exp $
  
  #=======================================================================
  # FLOPPYB:
-@@ -745,8 +745,8 @@ floppy_bootsig_check: disabled=0
+@@ -755,8 +755,8 @@ floppy_bootsig_check: disabled=0
  #   log: ./bochs.out
  #   log: /dev/tty
  #=======================================================================
