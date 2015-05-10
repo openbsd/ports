@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.20 2015/05/03 10:33:59 espie Exp $
+# $OpenBSD: Logger.pm,v 1.21 2015/05/10 08:14:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -58,8 +58,9 @@ sub _open
 	    });
 }
 
-sub open
+sub append
 {
+	die if @_ > 2;
 	my ($self, $name) = @_;
 	return $self->_open('>>', $name);
 }

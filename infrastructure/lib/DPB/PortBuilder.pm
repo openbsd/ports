@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.69 2015/05/09 19:10:10 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.70 2015/05/10 08:14:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -114,12 +114,12 @@ sub init
 {
 	my $self = shift;
 	$self->{state}{build_user}->make_path($self->{realfullrepo});
-	$self->{global} = $self->logger->open("build");
+	$self->{global} = $self->logger->append("build");
 	$self->{lockperf} = 
-	    DPB::Util->make_hot($self->logger->open("awaiting-locks"));
+	    DPB::Util->make_hot($self->logger->append("awaiting-locks"));
 	if ($self->{wantsize}) {
 		$self->{logsize} = 
-		    DPB::Util->make_hot($self->logger->open("size"));
+		    DPB::Util->make_hot($self->logger->append("size"));
 	}
 	if ($self->{state}->defines("WRAP_MAKE")) {
 		$self->{rsslog} = $self->logger->logfile("rss");
@@ -173,12 +173,12 @@ sub report
 	print $log "$pkgpath $host ", $job->totaltime, " ", $sz, " ",
 	    $job->timings;
 	if ($job->{failed}) {
-		my $fh = $self->logger->{user}->open('>>', $job->{log});
+		my $fh = $self->logger->open('>>', $job->{log});
 		print $fh "Error: job failed $job->{failed}\n";
 		print $log  "!\n";
 	} else {
 		print $log  "\n";
-		my $fh = $self->logger->{user}->open('>>', 
+		my $fh = $self->logger->open('>>', 
 		    $self->{state}{permanent_log});
 		print $fh DPB::Serialize::Build->write({
 		    pkgpath => $pkgpath, 

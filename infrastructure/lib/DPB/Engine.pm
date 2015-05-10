@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.109 2014/12/07 15:18:50 espie Exp $
+# $OpenBSD: Engine.pm,v 1.110 2015/05/10 08:14:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -62,7 +62,7 @@ sub new
 		require DPB::SubEngine::Fetch;
 		$o->{tofetch} = DPB::SubEngine::Fetch->new($o);
 	}
-	$o->{log} = $state->logger->open("engine");
+	$o->{log} = $state->logger->append("engine");
 	$o->{stats} = DPB::Stats->new($state);
 	return $o;
 }
@@ -647,7 +647,7 @@ sub new
 {
 	my ($class, $state) = @_;
 	my $o = bless { 
-	    fh => DPB::Util->make_hot($state->logger->open("stats")),
+	    fh => DPB::Util->make_hot($state->logger->append("stats")),
 	    lost_time => 0,
 	    statline => ''},
 	    	$class;

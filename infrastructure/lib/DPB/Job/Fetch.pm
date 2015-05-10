@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.7 2015/05/07 12:30:46 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.8 2015/05/10 08:14:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -66,7 +66,7 @@ sub finalize
 	if (defined $self->{fetcher}->{initial_sz}) {
 		$sz -= $self->{fetcher}->{initial_sz};
 	}
-	my $fh = $job->{file}->logger->open("fetch/good");
+	my $fh = $job->{file}->logger->append("fetch/good");
 	my $elapsed = $self->{fetcher}->elapsed;
 	print $fh $self->{fetcher}{site}.$job->{file}->{short}, " in ",
 	    $elapsed, "s ";
@@ -186,7 +186,7 @@ sub new_fetch_task
 sub bad_file
 {
 	my ($job, $task, $core) = @_;
-	my $fh = $job->{file}->logger->open("fetch/bad");
+	my $fh = $job->{file}->logger->append("fetch/bad");
 	print $fh $task->{site}.$job->{file}->{short}, "\n";
 	if ($job->new_fetch_task) {
 		$core->{status} = 0;

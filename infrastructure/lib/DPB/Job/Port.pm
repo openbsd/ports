@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.158 2015/05/08 12:35:53 espie Exp $
+# $OpenBSD: Port.pm,v 1.159 2015/05/10 08:14:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -1132,7 +1132,7 @@ sub add_normal_tasks
 	my $junk = DPB::Junk->want($core, $self);
 	if ($junk == 2) {
 		push(@todo, 'junk');
-		my $fh = $self->{builder}->logger->open("junk");
+		my $fh = $self->{builder}->logger->append("junk");
 		print $fh "$$@", CORE::time(), ": ", $core->hostname,
 		    ": forced junking -> $self->{path}\n";
 	}
@@ -1143,7 +1143,7 @@ sub add_normal_tasks
 	# gc stuff we will no longer need
 	delete $self->{v}{info}{solved};
 	if ($junk == 1) {
-		my $fh = $self->{builder}->logger->open("junk");
+		my $fh = $self->{builder}->logger->append("junk");
 		print $fh "$$@", CORE::time(), ": ", $core->hostname,
 		    ": depends=$hostprop->{depends_count} ",
 		    " ports=$hostprop->{ports_count} ",

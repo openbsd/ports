@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.8 2014/08/09 21:34:12 espie Exp $
+# $OpenBSD: Signature.pm,v 1.9 2015/05/10 08:14:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -189,7 +189,7 @@ sub matches
 	} else {
 		my $r = $self->compare($ref);
 		if ($r ne '') {
-			my $log = $logger->open('signature');
+			my $log = $logger->append('signature');
 			print $log "$r\n";
 			return 0;
 			close $log;

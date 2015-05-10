@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.48 2015/04/25 11:25:08 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.49 2015/05/10 08:14:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -46,7 +46,7 @@ sub sanity_check
 {
 	my ($class, $state) = @_;
 
-	my $quicklog = $state->logger->open('equiv');
+	my $quicklog = $state->logger->append('equiv');
 	for my $p ($class->seen) {
 		next if defined $p->{category};
 		next unless defined $p->{info};
@@ -157,7 +157,7 @@ sub simplifies_to
 {
 	my ($self, $simpler, $state) = @_;
 	$state->{affinity}->simplifies_to($self, $simpler);
-	my $quicklog = $state->logger->open('equiv');
+	my $quicklog = $state->logger->append('equiv');
 	print $quicklog $self->fullpkgpath, " -> ", $simpler->fullpkgpath, "\n";
 }
 

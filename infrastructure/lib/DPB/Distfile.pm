@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.3 2014/12/07 15:18:50 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.4 2015/05/10 08:14:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -193,7 +193,7 @@ sub checksize
 	# XXX if we matched once, then we match "forever"
 	return 1 if $self->{okay};
 	if ($self->{sz} == 0) {
-		my $fh = $self->logger->open('dist/'.$self->{name});
+		my $fh = $self->logger->append('dist/'.$self->{name});
 		print $fh "incomplete distinfo: no size\n";
 	}
 		
@@ -201,7 +201,7 @@ sub checksize
 		return $self->find_copy($name);
 	}
 	if ((stat _)[7] != $self->{sz}) {
-		my $fh = $self->logger->open('dist/'.$self->{name});
+		my $fh = $self->logger->append('dist/'.$self->{name});
 		print $fh "size does not match\n";
 		return 0;
 	}
@@ -212,7 +212,7 @@ sub checkcached
 {
 	my ($self, $name) = @_;
 	if (!defined $self->{sha}) {
-		my $fh = $self->logger->open('dist/'.$self->{name});
+		my $fh = $self->logger->append('dist/'.$self->{name});
 		print $fh "incomplete distinfo: no sha\n";
 		return 0;
 	}
@@ -221,7 +221,7 @@ sub checkcached
 		return 1;
 	} else {
 		delete $self->cached->{$self->{name}};
-		my $fh = $self->logger->open('dist/'.$self->{name});
+		my $fh = $self->logger->append('dist/'.$self->{name});
 		print $fh "sha cache info does not match,";
 		if ($self->caches_okay($name)) {
 			print $fh "but actual file had the right sha\n";

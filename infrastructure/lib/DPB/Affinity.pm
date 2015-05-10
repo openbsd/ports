@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.16 2015/05/03 12:22:42 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.17 2015/05/10 08:14:14 espie Exp $
 #
 # Copyright (c) 2012-2013 Marc Espie <espie@openbsd.org>
 #
@@ -97,7 +97,7 @@ sub finished
 sub retrieve_existing_markers
 {
 	my ($self, $logger) = @_;
-	my $log = $logger->open('affinity');
+	my $log = $logger->append('affinity');
 	my $d = $self->opendir($self->{dir});
 	return if !defined $d;
 	while (my $e = readdir $d) {

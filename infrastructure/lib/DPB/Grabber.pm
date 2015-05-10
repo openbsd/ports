@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.29 2013/10/06 13:33:30 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.30 2015/05/10 08:14:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -27,7 +27,7 @@ sub new
 	my ($class, $state, $endcode) = @_;
 
 	my $o = bless { 
-		loglist => DPB::Util->make_hot($state->logger->open("vars")),
+		loglist => DPB::Util->make_hot($state->logger->append("vars")),
 		engine => $state->engine,
 		builder => $state->builder,
 		state => $state,

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Limiter.pm,v 1.6 2013/10/06 13:33:31 espie Exp $
+# $OpenBSD: Limiter.pm,v 1.7 2015/05/10 08:14:14 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -31,7 +31,7 @@ sub setup
 {
 	my ($self, $logger) = @_;	
 
-	$temp //= DPB::Util->make_hot($logger->open("performance"));
+	$temp //= DPB::Util->make_hot($logger->append("performance"));
 }
 
 sub limit
