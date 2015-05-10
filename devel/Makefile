@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1333 2015/05/08 17:43:36 stu Exp $
+# $OpenBSD: Makefile,v 1.1334 2015/05/10 16:50:12 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1088,6 +1088,7 @@
      SUBDIR += p5-Test-Weaken
      SUBDIR += p5-Test-Without-Module
      SUBDIR += p5-Test-XML
+     SUBDIR += p5-Test-YAML
      SUBDIR += p5-Test-YAML-Valid
      SUBDIR += p5-Test-use-ok
      SUBDIR += p5-Text-FixEOL
