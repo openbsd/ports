@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2012/07/08 14:18:18 sebastia Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2015/05/10 11:39:49 sebastia Exp $
 @bin bin/connect-EOAdaptor
 @bin bin/load-EOAdaptor
 @bin bin/wod
@@ -162,7 +162,6 @@ include/NGExtensions/NSString+Encoding.h
 include/NGExtensions/NSString+Escaping.h
 include/NGExtensions/NSString+Ext.h
 include/NGExtensions/NSString+Formatting.h
-include/NGExtensions/NSString+German.h
 include/NGExtensions/NSString+misc.h
 include/NGExtensions/NSURL+misc.h
 include/NGHttp/
