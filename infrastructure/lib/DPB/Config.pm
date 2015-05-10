@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.44 2015/05/10 07:55:35 espie Exp $
+# $OpenBSD: Config.pm,v 1.45 2015/05/10 08:40:06 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -31,6 +31,9 @@ sub setup_users
 		my $U = uc($u);
 		if ($state->defines($U)) {
 			$state->{$u} = DPB::User->new($state->defines($U));
+			if ($state->defines("DIRMODE")) {
+				$state->{$u}{dirmode} = oct($state->defines("DIRMODE"));
+			}
 		}
 	}
 	if (defined $state->{unpriv_user}) {
@@ -139,6 +142,7 @@ sub parse_command_line
 	while (my ($k, $v) = each %cmdline) {
 		$state->{subst}->{$k} = $v;
 	}
+	$state->{build_user} //= $state->{default_prop}{build_user};
 	$class->setup_users($state);
 
 	$state->{chroot} = $state->{default_prop}{chroot};
@@ -339,9 +343,6 @@ sub parse_config_files
 	$prop->finalize_with_overrides($override_prop);
 	if (!$state->{config_files}) {
 		DPB::Core::Init->new('localhost', $prop);
-	}
-	for my $u (qw(build_user log_user fetch_user)) {
-		$state->{$u} //= $prop->{$u};
 	}
 	$state->{default_prop} = $prop;
 }

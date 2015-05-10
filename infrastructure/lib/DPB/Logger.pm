@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.21 2015/05/10 08:14:14 espie Exp $
+# $OpenBSD: Logger.pm,v 1.22 2015/05/10 08:40:06 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -29,7 +29,7 @@ use Fcntl;
 sub new
 {
 	my ($class, $state) = @_;
-	if (!defined $state->{build_user}) {
+	if (!defined $state->{log_user}) {
 		die "Too early";
 	}
 	bless {logdir => $state->logdir, user => $state->{log_user}, 

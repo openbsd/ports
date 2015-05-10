@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.8 2015/05/02 16:41:20 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.9 2015/05/10 08:40:06 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -54,25 +54,6 @@ sub has_mem
 	return $has_mem;
 }
 
-sub set_user
-{
-	my ($prop, $tag, $default) = @_;
-	my $user = $tag."_user";
-	my $mode = $tag."_dirmode";
-	if (defined $prop->{$user}) {
-		$prop->{$user} = 
-		    DPB::User->new($prop->{$user});
-	} else {
-		$prop->{$user} = $prop->{$default."_user"};
-	}
-	if (defined $prop->{dirmode}) {
-		$prop->{$user}{dirmode} = oct($prop->{dirmode});
-	}
-	if (defined $prop->{droppriv}) {
-		$prop->{$user}{droppriv} = $prop->{droppriv};
-    	}
-}
-
 sub finalize
 {
 	my $prop = shift;
@@ -93,9 +74,18 @@ sub finalize
 		} else {
 		}
 	}
-	$prop->set_user('build', 'base');
-	$prop->set_user('log', 'build');
-	$prop->set_user('fetch', 'build');
+	if (defined $prop->{build_user}) {
+		$prop->{build_user} = 
+		    DPB::User->new($prop->{build_user});
+	} else {
+		$prop->{build_user} = $prop->{base_user};
+	}
+	if (defined $prop->{dirmode}) {
+		$prop->{build_user}{dirmode} = oct($prop->{dirmode});
+	}
+	if (defined $prop->{droppriv}) {
+		$prop->{build_user}{droppriv} = $prop->{droppriv};
+    	}
 
 	if (defined $prop->{memory}) {
 		my $m = $prop->{memory};
