@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2015/04/03 17:22:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/05/11 07:20:27 jasper Exp $
 @bin bin/rygel
 @bin bin/rygel-preferences
 include/rygel-${API_V}/
@@ -340,4 +340,3 @@ share/vala/vapi/rygel-server-${API_V}.vapi
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-
