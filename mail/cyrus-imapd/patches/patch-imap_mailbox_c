@@ -1,10 +1,10 @@
-$OpenBSD: patch-imap_mailbox_c,v 1.11 2015/04/24 14:51:26 ajacoutot Exp $
+$OpenBSD: patch-imap_mailbox_c,v 1.12 2015/05/11 06:03:40 ajacoutot Exp $
 
 https://bugzilla.cyrusimap.org/show_bug.cgi?id=3376
 
---- imap/mailbox.c.orig	Fri Apr 24 02:48:16 2015
-+++ imap/mailbox.c	Fri Apr 24 15:47:27 2015
-@@ -2238,10 +2238,10 @@ static uint32_t crc_basic(const struct mailbox *mailbo
+--- imap/mailbox.c.orig	Fri May  8 05:49:52 2015
++++ imap/mailbox.c	Mon May 11 07:58:45 2015
+@@ -2250,10 +2250,10 @@ static uint32_t crc_basic(const struct mailbox *mailbo
  	flagcrc ^= crc32_cstring(buf);
      }
  
