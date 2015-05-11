@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.45 2015/05/10 08:40:06 espie Exp $
+# $OpenBSD: Config.pm,v 1.46 2015/05/11 10:33:47 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -31,8 +31,15 @@ sub setup_users
 		my $U = uc($u);
 		if ($state->defines($U)) {
 			$state->{$u} = DPB::User->new($state->defines($U));
+		}
+		if (defined $state->{$u}) {
 			if ($state->defines("DIRMODE")) {
-				$state->{$u}{dirmode} = oct($state->defines("DIRMODE"));
+				$state->{$u}{dirmode} = 
+				    oct($state->defines("DIRMODE"));
+			}
+			if ($state->defines("DROPPRIV")) {
+				$state->{$u}{droppriv} = 
+				    $state->defines("DROPPRIV");
 			}
 		}
 	}
@@ -144,6 +151,10 @@ sub parse_command_line
 	}
 	$state->{build_user} //= $state->{default_prop}{build_user};
 	$class->setup_users($state);
+	$state->{build_user} //= $state->{base_user};
+	$state->{log_user} //= $state->{build_user};
+	$state->{fetch_user} //= $state->{build_user};
+
 
 	$state->{chroot} = $state->{default_prop}{chroot};
 	# reparse things properly now that we can chroot
@@ -360,6 +371,9 @@ sub parse_hosts_file
 		if (m/^([A-Z_]+)\=\s*(.*)\s*$/) {
 			$state->{subst}->add($1, $2);
 			next;
+		}
+		if (defined $state->{BUILD_USER}) {
+			$$rdefault->{build_user} //= $state->{BUILD_USER};
 		}
 		# copy default properties
 		my $prop = DPB::HostProperties->new($$rdefault);
