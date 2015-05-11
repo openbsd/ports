@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/08/07 21:32:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/11 13:47:28 gonzalo Exp $
 
 COMMENT =	software version control visualization tool
 
-DISTNAME =	gource-0.39
-REVISION =	0
+DISTNAME =	gource-0.43
 CATEGORIES =	sysutils graphics
 HOMEPAGE =	https://gource.googlecode.com/
 
@@ -12,12 +11,16 @@ MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${HOMEPAGE}/files/
+MASTER_SITES =	https://github.com/acaudwell/Gource/releases/download/${DISTNAME}/
 
 CONFIGURE_STYLE =	gnu noman
 
+MODULES =		gcc4
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS =		c c++
+
 WANTLIB += GL GLEW GLU SDL SDL_image boost_filesystem boost_system
-WANTLIB += c freetype m pcre pthread stdc++ z
+WANTLIB += c freetype m pcre png pthread z
 
 LIB_DEPENDS =           devel/boost \
 			devel/pcre \
