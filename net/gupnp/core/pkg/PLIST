@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/06/02 08:08:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/05/11 07:19:59 jasper Exp $
 bin/gupnp-binding-tool
 include/gupnp-1.0/
 include/gupnp-1.0/libgupnp/
@@ -17,6 +17,7 @@ include/gupnp-1.0/libgupnp/gupnp-service-introspection.h
 include/gupnp-1.0/libgupnp/gupnp-service-proxy.h
 include/gupnp-1.0/libgupnp/gupnp-service.h
 include/gupnp-1.0/libgupnp/gupnp-types.h
+include/gupnp-1.0/libgupnp/gupnp-uuid.h
 include/gupnp-1.0/libgupnp/gupnp-white-list.h
 include/gupnp-1.0/libgupnp/gupnp-xml-doc.h
 include/gupnp-1.0/libgupnp/gupnp.h
@@ -53,6 +54,7 @@ share/gtk-doc/html/gupnp/client-tutorial.html
 share/gtk-doc/html/gupnp/glossary.html
 share/gtk-doc/html/gupnp/gupnp-Error-codes.html
 share/gtk-doc/html/gupnp/gupnp-Special-UPnP-types.html
+share/gtk-doc/html/gupnp/gupnp-Utility-functions.html
 share/gtk-doc/html/gupnp/gupnp-binding-tool.html
 share/gtk-doc/html/gupnp/gupnp-gupnp-service-introspection.html
 share/gtk-doc/html/gupnp/gupnp.devhelp2
