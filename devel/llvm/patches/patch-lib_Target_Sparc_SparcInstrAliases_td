@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcInstrAliases_td,v 1.2 2014/09/18 20:19:27 brad Exp $
+$OpenBSD: patch-lib_Target_Sparc_SparcInstrAliases_td,v 1.3 2015/05/11 23:21:51 ajacoutot Exp $
 
 Sync up the SPARC backend up to commit r203424.
 
@@ -8,8 +8,11 @@ Sparc: disable printing of jmp/call aliases (C++ does it)
 These aliases are handled entirely in C++ and only having TableGen InstAliases
 for some of them was confusing LLVM.
 
+r236042
+Sparc: Add alternate aliases for conditional branch instructions.
+
 --- lib/Target/Sparc/SparcInstrAliases.td.orig	Sun Mar  2 21:57:39 2014
-+++ lib/Target/Sparc/SparcInstrAliases.td	Mon Sep 15 15:27:10 2014
++++ lib/Target/Sparc/SparcInstrAliases.td	Wed Apr 29 20:22:04 2015
 @@ -13,32 +13,53 @@
  // Instruction aliases for conditional moves.
  
@@ -196,7 +199,7 @@ for some of them was confusing LLVM.
  }
  
  
-@@ -76,13 +199,48 @@ multiclass fp_cond_alias<string cond, int condVal> {
+@@ -76,20 +199,57 @@ multiclass fp_cond_alias<string cond, int condVal> {
    def : InstAlias<!strconcat(!strconcat("fb", cond), " $imm"),
                    (FBCOND brtarget:$imm, condVal), 0>;
  
@@ -250,7 +253,24 @@ for some of them was confusing LLVM.
                    Requires<[HasV9, HasHardQuad]>;
  }
  
-@@ -103,6 +261,8 @@ defm : int_cond_alias<"neg",  0b0110>;
+ defm : int_cond_alias<"a",    0b1000>;
+ defm : int_cond_alias<"n",    0b0000>;
+ defm : int_cond_alias<"ne",   0b1001>;
++defm : int_cond_alias<"nz",   0b1001>; // same as ne
+ defm : int_cond_alias<"e",    0b0001>;
++defm : int_cond_alias<"z",    0b0001>; // same as e
+ defm : int_cond_alias<"g",    0b1010>;
+ defm : int_cond_alias<"le",   0b0010>;
+ defm : int_cond_alias<"ge",   0b1011>;
+@@ -97,12 +257,16 @@ defm : int_cond_alias<"l",    0b0011>;
+ defm : int_cond_alias<"gu",   0b1100>;
+ defm : int_cond_alias<"leu",  0b0100>;
+ defm : int_cond_alias<"cc",   0b1101>;
++defm : int_cond_alias<"geu",  0b1101>; // same as cc
+ defm : int_cond_alias<"cs",   0b0101>;
++defm : int_cond_alias<"lu",   0b0101>; // same as cs
+ defm : int_cond_alias<"pos",  0b1110>;
+ defm : int_cond_alias<"neg",  0b0110>;
  defm : int_cond_alias<"vc",   0b1111>;
  defm : int_cond_alias<"vs",   0b0111>;
  
@@ -259,7 +279,17 @@ for some of them was confusing LLVM.
  defm : fp_cond_alias<"u",     0b0111>;
  defm : fp_cond_alias<"g",     0b0110>;
  defm : fp_cond_alias<"ug",    0b0101>;
-@@ -118,16 +278,15 @@ defm : fp_cond_alias<"le",    0b1101>;
+@@ -110,7 +274,9 @@ defm : fp_cond_alias<"l",     0b0100>;
+ defm : fp_cond_alias<"ul",    0b0011>;
+ defm : fp_cond_alias<"lg",    0b0010>;
+ defm : fp_cond_alias<"ne",    0b0001>;
++defm : fp_cond_alias<"nz",    0b0001>; // same as ne
+ defm : fp_cond_alias<"e",     0b1001>;
++defm : fp_cond_alias<"z",     0b1001>; // same as e
+ defm : fp_cond_alias<"ue",    0b1010>;
+ defm : fp_cond_alias<"ge",    0b1011>;
+ defm : fp_cond_alias<"uge",   0b1100>;
+@@ -118,16 +284,15 @@ defm : fp_cond_alias<"le",    0b1101>;
  defm : fp_cond_alias<"ule",   0b1110>;
  defm : fp_cond_alias<"o",     0b1111>;
  
@@ -280,7 +310,7 @@ for some of them was confusing LLVM.
  
  // retl -> RETL 8
  def : InstAlias<"retl", (RETL 8)>;
-@@ -140,3 +299,27 @@ def : InstAlias<"mov $rs2, $rd", (ORrr IntRegs:$rd, G0
+@@ -140,3 +305,27 @@ def : InstAlias<"mov $rs2, $rd", (ORrr IntRegs:$rd, G0
  
  // mov simm13, rd -> or %g0, simm13, rd
  def : InstAlias<"mov $simm13, $rd", (ORri IntRegs:$rd, G0, i32imm:$simm13)>;

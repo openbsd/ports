@@ -1,9 +1,20 @@
-$OpenBSD: patch-lib_Target_Sparc_AsmParser_SparcAsmParser_cpp,v 1.1 2014/07/11 01:05:24 brad Exp $
+$OpenBSD: patch-lib_Target_Sparc_AsmParser_SparcAsmParser_cpp,v 1.2 2015/05/11 23:21:51 ajacoutot Exp $
 
 Sync up the SPARC backend up to commit r203424.
 
---- lib/Target/Sparc/AsmParser/SparcAsmParser.cpp.orig	Sun Jun 15 02:46:35 2014
-+++ lib/Target/Sparc/AsmParser/SparcAsmParser.cpp	Sun Jun 15 03:00:25 2014
+r236107
+Sparc: Prefer reg+reg address encoding when only one register used.
+
+Reg+%g0 is preferred to Reg+imm0 by the manual, and is what GCC produces.
+
+Futhermore, reg+imm is invalid for the (not yet supported) "alternate
+address space" instructions.
+
+r236137
+Make Sparc assembler accept parenthesized constant expressions.
+
+--- lib/Target/Sparc/AsmParser/SparcAsmParser.cpp.orig	Sun Mar  2 21:57:39 2014
++++ lib/Target/Sparc/AsmParser/SparcAsmParser.cpp	Thu Apr 30 02:49:39 2015
 @@ -12,9 +12,11 @@
  #include "llvm/ADT/STLExtras.h"
  #include "llvm/MC/MCContext.h"
@@ -37,7 +48,25 @@ Sync up the SPARC backend up to commit r203424.
  public:
    SparcAsmParser(MCSubtargetInfo &sti, MCAsmParser &parser,
                  const MCInstrInfo &MII)
-@@ -415,7 +422,7 @@ MatchAndEmitInstruction(SMLoc IDLoc, unsigned &Opcode,
+@@ -354,13 +361,11 @@ class SparcOperand : public MCParsedAsmOperand { (publ
+     return Op;
+   }
+ 
+-  static SparcOperand *CreateMEMri(unsigned Base,
+-                                 const MCExpr *Off,
+-                                 SMLoc S, SMLoc E) {
+-    SparcOperand *Op = new SparcOperand(k_MemoryImm);
++  static SparcOperand *CreateMEMr(unsigned Base, SMLoc S, SMLoc E) {
++    SparcOperand *Op = new SparcOperand(k_MemoryReg);
+     Op->Mem.Base = Base;
+-    Op->Mem.OffsetReg = 0;
+-    Op->Mem.Off = Off;
++    Op->Mem.OffsetReg = Sparc::G0;  // always 0
++    Op->Mem.Off = 0;
+     Op->StartLoc = S;
+     Op->EndLoc = E;
+     return Op;
+@@ -415,7 +420,7 @@ MatchAndEmitInstruction(SMLoc IDLoc, unsigned &Opcode,
      return Error(ErrorLoc, "invalid operand for instruction");
    }
    case Match_MnemonicFail:
@@ -46,7 +75,7 @@ Sync up the SPARC backend up to commit r203424.
    }
    return true;
  }
-@@ -439,21 +446,30 @@ ParseRegister(unsigned &RegNo, SMLoc &StartLoc, SMLoc 
+@@ -439,21 +444,30 @@ ParseRegister(unsigned &RegNo, SMLoc &StartLoc, SMLoc 
    return Error(StartLoc, "invalid register name");
  }
  
@@ -82,7 +111,7 @@ Sync up the SPARC backend up to commit r203424.
      if (parseOperand(Operands, Name) != MatchOperand_Success) {
        SMLoc Loc = getLexer().getLoc();
        Parser.eatToEndOfStatement();
-@@ -482,8 +498,52 @@ ParseInstruction(ParseInstructionInfo &Info, StringRef
+@@ -482,8 +496,52 @@ ParseInstruction(ParseInstructionInfo &Info, StringRef
  bool SparcAsmParser::
  ParseDirective(AsmToken DirectiveID)
  {
@@ -137,7 +166,16 @@ Sync up the SPARC backend up to commit r203424.
    return false;
  }
  
-@@ -577,7 +637,8 @@ parseOperand(SmallVectorImpl<MCParsedAsmOperand*> &Ope
+@@ -504,7 +562,7 @@ parseMEMOperand(SmallVectorImpl<MCParsedAsmOperand*> &
+   case AsmToken::Comma:
+   case AsmToken::RBrac:
+   case AsmToken::EndOfStatement:
+-    Operands.push_back(SparcOperand::CreateMEMri(BaseReg, 0, S, E));
++    Operands.push_back(SparcOperand::CreateMEMr(BaseReg, S, E));
+     return MatchOperand_Success;
+ 
+   case AsmToken:: Plus:
+@@ -577,7 +635,8 @@ parseOperand(SmallVectorImpl<MCParsedAsmOperand*> &Ope
    }
  
    SparcOperand *Op = 0;
@@ -147,7 +185,7 @@ Sync up the SPARC backend up to commit r203424.
    if (ResTy != MatchOperand_Success || !Op)
      return MatchOperand_ParseFail;
  
-@@ -588,7 +649,7 @@ parseOperand(SmallVectorImpl<MCParsedAsmOperand*> &Ope
+@@ -588,7 +647,7 @@ parseOperand(SmallVectorImpl<MCParsedAsmOperand*> &Ope
  }
  
  SparcAsmParser::OperandMatchResultTy
@@ -156,7 +194,7 @@ Sync up the SPARC backend up to commit r203424.
  {
  
    SMLoc S = Parser.getTok().getLoc();
-@@ -621,11 +682,6 @@ SparcAsmParser::parseSparcAsmOperand(SparcOperand *&Op
+@@ -621,11 +680,6 @@ SparcAsmParser::parseSparcAsmOperand(SparcOperand *&Op
          else
            Op = SparcOperand::CreateToken("%icc", S);
          break;
@@ -168,7 +206,15 @@ Sync up the SPARC backend up to commit r203424.
        }
        break;
      }
-@@ -649,6 +705,10 @@ SparcAsmParser::parseSparcAsmOperand(SparcOperand *&Op
+@@ -637,6 +691,7 @@ SparcAsmParser::parseSparcAsmOperand(SparcOperand *&Op
+ 
+   case AsmToken::Minus:
+   case AsmToken::Integer:
++  case AsmToken::LParen:
+     if (!getParser().parseExpression(EVal, E))
+       Op = SparcOperand::CreateImm(EVal, S, E);
+     break;
+@@ -649,6 +704,10 @@ SparcAsmParser::parseSparcAsmOperand(SparcOperand *&Op
  
        const MCExpr *Res = MCSymbolRefExpr::Create(Sym, MCSymbolRefExpr::VK_None,
                                                    getContext());
@@ -179,7 +225,7 @@ Sync up the SPARC backend up to commit r203424.
        Op = SparcOperand::CreateImm(Res, S, E);
      }
      break;
-@@ -657,6 +717,27 @@ SparcAsmParser::parseSparcAsmOperand(SparcOperand *&Op
+@@ -657,6 +716,27 @@ SparcAsmParser::parseSparcAsmOperand(SparcOperand *&Op
    return (Op) ? MatchOperand_Success : MatchOperand_ParseFail;
  }
  
@@ -207,7 +253,7 @@ Sync up the SPARC backend up to commit r203424.
  bool SparcAsmParser::matchRegisterName(const AsmToken &Tok,
                                         unsigned &RegNo,
                                         unsigned &RegKind)
-@@ -704,7 +785,7 @@ bool SparcAsmParser::matchRegisterName(const AsmToken 
+@@ -704,7 +784,7 @@ bool SparcAsmParser::matchRegisterName(const AsmToken 
          && !name.substr(3).getAsInteger(10, intVal)
          && intVal < 4) {
        // FIXME: check 64bit and  handle %fcc1 - %fcc3
@@ -216,7 +262,7 @@ Sync up the SPARC backend up to commit r203424.
        RegKind = SparcOperand::rk_CCReg;
        return true;
      }
-@@ -767,7 +848,32 @@ bool SparcAsmParser::matchRegisterName(const AsmToken 
+@@ -767,7 +847,32 @@ bool SparcAsmParser::matchRegisterName(const AsmToken 
    return false;
  }
  
@@ -249,7 +295,7 @@ Sync up the SPARC backend up to commit r203424.
  bool SparcAsmParser::matchSparcAsmModifiers(const MCExpr *&EVal,
                                              SMLoc &EndLoc)
  {
-@@ -790,6 +896,23 @@ bool SparcAsmParser::matchSparcAsmModifiers(const MCEx
+@@ -790,6 +895,23 @@ bool SparcAsmParser::matchSparcAsmModifiers(const MCEx
    const MCExpr *subExpr;
    if (Parser.parseParenExpression(subExpr, EndLoc))
      return false;
