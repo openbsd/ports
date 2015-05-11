@@ -1,6 +1,9 @@
-$OpenBSD: patch-pstree_c,v 1.3 2009/05/10 14:54:22 jasper Exp $
---- pstree.c.orig	Sun May 10 16:49:43 2009
-+++ pstree.c	Sun May 10 16:51:27 2009
+$OpenBSD: patch-pstree_c,v 1.4 2015/05/11 11:47:27 sthen Exp $
+
+If ioctl fails, the structs are uninitialized, so don't use them.
+
+--- pstree.c.orig	Fri Apr 12 10:47:03 2013
++++ pstree.c	Mon May 11 12:44:12 2015
 @@ -71,7 +71,7 @@ extern getargs(struct ProcInfo *, int, char *, int);
   * (Net|Open|Free)BSD & Darwin merged by Ralf Meyer <ralf AT thp.Uni-Duisburg.DE>
   */
@@ -10,3 +13,20 @@ $OpenBSD: patch-pstree_c,v 1.3 2009/05/10 14:54:22 jasper Exp $
  #  define PSFORMAT 	"%s %ld %ld %ld %[^\n]"
  #  define PSVARS	P[i].name, &P[i].pid, &P[i].ppid, &P[i].pgid, P[i].cmd
  #  define PSVARSN	5
+@@ -872,12 +872,12 @@ int main(int argc, char **argv) {
+     Columns = atoi((char*)termdef(fileno(stdout),'c'));
+ #elif defined(TIOCGWINSZ)
+     struct winsize winsize;
+-    ioctl(fileno(stdout), TIOCGWINSZ, &winsize);
+-    Columns = winsize.ws_col;
++    if (ioctl(fileno(stdout), TIOCGWINSZ, &winsize) != -1)
++        Columns = winsize.ws_col;
+ #elif defined(TIOCGSIZE)
+     struct ttysize ttysize;
+-    ioctl(fileno(stdout), TIOCGSIZE, &ttysize);
+-    Columns = ttysize.ts_cols;
++    if (ioctl(fileno(stdout), TIOCGSIZE, &ttysize) != -1)
++        Columns = ttysize.ts_cols;
+ #else
+     char *env = getenv("COLUMNS");
+     Columns = env ? atoi(env) : 80;
