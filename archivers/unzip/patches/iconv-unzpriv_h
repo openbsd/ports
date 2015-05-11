@@ -1,0 +1,12 @@
+$OpenBSD: iconv-unzpriv_h,v 1.1 2015/05/11 21:19:23 czarkoff Exp $
+--- unzpriv.h.orig	Mon Apr 20 01:59:26 2009
++++ unzpriv.h	Sat May  9 13:31:20 2015
+@@ -3008,7 +3008,7 @@ char    *GetLoadPath     OF((__GPRO));                
+          !(((islochdr) || (isuxatt)) && \
+            ((hostver) == 25 || (hostver) == 26 || (hostver) == 40))) || \
+         (hostnum) == FS_HPFS_ || \
+-        ((hostnum) == FS_NTFS_ && (hostver) == 50)) { \
++        ((hostnum) == FS_NTFS_ /* && (hostver) == 50 */ )) { \
+         _OEM_INTERN((string)); \
+     } else { \
+         _ISO_INTERN((string)); \
