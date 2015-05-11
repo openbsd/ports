@@ -1,12 +1,12 @@
-$OpenBSD: patch-bin_Makefile_in,v 1.1 2012/12/21 09:42:28 jasper Exp $
---- bin/Makefile.in.orig	Fri Dec 21 10:38:28 2012
-+++ bin/Makefile.in	Fri Dec 21 10:39:06 2012
-@@ -272,7 +272,7 @@ READLINE_LIB_PATH = 
+$OpenBSD: patch-bin_Makefile_in,v 1.2 2015/05/11 07:39:19 jasper Exp $
+--- bin/Makefile.in.orig	Mon May 11 09:27:10 2015
++++ bin/Makefile.in	Mon May 11 09:27:36 2015
+@@ -280,7 +280,7 @@ READLINE_LIB_PATH = 
  kawa_EXTRA_LIBS = -lncurses  # For Linux
  #kawa_EXTRA_LIBS = -lcurses -lsocket # For Solaris2
- INCLUDES = $(READLINE_INCLUDE_PATH)
+ AM_CPPFLAGS = $(READLINE_INCLUDE_PATH)
 -kawa_LDADD = $(READLINE_LIB_PATH) -lreadline -lhistory $(kawa_EXTRA_LIBS)
 +kawa_LDADD = $(READLINE_LIB_PATH) -lreadline $(kawa_EXTRA_LIBS)
- @WITH_LIBTOOL_FALSE@OEXT = .o
- @WITH_LIBTOOL_TRUE@OEXT = .lo
- @ENABLE_XML_TRUE@@WITH_SAX2_TRUE@LIBADD_SAX2 = gnu-kawa-sax$(OEXT)
+ kawa_SOURCES = kawa.c kawapath.c
+ cgi_servlet_SOURCES = cgi-servlet.c kawapath.c
+ KAWAJAR = kawa-$(VERSION).jar

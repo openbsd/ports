@@ -1,18 +1,45 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2015/02/17 20:19:05 naddy Exp $
---- doc/Makefile.in.orig	Tue Feb 17 21:08:25 2015
-+++ doc/Makefile.in	Tue Feb 17 21:09:38 2015
-@@ -753,12 +753,10 @@ html: $(KAWA_HTMLS)
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2015/05/11 07:39:19 jasper Exp $
+
+our makeinfo(1) is too old, so don't install .info files
+kawa.texi:5: warning: unrecognized encoding name `UTF-8'.
+kawa.texi:10: Unknown command `codequoteundirected'.
+kawa.texi:11: Unknown command `codequotebacktick'.
+kawa.texi:1847: Unknown command `part'.
+kawa.texi:3009: Unknown command `backslashchar'.
+kawa.texi:3009: Misplaced {.
+
+--- doc/Makefile.in.orig	Mon May 11 09:29:08 2015
++++ doc/Makefile.in	Mon May 11 09:35:06 2015
+@@ -562,7 +562,7 @@ distdir: $(DISTFILES)
+ 	  dist-info
+ check-am: all-am
+ check: check-am
+-all-am: Makefile $(INFO_DEPS) $(MANS)
++all-am: Makefile $(MANS)
+ installdirs:
+ 	for dir in "$(DESTDIR)$(infodir)" "$(DESTDIR)$(man1dir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+@@ -616,7 +616,7 @@ info: info-am
+ 
+ info-am: $(INFO_DEPS)
+ 
+-install-data-am: install-info-am install-man
++install-data-am: install-man
+ 
+ install-dvi: install-dvi-am
+ 
+@@ -788,12 +788,10 @@ html: $(KAWA_HTMLS)
  	TEXINPUTS=$(top_srcdir)/../texinfo/texinfo.tex:$$TEXINPUTS \
  	  MAKEINFO='$(MAKEINFO) -I $(srcdir)' $(TEXI2PDF) -E $<
  kawa.1: $(srcdir)/kawa.man
--	nroff -man $(srcdir)/kawa.man > kawa1.tmp
--	mv kawa1.tmp kawa.1
+-	nroff -man $(srcdir)/kawa.man > tpm-kawa.1
+-	mv tpm-kawa.1 kawa.1
 +	cp $(srcdir)/kawa.man kawa.1
  
  qexo.1: $(srcdir)/qexo.man
--	nroff -man $(srcdir)/qexo.man > qexo1.tmp
--	mv qexo1.tmp qexo.1
+-	nroff -man $(srcdir)/qexo.man > tpm-qexo1
+-	mv tpm-qexo1 qexo.1
 +	cp $(srcdir)/qexo.man qexo.1
  
- ../kawa-doc-$(VERSION).tar.gz: kawa/index.html kawa.pdf
- 	tar cf - kawa/*.html kawa.pdf|gzip -c --best >$@
+ ../kawa-doc-$(VERSION).tar.gz: kawa.info $(KAWA_HTMLDIR)/index.html kawa.pdf
+ 	tar cf - $(KAWA_HTMLDIR)/*.html kawa.pdf|gzip -c --best >$@

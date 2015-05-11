@@ -1,9 +1,9 @@
 Kawa is a programming language for the Java platform. It is an
-implementation of Scheme, which, is in the Lisp family of programming
-languages. Kawa has many useful features, including convenient
-integration with Java. It can be used as a "scripting language", but
-includes a compiler and all the benefits of a "real" programming
-language, including optional static typing, so Kawa programs can be as
-efficient as Java.  Kawa is also a useful framework for implementing
-other programming languages on the Java platform. It has has many useful
-utility classes.
+implementation of Scheme (R7RS), which, is in the Lisp family of
+programming languages. Kawa has many useful features, including
+convenient integration with Java. It can be used as a "scripting
+language", but includes a compiler and all the benefits of a "real"
+programming language, including optional static typing, so Kawa programs
+can be as efficient as Java.  Kawa is also a useful framework for
+implementing other programming languages on the Java platform. It has
+has many useful utility classes.
