@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1292 2015/05/03 08:06:03 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1293 2015/05/11 12:07:17 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -24,20 +24,6 @@ ERRORS += "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
 .if ${.MAKEFLAGS:MSUBPACKAGE=*}
 ERRORS += "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 .endif
-
-.for v in PKGREPOSITORY PKGREPOSITORYBASE CDROM_PACKAGES FTP_PACKAGES \
-	SED_PLIST IGNORE_FILES NO_REGRESS REGRESS_IS_INTERACTIVE REGRESS_DEPENDS \
-	PERMIT_DISTFILES_CDROM
-.  if defined($v)
-ERRORS += "Fatal: Variable $v is obsolete, see bsd.port.mk(5)"
-.  endif
-.endfor
-
-.for t in pre-fetch do-fetch post-fetch pre-package do-package post-package
-.  if target($t)
-ERRORS += "Fatal: you're not allowed to override $t"
-.  endif
-.endfor
 
 .for f v in bsd.port.mk _BSD_PORT_MK bsd.port.subdir.mk _BSD_PORT_SUBDIR_MK
 .  if defined($v)
@@ -310,6 +296,20 @@ _MODULES_DONE =
 ###
 ### Variable setup that can happen after modules
 ###
+
+.for v in PKGREPOSITORY PKGREPOSITORYBASE CDROM_PACKAGES FTP_PACKAGES \
+	SED_PLIST IGNORE_FILES NO_REGRESS REGRESS_IS_INTERACTIVE REGRESS_DEPENDS \
+	PERMIT_DISTFILES_CDROM
+.  if defined($v)
+ERRORS += "Fatal: Variable $v is obsolete, see bsd.port.mk(5)"
+.  endif
+.endfor
+
+.for t in pre-fetch do-fetch post-fetch pre-package do-package post-package
+.  if target($t)
+ERRORS += "Fatal: you're not allowed to override $t"
+.  endif
+.endfor
 
 
 # some introspection
