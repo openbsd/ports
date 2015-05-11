@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2015/04/09 21:19:50 kili Exp $
+# $OpenBSD: Makefile,v 1.115 2015/05/11 22:54:57 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -131,7 +131,6 @@ post-install:
 	${INSTALL_SCRIPT} /dev/null register.sh && \
 	exec > register.sh && \
 	echo '#!/bin/sh' && \
-	echo 'exec > /dev/null 2>&1' && \
 	echo 'p="$${0%/*}/bin/ghc-pkg --no-user-package-db --global-package-db $${0%/*}/package.conf.d"' && \
 	for p in $$($$GHC_PKG list --simple); do \
 		echo \$$p register --force - \<\< \'EOF\' && \
@@ -141,7 +140,6 @@ post-install:
 	${INSTALL_SCRIPT} /dev/null unregister.sh && \
 	exec > unregister.sh && \
 	echo '#!/bin/sh' && \
-	echo 'exec > /dev/null 2>&1' && \
 	echo 'p="$${0%/*}/bin/ghc-pkg --no-user-package-db --global-package-db $${0%/*}/package.conf.d"' && \
 	for p in $$($$GHC_PKG list --simple); do \
 		echo \$$p unregister --force $$p; \
