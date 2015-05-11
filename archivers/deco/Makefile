@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/21 06:13:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/11 20:31:13 jasper Exp $
 
 COMMENT=	extract various archive file formats
 
-V=		1.6.1.1
-ARCHIVE_V=	1.5.1
+V=		1.6.3
+ARCHIVE_V=	1.6
 DISTNAME=	deco-${V}
 PKGNAME=	deco-archive-${V}
 
@@ -14,7 +14,6 @@ HOMEPAGE= 	http://hartlich.com/deco/
 # GPLv3 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-REVISION =	2
 WANTLIB=	c
 
 MASTER_SITES=	${HOMEPAGE}/download/
