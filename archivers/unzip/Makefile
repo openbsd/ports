@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.53 2015/05/11 21:19:23 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.54 2015/05/11 21:22:06 czarkoff Exp $
 
-COMMENT=	extract, list & test files in a ZIP archive
+COMMENT =	extract, list & test files in a ZIP archive
 
-VERSION=	6.0
-DISTNAME=	unzip${VERSION:S/.//}
-PKGNAME=	unzip-${VERSION}
+VERSION =	6.0
+DISTNAME =	unzip${VERSION:S/.//}
+PKGNAME =	unzip-${VERSION}
 REVISION =	7
-CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=infozip/} \
+CATEGORIES =	archivers
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=infozip/} \
 		ftp://ftp.info-zip.org/pub/infozip/src/
 
 HOMEPAGE =	http://www.info-zip.org/UnZip.html
@@ -16,17 +16,17 @@ FLAVORS =	iconv
 FLAVOR ?=
 
 # Conditional
-PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c
+PERMIT_PACKAGE_CDROM =	Yes
+WANTLIB =		c
 
-MAKE_FLAGS=	CC="${CC}" LD="${CC}" CF="${CFLAGS}" LOC="${LOC}"
-FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}"
+MAKE_FLAGS =	CC="${CC}" LD="${CC}" CF="${CFLAGS}" LOC="${LOC}"
+FAKE_FLAGS =	prefix="${WRKINST}${PREFIX}"
 
-MAKE_FILE=	unix/Makefile
+MAKE_FILE =	unix/Makefile
 
-ALL_TARGET=	bsd
+ALL_TARGET =	bsd
 
-DOCS=	COPYING.OLD LICENSE README WHERE
+DOCS =	COPYING.OLD LICENSE README WHERE
 
 LOC =		-DLARGE_FILE_SUPPORT -DNO_LCHMOD -DUSE_UNSHRINK
 
