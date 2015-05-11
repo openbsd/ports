@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/01/21 22:27:34 jca Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/05/11 21:22:20 jasper Exp $
 @bin bin/zipcmp
 @bin bin/zipmerge
-@bin bin/ziptorrent
 include/zip.h
 lib/libzip/
 lib/libzip.a
@@ -9,11 +8,10 @@ lib/libzip.la
 @lib lib/libzip.so.${LIBzip_VERSION}
 lib/libzip/include/
 lib/libzip/include/zipconf.h
-lib/pkgconfig/
 lib/pkgconfig/libzip.pc
 @man man/man1/zipcmp.1
 @man man/man1/zipmerge.1
-@man man/man1/ziptorrent.1
+@man man/man3/ZIP_SOURCE_GET_ARGS.3
 @man man/man3/libzip.3
 @man man/man3/zip_add.3
 @man man/man3/zip_add_dir.3
@@ -22,8 +20,17 @@ lib/pkgconfig/libzip.pc
 @man man/man3/zip_dir_add.3
 @man man/man3/zip_discard.3
 @man man/man3/zip_error_clear.3
+@man man/man3/zip_error_code_system.3
+@man man/man3/zip_error_code_zip.3
+@man man/man3/zip_error_fini.3
 @man man/man3/zip_error_get.3
 @man man/man3/zip_error_get_sys_type.3
+@man man/man3/zip_error_init.3
+@man man/man3/zip_error_init_with_code.3
+@man man/man3/zip_error_set.3
+@man man/man3/zip_error_strerror.3
+@man man/man3/zip_error_system_type.3
+@man man/man3/zip_error_to_data.3
 @man man/man3/zip_error_to_str.3
 @man man/man3/zip_errors.3
 @man man/man3/zip_fclose.3
@@ -39,11 +46,13 @@ lib/pkgconfig/libzip.pc
 @man man/man3/zip_file_extra_fields_count.3
 @man man/man3/zip_file_extra_fields_count_by_id.3
 @man man/man3/zip_file_get_comment.3
+@man man/man3/zip_file_get_error.3
 @man man/man3/zip_file_get_external_attributes.3
 @man man/man3/zip_file_rename.3
 @man man/man3/zip_file_replace.3
 @man man/man3/zip_file_set_comment.3
 @man man/man3/zip_file_set_external_attributes.3
+@man man/man3/zip_file_set_mtime.3
 @man man/man3/zip_file_strerror.3
 @man man/man3/zip_fopen.3
 @man man/man3/zip_fopen_encrypted.3
@@ -52,12 +61,14 @@ lib/pkgconfig/libzip.pc
 @man man/man3/zip_fread.3
 @man man/man3/zip_get_archive_comment.3
 @man man/man3/zip_get_archive_flag.3
+@man man/man3/zip_get_error.3
 @man man/man3/zip_get_file_comment.3
 @man man/man3/zip_get_name.3
 @man man/man3/zip_get_num_entries.3
 @man man/man3/zip_get_num_files.3
 @man man/man3/zip_name_locate.3
 @man man/man3/zip_open.3
+@man man/man3/zip_open_from_source.3
 @man man/man3/zip_rename.3
 @man man/man3/zip_replace.3
 @man man/man3/zip_set_archive_comment.3
@@ -65,11 +76,36 @@ lib/pkgconfig/libzip.pc
 @man man/man3/zip_set_default_password.3
 @man man/man3/zip_set_file_comment.3
 @man man/man3/zip_set_file_compression.3
+@man man/man3/zip_source.3
+@man man/man3/zip_source_begin_write.3
 @man man/man3/zip_source_buffer.3
+@man man/man3/zip_source_close.3
+@man man/man3/zip_source_commit_write.3
+@man man/man3/zip_source_error.3
 @man man/man3/zip_source_file.3
 @man man/man3/zip_source_filep.3
 @man man/man3/zip_source_free.3
 @man man/man3/zip_source_function.3
+@man man/man3/zip_source_function_create.3
+@man man/man3/zip_source_is_deleted.3
+@man man/man3/zip_source_keep.3
+@man man/man3/zip_source_make_command_bitmap.3
+@man man/man3/zip_source_open.3
+@man man/man3/zip_source_read.3
+@man man/man3/zip_source_rollback_write.3
+@man man/man3/zip_source_seek.3
+@man man/man3/zip_source_seek_compute_offset.3
+@man man/man3/zip_source_seek_write.3
+@man man/man3/zip_source_stat.3
+@man man/man3/zip_source_tell.3
+@man man/man3/zip_source_tell_write.3
+@man man/man3/zip_source_win32a.3
+@man man/man3/zip_source_win32a_create.3
+@man man/man3/zip_source_win32handle.3
+@man man/man3/zip_source_win32handle_create.3
+@man man/man3/zip_source_win32w.3
+@man man/man3/zip_source_win32w_create.3
+@man man/man3/zip_source_write.3
 @man man/man3/zip_source_zip.3
 @man man/man3/zip_stat.3
 @man man/man3/zip_stat_index.3
