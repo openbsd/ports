@@ -1,0 +1,78 @@
+$OpenBSD: patch-plugins_vfs_zip_vfs_zip_c,v 1.1 2015/05/11 21:22:02 jasper Exp $
+
+s/zip_file_t/db_zip_file_t/g to prevent conflict with new typedef in libzip 1.0.0
+
+--- plugins/vfs_zip/vfs_zip.c.orig	Mon May 11 22:38:19 2015
++++ plugins/vfs_zip/vfs_zip.c	Mon May 11 22:42:05 2015
+@@ -54,7 +54,7 @@ typedef struct {
+     int buffer_remaining;
+     int buffer_pos;
+ #endif
+-} zip_file_t;
++} db_zip_file_t;
+ 
+ static const char *scheme_names[] = { "zip://", NULL };
+ 
+@@ -108,8 +108,8 @@ vfs_zip_open (const char *fname) {
+         return NULL;
+     }
+ 
+-    zip_file_t *f = malloc (sizeof (zip_file_t));
+-    memset (f, 0, sizeof (zip_file_t));
++    db_zip_file_t *f = malloc (sizeof (db_zip_file_t));
++    memset (f, 0, sizeof (db_zip_file_t));
+     f->file.vfs = &plugin;
+     f->z = z;
+     f->zf = zf;
+@@ -122,7 +122,7 @@ vfs_zip_open (const char *fname) {
+ void
+ vfs_zip_close (DB_FILE *f) {
+     trace ("vfs_zip: close\n");
+-    zip_file_t *zf = (zip_file_t *)f;
++    db_zip_file_t *zf = (db_zip_file_t *)f;
+     if (zf->zf) {
+         zip_fclose (zf->zf);
+     }
+@@ -134,7 +134,7 @@ vfs_zip_close (DB_FILE *f) {
+ 
+ size_t
+ vfs_zip_read (void *ptr, size_t size, size_t nmemb, DB_FILE *f) {
+-    zip_file_t *zf = (zip_file_t *)f;
++    db_zip_file_t *zf = (db_zip_file_t *)f;
+ //    printf ("read: %d\n", size*nmemb);
+ 
+     size_t sz = size * nmemb;
+@@ -167,7 +167,7 @@ vfs_zip_read (void *ptr, size_t size, size_t nmemb, DB
+ 
+ int
+ vfs_zip_seek (DB_FILE *f, int64_t offset, int whence) {
+-    zip_file_t *zf = (zip_file_t *)f;
++    db_zip_file_t *zf = (db_zip_file_t *)f;
+ //    printf ("seek: %lld (%d)\n", offset, whence);
+ 
+     if (whence == SEEK_CUR) {
+@@ -242,13 +242,13 @@ vfs_zip_seek (DB_FILE *f, int64_t offset, int whence) 
+ 
+ int64_t
+ vfs_zip_tell (DB_FILE *f) {
+-    zip_file_t *zf = (zip_file_t *)f;
++    db_zip_file_t *zf = (db_zip_file_t *)f;
+     return zf->offset;
+ }
+ 
+ void
+ vfs_zip_rewind (DB_FILE *f) {
+-    zip_file_t *zf = (zip_file_t *)f;
++    db_zip_file_t *zf = (db_zip_file_t *)f;
+     zip_fclose (zf->zf);
+     zf->zf = zip_fopen_index (zf->z, zf->index, 0);
+     assert (zf->zf); // FIXME: better error handling?
+@@ -260,7 +260,7 @@ vfs_zip_rewind (DB_FILE *f) {
+ 
+ int64_t
+ vfs_zip_getlength (DB_FILE *f) {
+-    zip_file_t *zf = (zip_file_t *)f;
++    db_zip_file_t *zf = (db_zip_file_t *)f;
+     return zf->size;
+ }
+ 
