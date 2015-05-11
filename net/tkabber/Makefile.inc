@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2015/04/02 20:23:56 czarkoff Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2015/05/11 12:06:21 espie Exp $
 
 CATEGORIES =		net/tkabber x11
 
@@ -17,6 +17,6 @@ EXTRACT_SUFX =		.tar.xz
 MODULES =		x11/tk
 
 NO_BUILD =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 PKG_ARCH =		*
