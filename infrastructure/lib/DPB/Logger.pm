@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.22 2015/05/10 08:40:06 espie Exp $
+# $OpenBSD: Logger.pm,v 1.23 2015/05/11 07:32:42 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -24,7 +24,6 @@ our @ISA = (qw(DPB::UserProxy));
 use File::Path;
 use File::Basename;
 use IO::File;
-use Fcntl;
 
 sub new
 {
@@ -48,14 +47,12 @@ sub _open
 {
 	my ($self, $mode, $name) = @_;
 	my $log = $self->logfile($name);
-	$self->run_as(
-	    sub {
-		my $fh = IO::File->new($log, $mode) or 
-		    DPB::Util->die_bang("Can't write to $log");
-		my $flags = $fh->fcntl(F_GETFL, 0);
-		$fh->fcntl(F_SETFL, $flags | FD_CLOEXEC);
+	my $fh = $self->open($mode, $log);
+	if (defined $fh) {
 		return $fh;
-	    });
+	} else {
+		DPB::Util->die_bang("Can't write to $log");
+	}
 }
 
 sub append
@@ -115,11 +112,11 @@ sub make_logs
 	$self->run_as(
 	    sub {
 		my $log = $self->log_pkgpath($v);
-		CORE::open my $fh, ">>", $log or 
-		    DPB::Util->die_bang("Can't write to $log");
 		if ($self->{clean}) {
 			unlink($log);
 		}
+		CORE::open my $fh, ">>", $log or 
+		    DPB::Util->die_bang("Can't write to $log");
 		for my $w ($v->build_path_list) {
 			$self->link($log, $self->log_pkgname($w));
 		}

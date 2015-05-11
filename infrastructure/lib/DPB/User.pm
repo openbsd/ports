@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.8 2015/05/06 09:16:32 espie Exp $
+# $OpenBSD: User.pm,v 1.9 2015/05/11 07:32:42 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -21,6 +21,7 @@ use warnings;
 # handling user personalities
 
 package DPB::User;
+use Fcntl;
 
 sub from_uid
 {
@@ -119,6 +120,8 @@ sub open
 	local $) = $self->{gid};
 	$> = $self->{uid};
 	if (open(my $fh, $mode, @parms)) {
+		my $flags = fcntl($fh, F_GETFL, 0);
+		fcntl($fh, F_SETFL, $flags | FD_CLOEXEC);
 		return $fh;
 	} else {
 		return undef;
@@ -175,6 +178,12 @@ sub open
 	return $self->{user}->open(@parms);
 }
 
+sub file
+{
+	my ($self, $filename) = @_;
+	return DPB::UserFile->new($self, $filename);
+}
+
 sub opendir
 {
 	my ($self, $dirname) = @_;
@@ -191,6 +200,27 @@ sub rename
 {
 	my ($self, @parms) = @_;
 	return $self->{user}->rename(@parms);
+}
+
+# since we don't want to keep too many open files, encapsulate
+# filename + file
+package DPB::UserFile;
+sub new
+{
+	my ($class, $user, $filename) = @_;
+	bless {filename => $filename, user => $user}, $class;
+}
+
+sub name
+{
+	my $self = shift;
+	return $self->{filename};
+}
+
+sub open
+{
+	my $self = shift;
+	return $self->{user}->open($self->name);
 }
 
 1;
