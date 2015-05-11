@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/09/05 03:36:12 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/11 09:43:01 bentley Exp $
 
 COMMENT-main=	n64 emulator (default plugins)
 COMMENT-extra=	n64 emulator (all plugins)
 
-V=		2.0
+V=		2.5
 PKGNAME=	mupen64plus-${V}
 
 PKGNAME-main=	mupen64plus-${V}
@@ -20,12 +20,12 @@ RUN_DEPENDS-main +=	emulators/mupen64plus/core=${V}
 
 # default plugins
 RUN_DEPENDS-main +=	\
-		emulators/mupen64plus/audio-sdl \
-		emulators/mupen64plus/input-sdl \
-		emulators/mupen64plus/rsp-hle \
-		emulators/mupen64plus/ui-console \
-		emulators/mupen64plus/video-glide64mk2 \
-		emulators/mupen64plus/video-rice
+		emulators/mupen64plus/audio-sdl>=$V \
+		emulators/mupen64plus/input-sdl>=$V \
+		emulators/mupen64plus/rsp-hle>=$V \
+		emulators/mupen64plus/ui-console>=$V \
+		emulators/mupen64plus/video-glide64mk2>=$V \
+		emulators/mupen64plus/video-rice>=$V
 
 # extra plugins
 RUN_DEPENDS-extra +=	\
