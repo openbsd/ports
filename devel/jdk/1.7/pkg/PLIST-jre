@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-jre,v 1.14 2014/08/22 09:16:05 sthen Exp $
-@pkgpath devel/jdk/1.6,-jre
+@comment $OpenBSD: PLIST-jre,v 1.15 2015/05/11 14:47:45 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.7,<1.8|jre->=1.7v0,<1.8v0
+@pkgpath devel/jdk/1.6,-jre
 ${JREHOME}/
 ${JREHOME}/ASSEMBLY_EXCEPTION
 ${JREHOME}/LICENSE
@@ -22,9 +22,9 @@ ${JREHOME}/lib/${MACHINE_ARCH}/
 ${JREHOME}/lib/${MACHINE_ARCH}/headless/
 ${JREHOME}/lib/${MACHINE_ARCH}/headless/libmawt.so
 @bin ${JREHOME}/lib/${MACHINE_ARCH}/jexec
-@bin ${JREHOME}/lib/${MACHINE_ARCH}/jspawnhelper
 ${JREHOME}/lib/${MACHINE_ARCH}/jli/
 ${JREHOME}/lib/${MACHINE_ARCH}/jli/libjli.so
+@bin ${JREHOME}/lib/${MACHINE_ARCH}/jspawnhelper
 ${JREHOME}/lib/${MACHINE_ARCH}/jvm.cfg
 ${JREHOME}/lib/${MACHINE_ARCH}/libattach.diz
 ${JREHOME}/lib/${MACHINE_ARCH}/libawt.so
@@ -129,52 +129,19 @@ ${JREHOME}/lib/zi/
 ${JREHOME}/lib/zi/Africa/
 ${JREHOME}/lib/zi/Africa/Abidjan
 ${JREHOME}/lib/zi/Africa/Accra
-${JREHOME}/lib/zi/Africa/Addis_Ababa
 ${JREHOME}/lib/zi/Africa/Algiers
-${JREHOME}/lib/zi/Africa/Asmara
-${JREHOME}/lib/zi/Africa/Bamako
-${JREHOME}/lib/zi/Africa/Bangui
-${JREHOME}/lib/zi/Africa/Banjul
 ${JREHOME}/lib/zi/Africa/Bissau
-${JREHOME}/lib/zi/Africa/Blantyre
-${JREHOME}/lib/zi/Africa/Brazzaville
-${JREHOME}/lib/zi/Africa/Bujumbura
 ${JREHOME}/lib/zi/Africa/Cairo
 ${JREHOME}/lib/zi/Africa/Casablanca
 ${JREHOME}/lib/zi/Africa/Ceuta
-${JREHOME}/lib/zi/Africa/Conakry
-${JREHOME}/lib/zi/Africa/Dakar
-${JREHOME}/lib/zi/Africa/Dar_es_Salaam
-${JREHOME}/lib/zi/Africa/Djibouti
-${JREHOME}/lib/zi/Africa/Douala
 ${JREHOME}/lib/zi/Africa/El_Aaiun
-${JREHOME}/lib/zi/Africa/Freetown
-${JREHOME}/lib/zi/Africa/Gaborone
-${JREHOME}/lib/zi/Africa/Harare
 ${JREHOME}/lib/zi/Africa/Johannesburg
-${JREHOME}/lib/zi/Africa/Kampala
 ${JREHOME}/lib/zi/Africa/Khartoum
-${JREHOME}/lib/zi/Africa/Kigali
-${JREHOME}/lib/zi/Africa/Kinshasa
 ${JREHOME}/lib/zi/Africa/Lagos
-${JREHOME}/lib/zi/Africa/Libreville
-${JREHOME}/lib/zi/Africa/Lome
-${JREHOME}/lib/zi/Africa/Luanda
-${JREHOME}/lib/zi/Africa/Lubumbashi
-${JREHOME}/lib/zi/Africa/Lusaka
-${JREHOME}/lib/zi/Africa/Malabo
 ${JREHOME}/lib/zi/Africa/Maputo
-${JREHOME}/lib/zi/Africa/Maseru
-${JREHOME}/lib/zi/Africa/Mbabane
-${JREHOME}/lib/zi/Africa/Mogadishu
 ${JREHOME}/lib/zi/Africa/Monrovia
 ${JREHOME}/lib/zi/Africa/Nairobi
 ${JREHOME}/lib/zi/Africa/Ndjamena
-${JREHOME}/lib/zi/Africa/Niamey
-${JREHOME}/lib/zi/Africa/Nouakchott
-${JREHOME}/lib/zi/Africa/Ouagadougou
-${JREHOME}/lib/zi/Africa/Porto-Novo
-${JREHOME}/lib/zi/Africa/Sao_Tome
 ${JREHOME}/lib/zi/Africa/Tripoli
 ${JREHOME}/lib/zi/Africa/Tunis
 ${JREHOME}/lib/zi/Africa/Windhoek
@@ -327,7 +294,6 @@ ${JREHOME}/lib/zi/Antarctica/Syowa
 ${JREHOME}/lib/zi/Antarctica/Troll
 ${JREHOME}/lib/zi/Antarctica/Vostok
 ${JREHOME}/lib/zi/Asia/
-${JREHOME}/lib/zi/Asia/Aden
 ${JREHOME}/lib/zi/Asia/Almaty
 ${JREHOME}/lib/zi/Asia/Amman
 ${JREHOME}/lib/zi/Asia/Anadyr
@@ -335,14 +301,13 @@ ${JREHOME}/lib/zi/Asia/Aqtau
 ${JREHOME}/lib/zi/Asia/Aqtobe
 ${JREHOME}/lib/zi/Asia/Ashgabat
 ${JREHOME}/lib/zi/Asia/Baghdad
-${JREHOME}/lib/zi/Asia/Bahrain
 ${JREHOME}/lib/zi/Asia/Baku
 ${JREHOME}/lib/zi/Asia/Bangkok
 ${JREHOME}/lib/zi/Asia/Beirut
 ${JREHOME}/lib/zi/Asia/Bishkek
 ${JREHOME}/lib/zi/Asia/Brunei
+${JREHOME}/lib/zi/Asia/Chita
 ${JREHOME}/lib/zi/Asia/Choibalsan
-${JREHOME}/lib/zi/Asia/Chongqing
 ${JREHOME}/lib/zi/Asia/Colombo
 ${JREHOME}/lib/zi/Asia/Damascus
 ${JREHOME}/lib/zi/Asia/Dhaka
@@ -350,7 +315,6 @@ ${JREHOME}/lib/zi/Asia/Dili
 ${JREHOME}/lib/zi/Asia/Dubai
 ${JREHOME}/lib/zi/Asia/Dushanbe
 ${JREHOME}/lib/zi/Asia/Gaza
-${JREHOME}/lib/zi/Asia/Harbin
 ${JREHOME}/lib/zi/Asia/Hebron
 ${JREHOME}/lib/zi/Asia/Ho_Chi_Minh
 ${JREHOME}/lib/zi/Asia/Hong_Kong
@@ -362,25 +326,21 @@ ${JREHOME}/lib/zi/Asia/Jerusalem
 ${JREHOME}/lib/zi/Asia/Kabul
 ${JREHOME}/lib/zi/Asia/Kamchatka
 ${JREHOME}/lib/zi/Asia/Karachi
-${JREHOME}/lib/zi/Asia/Kashgar
 ${JREHOME}/lib/zi/Asia/Kathmandu
 ${JREHOME}/lib/zi/Asia/Khandyga
 ${JREHOME}/lib/zi/Asia/Kolkata
 ${JREHOME}/lib/zi/Asia/Krasnoyarsk
 ${JREHOME}/lib/zi/Asia/Kuala_Lumpur
 ${JREHOME}/lib/zi/Asia/Kuching
-${JREHOME}/lib/zi/Asia/Kuwait
 ${JREHOME}/lib/zi/Asia/Macau
 ${JREHOME}/lib/zi/Asia/Magadan
 ${JREHOME}/lib/zi/Asia/Makassar
 ${JREHOME}/lib/zi/Asia/Manila
-${JREHOME}/lib/zi/Asia/Muscat
 ${JREHOME}/lib/zi/Asia/Nicosia
 ${JREHOME}/lib/zi/Asia/Novokuznetsk
 ${JREHOME}/lib/zi/Asia/Novosibirsk
 ${JREHOME}/lib/zi/Asia/Omsk
 ${JREHOME}/lib/zi/Asia/Oral
-${JREHOME}/lib/zi/Asia/Phnom_Penh
 ${JREHOME}/lib/zi/Asia/Pontianak
 ${JREHOME}/lib/zi/Asia/Pyongyang
 ${JREHOME}/lib/zi/Asia/Qatar
@@ -395,6 +355,7 @@ ${JREHOME}/lib/zi/Asia/Samarkand
 ${JREHOME}/lib/zi/Asia/Seoul
 ${JREHOME}/lib/zi/Asia/Shanghai
 ${JREHOME}/lib/zi/Asia/Singapore
+${JREHOME}/lib/zi/Asia/Srednekolymsk
 ${JREHOME}/lib/zi/Asia/Taipei
 ${JREHOME}/lib/zi/Asia/Tashkent
 ${JREHOME}/lib/zi/Asia/Tbilisi
@@ -404,7 +365,6 @@ ${JREHOME}/lib/zi/Asia/Tokyo
 ${JREHOME}/lib/zi/Asia/Ulaanbaatar
 ${JREHOME}/lib/zi/Asia/Urumqi
 ${JREHOME}/lib/zi/Asia/Ust-Nera
-${JREHOME}/lib/zi/Asia/Vientiane
 ${JREHOME}/lib/zi/Asia/Vladivostok
 ${JREHOME}/lib/zi/Asia/Yakutsk
 ${JREHOME}/lib/zi/Asia/Yekaterinburg
@@ -418,7 +378,6 @@ ${JREHOME}/lib/zi/Atlantic/Faroe
 ${JREHOME}/lib/zi/Atlantic/Madeira
 ${JREHOME}/lib/zi/Atlantic/Reykjavik
 ${JREHOME}/lib/zi/Atlantic/South_Georgia
-${JREHOME}/lib/zi/Atlantic/St_Helena
 ${JREHOME}/lib/zi/Atlantic/Stanley
 ${JREHOME}/lib/zi/Australia/
 ${JREHOME}/lib/zi/Australia/Adelaide
@@ -514,16 +473,13 @@ ${JREHOME}/lib/zi/Europe/Zurich
 ${JREHOME}/lib/zi/GMT
 ${JREHOME}/lib/zi/HST
 ${JREHOME}/lib/zi/Indian/
-${JREHOME}/lib/zi/Indian/Antananarivo
 ${JREHOME}/lib/zi/Indian/Chagos
 ${JREHOME}/lib/zi/Indian/Christmas
 ${JREHOME}/lib/zi/Indian/Cocos
-${JREHOME}/lib/zi/Indian/Comoro
 ${JREHOME}/lib/zi/Indian/Kerguelen
 ${JREHOME}/lib/zi/Indian/Mahe
 ${JREHOME}/lib/zi/Indian/Maldives
 ${JREHOME}/lib/zi/Indian/Mauritius
-${JREHOME}/lib/zi/Indian/Mayotte
 ${JREHOME}/lib/zi/Indian/Reunion
 ${JREHOME}/lib/zi/MET
 ${JREHOME}/lib/zi/MST
@@ -532,6 +488,7 @@ ${JREHOME}/lib/zi/PST8PDT
 ${JREHOME}/lib/zi/Pacific/
 ${JREHOME}/lib/zi/Pacific/Apia
 ${JREHOME}/lib/zi/Pacific/Auckland
+${JREHOME}/lib/zi/Pacific/Bougainville
 ${JREHOME}/lib/zi/Pacific/Chatham
 ${JREHOME}/lib/zi/Pacific/Chuuk
 ${JREHOME}/lib/zi/Pacific/Easter

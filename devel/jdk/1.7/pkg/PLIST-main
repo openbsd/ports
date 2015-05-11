@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2014/08/22 09:16:05 sthen Exp $
-@pkgpath devel/jdk/1.6,-jdk
+@comment $OpenBSD: PLIST-main,v 1.17 2015/05/11 14:47:45 kurt Exp $
 @option no-default-conflict
 @conflict jdk->=1.7,<1.8|jdk->=1.7v0,<1.8v0
+@pkgpath devel/jdk/1.6,-jdk
 ${JDKHOME}/
 ${JDKHOME}/ASSEMBLY_EXCEPTION
 ${JDKHOME}/LICENSE
@@ -447,9 +447,9 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/libmawt.so
 @bin ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jexec
-@bin ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jspawnhelper
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jli/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jli/libjli.so
+@bin ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jspawnhelper
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jvm.cfg
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libattach.diz
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libattach.so
@@ -556,52 +556,19 @@ ${JDKHOME}/jre/lib/zi/
 ${JDKHOME}/jre/lib/zi/Africa/
 ${JDKHOME}/jre/lib/zi/Africa/Abidjan
 ${JDKHOME}/jre/lib/zi/Africa/Accra
-${JDKHOME}/jre/lib/zi/Africa/Addis_Ababa
 ${JDKHOME}/jre/lib/zi/Africa/Algiers
-${JDKHOME}/jre/lib/zi/Africa/Asmara
-${JDKHOME}/jre/lib/zi/Africa/Bamako
-${JDKHOME}/jre/lib/zi/Africa/Bangui
-${JDKHOME}/jre/lib/zi/Africa/Banjul
 ${JDKHOME}/jre/lib/zi/Africa/Bissau
-${JDKHOME}/jre/lib/zi/Africa/Blantyre
-${JDKHOME}/jre/lib/zi/Africa/Brazzaville
-${JDKHOME}/jre/lib/zi/Africa/Bujumbura
 ${JDKHOME}/jre/lib/zi/Africa/Cairo
 ${JDKHOME}/jre/lib/zi/Africa/Casablanca
 ${JDKHOME}/jre/lib/zi/Africa/Ceuta
-${JDKHOME}/jre/lib/zi/Africa/Conakry
-${JDKHOME}/jre/lib/zi/Africa/Dakar
-${JDKHOME}/jre/lib/zi/Africa/Dar_es_Salaam
-${JDKHOME}/jre/lib/zi/Africa/Djibouti
-${JDKHOME}/jre/lib/zi/Africa/Douala
 ${JDKHOME}/jre/lib/zi/Africa/El_Aaiun
-${JDKHOME}/jre/lib/zi/Africa/Freetown
-${JDKHOME}/jre/lib/zi/Africa/Gaborone
-${JDKHOME}/jre/lib/zi/Africa/Harare
 ${JDKHOME}/jre/lib/zi/Africa/Johannesburg
-${JDKHOME}/jre/lib/zi/Africa/Kampala
 ${JDKHOME}/jre/lib/zi/Africa/Khartoum
-${JDKHOME}/jre/lib/zi/Africa/Kigali
-${JDKHOME}/jre/lib/zi/Africa/Kinshasa
 ${JDKHOME}/jre/lib/zi/Africa/Lagos
-${JDKHOME}/jre/lib/zi/Africa/Libreville
-${JDKHOME}/jre/lib/zi/Africa/Lome
-${JDKHOME}/jre/lib/zi/Africa/Luanda
-${JDKHOME}/jre/lib/zi/Africa/Lubumbashi
-${JDKHOME}/jre/lib/zi/Africa/Lusaka
-${JDKHOME}/jre/lib/zi/Africa/Malabo
 ${JDKHOME}/jre/lib/zi/Africa/Maputo
-${JDKHOME}/jre/lib/zi/Africa/Maseru
-${JDKHOME}/jre/lib/zi/Africa/Mbabane
-${JDKHOME}/jre/lib/zi/Africa/Mogadishu
 ${JDKHOME}/jre/lib/zi/Africa/Monrovia
 ${JDKHOME}/jre/lib/zi/Africa/Nairobi
 ${JDKHOME}/jre/lib/zi/Africa/Ndjamena
-${JDKHOME}/jre/lib/zi/Africa/Niamey
-${JDKHOME}/jre/lib/zi/Africa/Nouakchott
-${JDKHOME}/jre/lib/zi/Africa/Ouagadougou
-${JDKHOME}/jre/lib/zi/Africa/Porto-Novo
-${JDKHOME}/jre/lib/zi/Africa/Sao_Tome
 ${JDKHOME}/jre/lib/zi/Africa/Tripoli
 ${JDKHOME}/jre/lib/zi/Africa/Tunis
 ${JDKHOME}/jre/lib/zi/Africa/Windhoek
@@ -754,7 +721,6 @@ ${JDKHOME}/jre/lib/zi/Antarctica/Syowa
 ${JDKHOME}/jre/lib/zi/Antarctica/Troll
 ${JDKHOME}/jre/lib/zi/Antarctica/Vostok
 ${JDKHOME}/jre/lib/zi/Asia/
-${JDKHOME}/jre/lib/zi/Asia/Aden
 ${JDKHOME}/jre/lib/zi/Asia/Almaty
 ${JDKHOME}/jre/lib/zi/Asia/Amman
 ${JDKHOME}/jre/lib/zi/Asia/Anadyr
@@ -762,14 +728,13 @@ ${JDKHOME}/jre/lib/zi/Asia/Aqtau
 ${JDKHOME}/jre/lib/zi/Asia/Aqtobe
 ${JDKHOME}/jre/lib/zi/Asia/Ashgabat
 ${JDKHOME}/jre/lib/zi/Asia/Baghdad
-${JDKHOME}/jre/lib/zi/Asia/Bahrain
 ${JDKHOME}/jre/lib/zi/Asia/Baku
 ${JDKHOME}/jre/lib/zi/Asia/Bangkok
 ${JDKHOME}/jre/lib/zi/Asia/Beirut
 ${JDKHOME}/jre/lib/zi/Asia/Bishkek
 ${JDKHOME}/jre/lib/zi/Asia/Brunei
+${JDKHOME}/jre/lib/zi/Asia/Chita
 ${JDKHOME}/jre/lib/zi/Asia/Choibalsan
-${JDKHOME}/jre/lib/zi/Asia/Chongqing
 ${JDKHOME}/jre/lib/zi/Asia/Colombo
 ${JDKHOME}/jre/lib/zi/Asia/Damascus
 ${JDKHOME}/jre/lib/zi/Asia/Dhaka
@@ -777,7 +742,6 @@ ${JDKHOME}/jre/lib/zi/Asia/Dili
 ${JDKHOME}/jre/lib/zi/Asia/Dubai
 ${JDKHOME}/jre/lib/zi/Asia/Dushanbe
 ${JDKHOME}/jre/lib/zi/Asia/Gaza
-${JDKHOME}/jre/lib/zi/Asia/Harbin
 ${JDKHOME}/jre/lib/zi/Asia/Hebron
 ${JDKHOME}/jre/lib/zi/Asia/Ho_Chi_Minh
 ${JDKHOME}/jre/lib/zi/Asia/Hong_Kong
@@ -789,25 +753,21 @@ ${JDKHOME}/jre/lib/zi/Asia/Jerusalem
 ${JDKHOME}/jre/lib/zi/Asia/Kabul
 ${JDKHOME}/jre/lib/zi/Asia/Kamchatka
 ${JDKHOME}/jre/lib/zi/Asia/Karachi
-${JDKHOME}/jre/lib/zi/Asia/Kashgar
 ${JDKHOME}/jre/lib/zi/Asia/Kathmandu
 ${JDKHOME}/jre/lib/zi/Asia/Khandyga
 ${JDKHOME}/jre/lib/zi/Asia/Kolkata
 ${JDKHOME}/jre/lib/zi/Asia/Krasnoyarsk
 ${JDKHOME}/jre/lib/zi/Asia/Kuala_Lumpur
 ${JDKHOME}/jre/lib/zi/Asia/Kuching
-${JDKHOME}/jre/lib/zi/Asia/Kuwait
 ${JDKHOME}/jre/lib/zi/Asia/Macau
 ${JDKHOME}/jre/lib/zi/Asia/Magadan
 ${JDKHOME}/jre/lib/zi/Asia/Makassar
 ${JDKHOME}/jre/lib/zi/Asia/Manila
-${JDKHOME}/jre/lib/zi/Asia/Muscat
 ${JDKHOME}/jre/lib/zi/Asia/Nicosia
 ${JDKHOME}/jre/lib/zi/Asia/Novokuznetsk
 ${JDKHOME}/jre/lib/zi/Asia/Novosibirsk
 ${JDKHOME}/jre/lib/zi/Asia/Omsk
 ${JDKHOME}/jre/lib/zi/Asia/Oral
-${JDKHOME}/jre/lib/zi/Asia/Phnom_Penh
 ${JDKHOME}/jre/lib/zi/Asia/Pontianak
 ${JDKHOME}/jre/lib/zi/Asia/Pyongyang
 ${JDKHOME}/jre/lib/zi/Asia/Qatar
@@ -822,6 +782,7 @@ ${JDKHOME}/jre/lib/zi/Asia/Samarkand
 ${JDKHOME}/jre/lib/zi/Asia/Seoul
 ${JDKHOME}/jre/lib/zi/Asia/Shanghai
 ${JDKHOME}/jre/lib/zi/Asia/Singapore
+${JDKHOME}/jre/lib/zi/Asia/Srednekolymsk
 ${JDKHOME}/jre/lib/zi/Asia/Taipei
 ${JDKHOME}/jre/lib/zi/Asia/Tashkent
 ${JDKHOME}/jre/lib/zi/Asia/Tbilisi
@@ -831,7 +792,6 @@ ${JDKHOME}/jre/lib/zi/Asia/Tokyo
 ${JDKHOME}/jre/lib/zi/Asia/Ulaanbaatar
 ${JDKHOME}/jre/lib/zi/Asia/Urumqi
 ${JDKHOME}/jre/lib/zi/Asia/Ust-Nera
-${JDKHOME}/jre/lib/zi/Asia/Vientiane
 ${JDKHOME}/jre/lib/zi/Asia/Vladivostok
 ${JDKHOME}/jre/lib/zi/Asia/Yakutsk
 ${JDKHOME}/jre/lib/zi/Asia/Yekaterinburg
@@ -845,7 +805,6 @@ ${JDKHOME}/jre/lib/zi/Atlantic/Faroe
 ${JDKHOME}/jre/lib/zi/Atlantic/Madeira
 ${JDKHOME}/jre/lib/zi/Atlantic/Reykjavik
 ${JDKHOME}/jre/lib/zi/Atlantic/South_Georgia
-${JDKHOME}/jre/lib/zi/Atlantic/St_Helena
 ${JDKHOME}/jre/lib/zi/Atlantic/Stanley
 ${JDKHOME}/jre/lib/zi/Australia/
 ${JDKHOME}/jre/lib/zi/Australia/Adelaide
@@ -941,16 +900,13 @@ ${JDKHOME}/jre/lib/zi/Europe/Zurich
 ${JDKHOME}/jre/lib/zi/GMT
 ${JDKHOME}/jre/lib/zi/HST
 ${JDKHOME}/jre/lib/zi/Indian/
-${JDKHOME}/jre/lib/zi/Indian/Antananarivo
 ${JDKHOME}/jre/lib/zi/Indian/Chagos
 ${JDKHOME}/jre/lib/zi/Indian/Christmas
 ${JDKHOME}/jre/lib/zi/Indian/Cocos
-${JDKHOME}/jre/lib/zi/Indian/Comoro
 ${JDKHOME}/jre/lib/zi/Indian/Kerguelen
 ${JDKHOME}/jre/lib/zi/Indian/Mahe
 ${JDKHOME}/jre/lib/zi/Indian/Maldives
 ${JDKHOME}/jre/lib/zi/Indian/Mauritius
-${JDKHOME}/jre/lib/zi/Indian/Mayotte
 ${JDKHOME}/jre/lib/zi/Indian/Reunion
 ${JDKHOME}/jre/lib/zi/MET
 ${JDKHOME}/jre/lib/zi/MST
@@ -959,6 +915,7 @@ ${JDKHOME}/jre/lib/zi/PST8PDT
 ${JDKHOME}/jre/lib/zi/Pacific/
 ${JDKHOME}/jre/lib/zi/Pacific/Apia
 ${JDKHOME}/jre/lib/zi/Pacific/Auckland
+${JDKHOME}/jre/lib/zi/Pacific/Bougainville
 ${JDKHOME}/jre/lib/zi/Pacific/Chatham
 ${JDKHOME}/jre/lib/zi/Pacific/Chuuk
 ${JDKHOME}/jre/lib/zi/Pacific/Easter

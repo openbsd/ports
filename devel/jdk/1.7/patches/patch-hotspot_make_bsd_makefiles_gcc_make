@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_gcc_make,v 1.7 2014/04/30 13:21:00 kurt Exp $
---- hotspot/make/bsd/makefiles/gcc.make.orig	Tue Apr 29 07:09:53 2014
-+++ hotspot/make/bsd/makefiles/gcc.make	Tue Apr 29 07:09:58 2014
-@@ -289,7 +289,7 @@ endif
+$OpenBSD: patch-hotspot_make_bsd_makefiles_gcc_make,v 1.8 2015/05/11 14:47:45 kurt Exp $
+--- hotspot/make/bsd/makefiles/gcc.make.orig	Thu May  7 15:29:31 2015
++++ hotspot/make/bsd/makefiles/gcc.make	Thu May  7 15:29:43 2015
+@@ -290,7 +290,7 @@ endif
  # (warning: that could easily inflate libjvm_g.so to 150M!)
  # Note: The Itanium gcc compiler crashes when using -gstabs.
  DEBUG_CFLAGS/ia64  = -g

@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.73 2015/05/08 09:08:44 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2015/05/11 14:47:45 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT-main=	Java2(TM) SE Dev Kit v${V}
 COMMENT-jre=	Java2(TM) SE Runtime Environment v${V}
-U=		71
+U=		80
 V=		1.7.0.${U}
-B=		b14
+B=		b15
 PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
 EPOCH=		0
 
 JDK_SRC=	openjdk-7u40-fcs-src-b43-26_aug_2013.zip
-PATCH_SET=	openjdk-7u${U}-patch-set-20141115.zip
+PATCH_SET=	openjdk-7u${U}-patch-set-20150423.zip
 
 DISTFILES=	${JDK_SRC} ${PATCH_SET}:1
 EXTRACT_ONLY=	${JDK_SRC} ${PATCH_SET}
