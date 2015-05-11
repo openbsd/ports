@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2013/10/11 23:48:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2015/05/11 20:35:36 jasper Exp $
 
 COMMENT=		perl interface to query for cddb-information
 
-DISTNAME=		CDDB_get-2.28
+DISTNAME=		CDDB_get-2.28.1
 CATEGORIES=		audio
 
 HOMEPAGE=		http://armin.emx.at/cddb/
 
-# GPL/Artistic
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
