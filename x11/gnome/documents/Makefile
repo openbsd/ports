@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2015/04/15 09:40:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2015/05/11 17:22:38 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
@@ -7,8 +7,7 @@ SHARED_ONLY=		Yes
 COMMENT=		document and e-books manager for GNOME
 
 GNOME_PROJECT=		gnome-documents
-GNOME_VERSION=		3.16.0
-REVISION=		2
+GNOME_VERSION=		3.16.2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
