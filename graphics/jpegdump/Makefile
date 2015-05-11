@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/05 17:00:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/11 16:24:38 nigel Exp $
 
 COMMENT =	dump raw jpeg exif information
 CATEGORIES =	graphics devel
@@ -13,9 +13,11 @@ DISTFILES =	jpegdump.c
 DIST_SUBDIR =	jpegdump-$V
 DISTNAME =	jpegdump-$V
 EXTRACT_CASES = *.c) ln -s ${FULLDISTDIR}/$$archive ${WRKDIR};;
-REVISION =	0
+REVISION =	1
 
 WRKDIST =	${WRKDIR}
+
+WANTLIB +=	c
 
 do-build:
 	cd ${WRKBUILD} && ${CC} ${CFLAGS} -o jpegdump jpegdump.c

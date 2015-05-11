@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/05 17:00:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/11 16:24:38 nigel Exp $
 
 COMMENT =		forensic data recovery program
 
 DISTNAME =		foremost-1.5.7
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security
 
@@ -13,6 +13,8 @@ HOMEPAGE =		http://foremost.sourceforge.net/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://foremost.sourceforge.net/pkg/
+
+WANTLIB +=		c
 
 FAKE_FLAGS =		BIN=${WRKINST}${PREFIX}/bin \
 					MAN=${WRKINST}${PREFIX}/man/man8 \
