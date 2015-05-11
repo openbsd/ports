@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/17 18:39:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/11 21:20:54 jasper Exp $
 
 COMMENT=		service for interacting with DMSes
 
 DISTNAME=		dleyna-server-0.5.0
+REVISION=		0
 
 SHARED_LIBS +=	dleyna-server-1.0         0.0 # 1.3
 
@@ -16,6 +17,6 @@ FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/dleyna-server
 
 WANTLIB += c dleyna-core-1.0 ffi gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gssdp-1.0 gupnp-1.0 gupnp-av-1.0 gupnp-dlna-2.0
-WANTLIB += lzma m pcre pthread soup-2.4 sqlite3 uuid xml2 z
+WANTLIB += lzma m pcre pthread soup-2.4 sqlite3 xml2 z
 
 .include <bsd.port.mk>
