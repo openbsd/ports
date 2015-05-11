@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/13 08:52:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/11 08:35:01 jasper Exp $
 bin/gnome-characters
 lib/org.gnome.Characters/
 lib/org.gnome.Characters/girepository-1.0/
@@ -48,6 +48,7 @@ share/locale/sl/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/sr/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/sr@latin/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/uk/LC_MESSAGES/org.gnome.Characters.mo
+share/locale/zh_CN/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/zh_TW/LC_MESSAGES/org.gnome.Characters.mo
 share/org.gnome.Characters/
 share/org.gnome.Characters/gir-1.0/
