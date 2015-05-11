@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.8 2014/04/17 07:03:59 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2015/05/11 09:40:40 bentley Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 SHARED_ONLY = 		Yes
-VERSION ?= 		2.0
+VERSION ?= 		2.5
 DISTNAME ?=		mupen64plus-${MUPEN64PLUS_MOD}-src-${VERSION}
 PKGNAME ?= 		mupen64plus-${MUPEN64PLUS_MOD}-${VERSION}
 HOMEPAGE ?=		https://code.google.com/p/mupen64plus/
@@ -22,7 +22,7 @@ FAKE_FLAGS ?=		PREFIX=${PREFIX} LDCONFIG=true
 
 .if ${MUPEN64PLUS_MOD} != "core"
 MAKE_FLAGS += 		APIDIR=${LOCALBASE}/include/mupen64plus
-BUILD_DEPENDS +=	emulators/mupen64plus/core>=2.0
+BUILD_DEPENDS +=	emulators/mupen64plus/core>=2.5
 .endif
 
 WRKBUILD ?=		${WRKDIST}/projects/unix
