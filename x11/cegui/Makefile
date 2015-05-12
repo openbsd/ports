@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/08/19 22:34:59 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/12 11:58:51 pascal Exp $
 
 COMMENT =		widgets library for graphics engines
 
@@ -58,7 +58,7 @@ CONFIGURE_ARGS +=	-DCEGUI_BUILD_PYTHON_MODULES=OFF \
 			-DFREETYPE_H_PATH_ftconfig=${X11BASE}/include/freetype2/config
 
 
-CFLAGS +=		-pthread -I${X11BASE}/include -I${LOCALBASE}/include
+CXXFLAGS +=		-pthread -I${X11BASE}/include -I${LOCALBASE}/include
 
 NO_TEST =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/07 10:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/12 11:58:51 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -52,6 +52,6 @@ NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/sumwars-${V}
 
-CFLAGS +=		-pthread
+CXXFLAGS +=		-pthread
 
 .include <bsd.port.mk>

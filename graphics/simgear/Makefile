@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/17 17:20:17 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/12 11:58:51 pascal Exp $
 
 COMMENT =		library set for simulations, games and visualizations
 
@@ -33,6 +33,7 @@ LIB_DEPENDS =		graphics/openscenegraph \
 CONFIGURE_ARGS +=	-DSYSTEM_EXPAT=ON
 
 CFLAGS +=		-I${X11BASE}/include -pthread
+CXXFLAGS +=		-I${X11BASE}/include -pthread
 
 NO_TEST =		Yes
 

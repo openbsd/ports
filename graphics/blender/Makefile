@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2015/04/01 21:26:40 pascal Exp $
+# $OpenBSD: Makefile,v 1.67 2015/05/12 11:58:51 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -58,7 +58,7 @@ WANTLIB += util yaml-cpp z
 
 NO_TEST =	Yes
 
-CFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include -pthread
+CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include -pthread
 
 MODPY_ADJ_FILES =	release/bin/blender-thumbnailer.py \
 			release/scripts/modules/blend_render_info.py

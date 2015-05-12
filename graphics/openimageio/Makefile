@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/04/05 13:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/05/12 11:58:51 pascal Exp $
 
 SHARED_ONLY =		Yes
 
@@ -45,7 +45,7 @@ CONFIGURE_ARGS +=	-DPYLIB_INSTALL_DIR="lib/python${MODPY_VERSION}/site-packages"
 			-DNOTHREADS=ON \
 			-DUSE_OPENCV=OFF
 
-CFLAGS +=		-pthread
+CXXFLAGS +=		-pthread
 WRKDIST =		${WRKDIR}/oiio-Release-$V
 
 post-install:
