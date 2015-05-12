@@ -1,25 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/01/12 14:03:41 shadchin Exp $
-%%SHARED%%
-bin/djview
-@bin bin/djview4
-lib/netscape/
-lib/netscape/plugins/
+@comment $OpenBSD: PLIST,v 1.7 2015/05/12 16:11:54 shadchin Exp $
+@bin bin/djview
+lib/mozilla/
+lib/mozilla/plugins/
+lib/mozilla/plugins/nsdejavu.la
+lib/mozilla/plugins/nsdejavu.so
 @man man/man1/djview.1
-@man man/man1/djview4.1
 @man man/man1/nsdejavu.1
 share/applications/djvulibre-djview4.desktop
 share/djvu/
 share/djvu/djview4/
 share/djvu/djview4/djview_cs.qm
 share/djvu/djview4/djview_de.qm
+share/djvu/djview4/djview_es.qm
 share/djvu/djview4/djview_fr.qm
 share/djvu/djview4/djview_ru.qm
 share/djvu/djview4/djview_uk.qm
 share/djvu/djview4/djview_zh_cn.qm
 share/djvu/djview4/djview_zh_tw.qm
-share/icons/hicolor/32x32/apps/djvulibre-djview4.png
-share/icons/hicolor/64x64/apps/djvulibre-djview4.png
-share/icons/hicolor/scalable/apps/djvulibre-djview4.svg
+share/icons/hicolor/32x32/mimetypes/djvulibre-djview4.png
+share/icons/hicolor/64x64/mimetypes/djvulibre-djview4.png
+share/icons/hicolor/scalable/mimetypes/djvulibre-djview4.svgz
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

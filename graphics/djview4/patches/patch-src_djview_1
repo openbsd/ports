@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_djview_1,v 1.1 2014/11/25 13:37:19 schwarze Exp $
-Requires tbl(1).
---- src/djview.1.orig	Tue Apr 10 05:56:55 2012
-+++ src/djview.1	Mon Nov 24 22:31:15 2014
-@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_djview_1,v 1.2 2015/05/12 16:11:54 shadchin Exp $
+--- src/djview.1.orig	Sat May  9 23:04:37 2015
++++ src/djview.1	Sat May  9 23:04:45 2015
+@@ -1,4 +1,4 @@
+-.\" t
 +'\" t
+ .\"
  .\" Copyright (c) 2007- Leon Bottou
  .\"
- .\" This is free documentation; you can redistribute it and/or
