@@ -1,7 +1,7 @@
-$OpenBSD: patch-etc_icinga2_conf_d_services_conf,v 1.1 2014/11/22 00:13:03 sthen Exp $
---- etc/icinga2/conf.d/services.conf.orig	Fri Nov 21 21:30:11 2014
-+++ etc/icinga2/conf.d/services.conf	Fri Nov 21 21:31:34 2014
-@@ -42,7 +42,7 @@ apply Service "ping6" {
+$OpenBSD: patch-etc_icinga2_conf_d_services_conf,v 1.2 2015/05/12 09:37:03 sthen Exp $
+--- etc/icinga2/conf.d/services.conf.orig	Thu Mar 12 12:27:11 2015
++++ etc/icinga2/conf.d/services.conf	Thu Mar 12 15:09:03 2015
+@@ -42,14 +42,14 @@ apply Service "ping6" {
  /*
   * Apply the `ssh` service to all hosts
   * with the `address` attribute defined and
@@ -10,11 +10,11 @@ $OpenBSD: patch-etc_icinga2_conf_d_services_conf,v 1.1 2014/11/22 00:13:03 sthen
   */
  apply Service "ssh" {
    import "generic-service"
-@@ -50,6 +50,7 @@ apply Service "ssh" {
+ 
    check_command = "ssh"
  
-   assign where host.address && host.vars.os == "Linux"
-+  assign where host.address && host.vars.os == "OpenBSD"
+-  assign where (host.address || host.address6) && host.vars.os == "Linux"
++  assign where (host.address || host.address6) && (host.vars.os == "OpenBSD" || host.vars.os == "Linux")
    ignore where host.name == "localhost" /* for upgrade safety */
  }
  

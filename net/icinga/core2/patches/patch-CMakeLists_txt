@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2014/11/22 00:13:03 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2015/05/12 09:37:03 sthen Exp $
 
 use FindBacktrace.cmake (added in cmake 3)
 
---- CMakeLists.txt.orig	Mon Nov 17 09:52:21 2014
-+++ CMakeLists.txt	Thu Nov 20 20:04:37 2014
-@@ -147,15 +147,14 @@ if(NOT MSVC)
- endif()
+--- CMakeLists.txt.orig	Thu Mar 12 12:27:11 2015
++++ CMakeLists.txt	Thu Mar 12 15:04:13 2015
+@@ -179,15 +179,14 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -DI2_D
+ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DI2_DEBUG")
  
  check_function_exists(vfork HAVE_VFORK)
 -check_function_exists(backtrace_symbols HAVE_BACKTRACE_SYMBOLS)

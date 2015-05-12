@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 2015/02/06 22:53:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2015/05/12 09:37:03 sthen Exp $
 
-# XXX note that rc_bg is used in the rc script; it shouldn't be necessary,
-# -d should work, but when that's used we run into hangs on OpenBSD, more at
-# http://marc.info/?l=openbsd-ports&m=142317662106234&w=2
-
+BROKEN =	doesn't daemonize correctly. also suspect some thread-related problems with forking.
+BROKEN-hppa =	needs 64-bit atomic ops; __sync_add_and_fetch_4
 SHARED_ONLY =	Yes
-BROKEN-hppa =	undefined reference to __sync_add_and_fetch_4 when linking icinga2
+
 COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.2.4
+V =		2.3.4
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -52,7 +50,7 @@ RUN_DEPENDS-pgsql =	${BASE_PKGPATH},-main
 
 CONFIGURE_ARGS += \
 	-DCMAKE_INSTALL_MANDIR:String="${PREFIX}/man" \
-	-DCMAKE_INSTALL_SYSCONFDIR:String="${SYSCONFDIR}" \
+	-DCMAKE_INSTALL_SYSCONFDIR:String="${PREFIX}/share/examples" \
 	-DCMAKE_INSTALL_FULL_SYSCONFDIR:String="${WRKINST}${SYSCONFDIR}" \
 	-DCMAKE_INSTALL_LOCALSTATEDIR:String="${LOCALSTATEDIR}" \
 	-DICINGA2_COMMAND_USER:String="_icinga" \
@@ -62,15 +60,15 @@ CONFIGURE_ARGS += \
 	-DICINGA2_GIT_VERSION_INFO:Boolean="OFF" \
 	-DICINGA2_PLUGINDIR:String="${LOCALBASE}/libexec/nagios"
 
-CFLAGS +=	-pthread
-LDFLAGS +=	-lpthread
+# CFLAGS +=	-pthread
+# LDFLAGS +=	-lpthread
 
 pre-configure:
 	ln -sf ${LOCALBASE}/bin/gflex ${WRKDIR}/bin/flex
 
 post-configure:
-	perl -pi -e 's,}${SYSCONFDIR}/icinga2,}${TRUEPREFIX}/share/examples/icinga2,g' \
-	    ${WRKBUILD}/etc/cmake_install.cmake
+	perl -pi -e 's,%SYSCONFDIR%,${SYSCONFDIR},' ${WRKBUILD}/config.h \
+	    ${WRKBUILD}/etc/icinga/icinga-classic-apache.conf
 
 pre-install:
 	mkdir -p ${PREFIX}

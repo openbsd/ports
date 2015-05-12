@@ -1,0 +1,21 @@
+$OpenBSD: patch-etc_icinga_icinga-classic-apache_conf_cmake,v 1.1 2015/05/12 09:37:03 sthen Exp $
+--- etc/icinga/icinga-classic-apache.conf.cmake.orig	Mon Apr 20 16:14:54 2015
++++ etc/icinga/icinga-classic-apache.conf.cmake	Mon Apr 20 16:15:13 2015
+@@ -14,7 +14,7 @@ ScriptAlias /icinga/cgi-bin "@CMAKE_INSTALL_FULL_LIBDI
+ 
+    AuthName "Icinga Access"
+    AuthType Basic
+-   AuthUserFile @CMAKE_INSTALL_FULL_SYSCONFDIR@/icinga/passwd
++   AuthUserFile %SYSCONFDIR%/icinga/passwd
+ 
+    <IfModule mod_authz_core.c>
+       # Apache 2.4
+@@ -44,7 +44,7 @@ Alias /icinga "@CMAKE_INSTALL_FULL_DATADIR@/icinga/"
+ 
+    AuthName "Icinga Access"
+    AuthType Basic
+-   AuthUserFile @CMAKE_INSTALL_FULL_SYSCONFDIR@/icinga/passwd
++   AuthUserFile %SYSCONFDIR%/icinga/passwd
+ 
+    <IfModule mod_authz_core.c>
+       # Apache 2.4

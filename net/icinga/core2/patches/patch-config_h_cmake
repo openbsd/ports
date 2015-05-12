@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_h_cmake,v 1.3 2014/11/22 00:13:03 sthen Exp $
---- config.h.cmake.orig	Mon Nov 17 09:52:21 2014
-+++ config.h.cmake	Thu Nov 20 20:05:22 2014
-@@ -2,13 +2,12 @@
+$OpenBSD: patch-config_h_cmake,v 1.4 2015/05/12 09:37:03 sthen Exp $
+--- config.h.cmake.orig	Mon Apr 20 10:44:20 2015
++++ config.h.cmake	Mon Apr 20 16:11:52 2015
+@@ -2,18 +2,17 @@
  #define CONFIG_H
  
  #cmakedefine HAVE_COUNTER_MACRO
@@ -16,3 +16,9 @@ $OpenBSD: patch-config_h_cmake,v 1.3 2014/11/22 00:13:03 sthen Exp $
  
  #cmakedefine ICINGA2_UNITY_BUILD
  
+ #define ICINGA_PREFIX "${CMAKE_INSTALL_PREFIX}"
+-#define ICINGA_SYSCONFDIR "${CMAKE_INSTALL_FULL_SYSCONFDIR}"
++#define ICINGA_SYSCONFDIR "%SYSCONFDIR%"
+ #define ICINGA_RUNDIR "${ICINGA2_RUNDIR}"
+ #define ICINGA_LOCALSTATEDIR "${CMAKE_INSTALL_FULL_LOCALSTATEDIR}"
+ #define ICINGA_PKGDATADIR "${CMAKE_INSTALL_FULL_DATADIR}/icinga2"
