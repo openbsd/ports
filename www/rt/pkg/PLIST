@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/10/09 06:36:47 robert Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/05/12 04:30:08 afresh1 Exp $
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
@@ -279,6 +279,7 @@ share/doc/rt3/schema.dot
 share/doc/rt3/security.pod
 share/doc/rt3/web_deployment.pod
 share/doc/rt3/writing_extensions.pod
+share/doc/rt3/writing_portlets.pod
 share/examples/rt3/
 @sample ${SYSCONFDIR}/rt3/
 @sample ${SYSCONFDIR}/rt3/local/
