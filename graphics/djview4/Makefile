@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2015/05/12 16:11:54 shadchin Exp $
+# $OpenBSD: Makefile,v 1.24 2015/05/12 19:48:57 shadchin Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	portable DjVu viewer and browser plugin
 
 DISTNAME=	djview-4.10.3
+REVISION=	0
 PKGNAME=	${DISTNAME:S/djview/djview4/}
 CATEGORIES=	graphics print
 
@@ -32,6 +35,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-tiff=${LOCALBASE}
 CONFIGURE_ENV+=	QTDIR="${MODQT4_QTDIR}" \
 		CPPFLAGS="-I${X11BASE}/include"
+
+MAKE_ENV+=	V=1
 
 NO_TEST=	Yes
 

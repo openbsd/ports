@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/05/12 16:11:54 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/05/12 19:48:57 shadchin Exp $
 @bin bin/djview
 lib/mozilla/
 lib/mozilla/plugins/
-lib/mozilla/plugins/nsdejavu.la
+@comment lib/mozilla/plugins/nsdejavu.la
 lib/mozilla/plugins/nsdejavu.so
 @man man/man1/djview.1
 @man man/man1/nsdejavu.1
 share/applications/djvulibre-djview4.desktop
-share/djvu/
 share/djvu/djview4/
 share/djvu/djview4/djview_cs.qm
 share/djvu/djview4/djview_de.qm
