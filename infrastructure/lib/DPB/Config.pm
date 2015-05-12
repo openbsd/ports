@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.47 2015/05/12 08:08:04 espie Exp $
+# $OpenBSD: Config.pm,v 1.48 2015/05/12 08:20:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -373,7 +373,7 @@ sub parse_hosts_file
 			next;
 		}
 		if (defined $state->{build_user}) {
-			$$rdefault->{build_user} //= $state->{build_user}->user;
+			$$rdefault->{build_user} //= $state->{build_user};
 		}
 		# copy default properties
 		my $prop = DPB::HostProperties->new($$rdefault);

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.9 2015/05/10 08:40:06 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.10 2015/05/12 08:20:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -75,8 +75,8 @@ sub finalize
 		}
 	}
 	if (defined $prop->{build_user}) {
-		$prop->{build_user} = 
-		    DPB::User->new($prop->{build_user});
+		$prop->{build_user} = DPB::User->new($prop->{build_user}) 
+		    unless ref $prop->{build_user};
 	} else {
 		$prop->{build_user} = $prop->{base_user};
 	}
