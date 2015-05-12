@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.10 2015/05/12 19:47:47 espie Exp $
+# $OpenBSD: Shell.pm,v 1.11 2015/05/12 19:49:54 espie Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -201,7 +201,8 @@ sub exec
 {
 	my ($self, @argv) = @_;
 	my $chroot = $self->prop->{chroot};
-	($>, $)) = (0, 0);
+	$> = 0;
+	$) = 0;
 	if ($self->{nochroot}) {
 		undef $chroot;
 	}
