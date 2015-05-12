@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/04/03 16:48:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/05/12 06:41:49 jasper Exp $
 @bin bin/bijiben
 @bin libexec/bijiben-shell-search-provider
 share/appdata/bijiben.appdata.xml
@@ -204,16 +204,13 @@ share/help/pt_BR/bijiben/notebooks.page
 share/help/pt_BR/bijiben/rename.page
 share/help/pt_BR/bijiben/search.page
 share/help/pt_BR/bijiben/share.page
-share/icons/HighContrast/
-share/icons/HighContrast/scalable/
-share/icons/HighContrast/scalable/apps/
-share/icons/HighContrast/scalable/apps/bijiben.svg
 share/icons/hicolor/16x16/apps/bijiben.png
 share/icons/hicolor/22x22/apps/bijiben.png
 share/icons/hicolor/24x24/apps/bijiben.png
 share/icons/hicolor/256x256/apps/bijiben.png
 share/icons/hicolor/32x32/apps/bijiben.png
 share/icons/hicolor/48x48/apps/bijiben.png
+share/icons/hicolor/scalable/apps/bijiben-symbolic.svg
 share/locale/ar/LC_MESSAGES/bijiben.mo
 share/locale/as/LC_MESSAGES/bijiben.mo
 share/locale/bs/LC_MESSAGES/bijiben.mo
