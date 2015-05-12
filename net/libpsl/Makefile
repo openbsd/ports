@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/11 10:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/12 22:26:41 ajacoutot Exp $
 
 COMMENT =		public suffix list library
 
@@ -36,8 +36,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
-# /usr/local/bin/autopoint[588]: xz: not found
-BUILD_DEPENDS +=	archivers/xz
 
 post-patch:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
