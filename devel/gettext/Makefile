@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.74 2015/01/27 00:28:34 brad Exp $
+# $OpenBSD: Makefile,v 1.75 2015/05/12 19:57:42 naddy Exp $
 
 COMMENT=	GNU gettext
 
 DISTNAME=	gettext-0.19.4
+REVISION=	0
 SHARED_LIBS +=  intl                 6.0      # 9.3
 SHARED_LIBS +=  asprintf             1.1      # unknown
 SHARED_LIBS +=  gettextlib           5.0      # unknown
@@ -24,6 +25,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	converters/libiconv
 WANTLIB=	c expat m ncurses stdc++
+
+# required by the autopoint tool
+RUN_DEPENDS=	archivers/xz
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
