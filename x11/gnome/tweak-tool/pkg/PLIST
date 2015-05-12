@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/04/03 09:04:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/05/12 05:59:28 ajacoutot Exp $
 bin/gnome-tweak-tool
 lib/python${MODPY_VERSION}/site-packages/gtweak/
 lib/python${MODPY_VERSION}/site-packages/gtweak/__init__.py
@@ -74,6 +74,7 @@ lib/python${MODPY_VERSION}/site-packages/gtweak/utils.pyo
 lib/python${MODPY_VERSION}/site-packages/gtweak/widgets.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/widgets.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/widgets.pyo
+libexec/gnome-tweak-tool-lid-inhibitor
 share/appdata/gnome-tweak-tool.appdata.xml
 share/applications/gnome-tweak-tool.desktop
 share/gnome-tweak-tool/
@@ -85,6 +86,7 @@ share/icons/hicolor/24x24/apps/gnome-tweak-tool.png
 share/icons/hicolor/256x256/apps/gnome-tweak-tool.png
 share/icons/hicolor/32x32/apps/gnome-tweak-tool.png
 share/icons/hicolor/48x48/apps/gnome-tweak-tool.png
+share/icons/hicolor/scalable/apps/gnome-tweak-tool-symbolic.svg
 share/locale/ar/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/as/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/bg/LC_MESSAGES/gnome-tweak-tool.mo
