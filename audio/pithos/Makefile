@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2015/04/05 13:31:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/12 04:59:27 bcallah Exp $
 
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
-GH_TAGNAME =	1.0.1
+GH_TAGNAME =	1.1.0
 
 COMMENT =	Pandora client for GNOME
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
-REVISION =	2
 CATEGORIES =	audio x11
 SUBST_VARS +=	GH_TAGNAME
 
@@ -36,7 +35,7 @@ RUN_DEPENDS =	audio/py-last${MODPY_FLAVOR}>=0.5.11 \
 
 TEST_DEPENDS =	audio/py-last${MODPY_FLAVOR}>=0.5.11
 
-post-patch:
+pre-configure:
 	perl -pi -e "s,/usr/s,s,g" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
