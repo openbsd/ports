@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.159 2015/05/10 08:14:14 espie Exp $
+# $OpenBSD: Port.pm,v 1.160 2015/05/12 19:48:29 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -513,9 +513,9 @@ sub finalize
 	my $job = $core->{job};
 	my $v = $job->{v};
 	# reopen log at right location
-	my $fh;
 	$job->{pos} //= 0;
-	if (open($fh, '<', $job->{log}) && seek($fh, $job->{pos}, 0)) {
+	my $fh = $job->{builder}->logger->open('<', $job->{log});
+	if (defined $fh && seek($fh, $job->{pos}, 0)) {
 		my @r;
 		while (<$fh>) {
 			last if m/^\>\>\>\s+Running\s+show-prepare-results/;

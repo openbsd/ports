@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.70 2015/05/10 08:14:14 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.71 2015/05/12 19:48:29 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -166,7 +166,10 @@ sub report
 		$host .= '*'.$core->{realjobs};
 	}
 	my $log = $self->{global};
-	my $sz = (stat $self->logger->log_pkgpath($v))[7];
+	my $sz = $self->logger->run_as(
+	    sub { 
+		return  (stat $self->logger->log_pkgpath($v))[7]; 
+	    });
 	if (defined $job->{offset}) {
 		$sz -= $job->{offset};
 	}
