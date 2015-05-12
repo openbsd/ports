@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.48 2015/05/12 08:20:08 espie Exp $
+# $OpenBSD: Config.pm,v 1.49 2015/05/12 08:27:58 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -392,6 +392,11 @@ sub parse_hosts_file
 		}
 		$prop->finalize_with_overrides($override);
 		DPB::Core::Init->new($host, $prop);
+		if (defined $prop->{build_user} && 
+		    !defined $state->{build_user} &&
+		    !$state->defines("BUILD_USER")) {
+		    	$state->{build_user} = $prop->{build_user};
+		}
 	}
 }
 
