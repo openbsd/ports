@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/09/12 08:27:43 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/05/12 11:20:33 sthen Exp $
 bin/virtualenv
 bin/virtualenv-${MODPY_VERSION}
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -7,19 +7,23 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/virtualenv.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv.pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv_support/
 lib/python${MODPY_VERSION}/site-packages/virtualenv_support/__init__.py
 lib/python${MODPY_VERSION}/site-packages/virtualenv_support/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/virtualenv_support/pip-1.5.6-py2.py3-none-any.whl
-lib/python${MODPY_VERSION}/site-packages/virtualenv_support/setuptools-3.6-py2.py3-none-any.whl
+lib/python${MODPY_VERSION}/site-packages/virtualenv_support/pip-6.1.1-py2.py3-none-any.whl
+lib/python${MODPY_VERSION}/site-packages/virtualenv_support/setuptools-15.0-py2.py3-none-any.whl
 share/doc/${MODPY_PY_PREFIX}virtualenv/
 share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/
+share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/changes.txt
+share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/development.txt
 share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/index.txt
-share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/news.txt
-share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/virtualenv.txt
+share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/installation.txt
+share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/reference.txt
+share/doc/${MODPY_PY_PREFIX}virtualenv/_sources/userguide.txt
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/ajax-loader.gif
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/basic.css
@@ -41,10 +45,13 @@ share/doc/${MODPY_PY_PREFIX}virtualenv/_static/underscore.js
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/up-pressed.png
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/up.png
 share/doc/${MODPY_PY_PREFIX}virtualenv/_static/websupport.js
+share/doc/${MODPY_PY_PREFIX}virtualenv/changes.html
+share/doc/${MODPY_PY_PREFIX}virtualenv/development.html
 share/doc/${MODPY_PY_PREFIX}virtualenv/genindex.html
 share/doc/${MODPY_PY_PREFIX}virtualenv/index.html
-share/doc/${MODPY_PY_PREFIX}virtualenv/news.html
+share/doc/${MODPY_PY_PREFIX}virtualenv/installation.html
 share/doc/${MODPY_PY_PREFIX}virtualenv/objects.inv
+share/doc/${MODPY_PY_PREFIX}virtualenv/reference.html
 share/doc/${MODPY_PY_PREFIX}virtualenv/search.html
 share/doc/${MODPY_PY_PREFIX}virtualenv/searchindex.js
-share/doc/${MODPY_PY_PREFIX}virtualenv/virtualenv.html
+share/doc/${MODPY_PY_PREFIX}virtualenv/userguide.html

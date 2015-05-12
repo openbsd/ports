@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/04/02 14:21:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/12 11:20:33 sthen Exp $
 
 COMMENT =		virtual Python environment builder
 
-MODPY_EGG_VERSION =	1.11.6
+MODPY_EGG_VERSION =	12.1.1
 DISTNAME =		virtualenv-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -23,13 +23,14 @@ MODPY_SETUPTOOLS =	Yes
 NO_TEST =		Yes
 
 MAKE_ENV +=	PYTHONPATH=${WRKSRC}
+DOCSRC =	${WRKSRC}/docs
 post-build:
-	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
+	cd ${DOCSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
 
 DOCS =		${PREFIX}/share/doc/py-virtualenv
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCS}
-	cd ${WRKSRC}/docs/_build/html && pax -rw * ${DOCS}
+	cd ${DOCSRC}/_build/html && pax -rw * ${DOCS}
 
 .include <bsd.port.mk>
