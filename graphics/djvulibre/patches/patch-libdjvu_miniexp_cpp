@@ -1,12 +1,12 @@
-$OpenBSD: patch-libdjvu_miniexp_cpp,v 1.1 2012/07/08 09:13:59 shadchin Exp $
---- libdjvu/miniexp.cpp.orig	Tue May  8 08:56:53 2012
-+++ libdjvu/miniexp.cpp	Fri May 25 23:28:15 2012
-@@ -1008,7 +1008,7 @@ stdio_fgetc(miniexp_io_t *io)
-   if (io == &miniexp_io && !CompatCounter::count)
-     return (*minilisp_getc)(); /* compatibility hack */
+$OpenBSD: patch-libdjvu_miniexp_cpp,v 1.2 2015/05/12 16:10:27 shadchin Exp $
+--- libdjvu/miniexp.cpp.orig	Wed Feb 11 09:35:37 2015
++++ libdjvu/miniexp.cpp	Sat Mar 28 21:24:09 2015
+@@ -1241,7 +1241,7 @@ static int stdio_fputs(miniexp_io_t *io, const char *s
+ 
+ static int true_stdio_fgetc(miniexp_io_t *io) {
    FILE *f = (io->data[0]) ? (FILE*)(io->data[0]) : stdin;
 -  return ::getc(f);
 +  return ::fgetc(f);
  }
- 
- static int 
+ static int compat_getc() { 
+   return true_stdio_fgetc(&miniexp_io); 

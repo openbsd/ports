@@ -1,12 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.1 2012/07/09 14:18:16 shadchin Exp $
---- configure.ac.orig	Tue May  8 08:56:53 2012
-+++ configure.ac	Mon Jul  9 19:41:00 2012
-@@ -117,7 +117,7 @@ AC_SUBST(LIBTOOL_DEPS)
+$OpenBSD: patch-configure_ac,v 1.2 2015/05/12 16:10:27 shadchin Exp $
+--- configure.ac.orig	Sun Mar 29 10:30:55 2015
++++ configure.ac	Sun Mar 29 10:31:17 2015
+@@ -129,7 +129,6 @@ RM="$RM -f"
+ # Libtool & Compilers
+ AC_PROG_CC
+ AC_PROG_CXX
+-AC_OPTIMIZE
  
  # C++
  AC_LANG(C++)
--AC_CXX_OPTIMIZE
-+AC_SUBST(OPTS)
- AC_CXX_BOOL
- AC_CXX_EXCEPTIONS
- AC_CXX_TYPENAME

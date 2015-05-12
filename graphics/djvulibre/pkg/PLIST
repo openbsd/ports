@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/03/16 18:07:46 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/05/12 16:10:27 shadchin Exp $
 @pkgpath graphics/djvulibre,no_x11
 @comment bin/any2djvu
 @bin bin/bzz
@@ -72,10 +72,22 @@ share/djvu/pubtext/
 share/djvu/pubtext/DjVuMessages.dtd
 share/djvu/pubtext/DjVuOCR.dtd
 share/djvu/pubtext/DjVuXML-s.dtd
-share/icons/hicolor/22x22/mimetypes/image-vnd.djvu.png
-share/icons/hicolor/32x32/mimetypes/image-vnd.djvu.png
-share/icons/hicolor/48x48/mimetypes/image-vnd.djvu.png
-share/icons/hicolor/64x64/mimetypes/image-vnd.djvu.png
-share/icons/hicolor/scalable/mimetypes/image-vnd.djvu.svg
+share/icons/hicolor/128x128/mimetypes/djvu.png
+share/icons/hicolor/16x16/mimetypes/djvu.png
+share/icons/hicolor/20x20/
+share/icons/hicolor/20x20/mimetypes/
+share/icons/hicolor/20x20/mimetypes/djvu.png
+share/icons/hicolor/22x22/mimetypes/djvu.png
+share/icons/hicolor/24x24/mimetypes/djvu.png
+share/icons/hicolor/256x256/mimetypes/djvu.png
+share/icons/hicolor/32x32/mimetypes/djvu.png
+share/icons/hicolor/48x48/mimetypes/djvu.png
+share/icons/hicolor/64x64/mimetypes/djvu.png
+share/icons/hicolor/72x72/mimetypes/djvu.png
+share/icons/hicolor/96x96/mimetypes/djvu.png
+share/icons/hicolor/scalable/mimetypes/djvu.svgz
+share/mime/packages/djvulibre-mime.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
