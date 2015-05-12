@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.81 2015/05/07 12:30:46 espie Exp $
+# $OpenBSD: Core.pm,v 1.82 2015/05/12 19:47:02 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -43,17 +43,7 @@ sub matches_affinity
 	my $hostname = $v->{affinity};
 	# same host
 	if ($self->hostname eq $hostname) {
-		# if user required, only okay if same user
-		if (defined $v->{user_affinity}) {
-			if (defined $self->{user} && $self->{user}->user
-			    eq $v->{user_affinity}) {
-				return 1;
-			} else {
-				return 0;
-			}
-		} else {
-			return 1;
-		}
+		return 1;
 	}
 	# ... or host isn't around
 	return 1 if !defined $allhosts{$hostname};
@@ -112,9 +102,6 @@ sub clone
 {
 	my $self = shift;
 	my $c = ref($self)->new($self->hostname, $self->prop);
-	if ($self->prop->{round_robin}) {
-		$c->{user} = $self->prop->{build_user}->next_user;
-	}
 	return $c;
 }
 
@@ -698,16 +685,8 @@ sub get_affinity
 	while (@$available > 0) {
 		my $core = shift @$available;
 		if ($core->hostname eq $host) {
-			if (defined $v->{user_affinity}) {
-				if (defined $core->{user} && 
-				    $core->{user}->user eq $v->{user_affinity}) {
-					push(@$available, @$l);
-					return $core;
-				}
-			} else {
-				push(@$available, @$l);
-				return $core;
-			}
+			push(@$available, @$l);
+			return $core;
 		}
 		push(@$l, $core);
 	}

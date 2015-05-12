@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.9 2015/05/11 07:32:42 espie Exp $
+# $OpenBSD: User.pm,v 1.10 2015/05/12 19:47:02 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -42,20 +42,6 @@ sub new
 	} else {
 		bless { user => $u}, $class;
 	}
-}
-
-sub next_user
-{
-	my $user = shift;
-	if (!defined $user->{gen}) {
-		if ($user->{user} =~ m/^(.*\D)(\d+)$/) {
-			$user->{template} = $1;
-			$user->{gen} = $2;
-		} else {
-			die "Can't figure out user template";
-		}
-    	}
-	return ref($user)->new($user->{template}.$user->{gen}++);
 }
 
 sub user
