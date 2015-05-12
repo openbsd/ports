@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/04/03 12:53:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/05/12 06:10:20 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-dictionary
 include/gdict-1.0/
@@ -657,8 +657,6 @@ share/locale/eu/LC_MESSAGES/gnome-dictionary.mo
 share/locale/fa/LC_MESSAGES/gnome-dictionary.mo
 share/locale/fi/LC_MESSAGES/gnome-dictionary.mo
 share/locale/fr/LC_MESSAGES/gnome-dictionary.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-dictionary.mo
 share/locale/ga/LC_MESSAGES/gnome-dictionary.mo
 share/locale/gl/LC_MESSAGES/gnome-dictionary.mo
@@ -668,6 +666,7 @@ share/locale/hi/LC_MESSAGES/gnome-dictionary.mo
 share/locale/hr/LC_MESSAGES/gnome-dictionary.mo
 share/locale/hu/LC_MESSAGES/gnome-dictionary.mo
 share/locale/id/LC_MESSAGES/gnome-dictionary.mo
+share/locale/is/LC_MESSAGES/gnome-dictionary.mo
 share/locale/it/LC_MESSAGES/gnome-dictionary.mo
 share/locale/ja/LC_MESSAGES/gnome-dictionary.mo
 share/locale/ka/LC_MESSAGES/gnome-dictionary.mo
