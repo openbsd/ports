@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.12 2014/10/03 08:32:53 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.13 2015/05/12 18:03:41 giovanni Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -151,6 +151,8 @@ include/mysql/private/sql_cursor.h
 include/mysql/private/sql_db.h
 include/mysql/private/sql_delete.h
 include/mysql/private/sql_derived.h
+include/mysql/private/sql_digest.h
+include/mysql/private/sql_digest_stream.h
 include/mysql/private/sql_do.h
 include/mysql/private/sql_error.h
 include/mysql/private/sql_explain.h
