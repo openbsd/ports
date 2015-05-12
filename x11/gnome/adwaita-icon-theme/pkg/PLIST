@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/04/02 14:32:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/05/12 12:30:23 ajacoutot Exp $
 @conflict gnome-themes-standard-<3.14.0
 @unexec-delete rm -f %D/share/icons/Adwaita/icon-theme.cache
 share/icons/Adwaita/
@@ -2411,6 +2411,7 @@ share/icons/Adwaita/scalable/apps/multimedia-volume-control-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-color-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-desktop-accessibility-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-desktop-display-symbolic.svg
+share/icons/Adwaita/scalable/apps/preferences-desktop-font-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-desktop-keyboard-shortcuts-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-desktop-locale-symbolic.svg
 share/icons/Adwaita/scalable/apps/preferences-desktop-remote-desktop-symbolic.svg

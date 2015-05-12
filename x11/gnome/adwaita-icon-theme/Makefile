@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/02 14:32:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/12 12:30:23 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		base icon theme for GNOME
 
 GNOME_PROJECT=		adwaita-icon-theme
-GNOME_VERSION=		3.16.0
+GNOME_VERSION=		3.16.2
 
 CATEGORIES=		x11
 
