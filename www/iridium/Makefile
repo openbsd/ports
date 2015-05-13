@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/07 12:26:20 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/13 05:52:58 sthen Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -7,6 +7,7 @@ COMMENT=		Iridium browser
 
 V=			42.0
 DISTNAME=		iridium-browser-${V}
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 PKGNAME=		iridium-${V}
 
 CATEGORIES=		www
