@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.18 2015/03/27 08:13:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/05/13 08:36:36 sthen Exp $
+
+BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
 COMMENT-main =	graphical network protocol analyzer
 COMMENT-text =	network protocol analyzer
-BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
-WVER =		1.12.4
+WVER =		1.12.5
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
 PKGNAME-text =	tshark-${WVER}
 SHARED_ONLY =	Yes
-REVISION-main =	0
-REVISION-text =	0
 
-SHARED_LIBS +=	wsutil               1.0      # 5.0
-SHARED_LIBS +=	wiretap              1.0      # 4.4
-SHARED_LIBS +=	filetap              0.0      # 0.4
-SHARED_LIBS +=	wireshark            1.1      # 5.4
+SHARED_LIBS +=	wsutil               1.1      # 5.0
+SHARED_LIBS +=	wiretap              1.0      # 4.5
+SHARED_LIBS +=	filetap              0.0      # 0.5
+SHARED_LIBS +=	wireshark            1.2      # 5.5
 
 CATEGORIES =	net security x11
 
