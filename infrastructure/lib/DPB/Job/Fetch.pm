@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.8 2015/05/10 08:14:14 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.9 2015/05/13 14:44:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -109,7 +109,6 @@ sub run
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
-	my $shell = $core->shell;
 	my $site = $self->{site};
 	$site =~ s/^\"(.*)\"$/$1/;
 	$job->{logger}->run_as(
