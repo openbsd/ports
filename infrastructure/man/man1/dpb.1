@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.105 2015/05/12 09:55:52 sthen Exp $
+.\"	$OpenBSD: dpb.1,v 1.106 2015/05/13 09:12:39 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 12 2015 $
+.Dd $Mdocdate: May 13 2015 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -428,6 +428,7 @@ The machine (or machines) with the highest speed factor will
 get access to all jobs, whereas other machines will be clamped
 to stuff which does not take too long.
 Requires previous build information to be effective.
+Defaults to 1.
 .It small=s
 Small threshold (in seconds * sf):
 ports known to build under that duration are deemed to be small, so
