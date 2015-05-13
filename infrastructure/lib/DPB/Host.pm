@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Host.pm,v 1.6 2015/05/13 11:03:18 espie Exp $
+# $OpenBSD: Host.pm,v 1.7 2015/05/13 12:21:11 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -33,7 +33,8 @@ sub new
 	if ($class->name_is_localhost($name)) {
 		$class = "DPB::Host::Localhost";
 		$name = 'localhost';
-		$prop->{build_user}->enforce_local;
+		$prop->{build_user}->enforce_local 
+			if defined $prop->{build_user};
 	} else {
 		require DPB::Core::Distant;
 		$class = "DPB::Host::Distant";
