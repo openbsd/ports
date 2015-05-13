@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/09/10 00:07:39 brad Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/05/13 09:41:58 sthen Exp $
 @pkgpath graphics/GraphicsMagick,no_x11
 bin/GraphicsMagick++-config
 bin/GraphicsMagick-config
@@ -101,8 +101,6 @@ lib/GraphicsMagick/modules-Q16/
 lib/GraphicsMagick/modules-Q16/coders/
 lib/GraphicsMagick/modules-Q16/coders/art.la
 lib/GraphicsMagick/modules-Q16/coders/art.so
-lib/GraphicsMagick/modules-Q16/coders/avi.la
-lib/GraphicsMagick/modules-Q16/coders/avi.so
 lib/GraphicsMagick/modules-Q16/coders/avs.la
 lib/GraphicsMagick/modules-Q16/coders/avs.so
 lib/GraphicsMagick/modules-Q16/coders/bmp.la
@@ -314,7 +312,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Graphics/Magick.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/Magick/
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/Magick/Magick.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/Magick/Magick.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/Magick/autosplit.ix
 @man man/man1/GraphicsMagick++-config.1
@@ -360,6 +357,7 @@ share/doc/GraphicsMagick/www/ChangeLog-2010.html
 share/doc/GraphicsMagick/www/ChangeLog-2011.html
 share/doc/GraphicsMagick/www/ChangeLog-2012.html
 share/doc/GraphicsMagick/www/ChangeLog-2013.html
+share/doc/GraphicsMagick/www/ChangeLog-2014.html
 share/doc/GraphicsMagick/www/Changelog.html
 share/doc/GraphicsMagick/www/Changes.html
 share/doc/GraphicsMagick/www/Copyright.html
