@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2015/02/10 11:05:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/05/13 08:23:53 sthen Exp $
 
 COMMENT=	roundcube plugin: sieve rules (managesieve)
 
 GH_ACCOUNT=	JohnDoh
 GH_PROJECT=	Roundcube-Plugin-SieveRules-Managesieve
-GH_TAGNAME=	2.2
+GH_TAGNAME=	2.3
 DISTNAME=	sieverules-${GH_TAGNAME}
 PKGNAME=	rcube-${DISTNAME}
 CATEGORIES=	mail www
