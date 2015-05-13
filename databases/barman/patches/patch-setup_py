@@ -1,6 +1,6 @@
---- setup.py.orig	Mon Jan 12 03:10:22 2015
-+++ setup.py	Fri Feb  6 16:26:04 2015
-@@ -74,8 +74,8 @@ setup(
+--- setup.py.orig	Thu Mar 12 11:26:28 2015
++++ setup.py	Wed May 13 22:06:32 2015
+@@ -78,8 +78,8 @@ setup(
      packages=['barman', ],
      scripts=['bin/barman', ],
      data_files=[
