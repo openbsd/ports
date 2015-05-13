@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1334 2015/05/10 16:50:12 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.1335 2015/05/13 18:55:00 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1354,7 +1354,6 @@
      SUBDIR += ruby-colored
      SUBDIR += ruby-commander
      SUBDIR += ruby-cri
-     SUBDIR += ruby-cucumber
      SUBDIR += ruby-daemon_controller
      SUBDIR += ruby-daemons
      SUBDIR += ruby-deep_merge
