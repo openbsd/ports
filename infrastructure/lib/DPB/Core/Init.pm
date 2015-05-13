@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.23 2015/05/10 10:12:40 espie Exp $
+# $OpenBSD: Init.pm,v 1.24 2015/05/13 11:03:18 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -231,6 +231,7 @@ sub init_cores
 	}
 	$state->{default_prop}{fetch_user} //= $state->{fetch_user};
 	if ($state->opt('f')) {
+		$state->{fetch_user}->enforce_local;
 		for (1 .. $state->opt('f')) {
 			DPB::Core::Fetcher->new('localhost', 
 			    $state->{default_prop})->mark_ready;

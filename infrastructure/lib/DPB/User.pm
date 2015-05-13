@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.10 2015/05/12 19:47:02 espie Exp $
+# $OpenBSD: User.pm,v 1.11 2015/05/13 11:03:18 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -38,7 +38,10 @@ sub new
 	my ($class, $u) = @_;
 	# XXX getpwnam for local access, distant access is different
 	if (my ($l, undef, $uid, $gid) = getpwnam $u) {
-		bless { user => $l, uid => $uid, gid => $gid }, $class;
+		my $groups = `/usr/bin/id -g $u`;
+		chomp $groups;
+		bless { user => $l, uid => $uid, gid => $gid, 
+		    groups => $groups }, $class;
 	} else {
 		bless { user => $u}, $class;
 	}
@@ -54,9 +57,18 @@ sub run_as
 {
 	my ($self, $code) = @_;
 	local $> = 0;
-	local $) = $self->{gid};
+	local $) = "$self->{gid} $self->{groups}";
 	$> = $self->{uid};
 	&$code;
+}
+
+sub enforce_local
+{
+	my $self = shift;
+	if (!defined $self->{uid}) {
+		print STDERR "User $self->{user} does not exist locally\n";
+		exit 1;
+	}
 }
 
 sub _make_path
@@ -103,7 +115,7 @@ sub open
 {
 	my ($self, $mode, @parms) = @_;
 	local $> = 0;
-	local $) = $self->{gid};
+	local $) = "$self->{gid} $self->{groups}";
 	$> = $self->{uid};
 	if (open(my $fh, $mode, @parms)) {
 		my $flags = fcntl($fh, F_GETFL, 0);
@@ -118,7 +130,7 @@ sub opendir
 {
 	my ($self, $dirname) = @_;
 	local $> = 0;
-	local $) = $self->{gid};
+	local $) = "$self->{gid} $self->{groups}";
 	$> = $self->{uid};
 	if (opendir(my $fh, $dirname)) {
 		return $fh;
@@ -131,7 +143,7 @@ sub unlink
 {
 	my ($self, @links) = @_;
 	local $> = 0;
-	local $) = $self->{gid};
+	local $) = "$self->{gid} $self->{groups}";
 	$> = $self->{uid};
 	unlink(@links);
 }
@@ -140,7 +152,7 @@ sub rename
 {
 	my ($self, $o, $n) = @_;
 	local $> = 0;
-	local $) = $self->{gid};
+	local $) = "$self->{gid} $self->{groups}";
 	$> = $self->{uid};
 	rename($o, $n);
 }

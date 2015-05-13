@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.49 2015/05/12 08:27:58 espie Exp $
+# $OpenBSD: Config.pm,v 1.50 2015/05/13 11:03:18 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -44,8 +44,9 @@ sub setup_users
 		}
 	}
 	if (defined $state->{unpriv_user}) {
+		$state->{unpriv_user}->enforce_local;
 		$> = $state->{unpriv_user}{uid};
-		$) = $state->{unpriv_user}{gid};
+		$) = "$state->{unpriv_user}{gid} $state->{unpriv_user}{groups}";
 	}
 }
 
@@ -154,6 +155,8 @@ sub parse_command_line
 	$state->{build_user} //= $state->{base_user};
 	$state->{log_user} //= $state->{build_user};
 	$state->{fetch_user} //= $state->{build_user};
+
+	$state->{log_user}->enforce_local;
 
 
 	$state->{chroot} = $state->{default_prop}{chroot};

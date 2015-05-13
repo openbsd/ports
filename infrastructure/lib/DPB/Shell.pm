@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.11 2015/05/12 19:49:54 espie Exp $
+# $OpenBSD: Shell.pm,v 1.12 2015/05/13 11:03:18 espie Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -211,6 +211,7 @@ sub exec
 	}
 	$self->{user} //= $self->prop->{build_user};
 	if (!$self->{as_root} && defined $self->{user}) {
+		$) = "$self->{user}{gid} $self->{user}{groups}";
 		setgid($self->{user}{gid});
 		setuid($self->{user}{uid});
 	}
