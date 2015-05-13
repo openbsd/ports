@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/05/12 12:30:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/05/13 06:07:30 ajacoutot Exp $
 @conflict gnome-themes-standard-<3.14.0
 @unexec-delete rm -f %D/share/icons/Adwaita/icon-theme.cache
 share/icons/Adwaita/
@@ -261,6 +261,7 @@ share/icons/Adwaita/16x16/mimetypes/
 share/icons/Adwaita/16x16/mimetypes/application-certificate.png
 share/icons/Adwaita/16x16/mimetypes/application-x-addon.png
 share/icons/Adwaita/16x16/mimetypes/application-x-executable.png
+share/icons/Adwaita/16x16/mimetypes/application-x-firmware.png
 share/icons/Adwaita/16x16/mimetypes/audio-x-generic.png
 share/icons/Adwaita/16x16/mimetypes/font-x-generic.png
 share/icons/Adwaita/16x16/mimetypes/image-x-generic.png
@@ -271,7 +272,6 @@ share/icons/Adwaita/16x16/mimetypes/text-x-generic.png
 share/icons/Adwaita/16x16/mimetypes/text-x-preview.png
 share/icons/Adwaita/16x16/mimetypes/text-x-script.png
 share/icons/Adwaita/16x16/mimetypes/video-x-generic.png
-share/icons/Adwaita/16x16/mimetypes/x-firmware.png
 share/icons/Adwaita/16x16/mimetypes/x-office-address-book.png
 share/icons/Adwaita/16x16/mimetypes/x-office-calendar.png
 share/icons/Adwaita/16x16/mimetypes/x-office-document-template.png
@@ -647,6 +647,7 @@ share/icons/Adwaita/22x22/mimetypes/
 share/icons/Adwaita/22x22/mimetypes/application-certificate.png
 share/icons/Adwaita/22x22/mimetypes/application-x-addon.png
 share/icons/Adwaita/22x22/mimetypes/application-x-executable.png
+share/icons/Adwaita/22x22/mimetypes/application-x-firmware.png
 share/icons/Adwaita/22x22/mimetypes/audio-x-generic.png
 share/icons/Adwaita/22x22/mimetypes/font-x-generic.png
 share/icons/Adwaita/22x22/mimetypes/image-x-generic.png
@@ -657,7 +658,6 @@ share/icons/Adwaita/22x22/mimetypes/text-x-generic.png
 share/icons/Adwaita/22x22/mimetypes/text-x-preview.png
 share/icons/Adwaita/22x22/mimetypes/text-x-script.png
 share/icons/Adwaita/22x22/mimetypes/video-x-generic.png
-share/icons/Adwaita/22x22/mimetypes/x-firmware.png
 share/icons/Adwaita/22x22/mimetypes/x-office-address-book.png
 share/icons/Adwaita/22x22/mimetypes/x-office-calendar.png
 share/icons/Adwaita/22x22/mimetypes/x-office-document-template.png
@@ -1023,6 +1023,7 @@ share/icons/Adwaita/24x24/mimetypes/
 share/icons/Adwaita/24x24/mimetypes/application-certificate.png
 share/icons/Adwaita/24x24/mimetypes/application-x-addon.png
 share/icons/Adwaita/24x24/mimetypes/application-x-executable.png
+share/icons/Adwaita/24x24/mimetypes/application-x-firmware.png
 share/icons/Adwaita/24x24/mimetypes/audio-x-generic.png
 share/icons/Adwaita/24x24/mimetypes/font-x-generic.png
 share/icons/Adwaita/24x24/mimetypes/image-x-generic.png
@@ -1033,7 +1034,6 @@ share/icons/Adwaita/24x24/mimetypes/text-x-generic.png
 share/icons/Adwaita/24x24/mimetypes/text-x-preview.png
 share/icons/Adwaita/24x24/mimetypes/text-x-script.png
 share/icons/Adwaita/24x24/mimetypes/video-x-generic.png
-share/icons/Adwaita/24x24/mimetypes/x-firmware.png
 share/icons/Adwaita/24x24/mimetypes/x-office-address-book.png
 share/icons/Adwaita/24x24/mimetypes/x-office-calendar.png
 share/icons/Adwaita/24x24/mimetypes/x-office-document-template.png
@@ -1286,6 +1286,7 @@ share/icons/Adwaita/256x256/emotes/face-wink.png
 share/icons/Adwaita/256x256/mimetypes/
 share/icons/Adwaita/256x256/mimetypes/application-x-addon.png
 share/icons/Adwaita/256x256/mimetypes/application-x-executable.png
+share/icons/Adwaita/256x256/mimetypes/application-x-firmware.png
 share/icons/Adwaita/256x256/mimetypes/audio-x-generic.png
 share/icons/Adwaita/256x256/mimetypes/font-x-generic.png
 share/icons/Adwaita/256x256/mimetypes/image-x-generic.png
@@ -1296,7 +1297,6 @@ share/icons/Adwaita/256x256/mimetypes/text-x-generic.png
 share/icons/Adwaita/256x256/mimetypes/text-x-preview.png
 share/icons/Adwaita/256x256/mimetypes/text-x-script.png
 share/icons/Adwaita/256x256/mimetypes/video-x-generic.png
-share/icons/Adwaita/256x256/mimetypes/x-firmware.png
 share/icons/Adwaita/256x256/mimetypes/x-office-address-book.png
 share/icons/Adwaita/256x256/mimetypes/x-office-document-template.png
 share/icons/Adwaita/256x256/mimetypes/x-office-document.png
@@ -1642,6 +1642,7 @@ share/icons/Adwaita/32x32/mimetypes/
 share/icons/Adwaita/32x32/mimetypes/application-certificate.png
 share/icons/Adwaita/32x32/mimetypes/application-x-addon.png
 share/icons/Adwaita/32x32/mimetypes/application-x-executable.png
+share/icons/Adwaita/32x32/mimetypes/application-x-firmware.png
 share/icons/Adwaita/32x32/mimetypes/audio-x-generic.png
 share/icons/Adwaita/32x32/mimetypes/font-x-generic.png
 share/icons/Adwaita/32x32/mimetypes/image-x-generic.png
@@ -1652,7 +1653,6 @@ share/icons/Adwaita/32x32/mimetypes/text-x-generic.png
 share/icons/Adwaita/32x32/mimetypes/text-x-preview.png
 share/icons/Adwaita/32x32/mimetypes/text-x-script.png
 share/icons/Adwaita/32x32/mimetypes/video-x-generic.png
-share/icons/Adwaita/32x32/mimetypes/x-firmware.png
 share/icons/Adwaita/32x32/mimetypes/x-office-address-book.png
 share/icons/Adwaita/32x32/mimetypes/x-office-calendar.png
 share/icons/Adwaita/32x32/mimetypes/x-office-document-template.png
@@ -2025,6 +2025,7 @@ share/icons/Adwaita/48x48/mimetypes/
 share/icons/Adwaita/48x48/mimetypes/application-certificate.png
 share/icons/Adwaita/48x48/mimetypes/application-x-addon.png
 share/icons/Adwaita/48x48/mimetypes/application-x-executable.png
+share/icons/Adwaita/48x48/mimetypes/application-x-firmware.png
 share/icons/Adwaita/48x48/mimetypes/audio-x-generic.png
 share/icons/Adwaita/48x48/mimetypes/font-x-generic.png
 share/icons/Adwaita/48x48/mimetypes/image-x-generic.png
@@ -2035,7 +2036,6 @@ share/icons/Adwaita/48x48/mimetypes/text-x-generic.png
 share/icons/Adwaita/48x48/mimetypes/text-x-preview.png
 share/icons/Adwaita/48x48/mimetypes/text-x-script.png
 share/icons/Adwaita/48x48/mimetypes/video-x-generic.png
-share/icons/Adwaita/48x48/mimetypes/x-firmware.png
 share/icons/Adwaita/48x48/mimetypes/x-office-address-book.png
 share/icons/Adwaita/48x48/mimetypes/x-office-calendar.png
 share/icons/Adwaita/48x48/mimetypes/x-office-document-template.png
@@ -2174,6 +2174,7 @@ share/icons/Adwaita/cursors/640fb0e74195791501fd1ed57b41487f
 share/icons/Adwaita/cursors/9081237383d90e509aa00f00170e968f
 share/icons/Adwaita/cursors/9d800788f1b08800ae810202380a0822
 share/icons/Adwaita/cursors/X_cursor
+share/icons/Adwaita/cursors/all-scroll
 share/icons/Adwaita/cursors/arrow
 share/icons/Adwaita/cursors/bd_double_arrow
 share/icons/Adwaita/cursors/bottom_left_corner
@@ -2204,6 +2205,7 @@ share/icons/Adwaita/cursors/e29285e634086352946a0e7090d73106
 share/icons/Adwaita/cursors/fcf1c3c7cd4491d801f1e1c78f100000
 share/icons/Adwaita/cursors/fd_double_arrow
 share/icons/Adwaita/cursors/fleur
+share/icons/Adwaita/cursors/grab
 share/icons/Adwaita/cursors/grabbing
 share/icons/Adwaita/cursors/h_double_arrow
 share/icons/Adwaita/cursors/hand
@@ -2223,6 +2225,7 @@ share/icons/Adwaita/cursors/move
 share/icons/Adwaita/cursors/pencil
 share/icons/Adwaita/cursors/pirate
 share/icons/Adwaita/cursors/plus
+share/icons/Adwaita/cursors/pointer-move
 share/icons/Adwaita/cursors/question_arrow
 share/icons/Adwaita/cursors/right_ptr
 share/icons/Adwaita/cursors/right_side
@@ -2243,8 +2246,11 @@ share/icons/Adwaita/cursors/top_tee
 share/icons/Adwaita/cursors/ul_angle
 share/icons/Adwaita/cursors/ur_angle
 share/icons/Adwaita/cursors/v_double_arrow
+share/icons/Adwaita/cursors/vertical-text
 share/icons/Adwaita/cursors/watch
 share/icons/Adwaita/cursors/xterm
+share/icons/Adwaita/cursors/zoom-in
+share/icons/Adwaita/cursors/zoom-out
 share/icons/Adwaita/index.theme
 share/icons/Adwaita/scalable/
 share/icons/Adwaita/scalable-up-to-32/
@@ -2381,6 +2387,7 @@ share/icons/Adwaita/scalable/actions/view-dual-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-fullscreen-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-grid-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-list-symbolic.svg
+share/icons/Adwaita/scalable/actions/view-more-horizontal-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-more-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-paged-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-refresh-symbolic.svg
@@ -2540,6 +2547,7 @@ share/icons/Adwaita/scalable/mimetypes/application-rss+xml-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/application-x-appliance-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/application-x-executable-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/audio-x-generic-symbolic.svg
+share/icons/Adwaita/scalable/mimetypes/font-x-generic-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/image-x-generic-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/inode-directory-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/package-x-generic-symbolic.svg
