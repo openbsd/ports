@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.11 2015/05/03 12:26:10 espie Exp $
+# $OpenBSD: Build.pm,v 1.12 2015/05/13 14:27:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -131,6 +131,9 @@ sub can_be_junked
 	my ($self, $v, $core) = @_;
 	my $tag = $v->{info}->has_property('tag');
 	for my $job ($core->same_host_jobs) {
+		if ($job->{nojunk}) {
+			return 0;
+		}
 		if ($job->{v}{info}->has_property('tag') &&
 		    $job->{v}{info}->has_property('tag') ne $tag) {
 		    	return 0;
