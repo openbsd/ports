@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.12 2015/05/13 15:05:56 espie Exp $
+# $OpenBSD: User.pm,v 1.13 2015/05/13 15:14:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -27,7 +27,10 @@ sub from_uid
 {
 	my ($class, $u) = @_;
 	if (my ($l, undef, $uid, $gid) = getpwuid $u) {
-		bless { user => $l, uid => $uid, gid => $gid }, $class;
+		my $groups = `/usr/bin/id -G $u`;
+		chomp $groups;
+		bless { user => $l, uid => $uid, gid => $gid,
+		    groups => $groups }, $class;
 	} else {
 		return undef;
 	}
