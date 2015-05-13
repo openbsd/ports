@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/26 12:26:44 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/13 08:14:11 sthen Exp $
+@extraunexec rm -rf /var/db/clamav-unofficial-sigs/*
+@owner _clamav
+@group wheel
+@sample /var/db/clamav-unofficial-sigs/
+@owner
+@group
 bin/clamav-unofficial-sigs.sh
 @man man/man8/clamav-unofficial-sigs.8
 share/examples/clamav-unofficial-sigs/
 share/examples/clamav-unofficial-sigs/clamav-unofficial-sigs.conf
 @sample ${SYSCONFDIR}/clamav-unofficial-sigs.conf
-@extraunexec rm -rf /var/db/clamav-unofficial-sigs

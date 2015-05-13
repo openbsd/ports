@@ -1,23 +1,26 @@
-# $OpenBSD: Makefile,v 1.9 2015/04/24 12:33:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/05/13 08:14:11 sthen Exp $
 
 COMMENT =	fetch and update unofficial signatures for ClamAV
 
-DISTNAME =	clamav-unofficial-sigs-3.7.2
-REVISION =	1
+V =		4.0.0
+DISTNAME =	clamav-unofficial-sigs-$V
+DISTFILES =	${DISTNAME}{$V}.tar.gz
 
 CATEGORIES =	security mail
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
-# no real homepage for the script, but this explains the available databases:
-HOMEPAGE =	http://sanesecurity.com/usage/signatures/
+HOMEPAGE =	https://github.com/extremeshok/clamav-unofficial-sigs
 
 # BSD
 PERMIT_PACKAGE_CDROM =	 Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=unofficial-sigs/}
+MASTER_SITES =	https://github.com/extremeshok/clamav-unofficial-sigs/archive/
 
-RUN_DEPENDS =	net/curl net/rsync security/gnupg
+RUN_DEPENDS =	net/curl \
+		net/rsync \
+		security/clamav \
+		security/gnupg
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
