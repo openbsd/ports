@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/01/25 09:36:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/05/13 05:08:26 jasper Exp $
 
 # Note: use 'ulimit -n 1024' for regress tests
 
@@ -7,7 +7,7 @@ SHARED_ONLY =		Yes
 COMMENT =		open source message queue optimised for performance
 
 DISTNAME =		zeromq-4.0.5
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  zmq                  4.0      # 4.0
 
