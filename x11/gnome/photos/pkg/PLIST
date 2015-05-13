@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/04/03 18:17:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/05/13 13:33:48 ajacoutot Exp $
 @bin bin/gnome-photos
 share/appdata/
 share/appdata/org.gnome.Photos.appdata.xml
 share/applications/org.gnome.Photos.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.gnome.Photos.service
 share/doc/gnome-photos/
 share/doc/gnome-photos/ARTISTS
@@ -173,8 +171,6 @@ share/locale/eu/LC_MESSAGES/gnome-photos.mo
 share/locale/fa/LC_MESSAGES/gnome-photos.mo
 share/locale/fi/LC_MESSAGES/gnome-photos.mo
 share/locale/fr/LC_MESSAGES/gnome-photos.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-photos.mo
 share/locale/ga/LC_MESSAGES/gnome-photos.mo
 share/locale/gd/LC_MESSAGES/gnome-photos.mo
@@ -182,6 +178,7 @@ share/locale/gl/LC_MESSAGES/gnome-photos.mo
 share/locale/he/LC_MESSAGES/gnome-photos.mo
 share/locale/hu/LC_MESSAGES/gnome-photos.mo
 share/locale/id/LC_MESSAGES/gnome-photos.mo
+share/locale/is/LC_MESSAGES/gnome-photos.mo
 share/locale/it/LC_MESSAGES/gnome-photos.mo
 share/locale/ja/LC_MESSAGES/gnome-photos.mo
 share/locale/kk/LC_MESSAGES/gnome-photos.mo
