@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.11 2015/05/13 11:03:18 espie Exp $
+# $OpenBSD: User.pm,v 1.12 2015/05/13 15:05:56 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -38,7 +38,7 @@ sub new
 	my ($class, $u) = @_;
 	# XXX getpwnam for local access, distant access is different
 	if (my ($l, undef, $uid, $gid) = getpwnam $u) {
-		my $groups = `/usr/bin/id -g $u`;
+		my $groups = `/usr/bin/id -G $u`;
 		chomp $groups;
 		bless { user => $l, uid => $uid, gid => $gid, 
 		    groups => $groups }, $class;
