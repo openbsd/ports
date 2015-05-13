@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-en,v 1.5 2014/10/08 11:20:05 sthen Exp $
+@comment $OpenBSD: PLIST-en,v 1.6 2015/05/13 09:40:20 sthen Exp $
 @option no-default-conflict
 @conflict asterisk-core-sounds-en-${MODAS_CODEC}-*
 @conflict asterisk-native-sounds-*
@@ -21,6 +21,7 @@ ${MODAS_INST}/agent-user.${MODAS_CODEC}
 ${MODAS_INST}/ascending-2tone.${MODAS_CODEC}
 ${MODAS_INST}/auth-incorrect.${MODAS_CODEC}
 ${MODAS_INST}/auth-thankyou.${MODAS_CODEC}
+${MODAS_INST}/basic-pbx-ivr-main.${MODAS_CODEC}
 ${MODAS_INST}/beep.${MODAS_CODEC}
 ${MODAS_INST}/beeperr.${MODAS_CODEC}
 ${MODAS_INST}/conf-adminmenu-162.${MODAS_CODEC}

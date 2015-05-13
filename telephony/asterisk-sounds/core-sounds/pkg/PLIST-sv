@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST-ja,v 1.2 2015/05/13 09:40:20 sthen Exp $
-@option no-default-conflict
-@conflict asterisk-core-sounds-es-${MODAS_CODEC}-*
+@comment $OpenBSD: PLIST-sv,v 1.1 2015/05/13 09:40:20 sthen Exp $
 share/asterisk/
 share/asterisk/sounds/
 ${MODAS_INST}/
-${MODAS_INST}/CHANGES-asterisk-core-ja-${MODAS_VER}${FLAVORS}
-${MODAS_INST}/CREDITS-asterisk-core-ja-${MODAS_VER}${FLAVORS}
-${MODAS_INST}/LICENSE-asterisk-core-ja-${MODAS_VER}${FLAVORS}
+${MODAS_INST}/CHANGES-asterisk-core-sv-${MODAS_VER}-${MODAS_CODEC}
+${MODAS_INST}/CREDITS-asterisk-core-sv-${MODAS_VER}-${MODAS_CODEC}
+${MODAS_INST}/LICENSE-asterisk-core-sv-${MODAS_VER}-${MODAS_CODEC}
 ${MODAS_INST}/agent-alreadyon.${MODAS_CODEC}
 ${MODAS_INST}/agent-incorrect.${MODAS_CODEC}
 ${MODAS_INST}/agent-loggedoff.${MODAS_CODEC}
@@ -103,7 +101,7 @@ ${MODAS_INST}/confbridge-rest-talk-vol-out.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-there-are.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-unlocked.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-unmuted.${MODAS_CODEC}
-${MODAS_INST}/core-sounds-ja.txt${FLAVORS}
+${MODAS_INST}/core-sounds-sv
 ${MODAS_INST}/demo-abouttotry.${MODAS_CODEC}
 ${MODAS_INST}/demo-congrats.${MODAS_CODEC}
 ${MODAS_INST}/demo-echodone.${MODAS_CODEC}
@@ -116,7 +114,6 @@ ${MODAS_INST}/demo-nomatch.${MODAS_CODEC}
 ${MODAS_INST}/demo-thanks.${MODAS_CODEC}
 ${MODAS_INST}/descending-2tone.${MODAS_CODEC}
 ${MODAS_INST}/dictate/
-${MODAS_INST}/dictate/._.DS_Store
 ${MODAS_INST}/dictate/both_help.${MODAS_CODEC}
 ${MODAS_INST}/dictate/enter_filename.${MODAS_CODEC}
 ${MODAS_INST}/dictate/forhelp.${MODAS_CODEC}
@@ -130,10 +127,6 @@ ${MODAS_INST}/dictate/record_help.${MODAS_CODEC}
 ${MODAS_INST}/dictate/record_mode.${MODAS_CODEC}
 ${MODAS_INST}/dictate/truncating_audio.${MODAS_CODEC}
 ${MODAS_INST}/digits/
-@comment ${MODAS_INST}/digits/._.DS_Store
-@comment ${MODAS_INST}/digits/._9_2.wav
-@comment ${MODAS_INST}/digits/._nen.wav
-@comment ${MODAS_INST}/digits/._nichi.wav
 ${MODAS_INST}/digits/0.${MODAS_CODEC}
 ${MODAS_INST}/digits/1.${MODAS_CODEC}
 ${MODAS_INST}/digits/10.${MODAS_CODEC}
@@ -162,11 +155,9 @@ ${MODAS_INST}/digits/8.${MODAS_CODEC}
 ${MODAS_INST}/digits/80.${MODAS_CODEC}
 ${MODAS_INST}/digits/9.${MODAS_CODEC}
 ${MODAS_INST}/digits/90.${MODAS_CODEC}
-${MODAS_INST}/digits/9_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/a-m.${MODAS_CODEC}
 ${MODAS_INST}/digits/at.${MODAS_CODEC}
 ${MODAS_INST}/digits/billion.${MODAS_CODEC}
-${MODAS_INST}/digits/byou.${MODAS_CODEC}
 ${MODAS_INST}/digits/day-0.${MODAS_CODEC}
 ${MODAS_INST}/digits/day-1.${MODAS_CODEC}
 ${MODAS_INST}/digits/day-2.${MODAS_CODEC}
@@ -175,69 +166,38 @@ ${MODAS_INST}/digits/day-4.${MODAS_CODEC}
 ${MODAS_INST}/digits/day-5.${MODAS_CODEC}
 ${MODAS_INST}/digits/day-6.${MODAS_CODEC}
 ${MODAS_INST}/digits/dollars.${MODAS_CODEC}
-${MODAS_INST}/digits/fun.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-1.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-10.${MODAS_CODEC}
-${MODAS_INST}/digits/h-10_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-11.${MODAS_CODEC}
-${MODAS_INST}/digits/h-11_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-12.${MODAS_CODEC}
-${MODAS_INST}/digits/h-12_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-13.${MODAS_CODEC}
-${MODAS_INST}/digits/h-13_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-14.${MODAS_CODEC}
-${MODAS_INST}/digits/h-14_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-15.${MODAS_CODEC}
-${MODAS_INST}/digits/h-15_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-16.${MODAS_CODEC}
-${MODAS_INST}/digits/h-16_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-17.${MODAS_CODEC}
-${MODAS_INST}/digits/h-17_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-18.${MODAS_CODEC}
-${MODAS_INST}/digits/h-18_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-19.${MODAS_CODEC}
-${MODAS_INST}/digits/h-19_2.${MODAS_CODEC}
-${MODAS_INST}/digits/h-1_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-20.${MODAS_CODEC}
-${MODAS_INST}/digits/h-20_2.${MODAS_CODEC}
-${MODAS_INST}/digits/h-2_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-3.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-30.${MODAS_CODEC}
-${MODAS_INST}/digits/h-30_2.${MODAS_CODEC}
-${MODAS_INST}/digits/h-3_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-4.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-40.${MODAS_CODEC}
-${MODAS_INST}/digits/h-40_2.${MODAS_CODEC}
-${MODAS_INST}/digits/h-4_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-5.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-50.${MODAS_CODEC}
-${MODAS_INST}/digits/h-50_2.${MODAS_CODEC}
-${MODAS_INST}/digits/h-5_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-6.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-60.${MODAS_CODEC}
-${MODAS_INST}/digits/h-60_2.${MODAS_CODEC}
-${MODAS_INST}/digits/h-6_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-7.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-70.${MODAS_CODEC}
-${MODAS_INST}/digits/h-70_2.${MODAS_CODEC}
-${MODAS_INST}/digits/h-7_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-8.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-80.${MODAS_CODEC}
-${MODAS_INST}/digits/h-80_2.${MODAS_CODEC}
-${MODAS_INST}/digits/h-8_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-9.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-90.${MODAS_CODEC}
-${MODAS_INST}/digits/h-90_2.${MODAS_CODEC}
-${MODAS_INST}/digits/h-9_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-billion.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-hundred.${MODAS_CODEC}
-${MODAS_INST}/digits/h-hundred_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-million.${MODAS_CODEC}
 ${MODAS_INST}/digits/h-thousand.${MODAS_CODEC}
-${MODAS_INST}/digits/h-thousand_2.${MODAS_CODEC}
 ${MODAS_INST}/digits/hundred.${MODAS_CODEC}
-${MODAS_INST}/digits/ji.${MODAS_CODEC}
 ${MODAS_INST}/digits/million.${MODAS_CODEC}
 ${MODAS_INST}/digits/minus.${MODAS_CODEC}
 ${MODAS_INST}/digits/mon-0.${MODAS_CODEC}
@@ -252,8 +212,6 @@ ${MODAS_INST}/digits/mon-6.${MODAS_CODEC}
 ${MODAS_INST}/digits/mon-7.${MODAS_CODEC}
 ${MODAS_INST}/digits/mon-8.${MODAS_CODEC}
 ${MODAS_INST}/digits/mon-9.${MODAS_CODEC}
-${MODAS_INST}/digits/nen.${MODAS_CODEC}
-${MODAS_INST}/digits/nichi.${MODAS_CODEC}
 ${MODAS_INST}/digits/oclock.${MODAS_CODEC}
 ${MODAS_INST}/digits/oh.${MODAS_CODEC}
 ${MODAS_INST}/digits/p-m.${MODAS_CODEC}
@@ -288,15 +246,7 @@ ${MODAS_INST}/followme/status.${MODAS_CODEC}
 ${MODAS_INST}/hello-world.${MODAS_CODEC}
 ${MODAS_INST}/hours.${MODAS_CODEC}
 ${MODAS_INST}/invalid.${MODAS_CODEC}
-${MODAS_INST}/jp-arimasen.${MODAS_CODEC}
-${MODAS_INST}/jp-arimasu.${MODAS_CODEC}
-${MODAS_INST}/jp-ga.${MODAS_CODEC}
-${MODAS_INST}/jp-ni.${MODAS_CODEC}
-${MODAS_INST}/jp-oshitekudasai.${MODAS_CODEC}
-${MODAS_INST}/jp-wa.${MODAS_CODEC}
-${MODAS_INST}/jp-wo.${MODAS_CODEC}
 ${MODAS_INST}/letters/
-${MODAS_INST}/letters/._.DS_Store
 ${MODAS_INST}/letters/a.${MODAS_CODEC}
 ${MODAS_INST}/letters/ascii123.${MODAS_CODEC}
 ${MODAS_INST}/letters/ascii124.${MODAS_CODEC}
@@ -365,7 +315,6 @@ ${MODAS_INST}/pbx-invalidpark.${MODAS_CODEC}
 ${MODAS_INST}/pbx-parkingfailed.${MODAS_CODEC}
 ${MODAS_INST}/pbx-transfer.${MODAS_CODEC}
 ${MODAS_INST}/phonetic/
-${MODAS_INST}/phonetic/._.DS_Store
 ${MODAS_INST}/phonetic/9_p.${MODAS_CODEC}
 ${MODAS_INST}/phonetic/a_p.${MODAS_CODEC}
 ${MODAS_INST}/phonetic/b_p.${MODAS_CODEC}

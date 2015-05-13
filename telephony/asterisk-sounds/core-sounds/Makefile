@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/10/08 11:20:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/13 09:40:20 sthen Exp $
 
     SUBDIR =
 .for i in gsm alaw ulaw g722 g729 wav # sln16 siren7 siren14
@@ -10,6 +10,7 @@
     SUBDIR += it,$i
     SUBDIR += ja,$i
     SUBDIR += ru,$i
+    SUBDIR += sv,$i
 .endfor
 
 .include <bsd.port.subdir.mk>
