@@ -1,6 +1,9 @@
-$OpenBSD: patch-tests_libpeas_extension-py_c,v 1.1 2015/05/12 12:39:10 jasper Exp $
+$OpenBSD: patch-tests_libpeas_extension-py_c,v 1.2 2015/05/14 18:20:34 jasper Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=727380
+From f5c7668f600f16f144c3772cc34c9fd929f98d28 Mon Sep 17 00:00:00 2001
+From: Garrett Regier <garrettregier@gmail.com>
+Date: Tue, 12 May 2015 04:48:42 -0700
+Subject: Fix Python tests on OpenBSD
 
 --- tests/libpeas/extension-py.c.orig	Sat Feb 14 21:35:54 2015
 +++ tests/libpeas/extension-py.c	Tue May 12 14:33:39 2015
