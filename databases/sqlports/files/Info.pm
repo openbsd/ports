@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.16 2014/11/04 10:44:33 espie Exp $
+# $OpenBSD: Info.pm,v 1.17 2015/05/14 18:01:08 jasper Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -78,6 +78,7 @@ our $vars = {
     PREFIX => 'PrefixKeyVar',
     PKG_ARCH => 'ArchKeyVar',
     PORTROACH => 'DefinedVar',
+    PORTROACH_COMMENT => 'DefinedVar',
     PSEUDO_FLAVOR => 'AnyVar',
     PSEUDO_FLAVORS => 'PseudoFlavorsVar',
     TEST_DEPENDS => 'TestDependsVar',
