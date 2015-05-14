@@ -1,11 +1,21 @@
-$OpenBSD: patch-logstash-forwarder_conf_example,v 1.1.1.1 2014/12/16 15:21:06 jasper Exp $
+$OpenBSD: patch-logstash-forwarder_conf_example,v 1.2 2015/05/14 12:28:49 jasper Exp $
 
 Provide a reasonable config and don't include arbitrary log files that
 are most likely not in syslog format.
 
---- logstash-forwarder.conf.example.orig	Tue Dec 16 11:25:20 2014
-+++ logstash-forwarder.conf.example	Tue Dec 16 11:25:58 2014
-@@ -8,13 +8,10 @@
+--- logstash-forwarder.conf.example.orig	Tue Dec 16 08:43:50 2014
++++ logstash-forwarder.conf.example	Thu May 14 14:26:41 2015
+@@ -1,20 +1,17 @@
+ {
+   "network": {
+     "servers": [ "localhost:5043" ],
+-    "ssl certificate": "./lumberjack.crt",
+-    "ssl key": "./lumberjack.key",
+-    "ssl ca": "./lumberjack_ca.crt"
++    "ssl certificate": "${SYSCONFDIR}/logstash-forwarder/lumberjack.crt",
++    "ssl key": "${SYSCONFDIR}/logstash-forwarder/lumberjack.key",
++    "ssl ca": "${SYSCONFDIR}/logstash-forwarder/lumberjack_ca.crt"
+   },
    "files": [
      {
        "paths": [ 

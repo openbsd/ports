@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2014/12/16 15:21:06 jasper Exp $
+$OpenBSD: README,v 1.2 2015/05/14 12:28:49 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,7 +13,7 @@ are incorrect. Instead generate the certificate and keys with a command
 like:
 
   openssl req -x509 -nodes -newkey rsa:2048 -keyout \
-	logstash-forwarder.key -out logstash-forwarder.crt -days 365
+	logstash.key -out logstash.crt -days 365
 
 and ensure you enter a valid CN.
 
