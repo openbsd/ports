@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.901 2015/04/23 16:45:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.902 2015/05/14 17:54:38 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -559,6 +559,7 @@
      SUBDIR += ruby-net-ssh-gateway
      SUBDIR += ruby-nmap-parser
      SUBDIR += ruby-snmp
+     SUBDIR += ruby-sshkit
      SUBDIR += ruby-stomp
      SUBDIR += ruby-xmpp4r
      SUBDIR += samba
