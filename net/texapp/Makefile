@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2015/03/17 23:43:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.18 2015/05/14 02:11:29 bcallah Exp $
 
 COMMENT =	command line app.net client
-DISTNAME =	texapp-0.6.9
+DISTNAME =	texapp-0.6.10
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.floodgap.com/software/texapp/
-
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Floodgap Free Software License
