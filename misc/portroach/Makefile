@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/12 11:44:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/05/14 18:06:41 jasper Exp $
 
 COMMENT=		OpenBSD ports distfile version scanner
 
 GH_ACCOUNT=		jasperla
 GH_PROJECT=		portroach
-GH_TAGNAME=		2.0.3
+GH_TAGNAME=		2.0.4
 
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES=		misc
@@ -21,7 +21,7 @@ MODULES=		perl
 RUN_DEPENDS=		converters/p5-JSON \
 			databases/p5-DBD-Pg \
 			databases/p5-DBD-SQLite \
-			databases/sqlports \
+			databases/sqlports>=4.4 \
 			devel/p5-Try-Tiny \
 			mail/p5-MIME-Lite \
 			sysutils/p5-Proc-Queue \
