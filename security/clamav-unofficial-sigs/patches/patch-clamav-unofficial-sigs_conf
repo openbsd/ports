@@ -1,6 +1,6 @@
-$OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.8 2015/05/13 08:14:11 sthen Exp $
---- clamav-unofficial-sigs.conf.orig	Sat May  9 00:36:09 2015
-+++ clamav-unofficial-sigs.conf	Wed May 13 09:11:38 2015
+$OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.9 2015/05/14 16:38:10 sthen Exp $
+--- clamav-unofficial-sigs.conf.orig	Wed May 13 11:47:32 2015
++++ clamav-unofficial-sigs.conf	Thu May 14 17:36:08 2015
 @@ -37,14 +37,14 @@
  # cmp, diff, gzip, ls, cp, mv, test, gpg, host, sleep, cksum, rsync, curl, perl,
  # and optionally socat.  It's been reported that on Sun systems, the GNU utilities
@@ -48,16 +48,7 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.8 2015/05/13 08:14:11 sthen Exp 
  
  # ========================
  # Sanesecurity Database(s)
-@@ -171,7 +169,7 @@ blurl.ndb  #LOW Blacklisted full urls over the last 7 
- malwarehash.hsb  #LOW Malware hashes without known Size
- foxhole_generic.cdb #MED See Foxhole page for more details
- foxhole_filename.cdb #MED See Foxhole page for more details
--foxhole_all.cdb  #HIGH See Foxhole page for more details  
-+#foxhole_all.cdb  #HIGH See Foxhole page for more details  
- 
- ### OITC http://www.oitc.com/winnow/clamsigs/index.html
- ### Note: the two databases winnow_phish_complete.ndb and winnow_phish_complete_url.ndb should NOT be used together.  
-@@ -229,56 +227,6 @@ phishtank.ndb  #LOW Online and valid phishing urls fro
+@@ -232,56 +230,6 @@ phishtank.ndb  #LOW Online and valid phishing urls fro
  #   http://www.example.org/sigs.ldb
  #"
  
@@ -114,7 +105,7 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.8 2015/05/13 08:14:11 sthen Exp 
  # Set rsync connection and data transfer timeout limits in seconds.
  # The defaults settings here are reasonable, only change if you are
  # experiencing timeout issues.
-@@ -294,7 +242,7 @@ curl_max_time="90"
+@@ -297,7 +245,7 @@ curl_max_time="90"
  # Set working directory paths (edit to meet your own needs). If these
  # directories do not exist, the script will attempt to create them.
  # Top level working directory path:
@@ -122,8 +113,8 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.8 2015/05/13 08:14:11 sthen Exp 
 +work_dir="/var/db/clamav-unofficial-sigs"   #Top level working directory
  # Sub-directory names:
  ss_dir="$work_dir/ss-dbs"        # Sanesecurity sub-directory
- config_dir="$work_dir/configs"   # Script configs sub-directory
-@@ -318,7 +266,7 @@ comment_silence="no"   # Default is "no" to report scr
+ si_dir="$work_dir/si-dbs"        # SecuriteInfo sub-directory 
+@@ -324,7 +272,7 @@ comment_silence="no"   # Default is "no" to report scr
  
  # Log update information to '$log_file_path/$log_file_name'.
  enable_logging="yes"

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/13 08:14:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/14 16:38:10 sthen Exp $
 
 COMMENT =	fetch and update unofficial signatures for ClamAV
 
-V =		4.0.0
+V =		4.1.0
 DISTNAME =	clamav-unofficial-sigs-$V
 DISTFILES =	${DISTNAME}{$V}.tar.gz
 
