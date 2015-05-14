@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/26 23:55:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2015/05/14 17:57:13 jasper Exp $
 
 COMMENT =		library for programmatically tunneling connections
 
-DISTNAME =		net-ssh-gateway-1.1.0
-REVISION =		0
+DISTNAME =		net-ssh-gateway-1.2.0
 CATEGORIES =		net
 
 # MIT
@@ -12,13 +11,13 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/ruby
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		net/ruby-net-ssh,${MODRUBY_FLAVOR}>=2.0.0
+RUN_DEPENDS =		net/ruby-net-ssh,${MODRUBY_FLAVOR}>=2.6.5
 
 CONFIGURE_STYLE =	ruby gem
 
-TEST_DEPENDS=	devel/ruby-mocha,${MODRUBY_FLAVOR}
+MODRUBY_TEST =		rake
 
-do-test:
-	@cd ${WRKBUILD} && ${RUBY} -rubygems -Ilib/ test/gateway_test.rb
+TEST_DEPENDS =		devel/ruby-jeweler,${MODRUBY_FLAVOR} \
+			devel/ruby-mocha,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>
