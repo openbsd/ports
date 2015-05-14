@@ -1,10 +1,10 @@
-$OpenBSD: patch-magick_MagickCore_pc_in,v 1.1 2012/06/19 12:46:12 sthen Exp $
---- magick/MagickCore.pc.in.orig	Mon Jun 18 22:44:40 2012
-+++ magick/MagickCore.pc.in	Mon Jun 18 22:45:13 2012
+$OpenBSD: patch-magick_MagickCore_pc_in,v 1.2 2015/05/14 06:39:13 ajacoutot Exp $
+--- magick/MagickCore.pc.in.orig	Sat Sep  5 17:47:34 2009
++++ magick/MagickCore.pc.in	Fri Jul  4 15:04:44 2014
 @@ -6,5 +6,5 @@ includedir=@includedir@/ImageMagick
  Name: MagickCore
  Description: MagickCore - C API for ImageMagick
  Version: @PACKAGE_VERSION@
 -Libs: -L${libdir} -lMagickCore
-+Libs: -L${libdir} -L${X11BASE}/lib -lMagickCore -pthread
++Libs: -L${libdir} -L${X11BASE}/lib -lMagickCore
  Cflags: -I${includedir} @MAGICK_PCFLAGS@

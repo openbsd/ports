@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2014/07/04 13:47:44 brad Exp $
+# $OpenBSD: Makefile,v 1.136 2015/05/14 06:39:13 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		image processing tools
 
 VER=			6.7.7
 DASHVER=		7
-REVISION=		8
+REVISION=		9
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 
@@ -75,7 +75,6 @@ CONFIGURE_ARGS+=	--with-quantum-depth=16 \
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
 			LDFLAGS="-L${WRKBUILD}/magick/.libs -L${WRKBUILD}/wand/.libs -L${LOCALBASE}/lib" \
-			PTHREAD_CFLAGS="-pthread" PTHREAD_LIBS="-pthread" \
 			ac_cv_path_LaunchDelegate=no \
 			ac_cv_lib_wmflite_wmf_lite_create=no
 

@@ -1,20 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2014/02/13 08:33:02 sthen Exp $
---- configure.orig	Sun Jun 10 17:13:41 2012
-+++ configure	Thu Feb 13 00:38:36 2014
-@@ -9655,10 +9655,12 @@ else
-         PTHREAD_CC="$CC"
- fi
- 
-+MAGICK_PCFLAGS="$MAGICK_PCFLAGS $PTHREAD_CFLAGS"
- 
- 
- 
- 
-+
- # Finally, execute ACTION-IF-FOUND/ACTION-IF-NOT-FOUND:
- if test x"$ax_pthread_ok" = xyes; then
- 
-@@ -29519,7 +29521,7 @@ else
+$OpenBSD: patch-configure,v 1.9 2015/05/14 06:39:13 ajacoutot Exp $
+--- configure.orig	Sun Jun 10 12:13:41 2012
++++ configure	Fri Jul  4 13:03:00 2014
+@@ -29519,7 +29519,7 @@ else
  fi
  
  
@@ -23,7 +10,7 @@ $OpenBSD: patch-configure,v 1.8 2014/02/13 08:33:02 sthen Exp $
  "
  if test "x$ac_cv_header_freetype_freetype_h" = xyes; then :
    have_freetype_h='yes'
-@@ -32576,7 +32578,7 @@ _ACEOF
+@@ -32576,7 +32576,7 @@ _ACEOF
  
  
  # Subdirectory under lib to place ImageMagick lib files
@@ -32,7 +19,7 @@ $OpenBSD: patch-configure,v 1.8 2014/02/13 08:33:02 sthen Exp $
  
  cat >>confdefs.h <<_ACEOF
  #define LIBRARY_RELATIVE_PATH "$LIBRARY_RELATIVE_PATH"
-@@ -32659,7 +32661,7 @@ _ACEOF
+@@ -32659,7 +32659,7 @@ _ACEOF
  
  #
  # Path to ImageMagick documentation files
@@ -41,12 +28,3 @@ $OpenBSD: patch-configure,v 1.8 2014/02/13 08:33:02 sthen Exp $
  DOCUMENTATION_PATH="${DOC_DIR}/${DOCUMENTATION_RELATIVE_PATH}"
  DEFINE_DOCUMENTATION_PATH="${DOC_DIR}/${DOCUMENTATION_RELATIVE_PATH}/"
  case "${build_os}" in
-@@ -35736,7 +35738,7 @@ MAGICK_CFLAGS=$CFLAGS
- MAGICK_CXXFLAGS="$CXXFLAGS"
- MAGICK_CPPFLAGS=`echo $MAGICK_CPPFLAGS | sed -e 's/  */ /g'`
- MAGICK_PCFLAGS=`echo $MAGICK_PCFLAGS | sed -e 's/  */ /g'`
--MAGICK_LDFLAGS="-L$LIB_DIR $LDFLAGS"
-+MAGICK_LDFLAGS="$LDFLAGS"
- MAGICK_LIBS="-lMagickCore $MAGICK_DEP_LIBS $MAGICK_API_LIBLTDL"
- 
- 
