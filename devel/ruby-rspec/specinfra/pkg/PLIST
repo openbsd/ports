@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/05/06 08:32:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/05/14 07:21:37 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -119,6 +119,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/host.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/port.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/service.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/user.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/base/
@@ -359,6 +360,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/user_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/file_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/user_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/debian/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/debian/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/esxi/
