@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/11/08 23:24:41 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/05/14 17:56:15 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.rdoc
+${GEM_LIB}/gems/${DISTNAME}/CHANGES.txt
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/Manifest
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/gem-public_cert.pem
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/net/
 ${GEM_LIB}/gems/${DISTNAME}/lib/net/sftp/
