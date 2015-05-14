@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1335 2015/05/13 18:55:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.1336 2015/05/14 17:51:27 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1352,6 +1352,7 @@
      SUBDIR += ruby-color-tools
      SUBDIR += ruby-colorator
      SUBDIR += ruby-colored
+     SUBDIR += ruby-colorize
      SUBDIR += ruby-commander
      SUBDIR += ruby-cri
      SUBDIR += ruby-daemon_controller
