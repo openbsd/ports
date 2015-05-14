@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/14 17:47:08 jasper Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/colorize.gemspec
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/colorize/
+${GEM_LIB}/gems/${DISTNAME}/lib/colorize.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/colorize/class_methods.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/colorize/instance_methods.rb
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/test_colorize.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
