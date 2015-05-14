@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2013/10/26 23:55:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.23 2015/05/14 17:56:49 jasper Exp $
 
 COMMENT =	pure-ruby implementation of the SSH2 client protocol
 
-DISTNAME =	net-ssh-2.1.4
-REVISION =	0
+DISTNAME =	net-ssh-2.9.2
 CATEGORIES =	net
 
 # MIT
@@ -16,9 +15,9 @@ RUN_DEPENDS =	devel/ruby-highline,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 
-TEST_DEPENDS =	devel/ruby-mocha,${MODRUBY_FLAVOR}
+MODRUBY_TEST =	rake
 
-do-test:
-	@cd ${WRKBUILD} && ${RUBY} -Ilib -Itest -rrubygems test/test_all.rb
+TEST_DEPENDS =	devel/ruby-jeweler,${MODRUBY_FLAVOR} \
+		devel/ruby-mocha,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>
