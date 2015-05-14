@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2015/04/24 15:31:37 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2015/05/14 09:21:01 dcoppa Exp $
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${CATALINA_BASE}/logs/* ${CATALINA_BASE}/work/*
@@ -108,7 +108,6 @@ tomcat/lib/tomcat-i18n-fr.jar
 tomcat/lib/tomcat-i18n-ja.jar
 tomcat/lib/tomcat-jdbc.jar
 tomcat/lib/tomcat-jni.jar
-tomcat/lib/tomcat-spdy.jar
 tomcat/lib/tomcat-util-scan.jar
 tomcat/lib/tomcat-util.jar
 tomcat/lib/tomcat-websocket.jar

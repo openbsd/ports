@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.6 2015/04/24 15:31:37 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.7 2015/05/14 09:21:01 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -240,6 +240,7 @@ webapps/docs/api/org/apache/catalina/filters/FilterBase.html
 webapps/docs/api/org/apache/catalina/filters/RemoteAddrFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteHostFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteIpFilter.XForwardedRequest.html
+webapps/docs/api/org/apache/catalina/filters/RemoteIpFilter.XForwardedResponse.html
 webapps/docs/api/org/apache/catalina/filters/RemoteIpFilter.html
 webapps/docs/api/org/apache/catalina/filters/RequestDumperFilter.html
 webapps/docs/api/org/apache/catalina/filters/RequestFilter.html
@@ -792,10 +793,10 @@ webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.HeaderElement
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.HostElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.HttpStatusCodeElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.LocalAddrElement.html
-webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.LocalPortElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.LocalServerNameElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.LogicalUserNameElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.MethodElement.html
+webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.PortElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.ProtocolElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.QueryElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.RemoteAddrElement.html
@@ -976,7 +977,6 @@ webapps/docs/api/org/apache/coyote/http11/InternalNioOutputBuffer.SocketOutputBu
 webapps/docs/api/org/apache/coyote/http11/InternalNioOutputBuffer.html
 webapps/docs/api/org/apache/coyote/http11/InternalOutputBuffer.OutputStreamOutputBuffer.html
 webapps/docs/api/org/apache/coyote/http11/InternalOutputBuffer.html
-webapps/docs/api/org/apache/coyote/http11/NpnHandler.html
 webapps/docs/api/org/apache/coyote/http11/OutputFilter.html
 webapps/docs/api/org/apache/coyote/http11/filters/
 webapps/docs/api/org/apache/coyote/http11/filters/BufferedInputFilter.html
@@ -1018,14 +1018,6 @@ webapps/docs/api/org/apache/coyote/http11/upgrade/package-tree.html
 webapps/docs/api/org/apache/coyote/package-frame.html
 webapps/docs/api/org/apache/coyote/package-summary.html
 webapps/docs/api/org/apache/coyote/package-tree.html
-webapps/docs/api/org/apache/coyote/spdy/
-webapps/docs/api/org/apache/coyote/spdy/SpdyAprNpnHandler.html
-webapps/docs/api/org/apache/coyote/spdy/SpdyProcessor.html
-webapps/docs/api/org/apache/coyote/spdy/SpdyProxyProtocol.TomcatJioHandler.html
-webapps/docs/api/org/apache/coyote/spdy/SpdyProxyProtocol.html
-webapps/docs/api/org/apache/coyote/spdy/package-frame.html
-webapps/docs/api/org/apache/coyote/spdy/package-summary.html
-webapps/docs/api/org/apache/coyote/spdy/package-tree.html
 webapps/docs/api/org/apache/el/
 webapps/docs/api/org/apache/el/ExpressionFactoryImpl.html
 webapps/docs/api/org/apache/el/MethodExpressionImpl.html
@@ -1546,7 +1538,6 @@ webapps/docs/api/org/apache/tomcat/jni/Procattr.html
 webapps/docs/api/org/apache/tomcat/jni/Registry.html
 webapps/docs/api/org/apache/tomcat/jni/SSL.html
 webapps/docs/api/org/apache/tomcat/jni/SSLContext.html
-webapps/docs/api/org/apache/tomcat/jni/SSLExt.html
 webapps/docs/api/org/apache/tomcat/jni/SSLSocket.html
 webapps/docs/api/org/apache/tomcat/jni/Shm.html
 webapps/docs/api/org/apache/tomcat/jni/Sockaddr.html
@@ -1559,34 +1550,9 @@ webapps/docs/api/org/apache/tomcat/jni/User.html
 webapps/docs/api/org/apache/tomcat/jni/package-frame.html
 webapps/docs/api/org/apache/tomcat/jni/package-summary.html
 webapps/docs/api/org/apache/tomcat/jni/package-tree.html
-webapps/docs/api/org/apache/tomcat/jni/socket/
-webapps/docs/api/org/apache/tomcat/jni/socket/AprSocket.html
-webapps/docs/api/org/apache/tomcat/jni/socket/AprSocketContext.BlockingPollHandler.html
-webapps/docs/api/org/apache/tomcat/jni/socket/AprSocketContext.HostInfoLoader.html
-webapps/docs/api/org/apache/tomcat/jni/socket/AprSocketContext.NonBlockingPollHandler.html
-webapps/docs/api/org/apache/tomcat/jni/socket/AprSocketContext.RawDataHandler.html
-webapps/docs/api/org/apache/tomcat/jni/socket/AprSocketContext.TlsCertVerifier.html
-webapps/docs/api/org/apache/tomcat/jni/socket/AprSocketContext.html
-webapps/docs/api/org/apache/tomcat/jni/socket/HostInfo.html
-webapps/docs/api/org/apache/tomcat/jni/socket/package-frame.html
-webapps/docs/api/org/apache/tomcat/jni/socket/package-summary.html
-webapps/docs/api/org/apache/tomcat/jni/socket/package-tree.html
 webapps/docs/api/org/apache/tomcat/package-frame.html
 webapps/docs/api/org/apache/tomcat/package-summary.html
 webapps/docs/api/org/apache/tomcat/package-tree.html
-webapps/docs/api/org/apache/tomcat/spdy/
-webapps/docs/api/org/apache/tomcat/spdy/NetSupportOpenSSL.html
-webapps/docs/api/org/apache/tomcat/spdy/NetSupportSocket.html
-webapps/docs/api/org/apache/tomcat/spdy/SpdyConnection.html
-webapps/docs/api/org/apache/tomcat/spdy/SpdyContext.NetSupport.html
-webapps/docs/api/org/apache/tomcat/spdy/SpdyContext.NonBlockingSpdyHandler.html
-webapps/docs/api/org/apache/tomcat/spdy/SpdyContext.SpdyHandler.html
-webapps/docs/api/org/apache/tomcat/spdy/SpdyContext.html
-webapps/docs/api/org/apache/tomcat/spdy/SpdyFrame.html
-webapps/docs/api/org/apache/tomcat/spdy/SpdyStream.html
-webapps/docs/api/org/apache/tomcat/spdy/package-frame.html
-webapps/docs/api/org/apache/tomcat/spdy/package-summary.html
-webapps/docs/api/org/apache/tomcat/spdy/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/
 webapps/docs/api/org/apache/tomcat/util/Diagnostics.html
 webapps/docs/api/org/apache/tomcat/util/ExceptionUtils.html
