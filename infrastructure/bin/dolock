@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: dolock,v 1.4 2015/05/02 16:42:55 espie Exp $
+# $OpenBSD: dolock,v 1.5 2015/05/14 11:15:29 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -29,9 +29,11 @@ if (@ARGV == 0) {
 	exit(1);
 }
 
-my $p = {group => $( };
+my $p = {};
 if ($opts{g}) {
 	$p->{group} = $opts{g};
+} else {
+	$( =~ m/^(\d+)/ and $p->{group} = $1;
 }
 if ($opts{m}) {
 	$p->{mode} = oct($opts{m});
