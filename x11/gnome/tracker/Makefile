@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2015/05/05 17:00:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.190 2015/05/15 14:38:36 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -74,11 +74,6 @@ LIB_DEPENDS=		audio/libcue \
 # to fail.
 BUILD_DEPENDS +=	devel/libgee
 
-# XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
-# work with unversioned solibs (LOCALBASE/lib/evolution/*.so).
-#BUILD_DEPENDS +=	mail/evolution
-#RUN_DEPENDS +=		mail/evolution
-
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
 			x11/dbus-python
 
@@ -101,11 +96,7 @@ CONFIGURE_ARGS +=	--disable-miner-rss
 # cyclic dependency with x11/gnome/nautilus
 CONFIGURE_ARGS +=	--disable-nautilus-extension
 
-# XXX re-enable evolution plugins when fixed upstream
-# temporarily disable evolution miner which does not build with evo >= 3.6.0
-# when fixed:
-#  uncomment BUILD_DEPENDS on evolution
-#  uncomment the rm call in post-install
+# XXX disable evolution miner which does not build with evo >= 3.6.0
 CONFIGURE_ARGS +=	--disable-miner-evolution
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/meta-tracker/
@@ -117,7 +108,6 @@ pre-configure:
 post-install:
 	rm ${PREFIX}/lib/tracker-${TRACKER_API}/extract-modules/*.{a,la}
 	rm ${PREFIX}/lib/tracker-${TRACKER_API}/writeback-modules/*.{a,la}
-#	rm ${PREFIX}/lib/evolution/plugins/*.{a,la}
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=746939
 	find ${PREFIX}/bin -type f ! -perm 0755 -exec chmod 0755 '{}' +
