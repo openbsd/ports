@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.239 2015/05/13 18:56:16 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.240 2015/05/15 08:13:34 stsp Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -529,6 +529,8 @@ my $obsolete_reason = {
 	'gtk3-xfce-engine' => 3,
 	'shell-fm' => 6,
 	'ruby-cucumber' => 0,
+	'ap2-mod_fastcgi' => 6,
+	'ap2-mod_fcgid' => 6,
 };
 
 # ->is_base_system($handle, $state):
