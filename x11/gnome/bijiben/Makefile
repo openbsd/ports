@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/05/12 06:41:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2015/05/15 16:53:02 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
@@ -6,6 +6,7 @@ COMMENT=		simple note editor
 
 GNOME_PROJECT=		bijiben
 GNOME_VERSION=		3.16.2
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -34,14 +35,11 @@ WANTLIB += tracker-sparql-${TRACKER_API}
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
 WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
 
-LIB_DEPENDS=		productivity/zeitgeist \
+LIB_DEPENDS=		databases/evolution-data-server \
+			productivity/zeitgeist \
+			www/webkit,gtk3 \
 			x11/gnome/online-accounts \
-			x11/gnome/tracker>=${TRACKER_API}
-
-# XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
-# work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
-BUILD_DEPENDS +=	mail/evolution
-RUN_DEPENDS +=		mail/evolution
+			x11/gnome/tracker
 
 # needs xdg-email
 RUN_DEPENDS +=		devel/xdg-utils
