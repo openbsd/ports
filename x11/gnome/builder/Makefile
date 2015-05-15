@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/15 13:48:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/15 13:54:27 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.16.2
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -54,8 +54,5 @@ LIB_DEPENDS=		devel/libgit2/libgit2-glib \
 			x11/gtksourceview3
 
 CONFIGURE_ENV=		ac_cv_path_PYTHON3_CONFIG=python${MODPY_VERSION}-config
-
-post-install:
-	rm ${PREFIX}/lib/*.{a,la}
 
 .include <bsd.port.mk>
