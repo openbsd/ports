@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2015/04/08 10:55:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/05/15 13:43:40 sthen Exp $
+
+PORTROACH_COMMENT = 1.3.12+ needs py-jellyfish, waiting on OKs
 
 COMMENT =	CLI tools to manage music collections
 

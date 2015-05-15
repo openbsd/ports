@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.87 2014/10/02 13:27:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2015/05/15 13:43:40 sthen Exp $
+
+PORTROACH_COMMENT= rrdcached crashes at startup in 1.5.0 to at least 1.5.3
 
 SHARED_ONLY=	Yes
 
