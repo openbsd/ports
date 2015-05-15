@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2015/05/15 14:38:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.191 2015/05/15 14:50:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,7 +10,7 @@ GNOME_VERSION=		1.4.0
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
 PKGNAME=		meta-tracker-${VERSION}
-REVISION=		3
+REVISION=		4
 
 # NOTE: when TRACKER_API changes, increment accordingly and bump:
 # x11/gnome/documents
@@ -108,9 +108,6 @@ pre-configure:
 post-install:
 	rm ${PREFIX}/lib/tracker-${TRACKER_API}/extract-modules/*.{a,la}
 	rm ${PREFIX}/lib/tracker-${TRACKER_API}/writeback-modules/*.{a,la}
-
-# XXX https://bugzilla.gnome.org/show_bug.cgi?id=746939
-	find ${PREFIX}/bin -type f ! -perm 0755 -exec chmod 0755 '{}' +
 
 do-test:
 	cd ${WRKBUILD}/tests/functional-tests && ${MAKE_PROGRAM}

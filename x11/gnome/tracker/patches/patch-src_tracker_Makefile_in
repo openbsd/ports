@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_tracker_Makefile_in,v 1.1 2015/05/15 14:50:19 ajacoutot Exp $
+
+From d231fba5392972aea61030db708d8dcdf9087963 Mon Sep 17 00:00:00 2001
+From: Martyn Russell <martyn@lanedo.com>
+Date: Tue, 31 Mar 2015 23:00:13 +0100
+Subject: tracker: Fixed execution bit of tracker-compat, which is broken by sed
+
+--- src/tracker/Makefile.in.orig	Tue Mar 24 19:22:02 2015
++++ src/tracker/Makefile.in	Fri May 15 16:43:25 2015
+@@ -998,6 +998,7 @@ uninstall-hook:
+ 
+ tracker-compat: tracker-compat.in
+ 	$(AM_V_at)sed -e "s|@bindir[@]|${bindir}|" $< > $@
++	$(AM_V_at)chmod +x $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
