@@ -1,3 +1,0 @@
-mod_fcgid has a new process management strategy, which concentrates on
-reducing the number of fastcgi server, and kick out the corrupt fastcgi
-server as soon as possible.

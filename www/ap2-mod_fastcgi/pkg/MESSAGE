@@ -1,9 +1,0 @@
-To finish the install of mod_fastcgi, you need
-to enable the module by adding the following line
-to your /etc/apache2/httpd2.conf file:
-
-  LoadModule fastcgi_module ${PREFIX}/lib/apache2/mod_fastcgi.so
-
-If you already have Apache running on your machine,
-you should not use "apachectl2 restart" - instead,
-you should fully stop and then restart the server.
