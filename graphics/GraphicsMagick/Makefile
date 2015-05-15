@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/05/13 09:41:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2015/05/15 06:54:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--without-gslib \
 			--without-trio \
 			--disable-ltdl-install
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${WRKBUILD}/magick/.libs -L${WRKBUILD}/wand/.libs -L${LOCALBASE}/lib" \
 			ac_cv_path_LaunchDelegate=no
 
