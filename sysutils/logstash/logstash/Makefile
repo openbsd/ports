@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/14 12:17:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/05/15 07:34:10 jasper Exp $
 
 COMMENT=		tool for managing events and logs
 
-V=			1.5.0-rc3
+V=			1.5.0
+EPOCH=			0
 DISTNAME=		logstash-$V
 PKGNAME=		logstash-${V:S/-/./}
-REVISION=		0
 
 # tarball is a result of 'rake artifact:tar'
 MASTER_SITES=		http://distfiles.nl/
@@ -33,13 +33,13 @@ do-build:
 	find ${WRKSRC}/vendor/ -type f -exec chmod 0644 {} \;
 
 do-install:
-	${INSTALL_DATA_DIR} ${LS_BASE}/{bin,lib,locales,vendor}/
+	${INSTALL_DATA_DIR} ${LS_BASE}/{bin,lib,vendor}/
 	${INSTALL_DATA} ${WRKSRC}/Gemfile* ${LS_BASE}
 .for b in logstash logstash.lib.sh plugin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/$b ${LS_BASE}/bin/
 .endfor
-	rm ${WRKSRC}/vendor/bundle/jruby/1.9/gems/filewatch-0.6.1/lib/filewatch/*.orig
-	cd ${WRKSRC} && cp -R lib locales vendor ${LS_BASE}
+	-rm ${WRKSRC}/vendor/bundle/jruby/1.9/gems/filewatch-0.6.1/lib/filewatch/*.orig
+	cd ${WRKSRC} && cp -R lib vendor ${LS_BASE}
 	cd ${LS_BASE}/vendor/ && ln -sf ${LOCALBASE}/jruby
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/logstash/
 	${SUBST_CMD} -m 0644 -c ${FILESDIR}/logstash.conf \
