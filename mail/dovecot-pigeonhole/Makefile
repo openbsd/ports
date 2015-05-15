@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2015/04/09 21:26:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2015/05/15 20:59:18 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Sieve mail filtering for Dovecot
 
-V_SIEVE=	0.4.7
+V_SIEVE=	0.4.8
 V_DOVECOT=	2.2
 
 DISTNAME=	dovecot-${V_DOVECOT}-pigeonhole-${V_SIEVE}

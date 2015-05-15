@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_example-config_conf_d_90-sieve_conf,v 1.4 2015/04/09 21:26:26 sthen Exp $
---- doc/example-config/conf.d/90-sieve.conf.orig	Thu Jul 24 06:50:59 2014
-+++ doc/example-config/conf.d/90-sieve.conf	Sat Mar  7 02:23:03 2015
+$OpenBSD: patch-doc_example-config_conf_d_90-sieve_conf,v 1.5 2015/05/15 20:59:18 sthen Exp $
+--- doc/example-config/conf.d/90-sieve.conf.orig	Sun May 10 16:49:07 2015
++++ doc/example-config/conf.d/90-sieve.conf	Fri May 15 15:57:21 2015
 @@ -44,7 +44,7 @@ plugin {
    # sievec command line tool if the binary is not stored in a global location.
    # --> See sieve_before for executing scripts before the user's personal
@@ -8,5 +8,5 @@ $OpenBSD: patch-doc_example-config_conf_d_90-sieve_conf,v 1.4 2015/04/09 21:26:2
 -  #sieve_default = /var/lib/dovecot/sieve/default.sieve
 +  #sieve_default = /var/dovecot/sieve/default.sieve
  
-   # Location for ":global" include scripts as used by the "include" extension.
-   #sieve_global =
+   # The name by which the default Sieve script (as configured by the 
+   # sieve_default setting) is visible to the user through ManageSieve. 

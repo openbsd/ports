@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/04/09 21:26:26 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/05/15 20:59:18 sthen Exp $
 @conflict dovecot-sieve-<=0.1.18p0v0
 @pkgpath mail/dovecot,-sieve
 @pkgpath mail/dovecot,-sieve,bdb
@@ -91,4 +91,15 @@ share/doc/dovecot/example-config/conf.d/90-sieve-extprograms.conf
 share/doc/dovecot/example-config/conf.d/90-sieve.conf
 @sample ${SYSCONFDIR}/dovecot/conf.d/90-sieve.conf
 share/doc/dovecot/sieve/
-share/doc/dovecot/sieve/script-location-dict.txt
+share/doc/dovecot/sieve/extensions/
+share/doc/dovecot/sieve/extensions/duplicate.txt
+share/doc/dovecot/sieve/extensions/editheader.txt
+share/doc/dovecot/sieve/extensions/include.txt
+share/doc/dovecot/sieve/extensions/spamtest-virustest.txt
+share/doc/dovecot/sieve/extensions/vacation.txt
+share/doc/dovecot/sieve/locations/
+share/doc/dovecot/sieve/locations/dict.txt
+share/doc/dovecot/sieve/locations/file.txt
+share/doc/dovecot/sieve/locations/ldap.txt
+share/doc/dovecot/sieve/plugins/
+share/doc/dovecot/sieve/plugins/sieve_extprograms.txt
