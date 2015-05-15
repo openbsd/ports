@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2014/07/12 14:42:37 pascal Exp $
+# $OpenBSD: Makefile,v 1.23 2015/05/15 06:47:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	advanced IRC bouncer
 
-DISTNAME=	znc-1.4
-REVISION=	0
+DISTNAME=	znc-1.6.0
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}releases/
 
@@ -16,15 +15,20 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	converters/libiconv
-WANTLIB=	c crypto m pthread ssl stdc++ z
+WANTLIB=	c crypto m pthread ssl z
+
+MODULES=	gcc4
+
+MODGCC4_ARCHS=	*
+MODGCC4_LANGS=	c++
 
 MAKE_FLAGS=	VERBOSE=1
 
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS= --disable-optimization
+CONFIGURE_ARGS=	--disable-charset \
+		--disable-optimization
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_path_GNUMAKE=gmake

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/06/19 23:02:55 brad Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/05/15 06:47:27 ajacoutot Exp $
 @bin bin/znc
 bin/znc-buildmod
 include/znc/
@@ -16,7 +16,9 @@ include/znc/Listener.h
 include/znc/MD5.h
 include/znc/Modules.h
 include/znc/Nick.h
+include/znc/Query.h
 include/znc/SHA256.h
+include/znc/SSLVerifyHost.h
 include/znc/Server.h
 include/znc/Socket.h
 include/znc/Template.h
@@ -31,10 +33,10 @@ include/znc/main.h
 include/znc/version.h
 include/znc/znc.h
 include/znc/zncconfig.h
-lib/pkgconfig/
 lib/pkgconfig/znc.pc
 lib/znc/
 lib/znc/adminlog.so
+lib/znc/alias.so
 lib/znc/autoattach.so
 lib/znc/autocycle.so
 lib/znc/autoop.so
@@ -49,7 +51,6 @@ lib/znc/buffextras.so
 lib/znc/cert.so
 lib/znc/certauth.so
 lib/znc/chansaver.so
-lib/znc/charset.so
 lib/znc/clearbufferonmsg.so
 lib/znc/clientnotify.so
 lib/znc/controlpanel.so
@@ -114,6 +115,9 @@ share/znc/modules/notes/tmpl/index.tmpl
 share/znc/modules/perform/
 share/znc/modules/perform/tmpl/
 share/znc/modules/perform/tmpl/index.tmpl
+share/znc/modules/q/
+share/znc/modules/q/tmpl/
+share/znc/modules/q/tmpl/index.tmpl
 share/znc/modules/send_raw/
 share/znc/modules/send_raw/files/
 share/znc/modules/send_raw/files/select.js
@@ -125,6 +129,7 @@ share/znc/modules/stickychan/tmpl/index.tmpl
 share/znc/modules/stickychan/tmpl/stickychan_WebadminChan.tmpl
 share/znc/modules/webadmin/
 share/znc/modules/webadmin/files/
+share/znc/modules/webadmin/files/webadmin.css
 share/znc/modules/webadmin/files/webadmin.js
 share/znc/modules/webadmin/tmpl/
 share/znc/modules/webadmin/tmpl/add_edit_chan.tmpl
@@ -132,6 +137,7 @@ share/znc/modules/webadmin/tmpl/add_edit_network.tmpl
 share/znc/modules/webadmin/tmpl/add_edit_user.tmpl
 share/znc/modules/webadmin/tmpl/del_network.tmpl
 share/znc/modules/webadmin/tmpl/del_user.tmpl
+share/znc/modules/webadmin/tmpl/encoding_settings.tmpl
 share/znc/modules/webadmin/tmpl/index.tmpl
 share/znc/modules/webadmin/tmpl/listusers.tmpl
 share/znc/modules/webadmin/tmpl/settings.tmpl
@@ -139,9 +145,11 @@ share/znc/modules/webadmin/tmpl/traffic.tmpl
 share/znc/webskins/
 share/znc/webskins/_default_/
 share/znc/webskins/_default_/pub/
+share/znc/webskins/_default_/pub/External.png
 share/znc/webskins/_default_/pub/_default_.css
 share/znc/webskins/_default_/pub/favicon.ico
 share/znc/webskins/_default_/pub/global.css
+share/znc/webskins/_default_/pub/jquery-1.11.2.min.js
 share/znc/webskins/_default_/pub/robots.txt
 share/znc/webskins/_default_/tmpl/
 share/znc/webskins/_default_/tmpl/Banner.tmpl

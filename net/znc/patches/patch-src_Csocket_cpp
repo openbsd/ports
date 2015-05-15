@@ -1,19 +1,11 @@
-$OpenBSD: patch-src_Csocket_cpp,v 1.1 2014/07/12 14:42:37 pascal Exp $
---- src/Csocket.cpp.orig	Sat Jul 12 16:03:48 2014
-+++ src/Csocket.cpp	Sat Jul 12 16:04:36 2014
-@@ -555,6 +555,7 @@ bool InitSSL( ECompType eCompressionType )
- 	}
- #endif /* _WIN32 */
+$OpenBSD: patch-src_Csocket_cpp,v 1.2 2015/05/15 06:47:27 ajacoutot Exp $
+--- src/Csocket.cpp.orig	Thu May 14 23:10:24 2015
++++ src/Csocket.cpp	Thu May 14 23:11:00 2015
+@@ -47,6 +47,7 @@
+ #include <stdio.h>
+ #include <openssl/conf.h>
+ #include <openssl/engine.h>
++#include <openssl/comp.h>
+ #endif /* HAVE_LIBSSL */
  
-+#ifndef OPENSSL_NO_COMP
- 	COMP_METHOD *cm = NULL;
- 
- 	if( CT_ZLIB & eCompressionType )
-@@ -570,6 +571,7 @@ bool InitSSL( ECompType eCompressionType )
- 		if( cm )
- 			SSL_COMP_add_compression_method( CT_RLE, cm );
- 	}
-+#endif
- 
- 	// setting this up once in the begining
- 	g_iCsockSSLIdx = SSL_get_ex_new_index( 0, ( void * )"CsockGlobalIndex", NULL, NULL, NULL );
+ #ifdef HAVE_ICU
