@@ -1,8 +1,0 @@
-Before you can use ap2-mod_perl, you need to enable it on your
-Apache2 configuration.
-
-Edit ${SYSCONFDIR}/apache2/httpd2.conf and add the following line:
-
-	LoadModule perl_module ${PREFIX}/lib/apache2/mod_perl.so
-
-Restart your httpd2 for changes to make effect.

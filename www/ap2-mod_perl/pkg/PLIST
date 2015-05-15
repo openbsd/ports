@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/06/14 10:34:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/05/15 08:08:36 stsp Exp $
 bin/mp2bug
 include/apache2/mod_perl.h
 include/apache2/modperl_apache_compat.h
@@ -52,6 +52,57 @@ include/apache2/modperl_xs_sv_convert.h
 include/apache2/modperl_xs_typedefs.h
 include/apache2/modperl_xs_util.h
 lib/apache2/mod_perl.so
+@comment ${P5ARCH}/auto/APR/APR.bs
+@comment ${P5ARCH}/auto/APR/Base64/Base64.bs
+@comment ${P5ARCH}/auto/APR/Brigade/Brigade.bs
+@comment ${P5ARCH}/auto/APR/Bucket/Bucket.bs
+@comment ${P5ARCH}/auto/APR/BucketAlloc/BucketAlloc.bs
+@comment ${P5ARCH}/auto/APR/BucketType/BucketType.bs
+@comment ${P5ARCH}/auto/APR/Const/Const.bs
+@comment ${P5ARCH}/auto/APR/Date/Date.bs
+@comment ${P5ARCH}/auto/APR/Error/Error.bs
+@comment ${P5ARCH}/auto/APR/Finfo/Finfo.bs
+@comment ${P5ARCH}/auto/APR/IpSubnet/IpSubnet.bs
+@comment ${P5ARCH}/auto/APR/OS/OS.bs
+@comment ${P5ARCH}/auto/APR/PerlIO/PerlIO.bs
+@comment ${P5ARCH}/auto/APR/Pool/Pool.bs
+@comment ${P5ARCH}/auto/APR/SockAddr/SockAddr.bs
+@comment ${P5ARCH}/auto/APR/Socket/Socket.bs
+@comment ${P5ARCH}/auto/APR/Status/Status.bs
+@comment ${P5ARCH}/auto/APR/String/String.bs
+@comment ${P5ARCH}/auto/APR/Table/Table.bs
+@comment ${P5ARCH}/auto/APR/ThreadMutex/ThreadMutex.bs
+@comment ${P5ARCH}/auto/APR/ThreadRWLock/ThreadRWLock.bs
+@comment ${P5ARCH}/auto/APR/URI/URI.bs
+@comment ${P5ARCH}/auto/APR/UUID/UUID.bs
+@comment ${P5ARCH}/auto/APR/Util/Util.bs
+@comment ${P5ARCH}/auto/Apache2/Access/Access.bs
+@comment ${P5ARCH}/auto/Apache2/CmdParms/CmdParms.bs
+@comment ${P5ARCH}/auto/Apache2/Command/Command.bs
+@comment ${P5ARCH}/auto/Apache2/Connection/Connection.bs
+@comment ${P5ARCH}/auto/Apache2/ConnectionUtil/ConnectionUtil.bs
+@comment ${P5ARCH}/auto/Apache2/Const/Const.bs
+@comment ${P5ARCH}/auto/Apache2/Directive/Directive.bs
+@comment ${P5ARCH}/auto/Apache2/Filter/Filter.bs
+@comment ${P5ARCH}/auto/Apache2/FilterRec/FilterRec.bs
+@comment ${P5ARCH}/auto/Apache2/HookRun/HookRun.bs
+@comment ${P5ARCH}/auto/Apache2/Log/Log.bs
+@comment ${P5ARCH}/auto/Apache2/MPM/MPM.bs
+@comment ${P5ARCH}/auto/Apache2/Module/Module.bs
+@comment ${P5ARCH}/auto/Apache2/Process/Process.bs
+@comment ${P5ARCH}/auto/Apache2/RequestIO/RequestIO.bs
+@comment ${P5ARCH}/auto/Apache2/RequestRec/RequestRec.bs
+@comment ${P5ARCH}/auto/Apache2/RequestUtil/RequestUtil.bs
+@comment ${P5ARCH}/auto/Apache2/Response/Response.bs
+@comment ${P5ARCH}/auto/Apache2/ServerRec/ServerRec.bs
+@comment ${P5ARCH}/auto/Apache2/ServerUtil/ServerUtil.bs
+@comment ${P5ARCH}/auto/Apache2/SubProcess/SubProcess.bs
+@comment ${P5ARCH}/auto/Apache2/SubRequest/SubRequest.bs
+@comment ${P5ARCH}/auto/Apache2/URI/URI.bs
+@comment ${P5ARCH}/auto/Apache2/Util/Util.bs
+@comment ${P5ARCH}/auto/ModPerl/Const/Const.bs
+@comment ${P5ARCH}/auto/ModPerl/Global/Global.bs
+@comment ${P5ARCH}/auto/ModPerl/Util/Util.bs
 ${P5ARCH}/
 ${P5ARCH}/APR/
 ${P5ARCH}/APR.pm
@@ -104,6 +155,7 @@ ${P5ARCH}/Apache2/PerlSections/
 ${P5ARCH}/Apache2/PerlSections.pm
 ${P5ARCH}/Apache2/PerlSections/Dump.pm
 ${P5ARCH}/Apache2/Process.pm
+${P5ARCH}/Apache2/Provider.pm
 ${P5ARCH}/Apache2/Reload.pm
 ${P5ARCH}/Apache2/RequestIO.pm
 ${P5ARCH}/Apache2/RequestRec.pm
@@ -153,162 +205,113 @@ ${P5ARCH}/ModPerl/Util.pm
 ${P5ARCH}/ModPerl/WrapXS.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/APR/
-@comment ${P5ARCH}/auto/APR/APR.bs
 ${P5ARCH}/auto/APR/APR.so
 ${P5ARCH}/auto/APR/Base64/
-@comment ${P5ARCH}/auto/APR/Base64/Base64.bs
 ${P5ARCH}/auto/APR/Base64/Base64.so
 ${P5ARCH}/auto/APR/Brigade/
-@comment ${P5ARCH}/auto/APR/Brigade/Brigade.bs
 ${P5ARCH}/auto/APR/Brigade/Brigade.so
 ${P5ARCH}/auto/APR/Bucket/
-@comment ${P5ARCH}/auto/APR/Bucket/Bucket.bs
 ${P5ARCH}/auto/APR/Bucket/Bucket.so
 ${P5ARCH}/auto/APR/BucketAlloc/
-@comment ${P5ARCH}/auto/APR/BucketAlloc/BucketAlloc.bs
 ${P5ARCH}/auto/APR/BucketAlloc/BucketAlloc.so
 ${P5ARCH}/auto/APR/BucketType/
-@comment ${P5ARCH}/auto/APR/BucketType/BucketType.bs
 ${P5ARCH}/auto/APR/BucketType/BucketType.so
 ${P5ARCH}/auto/APR/Const/
-@comment ${P5ARCH}/auto/APR/Const/Const.bs
 ${P5ARCH}/auto/APR/Const/Const.so
 ${P5ARCH}/auto/APR/Date/
-@comment ${P5ARCH}/auto/APR/Date/Date.bs
 ${P5ARCH}/auto/APR/Date/Date.so
 ${P5ARCH}/auto/APR/Error/
-@comment ${P5ARCH}/auto/APR/Error/Error.bs
 ${P5ARCH}/auto/APR/Error/Error.so
 ${P5ARCH}/auto/APR/Finfo/
-@comment ${P5ARCH}/auto/APR/Finfo/Finfo.bs
 ${P5ARCH}/auto/APR/Finfo/Finfo.so
 ${P5ARCH}/auto/APR/IpSubnet/
-@comment ${P5ARCH}/auto/APR/IpSubnet/IpSubnet.bs
 ${P5ARCH}/auto/APR/IpSubnet/IpSubnet.so
 ${P5ARCH}/auto/APR/OS/
-@comment ${P5ARCH}/auto/APR/OS/OS.bs
 ${P5ARCH}/auto/APR/OS/OS.so
 ${P5ARCH}/auto/APR/PerlIO/
-@comment ${P5ARCH}/auto/APR/PerlIO/PerlIO.bs
 ${P5ARCH}/auto/APR/PerlIO/PerlIO.so
 ${P5ARCH}/auto/APR/Pool/
-@comment ${P5ARCH}/auto/APR/Pool/Pool.bs
 ${P5ARCH}/auto/APR/Pool/Pool.so
 ${P5ARCH}/auto/APR/SockAddr/
-@comment ${P5ARCH}/auto/APR/SockAddr/SockAddr.bs
 ${P5ARCH}/auto/APR/SockAddr/SockAddr.so
 ${P5ARCH}/auto/APR/Socket/
-@comment ${P5ARCH}/auto/APR/Socket/Socket.bs
 ${P5ARCH}/auto/APR/Socket/Socket.so
 ${P5ARCH}/auto/APR/Status/
-@comment ${P5ARCH}/auto/APR/Status/Status.bs
 ${P5ARCH}/auto/APR/Status/Status.so
 ${P5ARCH}/auto/APR/String/
-@comment ${P5ARCH}/auto/APR/String/String.bs
 ${P5ARCH}/auto/APR/String/String.so
 ${P5ARCH}/auto/APR/Table/
-@comment ${P5ARCH}/auto/APR/Table/Table.bs
 ${P5ARCH}/auto/APR/Table/Table.so
 ${P5ARCH}/auto/APR/ThreadMutex/
-@comment ${P5ARCH}/auto/APR/ThreadMutex/ThreadMutex.bs
 ${P5ARCH}/auto/APR/ThreadMutex/ThreadMutex.so
 ${P5ARCH}/auto/APR/ThreadRWLock/
-@comment ${P5ARCH}/auto/APR/ThreadRWLock/ThreadRWLock.bs
 ${P5ARCH}/auto/APR/ThreadRWLock/ThreadRWLock.so
 ${P5ARCH}/auto/APR/URI/
-@comment ${P5ARCH}/auto/APR/URI/URI.bs
 ${P5ARCH}/auto/APR/URI/URI.so
 ${P5ARCH}/auto/APR/UUID/
-@comment ${P5ARCH}/auto/APR/UUID/UUID.bs
 ${P5ARCH}/auto/APR/UUID/UUID.so
 ${P5ARCH}/auto/APR/Util/
-@comment ${P5ARCH}/auto/APR/Util/Util.bs
 ${P5ARCH}/auto/APR/Util/Util.so
 ${P5ARCH}/auto/Apache2/
 ${P5ARCH}/auto/Apache2/Access/
-@comment ${P5ARCH}/auto/Apache2/Access/Access.bs
 ${P5ARCH}/auto/Apache2/Access/Access.so
 ${P5ARCH}/auto/Apache2/Build/
 ${P5ARCH}/auto/Apache2/Build/autosplit.ix
 ${P5ARCH}/auto/Apache2/CmdParms/
-@comment ${P5ARCH}/auto/Apache2/CmdParms/CmdParms.bs
 ${P5ARCH}/auto/Apache2/CmdParms/CmdParms.so
 ${P5ARCH}/auto/Apache2/Command/
-@comment ${P5ARCH}/auto/Apache2/Command/Command.bs
 ${P5ARCH}/auto/Apache2/Command/Command.so
 ${P5ARCH}/auto/Apache2/Connection/
-@comment ${P5ARCH}/auto/Apache2/Connection/Connection.bs
 ${P5ARCH}/auto/Apache2/Connection/Connection.so
 ${P5ARCH}/auto/Apache2/ConnectionUtil/
-@comment ${P5ARCH}/auto/Apache2/ConnectionUtil/ConnectionUtil.bs
 ${P5ARCH}/auto/Apache2/ConnectionUtil/ConnectionUtil.so
 ${P5ARCH}/auto/Apache2/Const/
-@comment ${P5ARCH}/auto/Apache2/Const/Const.bs
 ${P5ARCH}/auto/Apache2/Const/Const.so
 ${P5ARCH}/auto/Apache2/Directive/
-@comment ${P5ARCH}/auto/Apache2/Directive/Directive.bs
 ${P5ARCH}/auto/Apache2/Directive/Directive.so
 ${P5ARCH}/auto/Apache2/Filter/
-@comment ${P5ARCH}/auto/Apache2/Filter/Filter.bs
 ${P5ARCH}/auto/Apache2/Filter/Filter.so
 ${P5ARCH}/auto/Apache2/FilterRec/
-@comment ${P5ARCH}/auto/Apache2/FilterRec/FilterRec.bs
 ${P5ARCH}/auto/Apache2/FilterRec/FilterRec.so
 ${P5ARCH}/auto/Apache2/HookRun/
-@comment ${P5ARCH}/auto/Apache2/HookRun/HookRun.bs
 ${P5ARCH}/auto/Apache2/HookRun/HookRun.so
 ${P5ARCH}/auto/Apache2/Log/
-@comment ${P5ARCH}/auto/Apache2/Log/Log.bs
 ${P5ARCH}/auto/Apache2/Log/Log.so
 ${P5ARCH}/auto/Apache2/MPM/
-@comment ${P5ARCH}/auto/Apache2/MPM/MPM.bs
 ${P5ARCH}/auto/Apache2/MPM/MPM.so
 ${P5ARCH}/auto/Apache2/Module/
-@comment ${P5ARCH}/auto/Apache2/Module/Module.bs
 ${P5ARCH}/auto/Apache2/Module/Module.so
 ${P5ARCH}/auto/Apache2/Process/
-@comment ${P5ARCH}/auto/Apache2/Process/Process.bs
 ${P5ARCH}/auto/Apache2/Process/Process.so
+${P5ARCH}/auto/Apache2/Provider/
+${P5ARCH}/auto/Apache2/Provider/Provider.so
 ${P5ARCH}/auto/Apache2/RequestIO/
-@comment ${P5ARCH}/auto/Apache2/RequestIO/RequestIO.bs
 ${P5ARCH}/auto/Apache2/RequestIO/RequestIO.so
 ${P5ARCH}/auto/Apache2/RequestRec/
-@comment ${P5ARCH}/auto/Apache2/RequestRec/RequestRec.bs
 ${P5ARCH}/auto/Apache2/RequestRec/RequestRec.so
 ${P5ARCH}/auto/Apache2/RequestUtil/
-@comment ${P5ARCH}/auto/Apache2/RequestUtil/RequestUtil.bs
 ${P5ARCH}/auto/Apache2/RequestUtil/RequestUtil.so
 ${P5ARCH}/auto/Apache2/Response/
-@comment ${P5ARCH}/auto/Apache2/Response/Response.bs
 ${P5ARCH}/auto/Apache2/Response/Response.so
 ${P5ARCH}/auto/Apache2/ServerRec/
-@comment ${P5ARCH}/auto/Apache2/ServerRec/ServerRec.bs
 ${P5ARCH}/auto/Apache2/ServerRec/ServerRec.so
 ${P5ARCH}/auto/Apache2/ServerUtil/
-@comment ${P5ARCH}/auto/Apache2/ServerUtil/ServerUtil.bs
 ${P5ARCH}/auto/Apache2/ServerUtil/ServerUtil.so
 ${P5ARCH}/auto/Apache2/SubProcess/
-@comment ${P5ARCH}/auto/Apache2/SubProcess/SubProcess.bs
 ${P5ARCH}/auto/Apache2/SubProcess/SubProcess.so
 ${P5ARCH}/auto/Apache2/SubRequest/
-@comment ${P5ARCH}/auto/Apache2/SubRequest/SubRequest.bs
 ${P5ARCH}/auto/Apache2/SubRequest/SubRequest.so
 ${P5ARCH}/auto/Apache2/URI/
-@comment ${P5ARCH}/auto/Apache2/URI/URI.bs
 ${P5ARCH}/auto/Apache2/URI/URI.so
 ${P5ARCH}/auto/Apache2/Util/
-@comment ${P5ARCH}/auto/Apache2/Util/Util.bs
 ${P5ARCH}/auto/Apache2/Util/Util.so
 ${P5ARCH}/auto/Apache2/typemap
 ${P5ARCH}/auto/ModPerl/
 ${P5ARCH}/auto/ModPerl/Const/
-@comment ${P5ARCH}/auto/ModPerl/Const/Const.bs
 ${P5ARCH}/auto/ModPerl/Const/Const.so
 ${P5ARCH}/auto/ModPerl/Global/
-@comment ${P5ARCH}/auto/ModPerl/Global/Global.bs
 ${P5ARCH}/auto/ModPerl/Global/Global.so
 ${P5ARCH}/auto/ModPerl/Util/
-@comment ${P5ARCH}/auto/ModPerl/Util/Util.bs
 ${P5ARCH}/auto/ModPerl/Util/Util.so
 ${P5ARCH}/mod_perl2.pm
 @man man/man3p/APR.3p
@@ -387,3 +390,4 @@ ${P5ARCH}/mod_perl2.pm
 @man man/man3p/ModPerl::RegistryPrefork.3p
 @man man/man3p/ModPerl::Util.3p
 @man man/man3p/mod_perl2.3p
+share/doc/pkg-readmes/${FULLPKGNAME}

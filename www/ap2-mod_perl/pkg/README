@@ -1,0 +1,32 @@
+$OpenBSD: README,v 1.1 2015/05/15 08:08:36 stsp Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Prerequisites
+=============
+
+Since perl(1) does not support ithreads, mod_perl will only work with
+the prefork MPM.
+
+To ensure that Apache2 is configured to use the prefork MPM, edit
+${SYSCONFDIR}/apache2/httpd2.conf and add the following line:
+
+	LoadModule mpm_prefork_module ${PREFIX}/lib/apache2/mod_mpm_prefork.so
+
+Remove any lines loading other MPM modules.
+
+For information about ithreads, see http://perldoc.perl.org/threads.html.
+
+Enabling mod_perl
+=================
+
+Before you can use ap2-mod_perl, you need to enable it on your
+Apache2 configuration.
+
+Edit ${SYSCONFDIR}/apache2/httpd2.conf and add the following line:
+
+	LoadModule perl_module ${PREFIX}/lib/apache2/mod_perl.so
+
+Restart Apache2 for changes to make effect.
