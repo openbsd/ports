@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: logstash_forwarder.rc,v 1.1.1.1 2014/12/16 15:21:06 jasper Exp $
+# $OpenBSD: logstash_forwarder.rc,v 1.2 2015/05/15 07:37:14 jasper Exp $
 
 daemon="${PREFIX}/sbin/logstash-forwarder"
-daemon_flags="-config ${SYSCONFDIR}/logstash-forwarder/logstash-forwarder.conf -v"
+daemon_flags="-config ${SYSCONFDIR}/logstash-forwarder/logstash-forwarder.conf"
 
 . /etc/rc.d/rc.subr
 

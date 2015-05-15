@@ -1,32 +1,60 @@
-$OpenBSD: patch-logstash-forwarder_conf_example,v 1.2 2015/05/14 12:28:49 jasper Exp $
+$OpenBSD: patch-logstash-forwarder_conf_example,v 1.3 2015/05/15 07:37:14 jasper Exp $
 
 Provide a reasonable config and don't include arbitrary log files that
 are most likely not in syslog format.
 
---- logstash-forwarder.conf.example.orig	Tue Dec 16 08:43:50 2014
-+++ logstash-forwarder.conf.example	Thu May 14 14:26:41 2015
-@@ -1,20 +1,17 @@
- {
-   "network": {
-     "servers": [ "localhost:5043" ],
--    "ssl certificate": "./lumberjack.crt",
--    "ssl key": "./lumberjack.key",
--    "ssl ca": "./lumberjack_ca.crt"
-+    "ssl certificate": "${SYSCONFDIR}/logstash-forwarder/lumberjack.crt",
-+    "ssl key": "${SYSCONFDIR}/logstash-forwarder/lumberjack.key",
-+    "ssl ca": "${SYSCONFDIR}/logstash-forwarder/lumberjack_ca.crt"
-   },
+--- logstash-forwarder.conf.example.orig	Wed Mar  4 21:23:27 2015
++++ logstash-forwarder.conf.example	Thu May 14 21:29:38 2015
+@@ -4,16 +4,16 @@
+     # A list of downstream servers listening for our messages.
+     # logstash-forwarder will pick one at random and only switch if
+     # the selected one appears to be dead or unresponsive
+-    #"servers": [ "localhost:5043" ],
++    "servers": [ "localhost:12345" ],
+ 
+     # The path to your client ssl certificate (optional)
+-    #"ssl certificate": "./logstash-forwarder.crt",
++    "ssl certificate": "${SYSCONFDIR}/logstash-forwarder/logstash-forwarder.crt",
+     # The path to your client ssl key (optional)
+-    #"ssl key": "./logstash-forwarder.key",
++    "ssl key": "${SYSCONFDIR}/logstash-forwarder/logstash-forwarder.key",
+ 
+     # The path to your trusted ssl CA file. This is used
+     # to authenticate your downstream server.
+-    #"ssl ca": "./logstash-forwarder.crt",
++    "ssl ca": "${SYSCONFDIR}/logstash-forwarder/logstash-forwarder.crt"
+ 
+     # Network timeout in seconds. This is most important for
+     # logstash-forwarder determining whether to stop waiting for an
+@@ -27,17 +27,18 @@
    "files": [
-     {
-       "paths": [ 
--        "/var/log/*.log",
-+	"/var/log/daemon",
-         "/var/log/messages"
-       ],
-       "fields": { "type": "syslog" }
--    }, {
--      "paths": [ "/var/log/apache2/access.log" ],
--      "fields": { "type": "apache" }
-     }
+     # An array of hashes. Each hash tells what paths to watch and
+     # what fields to annotate on events from those paths.
+-    #{
+-      #"paths": [
++    {
++      "paths": [
+         # single paths are fine
+-        #"/var/log/messages",
++        "/var/log/messages",
++	"/var/log/messages"
+         # globs are fine too, they will be periodically evaluated
+         # to see if any new files match the wildcard.
+         #"/var/log/*.log"
+-      #],
++      ],
+ 
+       # A dictionary of fields to annotate on each event.
+-      #"fields": { "type": "syslog" }
++      "fields": { "type": "syslog" }
+     #}, {
+       # A path of "-" means stdin.
+       #"paths": [ "-" ],
+@@ -47,6 +48,6 @@
+         #"/var/log/apache/httpd-*.log"
+       #],
+       #"fields": { "type": "apache" }
+-    #}
++    }
    ]
  }
