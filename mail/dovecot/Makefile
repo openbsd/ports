@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.229 2015/04/09 21:25:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.230 2015/05/15 20:59:08 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-mysql=	MySQL authentication / dictionary support for Dovecot
 COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
 V_MAJOR=	2.2
-V_DOVECOT=	2.2.16
+V_DOVECOT=	2.2.18
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -56,9 +56,12 @@ CONFIGURE_ARGS=	--with-rundir=/var/dovecot \
 		--with-sql=plugin \
 		--with-sqlite \
 		--with-statedir=/var/dovecot \
+		--without-icu \
+		--without-nss \
 		--without-pam \
 		--without-shadow \
 		--without-stemmer \
+		--without-textcat \
 		--without-vpopmail
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
