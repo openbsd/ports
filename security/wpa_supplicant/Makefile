@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.26 2015/04/06 16:03:45 schwarze Exp $
+# $OpenBSD: Makefile,v 1.27 2015/05/15 13:11:32 dcoppa Exp $
 
 COMMENT=	IEEE 802.1X supplicant
 
 DISTNAME=	wpa_supplicant-2.4
-REVISION=	0
+REVISION=	1
 CATEGORIES=	security net
 
-HOMEPAGE=	http://hostap.epitest.fi/wpa_supplicant/
+HOMEPAGE=	http://w1.fi/wpa_supplicant/
 
 MAINTAINER=	David Coppa <dcoppa@openbsd.org>
 
@@ -17,7 +17,7 @@ WANTLIB += c ssl crypto pcap pcsclite pthread
 
 LIB_DEPENDS=	security/pcsc-lite
 
-MASTER_SITES=	http://hostap.epitest.fi/releases/
+MASTER_SITES=	http://w1.fi/releases/
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
