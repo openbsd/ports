@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/05 11:27:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/15 07:32:00 jasper Exp $
 
 COMMENT =		go code coverage tool
 DISTNAME =		gocover-1.4
 CATEGORIES =		devel
 HOMEPAGE =		http://golang.org/
+REVISION =		0
 
 MAINTAINER =		Adam Wolk <adam.wolk@koparo.com>
 
@@ -12,19 +13,17 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c pthread
 
+MODULES =		lang/go
+
+RUN_DEPENDS =		${MODGO_RUN_DEPENDS}
+
 MASTER_SITES =		http://spacehopper.org/mirrors/
 DISTFILES =		gotools-1.4${EXTRACT_SUFX}
 
 EXTRACT_CASES =		gotools-1.4${EXTRACT_SUFX}) mkdir -p ${WRKSRC}; \
 			tar -xzf ${FULLDISTDIR}/$$archive -C ${WRKSRC};;
 
-BUILD_DEPENDS =		lang/go
-RUN_DEPENDS =		lang/go
-
 WRKSRC =		${WRKDIST}/src/golang.org/x/tools
-GO_PKG =		pkg/tool/openbsd_${MACHINE_ARCH:S/i386/386/}
-
-SUBST_VARS += 		GO_PKG
 
 do-build:
 	cd ${WRKSRC}/cmd/cover && GOPATH="${WRKDIST}" go build -v

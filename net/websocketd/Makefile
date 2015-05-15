@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/05 13:31:14 sthen Exp $
-
-ONLY_FOR_ARCHS =	${GO_ARCHS}
+# $OpenBSD: Makefile,v 1.3 2015/05/15 07:32:00 jasper Exp $
 
 COMMENT =		access any command-line tool via a WebSocket
 
@@ -10,6 +8,7 @@ DISTNAME =		websocketd-$V
 GH_ACCOUNT =		joewalnes
 GH_PROJECT =		websocketd
 GH_TAGNAME =		v$V
+REVISION =		0
 
 CATEGORIES =		net www
 
@@ -22,12 +21,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c pthread
 
-BUILD_DEPENDS =		lang/go 					\
-			net/go-websocket
+MODULES +=		lang/go
+
+BUILD_DEPENDS =		net/go-websocket
 
 NO_TEST =		Yes
-
-GOPATH =		"${WRKSRC}:${LOCALBASE}/go"
 
 post-extract:
 	mkdir -p ${WRKSRC}/src/github.com/joewalnes

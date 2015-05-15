@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/03/21 19:44:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/15 07:32:00 jasper Exp $
 
 COMMENT =		go documentation tool
 V =			1.4
@@ -6,7 +6,7 @@ DISTNAME =		gotools-${V}
 PKGNAME =		godoc-${V}
 CATEGORIES =		textproc devel
 HOMEPAGE =		http://golang.org/
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
 
@@ -20,8 +20,9 @@ MASTER_SITES =		http://spacehopper.org/mirrors/
 EXTRACT_CASES =		${DISTNAME}${EXTRACT_SUFX}) mkdir -p ${WRKSRC}; \
 			tar -xzf ${FULLDISTDIR}/$$archive -C ${WRKSRC};;
 
-BUILD_DEPENDS =		lang/go
-RUN_DEPENDS =		lang/go
+MODULES =		lang/go
+
+RUN_DEPENDS =		${MODGO_RUN_DEPENDS}
 
 WRKSRC =		${WRKDIST}/src/golang.org/x/tools
 

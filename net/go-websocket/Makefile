@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/03/31 15:37:06 kspillner Exp $
-
-ONLY_FOR_ARCHS =	${GO_ARCHS}
+# $OpenBSD: Makefile,v 1.2 2015/05/15 07:32:00 jasper Exp $
 
 COMMENT =		golang websocket package
 
@@ -9,6 +7,7 @@ DISTNAME =		go-websocket-${VERSION}
 GH_COMMIT =		97d8e4e174133a4d1d2171380e510eb4dea8f5ea
 GH_ACCOUNT =		golang
 GH_PROJECT =		net
+REVISION =		0
 
 CATEGORIES =		net www
 
@@ -21,12 +20,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c pthread
 
-BUILD_DEPENDS =		lang/go
+MODULES =		lang/go
 
-GOPATH =		"${WRKSRC}:${LOCALBASE}/go"
 GO_PKG =		pkg/openbsd_${MACHINE_ARCH:S/i386/386/}
-
-SUBST_VARS +=		GO_PKG
 
 post-extract:
 	mkdir -p ${WRKSRC}/src/golang.org/x/net
