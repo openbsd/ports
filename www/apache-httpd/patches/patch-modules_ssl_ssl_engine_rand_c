@@ -1,0 +1,20 @@
+$OpenBSD: patch-modules_ssl_ssl_engine_rand_c,v 1.1 2015/05/15 08:08:04 stsp Exp $
+http://svn.apache.org/r1674542
+--- modules/ssl/ssl_engine_rand.c.orig	Mon Dec  5 01:08:01 2011
++++ modules/ssl/ssl_engine_rand.c	Wed Apr 15 21:25:38 2015
+@@ -81,6 +81,7 @@ int ssl_rand_seed(server_rec *s, apr_pool_t *p, ssl_rs
+                 nDone += ssl_rand_feedfp(p, fp, pRandSeed->nBytes);
+                 ssl_util_ppclose(s, p, fp);
+             }
++#ifdef HAVE_RAND_EGD
+             else if (pRandSeed->nSrc == SSL_RSSRC_EGD) {
+                 /*
+                  * seed in contents provided by the external
+@@ -90,6 +91,7 @@ int ssl_rand_seed(server_rec *s, apr_pool_t *p, ssl_rs
+                     continue;
+                 nDone += n;
+             }
++#endif
+             else if (pRandSeed->nSrc == SSL_RSSRC_BUILTIN) {
+                 struct {
+                     time_t t;

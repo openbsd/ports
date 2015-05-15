@@ -1,12 +1,12 @@
-$OpenBSD: patch-support_rotatelogs_c,v 1.4 2008/09/02 22:05:23 bernd Exp $
---- support/rotatelogs.c.orig	Fri May  9 15:43:24 2008
-+++ support/rotatelogs.c	Thu Jul 24 12:22:15 2008
-@@ -86,7 +86,7 @@ static void usage(const char *argv0, const char *reaso
+$OpenBSD: patch-support_rotatelogs_c,v 1.5 2015/05/15 08:08:04 stsp Exp $
+--- support/rotatelogs.c.orig	Thu Apr 17 11:00:36 2014
++++ support/rotatelogs.c	Sat Jan 10 15:07:45 2015
+@@ -123,7 +123,7 @@ static void usage(const char *argv0, const char *reaso
              "or \n\nTransferLog \"|%s /some/where 5M\"\n\n", argv0);
  #endif
      fprintf(stderr,
--            "to httpd.conf. The generated name will be /some/where.nnnn "
-+            "to httpd2.conf. The generated name will be /some/where.nnnn "
-             "where nnnn is the\nsystem time at which the log nominally "
-             "starts (N.B. if using a rotation time,\nthe time will always "
-             "be a multiple of the rotation time, so you can synchronize\n"
+-            "to httpd.conf. By default, the generated name will be\n"
++            "to httpd2.conf. By default, the generated name will be\n"
+             "<logfile>.nnnn where nnnn is the system time at which the log\n"
+             "nominally starts (N.B. if using a rotation time, the time will\n"
+             "always be a multiple of the rotation time, so you can synchronize\n"

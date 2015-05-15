@@ -1,12 +1,12 @@
-$OpenBSD: patch-docs_man_dbmmanage_1,v 1.1 2007/01/16 01:12:26 deanna Exp $
---- docs/man/dbmmanage.1.orig	Sun Jan 14 19:01:44 2007
-+++ docs/man/dbmmanage.1	Sun Jan 14 19:14:21 2007
-@@ -19,30 +19,30 @@
+$OpenBSD: patch-docs_man_dbmmanage_1,v 1.2 2015/05/15 08:08:04 stsp Exp $
+--- docs/man/dbmmanage.1.orig	Wed Dec 12 17:32:22 2012
++++ docs/man/dbmmanage.1	Sat Jan 10 15:17:12 2015
+@@ -19,27 +19,27 @@
  .el .ne 3
  .IP "\\$1" \\$2
  ..
--.TH "DBMMANAGE" 1 "2004-12-10" "Apache HTTP Server" "dbmmanage"
-+.TH "DBMMANAGE2" 1 "2004-12-10" "Apache HTTP Server" "dbmmanage2"
+-.TH "DBMMANAGE" 1 "2012-12-12" "Apache HTTP Server" "dbmmanage"
++.TH "DBMMANAGE2" 1 "2012-12-12" "Apache HTTP Server" "dbmmanage2"
  
  .SH NAME
 -dbmmanage \- Manage user authentication files in DBM format
@@ -31,15 +31,11 @@ $OpenBSD: patch-docs_man_dbmmanage_1,v 1.1 2007/01/16 01:12:26 deanna Exp $
   
  .PP
 -dbmmanage is used to create and update the DBM format files used to store usernames and password for basic authentication of HTTP users via mod_authn_dbm\&. Resources available from the Apache HTTP server can be restricted to just the users listed in the files created by dbmmanage\&. This program can only be used when the usernames are stored in a DBM file\&. To use a flat-file database see htpasswd\&.
-+dbmmanage2 is used to create and update the DBM format files used to store usernames and password for basic authentication of HTTP users via mod_authn_dbm\&. Resources available from the Apache HTTP server can be restricted to just the users listed in the files created by dbmmanage2\&. This program can only be used when the usernames are stored in a DBM file\&. To use a flat-file database see htpasswd2\&.
++dbmmanage2 is used to create and update the DBM format files used to store usernames and password for basic authentication of HTTP users via mod_authn_dbm\&. Resources available from the Apache HTTP server can be restricted to just the users listed in the files created by dbmmanage2\&. This program can only be used when the usernames are stored in a DBM file\&. To use a flat-file database see htpasswd\&.
   
  .PP
--This manual page only lists the command line arguments\&. For details of the directives necessary to configure user authentication in httpd see the httpd manual, which is part of the Apache distribution or can be found at http://httpd\&.apache\&.org/\&.
-+This manual page only lists the command line arguments\&. For details of the directives necessary to configure user authentication in httpd2 see the httpd2 manual, which is part of the Apache distribution or can be found at http://httpd\&.apache\&.org/\&.
-  
- 
- .SH "OPTIONS"
-@@ -85,33 +85,33 @@ plaintext (\fInot recommended\fR)  
+ Another tool to maintain a DBM password database is htdbm\&.
+@@ -88,33 +88,33 @@ plaintext (\fInot recommended\fR)  
   
  .TP
  add

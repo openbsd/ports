@@ -1,7 +1,7 @@
-$OpenBSD: patch-server_mpm_common_c,v 1.6 2013/07/15 07:40:18 sthen Exp $
---- server/mpm_common.c.orig	Sat Feb 16 22:51:16 2013
-+++ server/mpm_common.c	Mon Jul 15 08:40:33 2013
-@@ -994,18 +994,18 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
+$OpenBSD: patch-server_mpm_unix_c,v 1.1 2015/05/15 08:08:04 stsp Exp $
+--- server/mpm_unix.c.orig	Thu Feb 20 20:38:49 2014
++++ server/mpm_unix.c	Sat Jan 10 15:00:07 2015
+@@ -784,18 +784,18 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
              *exit_status = 1;
              return 1;
          }
@@ -23,7 +23,7 @@ $OpenBSD: patch-server_mpm_common_c,v 1.6 2013/07/15 07:40:18 sthen Exp $
                                    otherpid);
          }
      }
-@@ -1029,7 +1029,7 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
+@@ -819,7 +819,7 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
  
      if (!strcmp(dash_k_arg, "restart")) {
          if (!running) {
@@ -32,7 +32,7 @@ $OpenBSD: patch-server_mpm_common_c,v 1.6 2013/07/15 07:40:18 sthen Exp $
          }
          else {
              *exit_status = send_signal(otherpid, SIGHUP);
-@@ -1039,7 +1039,7 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
+@@ -829,7 +829,7 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
  
      if (!strcmp(dash_k_arg, "graceful")) {
          if (!running) {
@@ -41,12 +41,3 @@ $OpenBSD: patch-server_mpm_common_c,v 1.6 2013/07/15 07:40:18 sthen Exp $
          }
          else {
              *exit_status = send_signal(otherpid, AP_SIG_GRACEFUL);
-@@ -1056,7 +1056,7 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
-             *exit_status = send_signal(otherpid, AP_SIG_GRACEFUL_STOP);
-         }
- #else
--        printf("httpd MPM \"" MPM_NAME "\" does not support graceful-stop\n");
-+        printf("httpd2 MPM \"" MPM_NAME "\" does not support graceful-stop\n");
- #endif
-         return 1;
-     }

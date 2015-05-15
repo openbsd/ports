@@ -1,21 +1,22 @@
-$OpenBSD: patch-docs_man_rotatelogs_8,v 1.5 2011/09/01 13:40:09 giovanni Exp $
---- docs/man/rotatelogs.8.orig	Fri Feb  4 16:20:03 2011
-+++ docs/man/rotatelogs.8	Wed Aug 31 11:58:24 2011
-@@ -19,7 +19,7 @@
+$OpenBSD: patch-docs_man_rotatelogs_8,v 1.6 2015/05/15 08:08:04 stsp Exp $
+--- docs/man/rotatelogs.8.orig	Thu Jan  1 16:30:56 2015
++++ docs/man/rotatelogs.8	Wed Apr 15 00:12:00 2015
+@@ -19,21 +19,21 @@
  .el .ne 3
  .IP "\\$1" \\$2
  ..
--.TH "ROTATELOGS" 8 "2010-11-06" "Apache HTTP Server" "rotatelogs"
-+.TH "ROTATELOGS2" 8 "2010-11-06" "Apache HTTP Server" "rotatelogs"
+-.TH "ROTATELOGS" 8 "2015-01-01" "Apache HTTP Server" "rotatelogs"
++.TH "ROTATELOGS2" 8 "2015-01-01" "Apache HTTP Server" "rotatelogs2"
  
  .SH NAME
- rotatelogs \- Piped logging program to rotate Apache logs
-@@ -27,13 +27,13 @@ rotatelogs \- Piped logging program to rotate Apache l
+-rotatelogs \- Piped logging program to rotate Apache logs
++rotatelogs2 \- Piped logging program to rotate Apache logs
+ 
  .SH "SYNOPSIS"
   
  .PP
--\fBrotatelogs\fR [ -\fBl\fR ] [ -\fBf\fR ] \fIlogfile\fR \fIrotationtime\fR|\fIfilesize\fRM [ \fIoffset\fR ]
-+\fBrotatelogs2\fR [ -\fBl\fR ] [ -\fBf\fR ] \fIlogfile\fR \fIrotationtime\fR|\fIfilesize\fRM [ \fIoffset\fR ]
+-\fBrotatelogs\fR [ -\fBl\fR ] [ -\fBL\fR \fIlinkname\fR ] [ -\fBp\fR \fIprogram\fR ] [ -\fBf\fR ] [ -\fBt\fR ] [ -\fBv\fR ] [ -\fBe\fR ] [ -\fBc\fR ] [ -\fBn\fR \fInumber-of-files\fR ] \fIlogfile\fR \fIrotationtime\fR|\fIfilesize\fR(B|K|M|G) [ \fIoffset\fR ]
++\fBrotatelogs2\fR [ -\fBl\fR ] [ -\fBL\fR \fIlinkname\fR ] [ -\fBp\fR \fIprogram\fR ] [ -\fBf\fR ] [ -\fBt\fR ] [ -\fBv\fR ] [ -\fBe\fR ] [ -\fBc\fR ] [ -\fBn\fR \fInumber-of-files\fR ] \fIlogfile\fR \fIrotationtime\fR|\fIfilesize\fR(B|K|M|G) [ \fIoffset\fR ]
   
  
  .SH "SUMMARY"
@@ -26,48 +27,61 @@ $OpenBSD: patch-docs_man_rotatelogs_8,v 1.5 2011/09/01 13:40:09 giovanni Exp $
   
  
  .SH "OPTIONS"
-@@ -44,7 +44,7 @@ rotatelogs is a simple program for use in conjunction 
- Causes the use of local time rather than GMT as the base for the interval or for strftime(3) formatting with size-based rotation\&. Note that using -l in an environment which changes the GMT offset (such as for BST or DST) can lead to unpredictable results!  
+@@ -47,10 +47,10 @@ Causes the use of local time rather than GMT as the ba
+ Causes a hard link to be made from the current logfile to the specified link name\&. This can be used to watch the log continuously across rotations using a command like tail -F linkname\&.  
+ .TP
+ -p \fIprogram\fR
+-If given, rotatelogs will execute the specified program every time a new log file is opened\&. The filename of the newly opened file is passed as the first argument to the program\&. If executing after a rotation, the old log file is passed as the second argument\&. rotatelogs does not wait for the specified program to terminate before continuing to operate, and will not log any error code returned on termination\&. The spawned program uses the same stdin, stdout, and stderr as rotatelogs itself, and also inherits the environment\&.  
++If given, rotatelogs2 will execute the specified program every time a new log file is opened\&. The filename of the newly opened file is passed as the first argument to the program\&. If executing after a rotation, the old log file is passed as the second argument\&. rotatelogs2 does not wait for the specified program to terminate before continuing to operate, and will not log any error code returned on termination\&. The spawned program uses the same stdin, stdout, and stderr as rotatelogs2 itself, and also inherits the environment\&.  
  .TP
  -f
--Causes the logfile to be opened immediately, as soon as rotatelogs starts, instead of waiting for the first logfile entry to be read (for non-busy sites, there may be a substantial delay between when the server is started and when the first request is handled, meaning that the associated logfile does not "exist" until then, which causes problems from some automated logging tools)\&. \fIAvailable in version 2\&.2\&.9 and later\&.\fR  
-+Causes the logfile to be opened immediately, as soon as rotatelogs2 starts, instead of waiting for the first logfile entry to be read (for non-busy sites, there may be a substantial delay between when the server is started and when the first request is handled, meaning that the associated logfile does not "exist" until then, which causes problems from some automated logging tools)\&. \fIAvailable in version 2\&.2\&.9 and later\&.\fR  
+-Causes the logfile to be opened immediately, as soon as rotatelogs starts, instead of waiting for the first logfile entry to be read (for non-busy sites, there may be a substantial delay between when the server is started and when the first request is handled, meaning that the associated logfile does not "exist" until then, which causes problems from some automated logging tools)  
++Causes the logfile to be opened immediately, as soon as rotatelogs2 starts, instead of waiting for the first logfile entry to be read (for non-busy sites, there may be a substantial delay between when the server is started and when the first request is handled, meaning that the associated logfile does not "exist" until then, which causes problems from some automated logging tools)  
  .TP
- \fIlogfile\fR
- .PP The path plus basename of the logfile\&. If \fIlogfile\fR includes any '%' characters, it is treated as a format string for strftime(3)\&. Otherwise, the suffix \fI\&.nnnnnnnnnn\fR is automatically added and is the time in seconds\&. Both formats compute the start time from the beginning of the current period\&. For example, if a rotation time of 86400 is specified, the hour, minute, and second fields created from the strftime(3) format will all be zero, referring to the beginning of the current 24-hour period (midnight)\&. .PP When using strftime(3) filename formatting, be sure the log file format has enough granularity to produce a different file name each time the logs are rotated\&. Otherwise rotation will overwrite the same file instead of starting a new one\&. For example, if \fIlogfile\fR was /var/logs/errorlog\&.%Y-%m-%d with log rotation at 5 megabytes, but 5 megabytes was reached twice in the same day, the same log file name would be produced and log rotation would keep writing to the same file\&.  
-@@ -62,7 +62,7 @@ The number of minutes offset from UTC\&. If omitted, z
+ -t
+ Causes the logfile to be truncated instead of rotated\&. This is useful when a log is processed in real time by a command like tail, and there is no need for archived data\&. No suffix will be added to the filename, however format strings containing '%' characters will be respected\&.  
+@@ -83,7 +83,7 @@ The number of minutes offset from UTC\&. If omitted, z
   
  .nf
  
--     CustomLog "|bin/rotatelogs /var/logs/logfile 86400" common
-+     CustomLog "|bin/rotatelogs2 /var/logs/logfile 86400" common
+-     CustomLog "|bin/rotatelogs /var/log/logfile 86400" common
++     CustomLog "|bin/rotatelogs2 /var/log/logfile 86400" common
  
  .fi
   
-@@ -71,7 +71,7 @@ This creates the files /var/logs/logfile\&.nnnn where 
+@@ -92,7 +92,7 @@ This creates the files /var/log/logfile\&.nnnn where n
   
  .nf
  
--     CustomLog "|bin/rotatelogs -l /var/logs/logfile\&.%Y\&.%m\&.%d 86400" common
-+     CustomLog "|bin/rotatelogs2 -l /var/logs/logfile\&.%Y\&.%m\&.%d 86400" common
+-     CustomLog "|bin/rotatelogs -l /var/log/logfile\&.%Y\&.%m\&.%d 86400" common
++     CustomLog "|bin/rotatelogs2 -l /var/log/logfile\&.%Y\&.%m\&.%d 86400" common
  
  .fi
   
-@@ -80,7 +80,7 @@ This creates the files /var/logs/logfile\&.yyyy\&.mm\&
+@@ -101,7 +101,7 @@ This creates the files /var/log/logfile\&.yyyy\&.mm\&.
   
  .nf
  
--     CustomLog "|bin/rotatelogs /var/logs/logfile 5M" common
-+     CustomLog "|bin/rotatelogs2 /var/logs/logfile 5M" common
+-     CustomLog "|bin/rotatelogs /var/log/logfile 5M" common
++     CustomLog "|bin/rotatelogs2 /var/log/logfile 5M" common
  
  .fi
   
-@@ -89,7 +89,7 @@ This configuration will rotate the logfile whenever it
+@@ -110,7 +110,7 @@ This configuration will rotate the logfile whenever it
   
  .nf
  
--     ErrorLog "|bin/rotatelogs /var/logs/errorlog\&.%Y-%m-%d-%H_%M_%S 5M"
-+     ErrorLog "|bin/rotatelogs2 /var/logs/errorlog\&.%Y-%m-%d-%H_%M_%S 5M"
+-     ErrorLog "|bin/rotatelogs /var/log/errorlog\&.%Y-%m-%d-%H_%M_%S 5M"
++     ErrorLog "|bin/rotatelogs2 /var/log/errorlog\&.%Y-%m-%d-%H_%M_%S 5M"
+ 
+ .fi
+  
+@@ -119,7 +119,7 @@ This configuration will rotate the error logfile whene
+  
+ .nf
+ 
+-     CustomLog "|bin/rotatelogs -t /var/log/logfile 86400" common
++     CustomLog "|bin/rotatelogs2 -t /var/log/logfile 86400" common
  
  .fi
   

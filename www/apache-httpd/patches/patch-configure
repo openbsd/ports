@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.10 2012/10/18 08:12:17 giovanni Exp $
---- configure.orig	Tue Aug 21 20:39:21 2012
-+++ configure	Thu Sep 20 09:59:57 2012
-@@ -3113,7 +3113,7 @@ do
+$OpenBSD: patch-configure,v 1.11 2015/05/15 08:08:04 stsp Exp $
+--- configure.orig	Tue Jul 15 19:15:03 2014
++++ configure	Sat Jan 10 14:33:24 2015
+@@ -3397,7 +3397,7 @@ do
    ap_last="${ap_cur}"
    ap_cur=`eval "echo ${ap_cur}"`
  done
@@ -10,21 +10,12 @@ $OpenBSD: patch-configure,v 1.10 2012/10/18 08:12:17 giovanni Exp $
  
  
    APACHE_VAR_SUBST="$APACHE_VAR_SUBST exp_sysconfdir"
-@@ -4093,7 +4093,7 @@ SHLIBPATH_VAR=`$apr_config --shlib-path-var`
- APR_BINDIR=`$apr_config --bindir`
- APR_INCLUDEDIR=`$apr_config --includedir`
+@@ -4603,7 +4603,7 @@ APR_INCLUDEDIR=`$apr_config --includedir`
+ APR_INCLUDES=`$apr_config --includes`
  APR_VERSION=`$apr_config --version`
--APR_CONFIG="$APR_BINDIR/apr-`echo ${APR_VERSION} | sed 's,\..*,,'`-config"
+ apr_major_version=`echo ${APR_VERSION} | sed 's,\..*,,'`
+-APR_CONFIG="$APR_BINDIR/apr-${apr_major_version}-config"
 +APR_CONFIG="$apr_config"
  
- echo $ac_n "${nl}Configuring Apache Portable Runtime Utility library...${nl}"
- 
-@@ -4400,7 +4400,7 @@ fi
- APU_BINDIR=`$apu_config --bindir`
- APU_INCLUDEDIR=`$apu_config --includedir`
- APU_VERSION=`$apu_config --version`
--APU_CONFIG="$APU_BINDIR/apu-`echo ${APU_VERSION} | sed 's,\..*,,'`-config"
-+APU_CONFIG="$apu_config"
- 
- ac_ext=c
- ac_cpp='$CPP $CPPFLAGS'
+ { $as_echo "$as_me:${as_lineno-$LINENO}: " >&5
+ $as_echo "$as_me: " >&6;}

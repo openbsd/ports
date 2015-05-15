@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2008/09/02 22:05:23 bernd Exp $
---- Makefile.in.orig	Thu Jul 24 12:22:37 2008
-+++ Makefile.in	Thu Jul 24 12:24:01 2008
-@@ -48,6 +48,8 @@ install-conf:
+$OpenBSD: patch-Makefile_in,v 1.6 2015/05/15 08:08:03 stsp Exp $
+--- Makefile.in.orig	Mon Dec 17 12:50:41 2012
++++ Makefile.in	Sat Jan 10 14:31:17 2015
+@@ -49,6 +49,8 @@ install-conf:
  	    			sed -e 's#@@ServerRoot@@#$(prefix)#g' \
  	    				-e 's#@@Port@@#$(PORT)#g' \
  	    				-e 's#@@SSLPort@@#$(SSLPORT)#g' \
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2008/09/02 22:05:23 bernd Exp $
  	    				-e '/@@LoadModule@@/d' \
  	    				< $$i; \
  	    		else \
-@@ -55,6 +57,8 @@ install-conf:
+@@ -56,6 +58,8 @@ install-conf:
  	    				-e 's#@@ServerRoot@@#$(prefix)#g' \
  	    				-e 's#@@Port@@#$(PORT)#g' \
  	    				-e 's#@@SSLPort@@#$(SSLPORT)#g' \
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2008/09/02 22:05:23 bernd Exp $
  	    				-e 'p' \
  	    				< $$i; \
  	    			for j in $(DSO_MODULES) "^EOL^"; do \
-@@ -67,6 +71,8 @@ install-conf:
+@@ -76,6 +80,8 @@ install-conf:
  	    				-e 's#@@ServerRoot@@#$(prefix)#g' \
  	    				-e 's#@@Port@@#$(PORT)#g' \
  	    				-e 's#@@SSLPort@@#$(SSLPORT)#g' \
