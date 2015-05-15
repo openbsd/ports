@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/05/08 07:48:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/05/15 06:46:03 ajacoutot Exp $
 @conflict bnc-*
 @conflict ircd-ratbox-*
 @newgroup _ircd-hybrid:616
@@ -35,8 +35,6 @@ lib/ircd-hybrid/modules/autoload/m_eob.la
 lib/ircd-hybrid/modules/autoload/m_eob.so
 lib/ircd-hybrid/modules/autoload/m_etrace.la
 lib/ircd-hybrid/modules/autoload/m_etrace.so
-lib/ircd-hybrid/modules/autoload/m_gline.la
-lib/ircd-hybrid/modules/autoload/m_gline.so
 lib/ircd-hybrid/modules/autoload/m_globops.la
 lib/ircd-hybrid/modules/autoload/m_globops.so
 lib/ircd-hybrid/modules/autoload/m_hash.la
@@ -202,8 +200,6 @@ share/ircd-hybrid/help/die
 share/ircd-hybrid/help/dline
 share/ircd-hybrid/help/error
 share/ircd-hybrid/help/etrace
-share/ircd-hybrid/help/gline
-share/ircd-hybrid/help/gungline
 share/ircd-hybrid/help/hash
 share/ircd-hybrid/help/help
 share/ircd-hybrid/help/index

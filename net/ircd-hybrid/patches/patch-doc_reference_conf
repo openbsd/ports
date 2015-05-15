@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_reference_conf,v 1.5 2015/04/09 20:01:36 sthen Exp $
---- doc/reference.conf.orig	Sun Mar 29 12:35:53 2015
-+++ doc/reference.conf	Sun Mar 29 15:21:13 2015
+$OpenBSD: patch-doc_reference_conf,v 1.6 2015/05/15 06:46:03 ajacoutot Exp $
+--- doc/reference.conf.orig	Sun May 10 17:44:40 2015
++++ doc/reference.conf	Thu May 14 22:49:49 2015
 @@ -111,7 +111,7 @@ serverinfo {
  	 *	chown <ircd-user>.<ircd.group> rsa.key
  	 *	chmod 0600 rsa.key
@@ -28,7 +28,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.5 2015/04/09 20:01:36 sthen Exp $
  
  	/*
  	 * ssl_dh_elliptic_curve: defines the curve to use for the
-@@ -474,7 +474,7 @@ operator {
+@@ -473,7 +473,7 @@ operator {
  	 * A password should not be defined when this is used; see
  	 * doc/challenge.txt for more information.
  	 */
@@ -37,7 +37,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.5 2015/04/09 20:01:36 sthen Exp $
  
  	/*
  	 * ssl_certificate_fingerprint: enhances security by additionally checking
-@@ -1341,9 +1341,9 @@ modules {
+@@ -1333,9 +1333,9 @@ modules {
  	 * path: other paths to search for modules specified below
  	 * and in "/module load".
  	 */
