@@ -1,10 +1,10 @@
-$OpenBSD: patch-dbus_Makefile_in,v 1.20 2014/09/17 05:49:15 ajacoutot Exp $
+$OpenBSD: patch-dbus_Makefile_in,v 1.21 2015/05/15 06:50:05 ajacoutot Exp $
 
 /var/lib -> /var/db
 
---- dbus/Makefile.in.orig	Mon Sep 15 13:43:15 2014
-+++ dbus/Makefile.in	Wed Sep 17 07:40:27 2014
-@@ -672,7 +672,7 @@ configdir = $(sysconfdir)/dbus-1
+--- dbus/Makefile.in.orig	Thu May 14 14:38:35 2015
++++ dbus/Makefile.in	Fri May 15 08:36:32 2015
+@@ -673,7 +673,7 @@ configdir = $(sysconfdir)/dbus-1
  # results in an otherwise unnecessary dependency on librt. Disable it.
  AM_CPPFLAGS = -I$(top_builddir) -I$(top_srcdir) $(SYSTEMD_CFLAGS) \
  	$(VALGRIND_CFLAGS) -DDBUS_COMPILATION \
