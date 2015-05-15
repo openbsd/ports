@@ -1,0 +1,18 @@
+$OpenBSD: patch-misc_benc_c,v 1.1 2015/05/15 08:59:09 bentley Exp $
+Be more lenient when parsing invalid .torrent files.
+
+From upstream commit 382ccb74857c8de10d3319486a4a1137763badf7.
+--- misc/benc.c.orig	Wed Jul 14 20:51:43 2010
++++ misc/benc.c	Fri May 15 01:23:42 2015
+@@ -233,10 +233,8 @@ benc_dget_any(const char *p, const char *key)
+         cmp = strncmp(bstr, key, blen);
+         if (cmp == 0 && len == blen)
+             return p;
+-        else if (cmp <= 0)
+-            p = benc_next(p);
+         else
+-            return NULL;
++            p = benc_next(p);
+     }
+     return NULL;
+ }
