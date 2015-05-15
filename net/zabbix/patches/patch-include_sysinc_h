@@ -1,12 +1,23 @@
-$OpenBSD: patch-include_sysinc_h,v 1.2 2014/12/28 15:17:10 robert Exp $
+$OpenBSD: patch-include_sysinc_h,v 1.3 2015/05/15 08:04:44 robert Exp $
 
 quick hack to fix building following if.h split; should really have an
 autoconf check for it but that's harder because AC_CHECK_HEADERS isn't enough
 for this file
 
---- include/sysinc.h.orig	Tue Dec 16 07:37:44 2014
-+++ include/sysinc.h	Sun Dec 28 16:00:03 2014
-@@ -302,6 +302,7 @@
+--- include/sysinc.h.orig	Wed Apr 22 09:56:00 2015
++++ include/sysinc.h	Fri May 15 09:39:54 2015
+@@ -145,6 +145,10 @@
+ #	include <sys/dkstat.h>
+ #endif
+ 
++#ifdef HAVE_SYS_SCHED_H
++#	include <sys/sched.h>
++#endif
++
+ #ifdef HAVE_DEVSTAT_H
+ #	include <devstat.h>
+ #endif
+@@ -302,6 +306,7 @@
  
  #ifdef HAVE_NET_IF_H
  #	include <net/if.h>

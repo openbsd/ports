@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.14 2015/04/03 21:06:20 robert Exp $
---- configure.orig	Mon Feb 23 13:28:46 2015
-+++ configure	Fri Apr  3 23:05:32 2015
+$OpenBSD: patch-configure,v 1.15 2015/05/15 08:04:44 robert Exp $
+--- configure.orig	Wed Apr 22 09:56:37 2015
++++ configure	Fri May 15 09:38:40 2015
+@@ -4749,7 +4749,7 @@ for ac_header in stdio.h stdlib.h string.h unistd.h ne
+   sys/vmmeter.h strings.h vm/vm_param.h \
+   sys/time.h kstat.h sys/syscall.h sys/sysmacros.h \
+   stdint.h mach/host_info.h mach/mach_host.h knlist.h pwd.h \
+-  sys/var.h arpa/nameser.h assert.h sys/dkstat.h sys/disk.h \
++  sys/var.h arpa/nameser.h assert.h sys/dkstat.h sys/disk.h sys/sched.h \
+   zone.h nlist.h kvm.h linux/kernel.h procinfo.h sys/dk.h \
+   sys/resource.h pthread.h windows.h process.h conio.h sys/wait.h regex.h \
+   stdarg.h winsock2.h pdh.h psapi.h sys/sem.h sys/ipc.h sys/shm.h Winldap.h \
 @@ -9117,7 +9117,7 @@ $as_echo "yes" >&6; }
  
  			 JABBER_INCDIR="$IKSEMEL_CPPFLAGS"
