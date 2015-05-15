@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2015/05/12 06:22:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.121 2015/05/15 16:54:03 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extras=		GNOME desktop meta-package (full installation)
@@ -8,6 +8,8 @@ PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
+
+REVISION-main=		0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -58,7 +60,8 @@ RUN_DEPENDS-main +=	x11/gnome/gvfs,-goa, \
 			x11/gnome/gvfs,-smb,
 
 # "Make it fancy!"
-RUN_DEPENDS-main +=	x11/gnome/calendar \
+RUN_DEPENDS-main +=	x11/gnome/bijiben \
+			x11/gnome/calendar \
 			x11/gnome/contacts \
 			x11/gnome/documents \
 			x11/gnome/eog-plugins \
@@ -89,8 +92,5 @@ RUN_DEPENDS-extras +=	STEM-=${V}:${BASE_PKGPATH},-main \
 			x11/gnome/totem \
 			x11/gnome/user-share \
 			x11/gnome/vinagre
-
-# XXX should be in -main but depends on mail/evolution
-RUN_DEPENDS-extras +=	x11/gnome/bijiben
 
 .include <bsd.port.mk>
