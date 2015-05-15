@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/05/28 11:20:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/05/15 10:48:37 jasper Exp $
 @newgroup _openfire:632
 @newuser _openfire:632:_openfire:daemon:openfire user:/var/empty:/bin/sh
 @extraunexec rm -rf %D/openfire/conf/*
@@ -12,7 +12,6 @@ openfire/
 @owner
 @group
 openfire/lib/
-openfire/lib/activation.jar
 openfire/lib/bcpg-jdk15on.jar
 openfire/lib/bcpkix-jdk15on.jar
 openfire/lib/bcprov-jdk15on.jar
@@ -20,14 +19,17 @@ openfire/lib/commons-el.jar
 openfire/lib/hsqldb.jar
 openfire/lib/jasper-compiler.jar
 openfire/lib/jasper-runtime.jar
+openfire/lib/javax.websocket-api.jar
 openfire/lib/jdic.jar
+openfire/lib/jetty-schemas.jar
 openfire/lib/jtds.jar
 openfire/lib/log4j.xml
 openfire/lib/mail.jar
 openfire/lib/mysql.jar
+openfire/lib/npn-boot.jar
 openfire/lib/openfire.jar
 openfire/lib/postgres.jar
-openfire/lib/servlet.jar
+openfire/lib/servlet-api.jar
 openfire/lib/slf4j-log4j12.jar
 openfire/lib/startup.jar
 openfire/lib/tray.dll
@@ -83,6 +85,7 @@ openfire/plugins/admin/webapp/images/error-16x16.gif
 openfire/plugins/admin/webapp/images/feed-icon-16x16.gif
 openfire/plugins/admin/webapp/images/forbidden-16x16.gif
 openfire/plugins/admin/webapp/images/greenlight-24x24.gif
+openfire/plugins/admin/webapp/images/group.gif
 openfire/plugins/admin/webapp/images/header-background_new.gif
 openfire/plugins/admin/webapp/images/header-help_new.gif
 openfire/plugins/admin/webapp/images/header-title_new.gif
