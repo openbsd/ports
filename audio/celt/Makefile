@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2014/10/03 11:58:51 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2015/05/15 11:33:19 jasper Exp $
 
 PORTROACH =	limit:^0\.11\.1
+PORTROACH_COMMENT =	audio/mumble (at least as of 1.2.4) requires *exactly* 0.11.1
 
 # Warning: CELT is experimental software. Neither the API/ABI, nor
 # the bit-stream are stable. Compatibility between different releases
@@ -11,7 +12,6 @@ NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT =	experimental ultra-low delay audio codec
 
-# XXX audio/mumble (at least as of 1.2.4) requires *exactly* 0.11.1
 DISTNAME =	celt-0.11.1
 
 EPOCH =		1
