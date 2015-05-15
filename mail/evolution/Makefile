@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.246 2015/05/11 07:42:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.247 2015/05/15 16:54:42 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,11 +6,22 @@ COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		3.16.2.1
+REVISION=		0
 
 CATEGORIES=		mail
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
+
+SO_VERSION=		9.0 # 0.0
+.for _lib in \
+eabutil econtacteditor econtactlisteditor email-engine essmime \
+evolution-addressbook-importers evolution-calendar-importers \
+evolution-calendar evolution-mail-composer evolution-mail-formatter \
+evolution-mail-importers evolution-mail evolution-shell evolution-smime \
+evolution-util gnomecanvas
+SHARED_LIBS +=		${_lib} ${SO_VERSION}	 
+.endfor
 
 # GPLv2+ - LGPLv2+ - OpenLDAP license - GFDL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -67,6 +78,19 @@ CONFIGURE_ARGS=		--with-bogofilter=${LOCALBASE}/bin/bogofilter \
 CONFIGURE_ARGS +=	--disable-autoar
 
 FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
+
+# REVERT 160006402248075b95c98e9e34d4538670ba7480 (Debian does the same):
+REVERT_AVOID_VERSION=	addressbook/importers addressbook/util \
+			addressbook/gui/contact-editor \
+			addressbook/gui/contact-list-editor libemail-engine \
+			smime/lib calendar/gui calendar/importers composer \
+			em-format mail/importers mail shell smime/gui e-util \
+			libgnomecanvas
+
+pre-configure:
+.for i in ${REVERT_AVOID_VERSION}
+	perl -pi -e 's,-avoid-version,,' ${WRKSRC}/$i/Makefile.in
+.endfor
 
 post-install:
 	rm ${PREFIX}/lib/evolution/{modules,plugins}/*.{a,la}
