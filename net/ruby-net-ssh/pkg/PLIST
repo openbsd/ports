@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/05/14 17:56:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/05/15 14:15:17 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
@@ -175,7 +175,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/transport/kex/test_diffie_hellman_group_exchang
 ${GEM_LIB}/gems/${DISTNAME}/test/transport/kex/test_diffie_hellman_group_exchange_sha256.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/transport/kex/test_ecdh_sha2_nistp256.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/transport/kex/test_ecdh_sha2_nistp384.rb
-${GEM_LIB}/gems/${DISTNAME}/test/transport/kex/test_ecdh_sha2_nistp512.rb
+${GEM_LIB}/gems/${DISTNAME}/test/transport/kex/test_ecdh_sha2_nistp521.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/transport/test_algorithms.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/transport/test_cipher_factory.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/transport/test_hmac.rb
