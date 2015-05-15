@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_CMakeLists_txt,v 1.4 2014/12/25 19:41:07 dcoppa Exp $
---- build/CMakeLists.txt.orig	Sat Nov  2 11:22:55 2013
-+++ build/CMakeLists.txt	Wed Dec 24 15:38:18 2014
-@@ -29,48 +29,48 @@ if(DEBUG)
- 		"-Wstack-protector -fstack-protector"
- 		"-Wstrict-aliasing -fstrict-aliasing")
+$OpenBSD: patch-build_CMakeLists_txt,v 1.5 2015/05/15 08:23:20 bentley Exp $
+--- build/CMakeLists.txt.orig	Wed Apr  8 15:20:21 2015
++++ build/CMakeLists.txt	Fri May 15 02:21:10 2015
+@@ -33,48 +33,48 @@ if(DEBUG)
+ 			"-Wno-unused-const-variable")
+ 	endif()
  	join("${_arg_str}" CMAKE_C_FLAGS)
 -else(DEBUG)
 -	set(_arg_str "${CMAKE_C_FLAGS} -ansi -O2"
@@ -29,13 +29,7 @@ $OpenBSD: patch-build_CMakeLists_txt,v 1.4 2014/12/25 19:41:07 dcoppa Exp $
 +#	join("${_arg_str}" CMAKE_C_FLAGS)
  endif(DEBUG)
  
- # generate the public headers
- add_custom_target(headers ALL DEPENDS
--	../cl/extern.h ../common/extern.h ../ex/extern.h ../vi/extern.h
--	../common/options_def.h ../ex/ex_def.h ../ex/version.h)
-+	cl_extern.h common_extern.h ex_extern.h vi_extern.h
-+	options_def.h ex_def.h version.h)
- 
+ # commands to generate the public headers
  set(extract_protos sed -n 's/^ \\* PUBLIC: \\\(.*\\\)/\\1/p')
  set(extract_version sed -n
  	's/^.*version \\\([^\)]*\)\\\).*/\#define VI_VERSION \\\"\\1\\\"/p')
@@ -82,12 +76,18 @@ $OpenBSD: patch-build_CMakeLists_txt,v 1.4 2014/12/25 19:41:07 dcoppa Exp $
 +	COMMAND ${extract_version} ../README > version.h
 +	WORKING_DIRECTORY ../ex/)
  
+ set(MAIN_PROTOS
+-	../cl/extern.h ../common/extern.h ../ex/extern.h ../vi/extern.h
+-	../common/options_def.h ../ex/ex_def.h ../ex/version.h)
++	cl_extern.h common_extern.h ex_extern.h vi_extern.h
++	options_def.h ex_def.h version.h)
  FILE(GLOB MAIN_SRCS ../cl/*.c ../common/*.c ../ex/*.c ../vi/*.c)
  FILE(GLOB REGEX_SRCS ../regex/reg*.c)
-@@ -154,6 +154,7 @@ configure_file(${CMAKE_SOURCE_DIR}/recover.in
+ 
+@@ -157,6 +157,7 @@ configure_file(${CMAKE_SOURCE_DIR}/recover.in
  	${CMAKE_SOURCE_DIR}/recover @ONLY)
  
- add_executable(nvi ${MAIN_SRCS})
+ add_executable(nvi ${MAIN_SRCS} ${MAIN_PROTOS})
 +add_dependencies(nvi headers)
  target_link_libraries(nvi ${CURSES_LIBRARY} ${UTIL_LIBRARY} ${RESOLV_LIBRARY})
  if(USE_WIDECHAR)
