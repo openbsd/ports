@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2015/05/11 07:43:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2015/05/15 16:55:37 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
 GNOME_VERSION=		3.16.2
+REVISION=		0
 
 CATEGORIES=		mail
 
@@ -37,16 +38,26 @@ WANTLIB += plc4 plds4 png pthread pthread-stubs secret-1 smime3
 WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 stdc++ vorbis vorbisfile
 WANTLIB += webkitgtk-3.0 webp xcb xcb-render xcb-shm xml2 xslt
 WANTLIB += z
+WANTLIB += lib/evolution/eabutil
+WANTLIB += lib/evolution/econtacteditor
+WANTLIB += lib/evolution/econtactlisteditor
+WANTLIB += lib/evolution/email-engine
+WANTLIB += lib/evolution/essmime
+WANTLIB += lib/evolution/evolution-calendar-importers
+WANTLIB += lib/evolution/evolution-calendar
+WANTLIB += lib/evolution/evolution-mail-composer
+WANTLIB += lib/evolution/evolution-mail-formatter
+WANTLIB += lib/evolution/evolution-mail
+WANTLIB += lib/evolution/evolution-shell
+WANTLIB += lib/evolution/evolution-smime
+WANTLIB += lib/evolution/evolution-util
+WANTLIB += lib/evolution/gnomecanvas
 
 MODULES=		devel/gettext \
 			x11/gnome
 
-# XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
-# work with unversioned solibs (LOCALBASE/lib/evolution/*.so).
-BUILD_DEPENDS +=	mail/evolution
-RUN_DEPENDS +=		mail/evolution
-
-LIB_DEPENDS=		archivers/libmspack
+LIB_DEPENDS=		archivers/libmspack \
+			mail/evolution
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2015/04/15 09:40:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2015/05/15 16:55:37 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.95
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		mail
 
@@ -37,6 +37,18 @@ WANTLIB += plc4 plds4 png pthread pthread-stubs secret-1 smime3
 WANTLIB += softokn3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3 stdc++
 WANTLIB += vorbis vorbisfile webkitgtk-3.0 webp xcb xcb-render
 WANTLIB += xcb-shm xml2 xslt z
+WANTLIB += lib/evolution/eabutil
+WANTLIB += lib/evolution/econtacteditor
+WANTLIB += lib/evolution/econtactlisteditor
+WANTLIB += lib/evolution/email-engine
+WANTLIB += lib/evolution/essmime
+WANTLIB += lib/evolution/evolution-mail-composer
+WANTLIB += lib/evolution/evolution-mail-formatter
+WANTLIB += lib/evolution/evolution-mail
+WANTLIB += lib/evolution/evolution-shell
+WANTLIB += lib/evolution/evolution-smime
+WANTLIB += lib/evolution/evolution-util
+WANTLIB += lib/evolution/gnomecanvas
 
 MASTER_SITES=		http://gnome.eu.org/
 
@@ -44,13 +56,8 @@ MODULES=		devel/gettext \
 			devel/dconf \
 			x11/gnome
 
-LIB_DEPENDS=		www/gtkhtml4 \
-			www/webkit,gtk3
-
-# XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
-# work with unversioned solibs (LOCALBASE/lib/evolution/*.so).
-BUILD_DEPENDS +=	mail/evolution
-RUN_DEPENDS +=		mail/evolution
+LIB_DEPENDS=		mail/evolution \
+			www/gtkhtml4
 
 MODGNOME_TOOLS=		desktop-file-utils
 
