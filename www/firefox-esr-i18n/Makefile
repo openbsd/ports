@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/24 18:18:33 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/16 07:26:12 landry Exp $
 
 SUBDIR = ach
 SUBDIR += ar
@@ -11,7 +11,6 @@ SUBDIR += br
 SUBDIR += bs
 SUBDIR += ca
 SUBDIR += cs
-SUBDIR += csb
 SUBDIR += cy
 SUBDIR += da
 SUBDIR += de
@@ -81,6 +80,5 @@ SUBDIR += uk
 SUBDIR += vi
 SUBDIR += zh-CN
 SUBDIR += zh-TW
-SUBDIR += zu
 
 .include <bsd.port.subdir.mk>

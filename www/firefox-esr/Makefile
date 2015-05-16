@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2015/04/02 18:20:08 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2015/05/16 07:26:12 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
-MOZILLA_VERSION =	31.6.0esr
-MOZILLA_BRANCH =	esr31
+MOZILLA_VERSION =	38.0.1esr
+MOZILLA_BRANCH =	esr38
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 PKGNAME =	${MOZILLA_PROJECT}-esr-${MOZILLA_VERSION:S/esr//}
-SO_VERSION =	1.0
-MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul
+SO_VERSION =	2.0
+MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul clearkey
 
 CATEGORIES =	www
 
@@ -23,14 +23,10 @@ MODPY_RUNDEP =	No
 
 # necessary glue to build with the correct compiler after fx 17
 MODULES +=		gcc4 lang/clang
-MODGCC4_ARCHS =		powerpc sparc64 alpha i386
+MODGCC4_ARCHS =		powerpc sparc64 alpha
 MODGCC4_LANGS =		c c++
-MODCLANG_ARCHS =	amd64
+MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c c++
-# fix for 982693
-.if ${MACHINE_ARCH:Mamd64}
-MAKE_ENV += VPXHACK="-fno-integrated-as"
-.endif
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
@@ -47,6 +43,11 @@ CONFIGURE_ARGS +=	--with-app-name=firefox-esr
 
 # relies on pulseaudio for sound and broken at runtime
 CONFIGURE_ARGS +=	--disable-webrtc
+
+# bug #1064665
+LIB_DEPENDS +=	textproc/icu4c
+CONFIGURE_ARGS += --with-system-icu
+WANTLIB += icudata icui18n icuuc
 
 CONFIGURE_ARGS +=	--enable-gstreamer=1.0
 
