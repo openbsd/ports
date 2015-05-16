@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/06 09:34:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/16 10:49:50 sthen Exp $
 
 COMMENT =		historical real-time strategy game
 
@@ -60,6 +60,7 @@ CONFIGURE_ARGS +=	--disable-atlas
 
 .if ${MACHINE_ARCH} == "i386"
 CFLAGS +=		-march=i586
+CXXFLAGS +=		-march=i586
 .endif
 
 WRKSRC =		${WRKDIST}/build/workspaces/gcc
