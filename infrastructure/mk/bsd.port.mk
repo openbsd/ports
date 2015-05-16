@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1294 2015/05/14 18:00:27 jasper Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1295 2015/05/16 17:04:51 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1978,7 +1978,7 @@ ${_PACKAGE_COOKIE${_S}}:
 	    exit 1; \
 	fi
 # End of PACKAGE.
-	@rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE${_S}} ${_FUPDATE_COOKIE${_S}}
+	@-rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE${_S}} ${_FUPDATE_COOKIE${_S}}
 .  endif
 
 
