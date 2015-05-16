@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/01/11 22:51:03 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/05/16 04:41:23 jeremy Exp $
 ${GEM_BIN}/redcarpet${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
-${GEM_LIB}/gems/${DISTNAME}/Gemfile.lock
 ${GEM_LIB}/gems/${DISTNAME}/README.markdown
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/bin/
@@ -18,5 +17,17 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet/render_man.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet/render_strip.rb
 ${GEM_LIB}/gems/${DISTNAME}/redcarpet.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/test/
-${GEM_LIB}/gems/${DISTNAME}/test/redcarpet_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/benchmark.rb
+${GEM_LIB}/gems/${DISTNAME}/test/custom_render_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/html5_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/html_render_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/html_toc_render_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/markdown_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/pathological_inputs_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/redcarpet_compat_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/safe_render_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/smarty_html_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/smarty_pants_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/stripdown_render_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
