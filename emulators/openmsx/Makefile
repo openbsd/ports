@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/01/02 12:21:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/05/16 10:51:27 sthen Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
@@ -54,6 +54,7 @@ MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 # PIE doesn't leave sufficient registers
 .if ${MACHINE_ARCH:Mi386}
 CFLAGS += -fomit-frame-pointer
+CXXFLAGS += -fomit-frame-pointer
 .endif
 
 pre-configure:
