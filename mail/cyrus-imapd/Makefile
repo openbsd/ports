@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2015/05/11 06:03:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2015/05/16 15:19:00 kettenis Exp $
 
 # WARNING: mmap(2) is not fully POSIX on OpenBSD so cyrus needs to
 # map_refresh on every lock which will incure a performance penalty
@@ -11,6 +11,7 @@ COMMENT=	Cyrus IMAP server
 
 V=		2.5.2
 DISTNAME=	cyrus-imapd-${V}
+REVISION=	0
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0
 SHARED_LIBS +=	cyrus_imap                0.0 # 0.0
@@ -26,7 +27,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # CMU - see COPYING file in package
 PERMIT_PACKAGE_CDROM=	yes
 
-WANTLIB += c crypto db jansson m pcre pcreposix pthread sasl2
+WANTLIB += c com_err crypto db jansson m pcre pcreposix pthread sasl2
 WANTLIB += ssl uuid z
 
 MASTER_SITES=	http://cyrusimap.org/releases/ \
@@ -47,7 +48,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-bdb-libdir=${LOCALBASE}/lib/db4 \
 		--with-bdb-incdir=${LOCALBASE}/include/db4 \
-		--with-com_err=${LOCALBASE} \
 		--with-sasl=${LOCALBASE} \
 		--with-cyrus-group=_cyrus \
 		--with-cyrus-user=_cyrus \
