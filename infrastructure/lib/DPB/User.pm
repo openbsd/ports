@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.14 2015/05/16 12:23:05 espie Exp $
+# $OpenBSD: User.pm,v 1.15 2015/05/16 18:14:04 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -29,8 +29,10 @@ sub from_uid
 	if (my ($l, undef, $uid, $gid) = getpwuid $u) {
 		my $groups = `/usr/bin/id -G $u`;
 		chomp $groups;
-		bless { user => $l, uid => $uid, gid => $gid,
-		    groups => $groups }, $class;
+		my $group = getgrgid($gid);
+		bless { user => $l, uid => $uid, 
+		    group => $group, gid => $gid,
+		    grouplist => "$gid $groups" }, $class;
 	} else {
 		return undef;
 	}
@@ -43,8 +45,10 @@ sub new
 	if (my ($l, undef, $uid, $gid) = getpwnam $u) {
 		my $groups = `/usr/bin/id -G $u`;
 		chomp $groups;
-		bless { user => $l, uid => $uid, gid => $gid, 
-		    groups => $groups }, $class;
+		my $group = getgrgid($gid);
+		bless { user => $l, uid => $uid, 
+		    group => $group, gid => $gid,
+		    grouplist => "$gid $groups" }, $class;
 	} else {
 		bless { user => $u}, $class;
 	}
@@ -60,7 +64,7 @@ sub run_as
 {
 	my ($self, $code) = @_;
 	local $> = 0;
-	local $) = "$self->{gid} $self->{groups}";
+	local $) = $self->{grouplist};
 	$> = $self->{uid};
 	&$code;
 }
@@ -118,7 +122,7 @@ sub open
 {
 	my ($self, $mode, @parms) = @_;
 	local $> = 0;
-	local $) = "$self->{gid} $self->{groups}";
+	local $) = $self->{grouplist};
 	$> = $self->{uid};
 	if (open(my $fh, $mode, @parms)) {
 		my $flags = fcntl($fh, F_GETFL, 0);
@@ -133,7 +137,7 @@ sub opendir
 {
 	my ($self, $dirname) = @_;
 	local $> = 0;
-	local $) = "$self->{gid} $self->{groups}";
+	local $) = $self->{grouplist};
 	$> = $self->{uid};
 	if (opendir(my $fh, $dirname)) {
 		return $fh;
@@ -146,7 +150,7 @@ sub unlink
 {
 	my ($self, @links) = @_;
 	local $> = 0;
-	local $) = "$self->{gid} $self->{groups}";
+	local $) = $self->{grouplist};
 	$> = $self->{uid};
 	unlink(@links);
 }
@@ -155,7 +159,7 @@ sub rename
 {
 	my ($self, $o, $n) = @_;
 	local $> = 0;
-	local $) = "$self->{gid} $self->{groups}";
+	local $) = $self->{grouplist};
 	$> = $self->{uid};
 	rename($o, $n);
 }
@@ -164,7 +168,7 @@ sub stat
 {
 	my ($self, $name) = @_;
 	local $> = 0;
-	local $) = "$self->{gid} $self->{groups}";
+	local $) = $self->{grouplist};
 	$> = $self->{uid};
 	return stat $name;
 }

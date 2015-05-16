@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.24 2015/05/13 11:03:18 espie Exp $
+# $OpenBSD: Init.pm,v 1.25 2015/05/16 18:14:04 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -182,7 +182,9 @@ sub init_cores
 	if (values %$init == 0) {
 		$state->fatal("configuration error: no job runner");
 	}
+	my $fetch = $state->{fetch_user};
 	for my $core (values %$init) {
+		my $build = $core->prop->{build_user};
 		my $job = DPB::Job::Init->new($logger);
 		$job->add_tasks(DPB::Task::WhoAmI->new);
 		if (!defined $core->prop->{jobs}) {
@@ -204,7 +206,11 @@ sub init_cores
 				    ->chdir($state->ports)
 				    ->as_root
 				    ->env(PORTSDIR => $state->ports,
-				    	MAKE => $state->make)
+					MAKE => $state->make,
+					BUILD_USER => $build->{user},
+					BUILD_GROUP => $build->{group},
+					FETCH_USER => $fetch->{user},
+					FETCH_GROUP => $fetch->{group})
 				    ->exec(@args);
 			    }
 			));

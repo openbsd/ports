@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.50 2015/05/13 11:03:18 espie Exp $
+# $OpenBSD: Config.pm,v 1.51 2015/05/16 18:14:04 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -46,7 +46,7 @@ sub setup_users
 	if (defined $state->{unpriv_user}) {
 		$state->{unpriv_user}->enforce_local;
 		$> = $state->{unpriv_user}{uid};
-		$) = "$state->{unpriv_user}{gid} $state->{unpriv_user}{groups}";
+		$) = $state->{unpriv_user}{grouplist};
 	}
 }
 
