@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.160 2015/05/12 19:48:29 espie Exp $
+# $OpenBSD: Port.pm,v 1.161 2015/05/16 17:01:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -442,6 +442,8 @@ sub setup
 	}
 
 	if ($job->{shunt_depends}) {
+		print {$job->{logfh}} "Short-cut: depends already handled by ",
+		    $job->{shunt_depends}, "\n";
 		return $job->next_task($core);
 	}
 	my $dep = $task->recompute_depends($core);
