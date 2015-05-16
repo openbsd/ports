@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.4 2015/05/10 08:14:14 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.5 2015/05/16 12:23:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -18,7 +18,9 @@ use strict;
 use warnings;
 
 use OpenBSD::md5;
+use DPB::User;
 package DPB::Distfile;
+our @ISA = (qw(DPB::UserProxy));
 
 # same distfile may exist in several ports.
 
@@ -44,6 +46,12 @@ sub create
 		path => $v,
 		repo => $repo,
 	}, $class;
+}
+
+sub user
+{
+	my $self = shift;
+	return $self->{repo}->user;
 }
 
 sub distdir
@@ -136,7 +144,7 @@ sub check
 	my $self = shift;
 	# XXX in fetch_only mode, we won't build anything, so this is
 	# the only place we can check the file is okay
-	if ($self->{repo}->{fetch_only}) {
+	if ($self->{repo}{fetch_only}) {
 		return $self->checksum_and_cache($self->filename);
 	} else {
 		return $self->checkcache_or_size($self->filename);
@@ -149,10 +157,10 @@ sub make_link
 	my $sha = $self->{sha}->stringize;
 	if ($sha =~ m/^(..)/) {
 		my $result = $self->distdir('by_cipher', 'sha256', $1, $sha);
-		File::Path::make_path($result);
+		$self->make_path($result);
 		my $dest = $self->{name};
 		$dest =~ s/^.*\///;
-		link $self->filename, "$result/$dest";
+		$self->link($self->filename, "$result/$dest");
 	}
 }
 
@@ -164,9 +172,9 @@ sub find_copy
 	my $alternate = $self->{repo}{reverse}{$self->{sha}->stringize};
 	if (defined $alternate) {
 		my $full = $self->distdir($alternate);
-		if ((stat $full)[7] == $self->{sz}) {
-			unlink($name);
-			if (link($full, $name)) {
+		if (($self->stat($full))[7] == $self->{sz}) {
+			$self->unlink($name);
+			if ($self->link($full, $name)) {
 				$self->do_cache;
 				$self->{okay} = 1;
 				return 1;
@@ -197,10 +205,10 @@ sub checksize
 		print $fh "incomplete distinfo: no size\n";
 	}
 		
-	if (!stat $name) {
+	if (!$self->stat($name)) {
 		return $self->find_copy($name);
 	}
-	if ((stat _)[7] != $self->{sz}) {
+	if (($self->stat($name))[7] != $self->{sz}) {
 		my $fh = $self->logger->append('dist/'.$self->{name});
 		print $fh "size does not match\n";
 		return 0;
@@ -250,16 +258,19 @@ sub do_cache
 sub caches_okay
 {
 	my ($self, $name) = @_;
-	if (-f -r $name) {
-		if (OpenBSD::sha->new($name)->equals($self->{sha})) {
-			$self->{okay} = 1;
-			$self->do_cache;
-			return 1;
-		} else {
-			unlink($name);
+	$self->run_as(
+	    sub {
+		if (-f -r $name) {
+			if (OpenBSD::sha->new($name)->equals($self->{sha})) {
+				$self->{okay} = 1;
+				$self->do_cache;
+				return 1;
+			} else {
+				unlink($name);
+			}
 		}
-	}
-	return 0;
+		return 0;
+	    });
 }
 
 sub checksum_and_cache

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.13 2015/05/13 15:14:13 espie Exp $
+# $OpenBSD: User.pm,v 1.14 2015/05/16 12:23:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -160,23 +160,32 @@ sub rename
 	rename($o, $n);
 }
 
+sub stat
+{
+	my ($self, $name) = @_;
+	local $> = 0;
+	local $) = "$self->{gid} $self->{groups}";
+	$> = $self->{uid};
+	return stat $name;
+}
+
 package DPB::UserProxy;
 sub run_as
 {
 	my ($self, $code) = @_;
-	$self->{user}->run_as($code);
+	$self->user->run_as($code);
 }
 
 sub make_path
 {
 	my ($self, @dirs) = @_;
-	$self->{user}->make_path(@dirs);
+	$self->user->make_path(@dirs);
 }
 
 sub open
 {
 	my ($self, @parms) = @_;
-	return $self->{user}->open(@parms);
+	return $self->user->open(@parms);
 }
 
 sub file
@@ -188,19 +197,31 @@ sub file
 sub opendir
 {
 	my ($self, $dirname) = @_;
-	return $self->{user}->opendir($dirname);
+	return $self->user->opendir($dirname);
 }
 
 sub unlink
 {
 	my ($self, @links) = @_;
-	return $self->{user}->unlink(@links);
+	return $self->user->unlink(@links);
 }
 
 sub rename
 {
 	my ($self, @parms) = @_;
-	return $self->{user}->rename(@parms);
+	return $self->user->rename(@parms);
+}
+
+sub stat
+{
+	my ($self, $name) = @_;
+	return $self->user->stat($name);
+}
+
+sub user
+{
+	my $self = shift;
+	return $self->{user};
 }
 
 # since we don't want to keep too many open files, encapsulate
