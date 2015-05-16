@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2015/03/14 22:26:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2015/05/16 10:15:53 kettenis Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 V=		9.10.2
-REVISION=	0
+REVISION=	1
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
@@ -39,7 +39,8 @@ MODPY_RUNDEP=	No
 LIB_DEPENDS=	textproc/libxml
 
 SEPARATE_BUILD=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-threads \
 		--with-libtool \

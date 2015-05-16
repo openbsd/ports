@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure_in,v 1.1 2015/05/16 10:15:53 kettenis Exp $
+--- configure.in.orig	Wed Feb 18 02:55:55 2015
++++ configure.in	Fri May 15 23:11:43 2015
+@@ -4302,10 +4302,15 @@ if test "$dlopen" = "yes"; then
+ 				SO_LD="ld"
+ 			fi
+ 			;;
+-		*-freebsd*|*-openbsd*|*-netbsd*)
++		*-freebsd*|*-netbsd*)
+ 			SO_CFLAGS="-fpic"
+ 			SO_LDFLAGS="-Bshareable -x"
+ 			SO_LD="ld"
++			;;
++		*-openbsd*)
++			SO_CFLAGS="-fpic"
++			SO_LDFLAGS="-shared"
++			SO_LD="${CC}"
+ 			;;
+ 		*-solaris*)
+ 			SO_CFLAGS="-KPIC"
