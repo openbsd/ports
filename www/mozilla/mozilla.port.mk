@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.74 2015/03/16 19:47:35 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.75 2015/05/16 07:18:16 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc64
@@ -44,7 +44,7 @@ MODMOZ_BUILD_DEPENDS =	archivers/gtar \
 
 MODMOZ_LIB_DEPENDS =	textproc/hunspell \
 			devel/nspr>=4.10.8 \
-			security/nss>=3.17.4
+			security/nss>=3.18.1
 
 # bug #736961
 SEPARATE_BUILD =	Yes
@@ -58,7 +58,7 @@ MODMOZ_WANTLIB +=	X11 Xext Xrender Xt atk-1.0 c cairo \
 		fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gobject-2.0 gthread-2.0 m \
 		nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		plc4 plds4 pthread event kvm sqlite3>=29 \
+		plc4 plds4 pthread event kvm sqlite3>=30 \
 		smime3 sndio nssutil3 ssl3 stdc++ z hunspell-1.3
 
 # hack to build against systemwide sqlite3 (# 546162)
