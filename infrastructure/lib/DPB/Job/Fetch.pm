@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.9 2015/05/13 14:44:13 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.10 2015/05/16 15:27:48 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -141,7 +141,7 @@ sub finalize
 	if ($job->{file}->checksize($job->{file}->tempfilename)) {
 	    	$job->new_checksum_task($self, $core->{status});
 	} else {
-		if ($job->{file}->{sz} == 0) {
+		if ($job->{file}{sz} == 0) {
 			$job->{sites} = [];
 			return $job->bad_file($self, $core);
 		}
@@ -150,10 +150,7 @@ sub finalize
 		# definite error also if file is too large
 		    stat($job->{file}->tempfilename) &&
 		    (stat _)[7] > $job->{file}->{sz}) {
-		    	$job->{fetcher}->run_as(
-			    sub {
-				unlink($job->{file}->tempfilename);
-			    });
+		    	$job->{fetcher}->unlink($job->{file}->tempfilename);
 		}
 		# if we got suspended, well, might have to retry same site
 		if (!$self->{got_suspended}) {
