@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.70 2015/05/16 10:52:19 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.71 2015/05/17 20:39:45 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -134,9 +134,10 @@ sub expire_old
 	my $self = shift;
 	my $ts = time();
 	my $distdir = $self->distdir;
-	my $fh2 = $self->open(">", "$distdir/history.new");
+	chdir($distdir) or die "can't change to distdir: $!";
+	my $fh2 = $self->open(">", "history.new");
 	return if !$fh2;
-	my $fh = $self->open('<', "$distdir/history");
+	my $fh = $self->open('<', "history");
 	if ($fh) {
 		while (<$fh>) {
 			if (m/^\d+\s+SHA256\s*\((.*)\) \= (.*\=)$/) {
@@ -160,44 +161,42 @@ sub expire_old
 	}
 
 	# let's also scan the directory proper
-	$self->run_as(
-		sub {
-		    require File::Find;
-		    File::Find::find(sub {
-			    if (-d $_ && 
-				($File::Find::name eq "$distdir/by_cipher" || 
-				 $File::Find::name eq "$distdir/list" ||
-				$File::Find::name eq "$distdir/build-stats")) {
-				    $File::Find::prune = 1;
-				    return;
-			    }
-			    return unless -f _;
-			    return if m/\.part$/;
-			    my $actual = $File::Find::name;
-			    $actual =~ s/^\Q$distdir\E\/?//;
-			    return if $self->{known_file}{$actual};
-			    my $sha = OpenBSD::sha->new($_)->stringize;
-			    print $fh2 "$ts SHA256 ($actual) = $sha\n";
-			    $self->mark_sha($sha, $actual);
-		    }, $distdir);
+	require File::Find;
+	File::Find::find(sub {
+		if (-d $_ && 
+		    ($File::Find::name eq "./by_cipher" || 
+		     $File::Find::name eq "./list" ||
+		    $File::Find::name eq "./build-stats")) {
+			$File::Find::prune = 1;
+			return;
+		}
+		return unless -f _;
+		return if m/\.part$/;
+		my $actual = $File::Find::name;
+		$actual =~ s/^.\///;
+		return if $self->{known_file}{$actual};
+		my $sha = OpenBSD::sha->new($_)->stringize;
+		print $fh2 "$ts SHA256 ($actual) = $sha\n";
+		$self->mark_sha($sha, $actual);
+	}, ".");
 
-		    my $c = "$distdir/by_cipher/sha256";
-		    return unless -d $c;
-		    # and scan the ciphers as well !
-		    File::Find::find(sub {
-			    return unless -f $_;
-			    if ($File::Find::dir =~ 
-				m/^\Q$distdir\E\/by_cipher\/sha256\/..?\/(.*)$/) {
-				    my $sha = $1;
-				    return if $self->{known_sha}{$sha}{$_};
-				    return if $self->{known_short}{$sha}{$_};
-				    print $fh2 "$ts SHA256 ($_) = ", $sha, "\n";
-			    }
-		    }, $c);
-		});
+	my $c = "by_cipher/sha256";
+	if (-d $c) {
+		# and scan the ciphers as well !
+		File::Find::find(sub {
+			return unless -f $_;
+			if ($File::Find::dir =~ 
+			    m/^\.\/by_cipher\/sha256\/..?\/(.*)$/) {
+				my $sha = $1;
+				return if $self->{known_sha}{$sha}{$_};
+				return if $self->{known_short}{$sha}{$_};
+				print $fh2 "$ts SHA256 ($_) = ", $sha, "\n";
+			}
+		}, $c);
+	}
 
 	close $fh2;
-	$self->rename("$distdir/history.new", "$distdir/history");
+	$self->rename("history.new", "history");
 }
 
 sub distdir
