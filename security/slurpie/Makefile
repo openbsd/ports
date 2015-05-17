@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/05/17 11:42:18 sthen Exp $
 
 COMMENT=	distributed passwd file cracker
 
 VERSION=	2.0b
+REVISION=	0
 DISTNAME=	slurpie
 PKGNAME=	${DISTNAME}-${VERSION}
 CATEGORIES=	security
@@ -12,10 +13,9 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.jps.net/coati/archives/slurpie.html
 
-MAINTAINER=	Brian Caswell <bmc@openbsd.org>
-
 PERMIT_PACKAGE_CDROM=   Yes
-WANTLIB=		c
+
+WANTLIB += c
 
 NO_TEST=	Yes
 

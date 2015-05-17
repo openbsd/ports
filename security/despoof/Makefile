@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2015/05/17 11:42:18 sthen Exp $
 
 COMMENT=	command-line anti-spoofing detection utility
 
 DISTNAME=	despoof-0.9
-REVISION =	2
+REVISION=	3
 
 CATEGORIES=	security
 MASTER_SITES=	http://www.bindview.com/Resources/RAZOR/Files/ \
@@ -12,9 +12,8 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.bindview.com/Services/RAZOR/Utilities/Unix_Linux/despoof_readme.cfm
 
-MAINTAINER=	Brian Caswell <bmc@openbsd.org>
-
 PERMIT_PACKAGE_CDROM=	Yes
+
 WANTLIB=		c pcap lib/libnet-1.0/net=0
 
 LIB_DEPENDS=	net/libnet/1.0
