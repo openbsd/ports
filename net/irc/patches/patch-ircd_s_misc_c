@@ -1,0 +1,17 @@
+$OpenBSD: patch-ircd_s_misc_c,v 1.1 2015/05/17 11:20:50 sthen Exp $
+--- ircd/s_misc.c.orig	Tue Jun  6 23:34:58 2000
++++ ircd/s_misc.c	Sun May 17 12:17:57 2015
+@@ -385,10 +385,10 @@ char	*comment;	/* Reason for the exit */
+ 			on_for = timeofday - sptr->firsttime + 1;
+ # if defined(USE_SYSLOG) && defined(SYSLOG_USERS)
+ 			syslog(LOG_NOTICE,
+-			       "%s (%3d:%02d:%02d): %s@%s [%s] %c\n",
++			       "%s (%3lld:%02lld:%02lld): %s@%s [%s] %c\n",
+ 			       myctime(sptr->firsttime),
+-			       on_for / 3600, (on_for % 3600)/60,
+-			       on_for % 60,
++			       (long long)on_for / 3600, ((long long)on_for % 3600)/60,
++			       (long long)on_for % 60,
+ 			       sptr->user->username, sptr->user->host,
+ 			       sptr->auth, sptr->exitc);
+ # endif
