@@ -1,0 +1,36 @@
+$OpenBSD: README,v 1.1 2015/05/17 09:43:22 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+File Descriptors
+================
+By default, the _elasticsearch user, and so the elasticsearch
+server run in the login(1) class of "daemon".
+You can query the number of maximum allowed open file descriptors
+by running:
+
+	$ ftp -o - "http://localhost:9200/_nodes/process?pretty"
+
+and searching for the "max_file_descriptors" value.
+
+Elasticsearch documentation suggests increasing file descriptor
+limits to 32k or even 64k. You can adjust this limit appropriately
+by configuring own login(1) class for _elasticsearch user.
+
+For example, add this to the login.conf(5) file:
+	elasticsearch:\
+		:openfiles=4096:\
+		:tc=daemon:
+
+Rebuild the login.conf.db file if necessary:
+
+	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
+
+If you are still getting errors about too many open files, you may
+need to adjust the kern.maxfiles value so you can further increase
+the open files limit in login.conf(5):
+
+	# sysctl -w kern.maxfiles=32768
+	# echo "kern.maxfiles=32768" >> /etc/sysctl.conf
