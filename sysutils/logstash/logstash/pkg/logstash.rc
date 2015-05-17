@@ -1,7 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: logstash.rc,v 1.2 2014/12/19 14:06:32 jasper Exp $
+# $OpenBSD: logstash.rc,v 1.3 2015/05/17 10:28:36 jasper Exp $
 
+daemon_user="_logstash"
 daemon="${TRUEPREFIX}/logstash/bin/logstash"
 daemon_flags="--config ${SYSCONFDIR}/logstash/conf.d/ --log /var/log/logstash/logstash.log"
 
@@ -11,8 +12,16 @@ pexp="$(${LOCALBASE}/bin/javaPathHelper -c logstash).*logstash/runner.rb agent $
 
 rc_reload=NO
 
+# Ensure _logstash can write to the logfile.
+# XXX: Remove on upgrade.
+rc_pre() {
+	chown _logstash:_logstash /var/log/logstash/*.log
+}
+
 rc_start() {
 	(${rcexec} "JAVA_HOME=\"$(${LOCALBASE}/bin/javaPathHelper -h logstash)\" \
+		JAVA_OPTS=\"${JAVA_OPTS} -Djava.library.path=${LOCALBASE}/jruby/lib/jni/x86_64-OpenBSD\" \
+		SINCEDB_DIR=\"/var/db/logstash\" \
 	   	     ${daemon} ${daemon_flags}") &
 }
 

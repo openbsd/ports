@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/15 07:34:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/05/17 10:28:35 jasper Exp $
 
 COMMENT=		tool for managing events and logs
 
 V=			1.5.0
-EPOCH=			0
+REVISION=		0
 DISTNAME=		logstash-$V
 PKGNAME=		logstash-${V:S/-/./}
+EPOCH=			0
 
 # tarball is a result of 'rake artifact:tar'
 MASTER_SITES=		http://distfiles.nl/
@@ -23,6 +24,9 @@ NO_TEST=		Yes
 
 LS_BASE=		${PREFIX}/logstash/
 
+JFFI_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-OpenBSD
+SUBST_VARS=		JFFI_ARCH
+
 # with NO_BUILD defined JAVA_HOME won't get set, so this is as close as we'll
 # get to "building". Wipe the jruby vendor directory as we'll later link to
 # the system jruby.
@@ -38,7 +42,6 @@ do-install:
 .for b in logstash logstash.lib.sh plugin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/$b ${LS_BASE}/bin/
 .endfor
-	-rm ${WRKSRC}/vendor/bundle/jruby/1.9/gems/filewatch-0.6.1/lib/filewatch/*.orig
 	cd ${WRKSRC} && cp -R lib vendor ${LS_BASE}
 	cd ${LS_BASE}/vendor/ && ln -sf ${LOCALBASE}/jruby
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/logstash/

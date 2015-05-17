@@ -1,5 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/05/15 07:34:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/05/17 10:28:36 jasper Exp $
+@newgroup _logstash:752
+@newuser _logstash:752:_logstash:daemon:Logstash Account:/nonexistent:/sbin/nologin
+@extraunexec rm -rf /var/db/logstash/*
+@extraunexec rm -rf /var/log/logstash/*
 logstash/
+@group _logstash
+@mode 0775
+@sample logstash/.bundle/
+@mode
+@group
 logstash/Gemfile
 logstash/Gemfile.jruby-1.9.lock
 logstash/bin/
@@ -12992,5 +13001,12 @@ share/examples/logstash/
 @sample ${SYSCONFDIR}/logstash/conf.d/
 share/examples/logstash/logstash.conf
 @sample ${SYSCONFDIR}/logstash/conf.d/logstash.conf
-@sample /var/log/logstash/
 @rcscript ${RCDIR}/logstash
+@mode 755
+@owner _logstash
+@group _logstash
+@sample /var/log/logstash/
+@sample /var/db/logstash/
+@group
+@owner
+@mode
