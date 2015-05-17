@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2015/05/07 09:39:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2015/05/17 09:12:19 ajacoutot Exp $
 
 COMMENT=		GTK C code documentation system
 
-GNOME_VERSION=		1.22
+GNOME_VERSION=		1.23
 GNOME_PROJECT=		gtk-doc
 
 CATEGORIES= 	   	textproc devel
@@ -12,11 +12,11 @@ HOMEPAGE=		http://www.gtk.org/gtk-doc/
 # GPLv3 - GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=		x11/gnome \
-			lang/python
+MODULES=		lang/python \
+			x11/gnome
 
-MODPY_RUNDEP=		No
 MODGNOME_TOOLS=		docbook yelp
+MODPY_RUNDEP=		No
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-highlight=source-highlight
