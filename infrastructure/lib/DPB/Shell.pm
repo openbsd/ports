@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.13 2015/05/16 18:14:04 espie Exp $
+# $OpenBSD: Shell.pm,v 1.14 2015/05/17 08:29:31 espie Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -221,10 +221,9 @@ sub exec
 			$ENV{$k} = $v;
 		}
 	}
-	if ($self->{dir}) {
-		CORE::chdir($self->{dir}) or 
-		    DPB::Util->die_bang("Can't chdir to $self->{dir}");
-	}
+	$self->{dir} //= '/';
+	CORE::chdir($self->{dir}) or 
+	    DPB::Util->die_bang("Can't chdir to $self->{dir}");
 
 	if (defined $self->prop->{umask}) {
 		umask(oct($self->prop->{umask}));
