@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_zrtp_module_mk,v 1.1 2015/05/17 21:19:23 czarkoff Exp $
+--- modules/zrtp/module.mk.orig	Sat May 16 19:32:37 2015
++++ modules/zrtp/module.mk	Sat May 16 19:32:47 2015
+@@ -6,7 +6,7 @@
+ 
+ MOD		:= zrtp
+ $(MOD)_SRCS	+= zrtp.c
+-$(MOD)_LFLAGS	+= -lzrtp -lbn
++$(MOD)_LFLAGS	+= -lzrtp
+ CFLAGS          += -I/usr/local/include/libzrtp
+ 
+ include mk/mod.mk

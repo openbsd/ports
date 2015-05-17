@@ -1,15 +1,14 @@
-$OpenBSD: patch-mk_mod_mk,v 1.2 2014/12/29 20:40:27 jca Exp $
+$OpenBSD: patch-mk_mod_mk,v 1.3 2015/05/17 21:19:23 czarkoff Exp $
 --- mk/mod.mk.orig	Wed Dec 24 14:19:04 2014
-+++ mk/mod.mk	Fri Dec 26 22:51:37 2014
++++ mk/mod.mk	Sat May 16 19:32:01 2015
 @@ -26,33 +26,28 @@ ifeq ($(STATIC),)
  #
  
  $(MOD)$(MOD_SUFFIX): $($(MOD)_OBJS)
 -	@echo "  LD [M]  $@"
 -	@$(LD) $(LFLAGS) $(SH_LFLAGS) $(MOD_LFLAGS) $($(basename $@)_OBJS) \
--		$($(basename $@)_LFLAGS) -L$(LIBRE_SO) -lre -o $@
 +	$(LD) $(LFLAGS) $(SH_LFLAGS) $(MOD_LFLAGS) $($(basename $@)_OBJS) \
-+		$($(basename $@)_LFLAGS) -L$(LIBRE_SO) -lre -o $@
+ 		$($(basename $@)_LFLAGS) -L$(LIBRE_SO) -lre -o $@
  
  $(BUILD)/modules/$(MOD)/%.o: modules/$(MOD)/%.c $(BUILD) Makefile mk/mod.mk \
  				modules/$(MOD)/module.mk mk/modules.mk

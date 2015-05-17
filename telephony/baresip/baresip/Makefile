@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/29 20:40:27 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/17 21:19:23 czarkoff Exp $
 
 COMMENT =	modular SIP User-Agent with audio and video support
 
 DISTNAME =	baresip-0.4.12
+REVISION =	0
 
 WANTLIB +=	X11 Xext avcodec avdevice avformat avutil c crypto gsm
 WANTLIB +=	m opus pthread re rem sndfile sndio spandsp speex
