@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2014/10/11 19:54:48 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2015/05/17 09:05:14 jasper Exp $
 
 COMMENT=		simple, blog aware, static site generator
 
 DISTNAME=		jekyll-1.1.0
-REVISION =		2
+REVISION =		3
 CATEGORIES=		www
 
 HOMEPAGE=		http://jekyllrb.com/
