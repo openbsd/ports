@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/12/28 15:21:50 robert Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/05/17 14:09:51 robert Exp $
 @pkgpath misc/mc,no_x11
 @bin bin/mc
 bin/mcdiff
@@ -343,6 +343,7 @@ share/mc/syntax/po.syntax
 share/mc/syntax/povray.syntax
 share/mc/syntax/procmail.syntax
 share/mc/syntax/properties.syntax
+share/mc/syntax/puppet.syntax
 share/mc/syntax/python.syntax
 share/mc/syntax/ruby.syntax
 share/mc/syntax/sh.syntax
