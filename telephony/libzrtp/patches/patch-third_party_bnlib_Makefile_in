@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_bnlib_Makefile_in,v 1.1.1.1 2014/09/10 08:30:31 sthen Exp $
---- third_party/bnlib/Makefile.in.orig	Thu Aug 28 00:48:42 2014
-+++ third_party/bnlib/Makefile.in	Thu Aug 28 00:51:24 2014
-@@ -41,12 +41,10 @@ all: $(BNLIB) bntest32.c bntest64.c
+$OpenBSD: patch-third_party_bnlib_Makefile_in,v 1.2 2015/05/17 21:16:54 czarkoff Exp $
+--- third_party/bnlib/Makefile.in.orig	Sun Mar 17 19:35:45 2013
++++ third_party/bnlib/Makefile.in	Sat May 16 22:24:15 2015
+@@ -41,12 +41,9 @@ all: $(BNLIB) bntest32.c bntest64.c
  
  # for libzrtp support
  install: all
@@ -11,10 +11,18 @@ $OpenBSD: patch-third_party_bnlib_Makefile_in,v 1.1.1.1 2014/09/10 08:30:31 sthe
 -	chmod 644 /usr/local/lib/libbn.a
 -	chown 0:0 /usr/local/lib/libbn.a
 -	$(RANLIB) '/usr/local/lib/libbn.a'
-+	${BSD_INSTALL_DATA_DIR} ${PREFIX}/include/libzrtp ${PREFIX}/lib
++	${BSD_INSTALL_DATA_DIR} ${PREFIX}/include/libzrtp
 +	${BSD_INSTALL_DATA} *.h ${PREFIX}/include/libzrtp
-+	${BSD_INSTALL_DATA} libbn.a ${PREFIX}/lib
-+	$(RANLIB) ${PREFIX}/lib/libbn.a
++	${RANLIB} libbn.a
  
  # for libzrtp support
  #check: bntest
+@@ -60,7 +57,7 @@ germtest: germtest.o $(BNLIB)
+ 	$(LD) $(LDFLAGS) -o $@ germtest.o $(BNLIB) $(LIBS)
+ 
+ $(BNLIB): $(OBJS)
+-	$(AR) r $@ $?
++	$(AR) $(ARFLAGS) $@ $?
+ 	$(RANLIB) $@
+ 
+ # Here we get tricky... if we're compiling with GCC, then GCCMAGIC1 and

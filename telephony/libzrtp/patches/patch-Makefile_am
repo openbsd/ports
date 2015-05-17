@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2015/05/17 21:16:54 czarkoff Exp $
+--- Makefile.am.orig	Sat May 16 22:27:14 2015
++++ Makefile.am	Sat May 16 22:27:46 2015
+@@ -59,7 +59,7 @@ libzrtp_a_CPPFLAGS = \
+ 			-I$(top_srcdir)/third_party/bnlib
+ 
+ 
+-libzrtp_a_LIBADD = $(top_srcdir)/third_party/bnlib/libbn.a
++libzrtp_a_LIBADD = $(top_srcdir)/third_party/bnlib/*.o
+ 
+ libzrtp_a_SOURCES = $(top_srcdir)/src/zrtp.c \
+ 					$(top_srcdir)/src/zrtp_cache.c \
+@@ -117,7 +117,7 @@ cache_test_CPPFLAGS = 	-I$(top_srcdir)/include \
+ 
+ cache_test_SOURCES = $(top_srcdir)/test/cmockery/cmockery.c \
+ 					 $(top_srcdir)/test/cache_test.c
+-cache_test_LDADD   = libzrtp.a  $(top_srcdir)/third_party/bnlib/libbn.a -lpthread
++cache_test_LDADD   = libzrtp.a -lpthread
+ 
+ SUBDIRS =  third_party/bnlib
+ 
