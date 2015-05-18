@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_feh_pre,v 1.26 2015/04/23 05:54:04 dcoppa Exp $
---- man/feh.pre.orig	Wed Apr  8 11:21:11 2015
-+++ man/feh.pre	Thu Apr 23 07:46:02 2015
-@@ -956,7 +956,7 @@ which
+$OpenBSD: patch-man_feh_pre,v 1.27 2015/05/18 08:12:20 dcoppa Exp $
+--- man/feh.pre.orig	Sun May 17 20:41:45 2015
++++ man/feh.pre	Mon May 18 10:08:34 2015
+@@ -974,7 +974,7 @@ which
  defaults to
  .Pa ~/.config/feh/ .
  If the files are not found in that directory, it will also try
@@ -10,7 +10,7 @@ $OpenBSD: patch-man_feh_pre,v 1.26 2015/04/23 05:54:04 dcoppa Exp $
  .Pp
  All config files treat lines starting with a
  .Qq #
-@@ -1515,7 +1515,7 @@ order it finds them on the hard disk, which is usually
+@@ -1541,7 +1541,7 @@ order it finds them on the hard disk, which is usually
  .
  Show 128x128 pixel thumbnails, limit window width to 1024 pixels.
  .
