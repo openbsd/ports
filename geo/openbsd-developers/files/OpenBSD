@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.120 2015/03/16 09:52:14 czarkoff Exp $
+# $OpenBSD: OpenBSD,v 1.121 2015/05/18 21:33:06 vgross Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -93,6 +93,7 @@
 48.8571		2.44		"chl"		# Charles Longeau
 48.864185	2.355328	"ajacoutot"	# Antoine Jacoutot
 48.87		2.33		"espie"		# Marc Espie
+48.9947		2.3796		"vgross"	# Vincent Gross
 49.0120		8.4165		"schwarze"	# Ingo Schwarze
 49.033		2.0666		"benoit"	# Benoit Lecocq
 49.0816		-0.2885		"eric"		# Eric Faurot
