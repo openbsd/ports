@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/11 20:31:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2015/05/18 11:29:37 jasper Exp $
 
 COMMENT=	extract various archive file formats
 
@@ -52,7 +52,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/deco
 	${INSTALL_PROGRAM} ${DECO}/deco ${PREFIX}/bin
 .for i in CREDITS LICENSE Makefile NEWS README config.mk
-	rm -f ${ARCHIVE}/${i}
+	rm ${ARCHIVE}/${i}
 .endfor
 	cd ${ARCHIVE} && cp -R * ${PREFIX}/share/deco
 

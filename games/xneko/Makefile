@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/08/30 21:54:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2015/05/18 11:29:37 jasper Exp $
 
 COMMENT=	classic BSD4.4 cat-and-mouse
 
@@ -16,6 +16,6 @@ FAKE_FLAGS=	MANDIR="${PREFIX}/man/man" BINDIR="${PREFIX}/bin" \
 		BINOWN=${BINOWN} BINMODE=${BINMODE}
 
 post-extract:
-	@rm -f ${WRKSRC}/obj
+	rm ${WRKSRC}/obj
 
 .include <bsd.port.mk>

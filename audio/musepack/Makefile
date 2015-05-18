@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/06/23 14:30:51 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/18 11:29:37 jasper Exp $
 
 COMMENT =		decoder, encoder and replaygain for musepack files
 
@@ -29,6 +29,6 @@ NO_TEST =		Yes
 post-extract:
 	cp ${WRKDIR}/libreplaygain_r${V}/include/replaygain/gain_analysis.h ${WRKSRC}/mpcgain/
 	cp ${WRKDIR}/libreplaygain_r${V}/src/gain_analysis.c ${WRKSRC}/mpcgain/
-	rm -rf ${WRKSRC}/include/mpc/.svn
+	rm -r ${WRKSRC}/include/mpc/.svn
 
 .include <bsd.port.mk>

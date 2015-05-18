@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/04 13:18:05 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/18 11:29:38 jasper Exp $
 
 COMMENT =		minimal, flat style icon theme
 
@@ -23,8 +23,8 @@ ICONSDIR =		${PREFIX}/share/icons/
 do-install:
 	${INSTALL_DATA_DIR} ${ICONSDIR}
 	# Fix broken symlinks
-	rm -f ${WRKDIST}/Moka/*/apps/{Blender,blender,FBReader,TeXworks,Uberwriter,uberwriter,texworks,fbreader}.png
-	rm -f ${WRKDIST}/Moka/8x8/emblems/emblem-{danger,insync-des-error}.png
+	rm ${WRKDIST}/Moka/*/apps/{Blender,blender,FBReader,TeXworks,Uberwriter,uberwriter,texworks,fbreader}.png
+	rm ${WRKDIST}/Moka/8x8/emblems/emblem-{danger,insync-des-error}.png
 	cd ${WRKDIST} ; pax -L -rw Moka ${ICONSDIR}
 
 .include <bsd.port.mk>

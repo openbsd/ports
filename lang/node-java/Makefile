@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/02/03 15:51:10 abieber Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/18 11:29:38 jasper Exp $
 
 COMMENT =	bridge API connect to Java for Node.js
 
@@ -27,6 +27,6 @@ NO_TEST =	Yes
 
 pre-configure:
 	@perl -pi -e 's,<!\(echo \$$JAVA_HOME\),${JAVA_HOME},' ${WRKSRC}/binding.gyp
-	@rm -rf ${WRKSRC}/projectFilesBackup*
+	rm -r ${WRKSRC}/projectFilesBackup*
 
 .include <bsd.port.mk>

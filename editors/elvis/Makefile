@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:02:49 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2015/05/18 11:29:37 jasper Exp $
 
 COMMENT=	clone of the ex/vi text editor
 
@@ -38,7 +38,7 @@ WANTLIB+=	X11 Xft Xpm pthread-stubs xcb
 NO_TEST=	Yes
 
 do-install:
-	@rm -f ${WRKSRC}/{doc,data}/*.orig
+	rm ${WRKSRC}/{doc,data}/*.orig
 	${INSTALL_DATA_DIR} ${PREFIX}/share/elvis
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/elvis
 .for prog in elvfmt elvis ref

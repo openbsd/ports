@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/04/04 09:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2015/05/18 11:29:37 jasper Exp $
 
 COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-20110918
@@ -53,7 +53,6 @@ pre-configure:
 		${WRKSRC}/icon-theme-installer
 
 post-install:
-	rm -rf ${PREFIX}/share/${DISTNAME}
 	${INSTALL_MAN} ${WRKSRC}/doc/pcb.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/doc/pcb.info* ${PREFIX}/info
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pcb

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2015/05/02 20:06:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2015/05/18 11:29:38 jasper Exp $
 
 COMMENT=	toolkit for converting images between different formats
 
@@ -42,7 +42,7 @@ MAKE_FLAGS+=	NETPBMLIBTYPE=unixshared
 .endif
 
 pre-patch:
-	@rm -f ${WRKSRC}/converter/other/jpeg2000/libjasper/include/jasper/jas_types.h.orig
+	rm ${WRKSRC}/converter/other/jpeg2000/libjasper/include/jasper/jas_types.h.orig
 
 pre-build:
 	perl -i -p \

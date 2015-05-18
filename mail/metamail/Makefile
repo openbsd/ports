@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/11/30 15:13:06 jca Exp $
+# $OpenBSD: Makefile,v 1.30 2015/05/18 11:29:38 jasper Exp $
 
 COMMENT=	MIME implementation
 
@@ -24,6 +24,6 @@ post-configure:
 	@${SUBST_CMD} ${WRKSRC}/config.h
 
 pre-install:
-	@cd ${WRKSRC}/bin && rm -f *.orig
+	rm ${WRKSRC}/bin/*.orig
 
 .include <bsd.port.mk>

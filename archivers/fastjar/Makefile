@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/10 22:28:04 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2015/05/18 11:29:37 jasper Exp $
 
 COMMENT =	Sun JDK's jar command written entirely in C
 
@@ -22,6 +22,6 @@ CONFIGURE_STYLE =	gnu
 NO_TEST =		Yes
 
 post-extract:
-	@rm -f ${WRKSRC}/jartool.c.*
+	rm ${WRKSRC}/jartool.c.*
 
 .include <bsd.port.mk>

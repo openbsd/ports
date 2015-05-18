@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2015/02/16 22:57:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2015/05/18 11:29:38 jasper Exp $
 
 COMMENT=		GTK+-2 file manager with desktop features
 
@@ -41,7 +41,7 @@ do-build:
 		with_platform="OpenBSD" ROX-Filer/AppRun --compile
 
 do-install:
-	@rm -f ${WRKSRC}/ROX-Filer/src/*.orig
+	rm ${WRKSRC}/ROX-Filer/src/*.orig
 	${INSTALL_DATA_DIR} ${PREFIX}/rox/ROX-Filer
 	${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1/ROX-Filer.1

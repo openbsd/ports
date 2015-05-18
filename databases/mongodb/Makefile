@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/12/10 19:59:29 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.18 2015/05/18 11:29:37 jasper Exp $
 
 PORTROACH =	limitw:1,even
 
@@ -44,9 +44,6 @@ LIB_DEPENDS =	devel/boost \
 		devel/pcre \
 		devel/yaml-cpp \
 		lang/libv8
-
-pre-configure:
-	rm -f ${WRKSRC}/third_party/{pcre,sm}.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mongodb

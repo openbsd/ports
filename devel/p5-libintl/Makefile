@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/05/18 11:29:37 jasper Exp $
 
 COMMENT=	internationalization library written in Perl
 
@@ -13,7 +13,7 @@ CPAN_AUTHOR=	GUIDO
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-post-install:
-	rm -f ${PREFIX}/${P5SITE}/Locale/*.orig
+pre-configure:
+	rm ${WRKSRC}/lib/Locale/*.orig
 
 .include <bsd.port.mk>

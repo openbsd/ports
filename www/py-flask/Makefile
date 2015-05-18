@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/04/02 14:21:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2015/05/18 11:29:38 jasper Exp $
 
 COMMENT = 	microframework based on Werkzeug and Jinja 2
 
@@ -40,6 +40,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}flask
 	cd ${WRKSRC}/examples && pax -rw * \
 	    ${PREFIX}/share/examples/${MODPY_PY_PREFIX}flask
-	rm -f ${PREFIX}/share/examples/${MODPY_PY_PREFIX}flask/persona/{static/,}.DS_Store
+	rm ${PREFIX}/share/examples/${MODPY_PY_PREFIX}flask/persona/{static/,}.DS_Store
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/03/15 08:34:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2015/05/18 11:29:37 jasper Exp $
 
 COMMENT=		internationalized string handling
 
@@ -29,6 +29,6 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build-aux
 
 post-extract:
-	rm -f ${WRKSRC}/contrib/doxygen/*.orig
+	rm ${WRKSRC}/contrib/doxygen/*.orig
 
 .include <bsd.port.mk>

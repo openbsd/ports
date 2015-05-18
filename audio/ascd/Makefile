@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/01/24 11:07:56 schwarze Exp $
+# $OpenBSD: Makefile,v 1.29 2015/05/18 11:29:37 jasper Exp $
 
 COMMENT=		cd player for Afterstep or Window Maker
 DISTNAME=		ascd-0.13.2
@@ -20,7 +20,7 @@ NO_TEST=		Yes
 CONFIGURE_STYLE=	imake
 
 post-extract:
-	@rm -rf ${WRKSRC}/workman
+	rm -r ${WRKSRC}/workman
 
 pre-configure:
 	@sed -e "s:%%PREFIX%%:${PREFIX}:g" \
