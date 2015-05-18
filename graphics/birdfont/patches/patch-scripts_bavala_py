@@ -1,16 +1,16 @@
-$OpenBSD: patch-scripts_bavala_py,v 1.4 2014/11/08 15:52:03 bcallah Exp $
---- scripts/bavala.py.orig	Tue Oct 28 09:05:37 2014
-+++ scripts/bavala.py	Sat Nov  1 17:15:33 2014
-@@ -82,7 +82,7 @@ class Vala(object):
-         if library:
+$OpenBSD: patch-scripts_bavala_py,v 1.5 2015/05/18 23:58:26 bcallah Exp $
+--- scripts/bavala.py.orig	Mon May 18 18:26:35 2015
++++ scripts/bavala.py	Mon May 18 18:27:29 2015
+@@ -84,7 +84,7 @@ class Vala(object):
              self.header = join(build, library) + '.h'
-             self.vapi = join(build, library) + '.vapi'
+             self.vapi = join(build, library) + '.vapi' # generated vapi file
+             self.other_vapi_files = get_sources_path (src, '*.vapi') # other vapi files
 -            self.so = join(build, src) + '.so.' + so_version
 +            self.so = join(build, src) + '.so.' + '${LIBbirdfont_VERSION}'
              self.so_link = join(build, src) + '.so'
              self.so_link_name = src + '.so'
              self.so_version = so_version
-@@ -192,7 +192,7 @@ class Vala(object):
+@@ -208,7 +208,7 @@ class Vala(object):
      def gen_ln(self):
          """generate a symbolic link to the generated ".so" file"""
          so_file = self.so.rsplit('/')[-1]

@@ -1,10 +1,10 @@
-$OpenBSD: patch-dodo_py,v 1.9 2015/03/20 04:26:56 bcallah Exp $
+$OpenBSD: patch-dodo_py,v 1.10 2015/05/18 23:58:26 bcallah Exp $
 
 glib-2.0.vapi:967.53-967.68: error: Access to instance member `length' from nullable reference denied
 
---- dodo.py.orig	Sat Mar 14 17:09:16 2015
-+++ dodo.py	Sat Mar 14 17:10:23 2015
-@@ -89,13 +89,12 @@ def task_pkg_flags():
+--- dodo.py.orig	Sat May 16 04:11:39 2015
++++ dodo.py	Mon May 18 18:34:06 2015
+@@ -94,13 +94,12 @@ def task_pkg_flags():
  
  valac_options = [
  	'--thread',
@@ -19,12 +19,21 @@ glib-2.0.vapi:967.53-967.68: error: Access to instance member `length' from null
  def task_libbirdxml():
  
      if config.POSIXVALA == True:
-@@ -108,7 +107,7 @@ def task_libbirdxml():
+@@ -113,7 +112,7 @@ def task_libbirdxml():
      yield libbirdxml.gen_ln()
      
  
--libbird = Vala(src='libbirdfont', build='build', library='birdfont', so_version=version.SO_VERSION, pkg_libs=LIBS, vala_deps=[libbirdxml])
-+libbird = Vala(src='libbirdfont', build='build', library='birdfont', so_version='${LIBbirdfont_VERSION}', pkg_libs=LIBS, vala_deps=[libbirdxml])
+-libbirdgems = Vala(src='libbirdgems', build='build', library='birdgems', so_version=version.LIBBIRDGEMS_SO_VERSION, pkg_libs=LIBBIRD_LIBS, vala_deps=[])
++libbirdgems = Vala(src='libbirdgems', build='build', library='birdgems', so_version='${LIBbirdgems_VERSION}', pkg_libs=LIBBIRD_LIBS, vala_deps=[])
+ def task_libbirdgems():
+     yield libbirdgems.gen_c(valac_options)
+     yield libbirdgems.gen_o(['-fPIC'])
+@@ -121,7 +120,7 @@ def task_libbirdgems():
+     yield libbirdgems.gen_ln()
+ 
+ 
+-libbird = Vala(src='libbirdfont', build='build', library='birdfont', so_version=version.SO_VERSION, pkg_libs=LIBS, vala_deps=[libbirdgems, libbirdxml])
++libbird = Vala(src='libbirdfont', build='build', library='birdfont', so_version='${LIBbirdfont_VERSION}', pkg_libs=LIBS, vala_deps=[libbirdgems, libbirdxml])
  def task_libbirdfont():
      yield libbird.gen_c(valac_options)
      yield libbird.gen_o(['-fPIC -I./build/', """-D 'GETTEXT_PACKAGE="birdfont"'"""])

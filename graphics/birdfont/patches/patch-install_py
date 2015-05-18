@@ -1,7 +1,7 @@
-$OpenBSD: patch-install_py,v 1.7 2015/03/22 15:25:35 bcallah Exp $
---- install.py.orig	Sat Mar 21 13:38:22 2015
-+++ install.py	Sun Mar 22 11:11:53 2015
-@@ -126,10 +126,8 @@ if os.path.isfile ('build/bin/libbirdfont.so.' + versi
+$OpenBSD: patch-install_py,v 1.8 2015/05/18 23:58:26 bcallah Exp $
+--- install.py.orig	Sat May 16 04:11:39 2015
++++ install.py	Mon May 18 18:31:01 2015
+@@ -142,10 +142,8 @@ if os.path.isfile ('build/bin/libbirdfont.so.' + versi
  	install ('build/bin/libbirdfont.so.' + version.SO_VERSION, libdir, 644)
  	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so.' + version.SO_VERSION_MAJOR)
  	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so')
@@ -14,7 +14,7 @@ $OpenBSD: patch-install_py,v 1.7 2015/03/22 15:25:35 bcallah Exp $
  elif os.path.isfile ('build/bin/libbirdfont.' + version.SO_VERSION + '.dylib'):
  	install ('build/bin/libbirdfont.' + version.SO_VERSION + '.dylib', libdir, 644)
  	link (libdir, 'libbirdfont.' + version.SO_VERSION + '.dylib', ' libbirdfont.dylib.' + version.SO_VERSION_MAJOR)
-@@ -142,10 +140,8 @@ if os.path.isfile ('build/bin/libbirdxml.so.' + versio
+@@ -158,10 +156,8 @@ if os.path.isfile ('build/bin/libbirdxml.so.' + versio
          install ('build/bin/libbirdxml.so.' + version.LIBBIRDXML_SO_VERSION, libdir, 644)
          link (libdir, 'libbirdxml.so.' + version.LIBBIRDXML_SO_VERSION, ' libbirdxml.so.' + version.LIBBIRDXML_SO_VERSION_MAJOR)
          link (libdir, 'libbirdxml.so.' + version.LIBBIRDXML_SO_VERSION, ' libbirdxml.so')
@@ -27,3 +27,16 @@ $OpenBSD: patch-install_py,v 1.7 2015/03/22 15:25:35 bcallah Exp $
  elif os.path.isfile ('build/bin/libbirdxml.' + version.LIBBIRDXML_SO_VERSION + '.dylib'):
          install ('build/bin/libbirdxml.' + version.LIBBIRDXML_SO_VERSION + '.dylib', libdir, 644)
          link (libdir, 'libbirdxml.' + version.LIBBIRDXML_SO_VERSION + '.dylib', ' libbirdxml.dylib.' + version.LIBBIRDXML_SO_VERSION_MAJOR)
+@@ -175,10 +171,8 @@ if os.path.isfile ('build/bin/libbirdgems.so.' + versi
+         install ('build/bin/libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION, libdir, 644)
+         link (libdir, 'libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION, ' libbirdgems.so.' + version.LIBBIRDXML_SO_VERSION_MAJOR)
+         link (libdir, 'libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION, ' libbirdgems.so')
+-elif os.path.isfile ('build/libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION):
+-        install ('build/libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION, libdir, 644)
+-        link (libdir, 'libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION, ' libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION_MAJOR)
+-        link (libdir, 'libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION, ' libbirdgems.so')
++elif os.path.isfile ('build/libbirdgems.so.' + '${LIBbirdgems_VERSION}'):
++        install ('build/libbirdgems.so.' + '${LIBbirdgems_VERSION}', '/lib', 644)
+ elif os.path.isfile ('build/bin/libbirdgems.' + version.LIBBIRDGEMS_SO_VERSION + '.dylib'):
+         install ('build/bin/libbirdgems.' + version.LIBBIRDGEMS_SO_VERSION + '.dylib', libdir, 644)
+         link (libdir, 'libbirdgems.' + version.LIBBIRDGEMS_SO_VERSION + '.dylib', ' libbirdgems.dylib.' + version.LIBBIRDGEMS_SO_VERSION_MAJOR)
