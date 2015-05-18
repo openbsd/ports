@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2015/05/17 09:05:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2015/05/18 14:50:11 ajacoutot Exp $
+
+BROKEN=			needs jekyll = 1.1.0
 
 COMMENT=		simple, blog aware, static site generator
 
