@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2015/05/15 13:43:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2015/05/18 10:44:57 sthen Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
@@ -7,6 +7,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 .if ${ARCH:Mi386}
 # needs 64-bit atomic ops, and all the registers it can get.
 CFLAGS += -march=i586 -fomit-frame-pointer
+CXXFLAGS += -march=i586 -fomit-frame-pointer
 .endif
 
 COMMENT=	virtual lighttable and darkroom for photographers
