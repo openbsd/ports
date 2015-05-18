@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.15 2015/05/16 18:14:04 espie Exp $
+# $OpenBSD: User.pm,v 1.16 2015/05/18 16:35:15 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -231,6 +231,7 @@ sub user
 # since we don't want to keep too many open files, encapsulate
 # filename + file
 package DPB::UserFile;
+
 sub new
 {
 	my ($class, $user, $filename) = @_;
@@ -245,8 +246,14 @@ sub name
 
 sub open
 {
+	my ($self, $mode) = @_;
+	return $self->{user}->open($mode, $self->name);
+}
+
+sub stat
+{
 	my $self = shift;
-	return $self->{user}->open($self->name);
+	return $self->{user}->stat($self->name);
 }
 
 1;

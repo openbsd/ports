@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.6 2013/10/06 13:33:27 espie Exp $
+# $OpenBSD: Clock.pm,v 1.7 2015/05/18 16:35:15 espie Exp $
 #
 # Copyright (c) 2011-2013 Marc Espie <espie@openbsd.org>
 #
@@ -95,9 +95,9 @@ sub stopped_clock
 package DPB::Watch;
 sub new
 {
-	my ($class, $filename, $expected, $offset, $time) = @_;
+	my ($class, $file, $expected, $offset, $time) = @_;
 	my $o = bless {
-		name => $filename,
+		file => $file,
 		expected => $expected,
 		offset => $offset,
 		time => $time,
@@ -111,7 +111,7 @@ sub check_change
 {
 	my ($self, $current) = @_;
 	$self->{time} //= $current;
-	my $sz = (stat $self->{name})[7];
+	my $sz = ($self->{file}->stat)[7];
 	if (defined $sz && defined $self->{offset}) {
 		$sz -= $self->{offset};
 	}

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.161 2015/05/16 17:01:53 espie Exp $
+# $OpenBSD: Port.pm,v 1.162 2015/05/18 16:35:15 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -1028,7 +1028,8 @@ sub set_watch
 			last;
 		}
 	}
-	$self->{watched} = DPB::Watch->new($logger->log_pkgpath($v),
+	$self->{watched} = DPB::Watch->new(
+	    $logger->file($logger->log_pkgpath($v)),
 	    $expected, $self->{offset}, $self->{started});
 }
 
