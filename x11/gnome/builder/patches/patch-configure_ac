@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure_ac,v 1.1 2015/05/18 10:06:45 ajacoutot Exp $
+
+From 0b04fe6d8302179659970850d4e46e39118144ae Mon Sep 17 00:00:00 2001
+From: Christian Hergert <christian@hergert.me>
+Date: Tue, 12 May 2015 10:37:13 -0700
+Subject: build: check for shm_open() instead of forced -lrt
+
+--- configure.ac.orig	Tue May 12 08:27:57 2015
++++ configure.ac	Mon May 18 11:42:14 2015
+@@ -317,6 +317,14 @@ AC_SUBST(OPTIMIZE_LDFLAGS)
+ 
+ 
+ dnl ***********************************************************************
++dnl Check if shm_open Requires a Library
++dnl ***********************************************************************
++AC_CHECK_FUNCS([shm_open], [SHM_LIB=],
++               [AC_CHECK_LIB([rt], [shm_open], [SHM_LIB=-lrt], [SHM_LIB=])])
++AC_SUBST(SHM_LIB)
++
++
++dnl ***********************************************************************
+ dnl Process .in Files
+ dnl ***********************************************************************
+ AC_CONFIG_FILES([

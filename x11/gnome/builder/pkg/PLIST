@@ -1,21 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/05/15 13:54:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/05/18 10:06:45 ajacoutot Exp $
 @bin bin/gnome-builder
-lib/girepository-1.0/Ide-1.0.typelib
-lib/libide-1.0.a
-lib/libide-1.0.la
-lib/libide-1.0.so
+lib/gnome-builder/
+lib/gnome-builder/girepository-1.0/
+lib/gnome-builder/girepository-1.0/Ide-1.0.typelib
+lib/gnome-builder/libide-1.0.a
+lib/gnome-builder/libide-1.0.la
+lib/gnome-builder/libide-1.0.so
 lib/pkgconfig/libide-1.0.pc
 share/appdata/org.gnome.Builder.appdata.xml
 share/applications/org.gnome.Builder.desktop
 share/dbus-1/services/org.gnome.Builder.service
-share/doc/gnome-builder/
-share/doc/gnome-builder/COPYING
-share/doc/gnome-builder/NEWS
-share/doc/gnome-builder/README
 share/gir-1.0/Ide-1.0.gir
 share/glib-2.0/schemas/org.gnome.builder.editor.gschema.xml
 share/glib-2.0/schemas/org.gnome.builder.editor.language.gschema.xml
 share/glib-2.0/schemas/org.gnome.builder.experimental.gschema.xml
+share/glib-2.0/schemas/org.gnome.builder.gschema.xml
 share/glib-2.0/schemas/org.gnome.builder.project-tree.gschema.xml
 share/gtksourceview-3.0/styles/builder-dark.xml
 share/gtksourceview-3.0/styles/builder.xml

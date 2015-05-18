@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/15 13:54:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/05/18 10:06:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		3.16.2
-REVISION=		1
+GNOME_VERSION=		3.16.3
 
 CATEGORIES=		devel
 
@@ -54,5 +53,18 @@ LIB_DEPENDS=		devel/libgit2/libgit2-glib \
 			x11/gtksourceview3
 
 CONFIGURE_ENV=		ac_cv_path_PYTHON3_CONFIG=python${MODPY_VERSION}-config
+
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+
+pre-configure:
+	cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		NOCONFIGURE=1 \
+		./autogen.sh
 
 .include <bsd.port.mk>
