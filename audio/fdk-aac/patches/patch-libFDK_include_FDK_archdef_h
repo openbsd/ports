@@ -1,0 +1,12 @@
+$OpenBSD: patch-libFDK_include_FDK_archdef_h,v 1.1 2015/05/18 09:48:39 czarkoff Exp $
+--- libFDK/include/FDK_archdef.h.orig	Sat May 16 07:30:14 2015
++++ libFDK/include/FDK_archdef.h	Sat May 16 07:30:17 2015
+@@ -205,7 +205,7 @@ amm-info@iis.fraunhofer.de
+ #define POW2COEFF_16BIT
+ #define LDCOEFF_16BIT
+ 
+-#elif defined(__powerpc__)
++#elif defined(__powerpc__) || defined(__sparc64__) || defined(__alpha__)
+ #define ARCH_PREFER_MULT_32x32
+ #define ARCH_PREFER_MULT_32x16
+ #define SINETABLE_16BIT
