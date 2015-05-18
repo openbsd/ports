@@ -1,6 +1,6 @@
-$OpenBSD: patch-texmf-dist_scripts_latexfileversion_latexfileversion,v 1.1 2015/01/10 13:06:29 edd Exp $
+$OpenBSD: patch-texmf-dist_scripts_latexfileversion_latexfileversion,v 1.2 2015/05/18 21:38:04 edd Exp $
 --- texmf-dist/scripts/latexfileversion/latexfileversion.origy	Tue Mar 12 00:01:41 2013
-+++ texmf-dist/scripts/latexfileversion/latexfileversion	Sat Jan  3 14:31:52 2015
++++ texmf-dist/scripts/latexfileversion/latexfileversion	Fri Jan  2 16:39:48 2015
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh

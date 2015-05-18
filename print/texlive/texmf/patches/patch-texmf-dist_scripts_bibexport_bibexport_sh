@@ -1,39 +1,12 @@
-$OpenBSD: patch-texmf-dist_scripts_bibexport_bibexport_sh,v 1.1 2015/01/10 13:06:29 edd Exp $
+$OpenBSD: patch-texmf-dist_scripts_bibexport_bibexport_sh,v 1.2 2015/05/18 21:38:04 edd Exp $
 --- texmf-dist/scripts/bibexport/bibexport.sh.origy	Tue Mar 12 00:01:41 2013
-+++ texmf-dist/scripts/bibexport/bibexport.sh	Sun Jan  4 12:29:41 2015
++++ texmf-dist/scripts/bibexport/bibexport.sh	Fri Jan  2 16:38:02 2015
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  ##
  ## This is file `bibexport.sh',
  ## generated with the docstrip utility.
-@@ -38,7 +38,7 @@
- ##   Grave accent  \`     Left brace    \{     Vertical bar  \|
- ##   Right brace   \}     Tilde         \~}
- ##
--function checkversion()
-+checkversion()
- {
-   kpsewhich expcites.bst > /dev/null ||
-     echo "-----------
-@@ -50,7 +50,7 @@ function checkversion()
- script.
- -----------"
- }
--function usage()
-+usage()
- {
- echo "bibexport: a tool to extract BibTeX entries out of .bib files.
- usage: `basename $0` [-h|v|n|c|a|d|s|t] [-b|e|es|ec|o|r file] file...
-@@ -76,7 +76,7 @@ Advanced options:
-  -d, --debug                create intermediate files but don't run BibTeX";
- exit 0;
- }
--function opttoolate()
-+opttoolate()
- {
- if [ ${TOOLATE} -ne 0 ]; then
-     echo "No option is allowed after the input files";
 @@ -256,7 +256,7 @@ FINALFILE=${OUTPUT};
  if [ ! "${FINALFILE}" ]; then
      FINALFILE="bibexport.bib";

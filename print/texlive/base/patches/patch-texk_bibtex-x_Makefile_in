@@ -1,10 +1,10 @@
-$OpenBSD: patch-texk_bibtex-x_Makefile_in,v 1.1 2014/01/11 18:46:52 edd Exp $
+$OpenBSD: patch-texk_bibtex-x_Makefile_in,v 1.2 2015/05/18 21:37:36 edd Exp $
 
 Missing pthread linkage
 
---- texk/bibtex-x/Makefile.in.origy	Thu Aug 29 17:50:02 2013
-+++ texk/bibtex-x/Makefile.in	Thu Aug 29 17:50:13 2013
-@@ -570,7 +570,7 @@ bibtexu_SOURCES = $(common_sources)
+--- texk/bibtex-x/Makefile.in.origy	Wed Dec 25 15:37:50 2013
++++ texk/bibtex-x/Makefile.in	Sun Sep 14 13:29:20 2014
+@@ -600,7 +600,7 @@ bibtexu_SOURCES = $(common_sources)
  # Force Automake to use CXXLD for linking
  nodist_EXTRA_bibtexu_SOURCES = dummy.cxx
  bibtexu_CPPFLAGS = $(AM_CPPFLAGS) $(ICU_INCLUDES) -DUTF_8

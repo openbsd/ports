@@ -1,0 +1,12 @@
+$OpenBSD: patch-texk_ptexenc_Makefile_in,v 1.1 2015/05/18 21:37:36 edd Exp $
+--- texk/ptexenc/Makefile.in.origy	Sun Sep 14 17:23:19 2014
++++ texk/ptexenc/Makefile.in	Sun Sep 14 17:23:34 2014
+@@ -365,7 +365,7 @@ AM_CPPFLAGS = $(KPATHSEA_INCLUDES)
+ AM_CFLAGS = $(WARNING_CFLAGS)
+ lib_LTLIBRARIES = libptexenc.la
+ libptexenc_la_CPPFLAGS = $(AM_CPPFLAGS) -DMAKE_PTENC_DLL
+-libptexenc_la_LDFLAGS = -bindir @bindir@ -no-undefined -version-info $(PTEXENC_LT_VERSINFO)
++libptexenc_la_LDFLAGS = -no-undefined -version-info $(PTEXENC_LT_VERSINFO)
+ 
+ # Note: jisx0208.h is a copy of ../../libs/gd/gd-2.0.35/jisx0208.h.
+ #

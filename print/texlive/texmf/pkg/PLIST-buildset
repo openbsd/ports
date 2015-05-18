@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-buildset,v 1.3 2014/02/08 17:46:18 edd Exp $
+@comment $OpenBSD: PLIST-buildset,v 1.4 2015/05/18 21:38:09 edd Exp $
 @conflict teTeX_texmf-*
-@conflict texlive_base-<2013
-@conflict texlive_texmf-docs-<2013
-@conflict texlive_texmf-minimal-<2013p0
-@conflict texlive_texmf-full-<2013
-@conflict texlive_texmf-context-<2013
+@conflict texlive_base-<2014
+@conflict texlive_texmf-docs-<2014
+@conflict texlive_texmf-minimal-<2014
+@conflict texlive_texmf-full-<2014
+@conflict texlive_texmf-context-<2014
 @pkgpath print/texlive/texmf-minimal
 @pkgpath print/teTeX/texmf
 share/texmf-dist/
@@ -118,6 +118,8 @@ share/texmf-dist/dvips/tetex/config.pk
 share/texmf-dist/dvips/tetex/config.www
 share/texmf-dist/dvips/times/
 share/texmf-dist/dvips/times/config.utm
+share/texmf-dist/dvips/xcolor/
+share/texmf-dist/dvips/xcolor/xcolor.pro
 share/texmf-dist/dvips/xdvi/
 share/texmf-dist/dvips/xdvi/config.xdvi
 share/texmf-dist/fonts/
@@ -832,6 +834,8 @@ share/texmf-dist/fonts/map/dvips/cm/
 share/texmf-dist/fonts/map/dvips/cm/cmtext-bsr-interpolated.map
 share/texmf-dist/fonts/map/dvips/courier/
 share/texmf-dist/fonts/map/dvips/courier/ucr.map
+share/texmf-dist/fonts/map/dvips/dummy-space/
+share/texmf-dist/fonts/map/dvips/dummy-space/dummy-space.map
 share/texmf-dist/fonts/map/dvips/metapost/
 share/texmf-dist/fonts/map/dvips/metapost/troff-updmap.map
 share/texmf-dist/fonts/map/dvips/metapost/troff.map
@@ -848,7 +852,10 @@ share/texmf-dist/fonts/map/dvips/psnfss/utopia.map
 share/texmf-dist/fonts/map/dvips/stmaryrd/
 share/texmf-dist/fonts/map/dvips/stmaryrd/stmaryrd.map
 share/texmf-dist/fonts/map/dvips/tetex/
+share/texmf-dist/fonts/map/dvips/tetex/Makefile
 share/texmf-dist/fonts/map/dvips/tetex/README
+share/texmf-dist/fonts/map/dvips/tetex/base14flags.ltx
+share/texmf-dist/fonts/map/dvips/tetex/base14flags.tex
 share/texmf-dist/fonts/map/dvips/tetex/dvipdfm35.map
 share/texmf-dist/fonts/map/dvips/tetex/dvips35.map
 share/texmf-dist/fonts/map/dvips/tetex/mathpple.map
@@ -886,7 +893,6 @@ share/texmf-dist/fonts/pk/ljfour/
 share/texmf-dist/fonts/pk/ljfour/public/
 share/texmf-dist/fonts/pk/ljfour/public/cm/
 share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/
-share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/black.pk
 share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmbx10.pk
 share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmex10.pk
 share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmmi10.pk
@@ -901,7 +907,6 @@ share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmsl10.pk
 share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmsy10.pk
 share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmsy7.pk
 share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmti10.pk
-share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/gray.pk
 share/texmf-dist/fonts/source/
 share/texmf-dist/fonts/source/jknappen/
 share/texmf-dist/fonts/source/jknappen/ec/
@@ -1767,6 +1772,37 @@ share/texmf-dist/fonts/source/public/cm/title.mf
 share/texmf-dist/fonts/source/public/cm/tset.mf
 share/texmf-dist/fonts/source/public/cm/tsetsl.mf
 share/texmf-dist/fonts/source/public/cm/white_setup.mf
+share/texmf-dist/fonts/source/public/etex/
+share/texmf-dist/fonts/source/public/etex/xbmc10.mf
+share/texmf-dist/fonts/source/public/knuth-lib/
+share/texmf-dist/fonts/source/public/knuth-lib/grayf.mf
+share/texmf-dist/fonts/source/public/knuth-lib/manfnt.mf
+share/texmf-dist/fonts/source/public/knuth-lib/slant.mf
+share/texmf-dist/fonts/source/public/knuth-local/
+share/texmf-dist/fonts/source/public/knuth-local/black.mf
+share/texmf-dist/fonts/source/public/knuth-local/blackaps.mf
+share/texmf-dist/fonts/source/public/knuth-local/blackimagen.mf
+share/texmf-dist/fonts/source/public/knuth-local/blacklino.mf
+share/texmf-dist/fonts/source/public/knuth-local/blacklj.mf
+share/texmf-dist/fonts/source/public/knuth-local/domino.mf
+share/texmf-dist/fonts/source/public/knuth-local/gray.mf
+share/texmf-dist/fonts/source/public/knuth-local/grayaps.mf
+share/texmf-dist/fonts/source/public/knuth-local/grayimagen.mf
+share/texmf-dist/fonts/source/public/knuth-local/grayimagen3.mf
+share/texmf-dist/fonts/source/public/knuth-local/grayimagenlight.mf
+share/texmf-dist/fonts/source/public/knuth-local/graylj.mf
+share/texmf-dist/fonts/source/public/knuth-local/local.mf
+share/texmf-dist/fonts/source/public/knuth-local/logod10.mf
+share/texmf-dist/fonts/source/public/knuth-local/logosl9.mf
+share/texmf-dist/fonts/source/public/knuth-local/mfman.mf
+share/texmf-dist/fonts/source/public/knuth-local/oneone.mf
+share/texmf-dist/fonts/source/public/knuth-local/random.mf
+share/texmf-dist/fonts/source/public/knuth-local/slantaps4.mf
+share/texmf-dist/fonts/source/public/knuth-local/slantimagen4.mf
+share/texmf-dist/fonts/source/public/knuth-local/slantimagen6.mf
+share/texmf-dist/fonts/source/public/knuth-local/slantlino4.mf
+share/texmf-dist/fonts/source/public/knuth-local/slantlj4.mf
+share/texmf-dist/fonts/source/public/knuth-local/snfont.mf
 share/texmf-dist/fonts/source/public/latex-fonts/
 share/texmf-dist/fonts/source/public/latex-fonts/circle.mf
 share/texmf-dist/fonts/source/public/latex-fonts/icmcsc10.mf
@@ -1803,41 +1839,10 @@ share/texmf-dist/fonts/source/public/mflogo/logo10.mf
 share/texmf-dist/fonts/source/public/mflogo/logo8.mf
 share/texmf-dist/fonts/source/public/mflogo/logo9.mf
 share/texmf-dist/fonts/source/public/mflogo/logobf10.mf
-share/texmf-dist/fonts/source/public/mflogo/logod10.mf
 share/texmf-dist/fonts/source/public/mflogo/logosl10.mf
 share/texmf-dist/fonts/source/public/mflogo/logosl8.mf
-share/texmf-dist/fonts/source/public/mflogo/logosl9.mf
 share/texmf-dist/fonts/source/public/mflogo/nlogo.mf
 share/texmf-dist/fonts/source/public/mflogo/sklogo.mf
-share/texmf-dist/fonts/source/public/misc/
-share/texmf-dist/fonts/source/public/misc/black.mf
-share/texmf-dist/fonts/source/public/misc/blackaps.mf
-share/texmf-dist/fonts/source/public/misc/blackcx.mf
-share/texmf-dist/fonts/source/public/misc/blackimagen.mf
-share/texmf-dist/fonts/source/public/misc/blacklino.mf
-share/texmf-dist/fonts/source/public/misc/blacklj.mf
-share/texmf-dist/fonts/source/public/misc/cmman.mf
-share/texmf-dist/fonts/source/public/misc/gray.mf
-share/texmf-dist/fonts/source/public/misc/grayaps.mf
-share/texmf-dist/fonts/source/public/misc/graycx.mf
-share/texmf-dist/fonts/source/public/misc/grayf.mf
-share/texmf-dist/fonts/source/public/misc/grayimagen.mf
-share/texmf-dist/fonts/source/public/misc/grayimagen3.mf
-share/texmf-dist/fonts/source/public/misc/grayimagenlight.mf
-share/texmf-dist/fonts/source/public/misc/graylj.mf
-share/texmf-dist/fonts/source/public/misc/manfnt.mf
-share/texmf-dist/fonts/source/public/misc/mfman.mf
-share/texmf-dist/fonts/source/public/misc/oneone.mf
-share/texmf-dist/fonts/source/public/misc/random.mf
-share/texmf-dist/fonts/source/public/misc/slant.mf
-share/texmf-dist/fonts/source/public/misc/slantaps4.mf
-share/texmf-dist/fonts/source/public/misc/slantcx4.mf
-share/texmf-dist/fonts/source/public/misc/slantcx6.mf
-share/texmf-dist/fonts/source/public/misc/slantimagen4.mf
-share/texmf-dist/fonts/source/public/misc/slantimagen6.mf
-share/texmf-dist/fonts/source/public/misc/slantlino4.mf
-share/texmf-dist/fonts/source/public/misc/slantlj4.mf
-share/texmf-dist/fonts/source/public/misc/slantlj6.mf
 share/texmf-dist/fonts/source/public/stmaryrd/
 share/texmf-dist/fonts/source/public/stmaryrd/stmary10.mf
 share/texmf-dist/fonts/source/public/stmaryrd/stmary5.mf
@@ -2825,6 +2830,14 @@ share/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
 share/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm
 share/texmf-dist/fonts/tfm/public/cm/cmu10.tfm
 share/texmf-dist/fonts/tfm/public/cm/cmvtt10.tfm
+share/texmf-dist/fonts/tfm/public/etex/
+share/texmf-dist/fonts/tfm/public/etex/xbmc10.tfm
+share/texmf-dist/fonts/tfm/public/knuth-lib/
+share/texmf-dist/fonts/tfm/public/knuth-lib/manfnt.tfm
+share/texmf-dist/fonts/tfm/public/knuth-local/
+share/texmf-dist/fonts/tfm/public/knuth-local/domino.tfm
+share/texmf-dist/fonts/tfm/public/knuth-local/random.tfm
+share/texmf-dist/fonts/tfm/public/knuth-local/snfont.tfm
 share/texmf-dist/fonts/tfm/public/latex-fonts/
 share/texmf-dist/fonts/tfm/public/latex-fonts/icmcsc10.tfm
 share/texmf-dist/fonts/tfm/public/latex-fonts/icmex10.tfm
@@ -2858,19 +2871,8 @@ share/texmf-dist/fonts/tfm/public/mflogo/logod10.tfm
 share/texmf-dist/fonts/tfm/public/mflogo/logosl10.tfm
 share/texmf-dist/fonts/tfm/public/mflogo/logosl8.tfm
 share/texmf-dist/fonts/tfm/public/mflogo/logosl9.tfm
-share/texmf-dist/fonts/tfm/public/misc/
-share/texmf-dist/fonts/tfm/public/misc/black.tfm
-share/texmf-dist/fonts/tfm/public/misc/blackcx.tfm
-share/texmf-dist/fonts/tfm/public/misc/cmman.tfm
-share/texmf-dist/fonts/tfm/public/misc/gray.tfm
-share/texmf-dist/fonts/tfm/public/misc/graycx.tfm
-share/texmf-dist/fonts/tfm/public/misc/grayimagen3.tfm
-share/texmf-dist/fonts/tfm/public/misc/manfnt.tfm
-share/texmf-dist/fonts/tfm/public/misc/oneone.tfm
-share/texmf-dist/fonts/tfm/public/misc/slantcx4.tfm
-share/texmf-dist/fonts/tfm/public/misc/slantcx6.tfm
-share/texmf-dist/fonts/tfm/public/misc/slantlj4.tfm
-share/texmf-dist/fonts/tfm/public/misc/slantlj6.tfm
+share/texmf-dist/fonts/tfm/public/pdftex/
+share/texmf-dist/fonts/tfm/public/pdftex/dummy-space.tfm
 share/texmf-dist/fonts/tfm/public/pslatex/
 share/texmf-dist/fonts/tfm/public/pslatex/pcrr7tn.tfm
 share/texmf-dist/fonts/tfm/public/pslatex/pcrr8rn.tfm
@@ -3658,6 +3660,8 @@ share/texmf-dist/fonts/type1/public/cm-super/sfxc2074.pfb
 share/texmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb
 share/texmf-dist/fonts/type1/public/cm-super/sfxc2986.pfb
 share/texmf-dist/fonts/type1/public/cm-super/sfxc3583.pfb
+share/texmf-dist/fonts/type1/public/pdftex/
+share/texmf-dist/fonts/type1/public/pdftex/dummy-space.pfb
 share/texmf-dist/fonts/type1/public/stmaryrd/
 share/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb
 share/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfm
@@ -3956,19 +3960,11 @@ share/texmf-dist/mft/
 share/texmf-dist/mft/base/
 share/texmf-dist/mft/base/README
 share/texmf-dist/mft/base/cmbase.mft
-share/texmf-dist/mft/base/e.mft
 share/texmf-dist/mft/base/mplain.mft
 share/texmf-dist/mft/base/pl.mft
 share/texmf-dist/mft/base/plain.mft
-share/texmf-dist/omega/
-share/texmf-dist/omega/ocp/
-share/texmf-dist/omega/ocp/misc/
-share/texmf-dist/omega/ocp/misc/ebcdic.ocp
-share/texmf-dist/omega/ocp/misc/id.ocp
-share/texmf-dist/omega/otp/
-share/texmf-dist/omega/otp/misc/
-share/texmf-dist/omega/otp/misc/ebcdic.otp
-share/texmf-dist/omega/otp/misc/id.otp
+share/texmf-dist/mft/knuth-local/
+share/texmf-dist/mft/knuth-local/e.mft
 share/texmf-dist/scripts/
 share/texmf-dist/scripts/context/
 share/texmf-dist/scripts/context/perl/
@@ -4011,7 +4007,6 @@ share/texmf-dist/scripts/texlive/texconfig.sh
 share/texmf-dist/scripts/texlive/texlinks.sh
 share/texmf-dist/scripts/texlive/tlmgr.pl
 share/texmf-dist/scripts/texlive/tlmgrgui.pl
-share/texmf-dist/scripts/texlive/uninstall-win32.pl
 share/texmf-dist/scripts/texlive/updmap-sys.sh
 share/texmf-dist/scripts/texlive/updmap.pl
 share/texmf-dist/scripts/texlive/var/
@@ -4661,13 +4656,11 @@ share/texmf-dist/tex/generic/hyphen/hypht1.tex
 share/texmf-dist/tex/generic/hyphen/zerohyph.tex
 share/texmf-dist/tex/generic/ifxetex/
 share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+share/texmf-dist/tex/generic/knuth-lib/
+share/texmf-dist/tex/generic/knuth-lib/null.tex
 share/texmf-dist/tex/generic/metapost/
 share/texmf-dist/tex/generic/metapost/mproof.tex
 share/texmf-dist/tex/generic/metapost/mpsproof.tex
-share/texmf-dist/tex/generic/misc/
-share/texmf-dist/tex/generic/misc/bibnames.sty
-share/texmf-dist/tex/generic/misc/null.tex
-share/texmf-dist/tex/generic/misc/texnames.sty
 share/texmf-dist/tex/generic/oberdiek/
 share/texmf-dist/tex/generic/oberdiek/alphalph.sty
 share/texmf-dist/tex/generic/oberdiek/atbegshi.sty
@@ -4753,6 +4746,7 @@ share/texmf-dist/tex/generic/oberdiek/thepdfnumber.sty
 share/texmf-dist/tex/generic/oberdiek/uniquecounter.sty
 share/texmf-dist/tex/generic/pdftex/
 share/texmf-dist/tex/generic/pdftex/glyphtounicode.tex
+share/texmf-dist/tex/generic/pdftex/pdfcolor.tex
 share/texmf-dist/tex/latex/
 share/texmf-dist/tex/latex/ae/
 share/texmf-dist/tex/latex/ae/ae.sty
@@ -4860,6 +4854,7 @@ share/texmf-dist/tex/latex/base/fixltx2e.sty
 share/texmf-dist/tex/latex/base/flafter.sty
 share/texmf-dist/tex/latex/base/fleqn.clo
 share/texmf-dist/tex/latex/base/fleqn.sty
+share/texmf-dist/tex/latex/base/fltrace.sty
 share/texmf-dist/tex/latex/base/fontenc.sty
 share/texmf-dist/tex/latex/base/fontmath.cfg
 share/texmf-dist/tex/latex/base/fontmath.ltx
@@ -4993,6 +4988,8 @@ share/texmf-dist/tex/latex/cm-super/
 share/texmf-dist/tex/latex/cm-super/type1ec.sty
 share/texmf-dist/tex/latex/colortbl/
 share/texmf-dist/tex/latex/colortbl/colortbl.sty
+share/texmf-dist/tex/latex/comment/
+share/texmf-dist/tex/latex/comment/comment.sty
 share/texmf-dist/tex/latex/courier/
 share/texmf-dist/tex/latex/courier/8rucr.fd
 share/texmf-dist/tex/latex/courier/omlucr.fd
@@ -5484,6 +5481,10 @@ share/texmf-dist/tex/latex/wasysym/
 share/texmf-dist/tex/latex/wasysym/uwasy.fd
 share/texmf-dist/tex/latex/wasysym/uwasyvar.fd
 share/texmf-dist/tex/latex/wasysym/wasysym.sty
+share/texmf-dist/tex/latex/xcolor/
+share/texmf-dist/tex/latex/xcolor/svgnam.def
+share/texmf-dist/tex/latex/xcolor/x11nam.def
+share/texmf-dist/tex/latex/xcolor/xcolor.sty
 share/texmf-dist/tex/luatex/
 share/texmf-dist/tex/luatex/hyph-utf8/
 share/texmf-dist/tex/luatex/hyph-utf8/etex.src
@@ -5523,11 +5524,10 @@ share/texmf-dist/tex/plain/config/xetex.ini
 share/texmf-dist/tex/plain/etex/
 share/texmf-dist/tex/plain/etex/etex.src
 share/texmf-dist/tex/plain/etex/etexdefs.lib
-share/texmf-dist/tex/plain/misc/
-share/texmf-dist/tex/plain/misc/idxmac.tex
-share/texmf-dist/tex/plain/misc/pdfcolor.tex
-share/texmf-dist/tex/plain/misc/tugboat.def
-share/texmf-dist/tex/plain/misc/xepsf.tex
+share/texmf-dist/tex/plain/knuth-local/
+share/texmf-dist/tex/plain/knuth-local/xepsf.tex
+share/texmf-dist/tex/plain/makeindex/
+share/texmf-dist/tex/plain/makeindex/idxmac.tex
 share/texmf-dist/tex/texinfo/
 share/texmf-dist/tex/texinfo/texinfo.ini
 share/texmf-dist/tex/texinfo/texinfo.tex
@@ -5607,16 +5607,12 @@ share/texmf-var/fonts/map/dvips/updmap/
 share/texmf-var/fonts/map/dvips/updmap/builtin35.map
 share/texmf-var/fonts/map/dvips/updmap/download35.map
 share/texmf-var/fonts/map/dvips/updmap/ps2pk.map
-share/texmf-var/fonts/map/dvips/updmap/psfonts.map
 share/texmf-var/fonts/map/dvips/updmap/psfonts_pk.map
 share/texmf-var/fonts/map/dvips/updmap/psfonts_t1.map
 share/texmf-var/fonts/map/pdftex/
 share/texmf-var/fonts/map/pdftex/updmap/
-share/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 share/texmf-var/fonts/map/pdftex/updmap/pdftex_dl14.map
 share/texmf-var/fonts/map/pdftex/updmap/pdftex_ndl14.map
-share/texmf-var/fonts/map/pxdvi/
-share/texmf-var/fonts/map/pxdvi/updmap/
 share/texmf-var/web2c/
 share/texmf-var/web2c/aleph/
 share/texmf-var/web2c/aleph/aleph.fmt
@@ -5627,11 +5623,14 @@ share/texmf-var/web2c/eptex/platex.fmt
 share/texmf-var/web2c/euptex/
 share/texmf-var/web2c/euptex/euptex.fmt
 share/texmf-var/web2c/euptex/uplatex.fmt
+share/texmf-var/web2c/luajittex/
 share/texmf-var/web2c/luatex/
 share/texmf-var/web2c/luatex/dvilualatex.fmt
 share/texmf-var/web2c/luatex/dviluatex.fmt
 share/texmf-var/web2c/luatex/lualatex.fmt
+share/texmf-var/web2c/luatex/lualollipop.fmt
 share/texmf-var/web2c/luatex/luatex.fmt
+share/texmf-var/web2c/luatex/pdfcsplain.fmt
 share/texmf-var/web2c/metafont/
 share/texmf-var/web2c/metafont/mf.base
 share/texmf-var/web2c/pdftex/
@@ -5643,6 +5642,7 @@ share/texmf-var/web2c/pdftex/eplain.fmt
 share/texmf-var/web2c/pdftex/etex.fmt
 share/texmf-var/web2c/pdftex/jadetex.fmt
 share/texmf-var/web2c/pdftex/latex.fmt
+share/texmf-var/web2c/pdftex/lollipop.fmt
 share/texmf-var/web2c/pdftex/mex.fmt
 share/texmf-var/web2c/pdftex/mllatex.fmt
 share/texmf-var/web2c/pdftex/mltex.fmt
@@ -5666,6 +5666,8 @@ share/texmf-var/web2c/uptex/
 share/texmf-var/web2c/uptex/uptex.fmt
 share/texmf-var/web2c/xetex/
 share/texmf-var/web2c/xetex/cont-en.fmt
+share/texmf-var/web2c/xetex/pdfcsplain.fmt
 share/texmf-var/web2c/xetex/xelatex.fmt
+share/texmf-var/web2c/xetex/xelollipop.fmt
 share/texmf-var/web2c/xetex/xetex.fmt
 @exec-update if [ -e "%D/bin/mktexlsr" ]; then %D/bin/mktexlsr > /dev/null 2>&1; fi

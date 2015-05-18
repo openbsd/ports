@@ -1,0 +1,12 @@
+$OpenBSD: patch-texk_kpathsea_Makefile_in,v 1.4 2015/05/18 21:37:36 edd Exp $
+--- texk/kpathsea/Makefile.in.origy	Sun Sep 14 16:13:37 2014
++++ texk/kpathsea/Makefile.in	Sun Sep 14 16:13:57 2014
+@@ -688,7 +688,7 @@ AM_CFLAGS = $(WARNING_CFLAGS)
+ lib_LTLIBRARIES = libkpathsea.la
+ libkpathsea_la_CPPFLAGS = $(AM_CPPFLAGS) -DMAKE_KPSE_DLL \
+ 	$(am__append_1)
+-libkpathsea_la_LDFLAGS = -bindir @bindir@ -no-undefined -version-info $(KPSE_LT_VERSINFO)
++libkpathsea_la_LDFLAGS = -no-undefined -version-info $(KPSE_LT_VERSINFO)
+ libkpathsea_la_LIBADD = $(LTLIBOBJS)
+ BUILT_SOURCES = paths.h
+ libkpathsea_la_SOURCES = tex-file.c absolute.c atou.c cnf.c concat.c \

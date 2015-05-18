@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.77 2015/03/19 12:12:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.78 2015/05/18 21:37:28 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
-REVISION =		4
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 
-SHARED_LIBS =		kpathsea	6.0
-SHARED_LIBS +=		ptexenc		3.0
+SHARED_LIBS =		kpathsea	7.0
+SHARED_LIBS +=		ptexenc		4.0
 
-WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xrender Xt c
-WANTLIB += cairo expat fontconfig freetype gd glib-2.0 graphite2
-WANTLIB += harfbuzz icudata icui18n icuio icuuc intl jpeg lcms2
-WANTLIB += m openjpeg pcre pixman-1 png>=3 poppler pthread pthread-stubs
-WANTLIB += stdc++ t1>=4 tiff ttf vpx xcb xcb-render xcb-shm z
-
+WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xi Xmu Xpm Xrender Xt
+WANTLIB += c cairo expat fontconfig freetype gd glib-2.0 graphite2
+WANTLIB += harfbuzz harfbuzz-icu icudata icui18n icuio icuuc intl
+WANTLIB += jpeg lcms2 m openjpeg paper pcre pixman-1 png poppler
+WANTLIB += pthread pthread-stubs stdc++ tiff vpx xcb xcb-render
+WANTLIB += xcb-shm z zzip
 
 RUN_DEPENDS =		print/ghostscript/gnu \
 			print/detex \
@@ -28,42 +27,31 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 			print/latex-mk \
 			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
 
-LIB_DEPENDS =		devel/t1lib \
-			graphics/png \
+LIB_DEPENDS =		graphics/png \
 			graphics/gd \
-			print/freetype \
 			print/poppler \
 			graphics/cairo \
 			textproc/icu4c \
 			graphics/graphite2 \
-			devel/harfbuzz
+			devel/harfbuzz,-icu \
+			print/libpaper \
+			archivers/zziplib
 
-# Needs the header, but does not actually link with the lib
-BUILD_DEPENDS +=	devel/harfbuzz,-icu
-
-MODULES =		textproc/intltool converters/libiconv
-# These following modules are mostly for variable substitution in patches
-# They are not real dependencies of _base, but of _texmf-full
-MODULES +=		lang/ruby x11/tk
-MODRUBY_REV =		1.8
-MODRUBY_BUILDDEP =	No
-MODRUBY_RUNDEP =	No
-SUBST_VARS +=		MODRUBY_BINREV MODTK_VERSION
-
+MODULES =		textproc/intltool converters/libiconv perl
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
 
 CPPFLAGS =	-I${X11BASE}/include \
 		-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/poppler \
-		-I${LOCALBASE}/include/freetype1/freetype
+		-I${LOCALBASE}/include/poppler
 
 LDFLAGS =	-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib
 
 CONFIGURE_ENV +=	TL_MAKE=${GMAKE} \
-			CPPFLAGS="${CPPFLAGS}"
+			CPPFLAGS="${CPPFLAGS}" \
+			LDFLAGS="${LDFLAGS}"
 
 # Can't build in same dir
 WRKBUILD =              ${WRKSRC}/Work
@@ -90,15 +78,14 @@ PKG_ARGS +=		-Dxindy=1
 PKG_ARGS +=		-Dxindy=0
 .endif
 
+# Do not link with system icu. TeXLive ICU is not vanilla (Yet)!
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-freetype2 \
-			--with-system-freetype \
 			--with-system-gd \
 			--with-system-libpng \
 			--with-system-ncurses \
 			--with-system-pnglib \
 			--with-system-zlib \
-			--with-system-t1lib \
 			--enable-texinfo=no \
 			--with-xdvi-x-toolkit=xaw \
 			--enable-texi2html=no \
@@ -112,12 +99,19 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--disable-multiplatform \
 			--disable-native-texlive-build \
 			--with-banner-add="-OpenBSD_Ports" \
+			--disable-luajittex \
 			--with-system-xpdf \
 			--with-system-icu \
 			--with-system-cairo \
 			--with-system-harfbuzz \
 			--with-system-graphite2 \
-			--with-system-poppler
+			--with-system-poppler \
+			--with-system-libpaper \
+			--with-system-zziplib
+# XXX need to hack graphics/potrace to emit a library and header.
+# Looks like you add --with-libpotrace to its CONFIGURE_ARGS. Then add a
+# LIB_DEPENDS obviously.
+#--with-system-potrace
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
 
@@ -128,21 +122,30 @@ pre-install:
 # Symlinks that would have been installed by texlinks.
 # texlinks can not do this itself in the fake dir, as it requires
 # a fully hashed texmf tree and working kpse configuration.
-# Run 'texlinks -u' and then observe the output of 
+# Run 'texlinks -u' and then observe the output of
 # 'texlinks -v'. Don't forget to check the links are in the PLIST.
 ALEPH_LN =	lamed
-LUATEX_LN =	dvilualatex dviluatex lualatex
-PDFTEX_LN =	amstex cslatex pdfcslatex csplain pdfcsplain eplain jadetex \
-		pdfjadetex latex pdflatex mex pdfmex utf8mex mllatex mltex \
-		etex pdfetex texsis xmltex pdfxmltex
+LUATEX_LN =	dvilualatex dviluatex lualatex lualollipop
+PDFTEX_LN =	amstex cslatex csplain eplain etex jadetex latex lollipop mex mllatex mltex \
+		pdfcslatex pdfcsplain pdfetex pdfjadetex pdflatex pdfmex \
+		pdfxmltex texsis utf8mex xmltex
 EPTEX_LN =	platex
-XETEX_LN =	xelatex
+XETEX_LN =	xelatex xelollipop
 EUPTEX_LN =	uplatex
 
 EXTRA_ROOT =	${WRKDIR}/texlive-${DIST_V}-extra
 
 post-install:
 	rm -Rf ${WRKSRC}/inst
+
+	# Following upstream's process, we don't install any texmf
+	# files from texlive_base. These will be installed from the
+	# texlive_temxf-* ports. Similarly for manuals and infos.
+	rm -Rf ${PREFIX}/share/texmf-dist/
+	rm -Rf ${PREFIX}/{man,info}
+
+	# Users should not use tlmgr (tex live package manager)
+	rm ${PREFIX}/bin/tlmgr
 
 	# translate some sylinks from ../texmf* to ../share/texmf*
 	for link in `find ${PREFIX}/bin -type l`; do \

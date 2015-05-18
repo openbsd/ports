@@ -1,9 +1,6 @@
-$OpenBSD: patch-texmf-dist_web2c_texmfcnf_lua,v 1.2 2014/01/20 21:34:44 edd Exp $
-
-Patch in OpenBSD paths.
-
---- texmf-dist/web2c/texmfcnf.lua.origy	Tue Apr  9 15:15:26 2013
-+++ texmf-dist/web2c/texmfcnf.lua	Mon Jan 20 17:33:53 2014
+$OpenBSD: patch-texmf-dist_web2c_texmfcnf_lua,v 1.3 2015/05/18 21:38:04 edd Exp $
+--- texmf-dist/web2c/texmfcnf.lua.origy	Thu Apr 17 18:13:20 2014
++++ texmf-dist/web2c/texmfcnf.lua	Fri Oct 17 23:40:31 2014
 @@ -3,9 +3,6 @@
  -- ConTeXt needs a properly expanded TEXMFLOCAL, so here is a
  -- bit of lua code to make that happen
@@ -14,20 +11,19 @@ Patch in OpenBSD paths.
  return {
  
      type    = "configuration",
-@@ -41,10 +38,14 @@ return {
-             --     "selfautoparent:/texmf/web2c",
+@@ -42,9 +39,13 @@ return {
              --     "selfautoparent:",
              -- }
-+	    
-+	    -- Note that in OpenBSD, where we use the old teTeX path convention 
-+	    -- selfautodir does not work.                                       
-+	    TEXMFROOT       = "${TRUEPREFIX}/share",
  
++            -- Note that in OpenBSD, where we use the old teTeX path convention 
++            -- selfautodir does not work.                                       
++            TEXMFROOT       = "${TRUEPREFIX}/share",
++
              -- only used for FONTCONFIG_PATH & TEXMFCACHE in TeX Live
  
 -            TEXMFSYSVAR     = "selfautoparent:texmf-var",
 +            TEXMFSYSVAR     = "$TEXMFROOT/texmf-var",
-             TEXMFVAR        = "home:.texlive2013/texmf-var",
+             TEXMFVAR        = "home:.texlive2014/texmf-var",
  
              -- We have only one cache path but there can be more. The first writable one
 @@ -62,12 +63,12 @@ return {

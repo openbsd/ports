@@ -1,9 +1,6 @@
-$OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.2 2014/01/20 21:34:44 edd Exp $
-
-Patch in OpenBSD paths.
-
---- texmf-dist/web2c/texmf.cnf.origy	Mon Apr 15 17:58:08 2013
-+++ texmf-dist/web2c/texmf.cnf	Mon Jan 20 16:27:08 2014
+$OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.3 2015/05/18 21:38:04 edd Exp $
+--- texmf-dist/web2c/texmf.cnf.origy	Tue Apr 22 22:07:54 2014
++++ texmf-dist/web2c/texmf.cnf	Fri Oct 17 23:40:31 2014
 @@ -1,6 +1,10 @@
  % original texmf.cnf -- runtime path configuration file for kpathsea.
  % Public domain.
@@ -15,7 +12,7 @@ Patch in OpenBSD paths.
  % If you modify this original file, YOUR CHANGES WILL BE LOST when it is
  % updated.  Instead, put your changes -- and only your changes, not an
  % entire copy! -- in ../../texmf.cnf.  That is, if this file is
-@@ -48,10 +52,8 @@
+@@ -48,10 +52,9 @@
  % All trees must be organized according to the TeX Directory Structure
  % (http://tug.org/tds), or files may not be found.
  %
@@ -24,16 +21,26 @@ Patch in OpenBSD paths.
 -% SELFAUTODIR (its parent), and SELFAUTOPARENT (its grandparent).
 -TEXMFROOT = $SELFAUTOPARENT
 +% We use the old teTeX paths in OpenBSD, respect the legacy.
-+TEXMFROOT = ${TRUEPREFIX}/share
++OBSD_PREFIX= ${TRUEPREFIX}
++TEXMFROOT = $OBSD_PREFIX/share
  
  % The main tree of distributed packages and programs:
  TEXMFDIST = $TEXMFROOT/texmf-dist
-@@ -61,7 +63,7 @@ TEXMFDIST = $TEXMFROOT/texmf-dist
+@@ -61,7 +64,7 @@ TEXMFDIST = $TEXMFROOT/texmf-dist
  TEXMFMAIN = $TEXMFDIST
  
  % Local additions to the distribution trees.
--TEXMFLOCAL = $TEXMFROOT/../texmf-local
+-TEXMFLOCAL = $SELFAUTOGRANDPARENT/texmf-local
 +TEXMFLOCAL = $TEXMFROOT/texmf-local
  
  % TEXMFSYSVAR, where *-sys store cached runtime data.
  TEXMFSYSVAR = $TEXMFROOT/texmf-var
+@@ -435,7 +438,7 @@ LUAINPUTS.dvilualatex = .;$TEXMF/scripts/{$progname,$e
+ LUAINPUTS = .;$TEXMF/scripts/{$progname,$engine,}/{lua,}//;$TEXMF/tex/{luatex,plain,generic,}//
+ 
+ % Lua needs to look for binary lua libraries distributed with packages.
+-CLUAINPUTS = .;$SELFAUTOLOC/lib/{$progname,$engine,}/lua//
++CLUAINPUTS = .;$OBSD_PREFIX/lib/{$progname,$engine,}/lua//
+ 
+ % Architecture independent executables.
+ TEXMFSCRIPTS = $TEXMF/scripts/{$progname,$engine,}//

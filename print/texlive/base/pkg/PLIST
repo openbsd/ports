@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2015/03/19 12:12:20 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.26 2015/05/18 21:37:39 edd Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
@@ -6,6 +6,7 @@
 @pkgpath print/teTeX/base
 @pkgpath print/pdfjam
 @pkgpath print/teTeX/base,-fmt
+%%SHARED%%
 %%xindy%%
 @bin bin/afm2pl
 @bin bin/afm2tfm
@@ -121,11 +122,13 @@
 @bin bin/vlna
 @bin bin/vptovf
 @bin bin/weave
+@bin bin/wofm2opl
+@bin bin/wopl2ofm
+@bin bin/wovf2ovp
 @bin bin/wovp2ovf
 @bin bin/xdvi-xaw
 @bin bin/xdvipdfmx
 @bin bin/xetex
-@comment bin/tlmgr
 bin/a2ping
 bin/a5toa4
 bin/adhocfilelist
@@ -154,13 +157,14 @@ bin/cefspdflatex
 bin/checkcites
 bin/chkweb
 bin/context
+bin/contextjit
 bin/convbkmk
 bin/cslatex
 bin/csplain
 bin/ctanify
 bin/ctanupload
-bin/ctxtools
 bin/de-macro
+bin/depythontex
 bin/deweb
 bin/dosepsbin
 bin/dtxgen
@@ -205,26 +209,37 @@ bin/inimf
 bin/initex
 bin/installfont-tl
 bin/jadetex
+bin/jamo-normalize
 bin/kanji-config-updmap
 bin/kanji-config-updmap-sys
 bin/kanji-fontmap-creator
+bin/komkindex
 bin/kpsepath
 bin/kpsetool
 bin/kpsewhere
 bin/kpsexpand
 bin/lamed
 bin/latex
+bin/latex-git-log
 bin/latex2man
 bin/latexdiff
 bin/latexdiff-vc
 bin/latexfileversion
+bin/latexindent
+bin/latexmk
 bin/latexpand
 bin/latexrevise
+bin/lily-glyph-commands
+bin/lily-image-commands
+bin/lily-rebuild-pdfs
 bin/listbib
 bin/listings-ext.sh
+bin/lollipop
 bin/ltxfileinfo
+bin/ltximg
 bin/lua2dox_filter
 bin/lualatex
+bin/lualollipop
 bin/luaotfload-tool
 bin/luatools
 bin/m-tx
@@ -241,6 +256,7 @@ bin/mkjobtexmf
 bin/mkluatexfontdb
 bin/mkocp
 bin/mkofm
+bin/mkpic
 bin/mkt1font
 bin/mktexfmt
 bin/mktexlsr
@@ -251,6 +267,7 @@ bin/mllatex
 bin/mltex
 bin/mptopdf
 bin/mtxrun
+bin/mtxrunjit
 bin/multibibliography
 bin/musixflx
 bin/musixtex
@@ -259,7 +276,7 @@ bin/opl2ofm
 bin/ot2kpx
 bin/ovf2ovp
 bin/ovp2ovf
-bin/pdf${MODRUBY_BINREV}0
+bin/pdf180
 bin/pdf270
 bin/pdf90
 bin/pdfannotextractor
@@ -288,16 +305,18 @@ bin/pkfix
 bin/pkfix-helper
 bin/platex
 bin/pmx2pdf
+bin/pmxchords
 bin/ps2frag
 bin/ps4pdf
 bin/pslatex
 bin/pst2pdf
-bin/pstopdf
 bin/ptex2pdf
 bin/purifyeps
+bin/pythontex
 bin/repstopdf
 bin/rpdfcrop
 bin/rubibtex
+bin/rubikrotation
 bin/rumakeindex
 bin/rungs
 bin/simpdftex
@@ -316,6 +335,7 @@ bin/texdirflatten
 bin/texdoc
 bin/texdoctk
 bin/texexec
+bin/texfot
 bin/texhash
 bin/texlinks
 bin/texliveonfly
@@ -326,6 +346,7 @@ bin/texmfstart
 bin/texsis
 bin/thumbpdf
 bin/tpic2pdftex
+bin/ttf2kotexfont
 bin/typeoutfileinfo
 bin/ulqda
 bin/updmap
@@ -338,6 +359,7 @@ bin/vpl2ovp
 bin/vpl2vpl
 bin/xdvi
 bin/xelatex
+bin/xelollipop
 bin/xmltex
 include/kpathsea/
 include/kpathsea/absolute.h
@@ -374,6 +396,7 @@ include/kpathsea/pathsearch.h
 include/kpathsea/proginit.h
 include/kpathsea/progname.h
 include/kpathsea/readable.h
+include/kpathsea/simpletypes.h
 include/kpathsea/str-list.h
 include/kpathsea/str-llist.h
 include/kpathsea/systypes.h
@@ -390,14 +413,12 @@ include/ptexenc/ptexenc.h
 include/ptexenc/unicode.h
 lib/libkpathsea.a
 lib/libkpathsea.la
-@lib lib/libkpathsea.so.${LIBkpathsea_VERSION}
 lib/libptexenc.a
 lib/libptexenc.la
-@lib lib/libptexenc.so.${LIBptexenc_VERSION}
-libdata/perl5/site_perl/TeXLive/
-libdata/perl5/site_perl/TeXLive/TLConfig.pm
-libdata/perl5/site_perl/TeXLive/TLUtils.pm
 share/doc/pkg-readmes/${FULLPKGNAME}
+${P5SITE}/TeXLive/
+${P5SITE}/TeXLive/TLConfig.pm
+${P5SITE}/TeXLive/TLUtils.pm
 @exec mktexlsr > /dev/null 2>&1
 @unexec-delete rm -f %D/share/texmf-dist/ls-R
 @unexec-delete rm -f %D/share/texmf-var/ls-R

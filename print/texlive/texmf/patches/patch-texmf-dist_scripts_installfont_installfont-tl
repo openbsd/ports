@@ -1,31 +1,13 @@
-$OpenBSD: patch-texmf-dist_scripts_installfont_installfont-tl,v 1.1 2015/01/10 13:06:29 edd Exp $
---- texmf-dist/scripts/installfont/installfont-tl.origy	Tue Mar 12 00:01:41 2013
-+++ texmf-dist/scripts/installfont/installfont-tl	Sun Jan  4 12:31:05 2015
+$OpenBSD: patch-texmf-dist_scripts_installfont_installfont-tl,v 1.2 2015/05/18 21:38:04 edd Exp $
+--- texmf-dist/scripts/installfont/installfont-tl.origy	Mon Jul 15 23:47:34 2013
++++ texmf-dist/scripts/installfont/installfont-tl	Fri Jan  2 16:38:59 2015
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/ksh
  #
  # installfont-tl [options]
  #
-@@ -36,7 +36,7 @@ INSTALLAS="rmdefault"
- SMFFSTY="%"
- LOG="false"
- #
--function printHelp()
-+printHelp()
- {
-   echo -e \
-           "  `basename $0` [options]\n"\
-@@ -74,7 +74,7 @@ function printHelp()
-           " for more information"
-   exit 0;
- }
--function printVersion()
-+printVersion()
- {
-   echo "This is version $VERSION of `basename $0`"
-   exit 0;
-@@ -85,7 +85,7 @@ then
+@@ -93,7 +93,7 @@ then
    echo -e "`basename $0`: Could not find command line arguments.\nUse the '--help' option for explanation."
    echo -e "Continue with default script variables? (y/n)"
    read ANSWER
@@ -34,7 +16,7 @@ $OpenBSD: patch-texmf-dist_scripts_installfont_installfont-tl,v 1.1 2015/01/10 1
    then
      exit 1
    fi
-@@ -582,4 +582,4 @@ then
+@@ -611,4 +611,4 @@ then
    rmdir ./Backup
  fi
  echo -e "\n\nThe font(s) should be installed now!"

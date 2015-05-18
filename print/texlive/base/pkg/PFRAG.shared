@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.5 2015/05/18 21:37:39 edd Exp $
+@lib lib/libkpathsea.so.${LIBkpathsea_VERSION}
+@lib lib/libptexenc.so.${LIBptexenc_VERSION}
