@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/04/28 06:35:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2015/05/18 18:04:24 sebastia Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -6,11 +6,11 @@ COMMENT-iaxcomm=IAX softphone
 
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	14
+REVISION-main=	15
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION-tcl=	15
+REVISION-tcl=	16
 PKGNAME-iaxcomm= iaxcomm-1.1.0
-REVISION-iaxcomm= 17
+REVISION-iaxcomm= 18
 
 CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \
@@ -27,7 +27,7 @@ MULTI_PACKAGES=	-main -tcl -iaxcomm
 MODULES=	devel/gettext x11/tk
 
 cWANTLIB	+= avcodec gsm m ogg ossaudio portaudio pthread speex
-cWANTLIB	+= speexdsp sndio vidcap z
+cWANTLIB	+= speexdsp sndio theora vidcap z
 
 WANTLIB-main 	+= avutil c mp3lame vorbis vorbisenc vpx x264 ${cWANTLIB}
 WANTLIB-main 	+= opus stdc++ swresample x265 xvidcore
@@ -59,7 +59,8 @@ LIB_DEPENDS=	audio/gsm \
 		audio/portaudio-svn \
 		audio/speex \
 		graphics/ffmpeg>=20130319 \
-		graphics/libvidcap
+		graphics/libvidcap \
+		multimedia/libtheora	
 
 LIB_DEPENDS-tcl=${LIB_DEPENDS} \
 		${BASE_PKGPATH} \
