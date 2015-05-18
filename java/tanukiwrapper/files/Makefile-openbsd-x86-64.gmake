@@ -7,7 +7,7 @@
 # license agreement you entered into with Tanuki Software.
 # http://wrapper.tanukisoftware.com/doc/english/licenseOverview.html
 
-CC = ${CC} -Wall -pedantic -DOPENBSD -DJSW64 -I${LOCALBASE}/include -L${LOCALBASE}/lib -liconv -DUNICODE -D_UNICODE
+CC = ${CC} -Wall -fPIC -pedantic -DOPENBSD -DJSW64 -I${LOCALBASE}/include -L${LOCALBASE}/lib -liconv -DUNICODE -D_UNICODE
 
 INCLUDE=$(JAVA_HOME)/include
 
