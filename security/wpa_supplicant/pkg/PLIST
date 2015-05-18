@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/03/18 05:57:22 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/05/18 04:56:34 dcoppa Exp $
 @comment @bin sbin/wpa_priv
 @man man/man5/wpa_supplicant.conf.5
 @man man/man8/eapol_test.8
@@ -14,6 +14,8 @@
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/wpa_supplicant/
 share/examples/wpa_supplicant/wpa_supplicant.conf
+@mode 0600
 @sample ${SYSCONFDIR}/wpa_supplicant.conf
+@mode
 share/examples/wpa_supplicant/wpa_supplicant.conf.dist
 @rcscript ${RCDIR}/wpa_supplicant
