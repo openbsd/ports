@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/03/16 18:07:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2015/05/18 06:56:04 jasper Exp $
 
 COMMENT =	color management library
 
@@ -26,7 +26,7 @@ WRKDIST =		${WRKDIR}/lcms-1.18
 
 # Unconfuse update-patches
 post-extract:
-	rm -f ${WRKSRC}/src/cmsxform.c.orig
+	rm ${WRKSRC}/src/cmsxform.c.orig
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lcms

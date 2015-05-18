@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/02/03 15:50:07 abieber Exp $
+# $OpenBSD: Makefile,v 1.18 2015/05/18 06:56:04 jasper Exp $
 
 # Currently node itself is only for amd64 and i386, but
 # the coroutine library this uses only works on amd64
@@ -30,7 +30,7 @@ TEST_DEPENDS =	${BUILD_PKGPATH}
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/binding.gyp
-	@rm -rf ${WRKSRC}/bin/{darwin-*,linux-*,win32-*}
+	rm -r ${WRKSRC}/bin/{darwin-*,linux-*,win32-*}
 
 # Failing tests/stack-overflow2.js is known issue, see
 # https://github.com/laverdet/node-fibers/issues/108

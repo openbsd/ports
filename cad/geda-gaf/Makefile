@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/05/05 17:00:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2015/05/18 06:56:04 jasper Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -46,7 +46,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-tools
 
 # This confuses update-patches.
 post-extract:
-	@rm -f ${WRKSRC}/gnetlist/examples/vams/gschemrc.orig
+	rm ${WRKSRC}/gnetlist/examples/vams/gschemrc.orig
 
 # MAKE_ENV hoses the regression test, so we do this manually
 do-test:

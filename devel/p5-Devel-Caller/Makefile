@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/06/14 23:24:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/05/18 06:56:04 jasper Exp $
 
 COMMENT =		meatier versions of caller
 
@@ -15,8 +15,5 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c
 
 RUN_DEPENDS =		devel/p5-PadWalker
-
-pre-configure:
-	@rm -f ${WRKSRC}/lib/Devel/Caller.pm.orig
 
 .include <bsd.port.mk>

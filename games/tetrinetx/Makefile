@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/18 06:56:04 jasper Exp $
 
 COMMENT=	tetrinet server
 
@@ -32,7 +32,7 @@ CFLAGS+=	-DUSE_IPV6
 CFLAGS+=	-fno-strength-reduce -DCONFDIR="\"${SYSCONFDIR}/tetrinetx\""
 
 post-patch:
-	@rm -f ${WRKDIST}/bin/game.*.orig
+	rm ${WRKDIST}/bin/game.*.orig
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${LOCALBASE}/include \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/21 10:51:26 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2015/05/18 06:56:04 jasper Exp $
 
 COMMENT =	module to obtain historical financial quotes from exchanges
 
@@ -16,8 +16,5 @@ RUN_DEPENDS =	converters/p5-DateManip \
 		textproc/p5-Text-CSV_XS \
 		www/p5-HTML-TableExtract \
 		www/p5-libwww
-
-pre-configure:
-	@rm -f ${WRKSRC}/lib/Finance/QuoteHist/*.orig
 
 .include <bsd.port.mk>

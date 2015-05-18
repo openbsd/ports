@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2015/05/18 06:56:04 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,7 +28,7 @@ TEST_DEPENDS=${BASE_PKGPATH}
 TEST_TARGET=	check
 
 pre-install:
-	@rm -f ${WRKSRC}/examples/path.lua
+	rm ${WRKSRC}/examples/path.lua
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR} ${MODLUA_LIBDIR}/sqlite3

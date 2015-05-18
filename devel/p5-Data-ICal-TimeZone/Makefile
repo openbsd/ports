@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/21 14:27:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/05/18 06:56:04 jasper Exp $
 
 COMMENT =	timezones module for Data::ICal
 
@@ -20,7 +20,7 @@ RUN_DEPENDS =	devel/p5-Data-ICal \
 		devel/p5-Universal-require
 
 post-extract:
-	@rm -f ${WRKDIST}/lib/Data/ICal/._*  \
+	rm ${WRKDIST}/lib/Data/ICal/._*  \
 		${WRKDIST}/lib/Data/ICal/TimeZone/._*
 
 .include <bsd.port.mk>

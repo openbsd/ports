@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/02 14:21:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/05/18 06:56:04 jasper Exp $
 
 COMMENT =		symbol type for python
 
@@ -28,7 +28,7 @@ post-extract:
 	@find ${WRKSRC} -type f -exec chmod 644 {} \;
 
 post-install:
-	@rm -f ${WRKSRC}/SymbolType.egg-info/dependency_links.txt
+	rm ${WRKSRC}/SymbolType.egg-info/dependency_links.txt
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-symboltype
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/py-symboltype/
 

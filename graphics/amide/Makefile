@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/04/28 06:35:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2015/05/18 06:56:04 jasper Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
@@ -54,6 +54,6 @@ CONFIGURE_ARGS +=	--disable-xmedcontest \
 NO_TEST =	Yes
 
 post-extract:
-	@rm -f ${WRKSRC}/src/ui_common.c.orig
+	rm ${WRKSRC}/src/ui_common.c.orig
 
 .include <bsd.port.mk>
