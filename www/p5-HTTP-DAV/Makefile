@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/20 09:09:29 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/18 17:22:40 giovanni Exp $
 
 COMMENT =	webdav client library for Perl
 
 MODULES =	cpan
-DISTNAME =	HTTP-DAV-0.47
+DISTNAME =	HTTP-DAV-0.48
 CATEGORIES =	www
 
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
