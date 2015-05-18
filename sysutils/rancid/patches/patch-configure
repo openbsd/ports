@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.5 2012/06/08 13:59:08 pea Exp $
+$OpenBSD: patch-configure,v 1.6 2015/05/18 10:12:33 espie Exp $
 --- configure.orig	Thu Nov 17 22:10:12 2011
-+++ configure	Tue May 29 13:19:25 2012
++++ configure	Mon May 18 12:09:18 2015
+@@ -5461,7 +5461,7 @@ fi
+ # ping seems to take one of two formats for count (N)
+ # BSD: ping -c N host
+ # SVR: ping host N
+-$PING_PATH -c 1 -v 127.0.0.1 > /dev/null 2>&1
++true
+ if test $? -eq 0 ; then
+     LG_PING_CMD="$PING_PATH -c 1"
+ else
 @@ -6068,7 +6068,7 @@ ac_config_files="$ac_config_files bin/nslogin bin/nsra
  
  ac_config_files="$ac_config_files bin/nxrancid"
