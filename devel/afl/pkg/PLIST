@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/05/06 10:17:44 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/05/18 11:32:27 gsoares Exp $
 bin/afl-clang
 bin/afl-clang++
 bin/afl-cmin
@@ -21,6 +21,7 @@ share/afl/testcases/_extras/gif.dict
 share/afl/testcases/_extras/html_tags.dict
 share/afl/testcases/_extras/jpeg.dict
 share/afl/testcases/_extras/js.dict
+share/afl/testcases/_extras/pdf.dict
 share/afl/testcases/_extras/png.dict
 share/afl/testcases/_extras/sql.dict
 share/afl/testcases/_extras/sql_pragmas.dict
