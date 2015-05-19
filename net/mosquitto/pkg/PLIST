@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/19 19:13:39 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/19 21:19:31 ajacoutot Exp $
 @newgroup _mosquitto:753
 @newuser _mosquitto:753:753:daemon:Mosquitto MQTT Broker:/var/empty:/sbin/nologin
 @bin bin/mosquitto_passwd
@@ -30,4 +30,3 @@ share/examples/mosquitto/mosquitto.conf
 share/examples/mosquitto/pskfile.example
 share/examples/mosquitto/pwfile.example
 @rcscript ${RCDIR}/mosquitto
-@extra /var/run/mosquitto.pid
