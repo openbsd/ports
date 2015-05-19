@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_Sparc_AsmParser_SparcAsmParser_cpp,v 1.2 2015/05/11 23:21:51 ajacoutot Exp $
+$OpenBSD: patch-lib_Target_Sparc_AsmParser_SparcAsmParser_cpp,v 1.3 2015/05/19 05:33:39 ajacoutot Exp $
 
 Sync up the SPARC backend up to commit r203424.
 
@@ -13,8 +13,25 @@ address space" instructions.
 r236137
 Make Sparc assembler accept parenthesized constant expressions.
 
+r237580
+Add support for the Sparc implementation-defined "ASR" registers.
+
+r237581
+Sparc: Add the "alternate address space" load/store instructions.
+
+- Adds support for the asm syntax, which has an immediate integer
+  "ASI" (address space identifier) appearing after an address, before
+  a comma.
+
+- Adds the various-width load, store, and swap in alternate address
+  space instructions. (ldsba, ldsha, lduba, lduha, lda, stba, stha,
+  sta, swapa)
+
+r237582
+Sparc: Support PSR, TBR, WIM read/write instructions.
+
 --- lib/Target/Sparc/AsmParser/SparcAsmParser.cpp.orig	Sun Mar  2 21:57:39 2014
-+++ lib/Target/Sparc/AsmParser/SparcAsmParser.cpp	Thu Apr 30 02:49:39 2015
++++ lib/Target/Sparc/AsmParser/SparcAsmParser.cpp	Mon May 18 19:47:25 2015
 @@ -12,9 +12,11 @@
  #include "llvm/ADT/STLExtras.h"
  #include "llvm/MC/MCContext.h"
@@ -48,7 +65,35 @@ Make Sparc assembler accept parenthesized constant expressions.
  public:
    SparcAsmParser(MCSubtargetInfo &sti, MCAsmParser &parser,
                  const MCInstrInfo &MII)
-@@ -354,13 +361,11 @@ class SparcOperand : public MCParsedAsmOperand { (publ
+@@ -120,6 +127,15 @@ class SparcAsmParser : public MCTargetAsmParser {
+     Sparc::Q8,  Sparc::Q9,  Sparc::Q10, Sparc::Q11,
+     Sparc::Q12, Sparc::Q13, Sparc::Q14, Sparc::Q15 };
+ 
++  static unsigned ASRRegs[32] = {
++    SP::Y,     SP::ASR1,  SP::ASR2,  SP::ASR3,
++    SP::ASR4,  SP::ASR5,  SP::ASR6, SP::ASR7,
++    SP::ASR8,  SP::ASR9,  SP::ASR10, SP::ASR11,
++    SP::ASR12, SP::ASR13, SP::ASR14, SP::ASR15,
++    SP::ASR16, SP::ASR17, SP::ASR18, SP::ASR19,
++    SP::ASR20, SP::ASR21, SP::ASR22, SP::ASR23,
++    SP::ASR24, SP::ASR25, SP::ASR26, SP::ASR27,
++    SP::ASR28, SP::ASR29, SP::ASR30, SP::ASR31};
+ 
+ /// SparcOperand - Instances of this class represent a parsed Sparc machine
+ /// instruction.
+@@ -131,9 +147,9 @@ class SparcOperand : public MCParsedAsmOperand { (publ
+     rk_FloatReg,
+     rk_DoubleReg,
+     rk_QuadReg,
+-    rk_CCReg,
+-    rk_Y
++    rk_Special
+   };
++
+ private:
+   enum KindTy {
+     k_Token,
+@@ -354,13 +370,11 @@ class SparcOperand : public MCParsedAsmOperand { (publ
      return Op;
    }
  
@@ -66,7 +111,7 @@ Make Sparc assembler accept parenthesized constant expressions.
      Op->StartLoc = S;
      Op->EndLoc = E;
      return Op;
-@@ -415,7 +420,7 @@ MatchAndEmitInstruction(SMLoc IDLoc, unsigned &Opcode,
+@@ -415,7 +429,7 @@ MatchAndEmitInstruction(SMLoc IDLoc, unsigned &Opcode,
      return Error(ErrorLoc, "invalid operand for instruction");
    }
    case Match_MnemonicFail:
@@ -75,7 +120,7 @@ Make Sparc assembler accept parenthesized constant expressions.
    }
    return true;
  }
-@@ -439,21 +444,30 @@ ParseRegister(unsigned &RegNo, SMLoc &StartLoc, SMLoc 
+@@ -439,21 +453,30 @@ ParseRegister(unsigned &RegNo, SMLoc &StartLoc, SMLoc 
    return Error(StartLoc, "invalid register name");
  }
  
@@ -111,7 +156,7 @@ Make Sparc assembler accept parenthesized constant expressions.
      if (parseOperand(Operands, Name) != MatchOperand_Success) {
        SMLoc Loc = getLexer().getLoc();
        Parser.eatToEndOfStatement();
-@@ -482,8 +496,52 @@ ParseInstruction(ParseInstructionInfo &Info, StringRef
+@@ -482,8 +505,52 @@ ParseInstruction(ParseInstructionInfo &Info, StringRef
  bool SparcAsmParser::
  ParseDirective(AsmToken DirectiveID)
  {
@@ -166,7 +211,7 @@ Make Sparc assembler accept parenthesized constant expressions.
    return false;
  }
  
-@@ -504,7 +562,7 @@ parseMEMOperand(SmallVectorImpl<MCParsedAsmOperand*> &
+@@ -504,7 +571,7 @@ parseMEMOperand(SmallVectorImpl<MCParsedAsmOperand*> &
    case AsmToken::Comma:
    case AsmToken::RBrac:
    case AsmToken::EndOfStatement:
@@ -175,7 +220,20 @@ Make Sparc assembler accept parenthesized constant expressions.
      return MatchOperand_Success;
  
    case AsmToken:: Plus:
-@@ -577,7 +635,8 @@ parseOperand(SmallVectorImpl<MCParsedAsmOperand*> &Ope
+@@ -573,11 +640,21 @@ parseOperand(SmallVectorImpl<MCParsedAsmOperand*> &Ope
+     Operands.push_back(SparcOperand::CreateToken("]",
+                                                  Parser.getTok().getLoc()));
+     Parser.Lex(); // Eat the ]
++
++    // Parse an optional address-space identifier after the address.
++    if (getLexer().is(AsmToken::Integer)) {
++      SparcOperand *Op = 0;
++      ResTy = parseSparcAsmOperand(Op, false);
++      if (ResTy != MatchOperand_Success || !Op)
++        return MatchOperand_ParseFail;
++      Operands.push_back(Op);
++    }
+     return MatchOperand_Success;
    }
  
    SparcOperand *Op = 0;
@@ -185,7 +243,7 @@ Make Sparc assembler accept parenthesized constant expressions.
    if (ResTy != MatchOperand_Success || !Op)
      return MatchOperand_ParseFail;
  
-@@ -588,7 +647,7 @@ parseOperand(SmallVectorImpl<MCParsedAsmOperand*> &Ope
+@@ -588,7 +665,7 @@ parseOperand(SmallVectorImpl<MCParsedAsmOperand*> &Ope
  }
  
  SparcAsmParser::OperandMatchResultTy
@@ -194,7 +252,25 @@ Make Sparc assembler accept parenthesized constant expressions.
  {
  
    SMLoc S = Parser.getTok().getLoc();
-@@ -621,11 +680,6 @@ SparcAsmParser::parseSparcAsmOperand(SparcOperand *&Op
+@@ -611,21 +688,21 @@ SparcAsmParser::parseSparcAsmOperand(SparcOperand *&Op
+       default:
+         Op = SparcOperand::CreateReg(RegNo, RegKind, S, E);
+         break;
+-      case Sparc::Y:
+-        Op = SparcOperand::CreateToken("%y", S);
++      case Sparc::PSR:
++        Op = SparcOperand::CreateToken("%psr", S);
+         break;
+-
++      case Sparc::WIM:
++        Op = SparcOperand::CreateToken("%wim", S);
++        break;
++      case Sparc::TBR:
++        Op = SparcOperand::CreateToken("%tbr", S);
++        break;
+       case Sparc::ICC:
+         if (name == "xcc")
+           Op = SparcOperand::CreateToken("%xcc", S);
          else
            Op = SparcOperand::CreateToken("%icc", S);
          break;
@@ -206,7 +282,7 @@ Make Sparc assembler accept parenthesized constant expressions.
        }
        break;
      }
-@@ -637,6 +691,7 @@ SparcAsmParser::parseSparcAsmOperand(SparcOperand *&Op
+@@ -637,6 +714,7 @@ SparcAsmParser::parseSparcAsmOperand(SparcOperand *&Op
  
    case AsmToken::Minus:
    case AsmToken::Integer:
@@ -214,7 +290,7 @@ Make Sparc assembler accept parenthesized constant expressions.
      if (!getParser().parseExpression(EVal, E))
        Op = SparcOperand::CreateImm(EVal, S, E);
      break;
-@@ -649,6 +704,10 @@ SparcAsmParser::parseSparcAsmOperand(SparcOperand *&Op
+@@ -649,6 +727,10 @@ SparcAsmParser::parseSparcAsmOperand(SparcOperand *&Op
  
        const MCExpr *Res = MCSymbolRefExpr::Create(Sym, MCSymbolRefExpr::VK_None,
                                                    getContext());
@@ -225,7 +301,7 @@ Make Sparc assembler accept parenthesized constant expressions.
        Op = SparcOperand::CreateImm(Res, S, E);
      }
      break;
-@@ -657,6 +716,27 @@ SparcAsmParser::parseSparcAsmOperand(SparcOperand *&Op
+@@ -657,6 +739,27 @@ SparcAsmParser::parseSparcAsmOperand(SparcOperand *&Op
    return (Op) ? MatchOperand_Success : MatchOperand_ParseFail;
  }
  
@@ -253,16 +329,68 @@ Make Sparc assembler accept parenthesized constant expressions.
  bool SparcAsmParser::matchRegisterName(const AsmToken &Tok,
                                         unsigned &RegNo,
                                         unsigned &RegKind)
-@@ -704,7 +784,7 @@ bool SparcAsmParser::matchRegisterName(const AsmToken 
+@@ -682,20 +785,46 @@ bool SparcAsmParser::matchRegisterName(const AsmToken 
+ 
+     if (name.equals("y")) {
+       RegNo = Sparc::Y;
+-      RegKind = SparcOperand::rk_Y;
++      RegKind = SparcOperand::rk_Special;
+       return true;
+     }
+ 
++    if (name.substr(0, 3).equals_lower("asr")
++        && !name.substr(3).getAsInteger(10, intVal)
++        && intVal > 0 && intVal < 32) {
++      RegNo = ASRRegs[intVal];
++      RegKind = SparcOperand::rk_Special;
++      return true;
++    }
++
+     if (name.equals("icc")) {
+       RegNo = Sparc::ICC;
+-      RegKind = SparcOperand::rk_CCReg;
++      RegKind = SparcOperand::rk_Special;
+       return true;
+     }
+ 
++    if (name.equals("psr")) {
++      RegNo = Sparc::PSR;
++      RegKind = SparcOperand::rk_Special;
++      return true;
++    }
++
++    if (name.equals("wim")) {
++      RegNo = Sparc::WIM;
++      RegKind = SparcOperand::rk_Special;
++      return true;
++    }
++
++    if (name.equals("tbr")) {
++      RegNo = Sparc::TBR;
++      RegKind = SparcOperand::rk_Special;
++      return true;
++    }
++
+     if (name.equals("xcc")) {
+       // FIXME:: check 64bit.
+       RegNo = Sparc::ICC;
+-      RegKind = SparcOperand::rk_CCReg;
++      RegKind = SparcOperand::rk_Special;
+       return true;
+     }
+ 
+@@ -704,8 +833,8 @@ bool SparcAsmParser::matchRegisterName(const AsmToken 
          && !name.substr(3).getAsInteger(10, intVal)
          && intVal < 4) {
        // FIXME: check 64bit and  handle %fcc1 - %fcc3
 -      RegNo = Sparc::FCC;
+-      RegKind = SparcOperand::rk_CCReg;
 +      RegNo = Sparc::FCC0 + intVal;
-       RegKind = SparcOperand::rk_CCReg;
++      RegKind = SparcOperand::rk_Special;
        return true;
      }
-@@ -767,7 +847,32 @@ bool SparcAsmParser::matchRegisterName(const AsmToken 
+ 
+@@ -767,7 +896,32 @@ bool SparcAsmParser::matchRegisterName(const AsmToken 
    return false;
  }
  
@@ -295,7 +423,7 @@ Make Sparc assembler accept parenthesized constant expressions.
  bool SparcAsmParser::matchSparcAsmModifiers(const MCExpr *&EVal,
                                              SMLoc &EndLoc)
  {
-@@ -790,6 +895,23 @@ bool SparcAsmParser::matchSparcAsmModifiers(const MCEx
+@@ -790,6 +944,23 @@ bool SparcAsmParser::matchSparcAsmModifiers(const MCEx
    const MCExpr *subExpr;
    if (Parser.parseParenExpression(subExpr, EndLoc))
      return false;

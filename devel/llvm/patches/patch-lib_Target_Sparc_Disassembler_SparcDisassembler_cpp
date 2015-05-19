@@ -1,20 +1,44 @@
-$OpenBSD: patch-lib_Target_Sparc_Disassembler_SparcDisassembler_cpp,v 1.1 2014/07/11 01:05:24 brad Exp $
+$OpenBSD: patch-lib_Target_Sparc_Disassembler_SparcDisassembler_cpp,v 1.2 2015/05/19 05:33:39 ajacoutot Exp $
 
 Sync up the SPARC backend up to commit r203424.
 
---- lib/Target/Sparc/Disassembler/SparcDisassembler.cpp.orig	Sun Jun 15 02:47:32 2014
-+++ lib/Target/Sparc/Disassembler/SparcDisassembler.cpp	Sun Jun 15 03:01:44 2014
-@@ -113,6 +113,9 @@ static const unsigned QFPRegDecoderTable[] = {
+r237580
+Add support for the Sparc implementation-defined "ASR" registers.
+
+r237581
+Sparc: Add the "alternate address space" load/store instructions.
+
+- Adds support for the asm syntax, which has an immediate integer
+  "ASI" (address space identifier) appearing after an address, before
+  a comma.
+
+- Adds the various-width load, store, and swap in alternate address
+  space instructions. (ldsba, ldsha, lduba, lduha, lda, stba, stha,
+  sta, swapa)
+
+--- lib/Target/Sparc/Disassembler/SparcDisassembler.cpp.orig	Sun Mar  2 21:57:39 2014
++++ lib/Target/Sparc/Disassembler/SparcDisassembler.cpp	Mon May 18 17:43:53 2015
+@@ -113,6 +113,19 @@ static const unsigned QFPRegDecoderTable[] = {
    SP::Q6,  SP::Q14,  ~0U,  ~0U,
    SP::Q7,  SP::Q15,  ~0U,  ~0U } ;
  
 +static const unsigned FCCRegDecoderTable[] = {
 +  SP::FCC0, SP::FCC1, SP::FCC2, SP::FCC3 };
 +
++static const unsigned ASRRegDecoderTable[] = {
++  SP::Y,     SP::ASR1,  SP::ASR2,  SP::ASR3,
++  SP::ASR4,  SP::ASR5,  SP::ASR6,  SP::ASR7,
++  SP::ASR8,  SP::ASR9,  SP::ASR10, SP::ASR11,
++  SP::ASR12, SP::ASR13, SP::ASR14, SP::ASR15,
++  SP::ASR16, SP::ASR17, SP::ASR18, SP::ASR19,
++  SP::ASR20, SP::ASR21, SP::ASR22, SP::ASR23,
++  SP::ASR24, SP::ASR25, SP::ASR26, SP::ASR27,
++  SP::ASR28, SP::ASR29, SP::ASR30, SP::ASR31};
++
  static DecodeStatus DecodeIntRegsRegisterClass(MCInst &Inst,
                                                 unsigned RegNo,
                                                 uint64_t Address,
-@@ -174,7 +177,43 @@ static DecodeStatus DecodeQFPRegsRegisterClass(MCInst 
+@@ -174,7 +187,52 @@ static DecodeStatus DecodeQFPRegsRegisterClass(MCInst 
    return MCDisassembler::Success;
  }
  
@@ -27,6 +51,15 @@ Sync up the SPARC backend up to commit r203424.
 +  return MCDisassembler::Success;
 +}
  
++static DecodeStatus DecodeASRRegsRegisterClass(MCInst &Inst, unsigned RegNo,
++                                               uint64_t Address,
++                                               const void *Decoder) {
++  if (RegNo > 31)
++    return MCDisassembler::Fail;
++  Inst.addOperand(MCOperand::CreateReg(ASRRegDecoderTable[RegNo]));
++  return MCDisassembler::Success;
++}
++
 +
 +static DecodeStatus DecodeLoadInt(MCInst &Inst, unsigned insn, uint64_t Address,
 +                                  const void *Decoder);
@@ -58,7 +91,7 @@ Sync up the SPARC backend up to commit r203424.
  #include "SparcGenDisassemblerTables.inc"
  
  /// readInstruction - read four bytes from the MemoryObject
-@@ -225,4 +264,220 @@ SparcDisassembler::getInstruction(MCInst &instr,
+@@ -225,4 +283,231 @@ SparcDisassembler::getInstruction(MCInst &instr,
    }
  
    return MCDisassembler::Fail;
@@ -74,6 +107,8 @@ Sync up the SPARC backend up to commit r203424.
 +  unsigned rd = fieldFromInstruction(insn, 25, 5);
 +  unsigned rs1 = fieldFromInstruction(insn, 14, 5);
 +  bool isImm = fieldFromInstruction(insn, 13, 1);
++  bool hasAsi = fieldFromInstruction(insn, 23, 1); // (in op3 field)
++  unsigned asi = fieldFromInstruction(insn, 5, 8);
 +  unsigned rs2 = 0;
 +  unsigned simm13 = 0;
 +  if (isImm)
@@ -101,6 +136,9 @@ Sync up the SPARC backend up to commit r203424.
 +    if (status != MCDisassembler::Success)
 +      return status;
 +  }
++
++  if (hasAsi)
++    MI.addOperand(MCOperand::CreateImm(asi));
 +
 +  if (!isLoad) {
 +    status = DecodeRD(MI, rd, Address, Decoder);
@@ -252,6 +290,8 @@ Sync up the SPARC backend up to commit r203424.
 +  unsigned rd = fieldFromInstruction(insn, 25, 5);
 +  unsigned rs1 = fieldFromInstruction(insn, 14, 5);
 +  unsigned isImm = fieldFromInstruction(insn, 13, 1);
++  bool hasAsi = fieldFromInstruction(insn, 23, 1); // (in op3 field)
++  unsigned asi = fieldFromInstruction(insn, 5, 8);
 +  unsigned rs2 = 0;
 +  unsigned simm13 = 0;
 +  if (isImm)
@@ -277,5 +317,9 @@ Sync up the SPARC backend up to commit r203424.
 +    if (status != MCDisassembler::Success)
 +      return status;
 +  }
++
++  if (hasAsi)
++    MI.addOperand(MCOperand::CreateImm(asi));
++
 +  return MCDisassembler::Success;
  }

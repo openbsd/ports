@@ -1,9 +1,26 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcInstrInfo_td,v 1.1 2014/07/11 01:05:24 brad Exp $
+$OpenBSD: patch-lib_Target_Sparc_SparcInstrInfo_td,v 1.2 2015/05/19 05:33:39 ajacoutot Exp $
 
 Sync up the SPARC backend up to commit r203424.
 
---- lib/Target/Sparc/SparcInstrInfo.td.orig	Sun Jun 15 02:46:05 2014
-+++ lib/Target/Sparc/SparcInstrInfo.td	Sun Jun 15 02:57:59 2014
+r237580
+Add support for the Sparc implementation-defined "ASR" registers.
+
+r237581
+Sparc: Add the "alternate address space" load/store instructions.
+
+- Adds support for the asm syntax, which has an immediate integer
+  "ASI" (address space identifier) appearing after an address, before
+  a comma.
+
+- Adds the various-width load, store, and swap in alternate address
+  space instructions. (ldsba, ldsha, lduba, lduha, lda, stba, stha,
+  sta, swapa)
+
+r237582
+Sparc: Support PSR, TBR, WIM read/write instructions.
+
+--- lib/Target/Sparc/SparcInstrInfo.td.orig	Sun Mar  2 21:57:39 2014
++++ lib/Target/Sparc/SparcInstrInfo.td	Mon May 18 18:31:25 2015
 @@ -29,7 +29,8 @@ def Is64Bit : Predicate<"Subtarget.is64Bit()">;
  
  // HasV9 - This predicate is true when the target processor supports V9
@@ -61,7 +78,42 @@ Sync up the SPARC backend up to commit r203424.
                   !strconcat(OpcStr, " $rs1, $simm13, $rd"), []>;
  }
  
-@@ -316,8 +335,8 @@ let isBarrier = 1, isTerminator = 1, rd = 0b1000, rs1 
+@@ -263,6 +282,17 @@ multiclass Load<string OpcStr, bits<6> Op3Val, SDPatte
+                  [(set Ty:$dst, (OpNode ADDRri:$addr))]>;
+ }
+ 
++// LoadA multiclass - As above, but also define alternate address space variant
++multiclass LoadA<string OpcStr, bits<6> Op3Val, bits<6> LoadAOp3Val,
++                 SDPatternOperator OpNode, RegisterClass RC, ValueType Ty> :
++             Load<OpcStr, Op3Val, OpNode, RC, Ty> {
++  // TODO: The LD*Arr instructions are currently asm only; hooking up
++  // CodeGen's address spaces to use these is a future task.
++  def Arr  : F3_1_asi<3, LoadAOp3Val, (outs RC:$dst), (ins MEMrr:$addr, i8imm:$asi),
++                !strconcat(OpcStr, "a [$addr] $asi, $dst"),
++                []>;
++}
++
+ // Store multiclass - Define both Reg+Reg/Reg+Imm patterns in one shot.
+ multiclass Store<string OpcStr, bits<6> Op3Val, SDPatternOperator OpNode,
+            RegisterClass RC, ValueType Ty> {
+@@ -276,6 +306,16 @@ multiclass Store<string OpcStr, bits<6> Op3Val, SDPatt
+                  [(OpNode Ty:$rd, ADDRri:$addr)]>;
+ }
+ 
++multiclass StoreA<string OpcStr, bits<6> Op3Val, bits<6> StoreAOp3Val,
++                  SDPatternOperator OpNode, RegisterClass RC, ValueType Ty> :
++             Store<OpcStr, Op3Val, OpNode, RC, Ty> {
++  // TODO: The ST*Arr instructions are currently asm only; hooking up
++  // CodeGen's address spaces to use these is a future task.
++  def Arr  : F3_1_asi<3, StoreAOp3Val, (outs), (ins MEMrr:$addr, RC:$rd, i8imm:$asi),
++                  !strconcat(OpcStr, "a $rd, [$addr] $asi"),
++                  []>;
++}
++
+ //===----------------------------------------------------------------------===//
+ // Instructions
+ //===----------------------------------------------------------------------===//
+@@ -316,8 +356,8 @@ let isBarrier = 1, isTerminator = 1, rd = 0b1000, rs1 
    def TA5 : F3_2<0b10, 0b111010, (outs), (ins), "ta 5", [(trap)]>;
  
  let rd = 0 in
@@ -72,7 +124,7 @@ Sync up the SPARC backend up to commit r203424.
  
  // SELECT_CC_* - Used to implement the SELECT_CC DAG operation.  Expanded after
  // instruction selection into a branch sequence.  This has to handle all
-@@ -344,7 +363,7 @@ let Uses = [ICC], usesCustomInserter = 1 in {
+@@ -344,7 +384,7 @@ let Uses = [ICC], usesCustomInserter = 1 in {
              [(set f128:$dst, (SPselecticc f128:$T, f128:$F, imm:$Cond))]>;
  }
  
@@ -81,7 +133,7 @@ Sync up the SPARC backend up to commit r203424.
  
    def SELECT_CC_Int_FCC
     : Pseudo<(outs IntRegs:$dst), (ins IntRegs:$T, IntRegs:$F, i32imm:$Cond),
-@@ -366,7 +385,8 @@ let usesCustomInserter = 1, Uses = [FCC] in {
+@@ -366,7 +406,8 @@ let usesCustomInserter = 1, Uses = [FCC] in {
  }
  
  // JMPL Instruction.
@@ -91,7 +143,7 @@ Sync up the SPARC backend up to commit r203424.
    def JMPLrr: F3_1<2, 0b111000, (outs IntRegs:$dst), (ins MEMrr:$addr),
                    "jmpl $addr, $dst", []>;
    def JMPLri: F3_2<2, 0b111000, (outs IntRegs:$dst), (ins MEMri:$addr),
-@@ -386,29 +406,47 @@ let isReturn = 1, isTerminator = 1, hasDelaySlot = 1, 
+@@ -386,29 +427,47 @@ let isReturn = 1, isTerminator = 1, hasDelaySlot = 1, 
                    "jmp %i7+$val", []>;
  }
  
@@ -110,11 +162,11 @@ Sync up the SPARC backend up to commit r203424.
 -defm LDUH : Load<"lduh", 0b000010, zextloadi16, IntRegs, i32>;
 -defm LD   : Load<"ld",   0b000000, load,        IntRegs, i32>;
 +let DecoderMethod = "DecodeLoadInt" in {
-+  defm LDSB : Load<"ldsb", 0b001001, sextloadi8,  IntRegs, i32>;
-+  defm LDSH : Load<"ldsh", 0b001010, sextloadi16, IntRegs, i32>;
-+  defm LDUB : Load<"ldub", 0b000001, zextloadi8,  IntRegs, i32>;
-+  defm LDUH : Load<"lduh", 0b000010, zextloadi16, IntRegs, i32>;
-+  defm LD   : Load<"ld",   0b000000, load,        IntRegs, i32>;
++  defm LDSB : LoadA<"ldsb", 0b001001, 0b011001, sextloadi8,  IntRegs, i32>;
++  defm LDSH : LoadA<"ldsh", 0b001010, 0b011010, sextloadi16, IntRegs, i32>;
++  defm LDUB : LoadA<"ldub", 0b000001, 0b010001, zextloadi8,  IntRegs, i32>;
++  defm LDUH : LoadA<"lduh", 0b000010, 0b010010, zextloadi16, IntRegs, i32>;
++  defm LD   : LoadA<"ld",   0b000000, 0b010000, load,        IntRegs, i32>;
 +}
  
  // Section B.2 - Load Floating-point Instructions, p. 92
@@ -135,9 +187,9 @@ Sync up the SPARC backend up to commit r203424.
 -defm STH   : Store<"sth", 0b000110, truncstorei16, IntRegs, i32>;
 -defm ST    : Store<"st",  0b000100, store,         IntRegs, i32>;
 +let DecoderMethod = "DecodeStoreInt" in {
-+  defm STB   : Store<"stb", 0b000101, truncstorei8,  IntRegs, i32>;
-+  defm STH   : Store<"sth", 0b000110, truncstorei16, IntRegs, i32>;
-+  defm ST    : Store<"st",  0b000100, store,         IntRegs, i32>;
++  defm STB   : StoreA<"stb", 0b000101, 0b010101, truncstorei8,  IntRegs, i32>;
++  defm STH   : StoreA<"sth", 0b000110, 0b010110, truncstorei16, IntRegs, i32>;
++  defm ST    : StoreA<"st",  0b000100, 0b010100, store,         IntRegs, i32>;
 +}
  
  // Section B.5 - Store Floating-point Instructions, p. 97
@@ -155,7 +207,7 @@ Sync up the SPARC backend up to commit r203424.
  
  // Section B.9 - SETHI Instruction, p. 104
  def SETHIi: F2_1<0b100,
-@@ -422,42 +460,51 @@ let rd = 0, imm22 = 0 in
+@@ -422,42 +481,51 @@ let rd = 0, imm22 = 0 in
    def NOP : F2_1<0b100, (outs), (ins), "nop", []>;
  
  // Section B.11 - Logical Instructions, p. 106
@@ -217,7 +269,7 @@ Sync up the SPARC backend up to commit r203424.
  
  // "LEA" forms of add (patterns to make tblgen happy)
  let Predicates = [Is32Bit], isCodeGenOnly = 1 in
-@@ -467,26 +514,32 @@ let Predicates = [Is32Bit], isCodeGenOnly = 1 in
+@@ -467,26 +535,32 @@ let Predicates = [Is32Bit], isCodeGenOnly = 1 in
                       [(set iPTR:$dst, ADDRri:$addr)]>;
  
  let Defs = [ICC] in
@@ -256,7 +308,7 @@ Sync up the SPARC backend up to commit r203424.
                       "cmp $rs1, $simm13",
                       [(SPcmpicc i32:$rs1, (i32 simm13:$simm13))]>;
  }
-@@ -494,15 +547,25 @@ let Defs = [ICC], rd = 0 in {
+@@ -494,15 +568,25 @@ let Defs = [ICC], rd = 0 in {
  // Section B.18 - Multiply Instructions, p. 113
  let Defs = [Y] in {
    defm UMUL : F3_12np<"umul", 0b001010>;
@@ -283,7 +335,7 @@ Sync up the SPARC backend up to commit r203424.
  // Section B.20 - SAVE and RESTORE, p. 117
  defm SAVE    : F3_12np<"save"   , 0b111100>;
  defm RESTORE : F3_12np<"restore", 0b111101>;
-@@ -511,7 +574,7 @@ defm RESTORE : F3_12np<"restore", 0b111101>;
+@@ -511,7 +595,7 @@ defm RESTORE : F3_12np<"restore", 0b111101>;
  
  // unconditional branch class.
  class BranchAlways<dag ins, string asmstr, list<dag> pattern>
@@ -292,7 +344,7 @@ Sync up the SPARC backend up to commit r203424.
    let isBranch     = 1;
    let isTerminator = 1;
    let hasDelaySlot = 1;
-@@ -521,14 +584,36 @@ class BranchAlways<dag ins, string asmstr, list<dag> p
+@@ -521,14 +605,36 @@ class BranchAlways<dag ins, string asmstr, list<dag> p
  let cond = 8 in
    def BA : BranchAlways<(ins brtarget:$imm22), "ba $imm22", [(br bb:$imm22)]>;
  
@@ -333,7 +385,7 @@ Sync up the SPARC backend up to commit r203424.
  // Indirect branch instructions.
  let isTerminator = 1, isBarrier = 1,  hasDelaySlot = 1, isBranch =1,
       isIndirectBranch = 1, rd = 0, isCodeGenOnly = 1 in {
-@@ -542,33 +627,64 @@ let isTerminator = 1, isBarrier = 1,  hasDelaySlot = 1
+@@ -542,33 +648,64 @@ let isTerminator = 1, isBarrier = 1,  hasDelaySlot = 1
                     [(brind ADDRri:$ptr)]>;
  }
  
@@ -406,23 +458,94 @@ Sync up the SPARC backend up to commit r203424.
      bits<30> disp;
      let op = 1;
      let Inst{29-0} = disp;
-@@ -596,11 +712,11 @@ let Uses = [Y], rs1 = 0, rs2 = 0 in
- // Section B.29 - Write State Register Instructions
- let Defs = [Y], rd = 0 in {
-   def WRYrr : F3_1<2, 0b110000,
+@@ -588,20 +725,37 @@ let Uses = [O6],
+ }
+ 
+ // Section B.28 - Read State Register Instructions
+-let Uses = [Y], rs1 = 0, rs2 = 0 in
+-  def RDY : F3_1<2, 0b101000,
+-                 (outs IntRegs:$dst), (ins),
+-                 "rd %y, $dst", []>;
++let rs2 = 0 in
++  def RDASR : F3_1<2, 0b101000,
++                 (outs IntRegs:$rd), (ins ASRRegs:$rs1),
++                 "rd $rs1, $rd", []>;
+ 
+-// Section B.29 - Write State Register Instructions
+-let Defs = [Y], rd = 0 in {
+-  def WRYrr : F3_1<2, 0b110000,
 -                   (outs), (ins IntRegs:$b, IntRegs:$c),
 -                   "wr $b, $c, %y", []>;
-+                   (outs), (ins IntRegs:$rs1, IntRegs:$rs2),
-+                   "wr $rs1, $rs2, %y", []>;
-   def WRYri : F3_2<2, 0b110000,
+-  def WRYri : F3_2<2, 0b110000,
 -                   (outs), (ins IntRegs:$b, i32imm:$c),
 -                   "wr $b, $c, %y", []>;
-+                   (outs), (ins IntRegs:$rs1, simm13Op:$simm13),
-+                   "wr $rs1, $simm13, %y", []>;
++// PSR, WIM, and TBR don't exist on the SparcV9, only the V8.
++let Predicates = [HasNoV9] in {
++  let rs2 = 0, rs1 = 0, Uses=[PSR] in
++    def RDPSR : F3_1<2, 0b101001,
++		     (outs IntRegs:$rd), (ins),
++		     "rd %psr, $rd", []>;
++
++  let rs2 = 0, rs1 = 0, Uses=[WIM] in
++    def RDWIM : F3_1<2, 0b101010,
++		     (outs IntRegs:$rd), (ins),
++		     "rd %wim, $rd", []>;
++
++  let rs2 = 0, rs1 = 0, Uses=[TBR] in
++    def RDTBR : F3_1<2, 0b101011,
++		     (outs IntRegs:$rd), (ins),
++		     "rd %tbr, $rd", []>;
  }
++
++// Section B.29 - Write State Register Instructions
++def WRASRrr : F3_1<2, 0b110000,
++                 (outs ASRRegs:$rd), (ins IntRegs:$rs1, IntRegs:$rs2),
++                 "wr $rs1, $rs2, $rd", []>;
++def WRASRri : F3_2<2, 0b110000,
++                 (outs ASRRegs:$rd), (ins IntRegs:$rs1, simm13Op:$simm13),
++                 "wr $rs1, $simm13, $rd", []>;
++
  // Convert Integer to Floating-point Instructions, p. 141
  def FITOS : F3_3u<2, 0b110100, 0b011000100,
-@@ -771,7 +887,7 @@ def FDIVQ  : F3_3<2, 0b110100, 0b001001111,
+                  (outs FPRegs:$rd), (ins FPRegs:$rs2),
+@@ -617,6 +771,36 @@ def FITOQ : F3_3u<2, 0b110100, 0b011001100,
+                  [(set QFPRegs:$rd, (SPitof FPRegs:$rs2))]>,
+                  Requires<[HasHardQuad]>;
+ 
++// PSR, WIM, and TBR don't exist on the SparcV9, only the V8.
++let Predicates = [HasNoV9] in {
++  let Defs = [PSR], rd=0 in {
++    def WRPSRrr : F3_1<2, 0b110001,
++		     (outs), (ins IntRegs:$rs1, IntRegs:$rs2),
++		     "wr $rs1, $rs2, %psr", []>;
++    def WRPSRri : F3_2<2, 0b110001,
++		     (outs), (ins IntRegs:$rs1, simm13Op:$simm13),
++		     "wr $rs1, $simm13, %psr", []>;
++  }
++
++  let Defs = [WIM], rd=0 in {
++    def WRWIMrr : F3_1<2, 0b110010,
++		     (outs), (ins IntRegs:$rs1, IntRegs:$rs2),
++		     "wr $rs1, $rs2, %wim", []>;
++    def WRWIMri : F3_2<2, 0b110010,
++		     (outs), (ins IntRegs:$rs1, simm13Op:$simm13),
++		     "wr $rs1, $simm13, %wim", []>;
++  }
++
++  let Defs = [TBR], rd=0 in {
++    def WRTBRrr : F3_1<2, 0b110011,
++		     (outs), (ins IntRegs:$rs1, IntRegs:$rs2),
++		     "wr $rs1, $rs2, %tbr", []>;
++    def WRTBRri : F3_2<2, 0b110011,
++		     (outs), (ins IntRegs:$rs1, simm13Op:$simm13),
++		     "wr $rs1, $simm13, %tbr", []>;
++  }
++}
++
+ // Convert Floating-point to Integer Instructions, p. 142
+ def FSTOI : F3_3u<2, 0b110100, 0b011010001,
+                  (outs FPRegs:$rd), (ins FPRegs:$rs2),
+@@ -771,7 +955,7 @@ def FDIVQ  : F3_3<2, 0b110100, 0b001001111,
  // This behavior is modeled with a forced noop after the instruction in
  // DelaySlotFiller.
  
@@ -431,7 +554,7 @@ Sync up the SPARC backend up to commit r203424.
    def FCMPS  : F3_3c<2, 0b110101, 0b001010001,
                     (outs), (ins FPRegs:$rs1, FPRegs:$rs2),
                     "fcmps $rs1, $rs2",
-@@ -823,7 +939,7 @@ let Uses = [O6], isCall = 1, hasDelaySlot = 1 in
+@@ -823,7 +1007,7 @@ let Uses = [O6], isCall = 1, hasDelaySlot = 1 in
  // V9 Conditional Moves.
  let Predicates = [HasV9], Constraints = "$f = $rd" in {
    // Move Integer Register on Condition (MOVcc) p. 194 of the V9 manual.
@@ -440,7 +563,7 @@ Sync up the SPARC backend up to commit r203424.
      def MOVICCrr
        : F4_1<0b101100, (outs IntRegs:$rd),
               (ins IntRegs:$rs2, IntRegs:$f, CCOp:$cond),
-@@ -838,7 +954,7 @@ let Predicates = [HasV9], Constraints = "$f = $rd" in 
+@@ -838,7 +1022,7 @@ let Predicates = [HasV9], Constraints = "$f = $rd" in 
                      (SPselecticc simm11:$simm11, i32:$f, imm:$cond))]>;
    }
  
@@ -449,7 +572,7 @@ Sync up the SPARC backend up to commit r203424.
      def MOVFCCrr
        : F4_1<0b101100, (outs IntRegs:$rd),
               (ins IntRegs:$rs2, IntRegs:$f, CCOp:$cond),
-@@ -852,7 +968,7 @@ let Predicates = [HasV9], Constraints = "$f = $rd" in 
+@@ -852,7 +1036,7 @@ let Predicates = [HasV9], Constraints = "$f = $rd" in 
                      (SPselectfcc simm11:$simm11, i32:$f, imm:$cond))]>;
    }
  
@@ -458,7 +581,7 @@ Sync up the SPARC backend up to commit r203424.
      def FMOVS_ICC
        : F4_3<0b110101, 0b000001, (outs FPRegs:$rd),
               (ins FPRegs:$rs2, FPRegs:$f, CCOp:$cond),
-@@ -871,7 +987,7 @@ let Predicates = [HasV9], Constraints = "$f = $rd" in 
+@@ -871,7 +1055,7 @@ let Predicates = [HasV9], Constraints = "$f = $rd" in 
                 Requires<[HasHardQuad]>;
    }
  
@@ -467,7 +590,7 @@ Sync up the SPARC backend up to commit r203424.
      def FMOVS_FCC
        : F4_3<0b110101, 0b000001, (outs FPRegs:$rd),
               (ins FPRegs:$rs2, FPRegs:$f, CCOp:$cond),
-@@ -921,6 +1037,59 @@ let Predicates = [HasV9] in {
+@@ -921,6 +1105,59 @@ let Predicates = [HasV9] in {
                     Requires<[HasHardQuad]>;
  }
  
@@ -527,7 +650,7 @@ Sync up the SPARC backend up to commit r203424.
  // POPCrr - This does a ctpop of a 64-bit register.  As such, we have to clear
  // the top 32-bits before using it.  To do this clearing, we use a SRLri X,0.
  let rs1 = 0 in
-@@ -935,10 +1104,10 @@ let hasSideEffects =1, rd = 0, rs1 = 0b01111, rs2 = 0 
+@@ -935,10 +1172,10 @@ let hasSideEffects =1, rd = 0, rs1 = 0b01111, rs2 = 0 
    def STBAR : F3_1<2, 0b101000, (outs), (ins), "stbar", []>;
  
  let Predicates = [HasV9], hasSideEffects = 1, rd = 0, rs1 = 0b01111 in
@@ -540,7 +663,29 @@ Sync up the SPARC backend up to commit r203424.
    def SWAPrr : F3_1<3, 0b001111,
                   (outs IntRegs:$dst), (ins MEMrr:$addr, IntRegs:$val),
                   "swap [$addr], $dst",
-@@ -957,6 +1126,28 @@ let Predicates = [HasV9], Constraints = "$swap = $rd" 
+@@ -947,16 +1184,48 @@ let Constraints = "$val = $dst" in {
+                  (outs IntRegs:$dst), (ins MEMri:$addr, IntRegs:$val),
+                  "swap [$addr], $dst",
+                  [(set i32:$dst, (atomic_swap_32 ADDRri:$addr, i32:$val))]>;
++  def SWAPArr : F3_1_asi<3, 0b011111,
++                 (outs IntRegs:$dst), (ins MEMrr:$addr, i8imm:$asi, IntRegs:$val),
++                 "swapa [$addr] $asi, $dst",
++                 [/*FIXME: pattern?*/]>;
+ }
+ 
+-let Predicates = [HasV9], Constraints = "$swap = $rd" in
+-  def CASrr: F3_1_asi<3, 0b111100, 0b10000000,
++// TODO: Should add a CASArr variant. In fact, the CAS instruction,
++// unlike other instructions, only comes in a form which requires an
++// ASI be provided. The ASI value hardcoded here is ASI_PRIMARY, the
++// default unprivileged ASI for SparcV9.  (Also of note: some modern
++// SparcV8 implementations provide CASA as an extension, but require
++// the use of SparcV8's default ASI, 0xA ("User Data") instead.)
++let Predicates = [HasV9], Constraints = "$swap = $rd", asi = 0b10000000 in
++  def CASrr: F3_1_asi<3, 0b111100,
+                 (outs IntRegs:$rd), (ins IntRegs:$rs1, IntRegs:$rs2,
+                                      IntRegs:$swap),
+                  "cas [$rs1], $rs2, $rd",
                   [(set i32:$rd,
                       (atomic_cmp_swap iPTR:$rs1, i32:$rs2, i32:$swap))]>;
  
@@ -569,7 +714,7 @@ Sync up the SPARC backend up to commit r203424.
  //===----------------------------------------------------------------------===//
  // Non-Instruction Patterns
  //===----------------------------------------------------------------------===//
-@@ -1032,4 +1223,5 @@ def : Pat<(atomic_store ADDRri:$dst, i32:$val), (STri 
+@@ -1032,4 +1301,5 @@ def : Pat<(atomic_store ADDRri:$dst, i32:$val), (STri 
  
  
  include "SparcInstr64Bit.td"

@@ -1,9 +1,20 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcInstrFormats_td,v 1.1 2014/07/11 01:05:24 brad Exp $
+$OpenBSD: patch-lib_Target_Sparc_SparcInstrFormats_td,v 1.2 2015/05/19 05:33:39 ajacoutot Exp $
 
 Sync up the SPARC backend up to commit r203424.
 
---- lib/Target/Sparc/SparcInstrFormats.td.orig	Sun Jun 15 02:45:57 2014
-+++ lib/Target/Sparc/SparcInstrFormats.td	Sun Jun 15 02:57:59 2014
+r237581
+Sparc: Add the "alternate address space" load/store instructions.
+
+- Adds support for the asm syntax, which has an immediate integer
+  "ASI" (address space identifier) appearing after an address, before
+  a comma.
+
+- Adds the various-width load, store, and swap in alternate address
+  space instructions. (ldsba, ldsha, lduba, lduha, lda, stba, stha,
+  sta, swapa)
+
+--- lib/Target/Sparc/SparcInstrFormats.td.orig	Sun Mar  2 21:57:39 2014
++++ lib/Target/Sparc/SparcInstrFormats.td	Mon May 18 19:44:39 2015
 @@ -51,38 +51,51 @@ class F2_1<bits<3> op2Val, dag outs, dag ins, string a
    let Inst{29-25} = rd;
  }
@@ -68,7 +79,31 @@ Sync up the SPARC backend up to commit r203424.
  //===----------------------------------------------------------------------===//
  // Format #3 instruction classes in the Sparc
  //===----------------------------------------------------------------------===//
-@@ -159,7 +172,6 @@ class F3_3c<bits<2> opVal, bits<6> op3val, bits<9> opf
+@@ -100,8 +113,9 @@ class F3<dag outs, dag ins, string asmstr, list<dag> p
+ 
+ // Specific F3 classes: SparcV8 manual, page 44
+ //
+-class F3_1_asi<bits<2> opVal, bits<6> op3val, bits<8> asi, dag outs, dag ins,
++class F3_1_asi<bits<2> opVal, bits<6> op3val, dag outs, dag ins,
+            string asmstr, list<dag> pattern> : F3<outs, ins, asmstr, pattern> {
++  bits<8> asi;
+   bits<5> rs2;
+ 
+   let op         = opVal;
+@@ -113,8 +127,10 @@ class F3_1_asi<bits<2> opVal, bits<6> op3val, bits<8> 
+ }
+ 
+ class F3_1<bits<2> opVal, bits<6> op3val, dag outs, dag ins, string asmstr,
+-       list<dag> pattern> : F3_1_asi<opVal, op3val, 0, outs, ins,
+-                                                     asmstr, pattern>;
++       list<dag> pattern> : F3_1_asi<opVal, op3val, outs, ins,
++                                                     asmstr, pattern> {
++  let asi = 0;
++}
+ 
+ class F3_2<bits<2> opVal, bits<6> op3val, dag outs, dag ins,
+            string asmstr, list<dag> pattern> : F3<outs, ins, asmstr, pattern> {
+@@ -159,7 +175,6 @@ class F3_3c<bits<2> opVal, bits<6> op3val, bits<9> opf
  
    let op         = opVal;
    let op3        = op3val;
@@ -76,7 +111,7 @@ Sync up the SPARC backend up to commit r203424.
  
    let Inst{13-5} = opfval;   // fp opcode
    let Inst{4-0}  = rs2;
-@@ -218,44 +230,101 @@ class F4_1<bits<6> op3, dag outs, dag ins,
+@@ -218,44 +233,101 @@ class F4_1<bits<6> op3, dag outs, dag ins,
              string asmstr, list<dag> pattern>
        : F4<op3, outs, ins, asmstr, pattern> {
  

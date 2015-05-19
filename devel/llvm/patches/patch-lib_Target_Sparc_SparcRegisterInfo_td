@@ -1,9 +1,15 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcRegisterInfo_td,v 1.1 2014/07/11 01:05:24 brad Exp $
+$OpenBSD: patch-lib_Target_Sparc_SparcRegisterInfo_td,v 1.2 2015/05/19 05:33:39 ajacoutot Exp $
 
 Sync up the SPARC backend up to commit r203424.
 
---- lib/Target/Sparc/SparcRegisterInfo.td.orig	Sun Jun 15 02:47:03 2014
-+++ lib/Target/Sparc/SparcRegisterInfo.td	Sun Jun 15 02:57:59 2014
+r237580
+Add support for the Sparc implementation-defined "ASR" registers.
+
+r237582
+Sparc: Support PSR, TBR, WIM read/write instructions.
+
+--- lib/Target/Sparc/SparcRegisterInfo.td.orig	Sun Mar  2 21:57:39 2014
++++ lib/Target/Sparc/SparcRegisterInfo.td	Mon May 18 18:32:12 2015
 @@ -16,7 +16,8 @@ class SparcReg<bits<16> Enc, string n> : Register<n> {
    let Namespace = "SP";
  }
@@ -14,7 +20,7 @@ Sync up the SPARC backend up to commit r203424.
    let Namespace = "SP";
  }
  
-@@ -49,11 +50,12 @@ class Rq<bits<16> Enc, string n, list<Register> subreg
+@@ -49,12 +50,50 @@ class Rq<bits<16> Enc, string n, list<Register> subreg
  }
  
  // Control Registers
@@ -27,13 +33,55 @@ Sync up the SPARC backend up to commit r203424.
  // Y register
 -def Y : SparcCtrlReg<"Y">, DwarfRegNum<[64]>;
 +def Y : SparcCtrlReg<0, "Y">, DwarfRegNum<[64]>;
++// Ancillary state registers (implementation defined)
++def ASR1 : SparcCtrlReg<1, "ASR1">;
++def ASR2 : SparcCtrlReg<2, "ASR2">;
++def ASR3 : SparcCtrlReg<3, "ASR3">;
++def ASR4 : SparcCtrlReg<4, "ASR4">;
++def ASR5 : SparcCtrlReg<5, "ASR5">;
++def ASR6 : SparcCtrlReg<6, "ASR6">;
++def ASR7 : SparcCtrlReg<7, "ASR7">;
++def ASR8 : SparcCtrlReg<8, "ASR8">;
++def ASR9 : SparcCtrlReg<9, "ASR9">;
++def ASR10 : SparcCtrlReg<10, "ASR10">;
++def ASR11 : SparcCtrlReg<11, "ASR11">;
++def ASR12 : SparcCtrlReg<12, "ASR12">;
++def ASR13 : SparcCtrlReg<13, "ASR13">;
++def ASR14 : SparcCtrlReg<14, "ASR14">;
++def ASR15 : SparcCtrlReg<15, "ASR15">;
++def ASR16 : SparcCtrlReg<16, "ASR16">;
++def ASR17 : SparcCtrlReg<17, "ASR17">;
++def ASR18 : SparcCtrlReg<18, "ASR18">;
++def ASR19 : SparcCtrlReg<19, "ASR19">;
++def ASR20 : SparcCtrlReg<20, "ASR20">;
++def ASR21 : SparcCtrlReg<21, "ASR21">;
++def ASR22 : SparcCtrlReg<22, "ASR22">;
++def ASR23 : SparcCtrlReg<23, "ASR23">;
++def ASR24 : SparcCtrlReg<24, "ASR24">;
++def ASR25 : SparcCtrlReg<25, "ASR25">;
++def ASR26 : SparcCtrlReg<26, "ASR26">;
++def ASR27 : SparcCtrlReg<27, "ASR27">;
++def ASR28 : SparcCtrlReg<28, "ASR28">;
++def ASR29 : SparcCtrlReg<29, "ASR29">;
++def ASR30 : SparcCtrlReg<30, "ASR30">;
++def ASR31 : SparcCtrlReg<31, "ASR31">;
  
++// Note that PSR, WIM, and TBR don't exist on the SparcV9, only the V8.
++def PSR : SparcCtrlReg<0, "PSR">;
++def WIM : SparcCtrlReg<0, "WIM">;
++def TBR : SparcCtrlReg<0, "TBR">;
++
  // Integer registers
  def G0 : Ri< 0, "G0">, DwarfRegNum<[0]>;
-@@ -204,3 +206,6 @@ def FPRegs : RegisterClass<"SP", [f32], 32, (sequence 
+ def G1 : Ri< 1, "G1">, DwarfRegNum<[1]>;
+@@ -204,3 +243,10 @@ def FPRegs : RegisterClass<"SP", [f32], 32, (sequence 
  def DFPRegs : RegisterClass<"SP", [f64], 64, (sequence "D%u", 0, 31)>;
  
  def QFPRegs : RegisterClass<"SP", [f128], 128, (sequence "Q%u", 0, 15)>;
 +
 +// Floating point control register classes.
 +def FCCRegs : RegisterClass<"SP", [i1], 1, (sequence "FCC%u", 0, 3)>;
++
++// Ancillary state registers
++def ASRRegs : RegisterClass<"SP", [i32], 32,
++                            (add Y, (sequence "ASR%u", 1, 31))>;

@@ -1,12 +1,23 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcInstr64Bit_td,v 1.2 2014/09/18 20:19:27 brad Exp $
+$OpenBSD: patch-lib_Target_Sparc_SparcInstr64Bit_td,v 1.3 2015/05/19 05:33:39 ajacoutot Exp $
 
 Sync up the SPARC backend up to commit r203424.
 
 r208965
 Sparc: disable printing on longer "brX,pt" aliases
 
+r237581
+Sparc: Add the "alternate address space" load/store instructions.
+
+- Adds support for the asm syntax, which has an immediate integer
+  "ASI" (address space identifier) appearing after an address, before
+  a comma.
+
+- Adds the various-width load, store, and swap in alternate address
+  space instructions. (ldsba, ldsha, lduba, lduha, lda, stba, stha,
+  sta, swapa)
+
 --- lib/Target/Sparc/SparcInstr64Bit.td.orig	Sun Mar  2 21:57:39 2014
-+++ lib/Target/Sparc/SparcInstr64Bit.td	Mon Sep 15 15:26:21 2014
++++ lib/Target/Sparc/SparcInstr64Bit.td	Mon May 18 16:33:33 2015
 @@ -235,7 +235,8 @@ def UDIVXri : F3_2<2, 0b001101,
  let Predicates = [Is64Bit] in {
  
@@ -159,6 +170,17 @@ Sparc: disable printing on longer "brX,pt" aliases
  //===----------------------------------------------------------------------===//
  // 64-bit Floating Point Conversions.
  //===----------------------------------------------------------------------===//
+@@ -414,8 +485,8 @@ def SETHIXi : F2_1<0b100,
+ }
+ 
+ // ATOMICS.
+-let Predicates = [Is64Bit], Constraints = "$swap = $rd" in {
+-  def CASXrr: F3_1_asi<3, 0b111110, 0b10000000,
++let Predicates = [Is64Bit], Constraints = "$swap = $rd", asi = 0b10000000 in {
++  def CASXrr: F3_1_asi<3, 0b111110,
+                 (outs I64Regs:$rd), (ins I64Regs:$rs1, I64Regs:$rs2,
+                                      I64Regs:$swap),
+                  "casx [$rs1], $rs2, $rd",
 @@ -470,6 +541,9 @@ def ATOMIC_SWAP_64 : Pseudo<(outs I64Regs:$rd),
                              (ins ptr_rc:$addr, I64Regs:$rs2), "",
                              [(set i64:$rd,
