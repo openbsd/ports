@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/15 10:47:55 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.8 2015/05/19 07:27:17 dcoppa Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -157,7 +157,6 @@ SUPDISTFILES+=	binutils-2.17-amd64-${BB_VER}.tar.gz:0 \
 MODPY_ADJ_FILES=build/linux/unbundle/replace_gyp_files.py
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/content/common/plugin_list_posix.cc
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 .for _arch in x64 ia32
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/libavutil \
