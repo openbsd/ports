@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2015/03/23 19:08:52 bcallah Exp $
---- CMakeLists.txt.orig	Sat Mar 21 06:32:53 2015
-+++ CMakeLists.txt	Sat Mar 21 13:13:13 2015
-@@ -119,7 +119,7 @@ else (APPLE)
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2015/05/19 13:40:41 bcallah Exp $
+--- CMakeLists.txt.orig	Mon May  4 12:50:37 2015
++++ CMakeLists.txt	Mon May 18 23:49:38 2015
+@@ -125,7 +125,7 @@ else (APPLE)
        set(CMAKE_CXX_FLAGS_RELEASE "-std=gnu++0x -mno-ms-bitfields -O2 -DNDEBUG -DQT_NO_DEBUG")
     else (MINGW)
        set(CMAKE_CXX_FLAGS_DEBUG   "-std=c++11 -fPIC -fPIE -g")
@@ -10,7 +10,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2015/03/23 19:08:52 bcallah Exp $
     endif (MINGW)
  endif(APPLE)
  
-@@ -173,11 +173,11 @@ SET(QT_USE_QTHELP        TRUE)
+@@ -179,11 +179,11 @@ SET(QT_USE_QTHELP        TRUE)
  ## alsa >= 1.0.0
  ##
  
@@ -24,7 +24,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2015/03/23 19:08:52 bcallah Exp $
        PKGCONFIG (alsa 1.0.0 ALSA_INCDIR ALSA_LIBDIR ALSA_LIB ALSA_CPP )
        if (NOT ALSA_INCDIR)
              message(FATAL_ERROR "Fatal error: ALSA >= 1.0.0 required")
-@@ -186,7 +186,7 @@ else (APPLE OR MINGW)
+@@ -192,7 +192,7 @@ else (APPLE OR MINGW)
              set (USE_ALSA 1)
              set (HAS_MIDI 1)
        endif (NOT ALSA_INCDIR)
@@ -33,7 +33,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2015/03/23 19:08:52 bcallah Exp $
  
  ##
  ## pulseaudio
-@@ -196,8 +196,8 @@ if (APPLE OR MINGW)
+@@ -202,8 +202,8 @@ if (APPLE OR MINGW)
        set (USE_PULSEAUDIO 0)
  else (APPLE OR MINGW)
        if (PULSEAUDIO_FOUND)
@@ -44,7 +44,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2015/03/23 19:08:52 bcallah Exp $
        else (PULSEAUDIO_FOUND)
              set(USE_PULSEAUDIO 0)
              message("Pulseaudio not found.")
-@@ -372,11 +372,11 @@ add_custom_command(
+@@ -378,11 +378,11 @@ add_custom_command(
      DEPENDS ${PROJECT_SOURCE_DIR}/all.h
      WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
      )
@@ -59,7 +59,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2015/03/23 19:08:52 bcallah Exp $
  
  precompiled_header(QT_INCLUDES all ${BUILD_PCH})
  
-@@ -450,18 +450,18 @@ include(Packaging)
+@@ -456,18 +456,18 @@ include(Packaging)
  ##  custom target for translation generation
  ##
  

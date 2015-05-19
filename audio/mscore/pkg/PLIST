@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/03/24 00:14:39 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/05/19 13:40:41 bcallah Exp $
 @conflict mscore-*
 @bin bin/mscore
 share/applications/mscore.desktop
@@ -45,6 +45,7 @@ share/mscore-2.0/manual/plugins/cursor.html
 share/mscore-2.0/manual/plugins/durationelement.html
 share/mscore-2.0/manual/plugins/dynamic.html
 share/mscore-2.0/manual/plugins/element.html
+share/mscore-2.0/manual/plugins/excerpt.html
 share/mscore-2.0/manual/plugins/fbox.html
 share/mscore-2.0/manual/plugins/figuredbass.html
 share/mscore-2.0/manual/plugins/figuredbassitem.html
@@ -92,7 +93,6 @@ share/mscore-2.0/manual/plugins/qprocess.html
 share/mscore-2.0/manual/plugins/rehearsalmark.html
 share/mscore-2.0/manual/plugins/repeatmeasure.html
 share/mscore-2.0/manual/plugins/rest.html
-share/mscore-2.0/manual/plugins/rubberband.html
 share/mscore-2.0/manual/plugins/score.html
 share/mscore-2.0/manual/plugins/scoreview.html
 share/mscore-2.0/manual/plugins/segment.html
@@ -126,7 +126,6 @@ share/mscore-2.0/manual/plugins/tuplet.html
 share/mscore-2.0/manual/plugins/vbox.html
 share/mscore-2.0/manual/plugins/volta.html
 share/mscore-2.0/manual/plugins/voltasegment.html
-share/mscore-2.0/manual/reference-en.pdf
 share/mscore-2.0/plugins/
 share/mscore-2.0/plugins/abc_import.qml
 share/mscore-2.0/plugins/colornotes.qml
@@ -173,6 +172,13 @@ share/mscore-2.0/templates/02-Choral/06-SATB_Closed_Score_+_Piano.mscz
 share/mscore-2.0/templates/02-Choral/07-Voice_Piano.mscz
 share/mscore-2.0/templates/02-Choral/08-Liturgical_Unmetrical.mscz
 share/mscore-2.0/templates/02-Choral/09-Liturgical_Unmetrical_+_Organ.mscz
+share/mscore-2.0/templates/03-Chamber_Music/
+share/mscore-2.0/templates/03-Chamber_Music/01-String_Quartet.mscz
+share/mscore-2.0/templates/03-Chamber_Music/02-Wind_Quintet.mscz
+share/mscore-2.0/templates/03-Chamber_Music/03-Wind_Quartet.mscz
+share/mscore-2.0/templates/03-Chamber_Music/04-Saxophone_Quartet.mscz
+share/mscore-2.0/templates/03-Chamber_Music/05-Brass_Quintet.mscz
+share/mscore-2.0/templates/03-Chamber_Music/06-Brass_Quartet.mscz
 share/mscore-2.0/templates/03-Solo/
 share/mscore-2.0/templates/03-Solo/01-Guitar.mscz
 share/mscore-2.0/templates/03-Solo/02-Guitar_+_Tablature.mscz
@@ -184,7 +190,7 @@ share/mscore-2.0/templates/04-Jazz/02-Big_Band.mscz
 share/mscore-2.0/templates/04-Jazz/03-Jazz_Combo.mscz
 share/mscore-2.0/templates/05-Orchestral/
 share/mscore-2.0/templates/05-Orchestral/01-Classical_Orchestra.mscz
-share/mscore-2.0/templates/05-Orchestral/02-String_Quartet.mscz
+share/mscore-2.0/templates/05-Orchestral/03-String_Orchestra.mscz
 share/mscore-2.0/templates/06-Band/
 share/mscore-2.0/templates/06-Band/01-Rock_Band.mscz
 share/mscore-2.0/templates/drumset_fr.drm

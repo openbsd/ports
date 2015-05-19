@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2015/05/04 16:45:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.22 2015/05/19 13:40:41 bcallah Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 BROKEN-powerpc = libmscore/pitchspelling.h:56:42: error: enumerator value -1 is too large for underlying type 'char'
 
 
-V =		2.0.0
+V =		2.0.1
 COMMENT =	WYSIWYG music notation software (MuseScore)
 DISTNAME =	MuseScore-${V}
 PKGNAME =	musescore-${V}
-REVISION =	1
 EXTRACT_SUFX =	.zip
 CATEGORIES =	audio x11
 
@@ -27,7 +26,7 @@ WANTLIB += Qt5Svg Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets
 WANTLIB += Qt5Xml Qt5XmlPatterns c m ogg portaudio pthread sndfile
 WANTLIB += vorbis vorbisfile z
 
-MASTER_SITES =	http://ftp.osuosl.org/pub/musescore/releases/MuseScore-2.0/
+MASTER_SITES =	http://ftp.osuosl.org/pub/musescore/releases/MuseScore-${V}/
 
 MODULES =	devel/cmake \
 		x11/qt5
