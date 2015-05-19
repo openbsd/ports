@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.26 2015/04/24 15:31:37 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.27 2015/05/19 04:47:13 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -129,6 +129,8 @@ webapps/docs/api/org/apache/catalina/authenticator/SSLAuthenticator.html
 webapps/docs/api/org/apache/catalina/authenticator/SavedRequest.html
 webapps/docs/api/org/apache/catalina/authenticator/SingleSignOn.html
 webapps/docs/api/org/apache/catalina/authenticator/SingleSignOnEntry.html
+webapps/docs/api/org/apache/catalina/authenticator/SingleSignOnListener.html
+webapps/docs/api/org/apache/catalina/authenticator/SingleSignOnSessionKey.html
 webapps/docs/api/org/apache/catalina/authenticator/SpnegoAuthenticator.html
 webapps/docs/api/org/apache/catalina/authenticator/package-frame.html
 webapps/docs/api/org/apache/catalina/authenticator/package-summary.html
@@ -259,6 +261,7 @@ webapps/docs/api/org/apache/catalina/filters/FilterBase.html
 webapps/docs/api/org/apache/catalina/filters/RemoteAddrFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteHostFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteIpFilter.XForwardedRequest.html
+webapps/docs/api/org/apache/catalina/filters/RemoteIpFilter.XForwardedResponse.html
 webapps/docs/api/org/apache/catalina/filters/RemoteIpFilter.html
 webapps/docs/api/org/apache/catalina/filters/RequestDumperFilter.html
 webapps/docs/api/org/apache/catalina/filters/RequestFilter.html
@@ -280,7 +283,6 @@ webapps/docs/api/org/apache/catalina/ha/ClusterValve.html
 webapps/docs/api/org/apache/catalina/ha/authenticator/
 webapps/docs/api/org/apache/catalina/ha/authenticator/ClusterSingleSignOn.html
 webapps/docs/api/org/apache/catalina/ha/authenticator/ClusterSingleSignOnListener.html
-webapps/docs/api/org/apache/catalina/ha/authenticator/SingleSignOnMessage.html
 webapps/docs/api/org/apache/catalina/ha/authenticator/package-frame.html
 webapps/docs/api/org/apache/catalina/ha/authenticator/package-summary.html
 webapps/docs/api/org/apache/catalina/ha/authenticator/package-tree.html
@@ -333,6 +335,7 @@ webapps/docs/api/org/apache/catalina/ha/session/DeltaRequest.html
 webapps/docs/api/org/apache/catalina/ha/session/DeltaSession.html
 webapps/docs/api/org/apache/catalina/ha/session/JvmRouteBinderValve.html
 webapps/docs/api/org/apache/catalina/ha/session/JvmRouteSessionIDBinderListener.html
+webapps/docs/api/org/apache/catalina/ha/session/ReplicatedSessionListener.html
 webapps/docs/api/org/apache/catalina/ha/session/SerializablePrincipal.html
 webapps/docs/api/org/apache/catalina/ha/session/SessionIDMessage.html
 webapps/docs/api/org/apache/catalina/ha/session/SessionMessage.html
@@ -775,10 +778,10 @@ webapps/docs/api/org/apache/catalina/valves/AccessLogValve.HeaderElement.html
 webapps/docs/api/org/apache/catalina/valves/AccessLogValve.HostElement.html
 webapps/docs/api/org/apache/catalina/valves/AccessLogValve.HttpStatusCodeElement.html
 webapps/docs/api/org/apache/catalina/valves/AccessLogValve.LocalAddrElement.html
-webapps/docs/api/org/apache/catalina/valves/AccessLogValve.LocalPortElement.html
 webapps/docs/api/org/apache/catalina/valves/AccessLogValve.LocalServerNameElement.html
 webapps/docs/api/org/apache/catalina/valves/AccessLogValve.LogicalUserNameElement.html
 webapps/docs/api/org/apache/catalina/valves/AccessLogValve.MethodElement.html
+webapps/docs/api/org/apache/catalina/valves/AccessLogValve.PortElement.html
 webapps/docs/api/org/apache/catalina/valves/AccessLogValve.ProtocolElement.html
 webapps/docs/api/org/apache/catalina/valves/AccessLogValve.QueryElement.html
 webapps/docs/api/org/apache/catalina/valves/AccessLogValve.RemoteAddrElement.html
@@ -1381,6 +1384,7 @@ webapps/docs/api/org/apache/tomcat/jdbc/pool/package-tree.html
 webapps/docs/api/org/apache/tomcat/jni/
 webapps/docs/api/org/apache/tomcat/jni/Address.html
 webapps/docs/api/org/apache/tomcat/jni/BIOCallback.html
+webapps/docs/api/org/apache/tomcat/jni/Buffer.html
 webapps/docs/api/org/apache/tomcat/jni/Directory.html
 webapps/docs/api/org/apache/tomcat/jni/Error.html
 webapps/docs/api/org/apache/tomcat/jni/File.html
@@ -1409,6 +1413,7 @@ webapps/docs/api/org/apache/tomcat/jni/Sockaddr.html
 webapps/docs/api/org/apache/tomcat/jni/Socket.html
 webapps/docs/api/org/apache/tomcat/jni/Status.html
 webapps/docs/api/org/apache/tomcat/jni/Stdlib.html
+webapps/docs/api/org/apache/tomcat/jni/Thread.html
 webapps/docs/api/org/apache/tomcat/jni/Time.html
 webapps/docs/api/org/apache/tomcat/jni/User.html
 webapps/docs/api/org/apache/tomcat/jni/package-frame.html
