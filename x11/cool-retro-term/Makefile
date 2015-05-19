@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/27 08:16:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/19 03:55:01 bcallah Exp $
 
 COMMENT =	good looking terminal emulator which mimics old CRT displays
 DISTNAME =	cool-retro-term-1.0.0
 CATEGORIES =	x11
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://github.com/Swordfish90/cool-retro-term
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -24,7 +24,7 @@ MODGCC4_LANGS =	c++
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-MAKE_FLAGS =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+MAKE_FLAGS =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -fPIC"
 
 FAKE_FLAGS =	INSTALL_ROOT="${DESTDIR}"
 
