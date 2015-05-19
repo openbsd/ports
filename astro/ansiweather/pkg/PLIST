@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/19 08:49:05 sthen Exp $
+bin/ansiweather
+share/doc/ansiweather/
+share/doc/ansiweather/README.md
+share/examples/ansiweather/
+share/examples/ansiweather/ansiweatherrc.example
