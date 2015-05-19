@@ -1,0 +1,22 @@
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.1.1.1 2015/05/19 19:13:39 edd Exp $
+--- lib/CMakeLists.txt.orig	Thu May  7 15:21:22 2015
++++ lib/CMakeLists.txt	Tue May 19 08:16:50 2015
+@@ -43,9 +43,9 @@ add_library(libmosquitto SHARED
+ 
+ set (LIBRARIES ${OPENSSL_LIBRARIES} ${PTHREAD_LIBRARIES})
+ 
+-if (UNIX AND NOT APPLE)
++if (UNIX AND NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+ 	set (LIBRARIES ${LIBRARIES} rt)
+-endif (UNIX AND NOT APPLE)
++endif (UNIX AND NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+ 
+ if (WIN32)
+ 	set (LIBRARIES ${LIBRARIES} ws2_32)
+@@ -73,6 +73,3 @@ set_target_properties(libmosquitto PROPERTIES
+ install(TARGETS libmosquitto RUNTIME DESTINATION ${BINDIR} LIBRARY DESTINATION ${LIBDIR})
+ install(FILES mosquitto.h DESTINATION ${INCLUDEDIR})
+ 
+-if (UNIX)
+-	install(CODE "EXEC_PROGRAM(/sbin/ldconfig)")
+-endif (UNIX)

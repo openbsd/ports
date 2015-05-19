@@ -1,0 +1,30 @@
+$OpenBSD: patch-mosquitto_conf,v 1.1.1.1 2015/05/19 19:13:39 edd Exp $
+--- mosquitto.conf.orig	Mon May 18 00:24:50 2015
++++ mosquitto.conf	Mon May 18 00:29:59 2015
+@@ -32,7 +32,7 @@
+ # This should be set to /var/run/mosquitto.pid if mosquitto is
+ # being run automatically on boot with an init script and 
+ # start-stop-daemon or similar.
+-#pid_file
++pid_file /var/run/mosquitto.pid
+ 
+ # When run as root, drop privileges to this user and its primary 
+ # group.
+@@ -40,7 +40,7 @@
+ # If run as a non-root user, this setting has no effect.
+ # Note that on Windows this has no effect and so mosquitto should 
+ # be started by the user you wish it to run as.
+-#user mosquitto
++user _mosquitto
+ 
+ # The maximum number of QoS 1 and 2 messages currently inflight per 
+ # client.
+@@ -459,7 +459,7 @@
+ # Note that if the broker is running as a Windows service it will default to
+ # "log_dest none" and neither stdout nor stderr logging is available.
+ # Use "log_dest none" if you wish to disable logging.
+-#log_dest stderr
++log_dest syslog
+ 
+ # If using syslog logging (not on Windows), messages will be logged to the
+ # "daemon" facility by default. Use the log_facility option to choose which of

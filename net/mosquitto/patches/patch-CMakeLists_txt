@@ -1,0 +1,24 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2015/05/19 19:13:39 edd Exp $
+--- CMakeLists.txt.orig	Thu May  7 15:21:22 2015
++++ CMakeLists.txt	Tue May 19 08:32:01 2015
+@@ -37,18 +37,11 @@ if (WIN32)
+ else (WIN32)
+ 	set (BINDIR bin)
+ 	set (SBINDIR sbin)
+-	if (${CMAKE_INSTALL_PREFIX} STREQUAL /usr)
+-		set (SYSCONFDIR /etc/mosquitto)
+-	else (${CMAKE_INSTALL_PREFIX} STREQUAL /usr)
+-		set (SYSCONFDIR etc/mosquitto)
+-	endif (${CMAKE_INSTALL_PREFIX} STREQUAL /usr)
+-	
+ 	set (LIBDIR lib${LIB_SUFFIX})
+-	set (CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${LIBDIR}")
+ 	set (INCLUDEDIR include)
+ 	set (DATAROOTDIR share)
+-	set (MANDIR ${DATAROOTDIR}/man)
+-	set (SHAREDIR ${DATAROOTDIR}/mosquitto)
++	set (MANDIR man)
++	set (SYSCONFDIR ${DATAROOTDIR}/examples/mosquitto)
+ endif (WIN32)
+ 
+ option(WITH_TLS

@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2015/05/19 19:13:39 edd Exp $
+--- src/CMakeLists.txt.orig	Thu May  7 15:21:22 2015
++++ src/CMakeLists.txt	Tue May 19 08:17:05 2015
+@@ -85,6 +85,8 @@ set (MOSQ_LIBS ${MOSQ_LIBS} ${OPENSSL_LIBRARIES})
+ if (UNIX)
+ 	if (APPLE)
+ 		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
++	elseif (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++		set (MOSQ_LIBS ${MOSQ_LIBS} m)
+ 	else (APPLE)
+ 		set (MOSQ_LIBS ${MOSQ_LIBS} rt dl m)
+ 	endif (APPLE)
+@@ -101,10 +103,11 @@ endif (${WITH_WEBSOCKETS} STREQUAL ON)
+ # Simple detect libuuid
+ if(NOT APPLE)
+ 	FIND_PATH(UUID_HEADER uuid/uuid.h)
+-	if (UUID_HEADER)
++	FIND_LIBRARY(UUID_LIBRARY NAMES uuid)
++	if (UUID_HEADER AND UUID_LIBRARY)
+ 		add_definitions(-DWITH_UUID)
+-		set (MOSQ_LIBS ${MOSQ_LIBS} uuid)
+-	endif (UUID_HEADER)
++		set (MOSQ_LIBS ${MOSQ_LIBS} ${UUID_LIBRARY})
++	endif()
+ endif(NOT APPLE)
+ 
+ target_link_libraries(mosquitto ${MOSQ_LIBS})
+@@ -125,8 +128,4 @@ if (${WITH_TLS} STREQUAL ON)
+ 	target_link_libraries(mosquitto_passwd ${OPENSSL_LIBRARIES})
+ 	install(TARGETS mosquitto_passwd RUNTIME DESTINATION ${BINDIR} LIBRARY DESTINATION ${LIBDIR})
+ endif (${WITH_TLS} STREQUAL ON)
+-
+-if (UNIX)
+-	install(CODE "EXEC_PROGRAM(/sbin/ldconfig)")
+-endif (UNIX)
+ 

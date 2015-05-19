@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/19 19:13:39 edd Exp $
+@newgroup _mosquitto:753
+@newuser _mosquitto:753:753:daemon:Mosquitto MQTT Broker:/var/empty:/sbin/nologin
+@bin bin/mosquitto_passwd
+@bin bin/mosquitto_pub
+@bin bin/mosquitto_sub
+include/mosquitto.h
+include/mosquitto_plugin.h
+include/mosquittopp.h
+@lib lib/libmosquitto.so.${LIBmosquitto_VERSION}
+@lib lib/libmosquittopp.so.${LIBmosquittopp_VERSION}
+@man man/man1/mosquitto_passwd.1
+@man man/man1/mosquitto_pub.1
+@man man/man1/mosquitto_sub.1
+@man man/man3/libmosquitto.3
+@man man/man5/mosquitto.conf.5
+@man man/man7/mosquitto-tls.7
+@man man/man7/mqtt.7
+@man man/man8/mosquitto.8
+@bin sbin/mosquitto
+share/examples/mosquitto/
+@sample ${SYSCONFDIR}/mosquitto/
+share/examples/mosquitto/aclfile.example
+share/examples/mosquitto/mosquitto.conf
+@mode 640
+@group _mosquitto
+@sample ${SYSCONFDIR}/mosquitto/mosquitto.conf
+@mode
+@group
+share/examples/mosquitto/pskfile.example
+share/examples/mosquitto/pwfile.example
+@rcscript ${RCDIR}/mosquitto
+@extra /var/run/mosquitto.pid
