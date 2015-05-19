@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/03/25 10:37:39 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/05/19 15:41:47 ajacoutot Exp $
 @conflict idiff-*
 @bin bin/iconvert
 @bin bin/idiff
@@ -43,6 +43,13 @@ include/OpenImageIO/varyingref.h
 include/OpenImageIO/version.h
 @lib lib/libOpenImageIO.so.${LIBOpenImageIO_VERSION}
 lib/python${MODPY_VERSION}/site-packages/OpenImageIO.so.${LIBOpenImageIO_VERSION}
+@man man/man1/iconvert.1
+@man man/man1/idiff.1
+@man man/man1/igrep.1
+@man man/man1/iinfo.1
+@man man/man1/iv.1
+@man man/man1/maketx.1
+@man man/man1/oiiotool.1
 share/doc/openimageio/
 share/doc/openimageio/CHANGES
 share/doc/openimageio/LICENSE
