@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/19 11:30:14 rpointel Exp $
+bin/burpsuite
+share/java/
+share/java/classes/
+share/java/classes/burpsuite.jar
