@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.28 2013/04/11 14:06:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.29 2015/05/19 08:49:30 sthen Exp $
 
      SUBDIR =
+     SUBDIR += ansiweather
      SUBDIR += celestia
      SUBDIR += dgpsip
      SUBDIR += gcal
