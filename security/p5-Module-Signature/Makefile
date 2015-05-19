@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2015/04/15 18:41:22 bluhm Exp $
+# $OpenBSD: Makefile,v 1.22 2015/05/19 17:21:15 bluhm Exp $
 
 COMMENT =		module signature file manipulation
 
-DISTNAME =		Module-Signature-0.78
+DISTNAME =		Module-Signature-0.79
 
 CATEGORIES =		security
 
