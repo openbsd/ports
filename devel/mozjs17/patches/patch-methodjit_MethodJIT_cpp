@@ -1,0 +1,12 @@
+$OpenBSD: patch-methodjit_MethodJIT_cpp,v 1.1 2015/05/19 09:26:11 kettenis Exp $
+Force JeagerTrampoline to be hidden to avoid R_X86_64_PC32 relocation.
+--- methodjit/MethodJIT.cpp.orig	Mon Feb 11 23:33:23 2013
++++ methodjit/MethodJIT.cpp	Thu May 14 22:10:23 2015
+@@ -244,6 +244,7 @@ JS_STATIC_ASSERT(JSVAL_PAYLOAD_MASK == 0x00007FFFFFFFF
+ asm (
+ ".text\n"
+ ".globl " SYMBOL_STRING(JaegerTrampoline) "\n"
++".hidden " SYMBOL_STRING(JaegerTrampoline) "\n"
+ SYMBOL_STRING(JaegerTrampoline) ":"       "\n"
+     /* Prologue. */
+     CFI(".cfi_startproc"                 "\n")

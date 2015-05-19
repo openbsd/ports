@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/03 17:54:42 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/19 09:26:11 kettenis Exp $
 
 SHARED_ONLY=	Yes
 # based on ffx 17 engine
@@ -15,7 +15,7 @@ COMMENT =	Mozilla C implementation of JavaScript
 MOZILLA_VERSION =	17.0
 DISTNAME =		mozjs17.0.0
 PKGNAME =		mozjs17-${MOZILLA_VERSION}
-REVISION =		1
+REVISION =		2
 
 SO_VERSION =	0.0
 SHARED_LIBS =	mozjs-17.0 ${SO_VERSION}
