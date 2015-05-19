@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.902 2015/05/14 17:54:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.903 2015/05/19 19:19:48 edd Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -235,6 +235,7 @@
      SUBDIR += mon
      SUBDIR += mono-zeroconf
      SUBDIR += mosh
+     SUBDIR += mosquitto
      SUBDIR += mrtd
      SUBDIR += mrtg
      SUBDIR += mtr
