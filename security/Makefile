@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.364 2015/05/04 16:43:51 zhuk Exp $
+# $OpenBSD: Makefile,v 1.365 2015/05/19 11:32:00 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -17,6 +17,7 @@
      SUBDIR += bounix
      SUBDIR += bsd-airtools
      SUBDIR += bunny
+     SUBDIR += burpsuite
      SUBDIR += ccid
      SUBDIR += ccrypt
      SUBDIR += cfs
