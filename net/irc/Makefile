@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2015/05/17 11:20:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2015/05/20 07:34:14 sthen Exp $
 
 COMMENT=	internet relay chat (irc) server
 
 DISTNAME=       irc2.10.3p1
 PKGNAME=        ${DISTNAME:S/irc/irc-/:S/p/./}
-REVISION=	3
+EPOCH=		0
 CATEGORIES=	net
 
 MASTER_SITES=   ftp://ftp.irc.org/irc/server/Old/ \
