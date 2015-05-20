@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2014/01/02 14:01:53 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2015/05/20 11:34:32 jca Exp $
 
 COMMENT =	npapi vte-based terminal for web browsers
 
 DISTNAME =	vteplugin-0.1
-REVISION =	11
+REVISION =	12
 CATEGORIES =	www x11
 
 # WTFPL
@@ -22,8 +22,8 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread vte
 WANTLIB += z
 
 do-build:
-	${CC} ${CFLAGS} `pkg-config --cflags vte` ${WRKSRC}/npunix.c -c -o ${WRKSRC}/npunix.o
-	${CC} ${CFLAGS} `pkg-config --cflags vte` ${WRKSRC}/vteplugin.c -c -o ${WRKSRC}/vteplugin.o
+	${CC} ${CFLAGS} -fPIC `pkg-config --cflags vte` ${WRKSRC}/npunix.c -c -o ${WRKSRC}/npunix.o
+	${CC} ${CFLAGS} -fPIC `pkg-config --cflags vte` ${WRKSRC}/vteplugin.c -c -o ${WRKSRC}/vteplugin.o
 	${CC}  -Wl,-Bdynamic -pthread ${WRKSRC}/npunix.o ${WRKSRC}/vteplugin.o -shared \
 		-o ${WRKSRC}/vteplugin.so `pkg-config --libs vte gtk+-2.0 gdk-2.0`
 
