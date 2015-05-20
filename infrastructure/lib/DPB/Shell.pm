@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.15 2015/05/20 08:34:45 espie Exp $
+# $OpenBSD: Shell.pm,v 1.16 2015/05/20 11:54:35 espie Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -205,4 +205,10 @@ sub exec
 	$self->SUPER::exec(@argv);
 }
 
+sub nochroot
+{
+	my $self = shift;
+	$self->{nochroot} = 1;
+	return $self;
+}
 1;
