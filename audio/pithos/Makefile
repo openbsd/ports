@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/12 04:59:27 bcallah Exp $
+# $OpenBSD: Makefile,v 1.12 2015/05/20 03:29:07 bcallah Exp $
 
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
-GH_TAGNAME =	1.1.0
+GH_TAGNAME =	1.1.1
 
 COMMENT =	Pandora client for GNOME
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
