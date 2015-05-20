@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.14 2015/05/17 08:29:31 espie Exp $
+# $OpenBSD: Shell.pm,v 1.15 2015/05/20 08:34:45 espie Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -194,45 +194,15 @@ sub nochroot
 }
 
 package DPB::Shell::Local::Root;
-our @ISA = qw(DPB::Shell::Abstract);
+our @ISA = qw(DPB::Shell::Local::Chroot);
 use POSIX;
 
 sub exec
 {
 	my ($self, @argv) = @_;
-	my $chroot = $self->prop->{chroot};
 	$> = 0;
 	$) = 0;
-	if ($self->{nochroot}) {
-		undef $chroot;
-	}
-	if (defined $chroot) {
-		chroot($chroot);
-	}
-	$self->{user} //= $self->prop->{build_user};
-	if (!$self->{as_root} && defined $self->{user}) {
-		$) = $self->{user}{grouplist};
-		setgid($self->{user}{gid});
-		setuid($self->{user}{uid});
-	}
-	if ($self->{env}) {
-		while (my ($k, $v) = each %{$self->{env}}) {
-			$v //= '';
-			$ENV{$k} = $v;
-		}
-	}
-	$self->{dir} //= '/';
-	CORE::chdir($self->{dir}) or 
-	    DPB::Util->die_bang("Can't chdir to $self->{dir}");
-
-	if (defined $self->prop->{umask}) {
-		umask(oct($self->prop->{umask}));
-	}
-	if (-t STDIN) {
-		close(STDIN);
-		open STDIN, '</dev/null';
-	}
-	exec {$argv[0]} @argv;
+	$self->SUPER::exec(@argv);
 }
 
 1;
