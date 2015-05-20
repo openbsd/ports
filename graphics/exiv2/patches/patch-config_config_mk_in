@@ -1,0 +1,15 @@
+$OpenBSD: patch-config_config_mk_in,v 1.1 2015/05/20 11:51:39 jca Exp $
+
+- warnings about c++locale.h clutter the build
+
+--- config/config.mk.in.orig	Wed May 20 13:42:31 2015
++++ config/config.mk.in	Wed May 20 13:42:38 2015
+@@ -58,7 +58,7 @@ GXX = @GXX@
+ # Common compiler flags (warnings, symbols [-ggdb], optimization [-O2], etc)
+ CXXFLAGS = @CXXFLAGS@
+ ifeq ($(GXX),yes)
+-    CXXFLAGS += -Wall -Wcast-align -Wpointer-arith -Wformat-security -Wmissing-format-attribute -Woverloaded-virtual -W
++    CXXFLAGS += -Wall -Wcast-align -Wpointer-arith -Wformat-security -Woverloaded-virtual -W
+ endif
+ 
+ # Command to run only the preprocessor
