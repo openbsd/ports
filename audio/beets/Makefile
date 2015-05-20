@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/15 13:43:40 sthen Exp $
-
-PORTROACH_COMMENT = 1.3.12+ needs py-jellyfish, waiting on OKs
+# $OpenBSD: Makefile,v 1.9 2015/05/20 08:14:31 sthen Exp $
 
 COMMENT =	CLI tools to manage music collections
 
-MODPY_EGG_VERSION = 1.3.11
+MODPY_EGG_VERSION = 1.3.13
 DISTNAME =	beets-${MODPY_EGG_VERSION}
 CATEGORIES =	audio
 

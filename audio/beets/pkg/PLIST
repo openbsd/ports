@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/04/08 10:55:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/05/20 08:14:31 sthen Exp $
 bin/beet
 lib/python${MODPY_VERSION}/site-packages/beets/
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -131,6 +131,11 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/mbcollection.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/mbcollection.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/mbsync.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/mbsync.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/metasync/
+lib/python${MODPY_VERSION}/site-packages/beetsplug/metasync/__init__.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/metasync/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/metasync/amarok.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/metasync/amarok.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/missing.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/missing.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/mpdstats.py
