@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/18 21:07:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2015/05/20 13:35:30 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -54,5 +54,11 @@ LIB_DEPENDS=		devel/libgit2/libgit2-glib \
 			x11/gtksourceview3
 
 CONFIGURE_ENV=		ac_cv_path_PYTHON3_CONFIG=python${MODPY_VERSION}-config
+
+.include <bsd.port.arch.mk>
+.if ${ARCH:Mi386} # needs 64-bit atomic ops
+CFLAGS+=		-march=i586
+CXXFLAGS+=		-march=i586
+.endif
 
 .include <bsd.port.mk>
