@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2014/12/15 23:35:26 kili Exp $
+# $OpenBSD: Makefile,v 1.115 2015/05/20 12:05:50 pirofti Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -22,6 +22,7 @@
     SUBDIR += freetype
     SUBDIR += ghostscript
     SUBDIR += ghostview
+    SUBDIR += gl2ps
     SUBDIR += gtklp
     SUBDIR += gutenprint
     SUBDIR += gv
