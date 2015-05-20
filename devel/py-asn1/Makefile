@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/05/07 05:58:52 benoit Exp $
+# $OpenBSD: Makefile,v 1.23 2015/05/20 09:06:45 sthen Exp $
 
 COMMENT =	ASN.1 library for Python
 
@@ -8,6 +8,7 @@ PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
 PKG_ARCH =		*
 EPOCH =			0
+REVISION =		0
 
 HOMEPAGE =		http://pyasn1.sourceforge.net/
 
@@ -19,10 +20,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pyasn1/}
 
 MODULES =		lang/python
+FLAVORS =		python3
+FLAVOR ?=
 
 MODPY_SETUPTOOLS =	Yes
 
-DOCSDIR =	${PREFIX}/share/doc/py-asn1
+DOCSDIR =	${PREFIX}/share/doc/${MODPY_PY_PREFIX}asn1
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
