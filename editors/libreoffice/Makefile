@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2015/05/16 09:06:38 robert Exp $
+# $OpenBSD: Makefile,v 1.129 2015/05/20 19:06:42 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -115,14 +115,7 @@ MULTI_PACKAGES=		-main -java -kde
 
 PSEUDO_FLAVORS=	parallel no_lang
 FLAVORS=	debug no_java
-.if ${MACHINE_ARCH:Mi386}
-# XXX java build frequently fail on i386; since libreoffice is a huge build
-# itself, these failures give an unacceptable bulk build time, so disable
-# for now.  N.B. no_java is a *flavour* not a pseudo-flavour
-FLAVOR?=	no_java
-.else
 FLAVOR?=
-.endif
 
 .if !${FLAVOR:Mno_lang}
 LANGS=			ar bg ca de es fa fi fr hu it \
