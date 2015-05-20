@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2007/07/25 22:27:01 rui Exp $
---- Makefile.in.orig	Mon May 28 07:15:43 2007
-+++ Makefile.in	Wed Jul 18 11:55:08 2007
+$OpenBSD: patch-Makefile_in,v 1.6 2015/05/20 11:29:58 jca Exp $
+--- Makefile.in.orig	Mon May 28 08:15:43 2007
++++ Makefile.in	Wed May 20 13:24:31 2015
 @@ -182,7 +182,7 @@ AUTOMAKE = @AUTOMAKE@
  AWK = @AWK@
  CC = @CC@
@@ -46,3 +46,12 @@ $OpenBSD: patch-Makefile_in,v 1.5 2007/07/25 22:27:01 rui Exp $
  
  ########################################################################
  ########################################################################
+@@ -1411,7 +1411,7 @@ uninstall-man: uninstall-man1 uninstall-man8
+ libhoneyd.so: $(LIBHONEYDFILES)
+ 	$(LIBTOOL) --mode=link $(CC) $(CFLAGS) -o libtmp$@.la \
+ 		-rpath $(libdir)/honeyd $(LIBHONEYDFILES) $(LIBS) $(LDFLAGS) \
+-		-module -avoid-version -nostdlib @LIBDL@
++		-module -avoid-version @LIBDL@
+ 	rm -f libtmp$@.la tmp$@.so* $@
+ 	cp .libs/libtmp$@.so $@ || cp .libs/libtmp$@ $@
+ 	rm -f .libs/libtmp$@.*
