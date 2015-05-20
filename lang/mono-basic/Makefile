@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2014/07/21 10:36:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/05/20 07:36:38 sthen Exp $
+
+BROKEN-i386=	vbnc crashes during build
 
 COMMENT=	Visual Basic .NET support for Mono
 DISTNAME=	mono-basic-2.10
