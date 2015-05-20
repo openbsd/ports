@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2015/05/07 19:25:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2015/05/20 16:34:14 jca Exp $
 
 SHARED_ONLY =	Yes
 SHARED_LIBS +=	mupdf 3.0
@@ -8,6 +8,7 @@ COMMENT =	graphic library, pdf parser, viewer and utilities
 V =		1.7a
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
+REVISION =	0
 
 CATEGORIES =	textproc x11
 
@@ -40,6 +41,8 @@ NO_TEST =	Yes
 .if ${MACHINE_ARCH} == "hppa"
 CFLAGS +=	-ffunction-sections
 .endif
+
+CFLAGS +=	-fPIC
 
 # -I flags prepend mupdf's own, to allow building with previous ver installed
 MAKE_ENV += CFLAGS="${CFLAGS} -I$(WRKSRC)/fitz -I$(WRKSRC)/pdf -I$(WRKSRC)/xps"
