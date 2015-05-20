@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/04/18 22:35:36 jturner Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/20 11:38:33 jca Exp $
 
 COMMENT=	lightweight Scheme implementation with subset of R5RS
 
@@ -15,6 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tinyscheme/}
 WANTLIB += c m
 
 MAKE_FILE=	${WRKSRC}/makefile
+MAKE_FLAGS=	LD="${CC}"
 
 CFLAGS+=	-fPIC -DInitFile="\"${PREFIX}/share/tinyscheme/init.scm\""
 
