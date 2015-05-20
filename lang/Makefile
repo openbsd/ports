@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.172 2015/05/20 10:09:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.173 2015/05/20 15:05:36 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += STk
      SUBDIR += abcl
      SUBDIR += antlr3
      SUBDIR += arena
-     SUBDIR += boo
      SUBDIR += chibi-scheme
      SUBDIR += chicken
      SUBDIR += classpath

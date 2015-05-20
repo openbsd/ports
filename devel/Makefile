@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1339 2015/05/20 09:11:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.1340 2015/05/20 15:05:36 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -463,7 +463,6 @@
      SUBDIR += mysql++
      SUBDIR += nagelfar
      SUBDIR += naken430asm
-     SUBDIR += nant
      SUBDIR += nasm
      SUBDIR += netbeans
      SUBDIR += ninja
