@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/03/27 11:34:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/05/20 14:07:23 sthen Exp $
 
 COMMENT=		C-based regular expression scanner generator
 
-DISTNAME=		re2c-0.14.2
+DISTNAME=		re2c-0.14.3
 CATEGORIES=		devel
 HOMEPAGE=		http://re2c.org/
 
