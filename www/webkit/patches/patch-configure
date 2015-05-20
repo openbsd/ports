@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.23 2014/07/15 19:58:52 espie Exp $
+$OpenBSD: patch-configure,v 1.24 2015/05/20 15:32:54 ajacoutot Exp $
 
 - Chunk 1: GNOME Bug 627126 - gsettings schema files don't get installed on FreeBSD
 glib commit 136e705e8383ff8848e425ac01278102d7badc52
@@ -9,9 +9,9 @@ https://bugs.webkit.org/show_bug.cgi?id=129973
 - Chunk 3 : Don't force the use of -O2, the ports infrastructure
 takes care of that
 
---- configure.orig	Mon May 26 09:48:45 2014
-+++ configure	Tue Jul 15 16:11:41 2014
-@@ -17659,26 +17659,14 @@ gsettings__enum_file = $(addsuffix .enums.xml,$(gsetti
+--- configure.orig	Wed May 20 11:29:21 2015
++++ configure	Wed May 20 15:16:37 2015
+@@ -17665,26 +17665,14 @@ gsettings__enum_file = $(addsuffix .enums.xml,$(gsetti
  
  all-am: $(gsettings_SCHEMAS:.xml=.valid)
  uninstall-am: uninstall-gsettings-schemas
@@ -41,7 +41,7 @@ takes care of that
  	test -n "$(GSETTINGS_DISABLE_SCHEMAS_COMPILE)$(DESTDIR)" || $(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir)
  
  uninstall-gsettings-schemas:
-@@ -20588,7 +20576,7 @@ if test "$found_opengl" = "yes"; then
+@@ -20693,7 +20681,7 @@ if test "$found_opengl" = "yes"; then
      fi
      if test "$enable_egl" = "yes"; then
          acceleration_description="$acceleration_description, egl"
@@ -50,7 +50,7 @@ takes care of that
      fi
      if test "$enable_glx" = "yes"; then
          acceleration_description="$acceleration_description, glx"
-@@ -21164,7 +21152,7 @@ $as_echo "$ac_cv_search_shm_open" >&6; }
+@@ -21271,7 +21259,7 @@ $as_echo "$ac_cv_search_shm_open" >&6; }
  ac_res=$ac_cv_search_shm_open
  if test "$ac_res" != no; then :
    test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
@@ -59,7 +59,7 @@ takes care of that
  fi
  
  
-@@ -21860,8 +21848,8 @@ fi
+@@ -21967,8 +21955,8 @@ fi
  
  # Add the appropriate 'O' level for optimized builds.
  if test "$enable_optimizations" = "yes"; then

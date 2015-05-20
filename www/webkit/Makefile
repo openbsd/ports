@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2015/04/15 09:40:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.138 2015/05/20 15:32:54 ajacoutot Exp $
 
 PORTROACH =	limit:^2\.4
 
@@ -6,14 +6,13 @@ COMMENT =	open source web browser engine for Gtk+
 BROKEN-alpha =	error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
 BROKEN-hppa =	error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
 
-V =		2.4.8
+V =		2.4.9
 DISTNAME =	webkitgtk-${V}
 PKGNAME =	webkit-${V}
 EPOCH =		1
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX =	.tar.xz
-REVISION =	5
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
