@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.25 2015/04/04 09:21:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2015/05/20 16:49:56 ajacoutot Exp $
 
-SHARED_ONLY=	Yes
+BROKEN=			https://bugzilla.xamarin.com/show_bug.cgi?id=28337
 
-COMMENT=	music management and playback application for GNOME
+SHARED_ONLY=		Yes
 
-GNOME_VERSION=	2.6.2
-GNOME_PROJECT=	banshee
-REVISION=	4
+COMMENT=		music management and playback application for GNOME
 
-CATEGORIES=	audio multimedia
+GNOME_VERSION=		2.6.2
+GNOME_PROJECT=		banshee
+REVISION=		4
 
-HOMEPAGE=	http://banshee.fm/
+CATEGORIES=		audio multimedia
+
+HOMEPAGE=		http://banshee.fm/
 
 # MIT/X11
 PERMIT_PACKAGE_CDROM=	Yes
@@ -31,67 +33,68 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs secret-1 soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 stdc++ webkitgtk-1.0 webp xcb
 WANTLIB += xcb-render xcb-shm xml2 xslt z gbm lzma
 
-MODULES=	x11/gnome \
-		lang/mono \
-		devel/gettext
+MODULES=		devel/gettext \
+			lang/mono \
+			x11/gnome
 
-COMMON_DEPENDS=	devel/mono-notify \
-		audio/mono-taglib \
-		devel/dbus-sharp-glib \
-		devel/mono-addins \
-		devel/mono-gdata \
-		net/mono-zeroconf \
-		shells/bash \
+COMMON_DEPENDS=		audio/mono-taglib \
+			devel/dbus-sharp-glib \
+			devel/mono-addins \
+			devel/mono-gdata \
+			devel/mono-notify \
+			net/mono-zeroconf \
+			shells/bash \
 
-BUILD_DEPENDS=	${COMMON_DEPENDS} \
-		devel/libmtp
+BUILD_DEPENDS=		${COMMON_DEPENDS} \
+			devel/libmtp
 
-RUN_DEPENDS=	${COMMON_DEPENDS}
+RUN_DEPENDS=		${COMMON_DEPENDS}
 
-RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good #libgstgconfelements
-RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-bad #bpmdetect (soundtouch)
-RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ugly #mp3 support
+RUN_DEPENDS +=		multimedia/gstreamer-0.10/plugins-good #libgstgconfelements
+RUN_DEPENDS +=		multimedia/gstreamer-0.10/plugins-bad #bpmdetect (soundtouch)
+RUN_DEPENDS +=		multimedia/gstreamer-0.10/plugins-ugly #mp3 support
 
-LIB_DEPENDS=	multimedia/gstreamer-0.10/plugins-base \
-		www/webkit \
-		x11/dbus-glib
+LIB_DEPENDS=		multimedia/gstreamer-0.10/plugins-base \
+			www/webkit \
+			x11/dbus-glib
 
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
-CONFIGURE_ARGS=	--with-vendor-build-id="OpenBSD Ports" \
-		--disable-shave
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
 
-# XXX lang/boo is marked as BROKEN
-CONFIGURE_ARGS += --disable-boo
+CONFIGURE_ARGS=		--with-vendor-build-id="OpenBSD Ports" \
+			--disable-shave
 
 # requires gtk-sharp-beans (not ported)
-CONFIGURE_ARGS += --disable-gio-hardware
+CONFIGURE_ARGS +=	--disable-gio-hardware
 
 # requires libgpod-sharp (not ported)
-CONFIGURE_ARGS += --disable-appledevice
+CONFIGURE_ARGS +=	--disable-appledevice
 
 # requires karma-sharp (not ported)
-CONFIGURE_ARGS += --disable-karma
+CONFIGURE_ARGS +=	--disable-karma
 
 # requires gio-sharp (not ported)
-CONFIGURE_ARGS += --disable-gio
+CONFIGURE_ARGS +=	--disable-gio
 
-DLLMAP_FILES=	src/Hyena/Hyena/Hyena.dll.config \
-		src/Hyena/Hyena.Gui/Hyena.Gui.dll.config \
-		src/Libraries/Mtp/Mtp.dll.config.in \
-		src/Libraries/Mtp/Mtp.dll.config \
-		src/Core/Banshee.Core/Banshee.Core.dll.config \
-		src/Core/Banshee.Services/Banshee.Services.dll.config \
-		src/Core/Banshee.ThickClient/Banshee.ThickClient.dll.config \
-		src/Core/Banshee.Widgets/Banshee.Widgets.dll.config \
-		src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea.dll.config \
-		src/Extensions/Banshee.MeeGo/Banshee.MeeGo.dll.config \
-		src/Backends/Banshee.GStreamer/Banshee.GStreamer.dll.config \
-		src/Backends/Banshee.Unix/Banshee.Unix.dll.config
+# requires boo (not ported)
+CONFIGURE_ARGS +=	--disable-boo
+
+DLLMAP_FILES=		src/Hyena/Hyena/Hyena.dll.config \
+			src/Hyena/Hyena.Gui/Hyena.Gui.dll.config \
+			src/Libraries/Mtp/Mtp.dll.config.in \
+			src/Libraries/Mtp/Mtp.dll.config \
+			src/Core/Banshee.Core/Banshee.Core.dll.config \
+			src/Core/Banshee.Services/Banshee.Services.dll.config \
+			src/Core/Banshee.ThickClient/Banshee.ThickClient.dll.config \
+			src/Core/Banshee.Widgets/Banshee.Widgets.dll.config \
+			src/Extensions/Banshee.NotificationArea/Banshee.NotificationArea.dll.config \
+			src/Extensions/Banshee.MeeGo/Banshee.MeeGo.dll.config \
+			src/Backends/Banshee.GStreamer/Banshee.GStreamer.dll.config \
+			src/Backends/Banshee.Unix/Banshee.Unix.dll.config
 
 # XXX the theme-icons target uses INSTALL_DATA during build which will
 # fail when running as a non priviledge user (install -o/-g)
 .if !target(do-install)
-MAKE_FLAGS +=	INSTALL_DATA='/usr/bin/install -c -m 444'
+MAKE_FLAGS +=		INSTALL_DATA='/usr/bin/install -c -m 444'
 .endif
 
 post-patch:
