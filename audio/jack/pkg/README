@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2014/07/22 10:55:40 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2015/05/21 11:44:00 jca Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -34,7 +34,7 @@ option.  For example, 'jackd -d sndio -p 2048 -n 4'.
 The sndio driver uses 44100 Hz sampling rates by default.  Some devices
 may not support the default sample rate.  Or it may be that most of the
 audio that will pass through jackd is based on a different sample rate.
-Avoiding sample rate conversion will use fewer CPU cycles and perserve
+Avoiding sample rate conversion will use fewer CPU cycles and preserve
 audio quality.  The -r option can be used to change the sampling rate as
 in 'jackd -d sndio -r 48000'.
 

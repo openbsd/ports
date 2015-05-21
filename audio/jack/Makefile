@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/05/06 10:22:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2015/05/21 11:44:00 jca Exp $
 
 SHARED_ONLY =		Yes
 
@@ -8,7 +8,7 @@ V =			0.124.1
 DISTNAME =		jack-audio-connection-kit-${V}
 PKGNAME =		jack-${V}
 CATEGORIES =		audio
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		jack		1.0	# 0.28
 SHARED_LIBS +=		jackserver	1.0	# 0.28
