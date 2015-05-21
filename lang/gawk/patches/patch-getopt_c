@@ -1,0 +1,15 @@
+$OpenBSD: patch-getopt_c,v 1.1 2015/05/21 06:45:48 ajacoutot Exp $
+
+incompatible implicit declaration of built-in function 'malloc'
+
+--- getopt.c.orig	Thu May 21 08:42:48 2015
++++ getopt.c	Thu May 21 08:43:06 2015
+@@ -57,7 +57,7 @@
+ 
+ /* This needs to come after some library #include
+    to get __GNU_LIBRARY__ defined.  */
+-#if defined (__GNU_LIBRARY__) || defined (__CYGWIN__) || defined(__DJGPP__) || defined(__APPLE__) || defined(__MINGW32__) || defined(__sun) /* Illumos */
++#if defined (__GNU_LIBRARY__) || defined (__CYGWIN__) || defined(__DJGPP__) || defined(__APPLE__) || defined(__MINGW32__) || defined(__OpenBSD__) || defined(__sun) /* Illumos */
+ /* Don't include stdlib.h for
+  * non-GNU C libraries
+  * non-Cygwin
