@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/21 21:32:06 juanfra Exp $
+# $OpenBSD: Makefile,v 1.17 2015/05/21 17:50:00 juanfra Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
+# 4.7.6 has a broken configure script due to an incompatible regex
 V=		4.7.5
 DISTNAME=	gambc-v${V:S/./_/g}
 PKGNAME=	gambit-$V
