@@ -1,4 +1,4 @@
-$OpenBSD: README-chroot,v 1.1 2012/05/13 17:03:43 okan Exp $
+$OpenBSD: README-chroot,v 1.2 2015/05/21 02:42:58 gsoares Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,9 +6,10 @@ $OpenBSD: README-chroot,v 1.1 2012/05/13 17:03:43 okan Exp $
 
 Setup with httpd from OpenBSD base system
 =========================================
-By default, femail will use `localhost' for smtphost.  Make sure to
-review FAQ Section 10.16 discussing name resolution with httpd(8)'s
-default chroot(2).
+By default, femail will use `localhost' for smtphost. 
+httpd(8) inside the chroot(2) will NOT be able to use the system
+/etc/hosts or /etc/resolv.conf. One will need to populate /var/www/etc/hosts 
+and/or /var/www/etc/resolv.conf in the chroot(2) environment.
 
 Additionally, one may create a custom femail.conf; see femail(8).
 
