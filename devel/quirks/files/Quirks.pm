@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.241 2015/05/20 15:09:58 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.242 2015/05/21 15:07:02 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -534,6 +534,7 @@ my $obsolete_reason = {
 	'mono-basic' => 5,
 	'boo' => 5,
 	'nant' => 5,
+	'ADMfzap' => 0,
 };
 
 # ->is_base_system($handle, $state):

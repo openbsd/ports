@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.366 2015/05/20 10:25:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.367 2015/05/21 15:07:02 jca Exp $
 
      SUBDIR =
-     SUBDIR += ADMfzap
      SUBDIR += ADMsmb
      SUBDIR += ADMsnmp
      SUBDIR += aescrypt
