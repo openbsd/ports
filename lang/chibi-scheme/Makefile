@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/09 21:04:58 juanfra Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/21 18:57:12 juanfra Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	interpreter of the R7RS Scheme programming language
 
-DISTNAME =	chibi-scheme-0.7.2
+DISTNAME =	chibi-scheme-0.7.3
 
-SHARED_LIBS =	chibi-scheme 0.0 # 0.7.2
+SHARED_LIBS =	chibi-scheme 1.0 # 0.7.3
 
 CATEGORIES =	lang
 
@@ -19,19 +19,24 @@ PERMIT_PACKAGE_CDROM = Yes
 
 WANTLIB =	c m
 
-MASTER_SITES =	http://abrek.synthcode.com/ \
+MASTER_SITES =	http://synthcode.com/scheme/chibi/ \
 		http://download.tuxfamily.org/jod/lang/chibi-scheme/ \
 		ftp://download.tuxfamily.org/jod/lang/chibi-scheme/
 
 EXTRACT_SUFX =	.tgz
 
-MAKE_ENV =	CC=${CC} \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBchibi-scheme_VERSION=${LIBchibi-scheme_VERSION}
-FAKE_FLAGS =	PREFIX=${LOCALBASE} \
-		DESTDIR=${WRKINST} \
-		MANDIR=${LOCALBASE}/man/man1
+# -DSEXP_USE_ALIGNED_BYTECODE=1 is experimental and broken on OpenBSD
+# Back to defaults while upstream fixes the bugs.
+MAKE_ENV +=	CC=${CC} \
+		LDFLAGS="-L${WRKSRC} -L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${WRKSRC}/include -I${LOCALBASE}/include -DSEXP_USE_ALIGNED_BYTECODE=0" \
+		SOVERSION="${LIBchibi-scheme_VERSION}"
+# "gmake install" works fine but shows the error: "gmake: write error: stdout"
+# -s is the simplest workaround for this bug
+FAKE_FLAGS +=	PREFIX="${LOCALBASE}" \
+		DESTDIR="${WRKINST}" \
+		MANDIR="${LOCALBASE}/man/man1" \
+		-s
 
 USE_GMAKE =	Yes
 
