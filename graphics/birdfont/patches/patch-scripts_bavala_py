@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_bavala_py,v 1.5 2015/05/18 23:58:26 bcallah Exp $
---- scripts/bavala.py.orig	Mon May 18 18:26:35 2015
-+++ scripts/bavala.py	Mon May 18 18:27:29 2015
-@@ -84,7 +84,7 @@ class Vala(object):
+$OpenBSD: patch-scripts_bavala_py,v 1.6 2015/05/21 00:32:46 bcallah Exp $
+--- scripts/bavala.py.orig	Tue May 19 09:19:40 2015
++++ scripts/bavala.py	Tue May 19 23:44:49 2015
+@@ -102,7 +102,7 @@ class Vala(object):
              self.header = join(build, library) + '.h'
              self.vapi = join(build, library) + '.vapi' # generated vapi file
              self.other_vapi_files = get_sources_path (src, '*.vapi') # other vapi files
@@ -10,12 +10,12 @@ $OpenBSD: patch-scripts_bavala_py,v 1.5 2015/05/18 23:58:26 bcallah Exp $
              self.so_link = join(build, src) + '.so'
              self.so_link_name = src + '.so'
              self.so_version = so_version
-@@ -208,7 +208,7 @@ class Vala(object):
-     def gen_ln(self):
-         """generate a symbolic link to the generated ".so" file"""
-         so_file = self.so.rsplit('/')[-1]
--        create_link = "ln -s -T " + so_file + " " + self.so_link_name + " "
-+        create_link = "ln -s " + so_file + " " + self.so_link_name + " "
+@@ -229,6 +229,8 @@ class Vala(object):
+         
+         if not "bsd" in sys.platform:
+             create_link = "ln -s -T " + so_file + " " + self.so_link_name + " "
++	else:
++            create_link = "ln -s " + so_file + " " + self.so_link_name + " "
+ 
          create_link += "&& mv " + self.so_link_name + " " + self.build + "/" 
          return {
-             'name': self.so_link_name,
