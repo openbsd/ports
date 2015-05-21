@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/05/16 07:26:12 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2015/05/21 06:25:30 ajacoutot Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
@@ -8,6 +8,7 @@ MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 PKGNAME =	${MOZILLA_PROJECT}-esr-${MOZILLA_VERSION:S/esr//}
+REVISION =	0
 SO_VERSION =	2.0
 MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul clearkey
 
@@ -51,14 +52,7 @@ WANTLIB += icudata icui18n icuuc
 
 CONFIGURE_ARGS +=	--enable-gstreamer=1.0
 
-# libxul doesnt link directly with gst but dlopens it at runtime
-# see content/media/gstreamer/GStreamerLoader.cpp
-#LIB_DEPENDS +=	multimedia/gstreamer-0.10/plugins-base
-#WANTLIB += gmodule-2.0 gstapp-0.10 gstbase-0.10 gstreamer-0.10
-#WANTLIB += gstvideo-0.10 xml2
-
 BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-base
-RUN_DEPENDS +=	multimedia/gstreamer1/plugins-good
 
 # needs 3.0.10 when not using gcc
 # CONFIGURE_ARGS += --with-system-ffi

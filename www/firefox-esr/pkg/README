@@ -1,0 +1,69 @@
+$OpenBSD: README,v 1.1 2015/05/21 06:25:30 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+If you encounter strange problems relating to bookmarks, downloads,
+window placement, toolbars, history, or other settings, it is
+recommended that you create a new profile and attempt to
+reproduce the problem before filing bugs.  To create a new profile,
+start Firefox with the -ProfileManager switch, e.g.
+firefox -ProfileManager, and click "Create Profile".
+
+If Firefox doesn't start at all, try starting it with -safe-mode
+switch, which disables extensions and themes for your session.
+
+To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
+
+Using mailto: links
+===================
+To enable mailto: links in Firefox to open in your mail program,
+you may have to set a mailto protocol handler. Type "about:config"
+in Firefox's URL text field.  Type "mailto" in the filter.  If there
+is a string called "network.protocol-handler.app.mailto", its value
+names the application for mailto URLs. If present, right click,
+choose Modify, and enter the path to your mail program, e.g.,
+"${LOCALBASE}/bin/thunderbird" or "${LOCALBASE}/bin/kmail" (other
+programs may work, but these two have been tested).  If absent,
+right click, choose New String. Set the name to
+"network.protocol-handler.app.mailto" and the value to the path to
+your mailer.
+
+Plugins
+=======
+Firefox looks for plugins in ~/.mozilla/plugins and
+${TRUEPREFIX}/lib/mozilla/plugins.
+If the environment variable MOZ_PLUGIN_PATH is specified, this
+location will be overridden.
+
+Debugging
+=========
+If you encounter crashes, you might want to build the debug FLAVOR of
+this package, and run firefox inside gdb, so that you can gather
+debugging logs and traces (for all threads!).
+Bug reports without that information will be ignored.
+
+Html5 audio/video support
+=========================
+Due to dependencies reasons, you have to manually install some
+GStreamer packages for a full multimedia experience (ie play MP3 audio
+and MPEG videos). They will be used at runtime if firefox finds them.
+
+# pkg_add gstreamer1-plugins-good gstreamer1-plugins-libav
+
+KerberosV support
+=================
+To use Kerberized Firefox, first manually install the "heimdal" package
+and configure the Kerberos client.
+
+Firefox will load the libraries at runtime if required. On OpenBSD, they
+are installed in a non-standard location; to allow Firefox to find them,
+either set LD_LIBRARY_PATH=${LOCALBASE}/heimdal/lib in your environment
+(possibly via a shell alias or wrapper script if you only want to
+set this for Firefox), or modify 'shlib_dirs' in /etc/rc.conf.local.
+
+To instruct Firefox to use Kerberos for specific domains, open
+'about:config' and modify the following key:
+
+network.negotiate-auth.trusted-uris: .example.com
