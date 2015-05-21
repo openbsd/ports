@@ -1,14 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.20 2014/10/29 08:18:23 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.21 2015/05/21 05:52:10 dcoppa Exp $
 @bin bin/minitube
 share/applications/minitube.desktop
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/icons/hicolor/128x128/apps/minitube.png
 share/icons/hicolor/16x16/apps/minitube.png
 share/icons/hicolor/22x22/apps/minitube.png
 share/icons/hicolor/256x256/apps/minitube.png
 share/icons/hicolor/32x32/apps/minitube.png
 share/icons/hicolor/48x48/apps/minitube.png
-share/icons/hicolor/512x512/
-share/icons/hicolor/512x512/apps/
 share/icons/hicolor/512x512/apps/minitube.png
 share/icons/hicolor/64x64/apps/minitube.png
 share/icons/hicolor/scalable/apps/minitube.svg

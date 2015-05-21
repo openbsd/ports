@@ -1,0 +1,53 @@
+$OpenBSD: README,v 1.1 2015/05/21 05:52:10 dcoppa Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Google API key
+==============
+Minitube 2.4 has been ported to the new YouTube API version 3, hence an
+API key is now required in order to access the YouTube Data web services.
+
+Go to https://console.developers.google.com/
+
+Log in using your Google account
+
+Click on "Create Project"
+
+Enter a Project name (e.g.: "Minitube")
+
+On the left side bar, expand the "APIs & auth" drop-down menu and
+click on "Credentials"
+
+Click on "Create new Key" and then on "Browser key"
+
+Click on "Create"
+
+You should get an output like the one below:
+
+Key for browser applications
+  API key			AIzaSyD7zlL9sAC6-IcwU7Bpds8lZNzmqQTmALQ
+  Referers			Any referer allowed
+  Activation date		Apr 28, 2015, 2:02:00 AM
+  Activated by			johndoe@gmail.com (you)
+
+Be sure that "YouTube Data API v3" is enabled under "APIs & auth" ->
+"APIs" -> "Enabled APIs"
+
+Add the environment variable containing your newly generated key
+to your ~/.profile or ~/.xinitrc:
+
+GOOGLE_API_KEY="AIzaSyD7zlL9sAC6-IcwU7Bpds8lZNzmqQTmALQ"
+export GOOGLE_API_KEY
+
+Phonon render method
+====================
+Minitube uses the old phonon library (from qt4), not the newer kde4
+phonon library (multimedia/phonon). If you would like to use OpenGL
+as the preferred render method for this, export two additional
+environment variables into your ~/.profile or ~/.xinitrc:
+
+PHONON_GST_VIDEOMODE=opengl
+QT_GL_USE_OPENGL1ENGINE=1
+

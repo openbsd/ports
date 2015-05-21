@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2015/03/27 08:15:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2015/05/21 05:52:10 dcoppa Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
-DISTNAME =	minitube-2.3
-
-REVISION =	1
+GH_ACCOUNT =	flaviotordini
+GH_PROJECT =	minitube
+GH_TAGNAME =	2.4
+DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 
 CATEGORIES =	www multimedia
 
@@ -14,8 +15,6 @@ MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # GPL v3
 PERMIT_PACKAGE_CDROM =		Yes
-
-MASTER_SITES =	http://flavio.tordini.org/files/minitube/
 
 MODULES =	x11/qt4
 
@@ -28,8 +27,6 @@ RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-good \
 		multimedia/gstreamer-0.10/plugins-ffmpeg \
 		devel/desktop-file-utils \
 		x11/gtk+3,-guic
-
-WRKDIST =	${WRKDIR}/minitube
 
 MAKE_FLAGS =	CXX=${CXX} \
 		LINK=${CXX}
