@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_util_h,v 1.1 2015/05/21 15:06:09 czarkoff Exp $
+--- src/util.h.orig	Tue May 19 23:36:56 2015
++++ src/util.h	Tue May 19 23:37:41 2015
+@@ -32,7 +32,7 @@
+ #include <vector>
+ #include <map>
+ #include <sys/types.h>
+-#ifdef FREEBSD
++#if defined (FREEBSD) || defined (OPENBSD)
+ #include <uuid.h>
+ #else
+ #include <uuid/uuid.h>
