@@ -1,0 +1,25 @@
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.12 2015/05/21 05:37:50 ajacoutot Exp $
+
+r236179
+Propagate a terrible hack to the sparc target feature handling code
+by erasing the soft-float target feature if the rest of the front
+end added it because of defaults or the soft float option.
+
+--- tools/clang/lib/Basic/Targets.cpp.orig	Wed May 20 14:30:32 2015
++++ tools/clang/lib/Basic/Targets.cpp	Wed May 20 14:38:08 2015
+@@ -4477,9 +4477,12 @@ class SparcTargetInfo : public TargetInfo { (public)
+   virtual bool handleTargetFeatures(std::vector<std::string> &Features,
+                                     DiagnosticsEngine &Diags) {
+     SoftFloat = false;
+-    for (unsigned i = 0, e = Features.size(); i != e; ++i)
+-      if (Features[i] == "+soft-float")
+-        SoftFloat = true;
++    std::vector<std::string>::iterator Feature =
++      std::find(Features.begin(), Features.end(), "+soft-float");
++    if (Feature != Features.end()) {
++      SoftFloat = true;
++      Features.erase(Feature);
++    }
+     return true;
+   }
+   virtual void getTargetDefines(const LangOptions &Opts,
