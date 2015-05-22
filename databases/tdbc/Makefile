@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2014/09/07 18:50:32 stu Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/22 04:23:29 stu Exp $
 
 COMMENT =	Tcl Database Connectivity
 
-DISTNAME =	tdbc1.0.1
-PKGNAME =	tdbc-1.0.1
-SHARED_LIBS =	tdbc101 0.0
+V =		1.0.3
+DISTNAME =	tdbc${V}
+PKGNAME =	tdbc-${V}
+SHARED_LIBS =	tdbc${V:S/.//g} 0.0
 CATEGORIES =	databases
 HOMEPAGE =	http://tdbc.tcl.tk/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -20,7 +21,10 @@ MODTCL_VERSION =	8.6
 
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS =		${MODTCL_RUN_DEPENDS}
-FAKE_FLAGS =		PKG_DIR=tdbc
+
+FAKE_FLAGS =		PKG_DIR=tdbc \
+			pkglibdir='$$(libdir)/tcl/$$(PKG_DIR)'
+
 SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	autoconf no-autoheader
@@ -28,10 +32,9 @@ CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-tcl=${MODTCL_LIBDIR} \
 			--includedir=${PREFIX}/include/tdbc \
-			--libdir=${MODTCL_TCLDIR} \
-			SHLIB_VERSION=${LIBtdbc101_VERSION}
+			SHLIB_VERSION=${LIBtdbc${V:S/.//g}_VERSION}
 
-AUTOCONF_VERSION =	2.59
-TEST_TARGET =	test
+AUTOCONF_VERSION =	2.69
+TEST_TARGET =		test
 
 .include <bsd.port.mk>

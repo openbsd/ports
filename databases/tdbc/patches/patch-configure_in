@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2013/02/07 05:21:19 stu Exp $
+$OpenBSD: patch-configure_in,v 1.2 2015/05/22 04:23:29 stu Exp $
 --- configure.in.orig	Fri Dec 28 16:58:15 2012
 +++ configure.in	Fri Dec 28 16:58:30 2012
 @@ -203,7 +203,7 @@ TEAX_INCLUDE_LINE(tdbc_BUILD_INCLUDE_SPEC, [${tdbc_SRC
@@ -6,7 +6,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2013/02/07 05:21:19 stu Exp $
  # Develop a fully qualified path for where .tcl files for the tdbc package
  # appear at run time.
 -tdbc_LIB_DIR="${libdir}/${PACKAGE_NAME}${PACKAGE_VERSION}"
-+tdbc_LIB_DIR="${libdir}/${PACKAGE_NAME}"
++eval tdbc_LIB_DIR="${libdir}/tcl/${PACKAGE_NAME}"
  AC_SUBST(tdbc_LIB_DIR)
  
  dnl TEAX_LINK_LINE(TDBC_LIB_SPEC,
