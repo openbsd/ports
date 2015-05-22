@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/07/16 16:13:35 brad Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/05/22 11:31:14 ajacoutot Exp $
 @conflict silc-client-<=1.0.1
 include/silc/
 include/silc/client.h
@@ -99,7 +99,6 @@ lib/libsilcclient.a
 lib/libsilcclient.la
 @lib lib/libsilcclient.so.${LIBsilcclient_VERSION}
 lib/modules/
-lib/pkgconfig/
 lib/pkgconfig/silc.pc
 lib/pkgconfig/silcclient.pc
 share/doc/silc/

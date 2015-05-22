@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/11/12 13:36:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:19 ajacoutot Exp $
 @conflict redland-<1.0.14
 bin/rasqal-config
 @bin bin/roqet
@@ -7,7 +7,6 @@ include/rasqal/rasqal.h
 lib/librasqal.a
 lib/librasqal.la
 @lib lib/librasqal.so.${LIBrasqal_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/rasqal.pc
 @man man/man1/rasqal-config.1
 @man man/man1/roqet.1

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2014/10/10 12:52:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/05/22 11:31:11 ajacoutot Exp $
 
 COMMENT=	C++ binding for the ATK library
 
 GNOME_PROJECT=	atkmm
 GNOME_VERSION=	2.22.7
-REVISION=	0
+REVISION=	1
 
 PKGNAME=	atk2mm-${GNOME_VERSION}
 

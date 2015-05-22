@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/11/29 18:38:23 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:18 ajacoutot Exp $
 include/X11/extensions/
 include/X11/extensions/Print.h
 include/X11/extensions/Printstr.h
-lib/pkgconfig/
 lib/pkgconfig/printproto.pc
 @man man/man7/Xprint.7

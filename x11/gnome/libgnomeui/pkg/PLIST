@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2012/09/29 10:52:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/05/22 11:31:19 ajacoutot Exp $
 %%SHARED%%
 include/libgnomeui-2.0/
 include/libgnomeui-2.0/gnome.h
@@ -57,7 +57,6 @@ lib/libglade/
 lib/libglade/2.0/
 lib/libgnomeui-2.a
 lib/libgnomeui-2.la
-lib/pkgconfig/
 lib/pkgconfig/libgnomeui-2.0.pc
 share/gtk-doc/
 share/gtk-doc/html/

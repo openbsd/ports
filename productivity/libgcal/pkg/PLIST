@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/09 10:51:26 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:18 ajacoutot Exp $
 include/libgcal/
 include/libgcal/atom_parser.h
 include/libgcal/gcal.h
@@ -12,5 +12,4 @@ include/libgcal/xml_aux.h
 lib/libgcal.a
 lib/libgcal.la
 @lib lib/libgcal.so.${LIBgcal_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libgcal.pc

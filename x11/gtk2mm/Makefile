@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2014/10/11 08:39:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2015/05/22 11:31:19 ajacoutot Exp $
 
 PORTROACH=	limit:^2
 
@@ -6,7 +6,7 @@ COMMENT=	C++ interface for gtk2+
 
 GNOME_PROJECT=	gtkmm
 GNOME_VERSION=	2.24.4
-REVISION=	0
+REVISION=	1
 
 PKGNAME=	gtk2mm-${GNOME_VERSION}
 

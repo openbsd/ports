@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/30 23:03:07 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:14 ajacoutot Exp $
 include/SDL2/
 include/SDL2/SDL_image.h
 lib/libSDL2_image.a
 lib/libSDL2_image.la
 @lib lib/libSDL2_image.so.${LIBSDL2_image_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/SDL2_image.pc

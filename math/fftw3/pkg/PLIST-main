@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 20:42:30 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2015/05/22 11:31:17 ajacoutot Exp $
 %%SHARED%%
 %%double%%
 %%float%%
-lib/pkgconfig/

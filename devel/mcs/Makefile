@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2014/07/14 07:35:40 armani Exp $
+# $OpenBSD: Makefile,v 1.9 2015/05/22 11:31:13 ajacoutot Exp $
 
 COMMENT =	abstract the storage of configuration settings
 
 DISTNAME =	libmcs-0.7.2
 PKGNAME =	${DISTNAME:S/lib//}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	mcs	1.0
 

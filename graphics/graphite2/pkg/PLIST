@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/10 09:05:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:15 ajacoutot Exp $
 @bin bin/gr2fonttest
 include/graphite2/
 include/graphite2/Font.h
@@ -6,7 +6,6 @@ include/graphite2/Log.h
 include/graphite2/Segment.h
 include/graphite2/Types.h
 @lib lib/libgraphite2.so.${LIBgraphite2_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/graphite2.pc
 share/graphite2/
 share/graphite2/graphite2-release.cmake

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/03/24 12:45:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/05/22 11:31:12 ajacoutot Exp $
 include/libconfig.h
 include/libconfig.h++
 @info info/libconfig.info
@@ -8,7 +8,6 @@ lib/libconfig++.la
 lib/libconfig.a
 lib/libconfig.la
 @lib lib/libconfig.so.${LIBconfig_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libconfig++.pc
 lib/pkgconfig/libconfig.pc
 share/examples/libconfig/

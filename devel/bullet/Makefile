@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/11/07 10:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/22 11:31:12 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,6 +7,7 @@ COMMENT =		physics library
 V =			2.81
 DISTNAME =		bullet-${V}-rev2613
 PKGNAME =		bullet-${V}
+REVISION =		0
 
 SHARED_LIBS +=  BulletCollision           0.0 # 2.79
 SHARED_LIBS +=  BulletDynamics            0.0 # 2.79

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2011/08/28 07:57:41 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2015/05/22 11:31:20 ajacoutot Exp $
 @conflict qt3-*
 @conflict qt3-base-*
 @pkgpath x11/qt3,mt
@@ -435,7 +435,6 @@ include/X11/qt3/qwizard.h
 include/X11/qt3/qwmatrix.h
 include/X11/qt3/qworkspace.h
 include/X11/qt3/qxml.h
-lib/pkgconfig/
 lib/pkgconfig/qt-mt.pc
 lib/qt3/
 lib/qt3/.qmake.cache

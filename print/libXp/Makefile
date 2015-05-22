@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/02/16 22:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/22 11:31:17 ajacoutot Exp $
 
 COMMENT =		X11 printing system
 
 DISTNAME =		libXp-1.0.1
+REVISION =		0
 
 SHARED_LIBS +=  Xp                        11.0
 

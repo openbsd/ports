@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.74 2014/10/31 18:28:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2015/05/22 11:31:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	tools to connect your PalmOS(R) compatible handheld
 
 DISTNAME=	pilot-link-0.12.5
-REVISION=	7
+REVISION=	8
 
 SHARED_LIBS +=  pisock               11.0     # 9.2
 SHARED_LIBS +=  pisync               2.0      # 1.3

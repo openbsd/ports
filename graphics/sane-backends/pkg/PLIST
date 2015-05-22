@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/03/08 06:44:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/05/22 11:31:16 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/spool/lock/sane/*
@@ -13,7 +13,6 @@ include/sane/saneopts.h
 lib/libsane.a
 lib/libsane.la
 @lib lib/libsane.so.${LIBsane_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/sane-backends.pc
 lib/sane/
 @comment lib/sane/libsane-abaton.a

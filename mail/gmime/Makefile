@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2014/04/02 09:36:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2015/05/22 11:31:16 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -10,6 +10,8 @@ GNOME_VERSION=	2.6.20
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-mono=	gmime-sharp-${GNOME_VERSION}
+REVISION-main=	0
+REVISION-mono=	0
 
 SHARED_LIBS +=  gmime-2.6            0.1      # 619.0
 

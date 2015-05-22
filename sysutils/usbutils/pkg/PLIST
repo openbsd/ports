@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/15 13:44:52 mpi Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:18 ajacoutot Exp $
 @bin bin/lsusb
 @comment bin/lsusb.py
 @comment bin/usb-devices
-lib/pkgconfig/
 lib/pkgconfig/usbutils.pc
 @comment man/man1/usb-devices.1
 @man man/man8/lsusb.8

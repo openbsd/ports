@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/02/26 14:56:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/22 11:31:11 ajacoutot Exp $
 
 # invalid use of `restrict'
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -8,6 +8,7 @@ COMMENT=	IETF audio codec
 DISTNAME=	opus-1.1
 SHARED_LIBS=	opus		1.0	# 5.0
 CATEGORIES=	audio
+REVISION=	0
 
 HOMEPAGE=	http://opus-codec.org/
 

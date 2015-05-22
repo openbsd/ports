@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/22 11:31:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Structured Terminal Forms Language/Library
 
 DISTNAME=	stfl-0.22
+REVISION=	0
 
 SHARED_LIBS+=	stfl 0.0
 

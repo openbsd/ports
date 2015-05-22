@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2013/06/02 19:57:28 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/22 11:31:13 ajacoutot Exp $
 
 COMMENT =		asynchronous I/O readiness notification library
 
 V =			0.36.2
 DISTNAME =		ivykis-$V
 PKGNAME =		lib${DISTNAME}
+REVISION =		0
 
 SHARED_LIBS =		ivykis	1.0
 

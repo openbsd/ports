@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/06/30 00:41:20 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/05/22 11:31:16 ajacoutot Exp $
 %%SHARED%%
 @bin bin/pstoedit
 include/pstoedit/
@@ -18,7 +18,6 @@ include/pstoedit/pstoeditoutputlib.h
 include/pstoedit/pstoedll.h
 lib/libpstoedit.a
 lib/libpstoedit.la
-lib/pkgconfig/
 lib/pkgconfig/pstoedit.pc
 lib/pstoedit/
 @comment lib/pstoedit/libp2edrvstd.a

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/05/30 17:59:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/05/22 11:31:17 ajacoutot Exp $
 @bin bin/gupnp-dlna-info-2.0
 @bin bin/gupnp-dlna-ls-profiles-2.0
 include/gupnp-dlna-2.0/
@@ -31,7 +31,6 @@ lib/libgupnp-dlna-2.0.la
 lib/libgupnp-dlna-gst-2.0.a
 lib/libgupnp-dlna-gst-2.0.la
 @lib lib/libgupnp-dlna-gst-2.0.so.${LIBgupnp-dlna-gst-2.0_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/gupnp-dlna-2.0.pc
 lib/pkgconfig/gupnp-dlna-gst-2.0.pc
 lib/pkgconfig/gupnp-dlna-metadata-2.0.pc

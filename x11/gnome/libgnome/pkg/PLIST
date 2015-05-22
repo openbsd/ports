@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2013/03/27 18:01:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2015/05/22 11:31:19 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-open
 include/libgnome-2.0/
@@ -25,7 +25,6 @@ lib/bonobo/servers/GNOME_Moniker_std.server
 lib/libgnome-2.a
 lib/libgnome-2.la
 @lib lib/libgnome-2.so.${LIBgnome-2_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libgnome-2.0.pc
 @man man/man7/gnome-options.7
 share/examples/libgnome/

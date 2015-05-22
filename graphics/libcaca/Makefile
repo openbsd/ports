@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/06/07 20:29:32 bcallah Exp $
+# $OpenBSD: Makefile,v 1.30 2015/05/22 11:31:15 ajacoutot Exp $
 
 COMMENT=		color ascii art library
 
@@ -6,6 +6,7 @@ DISTNAME=		libcaca-0.99.beta19
 PKGNAME=		libcaca-0.99.19
 SHARED_LIBS +=  caca           1.2               # .0.99
 CATEGORIES=		graphics
+REVISION=		0
 
 HOMEPAGE=		http://caca.zoy.org/wiki/libcaca
 MAINTAINER=		Brian Callahan <bcallah@openbsd.org>

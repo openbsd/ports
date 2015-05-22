@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/02/17 12:04:44 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.13 2015/05/22 11:31:16 ajacoutot Exp $
 
 BROKEN-arm = needs binutils-2.17
 
@@ -37,7 +37,7 @@ REVISION-main =	3
 REVISION-libs =	1
 REVISION-c++ =	1
 REVISION-f95 =	1
-REVISION-java =	1
+REVISION-java =	2
 REVISION-objc =	1
 REVISION-ada =	2
 

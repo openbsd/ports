@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2013/05/16 09:09:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2015/05/22 11:31:10 ajacoutot Exp $
 
 COMMENT =		SoundFont2 software synthesizer
 DISTNAME =		fluidsynth-1.1.6
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=	fluidsynth           1.0      # 6.2
 

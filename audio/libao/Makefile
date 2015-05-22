@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2014/05/27 19:44:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2015/05/22 11:31:10 ajacoutot Exp $
 
 COMMENT=	portable audio output library
 
@@ -6,6 +6,7 @@ DISTNAME=	libao-1.2.0
 CATEGORIES=    	audio
 HOMEPAGE=	https://www.xiph.org/ao/
 SHARED_LIBS=	ao                   5.0      # 5.0
+REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

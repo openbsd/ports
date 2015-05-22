@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/04/21 18:51:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2015/05/22 11:31:13 ajacoutot Exp $
 
 COMMENT=	C++ bindings for libglade
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=	libglademm
 GNOME_VERSION=	2.6.7
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	8
+REVISION=	9
 
 SHARED_LIBS +=	glademm-2.4          1.7      # .1.5
 

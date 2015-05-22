@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/30 18:11:11 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:14 ajacoutot Exp $
 bin/sdl2-config
 include/SDL2/
 include/SDL2/SDL.h
@@ -70,7 +70,6 @@ lib/libSDL2.la
 @lib lib/libSDL2.so.${LIBSDL2_VERSION}
 lib/libSDL2_test.a
 lib/libSDL2main.a
-lib/pkgconfig/
 lib/pkgconfig/sdl2.pc
 share/aclocal/
 share/aclocal/sdl2.m4

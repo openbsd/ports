@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2013/09/14 17:12:16 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2015/05/22 11:31:16 ajacoutot Exp $
 %%clamav%%
 %%domainscale%%
 %%ldap%%
@@ -45,7 +45,6 @@ lib/dspam/libhash_drv.so
 lib/dspam/libsqlite3_drv.so
 @comment lib/libdspam.la
 @lib lib/libdspam.so.${LIBdspam_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/dspam.pc
 @man man/man1/dspam.1
 @man man/man1/dspam_admin.1

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/22 11:31:18 ajacoutot Exp $
 
 CATEGORIES =		textproc devel
 COMMENT =		C library for handling WBXML documents
 DISTNAME =		libwbxml-0.11.2
 HOMEPAGE =		https://libwbxml.opensync.org/
+REVISION =		0
 
 SHARED_LIBS =		wbxml2			0.1	# 1.0
 

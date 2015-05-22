@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/05/28 13:51:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/05/22 11:31:15 ajacoutot Exp $
 @bin bin/4channels
 @bin bin/dcraw_emu
 @bin bin/dcraw_half
@@ -23,7 +23,6 @@ lib/libraw.la
 lib/libraw_r.a
 lib/libraw_r.la
 @lib lib/libraw_r.so.${LIBraw_r_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libraw.pc
 lib/pkgconfig/libraw_r.pc
 share/doc/libraw/

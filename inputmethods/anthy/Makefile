@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/11/01 00:56:44 jca Exp $
+# $OpenBSD: Makefile,v 1.19 2015/05/22 11:31:16 ajacoutot Exp $
 
 COMMENT-main =	japanese input method
 COMMENT-emacs =	emacs files for anthy
@@ -7,8 +7,8 @@ V =		9100h
 DISTNAME =	anthy-$V
 PKGNAME-main =	anthy-$V
 PKGNAME-emacs =	emacs-anthy-$V
-REVISION-main = 0
-REVISION-emacs = 1
+REVISION-main = 1
+REVISION-emacs = 2
 
 SHARED_LIBS +=	anthydic             1.0      # .1.0
 SHARED_LIBS +=	anthy                1.0      # .1.0

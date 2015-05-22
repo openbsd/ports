@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2014/03/24 12:45:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/05/22 11:31:12 ajacoutot Exp $
 
 COMMENT=		library for manipulating structured configuration files
 
 DISTNAME=		libconfig-1.4.9
+REVISION=		0
 
 SHARED_LIBS +=  config               9.2      # 10.3
 SHARED_LIBS +=  config++             9.2      # 10.3

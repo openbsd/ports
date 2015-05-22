@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/03/18 12:02:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/05/22 11:31:15 ajacoutot Exp $
 @bin bin/exiv2
 include/exiv2/
 include/exiv2/asfvideo.hpp
@@ -44,7 +44,6 @@ include/exiv2/xmpsidecar.hpp
 lib/libexiv2.a
 lib/libexiv2.la
 @lib lib/libexiv2.so.${LIBexiv2_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/exiv2.pc
 @man man/man1/exiv2.1
 share/locale/de/LC_MESSAGES/exiv2.mo

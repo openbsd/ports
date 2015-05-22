@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/30 05:41:34 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/22 11:31:15 ajacoutot Exp $
 
 COMMENT=	2D barcodes / DataMatrix creation tool
 
 DISTNAME=	iec16022-0.2.4
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  iec16022                  0.0 # 0.0
 

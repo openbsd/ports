@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2015/05/05 17:00:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2015/05/22 11:31:19 ajacoutot Exp $
 
 COMMENT=		user interface components for GNOME
 
 GNOME_PROJECT=		libgnomeui
 GNOME_VERSION=		2.24.5
-REVISION=		7
+REVISION=		8
 
 SHARED_LIBS +=	gnomeui-2      2400.0         # .2400.2
 

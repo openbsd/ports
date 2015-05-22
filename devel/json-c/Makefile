@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2014/04/22 10:52:35 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/22 11:31:12 ajacoutot Exp $
 
 COMMENT=		JSON implementation in C
 
 DISTNAME=		json-c-0.12
 CATEGORIES=		devel
+REVISION=		0
 
 SHARED_LIBS +=  json-c                    0.0 # 2.1
 

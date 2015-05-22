@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/29 09:26:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:15 ajacoutot Exp $
 @bin bin/iec16022
 include/iec16022/
 include/iec16022/iec16022ecc200.h
@@ -7,6 +7,5 @@ include/iec16022/reedsol.h
 lib/libiec16022.a
 lib/libiec16022.la
 @lib lib/libiec16022.so.${LIBiec16022_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libiec16022.pc
 @man man/man1/iec16022.1

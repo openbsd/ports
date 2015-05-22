@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/21 18:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/22 11:31:19 ajacoutot Exp $
 
 COMMENT=		GObject library for Facebook Graph API
 
 GNOME_PROJECT=		gfbgraph
 GNOME_VERSION=		0.2.2
 PKGNAME=		lib${GNOME_PROJECT}-${GNOME_VERSION}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gfbgraph-0.2              0.0 # 0.0
 

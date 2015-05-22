@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/10/16 17:30:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/05/22 11:31:16 ajacoutot Exp $
 %%SHARED%%
 bin/pfe
 bin/pfe-config
@@ -148,7 +148,6 @@ lib/pfe-forth/toolbelt.a
 lib/pfe-forth/toolbelt.la
 lib/pfe-forth/zchar.a
 lib/pfe-forth/zchar.la
-lib/pkgconfig/
 lib/pkgconfig/pfe.pc
 @man man/man1/pfe-config.1
 @man man/man1/pfe.1

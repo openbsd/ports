@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/04/28 09:49:49 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/05/22 11:31:11 ajacoutot Exp $
 @conflict apr-util-mt-*
 @pkgpath devel/apr-util,mt
 %%SHARED%%
@@ -44,5 +44,4 @@ lib/apr-util-1/apr_dbm_db.la
 @comment lib/aprutil.exp
 lib/libaprutil-1.a
 lib/libaprutil-1.la
-lib/pkgconfig/
 lib/pkgconfig/apr-util-1.pc

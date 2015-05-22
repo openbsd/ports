@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/12/15 03:10:18 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/05/22 11:31:13 ajacoutot Exp $
 include/SDL/
 include/SDL/SDL_net.h
 lib/libSDL_net.a
 lib/libSDL_net.la
 @lib lib/libSDL_net.so.${LIBSDL_net_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/SDL_net.pc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/07/05 14:08:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2015/05/22 11:31:16 ajacoutot Exp $
 
 BROKEN-powerpc=	does not build, error: lvalue required as increment operand
 
@@ -9,7 +9,7 @@ SHARED_LIBS +=  pfe                  33.69    # .33.69
 SHARED_LIBS +=  pfemodule            33.69    # .33.69
 SHARED_LIBS +=  pfe-0-forth          33.69    # .33.69
 CATEGORIES=    	lang
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://pfe.sourceforge.net/
 

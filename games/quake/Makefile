@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2015/05/22 11:31:14 ajacoutot Exp $
 
 COMMENT-main =		Quake/QuakeWorld client
 COMMENT-libs =		Quake common libs
@@ -16,6 +16,9 @@ FULLPKGPATH-server =	games/quake,-server
 EPOCH-main =		0
 EPOCH-libs =		0
 EPOCH-server =		1
+REVISION-libs =		0
+REVISION-main =		0
+REVISION-server =	0
 
 MULTI_PACKAGES =	-main -libs -server
 

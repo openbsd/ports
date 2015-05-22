@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/01/12 16:25:10 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/05/22 11:31:14 ajacoutot Exp $
 @bin bin/french-conjugator
 @bin bin/french-deconjugator
 @bin bin/verbiste-gtk
@@ -12,7 +12,6 @@ include/verbiste-0.1/verbiste/misc-types.h
 lib/libverbiste-0.1.a
 lib/libverbiste-0.1.la
 @lib lib/libverbiste-0.1.so.${LIBverbiste-0.1_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/verbiste-0.1.pc
 man/fr/
 man/fr/man1/

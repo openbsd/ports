@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/05/22 14:47:34 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/05/22 11:31:10 ajacoutot Exp $
 include/ogg/
 include/ogg/config_types.h
 include/ogg/ogg.h
@@ -6,7 +6,6 @@ include/ogg/os_types.h
 lib/libogg.a
 lib/libogg.la
 @lib lib/libogg.so.${LIBogg_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/ogg.pc
 share/aclocal/
 share/aclocal/ogg.m4

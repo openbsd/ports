@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/04/04 16:03:56 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/05/22 11:31:10 ajacoutot Exp $
 @bin bin/unzip-mem
 @bin bin/unzzip
 @bin bin/unzzipcat
@@ -46,7 +46,6 @@ lib/libzzipmmapped.la
 lib/libzzipwrap.a
 lib/libzzipwrap.la
 @lib lib/libzzipwrap.so.${LIBzzipwrap_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/zzip-zlib-config.pc
 lib/pkgconfig/zzipfseeko.pc
 lib/pkgconfig/zziplib.pc

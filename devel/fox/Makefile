@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2015/02/16 22:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2015/05/22 11:31:12 ajacoutot Exp $
 
 COMMENT =	C++ toolkit for GUI
 CATEGORIES =	devel
 
 DISTNAME =	fox-1.6.49
+REVISION =	0
 
 SHARED_LIBS +=	FOX-1.6              2.1      # .0.49
 SHARED_LIBS +=	CHART-1.6            1.1      # .0.49

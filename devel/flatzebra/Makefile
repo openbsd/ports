@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2013/05/31 22:42:12 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2015/05/22 11:31:12 ajacoutot Exp $
 
 COMMENT=	generic game engine library
 
 VERSION =	0.1.6
 DISTNAME=	flatzebra-${VERSION}
+REVISION=	0
 
 SHARED_LIBS +=	flatzebra-0.1 2.0	# .2.0
 

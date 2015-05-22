@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/03/21 08:57:49 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/05/22 11:31:18 ajacoutot Exp $
 bin/affixcompress
 @bin bin/analyze
 @bin bin/chmorph
@@ -34,7 +34,6 @@ lib/libhunspell-1.3.a
 lib/libhunspell-1.3.la
 @lib lib/libhunspell-1.3.so.${LIBhunspell-1.3_VERSION}
 lib/libparsers.a
-lib/pkgconfig/
 lib/pkgconfig/hunspell.pc
 man/hu/
 man/hu/man1/

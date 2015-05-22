@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/24 20:41:49 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:12 ajacoutot Exp $
 include/cpptest-assert.h
 include/cpptest-collectoroutput.h
 include/cpptest-compileroutput.h
@@ -12,5 +12,4 @@ include/cpptest.h
 lib/libcpptest.a
 lib/libcpptest.la
 @lib lib/libcpptest.so.${LIBcpptest_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libcpptest.pc

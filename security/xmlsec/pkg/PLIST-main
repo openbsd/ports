@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2013/05/16 11:28:28 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2015/05/22 11:31:18 ajacoutot Exp $
 @pkgpath security/xmlsec
 @bin bin/xmlsec1
 bin/xmlsec1-config
@@ -64,7 +64,6 @@ lib/libxmlsec1-openssl.la
 lib/libxmlsec1.a
 lib/libxmlsec1.la
 @lib lib/libxmlsec1.so.${LIBxmlsec1_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/xmlsec1-gcrypt.pc
 lib/pkgconfig/xmlsec1-gnutls.pc
 lib/pkgconfig/xmlsec1-openssl.pc

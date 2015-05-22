@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2011/07/11 16:33:06 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2015/05/22 11:31:15 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH},-main[,sdl][,ggi][,x11][,gl]
 @bin bin/bsp2img
 @comment @bin bin/hw-master
@@ -55,7 +55,6 @@ lib/libQFsound.a
 lib/libQFsound.la
 lib/libQFutil.a
 lib/libQFutil.la
-lib/pkgconfig/
 @man man/man1/pak.1
 @man man/man1/qfcc.1
 @man man/man1/qflight.1

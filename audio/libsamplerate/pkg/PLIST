@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/11/07 19:35:04 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/05/22 11:31:10 ajacoutot Exp $
 @bin bin/sndfile-resample
 include/samplerate.h
 lib/libsamplerate.a
 lib/libsamplerate.la
 @lib lib/libsamplerate.so.${LIBsamplerate_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/samplerate.pc
 share/doc/libsamplerate/
 share/doc/libsamplerate/SRC.css

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.81 2014/11/04 16:01:58 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.82 2015/05/22 11:31:19 ajacoutot Exp $
 
 PORTROACH=	limit:^1\.2\.
 
 COMMENT=	General Toolkit for X11 GUI
 
 DISTNAME=	gtk+-1.2.10
-REVISION=	12
+REVISION=	13
 
 SHARED_LIBS=	gdk 3.0 \
 		gtk 3.0

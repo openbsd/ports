@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2014/10/22 14:10:46 pea Exp $
+# $OpenBSD: Makefile,v 1.12 2015/05/22 11:31:18 ajacoutot Exp $
 
 COMMENT=	encryption backend
 
 DISTNAME=	libgringotts-1.2.1
 EXTRACT_SUFX= 	.tar.bz2
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS +=  gringotts            0.0      # 2.7
 

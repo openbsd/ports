@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/23 20:46:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:11 ajacoutot Exp $
 include/opus/
 include/opus/opusfile.h
 lib/libopusfile.a
@@ -7,7 +7,6 @@ lib/libopusfile.la
 lib/libopusurl.a
 lib/libopusurl.la
 @lib lib/libopusurl.so.${LIBopusurl_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/opusfile.pc
 lib/pkgconfig/opusurl.pc
 share/doc/opusfile/

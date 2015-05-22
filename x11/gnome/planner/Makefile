@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2015/04/21 18:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2015/05/22 11:31:19 ajacoutot Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.6
 EPOCH=			0
-REVISION=		5
+REVISION=		6
 
 # Fedora patches as of 2013-08-04 04:26:11 (GMT)
 MASTER_SITES0=		http://pkgs.fedoraproject.org/cgit/planner.git/plain/

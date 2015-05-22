@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2013/10/31 19:42:45 schwarze Exp $
+@comment $OpenBSD: PLIST,v 1.30 2015/05/22 11:31:18 ajacoutot Exp $
 @conflict cyrus-sasl-*
 @extraunexec rm -rf /var/sasl2/*
 include/sasl/
@@ -12,7 +12,6 @@ include/sasl/saslutil.h
 lib/libsasl2.a
 lib/libsasl2.la
 @lib lib/libsasl2.so.${LIBsasl2_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libsasl2.pc
 @man man/man3/sasl.3
 @man man/man3/sasl_authorize_t.3

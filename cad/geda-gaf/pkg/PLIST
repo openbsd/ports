@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/04/20 02:50:16 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/05/22 11:31:11 ajacoutot Exp $
 @bin bin/convert_sym
 bin/garchive
 @bin bin/gattrib
@@ -40,7 +40,6 @@ include/libgeda/struct.h
 lib/libgeda.a
 lib/libgeda.la
 @lib lib/libgeda.so.${LIBgeda_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libgeda.pc
 @man man/man1/gnetlist.1
 @man man/man1/grenum.1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/01 07:46:47 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/05/22 11:31:12 ajacoutot Exp $
 @bin bin/fribidi
 bin/fribidi-config
 include/fribidi/
@@ -26,7 +26,6 @@ include/fribidi/fribidi.h
 lib/libfribidi.a
 lib/libfribidi.la
 @lib lib/libfribidi.so.${LIBfribidi_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/fribidi.pc
 @man man/man3/fribidi_charset_to_unicode.3
 @man man/man3/fribidi_debug_status.3

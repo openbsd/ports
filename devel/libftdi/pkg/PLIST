@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/11/12 18:53:03 stu Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/05/22 11:31:13 ajacoutot Exp $
 @conflict cppunit-<1.12
 @bin bin/baud_test
 @bin bin/bitbang
@@ -13,5 +13,4 @@ include/ftdi.h
 lib/libftdi.a
 lib/libftdi.la
 @lib lib/libftdi.so.${LIBftdi_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libftdi.pc

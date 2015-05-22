@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/21 08:45:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/05/22 11:31:16 ajacoutot Exp $
 
 COMMENT=	translate PostScript/PDF graphics to other vector formats
 
 DISTNAME=	pstoedit-3.61
 SHARED_LIBS=	pstoedit 3.0
 CATEGORIES=	graphics
+REVISION=	0
 
 HOMEPAGE=	http://www.pstoedit.net/
 

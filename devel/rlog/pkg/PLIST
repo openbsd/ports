@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/17 10:09:04 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:13 ajacoutot Exp $
 include/rlog/
 include/rlog/Error.h
 include/rlog/Lock.h
@@ -19,7 +19,6 @@ include/rlog/rloglocation.h
 lib/librlog.a
 lib/librlog.la
 @lib lib/librlog.so.${LIBrlog_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/librlog.pc
 share/doc/rlog/
 share/doc/rlog/html/

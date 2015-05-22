@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2014/11/30 05:41:34 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2015/05/22 11:31:15 ajacoutot Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
 DISTNAME=		DevIL-1.7.8
-REVISION=		8
+REVISION=		9
 SHARED_LIBS+=		IL	0.0 # 2.0
 SHARED_LIBS+=		ILU	0.0 # 2.0
 SHARED_LIBS+=		ILUT	0.0 # 2.0

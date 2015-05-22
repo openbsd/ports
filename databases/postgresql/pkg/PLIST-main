@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2015/01/08 15:01:11 pea Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2015/05/22 11:31:11 ajacoutot Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -76,7 +76,6 @@ lib/libpq.a
 @comment lib/libpq.so
 @comment lib/libpq.so.5
 @lib lib/libpq.so.${LIBpq_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libecpg.pc
 lib/pkgconfig/libecpg_compat.pc
 lib/pkgconfig/libpgtypes.pc

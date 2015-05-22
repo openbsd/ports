@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/04/11 15:40:21 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/22 11:31:10 ajacoutot Exp $
 
 COMMENT =	implementation of the FITS WCS standard
 CATEGORIES =	astro devel
 DISTNAME =	wcslib-4.17
 HOMEPAGE =	http://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	wcs		0.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/09/11 18:05:34 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2015/05/22 11:31:17 ajacoutot Exp $
 
 COMMENT=	asynchronous resolver library
 
@@ -7,6 +7,7 @@ DISTNAME=	c-ares-${V}
 PKGNAME=	libcares-${V}
 CATEGORIES=	net devel
 MASTER_SITES=	${HOMEPAGE}download/
+REVISION=	0
 
 SHARED_LIBS=	cares	2.5
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2013/06/19 14:34:52 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2015/05/22 11:31:14 ajacoutot Exp $
 @conflict e2fsprogs-<=1.41.4p4
 @conflict uuid-*
 @pkgpath devel/uuid
@@ -13,7 +13,6 @@ lib/libossp-uuid++.la
 lib/libossp-uuid.a
 lib/libossp-uuid.la
 @lib lib/libossp-uuid.so.${LIBossp-uuid_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/ossp-uuid.pc
 @man man/man1/uuid-config.1
 @man man/man1/uuid.1

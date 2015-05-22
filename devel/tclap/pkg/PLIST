@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/10 11:38:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:14 ajacoutot Exp $
 include/tclap/
 include/tclap/Arg.h
 include/tclap/ArgException.h
@@ -24,7 +24,6 @@ include/tclap/VersionVisitor.h
 include/tclap/Visitor.h
 include/tclap/XorHandler.h
 include/tclap/ZshCompletionOutput.h
-lib/pkgconfig/
 lib/pkgconfig/tclap.pc
 share/doc/tclap/
 share/doc/tclap/html/

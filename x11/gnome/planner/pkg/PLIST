@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/09/27 12:37:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/05/22 11:31:19 ajacoutot Exp $
 @bin bin/planner
 include/planner-1.0/
 include/planner-1.0/libplanner/
@@ -22,7 +22,6 @@ include/planner-1.0/libplanner/planner.h
 lib/libplanner-1.a
 lib/libplanner-1.la
 @lib lib/libplanner-1.so.${LIBplanner-1_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libplanner-1.pc
 lib/planner/
 lib/planner/file-modules/

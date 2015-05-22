@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/01/30 01:08:32 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/05/22 11:31:17 ajacoutot Exp $
 include/upnp/
 include/upnp/FreeList.h
 include/upnp/LinkedList.h
@@ -26,5 +26,4 @@ lib/libthreadutil.la
 lib/libupnp.a
 lib/libupnp.la
 @lib lib/libupnp.so.${LIBupnp_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libupnp.pc

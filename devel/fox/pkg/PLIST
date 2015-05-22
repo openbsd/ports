@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/05/08 13:05:33 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/05/22 11:31:12 ajacoutot Exp $
 bin/Adie.stx
 @bin bin/PathFinder
 @bin bin/adie
@@ -300,7 +300,6 @@ lib/libCHART-1.6.la
 lib/libFOX-1.6.a
 lib/libFOX-1.6.la
 @lib lib/libFOX-1.6.so.${LIBFOX-1.6_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/fox.pc
 @man man/man1/PathFinder.1
 @man man/man1/adie.1

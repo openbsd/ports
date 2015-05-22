@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/11 07:21:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2015/05/22 11:31:17 ajacoutot Exp $
 
 COMMENT=		collection of GTK+ widgets on top of GUPnp
 
 GNOME_PROJECT=		gupnp-ui
 GNOME_VERSION=		0.1.1
-REVISION=		6
+REVISION=		7
 
 SHARED_LIBS +=  gupnp-ui-1.0         0.0      # 0.0
 

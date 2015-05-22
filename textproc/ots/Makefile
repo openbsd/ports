@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2015/04/21 18:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/05/22 11:31:18 ajacoutot Exp $
 
 COMMENT=	open source tool for summarizing texts
 DISTNAME=	ots-0.5.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libots/}
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  ots-1                5.0      # 5.0
 

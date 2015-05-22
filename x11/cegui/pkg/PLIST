@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/19 22:35:01 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:19 ajacoutot Exp $
 include/cegui-0/
 include/cegui-0/CEGUI/
 include/cegui-0/CEGUI/Affector.h
@@ -319,7 +319,6 @@ lib/cegui-0.8/libCEGUICoreWindowRendererSet.so
 @lib lib/libCEGUIIrrlichtRenderer-0.so.${LIBCEGUIIrrlichtRenderer-0_VERSION}
 @lib lib/libCEGUIOgreRenderer-0.so.${LIBCEGUIOgreRenderer-0_VERSION}
 @lib lib/libCEGUIOpenGLRenderer-0.so.${LIBCEGUIOpenGLRenderer-0_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/CEGUI-0-IRRLICHT.pc
 lib/pkgconfig/CEGUI-0-OGRE.pc
 lib/pkgconfig/CEGUI-0-OPENGL.pc

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/01/13 23:52:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/05/22 11:31:17 ajacoutot Exp $
 @bin bin/rtmpdump
 include/librtmp/
 include/librtmp/amf.h
@@ -7,7 +7,6 @@ include/librtmp/log.h
 include/librtmp/rtmp.h
 lib/librtmp.a
 @lib lib/librtmp.so.${LIBrtmp_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/librtmp.pc
 @man man/man1/rtmpdump.1
 @man man/man3/librtmp.3

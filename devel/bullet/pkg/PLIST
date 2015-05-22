@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/19 14:27:53 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:12 ajacoutot Exp $
 include/bullet/
 include/bullet/Bullet-C-Api.h
 include/bullet/BulletCollision/
@@ -228,5 +228,4 @@ include/bullet/vectormath/vmInclude.h
 @lib lib/libBulletDynamics.so.${LIBBulletDynamics_VERSION}
 @lib lib/libBulletSoftBody.so.${LIBBulletSoftBody_VERSION}
 @lib lib/libLinearMath.so.${LIBLinearMath_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/bullet.pc

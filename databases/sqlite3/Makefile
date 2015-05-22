@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2015/01/22 17:47:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.74 2015/05/22 11:31:11 ajacoutot Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
@@ -12,6 +12,9 @@ PKGNAME-lemon=	lemon-${V}
 CATEGORIES=	databases
 IGNORE-main = "--${FULLPKGNAME-main} comes with OpenBSD as of release 5.2"
 SUBPACKAGE ?= -lemon
+REVISION-lemon=	0
+REVISION-main=	0
+REVISION-tcl=	0
 
 MASTER_SITES =	${HOMEPAGE}2013/
 

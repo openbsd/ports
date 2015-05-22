@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/02/06 07:13:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/05/22 11:31:12 ajacoutot Exp $
 bin/audiofile-config
 @bin bin/sfconvert
 @bin bin/sfinfo
@@ -8,7 +8,6 @@ include/aupvlist.h
 lib/libaudiofile.a
 lib/libaudiofile.la
 @lib lib/libaudiofile.so.${LIBaudiofile_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/audiofile.pc
 @man man/man1/sfconvert.1
 @man man/man1/sfinfo.1

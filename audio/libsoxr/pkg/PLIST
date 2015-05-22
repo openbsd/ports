@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 09:50:27 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:11 ajacoutot Exp $
 include/soxr-lsr.h
 include/soxr.h
 @lib lib/libsoxr-lsr.so.${LIBsoxr-lsr_VERSION}
 @lib lib/libsoxr.so.${LIBsoxr_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/soxr-lsr.pc
 lib/pkgconfig/soxr.pc
 share/doc/libsoxr/

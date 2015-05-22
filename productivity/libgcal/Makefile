@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/21 18:53:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/22 11:31:18 ajacoutot Exp $
 
 CATEGORIES =		productivity devel
 COMMENT =		C library for Google calendar and contacts
 DISTNAME =		libgcal-0.9.6
 HOMEPAGE =		https://code.google.com/p/libgcal/
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		gcal	0.0
 

@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/06/28 08:39:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/05/22 11:31:13 ajacoutot Exp $
 include/yaml.h
 @lib lib/libyaml-0.so.${LIByaml-0_VERSION}
 lib/libyaml.a
 lib/libyaml.la
 @lib lib/libyaml.so.${LIByaml_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/yaml-0.1.pc

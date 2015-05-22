@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/21 18:51:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/22 11:31:15 ajacoutot Exp $
 
 COMMENT =	store rasters coverages within spatialite
 PROJECT =	librasterlite
 DISTNAME =	${PROJECT}-1.1g
 SHARED_LIBS =	rasterlite 0.0 #2.0
-REVISION =	0
+REVISION =	1
 
 # breaks build if static is disabled
 LIBTOOL_FLAGS =

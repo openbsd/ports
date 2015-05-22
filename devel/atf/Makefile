@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/16 11:27:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/22 11:31:11 ajacoutot Exp $
 
 COMMENT =		Automated Testing Framework
 DISTNAME =		atf-0.18
+REVISION =		0
 
 SHARED_LIBS +=		atf-c++                   0.0 # 0.0
 SHARED_LIBS +=		atf-c                     0.0 # 0.0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/06/28 09:51:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/05/22 11:31:19 ajacoutot Exp $
 @conflict gtk2mm-docs-*
 @pkgpath x11/gtk2mm,-main
 @pkgpath x11/gtk2mm,-docs
@@ -446,7 +446,6 @@ lib/libgdkmm-2.4.la
 lib/libgtkmm-2.4.a
 lib/libgtkmm-2.4.la
 @lib lib/libgtkmm-2.4.so.${LIBgtkmm-2.4_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/gdkmm-2.4.pc
 lib/pkgconfig/gtkmm-2.4.pc
 share/devhelp/

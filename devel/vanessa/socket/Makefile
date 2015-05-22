@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/15 15:13:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/05/22 11:31:14 ajacoutot Exp $
 
 COMMENT=	provides simplified TCP/IP socket operations
 
 VERSION=	0.0.12
 DISTNAME=	vanessa_socket-${VERSION}
+REVISION=	0
 
 SHARED_LIBS=	vanessa_socket			1.0	# 3.0
 

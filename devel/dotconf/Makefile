@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/27 15:32:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/22 11:31:12 ajacoutot Exp $
 
 COMMENT=		simple, powerful configuration-file parser
 
 DISTNAME=		dotconf-1.3
+REVISION=		0
 
 SHARED_LIBS +=  dotconf              1.0      # 0.1
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/12/01 08:29:19 jsg Exp $
+# $OpenBSD: Makefile,v 1.10 2015/05/22 11:31:13 ajacoutot Exp $
 
 COMMENT=	YAML 1.1 parser and emitter written in C
 
 DISTNAME=	yaml-0.1.6
-REVISION=	0
+REVISION=	1
 PKGNAME=	lib${DISTNAME}
 CATEGORIES=	devel
 

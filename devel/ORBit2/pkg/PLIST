@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/03/27 17:58:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/05/22 11:31:11 ajacoutot Exp $
 @conflict linc-*
 @bin bin/ior-decode-2
 @bin bin/linc-cleanup-sockets
@@ -71,7 +71,6 @@ lib/libname-server-2.a
 lib/orbit-2.0/
 lib/orbit-2.0/Everything_module.a
 lib/orbit-2.0/Everything_module.la
-lib/pkgconfig/
 lib/pkgconfig/ORBit-2.0.pc
 lib/pkgconfig/ORBit-CosNaming-2.0.pc
 lib/pkgconfig/ORBit-idl-2.0.pc

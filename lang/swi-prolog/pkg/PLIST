@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/04/04 17:53:49 edd Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/05/22 11:31:16 ajacoutot Exp $
 %%SHARED%%
 bin/swipl
 bin/swipl-ld
 bin/swipl-rc
 @bin bin/xpce-client
 @lib lib/libpl.so.${LIBpl_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/swipl.pc
 lib/swipl-${V}/
 lib/swipl-${V}/Makefile

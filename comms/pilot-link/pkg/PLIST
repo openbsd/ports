@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/10/31 18:28:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/05/22 11:31:11 ajacoutot Exp $
 @bin bin/pilot-addresses
 @bin bin/pilot-clip
 @bin bin/pilot-csd
@@ -87,7 +87,6 @@ lib/libpisock.la
 lib/libpisync.a
 lib/libpisync.la
 @lib lib/libpisync.so.${LIBpisync_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/pilot-link.pc
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/
