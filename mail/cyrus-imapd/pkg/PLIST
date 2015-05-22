@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/04/24 14:51:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/05/22 06:05:43 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -249,6 +249,7 @@ share/doc/cyrus-imapd/internal/caldav_scheduling_flowchart.html
 share/doc/cyrus-imapd/internal/cyrus.css
 share/doc/cyrus-imapd/internal/cyrusdb-api.html
 share/doc/cyrus-imapd/internal/database-formats.html
+share/doc/cyrus-imapd/internal/draft-release-notes
 share/doc/cyrus-imapd/internal/hacking
 share/doc/cyrus-imapd/internal/improved_mboxlist_sort.html
 share/doc/cyrus-imapd/internal/index-api.html
