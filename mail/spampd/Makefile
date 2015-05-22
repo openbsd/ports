@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/29 10:18:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/22 20:47:51 bluhm Exp $
 
 COMMENT=		SMTP/LMTP proxy for Spamassassin
 
@@ -20,6 +20,7 @@ RUN_DEPENDS=		devel/p5-Net-Server \
 
 PKG_ARCH=		*
 NO_BUILD=		Yes
+NO_TEST=		Yes
 
 do-install:
 	cd ${WRKSRC} && \
