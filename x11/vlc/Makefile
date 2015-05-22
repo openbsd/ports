@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2015/05/06 16:39:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.187 2015/05/22 05:43:08 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ V=		2.0.10
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	5
+REVISION-main=	6
 REVISION-jack=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
@@ -49,6 +49,7 @@ MODULES=	devel/gettext \
 		lang/clang \
 		x11/qt4
 MODCLANG_ARCHS=	amd64 i386
+MODCLANG_LANGS=	c++
 
 LIB_DEPENDS-main= ${MODQT4_LIB_DEPENDS} \
 		${MODGETTEXT_LIB_DEPENDS} \
