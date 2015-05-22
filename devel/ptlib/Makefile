@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2014/10/18 04:19:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2015/05/22 15:16:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ V=		2.12.9
 DISTNAME=	ptlib-${V}
 EXTRACT_SUFX=	.tar.bz2
 SUBST_VARS=	V
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS=	pt	7.0
 
@@ -37,7 +37,8 @@ NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PTLIB_CFLAGS="-fPIC"
 CONFIGURE_ARGS=	--enable-plugins \
 		--enable-sndio \
 		--disable-esd \

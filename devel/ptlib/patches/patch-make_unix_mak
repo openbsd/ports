@@ -1,10 +1,10 @@
-$OpenBSD: patch-make_unix_mak,v 1.6 2014/04/27 09:45:05 ajacoutot Exp $
+$OpenBSD: patch-make_unix_mak,v 1.7 2015/05/22 15:16:24 ajacoutot Exp $
 
 Make sure _SONAME is versioned (.so.X.Y versus .so).
 
 --- make/unix.mak.orig	Mon Feb 17 03:14:37 2014
-+++ make/unix.mak	Mon Apr 21 21:49:55 2014
-@@ -192,11 +192,18 @@ ifeq ($(target_cpu),x86)
++++ make/unix.mak	Fri May 22 15:33:37 2015
+@@ -192,8 +192,14 @@ ifeq ($(target_cpu),x86)
  #PTLIB_CFLAGS	+= -m486
  endif
  
@@ -20,11 +20,7 @@ Make sure _SONAME is versioned (.so.X.Y versus .so).
  P_USE_RANLIB		:= 1
  #PTLIB_CFLAGS      += -DP_USE_PRAGMA		# migrated to configure
  
-+STDCCFLAGS	+= -fPIC -DPIC
- 
- endif # OpenBSD
- 
-@@ -571,6 +578,12 @@ else
+@@ -571,6 +577,12 @@ else
    PTLIB_DEBUG_SONAME = $(subst .$(LIB_SUFFIX),.$(MAJOR_VERSION).$(MINOR_VERSION)$(BUILD_TYPE)$(BUILD_NUMBER).$(LIB_SUFFIX),$(PTLIB_DEBUG_FILE))
  endif
  
