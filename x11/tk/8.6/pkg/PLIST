@@ -1,23 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/09/07 18:49:32 stu Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/05/22 04:17:59 stu Exp $
 @option no-default-conflict
 @conflict tk->=8.6,<8.7
 %%SHARED%%
 @bin bin/wish8.6
 include/tk8.6/
-include/tk8.6/default.h
 include/tk8.6/tk.h
 include/tk8.6/tkDecls.h
-include/tk8.6/tkInt.h
-include/tk8.6/tkIntDecls.h
-include/tk8.6/tkIntPlatDecls.h
-include/tk8.6/tkIntXlibDecls.h
 include/tk8.6/tkPlatDecls.h
-include/tk8.6/tkPort.h
-include/tk8.6/tkUnixDefault.h
-include/tk8.6/tkUnixInt.h
-include/tk8.6/tkUnixPort.h
-include/tk8.6/ttkDecls.h
-include/tk8.6/ttkTheme.h
 lib/libtk86.a
 @lib lib/libtk86.so.${LIBtk86_VERSION}
 lib/libtkstub86.a
