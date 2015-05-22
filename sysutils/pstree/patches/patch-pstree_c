@@ -1,10 +1,7 @@
-$OpenBSD: patch-pstree_c,v 1.4 2015/05/11 11:47:27 sthen Exp $
-
-If ioctl fails, the structs are uninitialized, so don't use them.
-
---- pstree.c.orig	Fri Apr 12 10:47:03 2013
-+++ pstree.c	Mon May 11 12:44:12 2015
-@@ -71,7 +71,7 @@ extern getargs(struct ProcInfo *, int, char *, int);
+$OpenBSD: patch-pstree_c,v 1.5 2015/05/22 13:45:30 schwarze Exp $
+--- pstree.c.orig	Thu May 21 11:23:56 2015
++++ pstree.c	Thu May 21 11:24:29 2015
+@@ -77,7 +77,7 @@ extern getargs(struct ProcInfo *, int, char *, int);
   * (Net|Open|Free)BSD & Darwin merged by Ralf Meyer <ralf AT thp.Uni-Duisburg.DE>
   */
  #  define HAS_PGID
@@ -13,20 +10,3 @@ If ioctl fails, the structs are uninitialized, so don't use them.
  #  define PSFORMAT 	"%s %ld %ld %ld %[^\n]"
  #  define PSVARS	P[i].name, &P[i].pid, &P[i].ppid, &P[i].pgid, P[i].cmd
  #  define PSVARSN	5
-@@ -872,12 +872,12 @@ int main(int argc, char **argv) {
-     Columns = atoi((char*)termdef(fileno(stdout),'c'));
- #elif defined(TIOCGWINSZ)
-     struct winsize winsize;
--    ioctl(fileno(stdout), TIOCGWINSZ, &winsize);
--    Columns = winsize.ws_col;
-+    if (ioctl(fileno(stdout), TIOCGWINSZ, &winsize) != -1)
-+        Columns = winsize.ws_col;
- #elif defined(TIOCGSIZE)
-     struct ttysize ttysize;
--    ioctl(fileno(stdout), TIOCGSIZE, &ttysize);
--    Columns = ttysize.ts_cols;
-+    if (ioctl(fileno(stdout), TIOCGSIZE, &ttysize) != -1)
-+        Columns = ttysize.ts_cols;
- #else
-     char *env = getenv("COLUMNS");
-     Columns = env ? atoi(env) : 80;
