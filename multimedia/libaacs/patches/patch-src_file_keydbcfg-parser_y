@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_file_keydbcfg-parser_y,v 1.1 2015/05/22 12:38:29 ajacoutot Exp $
+
+Revert
+5052152c235195f5fa780d0aafcb3053fe3b4ec8;hp=491da2919dea5e624a2344eed1c5dc77a461be4d
+to allow building with older bison.
+
+--- src/file/keydbcfg-parser.y.orig	Fri Jan 23 06:27:45 2015
++++ src/file/keydbcfg-parser.y	Sat May  9 15:13:23 2015
+@@ -1,8 +1,4 @@
+-%code requires {
+-#include "file/keydbcfg.h"
+-}
+-
+-%code {
++%{
+ /*
+  * This file is part of libaacs
+  * Copyright (C) 2010  gates
+@@ -22,6 +18,7 @@
+  * <http://www.gnu.org/licenses/>.
+  */
+ 
++#include "file/keydbcfg.h"
+ #include "util/macro.h"
+ 
+ #include <stdio.h>
+@@ -87,7 +84,7 @@ extern int libaacs_yyget_lineno  (void *scanner);
+ 
+ /* uncomment the line below for debugging */
+ // int yydebug = 1;
+-}
++%}
+ /* Options set to generate a reentrant parser that is POSIX yacc compatible
+  * The basic 'scanner' parameters are set. Also, another parameter is set
+  * to pass in a title entry list struct used to hold all title entries.
