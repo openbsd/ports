@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.247 2015/05/15 16:54:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.248 2015/05/22 12:17:23 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		3.16.2.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		mail
 
@@ -60,9 +60,6 @@ RUN_DEPENDS +=		textproc/highlight
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
-
-# without --as-needed, evolution takes ages to start
-MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,--as-needed
 
 YACC=			bison
 
