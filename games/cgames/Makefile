@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/12/01 23:12:08 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/22 03:02:04 bcallah Exp $
+
+PORTROACH =	limit:.*[^a]$$
 
 COMMENT =	free console games suite
 DISTNAME =	cgames-2.2a
