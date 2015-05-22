@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2015/05/22 04:24:54 stu Exp $
+--- Makefile.in.orig	Sat May 16 12:02:52 2015
++++ Makefile.in	Sat May 16 12:03:40 2015
+@@ -197,7 +197,7 @@ test: libraries
+ 		"package ifneeded tdbc::sqlite3 $(PACKAGE_VERSION) \
+ 			[list source `@CYGPATH@ $(srcdir)/library/tdbcsqlite3.tcl`];\
+ 		package ifneeded tdbc ${TDBC_VERSION} \
+-			[list source `@CYGPATH@ $(TDBC_BIN_DIR)/tdbc.tcl`]\;[list load `@CYGPATH@ $(TDBC_BIN_DIR)/$(TDBC_LIB_FILE)` tdbc]"
++			[list source `@CYGPATH@ $(TDBC_BIN_DIR)/tdbc.tcl`]\;[list load `@CYGPATH@ $(TDBC_BIN_DIR)/../../$(TDBC_LIB_FILE)` tdbc]"
+ 
+ shell: libraries
+ 	@$(TCLSH) $(SCRIPT)
