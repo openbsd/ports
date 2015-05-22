@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/22 11:36:16 ajacoutot Exp $
 
 COMMENT=		compatibility tools from the Tango project
 
 DISTNAME=		icon-naming-utils-0.8.90
 CATEGORIES=		x11
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://tango.freedesktop.org/
 

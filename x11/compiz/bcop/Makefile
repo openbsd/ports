@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1 2013/12/03 00:47:07 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/22 11:36:15 ajacoutot Exp $
 
 COMMENT =	compiz option code generator
 
 V =		0.8.8
 DISTNAME =	compiz-bcop-${V}
+REVISION =	0
 
 MASTER_SITES =	http://releases.compiz.org/${V}/
 

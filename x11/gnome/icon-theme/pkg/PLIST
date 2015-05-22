@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2014/10/02 19:50:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.50 2015/05/22 11:36:16 ajacoutot Exp $
 @unexec-delete rm -f %D/share/icons/gnome/icon-theme.cache
 share/icons/gnome/
 share/icons/gnome/16x16/
@@ -5990,6 +5990,5 @@ share/icons/gnome/8x8/emblems/emblem-symbolic-link.png
 share/icons/gnome/8x8/emblems/emblem-synchronizing.png
 share/icons/gnome/8x8/emblems/emblem-unreadable.png
 share/icons/gnome/index.theme
-share/pkgconfig/
 share/pkgconfig/gnome-icon-theme.pc
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome

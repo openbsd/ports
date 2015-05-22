@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2013/11/05 13:46:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2015/05/22 11:36:16 ajacoutot Exp $
 
 COMMENT = 		shared desktop ontologies
 PKG_ARCH =		*
 
 DISTNAME = 		shared-desktop-ontologies-0.11.0
 EXTRACT_SUFX =		.tar.bz2
+REVISION =		0
 
 HOMEPAGE =		http://sourceforge.net/apps/trac/oscaf/
 

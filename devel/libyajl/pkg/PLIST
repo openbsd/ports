@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/08/20 10:44:35 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/05/22 11:36:16 ajacoutot Exp $
 @bin bin/json_reformat
 @bin bin/json_verify
 include/yajl/
@@ -9,5 +9,4 @@ include/yajl/yajl_tree.h
 include/yajl/yajl_version.h
 @lib lib/libyajl.so.${LIByajl_VERSION}
 lib/libyajl_s.a
-share/pkgconfig/
 share/pkgconfig/yajl.pc

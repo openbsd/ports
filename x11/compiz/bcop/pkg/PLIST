@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1 2013/12/03 00:47:07 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:36:15 ajacoutot Exp $
 bin/bcop
 share/bcop/
 share/bcop/bcop.xslt
-share/pkgconfig/
 share/pkgconfig/bcop.pc

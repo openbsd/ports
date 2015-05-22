@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/03/19 10:28:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/05/22 11:36:16 ajacoutot Exp $
 share/application-registry/
 share/application-registry/gnome-vfs.applications
 share/examples/gnome-mime-data/
@@ -227,5 +227,4 @@ share/locale/zu/LC_MESSAGES/gnome-mime-data.mo
 share/mime-info/
 share/mime-info/gnome-vfs.keys
 share/mime-info/gnome-vfs.mime
-share/pkgconfig/
 share/pkgconfig/gnome-mime-data-2.0.pc
