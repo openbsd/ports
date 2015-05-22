@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/19 21:19:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/22 09:30:13 ajacoutot Exp $
 
 COMMENT =		opensource MQTT broker
 DISTNAME =		mosquitto-1.4.2
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  mosquitto                 0.0 # 1.4
 SHARED_LIBS +=  mosquittopp               0.0 # 1.4
@@ -22,6 +22,8 @@ CFLAGS +=		-DEPROTO=ECONNABORTED \
 MASTER_SITES =		http://mosquitto.org/files/source/
 
 MODULES =		devel/cmake
+
+CONFIGURE_ARGS=		-DWITH_SRV=no
 
 # Pre-shared key support was intentionally removed from libressl
 CONFIGURE_ARGS +=	-DWITH_TLS_PSK=no
