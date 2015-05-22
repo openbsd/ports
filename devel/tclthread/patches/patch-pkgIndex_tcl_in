@@ -1,0 +1,12 @@
+$OpenBSD: patch-pkgIndex_tcl_in,v 1.1 2015/05/22 04:21:42 stu Exp $
+--- pkgIndex.tcl.in.orig	Fri Mar  6 13:38:33 2015
++++ pkgIndex.tcl.in	Fri May 15 20:11:44 2015
+@@ -23,7 +23,7 @@ if {![package vsatisfies [package provide Tcl] 8.4]} {
+ # about a thread-disabled interp, instead of the message
+ # "can't find package Thread".
+ 
+-package ifneeded Thread @PACKAGE_VERSION@ [list load [file join $dir @PKG_LIB_FILE@]]
++package ifneeded Thread @PACKAGE_VERSION@ [list load [file join $dir .. .. @PKG_LIB_FILE@] Thread]
+ 
+ # package Ttrace uses some support machinery.
+ 

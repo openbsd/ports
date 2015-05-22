@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2015/05/22 04:21:42 stu Exp $
+--- configure.orig	Fri May 15 20:01:31 2015
++++ configure	Fri May 15 20:01:43 2015
+@@ -265,7 +265,7 @@ SHELL=${CONFIG_SHELL-/bin/sh}
+ : ${ac_max_here_lines=38}
+ 
+ # Identity of this package.
+-PACKAGE_NAME='thread'
++PACKAGE_NAME='tclthread'
+ PACKAGE_TARNAME='thread'
+ PACKAGE_VERSION='2.7.2'
+ PACKAGE_STRING='thread 2.7.2'
