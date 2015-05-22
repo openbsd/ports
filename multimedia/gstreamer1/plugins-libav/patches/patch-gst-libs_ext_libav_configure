@@ -1,4 +1,4 @@
-$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.7 2014/10/07 16:06:09 ajacoutot Exp $
+$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.8 2015/05/22 06:40:19 ajacoutot Exp $
 --- gst-libs/ext/libav/configure.orig	Wed Sep 24 10:55:09 2014
 +++ gst-libs/ext/libav/configure	Tue Oct  7 17:20:02 2014
 @@ -3552,7 +3552,7 @@ die_license_disabled version3 libvo_amrwbenc
@@ -10,22 +10,3 @@ $OpenBSD: patch-gst-libs_ext_libav_configure,v 1.7 2014/10/07 16:06:09 ajacoutot
  
  enable_weak_pic() {
      disabled pic && return
-@@ -4073,7 +4073,6 @@ check_disable_warning -Wno-pointer-sign
- # add some linker flags
- check_ldflags -Wl,--warn-common
- check_ldflags -Wl,-rpath-link=libswscale:libavfilter:libavdevice:libavformat:libavcodec:libavutil:libavresample
--test_ldflags -Wl,-Bsymbolic && append SHFLAGS -Wl,-Bsymbolic
- 
- # add some strip flags
- # -wN '..@*' is more selective than -x, but not available everywhere.
-@@ -4118,10 +4117,6 @@ fi
- if [ -z "$optflags" ]; then
-     if enabled small; then
-         optflags=$cflags_size
--    elif enabled optimizations; then
--        optflags=$cflags_speed
--    else
--        optflags=$cflags_noopt
-     fi
- fi
- 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.1 2013/02/05 13:07:09 brad Exp $
+$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.2 2015/05/22 06:40:19 ajacoutot Exp $
 --- gst-libs/ext/libav/configure.orig	Mon Feb  4 08:39:50 2013
 +++ gst-libs/ext/libav/configure	Mon Feb  4 08:40:36 2013
 @@ -2562,7 +2562,7 @@ die_license_disabled version3 libvo_amrwbenc
@@ -10,22 +10,3 @@ $OpenBSD: patch-gst-libs_ext_libav_configure,v 1.1 2013/02/05 13:07:09 brad Exp 
  
  enable_pic() {
      enable pic
-@@ -2993,7 +2993,6 @@ enabled extra_warnings && check_cflags -Winline
- # add some linker flags
- check_ldflags -Wl,--warn-common
- check_ldflags -Wl,-rpath-link,libpostproc -Wl,-rpath-link,libswscale -Wl,-rpath-link,libavfilter -Wl,-rpath-link,libavdevice -Wl,-rpath-link,libavformat -Wl,-rpath-link,libavcodec -Wl,-rpath-link,libavutil
--test_ldflags -Wl,-Bsymbolic && append SHFLAGS -Wl,-Bsymbolic
- 
- echo "X{};" > $TMPV
- if test_ldflags -Wl,--version-script,$TMPV; then
-@@ -3010,10 +3009,6 @@ fi
- 
- if enabled small; then
-     add_cflags $size_cflags
--elif enabled optimizations; then
--    add_cflags $speed_cflags
--else
--    add_cflags $noopt_cflags
- fi
- check_cflags -fno-math-errno
- check_cflags -fno-signed-zeros
