@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2015/03/28 22:05:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/22 09:27:25 jca Exp $
 
 COMMENT =	simple perl web app framework
 
 MODULES =	cpan
 DISTNAME =	Dancer-1.3134
+REVISION =	0
 CATEGORIES =	www
 
 # perl
@@ -11,6 +12,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 RUN_DEPENDS = 	devel/p5-Hash-Merge-Simple \
 		devel/p5-Try-Tiny \
+		devel/p5-Module-Runtime \
 		mail/p5-MIME-Types \
 		www/p5-HTTP-Body \
 		www/p5-HTTP-Server-Simple-PSGI
