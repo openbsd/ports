@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2015/04/23 18:51:17 bluhm Exp $
+# $OpenBSD: Makefile,v 1.18 2015/05/22 21:39:31 bluhm Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		provide the stuff missing in List::Util
 
-DISTNAME =		List-MoreUtils-0.410
+DISTNAME =		List-MoreUtils-0.412
 
 CATEGORIES =		devel
 
