@@ -1,7 +1,7 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.4 2014/10/21 05:08:53 stu Exp $
---- unix/Makefile.in.orig	Mon Jul 28 11:58:05 2014
-+++ unix/Makefile.in	Sat Aug 16 18:21:09 2014
-@@ -632,6 +632,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+$OpenBSD: patch-unix_Makefile_in,v 1.5 2015/05/22 04:17:01 stu Exp $
+--- unix/Makefile.in.orig	Fri Oct 24 16:39:18 2014
++++ unix/Makefile.in	Sat Oct 25 19:11:21 2014
+@@ -633,6 +633,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2014/10/21 05:08:53 stu Exp $
  # Make target which outputs the list of the .o contained in the Tcl lib useful
  # to build a single big shared library containing Tcl and other extensions.
  # Used for the Tcl Plugin.  -- dl
-@@ -798,7 +802,6 @@ install-binaries: binaries
+@@ -799,7 +803,6 @@ install-binaries: binaries
  	    done;
  	@echo "Installing $(LIB_FILE) to $(DLL_INSTALL_DIR)/"
  	@@INSTALL_LIB@
@@ -20,7 +20,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2014/10/21 05:08:53 stu Exp $
  	@echo "Installing ${TCL_EXE} as $(BIN_INSTALL_DIR)/tclsh$(VERSION)${EXE_SUFFIX}"
  	@$(INSTALL_PROGRAM) ${TCL_EXE} "$(BIN_INSTALL_DIR)/tclsh$(VERSION)${EXE_SUFFIX}"
  	@echo "Installing tclConfig.sh to $(CONFIG_INSTALL_DIR)/"
-@@ -813,7 +816,7 @@ install-binaries: binaries
+@@ -814,7 +817,7 @@ install-binaries: binaries
  	@EXTRA_INSTALL_BINARIES@
  	@echo "Installing pkg-config file to $(LIB_INSTALL_DIR)/pkgconfig/"
  	@$(INSTALL_DATA_DIR) $(LIB_INSTALL_DIR)/pkgconfig
@@ -29,7 +29,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2014/10/21 05:08:53 stu Exp $
  
  install-libraries: libraries
  	@for i in "$(SCRIPT_INSTALL_DIR)"; \
-@@ -824,7 +827,7 @@ install-libraries: libraries
+@@ -825,7 +828,7 @@ install-libraries: libraries
  		else true; \
  		fi; \
  	    done;
@@ -38,7 +38,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.4 2014/10/21 05:08:53 stu Exp $
  	    do \
  	    if [ ! -d "$(SCRIPT_INSTALL_DIR)"/$$i ] ; then \
  		echo "Making directory $(SCRIPT_INSTALL_DIR)/$$i"; \
-@@ -844,21 +847,21 @@ install-libraries: libraries
+@@ -845,21 +848,21 @@ install-libraries: libraries
  	    $(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)"/http1.0; \
  	    done;
  	@echo "Installing package http 2.8.8 as a Tcl Module";
