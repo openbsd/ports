@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_common_mak,v 1.1 2009/09/09 18:02:01 jolan Exp $
+$OpenBSD: patch-src_common_mak,v 1.2 2015/05/22 09:17:35 kettenis Exp $
 --- src/common.mak.orig	Sat Jun 14 20:11:08 2008
-+++ src/common.mak	Wed Sep  9 12:13:00 2009
++++ src/common.mak	Fri May 22 11:13:12 2015
 @@ -3,11 +3,11 @@
  V = 2.4
  
@@ -9,8 +9,9 @@ $OpenBSD: patch-src_common_mak,v 1.1 2009/09/09 18:02:01 jolan Exp $
 +CFLAGS+= $(MYCFLAGS) $(DEFS) $(INC)
  TRG_AR = lib$(TRG).a
  TRG_SO = $(TRG).so
- LD     = ld
+-LD     = ld
 -LDFLAGS= -shared
++LD     = cc
 +LDFLAGS= -fPIC -shared
  
  all: $(TRG_AR) $(TRG_SO)
