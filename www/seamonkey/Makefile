@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2015/05/16 07:19:06 landry Exp $
+# $OpenBSD: Makefile,v 1.171 2015/05/23 12:18:32 ajacoutot Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -11,7 +11,7 @@ MOZILLA_CODENAME =	suite
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-3.8
-REVISION-main =		0
+REVISION-main =		1
 REVISION-lightning =	1
 EPOCH-lightning =	0
 
@@ -67,7 +67,6 @@ WANTLIB += icudata icui18n icuuc
 
 CONFIGURE_ARGS +=	--enable-gstreamer=1.0
 BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-base
-RUN_DEPENDS +=	multimedia/gstreamer1/plugins-good
 
 ALL_TARGET =	default
 

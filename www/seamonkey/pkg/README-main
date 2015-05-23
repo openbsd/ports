@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.5 2013/05/30 14:26:50 landry Exp $
+$OpenBSD: README-main,v 1.6 2015/05/23 12:18:32 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -30,3 +30,11 @@ If you encounter crashes, you might want to build the debug FLAVOR of
 this package, and run seamonkey inside gdb, so that you can gather
 debugging logs and traces (for all threads !).
 Bug reports without that information will be ignored.
+
+Html5 audio/video support
+=========================
+Due to dependencies reasons, you have to manually install some
+GStreamer packages for a full multimedia experience (ie play MP3 audio
+and MPEG videos). They will be used at runtime if Seamonkey finds them.
+
+# pkg_add gstreamer1-plugins-good gstreamer1-plugins-libav
