@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/12 07:46:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/23 10:53:24 czarkoff Exp $
 
 COMMENT=	wrapper for a game about breaking and placing blocks
 
@@ -7,7 +7,7 @@ GH_PROJECT=	minecraft
 GH_ACCOUNT=	qbit
 GH_TAGNAME=	${GH_PROJECT}-${V}
 DISTNAME=	${GH_TAGNAME}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	games
 

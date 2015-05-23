@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1295 2015/05/16 17:04:51 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1296 2015/05/23 10:53:24 czarkoff Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1185,6 +1185,7 @@ MASTER_SITES_GITHUB += \
 	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAME:S/$/\//}
 
 MASTER_SITES ?= ${MASTER_SITES_GITHUB}
+HOMEPAGE ?= https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
 .else
 # Empty declarations to avoid "variable XXX is recursive" errors
 MASTER_SITES ?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/10/13 22:06:25 nigel Exp $
+# $OpenBSD: Makefile,v 1.15 2015/05/23 10:53:25 czarkoff Exp $
 
 COMMENT=	tool for extracting and gluing pcap (tcpdump) files
 
@@ -7,6 +7,7 @@ GH_PROJECT=	tcpslice
 GH_COMMIT=	2837b722f0a6150971b327a252a59c64b24b9640
 
 DISTNAME=	tcpslice-20140501
+REVISION=	0
 CATEGORIES=	net
 
 HOME_PAGE=	https://github.com/the-tcpdump-group/tcpslice
