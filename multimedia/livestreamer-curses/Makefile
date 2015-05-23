@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/04/05 13:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/05/23 16:34:40 czarkoff Exp $
 
 MODPY_EGG_VERSION =	1.5.2
 COMMENT =	curses-based front-end for livestreamer
@@ -8,7 +8,6 @@ GH_TAGNAME =	v${MODPY_EGG_VERSION}
 DISTNAME =	${GH_PROJECT}-${MODPY_EGG_VERSION}
 CATEGORIES =	multimedia net
 
-HOMEPAGE =	https://github.com/gapato/livestreamer-curses
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # MIT

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/12/28 16:35:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/23 16:34:40 czarkoff Exp $
 
 COMMENT=	Erlang library for building lightweight HTTP servers
 
@@ -9,8 +9,6 @@ GH_TAGNAME=	v$V
 DISTNAME=	${GH_PROJECT}-$V
 PKGNAME=	erl-${DISTNAME}
 CATEGORIES=	www
-
-HOMEPAGE=	https://github.com/basho/mochiweb
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes

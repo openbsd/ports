@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/04/05 13:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/05/23 16:34:40 czarkoff Exp $
 
 COMMENT =	enhanced OCaml toplevel
 CATEGORIES =	devel
@@ -9,7 +9,6 @@ GH_PROJECT =	utop
 GH_TAGNAME =	${V}
 DISTNAME =	${GH_PROJECT}-$V
 
-HOMEPAGE =	https://github.com/diml/utop
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # 3-clause BSD

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/05 13:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/23 16:34:40 czarkoff Exp $
 
 COMMENT =	quick access to files in a POSIX shell
 
@@ -10,7 +10,6 @@ GH_TAGNAME =	1.0.1
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 
 CATEGORIES =	misc
-HOMEPAGE =	https://github.com/clvv/fasd
 
 # MIT/X11
 PERMIT_PACKAGE_CDROM =	Yes

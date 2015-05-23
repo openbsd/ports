@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/08/26 08:03:33 kirby Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/23 16:34:40 czarkoff Exp $
 
 COMMENT=	scan a network for SSL certificates
 
@@ -9,8 +9,6 @@ DISTNAME=	${GH_PROJECT}-0.20121102
 REVISION=	0
 
 CATEGORIES=	security www
-
-HOMEPAGE=	https://github.com/mikecardwell/sslScanner
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

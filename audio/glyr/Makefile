@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/05 13:31:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/05/23 16:34:40 czarkoff Exp $
 
 COMMENT =	music related metadata searchengine
 
@@ -9,8 +9,6 @@ GH_TAGNAME =	1.0.2
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES =	audio net
 SHARED_LIBS +=	glyr	0.0 # 1.1
-
-HOMEPAGE =	https://github.com/sahib/glyr
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/04/05 13:31:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2015/05/23 16:34:40 czarkoff Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,8 +11,6 @@ GH_TAGNAME=	0.9.0
 DISTNAME=	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME=	lua-${DISTNAME}
 CATEGORIES=	devel
-
-HOMEPAGE=	https://github.com/pavouk/lgi
 
 MAINTAINER=	Florian Stinglmayr <florian@n0la.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/05/05 05:53:54 zhuk Exp $
+# $OpenBSD: Makefile,v 1.17 2015/05/23 16:34:41 czarkoff Exp $
 
 COMMENT=	Lumina Desktop Environment
 
@@ -13,8 +13,6 @@ REVISION=	0
 SHARED_LIBS +=  LuminaUtils               1.0 # 1.0
 
 CATEGORIES=	x11
-
-HOMEPAGE=	https://github.com/pcbsd/lumina
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/04/05 20:00:55 rpe Exp $
+# $OpenBSD: Makefile,v 1.10 2015/05/23 16:34:40 czarkoff Exp $
 
 PORTROACH=      limit:^[0-9].*
 
@@ -13,8 +13,6 @@ WRKDIST=	${WRKDIR}/nyancat-c502754f9b79b03c912815f6139ccfcc75ecf513
 DISTNAME=	nyancat-${GH_TAGNAME}
 
 CATEGORIES=	misc
-
-HOMEPAGE=	https://github.com/klange/nyancat
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

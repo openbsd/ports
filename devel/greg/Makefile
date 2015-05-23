@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/05 13:31:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/23 16:34:40 czarkoff Exp $
 
 V =		0.4.5
 COMMENT =	PEG-based parser generator
@@ -9,7 +9,6 @@ GH_ACCOUNT =	fasterthanlime
 GH_PROJECT =	greg
 GH_TAGNAME =	v${V}
 
-HOMEPAGE =	https://github.com/fasterthanlime/greg
 MAINTAINER =	Sean Levy <attila@stalphonsos.com>
 
 # MIT

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/16 10:27:26 jung Exp $
+# $OpenBSD: Makefile,v 1.7 2015/05/23 16:34:40 czarkoff Exp $
 
 COMMENT =	simple (or small or suckless) X Image Viewer
 
@@ -8,8 +8,6 @@ GH_TAGNAME=	v1.3.1
 DISTNAME=	${GH_PROJECT}-${GH_TAGNAME:S/v//}
 
 CATEGORIES =	graphics x11
-
-HOMEPAGE =	https://github.com/muennich/sxiv
 
 MAINTAINER =	Matthew Via <via@matthewvia.info>
 
