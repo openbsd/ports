@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2013/12/24 15:18:38 kili Exp $
+@comment $OpenBSD: PLIST,v 1.28 2015/05/23 08:40:02 ajacoutot Exp $
 @conflict gstoraster-*
 @pkgpath print/gstoraster
 @pkgpath print/ghostscript/afpl${FLAVOR_STRING}
@@ -74,6 +74,7 @@ man/de/man1/
 @man man/man1/ps2pdfwr.1
 @man man/man1/ps2ps.1
 @man man/man1/wftopfa.1
+share/ghostscript/
 share/ghostscript/${VERSION}/
 share/ghostscript/${VERSION}/Resource/
 share/ghostscript/${VERSION}/Resource/CIDFSubst/
