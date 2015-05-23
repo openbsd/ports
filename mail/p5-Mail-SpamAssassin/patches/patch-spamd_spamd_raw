@@ -1,0 +1,30 @@
+$OpenBSD: patch-spamd_spamd_raw,v 1.7 2015/05/23 14:18:55 bluhm Exp $
+--- spamd/spamd.raw.orig	Tue Apr 28 21:56:59 2015
++++ spamd/spamd.raw	Wed May 20 19:50:51 2015
+@@ -1071,7 +1071,6 @@ sub server_sock_setup_inet {
+     $sockopt{V6Only} = 1  if $io_socket_module_name eq 'IO::Socket::IP'
+                              && IO::Socket::IP->VERSION >= 0.09;
+     %sockopt = (%sockopt, (
+-      SSL_version     => $sslversion,
+       SSL_verify_mode => 0x00,
+       SSL_key_file    => $opt{'server-key'},
+       SSL_cert_file   => $opt{'server-cert'},
+@@ -1092,7 +1091,8 @@ sub server_sock_setup_inet {
+     if (!$server_inet) {
+       $diag = sprintf("could not create %s socket on [%s]:%s: %s",
+                       $ssl ? 'IO::Socket::SSL' : $io_socket_module_name,
+-                      $adr, $port, $!);
++                      $adr, $port, $ssl && $IO::Socket::SSL::SSL_ERROR ?
++                      "$!,$IO::Socket::SSL::SSL_ERROR" : $!);
+       push(@diag_fail, $diag);
+     } else {
+       $diag = sprintf("created %s socket on [%s]:%s",
+@@ -1521,7 +1521,7 @@ sub accept_from_any_server_socket {
+     } # end multiple sockets case
+ 
+     if ($selected_socket_info) {
+-      my $socket = $selected_socket_info->{socket};
++      $socket = $selected_socket_info->{socket};
+       $socket or die "no socket???, impossible";
+       dbg("spamd: accept() on fd %d", $selected_socket_info->{fd});
+       $client = $socket->accept;
