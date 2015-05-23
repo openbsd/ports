@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2015/03/15 08:52:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/05/23 07:04:20 ajacoutot Exp $
 
-MODPY_EGG_VERSION =	3.2.2
+MODPY_EGG_VERSION =	3.2.3
 
 TRYTOND_MODULE =	production
 
