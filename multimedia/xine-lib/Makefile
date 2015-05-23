@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.119 2015/04/21 18:51:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.120 2015/05/23 07:19:44 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.6
-REVISION=	1
+REVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -49,11 +49,11 @@ LIB_DEPENDS=	audio/faad \
 		audio/speex \
 		audio/wavpack \
 		devel/sdl \
-		graphics/ffmpeg>=20130319 \
+		graphics/ffmpeg \
 		graphics/jpeg \
 		graphics/libmng \
 		graphics/vcdimager \
-		multimedia/libbluray \
+		multimedia/libbluray>=0.8.0 \
 		multimedia/libdvdnav \
 		multimedia/libtheora \
 		multimedia/libvpx>=1.3.0 \

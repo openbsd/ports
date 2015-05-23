@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.250 2015/05/11 23:23:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.251 2015/05/23 07:19:44 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,6 +10,7 @@ COMMENT=	movie player supporting many formats
 V=		20150510
 FFMPEG_V=	20150412
 DISTNAME=	mplayer-${V}
+REVISION=	0
 CATEGORIES=	x11 multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -38,16 +39,16 @@ LIB_DEPENDS=	archivers/bzip2 \
 		audio/lame \
 		devel/fribidi \
 		devel/sdl \
-		devel/libdvdread>=4.2.0 \
+		devel/libdvdread \
 		graphics/ffmpeg>=${FFMPEG_V} \
 		graphics/giflib \
 		graphics/jpeg \
 		graphics/libmng \
 		graphics/png \
 		multimedia/libass \
-		multimedia/libbluray \
+		multimedia/libbluray>=0.8.0 \
 		multimedia/libdv \
-		multimedia/libdvdnav>=4.2.0 \
+		multimedia/libdvdnav \
 		multimedia/x264
 
 BUILD_DEPENDS=	audio/ladspa \
