@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/06 06:51:03 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/23 07:58:40 ajacoutot Exp $
 
 # requires 64-bit atomic ops.
 # some other arch could probably be added..certainly fails on i386
@@ -7,6 +7,7 @@ ONLY_FOR_ARCHS =	amd64
 COMMENT =		movie player based on MPlayer/mplayer2
 V =			0.9.1
 DISTNAME =		mpv-${V}
+REVISION =		0
 
 GH_ACCOUNT=		mpv-player
 GH_PROJECT=		mpv
@@ -23,10 +24,9 @@ PERMIT_PACKAGE_CDROM =	patents
 PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB += EGL GL X11 Xext Xinerama Xrandr Xss Xv ass avcodec
-WANTLIB += avdevice avfilter avformat avresample avutil c cdio
-WANTLIB += cdio_cdda cdio_paranoia dvdnav dvdread jpeg lcms2
-WANTLIB += m postproc pthread smbclient sndio swresample swscale z
-WANTLIB += ${MODLUA_WANTLIB}
+WANTLIB += avdevice avfilter avformat avutil bluray c cdio cdio_cdda
+WANTLIB += cdio_paranoia dvdnav dvdread jpeg lcms2 m pthread
+WANTLIB += smbclient sndio swresample swscale z ${MODLUA_WANTLIB}
 
 MODULES =		converters/libiconv \
 			lang/lua \
@@ -37,12 +37,13 @@ BUILD_DEPENDS =		audio/ladspa \
 			textproc/py-docutils
 
 LIB_DEPENDS =		audio/libcdio \
-			devel/libdvdread>=4.1.0 \
+			devel/libdvdread \
 			graphics/ffmpeg \
 			graphics/jpeg \
 			graphics/lcms2 \
 			multimedia/libass \
-			multimedia/libdvdnav>=4.2.0 \
+			multimedia/libbluray>=0.8.0 \
+			multimedia/libdvdnav \
 			net/samba
 
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -56,7 +57,6 @@ CONFIGURE_ARGS +=	--confdir=${SYSCONFDIR}/mpv \
 			--mandir=${LOCALBASE}/man \
 			--extra-ldflags="-L${LOCALBASE}/lib" \
 			--disable-alsa \
-			--disable-bluray \
 			--disable-caca \
 			--disable-enca \
 			--disable-jack \
