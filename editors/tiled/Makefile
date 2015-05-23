@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/27 08:11:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/23 10:43:32 espie Exp $
 
 COMMENT =		tile map editor
 
 V =			0.9.1
 DISTNAME =		tiled-qt-${V}
 PKGNAME =		tiled-${V}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		tiled                     0.0 # 1.0
 
@@ -27,7 +27,7 @@ MODULES =		x11/qt4
 
 MAKE_FLAGS =		CC="${CC}" \
 			CXX="${CXX}" \
-			CXXFLAGS="${CXXFLAGS}" \
+			CXXFLAGS="${CXXFLAGS} -fPIC" \
 			PREFIX="${PREFIX}" \
 			LIBtiled_VERSION="${LIBtiled_VERSION}"
 FAKE_FLAGS =		INSTALL_ROOT="${DESTDIR}"
