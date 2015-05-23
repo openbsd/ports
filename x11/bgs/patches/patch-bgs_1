@@ -1,9 +1,9 @@
-$OpenBSD: patch-bgs_1,v 1.1.1.1 2008/07/16 16:16:14 merdely Exp $
---- bgs.1.orig	Wed Jul 16 11:00:21 2008
-+++ bgs.1	Wed Jul 16 11:00:33 2008
+$OpenBSD: patch-bgs_1,v 1.2 2015/05/23 11:58:19 jung Exp $
+--- bgs.1.orig	Tue May 12 11:09:52 2015
++++ bgs.1	Sat May 23 13:28:31 2015
 @@ -1,4 +1,4 @@
 -.TH BGS 1 bgs\-VERSION
 +.TH BGS 1 bgs\-${VERSION}
  .SH NAME
- bgs \- back ground setter
+ bgs \- background setter
  .SH SYNOPSIS

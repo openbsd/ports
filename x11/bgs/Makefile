@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.13 2013/11/02 13:03:33 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2015/05/23 11:58:19 jung Exp $
 
 COMMENT =		simple background setter
 
-VERSION =		0.5
-DISTNAME =		bgs-${VERSION}
-REVISION=		3
+VERSION =		0.7.1
+DISTNAME =		${GH_PROJECT}-${VERSION}
 CATEGORIES =		x11 graphics
 
 MAINTAINER =		Michael Erdely <merdely@openbsd.org>
-HOMEPAGE =		https://github.com/Gottox/bgs
-MASTER_SITES =		https://github.com/downloads/Gottox/bgs/
 
 # MIT/X
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		X11 Xinerama c Imlib2
+WANTLIB =		X11 Xinerama c Imlib2 m
+
+GH_ACCOUNT =		Gottox
+GH_PROJECT =		bgs
+GH_TAGNAME =		v${VERSION}
 
 LIB_DEPENDS =		graphics/imlib2
 
