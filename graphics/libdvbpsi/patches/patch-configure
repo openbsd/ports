@@ -1,12 +1,15 @@
-$OpenBSD: patch-configure,v 1.6 2011/11/06 20:28:11 kili Exp $
---- configure.orig	Thu Nov  3 09:34:45 2011
-+++ configure	Thu Nov  3 10:03:38 2011
-@@ -11643,8 +11643,6 @@ fi
- if test "$release" = "true"
- then
-   CFLAGS="${CFLAGS} -O6"
--else
--  CFLAGS="${CFLAGS} -O2"
- fi
+$OpenBSD: patch-configure,v 1.7 2015/05/24 10:32:46 ajacoutot Exp $
+
+Remove the use of -Werror.
+
+--- configure.orig	Wed Apr 16 10:44:31 2014
++++ configure	Sat May 23 23:35:42 2015
+@@ -11861,7 +11861,7 @@ CC="$lt_save_CC"
  
- for ac_header in stdint.h inttypes.h
+ CFLAGS_save="${CFLAGS}"
+ 
+-CFLAGS_dist="-Wall -Werror --std=gnu99 -D_GNU_SOURCE"
++CFLAGS_dist="-Wall --std=gnu99 -D_GNU_SOURCE"
+ CFLAGS_dist="${CFLAGS_dist} -Wpointer-arith -Wcast-align -Wcast-qual -Wstrict-prototypes -Wshadow -Waggregate-return -Wmissing-prototypes -Wnested-externs -Wsign-compare"
+ 
+ case "${target_os}" in
