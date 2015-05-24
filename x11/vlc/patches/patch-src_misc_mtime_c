@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_misc_mtime_c,v 1.1 2013/04/04 16:49:56 brad Exp $
+$OpenBSD: patch-src_misc_mtime_c,v 1.2 2015/05/24 07:16:31 ajacoutot Exp $
 
 Make use of clock_gettime() on OpenBSD. Until we have per-process
 timers and can enable _POSIX_TIMERS in unistd.h.
 
---- src/misc/mtime.c.orig	Wed Apr  3 19:04:51 2013
-+++ src/misc/mtime.c	Wed Apr  3 19:06:10 2013
-@@ -42,7 +42,7 @@
- #if !defined (_POSIX_TIMERS)
+--- src/misc/mtime.c.orig	Mon Aug 25 18:20:04 2014
++++ src/misc/mtime.c	Fri May  8 19:19:56 2015
+@@ -40,7 +40,7 @@
+ #if !defined (_POSIX_TIMERS) || defined (_WIN32)
  # define _POSIX_TIMERS (-1)
  #endif
 -#if (_POSIX_TIMERS > 0)
@@ -14,7 +14,7 @@ timers and can enable _POSIX_TIMERS in unistd.h.
  # include <time.h> /* clock_gettime() */
  #else
  # include <sys/time.h>
-@@ -234,7 +234,7 @@ mtime_t date_Decrement( date_t *p_date, uint32_t i_nb_
+@@ -232,7 +232,7 @@ mtime_t date_Decrement( date_t *p_date, uint32_t i_nb_
   */
  uint64_t NTPtime64 (void)
  {

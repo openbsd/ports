@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_posix_error_c,v 1.1 2015/05/24 07:16:31 ajacoutot Exp $
+
+Nasty hack since OpenBSD lacks strerror_l().
+
+--- src/posix/error.c.orig	Sat May  9 09:22:08 2015
++++ src/posix/error.c	Sat May  9 09:36:19 2015
+@@ -29,6 +29,19 @@
+ 
+ #include <vlc_common.h>
+ 
++#ifdef __OpenBSD__
++const char* vlc_strerror(int errnum)
++{
++    return vlc_strerror_c(errnum);
++}
++
++const char* vlc_strerror_c(int errnum)
++{
++    static char buf[100];
++    strerror_r(errnum, buf, 100);
++    return buf;
++}
++#else
+ static const char *vlc_strerror_l(int errnum, const char *lname)
+ {
+     int saved_errno = errno;
+@@ -76,3 +89,4 @@ const char *vlc_strerror_c(int errnum)
+ {
+     return vlc_strerror_l(errnum, "C");
+ }
++#endif

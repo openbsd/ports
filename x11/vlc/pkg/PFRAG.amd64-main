@@ -1,14 +1,7 @@
-@comment $OpenBSD: PFRAG.amd64-main,v 1.6 2011/11/16 13:33:16 phessler Exp $
-lib/vlc/plugins/3dnow/
-lib/vlc/plugins/3dnow/libmemcpy3dn_plugin.so
-lib/vlc/plugins/mmx/
-lib/vlc/plugins/mmx/libi420_rgb_mmx_plugin.so
-lib/vlc/plugins/mmx/libi420_yuy2_mmx_plugin.so
-lib/vlc/plugins/mmx/libi422_yuy2_mmx_plugin.so
-lib/vlc/plugins/mmx/libmemcpymmx_plugin.so
-lib/vlc/plugins/mmxext/
-lib/vlc/plugins/mmxext/libmemcpymmxext_plugin.so
-lib/vlc/plugins/sse2/
-lib/vlc/plugins/sse2/libi420_rgb_sse2_plugin.so
-lib/vlc/plugins/sse2/libi420_yuy2_sse2_plugin.so
-lib/vlc/plugins/sse2/libi422_yuy2_sse2_plugin.so
+@comment $OpenBSD: PFRAG.amd64-main,v 1.7 2015/05/24 07:16:31 ajacoutot Exp $
+lib/vlc/plugins/video_chroma/libi420_rgb_mmx_plugin.so
+lib/vlc/plugins/video_chroma/libi420_rgb_sse2_plugin.so
+lib/vlc/plugins/video_chroma/libi420_yuy2_mmx_plugin.so
+lib/vlc/plugins/video_chroma/libi420_yuy2_sse2_plugin.so
+lib/vlc/plugins/video_chroma/libi422_yuy2_mmx_plugin.so
+lib/vlc/plugins/video_chroma/libi422_yuy2_sse2_plugin.so

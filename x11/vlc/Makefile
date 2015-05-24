@@ -1,22 +1,20 @@
-# $OpenBSD: Makefile,v 1.188 2015/05/23 07:19:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.189 2015/05/24 07:16:31 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-V=		2.0.10
+V=		2.2.1
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	7
-REVISION-jack=	3
 CATEGORIES=	x11
-MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
+MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	vlc	2.0 \
-		vlccore	2.1
+SHARED_LIBS=	vlc	3.0 \
+		vlccore	3.0
 
 HOMEPAGE=	http://www.videolan.org/vlc/
 
@@ -26,24 +24,25 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB-common=	c dbus-1 m pthread ${MODGETTEXT_WANTLIB}
-WANTLIB-main=	GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 Xcomposite \
-		Xcursor Xdamage Xext Xfixes Xi Xinerama Xpm Xrandr Xrender \
-		ass atk-1.0 avcodec avformat avutil bluray cairo cddb dvbpsi \
-		dvdnav dvdread ebml enca expat ffi fontconfig freetype fribidi \
-		gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
-		gmp gnutls gobject-2.0 gpg-error graphite2 gthread-2.0 \
-		gtk-x11-2.0 harfbuzz hogweed jpeg lzma matroska nettle notify \
-		opus ogg p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-		pixman-1 png postproc pthread-stubs samplerate sndio speex \
-		speexdsp stdc++ swscale tag tar tasn1 tiff usbhid vorbis \
-		vorbisenc webp x264 xcb-composite xcb-keysyms xcb-randr \
-		xcb-render xcb-shape xcb-shm xcb-xfixes xcb-xv xcb xml2 z \
-		${WANTLIB-common}
+WANTLIB-common=	c dbus-1 idn m pthread ${MODGETTEXT_WANTLIB}
+WANTLIB-main=	EGL GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 \
+		Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xpm \
+		Xrender Xrandr ass atk-1.0 avcodec avformat avutil bluray \
+		cairo cddb croco-0.6 dvbpsi dvdnav dvdread ebml enca \
+		expat ffi fontconfig freetype fribidi gcrypt gdk-x11-2.0 \
+		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls \
+		gobject-2.0 gpg-error graphite2 gthread-2.0 gtk-x11-2.0 \
+		harfbuzz hogweed jpeg lzma matroska nettle notify opus \
+		ogg p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
+		pixman-1 png postproc pthread-stubs rsvg-2 samplerate sndio \
+		speex speexdsp stdc++ swscale tag tar tasn1 tiff usbhid \
+		vorbis vorbisenc webp x264 xcb-composite xcb-keysyms \
+		xcb-randr xcb-render xcb-shape xcb-shm xcb-xfixes xcb-xv \
+		xcb xml2 z ${WANTLIB-common}
 WANTLIB-jack=	db jack vlccore ${WANTLIB-common}
 
 AUTOCONF_VERSION= 2.69
-AUTOMAKE_VERSION= 1.11
+AUTOMAKE_VERSION= 1.15
 
 MODULES=	devel/gettext \
 		lang/clang \
@@ -82,8 +81,7 @@ LIB_DEPENDS-main= ${MODQT4_LIB_DEPENDS} \
 LIB_DEPENDS-jack= ${MODGETTEXT_LIB_DEPENDS} \
 		${BUILD_PKGPATH} \
 		audio/jack
-BUILD_DEPENDS=	net/livemedia>=20120204p0 \
-		${MODGNU_AUTOCONF_DEPENDS} \
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/bison \
 		devel/libtool
@@ -92,8 +90,6 @@ RUN_DEPENDS-main= devel/desktop-file-utils \
 RUN_DEPENDS-jack= ${BUILD_PKGPATH}
 
 MAKE_ENV=	AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
-
-CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include
 
 USE_GMAKE=	Yes
 # Fails to link _pic libs properly resulting in undefined symbols in the live555 plugin
@@ -106,35 +102,41 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-altivec \
 		--disable-bonjour \
 		--disable-caca \
+		--disable-chromaprint \
 		--disable-crystalhd \
 		--disable-dc1394 \
 		--disable-dca \
 		--disable-decklink \
-		--disable-dirac \
-		--disable-dv \
+		--disable-dv1394 \
+		--disable-faad \
 		--disable-flac \
 		--disable-fluidsynth \
+		--disable-freerdp \
 		--disable-gme \
 		--disable-gnomevfs \
 		--disable-goom \
+		--disable-gst-decode \
 		--disable-kate \
 		--disable-libmpeg2 \
-		--disable-libproxy \
 		--disable-libva \
 		--disable-linsys \
 		--disable-lua \
 		--disable-mad \
+		--disable-mfx \
+		--disable-mmal-codec \
 		--disable-mod \
 		--disable-mpc \
 		--disable-mtp \
 		--disable-neon \
+		--disable-opencv \
 		--disable-projectm \
-		--disable-portaudio \
 		--disable-pulse \
 		--disable-schroedinger \
+		--disable-sftp \
+		--disable-shine \
 		--disable-shout \
 		--disable-sid \
-		--disable-smb \
+		--disable-smbclient \
 		--disable-svg \
 		--disable-theora \
 		--disable-tiger \
@@ -142,17 +144,22 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-udev \
 		--disable-upnp \
 		--disable-v4l2 \
+		--disable-vdpau \
+		--disable-vnc \
+		--disable-vpx \
+		--disable-vsxu \
+		--disable-x265 \
 		--disable-zvbi \
-		--enable-real \
 		--enable-realrtsp \
 		--without-contrib \
-		--without-tuning \
 		--with-kde-solid=${LOCALBASE}/share/apps/solid/actions
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -L${LOCALBASE}/live/liveMedia \
-		    -L${LOCALBASE}/live/groupsock -L${LOCALBASE}/live/BasicUsageEnvironment \
-		    -L${LOCALBASE}/live/UsageEnvironment" \
-		LOCALBASE="${LOCALBASE}" \
+
+# too old for now
+CONFIGURE_ARGS+= --disable-live555
+
+CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		LIVE555_PREFIX="${LOCALBASE}/live" \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/qt4/pkgconfig" \
 		ac_cv_header_execinfo_h=no
 
@@ -184,7 +191,6 @@ PKG_ARGS+=-Di386=0
 .endif
 
 pre-configure:
-	@cp ${FILESDIR}/sndio.c ${WRKSRC}/modules/audio_output
 	@cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 	    ./bootstrap
 
