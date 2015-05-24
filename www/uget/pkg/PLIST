@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/31 02:06:36 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/24 17:18:46 bcallah Exp $
 @bin bin/uget-gtk
+@bin bin/uget-gtk-1to2
 share/applications/uget-gtk.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/icons/hicolor/128x128/apps/uget-icon.png
@@ -28,23 +29,40 @@ share/icons/hicolor/96x96/apps/uget-icon.png
 share/icons/hicolor/scalable/apps/uget-icon.svg
 share/locale/ar/LC_MESSAGES/uget.mo
 share/locale/be/LC_MESSAGES/uget.mo
+share/locale/bg/LC_MESSAGES/uget.mo
 share/locale/bn_BD/
 share/locale/bn_BD/LC_MESSAGES/
 share/locale/bn_BD/LC_MESSAGES/uget.mo
+share/locale/ca/LC_MESSAGES/uget.mo
 share/locale/cs/LC_MESSAGES/uget.mo
 share/locale/da/LC_MESSAGES/uget.mo
 share/locale/de/LC_MESSAGES/uget.mo
 share/locale/es/LC_MESSAGES/uget.mo
+share/locale/fa/LC_MESSAGES/uget.mo
 share/locale/fr/LC_MESSAGES/uget.mo
+share/locale/he/LC_MESSAGES/uget.mo
+share/locale/hr/LC_MESSAGES/uget.mo
 share/locale/hu/LC_MESSAGES/uget.mo
 share/locale/id/LC_MESSAGES/uget.mo
 share/locale/it/LC_MESSAGES/uget.mo
 share/locale/ka_GE/
 share/locale/ka_GE/LC_MESSAGES/
 share/locale/ka_GE/LC_MESSAGES/uget.mo
+share/locale/kk/LC_MESSAGES/uget.mo
+share/locale/or_IN/
+share/locale/or_IN/LC_MESSAGES/
+share/locale/or_IN/LC_MESSAGES/uget.mo
 share/locale/pl/LC_MESSAGES/uget.mo
 share/locale/pt_BR/LC_MESSAGES/uget.mo
 share/locale/ru/LC_MESSAGES/uget.mo
+share/locale/sk_SK/
+share/locale/sk_SK/LC_MESSAGES/
+share/locale/sk_SK/LC_MESSAGES/uget.mo
+share/locale/sr/LC_MESSAGES/uget.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/uget.mo
+share/locale/sv/LC_MESSAGES/uget.mo
 share/locale/tr/LC_MESSAGES/uget.mo
 share/locale/uk/LC_MESSAGES/uget.mo
 share/locale/vi/LC_MESSAGES/uget.mo

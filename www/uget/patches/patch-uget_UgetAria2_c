@@ -1,0 +1,12 @@
+$OpenBSD: patch-uget_UgetAria2_c,v 1.1 2015/05/24 17:18:46 bcallah Exp $
+--- uget/UgetAria2.c.orig	Fri Mar 27 17:14:20 2015
++++ uget/UgetAria2.c	Fri Mar 27 17:15:01 2015
+@@ -52,7 +52,7 @@
+ #define RPC_URI              "http://localhost:6800/jsonrpc"
+ #define RPC_BATCH_LEN        5
+ #define RPC_INTERVAL         500
+-#define ARIA2_PATH           "aria2c"
++#define ARIA2_PATH           "${TRUEPREFIX}/bin/aria2c"
+ #define ARIA2_ARGS           "--enable-rpc=true -D --check-certificate=false"
+ 
+ #if defined _WIN32 || defined _WIN64

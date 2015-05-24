@@ -1,0 +1,14 @@
+$OpenBSD: patch-uglib_UgUtil_c,v 1.1 2015/05/24 17:18:46 bcallah Exp $
+--- uglib/UgUtil.c.orig	Thu Apr 30 19:36:03 2015
++++ uglib/UgUtil.c	Sat May  2 13:10:41 2015
+@@ -61,6 +61,10 @@
+ #include <wchar.h>      // wcslen()
+ #endif
+ 
++#if defined __OpenBSD__   // Others?
++#include <wchar.h>
++#endif
++
+ // ----------------------------------------------------------------------------
+ // Time
+ 

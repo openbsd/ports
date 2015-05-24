@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2014/08/31 02:06:36 bcallah Exp $
+$OpenBSD: README,v 1.2 2015/05/24 17:18:46 bcallah Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,8 +8,8 @@ Using the aria2 plug-in
 =======================
 uGet has an aria2 plug-in that allows aria2 to be used as a backend over
 cURL. To use this plug-in: start uget-gtk, select Edit->Settings... from
-the menubar, click the Plug-in tab and check the box labelled
-"Enable aria2 plug-in."
+the menubar, click the Plug-in tab and select aria2 from the drop-down
+menu "Plug-in matching order."
 
 This will allow uGet to download everything aria2 can download,
 including torrent files.

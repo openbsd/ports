@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/03/27 08:15:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/24 17:18:45 bcallah Exp $
 
 COMMENT =	lightweight graphical download manager
-DISTNAME =	uget-1.10.4
+DISTNAME =	uget-2.0
 CATEGORIES =	www net x11
-REVISION =	0
 
 HOMEPAGE =	http://ugetdm.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -13,13 +12,16 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject crypto curl fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gstreamer-1.0 gthread-2.0 gtk-3 idn m notify pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread ssl z
+WANTLIB += gstreamer-1.0 gtk-3 idn m notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pthread ssl z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=urlget/}
 
 MODULES =	devel/gettext \
+		lang/clang \
 		textproc/intltool
+MODCLANG_ARCHS =	*
+MODCLANG_LANGS =	c
 
 LIB_DEPENDS =	devel/libnotify \
 		multimedia/gstreamer1/core \
@@ -27,12 +29,8 @@ LIB_DEPENDS =	devel/libnotify \
 		x11/gtk+3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
+		www/aria2 \
 		x11/gtk+3,-guic
-
-# You should be using aria2 if the arch has it.
-.if ${MACHINE_ARCH} != "mips64el" && ${MACHINE_ARCH} != "mips64"
-RUN_DEPENDS +=	www/aria2
-.endif
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -40,8 +38,9 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 # BSD make doesn't install the localization files.
 USE_GMAKE =	Yes
+MAKE_FLAGS =	CFLAGS="${CFLAGS} -std=c11"
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/uget-gtk/UgSetting.c
+	${SUBST_CMD} ${WRKSRC}/uget/UgetAria2.c
 
 .include <bsd.port.mk>
