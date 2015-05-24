@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2015/05/07 09:15:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2015/05/24 07:37:23 ajacoutot Exp $
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @comment needs a homedir to store ssh keys for GitFS
 @newgroup _salt:722
@@ -273,6 +273,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/ext/six.py
 lib/python${MODPY_VERSION}/site-packages/salt/ext/six.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/ext/ssl_match_hostname.py
 lib/python${MODPY_VERSION}/site-packages/salt/ext/ssl_match_hostname.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/ext/win_inet_pton.py
+lib/python${MODPY_VERSION}/site-packages/salt/ext/win_inet_pton.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/fileclient.py
 lib/python${MODPY_VERSION}/site-packages/salt/fileclient.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/fileserver/
@@ -1004,6 +1006,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/pillar/mongo.py
 lib/python${MODPY_VERSION}/site-packages/salt/pillar/mongo.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/pillar/mysql.py
 lib/python${MODPY_VERSION}/site-packages/salt/pillar/mysql.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/pillar/neutron.py
+lib/python${MODPY_VERSION}/site-packages/salt/pillar/neutron.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/pillar/pepa.py
 lib/python${MODPY_VERSION}/site-packages/salt/pillar/pepa.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/pillar/pillar_ldap.py
@@ -1104,6 +1108,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/returners/mysql.py
 lib/python${MODPY_VERSION}/site-packages/salt/returners/mysql.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/returners/odbc.py
 lib/python${MODPY_VERSION}/site-packages/salt/returners/odbc.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/returners/pgjsonb.py
+lib/python${MODPY_VERSION}/site-packages/salt/returners/pgjsonb.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/returners/postgres.py
 lib/python${MODPY_VERSION}/site-packages/salt/returners/postgres.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/returners/postgres_local_cache.py
@@ -1667,6 +1673,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/parsers.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/parsers.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/process.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/process.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/psutil_compat.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/psutil_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/pycrypto.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/pycrypto.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/pydsl.py
@@ -1717,8 +1725,6 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/validate/net.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/validate/net.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/validate/path.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/validate/path.pyc
-lib/python${MODPY_VERSION}/site-packages/salt/utils/validate/ssh.py
-lib/python${MODPY_VERSION}/site-packages/salt/utils/validate/ssh.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/validate/user.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/validate/user.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/verify.py
