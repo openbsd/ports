@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_devtools_protocol_color_picker_cc,v 1.1 2015/05/24 15:51:53 robert Exp $
+--- content/browser/devtools/protocol/color_picker.cc.orig.port	Sat May 23 00:59:48 2015
++++ content/browser/devtools/protocol/color_picker.cc	Sat May 23 01:10:11 2015
+@@ -148,7 +148,7 @@ void ColorPicker::UpdateCursor() {
+   // magnified projection only with centered hotspot.
+   // Mac Retina requires cursor to be > 120px in order to render smoothly.
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   const float kCursorSize = 63;
+   const float kDiameter = 63;
+   const float kHotspotOffset = 32;

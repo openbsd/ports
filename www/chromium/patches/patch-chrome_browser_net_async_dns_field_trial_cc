@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_browser_net_async_dns_field_trial_cc,v 1.2 2015/04/27 16:38:25 robert Exp $
---- chrome/browser/net/async_dns_field_trial.cc.orig.port	Wed Apr 15 00:31:21 2015
-+++ chrome/browser/net/async_dns_field_trial.cc	Wed Apr 15 08:32:50 2015
+$OpenBSD: patch-chrome_browser_net_async_dns_field_trial_cc,v 1.3 2015/05/24 15:51:53 robert Exp $
+--- chrome/browser/net/async_dns_field_trial.cc.orig.port	Wed May 20 10:04:19 2015
++++ chrome/browser/net/async_dns_field_trial.cc	Wed May 20 10:08:14 2015
 @@ -67,7 +67,7 @@ bool ConfigureAsyncDnsFieldTrial() {
    return false;
  #endif
  
--#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_MACOSX)
-+#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+-#if defined(OS_CHROMEOS) || defined(OS_MACOSX)
++#if defined(OS_CHROMEOS) || defined(OS_MACOSX) || defined(OS_BSD)
    const bool kDefault = true;
  #else
    const bool kDefault = false;

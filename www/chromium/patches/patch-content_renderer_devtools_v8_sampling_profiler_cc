@@ -1,0 +1,39 @@
+$OpenBSD: patch-content_renderer_devtools_v8_sampling_profiler_cc,v 1.1 2015/05/24 15:51:53 robert Exp $
+--- content/renderer/devtools/v8_sampling_profiler.cc.orig.port	Sat May 23 00:02:06 2015
++++ content/renderer/devtools/v8_sampling_profiler.cc	Sat May 23 00:16:46 2015
+@@ -4,7 +4,7 @@
+ 
+ #include "content/renderer/devtools/v8_sampling_profiler.h"
+ 
+-#if defined(OS_POSIX)
++#if defined(OS_POSIX) && !defined(OS_BSD)
+ #include <signal.h>
+ #define USE_SIGNALS
+ #endif
+@@ -197,7 +197,10 @@ class Sampler {
+   static const unsigned kNumberOfSamples = 10;
+   typedef LockFreeCircularQueue<SampleRecord, kNumberOfSamples> SamplingQueue;
+ 
++#ifdef USE_SIGNALS
+   PlatformData platform_data_;
++#endif
++
+   Isolate* isolate_;
+   scoped_ptr<SamplingQueue> samples_data_;
+   base::subtle::Atomic32 code_added_events_count_;
+@@ -291,6 +294,7 @@ void Sampler::DoSample(const v8::RegisterState& state)
+ }
+ 
+ void Sampler::InjectPendingEvents() {
++#ifdef USE_SIGNALS
+   SampleRecord* record = samples_data_->Peek();
+   while (record) {
+     TRACE_EVENT_SAMPLE_WITH_TID_AND_TIMESTAMP1(
+@@ -302,6 +306,7 @@ void Sampler::InjectPendingEvents() {
+     record = samples_data_->Peek();
+     base::subtle::NoBarrier_AtomicIncrement(&samples_count_, 1);
+   }
++#endif
+ }
+ 
+ // static

@@ -1,10 +1,22 @@
-$OpenBSD: patch-third_party_skia_gyp_ports_gyp,v 1.4 2015/04/27 16:38:25 robert Exp $
---- third_party/skia/gyp/ports.gyp.orig.port	Wed Apr 15 00:32:29 2015
-+++ third_party/skia/gyp/ports.gyp	Wed Apr 15 08:32:50 2015
-@@ -67,11 +67,6 @@
+$OpenBSD: patch-third_party_skia_gyp_ports_gyp,v 1.5 2015/05/24 15:51:53 robert Exp $
+--- third_party/skia/gyp/ports.gyp.orig.port	Wed May 20 10:17:34 2015
++++ third_party/skia/gyp/ports.gyp	Wed May 20 10:17:58 2015
+@@ -70,11 +70,6 @@
          [ 'skia_os in ["linux", "freebsd", "openbsd", "solaris", "chromeos"]', {
            'conditions': [
-             [ 'skia_no_fontconfig', {
+             [ 'skia_embedded_fonts', {
+-              'link_settings': {
+-                'libraries': [
+-                  '-ldl',
+-                ],
+-              },
+               'variables': {
+                 'embedded_font_data_identifier': 'sk_fonts',
+                 'fonts_to_include': [
+@@ -106,11 +101,6 @@
+                 'SK_EMBEDDED_FONTS=<(embedded_font_data_identifier)',
+               ],
+             }, 'skia_no_fontconfig', {
 -              'link_settings': {
 -                'libraries': [
 -                  '-ldl',
@@ -13,7 +25,7 @@ $OpenBSD: patch-third_party_skia_gyp_ports_gyp,v 1.4 2015/04/27 16:38:25 robert 
                'sources': [
                  '../src/ports/SkFontHost_linux.cpp',
                ],
-@@ -79,7 +74,6 @@
+@@ -118,7 +108,6 @@
                'link_settings': {
                  'libraries': [
                    '-lfontconfig',

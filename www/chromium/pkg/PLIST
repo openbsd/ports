@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2015/04/27 16:38:25 robert Exp $
+@comment $OpenBSD: PLIST,v 1.49 2015/05/24 15:51:53 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -110,7 +110,6 @@ chrome/resources/inspector/Images/paneElementStateButtons.png
 chrome/resources/inspector/Images/paneFilterButtons.png
 chrome/resources/inspector/Images/paneRefreshButtons.png
 chrome/resources/inspector/Images/popoverArrows.png
-chrome/resources/inspector/Images/popoverBackground.png
 chrome/resources/inspector/Images/profileGroupIcon.png
 chrome/resources/inspector/Images/profileIcon.png
 chrome/resources/inspector/Images/profileSmallIcon.png
@@ -126,9 +125,12 @@ chrome/resources/inspector/Images/responsiveDesign.png
 chrome/resources/inspector/Images/responsiveDesign_2x.png
 chrome/resources/inspector/Images/searchNext.png
 chrome/resources/inspector/Images/searchPrev.png
+chrome/resources/inspector/Images/serviceWorker.svg
 chrome/resources/inspector/Images/sessionStorage.png
 chrome/resources/inspector/Images/settingsListRemove.png
 chrome/resources/inspector/Images/settingsListRemove_2x.png
+chrome/resources/inspector/Images/speech.png
+chrome/resources/inspector/Images/spinner.svg
 chrome/resources/inspector/Images/statusbarButtonGlyphs.png
 chrome/resources/inspector/Images/statusbarButtonGlyphs_2x.png
 chrome/resources/inspector/Images/statusbarResizerHorizontal.png
@@ -144,10 +146,10 @@ chrome/resources/inspector/Images/touchCursor.png
 chrome/resources/inspector/Images/touchCursor_2x.png
 chrome/resources/inspector/InspectorBackendCommands.js
 chrome/resources/inspector/SupportedCSSProperties.js
+chrome/resources/inspector/accessibility_module.js
 chrome/resources/inspector/audits_module.js
 chrome/resources/inspector/components_lazy_module.js
 chrome/resources/inspector/console_module.js
-chrome/resources/inspector/devices_module.js
 chrome/resources/inspector/devtools.css
 chrome/resources/inspector/devtools.html
 chrome/resources/inspector/devtools.js
@@ -162,8 +164,10 @@ chrome/resources/inspector/network_module.js
 chrome/resources/inspector/profiler_module.js
 chrome/resources/inspector/promises_module.js
 chrome/resources/inspector/resources_module.js
+chrome/resources/inspector/screencast_module.js
 chrome/resources/inspector/script_formatter_worker_module.js
 chrome/resources/inspector/settings_module.js
+chrome/resources/inspector/snippets_module.js
 chrome/resources/inspector/source_frame_module.js
 chrome/resources/inspector/sources_module.js
 chrome/resources/inspector/temp_storage_shared_worker_module.js

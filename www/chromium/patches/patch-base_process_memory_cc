@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_process_memory_cc,v 1.1 2015/04/27 16:38:25 robert Exp $
---- base/process/memory.cc.orig.port	Thu Apr 23 16:15:00 2015
-+++ base/process/memory.cc	Thu Apr 23 16:15:41 2015
-@@ -27,4 +27,9 @@ bool UncheckedCalloc(size_t num_items, size_t size, vo
+$OpenBSD: patch-base_process_memory_cc,v 1.2 2015/05/24 15:51:52 robert Exp $
+--- base/process/memory.cc.orig.port	Thu May 14 00:23:01 2015
++++ base/process/memory.cc	Wed May 20 08:34:56 2015
+@@ -45,4 +45,9 @@ bool UncheckedCalloc(size_t num_items, size_t size, vo
  
  #endif
  
@@ -10,4 +10,4 @@ $OpenBSD: patch-base_process_memory_cc,v 1.1 2015/04/27 16:38:25 robert Exp $
 +  return *result != NULL;
 +}
 +
- }
+ }  // namespace base

@@ -1,7 +1,7 @@
-$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.1 2015/04/27 16:38:25 robert Exp $
---- pdf/pdfium/pdfium_engine.cc.orig.port	Thu Apr 23 11:26:23 2015
-+++ pdf/pdfium/pdfium_engine.cc	Thu Apr 23 11:26:42 2015
-@@ -126,7 +126,7 @@ std::vector<uint32_t> GetPageNumbersFromPrintPageNumbe
+$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.2 2015/05/24 15:51:53 robert Exp $
+--- pdf/pdfium/pdfium_engine.cc.orig.port	Thu May 14 00:35:47 2015
++++ pdf/pdfium/pdfium_engine.cc	Wed May 20 08:34:56 2015
+@@ -116,7 +116,7 @@ std::vector<uint32_t> GetPageNumbersFromPrintPageNumbe
    return page_numbers;
  }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.1 2015/04/27 16:38:25 robert Exp
  
  PP_Instance g_last_instance_id;
  
-@@ -559,7 +559,7 @@ pp::VarDictionary TraverseBookmarks(FPDF_DOCUMENT doc,
+@@ -549,7 +549,7 @@ pp::VarDictionary TraverseBookmarks(FPDF_DOCUMENT doc,
  bool InitializeSDK() {
    FPDF_InitLibrary();
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.1 2015/04/27 16:38:25 robert Exp
    // Font loading doesn't work in the renderer sandbox in Linux.
    FPDF_SetSystemFontInfo(&g_font_info);
  #endif
-@@ -1461,7 +1461,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPDF(
+@@ -1452,7 +1452,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPDF(
      FPDF_ClosePage(pdf_page);
    }
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.1 2015/04/27 16:38:25 robert Exp
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -2823,7 +2823,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
+@@ -2837,7 +2837,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
    DCHECK_LT(static_cast<size_t>(progressive_index), progressive_paints_.size());
    DCHECK(image_data);
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.1 2015/04/27 16:38:25 robert Exp
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -3279,7 +3279,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+@@ -3293,7 +3293,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
      FORM_DoPageAAction(old_page, form_, FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;

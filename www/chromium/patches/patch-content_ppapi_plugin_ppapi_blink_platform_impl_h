@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_h,v 1.1 2015/05/24 15:51:53 robert Exp $
+--- content/ppapi_plugin/ppapi_blink_platform_impl.h.orig.port	Thu May 21 20:54:51 2015
++++ content/ppapi_plugin/ppapi_blink_platform_impl.h	Thu May 21 20:54:58 2015
+@@ -50,7 +50,7 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
+                                  bool sync_dir);
+ 
+  private:
+-#if !defined(OS_ANDROID) && !defined(OS_WIN)
++#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_BSD)
+   class SandboxSupport;
+   scoped_ptr<SandboxSupport> sandbox_support_;
+ #endif

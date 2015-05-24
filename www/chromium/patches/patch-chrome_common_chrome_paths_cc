@@ -1,7 +1,16 @@
-$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.25 2015/04/27 16:38:25 robert Exp $
---- chrome/common/chrome_paths.cc.orig.port	Wed Apr 15 00:31:22 2015
-+++ chrome/common/chrome_paths.cc	Wed Apr 15 08:32:50 2015
-@@ -460,7 +460,7 @@ bool PathProvider(int key, base::FilePath* result) {
+$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.26 2015/05/24 15:51:53 robert Exp $
+--- chrome/common/chrome_paths.cc.orig.port	Thu May 14 00:35:46 2015
++++ chrome/common/chrome_paths.cc	Sat May 23 01:07:45 2015
+@@ -198,7 +198,7 @@ bool PathProvider(int key, base::FilePath* result) {
+         return false;
+       break;
+     case chrome::DIR_DEFAULT_DOWNLOADS_SAFE:
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+       if (!GetUserDownloadsDirectorySafe(&cur))
+         return false;
+       break;
+@@ -488,7 +488,7 @@ bool PathProvider(int key, base::FilePath* result) {
        if (!base::PathExists(cur))  // We don't want to create this
          return false;
        break;

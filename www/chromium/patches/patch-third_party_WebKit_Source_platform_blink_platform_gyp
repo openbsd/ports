@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.9 2015/04/27 16:38:25 robert Exp $
---- third_party/WebKit/Source/platform/blink_platform.gyp.orig.port	Wed Apr 15 00:44:37 2015
-+++ third_party/WebKit/Source/platform/blink_platform.gyp	Wed Apr 15 08:32:50 2015
+$OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.10 2015/05/24 15:51:53 robert Exp $
+--- third_party/WebKit/Source/platform/blink_platform.gyp.orig.port	Thu May 14 00:49:00 2015
++++ third_party/WebKit/Source/platform/blink_platform.gyp	Wed May 20 08:34:56 2015
 @@ -246,7 +246,7 @@
      # compiler optimizations, see crbug.com/237063
      'msvs_disabled_warnings': [ 4267, 4334, 4724 ],
@@ -19,7 +19,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.9 2015
          'sources/': [
            ['include', 'fonts/linux/FontPlatformDataLinux\\.cpp$'],
          ]
-@@ -345,7 +345,7 @@
+@@ -340,7 +340,7 @@
            ['exclude', 'scroll/ScrollbarThemeMac'],
          ],
        }],
@@ -28,7 +28,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.9 2015
          'sources/': [
            ['exclude', 'VDMX[^/]+\\.(cpp|h)$'],
          ],
-@@ -390,7 +390,7 @@
+@@ -383,7 +383,7 @@
            ['exclude', 'Android\\.cpp$'],
          ],
        }],

@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_platform_specific_cc,v 1.1 2015/05/24 15:51:53 robert Exp $
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view_platform_specific.cc.orig.port	Sat May 23 00:59:48 2015
++++ chrome/browser/ui/views/frame/opaque_browser_frame_view_platform_specific.cc	Sat May 23 01:06:09 2015
+@@ -10,7 +10,7 @@ bool OpaqueBrowserFrameViewPlatformSpecific::IsUsingSy
+   return false;
+ }
+ 
+-#if !defined(OS_LINUX)
++#if !defined(OS_LINUX) && !defined(OS_BSD)
+ 
+ // static
+ OpaqueBrowserFrameViewPlatformSpecific*

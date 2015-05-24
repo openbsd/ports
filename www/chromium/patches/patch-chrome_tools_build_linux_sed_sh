@@ -1,9 +1,0 @@
-$OpenBSD: patch-chrome_tools_build_linux_sed_sh,v 1.4 2013/04/03 08:19:10 robert Exp $
---- chrome/tools/build/linux/sed.sh.orig.port	Fri Mar 22 02:14:04 2013
-+++ chrome/tools/build/linux/sed.sh	Tue Apr  2 21:05:17 2013
-@@ -1,4 +1,4 @@
--#!/bin/sh
-+#!/usr/bin/env bash
- 
- # Copyright (c) 2011 The Chromium Authors. All rights reserved.
- # Use of this source code is governed by a BSD-style license that can be

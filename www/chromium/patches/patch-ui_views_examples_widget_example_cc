@@ -1,10 +1,10 @@
-$OpenBSD: patch-ui_views_examples_widget_example_cc,v 1.1 2015/01/22 11:16:41 robert Exp $
---- ui/views/examples/widget_example.cc.orig.port	Sat Dec 27 12:54:25 2014
-+++ ui/views/examples/widget_example.cc	Sat Dec 27 12:56:24 2014
-@@ -70,7 +70,7 @@ void WidgetExample::CreateExampleView(View* container)
-   container->SetLayoutManager(new BoxLayout(BoxLayout::kHorizontal, 0, 0, 10));
+$OpenBSD: patch-ui_views_examples_widget_example_cc,v 1.2 2015/05/24 15:51:53 robert Exp $
+--- ui/views/examples/widget_example.cc.orig.port	Wed May 20 10:19:08 2015
++++ ui/views/examples/widget_example.cc	Wed May 20 10:19:17 2015
+@@ -82,7 +82,7 @@ void WidgetExample::CreateExampleView(View* container)
    BuildButton(container, "Popup widget", POPUP);
    BuildButton(container, "Dialog widget", DIALOG);
+   BuildButton(container, "Modal Dialog", MODAL_DIALOG);
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    // Windows does not support TYPE_CONTROL top-level widgets.

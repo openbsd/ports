@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_webrtc_system_wrappers_source_thread_posix_cc,v 1.5 2015/04/27 16:38:25 robert Exp $
---- third_party/webrtc/system_wrappers/source/thread_posix.cc.orig.port	Wed Apr 15 09:42:16 2015
-+++ third_party/webrtc/system_wrappers/source/thread_posix.cc	Wed Apr 15 15:41:43 2015
+$OpenBSD: patch-third_party_webrtc_system_wrappers_source_thread_posix_cc,v 1.6 2015/05/24 15:51:53 robert Exp $
+--- third_party/webrtc/system_wrappers/source/thread_posix.cc.orig.port	Thu May 14 00:36:30 2015
++++ third_party/webrtc/system_wrappers/source/thread_posix.cc	Wed May 20 08:34:56 2015
 @@ -15,9 +15,13 @@
  #include <errno.h>
  #include <unistd.h>
@@ -15,7 +15,7 @@ $OpenBSD: patch-third_party_webrtc_system_wrappers_source_thread_posix_cc,v 1.5 
  #include <sys/syscall.h>
  #include <sys/types.h>
  #endif
-@@ -138,7 +142,7 @@ void ThreadPosix::Run(ThreadPosix::InitParams* params)
+@@ -152,7 +156,7 @@ void ThreadPosix::Run() {
    if (!name_.empty()) {
      // Setting the thread name may fail (harmlessly) if running inside a
      // sandbox. Ignore failures if they happen.

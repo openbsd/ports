@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.215 2015/05/19 07:27:17 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.216 2015/05/24 15:51:52 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			42.0.2311.135
+V=			43.0.2357.65
 DISTNAME=		chromium-${V}
-REVISION=		0
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
 CATEGORIES=		www
@@ -50,6 +49,7 @@ WANTLIB += Xi Xtst
 WANTLIB += Xdamage
 WANTLIB += Xcursor Xrandr gio-2.0
 WANTLIB += jpeg nspr4 nss3 nssutil3 plc4 smime3
+WANTLIB += atk-1.0 gmodule-2.0
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -138,19 +138,6 @@ GYP_DEFS+=	-Dgoogle_api_key='AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI' \
 GYP_DEFS+=	-Dremove_webcore_debug_symbols=1
 MAKE_ENV+=	V=1
 .endif
-
-BB_VER=		20150502
-.if ${MACHINE_ARCH} == "i386" || ${FLAVOR:Mdebug}
-GYP_DEFS+=	-Dlinux_use_bundled_binutils=1
-DISTFILES+=	binutils-2.17-${MACHINE_ARCH}-${BB_VER}.tar.gz:0
-
-pre-patch:
-	@mkdir -p ${WRKSRC}/third_party/binutils/Linux_x64/Release
-	@ln -fs ${WRKDIR}/binutils-2.17-${MACHINE_ARCH}-${BB_VER}/bin \
-		${WRKSRC}/third_party/binutils/Linux_x64/Release/bin
-.endif
-SUPDISTFILES+=	binutils-2.17-amd64-${BB_VER}.tar.gz:0 \
-		binutils-2.17-i386-${BB_VER}.tar.gz:0
 
 MODPY_ADJ_FILES=build/linux/unbundle/replace_gyp_files.py
 
