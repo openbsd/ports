@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.12 2015/05/13 14:27:13 espie Exp $
+# $OpenBSD: Build.pm,v 1.13 2015/05/24 06:48:51 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -138,6 +138,10 @@ sub can_be_junked
 		    $job->{v}{info}->has_property('tag') ne $tag) {
 		    	return 0;
 		}
+	}
+	my $h = $self->{engine}{locker}->find_dependencies($core->hostname);
+	if (!ref $h) {
+		return 0;
 	}
 	return 1;
 }

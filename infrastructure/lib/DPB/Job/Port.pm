@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.162 2015/05/18 16:35:15 espie Exp $
+# $OpenBSD: Port.pm,v 1.163 2015/05/24 06:48:51 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -627,7 +627,11 @@ sub run
 	$self->handle_output($job);
 
 	my $h = $job->{builder}->locker->find_dependencies($core->hostname);
-	if (defined $h && $self->add_live_depends($h, $core)) {
+	if (!ref $h) {
+		print "Can't run junk because of lock on $h\n";
+		exit(2);
+	}
+	if ($self->add_live_depends($h, $core)) {
 		$self->add_dontjunk($job, $h);
 		my $opt = '-aIX';
 		if ($core->prop->{nochecksum}) {

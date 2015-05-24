@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.34 2015/05/07 12:30:46 espie Exp $
+# $OpenBSD: Locks.pm,v 1.35 2015/05/24 06:48:51 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -212,8 +212,8 @@ sub find_dependencies
 		next if $cleaned;
 		if (defined $host && $host eq $hostname) {
 			if ($nojunk) {
-				print "Can't run junk because of lock on $path\n";
-				return undef;
+				# XXX
+				return $path;
 			}
 			for my $k (@d) {
 				$h->{$k} = 1;
