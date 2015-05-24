@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/19 23:42:38 bmercer Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/24 19:36:59 espie Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -84,6 +84,8 @@ CONFIGURE_ARGS +=	--disable-valgrind-rpass \
 			--release-channel=stable \
 			--prefix="${LOCALBASE}" \
 			--mandir="${LOCALBASE}/man"
+
+CONFIGURE_ENV +=	ac_cv_header_execinfo_h=no
 
 # need for libbacktrace
 USE_LIBTOOL =		gnu
