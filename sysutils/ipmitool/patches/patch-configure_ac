@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2015/05/25 07:52:40 yasuoka Exp $
+--- configure.ac.orig	Mon Nov 24 23:00:07 2014
++++ configure.ac	Mon May 25 11:53:33 2015
+@@ -528,7 +528,7 @@ AC_SUBST(IPMITOOL_INTF_LIB)
+ if test "x$xenable_ipmishell" = "xyes"; then
+ 	AC_SEARCH_LIBS([tgetent], [tinfo ncurses curses readline termcap])
+ 	AC_SEARCH_LIBS([initscr], [ncurses curses], [have_curses=yes])
+-	AC_SEARCH_LIBS([readline], [readline edit], [have_readline=yes])
++	AC_SEARCH_LIBS([readline], [edit readline], [have_readline=yes])
+ 	if test "x$have_curses" != "xyes" || test "x$have_readline" != "xyes"; then
+ 		xenable_ipmishell=no
+ 	fi

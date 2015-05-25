@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/04/30 14:27:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/05/25 07:52:40 yasuoka Exp $
 
 COMMENT=		manage and configure devices that supports IPMI
 
 DISTNAME=		ipmitool-1.8.15
-REVISION=		0
+REVISION=		1
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://ipmitool.sourceforge.net/
@@ -13,12 +13,13 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		m ncurses readline crypto c 
+WANTLIB=		m ncurses edit crypto c
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ipmitool/}
 
 SEPARATE_BUILD=		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 CONFIGURE_ARGS+=	--disable-dependency-tracking
 CONFIGURE_ARGS+=	--disable-intf-free
 CONFIGURE_ARGS+=	--disable-intf-open
