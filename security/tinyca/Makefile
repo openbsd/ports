@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2015/02/27 17:24:44 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2015/05/25 15:33:28 ajacoutot Exp $
 
 COMMENT=	GUI to manage a certification authority
 
 DISTNAME=	tinyca2-0.7.5
-REVISION=	4
+REVISION=	5
 CATEGORIES=	security
-
-HOMEPAGE=	http://tinyca.sm-zone.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	https://distfiles.bsdfrog.org/
 
 RUN_DEPENDS=	archivers/zip \
 		devel/p5-Locale-gettext \
