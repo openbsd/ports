@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.242 2015/05/21 15:07:02 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.243 2015/05/25 07:35:07 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -535,6 +535,7 @@ my $obsolete_reason = {
 	'boo' => 5,
 	'nant' => 5,
 	'ADMfzap' => 0,
+	'ruby-jekyll' => 5,
 };
 
 # ->is_base_system($handle, $state):
