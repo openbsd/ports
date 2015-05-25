@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1340 2015/05/20 15:05:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1341 2015/05/25 22:08:47 bcallah Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -378,6 +378,7 @@
      SUBDIR += libpeas
      SUBDIR += libplist
      SUBDIR += libproplist
+     SUBDIR += libqtelegram-aseman-edition
      SUBDIR += libregexp9
      SUBDIR += libsigc++-2
      SUBDIR += libsigsegv
