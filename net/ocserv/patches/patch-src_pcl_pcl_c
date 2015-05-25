@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_pcl_pcl_c,v 1.1 2015/05/25 20:57:11 sthen Exp $
---- src/pcl/pcl.c.orig	Mon May 25 21:51:29 2015
-+++ src/pcl/pcl.c	Mon May 25 21:51:49 2015
-@@ -22,6 +22,7 @@
+$OpenBSD: patch-src_pcl_pcl_c,v 1.2 2015/05/25 21:06:26 sthen Exp $
+--- src/pcl/pcl.c.orig	Fri Feb 13 19:29:47 2015
++++ src/pcl/pcl.c	Mon May 25 21:55:02 2015
+@@ -22,6 +22,8 @@
  
  #include <stdio.h>
  #include <stdlib.h>
++#include <string.h>
 +#include <unistd.h>
  #include "pcl_config.h"
  #include "pcl.h"
