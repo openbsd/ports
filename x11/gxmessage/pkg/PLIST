@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/10/27 12:00:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/05/25 09:21:29 ajacoutot Exp $
 @bin bin/gxmessage
 @info info/gxmessage.info
 @man man/man1/gxmessage.1
@@ -8,6 +8,7 @@ share/examples/gxmessage/gxaddress
 share/examples/gxmessage/gxdialup
 share/examples/gxmessage/gxdict
 share/examples/gxmessage/gxman
+share/examples/gxmessage/gxtest
 share/examples/gxmessage/gxview
 share/examples/gxmessage/nautilus-word-count
 share/icons/hicolor/48x48/apps/gxmessage.png

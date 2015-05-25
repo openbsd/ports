@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2015/03/27 08:16:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/05/25 09:21:29 ajacoutot Exp $
 
 COMMENT=	GTK+3 based xmessage(1) clone
 
-DISTNAME=	gxmessage-3.4.0
-REVISION=	0
+DISTNAME=	gxmessage-3.4.3
 
 CATEGORIES=	x11
 
