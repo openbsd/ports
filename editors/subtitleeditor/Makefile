@@ -1,70 +1,68 @@
-# $OpenBSD: Makefile,v 1.38 2015/04/21 18:51:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2015/05/25 10:08:02 ajacoutot Exp $
 
-ONLY_FOR_ARCHS=	${GCC4_ARCHS}
+SHARED_ONLY=	   	Yes
 
-SHARED_ONLY=   	Yes
+COMMENT=		GTK+ subtitles editor
 
-COMMENT=	GTK+2 subtitles editor
+V=			0.51.0
+DISTNAME=		subtitleeditor-${V}
 
-V=		0.41.1
-DISTNAME=	subtitleeditor-${V}
-REVISION=	1
-
-CATEGORIES=	graphics editors
+CATEGORIES=		graphics editors
 
 SHARED_LIBS +=  subtitleeditor 0.0     # .0.0
 
-HOMEPAGE=	http://home.gna.org/subtitleeditor/
+HOMEPAGE=		http://home.gna.org/subtitleeditor/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 atkmm-1.6 c cairo cairomm-1.0 enchant expat
-WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4
-WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gstaudio-0.10 gstbase-0.10 gstcdda-0.10
-WANTLIB += gstcontroller-0.10 gstdataprotocol-0.10 gstinterfaces-0.10
-WANTLIB += gstnet-0.10 gstnetbuffer-0.10 gstpbutils-0.10 gstreamer-0.10
-WANTLIB += gstreamermm-0.10 gstrtp-0.10 gsttag-0.10 gstvideo-0.10
-WANTLIB += gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz lzma m orc-0.4
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs sigc-2.0 stdc++ xcb
-WANTLIB += xcb-render xcb-shm xml++-2.6 xml2 z
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atkmm-1.6
+WANTLIB += atspi c cairo cairo-gobject cairomm-1.0 dbus-1 enchant
+WANTLIB += epoxy expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
+WANTLIB += gstcheck-1.0 gstcontroller-1.0 gstfft-1.0 gstnet-1.0
+WANTLIB += gstpbutils-1.0 gstreamer-1.0 gstreamermm-1.0 gstriff-1.0
+WANTLIB += gstrtp-1.0 gstsdp-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0
+WANTLIB += gtk-3 gtkmm-3.0 harfbuzz lzma m orc-0.4 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pangomm-1.4 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs sigc-2.0 stdc++ xcb xcb-render xcb-shm
+WANTLIB += xml++-2.6 xml2 z
 
-MASTER_SITES=	http://download.gna.org/subtitleeditor/${V:R}/
+MASTER_SITES=		http://download.gna.org/subtitleeditor/${V:R}/
 
-BUILD_DEPENDS=	multimedia/gstreamer-0.10/plugins-good \
-		devel/iso-codes
+BUILD_DEPENDS=		devel/iso-codes \
+			multimedia/gstreamer-0.10/plugins-good
 
-LIB_DEPENDS=	textproc/enchant \
-		multimedia/gstreamer-0.10/mm \
-		multimedia/gstreamer-0.10/plugins-base \
-		x11/gtk2mm
+LIB_DEPENDS=		multimedia/gstreamer1/mm \
+			multimedia/gstreamer1/plugins-base \
+			textproc/enchant \
+			textproc/libxml++ \
+			x11/gtk3mm
 
-RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-good \
-		multimedia/gstreamer-0.10/plugins-ffmpeg \
-		devel/iso-codes \
-		devel/desktop-file-utils \
-		x11/gtk+3,-guic
+RUN_DEPENDS=		devel/desktop-file-utils \
+			devel/iso-codes \
+			multimedia/gstreamer1/plugins-good \
+			multimedia/gstreamer1/plugins-libav \
+			x11/gtk+3,-guic
 
-MODULES=	devel/gettext \
-		textproc/intltool
+MODULES=		devel/gettext \
+			textproc/intltool
 
-MODULES +=	gcc4
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	c++
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
 
-USE_GMAKE=	Yes
+USE_GMAKE=		Yes
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		GST_REGISTRY=${WRKDIR}/registry.${MACHINE_ARCH}.bin
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-default-video-sink=autovideosink \
-		--with-default-audio-sink=autoaudiosink \
-		--enable-ccache=no
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--with-default-video-sink=autovideosink \
+			--with-default-audio-sink=autoaudiosink \
+			--enable-ccache=no
 
 post-install:
 	rm ${PREFIX}/lib/subtitleeditor/plugins/*/*.{a,la}
