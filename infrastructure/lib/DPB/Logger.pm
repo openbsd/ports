@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.23 2015/05/11 07:32:42 espie Exp $
+# $OpenBSD: Logger.pm,v 1.24 2015/05/25 17:37:26 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -109,45 +109,35 @@ sub link
 sub make_logs
 {
 	my ($self, $v) = @_;
-	$self->run_as(
-	    sub {
-		my $log = $self->log_pkgpath($v);
-		if ($self->{clean}) {
-			unlink($log);
-		}
-		CORE::open my $fh, ">>", $log or 
-		    DPB::Util->die_bang("Can't write to $log");
-		for my $w ($v->build_path_list) {
-			$self->link($log, $self->log_pkgname($w));
-		}
-		return ($log, $fh);
-	    });
+	my $log = $self->log_pkgpath($v);
+	if ($self->{clean}) {
+		$self->unlink($log);
+	}
+	my $fh = $self->open(">>", $log);
+	DPB::Util->die_bang("Can't write to $log") unless defined $fh;
+	for my $w ($v->build_path_list) {
+		$self->link($log, $self->log_pkgname($w));
+	}
+	return ($log, $fh);
 }
 
 sub make_test_logs
 {
 	my ($self, $v) = @_;
 	my $log = $self->testlog_pkgpath($v);
-	$self->run_as(
-	    sub {
-		if ($self->{clean}) {
-			unlink($log);
-		}
-		return $log;
-	    });
+	if ($self->{clean}) {
+		$self->unlink($log);
+	}
 }
 
 sub log_error
 {
 	my ($self, $v, @messages) = @_;
 	my ($log, $fh) = $self->make_logs($v);
-	$self->run_as(
-	    sub {
-		for my $msg (@messages) {
-			print $fh $msg, "\n";
-		}
-		$v->print_parent($fh);
-	    });
+	for my $msg (@messages) {
+		print $fh $msg, "\n";
+	}
+	$v->print_parent($fh);
 }
 
 sub make_distlogs
