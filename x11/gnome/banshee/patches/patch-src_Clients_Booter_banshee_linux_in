@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Clients_Booter_banshee_linux_in,v 1.1 2015/05/25 07:51:49 ajacoutot Exp $
+
+Unbreak runtime with mono >= 3
+
+--- src/Clients/Booter/banshee.linux.in.orig	Tue Feb 18 21:40:14 2014
++++ src/Clients/Booter/banshee.linux.in	Mon May 25 08:36:58 2015
+@@ -54,7 +54,7 @@ if [ -n "$BANSHEE_DEBUG" -o -n "$BANSHEE_TRACE" -o -n 
+ fi
+ 
+ # Finally - environment is set up, time to run our beloved
+-exec_args="-a $BANSHEE_EXEC_NAME mono $MONO_OPTIONS $MONO_EXE $BANSHEE_DEBUG $BANSHEE_CLIENT"
++exec_args="-a $BANSHEE_EXEC_NAME mono --runtime=v4.0 $MONO_OPTIONS $MONO_EXE $BANSHEE_DEBUG $BANSHEE_CLIENT"
+ 
+ if [ -z "$BANSHEE_REDIRECT_LOG" ]; then
+ 	exec $exec_args "$@"
