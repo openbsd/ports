@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/27 08:54:27 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/25 17:11:53 afresh1 Exp $
 bin/latex2dvi
 bin/latex2pdf
 bin/latex2ps
@@ -6,10 +6,8 @@ ${P5SITE}/LaTeX/
 ${P5SITE}/LaTeX/Driver/
 ${P5SITE}/LaTeX/Driver.pm
 ${P5SITE}/LaTeX/Driver/FilterProgram.pm
-${P5SITE}/LaTeX/Driver/Paths.pm
 @man man/man1/latex2dvi.1
 @man man/man1/latex2pdf.1
 @man man/man1/latex2ps.1
 @man man/man3p/LaTeX::Driver.3p
 @man man/man3p/LaTeX::Driver::FilterProgram.3p
-@man man/man3p/LaTeX::Driver::Paths.3p

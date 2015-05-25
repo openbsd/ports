@@ -1,26 +1,12 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2012/06/27 08:54:27 sthen Exp $
---- Makefile.PL.orig	Thu Mar 17 19:39:05 2011
-+++ Makefile.PL	Thu Mar 17 19:52:45 2011
-@@ -39,14 +39,14 @@ EOF
+$OpenBSD: patch-Makefile_PL,v 1.2 2015/05/25 17:11:53 afresh1 Exp $
+--- Makefile.PL.orig	Sun May 10 11:04:05 2015
++++ Makefile.PL	Sun May 10 11:04:29 2015
+@@ -10,7 +10,7 @@ license 'perl';
+ all_from    'lib/LaTeX/Driver.pm';
+ readme_from 'lib/LaTeX/Driver.pm';
  
- #------------------------------------------------------------------------
+-requires_external_bin 'latex';
++#requires_external_bin 'latex';
  
--our $LATEX     = ttprompt('latex path',     find_program($ENV{PATH}, "latex"));
--our $PDFLATEX  = ttprompt('pdflatex path',  find_program($ENV{PATH}, "pdflatex"));
--our $BIBTEX    = ttprompt('bibtex path',    find_program($ENV{PATH}, "bibtex"));
--our $MAKEINDEX = ttprompt('makeindex path', find_program($ENV{PATH}, "makeindex"));
--our $DVIPS     = ttprompt('dvips path',     find_program($ENV{PATH}, "dvips"));
--our $DVIPDFM   = ttprompt('dvipdfm path',   find_program($ENV{PATH}, "dvipdfm"));
--our $PS2PDF    = ttprompt('ps2pdf path',    find_program($ENV{PATH}, "ps2pdf"));
--our $PDF2PS    = ttprompt('pdf2ps path',    find_program($ENV{PATH}, "pdf2ps"));
-+our $LATEX     = $ENV{PREFIX} . "/bin/latex";
-+our $PDFLATEX  = $ENV{PREFIX} . "/bin/pdflatex";
-+our $BIBTEX    = $ENV{PREFIX} . "/bin/bibtex";
-+our $MAKEINDEX = $ENV{PREFIX} . "/bin/makeindex";
-+our $DVIPS     = $ENV{PREFIX} . "/bin/dvips";
-+our $DVIPDFM   = $ENV{PREFIX} . "/bin/dvipdfm";
-+our $PS2PDF    = $ENV{PREFIX} . "/bin/ps2pdf";
-+our $PDF2PS    = $ENV{PREFIX} . "/bin/pdf2ps";
- 
- if (!$LATEX and !$PDFLATEX) {
-     my $continue = ttprompt('You don\'t seem to have LaTeX installed.  Continue anyway?', 'N');
+ requires 'Class::Accessor';
+ requires 'Cwd';

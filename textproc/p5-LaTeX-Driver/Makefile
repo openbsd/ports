@@ -1,24 +1,29 @@
-# $OpenBSD: Makefile,v 1.3 2013/04/24 07:58:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/25 17:11:53 afresh1 Exp $
 
-COMMENT=		driver to format LaTeX documents
+COMMENT =	driver to format LaTeX documents
 
-DISTNAME=		LaTeX-Driver-0.12
-CATEGORIES=		textproc
+DISTNAME =	LaTeX-Driver-0.200.4
+CATEGORIES =	textproc
 
-MODULES=		cpan
+MODULES =	cpan
+
+MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-CONFIGURE_ENV+=		PREFIX=${PREFIX}
+#CONFIGURE_ENV+=		PREFIX=${PREFIX}
 
-RUN_DEPENDS=		print/texlive/base \
-			devel/p5-Class-Accessor \
-			devel/p5-Exception-Class \
-			devel/p5-File-Slurp \
-			devel/p5-Readonly
+RUN_DEPENDS =	print/texlive/base \
+		devel/p5-Class-Accessor>=0 \
+		devel/p5-Exception-Class>=0 \
+		devel/p5-File-Slurp>=0 \
+		devel/p5-File-pushd>=0 \
+		devel/p5-Readonly>=0
 
-TEST_DEPENDS=		print/texlive/texmf,-full \
-			devel/p5-Test-Exception
+TEST_DEPENDS=          print/texlive/texmf,-full
+
+post-install:
+	rm -f ${PREFIX}/${P5SITE}/LaTeX/Driver.pm.new
 
 .include <bsd.port.mk>
