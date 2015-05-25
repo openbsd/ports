@@ -1,10 +1,10 @@
-$OpenBSD: patch-conv_c,v 1.1 2014/02/07 08:56:53 brad Exp $
+$OpenBSD: patch-conv_c,v 1.2 2015/05/25 06:01:43 ajacoutot Exp $
 
 Re-instate the chroot by default code.
 
---- conv.c.orig	Thu Feb  6 02:48:24 2014
-+++ conv.c	Thu Feb  6 02:59:47 2014
-@@ -288,7 +288,9 @@ daemonize_finish(void)
+--- conv.c.orig	Sun May 24 03:40:25 2015
++++ conv.c	Sun May 24 16:31:58 2015
+@@ -289,7 +289,9 @@ daemonize_finish(void)
   * For security, chroot (optionally) and drop privileges.
   * Pass a NULL chroot_dir to disable chroot() behaviour.
   */
@@ -15,7 +15,7 @@ Re-instate the chroot by default code.
     struct passwd *pw;
  
     errno = 0;
-@@ -300,9 +302,7 @@ void privdrop(const char *chroot_dir, const char *priv
+@@ -301,9 +303,7 @@ void privdrop(const char *chroot_dir, const char *priv
        else
           err(1, "getpwnam(\"%s\") failed", privdrop_user);
     }
