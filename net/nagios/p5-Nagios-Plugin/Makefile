@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2014/04/07 12:31:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/05/25 17:42:25 rpe Exp $
 
 COMMENT=		helper routines for writing monitoring plugins
 
 # formerly Nagios-Plugin
-DISTNAME=		Monitoring-Plugin-0.37
+DISTNAME=		Monitoring-Plugin-0.39
 CATEGORIES=		net
 MODULES=		cpan
 
