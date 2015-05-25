@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.342 2015/05/08 19:36:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.343 2015/05/25 23:57:10 jturner Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -211,6 +211,7 @@
      SUBDIR += socket
      SUBDIR += socklog
      SUBDIR += sshfs-fuse
+     SUBDIR += sslmate
      SUBDIR += stan
      SUBDIR += stow
      SUBDIR += stress
