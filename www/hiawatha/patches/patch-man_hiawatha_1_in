@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_hiawatha_1_in,v 1.4 2015/05/02 15:42:02 ajacoutot Exp $
---- man/hiawatha.1.in.orig	Thu Feb 12 11:39:30 2015
-+++ man/hiawatha.1.in	Sat May  2 17:36:33 2015
+$OpenBSD: patch-man_hiawatha_1_in,v 1.5 2015/05/25 09:24:31 ajacoutot Exp $
+--- man/hiawatha.1.in.orig	Mon May  4 19:06:03 2015
++++ man/hiawatha.1.in	Mon May 25 11:22:29 2015
 @@ -158,12 +158,12 @@ Example: CGIextension = cgi
  .B CGIhandler = <CGI handler>:<extension>[, <extension>, ...]
  Specify the handler for a CGI extension. A handler is an executable which will run the CGI script.
@@ -15,7 +15,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.4 2015/05/02 15:42:02 ajacoutot Exp $
 +Default = @CMAKE_INSTALL_FULL_SBINDIR@/cgi-wrapper, example: CGIwrapper = ${PREFIX}/sbin/cgi-wrapper/cgi-wrapper
  .TP
  .B ChallengeClient = <threshold>, (httpheader|javascript), <ban-time>[, <secret>]
- Challenge the client to verify that it's a real web browser and not an HTTP bot. When the total amount of connections reaches <threshold>, Hiawatha sends a response to the first request in a connection which will make the client resend the request, but now with a cookie. The cookie can be set via a HTTP Set-Cookie header or a Javascript. Further requests are only accepted when the client sends this cookie. Otherwise, the client is banned for <ban-time> seconds. This feature can be used to reduce the effects of a DDoS attack. The <secret> can be a random string of up to 20 characters (the rest is ignored) and is used to generate the cookie. When not set, Hiawatha will generate a random secret.
+ Challenge the client to verify that it's a real web browser and not an HTTP bot. When the total amount of connections reaches <threshold>, Hiawatha sends a response to the first request in a connection which will make the client resend the request, but now with a cookie. The cookie can be set via an HTTP Set-Cookie header or a Javascript. Further requests are only accepted when the client sends this cookie. Otherwise, the client is banned for <ban-time> seconds. This feature can be used to reduce the effects of a DDoS attack. The <secret> can be a random string of up to 20 characters (the rest is ignored) and is used to generate the cookie. When not set, Hiawatha will generate a random secret.
 @@ -203,7 +203,7 @@ Example: HideProxy = 192.168.10.20
  .B Include <filename>|<directory>
  Include another configuration file or configuration files in a directory.
@@ -25,7 +25,7 @@ $OpenBSD: patch-man_hiawatha_1_in,v 1.4 2015/05/02 15:42:02 ajacoutot Exp $
  .TP
  .B KickOnBan = yes|no
  Close all other connections that originate from the same IP in case of a ban.
-@@ -283,7 +283,7 @@ Example: RequestLimitMask = deny 192.168.0.1
+@@ -288,7 +288,7 @@ Example: RequestLimitMask = deny 192.168.0.1
  .B ServerId = <userid>|<userid>:<groupid>[, <groupid>, ...]
  The userid and groupid(s) the server will change to. If only a userid is specified, the groupid(s) will be looked up in /etc/passwd and /etc/group. The userid en groupid of user root are not allowed here. The userid or groupid can also be a name.
  .br
