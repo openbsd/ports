@@ -1,0 +1,25 @@
+$OpenBSD: patch-pysollib_mfxutil_py,v 1.1.1.1 2015/05/25 07:10:45 czarkoff Exp $
+--- pysollib/mfxutil.py.orig	Thu Dec  3 09:49:41 2009
++++ pysollib/mfxutil.py	Mon Nov 17 11:58:18 2014
+@@ -24,7 +24,7 @@
+ 
+ # imports
+ import sys, os, time, types, locale
+-import webbrowser
++import thread, webbrowser
+ 
+ try:
+     from cPickle import Pickler, Unpickler, UnpicklingError
+@@ -287,11 +287,4 @@ def unpickle(filename):
+ # ************************************************************************
+ 
+ def openURL(url):
+-    try:
+-        webbrowser.open(url)
+-    except OSError:                  # raised on windows if link is unreadable
+-        pass
+-    except:
+-        return 0
+-    return 1
+-
++    thread.start_new_thread(webbrowser.open, (url,))

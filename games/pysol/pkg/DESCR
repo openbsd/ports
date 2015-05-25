@@ -1,0 +1,11 @@
+PySolFC is a collection of more than 1000 solitaire card games. It is a fork
+of PySol Solitaire.
+
+There are games that use the 52 card International Pattern deck, games for the
+78 card Tarock deck, eight and ten suit Ganjifa games, Hanafuda games, Matrix
+games, Mahjongg games, and games for an original hexadecimal-based deck.
+
+Its features include modern look and feel (uses Ttk widget set), multiple
+cardsets and tableau backgrounds, sound, unlimited undo, player statistics, a
+hint system, demo games, a solitaire wizard, support for user written
+plug-ins, an integrated HTML help browser, and lots of documentation.
