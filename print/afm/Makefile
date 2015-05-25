@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/05/25 07:54:27 jasper Exp $
 
 COMMENT=	Adobe Font Metrics
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}"
 
 pre-patch:
-	@rm -rf ${WRKSRC}/RCS
+	rm -rf ${WRKSRC}/RCS
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

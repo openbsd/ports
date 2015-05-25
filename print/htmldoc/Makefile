@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/11/07 13:33:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.35 2015/05/25 07:54:28 jasper Exp $
 
 COMMENT=	convert HTML pages to PDF/PS format
 
@@ -31,7 +31,7 @@ CONFIGURE_ENV= 		LDFLAGS="-L${LOCALBASE}/lib" \
 PORTHOME=		${WRKDIR}
 
 post-extract:
-	@rm -rf ${WRKSRC}/jpeg ${WRKSRC}/png ${WRKSRC}/zlib
+	rm -r ${WRKSRC}/jpeg ${WRKSRC}/png ${WRKSRC}/zlib
 
 post-configure:
 	@perl -pi -e "s,\\$$\\{DESTDIR},," ${WRKSRC}/config.h

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/03/16 18:07:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2015/05/25 07:54:27 jasper Exp $
 
 COMMENT =	libevent extra features
 
@@ -25,7 +25,7 @@ MAKE_ENV +=	CC="${CC}"
 pre-build:
 	@printf "major=${LIBeventextra_VERSION:R}\nminor=${LIBeventextra_VERSION:E}\n" >${WRKBUILD}/shlib_version
 	@cp ${FILESDIR}/Makefile ${WRKBUILD}
-	@rm -f ${WRKBUILD}/{event.h,evutil.h}
+	rm ${WRKBUILD}/{event.h,evutil.h}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/{evhttp.h,evdns.h,evrpc.h} ${PREFIX}/include

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/08/24 18:05:17 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2015/05/25 07:54:27 jasper Exp $
 
 COMMENT=		wm-dockapp; shows basic network info
 
@@ -17,9 +17,6 @@ MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tgz
 
 NO_TEST=		Yes
-
-post-extract:
-	@rm -f ${WRKSRC}/nwn.o
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/wmifinfo ${PREFIX}/bin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2015/04/21 18:33:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2015/05/25 07:54:27 jasper Exp $
 
 COMMENT=		IDL parsing library
 
@@ -31,6 +31,6 @@ CONFIGURE_STYLE=	gnu
 pre-build:
 # Info files shipped in the official distfile aren't correctly 
 # recoginzed by our ports infrastructure as a valid info files.
-	@rm -f ${WRKSRC}/*.info
+	rm ${WRKSRC}/*.info
 
 .include <bsd.port.mk>

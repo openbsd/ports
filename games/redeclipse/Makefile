@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/11 12:49:30 jsg Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/25 07:54:27 jasper Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -46,9 +46,9 @@ NO_TEST=		Yes
 INSTALL_TARGET=		system-install
 
 post-extract:
-	@rm -f ${WRKDIR}/data-${V}/.gitattributes
-	@rm -f ${WRKDIR}/data-${V}/.gitignore
-	@rmdir ${WRKDIR}/base-${V}/data
-	@mv ${WRKDIR}/data-${V} ${WRKDIR}/base-${V}/data
+	rm ${WRKDIR}/data-${V}/.gitattributes
+	rm ${WRKDIR}/data-${V}/.gitignore
+	rmdir ${WRKDIR}/base-${V}/data
+	mv ${WRKDIR}/data-${V} ${WRKDIR}/base-${V}/data
 
 .include <bsd.port.mk>

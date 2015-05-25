@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/01/21 14:40:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/05/25 07:54:28 jasper Exp $
 
 COMMENT=	CDBI Authentication for Catalyst
 
@@ -29,6 +29,6 @@ TEST_DEPENDS=databases/p5-DBD-SQLite \
 CONFIGURE_STYLE =	modinst
 
 post-build:
-	@rm -f ${WRKBUILD}/blib/lib/Catalyst/Plugin/Authentication/Store/DBIC.pm.orig
+	rm -f ${WRKBUILD}/blib/lib/Catalyst/Plugin/Authentication/Store/DBIC.pm.orig
 
 .include <bsd.port.mk>

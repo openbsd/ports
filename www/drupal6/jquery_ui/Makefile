@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/08/07 21:32:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2015/05/25 07:54:28 jasper Exp $
 
 COMMENT =	wrapper module around the jQuery UI effects library
 MAINTAINER =	Marc Espie <espie@openbsd.org>
@@ -16,6 +16,6 @@ DISTFILES +=	${DISTNAME}${EXTRACT_SUFX} \
 
 post-extract:
 	@mv ${WRKDIR}/${DISTNAME0} ${WRKDIST}/jquery.ui
-	@rm -rf ${WRKDIST}/jquery.ui/demos
+	rm -r ${WRKDIST}/jquery.ui/demos
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2015/05/08 00:00:32 jturner Exp $
+# $OpenBSD: Makefile,v 1.49 2015/05/25 07:54:27 jasper Exp $
 
 COMMENT =		simple distributed software configuration management
 
@@ -42,7 +42,7 @@ SUBST_VARS +=		CONFLICT_MARKER STATIC
 TEST_DEPENDS =		${MODTCL_RUN_DEPENDS}
 
 post-extract:
-	@rm -f ${WRKSRC}/src/sqlite3.h
+	rm ${WRKSRC}/src/sqlite3.h
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/auto.def

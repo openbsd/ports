@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/21 14:41:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/05/25 07:54:28 jasper Exp $
 
 COMMENT=		liberal object-oriented parser for RSS feeds
 
@@ -19,6 +19,6 @@ RUN_DEPENDS=		textproc/p5-XML-Elemental>=2.0 \
 WRKDIST= 		${WRKDIR}/XML-RSS-Parser-4
 
 pre-configure:
-	@rm -f ${WRKBUILD}/lib/XML/RSS/*.orig
+	rm ${WRKBUILD}/lib/XML/RSS/*.orig
 
 .include <bsd.port.mk>

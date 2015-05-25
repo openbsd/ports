@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 14:41:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/05/25 07:54:28 jasper Exp $
 
 COMMENT=	use shorter names in catalyst tt views (deprecated)
 
@@ -14,6 +14,6 @@ RUN_DEPENDS=	textproc/p5-Catalyst-View-TT \
 		devel/p5-MRO-Compat
 
 post-build:
-	@rm -f ${WRKBUILD}/blib/lib/Catalyst/View/TT/FunctionGenerator.pm.orig
+	rm -f ${WRKBUILD}/blib/lib/Catalyst/View/TT/FunctionGenerator.pm.orig
 
 .include <bsd.port.mk>

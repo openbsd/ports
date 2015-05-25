@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/08/30 07:30:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/05/25 07:54:27 jasper Exp $
 
 COMMENT=	graphical tool to change Tux Paint's settings
 
@@ -29,7 +29,7 @@ MAKE_ENV+=	SYSCONFDIR=${SYSCONFDIR} CXX=${CXX}
 NO_TEST=	Yes
 
 pre-configure:
-	@rm -rf ${WRKSRC}/obj
+	rm -r ${WRKSRC}/obj
 	@perl -pi -e 's,@\$$\(CXX\),\$$\(CXX\),g' ${WRKSRC}/Makefile
 	${SUBST_CMD} ${WRKSRC}/src/tuxpaint-config.1
 

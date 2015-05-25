@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/05 12:09:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/05/25 07:54:27 jasper Exp $
 
 PKG_ARCH=	*
 
@@ -31,6 +31,6 @@ do-install:
 	cp -R ${WRKSRC}/data/stamps/* ${PREFIX}/share/tuxpaint/stamps/
 	@find ${PREFIX}/share/tuxpaint/stamps/ -type f ! -perm 644 -exec chmod 644 {} \;
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/tuxpaint/stamps/
-	rm -rf ${PREFIX}/share/tuxpaint/stamps/cartoon/tux
+	rm -r ${PREFIX}/share/tuxpaint/stamps/cartoon/tux
 
 .include <bsd.port.mk>

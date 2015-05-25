@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/05/25 07:54:27 jasper Exp $
 
 COMMENT=	multi-radix calculator for x11
 
@@ -19,7 +19,7 @@ MASTER_SITES=	http://spacehopper.org/mirrors/ \
 NO_TEST=	Yes
 
 post-extract:
-	@rm -f ${WRKSRC}/*.orig
+	rm ${WRKSRC}/*.orig
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hexcalc ${PREFIX}/bin/hexcalc

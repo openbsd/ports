@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/05/25 07:54:27 jasper Exp $
 
 COMMENT=		prover9/mace4 GUI
 
@@ -28,7 +28,7 @@ SAMPLES_DIR=		${PREFIX}/share/p9m4/Samples/
 
 # The tarball is a mess and not really designed for installation.
 post-extract:
-	rm -fr ${WRKSRC}/Samples/Kauer.in\~
+	rm -r ${WRKSRC}/Samples/Kauer.in\~
 	find ${WRKSRC} -type f -name \*~ -exec rm -f {} \;
 
 pre-configure:

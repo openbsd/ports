@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2015/04/24 13:10:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2015/05/25 07:54:27 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -54,7 +54,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		ac_cv_header_soundcard_h=no
 
 post-install:
-	@rm -f ${PREFIX}/share/doc/libquicktime/apiref/dir_*.html
+	@rm ${PREFIX}/share/doc/libquicktime/apiref/dir_*.html
 	@find ${PREFIX}/lib/libquicktime -name '*.a' -print | xargs rm
 	@find ${PREFIX}/lib -name '*.la' -print | xargs rm
 

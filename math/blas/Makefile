@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/03/16 18:07:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2015/05/25 07:54:27 jasper Exp $
 
 COMMENT=	Basic Linear Algebra Subprograms
 
@@ -39,7 +39,7 @@ USE_GROFF =	Yes
 MANSRC=		${WRKDIR}/manpages/blas/man/manl
 
 post-build:
-	@rm -f ${MANSRC}/{lsame,xerbla}.l
+	rm ${MANSRC}/{lsame,xerbla}.l
 	@perl -pi -e 's/(\.TH\s+\w+)\s+l(.*)/\1 3f\2/' ${MANSRC}/*.l
 	@cd ${MANSRC} && for m in *.l; do mv $$m $${m%\.l}.3f; done
 

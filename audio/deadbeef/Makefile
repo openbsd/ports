@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/05/11 21:22:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2015/05/25 07:54:28 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -97,6 +97,6 @@ pre-configure:
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf
 
 post-install:
-	@rm -f ${PREFIX}/lib/deadbeef/*.la
+	@rm ${PREFIX}/lib/deadbeef/*.la
 
 .include <bsd.port.mk>

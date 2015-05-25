@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/12/12 13:22:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2015/05/25 07:54:28 jasper Exp $
 
 COMMENT=	graphics file viewer for X11
 
@@ -35,7 +35,7 @@ PATCH_DIST_STRIP= -p1
 
 # superseded by 30_libtiff5.patch
 pre-patch:
-	@rm -f ${WRKDIR}/debian/patches/24_libtiff5.patch
+	rm ${WRKDIR}/debian/patches/24_libtiff5.patch
 
 do-distpatch:
 	@for p in ${WRKDIR}/debian/patches/*.patch; do \

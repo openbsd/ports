@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/02/16 22:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2015/05/25 07:54:27 jasper Exp $
 
 COMMENT=	powerful make utility
 
@@ -18,7 +18,7 @@ WRKDIST=	${WRKDIR}/xmake
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 pre-build:
-	@rm -rf ${WRKSRC}/obj
+	rm -r ${WRKSRC}/obj
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/xmake ${PREFIX}/bin

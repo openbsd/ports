@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/13 08:25:37 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2015/05/25 07:54:27 jasper Exp $
 
 COMMENT =	Python interface to memcached
 
@@ -26,6 +26,6 @@ pre-install:
 	@perl -pi -e "s,#!.*python,#!${MODPY_BIN}," ${WRKSRC}/memcache.py
 
 post-install:
-	@rm -rf ${WRKSRC}/python_memcached.egg-info
+	rm -r ${WRKSRC}/python_memcached.egg-info
 
 .include <bsd.port.mk>

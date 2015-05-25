@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2015/03/16 18:07:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.73 2015/05/25 07:54:27 jasper Exp $
 
 PORTROACH=	limit:^1\.2\.
 
@@ -28,6 +28,6 @@ CONFIGURE_ARGS+= --enable-static
 NO_TEST=	Yes
 
 post-extract:
-	@rm -f ${WRKSRC}/docs/glib.info*
+	rm ${WRKSRC}/docs/glib.info*
 
 .include <bsd.port.mk>

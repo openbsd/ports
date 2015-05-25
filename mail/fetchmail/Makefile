@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2014/06/21 07:58:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.145 2015/05/25 07:54:27 jasper Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
@@ -36,7 +36,7 @@ DOCS=			FAQ NOTES FEATURES README COPYING fetchmail-FAQ.html \
 
 # Remove those so they get rebuild. Fixes problems with gcc2.
 post-extract:
-	@rm -f ${WRKSRC}/rcfile_y.[ch]
+	rm ${WRKSRC}/rcfile_y.[ch]
 
 pre-patch:
 	${SUBST_CMD} -c ${FILESDIR}/fetchmailconf ${WRKDIR}/fetchmailconf

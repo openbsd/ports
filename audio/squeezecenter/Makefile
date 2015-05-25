@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/05/08 09:08:44 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2015/05/25 07:54:28 jasper Exp $
 
 COMMENT =	streaming audio server for Squeezebox network music players
 
@@ -92,10 +92,10 @@ RUN_DEPENDS =	audio/flac \
 # remove squeezecenter's redistributed CPAN modules, we use our own.
 # remove MySQL error message file, it's for a specific version.
 pre-configure:
-	@rm ${WRKSRC}/MySQL/errmsg.sys
+	rm ${WRKSRC}/MySQL/errmsg.sys
 	@ln -s ${TRUEPREFIX}/share/mysql/english/errmsg.sys \
 	    ${WRKSRC}/MySQL/errmsg.sys  
-	@rm -rf ${WRKSRC}/CPAN
+	rm -r ${WRKSRC}/CPAN
 	@${SUBST_CMD} -m 0644 -c ${FILESDIR}/Custom.pm \
 	    ${WRKSRC}/Slim/Utils/OS/Custom.pm
 

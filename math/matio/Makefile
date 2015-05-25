@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/03/16 18:07:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2015/05/25 07:54:27 jasper Exp $
 
 COMMENT=	library for reading and writing Matlab MAT files
 
@@ -40,7 +40,7 @@ do-test:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/matio
 	${INSTALL_DATA} ${WRKSRC}/libmatio.pdf ${PREFIX}/share/doc/matio
-	@rm -rf ${PREFIX}/share/matio
-	@rm -rf ${PREFIX}/bin/test_*
+	rm -r ${PREFIX}/share/matio
+	rm -r ${PREFIX}/bin/test_*
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/04/02 13:59:31 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2015/05/25 07:54:27 jasper Exp $
 
 COMMENT =	GPS track manager
 
@@ -44,7 +44,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure
 
 post-install:
-	@rm -f ${PREFIX}/share/gnome/help/viking/C/figures/*
+	rm ${PREFIX}/share/gnome/help/viking/C/figures/*
 	${INSTALL_DATA} ${WRKSRC}/help/C/figures/* \
 		${PREFIX}/share/gnome/help/viking/C/figures/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/03/27 08:13:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2015/05/25 07:54:27 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -43,6 +43,6 @@ RUN_DEPENDS =	audio/sox \
 		x11/gtk+3,-guic
 
 post-install:
-	@rm -f ${PREFIX}/lib/imagination/*.la
+	rm ${PREFIX}/lib/imagination/*.la
 
 .include <bsd.port.mk>

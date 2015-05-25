@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/08/10 10:11:05 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2015/05/25 07:54:27 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -39,7 +39,6 @@ pre-configure:
 do-install:
 	${INSTALL_DATA_DIR} ${NB}
 	@tar -czf - -C ${WRKDIR}/netbeans . | tar xzf - -C ${NB}
-	@rm -rf ${NB}/profiler3
 	@find ${NB} -name "*.dll" -o -name "*.exe" -o -name "*.cmd" \
 		-o -name "*.bat" -o -name "*.orig" | xargs rm
 	@${SUBST_PROGRAM} ${FILESDIR}/netbeans \
