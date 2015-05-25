@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 10:50:16 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2015/05/25 02:17:28 afresh1 Exp $
 
-COMMENT=	stack trace and stack trace frame objects
+COMMENT =	an object representing a stack trace
 
-MODULES=	cpan
-DISTNAME=	Devel-StackTrace-1.30
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Devel-StackTrace-2.00
+CATEGORIES =	devel
+
+MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MAKE_ENV+=	TEST_POD=Yes \
-		IS_MAINTAINER=1
+# We don't have all the dependencies for author/release testing
+MAKE_ENV =	AUTHOR_TESTING= RELEASE_TESTING=
 
 .include <bsd.port.mk>
