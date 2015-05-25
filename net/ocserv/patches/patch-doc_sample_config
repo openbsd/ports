@@ -1,10 +1,10 @@
-$OpenBSD: patch-doc_sample_config,v 1.2 2015/03/29 20:02:41 sthen Exp $
+$OpenBSD: patch-doc_sample_config,v 1.3 2015/05/25 20:57:11 sthen Exp $
 
 no freeradius-client in ports yet (also disabled in autoconf)
 no seccomp, gssapi
 
---- doc/sample.config.orig	Sat Mar 14 17:58:07 2015
-+++ doc/sample.config	Sun Mar 29 20:57:46 2015
+--- doc/sample.config.orig	Sat May 23 11:15:59 2015
++++ doc/sample.config	Sun May 24 14:18:16 2015
 @@ -1,7 +1,7 @@
  # User authentication method. Could be set multiple times and in 
  # that case all should succeed. To enable multiple methods use
@@ -14,25 +14,24 @@ no seccomp, gssapi
  #
  # Note that authentication methods cannot be changed with reload.
  
-@@ -18,45 +18,23 @@
- # "username:groupname1,groupname2:encoded-password"
+@@ -19,44 +19,23 @@
  # One entry must be listed per line, and 'ocpasswd' should be used
  # to generate password entries.
--#
--# radius[config=/etc/radiusclient/radiusclient.conf,groupconfig=true,nas-identifier=name]:
+ #
+-# radius[config=/etc/radiusclient/radiusclient.conf,groupconfig=true,nas-identifier=name,override-interim-updates=false]:
 -#  The radius option requires specifying freeradius-client configuration
 -# file. If the groupconfig option is set, then config-per-user will be overriden,
--# and all configuration will be read from radius. The supported atributes for
--# radius configuration are:
--# Group-Name, Framed-IPv6-Address, Framed-IPv6-Prefix, DNS-Server-IPv6-Address,
--# Framed-IP-Address, Framed-IP-Netmask, MS-Primary-DNS-Server, MS-Secondary-DNS-Server
+-# and all configuration will be read from radius. The 'override-interim-updates' if set to
+-# true will ignore Acct-Interim-Interval from the server and 'stats-report-time' will be considered.
 -#
--# gssapi[keytab=/etc/key.tab,require-local-user-map=false]
+-# gssapi[keytab=/etc/key.tab,require-local-user-map=true,tgt-freshness-time=900]
 -#  The gssapi option allows to use authentication methods supported by GSSAPI,
 -# such as Kerberos tickets with ocserv. It should be best used as an alternative
 -# to PAM (i.e., have pam in auth and gssapi in enable-auth), to allow users with
 -# tickets and without tickets to login. The default value for require-local-user-map
--# is true.
+-# is true. The 'tgt-freshness-time' if set, it would require the TGT tickets presented
+-# to have been issued within the provided number of seconds. That option is used to
+-# restrict logins even if the KDC provides long time TGT tickets.
  
  #auth = "pam"
  #auth = "pam[gid-min=1000]"
@@ -45,7 +44,7 @@ no seccomp, gssapi
  # will be sufficient to login.
  #enable-auth = certificate
 -#enable-auth = gssapi
--#enable-auth = "gssapi[keytab=/etc/key.tab,require-local-user-map=true]"
+-#enable-auth = "gssapi[keytab=/etc/key.tab,require-local-user-map=true,tgt-freshness-time=900]"
  
  # Accounting methods available:
  # pam: can only be combined with PAM authentication method, it provides
@@ -60,7 +59,7 @@ no seccomp, gssapi
  
  # Use listen-host to limit to specific IPs or to the IPs of a provided 
  # hostname.
-@@ -79,8 +57,8 @@ udp-port = 443
+@@ -79,8 +58,8 @@ udp-port = 443
  
  # The user the worker processes will be run as. It should be
  # unique (no other services run as this user).
@@ -71,7 +70,7 @@ no seccomp, gssapi
  
  # socket file used for IPC with occtl. You only need to set that,
  # if you use more than a single servers.
-@@ -92,18 +70,12 @@ run-as-group = daemon
+@@ -92,18 +71,12 @@ run-as-group = daemon
  socket-file = /var/run/ocserv-socket
  
  # The default server directory. Does not require any devices present.
@@ -91,17 +90,17 @@ no seccomp, gssapi
  # A banner to be displayed on clients
  #banner = "Welcome"
  
-@@ -127,7 +99,8 @@ max-same-clients = 2
+@@ -126,8 +99,7 @@ max-same-clients = 2
+ 
  # Stats report time. The number of seconds after which each
  # worker process will report its usage statistics (number of
- # bytes transferred etc). This is useful when accounting like
+-# bytes transferred etc). This is useful when accounting like
 -# radius is in use.
-+# radius is in use. (Radius is not currently available in the
-+# OpenBSD package).
++# bytes transferred etc).
  #stats-report-time = 360
  
  # Keepalive in seconds
-@@ -160,8 +133,8 @@ try-mtu-discovery = false
+@@ -160,8 +132,8 @@ try-mtu-discovery = false
  #
  # There may be multiple server-cert and server-key directives,
  # but each key should correspond to the preceding certificate.
@@ -112,3 +111,53 @@ no seccomp, gssapi
  
  # Diffie-Hellman parameters. Only needed if you require support
  # for the DHE ciphersuites (by default this server supports ECDHE).
+@@ -255,9 +227,8 @@ min-reauth-time = 300
+ # Banning clients in ocserv works with a point system. IP addresses
+ # that get a score over that configured number are banned for
+ # min-reauth-time seconds. By default a wrong password attempt is 10 points,
+-# a KKDCP POST is 1 point, and a connection is 1 point. Note that
+-# due to difference processes being involved the count of points
+-# will not be real-time precise.
++# and a connection is 1 point. Note that due to difference processes
++# being involved the count of points will not be real-time precise.
+ #
+ # Score banning cannot be reliably used when receiving proxied connections
+ # locally from an HTTP server (i.e., when listen-clear-file is used).
+@@ -271,7 +242,6 @@ ban-reset-time = 300
+ # In case you'd like to change the default points.
+ #ban-points-wrong-password = 10
+ #ban-points-connection = 1
+-#ban-points-kkdcp = 1
+ 
+ # Cookie timeout (in seconds)
+ # Once a client is authenticated he's provided a cookie with
+@@ -361,7 +331,7 @@ predictable-ips = true
+ default-domain = example.com
+ 
+ # The pool of addresses that leases will be given from. If the leases
+-# are given via Radius, or via the explicit-ip? per-user config option then 
++# are given via the explicit-ip? per-user config option then 
+ # these network values should contain a network with at least a single
+ # address that will remain under the full control of ocserv (that is
+ # to be able to assign the local part of the tun device address).
+@@ -474,20 +444,6 @@ no-route = 192.168.5.0/255.255.255.0
+ # and '%{G}', if present will be replaced by the username and group name.
+ #proxy-url = http://example.com/
+ #proxy-url = http://example.com/%{U}/
+-
+-# This option allows you to specify a URL location where a client can
+-# post using MS-KKDCP, and the message will be forwarded to the provided
+-# KDC server. That is a translation URL between HTTP and Kerberos.
+-# In MIT kerberos you'll need to add in realms:
+-#   EXAMPLE.COM = {
+-#     kdc = https://ocserv.example.com/KdcProxy
+-#     http_anchors = FILE:/etc/ocserv-ca.pem
+-#   }
+-# This option is available if ocserv is compiled with GSSAPI support. 
+-
+-#kkdcp = SERVER-PATH KERBEROS-REALM PROTOCOL@SERVER:PORT
+-#kkdcp = /KdcProxy EXAMPLE.COM udp@127.0.0.1:88
+-#kkdcp = /KdcProxy EXAMPLE.COM tcp@127.0.0.1:88
+ 
+ #
+ # The following options are for (experimental) AnyConnect client 
