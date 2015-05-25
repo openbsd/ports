@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/25 23:55:50 jturner Exp $
+bin/sslmate
+libexec/sslmate/
+libexec/sslmate/approval/
+libexec/sslmate/approval/dns/
+libexec/sslmate/approval/dns/cloudflare
+libexec/sslmate/approval/dns/digitalocean
+libexec/sslmate/approval/dns/dnsimple
+libexec/sslmate/approval/dns/route53
+libexec/sslmate/approval/http/
+libexec/sslmate/approval/http/documentroot
+@man man/man1/sslmate.1
+share/doc/sslmate/
+share/doc/sslmate/NEWS
+share/doc/sslmate/README
+share/sslmate/
+share/sslmate/perllib/
+share/sslmate/perllib/SSLMate/
+share/sslmate/perllib/SSLMate.pm
+share/sslmate/perllib/SSLMate/HTTPSClient.pm
