@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Connection_cs,v 1.1 2015/05/25 07:48:45 ajacoutot Exp $
+--- src/Connection.cs.orig	Mon May 25 09:39:14 2015
++++ src/Connection.cs	Mon May 25 09:39:21 2015
+@@ -450,7 +450,7 @@ namespace DBus
+ 		}
+ 
+ 		// Maybe we should use XDG/basedir or check an env var for this?
+-		const string machineUuidFilename = @"/var/lib/dbus/machine-id";
++		const string machineUuidFilename = @"/var/db/dbus/machine-id";
+ 		static UUID? machineId = null;
+ 		private static object idReadLock = new object ();
+ 		internal static UUID MachineId

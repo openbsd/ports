@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_UnixNativeTransport_cs,v 1.1 2015/05/25 07:48:45 ajacoutot Exp $
+
+Error 47: Address family not supported by protocol family (in `dbus-sharp')
+
+--- src/UnixNativeTransport.cs.orig	Tue Sep 14 11:17:50 2010
++++ src/UnixNativeTransport.cs	Mon May 25 09:35:04 2015
+@@ -93,10 +93,8 @@ namespace DBus.Transports
+ 
+ 			byte[] sa = new byte[2 + p.Length + 1];
+ 
+-			//we use BitConverter to stay endian-safe
+-			byte[] afData = BitConverter.GetBytes (UnixSocket.AF_UNIX);
+-			sa[0] = afData[0];
+-			sa[1] = afData[1];
++			sa[0] = (byte) sa.Length;
++			sa[1] = 1; /* AF_UNIX */
+ 
+ 			for (int i = 0 ; i != p.Length ; i++)
+ 				sa[2 + i] = p[i];
+@@ -111,10 +109,8 @@ namespace DBus.Transports
+ 
+ 			byte[] sa = new byte[2 + 1 + p.Length];
+ 
+-			//we use BitConverter to stay endian-safe
+-			byte[] afData = BitConverter.GetBytes (UnixSocket.AF_UNIX);
+-			sa[0] = afData[0];
+-			sa[1] = afData[1];
++			sa[0] = (byte) sa.Length;
++			sa[1] = 1; /* AF_UNIX */
+ 
+ 			sa[2] = 0; //null prefix for abstract domain socket addresses, see unix(7)
+ 			for (int i = 0 ; i != p.Length ; i++)
