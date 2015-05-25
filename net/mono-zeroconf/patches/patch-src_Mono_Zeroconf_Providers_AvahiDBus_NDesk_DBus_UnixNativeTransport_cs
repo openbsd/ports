@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_Mono_Zeroconf_Providers_AvahiDBus_NDesk_DBus_UnixNativeTransport_cs,v 1.1 2015/05/25 07:50:30 ajacoutot Exp $
+
+Mono.Unix.UnixIOException: Address family not supported by [EAFNOSUPPORT].
+
+--- src/Mono.Zeroconf.Providers.AvahiDBus/NDesk.DBus/UnixNativeTransport.cs.orig	Mon May 25 09:45:39 2015
++++ src/Mono.Zeroconf.Providers.AvahiDBus/NDesk.DBus/UnixNativeTransport.cs	Mon May 25 09:46:33 2015
+@@ -212,10 +212,8 @@ namespace NDesk.DBus.Transports
+ 
+ 			byte[] sa = new byte[2 + p.Length + 1];
+ 
+-			//we use BitConverter to stay endian-safe
+-			byte[] afData = BitConverter.GetBytes (UnixSocket.AF_UNIX);
+-			sa[0] = afData[0];
+-			sa[1] = afData[1];
++			sa[0] = (byte) sa.Length;
++			sa[1] = 1; /* AF_UNIX */
+ 
+ 			for (int i = 0 ; i != p.Length ; i++)
+ 				sa[2 + i] = p[i];
