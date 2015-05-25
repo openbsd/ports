@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2013/06/01 12:15:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2015/05/25 15:15:34 jca Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		LADSPA plugins from Steve Harris
 
 DISTNAME =		swh-plugins-0.4.15
-REVISION =		2
+REVISION =		3
 CATEGORIES =		audio
 
 HOMEPAGE =		http://plugin.org.uk/
@@ -37,6 +37,11 @@ CONFIGURE_ARGS +=	--disable-nls
 AUTO_ENV =	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
+post-extract:
+	find ${WRKSRC} -type f -name '*.c' -print -execdir perl -pi \
+	    -e 's/^void\s+_init\(\)\s+{/void __init() __attribute__((constructor));\nvoid __init() {/;' \
+	    -e 's/^void\s+_fini\(\)\s+{/void __fini() __attribute__((destructor));\nvoid __fini() {/;' \
+	    {} \;
 post-patch:
 	rm ${WRKSRC}/acconfig.h ${WRKSRC}/ladspa.h
 	cd ${WRKSRC}; ${AUTO_ENV} aclocal -I . -I m4
