@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2015/05/20 15:32:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.139 2015/05/26 06:30:45 ajacoutot Exp $
 
 PORTROACH =	limit:^2\.4
 
@@ -13,6 +13,7 @@ EPOCH =		1
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX =	.tar.xz
+REVISION =	0
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -112,7 +113,8 @@ FLAVOR ?=
 #XXX gross, but needed to have __sync_add_and_fetch_8 on 32-bits
 #what about ppc ? hppa ?
 .if ${MACHINE_ARCH} == "i386"
-CFLAGS+=-march=i686
+CFLAGS +=	-march=i686
+CXXFLAGS +=	-march=i686
 .endif
 
 FULLPKGNAME =	webkit-gtk3-${V}
