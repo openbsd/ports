@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/25 23:55:50 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/26 18:59:19 jturner Exp $
 bin/sslmate
 libexec/sslmate/
 libexec/sslmate/approval/
@@ -14,6 +14,12 @@ share/doc/sslmate/
 share/doc/sslmate/NEWS
 share/doc/sslmate/README
 share/sslmate/
+share/sslmate/dhparams/
+share/sslmate/dhparams/dh2048-group14.pem
+share/sslmate/dhparams/dh3072-group15.pem
+share/sslmate/dhparams/dh4096-group16.pem
+share/sslmate/dhparams/dh6144-group17.pem
+share/sslmate/dhparams/dh8192-group18.pem
 share/sslmate/perllib/
 share/sslmate/perllib/SSLMate/
 share/sslmate/perllib/SSLMate.pm

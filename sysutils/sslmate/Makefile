@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/25 23:55:50 jturner Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/26 18:59:19 jturner Exp $
 
 COMMENT =		client for the sslmate.com online certificate service
 
-DISTNAME =		sslmate-1.1.1
+DISTNAME =		sslmate-1.2.0
 CATEGORIES =		sysutils
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -14,8 +14,8 @@ MASTER_SITES =		https://packages.sslmate.com/other/
 PERMIT_PACKAGE_CDROM =	Yes
 
 RUN_DEPENDS =		devel/p5-Term-ReadKey \
-			www/p5-URI \
-			www/p5-WWW-Curl
+			www/p5-libwww \
+			www/p5-LWP-Protocol-https
 
 USE_GMAKE =		Yes
 
