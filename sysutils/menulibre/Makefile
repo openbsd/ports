@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/30 05:48:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/26 17:01:27 ajacoutot Exp $
 
 COMMENT =	fd.o-compliant menu editor
 
@@ -21,7 +21,8 @@ MODPY_VERSION =	3.4
 PORTHOME =	${WRKDIR}
 NO_BUILD =	Yes
 BUILD_DEPENDS =	devel/py-distutils-extra${MODPY_FLAVOR} \
-		devel/py-gobject3${MODPY_FLAVOR} 
+		devel/py-gobject3${MODPY_FLAVOR} \
+		x11/gtk+3
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		devel/py-gobject3${MODPY_FLAVOR} \
 		x11/gnome/menus \
