@@ -1,0 +1,23 @@
+$OpenBSD: patch-media_video_capture_video_capture_device_cc,v 1.1 2015/05/26 17:37:40 robert Exp $
+--- media/video/capture/video_capture_device.cc.orig.port	Sat May 23 00:27:17 2015
++++ media/video/capture/video_capture_device.cc	Sun May 24 17:34:00 2015
+@@ -9,6 +9,10 @@
+ 
+ namespace media {
+ 
++const std::string VideoCaptureDevice::Name::GetModel() const {
++  return "";
++}
++
+ const std::string VideoCaptureDevice::Name::GetNameAndModel() const {
+   const std::string model_id = GetModel();
+   if (model_id.empty())
+@@ -24,7 +28,7 @@ VideoCaptureDevice::Name::Name() {}
+ VideoCaptureDevice::Name::Name(const std::string& name, const std::string& id)
+     : device_name_(name), unique_id_(id) {}
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ VideoCaptureDevice::Name::Name(const std::string& name,
+                                const std::string& id,
+                                const CaptureApiType api_type)

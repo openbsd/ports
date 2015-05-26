@@ -1,30 +1,48 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
---- content/ppapi_plugin/ppapi_blink_platform_impl.cc.orig.port	Sun Dec  7 21:55:00 2014
-+++ content/ppapi_plugin/ppapi_blink_platform_impl.cc	Sun Dec  7 21:57:56 2014
-@@ -20,7 +20,7 @@
- #include "third_party/WebKit/public/platform/win/WebSandboxSupport.h"
- #elif defined(OS_MACOSX)
+$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc,v 1.3 2015/05/26 17:37:40 robert Exp $
+--- content/ppapi_plugin/ppapi_blink_platform_impl.cc.orig.port	Wed May 20 10:12:15 2015
++++ content/ppapi_plugin/ppapi_blink_platform_impl.cc	Wed May 20 10:12:45 2015
+@@ -18,7 +18,7 @@
+ 
+ #if defined(OS_MACOSX)
  #include "third_party/WebKit/public/platform/mac/WebSandboxSupport.h"
--#elif defined(OS_ANDROID)
-+#elif defined(OS_ANDROID) || defined(OS_OPENBSD)
- #include "third_party/WebKit/public/platform/android/WebSandboxSupport.h"
- #elif defined(OS_POSIX)
+-#elif defined(OS_POSIX) && !defined(OS_ANDROID)
++#elif defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_BSD)
  #include "content/common/child_process_sandbox_support_impl_linux.h"
-@@ -46,7 +46,7 @@ class PpapiBlinkPlatformImpl::SandboxSupport : public 
-   virtual bool ensureFontLoaded(HFONT);
- #elif defined(OS_MACOSX)
-   virtual bool loadFont(NSFont* srcFont, CGFontRef* out, uint32_t* fontID);
--#elif defined(OS_ANDROID)
-+#elif defined(OS_ANDROID) || defined(OS_OPENBSD)
-   // Empty class.
- #elif defined(OS_POSIX)
-   SandboxSupport();
-@@ -92,7 +92,7 @@ bool PpapiBlinkPlatformImpl::SandboxSupport::loadFont(
-   return false;
+ #include "third_party/WebKit/public/platform/linux/WebFallbackFont.h"
+ #include "third_party/WebKit/public/platform/linux/WebSandboxSupport.h"
+@@ -34,7 +34,7 @@ typedef struct CGFont* CGFontRef;
+ 
+ namespace content {
+ 
+-#if !defined(OS_ANDROID) && !defined(OS_WIN)
++#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_BSD)
+ 
+ class PpapiBlinkPlatformImpl::SandboxSupport : public WebSandboxSupport {
+  public:
+@@ -115,7 +115,7 @@ void PpapiBlinkPlatformImpl::SandboxSupport::getRender
+ #endif  // !defined(OS_ANDROID) && !defined(OS_WIN)
+ 
+ PpapiBlinkPlatformImpl::PpapiBlinkPlatformImpl() {
+-#if !defined(OS_ANDROID) && !defined(OS_WIN)
++#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_BSD)
+   sandbox_support_.reset(new PpapiBlinkPlatformImpl::SandboxSupport);
+ #endif
+ }
+@@ -124,7 +124,7 @@ PpapiBlinkPlatformImpl::~PpapiBlinkPlatformImpl() {
  }
  
--#elif defined(OS_ANDROID)
-+#elif defined(OS_ANDROID) || defined(OS_OPENBSD)
+ void PpapiBlinkPlatformImpl::Shutdown() {
+-#if !defined(OS_ANDROID) && !defined(OS_WIN)
++#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_BSD)
+   // SandboxSupport contains a map of WebFontFamily objects, which hold
+   // WebCStrings, which become invalidated when blink is shut down. Hence, we
+   // need to clear that map now, just before blink::shutdown() is called.
+@@ -148,7 +148,7 @@ blink::WebFileUtilities* PpapiBlinkPlatformImpl::fileU
+ }
  
- // Empty class.
- 
+ blink::WebSandboxSupport* PpapiBlinkPlatformImpl::sandboxSupport() {
+-#if !defined(OS_ANDROID) && !defined(OS_WIN)
++#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_BSD)
+   return sandbox_support_.get();
+ #else
+   return nullptr;

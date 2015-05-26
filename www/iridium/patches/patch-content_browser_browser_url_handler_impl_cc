@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_browser_url_handler_impl_cc,v 1.1 2015/05/26 17:37:40 robert Exp $
+--- content/browser/browser_url_handler_impl.cc.orig.port	Tue May 26 19:29:06 2015
++++ content/browser/browser_url_handler_impl.cc	Tue May 26 19:29:21 2015
+@@ -18,7 +18,7 @@ static bool handle_trace_scheme(GURL *url, BrowserCont
+ {
+ 	if (!url->SchemeIs(url::kTraceScheme))
+ 		return false;
+-#ifdef __linux__
++#if defined(__linux__) || defined(__OpenBSD__)
+ 	bool tty = isatty(fileno(stderr));
+ #else
+ 	bool tty = false;

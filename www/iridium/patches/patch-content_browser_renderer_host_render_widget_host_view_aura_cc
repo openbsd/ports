@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
---- content/browser/renderer_host/render_widget_host_view_aura.cc.orig.port	Wed Apr 15 00:31:22 2015
-+++ content/browser/renderer_host/render_widget_host_view_aura.cc	Wed Apr 15 08:32:50 2015
-@@ -90,7 +90,7 @@
+$OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 1.3 2015/05/26 17:37:40 robert Exp $
+--- content/browser/renderer_host/render_widget_host_view_aura.cc.orig.port	Thu May 14 00:35:46 2015
++++ content/browser/renderer_host/render_widget_host_view_aura.cc	Wed May 20 08:34:56 2015
+@@ -92,7 +92,7 @@
  #include "ui/gfx/win/dpi.h"
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 
  #include "content/common/input_messages.h"
  #include "ui/events/linux/text_edit_command_auralinux.h"
  #include "ui/events/linux/text_edit_key_bindings_delegate_auralinux.h"
-@@ -2372,7 +2372,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
+@@ -2365,7 +2365,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
  }
  
  bool RenderWidgetHostViewAura::NeedsMouseCapture() {
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 
    return NeedsInputGrab();
  #endif
    return false;
-@@ -2588,7 +2588,7 @@ void RenderWidgetHostViewAura::DetachFromInputMethod()
+@@ -2587,7 +2587,7 @@ void RenderWidgetHostViewAura::DetachFromInputMethod()
  
  void RenderWidgetHostViewAura::ForwardKeyboardEvent(
      const NativeWebKeyboardEvent& event) {

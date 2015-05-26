@@ -1,0 +1,21 @@
+$OpenBSD: patch-net_url_request_url_request_cc,v 1.1 2015/05/26 17:37:40 robert Exp $
+--- net/url_request/url_request.cc.orig.port	Tue May 26 18:14:02 2015
++++ net/url_request/url_request.cc	Tue May 26 18:17:53 2015
+@@ -554,7 +554,7 @@ URLRequest::URLRequest(const GURL& url,
+   DCHECK(base::MessageLoop::current())
+       << "The current base::MessageLoop must exist";
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(__OpenBSD__)
+ 	bool tty = isatty(fileno(stderr));
+ #else
+ 	bool tty = false;
+@@ -568,7 +568,7 @@ URLRequest::URLRequest(const GURL& url,
+ 			xred, url.possibly_invalid_spec().c_str(), xreset);
+ 		if (ui_alert_trace_func != NULL)
+ 			(*ui_alert_trace_func)(url);
+-		url_chain_ = {1, url.strip_trk()};
++		url_chain_ = std::vector<GURL>(1, url.strip_trk());
+ 	} else {
+ 		fprintf(stderr, "%s***%s URLRequest(%s)%s\n",
+ 		        xfruit, xdark, url.possibly_invalid_spec().c_str(), xreset);

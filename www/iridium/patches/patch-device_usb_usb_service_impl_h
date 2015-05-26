@@ -1,7 +1,7 @@
-$OpenBSD: patch-device_usb_usb_service_impl_h,v 1.1 2015/05/06 14:27:24 robert Exp $
---- device/usb/usb_service_impl.h.orig.port	Wed Apr 15 15:35:01 2015
-+++ device/usb/usb_service_impl.h	Wed Apr 15 15:44:34 2015
-@@ -38,11 +38,13 @@ class UsbServiceImpl : public UsbService {
+$OpenBSD: patch-device_usb_usb_service_impl_h,v 1.2 2015/05/26 17:37:40 robert Exp $
+--- device/usb/usb_service_impl.h.orig.port	Thu May 14 00:35:46 2015
++++ device/usb/usb_service_impl.h	Wed May 20 08:34:56 2015
+@@ -42,11 +42,13 @@ class UsbServiceImpl : public UsbService {
    // Adds a new UsbDevice to the devices_ map based on the given libusb device.
    scoped_refptr<UsbDeviceImpl> AddDevice(PlatformUsbDevice platform_device);
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-device_usb_usb_service_impl_h,v 1.1 2015/05/06 14:27:24 robert E
    // These functions release a reference to the provided platform device.
    void OnDeviceAdded(PlatformUsbDevice platform_device);
    void OnDeviceRemoved(PlatformUsbDevice platform_device);
-@@ -63,7 +65,9 @@ class UsbServiceImpl : public UsbService {
+@@ -67,7 +69,9 @@ class UsbServiceImpl : public UsbService {
    // connected instead of only when a full enumeration is requested.
    // TODO(reillyg): Support this on all platforms. crbug.com/411715
    bool hotplug_enabled_;

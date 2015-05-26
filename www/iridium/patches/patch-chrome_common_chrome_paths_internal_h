@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_common_chrome_paths_internal_h,v 1.1 2015/05/26 17:37:40 robert Exp $
+--- chrome/common/chrome_paths_internal.h.orig.port	Sat May 23 00:59:48 2015
++++ chrome/common/chrome_paths_internal.h	Sat May 23 01:07:58 2015
+@@ -39,7 +39,7 @@ void GetUserCacheDirectory(const base::FilePath& profi
+ // Get the path to the user's documents directory.
+ bool GetUserDocumentsDirectory(base::FilePath* result);
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+ // Gets the path to a safe default download directory for a user.
+ bool GetUserDownloadsDirectorySafe(base::FilePath* result);
+ #endif

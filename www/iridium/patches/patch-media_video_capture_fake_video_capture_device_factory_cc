@@ -1,0 +1,12 @@
+$OpenBSD: patch-media_video_capture_fake_video_capture_device_factory_cc,v 1.1 2015/05/26 17:37:40 robert Exp $
+--- media/video/capture/fake_video_capture_device_factory.cc.orig.port	Sat May 23 00:59:48 2015
++++ media/video/capture/fake_video_capture_device_factory.cc	Sun May 24 17:21:39 2015
+@@ -48,7 +48,7 @@ void FakeVideoCaptureDeviceFactory::GetDeviceNames(
+   for (int n = 0; n < number_of_devices_; ++n) {
+     VideoCaptureDevice::Name name(base::StringPrintf("fake_device_%d", n),
+                                   base::StringPrintf("/dev/video%d", n)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+                                   , VideoCaptureDevice::Name::V4L2_SINGLE_PLANE
+ #elif defined(OS_MACOSX)
+                                   , VideoCaptureDevice::Name::AVFOUNDATION

@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.2 2015/05/06 14:27:24 robert Exp $
---- content/renderer/renderer_blink_platform_impl.cc.orig.port	Wed Apr 15 00:31:22 2015
-+++ content/renderer/renderer_blink_platform_impl.cc	Wed Apr 15 08:32:50 2015
-@@ -96,7 +96,7 @@
+$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.3 2015/05/26 17:37:40 robert Exp $
+--- content/renderer/renderer_blink_platform_impl.cc.orig.port	Wed May 20 10:13:28 2015
++++ content/renderer/renderer_blink_platform_impl.cc	Wed May 20 10:14:11 2015
+@@ -99,7 +99,7 @@
  
  #if defined(OS_POSIX)
  #include "base/file_descriptor_posix.h"
@@ -10,30 +10,39 @@ $OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.2 2015/05/0
  #include <map>
  #include <string>
  
-@@ -187,7 +187,7 @@ class RendererBlinkPlatformImpl::FileUtilities : publi
+@@ -189,7 +189,7 @@ class RendererBlinkPlatformImpl::FileUtilities : publi
    scoped_refptr<ThreadSafeSender> thread_safe_sender_;
  };
  
--#if defined(OS_ANDROID)
-+#if defined(OS_ANDROID) || defined(OS_BSD)
- // WebKit doesn't use WebSandboxSupport on android so we don't need to
- // implement anything here.
- class RendererBlinkPlatformImpl::SandboxSupport {};
-@@ -284,7 +284,7 @@ blink::WebFileUtilities* RendererBlinkPlatformImpl::fi
+-#if !defined(OS_ANDROID) && !defined(OS_WIN)
++#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_BSD)
+ class RendererBlinkPlatformImpl::SandboxSupport
+     : public blink::WebSandboxSupport {
+  public:
+@@ -232,7 +232,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+       plugin_refresh_allowed_(true),
+       default_task_runner_(renderer_scheduler->DefaultTaskRunner()),
+       web_scrollbar_behavior_(new WebScrollbarBehaviorImpl) {
+-#if !defined(OS_ANDROID) && !defined(OS_WIN)
++#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_BSD)
+   if (g_sandbox_enabled && sandboxEnabled()) {
+     sandbox_support_.reset(new RendererBlinkPlatformImpl::SandboxSupport);
+   } else {
+@@ -289,7 +289,7 @@ blink::WebFileUtilities* RendererBlinkPlatformImpl::fi
  }
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::sandboxSupport() {
--#if defined(OS_ANDROID)
-+#if defined(OS_ANDROID) || defined(OS_BSD)
-   // WebKit doesn't use WebSandboxSupport on android.
+-#if defined(OS_ANDROID) || defined(OS_WIN)
++#if defined(OS_ANDROID) || defined(OS_WIN) || defined(OS_BSD)
+   // These platforms do not require sandbox support.
    return NULL;
  #else
-@@ -563,7 +563,7 @@ bool RendererBlinkPlatformImpl::SandboxSupport::loadFo
+@@ -557,7 +557,7 @@ bool RendererBlinkPlatformImpl::SandboxSupport::loadFo
    return FontLoader::CGFontRefFromBuffer(font_data, font_data_size, out);
  }
  
--#elif defined(OS_ANDROID)
-+#elif defined(OS_ANDROID) || defined(OS_BSD)
+-#elif defined(OS_POSIX) && !defined(OS_ANDROID)
++#elif defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_BSD)
  
- // WebKit doesn't use WebSandboxSupport on android so we don't need to
- // implement anything here. This is cleaner to support than excluding the
+ void RendererBlinkPlatformImpl::SandboxSupport::getFallbackFontForCharacter(
+     blink::WebUChar32 character,

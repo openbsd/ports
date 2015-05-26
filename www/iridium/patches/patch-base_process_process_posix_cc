@@ -1,0 +1,11 @@
+$OpenBSD: patch-base_process_process_posix_cc,v 1.1 2015/05/26 17:37:39 robert Exp $
+--- base/process/process_posix.cc.orig.port	Wed May 20 11:39:29 2015
++++ base/process/process_posix.cc	Wed May 20 11:39:47 2015
+@@ -16,6 +16,7 @@
+ #if defined(OS_MACOSX)
+ #include <sys/event.h>
+ #endif
++#include <signal.h>
+ 
+ namespace {
+ 

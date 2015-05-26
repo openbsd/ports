@@ -1,0 +1,39 @@
+$OpenBSD: patch-chrome_browser_download_download_commands_cc,v 1.1 2015/05/26 17:37:39 robert Exp $
+--- chrome/browser/download/download_commands.cc.orig.port	Wed May 20 10:03:11 2015
++++ chrome/browser/download/download_commands.cc	Thu May 21 20:50:47 2015
+@@ -100,7 +100,7 @@ bool DownloadCommands::IsCommandChecked(Command comman
+              download_crx_util::IsExtensionDownload(*download_item_);
+     case ALWAYS_OPEN_TYPE:
+ #if defined(OS_WIN) || defined(OS_LINUX) || \
+-    (defined(OS_MACOSX) && !defined(OS_IOS))
++    (defined(OS_MACOSX) && !defined(OS_IOS)) || defined(OS_BSD)
+       if (CanOpenPdfInSystemViewer()) {
+         DownloadPrefs* prefs = DownloadPrefs::FromBrowserContext(
+             download_item_->GetBrowserContext());
+@@ -144,7 +144,7 @@ void DownloadCommands::ExecuteCommand(Command command)
+       DownloadPrefs* prefs = DownloadPrefs::FromBrowserContext(
+           download_item_->GetBrowserContext());
+ #if defined(OS_WIN) || defined(OS_LINUX) || \
+-    (defined(OS_MACOSX) && !defined(OS_IOS))
++    (defined(OS_MACOSX) && !defined(OS_IOS)) || defined(OS_BSD)
+       if (CanOpenPdfInSystemViewer()) {
+         prefs->SetShouldOpenPdfInSystemReader(!is_checked);
+         DownloadItemModel(download_item_)
+@@ -218,7 +218,7 @@ Browser* DownloadCommands::GetBrowser() const {
+   return browser_displayer.browser();
+ }
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ bool DownloadCommands::IsDownloadPdf() const {
+   base::FilePath path = download_item_->GetTargetFilePath();
+   return path.MatchesExtension(FILE_PATH_LITERAL(".pdf"));
+@@ -235,7 +235,7 @@ bool DownloadCommands::CanOpenPdfInSystemViewer() cons
+   return IsDownloadPdf() &&
+          (IsAdobeReaderDefaultPDFViewer() ? is_adobe_pdf_reader_up_to_date
+                                           : true);
+-#elif defined(OS_MACOSX) || defined(OS_LINUX)
++#elif defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+   return IsDownloadPdf();
+ #endif
+ }

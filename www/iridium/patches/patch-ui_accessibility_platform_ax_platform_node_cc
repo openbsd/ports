@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_accessibility_platform_ax_platform_node_cc,v 1.1 2015/05/26 17:37:40 robert Exp $
+--- ui/accessibility/platform/ax_platform_node.cc.orig.port	Sat May 23 00:32:03 2015
++++ ui/accessibility/platform/ax_platform_node.cc	Sat May 23 00:32:10 2015
+@@ -9,7 +9,7 @@
+ 
+ namespace ui {
+ 
+-#if !defined(OS_MACOSX) && !defined(OS_WIN) && !(defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if !defined(OS_MACOSX) && !defined(OS_WIN) && !(defined(OS_LINUX) && !defined(OS_CHROMEOS)) && !defined(OS_BSD)
+ // static
+ AXPlatformNode* AXPlatformNode::Create(AXPlatformNodeDelegate* delegate) {
+   return nullptr;

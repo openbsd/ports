@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_heap_StackFrameDepth_cpp,v 1.1 2015/05/06 14:27:24 robert Exp $
---- third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp.orig.port	Wed Apr 15 09:41:19 2015
-+++ third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp	Wed Apr 22 22:49:42 2015
+$OpenBSD: patch-third_party_WebKit_Source_platform_heap_StackFrameDepth_cpp,v 1.2 2015/05/26 17:37:40 robert Exp $
+--- third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp.orig.port	Thu May 14 00:49:00 2015
++++ third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp	Fri May 22 23:50:07 2015
 @@ -14,6 +14,10 @@
  #elif defined(__GLIBC__)
  extern "C" void* __libc_stack_end;  // NOLINT
@@ -12,16 +12,16 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_heap_StackFrameDepth_cpp,v 1.
  
  namespace blink {
  
-@@ -39,7 +43,7 @@ void StackFrameDepth::configureLimit()
+@@ -84,7 +88,7 @@ size_t StackFrameDepth::getUnderestimatedStackSize()
+ #endif
  
- size_t StackFrameDepth::getUnderestimatedStackSize()
- {
--#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD)
-+#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD) || OS(OPENBSD)
-     // We cannot get the stack size in these platforms because
-     // pthread_getattr_np() can fail for the main thread.
-     // This is OK because ThreadState::current() doesn't use the stack size
-@@ -63,12 +67,18 @@ size_t StackFrameDepth::getUnderestimatedStackSize()
+     return 0;
+-#elif OS(MACOSX)
++#elif OS(MACOSX) || OS(OPENBSD)
+     // FIXME: pthread_get_stacksize_np() returns shorter size than actual stack
+     // size for the main thread on Mavericks(10.9).
+     return 0;
+@@ -105,12 +109,18 @@ size_t StackFrameDepth::getUnderestimatedStackSize()
  
  void* StackFrameDepth::getStackStart()
  {

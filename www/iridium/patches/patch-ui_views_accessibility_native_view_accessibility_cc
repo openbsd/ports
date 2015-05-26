@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_views_accessibility_native_view_accessibility_cc,v 1.1 2015/05/26 17:37:40 robert Exp $
+--- ui/views/accessibility/native_view_accessibility.cc.orig.port	Sat May 23 00:28:59 2015
++++ ui/views/accessibility/native_view_accessibility.cc	Sat May 23 00:29:13 2015
+@@ -13,7 +13,7 @@
+ 
+ namespace views {
+ 
+-#if !defined(OS_WIN) && !(defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if !defined(OS_WIN) && !(defined(OS_LINUX) && !defined(OS_CHROMEOS)) && !defined(OS_BSD)
+ // static
+ NativeViewAccessibility* NativeViewAccessibility::Create(View* view) {
+   return new NativeViewAccessibility(view);
