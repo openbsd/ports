@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/04/04 09:36:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2015/05/26 13:31:21 espie Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -42,6 +42,7 @@ MODULES =		x11/kde4
 MODKDE4_NO_QT =		Yes
 MODKDE4_RESOURCES =	Yes
 MODKDE4_USE =
+KDE4_ONLY =		No
 
 # Specialization packages. Separate to be able to easily
 # convert them into proper packages in the future - will
