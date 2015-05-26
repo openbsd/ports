@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.308 2015/04/06 22:20:01 stsp Exp $
+# $OpenBSD: Makefile,v 1.309 2015/05/26 09:31:28 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -176,6 +176,7 @@
      SUBDIR += prboom-plus
      SUBDIR += pushover
      SUBDIR += puzzles
+     SUBDIR += pysol
      SUBDIR += qgo
      SUBDIR += qstat
      SUBDIR += quadrupleback
