@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/11/27 13:06:11 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/05/26 19:17:00 rpe Exp $
 %%SHARED%%
 bin/awk
 @bin bin/gawk
@@ -39,11 +39,13 @@ share/awk/libintl.awk
 share/awk/noassign.awk
 share/awk/ord.awk
 share/awk/passwd.awk
+share/awk/processarray.awk
 share/awk/quicksort.awk
 share/awk/readable.awk
 share/awk/readfile.awk
 share/awk/rewind.awk
 share/awk/round.awk
+share/awk/shellquote.awk
 share/awk/strtonum.awk
 share/awk/walkarray.awk
 share/awk/zerofile.awk
