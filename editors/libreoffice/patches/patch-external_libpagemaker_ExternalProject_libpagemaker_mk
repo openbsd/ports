@@ -1,0 +1,12 @@
+$OpenBSD: patch-external_libpagemaker_ExternalProject_libpagemaker_mk,v 1.1 2015/05/26 08:44:58 robert Exp $
+--- external/libpagemaker/ExternalProject_libpagemaker.mk.orig.port	Mon May 25 15:37:36 2015
++++ external/libpagemaker/ExternalProject_libpagemaker.mk	Mon May 25 15:37:49 2015
+@@ -23,7 +23,7 @@ $(eval $(call gb_ExternalProject_use_externals,libpage
+ $(call gb_ExternalProject_get_state_target,libpagemaker,build) :
+ 	$(call gb_ExternalProject_run,build,\
+ 		export PKG_CONFIG="" \
+-		&& MAKE=$(MAKE) ./configure \
++		&& MAKE=$(MAKE) CPPFLAGS="-fPIC -DPIC" ./configure \
+ 			--with-pic \
+ 			--enable-static \
+ 			--disable-shared \

@@ -1,0 +1,12 @@
+$OpenBSD: patch-external_libwpg_ExternalProject_libwpg_mk,v 1.1 2015/05/26 08:44:58 robert Exp $
+--- external/libwpg/ExternalProject_libwpg.mk.orig.port	Tue May 26 07:57:42 2015
++++ external/libwpg/ExternalProject_libwpg.mk	Tue May 26 10:31:37 2015
+@@ -23,7 +23,7 @@ $(eval $(call gb_ExternalProject_use_externals,libwpg,
+ $(call gb_ExternalProject_get_state_target,libwpg,build) :
+ 	$(call gb_ExternalProject_run,build,\
+ 		export PKG_CONFIG="" \
+-		&& MAKE=$(MAKE) ./configure \
++		&& MAKE=$(MAKE) CPPFLAGS="-fPIC" ./configure \
+ 			--with-pic \
+ 			--enable-static \
+ 			--disable-shared \

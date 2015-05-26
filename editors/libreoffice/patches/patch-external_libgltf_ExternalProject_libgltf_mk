@@ -1,0 +1,11 @@
+$OpenBSD: patch-external_libgltf_ExternalProject_libgltf_mk,v 1.1 2015/05/26 08:44:58 robert Exp $
+--- external/libgltf/ExternalProject_libgltf.mk.orig.port	Mon May 25 10:27:31 2015
++++ external/libgltf/ExternalProject_libgltf.mk	Mon May 25 10:27:34 2015
+@@ -57,6 +57,7 @@ ifneq (,$(gb_ENABLE_DBGUTIL))
+ libgltf_CPPFLAGS+=-D_GLIBCXX_DEBUG
+ endif
+ endif
++libgltf_CPPFLAGS+=-fPIC -DPIC
+ 
+ $(call gb_ExternalProject_get_state_target,libgltf,build) :
+ 	$(call gb_ExternalProject_run,build,\

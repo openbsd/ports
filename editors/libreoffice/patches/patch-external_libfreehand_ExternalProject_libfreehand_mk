@@ -1,0 +1,12 @@
+$OpenBSD: patch-external_libfreehand_ExternalProject_libfreehand_mk,v 1.1 2015/05/26 08:44:58 robert Exp $
+--- external/libfreehand/ExternalProject_libfreehand.mk.orig.port	Mon May 25 15:08:39 2015
++++ external/libfreehand/ExternalProject_libfreehand.mk	Mon May 25 15:08:54 2015
+@@ -23,7 +23,7 @@ $(eval $(call gb_ExternalProject_use_externals,libfree
+ $(call gb_ExternalProject_get_state_target,libfreehand,build) :
+ 	$(call gb_ExternalProject_run,build,\
+ 		export PKG_CONFIG="" \
+-		&& MAKE=$(MAKE) ./configure \
++		&& MAKE=$(MAKE) CPPFLAGS="-fPIC -DPIC" ./configure \
+ 			--with-pic \
+ 			--enable-static \
+ 			--disable-shared \

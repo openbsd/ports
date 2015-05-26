@@ -1,0 +1,12 @@
+$OpenBSD: patch-external_libxmlsec_ExternalProject_xmlsec_mk,v 1.1 2015/05/26 08:44:58 robert Exp $
+--- external/libxmlsec/ExternalProject_xmlsec.mk.orig.port	Mon May 25 14:03:25 2015
++++ external/libxmlsec/ExternalProject_xmlsec.mk	Mon May 25 15:05:58 2015
+@@ -53,7 +53,7 @@ $(call gb_ExternalProject_get_state_target,xmlsec,buil
+ 		$(if $(filter IOS MACOSX,$(OS)),ACLOCAL="aclocal -I $(SRCDIR)/m4/mac") \
+ 		$(if $(filter AIX,$(OS)),ACLOCAL="aclocal -I /opt/freeware/share/aclocal") \
+ 		autoreconf \
+-		&& ./configure \
++		&& CFLAGS="-fPIC -DPIC" LDFLAGS="-fPIC -DPIC" ./configure \
+ 			--with-pic --disable-shared --disable-crypto-dl --without-libxslt --without-gnutls \
+ 			$(if $(or $(filter-out ANDROID,$(OS)),$(DISABLE_OPENSSL)),--without-openssl,--with-openssl=$(call gb_UnpackedTarball_get_dir,openssl)) \
+ 			$(if $(filter MACOSX,$(OS)),--prefix=/@.__________________________________________________OOO) \

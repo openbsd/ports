@@ -1,0 +1,11 @@
+$OpenBSD: patch-external_libwpd_ExternalProject_libwpd_mk,v 1.1 2015/05/26 08:44:58 robert Exp $
+--- external/libwpd/ExternalProject_libwpd.mk.orig.port	Tue May 26 08:03:54 2015
++++ external/libwpd/ExternalProject_libwpd.mk	Tue May 26 10:23:52 2015
+@@ -32,6 +32,7 @@ $(call gb_ExternalProject_get_state_target,libwpd,buil
+ 			$(if $(filter MACOSX,$(OS)),--disable-werror) \
+ 			$(if $(VERBOSE)$(verbose),--disable-silent-rules,--enable-silent-rules) \
+ 			$(if $(filter TRUE,$(DISABLE_DYNLOADING)),CFLAGS="$(CFLAGS) $(gb_VISIBILITY_FLAGS) $(gb_COMPILEROPTFLAGS)" CXXFLAGS="$(CXXFLAGS) $(gb_VISIBILITY_FLAGS) $(gb_COMPILEROPTFLAGS)") \
++			CFLAGS="$(CFLAGS) $(gb_VISIBILITY_FLAGS) $(gb_COMPILEROPTFLAGS)" CXXFLAGS="$(CXXFLAGS) $(gb_VISIBILITY_FLAGS) $(gb_COMPILEROPTFLAGS)" \
+ 			$(if $(CROSS_COMPILING),--build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM)) \
+ 		&& $(MAKE) \
+ 	)
