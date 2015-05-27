@@ -1,1 +1,4 @@
-Utility/library for converting between different formats of e-books.
+Library for converting between different formats of e-books and utility for
+printing books to standard output.
+
+lit2epub script requires clit package (textproc/clit port).
