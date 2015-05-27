@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.326 2015/05/04 10:54:31 henning Exp $
+# $OpenBSD: Makefile,v 1.327 2015/05/27 01:20:48 yasuoka Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -84,6 +84,7 @@
      SUBDIR += majordomo
      SUBDIR += mboxgrep
      SUBDIR += metamail
+     SUBDIR += mew
      SUBDIR += milter-checkrcpt
      SUBDIR += milter-greylist
      SUBDIR += milter-regex
