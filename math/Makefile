@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2014/12/16 11:00:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.121 2015/05/27 16:42:53 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -44,6 +44,7 @@
      SUBDIR += lapack
      SUBDIR += libneural
      SUBDIR += libqalculate
+     SUBDIR += libtommath
      SUBDIR += logic2cnf
      SUBDIR += lpsolve
      SUBDIR += lrs
