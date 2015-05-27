@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/02 13:32:54 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/27 13:47:45 espie Exp $
 
 V =		0.2.5
 COMMENT =	poppler pdf plugin for zathura
 DISTNAME =	zathura-pdf-poppler-${V}
+REVSION =	0
 
 HOMEPAGE =	http://pwmt.org/projects/zathura/plugins/zathura-pdf-poppler/
 
