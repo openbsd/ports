@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_common_strings_editing_cpp,v 1.1 2015/05/27 21:18:48 ajacoutot Exp $
+
+common: remove unused functions & declarations
+
+--- src/common/strings/editing.cpp.orig	Tue May 26 16:22:52 2015
++++ src/common/strings/editing.cpp	Tue May 26 16:23:09 2015
+@@ -214,28 +214,3 @@ std::string
+ get_displayable_string(std::string const &src) {
+   return get_displayable_string(src.c_str(), src.length());
+ }
+-
+-size_t
+-utf8_strlen(const std::string &s) {
+-  size_t length = 0;
+-  size_t index  = 0;
+-
+-  while (s.length() > index) {
+-    unsigned char c  = s[index];
+-    size_t num_bytes = ((c & 0x80) == 0x00) ?  1
+-                     : ((c & 0xe0) == 0xc0) ?  2
+-                     : ((c & 0xf0) == 0xe0) ?  3
+-                     : ((c & 0xf8) == 0xf0) ?  4
+-                     : ((c & 0xfc) == 0xf8) ?  5
+-                     : ((c & 0xfe) == 0xfc) ?  6
+-                     :                        99;
+-
+-    if (99 == num_bytes)
+-      mxerror(boost::format(Y("utf8_strlen(): Invalid UTF-8 char. First byte: 0x%|1$02x|")) % static_cast<unsigned int>(c));
+-
+-    ++length;
+-    index += num_bytes;
+-  }
+-
+-  return length;
+-}

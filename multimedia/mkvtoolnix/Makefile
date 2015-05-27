@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2013/04/11 20:26:10 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2015/05/27 21:18:48 ajacoutot Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-4.0.0
-REVISION=	3
+DISTNAME=	mkvtoolnix-7.9.0
 CATEGORIES=	multimedia x11
 MASTER_SITES=	${HOMEPAGE}/sources/
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE =	http://www.bunkus.org/videotools/mkvtoolnix/
 
@@ -16,64 +15,65 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	FLAC boost_filesystem-mt boost_regex-mt boost_system-mt \
-		bz2 c ebml expat lzo2 m magic matroska ogg pthread \
-		stdc++ vorbis z
+		c ebml m magic matroska ogg pthread vorbis z
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		lang/ruby \
+		gcc4
 
-LIB_DEPENDS=	archivers/bzip2 \
-		archivers/lzo2 \
-		audio/flac \
+MODRUBY_RUNDEP=	No
+
+MODGCC4_ARCHS=	*
+MODGCC4_LANGS=	c++
+
+BUILD_DEPENDS=	devel/ruby-rake
+LIB_DEPENDS=	audio/flac \
+		audio/libogg \
 		audio/libvorbis \
 		devel/boost \
 		devel/libmagic \
-		multimedia/libmatroska
+		multimedia/libmatroska>=1.4.2 \
+		textproc/libebml>=1.3.1
 
-MAKE_FLAGS+=	V=1
+MAKE_ENV+=	V=1
 
 USE_GROFF=	Yes
-USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--with-boost-filesystem=boost_filesystem-mt \
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.69
+CONFIGURE_ARGS=	--disable-optimization \
+		--disable-wxwidgets \
+		--with-boost-date-time=boost_date_time-mt \
+		--with-boost-filesystem=boost_filesystem-mt \
 		--with-boost-libdir=${LOCALBASE}/lib \
-		--with-boost-regex=boost_regex-mt
+		--with-boost-regex=boost_regex-mt \
+		--with-boost-system=boost_system-mt \
+		--without-curl
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -L${LOCALBASE}/lib/qt5"
 
 FLAVORS=	no_x11
 FLAVOR?=
 
 .if ${FLAVOR:Mno_x11}
-CONFIGURE_ARGS+= --disable-gui --disable-wxwidgets
+CONFIGURE_ARGS+= --disable-gui
 .else
-LIB_DEPENDS+=	x11/wxWidgets>=2.8.10
-WANTLIB+=	wx_base wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv \
-		wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html \
-		wx_gtk2_qa wx_gtk2_xrc wx_gtk2_richtext
+MODULES+=	x11/qt5
+WANTLIB+=	Qt5Core Qt5Gui Qt5Widgets
+RUN_DEPENDS+=	devel/desktop-file-utils \
+		misc/shared-mime-info \
+		x11/gtk+3,-guic
 .endif
 
-NO_TEST=    Yes
+NO_TEST=	Yes
+
+do-build:
+	@cd ${WRKSRC} && \
+		env -i ${MAKE_ENV} ${RUBY} ./drake -j${MAKE_JOBS} \
+		${MAKE_FLAGS}
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/man/ja.po
-	${INSTALL_DATA_DIR} ${PREFIX}/man/zh_CN.po
-	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
-.for i in mkvextract mkvinfo mkvmerge mkvpropedit
-	${INSTALL_PROGRAM} ${WRKBUILD}/src/$i ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/doc/man/$i.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/doc/man/ja/$i.1 ${PREFIX}/man/ja.po
-	${INSTALL_DATA} ${WRKSRC}/doc/man/zh_CN/$i.1 ${PREFIX}/man/zh_CN.po	
-.endfor
-.if !${FLAVOR:Mno_x11}
-	${INSTALL_PROGRAM} ${WRKBUILD}/src/mmg/mmg ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/doc/man/mmg.1 ${PREFIX}/man/man1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/mkvtoolnix/images
-	${INSTALL_DATA} ${WRKSRC}/doc/guide/en/mkvmerge-gui.* ${PREFIX}/share/mkvtoolnix
-	${INSTALL_DATA} ${WRKSRC}/doc/guide/en/images/*.gif ${PREFIX}/share/mkvtoolnix/images
-.endif
-.for l in de ja nl ru uk zh_CN zh_TW
-	${INSTALL_DATA_DIR} ${PREFIX}/share/locale/$l/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/po/$l.mo ${PREFIX}/share/locale/$l/LC_MESSAGES/mkvtoolnix.mo
-.endfor
+	@cd ${WRKSRC} && \
+		env -i ${MAKE_ENV} ${RUBY} ./drake \
+		DESTDIR=${WRKINST} install
 
 .include <bsd.port.mk>

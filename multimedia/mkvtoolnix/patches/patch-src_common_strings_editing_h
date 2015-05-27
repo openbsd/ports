@@ -1,11 +1,16 @@
-$OpenBSD: patch-src_common_strings_editing_h,v 1.1 2009/06/09 20:30:18 benoit Exp $
---- src/common/strings/editing.h.orig	Mon Jun  8 17:24:34 2009
-+++ src/common/strings/editing.h	Mon Jun  8 17:24:50 2009
-@@ -15,6 +15,7 @@
- #define __MTX_COMMON_STRINGS_H
+$OpenBSD: patch-src_common_strings_editing_h,v 1.2 2015/05/27 21:18:48 ajacoutot Exp $
+
+common: remove unused functions & declarations
+
+--- src/common/strings/editing.h.orig	Tue May 26 15:29:24 2015
++++ src/common/strings/editing.h	Tue May 26 16:23:36 2015
+@@ -42,9 +42,4 @@ std::string get_displayable_string(std::string const &
  
- #include "common/os.h"
-+#include <stdarg.h>
+ extern const std::string empty_string;
  
- #include <string>
- #include <vector>
+-int get_arg_len(const char *fmt, ...);
+-int get_varg_len(const char *fmt, va_list ap);
+-
+-size_t utf8_strlen(const std::string &s);
+-
+ #endif  // MTX_COMMON_STRINGS_EDITING_H

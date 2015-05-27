@@ -1,11 +1,14 @@
-$OpenBSD: patch-src_common_common_cpp,v 1.3 2010/07/17 22:52:53 benoit Exp $
---- src/common/common.cpp.orig	Sat Jun  5 08:24:39 2010
-+++ src/common/common.cpp	Sat Jun 26 20:42:11 2010
-@@ -14,6 +14,7 @@
+$OpenBSD: patch-src_common_common_cpp,v 1.4 2015/05/27 21:18:48 ajacoutot Exp $
+--- src/common/common.cpp.orig	Wed May 27 12:08:22 2015
++++ src/common/common.cpp	Wed May 27 12:09:26 2015
+@@ -13,6 +13,10 @@
+ 
  #include "common/common_pch.h"
  
- #include <stdlib.h>
++#ifdef HAVE_UNISTD_H
 +#include <unistd.h>
++#endif
++
  #ifdef SYS_WINDOWS
  # include <windows.h>
  #endif
