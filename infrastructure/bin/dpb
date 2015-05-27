@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.111 2015/05/10 10:00:43 espie Exp $
+# $OpenBSD: dpb,v 1.112 2015/05/27 11:15:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -191,7 +191,9 @@ $state->{builder} = DPB::PortBuilder->new($state);
 $state->{affinity} = affinityclass()->new($state, join("/", $state->logdir, "affinity"));
 
 $state->{engine} = DPB::Engine->new($state);
+$state->{grabber} = DPB::Grabber->new($state, \&handle_non_waiting_jobs);
 $reporter = DPB::Reporter->new($state, "main", "DPB::Core", $state->engine);
+
 print "Waiting for hosts to finish STARTUP...";
 while (!DPB::Core->avail) {
 	DPB::Core->reap;
@@ -292,8 +294,6 @@ sub main_loop
 		}
 	}
 }
-
-$state->{grabber} = DPB::Grabber->new($state, \&handle_non_waiting_jobs);
 
 if ($state->{all} && !$state->{random}) {
 	# when restarting interrupted dpb,
