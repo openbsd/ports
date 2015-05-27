@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/30 12:29:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/27 06:49:50 ajacoutot Exp $
+@bin bin/appdata-validate
 @bin bin/appstream-builder
 @bin bin/appstream-util
 include/libappstream-builder/
@@ -7,8 +8,11 @@ include/libappstream-builder/asb-app.h
 include/libappstream-glib/
 include/libappstream-glib/appstream-glib.h
 include/libappstream-glib/as-app.h
+include/libappstream-glib/as-bundle.h
 include/libappstream-glib/as-enums.h
+include/libappstream-glib/as-icon.h
 include/libappstream-glib/as-image.h
+include/libappstream-glib/as-inf.h
 include/libappstream-glib/as-node.h
 include/libappstream-glib/as-problem.h
 include/libappstream-glib/as-provide.h
@@ -18,24 +22,25 @@ include/libappstream-glib/as-store.h
 include/libappstream-glib/as-tag.h
 include/libappstream-glib/as-utils.h
 include/libappstream-glib/as-version.h
-lib/asb-plugins/
-lib/asb-plugins/libasb_plugin_absorb.so
-lib/asb-plugins/libasb_plugin_appdata.so
-lib/asb-plugins/libasb_plugin_blacklist.so
-lib/asb-plugins/libasb_plugin_dbus.so
-lib/asb-plugins/libasb_plugin_desktop.so
-lib/asb-plugins/libasb_plugin_font.so
-lib/asb-plugins/libasb_plugin_gettext.so
-lib/asb-plugins/libasb_plugin_gir.so
-lib/asb-plugins/libasb_plugin_gresource.so
-lib/asb-plugins/libasb_plugin_gstreamer.so
-lib/asb-plugins/libasb_plugin_hardcoded.so
-lib/asb-plugins/libasb_plugin_ibus_sql.so
-lib/asb-plugins/libasb_plugin_ibus_xml.so
-lib/asb-plugins/libasb_plugin_kde_notifyrc.so
-lib/asb-plugins/libasb_plugin_kde_services.so
-lib/asb-plugins/libasb_plugin_metainfo.so
-lib/asb-plugins/libasb_plugin_nm.so
+lib/asb-plugins-2/
+lib/asb-plugins-2/libasb_plugin_absorb.so
+lib/asb-plugins-2/libasb_plugin_appdata.so
+lib/asb-plugins-2/libasb_plugin_blacklist.so
+lib/asb-plugins-2/libasb_plugin_dbus.so
+lib/asb-plugins-2/libasb_plugin_desktop.so
+lib/asb-plugins-2/libasb_plugin_firmware.so
+lib/asb-plugins-2/libasb_plugin_font.so
+lib/asb-plugins-2/libasb_plugin_gettext.so
+lib/asb-plugins-2/libasb_plugin_gir.so
+lib/asb-plugins-2/libasb_plugin_gresource.so
+lib/asb-plugins-2/libasb_plugin_gstreamer.so
+lib/asb-plugins-2/libasb_plugin_hardcoded.so
+lib/asb-plugins-2/libasb_plugin_ibus_sql.so
+lib/asb-plugins-2/libasb_plugin_ibus_xml.so
+lib/asb-plugins-2/libasb_plugin_kde_notifyrc.so
+lib/asb-plugins-2/libasb_plugin_kde_services.so
+lib/asb-plugins-2/libasb_plugin_metainfo.so
+lib/asb-plugins-2/libasb_plugin_nm.so
 lib/libappstream-builder.a
 lib/libappstream-builder.la
 @lib lib/libappstream-builder.so.${LIBappstream-builder_VERSION}
@@ -46,11 +51,13 @@ lib/pkgconfig/appstream-builder.pc
 lib/pkgconfig/appstream-glib.pc
 @man man/man1/appstream-builder.1
 @man man/man1/appstream-util.1
+share/aclocal/appdata-xml.m4
 share/aclocal/appstream-xml.m4
 share/bash-completion/completions/appstream-builder
 share/bash-completion/completions/appstream-util
 share/gtk-doc/html/appstream-glib/
 share/gtk-doc/html/appstream-glib/AsApp.html
+share/gtk-doc/html/appstream-glib/AsIcon.html
 share/gtk-doc/html/appstream-glib/AsImage.html
 share/gtk-doc/html/appstream-glib/AsProblem.html
 share/gtk-doc/html/appstream-glib/AsProvide.html
