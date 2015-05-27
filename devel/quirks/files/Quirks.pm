@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.243 2015/05/25 07:35:07 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.244 2015/05/27 01:34:51 yasuoka Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -474,7 +474,6 @@ my $obsolete_reason = {
 	'ruby-bunny' => 3,
 	'ruby-randexp' => 3,
 	'synaesthesia' => 0,
-	'mew' => 0,
 	'auctex' => 0,
 	'emacs-zenirc' => 3,
 	'emacs-zenirc-el' => 3,
