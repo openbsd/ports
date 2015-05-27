@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2015/01/16 04:42:12 jmatthew Exp $
+# $OpenBSD: Makefile,v 1.16 2015/05/27 16:32:18 jca Exp $
 
 COMMENT=			distributed data store
 DISTNAME=			riak-2.0.4
+REVISION=			0
 CATEGORIES=			databases
 HOMEPAGE=			http://basho.com/
 
@@ -100,9 +101,17 @@ MODGNU_CONFIG_GUESS_DIRS = ${WRKCONF}
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS += --with-pic --disable-gtest
 
+snappy_AUTOCONF_VERSION = 2.65
+snappy_AUTOMAKE_VERSION = 1.11
+
 WANTLIB = c crypto m ncurses pthread ssl stdc++ util mozjs nspr4 pam
-LIB_DEPENDS = lang/spidermonkey security/openpam
-BUILD_DEPENDS = lang/erlang>=16b.03
+
+BUILD_DEPENDS =	lang/erlang>=16b.03
+BUILD_DEPENDS+=	devel/autoconf/${snappy_AUTOCONF_VERSION} \
+		devel/automake/${snappy_AUTOMAKE_VERSION} \
+		devel/libtool
+LIB_DEPENDS =	lang/spidermonkey \
+		security/openpam
 
 versions:
 .for _n _v in ${RIAK_VERSIONS}
@@ -119,6 +128,15 @@ pre-configure:
 		${WRKSRC}/rel/vars.config
 	tar xzf ${WRKSRC}/deps/eleveldb/c_src/snappy-${SNAPPY_V}.tar.gz \
 		-C ${WRKSRC}/deps/eleveldb/c_src
+	# tweak libtool to generate a static convenience (pic) snappy library
+	perl -pi \
+	    -e 's/^lib_LTLIBRARIES/noinst_LTLIBRARIES/;' \
+	    -e 's/^libsnappy_la_LDFLAGS/#$$&/;' \
+	    ${WRKSRC}/deps/eleveldb/c_src/snappy-${SNAPPY_V}/Makefile.am
+	cd ${WRKSRC}/deps/eleveldb/c_src/snappy-${SNAPPY_V}/ && ${SETENV} \
+	    AUTOCONF_VERSION=${snappy_AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${snappy_AUTOMAKE_VERSION} \
+	    ./autogen.sh
 	mkdir -p ${WRKSRC}/rel/riak/etc
 
 do-install:
