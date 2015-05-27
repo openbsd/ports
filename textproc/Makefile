@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.447 2015/05/20 10:26:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.448 2015/05/27 16:53:01 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -15,6 +15,7 @@
      SUBDIR += catdoc
      SUBDIR += catfish
      SUBDIR += cdiff
+     SUBDIR += clit
      SUBDIR += clo++
      SUBDIR += cloc
      SUBDIR += clucene
