@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1 2015/05/27 08:45:57 yasuoka Exp $
+bin/cmew-mailest
+@bin bin/mailestctl
+bin/mew-mailest
+bin/smew-mailest
+@man man/man1/cmew-mailest.1
+@man man/man1/mailestctl.1
+@man man/man1/mew-mailest.1
+@man man/man1/smew-mailest.1
+@man man/man5/mailestd.conf.5
+@man man/man8/mailestd.8
+@bin sbin/mailestd
+share/doc/mailest/
+share/doc/mailest/README.md
+share/examples/
+share/examples/mailest/
+share/examples/mailest/dot.emacs
+share/examples/mailest/mailestd.conf

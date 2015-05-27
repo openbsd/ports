@@ -1,0 +1,7 @@
+"mailest" provides a search backend and id index database for Mew using
+Hyper Estraier.
+
+The major differences from the standard "mewest" are:
+
+- monitors mail folders and updates the index automatically.
+- keeps the database usable during updating the index.
