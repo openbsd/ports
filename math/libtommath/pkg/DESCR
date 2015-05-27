@@ -1,0 +1,41 @@
+LibTomMath is a free open source portable number theoretic multiple-precision
+integer library written entirely in C. The library is designed to provide a
+simple to work with API to fairly efficient routines from various branches of
+number theory:
+
+ * Simple Algebraic
+  - Addition
+  - Subtraction
+  - Multiplication
+  - Squaring
+  - Division
+ * Digit Manipulation
+  - Shift left/right whole digits (mult by 2b by moving digits)
+  - Fast multiplication/division by 2 and 2k for k>1
+  - Binary AND, OR and XOR gates
+ * Modular Reductions
+  - Barrett Reduction (fast for any p)
+  - Montgomery Reduction (faster for any odd p)
+  - DR Reduction (faster for any restricted p see manual)
+  - 2k Reduction (fast reduction modulo 2p - k for k < MP_MASK and for
+    k > MP_MASK)
+  - The exptmod logic can use any of the five reduction algorithms when
+    appropriate with a single function call.
+ * Number Theoretic
+  - Greatest Common Divisor
+  - Least Common Multiple
+  - Jacobi Symbol Computation (falls back to Legendre for prime moduli)
+  - Multiplicative Inverse
+  - Extended Euclidean Algorithm
+  - Modular Exponentiation
+  - Fermat and Miller-Rabin Primality Tests, utility function such as is_prime
+    and next_prime
+ * Miscellaneous
+  - Root finding over Z
+  - Pseudo-random integers
+  - Signed and Unsigned comparisons
+ * Optimizations
+  - Fast Comba based Multiplier, Squaring and Montgomery routines.
+  - Montgomery, Diminished Radix and Barrett based modular exponentiation.
+  - Karatsuba and Toom-Cook multiplication algorithms.
+  - Many pointer aliasing optimiztions throughout the entire library.
