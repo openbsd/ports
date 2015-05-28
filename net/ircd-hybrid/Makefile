@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/05/15 06:46:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2015/05/28 06:50:17 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,6 +8,7 @@ DISTNAME =	ircd-hybrid-8.2.8
 CATEGORIES =	net
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ircd-hybrid/}
 EXTRACT_SUFX =	.tgz
+REVISION =	0
 
 HOMEPAGE =	http://ircd-hybrid.com/
 

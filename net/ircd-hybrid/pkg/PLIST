@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/05/15 06:46:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/05/28 06:50:17 ajacoutot Exp $
 @conflict bnc-*
+@conflict irc-*
 @conflict ircd-ratbox-*
 @newgroup _ircd-hybrid:616
 @newuser _ircd-hybrid:616:616:daemon:IRC Daemon:/var/empty:/sbin/nologin
