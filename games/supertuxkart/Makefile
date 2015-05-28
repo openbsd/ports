@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/04/30 22:29:49 pascal Exp $
+# $OpenBSD: Makefile,v 1.15 2015/05/28 15:47:47 ajacoutot Exp $
 
 COMMENT =		kart racing game with OSS mascots
 
@@ -6,6 +6,7 @@ V =			0.9
 BASENAME =		supertuxkart-${V}
 DISTNAME =		${BASENAME}-src
 PKGNAME =		${BASENAME}
+REVISION =		0
 
 CATEGORIES =		games
 
