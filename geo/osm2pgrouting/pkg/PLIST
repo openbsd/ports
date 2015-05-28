@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/28 19:29:09 bcallah Exp $
+@bin bin/osm2pgrouting
+share/osm2pgrouting/
+share/osm2pgrouting/COPYING
+share/osm2pgrouting/Readme.md
+share/osm2pgrouting/mapconfig.xml
+share/osm2pgrouting/mapconfig_for_cars.xml

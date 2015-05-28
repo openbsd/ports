@@ -1,0 +1,27 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2015/05/28 19:29:09 bcallah Exp $
+--- CMakeLists.txt.orig	Thu May 14 14:32:43 2015
++++ CMakeLists.txt	Thu May 14 14:33:14 2015
+@@ -2,7 +2,7 @@ PROJECT(osm2pgrouting)
+ CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+ 
+ set (CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
+-set (SHARE_DIR "/usr/share/osm2pgrouting")
++set (SHARE_DIR "share")
+ 
+ FIND_PACKAGE(PostgreSQL REQUIRED)
+ FIND_PACKAGE(EXPAT REQUIRED)
+@@ -19,7 +19,7 @@ ADD_EXECUTABLE(osm2pgrouting ${SRC})
+ TARGET_LINK_LIBRARIES(osm2pgrouting ${PostgreSQL_LIBRARIES} ${EXPAT_LIBRARIES})
+ 
+ INSTALL(TARGETS osm2pgrouting
+-  RUNTIME DESTINATION "/usr/share/bin"
++  RUNTIME DESTINATION "bin"
+ )
+ 
+ INSTALL(FILES
+@@ -27,4 +27,4 @@ INSTALL(FILES
+     "${CMAKE_SOURCE_DIR}/Readme.md"
+     "${CMAKE_SOURCE_DIR}/mapconfig.xml"
+     "${CMAKE_SOURCE_DIR}/mapconfig_for_cars.xml"
+-    DESTINATION "${SHARE_DIR}")
++    DESTINATION "${SHARE_DIR}/osm2pgrouting")
