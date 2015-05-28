@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_NSAnimation_m,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38569
+
+--- Source/NSAnimation.m.orig	Fri May 22 08:43:30 2015
++++ Source/NSAnimation.m	Fri May 22 08:44:25 2015
+@@ -797,7 +797,7 @@ nsanimation_progressMarkSorter(NSAnimationProgress fir
+         [delegate methodForSelector: @selector (animationShouldStart:)]
+         : NULL;
+       NSDebugMLLog(@"NSAnimationDelegate",
+-                   @"Delegation methods : %x %x %x %x %x",
++                   @"Delegation methods : %p %p %p %p %p",
+                    _delegate_animationDidReachProgressMark,
+                    _delegate_animationValueForProgress,
+                    _delegate_animationDidEnd,

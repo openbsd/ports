@@ -1,0 +1,18 @@
+$OpenBSD: patch-Source_NSPrintPanel_m,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38569
+
+--- Source/NSPrintPanel.m.orig	Fri May 22 09:14:22 2015
++++ Source/NSPrintPanel.m	Fri May 22 09:16:28 2015
+@@ -462,9 +462,9 @@ static NSPrintPanel *shared_instance = nil;
+   else
+     {
+       NSString *str;
+-      str = [NSString stringWithFormat: @"%d", _pages.location];
++      str = [NSString stringWithFormat: @"%lu", (unsigned long) _pages.location];
+       [[fromRangeForm cellAtIndex: 0] setStringValue: str];
+-      str = [NSString stringWithFormat: @"%d", NSMaxRange(_pages)-1];
++      str = [NSString stringWithFormat: @"%lu", (unsigned long) NSMaxRange(_pages)-1];
+       [[toRangeForm cellAtIndex: 0] setStringValue: str];
+     }
+ }

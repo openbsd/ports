@@ -1,0 +1,17 @@
+$OpenBSD: patch-Source_NSCachedImageRep_m,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38569
+
+--- Source/NSCachedImageRep.m.orig	Fri May 22 08:49:07 2015
++++ Source/NSCachedImageRep.m	Fri May 22 08:54:48 2015
+@@ -93,8 +93,8 @@
+       pixelsWide <= 0 || pixelsHigh <= 0)
+     {
+       [NSException raise: NSInvalidArgumentException
+-		  format: @"NSCachedImageRep created with size %@ pixelsWide %d pixelsHigh %d",
+-		   NSStringFromSize(aSize), pixelsWide, pixelsHigh];
++		  format: @"NSCachedImageRep created with size %@ pixelsWide %li pixelsHigh %li",
++		   NSStringFromSize(aSize), (long int) pixelsWide, (long int) pixelsHigh];
+     }
+ 
+   // FIXME: Only create new window when separate is YES

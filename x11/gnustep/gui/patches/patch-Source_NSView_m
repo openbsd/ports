@@ -1,0 +1,96 @@
+$OpenBSD: patch-Source_NSView_m,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38567
+
+--- Source/NSView.m.orig	Fri May 22 09:25:21 2015
++++ Source/NSView.m	Fri May 22 09:27:21 2015
+@@ -595,12 +595,12 @@ GSSetDragTypes(NSView* obj, NSArray *types)
+ 
+   if (frameRect.size.width < 0)
+     {
+-      NSWarnMLog(@"given negative width", 0);
++      NSWarnMLog(@"given negative width");
+       frameRect.size.width = 0;
+     }
+   if (frameRect.size.height < 0)
+     {
+-      NSWarnMLog(@"given negative height", 0);
++      NSWarnMLog(@"given negative height");
+       frameRect.size.height = 0;
+     }
+   _frame = frameRect;			// Set frame rectangle
+@@ -1178,12 +1178,12 @@ static NSSize _computeScale(NSSize fs, NSSize bs)
+ 
+   if (frameRect.size.width < 0)
+     {
+-      NSWarnMLog(@"given negative width", 0);
++      NSWarnMLog(@"given negative width");
+       frameRect.size.width = 0;
+     }
+   if (frameRect.size.height < 0)
+     {
+-      NSWarnMLog(@"given negative height", 0);
++      NSWarnMLog(@"given negative height");
+       frameRect.size.height = 0;
+     }
+ 
+@@ -1259,12 +1259,12 @@ static NSSize _computeScale(NSSize fs, NSSize bs)
+   NSRect newFrame = _frame;
+   if (newSize.width < 0)
+     {
+-      NSWarnMLog(@"given negative width", 0);
++      NSWarnMLog(@"given negative width");
+       newSize.width = 0;
+     }
+   if (newSize.height < 0)
+     {
+-      NSWarnMLog(@"given negative height", 0);
++      NSWarnMLog(@"given negative height");
+       newSize.height = 0;
+     }
+   if (NSEqualSizes(_frame.size, newSize) == NO)
+@@ -1385,12 +1385,12 @@ static NSSize _computeScale(NSSize fs, NSSize bs)
+   NSDebugLLog(@"NSView", @"setBounds %@", NSStringFromRect(aRect));
+   if (aRect.size.width < 0)
+     {
+-      NSWarnMLog(@"given negative width", 0);
++      NSWarnMLog(@"given negative width");
+       aRect.size.width = 0;
+     }
+   if (aRect.size.height < 0)
+     {
+-      NSWarnMLog(@"given negative height", 0);
++      NSWarnMLog(@"given negative height");
+       aRect.size.height = 0;
+     }
+ 
+@@ -1479,12 +1479,12 @@ static NSSize _computeScale(NSSize fs, NSSize bs)
+ 
+   if (newSize.width < 0)
+     {
+-      NSWarnMLog(@"given negative width", 0);
++      NSWarnMLog(@"given negative width");
+       newSize.width = 0;
+     }
+   if (newSize.height < 0)
+     {
+-      NSWarnMLog(@"given negative height", 0);
++      NSWarnMLog(@"given negative height");
+       newSize.height = 0;
+     }
+ 
+@@ -1570,12 +1570,12 @@ static NSSize _computeScale(NSSize fs, NSSize bs)
+     {
+       if (newSize.width < 0)
+         {
+-          NSWarnMLog(@"given negative width", 0);
++          NSWarnMLog(@"given negative width");
+           newSize.width = 0;
+         }
+       if (newSize.height < 0)
+         {
+-          NSWarnMLog(@"given negative height", 0);
++          NSWarnMLog(@"given negative height");
+           newSize.height = 0;
+         }
+ 

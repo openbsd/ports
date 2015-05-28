@@ -1,0 +1,24 @@
+$OpenBSD: patch-Source_NSToolbarItem_m,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38569
+
+--- Source/NSToolbarItem.m.orig	Fri May 22 09:23:58 2015
++++ Source/NSToolbarItem.m	Fri May 22 09:25:09 2015
+@@ -287,7 +287,7 @@ NSString *GSMovableToolbarItemPboardType = @"GSMovable
+           index = [toolbar _indexOfItem: _toolbarItem];
+         }
+ 	  [GSToolbarView setDraggedItemIndex:index];
+-      [pboard setString: [NSString stringWithFormat:@"%d", index] 
++      [pboard setString: [NSString stringWithFormat:@"%ld", (long) index] 
+               forType: GSMovableToolbarItemPboardType];
+           
+       [self dragImage: image 
+@@ -777,7 +777,7 @@ NSString *GSMovableToolbarItemPboardType = @"GSMovable
+           index = [toolbar _indexOfItem: _toolbarItem];
+         }
+ 	  [GSToolbarView setDraggedItemIndex:index];
+-      [pboard setString: [NSString stringWithFormat:@"%d", index] 
++      [pboard setString: [NSString stringWithFormat:@"%ld", (long) index] 
+               forType: GSMovableToolbarItemPboardType];
+       
+       [self dragImage: image 

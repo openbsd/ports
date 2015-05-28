@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_GSDisplayServer_m,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38569
+
+--- Source/GSDisplayServer.m.orig	Fri May 22 09:31:36 2015
++++ Source/GSDisplayServer.m	Fri May 22 09:32:18 2015
+@@ -1112,7 +1112,7 @@ GSCurrentServer(void)
+ 	{
+ 	  NSEvent *event = events[i];
+ 
+-          NSLog(@"index %d %@", i, event);
++          NSLog(@"index %lu %@", (unsigned long) i, event);
+         }
+     }
+   else

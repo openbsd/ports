@@ -1,0 +1,36 @@
+$OpenBSD: patch-Source_NSTextContainer_m,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38567
+
+--- Source/NSTextContainer.m.orig	Fri May 22 09:20:04 2015
++++ Source/NSTextContainer.m	Fri May 22 09:23:44 2015
+@@ -96,12 +96,12 @@ use bounds rectangle instead of frame? */
+   NSDebugLLog(@"NSText", @"NSTextContainer initWithContainerSize");
+   if (aSize.width < 0)
+     {
+-      NSWarnMLog(@"given negative width", 0);
++      NSWarnMLog(@"given negative width");
+       aSize.width = 0;
+     }
+   if (aSize.height < 0)
+     {
+-      NSWarnMLog(@"given negative height", 0);
++      NSWarnMLog(@"given negative height");
+       aSize.height = 0;
+     }
+   _layoutManager = nil;
+@@ -246,12 +246,12 @@ framework intact.
+ 
+   if (aSize.width < 0)
+     {
+-      NSWarnMLog(@"given negative width", 0);
++      NSWarnMLog(@"given negative width");
+       aSize.width = 0;
+     }
+   if (aSize.height < 0)
+     {
+-      NSWarnMLog(@"given negative height", 0);
++      NSWarnMLog(@"given negative height");
+       aSize.height = 0;
+     }
+ 

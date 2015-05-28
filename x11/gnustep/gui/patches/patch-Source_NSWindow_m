@@ -1,0 +1,47 @@
+$OpenBSD: patch-Source_NSWindow_m,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38572
+
+--- Source/NSWindow.m.orig	Fri Dec 26 08:59:29 2014
++++ Source/NSWindow.m	Sun May 24 19:06:15 2015
+@@ -889,8 +889,8 @@ many times.
+ 
+ - (NSString*) description
+ {
+-  return [[super description] stringByAppendingFormat: @"Number: %d Title: %@",
+-    [self windowNumber], [self title]];
++  return [[super description] stringByAppendingFormat: @"Number: %ld Title: %@",
++    (long) [self windowNumber], [self title]];
+ }
+ 
+ - (void) _startBackendWindow
+@@ -2066,10 +2066,10 @@ titleWithRepresentedFilename(NSString *representedFile
+     }
+ 
+   // Find the biggest difference
+-  maxDiff = abs(newFrame.origin.x - _frame.origin.x);
+-  maxDiff = MAX(maxDiff, abs(newFrame.origin.y - _frame.origin.y));
+-  maxDiff = MAX(maxDiff, abs(newFrame.size.width - _frame.size.width));
+-  maxDiff = MAX(maxDiff, abs(newFrame.size.height - _frame.size.height));
++  maxDiff = fabs(newFrame.origin.x - _frame.origin.x);
++  maxDiff = MAX(maxDiff, fabs(newFrame.origin.y - _frame.origin.y));
++  maxDiff = MAX(maxDiff, fabs(newFrame.size.width - _frame.size.width));
++  maxDiff = MAX(maxDiff, fabs(newFrame.size.height - _frame.size.height));
+ 
+   return (maxDiff * resizeTime) / 150;
+ }
+@@ -5115,10 +5115,10 @@ current key view.<br />
+   maxRect = [self constrainFrameRect: maxRect toScreen: [self screen]];
+ 
+   // Compare the new frame with the current one
+-  if ((abs(NSMaxX(maxRect) - NSMaxX(_frame)) < DIST)
+-    && (abs(NSMaxY(maxRect) - NSMaxY(_frame)) < DIST)
+-    && (abs(NSMinX(maxRect) - NSMinX(_frame)) < DIST)
+-    && (abs(NSMinY(maxRect) - NSMinY(_frame)) < DIST))
++  if ((fabs(NSMaxX(maxRect) - NSMaxX(_frame)) < DIST)
++    && (fabs(NSMaxY(maxRect) - NSMaxY(_frame)) < DIST)
++    && (fabs(NSMinX(maxRect) - NSMinX(_frame)) < DIST)
++    && (fabs(NSMinY(maxRect) - NSMinY(_frame)) < DIST))
+     {
+       // Already in zoomed mode, reset user frame, if stored
+       if (_autosaveName != nil)

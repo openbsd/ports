@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_NSMenu_m,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38568
+
+--- Source/NSMenu.m.orig	Fri May 22 08:47:47 2015
++++ Source/NSMenu.m	Fri May 22 08:48:21 2015
+@@ -894,7 +894,7 @@ static BOOL menuBarVisible = YES;
+   return nil;
+ }
+ 
+-- (id <NSMenuItem>) itemAtIndex: (NSInteger)index
++- (NSMenuItem *) itemAtIndex: (NSInteger)index
+ {
+   if (index >= [_items count] || index < 0)
+     [NSException  raise: NSRangeException

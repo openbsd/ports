@@ -1,0 +1,42 @@
+$OpenBSD: patch-Source_NSTextBlock_m,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38569
+
+--- Source/NSTextBlock.m.orig	Fri May 22 09:17:53 2015
++++ Source/NSTextBlock.m	Fri May 22 09:19:54 2015
+@@ -72,7 +72,7 @@
+ {
+   if (edge >= sizeof(_borderColorForEdge) / sizeof(_borderColorForEdge[0]))
+     [NSException raise: NSInvalidArgumentException
+-                 format: @"invalid edge %d", edge];
++                 format: @"invalid edge %lu", (unsigned long) edge];
+   ASSIGN(_borderColorForEdge[edge], color);
+ }
+ 
+@@ -167,7 +167,7 @@
+ 		 format: @"invalid layer %d", layer];
+   if (edge >= sizeof(_width[0]) / sizeof(_width[0][0]))
+     [NSException raise: NSInvalidArgumentException
+-		 format: @"invalid edge %d", edge];
++		 format: @"invalid edge %lu", (unsigned long) edge];
+   return _width[layer][edge];
+ }
+ 
+@@ -179,7 +179,7 @@
+ 		 format: @"invalid layer %d", layer];
+   if (edge >= sizeof(_width[0]) / sizeof(_width[0][0]))
+     [NSException raise: NSInvalidArgumentException
+-		 format: @"invalid edge %d", edge];
++		 format: @"invalid edge %lu", (unsigned long) edge];
+   return _widthType[layer][edge];
+ }
+ 
+@@ -193,7 +193,7 @@
+ 		 format: @"invalid layer %d", layer];
+   if (edge >= sizeof(_width[0]) / sizeof(_width[0][0]))
+     [NSException raise: NSInvalidArgumentException
+-		 format: @"invalid edge %d", edge];
++		 format: @"invalid edge %lu", (unsigned long) edge];
+   _width[layer][edge] = val;
+   _widthType[layer][edge] = type;
+ }

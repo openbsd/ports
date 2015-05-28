@@ -1,0 +1,29 @@
+$OpenBSD: patch-TextConverters_RTF_RTFConsumer_m,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38570
+
+--- TextConverters/RTF/RTFConsumer.m.orig	Fri May 22 09:37:14 2015
++++ TextConverters/RTF/RTFConsumer.m	Fri May 22 09:38:13 2015
+@@ -941,8 +941,8 @@ void GSRTFregisterFont (void *ctxt, const char *fontNa
+   if (!fontName || !*fontName)
+     {	
+       [NSException raise: NSInvalidArgumentException 
+-		   format: @"Error in RTF (font omitted?), position:%d",
+-		   TEXTPOSITION];
++		   format: @"Error in RTF (font omitted?), position:%lu",
++		   (unsigned long) TEXTPOSITION];
+     }
+   // exclude trailing ';' from fontName
+   if (';' == fontName[strlen(fontName)-1])
+@@ -967,9 +967,9 @@ void GSRTFfontNumber (void *ctxt, int fontNumber)
+     {
+       /* we're about to set an unknown font */
+       [NSException raise: NSInvalidArgumentException 
+-		   format: @"Error in RTF (referring to undefined font \\f%d), position:%d",
++		   format: @"Error in RTF (referring to undefined font \\f%d), position:%lu",
+ 		   fontNumber,
+-		   TEXTPOSITION];
++		   (unsigned long) TEXTPOSITION];
+     } 
+   else 
+     {

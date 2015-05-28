@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_NSGradient_m,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38572
+
+--- Source/NSGradient.m.orig	Fri May 22 09:07:07 2015
++++ Source/NSGradient.m	Fri May 22 09:09:51 2015
+@@ -334,7 +334,7 @@ relativeCenterPosition: (NSPoint)relativeCenterPoint
+       startPoint = NSMakePoint(NSMinX(rect), NSMaxY(rect));
+     }
+   rad = PI * angle / 180;
+-  length = abs(NSWidth(rect) * cos(rad) + NSHeight(rect) * sin(rad));
++  length = fabs(NSWidth(rect) * cos(rad) + NSHeight(rect) * sin(rad));
+   endPoint = NSMakePoint(startPoint.x + length * cos(rad), 
+                          startPoint.y + length * sin(rad));
+ 

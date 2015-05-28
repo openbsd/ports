@@ -1,0 +1,24 @@
+$OpenBSD: patch-Source_NSSplitView_m,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38569
+
+--- Source/NSSplitView.m.orig	Wed Sep 18 01:19:12 2013
++++ Source/NSSplitView.m	Sun May 24 19:03:32 2015
+@@ -150,7 +150,7 @@ static NSNotificationCenter *nc = nil;
+                 {
+                   proportion = (NSWidth(frames[i]))/oldTotal;              
+                 }
+-              key = [NSString stringWithFormat: @"%u", i];
++              key = [NSString stringWithFormat: @"%lu", (unsigned long) i];
+               [config setObject: [NSNumber numberWithDouble: proportion]
+                          forKey: key];
+             }
+@@ -829,7 +829,7 @@ static NSNotificationCenter *nc = nil;
+               NSNumber	*proportion;
+ 	      NSString	*key;
+ 
+-	      key = [NSString stringWithFormat: @"%u", i];
++	      key = [NSString stringWithFormat: @"%lu", (unsigned long) i];
+               proportion = [config objectForKey: key];
+               if (proportion == nil)
+                 {

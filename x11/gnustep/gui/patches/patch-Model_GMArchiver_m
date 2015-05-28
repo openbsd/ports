@@ -1,0 +1,24 @@
+$OpenBSD: patch-Model_GMArchiver_m,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38569
+
+--- Model/GMArchiver.m.orig	Fri May 22 09:35:12 2015
++++ Model/GMArchiver.m	Fri May 22 09:37:04 2015
+@@ -475,7 +475,7 @@
+ - (void) encodeShort: (short)value withName: (NSString*)name
+ {
+   if (!findingConditionals && name) {
+-    id valueString = [NSString stringWithFormat: @"%s", value];
++    id valueString = [NSString stringWithFormat: @"%hd", value];
+ 
+     [lastObjectRepresentation setObject: valueString forKey: name];
+   }
+@@ -511,7 +511,7 @@
+ - (void) encodeLong: (long)value withName: (NSString*)name
+ {
+   if (!findingConditionals && name) {
+-    id valueString = [NSString stringWithFormat: @"%l", value];
++    id valueString = [NSString stringWithFormat: @"%ld", value];
+ 
+     [lastObjectRepresentation setObject: valueString forKey: name];
+   }

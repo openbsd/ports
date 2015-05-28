@@ -1,0 +1,51 @@
+$OpenBSD: patch-Source_GSXibLoader_m,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38569
+
+--- Source/GSXibLoader.m.orig	Fri May 22 09:32:45 2015
++++ Source/GSXibLoader.m	Fri May 22 09:34:57 2015
+@@ -410,7 +410,7 @@
+                               __PRETTY_FUNCTION__,
+                               NSStringFromClass([self class])];
+           [NSException raise: NSInvalidArgumentException
+-                      format: format];
++                      format: @"%@", format];
+         }
+       
+       // Load the connection ID....
+@@ -433,7 +433,7 @@
+               NSString *format = [NSString stringWithFormat:@"%s:class: %@ - connection ID is missing or zero!",
+                                   __PRETTY_FUNCTION__, NSStringFromClass([self class])];
+               [NSException raise: NSInvalidArgumentException
+-                          format: format];
++                          format: @"%@", format];
+             }
+         }
+       else
+@@ -442,7 +442,7 @@
+                               __PRETTY_FUNCTION__,
+                               NSStringFromClass([self class])];
+           [NSException raise: NSInvalidArgumentException
+-                      format: format];
++                      format: @"%@", format];
+         }
+     }
+   else
+@@ -582,7 +582,7 @@
+                               __PRETTY_FUNCTION__,
+                               NSStringFromClass([self class])];
+           [NSException raise: NSInvalidArgumentException
+-                      format: format];
++                      format: @"%@", format];
+         }
+       
+       if ([coder containsValueForKey: @"object"])
+@@ -632,7 +632,7 @@
+ 
+ - (NSString *) description
+ {
+-  return [NSString stringWithFormat: @"<%@, %@, %@, %d>",
++  return [NSString stringWithFormat: @"<%@, %@, %@, %p>",
+ 		   [self className],
+ 		   object,
+ 		   parent,

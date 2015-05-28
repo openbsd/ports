@@ -1,0 +1,15 @@
+$OpenBSD: patch-Headers_AppKit_NSMenu_h,v 1.1 2015/05/28 18:38:16 sebastia Exp $
+
+upstream svn #38568
+
+--- Headers/AppKit/NSMenu.h.orig	Fri May 22 08:47:10 2015
++++ Headers/AppKit/NSMenu.h	Fri May 22 08:47:35 2015
+@@ -558,7 +558,7 @@
+ 
+ /** Returns an item located at index.
+  */
+-- (id <NSMenuItem>) itemAtIndex: (NSInteger)index;
++- (NSMenuItem *) itemAtIndex: (NSInteger)index;
+ 
+ /** Informs the menu that the specified item has changed.
+  */
