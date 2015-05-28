@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2015/05/18 21:37:39 edd Exp $
+@comment $OpenBSD: PLIST,v 1.27 2015/05/28 15:01:28 edd Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
@@ -226,7 +226,7 @@ bin/latexdiff
 bin/latexdiff-vc
 bin/latexfileversion
 bin/latexindent
-bin/latexmk
+@comment bin/latexmk
 bin/latexpand
 bin/latexrevise
 bin/lily-glyph-commands

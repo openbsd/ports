@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.13 2015/05/18 21:37:39 edd Exp $
+$OpenBSD: README,v 1.14 2015/05/28 15:01:28 edd Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -88,7 +88,7 @@ As far as I know:
 
  * asymptote is in ports: graphics/asymptote
  * TeX Works is editors/texworks
- * latex-mk is print/latex-mk
+ * latexmk is textproc/latexmk
  * textproc/py-pygments is required for the minted package.
  * converters/unix2dos is needed for installfont-tl script
  * x11/tk/${MODTK_VERSION} is needed for epspdftk
