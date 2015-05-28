@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/09 11:28:24 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/28 06:59:14 ajacoutot Exp $
+@conflict gmt-*
 @bin bin/psl
 include/libpsl.h
 lib/libpsl.a

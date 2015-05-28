@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/12 22:26:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/28 06:59:14 ajacoutot Exp $
 
 COMMENT =		public suffix list library
 
 V =			0.7.1
-REVISION =		0
+REVISION =		1
 DISTNAME =		libpsl-$V
 
 SHARED_LIBS +=		psl	0.0	# 2.4

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2008/10/30 16:48:37 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2015/05/28 06:59:14 ajacoutot Exp $
+@conflict libpsl-*
 @pkgpath graphics/gmt
 bin/GMT
 @bin bin/blockmean
