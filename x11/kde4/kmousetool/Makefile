@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/03/27 08:16:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/05/28 10:17:28 pascal Exp $
 
 COMMENT =	KDE mouse clicker for accessibility users
 DISTNAME =	kmousetool-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 WANTLIB =  c m pthread
 WANTLIB += ICE SM X11 Xext Xtst

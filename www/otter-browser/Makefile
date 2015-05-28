@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/05 14:35:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/28 10:17:25 pascal Exp $
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		browser aiming to recreate classic Opera (12.x) UI using Qt5
@@ -26,6 +26,7 @@ V =			0.9.05
 GH_COMMIT =		1ea5df13f908495df4ccccad9d634d997f6fd4c9
 
 DISTNAME =		${GH_PROJECT}-$Vpl0
+REVISION =		0
 
 CATEGORIES =		www
 

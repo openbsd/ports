@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/27 08:41:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/28 10:17:23 pascal Exp $
 
 COMMENT =		traditional top-down car racing game
 
 DISTNAME =		dustrac-1.7.3
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/03/27 08:46:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/28 10:17:23 pascal Exp $
 
 CATEGORIES =	devel
 COMMENT =	IDE creation toolkit for KDE 4
@@ -6,7 +6,7 @@ KDEV_V =	4.6.0
 KDEVPLAT_V =	1.6.0
 DISTNAME =	kdevplatform-${KDEVPLAT_V}
 HOMEPAGE =	http://www.kdevelop.org/
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kdevplatformdebugger		0.0 # 3.0
 SHARED_LIBS +=	kdevplatformdocumentation	0.0 # 3.0

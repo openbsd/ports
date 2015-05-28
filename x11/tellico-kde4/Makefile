@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/02 15:30:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/28 10:17:31 pascal Exp $
 
 COMMENT =	organizer for book/music/video collections for KDE4
 DISTNAME =	tellico-2.3.10
+REVISION =	0
 
 CATEGORIES =	productivity x11
 HOMEPAGE =	http://tellico-project.org/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/04 09:30:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/28 10:17:24 pascal Exp $
 
 COMMENT =		CD/DVD creator
 DISTNAME =		k3b-2.0.2
 CATEGORIES =		multimedia
-REVISION =		2
+REVISION =		3
 
 # bump away from KDE3 version
 SHARED_LIBS =		k3blib		50.0

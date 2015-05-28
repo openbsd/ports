@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/24 19:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/28 10:17:24 pascal Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -13,6 +13,8 @@ DISTNAME =		rustc-${V}-src
 PKGNAME =		rust-${V}
 PKGNAME-main =		rust-${V}
 PKGNAME-doc =		rust-doc-${V}
+REVISION-doc =		0
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -doc
 

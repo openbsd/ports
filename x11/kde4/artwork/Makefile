@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/03/27 08:16:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2015/05/28 10:17:26 pascal Exp $
 
 COMMENT-main =		KDE graphics, styles and screensavers
 COMMENT-emoticons =	KDE emoticons
@@ -12,10 +12,10 @@ PKGNAME-nuvola =	nuvola-icon-theme-${MODKDE4_VERSION}
 PKG_ARCH-emoticons =	*
 PKG_ARCH-mono =		*
 PKG_ARCH-nuvola =	*
-REVISION-emoticons =	0
-REVISION-main =		0
-REVISION-mono =		0
-REVISION-nuvola =	0
+REVISION-emoticons =	1
+REVISION-main =		1
+REVISION-mono =		1
+REVISION-nuvola =	1
 
 PKGSPEC-main =		kdeartwork-${MODKDE4_SPEC}
 

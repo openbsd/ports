@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/07/09 20:03:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2015/05/28 10:17:31 pascal Exp $
 
 COMMENT =	KDE 4 bindings for Python
 DISTNAME =	pykde4-${MODKDE4_VERSION}
 PKGNAME =	py-kde-${MODKDE4_VERSION}
+REVISION =	0
 
 MODULES =	lang/python
 

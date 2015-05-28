@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/05/20 13:35:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/05/28 10:17:25 pascal Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.16.3
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 

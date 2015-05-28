@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/27 08:16:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/28 10:17:26 pascal Exp $
 
 COMMENT =	language pronunciation improver
 DISTNAME =	artikulate-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	education
 

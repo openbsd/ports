@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/10/22 13:00:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2015/05/28 10:17:25 pascal Exp $
 
 BROKEN-sparc64=	gcj blows during build
 COMMENT=	pdf swiss army knife
 VERSION=	2.02
-REVISION=	1
+REVISION=	2
 DISTNAME=	pdftk-$(VERSION)
 EXTRACT_SUFX=	-src.zip
 CATEGORIES=	textproc

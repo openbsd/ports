@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/03/27 08:46:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2015/05/28 10:17:23 pascal Exp $
 
 SHARED_ONLY=	Yes
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
@@ -8,7 +8,7 @@ V=		13.12
 P=		1
 DISTNAME=	codeblocks_${V}-${P}
 PKGNAME=	codeblocks-${V}
-REVISION=	1
+REVISION=	2
 
 WRKDIST=	${WRKDIR}/codeblocks-${V}
 

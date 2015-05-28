@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/10 09:00:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/28 10:17:31 pascal Exp $
 
 COMMENT =	KDE screen management software
 CATEGORIES =	x11
 VERSION =	1.0.4
 DISTNAME =	libkscreen-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kscreen		0.0
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/03/27 08:16:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2015/05/28 10:17:30 pascal Exp $
 
 COMMENT =	jigsaw puzzle game for KDE
 DISTNAME =	palapeli-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	pala		51.0
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/27 08:16:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/28 10:17:30 pascal Exp $
 
 COMMENT =	hex file editor for KDE
 DISTNAME =	okteta-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel sysutils
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/okteta

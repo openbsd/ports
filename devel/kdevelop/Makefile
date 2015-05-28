@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/27 08:46:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/28 10:17:23 pascal Exp $
 
 CATEGORIES =	devel x11
 COMMENT =	integrated development environment for KDE 4
@@ -6,7 +6,7 @@ KDEV_V =	4.6.0
 KDEVPLAT_V =	1.6.0
 DISTNAME =	kdevelop-${KDEV_V}
 HOMEPAGE =	http://www.kdevelop.org/
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	kdev4cmakecommon	0.0
 SHARED_LIBS +=	kdev4cppduchain		0.0

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/01 16:05:07 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/28 10:17:25 pascal Exp $
 COMMENT =		common classes for finance KDE 4 apps
 CATEGORIES =		productivity x11
 HOMEPAGE =		http://kmymoney2.sourceforge.net
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 DISTNAME =		libalkimia-4.3.2
+REVISION =		0
 
 SHARED_LIBS =		alkimia		0.0 # 4.3
 

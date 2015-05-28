@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/03/27 08:16:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/05/28 10:17:29 pascal Exp $
 
 COMMENT =	Go-like board game for KDE
 DISTNAME =	kreversi-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg

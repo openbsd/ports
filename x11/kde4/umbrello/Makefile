@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/27 08:16:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/28 10:17:31 pascal Exp $
 
 COMMENT =	UML editor for KDE
 DISTNAME =	umbrello-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel productivity
 HOMEPAGE =	http://umbrello.kde.org/

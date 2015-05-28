@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/09 20:03:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/28 10:17:26 pascal Exp $
 
 COMMENT =	VCS plugins for KDE Dolphin file manager
 DISTNAME =	dolphin-plugins-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =  m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

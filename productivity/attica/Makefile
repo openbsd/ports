@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2014/12/10 20:14:16 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2015/05/28 10:17:25 pascal Exp $
 
 CATEGORIES =	productivity
 COMMENT =	collaboration services library for KDE
 DISTNAME =	attica-0.4.2
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://projects.kde.org/projects/frameworks/attica
 

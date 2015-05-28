@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/09 10:52:54 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/28 10:17:24 pascal Exp $
 
 CATEGORIES =	productivity
 COMMENT =	Google contacts/calendar connector for Akonadi
 DISTNAME =	akonadi-googledata-1.2.0
+REVISION =	0
 
 HOMEPAGE =	https://code.google.com/p/libgcal/
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2014/07/11 11:17:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2015/05/28 10:17:25 pascal Exp $
 
 CATEGORIES =	productivity
 COMMENT =	library for accessing Facebook services
 V =		1.0
 DISTNAME =	libkfbapi-$V
-REVISION =	4
+REVISION =	5
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/libkfbapi/$V/src/}

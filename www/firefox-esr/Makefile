@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/21 06:25:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2015/05/28 10:17:25 pascal Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
@@ -8,7 +8,7 @@ MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 PKGNAME =	${MOZILLA_PROJECT}-esr-${MOZILLA_VERSION:S/esr//}
-REVISION =	0
+REVISION =	1
 SO_VERSION =	2.0
 MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul clearkey
 

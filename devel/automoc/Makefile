@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/05 11:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/28 10:17:22 pascal Exp $
 
 CATEGORIES =	devel
 COMMENT =	K Desktop Environment, frontend to moc
 VERSION =	0.9.88
 DISTNAME =	automoc4-${VERSION}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	3
+REVISION =	4
 
 # 2-clause BSDL
 PERMIT_PACKAGE_CDROM =          Yes

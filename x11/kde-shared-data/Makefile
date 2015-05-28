@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/27 08:16:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/05/28 10:17:25 pascal Exp $
 
 COMMENT =	common run-time components for KDE3 and KDE4
 CATEGORIES =	x11 x11/kde3
 PKGNAME =	kde-shared-data-${MODKDE4_VERSION}
 PKG_ARCH =	*
-REVISION =	0
+REVISION =	1
 
 MODULES =		x11/kde4
 MODKDE4_USE =

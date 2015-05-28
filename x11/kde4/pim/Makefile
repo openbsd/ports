@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2015/04/04 09:30:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2015/05/28 10:17:30 pascal Exp $
 
 COMMENT =	KDE personal information management
 DISTNAME =	kdepim-4.14.6
 PKGSPEC =	kdepim-${MODKDE4_SPEC}
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/14.12.3/src/}
 

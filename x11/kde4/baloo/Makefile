@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/04/04 09:30:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/05/28 10:17:26 pascal Exp $
 
 COMMENT =	KDE file search and metadata handling framework
 DISTNAME =	baloo-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	productivity sysutils
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdelibs/baloo

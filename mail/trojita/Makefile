@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/03/27 08:41:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/28 10:17:24 pascal Exp $
 
 COMMENT =		fast Qt IMAP e-mail client
 
 DISTNAME =		trojita-0.5
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		mail x11
 

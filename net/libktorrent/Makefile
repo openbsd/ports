@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2014/07/10 10:24:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2015/05/28 10:17:24 pascal Exp $
 
 CATEGORIES =	net
 COMMENT =	KTorrent engine
 V =		1.3.1
 DISTNAME =	libktorrent-$V
 HOMEPAGE =	http://ktorrent.pwsp.net/
-REVISION =	6
+REVISION =	7
 
 EXTRACT_SUFX =	.tar.bz2
 

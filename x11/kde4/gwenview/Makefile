@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2015/03/27 08:16:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/05/28 10:17:26 pascal Exp $
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${MODKDE4_VERSION}
 PKGSPEC =	gwenview-${MODKDE4_SPEC}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	gwenviewlib               52.0 # 4.7
 

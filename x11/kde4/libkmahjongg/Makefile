@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/07/09 20:03:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2015/05/28 10:17:30 pascal Exp $
 
 COMMENT =	common library for Mah Jongg-based KDE games
 CATEGORIES =	devel
 DISTNAME =	libkmahjongg-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kmahjongglib		50.1 # 4.10
 

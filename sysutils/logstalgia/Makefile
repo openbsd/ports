@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2014/10/22 15:13:45 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.7 2015/05/28 10:17:25 pascal Exp $
 
 COMMENT =	website access log visualization
 
 DISTNAME =	logstalgia-1.0.6
-REVISION =	0
+REVISION =	1
 CATEGORIES =	sysutils graphics
 HOMEPAGE =	https://code.google.com/p/logstalgia/
 

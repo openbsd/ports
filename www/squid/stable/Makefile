@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.24 2015/05/04 11:04:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2015/05/28 10:17:25 pascal Exp $
 
 V=		3.4.13
+REVISION=	0
 PORTROACH=	limit:^3\.4\.*
 
 EXTERNAL_ACL=	LDAP_group SQL_session file_userip time_quota session \

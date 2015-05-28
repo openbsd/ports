@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/09 20:03:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2015/05/28 10:17:31 pascal Exp $
 
 COMMENT =	KDE thumbnail generators for development files
 DISTNAME =	kdesdk-thumbnailers-${MODKDE4_VERSION}
+REVISION =	0
 
 CATEGORIES =	devel
 #HOMEPAGE =	http://kdesdk-thumbnailers.kde.org/

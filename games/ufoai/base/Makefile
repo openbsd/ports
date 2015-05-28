@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/09/29 18:23:15 kirby Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/28 10:17:23 pascal Exp $
 
 COMMENT-main =		squad-based tactical strategy game
 COMMENT-editor = 	UFO:AI map editor
@@ -6,6 +6,8 @@ COMMENT-editor = 	UFO:AI map editor
 DISTNAME =		ufoai-${V}-source
 PKGNAME-main =		${DISTNAME:S/-source//}
 PKGNAME-editor = 	uforadiant-${V}
+REVISION-editor =       0
+REVISION-main =		0
 
 EXTRACT_SUFX =		.tar.bz2
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/16 10:49:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/05/28 10:17:23 pascal Exp $
 
 COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
+REVISION =		0
 
 WANTLIB += GL SDL X11 Xcursor boost_filesystem boost_system c
 WANTLIB += curl enet execinfo gloox icui18n icuuc jpeg m miniupnpc

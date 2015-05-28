@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/04/09 10:34:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/05/28 10:17:24 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -17,6 +17,7 @@ BOOTSTRAP_V =		${V}-1
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
+REVISION =		0
 
 CATEGORIES =		lang
 

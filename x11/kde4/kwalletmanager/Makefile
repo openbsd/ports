@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/04 09:30:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/28 10:17:29 pascal Exp $
 
 COMMENT =	KDE password management
 DISTNAME =	kwalletmanager-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

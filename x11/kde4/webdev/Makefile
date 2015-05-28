@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2015/03/27 08:16:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/05/28 10:17:31 pascal Exp $
 
 COMMENT =	web development tools for KDE
 DISTNAME =	kdewebdev-${MODKDE4_VERSION}
 PKGSPEC =	kdewebdev-${MODKDE4_SPEC}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	klinkstatuscommon	51.0
 SHARED_LIBS +=	kommandercore		51.0

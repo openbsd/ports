@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2014/08/12 00:15:43 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/28 10:17:24 pascal Exp $
 
 CATEGORIES =	graphics
 COMMENT =	KDE image effects
 DISTNAME =	qimageblitz-0.0.6
-REVISION =	1
+REVISION =	2
 
 EXTRACT_SUFX =	.tar.bz2
 

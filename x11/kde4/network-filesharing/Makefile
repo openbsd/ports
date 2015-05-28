@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/12 18:17:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/28 10:17:30 pascal Exp $
 
 COMMENT =	KDE network file sharing components
 DISTNAME =	kdenetwork-filesharing-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/kdenetwork-filesharing

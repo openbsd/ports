@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/01 21:09:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2015/05/28 10:17:26 pascal Exp $
 
 COMMENT =	KDE mobipocket plugins for Strigi, Okular and thumbnails
 DISTNAME =	kdegraphics-mobipocket-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	qmobipocket	0.0
 

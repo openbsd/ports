@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/03/27 08:16:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2015/05/28 10:17:28 pascal Exp $
 
 COMMENT =	Japanese reference tool for KDE
 DISTNAME =	kiten-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kiten			50.0 # 4.7
 

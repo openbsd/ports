@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/01 21:09:41 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/28 10:17:26 pascal Exp $
 
 COMMENT =	KDE Activity rooms management
 MODKDE4_VERSION =	4.13.3
 DISTNAME =	kactivities-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kactivities		51.0 # 6.0
 SHARED_LIBS +=	kactivities-models	51.0

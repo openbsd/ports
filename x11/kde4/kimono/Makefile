@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/01 21:09:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2015/05/28 10:17:28 pascal Exp $
 
 CATEGORIES =	devel
 COMMENT =	KDE bindings for .NET
 DISTNAME =	kimono-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kimono			52.0 # 2.0
 SHARED_LIBS +=	akonadi-sharp		52.0

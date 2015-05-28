@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/12 20:53:19 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/28 10:17:32 pascal Exp $
 
 CATEGORIES =	x11 sysutils
 COMMENT =	quake-style terminal emulator for KDE 4
 HOMEPAGE =	http://yakuake.kde.org/
 VERSION =	2.9.9
 DISTNAME =	yakuake-${VERSION}
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/yakuake/${VERSION}/src/}
 

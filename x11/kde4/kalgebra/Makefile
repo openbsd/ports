@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/03/27 08:16:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2015/05/28 10:17:27 pascal Exp $
 
 COMMENT =	scientific calculator for KDE
 DISTNAME =	kalgebra-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 WANTLIB =  c m pthread
 WANTLIB += GL GLU
