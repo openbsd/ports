@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/28 10:17:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2015/05/28 10:29:44 ajacoutot Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -14,7 +14,7 @@ PKGNAME =		rust-${V}
 PKGNAME-main =		rust-${V}
 PKGNAME-doc =		rust-doc-${V}
 REVISION-doc =		0
-REVISION-main =		0
+REVISION-main =		1
 
 MULTI_PACKAGES =	-main -doc
 
@@ -61,7 +61,7 @@ MODGCC4_LANGS =		c++
 MODGCC4_ARCHS =		*
 
 # need to be keep in sync
-LIBESTDC_VERSION =	16.0
+LIBESTDC_VERSION =	17.0
 
 # note: VERBOSE permit to unhide Makefile processing
 # 	RUSTFLAGS extra flags passed to rust
