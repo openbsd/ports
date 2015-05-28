@@ -1,0 +1,12 @@
+$OpenBSD: patch-gdb_doc_Makefile_in,v 1.1.1.1 2015/05/28 23:28:26 bmercer Exp $
+--- gdb/doc/Makefile.in.orig	Thu Feb 19 06:58:07 2015
++++ gdb/doc/Makefile.in	Fri May 15 16:33:03 2015
+@@ -84,7 +84,7 @@ SET_TEXINPUTS = \
+    TEXINPUTS=${TEXIDIR}:.:$(srcdir):$(READLINE_DIR):$(GDBMI_DIR):$$TEXINPUTS
+ 
+ # Files which should be generated via 'info' and installed by 'install-info'
+-INFO_DEPS = gdb.info stabs.info annotate.info
++INFO_DEPS = 
+ 
+ # Files which should be generated via 'pdf' and installed by 'install-pdf'
+ PDFFILES = gdb.pdf stabs.pdf refcard.pdf annotate.pdf

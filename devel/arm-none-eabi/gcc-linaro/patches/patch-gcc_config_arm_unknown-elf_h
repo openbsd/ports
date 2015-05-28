@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_config_arm_unknown-elf_h,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
+--- gcc/config/arm/unknown-elf.h.orig	Thu Jan  2 17:23:26 2014
++++ gcc/config/arm/unknown-elf.h	Wed May 13 16:31:55 2015
+@@ -45,7 +45,7 @@
+ #define SUBTARGET_CPP_SPEC  "-D__USES_INITFINI__"
+ 
+ #undef  PREFERRED_DEBUGGING_TYPE
+-#define PREFERRED_DEBUGGING_TYPE DWARF2_DEBUG
++#define PREFERRED_DEBUGGING_TYPE DBX_DEBUG
+ 
+ /* Return a nonzero value if DECL has a section attribute.  */
+ #define IN_NAMED_SECTION_P(DECL)					\

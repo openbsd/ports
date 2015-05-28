@@ -1,0 +1,4 @@
+This is the GNU debugger, configured for the arm-none-eabi target.
+
+For more information, type "help" from within GDB, or consult the
+GDB manual (available as on-line info or a printed manual).

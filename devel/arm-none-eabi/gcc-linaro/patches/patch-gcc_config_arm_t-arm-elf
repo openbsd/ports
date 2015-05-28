@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_config_arm_t-arm-elf,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
+--- gcc/config/arm/t-arm-elf.orig	Thu Jan  2 17:23:26 2014
++++ gcc/config/arm/t-arm-elf	Wed May 13 16:31:55 2015
+@@ -56,8 +56,8 @@ MULTILIB_EXCEPTIONS    += *mthumb/*mfloat-abi=hard*
+ # MULTILIB_DIRNAMES   += fpu soft
+ # MULTILIB_EXCEPTIONS += *mthumb/*mfloat-abi=hard*
+ # 
+-# MULTILIB_OPTIONS    += mno-thumb-interwork/mthumb-interwork
+-# MULTILIB_DIRNAMES   += normal interwork
++MULTILIB_OPTIONS    += mno-thumb-interwork/mthumb-interwork
++MULTILIB_DIRNAMES   += normal interwork
+ # 
+ # MULTILIB_OPTIONS    += fno-leading-underscore/fleading-underscore
+ # MULTILIB_DIRNAMES   += elf under

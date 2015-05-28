@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_config_arm_none_eabi_h,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
+--- gcc/config/arm/elf.h.orig	Thu Jun 12 05:05:08 2014
++++ gcc/config/arm/elf.h	Wed May 13 16:31:55 2015
+@@ -50,7 +50,7 @@
+ 
+ #ifndef SUBTARGET_ASM_FLOAT_SPEC
+ #define SUBTARGET_ASM_FLOAT_SPEC "\
+-%{mapcs-float:-mfloat}"
++%{mapcs-float:-mfloat} %{!mhard-float:-mfpu=softfpa} %{mhard-float:-mfpu=fpa}"
+ #endif
+ 
+ #undef SUBSUBTARGET_EXTRA_SPECS

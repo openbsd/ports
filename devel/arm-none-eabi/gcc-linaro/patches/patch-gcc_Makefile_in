@@ -1,0 +1,18 @@
+$OpenBSD: patch-gcc_Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
+--- gcc/Makefile.in.orig	Tue Jan 13 03:10:04 2015
++++ gcc/Makefile.in	Wed May 13 16:31:55 2015
+@@ -3233,13 +3233,7 @@ install-driver: installdirs xgcc$(exeext)
+ # Install the info files.
+ # $(INSTALL_DATA) might be a relative pathname, so we can't cd into srcdir
+ # to do the install.
+-install-info:: doc installdirs \
+-	$(DESTDIR)$(infodir)/cpp.info \
+-	$(DESTDIR)$(infodir)/gcc.info \
+-	$(DESTDIR)$(infodir)/cppinternals.info \
+-	$(DESTDIR)$(infodir)/gccinstall.info \
+-	$(DESTDIR)$(infodir)/gccint.info \
+-	lang.install-info
++install-info::
+ 
+ $(DESTDIR)$(infodir)/%.info: doc/%.info installdirs
+ 	rm -f $@

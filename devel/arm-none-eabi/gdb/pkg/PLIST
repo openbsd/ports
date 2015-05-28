@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/28 23:28:26 bmercer Exp $
+@bin bin/arm-none-eabi-gdb
+@bin bin/arm-none-eabi-run
+include/gdb/
+include/gdb/jit-reader.h
+@comment lib/charset.alias
+lib/libarm-none-eabi-sim.a
+@man man/man1/arm-none-eabi-gdb.1
+@man man/man1/arm-none-eabi-gdbserver.1
+@man man/man1/arm-none-eabi-run.1
+@man man/man5/arm-none-eabi-gdbinit.5
+share/gdb/
+@comment share/gdb/syscalls/
+@comment share/gdb/syscalls/amd64-linux.xml
+@comment share/gdb/syscalls/arm-linux.xml
+@comment share/gdb/syscalls/gdb-syscalls.dtd
+@comment share/gdb/syscalls/i386-linux.xml
+@comment share/gdb/syscalls/mips-n32-linux.xml
+@comment share/gdb/syscalls/mips-n64-linux.xml
+@comment share/gdb/syscalls/mips-o32-linux.xml
+@comment share/gdb/syscalls/ppc-linux.xml
+@comment share/gdb/syscalls/ppc64-linux.xml
+@comment share/gdb/syscalls/s390-linux.xml
+@comment share/gdb/syscalls/s390x-linux.xml
+@comment share/gdb/syscalls/sparc-linux.xml
+@comment share/gdb/syscalls/sparc64-linux.xml
+share/gdb/system-gdbinit/
+share/gdb/system-gdbinit/elinos.py
+share/gdb/system-gdbinit/elinos.pyc
+share/gdb/system-gdbinit/wrs-linux.py
+share/gdb/system-gdbinit/wrs-linux.pyc

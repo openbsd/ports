@@ -1,0 +1,12 @@
+$OpenBSD: patch-gprof_Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
+--- gprof/Makefile.in.orig	Tue Oct 14 03:32:04 2014
++++ gprof/Makefile.in	Thu Apr 30 14:57:08 2015
+@@ -113,7 +113,7 @@ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOO
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+ SOURCES = $(gprof_SOURCES)
+-INFO_DEPS = gprof.info
++INFO_DEPS =
+ am__TEXINFO_TEX_DIR = $(srcdir)/../texinfo
+ DVIS = gprof.dvi
+ PDFS = gprof.pdf

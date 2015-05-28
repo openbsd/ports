@@ -1,0 +1,12 @@
+$OpenBSD: patch-gas_doc_Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
+--- gas/doc/Makefile.in.orig	Tue Oct 14 03:32:03 2014
++++ gas/doc/Makefile.in	Thu Apr 30 14:47:49 2015
+@@ -82,7 +82,7 @@ CONFIG_CLEAN_VPATH_FILES =
+ depcomp =
+ am__depfiles_maybe =
+ SOURCES =
+-INFO_DEPS = as.info
++INFO_DEPS =
+ TEXINFO_TEX = $(top_srcdir)/../texinfo/texinfo.tex
+ am__TEXINFO_TEX_DIR = $(top_srcdir)/../texinfo
+ DVIS = as.dvi

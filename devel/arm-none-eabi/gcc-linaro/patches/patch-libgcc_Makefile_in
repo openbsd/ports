@@ -1,0 +1,65 @@
+$OpenBSD: patch-libgcc_Makefile_in,v 1.1.1.1 2015/05/28 23:28:25 bmercer Exp $
+
+Using $(INSTALL_DATA) and chmod generates errors as the operation
+is not permitted. So use plain copy mode and chown/chgrp
+in the post-install target.
+
+--- libgcc/Makefile.in.orig	Wed Jan  8 11:37:08 2014
++++ libgcc/Makefile.in	Wed May 13 16:41:20 2015
+@@ -1023,7 +1023,7 @@ libgcc-extra-parts: $(EXTRA_PARTS)
+ 	parts="$(EXTRA_PARTS)";					\
+ 	for file in $$parts; do					\
+ 	  rm -f $(gcc_objdir)$(MULTISUBDIR)/$$file;		\
+-	  $(INSTALL_DATA) $$file $(gcc_objdir)$(MULTISUBDIR)/;	\
++	  install -c $$file $(gcc_objdir)$(MULTISUBDIR)/;	\
+ 	  case $$file in 					\
+ 	    *.a)						\
+ 	      $(RANLIB) $(gcc_objdir)$(MULTISUBDIR)/$$file ;;	\
+@@ -1053,7 +1053,7 @@ install-unwind_h-forbuild:
+ # internal headers are copied by gcc's install.
+ install-unwind_h:
+ 	$(mkinstalldirs) $(DESTDIR)$(libsubdir)/include
+-	$(INSTALL_DATA) unwind.h $(DESTDIR)$(libsubdir)/include
++	install -c unwind.h $(DESTDIR)$(libsubdir)/include
+ 
+ all: install-unwind_h-forbuild
+ 
+@@ -1075,7 +1075,7 @@ install-libunwind:
+ 
+ 	# NOTE: Maybe this should go into $(inst_libdir), but this
+ 	# is where the old mklibgcc.in put it.
+-	$(INSTALL_DATA) libunwind.a $(DESTDIR)$(inst_slibdir)/
++	install -c libunwind.a $(DESTDIR)$(inst_slibdir)/
+ 	chmod 644 $(DESTDIR)$(inst_slibdir)/libunwind.a
+ 	$(RANLIB) $(DESTDIR)$(inst_slibdir)/libunwind.a
+ 
+@@ -1086,7 +1086,7 @@ install-libunwind:
+ install-shared:
+ 	$(mkinstalldirs) $(DESTDIR)$(inst_libdir)
+ 
+-	$(INSTALL_DATA) libgcc_eh.a $(DESTDIR)$(inst_libdir)/
++	install -c libgcc_eh.a $(DESTDIR)$(inst_libdir)/
+ 	chmod 644 $(DESTDIR)$(inst_libdir)/libgcc_eh.a
+ 	$(RANLIB) $(DESTDIR)$(inst_libdir)/libgcc_eh.a
+ 
+@@ -1097,17 +1097,15 @@ install-shared:
+ install-leaf: $(install-shared) $(install-libunwind)
+ 	$(mkinstalldirs) $(DESTDIR)$(inst_libdir)
+ 
+-	$(INSTALL_DATA) libgcc.a $(DESTDIR)$(inst_libdir)/
+-	chmod 644 $(DESTDIR)$(inst_libdir)/libgcc.a
++	install -c libgcc.a $(DESTDIR)$(inst_libdir)/
+ 	$(RANLIB) $(DESTDIR)$(inst_libdir)/libgcc.a
+-	$(INSTALL_DATA) libgcov.a $(DESTDIR)$(inst_libdir)/
+-	chmod 644 $(DESTDIR)$(inst_libdir)/libgcov.a
++	install -c libgcov.a $(DESTDIR)$(inst_libdir)/
+ 	$(RANLIB) $(DESTDIR)$(inst_libdir)/libgcov.a
+ 
+ 	parts="$(INSTALL_PARTS)";				\
+ 	for file in $$parts; do					\
+ 	  rm -f $(DESTDIR)$(inst_libdir)/$$file;		\
+-	  $(INSTALL_DATA) $$file $(DESTDIR)$(inst_libdir)/;	\
++	  install -c $$file $(DESTDIR)$(inst_libdir)/;	\
+ 	  case $$file in 					\
+ 	    *.a)						\
+ 	      $(RANLIB) $(gcc_objdir)$(MULTISUBDIR)/$$file ;;	\
