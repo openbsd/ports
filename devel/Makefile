@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1341 2015/05/25 22:08:47 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1342 2015/05/28 09:43:04 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
      SUBDIR += ORBit2
      SUBDIR += acpica
+     SUBDIR += adb
      SUBDIR += afl
      SUBDIR += ald
      SUBDIR += alex
