@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lib,v 1.1.1.1 2014/10/25 17:10:14 chrisz Exp $
+@comment $OpenBSD: PLIST-lib,v 1.2 2015/05/28 06:54:46 ajacoutot Exp $
 %%native%%
 lib/opam-lib/
 lib/opam-lib/META
@@ -98,8 +98,6 @@ lib/opam-lib/opamVersion.cmti
 lib/opam-lib/opam_admin_top.cmi
 lib/opam-lib/opam_admin_top.cmti
 share/doc/opam/
-share/doc/opam/CHANGES
-share/doc/opam/README.md
 share/doc/opam/api/
 share/doc/opam/api/OpamAction.html
 share/doc/opam/api/OpamClient.API.CONFIG.html
