@@ -1,0 +1,15 @@
+$OpenBSD: patch-osinfo_osinfo_media_h,v 1.1 2015/05/28 06:05:32 ajacoutot Exp $
+
+../osinfo/osinfo_media.h:68: error: redefinition of typedef 'OsinfoMedia'
+
+--- osinfo/osinfo_media.h.orig	Thu May 28 08:02:06 2015
++++ osinfo/osinfo_media.h	Thu May 28 08:01:41 2015
+@@ -65,8 +65,6 @@ typedef enum {
+ #define OSINFO_IS_MEDIA_CLASS(klass)       (G_TYPE_CHECK_CLASS_TYPE ((klass), OSINFO_TYPE_MEDIA))
+ #define OSINFO_MEDIA_GET_CLASS(obj)        (G_TYPE_INSTANCE_GET_CLASS ((obj), OSINFO_TYPE_MEDIA, OsinfoMediaClass))
+ 
+-typedef struct _OsinfoMedia        OsinfoMedia;
+-
+ typedef struct _OsinfoMediaClass   OsinfoMediaClass;
+ 
+ typedef struct _OsinfoMediaPrivate OsinfoMediaPrivate;
