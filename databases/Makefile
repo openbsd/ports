@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.286 2015/04/05 21:41:52 robert Exp $
+# $OpenBSD: Makefile,v 1.287 2015/05/28 07:06:56 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -125,7 +125,6 @@
      SUBDIR += p5-SQL-ReservedWords
      SUBDIR += p5-SQL-Statement
      SUBDIR += p5-SQL-Translator
-     SUBDIR += p5-Search-Xapian
      SUBDIR += p5-Sort-SQL
      SUBDIR += p5-Tangram
      SUBDIR += p5-Tie-DBI
