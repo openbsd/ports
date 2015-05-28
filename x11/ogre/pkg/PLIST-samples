@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-samples,v 1.5 2014/07/11 21:20:31 pascal Exp $
+@comment $OpenBSD: PLIST-samples,v 1.6 2015/05/28 12:03:57 ajacoutot Exp $
 @bin bin/SampleBrowser
 lib/OGRE/Samples/
 lib/OGRE/Samples/Sample_BSP.so
@@ -1050,7 +1050,6 @@ share/OGRE/docs/ChangeLog.html
 share/OGRE/docs/CodingStandards.html
 share/OGRE/docs/License.html
 share/OGRE/docs/ReadMe.html
-share/OGRE/docs/api/
 share/OGRE/docs/licenses/
 share/OGRE/docs/licenses/bsd.txt
 share/OGRE/docs/licenses/freeimage.txt
