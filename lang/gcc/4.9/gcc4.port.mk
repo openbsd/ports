@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.2 2014/11/12 10:56:59 tobiasu Exp $
+# $OpenBSD: gcc4.port.mk,v 1.3 2015/05/28 08:05:12 pascal Exp $
 
 MODGCC4_ARCHS ?=
 MODGCC4_LANGS ?=
@@ -50,6 +50,10 @@ _MODGCC4_LINKS += eg++ g++ eg++ c++
 .  if ${MODGCC4_LANGS:L:Mfortran}
 BUILD_DEPENDS += lang/gcc/4.9,-f95>=4.9,<4.10
 WANTLIB += gfortran>=3
+# XXX sync with Makefile
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+WANTLIB += quadmath
+.endif
 LIB_DEPENDS += lang/gcc/4.9,-libs>=4.9,<4.10
 _MODGCC4_LINKS += egfortran gfortran
 .  endif
