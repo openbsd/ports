@@ -1,0 +1,21 @@
+$OpenBSD: patch-adb_adb_c,v 1.1.1.1 2015/05/28 09:42:37 ajacoutot Exp $
+--- adb/adb.c.orig	Mon Feb  9 09:10:55 2015
++++ adb/adb.c	Tue May  5 07:56:50 2015
+@@ -1191,7 +1191,7 @@ int launch_server(int server_port)
+         char str_port[30];
+         snprintf(str_port, sizeof(str_port), "%d",  server_port);
+         // child process
+-        int result = execl(path, "adb", "-P", str_port, "fork-server", "server", NULL);
++        int result = execlp(path, "adb", "-P", str_port, "fork-server", "server", NULL);
+         // this should not return
+         fprintf(stderr, "OOPS! execl returned %d, errno: %d\n", result, errno);
+     } else  {
+@@ -1687,6 +1687,8 @@ int handle_host_request(char *service, transport_type 
+ 
+ int main(int argc, char **argv)
+ {
++    init_my_path(argv[0]);
++
+ #if ADB_HOST
+     adb_sysdeps_init();
+     adb_trace_init();

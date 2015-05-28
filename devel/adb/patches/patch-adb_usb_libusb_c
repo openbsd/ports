@@ -1,0 +1,76 @@
+$OpenBSD: patch-adb_usb_libusb_c,v 1.1.1.1 2015/05/28 09:42:37 ajacoutot Exp $
+--- adb/usb_libusb.c.orig	Mon Feb  9 09:10:55 2015
++++ adb/usb_libusb.c	Tue May  5 07:56:50 2015
+@@ -17,11 +17,6 @@
+  * limitations under the License.
+  */
+ 
+-#include <sys/endian.h>
+-#include <sys/ioctl.h>
+-#include <sys/types.h>
+-#include <sys/uio.h>
+-
+ #include <err.h>
+ #include <errno.h>
+ #include <poll.h>
+@@ -37,7 +32,7 @@
+ #define   TRACE_TAG  TRACE_USB
+ #include "adb.h"
+ 
+-static adb_mutex_t usb_lock = ADB_MUTEX_INITIALIZER;
++adb_mutex_t usb_lock = ADB_MUTEX_INITIALIZER;
+ static libusb_context *ctx = NULL;
+ 
+ struct usb_handle
+@@ -246,8 +241,8 @@ void usb_kick(struct usb_handle *h)
+ }
+ 
+ int
+-check_usb_interface(libusb_interface *interface,
+-                    libusb_device_descriptor *desc,
++check_usb_interface(struct libusb_interface const *interface,
++                    struct libusb_device_descriptor const *desc,
+                     struct usb_handle *uh)
+ {    
+     int e;
+@@ -257,7 +252,7 @@ check_usb_interface(libusb_interface *interface,
+         return -1;
+     }
+     
+-    libusb_interface_descriptor *idesc = &interface->altsetting[0];
++    struct libusb_interface_descriptor const *idesc = &interface->altsetting[0];
+     
+     if (idesc->bNumEndpoints != 2) {
+         D("check_usb_interface(): Interface have not 2 endpoints, ignoring\n");
+@@ -265,7 +260,7 @@ check_usb_interface(libusb_interface *interface,
+     }
+ 
+     for (e = 0; e < idesc->bNumEndpoints; e++) {
+-        libusb_endpoint_descriptor *edesc = &idesc->endpoint[e];
++        struct libusb_endpoint_descriptor const *edesc = &idesc->endpoint[e];
+         
+         if (edesc->bmAttributes != LIBUSB_TRANSFER_TYPE_BULK) {
+             D("check_usb_interface(): Endpoint (%u) is not bulk (%u), ignoring\n",
+@@ -304,8 +299,9 @@ check_usb_interface(libusb_interface *interface,
+ }
+ 
+ int
+-check_usb_interfaces(libusb_config_descriptor *config,
+-                     libusb_device_descriptor *desc, struct usb_handle *uh)
++check_usb_interfaces(struct libusb_config_descriptor *config,
++                     struct libusb_device_descriptor *desc,
++                     struct usb_handle *uh)
+ {  
+     int i;
+     
+@@ -382,8 +378,8 @@ check_device(libusb_device *dev) 
+     int found = -1;
+     char serial[256] = {0};
+ 
+-    libusb_device_descriptor desc;
+-    libusb_config_descriptor *config = NULL;
++    struct libusb_device_descriptor desc;
++    struct libusb_config_descriptor *config = NULL;
+     
+     int r = libusb_get_device_descriptor(dev, &desc);
+ 

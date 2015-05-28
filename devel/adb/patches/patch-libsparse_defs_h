@@ -1,0 +1,14 @@
+$OpenBSD: patch-libsparse_defs_h,v 1.1.1.1 2015/05/28 09:42:37 ajacoutot Exp $
+--- libsparse/defs.h.orig	Mon Feb  9 09:10:55 2015
++++ libsparse/defs.h	Tue May  5 07:56:50 2015
+@@ -20,4 +20,10 @@
+ #define __unused        __attribute__((__unused__))
+ #endif
+ 
++#ifdef __OpenBSD__
++typedef off_t off64_t;
++#define lseek64 lseek
++#define ftruncate64 ftruncate
++#endif
++
+ #endif /* _LIBSPARSE_DEFS_H_ */

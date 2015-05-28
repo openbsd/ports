@@ -1,0 +1,12 @@
+$OpenBSD: patch-libsparse_output_file_c,v 1.1.1.1 2015/05/28 09:42:37 ajacoutot Exp $
+--- libsparse/output_file.c.orig	Mon Feb  9 09:10:55 2015
++++ libsparse/output_file.c	Tue May  5 07:56:50 2015
+@@ -41,7 +41,7 @@
+ #define ftruncate64 ftruncate
+ #endif
+ 
+-#if defined(__APPLE__) && defined(__MACH__)
++#if defined(__OpenBSD__) || defined(__APPLE__) && defined(__MACH__)
+ #define lseek64 lseek
+ #define ftruncate64 ftruncate
+ #define mmap64 mmap

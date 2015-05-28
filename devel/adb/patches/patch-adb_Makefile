@@ -1,0 +1,52 @@
+$OpenBSD: patch-adb_Makefile,v 1.1.1.1 2015/05/28 09:42:37 ajacoutot Exp $
+--- adb/Makefile.orig	Thu May 28 11:38:32 2015
++++ adb/Makefile	Thu May 28 11:38:46 2015
+@@ -0,0 +1,48 @@
++SRCS += adb.c
++SRCS += adb_auth_host.c
++SRCS += adb_client.c
++SRCS += commandline.c
++SRCS += console.c
++SRCS += fdevent.c
++SRCS += file_sync_client.c
++SRCS += services.c
++SRCS += sockets.c
++SRCS += transport.c
++SRCS += transport_local.c
++SRCS += transport_usb.c
++SRCS += usb_libusb.c
++SRCS += usb_vendors.c
++SRCS += get_my_path_generic.c
++
++VPATH += ../libcutils
++SRCS += load_file.c
++SRCS += socket_inaddr_any_server.c
++SRCS += socket_local_client.c
++SRCS += socket_local_server.c
++SRCS += socket_loopback_client.c
++SRCS += socket_loopback_server.c
++SRCS += socket_network_client.c
++
++VPATH += ../libzipfile
++SRCS += centraldir.c
++SRCS += zipfile.c
++
++CPPFLAGS += -DADB_HOST=1
++CPPFLAGS += -DHAVE_FORKEXEC=1
++CPPFLAGS += -DHAVE_OFF64_T=1
++CPPFLAGS += -DHAVE_TERMIO_H
++CPPFLAGS += -I.
++CPPFLAGS += -I../include
++CPPFLAGS += $(shell pkg-config --cflags libusb-1.0)
++
++LIBS += -lcrypto -lpthread -lz $(shell pkg-config --libs libusb-1.0)
++
++OBJS= $(SRCS:.c=.o)
++
++all: adb
++
++adb: $(OBJS)
++	$(CC) -o $@ $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) $(OBJS) $(LIBS)
++
++clean:
++	rm -f $(OBJS)
