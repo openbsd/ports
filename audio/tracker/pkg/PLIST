@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/06/30 11:50:51 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/05/28 06:48:06 ajacoutot Exp $
+@conflict meta-tracker-*
 @bin bin/randomize
 @bin bin/tracker
 @info info/tracker.info
