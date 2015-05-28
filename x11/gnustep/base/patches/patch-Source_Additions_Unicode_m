@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_Additions_Unicode_m,v 1.1 2015/05/28 18:35:35 sebastia Exp $
+
+Upstream svn #38553
+
+--- Source/Additions/Unicode.m.orig	Fri May 22 08:22:36 2015
++++ Source/Additions/Unicode.m	Fri May 22 08:23:46 2015
+@@ -396,7 +396,7 @@ EntrySupported(NSStringEncoding enc)
+ 
+   if (entry == 0)
+     {
+-      return NO;
++      return NULL;
+     }
+ #ifdef HAVE_ICONV
+   if (entry->iconv != 0 && entry->supported == 0)

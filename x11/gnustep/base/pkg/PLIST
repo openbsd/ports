@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2015/03/16 12:20:24 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.21 2015/05/28 18:35:35 sebastia Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -808,6 +808,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/PST8PDT
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Apia
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Auckland
+${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Bougainville
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Chatham
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Chuuk
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Easter

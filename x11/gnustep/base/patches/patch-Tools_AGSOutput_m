@@ -1,0 +1,15 @@
+$OpenBSD: patch-Tools_AGSOutput_m,v 1.1 2015/05/28 18:35:35 sebastia Exp $
+
+upstream svn 38553
+
+--- Tools/AGSOutput.m.orig	Fri May 22 08:38:22 2015
++++ Tools/AGSOutput.m	Fri May 22 08:39:06 2015
+@@ -2393,7 +2393,7 @@ static BOOL snuggleStart(NSString *t)
+       if (start.length == 0)
+ 	{
+ 	  NSLog(@"No <back> or </body> markup in %@ document", kind);
+-	  return NO;
++	  return nil;
+ 	}
+       [str insertString: tmp atIndex: start.location];
+       start.length = [tmp length];

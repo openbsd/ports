@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2015/03/16 12:20:24 sebastia Exp $
+# $OpenBSD: Makefile,v 1.57 2015/05/28 18:35:35 sebastia Exp $
 
 COMMENT=	GNUstep base library
 
-DISTNAME=	gnustep-base-1.24.7
-REVISION =	0
+DISTNAME=	gnustep-base-1.24.8
 
-SHARED_LIBS=	gnustep-base 8.2
+SHARED_LIBS=	gnustep-base 8.3
 CATEGORIES=	devel
 
 LIBDIR=		lib/GNUstep/Libraries/gnustep-base/Versions/${LIBgnustep-base_VERSION}
