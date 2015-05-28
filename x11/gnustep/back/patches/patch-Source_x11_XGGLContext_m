@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_x11_XGGLContext_m,v 1.1 2015/05/28 18:38:53 sebastia Exp $
+
+upstream svn: 38554
+
+--- Source/x11/XGGLContext.m.orig	Fri May 22 09:51:18 2015
++++ Source/x11/XGGLContext.m	Fri May 22 09:52:15 2015
+@@ -506,7 +506,7 @@ static XGGLContext *currentGLContext;
+   saved_ignores_backing = [view _ignoresBacking];
+   [view _setIgnoresBacking: YES];
+ 
+-  NSDebugMLLog(@"GLX", @"glx_window : %u", glx_drawable);
++  NSDebugMLLog(@"GLX", @"glx_window : %lu", (unsigned long) glx_drawable);
+ }
+ 
+ - (void)update

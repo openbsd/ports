@@ -1,0 +1,15 @@
+$OpenBSD: patch-Headers_x11_XGOpenGL_h,v 1.1 2015/05/28 18:38:53 sebastia Exp $
+
+upstream svn: 38554
+
+--- Headers/x11/XGOpenGL.h.orig	Tue May 26 11:28:33 2015
++++ Headers/x11/XGOpenGL.h	Tue May 26 11:28:46 2015
+@@ -57,7 +57,7 @@
+ @interface XGGLPixelFormat : NSOpenGLPixelFormat
+ {
+   Display * display;
+-  long int glxminorversion;
++  int glxminorversion;
+ 
+   GLXFBConfig  *fbconfig;
+   int pickedFBConfig;
