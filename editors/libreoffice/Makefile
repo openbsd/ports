@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2015/05/26 08:44:58 robert Exp $
+# $OpenBSD: Makefile,v 1.131 2015/05/28 10:26:12 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -161,7 +161,6 @@ BUILD_DEPENDS +=	x11/gnome/librsvg
 MODULES+=	gcc4
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c++
-MODGCC4_VERSION=4.9
 
 MODULES+=	lang/python \
 		devel/gettext
