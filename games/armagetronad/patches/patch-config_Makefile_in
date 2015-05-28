@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_Makefile_in,v 1.1.1.1 2012/10/12 18:13:38 bentley Exp $
---- config/Makefile.in.orig	Fri Oct 12 05:04:18 2012
-+++ config/Makefile.in	Fri Oct 12 05:05:02 2012
-@@ -243,7 +243,7 @@ top_srcdir = @top_srcdir@
+$OpenBSD: patch-config_Makefile_in,v 1.2 2015/05/28 18:54:21 bcallah Exp $
+--- config/Makefile.in.orig	Thu Feb 26 14:38:11 2015
++++ config/Makefile.in	Tue May 26 01:39:09 2015
+@@ -312,7 +312,7 @@ top_srcdir = @top_srcdir@
  version = @version@
  
  # configuration location

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:07:37 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/05/28 18:54:21 bcallah Exp $
 
 COMMENT =		3D light cycle game
 
-DISTNAME =		armagetronad-0.2.8.3.2.src
+DISTNAME =		armagetronad-0.2.8.3.3.src
 PKGNAME =		${DISTNAME:S/.src//}
-REVISION =		0
 
 CATEGORIES =		games
 
@@ -13,15 +12,14 @@ HOMEPAGE =		http://armagetronad.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB +=		GL GLU SDL SDL_image SDL_mixer c jpeg m png pthread
-WANTLIB +=		stdc++ xml2 z
+WANTLIB += GL GLU SDL SDL_image c jpeg m png pthread stdc++ xml2
+WANTLIB += z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=armagetronad/}
 
 MODULES =		converters/libiconv
 BUILD_DEPENDS =		shells/bash
 LIB_DEPENDS =		devel/sdl-image \
-			devel/sdl-mixer \
 			textproc/libxml
 
 USE_GMAKE =		Yes
