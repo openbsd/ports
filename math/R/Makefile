@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2015/05/02 09:10:04 zhuk Exp $
+# $OpenBSD: Makefile,v 1.71 2015/05/28 08:09:46 pascal Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-3.2.0
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	R	3.1
 SHARED_LIBS+=	Rlapack	31.2 	# 31.2
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.r-project.org/
 
 MAINTAINER=	Ingo Feinerer <feinerer@logic.at>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	ICE SM X11 Xext Xmu Xss Xt bz2 c crypto curl \
@@ -23,7 +23,7 @@ WANTLIB=	ICE SM X11 Xext Xmu Xss Xt bz2 c crypto curl \
 		gobject-2.0 icui18n icuuc idn jpeg lzma m \
 		ncurses pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre png pthread ssl tiff z \
-		${MODFORTRAN_WANTLIB} ${MODTK_WANTLIB}
+		${MODTK_WANTLIB}
 
 MASTER_SITES=	http://cran.r-project.org/src/base/R-3/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-3/ \
@@ -39,18 +39,17 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-3/ \
 		http://lib.stat.cmu.edu/R/CRAN/src/base/R-3/ \
 		http://probability.ca/cran/src/base/R-3/
 
-MODULES=	fortran \
+MODULES=	gcc4 \
 		devel/gettext \
 		x11/tk
 
-MODFORTRAN_COMPILER= gfortran
+MODGCC4_ARCHS=	*
+MODGCC4_LANGS=	fortran
 
-BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS} \
-		archivers/gtar \
+BUILD_DEPENDS=	archivers/gtar \
 		archivers/unzip \
 		archivers/zip \
 		devel/xdg-utils
-
 LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 		${MODTK_LIB_DEPENDS} \
 		archivers/bzip2 \
