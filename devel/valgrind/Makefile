@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/25 15:20:44 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2015/05/28 16:09:23 uebayasi Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -6,14 +6,14 @@ COMMENT =		instrumentation framework for dynamic analysis tools
 CATEGORIES =		devel
 
 V =			3.10.1
-REVISION =		1
+REVISION =		2
 DISTNAME =		valgrind-${V}
 EXTRACT_SUFX =		.tar.bz2
 
 MASTER_SITES =		${HOMEPAGE:=downloads/}
 MASTER_SITES0 =		https://bitbucket.org/uebayasi/valgrind-openbsd/downloads/
 PATCH_DIST_STRIP =	-p1
-PATCHFILES =		valgrind-${V}-openbsd-20141211.patch:0
+PATCHFILES =		valgrind-${V}-openbsd-20150528.patch:0
 
 HOMEPAGE =		http://www.valgrind.org/
 

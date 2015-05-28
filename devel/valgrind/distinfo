@@ -1,4 +1,4 @@
-SHA256 (valgrind-3.10.1-openbsd-20141211.patch) = qYHdIy0yj4savTwGDgStqXHs4MB4R38jndQNZtf4Zqg=
+SHA256 (valgrind-3.10.1-openbsd-20150528.patch) = 3Ezirom4qQtjcx7P//R1jKQ6HNKPijHwj84bb4RbsS8=
 SHA256 (valgrind-3.10.1.tar.bz2) = +iU9wm3bZhtiad9YFE7/YH6j92qbz+V0sMdybh38uZc=
-SIZE (valgrind-3.10.1-openbsd-20141211.patch) = 1235560
+SIZE (valgrind-3.10.1-openbsd-20150528.patch) = 1238043
 SIZE (valgrind-3.10.1.tar.bz2) = 10967905
