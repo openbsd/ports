@@ -1,9 +1,9 @@
-$OpenBSD: patch-Master_rules_make,v 1.1 2014/09/08 12:21:42 espie Exp $
---- Master/rules.make.orig	Mon Sep  8 13:05:02 2014
-+++ Master/rules.make	Mon Sep  8 13:05:50 2014
-@@ -115,19 +115,7 @@ internal-all::
+$OpenBSD: patch-Master_rules_make,v 1.2 2015/05/28 18:33:46 sebastia Exp $
+--- Master/rules.make.orig	Sun Dec 21 08:16:04 2014
++++ Master/rules.make	Mon May 18 08:59:01 2015
+@@ -127,19 +127,7 @@ internal-jar::
+ after-jar::
  
- after-all::
  
 -ifneq ($(GNUSTEP_INSTALLATION_DIR),)
  internal-check-install-permissions:

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Instance_framework_make,v 1.10 2013/09/08 16:28:02 sebastia Exp $
---- Instance/framework.make.orig	Fri Feb 22 10:37:00 2013
-+++ Instance/framework.make	Tue Aug  6 09:37:16 2013
+$OpenBSD: patch-Instance_framework_make,v 1.11 2015/05/28 18:33:46 sebastia Exp $
+--- Instance/framework.make.orig	Fri Dec 27 17:23:08 2013
++++ Instance/framework.make	Mon May 18 08:59:01 2015
 @@ -258,7 +258,7 @@ ifeq ($(findstring darwin, $(GNUSTEP_TARGET_OS)), darw
  VERSION_FRAMEWORK_LIBRARY_FILE = lib$(GNUSTEP_INSTANCE).$(VERSION)$(SHARED_LIBEXT)
  SONAME_FRAMEWORK_FILE = lib$(GNUSTEP_INSTANCE).$(INTERFACE_VERSION)$(SHARED_LIBEXT)
@@ -37,7 +37,7 @@ $OpenBSD: patch-Instance_framework_make,v 1.10 2013/09/08 16:28:02 sebastia Exp 
  	$(END_ECHO)
  
  ifeq ($(GNUSTEP_MAKE_PARALLEL_BUILDING), no)
-@@ -687,18 +687,14 @@ endif
+@@ -684,18 +684,14 @@ endif
  	$(RM_LN_S) $(FRAMEWORK_LIBRARY_FILE); \
  	$(RM_LN_S) $(SONAME_FRAMEWORK_FILE); \
  	$(RM_LN_S) $(VERSION_FRAMEWORK_LIBRARY_FILE); \

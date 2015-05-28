@@ -1,6 +1,6 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.7 2014/01/03 18:44:44 sebastia Exp $
---- GNUmakefile.in.orig	Fri Sep 20 08:13:15 2013
-+++ GNUmakefile.in	Thu Dec 26 00:36:43 2013
+$OpenBSD: patch-GNUmakefile_in,v 1.8 2015/05/28 18:33:46 sebastia Exp $
+--- GNUmakefile.in.orig	Tue Jul 29 12:12:46 2014
++++ GNUmakefile.in	Mon May 18 09:03:08 2015
 @@ -99,7 +99,7 @@ export GNUSTEP_TARGET_LDIR
  export MAYBE_LIBRARY_COMBO
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.7 2014/01/03 18:44:44 sebastia Exp $
  INSTALL_DATA	= @INSTALL_DATA@
  
  VERTAG = $(subst .,_,$(GNUSTEP_MAKE_VERSION))
-@@ -170,7 +170,6 @@ install: generated-files
+@@ -190,7 +190,6 @@ install: generated-files
  	 echo "Creating makefile directories in: $(makedir)"; \
  	 "$(srcdir)/mkinstalldirs" \
  		"$(makedir)" \
@@ -18,7 +18,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.7 2014/01/03 18:44:44 sebastia Exp $
  		"$(makedir)/$(GNUSTEP_TARGET_DIR)" \
  		"$(makedir)/$(GNUSTEP_TARGET_LDIR)" \
  		"$(makedir)/Additional" \
-@@ -180,9 +179,6 @@ install: generated-files
+@@ -200,9 +199,6 @@ install: generated-files
  		"$(makedir)/Instance/Shared" \
  		"$(makedir)/Instance/Documentation" \
  		"$(testdir)")
@@ -28,13 +28,15 @@ $OpenBSD: patch-GNUmakefile_in,v 1.7 2014/01/03 18:44:44 sebastia Exp $
  	 $(EC)(echo "Installing gnustep-make support software")
  	 $(EC)(for f in config.guess config.sub install-sh mkinstalldirs \
  		clean_cpu.sh clean_os.sh \
-@@ -238,17 +234,11 @@ install: generated-files
+@@ -258,19 +254,12 @@ install: generated-files
  	  "$(srcdir)/mkinstalldirs" "$(mandir)/man1" \
  	                          "$(mandir)/man7"; \
  	  $(INSTALL_DATA) "$(srcdir)/Documentation/debugapp.1" "$(mandir)/man1"; \
 -	  which gzip > /dev/null 2>&1 && rm -f "$(mandir)/man1/debugapp.1.gz" && gzip -9 "$(mandir)/man1/debugapp.1"; \
  	  $(INSTALL_DATA) "$(srcdir)/Documentation/gnustep-config.1" "$(mandir)/man1"; \
 -	  which gzip > /dev/null 2>&1 && rm -f "$(mandir)/man1/gnustep-config.1.gz" && gzip -9 "$(mandir)/man1/gnustep-config.1"; \
+ 	  $(INSTALL_DATA) "$(srcdir)/Documentation/gnustep-tests.1" "$(mandir)/man1"; \
+-	  which gzip > /dev/null 2>&1 && rm -f "$(mandir)/man1/gnustep-tests.1.gz" && gzip -9 "$(mandir)/man1/gnustep-tests.1"; \
  	  $(INSTALL_DATA) "$(srcdir)/Documentation/openapp.1" "$(mandir)/man1"; \
 -	  which gzip > /dev/null 2>&1 && rm -f "$(mandir)/man1/openapp.1.gz" && gzip -9 "$(mandir)/man1/openapp.1"; \
  	  $(INSTALL_DATA) "$(srcdir)/Documentation/opentool.1" "$(mandir)/man1"; \

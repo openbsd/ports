@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/01/03 18:44:44 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/05/28 18:33:46 sebastia Exp $
 bin/debugapp
 bin/gnustep-config
 bin/gnustep-tests
@@ -6,6 +6,7 @@ bin/openapp
 bin/opentool
 @man man/man1/debugapp.1
 @man man/man1/gnustep-config.1
+@man man/man1/gnustep-tests.1
 @man man/man1/openapp.1
 @man man/man1/opentool.1
 @man man/man7/GNUstep.7
@@ -100,6 +101,7 @@ share/GNUstep/Makefiles/TestFramework/example9.m
 share/GNUstep/Makefiles/aggregate.make
 share/GNUstep/Makefiles/app-wrapper.template
 share/GNUstep/Makefiles/application.make
+share/GNUstep/Makefiles/bake_debian_files.sh
 share/GNUstep/Makefiles/bundle.make
 share/GNUstep/Makefiles/clean_cpu.sh
 share/GNUstep/Makefiles/clean_os.sh
@@ -112,7 +114,6 @@ share/GNUstep/Makefiles/config.make
 share/GNUstep/Makefiles/config.sub
 share/GNUstep/Makefiles/cpu.sh
 share/GNUstep/Makefiles/ctool.make
-share/GNUstep/Makefiles/deb-equivs-control.template
 share/GNUstep/Makefiles/documentation.make
 share/GNUstep/Makefiles/empty.make
 share/GNUstep/Makefiles/executable.template
