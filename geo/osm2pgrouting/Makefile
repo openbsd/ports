@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/28 19:29:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/28 19:59:29 ajacoutot Exp $
 
 V =			2.0.0
 COMMENT =		convert OSM data to PgRouting format
@@ -20,6 +20,5 @@ MODULES =		devel/cmake
 BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		databases/postgresql
 RUN_DEPENDS =		geo/pgrouting
-
 
 .include <bsd.port.mk>
