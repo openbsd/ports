@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_glshader_cpp,v 1.1 2015/05/29 23:23:07 bentley Exp $
+
+Correct the path to the GLEW header.
+https://code.google.com/p/mupen64plus/issues/detail?id=649
+
+--- src/glshader.cpp.orig	Thu May 28 19:52:52 2015
++++ src/glshader.cpp	Thu May 28 19:53:08 2015
+@@ -23,7 +23,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include "rgl_assert.h"
+-#include <glew.h>
++#include <GL/glew.h>
+ #if defined(__MACOSX__)
+ #include <OpenGL/gl.h>
+ #include <OpenGL/glext.h>

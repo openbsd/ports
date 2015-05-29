@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_rgl_h,v 1.1 2015/05/29 23:23:07 bentley Exp $
+
+Correct the path to the GLEW header.
+https://code.google.com/p/mupen64plus/issues/detail?id=649
+
+--- src/rgl.h.orig	Thu May 28 19:51:09 2015
++++ src/rgl.h	Thu May 28 19:51:32 2015
+@@ -26,7 +26,7 @@
+ #include "rgl_assert.h"
+ #include "rdp.h"
+ 
+-#include <glew.h>
++#include <GL/glew.h>
+ #if defined(__MACOSX__)
+ #include <OpenGL/gl.h>
+ #elif defined(__MACOS__)
