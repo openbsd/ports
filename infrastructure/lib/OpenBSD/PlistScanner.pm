@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.1 2014/03/10 09:46:08 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.2 2015/05/29 10:40:06 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -100,7 +100,7 @@ sub handle_portsdir
 			local $_;
 			while (<$fh>) {
 				return if m/^\=\=\=\> /o;
-				next unless m/^\@(?:cwd|name|info|man|file|lib|shell|bin|conflict|comment\s+subdir\=)\b/o || !m/^\@/o;
+				next unless m/^\@(?:cwd|name|info|man|file|lib|shell|bin|conflict|comment\s+pkgpath\=)\b/o || !m/^\@/o;
 				&$cont($_);
 			}
 			$done = 1;
