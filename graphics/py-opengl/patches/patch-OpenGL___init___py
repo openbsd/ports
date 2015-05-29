@@ -1,12 +1,13 @@
-$OpenBSD: patch-OpenGL___init___py,v 1.2 2011/07/20 15:45:20 sthen Exp $
---- OpenGL/__init__.py.orig	Sun Mar 29 15:30:08 2009
-+++ OpenGL/__init__.py	Wed Jul 20 16:42:50 2011
-@@ -115,6 +115,8 @@ from OpenGL.plugins import PlatformPlugin, FormatHandl
+$OpenBSD: patch-OpenGL___init___py,v 1.3 2015/05/29 11:20:01 ajacoutot Exp $
+--- OpenGL/__init__.py.orig	Sat Sep 15 06:27:23 2012
++++ OpenGL/__init__.py	Fri May 29 13:17:51 2015
+@@ -196,6 +196,9 @@ MODULE_ANNOTATIONS = False
+ from OpenGL.plugins import PlatformPlugin, FormatHandler
  PlatformPlugin( 'nt', 'OpenGL.platform.win32.Win32Platform' )
- PlatformPlugin( 'posix ', 'OpenGL.platform.glx.GLXPlatform' )
  PlatformPlugin( 'linux2', 'OpenGL.platform.glx.GLXPlatform' )
 +PlatformPlugin( 'openbsd4', 'OpenGL.platform.glx.GLXPlatform' )
 +PlatformPlugin( 'openbsd5', 'OpenGL.platform.glx.GLXPlatform' )
++PlatformPlugin( 'openbsd6', 'OpenGL.platform.glx.GLXPlatform' )
  PlatformPlugin( 'darwin', 'OpenGL.platform.darwin.DarwinPlatform' )
- 
- FormatHandler( 'none', 'OpenGL.arrays.nones.NoneHandler' )
+ PlatformPlugin( 'posix', 'OpenGL.platform.glx.GLXPlatform' )
+ PlatformPlugin( 'osmesa', 'OpenGL.platform.osmesa.OSMesaPlatform')
