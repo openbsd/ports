@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2015/05/27 08:45:57 yasuoka Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/29 05:14:47 yasuoka Exp $
 bin/cmew-mailest
 @bin bin/mailestctl
 bin/mew-mailest
@@ -12,7 +12,6 @@ bin/smew-mailest
 @bin sbin/mailestd
 share/doc/mailest/
 share/doc/mailest/README.md
-share/examples/
 share/examples/mailest/
 share/examples/mailest/dot.emacs
 share/examples/mailest/mailestd.conf
