@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2015/04/04 09:21:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2015/05/29 07:47:48 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,11 +20,11 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		4
-REVISION-ldap=		3
-REVISION-mysql=		3
-REVISION-pgsql=		4
-REVISION-ui=		3
+REVISION-main=		5
+REVISION-ldap=		4
+REVISION-mysql=		4
+REVISION-pgsql=		5
+REVISION-ui=		4
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -44,7 +44,7 @@ HOMEPAGE=		http://www.gnome-db.org/
 # tools: GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += m pcre z gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += m pcre z gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 lzma
 WANTLIB += gthread-2.0 xml2 gcrypt secret-1 gpg-error ffi pthread
 
 MODULES=		devel/gettext \
@@ -87,7 +87,7 @@ CONFIGURE_ARGS+=	--disable-vala-extensions \
 			--disable-vala
 
 MODGNOME_LDFLAGS=	-lm
-CONFIGURE_ENV=		LIBCRYPTO_CFLAGS="-I/usr/include/ssl" \
+CONFIGURE_ENV=		LIBCRYPTO_CFLAGS="-I/usr/include/openssl" \
 			LIBCRYPTO_LIBS="-lcrypto" \
 			MYSQL_CONFIG="${LOCALBASE}/bin/mysql_config"
 
@@ -115,7 +115,7 @@ WANTLIB-ui += Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB-ui += cairo-gobject expat fontconfig freetype gda-${GDA_MAJOR}
 WANTLIB-ui += gdk-3 gdk_pixbuf-2.0 goocanvas-2.0 gtk-3 gtksourceview-3.0
 WANTLIB-ui += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB-ui += pthread-stubs xcb xcb-render xcb-shm
+WANTLIB-ui += pthread-stubs xcb xcb-render xcb-shm epoxy
 WANTLIB-ui += ICE SM atk-bridge-2.0 atspi harfbuzz dbus-1
 LIB_DEPENDS-ui=		${LIB_DEPENDS} \
 			graphics/goocanvas2 \
@@ -132,7 +132,7 @@ CONFIGURE_ARGS+=	--without-mysql
 RUN_DEPENDS-mysql=	${MODGETTEXT_RUN_DEPENDS}
 MULTI_PACKAGES+=	-mysql
 WANTLIB-mysql=		${WANTLIB} crypto ssl gda-${GDA_MAJOR} \
-			mysqlclient
+			mysqlclient stdc++
 LIB_DEPENDS-mysql=	${LIB_DEPENDS} \
 			x11/gnome/libgda \
 			databases/mariadb
