@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dynamic-preprocessors_dnp3_Makefile_in,v 1.8 2015/01/24 03:52:53 lteo Exp $
---- src/dynamic-preprocessors/dnp3/Makefile.in.orig	Mon Oct 13 17:43:44 2014
-+++ src/dynamic-preprocessors/dnp3/Makefile.in	Sat Oct 25 16:49:19 2014
-@@ -333,7 +333,7 @@ top_srcdir = @top_srcdir@
+$OpenBSD: patch-src_dynamic-preprocessors_dnp3_Makefile_in,v 1.9 2015/05/29 03:28:18 lteo Exp $
+--- src/dynamic-preprocessors/dnp3/Makefile.in.orig	Thu Apr 23 20:28:27 2015
++++ src/dynamic-preprocessors/dnp3/Makefile.in	Sun May 24 17:20:07 2015
+@@ -345,7 +345,7 @@ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
  dynamicpreprocessordir = ${libdir}/snort_dynamicpreprocessor
  dynamicpreprocessor_LTLIBRARIES = libsf_dnp3_preproc.la
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_dynamic-preprocessors_dnp3_Makefile_in,v 1.8 2015/01/24 03:5
  @SO_WITH_STATIC_LIB_TRUE@libsf_dnp3_preproc_la_LIBADD = ../libsf_dynamic_preproc.la
  @SO_WITH_STATIC_LIB_FALSE@nodist_libsf_dnp3_preproc_la_SOURCES = \
  @SO_WITH_STATIC_LIB_FALSE@../include/sf_dynamic_preproc_lib.c \
-@@ -546,7 +546,7 @@ distdir: $(DISTFILES)
+@@ -557,7 +557,7 @@ distdir: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am

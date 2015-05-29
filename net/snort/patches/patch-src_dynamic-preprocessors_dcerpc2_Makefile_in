@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dynamic-preprocessors_dcerpc2_Makefile_in,v 1.10 2015/01/24 03:52:53 lteo Exp $
---- src/dynamic-preprocessors/dcerpc2/Makefile.in.orig	Mon Oct 13 17:43:44 2014
-+++ src/dynamic-preprocessors/dcerpc2/Makefile.in	Sat Oct 25 16:48:58 2014
-@@ -336,7 +336,7 @@ top_srcdir = @top_srcdir@
+$OpenBSD: patch-src_dynamic-preprocessors_dcerpc2_Makefile_in,v 1.11 2015/05/29 03:28:18 lteo Exp $
+--- src/dynamic-preprocessors/dcerpc2/Makefile.in.orig	Thu Apr 23 20:28:27 2015
++++ src/dynamic-preprocessors/dcerpc2/Makefile.in	Sun May 24 17:20:06 2015
+@@ -348,7 +348,7 @@ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
  dynamicpreprocessordir = ${libdir}/snort_dynamicpreprocessor
  dynamicpreprocessor_LTLIBRARIES = libsf_dce2_preproc.la
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_dynamic-preprocessors_dcerpc2_Makefile_in,v 1.10 2015/01/24 
  @SO_WITH_STATIC_LIB_TRUE@libsf_dce2_preproc_la_LIBADD = ../libsf_dynamic_preproc.la
  @SO_WITH_STATIC_LIB_FALSE@nodist_libsf_dce2_preproc_la_SOURCES = \
  @SO_WITH_STATIC_LIB_FALSE@../include/sf_dynamic_preproc_lib.c \
-@@ -580,7 +580,7 @@ distdir: $(DISTFILES)
+@@ -591,7 +591,7 @@ distdir: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_preprocessors_spp_sfportscan_c,v 1.10 2015/01/24 03:52:53 lteo Exp $
---- src/preprocessors/spp_sfportscan.c.orig	Tue Jun 10 15:29:30 2014
-+++ src/preprocessors/spp_sfportscan.c	Sat Oct 25 16:33:34 2014
-@@ -274,7 +274,7 @@ static int LogPortscanAlert(Packet *p, char *msg, uint
+$OpenBSD: patch-src_preprocessors_spp_sfportscan_c,v 1.11 2015/05/29 03:28:18 lteo Exp $
+--- src/preprocessors/spp_sfportscan.c.orig	Wed Apr 22 22:47:10 2015
++++ src/preprocessors/spp_sfportscan.c	Sun May 24 17:20:27 2015
+@@ -274,7 +274,7 @@ static int LogPortscanAlert(Packet *p, const char *msg
          return 0;
      }
  
