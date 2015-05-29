@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2015/05/12 06:20:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2015/05/29 07:00:34 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -14,6 +14,8 @@ PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
+
+REVISION-main=		0
 
 CATEGORIES=		x11 devel
 
@@ -96,6 +98,7 @@ MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \
 TEST_IS_INTERACTIVE=	x11
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--disable-libcanberra
 
 # sync with devel/mozjs17: colord -> polkit -> mozjs17
 # not for mips64* since devel/mozjs17 does not compile there (OOM)
@@ -110,10 +113,8 @@ CONFIGURE_ARGS +=	--disable-colord
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+3
 
-# see patch-configure_ac
-AUTOCONF_VERSION=	2.69
-CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS +=	--disable-libcanberra
+# configure will disable lpr in default gtk-print-backends if cups is found
+MAKE_FLAGS=		GTK_PRINT_BACKENDS="file,lpr,cups,cloudprint"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/gtk-3.0/modules
