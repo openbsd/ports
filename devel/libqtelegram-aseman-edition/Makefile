@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/25 22:08:15 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/29 23:51:02 ajacoutot Exp $
 
 V =		3.3
 COMMENT =	Qt5 library for Telegram messaging service
 DISTNAME =	${GH_PROJECT}-${V}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  qtelegram-ae              0.0 # 1.0
 
