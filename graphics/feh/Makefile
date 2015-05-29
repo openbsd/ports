@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.64 2015/05/18 08:12:20 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.65 2015/05/29 14:07:49 dcoppa Exp $
 
 COMMENT=	lightweight image viewer
 
-DISTNAME=	feh-2.13
+DISTNAME=	feh-2.13.1
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 
