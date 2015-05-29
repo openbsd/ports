@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2015/03/30 22:48:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2015/05/29 12:24:37 ajacoutot Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.91
 CATEGORIES=	graphics
-REVISION=	1
+REVISION=	2
 
 MASTER_SITES =	https://inkscape.org/en/gallery/item/3854/
 HOMEPAGE=	http://www.inkscape.org/
@@ -12,11 +12,17 @@ HOMEPAGE=	http://www.inkscape.org/
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender Xt bz2 c expat ffi fontconfig
-WANTLIB += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 jasper jpeg lzma m pcre pixman-1
-WANTLIB += png pthread pthread-stubs stdc++ tiff xcb xcb-render
+WANTLIB += ICE Magick++ MagickCore MagickWand SM X11 Xcomposite
+WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += Xt aspell atk-1.0 atkmm-1.6 bz2 c cairo cairomm-1.0
+WANTLIB += djvulibre enchant exif expat ffi fftw3 fontconfig freetype
+WANTLIB += gc gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0 giomm-2.4
+WANTLIB += glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gsl gslcblas gthread-2.0 gtk-x11-2.0 gtkmm-2.4 gtkspell
+WANTLIB += harfbuzz jasper jbig jpeg lcms2 ltdl lzma m openjpeg
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre
+WANTLIB += pixman-1 png poppler poppler-glib popt pthread pthread-stubs
+WANTLIB += sigc-2.0 stdc++ tiff webp wmf-0.2 wmflite-0.2 xcb xcb-render
 WANTLIB += xcb-shm xml2 xslt z
 
 MODULES=	devel/gettext \
