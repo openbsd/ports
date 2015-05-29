@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: isc_dhcpd.rc,v 1.1 2014/10/12 20:10:16 sthen Exp $
+# $OpenBSD: isc_dhcpd.rc,v 1.2 2015/05/29 07:29:10 giovanni Exp $
 
 daemon="${TRUEPREFIX}/sbin/dhcpd"
 daemon_flags="-user _isc-dhcp -group _isc-dhcp"
@@ -8,5 +8,9 @@ daemon_flags="-user _isc-dhcp -group _isc-dhcp"
 . /etc/rc.d/rc.subr
 
 rc_reload=NO
+
+rc_pre() {
+	touch /var/db/dhcpd.leases
+}
 
 rc_cmd $1
