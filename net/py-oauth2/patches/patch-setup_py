@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1 2015/05/30 09:42:37 czarkoff Exp $
+--- setup.py.orig	Thu May 28 22:25:46 2015
++++ setup.py	Thu May 28 22:26:16 2015
+@@ -31,7 +31,7 @@ setup(name=PKG,
+       author="Joe Stump",
+       author_email="joe@simplegeo.com",
+       url="http://github.com/simplegeo/python-oauth2",
+-      packages = find_packages(),
++      packages = find_packages(exclude=['tests']),
+       install_requires = ['httplib2'],
+       license = "MIT License",
+       keywords="oauth",

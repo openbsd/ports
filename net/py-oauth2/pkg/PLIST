@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/31 11:59:07 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/05/30 09:42:38 czarkoff Exp $
 lib/python${MODPY_VERSION}/site-packages/oauth2/
 lib/python${MODPY_VERSION}/site-packages/oauth2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/oauth2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -18,8 +18,3 @@ lib/python${MODPY_VERSION}/site-packages/oauth2/clients/imap.py
 lib/python${MODPY_VERSION}/site-packages/oauth2/clients/imap.pyc
 lib/python${MODPY_VERSION}/site-packages/oauth2/clients/smtp.py
 lib/python${MODPY_VERSION}/site-packages/oauth2/clients/smtp.pyc
-lib/python${MODPY_VERSION}/site-packages/tests/
-lib/python${MODPY_VERSION}/site-packages/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/tests/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/tests/test_oauth.py
-lib/python${MODPY_VERSION}/site-packages/tests/test_oauth.pyc
