@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/05/28 10:17:25 pascal Exp $
+# $OpenBSD: Makefile,v 1.35 2015/05/30 16:11:12 ajacoutot Exp $
 
 BROKEN-alpha =	MetalinkParserStateV4Impl.cc:219:1: internal compiler error: Segmentation fault
 COMMENT =		lightweight multi-protocol & multi-source download utility
@@ -38,6 +38,7 @@ CONFIGURE_ARGS +=	--with-sqlite3 \
 			--with-libexpat \
 			--with-openssl \
 			--without-gnutls \
+			--without-libssh2 \
 			--without-libxml2
 
 .include <bsd.port.mk>
