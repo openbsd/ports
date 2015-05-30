@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/02 14:21:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2015/05/30 12:57:53 czarkoff Exp $
 
 COMMENT=		pluggable command-line frontend
 
 MODPY_EGG_VERSION=	1.7.5
 DISTNAME=		PasteScript-${MODPY_EGG_VERSION}
 PKGNAME=		py-paste-script-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -26,6 +27,8 @@ RUN_DEPENDS=		devel/py-cheetah \
 # has shitloads of dependencies) and FakePlugin.  There isn't much
 # point in porting them.
 TEST_DEPENDS=	${RUN_DEPENDS} \
+			devel/py-nose \
+			devel/py-test \
 			devel/py-py
 
 MODPY_SETUPTOOLS=	Yes
