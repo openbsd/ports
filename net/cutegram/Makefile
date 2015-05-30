@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/25 22:12:01 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/05/30 07:21:21 ajacoutot Exp $
 
 V =		2.3.0
 COMMENT =	Qt5 Telegram messaging service client
 DISTNAME =	cutegram-src-${V}
 PKGNAME =	cutegram-${V}
 CATEGORIES =	net x11
+REVISION =	0
 
 HOMEPAGE =	http://aseman.co/en/products/cutegram/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
