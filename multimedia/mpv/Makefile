@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/24 10:30:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/05/30 07:27:40 ajacoutot Exp $
 
-# requires 64-bit atomic ops.
-# some other arch could probably be added..certainly fails on i386
-ONLY_FOR_ARCHS =	amd64
+ONLY_FOR_ARCHS =	alpha amd64 i386 powerpc sparc64
 
 COMMENT =		movie player based on MPlayer/mplayer2
 V =			0.9.2
