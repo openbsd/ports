@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_dcraw_cc,v 1.1 2015/05/31 06:35:02 kirby Exp $
+
+fix CVE-2015-3885
+
+--- src/dcraw.cc.orig	Tue May 26 13:45:37 2015
++++ src/dcraw.cc	Tue May 26 13:46:31 2015
+@@ -916,7 +916,8 @@ struct jhead {
+ 
+ int CLASS ljpeg_start (struct jhead *jh, int info_only)
+ {
+-  int c, tag, len;
++  int c, tag;
++  ushort len;
+   uchar data[0x10000], *dp;
+ 
+   if (!info_only) init_decoder();
