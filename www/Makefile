@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.714 2015/05/25 07:33:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.715 2015/05/31 23:29:53 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -487,7 +487,6 @@
      SUBDIR += ruby-raindrops,ruby20
      SUBDIR += ruby-raindrops,ruby21
      SUBDIR += ruby-raindrops,ruby22
-     SUBDIR += ruby-rest-client
      SUBDIR += ruby-sanitize
      SUBDIR += ruby-savon
      SUBDIR += ruby-sinatra
