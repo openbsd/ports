@@ -1,0 +1,17 @@
+$OpenBSD: patch-rtengine_dcraw_cc,v 1.1 2015/05/31 06:32:06 kirby Exp $
+
+dcraw imput sanitization errors, CVE-2015-3885
+Commit ID 0440e663ae7f44a63420460dcb07cfbe0ba8ea42
+
+--- rtengine/dcraw.cc.orig	Tue May 26 11:52:41 2015
++++ rtengine/dcraw.cc	Tue May 26 11:54:01 2015
+@@ -789,7 +789,8 @@ struct jhead {
+ 
+ int CLASS ljpeg_start (struct jhead *jh, int info_only)
+ {
+-  int c, tag, len;
++  int c, tag;
++  ushort len;
+   uchar data[0x10000];
+   const uchar *dp;
+ 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/03/27 08:11:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2015/05/31 06:32:06 kirby Exp $
 
 COMMENT =		RAW image processing application
 
 DISTNAME =		rawtherapee-4.1
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		graphics
 
