@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/22 11:31:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/05/31 06:45:29 kirby Exp $
 
 COMMENT =		library for reading RAW files
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
@@ -8,7 +8,7 @@ V =			0.16.0
 DISTNAME =		LibRaw-${V}
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		graphics
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  raw                  0.0      # 10.0
 SHARED_LIBS +=  raw_r                0.0      # 10.0

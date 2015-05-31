@@ -1,0 +1,17 @@
+$OpenBSD: patch-internal_dcraw_common_cpp,v 1.1 2015/05/31 06:45:29 kirby Exp $
+
+fix CVE-2015-3885
+Upstream commit 7f5615e7355fab256e22fb7db0b739850d17a0b1
+
+--- internal/dcraw_common.cpp.orig	Fri Jan 17 17:43:14 2014
++++ internal/dcraw_common.cpp	Tue May 26 13:09:53 2015
+@@ -567,7 +567,8 @@ void CLASS canon_load_raw()
+ 
+ int CLASS ljpeg_start (struct jhead *jh, int info_only)
+ {
+-  int c, tag, len;
++  int c, tag;
++  ushort len;
+   uchar data[0x10000];
+   const uchar *dp;
+ 
