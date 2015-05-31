@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tools,v 1.5 2014/12/14 08:32:55 rpointel Exp $
+@comment $OpenBSD: PLIST-tools,v 1.6 2015/05/31 07:56:10 rpointel Exp $
 @option no-default-conflict
 @conflict python-tools->=2.7,<2.8
 lib/python2.7/Tools/
@@ -179,7 +179,6 @@ lib/python2.7/Tools/scripts/fixdiv.py
 lib/python2.7/Tools/scripts/fixheader.py
 lib/python2.7/Tools/scripts/fixnotice.py
 lib/python2.7/Tools/scripts/fixps.py
-lib/python2.7/Tools/scripts/ftpmirror.py
 lib/python2.7/Tools/scripts/google.py
 lib/python2.7/Tools/scripts/gprof2html.py
 lib/python2.7/Tools/scripts/h2py.py

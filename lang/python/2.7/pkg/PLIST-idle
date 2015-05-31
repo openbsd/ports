@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.4 2014/12/14 08:32:55 rpointel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.5 2015/05/31 07:56:10 rpointel Exp $
 @option no-default-conflict
 @conflict python-idle->=2.7,<2.8
 @comment bin/idle
@@ -230,6 +230,9 @@ lib/python2.7/idlelib/idle_test/test_hyperparser.pyo
 lib/python2.7/idlelib/idle_test/test_idlehistory.py
 lib/python2.7/idlelib/idle_test/test_idlehistory.pyc
 lib/python2.7/idlelib/idle_test/test_idlehistory.pyo
+lib/python2.7/idlelib/idle_test/test_io.py
+lib/python2.7/idlelib/idle_test/test_io.pyc
+lib/python2.7/idlelib/idle_test/test_io.pyo
 lib/python2.7/idlelib/idle_test/test_parenmatch.py
 lib/python2.7/idlelib/idle_test/test_parenmatch.pyc
 lib/python2.7/idlelib/idle_test/test_parenmatch.pyo
@@ -275,9 +278,6 @@ lib/python2.7/idlelib/run.pyo
 lib/python2.7/idlelib/tabbedpages.py
 lib/python2.7/idlelib/tabbedpages.pyc
 lib/python2.7/idlelib/tabbedpages.pyo
-lib/python2.7/idlelib/testcode.py
-lib/python2.7/idlelib/testcode.pyc
-lib/python2.7/idlelib/testcode.pyo
 lib/python2.7/idlelib/textView.py
 lib/python2.7/idlelib/textView.pyc
 lib/python2.7/idlelib/textView.pyo

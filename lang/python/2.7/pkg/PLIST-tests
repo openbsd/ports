@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.9 2014/12/14 08:32:55 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.10 2015/05/31 07:56:10 rpointel Exp $
 @option no-default-conflict
 @conflict python-tests->=2.7,<2.8
 lib/python2.7/test/
@@ -235,7 +235,7 @@ lib/python2.7/test/decimaltestdata/testall.decTest
 lib/python2.7/test/decimaltestdata/tointegral.decTest
 lib/python2.7/test/decimaltestdata/tointegralx.decTest
 lib/python2.7/test/decimaltestdata/xor.decTest
-lib/python2.7/test/dh512.pem
+lib/python2.7/test/dh1024.pem
 lib/python2.7/test/doctest_aliases.py
 lib/python2.7/test/doctest_aliases.pyc
 lib/python2.7/test/doctest_aliases.pyo
@@ -1421,6 +1421,9 @@ lib/python2.7/test/test_threadsignals.pyo
 lib/python2.7/test/test_time.py
 lib/python2.7/test/test_time.pyc
 lib/python2.7/test/test_time.pyo
+lib/python2.7/test/test_timeit.py
+lib/python2.7/test/test_timeit.pyc
+lib/python2.7/test/test_timeit.pyo
 lib/python2.7/test/test_timeout.py
 lib/python2.7/test/test_timeout.pyc
 lib/python2.7/test/test_timeout.pyo
