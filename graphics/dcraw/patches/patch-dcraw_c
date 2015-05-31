@@ -1,0 +1,16 @@
+$OpenBSD: patch-dcraw_c,v 1.9 2015/05/31 06:40:35 kirby Exp $
+
+imput sanitization errors, CVE-2015-3885
+
+--- dcraw.c.orig	Tue May 26 12:10:40 2015
++++ dcraw.c	Tue May 26 12:13:41 2015
+@@ -824,7 +824,8 @@ struct jhead {
+ 
+ int CLASS ljpeg_start (struct jhead *jh, int info_only)
+ {
+-  int c, tag, len;
++  int c, tag;
++  ushort len;
+   uchar data[0x10000];
+   const uchar *dp;
+ 
