@@ -1,2 +1,0 @@
-A simple REST client for Ruby, inspired by the Sinatra microframework
-style of specifying actions: get, put, post, delete.
