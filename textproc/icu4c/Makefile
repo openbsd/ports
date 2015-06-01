@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2015/04/25 10:16:15 ajacoutot Exp $
-
-# XXX re-rolled tarball: drop at next release
-DIST_SUBDIR=		icu4c
+# $OpenBSD: Makefile,v 1.47 2015/06/01 06:58:00 ajacoutot Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
@@ -10,6 +7,7 @@ COMMENT=		International Components for Unicode
 VERSION=		55.1
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME=		icu4c-${VERSION}
+REVISION=		0
 
 MAJ_V=			${VERSION:R}
 SO_VERSION=		8.1
@@ -37,7 +35,7 @@ EXTRACT_SUFX=		.tgz
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-static \
 			--disable-extras \
 			--disable-samples
@@ -66,6 +64,11 @@ TEST_ENV +=		ICU_DATA="${WRKBUILD}/data/out/build/icudt${MAJ_V}b"
 PKG_ARGS +=		-Dle=1
 TEST_ENV +=		ICU_DATA="${WRKBUILD}/data/out/build/icudt${MAJ_V}l"
 .  endif
+.endif
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=889781
+.if ${PROPERTIES:Mbe}
+CONFIGURE_ENV +=	CPPFLAGS="-DU_IS_BIG_ENDIAN=1"
 .endif
 
 # binutils bugs on mips64.
