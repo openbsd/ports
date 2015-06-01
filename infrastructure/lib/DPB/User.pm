@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.16 2015/05/18 16:35:15 espie Exp $
+# $OpenBSD: User.pm,v 1.17 2015/06/01 16:13:55 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -254,6 +254,18 @@ sub stat
 {
 	my $self = shift;
 	return $self->{user}->stat($self->name);
+}
+
+sub link
+{
+	my ($self, $a, $b) = @_;
+	return $self->{user}->link($a, $b);
+}
+
+sub unlink
+{
+	my ($self, @l) = @_;
+	return $self->{user}->unlink(@l);
 }
 
 1;
