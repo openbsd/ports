@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.65 2015/05/24 07:37:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2015/06/01 07:58:30 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
 # libvirt-python
 # py-GitPython
 # py-django
-# py-libcloud
+# py-libcloud (cloud-requirements.txt)
 # py-mako
 # py-mongo
 # py-mysql
@@ -17,6 +17,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	2015.5.1
 DISTNAME =		salt-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils net devel
 
@@ -35,17 +36,26 @@ BUILD_DEPENDS =		textproc/py-yaml \
 			www/py-jinja2 \
 			www/py-requests
 			
+# _requirements.txt
 RUN_DEPENDS =		net/py-msgpack \
-			net/py-zmq \
-			security/py-M2Crypto \
-			security/py-crypto \
 			textproc/py-MarkupSafe \
 			textproc/py-yaml \
 			www/py-jinja2 \
 			www/py-requests
 
+# salt/output/progress.py
+RUN_DEPENDS +=		devel/py-progressbar
+
 # XXX salt/utils/network.py
 RUN_DEPENDS +=		sysutils/lsof
+
+# zeromq-requirements.txt: ZeroMQ transport
+RUN_DEPENDS +=		net/py-zmq \
+			security/py-M2Crypto \
+			security/py-crypto
+
+# raet-requirements.txt: RAET transport
+# XXX TODO
 
 # for tests
 PORTHOME =		${WRKDIST}
