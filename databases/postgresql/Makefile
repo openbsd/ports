@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2015/05/22 11:31:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.203 2015/06/01 08:23:47 pea Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -11,18 +11,13 @@ BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
 # DO NOT FORGET to also change the @ask-update entry in pkg/PLIST-server
 # in case a dump before / restore after pkg_add -u is required!
 
-VERSION=	9.4.1
-REVISION-server= 2
+VERSION=	9.4.2
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
 PKGNAME-plpython=postgresql-plpython-${VERSION}
-REVISION-contrib=	0
-REVISION-docs=	0
-REVISION-main=	0
-REVISION-plpython=	0
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.6 \
@@ -37,7 +32,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto m readline ssl termcap z
+WANTLIB += c crypto m readline ssl termcap z pthread
 
 MASTER_SITES=	http://ftp.postgresql.org/pub/source/v${VERSION}/ \
 	http://ftp5.es.postgresql.org/mirror/postgresql/source/v${VERSION}/ \
