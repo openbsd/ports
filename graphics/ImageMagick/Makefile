@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2015/05/14 06:39:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.137 2015/06/01 06:54:02 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		image processing tools
 
 VER=			6.7.7
 DASHVER=		7
-REVISION=		9
+REVISION=		10
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 
@@ -69,6 +69,7 @@ CONFIGURE_ARGS+=	--with-quantum-depth=16 \
 			--without-pango \
 			--with-perl \
 			--without-rsvg \
+			--with-gs-font-dir=${LOCALBASE}/share/fonts/ghostscript \
 			--with-ltdl-include=${LOCALBASE}/include \
 			--with-ltdl-lib=${LOCALBASE}/lib \
 			--disable-ltdl-install
