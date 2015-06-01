@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.4 2015/01/06 13:19:35 jasper Exp $
+$OpenBSD: patch-Makefile,v 1.5 2015/06/01 16:23:09 pea Exp $
 
 - From 6a34745f0e84a990a8fa48e1f1f25be0f08c92a9 Mon Sep 17 00:00:00 2001
   From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -15,23 +15,26 @@ $OpenBSD: patch-Makefile,v 1.4 2015/01/06 13:19:35 jasper Exp $
   Date: Sun, 4 Jan 2015 22:04:20 +0100
   Subject: [PATCH] Adjust manpages for /var/db/ too, just like vnstat.conf
 
---- Makefile.orig	Sun Aug 31 12:41:32 2014
-+++ Makefile	Sun Jan  4 22:03:02 2015
-@@ -4,9 +4,10 @@ SBIN = $(DESTDIR)/usr/sbin
- MAN = $(DESTDIR)/usr/share/man
+--- Makefile.orig	Mon Jan  5 23:19:37 2015
++++ Makefile	Mon Jun  1 16:37:25 2015
+@@ -5,11 +5,12 @@ MAN ?= $(DESTDIR)/usr/share/man
+ ETC ?= $(DESTDIR)/etc/
  
  # bin and man dirs for *BSD
--BIN_BSD = $(DESTDIR)/usr/local/bin
--SBIN_BSD = $(DESTDIR)/usr/local/sbin
--MAN_BSD = $(DESTDIR)/usr/local/man
+-BIN_BSD ?= $(DESTDIR)/usr/local/bin
+-SBIN_BSD ?= $(DESTDIR)/usr/local/sbin
+-MAN_BSD ?= $(DESTDIR)/usr/local/man
+-ETC_BSD ?= $(DESTDIR)/etc
 +BIN_BSD ?= ${PREFIX}/bin
 +SBIN_BSD ?= ${PREFIX}/sbin
 +MAN_BSD ?= ${PREFIX}/man
 +ETC_BSD ?= ${PREFIX}/share/examples/vnstat
  
++
  .PHONY: vnstat tests check all clean debug install uninstall bsdinstall bsduninstall dist
  
-@@ -138,7 +139,6 @@ bsdinstall:
+ default: vnstat
+@@ -140,7 +141,6 @@ bsdinstall:
  	fi
  
  # install binaries
@@ -39,31 +42,7 @@ $OpenBSD: patch-Makefile,v 1.4 2015/01/06 13:19:35 jasper Exp $
  	install -s -m 755 src/vnstat $(BIN_BSD)
  	install -s -m 755 src/vnstatd $(SBIN_BSD)
  
-@@ -148,26 +148,26 @@ bsdinstall:
- 	fi
- 
- # install default config if such doesn't exist
--	@if [ ! -f "$(DESTDIR)/etc/vnstat.conf" ]; \
--	then echo "Installing config to $(DESTDIR)/etc/vnstat.conf"; \
--	install -d -m 755 $(DESTDIR)/etc; \
--	install -m 644 cfg/vnstat.conf $(DESTDIR)/etc/vnstat.conf; \
--	sed -e 's/lib/db/g' $(DESTDIR)/etc/vnstat.conf >$(DESTDIR)/etc/vnstat.conf.bsd; \
--	mv -f $(DESTDIR)/etc/vnstat.conf.bsd $(DESTDIR)/etc/vnstat.conf; \
-+	@if [ ! -f "$(ETC_BSD)/vnstat.conf" ]; \
-+	then echo "Installing config to $(ETC_BSD)/vnstat.conf"; \
-+	install -d -m 755 $(ETC_BSD); \
-+	install -m 644 cfg/vnstat.conf $(ETC_BSD)/vnstat.conf; \
-+	sed -e 's/lib/db/g' $(ETC_BSD)/vnstat.conf >$(ETC_BSD)/vnstat.conf.bsd; \
-+	mv -f $(ETC_BSD)/vnstat.conf.bsd $(ETC_BSD)/vnstat.conf; \
- 	fi
- 
--# update man page	
-+# update man page
-+	for m in vnstat.1 vnstati.1 vnstatd.1 vnstat.conf.5; do \
-+	sed -e 's/lib/db/g' man/$$m > man/$$m.tmp; \
-+	mv -f man/$$m.tmp man/$$m; \
-+	done
-+
+@@ -166,14 +166,9 @@ bsdinstall:
  	install -m 644 man/vnstat.1 $(MAN_BSD)/man1
  	install -m 644 man/vnstatd.1 $(MAN_BSD)/man1
  	install -m 644 man/vnstat.conf.5 $(MAN_BSD)/man5
