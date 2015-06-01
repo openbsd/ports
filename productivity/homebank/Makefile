@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2015/03/27 08:14:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2015/06/01 08:21:19 pea Exp $
 
 COMMENT =	personal accounting application
 
-DISTNAME =	homebank-4.5.6
-REVISION =	0
+DISTNAME =	homebank-5.0.2
 
 CATEGORIES =	productivity x11
 
@@ -20,13 +19,12 @@ MASTER_SITES =	${HOMEPAGE}/public/ \
 MODULES =	devel/gettext \
 		textproc/intltool
 
-WANTLIB = 	X11 Xcomposite Xcursor Xdamage Xext Xfixes \
-	 	Xi Xinerama Xrandr Xrender c fontconfig freetype \
-	 	pango-1.0 pangocairo-1.0 pangoft2-1.0 atk-1.0 \
-	 	glib-2.0 gobject-2.0 cairo m z gio-2.0 osp pthread \
-		gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0 ofx
+WANTLIB = 	c fontconfig freetype pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 atk-1.0 glib-2.0 gobject-2.0 cairo \
+		m z gio-2.0 osp pthread gdk_pixbuf-2.0 ofx \
+		cairo-gobject gdk-3 gtk-3
 
-LIB_DEPENDS =	x11/gtk+2 \
+LIB_DEPENDS =	x11/gtk+3 \
 		devel/libofx 
 
 RUN_DEPENDS =	devel/desktop-file-utils \
