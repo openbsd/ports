@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.109 2015/04/16 07:19:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.110 2015/06/01 06:41:00 jasper Exp $
 
 PORTROACH=	limit:^3
 
-VERSION=	3.7.4
-REVISION=	2
+VERSION=	3.8.1
 
 RUN_DEPENDS+=	archivers/gtar \
 		devel/ruby-rgen,${MODRUBY_FLAVOR}

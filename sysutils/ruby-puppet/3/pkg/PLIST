@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2015/04/04 09:28:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.27 2015/06/01 06:41:00 jasper Exp $
 @pkgpath sysutils/ruby-puppet
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -9,6 +9,7 @@ bin/puppet
 ${MODRUBY_SITEDIR}/hiera/
 ${MODRUBY_SITEDIR}/hiera/backend/
 ${MODRUBY_SITEDIR}/hiera/backend/puppet_backend.rb
+${MODRUBY_SITEDIR}/hiera/puppet_function.rb
 ${MODRUBY_SITEDIR}/hiera/scope.rb
 ${MODRUBY_SITEDIR}/hiera_puppet.rb
 ${MODRUBY_SITEDIR}/puppet/
@@ -205,9 +206,14 @@ ${MODRUBY_SITEDIR}/puppet/forge/repository.rb
 ${MODRUBY_SITEDIR}/puppet/functions/
 ${MODRUBY_SITEDIR}/puppet/functions.rb
 ${MODRUBY_SITEDIR}/puppet/functions/assert_type.rb
+${MODRUBY_SITEDIR}/puppet/functions/defined.rb
 ${MODRUBY_SITEDIR}/puppet/functions/each.rb
 ${MODRUBY_SITEDIR}/puppet/functions/epp.rb
 ${MODRUBY_SITEDIR}/puppet/functions/filter.rb
+${MODRUBY_SITEDIR}/puppet/functions/hiera.rb
+${MODRUBY_SITEDIR}/puppet/functions/hiera_array.rb
+${MODRUBY_SITEDIR}/puppet/functions/hiera_hash.rb
+${MODRUBY_SITEDIR}/puppet/functions/hiera_include.rb
 ${MODRUBY_SITEDIR}/puppet/functions/import.rb
 ${MODRUBY_SITEDIR}/puppet/functions/inline_epp.rb
 ${MODRUBY_SITEDIR}/puppet/functions/map.rb
@@ -629,7 +635,9 @@ ${MODRUBY_SITEDIR}/puppet/pops/evaluator/compare_operator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/epp_evaluator.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/evaluator_impl.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/external_syntax_support.rb
+${MODRUBY_SITEDIR}/puppet/pops/evaluator/puppet_proc.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/relationship_operator.rb
+${MODRUBY_SITEDIR}/puppet/pops/evaluator/runtime3_converter.rb
 ${MODRUBY_SITEDIR}/puppet/pops/evaluator/runtime3_support.rb
 ${MODRUBY_SITEDIR}/puppet/pops/functions/
 ${MODRUBY_SITEDIR}/puppet/pops/functions/dispatch.rb
@@ -651,6 +659,8 @@ ${MODRUBY_SITEDIR}/puppet/pops/loader/simple_environment_loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/static_loader.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loader/uri_helper.rb
 ${MODRUBY_SITEDIR}/puppet/pops/loaders.rb
+${MODRUBY_SITEDIR}/puppet/pops/migration/
+${MODRUBY_SITEDIR}/puppet/pops/migration/migration_checker.rb
 ${MODRUBY_SITEDIR}/puppet/pops/model/
 ${MODRUBY_SITEDIR}/puppet/pops/model/ast_transformer.rb
 ${MODRUBY_SITEDIR}/puppet/pops/model/ast_tree_dumper.rb
