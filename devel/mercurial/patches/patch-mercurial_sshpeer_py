@@ -1,0 +1,29 @@
+$OpenBSD: patch-mercurial_sshpeer_py,v 1.1 2015/06/01 13:40:56 jasper Exp $
+
+Security fix for CVE-2014-9462
+https://selenic.com/hg/rev/e3f30068d2eb
+http://chargen.matasano.com/chargen/2015/3/17/this-new-vulnerability-mercurial-command-injection-cve-2014-9462.html
+
+--- mercurial/sshpeer.py.orig	Thu Dec 18 21:59:22 2014
++++ mercurial/sshpeer.py	Mon Jun  1 14:11:37 2015
+@@ -20,6 +20,8 @@ class remotelock(object):
+             self.release()
+ 
+ def _serverquote(s):
++    if not s:
++        return s
+     '''quote a string for the remote shell ... which we assume is sh'''
+     if re.match('[a-zA-Z0-9@%_+=:,./-]*$', s):
+         return s
+@@ -45,7 +47,10 @@ class sshpeer(wireproto.wirepeer):
+         sshcmd = self.ui.config("ui", "ssh", "ssh")
+         remotecmd = self.ui.config("ui", "remotecmd", "hg")
+ 
+-        args = util.sshargs(sshcmd, self.host, self.user, self.port)
++        args = util.sshargs(sshcmd,
++                            _serverquote(self.host),
++                            _serverquote(self.user),
++                            _serverquote(self.port))
+ 
+         if create:
+             cmd = '%s %s %s' % (sshcmd, args,

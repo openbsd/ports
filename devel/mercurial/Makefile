@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2014/12/21 20:44:08 rpointel Exp $
+# $OpenBSD: Makefile,v 1.62 2015/06/01 13:40:56 jasper Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 
-MODPY_EGG_VERSION =    3.2.3
+MODPY_EGG_VERSION =	3.2.3
+REVISION-main =		0
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =     	devel
 
