@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_external_LibRaw_dcraw_dcraw_c,v 1.1 2015/06/02 15:31:15 kirby Exp $
+
+fix CVE-2015-3885
+Upstream commit 7f5615e7355fab256e22fb7db0b739850d17a0b1
+
+--- src/external/LibRaw/dcraw/dcraw.c.orig	Tue Sep 10 16:25:47 2013
++++ src/external/LibRaw/dcraw/dcraw.c	Tue Jun  2 11:51:43 2015
+@@ -768,7 +768,8 @@ struct jhead {
+ 
+ int CLASS ljpeg_start (struct jhead *jh, int info_only)
+ {
+-  int c, tag, len;
++  int c, tag;
++  ushort len;
+   uchar data[0x10000];
+   const uchar *dp;
+ 
