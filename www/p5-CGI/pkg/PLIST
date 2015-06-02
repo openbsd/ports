@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.5 2015/06/02 06:30:55 afresh1 Exp $
+${P5SITE}/CGI/
+${P5SITE}/CGI.pm
+${P5SITE}/CGI.pod
+${P5SITE}/CGI/Carp.pm
+${P5SITE}/CGI/Cookie.pm
+${P5SITE}/CGI/File/
+${P5SITE}/CGI/File/Temp.pm
+${P5SITE}/CGI/HTML/
+${P5SITE}/CGI/HTML/Functions.pm
+${P5SITE}/CGI/HTML/Functions.pod
+${P5SITE}/CGI/Pretty.pm
+${P5SITE}/CGI/Push.pm
+${P5SITE}/CGI/Util.pm
+${P5SITE}/Fh.pm
+@man man/man3p/CGI.3p
+@man man/man3p/CGI::Carp.3p
+@man man/man3p/CGI::Cookie.3p
+@man man/man3p/CGI::HTML::Functions.3p
+@man man/man3p/CGI::Pretty.3p
+@man man/man3p/CGI::Push.3p
+@man man/man3p/CGI::Util.3p
