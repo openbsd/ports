@@ -1,6 +1,6 @@
-$OpenBSD: patch-dcraw_c,v 1.9 2015/05/31 06:40:35 kirby Exp $
+$OpenBSD: patch-dcraw_c,v 1.10 2015/06/02 14:19:15 kirby Exp $
 
-imput sanitization errors, CVE-2015-3885
+input sanitization errors, CVE-2015-3885
 
 --- dcraw.c.orig	Tue May 26 12:10:40 2015
 +++ dcraw.c	Tue May 26 12:13:41 2015
