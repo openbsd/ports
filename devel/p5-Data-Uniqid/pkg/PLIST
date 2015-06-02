@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/02 19:15:21 pea Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/Uniqid.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Data/
+${P5SITE}/auto/Data/Uniqid/
+${P5SITE}/auto/Data/Uniqid/autosplit.ix
+@man man/man3p/Data::Uniqid.3p
