@@ -1,6 +1,6 @@
-$OpenBSD: patch-get_iplayer,v 1.70 2015/03/20 14:50:16 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.71 2015/06/02 15:29:45 sthen Exp $
 --- get_iplayer.orig	Fri Mar 13 19:14:58 2015
-+++ get_iplayer	Fri Mar 20 14:49:50 2015
++++ get_iplayer	Tue Jun  2 16:28:04 2015
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env perl
 +#!/usr/bin/perl
@@ -42,6 +42,24 @@ $OpenBSD: patch-get_iplayer,v 1.70 2015/03/20 14:50:16 sthen Exp $
  		logger "ERROR: Malformed URL: '$url'\n";
  		return '';
  	}
+@@ -7096,7 +7097,7 @@ sub parse_hls_connection {
+ 				push @streams, $last_stream;
+ 			} elsif ($line !~ /^#EXT/) {
+ 				if ( ! defined $last_stream ) {
+-					main::logger "WARNING: Missing #EXT-X-STREAM-INF for URL: $line ($$conn->{href})\n" ;
++					main::logger "WARNING: Missing #EXT-X-STREAM-INF for URL: $line ($conn->{href})\n" ;
+ 					return
+ 				}
+ 				$last_stream->{'URL'} = $line;
+@@ -7104,7 +7105,7 @@ sub parse_hls_connection {
+ 			}
+ 		}
+ 		if ( ! @streams ) {
+-			main::logger "WARNING: No streams found in HLS playlist ($$conn->{href})\n";
++			main::logger "WARNING: No streams found in HLS playlist ($conn->{href})\n";
+ 			return,
+ 		};
+ 
 @@ -12328,7 +12329,7 @@ sub tag_file_id3 {
  # add basic ID3 tag with id3v2
  sub tag_file_id3_basic {
