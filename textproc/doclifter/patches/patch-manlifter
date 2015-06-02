@@ -1,7 +1,7 @@
-$OpenBSD: patch-manlifter,v 1.1.1.1 2014/04/03 07:04:52 bentley Exp $
---- manlifter.orig	Fri Mar 28 02:09:47 2014
-+++ manlifter	Fri Mar 28 02:09:50 2014
-@@ -69,7 +69,7 @@ def fetch_page(file, localcopy, patch):
+$OpenBSD: patch-manlifter,v 1.2 2015/06/02 17:02:09 ajacoutot Exp $
+--- manlifter.orig	Thu Apr  2 14:46:23 2015
++++ manlifter	Tue Jun  2 19:01:14 2015
+@@ -70,7 +70,7 @@ def fetch_page(file, localcopy, patch):
      if os.path.exists(patch):
          here = os.getcwd()
          os.chdir(outdir)
