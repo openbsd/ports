@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/26 17:37:39 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2015/06/02 19:56:15 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
 
-V=			43.1
+V=			43.2
 DISTNAME=		iridium-browser-43.0
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 PKGNAME=		iridium-${V}
 
 # The update from 43.0 to 43.1 is released as a patch
 # this time due to the size of the tarball.
-PATCHFILES+=		iridium-browser-43.0-1.diff
+PATCHFILES+=		iridium-browser-43.0-1.diff \
+			iridium-browser-43.1-2.diff
+
 PATCH_DIST_STRIP=	-p1
 
 CATEGORIES=		www
