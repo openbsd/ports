@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/06/02 16:57:48 ajacoutot Exp $
 
 COMMENT=		Python extension wrapping the ICU C++ API
 
-MODPY_EGG_VERSION=	1.8
+MODPY_EGG_VERSION=	1.9.2
 DISTNAME=		PyICU-${MODPY_EGG_VERSION}
 PKGNAME=		py-ICU-${MODPY_EGG_VERSION}
 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2014/07/03 11:17:06 ajacoutot Exp $
---- setup.py.orig	Thu Jul  3 10:09:32 2014
-+++ setup.py	Thu Jul  3 10:11:14 2014
+$OpenBSD: patch-setup_py,v 1.2 2015/06/02 16:57:48 ajacoutot Exp $
+--- setup.py.orig	Sun May 10 04:36:35 2015
++++ setup.py	Tue Jun  2 18:55:46 2015
 @@ -13,6 +13,7 @@ INCLUDES = {
      'darwin': ['/usr/local/include'],
      'linux': [],
@@ -10,7 +10,7 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2014/07/03 11:17:06 ajacoutot Exp $
      'sunos5': [],
  }
 @@ -21,6 +22,7 @@ CFLAGS = {
-     'darwin': ['-Wno-write-strings', '-DPYICU_VER="%s"' %(VERSION)],
+     'darwin': ['-DPYICU_VER="%s"' %(VERSION)],
      'linux': ['-DPYICU_VER="%s"' %(VERSION)],
      'freebsd': ['-DPYICU_VER="%s"' %(VERSION)],
 +    'openbsd': ['-DPYICU_VER="%s"' %(VERSION)],
