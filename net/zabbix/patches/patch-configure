@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.15 2015/05/15 08:04:44 robert Exp $
+$OpenBSD: patch-configure,v 1.16 2015/06/02 16:45:03 robert Exp $
 --- configure.orig	Wed Apr 22 09:56:37 2015
-+++ configure	Fri May 15 09:38:40 2015
++++ configure	Tue Jun  2 18:41:29 2015
 @@ -4749,7 +4749,7 @@ for ac_header in stdio.h stdlib.h string.h unistd.h ne
    sys/vmmeter.h strings.h vm/vm_param.h \
    sys/time.h kstat.h sys/syscall.h sys/sysmacros.h \
@@ -10,7 +10,20 @@ $OpenBSD: patch-configure,v 1.15 2015/05/15 08:04:44 robert Exp $
    zone.h nlist.h kvm.h linux/kernel.h procinfo.h sys/dk.h \
    sys/resource.h pthread.h windows.h process.h conio.h sys/wait.h regex.h \
    stdarg.h winsock2.h pdh.h psapi.h sys/sem.h sys/ipc.h sys/shm.h Winldap.h \
-@@ -9117,7 +9117,7 @@ $as_echo "yes" >&6; }
+@@ -7011,7 +7011,11 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ 
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
+-#include <sys/dkstat.h>
++#if defined(HAVE_SYS_DKSTAT_H)
++#      include <sys/dkstat.h>
++#elif defined(HAVE_SYS_SCHED_H)
++#      include <sys/sched.h>
++#endif
+ 
+ int
+ main ()
+@@ -9117,7 +9121,7 @@ $as_echo "yes" >&6; }
  
  			 JABBER_INCDIR="$IKSEMEL_CPPFLAGS"
  			 JABBER_LIBDIR="$IKSEMEL_LDFLAGS"
@@ -19,7 +32,7 @@ $OpenBSD: patch-configure,v 1.15 2015/05/15 08:04:44 robert Exp $
  
  fi
         else
-@@ -9127,7 +9127,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
+@@ -9127,7 +9131,7 @@ $as_echo_n "checking for iksemel support... " >&6; }
                 if test -f $_libiksemel_with/include/iksemel.h; then
                         JABBER_INCDIR="-I$_libiksemel_with/include"
                         JABBER_LIBDIR="-L$_libiksemel_with/lib"
