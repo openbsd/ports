@@ -1,7 +1,7 @@
-$OpenBSD: patch-ddclient,v 1.1 2015/03/22 08:30:20 pascal Exp $
---- ddclient.orig	Tue Nov 25 15:02:26 2014
-+++ ddclient	Tue Nov 25 15:03:18 2014
-@@ -997,16 +997,6 @@ sub _read_config {
+$OpenBSD: patch-ddclient,v 1.2 2015/06/02 17:08:03 ajacoutot Exp $
+--- ddclient.orig	Tue Jun  2 19:05:38 2015
++++ ddclient	Tue Jun  2 19:05:38 2015
+@@ -1062,16 +1062,6 @@ sub _read_config {
  	# fatal("Cannot open file '%s'. ($!)", $file);
  	warning("Cannot open file '%s'. ($!)", $file);
      }

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/03/22 08:52:54 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/06/02 17:08:03 ajacoutot Exp $
 @newgroup _ddclient:750
 @newuser _ddclient:750:_ddclient:daemon:DynDNS Client:/nonexistent:/sbin/nologin
 sbin/ddclient
@@ -11,8 +11,8 @@ share/examples/ddclient/
 share/examples/ddclient/sample-ddclient-wrapper.sh
 share/examples/ddclient/sample-etc_cron.d_ddclient
 share/examples/ddclient/sample-etc_ddclient.conf
-@group _ddclient
 @mode 0640
+@group _ddclient
 @sample ${SYSCONFDIR}/ddclient/ddclient.conf
 @mode
 @group
