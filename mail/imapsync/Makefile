@@ -1,24 +1,35 @@
-# $OpenBSD: Makefile,v 1.13 2013/10/11 23:49:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2015/06/02 19:20:15 pea Exp $
+
+GH_ACCOUNT =    imapsync
+GH_PROJECT =    imapsync
 
 COMMENT=	IMAP synchronization tool
 
-DISTNAME=	imapsync-1.350
+DISTNAME=	imapsync-1.637
 CATEGORIES=	mail
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
-# WTFPL
+# NO_LIMIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/
-
-EXTRACT_SUFX=	.tgz
+WRKDIST=	${WRKDIR}/imapsync-${DISTNAME}
 
 RUN_DEPENDS=	converters/p5-DateManip \
 		security/p5-IO-Socket-SSL \
 		security/p5-Digest-HMAC \
 		mail/p5-Mail-IMAPClient \
-		devel/p5-Term-ReadKey
+		devel/p5-Term-ReadKey \
+		net/p5-IO-Socket-INET6 \
+		security/p5-IO-Socket-SSL \
+		devel/p5-IO-Tee \
+		converters/p5-Unicode-String \
+		www/p5-URI \
+		security/p5-Authen-NTLM \
+		devel/p5-File-Copy-Recursive \
+		devel/p5-Parse-RecDescent \
+		devel/p5-Test-Pod \
+		devel/p5-Data-Uniqid
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
