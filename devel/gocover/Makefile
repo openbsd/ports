@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/15 07:32:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/06/02 08:16:20 sthen Exp $
 
 COMMENT =		go code coverage tool
 DISTNAME =		gocover-1.4
 CATEGORIES =		devel
 HOMEPAGE =		http://golang.org/
-REVISION =		0
+REVISION =		1
 
-MAINTAINER =		Adam Wolk <adam.wolk@koparo.com>
+MAINTAINER =		Adam Wolk <adam.wolk@tintagel.pl>
 
 # 3-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes

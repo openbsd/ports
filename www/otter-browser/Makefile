@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/28 10:17:25 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2015/06/02 08:16:20 sthen Exp $
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		browser aiming to recreate classic Opera (12.x) UI using Qt5
@@ -6,6 +6,7 @@ COMMENT =		browser aiming to recreate classic Opera (12.x) UI using Qt5
 GH_ACCOUNT =		OtterBrowser
 GH_PROJECT =		otter-browser
 V =			0.9.05
+REVISION =		1
 #GH_TAGNAME =		v$V
 # We were asked by upstream to release from the following commit
 # as it contains fixes for crashes & serious issues
@@ -26,13 +27,12 @@ V =			0.9.05
 GH_COMMIT =		1ea5df13f908495df4ccccad9d634d997f6fd4c9
 
 DISTNAME =		${GH_PROJECT}-$Vpl0
-REVISION =		0
 
 CATEGORIES =		www
 
 HOMEPAGE =		http://otter-browser.org/
 
-MAINTAINER =		Adam Wolk <adam.wolk@koparo.com>
+MAINTAINER =		Adam Wolk <adam.wolk@tintagel.pl>
 
 # License GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
