@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/02 11:34:15 bmercer Exp $
+@bin go/${GO_PKG}/vet
