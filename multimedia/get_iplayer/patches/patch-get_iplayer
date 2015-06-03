@@ -1,13 +1,13 @@
-$OpenBSD: patch-get_iplayer,v 1.71 2015/06/02 15:29:45 sthen Exp $
---- get_iplayer.orig	Fri Mar 13 19:14:58 2015
-+++ get_iplayer	Tue Jun  2 16:28:04 2015
+$OpenBSD: patch-get_iplayer,v 1.72 2015/06/03 15:22:07 sthen Exp $
+--- get_iplayer.orig	Wed Jun  3 10:34:22 2015
++++ get_iplayer	Wed Jun  3 16:21:28 2015
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env perl
 +#!/usr/bin/perl
  #
  # get_iplayer - Lists, Records and Streams BBC iPlayer TV and Radio programmes + other Programmes via 3rd-party plugins
  #
-@@ -388,6 +388,7 @@ if ( $opt->{encodinglocale} =~ /UTF-?8/i ) {
+@@ -390,6 +390,7 @@ if ( $opt->{encodinglocale} =~ /UTF-?8/i ) {
  }
  
  # Copy a few options over to opt so that logger works
@@ -15,7 +15,7 @@ $OpenBSD: patch-get_iplayer,v 1.71 2015/06/02 15:29:45 sthen Exp $
  $opt->{debug} = $opt->{verbose} = 1 if $opt_pre->{debug};
  $opt->{verbose} = 1 if $opt_pre->{verbose};
  $opt->{silent} = $opt->{quiet} = 1 if $opt_pre->{silent};
-@@ -440,7 +441,7 @@ my $plugin_dir_system;
+@@ -442,7 +443,7 @@ my $plugin_dir_system;
  if ( defined $ENV{ALLUSERSPROFILE} && $^O eq "MSWin32" ) {
      $plugin_dir_system = $ENV{ALLUSERSPROFILE}.'/get_iplayer/plugins';
  } else {
@@ -24,7 +24,7 @@ $OpenBSD: patch-get_iplayer,v 1.71 2015/06/02 15:29:45 sthen Exp $
  }
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
-@@ -908,7 +909,7 @@ sub init_search {
+@@ -924,7 +925,7 @@ sub init_search {
  	delete $binopts->{vlc};
  	push @{ $binopts->{vlc} }, '-vv' if $opt->{debug};
  
@@ -33,7 +33,7 @@ $OpenBSD: patch-get_iplayer,v 1.71 2015/06/02 15:29:45 sthen Exp $
  	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
  
  	$bin->{tee}		= 'tee';
-@@ -2721,7 +2722,7 @@ sub request_url_retry {
+@@ -2737,7 +2738,7 @@ sub request_url_retry {
  	}
  
  	# Malformed URL check
@@ -42,25 +42,7 @@ $OpenBSD: patch-get_iplayer,v 1.71 2015/06/02 15:29:45 sthen Exp $
  		logger "ERROR: Malformed URL: '$url'\n";
  		return '';
  	}
-@@ -7096,7 +7097,7 @@ sub parse_hls_connection {
- 				push @streams, $last_stream;
- 			} elsif ($line !~ /^#EXT/) {
- 				if ( ! defined $last_stream ) {
--					main::logger "WARNING: Missing #EXT-X-STREAM-INF for URL: $line ($$conn->{href})\n" ;
-+					main::logger "WARNING: Missing #EXT-X-STREAM-INF for URL: $line ($conn->{href})\n" ;
- 					return
- 				}
- 				$last_stream->{'URL'} = $line;
-@@ -7104,7 +7105,7 @@ sub parse_hls_connection {
- 			}
- 		}
- 		if ( ! @streams ) {
--			main::logger "WARNING: No streams found in HLS playlist ($$conn->{href})\n";
-+			main::logger "WARNING: No streams found in HLS playlist ($conn->{href})\n";
- 			return,
- 		};
- 
-@@ -12328,7 +12329,7 @@ sub tag_file_id3 {
+@@ -12403,7 +12404,7 @@ sub tag_file_id3 {
  # add basic ID3 tag with id3v2
  sub tag_file_id3_basic {
  	my ($self, $meta, $tags) = @_;
