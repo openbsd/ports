@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2015/05/21 05:52:10 dcoppa Exp $
+$OpenBSD: README,v 1.2 2015/06/03 10:21:03 dcoppa Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -34,6 +34,9 @@ Key for browser applications
 
 Be sure that "YouTube Data API v3" is enabled under "APIs & auth" ->
 "APIs" -> "Enabled APIs"
+
+If not, go to "APIs & auth" -> "APIs" -> "API Library", click on "YouTube
+Data API" and then on "Enable API" to enable it.
 
 Add the environment variable containing your newly generated key
 to your ~/.profile or ~/.xinitrc:

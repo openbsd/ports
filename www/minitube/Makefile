@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2015/05/21 05:52:10 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.40 2015/06/03 10:21:03 dcoppa Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
@@ -6,7 +6,7 @@ GH_ACCOUNT =	flaviotordini
 GH_PROJECT =	minitube
 GH_TAGNAME =	2.4
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
-
+REVISION =	0
 CATEGORIES =	www multimedia
 
 HOMEPAGE =	http://flavio.tordini.org/minitube
