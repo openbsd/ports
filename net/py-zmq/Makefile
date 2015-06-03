@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/04/02 14:21:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/06/03 11:55:45 ajacoutot Exp $
 
 COMMENT =		Python bindings for ZeroMQ
 
-MODPY_EGG_VERSION =	14.3.1
+MODPY_EGG_VERSION =	14.6.0
 DISTNAME =		pyzmq-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 
@@ -19,19 +19,20 @@ MODPY_PI =		Yes
 
 MODULES =		lang/python
 
-LIB_DEPENDS =		net/zeromq>=4.0.4 \
-			${MODPY_LIB_DEPENDS}
+LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
+			net/zeromq
+
+# ssh tunnelling
 RUN_DEPENDS =		security/py-paramiko \
 			devel/py-pexpect
 
 MODPY_DISTUTILS_BUILDARGS =	--zmq=${LOCALBASE}
 
-TEST_TARGET = test
-
-# regression tests needs to change default ulimit
 # ulimit -n 1024
-TEST_DEPENDS +=	math/py-numpy \
-			devel/py-nose
+TEST_IS_INTERACTIVE =	Yes
+TEST_TARGET =		test
+TEST_DEPENDS =		devel/py-nose \
+			math/py-numpy
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \

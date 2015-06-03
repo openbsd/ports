@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/09/23 12:08:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/06/03 11:55:45 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/pyzmq-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/zmq/
 lib/python${MODPY_VERSION}/site-packages/zmq/__init__.py
@@ -20,10 +20,12 @@ lib/python${MODPY_VERSION}/site-packages/zmq/backend/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/_cdefs.h
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/_cffi.py
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/_cffi.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/_poll.py
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/_poll.pyc
+lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/_verify.c
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/constants.py
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/constants.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cffi/context.py
@@ -168,6 +170,8 @@ lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_device.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_device.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_error.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_error.pyc
+lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_etc.py
+lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_etc.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_imports.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_imports.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_ioloop.py
@@ -198,6 +202,8 @@ lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_stopwatch.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_stopwatch.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_version.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_version.pyc
+lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_win32_shim.py
+lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_win32_shim.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_z85.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_z85.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_zmqstream.py
@@ -225,6 +231,8 @@ lib/python${MODPY_VERSION}/site-packages/zmq/utils/sixcerpt.py
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/sixcerpt.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/strtypes.py
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/strtypes.pyc
+lib/python${MODPY_VERSION}/site-packages/zmq/utils/win32.py
+lib/python${MODPY_VERSION}/site-packages/zmq/utils/win32.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/z85.py
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/z85.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/zmq_compat.h
