@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2015/01/15 22:11:15 halex Exp $
+# $OpenBSD: Makefile,v 1.20 2015/06/03 07:35:39 dcoppa Exp $
 
 COMMENT=		command line client for mpd
 
-VER=			0.26
+VER=			0.27
 DISTNAME=		mpc-${VER}
-REVISION=		0
 CATEGORIES=		audio
 
 HOMEPAGE=		http://www.musicpd.org/clients/mpc/

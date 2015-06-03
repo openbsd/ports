@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2014/06/16 09:35:16 jasper Exp $
---- Makefile.in.orig	Tue May 13 08:33:48 2014
-+++ Makefile.in	Tue Jun 10 13:27:28 2014
-@@ -331,9 +331,7 @@ top_srcdir = @top_srcdir@
+$OpenBSD: patch-Makefile_in,v 1.9 2015/06/03 07:35:39 dcoppa Exp $
+--- Makefile.in.orig	Thu Jan 15 12:42:28 2015
++++ Makefile.in	Wed Jun  3 09:33:19 2015
+@@ -532,9 +532,7 @@ top_srcdir = @top_srcdir@
  ACLOCAL_AMFLAGS = -I m4
- AUTOMAKE_OPTIONS = foreign 1.11 dist-xz
+ AUTOMAKE_OPTIONS = foreign 1.11 dist-xz subdir-objects
  man_MANS = doc/mpc.1
 -doc_DATA = AUTHORS COPYING NEWS README \
 -	doc/mpd-m3u-handler.sh doc/mpd-pls-handler.sh doc/mppledit \
