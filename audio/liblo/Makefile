@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/03/16 18:07:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2015/06/03 07:00:29 jasper Exp $
 
 COMMENT =		leightweight open sound control (OSC) implementation
-DISTNAME =		liblo-0.26
-SHARED_LIBS +=  lo                   0.0      # 7.0
+DISTNAME =		liblo-0.28
+SHARED_LIBS +=  lo                   0.1      # 9.0
 CATEGORIES =		audio
 HOMEPAGE =		http://liblo.sourceforge.net/
-REVISION =		2
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
