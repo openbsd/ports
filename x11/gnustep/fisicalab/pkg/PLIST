@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/12/15 09:33:18 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/06/03 07:48:36 sebastia Exp $
 bin/FisicaLab
 libexec/GNUstep/FisicaLab.app/
 @bin libexec/GNUstep/FisicaLab.app/FisicaLab
@@ -456,6 +456,12 @@ libexec/GNUstep/FisicaLab.app/Resources/English.lproj/dynamicsExamples.rtfd/dina
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/dynamicsExamples.rtfd/dinamica94.jpg
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/dynamicsExamples.rtfd/dinamica95.jpg
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/dynamicsMessages.plist
+libexec/GNUstep/FisicaLab.app/Resources/English.lproj/firstLaunchPanel.gorm/
+libexec/GNUstep/FisicaLab.app/Resources/English.lproj/firstLaunchPanel.gorm/COPYING.txt
+libexec/GNUstep/FisicaLab.app/Resources/English.lproj/firstLaunchPanel.gorm/data.classes
+libexec/GNUstep/FisicaLab.app/Resources/English.lproj/firstLaunchPanel.gorm/data.info
+libexec/GNUstep/FisicaLab.app/Resources/English.lproj/firstLaunchPanel.gorm/logoPanel.tiff
+libexec/GNUstep/FisicaLab.app/Resources/English.lproj/firstLaunchPanel.gorm/objects.gorm
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/help.gorm/
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/help.gorm/data.classes
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/help.gorm/data.info
@@ -589,6 +595,10 @@ libexec/GNUstep/FisicaLab.app/Resources/English.lproj/preferences.gorm/
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/preferences.gorm/data.classes
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/preferences.gorm/data.info
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/preferences.gorm/objects.gorm
+libexec/GNUstep/FisicaLab.app/Resources/English.lproj/properties.gorm/
+libexec/GNUstep/FisicaLab.app/Resources/English.lproj/properties.gorm/data.classes
+libexec/GNUstep/FisicaLab.app/Resources/English.lproj/properties.gorm/data.info
+libexec/GNUstep/FisicaLab.app/Resources/English.lproj/properties.gorm/objects.gorm
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/staticRigidBodies.gorm/
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/staticRigidBodies.gorm/COPYING.txt
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/staticRigidBodies.gorm/angcomp.tif
@@ -1464,6 +1474,12 @@ libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/dynamicsExamples.rtfd/dina
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/dynamicsExamples.rtfd/dinamica94.jpg
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/dynamicsExamples.rtfd/dinamica95.jpg
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/dynamicsMessages.plist
+libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/firstLaunchPanel.gorm/
+libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/firstLaunchPanel.gorm/COPYING.txt
+libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/firstLaunchPanel.gorm/data.classes
+libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/firstLaunchPanel.gorm/data.info
+libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/firstLaunchPanel.gorm/logoPanel.tiff
+libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/firstLaunchPanel.gorm/objects.gorm
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/help.gorm/
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/help.gorm/data.classes
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/help.gorm/data.info
@@ -1597,6 +1613,10 @@ libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/preferences.gorm/
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/preferences.gorm/data.classes
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/preferences.gorm/data.info
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/preferences.gorm/objects.gorm
+libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/properties.gorm/
+libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/properties.gorm/data.classes
+libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/properties.gorm/data.info
+libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/properties.gorm/objects.gorm
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/staticRigidBodies.gorm/
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/staticRigidBodies.gorm/COPYING.txt
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/staticRigidBodies.gorm/angcomp.tif
@@ -2019,6 +2039,11 @@ libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/staticsRigidExamples.rtfd/
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/staticsRigidExamples.rtfd/ejemplo98.jpg
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/staticsRigidExamples.rtfd/ejemplo99.jpg
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/staticsRigidMessages.plist
+libexec/GNUstep/FisicaLab.app/Resources/Tables/
+libexec/GNUstep/FisicaLab.app/Resources/Tables/water/
+libexec/GNUstep/FisicaLab.app/Resources/Tables/water/saturation-pressure.plist
+libexec/GNUstep/FisicaLab.app/Resources/Tables/water/saturation-temperature.plist
+libexec/GNUstep/FisicaLab.app/Resources/Tables/water/superheated.plist
 libexec/GNUstep/FisicaLab.app/Resources/conversionFactors.plist
 libexec/GNUstep/FisicaLab.app/Resources/doc_warning.rtf
 libexec/GNUstep/FisicaLab.app/Resources/menuConversionFactors.plist

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2014/11/21 18:21:21 sebastia Exp $
+# $OpenBSD: Makefile,v 1.15 2015/06/03 07:48:36 sebastia Exp $
 
 COMMENT=	educational application to solve physics problems
 
-DISTNAME =	fisicalab-0.3.4
-REVISION =	1
+VERSION =	0.3.5
+DISTNAME =	fisicalab-${VERSION}-1
+PKGNAME =	fisicalab-${VERSION}.1
 
 HOMEPAGE=	http://www.nongnu.org/fisicalab/
 MASTER_SITES=	${MASTER_SITE_GNU:=fisicalab/}
@@ -15,6 +16,8 @@ WANTLIB =	gsl gslcblas
 LIB_DEPENDS=	devel/gsl
 
 CONFIGURE_STYLE =	gnu
+
+WRKSRC =	${WRKDIR}/fisicalab-${VERSION}
 
 pre-configure:
 	cd ${WRKBUILD} && \
