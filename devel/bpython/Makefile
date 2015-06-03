@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/03 06:44:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/06/03 06:44:30 jasper Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/py-six \
 		devel/py-urwid \
 		textproc/py-pygments \
-		www/py-requests \
+		www/py-requests
 BUILD_DEPENDS=	devel/py-babel \
 		textproc/py-sphinx
 TEST_DEPENDS=	devel/py-mock \
