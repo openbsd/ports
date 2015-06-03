@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/03/15 10:05:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/06/03 06:14:22 jasper Exp $
 ${P5SITE}/SVG/
 ${P5SITE}/SVG.pm
 ${P5SITE}/SVG/DOM.pm
@@ -17,6 +17,7 @@ share/examples/p5-SVG/03_circle_and_square.pl
 share/examples/p5-SVG/SVG_02_sample.pl
 share/examples/p5-SVG/attributeManip.pl
 share/examples/p5-SVG/circle.pl
+share/examples/p5-SVG/ellipse.pl
 share/examples/p5-SVG/image_sample.pl
 share/examples/p5-SVG/inline_sample.pl
 share/examples/p5-SVG/inlinesvg.pl
