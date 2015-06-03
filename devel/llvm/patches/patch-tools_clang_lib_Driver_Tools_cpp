@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.24 2015/04/09 22:25:02 sthen Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.25 2015/06/03 06:23:21 ajacoutot Exp $
 
 r212838
 Handle SPARC float command line parameters for SPARCv9.
@@ -22,7 +22,7 @@ This commit implements the -fuse-ld= option, so that the user
 can specify -fuse-ld=bfd to use ld.bfd.
 
 --- tools/clang/lib/Driver/Tools.cpp.orig	Sun Mar  2 22:03:41 2014
-+++ tools/clang/lib/Driver/Tools.cpp	Thu Feb 26 07:09:54 2015
++++ tools/clang/lib/Driver/Tools.cpp	Tue Jun  2 16:46:10 2015
 @@ -1150,7 +1150,7 @@ static std::string getR600TargetGPU(const ArgList &Arg
  }
  
@@ -58,13 +58,13 @@ can specify -fuse-ld=bfd to use ld.bfd.
 +    switch (getToolChain().getTriple().getArch()) {
 +    case llvm::Triple::mips64:
 +    case llvm::Triple::mips64el:
-+    case llvm::Triple::sparc:
 +    case llvm::Triple::x86:
 +    case llvm::Triple::x86_64:
 +      IsPICLevelTwo = false; // "-fpie"
 +      break;
 +
 +    case llvm::Triple::ppc:
++    case llvm::Triple::sparc:
 +    case llvm::Triple::sparcv9:
 +      IsPICLevelTwo = true; // "-fPIE"
 +      break;
