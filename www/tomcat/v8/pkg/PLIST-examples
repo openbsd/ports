@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.7 2015/05/14 09:21:01 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.8 2015/06/03 10:54:07 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -237,6 +237,7 @@ webapps/docs/api/org/apache/catalina/filters/ExpiresFilter.XServletOutputStream.
 webapps/docs/api/org/apache/catalina/filters/ExpiresFilter.html
 webapps/docs/api/org/apache/catalina/filters/FailedRequestFilter.html
 webapps/docs/api/org/apache/catalina/filters/FilterBase.html
+webapps/docs/api/org/apache/catalina/filters/HttpHeaderSecurityFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteAddrFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteHostFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteIpFilter.XForwardedRequest.html
