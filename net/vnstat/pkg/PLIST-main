@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/01/06 13:19:35 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2015/06/03 12:34:10 pea Exp $
+@pkgpath net/vnstat
 @newgroup _vnstat:658
 @newuser _vnstat:658:_vnstat:daemon:vnstat daemon:/var/db/vnstat:/sbin/nologin
 @bin bin/vnstat
-@bin bin/vnstati
 @man man/man1/vnstat.1
 @man man/man1/vnstatd.1
-@man man/man1/vnstati.1
 @man man/man5/vnstat.conf.5
 @bin sbin/vnstatd
 @owner _vnstat
@@ -17,7 +16,6 @@
 @group
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/vnstat/
-share/examples/vnstat/vnstat.cgi
 share/examples/vnstat/vnstat.conf
 @sample ${SYSCONFDIR}/vnstat.conf
 @rcscript ${RCDIR}/vnstatd
