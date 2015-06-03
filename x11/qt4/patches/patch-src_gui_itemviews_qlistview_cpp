@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gui_itemviews_qlistview_cpp,v 1.5 2014/07/12 11:10:14 dcoppa Exp $
---- src/gui/itemviews/qlistview.cpp.orig	Thu Apr 10 20:37:12 2014
-+++ src/gui/itemviews/qlistview.cpp	Tue May 13 11:25:38 2014
-@@ -2918,7 +2918,8 @@ void QIconModeViewBase::doDynamicLayout(const QListVie
+$OpenBSD: patch-src_gui_itemviews_qlistview_cpp,v 1.6 2015/06/03 07:28:01 dcoppa Exp $
+--- src/gui/itemviews/qlistview.cpp.orig	Thu May  7 16:14:43 2015
++++ src/gui/itemviews/qlistview.cpp	Sun May 31 13:28:29 2015
+@@ -2948,7 +2948,8 @@ void QIconModeViewBase::doDynamicLayout(const QListVie
      if (moved.count() != items.count())
          moved.resize(items.count());
  

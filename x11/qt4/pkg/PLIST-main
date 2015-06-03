@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.33 2014/07/12 11:10:14 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.34 2015/06/03 07:28:01 dcoppa Exp $
 @pkgpath x11/qt4
 @pkgpath x11/qt4,-phonon
 @pkgpath x11/qt4,-sqlite
@@ -2713,6 +2713,7 @@ include/X11/qt4/QtNetwork/qtcpsocket.h
 include/X11/qt4/QtNetwork/qudpsocket.h
 include/X11/qt4/QtNetwork/qurlinfo.h
 include/X11/qt4/QtOpenGL/
+include/X11/qt4/QtOpenGL/QGL
 include/X11/qt4/QtOpenGL/QGLBuffer
 include/X11/qt4/QtOpenGL/QGLColormap
 include/X11/qt4/QtOpenGL/QGLContext
@@ -3912,6 +3913,9 @@ lib/qt4/mkspecs/win32-msvc2012/qplatformdefs.h
 lib/qt4/mkspecs/win32-msvc2013/
 lib/qt4/mkspecs/win32-msvc2013/qmake.conf
 lib/qt4/mkspecs/win32-msvc2013/qplatformdefs.h
+lib/qt4/mkspecs/win32-msvc2015/
+lib/qt4/mkspecs/win32-msvc2015/qmake.conf
+lib/qt4/mkspecs/win32-msvc2015/qplatformdefs.h
 lib/qt4/mkspecs/wince50standard-armv4i-msvc2005/
 lib/qt4/mkspecs/wince50standard-armv4i-msvc2005/default_post.prf
 lib/qt4/mkspecs/wince50standard-armv4i-msvc2005/qmake.conf
@@ -4137,6 +4141,7 @@ lib/qt4/translations/linguist_cs.qm
 lib/qt4/translations/linguist_de.qm
 lib/qt4/translations/linguist_eu.qm
 lib/qt4/translations/linguist_fr.qm
+lib/qt4/translations/linguist_he.qm
 lib/qt4/translations/linguist_hu.qm
 lib/qt4/translations/linguist_ja.qm
 lib/qt4/translations/linguist_ko.qm

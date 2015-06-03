@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_tools_moc_main_cpp,v 1.3 2013/10/04 13:15:41 dcoppa Exp $
+$OpenBSD: patch-src_tools_moc_main_cpp,v 1.4 2015/06/03 07:28:01 dcoppa Exp $
 
 Workaround moc's inability to properly parse C++ macros within
 some of Boost's headers. This issue may come up again with other
@@ -7,13 +7,14 @@ C++ parser from Qt5's moc has been fixed.
 
 https://bugreports.qt-project.org/browse/QTBUG-22829
 
---- src/tools/moc/main.cpp.orig	Fri Jun  7 07:17:00 2013
-+++ src/tools/moc/main.cpp	Fri Sep 27 10:15:15 2013
-@@ -190,6 +190,7 @@ int runMoc(int _argc, char **_argv)
+--- src/tools/moc/main.cpp.orig	Thu May  7 16:14:44 2015
++++ src/tools/moc/main.cpp	Sun May 31 14:58:12 2015
+@@ -190,6 +190,8 @@ int runMoc(int _argc, char **_argv)
  
      // Workaround a bug while parsing the boost/type_traits/has_operator.hpp header. See QTBUG-22829
      pp.macros["BOOST_TT_HAS_OPERATOR_HPP_INCLUDED"];
 +    pp.macros["BOOST_LEXICAL_CAST_INCLUDED"];
++    pp.macros["BOOST_NEXT_PRIOR_HPP_INCLUDED"];
  
      QByteArray filename;
      QByteArray output;
