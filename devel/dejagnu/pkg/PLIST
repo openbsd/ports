@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/05/07 14:03:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/06/03 07:13:48 ajacoutot Exp $
 bin/runtest
 include/dejagnu.h
 @info info/dejagnu.info
@@ -7,6 +7,7 @@ share/dejagnu/
 share/dejagnu/baseboards/
 share/dejagnu/baseboards/README
 share/dejagnu/baseboards/am33_2.0-libremote.exp
+share/dejagnu/baseboards/androideabi.exp
 share/dejagnu/baseboards/arc-sim.exp
 share/dejagnu/baseboards/arm-ice.exp
 share/dejagnu/baseboards/arm-sid.exp
@@ -56,6 +57,12 @@ share/dejagnu/baseboards/mips-lnews-sim.exp
 share/dejagnu/baseboards/mips-lsi-sim.exp
 share/dejagnu/baseboards/mips-sim-idt32.exp
 share/dejagnu/baseboards/mips-sim-idt64.exp
+share/dejagnu/baseboards/mips-sim-mti32.exp
+share/dejagnu/baseboards/mips-sim-mti64.exp
+share/dejagnu/baseboards/mips-sim-mti64_64.exp
+share/dejagnu/baseboards/mips-sim-mti64_n32.exp
+share/dejagnu/baseboards/mips-sim-sde32.exp
+share/dejagnu/baseboards/mips-sim-sde64.exp
 share/dejagnu/baseboards/mips-sim.exp
 share/dejagnu/baseboards/mips64-sim.exp
 share/dejagnu/baseboards/mips64vr4100-sim.exp
@@ -66,6 +73,7 @@ share/dejagnu/baseboards/mn10300-cygmon.exp
 share/dejagnu/baseboards/mn10300-sim.exp
 share/dejagnu/baseboards/msparc-cygmon.exp
 share/dejagnu/baseboards/mt-sid.exp
+share/dejagnu/baseboards/multi-sim.exp
 share/dejagnu/baseboards/op50n.exp
 share/dejagnu/baseboards/powerpc-bug.exp
 share/dejagnu/baseboards/powerpc-bug1.exp
@@ -89,6 +97,7 @@ share/dejagnu/baseboards/tx39-sim.exp
 share/dejagnu/baseboards/unix.exp
 share/dejagnu/baseboards/usparc-cygmon.exp
 share/dejagnu/baseboards/v850-sim.exp
+share/dejagnu/baseboards/visium-sim.exp
 share/dejagnu/baseboards/vr4100-ddb.exp
 share/dejagnu/baseboards/vr4100-sim.exp
 share/dejagnu/baseboards/vr4111-sim.exp
@@ -105,6 +114,7 @@ share/dejagnu/baseboards/xscale-cygmon.exp
 share/dejagnu/baseboards/xtensa-sim.exp
 share/dejagnu/config/
 share/dejagnu/config/README
+share/dejagnu/config/adb.exp
 share/dejagnu/config/arc.exp
 share/dejagnu/config/arm-ice.exp
 share/dejagnu/config/base-config.exp
