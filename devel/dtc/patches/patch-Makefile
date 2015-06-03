@@ -1,15 +1,15 @@
-$OpenBSD: patch-Makefile,v 1.3 2013/06/21 19:58:28 brad Exp $
---- Makefile.orig	Wed Jun 19 12:58:46 2013
-+++ Makefile	Thu Jun 20 23:06:02 2013
+$OpenBSD: patch-Makefile,v 1.4 2015/06/03 20:17:04 uaa Exp $
+--- Makefile.orig	Tue Nov 11 22:29:16 2014
++++ Makefile	Sun May 31 19:50:12 2015
 @@ -16,9 +16,9 @@ LOCAL_VERSION =
  CONFIG_LOCALVERSION =
  
- CPPFLAGS = -I libfdt
+ CPPFLAGS = -I libfdt -I .
 -WARNINGS = -Werror -Wall -Wpointer-arith -Wcast-qual -Wnested-externs \
--	-Wstrict-prototypes -Wmissing-prototypes -Wredundant-decls
+-	-Wstrict-prototypes -Wmissing-prototypes -Wredundant-decls -Wshadow
 -CFLAGS = -g -Os -fPIC -Werror $(WARNINGS)
 +WARNINGS = -Wall -Wpointer-arith -Wcast-qual -Wnested-externs \
-+	-Wstrict-prototypes -Wmissing-prototypes
++	-Wstrict-prototypes -Wmissing-prototypes -Wshadow
 +CFLAGS += -fPIC $(WARNINGS)
  
  BISON = bison
@@ -23,7 +23,7 @@ $OpenBSD: patch-Makefile,v 1.3 2013/06/21 19:58:28 brad Exp $
  endif
  
  #
-@@ -130,7 +130,7 @@ endif
+@@ -134,7 +134,7 @@ endif
  LIBFDT_objdir = libfdt
  LIBFDT_srcdir = libfdt
  LIBFDT_archive = $(LIBFDT_objdir)/libfdt.a
@@ -32,16 +32,16 @@ $OpenBSD: patch-Makefile,v 1.3 2013/06/21 19:58:28 brad Exp $
  LIBFDT_include = $(addprefix $(LIBFDT_srcdir)/,$(LIBFDT_INCLUDES))
  LIBFDT_version = $(addprefix $(LIBFDT_srcdir)/,$(LIBFDT_VERSION))
  
-@@ -162,8 +162,6 @@ install: all $(SCRIPTS)
- 	$(INSTALL) $(BIN) $(SCRIPTS) $(DESTDIR)$(BINDIR)
+@@ -169,8 +169,6 @@ install-lib: all
+ 	@$(VECHO) INSTALL-LIB
  	$(INSTALL) -d $(DESTDIR)$(LIBDIR)
  	$(INSTALL) $(LIBFDT_lib) $(DESTDIR)$(LIBDIR)
 -	ln -sf $(notdir $(LIBFDT_lib)) $(DESTDIR)$(LIBDIR)/$(LIBFDT_soname)
 -	ln -sf $(LIBFDT_soname) $(DESTDIR)$(LIBDIR)/libfdt.$(SHAREDLIB_EXT)
  	$(INSTALL) -m 644 $(LIBFDT_archive) $(DESTDIR)$(LIBDIR)
- 	$(INSTALL) -d $(DESTDIR)$(INCLUDEDIR)
- 	$(INSTALL) -m 644 $(LIBFDT_include) $(DESTDIR)$(INCLUDEDIR)
-@@ -203,12 +201,12 @@ clean: libfdt_clean tests_clean
+ 
+ install-includes:
+@@ -232,12 +230,12 @@ clean: libfdt_clean tests_clean
  # Generic compile rules
  #
  %: %.o
@@ -56,7 +56,7 @@ $OpenBSD: patch-Makefile,v 1.3 2013/06/21 19:58:28 brad Exp $
  
  %.o: %.S
  	@$(VECHO) AS $@
-@@ -236,7 +234,7 @@ clean: libfdt_clean tests_clean
+@@ -265,7 +263,7 @@ clean: libfdt_clean tests_clean
  
  $(LIBFDT_lib):
  	@$(VECHO) LD $@

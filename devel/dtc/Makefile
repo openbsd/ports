@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2013/06/21 19:58:28 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2015/06/03 20:17:04 uaa Exp $
 
 COMMENT=		Device Tree Compiler
 
-DISTNAME=		dtc-1.3.0
+DISTNAME=		dtc-1.4.1
 CATEGORIES=		sysutils devel
-MASTER_SITES=		http://comstyle.com/source/
+MASTER_SITES=		http://www.kernel.org/pub/software/utils/dtc/
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS=		fdt	1.0
+SHARED_LIBS=		fdt	1.1
 
-HOMEPAGE=		http://www.jdl.com/
+HOMEPAGE=		http://devicetree.org/Device_Tree_Compiler
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
