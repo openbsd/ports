@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2015/01/21 15:27:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2015/06/03 06:37:26 jasper Exp $
 
 COMMENT =	Python module to handle audio metadata
 
-MODPY_EGG_VERSION = 1.27
+MODPY_EGG_VERSION = 1.29
 DISTNAME =	mutagen-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	audio
@@ -18,6 +18,7 @@ MODULES =		lang/python
 # has py3 support, not handled in port yet
 
 MODPY_ADJ_FILES =	docs/id3_frames_gen.py \
+			tools/mid3cp \
 			tools/mid3iconv \
 			tools/mid3v2 \
 			tools/moggsplit \

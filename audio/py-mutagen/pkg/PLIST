@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/01/21 15:27:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/06/03 06:37:26 jasper Exp $
 bin/mid3cp
 bin/mid3iconv
 bin/mid3v2
@@ -17,6 +17,8 @@ lib/python${MODPY_VERSION}/site-packages/mutagen/_file.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/_file.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/_tags.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/_tags.pyc
+lib/python${MODPY_VERSION}/site-packages/mutagen/_toolsutil.py
+lib/python${MODPY_VERSION}/site-packages/mutagen/_toolsutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/_util.py
 lib/python${MODPY_VERSION}/site-packages/mutagen/_util.pyc
 lib/python${MODPY_VERSION}/site-packages/mutagen/_vorbis.py
