@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/05/29 14:32:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/06/03 07:28:28 pirofti Exp $
 @bin bin/gnuplot
 bin/lasergnu
-@info info/gnuplot.info
 @man man/man1/gnuplot.1
 @man man/man1/lasergnu.1
-share/emacs/site-lisp/gnuplot-eldoc.el
-share/emacs/site-lisp/gnuplot-eldoc.elc
+share/emacs/site-lisp/gnuplot-gui.el
+share/emacs/site-lisp/gnuplot-gui.elc
+share/emacs/site-lisp/gnuplot.el
+share/emacs/site-lisp/gnuplot.elc
 share/gnuplot/
 !%%no_x11%%
 share/gnuplot/${V}/
