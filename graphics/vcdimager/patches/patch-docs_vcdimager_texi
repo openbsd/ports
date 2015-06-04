@@ -1,8 +1,8 @@
-$OpenBSD: patch-docs_vcdimager_info,v 1.1 2010/06/27 21:20:43 ajacoutot Exp $
---- docs/vcdimager.info.orig	Mon Jul 11 14:47:58 2005
-+++ docs/vcdimager.info	Sat Jun 26 17:30:33 2010
-@@ -20,7 +20,6 @@ INFO-DIR-SECTION Video CD Tools
- START-INFO-DIR-ENTRY
+$OpenBSD: patch-docs_vcdimager_texi,v 1.1 2015/06/04 06:26:29 ajacoutot Exp $
+--- docs/vcdimager.texi.orig	Thu Jun  4 08:25:07 2015
++++ docs/vcdimager.texi	Thu Jun  4 08:25:20 2015
+@@ -62,7 +62,6 @@ in the section entitled ``GNU Free Documentation Licen
+ @direntry
  * VCDImager: (vcdimager).                       GNU Video CD imaging utilities
  * vcdimager: (vcdimager)vcdimager.              Video CD simple formatter
 -* vcd-info:  (vcdimager)vcd-info.               Video CD diagnostic tool
