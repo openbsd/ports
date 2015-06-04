@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/09/29 08:11:31 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/06/04 08:03:49 dcoppa Exp $
 lib/python${MODPY_VERSION}/site-packages/impacket/
 lib/python${MODPY_VERSION}/site-packages/impacket-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/impacket/Dot11Crypto.py
@@ -86,6 +86,8 @@ lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/lsad.py
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/lsad.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/lsat.py
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/lsat.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/mgmt.py
+lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/mgmt.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/ndr.py
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/ndr.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/dcerpc/v5/nrpc.py
@@ -121,6 +123,8 @@ lib/python${MODPY_VERSION}/site-packages/impacket/ese.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/__init__.py
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/logger.py
+lib/python${MODPY_VERSION}/site-packages/impacket/examples/logger.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/remcomsvc.py
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/remcomsvc.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/examples/serviceinstall.py
@@ -129,14 +133,31 @@ lib/python${MODPY_VERSION}/site-packages/impacket/helper.py
 lib/python${MODPY_VERSION}/site-packages/impacket/helper.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/hresult_errors.py
 lib/python${MODPY_VERSION}/site-packages/impacket/hresult_errors.pyc
-lib/python${MODPY_VERSION}/site-packages/impacket/logger.py
-lib/python${MODPY_VERSION}/site-packages/impacket/logger.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/__init__.py
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/asn1.py
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/asn1.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/ccache.py
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/ccache.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/constants.py
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/constants.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/crypto.py
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/crypto.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/gssapi.py
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/gssapi.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/kerberosv5.py
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/kerberosv5.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/types.py
+lib/python${MODPY_VERSION}/site-packages/impacket/krb5/types.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/nmb.py
 lib/python${MODPY_VERSION}/site-packages/impacket/nmb.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/nt_errors.py
 lib/python${MODPY_VERSION}/site-packages/impacket/nt_errors.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/ntlm.py
 lib/python${MODPY_VERSION}/site-packages/impacket/ntlm.pyc
+lib/python${MODPY_VERSION}/site-packages/impacket/pcap_linktypes.py
+lib/python${MODPY_VERSION}/site-packages/impacket/pcap_linktypes.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/pcapfile.py
 lib/python${MODPY_VERSION}/site-packages/impacket/pcapfile.pyc
 lib/python${MODPY_VERSION}/site-packages/impacket/smb.py
@@ -171,11 +192,14 @@ share/doc/py-impacket/README
 share/examples/py-impacket/
 share/examples/py-impacket/atexec.py
 share/examples/py-impacket/esentutl.py
+share/examples/py-impacket/goldenPac.py
 share/examples/py-impacket/ifmap.py
+share/examples/py-impacket/karmaSMB.py
 share/examples/py-impacket/lookupsid.py
 share/examples/py-impacket/loopchain.py
 share/examples/py-impacket/mssqlclient.py
 share/examples/py-impacket/mssqlinstance.py
+share/examples/py-impacket/netview.py
 share/examples/py-impacket/nmapAnswerMachine.py
 share/examples/py-impacket/ntfs-read.py
 share/examples/py-impacket/opdump.py
@@ -200,4 +224,5 @@ share/examples/py-impacket/split.py
 share/examples/py-impacket/tracer.py
 share/examples/py-impacket/uncrc32.py
 share/examples/py-impacket/wmiexec.py
+share/examples/py-impacket/wmipersist.py
 share/examples/py-impacket/wmiquery.py

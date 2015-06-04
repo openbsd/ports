@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/04/02 14:21:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/06/04 08:03:49 dcoppa Exp $
 
 COMMENT =		Python classes providing access to network packets
 
-MODPY_EGG_VERSION =	0.9.12
+MODPY_EGG_VERSION =	0.9.13
 DISTNAME =		impacket-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -18,12 +18,13 @@ MODPY_PI =		Yes
 MODULES =		lang/python
 
 MODPY_ADJ_FILES =	impacket/ese.py \
-			impacket/logger.py \
+			impacket/examples/logger.py \
 			impacket/tds.py
 
 # one example also uses python-tkinter, but it's pretty heavy and
 # not required for normal use.
-RUN_DEPENDS =		net/py-pcapy \
+RUN_DEPENDS =		devel/py-asn1>=0.1.7 \
+			net/py-pcapy \
 			security/py-crypto>=2.6 \
 			security/py-openssl
 
