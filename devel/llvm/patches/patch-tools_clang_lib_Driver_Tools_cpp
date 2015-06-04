@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.25 2015/06/03 06:23:21 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.26 2015/06/04 09:04:44 ajacoutot Exp $
 
 r212838
 Handle SPARC float command line parameters for SPARCv9.
@@ -8,6 +8,9 @@ Handle SPARC float command line parameters for SPARCv9.
 
 r211624
 Use appropriate default PIE settings for OpenBSD.
+
+r239028
+Use the appropriate PIE level for OpenBSD/sparc.
 
 r210883
 Use dwarf-2 by default on OpenBSD and FreeBSD.
