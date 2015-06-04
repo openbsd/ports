@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.29 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2015/06/04 07:17:13 jasper Exp $
+
+PORTROACH=	limit:^0
+PORTROACH_COMMENT=	ices2 is a different port
 
 COMMENT=	icecast source for streaming MP3
 
