@@ -1,0 +1,22 @@
+$OpenBSD: patch-mozilla_content_media_MediaData_h,v 1.1 2015/06/04 10:11:57 sthen Exp $
+
+Fix build with GCC 4.9.
+https://bugzilla.mozilla.org/show_bug.cgi?id=999496
+
+--- mozilla/content/media/MediaData.h.orig	Fri Nov 28 02:35:41 2014
++++ mozilla/content/media/MediaData.h	Fri Nov 28 02:36:30 2014
+@@ -80,13 +80,7 @@ class AudioData : public MediaData { (public)
+     MOZ_COUNT_DTOR(AudioData);
+   }
+ 
+-  size_t SizeOfIncludingThis(MallocSizeOf aMallocSizeOf) const {
+-    size_t size = aMallocSizeOf(this) + aMallocSizeOf(mAudioData);
+-    if (mAudioBuffer) {
+-      size += mAudioBuffer->SizeOfIncludingThis(aMallocSizeOf);
+-    }
+-    return size;
+-  }
++  size_t SizeOfIncludingThis(MallocSizeOf aMallocSizeOf) const;
+ 
+   // If mAudioBuffer is null, creates it from mAudioData.
+   void EnsureAudioBuffer();
