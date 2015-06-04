@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2014/12/05 12:50:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2015/06/04 07:29:50 jasper Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	Advanced Power Management monitor utility for X
 
-DISTNAME=	asapm-2.13
-REVISION=	1
+DISTNAME=	asapm-3.1
 
 HOMEPAGE=	http://www.tigr.net/afterstep/
 
