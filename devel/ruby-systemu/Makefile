@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/26 23:55:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2015/06/04 14:46:13 jasper Exp $
 
 COMMENT=		portable replacement for popen4
 
-DISTNAME=		systemu-2.5.2
-REVISION =		0
+DISTNAME=		systemu-2.6.5
 CATEGORIES=		devel
 
 HOMEPAGE=		https://github.com/ahoward/systemu
