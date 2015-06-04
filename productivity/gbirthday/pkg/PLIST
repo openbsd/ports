@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/10 11:38:31 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/04 15:10:09 kirby Exp $
 bin/gbirthday
 lib/python${MODPY_VERSION}/site-packages/gbirthday/
 lib/python${MODPY_VERSION}/site-packages/gbirthday/__init__.py
@@ -10,8 +10,6 @@ lib/python${MODPY_VERSION}/site-packages/gbirthday/databases/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gbirthday/databases/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gbirthday/databases/csv.py
 lib/python${MODPY_VERSION}/site-packages/gbirthday/databases/csv.pyc
-lib/python${MODPY_VERSION}/site-packages/gbirthday/databases/evolution.py
-lib/python${MODPY_VERSION}/site-packages/gbirthday/databases/evolution.pyc
 lib/python${MODPY_VERSION}/site-packages/gbirthday/databases/lightning.py
 lib/python${MODPY_VERSION}/site-packages/gbirthday/databases/lightning.pyc
 lib/python${MODPY_VERSION}/site-packages/gbirthday/databases/mysql.py

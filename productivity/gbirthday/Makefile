@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/27 08:14:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/06/04 15:10:09 kirby Exp $
 
 COMMENT =		birthday reminder with tray notification
 
-DISTNAME =		gbirthday-0.6.7
-REVISION =		0
+DISTNAME =		gbirthday-0.6.8
 
 CATEGORIES =		productivity x11
 
@@ -32,6 +31,9 @@ post-patch:
 
 do-build:
 	# dummy. cannot be "NO_BUILD" as that zaps BUILD_DEPENDS.
+
+pre-install:
+	find ${WRKSRC} -name \*.orig -exec rm {} \;
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/gb ${PREFIX}/bin/gbirthday
