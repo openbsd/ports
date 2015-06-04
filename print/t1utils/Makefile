@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/06/04 06:31:59 ajacoutot Exp $
 
-COMMENT=	utilities for PostScript Type 1 fonts
-DISTNAME=	t1utils-1.37
-CATEGORIES=	print fonts
+COMMENT=		utilities for PostScript Type 1 fonts
+DISTNAME=		t1utils-1.39
+CATEGORIES=		print fonts
 
-HOMEPAGE=	http://www.lcdf.org/~eddietwo/type/
+HOMEPAGE=		http://www.lcdf.org/~eddietwo/type/
 
 # mix of BSD/GPL/PD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+WANTLIB += c
 
-WANTLIB=	c
+MASTER_SITES=		http://www.lcdf.org/~eddietwo/type/
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
