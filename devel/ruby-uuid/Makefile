@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/11 19:54:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2015/06/04 14:46:19 jasper Exp $
 
 COMMENT=		UUID generator
 
@@ -17,5 +17,7 @@ CONFIGURE_STYLE=	gem
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		net/ruby-macaddr,${MODRUBY_FLAVOR}
+
+MODRUBY_TEST=		rake
 
 .include <bsd.port.mk>
