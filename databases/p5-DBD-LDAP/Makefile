@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/11 23:48:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2015/06/04 04:46:48 ajacoutot Exp $
 
 COMMENT=	DBI driver for LDAP databases
 
 MODULES=	cpan
 
-DISTNAME=	DBD-LDAP-0.20
+DISTNAME=	DBD-LDAP-0.22
 
 CATEGORIES=	databases perl5
 
