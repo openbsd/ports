@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2015/06/04 05:12:30 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		LDAP client API for Python
 COMMENT-examples=	example programs for the LDAP client API for Python
 
-V=			2.3.1
-DISTNAME=		python-ldap-${V}
-PKGNAME-main=		py-ldap-${V}
-REVISION-main =		11
-FULLPKGNAME-examples=	py-ldap-examples-${V}
-REVISION-examples =	10
-FULLPKGPATH-examples=	databases/py-ldap,-examples
+MODPY_EGG_VERSION=	2.4.19
+DISTNAME=		python-ldap-${MODPY_EGG_VERSION}
+PKGNAME-main=		py-ldap-${MODPY_EGG_VERSION}
+PKGNAME-examples=	py-ldap-examples-${MODPY_EGG_VERSION}
 
 CATEGORIES=		databases
 
@@ -20,27 +17,35 @@ HOMEPAGE=		http://python-ldap.sourceforge.net/
 # Python
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-main=		crypto ssl ${MODPY_WANTLIB}
+WANTLIB-main += ldap_r pthread ${MODPY_WANTLIB}
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=python-ldap/}
+MULTI_PACKAGES=		-main -examples
 
 MODULES=		lang/python
 
-LIB_DEPENDS-main=	databases/openldap \
-			security/cyrus-sasl2
-WANTLIB-main +=		ldap_r>=7 lber>=7 sasl2>=2
+MODPY_PI=		Yes
+MODPY_SETUPTOOLS=	Yes
 
-MULTI_PACKAGES= -main -examples
+LIB_DEPENDS-main=	${MODPY_LIB_DEPENDS} \
+			databases/openldap
 
-EXAMPLESDIR=		${PREFIX}/share/examples/py-ldap
+RUN_DEPENDS-main=	${RUN_DEPENDS} \
+			devel/py-asn1-modules
+
+pre-configure:
+	perl -pi -e 's,/opt/openldap-RE24/lib,${LOCALBASE}/lib,;' \
+		-e 's,/opt/openldap-RE24/include,${LOCALBASE}/include,;' \
+		-e 's,/usr/include/sasl,${LOCALBASE}/include/sasl,' \
+		${WRKSRC}/setup.cfg
 
 post-install:
-	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}; tar cf - Demo | tar xf - -C ${EXAMPLESDIR}
-	find ${WRKINST} -name \*.egg-info -exec rm {} \;
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-ldap
+	cd ${WRKSRC}; tar cf - Demo | tar xf - -C \
+		${PREFIX}/share/examples/py-ldap
+	find ${PREFIX} -name '.cvsignore' -exec rm '{}' \+
 
 do-test: fake
-	@cd ${WRKSRC}/Tests/Lib && ${MAKE_ENV} \
+	cd ${WRKSRC}/Tests/Lib && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		${MODPY_BIN} ./test_ldapurl.py
 

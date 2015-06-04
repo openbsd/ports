@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.7 2011/12/20 11:39:23 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.8 2015/06/04 05:12:30 ajacoutot Exp $
 @pkgpath databases/py-ldap,-examples[,python2.4][,python2.5][,python2.6][,python2.7]
 share/examples/py-ldap/
 share/examples/py-ldap/Demo/
@@ -14,12 +14,22 @@ share/examples/py-ldap/Demo/Lib/ldif/
 share/examples/py-ldap/Demo/Lib/ldif/ldifcopy.py
 share/examples/py-ldap/Demo/initialize.py
 share/examples/py-ldap/Demo/ldapcontrols.py
+share/examples/py-ldap/Demo/matchedvalues.py
+share/examples/py-ldap/Demo/ms_ad_bind.py
 share/examples/py-ldap/Demo/options.py
 share/examples/py-ldap/Demo/page_control.py
+share/examples/py-ldap/Demo/paged_search_ext_s.py
 share/examples/py-ldap/Demo/passwd_ext_op.py
 share/examples/py-ldap/Demo/pickle_ldapobject.py
 share/examples/py-ldap/Demo/pyasn1/
-share/examples/py-ldap/Demo/pyasn1/prereadcontrol.py
+share/examples/py-ldap/Demo/pyasn1/README
+share/examples/py-ldap/Demo/pyasn1/dds.py
+share/examples/py-ldap/Demo/pyasn1/noopsearch.py
+share/examples/py-ldap/Demo/pyasn1/ppolicy.py
+share/examples/py-ldap/Demo/pyasn1/psearch.py
+share/examples/py-ldap/Demo/pyasn1/readentrycontrol.py
+share/examples/py-ldap/Demo/pyasn1/sessiontrack.py
+share/examples/py-ldap/Demo/pyasn1/syncrepl.py
 share/examples/py-ldap/Demo/reconnect.py
 share/examples/py-ldap/Demo/rename.py
 share/examples/py-ldap/Demo/resiter.py
