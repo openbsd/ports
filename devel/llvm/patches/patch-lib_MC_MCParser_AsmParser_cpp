@@ -1,0 +1,44 @@
+$OpenBSD: patch-lib_MC_MCParser_AsmParser_cpp,v 1.1 2015/06/04 05:58:43 ajacoutot Exp $
+
+r229911
+MC: Allow multiple comma-separated expressions on the .uleb128 directive.
+
+--- lib/MC/MCParser/AsmParser.cpp.orig	Thu Jun  4 00:34:57 2015
++++ lib/MC/MCParser/AsmParser.cpp	Thu Jun  4 00:40:09 2015
+@@ -3574,21 +3574,27 @@ bool AsmParser::parseDirectiveSpace(StringRef IDVal) {
+ }
+ 
+ /// parseDirectiveLEB128
+-/// ::= (.sleb128 | .uleb128) expression
++/// ::= (.sleb128 | .uleb128) [ expression (, expression)* ]
+ bool AsmParser::parseDirectiveLEB128(bool Signed) {
+   checkForValidSection();
+   const MCExpr *Value;
+ 
+-  if (parseExpression(Value))
+-    return true;
++  for (;;) {
++    if (parseExpression(Value))
++      return true;
+ 
+-  if (getLexer().isNot(AsmToken::EndOfStatement))
+-    return TokError("unexpected token in directive");
++    if (Signed)
++      getStreamer().EmitSLEB128Value(Value);
++    else
++      getStreamer().EmitULEB128Value(Value);
+ 
+-  if (Signed)
+-    getStreamer().EmitSLEB128Value(Value);
+-  else
+-    getStreamer().EmitULEB128Value(Value);
++    if (getLexer().is(AsmToken::EndOfStatement))
++      break;
++
++    if (getLexer().isNot(AsmToken::Comma))
++      return TokError("unexpected token in directive");
++    Lex();
++  }
+ 
+   return false;
+ }
