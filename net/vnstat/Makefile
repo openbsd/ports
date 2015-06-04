@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/06/03 12:39:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2015/06/04 05:44:11 ajacoutot Exp $
 
 COMMENT-main =		network traffic monitor
 COMMENT-vnstati =	image output support for vnstat
@@ -8,7 +8,7 @@ DISTNAME =	vnstat-${V}
 PKGNAME-main = 	${DISTNAME}
 PKGNAME-vnstati = 	vnstati-${V}
 REVISION-main = 	1
-REVISION-vnstati = 	0
+REVISION-vnstati = 	1
 
 CATEGORIES =	net sysutils
 
@@ -26,7 +26,8 @@ WANTLIB-vnstati = ${WANTLIB} gd pthread
 
 MULTI_PACKAGES = -main -vnstati
 
-RUN_DEPENDS-vnstati = graphics/gd
+LIB_DEPENDS-vnstati = graphics/gd
+RUN_DEPENDS-vnstati = net/vnstat
 
 USE_GMAKE =	Yes
 
