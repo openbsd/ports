@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/05/09 08:54:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/06/04 07:31:51 jasper Exp $
 @bin bin/vym
 @man man/man1/vym.1
 share/doc/vym/
@@ -32,7 +32,6 @@ share/vym/flags/flag-heart.png
 share/vym/flags/flag-hideexport.png
 share/vym/flags/flag-hook-green.png
 share/vym/flags/flag-info.png
-share/vym/flags/flag-kalarm.png
 share/vym/flags/flag-lamp.png
 share/vym/flags/flag-lifebelt.png
 share/vym/flags/flag-note.png
@@ -144,7 +143,6 @@ share/vym/icons/fileprint.png
 share/vym/icons/filesave.png
 share/vym/icons/filesaveas.png
 share/vym/icons/find.png
-share/vym/icons/flag-url-16x16.png
 share/vym/icons/formatcolorbranch.png
 share/vym/icons/formatcolorpicker.png
 share/vym/icons/formatcolorpicker.xpm
@@ -203,6 +201,7 @@ share/vym/icons/vym.xpm
 share/vym/scripts/
 share/vym/scripts/bugger
 share/vym/scripts/getbinaries
+share/vym/scripts/make-qrc.rb
 share/vym/scripts/makedist-vym
 share/vym/scripts/screencast
 share/vym/scripts/vivym

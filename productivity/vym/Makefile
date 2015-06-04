@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2015/05/09 08:54:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2015/06/04 07:31:51 jasper Exp $
 
 COMMENT=	generate and manipulate maps of your thoughts
 
-DISTNAME=	vym-2.3.24
+DISTNAME=	vym-2.4.3
 CATEGORIES=	productivity x11
 
 HOMEPAGE=	http://www.insilmaril.de/vym/
@@ -13,12 +13,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vym/}
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB += ICE QtDBus QtGui QtNetwork QtSvg QtXml SM X11 Xext
-WANTLIB += Xi Xinerama Xrender c fontconfig freetype m pthread
-WANTLIB += stdc++
+WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m pthread
 
 MODULES=	devel/gettext \
-		x11/qt4
+		x11/qt5
 
 RUN_DEPENDS=	archivers/zip \
 		archivers/unzip \
@@ -36,7 +35,7 @@ do-configure:
 	@echo "QMAKE_CXXFLAGS_RELEASE=${CXXFLAGS}" \
 		>> ${WRKSRC}/vym.pro
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		${LOCALBASE}/bin/qmake4 DOCDIR="${PREFIX}/share/doc/vym" vym.pro
+		${LOCALBASE}/bin/qmake-qt5 DOCDIR="${PREFIX}/share/doc/vym" vym.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vym ${PREFIX}/bin
