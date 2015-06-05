@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1345 2015/06/02 19:18:08 pea Exp $
+# $OpenBSD: Makefile,v 1.1346 2015/06/05 08:45:14 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -331,7 +331,6 @@
      SUBDIR += libJudy
      SUBDIR += libast
      SUBDIR += libaudiofile
-     SUBDIR += libavl
      SUBDIR += libbio
      SUBDIR += libclog
      SUBDIR += libconfig
