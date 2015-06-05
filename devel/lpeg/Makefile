@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2014/03/11 22:22:46 jturner Exp $
+# $OpenBSD: Makefile,v 1.14 2015/06/05 08:27:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	parsing expression grammars library for lua
-DISTNAME=	lpeg-0.12
+DISTNAME=	lpeg-0.12.2
 PKGNAME=	lua-${DISTNAME}
 CATEGORIES=	devel
 MASTER_SITES=	http://www.inf.puc-rio.br/~roberto/lpeg/
@@ -17,6 +17,7 @@ MODULES=	lang/lua
 
 ALL_TARGET=	lpeg.so
 MAKE_FILE=	makefile
+MAKE_FLAGS=	CC=${CC} COPT="${CFLAGS}" DLLFLAGS="-shared"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/makefile

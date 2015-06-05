@@ -1,14 +1,14 @@
-$OpenBSD: patch-makefile,v 1.9 2014/03/11 22:22:46 jturner Exp $
---- makefile.orig	Fri Apr 12 12:31:19 2013
-+++ makefile	Fri Feb 28 11:23:33 2014
+$OpenBSD: patch-makefile,v 1.10 2015/06/05 08:27:26 ajacoutot Exp $
+--- makefile.orig	Wed Mar  4 18:34:17 2015
++++ makefile	Fri Jun  5 10:24:55 2015
 @@ -1,5 +1,5 @@
  LIBNAME = lpeg
--LUADIR = /usr/include/lua5.1/
+-LUADIR = ../lua/
 +LUADIR = ${MODLUA_INCL_DIR}
  
  COPT = -O2
  # COPT = -DLPEG_DEBUG -g
-@@ -15,15 +15,13 @@ CWARNS = -Wall -Wextra -pedantic \
+@@ -15,7 +15,6 @@ CWARNS = -Wall -Wextra -pedantic \
  	-Wundef \
  	-Wwrite-strings \
  	-Wbad-function-cast \
@@ -16,21 +16,3 @@ $OpenBSD: patch-makefile,v 1.9 2014/03/11 22:22:46 jturner Exp $
  	-Wmissing-prototypes \
  	-Wnested-externs \
  	-Wstrict-prototypes \
- # -Wunreachable-code \
- 
- 
--CFLAGS = $(CWARNS) $(COPT) -ansi -I$(LUADIR) -fPIC
--CC = gcc
-+CFLAGS += $(CWARNS) $(COPT) -ansi -I$(LUADIR) -fPIC
- 
- FILES = lpvm.o lpcap.o lptree.o lpcode.o lpprint.o
- 
-@@ -36,7 +34,7 @@ macosx:
- 	make lpeg.so "DLLFLAGS = -bundle -undefined dynamic_lookup"
- 
- lpeg.so: $(FILES)
--	env $(CC) $(DLLFLAGS) $(FILES) -o lpeg.so
-+	env $(CC) -shared $(FILES) -o lpeg.so
- 
- $(FILES): makefile
- 
