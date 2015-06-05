@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/01/10 17:29:14 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/06/05 02:45:53 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -115,6 +115,7 @@ ${GEM_LIB}/gems/${DISTNAME}/tests/test_basic.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_channel.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_completion.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_connection_count.rb
+${GEM_LIB}/gems/${DISTNAME}/tests/test_connection_write.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_defer.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_deferrable.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_epoll.rb
@@ -134,6 +135,7 @@ ${GEM_LIB}/gems/${DISTNAME}/tests/test_kb.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_line_protocol.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_ltp.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_ltp2.rb
+${GEM_LIB}/gems/${DISTNAME}/tests/test_many_fds.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_next_tick.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_object_protocol.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_pause.rb
