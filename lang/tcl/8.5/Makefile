@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2014/10/21 05:08:14 stu Exp $
+# $OpenBSD: Makefile,v 1.34 2015/06/05 20:34:58 stu Exp $
 
 COMMENT =		Tool Command Language
 
-DISTNAME =		tcl8.5.16
-PKGNAME =		tcl-8.5.16
-REVISION =		0
-SHARED_LIBS =		tcl85 1.6
+DISTNAME =		tcl8.5.18
+PKGNAME =		tcl-8.5.18
+SHARED_LIBS =		tcl85 1.7
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -18,8 +17,7 @@ WANTLIB =		c m
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		${DISTNAME}-src.tar.gz
 
-MAKE_FLAGS +=		TCL_PACKAGE_PATH='$$(prefix)/lib/tcl' \
-			TCL_LIBRARY='$$(prefix)/lib/tcl/tcl$$(VERSION)'
+MAKE_FLAGS =		TCL_LIBRARY='$$(prefix)/lib/tcl/tcl$$(VERSION)'
 
 FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			INSTALL_LIBRARY="${INSTALL_DATA}" \
@@ -52,14 +50,19 @@ CONFIGURE_ARGS +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtcl85.a to $$(LIB
 
 WRKSRC =		${WRKDIST}/unix
 TEST_TARGET =		test
-SUBST_VARS +=		_README_DIR
 
 TESTHOME =		${WRKDIR}/testhome
 # Use TESTFLAGS to control the Tcl tests
 TESTFLAGS =
 
-# XXX Until Tcl bug 2911139 is fixed; bug is in tests, not in Tcl.
-TESTFLAGS += -skip 'http-4.14 socket-14.14'
+# These tests will always fail due to assumptions that don't hold on OpenBSD.
+# Skip them until they're improved.
+# fCmd-9.4.b expects to be able to overwrite a read-only directory.
+# http-4.14, socket-14.14 expect certain socket errors to occur later rather than sooner. Bug 2911139.
+TESTFLAGS += -skip 'fCmd-9.4.b http-4.14 socket-14.14'
+
+pre-configure:
+	@${SUBST_CMD} ${WRKDIST}/library/init.tcl
 
 pre-test:
 	mkdir -p ${TESTHOME}
