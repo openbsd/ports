@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/10/21 05:10:34 stu Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/06/05 20:36:46 stu Exp $
 @conflict mentry-*
 @conflict wcb-*
 @pkgpath devel/mentry
@@ -269,6 +269,7 @@ share/doc/tablelist/embeddedWindows_tile.png
 share/doc/tablelist/gtk.png
 share/doc/tablelist/index.html
 share/doc/tablelist/klearlooks.png
+share/doc/tablelist/mate.png
 share/doc/tablelist/mint.png
 share/doc/tablelist/newWave.png
 share/doc/tablelist/oxygen1.png
@@ -369,6 +370,7 @@ share/examples/tklib/plotchart/plotdemos15.tcl
 share/examples/tklib/plotchart/plotdemos16.tcl
 share/examples/tklib/plotchart/plotdemos17.tcl
 share/examples/tklib/plotchart/plotdemos18.tcl
+share/examples/tklib/plotchart/plotdemos19.tcl
 share/examples/tklib/plotchart/plotdemos2.tcl
 share/examples/tklib/plotchart/plotdemos3.tcl
 share/examples/tklib/plotchart/plotdemos4.tcl

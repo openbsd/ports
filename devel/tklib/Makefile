@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2015/02/14 07:39:00 stu Exp $
+# $OpenBSD: Makefile,v 1.15 2015/06/05 20:36:46 stu Exp $
 
 COMMENT =	Tk Standard Library
 
-DISTNAME =	tklib-0.6pl1
-REVISION =	0
+DISTNAME =	tklib-0.6pl2
 CATEGORIES =	devel x11/tk
 HOMEPAGE =	http://core.tcl.tk/tklib/home
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -11,7 +10,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 # BSD style
 PERMIT_PACKAGE_CDROM =	Yes
 
-# Fossil checkin 2014/08/11 37ef264934e385542477652833a09b6946b3c7a6
+# Fossil checkin 2015/04/22 26f7edca5c2ac53d576f5af35146da23e76a005f
 MASTER_SITES =	http://mirror.yellow5.com/openbsd/
 MODULES =	x11/tk
 BUILD_DEPENDS =	devel/tcllib
@@ -38,6 +37,7 @@ do-install:
 	-app-path ${PREFIX}/share/examples/tklib/apps \
 	-csb ${PREFIX}/share/doc \
 	-tclsh ${MODTCL_BIN} \
+	-wish ${MODTK_BIN} \
 	-descr "`cat ${PKGDIR}/DESCR`"
 
 # Define TEST_MODULES to restrict to a subset of regression tests.
