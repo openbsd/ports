@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/08/20 22:05:55 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/06/05 12:11:41 ajacoutot Exp $
 bin/gnofract4d
 lib/python${MODPY_VERSION}/site-packages/fract4d/
 lib/python${MODPY_VERSION}/site-packages/fract4d/__init__.py
@@ -289,22 +289,26 @@ lib/python${MODPY_VERSION}/site-packages/fractutils/test_makemap.pyc
 lib/python${MODPY_VERSION}/site-packages/fractutils/test_slave.py
 lib/python${MODPY_VERSION}/site-packages/fractutils/test_slave.pyc
 lib/python${MODPY_VERSION}/site-packages/gnofract4d-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-share/applications/
 share/applications/gnofract4d.desktop
 share/doc/gnofract4d/
 share/doc/gnofract4d/COPYING
 share/doc/gnofract4d/README
 share/gnofract4d/
 share/gnofract4d/formulas/
+share/gnofract4d/formulas/experiments.cfrm
+share/gnofract4d/formulas/experiments.frm
 share/gnofract4d/formulas/fractint-builtin.frm
 share/gnofract4d/formulas/fractint-g4.frm
 share/gnofract4d/formulas/fractint.cfrm
+share/gnofract4d/formulas/fractint.ucl
 share/gnofract4d/formulas/gf4d.cfrm
 share/gnofract4d/formulas/gf4d.frm
 share/gnofract4d/formulas/gf4d.uxf
+share/gnofract4d/formulas/jh.ucl
 share/gnofract4d/formulas/standard.ucl
 share/gnofract4d/formulas/sterling2.frm
 share/gnofract4d/formulas/tutorial.frm
+share/gnofract4d/formulas/xaos.cfrm
 share/gnofract4d/maps/
 share/gnofract4d/maps/4zebbowx.map
 share/gnofract4d/maps/AM-1.cs
@@ -558,6 +562,9 @@ share/gnome/help/gnofract4d/C/figures/xw_plane.png
 share/gnome/help/gnofract4d/C/figures/xz_plane.png
 share/gnome/help/gnofract4d/C/figures/yz_plane.png
 share/gnome/help/gnofract4d/C/gnofract4d-manual.xml
+share/gnome/help/gnofract4d/C/tutorial001.xml
+share/gnome/help/gnofract4d/C/tutorial002.xml
+share/gnome/help/gnofract4d/C/tutorial003.xml
 share/mime/packages/gnofract4d-mime.xml
 share/pixmaps/
 share/pixmaps/gnofract4d/
