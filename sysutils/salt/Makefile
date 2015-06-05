@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2015/06/05 05:42:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2015/06/05 10:39:25 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -17,6 +17,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	2015.5.2
 DISTNAME =		salt-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils net devel
 
@@ -44,9 +45,6 @@ RUN_DEPENDS =		net/py-msgpack \
 
 # salt/output/progress.py
 RUN_DEPENDS +=		devel/py-progressbar
-
-# XXX salt/utils/network.py
-RUN_DEPENDS +=		sysutils/lsof
 
 # zeromq-requirements.txt: ZeroMQ transport
 RUN_DEPENDS +=		net/py-zmq \

@@ -1,0 +1,21 @@
+$OpenBSD: patch-salt_utils___init___py,v 1.1 2015/06/05 10:39:25 ajacoutot Exp $
+
+https://github.com/saltstack/salt/pull/24442
+
+--- salt/utils/__init__.py.orig	Fri Jun  5 12:23:27 2015
++++ salt/utils/__init__.py	Fri Jun  5 12:23:42 2015
+@@ -1395,6 +1395,14 @@ def is_freebsd():
+     return sys.platform.startswith('freebsd')
+ 
+ 
++@real_memoize
++def is_openbsd():
++    '''
++    Simple function to return if host is OpenBSD or not
++    '''
++    return sys.platform.startswith('openbsd')
++
++
+ def is_fcntl_available(check_sunos=False):
+     '''
+     Simple function to check if the `fcntl` module is available or not.
