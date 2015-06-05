@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/05 16:48:44 stu Exp $
+# $OpenBSD: Makefile,v 1.17 2015/06/05 07:24:21 stu Exp $
 
 COMMENT =	Tcl implementation for the CLR
 
 V =		1.0
-P =		5542.25903
+P =		5633.18513
 DISTNAME =	eagle-${V}
-PKGNAME =	${DISTNAME}-beta32
+PKGNAME =	${DISTNAME}-beta33
 CATEGORIES =	lang lang/tcl
 HOMEPAGE =	http://eagle.to/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -40,6 +40,9 @@ EAGLE_BIN =	${PREFIX}/bin/eagle
 # Skip tests that are too timing-sensitive to succeed everywhere
 EAGLE_TEST_FLAGS = -notFile 'benchmark.eagle perf*.eagle'
 
+# Skip tests that may hang due to pthread and/or Mono issues
+EAGLE_TEST_FLAGS += -skip 'object-10.* socket-2.2'
+
 do-install:
 	${INSTALL_DATA_DIR} ${EAGLE_BIN_DIR} ${EAGLE_LIB_DIR}
 .for SRC GLOB DEST in \
@@ -53,6 +56,7 @@ do-install:
 	echo 'exec mono ${TRUEPREFIX}/${EAGLE_DIR}/bin/EagleShell.exe $${1+"$$@"}' >> ${EAGLE_BIN}
 	chown ${BINOWN}:${BINGRP} ${EAGLE_BIN}
 	chmod ${BINMODE} ${EAGLE_BIN}
+	rm ${EAGLE_BIN_DIR}/EagleShell32.exe
 
 # "-namespaces 1" enables namespace tests
 # "set no(bigLists) 1" avoids oom problems
