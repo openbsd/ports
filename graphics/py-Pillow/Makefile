@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/04/02 14:21:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2015/06/05 10:51:17 sthen Exp $
 
 COMMENT=		Python Imaging Library (fork)
 
 MODPY_EGG_VERSION=	2.7.0
+REVISION=		0
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
@@ -41,7 +42,7 @@ MODPY_SETUPTOOLS=	Yes
 
 MODPY_ADJ_FILES=	Scripts/*.py
 
-SUBST_VARS+=		INCL_DIR
+SUBST_VARS+=		INCL_DIR MODPY_FLAVOR
 INCL_DIR=		${MODPY_INCDIR:S/${LOCALBASE}\///}
 
 post-install:
