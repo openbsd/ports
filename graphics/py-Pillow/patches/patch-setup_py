@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.4 2014/10/29 22:12:38 landry Exp $
---- setup.py.orig	Sat Oct 11 09:55:44 2014
-+++ setup.py	Mon Oct 27 22:54:44 2014
+$OpenBSD: patch-setup_py,v 1.5 2015/06/05 14:26:22 sthen Exp $
+--- setup.py.orig	Thu Apr  2 11:05:22 2015
++++ setup.py	Fri Jun  5 11:54:21 2015
 @@ -312,6 +312,13 @@ class pil_build_ext(build_ext):
  
          if _tkinter:
@@ -36,11 +36,11 @@ $OpenBSD: patch-setup_py,v 1.4 2014/10/29 22:12:38 landry Exp $
                  define_macros=defs))
  
          if os.path.isfile("_imagingtiff.c") and feature.tiff:
-@@ -750,7 +762,6 @@ setup(
+@@ -753,7 +765,6 @@ setup(
      ext_modules=[Extension("PIL._imaging", ["_imaging.c"])],
      include_package_data=True,
      packages=find_packages(),
 -    scripts=glob.glob("Scripts/pil*.py"),
-     test_suite='PIL.tests',
+     test_suite='nose.collector',
      keywords=["Imaging", ],
      license='Standard PIL License',
