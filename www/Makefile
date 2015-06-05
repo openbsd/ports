@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.716 2015/06/02 06:31:48 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.717 2015/06/05 02:55:34 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -500,6 +500,10 @@
      SUBDIR += ruby-unicorn,ruby22
      SUBDIR += ruby-vegas
      SUBDIR += ruby-wasabi
+     SUBDIR += ruby-websocket-driver,ruby20
+     SUBDIR += ruby-websocket-driver,ruby21
+     SUBDIR += ruby-websocket-driver,ruby22
+     SUBDIR += ruby-websocket-extensions
      SUBDIR += ruby-xpath
      SUBDIR += sabredav
      SUBDIR += sarg
