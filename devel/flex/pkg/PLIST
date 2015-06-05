@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/28 23:13:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/05 05:40:19 ajacoutot Exp $
 @bin bin/gflex
+bin/gflex++
 include/flex/
 include/flex/FlexLexer.h
 @info info/flex.info
@@ -7,19 +8,34 @@ lib/flex/
 lib/flex/libfl.a
 lib/flex/libfl_pic.a
 @man man/man1/gflex.1
+share/doc/flex/
+share/doc/flex/AUTHORS
+share/doc/flex/COPYING
+share/doc/flex/NEWS
+share/doc/flex/ONEWS
+share/doc/flex/README
+share/doc/flex/TODO
+share/doc/flex/flex.pdf
 share/locale/ca/LC_MESSAGES/flex.mo
 share/locale/da/LC_MESSAGES/flex.mo
 share/locale/de/LC_MESSAGES/flex.mo
+share/locale/en@boldquot/LC_MESSAGES/flex.mo
+share/locale/en@quot/LC_MESSAGES/flex.mo
+share/locale/eo/LC_MESSAGES/flex.mo
 share/locale/es/LC_MESSAGES/flex.mo
+share/locale/fi/LC_MESSAGES/flex.mo
 share/locale/fr/LC_MESSAGES/flex.mo
 share/locale/ga/LC_MESSAGES/flex.mo
+share/locale/hr/LC_MESSAGES/flex.mo
 share/locale/ko/LC_MESSAGES/flex.mo
 share/locale/nl/LC_MESSAGES/flex.mo
 share/locale/pl/LC_MESSAGES/flex.mo
 share/locale/pt_BR/LC_MESSAGES/flex.mo
 share/locale/ro/LC_MESSAGES/flex.mo
 share/locale/ru/LC_MESSAGES/flex.mo
+share/locale/sr/LC_MESSAGES/flex.mo
 share/locale/sv/LC_MESSAGES/flex.mo
 share/locale/tr/LC_MESSAGES/flex.mo
 share/locale/vi/LC_MESSAGES/flex.mo
 share/locale/zh_CN/LC_MESSAGES/flex.mo
+share/locale/zh_TW/LC_MESSAGES/flex.mo
