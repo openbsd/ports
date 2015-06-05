@@ -1,0 +1,25 @@
+This module provides a complete implementation of the WebSocket
+protocols that can be hooked up to any TCP library. It aims to simplify
+things by decoupling the protocol details from the I/O layer, such that
+users only need to implement code to stream data in and out of it
+without needing to know anything about how the protocol actually works.
+Think of it as a complete WebSocket system with pluggable I/O.
+
+Due to this design, you get a lot of things for free. In particular, if
+you hook this module up to some I/O object, it will do all of this for
+you:
+
+* Select the correct server-side driver to talk to the client
+* Generate and send both server- and client-side handshakes
+* Recognize when the handshake phase completes and the WS protocol
+  begins
+* Negotiate subprotocol selection based on Sec-WebSocket-Protocol
+* Negotiate and use extensions via the websocket-extensions module
+* Buffer sent messages until the handshake process is finished
+* Deal with proxies that defer delivery of the draft-76 handshake body
+* Notify you when the socket is open and closed and when messages arrive
+* Recombine fragmented messages
+* Dispatch text, binary, ping and close frames
+* Manage the socket-closing handshake process
+* Automatically reply to ping frames with a matching pong
+* Apply masking to messages sent by the client
