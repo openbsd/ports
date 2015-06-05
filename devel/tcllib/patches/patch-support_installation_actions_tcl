@@ -1,11 +1,11 @@
-$OpenBSD: patch-support_installation_actions_tcl,v 1.6 2014/10/21 05:10:19 stu Exp $
+$OpenBSD: patch-support_installation_actions_tcl,v 1.7 2015/06/05 20:36:24 stu Exp $
 
 Retrieve module info from man pages.
 Perform shebang adjustments.
 
---- support/installation/actions.tcl.orig	Fri Aug 29 18:30:12 2014
-+++ support/installation/actions.tcl	Tue Sep 16 19:54:45 2014
-@@ -90,23 +90,113 @@ proc _trt {module libdir} {
+--- support/installation/actions.tcl.orig	Wed Jun  3 22:01:29 2015
++++ support/installation/actions.tcl	Wed Jun  3 22:50:17 2015
+@@ -90,23 +90,100 @@ proc _trt {module libdir} {
      return
  }
  
@@ -13,7 +13,6 @@ Perform shebang adjustments.
 -proc _man {module format ext docdir} { return }
 +proc _manfile {fn dfn} {
 +    global modinfos
-+    log "Installing $fn to $dfn"
 +    set f [open $fn]
 +    chan configure $f -buffersize 100000
 +    set d [read -nonewline $f]
@@ -21,10 +20,7 @@ Perform shebang adjustments.
 +    if {[regexp {\n\.SH NAME\n(.*?) \\- (.*?)\n} $d -> shname shtitle] && [regexp -line {^\.TH.*$} $d th]} {
 +	lappend modinfos [list $shname [lindex $th 3] [lindex $th 5] $shtitle]
 +    }
-+    set f [open $dfn w]
-+    puts -nonewline $f $d
-+    close $f
-+    file attributes $dfn -permissions 0o444
++    xcopyfile $fn $dfn
 +}
  
 -proc _exa {module exadir} {
@@ -58,60 +54,50 @@ Perform shebang adjustments.
      return
 +}
 +
-+proc _exafile {fn dfn tclsh} {
++proc _exafile {fn dfn} {
++    global config
 +    set f [open $fn]
 +    set d [read $f 2]
 +    if {$d ne "#!"} {
 +	close $f
-+	xcopyfile $fn [file dirname $dfn]
++	xcopyfile $fn $dfn
 +	return
 +    }
 +    chan configure $f -buffersize 100000
 +    append d [read -nonewline $f]
 +    close $f
-+    log "Installing $fn to $dfn"
-+    set execreplace "exec $tclsh "; append execreplace {"$0" ${1+"$@"}}
-+    set envreplace "#! $tclsh"
-+    set perms 0o444
 +    set l [split $d \n]
-+    set l2 [string trim [lindex $l 2]]
 +    if {
 +	[string match {#!*/*} [lindex $l 0]] &&
 +	[string match {#*\\} [lindex $l 1]] && 
-+	([string match {exec*tclsh*} $l2] ||
-+	 [string match {exec*wish*} $l2])
++	[regexp {exec.+(tclsh|wish)} [lindex $l 2] -> whatsh]
 +    } {
-+	if {[string match {exec*wish*} $l2]} {
-+	    set execreplace [string map {tclsh wish} $execreplace]
-+	}
-+	lset l 2 $execreplace
-+	set perms 0o555
-+    } elseif {[string match {#!*/env*tclsh*} [lindex $l 0]]} {
-+	lset l 0 $envreplace
-+	set perms 0o555
++	lset l 2 [format {exec %s "$0" ${1+"$@"}} $config($whatsh)]
++    } elseif {[regexp {#!.*/env.+(tclsh|wish)} [lindex $l 0] -> whatsh]} {
++	lset l 0 [format "#! %s" $config($whatsh)]
++    } else {
++	xcopyfile $fn $dfn
++	return
 +    }
++    log "Installing $fn to $dfn"
 +    set f [open $dfn w]
 +    puts $f [join $l \n]
 +    close $f
-+    if {$perms == 0o555 &&
-+	    "[file tail [file dirname $dfn]]/[file tail $dfn]" in {
-+		ftp/hpupdate.tcl ftp/mirror.tcl ftp/newer.tcl
-+		ftpd/ftpd ftpd/ftpd.test ftpd/ftpd.unix
-+		log/logtofile.tcl
-+		mime/maildemo.tcl mbot/personal.tcl mbot/impersonal.tcl
-+		nntp/postnews
-+    	    }
-+    } {
-+	set perms 0o444
-+    }
-+    file attributes $dfn -permissions $perms
++    file attributes $dfn -permissions [expr {
++	"[file tail [file dirname $dfn]]/[file tail $dfn]" in {
++	    ftp/hpupdate.tcl ftp/mirror.tcl ftp/newer.tcl
++	    ftpd/ftpd ftpd/ftpd.test ftpd/ftpd.unix
++	    log/logtofile.tcl
++	    mime/maildemo.tcl mbot/personal.tcl mbot/impersonal.tcl
++	    nntp/postmsg nntp/postnews
++	} ? 0o444 : 0o555}]
 +}
 +
-+proc _exa {module srcdir dstdir tclsh} {
-+    _exax $module $module $srcdir $dstdir $tclsh
++proc _exa {module srcdir dstdir} {
++    _exax $module $module $srcdir $dstdir
 +}
 +
-+proc _exax {actual module srcdir dstdir tclsh} {
++proc _exax {actual module srcdir dstdir} {
 +    set dstdir [file join $dstdir $module]
 +    if {![file exists $dstdir]} {
 +	log "Making directory $dstdir"
@@ -121,14 +107,15 @@ Perform shebang adjustments.
 +    foreach fn [glob -nocomplain -dir [file join $srcdir $actual] *] {
 +	if {[file isdirectory $fn]} {
 +	    set m [file tail $fn] 
-+	    _exax $m $m [file dirname $fn] $dstdir $tclsh
++	    _exax $m $m [file dirname $fn] $dstdir
 +	    continue
 +	}
 +	set t [file tail $fn]
 +	set e [file extension $fn]
 +	if {$t eq "ChangeLog" || $e in {.orig .beforesubst}} { continue }
++	if {$t in {run_tepam_demo.bat run_tepam_demo.sh}} { continue }
 +	if {$e in {.tcl ""} || $t in {ftpd.test ftpd.unix}} {
-+	    _exafile $fn [file join $dstdir $t] $tclsh
++	    _exafile $fn [file join $dstdir $t]
 +	} else {
 +	    xcopyfile $fn $dstdir
 +	}

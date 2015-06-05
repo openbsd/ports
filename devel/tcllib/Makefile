@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2015/02/14 07:38:35 stu Exp $
+# $OpenBSD: Makefile,v 1.25 2015/06/05 20:36:24 stu Exp $
 
 COMMENT =	Tcl Standard Library
 
-DISTNAME =	tcllib-1.16pl0
-REVISION =	0
+DISTNAME =	tcllib-1.17pl0
 CATEGORIES =	devel lang/tcl
 HOMEPAGE =	http://sourceforge.net/projects/tcllib/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -11,9 +10,9 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 # BSD style
 PERMIT_PACKAGE_CDROM =	Yes
 
-# Fossil checkin 2014/08/29 98f00771aefb6f3b61c458444a0b54a6b298e187
+# Fossil checkin 2015/06/04 fe05de3454a49f831086a78ae987030c5fc85008
 MASTER_SITES =	http://mirror.yellow5.com/openbsd/
-MODULES =	lang/tcl
+MODULES =	x11/tk
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
 USE_GROFF =	Yes
@@ -31,6 +30,7 @@ do-install:
 	-mp ${DESTDIR}${MODTCL_MODDIR}/85 \
 	-csb ${PREFIX}/share/doc \
 	-tclsh ${MODTCL_BIN} \
+	-wish ${MODTK_BIN} \
 	-descr "`cat ${PKGDIR}/DESCR`"
 	mv ${PREFIX}/share/examples/tcllib/apps/dtplite ${PREFIX}/bin
 

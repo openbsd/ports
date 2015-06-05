@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/10/21 05:10:19 stu Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/06/05 20:36:24 stu Exp $
 bin/dtplite
 lib/tcl/amazon-s3/
 lib/tcl/amazon-s3/S3.tcl
@@ -309,20 +309,21 @@ lib/tcl/mime/
 lib/tcl/mime/mime.tcl
 lib/tcl/mime/pkgIndex.tcl
 lib/tcl/mime/smtp.tcl
-lib/tcl/modules/85/aes-1.1.1.tm
+lib/tcl/modules/85/aes-1.2.1.tm
 lib/tcl/modules/85/asn-0.8.4.tm
 lib/tcl/modules/85/bee-0.1.tm
-lib/tcl/modules/85/bibtex-0.5.tm
+lib/tcl/modules/85/bibtex-0.6.tm
 lib/tcl/modules/85/blowfish-1.0.4.tm
-lib/tcl/modules/85/cmdline-1.3.3.tm
+lib/tcl/modules/85/cmdline-1.5.tm
 lib/tcl/modules/85/comm-4.6.3.1.tm
 lib/tcl/modules/85/counter-2.0.4.tm
+lib/tcl/modules/85/cron-1.1.tm
 lib/tcl/modules/85/csv-0.8.tm
 lib/tcl/modules/85/dtplite-1.2.tm
 lib/tcl/modules/85/ftpd-1.2.6.tm
 lib/tcl/modules/85/gpx-1.tm
 lib/tcl/modules/85/hook-0.1.tm
-lib/tcl/modules/85/html-1.4.3.tm
+lib/tcl/modules/85/html-1.4.4.tm
 lib/tcl/modules/85/htmlparse-1.2.1.tm
 lib/tcl/modules/85/ident-0.42.tm
 lib/tcl/modules/85/imap4-0.5.2.tm
@@ -335,6 +336,7 @@ lib/tcl/modules/85/namespacex-0.1.tm
 lib/tcl/modules/85/ncgi-1.4.3.tm
 lib/tcl/modules/85/nmea-1.0.0.tm
 lib/tcl/modules/85/nntp-0.2.1.tm
+lib/tcl/modules/85/oauth-1.tm
 lib/tcl/modules/85/otp-1.0.0.tm
 lib/tcl/modules/85/pki-0.6.tm
 lib/tcl/modules/85/pluginmgr-0.3.tm
@@ -349,7 +351,17 @@ lib/tcl/modules/85/tar-0.10.tm
 lib/tcl/modules/85/tiff-0.2.1.tm
 lib/tcl/modules/85/units-2.1.1.tm
 lib/tcl/modules/85/uuid-1.0.4.tm
-lib/tcl/modules/85/websocket-1.3.1.tm
+lib/tcl/modules/85/websocket-1.4.tm
+lib/tcl/nettool/
+lib/tcl/nettool/available_ports.tcl
+lib/tcl/nettool/generic.tcl
+lib/tcl/nettool/locateport.tcl
+lib/tcl/nettool/nettool.tcl
+lib/tcl/nettool/pkgIndex.tcl
+lib/tcl/nettool/platform_unix.tcl
+lib/tcl/nettool/platform_unix_linux.tcl
+lib/tcl/nettool/platform_unix_macosx.tcl
+lib/tcl/nettool/platform_windows.tcl
 lib/tcl/nns/
 lib/tcl/nns/common.tcl
 lib/tcl/nns/nns.tcl
@@ -742,6 +754,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/counter.n
 @man man/mann/crc16.n
 @man man/mann/crc32.n
+@man man/mann/cron.n
 @man man/mann/csv.n
 @man man/mann/cvs.n
 @man man/mann/dacceptor.n
@@ -884,6 +897,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/multiplexer.n
 @man man/mann/namespacex.n
 @man man/mann/ncgi.n
+@man man/mann/nettool.n
 @man man/mann/nmea.n
 @man man/mann/nns.n
 @man man/mann/nns_auto.n
@@ -900,6 +914,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/ntp_time.n
 @man man/mann/nullzero.n
 @man man/mann/numtheory.n
+@man man/mann/oauth.n
 @man man/mann/observe.n
 @man man/mann/ooutil.n
 @man man/mann/optimize.n
@@ -1172,8 +1187,14 @@ share/examples/tcllib/mime/mbot/personal.tcl
 share/examples/tcllib/mime/mbot/pkgIndex.tcl
 share/examples/tcllib/nntp/
 share/examples/tcllib/nntp/README
+share/examples/tcllib/nntp/dirstore
+share/examples/tcllib/nntp/free-news-servers.txt
 share/examples/tcllib/nntp/nntp.examples
+share/examples/tcllib/nntp/postmsg
 share/examples/tcllib/nntp/postnews
+share/examples/tcllib/nntp/pullnews
+share/examples/tcllib/nntp/test-account
+share/examples/tcllib/nntp/test-message
 share/examples/tcllib/ntp/
 share/examples/tcllib/ntp/rdate.tcl
 share/examples/tcllib/sasl/
