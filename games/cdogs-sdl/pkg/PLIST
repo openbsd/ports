@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/08 02:53:49 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/05 12:20:38 ajacoutot Exp $
 @bin bin/cdogs-sdl
 @bin bin/cdogs-sdl-editor
-share/applications/
 share/applications/cdogs-sdl.desktop
 share/cdogs-sdl/
 share/cdogs-sdl/doc/

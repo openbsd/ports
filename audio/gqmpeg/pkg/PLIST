@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.16 2009/12/22 15:43:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2015/06/05 12:20:38 ajacoutot Exp $
 bin/gqmpeg
 bin/gqmpeg-shoutcast-plugin.sh
 @man man/man1/gqmpeg.1
-share/applications/
 share/applications/gqmpeg.desktop
 share/doc/gqmpeg/
 share/doc/gqmpeg/FAQ

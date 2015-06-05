@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/04/11 16:16:33 edd Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/06/05 12:20:38 ajacoutot Exp $
 %%sdl%%
 @extraunexec rm /var/games/angband/*/* 2>/dev/null || true
 @mode g+s
@@ -76,7 +76,6 @@ share/angband/xtra/icon/att-16.png
 share/angband/xtra/icon/att-256.png
 share/angband/xtra/icon/att-32.png
 share/angband/xtra/icon/att-512.png
-share/applications/
 @comment share/applications/angband-gtk.desktop
 share/applications/angband-x11.desktop
 @mode 775

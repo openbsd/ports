@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2011/11/28 15:28:49 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2015/06/05 12:20:38 ajacoutot Exp $
 @pkgpath net/amule
 @bin bin/alc
 @bin bin/alcc
@@ -86,7 +86,6 @@ share/amule/skins/kde4.zip
 share/amule/skins/priscilla.zip
 share/amule/skins/tango.zip
 share/amule/skins/xfce.zip
-share/applications/
 share/applications/alc.desktop
 share/applications/amule.desktop
 share/applications/amulegui.desktop

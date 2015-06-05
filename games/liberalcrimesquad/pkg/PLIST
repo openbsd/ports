@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/10 04:15:32 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/05 12:20:39 ajacoutot Exp $
 @bin bin/crimesquad
 @man man/man6/crimesquad.6
-share/applications/
 share/applications/crimesquad.desktop
 share/lcs/
 share/lcs/art/

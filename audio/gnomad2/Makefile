@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2015/04/04 09:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2015/06/05 12:20:38 ajacoutot Exp $
 
 COMMENT=		GTK+ tool for managing Creative and Dell audio players
 
 DISTNAME=		gnomad2-2.9.0
-REVISION=		10
+REVISION=		11
 CATEGORIES=		audio
 
 HOMEPAGE=		http://gnomad2.sourceforge.net/

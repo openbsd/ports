@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/06/15 08:32:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/06/05 12:20:39 ajacoutot Exp $
 bin/tagtool
-share/applications/
 share/applications/tagtool.desktop
 share/icons/
 share/icons/hicolor/
