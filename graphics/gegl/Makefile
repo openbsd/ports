@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.50 2015/04/28 06:35:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2015/06/05 11:52:33 ajacoutot Exp $
+
+PORTROACH=		limit:^0\.2
 
 SHARED_ONLY=		Yes
 
