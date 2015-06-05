@@ -1,0 +1,11 @@
+A minimal framework that supports the implementation of WebSocket
+extensions in a way that's decoupled from the main protocol. This
+library aims to allow a WebSocket extension to be written and used with
+any protocol library, by defining abstract representations of frames and
+messages that allow modules to co-operate.
+
+websocket-extensions provides a container for registering extension
+plugins, and provides all the functions required to negotiate which
+extensions to use during a session via the Sec-WebSocket-Extensions
+header. By implementing the APIs defined in this document, an extension
+may be used by any WebSocket library based on this framework.

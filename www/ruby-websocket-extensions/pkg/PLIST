@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/05 02:48:30 jeremy Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/websocket/
+${GEM_LIB}/gems/${DISTNAME}/lib/websocket/extensions/
+${GEM_LIB}/gems/${DISTNAME}/lib/websocket/extensions.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/websocket/extensions/parser.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
