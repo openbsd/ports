@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2014/10/11 19:54:48 jeremy Exp $
+# $OpenBSD: Makefile,v 1.21 2015/06/05 02:46:25 jeremy Exp $
 
 COMMENT =	fast and very simple Ruby web server
 
-DISTNAME =	thin-1.3.0
-REVISION =	5
+DISTNAME =	thin-1.6.3
 CATEGORIES =	www
 
 HOMEPAGE =	http://code.macournoyer.com/thin/
@@ -15,9 +14,9 @@ MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem ext
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	www/ruby-rack,${MODRUBY_FLAVOR}>=1.0.0 \
-		devel/ruby-daemons,${MODRUBY_FLAVOR}>=1.0.9 \
-		net/ruby-eventmachine,${MODRUBY_FLAVOR}>=0.12.6
+RUN_DEPENDS =	www/ruby-rack,${MODRUBY_FLAVOR}>=1.0,<2.0 \
+		devel/ruby-daemons,${MODRUBY_FLAVOR}>=1.0.9,<2.0 \
+		net/ruby-eventmachine,${MODRUBY_FLAVOR}>=1.0,<2.0
 
 MODRUBY_TEST =	rspec
 TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
