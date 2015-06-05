@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2014/11/22 12:22:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2015/06/05 06:00:23 robert Exp $
 
 COMMENT=		framework for developing PHP web applications
 
 DISTNAME=		ZendFramework-1.12.9
 PKGNAME=		${DISTNAME:L}
+REVISION=		0
 
 CATEGORIES=		www devel
 

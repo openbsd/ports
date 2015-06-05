@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.84 2015/05/08 09:08:44 espie Exp $
+# $OpenBSD: Makefile,v 1.85 2015/06/05 06:00:22 robert Exp $
 
 COMMENT=	easy and universal access to shared and/or personal files
 
 V=		8.0.3
 DISTNAME=	owncloud-${V}
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 CATEGORIES=	www
 

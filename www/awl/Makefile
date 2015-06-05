@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/23 08:43:37 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2015/06/05 06:00:22 robert Exp $
 
 COMMENT =	Andrews web libraries for PHP
 
@@ -9,6 +9,7 @@ DISTNAME =	${GITLAB_PROJECT}-${GITLAB_TAG:S/r//}
 PKGNAME =	php-${DISTNAME}
 CATEGORIES =	www
 PKG_ARCH =	*
+REVISION =	0
 
 HOMEPAGE =	https://gitlab.com/${GITLAB_ACCOUNT}/${GITLAB_PROJECT}
 

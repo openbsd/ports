@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/04 10:52:37 henning Exp $
+# $OpenBSD: Makefile,v 1.2 2015/06/05 06:00:21 robert Exp $
 
 COMMENT=	roundcube plugin: LDAP Alias Sync
 
@@ -7,6 +7,7 @@ GH_PROJECT=	ldapAliasSync
 GH_COMMIT=	a822fdb9f6b3b27192460d7a8cc3464561491731
 DISTNAME=	rcube-ldapAliasSync-20150126
 DISTFILES=	${DISTNAME}{${GH_COMMIT}}${EXTRACT_SUFX}
+REVISION=	0
 
 CATEGORIES=	mail www
 

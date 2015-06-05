@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/29 12:20:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/06/05 06:00:21 robert Exp $
 
 COMMENT =	config migration script for icinga 1->2
 
@@ -7,6 +7,7 @@ GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2-migration
 GH_TAGNAME =	v$V
 DISTNAME =	icinga2-migration-$V
+REVISION =	0
 
 HOMEPAGE =	https://www.icinga.org/icinga2/
 

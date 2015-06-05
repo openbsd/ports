@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/06 17:13:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/06/05 06:00:21 robert Exp $
 
 COMMENT =	PostgreSQL database abstraction layer for PHP
 
@@ -7,7 +7,7 @@ DISTNAME =	MDB2_Driver_pgsql-${V}
 PKGNAME =	pear-MDB2-pgsql-${V}
 CATEGORIES =	net databases
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
-REVISION =	1
+REVISION =	2
 
 MODULES =	lang/php www/pear
 

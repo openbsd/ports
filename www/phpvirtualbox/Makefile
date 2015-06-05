@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/05 07:10:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/06/05 06:00:23 robert Exp $
 
 COMMENT=	web-based VirtualBox front-end
 
@@ -6,6 +6,7 @@ V=		4.3-3
 DISTNAME=	phpvirtualbox-${V}
 PKGNAME=	phpvirtualbox-${V:S/-/./}
 EXTRACT_SUFX=	.zip
+REVISION=	0
 
 CATEGORIES=	www sysutils
 

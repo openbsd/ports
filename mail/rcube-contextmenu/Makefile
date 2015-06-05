@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/13 08:22:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/06/05 06:00:21 robert Exp $
 
 COMMENT=	roundcube plugin: context-sensitive menus
 
@@ -9,6 +9,7 @@ DISTNAME=	contextmenu-${GH_TAGNAME}
 PKGNAME=	rcube-${DISTNAME}
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.tehinterweb.co.uk/roundcube/\#picontextmenu
+REVISION=	0
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
