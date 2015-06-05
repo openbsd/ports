@@ -1,10 +1,10 @@
-# $OpenBSD: php.port.mk,v 1.12 2014/11/15 10:17:44 robert Exp $
+# $OpenBSD: php.port.mk,v 1.13 2015/06/05 05:58:07 robert Exp $
 
 SHARED_ONLY=		Yes
 
 CATEGORIES+=		lang/php
 
-MODPHP_VERSION?=	5.5
+MODPHP_VERSION?=	5.6
 .if ${MODPHP_VERSION} == 5.3
 MODPHP_VSPEC = >=${MODPHP_VERSION},<5.4
 .elif ${MODPHP_VERSION} == 5.4
