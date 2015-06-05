@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/02/16 22:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2015/06/05 08:11:53 bentley Exp $
 
 COMMENT=		info viewer with lynx-style navigation
 
@@ -10,7 +10,7 @@ HOMEPAGE=		https://alioth.debian.org/frs/?group_id=30592
 MAINTAINER=		Marc Espie <espie@openbsd.org>
 
 MASTER_SITES=		https://alioth.debian.org/frs/download.php/latestfile/434/ \
-			ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
+			http://distcache.freebsd.org/ports-distfiles/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

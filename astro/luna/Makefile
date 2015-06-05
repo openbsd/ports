@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/10 22:28:05 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/06/05 08:11:53 bentley Exp $
 
 COMMENT=	display the moon's phase
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=	copyrighted
 PERMIT_DISTFILES_FTP=	copyrighted
 WANTLIB=		c
 
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/ \
-		ftp://ftp.vector.co.jp/pack/dos/edu/science/space/
+MASTER_SITES=	http://distcache.freebsd.org/ports-distfiles/
 
 BUILD_DEPENDS=	archivers/lha
 

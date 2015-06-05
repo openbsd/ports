@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2015/06/05 08:11:53 bentley Exp $
 
 COMMENT=	binary-to-text file converter
 
@@ -13,8 +13,7 @@ PERMIT_DISTFILES_FTP=	no license
 WANTLIB += c
 
 MASTER_SITES=	\
-	http://ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
-	ftp://ftp.jp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
+	http://distcache.freebsd.org/ports-distfiles/ \
 	http://www.unix.gr.jp/jnetcex/soft/
 
 MAKE_FILE=	makefile

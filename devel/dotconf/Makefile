@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/22 11:31:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/06/05 08:11:53 bentley Exp $
 
 COMMENT=		simple, powerful configuration-file parser
 
@@ -14,7 +14,7 @@ HOMEPAGE=		https://github.com/williamh/dotconf
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://ftp.freebsd.org/pub/FreeBSD/distfiles/
+MASTER_SITES=		http://distcache.freebsd.org/ports-distfiles/
 
 CONFIGURE_STYLE=	gnu
 

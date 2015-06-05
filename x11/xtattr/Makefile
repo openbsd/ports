@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/10/11 21:21:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2015/06/05 08:11:53 bentley Exp $
 
 COMMENT=	changing xterm attributes
 
@@ -10,7 +10,7 @@ PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_FTP=	no license
 
-MASTER_SITES =	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
+MASTER_SITES =	http://distcache.freebsd.org/ports-distfiles/
 WANTLIB=		c 
 
 CONFIGURE_STYLE=	imake
