@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/05 09:11:31 stsp Exp $
+firmware/rtwn-license
+firmware/rtwn-rtl8192cfwU
+firmware/rtwn-rtl8192cfwU_B
