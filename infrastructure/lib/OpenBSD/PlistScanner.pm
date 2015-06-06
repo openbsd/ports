@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.2 2015/05/29 10:40:06 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.3 2015/06/06 15:01:43 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -18,6 +18,8 @@ use warnings;
 
 package OpenBSD::PlistScanner;
 use OpenBSD::PackageInfo;
+use OpenBSD::AddCreateDelete;
+use OpenBSD::PackingList;
 
 sub handle_plist
 {
@@ -105,9 +107,10 @@ sub handle_portsdir
 			}
 			$done = 1;
 		});
-		if (defined $plist && $plist->pkgname()) {
+		if (defined $plist && $plist->pkgname) {
+			$self->ui->progress->message($plist->fullpkgpath ||
+			    $plist->pkgname);
 			$self->handle_plist($dir, $plist);
-			$self->ui->progress->working(10);
 		}
 	}
 }
