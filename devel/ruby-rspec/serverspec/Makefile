@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2015/05/10 18:16:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2015/06/06 11:06:33 jasper Exp $
 
 COMMENT=	RSpec tests for testing machine configuration/state
 
-DISTNAME=	serverspec-2.16.0
+DISTNAME=	serverspec-2.17.1
 
 HOMEPAGE=	http://serverspec.org/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/03/19 08:04:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/06/06 11:06:33 jasper Exp $
 ${GEM_BIN}/serverspec-init${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -11,6 +11,7 @@ ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/WINDOWS_SUPPORT.md
+${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/serverspec-init
 ${GEM_LIB}/gems/${DISTNAME}/lib/
