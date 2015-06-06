@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/05/14 07:21:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/06/06 11:09:44 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -9,6 +9,7 @@ ${GEM_LIB}/gems/${DISTNAME}/Guardfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/multiple_backends.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
@@ -183,6 +184,16 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base/yumrepo.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/linux/base/zfs.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/module/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/module.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/module/service/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/module/service/daemontools.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/module/service/delegator.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/module/service/god.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/module/service/init.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/module/service/monit.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/module/service/runit.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/module/service/supervisor.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/module/service/systemd.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/module/service/upstart.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/module/systemd.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/module/zfs.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/nixos/
@@ -378,6 +389,10 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/ip6tables_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/selinux_module_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/selinux_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/module/
+${GEM_LIB}/gems/${DISTNAME}/spec/command/module/service/
+${GEM_LIB}/gems/${DISTNAME}/spec/command/module/service/daemontools_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/module/service/init_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/module/service/systemd_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/module/systemd_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/module/zfs_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/
@@ -399,5 +414,4 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/cpu_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/specinfra.gemspec
-${GEM_LIB}/gems/${DISTNAME}/wercker.yml
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
