@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2014/12/12 22:17:33 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2015/06/06 23:08:22 sthen Exp $
 
 MULTI_PACKAGES=	-main
 # -ntlm may come back with samba 4
@@ -91,6 +91,7 @@ CONFIGURE_ARGS+= --enable-external-acl-helpers="${EXTERNAL_ACL}"
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_header_et_com_err_h=false \
+		ac_cv_header_security_pam_appl_h=false \
 		ac_cv_header_execinfo_h=false
 E=		${TRUEPREFIX}/share/examples/squid
 FAKE_FLAGS=	sysconfdir=$E \
