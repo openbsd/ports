@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.4 2014/05/03 14:24:03 abieber Exp $
---- Makefile.orig	Wed Mar 12 06:10:00 2014
-+++ Makefile	Mon Apr 14 12:35:12 2014
+$OpenBSD: patch-Makefile,v 1.5 2015/06/06 09:03:16 dcoppa Exp $
+--- Makefile.orig	Thu May 14 20:30:00 2015
++++ Makefile	Thu Jun  4 19:20:59 2015
 @@ -17,7 +17,7 @@ MAJVER=  2
  MINVER=  0
- RELVER=  3
+ RELVER=  4
  VERSION= $(MAJVER).$(MINVER).$(RELVER)
 -ABIVER=  5.1
 +ABIVER=  ${MODLUA_VERSION}

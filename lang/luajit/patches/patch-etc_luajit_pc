@@ -1,0 +1,15 @@
+$OpenBSD: patch-etc_luajit_pc,v 1.1 2015/06/06 09:03:16 dcoppa Exp $
+--- etc/luajit.pc.orig	Thu Jun  4 20:05:32 2015
++++ etc/luajit.pc	Thu Jun  4 20:06:57 2015
+@@ -3,9 +3,9 @@ majver=2
+ minver=0
+ relver=4
+ version=${majver}.${minver}.${relver}
+-abiver=5.1
++abiver=${MODLUA_VERSION}
+ 
+-prefix=/usr/local
++prefix=${TRUEPREFIX}
+ multilib=lib
+ exec_prefix=${prefix}
+ libdir=${exec_prefix}/${multilib}

@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_host_buildvm_asm_c,v 1.2 2013/10/05 15:51:08 abieber Exp $
+$OpenBSD: patch-src_host_buildvm_asm_c,v 1.3 2015/06/06 09:03:16 dcoppa Exp $
 
 .gnu_attribute requires binutils 2.18
 
---- src/host/buildvm_asm.c.orig	Mon Jun  3 13:00:00 2013
-+++ src/host/buildvm_asm.c	Sat Oct  5 09:33:08 2013
+--- src/host/buildvm_asm.c.orig	Thu May 14 20:30:00 2015
++++ src/host/buildvm_asm.c	Thu Jun  4 19:20:59 2015
 @@ -289,12 +289,14 @@ void emit_asm(BuildCtx *ctx)
- #if !LJ_TARGET_PS3
+ #if !(LJ_TARGET_PS3 || LJ_TARGET_PSVITA)
      fprintf(ctx->fp, "\t.section .note.GNU-stack,\"\"," ELFASM_PX "progbits\n");
  #endif
 +#if 0
