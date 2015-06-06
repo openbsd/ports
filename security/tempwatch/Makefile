@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/04/03 15:12:28 pascal Exp $
+# $OpenBSD: Makefile,v 1.21 2015/06/06 04:49:47 bentley Exp $
 
 COMMENT=		temporary file auditing tool
 
@@ -15,7 +15,7 @@ DIST_SUBDIR=		tempwatch
 DISTFILES=		l0pht-watch${EXTRACT_SUFX} watch.txt:0
 EXTRACT_ONLY=		l0pht-watch${EXTRACT_SUFX}
 
-MASTER_SITES=		ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/
+MASTER_SITES=		http://distcache.freebsd.org/ports-distfiles/
 MASTER_SITES0=		https://distfiles.bsdfrog.org/
 
 WRKDIST=		${WRKDIR}/temp-watch
