@@ -1,11 +1,12 @@
-$OpenBSD: patch-library_tk_tcl,v 1.4 2015/06/06 12:13:03 ajacoutot Exp $
---- library/tk.tcl.orig	Mon Jun 20 16:17:08 2011
-+++ library/tk.tcl	Wed Oct  5 11:26:28 2011
-@@ -55,12 +55,12 @@ namespace eval ::ttk {
+$OpenBSD: patch-library_tk_tcl,v 1.5 2015/06/06 14:19:23 stu Exp $
+--- library/tk.tcl.orig	Thu Feb 12 10:23:46 2015
++++ library/tk.tcl	Thu Jun  4 23:42:54 2015
+@@ -55,12 +55,13 @@ namespace eval ::ttk {
      }
  }
  
 -# Add Ttk & Tk's directory to the end of the auto-load search path, if it
++# OpenBSD layout.
 +# Add Tk's directory to the end of the auto-load search path, if it
  # isn't already on the path:
  
