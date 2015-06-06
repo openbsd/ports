@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2015/03/19 20:25:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2015/06/06 14:19:35 espie Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
@@ -64,7 +64,7 @@ WANTLIB-demos=		${WANTLIB} Xm Mrm
 # XXX  Large, complicated, only partially automated test suite available
 NO_TEST=	Yes
 
-pre-patch:
+post-patch:
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 pre-configure:
