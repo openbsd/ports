@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2015/06/05 20:35:53 stu Exp $
+# $OpenBSD: Makefile,v 1.38 2015/06/06 12:13:03 ajacoutot Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
-P =			18
-DISTNAME =		tk8.5.${P}
-PKGNAME =		tk-8.5.${P}
-SHARED_LIBS =		tk85 0.14
+DISTNAME =		tk8.5.16
+PKGNAME =		tk-8.5.16
+SHARED_LIBS =		tk85 0.13
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -18,11 +17,11 @@ WANTLIB =		X11 Xext Xft Xss c fontconfig m tcl85
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		${DISTNAME}-src.tar.gz
 
-LIB_DEPENDS =		tcl-8.5.${P}:lang/tcl/8.5
+LIB_DEPENDS =		tcl-8.5.16:lang/tcl/8.5
 
-MAKE_FLAGS =		TK_LIBRARY='$$(prefix)/lib/tcl/tk$$(VERSION)' \
-			TCL_GENERIC_DIR='${LOCALBASE}/include/tcl8.5' \
-			TCL_PLATFORM_DIR='$$(TCL_GENERIC_DIR)'
+MAKE_FLAGS +=		TK_LIBRARY='$$(prefix)/lib/tcl/tk$$(VERSION)' \
+			TCL_GENERIC_DIR='$$(GENERIC_DIR)' \
+			TCL_PLATFORM_DIR='$$(GENERIC_DIR)'
 
 FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			INSTALL_LIBRARY="${INSTALL_DATA}" \
@@ -45,6 +44,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-rpath \
 			--with-tcl="${LOCALBASE}/lib/tcl/tcl8.5" \
 			EXTRA_INSTALL="install-private-headers" \
+			EXTRA_CC_SWITCHES="-I${LOCALBASE}/include/tcl8.5" \
 			SHLIB_VERSION="${LIBtk85_VERSION}"
 
 .include <bsd.port.arch.mk>
