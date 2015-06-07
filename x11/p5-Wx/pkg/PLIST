@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:26:03 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/06/07 09:46:14 ajacoutot Exp $
 %%SHARED%%
 bin/wxperl_overload
 ${P5ARCH}/Wx/
@@ -17,10 +17,14 @@ ${P5ARCH}/Wx/FS.pm
 ${P5ARCH}/Wx/Grid.pm
 ${P5ARCH}/Wx/Help.pm
 ${P5ARCH}/Wx/Html.pm
+${P5ARCH}/Wx/IPC.pm
+${P5ARCH}/Wx/Loader.pod
 ${P5ARCH}/Wx/Locale.pm
 ${P5ARCH}/Wx/MDI.pm
+${P5ARCH}/Wx/Media.pm
 ${P5ARCH}/Wx/Menu.pm
 ${P5ARCH}/Wx/Mini.pm
+${P5ARCH}/Wx/NewClass.pod
 ${P5ARCH}/Wx/Overload/
 ${P5ARCH}/Wx/Overload/Driver.pm
 ${P5ARCH}/Wx/Overload/Handle.pm
@@ -28,6 +32,7 @@ ${P5ARCH}/Wx/Perl/
 ${P5ARCH}/Wx/Perl/Carp.pm
 ${P5ARCH}/Wx/Perl/SplashFast.pm
 ${P5ARCH}/Wx/Perl/TextValidator.pm
+${P5ARCH}/Wx/PerlTest.pm
 ${P5ARCH}/Wx/Print.pm
 ${P5ARCH}/Wx/RadioBox.pm
 ${P5ARCH}/Wx/RichText.pm
@@ -37,6 +42,11 @@ ${P5ARCH}/Wx/Thread.pod
 ${P5ARCH}/Wx/Timer.pm
 ${P5ARCH}/Wx/Wx_Exp.pm
 ${P5ARCH}/Wx/XRC.pm
+${P5ARCH}/Wx/XSP/
+${P5ARCH}/Wx/XSP/Enum.pm
+${P5ARCH}/Wx/XSP/Event.pm
+${P5ARCH}/Wx/XSP/Overload.pm
+${P5ARCH}/Wx/XSP/Virtual.pm
 ${P5ARCH}/Wx/build/
 ${P5ARCH}/Wx/build/MakeMaker/
 ${P5ARCH}/Wx/build/MakeMaker.pm
@@ -68,44 +78,34 @@ ${P5ARCH}/Wx/typemap
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Wx/
 ${P5ARCH}/auto/Wx/AUI/
-@comment ${P5ARCH}/auto/Wx/AUI/AUI.bs
 ${P5ARCH}/auto/Wx/Calendar/
-@comment ${P5ARCH}/auto/Wx/Calendar/Calendar.bs
 ${P5ARCH}/auto/Wx/DND/
-@comment ${P5ARCH}/auto/Wx/DND/DND.bs
 ${P5ARCH}/auto/Wx/DateTime/
-@comment ${P5ARCH}/auto/Wx/DateTime/DateTime.bs
 ${P5ARCH}/auto/Wx/DocView/
-@comment ${P5ARCH}/auto/Wx/DocView/DocView.bs
 ${P5ARCH}/auto/Wx/FS/
-@comment ${P5ARCH}/auto/Wx/FS/FS.bs
 ${P5ARCH}/auto/Wx/Grid/
-@comment ${P5ARCH}/auto/Wx/Grid/Grid.bs
 ${P5ARCH}/auto/Wx/Help/
-@comment ${P5ARCH}/auto/Wx/Help/Help.bs
 ${P5ARCH}/auto/Wx/Html/
-@comment ${P5ARCH}/auto/Wx/Html/Html.bs
+${P5ARCH}/auto/Wx/IPC/
 ${P5ARCH}/auto/Wx/MDI/
-@comment ${P5ARCH}/auto/Wx/MDI/MDI.bs
+${P5ARCH}/auto/Wx/Media/
+${P5ARCH}/auto/Wx/PerlTest/
 ${P5ARCH}/auto/Wx/Print/
-@comment ${P5ARCH}/auto/Wx/Print/Print.bs
 ${P5ARCH}/auto/Wx/RichText/
-@comment ${P5ARCH}/auto/Wx/RichText/RichText.bs
 ${P5ARCH}/auto/Wx/STC/
-@comment ${P5ARCH}/auto/Wx/STC/STC.bs
 ${P5ARCH}/auto/Wx/Socket/
-@comment ${P5ARCH}/auto/Wx/Socket/Socket.bs
-@comment ${P5ARCH}/auto/Wx/Wx.bs
 ${P5ARCH}/auto/Wx/XRC/
-@comment ${P5ARCH}/auto/Wx/XRC/XRC.bs
 @man man/man1/wxperl_overload.1
 @man man/man3p/Wx.3p
 @man man/man3p/Wx::Api.3p
+@man man/man3p/Wx::Loader.3p
+@man man/man3p/Wx::NewClass.3p
 @man man/man3p/Wx::Perl::Carp.3p
 @man man/man3p/Wx::Perl::SplashFast.3p
 @man man/man3p/Wx::Perl::TextValidator.3p
 @man man/man3p/Wx::Socket.3p
 @man man/man3p/Wx::Thread.3p
+@man man/man3p/Wx::XSP::Overload.3p
 @man man/man3p/Wx::build::MakeMaker.3p
 @man man/man3p/Wx::build::MakeMaker::Win32_MSVC.3p
 @man man/man3p/Wx::build::Options.3p

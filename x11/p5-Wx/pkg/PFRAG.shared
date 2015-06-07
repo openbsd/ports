@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/09/07 20:30:58 landry Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2015/06/07 09:46:14 ajacoutot Exp $
 ${P5ARCH}/auto/Wx/AUI/AUI.so
 ${P5ARCH}/auto/Wx/Calendar/Calendar.so
 ${P5ARCH}/auto/Wx/DND/DND.so
@@ -8,7 +8,10 @@ ${P5ARCH}/auto/Wx/FS/FS.so
 ${P5ARCH}/auto/Wx/Grid/Grid.so
 ${P5ARCH}/auto/Wx/Help/Help.so
 ${P5ARCH}/auto/Wx/Html/Html.so
+${P5ARCH}/auto/Wx/IPC/IPC.so
 ${P5ARCH}/auto/Wx/MDI/MDI.so
+${P5ARCH}/auto/Wx/Media/Media.so
+${P5ARCH}/auto/Wx/PerlTest/PerlTest.so
 ${P5ARCH}/auto/Wx/Print/Print.so
 ${P5ARCH}/auto/Wx/RichText/RichText.so
 ${P5ARCH}/auto/Wx/STC/STC.so
