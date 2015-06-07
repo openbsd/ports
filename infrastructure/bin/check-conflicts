@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-conflicts,v 1.12 2015/06/06 15:01:43 espie Exp $
+# $OpenBSD: check-conflicts,v 1.13 2015/06/07 12:05:22 espie Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -161,6 +161,22 @@ sub register_plist
 	$plist->register($self, $plist->pkgname);
 }
 
+sub reader
+{
+	my ($self, $rdone) = @_;
+	return
+	    sub {
+		my ($fh, $cont) = @_;
+		local $_;
+		while (<$fh>) {
+			return if m/^\=\=\=\> /o;
+			next unless m/^\@(?:cwd|name|info|man|file|lib|shell|bin|conflict|comment\s+pkgpath\=)\b/o || !m/^\@/o;
+			&$cont($_);
+		}
+		$$rdone = 1;
+	    };
+}
+
 sub new
 {
 	my ($class) = @_;
@@ -251,7 +267,7 @@ sub compute_problems
 	my $total = scalar(keys %$h);
 	my $i =0;
 	while (my ($key, $l) = each %$h) {
-		$self->ui->progress->show(++$i, $total);
+		$self->progress->show(++$i, $total);
 		if (!defined $c->{$l}) {
 			my %s = map {($_, 1)} @$l;
 			$c->{$l} = [sort keys %s];
@@ -278,7 +294,7 @@ sub display_results
 {
 	my $self = shift;
 
-	$self->ui->progress->set_header("File problems");
+	$self->progress->set_header("File problems");
 	my $result = $self->compute_problems;
 	for my $cfl (sort keys %$result) {
 		$self->ui->say("#1", $cfl);

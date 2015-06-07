@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.3 2015/06/06 15:01:43 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.4 2015/06/07 12:05:22 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -37,6 +37,11 @@ sub handle_plist
 	    if $self->ui->verbose;
 	$self->register_plist($plist);
 	$plist->forget;
+}
+
+sub progress
+{
+	return shift->ui->progress;
 }
 
 sub handle_file
@@ -82,12 +87,27 @@ sub find_current_pkgnames
 		}
 		while (<$output>) {
 			$i++;
-			$self->ui->progress->show($i, $total);
+			$self->progress->show($i, $total);
 			chomp;
 			$self->{current}{$_} = 1;
 		}
 		close($output);
 	}
+}
+
+sub reader
+{
+	my ($self, $rdone) = @_;
+	return
+	    sub {
+		my ($fh, $cont) = @_;
+		local $_;
+		while (<$fh>) {
+			return if m/^\=\=\=\> /o;
+			&$cont($_);
+		}
+		$$rdone = 1;
+	    };
 }
 
 sub handle_portsdir
@@ -97,37 +117,26 @@ sub handle_portsdir
 	open(my $input, "cd $dir && $self->{make} print-plist-all |");
 	my $done = 0;
 	while (!$done) {
-		my $plist = OpenBSD::PackingList->read($input, sub {
-			my ($fh, $cont) = @_;
-			local $_;
-			while (<$fh>) {
-				return if m/^\=\=\=\> /o;
-				next unless m/^\@(?:cwd|name|info|man|file|lib|shell|bin|conflict|comment\s+pkgpath\=)\b/o || !m/^\@/o;
-				&$cont($_);
-			}
-			$done = 1;
-		});
+		my $plist = OpenBSD::PackingList->read($input, 
+		    $self->reader(\$done));
 		if (defined $plist && $plist->pkgname) {
-			$self->ui->progress->message($plist->fullpkgpath ||
+			$self->progress->message($plist->fullpkgpath ||
 			    $plist->pkgname);
 			$self->handle_plist($dir, $plist);
 		}
 	}
 }
 
-sub run
+sub scan
 {
 	my $self = shift;
-
-
-	$self->ui->progress->set_header("Scanning");
-	my $portpath;
+	$self->progress->set_header("Scanning");
 	if ($self->ui->opt('d')) {
 		opendir(my $dir, $self->ui->opt('d'));
 		my @l = readdir $dir;
 		closedir($dir);
 
-		$self->ui->progress->for_list("Scanning", \@l,
+		$self->progress->for_list("Scanning", \@l,
 		    sub {
 			my $pkgname = shift;
 			return if $pkgname eq '.' or $pkgname eq '..';
@@ -135,13 +144,12 @@ sub run
 		    });
 	} elsif ($self->ui->opt('p')) {
 		$self->handle_portspath($self->ui->opt('p'));
-		$portpath = 1;
 	} elsif (@ARGV==0) {
 		@ARGV=(<*.tgz>);
 	}
 
 	if (@ARGV > 0) {
-		$self->ui->progress->for_list("Scanning", \@ARGV,
+		$self->progress->for_list("Scanning", \@ARGV,
 		    sub {
 			my $pkgname = shift;
 			my $true_package = $self->ui->repo->find($pkgname);
@@ -152,11 +160,19 @@ sub run
 			rmtree($dir);
 		    });
 	}
+}
 
-	if (!$portpath && $self->ui->opt('p')) {
-		$self->ui->progress->set_header("Computing current pkgnames");
+sub run
+{
+	my $self = shift;
+
+	$self->scan;
+
+	if ($self->ui->opt('d') && $self->ui->opt('p')) {
+		$self->progress->set_header("Computing current pkgnames");
 		$self->find_current_pkgnames($self->ui->opt('p'));
 	}
+
 	$self->display_results;
 }
 
