@@ -1,16 +1,73 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/04 16:07:49 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/07 09:45:03 ajacoutot Exp $
 bin/xspp
 ${P5SITE}/ExtUtils/
 ${P5SITE}/ExtUtils/XSpp/
 ${P5SITE}/ExtUtils/XSpp.pm
 ${P5SITE}/ExtUtils/XSpp.pod
+${P5SITE}/ExtUtils/XSpp/Cmd.pm
 ${P5SITE}/ExtUtils/XSpp/Driver.pm
+${P5SITE}/ExtUtils/XSpp/Exception/
+${P5SITE}/ExtUtils/XSpp/Exception.pm
+${P5SITE}/ExtUtils/XSpp/Exception/code.pm
+${P5SITE}/ExtUtils/XSpp/Exception/object.pm
+${P5SITE}/ExtUtils/XSpp/Exception/perlcode.pm
+${P5SITE}/ExtUtils/XSpp/Exception/simple.pm
+${P5SITE}/ExtUtils/XSpp/Exception/stdmessage.pm
+${P5SITE}/ExtUtils/XSpp/Exception/unknown.pm
 ${P5SITE}/ExtUtils/XSpp/Grammar.pm
+${P5SITE}/ExtUtils/XSpp/Lexer.pm
+${P5SITE}/ExtUtils/XSpp/Node/
 ${P5SITE}/ExtUtils/XSpp/Node.pm
+${P5SITE}/ExtUtils/XSpp/Node/Access.pm
+${P5SITE}/ExtUtils/XSpp/Node/Argument.pm
+${P5SITE}/ExtUtils/XSpp/Node/Class.pm
+${P5SITE}/ExtUtils/XSpp/Node/Comment.pm
+${P5SITE}/ExtUtils/XSpp/Node/Constructor.pm
+${P5SITE}/ExtUtils/XSpp/Node/Destructor.pm
+${P5SITE}/ExtUtils/XSpp/Node/Enum.pm
+${P5SITE}/ExtUtils/XSpp/Node/EnumValue.pm
+${P5SITE}/ExtUtils/XSpp/Node/File.pm
+${P5SITE}/ExtUtils/XSpp/Node/Function.pm
+${P5SITE}/ExtUtils/XSpp/Node/Member.pm
+${P5SITE}/ExtUtils/XSpp/Node/Method.pm
+${P5SITE}/ExtUtils/XSpp/Node/Module.pm
+${P5SITE}/ExtUtils/XSpp/Node/Package.pm
+${P5SITE}/ExtUtils/XSpp/Node/PercAny.pm
+${P5SITE}/ExtUtils/XSpp/Node/Preprocessor.pm
+${P5SITE}/ExtUtils/XSpp/Node/Raw.pm
+${P5SITE}/ExtUtils/XSpp/Node/Type.pm
 ${P5SITE}/ExtUtils/XSpp/Parser.pm
+${P5SITE}/ExtUtils/XSpp/Plugin/
+${P5SITE}/ExtUtils/XSpp/Plugin.pod
+${P5SITE}/ExtUtils/XSpp/Plugin/feature/
+${P5SITE}/ExtUtils/XSpp/Plugin/feature/default_xs_typemap.pm
+${P5SITE}/ExtUtils/XSpp/Typemap/
 ${P5SITE}/ExtUtils/XSpp/Typemap.pm
+${P5SITE}/ExtUtils/XSpp/Typemap/parsed.pm
+${P5SITE}/ExtUtils/XSpp/Typemap/reference.pm
+${P5SITE}/ExtUtils/XSpp/Typemap/simple.pm
+${P5SITE}/ExtUtils/XSpp/Typemap/wrapper.pm
 @man man/man1/xspp.1
 @man man/man3p/ExtUtils::XSpp.3p
+@man man/man3p/ExtUtils::XSpp::Cmd.3p
+@man man/man3p/ExtUtils::XSpp::Exception.3p
 @man man/man3p/ExtUtils::XSpp::Node.3p
+@man man/man3p/ExtUtils::XSpp::Node::Access.3p
+@man man/man3p/ExtUtils::XSpp::Node::Argument.3p
+@man man/man3p/ExtUtils::XSpp::Node::Class.3p
+@man man/man3p/ExtUtils::XSpp::Node::Comment.3p
+@man man/man3p/ExtUtils::XSpp::Node::Constructor.3p
+@man man/man3p/ExtUtils::XSpp::Node::Destructor.3p
+@man man/man3p/ExtUtils::XSpp::Node::Enum.3p
+@man man/man3p/ExtUtils::XSpp::Node::EnumValue.3p
+@man man/man3p/ExtUtils::XSpp::Node::File.3p
+@man man/man3p/ExtUtils::XSpp::Node::Function.3p
+@man man/man3p/ExtUtils::XSpp::Node::Member.3p
+@man man/man3p/ExtUtils::XSpp::Node::Method.3p
+@man man/man3p/ExtUtils::XSpp::Node::Module.3p
+@man man/man3p/ExtUtils::XSpp::Node::Package.3p
+@man man/man3p/ExtUtils::XSpp::Node::PercAny.3p
+@man man/man3p/ExtUtils::XSpp::Node::Raw.3p
 @man man/man3p/ExtUtils::XSpp::Parser.3p
+@man man/man3p/ExtUtils::XSpp::Plugin.3p
 @man man/man3p/ExtUtils::XSpp::Typemap.3p
