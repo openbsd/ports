@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2015/05/12 12:45:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.136 2015/06/07 13:18:02 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
 GNOME_VERSION=	3.16.2
+REVISION=	0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,8 +31,8 @@ BUILD_DEPENDS=	devel/gsettings-desktop-schemas \
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=	devel/gconf2 \
-		devel/vte3>=0.40.2 \
-		sysutils/e2fsprogs>=1.42.7 \
+		devel/vte3 \
+		sysutils/e2fsprogs \
 		x11/gnome/nautilus
 
 MODGNOME_TOOLS=	desktop-file-utils vala yelp
