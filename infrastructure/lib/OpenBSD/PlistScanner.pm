@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.4 2015/06/07 12:05:22 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.5 2015/06/07 12:21:21 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -29,7 +29,11 @@ sub handle_plist
 		return;
 	}
 	if (!defined $plist->pkgname) {
-		$self->ui->errsay("Invalid package #1", $filename);
+		if (-z $filename) {
+			$self->ui->errsay("Empty plist file #1", $filename);
+		} else {
+			$self->ui->errsay("Invalid package #1", $filename);
+		}
 		return;
 	}
 	$self->{name2path}{$plist->pkgname} = $plist->fullpkgpath;
