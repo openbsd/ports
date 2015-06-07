@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2012/11/12 13:34:03 sthen Exp $
---- src/Makefile.in.orig	Sat Dec  3 20:43:28 2011
-+++ src/Makefile.in	Sat Dec 10 18:21:26 2011
-@@ -603,8 +603,7 @@ librdf_la_LIBADD = \
+$OpenBSD: patch-src_Makefile_in,v 1.2 2015/06/07 10:02:45 ajacoutot Exp $
+--- src/Makefile.in.orig	Sat Dec 28 17:26:52 2013
++++ src/Makefile.in	Sun Jun  7 11:55:26 2015
+@@ -621,8 +621,7 @@ librdf_la_LIBADD = \
  @LIBRDF_INTERNAL_LIBS@
  
  librdf_la_DEPENDENCIES = \

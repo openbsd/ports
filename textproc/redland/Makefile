@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/05/22 11:31:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2015/06/07 10:02:45 ajacoutot Exp $
 
 MULTI_PACKAGES=		-main -mysql -pgsql
 
@@ -6,15 +6,13 @@ COMMENT-main=		high-level interface for RDF
 COMMENT-mysql=		MySQL driver for redland
 COMMENT-pgsql=		PostgreSQL driver for redland
 
-V=			1.0.16
+V=			1.0.17
 DISTNAME=		redland-$V
 PKGNAME-main=		redland-$V
 PKGNAME-mysql=		redland-mysql-$V
 PKGNAME-pgsql=		redland-pgsql-$V
+
 CATEGORIES=		textproc
-REVISION=		2
-REVISION-mysql=		3
-REVISION-pgsql=		3
 
 SHARED_LIBS +=	rdf                  1.0      # 0.0
 
@@ -27,6 +25,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += crypto curl gcrypt gmp gpg-error idn ltdl m mpfr
 WANTLIB += pthread raptor2 rasqal ssl xml2 xslt yajl z
+WANTLIB += lzma uuid
 
 MODULES=		devel/gettext
 
@@ -58,7 +57,7 @@ WANTLIB-main=		${WANTLIB} c sqlite3
 
 LIB_DEPENDS-mysql=	${BASE_PKGPATH},-main \
 			databases/mariadb
-WANTLIB-mysql=		${WANTLIB} crypto mysqlclient rdf
+WANTLIB-mysql=		${WANTLIB} crypto mysqlclient rdf stdc++
 
 LIB_DEPENDS-pgsql=	${BASE_PKGPATH},-main \
 			databases/postgresql
