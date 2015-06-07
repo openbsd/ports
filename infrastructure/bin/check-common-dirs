@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-common-dirs,v 1.5 2014/07/19 07:04:42 ajacoutot Exp $
+# $OpenBSD: check-common-dirs,v 1.6 2015/06/07 12:05:53 espie Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -20,14 +20,19 @@
 
 use strict;
 use warnings;
+my ($ports1);
+
+use FindBin;
+BEGIN {
+	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
+}
+use lib ("$ports1/infrastructure/lib", "$FindBin::Bin/../lib");
 
 use File::Spec;
 use File::Path;
 use File::Basename;
-use OpenBSD::PackageInfo;
-use OpenBSD::PackingList;
 use OpenBSD::Mtree;
-use OpenBSD::AddCreateDelete;
+use OpenBSD::PlistScanner;
 
 sub register_dir
 {
@@ -66,13 +71,15 @@ sub check_common_dirs
 	$t->{deps}->{$item->{def}} = 1;
 }
 
-package main;
+package CommonDirsScanner;
+our @ISA = (qw(OpenBSD::PlistScanner));
+use OpenBSD::PackageInfo;
 
-sub analyze 
+sub register_plist
 {
-	my ($plist, $db) = @_;
+	my ($self, $plist) = @_;
 	my $pkgname = $plist->pkgname;
-	$db->{$pkgname} //= {
+	$self->{db}{$pkgname} //= {
 		pkgname => $pkgname,
 		missing_deps => {},
 		dirs => {}, 
@@ -80,27 +87,50 @@ sub analyze
 		deps => {},
 		problems => {}
 	};
-	my $t = $db->{$pkgname};
 
-	$plist->check_common_dirs($t);
+	$plist->check_common_dirs($self->{db}{$pkgname});
+}
+
+sub new
+{
+	my ($class) = @_;
+	my $o = $class->SUPER::new('check-common-dirs');
+	$o->{db} = {};
+	$o->{mtree} = { 
+	    '/usr/local/lib/X11' => 1,
+	    '/usr/local/include/X11' => 1,
+	    '/usr/local/lib/X11/app-defaults' => 1
+	    };
+	OpenBSD::Mtree::parse($o->{mtree}, '/', '/etc/mtree/4.4BSD.dist');
+	OpenBSD::Mtree::parse($o->{mtree}, '/', '/etc/mtree/BSD.x11.dist');
+	return $o;
+}
+
+
+sub display_results
+{
+	my $self = shift;
+	$self->build_results;
+	$self->progress->next;
+	$self->show_results;
 }
 
 sub parent_has_dir
 {
-	my ($state, $db, $t, $dir) = @_;
+	my ($self, $db, $t, $dir) = @_;
 
 	for my $dep (keys %{$t->{deps}}) {
 		if (!defined $db->{$dep}) {
-		    if (!defined $t->{missing_deps}->{$dep}) {
-			    $state->errsay("#1 : #2 not found", $t->{pkgname},
+		    if (!defined $self->{missing_deps}{$dep}) {
+			    $self->ui->errsay("#1 : #2 not found", $t->{pkgname},
 			    	$dep);
-			    $t->{missing_deps}->{$dep} = 1;
+			    $self->{missing_deps}{$dep} = 1;
 		    }
 		    next;
 		}
 		if ($db->{$dep}->{dirs}->{$dir} || 
-		    parent_has_dir($state, $db, $db->{$dep}, $dir)) {
-			$t->{dirs}->{$dir} = 1;
+		    $self->parent_has_dir($db, $db->{$dep}, $dir)) {
+			$t->{dirs}{$dir} = 1;
 			return 1;
 		}
 	}
@@ -121,22 +151,28 @@ sub parent_has_problem
 
 sub build_results
 {
-	my ($state, $db, $mtree) = @_;
+	my ($self) = @_;
+	my $db = $self->{db};
+	my $mtree = $self->{mtree};
+	my @l = keys %$db;
 
-	for my $pkgname (keys %$db) {
+	$self->progress->for_list("Building results", \@l,
+	    sub {
+	    	my $pkgname = shift;
 		my $t = $db->{$pkgname};
 		for my $dir (keys(%{$t->{need_dirs}})) {
-			next if $t->{dirs}->{$dir};
-			next if $mtree->{$dir};
-			next if parent_has_dir($state, $db, $t, $dir);
-			$t->{problems}->{$dir} = 1;
+			return if $t->{dirs}{$dir};
+			return if $mtree->{$dir};
+			return if $self->parent_has_dir($db, $t, $dir);
+			$t->{problems}{$dir} = 1;
 		}
-	}
+	    });
 }
 
 sub show_results
 {
-	my ($state, $db, $mtree) = @_;
+	my ($self) = @_;
+	my $db = $self->{db};
 
 	for my $pkgname (sort keys %$db) {
 		my @l=();
@@ -146,68 +182,47 @@ sub show_results
 			push(@l, $dir);
 		}
 		if (@l != 0) {
-			$state->say("#1: #2", $pkgname, join(', ', sort @l));
+			$self->ui->say("#1: #2", $pkgname, join(', ', sort @l));
 		}
 	}
 }
 
-my $state = OpenBSD::AddCreateDelete::State->new('check-common-dirs');
-$state->handle_options('', '[-mx] [pkgname ...]');
-if (@ARGV==0) {
-	@ARGV=(<*.tgz>);
-	$state->usage() unless @ARGV;
-}
-my $db = {};
-my $mtree = {};
-
-OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/4.4BSD.dist');
-OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/BSD.x11.dist');
-$mtree->{'/usr/local/lib/X11'} = 1;
-$mtree->{'/usr/local/include/X11'} = 1;
-$mtree->{'/usr/local/lib/X11/app-defaults'} = 1;
-
-$state->progress->for_list("Scanning packages", \@ARGV,
-    sub {
-    	my $pkgname = shift;
-	my $true_package = $state->repo->find($pkgname);
-	return unless $true_package;
-	my $dir = $true_package->info;
-	$true_package->close;
-	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
-	rmtree($dir);
-	analyze($plist, $db);
-    });
-
-$state->progress->set_header("Scanning extra dependencies");
-$state->progress->message("");
-my $notfound = {};
-my $todo;
-do {
-	$todo = {};
-	for my $pkg (keys %$db) {
-		for my $dep (keys %{$db->{$pkg}{deps}}) {
-			if (!defined $db->{$dep} && 
-			    !defined $notfound->{$dep}) {
-				$todo->{$dep} = 1;
+sub scan
+{
+	my $self = shift;
+	$self->SUPER::scan;
+	$self->progress->set_header("Scanning extra dependencies");
+	$self->progress->message("");
+	my $notfound = {};
+	my $db = $self->{db};
+	my $todo;
+	do {
+		$todo = {};
+		for my $pkg (keys %$db) {
+			for my $dep (keys %{$db->{$pkg}{deps}}) {
+				if (!defined $db->{$dep} && 
+				    !defined $notfound->{$dep}) {
+					$todo->{$dep} = 1;
+				}
 			}
 		}
-	}
-	for my $pkgname (keys %$todo) {
-		my $true_package = $state->repo->find($pkgname);
-		if ($true_package) {
-			my $dir = $true_package->info;
-			$true_package->close;
-			my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
-			rmtree($dir);
-			analyze($plist, $db);
-		} else {
-			$notfound->{$pkgname} = 1;
-	    }
-    	}
-} while (keys %$todo > 0);
-$state->progress->next;
-$state->progress->set_header("Building results");
-$state->progress->message("");
-build_results($state, $db, $mtree);
-$state->progress->next;
-show_results($state, $db);
+		for my $pkgname (keys %$todo) {
+			my $true_package = $self->ui->repo->find($pkgname);
+			if ($true_package) {
+				my $dir = $true_package->info;
+				$true_package->close;
+				my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
+				rmtree($dir);
+				$self->register_plist($plist);
+			} else {
+				$notfound->{$pkgname} = 1;
+		    }
+		}
+	} while (keys %$todo > 0);
+	$self->progress->next;
+}
+
+package main;
+
+my $o = CommonDirsScanner->new;
+$o->run;
