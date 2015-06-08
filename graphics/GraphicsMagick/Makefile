@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/06/01 07:45:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2015/06/08 06:11:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -54,7 +54,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--without-fpx \
 			--without-gslib \
 			--without-trio \
-			--disable-ltdl-install
+			--disable-ltdl-install \
+			--disable-openmp
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${WRKBUILD}/magick/.libs -L${WRKBUILD}/wand/.libs -L${LOCALBASE}/lib" \
 			ac_cv_path_LaunchDelegate=no
