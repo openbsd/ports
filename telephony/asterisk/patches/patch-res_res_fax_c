@@ -1,10 +1,10 @@
-$OpenBSD: patch-res_res_fax_c,v 1.4 2015/02/06 23:27:51 sthen Exp $
+$OpenBSD: patch-res_res_fax_c,v 1.5 2015/06/08 08:44:52 sthen Exp $
 
 https://issues.asterisk.org/jira/secure/attachment/46850/fax-deadlock-v2.patch-11.3.0
 
---- res/res_fax.c.orig	Fri Jan 23 14:51:03 2015
-+++ res/res_fax.c	Fri Feb  6 23:03:35 2015
-@@ -3406,10 +3406,13 @@ static struct ast_frame *fax_detect_framehook(struct a
+--- res/res_fax.c.orig	Thu Jun  4 01:44:42 2015
++++ res/res_fax.c	Fri Jun  5 10:41:19 2015
+@@ -3398,10 +3398,13 @@ static struct ast_frame *fax_detect_framehook(struct a
  		switch (result) {
  		case 'f':
  		case 't':
@@ -19,7 +19,7 @@ https://issues.asterisk.org/jira/secure/attachment/46850/fax-deadlock-v2.patch-1
  				ast_verb(2, "Redirecting '%s' to fax extension due to %s detection\n",
  					ast_channel_name(chan), (result == 'f') ? "CNG" : "T38");
  				pbx_builtin_setvar_helper(chan, "FAXEXTEN", ast_channel_exten(chan));
-@@ -3419,10 +3422,10 @@ static struct ast_frame *fax_detect_framehook(struct a
+@@ -3411,10 +3414,10 @@ static struct ast_frame *fax_detect_framehook(struct a
  				ast_frfree(f);
  				f = &ast_null_frame;
  			} else {

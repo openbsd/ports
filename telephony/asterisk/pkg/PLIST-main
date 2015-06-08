@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.56 2014/09/20 20:37:44 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.57 2015/06/08 08:44:52 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -162,6 +162,7 @@ include/asterisk/udptl.h
 include/asterisk/ulaw.h
 include/asterisk/unaligned.h
 include/asterisk/utils.h
+include/asterisk/vector.h
 include/asterisk/version.h
 include/asterisk/xml.h
 include/asterisk/xmldoc.h
