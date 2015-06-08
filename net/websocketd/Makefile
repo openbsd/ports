@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/15 07:32:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/06/08 09:17:04 czarkoff Exp $
 
 COMMENT =		access any command-line tool via a WebSocket
 
@@ -8,7 +8,7 @@ DISTNAME =		websocketd-$V
 GH_ACCOUNT =		joewalnes
 GH_PROJECT =		websocketd
 GH_TAGNAME =		v$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net www
 
@@ -27,16 +27,7 @@ BUILD_DEPENDS =		net/go-websocket
 
 NO_TEST =		Yes
 
-post-extract:
-	mkdir -p ${WRKSRC}/src/github.com/joewalnes
-	ln -fhs ${WRKSRC} ${WRKSRC}/src/github.com/joewalnes/websocketd
-
-do-build:
-	GOPATH=${GOPATH} go build -o ${WRKDIST}/websocketd 		\
-	    github.com/joewalnes/websocketd
-
-do-install:
-	${INSTALL_PROGRAM} -p ${WRKDIST}/websocketd ${PREFIX}/bin
+post-install:
 	${INSTALL_MAN} ${WRKSRC}/release/websocketd.man			\
 	    ${PREFIX}/man/man8/websocketd.8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/websocketd

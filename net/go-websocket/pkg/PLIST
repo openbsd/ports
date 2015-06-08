@@ -1,14 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/31 15:37:06 kspillner Exp $
-go/
-go/pkg/
-go/${GO_PKG}/
-go/${GO_PKG}/golang.org/
-go/${GO_PKG}/golang.org/x/
-go/${GO_PKG}/golang.org/x/net/
-go/${GO_PKG}/golang.org/x/net/websocket.a
-go/src/
-go/src/golang.org/
-go/src/golang.org/x/
-go/src/golang.org/x/net/
-go/src/golang.org/x/net/websocket/
-go/src/golang.org/x/net/websocket/websocket.go
+@comment $OpenBSD: PLIST,v 1.2 2015/06/08 09:17:04 czarkoff Exp $
+${MODGO_PACKAGES}/golang.org/
+${MODGO_PACKAGES}/golang.org/x/
+${MODGO_PACKAGES}/golang.org/x/net/
+${MODGO_PACKAGES}/golang.org/x/net/websocket.a
+${MODGO_SOURCES}/golang.org/
+${MODGO_SOURCES}/golang.org/x/
+${MODGO_SOURCES}/golang.org/x/net/
+${MODGO_SOURCES}/golang.org/x/net/websocket/
+${MODGO_SOURCES}/golang.org/x/net/websocket/client.go
+${MODGO_SOURCES}/golang.org/x/net/websocket/exampledial_test.go
+${MODGO_SOURCES}/golang.org/x/net/websocket/examplehandler_test.go
+${MODGO_SOURCES}/golang.org/x/net/websocket/hybi.go
+${MODGO_SOURCES}/golang.org/x/net/websocket/hybi_test.go
+${MODGO_SOURCES}/golang.org/x/net/websocket/server.go
+${MODGO_SOURCES}/golang.org/x/net/websocket/websocket.go
+${MODGO_SOURCES}/golang.org/x/net/websocket/websocket_test.go
