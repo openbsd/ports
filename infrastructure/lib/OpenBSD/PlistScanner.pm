@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.8 2015/06/08 15:11:53 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.9 2015/06/08 15:37:20 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -236,17 +236,24 @@ sub ui
 	return $self->{ui};
 }
 
+sub handle_options
+{
+	my ($self, $extra, $usage) = @_;
+	$usage //= "[-veS] [-d plist_dir] [-o output] [-p ports_dir] [pkgname ...]";
+	$extra //= '';
+	$self->ui->handle_options($extra.'d:eo:p:sS', $usage);
+}
+
 sub new
 {
 	my ($class, $cmd) = @_;
 	my $ui = OpenBSD::AddCreateDelete::State->new('check-conflicts');
-	$ui->handle_options('d:eo:p:sS', '[-veS] [-d plist_dir] [-o output] [-p ports_dir] [pkgname ...]');
-	my $make = $ENV{MAKE} || 'make';
 	my $o = bless {ui => $ui, 
 	    make => $ENV{MAKE} || 'make', 
 	    name2path => {}, 
 	    current => {}
 	    }, $class;
+	$o->handle_options;
 	if ($ui->opt('o')) {
 		open $o->{output}, '>', $ui->opt('o')
 		    or $ui->fatal("Can't write to #1: #2", $ui->opt('o'), $!);

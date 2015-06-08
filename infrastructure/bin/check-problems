@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-problems,v 1.1 2015/06/08 15:11:53 espie Exp $
+# $OpenBSD: check-problems,v 1.2 2015/06/08 15:37:20 espie Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -190,25 +190,34 @@ sub register_plist
 	my $pkgname = $plist->pkgname;
 	$self->{got}{$pkgname} = 1;
 
-	# for common dirs
-	$self->{db}{$pkgname} //= {
-		pkgname => $pkgname,
-		missing_deps => {},
-		dirs => {}, 
-		need_dirs => {}, 
-		deps => {},
-		problems => {}
-	};
+	if ($self->{do_dirs}) {
+		$self->{db}{$pkgname} //= {
+			pkgname => $pkgname,
+			missing_deps => {},
+			dirs => {}, 
+			need_dirs => {}, 
+			deps => {},
+			problems => {}
+		};
 
-	$plist->check_common_dirs($self->{db}{$pkgname}, $self);
-
-	# for conflicts
-	$self->{conflicts}{$pkgname} = 
-	    OpenBSD::PkgCfl->make_conflict_list($plist);
-	if ($self->ui->opt('e')) {
-		$self->add_more_man($plist);
+		$plist->check_common_dirs($self->{db}{$pkgname}, $self);
 	}
-	$plist->register($self, $pkgname);
+
+	if ($self->{do_conflicts}) {
+		$self->{conflicts}{$pkgname} = 
+		    OpenBSD::PkgCfl->make_conflict_list($plist);
+		if ($self->ui->opt('e')) {
+			$self->add_more_man($plist);
+		}
+		$plist->register($self, $pkgname);
+	}
+}
+
+sub handle_options
+{
+	my $self = shift;
+	$self->SUPER::handle_options('CD',
+	    "[-CDeSv] [-d plist_dir] [-o output] [-p ports_dir] [pkgname ...]");
 }
 
 sub new
@@ -216,20 +225,30 @@ sub new
 	my ($class) = @_;
 	my $o = $class->SUPER::new('check-problems');
 
-	# for common dirs
-	$o->{db} = {};
-	$o->{mtree} = { 
-	    '/usr/local/lib/X11' => 1,
-	    '/usr/local/include/X11' => 1,
-	    '/usr/local/lib/X11/app-defaults' => 1
-	    };
-	OpenBSD::Mtree::parse($o->{mtree}, '/', '/etc/mtree/4.4BSD.dist');
-	OpenBSD::Mtree::parse($o->{mtree}, '/', '/etc/mtree/BSD.x11.dist');
+	if ($o->ui->opt('D') && $o->ui->opt('C')) {
+		$o->ui->usage("Won't compute anything");
+	}
 
-	# for conflicts
-	$o->{filehash} = {};
-	$o->{conflicts} = {};
-	$o->{all_deps} = {};
+	$o->{do_dirs} = !$o->ui->opt('D');
+	$o->{do_conflicts} = !$o->ui->opt('C');
+
+	if ($o->{do_dirs}) {
+		$o->{db} = {};
+		$o->{mtree} = { 
+		    '/usr/local/lib/X11' => 1,
+		    '/usr/local/include/X11' => 1,
+		    '/usr/local/lib/X11/app-defaults' => 1
+		    };
+		OpenBSD::Mtree::parse($o->{mtree}, '/', 
+		    '/etc/mtree/4.4BSD.dist');
+		OpenBSD::Mtree::parse($o->{mtree}, '/', 
+		    '/etc/mtree/BSD.x11.dist');
+	}
+	if ($o->{do_conflicts}) {
+		$o->{filehash} = {};
+		$o->{conflicts} = {};
+		$o->{all_deps} = {};
+	}
 	return $o;
 }
 
@@ -430,12 +449,16 @@ sub display_results
 {
 	my $self = shift;
 
-	$self->build_common_dirs;
-	$self->say("Common dirs:");
-	$self->show_common_dirs;
-	my $result = $self->compute_conflicts;
-	$self->say("Conflicts:");
-	$self->show_conflicts($result);
+	if ($self->{do_dirs}) {
+		$self->build_common_dirs;
+		$self->say("Common dirs:");
+		$self->show_common_dirs;
+	}
+	if ($self->{do_conflicts}) {
+		my $result = $self->compute_conflicts;
+		$self->say("Conflicts:");
+		$self->show_conflicts($result);
+	}
 }
 
 
