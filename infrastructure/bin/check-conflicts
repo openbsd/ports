@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-conflicts,v 1.15 2015/06/08 10:32:55 espie Exp $
+# $OpenBSD: check-conflicts,v 1.16 2015/06/08 12:56:26 espie Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -89,6 +89,7 @@ package OpenBSD::PackingElement::Dependency;
 sub register 
 {
 	my ($self, $o, $pkgname) = @_;
+	$o->{wanted}{$self->{def}} = 1;
 	push @{$o->{all_deps}{$pkgname}}, $self->{def};
 }
 
@@ -156,6 +157,7 @@ sub register_plist
 	if ($self->ui->opt('e')) {
 		$self->add_more_man($plist);
 	}
+	$self->{got}{$plist->pkgname} = 1;
 	$plist->register($self, $plist->pkgname);
 }
 
@@ -296,9 +298,15 @@ sub display_results
 	my $result = $self->compute_problems;
 	$self->progress->next;
 	for my $cfl (sort keys %$result) {
+		if (defined $self->{output}) {
+			print {$self->{output}} $cfl, "\n";
+		}
 		$self->ui->say("#1", $cfl);
 		for my $f (sort @{$result->{$cfl}}) {
 			$self->ui->say("\t#1", $f);
+			if (defined $self->{output}) {
+				print {$self->{output}} "\t$f\n";
+			}
 		}
 	}
 }

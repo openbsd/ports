@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-common-dirs,v 1.9 2015/06/08 10:32:55 espie Exp $
+# $OpenBSD: check-common-dirs,v 1.10 2015/06/08 12:56:26 espie Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -67,8 +67,9 @@ sub check_common_dirs
 package OpenBSD::PackingElement::Dependency;
 sub check_common_dirs
 {
-	my ($item, $t) = @_;
+	my ($item, $t, $o) = @_;
 	$t->{deps}{$item->{def}} = 1;
+	$o->{wanted}{$item->{def}} = 1;
 }
 
 package CommonDirsScanner;
@@ -88,7 +89,8 @@ sub register_plist
 		problems => {}
 	};
 
-	$plist->check_common_dirs($self->{db}{$pkgname});
+	$self->{got}{$pkgname} = 1;
+	$plist->check_common_dirs($self->{db}{$pkgname}, $self);
 }
 
 sub new
@@ -185,43 +187,13 @@ sub show_results
 		if (@l != 0) {
 			$self->ui->say("#1: #2", $self->fullname($pkgname), 
 			    join(', ', sort @l));
-		}
-	}
-}
-
-sub scan
-{
-	my $self = shift;
-	$self->SUPER::scan;
-	$self->progress->set_header("Scanning extra dependencies");
-	$self->progress->message("");
-	my $notfound = {};
-	my $db = $self->{db};
-	my $todo;
-	do {
-		$todo = {};
-		for my $pkg (keys %$db) {
-			for my $dep (keys %{$db->{$pkg}{deps}}) {
-				if (!defined $db->{$dep} && 
-				    !defined $notfound->{$dep}) {
-					$todo->{$dep} = 1;
-				}
+			if (defined $self->{output}) {
+				print {$self->{output}} 
+				    $self->fullname($pkgname), ": ", 
+				    join(', ', sort @l), "\n";
 			}
 		}
-		for my $pkgname (keys %$todo) {
-			my $true_package = $self->ui->repo->find($pkgname);
-			if ($true_package) {
-				my $dir = $true_package->info;
-				$true_package->close;
-				my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
-				File::Path::rmtree($dir);
-				$self->register_plist($plist);
-			} else {
-				$notfound->{$pkgname} = 1;
-		    }
-		}
-	} while (keys %$todo > 0);
-	$self->progress->next;
+	}
 }
 
 package main;

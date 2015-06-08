@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.6 2015/06/08 10:32:55 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.7 2015/06/08 12:56:26 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -164,6 +164,35 @@ sub scan
 			rmtree($dir);
 		    });
 	}
+	$self->progress->set_header("Scanning extra dependencies");
+	$self->progress->message("");
+	my $notfound = {};
+	my $todo;
+	do {
+		$todo = {};
+		for my $pkg (keys %{$self->{wanted}}) {
+			next if $self->{got}{$pkg};
+			next if $notfound->{$pkg};
+			$todo->{$pkg} = 1;
+			$self->ui->say("Not found #1", $pkg);
+		}
+		for my $pkgname (keys %$todo) {
+			my $true_package;
+			if ($self->ui->opt('S')) {
+				$true_package = $self->ui->repo->find($pkgname);
+			}
+			if (defined $true_package) {
+				my $dir = $true_package->info;
+				$true_package->close;
+				my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
+				File::Path::rmtree($dir);
+				$self->register_plist($plist);
+			} else {
+				$notfound->{$pkgname} = 1;
+		    	}
+		}
+	} while (keys %$todo > 0);
+	$self->progress->next;
 }
 
 sub run
@@ -201,11 +230,18 @@ sub new
 {
 	my ($class, $cmd) = @_;
 	my $ui = OpenBSD::AddCreateDelete::State->new('check-conflicts');
-	$ui->handle_options('d:ep:', '[-ve] [-d plist_dir] [-p ports_dir] [pkgname ...]');
+	$ui->handle_options('d:eo:p:S', '[-veS] [-d plist_dir] [-o output] [-p ports_dir] [pkgname ...]');
 	my $make = $ENV{MAKE} || 'make';
-
-	bless {ui => $ui, make => $make, name2path => {}, current => {}}, 
-	    $class;
+	my $o = bless {ui => $ui, 
+	    make => $ENV{MAKE} || 'make', 
+	    name2path => {}, 
+	    current => {}
+	    }, $class;
+	if ($ui->opt('o')) {
+		open $o->{output}, '>', $ui->opt('o')
+		    or $ui->fatal("Can't write to #1: #2", $ui->opt('o'), $!);
+	}
+	return $o;
 }
 
 1;
