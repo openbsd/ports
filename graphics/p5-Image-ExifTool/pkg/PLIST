@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2014/10/10 07:31:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2015/06/08 09:51:30 sthen Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -120,6 +120,7 @@ ${P5SITE}/Image/ExifTool/MIE.pm
 ${P5SITE}/Image/ExifTool/MIEUnits.pod
 ${P5SITE}/Image/ExifTool/MIFF.pm
 ${P5SITE}/Image/ExifTool/MNG.pm
+${P5SITE}/Image/ExifTool/MOI.pm
 ${P5SITE}/Image/ExifTool/MPC.pm
 ${P5SITE}/Image/ExifTool/MPEG.pm
 ${P5SITE}/Image/ExifTool/MPF.pm
@@ -282,6 +283,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::MIEUnits.3p
 @man man/man3p/Image::ExifTool::MIFF.3p
 @man man/man3p/Image::ExifTool::MNG.3p
+@man man/man3p/Image::ExifTool::MOI.3p
 @man man/man3p/Image::ExifTool::MPC.3p
 @man man/man3p/Image::ExifTool::MPEG.3p
 @man man/man3p/Image::ExifTool::MPF.3p
