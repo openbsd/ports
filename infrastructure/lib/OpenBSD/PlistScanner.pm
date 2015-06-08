@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.7 2015/06/08 12:56:26 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.8 2015/06/08 15:11:53 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -37,7 +37,7 @@ sub handle_plist
 		return;
 	}
 	$self->{name2path}{$plist->pkgname} = $plist->fullpkgpath;
-	$self->ui->say("#1 -> #2", $filename, $plist->pkgname) 
+	$self->say("#1 -> #2", $filename, $plist->pkgname) 
 	    if $self->ui->verbose;
 	$self->register_plist($plist);
 	$plist->forget;
@@ -174,7 +174,7 @@ sub scan
 			next if $self->{got}{$pkg};
 			next if $notfound->{$pkg};
 			$todo->{$pkg} = 1;
-			$self->ui->say("Not found #1", $pkg);
+			$self->say("Dependency not found #1", $pkg);
 		}
 		for my $pkgname (keys %$todo) {
 			my $true_package;
@@ -209,6 +209,16 @@ sub run
 	$self->display_results;
 }
 
+sub say
+{
+	my $self = shift;
+	my $msg = $self->ui->f(@_)."\n";
+	$self->ui->_print($msg) unless $self->ui->opt('s');
+	if (defined $self->{output}) {
+		print {$self->{output}} $msg;
+	}
+}
+
 sub fullname
 {
 	my ($self, $pkgname) = @_;
@@ -230,7 +240,7 @@ sub new
 {
 	my ($class, $cmd) = @_;
 	my $ui = OpenBSD::AddCreateDelete::State->new('check-conflicts');
-	$ui->handle_options('d:eo:p:S', '[-veS] [-d plist_dir] [-o output] [-p ports_dir] [pkgname ...]');
+	$ui->handle_options('d:eo:p:sS', '[-veS] [-d plist_dir] [-o output] [-p ports_dir] [pkgname ...]');
 	my $make = $ENV{MAKE} || 'make';
 	my $o = bless {ui => $ui, 
 	    make => $ENV{MAKE} || 'make', 

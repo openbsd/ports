@@ -1,0 +1,445 @@
+#!/usr/bin/perl
+
+# $OpenBSD: check-problems,v 1.1 2015/06/08 15:11:53 espie Exp $
+# Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+# check all packages in the current directory, and report common directory
+# issues
+
+use strict;
+use warnings;
+my ($ports1);
+
+use FindBin;
+BEGIN {
+	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
+}
+use lib ("$ports1/infrastructure/lib", "$FindBin::Bin/../lib");
+
+use File::Spec;
+use File::Path;
+use File::Basename;
+use OpenBSD::PkgCfl;
+use OpenBSD::Mtree;
+use OpenBSD::PlistScanner;
+
+# code for checking directories
+sub register_dir
+{
+	my ($d, $h) = @_;
+	return if defined $h->{$d};
+	$h->{$d} = 1;
+	register_dir(dirname($d), $h);
+}
+
+package OpenBSD::PackingElement;
+sub check_common_dirs
+{
+}
+
+package OpenBSD::PackingElement::FileBase;
+use File::Basename;
+sub check_common_dirs
+{
+	my ($item, $t) = @_;
+	my $d = File::Spec->canonpath($item->fullname);
+	main::register_dir(dirname($d), $t->{need_dirs});
+}
+
+package OpenBSD::PackingElement::DirlikeObject;
+sub check_common_dirs
+{
+	my ($item, $t) = @_;
+	my $d = File::Spec->canonpath($item->fullname);
+	$t->{dirs}->{$d} = 1;
+}
+
+package OpenBSD::PackingElement::Dependency;
+sub check_common_dirs
+{
+	my ($item, $t, $o) = @_;
+	$t->{deps}{$item->{def}} = 1;
+	$o->{wanted}{$item->{def}} = 1;
+}
+
+# code for checking conflicts
+package OpenBSD::PackingElement;
+sub register
+{
+}
+
+sub known_page
+{
+}
+
+sub add_extra_manpage
+{
+}
+
+package OpenBSD::PackingElement::FileBase;
+
+my $pkg_list = {};
+my $seen = {};
+
+sub register 
+{
+	my ($self, $o, $pkgname) = @_;
+
+	my $all_conflict = $o->{filehash};
+
+	my $file = File::Spec->canonpath($self->fullname);
+	# build one single list for each pkgnames combination
+	if (exists $all_conflict->{$file}) {
+		$pkg_list->{$all_conflict->{$file}}{$pkgname} ||=
+		    [@{$all_conflict->{$file}}, $pkgname ];
+		$all_conflict->{$file} = 
+		    $pkg_list->{$all_conflict->{$file}}{$pkgname};
+	} elsif (exists $seen->{$file}) {
+		$pkg_list->{$seen->{$file}}{$pkgname} ||=
+		    [ @{$seen->{$file}}, $pkgname ];
+		$all_conflict->{$file} = 
+		    $pkg_list->{$seen->{$file}}{$pkgname};
+		delete $seen->{$file};
+	} else {
+		$pkg_list->{$pkgname} ||= [$pkgname];
+		$seen->{$file} = $pkg_list->{$pkgname};
+	}
+}
+
+package OpenBSD::PackingElement::Dependency;
+sub register 
+{
+	my ($self, $o, $pkgname) = @_;
+	$o->{wanted}{$self->{def}} = 1;
+	push @{$o->{all_deps}{$pkgname}}, $self->{def};
+}
+
+package OpenBSD::PackingElement::Manpage;
+
+sub is_dest
+{
+	my $self = shift;
+	return $self->name =~ m/man\/cat[^\/]+\/[^\/]+\.0$/o;
+}
+
+sub dest_to_source
+{
+	my $self = shift;
+	my $v = $self->name;
+	$v =~ s/(man\/)cat([^\/]+)(\/[^\/]+)\.0$/$1man$2$3.$2/;
+	return $v;
+}
+
+sub known_page
+{
+	my ($self, $h) = @_;
+	$h->{File::Spec->canonpath($self->fullname)} = 1;
+}
+
+sub add_extra_manpage
+{
+	my ($self, $known, $plist) = @_;
+	if ($self->is_source) {
+		my $dest = $self->source_to_dest;
+		my $fullname = $self->cwd."/".$dest;
+		my $file = File::Spec->canonpath($fullname);
+		if (!$known->{$file}) {
+			OpenBSD::PackingElement::Manpage->add($plist, $dest);
+			$known->{$file} = 1;
+		}
+	}
+	if ($self->is_dest) {
+		my $src = $self->dest_to_source;
+		my $fullname = $self->cwd."/".$src;
+		my $file = File::Spec->canonpath($fullname);
+		if (!$known->{$file}) {
+			OpenBSD::PackingElement::Manpage->add($plist, $src);
+			$known->{$file} = 1;
+		}
+	}
+}
+
+package CheckProblemsScanner;
+our @ISA = (qw(OpenBSD::PlistScanner));
+use OpenBSD::PackageInfo;
+
+sub add_more_man
+{
+	my ($self, $plist) = @_;
+	my $knownman = {};
+	$plist->known_page($knownman);
+	$plist->add_extra_manpage($knownman, $plist);
+}
+
+sub register_plist
+{
+	my ($self, $plist) = @_;
+
+	my $pkgname = $plist->pkgname;
+	$self->{got}{$pkgname} = 1;
+
+	# for common dirs
+	$self->{db}{$pkgname} //= {
+		pkgname => $pkgname,
+		missing_deps => {},
+		dirs => {}, 
+		need_dirs => {}, 
+		deps => {},
+		problems => {}
+	};
+
+	$plist->check_common_dirs($self->{db}{$pkgname}, $self);
+
+	# for conflicts
+	$self->{conflicts}{$pkgname} = 
+	    OpenBSD::PkgCfl->make_conflict_list($plist);
+	if ($self->ui->opt('e')) {
+		$self->add_more_man($plist);
+	}
+	$plist->register($self, $pkgname);
+}
+
+sub new
+{
+	my ($class) = @_;
+	my $o = $class->SUPER::new('check-problems');
+
+	# for common dirs
+	$o->{db} = {};
+	$o->{mtree} = { 
+	    '/usr/local/lib/X11' => 1,
+	    '/usr/local/include/X11' => 1,
+	    '/usr/local/lib/X11/app-defaults' => 1
+	    };
+	OpenBSD::Mtree::parse($o->{mtree}, '/', '/etc/mtree/4.4BSD.dist');
+	OpenBSD::Mtree::parse($o->{mtree}, '/', '/etc/mtree/BSD.x11.dist');
+
+	# for conflicts
+	$o->{filehash} = {};
+	$o->{conflicts} = {};
+	$o->{all_deps} = {};
+	return $o;
+}
+
+
+# for common dirs
+sub parent_has_dir
+{
+	my ($self, $db, $t, $dir) = @_;
+
+	for my $dep (keys %{$t->{deps}}) {
+		if (!defined $db->{$dep}) {
+		    if (!defined $self->{missing_deps}{$dep}) {
+			    $self->ui->errsay("#1 : #2 not found", $t->{pkgname},
+			    	$dep);
+			    $self->{missing_deps}{$dep} = 1;
+		    }
+		    next;
+		}
+		if ($db->{$dep}->{dirs}->{$dir} || 
+		    $self->parent_has_dir($db, $db->{$dep}, $dir)) {
+			$t->{dirs}{$dir} = 1;
+			return 1;
+		}
+	}
+	return 0;
+}
+
+sub parent_has_problem
+{
+	my ($db, $t, $dir) = @_;
+	for my $dep (keys %{$t->{deps}}) {
+		next if !defined $db->{$dep};
+		if ($db->{$dep}->{problems}->{$dir}) {
+			return 1;
+		}
+	}
+	return 0;
+}
+
+sub build_common_dirs
+{
+	my ($self) = @_;
+	my $db = $self->{db};
+	my $mtree = $self->{mtree};
+	my @l = keys %$db;
+
+	$self->progress->for_list("Checking common dirs", \@l,
+	    sub {
+	    	my $pkgname = shift;
+		my $t = $db->{$pkgname};
+		for my $dir (keys(%{$t->{need_dirs}})) {
+			return if $t->{dirs}{$dir};
+			return if $mtree->{$dir};
+			return if $self->parent_has_dir($db, $t, $dir);
+			$t->{problems}{$dir} = 1;
+		}
+	    });
+	$self->progress->next;
+}
+
+sub show_common_dirs
+{
+	my ($self) = @_;
+	my $db = $self->{db};
+
+	for my $pkgname (sort {$self->fullname($a) cmp $self->fullname($b)}
+	    keys %$db) {
+		my @l=();
+		my $t = $db->{$pkgname};
+		for my $dir (keys %{$t->{problems}}) {
+			next if parent_has_problem($db, $t, $dir);
+			push(@l, $dir);
+		}
+		if (@l != 0) {
+			$self->say("#1: #2", $self->fullname($pkgname), 
+			    join(', ', sort @l));
+		}
+	}
+}
+
+# for conflicts
+my $cache3 = {};
+my $cache4 = {}; 
+
+sub direct_conflict
+{
+	my ($conflicts, $pkg, $pkg2) = @_;
+
+	return $cache3->{$pkg}{$pkg2} //= $conflicts->{$pkg}->conflicts_with($pkg2);
+}
+
+sub has_a_conflict
+{
+	my ($conflicts, $deps, $pkg, $pkg2) = @_;
+	return $cache4->{$pkg}{$pkg2} //= find_a_conflict($conflicts, $deps, $pkg, $pkg2);
+}
+
+sub find_a_conflict
+{
+	my ($conflicts, $deps, $pkg, $pkg2) = @_;
+	return 0 if $pkg eq $pkg2;
+	
+	if (defined $conflicts->{$pkg} && 
+	    direct_conflict($conflicts, $pkg, $pkg2)) {
+		return 1;
+	}
+	if (defined $deps->{$pkg}) {
+		for my $dep (@{$deps->{$pkg}}) {
+		    if (has_a_conflict($conflicts, $deps, $dep, $pkg2)) {
+			    return 1;
+		    }
+		}
+	}
+	if (defined $deps->{$pkg2}) {
+		for my $dep (@{$deps->{$pkg2}}) {
+			if (has_a_conflict($conflicts, $deps, $pkg, $dep)) {
+				return 1;
+			}
+		}
+	}
+	return 0;
+}
+
+sub compute_true_conflicts
+{
+	my ($self, $l) = @_;
+	my $conflicts = $self->{conflicts};
+	my $deps = $self->{all_deps};
+	# create a list of unconflicting packages.
+	my $l2 = [];
+	for my $pkg (@$l) {
+		my $keepit = 0;
+		for my $pkg2 (@$l) {
+			next if $pkg eq $pkg2;
+			if (!(has_a_conflict($conflicts, $deps, $pkg, $pkg2) ||
+			    has_a_conflict($conflicts, $deps, $pkg2, $pkg))) {
+				$keepit = 1;
+				last;
+			}
+		}
+		if ($keepit) {
+		    push(@$l2, $pkg);
+		}
+	}
+	return $l2;
+}
+
+sub compute_conflicts
+{
+	my ($self) = @_;
+
+	$self->progress->set_header("Compute file problems");
+	my $c = {};
+	my $c2 = {};
+	my $r = {};
+	my $cache = {};
+
+	my $h = $self->{filehash};
+	my $total = scalar(keys %$h);
+	my $i =0;
+	while (my ($key, $l) = each %$h) {
+		$self->progress->show(++$i, $total);
+		if (!defined $c->{$l}) {
+			my %s = map {($_, 1)} @$l;
+			$c->{$l} = [sort keys %s];
+			$c2->{$l} = join(',', @{$c->{$l}});
+		}
+		my $hv = $c2->{$l};
+		$l = $c->{$l};
+		next if @$l == 1;
+		$cache->{$hv} //= $self->compute_true_conflicts($l);
+		my $result = $cache->{$hv};
+		if (@$result != 0) {
+			my $newkey = join(',', 
+			    sort map { $self->fullname($_) } @$result);
+			if (@$result == 1) {
+				$newkey.="-> was ".join(',', @$l);
+			}
+			push(@{$r->{$newkey}}, $key);
+		}
+	}
+	$self->progress->next;
+	return $r;
+}
+
+sub show_conflicts
+{
+	my ($self, $result) = @_;
+	for my $cfl (sort keys %$result) {
+		$self->say("#1", $cfl);
+		for my $f (sort @{$result->{$cfl}}) {
+			$self->say("\t#1", $f);
+		}
+	}
+}
+
+sub display_results
+{
+	my $self = shift;
+
+	$self->build_common_dirs;
+	$self->say("Common dirs:");
+	$self->show_common_dirs;
+	my $result = $self->compute_conflicts;
+	$self->say("Conflicts:");
+	$self->show_conflicts($result);
+}
+
+
+package main;
+
+my $o = CheckProblemsScanner->new;
+$o->run;
