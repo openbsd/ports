@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_bsd,v 1.2 2015/05/03 13:31:49 bmercer Exp $
---- Makefile.bsd.orig	Sun Apr 19 21:29:46 2015
-+++ Makefile.bsd	Thu Apr 23 16:53:05 2015
+$OpenBSD: patch-Makefile_bsd,v 1.3 2015/06/08 13:36:10 bmercer Exp $
+--- Makefile.bsd.orig	Fri Jun  5 09:38:01 2015
++++ Makefile.bsd	Fri Jun  5 09:39:20 2015
 @@ -1,6 +1,6 @@
 -OS ?= FreeBSD
 +#OS ?= FreeBSD
@@ -10,8 +10,14 @@ $OpenBSD: patch-Makefile_bsd,v 1.2 2015/05/03 13:31:49 bmercer Exp $
  
  CFLAGS ?= -O2 -Wall
  CC ?= gcc
-@@ -13,9 +13,9 @@ CFLAGS += -DUSE_UHID
- LIBS =
+@@ -9,13 +9,13 @@ CC ?= gcc
+ CFLAGS += -DUSE_LIBUSB
+ LIBS =  -lusb
+ .elif $(OS) == "NetBSD" || $(OS) == "OpenBSD"
+-CFLAGS += -DUSE_UHID
+-LIBS =
++CFLAGS += -DUSE_LIBUSB -I${LOCALBASE}/include
++LIBS = -L${LOCALBASE}/lib -lusb
  .endif
  
 +all: teensyloader

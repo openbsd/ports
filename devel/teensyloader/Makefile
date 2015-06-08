@@ -1,22 +1,28 @@
-# $OpenBSD: Makefile,v 1.9 2015/05/03 13:31:49 bmercer Exp $
+# $OpenBSD: Makefile,v 1.10 2015/06/08 13:36:10 bmercer Exp $
 
 COMMENT=	in-system programmer for Teensy boards
+
 V=		2.1
+REVISION=	0
+
 DISTNAME=	teensy_loader_cli.${V}
 PKGNAME=	teensyloader-${V}
 CATEGORIES=	devel
-EXTRACT_SUFX=	.zip
+
+GH_COMMIT=	001da416bc362ff24485ff97e3a729bd921afe98
+GH_ACCOUNT=	PaulStoffregen
+GH_PROJECT=	teensy_loader_cli
+
 HOMEPAGE=	http://www.pjrc.com/teensy/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c
+WANTLIB=		c pthread usb
 
-MASTER_SITES=		${HOMEPAGE}
+LIB_DEPENDS=		devel/libusb-compat
 
 CONFIGURE_STYLE=	None
-WRKDIST=		${WRKDIR}/teensy_loader_cli
 MAKE_FILE=		Makefile.bsd
 NO_TEST=		Yes
 
