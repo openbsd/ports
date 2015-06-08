@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/04/06 15:00:54 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/06/08 06:42:14 czarkoff Exp $
 @bin bin/peg-e
+@man man/man6/peg-e.6
 share/appdata/
 share/appdata/peg-e.appdata.xml
 share/applications/peg-e.desktop
@@ -16,9 +17,6 @@ share/icons/hicolor/48x48/apps/peg-e.png
 share/icons/hicolor/512x512/apps/peg-e.png
 share/icons/hicolor/64x64/apps/peg-e.png
 share/icons/hicolor/scalable/apps/peg-e.svg
-share/man/
-share/man/man6/
-@man share/man/man6/peg-e.6
 share/peg-e/
 share/peg-e/icons/
 share/peg-e/icons/hicolor/

@@ -1,0 +1,12 @@
+$OpenBSD: patch-peg-e_pro,v 1.1 2015/06/08 06:42:14 czarkoff Exp $
+--- peg-e.pro.orig	Sun Jun  7 23:01:55 2015
++++ peg-e.pro	Sun Jun  7 23:02:05 2015
+@@ -86,7 +86,7 @@ macx {
+ 	qm.path = $$PREFIX/share/peg-e/translations
+ 
+ 	man.files = doc/peg-e.6
+-	man.path = $$PREFIX/share/man/man6
++	man.path = $$PREFIX/man/man6
+ 
+ 	INSTALLS += target icon pixmap desktop appdata icons qm man
+ }
