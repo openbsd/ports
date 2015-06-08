@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.248 2015/05/22 12:17:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.249 2015/06/08 09:07:15 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.16.2.1
-REVISION=		1
+GNOME_VERSION=		3.16.3
 
 CATEGORIES=		mail
 
@@ -26,14 +25,27 @@ SHARED_LIBS +=		${_lib} ${SO_VERSION}
 # GPLv2+ - LGPLv2+ - OpenLDAP license - GFDL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += atk-1.0 c cairo cairo-gobject camel-1.2 canberra canberra-gtk3
-WANTLIB += cryptui ebackend-1.2 ebook-1.2 ebook-contacts-1.2 ecal-1.2
-WANTLIB += edataserver-1.2 edataserverui-1.2 enchant gailutil-3
-WANTLIB += gcr-base-3 gcr-ui-3 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gnome-desktop-3 gobject-2.0 gtk-3 gtkspell3-3
-WANTLIB += gweather-3 ical icalvcal ldap-2.4 m notify nspr4 nss3
-WANTLIB += pango-1.0 pangocairo-1.0 pst pthread secret-1 smime3
-WANTLIB += soup-2.4 webkitgtk-3.0 xml2
+WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
+WANTLIB += atspi c cairo cairo-gobject camel-1.2 canberra canberra-gtk3
+WANTLIB += crypto cryptui curl db dbus-1 dbus-glib-1 ebackend-1.2
+WANTLIB += ebook-1.2 ebook-contacts-1.2 ecal-1.2 edata-book-1.2
+WANTLIB += edataserver-1.2 edataserverui-1.2 enchant epoxy expat
+WANTLIB += ffi fontconfig freetype gailutil-3 gbm gck-1 gcr-base-3
+WANTLIB += gcr-ui-3 gcrypt gdata gdk-3 gdk_pixbuf-2.0 geocode-glib
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 goa-1.0
+WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-1.0 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gtkspell3-3
+WANTLIB += gweather-3 harfbuzz harfbuzz-icu ical icalss icalvcal
+WANTLIB += icudata icui18n icuuc idn javascriptcoregtk-3.0 jpeg
+WANTLIB += json-glib-1.0 lber-2.4 ldap-2.4 ltdl lzma m notify
+WANTLIB += nspr4 nss3 nssutil3 oauth ogg orc-0.4 p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
+WANTLIB += png pst pthread pthread-stubs sasl2 secret-1 smime3
+WANTLIB += softokn3 soup-2.4 sqlite3 ssl ssl3 stdc++ vorbis vorbisfile
+WANTLIB += webkitgtk-3.0 webp xcb xcb-render xcb-shm xml2 xslt
+WANTLIB += z
 
 MODULES=		devel/dconf \
 			devel/gettext \
