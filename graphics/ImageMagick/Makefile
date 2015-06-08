@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2015/06/01 06:54:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.138 2015/06/08 06:55:00 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -72,7 +72,8 @@ CONFIGURE_ARGS+=	--with-quantum-depth=16 \
 			--with-gs-font-dir=${LOCALBASE}/share/fonts/ghostscript \
 			--with-ltdl-include=${LOCALBASE}/include \
 			--with-ltdl-lib=${LOCALBASE}/lib \
-			--disable-ltdl-install
+			--disable-ltdl-install \
+			--disable-openmp
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
 			LDFLAGS="-L${WRKBUILD}/magick/.libs -L${WRKBUILD}/wand/.libs -L${LOCALBASE}/lib" \
