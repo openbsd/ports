@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.904 2015/05/25 22:12:44 bcallah Exp $
+# $OpenBSD: Makefile,v 1.905 2015/06/08 10:32:45 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -507,8 +507,11 @@
      SUBDIR += py-flowtools
      SUBDIR += py-ftpdlib
      SUBDIR += py-geventhttpclient
+     SUBDIR += py-idna
+     SUBDIR += py-idna,python3
      SUBDIR += py-impacket
      SUBDIR += py-ipaddr
+     SUBDIR += py-ipaddress
      SUBDIR += py-irclib
      SUBDIR += py-libcloud
      SUBDIR += py-libpcap
