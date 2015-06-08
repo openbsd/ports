@@ -1,0 +1,6 @@
+"cryptography" is a Python library which exposes cryptographic recipes and
+primitives, with the goal of it being a "cryptographic standard library".
+It aims to address various problems seen with other Python cryptography
+libraries, including lack of PyPy and Python 3 support, lack of maintenance.
+use of poor implementations of algorithms, lack of high-level APIs, absence
+of important algorithms, error prone APIs and bad defaults.
