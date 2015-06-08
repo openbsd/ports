@@ -1,19 +1,31 @@
-$OpenBSD: patch-ifdata_c,v 1.2 2014/03/09 22:19:35 sthen Exp $
---- ifdata.c.orig	Tue Dec 31 17:35:43 2013
-+++ ifdata.c	Sun Mar  9 22:14:22 2014
-@@ -29,6 +29,11 @@
-    #include <sys/sockio.h>
+$OpenBSD: patch-ifdata_c,v 1.3 2015/06/08 09:02:49 sthen Exp $
+--- ifdata.c.orig	Wed Jun  3 17:04:42 2015
++++ ifdata.c	Mon Jun  8 09:59:45 2015
+@@ -1,4 +1,4 @@
+-#include <error.h>
++#include <err.h>
+ #include <stdlib.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+@@ -19,7 +19,7 @@
+ 	#include <net/if.h>
  #endif
  
-+#if defined(__OpenBSD__)
-+   #define s6_addr16 __u6_addr.__u6_addr16
-+   #include <net/if.h>
-+#endif
-+
- #include <netinet/in.h>
- #include <errno.h>
- #include <fcntl.h>
-@@ -235,7 +240,7 @@ struct sockaddr *if_network(const char *iface) {
+-#if defined(__APPLE__)
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ 	#define s6_addr16 __u6_addr.__u6_addr16
+ 	#include <net/if.h>
+ #endif
+@@ -130,7 +130,7 @@ static int do_socket_ioctl(const char *ifname, const u
+ 			*ioctl_errno = errno;
+ 		if (print_error == PRINT_ERROR) {
+ 			if (errno == ENODEV)
+-				error(EXIT_FAILURE, 0,
++				errx(EXIT_FAILURE,
+ 				      "No such network interface: %s", ifname);
+ 			else
+ 				fprintf(stderr, "ioctl on %s: %s\n", ifname,
+@@ -242,7 +242,7 @@ struct sockaddr *if_network(const char *iface) {
  	return saddr;
  }
  
@@ -22,7 +34,16 @@ $OpenBSD: patch-ifdata_c,v 1.2 2014/03/09 22:19:35 sthen Exp $
  	static struct ifreq req;
  
  	if (do_socket_ioctl(iface, SIOCGIFMTU, &req, NULL, PRINT_ERROR))
-@@ -403,7 +408,7 @@ void please_do(int ndo, int *todo, const char *ifname)
+@@ -392,7 +392,7 @@ void please_do(int ndo, int *todo, const char *ifname)
+ 	for (i=0; i<ndo; i++) {
+ 		if (!exists &&
+ 		    (todo[i] != DO_EXISTS) && (todo[i] != DO_PEXISTS))
+-			error(EXIT_FAILURE, 0, "No such network interface: %s",
++			errx(EXIT_FAILURE, "No such network interface: %s",
+ 			      ifname);
+ 
+ 		switch (todo[i]) {
+@@ -419,7 +419,7 @@ void please_do(int ndo, int *todo, const char *ifname)
  				print_addr(if_bcast(ifname, &req));
  				break;
  			case DO_PMTU:
@@ -31,7 +52,7 @@ $OpenBSD: patch-ifdata_c,v 1.2 2014/03/09 22:19:35 sthen Exp $
  				break;
  			case DO_PNETWORK:
  				print_addr(if_network(ifname));
-@@ -415,7 +420,7 @@ void please_do(int ndo, int *todo, const char *ifname)
+@@ -431,7 +431,7 @@ void please_do(int ndo, int *todo, const char *ifname)
  				printf(" ");
  				print_addr(if_bcast(ifname, &req));
  				printf(" ");
