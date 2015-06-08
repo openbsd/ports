@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-conflicts,v 1.14 2015/06/08 08:51:02 espie Exp $
+# $OpenBSD: check-conflicts,v 1.15 2015/06/08 10:32:55 espie Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -278,7 +278,7 @@ sub compute_problems
 		my $result = $cache->{$hv};
 		if (@$result != 0) {
 			my $newkey = join(',', 
-			    map { $self->fullname($_) } @$result);
+			    sort map { $self->fullname($_) } @$result);
 			if (@$result == 1) {
 				$newkey.="-> was ".join(',', @$l);
 			}
@@ -294,6 +294,7 @@ sub display_results
 
 	$self->progress->set_header("File problems");
 	my $result = $self->compute_problems;
+	$self->progress->next;
 	for my $cfl (sort keys %$result) {
 		$self->ui->say("#1", $cfl);
 		for my $f (sort @{$result->{$cfl}}) {

@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.5 2015/06/07 12:21:21 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.6 2015/06/08 10:32:55 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -185,7 +185,7 @@ sub fullname
 	my ($self, $pkgname) = @_;
 	my $path = $self->{name2path}{$pkgname};
 	if ($self->{current}{$pkgname}) {
-		return "$pkgname!($path)";
+		return "!$pkgname($path)";
 	} else {
 		return "$pkgname($path)";
 	}

@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-common-dirs,v 1.8 2015/06/08 09:39:02 espie Exp $
+# $OpenBSD: check-common-dirs,v 1.9 2015/06/08 10:32:55 espie Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -174,7 +174,8 @@ sub show_results
 	my ($self) = @_;
 	my $db = $self->{db};
 
-	for my $pkgname (sort keys %$db) {
+	for my $pkgname (sort {$self->fullname($a) cmp $self->fullname($b)}
+	    keys %$db) {
 		my @l=();
 		my $t = $db->{$pkgname};
 		for my $dir (keys %{$t->{problems}}) {
