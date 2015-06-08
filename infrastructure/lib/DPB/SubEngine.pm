@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.22 2015/04/25 12:43:32 jasper Exp $
+# $OpenBSD: SubEngine.pm,v 1.23 2015/06/08 11:06:08 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -44,6 +44,12 @@ sub release
 			$self->add($candidate);
 		}
 	}
+}
+
+sub detained
+{
+	my ($self, $v) = @_;
+	return $self->{detained}{$self->key_for_doing($v)};
 }
 
 sub count
@@ -161,7 +167,7 @@ sub can_really_start_build
 		$self->{later}{$v} = $v;
 		$self->log('^', $v);
 		return 0;
-	} elsif ($self->{detained}{$self->key_for_doing($v)}) {
+	} elsif ($self->detained($v)) {
 		$self->remove($v);
 		$self->{later2}{$v} = $v;
 		$self->log('X', $v);

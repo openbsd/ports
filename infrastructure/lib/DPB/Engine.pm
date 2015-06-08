@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.110 2015/05/10 08:14:14 espie Exp $
+# $OpenBSD: Engine.pm,v 1.111 2015/06/08 11:06:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -382,6 +382,8 @@ sub adjust_tobuild
 
 	my $has = {};
 	for my $v (values %{$self->{tobuild}}) {
+		# XXX we don't have enough there !
+		next if $self->{buildable}->detained($v);
 		# due to pkgname aliases, we may have been built through
 		# another pkgpath.
 		next if $self->{buildable}->is_done_quick($v);
@@ -389,6 +391,8 @@ sub adjust_tobuild
 	}
 
 	for my $v (values %{$self->{tobuild}}) {
+		# XXX we don't have enough there !
+		next if $self->{buildable}->detained($v);
 		$self->adjust_depends2($v, $has);
 	}
 }
