@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/05 11:27:54 sthen Exp $
-@bin go/${GO_PKG}/cover
