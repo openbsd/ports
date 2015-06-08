@@ -1,4 +1,0 @@
-Godoc extracts and generates documentation for Go programs.  In command-line
-mode it prints plain text documentation to standard output and exits.  With the
--http flag, it runs as a web server and presents the documentation as a web
-page.
