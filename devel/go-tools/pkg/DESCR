@@ -1,0 +1,22 @@
+This package holds the source for various packages and tools that support the Go
+programming language:
+
+ * benchcmp	displays performance changes between benchmarks
+ * callgraph	reports the call graph of a Go program
+ * digraph	performs queries over unlabelled directed graphs represented in
+		text form
+ * eg		performs example-based refactoring
+ * fiximports	fixes import declarations to use the canonical import path for
+ 		packages that have an "import comment"
+ * godex	dumps exported information of packages or selected objects
+ * godoc	extracts and generates documentation for Go programs
+ * goimports	updates Go import lines
+ * gomvpkg	moves go packages, updating import declarations
+ * gorename	performs precise type-safe renaming of identifiers in Go code
+ * gotype	does syntactic and semantic analysis of Go files and packages
+ * oracle	answers questions about Go source code
+ * ssadump	displays and interprets the SSA form of Go programs
+ * stress	runs a given process in parallel in a loop and collects failures
+ * stringer	creats of methods that satisfy the fmt.Stringer interface
+ * cover	analyzes the coverage profiles
+ * vet		examines Go source code and reports suspicious constructs

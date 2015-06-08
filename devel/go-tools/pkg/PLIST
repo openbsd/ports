@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/08 09:41:03 czarkoff Exp $
+@pkgpath devel/gocover
+@pkgpath textproc/godoc
+@bin bin/benchcmp
+@bin bin/callgraph
+@bin bin/digraph
+@bin bin/eg
+@bin bin/fiximports
+@bin bin/godex
+@bin bin/godoc
+@bin bin/goimports
+@bin bin/gomvpkg
+@bin bin/gorename
+@bin bin/gotype
+@bin bin/oracle
+@bin bin/ssadump
+@bin bin/stress
+@bin bin/stringer
+@bin ${MODGO_TOOLS}/cover
+@bin ${MODGO_TOOLS}/vet
