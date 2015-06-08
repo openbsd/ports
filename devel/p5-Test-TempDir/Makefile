@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2014/11/30 14:53:47 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2015/06/08 15:14:01 benoit Exp $
 
 COMMENT=		temporary files support for testing
 
-DISTNAME =		Test-TempDir-0.09
+DISTNAME =		Test-TempDir-0.10
 
 CATEGORIES=		devel
 
