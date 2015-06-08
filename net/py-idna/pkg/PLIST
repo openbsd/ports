@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/08 10:31:04 sthen Exp $
+lib/python${MODPY_VERSION}/site-packages/idna/
+lib/python${MODPY_VERSION}/site-packages/idna-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/idna-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/idna-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/idna-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/idna-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
+lib/python${MODPY_VERSION}/site-packages/idna-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/idna/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}codec.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}idnadata.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/idna/${MODPY_PYCACHE}uts46data.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/idna/codec.py
+lib/python${MODPY_VERSION}/site-packages/idna/compat.py
+lib/python${MODPY_VERSION}/site-packages/idna/core.py
+lib/python${MODPY_VERSION}/site-packages/idna/idnadata.py
+lib/python${MODPY_VERSION}/site-packages/idna/uts46data.py

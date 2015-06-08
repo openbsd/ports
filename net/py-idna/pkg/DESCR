@@ -1,0 +1,4 @@
+A Python library to support the Internationalised Domain Names in Applications
+(IDNA) protocol as specified in RFC 5891. This version of the protocol is often
+referred to as "IDNA2008" and can produce different results from the earlier
+standard from 2003.
