@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2014/12/19 07:24:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2015/06/08 13:40:44 benoit Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		adding keywords to perl, in perl
 
-DISTNAME =		Devel-Declare-0.006017
+DISTNAME =		Devel-Declare-0.006018
 
 CATEGORIES=		devel
 
