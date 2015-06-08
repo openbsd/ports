@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1350 2015/06/08 10:33:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.1351 2015/06/08 11:07:18 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -300,6 +300,7 @@
      SUBDIR += hs-vector-algorithms
      SUBDIR += hs-void
      SUBDIR += hscolour
+     SUBDIR += hub
      SUBDIR += hyena
      SUBDIR += id-utils
      SUBDIR += imake
