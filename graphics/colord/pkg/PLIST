@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2015/04/09 07:20:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2015/06/09 05:17:52 ajacoutot Exp $
 @conflict shared-color-profiles-*
 @conflict shared-color-profiles-extra-*
 @pkgpath graphics/colord
@@ -112,6 +112,7 @@ share/colord/icons/i1-pro-attach.svg
 share/colord/icons/spyder2-attach.svg
 share/colord/icons/spyder3-attach.svg
 share/colord/icons/spyder4-attach.svg
+share/colord/icons/spyder5-attach.svg
 share/colord/illuminant/
 share/colord/illuminant/CIE-A.sp
 share/colord/illuminant/CIE-B.sp
@@ -163,9 +164,6 @@ share/locale/bn_IN/LC_MESSAGES/colord.mo
 share/locale/ca/LC_MESSAGES/colord.mo
 share/locale/cs/LC_MESSAGES/colord.mo
 share/locale/da/LC_MESSAGES/colord.mo
-share/locale/da_DK/
-share/locale/da_DK/LC_MESSAGES/
-share/locale/da_DK/LC_MESSAGES/colord.mo
 share/locale/de/LC_MESSAGES/colord.mo
 share/locale/el/LC_MESSAGES/colord.mo
 share/locale/en_GB/LC_MESSAGES/colord.mo
@@ -192,6 +190,9 @@ share/locale/lv/LC_MESSAGES/colord.mo
 share/locale/ml/LC_MESSAGES/colord.mo
 share/locale/mr/LC_MESSAGES/colord.mo
 share/locale/nb/LC_MESSAGES/colord.mo
+share/locale/nb_NO/
+share/locale/nb_NO/LC_MESSAGES/
+share/locale/nb_NO/LC_MESSAGES/colord.mo
 share/locale/nl/LC_MESSAGES/colord.mo
 share/locale/or/LC_MESSAGES/colord.mo
 share/locale/pa/LC_MESSAGES/colord.mo
