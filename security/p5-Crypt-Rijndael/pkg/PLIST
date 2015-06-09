@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/06/14 23:26:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/06/09 07:18:57 benoit Exp $
 ${P5ARCH}/
 ${P5ARCH}/Crypt/
 ${P5ARCH}/Crypt/Rijndael.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Crypt/
 ${P5ARCH}/auto/Crypt/Rijndael/
-@comment ${P5ARCH}/auto/Crypt/Rijndael/Rijndael.bs
 ${P5ARCH}/auto/Crypt/Rijndael/Rijndael.so
-@man man/man3p/Crypt::Rijndael.3
+@man man/man3p/Crypt::Rijndael.3p
