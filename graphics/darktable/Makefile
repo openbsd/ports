@@ -1,47 +1,45 @@
-# $OpenBSD: Makefile,v 1.50 2015/06/02 15:31:15 kirby Exp $
+# $OpenBSD: Makefile,v 1.51 2015/06/09 20:54:38 sthen Exp $
 
-# requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
-
-.include <bsd.port.arch.mk>
-.if ${ARCH:Mi386}
-# needs 64-bit atomic ops, and all the registers it can get.
-CFLAGS += -march=i586 -fomit-frame-pointer
-.endif
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
-PORTROACH_COMMENT= newer versions require TLS
-DISTNAME=	darktable-1.2.3
+V=		1.6.7
+DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
-REVISION=	6
 
 SHARED_ONLY=	Yes
 
 CATEGORIES=	graphics x11
 
-HOMEPAGE=	http://darktable.sourceforge.net/
+HOMEPAGE=	http://www.darktable.org/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL GLU GraphicsMagick Iex IlmImf IlmThread Imath SDL
-WANTLIB += atk-1.0 c cairo curl exiv2 flickcurl freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
-WANTLIB += gobject-2.0 gphoto2 gthread-2.0 gtk-x11-2.0 jpeg lcms2
-WANTLIB += m openjpeg pango-1.0 pangocairo-1.0 png pthread rsvg-2
-WANTLIB += sqlite3 stdc++ tiff xml2 z gphoto2_port soup-2.4 json-glib-1.0
+WANTLIB += GL GLU GraphicsMagick ICE Iex IlmImf IlmThread Imath
+WANTLIB += SDL SM X11 Xext Xrandr atk-1.0 c cairo curl exiv2 flickcurl
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gphoto2 gphoto2_port gthread-2.0 gtk-x11-2.0
+WANTLIB += jpeg json-glib-1.0 lcms2 lua5.2 m openjpeg pango-1.0
+WANTLIB += pangocairo-1.0 png pthread rsvg-2 secret-1 soup-2.4
+WANTLIB += sqlite3 tiff webp xml2 z
 
 WANTLIB += lensfun # dlopen'd. this is "Extra" in check-lib-depends; that's ok,
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=darktable/}
+MASTER_SITES=	https://github.com/darktable-org/darktable/releases/download/release-$V/
 
 MODULES=	devel/cmake \
 		devel/gettext \
+		gcc4 \
+		lang/lua \
 		textproc/intltool
+MODLUA_VERSION=	5.2
+MODGCC4_ARCHS=	*
+MODGCC4_LANGS=	c c++
 
 BUILD_DEPENDS=	sysutils/coreutils
 RUN_DEPENDS=	devel/desktop-file-utils \
@@ -59,8 +57,8 @@ LIB_DEPENDS=	devel/json-glib \
 		graphics/openjpeg \
 		net/curl \
 		net/flickcurl \
-		x11/gnome/libgnome-keyring \
 		x11/gnome/librsvg \
+		x11/gnome/libsecret \
 		x11/gtk+2
 
 SEPARATE_BUILD=	Yes
@@ -69,16 +67,17 @@ CONFIGURE_ARGS=	-DOPENJPEG_INCLUDE_DIR=${PREFIX}/include/openjpeg-1.5 \
 		-DBINARY_PACKAGE_BUILD=1 \
 		-DCUSTOM_CFLAGS=1
 
-# enable workaround for mutex problems
-CFLAGS+=	-D_DEBUG
-
-# error: #error "SSE instruction set not enabled"
-CFLAGS+=	-msse2
-
-CXXFLAGS=	${CFLAGS}
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+.include <bsd.port.arch.mk>
+.if ${ARCH:Mi386}
+# needs 64-bit atomic ops, and all the registers it can get.
+CFLAGS += -march=i686 -fomit-frame-pointer
+.endif
+# ...and there's a hard requirement of SSE3
+CFLAGS+=	-msse3
+CXXFLAGS=	${CFLAGS}
 
 post-install:
 	cd ${PREFIX}/lib && ln -s darktable/libdarktable.so

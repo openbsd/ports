@@ -1,9 +1,0 @@
-$OpenBSD: patch-doc_CMakeLists_txt,v 1.3 2013/04/26 23:10:26 sthen Exp $
---- doc/CMakeLists.txt.orig	Wed Feb 27 23:46:21 2013
-+++ doc/CMakeLists.txt	Wed Feb 27 23:45:54 2013
-@@ -29,4 +29,4 @@ endif(NOT MAN_INSTALL_DIR)
- 
- install(FILES ${CMAKE_CURRENT_BINARY_DIR}/darktable.1 DESTINATION ${MAN_INSTALL_DIR})
- 
--add_subdirectory(usermanual)
-+# add_subdirectory(usermanual)
