@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.121 2015/05/18 21:33:06 vgross Exp $
+# $OpenBSD: OpenBSD,v 1.122 2015/06/09 17:19:05 feinerer Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -77,6 +77,7 @@
 47.532		7.648		"winiger"	# Marc Winiger
 47.581		7.589		"mbalmer"	# Marc Balmer
 47.837768	35.211241	"av"		# Alexey Vatchenko
+47.841434	16.238059	"feinerer"	# Ingo Feinerer
 48.0718		11.9582		"grunk"		# Alexander von Gernler
 48.08		11.31		"sturm"		# Nikolay Sturm
 48.1247		11.5975		"mpf"		# Marco Pfatschbacher
