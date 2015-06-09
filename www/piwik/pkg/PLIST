@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.56 2015/06/08 22:02:29 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.57 2015/06/09 21:32:40 ajacoutot Exp $
 @group daemon
 piwik/
 piwik/CHANGELOG.md
@@ -409,7 +409,7 @@ piwik/core/Updates/0.4.2.php
 piwik/core/Updates/0.4.4.php
 piwik/core/Updates/0.4.php
 piwik/core/Updates/0.5.4.php
-piwik/core/Updates/0.${MODPHP_VERSION}.php
+piwik/core/Updates/0.5.5.php
 piwik/core/Updates/0.5.php
 piwik/core/Updates/0.6-rc1.php
 piwik/core/Updates/0.6.3.php
@@ -489,8 +489,8 @@ piwik/core/Updates/2.5.0-b1.php
 piwik/core/Updates/2.5.0-rc2.php
 piwik/core/Updates/2.5.0-rc4.php
 piwik/core/Updates/2.6.0-b1.php
-piwik/core/Updates/${MODPY_VERSION}.0-b2.php
-piwik/core/Updates/${MODPY_VERSION}.0-b4.php
+piwik/core/Updates/2.7.0-b2.php
+piwik/core/Updates/2.7.0-b4.php
 piwik/core/Updates/2.9.0-b1.php
 piwik/core/Updates/2.9.0-b7.php
 piwik/core/Url.php
