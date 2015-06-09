@@ -1,0 +1,12 @@
+$OpenBSD: patch-hedis_cabal,v 1.1 2015/06/09 10:31:55 dcoppa Exp $
+--- hedis.cabal.orig	Tue Jun  9 11:58:08 2015
++++ hedis.cabal	Tue Jun  9 11:58:23 2015
+@@ -55,7 +55,7 @@ library
+   ghc-options:      -Wall -fwarn-tabs
+   ghc-prof-options: -auto-all
+   exposed-modules:  Database.Redis
+-  build-depends:    attoparsec >= 0.12,
++  build-depends:    attoparsec >= 0.10,
+                     base >= 4.6 && < 5,
+                     BoundedChan >= 1.0,
+                     bytestring >= 0.9 && < 0.11,
