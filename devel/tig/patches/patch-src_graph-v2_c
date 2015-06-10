@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_graph-v2_c,v 1.1 2015/06/10 18:33:00 matthieu Exp $
+
+Fix potential invalid read in shift_left()
+https://github.com/jonas/tig/commit/38e8e7d1527cab1d7c9d5cc8030c940d4e2485fb
+
+--- src/graph-v2.c.orig	Wed Mar 11 04:30:33 2015
++++ src/graph-v2.c	Wed Jun 10 08:43:43 2015
+@@ -668,7 +668,7 @@
+ 		symbol->matches_commit    = (strcmp(column->id, graph->id) == 0);
+ 
+ 		symbol->shift_left        = shift_left(row, prev_row, pos);
+-		symbol->continue_shift    = shift_left(row, prev_row, pos + 1);
++		symbol->continue_shift    = (pos + 1 < row->size) ? shift_left(row, prev_row, pos + 1) : 0;
+ 		symbol->below_shift       = prev_row->columns[pos].symbol.shift_left;
+ 
+ 		symbol->new_column        = new_column(row, prev_row, pos);
