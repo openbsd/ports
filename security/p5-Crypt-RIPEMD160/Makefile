@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/16 19:52:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/06/10 06:48:36 benoit Exp $
 
 COMMENT=	Perl extension for the RIPEMD-160 Hash function
 
 MODULES=	cpan
-DISTNAME=	Crypt-RIPEMD160-0.05
-REVISION=	0
+DISTNAME =	Crypt-RIPEMD160-0.06
 CATEGORIES=	security
 SHARED_ONLY=	Yes
 
