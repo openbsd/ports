@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.717 2015/06/05 02:55:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.718 2015/06/10 20:01:03 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -32,8 +32,8 @@
      SUBDIR += cntlm
      SUBDIR += conkeror
      SUBDIR += cronolog
-     SUBDIR += darkhttpd
      SUBDIR += dansguardian
+     SUBDIR += darkhttpd
      SUBDIR += decss
      SUBDIR += dillo
      SUBDIR += dokuwiki
@@ -226,8 +226,8 @@
      SUBDIR += p5-Dancer2
      SUBDIR += p5-Dancer2-Plugin-Ajax
      SUBDIR += p5-Dancer2-Plugin-Auth-Tiny
-     SUBDIR += p5-Dancer2-Plugin-Database
      SUBDIR += p5-Dancer2-Plugin-DBIC
+     SUBDIR += p5-Dancer2-Plugin-Database
      SUBDIR += p5-Data-URIEncode
      SUBDIR += p5-Drupal-Admin
      SUBDIR += p5-FCGI-ProcManager
@@ -416,8 +416,8 @@
      SUBDIR += py-genshi
      SUBDIR += py-gunicorn
      SUBDIR += py-htmltmpl
-     SUBDIR += py-httplib2
      SUBDIR += py-httpie
+     SUBDIR += py-httplib2
      SUBDIR += py-itsdangerous
      SUBDIR += py-jinja2
      SUBDIR += py-jonpy

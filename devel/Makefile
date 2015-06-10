@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1351 2015/06/08 11:07:18 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.1352 2015/06/10 20:01:03 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -144,8 +144,8 @@
      SUBDIR += gmake
      SUBDIR += gmc4cc
      SUBDIR += gmp
-     SUBDIR += gobject-introspection
      SUBDIR += go-tools
+     SUBDIR += gobject-introspection
      SUBDIR += goffice
      SUBDIR += goffice08
      SUBDIR += goopy
@@ -647,8 +647,8 @@
      SUBDIR += p5-Data-Stag
      SUBDIR += p5-Data-Structure-Util
      SUBDIR += p5-Data-Types
-     SUBDIR += p5-Data-Uniqid
      SUBDIR += p5-Data-UUID
+     SUBDIR += p5-Data-Uniqid
      SUBDIR += p5-Data-VString
      SUBDIR += p5-Data-Validate
      SUBDIR += p5-Data-Validate-IP
@@ -863,6 +863,7 @@
      SUBDIR += p5-Module-Versions-Report
      SUBDIR += p5-Module-Which
      SUBDIR += p5-Moo
+     SUBDIR += p5-MooX-Types-MooseLike
      SUBDIR += p5-Moose
      SUBDIR += p5-MooseX-Aliases
      SUBDIR += p5-MooseX-AttributeHelpers
@@ -895,7 +896,6 @@
      SUBDIR += p5-MooseX-Types-LoadableClass
      SUBDIR += p5-MooseX-Types-Path-Class
      SUBDIR += p5-MooseX-Types-Structured
-     SUBDIR += p5-MooX-Types-MooseLike
      SUBDIR += p5-Mouse
      SUBDIR += p5-MouseX-Types
      SUBDIR += p5-Net-Server
@@ -919,6 +919,7 @@
      SUBDIR += p5-POE-Loop-Tk
      SUBDIR += p5-POE-Test-Loops
      SUBDIR += p5-POE-XS-Queue-Array
+     SUBDIR += p5-POSIX-strftime-Compiler
      SUBDIR += p5-Package-DeprecationManager
      SUBDIR += p5-Package-Generator
      SUBDIR += p5-Package-Stash
@@ -945,13 +946,12 @@
      SUBDIR += p5-Perl6-Junction
      SUBDIR += p5-PerlIO-eol
      SUBDIR += p5-PerlIO-via-Bzip2
+     SUBDIR += p5-PerlIO-via-Timeout
      SUBDIR += p5-PerlIO-via-dynamic
      SUBDIR += p5-PerlIO-via-symlink
-     SUBDIR += p5-PerlIO-via-Timeout
      SUBDIR += p5-Pod-Constant
      SUBDIR += p5-Pod-Coverage
      SUBDIR += p5-Pod-ToDemo
-     SUBDIR += p5-POSIX-strftime-Compiler
      SUBDIR += p5-Probe-Perl
      SUBDIR += p5-Proc-Background
      SUBDIR += p5-Proc-Daemon
@@ -1030,12 +1030,12 @@
      SUBDIR += p5-Term-Size
      SUBDIR += p5-Test-Assertions
      SUBDIR += p5-Test-Base
+     SUBDIR += p5-Test-CPAN-Meta
      SUBDIR += p5-Test-CheckManifest
      SUBDIR += p5-Test-Class
      SUBDIR += p5-Test-ClassAPI
      SUBDIR += p5-Test-Cmd
      SUBDIR += p5-Test-Corpus-Audio-MPD
-     SUBDIR += p5-Test-CPAN-Meta
      SUBDIR += p5-Test-Deep
      SUBDIR += p5-Test-Differences
      SUBDIR += p5-Test-DistManifest

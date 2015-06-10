@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.353 2015/05/06 08:19:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.354 2015/06/10 20:01:03 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -41,8 +41,8 @@
      SUBDIR += exaile
      SUBDIR += faac
      SUBDIR += faad
-     SUBDIR += festival
      SUBDIR += fdk-aac
+     SUBDIR += festival
      SUBDIR += flac
      SUBDIR += flac123
      SUBDIR += flite
@@ -174,9 +174,9 @@
      SUBDIR += p5-gnupod
      SUBDIR += p5-libvorbis
      SUBDIR += pacpl
+     SUBDIR += paulstretch
      SUBDIR += pavucontrol
      SUBDIR += pavucontrol,gtk3
-     SUBDIR += paulstretch
      SUBDIR += pianobar
      SUBDIR += picard
      SUBDIR += pithos
