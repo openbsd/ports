@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/06/10 11:05:02 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2015/06/10 22:54:29 jca Exp $
 
 COMMENT=		network sed
 
 DISTNAME=		netsed
 PKGNAME=		${DISTNAME}-0.01c
-REVISION=		0
+REVISION=		1
 CATEGORIES=    		net
 EXTRACT_SUFX=		.tgz
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		http://lcamtuf.coredump.cx/soft/
+
+MAKE_FLAGS=		CFLAGS="-Wall ${CFLAGS}"
 
 USE_GMAKE=		Yes
 
