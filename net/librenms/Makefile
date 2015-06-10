@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2015/06/05 06:00:21 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2015/06/10 21:15:33 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
-DISTNAME =	librenms-0.20150505
+DISTNAME =	librenms-0.20150610
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_COMMIT =	ccef73b87c93fa16ac10063b05b7bd22a1de3e68
-REVISION =	0
+GH_COMMIT =	a3ddceb9546a2f24ce0718733d6bfaf3a65655a9
 
 CATEGORIES =	net www
 
@@ -63,6 +62,6 @@ do-install:
 	find ${INSTDIR} -name '*.orig' -print0 | xargs -r0 rm
 	mkdir -p ${INSTDIR}/{rrd,logs}
 	cd ${INSTDIR}; perl -pi -e 's,%PHP%,${MODPHP_BIN},' \
-	    daily.sh poller-wrapper.py
+	    daily.sh poller-wrapper.py validate.php
 
 .include <bsd.port.mk>
