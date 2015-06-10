@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/01/23 07:52:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2015/06/10 08:59:53 benoit Exp $
 
 COMMENT =	implement some of Autoconf macros in pure Perl
 
 MODULES =	cpan
-DISTNAME =	Config-AutoConf-0.309
+DISTNAME =	Config-AutoConf-0.311
 CATEGORIES =	devel
 
 # Perl
