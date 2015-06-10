@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/06/08 10:34:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/06/10 22:06:01 sthen Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
 MODPY_EGG_VERSION=	0.9
+REVISION=	0
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	security devel
@@ -11,6 +12,8 @@ HOMEPAGE=	https://cryptography.io/
 
 # dual: BSD or Apache 2
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB=	${MODPY_WANTLIB} crypto pthread ssl
 
 MODULES=	lang/python
 MODPY_SETUPTOOLS= Yes
