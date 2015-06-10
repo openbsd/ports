@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2015/04/28 06:32:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2015/06/10 06:34:45 ajacoutot Exp $
 @bin bin/ffmpeg
 @bin bin/ffplay
 @bin bin/ffprobe
@@ -7,6 +7,7 @@
 include/libavcodec/
 include/libavcodec/avcodec.h
 include/libavcodec/avfft.h
+include/libavcodec/d3d11va.h
 include/libavcodec/dv_profile.h
 include/libavcodec/dxva2.h
 include/libavcodec/old_codec_ids.h
@@ -199,6 +200,7 @@ share/ffmpeg/
 share/ffmpeg/examples/
 share/ffmpeg/examples/Makefile
 share/ffmpeg/examples/README
+share/ffmpeg/examples/avio_list_dir.c
 share/ffmpeg/examples/avio_reading.c
 share/ffmpeg/examples/decoding_encoding.c
 share/ffmpeg/examples/demuxing_decoding.c

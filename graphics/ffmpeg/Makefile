@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.117 2015/05/22 05:41:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.118 2015/06/10 06:34:45 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
-V=		20150412
+V=		20150609
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	3
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	avcodec		22.0 \
+SHARED_LIBS=	avcodec		22.1 \
 		avdevice	10.0 \
-		avfilter	7.1 \
-		avformat	19.2 \
+		avfilter	7.2 \
+		avformat	19.3 \
 		avresample	1.0 \
-		avutil		12.2 \
+		avutil		12.3 \
 		postproc	16.1 \
-		swresample	1.1 \
+		swresample	1.2 \
 		swscale		6.1
 
 HOMEPAGE=	http://ffmpeg.org/
@@ -35,7 +34,6 @@ WANTLIB=	SDL X11 Xext Xv ass bz2 c crypto fontconfig freetype fribidi \
 MODULES=	lang/clang
 
 MODCLANG_ARCHS=	amd64
-MODCLANG_LANGS=	c
 
 BUILD_DEPENDS=	textproc/texi2html
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
@@ -100,9 +98,13 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-iconv \
 		--disable-indev=jack \
 		--disable-indev=oss \
+		--disable-loongson3 \
 		--disable-lzma \
+		--disable-mips32r5 \
+		--disable-mips64r6 \
 		--disable-mipsdspr1 \
 		--disable-mipsdspr2 \
+		--disable-msa \
 		--disable-neon \
 		--disable-outdev=oss \
 		--disable-outdev=sdl \

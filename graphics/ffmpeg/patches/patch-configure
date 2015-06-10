@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.46 2015/06/03 06:21:53 ajacoutot Exp $
---- configure.orig	Wed Mar 25 18:11:38 2015
-+++ configure	Sat May 30 14:28:37 2015
-@@ -4057,7 +4057,7 @@ case $target_os in
+$OpenBSD: patch-configure,v 1.47 2015/06/10 06:34:45 ajacoutot Exp $
+--- configure.orig	Tue Jun  9 20:07:32 2015
++++ configure	Tue Jun  9 20:32:04 2015
+@@ -4204,7 +4204,7 @@ case $target_os in
      openbsd|bitrig)
          disable symver
          SHFLAGS='-shared'
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.46 2015/06/03 06:21:53 ajacoutot Exp $
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -4404,7 +4404,7 @@ die_license_disabled version3 libvo_amrwbenc
+@@ -4555,7 +4555,7 @@ die_license_disabled version3 libvo_amrwbenc
  
  enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.46 2015/06/03 06:21:53 ajacoutot Exp $
  
  enable_weak_pic() {
      disabled pic && return
-@@ -5203,7 +5203,9 @@ check_disable_warning -Wno-pointer-sign
+@@ -5391,7 +5391,9 @@ check_disable_warning -Wno-pointer-sign
  check_ldflags -Wl,--warn-common
  check_ldflags -Wl,-rpath-link=libpostproc:libswresample:libswscale:libavfilter:libavdevice:libavformat:libavcodec:libavutil:libavresample
  enabled rpath && add_ldexeflags -Wl,-rpath,$libdir
@@ -30,7 +30,7 @@ $OpenBSD: patch-configure,v 1.46 2015/06/03 06:21:53 ajacoutot Exp $
  
  # add some strip flags
  # -wN '..@*' is more selective than -x, but not available everywhere.
-@@ -5823,8 +5825,8 @@ pkgconfig_generate(){
+@@ -6022,8 +6024,8 @@ pkgconfig_generate(){
      comment=$2
      version=$3
      libs=$4
@@ -41,7 +41,7 @@ $OpenBSD: patch-configure,v 1.46 2015/06/03 06:21:53 ajacoutot Exp $
      enabled ${name#lib} || return 0
      mkdir -p $name
      cat <<EOF > $name/$name${build_suffix}.pc
-@@ -5839,7 +5841,7 @@ Version: $version
+@@ -6038,7 +6040,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -50,7 +50,7 @@ $OpenBSD: patch-configure,v 1.46 2015/06/03 06:21:53 ajacoutot Exp $
  Libs.private: $(enabled shared && echo $libs)
  Cflags: -I\${includedir}
  EOF
-@@ -5863,12 +5865,12 @@ Cflags: -I\${includedir}
+@@ -6062,12 +6064,12 @@ Cflags: -I\${includedir}
  EOF
  }
  
