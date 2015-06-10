@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/21 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/06/10 12:53:09 benoit Exp $
 
 COMMENT=	common rules for searching for Perl things
 
 MODULES=	cpan
-DISTNAME=	File-Find-Rule-Perl-1.13
+DISTNAME =	File-Find-Rule-Perl-1.15
 CATEGORIES=	devel
 
 # Perl
