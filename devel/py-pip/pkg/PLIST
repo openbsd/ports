@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/05/12 11:23:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/06/10 12:08:08 benoit Exp $
 @comment bin/pip
 @comment bin/pip2
 @comment bin/pip3
@@ -461,9 +461,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}list.${MOD
 lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}search.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}show.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}uninstall.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}unzip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}wheel.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pip/commands/${MODPY_PYCACHE}zip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/commands/completion.py
 lib/python${MODPY_VERSION}/site-packages/pip/commands/freeze.py
 lib/python${MODPY_VERSION}/site-packages/pip/commands/help.py
@@ -472,9 +470,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/commands/list.py
 lib/python${MODPY_VERSION}/site-packages/pip/commands/search.py
 lib/python${MODPY_VERSION}/site-packages/pip/commands/show.py
 lib/python${MODPY_VERSION}/site-packages/pip/commands/uninstall.py
-lib/python${MODPY_VERSION}/site-packages/pip/commands/unzip.py
 lib/python${MODPY_VERSION}/site-packages/pip/commands/wheel.py
-lib/python${MODPY_VERSION}/site-packages/pip/commands/zip.py
 lib/python${MODPY_VERSION}/site-packages/pip/compat/
 lib/python${MODPY_VERSION}/site-packages/pip/compat/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/compat/${MODPY_PYCACHE}/
@@ -504,12 +500,10 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/req/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/pip/req/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/req/${MODPY_PYCACHE}req_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/req/${MODPY_PYCACHE}req_install.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pip/req/${MODPY_PYCACHE}req_requirement.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/req/${MODPY_PYCACHE}req_set.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/req/${MODPY_PYCACHE}req_uninstall.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/req/req_file.py
 lib/python${MODPY_VERSION}/site-packages/pip/req/req_install.py
-lib/python${MODPY_VERSION}/site-packages/pip/req/req_requirement.py
 lib/python${MODPY_VERSION}/site-packages/pip/req/req_set.py
 lib/python${MODPY_VERSION}/site-packages/pip/req/req_uninstall.py
 lib/python${MODPY_VERSION}/site-packages/pip/status_codes.py
@@ -549,7 +543,6 @@ share/doc/${MODPY_PY_PREFIX}pip/_sources/
 share/doc/${MODPY_PY_PREFIX}pip/_sources/configuration.txt
 share/doc/${MODPY_PY_PREFIX}pip/_sources/cookbook.txt
 share/doc/${MODPY_PY_PREFIX}pip/_sources/development.txt
-share/doc/${MODPY_PY_PREFIX}pip/_sources/distribute_setuptools.txt
 share/doc/${MODPY_PY_PREFIX}pip/_sources/index.txt
 share/doc/${MODPY_PY_PREFIX}pip/_sources/installing.txt
 share/doc/${MODPY_PY_PREFIX}pip/_sources/logic.txt
@@ -591,7 +584,6 @@ share/doc/${MODPY_PY_PREFIX}pip/_static/websupport.js
 share/doc/${MODPY_PY_PREFIX}pip/configuration.html
 share/doc/${MODPY_PY_PREFIX}pip/cookbook.html
 share/doc/${MODPY_PY_PREFIX}pip/development.html
-share/doc/${MODPY_PY_PREFIX}pip/distribute_setuptools.html
 share/doc/${MODPY_PY_PREFIX}pip/index.html
 share/doc/${MODPY_PY_PREFIX}pip/installing.html
 share/doc/${MODPY_PY_PREFIX}pip/logic.html
