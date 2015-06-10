@@ -1,7 +1,7 @@
-$OpenBSD: patch-console_console_c,v 1.5 2014/10/07 22:14:17 sthen Exp $
---- console/console.c.orig	Sun Apr 20 08:14:49 2014
-+++ console/console.c	Tue Oct  7 16:49:57 2014
-@@ -676,7 +676,7 @@ C2Raw(void)
+$OpenBSD: patch-console_console_c,v 1.6 2015/06/10 13:07:33 sthen Exp $
+--- console/console.c.orig	Mon Jun  1 16:36:59 2015
++++ console/console.c	Wed Jun 10 14:05:46 2015
+@@ -695,7 +695,7 @@ C2Raw(void)
  	Bye(EX_UNAVAILABLE);
      }
      n_tios = o_tios;
