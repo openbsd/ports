@@ -1,16 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/05/17 10:28:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/06/10 13:25:32 jasper Exp $
 @newgroup _logstash:752
 @newuser _logstash:752:_logstash:daemon:Logstash Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/logstash/*
 @extraunexec rm -rf /var/log/logstash/*
 logstash/
+@owner _logstash
 @group _logstash
-@mode 0775
 @sample logstash/.bundle/
-@mode
-@group
+@mode 644
 logstash/Gemfile
 logstash/Gemfile.jruby-1.9.lock
+@mode
+@group
+@owner
 logstash/bin/
 logstash/bin/logstash
 logstash/bin/logstash.lib.sh
@@ -31,6 +33,9 @@ logstash/lib/pluginmanager/uninstall.rb
 logstash/lib/pluginmanager/update.rb
 logstash/lib/pluginmanager/util.rb
 logstash/vendor/
+@owner _logstash
+@group _logstash
+@sample logstash/vendor/local_gems/
 logstash/vendor/bundle/
 logstash/vendor/bundle/jruby/
 logstash/vendor/bundle/jruby/1.9/
@@ -12996,7 +13001,10 @@ logstash/vendor/bundle/ruby/2.0.0/gems/minitar-0.5.4/tests/tc_tar.rb
 logstash/vendor/bundle/ruby/2.0.0/gems/minitar-0.5.4/tests/testall.rb
 logstash/vendor/bundle/ruby/2.0.0/specifications/
 logstash/vendor/bundle/ruby/2.0.0/specifications/minitar-0.5.4.gemspec
+@group
+@owner
 logstash/vendor/jruby
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/logstash/
 @sample ${SYSCONFDIR}/logstash/conf.d/
 share/examples/logstash/logstash.conf
