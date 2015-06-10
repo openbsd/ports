@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.75 2015/03/27 08:16:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2015/06/10 21:42:26 sthen Exp $
 
 COMMENT-main =		K Desktop Environment, developer extensions
 COMMENT-svn =		K Desktop Environment, svn extensions
 CATEGORIES =		x11 x11/kde devel
 VERSION =		3.5.10
-REVISION-main =		21
+REVISION-main =		22
 REVISION-svn =		22
 DISTNAME =		kdesdk-${VERSION}
 
@@ -53,7 +53,7 @@ WANTLIB-main += ${KDE}/kunittest ${KDE}/kutils lcms ${KDE}/kcal
 WANTLIB-main += ${KDE}/kmime ${KDE}/vcard
 WANTLIB-main += GL GLU X11-xcb Xau Xcursor Xdamage Xdmcp Xft Xi
 WANTLIB-main += Xinerama Xmu Xrandr Xxf86vm drm glapi jpeg mng pcre
-WANTLIB-main += pcreposix qui-mt xcb-dri2 xcb-glx xml2 xslt
+WANTLIB-main += pcreposix qui-mt xcb-dri2 xcb-glx lzma xml2 xslt
 
 WANTLIB-svn = ${WANTLIB}
 WANTLIB-svn += apr-1 aprutil-1 db sasl2 serf-1 sqlite3 svn_client-1

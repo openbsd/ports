@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2015/04/04 09:21:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.146 2015/06/10 21:42:26 sthen Exp $
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
@@ -12,7 +12,7 @@ PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdelibs->=3,<4
 PKGNAME-langlist =	kde3-langlist-${VERSION}
 PKG_ARCH-langlist =	*
-REVISION-main =		36
+REVISION-main =		37
 REVISION-langlist =	1
 
 MODKDE_VERSION =	3.5.8
@@ -64,7 +64,7 @@ WANTLIB-main += Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow
 WANTLIB-main += artsflow_idl aspell audiofile avahi-client avahi-common
 WANTLIB-main += bz2 c dbus-1 dns_sd drm expat fam fontconfig
 WANTLIB-main += freetype glapi glib-2.0 gmodule-2.0 gthread-2.0
-WANTLIB-main += idn jasper jpeg kmedia2_idl lcms m mad
+WANTLIB-main += idn jasper jpeg kmedia2_idl lcms lzma m mad
 WANTLIB-main += mcop mng ogg pcre pcreposix png pthread pthread-stubs
 WANTLIB-main += qt-mt qtmcop sndio soundserver_idl stdc++ tiff
 WANTLIB-main += util vorbis vorbisenc vorbisfile xcb xcb-dri2

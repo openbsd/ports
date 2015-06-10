@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/11/27 19:59:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2015/06/10 21:42:26 sthen Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT=	light-weight system monitor
 DISTNAME=	conky-1.9.0
 CATEGORIES=	sysutils
 HOMEPAGE=	http://conky.sourceforge.net/
-REVISION =	4
+REVISION=	5
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=conky/}
 
@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=conky/}
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB=	c crypto kvm idn m ncurses ossaudio pthread ssl z \
-		glib-2.0 pcre curl xml2 pthread-stubs ${MODLUA_WANTLIB}
+		lzma glib-2.0 pcre curl xml2 ${MODLUA_WANTLIB}
 
 MODULES=	devel/gettext \
 		lang/lua
@@ -26,7 +26,6 @@ LIB_DEPENDS=	devel/glib2 \
 		net/curl \
 		textproc/libxml \
 		${MODLUA_LIB_DEPENDS}
-
 
 FLAVORS=	no_x11 xmms2
 FLAVOR?=
@@ -45,7 +44,7 @@ CONFIGURE_ARGS+=--disable-double-buffer \
 CONFIGURE_ARGS+=--enable-imlib2
 LIB_DEPENDS+=	graphics/imlib2
 WANTLIB += Imlib2 X11 Xdamage Xext Xfixes Xft
-WANTLIB += Xrender expat fontconfig freetype xcb
+WANTLIB += Xrender expat fontconfig freetype xcb pthread-stubs
 .endif
 
 .if ${FLAVOR:Mxmms2}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2014/04/01 16:31:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2015/06/10 21:42:26 sthen Exp $
 
 COMMENT-main=		ugly elements for GStreamer
 COMMENT-sidplay=	sidplay element for GStreamer (plugins-ugly)
@@ -12,9 +12,9 @@ PKGNAME-main=		gstreamer-plugins-ugly-${V}
 PKGNAME-sidplay=	gstreamer-sidplay-${V}
 PKGNAME-lame=		gstreamer-lame-${V}
 
-REVISION-main=		4
-REVISION-sidplay=	2
-REVISION-lame=		2
+REVISION-main=		5
+REVISION-sidplay=	3
+REVISION-lame=		3
 
 PERMIT_PACKAGE_CDROM=	Patent issues
 
@@ -23,13 +23,13 @@ MULTI_PACKAGES=		-main -sidplay -lame
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-ugly/}
 
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += xml2 m z pcre gstreamer-0.10 ffi pthread
+WANTLIB += lzma xml2 m z pcre gstreamer-0.10 ffi pthread
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += a52 dvdread gstaudio-0.10 gstbase-0.10 gstinterfaces-0.10
 WANTLIB-main += gstpbutils-0.10 gstriff-0.10 gstrtp-0.10 gstrtsp-0.10
 WANTLIB-main += gstsdp-0.10 gsttag-0.10 gstvideo-0.10 mad orc-0.4 twolame
-WANTLIB-main += x264 dvdcss
+WANTLIB-main += x264
 
 WANTLIB-sidplay += ${WANTLIB}
 WANTLIB-sidplay += gstbase-0.10 sidplay stdc++

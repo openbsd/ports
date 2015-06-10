@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2015/04/23 11:55:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2015/06/10 21:42:26 sthen Exp $
 
 COMMENT-main=		bad elements for GStreamer
 COMMENT-neon=		neon element for GStreamer (plugins-bad)
@@ -12,9 +12,9 @@ PKGNAME-main=		gstreamer-plugins-bad-${V}
 PKGNAME-neon=		gstreamer-neon-${V}
 PKGNAME-mjpeg=		gstreamer-mjpeg-${V}
 
-REVISION-main=		19
-REVISION-mjpeg=		8
-REVISION-neon=		9
+REVISION-main=		20
+REVISION-mjpeg=		9
+REVISION-neon=		10
 
 SHARED_LIBS +=  gstphotography-0.10       1.0 # 23.0
 SHARED_LIBS +=  gstsignalprocessor-0.10   1.0 # 23.0
@@ -29,7 +29,7 @@ MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}
 MODULES =		devel/dconf
 
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2
-WANTLIB += pthread z m pcre gstreamer-0.10 ffi
+WANTLIB += lzma pthread z m pcre gstreamer-0.10 ffi
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += SDL SoundTouch X11 Xext Xrender
@@ -43,7 +43,7 @@ WANTLIB-main += mpcdec opus orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-main += pixman-1 png pthread-stubs raptor2 rsvg-2
 WANTLIB-main += sndfile sndio spandsp ssl stdc++ tiff usbhid vpx xcb
 WANTLIB-main += xcb-render xcb-shm xslt harfbuzz
-WANTLIB-main += yajl FLAC dvdcss graphite2 ogg vorbis vorbisenc
+WANTLIB-main += yajl FLAC graphite2 ogg vorbis vorbisenc
 
 WANTLIB-neon += ${WANTLIB} crypto expat gstbase-0.10 neon proxy ssl
 

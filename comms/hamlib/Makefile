@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2014/06/14 10:34:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2015/06/10 21:42:26 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,7 +12,7 @@ PKGNAME-main=	hamlib-${VERSION}
 PKGNAME-python=	hamlib-python-${VERSION}
 PKGNAME-tcl=	hamlib-tcl-${VERSION}
 CATEGORIES=	comms hamradio
-REVISION-main=	0
+REVISION-main=	1
 
 MULTI_PACKAGES=	-main -python -tcl
 
@@ -31,7 +31,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
 cWANTLIB=		ltdl m pthread usb usb-1.0
-WANTLIB-main=		${cWANTLIB} c stdc++ z xml2 ${MODLIBICONV_WANTLIB}
+WANTLIB-main=		${cWANTLIB} c lzma stdc++ z xml2 ${MODLIBICONV_WANTLIB}
 WANTLIB-python=		${cWANTLIB} hamlib ${MODPY_WANTLIB}
 WANTLIB-tcl=		${cWANTLIB} hamlib ${MODTCL_WANTLIB}
 

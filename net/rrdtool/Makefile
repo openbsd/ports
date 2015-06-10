@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2015/05/15 13:43:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2015/06/10 21:42:26 sthen Exp $
 
 PORTROACH_COMMENT= rrdcached crashes at startup in 1.5.0 to at least 1.5.3
 
@@ -11,6 +11,7 @@ COMMENT-ruby=	ruby interface to librrd
 
 MODPY_EGG_VERSION= 0.2.2
 VERSION=	1.4.9
+REVISION-main=	0
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}
@@ -86,7 +87,7 @@ WANTLIB-ruby=	${cWANTLIB} ${MODRUBY_WANTLIB} c m rrd
 WANTLIB-main=	${cWANTLIB} ${MODGETTEXT_WANTLIB} perl
 WANTLIB-main += X11 Xext Xrender c cairo expat ffi fontconfig freetype
 WANTLIB-main += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB-main += harfbuzz m pango-1.0 pangocairo-1.0
+WANTLIB-main += harfbuzz lzma m pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb
 WANTLIB-main += xcb-render xcb-shm xml2 z
 

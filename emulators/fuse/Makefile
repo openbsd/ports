@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2014/06/09 08:55:00 bentley Exp $
+# $OpenBSD: Makefile,v 1.33 2015/06/10 21:42:26 sthen Exp $
 
 COMMENT=		Free Unix Spectrum Emulator
-DISTNAME =		fuse-1.1.1
+DISTNAME=		fuse-1.1.1
+REVISION=		0
 CATEGORIES=		emulators
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/
 
@@ -9,7 +10,7 @@ HOMEPAGE=		http://fuse-emulator.sourceforge.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xext ao audiofile bz2 c gcrypt glib-2.0 gpg-error
-WANTLIB += m pcre png pthread spectrum xcb xml2 z
+WANTLIB += lzma m pcre png pthread spectrum xcb xml2 z
 WANTLIB += FLAC SDL ogg sndio usbhid
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
