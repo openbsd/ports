@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2015/05/17 09:43:22 jasper Exp $
+$OpenBSD: README,v 1.2 2015/06/10 13:19:03 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -34,3 +34,12 @@ the open files limit in login.conf(5):
 
 	# sysctl -w kern.maxfiles=32768
 	# echo "kern.maxfiles=32768" >> /etc/sysctl.conf
+
+Elasticsearch Plugins Management
+================================
+Elasticsearch plugins management involves running Java code which can download
+and execute arbitrary code from the Internet. To avoid running these tasks
+as root, use sudo(8):
+
+	$ sudo -u _elasticsearch \
+	    ${TRUEPREFIX}/elasticsearch/bin/plugin --install <plugin>
