@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2015/03/20 22:47:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2015/06/10 09:10:54 benoit Exp $
 
 COMMENT =		fast, primitive HTTP request parser
 
 SHARED_ONLY =		Yes
 MODULES =		cpan
-DISTNAME =		HTTP-Parser-XS-0.13
-REVISION =		2
+DISTNAME =		HTTP-Parser-XS-0.17
 CATEGORIES =		www
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
