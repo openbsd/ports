@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/03/15 02:58:08 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/06/10 10:55:10 espie Exp $
+@conflict arm-none-eabi-gdb-*
 @conflict libbfd-*
 @bin bin/egdb
 include/ansidecl.h
