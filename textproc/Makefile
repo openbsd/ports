@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.450 2015/06/10 19:52:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.451 2015/06/10 19:53:24 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -54,7 +54,6 @@
      SUBDIR += hevea
      SUBDIR += hgrep
      SUBDIR += highlight
-     SUBDIR += html-xml-utils
      SUBDIR += hs-HaXml
      SUBDIR += hs-attoparsec
      SUBDIR += hs-attoparsec-enumerator
@@ -73,6 +72,7 @@
      SUBDIR += hs-xml-types
      SUBDIR += hs-xmlhtml
      SUBDIR += html
+     SUBDIR += html-xml-utils
      SUBDIR += hunspell
      SUBDIR += hyperestraier
      SUBDIR += icu4c
@@ -215,7 +215,6 @@
      SUBDIR += p5-Template-Provider-Encoding
      SUBDIR += p5-Template-Timer
      SUBDIR += p5-Template-Tiny
-     SUBDIR += p5-Text-vCard
      SUBDIR += p5-Text-ASCIIMathML
      SUBDIR += p5-Text-Affixes
      SUBDIR += p5-Text-Aligner
@@ -250,6 +249,7 @@
      SUBDIR += p5-Text-WikiFormat
      SUBDIR += p5-Text-WordDiff
      SUBDIR += p5-Text-Wrapper
+     SUBDIR += p5-Text-vCard
      SUBDIR += p5-WML-Card
      SUBDIR += p5-XML-AutoWriter
      SUBDIR += p5-XML-Checker
