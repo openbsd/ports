@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/30 07:21:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/06/10 19:47:04 bcallah Exp $
 
-V =		2.3.0
+V =		2.4.0
 COMMENT =	Qt5 Telegram messaging service client
 DISTNAME =	cutegram-src-${V}
 PKGNAME =	cutegram-${V}
 CATEGORIES =	net x11
-REVISION =	0
 
 HOMEPAGE =	http://aseman.co/en/products/cutegram/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -13,9 +12,9 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL Qt5Core Qt5Gui Qt5Multimedia Qt5Network Qt5Qml Qt5Quick
-WANTLIB += Qt5Sql Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
-WANTLIB += c crypto m pthread qtelegram-ae ssl z
+WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network
+WANTLIB += Qt5Qml Qt5Quick Qt5Sql Qt5WebKit Qt5WebKitWidgets Qt5Widgets
+WANTLIB += Qt5Xml c crypto m pthread qtelegram-ae ssl z
 
 MASTER_SITES =	http://aseman.co/downloads/cutegram/2/
 
@@ -29,10 +28,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 NO_TEST =	Yes
 
-WRKDIST =	${WRKDIR}/cutegram-${V}-src
-
 do-configure:
-	${SUBST_CMD} ${WRKSRC}/Cutegram/Cutegram.pro
 	cd ${WRKSRC} && qmake-qt5 PREFIX="${DESTDIR}${PREFIX}"
 
 post-install:

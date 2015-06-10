@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/25 22:12:01 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/10 19:47:04 bcallah Exp $
 @bin bin/cutegram
 share/applications/Cutegram.desktop
 share/cutegram/
@@ -886,19 +886,22 @@ share/cutegram/files/translations/
 share/cutegram/files/translations/land-el.qm
 share/cutegram/files/translations/lang-ast.qm
 share/cutegram/files/translations/lang-de.qm
+share/cutegram/files/translations/lang-el.qm
 share/cutegram/files/translations/lang-en.qm
 share/cutegram/files/translations/lang-en_GB.qm
 share/cutegram/files/translations/lang-es.qm
 share/cutegram/files/translations/lang-et.qm
-share/cutegram/files/translations/lang-fa.qm
+share/cutegram/files/translations/lang-fa_IR.qm
 share/cutegram/files/translations/lang-fr_FR.qm
 share/cutegram/files/translations/lang-it_IT.qm
+share/cutegram/files/translations/lang-ku_IQ.qm
 share/cutegram/files/translations/lang-nl_NL.qm
 share/cutegram/files/translations/lang-pt_BR.qm
 share/cutegram/files/translations/lang-pt_PT.qm
+share/cutegram/files/translations/lang-ru.qm
 share/cutegram/files/translations/lang-sr.qm
+share/cutegram/files/translations/lang-sv.qm
 share/cutegram/files/translations/lang-zh.qm
-share/cutegram/files/translations/lang-zh_CN.qm
 share/cutegram/files/translations/lang-zh_TW.qm
 share/cutegram/icons/
 share/cutegram/icons/cutegram.png
