@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/24 09:20:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/10 13:37:14 jasper Exp $
 libexec/mcollective/mcollective/agent/package.ddl
 libexec/mcollective/mcollective/agent/package.rb
 libexec/mcollective/mcollective/application/package.rb
@@ -7,3 +7,5 @@ libexec/mcollective/mcollective/util/package/
 libexec/mcollective/mcollective/util/package/base.rb
 libexec/mcollective/mcollective/util/package/packagehelpers.rb
 libexec/mcollective/mcollective/util/package/puppetpackage.rb
+libexec/mcollective/mcollective/util/package/yumHelper.py
+libexec/mcollective/mcollective/util/package/yumpackage.rb
