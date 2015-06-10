@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/20 09:11:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/06/10 22:07:15 sthen Exp $
 
 # XXX: Bump REVISION of the following ports when updating as the _cffi__ hash
-# changes: devel/libgit2/py-git2
+# changes: devel/libgit2/py-git2, security/py-cryptography (py2/py3)
 
 COMMENT=		Foreign Function Interface for Python calling C code
 
