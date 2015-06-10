@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.449 2015/06/08 10:00:59 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.450 2015/06/10 19:52:47 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -54,6 +54,7 @@
      SUBDIR += hevea
      SUBDIR += hgrep
      SUBDIR += highlight
+     SUBDIR += html-xml-utils
      SUBDIR += hs-HaXml
      SUBDIR += hs-attoparsec
      SUBDIR += hs-attoparsec-enumerator
@@ -72,7 +73,6 @@
      SUBDIR += hs-xml-types
      SUBDIR += hs-xmlhtml
      SUBDIR += html
-     SUBDIR += html-xml-utils
      SUBDIR += hunspell
      SUBDIR += hyperestraier
      SUBDIR += icu4c
@@ -107,6 +107,7 @@
      SUBDIR += lq-sp
      SUBDIR += luaexpat
      SUBDIR += luasoldout
+     SUBDIR += luasoldout,lua52
      SUBDIR += makefaq
      SUBDIR += markdown
      SUBDIR += meld
@@ -214,6 +215,7 @@
      SUBDIR += p5-Template-Provider-Encoding
      SUBDIR += p5-Template-Timer
      SUBDIR += p5-Template-Tiny
+     SUBDIR += p5-Text-vCard
      SUBDIR += p5-Text-ASCIIMathML
      SUBDIR += p5-Text-Affixes
      SUBDIR += p5-Text-Aligner
@@ -248,7 +250,6 @@
      SUBDIR += p5-Text-WikiFormat
      SUBDIR += p5-Text-WordDiff
      SUBDIR += p5-Text-Wrapper
-     SUBDIR += p5-Text-vCard
      SUBDIR += p5-WML-Card
      SUBDIR += p5-XML-AutoWriter
      SUBDIR += p5-XML-Checker
@@ -309,11 +310,11 @@
      SUBDIR += pilot_makedoc
      SUBDIR += pinfo
      SUBDIR += pod2mdoc
-     SUBDIR += podofo
      SUBDIR += py-Chart
      SUBDIR += py-HappyDoc
      SUBDIR += py-ICU
      SUBDIR += py-MarkupSafe
+     SUBDIR += py-MarkupSafe,python3
      SUBDIR += py-chardet
      SUBDIR += py-cssselect
      SUBDIR += py-cssutils
@@ -324,6 +325,7 @@
      SUBDIR += py-epydoc
      SUBDIR += py-feedparser
      SUBDIR += py-iso8601
+     SUBDIR += py-iso8601,python3
      SUBDIR += py-jaxml
      SUBDIR += py-jellyfish
      SUBDIR += py-lxml
@@ -333,7 +335,9 @@
      SUBDIR += py-polib
      SUBDIR += py-prettytable
      SUBDIR += py-pygments
+     SUBDIR += py-pygments,python3
      SUBDIR += py-rdflib
+     SUBDIR += py-rdflib,python3
      SUBDIR += py-rtf
      SUBDIR += py-sphinx
      SUBDIR += py-sphinx-intl
@@ -353,26 +357,42 @@
      SUBDIR += ruby-ascii85
      SUBDIR += ruby-builder
      SUBDIR += ruby-classifier
-     SUBDIR += ruby-fast-stemmer
-     SUBDIR += ruby-fast_xs
+     SUBDIR += ruby-fast-stemmer,ruby20
+     SUBDIR += ruby-fast-stemmer,ruby21
+     SUBDIR += ruby-fast-stemmer,ruby22
+     SUBDIR += ruby-fast_xs,ruby20
+     SUBDIR += ruby-fast_xs,ruby21
+     SUBDIR += ruby-fast_xs,ruby22
      SUBDIR += ruby-gyoku
      SUBDIR += ruby-haml
-     SUBDIR += ruby-hpricot
+     SUBDIR += ruby-hpricot,ruby20
+     SUBDIR += ruby-hpricot,ruby21
+     SUBDIR += ruby-hpricot,ruby22
      SUBDIR += ruby-htmlentities
-     SUBDIR += ruby-hyperestraier
+     SUBDIR += ruby-hyperestraier,ruby20
+     SUBDIR += ruby-hyperestraier,ruby21
+     SUBDIR += ruby-hyperestraier,ruby22
      SUBDIR += ruby-icalendar
      SUBDIR += ruby-kramdown
      SUBDIR += ruby-liquid
      SUBDIR += ruby-markaby
      SUBDIR += ruby-maruku
      SUBDIR += ruby-mustache
-     SUBDIR += ruby-nokogiri
+     SUBDIR += ruby-nokogiri,ruby20
+     SUBDIR += ruby-nokogiri,ruby21
+     SUBDIR += ruby-nokogiri,ruby22
      SUBDIR += ruby-nori
      SUBDIR += ruby-pdf-reader
      SUBDIR += ruby-pygments.rb
-     SUBDIR += ruby-rdiscount
-     SUBDIR += ruby-redcarpet
-     SUBDIR += ruby-redcloth
+     SUBDIR += ruby-rdiscount,ruby20
+     SUBDIR += ruby-rdiscount,ruby21
+     SUBDIR += ruby-rdiscount,ruby22
+     SUBDIR += ruby-redcarpet,ruby20
+     SUBDIR += ruby-redcarpet,ruby21
+     SUBDIR += ruby-redcarpet,ruby22
+     SUBDIR += ruby-redcloth,ruby20
+     SUBDIR += ruby-redcloth,ruby21
+     SUBDIR += ruby-redcloth,ruby22
      SUBDIR += ruby-rexical
      SUBDIR += ruby-ronn
      SUBDIR += ruby-rss
@@ -387,6 +407,7 @@
      SUBDIR += source-highlight
      SUBDIR += sp
      SUBDIR += sphinx
+     SUBDIR += sphinx,pgsql
      SUBDIR += spiff
      SUBDIR += stringtemplate
      SUBDIR += svndumptool
@@ -403,6 +424,7 @@
      SUBDIR += uncrustify
      SUBDIR += unrtf
      SUBDIR += urlview
+     SUBDIR += urlview,slang
      SUBDIR += validate
      SUBDIR += vgrind
      SUBDIR += vislcg3
