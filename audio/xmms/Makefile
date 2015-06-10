@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2014/10/16 22:53:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2015/06/10 21:53:49 sthen Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -13,13 +13,13 @@ SHARED_ONLY=		Yes
 VERSION=		1.2.11
 DISTNAME=		xmms-${VERSION}
 PKGNAME-main=		xmms-${VERSION}
-REVISION-main=		13
+REVISION-main=		14
 PKGNAME-vorbis=		xmms-vorbis-${VERSION}
-REVISION-vorbis=	6
+REVISION-vorbis=	7
 PKGNAME-mikmod=		xmms-mikmod-${VERSION}
-REVISION-mikmod=	8
+REVISION-mikmod=	9
 PKGNAME-mp3=		xmms-mp3-${VERSION}
-REVISION-mp3=		9
+REVISION-mp3=		10
 SHARED_LIBS=		xmms	4.2
 CATEGORIES=		audio
 HOMEPAGE=		http://www.xmms.org
@@ -27,8 +27,8 @@ HOMEPAGE=		http://www.xmms.org
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		X11 Xext Xi glib gmodule m pthread xcb \
-			gtk>=1.2 gdk>=1.2 gthread>=1.2
+WANTLIB=		X11 Xau Xdmcp Xext Xi glib gmodule m pthread pthread-stubs \
+			xcb gtk>=1.2 gdk>=1.2 gthread>=1.2
 
 V=			1.2.x
 MASTER_SITES=		${HOMEPAGE}/files/$V/ \
@@ -36,8 +36,8 @@ MASTER_SITES=		${HOMEPAGE}/files/$V/ \
 
 MULTI_PACKAGES=		-main -vorbis -mikmod -mp3
 
-WANTLIB-main=		${WANTLIB} GL ICE c Xxf86vm SM sndio stdc++ \
-			Xdamage Xfixes drm
+WANTLIB-main=		${WANTLIB} GL ICE c Xxf86vm SM sndio stdc++ Xdamage \
+			Xfixes drm X11-xcb glapi xcb-dri2 xcb-glx
 
 MODULES=		devel/gettext
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} ${MODGNU_AUTOMAKE_DEPENDS}

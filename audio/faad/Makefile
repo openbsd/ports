@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2015/03/19 20:25:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.57 2015/06/10 21:53:49 sthen Exp $
 
 # gcc -iquote
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -11,7 +11,7 @@ DISTNAME=	faad2-${V}
 PKGNAME-main=	faad-${V}
 PKGNAME-xmms=	xmms-faad-${V}
 REVISION-main=	0
-REVISION-xmms=	1
+REVISION-xmms=	2
 CATEGORIES=    	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}
 EXTRACT_SUFX=	.tar.bz2
@@ -26,8 +26,8 @@ PERMIT_PACKAGE_CDROM=	Patents
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB-main=	c m
-WANTLIB-xmms=	X11 Xext Xi faad gdk glib gmodule gtk m mp4ff pthread \
-		xcb xmms>=3 ${MODGETTEXT_WANTLIB}
+WANTLIB-xmms=	X11 Xau Xdmcp Xext Xi faad gdk glib gmodule gtk m mp4ff \
+		pthread pthread-stubs xcb xmms>=3 ${MODGETTEXT_WANTLIB}
 
 MODULES=	devel/gettext
 # bootstrap checks for libtoolize
