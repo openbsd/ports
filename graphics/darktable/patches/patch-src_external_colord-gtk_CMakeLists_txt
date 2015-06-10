@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_external_colord-gtk_CMakeLists_txt,v 1.1 2015/06/10 22:27:29 sthen Exp $
+--- src/external/colord-gtk/CMakeLists.txt.orig	Wed Jun 10 23:09:07 2015
++++ src/external/colord-gtk/CMakeLists.txt	Wed Jun 10 23:09:24 2015
+@@ -6,6 +6,7 @@ set(COLORD_GTK_SOURCES
+ )
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+ add_definitions("-DCD_COMPILATION")
++include_directories(SYSTEM "/usr/X11R6/include")
+ 
+ add_library(colord-gtk STATIC ${COLORD_GTK_SOURCES})
+ target_link_libraries(colord-gtk)

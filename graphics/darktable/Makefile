@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2015/06/09 20:54:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2015/06/10 22:27:28 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
 V=		1.6.7
+REVISION=	0
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
@@ -21,12 +22,12 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GL GLU GraphicsMagick ICE Iex IlmImf IlmThread Imath
-WANTLIB += SDL SM X11 Xext Xrandr atk-1.0 c cairo curl exiv2 flickcurl
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gphoto2 gphoto2_port gthread-2.0 gtk-x11-2.0
-WANTLIB += jpeg json-glib-1.0 lcms2 lua5.2 m openjpeg pango-1.0
-WANTLIB += pangocairo-1.0 png pthread rsvg-2 secret-1 soup-2.4
-WANTLIB += sqlite3 tiff webp xml2 z
+WANTLIB += SDL SM X11 Xext Xrandr atk-1.0 c cairo colord colordprivate
+WANTLIB += curl exiv2 flickcurl gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gphoto2 gphoto2_port
+WANTLIB += gthread-2.0 gtk-x11-2.0 jpeg json-glib-1.0 lcms2 lua5.2
+WANTLIB += m openjpeg pango-1.0 pangocairo-1.0 png pthread rsvg-2
+WANTLIB += secret-1 soup-2.4 sqlite3 tiff webp xml2 z
 
 WANTLIB += lensfun # dlopen'd. this is "Extra" in check-lib-depends; that's ok,
 
@@ -49,6 +50,7 @@ LIB_DEPENDS=	devel/json-glib \
 		devel/libsoup \
 		devel/sdl \
 		graphics/GraphicsMagick \
+		graphics/colord \
 		graphics/exiv2>=0.22 \
 		graphics/lcms2 \
 		graphics/libgphoto2>=2.5.0 \
@@ -78,6 +80,10 @@ CFLAGS += -march=i686 -fomit-frame-pointer
 # ...and there's a hard requirement of SSE3
 CFLAGS+=	-msse3
 CXXFLAGS=	${CFLAGS}
+
+post-patch:
+	perl -pi -e 's,/usr/X11R6,${X11BASE},' \
+	    ${WRKSRC}/src/external/colord-gtk/CMakeLists.txt
 
 post-install:
 	cd ${PREFIX}/lib && ln -s darktable/libdarktable.so
