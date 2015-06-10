@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.67 2015/05/22 11:31:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2015/06/10 22:04:04 sthen Exp $
 
 BROKEN-alpha =	ICE hp5590.c:1141: error: unrecognizable insn
 
 COMMENT=	API for accessing scanners, backends
 
 DISTNAME=	sane-backends-1.0.24
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS +=  sane                 2.0      # unknown
 
@@ -18,8 +18,8 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += avahi-client avahi-common c crypto cups dbus-1 jpeg
-WANTLIB += m pthread ssl tiff usb usb-1.0 z
+WANTLIB += avahi-client avahi-common c cups dbus-1 ffi gmp gnutls hogweed
+WANTLIB += jpeg m nettle p11-kit pthread tasn1 tiff usb usb-1.0 z
 
 MASTER_SITES=	https://distfiles.bsdfrog.org/ \
 		ftp://ftp2.sane-project.org/pub/sane/${DISTNAME}/
