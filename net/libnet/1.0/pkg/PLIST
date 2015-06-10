@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/30 22:22:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/06/10 10:58:24 espie Exp $
 @option no-default-conflict
 @pkgpath net/libnet
 @conflict libnet-1.0->=1.0
 @conflict libnet-1.0->=1.0v0
+@conflict libnet-<1.1
 bin/libnet-config-1.0
 include/libnet-1.0/
 include/libnet-1.0/libnet/
