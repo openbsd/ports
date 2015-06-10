@@ -1,12 +1,88 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/03/15 16:13:53 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/06/10 13:26:43 jasper Exp $
 @bin bin/mtn
+bin/mtn-cleanup
+bin/mtnopt
 @info info/monotone.info
+@man man/man1/mtn-cleanup.1
+@man man/man1/mtn.1
+@man man/man1/mtnopt.1
 share/doc/monotone/
-share/doc/monotone/monotone.html
+share/doc/monotone/contrib/
+share/doc/monotone/contrib/Attic/
+share/doc/monotone/contrib/Attic/monotone-nav.el
+share/doc/monotone/contrib/Attic/recreate-manifest-tables.sh
+share/doc/monotone/contrib/ChangeLog.sh
+share/doc/monotone/contrib/Monotone.pm
+share/doc/monotone/contrib/README
+share/doc/monotone/contrib/README.missing
+share/doc/monotone/contrib/basicio.vim
+share/doc/monotone/contrib/bisect.sh
+share/doc/monotone/contrib/ciabot_monotone.py
+share/doc/monotone/contrib/color-logs.conf
+share/doc/monotone/contrib/color-logs.sh
+share/doc/monotone/contrib/colorize
+share/doc/monotone/contrib/colortone.pl
+share/doc/monotone/contrib/command/
+share/doc/monotone/contrib/command/README
+share/doc/monotone/contrib/command/base.lua
+share/doc/monotone/contrib/command/conflicts.lua
+share/doc/monotone/contrib/command/fuse.lua
+share/doc/monotone/contrib/command/init.lua
+share/doc/monotone/contrib/command/remote_export.lua
+share/doc/monotone/contrib/command/revision.lua
+share/doc/monotone/contrib/dtrace2calltree.py
+share/doc/monotone/contrib/edit_comment_from_changelog.lua
+share/doc/monotone/contrib/extra-commands.lua
+share/doc/monotone/contrib/get_stdio.pl
+share/doc/monotone/contrib/monoprof.sh
+share/doc/monotone/contrib/monotone-inotify.lua
+share/doc/monotone/contrib/monotone-log-of-pulled-revs-hook.lua
+share/doc/monotone/contrib/monotone-mirror-postaction-push.sh
+share/doc/monotone/contrib/monotone-mirror-postaction-update.sh
+share/doc/monotone/contrib/monotone-mirror.lua
+share/doc/monotone/contrib/monotone-mirror.sh
+share/doc/monotone/contrib/monotone-run-script-post-netsync.lua
+share/doc/monotone/contrib/monotone.zsh_completion
+share/doc/monotone/contrib/mtbrowse.sh
+share/doc/monotone/contrib/mtn-export-revisions.pl
+share/doc/monotone/contrib/mtncommit.vim
+share/doc/monotone/contrib/op2calltree.py
+share/doc/monotone/contrib/parse-accounting.pl
+share/doc/monotone/contrib/perf-test.sh
+share/doc/monotone/examples/
+share/doc/monotone/examples/000README.txt
+share/doc/monotone/examples/mirror.rc
+share/doc/monotone/examples/push.rc
+share/doc/monotone/examples/read-permissions
+share/doc/monotone/examples/server-setup/
+share/doc/monotone/examples/server-setup/README
+share/doc/monotone/examples/server-setup/monotone.init
+share/doc/monotone/examples/server-setup/monotone.run
+share/doc/monotone/examples/server-setup/serverrc
+share/doc/monotone/examples/user-setup/
+share/doc/monotone/examples/user-setup/README
+share/doc/monotone/examples/user-setup/monotonerc
+share/doc/monotone/examples/write-permissions
+share/examples/monotone/
+share/examples/monotone/bash_completion.d/
+@sample ${SYSCONFDIR}/bash_completion.d/
+share/examples/monotone/bash_completion.d/monotone.bash_completion
+@sample ${SYSCONFDIR}/bash_completion.d/monotone
 share/locale/de/LC_MESSAGES/monotone.mo
-share/locale/es/LC_MESSAGES/monotone.mo
 share/locale/fr/LC_MESSAGES/monotone.mo
 share/locale/it/LC_MESSAGES/monotone.mo
-share/locale/ja/LC_MESSAGES/monotone.mo
-share/locale/pt_BR/LC_MESSAGES/monotone.mo
+share/locale/pt/LC_MESSAGES/monotone.mo
 share/locale/sv/LC_MESSAGES/monotone.mo
+share/monotone/
+share/monotone/hooks/
+share/monotone/hooks/authorize_remote_automate.lua
+share/monotone/hooks/get_passphrase_from_file.lua
+share/monotone/hooks/monotone-buildbot.lua
+share/monotone/hooks/monotone-ciabot.lua
+share/monotone/hooks/monotone-cluster-push.lua
+share/monotone/hooks/monotone-cvs-ignore.lua
+share/monotone/hooks/monotone-mail-notify.lua
+share/monotone/scripts/
+share/monotone/scripts/monotone-ciabot.py
+share/monotone/scripts/monotone-mail-notify
+@unexec rm -f ${SYSCONFDIR}/bash_completion.d/monotone
