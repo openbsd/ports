@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2015/04/04 09:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2015/06/10 21:27:21 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -18,12 +18,12 @@ PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-htmlviewer=	claws-mail-htmlviewer-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
-REVISION-bogofilter=	1
-REVISION-gdata=		1
-REVISION-htmlviewer=	1
-REVISION-main=		1
-REVISION-pdfviewer=	1
-REVISION-spamassassin=	1
+REVISION-main=		2
+REVISION-bogofilter=	2
+REVISION-spamassassin=	2
+REVISION-htmlviewer=	2
+REVISION-pdfviewer=	2
+REVISION-gdata=		2
 
 CATEGORIES=		mail news
 
@@ -53,7 +53,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender archive atk-1.0 bz2 cairo crypto curl
 WANTLIB += etpan execinfo expat ffi fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz idn lzma
+WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz idn lzma lzo2
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs sasl2 ssl xcb xcb-render
 WANTLIB += xcb-shm z
