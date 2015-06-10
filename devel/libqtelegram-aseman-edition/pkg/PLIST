@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/25 22:08:15 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/10 19:44:20 bcallah Exp $
 include/libqtelegram-ae/
 include/libqtelegram-ae/core/
 include/libqtelegram-ae/core/abstractapi.h
@@ -33,6 +33,8 @@ include/libqtelegram-ae/secret/secretstate.h
 include/libqtelegram-ae/telegram.h
 include/libqtelegram-ae/types/
 include/libqtelegram-ae/types/accountdaysttl.h
+include/libqtelegram-ae/types/accountpassword.h
+include/libqtelegram-ae/types/affectedmessages.h
 include/libqtelegram-ae/types/audio.h
 include/libqtelegram-ae/types/chat.h
 include/libqtelegram-ae/types/chatfull.h
@@ -40,12 +42,12 @@ include/libqtelegram-ae/types/chatlocated.h
 include/libqtelegram-ae/types/chatparticipant.h
 include/libqtelegram-ae/types/chatparticipants.h
 include/libqtelegram-ae/types/chatphoto.h
+include/libqtelegram-ae/types/config.h
 include/libqtelegram-ae/types/contact.h
 include/libqtelegram-ae/types/contactblocked.h
 include/libqtelegram-ae/types/contactfound.h
-include/libqtelegram-ae/types/contactsforeignlink.h
+include/libqtelegram-ae/types/contactlink.h
 include/libqtelegram-ae/types/contactslink.h
-include/libqtelegram-ae/types/contactsmylink.h
 include/libqtelegram-ae/types/contactstatus.h
 include/libqtelegram-ae/types/dcoption.h
 include/libqtelegram-ae/types/decryptedmessage.h

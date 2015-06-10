@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/29 23:51:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/06/10 19:44:20 bcallah Exp $
 
-V =		3.3
+V =		4.1
 COMMENT =	Qt5 library for Telegram messaging service
 DISTNAME =	${GH_PROJECT}-${V}
 CATEGORIES =	devel
-REVISION =	0
 
-SHARED_LIBS +=  qtelegram-ae              0.0 # 1.0
+SHARED_LIBS +=  qtelegram-ae              1.0 # 2.0
 
 GH_ACCOUNT =	Aseman-Land
 GH_PROJECT =	libqtelegram-aseman-edition
@@ -17,7 +16,8 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3 only
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL Qt5Core Qt5Gui Qt5Network crypto m pthread ssl z
+WANTLIB += GL Qt5Core Qt5Gui Qt5Multimedia Qt5Network crypto m
+WANTLIB += pthread ssl z
 
 MODULES =	x11/qt5
 
