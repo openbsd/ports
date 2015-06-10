@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2013/10/11 23:50:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2015/06/10 11:05:02 jca Exp $
 
 COMMENT=		voice over misconfigured internet telephones
 
 DISTNAME=		vomit-0.2
-REVISION =		5
+REVISION=		6
 
 CATEGORIES=		security
 
 HOMEPAGE=		http://vomit.xtdnet.nl/
-
-MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
 # BSD-style
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2015/02/16 22:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2015/06/10 11:05:02 jca Exp $
 
 COMMENT=		control chroot and su access rights by application
 
 VERSION=		1.3
+REVISION=		0
 DISTNAME=		chrootuid${VERSION}
 PKGNAME=		chrootuid-${VERSION}
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.porcupine.org/
-
-MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
 # BSD-style
 PERMIT_PACKAGE_CDROM=	Yes

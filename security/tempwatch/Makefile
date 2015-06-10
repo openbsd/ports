@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2015/06/06 04:49:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.22 2015/06/10 11:05:02 jca Exp $
 
 COMMENT=		temporary file auditing tool
 
 PKGNAME=		tempwatch-1.0
-REVISION=		0
+REVISION=		1
 CATEGORIES=		security
-
-MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
 # public domain
 PERMIT_PACKAGE_CDROM=	Yes

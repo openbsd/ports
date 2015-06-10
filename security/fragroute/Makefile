@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2015/06/10 11:05:02 jca Exp $
 
 COMMENT=		intercept, modify, and rewrite egress traffic
 
 DISTNAME=		fragroute-1.2
-REVISION =		7
+REVISION =		8
 CATEGORIES=    		security net
 
 HOMEPAGE=		http://www.monkey.org/~dugsong/fragroute/
-
-MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

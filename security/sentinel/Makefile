@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2015/06/10 11:05:02 jca Exp $
 
 COMMENT=		remote promiscuous mode detection tool
 
 DISTNAME=		sentinel-1.0
-REVISION =		1
+REVISION =		2
 CATEGORIES=    		security net
 
 HOMEPAGE=		http://www.packetfactory.net/projects/sentinel/
-
-MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license

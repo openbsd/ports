@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2014/08/26 14:16:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2015/06/10 11:05:02 jca Exp $
 
 COMMENT=		ARP reply daemon
 
 DISTNAME=		arpd-0.2
-REVISION=		3
+REVISION=		4
 CATEGORIES=    		net
-
-MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
