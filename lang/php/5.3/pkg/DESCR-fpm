@@ -1,6 +1,0 @@
-PHP-FPM (FastCGI Process Manager) is an alternative PHP FastCGI
-implementation with some additional features useful for sites of
-any size, especially busier sites.
-
-PHP-FPM also handles running processes in a chroot jail and this
-is enabled in the example php-fpm.conf file; adjust this if needed.

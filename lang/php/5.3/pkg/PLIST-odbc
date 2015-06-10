@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-odbc,v 1.5 2012/01/29 14:53:21 espie Exp $
-@option no-default-conflict
-@conflict php-odbc->=5.3,<5.4
-@conflict php5-odbc->=5.2
-lib/php-${PV}/modules/odbc.so
-share/examples/php-${PV}/odbc.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/odbc.ini
