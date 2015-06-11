@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/21 14:27:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/06/11 08:23:10 benoit Exp $
 
-COMMENT=	base class for error handling
+COMMENT =	base class for error handling
 
-MODULES=	cpan
-DISTNAME=	Class-ErrorHandler-0.03
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Class-ErrorHandler-0.04
+CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
-
-CONFIGURE_STYLE=	modbuild
+PERMIT_PACKAGE_CDROM =	Yes
 
 .include <bsd.port.mk>
