@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:44:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/06/11 11:58:06 benoit Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/MockObject/
 ${P5SITE}/Test/MockObject.pm
 ${P5SITE}/Test/MockObject/Extends.pm
+${P5SITE}/Test/README.pod
 @man man/man3p/Test::MockObject.3p
 @man man/man3p/Test::MockObject::Extends.3p
+@man man/man3p/Test::README.3p

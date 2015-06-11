@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/23 12:45:21 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2015/06/11 11:58:06 benoit Exp $
 
-COMMENT= 	perl extension for emulating troublesome interfaces
+COMMENT = 	perl extension for emulating troublesome interfaces
 
-MODULES=	cpan
-DISTNAME =	Test-MockObject-1.20120301
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Test-MockObject-1.20150527
+CATEGORIES =	devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=		devel/p5-Universal-isa \
+RUN_DEPENDS =		devel/p5-Universal-isa \
 			devel/p5-Universal-can
 
-TEST_DEPENDS=	devel/p5-Test-Exception
+TEST_DEPENDS =		devel/p5-Test-Exception \
+			devel/p5-Test-Warn
 
 .include <bsd.port.mk>
