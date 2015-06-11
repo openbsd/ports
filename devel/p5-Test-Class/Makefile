@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2014/12/10 07:58:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2015/06/11 11:46:51 benoit Exp $
 
-COMMENT=	easily create test classes in an xUnit style
+COMMENT =	easily create test classes in an xUnit style
 
-MODULES=	cpan
-DISTNAME =	Test-Class-0.48
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Test-Class-0.50
+CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-CONFIGURE_STYLE=modbuild
-
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	devel/p5-Test-Exception \
 		devel/p5-MRO-Compat \
 		devel/p5-Module-Runtime \
