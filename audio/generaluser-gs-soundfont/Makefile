@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/28 13:32:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/06/11 15:00:00 sthen Exp $
 
 COMMENT=	GM and GS compatible SoundFont bank for MIDI
 
 V=		1.44
+REVISION=	0
 PKGNAME=	generaluser-gs-soundfont-$V
 DISTNAME=	GeneralUser_GS_$V-FluidSynth
 EXTRACT_SUFX=	.zip
@@ -31,8 +32,8 @@ post-extract:
 	cd ${WRKDIR}; ln -s GeneralUser*FluidSynth generaluser-gs
 
 do-install:
-	${INSTALL_DATA_DIR} ${INST} ${PREFIX}/share/doc/generaluser-gs
-	${INSTALL_DATA} ${WRKSRC}/GUTest.mid ${INST}/
+	${INSTALL_DATA_DIR} ${INST} ${PREFIX}/share/{doc,examples}/generaluser-gs
+	${INSTALL_DATA} ${WRKSRC}/GUTest.mid ${PREFIX}/share/examples/generaluser-gs/
 	${INSTALL_DATA} ${WRKSRC}/GeneralUser*.sf2 ${INST}/GeneralUser_GS.sf2
 	${INSTALL_DATA} ${WRKSRC}/*txt ${PREFIX}/share/doc/generaluser-gs
 	cd "${WRKSRC}/instrument lists"; \

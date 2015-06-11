@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/28 13:29:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/11 15:00:00 sthen Exp $
 share/doc/generaluser-gs/
 share/doc/generaluser-gs/CHANGELOG.txt
 share/doc/generaluser-gs/GU_Percussion_Map.pdf
 share/doc/generaluser-gs/LICENSE.txt
 share/doc/generaluser-gs/README.txt
 share/examples/generaluser-gs/
+share/examples/generaluser-gs/GUTest.mid
 share/generaluser-gs/
 share/generaluser-gs/GeneralUser_GS-Drumsets.ins
 share/generaluser-gs/GeneralUser_GS.ins
