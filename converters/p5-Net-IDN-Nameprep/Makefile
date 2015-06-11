@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 01:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2015/06/11 07:13:58 benoit Exp $
 
-COMMENT=	stringprep profile for Internationalized Domain Names
+COMMENT =	stringprep profile for Internationalized Domain Names
 
-DISTNAME=	Net-IDN-Nameprep-1.101
-CATEGORIES=	converters net
+DISTNAME =	Net-IDN-Nameprep-1.102
+CATEGORIES =	converters net
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES=		cpan
+MODULES =		cpan
 
-CONFIGURE_STYLE=	modbuild
+CONFIGURE_STYLE =	modinst
 
-RUN_DEPENDS=	converters/p5-Unicode-Stringprep
-TEST_DEPENDS=	devel/p5-Test-NoWarnings
+RUN_DEPENDS =		converters/p5-Unicode-Stringprep
+TEST_DEPENDS =		devel/p5-Test-NoWarnings
 
 .include <bsd.port.mk>
