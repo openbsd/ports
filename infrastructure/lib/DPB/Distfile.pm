@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.5 2015/05/16 12:23:05 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.6 2015/06/11 08:42:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -30,6 +30,18 @@ sub create
 {
 	my ($class, $file, $short, $site, $distinfo, $v, $repo) = @_;
 
+	my $o = bless {
+		name => $file,
+		short => $short,
+		path => $v,
+		repo => $repo
+	}, $class;
+	return $o->complete($file, $short, $site, $distinfo, $v, $repo);
+}
+
+sub complete
+{
+	my ($self, $file, $short, $site, $distinfo, $v, $repo) = @_;
 	my $sz = $distinfo->{size}{$file};
 	my $sha = $distinfo->{sha}{$file};
 	if (!defined $sz || !defined $sha) {
@@ -37,15 +49,10 @@ sub create
 		return;
 	}
 	$repo->known_file($sha, $file);
-	bless {
-		name => $file,
-		short => $short,
-		sz => $sz,
-		sha => $sha,
-		site => $site,
-		path => $v,
-		repo => $repo,
-	}, $class;
+	$self->{sz} = $sz;
+	$self->{sha} = $sha;
+	$self->{site} = $site;
+	return $self;
 }
 
 sub user
@@ -58,6 +65,11 @@ sub distdir
 {
 	my ($self, @rest) = @_;
 	return join('/', $self->{repo}->distdir, @rest);
+}
+
+sub path
+{
+	return shift->{path};
 }
 
 sub logger
@@ -88,7 +100,11 @@ sub new
 	if (!defined $url) {
 		$url = $file;
 	}
-	$cache->{$full} //= $class->create($full, $url, @r);
+	my $c = $cache->{$full} //= $class->create($full, $url, @r);
+	if (defined $c && !defined $c->{sha}) {
+		$c->complete($full, $url, @r);
+	}
+	return $c;
 }
 
 sub logname

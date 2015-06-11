@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.111 2015/06/08 11:06:08 espie Exp $
+# $OpenBSD: Engine.pm,v 1.112 2015/06/11 08:42:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -474,7 +474,7 @@ sub requeue_dist
 sub rescan
 {
 	my ($self, $v) = @_;
-	push(@{$self->{requeued}}, $v);
+	push(@{$self->{requeued}}, $v->path);
 }
 
 sub add_fatal

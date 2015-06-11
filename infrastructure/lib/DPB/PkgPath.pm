@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.49 2015/05/10 08:14:14 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.50 2015/06/11 08:42:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -33,6 +33,12 @@ sub init
 	my $self = shift;
 	# XXX
 	$self->{has} = 5;
+}
+
+sub path
+{
+	my $self = shift;
+	return $self;
 }
 
 sub clone_properties
