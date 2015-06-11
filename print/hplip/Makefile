@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2015/06/06 13:23:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2015/06/11 06:25:07 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.15.4
+V=			3.15.6
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
@@ -19,8 +19,6 @@ PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
-
-REVISION-main=		0
 
 SHARED_LIBS +=  hpmud                2.0      # 0.6
 SHARED_LIBS +=  hpipp                0.0      # 0.1
@@ -79,7 +77,7 @@ RUN_DEPENDS-common=	#empty
 ### -hpaio
 WANTLIB-hpaio += ${WANTLIB} ${cWANTLIB}
 WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 hpip hpmud
-WANTLIB-hpaio += jpeg netsnmp sane tiff usb usb-1.0 z
+WANTLIB-hpaio += jpeg netsnmp sane tiff usb usb-1.0 z hpipp
 WANTLIB-hpaio += ffi gmp gnutls hogweed nettle p11-kit tasn1
 
 LIB_DEPENDS-hpaio=	print/hplip,-common \
