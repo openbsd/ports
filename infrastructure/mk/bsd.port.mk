@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1296 2015/05/23 10:53:24 czarkoff Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1297 2015/06/11 09:26:01 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -827,6 +827,7 @@ _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 .for _s in ${BUILD_PACKAGES}
 PKGNAMES += ${FULLPKGNAME${_s}}
 PKGFILES += ${PKGFILE${_s}}
+PKGPATHS += ${FULLPKGPATH${_s}}
 .endfor
 
 STATIC_PLIST ?= Yes
