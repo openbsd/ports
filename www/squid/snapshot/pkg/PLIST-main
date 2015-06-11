@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2015/05/04 11:04:24 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2015/06/11 14:57:30 sthen Exp $
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/cache/*
@@ -16,7 +16,6 @@ libexec/squid/basic_pop3_auth
 @bin libexec/squid/basic_smb_lm_auth
 @bin libexec/squid/cachemgr.cgi
 libexec/squid/cert_valid.pl
-@bin libexec/squid/digest_edirectory_auth
 @bin libexec/squid/digest_file_auth
 @bin libexec/squid/diskd
 @bin libexec/squid/ext_file_userip_acl
