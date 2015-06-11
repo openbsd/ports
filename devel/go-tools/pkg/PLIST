@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/08 09:41:03 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/11 20:02:53 czarkoff Exp $
 @pkgpath devel/gocover
 @pkgpath textproc/godoc
 @bin bin/benchcmp
@@ -18,3 +18,4 @@
 @bin bin/stringer
 @bin ${MODGO_TOOLS}/cover
 @bin ${MODGO_TOOLS}/vet
+@rcscript ${RCDIR}/godoc
