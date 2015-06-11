@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:23 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/06/11 12:33:31 benoit Exp $
 
 COMMENT =	parse vFile formatted files into data structures
 
-DISTNAME =	Text-vFile-asData-0.07
+DISTNAME =	Text-vFile-asData-0.08
 
 CATEGORIES =	devel textproc
 
