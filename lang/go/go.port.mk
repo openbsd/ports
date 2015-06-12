@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.2 2015/06/08 09:17:04 czarkoff Exp $
+# $OpenBSD: go.port.mk,v 1.3 2015/06/12 05:20:48 czarkoff Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -21,13 +21,8 @@ MODGO_SUBDIR ?=		${WRKDIST}
 MODGO_TYPE ?=		bin
 MODGO_WORKSPACE ?=	${WRKDIR}/go
 MODGO_CMD ?=		unset GOPATH; export GOPATH="${MODGO_WORKSPACE}"; go
-MODGO_FLAGS +=		-a -x -work
 MODGO_BUILD_CMD =	${MODGO_CMD} install ${MODGO_FLAGS}
 MODGO_TEST_CMD =	${MODGO_CMD} test ${MODGO_FLAGS}
-
-.if ${MODGO_TYPE:L:Mlib}
-RUN_DEPENDS +=		${MODGO_RUN_DEPENDS}
-.endif
 
 .if defined(GH_ACCOUNT) && defined(GH_PROJECT)
 ALL_TARGET ?=		github.com/${GH_ACCOUNT}/${GH_PROJECT}
@@ -49,16 +44,19 @@ MODGO_BUILD_TARGET =	${MODGO_BUILD_CMD} ${ALL_TARGET} 2>&1 | sed -E \
 				-e '/operation not permitted/d' \
 				-e 's,\$$WORK,${WRKBUILD},g' | sh -v
 
+.if ${MODGO_TYPE:L:Mbin}
+MODGO_FLAGS ?=		-x -work
+MODGO_INSTALL_TARGET += cp ${MODGO_WORKSPACE}/bin/* ${PREFIX}/bin
+.endif
+
 # Go source files serve the purpose of libraries, so sources should be included
 # with library ports.
 .if ${MODGO_TYPE:L:Mlib}
+MODGO_FLAGS ?=		-a -x -work
 MODGO_INSTALL_TARGET =	${INSTALL_DATA_DIR} ${PREFIX}/go; \
 			cp -R ${MODGO_WORKSPACE}/pkg \
 			      ${MODGO_WORKSPACE}/src \
 					${PREFIX}/go;
-.endif
-.if ${MODGO_TYPE:L:Mbin}
-MODGO_INSTALL_TARGET += cp ${MODGO_WORKSPACE}/bin/* ${PREFIX}/bin
 .endif
 
 MODGO_TEST_TARGET =	${MODGO_TEST_CMD} ${TEST_TARGET}
