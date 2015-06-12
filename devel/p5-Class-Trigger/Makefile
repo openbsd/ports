@@ -1,17 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/11 23:48:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2015/06/12 20:56:57 benoit Exp $
 
-COMMENT=	add / call inheritable triggers
+COMMENT =	add / call inheritable triggers
 
-MODULES=	cpan
-DISTNAME=	Class-Trigger-0.11
-REVISION=	1
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Class-Trigger-0.14
+CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
-
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/p5-Class-Data-Inheritable \
-		devel/p5-IO-stringy
+PERMIT_PACKAGE_CDROM =	Yes
 
 .include <bsd.port.mk>
