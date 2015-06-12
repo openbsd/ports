@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/06/12 14:10:38 benoit Exp $
 
 COMMENT =	fine grained cloning support for Moose objects
 
 MODULES =	cpan
-DISTNAME =	MooseX-Clone-0.05
+DISTNAME =	MooseX-Clone-0.06
 CATEGORIES =	devel
 
 # Perl
