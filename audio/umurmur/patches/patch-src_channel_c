@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_channel_c,v 1.3 2014/01/17 10:18:42 dcoppa Exp $
---- src/channel.c.orig	Wed Jan  1 22:40:30 2014
-+++ src/channel.c	Fri Jan 17 11:15:54 2014
+$OpenBSD: patch-src_channel_c,v 1.4 2015/06/12 09:50:42 dcoppa Exp $
+--- src/channel.c.orig	Tue Apr  7 12:01:12 2015
++++ src/channel.c	Fri Jun 12 11:10:50 2015
 @@ -195,7 +195,7 @@ void Chan_init()
  
  	/* Channel links */
  	for (i = 0; ; i++) {
 -		channel_t *ch_src, *ch_dst, *ch_itr = NULL;
 +		channel_t *ch_src = NULL, *ch_dst = NULL, *ch_itr = NULL;
+ 		channellist_t *chl;
  		if (Conf_getNextChannelLink(&chlink, i) < 0) {
  			if (i == 0)
- 				Log_info("No channel links found in configuration file.");

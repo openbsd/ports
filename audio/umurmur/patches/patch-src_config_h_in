@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_config_h_in,v 1.1 2014/09/04 12:33:27 dcoppa Exp $
---- src/config.h.in.orig	Thu Sep  4 11:23:36 2014
-+++ src/config.h.in	Thu Sep  4 11:25:44 2014
-@@ -4,6 +4,6 @@
- #cmakedefine USE_POLARSSL
- #cmakedefine USE_POLARSSL_TESTCERT
- #cmakedefine USE_POLARSSL_HAVEGE
+$OpenBSD: patch-src_config_h_in,v 1.2 2015/06/12 09:50:42 dcoppa Exp $
+--- src/config.h.in.orig	Tue Apr  7 12:01:12 2015
++++ src/config.h.in	Fri Jun 12 11:11:45 2015
+@@ -8,6 +8,6 @@
+ 
+ #cmakedefine USE_SHAREDMEMORY_API
+ 
 -#define DEFAULT_CONFIG "${CMAKE_INSTALL_PREFIX}/etc/umurmur.conf"
 +#define DEFAULT_CONFIG "${SYSCONFDIR}/umurmur/umurmur.conf"
  

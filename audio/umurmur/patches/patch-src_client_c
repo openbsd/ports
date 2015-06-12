@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_client_c,v 1.6 2014/09/04 12:33:27 dcoppa Exp $
---- src/client.c.orig	Fri Aug  8 08:37:03 2014
-+++ src/client.c	Thu Sep  4 11:17:58 2014
+$OpenBSD: patch-src_client_c,v 1.7 2015/06/12 09:50:42 dcoppa Exp $
+--- src/client.c.orig	Tue Apr  7 12:01:12 2015
++++ src/client.c	Fri Jun 12 11:05:38 2015
 @@ -28,6 +28,7 @@
     NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_client_c,v 1.6 2014/09/04 12:33:27 dcoppa Exp $
  	int users = 0, opus = 0;
  	message_t *sendmsg;
  	struct dlist codec_list, *itr, *save;
-@@ -681,7 +682,7 @@ void Client_textmessage(client_t *client, char *text)
+@@ -686,7 +687,7 @@ void Client_textmessage(client_t *client, char *text)
  	sendmsg->payload.textMessage->message = message;
  	sendmsg->payload.textMessage->n_tree_id = 1;
  	sendmsg->payload.textMessage->tree_id = tree_id;

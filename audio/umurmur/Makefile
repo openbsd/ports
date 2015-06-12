@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/05 13:31:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2015/06/12 09:50:42 dcoppa Exp $
 
 COMMENT =		minimalistic Mumble server
 
-V =			0.2.15
+V =			0.2.16
 GH_ACCOUNT =		fatbob313
 GH_PROJECT =		umurmur
 GH_TAGNAME =		${V}
@@ -33,9 +33,9 @@ pre-configure:
 		${WRKSRC}/umurmur.conf.example
 
 post-install:
-	${INSTALL_MAN} ${FILESDIR}/umurmurd.1 \
-		${PREFIX}/man/man1/
-	${SUBST_MAN} ${FILESDIR}/umurmur.conf.1 \
-			${PREFIX}/man/man1/umurmur.conf.1
+	${INSTALL_MAN} ${FILESDIR}/umurmurd.8 \
+		${PREFIX}/man/man8/
+	${SUBST_MAN} ${FILESDIR}/umurmur.conf.5 \
+		${PREFIX}/man/man5/umurmur.conf.5
 
 .include <bsd.port.mk>

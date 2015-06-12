@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_server_c,v 1.1 2014/09/04 12:33:27 dcoppa Exp $
---- src/server.c.orig	Thu Sep  4 13:41:55 2014
-+++ src/server.c	Thu Sep  4 13:42:29 2014
-@@ -102,8 +102,8 @@ struct sockaddr_storage** Server_setupAddressesAndPort
+$OpenBSD: patch-src_server_c,v 1.2 2015/06/12 09:50:42 dcoppa Exp $
+--- src/server.c.orig	Tue Apr  7 12:01:12 2015
++++ src/server.c	Fri Jun 12 11:05:38 2015
+@@ -103,8 +103,8 @@ struct sockaddr_storage** Server_setupAddressesAndPort
  	v6address->ss_family = AF_INET6;
  
  #if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__APPLE__)
