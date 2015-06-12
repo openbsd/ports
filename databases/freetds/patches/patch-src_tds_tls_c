@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_tds_tls_c,v 1.1 2015/06/12 07:04:29 ajacoutot Exp $
+--- src/tds/tls.c.orig	Mon Jun  8 19:48:00 2015
++++ src/tds/tls.c	Wed Jun 10 14:54:14 2015
+@@ -46,6 +46,10 @@
+ #include <sys/stat.h>
+ #endif /* HAVE_SYS_STAT_H */
+ 
++#if defined(__OpenBSD__)
++#include <sys/socket.h> /* AF_INET6 */
++#endif
++
+ #include <freetds/tds.h>
+ #include <freetds/string.h>
+ #include <freetds/tls.h>
