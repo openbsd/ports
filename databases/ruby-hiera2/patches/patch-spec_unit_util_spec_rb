@@ -1,0 +1,29 @@
+$OpenBSD: patch-spec_unit_util_spec_rb,v 1.1.1.1 2015/06/12 17:59:43 jasper Exp $
+
+Make this work with rspec3.
+
+--- spec/unit/util_spec.rb.orig	Fri Oct 17 19:57:43 2014
++++ spec/unit/util_spec.rb	Fri Oct 17 19:58:40 2014
+@@ -4,19 +4,19 @@ describe Hiera::Util do
+   describe 'Hiera::Util.posix?' do
+     it 'should return true on posix systems' do
+       Etc.expects(:getpwuid).with(0).returns(true)
+-      Hiera::Util.posix?.should be_true
++      Hiera::Util.posix?.should be true
+     end
+ 
+     it 'should return false on non posix systems' do
+       Etc.expects(:getpwuid).with(0).returns(nil)
+-      Hiera::Util.posix?.should be_false
++      Hiera::Util.posix?.should be_falsy
+     end
+   end
+ 
+   describe 'Hiera::Util.microsoft_windows?' do
+     it 'should return false on posix systems' do
+       Hiera::Util.expects(:file_alt_separator).returns(nil)
+-      Hiera::Util.microsoft_windows?.should be_false
++      Hiera::Util.microsoft_windows?.should be_falsy
+     end
+   end
+ 

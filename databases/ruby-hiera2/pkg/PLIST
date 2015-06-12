@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/12 17:59:43 jasper Exp $
+@conflict ruby21-hiera-<2.0.0
+${GEM_BIN}/hiera${GEM_BIN_SUFFIX}
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/COPYING
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/bin/
+${GEM_LIB}/gems/${DISTNAME}/bin/hiera
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/backend/
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/backend.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/backend/json_backend.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/backend/yaml_backend.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/config.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/console_logger.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/error.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/fallback_logger.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/filecache.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/interpolate.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/noop_logger.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/puppet_logger.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/recursive_guard.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/util.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hiera/version.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/backend/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/backend/json_backend_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/backend/yaml_backend_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/backend_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/config_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/console_logger_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fallback_logger_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/filecache_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/hiera_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet_logger_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/util_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/version_spec.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
+${MODRUBY_RELEXAMPLEDIR}-hiera/
+@sample ${SYSCONFDIR}/puppetlabs/code/
+${MODRUBY_RELEXAMPLEDIR}-hiera/hiera.yaml
+@sample ${SYSCONFDIR}/puppetlabs/code/hiera.yaml
+@sample ${SYSCONFDIR}/puppetlabs/code/hieradata/

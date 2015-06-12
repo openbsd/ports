@@ -1,0 +1,17 @@
+# $OpenBSD: hiera.yaml,v 1.1.1.1 2015/06/12 17:59:43 jasper Exp $
+
+---
+:backends:
+  - yaml
+:hierarchy:
+  - defaults
+  - '%{clientcert}'
+  - '%{environment}'
+  - global
+
+:yaml:
+# datadir is empty here, so hiera uses its defaults:
+# - /etc/puppetlabs/code/hieradata/ on *nix
+# - %CommonAppData%\PuppetLabs\code\hieradata on Windows
+# When specifying a datadir, make sure the directory exists.
+  :datadir:
