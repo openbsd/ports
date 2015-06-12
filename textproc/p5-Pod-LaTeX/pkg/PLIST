@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/12 17:32:28 bluhm Exp $
+bin/pod2latex
+${P5SITE}/Pod/
+${P5SITE}/Pod/LaTeX.pm
+@man man/man1/pod2latex.1
+@man man/man3p/Pod::LaTeX.3p

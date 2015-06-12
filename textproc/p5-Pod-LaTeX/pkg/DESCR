@@ -1,0 +1,6 @@
+Pod::LaTeX is a module to convert documentation in the Pod format
+into Latex.  The pod2latex command uses this module for translation.
+pod2latex is a program to convert POD format documentation (perlpod)
+into latex.  It can process multiple input documents at a time and
+either generate a latex file per input document or a single combined
+output file.
