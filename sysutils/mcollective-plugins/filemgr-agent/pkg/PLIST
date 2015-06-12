@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/29 13:41:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/12 18:01:53 jasper Exp $
+libexec/mcollective/
+libexec/mcollective/mcollective/
+libexec/mcollective/mcollective/agent/
 libexec/mcollective/mcollective/agent/filemgr.ddl
 libexec/mcollective/mcollective/agent/filemgr.rb
+libexec/mcollective/mcollective/application/
 libexec/mcollective/mcollective/application/filemgr.rb

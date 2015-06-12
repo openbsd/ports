@@ -1,12 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/24 09:20:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/12 18:01:54 jasper Exp $
+libexec/mcollective/
+libexec/mcollective/mcollective/
+libexec/mcollective/mcollective/agent/
 libexec/mcollective/mcollective/agent/service.ddl
 libexec/mcollective/mcollective/agent/service.rb
+libexec/mcollective/mcollective/application/
 libexec/mcollective/mcollective/application/service.rb
+libexec/mcollective/mcollective/data/
 libexec/mcollective/mcollective/data/service_data.ddl
 libexec/mcollective/mcollective/data/service_data.rb
 libexec/mcollective/mcollective/util/
 libexec/mcollective/mcollective/util/service/
 libexec/mcollective/mcollective/util/service/base.rb
 libexec/mcollective/mcollective/util/service/puppetservice.rb
+libexec/mcollective/mcollective/validator/
 libexec/mcollective/mcollective/validator/service_name.ddl
 libexec/mcollective/mcollective/validator/service_name.rb

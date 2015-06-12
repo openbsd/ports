@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/24 17:08:12 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/12 18:01:53 jasper Exp $
+libexec/mcollective/
+libexec/mcollective/mcollective/
+libexec/mcollective/mcollective/agent/
 libexec/mcollective/mcollective/agent/nrpe.ddl
 libexec/mcollective/mcollective/agent/nrpe.rb
+libexec/mcollective/mcollective/aggregate/
 libexec/mcollective/mcollective/aggregate/nagios_states.rb
+libexec/mcollective/mcollective/application/
 libexec/mcollective/mcollective/application/nrpe.rb
+libexec/mcollective/mcollective/data/
 libexec/mcollective/mcollective/data/nrpe_data.ddl
 libexec/mcollective/mcollective/data/nrpe_data.rb
