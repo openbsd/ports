@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2014/12/18 07:49:58 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2015/06/12 21:35:01 benoit Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	act on upper scopes
 
 MODULES =	cpan
-DISTNAME =	Scope-Upper-0.25
+DISTNAME =	Scope-Upper-0.27
 CATEGORIES =	devel
 
 # Perl
