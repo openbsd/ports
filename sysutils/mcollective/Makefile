@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2015/03/18 19:14:53 landry Exp $
+# $OpenBSD: Makefile,v 1.30 2015/06/12 18:01:26 jasper Exp $
 
 BROKEN-alpha=	SIGABRT during make fake
 COMMENT=	framework for server orchestration/parallel job execution
 
-DISTNAME=	mcollective-2.7.0
+DISTNAME=	mcollective-2.8.2
 
 CATEGORIES=	sysutils
 
@@ -35,8 +35,9 @@ pre-configure:
 		${WRKSRC}/etc/client.cfg.dist \
 
 do-install:
-	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb \
-		--destdir=${DESTDIR} \
+	cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb \
+		--no-rdoc \
+		--destdir=${WRKINST} \
 		--plugindir=${TRUEPREFIX}/libexec/mcollective/
 	mv ${WRKINST}${SYSCONFDIR}/mcollective \
 		${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-mcollective/
