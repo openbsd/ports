@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2014/10/17 18:00:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2015/06/12 08:02:03 jasper Exp $
+
+PORTROACH=		limit:^1
 
 COMMENT=		simple pluggable hierarchical database
 
