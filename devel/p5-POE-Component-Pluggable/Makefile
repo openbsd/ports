@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/21 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/06/12 12:55:32 benoit Exp $
 
-COMMENT=		base class for creating plugin enabled POE Components
+COMMENT =		base class for creating plugin enabled POE Components
 
-DISTNAME=		POE-Component-Pluggable-1.24
-REVISION=		0
-CATEGORIES=		devel
+DISTNAME =		POE-Component-Pluggable-1.26
+CATEGORIES =		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES=		cpan
+MODULES =		cpan
 
-RUN_DEPENDS=		devel/p5-POE>=1.0002 \
+RUN_DEPENDS =		devel/p5-POE>=1.0002 \
 			devel/p5-Task-Weaken
 
-MODCPAN_EXAMPLES=	Yes
+MAKE_ENV +=		TEST_POD=Yes
+
+MODCPAN_EXAMPLES =	Yes
 
 .include <bsd.port.mk>
