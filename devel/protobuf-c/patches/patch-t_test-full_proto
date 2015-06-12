@@ -1,0 +1,11 @@
+$OpenBSD: patch-t_test-full_proto,v 1.1 2015/06/12 10:59:47 dcoppa Exp $
+--- t/test-full.proto.orig	Fri Jun 12 12:25:26 2015
++++ t/test-full.proto	Fri Jun 12 12:25:43 2015
+@@ -45,7 +45,6 @@ enum TestEnumDupValues {
+   VALUE_F = 1000;
+   VALUE_AA = 1000;
+   VALUE_BB = 1001;
+-  option allow_alias = true;
+ }
+ 
+ message TestFieldNo15 {			// should use 1 byte header

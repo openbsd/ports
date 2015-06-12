@@ -1,0 +1,19 @@
+$OpenBSD: patch-protobuf-c_protobuf-c_c,v 1.1 2015/06/12 10:59:47 dcoppa Exp $
+
+commit 060c071209638c2c342fad8338e25005b4bd920e
+Author: Ilya Lipnitskiy <ilya.lipnitskiy@gmail.com>
+Date:   Tue Nov 18 23:51:37 2014 -0800
+
+protobuf-c.c: Fix a bug when merging optional byte fields
+
+--- protobuf-c/protobuf-c.c.orig	Fri Sep 12 22:32:42 2014
++++ protobuf-c/protobuf-c.c	Fri Jun 12 12:34:06 2015
+@@ -2001,7 +2001,7 @@ merge_messages(ProtobufCMessage *earlier_msg,
+ 
+ 				need_to_merge =
+ 					(e_data != NULL &&
+-					 (d_bd != NULL &&
++					 (d_bd == NULL ||
+ 					  e_data != d_bd->data)) &&
+ 					(l_data == NULL ||
+ 					 (d_bd != NULL &&

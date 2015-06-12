@@ -1,0 +1,20 @@
+$OpenBSD: patch-protoc-c_c_service_cc,v 1.1 2015/06/12 10:59:47 dcoppa Exp $
+
+commit 812ecf9326f61d330feed6d1f3d34a01ed1e127b
+Author: Andrey Myznikov <andrey.myznikov@gmail.com>
+Date:   Wed Mar 11 01:51:48 2015 +0200
+
+Fix incorrect 'Short version of service name' generation for
+ProtobufCServiceDescriptor
+
+--- protoc-c/c_service.cc.orig	Fri Jun 12 12:36:13 2015
++++ protoc-c/c_service.cc	Fri Jun 12 12:36:51 2015
+@@ -224,6 +224,8 @@ void ServiceGenerator::GenerateServiceDescriptor(io::P
+   }
+   printer->Print(vars_, "};\n");
+ 
++  vars_["name"] = descriptor_->name();
++
+   printer->Print(vars_, "const ProtobufCServiceDescriptor $lcfullname$__descriptor =\n"
+                        "{\n"
+ 		       "  PROTOBUF_C__SERVICE_DESCRIPTOR_MAGIC,\n"

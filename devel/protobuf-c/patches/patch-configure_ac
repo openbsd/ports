@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2015/06/12 10:59:47 dcoppa Exp $
+--- configure.ac.orig	Fri Jun 12 12:24:50 2015
++++ configure.ac	Fri Jun 12 12:25:10 2015
+@@ -47,7 +47,7 @@ AC_ARG_ENABLE([protoc],
+   AS_HELP_STRING([--disable-protoc], [Disable building protoc_c (also disables tests)]))
+ if test "x$enable_protoc" != "xno"; then
+   AC_LANG_PUSH([C++])
+-  PKG_CHECK_MODULES([protobuf], [protobuf >= 2.5.0])
++  PKG_CHECK_MODULES([protobuf], [protobuf])
+ 
+   save_CPPFLAGS="$CPPFLAGS"
+   CPPFLAGS="$save_CPPFLAGS $protobuf_CFLAGS"

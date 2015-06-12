@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/04/05 13:31:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/06/12 10:59:46 dcoppa Exp $
 
 COMMENT =		c protocol buffers
 
-V =			1.0.1
+V =			1.0.2
 GH_ACCOUNT =		protobuf-c
 GH_PROJECT =		protobuf-c
 GH_TAGNAME =		v${V}
@@ -33,7 +33,7 @@ AUTOMAKE_VERSION =	1.11
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"                                     
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GMAKE =		Yes
 
