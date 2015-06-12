@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2015/03/27 08:43:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/06/12 09:43:12 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		low-latency voice chat client
 
-DISTNAME =		mumble-1.2.8
-REVISION =		1
+DISTNAME =		mumble-1.2.9
 
 CATEGORIES =		audio
 
