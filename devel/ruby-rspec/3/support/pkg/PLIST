@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/03/19 08:03:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/06/13 13:33:48 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/Changelog.md
@@ -16,6 +16,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/fuzzy_matcher.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/hunk_generator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/matcher_definition.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/method_signature_verifier.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/object_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/recursive_const_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/ruby_features.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/
@@ -23,9 +24,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/deprecation_helpers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/formatting_support.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/in_sub_process.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/prevent_load_time_warnings.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/library_wide_checks.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/shell_out.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/stderr_splitter.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/string_matcher.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/with_isolated_directory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/with_isolated_stderr.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/version.rb
