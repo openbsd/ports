@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/20 09:53:46 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2015/06/13 08:00:12 benoit Exp $
 
 COMMENT=		declarative syntax for Moose
 
-DISTNAME =		MooseX-Declare-0.40
+DISTNAME =		MooseX-Declare-0.42
 CATEGORIES=		devel
 
 # perl
@@ -10,8 +10,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		cpan
 
-RUN_DEPENDS=		devel/p5-List-MoreUtils \
-			devel/p5-MooseX-Method-Signatures>=0.37 \
+RUN_DEPENDS=		devel/p5-MooseX-Method-Signatures>=0.37 \
 			devel/p5-MooseX-Role-Parameterized \
 			devel/p5-MooseX-Types \
 			devel/p5-namespace-autoclean
