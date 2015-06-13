@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2015/06/13 08:30:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2015/06/13 08:31:46 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -73,10 +73,6 @@ CONFIGURE_ARGS=		--enable-system-sqlite \
 			--with-ldap \
 			--with-mysql="${LOCALBASE}" \
 			--with-postgres="${LOCALBASE}"
-
-#CONFIGURE_ENV=		LIBCRYPTO_CFLAGS="-I/usr/include/openssl" \
-#			LIBCRYPTO_LIBS="-lcrypto" \
-#			MYSQL_CONFIG="${LOCALBASE}/bin/mysql_config"
 
 # XXX sync with API_V:R in lang/vala
 CONFIGURE_ENV +=	VALA_API_VERSION=0.28
