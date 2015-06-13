@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2015/06/13 08:31:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2015/06/13 08:35:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -74,7 +74,7 @@ CONFIGURE_ARGS=		--enable-system-sqlite \
 			--with-mysql="${LOCALBASE}" \
 			--with-postgres="${LOCALBASE}"
 
-# XXX sync with API_V:R in lang/vala
+# XXX sync with API_V in lang/vala
 CONFIGURE_ENV +=	VALA_API_VERSION=0.28
 
 FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
