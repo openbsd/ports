@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.25 2014/04/01 13:21:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.26 2015/06/13 08:30:55 ajacoutot Exp $
 @conflict libgda-<5.1.2p4v2
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
@@ -32,7 +32,6 @@ include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-server-operation.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-tree-store.h
 include/libgda-${GDA_MAJOR}/libgda-ui/libgda-ui.h
 lib/girepository-1.0/Gdaui-${GDA_MAJOR}.typelib
-lib/libgda-${GDA_MAJOR}/plugins/
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-filesel-spec.xml
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-format-spec.xml
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-password.xml
@@ -40,10 +39,11 @@ lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-pict-spec.xml
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-pict-spec_string.xml
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-text-spec.xml
 lib/libgda-${GDA_MAJOR}/plugins/libgda-ui-plugins.so
-lib/libgda-ui-${GDA_MAJOR}.a
 lib/libgda-ui-${GDA_MAJOR}.la
 @lib lib/libgda-ui-${GDA_MAJOR}.so.${LIBgda-ui-5.0_VERSION}
 lib/pkgconfig/libgda-ui-${GDA_MAJOR}.pc
+share/appdata/
+share/appdata/gda-browser-${GDA_MAJOR}.appdata.xml
 share/applications/gda-browser-${GDA_MAJOR}.desktop
 share/applications/gda-control-center-${GDA_MAJOR}.desktop
 share/gir-1.0/Gdaui-${GDA_MAJOR}.gir
@@ -82,14 +82,17 @@ share/gtk-doc/html/gda-browser/gda-browser.devhelp2
 share/gtk-doc/html/gda-browser/home.png
 share/gtk-doc/html/gda-browser/index.html
 share/gtk-doc/html/gda-browser/index.sgml
+share/gtk-doc/html/gda-browser/left-insensitive.png
 share/gtk-doc/html/gda-browser/left.png
 share/gtk-doc/html/gda-browser/part_api.html
 share/gtk-doc/html/gda-browser/part_begin.html
 share/gtk-doc/html/gda-browser/part_index.html
 share/gtk-doc/html/gda-browser/perspectives.html
 share/gtk-doc/html/gda-browser/prog_struct.html
+share/gtk-doc/html/gda-browser/right-insensitive.png
 share/gtk-doc/html/gda-browser/right.png
 share/gtk-doc/html/gda-browser/style.css
+share/gtk-doc/html/gda-browser/up-insensitive.png
 share/gtk-doc/html/gda-browser/up.png
 share/gtk-doc/html/gda-browser/why.html
 share/gtk-doc/html/gda-browser/windows.html
@@ -677,6 +680,7 @@ share/libgda-${GDA_MAJOR}/ui/gdaui-entry-number.xml
 share/libgda-${GDA_MAJOR}/ui/gdaui-entry-string.xml
 share/pixmaps/
 share/pixmaps/gda-browser-${GDA_MAJOR}.png
+share/vala/vapi/libgdaui-${GDA_MAJOR}.vapi
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
