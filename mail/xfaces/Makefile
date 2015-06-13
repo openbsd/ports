@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/02/16 22:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2015/06/13 06:23:31 bentley Exp $
 
 COMMENT=	mail image display for X11
 
@@ -6,12 +6,9 @@ DISTNAME=	xfaces-3.3
 REVISION =	4
 CATEGORIES=	mail
 
-MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \
-		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
+MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/
 
-MASTER_SITES0=	ftp://ftp.enst.fr/distfiles/ \
-		ftp://ftp.ntnu.no/pub/OpenBSD/distfiles/ \
-		ftp://ftp.smr.ru/pub/0/FreeBSD/releases/distfiles/
+MASTER_SITES0=	ftp://ftp.smr.ru/pub/0/FreeBSD/releases/distfiles/
 
 DISTFILES=	${DISTNAME}.tar.Z xfaces-sounds.tar.gz:0
 
