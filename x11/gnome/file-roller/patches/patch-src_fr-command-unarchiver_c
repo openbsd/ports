@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_fr-command-unarchiver_c,v 1.3 2015/05/02 10:37:43 ajacoutot Exp $
+$OpenBSD: patch-src_fr-command-unarchiver_c,v 1.4 2015/06/14 08:29:40 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=748791
+From 05bba5254f119710473164f4f363ac6bb70d89e9 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sat, 2 May 2015 12:34:20 +0200
+Subject: OpenBSD needs _XOPEN_SOURCE_EXTENDED for strptime(3)
 
 --- src/fr-command-unarchiver.c.orig	Wed Aug 13 07:21:20 2014
 +++ src/fr-command-unarchiver.c	Sat May  2 12:32:14 2015
