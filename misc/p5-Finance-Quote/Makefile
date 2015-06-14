@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.22 2015/01/21 06:23:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.23 2015/06/14 08:05:49 benoit Exp $
 
 COMMENT=	module to obtain financial quotes from exchanges
 
 MODULES=	cpan
-DISTNAME=	Finance-Quote-1.35
+DISTNAME=	Finance-Quote-1.37
 CATEGORIES=	misc
-REVISION =	0
 
 HOMEPAGE=	http://finance-quote.sourceforge.net
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS=	converters/p5-JSON \
-		devel/p5-Date-Calc \
-		security/p5-Crypt-SSLeay \
+		devel/p5-DateTime \
+		www/p5-LWP-Protocol-https \
 		www/p5-HTML-TableExtract \
 		www/p5-HTML-Tree \
 		www/p5-libwww \
