@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/08/15 14:54:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2015/06/14 06:27:42 bentley Exp $
 
 COMMENT=	programmable MUD client, with macro support and more
 
@@ -15,8 +15,7 @@ MAINTAINER=	Markus Lude <markus.lude@gmx.de>
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m termcap z 
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tinyfugue/} \
-		ftp://ftp.demon.co.uk/pub/games/mud/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tinyfugue/}
 
 MASTER_SITES0=	http://inphobia.net/openbsd/patches/
 PATCHFILES=	tf-40s1-mccp-20020717.patch.gz:0
