@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.1 2011/11/18 08:27:34 rpointel Exp $
+$OpenBSD: patch-lib_Makefile_in,v 1.2 2015/06/14 07:45:08 benoit Exp $
 does not install xml files twice
---- lib/Makefile.in.orig	Mon Sep 12 22:52:32 2011
-+++ lib/Makefile.in	Tue Nov 15 00:44:01 2011
-@@ -1040,7 +1040,6 @@ info-am: $(INFO_DEPS)
+--- lib/Makefile.in.orig	Thu Apr  2 19:19:38 2015
++++ lib/Makefile.in	Sun Jun 14 09:37:36 2015
+@@ -1052,7 +1052,6 @@ info-am: $(INFO_DEPS)
  install-data-am: install-includeHEADERS install-info-am \
  	install-pkgdataDATA
  	@$(NORMAL_INSTALL)
