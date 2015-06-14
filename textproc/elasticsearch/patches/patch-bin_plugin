@@ -1,11 +1,12 @@
-$OpenBSD: patch-bin_plugin,v 1.1 2015/04/26 19:01:51 jasper Exp $
---- bin/plugin.orig	Mon Mar 23 15:32:48 2015
-+++ bin/plugin	Mon Apr 13 09:33:17 2015
-@@ -21,6 +21,7 @@ ES_HOME=`dirname "$SCRIPT"`/..
- # make ELASTICSEARCH_HOME absolute
- ES_HOME=`cd "$ES_HOME"; pwd`
+$OpenBSD: patch-bin_plugin,v 1.2 2015/06/14 09:16:59 jasper Exp $
+--- bin/plugin.orig	Thu Jun 11 14:48:06 2015
++++ bin/plugin	Thu Jun 11 14:49:34 2015
+@@ -59,6 +59,8 @@ if [ -n "$ES_ENV_FILE" ]; then
+   fi
+ fi
  
 +JAVA_HOME="$(${TRUEPREFIX}/bin/javaPathHelper -h elasticsearch)"
- 
++
  if [ -x "$JAVA_HOME/bin/java" ]; then
      JAVA=$JAVA_HOME/bin/java
+ else
