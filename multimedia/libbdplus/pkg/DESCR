@@ -1,0 +1,8 @@
+libbdplus is a research project to implement the BD+ System
+Specifications.
+
+This research project provides, through an open-source library, a way to
+understand how the BD+ works.
+
+NB: this project doesn't offer any key, configuration file or
+certificate that could be used to decode encrypted copyrighted material.

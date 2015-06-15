@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_examples_convtab_dump_c,v 1.1.1.1 2015/06/15 07:15:29 ajacoutot Exp $
+
+convtab_dump.c:32: error: 'index' redeclared as different kind of symbol
+
+--- src/examples/convtab_dump.c.orig	Mon Jun 15 00:37:26 2015
++++ src/examples/convtab_dump.c	Mon Jun 15 00:38:16 2015
+@@ -29,7 +29,7 @@
+ // raw table
+ #define MAX_TAB_SIZE 64*1024*1024
+ uint8_t tab[MAX_TAB_SIZE];
+-uint32_t index[0xffff];
++uint32_t bindex[0xffff];
+ 
+ static size_t _read_tab(const char *file)
+ {
+@@ -99,7 +99,7 @@ int main(int argc, char **argv)
+ 
+             // read index table
+             for (entry = 0; entry < numEntries; entry++) {
+-                index[entry] = FETCH4(&tab[offset]);
++                bindex[entry] = FETCH4(&tab[offset]);
+                 offset += 4;
+             }
+ 
+@@ -125,12 +125,12 @@ int main(int argc, char **argv)
+                 memcpy(patch1, &tab[ offset ], sizeof(patch1));
+                 offset += 5;
+ 
+-                uint64_t off0 = (( (uint64_t)index[entry] +
++                uint64_t off0 = (( (uint64_t)bindex[entry] +
+                                    (uint64_t)patch0_address_adjust) *
+                                  (uint64_t)0xC0 +
+                                  (uint64_t)patch0_buffer_offset);
+ 
+-                uint64_t off1 = (( (uint64_t)index[entry] +
++                uint64_t off1 = (( (uint64_t)bindex[entry] +
+                                    (uint64_t)patch0_address_adjust +
+                                    (uint64_t)patch1_address_adjust) *
+                                  (uint64_t)0xC0 +
