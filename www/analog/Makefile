@@ -1,26 +1,17 @@
-# $OpenBSD: Makefile,v 1.57 2014/12/11 12:43:50 otto Exp $
+# $OpenBSD: Makefile,v 1.58 2015/06/15 08:32:15 bentley Exp $
 
 COMMENT=	extremely fast program for analysing WWW logfiles
 
 DISTNAME=	analog-6.0
-REVISION=	3
+REVISION=	4
 CATEGORIES=	www
 
-MASTER_SITES=	http://www.analog.cx/ \
-		http://www.statslab.cam.ac.uk/~sret1/analog/ \
-		http://www.magma.ca/~brendanr/analog/ \
-		http://brendanr.simplenet.com/analog/ \
-		http://analog.gsp.com/ \
-		http://redmoon.reverse.net/analog/ \
-		http://www.rge.com/pub/infosystems/statistics/analog/ \
-		http://blip.cetlink.net/analog/ \
-		http://analog.technomancer.com/ \
-		http://analog.wizard.net/ \
-		ftp://ftp.netcasting.net/pub/packages/analog/
+MASTER_SITES=	http://analog.gsp.com/ \
+		http://redmoon.reverse.net/analog/analog-6.0.tar.gz
 
-HOMEPAGE=	http://www.analog.cx/
+HOMEPAGE=	http://analog.gsp.com/
 
-# GPL
+# GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m jpeg png z gd>=18 pcre pthread
