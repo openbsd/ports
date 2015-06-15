@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2015/04/28 07:31:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2015/06/15 07:16:11 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -25,6 +25,7 @@
      SUBDIR += kguitar
      SUBDIR += libaacs
      SUBDIR += libass
+     SUBDIR += libbdplus
      SUBDIR += libbluray
      SUBDIR += libdv
      SUBDIR += libdvdnav
