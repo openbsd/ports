@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2014/10/27 13:16:48 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.76 2015/06/15 07:02:52 bentley Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
@@ -14,9 +14,8 @@ WANTLIB += c crypto pthread ssl util z
 
 HOMEPAGE=	http://www.stunnel.org/
 
-# Origin server: https://www.stunnel.org/downloads/archive/5.x/
-# Doesn't currently work with ftp(1) ssl support.
-MASTER_SITES=	http://ftp.nluug.nl/pub/networking/stunnel/archive/5.x/ \
+MASTER_SITES=	https://www.stunnel.org/downloads/archive/5.x/ \
+		http://ftp.nluug.nl/pub/networking/stunnel/archive/5.x/ \
 		http://mirror.bit.nl/stunnel/archive/5.x/ \
 		ftp://ftp.stunnel.org/stunnel/archive/5.x/
 
