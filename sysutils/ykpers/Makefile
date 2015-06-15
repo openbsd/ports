@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2015/04/17 13:10:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2015/06/15 19:03:05 ajacoutot Exp $
 
 COMMENT=	library and tools to program YubiKeys
-BROKEN-hppa=	ykpers-json.c:42: error: redefinition of typedef 'json_bool'
-BROKEN-mips64=	ykpers-json.c:42: error: redefinition of typedef 'json_bool'
 
 DISTNAME=	ykpers-1.17.1
 
