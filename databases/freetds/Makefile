@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.65 2015/06/15 09:00:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2015/06/15 15:44:53 ajacoutot Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
-DISTNAME=	freetds-0.95.0
-REVISION=	0
+DISTNAME=	freetds-0.95.1
 
 SHARED_LIBS +=  ct                   6.0      # 4.0
 SHARED_LIBS +=  sybdb                8.0      # 5.0
