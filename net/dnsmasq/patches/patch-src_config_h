@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_config_h,v 1.16 2014/09/28 17:34:01 brad Exp $
---- src/config.h.orig	Tue Sep  9 16:46:07 2014
-+++ src/config.h	Tue Sep  9 18:49:26 2014
-@@ -36,8 +36,8 @@
+$OpenBSD: patch-src_config_h,v 1.17 2015/06/15 06:17:59 ajacoutot Exp $
+--- src/config.h.orig	Fri Jun 12 16:39:11 2015
++++ src/config.h	Sun Jun 14 20:48:50 2015
+@@ -39,8 +39,8 @@
  #define HOSTSFILE "/etc/hosts"
  #define ETHERSFILE "/etc/ethers"
  #define DEFLEASE 3600 /* default lease time, 1 hour */
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_config_h,v 1.16 2014/09/28 17:34:01 brad Exp $
  #define TFTP_MAX_CONNECTIONS 50 /* max simultaneous connections */
  #define LOG_MAX 5 /* log-queue length */
  #define RANDFILE "/dev/urandom"
-@@ -188,7 +188,7 @@ RESOLVFILE
+@@ -194,7 +194,7 @@ RESOLVFILE
  #   if defined(__FreeBSD__)
  #      define CONFFILE "/usr/local/etc/dnsmasq.conf"
  #   else
