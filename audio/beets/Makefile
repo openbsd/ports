@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2015/05/20 08:14:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/06/15 08:49:03 sthen Exp $
 
 COMMENT =	CLI tools to manage music collections
 
 MODPY_EGG_VERSION = 1.3.13
 DISTNAME =	beets-${MODPY_EGG_VERSION}
 CATEGORIES =	audio
+REVISION =	0
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -26,6 +27,7 @@ RUN_DEPENDS =	audio/py-discogs-client>=2.0.2 \
 		audio/py-mutagen \
 		devel/py-algorithm-munkres \
 		devel/py-enum34>=1.0.4 \
+		textproc/py-jellyfish \
 		textproc/py-unidecode \
 		textproc/py-yaml \
 		www/py-requests
