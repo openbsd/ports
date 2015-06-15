@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2015/05/28 10:17:25 pascal Exp $
+# $OpenBSD: Makefile,v 1.114 2015/06/15 19:04:21 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
 GNOME_VERSION=		3.16.0
-REVISION=		1
+REVISION=		2
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,10 +25,6 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 MODGNOME_TOOLS=		docbook
-
-# C11 typedef redefinition
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
 
 LIB_DEPENDS=		x11/gnome/gcr
 
