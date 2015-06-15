@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2015/05/22 06:40:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2015/06/15 14:39:39 ajacoutot Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
 DISTNAME=		gst-libav-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-libav-${V}
-REVISION=		0
+REVISION=		1
 
 # sync with graphics/ffmpeg
 PERMIT_PACKAGE_CDROM=	patents
@@ -35,6 +35,7 @@ libav_CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 			--arch=${GST_LIBAV_ARCH} \
 			--cc=${CC} \
 			--enable-gpl \
+			--enable-runtime-cpudetect \
 			--disable-altivec \
 			--disable-armv5te \
 			--disable-armv6 \
@@ -48,5 +49,8 @@ MAKE_ENV=		V=1
 
 # make sure bundled libav headers are chosen over the system FFmpeg ones
 CPPFLAGS +=		-I${WRKBUILD}/gst-libs/ext/libav
+
+pre-configure:
+	perl -pi -e 's,-O3,,g' ${WRKSRC}/gst-libs/ext/libav/configure
 
 .include <bsd.port.mk>
