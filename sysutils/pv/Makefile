@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/09/01 12:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/06/16 12:16:27 jca Exp $
 
 COMMENT =		monitor the progress of data through a pipeline
 
-DISTNAME =		pv-1.4.12
+DISTNAME =		pv-1.6.0
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://www.ivarch.com/programs/pv.shtml
