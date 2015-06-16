@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/01/30 14:30:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/06/16 14:45:04 jasper Exp $
 
 SHARED_ONLY=	Yes
 
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	chicken	3.0
 

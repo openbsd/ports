@@ -1,10 +1,13 @@
-$OpenBSD: patch-tests_data-structures-tests_scm,v 1.1 2015/01/30 14:30:30 jasper Exp $
+$OpenBSD: patch-tests_data-structures-tests_scm,v 1.2 2015/06/16 14:45:04 jasper Exp $
 
 Security fix for CVE-2014-9651
 http://lists.nongnu.org/archive/html/chicken-hackers/2014-12/msg00000.html
 
---- tests/data-structures-tests.scm.orig	Sat Jun  7 14:24:41 2014
-+++ tests/data-structures-tests.scm	Fri Jan 30 16:19:25 2015
+Security fix for CVE-2015-4556
+http://lists.nongnu.org/archive/html/chicken-hackers/2015-06/msg00037.html
+
+--- tests/data-structures-tests.scm.orig	Tue Jun 16 10:11:45 2015
++++ tests/data-structures-tests.scm	Tue Jun 16 10:11:37 2015
 @@ -1,6 +1,6 @@
  ;;;; data-structures-tests.scm
  
@@ -13,7 +16,7 @@ http://lists.nongnu.org/archive/html/chicken-hackers/2014-12/msg00000.html
  
  (define-syntax assert-error
    (syntax-rules ()
-@@ -42,6 +42,15 @@
+@@ -42,6 +42,26 @@
  (assert (> 0 (string-compare3-ci "foo\x00A" "foo\x00b")))
  (assert (< 0 (string-compare3-ci "foo\x00b" "foo\x00a")))
  (assert (< 0 (string-compare3-ci "foo\x00b" "foo\x00A")))
@@ -26,6 +29,17 @@ http://lists.nongnu.org/archive/html/chicken-hackers/2014-12/msg00000.html
 +(let* ((foo (object-evict (make-string 32 #\x)))
 +       (bar (object-evict "y")))
 +  (assert (not (substring-index "y" foo 30))))
++
++(assert (string=? "bde" (string-translate* "abcd"
++					   '(("a" . "b")
++					     ("b" . "")
++					     ("c" . "d")
++					     ("d" . "e")))))
++(assert (string=? "bc" (string-translate* "abc"
++					  '(("ab" . "b")
++					    ("bc" . "WRONG")))))
++(assert (string=? "x" (string-translate* "ab" '(("ab" . "x")))))
++(assert (string=? "xy" (string-translate* "xyz" '(("z" . "")))))
  
  ;; topological-sort
  
