@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.11 2015/04/20 13:57:29 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.12 2015/06/16 14:13:03 gonzalo Exp $
 
 COMMENT =		browse and download YouTube videos
 
-DISTNAME =		smtube-15.1.0
+DISTNAME =		smtube-15.5.17
 
 CATEGORIES =		multimedia x11
 
 MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 
-HOMEPAGE =		http://smplayer.sourceforge.net/
+HOMEPAGE =		http://smtube.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  c m pthread stdc++
-WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
-WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtXml
+WANTLIB += ICE QtGui QtNetwork QtScript QtWebKit SM X11 Xext Xi
+WANTLIB += Xinerama Xrender c fontconfig freetype m pthread stdc++
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=smplayer/}
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=smtube/}
 
 EXTRACT_SUFX =		.tar.bz2
 
