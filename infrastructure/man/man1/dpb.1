@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.106 2015/05/13 09:12:39 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.107 2015/06/16 17:04:47 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 13 2015 $
+.Dd $Mdocdate: June 16 2015 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -1184,6 +1184,14 @@ pkgpath to build / distfile to download.
 .It V
 pkgpath put back in the buildable queue, after job that was running in
 the same directory returned.
+.It X
+only happens when rescanning after an error.
+The engine temporarily locks paths that are incomplete (detained).
+These will be kept in a separate list for later examination until the
+end of the new scan.
+.It x
+only happens when rescanning after an error.
+Releases a path for building after the new scan is finished.
 .It Y
 affinity mismatch, but job will start on the wrong host anyways, as the queue
 contains no other buildable path.
