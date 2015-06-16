@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2014/11/01 11:06:55 jca Exp $
---- Makefile.in.orig	Sat Aug 16 12:01:00 2014
-+++ Makefile.in	Sat Aug 16 12:03:28 2014
+$OpenBSD: patch-Makefile_in,v 1.4 2015/06/16 12:14:43 jca Exp $
+--- Makefile.in.orig	Sat Jun 13 15:27:59 2015
++++ Makefile.in	Sat Jun 13 15:28:45 2015
 @@ -9,7 +9,7 @@ MANDIR=@mandir@
  LIBDIR=@libdir@
  INCDIR=@prefix@/include
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2014/11/01 11:06:55 jca Exp $
  SAMPLE_PGMS=mkd2html makepage
  @THEME@SAMPLE_PGMS+= theme
  MKDLIB=libmarkdown
-@@ -50,7 +50,8 @@ install.man:
+@@ -52,7 +52,8 @@ install.man:
  	@INSTALL_DIR@ $(DESTDIR)$(MANDIR)/man7
  	@INSTALL_DATA@ markdown.7 mkd-extensions.7 $(DESTDIR)$(MANDIR)/man7
  	@INSTALL_DIR@ $(DESTDIR)$(MANDIR)/man1
@@ -20,14 +20,14 @@ $OpenBSD: patch-Makefile_in,v 1.3 2014/11/01 11:06:55 jca Exp $
  
  install.everything: install install.man
  
-@@ -82,8 +83,8 @@ blocktags: mktags
+@@ -84,8 +85,8 @@ blocktags: mktags
  mkd2html:  mkd2html.o $(MKDLIB) mkdio.h
- 	$(CC) $(LFLAGS) -o mkd2html mkd2html.o -lmarkdown @LIBS@
+ 	$(CC) $(CFLAGS) $(LFLAGS) -o mkd2html mkd2html.o -lmarkdown @LIBS@
  
 -markdown: main.o pgm_options.o $(MKDLIB)
--	$(CC) $(LFLAGS) -o markdown main.o pgm_options.o -lmarkdown @LIBS@
+-	$(CC) $(CFLAGS) $(LFLAGS) -o markdown main.o pgm_options.o -lmarkdown @LIBS@
 +discount: main.o pgm_options.o $(MKDLIB)
-+	$(CC) $(LFLAGS) -o discount main.o pgm_options.o -lmarkdown @LIBS@
++	$(CC) $(CFLAGS) $(LFLAGS) -o discount main.o pgm_options.o -lmarkdown @LIBS@
  	
  makepage:  makepage.c pgm_options.o $(MKDLIB) mkdio.h
- 	$(CC) $(LFLAGS) -o makepage makepage.c pgm_options.o -lmarkdown @LIBS@
+ 	$(CC) $(CFLAGS) $(LFLAGS) -o makepage makepage.c pgm_options.o -lmarkdown @LIBS@
