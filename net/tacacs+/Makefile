@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2014/07/11 16:57:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/06/16 09:31:37 bentley Exp $
 
 COMMENT=	Cisco AAA protocol daemon
 
 DISTNAME=	tac_plus.F4.0.4.alpha
 PKGNAME=	tacacs+-4.0.4a
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net security
 
 HOMEPAGE=       http://www.gazi.edu.tr/tacacs/
-
-MAINTAINER=	Srebrenko Sehic <haver@insecure.dk>
 
 # BSD style, but without fee
 PERMIT_PACKAGE_CDROM=   may not sell
