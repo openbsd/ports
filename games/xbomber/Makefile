@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/06/16 07:20:20 bentley Exp $
 
 COMMENT=		colorful game where you blow other people/robots up
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_FTP=	No
 WANTLIB=		X11 c m pthread-stubs xcb
 
-MASTER_SITES=		ftp://ftp.billsgames.com/unix/x/xbomber/
+MASTER_SITES=		ftp://ftp.tuxpaint.org/unix/x/xbomber/
 
 NO_TEST=		Yes
 WRKDIST=		${WRKDIR}/xbomber
