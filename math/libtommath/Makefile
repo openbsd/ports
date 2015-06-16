@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/27 16:30:37 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2015/06/16 07:47:47 czarkoff Exp $
+
+PORTROACH =		skipv:semver
 
 COMMENT =		number theoretic multiple-precision integer library
 V =			0.42.0
