@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/24 06:28:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/06/16 09:09:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		graph based image processing framework (API version 0.3)
 
+V=			0.3.0
+DISTNAME=		gegl-${V}
+PKGNAME=		gegl03-${V}
+EXTRACT_SUFX=		.tar.bz2
+
+SHARED_LIBS +=  gegl-0.3             0.0      # 299.1
+
 API_VERSION=		0.3
 SUBST_VARS=		API_VERSION
-WRKDIST=		${WRKDIR}/gegl-0.3.0
-REVISION=		1
-
-# synced with Fedora
-DISTNAME=		gegl-0.3.0-c9bbc81
-EXTRACT_SUFX=		.tar.bz2
-PKGNAME=		gegl03-0.2.99
-
-SHARED_LIBS +=  gegl-0.3                  0.0 # 299.1
 
 CATEGORIES=		graphics devel
 
@@ -30,7 +28,7 @@ WANTLIB += jasper jpeg json-glib-1.0 lcms2 lzma m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += rsvg-2 xcb xcb-render xcb-shm xml2 z
 
-MASTER_SITES=		https://distfiles.bsdfrog.org/
+MASTER_SITES=		http://download.gimp.org/pub/gegl/${API_VERSION}/
 
 MODULES=		devel/gettext \
 			textproc/intltool \
