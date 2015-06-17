@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.289 2015/06/12 18:00:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.290 2015/06/17 10:07:09 jasper Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -145,6 +145,7 @@
      SUBDIR += pgadmin3
      SUBDIR += pgbadger
      SUBDIR += pgbouncer
+     SUBDIR += pgcluu
      SUBDIR += pgfouine
      SUBDIR += pgloader
      SUBDIR += pgpool
