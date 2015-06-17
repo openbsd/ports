@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/31 21:12:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/06/17 09:41:02 ajacoutot Exp $
 
 COMMENT=	daemon keeping track of UPnP devices up
 
-DISTNAME=	minissdpd-1.2
-REVISION=	2
+DISTNAME=	minissdpd-1.3
 
 WANTLIB += c
+
+USE_GMAKE=	Yes
+MAKE_FLAGS=	CC=${CC}
 
 FAKE_FLAGS=	SBININSTALLDIR=${WRKINST}${TRUEPREFIX}/sbin \
 		MANINSTALLDIR=${WRKINST}${TRUEPREFIX}/man
@@ -14,5 +16,6 @@ post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/minissdpd.1 \
 		${PREFIX}/man/man1/minissdpd.1
+	rm -r ${PREFIX}/etc
 
 .include <bsd.port.mk>
