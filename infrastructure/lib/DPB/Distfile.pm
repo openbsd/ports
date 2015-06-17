@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.6 2015/06/11 08:42:38 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.7 2015/06/17 07:30:17 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -30,13 +30,12 @@ sub create
 {
 	my ($class, $file, $short, $site, $distinfo, $v, $repo) = @_;
 
-	my $o = bless {
+	bless {
 		name => $file,
 		short => $short,
 		path => $v,
 		repo => $repo
 	}, $class;
-	return $o->complete($file, $short, $site, $distinfo, $v, $repo);
 }
 
 sub complete
@@ -44,15 +43,31 @@ sub complete
 	my ($self, $file, $short, $site, $distinfo, $v, $repo) = @_;
 	my $sz = $distinfo->{size}{$file};
 	my $sha = $distinfo->{sha}{$file};
+	my $error = 0;
 	if (!defined $sz || !defined $sha) {
 		$v->break("Incomplete info for $file");
 		return;
 	}
-	$repo->known_file($sha, $file);
-	$self->{sz} = $sz;
-	$self->{sha} = $sha;
-	$self->{site} = $site;
-	return $self;
+	if (defined $self->{sz}) {
+		if ($self->{sz} != $sz) {
+			$v->break("Inconsistent info for $file: $self->{sz} vs $sz");
+			$error = 1;
+		}
+		if (!$self->{sha}->equals($sha)) {
+			$v->break("Inconsistent info for $file ". 
+			    $self->{sha}->stringize. " vs ". $sha->stringize);
+			$error = 1;
+		}
+	}
+	if ($error) {
+		return;
+	} else {
+		$repo->known_file($sha, $file);
+		$self->{sz} = $sz;
+		$self->{sha} = $sha;
+		$self->{site} = $site;
+		return $self;
+	}
 }
 
 sub user
@@ -101,9 +116,7 @@ sub new
 		$url = $file;
 	}
 	my $c = $cache->{$full} //= $class->create($full, $url, @r);
-	if (defined $c && !defined $c->{sha}) {
-		$c->complete($full, $url, @r);
-	}
+	$c->complete($full, $url, @r);
 	return $c;
 }
 
@@ -382,7 +395,7 @@ sub requeue
 sub forget
 {
 	my $self = shift;
-	delete $self->{size};
+	delete $self->{sz};
 	delete $self->{sha};
 	delete $self->{okay};
 }
