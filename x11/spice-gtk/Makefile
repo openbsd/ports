@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2015/05/05 17:00:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/06/17 18:41:14 jasper Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
-DISTNAME=	spice-gtk-0.28
+DISTNAME=	spice-gtk-0.29
 CATEGORIES=	x11 net
-REVISION=	1
 
 SHARED_LIBS +=  spice-client-glib-2.0     2.0 # 13.0
 SHARED_LIBS +=  spice-client-gtk-3.0      1.2 # 4.0
