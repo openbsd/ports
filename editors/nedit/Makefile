@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2015/06/17 18:59:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.75 2015/06/17 19:00:12 jasper Exp $
 
 COMMENT=		X11/Motif GUI text editor
 
 DISTNAME=		nedit-5.5
 P_V=			0.5
-REVISION=		20
+REVISION=		21
 EPOCH=			0
 DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX} \
 			nedit_patterns-${P_V}.tgz:0
