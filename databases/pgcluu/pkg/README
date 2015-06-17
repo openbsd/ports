@@ -1,0 +1,31 @@
+$OpenBSD: README,v 1.1.1.1 2015/06/17 10:06:34 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+PostgreSQL Authentication
+=========================
+In order for pgcluu to authenticate to PostgreSQL when a password is
+required you need to create a `.pgpass` file in the home directory of
+the user running pgcluu(1). By default that would be in `/root`, e.g.:
+
+    # echo "localhost:5432:*:postgres:postgres" >> ~/.pgpass
+    # chmod 0600 ~/.pgpass
+
+Please refer to the PostgreSQL documentation for more information
+regarding the pgpass file: http://www.postgresql.org/docs/9.3/static/libpq-pgpass.html
+
+Generating reports
+==================
+To generate reports in the default setup (assuming the output
+directory is `/var/www/pgcluu/`:
+
+    # pgcluu --disable-sar -o /var/www/pgcluu /var/db/pgcluu
+
+Limitations
+===========
+pgcluu_collectd(1) requires the `sar` binary from the sysstat project
+to gather various pieces of operating system information. However
+sysstat has not been ported to OpenBSD and therefore pgcluu(1) won't
+be able to display memory/filesystem usage, etc.

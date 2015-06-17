@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/17 10:06:34 jasper Exp $
+bin/pgcluu
+bin/pgcluu_collectd
+@man man/man1/pgcluu.1
+@rcscript ${RCDIR}/pgcluu_collectd

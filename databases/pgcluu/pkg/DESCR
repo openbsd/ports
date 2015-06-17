@@ -1,0 +1,4 @@
+PgCluu is a PostgreSQL performances monitoring and auditing tool.  View
+reports of all statistics collected from your PostgreSQL databases
+cluster. pgCluu will show you the entire informations of the PostgreSQL
+Cluster and the system utilization.
