@@ -1,7 +1,7 @@
-$OpenBSD: patch-widgets_hashBox_cpp,v 1.1 2014/10/17 14:53:55 sthen Exp $
---- widgets/hashBox.cpp.orig	Fri Oct 17 15:48:41 2014
-+++ widgets/hashBox.cpp	Fri Oct 17 15:48:52 2014
-@@ -25,8 +25,8 @@ QString hashBox::default_md = QString();
+$OpenBSD: patch-widgets_hashBox_cpp,v 1.2 2015/06/17 20:04:14 jasper Exp $
+--- widgets/hashBox.cpp.orig	Sat Mar 21 09:08:29 2015
++++ widgets/hashBox.cpp	Wed Jun 17 21:58:12 2015
+@@ -26,8 +26,8 @@ QString hashBox::default_md = QString();
  
  void hashBox::resetDefault()
  {

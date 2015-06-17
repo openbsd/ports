@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/02/07 21:52:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/06/17 20:04:14 jasper Exp $
 
 COMMENT=	create and manage certificates, CSRs, keys, etc
 
-DISTNAME=	xca-1.1.0
+DISTNAME=	xca-1.2.0
 CATEGORIES=	security x11
 
 HOMEPAGE=	http://xca.sourceforge.net/
