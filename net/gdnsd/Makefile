@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/16 19:06:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/06/17 09:10:41 jasper Exp $
 
 PORTROACH=		limit:^v1
 PORTROACH_COMMENT=	gdnsd >= 2.0.0 requires __thread support
@@ -10,7 +10,7 @@ COMMENT=		geographically-aware, authoritative-only DNS server
 GH_ACCOUNT=		blblack
 GH_PROJECT=		gdnsd
 GH_TAGNAME=		v1.11.5
-REVISION=		0
+REVISION=		1
 
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME:S/v//g}
 CATEGORIES=		net
@@ -61,6 +61,5 @@ pre-configure:
 post-install:
 	rm ${PREFIX}/lib/gdnsd/*.la
 	rm ${PREFIX}/share/doc/gdnsd/*.pod
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdnsd/
 
 .include <bsd.port.mk>

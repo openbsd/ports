@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/03 11:31:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/17 09:10:41 jasper Exp $
 @newgroup _gdnsd:743
 @newuser _gdnsd:743:_gdnsd:daemon:gdns user:/var/empty:/sbin/nologin
 @bin bin/gdnsd_geoip_test
@@ -60,6 +60,5 @@ share/doc/gdnsd/gdnsd.txt
 share/doc/gdnsd/gdnsd.zonefile.txt
 share/doc/gdnsd/gdnsd_geoip_test.txt
 share/doc/gdnsd/gdnsd_manual.txt
-share/examples/gdnsd/
 @sample ${VARBASE}/gdnsd/
 @rcscript ${RCDIR}/gdnsd
