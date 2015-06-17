@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.112 2015/06/11 08:42:38 espie Exp $
+# $OpenBSD: Engine.pm,v 1.113 2015/06/17 07:31:25 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -495,6 +495,7 @@ sub rebuild_info
 {
 	my ($self, $core) = @_;
 	my @l = @{$self->{requeued}};
+	my %d = ();
 	$self->{requeued} = [];
 	my %subdirs = map {($_->pkgpath_and_flavors, 1)} @l;
 
@@ -503,6 +504,8 @@ sub rebuild_info
 		if (defined $v->{info}{FDEPENDS}) {
 			for my $f (values %{$v->{info}{FDEPENDS}}) {
 				$f->forget;
+				$self->{tofetch}->detain($f);
+				$d{$f} = $f;
 			}
 		}
 		delete $v->{info};
@@ -510,6 +513,9 @@ sub rebuild_info
 	$self->{state}->grabber->grab_subdirs($core, \%subdirs);
 	for my $v (@l) {
 		$self->{buildable}->release($v);
+	}
+	for my $f (values %d) {
+		$self->{tofetch}->release($f);
 	}
 }
 

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.23 2015/06/08 11:06:08 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.24 2015/06/17 07:31:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -144,6 +144,7 @@ sub use_core
 
 	# first pass, try to find something we can build
 	while (my $v = $o->next) {
+		next if $self->detained($v);
 		# trim stuff that's done
 		if ($self->is_done($v)) {
 			$self->already_done($v);
