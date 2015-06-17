@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/01/25 10:39:11 matthieu Exp $
+# $OpenBSD: Makefile,v 1.5 2015/06/17 05:45:50 ajacoutot Exp $
 
 COMMENT =  	makefile generator
 CATEGORIES =	devel x11
-DISTNAME = 	imake-1.0.5
-REVISION =	0
+DISTNAME = 	imake-1.0.7
 MASTER_SITES = 	http://ftp.x.org/pub/individual/util/
 
 PERMIT_PACKAGE_CDROM = 		Yes
@@ -22,5 +21,7 @@ FAKE_FLAGS = 	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_MAN="${INSTALL_MAN}"
 
 RUN_DEPENDS = 	devel/imake-cf
+
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
