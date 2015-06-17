@@ -1,6 +1,6 @@
-$OpenBSD: patch-OpenBSD_cf,v 1.5 2015/03/31 09:44:48 ajacoutot Exp $
---- OpenBSD.cf.orig	Fri Oct 16 23:45:42 2009
-+++ OpenBSD.cf	Thu Oct 10 17:25:16 2013
+$OpenBSD: patch-OpenBSD_cf,v 1.6 2015/06/17 05:45:33 ajacoutot Exp $
+--- OpenBSD.cf.orig	Tue Jul 23 07:23:14 2013
++++ OpenBSD.cf	Mon Jun 15 17:47:02 2015
 @@ -26,10 +26,12 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
  #define LibDir			/usr/local/lib/X11
  #define UsrLibDir		/usr/local/lib
@@ -195,4 +195,4 @@ $OpenBSD: patch-OpenBSD_cf,v 1.5 2015/03/31 09:44:48 ajacoutot Exp $
 -#endif /* PmaxArchitecture */
  
  /*
-  * Definitions for the PowerPC architecture 
+  * Definitions for the PowerPC architecture

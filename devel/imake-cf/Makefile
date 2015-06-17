@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2015/03/31 09:44:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/06/17 05:45:33 ajacoutot Exp $
 
 PKG_ARCH = 	*
 COMMENT =  	config files for imake
 CATEGORIES =	devel x11
-DISTNAME = 	xorg-cf-files-1.0.4
-PKGNAME = 	imake-cf-1.0.4
+V =		1.0.5
+DISTNAME = 	xorg-cf-files-${V}
+PKGNAME = 	imake-cf-${V}
 MASTER_SITES = 	http://ftp.x.org/pub/individual/util/
-
-REVISION =	4
 
 PERMIT_PACKAGE_CDROM = 		Yes
 
@@ -15,12 +14,12 @@ SUBST += 	-e 's|@prefix@|${X11BASE}|'
 SUBST += 	-e 's|@FONTROOTDIR@|${X11BASE}/lib/X11/fonts|'
 SUBST += 	-e 's|@ENCODINGSDIR|$${FONTROOTDIR}/encodings|'
 
+XCONFDIR =	${PREFIX}/lib/X11/config
+
 NO_TEST=	Yes
 
 do-build:
 	sed ${SUBST} <${WRKSRC}/site.def.in >${WRKSRC}/site.def
-
-XCONFDIR =	${PREFIX}/lib/X11/config
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/OpenBSD.cf
@@ -30,8 +29,8 @@ do-install:
 	for f in ${WRKSRC}/*.{cf,def,rules,tmpl}; do \
 		${INSTALL_DATA} $$f ${XCONFDIR}; \
 	done
-	rm -f ${XCONFIGDIR}/Motif.rules
-	rm -f ${XCONFIGDIR}/Motif.tmpl
+	rm ${XCONFDIR}/Motif.rules
+	rm ${XCONFDIR}/Motif.tmpl
 	touch ${XCONFDIR}/host.def
 	touch ${XCONFDIR}/date.def
 	touch ${XCONFDIR}/version.def
