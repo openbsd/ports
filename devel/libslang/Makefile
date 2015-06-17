@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.58 2015/01/30 14:12:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2015/06/17 08:56:42 bentley Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
 DISTNAME=	slang-2.2.4
-REVISION=	0
+REVISION=	1
 PKGNAME=	lib${DISTNAME}
 SHARED_LIBS=	slang 16.0
 
 CATEGORIES=	devel
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v2.2/ \
-		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v2.2/
+MASTER_SITES=	http://www.jedsoft.org/releases/slang/old/
 
-HOMEPAGE=	http://www.s-lang.org/
+HOMEPAGE=	http://jedsoft.org/slang/
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
