@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2015/06/17 06:16:51 bentley Exp $
 
 COMMENT=	efficient SNMP scanner
 
 DISTNAME=	onesixtyone-0.3.2
 CATEGORIES=	security
-
-MAINTAINER=	Srebrenko Sehic <haver@insecure.dk>
+REVISION=	0
 
 # GPL
 PERMIT_PACKAGE_CDROM=  	Yes

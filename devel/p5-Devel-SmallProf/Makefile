@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2013/10/11 23:48:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2015/06/17 06:16:51 bentley Exp $
 
 COMMENT=		per-line Perl profiler
 
 MODULES=		cpan
 DISTNAME=		Devel-SmallProf-2.02
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
-
-MAINTAINER=		Srebrenko Sehic <haver@insecure.dk>
 
 PERMIT_PACKAGE_CDROM=	Yes
 
