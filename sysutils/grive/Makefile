@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/28 10:17:25 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2015/06/17 05:27:18 kirby Exp $
 
 BROKEN-hppa =	no atomic ops
 COMMENT =	third-party client for Google Drive
@@ -6,7 +6,7 @@ COMMENT =	third-party client for Google Drive
 VERSION =	0.3.1-pre
 DISTNAME =	grive-${VERSION}
 PKGNAME =	grive-${VERSION:S/-pre//}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 
@@ -38,5 +38,7 @@ LIB_DEPENDS =	devel/boost \
 		security/libgcrypt
 
 CXXFLAGS += -I${LOCALBASE}/include
+
+NO_TEST = Yes
 
 .include <bsd.port.mk>
