@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2015/03/31 09:44:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2015/06/17 09:41:57 bentley Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.4.3
@@ -8,7 +8,6 @@ REVISION =	8
 CATEGORIES =	games
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nethack/} \
-		ftp://ftp.planetmirror.com/pub/nethack/nh${V:S/.//g}/src/ \
 		http://www.nethack.de/download/
 DISTFILES =	nethack-${V:S/.//g}-src.tgz
 
