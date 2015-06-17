@@ -1,0 +1,136 @@
+@comment $OpenBSD: PLIST-jre,v 1.1.1.1 2015/06/17 17:12:27 kurt Exp $
+@option no-default-conflict
+@conflict jre->=1.8v0,<1.9v0
+@pkgpath devel/jdk/1.7,-jre
+${JREHOME}/
+${JREHOME}/ASSEMBLY_EXCEPTION
+${JREHOME}/LICENSE
+${JREHOME}/THIRD_PARTY_README
+${JREHOME}/bin/
+@bin ${JREHOME}/bin/java
+@bin ${JREHOME}/bin/jjs
+@bin ${JREHOME}/bin/keytool
+@bin ${JREHOME}/bin/orbd
+@bin ${JREHOME}/bin/pack200
+@bin ${JREHOME}/bin/policytool
+@bin ${JREHOME}/bin/rmid
+@bin ${JREHOME}/bin/rmiregistry
+@bin ${JREHOME}/bin/servertool
+@bin ${JREHOME}/bin/tnameserv
+@bin ${JREHOME}/bin/unpack200
+${JREHOME}/lib/
+${JREHOME}/lib/${MACHINE_ARCH}/
+@bin ${JREHOME}/lib/${MACHINE_ARCH}/jexec
+${JREHOME}/lib/${MACHINE_ARCH}/jli/
+${JREHOME}/lib/${MACHINE_ARCH}/jli/libjli.so
+@bin ${JREHOME}/lib/${MACHINE_ARCH}/jspawnhelper
+${JREHOME}/lib/${MACHINE_ARCH}/jvm.cfg
+${JREHOME}/lib/${MACHINE_ARCH}/libawt.so
+${JREHOME}/lib/${MACHINE_ARCH}/libawt_headless.so
+${JREHOME}/lib/${MACHINE_ARCH}/libawt_xawt.so
+${JREHOME}/lib/${MACHINE_ARCH}/libdt_socket.so
+${JREHOME}/lib/${MACHINE_ARCH}/libfontmanager.so
+${JREHOME}/lib/${MACHINE_ARCH}/libhprof.so
+${JREHOME}/lib/${MACHINE_ARCH}/libinstrument.so
+${JREHOME}/lib/${MACHINE_ARCH}/libj2gss.so
+${JREHOME}/lib/${MACHINE_ARCH}/libj2pcsc.so
+${JREHOME}/lib/${MACHINE_ARCH}/libj2pkcs11.so
+${JREHOME}/lib/${MACHINE_ARCH}/libjaas_unix.so
+${JREHOME}/lib/${MACHINE_ARCH}/libjava.so
+${JREHOME}/lib/${MACHINE_ARCH}/libjava_crw_demo.so
+${JREHOME}/lib/${MACHINE_ARCH}/libjawt.so
+${JREHOME}/lib/${MACHINE_ARCH}/libjdwp.so
+${JREHOME}/lib/${MACHINE_ARCH}/libjpeg.so
+${JREHOME}/lib/${MACHINE_ARCH}/libjsdt.so
+${JREHOME}/lib/${MACHINE_ARCH}/libjsig.so
+${JREHOME}/lib/${MACHINE_ARCH}/libjsound.so
+${JREHOME}/lib/${MACHINE_ARCH}/liblcms.so
+${JREHOME}/lib/${MACHINE_ARCH}/libmanagement.so
+${JREHOME}/lib/${MACHINE_ARCH}/libmlib_image.so
+${JREHOME}/lib/${MACHINE_ARCH}/libnet.so
+${JREHOME}/lib/${MACHINE_ARCH}/libnio.so
+${JREHOME}/lib/${MACHINE_ARCH}/libnpt.so
+${JREHOME}/lib/${MACHINE_ARCH}/libsplashscreen.so
+${JREHOME}/lib/${MACHINE_ARCH}/libsunec.so
+${JREHOME}/lib/${MACHINE_ARCH}/libunpack.so
+${JREHOME}/lib/${MACHINE_ARCH}/libverify.so
+${JREHOME}/lib/${MACHINE_ARCH}/libzip.so
+${JREHOME}/lib/${MACHINE_ARCH}/server/
+${JREHOME}/lib/${MACHINE_ARCH}/server/Xusage.txt
+${JREHOME}/lib/${MACHINE_ARCH}/server/libjsig.so
+${JREHOME}/lib/${MACHINE_ARCH}/server/libjvm.so
+${JREHOME}/lib/applet/
+${JREHOME}/lib/calendars.properties
+${JREHOME}/lib/charsets.jar
+${JREHOME}/lib/classlist
+${JREHOME}/lib/cmm/
+${JREHOME}/lib/cmm/CIEXYZ.pf
+${JREHOME}/lib/cmm/GRAY.pf
+${JREHOME}/lib/cmm/LINEAR_RGB.pf
+${JREHOME}/lib/cmm/PYCC.pf
+${JREHOME}/lib/cmm/sRGB.pf
+${JREHOME}/lib/content-types.properties
+${JREHOME}/lib/currency.data
+${JREHOME}/lib/ext/
+${JREHOME}/lib/ext/cldrdata.jar
+${JREHOME}/lib/ext/dnsns.jar
+${JREHOME}/lib/ext/localedata.jar
+${JREHOME}/lib/ext/meta-index
+${JREHOME}/lib/ext/nashorn.jar
+${JREHOME}/lib/ext/sunec.jar
+${JREHOME}/lib/ext/sunjce_provider.jar
+${JREHOME}/lib/ext/sunpkcs11.jar
+${JREHOME}/lib/ext/zipfs.jar
+${JREHOME}/lib/flavormap.properties
+${JREHOME}/lib/fontconfig.bfc
+${JREHOME}/lib/fontconfig.properties.src
+${JREHOME}/lib/hijrah-config-umalqura.properties
+${JREHOME}/lib/images/
+${JREHOME}/lib/images/cursors/
+${JREHOME}/lib/images/cursors/cursors.properties
+${JREHOME}/lib/images/cursors/invalid32x32.gif
+${JREHOME}/lib/images/cursors/motif_CopyDrop32x32.gif
+${JREHOME}/lib/images/cursors/motif_CopyNoDrop32x32.gif
+${JREHOME}/lib/images/cursors/motif_LinkDrop32x32.gif
+${JREHOME}/lib/images/cursors/motif_LinkNoDrop32x32.gif
+${JREHOME}/lib/images/cursors/motif_MoveDrop32x32.gif
+${JREHOME}/lib/images/cursors/motif_MoveNoDrop32x32.gif
+${JREHOME}/lib/jce.jar
+${JREHOME}/lib/jsse.jar
+${JREHOME}/lib/jvm.hprof.txt
+${JREHOME}/lib/logging.properties
+${JREHOME}/lib/management/
+${JREHOME}/lib/management-agent.jar
+${JREHOME}/lib/management/jmxremote.access
+${JREHOME}/lib/management/jmxremote.password.template
+${JREHOME}/lib/management/management.properties
+${JREHOME}/lib/management/snmp.acl.template
+${JREHOME}/lib/meta-index
+${JREHOME}/lib/net.properties
+${JREHOME}/lib/psfont.properties.ja
+${JREHOME}/lib/psfontj2d.properties
+${JREHOME}/lib/resources.jar
+${JREHOME}/lib/rt.jar
+${JREHOME}/lib/security/
+${JREHOME}/lib/security/US_export_policy.jar
+${JREHOME}/lib/security/blacklisted.certs
+${JREHOME}/lib/security/cacerts
+${JREHOME}/lib/security/java.policy
+${JREHOME}/lib/security/java.security
+${JREHOME}/lib/security/local_policy.jar
+${JREHOME}/lib/sound.properties
+${JREHOME}/lib/tzdb.dat
+@mandir ${JREHOME}/man/
+${JREHOME}/man/man1/
+@man ${JREHOME}/man/man1/java.1
+@man ${JREHOME}/man/man1/jjs.1
+@man ${JREHOME}/man/man1/keytool.1
+@man ${JREHOME}/man/man1/orbd.1
+@man ${JREHOME}/man/man1/pack200.1
+@man ${JREHOME}/man/man1/policytool.1
+@man ${JREHOME}/man/man1/rmid.1
+@man ${JREHOME}/man/man1/rmiregistry.1
+@man ${JREHOME}/man/man1/servertool.1
+@man ${JREHOME}/man/man1/tnameserv.1
+@man ${JREHOME}/man/man1/unpack200.1
+${JREHOME}/release

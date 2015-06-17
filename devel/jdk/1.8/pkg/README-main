@@ -1,0 +1,11 @@
+$OpenBSD: README-main,v 1.1.1.1 2015/06/17 17:12:27 kurt Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Note:
+  The default compressed class space size has been reduced from 1G to
+  256M to accommodate smaller datasize ulimits. It can be increased with
+  the -XX:CompressedClassSpaceSize argument for applications that run
+  out of this space.

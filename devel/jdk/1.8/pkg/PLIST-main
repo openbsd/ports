@@ -1,0 +1,791 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2015/06/17 17:12:27 kurt Exp $
+@option no-default-conflict
+@conflict jdk->=1.8v0,<1.9v0
+@pkgpath devel/jdk/1.7,-jdk
+${JDKHOME}/
+${JDKHOME}/ASSEMBLY_EXCEPTION
+${JDKHOME}/LICENSE
+${JDKHOME}/THIRD_PARTY_README
+${JDKHOME}/bin/
+@bin ${JDKHOME}/bin/appletviewer
+@bin ${JDKHOME}/bin/extcheck
+@bin ${JDKHOME}/bin/idlj
+@bin ${JDKHOME}/bin/jar
+@bin ${JDKHOME}/bin/jarsigner
+@bin ${JDKHOME}/bin/java
+${JDKHOME}/bin/java-rmi.cgi
+@bin ${JDKHOME}/bin/javac
+@bin ${JDKHOME}/bin/javadoc
+@bin ${JDKHOME}/bin/javah
+@bin ${JDKHOME}/bin/javap
+@bin ${JDKHOME}/bin/jcmd
+@bin ${JDKHOME}/bin/jconsole
+@bin ${JDKHOME}/bin/jdb
+@bin ${JDKHOME}/bin/jdeps
+@bin ${JDKHOME}/bin/jhat
+@bin ${JDKHOME}/bin/jinfo
+@bin ${JDKHOME}/bin/jjs
+@bin ${JDKHOME}/bin/jmap
+@bin ${JDKHOME}/bin/jps
+@bin ${JDKHOME}/bin/jrunscript
+@bin ${JDKHOME}/bin/jsadebugd
+@bin ${JDKHOME}/bin/jstack
+@bin ${JDKHOME}/bin/jstat
+@bin ${JDKHOME}/bin/jstatd
+@bin ${JDKHOME}/bin/keytool
+@bin ${JDKHOME}/bin/native2ascii
+@bin ${JDKHOME}/bin/orbd
+@bin ${JDKHOME}/bin/pack200
+@bin ${JDKHOME}/bin/policytool
+@bin ${JDKHOME}/bin/rmic
+@bin ${JDKHOME}/bin/rmid
+@bin ${JDKHOME}/bin/rmiregistry
+@bin ${JDKHOME}/bin/schemagen
+@bin ${JDKHOME}/bin/serialver
+@bin ${JDKHOME}/bin/servertool
+@bin ${JDKHOME}/bin/tnameserv
+@bin ${JDKHOME}/bin/unpack200
+@bin ${JDKHOME}/bin/wsgen
+@bin ${JDKHOME}/bin/wsimport
+@bin ${JDKHOME}/bin/xjc
+${JDKHOME}/demo/
+${JDKHOME}/demo/README
+${JDKHOME}/demo/applets/
+${JDKHOME}/demo/applets/ArcTest/
+${JDKHOME}/demo/applets/ArcTest/ArcCanvas.class
+${JDKHOME}/demo/applets/ArcTest/ArcControls.class
+${JDKHOME}/demo/applets/ArcTest/ArcTest.class
+${JDKHOME}/demo/applets/ArcTest/ArcTest.java
+${JDKHOME}/demo/applets/ArcTest/IntegerTextField.class
+${JDKHOME}/demo/applets/ArcTest/example1.html
+${JDKHOME}/demo/applets/BarChart/
+${JDKHOME}/demo/applets/BarChart/BarChart.class
+${JDKHOME}/demo/applets/BarChart/BarChart.java
+${JDKHOME}/demo/applets/BarChart/example1.html
+${JDKHOME}/demo/applets/BarChart/example2.html
+${JDKHOME}/demo/applets/Blink/
+${JDKHOME}/demo/applets/Blink/Blink$1.class
+${JDKHOME}/demo/applets/Blink/Blink.class
+${JDKHOME}/demo/applets/Blink/Blink.java
+${JDKHOME}/demo/applets/Blink/example1.html
+${JDKHOME}/demo/applets/CardTest/
+${JDKHOME}/demo/applets/CardTest/CardPanel.class
+${JDKHOME}/demo/applets/CardTest/CardTest.class
+${JDKHOME}/demo/applets/CardTest/CardTest.java
+${JDKHOME}/demo/applets/CardTest/example1.html
+${JDKHOME}/demo/applets/Clock/
+${JDKHOME}/demo/applets/Clock/Clock.class
+${JDKHOME}/demo/applets/Clock/Clock.java
+${JDKHOME}/demo/applets/Clock/example1.html
+${JDKHOME}/demo/applets/DitherTest/
+${JDKHOME}/demo/applets/DitherTest/CardinalTextField.class
+${JDKHOME}/demo/applets/DitherTest/DitherCanvas.class
+${JDKHOME}/demo/applets/DitherTest/DitherControls.class
+${JDKHOME}/demo/applets/DitherTest/DitherMethod.class
+${JDKHOME}/demo/applets/DitherTest/DitherTest$1.class
+${JDKHOME}/demo/applets/DitherTest/DitherTest.class
+${JDKHOME}/demo/applets/DitherTest/DitherTest.java
+${JDKHOME}/demo/applets/DitherTest/example1.html
+${JDKHOME}/demo/applets/DrawTest/
+${JDKHOME}/demo/applets/DrawTest/DrawControls.class
+${JDKHOME}/demo/applets/DrawTest/DrawPanel.class
+${JDKHOME}/demo/applets/DrawTest/DrawTest.class
+${JDKHOME}/demo/applets/DrawTest/DrawTest.java
+${JDKHOME}/demo/applets/DrawTest/example1.html
+${JDKHOME}/demo/applets/Fractal/
+${JDKHOME}/demo/applets/Fractal/CLSFractal.class
+${JDKHOME}/demo/applets/Fractal/CLSFractal.java
+${JDKHOME}/demo/applets/Fractal/CLSRule.class
+${JDKHOME}/demo/applets/Fractal/CLSTurtle.class
+${JDKHOME}/demo/applets/Fractal/ContextLSystem.class
+${JDKHOME}/demo/applets/Fractal/example1.html
+${JDKHOME}/demo/applets/GraphicsTest/
+${JDKHOME}/demo/applets/GraphicsTest/AppletFrame.class
+${JDKHOME}/demo/applets/GraphicsTest/AppletFrame.java
+${JDKHOME}/demo/applets/GraphicsTest/ArcCard.class
+${JDKHOME}/demo/applets/GraphicsTest/ArcDegreePanel.class
+${JDKHOME}/demo/applets/GraphicsTest/ArcPanel.class
+${JDKHOME}/demo/applets/GraphicsTest/ColorUtils.class
+${JDKHOME}/demo/applets/GraphicsTest/GraphicsCards.class
+${JDKHOME}/demo/applets/GraphicsTest/GraphicsPanel.class
+${JDKHOME}/demo/applets/GraphicsTest/GraphicsTest.class
+${JDKHOME}/demo/applets/GraphicsTest/GraphicsTest.java
+${JDKHOME}/demo/applets/GraphicsTest/OvalShape.class
+${JDKHOME}/demo/applets/GraphicsTest/PolygonShape.class
+${JDKHOME}/demo/applets/GraphicsTest/RectShape.class
+${JDKHOME}/demo/applets/GraphicsTest/RoundRectShape.class
+${JDKHOME}/demo/applets/GraphicsTest/Shape.class
+${JDKHOME}/demo/applets/GraphicsTest/ShapeTest.class
+${JDKHOME}/demo/applets/GraphicsTest/example1.html
+${JDKHOME}/demo/applets/MoleculeViewer/
+${JDKHOME}/demo/applets/MoleculeViewer/Matrix3D.java
+${JDKHOME}/demo/applets/MoleculeViewer/MoleculeViewer.jar
+${JDKHOME}/demo/applets/MoleculeViewer/XYZApp.java
+${JDKHOME}/demo/applets/MoleculeViewer/example1.html
+${JDKHOME}/demo/applets/MoleculeViewer/example2.html
+${JDKHOME}/demo/applets/MoleculeViewer/example3.html
+${JDKHOME}/demo/applets/MoleculeViewer/src.zip
+${JDKHOME}/demo/applets/NervousText/
+${JDKHOME}/demo/applets/NervousText/NervousText.class
+${JDKHOME}/demo/applets/NervousText/NervousText.java
+${JDKHOME}/demo/applets/NervousText/example1.html
+${JDKHOME}/demo/applets/SimpleGraph/
+${JDKHOME}/demo/applets/SimpleGraph/GraphApplet.class
+${JDKHOME}/demo/applets/SimpleGraph/GraphApplet.java
+${JDKHOME}/demo/applets/SimpleGraph/example1.html
+${JDKHOME}/demo/applets/SortDemo/
+${JDKHOME}/demo/applets/SortDemo/BidirBubbleSortAlgorithm.class
+${JDKHOME}/demo/applets/SortDemo/BidirBubbleSortAlgorithm.java
+${JDKHOME}/demo/applets/SortDemo/BubbleSortAlgorithm.class
+${JDKHOME}/demo/applets/SortDemo/BubbleSortAlgorithm.java
+${JDKHOME}/demo/applets/SortDemo/QSortAlgorithm.class
+${JDKHOME}/demo/applets/SortDemo/QSortAlgorithm.java
+${JDKHOME}/demo/applets/SortDemo/SortAlgorithm.class
+${JDKHOME}/demo/applets/SortDemo/SortAlgorithm.java
+${JDKHOME}/demo/applets/SortDemo/SortItem.class
+${JDKHOME}/demo/applets/SortDemo/SortItem.java
+${JDKHOME}/demo/applets/SortDemo/example1.html
+${JDKHOME}/demo/applets/SpreadSheet/
+${JDKHOME}/demo/applets/SpreadSheet/Cell.class
+${JDKHOME}/demo/applets/SpreadSheet/CellUpdater.class
+${JDKHOME}/demo/applets/SpreadSheet/InputField.class
+${JDKHOME}/demo/applets/SpreadSheet/Node.class
+${JDKHOME}/demo/applets/SpreadSheet/SpreadSheet.class
+${JDKHOME}/demo/applets/SpreadSheet/SpreadSheet.java
+${JDKHOME}/demo/applets/SpreadSheet/SpreadSheetInput.class
+${JDKHOME}/demo/applets/SpreadSheet/example1.html
+${JDKHOME}/demo/applets/WireFrame/
+${JDKHOME}/demo/applets/WireFrame/Matrix3D.java
+${JDKHOME}/demo/applets/WireFrame/ThreeD.java
+${JDKHOME}/demo/applets/WireFrame/WireFrame.jar
+${JDKHOME}/demo/applets/WireFrame/example1.html
+${JDKHOME}/demo/applets/WireFrame/example2.html
+${JDKHOME}/demo/applets/WireFrame/example3.html
+${JDKHOME}/demo/applets/WireFrame/example4.html
+${JDKHOME}/demo/applets/WireFrame/src.zip
+${JDKHOME}/demo/jfc/
+${JDKHOME}/demo/jfc/CodePointIM/
+${JDKHOME}/demo/jfc/CodePointIM/CodePointIM.jar
+${JDKHOME}/demo/jfc/CodePointIM/README.html
+${JDKHOME}/demo/jfc/CodePointIM/README_ja.html
+${JDKHOME}/demo/jfc/CodePointIM/README_zh_CN.html
+${JDKHOME}/demo/jfc/CodePointIM/src.zip
+${JDKHOME}/demo/jfc/FileChooserDemo/
+${JDKHOME}/demo/jfc/FileChooserDemo/FileChooserDemo.jar
+${JDKHOME}/demo/jfc/FileChooserDemo/README.txt
+${JDKHOME}/demo/jfc/FileChooserDemo/src.zip
+${JDKHOME}/demo/jfc/Font2DTest/
+${JDKHOME}/demo/jfc/Font2DTest/Font2DTest.html
+${JDKHOME}/demo/jfc/Font2DTest/Font2DTest.jar
+${JDKHOME}/demo/jfc/Font2DTest/README.txt
+${JDKHOME}/demo/jfc/Font2DTest/src.zip
+${JDKHOME}/demo/jfc/Metalworks/
+${JDKHOME}/demo/jfc/Metalworks/Metalworks.jar
+${JDKHOME}/demo/jfc/Metalworks/README.txt
+${JDKHOME}/demo/jfc/Metalworks/src.zip
+${JDKHOME}/demo/jfc/Notepad/
+${JDKHOME}/demo/jfc/Notepad/Notepad.jar
+${JDKHOME}/demo/jfc/Notepad/README.txt
+${JDKHOME}/demo/jfc/Notepad/src.zip
+${JDKHOME}/demo/jfc/SampleTree/
+${JDKHOME}/demo/jfc/SampleTree/README.txt
+${JDKHOME}/demo/jfc/SampleTree/SampleTree.jar
+${JDKHOME}/demo/jfc/SampleTree/src.zip
+${JDKHOME}/demo/jfc/SwingApplet/
+${JDKHOME}/demo/jfc/SwingApplet/README.txt
+${JDKHOME}/demo/jfc/SwingApplet/SwingApplet.html
+${JDKHOME}/demo/jfc/SwingApplet/SwingApplet.jar
+${JDKHOME}/demo/jfc/SwingApplet/src.zip
+${JDKHOME}/demo/jfc/TableExample/
+${JDKHOME}/demo/jfc/TableExample/README.txt
+${JDKHOME}/demo/jfc/TableExample/TableExample.jar
+${JDKHOME}/demo/jfc/TableExample/src.zip
+${JDKHOME}/demo/jfc/TransparentRuler/
+${JDKHOME}/demo/jfc/TransparentRuler/README.txt
+${JDKHOME}/demo/jfc/TransparentRuler/TransparentRuler.jar
+${JDKHOME}/demo/jfc/TransparentRuler/src.zip
+${JDKHOME}/demo/jpda/
+${JDKHOME}/demo/jpda/com/
+${JDKHOME}/demo/jpda/com/sun/
+${JDKHOME}/demo/jpda/com/sun/tools/
+${JDKHOME}/demo/jpda/com/sun/tools/example/
+${JDKHOME}/demo/jpda/com/sun/tools/example/README
+${JDKHOME}/demo/jpda/examples.jar
+${JDKHOME}/demo/jpda/src.zip
+${JDKHOME}/demo/jvmti/
+${JDKHOME}/demo/jvmti/compiledMethodLoad/
+${JDKHOME}/demo/jvmti/compiledMethodLoad/README.txt
+${JDKHOME}/demo/jvmti/compiledMethodLoad/lib/
+${JDKHOME}/demo/jvmti/compiledMethodLoad/lib/libcompiledMethodLoad.so
+${JDKHOME}/demo/jvmti/compiledMethodLoad/src.zip
+${JDKHOME}/demo/jvmti/gctest/
+${JDKHOME}/demo/jvmti/gctest/README.txt
+${JDKHOME}/demo/jvmti/gctest/lib/
+${JDKHOME}/demo/jvmti/gctest/lib/libgctest.so
+${JDKHOME}/demo/jvmti/gctest/src.zip
+${JDKHOME}/demo/jvmti/heapTracker/
+${JDKHOME}/demo/jvmti/heapTracker/README.txt
+${JDKHOME}/demo/jvmti/heapTracker/heapTracker.jar
+${JDKHOME}/demo/jvmti/heapTracker/lib/
+${JDKHOME}/demo/jvmti/heapTracker/lib/libheapTracker.so
+${JDKHOME}/demo/jvmti/heapTracker/src.zip
+${JDKHOME}/demo/jvmti/heapViewer/
+${JDKHOME}/demo/jvmti/heapViewer/README.txt
+${JDKHOME}/demo/jvmti/heapViewer/lib/
+${JDKHOME}/demo/jvmti/heapViewer/lib/libheapViewer.so
+${JDKHOME}/demo/jvmti/heapViewer/src.zip
+${JDKHOME}/demo/jvmti/hprof/
+${JDKHOME}/demo/jvmti/hprof/README.txt
+${JDKHOME}/demo/jvmti/hprof/lib/
+${JDKHOME}/demo/jvmti/hprof/lib/libhprof.so
+${JDKHOME}/demo/jvmti/hprof/src.zip
+${JDKHOME}/demo/jvmti/index.html
+${JDKHOME}/demo/jvmti/minst/
+${JDKHOME}/demo/jvmti/minst/README.txt
+${JDKHOME}/demo/jvmti/minst/lib/
+${JDKHOME}/demo/jvmti/minst/lib/libminst.so
+${JDKHOME}/demo/jvmti/minst/minst.jar
+${JDKHOME}/demo/jvmti/minst/src.zip
+${JDKHOME}/demo/jvmti/mtrace/
+${JDKHOME}/demo/jvmti/mtrace/README.txt
+${JDKHOME}/demo/jvmti/mtrace/lib/
+${JDKHOME}/demo/jvmti/mtrace/lib/libmtrace.so
+${JDKHOME}/demo/jvmti/mtrace/mtrace.jar
+${JDKHOME}/demo/jvmti/mtrace/src.zip
+${JDKHOME}/demo/jvmti/versionCheck/
+${JDKHOME}/demo/jvmti/versionCheck/README.txt
+${JDKHOME}/demo/jvmti/versionCheck/lib/
+${JDKHOME}/demo/jvmti/versionCheck/lib/libversionCheck.so
+${JDKHOME}/demo/jvmti/versionCheck/src.zip
+${JDKHOME}/demo/jvmti/waiters/
+${JDKHOME}/demo/jvmti/waiters/README.txt
+${JDKHOME}/demo/jvmti/waiters/lib/
+${JDKHOME}/demo/jvmti/waiters/lib/libwaiters.so
+${JDKHOME}/demo/jvmti/waiters/src.zip
+${JDKHOME}/demo/management/
+${JDKHOME}/demo/management/FullThreadDump/
+${JDKHOME}/demo/management/FullThreadDump/FullThreadDump.jar
+${JDKHOME}/demo/management/FullThreadDump/README.txt
+${JDKHOME}/demo/management/FullThreadDump/src.zip
+${JDKHOME}/demo/management/JTop/
+${JDKHOME}/demo/management/JTop/JTop.jar
+${JDKHOME}/demo/management/JTop/README.txt
+${JDKHOME}/demo/management/JTop/src.zip
+${JDKHOME}/demo/management/MemoryMonitor/
+${JDKHOME}/demo/management/MemoryMonitor/MemoryMonitor.jar
+${JDKHOME}/demo/management/MemoryMonitor/README.txt
+${JDKHOME}/demo/management/MemoryMonitor/src.zip
+${JDKHOME}/demo/management/VerboseGC/
+${JDKHOME}/demo/management/VerboseGC/README.txt
+${JDKHOME}/demo/management/VerboseGC/VerboseGC.jar
+${JDKHOME}/demo/management/VerboseGC/src.zip
+${JDKHOME}/demo/management/index.html
+${JDKHOME}/demo/nbproject/
+${JDKHOME}/demo/nbproject/README.txt
+${JDKHOME}/demo/nbproject/jfc/
+${JDKHOME}/demo/nbproject/jfc/FileChooserDemo/
+${JDKHOME}/demo/nbproject/jfc/FileChooserDemo/build.properties
+${JDKHOME}/demo/nbproject/jfc/FileChooserDemo/build.xml
+${JDKHOME}/demo/nbproject/jfc/FileChooserDemo/nbproject/
+${JDKHOME}/demo/nbproject/jfc/FileChooserDemo/nbproject/file-targets.xml
+${JDKHOME}/demo/nbproject/jfc/FileChooserDemo/nbproject/jdk.xml
+${JDKHOME}/demo/nbproject/jfc/FileChooserDemo/nbproject/netbeans-targets.xml
+${JDKHOME}/demo/nbproject/jfc/FileChooserDemo/nbproject/project.xml
+${JDKHOME}/demo/nbproject/jfc/Font2DTest/
+${JDKHOME}/demo/nbproject/jfc/Font2DTest/build.properties
+${JDKHOME}/demo/nbproject/jfc/Font2DTest/build.xml
+${JDKHOME}/demo/nbproject/jfc/Font2DTest/nbproject/
+${JDKHOME}/demo/nbproject/jfc/Font2DTest/nbproject/file-targets.xml
+${JDKHOME}/demo/nbproject/jfc/Font2DTest/nbproject/jdk.xml
+${JDKHOME}/demo/nbproject/jfc/Font2DTest/nbproject/netbeans-targets.xml
+${JDKHOME}/demo/nbproject/jfc/Font2DTest/nbproject/project.xml
+${JDKHOME}/demo/nbproject/jfc/Metalworks/
+${JDKHOME}/demo/nbproject/jfc/Metalworks/build.properties
+${JDKHOME}/demo/nbproject/jfc/Metalworks/build.xml
+${JDKHOME}/demo/nbproject/jfc/Metalworks/nbproject/
+${JDKHOME}/demo/nbproject/jfc/Metalworks/nbproject/file-targets.xml
+${JDKHOME}/demo/nbproject/jfc/Metalworks/nbproject/jdk.xml
+${JDKHOME}/demo/nbproject/jfc/Metalworks/nbproject/netbeans-targets.xml
+${JDKHOME}/demo/nbproject/jfc/Metalworks/nbproject/project.xml
+${JDKHOME}/demo/nbproject/jfc/Notepad/
+${JDKHOME}/demo/nbproject/jfc/Notepad/build.properties
+${JDKHOME}/demo/nbproject/jfc/Notepad/build.xml
+${JDKHOME}/demo/nbproject/jfc/Notepad/nbproject/
+${JDKHOME}/demo/nbproject/jfc/Notepad/nbproject/file-targets.xml
+${JDKHOME}/demo/nbproject/jfc/Notepad/nbproject/jdk.xml
+${JDKHOME}/demo/nbproject/jfc/Notepad/nbproject/netbeans-targets.xml
+${JDKHOME}/demo/nbproject/jfc/Notepad/nbproject/project.xml
+${JDKHOME}/demo/nbproject/jfc/SampleTree/
+${JDKHOME}/demo/nbproject/jfc/SampleTree/build.properties
+${JDKHOME}/demo/nbproject/jfc/SampleTree/build.xml
+${JDKHOME}/demo/nbproject/jfc/SampleTree/nbproject/
+${JDKHOME}/demo/nbproject/jfc/SampleTree/nbproject/file-targets.xml
+${JDKHOME}/demo/nbproject/jfc/SampleTree/nbproject/jdk.xml
+${JDKHOME}/demo/nbproject/jfc/SampleTree/nbproject/netbeans-targets.xml
+${JDKHOME}/demo/nbproject/jfc/SampleTree/nbproject/project.xml
+${JDKHOME}/demo/nbproject/jfc/SwingApplet/
+${JDKHOME}/demo/nbproject/jfc/SwingApplet/build.properties
+${JDKHOME}/demo/nbproject/jfc/SwingApplet/build.xml
+${JDKHOME}/demo/nbproject/jfc/SwingApplet/nbproject/
+${JDKHOME}/demo/nbproject/jfc/SwingApplet/nbproject/file-targets.xml
+${JDKHOME}/demo/nbproject/jfc/SwingApplet/nbproject/jdk.xml
+${JDKHOME}/demo/nbproject/jfc/SwingApplet/nbproject/netbeans-targets.xml
+${JDKHOME}/demo/nbproject/jfc/SwingApplet/nbproject/project.xml
+${JDKHOME}/demo/nbproject/jfc/TableExample/
+${JDKHOME}/demo/nbproject/jfc/TableExample/build.properties
+${JDKHOME}/demo/nbproject/jfc/TableExample/build.xml
+${JDKHOME}/demo/nbproject/jfc/TableExample/nbproject/
+${JDKHOME}/demo/nbproject/jfc/TableExample/nbproject/file-targets.xml
+${JDKHOME}/demo/nbproject/jfc/TableExample/nbproject/jdk.xml
+${JDKHOME}/demo/nbproject/jfc/TableExample/nbproject/netbeans-targets.xml
+${JDKHOME}/demo/nbproject/jfc/TableExample/nbproject/project.xml
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/build.properties
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/build.xml
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/nbproject/
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/nbproject/file-targets.xml
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/nbproject/jdk.xml
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/nbproject/netbeans-targets.xml
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/nbproject/project.xml
+${JDKHOME}/demo/nbproject/management/
+${JDKHOME}/demo/nbproject/management/FullThreadDump/
+${JDKHOME}/demo/nbproject/management/FullThreadDump/build.properties
+${JDKHOME}/demo/nbproject/management/FullThreadDump/build.xml
+${JDKHOME}/demo/nbproject/management/FullThreadDump/nbproject/
+${JDKHOME}/demo/nbproject/management/FullThreadDump/nbproject/file-targets.xml
+${JDKHOME}/demo/nbproject/management/FullThreadDump/nbproject/jdk.xml
+${JDKHOME}/demo/nbproject/management/FullThreadDump/nbproject/netbeans-targets.xml
+${JDKHOME}/demo/nbproject/management/FullThreadDump/nbproject/project.xml
+${JDKHOME}/demo/nbproject/management/JTop/
+${JDKHOME}/demo/nbproject/management/JTop/build.properties
+${JDKHOME}/demo/nbproject/management/JTop/build.xml
+${JDKHOME}/demo/nbproject/management/JTop/nbproject/
+${JDKHOME}/demo/nbproject/management/JTop/nbproject/file-targets.xml
+${JDKHOME}/demo/nbproject/management/JTop/nbproject/jdk.xml
+${JDKHOME}/demo/nbproject/management/JTop/nbproject/netbeans-targets.xml
+${JDKHOME}/demo/nbproject/management/JTop/nbproject/project.xml
+${JDKHOME}/demo/nbproject/management/MemoryMonitor/
+${JDKHOME}/demo/nbproject/management/MemoryMonitor/build.properties
+${JDKHOME}/demo/nbproject/management/MemoryMonitor/build.xml
+${JDKHOME}/demo/nbproject/management/MemoryMonitor/nbproject/
+${JDKHOME}/demo/nbproject/management/MemoryMonitor/nbproject/file-targets.xml
+${JDKHOME}/demo/nbproject/management/MemoryMonitor/nbproject/jdk.xml
+${JDKHOME}/demo/nbproject/management/MemoryMonitor/nbproject/netbeans-targets.xml
+${JDKHOME}/demo/nbproject/management/MemoryMonitor/nbproject/project.xml
+${JDKHOME}/demo/nbproject/management/VerboseGC/
+${JDKHOME}/demo/nbproject/management/VerboseGC/build.properties
+${JDKHOME}/demo/nbproject/management/VerboseGC/build.xml
+${JDKHOME}/demo/nbproject/management/VerboseGC/nbproject/
+${JDKHOME}/demo/nbproject/management/VerboseGC/nbproject/file-targets.xml
+${JDKHOME}/demo/nbproject/management/VerboseGC/nbproject/jdk.xml
+${JDKHOME}/demo/nbproject/management/VerboseGC/nbproject/netbeans-targets.xml
+${JDKHOME}/demo/nbproject/management/VerboseGC/nbproject/project.xml
+${JDKHOME}/demo/nbproject/project.xml
+${JDKHOME}/demo/nbproject/scripting/
+${JDKHOME}/demo/nbproject/scripting/jconsole-plugin/
+${JDKHOME}/demo/nbproject/scripting/jconsole-plugin/build.properties
+${JDKHOME}/demo/nbproject/scripting/jconsole-plugin/build.xml
+${JDKHOME}/demo/nbproject/scripting/jconsole-plugin/nbproject/
+${JDKHOME}/demo/nbproject/scripting/jconsole-plugin/nbproject/file-targets.xml
+${JDKHOME}/demo/nbproject/scripting/jconsole-plugin/nbproject/jdk.xml
+${JDKHOME}/demo/nbproject/scripting/jconsole-plugin/nbproject/netbeans-targets.xml
+${JDKHOME}/demo/nbproject/scripting/jconsole-plugin/nbproject/project.xml
+${JDKHOME}/demo/nio/
+${JDKHOME}/demo/nio/zipfs/
+${JDKHOME}/demo/nio/zipfs/Demo.java
+${JDKHOME}/demo/nio/zipfs/README.txt
+${JDKHOME}/demo/nio/zipfs/src.zip
+${JDKHOME}/demo/nio/zipfs/zipfs.jar
+${JDKHOME}/demo/scripting/
+${JDKHOME}/demo/scripting/jconsole-plugin/
+${JDKHOME}/demo/scripting/jconsole-plugin/README.txt
+${JDKHOME}/demo/scripting/jconsole-plugin/build.xml
+${JDKHOME}/demo/scripting/jconsole-plugin/jconsole-plugin.jar
+${JDKHOME}/demo/scripting/jconsole-plugin/src.zip
+${JDKHOME}/include/
+${JDKHOME}/include/classfile_constants.h
+${JDKHOME}/include/jawt.h
+${JDKHOME}/include/jdwpTransport.h
+${JDKHOME}/include/jni.h
+${JDKHOME}/include/jvmti.h
+${JDKHOME}/include/jvmticmlr.h
+${JDKHOME}/include/openbsd/
+${JDKHOME}/include/openbsd/jawt_md.h
+${JDKHOME}/include/openbsd/jni_md.h
+${JDKHOME}/jre/
+${JDKHOME}/jre/ASSEMBLY_EXCEPTION
+${JDKHOME}/jre/LICENSE
+${JDKHOME}/jre/THIRD_PARTY_README
+${JDKHOME}/jre/bin/
+@bin ${JDKHOME}/jre/bin/java
+@bin ${JDKHOME}/jre/bin/jjs
+@bin ${JDKHOME}/jre/bin/keytool
+@bin ${JDKHOME}/jre/bin/orbd
+@bin ${JDKHOME}/jre/bin/pack200
+@bin ${JDKHOME}/jre/bin/policytool
+@bin ${JDKHOME}/jre/bin/rmid
+@bin ${JDKHOME}/jre/bin/rmiregistry
+@bin ${JDKHOME}/jre/bin/servertool
+@bin ${JDKHOME}/jre/bin/tnameserv
+@bin ${JDKHOME}/jre/bin/unpack200
+${JDKHOME}/jre/lib/
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/
+@bin ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jexec
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/jli/
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/jli/libjli.so
+@bin ${JDKHOME}/jre/lib/${MACHINE_ARCH}/jspawnhelper
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/jvm.cfg
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libattach.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libawt.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libawt_headless.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libawt_xawt.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libdt_socket.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libfontmanager.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libhprof.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libinstrument.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libj2gss.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libj2pcsc.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libj2pkcs11.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjaas_unix.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjava.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjava_crw_demo.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjawt.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjdwp.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjpeg.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsdt.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsig.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsound.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/liblcms.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libmanagement.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libmlib_image.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnet.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnio.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnpt.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsaproc.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsplashscreen.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsunec.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libunpack.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libverify.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libzip.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/Xusage.txt
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjsig.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjvm.so
+${JDKHOME}/jre/lib/applet/
+${JDKHOME}/jre/lib/calendars.properties
+${JDKHOME}/jre/lib/charsets.jar
+${JDKHOME}/jre/lib/classlist
+${JDKHOME}/jre/lib/cmm/
+${JDKHOME}/jre/lib/cmm/CIEXYZ.pf
+${JDKHOME}/jre/lib/cmm/GRAY.pf
+${JDKHOME}/jre/lib/cmm/LINEAR_RGB.pf
+${JDKHOME}/jre/lib/cmm/PYCC.pf
+${JDKHOME}/jre/lib/cmm/sRGB.pf
+${JDKHOME}/jre/lib/content-types.properties
+${JDKHOME}/jre/lib/currency.data
+${JDKHOME}/jre/lib/ext/
+${JDKHOME}/jre/lib/ext/cldrdata.jar
+${JDKHOME}/jre/lib/ext/dnsns.jar
+${JDKHOME}/jre/lib/ext/localedata.jar
+${JDKHOME}/jre/lib/ext/meta-index
+${JDKHOME}/jre/lib/ext/nashorn.jar
+${JDKHOME}/jre/lib/ext/sunec.jar
+${JDKHOME}/jre/lib/ext/sunjce_provider.jar
+${JDKHOME}/jre/lib/ext/sunpkcs11.jar
+${JDKHOME}/jre/lib/ext/zipfs.jar
+${JDKHOME}/jre/lib/flavormap.properties
+${JDKHOME}/jre/lib/fontconfig.bfc
+${JDKHOME}/jre/lib/fontconfig.properties.src
+${JDKHOME}/jre/lib/hijrah-config-umalqura.properties
+${JDKHOME}/jre/lib/images/
+${JDKHOME}/jre/lib/images/cursors/
+${JDKHOME}/jre/lib/images/cursors/cursors.properties
+${JDKHOME}/jre/lib/images/cursors/invalid32x32.gif
+${JDKHOME}/jre/lib/images/cursors/motif_CopyDrop32x32.gif
+${JDKHOME}/jre/lib/images/cursors/motif_CopyNoDrop32x32.gif
+${JDKHOME}/jre/lib/images/cursors/motif_LinkDrop32x32.gif
+${JDKHOME}/jre/lib/images/cursors/motif_LinkNoDrop32x32.gif
+${JDKHOME}/jre/lib/images/cursors/motif_MoveDrop32x32.gif
+${JDKHOME}/jre/lib/images/cursors/motif_MoveNoDrop32x32.gif
+${JDKHOME}/jre/lib/jce.jar
+${JDKHOME}/jre/lib/jsse.jar
+${JDKHOME}/jre/lib/jvm.hprof.txt
+${JDKHOME}/jre/lib/logging.properties
+${JDKHOME}/jre/lib/management/
+${JDKHOME}/jre/lib/management-agent.jar
+${JDKHOME}/jre/lib/management/jmxremote.access
+${JDKHOME}/jre/lib/management/jmxremote.password.template
+${JDKHOME}/jre/lib/management/management.properties
+${JDKHOME}/jre/lib/management/snmp.acl.template
+${JDKHOME}/jre/lib/meta-index
+${JDKHOME}/jre/lib/net.properties
+${JDKHOME}/jre/lib/psfont.properties.ja
+${JDKHOME}/jre/lib/psfontj2d.properties
+${JDKHOME}/jre/lib/resources.jar
+${JDKHOME}/jre/lib/rt.jar
+${JDKHOME}/jre/lib/security/
+${JDKHOME}/jre/lib/security/US_export_policy.jar
+${JDKHOME}/jre/lib/security/blacklisted.certs
+${JDKHOME}/jre/lib/security/cacerts
+${JDKHOME}/jre/lib/security/java.policy
+${JDKHOME}/jre/lib/security/java.security
+${JDKHOME}/jre/lib/security/local_policy.jar
+${JDKHOME}/jre/lib/sound.properties
+${JDKHOME}/jre/lib/tzdb.dat
+${JDKHOME}/lib/
+${JDKHOME}/lib/${MACHINE_ARCH}/
+@bin ${JDKHOME}/lib/${MACHINE_ARCH}/jexec
+${JDKHOME}/lib/${MACHINE_ARCH}/jli/
+${JDKHOME}/lib/${MACHINE_ARCH}/jli/libjli.so
+${JDKHOME}/lib/${MACHINE_ARCH}/libjawt.so
+${JDKHOME}/lib/ct.sym
+${JDKHOME}/lib/dt.jar
+${JDKHOME}/lib/ir.idl
+${JDKHOME}/lib/jconsole.jar
+${JDKHOME}/lib/orb.idl
+${JDKHOME}/lib/sa-jdi.jar
+${JDKHOME}/lib/tools.jar
+@mandir ${JDKHOME}/man/
+${JDKHOME}/man/man1/
+@man ${JDKHOME}/man/man1/appletviewer.1
+@man ${JDKHOME}/man/man1/extcheck.1
+@man ${JDKHOME}/man/man1/idlj.1
+@man ${JDKHOME}/man/man1/jar.1
+@man ${JDKHOME}/man/man1/jarsigner.1
+@man ${JDKHOME}/man/man1/java.1
+@man ${JDKHOME}/man/man1/javac.1
+@man ${JDKHOME}/man/man1/javadoc.1
+@man ${JDKHOME}/man/man1/javah.1
+@man ${JDKHOME}/man/man1/javap.1
+@man ${JDKHOME}/man/man1/jcmd.1
+@man ${JDKHOME}/man/man1/jconsole.1
+@man ${JDKHOME}/man/man1/jdb.1
+@man ${JDKHOME}/man/man1/jdeps.1
+@man ${JDKHOME}/man/man1/jhat.1
+@man ${JDKHOME}/man/man1/jinfo.1
+@man ${JDKHOME}/man/man1/jjs.1
+@man ${JDKHOME}/man/man1/jmap.1
+@man ${JDKHOME}/man/man1/jps.1
+@man ${JDKHOME}/man/man1/jrunscript.1
+@man ${JDKHOME}/man/man1/jsadebugd.1
+@man ${JDKHOME}/man/man1/jstack.1
+@man ${JDKHOME}/man/man1/jstat.1
+@man ${JDKHOME}/man/man1/jstatd.1
+@man ${JDKHOME}/man/man1/keytool.1
+@man ${JDKHOME}/man/man1/native2ascii.1
+@man ${JDKHOME}/man/man1/orbd.1
+@man ${JDKHOME}/man/man1/pack200.1
+@man ${JDKHOME}/man/man1/policytool.1
+@man ${JDKHOME}/man/man1/rmic.1
+@man ${JDKHOME}/man/man1/rmid.1
+@man ${JDKHOME}/man/man1/rmiregistry.1
+@man ${JDKHOME}/man/man1/schemagen.1
+@man ${JDKHOME}/man/man1/serialver.1
+@man ${JDKHOME}/man/man1/servertool.1
+@man ${JDKHOME}/man/man1/tnameserv.1
+@man ${JDKHOME}/man/man1/unpack200.1
+@man ${JDKHOME}/man/man1/wsgen.1
+@man ${JDKHOME}/man/man1/wsimport.1
+@man ${JDKHOME}/man/man1/xjc.1
+${JDKHOME}/release
+${JDKHOME}/sample/
+${JDKHOME}/sample/README
+${JDKHOME}/sample/annotations/
+${JDKHOME}/sample/annotations/DependencyChecker/
+${JDKHOME}/sample/annotations/DependencyChecker/PluginChecker/
+${JDKHOME}/sample/annotations/DependencyChecker/PluginChecker/src/
+${JDKHOME}/sample/annotations/DependencyChecker/PluginChecker/src/checker/
+${JDKHOME}/sample/annotations/DependencyChecker/PluginChecker/src/checker/Device.java
+${JDKHOME}/sample/annotations/DependencyChecker/PluginChecker/src/checker/Kettle.xml
+${JDKHOME}/sample/annotations/DependencyChecker/PluginChecker/src/checker/Module.java
+${JDKHOME}/sample/annotations/DependencyChecker/PluginChecker/src/checker/PluginChecker.java
+${JDKHOME}/sample/annotations/DependencyChecker/PluginChecker/src/checker/Require.java
+${JDKHOME}/sample/annotations/DependencyChecker/PluginChecker/src/checker/RequireContainer.java
+${JDKHOME}/sample/annotations/DependencyChecker/Plugins/
+${JDKHOME}/sample/annotations/DependencyChecker/Plugins/src/
+${JDKHOME}/sample/annotations/DependencyChecker/Plugins/src/plugins/
+${JDKHOME}/sample/annotations/DependencyChecker/Plugins/src/plugins/BoilerPlugin.java
+${JDKHOME}/sample/annotations/DependencyChecker/Plugins/src/plugins/ExtendedBoilerPlugin.java
+${JDKHOME}/sample/annotations/DependencyChecker/Plugins/src/plugins/TimerPlugin.java
+${JDKHOME}/sample/annotations/Validator/
+${JDKHOME}/sample/annotations/Validator/src/
+${JDKHOME}/sample/annotations/Validator/src/PositiveIntegerSupplier.java
+${JDKHOME}/sample/annotations/Validator/src/SupplierValidator.java
+${JDKHOME}/sample/annotations/Validator/src/Validate.java
+${JDKHOME}/sample/annotations/Validator/src/Validator.java
+${JDKHOME}/sample/annotations/index.html
+${JDKHOME}/sample/forkjoin/
+${JDKHOME}/sample/forkjoin/mergesort/
+${JDKHOME}/sample/forkjoin/mergesort/MergeDemo.java
+${JDKHOME}/sample/forkjoin/mergesort/MergeSort.java
+${JDKHOME}/sample/jmx/
+${JDKHOME}/sample/jmx/jmx-scandir/
+${JDKHOME}/sample/jmx/jmx-scandir/build.properties
+${JDKHOME}/sample/jmx/jmx-scandir/build.xml
+${JDKHOME}/sample/jmx/jmx-scandir/docfiles/
+${JDKHOME}/sample/jmx/jmx-scandir/docfiles/connect-local-ant-run.jpg
+${JDKHOME}/sample/jmx/jmx-scandir/docfiles/connect-local-java-jar.jpg
+${JDKHOME}/sample/jmx/jmx-scandir/docfiles/connect-local.jpg
+${JDKHOME}/sample/jmx/jmx-scandir/docfiles/remote-connection-failed.jpg
+${JDKHOME}/sample/jmx/jmx-scandir/docfiles/remote-connection.jpg
+${JDKHOME}/sample/jmx/jmx-scandir/docfiles/scandir-config.jpg
+${JDKHOME}/sample/jmx/jmx-scandir/docfiles/scandir-result.jpg
+${JDKHOME}/sample/jmx/jmx-scandir/docfiles/scandir-start.jpg
+${JDKHOME}/sample/jmx/jmx-scandir/index.html
+${JDKHOME}/sample/jmx/jmx-scandir/keystore
+${JDKHOME}/sample/jmx/jmx-scandir/logging.properties
+${JDKHOME}/sample/jmx/jmx-scandir/manifest.mf
+${JDKHOME}/sample/jmx/jmx-scandir/nbproject/
+${JDKHOME}/sample/jmx/jmx-scandir/nbproject/file-targets.xml
+${JDKHOME}/sample/jmx/jmx-scandir/nbproject/jdk.xml
+${JDKHOME}/sample/jmx/jmx-scandir/nbproject/netbeans-targets.xml
+${JDKHOME}/sample/jmx/jmx-scandir/nbproject/project.xml
+${JDKHOME}/sample/jmx/jmx-scandir/src/
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/DirectoryScanner.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/DirectoryScannerMXBean.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ResultLogManager.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ResultLogManagerMXBean.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ScanDirAgent.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ScanDirClient.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ScanDirConfig.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ScanDirConfigMXBean.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ScanManager.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/ScanManagerMXBean.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config/
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config/DirectoryScannerConfig.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config/FileMatch.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config/ResultLogConfig.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config/ResultRecord.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config/ScanManagerConfig.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config/XmlConfigUtils.java
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/config/package.html
+${JDKHOME}/sample/jmx/jmx-scandir/src/com/sun/jmx/examples/scandir/package.html
+${JDKHOME}/sample/jmx/jmx-scandir/src/etc/
+${JDKHOME}/sample/jmx/jmx-scandir/src/etc/access.properties
+${JDKHOME}/sample/jmx/jmx-scandir/src/etc/management.properties
+${JDKHOME}/sample/jmx/jmx-scandir/src/etc/password.properties
+${JDKHOME}/sample/jmx/jmx-scandir/src/etc/testconfig.xml
+${JDKHOME}/sample/jmx/jmx-scandir/test/
+${JDKHOME}/sample/jmx/jmx-scandir/test/com/
+${JDKHOME}/sample/jmx/jmx-scandir/test/com/sun/
+${JDKHOME}/sample/jmx/jmx-scandir/test/com/sun/jmx/
+${JDKHOME}/sample/jmx/jmx-scandir/test/com/sun/jmx/examples/
+${JDKHOME}/sample/jmx/jmx-scandir/test/com/sun/jmx/examples/scandir/
+${JDKHOME}/sample/jmx/jmx-scandir/test/com/sun/jmx/examples/scandir/DirectoryScannerTest.java
+${JDKHOME}/sample/jmx/jmx-scandir/test/com/sun/jmx/examples/scandir/ScanDirConfigTest.java
+${JDKHOME}/sample/jmx/jmx-scandir/test/com/sun/jmx/examples/scandir/ScanManagerTest.java
+${JDKHOME}/sample/jmx/jmx-scandir/test/com/sun/jmx/examples/scandir/TestUtils.java
+${JDKHOME}/sample/jmx/jmx-scandir/test/com/sun/jmx/examples/scandir/config/
+${JDKHOME}/sample/jmx/jmx-scandir/test/com/sun/jmx/examples/scandir/config/XmlConfigUtilsTest.java
+${JDKHOME}/sample/jmx/jmx-scandir/truststore
+${JDKHOME}/sample/lambda/
+${JDKHOME}/sample/lambda/BulkDataOperations/
+${JDKHOME}/sample/lambda/BulkDataOperations/index.html
+${JDKHOME}/sample/lambda/BulkDataOperations/src/
+${JDKHOME}/sample/lambda/BulkDataOperations/src/CSVProcessor.java
+${JDKHOME}/sample/lambda/BulkDataOperations/src/Grep.java
+${JDKHOME}/sample/lambda/BulkDataOperations/src/PasswordGenerator.java
+${JDKHOME}/sample/lambda/BulkDataOperations/src/WC.java
+${JDKHOME}/sample/lambda/DefaultMethods/
+${JDKHOME}/sample/lambda/DefaultMethods/ArrayIterator.java
+${JDKHOME}/sample/lambda/DefaultMethods/DiamondInheritance.java
+${JDKHOME}/sample/lambda/DefaultMethods/Inheritance.java
+${JDKHOME}/sample/lambda/DefaultMethods/MixIn.java
+${JDKHOME}/sample/lambda/DefaultMethods/Reflection.java
+${JDKHOME}/sample/lambda/DefaultMethods/SimplestUsage.java
+${JDKHOME}/sample/nbproject/
+${JDKHOME}/sample/nbproject/project.xml
+${JDKHOME}/sample/nio/
+${JDKHOME}/sample/nio/chatserver/
+${JDKHOME}/sample/nio/chatserver/ChatServer.java
+${JDKHOME}/sample/nio/chatserver/Client.java
+${JDKHOME}/sample/nio/chatserver/ClientReader.java
+${JDKHOME}/sample/nio/chatserver/DataReader.java
+${JDKHOME}/sample/nio/chatserver/MessageReader.java
+${JDKHOME}/sample/nio/chatserver/NameReader.java
+${JDKHOME}/sample/nio/chatserver/README.txt
+${JDKHOME}/sample/nio/file/
+${JDKHOME}/sample/nio/file/AclEdit.java
+${JDKHOME}/sample/nio/file/Chmod.java
+${JDKHOME}/sample/nio/file/Copy.java
+${JDKHOME}/sample/nio/file/DiskUsage.java
+${JDKHOME}/sample/nio/file/FileType.java
+${JDKHOME}/sample/nio/file/WatchDir.java
+${JDKHOME}/sample/nio/file/Xdd.java
+${JDKHOME}/sample/nio/multicast/
+${JDKHOME}/sample/nio/multicast/MulticastAddress.java
+${JDKHOME}/sample/nio/multicast/Reader.java
+${JDKHOME}/sample/nio/multicast/Sender.java
+${JDKHOME}/sample/nio/server/
+${JDKHOME}/sample/nio/server/AcceptHandler.java
+${JDKHOME}/sample/nio/server/Acceptor.java
+${JDKHOME}/sample/nio/server/B1.java
+${JDKHOME}/sample/nio/server/BN.java
+${JDKHOME}/sample/nio/server/BP.java
+${JDKHOME}/sample/nio/server/ChannelIO.java
+${JDKHOME}/sample/nio/server/ChannelIOSecure.java
+${JDKHOME}/sample/nio/server/Content.java
+${JDKHOME}/sample/nio/server/Dispatcher.java
+${JDKHOME}/sample/nio/server/Dispatcher1.java
+${JDKHOME}/sample/nio/server/DispatcherN.java
+${JDKHOME}/sample/nio/server/FileContent.java
+${JDKHOME}/sample/nio/server/Handler.java
+${JDKHOME}/sample/nio/server/MalformedRequestException.java
+${JDKHOME}/sample/nio/server/N1.java
+${JDKHOME}/sample/nio/server/N2.java
+${JDKHOME}/sample/nio/server/README.txt
+${JDKHOME}/sample/nio/server/Reply.java
+${JDKHOME}/sample/nio/server/Request.java
+${JDKHOME}/sample/nio/server/RequestHandler.java
+${JDKHOME}/sample/nio/server/RequestServicer.java
+${JDKHOME}/sample/nio/server/Sendable.java
+${JDKHOME}/sample/nio/server/Server.java
+${JDKHOME}/sample/nio/server/StringContent.java
+${JDKHOME}/sample/nio/server/URLDumper.java
+${JDKHOME}/sample/scripting/
+${JDKHOME}/sample/scripting/scriptpad/
+${JDKHOME}/sample/scripting/scriptpad/README.txt
+${JDKHOME}/sample/scripting/scriptpad/build.properties
+${JDKHOME}/sample/scripting/scriptpad/build.xml
+${JDKHOME}/sample/scripting/scriptpad/nbproject/
+${JDKHOME}/sample/scripting/scriptpad/nbproject/file-targets.xml
+${JDKHOME}/sample/scripting/scriptpad/nbproject/jdk.xml
+${JDKHOME}/sample/scripting/scriptpad/nbproject/netbeans-targets.xml
+${JDKHOME}/sample/scripting/scriptpad/nbproject/project.xml
+${JDKHOME}/sample/scripting/scriptpad/src/
+${JDKHOME}/sample/scripting/scriptpad/src/META-INF/
+${JDKHOME}/sample/scripting/scriptpad/src/META-INF/manifest.mf
+${JDKHOME}/sample/scripting/scriptpad/src/com/
+${JDKHOME}/sample/scripting/scriptpad/src/com/sun/
+${JDKHOME}/sample/scripting/scriptpad/src/com/sun/sample/
+${JDKHOME}/sample/scripting/scriptpad/src/com/sun/sample/scriptpad/
+${JDKHOME}/sample/scripting/scriptpad/src/com/sun/sample/scriptpad/Main.java
+${JDKHOME}/sample/scripting/scriptpad/src/resources/
+${JDKHOME}/sample/scripting/scriptpad/src/resources/Main.js
+${JDKHOME}/sample/scripting/scriptpad/src/resources/conc.js
+${JDKHOME}/sample/scripting/scriptpad/src/resources/gui.js
+${JDKHOME}/sample/scripting/scriptpad/src/resources/mm.js
+${JDKHOME}/sample/scripting/scriptpad/src/resources/scriptpad.js
+${JDKHOME}/sample/scripting/scriptpad/src/scripts/
+${JDKHOME}/sample/scripting/scriptpad/src/scripts/README.txt
+${JDKHOME}/sample/scripting/scriptpad/src/scripts/browse.js
+${JDKHOME}/sample/scripting/scriptpad/src/scripts/insertfile.js
+${JDKHOME}/sample/scripting/scriptpad/src/scripts/linewrap.js
+${JDKHOME}/sample/scripting/scriptpad/src/scripts/mail.js
+${JDKHOME}/sample/scripting/scriptpad/src/scripts/memmonitor.js
+${JDKHOME}/sample/scripting/scriptpad/src/scripts/memory.bat
+${JDKHOME}/sample/scripting/scriptpad/src/scripts/memory.js
+${JDKHOME}/sample/scripting/scriptpad/src/scripts/memory.sh
+${JDKHOME}/sample/scripting/scriptpad/src/scripts/textcolor.js
+${JDKHOME}/sample/try-with-resources/
+${JDKHOME}/sample/try-with-resources/index.html
+${JDKHOME}/sample/try-with-resources/src/
+${JDKHOME}/sample/try-with-resources/src/CustomAutoCloseableSample.java
+${JDKHOME}/sample/try-with-resources/src/Unzip.java
+${JDKHOME}/sample/try-with-resources/src/ZipCat.java
+${JDKHOME}/src.zip
