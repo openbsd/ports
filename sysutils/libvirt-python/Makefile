@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/06/03 06:21:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2015/06/17 10:23:17 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,16 +6,19 @@ COMMENT =		libvirt virtualization API python bindings
 
 MODPY_EGG_VERSION =	1.2.16
 DISTNAME =		libvirt-python-${MODPY_EGG_VERSION}
+REVISION =		0
+
 CATEGORIES =		sysutils
 
-HOMEPAGE =		http://libvirt.org/python.html
+HOMEPAGE =		https://libvirt.org/python.html
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		ftp://libvirt.org/libvirt/python/
+MASTER_SITES =		https://libvirt.org/sources/python/ \
+			ftp://libvirt.org/libvirt/python/
 
 MODULES =		lang/python
 
