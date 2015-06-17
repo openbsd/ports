@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2014/11/07 10:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2015/06/17 16:52:55 ajacoutot Exp $
 
 COMMENT=	implementation of the iCalendar protocols and data units
 
 V=		1.0.1
 DISTNAME=	libical-${V}
+REVISION=	0
 
 GH_ACCOUNT=	libical
 GH_PROJECT=	libical

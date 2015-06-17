@@ -1,27 +1,43 @@
-$OpenBSD: patch-src_libical_icaltz-util_c,v 1.4 2014/10/20 15:51:54 ajacoutot Exp $
+$OpenBSD: patch-src_libical_icaltz-util_c,v 1.5 2015/06/17 16:52:55 ajacoutot Exp $
+
+https://github.com/libical/libical/pull/204
+
 --- src/libical/icaltz-util.c.orig	Thu Oct  9 17:07:05 2014
-+++ src/libical/icaltz-util.c	Mon Oct 20 17:28:34 2014
-@@ -33,6 +33,14 @@
- #if defined(sun) && defined(__SVR4)
++++ src/libical/icaltz-util.c	Wed Jun 17 18:47:43 2015
+@@ -34,21 +34,21 @@
  #include <sys/types.h>
  #include <sys/byteorder.h>
-+#elif defined(__OpenBSD__)
-+#include <sys/types.h>
-+#define __BYTE_ORDER	_BYTE_ORDER
-+#define __LITTLE_ENDIAN	_LITTLE_ENDIAN
-+#define __BIG_ENDIAN	_BIG_ENDIAN
-+#define bswap_16	swap16
-+#define bswap_32	swap32
-+#define bswap_64	swap64
  #else
- # ifdef HAVE_BYTESWAP_H
- #  include <byteswap.h>
-@@ -143,6 +151,8 @@ decode (const void *ptr)
-     if (sizeof (int) == 4)
- #ifdef _BIG_ENDIAN
-         return *(const int *) ptr;
-+#elif __OpenBSD__
-+	return swap32 (*(const uint32_t *) ptr);
- #else
-         return BSWAP_32 (*(const int *) ptr);
+-# ifdef HAVE_BYTESWAP_H
+-#  include <byteswap.h>
+-# endif
+-# ifdef HAVE_ENDIAN_H
+-#  include <endian.h>
+-# else
+-# ifdef HAVE_SYS_ENDIAN_H
+-#  include <sys/endian.h>
+-#  ifdef bswap32
+-#   define bswap_32 bswap32
+-#  else
+-#   define bswap_32 swap32
+-#  endif
+-# endif
+-# endif
++#if defined(HAVE_BYTESWAP_H)
++#include <byteswap.h>
++#endif
++#if defined(HAVE_ENDIAN_H)
++#include <endian.h>
++#elif defined(HAVE_SYS_ENDIAN_H)
++#include <sys/endian.h>
++#endif
++#ifndef bswap_32
++#if defined(bswap32)
++#define bswap_32 bswap32
++#else
++#define bswap_32 swap32
++#endif
++#endif
  #endif
+ 
+ #ifdef _MSC_VER
