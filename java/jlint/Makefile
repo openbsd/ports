@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/21 06:13:49 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2015/06/17 19:06:58 jasper Exp $
 
 COMMENT=	Java program analyzer and checker
 
-DISTNAME=	jlint-3.0
+DISTNAME=	jlint-3.1.2
 CATEGORIES=	java
-REVISION =	0
 
 HOMEPAGE=	http://artho.com/jlint/
 

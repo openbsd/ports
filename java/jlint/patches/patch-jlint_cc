@@ -1,7 +1,7 @@
-$OpenBSD: patch-jlint_cc,v 1.3 2010/06/07 23:30:48 espie Exp $
---- jlint.cc.orig	Tue Jun  8 01:27:51 2010
-+++ jlint.cc	Tue Jun  8 01:29:18 2010
-@@ -137,7 +137,7 @@ int get_type(utf_string const& str) 
+$OpenBSD: patch-jlint_cc,v 1.4 2015/06/17 19:06:58 jasper Exp $
+--- jlint.cc.orig	Tue Jan 11 03:42:33 2011
++++ jlint.cc	Wed Jun 17 21:04:30 2015
+@@ -138,7 +138,7 @@ int get_type(utf_string const& str) 
  
  void format_message(int code, utf_string const& file, int line, __VALIST ap)
  {
@@ -10,29 +10,29 @@ $OpenBSD: patch-jlint_cc,v 1.3 2010/06/07 23:30:48 espie Exp $
    static message_node *first, *last;
    static char* compound_message;
    const void* parameter[MAX_MSG_PARAMETERS];
-@@ -150,7 +150,7 @@ void format_message(int code, utf_string const& file, 
+@@ -151,7 +151,7 @@ void format_message(int code, utf_string const& file, 
      if (compound_message != NULL
          && ((loop_id != 0 
               && ((code != msg_loop && code != msg_sync_loop)
--                 || (int)parameter[2] != loop_id))
+-                 || (int)(long)parameter[2] != loop_id))
 +                 || (long)parameter[2] != loop_id))
              || (loop_id == 0 && code != msg_wait_path)))
        {
          if (!message_node::find(compound_message)) { 
-@@ -225,7 +225,7 @@ void format_message(int code, utf_string const& file, 
+@@ -226,7 +226,7 @@ void format_message(int code, utf_string const& file, 
                             name.as_asciz()); 
              break;
            case 'd': // integer
--            dst += sprintf(dst, "%d", (int)parameter[index]);  
-+            dst += sprintf(dst, "%ld", (long)parameter[index]);  
+-            dst += sprintf(dst, "%d", (int)(long)parameter[index]);  
++            dst += sprintf(dst, "%d", (long)parameter[index]);  
              break;
            default:
              assert(false/*bad message parameter format*/);
-@@ -261,7 +261,7 @@ void format_message(int code, utf_string const& file, 
+@@ -262,7 +262,7 @@ void format_message(int code, utf_string const& file, 
                compound_message = strdup(his_buf);
                first = last = new message_node(msg_buf);
                if (code != msg_wait) { 
--                loop_id = (int)parameter[2];
+-                loop_id = (int)(long)parameter[2];
 +                loop_id = (long)parameter[2];
                }
              } else if (!message_node::find(his_buf)) { 

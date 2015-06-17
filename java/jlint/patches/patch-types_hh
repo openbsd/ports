@@ -1,6 +1,6 @@
-$OpenBSD: patch-types_hh,v 1.3 2010/05/28 09:18:31 espie Exp $
---- types.hh.orig	Fri Apr  4 20:29:43 2003
-+++ types.hh	Fri May 28 11:17:02 2010
+$OpenBSD: patch-types_hh,v 1.4 2015/06/17 19:06:58 jasper Exp $
+--- types.hh.orig	Fri Oct 13 08:52:50 2006
++++ types.hh	Wed Jun 17 21:03:25 2015
 @@ -2,10 +2,10 @@
  #define TYPES_HH
  
@@ -13,14 +13,3 @@ $OpenBSD: patch-types_hh,v 1.3 2010/05/28 09:18:31 espie Exp $
  #include <string>
  #include <vector>
  #include <stddef.h>
-@@ -30,10 +30,6 @@ typedef unsigned long nat8;
- #endif
- #endif
- #endif
--
--#define bool  int
--#define true  1
--#define false 0
- 
- #define nobreak 
- 
