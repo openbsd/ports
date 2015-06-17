@@ -1,7 +1,11 @@
-$OpenBSD: patch-lib_talloc_wscript,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
-Force building standalone library (e.g., put headers in apporiate place).
---- lib/talloc/wscript.orig	Mon May 27 20:45:17 2013
-+++ lib/talloc/wscript	Mon May 27 20:45:27 2013
+$OpenBSD: patch-lib_talloc_wscript,v 1.2 2015/06/17 10:51:08 jca Exp $
+
+- Force building standalone library (e.g., put headers in appropriate
+  place).
+- workaround unavailable option (unused anyway)
+
+--- lib/talloc/wscript.orig	Thu Jun  4 14:01:19 2015
++++ lib/talloc/wscript	Fri Jun  5 13:22:39 2015
 @@ -40,6 +40,7 @@ def configure(conf):
      conf.RECURSE('lib/replace')
  
@@ -9,4 +13,13 @@ Force building standalone library (e.g., put headers in apporiate place).
 +    conf.env.standalone_talloc = True
  
      conf.env.disable_python = getattr(Options.options, 'disable_python', False)
+ 
+@@ -52,8 +53,6 @@ def configure(conf):
+             conf.define('USING_SYSTEM_PYTALLOC_UTIL', 1)
+ 
+     conf.env.TALLOC_COMPAT1 = False
+-    if conf.env.standalone_talloc:
+-        conf.env.TALLOC_COMPAT1 = Options.options.TALLOC_COMPAT1
+ 
+     conf.CHECK_XSLTPROC_MANPAGES()
  

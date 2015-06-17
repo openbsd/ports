@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2015/02/27 17:32:52 jca Exp $
-
-BROKEN =		affected by CVE-2014-8143 and CVE-2015-0240
+# $OpenBSD: Makefile,v 1.11 2015/06/17 10:51:08 jca Exp $
 
 SHARED_ONLY =		Yes
-VERSION =		4.0.22
+VERSION =		4.0.26
 DISTNAME =		samba-${VERSION}
 DOCSVERSION =		v3-5-test-4c5a1b6b
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
@@ -29,7 +27,7 @@ PKG_ARCH-docs =		*
 
 LDB_V =			1.1.16
 #NTDB_V =		0.9
-TALLOC_V =		2.0.7
+TALLOC_V =		2.1.2
 TDB_V =			1.2.11
 TEVENT_V =		0.9.18
 
@@ -72,7 +70,7 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			smbldap			0.0 \
 			smbsharemodes		2.0 \
 			talloc			1.0 \
-			tdb			4.0 \
+			tdb			5.0 \
 			tevent			0.0 \
 			tevent-util		0.0 \
 			torture			0.0 \
@@ -189,8 +187,6 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--with-privatedir=${VARBASE}/samba/private \
 			--with-lockdir=${VARBASE}/run/samba \
 			--with-privileged-socket-dir=${VARBASE}/samba \
-			--with-perl-arch-install-dir=${PREFIX}/${P5ARCH} \
-			--with-perl-lib-install-dir=${PREFIX}/${P5SITE} \
 			--enable-selftest \
 			--pedantic
 
@@ -231,6 +227,8 @@ post-install:
 	    -name '*.beforesubst' -or \
 	    -name '*.deconforig' | \
 		xargs -rt rm --
+	# fix path to perl modules
+	mv ${PREFIX}/share/perl5/* ${PREFIX}/${P5SITE}
 	# precompiling Python modules
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
 	${MODPY_BIN} -O ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}

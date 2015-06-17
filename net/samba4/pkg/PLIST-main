@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2014/09/07 09:07:27 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2015/06/17 10:51:09 jca Exp $
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
@@ -34,7 +34,7 @@ bin/samba-tool
 @bin bin/smbspool
 @bin bin/smbstatus
 @bin bin/smbta-util
-@bin bin/smbtar
+bin/smbtar
 @bin bin/smbtorture
 @bin bin/smbtree
 @bin bin/testparm
@@ -165,7 +165,6 @@ include/samba-4.0/wbclient.h
 @lib lib/libndr-standard.so.${LIBndr-standard_VERSION}
 @lib lib/libndr.so.${LIBndr_VERSION}
 @lib lib/libnetapi.so.${LIBnetapi_VERSION}
-@lib lib/libnss_wins.so.${LIBnss_wins_VERSION}
 @lib lib/libpdb.so.${LIBpdb_VERSION}
 @lib lib/libregistry.so.${LIBregistry_VERSION}
 @lib lib/libsamba-credentials.so.${LIBsamba-credentials_VERSION}
@@ -584,7 +583,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/sites.py
 lib/python${MODPY_VERSION}/site-packages/samba/sites.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/sites.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/smb.so
-lib/python${MODPY_VERSION}/site-packages/samba/socket_wrapper.so
 lib/python${MODPY_VERSION}/site-packages/samba/tdb_util.py
 lib/python${MODPY_VERSION}/site-packages/samba/tdb_util.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tdb_util.pyo
