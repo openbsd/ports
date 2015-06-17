@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2015/01/22 13:11:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.74 2015/06/17 18:59:56 jasper Exp $
 
 COMMENT=		X11/Motif GUI text editor
 
@@ -11,13 +11,10 @@ DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX} \
 PATCHFILES=		wrapmark.diff:0
 CATEGORIES=		editors x11
 
-MASTER_SITES=		http://www.nedit.org/ftp/v5_5/ \
-			${MASTER_SITE_SOURCEFORGE:=nedit/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nedit/}
 MASTER_SITES0=		http://distfiles.nl/
 
 DIST_SUBDIR=		nedit
-
-HOMEPAGE=		http://www.nedit.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
