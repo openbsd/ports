@@ -1,9 +1,9 @@
-# $OpenBSD: java.port.mk,v 1.33 2014/05/07 15:42:15 kurt Exp $
+# $OpenBSD: java.port.mk,v 1.34 2015/06/17 17:16:04 kurt Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
 # x.y+ means any x.y jdk or higher version. Valid values
-# for x.y are 1.3, 1.4, 1.5, 1.6 or 1.7
+# for x.y are 1.3, 1.4, 1.5, 1.6, 1.7 or 1.8
 
 MODJAVA_VER?=
 
@@ -61,6 +61,22 @@ MODJAVA_JRERUN?=no
      MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP:S/,<1.8v0//g}:devel/jdk/1.7
 .  else
      MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP}:devel/jdk/1.7
+.  endif
+.elif ${MODJAVA_VER:S/+//} == "1.8"
+   ONLY_FOR_ARCHS?= i386 amd64
+.  if ${NO_BUILD:L} != "yes"
+     JAVA_HOME= ${LOCALBASE}/jdk-1.8.0
+     BUILD_DEPENDS+= jdk->=1.8v0,<1.9v0:devel/jdk/1.8
+.  endif
+.  if ${MODJAVA_JRERUN:L} == "yes"
+     _MODJAVA_RUNDEP= jdk->=1.8v0,<1.9v0|jre->=1.8v0,<1.9v0
+.  else
+     _MODJAVA_RUNDEP= jdk->=1.8v0,<1.9v0
+.  endif
+.  if ${MODJAVA_VER} == "1.8+"
+     MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP:S/,<1.9v0//g}:devel/jdk/1.8
+.  else
+     MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP}:devel/jdk/1.8
 .  endif
 .else
    ERRORS+="Fatal: MODJAVA_VER must be set to a valid value."
