@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/10 22:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2015/06/17 18:35:06 jasper Exp $
+
+PORTROACH=	limit:.*[^a]$$
 
 COMMENT=	MP3 technical info viewer and ID3 1.x tag editor
 
