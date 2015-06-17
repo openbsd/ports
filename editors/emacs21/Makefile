@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2015/01/02 14:26:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2015/06/17 20:03:11 sthen Exp $
 
 BROKEN-i386= segfault during build (./temacs -batch -l loadup dump)
 
@@ -13,7 +13,7 @@ FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs21,-el
 FULLPKGNAME-leim=	emacs-leim-${VERSION}
 FULLPKGPATH-leim=	editors/emacs21,-leim
-REVISION-main=		30
+REVISION-main=		31
 REVISION-el=		7
 REVISION-leim=		7
 

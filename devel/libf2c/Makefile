@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2015/03/16 18:07:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2015/06/17 20:03:11 sthen Exp $
 
 V =		3.3.6
-CONFIG = 	${MACHINE_ARCH}-unknown-openbsd${OSREV}
-SUBST_VARS += 	CONFIG V
+CONFIG =	${MACHINE_ARCH}-unknown-openbsd${OSREV}
+SUBST_VARS +=	CONFIG V
 PKGNAME =	libf2c-$V
-REVISION =	6
-DISTFILES = 	libf2c-openbsd.tgz
+REVISION =	7
+DISTFILES =	libf2c-openbsd.tgz
 MASTER_SITES =	http://spacehopper.org/mirrors/
 
 COMMENT =	GNU fortran 77 libraries
