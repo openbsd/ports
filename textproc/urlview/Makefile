@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/01/10 18:02:04 schwarze Exp $
+# $OpenBSD: Makefile,v 1.25 2015/06/17 08:50:02 bentley Exp $
 
 COMMENT=	curses-based URL ripper
 
@@ -6,9 +6,7 @@ DISTNAME=	urlview-0.9
 REVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/contrib/ \
-		ftp://ftp.mutt.org/mutt/contrib/ \
-		ftp://ftp.gbnet.net/pub/mutt-international/contrib/ \
-		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/contrib/
+		ftp://ftp.gbnet.net/pub/mutt-international/contrib/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
