@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_runant_pl,v 1.4 2013/03/02 12:33:01 jasper Exp $
---- bin/runant.pl.orig	Tue May 22 06:24:46 2012
-+++ bin/runant.pl	Tue Feb 12 23:23:31 2013
-@@ -85,7 +85,7 @@ if(($^O eq "MSWin32") || ($^O eq "dos") || ($^O eq "cy
+$OpenBSD: patch-bin_runant_pl,v 1.5 2015/06/17 18:56:25 jasper Exp $
+--- bin/runant.pl.orig	Sun May 31 16:01:22 2015
++++ bin/runant.pl	Wed Jun 17 20:52:24 2015
+@@ -82,7 +82,7 @@ if(($^O eq "MSWin32") || ($^O eq "dos") || ($^O eq "cy
          }
  
  #build up standard classpath

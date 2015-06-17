@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/07/08 14:23:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/06/17 18:56:25 jasper Exp $
 @conflict jakarta-ant-*
 ant/
 ant/bin/
@@ -1261,6 +1261,8 @@ share/doc/java/ant/api/org/apache/tools/ant/types/resources/
 share/doc/java/ant/api/org/apache/tools/ant/types/resources/AbstractClasspathResource.ClassLoaderWithFlag.html
 share/doc/java/ant/api/org/apache/tools/ant/types/resources/AbstractClasspathResource.html
 share/doc/java/ant/api/org/apache/tools/ant/types/resources/AbstractResourceCollectionWrapper.html
+share/doc/java/ant/api/org/apache/tools/ant/types/resources/AllButFirst.html
+share/doc/java/ant/api/org/apache/tools/ant/types/resources/AllButLast.html
 share/doc/java/ant/api/org/apache/tools/ant/types/resources/Appendable.html
 share/doc/java/ant/api/org/apache/tools/ant/types/resources/ArchiveResource.html
 share/doc/java/ant/api/org/apache/tools/ant/types/resources/Archives.html
@@ -1590,7 +1592,10 @@ share/doc/java/ant/api/overview-summary.html
 share/doc/java/ant/api/overview-tree.html
 share/doc/java/ant/api/package-list
 share/doc/java/ant/api/resources/
-share/doc/java/ant/api/resources/inherit.gif
+share/doc/java/ant/api/resources/background.gif
+share/doc/java/ant/api/resources/tab.gif
+share/doc/java/ant/api/resources/titlebar.gif
+share/doc/java/ant/api/resources/titlebar_end.gif
 share/doc/java/ant/api/serialized-form.html
 share/doc/java/ant/api/stylesheet.css
 share/doc/java/ant/argumentprocessor.html
