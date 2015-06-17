@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.12 2015/03/16 18:07:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2015/06/17 07:49:51 bentley Exp $
 
 COMMENT=		wrapper class around the pcre library
 
 DISTNAME=		pcre++-0.9.5
 PKGNAME=		${DISTNAME}
-REVISION =		2
+REVISION =		3
 SHARED_LIBS=		pcre++ 1.0
 
 CATEGORIES=		devel
 HOMEPAGE=		http://www.daemon.de/PCRE
 
-MASTER_SITES=		ftp://ftp.daemon.de/scip/Apps/pcre++/
+MASTER_SITES=		http://www.daemon.de/idisk/Apps/pcre++/
 
-MAINTAINER=		Tomasz Bak <openbsdpl@wp.pl>
-
-# LGPL
+# LGPLv2.1 only
 PERMIT_PACKAGE_CDROM=	Yes
 
 LIB_DEPENDS =		devel/pcre
