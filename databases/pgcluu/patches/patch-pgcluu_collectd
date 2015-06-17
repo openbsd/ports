@@ -1,0 +1,28 @@
+$OpenBSD: patch-pgcluu_collectd,v 1.1 2015/06/17 12:10:42 jasper Exp $
+
+- Set $sysinfo{"RELEASE"}, $sysinfo{"CPU"} (minus cache)
+
+--- pgcluu_collectd.orig	Wed Jun 17 13:18:13 2015
++++ pgcluu_collectd	Wed Jun 17 13:49:47 2015
+@@ -1102,9 +1102,9 @@ sub grab_os_information
+ {
+ 
+ 	# Look at CPU informations
+-	my $cmd = 'cat /proc/cpuinfo 2>/dev/null';
++	my $cmd = 'sysctl hw.ncpu hw.model hw.cpuspeed 2>/dev/null';
+ 	$cmd = $sshcmd . ' "' . $cmd . "\"" if ($sshcmd);
+-	my @cpuinfo = `$cmd | grep -E "model name|cpu MHz|cache size|cpu cores|processor"`;
++	my @cpuinfo = `$cmd`;
+ 	# Look at kernel informations
+ 	$cmd = 'uname -a  2>/dev/null';
+ 	$cmd = $sshcmd . ' "' . $cmd . "\"" if ($sshcmd);
+@@ -1130,8 +1130,7 @@ sub grab_os_information
+ 	$cmd = $sshcmd . ' "' . $cmd . "\"" if ($sshcmd);
+ 	my @pciinfo = `$cmd`;
+ 	# Release informations
+-	$cmd = 'cat /etc/*release 2>/dev/null';
+-	$cmd = $sshcmd . ' "' . $cmd . "\"" if ($sshcmd);
++	$cmd = 'uname -srv 2>/dev/null';
+ 	my @releaseinfo = `$cmd`;
+ 	# System kernel tuning parameters
+ 	$cmd = '/sbin/sysctl -a 2>/dev/null';

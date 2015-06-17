@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: pgcluu_collectd.rc,v 1.1.1.1 2015/06/17 10:06:34 jasper Exp $
+# $OpenBSD: pgcluu_collectd.rc,v 1.2 2015/06/17 12:10:42 jasper Exp $
 
 daemon="${TRUEPREFIX}/bin/pgcluu_collectd --daemon"
-daemon_flags="-i 60 -h localhost -U postgres --disable-sar --no-sysinfo -f /var/run/pgcluu_collectd.pid /var/db/pgcluu"
+daemon_flags="-i 60 -h localhost -U postgres --disable-sar -f /var/run/pgcluu_collectd.pid /var/db/pgcluu"
 
 . /etc/rc.d/rc.subr
 

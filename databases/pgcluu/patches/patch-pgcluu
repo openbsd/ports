@@ -1,0 +1,38 @@
+$OpenBSD: patch-pgcluu,v 1.1 2015/06/17 12:10:42 jasper Exp $
+
+- Set $sysinfo{"KERNEL"} and $sysinfo{"CPU"} (minus cache) values
+
+--- pgcluu.orig	Wed Jun 17 13:18:10 2015
++++ pgcluu	Wed Jun 17 13:49:47 2015
+@@ -6854,13 +6854,13 @@ sub read_sysinfo
+ 			next;
+ 		}
+ 		if ($section eq 'CPU') {
+-			my ($key, $val) = split(/\s+:\s+/, $l);
+-			if ($key eq 'processor') {
+-				$sysinfo{$section}{$key} = $val + 1;
+-			} elsif ($key eq 'model name') {
+-				$val =~ s/\s+\@\s+(.*)$//;
+-				$sysinfo{$section}{'cpu MHz'} = $1;
+-				$sysinfo{$section}{$key} = $val;
++			my ($key, $val) = split(/=/, $l);
++			if ($key eq 'hw.ncpu') {
++				$sysinfo{$section}{'processor'} = $val;
++			} elsif ($key eq 'hw.model') {
++				$sysinfo{$section}{'model name'} = $val;
++			} elsif ($key eq 'hw.cpuspeed') {
++				$sysinfo{$section}{'cpu MHz'} = $val;
+ 			} else {
+ 				$sysinfo{$section}{$key} = $val;
+ 			}
+@@ -6868,8 +6868,8 @@ sub read_sysinfo
+ 		if ($section eq 'KERNEL') {
+ 			my @kinf = split(/\s+/, $l);
+ 			$sysinfo{$section}{'hostname'} = $kinf[1];
+-			$sysinfo{$section}{'kernel'} = "$kinf[0] $kinf[2] $kinf[3] $kinf[4]";
+-			$sysinfo{$section}{'arch'} = "$kinf[-2] $kinf[-1]";
++			$sysinfo{$section}{'kernel'} = "$kinf[2] $kinf[3]";
++			$sysinfo{$section}{'arch'} = "$kinf[-1]";
+ 		}
+ 		if ($section eq 'RELEASE') {
+ 			my ($key, $val) = split(/=/, $l);
