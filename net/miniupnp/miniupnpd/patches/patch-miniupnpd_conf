@@ -1,54 +1,19 @@
-$OpenBSD: patch-miniupnpd_conf,v 1.3 2012/10/18 14:56:55 dcoppa Exp $
---- miniupnpd.conf.orig	Thu Oct 18 10:49:45 2012
-+++ miniupnpd.conf	Thu Oct 18 10:52:17 2012
-@@ -1,5 +1,5 @@
- # WAN network interface
--ext_ifname=eth1
-+ext_ifname=em0
- #ext_ifname=xl1
- # if the WAN interface has several IP addresses, you
- # can specify the one to use below
-@@ -26,7 +26,7 @@ port=0
- #minissdpdsocket=/var/run/minissdpd.sock
- 
- # enable NAT-PMP support (default is no)
--enable_natpmp=yes
-+enable_natpmp=no
- 
- # enable UPNP support (default is yes)
- enable_upnp=yes
-@@ -49,7 +49,7 @@ bitrate_down=10000000
- # "secure" mode : when enabled, UPnP client are allowed to add mappings only
- # to their IP.
- #secure_mode=yes
--secure_mode=no
-+secure_mode=yes
- 
- # default presentation url is http address on port 80
- # If set to an empty string, no presentationURL element will appear
-@@ -62,7 +62,6 @@ system_uptime=yes
- 
- # notify interval in seconds. default is 30 seconds.
- #notify_interval=240
--notify_interval=60
- 
- # unused rules cleaning.
- # never remove any rule before this threshold for the number
-@@ -90,8 +89,8 @@ clean_ruleset_interval=600
+$OpenBSD: patch-miniupnpd_conf,v 1.4 2015/06/17 09:51:48 ajacoutot Exp $
+--- miniupnpd.conf.orig	Tue Oct 21 16:15:14 2014
++++ miniupnpd.conf	Wed Jun 17 11:51:03 2015
+@@ -121,7 +121,7 @@ clean_ruleset_interval=600
  # active when compiled with PF_ENABLE_FILTER_RULES (see config.h file)
  #quickrules=no
  
 -# uuid : generate your own with "make genuuid"
--uuid=3d3cec3a-8cf0-11e0-98ee-001a6bd2d07b
 +# uuid : generate your own with uuid(1) or uuidgen(1)
-+uuid=00000000-0000-0000-0000-000000000000
+ uuid=00000000-0000-0000-0000-000000000000
  
  # serial and model number the daemon will report to clients
- # in its XML description
-@@ -105,9 +104,9 @@ model_number=1
- # ip/mask format must be nn.nn.nn.nn/nn
- # it is advised to only allow redirection of port above 1024
- # and to finish the rule set with "deny 0-65535 0.0.0.0/0 0-65535"
+@@ -141,9 +141,9 @@ uuid=00000000-0000-0000-0000-000000000000
+ # modify the IP ranges to match their own internal networks, and
+ # also consider implementing network-specific restrictions
+ # CAUTION: failure to enforce any rules may permit insecure requests to be made!
 -allow 1024-65535 192.168.0.0/24 1024-65535
 -allow 1024-65535 192.168.1.0/24 1024-65535
 -allow 1024-65535 192.168.0.0/23 22

@@ -1,0 +1,24 @@
+$OpenBSD: patch-testasyncsendto_c,v 1.1 2015/06/17 09:51:48 ajacoutot Exp $
+
+warning: format '%ld' expects type 'long int', but argument 4 has type 'time_t'
+
+--- testasyncsendto.c.orig	Wed Jun 17 11:12:06 2015
++++ testasyncsendto.c	Wed Jun 17 11:12:44 2015
+@@ -71,7 +71,7 @@ int test(void)
+ 		int max_fd;
+ 		struct timeval timeout;
+ 		struct timeval now;
+-		syslog(LOG_DEBUG, "get_next_scheduled_send : %d next_send=%ld.%06ld",
++		syslog(LOG_DEBUG, "get_next_scheduled_send : %d next_send=%lld.%06ld",
+ 		       i, next_send.tv_sec, next_send.tv_usec);
+ 		FD_ZERO(&writefds);
+ 		max_fd = 0;
+@@ -97,7 +97,7 @@ int test(void)
+ 			}
+ 		}
+ 		syslog(LOG_DEBUG, "get_sendto_fds() returned %d", i);
+-		syslog(LOG_DEBUG, "select(%d, NULL, xx, NULL, %ld.%06ld)",
++		syslog(LOG_DEBUG, "select(%d, NULL, xx, NULL, %lld.%06ld)",
+ 		       max_fd, timeout.tv_sec, timeout.tv_usec);
+ 		i = select(max_fd, NULL, &writefds, NULL, &timeout);
+ 		if(i < 0) {
