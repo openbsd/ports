@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.71 2015/05/17 20:39:45 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.72 2015/06/17 07:31:44 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -215,9 +215,9 @@ sub read_checksums
 	while (<$fh>) {
 		next if m/^(?:MD5|RMD160|SHA1)/;
 		if (m/^SIZE \((.*)\) \= (\d+)$/) {
-			$r->{size}->{$1} = $2;
+			$r->{size}{$1} = $2;
 		} elsif (m/^SHA256 \((.*)\) \= (.*)$/) {
-			$r->{sha}->{$1} = OpenBSD::sha->fromstring($2);
+			$r->{sha}{$1} = OpenBSD::sha->fromstring($2);
 		} else {
 			next;
 		}
