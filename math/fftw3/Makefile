@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/05/22 11:31:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2015/06/18 07:13:04 bentley Exp $
 
 COMMENT-main=	C routines for computing the Discrete Fourier Transform
 COMMENT-common=	common files for the fftw3 packages
@@ -23,8 +23,8 @@ HOMEPAGE=	http://www.fftw.org/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
-		http://fftw.mirror.fr/ \
+MASTER_SITES=	http://fftw.org/ \
+		ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://ftp.fftw.org/pub/fftw/old/
 
 SEPARATE_BUILD=	Yes

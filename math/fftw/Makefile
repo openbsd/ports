@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/03/16 18:07:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2015/06/18 07:13:04 bentley Exp $
 
 PORTROACH=	limit:^2\.
 
@@ -16,9 +16,9 @@ HOMEPAGE=	http://www.fftw.org/
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		m
 
-MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
-		ftp://ftp.kusastro.kyoto-u.ac.jp/pub/src/GNU/fftw/ \
-		http://fftw.mirror.fr/
+MASTER_SITES=	http://fftw.org/ \
+		ftp://ftp.fftw.org/pub/fftw/ \
+		ftp://ftp.fftw.org/pub/fftw/old/
 
 
 CONFIGURE_STYLE=	gnu
