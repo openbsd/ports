@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2015/03/21 21:26:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2015/06/18 06:05:20 bentley Exp $
 
 COMMENT=	text editor
 
@@ -6,7 +6,8 @@ DISTNAME=	jed-0.99-19
 PKGNAME=	jed-0.99.19
 REVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/ \
+MASTER_SITES=   http://www.jedsoft.org/releases/jed/ \
+		ftp://space.mit.edu/pub/davis/jed/v0.99/ \
 		ftp://ftp.ntua.gr/pub/lang/slang/jed/v0.99/ \
 		ftp://ftp.fu-berlin.de/pub/unix/editors/jed/v0.99/
 
