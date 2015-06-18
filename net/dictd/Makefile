@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/05/30 10:51:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/06/18 07:28:36 bentley Exp $
 
 COMMENT-main=	Dictionary Server Protocol client
 COMMENT-server=	Dictionary Server Protocol server
@@ -19,8 +19,7 @@ HOMEPAGE=	http://www.dict.org
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c z
 
-MASTER_SITES=	ftp://ftp.us0.dict.org/pub/dict/ \
-		ftp://ftp.at0.dict.org/pub/dict/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dict/}
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
