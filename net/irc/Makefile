@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/05/28 06:50:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2015/06/18 07:38:48 bentley Exp $
 
 COMMENT=	internet relay chat (irc) server
 
@@ -8,7 +8,7 @@ EPOCH=		0
 CATEGORIES=	net
 REVISION=	0
 
-MASTER_SITES=   ftp://ftp.irc.org/irc/server/Old/ \
+MASTER_SITES=   http://www.irc.org/ftp/irc/server/Old/irc2.10/ \
                 ftp://ftp.ntua.gr/pub/net/irc/server/
 EXTRACT_SUFX=	.tgz
 
