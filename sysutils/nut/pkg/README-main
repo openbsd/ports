@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.8 2015/05/02 21:52:19 sthen Exp $
+$OpenBSD: README-main,v 1.9 2015/06/18 21:18:04 kirby Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -81,10 +81,10 @@ the table in /sys/dev/usb/usb_quirks.c and build a new kernel:
 { USB_VENDOR_APC, USB_PRODUCT_APC_UPS5G, ANY, { UQ_BAD_HID }},
 
 Alternatively, if you do not use a USB keyboard/mouse, you could simply
-disable the upd and uhid drivers. The following line creates a new kernel
+disable the upd and uhidev drivers. The following line creates a new kernel
 with the relevant changes:
 
-  printf 'disable uhid\ndisable upd\nquit\n' | config -e -o /bsd.no-uhid /bsd
+  printf 'disable uhidev\ndisable upd\nquit\n' | config -e -o /bsd.no-uhid /bsd
 
 Starting the daemons
 --------------------
