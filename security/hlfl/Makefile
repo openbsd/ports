@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2015/02/16 22:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2015/06/18 02:55:37 bentley Exp $
 
 COMMENT =		high level firewall language
 
 DISTNAME =		hlfl-0.60.1
+REVISION =		0
 CATEGORIES =   		security lang
 
-HOMEPAGE =		http://www.hlfl.org/
+HOMEPAGE =		https://www.cusae.com/hlfl/
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
@@ -14,9 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		http://www.hlfl.org/hlfl/ \
-			ftp://ftp.hlfl.org/pub/hlfl/ \
-			ftp://ftp.hlfl.org/pub/hlfl/old/
+MASTER_SITES =		ftp://ftp.cusae.com/pub/hlfl/
 
 FAKE_FLAGS =		prefix=${PREFIX} \
 			datadir=${PREFIX}/share/examples/hlfl \
