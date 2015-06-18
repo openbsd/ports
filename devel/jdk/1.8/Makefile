@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/06/17 17:12:26 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2015/06/18 19:12:04 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -12,9 +12,10 @@ PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
 EPOCH=		0
+REVISION=	0
 
 DIST_SUBDIR=	jdk
-DISTNAME=	openjdk-8u45b14-bsd-port-20150616
+DISTNAME=	openjdk-8u45b14-bsd-port-20150618
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	devel/jdk java
@@ -70,6 +71,7 @@ CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--with-boot-jdk=${BOOT_JDK} \
 		--with-package-path=${LOCALBASE} \
 		--with-jobs=${MAKE_JOBS} \
+		--with-cacerts-file=${FILESDIR}/cacerts \
 		--with-debug-level=release \
 		--disable-ccache \
 		--disable-freetype-bundling \
