@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2015/04/10 14:43:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2015/06/18 06:57:21 bentley Exp $
 
 COMMENT=	mailing list manager
 
-DISTNAME=	majordomo-1.94.5
+V=		1.94.5
+DISTNAME=	majordomo-$V
 REVISION =	6
 CATEGORIES=     mail
 
@@ -16,8 +17,8 @@ PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_FTP=	No
 WANTLIB=		c
 
-MASTER_SITES=	ftp://ftp.sgi.com/other/majordomo/1.94.5/ \
-		ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/
+MASTER_SITES=	http://www.greatcircle.com/majordomo/$V/ \
+		ftp://ftp.sgi.com/other/majordomo/$V/
 EXTRACT_SUFX=	.tgz
 
 ALL_TARGET=	wrapper
