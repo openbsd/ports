@@ -1,49 +1,46 @@
-# $OpenBSD: Makefile,v 1.37 2015/04/04 09:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2015/06/18 09:03:33 ajacoutot Exp $
 
-COMMENT=	video DVDs and CDs creation tool
+COMMENT=		video DVDs and CDs creation tool
 
-DISTNAME=	devede-3.23.0
-REVISION=	1
+MODPY_EGG_VERSION=	${GH_TAGNAME}
+DISTNAME=		devede-${MODPY_EGG_VERSION}
 
-CATEGORIES=	multimedia x11
+GH_TAGNAME=		4.0
+GH_ACCOUNT=		rastersoft
+GH_PROJECT=		devedeng
 
-EXTRACT_SUFX=	.tar.bz2
+CATEGORIES=		multimedia x11
 
-HOMEPAGE=	http://www.rastersoft.com/programas/devede.html
+HOMEPAGE=		http://www.rastersoft.com/programas/devede.html
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://www.rastersoft.com/descargas/
+MODULES=		lang/python
 
-MODULES=	lang/python
+MODPY_ADJ_FILES=	src/devede_ng.py
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/xdg-utils \
-		graphics/vcdimager \
-		multimedia/dvdauthor \
-		sysutils/cdrtools \
-		x11/dbus-python \
-		x11/mplayer \
-		x11/py-gtk2
+# needed because NO_BUILD is set below
+BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS}
 
-PKG_ARCH=	*
-NO_BUILD=	Yes
-NO_TEST=	Yes
+RUN_DEPENDS=		devel/desktop-file-utils \
+			devel/py-gobject3${MODPY_FLAVOR}
 
-MODPY_ADJ_FILES=devede
+# pygobject GTK3 introspection (not provided by indirect dependencies)
+RUN_DEPENDS +=		x11/gtk+3
 
-SUBST_VARS=	^MODPY_SITEPKG
+PKG_ARCH=		*
+NO_BUILD=		Yes
+NO_TEST=		Yes
 
 pre-configure:
-	@find ${WRKSRC} -name \*.py | \
-		xargs perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g'
-	${SUBST_CMD} \
-		${WRKSRC}/{devede_other,devede_executor,devede,devede_fonts}.py
+	${SUBST_CMD} ${WRKSRC}/setup.py \
+		${WRKSRC}/src/devedeng/configuration_data.py
 
-do-install:
-	cd ${WRKSRC} && \
-		/bin/sh install.sh prefix=${TRUEPREFIX} uninstall=no
-	find ${PREFIX} -name \*.orig -or -name \*~ | xargs rm
+post-install:
+	rmdir ${PREFIX}/share/doc/devede_ng/html
+	rmdir ${PREFIX}/share/doc/devede_ng
+	cd ${PREFIX}/bin && ln -s devede_ng.py devede
 
 .include <bsd.port.mk>
