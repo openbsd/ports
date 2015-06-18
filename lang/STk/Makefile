@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/04/20 20:08:18 schwarze Exp $
+# $OpenBSD: Makefile,v 1.44 2015/06/18 06:37:04 bentley Exp $
 
 BROKEN-sparc64=	fails in mpn_dm_1.c, error: lvalue required in asm statement
 
@@ -11,7 +11,7 @@ CATEGORIES=	lang
 
 HOMEPAGE=	http://kaolin.unice.fr/STk/
 
-MASTER_SITES=	ftp://kaolin.unice.fr/pub/STk/
+MASTER_SITES=	http://kaolin.unice.fr/STk/Distrib/
 
 # BSD-like licenses apply
 PERMIT_PACKAGE_CDROM=	Yes
