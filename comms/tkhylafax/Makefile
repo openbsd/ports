@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.31 2015/01/24 13:46:44 schwarze Exp $
+# $OpenBSD: Makefile,v 1.32 2015/06/18 02:50:18 bentley Exp $
 
 COMMENT=	Tcl/Tk interface to Sam Leffler's fax package
 
 DISTNAME=	tkhylafax-3.2
-REVISION=	1
+REVISION=	2
 CATEGORIES=	comms
-
-MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	ftp://ftp.hylafax.org/contrib/tkhylafax/ \
-		ftp://mirror.aarnet.edu.au/pub/hylafax/contrib/tkhylafax/ \
-		ftp://gd.tuwien.ac.at/infosys/fax/hylafax/contrib/tkhylafax/ \
+MASTER_SITES=	http://ftp.hylafax.org/contrib/tkhylafax/ \
+		ftp://ftp.hylafax.org/contrib/tkhylafax/ \
+		http://mirror.aarnet.edu.au/pub/hylafax/contrib/tkhylafax/ \
 		ftp://ftp.ntua.gr/pub/net/hylafax/contrib/tkhylafax/
 
 MODULES=	x11/tk
