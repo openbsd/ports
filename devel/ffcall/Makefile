@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/03/16 18:07:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2015/06/18 06:05:00 bentley Exp $
 
 # arm: doesn't build super-old and broken assember files
 ONLY_FOR_ARCHS=	alpha amd64 hppa i386 mips64 mips64el powerpc sparc sparc64
@@ -10,11 +10,10 @@ REVISION =	2
 SHARED_LIBS=	avcall		1.0 \
 		callback	1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.haible.de/bruno/gnu/ \
-		ftp://ftp.ilog.fr/pub/Users/haible/gnu/
+MASTER_SITES=	http://www.haible.de/bruno/gnu/
 HOMEPAGE=	http://www.haible.de/bruno/packages-ffcall.html
 
-# GPL
+# GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
