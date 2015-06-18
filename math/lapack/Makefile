@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/03/16 18:07:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2015/06/18 07:19:25 bentley Exp $
 
 COMMENT=	library of Fortran 77 linear algebra subroutines
 
@@ -14,8 +14,7 @@ HOMEPAGE=	http://www.netlib.org/lapack/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
-		ftp://netlib.bell-labs.com/netlib/lapack/ \
+MASTER_SITES=	http://www.netlib.org/lapack/ \
 		http://www.netlib.no/netlib/lapack/
 EXTRACT_SUFX=	.tgz
 
