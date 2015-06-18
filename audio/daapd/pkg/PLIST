@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/09/15 21:49:10 jakemsr Exp $
-@bin bin/daapd
-@man man/man8/daapd.8
-share/doc/daapd/
-share/doc/daapd/FAQ
-share/doc/daapd/README
-share/examples/daapd/
-share/examples/daapd/daapd-example.conf
-@sample ${SYSCONFDIR}/daapd.conf

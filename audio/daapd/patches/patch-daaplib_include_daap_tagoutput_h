@@ -1,9 +1,0 @@
-$OpenBSD: patch-daaplib_include_daap_tagoutput_h,v 1.1 2010/05/23 16:39:45 espie Exp $
---- daaplib/include/daap/tagoutput.h.orig	Sun May 23 18:33:03 2010
-+++ daaplib/include/daap/tagoutput.h	Sun May 23 18:34:45 2010
-@@ -125,4 +125,5 @@
- 		TagOutput( const TagOutput& );
- 		TagOutput& operator = ( const TagOutput& );
- 	};
-+	TagOutput& end( TagOutput& x );
- #endif
