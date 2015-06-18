@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/03/16 18:07:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2015/06/18 02:36:35 bentley Exp $
 
 COMMENT=	library for arbitrary precision arithmetic
 
@@ -11,6 +11,7 @@ CATEGORIES=	devel math
 HOMEPAGE=	http://gmplib.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
+EXTRACT_SUFX=	.tar.bz2
 
 # LGPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
