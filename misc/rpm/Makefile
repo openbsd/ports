@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/03/16 18:07:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2015/06/18 07:22:59 bentley Exp $
 
 COMMENT =	Red Hat package manager
 
@@ -12,8 +12,7 @@ CATEGORIES =	misc archivers emulators
 PERMIT_PACKAGE_CDROM =	Yes
 
 HOMEPAGE =	http://www.rpm.org/
-MASTER_SITES =	ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/ \
-		ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
+MASTER_SITES =	http://rpm.org/releases/historical/rpm-3.0.x/
 
 MODULES =	devel/gettext
 WANTLIB += 	bz2 c popt z
