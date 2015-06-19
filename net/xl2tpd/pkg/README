@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2015/01/08 14:08:15 ajacoutot Exp $
+$OpenBSD: README,v 1.7 2015/06/19 16:34:41 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -78,8 +78,8 @@ ipcp-accept-local
 ipcp-accept-remote
 noccp
 noauth
-mtu 850
-mru 850
+mtu 1456
+mru 1456
 debug
 lock
 user $username
@@ -118,12 +118,7 @@ If all is well, you'll see debug output in the log, and the interface
 should be connected:
 
 # ifconfig ppp
-ppp0: flags=28051<UP,POINTOPOINT,RUNNING,MULTICAST,NOINET6> mtu 850
+ppp0: flags=28051<UP,POINTOPOINT,RUNNING,MULTICAST,NOINET6> mtu 1456
 	priority: 0
 	groups: ppp
 	inet 172.28.15.223 --> 172.28.15.1 netmask 0xffffffff
-
-Note that these instructions configure things with a restricted MTU as
-there seem to be some problems with fragmented packets (you will see
-various "Protocol-Reject for unsupported protocol" messages in pppd's log).
-Some connection stalling has also been seen under higher loads.
