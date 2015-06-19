@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.5 2014/03/26 03:27:26 daniel Exp $
+$OpenBSD: patch-configure,v 1.6 2015/06/19 21:25:32 daniel Exp $
 
---- configure.orig	Sat Dec 21 03:03:14 2013
-+++ configure	Mon Dec 30 19:04:42 2013
-@@ -897,7 +897,7 @@ case $coqrunbyteflags_spec/$local/$custom_spec/$CUSTOM
+--- configure.orig	Thu Apr  9 09:59:35 2015
++++ configure	Wed Apr 22 09:10:47 2015
+@@ -900,7 +900,7 @@ case $coqrunbyteflags_spec/$local/$custom_spec/$CUSTOM
      */true/*/*) COQRUNBYTEFLAGS="-dllib -lcoqrun -dllpath '$COQTOP'/kernel/byterun";;
      *)
          COQRUNBYTEFLAGS="-dllib -lcoqrun -dllpath '$LIBDIR'"

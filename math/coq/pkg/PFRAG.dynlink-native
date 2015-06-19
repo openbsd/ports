@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.2 2014/03/26 03:27:26 daniel Exp $
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.3 2015/06/19 21:25:32 daniel Exp $
 @bin bin/coqchk.opt
 @bin bin/coqide.opt
 @bin bin/coqtop.opt
@@ -19,29 +19,29 @@ lib/coq/parsing/highparsing.a
 lib/coq/parsing/highparsing.cmxa
 lib/coq/parsing/parsing.a
 lib/coq/parsing/parsing.cmxa
-lib/coq/plugins/cc/cc_plugin.cmxs
-lib/coq/plugins/decl_mode/decl_mode_plugin.cmxs
-lib/coq/plugins/extraction/extraction_plugin.cmxs
-lib/coq/plugins/field/field_plugin.cmxs
-lib/coq/plugins/firstorder/ground_plugin.cmxs
-lib/coq/plugins/fourier/fourier_plugin.cmxs
-lib/coq/plugins/funind/recdef_plugin.cmxs
-lib/coq/plugins/micromega/micromega_plugin.cmxs
-lib/coq/plugins/nsatz/nsatz_plugin.cmxs
-lib/coq/plugins/omega/omega_plugin.cmxs
-lib/coq/plugins/quote/quote_plugin.cmxs
-lib/coq/plugins/ring/ring_plugin.cmxs
-lib/coq/plugins/romega/romega_plugin.cmxs
-lib/coq/plugins/rtauto/rtauto_plugin.cmxs
-lib/coq/plugins/setoid_ring/newring_plugin.cmxs
-lib/coq/plugins/subtac/subtac_plugin.cmxs
-lib/coq/plugins/syntax/ascii_syntax_plugin.cmxs
-lib/coq/plugins/syntax/nat_syntax_plugin.cmxs
-lib/coq/plugins/syntax/numbers_syntax_plugin.cmxs
-lib/coq/plugins/syntax/r_syntax_plugin.cmxs
-lib/coq/plugins/syntax/string_syntax_plugin.cmxs
-lib/coq/plugins/syntax/z_syntax_plugin.cmxs
-lib/coq/plugins/xml/xml_plugin.cmxs
+@bin lib/coq/plugins/cc/cc_plugin.cmxs
+@bin lib/coq/plugins/decl_mode/decl_mode_plugin.cmxs
+@bin lib/coq/plugins/extraction/extraction_plugin.cmxs
+@bin lib/coq/plugins/field/field_plugin.cmxs
+@bin lib/coq/plugins/firstorder/ground_plugin.cmxs
+@bin lib/coq/plugins/fourier/fourier_plugin.cmxs
+@bin lib/coq/plugins/funind/recdef_plugin.cmxs
+@bin lib/coq/plugins/micromega/micromega_plugin.cmxs
+@bin lib/coq/plugins/nsatz/nsatz_plugin.cmxs
+@bin lib/coq/plugins/omega/omega_plugin.cmxs
+@bin lib/coq/plugins/quote/quote_plugin.cmxs
+@bin lib/coq/plugins/ring/ring_plugin.cmxs
+@bin lib/coq/plugins/romega/romega_plugin.cmxs
+@bin lib/coq/plugins/rtauto/rtauto_plugin.cmxs
+@bin lib/coq/plugins/setoid_ring/newring_plugin.cmxs
+@bin lib/coq/plugins/subtac/subtac_plugin.cmxs
+@bin lib/coq/plugins/syntax/ascii_syntax_plugin.cmxs
+@bin lib/coq/plugins/syntax/nat_syntax_plugin.cmxs
+@bin lib/coq/plugins/syntax/numbers_syntax_plugin.cmxs
+@bin lib/coq/plugins/syntax/r_syntax_plugin.cmxs
+@bin lib/coq/plugins/syntax/string_syntax_plugin.cmxs
+@bin lib/coq/plugins/syntax/z_syntax_plugin.cmxs
+@bin lib/coq/plugins/xml/xml_plugin.cmxs
 lib/coq/pretyping/pretyping.a
 lib/coq/pretyping/pretyping.cmxa
 lib/coq/proofs/proofs.a
