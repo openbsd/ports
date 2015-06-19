@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_getopt_c,v 1.1 2015/06/19 12:44:49 ajacoutot Exp $
+
+getopt.c:457: warning: incompatible implicit declaration of built-in function 'strlen'
+
+--- src/getopt.c.orig	Fri Jun 19 14:38:04 2015
++++ src/getopt.c	Fri Jun 19 14:38:27 2015
+@@ -30,6 +30,8 @@
+ #include "config.h"
+ #endif
+ 
++#include <string.h>
++
+ #ifdef __GNUC__
+ #define alloca __builtin_alloca
+ #else /* not __GNUC__ */

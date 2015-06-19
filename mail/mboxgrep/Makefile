@@ -1,31 +1,29 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2015/06/19 12:44:49 ajacoutot Exp $
 
-COMMENT=	scan mailboxes for messages matching a regular expression
+COMMENT=		scan mailboxes for messages matching a regular expression
 
-DISTNAME=	mboxgrep-0.7.8
-REVISION =	0
-CATEGORIES=	mail
+DISTNAME=		mboxgrep-0.7.9
+CATEGORIES=		mail
 
-HOMEPAGE=	http://www.mboxgrep.org/
+HOMEPAGE=		http://www.mboxgrep.org/
 
+# GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
-WANTLIB=		c z pcre
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mboxgrep/}
+WANTLIB += bz2 c pcre z
 
-LIB_DEPENDS=	devel/pcre
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mboxgrep/}
 
-WRKSRC=		${WRKDIR}/mboxgrep
+LIB_DEPENDS=		archivers/bzip2 \
+			devel/pcre
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_STYLE=	gnu dest
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LIBS="-L${LOCALBASE}/lib"
 
-NO_TEST=	Yes
+# md5.c:122: warning: incompatible implicit declaration of built-in function 'bcopy'
+CFLAGS +=		-DSTDC_HEADERS
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/mboxgrep ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/mboxgrep.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/doc/mboxgrep.info ${PREFIX}/info 
+NO_TEST=		Yes
 
 .include <bsd.port.mk>
