@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/04 07:03:59 ajacoutot Exp $
-@pkgpath palm/palm2ical
-bin/fixpdb
-bin/palm2ical

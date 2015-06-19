@@ -1,5 +1,0 @@
-The palm2ical program reads a PalmOS Datebook or Calendar database
-file (DatebookDB.PDB or CalendarDB-PDat.PDB) and writes complete
-information from all entries as an iCalendar (.ics or RFC 2445 /
-RFC 5545) file, suitable for import to Mozilla Sunbird and many
-other calendar applications.
