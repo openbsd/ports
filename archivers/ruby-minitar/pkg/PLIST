@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/19 06:14:07 sebastia Exp $
+@conflict ruby21-archive-tar-minitar-*
+@pkgpath archivers/ruby-archive-tar-minitar
+${GEM_BIN}/minitar${GEM_BIN_SUFFIX}
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/ChangeLog
+${GEM_LIB}/gems/${DISTNAME}/Install
+${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/bin/
+${GEM_LIB}/gems/${DISTNAME}/bin/minitar
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/archive/
+${GEM_LIB}/gems/${DISTNAME}/lib/archive/tar/
+${GEM_LIB}/gems/${DISTNAME}/lib/archive/tar/minitar/
+${GEM_LIB}/gems/${DISTNAME}/lib/archive/tar/minitar.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/archive/tar/minitar/command.rb
+${GEM_LIB}/gems/${DISTNAME}/tests/
+${GEM_LIB}/gems/${DISTNAME}/tests/tc_tar.rb
+${GEM_LIB}/gems/${DISTNAME}/tests/testall.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
