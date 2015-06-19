@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/06/17 18:41:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2015/06/19 17:15:17 sthen Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
@@ -38,6 +38,7 @@ MODPY_RUNDEP=	No
 BUILD_DEPENDS=	lang/vala \
 		devel/gobject-introspection \
 		devel/py-parsing \
+		devel/py-six \
 		devel/spice-protocol \
 		sysutils/usbutils
 
