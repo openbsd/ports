@@ -1,31 +1,9 @@
-$OpenBSD: patch-src_ushare_c,v 1.4 2012/11/07 14:53:59 dcoppa Exp $
+$OpenBSD: patch-src_ushare_c,v 1.5 2015/06/19 09:07:32 ajacoutot Exp $
 
 Unbreak build with libupnp>=1.6.17
 
 --- src/ushare.c.orig	Sun Dec  9 14:03:36 2007
 +++ src/ushare.c	Fri Nov  2 16:13:38 2012
-@@ -28,6 +28,10 @@
- #include <errno.h>
- #include <getopt.h>
- 
-+#if (defined(__unix__) || defined(unix)) && !defined(USG)
-+#include <sys/param.h>
-+#endif
-+
- #if (defined(BSD) || defined(__FreeBSD__) || defined(__APPLE__))
- #include <sys/socket.h>
- #include <sys/sysctl.h>
-@@ -49,10 +53,6 @@
- #include <ifaddrs.h>
- #endif
- 
--#if (defined(__unix__) || defined(unix)) && !defined(USG)
--#include <sys/param.h>
--#endif
--
- #include <upnp/upnp.h>
- #include <upnp/upnptools.h>
- 
 @@ -188,7 +188,7 @@ handle_action_request (struct Upnp_Action_Request *req
    if (strcmp (request->DevUDN + 5, ut->udn))
      return;

@@ -1,15 +1,12 @@
-$OpenBSD: patch-configure,v 1.3 2012/11/07 14:53:59 dcoppa Exp $
-
-Unbreak build with libupnp>=1.6.17
-
+$OpenBSD: patch-configure,v 1.4 2015/06/19 09:07:32 ajacoutot Exp $
 --- configure.orig	Sun Dec  9 14:03:36 2007
-+++ configure	Fri Nov  2 16:07:09 2012
-@@ -642,7 +642,7 @@ echolog "Checking for libthreadutil ..."
- check_lib upnp/ThreadPool.h ThreadPoolAdd "-lthreadutil -lpthread" || die "Error, can't find libthreadutil !"
- add_extralibs -lpthread
- 
--libupnp_min_version="1.4.2"
-+libupnp_min_version="1.6.17"
- echolog "Checking for libupnp >= $libupnp_min_version ..."
- check_lib upnp/upnp.h UpnpSetMaxContentLength -lupnp || die "Error, can't find libupnp !"
- check_lib_version libupnp $libupnp_min_version || die "Error, libupnp < $libupnp_min_version !"
++++ configure	Fri Jun 19 10:54:09 2015
+@@ -302,7 +302,7 @@ cpu=`uname -m`
+ optimize="yes"
+ debug="no"
+ dostrip="yes"
+-extralibs=""
++extralibs="-lintl"
+ installstrip="-s"
+ cross_compile="no"
+ INSTALL="/usr/bin/install -c"

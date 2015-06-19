@@ -1,21 +1,8 @@
-$OpenBSD: patch-scripts_ushare_conf,v 1.1.1.1 2010/03/22 22:26:59 ajacoutot Exp $
---- scripts/ushare.conf.orig	Tue Feb  9 16:57:02 2010
-+++ scripts/ushare.conf	Tue Feb  9 16:57:35 2010
-@@ -10,7 +10,7 @@ USHARE_IFACE=
- 
- # Port to listen to (default is random from IANA Dynamic Ports range)
- # Ex : USHARE_PORT=49200
--USHARE_PORT=
-+USHARE_PORT=49200
- 
- # Port to listen for Telnet connections
- # Ex : USHARE_TELNET_PORT=1337
-@@ -28,18 +28,18 @@ USHARE_DIR=
- # as is. (Umlauts for all!)
- #
- # Options are TRUE/YES/1 for override and anything else for default behaviour
--USHARE_OVERRIDE_ICONV_ERR=
-+USHARE_OVERRIDE_ICONV_ERR=YES
+$OpenBSD: patch-scripts_ushare_conf,v 1.2 2015/06/19 09:07:32 ajacoutot Exp $
+--- scripts/ushare.conf.orig	Sun Dec  9 14:03:36 2007
++++ scripts/ushare.conf	Fri Jun 19 11:06:21 2015
+@@ -31,15 +31,15 @@ USHARE_DIR=
+ USHARE_OVERRIDE_ICONV_ERR=
  
  # Enable Web interface (yes/no)
 -ENABLE_WEB=
@@ -32,5 +19,5 @@ $OpenBSD: patch-scripts_ushare_conf,v 1.1.1.1 2010/03/22 22:26:59 ajacoutot Exp 
  # Use DLNA profile (yes/no)
  # This is needed for PlayStation3 to work (among other devices)
 -ENABLE_DLNA=
-+USHARE_ENABLE_DLNA=no
++USHARE_ENABLE_DLNA=
  
