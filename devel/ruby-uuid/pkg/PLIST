@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/18 20:17:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/19 14:09:20 jasper Exp $
 @comment ${GEM_BIN}/uuid${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -7,11 +7,7 @@ ${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/bin/
-${GEM_LIB}/gems/${DISTNAME}/bin/rake
 ${GEM_LIB}/gems/${DISTNAME}/bin/uuid
-${GEM_LIB}/gems/${DISTNAME}/bin/yard
-${GEM_LIB}/gems/${DISTNAME}/bin/yardoc
-${GEM_LIB}/gems/${DISTNAME}/bin/yri
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/uuid.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
