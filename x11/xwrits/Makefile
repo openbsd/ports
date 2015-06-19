@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2014/01/01 20:46:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2015/06/19 16:24:06 jca Exp $
 
 COMMENT =	typing break alarm and timer
 
 DISTNAME =	xwrits-2.26
+REVISION =	0
 CATEGORIES =	x11
 HOMEPAGE =	http://www.lcdf.org/~eddietwo/xwrits/
-
-MAINTAINER =	Scott Vokes <vokes.s@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes

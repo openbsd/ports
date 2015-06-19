@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2015/06/16 12:14:43 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2015/06/19 16:24:06 jca Exp $
 
 COMMENT =		fast C implementation of Markdown
 
 DISTNAME =		discount-2.1.8a
+REVISION =		0
 EXTRACT_SUFX =		.tar.bz2
 
 CATEGORIES =		textproc
 
 HOMEPAGE =		http://www.pell.portland.or.us/~orc/Code/markdown/
-
-MAINTAINER =		Scott Vokes <vokes.s@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

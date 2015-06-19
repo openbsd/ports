@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/06/19 16:24:06 jca Exp $
 
 COMMENT=	analogue bitmap clock
 
 DISTNAME=	abclock-1.0d
+REVISION=	0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.let.rug.nl/~kleiweg/abclock/
-
-MAINTAINER=	Scott Vokes <vokes.s@gmail.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
