@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2014/09/29 19:29:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/06/19 14:05:16 jasper Exp $
 
 COMMENT=		Redis::Namespace class for namespacing calls to Redis
 
-DISTNAME=		redis-namespace-1.5.1
+DISTNAME=		redis-namespace-1.5.2
 CATEGORIES=		databases
 
 HOMEPAGE=		https://github.com/resque/redis-namespace
