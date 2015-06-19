@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:05:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/06/19 08:28:39 jasper Exp $
 
 COMMENT=	reserved words in SQL and specific databases
 
 MODULES=	cpan
-DISTNAME=	SQL-ReservedWords-0.7
-REVISION=	0
+DISTNAME=	SQL-ReservedWords-0.8
 CATEGORIES=	databases
 
 # perl
