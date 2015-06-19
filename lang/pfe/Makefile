@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2015/05/22 11:31:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2015/06/19 08:02:14 jasper Exp $
 
 BROKEN-powerpc=	does not build, error: lvalue required as increment operand
 
 COMMENT=	Portable Forth Environment
 
-DISTNAME=	pfe-0.33.69
-SHARED_LIBS +=  pfe                  33.69    # .33.69
-SHARED_LIBS +=  pfemodule            33.69    # .33.69
-SHARED_LIBS +=  pfe-0-forth          33.69    # .33.69
+DISTNAME=	pfe-0.33.71
 CATEGORIES=    	lang
-REVISION=	2
+
+SHARED_LIBS +=  pfe                  33.71    # .33.71
+SHARED_LIBS +=  pfe-0-forth          33.71    # .33.71
 
 HOMEPAGE=	http://pfe.sourceforge.net/
 
@@ -31,11 +30,11 @@ CONFIGURE_ARGS+=--with-regs
 # this renames floating.so to libfloating.so before linking with it
 USE_LIBTOOL=	gnu
 
+NO_TEST=	Yes
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pfe/
 	${INSTALL_DATA} ${WRKDIST}/doc/Forthprimer.pdf \
 		${PREFIX}/share/doc/pfe/
-
-NO_TEST=	Yes
 
 .include <bsd.port.mk>

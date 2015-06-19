@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/05/22 11:31:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/06/19 08:02:14 jasper Exp $
 %%SHARED%%
 bin/pfe
-bin/pfe-config
-bin/pfe-config-forth
 bin/pfe-exec
 @bin bin/pfe-exec-forth
 @bin bin/pfe-forth
@@ -106,8 +104,10 @@ include/pfe/tools-sub.h
 include/pfe/useful-ext.h
 include/pfe/version-sub.h
 include/pfe/your-ext.h
+@lib lib/libpfe-0-forth.so.${LIBpfe-0-forth_VERSION}
 lib/libpfe.a
 lib/libpfe.la
+@lib lib/libpfe.so.${LIBpfe_VERSION}
 lib/pfe-forth/
 lib/pfe-forth/assembler.a
 lib/pfe-forth/assembler.la
@@ -140,16 +140,11 @@ lib/pfe-forth/structs.a
 lib/pfe-forth/structs.la
 lib/pfe-forth/termcatch.a
 lib/pfe-forth/termcatch.la
-lib/pfe-forth/testmodule1.a
-lib/pfe-forth/testmodule1.la
-lib/pfe-forth/testmodule2.a
-lib/pfe-forth/testmodule2.la
 lib/pfe-forth/toolbelt.a
 lib/pfe-forth/toolbelt.la
 lib/pfe-forth/zchar.a
 lib/pfe-forth/zchar.la
 lib/pkgconfig/pfe.pc
-@man man/man1/pfe-config.1
 @man man/man1/pfe.1
 share/doc/pfe/
 share/doc/pfe/Forthprimer.pdf

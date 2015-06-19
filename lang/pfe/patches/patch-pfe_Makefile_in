@@ -1,17 +1,21 @@
-$OpenBSD: patch-pfe_Makefile_in,v 1.3 2008/10/22 12:25:50 jasper Exp $
-
-Patch created without context (diff -C 0), as an RCS Id is found in
-the context, which is expanded, while it shouldn't.
-
-*** pfe/Makefile.in.orig	Wed Oct 22 14:23:25 2008
---- pfe/Makefile.in	Wed Oct 22 14:23:52 2008
-***************
-*** 327 ****
-! DEBUG = @WITHOUT_OPT@ @DEBUG@
---- 327 ----
-! DEBUG =
-***************
-*** 364 ****
-! OPTIM = @WITH_OPT@    @OPTIM@
---- 364 ----
-! OPTIM =
+$OpenBSD: patch-pfe_Makefile_in,v 1.4 2015/06/19 08:02:14 jasper Exp $
+--- pfe/Makefile.in.orig	Sat Oct 17 20:11:30 2009
++++ pfe/Makefile.in	Fri Jun 19 08:55:45 2015
+@@ -324,7 +324,7 @@ CFLAGS = @CFLAGS@
+ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEBUG = @WITHOUT_OPT@ @DEBUG@
++DEBUG =
+ DEFS = @DEFS@ -I. -I.. -I$(srcdir)/..            # do not do -I$(srcdir) !!
+ DEPDIR = @DEPDIR@
+ DLLFLAGS = @DLLFLAGS@
+@@ -366,7 +366,7 @@ NMEDIT = @NMEDIT@
+ OBJDUMP = @OBJDUMP@
+ OBJEXT = @OBJEXT@
+ # $Id: patch-pfe_Makefile_in,v 1.4 2015/06/19 08:02:14 jasper Exp $
+-OPTIM = @WITH_OPT@    @OPTIM@
++OPTIM =
+ OTOOL = @OTOOL@
+ OTOOL64 = @OTOOL64@
+ PACKAGE = @PACKAGE@
