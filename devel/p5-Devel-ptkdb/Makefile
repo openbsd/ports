@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2013/10/13 11:15:03 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2015/06/19 08:36:37 jasper Exp $
 
 COMMENT=	perl debugger built with a PerlTk GUI
 
-DISTNAME=	Devel-ptkdb-1.232
+DISTNAME=	Devel-ptkdb-1.233
 EPOCH =		0
 CATEGORIES=	devel
 
-HOMEPAGE=	http://sourceforge.net/projects/ptkdb/
+HOMEPAGE=	http://ptkdb.sourceforge.net/
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
