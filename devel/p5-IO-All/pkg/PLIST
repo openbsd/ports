@@ -1,19 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/13 00:09:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/19 06:52:12 jasper Exp $
 ${P5SITE}/IO/All/
 ${P5SITE}/IO/All.pm
 ${P5SITE}/IO/All.pod
 ${P5SITE}/IO/All/Base.pm
 ${P5SITE}/IO/All/DBM.pm
+${P5SITE}/IO/All/DBM.pod
 ${P5SITE}/IO/All/Dir.pm
+${P5SITE}/IO/All/Dir.pod
 ${P5SITE}/IO/All/File.pm
+${P5SITE}/IO/All/File.pod
 ${P5SITE}/IO/All/Filesys.pm
+${P5SITE}/IO/All/Filesys.pod
 ${P5SITE}/IO/All/Link.pm
+${P5SITE}/IO/All/Link.pod
 ${P5SITE}/IO/All/MLDBM.pm
+${P5SITE}/IO/All/MLDBM.pod
 ${P5SITE}/IO/All/Pipe.pm
+${P5SITE}/IO/All/Pipe.pod
 ${P5SITE}/IO/All/STDIO.pm
+${P5SITE}/IO/All/STDIO.pod
 ${P5SITE}/IO/All/Socket.pm
+${P5SITE}/IO/All/Socket.pod
 ${P5SITE}/IO/All/String.pm
+${P5SITE}/IO/All/String.pod
 ${P5SITE}/IO/All/Temp.pm
+${P5SITE}/IO/All/Temp.pod
 @man man/man3p/IO::All.3p
 @man man/man3p/IO::All::DBM.3p
 @man man/man3p/IO::All::Dir.3p
