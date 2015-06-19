@@ -1,0 +1,3 @@
+This package contains additional tools for the UCSPI tool chains.  It brings
+support for using socks proxies on client side and tls on server and client
+side.
