@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.249 2015/06/19 06:19:07 sebastia Exp $
+# $OpenBSD: Quirks.pm,v 1.250 2015/06/19 12:25:18 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -541,6 +541,8 @@ my $obsolete_reason = {
 	'ruby-rest-client' => 5,
 	'libavl' => 6,
 	'daapd' => 0,
+	'gnomad2' => 3,
+	'mpdBrowser' => 3,
 };
 
 # ->is_base_system($handle, $state):
