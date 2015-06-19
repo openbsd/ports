@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/15 08:11:17 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2015/06/19 11:27:52 sthen Exp $
 @bin bin/afsmonitor
 @bin bin/bos
 @bin bin/cmdebug
@@ -195,6 +194,8 @@ lib/afs/libxstat_fs.a
 lib/afs/util.a
 lib/afs/vlib.a
 lib/libafssetpag.so.1
+@lib lib/libafssetpag.so.${LIBafssetpag_VERSION}
+lib/libafssetpag.so
 lib/libdes.a
 lib/liblwp.a
 lib/librx.a

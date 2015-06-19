@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2008/07/21 03:13:01 todd Exp $
-lib/libafssetpag.so
-@lib lib/libafssetpag.so.${LIBafssetpag_VERSION}
