@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2014/10/11 19:54:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2015/06/19 14:03:48 jasper Exp $
 
 COMMENT=		Redis-backed library to create jobs and place them on queues
 
-DISTNAME=		resque-1.23.0
-REVISION =		2
+DISTNAME=		resque-1.23.1
 CATEGORIES=		databases www
 
 HOMEPAGE=		https://github.com/resque/resque
@@ -20,5 +19,12 @@ RUN_DEPENDS=		converters/ruby-multi_json,${MODRUBY_FLAVOR} \
 			databases/ruby-redis-namespace,${MODRUBY_FLAVOR} \
 			www/ruby-sinatra,${MODRUBY_FLAVOR} \
 			www/ruby-vegas,${MODRUBY_FLAVOR}
+
+MODRUBY_TEST=		rake
+TEST_DEPENDS=		databases/redis
+MODRUBY_TEST_ENV+=	PATH=${PATH}
+
+pre-test:
+	${INSTALL_DATA_DIR} ${WRKSRC}/log/
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/31 22:12:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/19 14:03:48 jasper Exp $
 ${GEM_BIN}/resque-web${GEM_BIN_SUFFIX}
 ${GEM_BIN}/resque${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -21,12 +21,19 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/resque/failure/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/failure/hoptoad.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/failure/multiple.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/failure/redis.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/resque/failure/redis_multi_queue.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/failure/thoughtbot.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/helpers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/job.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/resque/log_formatters/
+${GEM_LIB}/gems/${DISTNAME}/lib/resque/log_formatters/quiet_formatter.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/resque/log_formatters/verbose_formatter.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/resque/log_formatters/very_verbose_formatter.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/resque/logging.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/plugin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/server/
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/server.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/resque/server/helpers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/server/public/
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/server/public/favicon.ico
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/server/public/idle.png
@@ -41,6 +48,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/resque/server/test_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/server/views/
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/server/views/error.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/server/views/failed.erb
+${GEM_LIB}/gems/${DISTNAME}/lib/resque/server/views/failed_job.erb
+${GEM_LIB}/gems/${DISTNAME}/lib/resque/server/views/failed_queues_overview.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/server/views/key_sets.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/server/views/key_string.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/resque/server/views/layout.erb
@@ -64,14 +73,17 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tasks/redis.rake
 ${GEM_LIB}/gems/${DISTNAME}/lib/tasks/resque.rake
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/airbrake_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/dump.rdb
 ${GEM_LIB}/gems/${DISTNAME}/test/hoptoad_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/job_hooks_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/job_plugins_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/logging_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/plugin_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/redis-test-cluster.conf
 ${GEM_LIB}/gems/${DISTNAME}/test/redis-test.conf
 ${GEM_LIB}/gems/${DISTNAME}/test/resque-web_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/resque_failure_redis_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/resque_hook_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/resque_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/worker_test.rb
