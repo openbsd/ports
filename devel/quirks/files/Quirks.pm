@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.248 2015/06/18 06:59:57 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.249 2015/06/19 06:19:07 sebastia Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -367,6 +367,7 @@ my $stem_extensions = {
 	'california' => 'calendar',
 	'ipv6-toolkit' => 'ipv6toolkit',
 	'p5-Search-Xapian' => 'xapian-bindings-perl',
+	'ruby-archive-tar-minitar' => 'ruby-minitar',
 };
 
 # reasons for obsolete packages
