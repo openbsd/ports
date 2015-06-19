@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.355 2015/06/18 06:59:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.356 2015/06/19 12:23:50 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -53,7 +53,6 @@
      SUBDIR += glyr
      SUBDIR += gmpc
      SUBDIR += gmpc-plugins
-     SUBDIR += gnomad2
      SUBDIR += gogglesmm
      SUBDIR += gogo
      SUBDIR += gqmpeg
@@ -124,7 +123,6 @@
      SUBDIR += mpc
      SUBDIR += mpd
      SUBDIR += mpd-add-similar
-     SUBDIR += mpdBrowser
      SUBDIR += mpdscribble
      SUBDIR += mpegaudio
      SUBDIR += mpg123
