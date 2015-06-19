@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_song_cpp,v 1.1 2015/06/19 16:23:33 dcoppa Exp $
+
+commit a3d536b4228637067df9697c11bcf3434883a943
+Author: Andrzej Rybczak <electricityispower@gmail.com>
+Date:   Sat Jun 13 20:43:36 2015 +0200
+
+song: show name if it's available
+
+--- src/song.cpp.orig	Sat May  2 21:16:11 2015
++++ src/song.cpp	Fri Jun 19 16:31:47 2015
+@@ -74,7 +74,9 @@ std::string Song::getName(unsigned idx) const
+ 	assert(m_song);
+ 	mpd_song *s = m_song.get();
+ 	const char *res = mpd_song_get_tag(s, MPD_TAG_NAME, idx);
+-	if (!res && idx > 0)
++	if (res)
++		return res;
++	else if (idx > 0)
+ 		return "";
+ 	const char *uri = mpd_song_get_uri(s);
+ 	const char *name = strrchr(uri, '/');

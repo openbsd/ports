@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_tag_editor_cpp,v 1.4 2015/06/19 16:23:33 dcoppa Exp $
+
+commit 4d4b7c542fed615cf8699e093fa8b31eacc9f7ce
+Author: Andrzej Rybczak <electricityispower@gmail.com>
+Date:   Sat Jun 13 20:28:28 2015 +0200
+
+tag editor: when numbering tracks, discard other track tags if
+present
+
+--- src/tag_editor.cpp.orig	Sat May  2 21:16:11 2015
++++ src/tag_editor.cpp	Fri Jun 19 16:29:25 2015
+@@ -479,6 +479,8 @@ void TagEditor::enterPressed()
+ 					(*it)->setTrack(boost::lexical_cast<std::string>(i) + "/" + boost::lexical_cast<std::string>(EditedSongs.size()));
+ 				else
+ 					(*it)->setTrack(boost::lexical_cast<std::string>(i));
++				// discard other track number tags
++				(*it)->setTrack("", 1);
+ 			}
+ 			Statusbar::print("Tracks numbered");
+ 		}

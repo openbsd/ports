@@ -1,9 +1,16 @@
-$OpenBSD: patch-src_status_cpp,v 1.4 2014/10/27 08:30:20 dcoppa Exp $
+$OpenBSD: patch-src_status_cpp,v 1.5 2015/06/19 16:23:33 dcoppa Exp $
 
 missing header
 
---- src/status.cpp.orig	Mon Oct 27 07:07:10 2014
-+++ src/status.cpp	Mon Oct 27 07:07:54 2014
+commit 310d280cef4cc93738412efbd80ada4322df9d17
+Author: Andrzej Rybczak <electricityispower@gmail.com>
+Date:   Sat Jun 13 20:55:09 2015 +0200
+
+status: fix assertion failure on window resize without active mpd
+connection
+
+--- src/status.cpp.orig	Sat May  2 21:16:11 2015
++++ src/status.cpp	Fri Jun 19 16:32:23 2015
 @@ -21,6 +21,7 @@
  #include <boost/date_time/posix_time/posix_time.hpp>
  #include <netinet/tcp.h>
@@ -12,3 +19,12 @@ missing header
  
  #include "browser.h"
  #include "charset.h"
+@@ -557,7 +558,7 @@ void Status::Changes::elapsedTime(bool update_elapsed)
+ 		m_kbps = st.kbps();
+ 	}
+ 
+-	if (m_player_state == MPD::psStop)
++	if (m_player_state == MPD::psUnknown || m_player_state == MPD::psStop)
+ 	{
+ 		if (Statusbar::isUnlocked() && Config.statusbar_visibility)
+ 			*wFooter << NC::XY(0, 1) << wclrtoeol;
