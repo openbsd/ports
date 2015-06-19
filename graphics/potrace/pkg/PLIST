@@ -1,5 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/03 13:11:52 alek Exp $
-bin/mkbitmap
-bin/potrace
+@comment $OpenBSD: PLIST,v 1.2 2015/06/19 14:23:33 jasper Exp $
+@bin bin/mkbitmap
+@bin bin/potrace
+include/potracelib.h
+lib/libpotrace.a
+lib/libpotrace.la
+@lib lib/libpotrace.so.${LIBpotrace_VERSION}
 @man man/man1/mkbitmap.1
 @man man/man1/potrace.1
+share/doc/potrace/
+share/doc/potrace/placement.pdf
