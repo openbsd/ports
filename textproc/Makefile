@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.452 2015/06/12 17:35:04 bluhm Exp $
+# $OpenBSD: Makefile,v 1.453 2015/06/19 09:00:44 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -40,6 +40,7 @@
      SUBDIR += gdiff
      SUBDIR += glimpse
      SUBDIR += gnuvd
+     SUBDIR += go-xlsx
      SUBDIR += gonzui
      SUBDIR += gpresent
      SUBDIR += grepcidr
@@ -433,6 +434,7 @@
      SUBDIR += wdiff
      SUBDIR += xerces
      SUBDIR += xerces-c
+     SUBDIR += xlsx2csv
      SUBDIR += xml2rfc
      SUBDIR += xmlcatmgr
      SUBDIR += xmlto
