@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2014/06/06 17:32:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.21 2015/06/19 14:03:25 jasper Exp $
 
 COMMENT =	DSL for quickly creating web-applications in Ruby
 
-DISTNAME =	sinatra-1.4.5
+DISTNAME =	sinatra-1.4.6
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.sinatrarb.com/
@@ -19,9 +19,7 @@ RUN_DEPENDS =		devel/ruby-tilt,${MODRUBY_FLAVOR}>=1.3.4,<2.0 \
 			www/ruby-rack,${MODRUBY_FLAVOR}>=1.4,<2.0 \
 			www/ruby-rack-protection,${MODRUBY_FLAVOR}>=1.4,<2.0
 
-MODRUBY_TEST =		testrb
-MODRUBY_TEST_TARGET =	test/*_test.rb
-MODRUBY_TEST_ENV =	RUBYOPT=-rubygems
+MODRUBY_TEST =		rake
 
 TEST_DEPENDS =		${MODRUBY_ICONV_DEPENDS} \
 			converters/ruby-json,${MODRUBY_FLAVOR} \

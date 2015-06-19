@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/06/06 17:32:41 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/06/19 14:03:25 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.yardopts
-${GEM_LIB}/gems/${DISTNAME}/AUTHORS
+${GEM_LIB}/gems/${DISTNAME}/AUTHORS.md
 ${GEM_LIB}/gems/${DISTNAME}/CHANGES
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
