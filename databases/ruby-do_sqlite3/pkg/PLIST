@@ -1,10 +1,34 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/01/11 22:51:02 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/06/19 14:04:48 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/extensions/${MODRUBY_ARCH}/
+${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
+@comment ${GEM_EXTENSIONS_DIR}/
+@comment ${GEM_EXTENSIONS_DIR}/do_sqlite3/
+@comment ${GEM_EXTENSIONS_DIR}/do_sqlite3/do_sqlite3.so
+@comment ${GEM_EXTENSIONS_DIR}/gem.build_complete
+@comment ${GEM_EXTENSIONS_DIR}/gem_make.out
+@comment ${GEM_EXT@comment ENSIONS_DIR}/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog.markdown
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.markdown
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/ext/
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/
+@comment ${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/.RUBYARCHDIR.-.do_sqlite3.time
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/compat.h
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_common.c
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_common.h
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_common.o
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_sqlite3.c
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_sqlite3.h
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_sqlite3.o
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_sqlite3.so
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_sqlite3_extension.c
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_sqlite3_extension.o
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/error.h
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/do_sqlite3/
 ${GEM_LIB}/gems/${DISTNAME}/lib/do_sqlite3.rb
