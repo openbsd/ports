@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/12/08 22:41:46 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/06/19 14:09:47 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
-${GEM_LIB}/gems/${DISTNAME}/LICENSE
-${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
+${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/compat/
@@ -21,13 +21,11 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/uuidtools/uuid_creation_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/uuidtools/uuid_parsing_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/tasks/
 ${GEM_LIB}/gems/${DISTNAME}/tasks/benchmark.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/clobber.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/gem.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/git.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/metrics.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/rdoc.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/rubyforge.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/spec.rake
+${GEM_LIB}/gems/${DISTNAME}/tasks/rspec.rake
+${GEM_LIB}/gems/${DISTNAME}/tasks/yard.rake
 ${GEM_LIB}/gems/${DISTNAME}/website/
 ${GEM_LIB}/gems/${DISTNAME}/website/index.html
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

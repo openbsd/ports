@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2013/10/26 23:55:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2015/06/19 14:09:47 jasper Exp $
 
 COMMENT=	simple library for generating UUIDs
 
-DISTNAME=	uuidtools-2.1.1
-REVISION =	3
+DISTNAME=	uuidtools-2.1.5
 CATEGORIES=	devel
 
 # MIT
@@ -15,5 +14,6 @@ CONFIGURE_STYLE=ruby gem
 
 MODRUBY_TEST=rake rspec
 MODRUBY_TEST_TARGET=spec:normal
+TEST_DEPENDS+=	textproc/ruby-yard,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>
