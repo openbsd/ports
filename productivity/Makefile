@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2015/01/10 11:40:09 kirby Exp $
+# $OpenBSD: Makefile,v 1.67 2015/06/19 13:09:19 jasper Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -31,7 +31,6 @@
      SUBDIR += librcps
      SUBDIR += osmo
      SUBDIR += p5-Business-Tax-VAT-Validation
-     SUBDIR += palm2ical
      SUBDIR += projectlibre
      SUBDIR += py-carddav
      SUBDIR += qhacc
