@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/06/19 08:02:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2015/06/20 19:26:10 ajacoutot Exp $
 
 BROKEN-powerpc=	does not build, error: lvalue required as increment operand
 
@@ -31,6 +31,10 @@ CONFIGURE_ARGS+=--with-regs
 USE_LIBTOOL=	gnu
 
 NO_TEST=	Yes
+
+# XXX remove CVS Id  
+post-extract:
+	perl -pi -e 's,# \$$Id: Makefile,v 1.25 2015/06/20 19:26:10 ajacoutot Exp ${WRKSRC}/pfe/Makefile.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pfe/
