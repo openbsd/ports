@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2015/06/20 06:08:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2015/06/20 19:14:26 ajacoutot Exp $
+
+BROKEN=		configure: error: C compiler cannot create executables
 
 COMMENT=	create, alter and inspect Matroska files
 
