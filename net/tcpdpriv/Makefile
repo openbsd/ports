@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/22 21:17:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2015/06/20 09:46:14 bentley Exp $
 
 COMMENT=	removes sensitive information from a tcpdump -w file
 
@@ -13,7 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c pcap 
 
-MASTER_SITES=		ftp://ita.ee.lbl.gov/software/
+MASTER_SITES=		http://ita.ee.lbl.gov/software/ \
+			ftp://ita.ee.lbl.gov/software/
 EXTRACT_SUFX=		.tar.Z
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS} -DARC4RANDOM"
