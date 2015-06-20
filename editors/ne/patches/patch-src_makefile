@@ -1,17 +1,19 @@
-$OpenBSD: patch-src_makefile,v 1.1.1.1 2014/10/12 22:32:27 bcallah Exp $
---- src/makefile.orig	Fri Nov  2 17:58:41 2012
-+++ src/makefile	Sun Oct 12 10:10:11 2014
-@@ -88,24 +88,13 @@ NE_NOWCHAR=
+$OpenBSD: patch-src_makefile,v 1.2 2015/06/20 01:39:24 bcallah Exp $
+--- src/makefile.orig	Fri Jun 19 20:43:32 2015
++++ src/makefile	Fri Jun 19 20:45:49 2015
+@@ -81,25 +81,17 @@ NE_NOWCHAR=
  NE_DEBUG=
  NE_TEST=
  
+-CC=c99
++CC?=c99
+ 
 -ifeq ($(CC),gcc)
- NO_SIGN=-Wno-pointer-sign
+ GCCFLAGS=-std=c99 -Wall -Wno-parentheses
 -endif
  
- CFLAGS=$(OPTS) $(NO_SIGN) \
+ CFLAGS=$(OPTS) $(GCCFLAGS) \
 -	-D_GNU_SOURCE -D__USE_GNU -DSTDC_HEADERS -Dinline=__inline__ \
--	$(if $(NE_POSIX),   -D_POSIX_C_SOURCE=199506L,) \
 -	$(if $(NE_NOWCHAR), -DNOWCHAR,) \
 -	$(if $(NE_TEST),    -DNE_TEST -coverage,) \
 -	$(if $(NE_DEBUG),   -g,-O3 -DNDEBUG) \
@@ -20,12 +22,12 @@ $OpenBSD: patch-src_makefile,v 1.1.1.1 2014/10/12 22:32:27 bcallah Exp $
 +	-D_GNU_SOURCE -D__USE_GNU -DSTDC_HEADERS -Dinline=__inline__
  
 -
--LIBS=$(if $(NE_TERMCAP)$(NE_ANSI),,-lcurses)
--
+ LIBS=$(if $(NE_TERMCAP)$(NE_ANSI),,-lcurses)
+ 
 -ne:	$(OBJS) $(if $(NE_TERMCAP)$(NE_ANSI),$(TERMCAPOBJS),)
--	$(CC) $(OPTS) $(LDFLAGS) $(if $(NE_TEST), -coverage,) $^ -lm $(LIBS) -o $(PROGRAM)
+-	$(CC) $(OPTS) $(LDFLAGS) $(if $(NE_TEST), -coverage -lefence,) $^ -lm $(LIBS) -o $(PROGRAM)
 +ne:	$(OBJS)
 +	$(CC) $(OPTS) $(LDFLAGS) -lm -lcurses $(LIBS) -o $(PROGRAM) $(OBJS)
  
  clean:
- 	rm -f *.o *.gcda *.gcda.info *.gcno core
+ 	rm -f ne *.o *.gcda *.gcda.info *.gcno core

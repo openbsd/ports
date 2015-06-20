@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/20 14:06:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2015/06/20 01:39:24 bcallah Exp $
 
 COMMENT =	nice console editor
-DISTNAME =	ne-2.6
+DISTNAME =	ne-3.0
 CATEGORIES =	editors
 
 HOMEPAGE =	http://ne.di.unimi.it/
@@ -23,12 +23,12 @@ NO_TEST =	Yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ne ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/ne.1 ${PREFIX}/man/man1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/ne/syntax
+	${INSTALL_DATA_DIR} ${PREFIX}/share/ne/{macros,syntax}
 	${INSTALL_DATA} ${WRKSRC}/syntax/*.jsf ${PREFIX}/share/ne/syntax
-	${INSTALL_DATA} ${WRKSRC}/macros/* ${PREFIX}/share/ne
+	${INSTALL_DATA} ${WRKSRC}/macros/* ${PREFIX}/share/ne/macros
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ne
 	${INSTALL_DATA} \
-		${WRKSRC}/{README,COPYING,NEWS,CHANGES,doc/ne.{txt,pdf}} \
+		${WRKSRC}/{README.md,COPYING,NEWS,CHANGES,doc/ne.{txt,pdf}} \
 		${PREFIX}/share/doc/ne
 
 .include <bsd.port.mk>
