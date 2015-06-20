@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/02/16 22:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2015/06/20 09:47:30 bentley Exp $
 
 COMMENT=	set of programs to enhance firewall security
 
@@ -9,7 +9,8 @@ CATEGORIES=    	net security
 
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
-MASTER_SITES= 	ftp://ftp.suse.com/pub/projects/proxy-suite/src/
+MASTER_SITES= 	http://ftp.suse.com/pub/projects/proxy-suite/src/ \
+		ftp://ftp.suse.com/pub/projects/proxy-suite/src/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
