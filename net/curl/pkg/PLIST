@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2015/04/30 22:32:24 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.33 2015/06/20 19:50:55 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -143,6 +143,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_PASSWORD.3
 @man man/man3/CURLOPT_PATH_AS_IS.3
 @man man/man3/CURLOPT_PINNEDPUBLICKEY.3
+@man man/man3/CURLOPT_PIPEWAIT.3
 @man man/man3/CURLOPT_PORT.3
 @man man/man3/CURLOPT_POST.3
 @man man/man3/CURLOPT_POSTFIELDS.3
@@ -163,6 +164,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_PROXYTYPE.3
 @man man/man3/CURLOPT_PROXYUSERNAME.3
 @man man/man3/CURLOPT_PROXYUSERPWD.3
+@man man/man3/CURLOPT_PROXY_SERVICE_NAME.3
 @man man/man3/CURLOPT_PROXY_TRANSFER_MODE.3
 @man man/man3/CURLOPT_PUT.3
 @man man/man3/CURLOPT_QUOTE.3
@@ -184,6 +186,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_SASL_IR.3
 @man man/man3/CURLOPT_SEEKDATA.3
 @man man/man3/CURLOPT_SEEKFUNCTION.3
+@man man/man3/CURLOPT_SERVICE_NAME.3
 @man man/man3/CURLOPT_SHARE.3
 @man man/man3/CURLOPT_SOCKOPTDATA.3
 @man man/man3/CURLOPT_SOCKOPTFUNCTION.3
