@@ -1,0 +1,6 @@
+Parse::Yapp (Yet Another Perl Parser compiler) is a collection of
+modules that let you generate and use yacc like thread safe (reentrant)
+parsers with perl object oriented interface.
+
+The script yapp is a front-end to the Parse::Yapp module and lets you
+easily create a Perl OO parser from an input grammar file.

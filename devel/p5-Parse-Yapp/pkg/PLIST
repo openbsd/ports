@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/20 15:23:39 jca Exp $
+bin/yapp
+${P5SITE}/Parse/
+${P5SITE}/Parse/Yapp/
+${P5SITE}/Parse/Yapp.pm
+${P5SITE}/Parse/Yapp/Driver.pm
+${P5SITE}/Parse/Yapp/Grammar.pm
+${P5SITE}/Parse/Yapp/Lalr.pm
+${P5SITE}/Parse/Yapp/Options.pm
+${P5SITE}/Parse/Yapp/Output.pm
+${P5SITE}/Parse/Yapp/Parse.pm
+@man man/man1/yapp.1
+@man man/man3p/Parse::Yapp.3
