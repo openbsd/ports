@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1355 2015/06/19 09:19:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.1356 2015/06/20 15:26:23 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -940,6 +940,7 @@
      SUBDIR += p5-Parse-Method-Signatures
      SUBDIR += p5-Parse-PlainConfig
      SUBDIR += p5-Parse-RecDescent
+     SUBDIR += p5-Parse-Yapp
      SUBDIR += p5-Path-Class
      SUBDIR += p5-Path-Tiny
      SUBDIR += p5-Perl-Command
