@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.195 2015/04/07 09:44:33 jasper Exp $
+# $OpenBSD: network.conf.template,v 1.196 2015/06/20 19:54:22 naddy Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -61,7 +61,6 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.cs.tu-berlin.de/pub/gnu/ \
 	http://mirrors.dotsrc.org/gnu/ \
 	http://ftp.kddilabs.jp/GNU/ \
-	ftp://ftp.sunet.se/pub/gnu/ \
 	http://ftp.nluug.nl/pub/gnu/
 
 MASTER_SITE_GCC+=	\
@@ -85,7 +84,6 @@ MASTER_SITE_GCC+=	\
 MASTER_SITE_XCONTRIB+=	\
 	http://ftp.gwdg.de/pub/x11/x.org/contrib/ \
 	ftp://ftp.x.org/contrib/ \
-	http://ftp.sunet.se/pub/X11/ftp.x.org/contrib/ \
 	http://ftp.kddilabs.jp/X11/ftp.x.org/contrib/ \
 	ftp://ftp.uvsq.fr/pub/X11/x.org/contrib/
 
@@ -150,7 +148,6 @@ MASTER_SITE_TEX_CTAN+=	\
 	http://ctan.tug.org/tex-archive/ \
 	http://ftp.dante.de/tex-archive/ \
 	ftp://ftp.uvsq.fr/pub/TeX/CTAN/ \
-	http://ftp.sunet.se/pub/text-processing/TeX/ \
 	http://www.ctan.org/pub/tex-archive/
 
 MASTER_SITE_KDE+=	\
@@ -161,7 +158,6 @@ MASTER_SITE_KDE+=	\
 	http://ftp.kddilabs.jp/X11/kde/ \
 	ftp://ftp.uvsq.fr/pub/X11/kde/ \
 	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/ \
-	http://ftp.sunet.se/pub/X11/kde/ \
 	ftp://ftp.kde.org/pub/kde/ \
 	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/
 
