@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/03/16 18:07:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2015/06/20 09:44:41 bentley Exp $
 
 COMMENT=		Z39.50/SR client and API library
 DISTNAME=		yaz-3.0.49
@@ -22,8 +22,7 @@ WANTLIB=		c m ncurses pthread readline z \
 			xml2 gpg-error gcrypt exslt xslt icudata \
 			icui18n icuuc
 
-MASTER_SITES=		http://ftp.indexdata.dk/pub/yaz/ \
-			ftp://ftp.indexdata.dk/pub/yaz/
+MASTER_SITES=		http://ftp.indexdata.dk/pub/yaz/
 
 LIB_DEPENDS=		textproc/libxml \
 			security/libgpg-error \
