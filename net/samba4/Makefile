@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2015/06/17 10:51:08 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2015/06/20 00:07:13 jca Exp $
 
 SHARED_ONLY =		Yes
-VERSION =		4.0.26
+VERSION =		4.1.18
 DISTNAME =		samba-${VERSION}
 DOCSVERSION =		v3-5-test-4c5a1b6b
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
@@ -9,7 +9,6 @@ DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
 COMMENT-ldb =		LDAP-like embedded database
-#COMMENT-ntdb =		new trivial database library
 COMMENT-tdb =		trivial database library
 COMMENT-tevent =	event system based on talloc
 COMMENT-util =		common libraries for Samba suite
@@ -17,7 +16,6 @@ COMMENT-docs =		additional documentation and examples for Samba
 
 PKGNAME-main =		${PKGNAME}
 PKGNAME-ldb =		ldb-${LDB_V}
-#PKGNAME-ntdb =		ntdb-${NTDB_V}
 PKGNAME-tdb =		tdb-${TDB_V}
 PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${TALLOC_V}
@@ -25,10 +23,9 @@ PKGNAME-docs =		samba-docs-${VERSION}
 
 PKG_ARCH-docs =		*
 
-LDB_V =			1.1.16
-#NTDB_V =		0.9
+LDB_V =			1.1.17
 TALLOC_V =		2.1.2
-TDB_V =			1.2.11
+TDB_V =			1.2.12
 TEVENT_V =		0.9.18
 
 SHARED_LIBS =		asn1-samba4		0.0 \
@@ -54,6 +51,7 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			ndr-standard		0.0 \
 			netapi			2.0 \
 			nss_wins		0.0 \
+			ntdb			0.0 \
 			pdb			0.0 \
 			pyldb-util		0.0 \
 			pytalloc-util		0.0 \
@@ -126,7 +124,6 @@ MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
 MASTER_SITES0 =		http://www.samba.org/~samba-bugs/docs/v3-5-test/
 
 MULTI_PACKAGES =	-main -ldb -tdb -tevent -util -docs
-#MULTI_PACKAGES +=	-ntdb		# disabled by default in Samba4
 
 MODULES =		devel/gettext lang/python perl
 
@@ -153,7 +150,6 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			security/openpam \
 			sysutils/e2fsprogs \
 			sysutils/gamin
-#LIB_DEPENDS-main +=	${BUILD_PKGPATH},-ntdb>=${NTDB_V}
 
 LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tdb>=${TDB_V} \
 			${BUILD_PKGPATH},-tevent>=${TEVENT_V} \
@@ -188,7 +184,8 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--with-lockdir=${VARBASE}/run/samba \
 			--with-privileged-socket-dir=${VARBASE}/samba \
 			--enable-selftest \
-			--pedantic
+			--pedantic \
+			--without-regedit
 
 # XXX Remember to remove --enable-developer, it prints passwords in logs.
 #CONFIGURE_ARGS +=	--enable-developer

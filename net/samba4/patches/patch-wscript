@@ -1,0 +1,12 @@
+$OpenBSD: patch-wscript,v 1.1 2015/06/20 00:07:13 jca Exp $
+--- wscript.orig	Thu Jun 18 03:15:28 2015
++++ wscript	Thu Jun 18 03:16:13 2015
+@@ -155,7 +155,7 @@ def configure(conf):
+     # allows us to find problems on our development hosts faster.
+     # It also results in faster load time.
+ 
+-    if not sys.platform.startswith("openbsd"):
++    if not sys.platform.startswith("whatever"):
+         conf.env.asneeded_ldflags = conf.ADD_LDFLAGS('-Wl,--as-needed', testflags=True)
+ 
+     if not conf.CHECK_NEED_LC("-lc not needed"):

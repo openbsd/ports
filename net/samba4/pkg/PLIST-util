@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-util,v 1.1.1.1 2014/05/04 16:08:30 zhuk Exp $
+@comment $OpenBSD: PLIST-util,v 1.2 2015/06/20 00:07:13 jca Exp $
 @conflict libtalloc-*
 @pkgpath devel/libtalloc
 include/samba-4.0/
@@ -13,6 +13,7 @@ include/samba-4.0/talloc.h
 @lib lib/libutil_setid.so.${LIButil_setid_VERSION}
 lib/pkgconfig/pytalloc-util.pc
 lib/pkgconfig/talloc.pc
+lib/python${MODPY_VERSION}/site-packages/samba/socket_wrapper.so
 lib/python${MODPY_VERSION}/site-packages/talloc.so
 @lib lib/samba/libnss_wrapper.so.${LIBnss_wrapper_VERSION}
 @lib lib/samba/libreplace.so.${LIBreplace_VERSION}

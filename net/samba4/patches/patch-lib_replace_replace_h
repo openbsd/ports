@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_replace_replace_h,v 1.1.1.1 2014/05/04 16:08:29 zhuk Exp $
+$OpenBSD: patch-lib_replace_replace_h,v 1.2 2015/06/20 00:07:13 jca Exp $
 Avoid extra warnings.
 XXX Probably there should be added another configure time check that <stdlib.h> is enough.
---- lib/replace/replace.h.orig	Wed Apr 24 07:49:37 2013
-+++ lib/replace/replace.h	Wed Apr 24 07:50:38 2013
+--- lib/replace/replace.h.orig	Mon Sep  8 11:26:14 2014
++++ lib/replace/replace.h	Wed Jun 17 13:18:09 2015
 @@ -56,10 +56,6 @@
- #include <inttypes.h>
+ #undef HAVE_INTTYPES_H
  #endif
  
 -#ifdef HAVE_MALLOC_H
