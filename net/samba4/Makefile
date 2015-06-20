@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/06/20 00:07:13 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2015/06/20 00:32:11 jca Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.1.18
@@ -20,6 +20,8 @@ PKGNAME-tdb =		tdb-${TDB_V}
 PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${TALLOC_V}
 PKGNAME-docs =		samba-docs-${VERSION}
+
+REVISION-main =		0
 
 PKG_ARCH-docs =		*
 
@@ -50,7 +52,6 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			ndr-nbt			0.0 \
 			ndr-standard		0.0 \
 			netapi			2.0 \
-			nss_wins		0.0 \
 			ntdb			0.0 \
 			pdb			0.0 \
 			pyldb-util		0.0 \
@@ -204,7 +205,7 @@ MAKE_ENV +=		LIB${_l:S/-/_/g}_VERSION=${_v}
 .endfor
 
 SAMBA_CONFIG =		${PREFIX}/share/examples/samba/smb.conf.default
-SAMBA_LOGDIR =		${SYSCONFDIR}/log/samba
+SAMBA_LOGDIR =		${VARBASE}/log/samba
 
 SUBST_VARS =		SAMBA_LOGDIR
 
