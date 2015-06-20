@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libical_icaltz-util_c,v 1.6 2015/06/19 06:51:24 ajacoutot Exp $
+$OpenBSD: patch-src_libical_icaltz-util_c,v 1.7 2015/06/20 06:20:39 ajacoutot Exp $
 
-https://github.com/libical/libical/pull/206
+https://github.com/libical/libical/commit/222badd14910f9beae5598f4c2a14be5c2afe25f
 
 --- src/libical/icaltz-util.c.orig	Thu Oct  9 17:07:05 2014
 +++ src/libical/icaltz-util.c	Fri Jun 19 08:48:09 2015
