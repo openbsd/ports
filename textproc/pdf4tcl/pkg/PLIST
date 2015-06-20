@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/20 07:02:38 stu Exp $
+lib/tcl/pdf4tcl/
+lib/tcl/pdf4tcl/bitmaps/
+lib/tcl/pdf4tcl/bitmaps/error.xbm
+lib/tcl/pdf4tcl/bitmaps/gray12.xbm
+lib/tcl/pdf4tcl/bitmaps/gray25.xbm
+lib/tcl/pdf4tcl/bitmaps/gray50.xbm
+lib/tcl/pdf4tcl/bitmaps/gray75.xbm
+lib/tcl/pdf4tcl/bitmaps/hourglass.xbm
+lib/tcl/pdf4tcl/bitmaps/info.xbm
+lib/tcl/pdf4tcl/bitmaps/questhead.xbm
+lib/tcl/pdf4tcl/bitmaps/question.xbm
+lib/tcl/pdf4tcl/bitmaps/warning.xbm
+lib/tcl/pdf4tcl/glyph2uni.tcl
+lib/tcl/pdf4tcl/pdf4tcl.tcl
+lib/tcl/pdf4tcl/pkgIndex.tcl
+lib/tcl/pdf4tcl/stdmetrics.tcl
+@man man/mann/pdf4tcl.n
+share/doc/pdf4tcl/
+share/doc/pdf4tcl/licence.terms
+share/doc/pdf4tcl/pdf4tcl.html
