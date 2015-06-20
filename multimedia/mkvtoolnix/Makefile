@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2015/05/28 10:25:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2015/06/20 06:08:01 ajacoutot Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-7.9.0
+DISTNAME=	mkvtoolnix-8.0.0
 CATEGORIES=	multimedia x11
 MASTER_SITES=	${HOMEPAGE}/sources/
 EXTRACT_SUFX=	.tar.xz
-REVISION =	0
 
 HOMEPAGE =	http://www.bunkus.org/videotools/mkvtoolnix/
 
@@ -50,7 +49,7 @@ CONFIGURE_ARGS=	--disable-optimization \
 		--with-boost-system=boost_system-mt \
 		--without-curl
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -L${LOCALBASE}/lib/qt5"
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -L${MODQT5_LIBDIR}"
 
 FLAVORS=	no_x11
 FLAVOR?=
