@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2015/06/20 21:32:46 naddy Exp $
 
 COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
@@ -6,9 +6,7 @@ VERSION=	2.6.2
 DISTNAME=	zangband-${VERSION}
 REVISION =	4
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/ \
-		ftp://ftp.planetmirror.com/pub/angband/Variant/ZAngband/ \
-		ftp://clockwork.dementia.org/angband/Variant/ZAngband/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=zangband/}
 
 PERMIT_PACKAGE_CDROM=	not-for-profit redistribution only
 PERMIT_PACKAGE_FTP=	Yes
