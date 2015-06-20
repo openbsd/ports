@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/06/20 10:21:54 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2015/06/20 15:29:02 jca Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.1.18
@@ -21,7 +21,7 @@ PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${TALLOC_V}
 PKGNAME-docs =		samba-docs-${VERSION}
 
-REVISION-main =		0
+REVISION-main =		1
 
 PKG_ARCH-docs =		*
 
@@ -128,7 +128,8 @@ MULTI_PACKAGES =	-main -ldb -tdb -tevent -util -docs
 
 MODULES =		devel/gettext lang/python perl
 
-BUILD_DEPENDS =		net/py-dnspython \
+BUILD_DEPENDS =		devel/p5-Parse-Yapp>=1.0.5 \
+			net/py-dnspython \
 			textproc/docbook-xsl \
 			textproc/libxslt
 
@@ -169,7 +170,7 @@ CONFIGURE_STYLE =	simple
 
 CONFIGURE_ARGS =	--enable-fhs \
 			--abi-check-disable \
-			--bundled-libraries="!crypto,ldb,ntdb,talloc,tdb,tevent,parse_yapp_driver" \
+			--bundled-libraries="!crypto,ldb,ntdb,talloc,tdb,tevent" \
 			--prefix=${PREFIX} \
 			--destdir=${WRKINST} \
 			--docdir=${PREFIX}/share/doc \

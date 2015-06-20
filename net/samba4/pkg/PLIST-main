@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2015/06/20 00:07:13 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2015/06/20 15:29:03 jca Exp $
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
@@ -1088,8 +1088,6 @@ ${P5SITE}/Parse/Pidl/Util.pm
 ${P5SITE}/Parse/Pidl/Wireshark/
 ${P5SITE}/Parse/Pidl/Wireshark/Conformance.pm
 ${P5SITE}/Parse/Pidl/Wireshark/NDR.pm
-${P5SITE}/Parse/Yapp/
-${P5SITE}/Parse/Yapp/Driver.pm
 @man man/man1/dbwrap_tool.1
 @man man/man1/findsmb.1
 @man man/man1/gentest.1
