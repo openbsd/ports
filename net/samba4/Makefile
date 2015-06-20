@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/06/20 15:29:02 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2015/06/20 15:48:15 jca Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.1.18
@@ -21,7 +21,12 @@ PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${TALLOC_V}
 PKGNAME-docs =		samba-docs-${VERSION}
 
-REVISION-main =		1
+REVISION-main =		2
+REVISION-ldb =		0
+REVISION-tdb =		0
+REVISION-tevent =	0
+REVISION-util =		0
+REVISION-docs =		0
 
 PKG_ARCH-docs =		*
 
@@ -84,7 +89,7 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 
 CATEGORIES =		net sysutils security
 
-HOMEPAGE =		http://www.samba.org/
+HOMEPAGE =		https://www.samba.org/
 
 #MAINTAINER =		???
 
@@ -119,10 +124,10 @@ WANTLIB-util =		${WANTLIB-common}
 
 WANTLIB-docs =
 
-MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
-			http://ftp.samba.org/pub/samba/old-versions/
+MASTER_SITES =		https://download.samba.org/pub/samba/stable/ \
+			https://download.samba.org/pub/samba/old-versions/
 
-MASTER_SITES0 =		http://www.samba.org/~samba-bugs/docs/v3-5-test/
+MASTER_SITES0 =		https://www.samba.org/~samba-bugs/docs/v3-5-test/
 
 MULTI_PACKAGES =	-main -ldb -tdb -tevent -util -docs
 
