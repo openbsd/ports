@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/06/20 19:14:26 ajacoutot Exp $
-
-BROKEN=		configure: error: C compiler cannot create executables
+# $OpenBSD: Makefile,v 1.37 2015/06/20 20:30:08 ajacoutot Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
@@ -50,8 +48,8 @@ CONFIGURE_ARGS=	--disable-optimization \
 		--with-boost-regex=boost_regex-mt \
 		--with-boost-system=boost_system-mt \
 		--without-curl
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -L${MODQT5_LIBDIR}"
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 FLAVORS=	no_x11
 FLAVOR?=
@@ -64,7 +62,12 @@ WANTLIB+=	Qt5Core Qt5Gui Qt5Widgets
 RUN_DEPENDS+=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic
+CPPFLAGS+=	-I${X11BASE}/include
+LDFLAGS+=	-L${X11BASE}/lib -L${MODQT5_LIBDIR}
 .endif
+
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 NO_TEST=	Yes
 
