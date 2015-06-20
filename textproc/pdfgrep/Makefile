@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/03/24 09:57:04 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2015/06/20 14:08:23 jca Exp $
 
 COMMENT =		tool to search text in PDF files
 
 DISTNAME =		pdfgrep-1.3.2
+REVISION =		0
 
 CATEGORIES =		textproc
 
-HOMEPAGE =		http://pdfgrep.sourceforge.net/
+HOMEPAGE =		https://pdfgrep.org/
 
 MAINTAINER =		Reinhold Straub <demarchie@web.de>
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		c m pthread stdc++ poppler-cpp
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pdfgrep/}
+MASTER_SITES =		https://pdfgrep.org/download/
 
 LIB_DEPENDS =		print/poppler
 
