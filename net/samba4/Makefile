@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/06/20 00:32:11 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2015/06/20 10:18:58 jca Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.1.18
@@ -169,7 +169,7 @@ CONFIGURE_STYLE =	simple
 
 CONFIGURE_ARGS =	--enable-fhs \
 			--abi-check-disable \
-			--bundled-libraries="!crypto ldb ntdb talloc tdb tevent" \
+			--bundled-libraries="!crypto,ldb,ntdb,talloc,tdb,tevent" \
 			--prefix=${PREFIX} \
 			--destdir=${WRKINST} \
 			--docdir=${PREFIX}/share/doc \
