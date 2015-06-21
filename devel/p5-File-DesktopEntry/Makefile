@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/06/12 09:26:03 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2015/06/21 09:14:34 benoit Exp $
 
 COMMENT =		handle .desktop files
 
-DISTNAME =		File-DesktopEntry-0.11
+DISTNAME =		File-DesktopEntry-0.12
 CATEGORIES =		devel 
 
 # perl
