@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/12/05 07:06:13 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/06/21 09:31:40 benoit Exp $
 ${P5SITE}/SNMP/
 ${P5SITE}/SNMP/Info/
 ${P5SITE}/SNMP/Info.pm
@@ -85,6 +85,7 @@ ${P5SITE}/SNMP/Info/Layer3/Fortinet.pm
 ${P5SITE}/SNMP/Info/Layer3/Foundry.pm
 ${P5SITE}/SNMP/Info/Layer3/H3C.pm
 ${P5SITE}/SNMP/Info/Layer3/HP9300.pm
+${P5SITE}/SNMP/Info/Layer3/Huawei.pm
 ${P5SITE}/SNMP/Info/Layer3/IBMGbTor.pm
 ${P5SITE}/SNMP/Info/Layer3/Juniper.pm
 ${P5SITE}/SNMP/Info/Layer3/Lantronix.pm
@@ -195,6 +196,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::Foundry.3p
 @man man/man3p/SNMP::Info::Layer3::H3C.3p
 @man man/man3p/SNMP::Info::Layer3::HP9300.3p
+@man man/man3p/SNMP::Info::Layer3::Huawei.3p
 @man man/man3p/SNMP::Info::Layer3::IBMGbTor.3p
 @man man/man3p/SNMP::Info::Layer3::Juniper.3p
 @man man/man3p/SNMP::Info::Layer3::Lantronix.3p
