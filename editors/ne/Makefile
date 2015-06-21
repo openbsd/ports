@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2015/06/20 01:39:24 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2015/06/21 14:45:38 bcallah Exp $
 
 COMMENT =	nice console editor
 DISTNAME =	ne-3.0
+REVISION =	0
 CATEGORIES =	editors
 
 HOMEPAGE =	http://ne.di.unimi.it/
