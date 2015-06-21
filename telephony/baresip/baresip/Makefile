@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/17 21:19:23 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.4 2015/06/21 07:40:46 czarkoff Exp $
 
 COMMENT =	modular SIP User-Agent with audio and video support
 
-DISTNAME =	baresip-0.4.12
-REVISION =	0
+DISTNAME =	baresip-0.4.13
 
 WANTLIB +=	X11 Xext avcodec avdevice avformat avutil c crypto gsm
 WANTLIB +=	m opus pthread re rem sndfile sndio spandsp speex
-WANTLIB +=	speexdsp ssl swscale vpx x264 z
+WANTLIB +=	speexdsp ssl swscale vpx x264 x265 z
 
 BUILD_DEPENDS =	telephony/libzrtp
 LIB_DEPENDS =	audio/gsm \
@@ -36,8 +35,9 @@ MAKE_FLAGS +=	USE_AMR=yes USE_AVCODEC=yes USE_AVFORMAT=yes USE_CONS=yes \
 #MAKE_FLAGS +=	USE_ISAC=yes # XXX FreeSWITCH??? (was used in Google Talk)
 #MAKE_FLAGS +=	USE_SDL2=yes # XXX Appears to be broken
 
-MAKE_FLAGS +=	EXTRA_MODULES="sndio zrtp" HAVE_SPEEXDSP=yes LIBS="-lm -lrem"\
-		LIBRE_INC=${LOCAL_BASE}/include LIBRE_SO=${LOCAL_BASE}/lib
+MAKE_FLAGS +=	EXTRA_MODULES="h265 sndio zrtp" HAVE_SPEEXDSP=yes \
+		LIBRE_INC=${LOCAL_BASE}/include LIBRE_SO=${LOCAL_BASE}/lib \
+		LIBS="-lm -lrem"
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/baresip/modules \

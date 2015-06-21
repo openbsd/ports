@@ -1,7 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2015/06/21 07:40:46 czarkoff Exp $
 lib/baresip/modules/account.so
 lib/baresip/modules/amr.so
 lib/baresip/modules/aubridge.so
+lib/baresip/modules/aufile.so
 lib/baresip/modules/auloop.so
 lib/baresip/modules/avcodec.so
 lib/baresip/modules/avformat.so
@@ -13,6 +14,7 @@ lib/baresip/modules/g711.so
 lib/baresip/modules/g722.so
 lib/baresip/modules/g726.so
 lib/baresip/modules/gsm.so
+lib/baresip/modules/h265.so
 lib/baresip/modules/httpd.so
 lib/baresip/modules/ice.so
 lib/baresip/modules/l16.so
