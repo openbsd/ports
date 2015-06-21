@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.8 2014/07/09 17:07:38 ajacoutot Exp $
+# $OpenBSD: erlang.port.mk,v 1.9 2015/06/21 13:24:17 jasper Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -18,10 +18,10 @@ REBAR_BIN ?=		${LOCALBASE}/bin/rebar
 # rebar instead.
 # While here, remove the deps{} block from rebar.config, we cannot download
 # dependencies on the fly (blocked by systrace) and it obfuscates dependency
-# management from the ports' Makefile.
+# management from the ports Makefile.
 .  if ! target(pre-build)
 pre-build:
-	@cp -f /usr/local/bin/rebar ${WRKSRC}
+	@cp -f ${REBAR_BIN} ${WRKSRC}
 	@perl -pi -e 'BEGIN{undef $$/;} s/{deps,.*?]}.//smg' ${WRKSRC}/rebar.config
 .  endif
 .endif
