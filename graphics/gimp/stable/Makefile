@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2015/04/05 07:58:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2015/06/21 20:06:46 naddy Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
@@ -22,8 +22,8 @@ MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 	
 DIR=		gimp/v2.8
 MASTER_SITES=	http://download.gimp.org/pub/${DIR}/ \
-		ftp://ftp.sunet.se/pub/gnu/${DIR}/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/pub/${DIR}/
+		http://mirrors.go-parts.com/gimp/${DIR}/ \
+		http://www.mirrorservice.org/sites/ftp.gimp.org/pub/${DIR}
 
 HOMEPAGE=	http://www.gimp.org/
 
