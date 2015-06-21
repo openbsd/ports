@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.391 2015/05/04 22:05:31 daniel Exp $
+# $OpenBSD: Makefile,v 1.392 2015/06/21 20:20:46 naddy Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -255,7 +255,6 @@
      SUBDIR += simple-scan
      SUBDIR += sketch
      SUBDIR += slop
-     SUBDIR += smpeg-xmms
      SUBDIR += swfdec
      SUBDIR += sxiv
      SUBDIR += tesseract

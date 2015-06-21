@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:50:11 espie Exp $
-@comment lib/xmms/Input/libsmpeg_xmms.la
-lib/xmms/Input/libsmpeg_xmms.so

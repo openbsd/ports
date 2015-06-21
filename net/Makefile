@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.909 2015/06/20 09:29:43 jca Exp $
+# $OpenBSD: Makefile,v 1.910 2015/06/21 20:20:46 naddy Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -6,7 +6,6 @@
      SUBDIR += adsuck
      SUBDIR += aget
      SUBDIR += aggregate
-     SUBDIR += aguri
      SUBDIR += aiccu
      SUBDIR += aimsniff
      SUBDIR += aircontrol

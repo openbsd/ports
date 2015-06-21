@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.356 2015/06/19 12:23:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.357 2015/06/21 20:20:46 naddy Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -113,7 +113,6 @@
      SUBDIR += mp3blaster
      SUBDIR += mp3cddb
      SUBDIR += mp3cut
-     SUBDIR += mp3encode
      SUBDIR += mp3gain
      SUBDIR += mp3info
      SUBDIR += mp3info,no_x11

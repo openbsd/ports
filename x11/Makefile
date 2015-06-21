@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.550 2015/05/08 17:43:59 stu Exp $
+# $OpenBSD: Makefile,v 1.551 2015/06/21 20:20:46 naddy Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -364,7 +364,6 @@
      SUBDIR += xkbset
      SUBDIR += xkeycaps
      SUBDIR += xloadimage
-     SUBDIR += xlogout
      SUBDIR += xmascot
      SUBDIR += xmobar
      SUBDIR += xmold
