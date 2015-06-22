@@ -1,0 +1,14 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2015/06/22 15:52:16 millert Exp $
+include/sudo_plugin.h
+libexec/sudo/
+libexec/sudo/group_file.la
+libexec/sudo/group_file.so
+libexec/sudo/libsudo_util.la
+@lib libexec/sudo/libsudo_util.so.${LIBsudo_util_VERSION}
+libexec/sudo/sudo_noexec.la
+libexec/sudo/sudo_noexec.so
+libexec/sudo/sudoers.la
+libexec/sudo/sudoers.so
+libexec/sudo/system_group.la
+libexec/sudo/system_group.so
+@man man/man8/sudo_plugin.8
