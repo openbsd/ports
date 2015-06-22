@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.251 2015/06/19 13:12:45 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.252 2015/06/22 11:05:50 kirby Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -545,6 +545,11 @@ my $obsolete_reason = {
 	'mpdBrowser' => 3,
 	'p5-Palm' => 6,
 	'palm2ical' => 6,
+	'aguri' => 3,
+	'bonnie' => 3,
+	'xlogout' => 3,
+	'mp3encode' => 3,
+	'xmms-smpeg' => 3,
 };
 
 # ->is_base_system($handle, $state):
