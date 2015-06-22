@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.51 2015/05/16 18:14:04 espie Exp $
+# $OpenBSD: Config.pm,v 1.52 2015/06/22 12:20:06 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -88,8 +88,8 @@ sub parse_command_line
 		},
 	};
 
-	$state->SUPER_handle_options('acemqrRstuUvh:S:xX:A:B:C:f:F:I:j:J:M:p:P:b:l:L:',
-    "[-acemqrRsuUvx] [-A arch] [-B chroot] [-C plist] [-f m] [-F m]",
+	$state->SUPER_handle_options('aceimqrRstuUvh:S:xX:A:B:C:f:F:I:j:J:M:p:P:b:l:L:',
+    "[-aceimqrRsuUvx] [-A arch] [-B chroot] [-C plist] [-f m] [-F m]",
     "[-I pathlist] [-J p] [-j n] [-p parallel] [-P pathlist] [-h hosts]",
     "[-L logdir] [-l lockdir] [-b log] [-M threshold] [-X pathlist]",
     "[pathlist ...]");
@@ -99,6 +99,7 @@ sub parse_command_line
 			$state->usage("-$l takes an integer argument, not $o");
 		}
 	}
+	$state->{interactive} = $state->opt('i');
     	$state->{chroot} = $state->opt('B');
 	$state->{base_user} = DPB::User->from_uid($<);
 	if (!defined $state->{base_user}) {
