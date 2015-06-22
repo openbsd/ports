@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/06 01:36:04 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/06/22 07:57:29 jasper Exp $
 
 MODPY_EGG_VERSION =	0.3.72
 COMMENT =	download YouTube content and retrieve metadata
@@ -12,9 +12,9 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=p/pafy/}
-
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
+MODPY_PI =	Yes
+MODPY_PI_DIR =	p/pafy
 
 .include <bsd.port.mk>
