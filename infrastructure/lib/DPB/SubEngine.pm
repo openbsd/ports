@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.24 2015/06/17 07:31:25 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.25 2015/06/22 12:18:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -25,6 +25,13 @@ sub new
 	bless { engine => $engine, queue => $class->new_queue($engine),
 		doing => {}, later => {}}, $class;
 }
+
+# the 'detain' mechanism:
+# when rescanning ports, we wipe out the old info.
+# stuff that's already in the queues is thus incomplete (no pkgnames,
+# no sha info). Instead of going thru the whole process of registering
+# them again, we use detain/release, and the subengines skip over detained
+# stuff.
 
 sub detain
 {
@@ -168,6 +175,7 @@ sub can_really_start_build
 		$self->{later}{$v} = $v;
 		$self->log('^', $v);
 		return 0;
+	# as well as stuff that's getting rescanned
 	} elsif ($self->detained($v)) {
 		$self->remove($v);
 		$self->{later2}{$v} = $v;

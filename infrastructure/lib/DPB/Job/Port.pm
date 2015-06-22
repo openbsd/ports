@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.163 2015/05/24 06:48:51 espie Exp $
+# $OpenBSD: Port.pm,v 1.164 2015/06/22 12:18:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -560,6 +560,7 @@ sub setup
 {
 	my ($task, $core) = @_;
 	# we got pre-empted
+	# no actual need to junk
 	if (!DPB::Junk->want($core)) {
 		$task->junk_unlock($core);
 		return $core->job->next_task($core);
@@ -574,6 +575,7 @@ sub setup
 	my $still_tainted = 0;
 	for my $job ($core->same_host_jobs) {
 		if ($job->{nojunk}) {
+			# we can't junk go next
 			print $fh "Don't run junk because nojunk in ",
 			    $job->{path}, "\n";
 			$task->junk_unlock($core);
@@ -586,6 +588,7 @@ sub setup
 	if (defined $core->job->{builder}->locker->find_tag($core->hostname)) {
 		$still_tainted = 1;
 	}
+	# we are going along with junk, BUT we may still be tainted
 	print $fh "Still tainted: $still_tainted\n";
 	if (!$still_tainted) {
 		delete $core->prop->{tainted};
