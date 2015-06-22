@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.309 2015/05/26 09:31:28 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.310 2015/06/22 01:59:18 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -84,6 +84,7 @@
      SUBDIR += foobillard
      SUBDIR += forcedattack
      SUBDIR += fotaq
+     SUBDIR += freeblocks
      SUBDIR += freeciv
      SUBDIR += freecol
      SUBDIR += freedroid
