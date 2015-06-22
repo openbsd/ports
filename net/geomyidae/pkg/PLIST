@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/22 15:53:45 jung Exp $
+@newgroup _geomyidae:754
+@newuser _geomyidae:754:_geomyidae:daemon:Geomyidae Gopher Daemon:/nonexistent:/sbin/nologin
+@bin bin/geomyidae
+@man man/man8/geomyidae.8
+share/doc/geomyidae/
+share/doc/geomyidae/CGI
+share/doc/geomyidae/README
+@mode 755
+@owner root
+@group daemon
+@sample /var/gopher/
+@mode
+@owner
+@group
+share/examples/geomyidae/
+share/examples/geomyidae/index.gph
+@sample /var/gopher/index.gph
+share/examples/geomyidae/log
+@mode 640
+@owner _geomyidae
+@group _geomyidae
+@sample /var/log/geomyidae.log
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/geomyidae

@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2015/06/22 15:53:45 jung Exp $
+--- Makefile.orig	Sat Apr 13 21:28:27 2013
++++ Makefile	Mon Jun 22 13:31:30 2015
+@@ -7,7 +7,7 @@ PREFIX ?= /usr
+ BINDIR ?= $(PREFIX)/bin
+ MANDIR ?= $(PREFIX)/man/man8
+ 
+-CFLAGS += -O2 -Wall -I. -I/usr/include 
++CFLAGS += -Wall -I. -I/usr/include 
+ LDFLAGS += -L/usr/lib -L. -lc
+ : CC = cc
+ 
+@@ -23,14 +23,12 @@ options:
+ 	@echo "CC       = ${CC}"
+ 
+ .c.o:
+-	@echo CC $<
+-	@${CC} ${CFLAGS} -c $<
++	${CC} ${CFLAGS} -c $<
+ 
+ ${OBJ}:
+ 
+ ${NAME}: ${OBJ}
+-	@echo CC -o $@
+-	@${CC} -o $@ ${OBJ} ${LDFLAGS}
++	${CC} -o $@ ${OBJ} ${LDFLAGS}
+ 
+ clean:
+ 	@echo cleaning

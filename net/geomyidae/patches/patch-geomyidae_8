@@ -1,0 +1,12 @@
+$OpenBSD: patch-geomyidae_8,v 1.1.1.1 2015/06/22 15:53:45 jung Exp $
+--- geomyidae.8.orig	Mon Jun 22 13:53:42 2015
++++ geomyidae.8	Mon Jun 22 13:54:25 2015
+@@ -134,7 +134,7 @@ processing.
+ Host to use in directory listings (default: localhost)
+ .
+ .It Fl i Ar IP
+-IP to which geomyidae binds to (default: 127.0.0.1)
++IP to which geomyidae binds to (default: 0.0.0.0)
+ .El
+ .
+ .Sh FORMATTING
