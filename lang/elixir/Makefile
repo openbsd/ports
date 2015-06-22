@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/12/31 13:18:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/06/22 13:08:20 jasper Exp $
 
 COMMENT=		modern approach to programming for the Erlang VM
 
 V=			0.12.5
+REVISION=		0
 GH_ACCOUNT=		elixir-lang
 GH_PROJECT=		elixir
 GH_TAGNAME=		v$V
