@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/07/13 08:19:53 matthieu Exp $
+# $OpenBSD: Makefile,v 1.2 2015/06/22 20:15:32 naddy Exp $
 
 COMMENT =	X Window Protocol Viewer
 DISTNAME =	xscope-1.4.1
@@ -11,8 +11,7 @@ MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 # X11
 PERMIT_PACKAGE_CDROM =		Yes
 
-MASTER_SITES =	http://ftp.x.org/pub/individual/app/ \
-		ftp://ftp.x.org/pub/individual/app/ \
+MASTER_SITES =	${MASTER_SITE_XORG:=app/}
 
 WANTLIB =		c
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/06/17 05:45:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/06/22 20:15:32 naddy Exp $
 
 COMMENT =  	makefile generator
 CATEGORIES =	devel x11
 DISTNAME = 	imake-1.0.7
-MASTER_SITES = 	http://ftp.x.org/pub/individual/util/
+MASTER_SITES = 	${MASTER_SITE_XORG:=util/}
 
 PERMIT_PACKAGE_CDROM = 		Yes
 

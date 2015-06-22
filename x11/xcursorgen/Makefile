@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/11/02 13:32:04 matthieu Exp $
+# $OpenBSD: Makefile,v 1.29 2015/06/22 20:15:32 naddy Exp $
 
 COMMENT =	X11 Cursors themes generator
 DISTNAME =	xcursorgen-1.0.6
@@ -14,8 +14,7 @@ LIB_DEPENDS =	graphics/png
 # X11
 PERMIT_PACKAGE_CDROM =		Yes
 
-MASTER_SITES =	http://ftp.x.org/pub/individual/app/ \
-		ftp://ftp.x.org/pub/individual/app/ \
+MASTER_SITES =	${MASTER_SITE_XORG:=app/}
 
 WANTLIB =		Xcursor X11 c png
 

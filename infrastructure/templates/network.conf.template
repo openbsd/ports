@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.196 2015/06/20 19:54:22 naddy Exp $
+# $OpenBSD: network.conf.template,v 1.197 2015/06/22 20:15:32 naddy Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -80,6 +80,11 @@ MASTER_SITE_GCC+=	\
 	http://gcc.fyxm.net/ \
 	http://www.mirrorservice.org/sites/sourceware.org/pub/gcc/ \
 	http://gcc-uk.internet.bs/
+
+MASTER_SITE_XORG+=	\
+	http://ftp.x.org/pub/individual/ \
+	http://ftp.gwdg.de/pub/x11/x.org/pub/individual/ \
+	http://ftp.mirrorservice.org/sites/ftp.x.org/pub/individual/
 
 MASTER_SITE_XCONTRIB+=	\
 	http://ftp.gwdg.de/pub/x11/x.org/contrib/ \

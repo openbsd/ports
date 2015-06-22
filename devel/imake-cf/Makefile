@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/06/17 05:45:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2015/06/22 20:15:32 naddy Exp $
 
 PKG_ARCH = 	*
 COMMENT =  	config files for imake
@@ -6,7 +6,7 @@ CATEGORIES =	devel x11
 V =		1.0.5
 DISTNAME = 	xorg-cf-files-${V}
 PKGNAME = 	imake-cf-${V}
-MASTER_SITES = 	http://ftp.x.org/pub/individual/util/
+MASTER_SITES = 	${MASTER_SITE_XORG:=util/}
 
 PERMIT_PACKAGE_CDROM = 		Yes
 

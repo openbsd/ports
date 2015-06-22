@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/06/22 20:15:32 naddy Exp $
 
 COMMENT=	X Render extension test suite
 
@@ -14,9 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xrender c pthread-stubs xcb
 
-MASTER_SITES=	ftp://ftp.x.org/pub/individual/app/ \
-		ftp://ftp.gwdg.de/pub/x11/x.org/pub/individual/app/ \
-		ftp://ftp.sunet.se/pub/X11/ftp.x.org/individual/app/
+MASTER_SITES=	${MASTER_SITE_XORG:=app/}
 
 CONFIGURE_STYLE=	gnu
 
