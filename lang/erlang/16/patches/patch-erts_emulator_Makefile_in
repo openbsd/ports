@@ -1,4 +1,4 @@
-$OpenBSD: patch-erts_emulator_Makefile_in,v 1.12 2014/12/31 13:18:24 jasper Exp $
+$OpenBSD: patch-erts_emulator_Makefile_in,v 1.1 2015/06/22 13:07:39 jasper Exp $
 --- erts/emulator/Makefile.in.orig	Thu Jan 23 17:47:46 2014
 +++ erts/emulator/Makefile.in	Sun Dec 28 14:40:27 2014
 @@ -232,13 +232,7 @@ ifeq (@EMU_LOCK_CHECKING@,yes)

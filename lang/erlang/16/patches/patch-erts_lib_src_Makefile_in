@@ -1,4 +1,4 @@
-$OpenBSD: patch-erts_lib_src_Makefile_in,v 1.4 2014/12/31 13:18:24 jasper Exp $
+$OpenBSD: patch-erts_lib_src_Makefile_in,v 1.1 2015/06/22 13:07:39 jasper Exp $
 --- erts/lib_src/Makefile.in.orig	Thu Jan 23 17:47:46 2014
 +++ erts/lib_src/Makefile.in	Sun Dec 28 14:40:27 2014
 @@ -38,7 +38,7 @@ INSTALL_PROGRAM=@INSTALL_PROGRAM@

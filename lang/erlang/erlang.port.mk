@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.9 2015/06/21 13:24:17 jasper Exp $
+# $OpenBSD: erlang.port.mk,v 1.10 2015/06/22 13:07:39 jasper Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -32,7 +32,7 @@ ERL_LIBROOT ?=	${PREFIX}/lib/erlang/lib/
 # Standard directory into which a module/library gets installed.
 ERL_LIBDIR ?=	${ERL_LIBROOT}${DISTNAME}
 
-MODERL_RUN_DEPENDS +=	lang/erlang
+MODERL_RUN_DEPENDS +=	lang/erlang/16
 
 .if defined(MODERL_BUILD_DEPENDS)
 BUILD_DEPENDS +=	${MODERL_BUILD_DEPENDS}

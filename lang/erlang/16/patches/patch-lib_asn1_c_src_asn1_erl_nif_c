@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_asn1_c_src_asn1_erl_nif_c,v 1.1 2015/04/04 09:53:07 jasper Exp $
+$OpenBSD: patch-lib_asn1_c_src_asn1_erl_nif_c,v 1.1 2015/06/22 13:07:39 jasper Exp $
 
 From 7f385ebd984ed2931daa761819816b3e9da7d63c Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Bj=C3=B6rn=20Gustavsson?= <bjorn@erlang.org>

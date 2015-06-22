@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.25 2014/12/31 13:18:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.1 2015/06/22 13:07:39 jasper Exp $
+@conflict erlang->=17
+@pkgpath lang/erlang
 %%SHARED%%
 bin/ct_run
 bin/dialyzer

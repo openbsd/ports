@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2014/12/31 13:18:24 jasper Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.1 2015/06/22 13:07:39 jasper Exp $
 lib/erlang/lib/${ASN1}/priv/lib/asn1_erl_nif.so
 lib/erlang/lib/${CRYPTO}/priv/lib/crypto.so
 lib/erlang/lib/${CRYPTO}/priv/lib/crypto_callback.so
