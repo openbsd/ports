@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.455 2015/06/20 15:52:52 stu Exp $
+# $OpenBSD: Makefile,v 1.456 2015/06/22 22:50:34 bcallah Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -101,6 +101,7 @@
      SUBDIR += libwpd
      SUBDIR += libxml
      SUBDIR += libxml++
+     SUBDIR += libxmlbird
      SUBDIR += libxmlsd
      SUBDIR += libxslt
      SUBDIR += link-grammar
