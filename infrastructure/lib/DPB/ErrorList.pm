@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: ErrorList.pm,v 1.3 2013/12/30 17:32:26 espie Exp $
+# $OpenBSD: ErrorList.pm,v 1.4 2015/06/22 12:18:19 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -18,6 +18,10 @@
 use strict;
 use warnings;
 
+# Abstract interface to problems that must be handled asynchronously
+
+# the base class manages a list of issues, and has a basic "recheck"
+# call (template method pattern) that will be specialized.
 package DPB::ErrorList::Base;
 
 sub new
@@ -70,6 +74,7 @@ sub reprepare
 	$v->requeue($engine);
 }
 
+# actual errors, if the user removes the lock, then rescan and requeue
 package DPB::ErrorList;
 our @ISA = (qw(DPB::ErrorList::Base));
 
@@ -90,6 +95,8 @@ sub reprepare
 	$engine->rescan($v);
 }
 
+# locks: stuff that can't be built because something else with an almost
+# identical path is building.
 package DPB::LockList;
 our @ISA = (qw(DPB::ErrorList::Base));
 sub unlock_early
@@ -112,6 +119,9 @@ sub stringize
 	return join(' ', @l);
 }
 
+# NFS overload handling. Doesn't appear that often these days
+# at the end of a succesful build, the packages might not show up
+# directly.   So keep them around
 package DPB::NFSList;
 our @ISA = (qw(DPB::ErrorList::Base));
 
@@ -134,7 +144,8 @@ sub unlock_early
 			delete $h->{$k};
 		} else {
 			$okay = 0;
-			# infamous
+			# infamous: this is the case where the server is late
+			# seeing the files
 			$engine->log('H', $w);
 		}
 	}
