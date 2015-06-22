@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/24 17:18:45 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2015/06/22 01:22:52 bcallah Exp $
 
 COMMENT =	lightweight graphical download manager
 DISTNAME =	uget-2.0
+REVISION =	0
 CATEGORIES =	www net x11
 
 HOMEPAGE =	http://ugetdm.com/
@@ -18,10 +19,7 @@ WANTLIB += pangoft2-1.0 pthread ssl z
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=urlget/}
 
 MODULES =	devel/gettext \
-		lang/clang \
 		textproc/intltool
-MODCLANG_ARCHS =	*
-MODCLANG_LANGS =	c
 
 LIB_DEPENDS =	devel/libnotify \
 		multimedia/gstreamer1/core \
@@ -29,8 +27,12 @@ LIB_DEPENDS =	devel/libnotify \
 		x11/gtk+3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		www/aria2 \
 		x11/gtk+3,-guic
+
+# You should be using aria2 if the arch has it.
+.if ${MACHINE_ARCH} != "mips64el" && ${MACHINE_ARCH} != "mips64"
+RUN_DEPENDS +=	www/aria2
+.endif
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -38,7 +40,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 # BSD make doesn't install the localization files.
 USE_GMAKE =	Yes
-MAKE_FLAGS =	CFLAGS="${CFLAGS} -std=c11"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/uget/UgetAria2.c
