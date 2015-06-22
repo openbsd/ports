@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2014/09/04 09:24:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/06/22 07:54:57 jasper Exp $
 
 COMMENT=		open source alternative to Microsoft Project
 
-DISTNAME=		projectlibre-1.5.9
+DISTNAME=		projectlibre-1.6
 CATEGORIES=		productivity
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -24,6 +24,8 @@ NO_BUILD=       Yes
 NO_TEST=	Yes
 
 PKG_ARCH=       *
+
+WRKDIST=		${WRKDIR}/${DISTNAME}.0/
 
 do-install:
 	@${SUBST_PROGRAM} ${FILESDIR}/projectlibre \
