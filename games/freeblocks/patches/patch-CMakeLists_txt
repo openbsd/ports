@@ -1,0 +1,29 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2015/06/22 01:58:54 bcallah Exp $
+
+Merge pull request #38 from AMDmi3/installation
+Fix binary installation and simplify installation of other files
+https://github.com/dorkster/freeblocks/commit/1ff12d49bce05b4ec8ce647080c41e72c2868c58
+
+--- CMakeLists.txt.orig	Mon Mar  9 08:48:31 2015
++++ CMakeLists.txt	Mon Mar  9 23:24:31 2015
+@@ -27,7 +27,7 @@ else()
+ endif()
+ 
+ if(CMAKE_BUILD_TYPE STREQUAL "Release")
+-    set(CMAKE_C_FLAGS_RELEASE "-O2 -g0")
++    set(CMAKE_C_FLAGS_RELEASE "-g0")
+ elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
+     set(CMAKE_C_FLAGS_RELWITHDEBINFO "-O2 -g")
+ elseif(CMAKE_BUILD_TYPE STREQUAL "MinSizeRel")
+@@ -126,7 +126,7 @@ EndIf (NOT SDLMAIN_LIBRARY)
+ Target_Link_Libraries (freeblocks ${CMAKE_LD_FLAGS} ${SDL_LIBRARY} ${SDLIMAGE_LIBRARY} ${SDLMIXER_LIBRARY} ${SDLTTF_LIBRARY} ${SDLMAIN_LIBRARY} ${EXTRA_LIBRARIES})
+ 
+ # installing to the proper places
+-install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/freeblocks DESTINATION ${BINDIR})
+-install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/res" DESTINATION ${DATADIR})
+-install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pkg/default.gcw0.desktop" DESTINATION ${APPDIR} RENAME freeblocks.desktop)
+-install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pkg/freeblocks.png" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/32x32/apps)
++install(TARGETS freeblocks DESTINATION ${BINDIR})
++install(DIRECTORY res DESTINATION ${DATADIR})
++install(FILES pkg/default.gcw0.desktop DESTINATION ${APPDIR} RENAME freeblocks.desktop)
++install(FILES pkg/freeblocks.png DESTINATION share/icons/hicolor/32x32/apps)

@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/22 01:58:54 bcallah Exp $
+@bin bin/freeblocks
+share/applications/freeblocks.desktop
+share/freeblocks/
+share/freeblocks/res/
+share/freeblocks/res/fonts/
+share/freeblocks/res/fonts/Alegreya-Regular.ttf
+share/freeblocks/res/graphics/
+share/freeblocks/res/graphics/320x240/
+share/freeblocks/res/graphics/320x240/background.png
+share/freeblocks/res/graphics/320x240/background_jewels.png
+share/freeblocks/res/graphics/320x240/bar.png
+share/freeblocks/res/graphics/320x240/bar_inactive.png
+share/freeblocks/res/graphics/320x240/blocks.png
+share/freeblocks/res/graphics/320x240/clear.png
+share/freeblocks/res/graphics/320x240/cursor.png
+share/freeblocks/res/graphics/320x240/cursor_highlight.png
+share/freeblocks/res/graphics/320x240/highscores.png
+share/freeblocks/res/graphics/320x240/title.png
+share/freeblocks/res/graphics/background.png
+share/freeblocks/res/graphics/background_jewels.png
+share/freeblocks/res/graphics/bar.png
+share/freeblocks/res/graphics/bar_inactive.png
+share/freeblocks/res/graphics/blocks.png
+share/freeblocks/res/graphics/clear.png
+share/freeblocks/res/graphics/cursor.png
+share/freeblocks/res/graphics/cursor_highlight.png
+share/freeblocks/res/graphics/highscores.png
+share/freeblocks/res/graphics/title.png
+share/freeblocks/res/sounds/
+share/freeblocks/res/sounds/drop.wav
+share/freeblocks/res/sounds/match.wav
+share/freeblocks/res/sounds/menu.wav
+share/freeblocks/res/sounds/music.ogg
+share/freeblocks/res/sounds/music_jewels.ogg
+share/freeblocks/res/sounds/switch.wav
+share/icons/hicolor/32x32/apps/freeblocks.png
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
