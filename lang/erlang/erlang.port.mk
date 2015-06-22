@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.10 2015/06/22 13:07:39 jasper Exp $
+# $OpenBSD: erlang.port.mk,v 1.11 2015/06/22 18:39:46 jasper Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -7,6 +7,31 @@ CATEGORIES +=		lang/erlang
 USE_GMAKE ?=		Yes
 
 SUBST_VARS +=		VERSION
+
+# Root directory of all Erlang libraries.
+ERL_LIBROOT ?=	${PREFIX}/lib/erlang/lib/
+
+# Standard directory into which a module/library gets installed.
+ERL_LIBDIR ?=	${ERL_LIBROOT}${DISTNAME}
+
+MODERL_RUN_DEPENDS +=	lang/erlang/16
+
+.if defined(MODERL_BUILD_DEPENDS)
+BUILD_DEPENDS +=	${MODERL_BUILD_DEPENDS}
+.endif
+
+.if defined(MODERL_RUN_DEPENDS)
+RUN_DEPENDS +=		${MODERL_RUN_DEPENDS}
+.endif
+
+# Some modules don't have a 'version' set and try to retrieve this through git.
+# Patch the .app.src files to have ${VERSION} and set ERL_APP_SUBST=Yes.
+.if defined(ERL_APP_SUBST) && ${ERL_APP_SUBST:L} == "yes"
+.if ! target(pre-configure)
+pre-configure:
+	cd ${WRKSRC}/src/ && ${SUBST_CMD} *.app.src
+.endif
+.endif
 
 # If no configure style is set, then assume "rebar"
 .if ${CONFIGURE_STYLE} == ""
@@ -24,22 +49,6 @@ pre-build:
 	@cp -f ${REBAR_BIN} ${WRKSRC}
 	@perl -pi -e 'BEGIN{undef $$/;} s/{deps,.*?]}.//smg' ${WRKSRC}/rebar.config
 .  endif
-.endif
-
-# Root directory of all Erlang libraries.
-ERL_LIBROOT ?=	${PREFIX}/lib/erlang/lib/
-
-# Standard directory into which a module/library gets installed.
-ERL_LIBDIR ?=	${ERL_LIBROOT}${DISTNAME}
-
-MODERL_RUN_DEPENDS +=	lang/erlang/16
-
-.if defined(MODERL_BUILD_DEPENDS)
-BUILD_DEPENDS +=	${MODERL_BUILD_DEPENDS}
-.endif
-
-.if defined(MODERL_RUN_DEPENDS)
-RUN_DEPENDS +=		${MODERL_RUN_DEPENDS}
 .endif
 
 # Regression test handing:
@@ -61,13 +70,4 @@ RUN_DEPENDS +=		${MODERL_RUN_DEPENDS}
 .if ! target(dialyzer)
 dialyzer:
 	cd ${WRKSRC} && ${REBAR_BIN} dialyzer
-.endif
-
-# Some modules don't have a 'version' set and try to retrieve this through git.
-# Patch the .app.src files to have ${VERSION} and set ERL_APP_SUBST=Yes.
-.if defined(ERL_APP_SUBST) && ${ERL_APP_SUBST:L} == "yes"
-.if ! target(pre-configure)
-pre-configure:
-	cd ${WRKSRC}/src/ && ${SUBST_CMD} *.app.src
-.endif
 .endif
