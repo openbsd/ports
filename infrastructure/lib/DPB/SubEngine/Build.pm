@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.13 2015/05/24 06:48:51 espie Exp $
+# $OpenBSD: Build.pm,v 1.14 2015/06/22 12:19:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -58,14 +58,11 @@ sub can_start_build
 	# if the tag mismatch, we keep it for much much later.
 	# currently, we don't even try to recuperate, so this will
 	# fail abysmally if there's no junking going on
-	if ($core->prop->{tainted} && $v->{info}->has_property('tag')) {
-		if ($v->{info}->has_property('tag') ne $core->prop->{tainted}) {
-			$self->log('K', $v, " ".$core->hostname." ".
-			    $core->prop->{tainted}." vs ".
-			    $v->{info}->has_property('tag'));
-			push(@{$self->{tag_mismatches}}, $v);
-			return 0;
-		}
+	my $reason = $core->prop->taint_incompatible($v);
+	if (defined $reason) {
+		$self->log('K', $v, " ".$core->hostname." ".$reason);
+		push(@{$self->{tag_mismatches}}, $v);
+		return 0;
 	}
 	# keep affinity mismatches for later
 	if (defined $v->{affinity} && !$core->matches_affinity($v)) {
@@ -291,9 +288,7 @@ sub start_build
 {
 	my ($self, $v, $core, $lock) = @_;
 	$self->log('J', $v, " ".$core->hostname);
-	if ($v->{info}->has_property('tag')) {
-		$core->prop->{tainted} = $v->{info}->has_property('tag');
-	}
+	$core->prop->taint($v);
 	$self->{builder}->build($v, $core, $lock, 
 	    sub {
 	    	my $fail = shift;

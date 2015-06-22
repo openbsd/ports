@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.10 2015/05/12 08:20:08 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.11 2015/06/22 12:19:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -110,6 +110,49 @@ sub finalize_with_overrides
 	my ($self, $overrides) = @_;
 	$self->add_overrides($overrides);
 	$self->finalize;
+}
+
+sub taint
+{
+	my ($self, $v) = @_;
+	my $t2 = $v->{info}->has_property('tag');
+	if (!defined $t2) {
+		return;
+	}
+	my $t1 = $self->{tainted};
+	if (!defined $t1) {
+		$self->{tainted} = $t2;
+		$self->{tainted_source} = $v;
+		return;
+	}
+	if ($t1 ne $t2) {
+		DPB::Util->die("Retainting badly", $self, $v);
+	}
+}
+
+sub untaint
+{
+	my $self = shift;
+	delete $self->{tainted};
+	delete $self->{tainted_source};
+}
+
+sub taint_incompatible
+{
+	my ($self, $v) = @_;
+	my $t1 = $self->{tainted};
+
+	if (!defined $t1) {
+		return undef;
+	}
+	my $t2 = $v->{info}->has_property('tag');
+	if (!defined $t2) {
+		return undef;
+	}
+	if ($t1 eq $t2) {
+		return undef;
+	}
+	return "$t1 vs $t2";
 }
 
 1;
