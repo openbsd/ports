@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.5 2015/05/15 15:32:00 sthen Exp $
---- Makefile.orig	Thu May  7 12:23:39 2015
-+++ Makefile	Fri May 15 14:49:48 2015
-@@ -76,7 +76,7 @@ clean:
+$OpenBSD: patch-Makefile,v 1.6 2015/06/22 20:46:24 sthen Exp $
+--- Makefile.orig	Tue May 26 02:13:50 2015
++++ Makefile	Mon Jun 22 21:22:58 2015
+@@ -77,7 +77,7 @@ clean:
  
  #------------------------------------------------------------------------
  #make install is validated only for Linux, OSX, kFreeBSD and Hurd targets
