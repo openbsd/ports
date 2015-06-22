@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_bavala_py,v 1.1.1.1 2015/06/22 22:50:00 bcallah Exp $
+--- scripts/bavala.py.orig	Mon Jun 22 10:19:23 2015
++++ scripts/bavala.py	Mon Jun 22 10:19:41 2015
+@@ -229,6 +229,8 @@ class Vala(object):
+         
+         if not "bsd" in sys.platform:
+             create_link = "ln -s -T " + so_file + " " + self.so_link_name + " "
++        else:
++            create_link = "ln -s " + so_file + " " + self.so_link_name + " "
+ 
+         create_link += "&& mv " + self.so_link_name + " " + self.build + "/" 
+         return {
