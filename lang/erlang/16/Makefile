@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.1 2015/06/22 13:07:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2015/06/22 13:18:26 jasper Exp $
 
-COMMENT=	real-time, concurrent and distributed functional language
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 BROKEN-hppa =	error: No native atomic implementation found.
 BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
@@ -10,23 +9,8 @@ DISTNAME=	otp_src_${V}
 PKGNAME=	erlang-16b.03
 REVISION=	2
 EPOCH=		0
-CATEGORIES=	lang
-
-# Erlang Public License
-# http://www.erlang.org/EPLICENSE
-PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c crypto m ncurses pthread util
-
-MASTER_SITES=	${HOMEPAGE}download/
-
-HOMEPAGE=	http://www.erlang.org/
-
-DISTFILES=	${DISTNAME}.tar.gz \
-	  	otp_doc_man_${V}.tar.gz \
-		otp_doc_html_${V}.tar.gz
-
-EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 CONFIGURE_ARGS=	--disable-jinterface	\
 		--disable-odbc		\
@@ -42,17 +26,6 @@ AUTOCONF_VERSION=2.59
 AUTOCONF_DIR=	${WRKSRC} ${WRKSRC}/erts
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/erts/autoconf \
 				${WRKSRC}/lib/erl_interface/src/auxdir
-
-.if ${MACHINE_ARCH} == i386
-CONFIGURE_ARGS+=	--enable-ethread-pre-pentium4-compatibility
-.elif ${MACHINE_ARCH} == sparc64
-CFLAGS+=		-fno-pie
-LDFLAGS+=		-nopie
-.endif
-
-MAKE_ENV+=	DESTDIR=$(DESTDIR)
-
-NO_TEST=	Yes
 
 DOC_DIR=	${PREFIX}/lib/erlang
 
