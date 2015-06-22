@@ -1,6 +1,6 @@
---- configure.orig	Thu Mar  1 10:04:19 2012
-+++ configure	Mon Jul  9 08:31:19 2012
-@@ -5992,11 +5992,11 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+--- configure.orig	Mon Mar  9 19:53:05 2015
++++ configure	Fri Jun 19 10:40:54 2015
+@@ -8338,11 +8338,11 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  #ifdef __cplusplus
  extern "C"
  #endif
@@ -14,12 +14,12 @@
    ;
    return 0;
  }
-@@ -7408,7 +7408,7 @@ main ()
+@@ -8407,7 +8407,7 @@ main ()
  {
  const char * inbuf;
- 			iconv_t cd;
--			iconv ( cd, &inbuf, NULL, NULL, NULL );
-+			libiconv ( cd, &inbuf, NULL, NULL, NULL );
+ 				iconv_t cd;
+-				iconv ( cd, &inbuf, NULL, NULL, NULL );
++				libiconv ( cd, &inbuf, NULL, NULL, NULL );
  
    ;
    return 0;
