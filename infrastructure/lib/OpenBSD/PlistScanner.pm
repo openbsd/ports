@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.9 2015/06/08 15:37:20 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.10 2015/06/22 09:33:03 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -37,6 +37,7 @@ sub handle_plist
 		return;
 	}
 	$self->{name2path}{$plist->pkgname} = $plist->fullpkgpath;
+	$self->{currentname} = $plist->pkgname." - ".$plist->fullpkgpath;
 	$self->say("#1 -> #2", $filename, $plist->pkgname) 
 	    if $self->ui->verbose;
 	$self->register_plist($plist);
@@ -71,7 +72,8 @@ sub find_current_pkgnames
 	my $done = {};
 	my @todo = ();
 
-	for my $path (values %{$self->{name2path}}) {
+	while (my ($name, $path) = each %{$self->{name2path}}) {
+		next if $self->{current}{$name};
 		next if $done->{$path};
 		push(@todo, $path);
 	}
@@ -97,6 +99,29 @@ sub find_current_pkgnames
 		}
 		close($output);
 	}
+}
+
+sub find_all_current_pkgnames
+{
+	my ($self, $dir) = @_;
+
+	$self->progress->set_header("Figuring out current names");
+	open(my $input, "cd $dir && $self->{make} show='PKGPATHS PKGNAMES' ECHO_MSG=:|");
+	while (<$input>) {
+		chomp;
+		my @values = split(/\s+/, $_);
+		my $line2 = <$input>;
+		chomp $line2;
+		my @keys = split(/\s+/, $line2);
+		$self->progress->message($values[0]);
+		while (my $key = shift @keys) {
+			my $value = shift @values;
+			$self->{name2path}{$key} = $value;
+			$self->{current}{$key} = 1;
+	#		$self->ui->say("pkgname: #1", $key);
+		}
+	}
+	$self->progress->next;
 }
 
 sub reader
@@ -131,6 +156,34 @@ sub handle_portsdir
 	}
 }
 
+sub rescan_dependencies
+{
+	my ($self, $dir) = @_;
+
+	$self->progress->set_header("Scanning extra dependencies");
+	my $notfound = {};
+	my $todo;
+	do {
+		$todo = {};
+		while (my ($pkg, $reason) = each %{$self->{wanted}}) {
+			next if $self->{got}{$pkg};
+			next if $notfound->{$pkg};
+			$todo->{$pkg} = $reason;
+		}
+		while (my ($pkgname, $reason) = each %$todo) {
+			$self->progress->say("rescanning: #1 (#2)",
+			    $pkgname, $reason);
+			my $file = "$dir/$pkgname";
+			if (-f $file) {
+				$self->handle_file($file);
+			} else {
+				$notfound->{$pkgname} = $reason;
+		    	}
+		}
+	} while (keys %$todo > 0);
+	$self->progress->next;
+}
+
 sub scan
 {
 	my $self = shift;
@@ -144,8 +197,15 @@ sub scan
 		    sub {
 			my $pkgname = shift;
 			return if $pkgname eq '.' or $pkgname eq '..';
+			if ($self->ui->opt('f') &&
+			    !defined $self->{current}{$pkgname}) {
+			    	return;
+			}
+#			$self->ui->say("doing: #1", $pkgname);
 			$self->handle_file($self->ui->opt('d')."/$pkgname");
 		    });
+		if ($self->ui->opt('f')) {
+		}
 	} elsif ($self->ui->opt('p')) {
 		$self->handle_portspath($self->ui->opt('p'));
 	} elsif (@ARGV==0) {
@@ -164,41 +224,18 @@ sub scan
 			rmtree($dir);
 		    });
 	}
-	$self->progress->set_header("Scanning extra dependencies");
-	$self->progress->message("");
-	my $notfound = {};
-	my $todo;
-	do {
-		$todo = {};
-		for my $pkg (keys %{$self->{wanted}}) {
-			next if $self->{got}{$pkg};
-			next if $notfound->{$pkg};
-			$todo->{$pkg} = 1;
-			$self->say("Dependency not found #1", $pkg);
-		}
-		for my $pkgname (keys %$todo) {
-			my $true_package;
-			if ($self->ui->opt('S')) {
-				$true_package = $self->ui->repo->find($pkgname);
-			}
-			if (defined $true_package) {
-				my $dir = $true_package->info;
-				$true_package->close;
-				my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
-				File::Path::rmtree($dir);
-				$self->register_plist($plist);
-			} else {
-				$notfound->{$pkgname} = 1;
-		    	}
-		}
-	} while (keys %$todo > 0);
-	$self->progress->next;
+	if ($self->ui->opt('d')) {
+		$self->rescan_dependencies($self->ui->opt('d'));
+	}
 }
 
 sub run
 {
 	my $self = shift;
 
+	if ($self->ui->opt('p') && $self->ui->opt('f')) {
+		$self->find_all_current_pkgnames($self->ui->opt('p'));
+	}
 	$self->scan;
 
 	if ($self->ui->opt('d') && $self->ui->opt('p')) {
@@ -239,15 +276,15 @@ sub ui
 sub handle_options
 {
 	my ($self, $extra, $usage) = @_;
-	$usage //= "[-veS] [-d plist_dir] [-o output] [-p ports_dir] [pkgname ...]";
+	$usage //= "[-vefS] [-d plist_dir] [-o output] [-p ports_dir] [pkgname ...]";
 	$extra //= '';
-	$self->ui->handle_options($extra.'d:eo:p:sS', $usage);
+	$self->ui->handle_options($extra.'d:efo:p:sS', $usage);
 }
 
 sub new
 {
 	my ($class, $cmd) = @_;
-	my $ui = OpenBSD::AddCreateDelete::State->new('check-conflicts');
+	my $ui = OpenBSD::AddCreateDelete::State->new($cmd);
 	my $o = bless {ui => $ui, 
 	    make => $ENV{MAKE} || 'make', 
 	    name2path => {}, 
