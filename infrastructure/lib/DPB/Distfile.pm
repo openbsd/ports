@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.7 2015/06/17 07:30:17 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.8 2015/06/22 12:18:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -23,6 +23,7 @@ package DPB::Distfile;
 our @ISA = (qw(DPB::UserProxy));
 
 # same distfile may exist in several ports.
+# so we keep a hash based on full storage path.
 
 my $cache = {};
 
@@ -38,6 +39,7 @@ sub create
 	}, $class;
 }
 
+# complete object with sha/size info, error out if not same info
 sub complete
 {
 	my ($self, $file, $short, $site, $distinfo, $v, $repo) = @_;
@@ -50,12 +52,14 @@ sub complete
 	}
 	if (defined $self->{sz}) {
 		if ($self->{sz} != $sz) {
-			$v->break("Inconsistent info for $file: $self->{sz} vs $sz");
+			$v->break("Inconsistent info for $file: $self->{sz} vs $sz(".$v->fullpkgpath." vs ".$self->{path}->fullpkgpath.")");
 			$error = 1;
 		}
 		if (!$self->{sha}->equals($sha)) {
 			$v->break("Inconsistent info for $file ". 
-			    $self->{sha}->stringize. " vs ". $sha->stringize);
+			    $self->{sha}->stringize. " vs ". $sha->stringize.
+			    "(".$v->fullpkgpath." vs ".
+			    $self->{path}->fullpkgpath.")");
 			$error = 1;
 		}
 	}
@@ -68,6 +72,18 @@ sub complete
 		$self->{site} = $site;
 		return $self;
 	}
+}
+
+sub new
+{
+	my ($class, $file, $url, $dir, @r) = @_;
+	my $full = (defined $dir) ? join('/', $dir->string, $file) : $file;
+	if (!defined $url) {
+		$url = $file;
+	}
+	my $c = $cache->{$full} //= $class->create($full, $url, @r);
+	$c->complete($full, $url, @r);
+	return $c;
 }
 
 sub user
@@ -106,18 +122,6 @@ sub cached
 {
 	my $self = shift;
 	return $self->{repo}{sha};
-}
-
-sub new
-{
-	my ($class, $file, $url, $dir, @r) = @_;
-	my $full = (defined $dir) ? join('/', $dir->string, $file) : $file;
-	if (!defined $url) {
-		$url = $file;
-	}
-	my $c = $cache->{$full} //= $class->create($full, $url, @r);
-	$c->complete($full, $url, @r);
-	return $c;
 }
 
 sub logname
