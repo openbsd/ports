@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2015/06/01 08:23:47 pea Exp $
+# $OpenBSD: Makefile,v 1.204 2015/06/22 07:29:42 pea Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -11,7 +11,7 @@ BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
 # DO NOT FORGET to also change the @ask-update entry in pkg/PLIST-server
 # in case a dump before / restore after pkg_add -u is required!
 
-VERSION=	9.4.2
+VERSION=	9.4.4
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
