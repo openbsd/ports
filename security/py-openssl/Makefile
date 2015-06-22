@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/04/21 18:19:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2015/06/22 22:40:59 jca Exp $
 
 COMMENT=	Python interface to the OpenSSL library
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://launchpad.net/pyopenssl/
 
 MAINTAINER=	Eric Faurot <eric@openbsd.org>
 
-# LGPLv2.1
+# Apache 2
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
