@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.910 2015/06/21 20:20:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.911 2015/06/22 15:57:46 jung Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -102,6 +102,7 @@
      SUBDIR += ftpsesame
      SUBDIR += gajim
      SUBDIR += gdnsd
+     SUBDIR += geomyidae
      SUBDIR += glib2-networking
      SUBDIR += gloox
      SUBDIR += gmudix
