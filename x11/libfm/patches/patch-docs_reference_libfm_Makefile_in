@@ -1,9 +1,9 @@
-$OpenBSD: patch-docs_reference_libfm_Makefile_in,v 1.1.1.1 2013/07/01 05:09:35 ajacoutot Exp $
---- docs/reference/libfm/Makefile.in.orig	Wed Oct 31 19:34:46 2012
-+++ docs/reference/libfm/Makefile.in	Tue Nov  6 15:24:32 2012
-@@ -819,7 +819,6 @@ dist-hook: dist-check-gtkdoc dist-hook-local
- #TESTS_ENVIRONMENT = cd $(srcsrc) &&
- #TESTS = $(GTKDOC_CHECK)
+$OpenBSD: patch-docs_reference_libfm_Makefile_in,v 1.2 2015/06/23 22:33:35 ajacoutot Exp $
+--- docs/reference/libfm/Makefile.in.orig	Tue Oct 14 18:46:20 2014
++++ docs/reference/libfm/Makefile.in	Wed Jun 24 00:04:15 2015
+@@ -870,7 +870,6 @@ dist-hook: dist-check-gtkdoc dist-hook-local
+ # we don't have tests here
+ test:
  
 --include $(top_srcdir)/git.mk
  

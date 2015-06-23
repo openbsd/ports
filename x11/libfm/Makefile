@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/22 11:31:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/06/23 22:33:35 ajacoutot Exp $
 
 COMMENT=	library providing file related widgets for pcmanfm
 
-DISTNAME=	libfm-1.2.0
+DISTNAME=	libfm-1.2.3
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 CATEGORIES=	x11 devel
 
-SHARED_LIBS+=	fm-gtk	0.0 # 1.0
-SHARED_LIBS+=	fm	0.0 # 1.0
-SHARED_LIBS+=	fm-extra	0.0 # 4.0
+SHARED_LIBS +=  fm-extra             0.0      # 4.3
+SHARED_LIBS +=  fm                   0.0      # 4.3
+SHARED_LIBS +=  fm-gtk               0.0      # 4.3
 
 HOMEPAGE=	http://pcmanfm.sourceforge.net/
 
-# GPLv2
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pcmanfm/}
@@ -42,8 +41,15 @@ MODULES=	devel/gettext \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# prevent undefined references to libc functions
+CONFIGURE_ENV+=	ac_cv_ld_z_defs=no
+
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/libfm
+
+post-install:
+	rm ${PREFIX}/lib/libfm/modules/*.a
 
 .include <bsd.port.mk>
