@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/23 19:25:29 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/libnacl/
+lib/python${MODPY_VERSION}/site-packages/libnacl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/libnacl/__init__.py
+lib/python${MODPY_VERSION}/site-packages/libnacl/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/libnacl/base.py
+lib/python${MODPY_VERSION}/site-packages/libnacl/base.pyc
+lib/python${MODPY_VERSION}/site-packages/libnacl/blake.py
+lib/python${MODPY_VERSION}/site-packages/libnacl/blake.pyc
+lib/python${MODPY_VERSION}/site-packages/libnacl/dual.py
+lib/python${MODPY_VERSION}/site-packages/libnacl/dual.pyc
+lib/python${MODPY_VERSION}/site-packages/libnacl/encode.py
+lib/python${MODPY_VERSION}/site-packages/libnacl/encode.pyc
+lib/python${MODPY_VERSION}/site-packages/libnacl/public.py
+lib/python${MODPY_VERSION}/site-packages/libnacl/public.pyc
+lib/python${MODPY_VERSION}/site-packages/libnacl/secret.py
+lib/python${MODPY_VERSION}/site-packages/libnacl/secret.pyc
+lib/python${MODPY_VERSION}/site-packages/libnacl/sign.py
+lib/python${MODPY_VERSION}/site-packages/libnacl/sign.pyc
+lib/python${MODPY_VERSION}/site-packages/libnacl/utils.py
+lib/python${MODPY_VERSION}/site-packages/libnacl/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/libnacl/version.py
+lib/python${MODPY_VERSION}/site-packages/libnacl/version.pyc
