@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/11/02 08:51:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2015/06/23 15:29:57 bentley Exp $
 
 COMMENT=	print multiple pages per sheet on PostScript printer
 
@@ -16,7 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/ \
+MASTER_SITES=	http://www.mesa.nl/pub/mpage/ \
+		ftp://ftp.mesa.nl/pub/mpage/ \
 		ftp://ftp.mesa.nl/pub/mpage/old/
 
 ALL_TARGET=	default
