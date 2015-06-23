@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/06/06 11:06:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/06/23 07:11:44 jasper Exp $
 ${GEM_BIN}/serverspec-init${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -71,6 +71,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/kernel_module.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/linux_kernel_parameter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/lxc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/mail_alias.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/mysql_config.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/php_config.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/port.rb
@@ -115,6 +116,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/type/base/file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/base/group_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/base/host_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/base/mail_alias_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/type/base/mysql_config_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/base/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/base/php_config_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/base/port_spec.rb
