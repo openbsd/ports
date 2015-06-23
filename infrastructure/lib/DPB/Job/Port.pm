@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.164 2015/06/22 12:18:50 espie Exp $
+# $OpenBSD: Port.pm,v 1.165 2015/06/23 09:01:56 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -535,7 +535,7 @@ sub finalize
 		# XXX we ran junk before us, so retaint *now* before losing the lock
 		if ($job->{v}{info}->has_property('tag') && 
 		    !defined $core->prop->{tainted}) {
-			$core->prop->{tainted} = $job->{v}{info}->has_property('tag');
+		    	$core->prop->taint($v);
                         print {$job->{logfh}} "Forced junk, retainting: ", 
 			    $core->prop->{tainted}, "\n";
 		}
@@ -591,7 +591,7 @@ sub setup
 	# we are going along with junk, BUT we may still be tainted
 	print $fh "Still tainted: $still_tainted\n";
 	if (!$still_tainted) {
-		delete $core->prop->{tainted};
+		$core->prop->untaint;
 	}
 	return $task;
 }
