@@ -1,0 +1,18 @@
+$OpenBSD: patch-raddb_sites-available_default,v 1.1 2015/06/23 21:38:06 sthen Exp $
+
+From 796d49527703b97cc7f9e9cef88dfa85454cc6f9 Mon Sep 17 00:00:00 2001
+From: "Alan T. DeKok" <aland@freeradius.org>
+Date: Wed, 20 May 2015 17:36:09 -0400
+Subject: [PATCH] Oops
+
+--- raddb/sites-available/default.orig	Tue Jun 23 22:34:44 2015
++++ raddb/sites-available/default	Tue Jun 23 22:35:00 2015
+@@ -157,8 +157,6 @@ authorize {
+ 		ok = return
+ 	}
+ 
+-	reject
+-
+ 	#
+ 	#  Pull crypt'd passwords from /etc/passwd or /etc/shadow,
+ 	#  using the system API's to get the password.  If you want

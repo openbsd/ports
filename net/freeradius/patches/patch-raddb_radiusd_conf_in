@@ -1,6 +1,6 @@
-$OpenBSD: patch-raddb_radiusd_conf_in,v 1.13 2014/07/17 00:20:51 sthen Exp $
---- raddb/radiusd.conf.in.orig	Mon Apr 28 20:13:08 2014
-+++ raddb/radiusd.conf.in	Wed Jul  9 00:38:52 2014
+$OpenBSD: patch-raddb_radiusd_conf_in,v 1.14 2015/06/23 21:38:06 sthen Exp $
+--- raddb/radiusd.conf.in.orig	Wed Apr 22 18:31:54 2015
++++ raddb/radiusd.conf.in	Mon Jun 22 09:30:57 2015
 @@ -103,7 +103,7 @@ db_dir = ${raddbdir}
  #	make
  #	make install
@@ -21,7 +21,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.13 2014/07/17 00:20:51 sthen Exp $
  
  #  panic_action: Command to execute if the server dies unexpectedly.
  #
-@@ -584,8 +584,8 @@ security {
+@@ -576,8 +576,8 @@ security {
  #
  #  allowed values: {no, yes}
  #
@@ -32,7 +32,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.13 2014/07/17 00:20:51 sthen Exp $
  
  
  # CLIENTS CONFIGURATION
-@@ -601,7 +601,7 @@ $INCLUDE proxy.conf
+@@ -593,7 +593,7 @@ $INCLUDE proxy.conf
  #  Anything listed in 'clients.conf' will take precedence over the
  #  information from the old-style configuration files.
  #
@@ -41,7 +41,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.13 2014/07/17 00:20:51 sthen Exp $
  
  
  # THREAD POOL CONFIGURATION
-@@ -735,12 +735,12 @@ modules {
+@@ -727,12 +727,12 @@ modules {
  	#  For all EAP related authentications.
  	#  Now in another file, because it is very large.
  	#
@@ -56,7 +56,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.13 2014/07/17 00:20:51 sthen Exp $
  
  	#
  	#  This module is an SQL enabled version of the counter module.
-@@ -752,12 +752,12 @@ modules {
+@@ -744,12 +744,12 @@ modules {
  	#  totally dependent on the SQL module to process Accounting
  	#  packets.
  	#
@@ -71,7 +71,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.13 2014/07/17 00:20:51 sthen Exp $
  }
  
  # Instantiation
-@@ -831,7 +831,7 @@ instantiate {
+@@ -823,7 +823,7 @@ instantiate {
  #	to multiple times.
  #
  ######################################################################
