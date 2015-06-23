@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2014/11/19 01:07:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.112 2015/06/23 04:45:18 bentley Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -44,8 +44,6 @@
      SUBDIR += nedit
      SUBDIR += nvi
      SUBDIR += nvi,iconv
-     SUBDIR += nvi-m17n
-     SUBDIR += nvi-m17n,canna
      SUBDIR += py-qscintilla
      SUBDIR += qscintilla
      SUBDIR += scintilla
