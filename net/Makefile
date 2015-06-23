@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.912 2015/06/23 10:28:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.913 2015/06/23 19:28:39 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -523,7 +523,7 @@
      SUBDIR += py-nmap
      SUBDIR += py-oauth2
      SUBDIR += py-pcapy
-     SUBDIR += py-pcs
+     SUBDIR += py-raet
      SUBDIR += py-snmp
      SUBDIR += py-socks
      SUBDIR += py-socks,python3
