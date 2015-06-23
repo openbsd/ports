@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/26 23:55:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2015/06/23 07:24:45 jasper Exp $
 
 COMMENT =	color strings using ANSI escape sequences
 
 DISTNAME =	term-ansicolor-1.0.4
-REVISION =	6
+REVISION =	7
 CATEGORIES =	devel
 
-HOMEPAGE =	http://term-ansicolor.rubyforge.org/
+HOMEPAGE =	http://flori.github.io/term-ansicolor/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
