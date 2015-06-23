@@ -1,14 +1,39 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/09/25 20:02:31 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/06/23 07:04:42 jasper Exp $
 ${P5ARCH}/
 ${P5ARCH}/Unix/
 ${P5ARCH}/Unix/Statgrab/
 ${P5ARCH}/Unix/Statgrab.pm
-${P5ARCH}/Unix/Statgrab/ConfigData.pm
+${P5ARCH}/Unix/Statgrab/sg_cpu_percents.pod
+${P5ARCH}/Unix/Statgrab/sg_cpu_stats.pod
+${P5ARCH}/Unix/Statgrab/sg_disk_io_stats.pod
+${P5ARCH}/Unix/Statgrab/sg_error_details.pod
+${P5ARCH}/Unix/Statgrab/sg_fs_stats.pod
+${P5ARCH}/Unix/Statgrab/sg_host_info.pod
+${P5ARCH}/Unix/Statgrab/sg_load_stats.pod
+${P5ARCH}/Unix/Statgrab/sg_mem_stats.pod
+${P5ARCH}/Unix/Statgrab/sg_network_iface_stats.pod
+${P5ARCH}/Unix/Statgrab/sg_network_io_stats.pod
+${P5ARCH}/Unix/Statgrab/sg_page_stats.pod
+${P5ARCH}/Unix/Statgrab/sg_process_stats.pod
+${P5ARCH}/Unix/Statgrab/sg_swap_stats.pod
+${P5ARCH}/Unix/Statgrab/sg_user_stats.pod
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Unix/
 ${P5ARCH}/auto/Unix/Statgrab/
-@comment ${P5ARCH}/auto/Unix/Statgrab/Statgrab.bs
 ${P5ARCH}/auto/Unix/Statgrab/Statgrab.so
 ${P5ARCH}/auto/Unix/Statgrab/autosplit.ix
 @man man/man3p/Unix::Statgrab.3p
-@man man/man3p/Unix::Statgrab::ConfigData.3p
+@man man/man3p/Unix::Statgrab::sg_cpu_percents.3p
+@man man/man3p/Unix::Statgrab::sg_cpu_stats.3p
+@man man/man3p/Unix::Statgrab::sg_disk_io_stats.3p
+@man man/man3p/Unix::Statgrab::sg_error_details.3p
+@man man/man3p/Unix::Statgrab::sg_fs_stats.3p
+@man man/man3p/Unix::Statgrab::sg_host_info.3p
+@man man/man3p/Unix::Statgrab::sg_load_stats.3p
+@man man/man3p/Unix::Statgrab::sg_mem_stats.3p
+@man man/man3p/Unix::Statgrab::sg_network_iface_stats.3p
+@man man/man3p/Unix::Statgrab::sg_network_io_stats.3p
+@man man/man3p/Unix::Statgrab::sg_page_stats.3p
+@man man/man3p/Unix::Statgrab::sg_process_stats.3p
+@man man/man3p/Unix::Statgrab::sg_swap_stats.3p
+@man man/man3p/Unix::Statgrab::sg_user_stats.3p
