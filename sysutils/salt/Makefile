@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2015/06/05 10:39:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2015/06/23 16:48:35 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -17,7 +17,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	2015.5.2
 DISTNAME =		salt-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils net devel
 
@@ -50,9 +50,6 @@ RUN_DEPENDS +=		devel/py-progressbar
 RUN_DEPENDS +=		net/py-zmq \
 			security/py-M2Crypto \
 			security/py-crypto
-
-# raet-requirements.txt: RAET transport
-# XXX TODO
 
 # for tests
 PORTHOME =		${WRKDIST}
