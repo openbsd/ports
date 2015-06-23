@@ -1,0 +1,3 @@
+Pyczmq exposes CZMQ functions via the cffi library's ABI access mode. No
+compiler is required to use it. The czmq library is accessed with dlopen and a
+set of parsed function declarations.
