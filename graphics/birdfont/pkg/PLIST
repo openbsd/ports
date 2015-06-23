@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/05/21 00:32:46 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/06/23 00:20:35 bcallah Exp $
 @bin bin/birdfont
 @bin bin/birdfont-autotrace
 @bin bin/birdfont-export
 @bin bin/birdfont-import
 @lib lib/libbirdfont.so.${LIBbirdfont_VERSION}
 @lib lib/libbirdgems.so.${LIBbirdgems_VERSION}
-@lib lib/libbirdxml.so.${LIBbirdxml_VERSION}
 @man man/man1/birdfont-autotrace.1
 @man man/man1/birdfont-export.1
 @man man/man1/birdfont-import.1
@@ -21,30 +20,11 @@ share/birdfont/dark.theme
 share/birdfont/high_contrast.theme
 share/birdfont/icons.bf
 share/birdfont/key_bindings.xml
-share/birdfont/roboto.bf
 share/birdfont/ucd.sqlite
 share/icons/hicolor/128x128/apps/birdfont.png
 share/icons/hicolor/256x256/apps/birdfont.png
 share/icons/hicolor/48x48/apps/birdfont.png
-share/locale/cs/LC_MESSAGES/birdfont.mo
-share/locale/de/LC_MESSAGES/birdfont.mo
-share/locale/el/LC_MESSAGES/birdfont.mo
-share/locale/es/LC_MESSAGES/birdfont.mo
-share/locale/fr/LC_MESSAGES/birdfont.mo
-share/locale/id/LC_MESSAGES/birdfont.mo
-share/locale/it/LC_MESSAGES/birdfont.mo
-share/locale/nb/LC_MESSAGES/birdfont.mo
-share/locale/nl/LC_MESSAGES/birdfont.mo
-share/locale/oc/LC_MESSAGES/birdfont.mo
-share/locale/pl/LC_MESSAGES/birdfont.mo
-share/locale/pt/LC_MESSAGES/birdfont.mo
-share/locale/pt_BR/LC_MESSAGES/birdfont.mo
-share/locale/ru/LC_MESSAGES/birdfont.mo
-share/locale/sk/LC_MESSAGES/birdfont.mo
-share/locale/sr/LC_MESSAGES/birdfont.mo
 share/locale/sv/LC_MESSAGES/birdfont.mo
-share/locale/tr/LC_MESSAGES/birdfont.mo
-share/locale/uk/LC_MESSAGES/birdfont.mo
 share/mime/packages/birdfont.xml
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime

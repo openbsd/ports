@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.30 2015/05/21 00:32:46 bcallah Exp $
+# $OpenBSD: Makefile,v 1.31 2015/06/23 00:20:35 bcallah Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
-DISTNAME =	birdfont-2.8.0
+DISTNAME =	birdfont-2.10.0
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	graphics print
 
 # Both libs must have the same SO number!
 # See scripts/bavala.py (or patches/patch-scripts_bavala_py)
-SHARED_LIBS +=	birdfont			14.0 # 2.8.0
-SHARED_LIBS +=	birdgems			14.0 # 2.8.0
-SHARED_LIBS +=	birdxml				14.0 # 2.8.0
+SHARED_LIBS +=	birdfont			15.0 # 2.10.0
+SHARED_LIBS +=	birdgems			15.0 # 2.10.0
 
 HOMEPAGE =	http://birdfont.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -23,8 +22,8 @@ WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gtk-3 harfbuzz javascriptcoregtk-3.0
 WANTLIB += m notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 webkitgtk-3.0
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
+WANTLIB += webkitgtk-3.0 xcb xcb-render xcb-shm xml2 xmlbird z
 
 MASTER_SITES =	http://birdfont.org/releases/
 
@@ -38,6 +37,7 @@ BUILD_DEPENDS =	devel/py-doit \
 
 LIB_DEPENDS =	devel/libgee \
 		devel/libnotify \
+		textproc/libxmlbird \
 		www/webkit,gtk3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
