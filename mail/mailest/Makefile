@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/29 05:14:47 yasuoka Exp $
+# $OpenBSD: Makefile,v 1.3 2015/06/23 07:21:08 yasuoka Exp $
 
 COMMENT =		search backend for Mew with Hyper Estrairer
 
-V =			0.9.19
+V =			0.9.20
 GH_ACCOUNT =		yasuoka
 GH_PROJECT =		mailest
 GH_TAGNAME =		mailest-${V}
 DISTNAME =		${GH_PROJECT}-${V}
-REVISION=		1
 
 CATEGORIES =		mail
 
