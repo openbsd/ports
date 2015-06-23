@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/24 12:20:38 schwarze Exp $
+# $OpenBSD: Makefile,v 1.9 2015/06/23 15:28:58 bentley Exp $
 
 COMMENT =		multi-threaded HTTP benchmark and regression tester
 
@@ -14,9 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c crypto pthread ssl
 
-# main distribution site is broken for EPSV/EPRT as of 20100915
-MASTER_SITES =		http://spacehopper.org/mirrors/ \
-			ftp://ftp.joedog.org/pub/siege/
+MASTER_SITES =		http://download.joedog.org/siege/
 
 MAKE_FLAGS =		localstatedir=${LOCALSTATEDIR}
 
