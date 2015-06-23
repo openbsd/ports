@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2015/06/02 21:17:43 kili Exp $
+# $OpenBSD: Makefile,v 1.117 2015/06/23 20:15:18 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -11,13 +11,13 @@ COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
-REVISION-main =		1
+REVISION-main =		2
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
 CATEGORIES =		lang devel
-HOMEPAGE =		http://www.haskell.org/ghc/
+HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		7.8.3.20150409
+BIN_VER =		7.8.3.20150623
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
@@ -46,7 +46,7 @@ WANTLIB-doc =
 
 MASTER_SITES =		${HOMEPAGE}dist/${MODGHC_VER}/ \
 			${HOMEPAGE}dist/stable/dist/
-MASTER_SITES0 =		http://openbsd.dead-parrot.de/distfiles/
+MASTER_SITES0 =		https://openbsd.dead-parrot.de/distfiles/
 
 DIST_SUBDIR =		ghc
 
@@ -160,7 +160,7 @@ do-test:
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
 # That one is bogus, don't use (7.8.4. needs 7.8.3 to bootstrap):
-BOOTSTRAP_DATE =	20150408
+BOOTSTRAP_DATE =	20150623
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
