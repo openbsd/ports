@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.368 2015/06/08 10:35:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.369 2015/06/23 02:24:29 millert Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -300,6 +300,7 @@
      SUBDIR += steghide
      SUBDIR += strobe
      SUBDIR += stunnel
+     SUBDIR += sudo
      SUBDIR += swatch
      SUBDIR += tcltls
      SUBDIR += tempwatch
