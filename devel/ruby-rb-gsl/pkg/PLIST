@@ -1,5 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/10/22 19:16:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/06/23 07:52:11 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
+@comment ${GEM_EXTENSIONS_DIR}/
+@comment ${GEM_EXTENSIONS_DIR}/gem.build_complete
+@comment ${GEM_EXTENSIONS_DIR}/gem_make.out
+@comment ${GEM_EXTENSIONS_DIR}/gsl/
+@comment ${GEM_EXTENSIONS_DIR}/gsl/gsl_native.so
+@comment ${GEM_EXTENSIONS_DIR}/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/AUTHORS
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
@@ -392,6 +398,7 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/wavelet/ecg.dat
 ${GEM_LIB}/gems/${DISTNAME}/examples/wavelet/wavelet1.rb
 ${GEM_LIB}/gems/${DISTNAME}/ext/
 ${GEM_LIB}/gems/${DISTNAME}/ext/gsl/
+@comment ${GEM_LIB}/gems/${DISTNAME}/ext/gsl/.RUBYARCHDIR.-.gsl.time
 ${GEM_LIB}/gems/${DISTNAME}/ext/gsl/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/ext/gsl/alf.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/gsl/alf.o
@@ -756,6 +763,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/gsl/multimin_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/multiroot_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/multiset_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/odeiv_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/gsl/oper_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/poly_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/qrng_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/gsl/quartic_test.rb
