@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.14 2015/06/22 12:19:38 espie Exp $
+# $OpenBSD: Build.pm,v 1.15 2015/06/23 14:22:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -150,6 +150,13 @@ sub recheck_mismatches
 	# first let's try to force junking
 	if (@{$self->{tag_mismatches}} > 0) {
 		for my $v (@{$self->{tag_mismatches}}) {
+			# XXX there's probably a race condition there
+			# we check for junking (which is okay)
+			# then we FORCE the re-tagging BEFORE junking
+			# if anything starts up at the same time with nojunk
+			# then junking won't happen (for instance)
+			# to fix, it requires a "pseudo" junk first 
+			# to untaint the host, THEN we can try building.
 			next unless $self->can_be_junked($v, $core);
 			$v->{forcejunk} = 1;
 			if ($self->lock_and_start_build($core, $v)) {
