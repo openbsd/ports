@@ -1,5 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/01/11 22:51:02 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/06/23 07:45:59 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/extensions/${MODRUBY_ARCH}/
+${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
+@comment ${GEM_EXTENSIONS_DIR}/
+@comment ${GEM_EXTENSIONS_DIR}/gem.build_complete
+@comment ${GEM_EXTENSIONS_DIR}/gem_make.out
+@comment ${GEM_EXTENSIONS_DIR}/yajl/
+@comment ${GEM_EXTENSIONS_DIR}/yajl/yajl.so
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.rspec
@@ -38,6 +45,42 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/parsing/
 ${GEM_LIB}/gems/${DISTNAME}/examples/parsing/from_file.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/parsing/from_stdin.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/parsing/from_string.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/
+@comment ${GEM_LIB}/gems/${DISTNAME}/ext/yajl/.RUBYARCHDIR.-.yajl.time
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/api/
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/api/yajl_common.h
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/api/yajl_gen.h
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/api/yajl_parse.h
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/api/yajl_version.h
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl.c
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl.o
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl.so
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_alloc.c
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_alloc.h
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_alloc.o
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_buf.c
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_buf.h
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_buf.o
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_bytestack.h
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_encode.c
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_encode.h
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_encode.o
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_ext.c
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_ext.h
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_ext.o
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_gen.c
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_gen.o
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_lex.c
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_lex.h
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_lex.o
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_parser.c
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_parser.h
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_parser.o
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_version.c
+${GEM_LIB}/gems/${DISTNAME}/ext/yajl/yajl_version.o
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/yajl/
 ${GEM_LIB}/gems/${DISTNAME}/lib/yajl.rb
@@ -60,6 +103,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/yajl/json_gem/encoding.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yajl/json_gem/parsing.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yajl/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yajl/yajl.so
+${GEM_LIB}/gems/${DISTNAME}/script/
+${GEM_LIB}/gems/${DISTNAME}/script/bootstrap
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/encoding/
 ${GEM_LIB}/gems/${DISTNAME}/spec/encoding/encoding_spec.rb
@@ -144,6 +189,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/parsing/fixtures/pass1.json
 ${GEM_LIB}/gems/${DISTNAME}/spec/parsing/fixtures/pass2.json
 ${GEM_LIB}/gems/${DISTNAME}/spec/parsing/fixtures/pass3.json
 ${GEM_LIB}/gems/${DISTNAME}/spec/parsing/fixtures_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/parsing/large_number_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/parsing/one_off_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rcov.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
