@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2015/06/22 13:08:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2015/06/23 16:38:10 jasper Exp $
 
 COMMENT=			distributed data store
 DISTNAME=			riak-2.0.4
-REVISION=			1
+REVISION=			2
 CATEGORIES=			databases
 HOMEPAGE=			http://basho.com/
 
@@ -106,7 +106,7 @@ snappy_AUTOMAKE_VERSION = 1.11
 
 WANTLIB = c crypto m ncurses pthread ssl stdc++ util mozjs nspr4 pam
 
-BUILD_DEPENDS =	lang/erlang>=16b.03
+BUILD_DEPENDS =	lang/erlang/16
 BUILD_DEPENDS+=	devel/autoconf/${snappy_AUTOCONF_VERSION} \
 		devel/automake/${snappy_AUTOMAKE_VERSION} \
 		devel/libtool
