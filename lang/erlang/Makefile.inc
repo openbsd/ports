@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2015/06/22 13:18:26 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2015/06/23 12:54:28 jasper Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
@@ -9,7 +9,7 @@ CATEGORIES =	lang
 PERMIT_PACKAGE_CDROM =	Yes
 
 HOMEPAGE =	http://www.erlang.org/
-MASTER_SITES ?=	${HOMEPAGE}/download/
+MASTER_SITES ?=	${HOMEPAGE}download/
 
 DISTFILES ?=	${DISTNAME}.tar.gz \
 	  	otp_doc_man_${V}.tar.gz \
