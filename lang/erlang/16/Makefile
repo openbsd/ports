@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/06/23 19:41:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/06/23 20:51:57 jasper Exp $
 
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 BROKEN-hppa =	error: No native atomic implementation found.
@@ -13,8 +13,8 @@ PKGSPEC=	erlang->=16v0,<17v0
 
 WANTLIB=	c crypto m ncurses pthread util
 
-CONFIGURE_ARGS=	--disable-jinterface	\
-		--disable-odbc		\
+CONFIGURE_ARGS=	--without-jinterface	\
+		--without-odbc		\
 		--enable-threads 	\
 		--enable-kernel-poll \
 		--disable-hipe \
@@ -81,19 +81,6 @@ WX_VSN	1.1.2 \
 XMERL_VSN	1.3.6 \
 WEBTOOL_VSN	0.8.9.2 \
 ERTS_VSN	5.10.4
-
-# special cases
-EI=		erl_interface-${EI_VSN}
-COSEVENT=	cosEvent-${COSEVENT_VSN}
-COSEVENTDOMAIN=	cosEventDomain-${COSEVENTDOMAIN_VSN}
-COSFILETRANSFER=cosFileTransfer-${COSFILETRANSFER_VSN}
-COSNOTIFICATION=cosNotification-${COSNOTIFICATION_VSN}
-COSPROPERTY=	cosProperty-${COSPROPERTY_VSN}
-COSTIME=	cosTime-${COSTIME_VSN}
-COSTRANSACTIONS=cosTransactions-${COSTRANSACTIONS_VSN}
-
-post-configure:
-	@touch ${WRKSRC}/lib/odbc/SKIP
 
 post-install:
 	@ln -sf ../lib/erlang/lib/${EI}/bin/erl_call ${PREFIX}/bin/erl_call

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2015/06/23 19:41:20 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2015/06/23 20:51:57 jasper Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
@@ -25,7 +25,6 @@ AUTOCONF_DIR ?=		${WRKSRC} \
 MODGNU_CONFIG_GUESS_DIRS ?=	${WRKSRC}/erts/autoconf \
 				${WRKSRC}/lib/erl_interface/src/auxdir
 
-
 .if ${MACHINE_ARCH} == i386
 CONFIGURE_ARGS +=	--enable-ethread-pre-pentium4-compatibility
 .elif ${MACHINE_ARCH} == sparc64
@@ -47,9 +46,19 @@ SUBST_VARS+=${_n:S/_VSN//}
 
 SUBST_VARS+=SYSTEM_VSN
 
+# special cases
+EI=		erl_interface-${EI_VSN}
+COSEVENT=	cosEvent-${COSEVENT_VSN}
+COSEVENTDOMAIN=	cosEventDomain-${COSEVENTDOMAIN_VSN}
+COSFILETRANSFER=cosFileTransfer-${COSFILETRANSFER_VSN}
+COSNOTIFICATION=cosNotification-${COSNOTIFICATION_VSN}
+COSPROPERTY=	cosProperty-${COSPROPERTY_VSN}
+COSTIME=	cosTime-${COSTIME_VSN}
+COSTRANSACTIONS=cosTransactions-${COSTRANSACTIONS_VSN}
+
 # Special maintainer target, scan through vsn.mk files and build 'ERL_VERSIONS'
 # list
 gen-versions: extract
-	@find ${WRKSRC} -name 'vsn.mk' -exec awk '/_VSN +=/ { print $$1"\t"$$3 " \\" }' {} \; | grep -v 'PRE_' | grep -v 'APP_' | sed 's/DOCB_VSN/DOCBUILDER_VSN/'
-	@find ${WRKSRC} -name 'vsn.mk' -exec awk -F'=' '/_VSN=/ { print $$1"\t"$$2 " \\" }' {} \; | grep -v 'PRE_' | grep -v 'APP_'
-	@grep VSN ${WRKSRC}/erts/vsn.mk |awk '/^VSN/ { print "ERTS_VSN\t" $$3 }'
+	@find ${WRKSRC} -name 'vsn.mk' -exec awk '/_VSN +=/ { print $$1"\t"$$3 " \\" }' {} \; | grep -v 'PRE_' | grep -v 'APP_' | sed 's/DOCB_VSN/DOCBUILDER_VSN/' | sort
+	@find ${WRKSRC} -name 'vsn.mk' -exec awk -F'=' '/_VSN=/ { print $$1"\t"$$2 " \\" }' {} \; | grep -v 'PRE_' | grep -v 'APP_' | sort
+	@grep VSN ${WRKSRC}/erts/vsn.mk |awk '/^VSN/ { print "ERTS_VSN\t" $$3 }' | sort
