@@ -1,9 +1,59 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/01/11 22:51:02 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/06/23 07:52:00 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/extensions/${MODRUBY_ARCH}/
+${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
+@comment ${GEM_EXTENSIONS_DIR}/
+@comment ${GEM_EXTENSIONS_DIR}/gem.build_complete
+@comment ${GEM_EXTENSIONS_DIR}/gem_make.out
+@comment ${GEM_EXTENSIONS_DIR}/mkmf.log
+@comment ${GEM_EXTENSIONS_DIR}/narray.h
+@comment ${GEM_EXTENSIONS_DIR}/narray.so
+@comment ${GEM_EXTENSIONS_DIR}/narray_config.h
+@comment ${GEM_EXTENSIONS_DIR}/narray_ext.rb
+@comment ${GEM_EXTENSIONS_DIR}/nmatrix.rb
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/ChangeLog
+${GEM_LIB}/gems/${DISTNAME}/MANIFEST
+${GEM_LIB}/gems/${DISTNAME}/README.ja.md
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/SPEC.en.txt
+${GEM_LIB}/gems/${DISTNAME}/SPEC.ja.txt
 ${GEM_LIB}/gems/${DISTNAME}/narray.h
 ${GEM_LIB}/gems/${DISTNAME}/narray.so
 ${GEM_LIB}/gems/${DISTNAME}/narray_config.h
 ${GEM_LIB}/gems/${DISTNAME}/narray_ext.rb
 ${GEM_LIB}/gems/${DISTNAME}/nmatrix.rb
+${GEM_LIB}/gems/${DISTNAME}/src/
+@comment ${GEM_LIB}/gems/${DISTNAME}/src/.RUBYARCHDIR.time
+@comment ${GEM_LIB}/gems/${DISTNAME}/src/.RUBYLIBDIR.time
+${GEM_LIB}/gems/${DISTNAME}/src/Makefile
+${GEM_LIB}/gems/${DISTNAME}/src/depend
+${GEM_LIB}/gems/${DISTNAME}/src/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/src/lib/
+${GEM_LIB}/gems/${DISTNAME}/src/lib/narray_ext.rb
+${GEM_LIB}/gems/${DISTNAME}/src/lib/nmatrix.rb
+${GEM_LIB}/gems/${DISTNAME}/src/mkmath.rb
+${GEM_LIB}/gems/${DISTNAME}/src/mknafunc.rb
+${GEM_LIB}/gems/${DISTNAME}/src/mkop.rb
+${GEM_LIB}/gems/${DISTNAME}/src/na_array.c
+${GEM_LIB}/gems/${DISTNAME}/src/na_array.o
+${GEM_LIB}/gems/${DISTNAME}/src/na_func.c
+${GEM_LIB}/gems/${DISTNAME}/src/na_func.o
+${GEM_LIB}/gems/${DISTNAME}/src/na_index.c
+${GEM_LIB}/gems/${DISTNAME}/src/na_index.o
+${GEM_LIB}/gems/${DISTNAME}/src/na_linalg.c
+${GEM_LIB}/gems/${DISTNAME}/src/na_linalg.o
+${GEM_LIB}/gems/${DISTNAME}/src/na_math.c
+${GEM_LIB}/gems/${DISTNAME}/src/na_math.o
+${GEM_LIB}/gems/${DISTNAME}/src/na_op.c
+${GEM_LIB}/gems/${DISTNAME}/src/na_op.o
+${GEM_LIB}/gems/${DISTNAME}/src/na_random.c
+${GEM_LIB}/gems/${DISTNAME}/src/na_random.o
+${GEM_LIB}/gems/${DISTNAME}/src/narray.c
+${GEM_LIB}/gems/${DISTNAME}/src/narray.def
+${GEM_LIB}/gems/${DISTNAME}/src/narray.h
+${GEM_LIB}/gems/${DISTNAME}/src/narray.o
+${GEM_LIB}/gems/${DISTNAME}/src/narray.so
+${GEM_LIB}/gems/${DISTNAME}/src/narray_config.h
+${GEM_LIB}/gems/${DISTNAME}/src/narray_local.h
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

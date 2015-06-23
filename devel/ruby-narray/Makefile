@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2014/01/15 02:13:58 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2015/06/23 07:52:00 jasper Exp $
 
 COMMENT =	numerical N-dimensional Array class
 
-DISTNAME =	narray-0.6.0.4
-REVISION =	2
+DISTNAME =	narray-0.6.1.1
 CATEGORIES =	devel
 
-HOMEPAGE=	http://narray.rubyforge.org/
+HOMEPAGE=	http://masa16.github.io/narray/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
