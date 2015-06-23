@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/23 16:34:40 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.11 2015/06/23 01:45:34 bcallah Exp $
 
-V =		3.3.41
+V =		3.4.43
 COMMENT =	desktop screenshot utility (make image)
 DISTNAME =	maim-${V}
 CATEGORIES =	graphics x11
@@ -14,8 +14,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE Imlib2 SM X11 Xext Xfixes Xrandr c freetype m stdc++
-WANTLIB += z
+WANTLIB += ICE Imlib2 SM X11 Xext Xfixes Xrandr c m stdc++
 
 MODULES =	devel/cmake
 
