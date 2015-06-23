@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: inadyn.rc,v 1.1.1.1 2011/07/21 12:17:02 pea Exp $
+# $OpenBSD: inadyn.rc,v 1.2 2015/06/23 10:38:06 jca Exp $
 
-daemon="${TRUEPREFIX}/sbin/inadyn"
-daemon_flags="-F ${SYSCONFDIR}/inadyn.conf -b -s -d _inadyn:_inadyn"
+daemon="${TRUEPREFIX}/sbin/inadyn -b"
+daemon_flags="-F ${SYSCONFDIR}/inadyn.conf -s -d _inadyn:_inadyn"
 
 . /etc/rc.d/rc.subr
 
