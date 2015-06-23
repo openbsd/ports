@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/23 11:26:05 jca Exp $
+@bin bin/softhsm
+@bin bin/softhsm-keyconv
+lib/softhsm/
+lib/softhsm/libsofthsm.so
+@man man/man1/softhsm-keyconv.1
+@man man/man1/softhsm.1
+@man man/man5/softhsm.conf.5
+share/doc/softhsm/
+share/doc/softhsm/LICENSE
+share/examples/softhsm/
+share/examples/softhsm/softhsm.conf
+@sample ${SYSCONFDIR}/softhsm.conf
+@comment share/examples/softhsm/softhsm.conf.sample
+share/examples/softhsm/softhsm.module
+@sample ${SYSCONFDIR}/pkcs11/
+@sample ${SYSCONFDIR}/pkcs11/modules/
+@sample ${SYSCONFDIR}/pkcs11/modules/softhsm.module
+@sample ${LOCALSTATEDIR}/db/softhsm/
