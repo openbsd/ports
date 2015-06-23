@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2015/05/28 08:09:46 pascal Exp $
+# $OpenBSD: Makefile,v 1.72 2015/06/23 15:14:52 feinerer Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-3.2.0
-REVISION=	1
+DISTNAME=	R-3.2.1
 
 SHARED_LIBS=	R	3.1
 SHARED_LIBS+=	Rlapack	31.2 	# 31.2
@@ -19,7 +18,7 @@ MAINTAINER=	Ingo Feinerer <feinerer@logic.at>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	ICE SM X11 Xext Xmu Xss Xt bz2 c crypto curl \
-		cairo ereadline fontconfig freetype glib-2.0 \
+		cairo readline fontconfig freetype glib-2.0 \
 		gobject-2.0 icui18n icuuc idn jpeg lzma m \
 		ncurses pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre png pthread ssl tiff z \
@@ -57,7 +56,6 @@ LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 		devel/glib2 \
 		devel/libidn \
 		devel/pango \
-		devel/readline \
 		graphics/cairo \
 		graphics/jpeg \
 		graphics/png \
@@ -84,7 +82,7 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--with-tk-config=${MODTK_CONFIG}
 
 CONFIGURE_ENV=	FFLAGS="${FFLAGS}" \
-		CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -Wl,-R${LOCALBASE}/lib/R/lib" \
 		LIBnn=lib \
 		ac_cv_path_PDFLATEX="" \
