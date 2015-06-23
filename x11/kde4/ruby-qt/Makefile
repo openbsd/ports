@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2015/05/29 01:46:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/06/23 07:23:54 jasper Exp $
 
 BROKEN-hppa =	relocation error
-CATEGORIES =	devel lang/ruby x11/kde4
+CATEGORIES =	devel x11/kde4
 COMMENT =	Ruby bindings for Qt4
 DISTNAME =	qtruby-${MODKDE4_VERSION}
 PKGNAME =	qt4-${MODKDE4_VERSION}
