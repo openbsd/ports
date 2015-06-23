@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.13 2015/06/23 20:51:57 jasper Exp $
+# $OpenBSD: erlang.port.mk,v 1.14 2015/06/23 20:52:50 jasper Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -6,73 +6,7 @@ CATEGORIES +=		lang/erlang
 
 USE_GMAKE ?=		Yes
 
-# If no configure style is set, then assume "rebar"
-.if ${CONFIGURE_STYLE} == ""
-CONFIGURE_STYLE =	rebar
-MODERL_BUILD_DEPENDS +=	devel/rebar
-REBAR_BIN ?=		${LOCALBASE}/bin/rebar
-.endif
-
-# Default Erlang version to use if MODERL_VERSION is not set.
-# XXX: Keep in sync with devel/rebar/Makefile
-MODERL_DEFAULT_VERSION =16
-
-# If the port already has flavors, append ours to it unless the port requires
-# a specific version of Erlang.
-.if !defined(MODERL_VERSION) && !defined(FLAVORS)
-FLAVORS ?=		erlang17
-.else
-FLAVORS +=		erlang17
-.endif
-
-FLAVOR?=		# empty
-
-# When no flavor is explicitly set, assume MODERL_DEFAULT_VERSION
-.if ${FLAVOR:Merlang17}
-MODERL_VERSION =	17
-_MODERL_FLAVOR =	${FLAVOR}
-.else
-MODERL_VERSION ?=	${MODERL_DEFAULT_VERSION}
-_MODERL_FLAVOR ?=	# empty
-.endif
-
-.if ${MODERL_VERSION} == 16
-_MODERL_FLAVOR =	erlang16
-DPB_PROPERTIES +=	tag:erlang16
-.elif ${MODERL_VERSION} == 17
-_MODERL_FLAVOR =	erlang17
-DPB_PROPERTIES +=	tag:erlang17
-.else
-ERRORS +=		"Invalid MODERL_VERSION set: ${MODERL_VERSION}."
-.endif
-
-# Append the flavor to all the Erlang dependencies
-.for b in ${MODERL_BUILD_DEPENDS}
-_MODERL_BDEPS +=	${b},${_MODERL_FLAVOR}
-.endfor
-
-.for r in ${MODERL_RUN_DEPENDS}
-_MODERL_RDEPS +=	${r},${_MODERL_FLAVOR}
-.endfor
-
-.for t in ${MODERL_TEST_DEPENDS}
-_MODERL_TDEPS +=	${t},${_MODERL_FLAVOR}
-.endfor
-
-MODERL_BUILDDEP ?=	Yes
-MODERL_RUNDEP ?=	Yes
-
-.if ${MODERL_BUILDDEP:L} == yes
-BUILD_DEPENDS +=	${_MODERL_BDEPS} \
-			lang/erlang/${MODERL_VERSION}
-.endif
-
-.if ${MODERL_RUNDEP:L} == yes
-RUN_DEPENDS +=		${_MODERL_RDEPS} \
-			lang/erlang/${MODERL_VERSION}
-.endif
-
-TEST_DEPENDS +=		${_MODERL_TDEPS}
+SUBST_VARS +=		VERSION
 
 # Root directory of all Erlang libraries.
 ERL_LIBROOT ?=	${PREFIX}/lib/erlang/lib/
@@ -80,16 +14,14 @@ ERL_LIBROOT ?=	${PREFIX}/lib/erlang/lib/
 # Standard directory into which a module/library gets installed.
 ERL_LIBDIR ?=	${ERL_LIBROOT}${DISTNAME}
 
-# Some modules don't have a 'version' set and try to retrieve this through git.
-# Patch the .app.src files to have ${VERSION} and set ERL_APP_SUBST=Yes.
-.if defined(ERL_APP_SUBST) && ${ERL_APP_SUBST:L} == "yes"
-.if ! target(pre-configure)
-pre-configure:
-	cd ${WRKSRC}/src/ && ${SUBST_CMD} *.app.src
-.endif
-.endif
+MODERL_RUN_DEPENDS +=	lang/erlang/16
 
-.if ${CONFIGURE_STYLE:L} == "rebar"
+# If no configure style is set, then assume "rebar"
+.if ${CONFIGURE_STYLE} == ""
+CONFIGURE_STYLE =	rebar
+MODERL_BUILD_DEPENDS +=	devel/rebar
+REBAR_BIN ?=		${LOCALBASE}/bin/rebar
+
 # Some modules bundle their own rebar escript, force them to use the system
 # rebar instead.
 # While here, remove the deps{} block from rebar.config, we cannot download
@@ -100,6 +32,23 @@ pre-build:
 	@cp -f ${REBAR_BIN} ${WRKSRC}
 	@perl -pi -e 'BEGIN{undef $$/;} s/{deps,.*?]}.//smg' ${WRKSRC}/rebar.config
 .  endif
+.endif
+
+.if defined(MODERL_BUILD_DEPENDS)
+BUILD_DEPENDS +=	${MODERL_BUILD_DEPENDS}
+.endif
+
+.if defined(MODERL_RUN_DEPENDS)
+RUN_DEPENDS +=		${MODERL_RUN_DEPENDS}
+.endif
+
+# Some modules don't have a 'version' set and try to retrieve this through git.
+# Patch the .app.src files to have ${VERSION} and set ERL_APP_SUBST=Yes.
+.if defined(ERL_APP_SUBST) && ${ERL_APP_SUBST:L} == "yes"
+.if ! target(pre-configure)
+pre-configure:
+	cd ${WRKSRC}/src/ && ${SUBST_CMD} *.app.src
+.endif
 .endif
 
 # Regression test handing:
@@ -122,5 +71,3 @@ pre-build:
 dialyzer:
 	cd ${WRKSRC} && ${REBAR_BIN} dialyzer
 .endif
-
-SUBST_VARS +=		VERSION
