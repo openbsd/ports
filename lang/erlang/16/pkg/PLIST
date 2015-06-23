@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2015/06/22 13:07:39 jasper Exp $
-@conflict erlang->=17
+@comment $OpenBSD: PLIST,v 1.2 2015/06/23 16:44:23 jasper Exp $
 @pkgpath lang/erlang
 %%SHARED%%
 bin/ct_run
