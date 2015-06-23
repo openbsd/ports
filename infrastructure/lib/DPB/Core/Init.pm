@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.26 2015/06/23 08:51:53 espie Exp $
+# $OpenBSD: Init.pm,v 1.27 2015/06/23 08:52:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -124,9 +124,6 @@ sub hostcount
 sub taint
 {
 	my ($class, $host, $tag, $source) = @_;
-	if (!defined $tag || $tag eq '') {
-		DPB::Util->die($source);
-	}
 	if (defined $init->{$host}) {
 		$init->{$host}->prop->{tainted} = $tag;
 		$init->{$host}->prop->{tainted_source} = $source;
