@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/01/22 17:47:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2015/06/23 08:09:04 bentley Exp $
 
 COMMENT=	win95-like window manager based on fvwm 2.x
 
@@ -6,9 +6,7 @@ DISTNAME=	fvwm95-2.0.43a-Autoconf
 PKGNAME=	fvwm95-2.0.43a
 REVISION=	3
 CATEGORIES=     x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fvwm95/} \
-		ftp://ftp.plig.org/pub/fvwm95/ \
-		ftp://ftp.plig.org/pub/fvwm95/old/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fvwm95/}
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://fvwm95.sourceforge.net/
