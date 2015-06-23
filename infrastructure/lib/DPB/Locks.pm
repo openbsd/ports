@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.35 2015/05/24 06:48:51 espie Exp $
+# $OpenBSD: Locks.pm,v 1.36 2015/06/23 08:51:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -74,12 +74,12 @@ sub clean_old_locks
 					$client = $1;
 				} elsif (m/^locked=(.*)$/) {
 					$path = $1;
-				} elsif (m/^tag=(.*)$/) {
+				} elsif (m/^tag=(.+)$/) {
 					$tag = $1;
 				}
 			}
 			if (defined $tag) {
-				DPB::Core::Init->taint($host, $tag);
+				DPB::Core::Init->taint($host, $tag, $path);
 			}
 			$info->{$f} = [$host, $path] if defined $path;
 			if (defined $pid) {
@@ -235,11 +235,11 @@ sub find_tag
 		my $f = $self->open('<', $fullname);
 		my ($host, $cleaned, $tag);
 		while (<$f>) {
-			if (m/^host=(.*)/) {
+			if (m/^host\=(.*)/) {
 				$host = $1;
 			} elsif (m/^cleaned$/) {
 				$cleaned = 1;
-			} elsif (m/^tag=(.*)/) {
+			} elsif (m/^tag\=(.+)/) {
 				$tag = $1;
 			}
 		}
