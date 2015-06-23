@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/08 10:34:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/23 16:18:46 sthen Exp $
+%%python3%%
+!%%python3%%
 lib/python${MODPY_VERSION}/site-packages/cryptography/
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,9 +10,6 @@ lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_EGG_VERSION}-py${M
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/cryptography/_Cryptography_cffi_${CFFI_HASH1}.so
-lib/python${MODPY_VERSION}/site-packages/cryptography/_Cryptography_cffi_${CFFI_HASH2}.so
-lib/python${MODPY_VERSION}/site-packages/cryptography/_Cryptography_cffi_${CFFI_HASH3}.so
 lib/python${MODPY_VERSION}/site-packages/cryptography/__about__.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography/${MODPY_PYCACHE}/
@@ -73,9 +72,6 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/x5
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/__pycache__/_Cryptography_cffi_${CFFI_HASH1}.c
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/__pycache__/_Cryptography_cffi_${CFFI_HASH2}.c
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/__pycache__/_Cryptography_cffi_${CFFI_HASH3}.c
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/commoncrypto/

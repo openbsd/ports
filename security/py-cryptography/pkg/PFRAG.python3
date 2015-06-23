@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.python3,v 1.1 2015/06/23 16:18:46 sthen Exp $
+lib/python${MODPY_VERSION}/site-packages/cryptography/_Cryptography_cffi_a8febd48xffc7b1ce.so
+lib/python${MODPY_VERSION}/site-packages/cryptography/_Cryptography_cffi_b03f9c7x62b488b1.so
+lib/python${MODPY_VERSION}/site-packages/cryptography/_Cryptography_cffi_d386c823xf139070e.so
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/__pycache__/_Cryptography_cffi_a8febd48xffc7b1ce.c
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/__pycache__/_Cryptography_cffi_b03f9c7x62b488b1.c
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/__pycache__/_Cryptography_cffi_d386c823xf139070e.c
