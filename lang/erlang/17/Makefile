@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2015/06/23 16:43:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2015/06/23 19:33:50 jasper Exp $
 
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 BROKEN-hppa =	error: No native atomic implementation found.
@@ -21,7 +21,6 @@ CONFIGURE_ARGS=	--disable-jinterface	\
 		--disable-hipe \
 		--enable-smp-support
 
-USE_GMAKE=	Yes
 CONFIGURE_STYLE=autoconf no-autoheader
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -pthread"
 AUTOCONF_VERSION=2.59
@@ -33,7 +32,6 @@ DOC_DIR=	${PREFIX}/lib/erlang
 
 # Use the target 'gen-versions' to update this list
 ERL_VERSIONS=	\
-SYSTEM_VSN      17.5 \
 ELDAP_VSN       1.1.1 \
 COSEVENT_VSN    2.1.15 \
 OSE_VSN 1.0.2 \
@@ -89,14 +87,7 @@ MNESIA_VSN      4.12.5 \
 WEBTOOL_VSN     0.8.10 \
 ERTS_VSN        6.4
 
-.for _n _v in ${ERL_VERSIONS}
-${_n}=${_v}
-${_n:S/_VSN//}=${_n:S/_VSN//:L}-${_v}
-SUBST_VARS+=${_n:S/_VSN//}
-.endfor
-
 SYSTEM_VSN=	${V:R}
-SUBST_VARS+=	SYSTEM_VSN
 
 # special cases
 EI=		erl_interface-${EI_VSN}
@@ -119,13 +110,5 @@ post-install:
 	rm -r ${DOC_DIR}/lib/${ODBC}
 	rm -r ${DOC_DIR}/man/man7/*MIB.7
 	rm -r ${DOC_DIR}/man/man7/*TM.7
-
-# Special maintainer target, scan through vsn.mk files and build 'ERL_VERSIONS'
-# list
-gen-versions: extract
-	@echo "SYSTEM_VSN\t`cat ${WRKSRC}/OTP_VERSION` \\"
-	@find ${WRKSRC} -name 'vsn.mk' -exec awk '/_VSN +=/ { print $$1"\t"$$3 " \\" }' {} \; | grep -v 'PRE_' | grep -v 'APP_' | sed 's/DOCB_VSN/DOCBUILDER_VSN/'
-	@find ${WRKSRC} -name 'vsn.mk' -exec awk -F'=' '/_VSN=/ { print $$1"\t"$$2 " \\" }' {} \; | grep -v 'PRE_' | grep -v 'APP_'
-	@grep VSN ${WRKSRC}/erts/vsn.mk |awk '/^VSN/ { print "ERTS_VSN\t" $$3 }'
 
 .include <bsd.port.mk>
