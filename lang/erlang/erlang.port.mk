@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.11 2015/06/22 18:39:46 jasper Exp $
+# $OpenBSD: erlang.port.mk,v 1.12 2015/06/23 07:38:53 jasper Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -16,23 +16,6 @@ ERL_LIBDIR ?=	${ERL_LIBROOT}${DISTNAME}
 
 MODERL_RUN_DEPENDS +=	lang/erlang/16
 
-.if defined(MODERL_BUILD_DEPENDS)
-BUILD_DEPENDS +=	${MODERL_BUILD_DEPENDS}
-.endif
-
-.if defined(MODERL_RUN_DEPENDS)
-RUN_DEPENDS +=		${MODERL_RUN_DEPENDS}
-.endif
-
-# Some modules don't have a 'version' set and try to retrieve this through git.
-# Patch the .app.src files to have ${VERSION} and set ERL_APP_SUBST=Yes.
-.if defined(ERL_APP_SUBST) && ${ERL_APP_SUBST:L} == "yes"
-.if ! target(pre-configure)
-pre-configure:
-	cd ${WRKSRC}/src/ && ${SUBST_CMD} *.app.src
-.endif
-.endif
-
 # If no configure style is set, then assume "rebar"
 .if ${CONFIGURE_STYLE} == ""
 CONFIGURE_STYLE =	rebar
@@ -49,6 +32,23 @@ pre-build:
 	@cp -f ${REBAR_BIN} ${WRKSRC}
 	@perl -pi -e 'BEGIN{undef $$/;} s/{deps,.*?]}.//smg' ${WRKSRC}/rebar.config
 .  endif
+.endif
+
+.if defined(MODERL_BUILD_DEPENDS)
+BUILD_DEPENDS +=	${MODERL_BUILD_DEPENDS}
+.endif
+
+.if defined(MODERL_RUN_DEPENDS)
+RUN_DEPENDS +=		${MODERL_RUN_DEPENDS}
+.endif
+
+# Some modules don't have a 'version' set and try to retrieve this through git.
+# Patch the .app.src files to have ${VERSION} and set ERL_APP_SUBST=Yes.
+.if defined(ERL_APP_SUBST) && ${ERL_APP_SUBST:L} == "yes"
+.if ! target(pre-configure)
+pre-configure:
+	cd ${WRKSRC}/src/ && ${SUBST_CMD} *.app.src
+.endif
 .endif
 
 # Regression test handing:
