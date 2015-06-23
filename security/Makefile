@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.369 2015/06/23 02:24:29 millert Exp $
+# $OpenBSD: Makefile,v 1.370 2015/06/23 11:27:46 jca Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -289,6 +289,7 @@
      SUBDIR += smtpscan
      SUBDIR += smurflog
      SUBDIR += snort2pf
+     SUBDIR += softhsm
      SUBDIR += spiped
      SUBDIR += ssh-askpass-fullscreen
      SUBDIR += ssh-ldap-helper
