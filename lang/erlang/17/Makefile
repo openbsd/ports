@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/23 19:33:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/06/23 19:41:20 jasper Exp $
 
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 BROKEN-hppa =	error: No native atomic implementation found.
@@ -10,8 +10,6 @@ PKGNAME=	erlang-$V
 EPOCH=		0
 PKGSPEC=	erlang->=17v0,<18v0
 
-DPB_PROPERTIES+=tag:erlang17
-
 WANTLIB=	c crypto m ncurses pthread util
 
 CONFIGURE_ARGS=	--disable-jinterface	\
@@ -20,13 +18,6 @@ CONFIGURE_ARGS=	--disable-jinterface	\
 		--enable-kernel-poll \
 		--disable-hipe \
 		--enable-smp-support
-
-CONFIGURE_STYLE=autoconf no-autoheader
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -pthread"
-AUTOCONF_VERSION=2.59
-AUTOCONF_DIR=	${WRKSRC} ${WRKSRC}/erts
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/erts/autoconf \
-				${WRKSRC}/lib/erl_interface/src/auxdir
 
 DOC_DIR=	${PREFIX}/lib/erlang
 

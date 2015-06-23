@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2015/06/23 19:33:50 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2015/06/23 19:41:20 jasper Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
@@ -16,6 +16,15 @@ DISTFILES ?=	${DISTNAME}.tar.gz \
 		otp_doc_html_${V}.tar.gz
 
 EXTRACT_ONLY ?=	${DISTNAME}.tar.gz
+
+CONFIGURE_STYLE ?=	autoconf no-autoheader
+CONFIGURE_ENV ?=	LDFLAGS="${LDFLAGS} -pthread"
+AUTOCONF_VERSION ?=	2.59
+AUTOCONF_DIR ?=		${WRKSRC} \
+	     		${WRKSRC}/erts
+MODGNU_CONFIG_GUESS_DIRS ?=	${WRKSRC}/erts/autoconf \
+				${WRKSRC}/lib/erl_interface/src/auxdir
+
 
 .if ${MACHINE_ARCH} == i386
 CONFIGURE_ARGS +=	--enable-ethread-pre-pentium4-compatibility
