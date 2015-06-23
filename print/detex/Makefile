@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.29 2014/02/01 16:27:58 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2015/06/23 07:50:34 bentley Exp $
 
 COMMENT=		strip TeX/LaTeX codes from a file
 
 DISTNAME=		detex-2.8
-REVISION=		1
+REVISION=		2
 CATEGORIES=		print
 
-MASTER_SITES=		ftp://ftp.cs.purdue.edu/pub/trinkle/
+HOMEPAGE=		https://www.cs.purdue.edu/homes/trinkle/detex/
+
+MASTER_SITES=		https://www.cs.purdue.edu/homes/trinkle/detex/ \
+			ftp://ftp.cs.purdue.edu/pub/trinkle/
 EXTRACT_SUFX=		.tar
 
 # NCSA/University of Illinois Open Source License
