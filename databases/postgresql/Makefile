@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.204 2015/06/22 07:29:42 pea Exp $
+# $OpenBSD: Makefile,v 1.205 2015/06/23 07:26:21 bentley Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -34,11 +34,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto m readline ssl termcap z pthread
 
-MASTER_SITES=	http://ftp.postgresql.org/pub/source/v${VERSION}/ \
-	http://ftp5.es.postgresql.org/mirror/postgresql/source/v${VERSION}/ \
-	ftp://ftp.postgresql.org/pub/source/v${VERSION}/ \
-	ftp://ftp5.us.postgresql.org/pub/PostgreSQL/source/v${VERSION}/
-
+MASTER_SITES=	https://ftp.postgresql.org/pub/source/v${VERSION}/ \
+		ftp://ftp.postgresql.org/pub/source/v${VERSION}/
 MULTI_PACKAGES=	-docs -main -server -contrib -plpython
 
 # The -client SUBPACKAGE should build and run fine on static arches,
