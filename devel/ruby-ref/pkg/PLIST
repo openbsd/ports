@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/12/12 21:49:37 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/24 07:07:22 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/MIT_LICENSE
@@ -40,6 +40,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ref/weak_reference/weak_ref.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ref/weak_value_map.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/mock_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/mock_test.rbc
 ${GEM_LIB}/gems/${DISTNAME}/test/reference_key_map_behavior.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/reference_key_map_behavior.rbc
 ${GEM_LIB}/gems/${DISTNAME}/test/reference_queue_test.rb
@@ -55,6 +56,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/soft_value_map_test.rbc
 ${GEM_LIB}/gems/${DISTNAME}/test/strong_reference_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/strong_reference_test.rbc
 ${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rbc
 ${GEM_LIB}/gems/${DISTNAME}/test/weak_key_map_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/weak_key_map_test.rbc
 ${GEM_LIB}/gems/${DISTNAME}/test/weak_reference_test.rb

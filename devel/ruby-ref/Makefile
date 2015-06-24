@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/10/26 23:55:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2015/06/24 07:07:22 jasper Exp $
 
 COMMENT =	object reference utilities for ruby
 
-DISTNAME =	ref-1.0.2
-REVISION =	0
+DISTNAME =	ref-1.0.5
 CATEGORIES =	devel
 
 HOMEPAGE=	https://github.com/bdurand/ref
