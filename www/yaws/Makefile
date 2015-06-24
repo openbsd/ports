@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/06/23 16:38:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2015/06/24 06:50:19 jasper Exp $
 
 COMMENT-main=		high performance webserver written in Erlang, libraries
 COMMENT-web=		high performance webserver written in Erlang, docroot
@@ -9,7 +9,7 @@ PKGNAME-main=		yaws-${VERSION}
 PKGNAME-web=		yaws-web-${VERSION}
 CATEGORIES=		www
 
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://yaws.hyber.org/
 
@@ -18,11 +18,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/download/
 
+MODULES=		lang/erlang
+
 MULTI_PACKAGES=		-main -web
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			textproc/latex2html
-RUN_DEPENDS=		lang/erlang/16
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-pam \
@@ -33,8 +34,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ENV+=		HOME="${WRKDIST}"
 
 RUN_DEPENDS-main=	${BASE_PKGPATH},-web
-
-USE_GMAKE=		Yes
 
 NO_TEST=		Yes
 

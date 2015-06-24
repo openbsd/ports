@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2015/06/23 16:38:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2015/06/24 06:50:19 jasper Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
 V =		3.4.2
-REVISION =	2
+REVISION =	3
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
@@ -17,21 +17,19 @@ PERMIT_PACKAGE_CDROM = Yes
 
 MASTER_SITES =	http://www.rabbitmq.com/releases/rabbitmq-server/v${V}/
 
-MODULES =	lang/python
+MODULES =	lang/erlang \
+		lang/python
 MODPY_RUNDEP =	No
 
 USE_GMAKE =	Yes
 CONFIGURE_STYLE = none
 
-BUILD_DEPENDS =	${RUN_DEPENDS} \
-		archivers/unzip \
+BUILD_DEPENDS =	archivers/unzip \
 		archivers/zip \
 		textproc/docbook \
 		textproc/docbook-xsl \
 		textproc/libxslt \
 		textproc/xmlto
-
-RUN_DEPENDS =	lang/erlang/16
 
 MAKE_ENV =	PYTHON=${MODPY_BIN} VERSION=${V}
 
@@ -39,7 +37,7 @@ RABBITUSER =	_rabbitmq
 
 SUBST_VARS +=	RABBITUSER V
 
-MODPY_ADJ_FILES +=	plugins-src/rabbitmq-amqp1.0/codegen.py 
+MODPY_ADJ_FILES +=	plugins-src/rabbitmq-amqp1.0/codegen.py
 MODPY_ADJ_FILES +=	plugins-src/rabbitmq-management/bin/rabbitmqadmin
 
 NO_TEST =	Yes

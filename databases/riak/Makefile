@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2015/06/23 16:38:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2015/06/24 06:50:19 jasper Exp $
 
 COMMENT=			distributed data store
 DISTNAME=			riak-2.0.4
-REVISION=			2
+REVISION=			3
 CATEGORIES=			databases
 HOMEPAGE=			http://basho.com/
 
@@ -91,9 +91,10 @@ ${_n}_V=${_v}
 SUBST_VARS+=${_n}_V
 .endfor
 
-USE_GMAKE =			Yes
-MAKE_ENV =			MAKE=${MAKE_PROGRAM}
-MAKE_FLAGS =			rel
+MAKE_ENV =	MAKE=${MAKE_PROGRAM}
+MAKE_FLAGS =	rel
+
+MODULES =	lang/erlang
 
 # configure bundled snappy correctly
 WRKCONF = ${WRKSRC}/deps/eleveldb/c_src/snappy-${SNAPPY_V}

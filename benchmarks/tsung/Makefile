@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/06/23 16:38:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/06/24 06:50:19 jasper Exp $
 
 COMMENT=	multi-protocol distributed load testing tool
 
 V=		1.5.1
 DISTNAME=	tsung-$V
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	benchmarks net
 
@@ -16,15 +16,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		http://tsung.erlang-projects.org/dist/
 
 MODPY_BUILDDEP= 	No
-MODULES=		lang/python
+MODULES=		lang/erlang \
+			lang/python
 
-BUILD_DEPENDS=		lang/erlang/16
 RUN_DEPENDS=		graphics/py-matplotlib \
-			lang/erlang/16 \
 			math/gnuplot \
 			shells/bash
-
-USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		HOME=/tmp

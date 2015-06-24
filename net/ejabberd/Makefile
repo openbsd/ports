@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2015/06/23 16:38:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2015/06/24 06:50:19 jasper Exp $
 
 COMMENT=		jabber server written in Erlang
 
 V=			2.1.12
 DISTNAME=		ejabberd-$V
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		net
 
@@ -18,9 +18,8 @@ WANTLIB=		expat crypto ssl z
 MASTER_SITES=		http://www.process-one.net/downloads/ejabberd/$V/
 EXTRACT_SUFX=		.tgz
 
-MODULES=		converters/libiconv
-BUILD_DEPENDS=		lang/erlang/16
-RUN_DEPENDS=		lang/erlang/16
+MODULES=		converters/libiconv \
+			lang/erlang
 
 MAKE_FLAGS+=		EJABBERDDIR=${PREFIX}/lib/ejabberd \
 			LOGDIR=${EJLOGDIR} \
@@ -31,7 +30,6 @@ FAKE_FLAGS+=		EJABBERDDIR=${WRKINST}/${PREFIX}/lib/ejabberd \
 			ETCDIR=${WRKINST}/${PREFIX}/share/examples/ejabberd \
 			SPOOLDIR=${WRKINST}/${EJDBDIR}
 
-USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 SHARED_ONLY=		Yes
 CONFIGURE_ARGS+=	--disable-pam \

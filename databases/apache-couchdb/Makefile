@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2015/06/23 16:38:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2015/06/24 06:50:19 jasper Exp $
 
 COMMENT =	distributed, document-oriented database
 
 COUCH_VER =	1.6.1
 DISTNAME =	apache-couchdb-${COUCH_VER}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	databases
 
 HOMEPAGE =	http://couchdb.apache.org/
@@ -12,15 +12,14 @@ HOMEPAGE =	http://couchdb.apache.org/
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =	devel/gettext
+MODULES =	devel/gettext \
+		lang/erlang
 
 WANTLIB += c crypto curl icudata icui18n icuuc idn m mozjs ncurses
 WANTLIB += nspr4 plc4 plds4 pthread ssl stdc++ z
 
 MASTER_SITES =	${MASTER_SITE_APACHE:=couchdb/source/${COUCH_VER}/}
 
-BUILD_DEPENDS =	lang/erlang/16
-RUN_DEPENDS =	lang/erlang/16
 LIB_DEPENDS =	textproc/icu4c \
 		lang/spidermonkey \
 		net/curl \
@@ -32,8 +31,6 @@ MAKE_FLAGS =	LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 		default_sysconf_data=""
 FAKE_FLAGS =	localconfdir=${PREFIX}/share/examples/couchdb
 
-USE_GMAKE =	Yes
-
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
 		--with-erlang=${LOCALBASE}/lib/erlang/usr/include \
@@ -44,7 +41,7 @@ CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
 # The 'erl -version' test in configure needs HOME to be set.
 CONFIGURE_ENV =	HOME=${PORTHOME}
 
-TEST_TARGET = check
+TEST_TARGET =	check
 PORTHOME =	${WRKDIR}
 
 SUBST_VARS +=	COUCH_VER
