@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.11 2014/12/31 11:06:02 dcoppa Exp $
---- Modules/CMakeDetermineJavaCompiler.cmake.orig	Mon Dec 15 14:07:43 2014
-+++ Modules/CMakeDetermineJavaCompiler.cmake	Thu Dec 18 05:37:11 2014
+$OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.12 2015/06/24 06:39:03 dcoppa Exp $
+--- Modules/CMakeDetermineJavaCompiler.cmake.orig	Mon Jun  1 17:56:08 2015
++++ Modules/CMakeDetermineJavaCompiler.cmake	Wed Jun 24 07:51:41 2015
 @@ -16,6 +16,8 @@
  # NOTE, a generator may set CMAKE_Java_COMPILER before
  # loading this file to force a compiler.
@@ -10,7 +10,7 @@ $OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.11 2014/12/31 11:06
  if(NOT CMAKE_Java_COMPILER)
    # prefer the environment variable CC
    if(NOT $ENV{JAVA_COMPILER} STREQUAL "")
-@@ -42,30 +44,33 @@ if(NOT CMAKE_Java_COMPILER)
+@@ -42,30 +44,38 @@ if(NOT CMAKE_Java_COMPILER)
      endif()
    endif()
  
@@ -39,8 +39,12 @@ $OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.11 2014/12/31 11:06
 -    /usr/local/jdk-1.6.0/bin
 -    )
 +  if(MODJAVA_VER)
-+    set(Java_BIN_PATH ${LOCALBASE}/jdk-1.7.0/bin)
-+  else()
++    if(MODJAVA_VER MATCHES "^1\\.8\\+?$")
++      set(Java_BIN_PATH ${LOCALBASE}/jdk-1.8.0/bin)
++    else()
++      set(Java_BIN_PATH ${LOCALBASE}/jdk-1.7.0/bin)
++    endif()
++  else(MODJAVA_VER)
 +    set(Java_BIN_PATH
 +      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\2.0;JavaHome]/bin"
 +      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.9;JavaHome]/bin"
@@ -63,8 +67,9 @@ $OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.11 2014/12/31 11:06
 +      /usr/lib/j2sdk1.5-sun/bin
 +      /opt/sun-jdk-1.5.0.04/bin
 +      ${LOCALBASE}/jdk-1.7.0/bin
++      ${LOCALBASE}/jdk-1.8.0/bin
 +      )
-+  endif()
++  endif(MODJAVA_VER)
    # if no compiler has been specified yet, then look for one
    if(CMAKE_Java_COMPILER_INIT)
      set(CMAKE_Java_COMPILER ${CMAKE_Java_COMPILER_INIT} CACHE PATH "Java Compiler")
