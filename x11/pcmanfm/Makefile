@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2015/06/23 22:34:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2015/06/24 06:53:54 ajacoutot Exp $
 
 COMMENT=	fast and lightweight file manager
 
 DISTNAME=	pcmanfm-1.2.3
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -20,7 +21,7 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pthread z
 
-LIB_DEPENDS=	x11/libfm
+LIB_DEPENDS=	x11/libfm/core
 
 RUN_DEPENDS=	devel/desktop-file-utils
 
@@ -28,7 +29,6 @@ MODULES=	devel/gettext \
 		textproc/intltool
 
 CONFIGURE_STYLE=gnu
-MAKE_FLAGS=	XGETTEXT=${LOCALBASE}/bin/xgettext
 
 FAKE_FLAGS=     sysconfdir=${PREFIX}/share/examples/pcmanfm
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/06/23 22:34:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/06/24 06:53:54 ajacoutot Exp $
 @bin bin/pcmanfm
 include/pcmanfm-modules.h
 lib/pcmanfm/
@@ -7,6 +7,7 @@ share/applications/pcmanfm-desktop-pref.desktop
 share/applications/pcmanfm.desktop
 share/examples/pcmanfm/
 share/examples/pcmanfm/xdg/
+@sample ${SYSCONFDIR}/xdg/
 share/examples/pcmanfm/xdg/pcmanfm/
 @sample ${SYSCONFDIR}/xdg/pcmanfm/
 share/examples/pcmanfm/xdg/pcmanfm/default/
