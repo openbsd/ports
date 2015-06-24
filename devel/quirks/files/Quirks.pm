@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.253 2015/06/23 04:53:29 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.254 2015/06/24 07:02:27 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -551,6 +551,7 @@ my $obsolete_reason = {
 	'mp3encode' => 3,
 	'xmms-smpeg' => 3,
 	'nvi-m17n' => 3,
+	'ruby-term-ansicolor' => 5,
 };
 
 # ->is_base_system($handle, $state):
