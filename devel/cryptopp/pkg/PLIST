@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/03/14 11:16:02 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/06/24 09:19:49 dcoppa Exp $
 include/cryptopp/
 include/cryptopp/3way.h
 include/cryptopp/adler32.h
@@ -137,3 +137,4 @@ include/cryptopp/zinflate.h
 include/cryptopp/zlib.h
 lib/libcryptopp.a
 @lib lib/libcryptopp.so.${LIBcryptopp_VERSION}
+lib/pkgconfig/cryptopp.pc
