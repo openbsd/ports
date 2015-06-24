@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1357 2015/06/23 19:27:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1358 2015/06/24 07:00:33 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1430,7 +1430,6 @@
      SUBDIR += ruby-subset_sum,ruby21
      SUBDIR += ruby-subset_sum,ruby22
      SUBDIR += ruby-systemu
-     SUBDIR += ruby-term-ansicolor
      SUBDIR += ruby-therubyracer,ruby20
      SUBDIR += ruby-therubyracer,ruby21
      SUBDIR += ruby-therubyracer,ruby22
