@@ -1,0 +1,2 @@
+libfm is a glib/gio-based library used to develop pcmanfm providing some
+file management utilities and related-widgets missing in gtk+/glib.

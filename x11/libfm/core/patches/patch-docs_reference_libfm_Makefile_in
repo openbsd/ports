@@ -1,0 +1,11 @@
+$OpenBSD: patch-docs_reference_libfm_Makefile_in,v 1.1 2015/06/24 06:52:15 ajacoutot Exp $
+--- docs/reference/libfm/Makefile.in.orig	Tue Oct 14 18:46:20 2014
++++ docs/reference/libfm/Makefile.in	Wed Jun 24 00:04:15 2015
+@@ -870,7 +870,6 @@ dist-hook: dist-check-gtkdoc dist-hook-local
+ # we don't have tests here
+ test:
+ 
+--include $(top_srcdir)/git.mk
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

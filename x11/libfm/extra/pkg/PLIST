@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1 2015/06/24 06:52:15 ajacoutot Exp $
+@conflict libfm-<1.2.3p0
+include/libfm
+include/libfm-1.0/
+include/libfm-1.0/fm-extra.h
+include/libfm-1.0/fm-version.h
+include/libfm-1.0/fm-xml-file.h
+lib/libfm-extra.a
+lib/libfm-extra.la
+@lib lib/libfm-extra.so.${LIBfm-extra_VERSION}
+lib/pkgconfig/libfm-extra.pc
