@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/28 10:17:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2015/06/24 03:04:10 kirby Exp $
 
 COMMENT =		owncloud sync client
 
 DISTNAME =		mirall-1.4.2
-REVISION =		4
+REVISION =		5
 
 SHARED_LIBS =		owncloudsync 0.0
 
@@ -32,12 +32,13 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 LIB_DEPENDS =		devel/libinotify \
 			net/ocsync
 
-CONFIGURE_ARGS +=	-DCSYNC_INCLUDE_PATH=${LOCALBASE}/include/ocsync
+CONFIGURE_ARGS +=	-DCSYNC_INCLUDE_PATH=${LOCALBASE}/include/ocsync \
+			-DSYSCONF_INSTALL_DIR=${SYSCONFDIR}
 
 NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
-	mv ${PREFIX}/etc ${PREFIX}/share/examples/mirall
+	mv ${WRKINST}/etc ${PREFIX}/share/examples/mirall
 
 .include <bsd.port.mk>
