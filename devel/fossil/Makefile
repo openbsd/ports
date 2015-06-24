@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2015/05/25 07:54:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2015/06/24 20:28:42 jturner Exp $
 
 COMMENT =		simple distributed software configuration management
 
-DISTNAME =		fossil-src-1.32
-PKGNAME =		fossil-1.32
-REVISION =		0
+DISTNAME =		fossil-src-1.33
+PKGNAME =		fossil-1.33
 EPOCH =			0
 CATEGORIES =		devel www
 
@@ -34,8 +33,6 @@ CONFIGURE_ARGS +=	--static --with-openssl=none
 PREFIX =		${VARBASE}/www
 CONFLICT_MARKER =	fossil-*-static
 .endif
-
-WRKDIST =		${WRKDIR}/${PKGNAME}
 
 SUBST_VARS +=		CONFLICT_MARKER STATIC
 
