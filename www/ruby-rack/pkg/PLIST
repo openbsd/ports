@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/01/08 19:01:36 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/06/24 15:56:26 jeremy Exp $
 ${GEM_BIN}/rackup${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
+${GEM_LIB}/gems/${DISTNAME}/HISTORY.md
 ${GEM_LIB}/gems/${DISTNAME}/KNOWN-ISSUES
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
@@ -203,6 +204,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/spec_tempfile_reaper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_thin.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_urlmap.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_utils.rb
+${GEM_LIB}/gems/${DISTNAME}/test/spec_version.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_webrick.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/static/
 ${GEM_LIB}/gems/${DISTNAME}/test/static/another/
