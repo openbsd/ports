@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2015/03/28 06:34:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2015/06/24 07:23:04 ajacoutot Exp $
 
 COMMENT=	mailfilter to identify and mark spam
 
-DISTNAME=	mimedefang-2.76
+DISTNAME=	mimedefang-2.78
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.mimedefang.org/
@@ -13,14 +13,18 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m perl pthread util milter
+WANTLIB += c m milter perl pthread util
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	archivers/p5-Archive-Zip \
+RUN_DEPENDS=	devel/p5-IO-stringy \
+		mail/p5-Mail-Tools \
 		mail/p5-MIME-tools \
 		security/p5-Digest-SHA1 \
-		www/p5-HTML-Parser \
 		sysutils/p5-Unix-Syslog
+
+# useful optional dependencies
+RUN_DEPENDS +=	archivers/p5-Archive-Zip
+RUN_DEPENDS +=	www/p5-HTML-Parser
 
 LIB_DEPENDS=	mail/sendmail,-libmilter
 
