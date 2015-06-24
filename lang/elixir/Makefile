@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/06/23 16:38:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/06/24 06:53:08 jasper Exp $
 
-COMMENT=		modern approach to programming for the Erlang VM
+COMMENT=		functional language for building scalable applications
 
-V=			0.12.5
-REVISION=		1
+V=			1.0.4
 GH_ACCOUNT=		elixir-lang
 GH_PROJECT=		elixir
 GH_TAGNAME=		v$V
@@ -12,15 +11,15 @@ CATEGORIES=		lang
 
 HOMEPAGE=		http://elixir-lang.org/
 
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
 
-BUILD_DEPENDS=		devel/rebar \
-			lang/erlang/16>=16b.03v0
-RUN_DEPENDS=		lang/erlang/16>=16b.03v0
+MODULES=		lang/erlang
+MODERL_VERSION=		17
 
 ALL_TARGET=		# empty
-USE_GMAKE=		Yes
 
 TEST_TARGET=		test
 
