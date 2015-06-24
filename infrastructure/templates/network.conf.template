@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.197 2015/06/22 20:15:32 naddy Exp $
+# $OpenBSD: network.conf.template,v 1.198 2015/06/24 07:34:59 bentley Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -189,7 +189,8 @@ MASTER_SITE_FREEBSD_LOCAL+=	\
 
 MASTER_SITE_PACKETSTORM+=	\
 	http://dl.packetstormsecurity.net/ \
-	http://packetstorm.igor.onlinedirect.bg/ \
+	http://packetstorm.foofus.com/ \
+	http://packetstorm.sigterm.no/ \
 	http://packetstorm.interhost.co.il/ \
 	http://packetstorm.wowhacker.com/
 
