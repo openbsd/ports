@@ -1,0 +1,4 @@
+Xalan-Java is an XSLT processor for transforming XML documents into HTML, text,
+or other XML document types. It implements XSL Transformations (XSLT) Version
+1.0 and XML Path Language (XPath) Version 1.0 and can be used from the command
+line, in an applet or a servlet, or as a module in other program.
