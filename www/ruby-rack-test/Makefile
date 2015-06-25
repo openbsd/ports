@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/26 23:55:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2015/06/25 18:54:51 jasper Exp $
 
 COMMENT=		small, simple testing API for Rack apps
 
-DISTNAME=		rack-test-0.6.1
-REVISION =		1
+DISTNAME=		rack-test-0.6.3
 CATEGORIES=		www
 
 HOMEPAGE=		https://github.com/brynary/rack-test
