@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_openvpn_tun_c,v 1.3 2014/10/10 21:07:07 sthen Exp $
---- src/openvpn/tun.c.orig	Thu May  1 12:12:22 2014
-+++ src/openvpn/tun.c	Tue Jul 29 22:10:23 2014
-@@ -917,7 +917,19 @@ do_ifconfig (struct tuntap *tt,
+$OpenBSD: patch-src_openvpn_tun_c,v 1.4 2015/06/25 08:46:49 sthen Exp $
+--- src/openvpn/tun.c.orig	Mon Jun  8 07:16:35 2015
++++ src/openvpn/tun.c	Thu Jun 25 09:38:54 2015
+@@ -944,7 +944,19 @@ do_ifconfig (struct tuntap *tt,
  			  );
  	}
        else
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_openvpn_tun_c,v 1.3 2014/10/10 21:07:07 sthen Exp $
  			  "%s %s %s netmask %s mtu %d broadcast %s link0",
  			  IFCONFIG_PATH,
  			  actual,
-@@ -926,6 +938,7 @@ do_ifconfig (struct tuntap *tt,
+@@ -953,6 +965,7 @@ do_ifconfig (struct tuntap *tt,
  			  tun_mtu,
  			  ifconfig_broadcast
  			  );
@@ -30,7 +30,7 @@ $OpenBSD: patch-src_openvpn_tun_c,v 1.3 2014/10/10 21:07:07 sthen Exp $
        argv_msg (M_INFO, &argv);
        openvpn_execve_check (&argv, es, S_FATAL, "OpenBSD ifconfig failed");
        if ( do_ipv6 )
-@@ -944,6 +957,18 @@ do_ifconfig (struct tuntap *tt,
+@@ -971,6 +984,18 @@ do_ifconfig (struct tuntap *tt,
  	  add_route_connected_v6_net(tt, es);
  	}
        tt->did_ifconfig = true;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.7 2014/11/18 16:18:56 sthen Exp $
---- configure.orig	Tue Oct 28 13:17:41 2014
-+++ configure	Tue Nov 18 00:27:34 2014
-@@ -16834,7 +16834,7 @@ fi
+$OpenBSD: patch-configure,v 1.8 2015/06/25 08:46:49 sthen Exp $
+--- configure.orig	Mon Jun  8 07:19:08 2015
++++ configure	Thu Jun 25 09:38:54 2015
+@@ -17082,7 +17082,7 @@ fi
  
  
  plugindir="${with_plugindir}"
