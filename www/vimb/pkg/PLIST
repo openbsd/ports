@@ -1,3 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/19 22:52:41 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/25 22:57:36 bcallah Exp $
 @bin bin/vimb
 @man man/man1/vimb.1
+share/examples/vimb/
+share/examples/vimb/formfiller/
+share/examples/vimb/formfiller/formfiller
+share/examples/vimb/formfiller/scripts.js

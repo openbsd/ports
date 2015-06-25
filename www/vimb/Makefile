@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/05 13:31:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/06/25 22:57:36 bcallah Exp $
 
-V =		2.9
 COMMENT =	modal webkit-based browser inspired by vim
-DISTNAME =	vimb-${V}
+DISTNAME =	vimb-${GH_TAGNAME}
 CATEGORIES =	www x11
-REVISION =	0
 
 HOMEPAGE =	http://fanglingsu.github.io/vimb/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -18,7 +16,7 @@ WANTLIB += pangoft2-1.0 pthread soup-2.4 z
 
 GH_ACCOUNT =	fanglingsu
 GH_PROJECT =	vimb
-GH_TAGNAME =	${V}
+GH_TAGNAME =	2.10
 
 FLAVORS =	gtk3
 FLAVOR ?=
@@ -42,7 +40,6 @@ LIB_DEPENDS =	www/webkit
 
 USE_GMAKE =	Yes
 
-FAKE_FLAGS =	BINDIR=${PREFIX}/bin \
-		MANDIR1=${PREFIX}/man/man1
+FAKE_FLAGS =	DESTDIR="${WRKINST}" PREFIX="${TRUEPREFIX}"
 
 .include <bsd.port.mk>

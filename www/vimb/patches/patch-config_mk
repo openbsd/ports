@@ -1,0 +1,26 @@
+$OpenBSD: patch-config_mk,v 1.1 2015/06/25 22:57:36 bcallah Exp $
+
+Base gcc does not have -Wno-typedef-redefinition.
+
+--- config.mk.orig	Sat Jun 13 11:29:55 2015
++++ config.mk	Wed Jun 17 15:41:05 2015
+@@ -4,8 +4,8 @@ VERSION = 2.10
+ PROJECT     = vimb
+ PREFIX     ?= /usr/local
+ BINDIR     ?= $(PREFIX)/bin
+-MANDIR     ?= $(PREFIX)/share/man
+-EXAMPLEDIR ?= $(PREFIX)/share/$(PROJECT)/examples
++MANDIR     ?= $(PREFIX)/man
++EXAMPLEDIR ?= $(PREFIX)/share/examples/$(PROJECT)
+ 
+ #----------------compile options---------------------
+ 
+@@ -48,8 +48,6 @@ LIBFLAGS = $(shell pkg-config --libs $(LIBS))
+ CFLAGS  += $(shell pkg-config --cflags $(LIBS))
+ CFLAGS  += -Wall -pipe -std=c99
+ CFLAGS  += -Wno-overlength-strings -Werror=format-security
+-# This is to avoid redifinition warnings caused by glib.
+-CFLAGS  += -Wno-typedef-redefinition
+ CFLAGS  += ${CPPFLAGS}
+ LDFLAGS += ${LIBFLAGS}
+ 
