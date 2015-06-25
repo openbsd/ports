@@ -1,0 +1,12 @@
+$OpenBSD: patch-program_lib_Roundcube_bootstrap_php,v 1.1 2015/06/25 12:00:25 sthen Exp $
+--- program/lib/Roundcube/bootstrap.php.orig	Thu Jun 25 12:57:30 2015
++++ program/lib/Roundcube/bootstrap.php	Thu Jun 25 12:57:38 2015
+@@ -26,7 +26,7 @@
+  */
+ 
+ $config = array(
+-    'error_reporting'         => E_ALL & ~E_NOTICE & ~E_STRICT,
++    'error_reporting'         => E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED,
+     // Some users are not using Installer, so we'll check some
+     // critical PHP settings here. Only these, which doesn't provide
+     // an error/warning in the logs later. See (#1486307).
