@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/01/16 04:42:13 jmatthew Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/06/25 13:21:55 jasper Exp $
 @comment riak uses sudo(8): homedir must exist and user must have a valid shell
 @newgroup _riak:702
 @newuser _riak:702:_riak:daemon:Riak daemon:/var/riak:/bin/sh
@@ -1576,7 +1576,6 @@ lib/riak/lib/riak_pb-${RIAK_PB_V}/ebin/riak_pb.beam
 lib/riak/lib/riak_pb-${RIAK_PB_V}/ebin/riak_pb_codec.beam
 lib/riak/lib/riak_pb-${RIAK_PB_V}/ebin/riak_pb_dt_codec.beam
 lib/riak/lib/riak_pb-${RIAK_PB_V}/ebin/riak_pb_kv_codec.beam
-lib/riak/lib/riak_pb-${RIAK_PB_V}/ebin/riak_pb_messages.beam
 lib/riak/lib/riak_pb-${RIAK_PB_V}/ebin/riak_pb_search_codec.beam
 lib/riak/lib/riak_pb-${RIAK_PB_V}/ebin/riak_search_pb.beam
 lib/riak/lib/riak_pb-${RIAK_PB_V}/ebin/riak_yokozuna_pb.beam
