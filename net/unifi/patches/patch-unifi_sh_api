@@ -1,20 +1,22 @@
-$OpenBSD: patch-unifi_sh_api,v 1.1 2015/02/05 11:10:18 sthen Exp $
---- unifi_sh_api.orig	Thu Feb  5 11:00:23 2015
-+++ unifi_sh_api	Thu Feb  5 11:05:20 2015
-@@ -1,10 +1,10 @@
+$OpenBSD: patch-unifi_sh_api,v 1.2 2015/06/25 13:50:52 sthen Exp $
+--- unifi_sh_api.orig	Thu Jun 25 14:19:49 2015
++++ unifi_sh_api	Thu Jun 25 14:20:21 2015
+@@ -1,4 +1,4 @@
 -#!/bin/sh
 +#!/bin/ksh
  
  #username=ubnt
  #password=ubnt
- #baseurl=https://unifi:8443
- #site=default
+@@ -7,7 +7,7 @@
+ 
+ [ -f ./unifi_sh_env ] && . ./unifi_sh_env
+ 
 -cookie=/tmp/unifi_cookie
 +cookie=${cookie:-'/tmp/unifi_cookie'}
  
  curl_cmd="curl --tlsv1 --silent --cookie ${cookie} --cookie-jar ${cookie} --insecure "
  
-@@ -51,7 +51,7 @@ unifi_api() {
+@@ -54,7 +54,7 @@ unifi_api() {
      fi
      uri=$1
      shift
