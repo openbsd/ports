@@ -1,17 +1,10 @@
-# $OpenBSD: erlang.port.mk,v 1.15 2015/06/24 06:48:53 jasper Exp $
+# $OpenBSD: erlang.port.mk,v 1.16 2015/06/25 13:16:51 jasper Exp $
 #
 # Module for Erlang-based ports or modules
 
 CATEGORIES +=		lang/erlang
 
 USE_GMAKE ?=		Yes
-
-# If no configure style is set, then assume "rebar"
-.if ${CONFIGURE_STYLE} == ""
-CONFIGURE_STYLE =	rebar
-MODERL_BUILD_DEPENDS +=	devel/rebar
-REBAR_BIN ?=		${LOCALBASE}/bin/rebar
-.endif
 
 # Default Erlang version to use if MODERL_VERSION is not set.
 # XXX: Keep in sync with devel/rebar/Makefile
@@ -38,12 +31,20 @@ _MODERL_FLAVOR ?=	# empty
 
 .if ${MODERL_VERSION} == 16
 _MODERL_FLAVOR =	erlang16
-DPB_PROPERTIES +=	tag:erlang16
 .elif ${MODERL_VERSION} == 17
 _MODERL_FLAVOR =	erlang17
-DPB_PROPERTIES +=	tag:erlang17
 .else
 ERRORS +=		"Invalid MODERL_VERSION set: ${MODERL_VERSION}."
+.endif
+
+# If no configure style is set, then assume "rebar"
+.if ${CONFIGURE_STYLE} == ""
+CONFIGURE_STYLE =	rebar
+MODERL_BUILD_DEPENDS +=	devel/rebar
+REBAR_BIN ?=		${LOCALBASE}/bin/rebar${MODERL_VERSION}
+# Make sure rebar gets called as 'rebar', otherwise escript tries to call the
+# binary name (e.g. rebar16) as the script entrypoint.
+_MODERL_LINKS +=	rebar${MODERL_VERSION} rebar
 .endif
 
 # Append the flavor to all the Erlang dependencies
@@ -75,10 +76,24 @@ RUN_DEPENDS +=		${_MODERL_RDEPS} \
 TEST_DEPENDS +=		${_MODERL_TDEPS}
 
 # Root directory of all Erlang libraries.
-ERL_LIBROOT ?=	${PREFIX}/lib/erlang/lib/
+ERL_LIBROOT ?=	${PREFIX}/lib/erlang${MODERL_VERSION}/lib
+MODERL_LIBROOT ?= lib/erlang${MODERL_VERSION}/lib
 
 # Standard directory into which a module/library gets installed.
-ERL_LIBDIR ?=	${ERL_LIBROOT}${DISTNAME}
+ERL_LIBDIR ?=	${ERL_LIBROOT}/${DISTNAME}
+
+# In order to prevent patching every single Erlang-using port (there's no
+# pkg-config like system to retrieve binary names), symlink the binaries
+# the build will use.
+_MODERL_LINKS +=	erl${MODERL_VERSION} erl \
+			erlc${MODERL_VERSION} erlc \
+			escript${MODERL_VERSION} escript
+
+.if !empty(_MODERL_LINKS)
+.  for _src _dest in ${_MODERL_LINKS}
+MODERLANG_post-patch += ln -sf ${LOCALBASE}/bin/${_src} ${WRKDIR}/bin/${_dest};
+.  endfor
+.endif
 
 # Some modules don't have a 'version' set and try to retrieve this through git.
 # Patch the .app.src files to have ${VERSION} and set ERL_APP_SUBST=Yes.
@@ -97,7 +112,7 @@ pre-configure:
 # management from the ports Makefile.
 .  if ! target(pre-build)
 pre-build:
-	@cp -f ${REBAR_BIN} ${WRKSRC}
+	@cp -f ${REBAR_BIN} ${WRKSRC}/rebar
 	@perl -pi -e 'BEGIN{undef $$/;} s/{deps,.*?]}.//smg' ${WRKSRC}/rebar.config
 .  endif
 .endif
@@ -123,4 +138,4 @@ dialyzer:
 	cd ${WRKSRC} && ${REBAR_BIN} dialyzer
 .endif
 
-SUBST_VARS +=		VERSION
+SUBST_VARS +=		MODERL_LIBROOT VERSION MODERL_VERSION
