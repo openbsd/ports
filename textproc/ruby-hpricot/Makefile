@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2014/01/15 02:13:58 jeremy Exp $
+# $OpenBSD: Makefile,v 1.21 2015/06/25 18:53:07 jasper Exp $
 
 COMMENT=		flexible HTML parser
 
-DISTNAME=		hpricot-0.8.4
-REVISION =		4
+DISTNAME=		hpricot-0.8.6
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://code.whytheluckystiff.net/hpricot/
@@ -17,7 +16,7 @@ MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem ext
 
-TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
+TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 do-test:
 	@cd ${WRKSRC} && ${RUBY} -rubygems -Ilib:test \
