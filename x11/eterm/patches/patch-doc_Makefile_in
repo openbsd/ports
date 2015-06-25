@@ -1,8 +1,8 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.2 2007/11/18 12:55:58 jasper Exp $
---- doc/Makefile.in.orig	Wed Nov 14 17:01:18 2007
-+++ doc/Makefile.in	Wed Nov 14 17:02:03 2007
-@@ -414,7 +414,7 @@ uninstall-man: uninstall-man1
- 	uninstall-man1
+$OpenBSD: patch-doc_Makefile_in,v 1.3 2015/06/25 13:00:58 ajacoutot Exp $
+--- doc/Makefile.in.orig	Wed Mar 16 07:10:30 2011
++++ doc/Makefile.in	Thu Jun 25 14:40:32 2015
+@@ -417,7 +417,7 @@ uninstall-man: uninstall-man1
+ 	uninstall-man uninstall-man1
  
  
 -all: Makefile Eterm.1.html
