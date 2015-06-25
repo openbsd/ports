@@ -1,11 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/01/11 22:51:03 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/06/25 18:50:10 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/extensions/${MODRUBY_ARCH}/
+${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
+@comment ${GEM_EXTENSIONS_DIR}/
+@comment ${GEM_EXTENSIONS_DIR}/gem.build_complete
+@comment ${GEM_EXTENSIONS_DIR}/gem_make.out
+@comment ${GEM_EXTENSIONS_DIR}/stemmer.so
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/VERSION.yml
+${GEM_LIB}/gems/${DISTNAME}/ext/
+@comment ${GEM_LIB}/gems/${DISTNAME}/ext/.RUBYARCHDIR.time
+${GEM_LIB}/gems/${DISTNAME}/ext/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/porter.c
+${GEM_LIB}/gems/${DISTNAME}/ext/porter.o
+${GEM_LIB}/gems/${DISTNAME}/ext/porter_wrap.c
+${GEM_LIB}/gems/${DISTNAME}/ext/porter_wrap.o
+${GEM_LIB}/gems/${DISTNAME}/ext/stemmer.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/fast-stemmer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/fast_stemmer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/stemmer.so
 ${GEM_LIB}/gems/${DISTNAME}/test/
