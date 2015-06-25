@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.76 2015/05/30 08:44:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.77 2015/06/25 06:56:06 jasper Exp $
+
+PORTROACH=	limit:^2
 
 COMMENT=	Ruby library for retrieving facts from operating systems
 
