@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/10 21:15:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/06/25 20:47:27 sthen Exp $
 librenms/
 librenms/.gitignore
 librenms/.scrutinizer.yml
@@ -59,6 +59,7 @@ librenms/doc/General/Changelog.md
 librenms/doc/General/Contributing.md
 librenms/doc/General/Credits.md
 librenms/doc/General/Developing-for-LibreNMS.md
+librenms/doc/General/MIB-based-polling.md
 librenms/doc/General/Roadmap.md
 librenms/doc/General/Updating.md
 librenms/doc/General/Welcome-to-Observium-users.md
@@ -1884,7 +1885,9 @@ librenms/html/includes/graphs/device/ipsystemstats_ipv4.inc.php
 librenms/html/includes/graphs/device/ipsystemstats_ipv4_frag.inc.php
 librenms/html/includes/graphs/device/ipsystemstats_ipv6.inc.php
 librenms/html/includes/graphs/device/ipsystemstats_ipv6_frag.inc.php
+librenms/html/includes/graphs/device/load.inc.php
 librenms/html/includes/graphs/device/mempool.inc.php
+librenms/html/includes/graphs/device/mib.inc.php
 librenms/html/includes/graphs/device/netscaler_tcp_bits.inc.php
 librenms/html/includes/graphs/device/netscaler_tcp_conn.inc.php
 librenms/html/includes/graphs/device/netscaler_tcp_pkts.inc.php
@@ -2047,6 +2050,7 @@ librenms/html/includes/graphs/sensor/dbm.inc.php
 librenms/html/includes/graphs/sensor/fanspeed.inc.php
 librenms/html/includes/graphs/sensor/frequency.inc.php
 librenms/html/includes/graphs/sensor/humidity.inc.php
+librenms/html/includes/graphs/sensor/load.inc.php
 librenms/html/includes/graphs/sensor/power.inc.php
 librenms/html/includes/graphs/sensor/state.inc.php
 librenms/html/includes/graphs/sensor/temperature.inc.php
@@ -2641,6 +2645,7 @@ librenms/html/pages/device/health/diskio.inc.php
 librenms/html/pages/device/health/fanspeed.inc.php
 librenms/html/pages/device/health/frequency.inc.php
 librenms/html/pages/device/health/humidity.inc.php
+librenms/html/pages/device/health/load.inc.php
 librenms/html/pages/device/health/mempool.inc.php
 librenms/html/pages/device/health/power.inc.php
 librenms/html/pages/device/health/processor.inc.php
@@ -2679,7 +2684,9 @@ librenms/html/pages/device/overview/sensors/dbm.inc.php
 librenms/html/pages/device/overview/sensors/fanspeeds.inc.php
 librenms/html/pages/device/overview/sensors/frequencies.inc.php
 librenms/html/pages/device/overview/sensors/humidity.inc.php
+librenms/html/pages/device/overview/sensors/load.inc.php
 librenms/html/pages/device/overview/sensors/power.inc.php
+librenms/html/pages/device/overview/sensors/state.inc.php
 librenms/html/pages/device/overview/sensors/temperatures.inc.php
 librenms/html/pages/device/overview/sensors/voltages.inc.php
 librenms/html/pages/device/overview/services.inc.php
@@ -2687,6 +2694,7 @@ librenms/html/pages/device/overview/storage.inc.php
 librenms/html/pages/device/overview/syslog.inc.php
 librenms/html/pages/device/overview/toner.inc.php
 librenms/html/pages/device/packages.inc.php
+librenms/html/pages/device/performance.inc.php
 librenms/html/pages/device/port/
 librenms/html/pages/device/port.inc.php
 librenms/html/pages/device/port/adsl.inc.php
@@ -2738,6 +2746,7 @@ librenms/html/pages/health/dbm.inc.php
 librenms/html/pages/health/fanspeed.inc.php
 librenms/html/pages/health/frequency.inc.php
 librenms/html/pages/health/humidity.inc.php
+librenms/html/pages/health/load.inc.php
 librenms/html/pages/health/mempool.inc.php
 librenms/html/pages/health/power.inc.php
 librenms/html/pages/health/processor.inc.php
@@ -2793,6 +2802,7 @@ librenms/html/plugins/
 librenms/html/plugins/Test/
 librenms/html/plugins/Test/Test.inc.php
 librenms/html/plugins/Test/Test.php
+librenms/html/robots.txt
 librenms/includes/
 librenms/includes/alerts/
 librenms/includes/alerts.inc.php
@@ -2826,6 +2836,8 @@ librenms/includes/discovery/bgp-peers.inc.php
 librenms/includes/discovery/charge/
 librenms/includes/discovery/charge.inc.php
 librenms/includes/discovery/charge/apc.inc.php
+librenms/includes/discovery/charge/dsm.inc.php
+librenms/includes/discovery/charge/rfc1628.inc.php
 librenms/includes/discovery/cisco-cef.inc.php
 librenms/includes/discovery/cisco-entity-sensor.inc.php
 librenms/includes/discovery/cisco-mac-accounting.inc.php
@@ -2851,6 +2863,7 @@ librenms/includes/discovery/fanspeeds/
 librenms/includes/discovery/fanspeeds.inc.php
 librenms/includes/discovery/fanspeeds/areca.inc.php
 librenms/includes/discovery/fanspeeds/dell.inc.php
+librenms/includes/discovery/fanspeeds/equallogic.inc.php
 librenms/includes/discovery/fanspeeds/lmsensors.inc.php
 librenms/includes/discovery/fanspeeds/mikrotik.inc.php
 librenms/includes/discovery/fanspeeds/supermicro.inc.php
@@ -2882,6 +2895,8 @@ librenms/includes/discovery/libvirt-vminfo.inc.php
 librenms/includes/discovery/load/
 librenms/includes/discovery/load.inc.php
 librenms/includes/discovery/load/apc.inc.php
+librenms/includes/discovery/load/dsm.inc.php
+librenms/includes/discovery/load/rfc1628.inc.php
 librenms/includes/discovery/mempools/
 librenms/includes/discovery/mempools.inc.php
 librenms/includes/discovery/mempools/aos-device.inc.php
@@ -2938,6 +2953,7 @@ librenms/includes/discovery/os/edgeswitch.inc.php
 librenms/includes/discovery/os/engenius.inc.php
 librenms/includes/discovery/os/enterasys.inc.php
 librenms/includes/discovery/os/epson.inc.php
+librenms/includes/discovery/os/equallogic.inc.php
 librenms/includes/discovery/os/extremeware.inc.php
 librenms/includes/discovery/os/f5.inc.php
 librenms/includes/discovery/os/fabos.inc.php
@@ -3011,6 +3027,7 @@ librenms/includes/discovery/os/vrp.inc.php
 librenms/includes/discovery/os/vyatta.inc.php
 librenms/includes/discovery/os/vyos.inc.php
 librenms/includes/discovery/os/watchguard.inc.php
+librenms/includes/discovery/os/webpower.inc.php
 librenms/includes/discovery/os/windows.inc.php
 librenms/includes/discovery/os/wxgoos.inc.php
 librenms/includes/discovery/os/xerox.inc.php
@@ -3022,8 +3039,10 @@ librenms/includes/discovery/ports-stack.inc.php
 librenms/includes/discovery/ports.inc.php
 librenms/includes/discovery/power/
 librenms/includes/discovery/power.inc.php
+librenms/includes/discovery/power/dsm.inc.php
 librenms/includes/discovery/power/ipoman.inc.php
 librenms/includes/discovery/power/raritan.inc.php
+librenms/includes/discovery/power/rfc1628.inc.php
 librenms/includes/discovery/processors/
 librenms/includes/discovery/processors-ucd-old.inc.php
 librenms/includes/discovery/processors.inc.php
@@ -3051,6 +3070,9 @@ librenms/includes/discovery/services.inc.php
 librenms/includes/discovery/states/
 librenms/includes/discovery/states.inc.php
 librenms/includes/discovery/states/dell.inc.php
+librenms/includes/discovery/states/dsm.inc.php
+librenms/includes/discovery/states/equallogic.inc.php
+librenms/includes/discovery/states/rfc1628.inc.php
 librenms/includes/discovery/storage/
 librenms/includes/discovery/storage.inc.php
 librenms/includes/discovery/storage/hrstorage.inc.php
@@ -3068,6 +3090,7 @@ librenms/includes/discovery/temperatures/ciscowlc.inc.php
 librenms/includes/discovery/temperatures/cometsystem-p85xx.inc.php
 librenms/includes/discovery/temperatures/dell.inc.php
 librenms/includes/discovery/temperatures/dsm.inc.php
+librenms/includes/discovery/temperatures/equallogic.inc.php
 librenms/includes/discovery/temperatures/fiberhome.inc.php
 librenms/includes/discovery/temperatures/ftos-c-series.inc.php
 librenms/includes/discovery/temperatures/ftos-e-series.inc.php
@@ -3104,6 +3127,7 @@ librenms/includes/discovery/voltages/
 librenms/includes/discovery/voltages.inc.php
 librenms/includes/discovery/voltages/apc.inc.php
 librenms/includes/discovery/voltages/areca.inc.php
+librenms/includes/discovery/voltages/dsm.inc.php
 librenms/includes/discovery/voltages/gamatronicups.inc.php
 librenms/includes/discovery/voltages/ipoman.inc.php
 librenms/includes/discovery/voltages/linux.inc.php
@@ -3117,6 +3141,7 @@ librenms/includes/discovery/voltages/supermicro.inc.php
 librenms/includes/discovery/voltages/xups.inc.php
 librenms/includes/functions.php
 librenms/includes/include-dir.inc.php
+librenms/includes/load_db_graph_types.inc.php
 librenms/includes/mergecnf.inc.php
 librenms/includes/object-cache.inc.php
 librenms/includes/phpmailer/
@@ -3175,6 +3200,7 @@ librenms/includes/polling/mempools/powerconnect-cpu.inc.php
 librenms/includes/polling/mempools/screenos.inc.php
 librenms/includes/polling/mempools/vrp.inc.php
 librenms/includes/polling/mib/
+librenms/includes/polling/mib.inc.php
 librenms/includes/polling/mib/siklu-mib.inc.php
 librenms/includes/polling/mib/ubnt-airfiber-mib.inc.php
 librenms/includes/polling/mib/ubnt-airmax-mib.inc.php
@@ -3280,6 +3306,7 @@ librenms/includes/polling/os/vmware.inc.php
 librenms/includes/polling/os/vrp.inc.php
 librenms/includes/polling/os/vyatta.inc.php
 librenms/includes/polling/os/vyos.inc.php
+librenms/includes/polling/os/webpower.inc.php
 librenms/includes/polling/os/windows.inc.php
 librenms/includes/polling/os/xerox.inc.php
 librenms/includes/polling/os/zxr10.inc.php
@@ -6559,6 +6586,49 @@ librenms/mibs/aos/alcatel-ind1-mvrp-mib.mib
 librenms/mibs/aos/alcatel-ind1-saa-mib.mib
 librenms/mibs/aos/alcatel-static-frr-mib.mib
 librenms/mibs/aos/dot3-oam-mib.mib
+librenms/mibs/equallogic/
+librenms/mibs/equallogic/HCNUM-TC.txt
+librenms/mibs/equallogic/IANA-ADDRESS-FAMILY-NUMBERS-MIB.txt
+librenms/mibs/equallogic/IANA-LANGUAGE-MIB.txt
+librenms/mibs/equallogic/IANAifType-MIB.txt
+librenms/mibs/equallogic/INET-ADDRESS-MIB.txt
+librenms/mibs/equallogic/RFC-1215.txt
+librenms/mibs/equallogic/RFC1155-SMI.txt
+librenms/mibs/equallogic/RFC1213-MIB.txt
+librenms/mibs/equallogic/SNMP-FRAMEWORK-MIB.txt
+librenms/mibs/equallogic/SNMPv2-CONF.txt
+librenms/mibs/equallogic/SNMPv2-MIB.txt
+librenms/mibs/equallogic/SNMPv2-SMI.txt
+librenms/mibs/equallogic/SNMPv2-TC.txt
+librenms/mibs/equallogic/SNMPv2-TM.txt
+librenms/mibs/equallogic/auth.mib
+librenms/mibs/equallogic/eqlaccess.mib
+librenms/mibs/equallogic/eqlagent.mib
+librenms/mibs/equallogic/eqlappliance.mib
+librenms/mibs/equallogic/eqlcontroller.mib
+librenms/mibs/equallogic/eqldcb.mib
+librenms/mibs/equallogic/eqldisk.mib
+librenms/mibs/equallogic/eqlgroup.mib
+librenms/mibs/equallogic/eqlinternal.mib
+librenms/mibs/equallogic/eqlipaddr.mib
+librenms/mibs/equallogic/eqlipsec.mib
+librenms/mibs/equallogic/eqliscsi.mib
+librenms/mibs/equallogic/eqllldp.mib
+librenms/mibs/equallogic/eqlmember.mib
+librenms/mibs/equallogic/eqlnas.mib
+librenms/mibs/equallogic/eqlpool.mib
+librenms/mibs/equallogic/eqlraid.mib
+librenms/mibs/equallogic/eqlreplpartner.mib
+librenms/mibs/equallogic/eqlsmi.mib
+librenms/mibs/equallogic/eqlstoragecontainer.mib
+librenms/mibs/equallogic/eqltag.mib
+librenms/mibs/equallogic/eqlvolbalancer.mib
+librenms/mibs/equallogic/eqlvolume.mib
+librenms/mibs/equallogic/iftype.mib
+librenms/mibs/equallogic/iscsi.mib
+librenms/mibs/equallogic/rfc1907.mib
+librenms/mibs/equallogic/rfc2233.mib
+librenms/mibs/equallogic/scsi.mib
 librenms/mibs/extreme-v762b3
 librenms/mibs/foundry-sn-mac-authentication
 librenms/mibs/foundry-sn-mac-vlan
@@ -7344,6 +7414,11 @@ librenms/sql-schema/048.sql
 librenms/sql-schema/049.sql
 librenms/sql-schema/050.sql
 librenms/sql-schema/051.sql
+librenms/sql-schema/052.sql
+librenms/sql-schema/053.sql
+librenms/sql-schema/054.sql
+librenms/sql-schema/055.sql
+librenms/sql-schema/056.sql
 librenms/syslog.php
 librenms/upgrade-scripts/
 librenms/upgrade-scripts/fix-billing-2758.inc.php

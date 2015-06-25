@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2015/06/10 21:15:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/06/25 20:47:27 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
-DISTNAME =	librenms-0.20150610
+DISTNAME =	librenms-0.20150625
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_COMMIT =	a3ddceb9546a2f24ce0718733d6bfaf3a65655a9
+GH_COMMIT =	9dedd7547d70c1468ed571ce979ac7202394e6cb
 
 CATEGORIES =	net www
 
@@ -20,7 +20,6 @@ MODULES =	lang/php \
 		lang/python
 MODPY_BUILDDEP = No
 
-# graphviz no longer needed
 RUN_DEPENDS =	databases/py-mysql \
 		lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-gd \

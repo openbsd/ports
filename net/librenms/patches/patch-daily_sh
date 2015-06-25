@@ -1,7 +1,7 @@
-$OpenBSD: patch-daily_sh,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
---- daily.sh.orig	Tue Apr 21 17:37:09 2015
-+++ daily.sh	Tue Apr 21 17:37:12 2015
-@@ -1,14 +1,14 @@
+$OpenBSD: patch-daily_sh,v 1.2 2015/06/25 20:47:27 sthen Exp $
+--- daily.sh.orig	Thu Jun 25 20:56:52 2015
++++ daily.sh	Thu Jun 25 20:56:55 2015
+@@ -1,15 +1,15 @@
 -#!/usr/local/bin/bash
 +#!/bin/ksh
  
@@ -24,3 +24,4 @@ $OpenBSD: patch-daily_sh,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
 +%PHP% daily.php -f authlog
 +%PHP% daily.php -f perf_times 
 +%PHP% daily.php -f callback
+ php daily.php -f device_perf

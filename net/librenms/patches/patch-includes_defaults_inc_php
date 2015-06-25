@@ -1,6 +1,6 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.3 2015/06/10 21:15:33 sthen Exp $
---- includes/defaults.inc.php.orig	Wed Jun 10 18:12:49 2015
-+++ includes/defaults.inc.php	Wed Jun 10 18:12:51 2015
+$OpenBSD: patch-includes_defaults_inc_php,v 1.4 2015/06/25 20:47:27 sthen Exp $
+--- includes/defaults.inc.php.orig	Thu Jun 25 20:56:52 2015
++++ includes/defaults.inc.php	Thu Jun 25 20:59:02 2015
 @@ -31,7 +31,7 @@ $config['project_name']     = "LibreNMS";
  $config['project_id']     = strtolower($config['project_name']);
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.3 2015/06/10 21:15:33 sthen Exp $
  $config['log_dir']       = $config['install_dir'] . "/logs";
  
  // What is my own hostname (used to identify this host in its own database)
-@@ -39,26 +39,26 @@ $config['own_hostname'] = "localhost";
+@@ -39,28 +39,28 @@ $config['own_hostname'] = "localhost";
  
  // Location of executables
  
@@ -20,6 +20,8 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.3 2015/06/10 21:15:33 sthen Exp $
 +$config['fping']            = "/usr/local/sbin/fping";
  $config['fping_options']['retries'] = 3;
  $config['fping_options']['timeout'] = 500;
+ $config['fping_options']['count'] = 3;
+ $config['fping_options']['millisec'] = 20;
 -$config['fping6']           = "/usr/bin/fping6";
 -$config['snmpwalk']         = "/usr/bin/snmpwalk";
 -$config['snmpget']          = "/usr/bin/snmpget";
@@ -54,7 +56,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.3 2015/06/10 21:15:33 sthen Exp $
  
  // Memcached - Keep immediate statistics
  
-@@ -288,17 +288,17 @@ $config['billing']['base']              = 1000; # Set 
+@@ -290,17 +290,17 @@ $config['billing']['base']              = 1000; # Set 
  
  // External Integration
  
@@ -76,7 +78,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.3 2015/06/10 21:15:33 sthen Exp $
  #$config['nfsen_suffix']   = "_yourdomain_com";
  
  // Location Mapping
-@@ -593,7 +593,7 @@ $config['api_demo']                                   
+@@ -605,7 +605,7 @@ $config['api_demo']                                   
  
  // Distributed Poller-Settings
  $config['distributed_poller']                            = false;
