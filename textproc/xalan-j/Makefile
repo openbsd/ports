@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/25 14:03:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/06/25 20:04:15 kurt Exp $
 
 COMMENT =		apache project to transform xml documents using xslt
 
@@ -27,15 +27,15 @@ TAR =			gtar
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-ARCHIVE_DIR =		${WRKDIR}/xalan-j_${VERSION_}
+WRKDIST =		${WRKDIR}/xalan-j_${VERSION_}
 INSTALL_DIR =		${MODJAVA_DOC_DIR}/xalan-j
 EXAMPLE_DIR =		${MODJAVA_EXAMPLE_DIR}/xalan-j
 JAR_DIR =		${MODJAVA_JAR_DIR}/xalan-j
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTALL_DIR} ${EXAMPLE_DIR} ${JAR_DIR}
-	cp -R ${ARCHIVE_DIR}/samples/* ${EXAMPLE_DIR}
-	cp ${ARCHIVE_DIR}/*.{html,txt} ${INSTALL_DIR}
-	cp ${ARCHIVE_DIR}/*.jar ${JAR_DIR}
+	cp -R ${WRKDIST}/samples/* ${EXAMPLE_DIR}
+	cp ${WRKDIST}/*.{html,txt} ${INSTALL_DIR}
+	cp ${WRKDIST}/*.jar ${JAR_DIR}
 
 .include <bsd.port.mk>
