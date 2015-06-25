@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/25 19:33:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2015/06/25 14:44:23 ajacoutot Exp $
 
 COMMENT=	common interface to speech synthesis
 
-DISTNAME=	speech-dispatcher-0.8.2
-REVISION=	0
+DISTNAME=	speech-dispatcher-0.8.3
 
-SHARED_LIBS +=  speechd              2.0      # .7.0
+SHARED_LIBS +=  speechd              2.1      # .8.0
 
 CATEGORIES=	audio
 
@@ -30,10 +29,10 @@ MODPY_ADJ_FILES=src/api/python/speechd_config/spd-conf \
 # used by spd-conf
 RUN_DEPENDS=	devel/py-xdg${MODPY_FLAVOR}
 
-LIB_DEPENDS=	audio/espeak>=1.47.03p0 \
+LIB_DEPENDS=	audio/espeak \
 		audio/libao \
 		audio/libsndfile \
-		devel/dotconf>=1.3 \
+		devel/dotconf \
 		devel/glib2 \
 		devel/libtool,-ltdl
 
@@ -47,7 +46,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-pulse
-
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/speech-dispatcher
 

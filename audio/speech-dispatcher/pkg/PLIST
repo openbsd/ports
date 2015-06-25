@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/04/06 12:33:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/06/25 14:44:23 ajacoutot Exp $
 bin/spd-conf
 @bin bin/spd-say
 @bin bin/spdsend
 @bin bin/speech-dispatcher
 include/speech-dispatcher/
 include/speech-dispatcher/libspeechd.h
+include/speech-dispatcher/libspeechd_version.h
 include/speech-dispatcher/spd_audio_plugin.h
+include/speech-dispatcher/speechd_defines.h
 include/speech-dispatcher/speechd_types.h
 @info info/spd-say.info
 @info info/speech-dispatcher-cs.info
@@ -55,8 +57,6 @@ share/examples/speech-dispatcher/speech-dispatcher/clients/
 @sample ${SYSCONFDIR}/speech-dispatcher/clients/
 share/examples/speech-dispatcher/speech-dispatcher/clients/emacs.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/clients/emacs.conf
-share/examples/speech-dispatcher/speech-dispatcher/clients/gnome-speech.conf
-@sample ${SYSCONFDIR}/speech-dispatcher/clients/gnome-speech.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/
 share/examples/speech-dispatcher/speech-dispatcher/modules/cicero.conf
@@ -96,7 +96,6 @@ share/speech-dispatcher/
 share/speech-dispatcher/conf/
 share/speech-dispatcher/conf/clients/
 share/speech-dispatcher/conf/clients/emacs.conf
-share/speech-dispatcher/conf/clients/gnome-speech.conf
 share/speech-dispatcher/conf/desktop/
 share/speech-dispatcher/conf/desktop/speechd.desktop
 share/speech-dispatcher/conf/modules/
