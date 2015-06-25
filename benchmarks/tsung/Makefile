@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2015/06/24 06:50:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/06/25 13:28:59 jasper Exp $
 
 COMMENT=	multi-protocol distributed load testing tool
 
 V=		1.5.1
 DISTNAME=	tsung-$V
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	benchmarks net
 
@@ -24,7 +24,9 @@ RUN_DEPENDS=		graphics/py-matplotlib \
 			shells/bash
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		HOME=/tmp
+CONFIGURE_ENV=		HOME=/tmp \
+			ERL=${LOCALBASE}/bin/erl${MODERL_VERSION} \
+			ERLC=${LOCALBASE}/bin/erlc${MODERL_VERSION} \
 
 MODPY_ADJ_FILES=	src/tsung-plotter/tsplot.py.in
 
@@ -34,5 +36,8 @@ FAKE_FLAGS=		CONFDIR="${PREFIX}/share/examples/tsung/" \
 			MAN_DIR="${PREFIX}/man/man1/"
 
 SUBST_VARS+=		V
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/tsung.sh.in ${WRKSRC}/tsung-recorder.sh.in
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-tsung-recorder_sh_in,v 1.1 2015/06/25 13:28:59 jasper Exp $
+--- tsung-recorder.sh.in.orig	Thu Jun 25 11:53:45 2015
++++ tsung-recorder.sh.in	Thu Jun 25 11:54:15 2015
+@@ -7,7 +7,7 @@ case $UNAME in
+         *) HOST=`hostname -s`;;
+ esac
+ 
+-INSTALL_DIR=@EXPANDED_LIBDIR@/erlang/
++INSTALL_DIR=@EXPANDED_LIBDIR@/erlang${MODERL_VERSION}/
+ ERL=@ERL@
+ MAIN_DIR=$HOME/.tsung
+ LOG_DIR=$MAIN_DIR/log
