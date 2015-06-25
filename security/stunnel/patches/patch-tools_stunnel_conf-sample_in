@@ -1,48 +1,136 @@
-$OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.12 2014/10/27 13:16:48 gonzalo Exp $
-
---- tools/stunnel.conf-sample.in.orig	Wed Oct 15 09:04:20 2014
-+++ tools/stunnel.conf-sample.in	Thu Oct 23 10:32:30 2014
-@@ -9,13 +9,13 @@
+$OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.13 2015/06/25 14:44:30 gsoares Exp $
+--- tools/stunnel.conf-sample.in.orig	Fri Jun 12 05:23:01 2015
++++ tools/stunnel.conf-sample.in	Mon Jun 22 02:02:57 2015
+@@ -7,17 +7,18 @@
+ ; * Global options                                                         *
+ ; **************************************************************************
  
- ; A copy of some devices and system files is needed within the chroot jail
- ; Chroot conflicts with configuration file reload and many other features
--;chroot = @prefix@/var/lib/stunnel/
 +chroot = /var/stunnel/
- ; Chroot jail can be escaped if setuid option is not used
--setuid = nobody
--setgid = @DEFAULT_GROUP@
+ ; It is recommended to drop root privileges if stunnel is started by root
+-;setuid = nobody
+-;setgid = @DEFAULT_GROUP@
 +setuid = _stunnel
 +setgid = _stunnel
  
  ; PID file is created inside the chroot jail (if enabled)
--;pid = @prefix@/var/run/stunnel.pid
+-;pid = @localstatedir@/run/stunnel.pid
 +pid = /stunnel.pid
  
  ; Debugging stuff (may be useful for troubleshooting)
- ;debug = 7
-@@ -26,8 +26,8 @@ setgid = @DEFAULT_GROUP@
+ ;foreground = yes
+ ;debug = info
+-;output = @localstatedir@/log/stunnel.log
++;output = stunnel.log
+ 
+ ; Enable FIPS 140-2 mode if needed for compliance
+ ;fips = yes
+@@ -37,7 +38,7 @@
+ ; * Include all configuration file fragments from the specified folder     *
  ; **************************************************************************
  
- ; Certificate/key is needed in server mode and optional in client mode
--cert = @prefix@/etc/stunnel/mail.pem
--;key = @prefix@/etc/stunnel/mail.pem
-+cert = @sysconfdir@/ssl/stunnel.pem
-+;key = @sysconfdir@/ssl/private/stunnel.key
+-;include = @sysconfdir@/stunnel/conf.d
++;include = ${SYSCONFDIR}/stunnel/conf.d
  
- ; Authentication stuff needs to be configured to prevent MITM attacks
- ; It is not enabled by default!
-@@ -36,12 +36,12 @@ cert = @prefix@/etc/stunnel/mail.pem
- ; CApath is located inside chroot jail
- ;CApath = /certs
- ; It's often easier to use CAfile
--;CAfile = @prefix@/etc/stunnel/certs.pem
-+;CAfile = @sysconfdir@/ssl/cert.pem
- ; Don't forget to c_rehash CRLpath
- ; CRLpath is located inside chroot jail
- ;CRLpath = /crls
- ; Alternatively CRLfile can be used
--;CRLfile = @prefix@/etc/stunnel/crls.pem
-+;CRLfile = @sysconfdir@/ssl/crls.pem
+ ; **************************************************************************
+ ; * Service definitions (remove all services for inetd mode)               *
+@@ -45,64 +46,64 @@
  
- ; Enable support for the insecure SSLv2 protocol
- ;options = -NO_SSLv2
+ ; ***************************************** Example TLS client mode services
+ 
+-[gmail-pop3]
+-client = yes
+-accept = 127.0.0.1:110
+-connect = pop.gmail.com:995
+-verify = 2
+-CApath = /etc/ssl/certs
+-checkHost = pop.gmail.com
++;[gmail-pop3]
++;client = yes
++;accept = 127.0.0.1:110
++;connect = pop.gmail.com:995
++;verify = 2
++;CApath = ${SYSCONFDIR}/ssl/certs
++;checkHost = pop.gmail.com
+ 
+-[gmail-imap]
+-client = yes
+-accept = 127.0.0.1:143
+-connect = imap.gmail.com:993
+-verify = 2
+-CApath = /etc/ssl/certs
+-checkHost = imap.gmail.com
++;[gmail-imap]
++;client = yes
++;accept = 127.0.0.1:143
++;connect = imap.gmail.com:993
++;verify = 2
++;CApath = ${SYSCONFDIR}/ssl/certs
++;checkHost = imap.gmail.com
+ 
+-[gmail-smtp]
+-client = yes
+-accept = 127.0.0.1:25
+-connect = smtp.gmail.com:465
+-verify = 2
+-CApath = /etc/ssl/certs
+-checkHost = smtp.gmail.com
++;[gmail-smtp]
++;client = yes
++;accept = 127.0.0.1:25
++;connect = smtp.gmail.com:465
++;verify = 2
++;CApath = ${SYSCONFDIR}/ssl/certs
++;checkHost = smtp.gmail.com
+ 
+ ; ***************************************** Example TLS server mode services
+ 
+-;[pop3s]
+-;accept  = 995
+-;connect = 110
+-;cert = @sysconfdir@/stunnel/stunnel.pem
++[pop3s]
++accept  = 995
++connect = 110
++cert = ${SYSCONFDIR}/ssl/stunnel.pem
+ 
+-;[imaps]
+-;accept  = 993
+-;connect = 143
+-;cert = @sysconfdir@/stunnel/stunnel.pem
++[imaps]
++accept  = 993
++connect = 143
++cert = ${SYSCONFDIR}/ssl/stunnel.pem
+ 
+-;[ssmtp]
+-;accept  = 465
+-;connect = 25
+-;cert = @sysconfdir@/stunnel/stunnel.pem
++[ssmtp]
++accept  = 465
++connect = 25
++cert = ${SYSCONFDIR}/ssl/stunnel.pem
+ 
+ ; TLS front-end to a web server
+ ;[https]
+ ;accept  = 443
+ ;connect = 80
+-;cert = @sysconfdir@/stunnel/stunnel.pem
++;cert = ${SYSCONFDIR}/ssl/stunnel.pem
+ ; "TIMEOUTclose = 0" is a workaround for a design flaw in Microsoft SChannel
+ ; Microsoft implementations do not use TLS close-notify alert and thus they
+ ; are vulnerable to truncation attacks
+ ;TIMEOUTclose = 0
+ 
+ ; Remote shell protected with PSK-authenticated TLS
+-; Create "@sysconfdir@/stunnel/secrets.txt" containing IDENTITY:KEY pairs
++; Create "${SYSCONFDIR}/ssl/secrets.txt" containing IDENTITY:KEY pairs
+ ;[shell]
+ ;accept = 1337
+ ;exec = /bin/sh
+ ;execArgs = sh -i
+ ;ciphers = PSK
+-;PSKsecrets = @sysconfdir@/stunnel/secrets.txt
++;PSKsecrets = ${SYSCONFDIR}/ssl/secrets.txt
+ 
+ ; vim:ft=dosini

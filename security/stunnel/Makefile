@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.76 2015/06/15 07:02:52 bentley Exp $
+# $OpenBSD: Makefile,v 1.77 2015/06/25 14:44:30 gsoares Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
-DISTNAME=	stunnel-5.06
+DISTNAME=	stunnel-5.19
 CATEGORIES=	security
 
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
@@ -23,17 +23,19 @@ SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-ssl=/usr \
-			--with-threads=fork \
 			--disable-libwrap
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/auto
 NO_TEST=		Yes
 USE_GMAKE=		Yes
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/tools/stunnel.conf-sample.in
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/stunnel ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/doc/stunnel.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKBUILD}/doc/stunnel.8 ${PREFIX}/man/man8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/stunnel
-	${INSTALL_DATA} ${WRKBUILD}/tools/stunnel.conf-sample \
-		${PREFIX}/share/examples/stunnel
+	${INSTALL_DATA} ${WRKSRC}/tools/stunnel.conf-sample.in \
+		${PREFIX}/share/examples/stunnel/stunnel.conf-sample
 
 .include <bsd.port.mk>

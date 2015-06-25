@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_options_c,v 1.1 2015/06/25 14:44:30 gsoares Exp $
+
+use SSLv23_client_method() required to build with libressl since that it haven't
+TLS_client_method()  for now.
+
+--- src/options.c.orig	Mon Jun  1 11:25:32 2015
++++ src/options.c	Mon Jun 22 02:20:12 2015
+@@ -2450,7 +2450,7 @@ NOEXPORT char *parse_service_option(CMD cmd, SERVICE_O
+     /* sslVersion */
+     switch(cmd) {
+     case CMD_BEGIN:
+-#if OPENSSL_VERSION_NUMBER>=0x10100000L
++#if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+         section->client_method=(SSL_METHOD *)TLS_client_method();
+         section->server_method=(SSL_METHOD *)TLS_server_method();
+ #else
+@@ -2462,7 +2462,7 @@ NOEXPORT char *parse_service_option(CMD cmd, SERVICE_O
+         if(strcasecmp(opt, "sslVersion"))
+             break;
+         if(!strcasecmp(arg, "all")) {
+-#if OPENSSL_VERSION_NUMBER>=0x10100000L
++#if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+             section->client_method=(SSL_METHOD *)TLS_client_method();
+             section->server_method=(SSL_METHOD *)TLS_server_method();
+ #else
