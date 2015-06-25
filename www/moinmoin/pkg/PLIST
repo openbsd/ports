@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/09/26 14:35:35 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.17 2015/06/25 15:17:04 rpointel Exp $
 bin/moin
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/Page.py
@@ -508,6 +508,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/export/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/export/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/export/dump.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/export/dump.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/export/eventlog.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/export/eventlog.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/export/package.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/export/package.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/import/
@@ -630,6 +632,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090600.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090600.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090700.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090700.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090800.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090800.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/_conv160.py
@@ -968,12 +972,26 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_asybu
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_asybuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_clbuiltins.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_clbuiltins.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_lassobuiltins.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_lassobuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_luabuiltins.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_luabuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_mapping.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_mapping.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_openedgebuiltins.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_openedgebuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_phpbuiltins.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_phpbuiltins.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_postgres_builtins.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_postgres_builtins.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_robotframeworklexer.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_robotframeworklexer.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_scilab_builtins.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_scilab_builtins.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_sourcemodbuiltins.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_sourcemodbuiltins.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_stan_builtins.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_stan_builtins.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_vimbuiltins.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/_vimbuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/agile.py
@@ -982,20 +1000,30 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/asm.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/asm.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/compiled.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/compiled.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/dalvik.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/dalvik.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/dotnet.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/dotnet.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/foxpro.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/foxpro.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/functional.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/functional.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/hdl.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/hdl.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/jvm.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/jvm.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/math.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/math.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/other.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/other.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/parsers.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/parsers.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/shell.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/shell.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/special.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/special.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/sql.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/sql.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/templates.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/templates.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/lexers/text.py
@@ -1039,6 +1067,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/pastie
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/pastie.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/perldoc.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/perldoc.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/rrt.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/rrt.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/tango.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/tango.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/pygments/styles/trac.py
@@ -1207,6 +1237,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/util/SubProcess.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/util/SubProcess.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/util/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/util/abuse.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/util/abuse.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/util/bdiff.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/util/bdiff.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/util/chartypes.py
@@ -2242,6 +2274,7 @@ share/moin/
 share/moin/config/
 share/moin/config/logging/
 share/moin/config/logging/README
+share/moin/config/logging/abuse
 share/moin/config/logging/logfile
 share/moin/config/logging/logfile_debug_auth
 share/moin/config/logging/stderr
