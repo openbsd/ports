@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.198 2015/06/24 07:34:59 bentley Exp $
+# $OpenBSD: network.conf.template,v 1.199 2015/06/25 21:51:31 naddy Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -204,9 +204,6 @@ MASTER_SITE_APACHE+= \
 	http://apache.mirror.aussiehq.net.au/ \
 	http://apache.sunsite.ualberta.ca/ \
 	http://www.apache.org/dist/
-
-MASTER_SITE_BERLIOS+=	\
-	http://download2.berlios.de/
 
 MASTER_SITE_MYSQL+= \
 	http://mirror.switch.ch/mirror/mysql/ \
