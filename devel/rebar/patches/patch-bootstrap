@@ -1,0 +1,9 @@
+$OpenBSD: patch-bootstrap,v 1.1 2015/06/25 13:18:41 jasper Exp $
+--- bootstrap.orig	Wed Jul 30 19:37:49 2014
++++ bootstrap	Thu Jun 25 10:45:11 2015
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env escript
++#!/usr/bin/env escript${ERL_VERSION}
+ %% -*- mode: erlang;erlang-indent-level: 4;indent-tabs-mode: nil -*-
+ %% ex: ft=erlang ts=4 sw=4 et
+ 
