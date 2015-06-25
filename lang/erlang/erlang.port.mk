@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.16 2015/06/25 13:16:51 jasper Exp $
+# $OpenBSD: erlang.port.mk,v 1.17 2015/06/25 13:34:23 jasper Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -81,6 +81,10 @@ MODERL_LIBROOT ?= lib/erlang${MODERL_VERSION}/lib
 
 # Standard directory into which a module/library gets installed.
 ERL_LIBDIR ?=	${ERL_LIBROOT}/${DISTNAME}
+
+# Common program shortcuts
+MODERL_ERL =	${LOCALBASE}/bin/erl${MODERL_VERSION}
+MODERL_ERLC =	${LOCALBASE}/bin/erlc${MODERL_VERSION}
 
 # In order to prevent patching every single Erlang-using port (there's no
 # pkg-config like system to retrieve binary names), symlink the binaries

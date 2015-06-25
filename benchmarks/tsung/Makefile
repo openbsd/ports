@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/06/25 13:28:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/06/25 13:34:23 jasper Exp $
 
 COMMENT=	multi-protocol distributed load testing tool
 
@@ -25,8 +25,8 @@ RUN_DEPENDS=		graphics/py-matplotlib \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		HOME=/tmp \
-			ERL=${LOCALBASE}/bin/erl${MODERL_VERSION} \
-			ERLC=${LOCALBASE}/bin/erlc${MODERL_VERSION} \
+			ERL=${MODERL_ERL} \
+			ERLC=${MODERL_ERLC}
 
 MODPY_ADJ_FILES=	src/tsung-plotter/tsplot.py.in
 
