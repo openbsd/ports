@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/06/24 06:53:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/06/25 13:23:19 jasper Exp $
 
 COMMENT=		functional language for building scalable applications
 
@@ -7,6 +7,7 @@ GH_ACCOUNT=		elixir-lang
 GH_PROJECT=		elixir
 GH_TAGNAME=		v$V
 DISTNAME=		${GH_PROJECT}-$V
+REVISION=		9
 CATEGORIES=		lang
 
 HOMEPAGE=		http://elixir-lang.org/
@@ -22,5 +23,8 @@ MODERL_VERSION=		17
 ALL_TARGET=		# empty
 
 TEST_TARGET=		test
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/bin/elixir
 
 .include <bsd.port.mk>
