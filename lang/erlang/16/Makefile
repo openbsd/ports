@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2015/06/23 20:51:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/06/25 13:16:08 jasper Exp $
 
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 BROKEN-hppa =	error: No native atomic implementation found.
 BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
 
 V=		R16B03-1
+MAJ_V=		16
 DISTNAME=	otp_src_${V}
 PKGNAME=	erlang-16b.03
-REVISION=	3
+REVISION=	4
 EPOCH=		0
 PKGSPEC=	erlang->=16v0,<17v0
 
@@ -20,7 +21,8 @@ CONFIGURE_ARGS=	--without-jinterface	\
 		--disable-hipe \
 		--enable-smp-support
 
-DOC_DIR=	${PREFIX}/lib/erlang
+DOC_DIR=	${PREFIX}/lib/erlang${MAJ_V}/
+FAKE_FLAGS =	libdir_suffix="/erlang${MAJ_V}"
 
 # Use the target 'gen-versions' to update this list
 ERL_VERSIONS=	\
@@ -82,13 +84,5 @@ XMERL_VSN	1.3.6 \
 WEBTOOL_VSN	0.8.9.2 \
 ERTS_VSN	5.10.4
 
-post-install:
-	@ln -sf ../lib/erlang/lib/${EI}/bin/erl_call ${PREFIX}/bin/erl_call
-	tar zxf ${FULLDISTDIR}/otp_doc_man_${V}.tar.gz -C ${DOC_DIR}
-	tar zxf ${FULLDISTDIR}/otp_doc_html_${V}.tar.gz -C ${DOC_DIR}
-	rm -r ${DOC_DIR}/lib/${JINTERFACE}
-	rm -r ${DOC_DIR}/lib/${ODBC}
-	rm -r ${DOC_DIR}/man/man7/*MIB.7
-	rm -r ${DOC_DIR}/man/man7/*TM.7
-
 .include <bsd.port.mk>
+
