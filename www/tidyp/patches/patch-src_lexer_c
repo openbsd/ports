@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_lexer_c,v 1.1 2015/06/25 08:28:58 sthen Exp $
+
+From htacg/tidy-html5; problem also applies to tidyp
+
+From c18f27a58792f7fbd0b30a0ff50d6b40a82f940d Mon Sep 17 00:00:00 2001
+From: Geoff McLane <ubuntu@geoffair.info>
+Date: Wed, 3 Jun 2015 20:26:03 +0200
+Subject: [PATCH] Issue #217 - avoid len going negative, ever...
+
+--- src/lexer.c.orig	Thu Jun 25 09:25:06 2015
++++ src/lexer.c	Thu Jun 25 09:25:52 2015
+@@ -3419,16 +3419,16 @@ static tmbstr ParseValue( TidyDocImpl* doc, ctmbstr na
+         /* and prompts attributes unless --literal-attributes is set to yes      */
+         /* #994841 - Whitespace is removed from value attributes                 */
+ 
+-        if (munge &&
++        if ((len > 0) && munge &&
+             TY_(tmbstrcasecmp)(name, "alt") &&
+             TY_(tmbstrcasecmp)(name, "title") &&
+             TY_(tmbstrcasecmp)(name, "value") &&
+             TY_(tmbstrcasecmp)(name, "prompt"))
+         {
+-            while (TY_(IsWhite)(lexer->lexbuf[start+len-1]))
++            while (TY_(IsWhite)(lexer->lexbuf[start+len-1]) && (len > 0))
+                 --len;
+ 
+-            while (TY_(IsWhite)(lexer->lexbuf[start]) && start < len)
++            while (TY_(IsWhite)(lexer->lexbuf[start]) && (start < len) && (len > 0 ))
+             {
+                 ++start;
+                 --len;
