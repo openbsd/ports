@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.343 2015/05/25 23:57:10 jturner Exp $
+# $OpenBSD: Makefile,v 1.344 2015/06/25 21:45:59 naddy Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -197,7 +197,6 @@
      SUBDIR += safecat
      SUBDIR += salt
      SUBDIR += salt-testing
-     SUBDIR += sdd
      SUBDIR += sec
      SUBDIR += setquota
      SUBDIR += shelldap
