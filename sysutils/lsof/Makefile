@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2015/03/24 21:26:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2015/06/26 20:35:57 sthen Exp $
 
 COMMENT=	list information about open files
 
@@ -53,6 +53,9 @@ post-extract:
 
 # XXX: CVS keyword found in patch
 pre-configure:
+	@if ! [ -f /sys/Makefile ]; then echo; \
+		echo "*** Building lsof requires kernel source in /sys"; \
+		echo; exit 1; fi
 	perl -pi -e 'print "#!/usr/bin/awk -f\n" if $$. == 1' \
 		${WRKSRC}/scripts/list_fields.awk
 
