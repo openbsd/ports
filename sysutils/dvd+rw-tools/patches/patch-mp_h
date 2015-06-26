@@ -1,10 +1,10 @@
-$OpenBSD: patch-mp_h,v 1.1 2008/02/07 01:53:23 jakemsr Exp $
---- mp.h.orig	Wed Feb  6 17:47:13 2008
-+++ mp.h	Wed Feb  6 17:48:11 2008
-@@ -40,7 +40,7 @@ static void *__thread_create(int (*func)(void *),void 
+$OpenBSD: patch-mp_h,v 1.2 2015/06/26 18:36:19 ajacoutot Exp $
+--- mp.h.orig	Sun Feb 24 18:56:07 2008
++++ mp.h	Fri Jun 26 20:33:22 2015
+@@ -46,7 +46,7 @@ static void *__thread_create(int (*func)(void *),void 
  
      if (pthread_attr_init(&attr)==0 &&
- 	pthread_attr_setstacksize(&attr,64*1024)==0 &&
+ 	pthread_attr_setstacksize(&attr,stack_sz)==0 &&
 -	pthread_attr_setscope(&attr,PTHREAD_SCOPE_SYSTEM)==0 &&
 +	pthread_attr_setscope(&attr,PTHREAD_SCOPE_PROCESS)==0 &&
  	pthread_create(&h,&attr,(void *(*)(void *))func,arg)==0 )
