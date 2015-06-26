@@ -1,37 +1,30 @@
-# $OpenBSD: Makefile,v 1.45 2013/10/11 21:21:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2015/06/26 12:29:11 ajacoutot Exp $
 
-COMMENT=	GUI toolkit for X11
+COMMENT=		GUI toolkit for X11
 
-DISTNAME=	xforms-1.0
-REVISION=	3
-SHARED_LIBS=	flimage	1.0 \
-		forms	1.0 \
-		formsGL	1.0
-CATEGORIES=	x11
+DISTNAME=		xforms-1.2.4
+CATEGORIES=		x11
 
-HOMEPAGE=	http://xforms-toolkit.org/
+SHARED_LIBS +=  forms                2.0      # 3.3
+SHARED_LIBS +=  flimage              2.0      # 3.3
+SHARED_LIBS +=  formsGL              2.0      # 3.3
 
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=xforms/}
+HOMEPAGE=		http://xforms-toolkit.org/
 
-# LGPL
+MASTER_SITES=		${MASTER_SITE_SAVANNAH:=xforms/}
+
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		GL X11 Xau Xdmcp Xext Xpm c jpeg m tiff
+WANTLIB += GL ICE SM X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xpm Xxf86vm c drm glapi jpeg m pthread pthread-stubs
+WANTLIB += stdc++ xcb xcb-dri2 xcb-glx
 
-CONFIGURE_STYLE=	imake
-MAKE_FLAGS=		LIBflimage_VERSION=${LIBflimage_VERSION} \
-			LIBforms_VERSION=${LIBforms_VERSION} \
-			LIBformsGL_VERSION=${LIBformsGL_VERSION} \
-			OPTIMIZER="${CFLAGS}"
+LIB_DEPENDS=		graphics/jpeg
 
-BUILD_DEPENDS=		graphics/jpeg
-
-LIB_DEPENDS=		graphics/tiff
-
-NO_TEST=		Yes
-
-# crud confuses update-plist
-post-extract:
-	@find ${WRKDIST} -name \*.orig -print0 | xargs -0 rm
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--with-extra-prefix=${LOCALBASE} \
+			--disable-docs
 
 .include <bsd.port.mk>

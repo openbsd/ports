@@ -1,14 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/10/11 20:40:07 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/06/26 12:29:11 ajacoutot Exp $
 @bin bin/fd2ps
 @bin bin/fdesign
-include/X11/flimage.h
-include/X11/forms.h
-include/X11/glcanvas.h
+include/flimage.h
+include/forms.h
+include/glcanvas.h
 lib/libflimage.a
+lib/libflimage.la
 @lib lib/libflimage.so.${LIBflimage_VERSION}
 lib/libforms.a
+lib/libforms.la
 @lib lib/libforms.so.${LIBforms_VERSION}
 lib/libformsGL.a
+lib/libformsGL.la
 @lib lib/libformsGL.so.${LIBformsGL_VERSION}
 @man man/man1/fd2ps.1
 @man man/man1/fdesign.1
+@man man/man5/xforms.5
