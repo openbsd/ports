@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/11/25 10:36:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/06/26 06:56:22 rpointel Exp $
 
 COMMENT =	toolkit for generation of output for the web
 
-MODPY_EGG_VERSION =	0.6
+MODPY_EGG_VERSION =	0.7
 DISTNAME =	Genshi-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	3
 
 CATEGORIES =	www
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 
-MASTER_SITES =	ftp://ftp.edgewall.com/pub/genshi/
+MASTER_SITES =	http://ftp.edgewall.com/pub/genshi/
 
 MODULES =	lang/python
 
