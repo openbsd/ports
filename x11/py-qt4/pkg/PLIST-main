@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2013/11/08 22:37:43 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2015/06/26 13:03:59 ajacoutot Exp $
 @bin bin/pylupdate4
 @bin bin/pyrcc4
 bin/pyuic4
@@ -92,9 +92,6 @@ lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qtdeclarative.
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qtwebkit.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qtwebkit.pyc
 lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/qt.so
-lib/qt4/
-lib/qt4/plugins/
-lib/qt4/plugins/designer/
 lib/qt4/plugins/designer/libpyqt4.so
 share/sip/
 share/sip/Qt/
@@ -262,6 +259,7 @@ share/sip/QtDesigner/qpydesignertaskmenuextension.sip
 share/sip/QtDesigner/taskmenu.sip
 share/sip/QtGui/
 share/sip/QtGui/QtGuimod.sip
+share/sip/QtGui/opengl_types.sip
 share/sip/QtGui/qabstractbutton.sip
 share/sip/QtGui/qabstractitemdelegate.sip
 share/sip/QtGui/qabstractitemview.sip
@@ -523,7 +521,6 @@ share/sip/QtNetwork/qudpsocket.sip
 share/sip/QtNetwork/qurlinfo.sip
 share/sip/QtOpenGL/
 share/sip/QtOpenGL/QtOpenGLmod.sip
-share/sip/QtOpenGL/opengl_types.sip
 share/sip/QtOpenGL/qgl.sip
 share/sip/QtOpenGL/qglbuffer.sip
 share/sip/QtOpenGL/qglcolormap.sip

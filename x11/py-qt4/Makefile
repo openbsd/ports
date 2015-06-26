@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.42 2015/04/04 09:21:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2015/06/26 13:03:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
 
-V=		4.10.3
+V=		4.11.4
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
 PKGNAME-main=	py-qt4-${V}
 PKGNAME-docs=	py-qt4-docs-${V}
 EPOCH=		0
-REVISION-docs=	0
-REVISION-main=	0
 
 CATEGORIES=	x11 devel
 
@@ -35,9 +33,9 @@ RUN_DEPENDS-docs=
 PKG_ARCH-docs=	*
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/py-sip>=4.14.1 \
+RUN_DEPENDS=	devel/py-sip \
 		x11/dbus-python
-LIB_DEPENDS=	${MODQT4_LIB_DEPENDS}>=4.7.2 \
+LIB_DEPENDS=	${MODQT4_LIB_DEPENDS} \
 		${MODPY_LIB_DEPENDS}
 
 NO_TEST=	Yes
@@ -47,6 +45,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyqt/}
 MODULES=	devel/gettext \
 		lang/python \
 		x11/qt4
+
+USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT=${MODPY_BIN} configure.py
