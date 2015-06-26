@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2015/05/05 17:00:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2015/06/26 09:19:24 ajacoutot Exp $
 
 COMMENT=	yet another kuake KDE terminal emulator
 
-DISTNAME=	yakuake-2.8.1
-REVISION=	13
+V=		2.9.9
+DISTNAME=	yakuake-${V}
 CATEGORIES=	x11 x11/kde
 
 EXTRACT_SUFX=	.tar.bz2
@@ -13,33 +13,23 @@ HOMEPAGE=	http://yakuake.kde.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdesu
-WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
-WANTLIB += ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c expat fam
-WANTLIB += fontconfig freetype idn m png pthread pthread-stubs stdc++
-WANTLIB += util xcb z
+WANTLIB += QtDBus QtGui QtNetwork QtSvg QtXml X11 c kdeui kio
+WANTLIB += knewstuff3 knotifyconfig kparts m nepomuk nepomukutils
+WANTLIB += pthread soprano
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=yakuake.berlios/}
+# XXX should use MASTER_SITE_KDE?
+MASTER_SITES=	${MASTER_SITE_KDE:=/stable/yakuake/${V}/src/}
+EXTRACT_SUFX=	.tar.xz
 
 MODULES=	devel/gettext \
-		x11/kde
+		x11/kde4
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-# for Konsole KPart
-RUN_DEPENDS+=	x11/kde/base3
+# for konsole4-part
+RUN_DEPENDS+=	x11/kde4/konsole
 
-LIB_DEPENDS=	x11/kde/libs3
-
-PORTHOME?=	${WRKDIR}
-MODKDE_VERSION=	3.5.8
-AUTOCONF_VERSION=2.61
-
-CONFIGURE_STYLE=autoconf
-CONFIGURE_ARGS=	${MODKDE_CONFIGURE_ARGS}
-CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV} \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+LIB_DEPENDS=	x11/kde4/libs
 
 .include <bsd.port.mk>
