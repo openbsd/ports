@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/05 17:00:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2015/06/26 18:08:40 ajacoutot Exp $
 
 COMMENT=	stock ticker for GkrellM2
 
 V=		0.5.1
 DISTNAME=	gkrellstock-${V}
-REVISION=	16
+REVISION=	17
 CATEGORIES=	misc
 
 HOMEPAGE=	http://gkrellstock.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gkrellstock/}
 
-RUN_DEPENDS+=	misc/p5-Finance-Quote
+EXTRA_WANTLIB=	gthread-2.0
+
+RUN_DEPENDS=	misc/p5-Finance-Quote
 
 WRKDIST=       	${WRKDIR}/gkrellStock-${V}
 ALL_TARGET=	gkrellstock.so

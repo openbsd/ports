@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2015/01/22 21:17:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2015/06/26 18:08:40 ajacoutot Exp $
 
 COMMENT=	webcam plugin for GkrellM2
 
 V=		2.0.0
 DISTNAME=	gkrellkam-${V}
-REVISION=	10
+REVISION=	11
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://gkrellkam.sourceforge.net
@@ -12,9 +12,9 @@ HOMEPAGE=	http://gkrellkam.sourceforge.net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gkrellkam/}
 DISTFILES=	gkrellkam_${V}.tar.gz
 
-PLUGIN=		${WRKSRC}/gkrellkam2.so
+WANTLIB=	# empty
 
-WANTLIB=
+PLUGIN=		${WRKSRC}/gkrellkam2.so
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/gkrellkam-list.5 ${PREFIX}/man/man5/gkrellkam.5

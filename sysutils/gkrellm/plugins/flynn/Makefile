@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/13 19:12:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2015/06/26 18:08:39 ajacoutot Exp $
 
 COMMENT=	GkrellM2 load meter with a familiar face
 
 DISTNAME=	gkrellflynn-0.8
-REVISION=	8
+REVISION=	9
 CATEGORIES=	x11
+
+WANTLIB=	# empty
 
 ALL_TARGET=	gkrellm2
 
 PLUGIN=		${WRKSRC}/gkrellflynn.so
-
-WANTLIB=
 
 .include <bsd.port.mk>

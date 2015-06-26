@@ -1,34 +1,32 @@
-# $OpenBSD: Makefile.inc,v 1.31 2015/05/05 17:00:19 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.32 2015/06/26 18:08:39 ajacoutot Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY=		Yes
 
-CATEGORIES+=	sysutils
+CATEGORIES +=		sysutils
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM?=	Yes
-PERMIT_PACKAGE_FTP?=	Yes
-PERMIT_DISTFILES_FTP?=	Yes
 
 .if ! defined(WANTLIB)
-MODULES +=	devel/gettext
-WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
-		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png pthread pthread-stubs xcb xcb-render z \
-		GL X11-xcb Xxf86vm drm xcb-shm ${MODGETTEXT_WANTLIB}
+MODULES +=		devel/gettext
+
+LIB_DEPENDS +=		x11/gtk+2
+
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread z
 .endif
 
 .if defined(EXTRA_WANTLIB)
-WANTLIB+=	${EXTRA_WANTLIB}
+WANTLIB +=	${EXTRA_WANTLIB}
 .endif
 
-BUILD_DEPENDS+=	sysutils/gkrellm/gkrellm,-client>=2.2.0
-RUN_DEPENDS+=	sysutils/gkrellm/gkrellm,-client>=2.2.0
+BUILD_DEPENDS +=	sysutils/gkrellm/gkrellm,-client
+RUN_DEPENDS +=		sysutils/gkrellm/gkrellm,-client
 
-NO_TEST=	Yes
-USE_GMAKE=	Yes
+NO_TEST=		Yes
+USE_GMAKE=		Yes
 
 PLUGINDIR=	${PREFIX}/lib/gkrellm2/plugins
 
