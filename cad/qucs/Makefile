@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2014/09/16 19:22:38 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2015/06/26 19:37:10 jasper Exp $
+
+PORTROACH=	limit:[0-9]\.[0-9]\.[0-9][0-9]$
 
 COMMENT=	graphical circuit design and simulation tool
 BROKEN-hppa =	OOM on hicumL2V2p23.core.o
