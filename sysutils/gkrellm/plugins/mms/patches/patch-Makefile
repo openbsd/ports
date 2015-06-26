@@ -1,33 +1,27 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2003/11/03 20:34:17 sturm Exp $
---- Makefile.orig	2003-06-16 11:39:42.000000000 -0700
-+++ Makefile	2003-11-01 13:47:37.000000000 -0800
-@@ -3,19 +3,19 @@
- # You may want to rename the binary-file.
- BIN_FILENAME = gkrellmms
+$OpenBSD: patch-Makefile,v 1.2 2015/06/26 18:25:54 ajacoutot Exp $
+--- Makefile.orig	Fri Jan 21 18:02:17 2005
++++ Makefile	Fri Jun 26 20:12:55 2015
+@@ -18,15 +18,15 @@ endif
  
--GTK_INCLUDE ?= `pkg-config gtk+-2.0 --cflags`
--GTK_LIB ?= `pkg-config gtk+-2.0 --libs`
-+GTK_INCLUDE ?= `pkg-config gtk+-2.0 gthread-2.0 --cflags`
-+GTK_LIB ?= `pkg-config gtk+-2.0 gthread-2.0 --libs`
- IMLIB_INCLUDE ?= 
- IMLIB_LIB ?= 
- XMMS_INCLUDE ?= `xmms-config --cflags`
- XMMS_LIB ?= `xmms-config --libs`
  PLUGIN_DIR ?= /usr/local/lib/gkrellm2/plugins
  
 -FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(XMMS_INCLUDE)
 -LIBS = $(GTK_LIB) $(IMLIB_LIB) $(XMMS_LIB)
 -LFLAGS = -shared -lpthread
-+CFLAGS += -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(XMMS_INCLUDE)
-+LIBS += $(GTK_LIB) $(IMLIB_LIB) $(XMMS_LIB) -I${PREFIX}/include
-+LFLAGS += -shared -pthread
++CFLAGS += -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(XMMS_INCLUDE)
++LIBS += $(GTK_LIB) $(IMLIB_LIB) $(XMMS_LIB)
++LFLAGS += -shared -lpthread
+ 
+ ifdef USE_BMP
+    FLAGS += -DUSE_BMP
+ endif
  
 -LOCALEDIR ?= /usr/share/locale
 +LOCALEDIR ?= ${PREFIX}/share/locale
  ifeq ($(enable_nls),1)
     FLAGS += -DENABLE_NLS -DLOCALEDIR=\"$(LOCALEDIR)\"
     export enable_nls
-@@ -24,8 +24,6 @@ PACKAGE ?= gkrellmms
+@@ -35,8 +35,6 @@ PACKAGE ?= gkrellmms
  FLAGS += -DPACKAGE="\"$(PACKAGE)\"" 
  export PACKAGE LOCALEDIR
  
@@ -36,7 +30,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2003/11/03 20:34:17 sturm Exp $
  
  INSTALL = install -c
  INSTALL_PROGRAM = $(INSTALL) -s
-@@ -36,7 +34,7 @@ all:	$(BIN_FILENAME).so
+@@ -47,7 +45,7 @@ all:	$(BIN_FILENAME).so
  	(cd po && ${MAKE} all )
  
  $(BIN_FILENAME).so: $(OBJS)
