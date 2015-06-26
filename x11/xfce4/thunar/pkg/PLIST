@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2015/03/16 20:26:31 landry Exp $
+@comment $OpenBSD: PLIST,v 1.25 2015/06/26 07:45:02 landry Exp $
 @conflict xffm-*
 bin/Thunar
 @bin bin/thunar
@@ -117,7 +117,6 @@ share/locale/vi/LC_MESSAGES/Thunar.mo
 share/locale/zh_CN/LC_MESSAGES/Thunar.mo
 share/locale/zh_HK/LC_MESSAGES/Thunar.mo
 share/locale/zh_TW/LC_MESSAGES/Thunar.mo
-share/pixmaps/
 share/pixmaps/Thunar/
 share/pixmaps/Thunar/Thunar-about-logo.png
 share/polkit-1/
