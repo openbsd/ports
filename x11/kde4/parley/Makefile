@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/05/28 10:17:30 pascal Exp $
+# $OpenBSD: Makefile,v 1.10 2015/06/26 09:18:40 ajacoutot Exp $
 
 COMMENT =	vocabulary trainer for KDE
 DISTNAME =	parley-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 # XXX Sometimes crashes, possibly due KHotNewStuff bugs.
 

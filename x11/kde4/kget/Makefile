@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/28 10:17:27 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2015/06/26 09:18:40 ajacoutot Exp $
 
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	net
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdenetwork/kget

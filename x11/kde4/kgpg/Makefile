@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/28 10:17:27 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2015/06/26 09:18:39 ajacoutot Exp $
 
 COMMENT =	KDE interface to GnuPG
 DISTNAME =	kgpg-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

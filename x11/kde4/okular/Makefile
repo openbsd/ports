@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2015/05/28 10:17:30 pascal Exp $
+# $OpenBSD: Makefile,v 1.18 2015/06/26 09:18:40 ajacoutot Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	okularcore		51.0	# 1.7
 

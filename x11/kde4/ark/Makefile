@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/28 10:17:26 pascal Exp $
+# $OpenBSD: Makefile,v 1.11 2015/06/26 09:18:39 ajacoutot Exp $
 
 COMMENT =	KDE file archiver
 DISTNAME =	ark-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	kerfuffle	51.0 # 4.7
 

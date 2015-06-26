@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/28 10:17:31 pascal Exp $
+# $OpenBSD: Makefile,v 1.13 2015/06/26 09:18:40 ajacoutot Exp $
 
 COMMENT =	extra KDE plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	lancelot-datamodels		51.1 # 1.7
 SHARED_LIBS +=	lancelot			51.1 # 1.9

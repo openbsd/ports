@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/28 10:17:23 pascal Exp $
+# $OpenBSD: Makefile,v 1.12 2015/06/26 09:18:39 ajacoutot Exp $
 
 COMMENT-face =		Qt/C++ wrapper around LibFace
 COMMENT-geomap =	KIPI interface library for Marble
@@ -21,12 +21,12 @@ PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
-REVISION-face =		1
-REVISION-kipi =		1
-REVISION-main =		1
-REVISION-mediawiki =	1
-REVISION-vkontakte =	1
-REVISION-geomap =	0
+REVISION-face =		2
+REVISION-kipi =		2
+REVISION-main =		2
+REVISION-mediawiki =	2
+REVISION-vkontakte =	2
+REVISION-geomap =	1
 
 REVISION-geomap =	2
 

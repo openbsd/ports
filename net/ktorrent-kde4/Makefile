@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/28 10:17:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2015/06/26 09:18:39 ajacoutot Exp $
 
 CATEGORIES =	net
 COMMENT =	torrent client for KDE 4
 V =		4.3.1
 DISTNAME =	ktorrent-$V
 HOMEPAGE =	http://ktorrent.pwsp.net/
-REVISION =	2
+REVISION =	3
 
 EXTRACT_SUFX =	.tar.bz2
 
