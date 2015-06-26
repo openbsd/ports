@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.56 2015/04/04 09:21:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2015/06/26 07:43:53 landry Exp $
 
 COMMENT=	Xfce4 desktop manager
 
 XFCE_PROJECT=	xfdesktop
-XFCE_VERSION =	4.12.1
-REVISION=	1
+XFCE_VERSION =	4.12.2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
