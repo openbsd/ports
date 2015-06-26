@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_main_Makefile_in,v 1.13 2015/06/26 18:54:47 feinerer Exp $
+
+Fix linking with external libintl
+(https://marc.info/?l=openbsd-ports&m=143526271406832&w=2)
+
+--- src/main/Makefile.in.orig	Fri Jun 26 20:10:33 2015
++++ src/main/Makefile.in	Fri Jun 26 20:11:11 2015
+@@ -103,7 +103,7 @@ EXTRA_STATIC_LIBS = \
+   $(R_ZLIBS) $(R_BZLIBS) $(R_PCRE) $(R_TRE) $(R_XDR) $(R_XZ) $(R_LIBINTL) $(R_TZONE)
+ STATIC_LIBS = $(MAIN_LIBS) $(EXTRA_STATIC_LIBS)
+ 
+-EXTRA_LIBS = $(BLAS_LIBS) $(FLIBS) $(R_XTRA_LIBS) @LIBINTL@ $(READLINE_LIBS) $(LIBS)
++EXTRA_LIBS = $(BLAS_LIBS) $(FLIBS) $(R_XTRA_LIBS) @LTLIBINTL@ $(READLINE_LIBS) $(LIBS)
+ 
+ R_binary = R.bin
+ R_bin_OBJECTS = Rmain.o @WANT_R_SHLIB_FALSE@$(OBJECTS)
