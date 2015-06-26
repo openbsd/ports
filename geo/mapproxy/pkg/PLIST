@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/08/26 18:47:04 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/26 07:52:24 landry Exp $
 bin/mapproxy-seed
 bin/mapproxy-util
 lib/python${MODPY_VERSION}/site-packages/MapProxy-${GH_TAGNAME}-py${MODPY_VERSION}-nspkg.pth
@@ -27,10 +27,14 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/legend.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/legend.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/mbtiles.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/mbtiles.pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/meta.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/meta.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/renderd.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/renderd.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/riak.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/riak.pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/sqlite.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/sqlite.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/tile.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/cache/tile.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/client/
@@ -46,6 +50,15 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/client/tile.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/client/tile.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/client/wms.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/client/wms.pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/compat/
+lib/python${MODPY_VERSION}/site-packages/mapproxy/compat/__init__.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/compat/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/compat/image.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/compat/image.pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/compat/itertools.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/compat/itertools.pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/compat/modules.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/compat/modules.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/config/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/config/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/config/__init__.pyc
@@ -108,22 +121,6 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/layer.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/layer.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/multiapp.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/multiapp.pyc
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/cpython/
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/cpython/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/cpython/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/cpython/lock.py
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/cpython/lock.pyc
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/cpython/proj.py
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/cpython/proj.pyc
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/image.py
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/image.pyc
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/lock.py
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/lock.pyc
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/proj.py
-lib/python${MODPY_VERSION}/site-packages/mapproxy/platform/proj.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/proj.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/proj.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/request/
@@ -170,11 +167,6 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/script/util.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/script/util.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/script/wms_capabilities.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/script/wms_capabilities.pyc
-lib/python${MODPY_VERSION}/site-packages/mapproxy/security/
-lib/python${MODPY_VERSION}/site-packages/mapproxy/security/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mapproxy/security/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/mapproxy/security/referrer.py
-lib/python${MODPY_VERSION}/site-packages/mapproxy/security/referrer.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/seed/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/seed/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/seed/__init__.pyc
@@ -277,6 +269,8 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/http.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/http.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/image.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/image.pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/mocker.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/mocker.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/kml/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/schemas/kml/2.2.0/
@@ -506,6 +500,8 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_wmts_restful.
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_wmts_restful.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_xslt_featureinfo.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_xslt_featureinfo.pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/test_http_helper.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/test_http_helper.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/__init__.pyc
@@ -562,8 +558,6 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_multiapp.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_multiapp.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_ogr_reader.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_ogr_reader.pyc
-lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_referrer.py
-lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_referrer.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_request.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_request.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_request_wmts.py
@@ -580,6 +574,8 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_tiled_source.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_tiled_source.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_tilefilter.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_tilefilter.pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_times.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_times.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_timeutils.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_timeutils.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_util_conf_utils.py
@@ -588,6 +584,8 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_utils.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_utils.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_wms_capabilities.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_wms_capabilities.pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_wms_layer.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_wms_layer.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_yaml.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_yaml.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/tilefilter.py
@@ -616,8 +614,6 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/dictspec/test/test_va
 lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/dictspec/test/test_validator.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/dictspec/validator.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/dictspec/validator.pyc
-lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/itertools.py
-lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/itertools.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/local.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/local.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/lockfile.py

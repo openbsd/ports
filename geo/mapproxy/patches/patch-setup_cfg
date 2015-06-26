@@ -1,11 +1,11 @@
-$OpenBSD: patch-setup_cfg,v 1.1.1.1 2014/08/26 18:47:04 landry Exp $
---- setup.cfg.orig	Wed Jul  9 16:35:23 2014
-+++ setup.cfg	Tue Aug 26 20:40:09 2014
-@@ -6,4 +6,5 @@ with-doctest = 1
+$OpenBSD: patch-setup_cfg,v 1.2 2015/06/26 07:52:24 landry Exp $
+avoid date in PLIST for egg files
+--- setup.cfg.orig	Fri Jun 26 09:25:23 2015
++++ setup.cfg	Fri Jun 26 09:25:29 2015
+@@ -6,4 +6,4 @@ with-doctest = 1
  
  [egg_info]
  #tag_build = .dev
 -tag_date = true
 \ No newline at end of file
 +#tag_date = true
-+

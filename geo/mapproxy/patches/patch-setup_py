@@ -1,12 +1,13 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2014/08/26 18:47:04 landry Exp $
---- setup.py.orig	Tue Aug 26 20:44:28 2014
-+++ setup.py	Tue Aug 26 20:44:34 2014
+$OpenBSD: patch-setup_py,v 1.2 2015/06/26 07:52:24 landry Exp $
+fix for actual released version
+--- setup.py.orig	Fri Jun 26 09:22:51 2015
++++ setup.py	Fri Jun 26 09:22:59 2015
 @@ -54,7 +54,7 @@ def long_description(changelog_releases=10):
  
  setup(
      name='MapProxy',
--    version="1.7.0a",
-+    version="1.7.1",
+-    version="1.8.0a",
++    version="1.8.0",
      description='An accelerating proxy for web map services',
      long_description=long_description(7),
      author='Oliver Tonnhofer',
