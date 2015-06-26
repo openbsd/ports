@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/25 15:06:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/06/26 07:33:17 jasper Exp $
 @option no-default-conflict
 @conflict erlang->=16v0,<17v0
 @pkgpath lang/erlang
-%%SHARED%%
 bin/ct_run${MAJ_V}
 bin/dialyzer${MAJ_V}
 bin/epmd${MAJ_V}
@@ -423,6 +422,7 @@ lib/erlang${MAJ_V}/lib/${ASN1}/examples/P-Record.asn
 lib/erlang${MAJ_V}/lib/${ASN1}/info
 lib/erlang${MAJ_V}/lib/${ASN1}/priv/
 lib/erlang${MAJ_V}/lib/${ASN1}/priv/lib/
+lib/erlang${MAJ_V}/lib/${ASN1}/priv/lib/asn1_erl_nif.so
 lib/erlang${MAJ_V}/lib/${ASN1}/src/
 lib/erlang${MAJ_V}/lib/${ASN1}/src/asn1.app.src
 lib/erlang${MAJ_V}/lib/${ASN1}/src/asn1.appup.src
@@ -1695,6 +1695,8 @@ lib/erlang${MAJ_V}/lib/${CRYPTO}/ebin/crypto_sup.beam
 lib/erlang${MAJ_V}/lib/${CRYPTO}/info
 lib/erlang${MAJ_V}/lib/${CRYPTO}/priv/
 lib/erlang${MAJ_V}/lib/${CRYPTO}/priv/lib/
+lib/erlang${MAJ_V}/lib/${CRYPTO}/priv/lib/crypto.so
+lib/erlang${MAJ_V}/lib/${CRYPTO}/priv/lib/crypto_callback.so
 lib/erlang${MAJ_V}/lib/${CRYPTO}/priv/obj/
 lib/erlang${MAJ_V}/lib/${CRYPTO}/priv/obj/Makefile
 lib/erlang${MAJ_V}/lib/${CRYPTO}/priv/obj/crypto.o
@@ -3836,6 +3838,8 @@ lib/erlang${MAJ_V}/lib/${MEGACO}/include/megaco_sdp.hrl
 lib/erlang${MAJ_V}/lib/${MEGACO}/info
 lib/erlang${MAJ_V}/lib/${MEGACO}/priv/
 lib/erlang${MAJ_V}/lib/${MEGACO}/priv/lib/
+lib/erlang${MAJ_V}/lib/${MEGACO}/priv/lib/megaco_flex_scanner_drv.so
+lib/erlang${MAJ_V}/lib/${MEGACO}/priv/lib/megaco_flex_scanner_drv_mt.so
 lib/erlang${MAJ_V}/lib/${MEGACO}/src/
 lib/erlang${MAJ_V}/lib/${MEGACO}/src/app/
 lib/erlang${MAJ_V}/lib/${MEGACO}/src/app/megaco.erl
@@ -4884,6 +4888,9 @@ lib/erlang${MAJ_V}/lib/${RUNTIME_TOOLS}/include/observer_backend.hrl
 lib/erlang${MAJ_V}/lib/${RUNTIME_TOOLS}/info
 lib/erlang${MAJ_V}/lib/${RUNTIME_TOOLS}/priv/
 lib/erlang${MAJ_V}/lib/${RUNTIME_TOOLS}/priv/lib/
+lib/erlang${MAJ_V}/lib/${RUNTIME_TOOLS}/priv/lib/dyntrace.so
+lib/erlang${MAJ_V}/lib/${RUNTIME_TOOLS}/priv/lib/trace_file_drv.so
+lib/erlang${MAJ_V}/lib/${RUNTIME_TOOLS}/priv/lib/trace_ip_drv.so
 lib/erlang${MAJ_V}/lib/${RUNTIME_TOOLS}/priv/obj/
 lib/erlang${MAJ_V}/lib/${RUNTIME_TOOLS}/priv/obj/dyntrace.o
 lib/erlang${MAJ_V}/lib/${RUNTIME_TOOLS}/src/
@@ -5989,7 +5996,7 @@ lib/erlang${MAJ_V}/lib/${TOOLS}/emacs/erlang-start.el
 lib/erlang${MAJ_V}/lib/${TOOLS}/emacs/erlang.el
 lib/erlang${MAJ_V}/lib/${TOOLS}/emacs/erlang_appwiz.el
 lib/erlang${MAJ_V}/lib/${TOOLS}/emacs/test.erl.indented
-@comment lib/erlang${MAJ_V}/lib/${TOOLS}/emacs/test.erl.orig
+lib/erlang${MAJ_V}/lib/${TOOLS}/emacs/test.erl.orig
 lib/erlang${MAJ_V}/lib/${TOOLS}/examples/
 lib/erlang${MAJ_V}/lib/${TOOLS}/examples/xref_examples.erl
 lib/erlang${MAJ_V}/lib/${TOOLS}/info

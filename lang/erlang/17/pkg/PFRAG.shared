@@ -1,9 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2015/06/25 13:16:08 jasper Exp $
-lib/erlang${SYSTEM_VSN}/lib/${ASN1}/priv/lib/asn1rt_nif.so
-lib/erlang${SYSTEM_VSN}/lib/${CRYPTO}/priv/lib/crypto.so
-lib/erlang${SYSTEM_VSN}/lib/${CRYPTO}/priv/lib/crypto_callback.so
-lib/erlang${SYSTEM_VSN}/lib/${MEGACO}/priv/lib/megaco_flex_scanner_drv.so
-lib/erlang${SYSTEM_VSN}/lib/${MEGACO}/priv/lib/megaco_flex_scanner_drv_mt.so
-lib/erlang${SYSTEM_VSN}/lib/${RUNTIME_TOOLS}/priv/lib/dyntrace.so
-lib/erlang${SYSTEM_VSN}/lib/${RUNTIME_TOOLS}/priv/lib/trace_file_drv.so
-lib/erlang${SYSTEM_VSN}/lib/${RUNTIME_TOOLS}/priv/lib/trace_ip_drv.so
