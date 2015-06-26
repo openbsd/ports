@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.255 2015/06/25 21:45:59 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.256 2015/06/26 14:02:06 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -554,6 +554,7 @@ my $obsolete_reason = {
 	'ruby-term-ansicolor' => 5,
 	'star' => 6,
 	'sdd' => 6,
+	'tt-rss' => 1,
 };
 
 # ->is_base_system($handle, $state):
