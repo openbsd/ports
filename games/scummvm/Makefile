@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2014/11/29 10:10:47 jsg Exp $
+# $OpenBSD: Makefile,v 1.63 2015/06/26 09:38:42 ajacoutot Exp $
 
 COMMENT=	graphical adventure game interpreter
 DISTNAME=	scummvm-1.7.0
@@ -34,6 +34,7 @@ CONFIGURE_ARGS+= --disable-alsa \
 		--disable-debug \
 		--disable-fluidsynth \
 		--disable-seq-midi \
+		--disable-mpeg2 \
 		--enable-sndio
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
