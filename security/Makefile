@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.371 2015/06/23 19:26:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.372 2015/06/26 07:40:03 landry Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -247,6 +247,7 @@
      SUBDIR += py-keyring,python3
      SUBDIR += py-libnacl
      SUBDIR += py-openssl
+     SUBDIR += py-oauthlib
      SUBDIR += py-paramiko
      SUBDIR += py-passlib
      SUBDIR += py-passlib,python3
