@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.16 2015/06/05 06:00:23 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2015/06/26 14:07:32 ajacoutot Exp $
 
-COMMENT=	PHP bindings for the libssh2 library
+COMMENT=		PHP bindings for the libssh2 library
 
-DISTNAME=	ssh2-0.11.3
-REVISION=	6
+DISTNAME=		ssh2-0.12
 
 # PHP
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += crypto ssh2 ssl z
 
-MODULES=	lang/php/pecl
-CONFIGURE_STYLE= gnu
+MODULES=		lang/php/pecl
+CONFIGURE_STYLE=	gnu
 
-LIB_DEPENDS=	security/libssh2
+LIB_DEPENDS=		security/libssh2
 
 .include <bsd.port.mk>
