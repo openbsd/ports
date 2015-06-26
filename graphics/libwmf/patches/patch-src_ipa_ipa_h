@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_ipa_ipa_h,v 1.1 2015/06/26 08:52:44 jasper Exp $
+
+Security fixes for CVE-2015-0848, CVE-2015-4588
+https://bugzilla.redhat.com/show_bug.cgi?id=1227243
+
+--- src/ipa/ipa.h.orig	Sun Oct 28 15:07:20 2001
++++ src/ipa/ipa.h	Wed Jun 24 17:29:11 2015
+@@ -48,7 +48,7 @@ static int            ReadBlobByte (BMPSource*);
+ static unsigned short ReadBlobLSBShort (BMPSource*);
+ static unsigned long  ReadBlobLSBLong (BMPSource*);
+ static long           TellBlob (BMPSource*);
+-static void           DecodeImage (wmfAPI*,wmfBMP*,BMPSource*,unsigned int,unsigned char*);
++static int            DecodeImage (wmfAPI*,wmfBMP*,BMPSource*,unsigned int,unsigned char*);
+ static void           ReadBMPImage (wmfAPI*,wmfBMP*,BMPSource*);
+ static int            ExtractColor (wmfAPI*,wmfBMP*,wmfRGB*,unsigned int,unsigned int);
+ static void           SetColor (wmfAPI*,wmfBMP*,wmfRGB*,unsigned char,unsigned int,unsigned int);

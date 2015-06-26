@@ -1,0 +1,73 @@
+$OpenBSD: patch-src_player_meta_h,v 1.1 2015/06/26 08:52:44 jasper Exp $
+
+Security fixes for CVE-2015-4695, CVE-2015-4696
+https://bugzilla.redhat.com/show_bug.cgi?id=1227243
+
+--- src/player/meta.h.orig	Wed Jun 24 17:25:06 2015
++++ src/player/meta.h	Wed Jun 24 17:25:01 2015
+@@ -1565,7 +1565,7 @@ static int meta_rgn_create (wmfAPI* API,wmfRecord* Rec
+ 	objects = P->objects;
+ 
+ 	i = 0;
+-	while (objects[i].type && (i < NUM_OBJECTS (API))) i++;
++	while ((i < NUM_OBJECTS (API)) && objects[i].type) i++;
+ 
+ 	if (i == NUM_OBJECTS (API))
+ 	{	WMF_ERROR (API,"Object out of range!");
+@@ -2142,7 +2142,7 @@ static int meta_dib_brush (wmfAPI* API,wmfRecord* Reco
+ 	objects = P->objects;
+ 
+ 	i = 0;
+-	while (objects[i].type && (i < NUM_OBJECTS (API))) i++;
++	while ((i < NUM_OBJECTS (API)) && objects[i].type) i++;
+ 
+ 	if (i == NUM_OBJECTS (API))
+ 	{	WMF_ERROR (API,"Object out of range!");
+@@ -2593,9 +2593,10 @@ static int meta_dc_restore (wmfAPI* API,wmfRecord* Rec
+ 		polyrect.BR = 0;
+ 
+ 		polyrect.count = 0;
++	
++		if (FR->region_clip) FR->region_clip (API,&polyrect);
+ 	}
+ 
+-	if (FR->region_clip) FR->region_clip (API,&polyrect);
+ 
+ 	return (changed);
+ }
+@@ -3067,7 +3068,7 @@ static int meta_pen_create (wmfAPI* API,wmfRecord* Rec
+ 	objects = P->objects;
+ 
+ 	i = 0;
+-	while (objects[i].type && (i < NUM_OBJECTS (API))) i++;
++	while ((i < NUM_OBJECTS (API)) && objects[i].type) i++;
+ 
+ 	if (i == NUM_OBJECTS (API))
+ 	{	WMF_ERROR (API,"Object out of range!");
+@@ -3181,7 +3182,7 @@ static int meta_brush_create (wmfAPI* API,wmfRecord* R
+ 	objects = P->objects;
+ 
+ 	i = 0;
+-	while (objects[i].type && (i < NUM_OBJECTS (API))) i++;
++	while ((i < NUM_OBJECTS (API)) && objects[i].type) i++;
+ 
+ 	if (i == NUM_OBJECTS (API))
+ 	{	WMF_ERROR (API,"Object out of range!");
+@@ -3288,7 +3289,7 @@ static int meta_font_create (wmfAPI* API,wmfRecord* Re
+ 	objects = P->objects;
+ 
+ 	i = 0;
+-	while (objects[i].type && (i < NUM_OBJECTS (API))) i++;
++	while ((i < NUM_OBJECTS (API)) && objects[i].type) i++;
+ 
+ 	if (i == NUM_OBJECTS (API))
+ 	{	WMF_ERROR (API,"Object out of range!");
+@@ -3396,7 +3397,7 @@ static int meta_palette_create (wmfAPI* API,wmfRecord*
+ 	objects = P->objects;
+ 
+ 	i = 0;
+-	while (objects[i].type && (i < NUM_OBJECTS (API))) i++;
++	while ((i < NUM_OBJECTS (API)) && objects[i].type) i++;
+ 
+ 	if (i == NUM_OBJECTS (API))
+ 	{	WMF_ERROR (API,"Object out of range!");
