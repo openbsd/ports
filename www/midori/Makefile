@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.72 2015/04/11 08:39:58 nigel Exp $
+# $OpenBSD: Makefile,v 1.73 2015/06/26 08:03:24 landry Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	lightweight web browser
 
-XFCE_VERSION =	0.5.9
+XFCE_VERSION =	0.5.10
 XFCE_GOODIE =	midori
-DISTNAME =	midori_0.5.9_all_
-WRKDIST =	${WRKDIR}/${PKGNAME}
-REVISION =	2
+DISTNAME =	midori_0.5.10_all_
+WRKDIST =	${WRKDIR}
 
 HOMEPAGE =	http://www.midori-browser.org
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
@@ -33,8 +32,7 @@ CONFIGURE_ARGS = -DUSE_ZEITGEIST:Bool=No
 CONFIGURE_ARGS += -DUSE_GTK3:Bool=Yes
 LIB_DEPENDS =	www/webkit,gtk3>=2.4.8p3v1 \
 		x11/gnome/gcr
-WANTLIB += cairo-gobject gck-1 gcr-ui-3 gcr-base-3 gdk-3 gtk-3 javascriptcoregtk-3.0
-WANTLIB += p11-kit webkitgtk-3.0
+WANTLIB += cairo-gobject gcr-ui-3 gdk-3 gtk-3 javascriptcoregtk-3.0 webkitgtk-3.0
 
 .else
 LIB_DEPENDS =	www/webkit>=1.8.1v0
@@ -45,8 +43,7 @@ WANTLIB += webkitgtk-1.0
 
 .endif
 
-LIB_DEPENDS +=	devel/libnotify \
-		devel/libsoup>=2.28.0
+LIB_DEPENDS +=	devel/libsoup>=2.28.0
 
 # webkit browsing
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav
@@ -57,13 +54,11 @@ BUILD_DEPENDS =	lang/vala \
 WANTLIB += X11 Xss atk-1.0 c cairo
 WANTLIB += fontconfig freetype gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += m notify pango-1.0 xml2 z
+WANTLIB += m pango-1.0 xml2 z gck-1 gcr-base-3 p11-kit
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread
 WANTLIB += soup-2.4 sqlite3 soup-gnome-2.4
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
-# CMake Error: CMake can not determine linker language for target: history-list.orig ????
-	rm ${WRKSRC}/extensions/history-list.vala.orig
 
 .include <bsd.port.mk>
