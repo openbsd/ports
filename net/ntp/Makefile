@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2015/04/08 14:12:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2015/06/26 20:21:07 sthen Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -7,6 +7,7 @@ COMMENT=	Network Time Protocol reference implementation
 # 'pl' for local use.
 
 VERSION=	4.2.8p2
+REVISION=	0
 DISTNAME=	ntp-${VERSION}
 PKGNAME=	ntp-${VERSION:S/p/pl/}
 CATEGORIES=	net
@@ -30,7 +31,8 @@ CONFIGURE_ARGS=	--docdir=${TRUEPREFIX}/share/doc/ntp \
 		--with-binsubdir=sbin \
 		--without-ntpsnmpd
 CONFIGURE_ENV=	CPPFLAGS='-DCONFIG_FILE="\"${SYSCONFDIR}/ntp.conf\"" \
-			  -DKEYFILE="\"${SYSCONFDIR}/ntp.keys\""'
+			  -DKEYFILE="\"${SYSCONFDIR}/ntp.keys\""' \
+		ac_cv_header_sys_audioio_h=no
 
 LIB_DEPENDS=	devel/libevent2
 
