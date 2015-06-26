@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2015/06/19 09:07:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/06/26 18:39:12 ajacoutot Exp $
+
+PORTROACH=	skipv:1.1
 
 COMMENT=	UPnP A/V media server
 
