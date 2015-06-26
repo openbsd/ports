@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/11/08 22:37:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/06/26 13:03:36 ajacoutot Exp $
 @bin bin/sip
 include/python${MODPY_VERSION}/sip.h
 lib/python${MODPY_VERSION}/site-packages/sip.so
@@ -9,7 +9,6 @@ lib/python${MODPY_VERSION}/site-packages/sipdistutils.pyc
 share/doc/${MODPY_PY_PREFIX}sip/
 share/doc/${MODPY_PY_PREFIX}sip/annotations.txt
 share/doc/${MODPY_PY_PREFIX}sip/build_system.txt
-share/doc/${MODPY_PY_PREFIX}sip/builtin.txt
 share/doc/${MODPY_PY_PREFIX}sip/c_api.txt
 share/doc/${MODPY_PY_PREFIX}sip/command_line.txt
 share/doc/${MODPY_PY_PREFIX}sip/directives.txt
