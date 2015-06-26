@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.199 2015/06/25 21:51:31 naddy Exp $
+# $OpenBSD: network.conf.template,v 1.200 2015/06/26 20:48:59 naddy Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -204,20 +204,6 @@ MASTER_SITE_APACHE+= \
 	http://apache.mirror.aussiehq.net.au/ \
 	http://apache.sunsite.ualberta.ca/ \
 	http://www.apache.org/dist/
-
-MASTER_SITE_MYSQL+= \
-	http://mirror.switch.ch/mirror/mysql/ \
-	http://mirrors.ukfast.co.uk/sites/ftp.mysql.com/ \
-	http://ftp.gwdg.de/pub/misc/mysql/ \
-	http://ftp.fh-wolfenbuettel.de/pub/database/mysql/ \
-	http://ftp.fi.muni.cz/pub/mysql/ \
-	http://mirrors.ntua.gr/MySQL/ \
-	http://ftp.ntua.gr/pub/databases/mysql/ \
-	http://mysql.mirrors.pair.com/ \
-	http://linorg.usp.br/mysql/ \
-	http://download.softagency.net/MySQL/ \
-	ftp://mirror.switch.ch/mirror/mysql/ \
-	ftp://ftp.cbn.net.id/mirror/mysql/
 
 MASTER_SITE_PYPI +=	\
 	https://pypi.python.org/packages/source/

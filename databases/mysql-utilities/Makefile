@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2015/06/08 22:12:42 giovanni Exp $
+# $OpenBSD: Makefile,v 1.5 2015/06/26 20:48:59 naddy Exp $
 
 COMMENT =	MySQL management utilities
 
 MODPY_EGG_VERSION = 1.5.4
 DISTNAME =	mysql-utilities-${MODPY_EGG_VERSION}
 CATEGORIES =	databases
-MASTER_SITES =	${MASTER_SITE_MYSQL:=Downloads/MySQLGUITools/}
+MASTER_SITES =	http://mirror.switch.ch/mirror/mysql/Downloads/MySQLGUITools/ \
+		http://ftp.fi.muni.cz/pub/mysql/Downloads/MySQLGUITools/ \
+		http://ftp.gwdg.de/pub/misc/mysql/Downloads/MySQLGUITools/
 EXTRACT_SUFX =	.zip
 
 HOMEPAGE =	http://www.mysql.com/
