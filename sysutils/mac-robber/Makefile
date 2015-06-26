@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/06/26 17:10:14 ajacoutot Exp $
 
 COMMENT=		forensic tool that collects MAC times from files
 
-VERSION=		1.00
+VERSION=		1.02
 DISTNAME=		mac-robber-${VERSION}
 CATEGORIES=		sysutils security
 
@@ -10,9 +10,10 @@ HOMEPAGE=		http://www.sleuthkit.org/mac-robber/
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mac-robber/}
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c
+
+WANTLIB += c
 
 MAKE_FLAGS=		CC="${CC}" GCC_CFLAGS="${CFLAGS}" 
 
@@ -21,7 +22,7 @@ NO_TEST=		Yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mac-robber ${PREFIX}/bin 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mac-robber
-	cd ${WRKSRC} && ${INSTALL_MAN} README \
-	 ${PREFIX}/share/doc/mac-robber
+	${INSTALL_DATA} ${WRKSRC}/README \
+		${PREFIX}/share/doc/mac-robber
 
 .include <bsd.port.mk>
