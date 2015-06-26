@@ -1,0 +1,12 @@
+$OpenBSD: patch-erts_lib_src_Makefile_in,v 1.1 2015/06/26 06:35:54 jasper Exp $
+--- erts/lib_src/Makefile.in.orig	Tue Jun 23 20:56:21 2015
++++ erts/lib_src/Makefile.in	Thu Jun 25 13:47:13 2015
+@@ -39,7 +39,7 @@ INSTALL_PROGRAM=@INSTALL_PROGRAM@
+ ERLANG_OSTYPE=@ERLANG_OSTYPE@
+ 
+ OMIT_FP=false
+-CFLAGS=$(subst O2,O3, @CFLAGS@)
++CFLAGS=@CFLAGS@
+ 
+ ifeq ($(TYPE),debug)
+ CFLAGS=@DEBUG_CFLAGS@ -DDEBUG
