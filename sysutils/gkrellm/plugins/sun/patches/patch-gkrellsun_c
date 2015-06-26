@@ -1,35 +1,25 @@
-$OpenBSD: patch-gkrellsun_c,v 1.4 2004/10/16 16:33:56 sturm Exp $
---- gkrellsun.c.orig	Sun Jun  6 06:34:21 2004
-+++ gkrellsun.c	Mon Oct 11 14:34:03 2004
-@@ -214,8 +214,8 @@ struct _Sun
-    SunData data;
- };
+$OpenBSD: patch-gkrellsun_c,v 1.5 2015/06/26 18:27:33 ajacoutot Exp $
+--- gkrellsun.c.orig	Fri Jun 26 20:21:26 2015
++++ gkrellsun.c	Fri Jun 26 20:24:21 2015
+@@ -1388,8 +1388,8 @@ setTextColor_cb(/*@unused@*/GtkWidget *widget, /*@unus
+    GdkColor color;
+    gint response;
  
--extern long CurrentGMTTime;
--/*long CurrentGMTTime = 0;*/
-+extern time_t CurrentGMTTime;
-+/*time_t CurrentGMTTime = 0;*/
- static Sun sununit;
+-   gint whichTime = (gint)data % 10;
+-   gint whichSun = (gint)data / 10;
++   gint whichTime = (glong)data % 10;
++   gint whichSun = (glong)data / 10;
  
- static gchar *sun_data_dir;
-@@ -231,9 +231,9 @@ static void update_sun_data(Sun * sun)
-    glong date;
-    gint day_of_month, month, year;
+    w = gtk_color_selection_dialog_new(_("Pick a color"));
  
--   CurrentGMTTime = (long) time(NULL);
-+   CurrentGMTTime = time(NULL);
- 
--   time_struc = gmtime(&(time_t)CurrentGMTTime);
-+   time_struc = gmtime(&CurrentGMTTime);
-    /* It may return NULL when the year does not fit into an integer.*/
-    if (time_struc == NULL) {
-       g_message("Error:  gmtime returned NULL\n"); exit(EXIT_FAILURE);
-@@ -258,7 +258,7 @@ static void update_sun_data(Sun * sun)
-          year, month, day_of_month, date);
-    }
- 
--   time_struc = localtime(&(time_t)CurrentGMTTime);
-+   time_struc = localtime(&CurrentGMTTime);
-    if (time_struc == NULL) {
-       g_message("Error: localtime returned NULL\n"); exit(EXIT_FAILURE);
-    }
+@@ -1459,8 +1459,8 @@ sun_create_tab(GtkWidget *tab_vbox)
+    GtkWidget     *ll_vbox, *ll_frame;
+    GtkWidget     *long_hbox, *lat_hbox;
+    GtkWidget     *table1;
+-   gint time;
+-   guint sun;
++   glong time;
++   gulong sun;
+    GtkWidget *font_button;
+    guint x;
+    GtkSizeGroup *ll_size_group;
