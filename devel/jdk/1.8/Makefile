@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/18 19:12:04 kurt Exp $
+# $OpenBSD: Makefile,v 1.3 2015/06/27 12:21:02 naddy Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -67,8 +67,9 @@ GMAKE=		${LOCALBASE}/bin/gmake
 # Don't call make -jN, instead pass MAKE_JOBS to --with-jobs
 PARALLEL_BUILD=	No
 
-CONFIGURE_STYLE=simple
-CONFIGURE_ARGS=	--with-boot-jdk=${BOOT_JDK} \
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--disable-option-checking \
+		--with-boot-jdk=${BOOT_JDK} \
 		--with-package-path=${LOCALBASE} \
 		--with-jobs=${MAKE_JOBS} \
 		--with-cacerts-file=${FILESDIR}/cacerts \
@@ -83,6 +84,7 @@ CONFIGURE_ARGS=	--with-boot-jdk=${BOOT_JDK} \
 		--with-milestone=fcs \
 		--with-update-version=${U} \
 		--with-build-number=${B}
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/common/autoconf/build-aux
 
 # MAKE_FLAGS=	LOG=debug
 MAKE_ENV=	DEFAULT_LIBPATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
