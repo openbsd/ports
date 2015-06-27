@@ -1,7 +1,7 @@
-$OpenBSD: patch-frmts_openjpeg_openjpegdataset_cpp,v 1.4 2015/02/17 21:47:43 landry Exp $
---- frmts/openjpeg/openjpegdataset.cpp.orig	Tue Feb 17 22:16:39 2015
-+++ frmts/openjpeg/openjpegdataset.cpp	Tue Feb 17 22:16:55 2015
-@@ -30,7 +30,7 @@
+$OpenBSD: patch-frmts_openjpeg_openjpegdataset_cpp,v 1.5 2015/06/27 06:55:38 landry Exp $
+--- frmts/openjpeg/openjpegdataset.cpp.orig	Sun Jun 14 21:06:32 2015
++++ frmts/openjpeg/openjpegdataset.cpp	Thu Jun 25 22:59:28 2015
+@@ -31,7 +31,7 @@
  /* This file is to be used with openjpeg 2.0 */
  
  #if defined(OPENJPEG_VERSION) && OPENJPEG_VERSION >= 20100

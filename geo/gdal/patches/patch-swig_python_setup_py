@@ -1,6 +1,6 @@
-$OpenBSD: patch-swig_python_setup_py,v 1.4 2013/05/31 15:00:09 landry Exp $
---- swig/python/setup.py.orig	Wed Apr 24 20:55:26 2013
-+++ swig/python/setup.py	Thu May 30 17:07:14 2013
+$OpenBSD: patch-swig_python_setup_py,v 1.5 2015/06/27 06:55:38 landry Exp $
+--- swig/python/setup.py.orig	Sun Jun 14 21:06:33 2015
++++ swig/python/setup.py	Thu Jun 25 22:59:28 2015
 @@ -198,7 +198,7 @@ class gdal_ext(build_ext):
          self.include_dirs.append(os.path.join(self.gdaldir,'include'))
  
@@ -9,4 +9,4 @@ $OpenBSD: patch-swig_python_setup_py,v 1.4 2013/05/31 15:00:09 landry Exp $
 +extra_link_args = ['-fPIC']
  extra_compile_args = []
  
- gdal_module = Extension('osgeo._gdal',
+ if sys.platform == 'darwin' and [int(x) for x in os.uname()[2].split('.')] >= [11, 0, 0]:

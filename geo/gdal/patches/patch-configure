@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.9 2015/02/17 21:47:43 landry Exp $
---- configure.orig	Tue Feb 10 13:12:08 2015
-+++ configure	Tue Feb 17 22:19:37 2015
-@@ -22201,9 +22201,9 @@ fi
+$OpenBSD: patch-configure,v 1.10 2015/06/27 06:55:38 landry Exp $
+--- configure.orig	Sun Jun 14 21:06:33 2015
++++ configure	Thu Jun 25 22:59:28 2015
+@@ -22596,9 +22596,9 @@ fi
          LIBS="-lopenjp2 $LIBS"
      fi
    else
@@ -13,7 +13,7 @@ $OpenBSD: patch-configure,v 1.9 2015/02/17 21:47:43 landry Exp $
  if test "x$ac_cv_header_openjpeg_2_1_openjpeg_h" = xyes; then :
    cat >>confdefs.h <<_ACEOF
  #define HAVE_OPENJPEG_2_1_OPENJPEG_H 1
-@@ -22267,7 +22267,7 @@ else
+@@ -22662,7 +22662,7 @@ else
    HAVE_OPENJPEG=yes
    if test -r $with_openjpeg/include/openjpeg-2.0/openjpeg.h ; then
      EXTRA_INCLUDES="-I$with_openjpeg/include $EXTRA_INCLUDES"

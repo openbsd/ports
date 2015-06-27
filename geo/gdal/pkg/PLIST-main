@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2015/02/17 21:47:43 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2015/06/27 06:55:38 landry Exp $
 @conflict gdal-<=1.8.0
 @pkgpath geo/gdal
 bin/gdal-config
@@ -57,6 +57,7 @@ include/gdal_alg.h
 include/gdal_alg_priv.h
 include/gdal_csv.h
 include/gdal_frmts.h
+include/gdal_mdreader.h
 include/gdal_pam.h
 include/gdal_priv.h
 include/gdal_proxy.h
@@ -70,6 +71,8 @@ include/gdalgrid.h
 include/gdalgrid_priv.h
 include/gdaljp2abstractdataset.h
 include/gdaljp2metadata.h
+include/gdaljp2metadatagenerator.h
+include/gdalsse_priv.h
 include/gdalwarper.h
 include/gdalwarpkernel_opencl.h
 include/gvgcpfit.h
@@ -111,6 +114,7 @@ share/gdal/gcs.csv
 share/gdal/gcs.override.csv
 share/gdal/gdal_datum.csv
 share/gdal/gdalicon.png
+share/gdal/gdalvrt.xsd
 share/gdal/geoccs.csv
 share/gdal/gml_registry.xml
 share/gdal/gt_datum.csv
