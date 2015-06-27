@@ -1,14 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:58 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/06/27 07:46:10 jasper Exp $
 @bin bin/ecppc
 @bin bin/ecppl
 @bin bin/ecppll
 @bin bin/tntnet
 bin/tntnet-config
 include/tnt/
+include/tnt/applicationunlocker.h
+include/tnt/backgroundworker.h
+include/tnt/cmd.h
 include/tnt/compident.h
 include/tnt/comploader.h
 include/tnt/component.h
 include/tnt/componentfactory.h
+include/tnt/configurator.h
 include/tnt/contentdisposition.h
 include/tnt/contenttype.h
 include/tnt/convert.h
@@ -26,10 +30,10 @@ include/tnt/httpmessage.h
 include/tnt/httpparser.h
 include/tnt/httpreply.h
 include/tnt/httprequest.h
-include/tnt/inflatestream.h
 include/tnt/job.h
 include/tnt/langlib.h
 include/tnt/maptarget.h
+include/tnt/mbcomponent.h
 include/tnt/messageattribute.h
 include/tnt/messageheader.h
 include/tnt/messageheaderparser.h
@@ -38,14 +42,16 @@ include/tnt/multipart.h
 include/tnt/object.h
 include/tnt/parser.h
 include/tnt/poller.h
+include/tnt/process.h
 include/tnt/query_params.h
-include/tnt/regex.h
 include/tnt/savepoint.h
 include/tnt/scope.h
 include/tnt/scopemanager.h
 include/tnt/sessionscope.h
-include/tnt/sodata.h
+include/tnt/sessionunlocker.h
+include/tnt/socketif.h
 include/tnt/stringlessignorecase.h
+include/tnt/threadcontext.h
 include/tnt/tntconfig.h
 include/tnt/tntnet.h
 include/tnt/unzipfile.h
@@ -56,9 +62,6 @@ include/tnt/zdata.h
 lib/libtntnet.a
 lib/libtntnet.la
 @lib lib/libtntnet.so.${LIBtntnet_VERSION}
-lib/libtntnet_cgi.a
-lib/libtntnet_cgi.la
-@lib lib/libtntnet_cgi.so.${LIBtntnet_cgi_VERSION}
 lib/libtntnet_sdk.a
 lib/libtntnet_sdk.la
 @lib lib/libtntnet_sdk.so.${LIBtntnet_sdk_VERSION}
@@ -66,6 +69,9 @@ lib/tntnet/
 lib/tntnet/alldemos.a
 lib/tntnet/alldemos.la
 lib/tntnet/alldemos.so.0.0
+lib/tntnet/backgroundjob.a
+lib/tntnet/backgroundjob.la
+lib/tntnet/backgroundjob.so.0.0
 lib/tntnet/calc.a
 lib/tntnet/calc.la
 lib/tntnet/calc.so.0.0
@@ -99,6 +105,9 @@ lib/tntnet/extlib.so.0.0
 lib/tntnet/hello.a
 lib/tntnet/hello.la
 lib/tntnet/hello.so.0.0
+lib/tntnet/message.a
+lib/tntnet/message.la
+lib/tntnet/message.so.0.0
 lib/tntnet/savepoint.a
 lib/tntnet/savepoint.la
 lib/tntnet/savepoint.so.0.0
@@ -113,7 +122,7 @@ lib/tntnet/strings.la
 lib/tntnet/strings.so.0.0
 lib/tntnet/tntnet.a
 lib/tntnet/tntnet.la
-lib/tntnet/tntnet.so.7.1
+lib/tntnet/tntnet.so.12.0
 lib/tntnet/upload.a
 lib/tntnet/upload.la
 lib/tntnet/upload.so.0.0
@@ -122,20 +131,16 @@ lib/tntnet/upload.so.0.0
 @man man/man1/ecppll.1
 @man man/man1/tntnet-config.1
 @man man/man7/ecpp.7
-@man man/man7/tntnet.conf.7
 @man man/man7/tntnet.properties.7
+@man man/man7/tntnet.xml.7
 @man man/man8/tntnet.8
 share/doc/tntnet/
-share/doc/tntnet/quick-start-guide.pdf
-share/doc/tntnet/tntnet-configuration.pdf
 share/doc/tntnet/tntnet.pdf
 share/examples/tntnet/
 @sample ${SYSCONFDIR}/tntnet/
-share/examples/tntnet/mime.conf
-@sample ${SYSCONFDIR}/tntnet/mime.conf
-share/examples/tntnet/tntnet.conf
-@sample ${SYSCONFDIR}/tntnet/tntnet.conf
-share/examples/tntnet/tntnet.properties
-@sample ${SYSCONFDIR}/tntnet/tntnet.properties
+share/examples/tntnet/tntnet/
+share/examples/tntnet/tntnet/tntnet.xml
+@sample ${SYSCONFDIR}/tntnet/tntnet.xml
 share/tntnet/
 share/tntnet/ecpp.vim
+share/tntnet/tntnet-conf2xml.pl

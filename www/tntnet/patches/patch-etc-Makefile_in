@@ -1,72 +1,18 @@
-$OpenBSD: patch-etc-Makefile_in,v 1.1.1.1 2007/06/26 21:03:17 jasper Exp $
---- etc/Makefile.in.orig	Mon May 28 17:39:29 2007
-+++ etc/Makefile.in	Tue May 29 16:05:49 2007
-@@ -192,12 +192,10 @@ target_cpu = @target_cpu@
- target_os = @target_os@
- target_vendor = @target_vendor@
+$OpenBSD: patch-etc-Makefile_in,v 1.2 2015/06/27 07:46:10 jasper Exp $
+--- etc/Makefile.in.orig	Fri Jun 26 22:03:48 2015
++++ etc/Makefile.in	Fri Jun 26 22:04:44 2015
+@@ -242,12 +242,10 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  nobase_dist_noinst_DATA = \
--    tntnet/tntnet.conf.in \
+-    tntnet/tntnet.xml.in \
 -    init.d/tntnet.in
-+    tntnet/tntnet.conf.in
++    tntnet/tntnet.xml.in
  
  nobase_sysconf_DATA = \
--    tntnet/tntnet.conf \
+-    tntnet/tntnet.xml \
 -    init.d/tntnet
-+    tntnet/tntnet.conf
++    tntnet/tntnet.xml
  
- nobase_dist_sysconf_DATA = \
-     tntnet/mime.conf
-@@ -249,14 +247,6 @@ distclean-libtool:
- uninstall-info-am:
- install-nobase_dist_sysconfDATA: $(nobase_dist_sysconf_DATA)
- 	@$(NORMAL_INSTALL)
--	test -z "$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
--	@$(am__vpath_adj_setup) \
--	list='$(nobase_dist_sysconf_DATA)'; for p in $$list; do \
--	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
--	  $(am__vpath_adj) \
--	  echo " $(nobase_dist_sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
--	  $(nobase_dist_sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
--	done
+ all: all-am
  
- uninstall-nobase_dist_sysconfDATA:
- 	@$(NORMAL_UNINSTALL)
-@@ -268,14 +258,6 @@ uninstall-nobase_dist_sysconfDATA:
- 	done
- install-nobase_nodist_sysconfDATA: $(nobase_nodist_sysconf_DATA)
- 	@$(NORMAL_INSTALL)
--	test -z "$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
--	@$(am__vpath_adj_setup) \
--	list='$(nobase_nodist_sysconf_DATA)'; for p in $$list; do \
--	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
--	  $(am__vpath_adj) \
--	  echo " $(nobase_nodist_sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
--	  $(nobase_nodist_sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
--	done
- 
- uninstall-nobase_nodist_sysconfDATA:
- 	@$(NORMAL_UNINSTALL)
-@@ -287,14 +269,6 @@ uninstall-nobase_nodist_sysconfDATA:
- 	done
- install-nobase_sysconfDATA: $(nobase_sysconf_DATA)
- 	@$(NORMAL_INSTALL)
--	test -z "$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
--	@$(am__vpath_adj_setup) \
--	list='$(nobase_sysconf_DATA)'; for p in $$list; do \
--	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
--	  $(am__vpath_adj) \
--	  echo " $(nobase_sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
--	  $(nobase_sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
--	done
- 
- uninstall-nobase_sysconfDATA:
- 	@$(NORMAL_UNINSTALL)
-@@ -312,7 +286,7 @@ CTAGS:
- 
- 
- distdir: $(DISTFILES)
--	$(mkdir_p) $(distdir)/init.d $(distdir)/tntnet
-+	$(mkdir_p) $(distdir)/tntnet
- 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
- 	topsrcdirstrip=`echo "$(top_srcdir)" | sed 's|.|.|g'`; \
- 	list='$(DISTFILES)'; for file in $$list; do \

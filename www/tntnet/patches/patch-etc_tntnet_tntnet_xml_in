@@ -1,0 +1,14 @@
+$OpenBSD: patch-etc_tntnet_tntnet_xml_in,v 1.1 2015/06/27 07:46:10 jasper Exp $
+--- etc/tntnet/tntnet.xml.in.orig	Fri Jun 26 23:28:41 2015
++++ etc/tntnet/tntnet.xml.in	Fri Jun 26 23:28:57 2015
+@@ -53,8 +53,8 @@
+   </listeners>
+ 
+   <daemon>1</daemon>
+-  <user>www-data</user>
+-  <group>www-data</group>
++  <user>www</user>
++  <group>www</group>
+   <pidFile>@localstatedir@/run/tntnet.pid</pidFile>
+   <documentRoot>/var/www</documentRoot>
+   <compPath>
