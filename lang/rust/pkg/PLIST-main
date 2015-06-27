@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2015/04/06 16:01:08 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2015/06/27 15:37:32 semarie Exp $
 bin/rustc
 @bin bin/rustdoc
 lib/rustlib/
@@ -6,35 +6,35 @@ lib/rustlib/${TRIPLE_ARCH}/
 lib/rustlib/${TRIPLE_ARCH}/bin/
 @bin lib/rustlib/${TRIPLE_ARCH}/bin/rustc
 lib/rustlib/${TRIPLE_ARCH}/lib/
-lib/rustlib/${TRIPLE_ARCH}/lib/liballoc-4e7c5e5c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libarena-4e7c5e5c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libarena-4e7c5e5c.so
-lib/rustlib/${TRIPLE_ARCH}/lib/libcollections-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/liballoc-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libarena-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libarena-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libcollections-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libcompiler-rt.a
-lib/rustlib/${TRIPLE_ARCH}/lib/libcore-4e7c5e5c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libflate-4e7c5e5c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libflate-4e7c5e5c.so
-lib/rustlib/${TRIPLE_ARCH}/lib/libgetopts-4e7c5e5c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libgetopts-4e7c5e5c.so
-lib/rustlib/${TRIPLE_ARCH}/lib/libgraphviz-4e7c5e5c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libgraphviz-4e7c5e5c.so
-lib/rustlib/${TRIPLE_ARCH}/lib/liblibc-4e7c5e5c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/liblog-4e7c5e5c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/liblog-4e7c5e5c.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libcore-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libflate-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libflate-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libgetopts-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libgetopts-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libgraphviz-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libgraphviz-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/liblibc-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/liblog-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/liblog-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/libmorestack.a
-lib/rustlib/${TRIPLE_ARCH}/lib/librand-4e7c5e5c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/librbml-4e7c5e5c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/librbml-4e7c5e5c.so
-lib/rustlib/${TRIPLE_ARCH}/lib/librustc_bitflags-4e7c5e5c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libserialize-4e7c5e5c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libserialize-4e7c5e5c.so
-lib/rustlib/${TRIPLE_ARCH}/lib/libstd-4e7c5e5c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libstd-4e7c5e5c.so
-lib/rustlib/${TRIPLE_ARCH}/lib/libterm-4e7c5e5c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libterm-4e7c5e5c.so
-lib/rustlib/${TRIPLE_ARCH}/lib/libtest-4e7c5e5c.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libtest-4e7c5e5c.so
-lib/rustlib/${TRIPLE_ARCH}/lib/libunicode-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/librand-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/librbml-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/librbml-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_bitflags-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_unicode-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libserialize-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libserialize-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libterm-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libterm-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${RUST_HASH}.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${RUST_HASH}.so
 @man man/man1/rustc.1
 @man man/man1/rustdoc.1
 share/doc/rust/

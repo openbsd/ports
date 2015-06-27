@@ -1,9 +1,12 @@
-$OpenBSD: patch-configure,v 1.1 2015/04/10 18:13:06 naddy Exp $
+$OpenBSD: patch-configure,v 1.2 2015/06/27 15:37:32 semarie Exp $
 Remove requirement for curl or wget.
 The snapshot isn't downloaded but copied by post-configure.
---- configure.orig     Fri Apr 10 18:59:58 2015
-+++ configure  Fri Apr 10 19:26:19 2015
-@@ -643,7 +643,7 @@ putvar CFG_BOOTSTRAP_KEY
+
+Switch hash command stripping from head -c to cut -c
+https://github.com/rust-lang/rust/pull/25648
+--- configure.orig	Sun May 17 00:07:32 2015
++++ configure	Sun May 24 09:14:46 2015
+@@ -692,7 +692,7 @@ putvar CFG_BOOTSTRAP_KEY
  
  step_msg "looking for build programs"
  
@@ -12,3 +15,16 @@ The snapshot isn't downloaded but copied by post-configure.
  probe_need CFG_PYTHON      python2.7 python2.6 python2 python
  
  python_version=$($CFG_PYTHON -V 2>&1)
+@@ -716,10 +716,10 @@ probe CFG_MD5              md5
+ probe CFG_MD5SUM           md5sum
+ if [ -n "$CFG_MD5" ]
+ then
+-    CFG_HASH_COMMAND="$CFG_MD5 -q | head -c 8"
++    CFG_HASH_COMMAND="$CFG_MD5 -q | cut -c 1-8"
+ elif [ -n "$CFG_MD5SUM" ]
+ then
+-    CFG_HASH_COMMAND="$CFG_MD5SUM | head -c 8"
++    CFG_HASH_COMMAND="$CFG_MD5SUM | cut -c 1-8"
+ else
+     err 'could not find one of: md5 md5sum'
+ fi

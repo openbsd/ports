@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/28 10:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/06/27 15:37:32 semarie Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -7,19 +7,20 @@ PKG_ARCH-doc =		*
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.0.0
+V =			1.1.0
+RUST_HASH =		7d23ff90
 DISTNAME =		rustc-${V}-src
+
+SUBST_VARS +=		RUST_HASH
 
 PKGNAME =		rust-${V}
 PKGNAME-main =		rust-${V}
 PKGNAME-doc =		rust-doc-${V}
-REVISION-doc =		0
-REVISION-main =		1
 
 MULTI_PACKAGES =	-main -doc
 
 # the snapshot version should be the version in src/snapshots.txt
-SNAPSHOT-amd64 =	rust-stage0-2015-03-27-5520801-openbsd-x86_64-9844cc1a6203336e717ef422709ff413b625b450.tar.bz2
+SNAPSHOT-amd64 =	rust-stage0-2015-04-27-857ef6e-openbsd-x86_64-20046defe7d1f3f37e25b5b2714cd54e61cabc61.tar.bz2
 
 CATEGORIES =		lang
 
@@ -119,6 +120,7 @@ post-configure:
 	CFG_GDB_VERSION CFG_ADB
 	perl -pi -e 's/^${_v} .*/${_v} := /' ${WRKBUILD}/config.mk
 .endfor
+	rm -rf ${WRKDIR}/modgcc-libs
 	mkdir ${WRKDIR}/modgcc-libs
 	cp ${LOCALBASE}/lib/libestdc++.so.${LIBESTDC_VERSION} ${WRKDIR}/modgcc-libs
 	cp ${WRKDIR}/rust-stage0/bin/rustc \
