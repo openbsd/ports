@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2015/06/12 08:09:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2015/06/27 11:00:15 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.0.69
+DISTNAME=	cups-filters-1.0.70
 CATEGORIES=	print
 
 SHARED_LIBS +=  cupsfilters          1.0      # 1.0
@@ -62,8 +62,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-test-font-path=${X11BASE}/lib/X11/fonts/TTF/DejaVuSans.ttf \
 		--with-gs-path=${LOCALBASE}/bin/gs \
+		--with-test-font-path=${X11BASE}/lib/X11/fonts/TTF/DejaVuSans.ttf \
+		--with-shell=/bin/ksh \
 		--without-php
 
 # prefer pdftops over gs -- see README under ${WRKSRC}
