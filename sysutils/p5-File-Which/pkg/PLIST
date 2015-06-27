@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/04 05:49:39 jasper Exp $
-bin/pwhich
+@comment $OpenBSD: PLIST,v 1.2 2015/06/27 13:42:13 jasper Exp $
 ${P5SITE}/File/
 ${P5SITE}/File/Which.pm
-@man man/man1/pwhich.1
 @man man/man3p/File::Which.3p
