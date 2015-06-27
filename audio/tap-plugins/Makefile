@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/06/27 11:28:03 jasper Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		TAP LADSPA plugins
 
-DISTNAME =		tap-plugins-0.7.1
-REVISION =		0
+DISTNAME =		tap-plugins-0.7.3
 CATEGORIES =		audio
 
 HOMEPAGE =		http://tap-plugins.sourceforge.net/
@@ -16,6 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		m
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tap-plugins/}
+
+USE_GMAKE =		Yes
 
 MAKE_FLAGS =		CC="${CC}" \
 			CFLAGS="-I. ${CFLAGS} -c -fPIC -DPIC" \
