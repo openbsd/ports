@@ -1,0 +1,46 @@
+$OpenBSD: patch-plugins_input_ogr_ogr_datasource_cpp,v 1.1 2015/06/27 06:56:57 landry Exp $
+
+Handle GDAL 2.0 API changes
+https://github.com/mapnik/mapnik/commit/dcbedc007a3583f3b6c1f3e3658ee6713e015908
+--- plugins/input/ogr/ogr_datasource.cpp.orig	Fri Jun 26 21:45:40 2015
++++ plugins/input/ogr/ogr_datasource.cpp	Sat Jun 27 08:02:10 2015
+@@ -72,7 +72,11 @@ ogr_datasource::~ogr_datasource()
+ {
+     // free layer before destroying the datasource
+     layer_.free_layer();
++#if GDAL_VERSION_NUM >= 2000
++    GDALClose(( GDALDatasetH) dataset_);
++#else
+     OGRDataSource::DestroyDataSource (dataset_);
++#endif
+ }
+ 
+ void ogr_datasource::init(mapnik::parameters const& params)
+@@ -112,17 +116,26 @@ void ogr_datasource::init(mapnik::parameters const& pa
+ 
+     if (! driver.empty())
+     {
++#if GDAL_VERSION_MAJOR >= 2
++        unsigned int nOpenFlags = GDAL_OF_READONLY | GDAL_OF_VECTOR;
++        const char* papszAllowedDrivers[] = { driver.c_str(), NULL };
++        dataset_ = reinterpret_cast<OGRDataSource*>(GDALOpenEx(dataset_name_.c_str(),nOpenFlags,papszAllowedDrivers, NULL,NULL));
++#else
+         OGRSFDriver * ogr_driver = OGRSFDriverRegistrar::GetRegistrar()->GetDriverByName(driver.c_str());
+         if (ogr_driver && ogr_driver != NULL)
+         {
+             dataset_ = ogr_driver->Open((dataset_name_).c_str(), FALSE);
+         }
+-
++#endif
+     }
+     else
+     {
+         // open ogr driver
++#if GDAL_VERSION_MAJOR >= 2
++        dataset_ = reinterpret_cast<OGRDataSource*>(OGROpen(dataset_name_.c_str(), FALSE, NULL));
++#else
+         dataset_ = OGRSFDriverRegistrar::Open((dataset_name_).c_str(), FALSE);
++#endif
+     }
+ 
+     if (! dataset_)
