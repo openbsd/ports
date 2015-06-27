@@ -7,5 +7,3 @@ in your .xsession:
 export XDISPLAY=`mxconns -fork -hunt -verbose -icf "c" -debug "al"`
 later...
 DISPLAY=$XDISPLAY ssh -f <untrusted host> xterm
-
-for more info, read the man page.
