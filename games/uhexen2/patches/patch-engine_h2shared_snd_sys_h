@@ -1,0 +1,12 @@
+$OpenBSD: patch-engine_h2shared_snd_sys_h,v 1.1 2015/06/27 10:10:23 ratchov Exp $
+--- engine/h2shared/snd_sys.h.orig	Fri Jun 26 18:28:28 2015
++++ engine/h2shared/snd_sys.h	Fri Jun 26 18:28:51 2015
+@@ -47,7 +47,7 @@
+ #if defined(NO_SUN_AUDIO)
+ #define HAVE_SUN_SOUND	0
+ /* add more systems with SUN audio here */
+-#elif defined(__OpenBSD__) || defined(__NetBSD__) || defined(__sun) || defined(sun)
++#elif defined(__NetBSD__) || defined(__sun) || defined(sun)
+ #define HAVE_SUN_SOUND	1
+ #else
+ #define HAVE_SUN_SOUND	0

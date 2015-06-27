@@ -1,0 +1,12 @@
+$OpenBSD: patch-launcher_launcher_defs_h,v 1.1 2015/06/27 10:10:23 ratchov Exp $
+--- launcher/launcher_defs.h.orig	Fri Jun 26 18:29:39 2015
++++ launcher/launcher_defs.h	Fri Jun 26 18:29:53 2015
+@@ -76,7 +76,7 @@
+ #else
+ #define	HAVE_OSS_SOUND	0
+ #endif
+-#if defined(__OpenBSD__) || defined(__NetBSD__) || defined(__sun) || defined(sun)
++#if defined(__NetBSD__) || defined(__sun) || defined(sun)
+ #define	HAVE_SUN_SOUND	1
+ #else
+ #define	HAVE_SUN_SOUND	0

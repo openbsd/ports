@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/06/17 23:57:29 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2015/06/27 10:10:23 ratchov Exp $
 
 COMMENT =		Hexen II: Hammer of Thyrion
 
@@ -6,7 +6,7 @@ V =			1.5.6
 DISTNAME =		hexen2source-${V}
 PKGNAME =		uhexen2-${V}
 EXTRACT_SUFX =		.tgz
-REVISION =		1
+REVISION =		2
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			hexen2-${V}-linux-i586.tgz
 
