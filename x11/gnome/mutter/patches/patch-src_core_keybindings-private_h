@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_core_keybindings-private_h,v 1.1 2015/04/13 08:14:07 jasper Exp $
+$OpenBSD: patch-src_core_keybindings-private_h,v 1.2 2015/06/27 12:21:48 jasper Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=747326
+From 3fe281ada9c1fa8bf62c624df3028345c9f06c48 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Mon, 13 Apr 2015 10:11:23 +0200
+Subject: Prevent redefinition of MetaKeyCombo
 
 --- src/core/keybindings-private.h.orig	Mon Mar 23 18:47:23 2015
 +++ src/core/keybindings-private.h	Mon Apr 13 10:06:35 2015
