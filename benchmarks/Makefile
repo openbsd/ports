@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/06/21 20:20:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2015/06/27 11:40:00 jasper Exp $
 
      SUBDIR =
      SUBDIR += blogbench
@@ -12,7 +12,6 @@
      SUBDIR += netperf-wrapper
      SUBDIR += netpipe
      SUBDIR += netstrain
-     SUBDIR += pear-Benchmark
      SUBDIR += randread
      SUBDIR += siege
      SUBDIR += smtp-benchmark
