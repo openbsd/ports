@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/12/28 09:09:55 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/06/27 14:46:30 benoit Exp $
 ${P5SITE}/URI/
 ${P5SITE}/URI.pm
 ${P5SITE}/URI/Escape.pm
@@ -44,6 +44,7 @@ ${P5SITE}/URI/rlogin.pm
 ${P5SITE}/URI/rsync.pm
 ${P5SITE}/URI/rtsp.pm
 ${P5SITE}/URI/rtspu.pm
+${P5SITE}/URI/sftp.pm
 ${P5SITE}/URI/sip.pm
 ${P5SITE}/URI/sips.pm
 ${P5SITE}/URI/snews.pm
