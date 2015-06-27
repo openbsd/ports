@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/26 07:33:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/06/27 12:17:59 jasper Exp $
 
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 BROKEN-hppa =	error: No native atomic implementation found.
@@ -13,6 +13,8 @@ EPOCH=		0
 PKGSPEC=	erlang->=18v0,<19v0
 
 WANTLIB=	c crypto kvm m ncurses pthread util
+
+BUILD_DEPENDS+=	textproc/libxslt
 
 CONFIGURE_ARGS=	--without-jinterface	\
 		--without-odbc		\
