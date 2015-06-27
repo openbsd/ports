@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1360 2015/06/26 07:40:03 landry Exp $
+# $OpenBSD: Makefile,v 1.1361 2015/06/27 11:37:34 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1174,7 +1174,6 @@
      SUBDIR += pear-Date
      SUBDIR += pear-Date-Holidays
      SUBDIR += pear-Log
-     SUBDIR += pear-PHPUnit2
      SUBDIR += pear-System-Command
      SUBDIR += pear-Validate
      SUBDIR += pep8
