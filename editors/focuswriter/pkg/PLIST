@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/04/06 13:40:50 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/06/27 13:37:27 jasper Exp $
 @bin bin/focuswriter
 @man man/man1/focuswriter.1
 share/appdata/
@@ -129,6 +129,7 @@ share/focuswriter/translations/focuswriter_de.qm
 share/focuswriter/translations/focuswriter_el.qm
 share/focuswriter/translations/focuswriter_en.qm
 share/focuswriter/translations/focuswriter_en_GB.qm
+share/focuswriter/translations/focuswriter_eo.qm
 share/focuswriter/translations/focuswriter_es.qm
 share/focuswriter/translations/focuswriter_es_MX.qm
 share/focuswriter/translations/focuswriter_fi.qm
@@ -140,6 +141,7 @@ share/focuswriter/translations/focuswriter_id.qm
 share/focuswriter/translations/focuswriter_it.qm
 share/focuswriter/translations/focuswriter_ja.qm
 share/focuswriter/translations/focuswriter_ko.qm
+share/focuswriter/translations/focuswriter_lt.qm
 share/focuswriter/translations/focuswriter_nl.qm
 share/focuswriter/translations/focuswriter_pl.qm
 share/focuswriter/translations/focuswriter_pt.qm
