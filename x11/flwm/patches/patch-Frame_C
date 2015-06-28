@@ -1,0 +1,71 @@
+$OpenBSD: patch-Frame_C,v 1.1 2015/06/28 13:36:09 bcallah Exp $
+
+http://sourceforge.net/p/flwm/flwm/ci/3938480dc18b56a2eaf3cb9302b6ebfe6cb3064e/tree/Frame.C?diff=11e88c7fc9d5a2817425528742a425f85e7aa0a0
+plus the removal of two pointers that don't exist in fltk-1.3.3
+
+--- Frame.C.orig	Sat Jun 27 19:04:40 2015
++++ Frame.C	Sat Jun 27 19:08:51 2015
+@@ -6,9 +6,7 @@
+ #include <string.h>
+ #include <stdio.h>
+ #include <FL/fl_draw.H>
+-#include "Rotated.H"
+ 
+-
+ static Atom wm_state = 0;
+ static Atom wm_change_state;
+ static Atom wm_protocols;
+@@ -438,11 +436,6 @@ int Frame::force_y_onscreen(int Y, int H) {
+ // The destructor is called on DestroyNotify, so I don't have to do anything
+ // to the contained window, which is already been destroyed.
+ 
+-// fltk bug: it does not clear these pointers when window is deleted,
+-// causing flwm to crash on window close sometimes:
+-extern Fl_Window *fl_xfocus;
+-extern Fl_Window *fl_xmousewin;
+-
+ Frame::~Frame() {
+ 
+   // It is possible for the frame to be destroyed while the menu is
+@@ -455,8 +448,6 @@ Frame::~Frame() {
+ 
+ #if FL_MAJOR_VERSION < 2
+   // fix fltk bug:
+-  fl_xfocus = 0;
+-  fl_xmousewin = 0;
+   Fl::focus_ = 0;
+ #endif
+ 
+@@ -1262,6 +1253,7 @@ void Frame::draw() {
+ # endif
+ #endif
+     if (!flag(THIN_BORDER) && label_h > 3) {
++      fl_push_clip(1, label_y, left, label_h);
+ #ifdef SHOW_CLOCK
+       if (active()) {
+ 	  int clkw = int(fl_width(clock_buf));
+@@ -1280,8 +1272,9 @@ void Frame::draw() {
+ 	  // and the window height is short enough.  For now, we'll
+ 	  // assume this is not enough of a problem to be concerned
+ 	  // about.
+-	  draw_rotated90(clock_buf, 1, label_y+3, left-1, label_h-6,
+-			 Fl_Align(FL_ALIGN_BOTTOM|FL_ALIGN_CLIP));
++	  fl_draw(90, clock_buf,
++	          (left + fl_height() + 1)/2 - fl_descent(),
++	          label_y+label_h-3);
+       } else
+ 	  // Only show the clock on the active frame.
+ 	  XClearArea(fl_display, fl_xid(this), 1, label_y+3,
+@@ -1289,8 +1282,10 @@ void Frame::draw() {
+ #endif      
+       fl_color(labelcolor());
+       fl_font(TITLE_FONT_SLOT, TITLE_FONT_SIZE);
+-      draw_rotated90(label(), 1, label_y+3, left-1, label_h-3,
+-		     Fl_Align(FL_ALIGN_TOP|FL_ALIGN_CLIP));
++      fl_draw(90, label(),
++	      (left + fl_height() + 1)/2 - fl_descent(),
++	      label_y+3+fl_width(label()));
++      fl_pop_clip();
+     }
+   }
+ }
