@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2015/06/25 14:43:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2015/06/28 19:24:13 ajacoutot Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -48,6 +48,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-openssl \
 		--with-tdsver=7.3
+
+# picks up com_err.h from e2fsprogs for gssapi support
+CONFIGURE_ENV+=	ac_cv_header_com_err_h=no
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/freetds
 
