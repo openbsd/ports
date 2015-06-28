@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2012/11/12 13:36:55 sthen Exp $
---- configure.ac.orig	Thu May  3 05:35:11 2012
-+++ configure.ac	Fri Oct 12 16:06:31 2012
-@@ -590,29 +590,25 @@ if test "X$LIBGCRYPT_CONFIG" = "X"; then
-   AC_CHECK_PROGS(LIBGCRYPT_CONFIG, libgcrypt-config)
+$OpenBSD: patch-configure_ac,v 1.2 2015/06/28 05:46:12 ajacoutot Exp $
+--- configure.ac.orig	Sun Nov 23 23:11:33 2014
++++ configure.ac	Fri Jun 26 16:25:57 2015
+@@ -618,26 +618,26 @@ if test "X$libgcrypt_config" != "Xno" ; then
+   fi
  fi
  
 -AC_CHECK_HEADERS(gcrypt.h)
@@ -17,13 +17,9 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2012/11/12 13:36:55 sthen Exp $
    oLIBS="$LIBS"
    CPPFLAGS="$CPPFLAGS `$LIBGCRYPT_CONFIG --cflags`"
    LIBS="$LIBS `$LIBGCRYPT_CONFIG --libs`"
--
--  AC_TRY_LINK([
--  #include <gcrypt.h>],
--  [ gcry_md_hd_t hash; gcry_md_open(hash, GCRY_MD_MD5, 0); ],
--    have_digest_gcrypt=yes,
--    have_digest_gcrypt=no)
--
+ 
+-  AC_LINK_IFELSE([AC_LANG_PROGRAM([[
+-  #include <gcrypt.h>]], [[ gcry_md_hd_t hash; gcry_md_open(hash, GCRY_MD_MD5, 0); ]])],[have_digest_gcrypt=yes],[have_digest_gcrypt=no])
 +  AC_CHECK_HEADERS(gcrypt.h)
 +  if test "$ac_cv_header_gcrypt_h" = "yes"; then
 +    AC_TRY_LINK([
@@ -32,12 +28,12 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2012/11/12 13:36:55 sthen Exp $
 +      have_digest_gcrypt=yes,
 +      have_digest_gcrypt=no)
 +  fi
-   CPPFLAGS="$LIBRDF_CPPFLAGS"
+ 
+   CPPFLAGS="$oCPPFLAGS"
    LIBS="$oLIBS"
 -else
 -  have_digest_gcrypt=no
  fi
-+
 +AC_MSG_CHECKING(for gcrypt)
  AC_MSG_RESULT($have_digest_gcrypt)
  
