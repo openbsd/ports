@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.720 2015/06/26 14:01:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.721 2015/06/28 06:50:56 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -366,9 +366,7 @@
      SUBDIR += p5-libwww
      SUBDIR += p5-pQuery
      SUBDIR += pear
-     SUBDIR += pear-HTML-Common2
      SUBDIR += pear-HTML-Page2
-     SUBDIR += pear-HTML-QuickForm
      SUBDIR += pear-HTML-Select
      SUBDIR += pear-HTML-Template-IT
      SUBDIR += pear-HTTP-WebDAV-Server
