@@ -1,4 +1,9 @@
-$OpenBSD: patch-libzeitgeist_Makefile_in,v 1.4 2014/03/09 22:31:54 ajacoutot Exp $
+$OpenBSD: patch-libzeitgeist_Makefile_in,v 1.5 2015/06/28 05:47:35 ajacoutot Exp $
+
+From 99f196775b0f685e912bd0dc615c2e10d9a927c7 Mon Sep 17 00:00:00 2001
+From: Ting-Wei Lan <lantw@src.gnome.org>
+Date: Tue, 3 Feb 2015 03:23:40 +0800
+Subject: Add -fPIC to libzeitgeist-internal.la and libzeitgeist_datamodel-2.0.la
 
 From 74387d7e1eab84323ca4615caa955bdb5bbe7170 Mon Sep 17 00:00:00 2001
 From: Seif Lotfy <seif@lotfy.com>
@@ -6,8 +11,24 @@ Date: Mon, 27 Jan 2014 21:45:42 +0000
 Subject: Replace \+ with \{1,\)
 
 --- libzeitgeist/Makefile.in.orig	Tue Jun 18 04:43:44 2013
-+++ libzeitgeist/Makefile.in	Tue Sep 10 15:51:09 2013
-@@ -518,7 +518,7 @@ MAINTAINERCLEANFILES = 
++++ libzeitgeist/Makefile.in	Sun Jun 28 07:42:24 2015
+@@ -414,6 +414,7 @@ libzeitgeist_internal_la_VALAFLAGS = \
+ 	-H zeitgeist-internal.h \
+ 	$(NULL)
+ 
++libzeitgeist_internal_la_CFLAGS = -fPIC
+ libzeitgeist_internal_la_LIBADD = $(ZEITGEIST_LIBS)
+ libzeitgeist_internal_la_LDFLAGS = -avoid-version -non_shared -static
+ libzeitgeist_datamodel_2_0_la_VALAFLAGS = \
+@@ -422,6 +423,7 @@ libzeitgeist_datamodel_2_0_la_VALAFLAGS = \
+ 	--library zeitgeist-2.0 \
+ 	$(NULL)
+ 
++libzeitgeist_datamodel_2_0_la_CFLAGS = -fPIC
+ libzeitgeist_datamodel_2_0_la_LIBADD = $(ZEITGEIST_LIBS)
+ libzeitgeist_datamodel_2_0_la_LDFLAGS = -avoid-version -non_shared -static
+ libzeitgeist_2_0_la_VALAFLAGS = \
+@@ -518,7 +520,7 @@ MAINTAINERCLEANFILES = 
  # We have to extract our own dlname from libzeitgeist-2.0.la; see bgo#658002.
  # This is what g-ir-scanner does.
  libzeitgeist_dlname = \
