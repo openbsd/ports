@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-data,v 1.3 2015/04/11 12:49:30 jsg Exp $
+@comment $OpenBSD: PLIST-data,v 1.4 2015/06/28 03:47:09 jsg Exp $
 share/redeclipse/
 share/redeclipse/config/
 share/redeclipse/config/brush.cfg
@@ -1298,10 +1298,10 @@ share/redeclipse/data/models/luckystrike/door2/norm.png
 share/redeclipse/data/models/luckystrike/door2/open.md5anim
 share/redeclipse/data/models/luckystrike/door2/skin.png
 share/redeclipse/data/models/luckystrike/fan01/
+share/redeclipse/data/models/luckystrike/fan01/fan.obj
 share/redeclipse/data/models/luckystrike/fan01/mask.jpg
-share/redeclipse/data/models/luckystrike/fan01/md5.cfg
-share/redeclipse/data/models/luckystrike/fan01/mesh.md5mesh
 share/redeclipse/data/models/luckystrike/fan01/norm.jpg
+share/redeclipse/data/models/luckystrike/fan01/obj.cfg
 share/redeclipse/data/models/luckystrike/fan01/skin.png
 share/redeclipse/data/models/luckystrike/jumpad/
 share/redeclipse/data/models/luckystrike/jumpad/mask.png

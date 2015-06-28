@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2015/06/05 12:20:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2015/06/28 03:47:09 jsg Exp $
 bin/redeclipse
 bin/redeclipse-server
 lib/redeclipse/
@@ -8,6 +8,8 @@ lib/redeclipse/data
 @bin lib/redeclipse/redeclipse-server
 @man man/man6/redeclipse-server.6
 @man man/man6/redeclipse.6
+share/appdata/
+share/appdata/redeclipse.appdata.xml
 share/applications/redeclipse.desktop
 share/doc/redeclipse/
 share/doc/redeclipse/guidelines.txt
