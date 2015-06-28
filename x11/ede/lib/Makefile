@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/04 09:21:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/06/28 13:34:54 bcallah Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		equinox desktop library
 
 DISTNAME =		edelib-${V}
-REVISION =		0
+REVISION =		1
 
 API_VER =		1.0
 .for l in edelib edelib_dbus edelib_gui
