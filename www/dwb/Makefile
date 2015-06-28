@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/01 06:42:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/06/28 12:31:53 czarkoff Exp $
 
 COMMENT =	lightweight webkit-based browser with vi-like controls
 
 DISTNAME =	dwb-2014.03.07
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	www
 

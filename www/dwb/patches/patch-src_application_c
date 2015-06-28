@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_application_c,v 1.1 2015/06/28 12:31:53 czarkoff Exp $
+--- src/application.c.orig	Fri Mar  7 12:39:43 2014
++++ src/application.c	Sun Jun 28 11:17:01 2015
+@@ -227,6 +227,12 @@ dwb_application_local_command_line(GApplication *app, 
+     single_instance = GET_BOOL("single-instance");
+     if (s_opt_single || !single_instance) 
+         g_application_set_flags(app, G_APPLICATION_NON_UNIQUE);
++#if GLIB_CHECK_VERSION(2, 40, 0)
++	else {
++		int flags = g_application_get_flags(app);
++		g_application_set_flags(app, flags | G_APPLICATION_HANDLES_COMMAND_LINE);
++	}
++#endif
+ 
+     bus = g_bus_get_sync(G_BUS_TYPE_SESSION, NULL, NULL);
+     if (!s_opt_fallback && bus != NULL && g_application_register(app, NULL, &error)) 
