@@ -1,0 +1,14 @@
+$OpenBSD: patch-FL_x_H,v 1.1 2015/06/28 13:33:07 bcallah Exp $
+
+https://github.com/IngwiePhoenix/FLTK/commit/283b909dad09048535cec8e3d69d77fa498382bf
+
+--- FL/x.H.orig	Sun Jun 28 00:05:15 2015
++++ FL/x.H	Sun Jun 28 00:06:22 2015
+@@ -132,6 +132,7 @@ class Fl_XFont_On_Demand (private)
+   XFontStruct *ptr;
+ };
+ extern FL_EXPORT Fl_XFont_On_Demand fl_xfont;
++extern FL_EXPORT XFontStruct* fl_X_core_font();
+ 
+ // this object contains all X-specific stuff about a window:
+ // Warning: this object is highly subject to change!  

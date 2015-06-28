@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_fl_font_cxx,v 1.1 2015/06/28 13:33:07 bcallah Exp $
+
+https://github.com/IngwiePhoenix/FLTK/commit/283b909dad09048535cec8e3d69d77fa498382bf
+
+--- src/fl_font.cxx.orig	Sun Jun 28 00:06:33 2015
++++ src/fl_font.cxx	Sun Jun 28 00:07:38 2015
+@@ -55,6 +55,12 @@
+ #  include "fl_font_x.cxx"
+ #endif // WIN32
+ 
++#if ! (defined(WIN32) || defined(__APPLE__))
++XFontStruct *fl_X_core_font()
++{
++  return fl_xfont.value();
++}
++#endif
+ 
+ double fl_width(const char* c) {
+   if (c) return fl_width(c, (int) strlen(c));
