@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/22 07:57:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/06/28 22:52:21 bcallah Exp $
 
-MODPY_EGG_VERSION =	0.3.72
+MODPY_EGG_VERSION =	0.3.74
 COMMENT =	download YouTube content and retrieve metadata
-DISTNAME =	Pafy-${MODPY_EGG_VERSION}
+DISTNAME =	pafy-${MODPY_EGG_VERSION}
 PKGNAME =	py-pafy-${MODPY_EGG_VERSION}
 CATEGORIES =	multimedia
 
@@ -16,5 +16,8 @@ MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI =	Yes
 MODPY_PI_DIR =	p/pafy
+
+pre-configure:
+	perl -pi -e "s,xprint\(xenc,print(xenc,g" ${WRKSRC}/scripts/ytdl
 
 .include <bsd.port.mk>
