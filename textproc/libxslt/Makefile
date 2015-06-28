@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2015/06/12 13:47:45 nigel Exp $
+# $OpenBSD: Makefile,v 1.80 2015/06/28 14:06:38 ajacoutot Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
@@ -7,10 +7,11 @@ VERSION=		1.1.28
 DISTNAME=		libxslt-${VERSION}
 PKGNAME-main=		libxslt-${VERSION}
 PKGNAME-python= 	py-libxslt-${VERSION}
-SHARED_LIBS=		exslt	9.8 \
-			xslt	3.8
-REVISION-main =		1
+REVISION-main =		2
 REVISION-python =	0
+
+SHARED_LIBS +=  xslt                 3.8      # 2.28
+SHARED_LIBS +=  exslt                9.8      # 8.17
 
 CATEGORIES=		textproc
 
@@ -32,9 +33,9 @@ FLAVOR?=
 MULTI_PACKAGES=		-main -python
 NOT_FOR_ARCHS-python = 	${NO_SHARED_ARCHS}
 
-WANTLIB-main=		${WANTLIB} c xml2>=9 gcrypt>=12 pthread
+WANTLIB-main=		${WANTLIB} c xml2 gcrypt pthread
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
-			textproc/libxml>=2.6.27 \
+			textproc/libxml \
 			security/libgcrypt
 # non shared archs won't inherit it from libgcrypt
 LIB_DEPENDS-main +=	security/libgpg-error
@@ -59,11 +60,16 @@ LIB_DEPENDS-python=	textproc/libxslt,-main \
 			${MODGETTEXT_LIB_DEPENDS}
 FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxslt/
 CONFIGURE_ARGS+=	--with-python
-
-post-install:
-	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{la,a}
 .else
 CONFIGURE_ARGS+=	--without-python
+.endif
+
+post-install:
+# empty file
+	rm ${PREFIX}/share/doc/libxslt-python-1.1.28/TODO
+	rmdir ${PREFIX}/share/doc/libxslt-python-1.1.28
+.if ${BUILD_PACKAGES:M-python}
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{la,a}
 .endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,20 @@
+$OpenBSD: patch-xsltproc_xsltproc_c,v 1.1 2015/06/28 14:06:38 ajacoutot Exp $
+
+From 5af7ad745323004984287e48b42712e7305de35c Mon Sep 17 00:00:00 2001
+From: Per Hedeland <per@hedeland.org>
+Date: Fri, 13 Dec 2013 14:43:06 +0100
+Subject: Make --maxvars option work
+
+--- xsltproc/xsltproc.c.orig	Tue Sep  4 16:26:23 2012
++++ xsltproc/xsltproc.c	Sun Jun 28 15:53:34 2015
+@@ -782,6 +782,10 @@ main(int argc, char **argv)
+             (!strcmp(argv[i], "--maxdepth"))) {
+             i++;
+             continue;
++        } else if ((!strcmp(argv[i], "-maxvars")) ||
++            (!strcmp(argv[i], "--maxvars"))) {
++            i++;
++            continue;
+         } else if ((!strcmp(argv[i], "-maxparserdepth")) ||
+             (!strcmp(argv[i], "--maxparserdepth"))) {
+             i++;
