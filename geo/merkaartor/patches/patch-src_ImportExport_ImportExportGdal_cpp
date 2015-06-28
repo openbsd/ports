@@ -1,18 +1,27 @@
-$OpenBSD: patch-src_ImportExport_ImportExportGdal_cpp,v 1.1 2015/06/27 06:59:01 landry Exp $
+$OpenBSD: patch-src_ImportExport_ImportExportGdal_cpp,v 1.2 2015/06/28 16:13:21 landry Exp $
 
 Adapt for GDAL 2.0 API.
 
---- src/ImportExport/ImportExportGdal.cpp.orig	Sat Jun 27 08:15:15 2015
-+++ src/ImportExport/ImportExportGdal.cpp	Sat Jun 27 08:22:01 2015
+--- src/ImportExport/ImportExportGdal.cpp.orig	Mon Jun 11 17:01:23 2012
++++ src/ImportExport/ImportExportGdal.cpp	Sun Jun 28 18:12:10 2015
 @@ -58,7 +58,7 @@ bool ImportExportGdal::export_(const QList<Feature *>&
  
      OGRRegisterAll();
  
 -    poDriver = OGRSFDriverRegistrar::GetRegistrar()->GetDriverByName(pszDriverName);
-+    poDriver = GetGDALDriverManager()->GetDriverByName(pszDriverName);
++    poDriver = reinterpret_cast<OGRSFDriver*> (GetGDALDriverManager()->GetDriverByName(pszDriverName));
      if( poDriver == NULL )
      {
          qDebug( "%s driver not available.", pszDriverName );
+@@ -141,7 +141,7 @@ bool ImportExportGdal::export_(const QList<Feature *>&
+         }
+         OGRFeature::DestroyFeature( poFeature );
+     }
+-    OGRDataSource::DestroyDataSource( poDS );
++    GDALClose((GDALDatasetH) poDS);
+     return true;
+ }
+ 
 @@ -424,7 +424,7 @@ bool ImportExportGdal::import(Layer* aLayer)
  
      OGRDataSource       *poDS;
