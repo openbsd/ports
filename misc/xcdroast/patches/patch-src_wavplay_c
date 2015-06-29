@@ -1,0 +1,128 @@
+$OpenBSD: patch-src_wavplay_c,v 1.1 2015/06/29 22:19:22 ratchov Exp $
+--- src/wavplay.c.orig	Wed Aug 20 17:34:02 2008
++++ src/wavplay.c	Fri Jun 26 19:47:07 2015
+@@ -31,7 +31,10 @@
+ # include <sys/soundcard.h>
+ # include <sys/ioctl.h>
+ #endif
+-#if defined(sun) || defined(__OpenBSD__)
++#if defined(__OpenBSD__)
++# include <sndio.h>
++#endif
++#if defined(sun)
+ # include <sys/ioctl.h>
+ # include <sys/audioio.h>
+ #endif
+@@ -74,6 +77,8 @@ off_t is_std_wav_file(int f, off_t *offset);
+ 
+ #if defined(linux) || defined(__FreeBSD__)
+ #define DEFAULT_AUDIO_DEVICE "/dev/dsp"
++#elif defined(__OpenBSD__)
++#define DEFAULT_AUDIO_DEVICE SIO_DEVANY
+ #elif defined (aix)
+ #define DEFAULT_AUDIO_DEVICE ""
+ #elif defined(__sgi)
+@@ -360,8 +365,50 @@ gint flags;
+ 
+ #endif
+ 
+-#if defined(sun) || defined(__OpenBSD__)
++#if defined(__OpenBSD__)
+ 
++static struct sio_hdl *audio_hdl = NULL;
++
++/* open the sound-device of sndio and set cd-quality */
++gint open_sndio_audio(gchar *dev) {
++	struct sio_par par;
++
++	/* First try open with O_NONBLOCK so it doesn't hang */
++	if ((audio_hdl = sio_open(dev, SIO_PLAY, 0)) == NULL) {
++		g_warning("Unable to open audio device\n");
++		return -1;
++	}
++	sio_initpar(&par);
++	par.rate = 44100;
++	par.pchan = 2;
++	par.bits = 16;
++	par.le = SIO_LE_NATIVE;
++	par.appbufsz = DEFAULT_BUFFER_SIZE;
++
++	if (!sio_setpar(audio_hdl, &par) || !sio_getpar(audio_hdl, &par)) {
++		g_warning("Unable to set audio parameters\n");
++		goto bad;
++	}
++	if (par.rate != 44100 || par.pchan != 2 || par.bits != 16 ||
++	    par.le != SIO_LE_NATIVE) {
++		g_warning("Unsupported audio parameters\n");
++		goto bad;
++	}
++	if (!sio_start(audio_hdl)) {
++		g_warning("Couldn't start audio\n");
++		goto bad;
++	}
++	abuf_size = par.appbufsz;
++	return 0;
++bad:
++	sio_close(audio_hdl);
++	audio_hdl = NULL;
++	return -1;
++}
++#endif
++
++#if defined(sun)
++
+ /* open the sound-device of solaris and set cd-quality */
+ 
+ gint open_solaris_audio(gchar *dev) {
+@@ -387,9 +434,7 @@ gint flags;
+ 	info.play.precision = 16;
+ 	info.play.encoding = AUDIO_ENCODING_LINEAR;
+ 	info.play.buffer_size = abuf_size;
+-#ifndef __OpenBSD__
+ 	info.output_muted = 0;
+-#endif
+ 
+ 	if (ioctl(audio, AUDIO_SETINFO, &info) == -1) {
+ 		g_warning("Unable to set audio parameters\n");
+@@ -790,7 +835,10 @@ gchar keybuffer[MAXLINE];
+ #if defined(linux) || defined(__FreeBSD__)
+ 	audio = open_linux_audio(audio_dev);
+ #endif
+-#if defined(sun) || defined(__OpenBSD__)
++#if defined(__OpenBSD__)
++	audio = open_sndio_audio(audio_dev);
++#endif
++#if defined(sun)
+ 	audio = open_solaris_audio(audio_dev);
+ #endif
+ #ifdef aix
+@@ -820,7 +868,7 @@ gchar keybuffer[MAXLINE];
+ 	fd = open (wavname, O_RDONLY, 0);
+ 
+ 	if (fd == -1) {
+-#if !(defined(__MACH__) && defined(__APPLE__))
++#if !(defined(__MACH__) && defined(__APPLE__)) && !defined(__OpenBSD__)
+ 		close(audio);
+ #endif
+ 		g_warning("Can't open wav-file\n");
+@@ -934,6 +982,11 @@ gchar keybuffer[MAXLINE];
+ 
+ #if (defined(__MACH__) && defined(__APPLE__))
+ 				audio_write(audiobuf,l);
++#elif defined(__OpenBSD__)	
++				if (sio_write(audio_hdl, audiobuf, l) != l) {
++					g_print("write error to audio-device\n");
++					exit(-1);
++				}
+ #elif defined(__sgi)
+ 				write_irix_audio(audiobuf, l);
+ #else
+@@ -975,6 +1028,8 @@ gchar keybuffer[MAXLINE];
+ 
+ #if (defined(__MACH__) && defined(__APPLE__))
+ 	audio_close();
++#elif defined(__OpenBSD__)
++	sio_close(audio_hdl);
+ #elif defined(__sgi)
+ 	close_irix_audio();
+ #else
