@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_cc_log_h,v 1.1 2015/06/29 07:14:10 jasper Exp $
+
+Add explicit <iostream> includes, fixes build with Boost 1.56
+https://github.com/legatvs/cclive/pull/2
+
+--- src/cc/log.h.orig	Sat Nov 23 10:46:27 2013
++++ src/cc/log.h	Sun Jun 28 21:43:12 2015
+@@ -25,6 +25,7 @@
+ 
+ #include <boost/iostreams/filtering_stream.hpp>
+ #include <boost/filesystem.hpp>
++#include <iostream>
+ #include <fstream>
+ 
+ #include <ccerror>

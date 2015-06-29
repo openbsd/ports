@@ -1,11 +1,21 @@
-$OpenBSD: patch-src_cc_error_h,v 1.1 2013/09/27 13:47:35 ajacoutot Exp $
+$OpenBSD: patch-src_cc_error_h,v 1.2 2015/06/29 07:14:10 jasper Exp $
 
-XXX ./cc/error.h:42: error: invalid conversion from 'int' to 'const char*
-XSI versus GNU implementation.
+- XXX ./cc/error.h:42: error: invalid conversion from 'int' to 'const char*
+  XSI versus GNU implementation.
+- Add explicit <iostream> includes, fixes build with Boost 1.56
+  https://github.com/legatvs/cclive/pull/2
 
---- src/cc/error.h.orig	Fri Sep 27 15:33:07 2013
-+++ src/cc/error.h	Fri Sep 27 15:32:07 2013
-@@ -36,13 +36,13 @@ namespace cc
+--- src/cc/error.h.orig	Sun Jun 28 21:43:19 2015
++++ src/cc/error.h	Sun Jun 28 21:43:12 2015
+@@ -28,6 +28,7 @@
+ #include <boost/exception/get_error_info.hpp>
+ #include <boost/exception/errinfo_errno.hpp>
+ #include <boost/tuple/tuple.hpp>
++#include <iostream>
+ #include <cerrno>
+ 
+ namespace cc
+@@ -36,13 +37,13 @@ namespace cc
  namespace error
  {
  

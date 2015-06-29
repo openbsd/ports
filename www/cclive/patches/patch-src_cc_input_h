@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_cc_input_h,v 1.1 2015/06/29 07:14:10 jasper Exp $
+
+Add explicit <iostream> includes, fixes build with Boost 1.56
+https://github.com/legatvs/cclive/pull/2
+
+--- src/cc/input.h.orig	Sat Nov 23 10:46:27 2013
++++ src/cc/input.h	Sun Jun 28 21:43:12 2015
+@@ -23,6 +23,7 @@
+ 
+ #include <ccinternal>
+ 
++#include <iostream>
+ #include <istream>
+ #include <sstream>
+ 
