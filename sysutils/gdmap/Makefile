@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/29 09:22:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/06/29 09:49:50 jasper Exp $
 
 COMMENT =		graphical disk map
 DISTNAME =		gdmap-0.8.1
@@ -9,7 +9,7 @@ HOMEPAGE =		http://gdmap.sourceforge.net/
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
 
-# XXX
+# GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
