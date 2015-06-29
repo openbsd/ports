@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/06/24 06:53:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/06/29 18:38:50 jasper Exp $
 bin/elixir
 bin/elixirc
 bin/iex
@@ -34,6 +34,7 @@ lib/elixir/lib/elixir/ebin/Elixir.ArithmeticError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Atom.beam
 lib/elixir/lib/elixir/ebin/Elixir.BadArityError.beam
 lib/elixir/lib/elixir/ebin/Elixir.BadFunctionError.beam
+lib/elixir/lib/elixir/ebin/Elixir.BadMapError.beam
 lib/elixir/lib/elixir/ebin/Elixir.BadStructError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Base.beam
 lib/elixir/lib/elixir/ebin/Elixir.Behaviour.beam

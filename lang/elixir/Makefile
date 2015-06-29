@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2015/06/25 13:23:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/06/29 18:38:50 jasper Exp $
 
 COMMENT=		functional language for building scalable applications
 
-V=			1.0.4
+V=			1.0.5
 GH_ACCOUNT=		elixir-lang
 GH_PROJECT=		elixir
 GH_TAGNAME=		v$V
 DISTNAME=		${GH_PROJECT}-$V
-REVISION=		9
 CATEGORIES=		lang
 
 HOMEPAGE=		http://elixir-lang.org/
@@ -18,7 +17,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/erlang
-MODERL_VERSION=		17
+MODERL_VERSION=		18
 
 ALL_TARGET=		# empty
 
