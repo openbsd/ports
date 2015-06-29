@@ -1,4 +1,4 @@
-$OpenBSD: patch-pcre_compile_c,v 1.5 2015/06/09 15:05:40 robert Exp $
+$OpenBSD: patch-pcre_compile_c,v 1.6 2015/06/29 17:06:15 jasper Exp $
 
 upstream fixes of several buffer overflow issues:
 
@@ -13,9 +13,11 @@ r1559 Fix named forward reference to duplicate group number overflow
 r1560 Fix buffer overflow for lookbehind within mutually recursive
       subroutines.
 r1562 Fix another buffer overflow.
+r1571 Fix buffer overflow for forward reference within backward assertion with
+      excess closing parenthesis. Bugzilla 1651.
 
 --- pcre_compile.c.orig	Mon Apr 13 17:54:01 2015
-+++ pcre_compile.c	Tue Jun  9 17:02:51 2015
++++ pcre_compile.c	Mon Jun 29 15:13:08 2015
 @@ -1799,7 +1799,7 @@ for (;;)
      case OP_ASSERTBACK:
      case OP_ASSERTBACK_NOT:
@@ -326,3 +328,12 @@ r1562 Fix another buffer overflow.
  
      /* For caseless UTF-8 mode when UCP support is available, check whether
      this character has more than one other case. If so, generate a special
+@@ -9380,7 +9427,7 @@ OP_RECURSE that are not fixed length get a diagnosic w
+ exceptional ones forgo this. We scan the pattern to check that they are fixed
+ length, and set their lengths. */
+ 
+-if (cd->check_lookbehind)
++if (errorcode == 0 && cd->check_lookbehind)
+   {
+   pcre_uchar *cc = (pcre_uchar *)codestart;
+ 
