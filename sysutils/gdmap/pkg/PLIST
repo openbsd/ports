@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/29 09:08:53 czarkoff Exp $
+@bin bin/gdmap
+@man man/man1/gdmap.1
+share/applications/gdmap.desktop
+share/gdmap/
+share/gdmap/pixmaps/
+share/gdmap/pixmaps/gdmap_icon.png
+share/locale/bg/LC_MESSAGES/GdMap.mo
+share/locale/de/LC_MESSAGES/GdMap.mo
+share/locale/dk/
+share/locale/dk/LC_MESSAGES/
+share/locale/dk/LC_MESSAGES/GdMap.mo
+share/locale/es/LC_MESSAGES/GdMap.mo
+share/locale/fr/LC_MESSAGES/GdMap.mo
+share/locale/he/LC_MESSAGES/GdMap.mo
+share/locale/hr/LC_MESSAGES/GdMap.mo
+share/locale/it/LC_MESSAGES/GdMap.mo
+share/locale/nb/LC_MESSAGES/GdMap.mo
+share/locale/no/LC_MESSAGES/GdMap.mo
+share/locale/ru/LC_MESSAGES/GdMap.mo
+share/locale/sv/LC_MESSAGES/GdMap.mo
+share/locale/tr/LC_MESSAGES/GdMap.mo
+share/pixmaps/
+share/pixmaps/gdmap_icon.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
