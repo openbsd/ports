@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/06/02 14:37:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2015/06/29 06:17:36 ajacoutot Exp $
 
 COMMENT=		full-featured text WWW browser
 DISTNAME=		elinks-0.11.7
@@ -37,7 +37,7 @@ RUN_DEPENDS=		devel/gettext
 WANTLIB=		bz2 crypto c idn ssl z
 MODULES=		converters/libiconv
 
-FLAVORS=		lua no_x11 #js
+FLAVORS=		lua no_x11 js
 FLAVOR?=
 
 .if ${FLAVOR:Mlua}
@@ -56,17 +56,17 @@ CONFIGURE_ARGS+=	--with-x
 WANTLIB+=		X11
 .endif
 
+.if ${FLAVOR:Mjs}
 # Upstream recommends against enabling javascript support in
 # this release due to security concerns. When this is port is
 # updated to 0.12.x it can be enabled again.
-#
-#.if ${FLAVOR:Mjs}
-#CONFIGURE_ARGS+=	--with-spidermonkey
-#LIB_DEPENDS+=		lang/spidermonkey
-#WANTLIB+=		pthread js>=2.0
-#CFLAGS+=		-I${LOCALBASE}/include/js -pthread
-#.else
+BROKEN=			disabled because of security concerns
+CONFIGURE_ARGS+=	--with-spidermonkey
+LIB_DEPENDS+=		lang/spidermonkey
+WANTLIB+=		pthread js>=2.0
+CFLAGS+=		-I${LOCALBASE}/include/js -pthread
+.else
 CONFIGURE_ARGS+=	--without-spidermonkey
-#.endif
+.endif
 
 .include <bsd.port.mk>
