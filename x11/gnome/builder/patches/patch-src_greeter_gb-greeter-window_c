@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_greeter_gb-greeter-window_c,v 1.1 2015/06/29 06:51:31 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=751595
+
+--- src/greeter/gb-greeter-window.c.orig	Thu May 14 22:23:54 2015
++++ src/greeter/gb-greeter-window.c	Mon Jun 29 08:45:34 2015
+@@ -21,6 +21,7 @@
+ #include <glib/gi18n.h>
+ #include <ide.h>
+ 
++#include "egg-search-bar.h"
+ #include "egg-signal-group.h"
+ 
+ #include "gb-application.h"
+@@ -460,6 +461,7 @@ gb_greeter_window_class_init (GbGreeterWindowClass *kl
+   gtk_widget_class_bind_template_child (widget_class, GbGreeterWindow, search_entry);
+   gtk_widget_class_bind_template_child (widget_class, GbGreeterWindow, viewport);
+ 
++  g_type_ensure (EGG_TYPE_SEARCH_BAR);
+   g_type_ensure (GB_TYPE_GREETER_PROJECT_ROW);
+   g_type_ensure (GB_TYPE_SCROLLED_WINDOW);
+ }
