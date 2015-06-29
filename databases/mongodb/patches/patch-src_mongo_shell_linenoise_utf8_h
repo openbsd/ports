@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_mongo_shell_linenoise_utf8_h,v 1.1 2015/06/29 08:13:50 jasper Exp $
+
+From 2d5d662a834fab72ee1431e3bb0a5ed5a0826177 Mon Sep 17 00:00:00 2001
+From: Mark Benvenuto <mark.benvenuto@mongodb.com>
+Date: Tue, 19 Aug 2014 15:07:11 -0400
+Subject: [PATCH] SERVER-8994: Boost 1.56 build fixes
+
+--- src/mongo/shell/linenoise_utf8.h.orig	Sun Jun 28 22:15:05 2015
++++ src/mongo/shell/linenoise_utf8.h	Sun Jun 28 22:15:18 2015
+@@ -16,6 +16,7 @@
+  */
+ 
+ #include <boost/smart_ptr/scoped_array.hpp>
++#include <algorithm>
+ #include <string.h>
+ 
+ namespace linenoise_utf8 {
