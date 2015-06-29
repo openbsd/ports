@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.47 2015/06/10 06:34:45 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.48 2015/06/29 06:19:32 ajacoutot Exp $
 --- configure.orig	Tue Jun  9 20:07:32 2015
-+++ configure	Tue Jun  9 20:32:04 2015
++++ configure	Sun Jun 28 03:21:53 2015
 @@ -4204,7 +4204,7 @@ case $target_os in
      openbsd|bitrig)
          disable symver
@@ -30,7 +30,19 @@ $OpenBSD: patch-configure,v 1.47 2015/06/10 06:34:45 ajacoutot Exp $
  
  # add some strip flags
  # -wN '..@*' is more selective than -x, but not available everywhere.
-@@ -6022,8 +6024,8 @@ pkgconfig_generate(){
+@@ -5597,6 +5599,11 @@ if test $target_os = "haiku"; then
+     disable posix_memalign
+ fi
+ 
++
++if test $target_os = "openbsd"; then
++    enabled x86_32 && disable ebx_available
++fi
++
+ enabled_all dxva2 dxva2api_cobj CoTaskMemFree &&
+     prepend ffmpeg_libs $($ldflags_filter "-lole32" "-luser32") &&
+     enable dxva2_lib
+@@ -6022,8 +6029,8 @@ pkgconfig_generate(){
      comment=$2
      version=$3
      libs=$4
@@ -41,7 +53,7 @@ $OpenBSD: patch-configure,v 1.47 2015/06/10 06:34:45 ajacoutot Exp $
      enabled ${name#lib} || return 0
      mkdir -p $name
      cat <<EOF > $name/$name${build_suffix}.pc
-@@ -6038,7 +6040,7 @@ Version: $version
+@@ -6038,7 +6045,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -50,7 +62,7 @@ $OpenBSD: patch-configure,v 1.47 2015/06/10 06:34:45 ajacoutot Exp $
  Libs.private: $(enabled shared && echo $libs)
  Cflags: -I\${includedir}
  EOF
-@@ -6062,12 +6064,12 @@ Cflags: -I\${includedir}
+@@ -6062,12 +6069,12 @@ Cflags: -I\${includedir}
  EOF
  }
  
