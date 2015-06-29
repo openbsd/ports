@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2015/06/29 19:43:53 feinerer Exp $
+--- configure.orig	Sat Jun 27 11:03:28 2015
++++ configure	Sat Jun 27 11:05:08 2015
+@@ -33416,7 +33416,8 @@ EOF
+ ## linker flags:  -l with no library name; -l <libname>, specifically gfortran or m.
+ ## This sed script corrects "-l <libname>" first and then "-l " with no library name.
+ ## If the order is not preserved, all instances of "-l " will be removed.
+-sed -e '/^postdeps/ s/-l \(a-zA-Z\)/-l\1/g' -e '/^postdeps/ s/-l //g' -i libtool
++mv libtool libtool.orig
++sed -e '/^postdeps/ s/-l \(a-zA-Z\)/-l\1/g' -e '/^postdeps/ s/-l //g' libtool.orig > libtool
+ 
+ ## show the configure settings
+ cat src/libhdf5.settings

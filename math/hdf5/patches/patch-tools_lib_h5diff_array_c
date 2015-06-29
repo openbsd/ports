@@ -1,0 +1,11 @@
+$OpenBSD: patch-tools_lib_h5diff_array_c,v 1.1.1.1 2015/06/29 19:43:53 feinerer Exp $
+--- tools/lib/h5diff_array.c.orig	Sun Jun 21 09:03:50 2015
++++ tools/lib/h5diff_array.c	Sun Jun 21 09:04:23 2015
+@@ -15,7 +15,6 @@
+ 
+ #include <math.h>
+ #include <time.h>
+-#include <sys/timeb.h>
+ 
+ #include "H5private.h"
+ #include "h5tools.h"
