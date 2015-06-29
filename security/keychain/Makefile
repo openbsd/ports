@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2015/01/09 18:48:29 robert Exp $
+# $OpenBSD: Makefile,v 1.24 2015/06/29 16:43:10 jca Exp $
 
 COMMENT=		front-end to ssh-agent
 
 DISTNAME=		keychain-2.7.1
 CATEGORIES=		security
 
-REVISION=		0
+REVISION=		1
 
-HOMEPAGE=		http://docs.funtoo.org/wiki/Keychain
+HOMEPAGE=		http://www.funtoo.org/Keychain
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
