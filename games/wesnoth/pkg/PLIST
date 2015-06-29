@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2015/04/13 16:33:54 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.36 2015/06/29 13:45:53 kirby Exp $
 @pkgpath games/wesnoth,tinygui
 @newgroup _wesnothd:708
 @newuser _wesnothd:708:_wesnothd:daemon:Wesnoth Server:/var/wesnothd:/sbin/nologin
@@ -13352,7 +13352,6 @@ share/wesnoth/data/tools/wmlmove
 share/wesnoth/data/tools/wmlscope
 share/wesnoth/data/tools/wmlunits
 share/wesnoth/data/tools/wmlvalidator
-share/wesnoth/data/tools/wmlxgettext
 share/wesnoth/fonts/
 share/wesnoth/fonts/Andagii.ttf
 share/wesnoth/fonts/COPYING
