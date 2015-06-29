@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.344 2015/06/25 21:45:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.345 2015/06/29 20:56:22 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -60,6 +60,7 @@
      SUBDIR += freeipmi
      SUBDIR += fsstress
      SUBDIR += gamin
+     SUBDIR += gdmap
      SUBDIR += ggrep
      SUBDIR += gitolite
      SUBDIR += gkrellm
