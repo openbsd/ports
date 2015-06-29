@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2015/06/18 13:19:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/06/29 09:52:25 ajacoutot Exp $
 
 COMMENT=		remote IMAP filtering utility
 
-V=			2.6
+V=			2.6.1
 DISTNAME=		imapfilter-${V}
 
 GH_TAGNAME=		v${V}
