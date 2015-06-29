@@ -1,6 +1,7 @@
+$OpenBSD: patch-xa_acodec_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
 --- xa_acodec.c.orig	Sun Mar 21 23:36:25 1999
-+++ xa_acodec.c	Mon Mar 22 18:03:48 1999
-@@ -198,7 +198,17 @@
++++ xa_acodec.c	Tue Jun 30 00:27:31 2015
+@@ -198,7 +198,17 @@ xaULONG ocnt,buff_size;
    {
      if (inc_cnt < (1<<24))
      {	/*** Decode Sample ***/
@@ -19,7 +20,7 @@
        ibuf += bps;	byte_cnt += bps;	samp_cnt--;
        inc_cnt += inc;
      }
-@@ -1884,6 +1894,19 @@
+@@ -1884,6 +1894,19 @@ DEBUG_LEVEL1
    new_snd->inc = inc = (xaULONG)( finc * (double)(1<<24) );
    new_snd->inc_cnt = 0;
  
@@ -39,7 +40,7 @@
    /* Determine Chunk Time */
    ftime = ((double)(xa_vaudio_hard_buff) * 1000.0) / (double)(hfreq);
    new_snd->ch_time = (xaLONG)ftime;
-@@ -2167,6 +2190,7 @@
+@@ -2167,6 +2190,7 @@ fprintf(stderr,"XA_IPC_Sound itype %x\n",itype);
        break;
  
      case XA_AUDIO_LINEAR_1M:
@@ -47,7 +48,7 @@
        {
  	switch(itype)
  	{
-@@ -2183,7 +2207,8 @@
+@@ -2183,7 +2207,8 @@ fprintf(stderr,"XA_IPC_Sound itype %x\n",itype);
  	  case XA_AUDIO_LINEAR_2SL:
  	  case XA_AUDIO_LINEAR_2SB:
  		new_snd->spec = 
@@ -57,7 +58,7 @@
  		if (itype & XA_AUDIO_BPS_2_MSK)
  		  new_snd->spec |= (itype & XA_AUDIO_BIGEND_MSK)?(2):(4);
  		if (itype & XA_AUDIO_STEREO_MSK)
-@@ -2195,12 +2220,16 @@
+@@ -2195,12 +2220,16 @@ fprintf(stderr,"XA_IPC_Sound itype %x\n",itype);
  		if (xa_audio_hard_type & XA_AUDIO_BIGEND_MSK)
  			new_snd->spec = 0 | 4 | 8;
  		else	new_snd->spec = 1 | 4 | 8;
@@ -74,7 +75,7 @@
  		new_snd->delta = XA_ADecode_ULAWx_PCMxM;
  		break;
  	  case XA_AUDIO_ALAWS:
-@@ -2218,6 +2247,8 @@
+@@ -2218,6 +2247,8 @@ fprintf(stderr,"XA_IPC_Sound itype %x\n",itype);
  	  case XA_AUDIO_ARMLAWS:
  		if (xa_audio_hard_type & XA_AUDIO_BIGEND_MSK)
  			new_snd->spec = 0 | 4 | 8;
@@ -83,7 +84,7 @@
  		else	new_snd->spec = 1 | 4 | 8;
  		new_snd->delta = XA_ADecode_ARMLAWx_PCMxM;
  		break;
-@@ -2226,41 +2257,59 @@
+@@ -2226,41 +2257,59 @@ fprintf(stderr,"XA_IPC_Sound itype %x\n",itype);
  			new_snd->spec = 0 | 4;
  		else	new_snd->spec = 1 | 4;
  		new_snd->delta = XA_ADecode_ARMLAWx_PCMxM;

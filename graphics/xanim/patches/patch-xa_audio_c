@@ -1,5 +1,6 @@
---- xa_audio.c.orig	Tue Mar 16 00:58:48 1999
-+++ xa_audio.c	Fri Mar 19 01:15:03 1999
+$OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
+--- xa_audio.c.orig	Sun Mar 21 23:36:25 1999
++++ xa_audio.c	Tue Jun 30 00:27:31 2015
 @@ -114,6 +114,7 @@
   * 21Feb99 - Added routine *_Audio_Prep  to hide initialization delays
   *	     when starting audio.
@@ -8,7 +9,7 @@
   *
   ****************************************************************************/
  
-@@ -4936,6 +4937,402 @@
+@@ -4936,6 +4937,402 @@ xaULONG volume;
  /******************* END OF NetBSD SPECIFIC ROUTINES ************************/
  /****************************************************************************/
  
@@ -411,7 +412,7 @@
   /****************************************************************************/
  /**************** TOWNS SPECIFIC ROUTINES ***********************************/
  /****************************************************************************/
-@@ -5828,29 +6225,15 @@
+@@ -5828,29 +6225,15 @@ void New_Merged_Audio_Output()
  
  /*---------------- Now for the Write Segments -------------------------------*/
  
@@ -442,7 +443,7 @@
  #ifdef XA_NAS_AUDIO
        NAS_Write_Data(xa_audio_ring->buf, xa_audio_ring->len);
  #endif
-@@ -5864,10 +6247,6 @@
+@@ -5864,10 +6247,6 @@ void New_Merged_Audio_Output()
        }
  #endif
  
@@ -453,7 +454,7 @@
  #ifdef XA_AF_AUDIO
        { ATime act, atd = AFtime0;
  	if (XAAUD->mute != xaTRUE)
-@@ -5883,10 +6262,6 @@
+@@ -5883,10 +6262,6 @@ void New_Merged_Audio_Output()
  /* Some way to flush streamsocket???? */
  #endif
  
@@ -464,7 +465,7 @@
  #ifdef XA_MMS_AUDIO
        /* As currently implemented, this copies the audio data into a separate
           shared memory buffer for communication with the multimedia server. We
-@@ -5921,10 +6296,6 @@
+@@ -5921,10 +6296,6 @@ void New_Merged_Audio_Output()
  	  else { mms_buffers_outstanding++; }
  	}
        }

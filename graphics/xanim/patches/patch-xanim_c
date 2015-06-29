@@ -1,6 +1,7 @@
---- xanim.c.orig	Thu Mar 18 22:11:25 1999
-+++ xanim.c	Thu Mar 18 22:12:52 1999
-@@ -628,6 +628,7 @@
+$OpenBSD: patch-xanim_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
+--- xanim.c.orig	Sun Mar 21 23:36:25 1999
++++ xanim.c	Tue Jun 30 00:27:31 2015
+@@ -628,6 +628,7 @@ void Usage()
   fprintf(stdout,"      Ak    Enables video frame skipping to keep in sync with audio.\n");
   fprintf(stdout,"      Ap#   Play Audio from output port #(Sparc only).\n");
  /* fprintf(stdout,"      As#   Scale Audio playback speed by #.\n"); */
@@ -8,7 +9,7 @@
   fprintf(stdout,"      Av#   Set Audio volume to #. range 0 to 100.\n");
   fprintf(stdout,"\n  C[copts]  Color SubMenu\n");
   fprintf(stdout,"      C1    Create cmap from 1st TrueColor frame. Map\n");
-@@ -861,6 +862,7 @@
+@@ -861,6 +862,7 @@ char *argv[];
  
   vaudiof->device		= DEFAULT_AUDIO_DEVICE_NAME;
   vaudiof->scale		= 1.0;
@@ -16,7 +17,7 @@
   vaudiof->mute		= xaFALSE;
   vaudiof->volume		= DEFAULT_XA_AUDIO_VOLUME;
   if (vaudiof->volume > XA_AUDIO_MAXVOL) vaudiof->volume = XA_AUDIO_MAXVOL;
-@@ -1168,6 +1170,9 @@
+@@ -1168,6 +1170,9 @@ char *argv[];
  		fprintf(stdout,"XAnim: +As# temporarily disabled.\n");
  		if (vaudiof->scale < 0.125) vaudiof->scale = 0.125;
  		if (vaudiof->scale > 8.000) vaudiof->scale = 8.000;

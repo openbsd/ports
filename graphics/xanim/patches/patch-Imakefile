@@ -1,6 +1,7 @@
---- Imakefile.orig	Sun Mar 21 23:36:26 1999
-+++ Imakefile	Mon Mar 22 18:13:13 1999
-@@ -96,7 +96,7 @@
+$OpenBSD: patch-Imakefile,v 1.1 2015/06/29 22:38:58 ratchov Exp $
+--- Imakefile.orig	Tue Jun 30 00:27:31 2015
++++ Imakefile	Tue Jun 30 00:27:31 2015
+@@ -96,7 +96,7 @@ XCOMM   Specify any Linker flags needed to allow dynam
  XCOMM   to link against symbols inside xanim.
  XCOMM 
  XCOMM ## Linux
@@ -9,7 +10,7 @@
  XCOMM ## SunOS/Solaris use:
  XCOMM  LD_FLAGS =
  
-@@ -111,17 +111,17 @@
+@@ -111,17 +111,17 @@ XCOMM
  XCOMM NOTE: not all machines need the XA_DLL_LIB define.
  XCOMM #########################################################################
  XCOMM 
@@ -30,7 +31,7 @@
  
  
  
-@@ -267,8 +267,8 @@
+@@ -267,8 +267,8 @@ XCOMM  -- NOTE_9 Since xanim doesn't yet support Win32
  XCOMM  XA_AUDIO_DEFS =
  XCOMM 
  XCOMM ## -- Linux PCs ---------------------------------------------------------
@@ -41,7 +42,7 @@
  XCOMM 
  XCOMM  -- Linux PC's with OLD Rev sound drivers -------------------------------
  XCOMM  XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_LINUX_OLDER_SND
-@@ -309,6 +309,9 @@
+@@ -309,6 +309,9 @@ XCOMM 
  XCOMM  -- NetBSD-current (as of 30/April 1995)---------------------------------
  XCOMM  XA_AUDIO_DEFS = -DXA_NetBSD_AUDIO
  XCOMM 
@@ -51,7 +52,7 @@
  XCOMM  -- QNX 4.2 PC's --------------------------------------------------------
  XCOMM  XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_SELECT
  XCOMM  XA_AUDIO_LIBS = -lc
-@@ -442,7 +445,7 @@
+@@ -442,7 +445,7 @@ XCOMM    -- about not finding multibuf.h or the
  XCOMM    -- following symbols(XmbufDisplayBuffers, XmbufQueryExtension,
  XCOMM    --  XmbufCreateBuffers).
  XCOMM    -- NOTE_8: HP-UX machines need to comment this out.
@@ -60,7 +61,7 @@
  XCOMM 
  XCOMM ###########
  XCOMM 
-@@ -465,7 +468,7 @@
+@@ -465,7 +468,7 @@ DEFINES  = $(XA_DEFS)
  
  PROGRAMS = $(XANIM)
  
@@ -69,7 +70,7 @@
  
     LIBS1 = $(XA_LIBS) $(EXTENSIONLIB) $(XTOOLLIB) $(XLIB) -lm
  DEPLIBS1 = $(DEPEXTENSIONLIB) $(DEPXTOOLLIB) $(DEPXLIB)
-@@ -504,43 +507,3 @@
+@@ -504,43 +507,3 @@ ComplexProgramTarget_1(xanim, $(LIBS1), $(OTHER_LIBS) 
  xaclean::
  	$(RM) $(OBJS1)
  
