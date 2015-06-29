@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2014/08/23 10:02:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/06/29 15:39:44 sthen Exp $
 bin/extresso
 bin/genresscript
 @bin bin/icotool
@@ -7,10 +7,5 @@ bin/genresscript
 @man man/man1/genresscript.1
 @man man/man1/icotool.1
 @man man/man1/wrestool.1
-share/locale/
-share/locale/en@boldquot/
-share/locale/en@boldquot/LC_MESSAGES/
 share/locale/en@boldquot/LC_MESSAGES/icoutils.mo
-share/locale/en@quot/
-share/locale/en@quot/LC_MESSAGES/
 share/locale/en@quot/LC_MESSAGES/icoutils.mo

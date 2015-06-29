@@ -1,18 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/03/25 06:30:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/06/29 15:39:44 sthen Exp $
 @bin bin/xtraceroute
 @man man/man1/xtraceroute.1
-share/locale/
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/xtraceroute.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/xtraceroute.mo
-share/locale/ja/
-share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/xtraceroute.mo
-share/locale/sv/
-share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/xtraceroute.mo
 share/xtraceroute/
 share/xtraceroute/earth.png

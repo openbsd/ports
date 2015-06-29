@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/23 09:03:20 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/06/29 15:39:44 sthen Exp $
 bin/gensite
 bin/txt2tags
 @man man/man1/txt2tags.1
@@ -62,34 +62,13 @@ share/examples/txt2tags/sample.wiki
 share/examples/txt2tags/sample.xhtml
 @sample share/examples/txt2tags/txt2tagsrc
 share/examples/txt2tags/txt2tagsrc.dist
-share/locale/
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/txt2tags.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/txt2tags.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/txt2tags.mo
-share/locale/fi/
-share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/txt2tags.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/txt2tags.mo
-share/locale/hu/
-share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/txt2tags.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/txt2tags.mo
-share/locale/pt_BR/
-share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/txt2tags.mo
-share/locale/uk/
-share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/txt2tags.mo
-share/locale/zh_CN/
-share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/txt2tags.mo

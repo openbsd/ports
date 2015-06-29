@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/12/05 20:40:56 mjc Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/06/29 15:39:44 sthen Exp $
 bin/nicotine
 bin/nicotine-import-winconfig
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/nicotine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pynicotine/
 lib/python${MODPY_VERSION}/site-packages/pynicotine/ConfigParser.py
 lib/python${MODPY_VERSION}/site-packages/pynicotine/ConfigParser.pyc
@@ -69,28 +68,13 @@ lib/python${MODPY_VERSION}/site-packages/pynicotine/transfers.py
 lib/python${MODPY_VERSION}/site-packages/pynicotine/transfers.pyc
 lib/python${MODPY_VERSION}/site-packages/pynicotine/utils.py
 lib/python${MODPY_VERSION}/site-packages/pynicotine/utils.pyc
-share/locale/
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/nicotine.mo
 share/locale/dk/
 share/locale/dk/LC_MESSAGES/
 share/locale/dk/LC_MESSAGES/nicotine.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/nicotine.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/nicotine.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/nicotine.mo
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/nicotine.mo
-share/locale/pl/
-share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/nicotine.mo
-share/locale/sv/
-share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/nicotine.mo
