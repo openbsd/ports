@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/06/27 12:21:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2015/06/29 10:46:28 naddy Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -84,6 +84,7 @@ CONFIGURE_ARGS=	--disable-option-checking \
 		--with-milestone=fcs \
 		--with-update-version=${U} \
 		--with-build-number=${B}
+CONFIGURE_ENV=	ac_cv_path_NAWK=awk
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/common/autoconf/build-aux
 
 # MAKE_FLAGS=	LOG=debug
