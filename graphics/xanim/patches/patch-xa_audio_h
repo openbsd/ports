@@ -1,20 +1,13 @@
-$OpenBSD: patch-xa_audio_h,v 1.1 2015/06/29 22:38:59 ratchov Exp $
+$OpenBSD: patch-xa_audio_h,v 1.2 2015/06/29 23:07:07 ratchov Exp $
 --- xa_audio.h.orig	Sun Mar 21 23:36:25 1999
-+++ xa_audio.h	Tue Jun 30 00:27:31 2015
-@@ -114,6 +114,17 @@ extern xaULONG xa_forkit;
++++ xa_audio.h	Fri Jun 26 12:29:20 2015
+@@ -114,6 +114,10 @@ extern xaULONG xa_forkit;
  #include <sys/ioccom.h>
  #endif
  
 +/*********************** OpenBSD INCLUDES *******************************/
 +#ifdef XA_OpenBSD_AUDIO
-+#include <errno.h>
-+#include <fcntl.h>
-+#include <sys/audioio.h>
-+#include <sys/file.h>
-+#include <sys/stat.h>
-+#include <sys/ioctl.h>
-+#include <sys/ioccom.h>
-+#include <endian.h>
++#include <sndio.h>
 +#endif
  
  /*********************** LINUX INCLUDES ********************************/

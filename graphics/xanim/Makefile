@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2015/02/16 22:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2015/06/29 23:07:07 ratchov Exp $
 
 COMMENT=	X11 animation player with support for lots of formats
 
 DISTNAME=xanim-2.80.1
-REVISION =	4
+REVISION =	5
 WRKDIST=${WRKDIR}/xanim2801
 CATEGORIES= graphics x11
 

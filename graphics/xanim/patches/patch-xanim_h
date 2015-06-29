@@ -1,6 +1,6 @@
-$OpenBSD: patch-xanim_h,v 1.1 2015/06/29 22:38:59 ratchov Exp $
+$OpenBSD: patch-xanim_h,v 1.2 2015/06/29 23:07:07 ratchov Exp $
 --- xanim.h.orig	Sun Mar 21 23:36:26 1999
-+++ xanim.h	Tue Jun 30 00:27:31 2015
++++ xanim.h	Tue Jun 30 00:59:45 2015
 @@ -32,10 +32,12 @@
  #else
  #ifndef __CYGWIN32__
@@ -22,7 +22,7 @@ $OpenBSD: patch-xanim_h,v 1.1 2015/06/29 22:38:59 ratchov Exp $
    char *device;
  } XA_AUD_FLAGS;
  
-@@ -298,30 +301,42 @@ typedef struct
+@@ -298,30 +301,41 @@ typedef struct
  
  #ifdef XA_SPARC_AUDIO
  #define XA_AUDIO 1
@@ -43,7 +43,6 @@ $OpenBSD: patch-xanim_h,v 1.1 2015/06/29 22:38:59 ratchov Exp $
 +#ifdef XA_OpenBSD_AUDIO
 +#define XA_AUDIO 1
 +#define XA_BSD_AUDIO 1
-+#define XA_NORMAL_AUDIO_WRITES 1
 +#endif
  #ifdef XA_LINUX_AUDIO
  #define XA_AUDIO 1
@@ -65,7 +64,7 @@ $OpenBSD: patch-xanim_h,v 1.1 2015/06/29 22:38:59 ratchov Exp $
  #endif
  #ifdef XA_SONY_AUDIO
  #define XA_AUDIO 1
-@@ -334,6 +349,7 @@ typedef struct
+@@ -334,6 +348,7 @@ typedef struct
  #endif
  #ifdef XA_TOWNS_AUDIO
  #define XA_AUDIO 1
@@ -73,7 +72,7 @@ $OpenBSD: patch-xanim_h,v 1.1 2015/06/29 22:38:59 ratchov Exp $
  #endif
  #ifdef XA_TOWNS8_AUDIO
  #define XA_AUDIO 1
-@@ -433,6 +449,7 @@ typedef struct XA_SND_STRUCT
+@@ -433,6 +448,7 @@ typedef struct XA_SND_STRUCT
    xaUBYTE *snd;		/* sound if present */
    struct XA_SND_STRUCT *prev;
    struct XA_SND_STRUCT *next;

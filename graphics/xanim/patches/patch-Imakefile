@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imakefile,v 1.1 2015/06/29 22:38:58 ratchov Exp $
---- Imakefile.orig	Tue Jun 30 00:27:31 2015
-+++ Imakefile	Tue Jun 30 00:27:31 2015
+$OpenBSD: patch-Imakefile,v 1.2 2015/06/29 23:07:07 ratchov Exp $
+--- Imakefile.orig	Sun Mar 21 23:36:26 1999
++++ Imakefile	Tue Jun 30 00:41:50 2015
 @@ -96,7 +96,7 @@ XCOMM   Specify any Linker flags needed to allow dynam
  XCOMM   to link against symbols inside xanim.
  XCOMM 
@@ -42,17 +42,18 @@ $OpenBSD: patch-Imakefile,v 1.1 2015/06/29 22:38:58 ratchov Exp $
  XCOMM 
  XCOMM  -- Linux PC's with OLD Rev sound drivers -------------------------------
  XCOMM  XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_LINUX_OLDER_SND
-@@ -309,6 +309,9 @@ XCOMM 
+@@ -309,6 +309,10 @@ XCOMM 
  XCOMM  -- NetBSD-current (as of 30/April 1995)---------------------------------
  XCOMM  XA_AUDIO_DEFS = -DXA_NetBSD_AUDIO
  XCOMM 
 +XCOMM  -- OpenBSD, from at least 2.4 to now
 +XA_AUDIO_DEFS = -DXA_OpenBSD_AUDIO
++XA_AUDIO_LIBS = -lsndio
 +XCOMM 
  XCOMM  -- QNX 4.2 PC's --------------------------------------------------------
  XCOMM  XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_SELECT
  XCOMM  XA_AUDIO_LIBS = -lc
-@@ -442,7 +445,7 @@ XCOMM    -- about not finding multibuf.h or the
+@@ -442,7 +446,7 @@ XCOMM    -- about not finding multibuf.h or the
  XCOMM    -- following symbols(XmbufDisplayBuffers, XmbufQueryExtension,
  XCOMM    --  XmbufCreateBuffers).
  XCOMM    -- NOTE_8: HP-UX machines need to comment this out.
@@ -61,7 +62,7 @@ $OpenBSD: patch-Imakefile,v 1.1 2015/06/29 22:38:58 ratchov Exp $
  XCOMM 
  XCOMM ###########
  XCOMM 
-@@ -465,7 +468,7 @@ DEFINES  = $(XA_DEFS)
+@@ -465,7 +469,7 @@ DEFINES  = $(XA_DEFS)
  
  PROGRAMS = $(XANIM)
  
@@ -70,7 +71,7 @@ $OpenBSD: patch-Imakefile,v 1.1 2015/06/29 22:38:58 ratchov Exp $
  
     LIBS1 = $(XA_LIBS) $(EXTENSIONLIB) $(XTOOLLIB) $(XLIB) -lm
  DEPLIBS1 = $(DEPEXTENSIONLIB) $(DEPXTOOLLIB) $(DEPXLIB)
-@@ -504,43 +507,3 @@ ComplexProgramTarget_1(xanim, $(LIBS1), $(OTHER_LIBS) 
+@@ -504,43 +508,3 @@ ComplexProgramTarget_1(xanim, $(LIBS1), $(OTHER_LIBS) 
  xaclean::
  	$(RM) $(OBJS1)
  

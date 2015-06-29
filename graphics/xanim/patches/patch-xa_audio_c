@@ -1,6 +1,6 @@
-$OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
+$OpenBSD: patch-xa_audio_c,v 1.2 2015/06/29 23:07:07 ratchov Exp $
 --- xa_audio.c.orig	Sun Mar 21 23:36:25 1999
-+++ xa_audio.c	Tue Jun 30 00:27:31 2015
++++ xa_audio.c	Tue Jun 30 01:04:19 2015
 @@ -114,6 +114,7 @@
   * 21Feb99 - Added routine *_Audio_Prep  to hide initialization delays
   *	     when starting audio.
@@ -9,7 +9,7 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
   *
   ****************************************************************************/
  
-@@ -4936,6 +4937,402 @@ xaULONG volume;
+@@ -4936,6 +4937,278 @@ xaULONG volume;
  /******************* END OF NetBSD SPECIFIC ROUTINES ************************/
  /****************************************************************************/
  
@@ -41,10 +41,7 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
 +void OpenBSD_Speaker_Toggle();
 +void OpenBSD_Headphone_Toggle();
 +
-+#define OpenBSD_MAX_VOL AUDIO_MAX_GAIN
-+#define OpenBSD_MIN_VOL AUDIO_MIN_GAIN
-+
-+static int devAudio;
++static struct sio_hdl *hdl = NULL;
 +
 +/********** XA_Audio_Setup **********************
 + * 
@@ -75,18 +72,16 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
 + * Open /dev/audio and OpenBSD.
 + *
 + *****/
++
 +void OpenBSD_Audio_Init()
-+{ int ret;
-+  int type;
-+  audio_info_t a_info;
-+  struct audio_encoding query;
-+  DEBUG_LEVEL2 fprintf(stderr,"OpenBSD_Audio_Init\n");
++{
++  struct sio_par par;
++
 +  if (xa_audio_present != XA_AUDIO_UNK) return;
-+  devAudio = open("/dev/audio", O_WRONLY | O_NDELAY);
-+  if (devAudio == -1)
++  hdl = sio_open(SIO_DEVANY, SIO_PLAY, 0);
++  if (hdl == NULL)
 +  {
-+    if (errno == EBUSY) fprintf(stderr,"Audio_Init: Audio device is busy. - ");
-+    else fprintf(stderr,"Audio_Init: Error opening audio device. - ");
++    fprintf(stderr,"Audio_Init: Error opening audio device. - ");
 +    fprintf(stderr,"Will continue without audio\n");
 +    xa_audio_present = XA_AUDIO_ERR;
 +    return;
@@ -94,97 +89,47 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
 +
 +  DEBUG_LEVEL1 fprintf(stderr,"OpenBSD AUDIO\n");
 +
-+  AUDIO_INITINFO(&a_info);
-+  a_info.blocksize = 1024;
-+  a_info.mode = AUMODE_PLAY | AUMODE_PLAY_ALL;
-+  a_info.play.sample_rate = 11025;   /* this is changed later */
-+
-+  /* find true native formats */
-+  for (query.index = 0;
-+  	ioctl(devAudio, AUDIO_GETENC, &query) != -1;
-+	query.index++)
-+	{
-+	if (query.flags & AUDIO_ENCODINGFLAG_EMULATED)
-+	   	continue;
-+	if (query.precision == 16)
-+		{
-+		a_info.play.encoding = query.encoding;
-+		a_info.play.precision = query.precision;
-+		break;
-+		}
-+	if ((query.precision == 8) && (
-+		(query.encoding == AUDIO_ENCODING_SLINEAR) || 
-+		(query.encoding == AUDIO_ENCODING_ULINEAR)) )
-+		{
-+		a_info.play.encoding = query.encoding;
-+		a_info.play.precision = query.precision;
-+		}
-+		/* no linear format -> resort to log formats */
-+	if (a_info.play.precision != 8)
-+		{
-+		if ( query.encoding == AUDIO_ENCODING_ULAW) 
-+			a_info.play.encoding = query.encoding;
-+		}
-+	}
-+  /* set format, then retrieve what the device actually says */
-+  ioctl(devAudio, AUDIO_SETINFO, &a_info);
-+  ioctl(devAudio, AUDIO_GETINFO, &a_info);
-+
-+  switch(a_info.play.encoding)
-+  	{
-+  case AUDIO_ENCODING_SLINEAR:
-+  	xa_audio_hard_type = a_info.play.precision == 8 ? XA_AUDIO_SIGNED_1M :
-+#if BYTE_ORDER == BIG_ENDIAN
-+	XA_AUDIO_SIGNED_2MB;
-+#else
-+	XA_AUDIO_SIGNED_2ML;
-+#endif
-+	break;
-+  case AUDIO_ENCODING_ULINEAR:
-+  	xa_audio_hard_type = a_info.play.precision == 8 ? XA_AUDIO_LINEAR_1M :
-+#if BYTE_ORDER == BIG_ENDIAN
-+	XA_AUDIO_LINEAR_2MB;
-+#else
-+	XA_AUDIO_LINEAR_2ML;
-+#endif
-+	break;
-+  case AUDIO_ENCODING_ULAW:
-+   xa_audio_hard_type = XA_AUDIO_SUN_AU;
-+  	break;
-+  case AUDIO_ENCODING_ULINEAR_LE:
-+  	xa_audio_hard_type = a_info.play.precision == 8 ? XA_AUDIO_LINEAR_1M :
-+		XA_AUDIO_LINEAR_2ML;
-+	break;
-+  case AUDIO_ENCODING_ULINEAR_BE:
-+  	xa_audio_hard_type = a_info.play.precision == 8 ? XA_AUDIO_LINEAR_1M :
-+		XA_AUDIO_LINEAR_2MB;
-+	break;
-+  case AUDIO_ENCODING_SLINEAR_LE:
-+  	xa_audio_hard_type = a_info.play.precision == 8 ? XA_AUDIO_SIGNED_1M :
-+		XA_AUDIO_SIGNED_2ML;
-+	break;
-+  case AUDIO_ENCODING_SLINEAR_BE:
-+  	xa_audio_hard_type = a_info.play.precision == 8 ? XA_AUDIO_SIGNED_1M :
-+		XA_AUDIO_SIGNED_2MB;
-+	break;
-+  default:
-+    fprintf(stderr,"Audio_Init: Weird audio format %d\n",
-+	 a_info.play.encoding);
-+    fprintf(stderr,"Will continue without audio\n");
++  sio_initpar(&par);
++  par.appbufsz = 1024;
++  par.rate = 11025;   /* this is changed later */
++  par.pchan = 1;
++  par.bits = 16;
++  par.le = SIO_LE_NATIVE;
++  par.sig = 1;
++  if (!sio_setpar(hdl, &par) || !sio_getpar(hdl, &par)) {
++    fprintf(stderr,"Audio_Init: Error setting audio parameters\n");
 +    xa_audio_present = XA_AUDIO_ERR;
-+	 close(devAudio);
-+	 return;
-+   }
-+
-+  xa_audio_hard_freq  = a_info.play.sample_rate;
-+  xa_audio_hard_buff  = a_info.blocksize;
-+
-+	/* only precision 8 and 16 are supported. Fail if otherwise?? */
-+  xa_audio_hard_bps   = (a_info.play.precision==8)?1:2;
-+  xa_audio_hard_chans = a_info.play.channels;
-+  Gen_uLaw_2_Signed();
-+  Gen_Signed_2_uLaw();
-+
++    return;
++  }
++  if ((par.pchan != 1 && par.pchan != 2) ||
++      (par.bits != 8 && par.bits != 16)) {
++    fprintf(stderr,"Audio_Init: Unsupported audio parameters\n");
++    xa_audio_present = XA_AUDIO_ERR;
++    return;
++  }
++  if (par.pchan == 1) {
++    if (par.bits == 8) {
++      xa_audio_hard_type = par.sig ? XA_AUDIO_SIGNED_1M : XA_AUDIO_LINEAR_1M;
++    } else {
++      if (par.le)
++        xa_audio_hard_type = par.sig ? XA_AUDIO_SIGNED_2ML : XA_AUDIO_LINEAR_2ML;
++      else
++        xa_audio_hard_type = par.sig ? XA_AUDIO_SIGNED_2MB : XA_AUDIO_LINEAR_2MB;
++    }
++  } else {
++    if (par.bits == 8) {
++      xa_audio_hard_type = par.sig ? XA_AUDIO_SIGNED_1S : XA_AUDIO_LINEAR_1S;
++    } else {
++      if (par.le)
++        xa_audio_hard_type = par.sig ? XA_AUDIO_SIGNED_2SL : XA_AUDIO_LINEAR_2SL;
++      else
++        xa_audio_hard_type = par.sig ? XA_AUDIO_SIGNED_2SB : XA_AUDIO_LINEAR_2SB;
++    }
++  }
++  xa_audio_hard_freq  = par.rate;
++  xa_audio_hard_buff  = par.appbufsz;
++  xa_audio_hard_bps   = par.bps;
++  xa_audio_hard_chans = par.pchan;
 +  xa_interval_id = 0;
 +  xa_audio_present = XA_AUDIO_OK;
 +  DEBUG_LEVEL2 fprintf(stderr,"   success \n");
@@ -198,11 +143,9 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
 + *****/
 +void OpenBSD_Audio_Kill()
 +{ 
-+  /* TURN AUDIO OFF */
 +  OpenBSD_Audio_Off(0);
 +  xa_audio_present = XA_AUDIO_UNK;
-+  /* SHUT THINGS DOWN  */
-+  close(devAudio);
++  sio_close(hdl);
 +  Kill_Audio_Ring();
 +}
 +
@@ -214,32 +157,19 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
 +xaULONG flag;
 +{ /* long ret; */
 +
-+  DEBUG_LEVEL1 fprintf(stderr,"OpenBSD_Audio_Off\n");
 +  if (xa_audio_status != XA_AUDIO_STARTED) return;
 +
 +  /* SET FLAG TO STOP OUTPUT ROUTINE */
 +  xa_audio_status = XA_AUDIO_STOPPED;
 +
-+  /* TURN OFF SOUND ??? */
-+  OpenBSD_Adjust_Volume(XA_AUDIO_MINVOL);
-+
-+  /* FLUSH AUDIO DEVICE */ /* NOT! */
-+/*
-+  ret = ioctl(devAudio, AUDIO_FLUSH, NULL);
-+  if (ret == -1) fprintf(stderr,"OpenBSD Audio: off flush err %d\n",errno);
-+*/
++  if (!sio_stop(hdl)) {
++    fprintf(stderr,"Audio_Off: Error stopping device\n");
++    xa_audio_present = XA_AUDIO_ERR;
++    return;
++  }
 +
 +  xa_time_audio = -1;
 +  xa_audio_flushed = 0;
-+
-+  /* FLUSH AUDIO DEVICE AGAIN */ /* NOT! */
-+/*
-+  ret = ioctl(devAudio, AUDIO_FLUSH, NULL);
-+  if (ret == -1) fprintf(stderr,"OpenBSD Audio: off flush err %d\n",errno);
-+*/
-+
-+  /* RESTORE ORIGINAL VOLUME */
-+  if (XAAUD->mute != xaTRUE) OpenBSD_Adjust_Volume(XAAUD->volume);
 +}
 +
 +/********** OpenBSD_Audio_Prep **********************
@@ -248,26 +178,21 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
 + *****/
 +void OpenBSD_Audio_Prep()
 +{
-+  DEBUG_LEVEL2 
-+  {
-+    fprintf(stderr,"OpenBSD_Audio_Prep \n");
-+  }
++  struct sio_par par;
++
 +  if (xa_audio_status == XA_AUDIO_STARTED) return;
 +  else if (xa_audio_present != XA_AUDIO_OK) return;
 +
 +  else if (xa_snd_cur)
-+  { int ret;
-+
-+    /* CHANGE FREQUENCY IF NEEDED */
-+    if (xa_audio_hard_freq != xa_snd_cur->hfreq)
-+    { audio_info_t a_info;
-+      AUDIO_INITINFO(&a_info); 
-+      a_info.play.sample_rate = xa_snd_cur->hfreq;
-+      ret = ioctl(devAudio, AUDIO_SETINFO, &a_info);
-+      if (ret == -1) fprintf(stderr,"audio setfreq: freq %x errno %d\n",
-+						xa_snd_cur->hfreq, errno);
-+      xa_audio_hard_freq = xa_snd_cur->hfreq;
++  {
++    sio_initpar(&par);
++    par.rate = xa_snd_cur->hfreq;
++    if (!sio_setpar(hdl, &par) || !sio_getpar(hdl, &par)) {
++      fprintf(stderr,"Audio_Init: Error setting audio parameters\n");
++      xa_audio_present = XA_AUDIO_ERR;
++      return;
 +    }
++    xa_audio_hard_freq = par.rate;
 +
 +    /* xa_snd_cur gets changes in Update_Ring() */
 +    xa_out_time = 100;  /* keep audio fed 500ms ahead of video */  /* was 500, changed it to 100 - rcd */
@@ -291,11 +216,15 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
 +      && (xa_audio_status == XA_AUDIO_PREPPED) )
 +  { 
 +    xa_audio_status = XA_AUDIO_STARTED;
++    if (!sio_start(hdl)) {
++      fprintf(stderr,"Audio_Init: Error starting audio device\n");
++      xa_audio_present = XA_AUDIO_ERR;
++      return;
++    }
 +    xa_time_now = XA_Read_AV_Time();  /* get new time */
 +    New_Merged_Audio_Output();
 +  }
 +}
-+
 +
 +/********** OpenBSD_Closest_Freq **********************************************
 + *
@@ -306,43 +235,13 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
 +xaULONG OpenBSD_Closest_Freq(ifreq)
 +xaLONG ifreq;
 +{ 
-+static int cache_ifreq =0, cache_ofreq = 0;
-+  if (cache_ifreq == ifreq || cache_ofreq == ifreq)
-+    return cache_ofreq;
-+  else
-+    { audio_info_t a_info;
-+
-+    AUDIO_INITINFO(&a_info);
-+    a_info.play.sample_rate = ifreq;
-+    ioctl(devAudio, AUDIO_SETINFO, &a_info);
-+
-+    ioctl(devAudio, AUDIO_GETINFO, &a_info);
-+
-+    xa_audio_hard_buff  = a_info.blocksize;
-+    cache_ifreq = ifreq;
-+    cache_ofreq = a_info.play.sample_rate;
-+    return (a_info.play.sample_rate);
-+    }
++  return ifreq;
 +}
-+
 +
 +/* Eventually merge everything to one */
 +void OpenBSD_Set_Output_Port(aud_ports)
 +xaULONG aud_ports;
 +{
-+/* Commented out for now ;-) */
-+/*
-+audio_info_t a_info;
-+  xaLONG ret;
-+  xaULONG OpenBSD_ports = 0;
-+  if (aud_ports & XA_AUDIO_PORT_INT)  OpenBSD_ports |= AUDIO_SPEAKER;
-+  if (aud_ports & XA_AUDIO_PORT_HEAD) OpenBSD_ports |= AUDIO_HEADPHONE;
-+  if (aud_ports & XA_AUDIO_PORT_EXT)  OpenBSD_ports |= AUDIO_LINE_OUT;
-+  AUDIO_INITINFO(&a_info);
-+  a_info.play.port = OpenBSD_ports;
-+  ret = ioctl(devAudio, AUDIO_SETINFO, &a_info);
-+  if (ret < 0) fprintf(stderr,"Audio: couldn't set speaker port %d\n",errno);
-+*/
 +}
 +
 +/************* OpenBSD_Speaker_Toggle *****************************************
@@ -354,16 +253,6 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
 +void OpenBSD_Speaker_Toggle(flag)
 +xaULONG flag;
 +{ 
-+  switch(flag)
-+  {
-+    case  0: XAAUD->port &= ~XA_AUDIO_PORT_INT; break;
-+    case  1: XAAUD->port |=  XA_AUDIO_PORT_INT; break;
-+    default:  /* mutually exclusive set for now - never turn off */
-+    { if ( !(XAAUD->port & XA_AUDIO_PORT_INT)) 
-+		XAAUD->port = XA_AUDIO_PORT_INT;
-+    }
-+  }
-+  OpenBSD_Set_Output_Port(XAAUD->port);
 +}
 +
 +/************* OpenBSD_Headphone_Toggle *****************************************
@@ -375,18 +264,7 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
 +void OpenBSD_Headphone_Toggle(flag)
 +xaULONG flag;
 +{ 
-+  switch(flag)
-+  {
-+    case  0: XAAUD->port &= ~XA_AUDIO_PORT_HEAD; break;
-+    case  1: XAAUD->port |=  XA_AUDIO_PORT_HEAD; break;
-+    default:  /* mutually exclusive set for now - never turn off */
-+    { if ( !(XAAUD->port & XA_AUDIO_PORT_HEAD)) 
-+		XAAUD->port = XA_AUDIO_PORT_HEAD;
-+    }
-+  }
-+  OpenBSD_Set_Output_Port(XAAUD->port);
 +}
-+
 +
 +/********** OpenBSD_Adjust_Volume **********************
 + * Routine for Adjusting Volume on OpenBSD
@@ -395,16 +273,14 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
 + ****************************************************************************/
 +void OpenBSD_Adjust_Volume(volume)
 +xaULONG volume;
-+{ audio_info_t a_info;
-+
-+  AUDIO_INITINFO(&a_info);
-+  a_info.play.gain = OpenBSD_MIN_VOL +
-+	((volume * (OpenBSD_MAX_VOL - OpenBSD_MIN_VOL)) / XA_AUDIO_MAXVOL);
-+  if (a_info.play.gain > OpenBSD_MAX_VOL) a_info.play.gain = OpenBSD_MAX_VOL;
-+  ioctl(devAudio, AUDIO_SETINFO, &a_info);
-+
++{
++#if 0 /* not_yet, xanim sets initial volume too low */
++  if (hdl)
++    sio_setvol(hdl, volume * SIO_MAXVOL / XA_AUDIO_MAXVOL);
++#endif
 +}
 +#endif
++
 +/****************************************************************************/
 +/******************* END OF OpenBSD SPECIFIC ROUTINES ************************/
 +/****************************************************************************/
@@ -412,7 +288,7 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
   /****************************************************************************/
  /**************** TOWNS SPECIFIC ROUTINES ***********************************/
  /****************************************************************************/
-@@ -5828,29 +6225,15 @@ void New_Merged_Audio_Output()
+@@ -5828,29 +6101,19 @@ void New_Merged_Audio_Output()
  
  /*---------------- Now for the Write Segments -------------------------------*/
  
@@ -423,8 +299,10 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
  
 -#ifdef XA_NetBSD_AUDIO
 -      write(devAudio,xa_audio_ring->buf,xa_audio_ring->len);
--#endif
--
++#ifdef XA_OpenBSD_AUDIO
++      sio_write(hdl, xa_audio_ring->buf, xa_audio_ring->len);
+ #endif
+ 
 -#ifdef XA_AIX_AUDIO
 -      { int rc;
 -        rc = write ( devAudio, xa_audio_ring->buf, xa_audio_ring->len );
@@ -443,7 +321,7 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
  #ifdef XA_NAS_AUDIO
        NAS_Write_Data(xa_audio_ring->buf, xa_audio_ring->len);
  #endif
-@@ -5864,10 +6247,6 @@ void New_Merged_Audio_Output()
+@@ -5864,10 +6127,6 @@ void New_Merged_Audio_Output()
        }
  #endif
  
@@ -454,7 +332,7 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
  #ifdef XA_AF_AUDIO
        { ATime act, atd = AFtime0;
  	if (XAAUD->mute != xaTRUE)
-@@ -5883,10 +6262,6 @@ void New_Merged_Audio_Output()
+@@ -5883,10 +6142,6 @@ void New_Merged_Audio_Output()
  /* Some way to flush streamsocket???? */
  #endif
  
@@ -465,7 +343,7 @@ $OpenBSD: patch-xa_audio_c,v 1.1 2015/06/29 22:38:59 ratchov Exp $
  #ifdef XA_MMS_AUDIO
        /* As currently implemented, this copies the audio data into a separate
           shared memory buffer for communication with the multimedia server. We
-@@ -5921,10 +6296,6 @@ void New_Merged_Audio_Output()
+@@ -5921,10 +6176,6 @@ void New_Merged_Audio_Output()
  	  else { mms_buffers_outstanding++; }
  	}
        }
