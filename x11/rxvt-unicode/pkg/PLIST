@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/01/05 16:09:51 dcoppa Exp $
-@mode g+s
+@comment $OpenBSD: PLIST,v 1.11 2015/06/29 06:29:52 dcoppa Exp $
+@mode 2555
 @group utmp
 @bin bin/urxvt
 @mode
 @group
 @bin bin/urxvtc
-@mode g+s
+@mode 2555
 @group utmp
 @bin bin/urxvtd
 @mode
