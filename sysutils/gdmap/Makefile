@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/06/29 09:08:53 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2015/06/29 09:22:20 ajacoutot Exp $
 
 COMMENT =		graphical disk map
 DISTNAME =		gdmap-0.8.1
 CATEGORIES =		sysutils x11
+REVISION =		0
 
 HOMEPAGE =		http://gdmap.sourceforge.net/
 
@@ -19,16 +20,17 @@ WANTLIB += pthread xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gdmap/}
 
-MODULES =		devel/gettext
-BUILD_DEPENDS =		textproc/p5-XML-Parser
-LIB_DEPENDS =		textproc/libxml,-main \
+MODULES =		devel/gettext \
+			textproc/intltool
+
+LIB_DEPENDS =		textproc/libxml \
 			x11/gtk+2
-RUN_DEPENDS =		devel/desktop-file-utils \
-			textproc/p5-XML-Parser
+RUN_DEPENDS =		devel/desktop-file-utils
 
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		GMSGFMT=${LOCALBASE}/bin/msgfmt
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
