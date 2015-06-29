@@ -1,10 +1,21 @@
-$OpenBSD: patch-src_ASDocGen_xmlproc_c,v 1.1 2009/12/06 15:09:22 jasper Exp $
+$OpenBSD: patch-src_ASDocGen_xmlproc_c,v 1.2 2015/06/29 14:46:57 ajacoutot Exp $
+
+xmlproc.c:182:19: warning: multi-character character constant
 
 Fix build on sparc64.
 
---- src/ASDocGen/xmlproc.c.orig	Thu Dec  3 22:33:41 2009
-+++ src/ASDocGen/xmlproc.c	Thu Dec  3 22:34:15 2009
-@@ -504,9 +504,10 @@ add_glossary_item( xml_elem_t* doc, ASXMLInterpreterSt
+--- src/ASDocGen/xmlproc.c.orig	Wed May  1 15:34:11 2013
++++ src/ASDocGen/xmlproc.c	Mon Jun 29 15:49:03 2015
+@@ -179,7 +179,7 @@ write_doc_cdata( const char *cdata, int len, ASXMLInte
+ 				fputs( "\\&", state->dest_fp );	
+ 			else if ( c == '\\' && state->doc_type == DocType_NROFF ) 
+ 				fputc( '\\', state->dest_fp );	
+-			else if ( c == '' && state->doc_type == DocType_NROFF ) 
++			else if ( c == 152 /*''*/ && state->doc_type == DocType_NROFF ) 
+ 				c = '~';
+ 			fputc( c, state->dest_fp );
+ 		}		   
+@@ -514,9 +514,10 @@ add_glossary_item( xml_elem_t* doc, ASXMLInterpreterSt
  	 	char *target = NULL, *target2 ;
  		char *term = NULL, *term2 ;
  		char *ptr = &(state->dest_file[strlen(state->dest_file)-4]);

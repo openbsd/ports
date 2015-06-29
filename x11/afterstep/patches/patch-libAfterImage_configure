@@ -1,20 +1,24 @@
-$OpenBSD: patch-libAfterImage_configure,v 1.1 2012/04/12 17:31:12 naddy Exp $
---- libAfterImage/configure.orig	Thu Apr 12 18:38:50 2012
-+++ libAfterImage/configure	Thu Apr 12 18:40:05 2012
-@@ -3237,16 +3237,6 @@ fi
+$OpenBSD: patch-libAfterImage_configure,v 1.2 2015/06/29 14:46:57 ajacoutot Exp $
+--- libAfterImage/configure.orig	Wed May  1 15:34:11 2013
++++ libAfterImage/configure	Mon Jun 29 14:43:46 2015
+@@ -4081,7 +4081,7 @@ fi
  
- fi
- 
--if test "x$enable_gdb" = "xno"; then
--		DIRTY_CFLAGS="$CFLAGS"
+ if test "x$enable_gdb" = "xno"; then
+ 		DIRTY_CFLAGS="$CFLAGS"
 -  		CFLAGS="-O3"
--  		for f in $DIRTY_CFLAGS; do
--       		if test "x$f" != "x-O2" -a "x$f" != "x-O3" -a "x$f" != "x-O"; then
--		   		CFLAGS="$CFLAGS $f"
--			fi
--  		done
--fi
--
- 
- MMX_CFLAGS="-mmmx -Winline --param inline-unit-growth=10000 --param large-function-growth=10000"
- have_mmx_intrinsics=no
++  		CFLAGS=""
+   		for f in $DIRTY_CFLAGS; do
+        		if test "x$f" != "x-O2" -a "x$f" != "x-O3" -a "x$f" != "x-O"; then
+ 		   		CFLAGS="$CFLAGS $f"
+@@ -6697,9 +6697,9 @@ if test "x$have_afterbase" = "xyes"; then
+ 		user_ldflags="$user_ldflags $RDYNAMIC"
+   	fi
+     if test "x$have_x" != "xyes" -a "x$have_gif" = "xyes"; then
+-    	AFTERIMAGE_LIBS="$AFTERIMAGE_LIBS -lAfterBase"
++    	AFTERIMAGE_LIBS="$AFTERIMAGE_LIBS -lAfterBase -L${LOCALBASE}/lib -lexecinfo"
+     else
+-    	AFTERIMAGE_LIBS="-lAfterBase $AFTERIMAGE_LIBS"
++    	AFTERIMAGE_LIBS="-lAfterBase -L${LOCALBASE}/lib -lexecinfo $AFTERIMAGE_LIBS"
+     fi
+     if test -r "../libAfterBase/astypes.h"; then
+     	AFTERIMAGE_APPS_LIBS="-L../ -L../../libAfterBase -lAfterImage $AFTERIMAGE_LIBS"

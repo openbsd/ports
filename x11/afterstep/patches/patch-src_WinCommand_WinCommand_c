@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_WinCommand_WinCommand_c,v 1.1 2009/12/06 15:09:22 jasper Exp $
+$OpenBSD: patch-src_WinCommand_WinCommand_c,v 1.2 2015/06/29 14:46:57 ajacoutot Exp $
 
 Declare at the right place and remove trailing whitespace.
 
---- src/WinCommand/WinCommand.c.orig	Thu Dec  3 22:36:28 2009
-+++ src/WinCommand/WinCommand.c	Thu Dec  3 22:36:58 2009
+--- src/WinCommand/WinCommand.c.orig	Wed May  1 15:34:11 2013
++++ src/WinCommand/WinCommand.c	Mon Jun 29 15:11:18 2015
 @@ -307,12 +307,13 @@ main( int argc, char **argv )
  	ASBiDirElem *curr;
  	char *command;
