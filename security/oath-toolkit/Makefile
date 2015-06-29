@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2015/05/22 11:31:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2015/06/29 20:21:47 sthen Exp $
 
 COMMENT-main=	toolkit for OATH/HOTP and TOTP
 COMMENT-pskc=	toolkit for RFC 6030 Portable Symmetric Key Container
 
-V=		2.4.1
+V=		2.6.0
 DISTNAME=	oath-toolkit-$V
 PKGNAME-main=	oath-toolkit-$V
 PKGNAME-pskc=	oath-toolkit-pskc-$V
-REVISION-main=	0
-REVISION-pskc=	0
 
-SHARED_LIBS +=  oath                      0.1 # 1.3
+SHARED_LIBS +=  oath                      0.2 # 1.3
 SHARED_LIBS +=  pskc                      0.1 # 0.1
 
 CATEGORIES=	security devel
@@ -25,10 +23,10 @@ PERMIT_PACKAGE_CDROM=	 Yes
 
 MULTI_PACKAGES=	-main -pskc
 
-WANTLIB-main=	c
-WANTLIB-pskc=	c ltdl m xml2 xmlsec1 xslt z ${MODLIBICONV_WANTLIB}
+WANTLIB-main=	c pam
+WANTLIB-pskc=	c ltdl lzma m pthread xml2 xmlsec1 xslt z ${MODLIBICONV_WANTLIB}
 
-LIB_DEPENDS-main=
+LIB_DEPENDS-main= security/openpam
 LIB_DEPENDS-pskc= security/xmlsec \
 		${MODLIBICONV_LIB_DEPENDS}
 MODULES=	converters/libiconv
@@ -37,6 +35,8 @@ CONFIGURE_STYLE= gnu
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/xml
