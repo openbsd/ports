@@ -1,0 +1,12 @@
+$OpenBSD: patch-Programs_sys_openbsd_c,v 1.3 2015/06/29 22:17:46 ratchov Exp $
+--- Programs/sys_openbsd.c.orig	Fri Jun 26 09:29:06 2015
++++ Programs/sys_openbsd.c	Fri Jun 26 09:29:40 2015
+@@ -40,7 +40,7 @@
+ 
+ #ifdef ENABLE_PCM_SUPPORT
+ #define PCM_AUDIO_DEVICE_PATH "/dev/audio"
+-#include "sys_pcm_audio.h"
++#include "sys_pcm_sndio.h"
+ #endif /* ENABLE_PCM_SUPPORT */
+ 
+ #ifdef ENABLE_MIDI_SUPPORT
