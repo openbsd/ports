@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2015/06/09 12:55:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.45 2015/06/29 08:37:57 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-3.5.0
+REVISION=	0
 
 SHARED_LIBS+=	kik	12.0 # 16.0
 SHARED_LIBS+=	mkf	14.1 # 16.1
@@ -30,7 +31,9 @@ LIB_DEPENDS=	devel/fribidi \
 
 MODULES=	devel/gettext
 
-FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples"
+FAKE_FLAGS=	INSTALL_DATA="${INSTALL_DATA}" \
+		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+		sysconfdir="${PREFIX}/share/examples"
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.65
