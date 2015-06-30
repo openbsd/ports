@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/06/29 19:43:53 feinerer Exp $
+# $OpenBSD: Makefile,v 1.2 2015/06/30 05:02:03 feinerer Exp $
 
 COMMENT =		Hierarchical Data Format 5 Technology suite
 
@@ -25,6 +25,7 @@ WANTLIB += c m stdc++ z
 MASTER_SITES =		http://www.hdfgroup.org/ftp/HDF5/current/src/
 
 SEPARATE_BUILD =	Yes
+# cc: :0: No such file or directory
 USE_LIBTOOL=		gnu
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
