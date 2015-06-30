@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2015/06/28 14:06:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2015/06/30 04:37:01 ajacoutot Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
@@ -48,7 +48,9 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 
 .include <bsd.port.arch.mk>
 
-.if ${BUILD_PACKAGES:M-python}
+.if !${BUILD_PACKAGES:M-python}
+CONFIGURE_ARGS+=	--without-python
+.else
 MODULES+=		lang/python
 MODPY_RUNDEP=		No
 BUILD_DEPENDS+= 	textproc/libxml,-python
@@ -60,15 +62,11 @@ LIB_DEPENDS-python=	textproc/libxslt,-main \
 			${MODGETTEXT_LIB_DEPENDS}
 FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxslt/
 CONFIGURE_ARGS+=	--with-python
-.else
-CONFIGURE_ARGS+=	--without-python
-.endif
 
 post-install:
 # empty file
 	rm ${PREFIX}/share/doc/libxslt-python-1.1.28/TODO
 	rmdir ${PREFIX}/share/doc/libxslt-python-1.1.28
-.if ${BUILD_PACKAGES:M-python}
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{la,a}
 .endif
 
