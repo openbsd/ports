@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2015/06/20 19:35:39 ajacoutot Exp $
-
-BROKEN-amd64=	Bus error (core dumped)
+# $OpenBSD: Makefile,v 1.191 2015/06/30 09:02:54 sthen Exp $
 
 SHARED_ONLY=	Yes
 
