@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2015/05/12 12:46:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2015/06/30 10:53:17 jasper Exp $
 
 COMMENT=		OpenGL-based interactive canvas library
 
 GNOME_PROJECT=		clutter
-GNOME_VERSION=		1.22.2
+GNOME_VERSION=		1.22.4
 
-SHARED_LIBS +=  clutter-1.0          5.1   # 2200.0
+SHARED_LIBS +=  clutter-1.0          5.2   # 2204.0
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo cairo-gobject cogl cogl-pango
