@@ -1,0 +1,23 @@
+$OpenBSD: i386-patch,v 1.5 2015/06/30 09:26:06 sthen Exp $
+--- Imakefile.orig2	Tue Jun 30 03:24:01 2015
++++ Imakefile	Tue Jun 30 03:24:01 2015
+@@ -186,13 +186,13 @@ XCOMM  --    Creative   	CYUV	creative.readme
+ XCOMM  
+ XCOMM  Again don't use these if you are using the dynamically loadable modules.
+ XCOMM 
+-XCOMM XA_IV32_DEF = -DXA_IV32 
+-XCOMM XA_CVID_DEF = -DXA_CVID
+-XCOMM XA_CYUV_DEF = -DXA_CYUV
++XA_IV32_DEF = -DXA_IV32 
++XA_CVID_DEF = -DXA_CVID
++XA_CYUV_DEF = -DXA_CYUV
+ XCOMM 
+-XCOMM XA_IV32_LIB = mods/xa2.1_iv32_linuxELF.o
+-XCOMM XA_CVID_LIB = mods/xa2.0_cvid_linuxELF.o
+-XCOMM XA_CYUV_LIB = mods/xa1.0_cyuv_linuxELF.o
++XA_IV32_LIB = xa2.0_iv32_linuxELF.o
++XA_CVID_LIB = xa2.0_cvid_linuxELF.o
++XA_CYUV_LIB = xa1.0_cyuv_linuxELF.o
+ XCOMM 
+ XCOMM ##########################
+ XCOMM  NOTE: SGI Machines Only: 
