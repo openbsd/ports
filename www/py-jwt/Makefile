@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/06/26 07:35:50 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2015/06/30 13:42:15 sthen Exp $
 
 COMMENT =	JSON Web Token implementation in Python
 
@@ -20,7 +20,8 @@ MODPY_SETUPTOOLS = Yes
 
 RUN_DEPENDS =   security/py-cryptography
 
-TEST_DEPENDS =  devel/py-test \
-		devel/py-test-cov
+# tests are available, but need pytest-runner plus dep's (which aren't in
+# tree) at build time; if adding these, remove patch-setup_py
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
