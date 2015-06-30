@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/24 21:07:00 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2015/06/30 20:07:23 jasper Exp $
 
 COMMENT =		convert filenames from one encoding to another
-DISTNAME =		convmv-1.15
+DISTNAME =		convmv-2.0
 CATEGORIES =		converters
 HOMEPAGE =		http://www.j3e.de/linux/convmv/
 
