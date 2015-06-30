@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/06/22 07:51:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/06/30 19:39:23 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -402,6 +402,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/module/service/init_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/module/service/systemd_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/module/systemd_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/module/zfs_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/
+${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/interface_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/package_spec.rb
@@ -422,6 +424,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/helper/set_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/cpu_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/filesystem_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/memory_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/specinfra.gemspec
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
