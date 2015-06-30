@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2015/05/28 10:17:23 pascal Exp $
+# $OpenBSD: Makefile,v 1.41 2015/06/30 13:54:39 ajacoutot Exp $
 
 SHARED_ONLY=	   	Yes
 
 COMMENT=		GTK+ subtitles editor
 
-V=			0.51.0
+V=			0.52.1
 DISTNAME=		subtitleeditor-${V}
-REVISION=		0
 
 CATEGORIES=		graphics editors
 
@@ -33,8 +32,7 @@ WANTLIB += xml++-2.6 xml2 z
 
 MASTER_SITES=		http://download.gna.org/subtitleeditor/${V:R}/
 
-BUILD_DEPENDS=		devel/iso-codes \
-			multimedia/gstreamer-0.10/plugins-good
+BUILD_DEPENDS=		devel/iso-codes
 
 LIB_DEPENDS=		multimedia/gstreamer1/mm \
 			multimedia/gstreamer1/plugins-base \

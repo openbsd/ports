@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/05/25 10:08:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/06/30 13:54:39 ajacoutot Exp $
 @bin bin/subtitleeditor
 lib/libsubtitleeditor.a
 lib/libsubtitleeditor.la
@@ -44,6 +44,7 @@ lib/subtitleeditor/plugins/actions/libsplitdocument.so
 lib/subtitleeditor/plugins/actions/libsplitsubtitle.so
 lib/subtitleeditor/plugins/actions/libstacksubtitles.so
 lib/subtitleeditor/plugins/actions/libstyleeditor.so
+lib/subtitleeditor/plugins/actions/libstylize.so
 lib/subtitleeditor/plugins/actions/libtextcorrection.so
 lib/subtitleeditor/plugins/actions/libtimemodemanagement.so
 lib/subtitleeditor/plugins/actions/libtimingfromplayer.so
@@ -149,6 +150,7 @@ share/subtitleeditor/plugins-description/actions/splitdocument.se-plugin
 share/subtitleeditor/plugins-description/actions/splitsubtitle.se-plugin
 share/subtitleeditor/plugins-description/actions/stacksubtitles.se-plugin
 share/subtitleeditor/plugins-description/actions/styleeditor.se-plugin
+share/subtitleeditor/plugins-description/actions/stylize.se-plugin
 share/subtitleeditor/plugins-description/actions/textcorrection.se-plugin
 share/subtitleeditor/plugins-description/actions/timemodemanagement.se-plugin
 share/subtitleeditor/plugins-description/actions/timingfromplayer.se-plugin
