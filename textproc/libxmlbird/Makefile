@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/06/22 22:50:00 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/06/30 05:38:59 bcallah Exp $
 
 COMMENT =	XML parser written in Vala
-DISTNAME =	libxmlbird-1.0.5
+DISTNAME =	libxmlbird-1.0.6
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	textproc
 
