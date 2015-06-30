@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2015/05/12 09:37:03 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2015/06/30 09:19:48 sthen Exp $
 @newgroup _icinga:667
 @newgroup _icingacmd:734
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
@@ -49,8 +49,8 @@ share/doc/icinga2/markdown/20-library-reference.md
 share/doc/icinga2/markdown/21-debug.md
 share/doc/icinga2/markdown/22-appendix.md
 share/doc/icinga2/markdown/3-monitoring-basics.md
-share/doc/icinga2/markdown/4-advanced-topics.md
-share/doc/icinga2/markdown/5-configuring-icinga-2.md
+share/doc/icinga2/markdown/4-configuring-icinga-2.md
+share/doc/icinga2/markdown/5-advanced-topics.md
 share/doc/icinga2/markdown/6-object-types.md
 share/doc/icinga2/markdown/7-icinga-template-library.md
 share/doc/icinga2/markdown/8-cli-commands.md
@@ -143,6 +143,17 @@ share/examples/icinga2/scripts/mail-service-notification.sh
 @mode 755
 @sample ${SYSCONFDIR}/icinga2/scripts/mail-service-notification.sh
 @mode
+share/examples/icinga2/syntax/
+share/examples/icinga2/syntax/README
+share/examples/icinga2/syntax/nano/
+share/examples/icinga2/syntax/nano/README
+share/examples/icinga2/syntax/nano/icinga2.nanorc
+share/examples/icinga2/syntax/vim/
+share/examples/icinga2/syntax/vim/README
+share/examples/icinga2/syntax/vim/ftdetect/
+share/examples/icinga2/syntax/vim/ftdetect/icinga2.vim
+share/examples/icinga2/syntax/vim/syntax/
+share/examples/icinga2/syntax/vim/syntax/icinga2.vim
 share/examples/icinga2/zones.conf
 @sample ${SYSCONFDIR}/icinga2/zones.conf
 share/examples/icinga2/zones.d/
@@ -154,6 +165,7 @@ share/icinga2/include/
 share/icinga2/include/command-icinga.conf
 share/icinga2/include/command-nscp-local.conf
 share/icinga2/include/command-plugins-manubulon.conf
+share/icinga2/include/command-plugins-windows.conf
 share/icinga2/include/command-plugins.conf
 share/icinga2/include/command.conf
 share/icinga2/include/hangman
@@ -171,6 +183,7 @@ share/icinga2/include/plugins-contrib.d/virtualization.conf
 share/icinga2/include/plugins-contrib.d/vmware.conf
 share/icinga2/include/plugins-contrib.d/web.conf
 share/icinga2/include/timeperiod.conf
+share/icinga2/include/windows-plugins
 @mode 755
 @owner _icinga
 @group _icinga

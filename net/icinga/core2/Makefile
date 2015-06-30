@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/05/12 09:37:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2015/06/30 09:19:48 sthen Exp $
 
 BROKEN =	doesn't daemonize correctly. also suspect some thread-related problems with forking.
 BROKEN-hppa =	needs 64-bit atomic ops; __sync_add_and_fetch_4
@@ -8,7 +8,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.3.4
+V =		2.3.5
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -72,6 +72,11 @@ post-configure:
 
 pre-install:
 	mkdir -p ${PREFIX}
+
+post-install:
+	cp -r ${WRKSRC}/tools/syntax ${PREFIX}/share/examples/icinga2/
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/icinga2/syntax
+	chmod -R u=rwX,g=rX,o=rX ${PREFIX}/share/examples/icinga2/syntax
 
 # XXX this target isn't actually needed in order to run the tests, but they
 # are all failing for me with ld.so errors (possibly rpath-related) and
