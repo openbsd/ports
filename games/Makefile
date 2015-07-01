@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.310 2015/06/22 01:59:18 bcallah Exp $
+# $OpenBSD: Makefile,v 1.311 2015/07/01 21:33:49 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -169,6 +169,7 @@
      SUBDIR += openxcom
      SUBDIR += pacman-arena
      SUBDIR += pathological
+     SUBDIR += pentobi
      SUBDIR += pingus
      SUBDIR += pioneers
      SUBDIR += pokerth
