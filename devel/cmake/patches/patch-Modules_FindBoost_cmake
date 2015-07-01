@@ -1,0 +1,35 @@
+$OpenBSD: patch-Modules_FindBoost_cmake,v 1.7 2015/07/01 08:08:18 dcoppa Exp $
+--- Modules/FindBoost.cmake.orig	Mon Jun  1 17:56:08 2015
++++ Modules/FindBoost.cmake	Wed Jul  1 08:07:12 2015
+@@ -447,6 +447,22 @@ function(_Boost_GUESS_COMPILER_PREFIX _ret)
+   set(${_ret} ${_boost_COMPILER} PARENT_SCOPE)
+ endfunction()
+ 
++function(_Boost_consider_adding_pthread _outvar)
++  # On Unix platforms (excluding Cygwin) add pthread to Boost_LIBRARIES
++  # if the user is searching for the boost-thread component.
++  if(UNIX AND NOT CYGWIN)
++    list(FIND Boost_FIND_COMPONENTS thread _using_boost_thread)
++    if(_using_boost_thread GREATER -1)
++      set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
++      set(THREADS_PREFER_PTHREAD_FLAG TRUE)
++      find_package(Threads)
++      if(Threads_FOUND)
++        set(${_outvar} ${ARGN} Threads::Threads PARENT_SCOPE)
++      endif()
++    endif()
++  endif()
++endfunction()
++
+ #
+ # End functions/macros
+ #
+@@ -1177,6 +1193,8 @@ if(Boost_FOUND)
+       list(APPEND Boost_LIBRARIES ${Boost_${UPPERCOMPONENT}_LIBRARY})
+     endif()
+   endforeach()
++  # Add pthread library if thread component was found
++  _Boost_consider_adding_pthread(Boost_LIBRARIES ${Boost_LIBRARIES})
+ else()
+   if(Boost_FIND_REQUIRED)
+     message(SEND_ERROR "Unable to find the requested Boost libraries.\n${Boost_ERROR_REASON}")
