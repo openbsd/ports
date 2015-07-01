@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2015/04/04 09:21:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2015/07/01 20:54:03 nigel Exp $
 
 COMMENT=	Xfce4 clipboard history panel plugin
 
 XFCE_VERSION=	1.2.6
 XFCE_PLUGIN=	clipman
-REVISION=	1
+REVISION=	2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,7 +15,8 @@ MODXFCE_ICON_CACHE=	Yes
 
 LIB_DEPENDS+=	x11/xfce4/xfconf \
 		x11/xfce4/libxfce4ui \
-		devel/libunique
+		devel/libunique \
+		graphics/libqrencode
 
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-clipman \
 		actionsdir=${PREFIX}/share/examples/xfce4-clipman
@@ -27,7 +28,7 @@ WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread startup-notification-1 \
 		xfce4util z pthread-stubs xcb Xtst  xfce4ui-1 \
-		X11-xcb ffi xcb-util xfconf-0 unique-1.0 \
+		X11-xcb ffi xcb-util xfconf-0 unique-1.0 qrencode \
 		gthread-2.0 xcb-render xcb-shm harfbuzz graphite2
 
 
