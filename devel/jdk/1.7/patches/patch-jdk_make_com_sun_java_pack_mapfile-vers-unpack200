@@ -1,0 +1,13 @@
+$OpenBSD: patch-jdk_make_com_sun_java_pack_mapfile-vers-unpack200,v 1.1 2015/07/01 15:44:48 kurt Exp $
+--- jdk/make/com/sun/java/pack/mapfile-vers-unpack200.orig	Mon Jun 29 17:53:08 2015
++++ jdk/make/com/sun/java/pack/mapfile-vers-unpack200	Mon Jun 29 17:58:41 2015
+@@ -26,6 +26,9 @@
+ # Define library interface.
+ 
+ SUNWprivate_1.1 {
++	global:
++	    environ;
++	    __progname;
+ 	local:
+ 	    *;
+ };
