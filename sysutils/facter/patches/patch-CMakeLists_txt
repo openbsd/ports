@@ -1,9 +1,13 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2015/07/01 09:13:33 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2015/07/01 09:57:26 jasper Exp $
 
-- cc1plus: warning: /usr/obj/ports/facter-3.0.1/build-amd64/lib/tests/cotire/libfacter_test_CXX_prefix.hxx.gch: had text segment at different address
-  https://github.com/puppetlabs/facter/pull/1002
-- fix manpage destination dir
-  https://github.com/puppetlabs/facter/pull/1001
+- From 4aa96f13f233dcff08e732c38168989913b44f2f Mon Sep 17 00:00:00 2001
+  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+  Date: Tue, 30 Jun 2015 10:43:11 +0200
+  Subject: [PATCH] (maint) Do not enable pre-compiled headers on OpenBSD also
+- From 70d5c6ae661ac544236cb6df9533d078d76187df Mon Sep 17 00:00:00 2001
+  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+  Date: Tue, 30 Jun 2015 10:34:05 +0200
+  Subject: [PATCH] (maint) Use correct manpage path on OpenBSD
 - allow building curl on OpenBSD
 
 --- CMakeLists.txt.orig	Fri Jun 26 01:47:38 2015

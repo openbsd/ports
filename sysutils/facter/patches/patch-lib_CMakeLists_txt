@@ -1,7 +1,9 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.1.1.1 2015/07/01 09:13:33 jasper Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.2 2015/07/01 09:57:26 jasper Exp $
 
-- No libdl on OpenBSD.
-  https://github.com/puppetlabs/facter/pull/998
+- From f11bebbdfbe0ebfef9f1bfd7931bdc40511db871 Mon Sep 17 00:00:00 2001
+  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+  Date: Sat, 27 Jun 2015 09:57:48 +0200
+  Subject: [PATCH] (maint) Don't attempt to link with libdl on OpenBSD.
 - Enable basic set of facts
 
 --- lib/CMakeLists.txt.orig	Fri Jun 26 01:47:38 2015

@@ -1,7 +1,9 @@
-$OpenBSD: patch-lib_src_facts_posix_identity_resolver_cc,v 1.1.1.1 2015/07/01 09:13:33 jasper Exp $
+$OpenBSD: patch-lib_src_facts_posix_identity_resolver_cc,v 1.2 2015/07/01 09:57:26 jasper Exp $
 
-- unistd.h is required for _SC_GETPW_R_SIZE_MAX, geteuid(), getegid()
-  https://github.com/puppetlabs/facter/pull/1003
+- From be4764075844369969a9bde707171b8bd14fc1a9 Mon Sep 17 00:00:00 2001
+  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+  Date: Tue, 30 Jun 2015 10:47:01 +0200
+  Subject: [PATCH] (maint) Add missing unistd.h include
 
 --- lib/src/facts/posix/identity_resolver.cc.orig	Mon Jun 29 21:36:17 2015
 +++ lib/src/facts/posix/identity_resolver.cc	Mon Jun 29 21:36:25 2015
