@@ -1,0 +1,77 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/01 21:33:24 bcallah Exp $
+@bin bin/pentobi
+@bin bin/pentobi-thumbnailer
+@man man/man6/pentobi-thumbnailer.6
+@man man/man6/pentobi.6
+share/applications/pentobi.desktop
+share/help/
+share/help/C/
+share/help/C/pentobi/
+share/help/C/pentobi/analysis.jpg
+share/help/C/pentobi/become_stronger.html
+share/help/C/pentobi/board_classic.png
+share/help/C/pentobi/board_duo.png
+share/help/C/pentobi/board_trigon.jpg
+share/help/C/pentobi/classic_rules.html
+share/help/C/pentobi/duo_rules.html
+share/help/C/pentobi/index.html
+share/help/C/pentobi/junior_rules.html
+share/help/C/pentobi/license.html
+share/help/C/pentobi/pieces.png
+share/help/C/pentobi/pieces_junior.png
+share/help/C/pentobi/pieces_trigon.jpg
+share/help/C/pentobi/position_classic.png
+share/help/C/pentobi/position_duo.png
+share/help/C/pentobi/position_trigon.jpg
+share/help/C/pentobi/rating.jpg
+share/help/C/pentobi/shortcuts.html
+share/help/C/pentobi/stylesheet.css
+share/help/C/pentobi/system.html
+share/help/C/pentobi/trigon_rules.html
+share/help/C/pentobi/user_interface.html
+share/help/C/pentobi/window_menu.html
+share/help/de/
+share/help/de/pentobi/
+share/help/de/pentobi/become_stronger.html
+share/help/de/pentobi/classic_rules.html
+share/help/de/pentobi/duo_rules.html
+share/help/de/pentobi/index.html
+share/help/de/pentobi/junior_rules.html
+share/help/de/pentobi/license.html
+share/help/de/pentobi/shortcuts.html
+share/help/de/pentobi/system.html
+share/help/de/pentobi/trigon_rules.html
+share/help/de/pentobi/user_interface.html
+share/help/de/pentobi/window_menu.html
+share/icons/hicolor/16x16/apps/pentobi.png
+share/icons/hicolor/16x16/mimetypes/application-x-blokus-sgf.png
+share/icons/hicolor/32x32/apps/pentobi.png
+share/icons/hicolor/48x48/apps/pentobi.png
+share/icons/hicolor/48x48/mimetypes/application-x-blokus-sgf.png
+share/icons/hicolor/scalable/apps/pentobi.svg
+share/icons/hicolor/scalable/mimetypes/application-x-blokus-sgf.svg
+share/mime/packages/pentobi-mime.xml
+share/pentobi/
+share/pentobi/books/
+share/pentobi/books/book_classic.blksgf
+share/pentobi/books/book_classic_2.blksgf
+share/pentobi/books/book_classic_3.blksgf
+share/pentobi/books/book_duo.blksgf
+share/pentobi/books/book_junior.blksgf
+share/pentobi/books/book_trigon.blksgf
+share/pentobi/books/book_trigon_2.blksgf
+share/pentobi/books/book_trigon_3.blksgf
+share/pentobi/translations/
+share/pentobi/translations/libpentobi_gui_de.qm
+share/pentobi/translations/pentobi.qm
+share/pentobi/translations/pentobi_de.qm
+share/pixmaps/
+share/pixmaps/pentobi.xpm
+share/thumbnailers/
+share/thumbnailers/pentobi.thumbnailer
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

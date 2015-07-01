@@ -1,0 +1,10 @@
+Pentobi is a clone of the board game Blokus.
+
+Features:
+* Supported game variants: Classic (2, 3 or 4 players), Duo, Trigon (2,
+  3 or 4 players), and Junior
+* Different levels of playing strength
+* Player rating by playing rated games against the computer
+* Game analysis function
+* Save and load games in Smart Game Format including comments and move
+  variations
