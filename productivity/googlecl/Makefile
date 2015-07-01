@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/11 23:50:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2015/07/01 14:10:03 sthen Exp $
+
+BROKEN=		only supports OAuth 1.0, no longer supported by Google
 
 COMMENT=	command-line interface to Google services
 
