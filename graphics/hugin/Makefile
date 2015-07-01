@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/03/27 08:11:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2015/07/01 08:42:52 jasper Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
@@ -7,7 +7,7 @@ SHARED_ONLY =		Yes
 COMMENT =		panorama image stitcher
 
 DISTNAME =		hugin-2013.0.0
-REVISION =		1
+REVISION =		2
 EXTRACT_SUFX =		.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with
@@ -56,7 +56,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/gmake # yes, really a RUN_DEPENDS
 RUN_DEPENDS +=		x11/py-wxPython # required for launching python scripts
 
-LIB_DEPENDS =		devel/boost \
+LIB_DEPENDS =		devel/boost>=1.58 \
 			graphics/exiv2>=0.12 \
 			graphics/glew \
 			graphics/freeglut \

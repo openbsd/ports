@@ -1,0 +1,95 @@
+$OpenBSD: patch-src_tools_ParseExp_cpp,v 1.1 2015/07/01 08:42:52 jasper Exp $
+
+Use Boost::Phoenix V3 in Boost Spirit for expression parsing
+http://sourceforge.net/p/hugin/hugin/ci/e237d6d1d87354f974d37a95ba52dbd9666dd310/
+
+--- src/tools/ParseExp.cpp.orig	Sun Jun 28 21:36:47 2015
++++ src/tools/ParseExp.cpp	Sun Jun 28 21:38:59 2015
+@@ -33,7 +33,8 @@
+ 
+ #include <limits>
+ #include <iterator>
+-
++
++#define BOOST_SPIRIT_USE_PHOENIX_V3 1
+ #include <boost/spirit/version.hpp>
+ #if !defined(SPIRIT_VERSION) || SPIRIT_VERSION < 0x2010
+ #error "At least Spirit version 2.1 required"
+@@ -50,11 +51,9 @@ namespace Parser
+ //power function
+ struct lazy_pow_
+ {
+-    template <typename X, typename Y>
+-    struct result { typedef X type; };
+-
+-    template <typename X, typename Y>
+-    X operator()(X x, Y y) const
++    typedef double result_type;
++
++    double operator()(double x, double y) const
+     {
+         return std::pow(x, y);
+     }
+@@ -63,11 +62,9 @@ struct lazy_pow_
+ // modulus for double values
+ struct lazy_mod_
+ {
+-    template <typename X, typename Y>
+-    struct result { typedef X type; };
+-
+-    template <typename X, typename Y>
+-    X operator()(X x, Y y) const
++    typedef double result_type;
++
++    double operator()(double x, double y) const
+     {
+         return std::fmod(x,y);
+     }
+@@ -76,37 +73,33 @@ struct lazy_mod_
+ // if statement
+ struct lazy_if_
+ {
+-    template <typename X, typename Y, typename Z>
+-    struct result { typedef Y type; };
+-
+-    template <typename X, typename Y, typename Z>
+-    X operator()(X x, Y y, Z z) const
+-    {
+-        return x ? y : z;
++    typedef double result_type;
++
++    double operator()(double x, double y, double z) const
++    {
++        return (std::fabs(x)>1e-5) ? y : z;
+     }
+ };
+ 
+ // wrapper for unary function
+ struct lazy_ufunc_
+ {
+-    template <typename F, typename A1>
+-    struct result { typedef A1 type; };
+-
+-    template <typename F, typename A1>
+-    A1 operator()(F f, A1 a1) const
++    typedef double result_type;
++
++    double operator()(double (*f)(double), double a1) const
+     {
+         return f(a1);
+     }
+ };
+ 
+ // convert rad into deg
+-double deg(const double d)
++const double deg(const double d)
+ {
+     return d*180.0/boost::math::constants::pi<double>();
+ };
+ 
+ // convert deg into rad
+-double rad(const double d)
++const double rad(const double d)
+ {
+     return d*boost::math::constants::pi<double>()/180;
+ };
