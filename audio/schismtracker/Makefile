@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/13 01:09:51 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/01 00:07:08 bcallah Exp $
 
 COMMENT =	free module tracker editor and player
-# Newer versions are broken.
-DISTNAME =	schismtracker-20100101
+DISTNAME =	schismtracker-20150425
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio x11
 
@@ -12,9 +11,9 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += SDL X11 Xext Xv Xxf86misc c m pthread stdc++
+WANTLIB += SDL X11 Xext Xv c m pthread
 
-MASTER_SITES =	http://schismtracker.org/dl/
+MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
 
 LIB_DEPENDS =	devel/sdl
 
