@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.345 2015/06/29 20:56:22 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.346 2015/07/01 09:14:19 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -50,6 +50,7 @@
      SUBDIR += e2fsprogs
      SUBDIR += entr
      SUBDIR += eventlog
+     SUBDIR += facter
      SUBDIR += faubackup
      SUBDIR += fdupes
      SUBDIR += filelight
