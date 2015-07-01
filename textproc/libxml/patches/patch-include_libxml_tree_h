@@ -1,0 +1,19 @@
+$OpenBSD: patch-include_libxml_tree_h,v 1.1 2015/07/01 11:26:55 ajacoutot Exp $
+
+From 213f1fe0d76d30eaed6e5853057defc43e6df2c9 Mon Sep 17 00:00:00 2001
+From: Daniel Veillard <veillard@redhat.com>
+Date: Tue, 14 Apr 2015 17:41:48 +0800
+Subject: CVE-2015-1819 Enforce the reader to run in constant memory
+
+--- include/libxml/tree.h.orig	Mon Oct 13 10:20:09 2014
++++ include/libxml/tree.h	Wed Jul  1 13:19:23 2015
+@@ -76,7 +76,8 @@ typedef enum {
+     XML_BUFFER_ALLOC_EXACT,	/* grow only to the minimal size */
+     XML_BUFFER_ALLOC_IMMUTABLE, /* immutable buffer */
+     XML_BUFFER_ALLOC_IO,	/* special allocation scheme used for I/O */
+-    XML_BUFFER_ALLOC_HYBRID	/* exact up to a threshold, and doubleit thereafter */
++    XML_BUFFER_ALLOC_HYBRID,	/* exact up to a threshold, and doubleit thereafter */
++    XML_BUFFER_ALLOC_BOUNDED	/* limit the upper size of the buffer */
+ } xmlBufferAllocationScheme;
+ 
+ /**

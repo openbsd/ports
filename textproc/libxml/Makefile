@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2014/10/18 08:56:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.158 2015/07/01 11:26:55 ajacoutot Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -14,7 +14,8 @@ MASTER_SITES=		http://gd.tuwien.ac.at/pub/libxml/ \
 
 HOMEPAGE=		http://xmlsoft.org/
 
-REVISION=		0
+REVISION-main=		1
+REVISION-python=	0
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
@@ -40,7 +41,7 @@ FLAVOR?=
 
 MULTI_PACKAGES=		-main -python
 
-WANTLIB-main=		${WANTLIB} c
+WANTLIB-main=		${WANTLIB} c pthread
 RUN_DEPENDS-main=
 NOT_FOR_ARCHS-python =	${NO_SHARED_ARCHS}
 

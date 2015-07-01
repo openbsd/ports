@@ -1,0 +1,60 @@
+$OpenBSD: patch-xmlreader_c,v 1.1 2015/07/01 11:26:55 ajacoutot Exp $
+
+From 213f1fe0d76d30eaed6e5853057defc43e6df2c9 Mon Sep 17 00:00:00 2001
+From: Daniel Veillard <veillard@redhat.com>
+Date: Tue, 14 Apr 2015 17:41:48 +0800
+Subject: CVE-2015-1819 Enforce the reader to run in constant memory
+
+--- xmlreader.c.orig	Mon Oct  6 14:05:09 2014
++++ xmlreader.c	Wed Jul  1 13:19:23 2015
+@@ -2091,6 +2091,9 @@ xmlNewTextReader(xmlParserInputBufferPtr input, const 
+ 		"xmlNewTextReader : malloc failed\n");
+ 	return(NULL);
+     }
++    /* no operation on a reader should require a huge buffer */
++    xmlBufSetAllocationScheme(ret->buffer,
++			      XML_BUFFER_ALLOC_BOUNDED);
+     ret->sax = (xmlSAXHandler *) xmlMalloc(sizeof(xmlSAXHandler));
+     if (ret->sax == NULL) {
+ 	xmlBufFree(ret->buffer);
+@@ -3616,6 +3619,7 @@ xmlTextReaderConstValue(xmlTextReaderPtr reader) {
+ 	    return(((xmlNsPtr) node)->href);
+         case XML_ATTRIBUTE_NODE:{
+ 	    xmlAttrPtr attr = (xmlAttrPtr) node;
++	    const xmlChar *ret;
+ 
+ 	    if ((attr->children != NULL) &&
+ 	        (attr->children->type == XML_TEXT_NODE) &&
+@@ -3629,10 +3633,21 @@ xmlTextReaderConstValue(xmlTextReaderPtr reader) {
+                                         "xmlTextReaderSetup : malloc failed\n");
+                         return (NULL);
+                     }
++		    xmlBufSetAllocationScheme(reader->buffer,
++		                              XML_BUFFER_ALLOC_BOUNDED);
+                 } else
+                     xmlBufEmpty(reader->buffer);
+ 	        xmlBufGetNodeContent(reader->buffer, node);
+-		return(xmlBufContent(reader->buffer));
++		ret = xmlBufContent(reader->buffer);
++		if (ret == NULL) {
++		    /* error on the buffer best to reallocate */
++		    xmlBufFree(reader->buffer);
++		    reader->buffer = xmlBufCreateSize(100);
++		    xmlBufSetAllocationScheme(reader->buffer,
++		                              XML_BUFFER_ALLOC_BOUNDED);
++		    ret = BAD_CAST "";
++		}
++		return(ret);
+ 	    }
+ 	    break;
+ 	}
+@@ -5131,6 +5146,9 @@ xmlTextReaderSetup(xmlTextReaderPtr reader,
+                         "xmlTextReaderSetup : malloc failed\n");
+         return (-1);
+     }
++    /* no operation on a reader should require a huge buffer */
++    xmlBufSetAllocationScheme(reader->buffer,
++			      XML_BUFFER_ALLOC_BOUNDED);
+     if (reader->sax == NULL)
+ 	reader->sax = (xmlSAXHandler *) xmlMalloc(sizeof(xmlSAXHandler));
+     if (reader->sax == NULL) {
