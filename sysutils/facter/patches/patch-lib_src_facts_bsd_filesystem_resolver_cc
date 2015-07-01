@@ -1,0 +1,32 @@
+$OpenBSD: patch-lib_src_facts_bsd_filesystem_resolver_cc,v 1.1.1.1 2015/07/01 09:13:33 jasper Exp $
+
+Filter out unsupported fields.
+
+--- lib/src/facts/bsd/filesystem_resolver.cc.orig	Tue Jun 30 16:06:16 2015
++++ lib/src/facts/bsd/filesystem_resolver.cc	Tue Jun 30 16:06:19 2015
+@@ -54,19 +54,24 @@ namespace facter { namespace facts { namespace bsd {
+             { MNT_SYNCHRONOUS,  "noasync" },
+             { MNT_NOEXEC,       "noexec" },
+             { MNT_NOSUID,       "nosuid" },
++#ifndef __OpenBSD__
+             { MNT_UNION,        "union" },
++#endif /* __OpenBSD__ */
+             { MNT_ASYNC,        "async" },
+             { MNT_EXPORTED,     "exported" },
+             { MNT_LOCAL,        "local" },
+             { MNT_QUOTA,        "quota" },
+             { MNT_ROOTFS,       "root" },
+-#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) || defined(__OpenBSD__)
+             // the following constants aren't defined on FreeBSD 10
++#ifdef __OpenBSD__
+             { MNT_NODEV,        "nodev" },
++#else
+             { MNT_DONTBROWSE,   "nobrowse" },
+             { MNT_AUTOMOUNTED,  "automounted" },
+             { MNT_JOURNALED,    "journaled" },
+             { MNT_DEFWRITE,     "deferwrites" },
++#endif
+ #endif
+         };
+ 

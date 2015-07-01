@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/01 09:13:33 jasper Exp $
+@conflict facter-<3.0.1
+@bin bin/facter
+include/facter/
+include/facter/execution/
+include/facter/execution/execution.hpp
+include/facter/export.h
+include/facter/facts/
+include/facter/facts/array_value.hpp
+include/facter/facts/collection.hpp
+include/facter/facts/external/
+include/facter/facts/external/resolver.hpp
+include/facter/facts/fact.hpp
+include/facter/facts/map_value.hpp
+include/facter/facts/os.hpp
+include/facter/facts/os_family.hpp
+include/facter/facts/resolver.hpp
+include/facter/facts/scalar_value.hpp
+include/facter/facts/value.hpp
+include/facter/facts/vm.hpp
+include/facter/http/
+include/facter/http/client.hpp
+include/facter/http/request.hpp
+include/facter/http/response.hpp
+include/facter/logging/
+include/facter/logging/logging.hpp
+include/facter/ruby/
+include/facter/ruby/ruby.hpp
+include/facter/util/
+include/facter/util/directory.hpp
+include/facter/util/environment.hpp
+include/facter/util/file.hpp
+include/facter/util/option_set.hpp
+include/facter/util/scope_exit.hpp
+include/facter/util/scoped_resource.hpp
+include/facter/util/string.hpp
+include/facter/version.h
+@lib lib/libfacter.so.${LIBfacter_VERSION}
+lib/ruby/vendor_ruby/facter.rb
+@man man/man8/facter.8

@@ -1,0 +1,27 @@
+$OpenBSD: patch-vendor_leatherman_logging_CMakeLists_txt,v 1.1.1.1 2015/07/01 09:13:33 jasper Exp $
+
+- From 338fb40d1f91ebaec1a03877b081ec431533349f Mon Sep 17 00:00:00 2001
+  From: Michael Smith <michael.smith@puppetlabs.com>
+  Date: Fri, 19 Jun 2015 12:48:55 -0700
+  Subject: [PATCH] (LTH-7) Fix boost static linking order
+
+- https://github.com/puppetlabs/leatherman/pull/35
+
+- Add single threaded libboost_log to prevent undefined references
+  https://tickets.puppetlabs.com/browse/FACT-1080
+
+--- vendor/leatherman/logging/CMakeLists.txt.orig	Fri Jun 26 01:47:41 2015
++++ vendor/leatherman/logging/CMakeLists.txt	Mon Jun 29 22:07:42 2015
+@@ -1,6 +1,10 @@
+-find_package(Boost 1.54 REQUIRED COMPONENTS system filesystem thread date_time log chrono)
++find_package(Boost 1.54 REQUIRED COMPONENTS log log_setup thread date_time filesystem system chrono regex)
+ 
+-add_leatherman_deps("${Boost_SYSTEM_LIBRARY}" "${Boost_FILESYSTEM_LIBRARY}" "${Boost_THREAD_LIBRARY}" "${Boost_DATE_TIME_LIBRARY}" "${Boost_LOG_LIBRARY}" "${Boost_CHRONO}")
++if (UNIX)
++    set(SYSTEM_LIBS pthread)
++endif()
++
++add_leatherman_deps(${Boost_LIBRARIES} ${SYSTEM_LIBS} boost_log)
+ add_leatherman_includes("${Boost_INCLUDE_DIRS}")
+ 
+ leatherman_dependency(nowide)

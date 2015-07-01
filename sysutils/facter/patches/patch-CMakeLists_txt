@@ -1,0 +1,42 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2015/07/01 09:13:33 jasper Exp $
+
+- cc1plus: warning: /usr/obj/ports/facter-3.0.1/build-amd64/lib/tests/cotire/libfacter_test_CXX_prefix.hxx.gch: had text segment at different address
+  https://github.com/puppetlabs/facter/pull/1002
+- fix manpage destination dir
+  https://github.com/puppetlabs/facter/pull/1001
+- allow building curl on OpenBSD
+
+--- CMakeLists.txt.orig	Fri Jun 26 01:47:38 2015
++++ CMakeLists.txt	Tue Jun 30 10:42:27 2015
+@@ -34,6 +34,10 @@ if (MINGW)
+     # MinGW crashes with large pre-compiled headers; ours definitely exceeds the limit.
+     # See http://stackoverflow.com/questions/10841306/cc1plus-exe-crash-when-using-large-precompiled-header-file
+     set(PRECOMPILED_HEADERS FALSE)
++elseif("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
++    # On OpenBSD enabling precompiled headers result in cc1plus warnings:
++    # "had text segment at different address" due to PIE.
++    set(PRECOMPILED_HEADERS FALSE)
+ else()
+     set(PRECOMPILED_HEADERS TRUE)
+ endif()
+@@ -66,7 +70,7 @@ if ("${CMAKE_SYSTEM_NAME}" MATCHES "Linux" AND NOT WIT
+     find_package(BLKID)
+ endif()
+ 
+-if ((("${CMAKE_SYSTEM_NAME}" MATCHES "Linux") OR WIN32) AND NOT WITHOUT_CURL)
++if ((("${CMAKE_SYSTEM_NAME}" MATCHES "Linux") OR ("${MAKE_SYSTEM_NAME}" MATCHES "OpenBSD") OR WIN32) AND NOT WITHOUT_CURL)
+     find_package(CURL)
+     if (CURL_FOUND)
+         add_definitions(-DUSE_CURL)
+@@ -169,4 +173,10 @@ endif()
+ add_test(NAME "facter\\ smoke" COMMAND facter)
+ 
+ # Install the man page
+-install(FILES ${PROJECT_SOURCE_DIR}/man/man8/facter.8 DESTINATION share/man/man8/)
++if ("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
++    set(MANDIR man/man8/)
++else()
++    set(MANDIR share/man/man8/)
++endif()
++
++install(FILES ${PROJECT_SOURCE_DIR}/man/man8/facter.8 DESTINATION ${MANDIR})

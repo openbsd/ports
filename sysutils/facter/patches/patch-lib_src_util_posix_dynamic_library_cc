@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_src_util_posix_dynamic_library_cc,v 1.1.1.1 2015/07/01 09:13:33 jasper Exp $
+
+If RTLD_NOLOAD is not supportd, just use RTLD_LAZY which suffices those cases.
+http://hg.openjdk.java.net/bsd-port/jdk8/jdk/rev/ce213452b047
+
+--- lib/src/util/posix/dynamic_library.cc.orig	Fri Jun 26 01:47:38 2015
++++ lib/src/util/posix/dynamic_library.cc	Tue Jun 30 11:04:35 2015
+@@ -41,7 +41,11 @@ namespace facter { namespace util {
+         close();
+ 
+         // Don't actually perform a load to determine if it is already loaded
++#if defined(RTLD_NOLOAD)
+         _handle = dlopen(name.c_str(), RTLD_LAZY | RTLD_NOLOAD);
++#else
++        _handle = dlopen(name.c_str(), RTLD_LAZY);
++#endif
+         if (!_handle) {
+             // Load now
+             _handle = dlopen(name.c_str(), RTLD_LAZY);

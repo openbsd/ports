@@ -1,0 +1,9 @@
+Native implementation of facter functionality in C++11, providing:
+
+  - a shared library which gather facts about the system
+  - an executable for standalone command line usage
+  - a ruby file to enable require 'facter'
+
+Facter is especially useful for retrieving things like operating system
+names, hardware characteristics, IP addresses, MAC addresses, and SSH
+keys.
