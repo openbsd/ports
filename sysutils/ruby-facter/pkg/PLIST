@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.21 2015/04/03 08:48:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/07/01 09:12:01 jasper Exp $
+@conflict facter->=3.0.1
 bin/facter
 ${MODRUBY_SITEDIR}/facter/
 ${MODRUBY_SITEDIR}/facter.rb
