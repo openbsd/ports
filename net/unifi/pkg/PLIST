@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/06/25 13:50:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/07/01 13:52:04 sthen Exp $
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:/usr/local/share/unifi:/sbin/nologin
 bin/unifi
@@ -14,26 +14,23 @@ share/unifi/conf/
 share/unifi/dl/
 share/unifi/dl/firmware/
 share/unifi/dl/firmware/BZ2/
-share/unifi/dl/firmware/BZ2/3.2.10.2886/
-share/unifi/dl/firmware/BZ2/3.2.10.2886/firmware.bin
+share/unifi/dl/firmware/BZ2/${FWA}/
+share/unifi/dl/firmware/BZ2/${FWA}/firmware.bin
 share/unifi/dl/firmware/U2HSR/
-share/unifi/dl/firmware/U2HSR/3.2.10.2886/
-share/unifi/dl/firmware/U2HSR/3.2.10.2886/firmware.bin
+share/unifi/dl/firmware/U2HSR/${FWA}/
+share/unifi/dl/firmware/U2HSR/${FWA}/firmware.bin
 share/unifi/dl/firmware/U7E/
-share/unifi/dl/firmware/U7E/3.2.10.2886/
-share/unifi/dl/firmware/U7E/3.2.10.2886/firmware.bin
+share/unifi/dl/firmware/U7E/${FWA}/
+share/unifi/dl/firmware/U7E/${FWA}/firmware.bin
 share/unifi/dl/firmware/U7P/
-share/unifi/dl/firmware/U7P/3.2.10.2886/
-share/unifi/dl/firmware/U7P/3.2.10.2886/firmware.bin
+share/unifi/dl/firmware/U7P/${FWA}/
+share/unifi/dl/firmware/U7P/${FWA}/firmware.bin
 share/unifi/dl/firmware/UGW3/
-share/unifi/dl/firmware/UGW3/4.2.6.4751786/
-share/unifi/dl/firmware/UGW3/4.2.6.4751786/upgrade.tar
-share/unifi/dl/firmware/UP5/
-share/unifi/dl/firmware/UP5/4.6.2.266/
-share/unifi/dl/firmware/UP5/4.6.2.266/upgrade.zip
+share/unifi/dl/firmware/UGW3/${FWB}/
+share/unifi/dl/firmware/UGW3/${FWB}/upgrade.tar
 share/unifi/dl/firmware/US24P250/
-share/unifi/dl/firmware/US24P250/3.3.4.3731/
-share/unifi/dl/firmware/US24P250/3.3.4.3731/firmware.bin
+share/unifi/dl/firmware/US24P250/${FWC}/
+share/unifi/dl/firmware/US24P250/${FWC}/firmware.bin
 share/unifi/dl/firmware/bundles.json
 @owner
 share/unifi/lib/
