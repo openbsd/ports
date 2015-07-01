@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2015/05/03 12:56:55 rpe Exp $
+# $OpenBSD: Makefile,v 1.43 2015/07/01 21:26:38 rpe Exp $
 
 COMMENT =		ssh based config management framework
 
-MODPY_EGG_VERSION =	1.9.1
+MODPY_EGG_VERSION =	1.9.2
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -41,7 +41,8 @@ pre-configure:
 		${WRKSRC}/docs/man/man1/*.1
 
 pre-install:
-	@find ${WRKSRC} -name '*.orig' -type f -exec rm {} +
+	@find ${WRKSRC} \( -name '*.orig' -o -name '.git*' \
+		-o -name '.travis.yml' \) -type f -exec rm {} +
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXDIR} ${DOCDIR} ${MANDIR}

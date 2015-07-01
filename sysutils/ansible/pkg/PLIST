@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/03/31 19:09:28 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/07/01 21:26:38 rpe Exp $
 bin/ansible
 bin/ansible-doc
 bin/ansible-galaxy
@@ -100,8 +100,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible/modules/
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/.git
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/.gitignore
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/CONTRIBUTING.md
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/COPYING
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/README.md
@@ -470,9 +468,15 @@ lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/__init__.p
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/setup.ps1
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/slurp.ps1
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_copy.ps1
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_copy.py
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_copy.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_feature.ps1
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_feature.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_feature.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_file.ps1
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_file.py
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_file.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_get_url.ps1
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_get_url.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_get_url.pyc
@@ -491,12 +495,12 @@ lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_servic
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_stat.ps1
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_stat.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_stat.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_template.py
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_template.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_user.ps1
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_user.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/windows/win_user.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/.git
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/.gitignore
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/CONTRIBUTING.md
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/COPYING
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/README.md
