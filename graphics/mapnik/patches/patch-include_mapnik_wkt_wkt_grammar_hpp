@@ -1,0 +1,26 @@
+$OpenBSD: patch-include_mapnik_wkt_wkt_grammar_hpp,v 1.1 2015/07/01 08:45:19 jasper Exp $
+
+From 76f111cc97a86cb029682f92b3d212f105f46aa6 Mon Sep 17 00:00:00 2001
+From: Dane Springmeyer <dane@dbsgeo.com>
+Date: Sat, 27 Jul 2013 01:57:24 -0400
+Subject: [PATCH] support optionally compiling with -std=c++11 on OSX / clang / apple libc++ / boost 1.53 - refs #1683
+
+--- include/mapnik/wkt/wkt_grammar.hpp.orig	Tue Jun  4 03:35:27 2013
++++ include/mapnik/wkt/wkt_grammar.hpp	Mon Jun 29 09:08:51 2015
+@@ -40,12 +40,15 @@
+ namespace mapnik { namespace wkt {
+ 
+     using namespace boost::spirit;
+-    using namespace boost::fusion;
+     using namespace boost::phoenix;
+ 
+     struct push_vertex
+     {
++#ifdef BOOST_SPIRIT_USE_PHOENIX_V3
++        template <typename T>
++#else
+         template <typename T0,typename T1, typename T2, typename T3>
++#endif
+         struct result
+         {
+             typedef void type;

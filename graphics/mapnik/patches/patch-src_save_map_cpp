@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_save_map_cpp,v 1.1 2015/07/01 08:45:19 jasper Exp $
+
+From 65bd9e69260be0b82732b4606d048c85b22f3d8c Mon Sep 17 00:00:00 2001
+From: Dane Springmeyer <dane@mapbox.com>
+Date: Tue, 19 Aug 2014 09:07:30 -0700
+Subject: [PATCH] adapt to ptree change in boost 1.56 - closes #2365
+
+--- src/save_map.cpp.orig	Tue Jun  4 03:35:27 2013
++++ src/save_map.cpp	Mon Jun 29 09:02:08 2015
+@@ -42,6 +42,7 @@
+ // boost
+ #include <boost/algorithm/string.hpp>
+ #include <boost/optional.hpp>
++#include <boost/version.hpp>
+ #include <boost/property_tree/ptree.hpp>
+ #include <boost/property_tree/xml_parser.hpp>
+ 
+@@ -869,7 +870,11 @@ void save_map(Map const & map, std::string const& file
+ {
+     ptree pt;
+     serialize_map(pt,map,explicit_defaults);
+-    write_xml(filename,pt,std::locale(),boost::property_tree::xml_writer_make_settings(' ',4));
++#if BOOST_VERSION >= 105600
++    write_xml(filename,pt,std::locale(),boost::property_tree::xml_writer_make_settings<ptree::key_type>(' ',2));
++#else
++    write_xml(filename,pt,std::locale(),boost::property_tree::xml_writer_make_settings(' ',2));
++#endif
+ }
+ 
+ std::string save_map_to_string(Map const & map, bool explicit_defaults)
+@@ -877,7 +882,11 @@ std::string save_map_to_string(Map const & map, bool e
+     ptree pt;
+     serialize_map(pt,map,explicit_defaults);
+     std::ostringstream ss;
+-    write_xml(ss,pt,boost::property_tree::xml_writer_make_settings(' ',4));
++#if BOOST_VERSION >= 105600
++    write_xml(ss,pt,boost::property_tree::xml_writer_make_settings<ptree::key_type>(' ',2));
++#else
++    write_xml(ss,pt,boost::property_tree::xml_writer_make_settings(' ',2));
++#endif
+     return ss.str();
+ }
+ 

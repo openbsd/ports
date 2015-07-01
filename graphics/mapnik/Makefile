@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2015/05/05 17:00:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/07/01 08:45:19 jasper Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
 DISTNAME =	mapnik-v2.2.0
 PKGNAME =	${DISTNAME:S/v//}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	mapnik 2.0 #2.0
 CATEGORIES =	graphics geo
@@ -35,7 +35,7 @@ TEST_DEPENDS =	devel/py-nose \
 BUILD_DEPENDS =	graphics/py-cairo \
 		devel/scons>=2.3.0
 
-LIB_DEPENDS =	devel/boost>=1.47 \
+LIB_DEPENDS =	devel/boost>=1.58 \
 		graphics/cairo \
 		devel/proj \
 		geo/gdal \

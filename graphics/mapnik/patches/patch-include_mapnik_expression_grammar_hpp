@@ -1,0 +1,34 @@
+$OpenBSD: patch-include_mapnik_expression_grammar_hpp,v 1.1 2015/07/01 08:45:19 jasper Exp $
+
+From 76f111cc97a86cb029682f92b3d212f105f46aa6 Mon Sep 17 00:00:00 2001
+From: Dane Springmeyer <dane@dbsgeo.com>
+Date: Sat, 27 Jul 2013 01:57:24 -0400
+Subject: [PATCH] support optionally compiling with -std=c++11 on OSX / clang / apple libc++ / boost 1.53 - refs #1683
+
+--- include/mapnik/expression_grammar.hpp.orig	Tue Jun  4 03:35:27 2013
++++ include/mapnik/expression_grammar.hpp	Mon Jun 29 09:08:51 2015
+@@ -65,7 +65,11 @@ struct unicode_impl
+ 
+ struct regex_match_impl
+ {
++#ifdef BOOST_SPIRIT_USE_PHOENIX_V3
++    template <typename T>
++#else
+     template <typename T0, typename T1>
++#endif
+     struct result
+     {
+         typedef expr_node type;
+@@ -82,7 +86,12 @@ struct regex_match_impl
+ 
+ struct regex_replace_impl
+ {
++
++#ifdef BOOST_SPIRIT_USE_PHOENIX_V3
++    template <typename T>
++#else
+     template <typename T0, typename T1, typename T2>
++#endif
+     struct result
+     {
+         typedef expr_node type;

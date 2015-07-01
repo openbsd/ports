@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_json_feature_collection_parser_cpp,v 1.1 2015/07/01 08:45:19 jasper Exp $
+
+From 76f111cc97a86cb029682f92b3d212f105f46aa6 Mon Sep 17 00:00:00 2001
+From: Dane Springmeyer <dane@dbsgeo.com>
+Date: Sat, 27 Jul 2013 01:57:24 -0400
+Subject: [PATCH] support optionally compiling with -std=c++11 on OSX / clang / apple libc++ / boost 1.53 - refs #1683
+
+--- src/json/feature_collection_parser.cpp.orig	Tue Jun  4 03:35:27 2013
++++ src/json/feature_collection_parser.cpp	Mon Jun 29 09:08:51 2015
+@@ -23,8 +23,10 @@
+ // TODO https://github.com/mapnik/mapnik/issues/1658
+ #include <boost/version.hpp>
+ #if BOOST_VERSION >= 105200
++#ifndef BOOST_SPIRIT_USE_PHOENIX_V3
+ #define BOOST_SPIRIT_USE_PHOENIX_V3
+ #endif
++#endif
+ 
+ // mapnik
+ #include <mapnik/json/feature_collection_parser.hpp>
+@@ -68,4 +70,3 @@ namespace mapnik { namespace json {
+     template class feature_collection_parser<boost::spirit::multi_pass<std::istreambuf_iterator<char> > >;
+ 
+ }}
+-
