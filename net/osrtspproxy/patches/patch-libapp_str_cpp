@@ -1,0 +1,85 @@
+$OpenBSD: patch-libapp_str_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
+--- libapp/str.cpp.orig	Tue Jan 30 22:24:19 2001
++++ libapp/str.cpp	Thu Jan  8 20:42:59 2015
+@@ -63,6 +63,7 @@ CBuffer::~CBuffer( void )
+ {
+     if( m_buf ) memset( m_buf, 0xDD, m_nAlloc );
+     delete[] m_buf;
++    m_buf = NULL;
+ }
+ 
+ CBuffer& CBuffer::operator=( const CBuffer& other )
+@@ -187,14 +188,18 @@ CString::CString( void )
+ CString::CString( const CString& other )
+ {
+     assert( other.m_sz );
+-    m_sz = new char[ strlen(other.m_sz) + 1 ];
+-    strcpy( m_sz, other.m_sz );
++    size_t len = strlen(other.m_sz);
++    m_sz = new char[ len + 1 ];
++    memcpy( m_sz, other.m_sz, len );
++    m_sz[len] = '\0';
+ }
+ 
+ CString::CString( CPCHAR sz )
+ {
+-    m_sz = new char[ strlen(sz) + 1 ];
+-    strcpy( m_sz, sz );
++    size_t len = strlen(sz);
++    m_sz = new char[ len + 1 ];
++    memcpy( m_sz, sz, len );
++    m_sz[len] = '\0';
+ }
+ 
+ CString::CString( CPCHAR buf, size_t len )
+@@ -215,14 +220,17 @@ CString::~CString( void )
+ {
+     if( m_sz ) memset( m_sz, 0xDD, strlen(m_sz)+1 );
+     delete[] m_sz;
++    m_sz = NULL;
+ }
+ 
+ CString& CString::operator=( const CString& other )
+ {
+     assert( other.m_sz );
+     delete[] m_sz;
+-    m_sz = new char[ strlen(other.m_sz) + 1 ];
+-    strcpy( m_sz, other.m_sz );
++    size_t len = strlen(other.m_sz);
++    m_sz = new char[ len + 1 ];
++    memcpy( m_sz, other.m_sz, len );
++    m_sz[len] = '\0';
+ 
+     return *this;
+ }
+@@ -230,10 +238,11 @@ CString& CString::operator=( const CString& other )
+ CString& CString::operator=( CPCHAR sz )
+ {
+     assert( sz );
+-
+     delete[] m_sz;
+-    m_sz = new char[ strlen(sz) + 1 ];
+-    strcpy( m_sz, sz );
++    size_t len = strlen(sz);
++    m_sz = new char[ len + 1 ];
++    memcpy( m_sz, sz, len );
++    m_sz[len] = '\0';
+ 
+     return *this;
+ }
+@@ -306,9 +315,12 @@ void CString::Append( CPCHAR sz )
+ 
+     if( *sz )
+     {
+-        PCHAR sznew = new char[ strlen(m_sz) + strlen(sz) + 1 ];
+-        strcpy( sznew, m_sz );
+-        strcat( sznew, sz );
++        size_t ml = strlen(m_sz);
++        size_t l = strlen(sz);
++        PCHAR sznew = new char[ ml + l + 1 ];
++        memcpy( sznew, m_sz, ml );
++        memcpy( sznew + ml, sz, l );
++        sznew[ ml + l ] = '\0';
+         delete[] m_sz;
+         m_sz = sznew;
+     }

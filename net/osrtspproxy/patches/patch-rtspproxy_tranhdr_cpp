@@ -1,0 +1,43 @@
+$OpenBSD: patch-rtspproxy_tranhdr_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
+--- rtspproxy/tranhdr.cpp.orig	Fri Feb  9 23:32:35 2001
++++ rtspproxy/tranhdr.cpp	Tue Nov 11 19:12:07 2014
+@@ -178,31 +178,31 @@ CPCHAR CSingleTransportHdr::GetHdrString( void )
+         if( field.type & RTSP_TRANSPORTHDR_CLIENTPORT )
+         {
+             if( m_nClientPorts == 2 )
+-                p += sprintf( p, "client_port=%hu-%hu", m_clientBasePort, m_clientBasePort+1 );
++                p += snprintf( p, sizeof(strRet), "client_port=%hu-%hu", m_clientBasePort, m_clientBasePort+1 );
+             else if( m_nClientPorts == 1 )
+-                p += sprintf( p, "client_port=%hu", m_clientBasePort );
++                p += snprintf( p, sizeof(strRet),  "client_port=%hu", m_clientBasePort );
+         }
+         else if( field.type & RTSP_TRANSPORTHDR_SERVERPORT )
+         {
+             if( m_nServerPorts == 2 )
+-                p += sprintf( p, "server_port=%hu-%hu", m_serverBasePort, m_serverBasePort+1 );
++                p += snprintf( p, sizeof(char) * 255, "server_port=%hu-%hu", m_serverBasePort, m_serverBasePort+1 );
+             else if( m_nServerPorts == 1 )
+-                p += sprintf( p, "server_port=%hu", m_serverBasePort );
++                p += snprintf( p, sizeof(char) * 255, "server_port=%hu", m_serverBasePort );
+         }
+         else if( field.type & RTSP_TRANSPORTHDR_SOURCE )
+         {
+-            p += sprintf( p, "source=%s", inet_ntoa(m_addrSource) );
++            p += snprintf( p, sizeof(strRet), "source=%s", inet_ntoa(m_addrSource) );
+         }
+         else if( field.type & RTSP_TRANSPORTHDR_INTERLEAVED )
+         {
+             if( m_nServerPorts == 2 )
+-                p += sprintf( p, "interleaved=%hu-%hu", m_serverBasePort, m_serverBasePort+1 );
++                p += snprintf( p, sizeof(strRet), "interleaved=%hu-%hu", m_serverBasePort, m_serverBasePort+1 );
+             else if( m_nServerPorts == 1 )
+-                p += sprintf( p, "interleaved=%hu", m_serverBasePort );
++                p += snprintf( p, sizeof(strRet), "interleaved=%hu", m_serverBasePort );
+         }
+         else
+         {
+-            p += sprintf( p, "%s", ( CPCHAR )field.strField );
++            p += snprintf( p, sizeof(strRet), "%s", ( CPCHAR )field.strField );
+         }
+         itr++;
+         if( itr )

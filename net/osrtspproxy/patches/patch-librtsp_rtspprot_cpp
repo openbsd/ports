@@ -1,0 +1,200 @@
+$OpenBSD: patch-librtsp_rtspprot_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
+--- librtsp/rtspprot.cpp.orig	Tue Feb  6 20:20:12 2001
++++ librtsp/rtspprot.cpp	Tue Nov 11 19:12:07 2014
+@@ -15,6 +15,14 @@
+ #include "app.h"
+ #include "rtspprot.h"
+ 
++#ifndef min
++#define min(a,b) ( ((a)<(b)) ? (a) : (b) )
++#endif
++#ifndef max
++#define max(a,b) ( ((a)>(b)) ? (a) : (b) )
++#endif
++
++#include "Avl.h"
+ #include "dbg.h"
+ 
+ /**************************************
+@@ -45,6 +53,7 @@ CRtspInterleavedSocket::~CRtspInterleavedSocket( void 
+ {
+     Close();
+     delete m_pbuf;
++    m_pbuf = NULL;
+ }
+ 
+ bool CRtspInterleavedSocket::IsOpen( void )
+@@ -56,7 +65,9 @@ void CRtspInterleavedSocket::Close( void )
+ {
+     if( m_pProt )
+     {
+-        m_pProt->m_ppSockets[m_chan] = NULL;
++	// XXX FIX Wenn m_pProt an der Stell eh schon geloescht wurde, ist das
++	// entfernen der Sockets eigentlichh sinnlos
++        // m_pProt->m_ppSockets[m_chan] = NULL;
+         m_pProt = NULL;
+         if( m_pResponse ) m_pResponse->OnClosed();
+     }
+@@ -68,7 +79,7 @@ size_t CRtspInterleavedSocket::Read( PVOID pbuf, size_
+ 
+     // We will treat the read as a datagram -- copy as much as will fit and
+     // discard any remainder
+-    size_t copylen = min( nLen, m_pbuf->GetSize() );
++    size_t copylen = MIN( nLen, m_pbuf->GetSize() );
+ 
+     memcpy( pbuf, m_pbuf->GetBuffer(), copylen );
+     delete m_pbuf; m_pbuf = NULL;
+@@ -154,6 +165,9 @@ CRtspProtocol::~CRtspProtocol( void )
+     delete m_psock;
+     delete[] m_pReadBuf;
+     delete m_pmsg;
++    m_psock = NULL;
++    m_pReadBuf = NULL;
++    m_pmsg = NULL;
+ }
+ 
+ void CRtspProtocol::Init( CSocket* pSocket )
+@@ -174,7 +188,8 @@ void CRtspProtocol::SendRequest( CRtspRequestMsg* pmsg
+     {
+         char buf[16];
+         cseq = GetNextCseq();
+-        sprintf( buf, "%u", cseq );
++        size_t n = snprintf( buf, sizeof(buf), "%u", cseq );
++	assert( sizeof(buf) >= n );
+         pmsg->SetHdr( "CSeq", buf );
+     }
+     else
+@@ -190,28 +205,62 @@ void CRtspProtocol::SendRequest( CRtspRequestMsg* pmsg
+     // <verb> SP <url> SP "RTSP/1.0" CRLF
+     // <headers> CRLF <buf>
+     size_t len = FUDGE + strlen(pVerb)+1+strlen(pUrl)+1+8 + 2 + nHdrLen + 2 + nBufLen;
+-    char* pbuf = new char[ FUDGE + strlen(pVerb)+1+strlen(pUrl)+1+8 + 2 +
+-                           nHdrLen + 2 + nBufLen ];
++    size_t bufferLength = FUDGE + strlen(pVerb) + 1 + strlen(pUrl) + 1 + 8 + 2 + nHdrLen + 2 + nBufLen;
++    char* pbuf = new char[ bufferLength ];
+     char* p = pbuf;
++    size_t writtenChars = 0;
++    size_t leftBufferSpace = bufferLength;
+     if( !pbuf )
+     {
+         printf( "Out of memory\n" );
+         exit( -1 );
+     }
+ 
+-    p += sprintf( pbuf, "%s %s RTSP/1.0\r\n", pVerb, pUrl );
++    writtenChars = snprintf( pbuf, bufferLength, "%s %s RTSP/1.0\r\n", pVerb, pUrl );
++    if ( writtenChars > leftBufferSpace )
++    {
++	printf( "Possible request buffer overflow!\n" );
++	exit( -1 );
++    }
++	
++    leftBufferSpace -= writtenChars;
++    assert ( leftBufferSpace > 0 );
++    p += writtenChars;
+     for( UINT n = 0; n < pmsg->GetHdrCount(); n++ )
+     {
+         CRtspHdr* pHdr = pmsg->GetHdr( n );
+-        p += sprintf( p, "%s: %s\r\n", (CPCHAR)pHdr->GetKey(), (CPCHAR)pHdr->GetVal() );
++	writtenChars = snprintf( p, leftBufferSpace, "%s: %s\r\n", (CPCHAR)pHdr->GetKey(), (CPCHAR)pHdr->GetVal() );
++	if ( writtenChars > leftBufferSpace )
++	{
++	    printf( "Possible request buffer overflow!\n" );
++	    exit( -1 );
++	}
++	    
++	leftBufferSpace -= writtenChars;
++	assert( leftBufferSpace > 0 );
++        p += writtenChars;
+     }
+-    p += sprintf( p, "\r\n" );
++    assert( leftBufferSpace >= 3 );
++
++    if ( leftBufferSpace < 3 )
++    {
++	printf( "Possible request buffer overflow!\n" );
++	exit( -1 );
++    }	
++    
++    p += snprintf( p, leftBufferSpace, "\r\n" );
+     if( nBufLen )
+     {
++	assert( leftBufferSpace >= nBufLen );
++	if ( leftBufferSpace < nBufLen )
++	{
++	    printf( "Possible request buffer overflow!\n" );
++	    exit( -1 );
++	}	
+         memcpy( p, pmsg->GetBuf(), nBufLen );
+         p += nBufLen;
+     }
+-assert( p-pbuf <= len );
++    assert( static_cast<size_t>( p-pbuf ) <= len );
+     m_psock->Write( pbuf, p-pbuf );
+     delete[] pbuf;
+ 
+@@ -232,21 +281,52 @@ void CRtspProtocol::SendResponse( CRtspResponseMsg* pm
+     if( 0 == nBufLen ) nResponseLen++;
+     char* pbuf = new char[ nResponseLen ];
+     char* p = pbuf;
++    size_t writtenChars = 0;
++    size_t leftBufferSpace = nResponseLen;
+     if( !pbuf )
+     {
+         printf( "Out of memory\n" );
+         exit( -1 );
+     }
+ 
+-    p += sprintf( pbuf, "RTSP/1.0 %u %s\r\n", nCode, pReason );
++    writtenChars = snprintf( pbuf, leftBufferSpace, "RTSP/1.0 %u %s\r\n", nCode, pReason );
++    if ( writtenChars > leftBufferSpace )
++    {
++	printf( "Possible request buffer overflow!\n" );
++	exit( -1 );
++    }	
++
++    leftBufferSpace -= writtenChars;
++    assert( leftBufferSpace > 0 );
++    p += writtenChars;
+     for( UINT n = 0; n < pmsg->GetHdrCount(); n++ )
+     {
+         CRtspHdr* pHdr = pmsg->GetHdr( n );
+-        p += sprintf( p, "%s: %s\r\n", (CPCHAR)pHdr->GetKey(), (CPCHAR)pHdr->GetVal() );
++	writtenChars = snprintf( p, leftBufferSpace, "%s: %s\r\n", (CPCHAR)pHdr->GetKey(), (CPCHAR)pHdr->GetVal() );
++	if ( writtenChars > leftBufferSpace )
++	{
++	    printf( "Possible request buffer overflow!\n" );
++	    exit( -1 );
++	}	
++	leftBufferSpace -= writtenChars;
++	assert( leftBufferSpace > 0 );
++        p += writtenChars;
+     }
+-    p += sprintf( p, "\r\n" );
++    assert( leftBufferSpace >=3 );
++    if ( leftBufferSpace < 3 )
++    {
++	printf( "Possible request buffer overflow!\n" );
++	exit( -1 );
++    }	
++    p += snprintf( p, leftBufferSpace, "\r\n" );
+     if( nBufLen )
+     {
++	assert( leftBufferSpace >= nBufLen );
++	if ( leftBufferSpace < nBufLen )
++	{
++	    printf( "Possible request buffer overflow!\n" );
++	    exit( -1 );
++	}	
+         memcpy( p, pmsg->GetBuf(), nBufLen );
+         p += nBufLen;
+     }
+@@ -672,7 +752,7 @@ void CRtspProtocol::OnExceptReady( void )
+ 
+ void CRtspProtocol::OnClosed( void )
+ {
+-    assert( m_pResponse );
++    assert( m_pResponse != NULL );
+     dbgout( "CRtspProtocol::OnClosed: Socket closed" );
+     m_pResponse->OnError( RTSPE_CLOSED );
+ }

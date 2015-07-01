@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/10 10:37:07 grunk Exp $
-sbin/rtspproxy
+@comment $OpenBSD: PLIST,v 1.2 2015/07/01 11:33:50 bluhm Exp $
+@bin sbin/rtspproxy
 share/doc/osrtspproxy/
 share/doc/osrtspproxy/LICENSE
 share/doc/osrtspproxy/graphics/

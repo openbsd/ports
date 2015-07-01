@@ -1,0 +1,282 @@
+$OpenBSD: patch-libapp_resolver_h,v 1.1 2015/07/01 11:33:50 bluhm Exp $
+--- libapp/resolver.h.orig	Thu Feb  8 00:45:57 2001
++++ libapp/resolver.h	Tue Nov 11 19:12:07 2014
+@@ -11,13 +11,16 @@
+ #define _RESOLVER_H
+ 
+ #include "types.h"
+-#include "ttree.h"
++#include <map>
++#include <list>
+ #include "str.h"
+ #include "sock.h"
+ #include "timer.h"
+ 
+ #include <string.h>
+ 
++using namespace std;
++
+ /*
+  * Locations found in the WinNT registry:
+  *  \\HKLM\System\CurrentControlSet\Services\Tcpip\Parameters\
+@@ -33,6 +36,8 @@
+ class CResolverResponse
+ {
+ public:
++    // XXX Leere Funktionen, da mit abstrakten Funktionen der Einsatz von
++    // list nicht moeglich ist
+     virtual void GetHostDone( int err, const CString& strQuery, in_addr addrResult ) = 0;
+     virtual void GetHostDone( int err, in_addr addrQuery, const CString& strResult ) = 0;
+ };
+@@ -96,7 +101,9 @@ class CResolver : public CTimerResponse, (protected)
+     bool DecodeName( PCHAR pname, const CBuffer& rbuf, size_t& rpos );
+ 
+ protected:
+-    typedef TSingleList<CResolverResponse*> CResolverResponseList;
++    // XXX typedef TSingleList<CResolverResponse*> CResolverResponseList;
++    typedef list<CResolverResponse*> CResolverResponseList;
++    // TODO Eventuell hier auch die STL-Liste benutzen?
+     typedef TSingleList<CSockAddr> CNameserverList;
+     typedef TSingleList<CString> CDomainList;
+ 
+@@ -107,6 +114,12 @@ class CResolver : public CTimerResponse, (protected)
+             m_tExpire(0), m_strName(strName) { m_addr.s_addr = INADDR_NONE; }
+         CHostInfo( time_t tExpire, const CString& strName, struct in_addr addr ) :
+             m_tExpire(tExpire), m_strName(strName), m_addr(addr) {}
++	CHostInfo() 
++	{
++	    m_tExpire = 0;
++	    m_strName = CString();
++	    m_addr.s_addr = INADDR_NONE;
++	}
+ 
+         CHostInfo& operator=( const CHostInfo& other )
+         {
+@@ -123,8 +136,18 @@ class CResolver : public CTimerResponse, (protected)
+         CString         m_strName;
+         struct in_addr  m_addr;
+     };
+-    typedef AvlTree<CHostInfo> CHostInfoTree;
+ 
++    // Vergleichsoperator
++    struct HostCompare
++    {
++	bool operator()(const CString h1, const CString h2) const
++	{
++	    return h1 < h2;
++	}
++    };
++    
++    typedef map<const CString, CHostInfo, HostCompare> CHostInfoMap;
++
+     class CAddrInfo
+     {
+     public:
+@@ -133,6 +156,12 @@ class CResolver : public CTimerResponse, (protected)
+             m_tExpire(0), m_addr(addr) {}
+         CAddrInfo( time_t tExpire, struct in_addr addr, const CString& strName ) :
+             m_tExpire(tExpire), m_addr(addr), m_strName(strName) {}
++	CAddrInfo() 
++	{
++	    m_tExpire = 0;
++	    m_addr.s_addr = INADDR_NONE;
++	    m_strName = CString();
++	}
+ 
+         CAddrInfo& operator=( const CAddrInfo& other )
+         {
+@@ -149,16 +178,39 @@ class CResolver : public CTimerResponse, (protected)
+         struct in_addr  m_addr;
+         CString         m_strName;
+     };
+-    typedef AvlTree<CAddrInfo> CAddrInfoTree;
+ 
++    struct AddrCompare
++    {
++	bool operator()(const struct in_addr a1, const struct in_addr a2) const
++	{
++	    return a1.s_addr < a2.s_addr;
++	}
++    };
++    
++    typedef map<const struct in_addr, CAddrInfo, AddrCompare> CAddrInfoMap;
++
+     class CHostQuery
+     {
+     public:
+         CHostQuery(const CString& strHost) :
+             m_tExpire(0), m_tDelta(4), m_strHost(strHost), m_strFQDN(strHost) {}
+-        void AddResponse( CResolverResponse* pResponse )
+-            { m_listResponses.InsertTail( pResponse ); }
++	CHostQuery() 
++	{
++	    m_tExpire 		= 0;
++	    m_tDelta		= 0;
++	    m_strHost		= CString();
++	    m_strFQDN		= CString();
++	    m_itrDomain		= CDomainList::Iterator();
++	    m_itrServer		= CNameserverList::Iterator();
++	    m_listResponses 	= CResolverResponseList();
++	}
+ 
++        void AddResponse( CResolverResponse& pResponse )
++            { 
++		// XXX m_listResponses.InsertTail( pResponse ); 
++		m_listResponses.push_back( &pResponse );
++	    }
++
+         //XXX: this is soooooo lame
+         CHostQuery( const CHostQuery& other )
+         {
+@@ -168,28 +220,36 @@ class CResolver : public CTimerResponse, (protected)
+             m_strFQDN = other.m_strFQDN;
+             m_itrDomain = other.m_itrDomain;
+             m_itrServer = other.m_itrServer;
++	    m_listResponses = other.m_listResponses;
++	    // XXX
++	    /*
+             CResolverResponseList::ConstIterator itr( other.m_listResponses.Begin() );
+             while( itr )
+             {
+                 m_listResponses.InsertTail( *itr );
+                 itr++;
+             }
++	    */
+         }
+         CHostQuery& operator=( const CHostQuery& other )
+         {
+-            while( ! m_listResponses.IsEmpty() ) m_listResponses.RemoveHead();
++            while( ! m_listResponses.empty() ) m_listResponses.pop_front();
+             m_tExpire = other.m_tExpire;
+             m_tDelta = other.m_tDelta;
+             m_strHost = other.m_strHost;
+             m_strFQDN = other.m_strFQDN;
+             m_itrDomain = other.m_itrDomain;
+             m_itrServer = other.m_itrServer;
++	    m_listResponses = other.m_listResponses;
++	    // XXX
++	    /*
+             CResolverResponseList::ConstIterator itr( other.m_listResponses.Begin() );
+             while( itr )
+             {
+                 m_listResponses.InsertTail( *itr );
+                 itr++;
+             }
++	    */
+             return *this;
+         }
+         int operator==( const CHostQuery& other ) const { return ( strcasecmp( m_strHost, other.m_strHost ) == 0 ); }
+@@ -204,15 +264,33 @@ class CResolver : public CTimerResponse, (protected)
+         CNameserverList::Iterator   m_itrServer;
+         CResolverResponseList       m_listResponses;
+     };
+-    typedef AvlTree<CHostQuery> CHostQueryTree;
+ 
++    struct HostQueryCompare
++    {
++	bool operator()(const CString& h1, const CString& h2) const
++	{
++	    return h1 < h2;
++	}
++    };
++    
++    typedef map<const CString, CHostQuery, HostQueryCompare> CHostQueryMap;
++
+     class CAddrQuery
+     {
+     public:
+         CAddrQuery( struct in_addr addr ) :
+             m_tExpire(0), m_tDelta(4), m_addr(addr) {}
+-        void AddResponse( CResolverResponse* pResponse )
+-            { m_listResponses.InsertTail( pResponse ); }
++	CAddrQuery() 
++	{
++	    m_tExpire		= 0;
++	    m_tDelta		= 0;
++	    m_addr.s_addr	= INADDR_NONE;
++	    m_itrServer		= CNameserverList::Iterator();
++	    m_listResponses	= CResolverResponseList();
++	}
++	
++        void AddResponse( CResolverResponse& pResponse )
++            { m_listResponses.push_back( &pResponse ); }
+ 
+         //XXX: this is soooooo lame
+         CAddrQuery( const CAddrQuery& other )
+@@ -221,27 +299,35 @@ class CResolver : public CTimerResponse, (protected)
+             m_tDelta = other.m_tDelta;
+             m_addr = other.m_addr;
+             m_itrServer = other.m_itrServer;
++	    m_listResponses = other.m_listResponses;
++	    // XXX
++	    /* 
+             CResolverResponseList::ConstIterator itr( other.m_listResponses.Begin() );
+             while( itr )
+             {
+                 m_listResponses.InsertTail( *itr );
+                 itr++;
+             }
++	    */
+             m_addr = other.m_addr;
+         }
+         CAddrQuery& operator=( const CAddrQuery& other )
+         {
+-            while( ! m_listResponses.IsEmpty() ) m_listResponses.RemoveHead();
++            while( ! m_listResponses.empty() ) m_listResponses.pop_front();
+             m_tExpire = other.m_tExpire;
+             m_tDelta = other.m_tDelta;
+             m_addr = other.m_addr;
+             m_itrServer = other.m_itrServer;
++	    m_listResponses = other.m_listResponses;
++	    // XXX
++	    /*
+             CResolverResponseList::ConstIterator itr( other.m_listResponses.Begin() );
+             while( itr )
+             {
+                 m_listResponses.InsertTail( *itr );
+                 itr++;
+             }
++	    */
+             return *this;
+         }
+         int operator==( const CAddrQuery& other ) const { return ( m_addr.s_addr == other.m_addr.s_addr ); }
+@@ -254,11 +340,20 @@ class CResolver : public CTimerResponse, (protected)
+         CNameserverList::Iterator   m_itrServer;
+         CResolverResponseList       m_listResponses;
+     };
+-    typedef AvlTree<CAddrQuery> CAddrQueryTree;
+ 
+-    void WalkHostTree( AvlNode<CHostQuery>* pNode );
+-    void WalkAddrTree( AvlNode<CAddrQuery>* pNode );
++    struct AddrQueryCompare
++    {
++	bool operator()(const struct in_addr a1, const struct in_addr a2) const
++	{
++	    return a1.s_addr < a2.s_addr;
++	}
++    };
++    
++    typedef map<const struct in_addr, CAddrQuery, AddrQueryCompare> CAddrQueryMap;
+ 
++    void IterateHostMap();
++    void IterateAddrMap();
++
+ protected:
+     CUdpSocket      m_sock;
+     CTimer          m_timer;
+@@ -266,11 +361,11 @@ class CResolver : public CTimerResponse, (protected)
+     CNameserverList m_listServers;
+     CDomainList     m_listDomains;
+ 
+-    CHostInfoTree   m_treeHostInfo;
+-    CAddrInfoTree   m_treeAddrInfo;
++    CHostInfoMap   m_treeHostInfo;
++    CAddrInfoMap   m_treeAddrInfo;
+ 
+-    CHostQueryTree  m_treeHostQueries;
+-    CAddrQueryTree  m_treeAddrQueries;
++    CHostQueryMap  m_treeHostQueries;
++    CAddrQueryMap  m_treeAddrQueries;
+ 
+     static CResolver * m_pResolver;
+ };

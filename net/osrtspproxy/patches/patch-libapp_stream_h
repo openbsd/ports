@@ -1,0 +1,27 @@
+$OpenBSD: patch-libapp_stream_h,v 1.1 2015/07/01 11:33:50 bluhm Exp $
+--- libapp/stream.h.orig	Tue Jan 30 22:24:19 2001
++++ libapp/stream.h	Tue Nov 11 19:12:07 2014
+@@ -13,6 +13,7 @@
+ #include "types.h"
+ #include "str.h"
+ #include "tlist.h"
++#include <list>
+ 
+ #ifdef _UNIX
+     // some custom bits (we rely on pollfd events being a 16-bit type)
+@@ -53,6 +54,7 @@ class CStreamResponse (public)
+     virtual void OnWriteReady ( void ) = 0;
+     virtual void OnExceptReady( void ) = 0;
+     virtual void OnClosed     ( void ) = 0;
++    virtual ~CStreamResponse ( void ) { };
+ };
+ 
+ class CStream
+@@ -83,6 +85,6 @@ class CStream (protected)
+ protected:
+     CStreamResponse* m_pResponse;
+ };
+-typedef TDoubleList<CStream*> CStreamList;
++typedef std::list<CStream> CStreamList;
+ 
+ #endif //ndef _STREAM_H

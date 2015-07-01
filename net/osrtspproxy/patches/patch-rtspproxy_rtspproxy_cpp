@@ -1,0 +1,83 @@
+$OpenBSD: patch-rtspproxy_rtspproxy_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
+--- rtspproxy/rtspproxy.cpp.orig	Sat Feb 10 00:38:53 2001
++++ rtspproxy/rtspproxy.cpp	Thu Jan  8 21:03:47 2015
+@@ -27,9 +27,9 @@ void OutputDebugInfo( const char* fmt, ... )
+     char str[4096];
+     va_list v;
+     va_start( v, fmt );
+-    vsprintf( str, fmt, v );
+-    strcat( str, "\n" );
+-    printf( str );
++    vsnprintf( str, sizeof(str), fmt, v );
++    va_end( v );
++    printf( "%s\n", str );
+ }
+ 
+ /**************************************
+@@ -57,7 +57,7 @@ CClientCnx::CClientCnx( CRtspProxyCnx* pOwner, CTcpSoc
+ 
+ CClientCnx::~CClientCnx( void )
+ {
+-
++    Close();
+ }
+ 
+ void CClientCnx::Close( void )
+@@ -102,7 +102,7 @@ void CClientCnx::sendResponse( UINT code, UINT cseq )
+     if( cseq )
+     {
+         char buf[20];
+-        sprintf( buf, "%d", cseq );
++        snprintf( buf,sizeof(buf) , "%d", cseq );
+         msg.SetHdr( "CSeq", buf );
+     }
+     sendResponse( &msg );
+@@ -285,7 +285,7 @@ CServerCnx::CServerCnx( CRtspProxyCnx* pOwner, CString
+ 
+ CServerCnx::~CServerCnx( void )
+ {
+-
++    Close();
+ }
+ 
+ void CServerCnx::Close( void )
+@@ -667,7 +667,7 @@ void CRtspProxyCnx::PassToClient( CRtspRequestMsg* pms
+ 
+     CString strCSeq = pmsg->GetHdr( "CSeq" );
+     char buf[20];
+-    sprintf( buf, "%u", m_cseqToClient++ );
++    snprintf( buf, sizeof(buf), "%u", m_cseqToClient++ );
+ 
+     CCSeqPair* pPair = new CCSeqPair( buf, strCSeq, pServerCnx->GetHostName(), pServerCnx->GetPort() );
+     m_listCCSeqPairList.InsertTail( pPair );
+@@ -895,7 +895,7 @@ void CRtspProxyCnx::PassSetupRequestMsgToServer( CRtsp
+                 nBlocksize = nClientBlocksize;
+             }
+         }
+-        sprintf( buf, "%d", nBlocksize );
++        snprintf( buf, sizeof(buf), "%d", nBlocksize );
+         pmsg->SetHdr( "Blocksize", buf );
+     }
+     PassToServer( pmsg );
+@@ -1190,7 +1190,7 @@ bool CRtspProxyApp::Init( void )
+ {
+     if( ! CApp::Init() ) return false;
+ 
+-    CSockAddr addr( CInetAddr::Any(), m_port );
++    CSockAddr addr( "127.0.0.1", m_port );
+     if( ! m_sock.Listen( addr ) )
+     {
+         printf( "Port %d not available. Exit!\n", m_port );
+@@ -1199,9 +1199,11 @@ bool CRtspProxyApp::Init( void )
+     printf( "Listening on port %hu\n", m_port );
+ 
+ //    Daemonize();
++    if (! g_DebugFlagTurnedOn)
++	daemon(0,0);
+ 
+     addr = m_sock.GetLocalAddr();
+-    sprintf(m_viaHdrValue, "RTSP/1.0 %lx", addr.GetHost().s_addr^time(NULL)^rand());
++    snprintf(m_viaHdrValue, sizeof(m_viaHdrValue), "RTSP/1.0 %lx", static_cast<long>(arc4random()));
+ 
+     return true;
+ }

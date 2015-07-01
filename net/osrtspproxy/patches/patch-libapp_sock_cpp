@@ -1,0 +1,116 @@
+$OpenBSD: patch-libapp_sock_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
+--- libapp/sock.cpp.orig	Thu Feb  8 00:45:57 2001
++++ libapp/sock.cpp	Tue Nov 11 20:08:05 2014
+@@ -48,9 +48,9 @@ int inet_aton( const char* cp, struct in_addr* inp )
+ static void socket_nonblock( sockobj_t sock )
+ {
+     int tmp;
+-    fcntl( sock, F_GETFL, &tmp );
++    tmp = fcntl( sock, F_GETFL);
+     tmp |= O_NONBLOCK;
+-    fcntl( sock, F_SETFL, &tmp );
++    fcntl( sock, F_SETFL, tmp );
+ }
+ #endif
+ #if defined(_WIN32)
+@@ -75,6 +75,7 @@ static void socket_reuseaddr( sockobj_t sock )
+ 
+ CInetAddr::CInetAddr( void )
+ {
++    memset(&m_addr, 0, sizeof(m_addr));
+     m_addr.sin_family = AF_INET;
+     m_addr.sin_addr.s_addr = INADDR_NONE;
+     m_addr.sin_port = 0;
+@@ -82,6 +83,7 @@ CInetAddr::CInetAddr( void )
+ 
+ CInetAddr::CInetAddr( const in_addr& host )
+ {
++    memset(&m_addr, 0, sizeof(m_addr));
+     m_addr.sin_family = AF_INET;
+     m_addr.sin_addr = host;
+     m_addr.sin_port = 0;
+@@ -319,18 +321,74 @@ size_t CSocket::Write( CPVOID pbuf, size_t nLen )
+ {
+     assert_or_retv( 0, (pbuf != NULL && IsOpen()) );
+ 
+-    m_err = SOCKERR_NONE;
+-    ssize_t n = send( m_sock, (const char*)pbuf, nLen, 0 );
+-    if( n == SOCKET_ERROR )
++    fd_set writefds;
++    FD_ZERO(&writefds);
++    FD_SET(m_sock,&writefds);
++
++    int retries = 3;
++    int readyfds = 0;
++    int offset = 0;
++    int len = nLen;
++    ssize_t n = 0;
++    timeval timer;
++    timer.tv_sec = 1;
++    timer.tv_usec = 0;
++	
++    // XXX Fix for the problem with incomplete writes to socket
++    while( FD_ISSET(m_sock,&writefds) && len > 0 ) 
+     {
+-        n = 0;
+-        m_err = SOCK_LAST_ERROR();
+-        if( m_err != SOCKERR_WOULDBLOCK )
+-        {
+-            n = SOCKERR_EOF;
+-        }
+-    }
++	readyfds = select(m_sock+1, NULL, &writefds, NULL, &timer);
++	// Fehler
++	if ( readyfds < 0 ) 
++	{
++	    if ( errno != EINTR ) 
++	    {
++		dbgout("Problem while writing data to socket: %s", strerror(errno));
++		return 0;
++	    }
++	}
++	// Kein Socket bereit
++	if ( readyfds == 0 ) 
++	{
++	    if ( !FD_ISSET(m_sock, &writefds) ) 
++		retries--;
++	    if ( !retries ) 
++	    {
++		dbgout("Timeout while writing to socket");
++		return 0;
++	    }
++	} 
++	// Socket bereit, nun wird geschrieben
++	else 
++	{
++	    m_err = 0;
++	    n = send( m_sock, (const char*)pbuf+offset, len, 0 );
+ 
++	    // Fehler?
++	    if( n == -1 )
++	    {
++		//XXX DEBUG
++		dbgout("CSocket::Write: Error %s (%i) occured", strerror(errno), errno);
++		n = 0;
++		m_err = errno;
++		if( m_err != EAGAIN )
++		{
++		    n = SOCKERR_EOF;
++		}
++		break;
++	    }
++	    // Daten nicht komplett geschrieben
++	    else if ( n < len )
++	    {
++		len = len - n;
++		offset += n;
++	    }
++	    // Daten komplett, dann raus aus der Schleife
++	    else {
++		break;
++	    }
++	}
++    }	
+     return n;
+ }
+ 

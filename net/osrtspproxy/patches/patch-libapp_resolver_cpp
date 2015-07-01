@@ -1,0 +1,596 @@
+$OpenBSD: patch-libapp_resolver_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
+--- libapp/resolver.cpp.orig	Tue Feb 13 00:55:08 2001
++++ libapp/resolver.cpp	Thu Jan  8 00:10:40 2015
+@@ -11,6 +11,7 @@
+ #include "parser.h"
+ #include "app.h"
+ 
++#include "Avl.h"
+ #include "dbg.h"
+ 
+ #include <errno.h>
+@@ -162,7 +163,7 @@ static char* inet_ntoa_rev( struct in_addr in )
+     static char host[29]; // aaa.bbb.ccc.ddd.in-addr.arpa\0
+     BYTE qa[4];
+     memcpy( qa, &in.s_addr, 4 );
+-    sprintf( host, "%u.%u.%u.%u.in-addr.arpa", qa[3], qa[2], qa[1], qa[0] );
++    snprintf( host, sizeof(host), "%u.%u.%u.%u.in-addr.arpa", qa[3], qa[2], qa[1], qa[0] );
+     return host;
+ }
+ 
+@@ -196,9 +197,7 @@ CResolver * CResolver::GetResolver( void )
+ 
+ bool CResolver::GetHost( CResolverResponse* pResponse, const CString& strHost )
+ {
+-dbgout( "CResolver::GetHost: query for %s", (CPCHAR)strHost );
+-    CHostInfo* pInfo;
+-
++    dbgout( "CResolver::GetHost: query for %s", (CPCHAR)strHost );
+     // Determine if this is a number or name
+     bool bIsNumeric = true;
+     CPCHAR p = strHost;
+@@ -224,16 +223,16 @@ dbgout( "CResolver::GetHost: query for %s", (CPCHAR)st
+     }
+ 
+     // First search for name as given
+-    CHostInfo info( strHost );
+-    pInfo = m_treeHostInfo.Search( info );
+-    if( pInfo )
++    CHostInfo pInfo = m_treeHostInfo[strHost];
++
++    if( pInfo.m_strName != "" )
+     {
+-        if( pInfo->m_tExpire > time(NULL) )
++        if( pInfo.m_tExpire > time(NULL) )
+         {
+-            pResponse->GetHostDone( 0, strHost, pInfo->m_addr );
++            pResponse->GetHostDone( 0, strHost, pInfo.m_addr );
+             return true;
+         }
+-        m_treeHostInfo.Delete( info );
++	m_treeHostInfo.erase( strHost );
+     }
+ 
+     // Not found - if it's unqualified, search the domain list
+@@ -254,15 +253,16 @@ dbgout( "CResolver::GetHost: query for %s", (CPCHAR)st
+             strFQDN.Append( "." );
+             strFQDN.Append( *itr );
+             CHostInfo info( strFQDN );
+-            CHostInfo* pInfo = m_treeHostInfo.Search( info );
+-            if( pInfo )
++	    CHostInfo pInfo = m_treeHostInfo[strFQDN];
++
++	    if ( pInfo.m_strName != "" )
+             {
+-                if( pInfo->m_tExpire > time(NULL) )
++                if( pInfo.m_tExpire > time(NULL) )
+                 {
+-                    pResponse->GetHostDone( 0, strHost, pInfo->m_addr );
++                    pResponse->GetHostDone( 0, strHost, pInfo.m_addr );
+                     return true;
+                 }
+-                m_treeHostInfo.Delete( info );
++		m_treeHostInfo.erase( strFQDN );
+             }
+             itr++;
+         }
+@@ -270,143 +270,162 @@ dbgout( "CResolver::GetHost: query for %s", (CPCHAR)st
+ 
+     // Looks like we have to send a query
+     CHostQuery query( strHost );
+-    CHostQuery* pQuery = m_treeHostQueries.Insert( query );
+-    if( ! pQuery )
++    CHostQuery pQuery = (*m_treeHostQueries.insert( pair<CString,CHostQuery>( strHost,query ) ).first).second;
++    
++    if ( pQuery.m_strHost != "" )
+     {
+-        pQuery = m_treeHostQueries.Search( query );
+-        assert( pQuery );
+-
+-        pQuery->m_tExpire = time(NULL) + 4;
+-        pQuery->m_tDelta = 4;
++        pQuery.m_tExpire = time(NULL) + 4;
++        pQuery.m_tDelta = 4;
+         if( !strchr( strHost, '.' ) )
+         {
+             // Unqualified - search the domain list
+             CDomainList::Iterator itr( m_listDomains.Begin() );
+             assert( itr );  // should have caught this already
+-            pQuery->m_strFQDN = strHost;
+-            pQuery->m_strFQDN.Append( "." );
+-            pQuery->m_strFQDN.Append( *itr );
+-            pQuery->m_itrDomain = itr;
++            pQuery.m_strFQDN = strHost;
++            pQuery.m_strFQDN.Append( "." );
++            pQuery.m_strFQDN.Append( *itr );
++            pQuery.m_itrDomain = itr;
+         }
+-        pQuery->m_itrServer = m_listServers.Begin();
++        pQuery.m_itrServer = m_listServers.Begin();
+ 
+-        SendQuery( *pQuery->m_itrServer, pQuery->m_strFQDN, RR_A );
++        SendQuery( *pQuery.m_itrServer, pQuery.m_strFQDN, RR_A );
+     }
++    pQuery.AddResponse( *pResponse );
+ 
+-    pQuery->AddResponse( pResponse );
++    // Speichern des geaenderten Objekts
++    m_treeHostQueries[strHost] = pQuery;
+ 
+     return true;
+ }
+ 
+ bool CResolver::GetHost( CResolverResponse* pResponse, struct in_addr addr )
+ {
+-dbgout( "CResolver::GetHost: query for %s", inet_ntoa(addr) );
++    dbgout( "CResolver::GetHost: query for %s", inet_ntoa(addr) );
+ 
+     CAddrInfo info( addr );
+ 
+     // See if we already have it
+-    CAddrInfo* pInfo = m_treeAddrInfo.Search( info );
+-    if( pInfo )
++    CAddrInfo pInfo = m_treeAddrInfo[addr];
++    
++    if( pInfo.m_addr.s_addr != INADDR_NONE )
+     {
+-        if( pInfo->m_tExpire > time(NULL) )
++        if( pInfo.m_tExpire > time(NULL) )
+         {
+-            pResponse->GetHostDone( 0, addr, pInfo->m_strName );
++            pResponse->GetHostDone( 0, addr, pInfo.m_strName );
+             return true;
+         }
+-        m_treeAddrInfo.Delete( info );
++	m_treeAddrInfo.erase( addr );
+     }
+ 
+     // Nope, gotta send a query
+     CAddrQuery query( addr );
+-    CAddrQuery* pQuery = m_treeAddrQueries.Insert( query );
+-    if( ! pQuery )
+-    {
+-        pQuery = m_treeAddrQueries.Search( query );
+-        assert( pQuery );
++    CAddrQuery pQuery = (*(m_treeAddrQueries.insert( pair<in_addr,CAddrQuery>( addr, query ) ).first)).second;
+ 
+-        pQuery->m_tExpire = time(NULL) + 4;
+-        pQuery->m_tDelta = 4;
+-        pQuery->m_itrServer = m_listServers.Begin();
+-        SendQuery( *pQuery->m_itrServer, inet_ntoa_rev(addr), RR_PTR );
++    if ( pQuery.m_addr.s_addr != INADDR_NONE )
++    {
++        pQuery.m_tExpire = time(NULL) + 4;
++        pQuery.m_tDelta = 4;
++        pQuery.m_itrServer = m_listServers.Begin();
++        SendQuery( *pQuery.m_itrServer, inet_ntoa_rev(addr), RR_PTR );
+     }
++    pQuery.AddResponse( *pResponse );
+ 
+-    pQuery->AddResponse( pResponse );
++    // Speichern des geaenderten Objekts
++    m_treeAddrQueries[addr] = pQuery;
+ 
+     return true;
+ }
+ 
+-void CResolver::WalkHostTree( AvlNode<CHostQuery>* pNode )
++void CResolver::IterateHostMap()
+ {
+-    if( !pNode ) return;
+-    WalkHostTree( pNode->Subtree(LEFT) );
+-    WalkHostTree( pNode->Subtree(RIGHT) );
+-    CHostQuery& rquery = pNode->Key();
+-    if( rquery.m_tExpire < time(NULL) )
++    // Empty map
++    if ( m_treeHostQueries.empty() ) return;
++
++    CHostQueryMap::iterator itr = m_treeHostQueries.begin();
++    // Iterate over all hostname queries
++    while ( itr != m_treeHostQueries.end() )
+     {
+-        // Timed out, next nameserver
+-        rquery.m_itrServer++;
+-        if( rquery.m_itrServer )
+-        {
+-            rquery.m_tExpire = time(NULL)+4;
+-            rquery.m_tDelta = 4;
+-            SendQuery( *rquery.m_itrServer, rquery.m_strHost, RR_A );
+-            return;
+-        }
++	CHostQuery rquery = (*itr).second;
++	if( rquery.m_tExpire < time(NULL) )
++	{
++	    dbgout("Nameserver timed out");
++	    // Timed out, next nameserver
++	    rquery.m_itrServer++;
++	    if( rquery.m_itrServer )
++	    {
++		rquery.m_tExpire = time(NULL)+4;
++		rquery.m_tDelta = 4;
++		SendQuery( *rquery.m_itrServer, rquery.m_strHost, RR_A );
++		return;
++	    }
+ 
+-        // Exhausted server list, so bump the timeout and start over
+-        rquery.m_tExpire += rquery.m_tDelta;
+-        rquery.m_tDelta *= 2;
+-        rquery.m_itrServer = m_listServers.Begin();
+-        if( rquery.m_tDelta > 30 )
+-        {
+-            // Everything timed out - we're all alone, and it's getting dark!
+-            struct in_addr addr;
+-            addr.s_addr = INADDR_NONE;
+-            CResolverResponseList::Iterator itr( rquery.m_listResponses.Begin() );
+-            while( itr )
+-            {
+-                (*itr)->GetHostDone( EAGAIN, rquery.m_strHost, addr );
+-                itr++;
+-            }
+-            m_treeHostQueries.Delete( rquery );
+-        }
++	    dbgout("No more name servers left. Starting over");
++	    // Exhausted server list, so bump the timeout and start over
++	    rquery.m_tExpire += rquery.m_tDelta;
++	    rquery.m_tDelta *= 2;
++	    rquery.m_itrServer = m_listServers.Begin();
++	    if( rquery.m_tDelta > 30 )
++	    {
++		dbgout("Everything timed out!");
++		// Everything timed out - we're all alone, and it's getting dark!
++		struct in_addr addr;
++		addr.s_addr = INADDR_NONE;
++		CResolverResponseList::iterator itr( rquery.m_listResponses.begin() );
++		while( itr != rquery.m_listResponses.end() )
++		{
++		    (*itr)->GetHostDone( EAGAIN, rquery.m_strHost, addr );
++		    itr++;
++		}
++		m_treeHostQueries.erase( rquery.m_strHost );
++	    }
++	}
++	++itr;
+     }
+ }
+ 
+-void CResolver::WalkAddrTree( AvlNode<CAddrQuery>* pNode )
++void CResolver::IterateAddrMap()
+ {
+-    if( !pNode ) return;
+-    WalkAddrTree( pNode->Subtree(LEFT) );
+-    WalkAddrTree( pNode->Subtree(RIGHT) );
+-    CAddrQuery& rquery = pNode->Key();
+-    if( rquery.m_tExpire < time(NULL) )
++    if ( m_treeAddrQueries.empty() ) return;
++
++    CAddrQueryMap::iterator itr = m_treeAddrQueries.begin();
++
++    // Iterate over all address queries
++    while ( itr != m_treeAddrQueries.end() )
+     {
+-        // Timed out, next nameserver
+-        rquery.m_itrServer++;
+-        if( rquery.m_itrServer )
+-        {
+-            rquery.m_tExpire = time(NULL)+4;
+-            rquery.m_tDelta = 4;
+-            SendQuery( *rquery.m_itrServer, inet_ntoa_rev(rquery.m_addr), RR_PTR );
+-            return;
+-        }
++	CAddrQuery rquery = (*itr).second;
++	if( rquery.m_tExpire < time(NULL) )
++	{
++	    dbgout("Nameserver timed out");
++	    // Timed out, next nameserver
++	    rquery.m_itrServer++;
++	    if( rquery.m_itrServer )
++	    {
++		rquery.m_tExpire = time(NULL)+4;
++		rquery.m_tDelta = 4;
++		SendQuery( *rquery.m_itrServer, inet_ntoa_rev(rquery.m_addr), RR_PTR );
++		return;
++	    }
+ 
+-        // Exhausted server list, so bump the timeout and start over
+-        rquery.m_tExpire += rquery.m_tDelta;
+-        rquery.m_tDelta *= 2;
+-        rquery.m_itrServer = m_listServers.Begin();
+-        if( rquery.m_tDelta > 30 )
+-        {
+-            // Everything timed out - we're all alone, and it's getting dark!
+-            CString host;
+-            CResolverResponseList::Iterator itr( rquery.m_listResponses.Begin() );
+-            while( itr )
+-            {
+-                (*itr)->GetHostDone( EAGAIN, rquery.m_addr, host );
+-                itr++;
+-            }
+-            m_treeAddrQueries.Delete( rquery );
+-        }
++	    dbgout("No more name servers left. Starting over");
++	    // Exhausted server list, so bump the timeout and start over
++	    rquery.m_tExpire += rquery.m_tDelta;
++	    rquery.m_tDelta *= 2;
++	    rquery.m_itrServer = m_listServers.Begin();
++	    if( rquery.m_tDelta > 30 )
++	    {
++		dbgout("Everything timed out!");
++		// Everything timed out - we're all alone, and it's getting dark!
++		CString host;
++		CResolverResponseList::iterator itr( rquery.m_listResponses.begin() );
++		while( itr != rquery.m_listResponses.end() )
++		{
++		    (*itr)->GetHostDone( EAGAIN, rquery.m_addr, host );
++		    itr++;
++		}
++		m_treeAddrQueries.erase( rquery.m_addr );
++	    }
++	}
++	++itr;
+     }
+ }
+ 
+@@ -415,12 +434,12 @@ void CResolver::OnTimer( void )
+     dbgout( "CResolver::OnTimer" );
+ 
+     // iterate through queries, remove stale ones and respond fail
+-    WalkHostTree( m_treeHostQueries.GetRoot() );
+-    WalkAddrTree( m_treeAddrQueries.GetRoot() );
++    IterateHostMap();
++    IterateAddrMap();
+ 
+-    if( m_treeHostQueries.IsEmpty() && m_treeAddrQueries.IsEmpty() )
++    if ( m_treeHostQueries.empty() && m_treeAddrQueries.empty() )
+     {
+-dbgout( "CResolver::OnTimer: no more queries" );
++	dbgout( "CResolver::OnTimer: no more queries" );
+         m_sock.Close();
+         m_timer.Disable();
+     }
+@@ -433,7 +452,7 @@ void CResolver::OnConnectDone( int err )
+ 
+ void CResolver::OnReadReady( void )
+ {
+-dbgout( "CResolver::OnReadReady" );
++    dbgout( "CResolver::OnReadReady" );
+     CBuffer buf;
+     buf.SetSize( 513 );
+     if( !m_sock.Read( &buf ) )
+@@ -498,9 +517,9 @@ dbgout( "CResolver::OnReadReady" );
+         if( qrhdr.qtype == RR_A )
+         {
+             // Does not exist - try next domain
+-            CHostQuery query( qrhdr.strHost );
+-            CHostQuery* pQuery = m_treeHostQueries.Search( query );
+-            if( ! pQuery )
++	    CHostQuery pQuery = m_treeHostQueries[qrhdr.strHost];
++	    
++            if( pQuery.m_strHost == "" )
+             {
+                 dbgout( "CResolver::OnReadReady: received rc=%u for unexpected host '%s'",
+                         rc, (CPCHAR)qrhdr.strHost );
+@@ -508,29 +527,32 @@ dbgout( "CResolver::OnReadReady" );
+             }
+ 
+             // If query was unqualified, bump the domain iterator
+-            if( pQuery->m_itrDomain ) pQuery->m_itrDomain++;
++            if( pQuery.m_itrDomain ) pQuery.m_itrDomain++;
+ 
+-            if( ! pQuery->m_itrDomain )
++            if( ! pQuery.m_itrDomain )
+             {
+                 // Exhausted search list
+                 struct in_addr addr;
+                 addr.s_addr = INADDR_NONE;
+-                CResolverResponseList::Iterator itr( pQuery->m_listResponses.Begin() );
+-                while( itr )
++                CResolverResponseList::iterator itr( pQuery.m_listResponses.begin() );
++                while( itr != pQuery.m_listResponses.end() )
+                 {
+                     (*itr)->GetHostDone( ENOENT, qrhdr.strHost, addr );
+                     itr++;
+                 }
+-                m_treeHostQueries.Delete( query );
++		m_treeHostQueries.erase( qrhdr.strHost );
+             }
+             else
+             {
+-                pQuery->m_strFQDN = pQuery->m_strHost;
+-                pQuery->m_strFQDN.Append( "." );
+-                pQuery->m_strFQDN.Append( *pQuery->m_itrDomain );
+-                pQuery->m_itrDomain++;
++                pQuery.m_strFQDN = pQuery.m_strHost;
++                pQuery.m_strFQDN.Append( "." );
++                pQuery.m_strFQDN.Append( *pQuery.m_itrDomain );
++                pQuery.m_itrDomain++;
+                 //XXX: reset query's server iterator here?
+-                SendQuery( *pQuery->m_itrServer, pQuery->m_strFQDN, RR_A );
++                SendQuery( *pQuery.m_itrServer, pQuery.m_strFQDN, RR_A );
++
++		// Speichern des geaenderten Objekts
++		m_treeHostQueries[qrhdr.strHost] = pQuery;
+             }
+         }
+         else if( qrhdr.qtype == RR_PTR )
+@@ -538,9 +560,9 @@ dbgout( "CResolver::OnReadReady" );
+             struct in_addr addr;
+             if( inet_aton_rev( qrhdr.strHost, &addr ) )
+             {
+-                CAddrQuery query( addr );
+-                CAddrQuery* pQuery = m_treeAddrQueries.Search( query );
+-                if( ! pQuery )
++		CAddrQuery pQuery = m_treeAddrQueries[addr];
++	    
++		if( pQuery.m_addr.s_addr == INADDR_NONE )
+                 {
+                     dbgout( "CResolver::OnReadReady: received rc=%u for unexpected host '%s'",
+                             rc, (CPCHAR)qrhdr.strHost );
+@@ -548,13 +570,13 @@ dbgout( "CResolver::OnReadReady" );
+                 }
+ 
+                 CString host;
+-                CResolverResponseList::Iterator itr( pQuery->m_listResponses.Begin() );
+-                while( itr )
++                CResolverResponseList::iterator itr( pQuery.m_listResponses.begin() );
++                while( itr != pQuery.m_listResponses.end() )
+                 {
+                     (*itr)->GetHostDone( ENOENT, addr, host );
+                     itr++;
+                 }
+-                m_treeAddrQueries.Delete( query );
++		m_treeAddrQueries.erase( addr );
+             }
+         }
+         else
+@@ -607,9 +629,9 @@ dbgout( "CResolver::OnReadReady" );
+ 
+     // Ignore authority and additional RR's
+ 
+-    if( m_treeHostQueries.IsEmpty() && m_treeAddrQueries.IsEmpty() )
++    if( m_treeHostQueries.empty() && m_treeAddrQueries.empty() )
+     {
+-dbgout( "CResolver::OnReadReady: no more queries" );
++	dbgout( "CResolver::OnReadReady: no more queries" );
+         m_sock.Close();
+         m_timer.Disable();
+     }
+@@ -656,7 +678,7 @@ dbgout( "CResolver::SendQuery: host %s", (CPCHAR)strHo
+     }
+     if( CTimer::Repeating != m_timer.GetMode() )
+     {
+-dbgout( "CResolver::SendQuery: setting timer" );
++	dbgout( "CResolver::SendQuery: setting timer" );
+         m_timer.SetRepeating( 2*1000 );
+     }
+ 
+@@ -688,59 +710,67 @@ dbgout( "CResolver::SendQuery: setting timer" );
+ 
+ void CResolver::AddHostEntry( time_t tExpire, const CString& strHost, struct in_addr addr )
+ {
+-dbgout( "AddHostEntry: host %s = %s", (CPCHAR)strHost, inet_ntoa(addr) );
+-    // Add host to our host tree
+-    m_treeHostInfo.Insert( CHostInfo( tExpire, strHost, addr ) );
++    dbgout( "AddHostEntry: host %s = %s", (CPCHAR)strHost, inet_ntoa(addr) );
++    // Add host to our host map
++    m_treeHostInfo[strHost] = CHostInfo( tExpire, strHost, addr);
+ 
+-    // Add addr to our addr tree
+-    m_treeAddrInfo.Insert( CAddrInfo( tExpire, addr, strHost ) );
++    // Add addr to our addr map
++    m_treeAddrInfo[addr] = CAddrInfo( tExpire, addr, strHost );
+ 
+     // See if anyone is waiting for this host
+     CHostQuery queryHost( strHost );
+-    CHostQuery* pHostQuery = m_treeHostQueries.Search( queryHost );
+-    if( pHostQuery )
++    CHostQuery pHostQuery;
++
++    CHostQueryMap::iterator hqitr = m_treeHostQueries.find( strHost );
++    
++    if ( hqitr != m_treeHostQueries.end() ) 
+     {
+-dbgout( "\tfound host query in tree, calling responses" );
+-        CResolverResponseList::Iterator itr( pHostQuery->m_listResponses.Begin() );
+-        while( itr )
++	pHostQuery = (*hqitr).second;
++	dbgout( "\tfound host query in tree, calling responses" );
++        CResolverResponseList::iterator itr( pHostQuery.m_listResponses.begin() );
++        while( itr != pHostQuery.m_listResponses.end() )
+         {
++	    dbgout("Calling GetHost done for host=%s and address=%s", (CPCHAR) strHost, inet_ntoa(addr));
+             (*itr)->GetHostDone( 0, strHost, addr );
+             itr++;
+         }
+-        m_treeHostQueries.Delete( queryHost );
++	m_treeHostQueries.erase( strHost );
+     }
+     CPCHAR pdot;
+     if( (pdot = strchr( strHost, '.' )) )
+     {
+         // Perhaps someone is waiting on the unqualified name
+         queryHost.m_strHost.Set( strHost, pdot - (CPCHAR)strHost );
+-        pHostQuery = m_treeHostQueries.Search( queryHost );
+-        if( pHostQuery )
++	hqitr = m_treeHostQueries.find( queryHost.m_strHost );
++
++	if ( hqitr != m_treeHostQueries.end() )
+         {
+-dbgout( "\tfound bare host query in tree, calling responses" );
+-            CResolverResponseList::Iterator itr( pHostQuery->m_listResponses.Begin() );
+-            while( itr )
++	    pHostQuery = (*hqitr).second;
++	    dbgout( "\tfound bare host query in tree, calling responses" );
++            CResolverResponseList::iterator itr( pHostQuery.m_listResponses.begin() );
++            while( itr != pHostQuery.m_listResponses.end() )
+             {
+                 (*itr)->GetHostDone( 0, strHost, addr );
+                 itr++;
+             }
+-            m_treeHostQueries.Delete( queryHost );
++	    m_treeHostQueries.erase( queryHost.m_strHost );
+         }
+     }
+ 
+     // See if anyone is waiting for this addr
+-    CAddrQuery queryAddr( addr );
+-    CAddrQuery* pAddrQuery = m_treeAddrQueries.Search( queryAddr );
+-    if( pAddrQuery )
++    CAddrQueryMap::iterator adritr = m_treeAddrQueries.find( addr );
++
++    if ( adritr != m_treeAddrQueries.end() )
+     {
+-dbgout( "\tfound addr query in tree, calling responses" );
+-        CResolverResponseList::Iterator itr( pAddrQuery->m_listResponses.Begin() );
+-        while( itr )
++	CAddrQuery pAddrQuery = (*adritr).second;
++	dbgout( "\tfound addr query in tree, calling responses" );
++        CResolverResponseList::iterator itr( pAddrQuery.m_listResponses.begin() );
++        while( itr != pAddrQuery.m_listResponses.end() )
+         {
+             (*itr)->GetHostDone( 0, addr, strHost );
+             itr++;
+         }
+-        m_treeAddrQueries.Delete( queryAddr );
++	m_treeAddrQueries.erase( addr );
+     }
+ }
+ 
+@@ -953,7 +983,7 @@ bool CResolver::EncodeName( CPCHAR szName, PBYTE& rpbu
+     {
+         CPCHAR pLabel = szName;
+         BYTE nLabelLen = 0;
+-        BYTE nOverLen = min( 64, rlen-1 );
++        BYTE nOverLen = MIN( 64, rlen-1 );
+         while( *szName && '.' != *szName && nLabelLen < nOverLen )
+         {
+             nLabelLen++;
+@@ -1012,15 +1042,18 @@ bool CResolver::ParseAnswerHeader( dns_rr_hdr* phdr, c
+ 
+ bool CResolver::DecodeName( PCHAR pname, const CBuffer& buf, size_t& rpos )
+ {
+-    CPBYTE pbuf = buf.GetBuffer();
+-    size_t buflen = buf.GetSize();
++    const CPBYTE pbuf = buf.GetBuffer();
++    const size_t buflen = buf.GetSize();
+     size_t pos = rpos;
+     size_t namelen = 0;
++    size_t iteration = 0;
+     assert( buflen > 0 && buflen <= 512 && pos < buflen );
+ 
+     bool bHasPtr = false;
+     while( pbuf[pos] )
+     {
++       if( iteration++ >= buflen ) return false;
++
+         UINT8 len = pbuf[pos];
+         if( !(len & 0xC0) )
+         {
+@@ -1041,7 +1074,7 @@ bool CResolver::DecodeName( PCHAR pname, const CBuffer
+             if( (len & 0xC0) != 0xC0 || pos > buflen-2 ) return false;
+             pos = (UINT16)(pbuf[pos] & 0x3F)*256 + (UINT16)(pbuf[pos+1]);
+             if( pos >= buflen-1 ) return false;
+-            rpos += 2;
++            if( !bHasPtr ) rpos += 2;
+             bHasPtr = true;
+         }
+     }

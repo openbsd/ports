@@ -1,0 +1,23 @@
+$OpenBSD: patch-libapp_dbg_h,v 1.1 2015/07/01 11:33:50 bluhm Exp $
+--- libapp/dbg.h.orig	Tue Jan 30 22:24:19 2001
++++ libapp/dbg.h	Tue Nov 11 19:12:06 2014
+@@ -16,18 +16,10 @@
+ 
+ #ifdef NDEBUG
+ inline void dbgout( const char* fmt, ... ) {}
+-inline void dump_alloc_heaps( void ) {}
+ #else
+ void dbgout( const char* fmt, ... );
+-void* operator new( size_t n, CPCHAR file, UINT line );
+-void* operator new[]( size_t n, CPCHAR file, UINT line );
+-void  operator delete( void* p );
+-void  operator delete[]( void* p );
+-void* operator new( size_t n );
+-void* operator new[]( size_t n );
+-#define new new(__FILE__,__LINE__)
+-void dump_alloc_heaps( void );
+ #endif
++inline void dump_alloc_heaps( void ) {}
+ 
+ #define assert_or_ret(cond) { assert(cond); if( !(cond) ) return; }
+ #define assert_or_retv(val,cond) { assert(cond); if( !(cond) ) return (val); }

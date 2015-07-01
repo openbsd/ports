@@ -1,15 +1,24 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/01/10 10:37:07 grunk Exp $
+$OpenBSD: patch-configure,v 1.2 2015/07/01 11:33:50 bluhm Exp $
 --- configure.orig	Fri Feb  9 07:07:26 2001
-+++ configure	Wed Jan 10 10:56:04 2007
-@@ -135,6 +135,14 @@ case "$UNAME_S" in
++++ configure	Tue Nov 11 19:12:06 2014
+@@ -135,6 +135,23 @@ case "$UNAME_S" in
      ARFLAGS="-rc"
      SYSLIBS="-lnsl -lsocket"
      ;;
 +  OpenBSD)
++    CC=gcc
++    CXX=g++
 +    AR=ar
 +    ARFLAGS="-rc"
-+    CFLAGS="${CFLAGS} -DNDEBUG -D_UNIX"
-+    CXXFLAGS="${CXXFLAGS} -DNDEBUG -D_UNIX"
++    if [ "$DEBUG" -ne 0 ]; then
++      CCDBG="-g -Wall"
++      LDDBG="-g -Wall"
++    else
++      CCDBG="-DNDEBUG"
++      LDDBG=""
++    fi
++    CFLAGS="${CCDBG} ${CFLAGS} -D_UNIX"
++    CXXFLAGS="${CCDBG} ${CXXFLAGS} -D_UNIX"
 +    LD=ld
 +    SYSLIBS="-pthread"
 +    ;;
