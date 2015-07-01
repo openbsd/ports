@@ -1,25 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/04/26 19:08:05 phessler Exp $
-bin/mtp-albumart
-bin/mtp-albums
-bin/mtp-connect
+@comment $OpenBSD: PLIST,v 1.13 2015/07/01 09:22:44 ajacoutot Exp $
+@bin bin/mtp-albumart
+@bin bin/mtp-albums
+@bin bin/mtp-connect
 bin/mtp-delfile
-bin/mtp-detect
-bin/mtp-emptyfolders
-bin/mtp-files
-bin/mtp-filetree
-bin/mtp-folders
-bin/mtp-format
+@bin bin/mtp-detect
+@bin bin/mtp-emptyfolders
+@bin bin/mtp-files
+@bin bin/mtp-filetree
+@bin bin/mtp-folders
+@bin bin/mtp-format
 bin/mtp-getfile
-bin/mtp-getplaylist
+@bin bin/mtp-getplaylist
 bin/mtp-newfolder
-bin/mtp-newplaylist
-bin/mtp-playlists
-bin/mtp-reset
+@bin bin/mtp-newplaylist
+@bin bin/mtp-playlists
+@bin bin/mtp-reset
 bin/mtp-sendfile
 bin/mtp-sendtr
-bin/mtp-thumb
-bin/mtp-tracks
-bin/mtp-trexist
+@bin bin/mtp-thumb
+@bin bin/mtp-tracks
+@bin bin/mtp-trexist
 include/libmtp.h
 lib/libmtp.a
 lib/libmtp.la
