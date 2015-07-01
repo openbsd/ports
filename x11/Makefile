@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.551 2015/06/21 20:20:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.552 2015/07/01 18:17:11 zhuk Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -398,6 +398,7 @@
      SUBDIR += xzoom
      SUBDIR += yad
      SUBDIR += yakuake
+     SUBDIR += yakuake-kde4
      SUBDIR += yeahconsole
      SUBDIR += yeahlaunch
 
