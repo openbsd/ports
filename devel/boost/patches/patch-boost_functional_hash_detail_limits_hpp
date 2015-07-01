@@ -1,7 +1,7 @@
-$OpenBSD: patch-boost_functional_hash_detail_limits_hpp,v 1.1 2011/11/06 20:05:47 jasper Exp $
---- boost/functional/hash/detail/limits.hpp.orig	Thu Nov  3 07:03:59 2011
-+++ boost/functional/hash/detail/limits.hpp	Thu Nov  3 07:05:08 2011
-@@ -15,11 +15,7 @@
+$OpenBSD: patch-boost_functional_hash_detail_limits_hpp,v 1.2 2015/07/01 08:41:59 jasper Exp $
+--- boost/functional/hash/detail/limits.hpp.orig	Sat Jan 24 15:37:21 2015
++++ boost/functional/hash/detail/limits.hpp	Fri Jun 26 11:43:46 2015
+@@ -16,11 +16,7 @@
  
  #include <boost/limits.hpp>
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-boost_functional_hash_detail_limits_hpp,v 1.1 2011/11/06 20:05:4
  #include <float.h>
  #endif
  
-@@ -30,7 +26,7 @@ namespace boost
+@@ -31,7 +27,7 @@ namespace boost
          template <class T>
          struct limits : std::numeric_limits<T> {};
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-boost_functional_hash_detail_limits_hpp,v 1.1 2011/11/06 20:05:4
          template <>
          struct limits<long double>
               : std::numeric_limits<long double>
-@@ -50,11 +46,9 @@ namespace boost
+@@ -51,11 +47,9 @@ namespace boost
              BOOST_STATIC_CONSTANT(int, digits = LDBL_MANT_DIG);
              BOOST_STATIC_CONSTANT(int, max_exponent = LDBL_MAX_EXP);
              BOOST_STATIC_CONSTANT(int, min_exponent = LDBL_MIN_EXP);

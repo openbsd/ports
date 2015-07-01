@@ -1,19 +1,21 @@
-$OpenBSD: patch-libs_filesystem_src_operations_cpp,v 1.2 2013/03/08 01:21:38 brad Exp $
---- libs/filesystem/src/operations.cpp.orig	Wed Oct 10 15:47:26 2012
-+++ libs/filesystem/src/operations.cpp	Wed Oct 10 15:49:47 2012
-@@ -73,14 +73,11 @@ using std::wstring;
-     const fs::path dot_dot_path("..");
+$OpenBSD: patch-libs_filesystem_src_operations_cpp,v 1.3 2015/07/01 08:41:59 jasper Exp $
+--- libs/filesystem/src/operations.cpp.orig	Fri Jun 26 11:36:34 2015
++++ libs/filesystem/src/operations.cpp	Fri Jun 26 11:37:45 2015
+@@ -71,15 +71,13 @@ using std::wstring;
+ 
  #   include <sys/types.h>
  #   include <sys/stat.h>
--#   if !defined(__APPLE__) && !defined(__OpenBSD__)
-+#   if !defined(__APPLE__)
+-#   if !defined(__APPLE__) && !defined(__OpenBSD__) && !defined(__ANDROID__) \
++#   if !defined(__APPLE__) && !defined(__ANDROID__) \
+  && !defined(__VXWORKS__)
  #     include <sys/statvfs.h>
  #     define BOOST_STATVFS statvfs
  #     define BOOST_STATVFS_F_FRSIZE vfs.f_frsize
  #   else
 -#     ifdef __OpenBSD__
--#     include <sys/param.h>
--#     endif
- #     include <sys/mount.h>
- #     define BOOST_STATVFS statfs
- #     define BOOST_STATVFS_F_FRSIZE static_cast<boost::uintmax_t>(vfs.f_bsize)
+-#       include <sys/param.h>
+-#     elif defined(__ANDROID__)
++#     if defined(__ANDROID__)
+ #       include <sys/vfs.h>
+ #     endif
+ #     if !defined(__VXWORKS__)

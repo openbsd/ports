@@ -1,0 +1,12 @@
+$OpenBSD: patch-boost_predef_other_endian_h,v 1.1 2015/07/01 08:41:59 jasper Exp $
+--- boost/predef/other/endian.h.orig	Fri Jun 26 11:28:26 2015
++++ boost/predef/other/endian.h	Fri Jun 26 11:30:43 2015
+@@ -62,7 +62,7 @@ information and acquired knowledge:
+ #       else
+ #           if BOOST_OS_BSD
+ #               if BOOST_OS_BSD_OPEN
+-#                   include <machine/endian.h>
++#                   include <endian.h>
+ #               else
+ #                   include <sys/endian.h>
+ #               endif

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_log_src_timestamp_cpp,v 1.1 2015/07/01 08:41:59 jasper Exp $
+--- libs/log/src/timestamp.cpp.orig	Fri Jun 26 17:06:12 2015
++++ libs/log/src/timestamp.cpp	Fri Jun 26 17:11:38 2015
+@@ -203,7 +203,7 @@ BOOST_LOG_API get_tick_count_t get_tick_count = &get_t
+ #endif // _WIN32_WINNT >= 0x0600
+ 
+ #elif (defined(_POSIX_TIMERS) && _POSIX_TIMERS > 0)  /* POSIX timers supported */ \
+-      || defined(__GNU__)  /* GNU Hurd does not support POSIX timers fully but does provide clock_gettime() */
++      || defined(__GNU__)  || defined(__OpenBSD__) /* GNU Hurd/OpenBSD do not support POSIX timers fully but do provide clock_gettime() */
+ 
+ BOOST_LOG_API int64_t duration::milliseconds() const
+ {
