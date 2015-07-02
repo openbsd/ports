@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.15 2015/06/23 14:22:50 espie Exp $
+# $OpenBSD: Build.pm,v 1.16 2015/07/02 08:04:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -44,6 +44,7 @@ sub preempt_core
 	# so mismatches holds a copy of stuff that's still there.
 	$self->{mismatches} = [];
 	$self->{tag_mismatches} = [];
+	$self->{klogged} = {};
 	return 0;
 }
 
@@ -60,9 +61,17 @@ sub can_start_build
 	# fail abysmally if there's no junking going on
 	my $reason = $core->prop->taint_incompatible($v);
 	if (defined $reason) {
-		$self->log('K', $v, " ".$core->hostname." ".$reason);
-		push(@{$self->{tag_mismatches}}, $v);
-		return 0;
+		if (!$self->{klogged}{$v->pkgpath}) {
+			$self->log('K', $v, " ".$core->hostname." ".$reason);
+			$self->{klogged}{$v->pkgpath} = 1;
+		}
+#		if ($self->can_be_junked($v, $core)) {
+#			$self->force_junk($core);
+#			return 1;
+#		} else {
+			push(@{$self->{tag_mismatches}}, $v);
+			return 0;
+#		}
 	}
 	# keep affinity mismatches for later
 	if (defined $v->{affinity} && !$core->matches_affinity($v)) {
@@ -158,12 +167,8 @@ sub recheck_mismatches
 			# to fix, it requires a "pseudo" junk first 
 			# to untaint the host, THEN we can try building.
 			next unless $self->can_be_junked($v, $core);
-			$v->{forcejunk} = 1;
-			if ($self->lock_and_start_build($core, $v)) {
-				$self->log('C', $v);
-				return 1;
-			}
-			delete $v->{forcejunk};
+			$self->force_junk($core);
+			return 1;
 		}
 	}
 	# let's make sure we don't have something else first
@@ -303,6 +308,18 @@ sub start_build
 	    });
 }
 
+sub force_junk
+{
+	my ($self, $core) = @_;
+	my $v = JunkPath->new;
+	$self->log('C', $v, " ".$core->hostname);
+	$self->{builder}->force_junk($v, $core,
+	    sub {
+		my $fail = shift;
+		$self->log($fail ? 'E': 'B' , $v, " ".$core->hostname);
+	    });
+}
+
 sub end_build
 {
 	my ($self, $v) = @_;
@@ -321,6 +338,26 @@ sub add
 	my ($self, $v) = @_;
 	$self->{engine}{affinity}->has_in_queue($v);
 	$self->SUPER::add($v);
+}
+
+package JunkPath;
+our @ISA = qw(DPB::PkgPath);
+sub new
+{
+	my $class = shift;
+	my $v = bless {}, $class;
+	DPB::PortInfo->new($v);
+	return $v;
+}
+
+sub fullpkgpath
+{
+	return "junk-proxy";
+}
+
+sub forcejunk
+{
+	return 1;
 }
 
 1;

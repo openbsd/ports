@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.13 2015/06/23 09:01:56 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.14 2015/07/02 08:04:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -120,7 +120,7 @@ sub taint
 		return;
 	}
 	my $t1 = $self->{tainted};
-	if (!defined $t1 || $v->{forcejunk}) {
+	if (!defined $t1) {
 		$self->{tainted} = $t2;
 		$self->{tainted_source} = $v->fullpkgpath;
 		return;

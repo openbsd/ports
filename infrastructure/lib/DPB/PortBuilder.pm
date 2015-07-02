@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.71 2015/05/12 19:48:29 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.72 2015/07/02 08:04:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -250,6 +250,27 @@ sub build
 	    "pid=$core->{pid}\n",
 	    "start=$start (", DPB::Util->time2string($start), ")\n";
 	$job->set_watch($self->logger, $v);
+}
+
+sub force_junk
+{
+	my ($self, $v, $core, $final_sub) = @_;
+	my $start = time();
+	my $log = $self->logger->log_pkgpath($v);
+	my $fh = $self->logger->open('>>', $log);
+	print $fh ">>> Force junking on ", $core->hostname;
+	if (defined $core->{user}) {
+		print $fh " as ", $core->{user}->user, " ";
+	}
+	my $job;
+	$job = DPB::Job::Port->new_junk_only($log, $fh, $v, undef, $self,
+	    0,$core,
+	    sub {
+		    close($fh);
+		    &$final_sub($job->{failed});
+		    $core->mark_ready;
+	    });
+	$core->start_job($job, $v);
 }
 
 sub test

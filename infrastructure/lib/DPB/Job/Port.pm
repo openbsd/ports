@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.165 2015/06/23 09:01:56 espie Exp $
+# $OpenBSD: Port.pm,v 1.166 2015/07/02 08:04:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -27,7 +27,7 @@ sub want
 	# job is normally attached to core, unless it's not attached,
 	# and then we pass it as an extra parameter
 	$job //= $core->job;
-	return 2 if $job->{v}{forcejunk};
+	return 2 if $job->{v}->forcejunk;
 	# XXX let's wipe the slates at the start of the first tagged
 	# job, as we don't know the exact state of the host.
 	return 2 if $job->{v}{info}->has_property('tag') &&
@@ -347,7 +347,7 @@ sub finalize
 	my $task = $job->{tasks}[0];
 	# XXX if we didn't lock at the entrance, we locked here.
 	$job->{locked} = 1;
-	if ($core->{status} != 0 || defined $task && !$task->is_serialized) {
+	if ($core->{status} != 0 || !defined $task || !$task->is_serialized) {
 		$self->junk_unlock($core);
 	}
 	$self->SUPER::finalize($core);
@@ -1117,6 +1117,21 @@ sub new
 	}
 	return $job;
 }
+
+sub new_junk_only
+{
+	my $class = shift;
+	my ($log, $fh, $v, $lock, $builder, $special, $core, 
+	    $endcode) = @_;
+
+	my $job = $class->SUPER::new(@_);
+	my $fh2 = $job->{builder}->logger->append("junk");
+	print $fh2 "$$@", CORE::time(), ": ", $core->hostname,
+	    ": forced junking -> $job->{path}\n";
+	$job->add_tasks(DPB::Port::TaskFactory->create('junk'));
+	return $job;
+}
+
 
 sub add_normal_tasks
 {
