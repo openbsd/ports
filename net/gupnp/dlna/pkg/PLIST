@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/05/22 11:31:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/07/02 11:53:40 jasper Exp $
 @bin bin/gupnp-dlna-info-2.0
 @bin bin/gupnp-dlna-ls-profiles-2.0
 include/gupnp-dlna-2.0/
@@ -48,9 +48,12 @@ share/gtk-doc/html/gupnp-dlna-gst/gupnp-dlna-gst.devhelp2
 share/gtk-doc/html/gupnp-dlna-gst/home.png
 share/gtk-doc/html/gupnp-dlna-gst/index.html
 share/gtk-doc/html/gupnp-dlna-gst/index.sgml
+share/gtk-doc/html/gupnp-dlna-gst/left-insensitive.png
 share/gtk-doc/html/gupnp-dlna-gst/left.png
+share/gtk-doc/html/gupnp-dlna-gst/right-insensitive.png
 share/gtk-doc/html/gupnp-dlna-gst/right.png
 share/gtk-doc/html/gupnp-dlna-gst/style.css
+share/gtk-doc/html/gupnp-dlna-gst/up-insensitive.png
 share/gtk-doc/html/gupnp-dlna-gst/up.png
 share/gtk-doc/html/gupnp-dlna-metadata/
 share/gtk-doc/html/gupnp-dlna-metadata/GUPnPDLNAMetadataExtractor.html
@@ -60,9 +63,12 @@ share/gtk-doc/html/gupnp-dlna-metadata/gupnp-dlna-metadata.devhelp2
 share/gtk-doc/html/gupnp-dlna-metadata/home.png
 share/gtk-doc/html/gupnp-dlna-metadata/index.html
 share/gtk-doc/html/gupnp-dlna-metadata/index.sgml
+share/gtk-doc/html/gupnp-dlna-metadata/left-insensitive.png
 share/gtk-doc/html/gupnp-dlna-metadata/left.png
+share/gtk-doc/html/gupnp-dlna-metadata/right-insensitive.png
 share/gtk-doc/html/gupnp-dlna-metadata/right.png
 share/gtk-doc/html/gupnp-dlna-metadata/style.css
+share/gtk-doc/html/gupnp-dlna-metadata/up-insensitive.png
 share/gtk-doc/html/gupnp-dlna-metadata/up.png
 share/gtk-doc/html/gupnp-dlna/GUPnPDLNAAudioInformation.html
 share/gtk-doc/html/gupnp-dlna/GUPnPDLNAContainerInformation.html
@@ -81,9 +87,12 @@ share/gtk-doc/html/gupnp-dlna/gupnp-dlna.devhelp2
 share/gtk-doc/html/gupnp-dlna/home.png
 share/gtk-doc/html/gupnp-dlna/index.html
 share/gtk-doc/html/gupnp-dlna/index.sgml
+share/gtk-doc/html/gupnp-dlna/left-insensitive.png
 share/gtk-doc/html/gupnp-dlna/left.png
+share/gtk-doc/html/gupnp-dlna/right-insensitive.png
 share/gtk-doc/html/gupnp-dlna/right.png
 share/gtk-doc/html/gupnp-dlna/style.css
+share/gtk-doc/html/gupnp-dlna/up-insensitive.png
 share/gtk-doc/html/gupnp-dlna/up.png
 share/gupnp-dlna-2.0/
 share/gupnp-dlna-2.0/dlna-profiles/
