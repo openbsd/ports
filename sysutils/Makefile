@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.346 2015/07/01 09:14:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.347 2015/07/02 21:32:16 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -204,6 +204,7 @@
      SUBDIR += shelldap
      SUBDIR += shmux
      SUBDIR += shunt
+     SUBDIR += simple-mtpfs
      SUBDIR += skill
      SUBDIR += sleuthkit
      SUBDIR += smartmontools
