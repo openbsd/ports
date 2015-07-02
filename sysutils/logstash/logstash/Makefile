@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2015/06/10 13:25:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/07/02 18:06:02 jasper Exp $
 
 COMMENT=		tool for managing events and logs
 
-V=			1.5.0
-REVISION=		2
+V=			1.5.2
 DISTNAME=		logstash-$V
 PKGNAME=		logstash-${V:S/-/./}
 EPOCH=			0
 
-# tarball is a result of 'rake artifact:tar'
-MASTER_SITES=		http://distfiles.nl/
+MASTER_SITES=		https://download.elastic.co/logstash/logstash/
 
 MODULES=		java \
 			lang/ruby

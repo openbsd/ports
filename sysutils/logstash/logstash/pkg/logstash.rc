@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: logstash.rc,v 1.4 2015/05/17 10:30:59 jasper Exp $
+# $OpenBSD: logstash.rc,v 1.5 2015/07/02 18:06:02 jasper Exp $
 
 daemon_user="_logstash"
 daemon="${TRUEPREFIX}/logstash/bin/logstash"
@@ -15,7 +15,7 @@ rc_reload=NO
 # Ensure _logstash can write to the logfile.
 # XXX: Remove on upgrade.
 rc_pre() {
-	chown _logstash:_logstash /var/log/logstash/*.log
+	chown -R _logstash:_logstash /var/log/logstash
 }
 
 rc_start() {
