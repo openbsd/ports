@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2015/03/19 20:23:57 naddy Exp $
-@pkgpath lang/gcc/4.6
+@comment $OpenBSD: PLIST-main,v 1.7 2015/07/02 00:22:18 zhuk Exp $
 @bin bin/ecpp
 @bin bin/egcc
 @bin bin/egcov

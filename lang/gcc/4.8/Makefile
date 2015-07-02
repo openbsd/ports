@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2015/06/17 20:03:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2015/07/02 00:22:18 zhuk Exp $
 
 BROKEN-mips64 = ld: not enough GOT space for local GOT entries
 BROKEN-mips64el = ld: not enough GOT space for local GOT entries
@@ -35,7 +35,7 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.8,<4.9
 
-REVISION-main =	3
+REVISION-main =	4
 REVISION-c++ =	2
 REVISION-estdc =2
 REVISION-f95 =	2
