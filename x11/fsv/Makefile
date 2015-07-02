@@ -1,37 +1,42 @@
-# $OpenBSD: Makefile,v 1.21 2015/04/04 09:21:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2015/07/02 12:14:35 ajacoutot Exp $
 
-COMMENT=	3D filesystem visualizer
+COMMENT=		3D filesystem visualizer
 
-V=		1.0.1
-DISTNAME=	fsv2-$V
-PKGNAME=	fsv-$V
-REVISION=	3
-CATEGORIES=     x11
+V=			1.1.0
+DISTNAME=		fsv2-$V
+PKGNAME=		fsv-$V
+CATEGORIES=		x11
 
-HOMEPAGE=	http://fedorchenko.net/fsv2.php
+SHARED_LIBS +=	fsvui                     0.0 # 0.0
+
+HOMEPAGE=		http://fedorchenko.net/fsv2.php
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 
-MASTER_SITES=	http://fedorchenko.net/src/
-EXTRACT_SUFX=	.tar.bz2
+WANTLIB += GL GLU ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xmu Xrandr Xrender Xt
+WANTLIB += Xxf86vm atk-1.0 atkmm-1.6 c cairo cairomm-1.0 drm expat
+WANTLIB += ffi fontconfig freetype ftgl gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gdkmm-2.4 gio-2.0 giomm-2.4 glapi glib-2.0 glibmm-2.4
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
+WANTLIB += gtkgl-2.0 gtkmm-2.4 harfbuzz m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pangomm-1.4 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs sigc-2.0 stdc++ xcb xcb-dri2 xcb-glx
+WANTLIB += xcb-render xcb-shm z
 
-MODULES=	devel/gettext
+MASTER_SITES=		http://fedorchenko.net/src/
+EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB += GL GLU ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2
-WANTLIB += atk-1.0 bonobo-2 bonobo-activation bonoboui-2 c cairo
-WANTLIB += dbus-1 expat fontconfig freetype gailutil gconf-2 gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-2
-WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png popt pthread pthread-stubs
-WANTLIB += xcb xml2 z gnomeui-2 gtkgl-2.0
+MODULES=		devel/gettext
 
-LIB_DEPENDS=	x11/gnome/libgnomeui \
-		x11/gtkglarea
+LIB_DEPENDS=		graphics/ftgl \
+			x11/gtkglarea \
+			x11/gtk2mm
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+RUN_DEPENDS=		devel/desktop-file-utils
+
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

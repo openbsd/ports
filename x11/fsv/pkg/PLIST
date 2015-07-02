@@ -1,20 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/03/25 06:29:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/07/02 12:14:35 ajacoutot Exp $
 @bin bin/fsv2
-share/fsv/
-share/fsv/about.html
-share/fsv/back.png
-share/fsv/beyeview.png
-share/fsv/cd-root.png
-share/fsv/cd-up.png
-share/fsv/dirtree.png
-share/fsv/filelist.png
-share/fsv/fsv.html
-share/fsv/mapv.png
-share/fsv/menus.html
-share/fsv/mouse.html
-share/fsv/startup.html
-share/fsv/t1.html
-share/fsv/treev.png
-share/fsv/viewport.png
-share/fsv/window.html
-share/fsv/window.png
+include/fsv2/
+include/fsv2/ColorCellEditable.h
+include/fsv2/ColorCellRenderer.h
+lib/libfsvui.a
+lib/libfsvui.la
+@lib lib/libfsvui.so.${LIBfsvui_VERSION}
+share/applications/fsv2.desktop
+share/doc/fsv2/
+share/doc/fsv2/about.html
+share/doc/fsv2/dirtree.png
+share/doc/fsv2/filelist.png
+share/doc/fsv2/fsv.html
+share/doc/fsv2/mapv.png
+share/doc/fsv2/menus.html
+share/doc/fsv2/mouse.html
+share/doc/fsv2/startup.html
+share/doc/fsv2/t1.html
+share/doc/fsv2/tb.png
+share/doc/fsv2/treev.png
+share/doc/fsv2/viewport.png
+share/doc/fsv2/window.html
+share/doc/fsv2/window.png
+share/locale/ru/LC_MESSAGES/fsv2.mo
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
