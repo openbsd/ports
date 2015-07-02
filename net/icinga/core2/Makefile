@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2015/06/30 09:19:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2015/07/02 20:16:54 sthen Exp $
 
-BROKEN =	doesn't daemonize correctly. also suspect some thread-related problems with forking.
+BROKEN =	doesn't startup correctly; ConfigItem::ActivateItems() doesn't proceed after DynamicObject::RestoreObjects() call
 BROKEN-hppa =	needs 64-bit atomic ops; __sync_add_and_fetch_4
 SHARED_ONLY =	Yes
 
@@ -59,9 +59,6 @@ CONFIGURE_ARGS += \
 	-DICINGA2_GROUP:String="_icinga" \
 	-DICINGA2_GIT_VERSION_INFO:Boolean="OFF" \
 	-DICINGA2_PLUGINDIR:String="${LOCALBASE}/libexec/nagios"
-
-# CFLAGS +=	-pthread
-# LDFLAGS +=	-lpthread
 
 pre-configure:
 	ln -sf ${LOCALBASE}/bin/gflex ${WRKDIR}/bin/flex
