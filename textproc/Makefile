@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.457 2015/06/25 16:24:40 kurt Exp $
+# $OpenBSD: Makefile,v 1.458 2015/07/02 09:28:01 bluhm Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -152,7 +152,6 @@
      SUBDIR += p5-LaTeX-Encode
      SUBDIR += p5-LaTeX-Pod
      SUBDIR += p5-LaTeX-TOM
-     SUBDIR += p5-LibXML-Common
      SUBDIR += p5-Libxml
      SUBDIR += p5-Lingua-EN-Fathom
      SUBDIR += p5-Lingua-EN-FindNumber
