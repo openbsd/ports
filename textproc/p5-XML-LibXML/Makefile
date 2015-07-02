@@ -1,27 +1,25 @@
-# $OpenBSD: Makefile,v 1.43 2015/07/02 09:30:59 bluhm Exp $
+# $OpenBSD: Makefile,v 1.44 2015/07/02 13:21:07 bluhm Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY =		Yes
 
-COMMENT=	perl binding for libxml2
+COMMENT =		perl binding for libxml2
 
-DISTNAME=	XML-LibXML-2.0121
-EPOCH=		0
+DISTNAME =		XML-LibXML-2.0121
+EPOCH =			0
 
-CATEGORIES=	textproc
+CATEGORIES =		textproc
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += m xml2 z
+WANTLIB =		m xml2 z
 
-MODULES=	converters/libiconv \
-		cpan
-
-LIB_DEPENDS=	textproc/libxml>=2.7.6
-RUN_DEPENDS=	textproc/p5-XML-NamespaceSupport>=1.07 \
-		textproc/p5-XML-SAX>=0.11
-TEST_DEPENDS =	devel/p5-Test-LeakTrace
+MODULES =		cpan converters/libiconv
+RUN_DEPENDS =		textproc/p5-XML-NamespaceSupport>=1.07 \
+			textproc/p5-XML-SAX>=0.11
+LIB_DEPENDS =		textproc/libxml>=2.7.6
+TEST_DEPENDS =		devel/p5-Test-LeakTrace
 
 .include <bsd.port.mk>
