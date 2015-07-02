@@ -1,10 +1,10 @@
-$OpenBSD: patch-cmake_modules_GrantleeUse_cmake,v 1.1.1.1 2013/03/25 21:08:47 zhuk Exp $
---- cmake/modules/GrantleeUse.cmake.orig	Fri Jan 25 15:03:05 2013
-+++ cmake/modules/GrantleeUse.cmake	Fri Jan 25 15:03:17 2013
-@@ -50,5 +50,6 @@ macro(GRANTLEE_ADD_PLUGIN pluginname)
+$OpenBSD: patch-cmake_modules_GrantleeUse_cmake,v 1.2 2015/07/02 00:10:15 zhuk Exp $
+--- cmake/modules/GrantleeUse.cmake.orig	Fri Sep 19 14:50:36 2014
++++ cmake/modules/GrantleeUse.cmake	Tue Jun 30 10:05:28 2015
+@@ -47,5 +47,6 @@ macro(GRANTLEE_ADD_PLUGIN pluginname)
    )
    target_link_libraries(${pluginname}
      grantlee_core
 +    c
    )
- endmacro(GRANTLEE_ADD_PLUGIN)
+ endmacro()

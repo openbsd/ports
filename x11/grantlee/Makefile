@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/07 10:05:28 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2015/07/02 00:10:15 zhuk Exp $
 
 SHARED_ONLY =		Yes
-COMMENT =		template and text document library for Qt
-PKG_VERSION =		0.3.0
+COMMENT =		template and text document library for Qt4
+PKG_VERSION =		0.5.0
 PLIST_VERSION =		${PKG_VERSION:R}
 DISTNAME =		grantlee-${PKG_VERSION}
 CATEGORIES =		devel x11
 HOMEPAGE =		http://www.gitorious.org/grantlee/
-REVISION =		0
 
-SHARED_LIBS =		grantlee_core		0.0
-SHARED_LIBS +=		grantlee_gui		0.0
+SHARED_LIBS =		grantlee_core		1.0
+SHARED_LIBS +=		grantlee_gui		1.0
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		http://downloads.grantlee.org/ \
 			http://www.loegria.net/grantlee/
 
-WANTLIB =		c m stdc++ pthread
+WANTLIB =		c m stdc++
 WANTLIB +=		lib/qt4/QtGui lib/qt4/QtScript
 
 MODULES =		devel/cmake x11/qt4

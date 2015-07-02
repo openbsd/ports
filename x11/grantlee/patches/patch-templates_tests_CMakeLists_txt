@@ -1,12 +1,12 @@
-$OpenBSD: patch-templates_tests_CMakeLists_txt,v 1.1.1.1 2013/03/25 21:08:47 zhuk Exp $
---- templates/tests/CMakeLists.txt.orig	Fri Jan 25 15:10:40 2013
-+++ templates/tests/CMakeLists.txt	Fri Jan 25 15:11:01 2013
-@@ -83,7 +83,7 @@ macro(GRANTLEE_TEMPLATES_UNIT_TESTS)
-                   ${_testresource_rcc_src}
-     )
-     add_test(${_testname} ${_testname}_exec )
--    target_link_libraries(${_testname}_exec ${QT_QTTEST_LIBRARY} grantlee_core )
-+    target_link_libraries(${_testname}_exec c ${QT_QTTEST_LIBRARY} grantlee_core )
- 
-     set_property(GLOBAL APPEND PROPERTY TEST_COVERAGE "${CMAKE_CURRENT_BINARY_DIR}/${_testname}_exec" )
-   endforeach(_testname)
+$OpenBSD: patch-templates_tests_CMakeLists_txt,v 1.2 2015/07/02 00:10:15 zhuk Exp $
+--- templates/tests/CMakeLists.txt.orig	Fri Sep 19 14:50:36 2014
++++ templates/tests/CMakeLists.txt	Tue Jun 30 10:07:37 2015
+@@ -90,7 +90,7 @@ add_library(template_test_builtins STATIC coverageobje
+   ${_testresource_rcc_src}
+ )
+ if(NOT Grantlee_Qt5_TRANSITIONAL)
+-  target_link_libraries(template_test_builtins Qt4::QtTest)
++  target_link_libraries(template_test_builtins Qt4::QtTest c)
+ else()
+   target_link_libraries(template_test_builtins Qt5::Test)
+ endif()

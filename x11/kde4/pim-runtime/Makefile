@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.22 2015/06/26 09:18:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/07/02 00:10:16 zhuk Exp $
 
 COMMENT =	KDE PIM runtime support
-DISTNAME =	kdepim-runtime-4.14.6
-REVISION =	1
+DISTNAME =	kdepim-runtime-4.14.10
 
 DPB_PROPERTIES =	parallel
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/14.12.3/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/15.04.3/src/}
 
-SHARED_LIBS =	akonadi-filestore	52.0 # 4.7
+SHARED_LIBS =	akonadi-filestore	53.0 # 4.7
 #SHARED_LIBS +=	akonadi-xml		51.0 # 4.7
-SHARED_LIBS +=	kdepim-copy		52.0 # 4.7
-SHARED_LIBS +=	kmindexreader		52.0 # 4.7
-SHARED_LIBS +=	maildir			52.0 # 4.7
-SHARED_LIBS +=	folderarchivesettings	0.0
+SHARED_LIBS +=	kdepim-copy		53.0 # 4.7
+SHARED_LIBS +=	kmindexreader		53.0 # 4.7
+SHARED_LIBS +=	maildir			53.0 # 4.7
+SHARED_LIBS +=	folderarchivesettings	1.0
 
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui

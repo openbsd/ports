@@ -1,11 +1,11 @@
-$OpenBSD: patch-textdocument_lib_CMakeLists_txt,v 1.1.1.1 2013/03/25 21:08:47 zhuk Exp $
---- textdocument/lib/CMakeLists.txt.orig	Fri Jan 25 15:47:18 2013
-+++ textdocument/lib/CMakeLists.txt	Fri Jan 25 15:47:29 2013
-@@ -26,6 +26,7 @@ set_property(GLOBAL APPEND PROPERTY SOURCE_LIST
- grantlee_generate_export_header(grantlee_gui)
- 
- target_link_libraries(grantlee_gui
-+  c
-   ${QT_QTCORE_LIBRARY}
-   ${QT_QTGUI_LIBRARY}
- )
+$OpenBSD: patch-textdocument_lib_CMakeLists_txt,v 1.2 2015/07/02 00:10:15 zhuk Exp $
+--- textdocument/lib/CMakeLists.txt.orig	Fri Sep 19 14:50:36 2014
++++ textdocument/lib/CMakeLists.txt	Tue Jun 30 10:08:13 2015
+@@ -26,6 +26,7 @@ generate_export_header(grantlee_gui)
+ if (NOT Grantlee_Qt5_TRANSITIONAL)
+   target_link_libraries(grantlee_gui
+     LINK_PUBLIC Qt4::QtGui
++    c
+   )
+ else()
+   target_link_libraries(grantlee_gui

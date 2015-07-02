@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2014/01/15 19:42:11 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2015/07/02 00:10:15 zhuk Exp $
 @option no-default-conflict
 @conflict kdelibs->=4
 @pkgpath x11/kde4/libs
@@ -2175,7 +2175,6 @@ libexec/fileshareset
 share/applications/kde4/
 share/applications/kde4/kmailservice.desktop
 share/applications/kde4/ktelnetservice.desktop
-share/apps/
 share/apps/LICENSES/
 share/apps/LICENSES/ARTISTIC
 share/apps/LICENSES/BSD
@@ -3490,6 +3489,7 @@ share/doc/HTML/en/common/lgpl-license
 share/doc/HTML/en/common/lgpl-license.html
 share/doc/HTML/en/common/mainfooter.html
 share/doc/HTML/en/common/mainheader.html
+share/doc/HTML/en/common/part_of_the_kde_family_horizontal_190.png
 share/doc/HTML/en/common/qpl-license.html
 share/doc/HTML/en/common/tabs.css
 share/doc/HTML/en/common/top-kde.jpg

@@ -1,11 +1,11 @@
-$OpenBSD: patch-templates_scriptabletags_CMakeLists_txt,v 1.1.1.1 2013/03/25 21:08:47 zhuk Exp $
---- templates/scriptabletags/CMakeLists.txt.orig	Fri Jan 25 15:48:29 2013
-+++ templates/scriptabletags/CMakeLists.txt	Fri Jan 25 15:48:35 2013
-@@ -15,6 +15,7 @@ grantlee_add_plugin(grantlee_scriptabletags
- )
+$OpenBSD: patch-templates_scriptabletags_CMakeLists_txt,v 1.2 2015/07/02 00:10:15 zhuk Exp $
+--- templates/scriptabletags/CMakeLists.txt.orig	Fri Sep 19 14:50:36 2014
++++ templates/scriptabletags/CMakeLists.txt	Tue Jun 30 10:06:36 2015
+@@ -16,6 +16,7 @@ grantlee_add_plugin(grantlee_scriptabletags
  
  target_link_libraries(grantlee_scriptabletags
+   Qt4::QtScript
 +  c
-   ${QT_QTSCRIPT_LIBRARY}
  )
  
+ install(TARGETS grantlee_scriptabletags

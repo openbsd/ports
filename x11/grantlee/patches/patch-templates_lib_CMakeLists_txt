@@ -1,13 +1,11 @@
-$OpenBSD: patch-templates_lib_CMakeLists_txt,v 1.1.1.1 2013/03/25 21:08:47 zhuk Exp $
---- templates/lib/CMakeLists.txt.orig	Fri Jan 25 14:53:21 2013
-+++ templates/lib/CMakeLists.txt	Fri Jan 25 14:56:44 2013
-@@ -89,7 +89,9 @@ file(READ "${CMAKE_CURRENT_BINARY_DIR}/grantlee_test_e
- 
- file(APPEND "${CMAKE_CURRENT_BINARY_DIR}/grantlee_core_export.h" "${_content}")
- 
-+#  pthread
- target_link_libraries(grantlee_core
-+  c
-   ${QT_QTCORE_LIBRARY}
-   ${QT_QTSCRIPT_LIBRARY}
- )
+$OpenBSD: patch-templates_lib_CMakeLists_txt,v 1.2 2015/07/02 00:10:15 zhuk Exp $
+--- templates/lib/CMakeLists.txt.orig	Fri Sep 19 14:50:36 2014
++++ templates/lib/CMakeLists.txt	Tue Jun 30 10:09:05 2015
+@@ -100,6 +100,7 @@ if (NOT Grantlee_Qt5_TRANSITIONAL)
+   target_link_libraries(grantlee_core
+     LINK_PUBLIC Qt4::QtCore
+     LINK_PRIVATE Qt4::QtScript
++    c
+   )
+ else()
+   target_link_libraries(grantlee_core

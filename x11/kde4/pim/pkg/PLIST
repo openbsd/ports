@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/03/30 17:11:45 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/07/02 00:10:16 zhuk Exp $
 @conflict kdeutils-<4
 @bin bin/akonadi_archivemail_agent
 @bin bin/akonadi_followupreminder_agent
@@ -248,8 +248,8 @@ lib/kde4/plugins/designer/kdepimwidgets.so
 lib/kde4/plugins/designer/mailcommonwidgets.so
 lib/kde4/plugins/designer/pimcommonwidgets.so
 lib/kde4/plugins/grantlee/
-lib/kde4/plugins/grantlee/0.3/
-lib/kde4/plugins/grantlee/0.3/grantlee_messageheaderfilters.so
+lib/kde4/plugins/grantlee/0.5/
+lib/kde4/plugins/grantlee/0.5/grantlee_messageheaderfilters.so
 @lib lib/libakonadi_next.so.${LIBakonadi_next_VERSION}
 @lib lib/libakregatorinterfaces.so.${LIBakregatorinterfaces_VERSION}
 @lib lib/libakregatorprivate.so.${LIBakregatorprivate_VERSION}
@@ -292,6 +292,7 @@ lib/kde4/plugins/grantlee/0.3/grantlee_messageheaderfilters.so
 @lib lib/libmessageviewer.so.${LIBmessageviewer_VERSION}
 @lib lib/libnoteshared.so.${LIBnoteshared_VERSION}
 @lib lib/libpimcommon.so.${LIBpimcommon_VERSION}
+@lib lib/libpimsettingexporterprivate.so.${LIBpimsettingexporterprivate_VERSION}
 @lib lib/libsendlater.so.${LIBsendlater_VERSION}
 @lib lib/libtemplateparser.so.${LIBtemplateparser_VERSION}
 @bin libexec/kalarm_helper
