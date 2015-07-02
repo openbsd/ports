@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/28 10:17:23 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2015/07/02 22:14:46 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	IDE creation toolkit for KDE 4
@@ -6,7 +6,7 @@ KDEV_V =	4.6.0
 KDEVPLAT_V =	1.6.0
 DISTNAME =	kdevplatform-${KDEVPLAT_V}
 HOMEPAGE =	http://www.kdevelop.org/
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	kdevplatformdebugger		0.0 # 3.0
 SHARED_LIBS +=	kdevplatformdocumentation	0.0 # 3.0
@@ -53,6 +53,7 @@ RUN_DEPENDS =	x11/gtk+3,-guic
 LIB_DEPENDS = 	devel/apr \
 		devel/apr-util \
 		devel/qjson \
-		devel/subversion
+		devel/subversion \
+		x11/grantlee
 
 .include <bsd.port.mk>

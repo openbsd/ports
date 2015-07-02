@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/09 11:29:15 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/02 22:14:46 zhuk Exp $
 @bin bin/kdev_dbus_socket_transformer
 bin/kdev_format_source
 bin/kdevplatform_shell_environment.sh
@@ -431,8 +431,8 @@ lib/kde4/kdevtemplatemanager_config.so
 lib/kde4/kdevtestview.so
 lib/kde4/kdevvcschangesviewplugin.so
 lib/kde4/plugins/grantlee/
-lib/kde4/plugins/grantlee/0.3/
-lib/kde4/plugins/grantlee/0.3/kdev_filters.so
+lib/kde4/plugins/grantlee/0.5/
+lib/kde4/plugins/grantlee/0.5/kdev_filters.so
 @lib lib/libkdevplatformdebugger.so.${LIBkdevplatformdebugger_VERSION}
 @lib lib/libkdevplatformdocumentation.so.${LIBkdevplatformdocumentation_VERSION}
 @lib lib/libkdevplatforminterfaces.so.${LIBkdevplatforminterfaces_VERSION}
