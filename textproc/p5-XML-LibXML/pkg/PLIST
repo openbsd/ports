@@ -1,11 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/06/14 23:26:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/07/02 09:30:59 bluhm Exp $
+@conflict p5-XML-LibXML-Common-*
+@pkgpath textproc/p5-LibXML-Common
+${P5ARCH}/
+${P5ARCH}/XML/
+${P5ARCH}/XML/LibXML/
 ${P5ARCH}/XML/LibXML.pm
 ${P5ARCH}/XML/LibXML.pod
 ${P5ARCH}/XML/LibXML/Attr.pod
+${P5ARCH}/XML/LibXML/AttributeHash.pm
 ${P5ARCH}/XML/LibXML/Boolean.pm
 ${P5ARCH}/XML/LibXML/CDATASection.pod
 ${P5ARCH}/XML/LibXML/Comment.pod
+${P5ARCH}/XML/LibXML/Common.pm
+${P5ARCH}/XML/LibXML/Common.pod
 ${P5ARCH}/XML/LibXML/DOM.pod
+${P5ARCH}/XML/LibXML/Devel.pm
 ${P5ARCH}/XML/LibXML/Document.pod
 ${P5ARCH}/XML/LibXML/DocumentFragment.pod
 ${P5ARCH}/XML/LibXML/Dtd.pod
@@ -25,6 +34,7 @@ ${P5ARCH}/XML/LibXML/Parser.pod
 ${P5ARCH}/XML/LibXML/Pattern.pod
 ${P5ARCH}/XML/LibXML/Reader.pm
 ${P5ARCH}/XML/LibXML/Reader.pod
+${P5ARCH}/XML/LibXML/RegExp.pod
 ${P5ARCH}/XML/LibXML/RelaxNG.pod
 ${P5ARCH}/XML/LibXML/SAX/
 ${P5ARCH}/XML/LibXML/SAX.pm
@@ -38,14 +48,19 @@ ${P5ARCH}/XML/LibXML/Text.pod
 ${P5ARCH}/XML/LibXML/XPathContext.pm
 ${P5ARCH}/XML/LibXML/XPathContext.pod
 ${P5ARCH}/XML/LibXML/XPathExpression.pod
-@comment ${P5ARCH}/auto/XML/LibXML/LibXML.bs
+${P5ARCH}/auto/
+${P5ARCH}/auto/XML/
+${P5ARCH}/auto/XML/LibXML/
 ${P5ARCH}/auto/XML/LibXML/LibXML.so
 @man man/man3p/XML::LibXML.3p
 @man man/man3p/XML::LibXML::Attr.3p
+@man man/man3p/XML::LibXML::AttributeHash.3p
 @man man/man3p/XML::LibXML::Boolean.3p
 @man man/man3p/XML::LibXML::CDATASection.3p
 @man man/man3p/XML::LibXML::Comment.3p
+@man man/man3p/XML::LibXML::Common.3p
 @man man/man3p/XML::LibXML::DOM.3p
+@man man/man3p/XML::LibXML::Devel.3p
 @man man/man3p/XML::LibXML::Document.3p
 @man man/man3p/XML::LibXML::DocumentFragment.3p
 @man man/man3p/XML::LibXML::Dtd.3p
@@ -62,6 +77,7 @@ ${P5ARCH}/auto/XML/LibXML/LibXML.so
 @man man/man3p/XML::LibXML::Parser.3p
 @man man/man3p/XML::LibXML::Pattern.3p
 @man man/man3p/XML::LibXML::Reader.3p
+@man man/man3p/XML::LibXML::RegExp.3p
 @man man/man3p/XML::LibXML::RelaxNG.3p
 @man man/man3p/XML::LibXML::SAX.3p
 @man man/man3p/XML::LibXML::SAX::Builder.3p

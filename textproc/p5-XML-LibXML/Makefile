@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.42 2015/01/21 14:41:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2015/07/02 09:30:59 bluhm Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	perl interface to the libxml2 library
+COMMENT=	perl binding for libxml2
 
-DISTNAME=	XML-LibXML-1.69
+DISTNAME=	XML-LibXML-2.0121
 EPOCH=		0
-
-REVISION=	3
 
 CATEGORIES=	textproc
 
-# GPL/Artistic
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
+
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m xml2 z
@@ -19,9 +19,9 @@ WANTLIB += m xml2 z
 MODULES=	converters/libiconv \
 		cpan
 
-LIB_DEPENDS=	textproc/libxml
-RUN_DEPENDS=	textproc/p5-LibXML-Common \
-		textproc/p5-XML-SAX
-BUILD_DEPENDS=	${RUN_DEPENDS}
+LIB_DEPENDS=	textproc/libxml>=2.7.6
+RUN_DEPENDS=	textproc/p5-XML-NamespaceSupport>=1.07 \
+		textproc/p5-XML-SAX>=0.11
+TEST_DEPENDS =	devel/p5-Test-LeakTrace
 
 .include <bsd.port.mk>
