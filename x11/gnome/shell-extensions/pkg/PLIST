@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/04/03 16:47:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/07/02 18:02:32 jasper Exp $
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.classic-overrides.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.example.gschema.xml
@@ -6,6 +6,8 @@ share/glib-2.0/schemas/org.gnome.shell.extensions.native-window-placement.gschem
 share/glib-2.0/schemas/org.gnome.shell.extensions.screenshot-window-sizer.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.user-theme.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.window-list.gschema.xml
+share/gnome-session/
+share/gnome-session/sessions/
 share/gnome-session/sessions/gnome-classic.session
 share/gnome-shell/extensions/
 share/gnome-shell/extensions/alternate-tab@gnome-shell-extensions.gcampax.github.com/
@@ -133,6 +135,7 @@ share/locale/ms/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/nb/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ne/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/nl/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/oc/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/or/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/pa/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/pl/LC_MESSAGES/gnome-shell-extensions.mo
