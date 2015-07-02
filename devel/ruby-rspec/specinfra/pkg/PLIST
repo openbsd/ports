@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2015/06/30 19:39:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2015/07/02 11:27:24 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -120,6 +120,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/host.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/inventory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/port.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/service.rb
@@ -152,6 +153,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/file.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/inventory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/port.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/service.rb
@@ -287,6 +289,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/ubuntu/base/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/ubuntu/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/ubuntu/base/ppa.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/ubuntu/base/service.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/ubuntu/v15/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/ubuntu/v15.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/ubuntu/v15/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/windows/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/windows.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/windows/base/
@@ -422,9 +427,14 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/helper/os_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/properties_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/set_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/
-${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/cpu_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/filesystem_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/memory_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/darwin/
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/darwin/filesystem_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/freebsd/
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/freebsd/filesystem_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/cpu_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/filesystem_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/memory_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/specinfra.gemspec
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
