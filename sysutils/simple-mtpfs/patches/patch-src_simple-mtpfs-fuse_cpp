@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_simple-mtpfs-fuse_cpp,v 1.1.1.1 2015/07/02 21:31:44 ajacoutot Exp $
+--- src/simple-mtpfs-fuse.cpp.orig	Mon Jun 29 17:27:26 2015
++++ src/simple-mtpfs-fuse.cpp	Mon Jun 29 17:27:31 2015
+@@ -19,7 +19,7 @@
+ #include <iostream>
+ extern "C" {
+ #  include <errno.h>
+-#  include <fuse/fuse_opt.h>
++#  include <fuse_opt.h>
+ #  include <unistd.h>
+ #  include <stddef.h>
+ }

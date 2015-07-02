@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_simple-mtpfs-fuse_h,v 1.1.1.1 2015/07/02 21:31:44 ajacoutot Exp $
+--- src/simple-mtpfs-fuse.h.orig	Mon Jun 29 17:26:18 2015
++++ src/simple-mtpfs-fuse.h	Mon Jun 29 17:26:25 2015
+@@ -23,7 +23,7 @@
+ #include <string>
+ #include <cstdlib>
+ extern "C" {
+-#  include <fuse/fuse.h>
++#  include <fuse.h>
+ }
+ #include "simple-mtpfs-mtp-device.h"
+ #include "simple-mtpfs-tmp-files-pool.h"

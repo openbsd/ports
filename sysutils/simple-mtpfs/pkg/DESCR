@@ -1,0 +1,6 @@
+SIMPLE-MTPFS (Simple Media Transfer Protocol FileSystem) is a file system for
+Linux capable of operating on files on MTP devices attached via USB to the local
+machine. On the local computer where the SIMPLE-MTPFS is mounted, the
+implementation makes use of FUSE (Filesystem in Userspace).
+The practical effect of this is that the end user can seamlessly interact with
+MTP device files.
