@@ -1,0 +1,104 @@
+$OpenBSD: patch-src_mpegparser_M2VParser_cpp,v 1.1 2015/07/02 08:30:25 ajacoutot Exp $
+
+MPEG parser: don't use potentially dangling pointers for remembering timescodes
+
+--- src/mpegparser/M2VParser.cpp.orig	Thu Jul  2 03:44:51 2015
++++ src/mpegparser/M2VParser.cpp	Thu Jul  2 03:56:35 2015
+@@ -27,12 +27,6 @@
+ 
+ #define BUFF_SIZE 2*1024*1024
+ 
+-void MPEGFrameRef::TryUpdate(){
+-  // if frame set, stamped and no timecode yet, derive it
+-  if (frame && frame->stamped && (timecode == -1))
+-    timecode = frame->timecode;
+-}
+-
+ MPEGFrame::MPEGFrame(binary *n_data, uint32_t n_size, bool n_bCopy):
+   size(n_size), bCopy(n_bCopy) {
+ 
+@@ -111,7 +105,8 @@ void M2VParser::DumpQueues(){
+ }
+ 
+ M2VParser::M2VParser()
+-  : throwOnError{}
++  : frameCounter{}
++  , throwOnError{}
+ {
+   mpgBuf = new MPEGVideoBuffer(BUFF_SIZE);
+ 
+@@ -231,20 +226,21 @@ void M2VParser::StampFrame(MPEGFrame* frame){
+   previousDuration = frame->duration;
+ 
+   frame->stamped = true;
++  frameTimecodes[frame->frameNumber] = frame->timecode;
+ 
+   // update affected ref timecodes
+   for (int i = 0; i < 2; i++)
+-    if (refs[i].frame == frame)
+-      refs[i].TryUpdate();
++    if (refs[i].frameNumber == frame->frameNumber)
++      TryUpdate(refs[i]);
+ }
+ 
+ void M2VParser::UpdateFrame(MPEGFrame* frame){
+   // derive ref timecodes
+   for (int i = 0; i < 2; i++) {
+-    if (!frame->tmpRefs[i].frame)
++    if (!frame->tmpRefs[i].HasFrameNumber())
+       continue;
+-    frame->tmpRefs[i].TryUpdate();
+-    assert(frame->tmpRefs[i].timecode != -1); // ensure the timecode indeed has been set (sometime before)
++    TryUpdate(frame->tmpRefs[i]);
++    assert(frame->tmpRefs[i].HasTimecode()); // ensure the timecode indeed has been set (sometime before)
+     frame->refs[i] = frame->tmpRefs[i].timecode;
+   }
+ }
+@@ -324,6 +320,7 @@ int32_t M2VParser::PrepareFrame(MPEGChunk* chunk, Medi
+   }
+ 
+   outBuf = new MPEGFrame(pData, dataLen, bCopy);
++  outBuf->frameNumber = frameCounter++;
+ 
+   if (seqHdrChunk && !keepSeqHdrsInBitstream &&
+       (MPEG2_I_FRAME == picHdr.frameType)) {
+@@ -368,7 +365,7 @@ void M2VParser::ShoveRef(MPEGFrame *ref){
+   if(ref->frameType == 'I' || ref->frameType == 'P'){
+     refs[0] = refs[1];
+     refs[1].Clear();
+-    refs[1].frame = ref;
++    refs[1].frameNumber = ref->frameNumber;
+   }
+ }
+ 
+@@ -441,12 +438,12 @@ int32_t M2VParser::FillQueues(){
+         notReachedFirstGOP = false;
+         break;
+       case MPEG2_P_FRAME:
+-        if (!refs[1].frame)
++        if (!refs[1].HasFrameNumber())
+           break;
+         PrepareFrame(chunk, myTime, picHdr);
+         break;
+       default: //B-frames
+-        if (!refs[0].frame || !refs[1].frame) {
++        if (!refs[0].HasFrameNumber() || !refs[1].HasFrameNumber()) {
+           if (!m_gopHdr.closedGOP && !m_gopHdr.brokenLink && !probing && !b_frame_warning_printed) {
+             mxwarn(Y("Found at least one B frame without second reference in a non closed GOP.\n"));
+             b_frame_warning_printed = true;
+@@ -488,4 +485,15 @@ M2VParser::AddTimecode(int64_t timecode) {
+ void
+ M2VParser::SetThrowOnError(bool doThrow) {
+   throwOnError = doThrow;
++}
++
++void
++M2VParser::TryUpdate(MPEGFrameRef &frame) {
++  // if frame set, stamped and no timecode yet, derive it
++  if (frame.HasTimecode() || !frame.HasFrameNumber())
++    return;
++
++  auto itr = frameTimecodes.find(frame.frameNumber);
++  if (itr != frameTimecodes.end())
++    frame.timecode = itr->second;
+ }

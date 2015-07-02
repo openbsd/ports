@@ -1,9 +1,9 @@
-$OpenBSD: patch-ac_qt5_m4,v 1.1 2015/05/27 21:18:48 ajacoutot Exp $
+$OpenBSD: patch-ac_qt5_m4,v 1.2 2015/07/02 08:30:25 ajacoutot Exp $
 
 Workaround for OpenBSD's pkg-config.
 
---- ac/qt5.m4.orig	Mon May 25 03:46:47 2015
-+++ ac/qt5.m4	Mon May 25 03:48:53 2015
+--- ac/qt5.m4.orig	Sat Jun 27 02:44:45 2015
++++ ac/qt5.m4	Thu Jul  2 02:11:28 2015
 @@ -124,13 +124,12 @@ if test x"$enable_qt" = "xyes" -a \
    fi
  
@@ -13,8 +13,8 @@ Workaround for OpenBSD's pkg-config.
 -      with_qt_pkg_config_modules="$with_qt_pkg_config_modules,"
 +      with_qt_pkg_config_modules="$with_qt_pkg_config_modules"
      fi
--    with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5Core,Qt5Gui,Qt5Widgets"
-+    with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5Core Qt5Gui Qt5Widgets"
+-    with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5Core,Qt5Gui,Qt5Widgets,Qt5Network"
++    with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5Core Qt5Gui Qt5Widgets Qt5Network"
      PKG_CHECK_EXISTS([$with_qt_pkg_config_modules],,[ok=0])
 -    PKG_CHECK_EXISTS([Qt5PlatformSupport],[with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5PlatformSupport"])
 +    PKG_CHECK_EXISTS([Qt5PlatformSupport],[with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5PlatformSupport"])
