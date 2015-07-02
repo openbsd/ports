@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_symlink_test_cc,v 1.1 2015/07/02 16:33:04 dcoppa Exp $
+
+XXX: OpenBSD does not support changing the timestamp of a symlink
+
+--- tests/symlink_test.cc.orig	Thu Jul  2 09:22:39 2015
++++ tests/symlink_test.cc	Thu Jul  2 09:22:53 2015
+@@ -209,7 +209,7 @@ void symlink_test::run ()
+         cons.output.reset ();
+         cons.input.receive ();
+ 
+-        system ("touch -h slt-wd3/baz");
++        system ("touch slt-wd3/baz");
+ 
+         cons.output.wait ();
+         received = cons.output.registered ();

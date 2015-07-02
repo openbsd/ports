@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/06 13:11:28 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.6 2015/07/02 16:33:04 dcoppa Exp $
 
 COMMENT =		kevent based inotify
 
-DISTNAME =		libinotify-20141104
+DISTNAME =		libinotify-20150628
 
-SHARED_LIBS =		inotify 0.0
+SHARED_LIBS =		inotify 1.0
 
 CATEGORIES =		devel
 
@@ -15,8 +15,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		pthread
 
-MASTER_SITES = 		https://distfiles.bsdfrog.org/
-WRKDIST =		${WRKDIR}/dmatveev-libinotify-kqueue-eb214de
+MASTER_SITES =		http://www.linklevel.net/distfiles/ \
+			https://distfiles.bsdfrog.org/
+WRKDIST =		${WRKDIR}/dmatveev-libinotify-kqueue-b41b7ee
 
 BUILD_DEPENDS =		devel/libtool \
 			${MODGNU_AUTOCONF_DEPENDS} \
