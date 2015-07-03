@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2014/12/28 23:01:47 bcallah Exp $
+# $OpenBSD: Makefile,v 1.50 2015/07/03 14:33:26 bcallah Exp $
 
 COMMENT =		fast and light graphical web browser
 
-DISTNAME =		dillo-3.0.4.1
+DISTNAME =		dillo-3.0.5
 CATEGORIES =		www
 
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
@@ -11,9 +11,8 @@ HOMEPAGE =		http://www.dillo.org/
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xau Xdmcp Xext Xft Xinerama c
-WANTLIB += crypto fltk>=7 fontconfig m pthread ssl
-WANTLIB += stdc++ z jpeg>=62 png>=2
+WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama c crypto
+WANTLIB += fltk fontconfig jpeg m png pthread ssl stdc++ z
 
 MODULES =	converters/libiconv
 
