@@ -1,11 +1,11 @@
-$OpenBSD: patch-plan_libs_kernel_tests_CMakeLists_txt,v 1.1 2015/01/15 18:13:52 dcoppa Exp $
+$OpenBSD: patch-plan_libs_kernel_tests_CMakeLists_txt,v 1.2 2015/07/03 15:43:12 zhuk Exp $
 
 Rename some targets to avoid generating multiple ninja rules with
 the same name
 
---- plan/libs/kernel/tests/CMakeLists.txt.orig	Sun Nov 30 08:02:20 2014
-+++ plan/libs/kernel/tests/CMakeLists.txt	Thu Jan 15 09:35:44 2015
-@@ -73,9 +73,9 @@ target_link_libraries(ScheduleTester  ${KDE4_KDECORE_L
+--- plan/libs/kernel/tests/CMakeLists.txt.orig	Wed Apr  1 15:27:05 2015
++++ plan/libs/kernel/tests/CMakeLists.txt	Mon Apr 27 00:31:55 2015
+@@ -78,9 +78,9 @@ target_link_libraries(ScheduleTester  ${KDE4_KDECORE_L
  set(ProjectTester_SRCS ProjectTester.cpp )
   
   

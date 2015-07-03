@@ -1,9 +1,9 @@
-$OpenBSD: patch-cmake_modules_FindPoppler_cmake,v 1.1.1.1 2014/07/12 10:44:18 zhuk Exp $
---- cmake/modules/FindPoppler.cmake.orig	Sat Oct 12 10:17:41 2013
-+++ cmake/modules/FindPoppler.cmake	Sun Oct 20 15:12:39 2013
-@@ -60,6 +60,10 @@ endif(POPPLER_FOUND)
+$OpenBSD: patch-cmake_modules_FindPoppler_cmake,v 1.2 2015/07/03 15:43:12 zhuk Exp $
+--- cmake/modules/FindPoppler.cmake.orig	Wed Apr  1 15:27:00 2015
++++ cmake/modules/FindPoppler.cmake	Mon Apr 27 00:31:55 2015
+@@ -60,6 +60,10 @@ endif()
  if (POPPLER_FOUND)
-   INCLUDE(CheckCXXSourceCompiles)
+   include(CheckCXXSourceCompiles)
  
 +  # Unbreak Qt4 linking after QT_USE_IMPORTED_TARGETS set in KDE config
 +  set(QT_USE_IMPORTED_TARGETS FALSE)

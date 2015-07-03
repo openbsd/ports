@@ -1,0 +1,61 @@
+$OpenBSD: patch-krita_plugins_extensions_gmic_3rdparty_gmic_CImg_h,v 1.1 2015/07/03 15:43:12 zhuk Exp $
+
+Variables starting by underscore ("_") sign are reserved and should not be used
+in applications.
+
+--- krita/plugins/extensions/gmic/3rdparty/gmic/CImg.h.orig	Mon May  4 21:17:23 2015
++++ krita/plugins/extensions/gmic/3rdparty/gmic/CImg.h	Mon May  4 21:22:58 2015
+@@ -37389,19 +37389,19 @@ namespace cimg_library_suffixed {
+             else { if (!visible_cursor) { disp.show_mouse(); visible_cursor = true; }}
+             const int d = (depth()>1)?depth():0;
+             int
+-              _X = (int)X, _Y = (int)Y, _Z = (int)Z,
++              uniX = (int)X, uniY = (int)Y, uniZ = (int)Z,
+               w = disp.width(), W = width() + d,
+               h = disp.height(), H = height() + d,
+-              _xp = (int)(_X*(float)w/W), xp = _xp + ((int)(_xp*(float)W/w)!=_X?1:0),
+-              _yp = (int)(_Y*(float)h/H), yp = _yp + ((int)(_yp*(float)H/h)!=_Y?1:0),
+-              _xn = (int)((_X+1.0f)*w/W-1), xn = _xn + ((int)((_xn+1.0f)*W/w)!=_X+1?1:0),
+-              _yn = (int)((_Y+1.0f)*h/H-1), yn = _yn + ((int)((_yn+1.0f)*H/h)!=_Y+1?1:0),
+-              _zxp = (int)((_Z+width())*(float)w/W), zxp = _zxp + ((int)(_zxp*(float)W/w)!=_Z+width()?1:0),
+-              _zyp = (int)((_Z+height())*(float)h/H), zyp = _zyp + ((int)(_zyp*(float)H/h)!=_Z+height()?1:0),
+-              _zxn = (int)((_Z+width()+1.0f)*w/W-1), zxn = _zxn + ((int)((_zxn+1.0f)*W/w)!=_Z+width()+1?1:0),
+-              _zyn = (int)((_Z+height()+1.0f)*h/H-1), zyn = _zyn + ((int)((_zyn+1.0f)*H/h)!=_Z+height()+1?1:0),
+-              _xM = (int)(width()*(float)w/W-1), xM = _xM + ((int)((_xM+1.0f)*W/w)!=width()?1:0),
+-              _yM = (int)(height()*(float)h/H-1), yM = _yM + ((int)((_yM+1.0f)*H/h)!=height()?1:0),
++              unixp = (int)(uniX*(float)w/W), xp = unixp + ((int)(unixp*(float)W/w)!=uniX?1:0),
++              uniyp = (int)(uniY*(float)h/H), yp = uniyp + ((int)(uniyp*(float)H/h)!=uniY?1:0),
++              unixn = (int)((uniX+1.0f)*w/W-1), xn = unixn + ((int)((unixn+1.0f)*W/w)!=uniX+1?1:0),
++              uniyn = (int)((uniY+1.0f)*h/H-1), yn = uniyn + ((int)((uniyn+1.0f)*H/h)!=uniY+1?1:0),
++              unizxp = (int)((uniZ+width())*(float)w/W), zxp = unizxp + ((int)(unizxp*(float)W/w)!=uniZ+width()?1:0),
++              unizyp = (int)((uniZ+height())*(float)h/H), zyp = unizyp + ((int)(unizyp*(float)H/h)!=uniZ+height()?1:0),
++              unizxn = (int)((uniZ+width()+1.0f)*w/W-1), zxn = unizxn + ((int)((unizxn+1.0f)*W/w)!=uniZ+width()+1?1:0),
++              unizyn = (int)((uniZ+height()+1.0f)*h/H-1), zyn = unizyn + ((int)((unizyn+1.0f)*H/h)!=uniZ+height()+1?1:0),
++              unixM = (int)(width()*(float)w/W-1), xM = unixM + ((int)((unixM+1.0f)*W/w)!=width()?1:0),
++              uniyM = (int)(height()*(float)h/H-1), yM = uniyM + ((int)((uniyM+1.0f)*H/h)!=height()?1:0),
+               xc = (xp + xn)/2,
+               yc = (yp + yn)/2,
+               zxc = (zxp + zxn)/2,
+@@ -37439,14 +37439,14 @@ namespace cimg_library_suffixed {
+             // Draw selection.
+             if (phase) {
+               const int
+-                _xp0 = (int)(X0*(float)w/W), xp0 = _xp0 + ((int)(_xp0*(float)W/w)!=X0?1:0),
+-                _yp0 = (int)(Y0*(float)h/H), yp0 = _yp0 + ((int)(_yp0*(float)H/h)!=Y0?1:0),
+-                _xn0 = (int)((X0+1.0f)*w/W-1), xn0 = _xn0 + ((int)((_xn0+1.0f)*W/w)!=X0+1?1:0),
+-                _yn0 = (int)((Y0+1.0f)*h/H-1), yn0 = _yn0 + ((int)((_yn0+1.0f)*H/h)!=Y0+1?1:0),
+-                _zxp0 = (int)((Z0+width())*(float)w/W), zxp0 = _zxp0 + ((int)(_zxp0*(float)W/w)!=Z0+width()?1:0),
+-                _zyp0 = (int)((Z0+height())*(float)h/H), zyp0 = _zyp0 + ((int)(_zyp0*(float)H/h)!=Z0+height()?1:0),
+-                _zxn0 = (int)((Z0+width()+1.0f)*w/W-1), zxn0 = _zxn0 + ((int)((_zxn0+1.0f)*W/w)!=Z0+width()+1?1:0),
+-                _zyn0 = (int)((Z0+height()+1.0f)*h/H-1), zyn0 = _zyn0 + ((int)((_zyn0+1.0f)*H/h)!=Z0+height()+1?1:0),
++                unixp0 = (int)(X0*(float)w/W), xp0 = unixp0 + ((int)(unixp0*(float)W/w)!=X0?1:0),
++                uniyp0 = (int)(Y0*(float)h/H), yp0 = uniyp0 + ((int)(uniyp0*(float)H/h)!=Y0?1:0),
++                unixn0 = (int)((X0+1.0f)*w/W-1), xn0 = unixn0 + ((int)((unixn0+1.0f)*W/w)!=X0+1?1:0),
++                uniyn0 = (int)((Y0+1.0f)*h/H-1), yn0 = uniyn0 + ((int)((uniyn0+1.0f)*H/h)!=Y0+1?1:0),
++                unizxp0 = (int)((Z0+width())*(float)w/W), zxp0 = unizxp0 + ((int)(unizxp0*(float)W/w)!=Z0+width()?1:0),
++                unizyp0 = (int)((Z0+height())*(float)h/H), zyp0 = unizyp0 + ((int)(unizyp0*(float)H/h)!=Z0+height()?1:0),
++                unizxn0 = (int)((Z0+width()+1.0f)*w/W-1), zxn0 = unizxn0 + ((int)((unizxn0+1.0f)*W/w)!=Z0+width()+1?1:0),
++                unizyn0 = (int)((Z0+height()+1.0f)*h/H-1), zyn0 = unizyn0 + ((int)((unizyn0+1.0f)*H/h)!=Z0+height()+1?1:0),
+                 xc0 = (xp0 + xn0)/2,
+                 yc0 = (yp0 + yn0)/2,
+                 zxc0 = (zxp0 + zxn0)/2,

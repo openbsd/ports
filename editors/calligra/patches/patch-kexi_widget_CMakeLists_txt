@@ -1,8 +1,8 @@
-$OpenBSD: patch-kexi_widget_CMakeLists_txt,v 1.1.1.1 2014/07/12 10:44:18 zhuk Exp $
+$OpenBSD: patch-kexi_widget_CMakeLists_txt,v 1.2 2015/07/03 15:43:12 zhuk Exp $
 Unbreak build.
---- kexi/widget/CMakeLists.txt.orig	Sun Oct 20 21:40:21 2013
-+++ kexi/widget/CMakeLists.txt	Sun Oct 20 21:54:12 2013
-@@ -10,7 +10,7 @@ ENDIF(KEXI_MOBILE)
+--- kexi/widget/CMakeLists.txt.orig	Wed Apr  1 15:27:01 2015
++++ kexi/widget/CMakeLists.txt	Mon Apr 27 00:31:55 2015
+@@ -10,7 +10,7 @@ endif()
  
  add_definitions(-DKDE_DEFAULT_DEBUG_AREA=44023)
  

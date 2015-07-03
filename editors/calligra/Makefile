@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/26 09:18:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2015/07/03 15:43:12 zhuk Exp $
 
 COMMENT =	K Desktop Environment, office suite
-HOMEPAGE =	http://www.calligra-suite.org/
-DISTNAME =	calligra-2.8.7
+HOMEPAGE =	https://www.calligra-suite.org/
+DISTNAME =	calligra-2.9.5
 CATEGORIES =	editors
-REVISION =	2
 
 DIST_SUBDIR =	kde
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/${DISTNAME}/}
@@ -71,13 +70,17 @@ SHARED_LIBS +=  planprivate               50.0 # 0.0
 SHARED_LIBS +=  planworkapp               50.0 # 0.0
 SHARED_LIBS +=  planworkfactory           50.0 # 0.0
 SHARED_LIBS +=  rcps_plan                 50.0 # 0.0
-SHARED_LIBS +=  wordsprivate              50.0 # 0.0
 SHARED_LIBS +=  kformula                  50.0 # 13.0
 SHARED_LIBS +=  komsooxml                 50.0 # 13.0
 SHARED_LIBS +=  koodf2                    50.0 # 13.0
 SHARED_LIBS +=  koodfreader               50.0 # 13.0
 SHARED_LIBS +=  kotextlayout              50.0 # 13.0
 SHARED_LIBS +=  kovectorimage             50.0 # 13.0
+SHARED_LIBS +=  koversion                 0.0 # 14.0
+SHARED_LIBS +=  kritacolor                0.0 # 14.0
+SHARED_LIBS +=  wordsprivate              14.0 # 1.0
+SHARED_LIBS +=  libglobal                 0.0 # 14.0
+SHARED_LIBS +=  libkispsd                 0.0 # 14.0
 
 WANTLIB =  c m pthread z
 WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath SM X11 Xext Xi
@@ -85,23 +88,25 @@ WANTLIB += fontconfig
 WANTLIB += lib/qt4/QtDeclarative lib/qt4/QtWebKit lib/qt4/QtDBus
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtOpenGL
 WANTLIB += lib/qt4/QtScript lib/qt4/QtXml
-WANTLIB += lib/qt4/Qt3Support lib/qt4/QtSql
+WANTLIB +=  lib/qt4/QtSql
 WANTLIB += ${KDE4LIB}/akonadi-contact ${KDE4LIB}/akonadi-kde
 WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kactivities
 WANTLIB += ${KDE4LIB}/kcalcore ${KDE4LIB}/kcmutils ${KDE4LIB}/kdcraw
-WANTLIB += ${KDE4LIB}/kde3support ${KDE4LIB}/kdeclarative
+WANTLIB += ${KDE4LIB}/kdeclarative
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kfile ${KDE4LIB}/khtml
 WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/kmime
-WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/knotifyconfig
+WANTLIB += ${KDE4LIB}/knotifyconfig
 WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kpimutils ${KDE4LIB}/kresources
 WANTLIB += ${KDE4LIB}/krosscore ${KDE4LIB}/krossui
-WANTLIB += ${KDE4LIB}/ktexteditor ${KDE4LIB}/marblewidget
+WANTLIB += ${KDE4LIB}/marblewidget
 WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += ${KDE4LIB}/okularcore
 WANTLIB += ${KDE4LIB}/phonon_sexperimental ${KDE4LIB}/threadweaver
 WANTLIB += OpenColorIO exiv2 fftw3 freetype glib-2.0 gsl icui18n icuuc
 WANTLIB += jpeg lcms2 mysqlclient openjpeg png poppler poppler-qt4 pqxx
 WANTLIB += qca2 soprano sqlite3 sybdb tiff
+WANTLIB += boost_system-mt curl ktexteditor gslcblas
+
 
 # kexi needs headers in postgresql,{-main,-server}
 # kexi needs all db drivers to be present while building
@@ -109,7 +114,7 @@ BUILD_DEPENDS =	devel/boost \
 		databases/mariadb \
 		databases/postgresql,-main \
 		databases/postgresql,-server \
-		math/eigen2 \
+		math/eigen3 \
 		productivity/librcps
 
 # kexi needs all db driver installed to run,
@@ -136,6 +141,7 @@ LIB_DEPENDS =	databases/freetds \
 		graphics/png \
 		graphics/tiff \
 		math/fftw3,double \
+		net/curl \
 		print/poppler,,-qt4 \
 		security/qca2 \
 		textproc/icu4c \
