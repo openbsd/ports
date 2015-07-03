@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.722 2015/06/29 06:17:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.723 2015/07/03 09:18:09 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -238,6 +238,7 @@
      SUBDIR += p5-HTML-Calendar-Month-Simple
      SUBDIR += p5-HTML-Clean
      SUBDIR += p5-HTML-Copy
+     SUBDIR += p5-HTML-Display
      SUBDIR += p5-HTML-Embperl
      SUBDIR += p5-HTML-FillInForm
      SUBDIR += p5-HTML-Form
