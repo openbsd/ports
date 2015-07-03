@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/03 09:16:26 bluhm Exp $
+${P5SITE}/HTML/Display/
+${P5SITE}/HTML/Display.pm
+${P5SITE}/HTML/Display/Common.pm
+${P5SITE}/HTML/Display/Debian.pm
+${P5SITE}/HTML/Display/Dump.pm
+${P5SITE}/HTML/Display/Galeon.pm
+${P5SITE}/HTML/Display/Mozilla.pm
+${P5SITE}/HTML/Display/OSX.pm
+${P5SITE}/HTML/Display/Opera.pm
+${P5SITE}/HTML/Display/Phoenix.pm
+${P5SITE}/HTML/Display/TempFile.pm
+${P5SITE}/HTML/Display/Win32/
+${P5SITE}/HTML/Display/Win32.pm
+${P5SITE}/HTML/Display/Win32/IE.pm
+${P5SITE}/HTML/Display/Win32/OLE.pm
+@man man/man3p/HTML::Display.3p
+@man man/man3p/HTML::Display::Common.3p
+@man man/man3p/HTML::Display::Debian.3p
+@man man/man3p/HTML::Display::Dump.3p
+@man man/man3p/HTML::Display::Galeon.3p
+@man man/man3p/HTML::Display::Mozilla.3p
+@man man/man3p/HTML::Display::OSX.3p
+@man man/man3p/HTML::Display::Opera.3p
+@man man/man3p/HTML::Display::Phoenix.3p
+@man man/man3p/HTML::Display::TempFile.3p
+@man man/man3p/HTML::Display::Win32.3p
+@man man/man3p/HTML::Display::Win32::IE.3p
+@man man/man3p/HTML::Display::Win32::OLE.3p
