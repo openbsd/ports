@@ -1,0 +1,11 @@
+"cpandoc" is a perl script that acts like "perldoc" except that if it
+would have bailed out with "No documentation found for
+"Uninstalled::Module"", it will instead scrape a CPAN index for the
+module's documentation.
+
+One important feature of "cpandoc" is that it *only* scrapes the live
+index if you do not have the module installed. So if you use "cpandoc"
+on a module you already have installed, then it will just read the
+already-installed documentation. This means that the version of the
+documentation matches up with the version of the code you have. As a
+fringe benefit, "cpandoc" will be fast for modules you've installed. :)
