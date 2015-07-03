@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2015/02/16 22:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2015/07/03 07:29:58 ajacoutot Exp $
 
 COMMENT=		remote filesystem snapshot utility
 
-DISTNAME=		rsnapshot-1.3.1
-REVISION=		2
+DISTNAME=		rsnapshot-1.4.0
 CATEGORIES=		net sysutils
 
 HOMEPAGE=		http://www.rsnapshot.org/
@@ -16,28 +15,27 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		http://www.rsnapshot.org/downloads/
 
 BUILD_DEPENDS=		net/rsync
-RUN_DEPENDS=		net/rsync \
-			devel/p5-Lchown
+
+RUN_DEPENDS=		devel/p5-Lchown \
+			net/rsync
 
 PKG_ARCH=		*
-NO_TEST=		Yes
 
-CONFIGURE_STYLE=	simple
-CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}
+CONFIGURE_STYLE=	gnu
 
 SAMPLES_DIR=		${PREFIX}/share/examples/rsnapshot
-SUBST_VARS=		SAMPLES_DIR
-
 FAKE_FLAGS=		sysconfdir=${SAMPLES_DIR}
 
 pre-build:
-	${SUBST_CMD} ${WRKSRC}/rsnapshot.1 ${WRKSRC}/README \
-		${WRKSRC}/rsnapshot-program.pl
+	perl -pi -e 's,/etc/rsnapshot.conf,${SYSCONFDIR}/rsnapshot.conf,g' \
+		${WRKSRC}/{README.md,rsnapshot-program.pl} \
+		${WRKSRC}/rsnapshot{,-diff} \
+		${WRKSRC}/utils/rsnapshotdb/rsnapshotDB.pl
 
 post-install:
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/utils
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/utils/rsnapshotdb
-	${INSTALL_DATA} ${WRKSRC}/README ${SAMPLES_DIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${SAMPLES_DIR}
 	${INSTALL_DATA} ${WRKSRC}/utils/README ${SAMPLES_DIR}/utils
 	${INSTALL_DATA} ${WRKSRC}/utils/rsnapshot-copy ${SAMPLES_DIR}/utils
 	${INSTALL_DATA} ${WRKSRC}/utils/rsnaptar ${SAMPLES_DIR}/utils
