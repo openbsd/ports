@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.913 2015/06/23 19:28:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.914 2015/07/03 21:41:54 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -219,6 +219,7 @@
      SUBDIR += luasocket
      SUBDIR += luasocket,lua52
      SUBDIR += maclookup
+     SUBDIR += manubulon-snmp
      SUBDIR += maradns
      SUBDIR += maradns-deadwood
      SUBDIR += mbrowse
