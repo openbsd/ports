@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/11 23:49:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2015/07/03 20:07:28 sthen Exp $
+
+BROKEN= needs adapting to audio changes
 
 COMMENT=		ZX Spectrum 48k emulator
 
