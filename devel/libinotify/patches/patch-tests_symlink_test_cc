@@ -1,6 +1,7 @@
-$OpenBSD: patch-tests_symlink_test_cc,v 1.1 2015/07/02 16:33:04 dcoppa Exp $
+$OpenBSD: patch-tests_symlink_test_cc,v 1.2 2015/07/03 06:33:12 dcoppa Exp $
 
 XXX: OpenBSD does not support changing the timestamp of a symlink
+failing test: "Receive IN_ATTRIB after touching symlink itself"
 
 --- tests/symlink_test.cc.orig	Thu Jul  2 09:22:39 2015
 +++ tests/symlink_test.cc	Thu Jul  2 09:22:53 2015
