@@ -1,0 +1,15 @@
+Manubulon SNMP plugins is a set of Icinga/Nagios plugins to check various
+types of device using SNMP, including amongst others:
+
+check_snmp_storage	storage (disks, swap, memory, etc...) using MIB-2
+check_snmp_int		network interface state and usage using MIB-2
+check_snmp_process	process-related checks using MIB-2
+check_snmp_load		load/cpu checks for various OS/network devices
+check_snmp_mem		memory/swap usage checks for various OS/network devices
+check_snmp_win		Windows services
+check_snmp_env		environmental status for various network devices
+
+See http://nagios.manubulon.com for more details.
+
+The original project was last active in 2007; this version is packaged
+from a lightly maintained git repository.
