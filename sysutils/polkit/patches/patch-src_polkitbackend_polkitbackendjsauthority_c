@@ -1,17 +1,6 @@
-$OpenBSD: patch-src_polkitbackend_polkitbackendjsauthority_c,v 1.7 2014/03/09 22:26:56 ajacoutot Exp $
-
-From 815dfc64d40cb0267cb96701409c04b4196e508a Mon Sep 17 00:00:00 2001
-From: Ting-Wei Lan <lantw44@gmail.com>
-Date: Mon, 20 Jan 2014 07:34:53 +0000
-Subject: build: Fix several issues on FreeBSD
-
-From 1986e443b170240e9ce4a34726b7fa6c55b3601c Mon Sep 17 00:00:00 2001
-From: Miloslav Trmač <mitr@redhat.com>
-Date: Sat, 07 Dec 2013 03:21:10 +0000
-Subject: Fix a memory leak
-
---- src/polkitbackend/polkitbackendjsauthority.c.orig	Mon May  6 20:28:21 2013
-+++ src/polkitbackend/polkitbackendjsauthority.c	Wed Feb 19 08:19:16 2014
+$OpenBSD: patch-src_polkitbackend_polkitbackendjsauthority_c,v 1.8 2015/07/03 05:57:26 ajacoutot Exp $
+--- src/polkitbackend/polkitbackendjsauthority.c.orig	Fri Jun 19 22:39:58 2015
++++ src/polkitbackend/polkitbackendjsauthority.c	Fri Jul  3 07:31:00 2015
 @@ -24,7 +24,11 @@
  #include <errno.h>
  #include <pwd.h>
@@ -24,21 +13,3 @@ Subject: Fix a memory leak
  #include <string.h>
  #include <glib/gstdio.h>
  #include <locale.h>
-@@ -1286,7 +1290,9 @@ get_signal_name (gint signal_number)
-     _HANDLE_SIG (SIGTTIN);
-     _HANDLE_SIG (SIGTTOU);
-     _HANDLE_SIG (SIGBUS);
-+#ifdef SIGPOLL
-     _HANDLE_SIG (SIGPOLL);
-+#endif
-     _HANDLE_SIG (SIGPROF);
-     _HANDLE_SIG (SIGSYS);
-     _HANDLE_SIG (SIGTRAP);
-@@ -1362,7 +1368,6 @@ js_polkit_spawn (JSContext  *cx,
-           JS_ReportError (cx, "Element %d is not a string", n);
-           goto out;
- 	}
--      s = JS_EncodeString (cx, JSVAL_TO_STRING (elem_val));
-       s = JS_EncodeString (cx, JSVAL_TO_STRING (elem_val));
-       argv[n] = g_strdup (s);
-       JS_free (cx, s);

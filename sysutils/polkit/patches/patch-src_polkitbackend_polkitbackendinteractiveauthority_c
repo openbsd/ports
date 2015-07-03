@@ -1,12 +1,6 @@
-$OpenBSD: patch-src_polkitbackend_polkitbackendinteractiveauthority_c,v 1.2 2014/03/09 22:26:56 ajacoutot Exp $
-
-From 815dfc64d40cb0267cb96701409c04b4196e508a Mon Sep 17 00:00:00 2001
-From: Ting-Wei Lan <lantw44@gmail.com>
-Date: Mon, 20 Jan 2014 07:34:53 +0000
-Subject: build: Fix several issues on FreeBSD
-
---- src/polkitbackend/polkitbackendinteractiveauthority.c.orig	Thu Apr  4 20:16:50 2013
-+++ src/polkitbackend/polkitbackendinteractiveauthority.c	Wed Feb 19 08:18:51 2014
+$OpenBSD: patch-src_polkitbackend_polkitbackendinteractiveauthority_c,v 1.3 2015/07/03 05:57:26 ajacoutot Exp $
+--- src/polkitbackend/polkitbackendinteractiveauthority.c.orig	Fri Jun 19 22:39:58 2015
++++ src/polkitbackend/polkitbackendinteractiveauthority.c	Fri Jul  3 07:35:00 2015
 @@ -23,7 +23,11 @@
  #include <errno.h>
  #include <pwd.h>
@@ -19,19 +13,7 @@ Subject: build: Fix several issues on FreeBSD
  #include <string.h>
  #include <glib/gstdio.h>
  #include <locale.h>
-@@ -2113,15 +2117,23 @@ get_users_in_net_group (PolkitIdentity                
-   ret = NULL;
-   name = polkit_unix_netgroup_get_name (POLKIT_UNIX_NETGROUP (group));
- 
-+#ifdef HAVE_SETNETGRENT_RETURN
-   if (setnetgrent (name) == 0)
-     {
-       g_warning ("Error looking up net group with name %s: %s", name, g_strerror (errno));
-       goto out;
-     }
-+#else
-+  setnetgrent (name);
-+#endif
+@@ -2236,7 +2240,11 @@ get_users_in_net_group (PolkitIdentity                
  
    for (;;)
      {

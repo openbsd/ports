@@ -1,17 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.13 2014/03/26 14:56:23 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.14 2015/07/03 05:57:26 ajacoutot Exp $
 
 GTK_DOC_CHECK chunk:
 Remove when updating to a newer release with integrated bsd_auth(3) support.
 
 https://bugs.freedesktop.org/show_bug.cgi?id=75187
 
-From 815dfc64d40cb0267cb96701409c04b4196e508a Mon Sep 17 00:00:00 2001
-From: Ting-Wei Lan <lantw44@gmail.com>
-Date: Mon, 20 Jan 2014 07:34:53 +0000
-Subject: build: Fix several issues on FreeBSD
-
---- configure.ac.orig	Wed May 15 23:10:23 2013
-+++ configure.ac	Wed Mar 26 15:39:34 2014
+--- configure.ac.orig	Fri Jun 19 22:31:02 2015
++++ configure.ac	Fri Jul  3 07:48:32 2015
 @@ -46,7 +46,7 @@ AC_PATH_PROG([XSLTPROC], [xsltproc])
  fi
  AM_CONDITIONAL(MAN_PAGES_ENABLED, test x$enable_man_pages = xyes)
@@ -21,46 +16,16 @@ Subject: build: Fix several issues on FreeBSD
  
  #### gcc warning flags
  
-@@ -158,13 +158,37 @@ AC_CHECK_LIB(expat,XML_ParserCreate,[EXPAT_LIBS="-lexp
- 	     [AC_MSG_ERROR([Can't find expat library. Please install expat.])])
- AC_SUBST(EXPAT_LIBS)
- 
--AC_CHECK_FUNCS(clearenv)
-+AC_CHECK_FUNCS(clearenv fdatasync)
- 
- if test "x$GCC" = "xyes"; then
-   LDFLAGS="-Wl,--as-needed $LDFLAGS"
- fi
- 
+@@ -169,7 +169,7 @@ dnl - Check whether setnetgrent has a return value
  dnl ---------------------------------------------------------------------------
-+dnl - Check whether setnetgrent has a return value
-+dnl ---------------------------------------------------------------------------
-+AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
-+	#include <stddef.h>
-+#ifndef __OpenBSD__
-+	#include <netdb.h>
-+#else
+ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
+ 	#include <stddef.h>
+-	#include <netdb.h>
 +	#include <netgroup.h>
-+#endif
-+]], [[
-+	int r = setnetgrent (NULL);]])],
-+[AC_DEFINE([HAVE_SETNETGRENT_RETURN], 1, [Define to 1 if setnetgrent has return value])])
-+
-+dnl ---------------------------------------------------------------------------
-+dnl - Check whether we want to build test
-+dnl ---------------------------------------------------------------------------
-+AC_ARG_ENABLE([test],
-+              [AS_HELP_STRING([--disable-test], [Do not build tests])],
-+              [enable_test=$enableval], [enable_test=yes])
-+
-+AM_CONDITIONAL(BUILD_TEST, [test "x$enable_test" = "xyes"])
-+
-+
-+dnl ---------------------------------------------------------------------------
- dnl - Select wether to use libsystemd-login or ConsoleKit for session tracking
- dnl ---------------------------------------------------------------------------
- 
-@@ -287,6 +311,11 @@ case $POLKIT_AUTHFW in
+ ]], [[
+ 	int r = setnetgrent (NULL);]])],
+ [AC_DEFINE([HAVE_SETNETGRENT_RETURN], 1, [Define to 1 if setnetgrent has return value])])
+@@ -318,6 +318,11 @@ case $POLKIT_AUTHFW in
      AC_DEFINE(POLKIT_AUTHFW_SHADOW, 1, [If using the Shadow authentication framework])
      ;;
  
@@ -72,7 +37,7 @@ Subject: build: Fix several issues on FreeBSD
    *)
      AC_MSG_ERROR([Unknown Authentication Framework: $POLKIT_AUTHFW])
      ;;
-@@ -295,6 +324,7 @@ esac
+@@ -326,6 +331,7 @@ esac
  AM_CONDITIONAL(POLKIT_AUTHFW_NONE, [test x$POLKIT_AUTHFW = xnone], [Using no authfw])
  AM_CONDITIONAL(POLKIT_AUTHFW_PAM, [test x$POLKIT_AUTHFW = xpam], [Using PAM authfw])
  AM_CONDITIONAL(POLKIT_AUTHFW_SHADOW, [test x$POLKIT_AUTHFW = xshadow], [Using Shadow authfw])
@@ -80,7 +45,7 @@ Subject: build: Fix several issues on FreeBSD
  
  
  dnl ---------------------------------------------------------------------------
-@@ -473,6 +503,9 @@ case "$host_os" in
+@@ -504,6 +510,9 @@ case "$host_os" in
  	;;
    *freebsd*)
    	AC_DEFINE([HAVE_FREEBSD], 1, [Is this a FreeBSD system?])
