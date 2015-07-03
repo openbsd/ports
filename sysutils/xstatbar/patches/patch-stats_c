@@ -1,10 +1,10 @@
-$OpenBSD: patch-stats_c,v 1.7 2011/11/17 14:23:36 robert Exp $
+$OpenBSD: patch-stats_c,v 1.8 2015/07/03 08:42:19 sthen Exp $
 
 If devinfo.type != AUDIO_MIXER_CLASS is true, xstatbar will never make
 progress and loop forever. Fix it by trying the next device.
 
---- stats.c.orig	Tue Aug  3 19:04:34 2010
-+++ stats.c	Thu Nov 17 15:22:44 2011
+--- stats.c.orig	Tue Aug  3 18:04:34 2010
++++ stats.c	Fri Jul  3 09:36:16 2015
 @@ -101,8 +101,10 @@ volume_init()
     devinfo.index = 0;
     while (ioctl(volume.dev_fd, AUDIO_MIXER_DEVINFO, &devinfo) >= 0) {
@@ -17,6 +17,15 @@ progress and loop forever. Fix it by trying the next device.
  
        if (strncmp(devinfo.label.name, AudioCoutputs, MAX_AUDIO_DEV_LEN) == 0)
           oclass_idx = devinfo.index;
+@@ -358,7 +360,7 @@ sysinfo_init(int hist_size)
+       err(1, "sysinfo init: memory calloc failed");
+ 
+    for (i = 0; i < hist_size; i++) {
+-      if ((sysinfo.memory[i] = calloc(3, sizeof(int))) == NULL)
++      if ((sysinfo.memory[i] = calloc(4, sizeof(int))) == NULL)
+          err(1, "sysinfo init: memory[%d] calloc failed", i);
+ 
+       for (j = 0; j < 3; j++)
 @@ -405,9 +407,11 @@ sysinfo_update()
     static int mib_nprocs[] = { CTL_KERN, KERN_NPROCS };
     static int mib_vm[] = { CTL_VM, VM_METER };
