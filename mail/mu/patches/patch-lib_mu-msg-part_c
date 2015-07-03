@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_mu-msg-part_c,v 1.1 2015/07/03 01:36:48 abieber Exp $
+--- lib/mu-msg-part.c.orig	Mon Mar 23 12:57:29 2015
++++ lib/mu-msg-part.c	Wed Jul  1 19:09:54 2015
+@@ -780,6 +780,11 @@ mu_msg_part_save (MuMsg *msg, MuMsgOptions opts,
+ 		part = (GMimeObject*)g_mime_message_part_get_message
+ 			(GMIME_MESSAGE_PART (part));
+ 
++	if (!part) {
++		g_set_error (err, MU_ERROR_DOMAIN, MU_ERROR_GMIME,
++			     "part %u does not exist", partidx);
++		return FALSE;
++	}
+ 	if (!GMIME_IS_PART(part) && !GMIME_IS_MESSAGE(part)) {
+ 		g_set_error (err, MU_ERROR_DOMAIN, MU_ERROR_GMIME,
+ 			     "unexpected type %s for part %u",

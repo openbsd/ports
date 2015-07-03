@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_mu-msg-iter_cc,v 1.1 2015/07/03 01:36:48 abieber Exp $
+--- lib/mu-msg-iter.cc.orig	Wed Jul  1 19:10:13 2015
++++ lib/mu-msg-iter.cc	Wed Jul  1 19:10:35 2015
+@@ -366,9 +366,7 @@ mu_msg_iter_get_msgid (MuMsgIter *iter)
+ 	g_return_val_if_fail (!mu_msg_iter_is_done(iter), NULL);
+ 
+ 	try {
+-		const char *msgid (iter->msgid().c_str());
+-
+-		return msgid ? g_strdup (msgid) : NULL;
++		return g_strdup (iter->msgid().c_str());
+ 
+ 	} MU_XAPIAN_CATCH_BLOCK_RETURN (NULL);
+ }

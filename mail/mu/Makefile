@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/06 14:23:32 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/03 01:36:48 abieber Exp $
 
 COMMENT=	maildir indexer and searcher with emacs frontend
 
-GH_VER=		v0.9.9.6
-DISTNAME=	mu-${GH_VER:S/v//}
+GH_TAGNAME=	v0.9.12
+GH_ACCOUNT=	djcb
+GH_PROJECT=	mu
+DISTNAME=	mu-${GH_TAGNAME:S/v//}
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.djcbsoftware.nl/code/mu/
@@ -13,8 +15,7 @@ MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://github.com/djcb/mu/archive/
-DISTFILES=	${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
+MODULES=	devel/gettext
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
@@ -25,8 +26,8 @@ LIB_DEPENDS=	databases/xapian-core \
 		devel/glib2 \
 		mail/gmime
 
-WANTLIB+= 	c ffi gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0 gobject-2.0
-WANTLIB+= 	gthread-2.0 m pcre pthread stdc++ uuid xapian z
+WANTLIB += c ffi gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 m pcre pthread stdc++ uuid xapian z
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.11

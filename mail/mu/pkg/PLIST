@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/06 14:23:32 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/03 01:36:48 abieber Exp $
 @bin bin/mu
 @info info/mu4e.info
 @man man/man1/mu-add.1
@@ -17,8 +17,6 @@
 @man man/man1/mu.1
 @man man/man1/mug.1
 @man man/man5/mu-bookmarks.5
-share/emacs/
-share/emacs/site-lisp/
 share/emacs/site-lisp/mu4e/
 share/emacs/site-lisp/mu4e/mu4e-about.el
 share/emacs/site-lisp/mu4e/mu4e-about.elc
@@ -56,3 +54,5 @@ share/emacs/site-lisp/mu4e/mu4e.el
 share/emacs/site-lisp/mu4e/mu4e.elc
 share/emacs/site-lisp/mu4e/org-mu4e.el
 share/emacs/site-lisp/mu4e/org-mu4e.elc
+share/emacs/site-lisp/mu4e/org-old-mu4e.el
+share/emacs/site-lisp/mu4e/org-old-mu4e.elc
