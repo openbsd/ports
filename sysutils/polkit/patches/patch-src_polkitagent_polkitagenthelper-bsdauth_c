@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.6 2014/03/09 22:26:56 ajacoutot Exp $
+$OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.7 2015/07/03 06:42:27 ajacoutot Exp $
 
 https://bugs.freedesktop.org/show_bug.cgi?id=75187
 
---- src/polkitagent/polkitagenthelper-bsdauth.c.orig	Wed Feb 19 10:35:21 2014
-+++ src/polkitagent/polkitagenthelper-bsdauth.c	Wed Feb 19 10:35:32 2014
-@@ -0,0 +1,158 @@
+--- src/polkitagent/polkitagenthelper-bsdauth.c.orig	Fri Jul  3 08:35:33 2015
++++ src/polkitagent/polkitagenthelper-bsdauth.c	Fri Jul  3 08:37:24 2015
+@@ -0,0 +1,163 @@
 +/*
 + * Copyright (C) 2008 Red Hat, Inc.
 + * Copyright (C) 2009-2010 Andrew Psaltis <ampsaltis@gmail.com>
@@ -52,7 +52,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=75187
 +{
 +  struct passwd *pw;
 +  const char *user_to_auth;
-+  const char *cookie;
++  char *cookie;
 +
 +  /* clear the entire environment to avoid attacks with
 +     libraries honoring environment variables */
@@ -72,7 +72,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=75187
 +  openlog ("polkit-agent-helper-1", LOG_CONS | LOG_PID, LOG_AUTHPRIV);
 +
 +  /* check for correct invocation */
-+  if (argc != 3)
++  if (!(argc == 2 || argc == 3))
 +    {
 +      syslog (LOG_NOTICE, "inappropriate use of helper, wrong number of arguments [uid=%d]", getuid ());
 +      fprintf (stderr, "polkit-agent-helper-1: wrong number of arguments. This incident has been logged.\n");
@@ -91,7 +91,9 @@ https://bugs.freedesktop.org/show_bug.cgi?id=75187
 +    }
 +
 +  user_to_auth = argv[1];
-+  cookie = argv[2];
++  cookie = read_cookie (argc, argv);
++  if (!cookie)
++    goto error;
 +
 +#ifdef PAH_DEBUG
 +  fprintf (stderr, "polkit-agent-helper-1: user to auth is '%s'.\n", user_to_auth);
@@ -128,6 +130,8 @@ https://bugs.freedesktop.org/show_bug.cgi?id=75187
 +      goto error;
 +    }
 +
++  free (cookie);
++
 +#ifdef PAH_DEBUG
 +  fprintf (stderr, "polkit-agent-helper-1: successfully sent D-Bus message to polkit daemon\n");
 +#endif /* PAH_DEBUG */
@@ -137,6 +141,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=75187
 +  return 0;
 +
 +error:
++  free (cookie);
 +  fprintf (stdout, "FAILURE\n");
 +  flush_and_wait ();
 +  return 1;
