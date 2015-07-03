@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/03/28 09:49:24 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/07/03 08:21:23 benoit Exp $
 include/NTL/
 include/NTL/FFT.h
 include/NTL/FacVec.h
@@ -34,6 +34,12 @@ include/NTL/def_config.h
 include/NTL/fileio.h
 include/NTL/g_lip.h
 include/NTL/gmp_aux.h
+include/NTL/have_LL.h
+include/NTL/have_LL_no.h
+include/NTL/have_LL_yes.h
+include/NTL/have_builtin_clzl.h
+include/NTL/have_builtin_clzl_no.h
+include/NTL/have_builtin_clzl_yes.h
 include/NTL/lip.h
 include/NTL/lzz_p.h
 include/NTL/lzz_pE.h

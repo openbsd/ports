@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_DoConfig,v 1.5 2014/11/09 14:35:25 benoit Exp $
---- src/DoConfig.orig	Sat Nov  8 18:18:53 2014
-+++ src/DoConfig	Sun Nov  9 11:35:57 2014
-@@ -12,23 +12,25 @@
+$OpenBSD: patch-src_DoConfig,v 1.6 2015/07/03 08:21:23 benoit Exp $
+--- src/DoConfig.orig	Sat May 23 16:44:51 2015
++++ src/DoConfig	Wed Jun 24 08:33:28 2015
+@@ -29,23 +29,25 @@ sub BadPCLMUL {
  
  %MakeVal = (
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_tools_c,v 1.5 2014/12/26 08:42:02 benoit Exp $
---- src/tools.c.orig	Wed Dec 24 20:21:37 2014
-+++ src/tools.c	Thu Dec 25 07:51:07 2014
+$OpenBSD: patch-src_tools_c,v 1.6 2015/07/03 08:21:23 benoit Exp $
+--- src/tools.c.orig	Sat May 23 16:44:51 2015
++++ src/tools.c	Wed Jun 24 08:33:28 2015
 @@ -6,6 +6,7 @@
  
  #include <NTL/new.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_tools_c,v 1.5 2014/12/26 08:42:02 benoit Exp $
  
  void _ntl_abort_cxx_callback()
  {
-@@ -17,9 +18,34 @@
+@@ -17,9 +18,34 @@ NTL_START_IMPL
  
  NTL_THREAD_LOCAL void (*ErrorCallback)() = 0;
  
