@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/06/25 20:47:27 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/07/03 19:17:26 sthen Exp $
 librenms/
 librenms/.gitignore
 librenms/.scrutinizer.yml
@@ -50,6 +50,7 @@ librenms/doc/Extensions/IRC-Bot.md
 librenms/doc/Extensions/Interface-Description-Parsing.md
 librenms/doc/Extensions/Plugin-System.md
 librenms/doc/Extensions/RRDCached.md
+librenms/doc/Extensions/Services.md
 librenms/doc/Extensions/Syslog.md
 librenms/doc/Extensions/Two-Factor-Auth.md
 librenms/doc/General/
