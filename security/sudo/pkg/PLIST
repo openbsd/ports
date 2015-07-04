@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/22 15:52:16 millert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/04 13:54:49 millert Exp $
 %%SHARED%%
 @mode 04555
 @bin bin/sudo
@@ -25,7 +25,9 @@ share/examples/sudo/
 share/examples/sudo/sudo.conf
 share/examples/sudo/sudoers
 share/examples/sudo/sudoers.OpenBSD
+@mode 0440
 @sample ${SYSCONFDIR}/sudoers
+@mode
 share/examples/sudo/syslog.conf
 share/locale/ca/LC_MESSAGES/sudo.mo
 share/locale/ca/LC_MESSAGES/sudoers.mo
