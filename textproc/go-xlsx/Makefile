@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/06/19 08:48:00 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/04 20:28:42 czarkoff Exp $
+
+PORTROACH =		ignore
 
 COMMENT =		library for reading and writing XLSX files
 DISTNAME =		go-xlsx-20150614
