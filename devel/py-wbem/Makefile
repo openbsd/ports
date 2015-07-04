@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/07/03 20:31:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/07/04 12:48:16 sthen Exp $
 
 COMMENT=		CIM operations over HTTP in Python
 
 MODPY_EGG_VERSION=	0.8.0_dev
-DISTNAME=		pywbem-0.8.0.r728
+DISTNAME=		pywbem-0.8.0-dev.r728
 WRKDIST=		${WRKDIR}/pywbem-0.8.0-dev
 PKGNAME=		py-wbem-0.8.0pre728
 EXTRACT_SUFX=		.zip
