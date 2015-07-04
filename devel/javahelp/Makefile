@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/04 15:47:32 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/04 20:14:43 kurt Exp $
 
 COMMENT =		online help system for java platform applications
 
@@ -22,7 +22,7 @@ RUN_DEPENDS =		java/javaPathHelper
 PERMIT_PACKAGE_CDROM =	No
 PERMIT_PACKAGE_FTP =	Yes
 
-MASTER_SITES =		http://download.java.net/javadesktop/javahelp/
+MASTER_SITES =		http://www.intricatesoftware.com/distfiles/
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
