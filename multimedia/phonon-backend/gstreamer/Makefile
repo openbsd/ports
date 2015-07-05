@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2015/07/05 00:47:56 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2015/07/05 01:21:34 zhuk Exp $
 
 COMMENT =	GStreamer-based Phonon backend
 VERSION =	4.8.2
 DISTNAME =	phonon-backend-gstreamer-${VERSION}
 HOMEPAGE =	https://projects.kde.org/projects/kdesupport/phonon/phonon-gstreamer
+REVISION =	0
 
 # allow playing Vorbis and MP3 notification sounds out of the box
-RUN_DEPENDS =	multimedia/gstreamer1/plugins-ugly \
+RUN_DEPENDS =	multimedia/gstreamer1/plugins-good \
+		multimedia/gstreamer1/plugins-ugly \
 		x11/gtk+3,-guic
 
 LIB_DEPENDS =	multimedia/gstreamer1/core \
