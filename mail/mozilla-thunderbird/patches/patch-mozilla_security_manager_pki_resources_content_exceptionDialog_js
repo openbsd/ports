@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_security_manager_pki_resources_content_exceptionDialog_js,v 1.5 2013/09/19 13:37:52 landry Exp $
---- mozilla/security/manager/pki/resources/content/exceptionDialog.js.orig	Wed May 22 19:39:00 2013
-+++ mozilla/security/manager/pki/resources/content/exceptionDialog.js	Thu Jun 27 08:38:03 2013
-@@ -263,6 +263,7 @@ function updateCertStatus() {
+$OpenBSD: patch-mozilla_security_manager_pki_resources_content_exceptionDialog_js,v 1.6 2015/07/05 20:18:06 landry Exp $
+--- mozilla/security/manager/pki/resources/content/exceptionDialog.js.orig	Wed Mar 11 08:56:41 2015
++++ mozilla/security/manager/pki/resources/content/exceptionDialog.js	Thu Mar 19 21:22:24 2015
+@@ -234,6 +234,7 @@ function updateCertStatus() {
  
        // In these cases, we do want to enable the "Add Exception" button
        gDialog.getButton("extra1").disabled = false;

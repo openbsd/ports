@@ -1,25 +1,23 @@
-# $OpenBSD: Makefile,v 1.204 2015/06/04 10:11:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.205 2015/07/05 20:18:06 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	31.7.0
-MOZILLA_BRANCH =	esr31
+MOZILLA_VERSION =	38.0.1
+MOZILLA_BRANCH =	esr38
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-3.3.7
+PKGNAME-lightning =	lightning-4.0
 EPOCH-lightning =	0
-REVISION-lightning =	1
-REVISION-main =		1
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
 
-SO_VERSION =	29.0
+SO_VERSION =	30.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
@@ -40,16 +38,11 @@ MODPY_RUNDEP =	No
 
 # necessary glue to build with the correct compiler after fx 17
 MODULES +=		gcc4 lang/clang
-MODGCC4_ARCHS =		powerpc sparc64 alpha i386
+MODGCC4_ARCHS =		powerpc sparc64 alpha
 MODGCC4_LANGS =		c c++
-MODCLANG_ARCHS =	amd64
+MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c c++
 
-# fix for 982693, apply only on clang archs
-.if ${MACHINE_ARCH:Mamd64}
-MAKE_ENV += VPXHACK="-fno-integrated-as"
-.endif
-# Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
 
 MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/ldap/sdks/c-sdk/config/autoconf
@@ -80,8 +73,8 @@ MOZILLA_AUTOCONF_DIRS =		ldap/sdks/c-sdk mozilla mozilla/js/src
 
 GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 # guid for gdata-provider comes from em:id in install.rdf
-GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} \
-	lightning {e2fda1a4-762b-4020-b5ad-a41df1933103}
+GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} #\
+#	lightning {e2fda1a4-762b-4020-b5ad-a41df1933103}
 
 EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/
 
@@ -92,8 +85,11 @@ post-patch:
 
 post-install:
 .for xpi guid in ${GUIDS}
-	${UNZIP} -oq ${WRKBUILD}/mozilla/dist/xpi-stage/${xpi}*.xpi -d ${EXTDIR}/${guid}
+	${UNZIP} -oq ${WRKBUILD}/dist/xpi-stage/${xpi}*.xpi -d ${EXTDIR}/${guid}
 .endfor
+	mv ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103} \
+		${EXTDIR}
+	rmdir ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/
 	# install prefs
 	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \
 		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/all-openbsd.js
