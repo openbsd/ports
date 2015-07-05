@@ -1,6 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/05/16 09:04:03 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/07/05 12:03:34 zhuk Exp $
 @bin bin/tmod
-include/lensfun.h
+@bin bin/trwxml
+include/auxfun/
+include/auxfun/image.h
+include/auxfun/rgbpixel.h
+include/lensfun/
+include/lensfun/lensfun.h
+@lib lib/libauxfun.so.${LIBauxfun_VERSION}
 @lib lib/liblensfun.so.${LIBlensfun_VERSION}
 lib/pkgconfig/lensfun.pc
 share/doc/lensfun/
@@ -22,8 +28,6 @@ share/doc/lensfun/manual/credits.html
 share/doc/lensfun/manual/database.html
 share/doc/lensfun/manual/dbformat.html
 share/doc/lensfun/manual/dbsearch.html
-share/doc/lensfun/manual/dir_417636b0694695296d5af3eb7f0630e3.html
-share/doc/lensfun/manual/dir_d44c64559bbebec7f509842c48db8b23.html
 share/doc/lensfun/manual/doxygen.css
 share/doc/lensfun/manual/doxygen.png
 share/doc/lensfun/manual/dynsections.js

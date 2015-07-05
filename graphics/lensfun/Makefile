@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2015/06/23 22:00:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/07/05 12:03:34 zhuk Exp $
 
 COMMENT=	library to adjust for photographic lens characteristics
 DISTNAME=	lensfun-0.2.7
-SHARED_LIBS=	lensfun 1.0
-REVISION=	1
+REVISION=	2
+
+SHARED_LIBS=	lensfun	1.0
+SHARED_LIBS+=	auxfun	0.0
 
 CATEGORIES=	graphics
 HOMEPAGE=	http://lensfun.sourceforge.net/
@@ -16,39 +18,31 @@ WANTLIB += c glib-2.0 m png pthread stdc++ z
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lensfun.berlios/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		lang/python devel/gettext
-MODPY_RUNDEP=		No
+MODULES=		devel/cmake devel/gettext
 BUILD_DEPENDS=		devel/doxygen>=1.7.2
 
 LIB_DEPENDS=		devel/glib2 \
 			graphics/png
 
-MAKE_FLAGS=		V=1 INSTDIR_manual=${PREFIX}/share/doc/lensfun \
-			LIBlensfun_VERSION=${LIBlensfun_VERSION}
+CONFIGURE_ARGS=		-DBUILD_DOC=Yes \
+			-DBUILD_AUXFUN=Yes
 
-USE_GMAKE=		Yes
-CONFIGURE_STYLE=	simple
-CONFIGURE_SCRIPT=	${MODPY_BIN} ./configure
-CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/lensfun \
-			--libdir=${PREFIX}/lib \
-			--vectorization=SSE
+TEST_PROGS=		tfun example
 
-NO_TEST =		Yes
+do-test:
+.for p in ${TEST_PROGS}
+	cd ${WRKBUILD}/tests; ./$p
+.endfor
 
-CFLAGS+=		-I/usr/include
-MAKE_FILE=		GNUmakefile
-
-ALL_TARGET =		all
-
-SUBST_VARS =		MAKE_PROGRAM
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/tibs.py
+DOC_DIR=		${PREFIX}/share/doc/lensfun
+MANUAL_DIR=		${DOC_DIR}/manual
 
 post-install:
-	mv ${PREFIX}/lib/liblensfun.so \
-	    ${PREFIX}/lib/liblensfun.so.${LIBlensfun_VERSION}
-	cd ${WRKSRC}/out/posix*/release; \
-	    ${INSTALL_PROGRAM} tmod ${PREFIX}/bin
+	cd ${PREFIX}/bin; rm ${TEST_PROGS}
+	${INSTALL_DATA_DIR} ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*-3.0.txt ${DOC_DIR}
+	rm -Rf ${MANUAL_DIR}
+	mv ${PREFIX}/share/doc/${DISTNAME}.* ${MANUAL_DIR}
 
 .include <bsd.port.mk>

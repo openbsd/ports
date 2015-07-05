@@ -1,0 +1,25 @@
+$OpenBSD: patch-docs_CMakeLists_txt,v 1.1 2015/07/05 12:03:34 zhuk Exp $
+1. This directory is already covered by BUILD_DOC option, so
+   no reason to not to add "doc" target in build-by-default list;
+2. Actually depend on configured file, CMake already takes care on
+   depending on source file;
+3. No need for GLOB, we can simply use "INSTALL(DIRECTORY foo/"
+   syntax here.
+--- docs/CMakeLists.txt.orig	Sun Feb 12 15:19:39 2012
++++ docs/CMakeLists.txt	Tue Feb 12 13:51:13 2013
+@@ -12,12 +12,12 @@ CONFIGURE_FILE(doxyfile.in.cmake ${DOXYFILE} @ONLY)
+ 
+ # now build documentation
+ ADD_CUSTOM_TARGET(doc
++  ALL
+   COMMAND "${DOXYGEN_EXECUTABLE}"
+-  DEPENDS doxyfile.in.cmake manual-main.txt ../include/lensfun/lensfun.h.in
++  DEPENDS "${DOXYFILE}" manual-main.txt ../include/lensfun/lensfun.h.in
+   WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+   COMMENT "Building documentation with doxygen"
+ )
+ 
+ # install documentation  
+-FILE(GLOB doc_files "${CMAKE_DOC_OUT}/*.*")
+-INSTALL(FILES ${doc_files} DESTINATION ${DOCDIR})
++INSTALL(DIRECTORY ${CMAKE_DOC_OUT}/ DESTINATION ${DOCDIR})
