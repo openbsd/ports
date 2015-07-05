@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2014/11/10 01:21:45 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.24 2015/07/05 00:53:41 afresh1 Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	recursively copy Perl datatypes
 
 MODULES =	cpan
-DISTNAME =	Clone-0.37
+DISTNAME =	Clone-0.38
 CATEGORIES =	devel
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
@@ -13,7 +13,5 @@ MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c
-
-TEST_DEPENDS =	devel/p5-Taint-Runtime
 
 .include <bsd.port.mk>
