@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_mediaobject_cpp,v 1.1 2015/07/05 00:47:36 zhuk Exp $
+Bugfix from upstream.
+--- src/mediaobject.cpp.orig	Thu Dec  4 12:29:23 2014
++++ src/mediaobject.cpp	Sun Jul  5 03:39:25 2015
+@@ -319,8 +319,11 @@ void MediaObject::setSource(const MediaSource &source)
+     case MediaSource::Url:
+         debug() << "MediaSource::Url:" << source.url();
+         if (source.url().scheme().isEmpty()) {
+-            url = "file:///";
+-            if (source.url().isRelative())
++            url = "file://";
++            // QUrl considers url.scheme.isEmpty() == url.isRelative(), 
++            // so to be sure the url is not actually absolute we just
++            // check the first character
++            if (!source.url().toString().startsWith('/'))
+                 url.append(QFile::encodeName(QDir::currentPath()) + '/');
+         }
+         url += source.url().toEncoded();

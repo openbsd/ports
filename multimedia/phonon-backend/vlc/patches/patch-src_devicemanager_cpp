@@ -1,0 +1,73 @@
+$OpenBSD: patch-src_devicemanager_cpp,v 1.1 2015/07/05 00:47:36 zhuk Exp $
+Fix runtime problems with VLC 2.2.
+From upstream.
+--- src/devicemanager.cpp.orig	Thu Dec  4 12:29:23 2014
++++ src/devicemanager.cpp	Sun Jul  5 03:39:25 2015
+@@ -239,6 +239,35 @@ void DeviceManager::updateDeviceList()
+             continue;
+         }
+ 
++        // FIXME: there is a rather ungodly amount of code duplication going
++        //        on here.
++#if (LIBVLC_VERSION_INT >= LIBVLC_VERSION(2, 2, 0, 0))
++        bool hasDevices = false;
++        VLC_FOREACH(audio_output_device,
++                    device,
++                    libvlc_audio_output_device_list_get(libvlc, soundSystem),
++                    libvlc_audio_output_device_list_release) {
++            QString idName = QString::fromUtf8(device->psz_device);
++            QString longName = QString::fromUtf8(device->psz_description);
++
++            debug() << "found device" << soundSystem << idName << longName;
++
++            DeviceInfo info(longName, true);
++            info.addAccess(DeviceAccess(soundSystem, idName));
++            info.setCapabilities(DeviceInfo::AudioOutput);
++            newDeviceList.append(info);
++
++            hasDevices = true;
++        }
++
++        if (!hasDevices) {
++            debug() << "manually injecting sound system" << soundSystem;
++            DeviceInfo info(QString::fromUtf8(soundSystem), false);
++            info.addAccess(DeviceAccess(soundSystem, ""));
++            info.setCapabilities(DeviceInfo::AudioOutput);
++            newDeviceList.append(info);
++        }
++#else
+         const int deviceCount = libvlc_audio_output_device_count(libvlc, soundSystem);
+ 
+         for (int i = 0; i < deviceCount; i++) {
+@@ -247,10 +276,10 @@ void DeviceManager::updateDeviceList()
+ 
+             debug() << "found device" << soundSystem << idName << longName;
+ 
+-            DeviceInfo device(longName, true);
+-            device.addAccess(DeviceAccess(soundSystem, idName));
+-            device.setCapabilities(DeviceInfo::AudioOutput);
+-            newDeviceList.append(device);
++            DeviceInfo info(longName, true);
++            info.addAccess(DeviceAccess(soundSystem, idName));
++            info.setCapabilities(DeviceInfo::AudioOutput);
++            newDeviceList.append(info);
+         }
+ 
+         // libVLC gives no devices for some sound systems, like OSS
+@@ -261,11 +290,12 @@ void DeviceManager::updateDeviceList()
+             //       selection which on systems such as OSX or Windows can
+             //       lead to an empty device list as the injected device is
+             //       the only available one.
+-            DeviceInfo device(QString::fromUtf8(soundSystem), false);
+-            device.addAccess(DeviceAccess(soundSystem, ""));
+-            device.setCapabilities(DeviceInfo::AudioOutput);
+-            newDeviceList.append(device);
++            DeviceInfo info(QString::fromUtf8(soundSystem), false);
++            info.addAccess(DeviceAccess(soundSystem, ""));
++            info.setCapabilities(DeviceInfo::AudioOutput);
++            newDeviceList.append(info);
+         }
++#endif
+     }
+ 
+     /*
