@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/28 10:17:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.16 2015/07/05 01:24:04 zhuk Exp $
 
 COMMENT =	multimedia layer for Qt4/KDE4
 CATEGORIES =	multimedia devel
-VERSION =	4.8.1
+VERSION =	4.8.3
 DISTNAME =	phonon-${VERSION}
-REVISION =	1
 HOMEPAGE =	http://phonon.kde.org/
 
 # Renamed to avoid clashing with Qt4's one
@@ -18,7 +17,7 @@ MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_KDE:=stable/phonon/${VERSION}/}
+MASTER_SITES =		${MASTER_SITE_KDE:=stable/phonon/${VERSION}/src/}
 
 MODULES =		x11/kde4
 MODKDE4_USE =
@@ -26,8 +25,7 @@ MODKDE4_LIB_LINKS =	Yes
 
 WANTLIB =	m
 WANTLIB +=	lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
-WANTLIB +=	lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
-WANTLIB +=	lib/qt4/QtTest lib/qt4/QtXml lib/qt4/QtXmlPatterns
+WANTLIB +=	lib/qt4/QtTest
 WANTLIB +=	pulse pulse-mainloop-glib qzeitgeist
 
 LIB_DEPENDS =	productivity/libqzeitgeist>=0.8.0 \
