@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/03 19:06:14 jung Exp $
+# $OpenBSD: Makefile,v 1.7 2015/07/05 07:54:57 jung Exp $
 
 COMMENT=		count lines of code
 
-DISTNAME=		cloc-1.62
+DISTNAME=		cloc-1.64
 DIST_SUBDIR=		cloc
 
 CATEGORIES=		textproc devel
