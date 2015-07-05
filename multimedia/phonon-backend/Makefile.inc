@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2013/04/24 08:42:12 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2015/07/05 00:46:14 zhuk Exp $
 
 CATEGORIES +=	multimedia
 PKGNAME ?=	${DISTNAME:C/-backend//}
@@ -13,3 +13,5 @@ MODPHONON_PLUGIN_DEPS =	No
 CONFIGURE_ARGS =	-DPhonon_DIR:String=${LOCALBASE}/lib/cmake/phonon
 
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
+
+MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/phonon/${DISTNAME:C/-[0-9].*//}/${VERSION}/src/}
