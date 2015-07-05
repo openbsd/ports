@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2013/11/25 14:16:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2015/07/05 15:17:36 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -9,7 +9,7 @@ V =		2.8.12
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk2-${V}
 PKGNAME-media =	wxWidgets-media-${V}
-REVISION-main =	9
+REVISION-main =	10
 REVISION-media =5
 CATEGORIES =	x11
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=wxwindows/}
@@ -89,6 +89,7 @@ CONFIGURE_ARGS =--disable-backtrace \
 		--enable-graphics_ctx
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		WXCONFIG_CPPFLAGS="-I${X11BASE}/include" \
 		ac_cv_lib_esd_esd_close=no
 
 # XXX: When used in conjunction with PIE, symbol versioning triggers
