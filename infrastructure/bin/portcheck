@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.98 2015/05/26 19:12:11 rpe Exp $
+# $OpenBSD: portcheck,v 1.99 2015/07/05 12:26:26 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -256,6 +256,59 @@ tests
 textproc
 www
 x11
+EOF
+)
+
+############################################################
+# List of variables that should not go into port Makefiles
+#
+
+user_settings=$(xargs <<EOF | sed -e 's/ /|/g'
+BASELOCALSTATEDIR
+BASESYSCONFDIR
+BATCH
+BUILD_ONCE
+BULK
+BULK_COOKIES_DIR
+CHECKSUM_PACKAGES
+CHECK_LIB_DEPENDS
+COPTS
+CXXOPTS
+DISTDIR
+ECHO_MSG
+ECHO_REORDER
+FAKEOBJDIR
+FETCH_CMD
+FETCH_PACKAGES
+FETCH_SYMLINK_DISTFILES
+FORCE_UPDATE
+FTP_PACKAGES
+INTERACTIVE
+LIST_DB
+LOCKDIR
+LOCK_VERBOSE
+MASTER_SITE_BACKUP
+MASTER_SITE_OVERRIDE
+NO_CHECKSUM
+NO_DEPENDS
+NO_IGNORE
+PACKAGE_REPOSITORY
+PKG_ADD
+PKG_CREATE
+PKG_DBDIR
+PKG_DELETE
+PKG_INFO
+REFETCH
+SIGNING_PARAMETERS
+SUDO
+TEMPLATES
+TRY_BROKEN
+UNLOCK_CMD
+UPDATE_COOKIES_DIR
+USE_CCACHE
+USE_SYSTRACE
+VARBASE
+WARNINGS
 EOF
 )
 
@@ -1833,6 +1886,7 @@ check_subst_vars() {
 #   * No trailing whitespace.
 #   * SHARED_LIBS are not defined inside ".if" statements.
 #   * Variables are not assigned via "=" twice outside of .if statemets.
+#   * No user settings present.
 check_makefile() {
 	$debugging && echo "CALLED: check_makefile($*)" >&2
 
@@ -1851,6 +1905,10 @@ check_makefile() {
 	while IFS= read -r l; do ((++lnum))
 		set -A t -- $l
 		duprevfound=false
+
+		if echo "$l" | egrep -q "^ *($user_settings)[[:>:]].*\$"; then
+			err "user settings in port: $l"
+		fi
 
 		case $l in
 		*(" ")REVISION*)
