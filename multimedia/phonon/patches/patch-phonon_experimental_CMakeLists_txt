@@ -1,0 +1,15 @@
+$OpenBSD: patch-phonon_experimental_CMakeLists_txt,v 1.1 2015/07/06 23:54:04 zhuk Exp $
+Revert upstream commit 457492e97dd1435021cff15d4fbb8f1fd7be9b24, it breaks
+due to changing "-I/usr/local/include/kde4" to
+"-isystem /usr/local/include/kde4".
+--- phonon/experimental/CMakeLists.txt.orig	Tue Jul  7 02:46:03 2015
++++ phonon/experimental/CMakeLists.txt	Tue Jul  7 02:46:41 2015
+@@ -29,8 +29,6 @@ set_target_properties(${PHONON_LIB_SONAME}experimental
+                                          LINK_INTERFACE_LIBRARIES ""
+                                          )
+ install(TARGETS ${PHONON_LIB_SONAME}experimental EXPORT PhononLibs ${INSTALL_TARGETS_DEFAULT_ARGS})
+-target_include_directories(${PHONON_LIB_SONAME}experimental
+-    INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}>")
+ 
+ ########### install headers ###############
+ install(FILES
