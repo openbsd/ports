@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2015/06/11 14:57:30 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2015/07/06 13:43:06 sthen Exp $
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/cache/*
@@ -48,6 +48,7 @@ libexec/squid/url_fake_rewrite.sh
 @comment @man man/man8/ext_wbinfo_group_acl.8
 @man man/man8/log_db_daemon.8
 @man man/man8/squid.8
+@man man/man8/ssl_crtd.8
 @man man/man8/storeid_file_rewrite.8
 @bin sbin/squid
 share/doc/pkg-readmes/${FULLPKGNAME}
@@ -568,6 +569,7 @@ share/squid/errors/es-pe
 share/squid/errors/es-pr
 share/squid/errors/es-py
 share/squid/errors/es-sv
+share/squid/errors/es-us
 share/squid/errors/es-uy
 share/squid/errors/es-ve
 share/squid/errors/es/ERR_ACCESS_DENIED
