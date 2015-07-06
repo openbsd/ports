@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_ncmpcpp_1,v 1.4 2015/06/19 16:23:33 dcoppa Exp $
+$OpenBSD: patch-doc_ncmpcpp_1,v 1.5 2015/07/06 06:04:57 dcoppa Exp $
 --- doc/ncmpcpp.1.orig	Sat May  2 21:16:11 2015
 +++ doc/ncmpcpp.1	Fri Jun 19 16:33:11 2015
 @@ -1,4 +1,4 @@
@@ -15,15 +15,6 @@ $OpenBSD: patch-doc_ncmpcpp_1,v 1.4 2015/06/19 16:23:33 dcoppa Exp $
  .SH "CONFIGURATION"
  When ncmpcpp starts, it tries to read user's settings from the ~/.ncmpcpp/config file. If no user's configuration is found, ncmpcpp uses its default configuration. An example configuration file containing all default values is provided with ncmpcpp and can be usually found in /usr/share/doc/ncmpcpp (exact location may depend on used distribution or configure prefix).
  
-@@ -196,7 +195,7 @@ Default user interface used by ncmpcpp at start.
- .B data_fetching_delay = yes/no
- If enabled, there will be a 250ms delay between refreshing position in media library or playlist editor and fetching appropriate data from MPD. This limits data fetched from the server and is particularly useful if ncmpcpp is connected to a remote host.
- .TP
--.B media_library_primary_tag = artist/date/genre/composer/performer
-+.B media_library_primary_tag = artist/album_artist/date/genre/composer/performer
- Default tag type for leftmost column in media library.
- .TP
- .B default_find_mode = wrapped/normal
 @@ -371,7 +370,6 @@ Color of visualization.
  Border color of pop-up windows. If set to 'none', no border will be shown.
  .B active_window_border = COLOR
