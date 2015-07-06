@@ -1,2 +1,4 @@
-SHA256 (rtmpdump-2.4pl7.tar.gz) = DO7yUJYDZIm2GYelzPQ/fegy67BhWjh/41jYQA0oQPY=
-SIZE (rtmpdump-2.4pl7.tar.gz) = 142354
+SHA256 (rtmpdump-2.4pl8.tar.gz) = wSetVWZzcfZ/ENrI5Tqv3z/Df3JZldTHhzmqeYbLcd0=
+SHA256 (rtmpdump-KSV-20150505.patch.gz) = rNSnOJH/2Cq3fiYqPuicJGKxvbNZzI7id0sERaJYoTw=
+SIZE (rtmpdump-2.4pl8.tar.gz) = 142257
+SIZE (rtmpdump-KSV-20150505.patch.gz) = 29979
