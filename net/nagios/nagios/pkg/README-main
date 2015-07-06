@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.5 2014/07/19 22:36:13 ajacoutot Exp $
+$OpenBSD: README-main,v 1.6 2015/07/06 11:25:36 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,7 +15,7 @@ on the local machine; these should work as-is.
 
 You may check your configuration file format before starting Nagios:
 
-   $ sudo -u _nagios ${TRUEPREFIX}/sbin/nagios -v ${SYSCONFDIR}/nagios/nagios.cfg
+   # su -s /bin/sh _nagios "${TRUEPREFIX}/sbin/nagios -v ${SYSCONFDIR}/nagios/nagios.cfg"
 
 This will parse all configuration files and warn about any problems
 which have been identified.
@@ -25,7 +25,7 @@ line in /etc/rc.conf.local.
 
 To start nagios, reboot or start it manually:
 
-   $ sudo ${RCDIR}/nagios start
+   # rcctl nagios start
 
 
 Web User-Interface
@@ -33,18 +33,18 @@ Web User-Interface
 
 To enable nagios-web, link the provided httpd.conf snippet:
 
-      $ sudo ln -s /var/www/conf/modules.sample/nagios.conf \
+      # ln -s /var/www/conf/modules.sample/nagios.conf \
          /var/www/conf/modules
 
 You may wish to modify this file.  By default it uses HTTP basic
 authentication; you can create the password file as follows:
 
-      $ sudo touch ${SYSCONFDIR}/nagios/htpasswd.users
-      $ sudo htpasswd ${SYSCONFDIR}/nagios/htpasswd.users <username>
+      # touch ${SYSCONFDIR}/nagios/htpasswd.users
+      # htpasswd ${SYSCONFDIR}/nagios/htpasswd.users <username>
 
 When done, restart the web server:
 
-      $ sudo /etc/rc.d/httpd restart
+      # /etc/rc.d/httpd restart
 
 You should then be able to access the web interface at
 http://localhost/nagios/

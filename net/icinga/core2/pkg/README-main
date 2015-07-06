@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.8 2015/02/06 22:53:27 sthen Exp $
+$OpenBSD: README-main,v 1.9 2015/07/06 11:25:36 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -29,7 +29,7 @@ on the local machine; these should work as-is.
 
 You may check your configuration file format before starting Icinga:
 
-   $ sudo -u _icinga icinga2 daemon -C
+   # su -s /bin/sh _icinga "${LOCALBASE}/sbin/icinga2 daemon -C"
 
 This will parse all configuration files and warn about any problems
 which have been identified.

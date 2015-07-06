@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2014/07/22 10:55:41 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2015/07/06 11:25:36 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,7 +9,7 @@ Initial setup
 
 To configure a Trac environment, you must run the following command
 and follow the prompts:
-    sudo -u _trac trac-admin </path/to/projectenv> initenv
+    su -s /bin/sh _trac "${TRUEPREFIX}/bin/trac-admin </path/to/projectenv> initenv"
 
 Here, "</path/to/projectenv>" is the location on your disk where you
 want to place the project environment. The _trac user will need the
@@ -26,7 +26,7 @@ tracd_flags=-p 8085 </path/to/projectenv>
 
 And start the daemon:
 
-# ${RCDIR}/tracd start
+# rcctl tracd start
 
 Now you can open up a web brower and go to http://localhost:8085/. You
 should see a single link for the project you just created. If you follow

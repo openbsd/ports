@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/07/02 20:16:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2015/07/06 11:25:36 sthen Exp $
 
 BROKEN =	doesn't startup correctly; ConfigItem::ActivateItems() doesn't proceed after DynamicObject::RestoreObjects() call
 BROKEN-hppa =	needs 64-bit atomic ops; __sync_add_and_fetch_4
@@ -17,6 +17,7 @@ DISTNAME =	icinga2-$V
 PKGNAME-main =	icinga2-$V
 PKGNAME-mysql =	icinga2-mysql-$V
 PKGNAME-pgsql =	icinga2-pgsql-$V
+REVISION-main =	0
 
 HOMEPAGE =	https://www.icinga.org/icinga2/
 

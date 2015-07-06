@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/07/03 19:17:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/07/06 11:25:36 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -6,6 +6,7 @@ DISTNAME =	librenms-0.20150701
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
 GH_COMMIT =	7d6dbe4d9b2ffa6c5fd21bd4172e3c0b177e2b06
+REVISION =	0
 
 CATEGORIES =	net www
 

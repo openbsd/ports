@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.15 2014/11/14 08:39:41 ajacoutot Exp $
+$OpenBSD: README-server,v 1.16 2015/07/06 11:25:36 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -55,8 +55,8 @@ Setting up the bacula DB user password.
 SQLite3
 -------
 Creating the DB and tables (default to ${LOCALSTATEDIR}/bacula.db).
-    $ cd ${TRUEPREFIX}/libexec/bacula
-    $ sudo -u _bacula ./make_sqlite3_tables
+    # cd ${TRUEPREFIX}/libexec/bacula
+    # su -s /bin/sh _bacula ./make_sqlite3_tables
 
 Device permissions
 ==================

@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.26 2015/02/07 22:39:04 rpe Exp $
+$OpenBSD: README-main,v 1.27 2015/07/06 11:25:36 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,18 +16,18 @@ on the local machine; these should work as-is.
 
 You may check your configuration file format before starting Icinga:
 
-   $ sudo -u _icinga ${TRUEPREFIX}/bin/icinga -v ${SYSCONFDIR}/icinga.cfg
+   # su -s /bin/sh _icinga "${TRUEPREFIX}/bin/icinga -v ${SYSCONFDIR}/icinga.cfg"
 
 This will parse all configuration files and warn about any problems
 which have been identified.
 
 Use the rcctl command to enable automatic startup on boot for icinga
 
-   $ sudo rcctl enable icinga
+   # rcctl enable icinga
 
 To start icinga, reboot or start it manually:
 
-   $ sudo rcctl start icinga
+   # rcctl start icinga
 
 
 Upgrading from a previous version
@@ -161,12 +161,12 @@ icinga-cgi" or "pkg_add icinga-web").
 
    Afterwards, you can start it by rebooting, or manually:
 
-      $ sudo ${RCDIR}/ido2db start
+      # rcctl ido2db start
 
    2.3) Enable the "broker_module=${TRUEPREFIX}/lib/idomod.so ..." line in
    ${SYSCONFDIR}/icinga.cfg and restart icinga:
 
-      $ sudo ${RCDIR}/icinga restart
+      # rcctl icinga restart
 
    Now you should see in the icinga logfile, that icinga is storing
    information in the db.
@@ -189,7 +189,7 @@ icinga-cgi" or "pkg_add icinga-web").
 
    2.6) To enable icinga-web, link the provided httpd.conf snippet:
 
-      $ sudo ln -s ../modules.sample/icinga-web.conf /var/www/conf/modules
+      # ln -s ../modules.sample/icinga-web.conf /var/www/conf/modules
 
    2.7) Currently, icinga-web is not tested to work in a web server chroot
    environment. You may have success by symlinking /var/www/var/www to
