@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.68 2015/07/02 00:10:15 zhuk Exp $
+# $OpenBSD: Makefile,v 1.69 2015/07/06 11:38:16 sthen Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
 COMMENT-langlist =	list of languages supported by KDE
 CATEGORIES =		devel
 V =			4.14.10
+REVISION-main =		0
 DISTNAME =		kdelibs-$V
 PKGNAME-main =		${DISTNAME}
 PKGNAME-en_US =		kde4-locale-en_US-$V
@@ -99,6 +100,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			misc/shared-mime-info \
 			misc/shared-desktop-ontologies \
 			net/cagibi \
+			security/sudo \
 			sysutils/gamin \
 			sysutils/upower \
 			x11/dbus \
@@ -175,6 +177,6 @@ post-extract:
 
 pre-configure:
 	perl -pi -e 's/\bkjscmd\b/$$&4/g' ${WRKSRC}/doc/kjscmd/*
-	${SUBST_CMD} ${WRKSRC}/kio/kio/ksambashare.cpp
+	${SUBST_CMD} ${WRKSRC}/kio/kio/ksambashare.cpp ${WRKSRC}/kdesu/su.cpp
 
 .include <bsd.port.mk>

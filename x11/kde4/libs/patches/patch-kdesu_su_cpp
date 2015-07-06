@@ -1,4 +1,4 @@
-$OpenBSD: patch-kdesu_su_cpp,v 1.1 2014/04/30 09:36:04 zhuk Exp $
+$OpenBSD: patch-kdesu_su_cpp,v 1.2 2015/07/06 11:38:16 sthen Exp $
 Hardcode sudo placement for safety.
 --- kdesu/su.cpp.orig	Sun Feb  9 14:43:40 2014
 +++ kdesu/su.cpp	Sun Feb  9 14:44:22 2014
@@ -7,7 +7,7 @@ Hardcode sudo placement for safety.
  
  #ifndef __PATH_SUDO
 -#define __PATH_SUDO "false"
-+#define __PATH_SUDO "/usr/bin/sudo"
++#define __PATH_SUDO "${LOCALBASE}/bin/sudo"
  #endif
  
  #ifdef KDESU_USE_SUDO_DEFAULT
