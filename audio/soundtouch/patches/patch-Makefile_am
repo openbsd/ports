@@ -1,11 +1,11 @@
---- Makefile.am.orig	Tue Jan  7 12:28:51 2014
-+++ Makefile.am	Mon Jan 19 19:15:01 2015
-@@ -28,10 +28,11 @@ SUBDIRS=include source
- 
+--- Makefile.am.orig	Mon May 18 11:57:14 2015
++++ Makefile.am	Sun Jun 28 08:03:14 2015
+@@ -27,10 +27,11 @@ include $(top_srcdir)/config/am_include.mk
+ SUBDIRS=include source
  
  # list files that are documentation to be packaged in a release tarball and installed
--pkgdoc_DATA=COPYING.TXT README.html
-+pkgdoc_DATA=README.html
+-dist_doc_DATA=COPYING.TXT README.html
++dist_doc_DATA=README.html
  
  # extra data files that are to be pacakged in a release tarball and installed into the data directory
  #pkgdata_DATA=

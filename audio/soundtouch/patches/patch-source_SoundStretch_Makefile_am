@@ -1,0 +1,11 @@
+--- source/SoundStretch/Makefile.am.orig	Sat Jul  4 10:00:23 2015
++++ source/SoundStretch/Makefile.am	Sat Jul  4 10:02:15 2015
+@@ -48,7 +48,7 @@ soundstretch_LDADD=../SoundTouch/libSoundTouch.la -lm
+ #soundstretch_LDFLAGS=-s
+ 
+ ## additional compiler flags
+-soundstretch_CXXFLAGS=-O3 $(AM_CXXFLAGS)
++soundstretch_CXXFLAGS=$(AM_CXXFLAGS)
+ 
+ #clean-local: 
+ #	-rm -f additional-files-to-remove-on-make-clean

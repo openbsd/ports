@@ -1,8 +1,8 @@
---- configure.ac.orig	Tue Jan  7 12:28:51 2014
-+++ configure.ac	Mon Jan 19 20:33:09 2015
-@@ -23,7 +23,7 @@ AC_INIT(SoundTouch, 1.8.0, [http://www.surina.net/soun
- AC_CONFIG_AUX_DIR(config)
- AM_CONFIG_HEADER([include/soundtouch_config.h])
+--- configure.ac.orig	Mon May 18 11:57:14 2015
++++ configure.ac	Sun Jun 28 08:03:14 2015
+@@ -24,7 +24,7 @@ AC_CONFIG_AUX_DIR(config)
+ AC_CONFIG_MACRO_DIR([config/m4])
+ AM_CONFIG_HEADER([config.h include/soundtouch_config.h])
  AM_INIT_AUTOMAKE
 -AM_SILENT_RULES([yes])
 +m4_ifndef([AM_SILENT_RULES], [m4_define([AM_SILENT_RULES],[])])
