@@ -1,4 +1,4 @@
-$OpenBSD: README-minimal,v 1.6 2015/04/04 09:36:37 ajacoutot Exp $
+$OpenBSD: README-minimal,v 1.7 2015/07/07 13:49:16 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -32,7 +32,7 @@ sudo(8) integration
 
 By default, sudo(8) doesn't pass environment variables on OpenBSD.  Thus, if you
 want to run KDE applications as a different user via sudo(8), you'll need to add
-the following lines to /etc/sudoers:
+the following lines to ${SYSCONFDIR}/sudoers:
 
   Defaults env_keep +="KDE_FULL_SESSION KDE_SESSION_UID KDE_SESSION_VERSION"
 
