@@ -1,4 +1,6 @@
-$OpenBSD: patch-salt_modules_openbsdrcctl_py,v 1.1 2015/07/03 12:08:14 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_openbsdrcctl_py,v 1.2 2015/07/07 11:25:51 ajacoutot Exp $
+
+https://github.com/saltstack/salt/pull/25201
 
 From 113c56a8da7a5b8fcf9f634a2c197211fc78f0e7 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@bsdfrog.org>
@@ -11,8 +13,8 @@ Date: Tue, 6 Jan 2015 18:14:23 +0100
 Subject: [PATCH 2/2] openbsdrcctl: turn badvar into a tuple and fix lint
  warnings
 
---- salt/modules/openbsdrcctl.py.orig	Fri Jul  3 14:05:51 2015
-+++ salt/modules/openbsdrcctl.py	Fri Jul  3 14:06:26 2015
+--- salt/modules/openbsdrcctl.py.orig	Thu Jun  4 18:38:15 2015
++++ salt/modules/openbsdrcctl.py	Tue Jul  7 13:17:54 2015
 @@ -61,7 +61,7 @@ def available(name):
  
          salt '*' service.available sshd
@@ -72,21 +74,25 @@ Subject: [PATCH 2/2] openbsdrcctl: turn badvar into a tuple and fix lint
      return sorted(ret)
  
  
-@@ -227,8 +233,12 @@ def enable(name, **kwargs):
+@@ -227,11 +233,15 @@ def enable(name, **kwargs):
          salt '*' service.enable <service name>
          salt '*' service.enable <service name> flags=<flags>
      '''
 -    flags = _get_flags(**kwargs)
 -    cmd = '{0} enable {1} flags {2}'.format(_cmd(), name, flags)
+-    return not __salt__['cmd.retcode'](cmd)
 +    cmd = '{0} set {1} status on'.format(_cmd(), name)
 +    # only (re)set flags for services that have an rc.d(8) script
 +    if os.path.exists('/etc/rc.d/{0}'.format(name)):
 +        flags = _get_flags(**kwargs)
 +        cmd = cmd + ' && {0} set {1} flags {2}'.format(_cmd(), name, flags)
+ 
++    return not __salt__['cmd.retcode'](cmd, python_shell=True)
+ 
 +
-     return not __salt__['cmd.retcode'](cmd)
- 
- 
+ def disable(name, **kwargs):
+     '''
+     Disable the named service to not start at boot.
 @@ -242,7 +252,7 @@ def disable(name, **kwargs):
  
          salt '*' service.disable <service name>
