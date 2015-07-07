@@ -1,0 +1,35 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2015/07/07 01:17:42 gsoares Exp $
+
+COMMENT =		client-server p9p devdraw
+DISTNAME =		devdrawserver-20120504
+CATEGORIES =		plan9
+
+MAINTAINER =		Gleydson Soares <gsoares@openbsd.org>
+
+# 3-clause BSD
+PERMIT_PACKAGE_CDROM =	Yes
+
+GH_ACCOUNT =	mariusae
+GH_PROJECT =		devdrawserver
+GH_COMMIT =		9a0cae0970bb9d1990a8b997e519b986f84f5571
+
+WANTLIB += c m pthread util
+
+RUN_DEPENDS =	plan9/plan9port
+BUILD_DEPENDS =	${RUN_DEPENDS}
+
+NO_TEST =	Yes
+
+PLAN9 =	${PREFIX}/plan9
+
+do-build:
+	cd ${WRKSRC} && 9 mk all
+
+do-install:
+	${INSTALL_DATA_DIR} ${PLAN9}/bin
+	cd ${WRKSRC} && \
+	for l in $$(ls o.*); do \
+		cp $$l ${PLAN9}/bin/$$(echo $$l | sed 's|o.||g'); \
+	done
+
+.include <bsd.port.mk>

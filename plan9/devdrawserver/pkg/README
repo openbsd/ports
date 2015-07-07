@@ -1,0 +1,9 @@
+$OpenBSD: README,v 1.1.1.1 2015/07/07 01:17:42 gsoares Exp $
+
+On a remote machine:
+
+	remote% DEVDRAW=devdrawserver acme
+
+and locally:
+
+	% dialdevdraw 'ssh remote dial -e unix!/tmp/devdrawserver'

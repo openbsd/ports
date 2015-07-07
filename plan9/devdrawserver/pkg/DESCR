@@ -1,0 +1,3 @@
+Devdrawserver is a client-server devdraw[1]. It allows for later
+attachment, so it can easily be run on a remote machine, proxying the
+draw calls to a local devdraw.
