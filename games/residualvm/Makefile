@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/06/28 09:03:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/07/07 09:15:32 ajacoutot Exp $
 
 COMMENT =		interpreter for some LucasArts 3D games
 
 V =			0.2.1
 DISTNAME =		residualvm-${V}-sources
 PKGNAME =		residualvm-${V}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://residualvm.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL SDL c freetype jpeg m mad mpeg2 ogg pthread stdc++
+WANTLIB += GL SDL c freetype jpeg m mad mpeg2 ogg png pthread stdc++
 WANTLIB += theoradec vorbis vorbisfile z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=residualvm/}
@@ -26,6 +26,7 @@ LIB_DEPENDS =		audio/libmad \
 			devel/sdl \
 			graphics/jpeg \
 			graphics/libmpeg2 \
+			graphics/png \
 			multimedia/libtheora
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
