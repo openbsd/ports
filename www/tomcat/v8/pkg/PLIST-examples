@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.8 2015/06/03 10:54:07 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.9 2015/07/07 14:33:57 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -2079,8 +2079,8 @@ webapps/docs/architecture/index.html
 webapps/docs/architecture/overview.html
 webapps/docs/architecture/requestProcess/
 webapps/docs/architecture/requestProcess.html
-webapps/docs/architecture/requestProcess/requestProcess.pdf
-webapps/docs/architecture/requestProcess/roseModel.mdl
+webapps/docs/architecture/requestProcess/authentication-process.png
+webapps/docs/architecture/requestProcess/request-process.png
 webapps/docs/architecture/startup/
 webapps/docs/architecture/startup.html
 webapps/docs/architecture/startup/serverStartup.pdf
