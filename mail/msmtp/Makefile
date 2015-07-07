@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2014/07/16 12:14:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2015/07/07 01:31:40 gsoares Exp $
 
 COMMENT =		SMTP plugin for MUAs
 
-DISTNAME =		msmtp-1.4.32
+DISTNAME =		msmtp-1.6.2
 CATEGORIES =		mail
-REVISION =		0
 
 HOMEPAGE =		http://msmtp.sourceforge.net/
 
@@ -14,7 +13,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 WANTLIB =		c crypto ssl idn
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=msmtp/}
-EXTRACT_SUFX =		.tar.bz2
+EXTRACT_SUFX =		.tar.xz
 
 LIB_DEPENDS =		devel/libidn
 
@@ -24,15 +23,13 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-libgsasl=no \
 			--with-libidn=yes \
-			--with-ssl=openssl \
-			--without-gnome-keyring
+			--with-tls=openssl \
+			--without-libsecret
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/msmtp
 	${INSTALL_DATA_DIR} ${PREFIX}/share/msmtp/msmtpqueue
 	${INSTALL_DATA} ${WRKSRC}/doc/*.example ${PREFIX}/share/examples/msmtp
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/msmtp
-	${INSTALL_DATA} ${WRKSRC}/doc/Mutt+msmtp.txt ${PREFIX}/share/doc/msmtp
 	${INSTALL_DATA} ${WRKSRC}/scripts/msmtpqueue/{README,ChangeLog} \
 			${PREFIX}/share/msmtp/msmtpqueue
 	${INSTALL_DATA} ${WRKSRC}/scripts/msmtpq/README.msmtpq \

@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/01/11 22:56:07 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/07/07 01:31:40 gsoares Exp $
 @bin bin/msmtp
 @info info/msmtp.info
 @man man/man1/msmtp.1
-share/doc/msmtp/
-share/doc/msmtp/Mutt+msmtp.txt
 share/examples/msmtp/
 share/examples/msmtp/msmtp-enqueue.sh
 share/examples/msmtp/msmtp-listqueue.sh
