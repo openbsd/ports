@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.4 2015/04/04 09:36:37 ajacoutot Exp $
+$OpenBSD: README-main,v 1.5 2015/07/07 14:10:42 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -23,7 +23,7 @@ If your installation supports complete shutdown, clicking on the logout
 button on panel will permit you to either logout, rebooting or halt
 the computer, provided you have the needed sudo credentials.
 If you don't want to have to enter your password, simply add this line
-to the /etc/sudoers file using visudo:
+to the ${SYSCONFDIR}/sudoers file using visudo:
 
 $your_username ALL=NOPASSWD: ${LOCALBASE}/lib/xfce4/session/xfsm-shutdown-helper
 
