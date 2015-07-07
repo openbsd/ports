@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.16 2015/07/06 11:25:36 sthen Exp $
+$OpenBSD: README-server,v 1.17 2015/07/07 14:44:58 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -56,7 +56,7 @@ SQLite3
 -------
 Creating the DB and tables (default to ${LOCALSTATEDIR}/bacula.db).
     # cd ${TRUEPREFIX}/libexec/bacula
-    # su -s /bin/sh _bacula ./make_sqlite3_tables
+    # su -m _bacula -c ./make_sqlite3_tables
 
 Device permissions
 ==================

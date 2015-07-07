@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.6 2015/07/06 11:25:36 sthen Exp $
+$OpenBSD: README-main,v 1.7 2015/07/07 14:44:58 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,7 +15,7 @@ on the local machine; these should work as-is.
 
 You may check your configuration file format before starting Nagios:
 
-   # su -s /bin/sh _nagios "${TRUEPREFIX}/sbin/nagios -v ${SYSCONFDIR}/nagios/nagios.cfg"
+   # su -m _nagios -c "${TRUEPREFIX}/sbin/nagios -v ${SYSCONFDIR}/nagios/nagios.cfg"
 
 This will parse all configuration files and warn about any problems
 which have been identified.

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2015/07/06 11:25:36 sthen Exp $
+$OpenBSD: README,v 1.6 2015/07/07 14:44:58 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,7 +9,7 @@ Initial setup
 
 To configure a Trac environment, you must run the following command
 and follow the prompts:
-    su -s /bin/sh _trac "${TRUEPREFIX}/bin/trac-admin </path/to/projectenv> initenv"
+    su -m _trac -c "${TRUEPREFIX}/bin/trac-admin </path/to/projectenv> initenv"
 
 Here, "</path/to/projectenv>" is the location on your disk where you
 want to place the project environment. The _trac user will need the
