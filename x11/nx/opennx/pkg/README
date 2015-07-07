@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2012/08/04 14:49:09 ajacoutot Exp $
+$OpenBSD: README,v 1.7 2015/07/07 14:43:36 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,8 +9,8 @@ Printing with CUPS
 To be able to use the CUPS backend for direct printing from the remote
 NX server to the local spooler, you need to install the cups package
 and make the following files executable by your user.
-    sudo chmod 555 ${LOCALBASE}/sbin/cupsd
-    sudo chmod 755 ${LOCALBASE}/libexec/cups/backend/ipp
+    # chmod 555 ${LOCALBASE}/sbin/cupsd
+    # chmod 755 ${LOCALBASE}/libexec/cups/backend/ipp
 
 Sharing folder(s) with Samba
 ============================

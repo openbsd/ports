@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2014/04/18 23:22:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/07/07 14:43:36 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		interface to various LCD displays
 DISTNAME =		lcdproc-0.5.5
-REVISION =		4
+REVISION =		5
 CATEGORIES =		comms devel
 HOMEPAGE =		http://www.lcdproc.org
 MAINTAINER =		Edd Barrett <edd@openbsd.org>

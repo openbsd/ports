@@ -10,8 +10,7 @@ the Internet.
 The current version of the port requires a running pulseaudio, e.g.,
 something like
 
-sudo ${RCDIR}/messagebus start
-eval `dbus-launch --sh-syntax --exit-with-session`
-start-pulseaudio-x11
+# ${RCDIR}/messagebus start
+$ start-pulseaudio-x11
 
 before starting stepmania.

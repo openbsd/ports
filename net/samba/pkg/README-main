@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.10 2014/07/11 16:20:37 ajacoutot Exp $
+$OpenBSD: README-main,v 1.11 2015/07/07 14:43:36 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -47,9 +47,9 @@ The configuration file, found at ${CONFDIR}/smb.conf can be used right
 away for simple configurations.  Local users must be added to the Samba user
 database using the pdbedit utility in order to use the Samba server.
         
-$ sudo pdbedit -a -u <username>
+# pdbedit -a -u <username>
 or the old way if for smbpasswd
-$ sudo smbpasswd -a <username>
+# smbpasswd -a <username>
 
 Samba contains an implementation of the SMB2 protocol. It is
 disabled by default.SMB2 can be enabled by setting 
