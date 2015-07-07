@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2012/08/18 07:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2015/07/07 01:24:04 gsoares Exp $
 
      SUBDIR =
      SUBDIR += 9libs
      SUBDIR += 9menu
      SUBDIR += 9wm
+     SUBDIR += devdrawserver
      SUBDIR += drawterm
      SUBDIR += larswm
      SUBDIR += plan9port
