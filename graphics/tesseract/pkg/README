@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2014/01/18 13:42:29 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2015/07/07 14:33:34 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,7 +6,8 @@ $OpenBSD: README,v 1.1 2014/01/18 13:42:29 ajacoutot Exp $
 
 Before running Tesseract, if using another language than English, the
 corresponding language pack should be installed.
-e.g. sudo pkg_add tesseract-fra
+e.g.
+    # pkg_add tesseract-fra
 
 Here's a quick HOWTO about optical character recognition using:
     scanimage(1) -- from the sane-backends package

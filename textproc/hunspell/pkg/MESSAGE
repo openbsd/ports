@@ -1,2 +1,3 @@
 Install mozilla dictionaries for extra hunspell languages.
-    e.g. sudo pkg_add mozilla-dicts-ca
+e.g.
+    # pkg_add mozilla-dicts-ca

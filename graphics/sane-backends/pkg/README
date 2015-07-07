@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.13 2014/07/11 16:59:35 ajacoutot Exp $
+$OpenBSD: README,v 1.14 2015/07/07 14:33:34 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,8 +10,9 @@ USB
 ===
 Since USB scanning will be handled by libusb, you need to allow the
 _saned user access to the corresponding USB endpoint. To do so, find
-where your scanner is attached to using `sudo usbdevs -vd` then change
-the ownerships accordingly.
+where your scanner is attached to using:
+    # usbdevs -vd
+then change the ownerships accordingly.
 
 e.g.
 Controller /dev/usb3:
@@ -21,7 +22,7 @@ addr 1: full speed, self powered, config 1, UHCI root hub(0x0000), Intel(0x8086)
  port 2 addr 2: full speed, self powered, config 1, USB MFP(0x082f), EPSON(0x04b8), rev 1.00, iSerialNumber L83010704250947490
    ugen0
 
-$ sudo chgrp _saned /dev/ugen0.* /dev/usb3
+# chgrp _saned /dev/ugen0.* /dev/usb3
 
 The reason we are changing the group and not the user is that it will
 allow for multi-function devices to work for both printing and scanning
