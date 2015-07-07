@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_camera_h,v 1.1 2015/07/07 22:29:14 bcallah Exp $
+--- src/camera.h.orig	Fri Oct 10 03:37:10 2008
++++ src/camera.h	Tue Jul  7 13:09:28 2015
+@@ -37,11 +37,15 @@
+     #include <sys/mman.h>
+     #include <sys/ioctl.h>
+ 
++#if defined(__linux__)
+     #include <asm/types.h>          /* for videodev2.h */
+ 
+     #include <linux/videodev.h>
+     #include <linux/videodev2.h>
++#elif defined(__OpenBSD__)
++    #include <sys/videoio.h>
+ #endif
++#endif
+ 
+ #define CLEAR(x) memset (&(x), 0, sizeof (x))
+ #define SAT(c) if (c & (~255)) { if (c < 0) c = 0; else c = 255; }
+@@ -98,7 +102,11 @@ char** v4l2_list_cameras (int* num_devices);
+ int v4l2_get_control (int fd, int id, int *value);
+ int v4l2_set_control (int fd, int id, int value);
+ PyObject* v4l2_read_raw (PyCameraObject* self);
++#ifdef __OpenBSD__
++int v4l2_xioctl (int fd, unsigned long request, void *arg);
++#else
+ int v4l2_xioctl (int fd, int request, void *arg);
++#endif
+ int v4l2_process_image (PyCameraObject* self, const void *image, 
+                                unsigned int buffer_size, SDL_Surface* surf);
+ int v4l2_query_buffer (PyCameraObject* self);

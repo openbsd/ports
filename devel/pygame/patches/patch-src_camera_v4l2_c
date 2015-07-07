@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_camera_v4l2_c,v 1.1 2015/07/07 22:29:14 bcallah Exp $
+--- src/camera_v4l2.c.orig	Sun Sep 28 05:31:42 2008
++++ src/camera_v4l2.c	Tue Jul  7 13:10:17 2015
+@@ -153,7 +153,11 @@ PyObject* v4l2_read_raw (PyCameraObject* self)
+  * and the HighGUI library in OpenCV.
+  */
+ 
++#ifdef __OpenBSD__
++int v4l2_xioctl (int fd, unsigned long request, void *arg)
++#else
+ int v4l2_xioctl (int fd, int request, void *arg)
++#endif
+ {
+     int r;
+ 

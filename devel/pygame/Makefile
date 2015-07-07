@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 10:50:27 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2015/07/07 22:29:14 bcallah Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	set of Python modules designed for writing games
 
-DISTNAME=	pygame-1.8.1release
+DISTNAME=	pygame-1.9.1release
 PKGNAME=	${DISTNAME:S/release//}
-REVISION =	4
 CATEGORIES=	devel games
 
 HOMEPAGE=	http://www.pygame.org/
 
-# LGPL
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += SDL X11 jpeg png pthread-stubs smpeg xcb SDL_ttf SDL_image SDL_mixer
+WANTLIB += SDL SDL_image SDL_mixer SDL_ttf X11 jpeg png pthread
+WANTLIB += smpeg ${MODPY_WANTLIB}
 
 MASTER_SITES=	${HOMEPAGE}ftp/
 

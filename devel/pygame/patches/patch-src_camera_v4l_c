@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_camera_v4l_c,v 1.1 2015/07/07 22:29:14 bcallah Exp $
+--- src/camera_v4l.c.orig	Tue Jul  7 13:14:06 2015
++++ src/camera_v4l.c	Tue Jul  7 13:13:28 2015
+@@ -25,6 +25,10 @@
+  
+ int v4l_open_device (PyCameraObject* self)
+ {
++#ifdef __OpenBSD__
++    /* OpenBSD supports V4L2 only */
++    return 0;
++#else
+     struct stat st;
+     struct video_capability cap;
+     struct video_mbuf buf;
+@@ -67,6 +71,7 @@ int v4l_open_device (PyCameraObject* self)
+     }
+     
+     return 1;
++#endif
+ }
+ 
+ int v4l_init_device(PyCameraObject* self)
