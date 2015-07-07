@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/07/07 06:34:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/07/07 10:43:09 ajacoutot Exp $
 
 COMMENT =		client-server p9p devdraw
 DISTNAME =		devdrawserver-20120504
 CATEGORIES =		plan9
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Gleydson Soares <gsoares@openbsd.org>
 
@@ -19,7 +19,7 @@ WANTLIB += c m pthread util
 RUN_DEPENDS =		plan9/plan9port
 BUILD_DEPENDS =		plan9/plan9port
 
-NO_TEST =x		Yes
+NO_TEST =		Yes
 
 PLAN9 =			${PREFIX}/plan9
 
@@ -29,8 +29,8 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PLAN9}/bin
 	cd ${WRKSRC} && \
-	for l in $$(ls o.*); do \
-		cp $$l ${PLAN9}/bin/$$(echo $$l | sed 's|o.||g'); \
+	for l in o.*; do \
+		${INSTALL_PROGRAM} $$l ${PLAN9}/bin/$$(echo $$l | sed 's|o.||g'); \
 	done
 
 .include <bsd.port.mk>
