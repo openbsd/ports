@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/06/26 09:18:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/07/07 13:47:32 ajacoutot Exp $
 
 COMMENT-face =		Qt/C++ wrapper around LibFace
 COMMENT-geomap =	KIPI interface library for Marble
@@ -23,7 +23,7 @@ PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 REVISION-face =		2
 REVISION-kipi =		2
-REVISION-main =		2
+REVISION-main =		3
 REVISION-mediawiki =	2
 REVISION-vkontakte =	2
 REVISION-geomap =	1
@@ -187,6 +187,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			${BASE_PKGPATH},-geomap \
 			databases/sqlite \
 			devel/glib2 \
+			devel/libusb-compat \
 			graphics/jasper \
 			graphics/lcms2 \
 			graphics/lensfun>=0.2.6 \
