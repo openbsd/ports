@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.328 2015/05/27 08:47:34 yasuoka Exp $
+# $OpenBSD: Makefile,v 1.329 2015/07/07 09:45:11 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -35,7 +35,6 @@
      SUBDIR += dovecot
      SUBDIR += dovecot-antispam
      SUBDIR += dovecot-pigeonhole
-     SUBDIR += drac
      SUBDIR += dspam
      SUBDIR += dspam,clamav
      SUBDIR += dspam,domainscale
