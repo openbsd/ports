@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.70 2015/05/18 11:29:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2015/07/08 20:48:57 naddy Exp $
 
 COMMENT=	toolkit for converting images between different formats
 
-DISTNAME=	netpbm-10.35.95
+DISTNAME=	netpbm-10.35.96
 SHARED_LIBS=	netpbm	2.0
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
@@ -40,9 +40,6 @@ MAKE_FLAGS+=	NETPBMLIBTYPE=unixstatic
 .else
 MAKE_FLAGS+=	NETPBMLIBTYPE=unixshared
 .endif
-
-pre-patch:
-	rm ${WRKSRC}/converter/other/jpeg2000/libjasper/include/jasper/jas_types.h.orig
 
 pre-build:
 	perl -i -p \
