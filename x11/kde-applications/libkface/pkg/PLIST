@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/08 22:54:49 zhuk Exp $
+@pkgpath graphics/digikam-kde4,-face
+include/kde4/libkface/
+include/kde4/libkface/dataproviders.h
+include/kde4/libkface/facedetector.h
+include/kde4/libkface/identity.h
+include/kde4/libkface/libkface_export.h
+include/kde4/libkface/recognitiondatabase.h
+include/kde4/libkface/version.h
+lib/cmake/Kface-${KFACE_V}/
+lib/cmake/Kface-${KFACE_V}/Kface-export${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/Kface-${KFACE_V}/Kface-export.cmake
+lib/cmake/Kface-${KFACE_V}/kface-config-version.cmake
+lib/cmake/Kface-${KFACE_V}/kface-config.cmake
+@lib lib/libkface.so.${LIBkface_VERSION}
+lib/pkgconfig/libkface.pc
+share/apps/libkface/
+share/apps/libkface/alignment-congealing/
+share/apps/libkface/alignment-congealing/face-funnel.data
+share/apps/libkface/database/
+share/apps/libkface/database/dbconfig.xml
+share/apps/libkface/haarcascades/
+share/apps/libkface/haarcascades/haarcascade_frontalface_alt.xml
+share/apps/libkface/haarcascades/haarcascade_frontalface_alt2.xml
+share/apps/libkface/haarcascades/haarcascade_frontalface_alt_tree.xml
+share/apps/libkface/haarcascades/haarcascade_frontalface_default.xml
+share/apps/libkface/haarcascades/haarcascade_mcs_lefteye.xml
+share/apps/libkface/haarcascades/haarcascade_mcs_mouth.xml
+share/apps/libkface/haarcascades/haarcascade_mcs_nose.xml
+share/apps/libkface/haarcascades/haarcascade_mcs_righteye.xml
+share/apps/libkface/haarcascades/haarcascade_profileface.xml

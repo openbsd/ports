@@ -1,0 +1,12 @@
+$OpenBSD: patch-libkgeomap_CMakeLists_txt,v 1.1.1.1 2015/07/08 22:54:49 zhuk Exp $
+Avoid picking up valgrind.
+--- libkgeomap/CMakeLists.txt.orig	Fri Jul  3 04:27:08 2015
++++ libkgeomap/CMakeLists.txt	Fri Jul  3 04:27:30 2015
+@@ -8,6 +8,7 @@ include_directories(${MARBLE_INCLUDE_DIR})
+ 
+ include(CheckIncludeFile)
+ CHECK_INCLUDE_FILE("valgrind/valgrind.h" HAVE_VALGRIND)
++set(HAVE_VALGRIND No)
+ if(${HAVE_VALGRIND})
+     add_definitions(-DKGEOMAP_HAVE_VALGRIND)
+ endif()

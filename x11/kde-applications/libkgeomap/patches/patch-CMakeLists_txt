@@ -1,0 +1,11 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2015/07/08 22:54:49 zhuk Exp $
+--- CMakeLists.txt.orig	Fri Jul  3 04:26:10 2015
++++ CMakeLists.txt	Fri Jul  3 04:25:59 2015
+@@ -4,6 +4,7 @@
+ # Redistribution and use is allowed according to the terms of the BSD license.
+ # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+ 
++cmake_minimum_required(VERSION 3.2)
+ project(libkgeomap)
+ 
+ message(STATUS "----------------------------------------------------------------------------------")
