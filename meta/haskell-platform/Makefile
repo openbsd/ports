@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/07 20:45:50 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2015/07/08 06:36:50 kili Exp $
 
 COMMENT =	Haskell platform meta-package
 
 PKGNAME =	haskell-platform-2014.2.0.0
+
+REVISION =	0
 
 HOMEPAGE =	http://hackage.haskell.org/platform/
 
@@ -13,6 +15,11 @@ MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 # Version numbers of libraries and tools below are hard-wired by
 # intention (to let people know if they update some port which shouldn't
 # updated yet).
+
+# One exception of that rule is textproc/hs-attoparsec, which in
+# the original haskell platform is set to 0.10.4.0 but relaxed to
+# 0.11.* versions, which are required for a newer devel/hs-aeson,
+# which in turn is required for porting pandoc.
 
 # ghc-7.8.3 together the following libraries provided by the
 # ghc package: array=0.5.0.0, base=4.7.0.1, bytestring=0.10.4.0,
@@ -30,7 +37,7 @@ RUN_DEPENDS +=	lang/ghc=7.8.4 \
 
 # Additional libraries:
 RUN_DEPENDS +=	devel/hs-async=2.0.1.5 \
-		textproc/hs-attoparsec=0.10.4.0 \
+		textproc/hs-attoparsec>=0.10.4.0,<0.12 \
 		devel/hs-case-insensitive=1.1.0.3 \
 		devel/hs-fgl=5.5.0.1 \
 		graphics/hs-GLUT=2.5.1.1 \
