@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/05/01 21:00:03 jim Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/07/08 16:20:04 bluhm Exp $
 bin/perltidy
 ${P5SITE}/Perl/
 ${P5SITE}/Perl/Tidy.pm
+${P5SITE}/Perl/Tidy.pod
 @man man/man1/perltidy.1
 @man man/man3p/Perl::Tidy.3p
 share/doc/perltidy/
