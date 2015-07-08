@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2014/06/14 23:24:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2015/07/08 13:32:53 bluhm Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		BSD process resource limit and priority functions
 
 DISTNAME =		BSD-Resource-1.2907
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
