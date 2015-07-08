@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2012/10/28 10:41:24 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2015/07/08 12:54:51 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -72,4 +72,4 @@ be updated.
 Documentation
 =============
 http://code.google.com/p/tryton/wiki/TableOfContents
-http://www.tryton.org/documentation.html
+http://doc.tryton.org/
