@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2015/04/10 12:25:46 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2015/07/08 16:36:41 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -207,6 +207,7 @@ share/vim/${P}/doc/os_win32.txt
 share/vim/${P}/doc/pattern.txt
 share/vim/${P}/doc/pi_getscript.txt
 share/vim/${P}/doc/pi_gzip.txt
+share/vim/${P}/doc/pi_logipat.txt
 share/vim/${P}/doc/pi_netrw.txt
 share/vim/${P}/doc/pi_paren.txt
 share/vim/${P}/doc/pi_spec.txt
@@ -647,6 +648,7 @@ share/vim/${P}/keymap/polish-slash_utf-8.vim
 share/vim/${P}/keymap/russian-dvorak.vim
 share/vim/${P}/keymap/russian-jcuken.vim
 share/vim/${P}/keymap/russian-jcukenwin.vim
+share/vim/${P}/keymap/russian-jcukenwintype.vim
 share/vim/${P}/keymap/russian-yawerty.vim
 share/vim/${P}/keymap/serbian-latin.vim
 share/vim/${P}/keymap/serbian-latin_utf-8.vim
@@ -711,6 +713,7 @@ share/vim/${P}/plugin/
 share/vim/${P}/plugin/README.txt
 share/vim/${P}/plugin/getscriptPlugin.vim
 share/vim/${P}/plugin/gzip.vim
+share/vim/${P}/plugin/logiPat.vim
 share/vim/${P}/plugin/matchparen.vim
 share/vim/${P}/plugin/netrwPlugin.vim
 share/vim/${P}/plugin/rrhelper.vim
