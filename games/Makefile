@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.311 2015/07/01 21:33:49 bcallah Exp $
+# $OpenBSD: Makefile,v 1.312 2015/07/08 16:36:08 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -114,6 +114,7 @@
      SUBDIR += hackdata
      SUBDIR += heroes
      SUBDIR += hex-a-hop
+     SUBDIR += hypatia
      SUBDIR += icebreaker
      SUBDIR += instead
      SUBDIR += irrlamb
@@ -178,6 +179,7 @@
      SUBDIR += prboom-plus
      SUBDIR += pushover
      SUBDIR += puzzles
+     SUBDIR += pyganim
      SUBDIR += pysol
      SUBDIR += qgo
      SUBDIR += qstat
