@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_wx_configure_in,v 1.1 2015/07/09 19:46:39 jasper Exp $
+
+Don't blindly discard library path for GL libs.
+
+--- lib/wx/configure.in.orig	Tue Jun 23 20:56:21 2015
++++ lib/wx/configure.in	Thu Jul  2 13:19:07 2015
+@@ -236,6 +236,7 @@ dnl
+ if test X"$host_os" != X"win32" ; then
+     AC_CHECK_HEADERS([GL/gl.h], [],
+     	[AC_CHECK_HEADERS([OpenGL/gl.h])])
++	GL_LIBS="-L/usr/X11R6/lib $GL_LIBS"
+     if test X"$ac_cv_header_GL_gl_h" != Xyes &&
+        	test X"$ac_cv_header_OpenGL_gl_h" != Xyes
+     then

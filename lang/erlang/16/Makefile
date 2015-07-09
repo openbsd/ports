@@ -1,18 +1,24 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/26 07:33:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/07/09 19:46:39 jasper Exp $
 
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 BROKEN-hppa =	error: No native atomic implementation found.
 BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
 
+COMMENT-main =	${COMMENT}
+COMMENT-wx=	WxWidgets bindings for Erlang
+
 V=		R16B03-1
 MAJ_V=		16
-DISTNAME=	otp_src_${V}
-PKGNAME=	erlang-16b.03
-REVISION=	6
 EPOCH=		0
-PKGSPEC=	erlang->=16v0,<17v0
+DISTNAME=	otp_src_${V}
+PKGNAME-main=	erlang-16b.03
+PKGNAME-wx=	erlang-wx-16b.03
 
-WANTLIB=	c crypto m ncurses pthread util
+REVISION-main=	7
+
+VERSION_SPEC=	>=16v0,<17v0
+PKGSPEC-main=	erlang-${VERSION_SPEC}
+PKGSPEC-wx=	erlang-wx-${VERSION_SPEC}
 
 CONFIGURE_ARGS=	--without-jinterface	\
 		--without-odbc		\
@@ -20,6 +26,18 @@ CONFIGURE_ARGS=	--without-jinterface	\
 		--enable-kernel-poll \
 		--disable-hipe \
 		--enable-smp-support
+
+MULTI_PACKAGES = -main -wx
+
+WANTLIB =	m pthread
+WANTLIB-main =	${WANTLIB} c crypto ncurses util
+
+WANTLIB-wx += ${WANTLIB} GL GLU stdc++ wx_base wx_base_xml wx_gtk2_adv
+WANTLIB-wx += wx_gtk2_aui wx_gtk2_core wx_gtk2_gl wx_gtk2_html wx_gtk2_stc
+WANTLIB-wx += wx_gtk2_xrc
+
+LIB_DEPENDS-wx +=x11/wxWidgets>=2.8.12p10
+RUN_DEPENDS-wx =${BASE_PKGPATH},-main>=${MAJ_V}
 
 DOC_DIR=	${PREFIX}/lib/erlang${MAJ_V}/
 FAKE_FLAGS =	libdir_suffix="/erlang${MAJ_V}"

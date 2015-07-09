@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2015/06/26 07:33:17 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2015/07/09 19:46:39 jasper Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
@@ -24,9 +24,11 @@ CONFIGURE_STYLE ?=	autoconf no-autoheader
 CONFIGURE_ENV ?=	LDFLAGS="${LDFLAGS} -pthread"
 AUTOCONF_VERSION ?=	2.59
 AUTOCONF_DIR ?=		${WRKSRC} \
-	     		${WRKSRC}/erts
+	     		${WRKSRC}/erts \
+			${WRKSRC}/lib/wx/
 MODGNU_CONFIG_GUESS_DIRS ?=	${WRKSRC}/erts/autoconf \
-				${WRKSRC}/lib/erl_interface/src/auxdir
+				${WRKSRC}/lib/erl_interface/src/auxdir \
+				${WRKSRC}/lib/wx/autoconf
 
 .if ${MACHINE_ARCH} == i386
 CONFIGURE_ARGS +=	--enable-ethread-pre-pentium4-compatibility
