@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.86 2015/06/09 07:02:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2015/07/09 08:09:06 ajacoutot Exp $
 
-COMMENT=	easy and universal access to shared and/or personal files
+COMMENT=		easy and universal access to shared and/or personal files
 
-V=		8.0.4
-DISTNAME=	owncloud-${V}
-EXTRACT_SUFX=	.tar.bz2
+V=			8.1.0
+DISTNAME=		owncloud-${V}
+EXTRACT_SUFX=		.tar.bz2
 
-CATEGORIES=	www
+CATEGORIES=		www
 
-HOMEPAGE=	http://owncloud.org/
+HOMEPAGE=		http://owncloud.org/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # AGPLv3 (GNU Affero Public License)
 # jQuery: MIT / GPLv3
@@ -21,34 +21,47 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # Silk icons: Creative Commons Attribution
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://download.owncloud.org/community/
+MASTER_SITES=		http://download.owncloud.org/community/
 
-MODULES=	lang/php
+MODULES=		lang/php
 
-NO_BUILD=	Yes
-NO_TEST=	Yes
-PKG_ARCH=	*
+NO_BUILD=		Yes
+NO_TEST=		Yes
+PKG_ARCH=		*
 
-WRKDIST=	${WRKDIR}/owncloud
+WRKDIST=		${WRKDIR}/owncloud
 
-PREFIX=		${VARBASE}/www
-INSTDIR=	${PREFIX}/owncloud
-TINSTDIR=	${TRUEPREFIX}/owncloud
-VR=		${V:R}
-SUBST_VARS=	INSTDIR TINSTDIR MODPHP_BIN VR
+PREFIX=			${VARBASE}/www
+INSTDIR=		${PREFIX}/owncloud
+TINSTDIR=		${TRUEPREFIX}/owncloud
+VR=			${V:R}
+SUBST_VARS=		INSTDIR TINSTDIR MODPHP_BIN VR
 
-RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
-		lang/php/${MODPHP_VERSION},-gd \
-		lang/php/${MODPHP_VERSION},-intl \
-		lang/php/${MODPHP_VERSION},-mcrypt \
-		lang/php/${MODPHP_VERSION},-xmlrpc \
-		lang/php/${MODPHP_VERSION},-zip
+RUN_DEPENDS=		lang/php/${MODPHP_VERSION},-gd \
+			lang/php/${MODPHP_VERSION},-zip
+
+# http user authentication
+RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-curl
+
+# apps extraction
+RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-bz2
+
+# sorting of non-ASCII characters
+RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-intl
+
+# increase file encryption performance
+RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-mcrypt
 
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
 	mv ${INSTDIR}/.htaccess ${INSTDIR}/.htaccess.dist
 	find ${INSTDIR} -name '*.orig' -print0 | xargs -r0 rm
 	chown -R ${BINOWN}:${BINGRP} ${INSTDIR}
+
+	chmod +x ${INSTDIR}/occ
+	perl -pi -e '$$. == 1 && s|^.*env php.*$$|\#!${MODPHP_BIN}|;' \
+		-e 'close ARGV if eof;' \
+		${INSTDIR}/occ
 
 	${INSTALL_DATA_DIR} ${PREFIX}/conf/modules.sample
 	${SUBST_CMD} -m 0644 -c ${FILESDIR}/httpd-owncloud.conf.dist.in \

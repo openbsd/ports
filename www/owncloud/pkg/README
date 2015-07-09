@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.35 2015/04/04 15:31:44 ajacoutot Exp $
+$OpenBSD: README,v 1.36 2015/07/09 08:09:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -79,7 +79,7 @@ Apache2
 Apache2 configuration for ownCloud is stored under:
     ${PREFIX}/conf/modules.sample/httpd-owncloud.conf
 
-The httpd2 user group must be set to "www".
+The Apache user group must be set to "www".
 
 Both can be done by editing ${SYSCONFDIR}/apache2/httpd2.conf:
     Include ${PREFIX}/conf/modules.sample/httpd-owncloud.conf
@@ -102,6 +102,9 @@ or install xcache.
 
 Database configuration
 ----------------------
+See the following URL for setting up a database for ownCloud:
+    https://doc.owncloud.org/server/${VR}/admin_manual/configuration_database/linux_database_configuration.html
+
 ownCloud can work with a PostgreSQL, MariaDB or SQLite3 database.
 Support for SQLite3 is included with the main php package; to use
 another database, the corresponding package needs to be installed
@@ -112,23 +115,16 @@ Configuration is done under:
     ${INSTDIR}/config/config.php
 and the default "datadirectory" is set to:
     ${TINSTDIR}/data
-When running chrooted, /var/www must be stripped from paths.
+When running chrooted, /var/www must be stripped from the paths.
 
 Cron job
 --------
 ownCloud needs to run background jobs on a regular basis. By default, it
 will execute one task with each page loaded ("AJAX" option in the admin
-interface).
-The prefered way is to use a cron(8) job instead. Two options are
-available and both require to edit the web server user's crontab(5).
-e.g. "crontab -u www -e"
-(swap "www" with the user the web server runs as)
-
--> "Webcron" (works in chroot)
+interface). The prefered way is to use a cron(8) job instead.
+(see http://<hostname>/owncloud/index.php/settings/admin#backgroundjobs)
+e.g.
 */15	*	*	*	*	/usr/bin/ftp -Vo - http://<hostname>/owncloud/cron.php >/dev/null
-
--> "Cron" (does *not* work in chroot)
-*/15	*	*	*	*	${MODPHP_BIN} -f ${INSTDIR}/cron.php
 
 Authentication backends
 -----------------------
