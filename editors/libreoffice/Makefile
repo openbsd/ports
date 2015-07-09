@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2015/05/28 10:26:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2015/07/09 17:05:14 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		4.4
-VERSION=	4.4.3.2
+VERSION=	${BV}.4.3
 DISTNAME=	libreoffice-${VERSION}
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
@@ -19,7 +19,6 @@ CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
 
 EPOCH=		0
-REVISION=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -194,11 +193,11 @@ WANTLIB-main=	estdc++ gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
 WANTLIB-main+=	ICE SM X11 Xcomposite Xcursor Xdamage \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
 		crypto expat fontconfig freetype gio-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gthread-2.0 \
+		gobject-2.0 gthread-2.0 \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pthread ssl xml2 z gdk_pixbuf-2.0 \
 		util ${MODGETTEXT_WANTLIB}
-WANTLIB-main+=	hunspell-1.3 gdk_pixbuf_xlib-2.0
+WANTLIB-main+=	hunspell-1.3
 WANTLIB-main+=	${MODPY_WANTLIB}
 WANTLIB-main+=	Xt clucene-contribs-lib clucene-core clucene-shared
 WANTLIB-main+=	cups exslt gcrypt gpg-error lcms2

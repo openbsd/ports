@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.36 2015/05/03 11:30:34 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.37 2015/07/09 17:05:15 robert Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -1136,24 +1136,6 @@ lib/libreoffice/share/config/soffice.cfg/formula/ui/formuladialog.ui
 lib/libreoffice/share/config/soffice.cfg/formula/ui/functionpage.ui
 lib/libreoffice/share/config/soffice.cfg/formula/ui/parameter.ui
 lib/libreoffice/share/config/soffice.cfg/formula/ui/res/
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/ar.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/bg.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/ca.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/de.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/es.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/fa.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/fi.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/fr.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/hu.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/it.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/lt.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/lv.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/nl.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/pl.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/pt-BR.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/ru.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/sl.zip
-lib/libreoffice/share/config/soffice.cfg/formula/ui/res/sv.zip
 lib/libreoffice/share/config/soffice.cfg/formula/ui/structpage.ui
 lib/libreoffice/share/config/soffice.cfg/fps/
 lib/libreoffice/share/config/soffice.cfg/fps/ui/
@@ -1462,6 +1444,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/ztestdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scanner/
 lib/libreoffice/share/config/soffice.cfg/modules/scanner/ui/
 lib/libreoffice/share/config/soffice.cfg/modules/scanner/ui/griddialog.ui
+lib/libreoffice/share/config/soffice.cfg/modules/scanner/ui/res/
 lib/libreoffice/share/config/soffice.cfg/modules/scanner/ui/sanedialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/schart/
 lib/libreoffice/share/config/soffice.cfg/modules/schart/menubar/

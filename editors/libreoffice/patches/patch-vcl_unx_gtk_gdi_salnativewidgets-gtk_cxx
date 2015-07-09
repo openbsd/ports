@@ -1,7 +1,7 @@
-$OpenBSD: patch-vcl_unx_gtk_gdi_salnativewidgets-gtk_cxx,v 1.8 2015/05/03 11:30:33 robert Exp $
---- vcl/unx/gtk/gdi/salnativewidgets-gtk.cxx.orig.port	Thu Jan 22 21:05:28 2015
-+++ vcl/unx/gtk/gdi/salnativewidgets-gtk.cxx	Sat Jan 31 16:03:15 2015
-@@ -4207,7 +4207,7 @@ void GtkSalGraphics::updateSettings( AllSettings& rSet
+$OpenBSD: patch-vcl_unx_gtk_gdi_salnativewidgets-gtk_cxx,v 1.9 2015/07/09 17:05:14 robert Exp $
+--- vcl/unx/gtk/gdi/salnativewidgets-gtk.cxx.orig.port	Tue Jun 23 22:06:25 2015
++++ vcl/unx/gtk/gdi/salnativewidgets-gtk.cxx	Wed Jul  8 22:00:48 2015
+@@ -4209,7 +4209,7 @@ void GtkSalGraphics::updateSettings( AllSettings& rSet
      aStyleSet.SetPreferredIconTheme( OUString::createFromAscii( pIconThemeName ) );
      g_free( pIconThemeName );
  

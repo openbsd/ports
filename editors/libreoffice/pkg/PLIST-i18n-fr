@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-fr,v 1.14 2014/10/10 17:13:10 robert Exp $
+@comment $OpenBSD: PLIST-i18n-fr,v 1.15 2015/07/09 17:05:15 robert Exp $
 !%%no_java%%
 lib/libreoffice/program/resource/abpfr.res
 lib/libreoffice/program/resource/accfr.res
@@ -66,12 +66,14 @@ lib/libreoffice/share/config/soffice.cfg/cui/ui/res/fr.zip
 lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/res/fr.zip
 lib/libreoffice/share/config/soffice.cfg/desktop/ui/res/fr.zip
 lib/libreoffice/share/config/soffice.cfg/filter/ui/res/fr.zip
+lib/libreoffice/share/config/soffice.cfg/formula/ui/res/fr.zip
 lib/libreoffice/share/config/soffice.cfg/fps/ui/res/fr.zip
 lib/libreoffice/share/config/soffice.cfg/modules/BasicIDE/ui/res/fr.zip
 lib/libreoffice/share/config/soffice.cfg/modules/dbreport/ui/res/fr.zip
 lib/libreoffice/share/config/soffice.cfg/modules/sabpilot/ui/res/fr.zip
 lib/libreoffice/share/config/soffice.cfg/modules/sbibliography/ui/res/fr.zip
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/res/fr.zip
+lib/libreoffice/share/config/soffice.cfg/modules/scanner/ui/res/fr.zip
 lib/libreoffice/share/config/soffice.cfg/modules/schart/ui/res/fr.zip
 lib/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/res/fr.zip
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/res/fr.zip
