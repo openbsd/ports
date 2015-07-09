@@ -1,4 +1,4 @@
-# $OpenBSD: drupal6.port.mk,v 1.8 2012/04/12 08:16:06 naddy Exp $
+# $OpenBSD: drupal6.port.mk,v 1.9 2015/07/09 13:28:54 espie Exp $
 
 
 # three types of things we can install, by default plugin
@@ -31,7 +31,7 @@ DRUPAL_THEMES ?=${DRUPAL_ROOT}/sites/all/themes/
 DRUPAL_OWNER =	root
 DRUPAL_GROUP =	daemon
 SUBST_VARS += 	DRUPAL_MODS DRUPAL_THEMES DRUPAL_ROOT \
-		DRUPAL_OWNER DRUPAL_GROUP
+		DRUPAL_OWNER DRUPAL_GROUP DRUPAL
 
 .if ${MODDRUPAL_THEME:L} == "yes"
 MODDRUPAL_INSTALL = \

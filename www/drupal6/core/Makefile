@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.42 2015/06/05 06:00:22 robert Exp $
+# $OpenBSD: Makefile,v 1.43 2015/07/09 13:28:54 espie Exp $
 
 COMMENT =	powerful content management system
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-DISTNAME =	drupal-6.34
+DISTNAME =	drupal-6.36
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
-REVISION =	2
 
 MODULES=	lang/php
 RUN_DEPENDS=	php-mysql-${MODPHP_VSPEC}|php-mysqli-${MODPHP_VSPEC}|php-pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-mysql \
 		lang/php/${MODPHP_VERSION},-gd
 
-SUBST_VARS += DRUPAL
 do-install:
 		mkdir -p ${PREFIX}/${DRUPAL_ROOT}
 		# copy base distrib
