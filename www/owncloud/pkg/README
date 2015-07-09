@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.36 2015/07/09 08:09:06 ajacoutot Exp $
+$OpenBSD: README,v 1.37 2015/07/09 10:22:43 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -162,27 +162,6 @@ Synchronization
 ===============
 The "mirall" package (net/mirall) is a graphical (QT) application to
 synchronize with an ownCloud server.
-
-Encryption app and chroot
-=========================
-To provide server side-encryption, the "Encryption" app can be enabled
-in the ownCloud admin interface. When running a chrooted web server,
-some manual steps are required to make it work.
-
-openssl(1)
-----------
-The openssl binary and dependent libraries must be installed in the
-chroot. As root:
-    mkdir /var/www/etc
-    mkdir -p /var/www/usr/{bin,lib,libexec}
-    cp /usr/bin/openssl /var/www/usr/bin/
-    cp /etc/ssl/openssl.cnf /var/www/etc/ssl/openssl.cnf # edit accordingly
-    for i in $(ldd /usr/bin/openssl | grep 'lib/' | awk '{ print $7 }'); do
-    > cp -p $i /var/www$i
-    > done
-
-Make sure to update the openssl binary and libraries in the chroot
-whenever they are updated on the system.
 
 Apps and dependencies
 =====================
