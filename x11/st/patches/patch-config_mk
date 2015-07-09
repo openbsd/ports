@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_mk,v 1.6 2014/06/10 07:14:50 bcallah Exp $
---- config.mk.orig	Sat Apr  5 14:40:11 2014
-+++ config.mk	Mon Jun  9 20:01:29 2014
-@@ -4,11 +4,11 @@ VERSION = 0.5
+$OpenBSD: patch-config_mk,v 1.7 2015/07/09 22:07:23 czarkoff Exp $
+--- config.mk.orig	Wed Jul  8 23:58:38 2015
++++ config.mk	Thu Jul  9 00:01:41 2015
+@@ -4,24 +4,24 @@ VERSION = 0.6
  # Customize below to fit your system
  
  # paths
@@ -17,16 +17,19 @@ $OpenBSD: patch-config_mk,v 1.6 2014/06/10 07:14:50 bcallah Exp $
  
  # includes and libs
  INCS = -I. -I/usr/include -I${X11INC} \
-@@ -19,9 +19,9 @@ LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 -lutil -lXext 
+        `pkg-config --cflags fontconfig` \
+        `pkg-config --cflags freetype2`
+-LIBS = -L/usr/lib -lc -L${X11LIB} -lm -lrt -lX11 -lutil -lXext -lXft \
++LIBS = -L/usr/lib -lc -L${X11LIB} -lm -lX11 -lutil -lXext -lXft \
+        `pkg-config --libs fontconfig`  \
         `pkg-config --libs freetype2`
  
  # flags
--CPPFLAGS = -DVERSION=\"${VERSION}\" -D_BSD_SOURCE -D_XOPEN_SOURCE=600
+ CPPFLAGS = -DVERSION=\"${VERSION}\" -D_XOPEN_SOURCE=600
 -CFLAGS += -g -std=c99 -pedantic -Wall -Wvariadic-macros -Os ${INCS} ${CPPFLAGS}
 -LDFLAGS += -g ${LIBS}
-+CPPFLAGS += -DVERSION=\"${VERSION}\" -D_BSD_SOURCE -D_XOPEN_SOURCE=600
-+CFLAGS += -std=c99 -pedantic -Wall -Wvariadic-macros ${INCS} ${CPPFLAGS}
++CFLAGS += -std=c99 ${INCS} ${CPPFLAGS}
 +LDFLAGS += ${LIBS}
  
  # compiler and linker
- CC ?= cc
+ # CC = cc
