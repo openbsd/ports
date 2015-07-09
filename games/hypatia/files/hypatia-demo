@@ -1,3 +1,4 @@
 #!/bin/sh
 
-cd "${TRUEPREFIX}/share/examples/hypatia" && exec python2.7 game.py
+cd "${TRUEPREFIX}/share/examples/hypatia" && \
+	exec ${MODPY_BIN} game.py
