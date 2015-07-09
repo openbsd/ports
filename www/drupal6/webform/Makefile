@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2014/02/14 11:12:32 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2015/07/09 14:02:08 espie Exp $
 
 COMMENT =	webform
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-DISTNAME = 	webform-6.x-3.20
-PKGNAME =	drupal6-webform-3.20
+DISTNAME = 	webform-6.x-3.23
+PKGNAME =	drupal6-webform-3.23
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2012/09/18 14:06:57 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2015/07/09 14:02:08 espie Exp $
 
 COMMENT =	printer-friendly pages in drupal
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-DISTNAME = 	print-6.x-1.18
-PKGNAME =	drupal6-printer-friendly-1.18
+DISTNAME = 	print-6.x-1.19
+PKGNAME =	drupal6-printer-friendly-1.19
 
 # Anticipatory symlinking to tcpdf.
 post-install:
