@@ -1,7 +1,9 @@
-$OpenBSD: patch-lib_src_util_posix_dynamic_library_cc,v 1.1.1.1 2015/07/01 09:13:33 jasper Exp $
+$OpenBSD: patch-lib_src_util_posix_dynamic_library_cc,v 1.2 2015/07/10 21:02:48 jasper Exp $
 
-If RTLD_NOLOAD is not supportd, just use RTLD_LAZY which suffices those cases.
-http://hg.openjdk.java.net/bsd-port/jdk8/jdk/rev/ce213452b047
+From 858e51a39948a383e0e651d0ca6d3fc1b17edf41 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 1 Jul 2015 11:24:16 +0200
+Subject: [PATCH] (FACT-891) Extend check to unbreak compilation on OpenBSD
 
 --- lib/src/util/posix/dynamic_library.cc.orig	Fri Jun 26 01:47:38 2015
 +++ lib/src/util/posix/dynamic_library.cc	Tue Jun 30 11:04:35 2015
