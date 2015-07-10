@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.1 2015/07/01 08:41:59 jasper Exp $
+$OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.2 2015/07/10 08:13:46 jasper Exp $
 --- tools/build/src/tools/gcc.jam.orig	Sat Apr  4 19:25:07 2015
-+++ tools/build/src/tools/gcc.jam	Fri Jun 26 11:42:54 2015
++++ tools/build/src/tools/gcc.jam	Fri Jul 10 10:13:10 2015
 @@ -337,7 +337,7 @@ class gcc-pch-generator : pch-generator
          # Return result of base class and pch-file property as
          # usage-requirements.
@@ -19,7 +19,21 @@ $OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.1 2015/07/01 08:41:59 jasper E
  toolset.flags gcc.compile OPTIONS <optimization>space : -Os ;
  
  toolset.flags gcc.compile OPTIONS <inlining>off  : -fno-inline ;
-@@ -603,11 +603,13 @@ rule compile.fortran ( targets * : sources * : propert
+@@ -453,12 +453,8 @@ rule setup-address-model ( targets * : sources * : pro
+             local arch = [ feature.get-values architecture : $(properties) ] ;
+             if $(arch) != arm
+             {
+-                if $(model) = 32
++                if $(model) = 64
+                 {
+-                    option = -m32 ;
+-                }
+-                else if $(model) = 64
+-                {
+                     option = -m64 ;
+                 }
+             }
+@@ -603,11 +599,13 @@ rule compile.fortran ( targets * : sources * : propert
  
  actions compile.c++ bind PCH_FILE
  {
@@ -33,7 +47,7 @@ $OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.1 2015/07/01 08:41:59 jasper E
      "$(CONFIG_COMMAND)" $(LANG) $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(PCH_FILE:D)" -I"$(INCLUDES)" -c -o "$(<)" "$(>)"
  }
  
-@@ -949,6 +951,7 @@ rule link ( targets * : sources * : properties * )
+@@ -949,6 +947,7 @@ rule link ( targets * : sources * : properties * )
  
  actions link bind LIBRARIES
  {
@@ -41,7 +55,7 @@ $OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.1 2015/07/01 08:41:59 jasper E
      "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,$(RPATH) -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
  }
  
-@@ -1012,10 +1015,10 @@ rule link.dll ( targets * : sources * : properties * )
+@@ -1012,10 +1011,10 @@ rule link.dll ( targets * : sources * : properties * )
      quote-rpath $(targets) ;
  }
  
