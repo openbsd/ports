@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.373 2015/07/10 15:16:03 espie Exp $
+# $OpenBSD: Makefile,v 1.374 2015/07/10 19:02:31 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -307,6 +307,7 @@
      SUBDIR += sudo,gettext
      SUBDIR += sudo,gettext,ldap
      SUBDIR += swatch
+     SUBDIR += tclgpg
      SUBDIR += tcltls
      SUBDIR += tempwatch
      SUBDIR += tinyca
