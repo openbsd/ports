@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.724 2015/07/08 16:34:20 bluhm Exp $
+# $OpenBSD: Makefile,v 1.725 2015/07/10 17:17:42 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -384,6 +384,7 @@
      SUBDIR += pecl-ssh2
      SUBDIR += pecl-swish
      SUBDIR += pecl-uploadprogress
+     SUBDIR += pelican
      SUBDIR += perlbal
      SUBDIR += phantomjs
      SUBDIR += php-markdown
@@ -407,6 +408,7 @@
      SUBDIR += py-cherrypy2
      SUBDIR += py-clientform
      SUBDIR += py-django
+     SUBDIR += py-feedgenerator
      SUBDIR += py-flask
      SUBDIR += py-flask-login
      SUBDIR += py-flask-principal
