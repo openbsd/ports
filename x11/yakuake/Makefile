@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2015/06/27 11:40:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2015/07/10 16:38:50 ajacoutot Exp $
 
-PORTRAOCH=	limit:^2\.8
+PORTROACH=	limit:^2\.8
 
 COMMENT=	yet another kuake KDE terminal emulator
 
