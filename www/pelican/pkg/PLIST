@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/10 17:16:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/10 17:24:27 ajacoutot Exp $
 bin/pelican
 bin/pelican-import
 bin/pelican-quickstart
@@ -13,6 +13,8 @@ lib/python${MODPY_VERSION}/site-packages/pelican-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/pelican-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pelican/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pelican/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pelican/cache.py
+lib/python${MODPY_VERSION}/site-packages/pelican/cache.pyc
 lib/python${MODPY_VERSION}/site-packages/pelican/contents.py
 lib/python${MODPY_VERSION}/site-packages/pelican/contents.pyc
 lib/python${MODPY_VERSION}/site-packages/pelican/generators.py
@@ -40,6 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/pelican/tests/TestPages/hidden_page_wit
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/TestPages/page.rst
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/TestPages/page_markdown.md
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/TestPages/page_used_for_sorting_test.rst
+lib/python${MODPY_VERSION}/site-packages/pelican/tests/TestPages/page_with_category_and_tag_links.md
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/TestPages/page_with_template.rst
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/__init__.pyc
@@ -65,6 +68,8 @@ lib/python${MODPY_VERSION}/site-packages/pelican/tests/content/article_with_meta
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/content/article_with_mkd_extension.mkd
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/content/article_with_multiple_authors.html
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/content/article_with_multiple_authors.rst
+lib/python${MODPY_VERSION}/site-packages/pelican/tests/content/article_with_multiple_authors_list.rst
+lib/python${MODPY_VERSION}/site-packages/pelican/tests/content/article_with_multiple_authors_semicolon.rst
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/content/article_with_nonconformant_meta_tags.html
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/content/article_with_null_attributes.html
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/content/article_with_template.rst
@@ -358,6 +363,8 @@ lib/python${MODPY_VERSION}/site-packages/pelican/tests/output/custom_locale/them
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/output/custom_locale/theme/images/icons/youtube.png
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/support.py
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/support.pyc
+lib/python${MODPY_VERSION}/site-packages/pelican/tests/test_cache.py
+lib/python${MODPY_VERSION}/site-packages/pelican/tests/test_cache.pyc
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/test_contents.py
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/test_contents.pyc
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/test_generators.py
@@ -370,6 +377,8 @@ lib/python${MODPY_VERSION}/site-packages/pelican/tests/test_pelican.py
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/test_pelican.pyc
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/test_readers.py
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/test_readers.pyc
+lib/python${MODPY_VERSION}/site-packages/pelican/tests/test_rstdirectives.py
+lib/python${MODPY_VERSION}/site-packages/pelican/tests/test_rstdirectives.pyc
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/test_settings.py
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/test_settings.pyc
 lib/python${MODPY_VERSION}/site-packages/pelican/tests/test_utils.py

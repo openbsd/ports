@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/10 17:16:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/10 17:24:27 ajacoutot Exp $
 
 COMMENT =		static site generator written in Python
 
@@ -7,7 +7,7 @@ DISTNAME =		pelican-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =		getpelican
 GH_PROJECT =		pelican
-GH_TAGNAME =		3.5.0
+GH_TAGNAME =		3.6.0
 
 CATEGORIES =		www
 
