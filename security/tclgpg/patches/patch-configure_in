@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2015/07/10 19:00:41 czarkoff Exp $
+--- configure.in.orig	Wed Jul  8 13:33:35 2015
++++ configure.in	Wed Jul  8 13:33:07 2015
+@@ -41,6 +41,9 @@ echo "${BUILD_C_HELPER}"
+ 
+ AC_SUBST(BUILD_C_HELPER)
+ 
++AS_IF([test "$BUILD_C_HELPER" = yes], [BINARIES='$(lib_BINARIES)'], [BINARIES=''])
++AC_SUBST(BINARIES)
++
+ #--------------------------------------------------------------------
+ # Load the tclConfig.sh file
+ #--------------------------------------------------------------------

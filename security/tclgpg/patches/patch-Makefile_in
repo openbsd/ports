@@ -1,0 +1,44 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/07/10 19:00:41 czarkoff Exp $
+--- Makefile.in.orig	Tue Mar 24 21:04:10 2015
++++ Makefile.in	Fri Jul 10 15:40:44 2015
+@@ -61,12 +61,9 @@ PKG_LIB_FILE	= @PKG_LIB_FILE@
+ PKG_STUB_LIB_FILE = @PKG_STUB_LIB_FILE@
+ 
+ lib_BINARIES	= $(PKG_LIB_FILE)
+-ifeq (@BUILD_C_HELPER@, yes)
+-    BINARIES	= $(lib_BINARIES)
+-else
+-    BINARIES	=
+-endif
+ 
++BINARIES	= @BINARIES@
++
+ SHELL		= @SHELL@
+ 
+ srcdir		= @srcdir@
+@@ -191,10 +188,10 @@ libraries:
+ # end user machine when building from source.
+ #========================================================================
+ 
+-doc: doc/gpg.n doc/gpg.html
++doc: $(srcdir)/doc/gpg.n
+ 
+-doc/gpg.n: doc/gpg.man
+-	dtplite -o $@ nroff $<
++$(srcdir)/doc/gpg.n: doc/gpg.man
++	dtplite -o $@ nroff $> $^
+ 
+ doc/gpg.html: doc/gpg.man
+ 	dtplite -o $@ html $<
+@@ -230,7 +227,10 @@ install-doc: doc
+ 	    $(INSTALL_DATA) $$i $(DESTDIR)$(mandir)/mann ; \
+ 	done
+ 
+-test: binaries libraries
++tclgpg.tcl:
++	cp $(srcdir)/tclgpg.tcl tclgpg.tcl
++
++test: tclgpg.tcl binaries libraries
+ 	$(TCLSH) `@CYGPATH@ $(srcdir)/tclgpg.test` $(TESTFLAGS)
+ 
+ shell: binaries libraries

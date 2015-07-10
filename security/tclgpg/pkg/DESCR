@@ -1,0 +1,2 @@
+A Tcl interface to GNU Privacy Guard. This library was designed to
+replace TclGPGME, allowing the same functionality with any GPG version.

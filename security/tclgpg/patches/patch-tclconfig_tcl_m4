@@ -1,0 +1,12 @@
+$OpenBSD: patch-tclconfig_tcl_m4,v 1.1.1.1 2015/07/10 19:00:41 czarkoff Exp $
+--- tclconfig/tcl.m4.orig	Mon Jun  8 10:23:06 2015
++++ tclconfig/tcl.m4	Mon Jun  8 10:23:44 2015
+@@ -1700,7 +1700,7 @@ dnl AC_CHECK_TOOL(AR, ar)
+ 	    AS_IF([test $doRpath = yes], [
+ 		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'])
+ 	    LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
+-	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1.0'
++	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so'
+ 	    AC_CACHE_CHECK([for ELF], tcl_cv_ld_elf, [
+ 		AC_EGREP_CPP(yes, [
+ #ifdef __ELF__

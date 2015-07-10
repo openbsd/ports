@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/10 19:00:41 czarkoff Exp $
+lib/tcl/gpg/
+lib/tcl/gpg/libgpg10.so
+lib/tcl/gpg/pkgIndex.tcl
+lib/tcl/gpg/tclgpg.tcl
+@man man/mann/gpg.n
