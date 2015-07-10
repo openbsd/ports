@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2015/06/25 13:21:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2015/07/10 17:10:09 jasper Exp $
 
 COMMENT=			distributed data store
 DISTNAME=			riak-2.0.4
-REVISION=			4
+REVISION=			5
 CATEGORIES=			databases
 HOMEPAGE=			http://basho.com/
 

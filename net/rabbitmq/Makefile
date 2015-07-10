@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2015/06/24 06:50:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2015/07/10 17:10:09 jasper Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
 V =		3.4.2
-REVISION =	3
+REVISION =	4
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net

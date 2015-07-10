@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/25 13:17:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/07/10 17:10:09 jasper Exp $
 
 COMMENT=	Erlang library for building lightweight HTTP servers
 
@@ -9,7 +9,7 @@ GH_TAGNAME=	v$V
 DISTNAME=	${GH_PROJECT}-$V
 PKGNAME=	erl-${DISTNAME}
 CATEGORIES=	www
-REVISION=	2
+REVISION=	3
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes

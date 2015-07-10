@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/25 13:34:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/07/10 17:10:09 jasper Exp $
 
 COMMENT=	multi-protocol distributed load testing tool
 
 V=		1.5.1
 DISTNAME=	tsung-$V
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	benchmarks net
 

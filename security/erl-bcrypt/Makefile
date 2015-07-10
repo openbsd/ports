@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/06/25 13:17:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/07/10 17:10:09 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	Erlang wrapper for OpenBSD's blowfish #' emacs, relax.
 VERSION=	0.5.0.2
 DISTNAME=	erlang-bcrypt-${VERSION}
 PKGNAME=	erl-${DISTNAME:S/erlang-//}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	security
 
 HOMEPAGE=	https://github.com/opscode/bcrypt
