@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2015/06/12 09:50:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2015/07/10 17:30:29 dcoppa Exp $
 
 COMMENT =		minimalistic Mumble server
 
-V =			0.2.16
+V =			0.2.16a
 GH_ACCOUNT =		fatbob313
 GH_PROJECT =		umurmur
 GH_TAGNAME =		${V}

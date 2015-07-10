@@ -1,8 +1,29 @@
-$OpenBSD: patch-src_server_c,v 1.2 2015/06/12 09:50:42 dcoppa Exp $
---- src/server.c.orig	Tue Apr  7 12:01:12 2015
-+++ src/server.c	Fri Jun 12 11:05:38 2015
-@@ -103,8 +103,8 @@ struct sockaddr_storage** Server_setupAddressesAndPort
+$OpenBSD: patch-src_server_c,v 1.3 2015/07/10 17:30:30 dcoppa Exp $
+
+commit c2eec4582ad6f5f759d8b9a3c7f9bf78aa59f656
+Author: Felix Morgner <felix.morgner@gmail.com>
+Date:   Mon Jul 6 11:20:34 2015 +0200
+
+Fixed mutiple possible null-pointer derefences
+
+--- src/server.c.orig	Sat Jun 20 00:58:46 2015
++++ src/server.c	Fri Jul 10 19:04:32 2015
+@@ -95,15 +95,22 @@ void checkIPversions()
+ struct sockaddr_storage** Server_setupAddressesAndPorts()
+ {
+ 	struct sockaddr_storage** addresses = calloc(2, sizeof(void*));
++	if(!addresses)
++		Log_fatal("Not enough memory to allocate addresses");
+ 
+ 	struct sockaddr_storage* v4address = calloc(1, sizeof(struct sockaddr_storage));
+ 	v4address->ss_family = AF_INET;
++	if(!v4address)
++		Log_fatal("Not enough memory to allocate IPv4 address");
++
+ 	struct sockaddr_storage* v6address = calloc(1, sizeof(struct sockaddr_storage));
  	v6address->ss_family = AF_INET6;
++	if(!v4address)
++		Log_fatal("Not enough memory to allocate IPv6 address");
  
  #if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__APPLE__)
 -	v4address->ss_len = sizeof(struct sockaddr_storage);
