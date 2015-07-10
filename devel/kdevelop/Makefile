@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/28 10:17:23 pascal Exp $
+# $OpenBSD: Makefile,v 1.6 2015/07/10 18:28:14 zhuk Exp $
 
 CATEGORIES =	devel x11
 COMMENT =	integrated development environment for KDE 4
-KDEV_V =	4.6.0
-KDEVPLAT_V =	1.6.0
+KDEV_V =	4.7.1
+KDEVPLAT_V =	1.7.1
 DISTNAME =	kdevelop-${KDEV_V}
 HOMEPAGE =	http://www.kdevelop.org/
-REVISION =	2
 
-SHARED_LIBS =	kdev4cmakecommon	0.0
-SHARED_LIBS +=	kdev4cppduchain		0.0
-SHARED_LIBS +=	kdev4cppparser		0.0
-SHARED_LIBS +=	kdev4cpprpp		0.0
+SHARED_LIBS =	kdev4cmakecommon	1.0
+SHARED_LIBS +=	kdev4cppduchain		1.0
+SHARED_LIBS +=	kdev4cppparser		1.0
+SHARED_LIBS +=	kdev4cpprpp		1.0
+SHARED_LIBS +=	kdevcompilerprovider	0.0
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${KDEV_V}/src/}
 DIST_SUBDIR =	kde
@@ -58,7 +58,6 @@ LIB_DEPENDS = 	devel/kdevplatform>=${KDEVPLAT_V} \
 pre-build:
 	@${MODCMAKE_BUILD_TARGET:S,^${ALL_TARGET}$,languages/cpp/ui_custom_include_paths.h,}
 
-# XXX Should those go under ${PREFIX}/lib/?
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/apps/kdevgdb/printers
 

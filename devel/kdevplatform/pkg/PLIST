@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/07/02 22:14:46 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/07/10 18:28:14 zhuk Exp $
 @bin bin/kdev_dbus_socket_transformer
 bin/kdev_format_source
 bin/kdevplatform_shell_environment.sh
 include/kde4/kdevplatform/
+include/kde4/kdevplatform/config-kdevplatform.h
 include/kde4/kdevplatform/debugger/
 include/kde4/kdevplatform/debugger/breakpoint/
 include/kde4/kdevplatform/debugger/breakpoint/breakpoint.h
@@ -80,6 +81,11 @@ include/kde4/kdevplatform/interfaces/launchconfigurationpage.h
 include/kde4/kdevplatform/interfaces/launchconfigurationtype.h
 include/kde4/kdevplatform/kdevplatformversion.h
 include/kde4/kdevplatform/language/
+include/kde4/kdevplatform/language/assistant/
+include/kde4/kdevplatform/language/assistant/renameaction.h
+include/kde4/kdevplatform/language/assistant/renameassistant.h
+include/kde4/kdevplatform/language/assistant/staticassistant.h
+include/kde4/kdevplatform/language/assistant/staticassistantsmanager.h
 include/kde4/kdevplatform/language/backgroundparser/
 include/kde4/kdevplatform/language/backgroundparser/backgroundparser.h
 include/kde4/kdevplatform/language/backgroundparser/documentchangetracker.h
@@ -105,6 +111,7 @@ include/kde4/kdevplatform/language/codecompletion/normaldeclarationcompletionite
 include/kde4/kdevplatform/language/codegen/
 include/kde4/kdevplatform/language/codegen/applychangeswidget.h
 include/kde4/kdevplatform/language/codegen/astchangeset.h
+include/kde4/kdevplatform/language/codegen/basicrefactoring.h
 include/kde4/kdevplatform/language/codegen/codedescription.h
 include/kde4/kdevplatform/language/codegen/coderepresentation.h
 include/kde4/kdevplatform/language/codegen/documentchangeset.h
@@ -124,6 +131,7 @@ include/kde4/kdevplatform/language/duchain/builders/abstractcontextbuilder.h
 include/kde4/kdevplatform/language/duchain/builders/abstractdeclarationbuilder.h
 include/kde4/kdevplatform/language/duchain/builders/abstracttypebuilder.h
 include/kde4/kdevplatform/language/duchain/builders/abstractusebuilder.h
+include/kde4/kdevplatform/language/duchain/builders/dynamiclanguageexpressionvisitor.h
 include/kde4/kdevplatform/language/duchain/classdeclaration.h
 include/kde4/kdevplatform/language/duchain/classfunctiondeclaration.h
 include/kde4/kdevplatform/language/duchain/classmemberdeclaration.h
@@ -136,7 +144,6 @@ include/kde4/kdevplatform/language/duchain/definitions.h
 include/kde4/kdevplatform/language/duchain/duchain.h
 include/kde4/kdevplatform/language/duchain/duchainbase.h
 include/kde4/kdevplatform/language/duchain/duchainlock.h
-include/kde4/kdevplatform/language/duchain/duchainobserver.h
 include/kde4/kdevplatform/language/duchain/duchainpointer.h
 include/kde4/kdevplatform/language/duchain/duchainregister.h
 include/kde4/kdevplatform/language/duchain/duchainutils.h
@@ -168,6 +175,7 @@ include/kde4/kdevplatform/language/duchain/navigation/useswidget.h
 include/kde4/kdevplatform/language/duchain/parsingenvironment.h
 include/kde4/kdevplatform/language/duchain/persistentsetmap.h
 include/kde4/kdevplatform/language/duchain/persistentsymboltable.h
+include/kde4/kdevplatform/language/duchain/problem.h
 include/kde4/kdevplatform/language/duchain/referencecounting.h
 include/kde4/kdevplatform/language/duchain/repositories/
 include/kde4/kdevplatform/language/duchain/repositories/abstractitemrepository.h
@@ -187,6 +195,7 @@ include/kde4/kdevplatform/language/duchain/types/abstracttype.h
 include/kde4/kdevplatform/language/duchain/types/alltypes.h
 include/kde4/kdevplatform/language/duchain/types/arraytype.h
 include/kde4/kdevplatform/language/duchain/types/constantintegraltype.h
+include/kde4/kdevplatform/language/duchain/types/containertypes.h
 include/kde4/kdevplatform/language/duchain/types/delayedtype.h
 include/kde4/kdevplatform/language/duchain/types/enumerationtype.h
 include/kde4/kdevplatform/language/duchain/types/enumeratortype.h
@@ -220,14 +229,15 @@ include/kde4/kdevplatform/language/highlighting/codehighlighting.h
 include/kde4/kdevplatform/language/highlighting/colorcache.h
 include/kde4/kdevplatform/language/highlighting/configurablecolors.h
 include/kde4/kdevplatform/language/interfaces/
+include/kde4/kdevplatform/language/interfaces/abbreviations.h
 include/kde4/kdevplatform/language/interfaces/codecontext.h
 include/kde4/kdevplatform/language/interfaces/editorcontext.h
 include/kde4/kdevplatform/language/interfaces/iastcontainer.h
 include/kde4/kdevplatform/language/interfaces/icodehighlighting.h
 include/kde4/kdevplatform/language/interfaces/icontextbrowser.h
 include/kde4/kdevplatform/language/interfaces/icreateclasshelper.h
+include/kde4/kdevplatform/language/interfaces/idefinesandincludesmanager.h
 include/kde4/kdevplatform/language/interfaces/ilanguagesupport.h
-include/kde4/kdevplatform/language/interfaces/iproblem.h
 include/kde4/kdevplatform/language/interfaces/iquickopen.h
 include/kde4/kdevplatform/language/interfaces/quickopendataprovider.h
 include/kde4/kdevplatform/language/interfaces/quickopenfilter.h
@@ -328,6 +338,7 @@ include/kde4/kdevplatform/tests/testplugincontroller.h
 include/kde4/kdevplatform/tests/testproject.h
 include/kde4/kdevplatform/util/
 include/kde4/kdevplatform/util/activetooltip.h
+include/kde4/kdevplatform/util/autoorientedsplitter.h
 include/kde4/kdevplatform/util/commandexecutor.h
 include/kde4/kdevplatform/util/convenientfreelist.h
 include/kde4/kdevplatform/util/embeddedfreetree.h
@@ -342,11 +353,12 @@ include/kde4/kdevplatform/util/kdevstringhandler.h
 include/kde4/kdevplatform/util/kdevvarlengtharray.h
 include/kde4/kdevplatform/util/ksharedobject.h
 include/kde4/kdevplatform/util/multilevellistview.h
+include/kde4/kdevplatform/util/path.h
+include/kde4/kdevplatform/util/placeholderitemproxymodel.h
 include/kde4/kdevplatform/util/processlinemaker.h
 include/kde4/kdevplatform/util/projecttestjob.h
 include/kde4/kdevplatform/util/pushvalue.h
 include/kde4/kdevplatform/util/richtextpushbutton.h
-include/kde4/kdevplatform/util/richtexttoolbutton.h
 include/kde4/kdevplatform/util/sequentiallyrunjobs.h
 include/kde4/kdevplatform/util/spinlock.h
 include/kde4/kdevplatform/util/utilexport.h
@@ -355,6 +367,8 @@ include/kde4/kdevplatform/vcs/dvcs/
 include/kde4/kdevplatform/vcs/dvcs/dvcsevent.h
 include/kde4/kdevplatform/vcs/dvcs/dvcsjob.h
 include/kde4/kdevplatform/vcs/dvcs/dvcsplugin.h
+include/kde4/kdevplatform/vcs/dvcs/ui/
+include/kde4/kdevplatform/vcs/dvcs/ui/dvcsimportmetadatawidget.h
 include/kde4/kdevplatform/vcs/interfaces/
 include/kde4/kdevplatform/vcs/interfaces/ibasicversioncontrol.h
 include/kde4/kdevplatform/vcs/interfaces/ibranchingversioncontrol.h
@@ -379,7 +393,6 @@ include/kde4/kdevplatform/vcs/vcsrevision.h
 include/kde4/kdevplatform/vcs/vcsstatusinfo.h
 include/kde4/kdevplatform/vcs/widgets/
 include/kde4/kdevplatform/vcs/widgets/standardvcslocationwidget.h
-include/kde4/kdevplatform/vcs/widgets/vcsannotationwidget.h
 include/kde4/kdevplatform/vcs/widgets/vcscommitdialog.h
 include/kde4/kdevplatform/vcs/widgets/vcsdiffwidget.h
 include/kde4/kdevplatform/vcs/widgets/vcseventwidget.h
@@ -391,6 +404,9 @@ lib/cmake/kdevplatform/KDevPlatformConfigVersion.cmake
 lib/cmake/kdevplatform/KDevPlatformMacros.cmake
 lib/cmake/kdevplatform/KDevPlatformTargets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/kdevplatform/KDevPlatformTargets.cmake
+lib/kde4/imports/org/kde/kdevplatform/
+lib/kde4/imports/org/kde/kdevplatform/libkdevelopdashboarddeclarativeplugin.so
+lib/kde4/imports/org/kde/kdevplatform/qmldir
 lib/kde4/kcm_kdev_bgsettings.so
 lib/kde4/kcm_kdev_ccsettings.so
 lib/kde4/kcm_kdev_envsettings.so
@@ -400,6 +416,7 @@ lib/kde4/kcm_kdev_uisettings.so
 lib/kde4/kcm_kdevprojectfilter.so
 lib/kde4/kcm_kdevsourceformattersettings.so
 lib/kde4/kdevappwizard.so
+lib/kde4/kdevbazaar.so
 lib/kde4/kdevclassbrowser.so
 lib/kde4/kdevcodeutils.so
 lib/kde4/kdevcontextbrowser.so
@@ -419,6 +436,7 @@ lib/kde4/kdevopenwith.so
 lib/kde4/kdevpastebin.so
 lib/kde4/kdevpatchreview.so
 lib/kde4/kdevproblemreporter.so
+lib/kde4/kdevprojectdashboard.so
 lib/kde4/kdevprojectfilter.so
 lib/kde4/kdevprojectmanagerview.so
 lib/kde4/kdevquickopen.so
@@ -430,6 +448,7 @@ lib/kde4/kdevswitchtobuddy.so
 lib/kde4/kdevtemplatemanager_config.so
 lib/kde4/kdevtestview.so
 lib/kde4/kdevvcschangesviewplugin.so
+lib/kde4/plasma_kdev_projectfileelement.so
 lib/kde4/plugins/grantlee/
 lib/kde4/plugins/grantlee/0.5/
 lib/kde4/plugins/grantlee/0.5/kdev_filters.so
@@ -485,6 +504,9 @@ share/apps/kdevdocumentswitcher/
 share/apps/kdevdocumentswitcher/kdevdocumentswitcher.rc
 share/apps/kdevdocumentview/
 share/apps/kdevdocumentview/kdevdocumentview.rc
+share/apps/kdevelop/
+share/apps/kdevelop/AssistantButton.qml
+share/apps/kdevelop/assistantpopup.qml
 share/apps/kdevexternalscript/
 share/apps/kdevexternalscript/kdevexternalscript.rc
 share/apps/kdevfilemanager/
@@ -511,8 +533,15 @@ share/apps/kdevstandardoutputview/
 share/apps/kdevstandardoutputview/kdevstandardoutputview.rc
 share/apps/kdevtestview/
 share/apps/kdevtestview/kdevtestview.rc
+share/apps/plasma/plasmoids/
+share/apps/plasma/plasmoids/org.kdevelop.branches/
+share/apps/plasma/plasmoids/org.kdevelop.branches/contents/
+share/apps/plasma/plasmoids/org.kdevelop.branches/contents/qml/
+share/apps/plasma/plasmoids/org.kdevelop.branches/contents/qml/main.qml
+share/apps/plasma/plasmoids/org.kdevelop.branches/metadata.desktop
 share/config/kdevappwizard.knsrc
 share/config/kdevfiletemplates.knsrc
+share/icons/hicolor/128x128/apps/bazaar.png
 share/icons/hicolor/128x128/apps/reviewboard.png
 share/icons/hicolor/16x16/apps/git.png
 share/icons/hicolor/16x16/apps/reviewboard.png
@@ -531,13 +560,16 @@ share/kde4/services/kcm_kdev_projectsettings.desktop
 share/kde4/services/kcm_kdev_uisettings.desktop
 share/kde4/services/kcm_kdevprojectfilter.desktop
 share/kde4/services/kcm_kdevsourceformattersettings.desktop
+share/kde4/services/kdev-dash-projectfileelement.desktop
 share/kde4/services/kdevappwizard.desktop
+share/kde4/services/kdevbazaar.desktop
 share/kde4/services/kdevclassbrowser.desktop
 share/kde4/services/kdevcodeutils.desktop
 share/kde4/services/kdevcontextbrowser.desktop
 share/kde4/services/kdevcvs.desktop
 share/kde4/services/kdevdocumentswitcher.desktop
 share/kde4/services/kdevdocumentview.desktop
+share/kde4/services/kdevelop-dashboard-branches.desktop
 share/kde4/services/kdevexecute.desktop
 share/kde4/services/kdevexecutescript.desktop
 share/kde4/services/kdevexternalscript.desktop
@@ -551,6 +583,7 @@ share/kde4/services/kdevopenwith.desktop
 share/kde4/services/kdevpastebin.desktop
 share/kde4/services/kdevpatchreview.desktop
 share/kde4/services/kdevproblemreporter.desktop
+share/kde4/services/kdevprojectdashboard.desktop
 share/kde4/services/kdevprojectfilter.desktop
 share/kde4/services/kdevprojectmanagerview.desktop
 share/kde4/services/kdevquickopen.desktop
@@ -616,6 +649,7 @@ share/locale/ca/LC_MESSAGES/kdevpastebin.mo
 share/locale/ca/LC_MESSAGES/kdevpatchreview.mo
 share/locale/ca/LC_MESSAGES/kdevplatform.mo
 share/locale/ca/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/ca/LC_MESSAGES/kdevprojectdashboard.mo
 share/locale/ca/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/ca/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/ca/LC_MESSAGES/kdevquickopen.mo
@@ -680,6 +714,7 @@ share/locale/da/LC_MESSAGES/kdevpastebin.mo
 share/locale/da/LC_MESSAGES/kdevpatchreview.mo
 share/locale/da/LC_MESSAGES/kdevplatform.mo
 share/locale/da/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/da/LC_MESSAGES/kdevprojectdashboard.mo
 share/locale/da/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/da/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/da/LC_MESSAGES/kdevquickopen.mo
@@ -712,6 +747,7 @@ share/locale/de/LC_MESSAGES/kdevpastebin.mo
 share/locale/de/LC_MESSAGES/kdevpatchreview.mo
 share/locale/de/LC_MESSAGES/kdevplatform.mo
 share/locale/de/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/de/LC_MESSAGES/kdevprojectdashboard.mo
 share/locale/de/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/de/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/de/LC_MESSAGES/kdevquickopen.mo
@@ -753,6 +789,39 @@ share/locale/el/LC_MESSAGES/kdevswitchtobuddy.mo
 share/locale/el/LC_MESSAGES/kdevtemplates_config.mo
 share/locale/el/LC_MESSAGES/kdevtestview.mo
 share/locale/el/LC_MESSAGES/kdevvcsprojectintegration.mo
+share/locale/en_GB/LC_MESSAGES/kdevappwizard.mo
+share/locale/en_GB/LC_MESSAGES/kdevclassbrowser.mo
+share/locale/en_GB/LC_MESSAGES/kdevcodeutils.mo
+share/locale/en_GB/LC_MESSAGES/kdevcontextbrowser.mo
+share/locale/en_GB/LC_MESSAGES/kdevcvs.mo
+share/locale/en_GB/LC_MESSAGES/kdevdocumentswitcher.mo
+share/locale/en_GB/LC_MESSAGES/kdevdocumentview.mo
+share/locale/en_GB/LC_MESSAGES/kdevexecute.mo
+share/locale/en_GB/LC_MESSAGES/kdevexecutescript.mo
+share/locale/en_GB/LC_MESSAGES/kdevexternalscript.mo
+share/locale/en_GB/LC_MESSAGES/kdevfilemanager.mo
+share/locale/en_GB/LC_MESSAGES/kdevfiletemplates.mo
+share/locale/en_GB/LC_MESSAGES/kdevgenericprojectmanager.mo
+share/locale/en_GB/LC_MESSAGES/kdevgit.mo
+share/locale/en_GB/LC_MESSAGES/kdevgrepview.mo
+share/locale/en_GB/LC_MESSAGES/kdevkonsole.mo
+share/locale/en_GB/LC_MESSAGES/kdevopenwith.mo
+share/locale/en_GB/LC_MESSAGES/kdevpastebin.mo
+share/locale/en_GB/LC_MESSAGES/kdevpatchreview.mo
+share/locale/en_GB/LC_MESSAGES/kdevplatform.mo
+share/locale/en_GB/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/en_GB/LC_MESSAGES/kdevprojectdashboard.mo
+share/locale/en_GB/LC_MESSAGES/kdevprojectfilter.mo
+share/locale/en_GB/LC_MESSAGES/kdevprojectmanagerview.mo
+share/locale/en_GB/LC_MESSAGES/kdevquickopen.mo
+share/locale/en_GB/LC_MESSAGES/kdevreviewboard.mo
+share/locale/en_GB/LC_MESSAGES/kdevsnippet.mo
+share/locale/en_GB/LC_MESSAGES/kdevstandardoutputview.mo
+share/locale/en_GB/LC_MESSAGES/kdevsubversion.mo
+share/locale/en_GB/LC_MESSAGES/kdevswitchtobuddy.mo
+share/locale/en_GB/LC_MESSAGES/kdevtemplates_config.mo
+share/locale/en_GB/LC_MESSAGES/kdevtestview.mo
+share/locale/en_GB/LC_MESSAGES/kdevvcsprojectintegration.mo
 share/locale/es/LC_MESSAGES/kdevappwizard.mo
 share/locale/es/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/es/LC_MESSAGES/kdevcodeutils.mo
@@ -774,6 +843,7 @@ share/locale/es/LC_MESSAGES/kdevpastebin.mo
 share/locale/es/LC_MESSAGES/kdevpatchreview.mo
 share/locale/es/LC_MESSAGES/kdevplatform.mo
 share/locale/es/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/es/LC_MESSAGES/kdevprojectdashboard.mo
 share/locale/es/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/es/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/es/LC_MESSAGES/kdevquickopen.mo
@@ -796,6 +866,7 @@ share/locale/et/LC_MESSAGES/kdevexecute.mo
 share/locale/et/LC_MESSAGES/kdevexecutescript.mo
 share/locale/et/LC_MESSAGES/kdevexternalscript.mo
 share/locale/et/LC_MESSAGES/kdevfilemanager.mo
+share/locale/et/LC_MESSAGES/kdevfiletemplates.mo
 share/locale/et/LC_MESSAGES/kdevgenericprojectmanager.mo
 share/locale/et/LC_MESSAGES/kdevgit.mo
 share/locale/et/LC_MESSAGES/kdevgrepview.mo
@@ -805,6 +876,8 @@ share/locale/et/LC_MESSAGES/kdevpastebin.mo
 share/locale/et/LC_MESSAGES/kdevpatchreview.mo
 share/locale/et/LC_MESSAGES/kdevplatform.mo
 share/locale/et/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/et/LC_MESSAGES/kdevprojectdashboard.mo
+share/locale/et/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/et/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/et/LC_MESSAGES/kdevquickopen.mo
 share/locale/et/LC_MESSAGES/kdevreviewboard.mo
@@ -812,6 +885,8 @@ share/locale/et/LC_MESSAGES/kdevsnippet.mo
 share/locale/et/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/et/LC_MESSAGES/kdevsubversion.mo
 share/locale/et/LC_MESSAGES/kdevswitchtobuddy.mo
+share/locale/et/LC_MESSAGES/kdevtemplates_config.mo
+share/locale/et/LC_MESSAGES/kdevtestview.mo
 share/locale/et/LC_MESSAGES/kdevvcsprojectintegration.mo
 share/locale/fi/LC_MESSAGES/kdevappwizard.mo
 share/locale/fi/LC_MESSAGES/kdevclassbrowser.mo
@@ -834,6 +909,7 @@ share/locale/fi/LC_MESSAGES/kdevpastebin.mo
 share/locale/fi/LC_MESSAGES/kdevpatchreview.mo
 share/locale/fi/LC_MESSAGES/kdevplatform.mo
 share/locale/fi/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/fi/LC_MESSAGES/kdevprojectdashboard.mo
 share/locale/fi/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/fi/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/fi/LC_MESSAGES/kdevquickopen.mo
@@ -866,6 +942,7 @@ share/locale/fr/LC_MESSAGES/kdevpastebin.mo
 share/locale/fr/LC_MESSAGES/kdevpatchreview.mo
 share/locale/fr/LC_MESSAGES/kdevplatform.mo
 share/locale/fr/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/fr/LC_MESSAGES/kdevprojectdashboard.mo
 share/locale/fr/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/fr/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/fr/LC_MESSAGES/kdevquickopen.mo
@@ -930,6 +1007,7 @@ share/locale/it/LC_MESSAGES/kdevpastebin.mo
 share/locale/it/LC_MESSAGES/kdevpatchreview.mo
 share/locale/it/LC_MESSAGES/kdevplatform.mo
 share/locale/it/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/it/LC_MESSAGES/kdevprojectdashboard.mo
 share/locale/it/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/it/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/it/LC_MESSAGES/kdevquickopen.mo
@@ -993,6 +1071,7 @@ share/locale/nb/LC_MESSAGES/kdevpastebin.mo
 share/locale/nb/LC_MESSAGES/kdevpatchreview.mo
 share/locale/nb/LC_MESSAGES/kdevplatform.mo
 share/locale/nb/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/nb/LC_MESSAGES/kdevprojectdashboard.mo
 share/locale/nb/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/nb/LC_MESSAGES/kdevquickopen.mo
 share/locale/nb/LC_MESSAGES/kdevreviewboard.mo
@@ -1021,6 +1100,7 @@ share/locale/nl/LC_MESSAGES/kdevpastebin.mo
 share/locale/nl/LC_MESSAGES/kdevpatchreview.mo
 share/locale/nl/LC_MESSAGES/kdevplatform.mo
 share/locale/nl/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/nl/LC_MESSAGES/kdevprojectdashboard.mo
 share/locale/nl/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/nl/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/nl/LC_MESSAGES/kdevquickopen.mo
@@ -1053,6 +1133,8 @@ share/locale/pl/LC_MESSAGES/kdevpastebin.mo
 share/locale/pl/LC_MESSAGES/kdevpatchreview.mo
 share/locale/pl/LC_MESSAGES/kdevplatform.mo
 share/locale/pl/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/pl/LC_MESSAGES/kdevprojectdashboard.mo
+share/locale/pl/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/pl/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/pl/LC_MESSAGES/kdevquickopen.mo
 share/locale/pl/LC_MESSAGES/kdevreviewboard.mo
@@ -1084,6 +1166,7 @@ share/locale/pt/LC_MESSAGES/kdevpastebin.mo
 share/locale/pt/LC_MESSAGES/kdevpatchreview.mo
 share/locale/pt/LC_MESSAGES/kdevplatform.mo
 share/locale/pt/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/pt/LC_MESSAGES/kdevprojectdashboard.mo
 share/locale/pt/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/pt/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/pt/LC_MESSAGES/kdevquickopen.mo
@@ -1116,6 +1199,7 @@ share/locale/pt_BR/LC_MESSAGES/kdevpastebin.mo
 share/locale/pt_BR/LC_MESSAGES/kdevpatchreview.mo
 share/locale/pt_BR/LC_MESSAGES/kdevplatform.mo
 share/locale/pt_BR/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/pt_BR/LC_MESSAGES/kdevprojectdashboard.mo
 share/locale/pt_BR/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/pt_BR/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/pt_BR/LC_MESSAGES/kdevquickopen.mo
@@ -1179,6 +1263,7 @@ share/locale/sk/LC_MESSAGES/kdevpastebin.mo
 share/locale/sk/LC_MESSAGES/kdevpatchreview.mo
 share/locale/sk/LC_MESSAGES/kdevplatform.mo
 share/locale/sk/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/sk/LC_MESSAGES/kdevprojectdashboard.mo
 share/locale/sk/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/sk/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/sk/LC_MESSAGES/kdevquickopen.mo
@@ -1211,6 +1296,7 @@ share/locale/sl/LC_MESSAGES/kdevpastebin.mo
 share/locale/sl/LC_MESSAGES/kdevpatchreview.mo
 share/locale/sl/LC_MESSAGES/kdevplatform.mo
 share/locale/sl/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/sl/LC_MESSAGES/kdevprojectdashboard.mo
 share/locale/sl/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/sl/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/sl/LC_MESSAGES/kdevquickopen.mo
@@ -1243,6 +1329,7 @@ share/locale/sv/LC_MESSAGES/kdevpastebin.mo
 share/locale/sv/LC_MESSAGES/kdevpatchreview.mo
 share/locale/sv/LC_MESSAGES/kdevplatform.mo
 share/locale/sv/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/sv/LC_MESSAGES/kdevprojectdashboard.mo
 share/locale/sv/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/sv/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/sv/LC_MESSAGES/kdevquickopen.mo
@@ -1258,6 +1345,39 @@ share/locale/th/LC_MESSAGES/kdevappwizard.mo
 share/locale/th/LC_MESSAGES/kdevgenericprojectmanager.mo
 share/locale/th/LC_MESSAGES/kdevkonsole.mo
 share/locale/th/LC_MESSAGES/kdevstandardoutputview.mo
+share/locale/tr/LC_MESSAGES/kdevappwizard.mo
+share/locale/tr/LC_MESSAGES/kdevclassbrowser.mo
+share/locale/tr/LC_MESSAGES/kdevcodeutils.mo
+share/locale/tr/LC_MESSAGES/kdevcontextbrowser.mo
+share/locale/tr/LC_MESSAGES/kdevcvs.mo
+share/locale/tr/LC_MESSAGES/kdevdocumentswitcher.mo
+share/locale/tr/LC_MESSAGES/kdevdocumentview.mo
+share/locale/tr/LC_MESSAGES/kdevexecute.mo
+share/locale/tr/LC_MESSAGES/kdevexecutescript.mo
+share/locale/tr/LC_MESSAGES/kdevexternalscript.mo
+share/locale/tr/LC_MESSAGES/kdevfilemanager.mo
+share/locale/tr/LC_MESSAGES/kdevfiletemplates.mo
+share/locale/tr/LC_MESSAGES/kdevgenericprojectmanager.mo
+share/locale/tr/LC_MESSAGES/kdevgit.mo
+share/locale/tr/LC_MESSAGES/kdevgrepview.mo
+share/locale/tr/LC_MESSAGES/kdevkonsole.mo
+share/locale/tr/LC_MESSAGES/kdevopenwith.mo
+share/locale/tr/LC_MESSAGES/kdevpastebin.mo
+share/locale/tr/LC_MESSAGES/kdevpatchreview.mo
+share/locale/tr/LC_MESSAGES/kdevplatform.mo
+share/locale/tr/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/tr/LC_MESSAGES/kdevprojectdashboard.mo
+share/locale/tr/LC_MESSAGES/kdevprojectfilter.mo
+share/locale/tr/LC_MESSAGES/kdevprojectmanagerview.mo
+share/locale/tr/LC_MESSAGES/kdevquickopen.mo
+share/locale/tr/LC_MESSAGES/kdevreviewboard.mo
+share/locale/tr/LC_MESSAGES/kdevsnippet.mo
+share/locale/tr/LC_MESSAGES/kdevstandardoutputview.mo
+share/locale/tr/LC_MESSAGES/kdevsubversion.mo
+share/locale/tr/LC_MESSAGES/kdevswitchtobuddy.mo
+share/locale/tr/LC_MESSAGES/kdevtemplates_config.mo
+share/locale/tr/LC_MESSAGES/kdevtestview.mo
+share/locale/tr/LC_MESSAGES/kdevvcsprojectintegration.mo
 share/locale/uk/LC_MESSAGES/kdevappwizard.mo
 share/locale/uk/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/uk/LC_MESSAGES/kdevcodeutils.mo
@@ -1279,6 +1399,7 @@ share/locale/uk/LC_MESSAGES/kdevpastebin.mo
 share/locale/uk/LC_MESSAGES/kdevpatchreview.mo
 share/locale/uk/LC_MESSAGES/kdevplatform.mo
 share/locale/uk/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/uk/LC_MESSAGES/kdevprojectdashboard.mo
 share/locale/uk/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/uk/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/uk/LC_MESSAGES/kdevquickopen.mo
@@ -1301,6 +1422,7 @@ share/locale/zh_CN/LC_MESSAGES/kdevexecute.mo
 share/locale/zh_CN/LC_MESSAGES/kdevexecutescript.mo
 share/locale/zh_CN/LC_MESSAGES/kdevexternalscript.mo
 share/locale/zh_CN/LC_MESSAGES/kdevfilemanager.mo
+share/locale/zh_CN/LC_MESSAGES/kdevfiletemplates.mo
 share/locale/zh_CN/LC_MESSAGES/kdevgenericprojectmanager.mo
 share/locale/zh_CN/LC_MESSAGES/kdevgit.mo
 share/locale/zh_CN/LC_MESSAGES/kdevgrepview.mo
@@ -1310,6 +1432,8 @@ share/locale/zh_CN/LC_MESSAGES/kdevpastebin.mo
 share/locale/zh_CN/LC_MESSAGES/kdevpatchreview.mo
 share/locale/zh_CN/LC_MESSAGES/kdevplatform.mo
 share/locale/zh_CN/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/zh_CN/LC_MESSAGES/kdevprojectdashboard.mo
+share/locale/zh_CN/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/zh_CN/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/zh_CN/LC_MESSAGES/kdevquickopen.mo
 share/locale/zh_CN/LC_MESSAGES/kdevreviewboard.mo
@@ -1317,6 +1441,8 @@ share/locale/zh_CN/LC_MESSAGES/kdevsnippet.mo
 share/locale/zh_CN/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/zh_CN/LC_MESSAGES/kdevsubversion.mo
 share/locale/zh_CN/LC_MESSAGES/kdevswitchtobuddy.mo
+share/locale/zh_CN/LC_MESSAGES/kdevtemplates_config.mo
+share/locale/zh_CN/LC_MESSAGES/kdevtestview.mo
 share/locale/zh_CN/LC_MESSAGES/kdevvcsprojectintegration.mo
 share/locale/zh_TW/LC_MESSAGES/kdevappwizard.mo
 share/locale/zh_TW/LC_MESSAGES/kdevclassbrowser.mo

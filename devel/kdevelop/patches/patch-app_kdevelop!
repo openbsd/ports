@@ -1,26 +1,25 @@
-$OpenBSD: patch-app_kdevelop!,v 1.1.1.1 2014/07/09 11:30:28 zhuk Exp $
-Make it more portable and error-prone.
---- app/kdevelop!.orig	Sat Dec  7 22:51:45 2013
-+++ app/kdevelop!	Tue Jan 21 21:02:30 2014
+$OpenBSD: patch-app_kdevelop!,v 1.2 2015/07/10 18:28:14 zhuk Exp $
+Make it more portable and less error-prone.
+--- app/kdevelop!.orig	Mon Feb  2 17:19:46 2015
++++ app/kdevelop!	Fri Jul  3 03:51:15 2015
 @@ -18,17 +18,14 @@
  # the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  # Boston, MA 02110-1301, USA.
  
 -export KDEV_BASEDIR=$(dirname $0)
-+export KDEV_BASEDIR=$(dirname "$0")
++export KDEV_BASEDIR=${0%/*}
  export APPLICATION=KDevelop
  
  if ! [ "$KDEV_ATTACHED_PID" ]; then
 -    ARGS=""
--    if ! [ "$@" ]; then
+     if [ $# -eq 0 ]; then
 -        ARGS="-pss"
 -    else
 -        ARGS="$@"
-+    if [ $# -eq 0 ]; then
 +        set -- -pss
      fi
 -    export KDEV_ATTACHED_PID=$($KDEV_BASEDIR/kdevelop $ARGS --pid)
-+    export KDEV_ATTACHED_PID=$("$KDEV_BASEDIR"/kdevelop "$@" --pid)
++    export KDEV_ATTACHED_PID=$($KDEV_BASEDIR/kdevelop "$@" --pid)
  fi
  
  if ! [ "$KDEV_ATTACHED_PID" ]; then

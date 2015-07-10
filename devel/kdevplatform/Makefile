@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.4 2015/07/02 22:14:46 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2015/07/10 18:28:14 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	IDE creation toolkit for KDE 4
-KDEV_V =	4.6.0
-KDEVPLAT_V =	1.6.0
+KDEV_V =	4.7.1
+KDEVPLAT_V =	1.7.1
 DISTNAME =	kdevplatform-${KDEVPLAT_V}
 HOMEPAGE =	http://www.kdevelop.org/
-REVISION =	2
 
-SHARED_LIBS =	kdevplatformdebugger		0.0 # 3.0
-SHARED_LIBS +=	kdevplatformdocumentation	0.0 # 3.0
-SHARED_LIBS +=	kdevplatforminterfaces		0.0 # 3.0
-SHARED_LIBS +=	kdevplatformjsontests		0.0 # 7.0
-SHARED_LIBS +=	kdevplatformlanguage		0.0 # 3.0
-SHARED_LIBS +=	kdevplatformoutputview		0.0 # 3.0
-SHARED_LIBS +=	kdevplatformproject		0.0 # 3.0
-SHARED_LIBS +=	kdevplatformshell		0.0 # 3.0
-SHARED_LIBS +=	kdevplatformtests		0.0 # 3.0
-SHARED_LIBS +=	kdevplatformutil		0.0 # 3.0
-SHARED_LIBS +=	kdevplatformvcs			0.0 # 3.0
-SHARED_LIBS +=	sublime				0.0 # 3.0
+SHARED_LIBS =	kdevplatformdebugger		0.1 # 3.0
+SHARED_LIBS +=	kdevplatformdocumentation	0.1 # 3.0
+SHARED_LIBS +=	kdevplatforminterfaces		0.1 # 3.0
+SHARED_LIBS +=	kdevplatformjsontests		0.1 # 7.0
+SHARED_LIBS +=	kdevplatformlanguage		0.1 # 3.0
+SHARED_LIBS +=	kdevplatformoutputview		0.1 # 3.0
+SHARED_LIBS +=	kdevplatformproject		0.1 # 3.0
+SHARED_LIBS +=	kdevplatformshell		0.1 # 3.0
+SHARED_LIBS +=	kdevplatformtests		0.1 # 3.0
+SHARED_LIBS +=	kdevplatformutil		0.1 # 3.0
+SHARED_LIBS +=	kdevplatformvcs			0.1 # 3.0
+SHARED_LIBS +=	sublime				0.1 # 3.0
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${KDEV_V}/src/}
 DIST_SUBDIR =	kde
@@ -28,13 +27,12 @@ DIST_SUBDIR =	kde
 PERMIT_PACKAGE_CDROM =          Yes
 
 WANTLIB =  c m pthread
-WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB += lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtTest
-WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
+WANTLIB += QtDBus QtDeclarative QtGui QtNetwork QtScript QtSvg QtTest
+WANTLIB += QtWebKit QtXml
 WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kfile
 WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/knewstuff3 ${KDE4LIB}/knotifyconfig
-WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/krosscore ${KDE4LIB}/ktexteditor
-WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/ktexteditor
+WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
 WANTLIB += ${KDE4LIB}/threadweaver
 WANTLIB += ${KDE4LIB}/kemoticons ${KDE4LIB}/kidletime ${KDE4LIB}/kprintutils
 WANTLIB += ${KDE4LIB}/kutils
