@@ -1,0 +1,2 @@
+Feedgenerator is a standalone version of Django's feedgenerator. It is based on
+the current Django Version 1.5.dev20120824122350.
