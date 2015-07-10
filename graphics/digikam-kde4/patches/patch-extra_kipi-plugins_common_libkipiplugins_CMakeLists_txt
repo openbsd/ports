@@ -1,8 +1,8 @@
-$OpenBSD: patch-extra_kipi-plugins_common_libkipiplugins_CMakeLists_txt,v 1.4 2014/11/02 08:01:32 zhuk Exp $
+$OpenBSD: patch-extra_kipi-plugins_common_libkipiplugins_CMakeLists_txt,v 1.5 2015/07/10 18:34:27 zhuk Exp $
 Missing dependency, fails in parallel build.
---- extra/kipi-plugins/common/libkipiplugins/CMakeLists.txt.orig	Mon Aug  4 03:26:07 2014
-+++ extra/kipi-plugins/common/libkipiplugins/CMakeLists.txt	Wed Aug  6 14:10:21 2014
-@@ -46,6 +46,11 @@ TARGET_LINK_LIBRARIES(kipiplugins
+--- extra/kipi-plugins/common/libkipiplugins/CMakeLists.txt.orig	Mon Jun 15 12:29:05 2015
++++ extra/kipi-plugins/common/libkipiplugins/CMakeLists.txt	Thu Jul  2 20:19:43 2015
+@@ -52,6 +52,11 @@ target_link_libraries(kipiplugins
                        ${KIPI_LIBRARIES}
                       )
  
@@ -11,6 +11,6 @@ Missing dependency, fails in parallel build.
 +                      OBJECT_DEPENDS kipiplugins-gitversion
 +                     )
 +
- SET_TARGET_PROPERTIES(kipiplugins PROPERTIES VERSION ${KIPIPLUGINS_LIB_SO_VERSION_STRING} SOVERSION ${KIPIPLUGINS_LIB_SO_VERSION_STRING})
+ set_target_properties(kipiplugins PROPERTIES VERSION ${KIPIPLUGINS_LIB_SO_VERSION_STRING} SOVERSION ${KIPIPLUGINS_LIB_SO_VERSION_STRING})
  
- INSTALL(TARGETS kipiplugins ${INSTALL_TARGETS_DEFAULT_ARGS})
+ install(TARGETS kipiplugins ${INSTALL_TARGETS_DEFAULT_ARGS})

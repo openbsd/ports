@@ -1,8 +1,8 @@
-$OpenBSD: patch-core_libs_dimg_dimg_cpp,v 1.1 2014/07/10 08:06:40 zhuk Exp $
+$OpenBSD: patch-core_libs_dimg_dimg_cpp,v 1.2 2015/07/10 18:34:27 zhuk Exp $
 XXX Avoid crashes until libkdcraw/ld.so issues are resolved.
---- core/libs/dimg/dimg.cpp.orig	Thu Jul 10 09:47:57 2014
-+++ core/libs/dimg/dimg.cpp	Thu Jul 10 09:50:07 2014
-@@ -735,7 +735,9 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
+--- core/libs/dimg/dimg.cpp.orig	Mon Jun 15 12:29:05 2015
++++ core/libs/dimg/dimg.cpp	Thu Jul  2 03:36:16 2015
+@@ -744,7 +744,9 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
          return NONE;
      }
  
@@ -12,7 +12,7 @@ XXX Avoid crashes until libkdcraw/ld.so issues are resolved.
      QString ext = fileInfo.suffix().toUpper();
  
      if (!ext.isEmpty())
-@@ -752,10 +754,12 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
+@@ -761,10 +763,12 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
          {
              return TIFF;
          }
@@ -25,7 +25,7 @@ XXX Avoid crashes until libkdcraw/ld.so issues are resolved.
  
          if (ext == QString("JP2") || ext == QString("JPX") || // JPEG2000 file format
              ext == QString("JPC") || ext == QString("J2K") || // JPEG2000 code stream
-@@ -792,7 +796,9 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
+@@ -801,7 +805,9 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
  
      fclose(f);
  
@@ -35,7 +35,7 @@ XXX Avoid crashes until libkdcraw/ld.so issues are resolved.
      uchar jpegID[2]    = { 0xFF, 0xD8 };
      uchar tiffBigID[2] = { 0x4D, 0x4D };
      uchar tiffLilID[2] = { 0x49, 0x49 };
-@@ -829,6 +835,7 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
+@@ -838,6 +844,7 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
          if (file)
              fclose(file);
      }
@@ -43,7 +43,7 @@ XXX Avoid crashes until libkdcraw/ld.so issues are resolved.
      else if (KDcrawIface::KDcraw::rawFileIdentify(dcrawIdentify, filePath)
               && dcrawIdentify.isDecodable)
      {
-@@ -837,6 +844,7 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
+@@ -846,6 +853,7 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
          // formats using TIFF header.
          return RAW;
      }

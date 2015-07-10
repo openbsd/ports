@@ -1,0 +1,12 @@
+$OpenBSD: patch-extra_kipi-plugins_CMakeLists_txt,v 1.4 2015/07/10 18:34:27 zhuk Exp $
+--- extra/kipi-plugins/CMakeLists.txt.orig	Mon Jun 15 12:29:05 2015
++++ extra/kipi-plugins/CMakeLists.txt	Thu Jul  2 20:20:18 2015
+@@ -164,7 +164,7 @@ if(KIPI_FOUND)
+     include(MacroUtils)
+     include(MacroOpenCV)
+     set(OPENCV_MIN_VERSION "2.4.9")
+-    DETECT_OPENCV(${OPENCV_MIN_VERSION} core highgui objdetect contrib legacy imgproc)
++    DETECT_OPENCV(${OPENCV_MIN_VERSION} core highgui objdetect)
+ 
+     include(MacroOptionalDependPackage)
+ 

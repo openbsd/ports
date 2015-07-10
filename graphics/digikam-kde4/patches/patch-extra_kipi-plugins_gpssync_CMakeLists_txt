@@ -1,10 +1,10 @@
-$OpenBSD: patch-extra_kipi-plugins_gpssync_CMakeLists_txt,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
+$OpenBSD: patch-extra_kipi-plugins_gpssync_CMakeLists_txt,v 1.2 2015/07/10 18:34:27 zhuk Exp $
 Unbreak compilation.
---- extra/kipi-plugins/gpssync/CMakeLists.txt.orig	Wed Jul  9 22:08:27 2014
-+++ extra/kipi-plugins/gpssync/CMakeLists.txt	Wed Jul  9 22:08:43 2014
-@@ -55,6 +55,8 @@ IF (NOT ${KDE_VERSION} VERSION_GREATER "4.4.81")
+--- extra/kipi-plugins/gpssync/CMakeLists.txt.orig	Mon Jun 15 12:29:05 2015
++++ extra/kipi-plugins/gpssync/CMakeLists.txt	Thu Jul  2 09:31:43 2015
+@@ -61,6 +61,8 @@ if(NOT ${KDE_VERSION} VERSION_GREATER "4.4.81")
         )
- ENDIF (NOT ${KDE_VERSION} VERSION_GREATER "4.4.81")
+ endif()
  
 +ADD_DEFINITIONS(${KDE4_ENABLE_EXCEPTIONS})
 +

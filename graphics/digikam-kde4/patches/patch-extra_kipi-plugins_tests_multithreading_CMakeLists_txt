@@ -1,9 +1,9 @@
-$OpenBSD: patch-extra_kipi-plugins_tests_multithreading_CMakeLists_txt,v 1.1.1.1 2014/07/09 21:29:33 zhuk Exp $
---- extra/kipi-plugins/tests/multithreading/CMakeLists.txt.orig	Wed Jan 18 01:44:26 2012
-+++ extra/kipi-plugins/tests/multithreading/CMakeLists.txt	Wed Jan 18 01:45:01 2012
-@@ -27,6 +27,7 @@ IF(THREADWEAVER_FOUND)
+$OpenBSD: patch-extra_kipi-plugins_tests_multithreading_CMakeLists_txt,v 1.2 2015/07/10 18:34:27 zhuk Exp $
+--- extra/kipi-plugins/tests/multithreading/CMakeLists.txt.orig	Mon Jun 15 12:29:05 2015
++++ extra/kipi-plugins/tests/multithreading/CMakeLists.txt	Thu Jul  2 09:31:43 2015
+@@ -10,6 +10,7 @@ if(THREADWEAVER_FOUND)
  
-     INCLUDE_DIRECTORIES(${KDE4_INCLUDES}
+     include_directories(${KDE4_INCLUDES}
                          ${JPEG_INCLUDE_DIR}
 +                        ${PNG_INCLUDE_DIR}
                          ${QT_INCLUDE_DIR}

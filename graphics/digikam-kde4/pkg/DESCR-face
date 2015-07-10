@@ -1,4 +1,0 @@
-Libkface is a Qt/C++ wrapper around LibFace library to perform face
-recognition and detection over pictures.  This library is used by
-kipi-plugins, digiKam and others kipi host programs.  The library
-documentation is available on header files.
