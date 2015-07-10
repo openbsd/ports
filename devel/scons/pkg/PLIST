@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/06/28 06:31:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/07/10 07:06:07 jasper Exp $
 bin/scons
 bin/scons-${VERSION}
 bin/scons-time
@@ -413,3 +413,6 @@ lib/scons-${VERSION}/SCons/dblite.pyc
 lib/scons-${VERSION}/SCons/exitfuncs.py
 lib/scons-${VERSION}/SCons/exitfuncs.pyc
 lib/scons-${VERSION}/scons-${VERSION}-py${MODPY_VERSION}.egg-info
+@man man/man1/scons-time.1
+@man man/man1/scons.1
+@man man/man1/sconsign.1
