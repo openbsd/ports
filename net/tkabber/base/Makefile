@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/02 20:23:56 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.3 2015/07/10 19:03:52 czarkoff Exp $
 
 COMMENT =		Tk client for the Jabber instant messaging system
 
 DISTNAME =		tkabber-${VERSION}
+REVISION =		0
 
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS} \
 			devel/tcllib \
