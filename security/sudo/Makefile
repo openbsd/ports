@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/07/04 13:54:49 millert Exp $
+# $OpenBSD: Makefile,v 1.3 2015/07/10 15:16:03 espie Exp $
 
 COMMENT=	execute a command as another user
 
 DISTNAME=	sudo-1.8.13
-REVISION=	0
+REVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	Todd C. Miller <millert@openbsd.org>
@@ -13,7 +13,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB+=	c util z
 
-MODULES=	devel/gettext
 
 HOMEPAGE=	http://www.sudo.ws/
 
@@ -31,18 +30,23 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-logfac=authpriv \
 			--with-libtool=system \
 			--disable-path-info \
-			--enable-nls=${LOCALBASE} \
 			--enable-zlib=system
 
 SHARED_LIBS=	sudo_util	0.0
 
-FLAVORS=	ldap
+FLAVORS=	gettext ldap
 FLAVOR?=
 
 .if ${FLAVOR:Mldap}
 CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
 LIB_DEPENDS+=		databases/openldap
 WANTLIB+=		crypto lber-2.4 ldap-2.4 sasl2 ssl
+.endif
+.if ${FLAVOR:Mgettext}
+MODULES+=	devel/gettext
+CONFIGURE_ARGS += --enable-nls=${LOCALBASE}
+.else
+CONFIGURE_ARGS += --disable-nls
 .endif
 
 # Don't set owner on install in fake mode
