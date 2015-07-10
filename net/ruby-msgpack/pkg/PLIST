@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/01 06:40:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/07/10 07:21:21 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/extensions/${MODRUBY_ARCH}/
 ${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
@@ -12,6 +12,7 @@ ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog
+${GEM_LIB}/gems/${DISTNAME}/Dockerfile
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
