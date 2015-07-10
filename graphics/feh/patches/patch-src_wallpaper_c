@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_wallpaper_c,v 1.1 2015/07/10 09:02:10 dcoppa Exp $
+
+commit 5e6cbb6c8d1435b3122dfc55b6e5cfeefb1a3aab
+Author: James Knight <james.d.knight@live.com>
+Date:   Mon Jun 22 11:56:00 2015 -0400
+
+ensure fehbg is free'ed
+
+The 'fehbg' variable can be allocated whether or not the user wishes to
+generated a fehbg file. Ensure the variable is free'ed before we return.
+
+Signed-off-by: James Knight <james.d.knight@live.com>
+
+--- src/wallpaper.c.orig	Fri Jul 10 10:51:44 2015
++++ src/wallpaper.c	Fri Jul 10 10:52:21 2015
+@@ -465,8 +465,9 @@ void feh_wm_set_bg(char *fil, Imlib_Image im, int cent
+ 				}
+ 				free(path);
+ 			}
+-			free(fehbg);
+ 		}
++
++		free(fehbg);
+ 
+ 		/* create new display, copy pixmap to new display */
+ 		disp2 = XOpenDisplay(NULL);
