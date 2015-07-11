@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/04/05 15:18:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/07/11 07:03:20 ajacoutot Exp $
 bin/github-commit-status
 bin/salt-jenkins-build
 lib/python${MODPY_VERSION}/site-packages/SaltTesting-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -43,8 +43,6 @@ lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/fileperms.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/fileperms.pyc
-lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/flask_sqlalchemy_transform.py
-lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/flask_sqlalchemy_transform.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/pep263.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/pep263.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/pep8.py
@@ -69,8 +67,6 @@ lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/py3modernize/
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/py3modernize/fixes/fix_zip_salt_six.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/smartup.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/smartup.pyc
-lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/string_format.py
-lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/string_format.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/strings.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/strings.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/runtests.py
