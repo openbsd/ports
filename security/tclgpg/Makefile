@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/10 19:00:41 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/11 10:39:12 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -20,7 +20,8 @@ UUID =			4cfd9fa949c98386eead3382d6a90f3511fa7429
 DISTFILES =		${_FILENAME}{${_FILENAME}?uuid=${UUID}}
 
 MODULES =		lang/tcl
-BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
+BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS} \
+			devel/tcllib
 RUN_DEPENDS =		${MODTCL_RUN_DEPENDS} \
 			security/gnupg
 
