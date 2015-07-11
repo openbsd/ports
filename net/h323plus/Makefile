@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/05/22 15:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2015/07/11 07:59:41 ajacoutot Exp $
 
 # XXX drop at next release
 CONFIGURE_ARGS += --enable-h235
@@ -11,7 +11,7 @@ V=		1_26_5
 DISTNAME=	h323plus-v${V}
 PKGNAME=	h323plus-${V:S/_/./g}
 WRKDIST=	${WRKDIR}/h323plus
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net devel
 
@@ -55,8 +55,5 @@ MAKE_FLAGS=	MAJOR_VERSION=${LIBh323_VERSION:R} \
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile.in
 	${SUBST_CMD} ${WRKSRC}/src/make/lib.mak
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/version.h ${PREFIX}/share/openh323
 
 .include <bsd.port.mk>

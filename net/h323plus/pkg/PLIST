@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/08/30 09:07:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/07/11 07:59:41 ajacoutot Exp $
 @conflict openh323-*
 @pkgpath net/openh323
 include/openh323/
@@ -127,4 +127,3 @@ lib/libh323.so
 @lib lib/libh323.so.${LIBh323_VERSION}
 share/openh323/
 share/openh323/openh323u.mak
-share/openh323/version.h
