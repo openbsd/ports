@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/05/08 16:18:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/07/11 07:47:05 bluhm Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/DNS/
 ${P5SITE}/Net/DNS/Keyset.pm
 ${P5SITE}/Net/DNS/RR/
+${P5SITE}/Net/DNS/RR/CDNSKEY.pm
+${P5SITE}/Net/DNS/RR/CDS.pm
 ${P5SITE}/Net/DNS/RR/DLV.pm
 ${P5SITE}/Net/DNS/RR/DNSKEY.pm
 ${P5SITE}/Net/DNS/RR/DS.pm
@@ -14,8 +16,15 @@ ${P5SITE}/Net/DNS/RR/RRSIG.pm
 ${P5SITE}/Net/DNS/RR/SIG.pm
 ${P5SITE}/Net/DNS/SEC/
 ${P5SITE}/Net/DNS/SEC.pm
+${P5SITE}/Net/DNS/SEC/DSA.pm
+${P5SITE}/Net/DNS/SEC/ECCGOST.pm
+${P5SITE}/Net/DNS/SEC/ECDSA.pm
+${P5SITE}/Net/DNS/SEC/Keyset.pm
 ${P5SITE}/Net/DNS/SEC/Private.pm
-@man man/man3p/Net::DNS::Keyset.3p
+${P5SITE}/Net/DNS/SEC/RSA.pm
+@man man/man3p/Net::DNS::KeysetStub.3p
+@man man/man3p/Net::DNS::RR::CDNSKEY.3p
+@man man/man3p/Net::DNS::RR::CDS.3p
 @man man/man3p/Net::DNS::RR::DLV.3p
 @man man/man3p/Net::DNS::RR::DNSKEY.3p
 @man man/man3p/Net::DNS::RR::DS.3p
@@ -26,7 +35,12 @@ ${P5SITE}/Net/DNS/SEC/Private.pm
 @man man/man3p/Net::DNS::RR::RRSIG.3p
 @man man/man3p/Net::DNS::RR::SIG.3p
 @man man/man3p/Net::DNS::SEC.3p
+@man man/man3p/Net::DNS::SEC::DSA.3p
+@man man/man3p/Net::DNS::SEC::ECCGOST.3p
+@man man/man3p/Net::DNS::SEC::ECDSA.3p
+@man man/man3p/Net::DNS::SEC::Keyset.3p
 @man man/man3p/Net::DNS::SEC::Private.3p
+@man man/man3p/Net::DNS::SEC::RSA.3p
 share/examples/p5-Net-DNS-SEC/
 share/examples/p5-Net-DNS-SEC/getkeyset.pl
 share/examples/p5-Net-DNS-SEC/key2ds
