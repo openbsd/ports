@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2015/05/22 15:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2015/07/11 08:00:39 ajacoutot Exp $
 
 BROKEN-hppa=	libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
@@ -6,8 +6,7 @@ SHARED_ONLY=	Yes
 
 COMMENT=	H.323 gatekeeper
 
-DISTNAME=	gnugk-3.8
-REVISION=	0
+DISTNAME=	gnugk-3.9
 
 CATEGORIES=	net telephony
 
@@ -18,9 +17,9 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += SDL c crypto expat h323 kvm lber ldap ldap_r lua5.1
-WANTLIB += m netsnmp netsnmpagent netsnmpmibs pt pthread sasl2
-WANTLIB += ssh ssl stdc++ z
+WANTLIB += GeoIP SDL c crypto expat h323 kvm lber ldap ldap_r
+WANTLIB += lua5.1 m netsnmp netsnmpagent netsnmpmibs pt pthread
+WANTLIB += sasl2 ssh ssl stdc++ z
 
 MODULES=	lang/lua
 
@@ -29,7 +28,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323gk/}
 BUILD_DEPENDS=	databases/mariadb \
 		databases/postgresql
 
-LIB_DEPENDS=	net/h323plus \
+LIB_DEPENDS=	net/GeoIP \
+		net/h323plus \
 		net/net-snmp \
 		security/libssh
 
@@ -41,8 +41,9 @@ CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		PTLIBDIR=${LOCALBASE}/share/ptlib \
-		OPENH323DIR=${LOCALBASE}/share/openh323
+		OPENH323DIR=${LOCALBASE}/include/openh323 \
+		OPENH323MAKEDIR=${LOCALBASE}/share/openh323 \
+		PTLIBDIR=${LOCALBASE}/share/ptlib
 
 CONFIGURE_ARGS=	--disable-unixodbc \
 		--with-pgsql-include-dir=${LOCALBASE}/include/postgresql \
@@ -59,7 +60,6 @@ MAKE_FLAGS=	PTLIB_LIBDIR=$$(pkg-config --variable libdir ptlib) \
 		OBJDIR=.
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/docs/gnugk.1 ${WRKSRC}/configure
 	perl -pi -e 's,-llua,-llua${MODLUA_DEFAULT_VERSION} -lm,g' ${WRKSRC}/configure
 
 post-build:
