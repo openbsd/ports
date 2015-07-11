@@ -1,4 +1,4 @@
-$OpenBSD: patch-salt_modules_openbsdrcctl_py,v 1.3 2015/07/08 08:16:18 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_openbsdrcctl_py,v 1.4 2015/07/11 16:29:25 ajacoutot Exp $
 
 From 7ee5a53948d6db8fb2e06191cf6bbf779164e033 Mon Sep 17 00:00:00 2001
 From: Justin Findlay <jfindlay@gmail.com>
@@ -13,8 +13,7 @@ Subject: [PATCH 1/2] openbsdrcctl: fix code to match new rcctl(8) syntax.
 From 7b99eeb6abe96c714fe720a0b1beb5a4af14f29f Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@bsdfrog.org>
 Date: Tue, 6 Jan 2015 18:14:23 +0100
-Subject: [PATCH 2/2] openbsdrcctl: turn badvar into a tuple and fix lint
- warnings
+Subject: [PATCH 2/2] openbsdrcctl: turn badvar into a tuple and fix lint warnings
 
 --- salt/modules/openbsdrcctl.py.orig	Thu Jun  4 18:38:15 2015
 +++ salt/modules/openbsdrcctl.py	Wed Jul  8 10:10:03 2015
