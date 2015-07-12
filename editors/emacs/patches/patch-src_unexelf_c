@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_unexelf_c,v 1.1 2015/07/12 19:06:22 jca Exp $
+--- src/unexelf.c.orig	Sun Jul 12 16:07:40 2015
++++ src/unexelf.c	Sun Jul 12 16:14:03 2015
+@@ -778,7 +778,12 @@ unexec (const char *new_name, const char *old_name)
+      must be shifted in the image.  It can differ from new_data2_size if
+      the end of the old .data section (and thus the offset of the .bss
+      section) was unaligned.  */
++#ifdef __sparc64__
++  new_data2_incr = round_up(new_data2_size + (new_data2_offset - old_bss_offset),
++    sizeof(ElfW(Addr)));
++#else
+   new_data2_incr = new_data2_size + (new_data2_offset - old_bss_offset);
++#endif
+ 
+ #ifdef UNEXELF_DEBUG
+   fprintf (stderr, "old_bss_index %td\n", old_bss_index);
