@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: cupsd.rc,v 1.21 2014/12/06 11:12:44 ajacoutot Exp $
+# $OpenBSD: cupsd.rc,v 1.22 2015/07/12 08:42:25 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/cupsd"
 
 . /etc/rc.d/rc.subr
 
-pexp="${daemon}"
+pexp="${daemon}.*"
 
 _lpfiles="/usr/bin/lpq /usr/bin/lpr /usr/bin/lprm /usr/sbin/lpc \
 	  /usr/sbin/lpd /usr/share/man/man1/lpq.1 /usr/share/man/man1/lpr.1 \
