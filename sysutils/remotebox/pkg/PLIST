@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/26 15:32:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/12 08:40:08 ajacoutot Exp $
 bin/remotebox
 share/applications/remotebox.desktop
 share/doc/remotebox/
@@ -57,6 +57,8 @@ share/remotebox/icons/hostkey_captured_16px.png
 share/remotebox/icons/ide_16px.png
 share/remotebox/icons/ide_add_16px.png
 share/remotebox/icons/import_16px.png
+share/remotebox/icons/keyboard_16px.png
+share/remotebox/icons/keyboard_32px.png
 share/remotebox/icons/machine_16px.png
 share/remotebox/icons/nw_16px.png
 share/remotebox/icons/nw_32px.png
@@ -84,6 +86,8 @@ share/remotebox/icons/os/Linux26_64.png
 share/remotebox/icons/os/Linux_64.png
 share/remotebox/icons/os/Linux_Other.png
 share/remotebox/icons/os/MacOS.png
+share/remotebox/icons/os/MacOS1010_64.png
+share/remotebox/icons/os/MacOS1011_64.png
 share/remotebox/icons/os/MacOS106.png
 share/remotebox/icons/os/MacOS106_64.png
 share/remotebox/icons/os/MacOS107_64.png
@@ -96,6 +100,7 @@ share/remotebox/icons/os/NetBSD.png
 share/remotebox/icons/os/NetBSD_64.png
 share/remotebox/icons/os/Netware.png
 share/remotebox/icons/os/OS2.png
+share/remotebox/icons/os/OS21x.png
 share/remotebox/icons/os/OS2Warp3.png
 share/remotebox/icons/os/OS2Warp4.png
 share/remotebox/icons/os/OS2Warp45.png
@@ -121,6 +126,8 @@ share/remotebox/icons/os/Turbolinux_64.png
 share/remotebox/icons/os/Ubuntu.png
 share/remotebox/icons/os/Ubuntu_64.png
 share/remotebox/icons/os/Windows.png
+share/remotebox/icons/os/Windows10.png
+share/remotebox/icons/os/Windows10_64.png
 share/remotebox/icons/os/Windows2000.png
 share/remotebox/icons/os/Windows2003.png
 share/remotebox/icons/os/Windows2003_64.png
@@ -148,6 +155,7 @@ share/remotebox/icons/os/Xandros.png
 share/remotebox/icons/os/Xandros_64.png
 share/remotebox/icons/pause_16px.png
 share/remotebox/icons/rb_settings_16px.png
+share/remotebox/icons/rdp_presets_16px.png
 share/remotebox/icons/refresh_16px.png
 share/remotebox/icons/refresh_22px.png
 share/remotebox/icons/refresh_32px.png
