@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/08 16:33:22 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/12 20:16:07 bcallah Exp $
 bin/hypatia-demo
 lib/python${MODPY_VERSION}/site-packages/hypatia/
 lib/python${MODPY_VERSION}/site-packages/hypatia/__init__.py
@@ -37,10 +37,7 @@ share/examples/hypatia/resources/
 share/examples/hypatia/resources/fonts/
 share/examples/hypatia/resources/fonts/VeraMono.ttf
 share/examples/hypatia/resources/scenes/
-share/examples/hypatia/resources/scenes/debug/
-share/examples/hypatia/resources/scenes/debug/npcs.ini
-share/examples/hypatia/resources/scenes/debug/scene.ini
-share/examples/hypatia/resources/scenes/debug/tilemap.txt
+share/examples/hypatia/resources/scenes/debug.zip
 share/examples/hypatia/resources/tilesheets/
 share/examples/hypatia/resources/tilesheets/debug.zip
 share/examples/hypatia/resources/walkabouts/
