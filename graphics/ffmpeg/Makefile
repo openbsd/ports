@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.119 2015/06/29 06:19:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.120 2015/07/12 16:19:38 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		20150609
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -34,7 +34,7 @@ WANTLIB=	SDL X11 Xext Xv ass bz2 c crypto fontconfig freetype fribidi \
 
 MODULES=	lang/clang
 
-MODCLANG_ARCHS=	amd64 i386
+MODCLANG_ARCHS=	amd64
 
 BUILD_DEPENDS=	textproc/texi2html
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
