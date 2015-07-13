@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/01 09:13:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/13 19:03:19 jasper Exp $
 
 COMMENT =		collect and display system facts
 
 DISTNAME =		facter-3.0.1
+REVISION =		0
 # XXX: Uses upstream versioning as it's also exported as a fact
 SHARED_LIBS +=  	facter                    3.0 # 3.0
 PKGSPEC =		facter->=3.0,<4.0
