@@ -1,0 +1,18 @@
+$OpenBSD: patch-bin_Makefile_am,v 1.1 2015/07/13 19:48:13 sthen Exp $
+
+Seems to avoid an intermittent crash when running vlc-cache-gen.
+
+Appears related to https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=752544
+though in glib2 we do already have -Wl,nodelete when linking libgobject.
+
+--- bin/Makefile.am.orig	Mon Jul 13 10:09:43 2015
++++ bin/Makefile.am	Mon Jul 13 10:09:58 2015
+@@ -83,7 +83,7 @@ MOSTLYCLEANFILES = $(noinst_DATA)
+ ../modules/plugins.dat: vlc-cache-gen$(EXEEXT)
+ 	$(AM_V_at)rm -f ../modules/plugins.dat
+ 	$(AM_V_GEN)if test "$(build)" = "$(host)"; then \
+-		./vlc-cache-gen$(EXEEXT) ../modules ; \
++		LD_PRELOAD=${LOCALBASE}/lib/libgobject-2.0.so ./vlc-cache-gen$(EXEEXT) ../modules ; \
+ 	else \
+ 		echo "Cross-compilation: cache generation skipped!" ; \
+ 	fi
