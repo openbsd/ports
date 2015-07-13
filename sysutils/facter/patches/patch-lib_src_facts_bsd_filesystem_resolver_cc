@@ -1,10 +1,18 @@
-$OpenBSD: patch-lib_src_facts_bsd_filesystem_resolver_cc,v 1.2 2015/07/13 19:03:19 jasper Exp $
+$OpenBSD: patch-lib_src_facts_bsd_filesystem_resolver_cc,v 1.3 2015/07/13 19:28:51 jasper Exp $
 
-- Filter out unsupported fields.
-- https://github.com/puppetlabs/facter/pull/1035
+- From db3927a3e624489e8eebb8c9c1dddf22d580e761 Mon Sep 17 00:00:00 2001
+  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+  Date: Sat, 11 Jul 2015 09:20:27 +0200
+  Subject: [PATCH] (FACT-1081) Add proper guards for OpenBSD
+- From dc9db875d5be49a060a2153878dc52c21241ad51 Mon Sep 17 00:00:00 2001
+  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+  Date: Fri, 10 Jul 2015 22:50:51 +0200
+  Subject: [PATCH] (FACT-1081) Explicitly use make_tuple to prevent any ambiguities
+- Add 'noatime' option
+  https://github.com/puppetlabs/facter/pull/1044
 
---- lib/src/facts/bsd/filesystem_resolver.cc.orig	Fri Jul 10 22:43:04 2015
-+++ lib/src/facts/bsd/filesystem_resolver.cc	Fri Jul 10 22:46:29 2015
+--- lib/src/facts/bsd/filesystem_resolver.cc.orig	Fri Jun 26 01:47:38 2015
++++ lib/src/facts/bsd/filesystem_resolver.cc	Mon Jul 13 20:02:43 2015
 @@ -50,23 +50,28 @@ namespace facter { namespace facts { namespace bsd {
      vector<string> filesystem_resolver::to_options(struct statfs const& fs)
      {
@@ -20,33 +28,34 @@ $OpenBSD: patch-lib_src_facts_bsd_filesystem_resolver_cc,v 1.2 2015/07/13 19:03:
 -            { MNT_QUOTA,        "quota" },
 -            { MNT_ROOTFS,       "root" },
 -#ifndef __FreeBSD__
-+            make_tuple<unsigned int, string>(MNT_RDONLY,       "readonly" ),
-+            make_tuple<unsigned int, string>(MNT_SYNCHRONOUS,  "noasync" ),
-+            make_tuple<unsigned int, string>(MNT_NOEXEC,       "noexec" ),
-+            make_tuple<unsigned int, string>(MNT_NOSUID,       "nosuid" ),
-+#ifndef __OpenBSD__
-+            make_tuple<unsigned int, string>(MNT_UNION,        "union" ),
-+#endif /* __OpenBSD__ */
-+            make_tuple<unsigned int, string>(MNT_ASYNC,        "async" ),
-+            make_tuple<unsigned int, string>(MNT_EXPORTED,     "exported" ),
-+            make_tuple<unsigned int, string>(MNT_LOCAL,        "local" ),
-+            make_tuple<unsigned int, string>(MNT_QUOTA,        "quota" ),
-+            make_tuple<unsigned int, string>(MNT_ROOTFS,       "root" ),
-+#if !defined(__FreeBSD__) || defined(__OpenBSD__)
-             // the following constants aren't defined on FreeBSD 10
+-            // the following constants aren't defined on FreeBSD 10
 -            { MNT_NODEV,        "nodev" },
 -            { MNT_DONTBROWSE,   "nobrowse" },
 -            { MNT_AUTOMOUNTED,  "automounted" },
 -            { MNT_JOURNALED,    "journaled" },
 -            { MNT_DEFWRITE,     "deferwrites" },
-+#ifdef __OpenBSD__
-+            make_tuple<unsigned int, string>(MNT_NODEV,        "nodev" ),
-+#else
-+            make_tuple<unsigned int, string>(MNT_DONTBROWSE,   "nobrowse" ),
-+            make_tuple<unsigned int, string>(MNT_AUTOMOUNTED,  "automounted" ),
-+            make_tuple<unsigned int, string>(MNT_JOURNALED,    "journaled" ),
-+            make_tuple<unsigned int, string>(MNT_DEFWRITE,     "deferwrites" ),
++            make_tuple<unsigned int, string>(MNT_RDONLY,       "readonly"),
++            make_tuple<unsigned int, string>(MNT_SYNCHRONOUS,  "noasync"),
++            make_tuple<unsigned int, string>(MNT_NOEXEC,       "noexec"),
++            make_tuple<unsigned int, string>(MNT_NOSUID,       "nosuid"),
++#ifndef __OpenBSD__
++            make_tuple<unsigned int, string>(MNT_UNION,        "union"),
 +#endif
++            make_tuple<unsigned int, string>(MNT_ASYNC,        "async"),
++            make_tuple<unsigned int, string>(MNT_EXPORTED,     "exported"),
++            make_tuple<unsigned int, string>(MNT_LOCAL,        "local"),
++            make_tuple<unsigned int, string>(MNT_QUOTA,        "quota"),
++            make_tuple<unsigned int, string>(MNT_ROOTFS,       "root"),
++            make_tuple<unsigned int, string>(MNT_NOATIME,      "noatime"),
++#if !defined(__FreeBSD__)
++            make_tuple<unsigned int, string>(MNT_NODEV,        "nodev"),
++#endif
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
++            // the following constants aren't defined on FreeBSD 10/OpenBSD
++            make_tuple<unsigned int, string>(MNT_DONTBROWSE,   "nobrowse"),
++            make_tuple<unsigned int, string>(MNT_AUTOMOUNTED,  "automounted"),
++            make_tuple<unsigned int, string>(MNT_JOURNALED,    "journaled"),
++            make_tuple<unsigned int, string>(MNT_DEFWRITE,     "deferwrites"),
  #endif
          };
  
