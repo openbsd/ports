@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2015/07/13 00:56:55 stu Exp $
+--- configure.orig	Thu Oct  9 15:25:52 2014
++++ configure	Thu Oct  9 15:26:01 2014
+@@ -7216,7 +7216,7 @@ fi
+ 		    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
+ fi
+ 		LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${SHLIB_VERSION}'
++		SHARED_LIB_SUFFIX='.so'
+ 		LDFLAGS="-Wl,-export-dynamic"
+ 		;;
+ 	    esac

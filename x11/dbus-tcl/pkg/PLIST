@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:58 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/07/13 00:56:55 stu Exp $
 lib/tcl/dbus-tcl/
-@lib lib/tcl/dbus-tcl/libdbus-tcl11.so.${LIBdbus-tcl11_VERSION}
+lib/tcl/dbus-tcl/libdbus.so
 lib/tcl/dbus-tcl/pkgIndex.tcl
-@man man/mann/dbus-tcl.n
+@man man/mann/dbus.n
 share/doc/dbus-tcl/
-share/doc/dbus-tcl/dbus-tcl.html
+share/doc/dbus-tcl/dbus.html
 share/doc/dbus-tcl/license.terms
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/dbus-tcl/
+share/examples/dbus-tcl/dbusmon.tcl
+share/examples/dbus-tcl/qdbus.tcl
