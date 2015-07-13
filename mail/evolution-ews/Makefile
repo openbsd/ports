@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2015/06/08 09:07:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2015/07/13 07:02:54 ajacoutot Exp $
 
 # XXX
 FAKE_FLAGS=		localedir=${PREFIX}/share/locale
@@ -8,7 +8,7 @@ SHARED_ONLY=		Yes
 COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
-GNOME_VERSION=		3.16.3
+GNOME_VERSION=		3.16.4
 
 CATEGORIES=		mail
 
