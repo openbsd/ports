@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/07/10 18:34:27 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2015/07/13 16:33:03 zhuk Exp $
 
 COMMENT-kipi =		KDE image plugins collection
 COMMENT-main =		KDE photo management utility
@@ -16,6 +16,8 @@ PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 
+REVISION-main =		0
+REVISION-kipi =		0
 REVISION-mediawiki =	3
 
 EXTRACT_SUFX =		.tar.bz2
@@ -101,14 +103,16 @@ RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
 			${MODKDE4_RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			misc/shared-desktop-ontologies \
-			x11/gtk+3,-guic
+			x11/gtk+3,-guic \
+			${MODKDE4_DEP_DIR}/pim-runtime
 
 RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS} \
 			${MODKDE4_RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			databases/mariadb,-server \
 			misc/shared-desktop-ontologies \
-			x11/gtk+3,-guic
+			x11/gtk+3,-guic \
+			${MODKDE4_DEP_DIR}/pim-runtime
 
 LIBS_DEPENDS-common =	${MODQT4_LIB_DEPENDS} \
 			${MODKDE4_LIB_DEPENDS}
@@ -152,6 +156,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			graphics/tiff \
 			x11/kde-applications/libkface>=15.04.3 \
 			x11/kde-applications/libkgeomap>=15.04.3 \
+			${MODKDE4_DEP_DIR}/baloo \
 			${MODKDE4_DEP_DIR}/libkdcraw>=4.13 \
 			${MODKDE4_DEP_DIR}/libkexiv2>=4.13 \
 			${MODKDE4_DEP_DIR}/libkipi>=4.13 \
