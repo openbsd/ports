@@ -1,0 +1,19 @@
+$OpenBSD: README,v 1.1 2015/07/13 00:57:06 stu Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+If used with non-threaded Tcl or an executable that is
+not linked with libpthread then it will be necessary to
+set "LD_PRELOAD=/usr/lib/libpthread.so" in the environment.
+
+As of version 1.0:
+The 'dbus-intf' Tcl package is now called 'dbif'.
+
+Man and doc files dbus-intf.n and dbus-intf.html are
+now dbif.n and dbif.html, respectively.
+All other port files and directories remain 'dbus-intf'.
+
+Occurrences of [package require dbus-intf]
+should be changed to [package require dbif].

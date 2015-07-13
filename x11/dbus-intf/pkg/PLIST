@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/08 11:46:35 stu Exp $
-lib/tcl/dbus-intf/
-lib/tcl/dbus-intf/dbus-intf.tcl
-lib/tcl/dbus-intf/pkgIndex.tcl
-@man man/mann/dbus-intf.n
+@comment $OpenBSD: PLIST,v 1.2 2015/07/13 00:57:06 stu Exp $
+lib/tcl/modules/85/dbif-${V}.tm
+@man man/mann/dbif.n
 share/doc/dbus-intf/
-share/doc/dbus-intf/dbus-intf.html
+share/doc/dbus-intf/dbif.html
 share/doc/dbus-intf/license.terms
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/dbus-intf/
+share/examples/dbus-intf/hello.tcl
