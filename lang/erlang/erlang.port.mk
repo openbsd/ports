@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.19 2015/06/26 06:36:57 jasper Exp $
+# $OpenBSD: erlang.port.mk,v 1.20 2015/07/14 22:52:56 jasper Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -67,6 +67,13 @@ _MODERL_TDEPS +=	${t},${_MODERL_FLAVOR}
 
 MODERL_BUILDDEP ?=	Yes
 MODERL_RUNDEP ?=	Yes
+
+MODERL_WX ?=		No
+
+.if ${MODERL_WX:L} == yes
+_MODERL_BDEPS +=	lang/erlang/${MODERL_VERSION},-wx
+_MODERL_RDEPS +=	lang/erlang/${MODERL_VERSION},-wx
+.endif
 
 .if ${MODERL_BUILDDEP:L} == yes
 BUILD_DEPENDS +=	${_MODERL_BDEPS} \
