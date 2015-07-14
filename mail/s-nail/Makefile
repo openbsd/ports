@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/02/03 17:41:58 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2015/07/14 16:42:43 jca Exp $
 
 COMMENT=		enhanced, MIME capable Berkeley Mail
 
-DISTNAME=		s-nail-14.7.11
+DISTNAME=		s-nail-14.8.3
 DISTFILES=		${DISTNAME:S/./_/g}.tar.gz
 CATEGORIES=		mail
 HOMEPAGE=		http://sdaoden.users.sourceforge.net/code.html#s-nail
@@ -23,14 +23,16 @@ MAKE_FLAGS=		CC="${CC}" \
 			C_INCLUDE_PATH="${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS}" \
 			LD_LIBRARY_PATH=${LOCALBASE}/lib \
+			MANDIR="${PREFIX}/man" \
 			SYSCONFDIR="${SYSCONFDIR}" \
-			WANT_EDITLINE=1
+			WANT_AUTOCC=0 \
+			WANT_EDITLINE=1 \
+			WANT_PRIVSEP=0
 MAKE_ENV=		VERBOSE=Yes
 
 LIB_DEPENDS=		devel/libidn
 
 INSTALL_TARGET=		packager-install
-NO_TEST=		Yes
 
 post-install:
 	ln -sf ${TRUEPREFIX}/bin/s-nail ${PREFIX}/bin/nail
