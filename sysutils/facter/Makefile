@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/07/13 19:28:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/07/14 21:45:15 jasper Exp $
 
 COMMENT =		collect and display system facts
 
 DISTNAME =		facter-3.0.1
-REVISION =		1
-# XXX: Uses upstream versioning as it's also exported as a fact
+REVISION =		2
 SHARED_LIBS +=  	facter                    3.0 # 3.0
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
@@ -34,6 +33,18 @@ LIB_DEPENDS =		devel/boost>=1.58 \
 CONFIGURE_ARGS+=	-DWITHOUT_JRUBY:Bool=Yes
 
 SUBST_VARS +=		MODRUBY_BINREV
+
+# XXX: Remove on upgrade
+# https://github.com/puppetlabs/facter/pull/1041
+post-extract:
+	${INSTALL_DATA_DIR} ${WRKSRC}/lib/inc/internal/facts/openbsd/
+	${INSTALL_DATA_DIR} ${WRKSRC}/lib/src/facts/openbsd/
+	cp ${FILESDIR}/networking_resolver.hpp \
+		${WRKSRC}/lib/inc/internal/facts/openbsd/
+	cp ${FILESDIR}/networking_resolver.cc \
+		${WRKSRC}/lib/src/facts/openbsd/
+	cp ${FILESDIR}/collection.cc \
+		${WRKSRC}/lib/src/facts/openbsd/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lib/src/ruby/api.cc ${WRKSRC}/lib/CMakeLists.txt
