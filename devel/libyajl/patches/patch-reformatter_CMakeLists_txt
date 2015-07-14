@@ -1,10 +1,10 @@
-$OpenBSD: patch-reformatter_CMakeLists_txt,v 1.1 2012/06/28 08:50:49 dcoppa Exp $
+$OpenBSD: patch-reformatter_CMakeLists_txt,v 1.2 2015/07/14 13:26:27 dcoppa Exp $
 
 Fix static linking and tests
 (from gentoo linux)
 
---- reformatter/CMakeLists.txt.orig	Tue Dec 20 01:23:22 2011
-+++ reformatter/CMakeLists.txt	Thu Jun 28 10:09:59 2012
+--- reformatter/CMakeLists.txt.orig	Wed Mar 19 05:58:29 2014
++++ reformatter/CMakeLists.txt	Sun Jul 12 19:16:24 2015
 @@ -26,7 +26,7 @@ LINK_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR}/../${YAJL
  
  ADD_EXECUTABLE(json_reformat ${SRCS})
@@ -12,5 +12,5 @@ Fix static linking and tests
 -TARGET_LINK_LIBRARIES(json_reformat yajl_s)
 +TARGET_LINK_LIBRARIES(json_reformat yajl)
  
- # copy the binary into the output directory
- GET_TARGET_PROPERTY(binPath json_reformat LOCATION)
+ # In some environments, we must explicitly link libm (like qnx,
+ # thanks @shahbag)

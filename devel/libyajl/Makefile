@@ -1,25 +1,23 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/22 11:36:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/07/14 13:26:27 dcoppa Exp $
 
 COMMENT =	small JSON library written in ANSI C
 
-V =		2.0.4
-PKGNAME =	libyajl-${V}
-DISTNAME =	lloyd-yajl-${V}
-REVISION =	2
+GH_ACCOUNT =	lloyd
+GH_PROJECT =	yajl
+GH_TAGNAME =	2.1.0
+DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
+PKGNAME =	lib${DISTNAME}
 
 CATEGORIES =	devel
 
-SHARED_LIBS =	yajl	2.0	# 2.0.4
+SHARED_LIBS =	yajl	2.1	# 2.1.0
 
-HOMEPAGE =	https://lloyd.github.com/yajl/
-
-MASTER_SITES =	http://distfiles.nl/ \
-		https://github.com/lloyd/yajl/tarball/${V}/
+HOMEPAGE =	https://lloyd.github.io/yajl/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c
+WANTLIB =	c m
 
 MODULES =	devel/cmake
 
