@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/05/01 16:03:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/07/14 03:21:15 ajacoutot Exp $
 @bin bin/nettle-hash
 @bin bin/nettle-lfib-stream
+@bin bin/nettle-pbkdf2
 @bin bin/pkcs1-conv
 @bin bin/sexp-conv
 include/nettle/
@@ -16,13 +17,20 @@ include/nettle/buffer.h
 include/nettle/camellia.h
 include/nettle/cast128.h
 include/nettle/cbc.h
+include/nettle/ccm.h
+include/nettle/chacha-poly1305.h
+include/nettle/chacha.h
 include/nettle/ctr.h
+include/nettle/curve25519.h
 include/nettle/des-compat.h
 include/nettle/des.h
+include/nettle/dsa-compat.h
 include/nettle/dsa.h
+include/nettle/eax.h
 include/nettle/ecc-curve.h
 include/nettle/ecc.h
 include/nettle/ecdsa.h
+include/nettle/eddsa.h
 include/nettle/gcm.h
 include/nettle/gosthash94.h
 include/nettle/hmac.h
@@ -39,9 +47,9 @@ include/nettle/nettle-types.h
 include/nettle/pbkdf2.h
 include/nettle/pgp.h
 include/nettle/pkcs1.h
+include/nettle/poly1305.h
 include/nettle/realloc.h
 include/nettle/ripemd160.h
-include/nettle/rsa-compat.h
 include/nettle/rsa.h
 include/nettle/salsa20.h
 include/nettle/serpent.h
@@ -52,6 +60,7 @@ include/nettle/sha2.h
 include/nettle/sha3.h
 include/nettle/twofish.h
 include/nettle/umac.h
+include/nettle/version.h
 include/nettle/yarrow.h
 @info info/nettle.info
 lib/libhogweed.a
