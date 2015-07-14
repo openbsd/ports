@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/04/12 18:37:42 jca Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/07/14 20:08:21 jca Exp $
 bin/pwiz${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}peewee.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pwiz.${MODPY_PYC_MAGIC_TAG}pyc
@@ -19,8 +19,10 @@ lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}csv_utils.${M
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}dataset.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}db_url.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}djpeewee.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}fields.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}flask_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}gfk.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}hybrid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}kv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}migrate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}pool.${MODPY_PYC_MAGIC_TAG}pyc
@@ -41,8 +43,10 @@ lib/python${MODPY_VERSION}/site-packages/playhouse/csv_utils.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/dataset.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/db_url.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/djpeewee.py
+lib/python${MODPY_VERSION}/site-packages/playhouse/fields.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/flask_utils.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/gfk.py
+lib/python${MODPY_VERSION}/site-packages/playhouse/hybrid.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/kv.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/migrate.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/pool.py
@@ -68,6 +72,7 @@ share/doc/${MODPY_PY_PREFIX}peewee/_sources/
 share/doc/${MODPY_PY_PREFIX}peewee/_sources/index.txt
 share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/
 share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/api.txt
+share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/contributing.txt
 share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/database.txt
 share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/example.txt
 share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/hacks.txt
@@ -105,6 +110,7 @@ share/doc/${MODPY_PY_PREFIX}peewee/index.html
 share/doc/${MODPY_PY_PREFIX}peewee/objects.inv
 share/doc/${MODPY_PY_PREFIX}peewee/peewee/
 share/doc/${MODPY_PY_PREFIX}peewee/peewee/api.html
+share/doc/${MODPY_PY_PREFIX}peewee/peewee/contributing.html
 share/doc/${MODPY_PY_PREFIX}peewee/peewee/database.html
 share/doc/${MODPY_PY_PREFIX}peewee/peewee/example.html
 share/doc/${MODPY_PY_PREFIX}peewee/peewee/hacks.html
