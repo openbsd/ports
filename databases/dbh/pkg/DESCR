@@ -1,3 +1,0 @@
-Disk based hashes is a method to create multidimensional binary trees on
-disk.  This library permits the extension of database concepts to a
-plethora of electronic data, such as graphic information.
