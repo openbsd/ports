@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.16 2015/07/02 08:04:22 espie Exp $
+# $OpenBSD: Build.pm,v 1.17 2015/07/14 08:17:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -65,13 +65,8 @@ sub can_start_build
 			$self->log('K', $v, " ".$core->hostname." ".$reason);
 			$self->{klogged}{$v->pkgpath} = 1;
 		}
-#		if ($self->can_be_junked($v, $core)) {
-#			$self->force_junk($core);
-#			return 1;
-#		} else {
-			push(@{$self->{tag_mismatches}}, $v);
-			return 0;
-#		}
+		push(@{$self->{tag_mismatches}}, $v);
+		return 0;
 	}
 	# keep affinity mismatches for later
 	if (defined $v->{affinity} && !$core->matches_affinity($v)) {
@@ -312,7 +307,7 @@ sub force_junk
 {
 	my ($self, $core) = @_;
 	my $v = JunkPath->new;
-	$self->log('C', $v, " ".$core->hostname);
+	$self->log('J', $v, " ".$core->hostname);
 	$self->{builder}->force_junk($v, $core,
 	    sub {
 		my $fail = shift;
