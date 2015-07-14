@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.260 2015/07/07 09:46:03 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.261 2015/07/14 23:59:32 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -561,6 +561,9 @@ my $obsolete_reason = {
 	'pear-HTML-QuickForm' => 5,
 	'p5-XML-LibXML-Common' => 5,
 	'drac' => 3,
+	'vifm' => 0,
+	'ruby-amqp' => 5,
+	'dbh' => 5,
 };
 
 # ->is_base_system($handle, $state):
