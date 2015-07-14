@@ -37,19 +37,6 @@ namespace facter { namespace facts { namespace openbsd {
          * @return Returns a pointer to the address bytes or nullptr if not a link address.
          */
         virtual uint8_t const* get_link_address_bytes(sockaddr const* addr) const override;
-
-        /**
-         * Finds known DHCP servers for all interfaces.
-         * @return Returns a map between interface name and DHCP server.
-         */
-        virtual std::map<std::string, std::string> find_dhcp_servers() const override;
-
-        /**
-         * Finds the DHCP server for the given interface.
-         * @param interface The interface to find the DHCP server for.
-         * @returns Returns the DHCP server for the interface or empty string if one isn't found.
-         */
-        virtual std::string find_dhcp_server(std::string const& interface) const override;
     };
 
 }}}  // namespace facter::facts::openbsd

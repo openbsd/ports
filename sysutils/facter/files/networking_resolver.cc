@@ -54,16 +54,4 @@ namespace facter { namespace facts { namespace openbsd {
         return ifr.ifr_mtu;
     }
 
-    map<string, string> networking_resolver::find_dhcp_servers() const
-    {
-        /* XXX: Unimplemented. */
-        return map<string, string>();
-    }
-
-    string networking_resolver::find_dhcp_server(string const& interface) const
-    {
-        /* XXX: Unimplemented. */
-        return "";
-    }
-
 }}}  // namespace facter::facts::openbsdbsd

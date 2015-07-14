@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.4 2015/07/14 21:45:15 jasper Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.5 2015/07/14 21:59:09 jasper Exp $
 
 - From f11bebbdfbe0ebfef9f1bfd7931bdc40511db871 Mon Sep 17 00:00:00 2001
   From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -7,7 +7,7 @@ $OpenBSD: patch-lib_CMakeLists_txt,v 1.4 2015/07/14 21:45:15 jasper Exp $
 - Enable basic set of facts
 
 --- lib/CMakeLists.txt.orig	Thu Jun 25 17:47:38 2015
-+++ lib/CMakeLists.txt	Tue Jul 14 15:42:57 2015
++++ lib/CMakeLists.txt	Tue Jul 14 15:47:55 2015
 @@ -113,7 +113,11 @@ if (UNIX)
          set(LIBFACTER_STANDARD_SOURCES ${LIBFACTER_STANDARD_SOURCES} "src/util/posix/scoped_bio.cc")
      endif()
@@ -21,11 +21,10 @@ $OpenBSD: patch-lib_CMakeLists_txt,v 1.4 2015/07/14 21:45:15 jasper Exp $
  endif()
  
  if (WIN32)
-@@ -204,6 +208,16 @@ elseif ("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
-         "src/facts/bsd/filesystem_resolver.cc"
+@@ -205,6 +209,17 @@ elseif ("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
          "src/facts/bsd/networking_resolver.cc"
          "src/facts/bsd/uptime_resolver.cc"
-+        "src/util/bsd/scoped_ifaddrs.cc"
+         "src/util/bsd/scoped_ifaddrs.cc"
 +    )
 +elseif ("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
 +    set(LIBFACTER_PLATFORM_SOURCES
@@ -35,6 +34,8 @@ $OpenBSD: patch-lib_CMakeLists_txt,v 1.4 2015/07/14 21:45:15 jasper Exp $
 +        "src/facts/bsd/uptime_resolver.cc"
 +        "src/facts/bsd/networking_resolver.cc"
 +        "src/facts/openbsd/networking_resolver.cc"
-         "src/util/bsd/scoped_ifaddrs.cc"
++        "src/util/bsd/scoped_ifaddrs.cc"
++        "src/facts/openbsd/processor_resolver.cc"
      )
  elseif ("${CMAKE_SYSTEM_NAME}" MATCHES "Windows")
+     set(LIBFACTER_PLATFORM_SOURCES
