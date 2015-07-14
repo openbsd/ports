@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/18 07:41:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/14 23:51:48 jasper Exp $
 include/libuhttpmock-0.0/
 include/libuhttpmock-0.0/uhttpmock/
 include/libuhttpmock-0.0/uhttpmock/uhm-resolver.h
@@ -19,15 +19,15 @@ share/gtk-doc/html/libuhttpmock-0.0/
 share/gtk-doc/html/libuhttpmock-0.0/UhmResolver.html
 share/gtk-doc/html/libuhttpmock-0.0/UhmServer.html
 share/gtk-doc/html/libuhttpmock-0.0/annotation-glossary.html
-share/gtk-doc/html/libuhttpmock-0.0/api-index-deprecated.html
-share/gtk-doc/html/libuhttpmock-0.0/api-index-full.html
 share/gtk-doc/html/libuhttpmock-0.0/ch01.html
 share/gtk-doc/html/libuhttpmock-0.0/ch02.html
 share/gtk-doc/html/libuhttpmock-0.0/home.png
 share/gtk-doc/html/libuhttpmock-0.0/index.html
-share/gtk-doc/html/libuhttpmock-0.0/index.sgml
+share/gtk-doc/html/libuhttpmock-0.0/ix01.html
+share/gtk-doc/html/libuhttpmock-0.0/ix02.html
 share/gtk-doc/html/libuhttpmock-0.0/ix03.html
 share/gtk-doc/html/libuhttpmock-0.0/ix04.html
+share/gtk-doc/html/libuhttpmock-0.0/ix05.html
 share/gtk-doc/html/libuhttpmock-0.0/left-insensitive.png
 share/gtk-doc/html/libuhttpmock-0.0/left.png
 share/gtk-doc/html/libuhttpmock-0.0/libuhttpmock-0.0-Version-Information.html
