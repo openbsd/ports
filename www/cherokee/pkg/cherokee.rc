@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: cherokee.rc,v 1.5 2012/12/12 02:17:40 brad Exp $
+# $OpenBSD: cherokee.rc,v 1.6 2015/07/15 23:29:57 ajacoutot Exp $
 
-daemon="${TRUEPREFIX}/sbin/cherokee"
-daemon_flags="-d"
+daemon="${TRUEPREFIX}/sbin/cherokee -d"
 
 . /etc/rc.d/rc.subr
 
-pexp="${daemon}[^-]"
+# extra space injected in the process list
+pexp="${TRUEPREFIX}/sbin/cherokee ${daemon_flags:+ ${daemon_flags}}"
 
 rc_cmd $1
