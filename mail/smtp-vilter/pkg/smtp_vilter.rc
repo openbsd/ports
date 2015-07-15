@@ -1,11 +1,11 @@
 #!/bin/sh
 #
-# $OpenBSD: smtp_vilter.rc,v 1.5 2010/12/27 14:50:23 ajacoutot Exp $
+# $OpenBSD: smtp_vilter.rc,v 1.6 2015/07/15 16:15:35 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/smtp-vilter"
 
 . /etc/rc.d/rc.subr
 
-pexp="smtp-vilter:"
+pexp="smtp-vilter: parent"
 
 rc_cmd $1
