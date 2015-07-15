@@ -1,6 +1,6 @@
-$OpenBSD: patch-salt_modules_openbsdrcctl_py,v 1.5 2015/07/15 03:09:35 ajacoutot Exp $
+$OpenBSD: patch-salt_modules_openbsdrcctl_py,v 1.6 2015/07/15 19:43:26 ajacoutot Exp $
 
-https://github.com/saltstack/salt/pull/25442
+https://github.com/saltstack/salt/commit/487c05f9e6c427f10fc9cb37d3bbd81f84bd01c2
 
 From 7ee5a53948d6db8fb2e06191cf6bbf779164e033 Mon Sep 17 00:00:00 2001
 From: Justin Findlay <jfindlay@gmail.com>
@@ -18,8 +18,16 @@ Date: Tue, 6 Jan 2015 18:14:23 +0100
 Subject: [PATCH 2/2] openbsdrcctl: turn badvar into a tuple and fix lint warnings
 
 --- salt/modules/openbsdrcctl.py.orig	Tue Jul  7 22:42:37 2015
-+++ salt/modules/openbsdrcctl.py	Wed Jul 15 02:48:16 2015
-@@ -61,7 +61,7 @@ def available(name):
++++ salt/modules/openbsdrcctl.py	Wed Jul 15 21:42:51 2015
+@@ -6,7 +6,6 @@ from __future__ import absolute_import
+ 
+ # Import python libs
+ import os
+-import re
+ 
+ # Import salt libs
+ import salt.utils
+@@ -61,7 +60,7 @@ def available(name):
  
          salt '*' service.available sshd
      '''
@@ -28,41 +36,43 @@ Subject: [PATCH 2/2] openbsdrcctl: turn badvar into a tuple and fix lint warning
      if __salt__['cmd.retcode'](cmd) == 2:
          return False
      return True
-@@ -93,9 +93,8 @@ def get_all():
+@@ -93,8 +92,7 @@ def get_all():
      '''
      ret = []
      service = _cmd()
 -    for svc in __salt__['cmd.run']('{0} status'.format(service)).splitlines():
 -        svc = re.sub('(_flags|)=.*$', '', svc)
--        ret.append(svc)
 +    for svc in __salt__['cmd.run']('{0} ls all'.format(service)).splitlines():
-+            ret.append(svc)
+         ret.append(svc)
      return sorted(ret)
  
- 
-@@ -111,9 +110,7 @@ def get_disabled():
+@@ -111,10 +109,8 @@ def get_disabled():
      '''
      ret = []
      service = _cmd()
 -    for svc in __salt__['cmd.run']('{0} status'.format(service)).splitlines():
 -        if svc.endswith("=NO"):
 -            svc = re.sub('(_flags|)=.*$', '', svc)
+-            ret.append(svc)
 +    for svc in __salt__['cmd.run']('{0} ls off'.format(service)).splitlines():
-             ret.append(svc)
++        ret.append(svc)
      return sorted(ret)
  
-@@ -130,9 +127,7 @@ def get_enabled():
+ 
+@@ -130,10 +126,8 @@ def get_enabled():
      '''
      ret = []
      service = _cmd()
 -    for svc in __salt__['cmd.run']('{0} status'.format(service)).splitlines():
 -        if not svc.endswith("=NO"):
 -            svc = re.sub('(_flags|)=.*$', '', svc)
+-            ret.append(svc)
 +    for svc in __salt__['cmd.run']('{0} ls on'.format(service)).splitlines():
-             ret.append(svc)
++        ret.append(svc)
      return sorted(ret)
  
-@@ -227,11 +222,19 @@ def enable(name, **kwargs):
+ 
+@@ -227,11 +221,19 @@ def enable(name, **kwargs):
          salt '*' service.enable <service name>
          salt '*' service.enable <service name> flags=<flags>
      '''
@@ -85,7 +95,7 @@ Subject: [PATCH 2/2] openbsdrcctl: turn badvar into a tuple and fix lint warning
  def disable(name, **kwargs):
      '''
      Disable the named service to not start at boot.
-@@ -242,7 +245,7 @@ def disable(name, **kwargs):
+@@ -242,7 +244,7 @@ def disable(name, **kwargs):
  
          salt '*' service.disable <service name>
      '''
@@ -94,7 +104,7 @@ Subject: [PATCH 2/2] openbsdrcctl: turn badvar into a tuple and fix lint warning
      return not __salt__['cmd.retcode'](cmd)
  
  
-@@ -256,7 +259,7 @@ def disabled(name):
+@@ -256,7 +258,7 @@ def disabled(name):
  
          salt '*' service.disabled <service name>
      '''
@@ -103,7 +113,7 @@ Subject: [PATCH 2/2] openbsdrcctl: turn badvar into a tuple and fix lint warning
      return not __salt__['cmd.retcode'](cmd) == 0
  
  
-@@ -275,16 +278,16 @@ def enabled(name, **kwargs):
+@@ -275,16 +277,16 @@ def enabled(name, **kwargs):
          salt '*' service.enabled <service name>
          salt '*' service.enabled <service name> flags=<flags>
      '''
