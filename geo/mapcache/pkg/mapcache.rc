@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: mapcache.rc,v 1.1.1.1 2014/08/26 18:38:49 landry Exp $
+# $OpenBSD: mapcache.rc,v 1.2 2015/07/15 23:56:36 ajacoutot Exp $
 
 daemon="${LOCALBASE}/bin/spawn-fcgi"
 # chroot version
@@ -12,8 +12,6 @@ daemon_class=mapcache
 . /etc/rc.d/rc.subr
 
 # chroot version
-pexp="/cgi-bin/mapcache"
-# non-chroot version
-# pexp="/var/www/cgi-bin/mapcache"
+pexp=".*/cgi-bin/mapcache"
 
 rc_cmd $1
