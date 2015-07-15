@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/09/15 12:07:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/07/15 13:55:56 ajacoutot Exp $
 bin/mm-common-prepare
 @man man/man1/mm-common-prepare.1
 share/aclocal/
+share/aclocal/mm-ax_cxx_compile_stdcxx_11.m4
 share/aclocal/mm-common.m4
 share/aclocal/mm-dietlib.m4
 share/aclocal/mm-doc.m4
