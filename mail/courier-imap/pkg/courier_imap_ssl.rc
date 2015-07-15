@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: courier_imap_ssl.rc,v 1.1 2011/08/22 07:57:25 giovanni Exp $
+# $OpenBSD: courier_imap_ssl.rc,v 1.2 2015/07/15 21:14:06 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/libexec/imapd-ssl.rc"
 
 . /etc/rc.d/rc.subr
 
-pexp=".*courierlogger.*imapd-ssl.pid"
+pexp="${LOCALBASE}/sbin/courierlogger .* -start -name=imapd-ssl .*"
 
 rc_start() {
 	${rcexec} "${daemon} start"
