@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/07/14 22:02:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/07/15 16:12:35 jasper Exp $
 
 COMMENT =		collect and display system facts
 
 DISTNAME =		facter-3.0.1
-REVISION =		4
+REVISION =		5
 SHARED_LIBS +=  	facter                    3.0 # 3.0
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
@@ -50,6 +50,10 @@ post-extract:
 	cp ${FILESDIR}/memory_resolver.hpp \
 		${WRKSRC}/lib/inc/internal/facts/openbsd/
 	cp ${FILESDIR}/memory_resolver.cc \
+		${WRKSRC}/lib/src/facts/openbsd/
+	cp ${FILESDIR}/dmi_resolver.hpp \
+		${WRKSRC}/lib/inc/internal/facts/openbsd/
+	cp ${FILESDIR}/dmi_resolver.cc \
 		${WRKSRC}/lib/src/facts/openbsd/
 	cp ${FILESDIR}/collection.cc \
 		${WRKSRC}/lib/src/facts/openbsd/
