@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: adsuck.rc,v 1.3 2013/01/12 16:14:22 ajacoutot Exp $
+# $OpenBSD: adsuck.rc,v 1.4 2015/07/15 14:59:15 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/adsuck"
 daemon_flags="-c /var/adsuck -f /files/resolv.conf -r /files/regex /files/hosts.small"
@@ -8,11 +8,11 @@ daemon_flags="-c /var/adsuck -f /files/resolv.conf -r /files/regex /files/hosts.
 . /etc/rc.d/rc.subr
 
 rc_reload() {
-	pkill -HUP -f "^${pexp}" && pkill -USR1 -f "^${pexp}"
+	pkill -HUP -xf "${pexp}" && pkill -USR1 -xf "${pexp}"
 }
 
 rc_post() {
-	pkill -f '^adsuck: \[resolv monitor\]'
+	pkill -xf "adsuck: \[resolv monitor\]"
 }
 
 rc_cmd $1

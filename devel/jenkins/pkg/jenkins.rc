@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: jenkins.rc,v 1.6 2014/02/10 19:26:25 jasper Exp $
+# $OpenBSD: jenkins.rc,v 1.7 2015/07/15 14:59:15 ajacoutot Exp $
 
 daemon=$(${LOCALBASE}/bin/javaPathHelper -c jenkins)
 daemon_flags="-Djava.io.tmpdir=/var/cache/jenkins -jar ${TRUEPREFIX}/share/jenkins/jenkins.war --httpPort=8000 --httpsPort=-1 --ajp13Port=-1"
@@ -22,7 +22,7 @@ rc_pre() {
 
 
 rc_stop() {
-	pkill -9 -f "^${pexp}"	
+	pkill -9 -xf "${pexp}"	
 }
 
 rc_cmd $1

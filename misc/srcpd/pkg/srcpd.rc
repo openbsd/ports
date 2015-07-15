@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: srcpd.rc,v 1.4 2010/12/27 14:50:23 ajacoutot Exp $
+# $OpenBSD: srcpd.rc,v 1.5 2015/07/15 14:59:15 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/srcpd"
 
 . /etc/rc.d/rc.subr
 
 rc_stop() {
-	pkill -9 -f "^${pexp}"
+	pkill -9 -xf "${pexp}"
 }
 
 rc_cmd $1
