@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2015/07/07 19:32:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2015/07/15 06:43:31 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 V=		9.10.2-P2
 DISTNAME=	bind-$V
+REVISION=	0
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
 SHARED_LIBS +=	isc                  2.1      # 148.2
@@ -41,6 +42,7 @@ SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-filter-aaaa \
 		--enable-threads \
 		--with-libtool \
 		--with-python=${MODPY_BIN}
