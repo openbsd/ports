@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: wwbackuppc.rc,v 1.1.1.1 2011/09/20 11:36:55 landry Exp $
+# $OpenBSD: wwbackuppc.rc,v 1.2 2015/07/15 22:40:09 ajacoutot Exp $
 
 daemon="${LOCALBASE}/bin/spawn-fcgi"
 daemon_flags="-u_backuppc -g_backuppc -p1028 ${TRUEPREFIX}/bin/BackupPC_Admin.fcgi"
 
 . /etc/rc.d/rc.subr
 
-pexp="/usr/bin/perl.*BackupPC_Admin.fcgi"
+pexp="/usr/bin/perl ${TRUEPREFIX}/bin/BackupPC_Admin.fcgi"
 rc_reload=NO
 
 rc_cmd $1
