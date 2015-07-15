@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/28 10:17:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.6 2015/07/15 09:56:28 zhuk Exp $
 
 COMMENT =		CD/DVD creator
-DISTNAME =		k3b-2.0.2
+DISTNAME =		k3b-2.0.3a
 CATEGORIES =		multimedia
-REVISION =		3
 
 # bump away from KDE3 version
-SHARED_LIBS =		k3blib		50.0
-SHARED_LIBS +=		k3bdevice	50.0
+SHARED_LIBS =		k3blib		50.1
+SHARED_LIBS +=		k3bdevice	50.1
 
 HOMEPAGE =		http://www.k3b.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread
 WANTLIB += ICE SM X11 Xext
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtSvg
@@ -28,8 +27,7 @@ WANTLIB += ${KDE4LIB}/solid
 WANTLIB += FLAC FLAC++ avcodec avformat avutil dvdread mad mp3lame
 WANTLIB += mpcdec samplerate soprano sndfile tag vorbis
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=k3b/}
-EXTRACT_SUFX =		.tar.bz2
+MASTER_SITES =		${MASTER_SITE_KDE:=stable/k3b/}
 
 MODULES =		x11/kde4 devel/gettext
 
@@ -60,6 +58,8 @@ LIB_DEPENDS =		audio/flac \
 			${MODKDE4_DEP_DIR}/libkcddb>=${MODKDE4_DEP_VERSION}
 
 CONFIGURE_ARGS =	-DK3B_ENABLE_MUSICBRAINZ:Bool=No
+
+WRKDIST =		${WRKDIR}/${DISTNAME:C/[^0-9]*$//}
 
 # systemd stuff, o' really?
 post-install:
