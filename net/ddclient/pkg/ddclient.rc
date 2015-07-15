@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: ddclient.rc,v 1.4 2015/03/22 08:30:20 pascal Exp $
+# $OpenBSD: ddclient.rc,v 1.5 2015/07/15 17:24:11 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/ddclient"
 daemon_user="_ddclient"
 
 . /etc/rc.d/rc.subr
 
-pexp="perl: ddclient"
+pexp="perl: ddclient - .*"
 
 rc_pre() {
 	install -d -o _ddclient -g _ddclient /var/run/ddclient
