@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/06/19 10:55:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2015/07/15 15:52:29 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,6 +16,7 @@ DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests= 	mariadb-tests-${VERSION}
+REVISION-main=	0
 EPOCH=		0
 CATEGORIES=	databases
 MASTER_SITES=	http://mariadb.mirror.iweb.com//${DISTNAME}/source/ \
