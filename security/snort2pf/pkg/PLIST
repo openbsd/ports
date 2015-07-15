@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/10 13:42:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/15 20:59:43 ajacoutot Exp $
+@extraunexec rm -f /var/log/snort/alert
 @man man/man8/snort2pf.8
 @man man/man8/snort2pfmon.8
 sbin/snort2pf
 sbin/snort2pfmon
+@sample /var/log/snort/
+@exec-add touch /var/log/snort/alert
 @rcscript ${RCDIR}/snort2pf

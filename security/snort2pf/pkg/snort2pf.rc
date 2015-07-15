@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: snort2pf.rc,v 1.1.1.1 2011/03/10 13:42:30 jasper Exp $
+# $OpenBSD: snort2pf.rc,v 1.2 2015/07/15 20:59:43 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/snort2pf"
 
 . /etc/rc.d/rc.subr
 
-pexp="perl: snort2pf"
+pexp="perl: snort2pf .*"
 
 rc_bg=YES
 rc_reload=NO
