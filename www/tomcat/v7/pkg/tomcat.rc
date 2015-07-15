@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: tomcat.rc,v 1.1.1.1 2011/10/31 08:23:38 dcoppa Exp $
+# $OpenBSD: tomcat.rc,v 1.2 2015/07/15 19:19:16 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/tomcat/bin/catalina.sh"
 daemon_flags="-server"
@@ -8,7 +8,7 @@ daemon_user="_tomcat"
 
 . /etc/rc.d/rc.subr
 
-pexp="$(${LOCALBASE}/bin/javaPathHelper -h tomcat).*-Dcatalina.base=${CATALINA_BASE}.*org.apache.catalina.startup.Bootstrap.*"
+pexp="$(${LOCALBASE}/bin/javaPathHelper -c tomcat) .*-Dcatalina.base=${CATALINA_BASE}.*org.apache.catalina.startup.Bootstrap.*"
 
 rc_reload=NO
 
