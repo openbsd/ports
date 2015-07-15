@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: smokeping.rc,v 1.4 2014/11/12 12:19:13 sthen Exp $
+# $OpenBSD: smokeping.rc,v 1.5 2015/07/15 23:17:11 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/smokeping"
 daemon_user="_smokeping"
@@ -8,7 +8,7 @@ daemon_user="_smokeping"
 . /etc/rc.d/rc.subr
 
 # N.B. If adjusting, has to match single and multi process modes, but not cgi  
-pexp="(perl:|/usr/bin/perl) ${daemon}( |$)"
+pexp="(perl:|/usr/bin/perl) ${daemon}( .*|$)"
 
 rc_pre() {
 	install -d -o _smokeping /var/run/smokeping
