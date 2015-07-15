@@ -1,12 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: bird.rc,v 1.4 2014/07/01 21:51:42 sthen Exp $
+# $OpenBSD: bird.rc,v 1.5 2015/07/15 14:35:48 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/bird"
 
 . /etc/rc.d/rc.subr
-
-pexp="${daemon}${daemon_flags:+ ${daemon_flags}}$"
 
 rc_stop() {
 	${TRUEPREFIX}/sbin/birdc down
