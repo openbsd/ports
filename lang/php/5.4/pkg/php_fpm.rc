@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: php_fpm.rc,v 1.1.1.1 2013/08/07 16:35:47 robert Exp $
+# $OpenBSD: php_fpm.rc,v 1.2 2015/07/15 16:03:07 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/php-fpm-${PV}"
 
 . /etc/rc.d/rc.subr
 
-pexp="php-fpm-${PV}: master.*"
+pexp="php-fpm-${PV}: master process .*"
 rc_reload=NO
 
 rc_cmd $1
