@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: postfix.rc,v 1.4 2012/04/11 08:34:55 sthen Exp $
+# $OpenBSD: postfix.rc,v 1.5 2015/07/15 15:57:18 sthen Exp $
 
-daemon="${TRUEPREFIX}/libexec/postfix/master"
+daemon="${TRUEPREFIX}/libexec/postfix/master.*"
 
 . /etc/rc.d/rc.subr
 
