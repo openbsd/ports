@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2015/04/09 19:55:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2015/07/15 20:45:24 ajacoutot Exp $
 
 COMMENT=	virus/spam scanning framework
 
@@ -9,6 +9,7 @@ DISTNAME=	MailScanner-${V}.${Vss}
 PKGNAME=	mailscanner-${V}.${Vss:S/-/./}
 CATEGORIES=	mail
 MASTER_SITES=	https://s3.amazonaws.com/mailscanner/release/v4/tar/
+REVISION=	0
 
 HOMEPAGE=	http://www.mailscanner.info/
 
