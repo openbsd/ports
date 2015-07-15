@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.108 2015/07/05 10:53:00 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.109 2015/07/15 15:03:06 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: July 5 2015 $
+.Dd $Mdocdate: July 15 2015 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -55,6 +55,18 @@ as soon as it can.
 will run with sensible defaults if used without options.
 Note, however, that it will produce logs, lock files, packages, and package
 installations.
+.Pp
+If run as non-root,
+.Nm
+will warn.
+The preferred way is to run it as root.
+.Nm
+will change its identity to a different user as needed (by default
+the owner of the ports tree).
+See
+.Sq THE SECURITY MODEL OF DPB
+for details.
+.Pp
 .Nm
 can be restricted to a subset of the tree by giving it
 .Ar pathlist ...
@@ -258,6 +270,9 @@ Do not update the distfiles history.
 For instance, if
 .Nm
 is run a second time after a problem during the first run.
+.It Ar PORT_USER
+User that can write to the ports tree.
+Not really used for anything yet.
 .It Ar RECORD
 Define a file which will save all terminal output.
 Mostly useful for presentations, as a way to save
@@ -775,30 +790,43 @@ can be a non-integral value, usually lower than 1, in which case they
 represent the fraction of cores that should be affected to squiggles,
 as decided randomly at the start of each build.
 0.7 or 0.8 might be a good choice for dual core machines.
-.Sh BUILDING WITHOUT SUDO
+.Sh THE SECURITY MODEL OF DPB
+When
 .Nm
-can use a privilege drop model where it doesn't need
+is run as root, it uses a privilege drop model instead of the
+dangerous privilege elevation model of
 .Xr sudo 8 .
+By default, the owner of the ports tree is used as the target user,
+though
+.Nm
+can be configured with several distinct users with different roles.
 .Pp
-Setting up
-.Nm
-with that model is highly recommended, since
+Note that each of these users defaults to
+.Ar BUILD_USER .
+A minimally secured configuration would define a
+.Ar BUILD_USER
+without any
 .Xr sudo 8
-support in
-.Nm
-will be removed soon.
+privileges.
+.Pp
 .Bl -bullet
 .It
 Start
 .Nm
 as root.
 .It
-Provide an
+For cluster builds,
+provide an
 .Xr ssh 1
 connection to distant hosts from root as root.
 .It
 .Nm
-will drop privileges whenever it tries to build or fetch or log something.
+will drop privileges for every operation except
+.Xr pkg_add 1 ,
+.Xr pkg_delete 1
+and the
+.Ar STARTUP
+script.
 .It
 .Ar build_user
 is used to build stuff locally or distantly (can be per-host), using:
@@ -808,38 +836,30 @@ is used to build stuff locally or distantly (can be per-host), using:
 =
 .Pa /
 if there is no actual chroot needed).
-.Pp
-Note that
-.Nm
-will not start as root without a
-.Ar build_user .
+It must have read access to ${DISTDIR} and ${PORTSDIR}, and write
+access to ${WRKOBJDIR}, ${PACKAGE_REPOSITORY}, and ${PLIST_DB}.
+It does not require network access.
 .It
 .Ar LOG_USER
 is used to open all log files.
 .Ar LOG_USER
 only needs to exist locally.
+It needs write access to the log directories, including
+${DISTDIR}/build-stats.
+It does not need network access.
 .It
 .Ar FETCH_USER
 is used to fetch distfiles and handle corresponding log info.
+It needs write access to ${DISTDIR}, and network access.
 Thus,
 .Xr ftp 1
 does not happen as root.
 .It
 .Ar UNPRIV_USER
-is used for other activities that do not require any rights.
+is used as a fail-safe for any other activities that do not require any rights.
 .It
 .Nm
 creates local directories as root, then gives them to the appropriate user.
-.It
-None of those users require
-.Xr sudo 8
-privileges.
-.Pp
-.Nm
-will still run the
-.Ar STARTUP
-script as root,
-as well as all operations that involve adding and removing packages.
 .El
 .Sh LOCKS AND ERRORS
 .Nm
