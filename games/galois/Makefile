@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2014/09/17 20:32:11 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2015/07/15 02:26:34 bcallah Exp $
 
 COMMENT =	free multi-dimensional Tetris-like game
-DISTNAME =	galois-0.3
-REVISION =	1
+DISTNAME =	galois-0.4
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://www.nongnu.org/galois/

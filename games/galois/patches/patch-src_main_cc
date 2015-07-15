@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_main_cc,v 1.1 2014/05/15 15:26:48 bcallah Exp $
+$OpenBSD: patch-src_main_cc,v 1.2 2015/07/15 02:26:34 bcallah Exp $
 
 Disable HelpContents. This requires yelp, which
 requires webkit, which needlessly breaks galois
 on archs without webkit.
 
---- src/main.cc.orig	Thu May 15 10:11:21 2014
-+++ src/main.cc	Thu May 15 10:11:31 2014
-@@ -455,7 +455,6 @@ MainWindow::MainWindow()
+--- src/main.cc.orig	Sun Jul 12 20:00:13 2015
++++ src/main.cc	Wed Jul 15 02:21:27 2015
+@@ -480,7 +480,6 @@ MainWindow::MainWindow()
      "      <menuitem action='GameQuit'/>"
      "    </menu>"
      "    <menu action='HelpMenu'>"
