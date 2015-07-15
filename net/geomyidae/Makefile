@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/06/22 15:53:45 jung Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/15 19:27:52 ajacoutot Exp $
 
 COMMENT =		Gopher protocol daemon
 
 DISTNAME =		geomyidae-0.26.3
+REVISION =		0
 
 CATEGORIES =		net
 
