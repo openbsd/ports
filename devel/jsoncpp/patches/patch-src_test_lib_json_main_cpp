@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_test_lib_json_main_cpp,v 1.2 2015/06/05 00:27:59 jsg Exp $
---- src/test_lib_json/main.cpp.orig	Sun Apr 12 05:49:59 2015
-+++ src/test_lib_json/main.cpp	Thu Jun  4 13:48:06 2015
-@@ -282,7 +282,7 @@ JSONTEST_FIXTURE(ValueTest, null) {
-   JSONTEST_ASSERT_EQUAL(0.0, null_.asFloat());
-   JSONTEST_ASSERT_STRING_EQUAL("", null_.asString());
+$OpenBSD: patch-src_test_lib_json_main_cpp,v 1.3 2015/07/15 15:41:34 dcoppa Exp $
+--- src/test_lib_json/main.cpp.orig	Sun Jul 12 22:02:28 2015
++++ src/test_lib_json/main.cpp	Wed Jul 15 16:52:10 2015
+@@ -298,7 +298,7 @@ JSONTEST_FIXTURE(ValueTest, null) {
  
+ #if !defined(__ARMEL__)
+   // See line #165 of include/json/value.h
 -  JSONTEST_ASSERT_EQUAL(Json::Value::null, null_);
 +  JSONTEST_ASSERT_EQUAL(Json::Value::nullRef, null_);
+ #endif
  }
  
- JSONTEST_FIXTURE(ValueTest, strings) {
-@@ -1240,7 +1240,7 @@ JSONTEST_FIXTURE(ValueTest, nonIntegers) {
+@@ -1257,7 +1257,7 @@ JSONTEST_FIXTURE(ValueTest, nonIntegers) {
  
    // A 16-digit floating point number.
    val = Json::Value(2199023255552000.0f);

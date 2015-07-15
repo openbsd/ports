@@ -1,10 +1,11 @@
 prefix=${TRUEPREFIX}
+exec_prefix=${TRUEPREFIX}
 libdir=${TRUEPREFIX}/lib
 includedir=${TRUEPREFIX}/include/jsoncpp
 
 Name: jsoncpp
-Description: JSON implementation in C++
-Version: ${VERSION}
-Requires:
-Libs:  -L${libdir} -ljsoncpp
+Description: A C++ library for interacting with JSON
+Version: ${GH_TAGNAME}
+URL: https://github.com/open-source-parsers/jsoncpp
+Libs: -L${libdir} -ljsoncpp
 Cflags: -I${includedir}
