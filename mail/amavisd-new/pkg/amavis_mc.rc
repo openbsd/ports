@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: amavis_mc.rc,v 1.1 2014/11/19 19:00:50 giovanni Exp $
+# $OpenBSD: amavis_mc.rc,v 1.2 2015/07/15 19:26:44 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/amavis-mc"
 
@@ -8,6 +8,6 @@ daemon="${TRUEPREFIX}/sbin/amavis-mc"
 
 rc_reload=NO
 
-pexp="/usr/bin/perl -T ${daemon}"
+pexp="/usr/bin/perl -T ${daemon}${daemon_flags:+ ${daemon_flags}}"
 
 rc_cmd $1
