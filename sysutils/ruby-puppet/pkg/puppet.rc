@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: puppet.rc,v 1.1 2015/04/04 09:28:45 jasper Exp $
+# $OpenBSD: puppet.rc,v 1.2 2015/07/15 14:49:02 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/puppet agent"
 
 . /etc/rc.d/rc.subr
 
-pexp="${RUBY} ${daemon}${daemon_flags:+ ${daemon_flags}}$"
+pexp="${RUBY} ${daemon}${daemon_flags:+ ${daemon_flags}}"
 rc_reload=NO
 
 rc_cmd $1
