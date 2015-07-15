@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: bacula_fd.rc,v 1.1 2011/03/21 17:06:23 ajacoutot Exp $
+# $OpenBSD: bacula_fd.rc,v 1.2 2015/07/15 15:53:48 sthen Exp $
 
 daemon="${TRUEPREFIX}/libexec/bacula/bacula-ctl-fd"
 daemon_flags="start"
@@ -11,7 +11,7 @@ rc_stop() {
 	${daemon} stop
 }
 
-pexp="${TRUEPREFIX}/sbin/bacula-fd"
+pexp="${TRUEPREFIX}/sbin/bacula-fd .*"
 rc_reload=NO
 
 rc_cmd $1
