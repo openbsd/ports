@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/04/04 08:22:29 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2015/07/15 14:20:38 jca Exp $
 
 COMMENT =	remote backup software system
 
@@ -13,9 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 HOMEPAGE =	http://backuppc.sourceforge.net
 
-#ftp: Too many redirections requested
-#MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=BackupPC/}
-MASTER_SITES=	http://freefr.dl.sourceforge.net/project/backuppc/backuppc/3.3.0/
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=backuppc/}
 
 NO_BUILD =	Yes
 
