@@ -1,12 +1,11 @@
 #!/bin/sh
 #
-# $OpenBSD: milter_spamd.rc,v 1.5 2012/12/05 09:38:41 ajacoutot Exp $
+# $OpenBSD: milter_spamd.rc,v 1.6 2015/07/15 19:47:35 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/libexec/milter-spamd"
 
 . /etc/rc.d/rc.subr
 
-pexp="${daemon}"
 rc_reload=NO
 
 rc_cmd $1
