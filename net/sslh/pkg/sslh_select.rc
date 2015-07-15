@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: sslh_select.rc,v 1.3 2012/04/22 20:50:12 sthen Exp $
+# $OpenBSD: sslh_select.rc,v 1.4 2015/07/15 19:14:04 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/sslh-select"
 daemon_flags="--user=_sslh --listen 0.0.0.0:443 --ssh 127.0.0.1:22 --ssl 127.0.0.1:443"
 
 . /etc/rc.d/rc.subr
 
-pexp="${daemon}"
+pexp="${daemon} .*"
 rc_reload=NO
 
 rc_cmd $1
