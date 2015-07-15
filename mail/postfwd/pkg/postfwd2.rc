@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: postfwd2.rc,v 1.4 2013/07/18 08:48:01 giovanni Exp $
+# $OpenBSD: postfwd2.rc,v 1.5 2015/07/15 20:33:57 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/postfwd2"
 daemon_flags="-u _postfwd -g _postfwd -f ${SYSCONFDIR}/postfix/postfwd2.cf"
 
 . /etc/rc.d/rc.subr
 
-pexp="perl: ${daemon}"
+pexp="perl: ${daemon}${daemon_flags:+ ${daemon_flags}}"
 
 rc_stop() {
 	${daemon} --stop
