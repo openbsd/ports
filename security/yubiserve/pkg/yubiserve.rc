@@ -1,14 +1,14 @@
 #!/bin/sh
 #
-# $OpenBSD: yubiserve.rc,v 1.1.1.1 2012/07/18 08:25:07 sthen Exp $
+# $OpenBSD: yubiserve.rc,v 1.2 2015/07/15 17:42:08 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/yubiserve"
 daemon_user="_yubiserve"
 
 . /etc/rc.d/rc.subr
 
+pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
 rc_bg=YES
 rc_reload=NO
-pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
 
 rc_cmd $1
