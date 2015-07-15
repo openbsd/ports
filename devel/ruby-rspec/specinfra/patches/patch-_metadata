@@ -1,14 +1,29 @@
-$OpenBSD: patch-_metadata,v 1.1 2015/07/02 11:27:24 jasper Exp $
+$OpenBSD: patch-_metadata,v 1.2 2015/07/15 00:17:07 jasper Exp $
 
-Drop net-telnet dependency; it's being removed from Ruby 2.3 for a reason.
+- drop net-telnet dependency; it's being removed from Ruby 2.3 for a reason.
+- remove dependency on sfl which only applies for ruby < 1.9
 
---- .metadata.orig	Thu Jul  2 13:21:08 2015
-+++ .metadata	Thu Jul  2 13:21:18 2015
-@@ -39,20 +39,6 @@ dependencies:
+--- .metadata.orig	Tue Jul 14 18:13:37 2015
++++ .metadata	Tue Jul 14 18:13:46 2015
+@@ -39,34 +39,6 @@ dependencies:
        - !ruby/object:Gem::Version
-         version: '0'
+         version: '2.7'
  - !ruby/object:Gem::Dependency
 -  name: net-telnet
+-  requirement: !ruby/object:Gem::Requirement
+-    requirements:
+-    - - ">="
+-      - !ruby/object:Gem::Version
+-        version: '0'
+-  type: :runtime
+-  prerelease: false
+-  version_requirements: !ruby/object:Gem::Requirement
+-    requirements:
+-    - - ">="
+-      - !ruby/object:Gem::Version
+-        version: '0'
+-- !ruby/object:Gem::Dependency
+-  name: sfl
 -  requirement: !ruby/object:Gem::Requirement
 -    requirements:
 -    - - ">="
