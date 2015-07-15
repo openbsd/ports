@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.52 2015/06/22 12:20:06 espie Exp $
+# $OpenBSD: Config.pm,v 1.53 2015/07/15 14:28:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -27,7 +27,7 @@ use DPB::User;
 sub setup_users
 {
 	my ($class, $state) = @_;
-	for my $u (qw(unpriv_user build_user log_user fetch_user)) {
+	for my $u (qw(unpriv_user build_user log_user fetch_user port_user)) {
 		my $U = uc($u);
 		if ($state->defines($U)) {
 			$state->{$u} = DPB::User->new($state->defines($U));
@@ -105,6 +105,9 @@ sub parse_command_line
 	if (!defined $state->{base_user}) {
 		$state->usage("Can't figure out who I am");
 	}
+	if ($state->{base_user}{uid} != 0) {
+		$state->errsay("Running dpb as root with a build_user is the preferred setup");
+	}
 	$class->setup_users($state);
 
 	($state->{ports}, $state->{localarch},
@@ -153,12 +156,27 @@ sub parse_command_line
 	}
 	$state->{build_user} //= $state->{default_prop}{build_user};
 	$class->setup_users($state);
-	$state->{build_user} //= $state->{base_user};
+	if (!defined $state->{port_user}) {
+		my ($uid, $gid) = (stat $state->{realports})[4,5];
+		$state->{port_user} = DPB::User->from_uid($uid, $gid);
+	}
+	if (!defined $state->{build_user}) {
+		if ($state->{base_user}{uid} != 0) {
+			$state->{build_user} = $state->{base_user};
+		} else {
+			$state->{build_users} = $state->{port_user};
+		}
+	}
 	$state->{log_user} //= $state->{build_user};
 	$state->{fetch_user} //= $state->{build_user};
 
 	$state->{log_user}->enforce_local;
-
+	$state->say("Started as: #1", $state->{base_user}->user);
+	$state->say("Port user: #1", $state->{port_user}->user);
+	$state->say("Build user: #1", $state->{build_user}->user);
+	$state->say("Fetch user: #1", $state->{fetch_user}->user);
+	$state->say("Log user: #1", $state->{log_user}->user);
+	$state->say("Unpriv user: #1", $state->{unpriv_user}->user);
 
 	$state->{chroot} = $state->{default_prop}{chroot};
 	# reparse things properly now that we can chroot

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.18 2015/06/01 20:39:06 espie Exp $
+# $OpenBSD: User.pm,v 1.19 2015/07/15 14:28:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -25,10 +25,13 @@ use Fcntl;
 
 sub from_uid
 {
-	my ($class, $u) = @_;
+	my ($class, $u, $g) = @_;
 	if (my ($l, undef, $uid, $gid) = getpwuid $u) {
 		my $groups = `/usr/bin/id -G $u`;
 		chomp $groups;
+		if (defined $g) {
+			$gid = $g;
+		}
 		my $group = getgrgid($gid);
 		bless { user => $l, uid => $uid, 
 		    group => $group, gid => $gid,
