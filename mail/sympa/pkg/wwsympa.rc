@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: wwsympa.rc,v 1.1 2010/12/30 17:51:25 landry Exp $
+# $OpenBSD: wwsympa.rc,v 1.2 2015/07/15 23:19:45 ajacoutot Exp $
 
 daemon="${LOCALBASE}/bin/spawn-fcgi"
 daemon_flags="-u_sympa -g_sympa -p1026 ${TRUEPREFIX}/libexec/sympa/wwsympa.fcgi"
 
 . /etc/rc.d/rc.subr
 
-pexp="/usr/bin/perl.*wwsympa.fcgi"
+pexp="/usr/bin/perl ${TRUEPREFIX}/libexec/sympa/wwsympa.fcgi"
 rc_reload=NO
 
 rc_cmd $1
