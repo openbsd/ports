@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: spectrum.rc,v 1.4 2014/10/20 09:22:49 sebastia Exp $
+# $OpenBSD: spectrum.rc,v 1.5 2015/07/15 17:49:24 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/spectrumctl"
 daemon_flags="--config-dir=${SYSCONFDIR}/spectrum"
 
 . /etc/rc.d/rc.subr
 
-pexp="${TRUEPREFIX}/sbin/spectrum .*\.cfg$"
+pexp="${TRUEPREFIX}/sbin/spectrum .*\.cfg"
 
 rc_start() {
 	${rcexec} "${daemon} ${daemon_flags} start"
