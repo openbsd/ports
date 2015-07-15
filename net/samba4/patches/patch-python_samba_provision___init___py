@@ -1,0 +1,15 @@
+$OpenBSD: patch-python_samba_provision___init___py,v 1.1 2015/07/15 21:50:31 jca Exp $
+
+- net/isc-bind group name
+
+--- python/samba/provision/__init__.py.orig	Wed Jul 15 15:25:50 2015
++++ python/samba/provision/__init__.py	Wed Jul 15 15:26:06 2015
+@@ -1960,7 +1960,7 @@ def provision(logger, session_info, credentials, smbco
+     root_gid = pwd.getpwuid(root_uid).pw_gid
+ 
+     try:
+-        bind_gid = findnss_gid(["bind", "named"])
++        bind_gid = findnss_gid(["_bind"])
+     except KeyError:
+         bind_gid = None
+ 
