@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2015/04/18 10:39:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2015/07/15 22:55:06 sthen Exp $
 
 COMMENT=	multi-threaded routing daemon
 
 DISTNAME=	quagga-0.99.24.1
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://download.savannah.gnu.org/releases/quagga/
 EXTRACT_SUFX=	.tar.xz
@@ -32,9 +33,8 @@ CONFIGURE_ARGS+= --includedir=${LOCALBASE}/include/quagga \
 		--enable-group=_quagga \
 		--enable-vty-group=_quagga \
 		--enable-vtysh
-.if ${MACHINE_ARCH:Marm}
+# trust the compiler to use PIE by default where supported.
 CONFIGURE_ARGS+= --disable-pie
-.endif
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS=-lcurses
