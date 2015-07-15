@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2015/05/14 15:38:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.51 2015/07/15 22:19:23 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		1.7.20
+V =		1.7.21
 DISTNAME =	jruby-bin-${V}
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
@@ -57,8 +57,6 @@ post-extract:
 		&& cd jruby-launcher && tar zxf ../../data.tar.gz \
 		&& rm -f ../../data.tar.gz
 	cp ${WRKSRC}/lib/ruby/gems/shared/gems/*/bin/* ${WRKSRC}/bin/
-	find ${WRKSRC}/lib/ruby/gems/shared/gems/{axiom-types,descendants_tracker}-* \
-		-type f -print0 | xargs -0 chmod 664
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/jruby-launcher/jrubyexe.cpp \
