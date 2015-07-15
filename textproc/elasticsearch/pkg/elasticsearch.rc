@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: elasticsearch.rc,v 1.1.1.1 2014/12/15 17:57:33 jasper Exp $
+# $OpenBSD: elasticsearch.rc,v 1.2 2015/07/15 23:34:49 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/elasticsearch/bin/elasticsearch"
 daemon_flags="-d -Des.config=${SYSCONFDIR}/elasticsearch/elasticsearch.yml -p /var/run/elasticsearch/elasticsearch.pid"
@@ -8,7 +8,7 @@ daemon_user="_elasticsearch"
 
 . /etc/rc.d/rc.subr
 
-pexp="$(${LOCALBASE}/bin/javaPathHelper -c elasticsearch).*org.elasticsearch.bootstrap.Elasticsearch"
+pexp="$(${LOCALBASE}/bin/javaPathHelper -c elasticsearch) .*org.elasticsearch.bootstrap.Elasticsearch"
 
 rc_reload=NO
 
