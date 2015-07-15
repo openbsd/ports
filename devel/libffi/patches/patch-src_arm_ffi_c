@@ -1,7 +1,6 @@
-$OpenBSD: patch-src_arm_ffi_c,v 1.6 2015/04/06 12:11:40 jasper Exp $
+$OpenBSD: patch-src_arm_ffi_c,v 1.7 2015/07/15 17:06:48 jasper Exp $
 
-Fix warning: implicit declaration of function '__clear_cache' and
-change the code to follow our current ABI (APCS).
+Fix warning: implicit declaration of function '__clear_cache'
 
 --- src/arm/ffi.c.orig	Fri Apr 25 19:45:13 2014
 +++ src/arm/ffi.c	Mon Sep 15 22:00:37 2014
