@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.109 2015/07/15 15:03:06 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.110 2015/07/15 15:41:41 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -815,11 +815,6 @@ Start
 .Nm
 as root.
 .It
-For cluster builds,
-provide an
-.Xr ssh 1
-connection to distant hosts from root as root.
-.It
 .Nm
 will drop privileges for every operation except
 .Xr pkg_add 1 ,
@@ -828,9 +823,14 @@ and the
 .Ar STARTUP
 script.
 .It
+For cluster builds,
+provide an
+.Xr ssh 1
+connection to distant hosts from root as root.
+.It
 .Ar build_user
 is used to build stuff locally or distantly (can be per-host), using:
-.Li chroot -u pbuild /build_root
+.Li chroot -u build_user /build_root
 (with
 .Pa /build_root
 =
