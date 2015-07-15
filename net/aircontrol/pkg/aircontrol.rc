@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: aircontrol.rc,v 1.6 2011/07/01 10:54:53 sthen Exp $
+# $OpenBSD: aircontrol.rc,v 1.7 2015/07/15 19:49:41 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/catalina.sh"
 daemon_flags="-Xmx768M -server"
@@ -8,7 +8,7 @@ daemon_user="_aircontrol"
 
 . /etc/rc.d/rc.subr
 
-pexp="$(${LOCALBASE}/bin/javaPathHelper -h aircontrol).*-Dcatalina.base=/var/aircontrol"
+pexp="$(${LOCALBASE}/bin/javaPathHelper -c aircontrol) .*-Dcatalina.base=/var/aircontrol"
 
 rc_reload=NO
 
