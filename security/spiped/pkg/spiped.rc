@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: spiped.rc,v 1.1.1.1 2012/11/19 22:14:52 sthen Exp $
+# $OpenBSD: spiped.rc,v 1.2 2015/07/15 21:03:23 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/spiped"
 daemon_flags="-D -d -s '[0.0.0.0]:8022' -t '[127.0.0.1]:22' -k ${SYSCONFDIR}/spiped/spiped.key -p /var/run/spiped/spiped.pid"
@@ -8,7 +8,7 @@ daemon_user="_spiped"
 
 . /etc/rc.d/rc.subr
 
-pexp="${daemon}"
+pexp="${daemon} .*"
 rc_reload=NO
 
 rc_pre() {
