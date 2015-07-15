@@ -1,7 +1,4 @@
-$OpenBSD: patch-configure,v 1.15 2015/03/30 22:43:42 sthen Exp $
-
-merged patches; cannot add new files to cvs until unlock
-
+$OpenBSD: patch-configure,v 1.16 2015/07/15 20:10:58 sthen Exp $
 --- configure.orig	Mon Mar 30 09:38:53 2015
 +++ configure	Mon Mar 30 23:28:35 2015
 @@ -5245,7 +5245,7 @@ cat >>confdefs.h <<_ACEOF

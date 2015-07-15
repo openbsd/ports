@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_utils_c,v 1.4 2015/03/30 22:43:42 sthen Exp $
---- base/utils.c.orig	Mon Mar 30 09:38:53 2015
-+++ base/utils.c	Mon Mar 30 23:28:35 2015
-@@ -2405,7 +2405,7 @@ void service_check_sighandler(int sig) {
+$OpenBSD: patch-base_utils_c,v 1.5 2015/07/15 20:10:58 sthen Exp $
+--- base/utils.c.orig	Wed Jul 15 12:04:09 2015
++++ base/utils.c	Wed Jul 15 17:12:40 2015
+@@ -2410,7 +2410,7 @@ void service_check_sighandler(int sig) {
  	/* write check result to file */
  	if (check_result_info.output_file_fp) {
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-base_utils_c,v 1.4 2015/03/30 22:43:42 sthen Exp $
  		fprintf(check_result_info.output_file_fp, "early_timeout=%d\n", check_result_info.early_timeout);
  		fprintf(check_result_info.output_file_fp, "exited_ok=%d\n", check_result_info.exited_ok);
  		fprintf(check_result_info.output_file_fp, "return_code=%d\n", check_result_info.return_code);
-@@ -2445,7 +2445,7 @@ void host_check_sighandler(int sig) {
+@@ -2450,7 +2450,7 @@ void host_check_sighandler(int sig) {
  	/* write check result to file */
  	if (check_result_info.output_file_fp) {
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
---- cgi/cmd.c.orig	Fri Jan 16 17:35:08 2015
-+++ cgi/cmd.c	Fri Jan 16 17:50:35 2015
-@@ -2689,7 +2689,7 @@ static int cmd_submitf(int id, const char *fmt, ...) {
+$OpenBSD: patch-cgi_cmd_c,v 1.4 2015/07/15 20:10:58 sthen Exp $
+--- cgi/cmd.c.orig	Wed Jul 15 12:04:09 2015
++++ cgi/cmd.c	Wed Jul 15 18:35:23 2015
+@@ -2702,7 +2702,7 @@ static int cmd_submitf(int id, const char *fmt, ...) {
  
  	command = extcmd_get_name(id);
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  
  	if (len < 0 || len >= sizeof(cmd))
  		return ERROR;
-@@ -2839,7 +2839,7 @@ int commit_command(int cmd) {
+@@ -2852,7 +2852,7 @@ int commit_command(int cmd) {
  			if (commands[x].host_name == NULL)
  				continue;
  			if (is_authorized[x])
@@ -19,7 +19,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  		}
  		break;
  
-@@ -2848,7 +2848,7 @@ int commit_command(int cmd) {
+@@ -2861,7 +2861,7 @@ int commit_command(int cmd) {
  			if (commands[x].host_name == NULL)
  				continue;
  			if (is_authorized[x])
@@ -28,7 +28,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  		}
  		break;
  
-@@ -2860,7 +2860,7 @@ int commit_command(int cmd) {
+@@ -2873,7 +2873,7 @@ int commit_command(int cmd) {
  			if (commands[x].host_name == NULL)
  				continue;
  			if (is_authorized[x])
@@ -37,7 +37,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  		}
  		break;
  
-@@ -2868,7 +2868,7 @@ int commit_command(int cmd) {
+@@ -2881,7 +2881,7 @@ int commit_command(int cmd) {
  	case CMD_SHUTDOWN_PROCESS:
  	case CMD_RESTART_PROCESS:
  		if (is_authorized[x])
@@ -46,7 +46,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  		break;
  
  	case CMD_DISABLE_NOTIFICATIONS:
-@@ -2876,10 +2876,10 @@ int commit_command(int cmd) {
+@@ -2889,10 +2889,10 @@ int commit_command(int cmd) {
  			/* we should expire the disabled notifications */
  			if(end_time > 0) {
  				cmd = CMD_DISABLE_NOTIFICATIONS_EXPIRE_TIME;
@@ -59,7 +59,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  			}
  		}
  		break;
-@@ -2910,7 +2910,7 @@ int commit_command(int cmd) {
+@@ -2923,7 +2923,7 @@ int commit_command(int cmd) {
  			if (commands[x].host_name == NULL)
  				continue;
  			if (is_authorized[x])
@@ -68,7 +68,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  		}
  		break;
  
-@@ -2953,7 +2953,7 @@ int commit_command(int cmd) {
+@@ -2966,7 +2966,7 @@ int commit_command(int cmd) {
  				if (end_time > 0) {
  					cmd = CMD_ACKNOWLEDGE_HOST_PROBLEM_EXPIRE;
  					asprintf(&temp_buffer, "%s - The acknowledgement expires at: %s.", comment_data, end_time_string);
@@ -77,7 +77,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  					my_free(temp_buffer);
  				} else
  					submit_result[x] = cmd_submitf(cmd, "%s;%d;%d;%d;%s;%s", commands[x].host_name, (sticky_ack == TRUE) ? ACKNOWLEDGEMENT_STICKY : ACKNOWLEDGEMENT_NORMAL, send_notification, persistent_comment, comment_author, comment_data);
-@@ -2969,7 +2969,7 @@ int commit_command(int cmd) {
+@@ -2982,7 +2982,7 @@ int commit_command(int cmd) {
  				if (end_time > 0) {
  					cmd = CMD_ACKNOWLEDGE_SVC_PROBLEM_EXPIRE;
  					asprintf(&temp_buffer, "%s - The acknowledgement expires at: %s.", comment_data, end_time_string);
@@ -86,7 +86,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  					my_free(temp_buffer);
  				} else
  					submit_result[x] = cmd_submitf(cmd, "%s;%s;%d;%d;%d;%s;%s", commands[x].host_name, commands[x].description, (sticky_ack == TRUE) ? ACKNOWLEDGEMENT_STICKY : ACKNOWLEDGEMENT_NORMAL, send_notification, persistent_comment, comment_author, comment_data);
-@@ -3004,7 +3004,7 @@ int commit_command(int cmd) {
+@@ -3021,7 +3021,7 @@ int commit_command(int cmd) {
  			if (commands[x].host_name == NULL)
  				continue;
  			if (is_authorized[x])
@@ -95,7 +95,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  		}
  		break;
  
-@@ -3013,7 +3013,7 @@ int commit_command(int cmd) {
+@@ -3030,7 +3030,7 @@ int commit_command(int cmd) {
  			if (commands[x].host_name == NULL)
  				continue;
  			if (is_authorized[x])
@@ -104,7 +104,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  		}
  		break;
  
-@@ -3022,7 +3022,7 @@ int commit_command(int cmd) {
+@@ -3039,7 +3039,7 @@ int commit_command(int cmd) {
  			if (commands[x].host_name == NULL)
  				continue;
  			if (is_authorized[x])
@@ -113,7 +113,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  		}
  		break;
  
-@@ -3033,7 +3033,7 @@ int commit_command(int cmd) {
+@@ -3050,7 +3050,7 @@ int commit_command(int cmd) {
  			if (commands[x].host_name == NULL)
  				continue;
  			if (is_authorized[x])
@@ -122,7 +122,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  		}
  		break;
  
-@@ -3088,15 +3088,15 @@ int commit_command(int cmd) {
+@@ -3105,15 +3105,15 @@ int commit_command(int cmd) {
  
  	case CMD_SCHEDULE_HOSTGROUP_HOST_DOWNTIME:
  		if (is_authorized[x])
@@ -141,7 +141,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  		}
  		break;
  
-@@ -3133,15 +3133,15 @@ int commit_command(int cmd) {
+@@ -3150,15 +3150,15 @@ int commit_command(int cmd) {
  
  	case CMD_SCHEDULE_SERVICEGROUP_HOST_DOWNTIME:
  		if (is_authorized[x])
@@ -160,7 +160,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  		}
  		break;
  
-@@ -3172,7 +3172,7 @@ int commit_command(int cmd) {
+@@ -3189,7 +3189,7 @@ int commit_command(int cmd) {
  			if (is_authorized[x]) {
  				submit_result[x] = cmd_submitf(CMD_CHANGE_NORMAL_HOST_CHECK_INTERVAL, "%s;%lf", commands[x].host_name, interval);
  				submit_result[x] = cmd_submitf(CMD_CHANGE_RETRY_HOST_CHECK_INTERVAL, "%s;%lf", commands[x].host_name, interval);
@@ -169,7 +169,7 @@ $OpenBSD: patch-cgi_cmd_c,v 1.3 2015/01/16 18:07:53 sthen Exp $
  			}
  		}
  		break;
-@@ -3185,7 +3185,7 @@ int commit_command(int cmd) {
+@@ -3202,7 +3202,7 @@ int commit_command(int cmd) {
  				/* check interval, retry interval, forced rescheduled check */
  				submit_result[x] = cmd_submitf(CMD_CHANGE_NORMAL_SVC_CHECK_INTERVAL, "%s;%s;%lf", commands[x].host_name, commands[x].description, interval);
  				submit_result[x] = cmd_submitf(CMD_CHANGE_RETRY_SVC_CHECK_INTERVAL, "%s;%s;%lf", commands[x].host_name, commands[x].description, interval);

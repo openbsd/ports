@@ -1,6 +1,6 @@
-$OpenBSD: patch-cgi_avail_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
---- cgi/avail.c.orig	Mon Jan 19 16:24:12 2015
-+++ cgi/avail.c	Mon Jan 19 16:27:46 2015
+$OpenBSD: patch-cgi_avail_c,v 1.2 2015/07/15 20:10:58 sthen Exp $
+--- cgi/avail.c.orig	Wed Jul 15 12:04:09 2015
++++ cgi/avail.c	Wed Jul 15 17:12:40 2015
 @@ -392,10 +392,10 @@ int main(int argc, char **argv) {
  				host_report_url("all", "View <b>Availability Report</b> For <b>All Hosts</b>");
  				printf("<br>\n");
@@ -68,7 +68,7 @@ $OpenBSD: patch-cgi_avail_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
  			printf("<entry_type>%s</entry_type>\n", entry_type);
  			printf("<state_type>");
  			if (temp_as->state_type == AS_HARD_STATE)
-@@ -4621,9 +4621,9 @@ void display_host_availability(void) {
+@@ -4663,9 +4663,9 @@ void display_host_availability(void) {
  #ifdef USE_TRENDS
  				printf("<p align='center'>\n");
  				printf("<a href='%s?host=%s", TRENDS_CGI, url_encode(host_name));
@@ -80,7 +80,7 @@ $OpenBSD: patch-cgi_avail_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
  				printf("</a><br>\n");
  				printf("</p>\n");
  #endif
-@@ -5503,9 +5503,9 @@ void display_service_availability(void) {
+@@ -5537,9 +5537,9 @@ void display_service_availability(void) {
  #ifdef USE_TRENDS
  			printf("<p align='center'>\n");
  			printf("<a href='%s?host=%s", TRENDS_CGI, url_encode(host_name));
@@ -92,7 +92,7 @@ $OpenBSD: patch-cgi_avail_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
  			printf("</a><br>\n");
  			printf("</p>\n");
  #endif
-@@ -6161,7 +6161,7 @@ void host_report_url(char *hn, char *label) {
+@@ -6187,7 +6187,7 @@ void host_report_url(char *hn, char *label) {
  
  	printf("<a href='%s?host=%s", AVAIL_CGI, url_encode(hn));
  	printf("&amp;show_log_entries");
@@ -101,7 +101,7 @@ $OpenBSD: patch-cgi_avail_c,v 1.1 2015/01/19 16:59:42 sthen Exp $
  	printf("&amp;backtrack=%d", backtrack_archives);
  	printf("&amp;assumestateretention=%s", (assume_state_retention == TRUE) ? "yes" : "no");
  	printf("&amp;assumeinitialstates=%s", (assume_initial_states == TRUE) ? "yes" : "no");
-@@ -6185,7 +6185,7 @@ void service_report_url(char *hn, char *sd, char *labe
+@@ -6211,7 +6211,7 @@ void service_report_url(char *hn, char *sd, char *labe
  
  	printf("<a href='%s?host=%s", AVAIL_CGI, url_encode(hn));
  	printf("&amp;service=%s", url_encode(sd));
