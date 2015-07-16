@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.137 2015/07/16 15:30:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.138 2015/07/16 16:30:55 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
 
-DISTNAME =		openldap-2.4.40
-REVISION-server =	1
+DISTNAME =		openldap-2.4.41
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
 
@@ -26,6 +25,8 @@ CATEGORIES =	databases net
 
 HOMEPAGE =	http://www.openldap.org/
 
+MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+
 # OpenLDAP Public License
 PERMIT_PACKAGE_CDROM =	Yes
 
@@ -43,6 +44,7 @@ SEPARATE_BUILD =	Yes
 AUTOCONF_VERSION =	2.65
 CONFIGURE_STYLE =	autoconf
 
+# formatting is ok with mandoc, but it uses soelim
 USE_GROFF =		Yes
 
 FLAVOR ?=
