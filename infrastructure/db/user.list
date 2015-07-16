@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.249 2015/06/22 15:48:20 jung Exp $
+$OpenBSD: user.list,v 1.250 2015/07/16 02:49:21 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -263,3 +263,4 @@ id  user		group		port options
 752 _logstash		_logstash	sysutils/logstash/logstash
 753 _mosquitto		_mosquitto	net/mosquitto
 754 _geomyidae		_geomyidae	net/geomyidae
+755 _librenms		_librenms	net/librenms
