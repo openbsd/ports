@@ -1,0 +1,88 @@
+$OpenBSD: README,v 1.1.1.1 2015/07/16 00:20:53 juanfra Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Known issues
+============
+
+Due to lack of thread-local storage support on OpenBSD, "places" and "futures"
+are disabled.
+
+Limitations
+===========
+
+Racket's JIT only supports CPUs with SSE2 extension.
+
+FAQ
+===
+
+Where is the traditional big package of Racket?
+-----------------------------------------------
+
+Since version 6, the Racket developers have been working to create a small core
+with the minimal dependencies and to divide the traditional big package in tens
+of raco packages. The old big package is now just a "distribution" provided by
+the PLT group.
+
+The main reason to select the "minimal" version of Racket as the only one
+provided by the OpenBSD ports are:
+- Ease the development of the port stripping the extra cruft.
+- The users can receive updates from upstream without disturbing the stable
+  branches of OpenBSD ports with minors updates.
+- The users are not forced to use the distribution provided by the PLT group.
+  They can create their own distribution and distribute it.
+- The "big package" had a very long list of dependencies.
+- Probably nobody needs the more than 180 packages bundled with the "big
+  package".
+
+I want to install the main-distribution
+---------------------------------------
+
+Install racket-minimal and run:
+
+raco pkg install --jobs $(sysctl -n hw.ncpu) --auto main-distribution
+
+I'm only interested in DrRacket
+-------------------------------
+
+Install racket-minimal and run:
+
+raco pkg install --jobs $(sysctl -n hw.ncpu) --auto drracket
+
+Add "--binary-lib" if you don't want to generate the documentation (requires
+additional dependencies).
+
+I installed DrRacket but I don't see the launcher. Where is it?
+---------------------------------------------------------------
+
+The binaries of the raco packages are installed to a directory in your $HOME
+($HOME/.racket/VERSION/bin). For your convenience, this port includes the script
+"racket-user-bin-paths" to get the correct path. You only to need modify your
+$PATH:
+
+if [ -x /usr/local/bin/racket-user-bin-paths ]; then
+	export PATH="$PATH:$(racket-user-bin-paths)"
+fi
+
+Where can I find a list of installable packages?
+------------------------------------------------
+
+- http://pkgs.racket-lang.org/
+
+- raco pkg catalog-show --all (add --only-names if you don't want to see the
+  detailed output).
+
+- Install the raco package "gui-pkg-manager" and run "racket-package-manager"
+  (don't change the default package scope in "Settings", it could break the
+  installation).
+
+Can I create a port which installs a raco package?
+--------------------------------------------------
+
+Not yet. Racket's package manager is not widely tested in systems which mix
+different versions of different packages in different pkg scopes. The
+integration of raco packages in OpenBSD's ports framework would make future
+updates of Racket difficult with no benefit for the users.
+

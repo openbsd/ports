@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_racket_src_thread_c,v 1.1.1.1 2015/07/16 00:20:53 juanfra Exp $
+
+"fix slow leak in link-establishing 'thread-resume'
+
+Using '(thread-resume t1 t2)' would not prevent a GC of t1, but it
+would create an intermediate record to make the link from t1 to t2,
+and that intermediate record would leak due to a missing level of
+indirection in a table-cleanup traveral. The leak not only accumulated
+memory, it also caused ever slower traversals of the table in an
+attempt to clean up."
+
+https://github.com/plt/racket/commit/ca57adcf2db458276b778b18061de1e5ccecde23
+
+--- src/racket/src/thread.c.orig	Thu May  7 16:45:21 2015
++++ src/racket/src/thread.c	Mon Jul 13 22:58:08 2015
+@@ -5779,15 +5779,17 @@ static void add_transitive_resume(Scheme_Thread *promo
+     promote_to->transitive_resumes = (Scheme_Object *)ht;
+   } else {
+     /* Purge ht entries for threads that are now dead: */
+-    Scheme_Hash_Table *gone= NULL;
++    Scheme_Hash_Table *gone = NULL;
++    Scheme_Object *b;
+     int i;
+ 
+     ht = (Scheme_Hash_Table *)promote_to->transitive_resumes;
+     for (i = ht->size; i--; ) {
+       if (ht->vals[i]) {
+-	if (!SCHEME_PTR_VAL(ht->keys[i])
+-            || (SAME_TYPE(SCHEME_TYPE(ht->keys[i]), scheme_weak_box_type)
+-                && !SCHEME_WEAK_BOX_VAL(ht->vals[i]))) {
++        b = SCHEME_PTR_VAL(ht->keys[i]);
++	if (!b
++            || (SAME_TYPE(SCHEME_TYPE(b), scheme_weak_box_type)
++                && !SCHEME_WEAK_BOX_VAL(b))) {
+ 	  /* This one is dead */
+ 	  if (!gone)
+ 	    gone = scheme_make_hash_table(SCHEME_hash_ptr);

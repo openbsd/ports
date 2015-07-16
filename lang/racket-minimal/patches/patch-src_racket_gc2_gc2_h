@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_racket_gc2_gc2_h,v 1.1.1.1 2015/07/16 00:20:53 juanfra Exp $
+
+https://github.com/plt/racket/commit/0cda0c98b085dc289bbb40cb37325042b35eea07
+
+--- src/racket/gc2/gc2.h.orig	Tue Mar 17 20:23:06 2015
++++ src/racket/gc2/gc2.h	Mon Jul 13 22:38:11 2015
+@@ -584,7 +584,7 @@ GC2_EXTERN void GC_set_backpointer_object(void *p);
+ #endif
+ 
+ /* Macros (implementation-specific): */
+-#if defined(__x86_64__) || defined(_WIN64)
++#ifdef SIXTY_FOUR_BIT_INTEGERS
+ # define gcLOG_WORD_SIZE 3
+ #else
+ # define gcLOG_WORD_SIZE 2

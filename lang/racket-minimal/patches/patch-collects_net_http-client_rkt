@@ -1,0 +1,25 @@
+$OpenBSD: patch-collects_net_http-client_rkt,v 1.1.1.1 2015/07/16 00:20:53 juanfra Exp $
+
+"Fixing empty request data"
+
+https://github.com/plt/racket/commit/33717eebaa702e7c175ca95aa839e36f06194807
+
+--- collects/net/http-client.rkt.orig	Tue Mar 17 20:23:05 2015
++++ collects/net/http-client.rkt	Mon Jul 13 22:47:56 2015
+@@ -25,9 +25,13 @@
+     bs))
+ 
+ (define (->bytes str)
+-  (if (string? str)
+-      (string->bytes/utf-8 str)
+-      str))
++  (cond
++    [(string? str)
++     (string->bytes/utf-8 str)]
++    [(not str)
++     #""]
++    [else
++     str]))
+ 
+ (define (read-bytes-line/not-eof ip kind)
+   (define bs (read-bytes-line ip kind))
