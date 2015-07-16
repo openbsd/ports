@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/07/16 15:52:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2015/07/16 16:44:59 jasper Exp $
 
 COMMENT =		collect and display system facts
 
@@ -64,12 +64,6 @@ post-extract:
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
-
-# XXX: Fix RbConfig::CONFIG['vendordir'] to point to the right dir.
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ruby/vendor_ruby/${MODRUBY_REV}/
-	mv ${PREFIX}/lib/ruby/vendor_ruby/facter.rb \
-		${PREFIX}/lib/ruby/vendor_ruby/${MODRUBY_REV}/facter.rb
 
 .include <bsd.port.mk>
 

@@ -1,13 +1,15 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.7 2015/07/15 16:12:35 jasper Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.8 2015/07/16 16:44:59 jasper Exp $
 
 - From f11bebbdfbe0ebfef9f1bfd7931bdc40511db871 Mon Sep 17 00:00:00 2001
   From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
   Date: Sat, 27 Jun 2015 09:57:48 +0200
   Subject: [PATCH] (maint) Don't attempt to link with libdl on OpenBSD.
+- Use vendorlibdir which is versioned, as opposed to unversioned vendordir.
+  https://github.com/puppetlabs/facter/pull/1060
 - Enable basic set of facts
 
 --- lib/CMakeLists.txt.orig	Thu Jun 25 17:47:38 2015
-+++ lib/CMakeLists.txt	Wed Jul 15 08:59:43 2015
++++ lib/CMakeLists.txt	Thu Jul 16 10:33:09 2015
 @@ -113,7 +113,11 @@ if (UNIX)
          set(LIBFACTER_STANDARD_SOURCES ${LIBFACTER_STANDARD_SOURCES} "src/util/posix/scoped_bio.cc")
      endif()
@@ -21,11 +23,10 @@ $OpenBSD: patch-lib_CMakeLists_txt,v 1.7 2015/07/15 16:12:35 jasper Exp $
  endif()
  
  if (WIN32)
-@@ -205,6 +209,20 @@ elseif ("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
-         "src/facts/bsd/networking_resolver.cc"
+@@ -206,6 +210,20 @@ elseif ("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
          "src/facts/bsd/uptime_resolver.cc"
          "src/util/bsd/scoped_ifaddrs.cc"
-+    )
+     )
 +elseif ("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
 +    set(LIBFACTER_PLATFORM_SOURCES
 +        "src/facts/openbsd/collection.cc"
@@ -39,6 +40,16 @@ $OpenBSD: patch-lib_CMakeLists_txt,v 1.7 2015/07/15 16:12:35 jasper Exp $
 +        "src/facts/openbsd/memory_resolver.cc"
 +        "src/facts/openbsd/dmi_resolver.cc"
 +        "src/facts/openbsd/virtualization_resolver.cc"
-     )
++    )
  elseif ("${CMAKE_SYSTEM_NAME}" MATCHES "Windows")
      set(LIBFACTER_PLATFORM_SOURCES
+         "src/facts/windows/dmi_resolver.cc"
+@@ -328,7 +346,7 @@ if (RUBY_FOUND)
+         install(CODE "EXECUTE_PROCESS(COMMAND ln -sf libfacter.so libfacter.bundle WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX}/${LIBFACTER_INSTALL_DESTINATION})")
+     endif()
+ 
+-    execute_process(COMMAND ${RUBY_EXECUTABLE} -rrbconfig -e "puts RbConfig::CONFIG['vendordir']" OUTPUT_VARIABLE RUBY_VENDORDIR_OUT)
++    execute_process(COMMAND ${RUBY_EXECUTABLE} -rrbconfig -e "puts RbConfig::CONFIG['vendorlibdir']" OUTPUT_VARIABLE RUBY_VENDORDIR_OUT)
+     string(STRIP ${RUBY_VENDORDIR_OUT} RUBY_VENDORDIR)
+     message(STATUS "\"make install\" will install facter.rb to ${RUBY_VENDORDIR}")
+     install(FILES ${CMAKE_BINARY_DIR}/lib/facter.rb DESTINATION ${RUBY_VENDORDIR})
