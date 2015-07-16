@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/07/16 16:59:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2015/07/16 20:57:42 jasper Exp $
 
 COMMENT =		collect and display system facts
 
@@ -30,7 +30,8 @@ LIB_DEPENDS =		devel/boost>=1.58 \
 			devel/yaml-cpp
 
 CONFIGURE_ARGS+=	-DWITHOUT_JRUBY:Bool=Yes \
-			-DFACTER_RUBY="${LOCALBASE}/lib/libruby${MODRUBY_BINREV}.so"
+			-DFACTER_RUBY="${LOCALBASE}/lib/libruby${MODRUBY_BINREV}.so" \
+			-DRUBY_LIB_INSTALL="${PREFIX}/lib/ruby/vendor_ruby/${MODRUBY_REV}"
 
 SUBST_VARS +=		MODRUBY_BINREV MODRUBY_REV
 

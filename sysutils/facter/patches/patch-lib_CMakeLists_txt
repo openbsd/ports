@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.8 2015/07/16 16:44:59 jasper Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.9 2015/07/16 20:57:42 jasper Exp $
 
 - From f11bebbdfbe0ebfef9f1bfd7931bdc40511db871 Mon Sep 17 00:00:00 2001
   From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -9,7 +9,7 @@ $OpenBSD: patch-lib_CMakeLists_txt,v 1.8 2015/07/16 16:44:59 jasper Exp $
 - Enable basic set of facts
 
 --- lib/CMakeLists.txt.orig	Thu Jun 25 17:47:38 2015
-+++ lib/CMakeLists.txt	Thu Jul 16 10:33:09 2015
++++ lib/CMakeLists.txt	Thu Jul 16 14:54:01 2015
 @@ -113,7 +113,11 @@ if (UNIX)
          set(LIBFACTER_STANDARD_SOURCES ${LIBFACTER_STANDARD_SOURCES} "src/util/posix/scoped_bio.cc")
      endif()
@@ -44,12 +44,19 @@ $OpenBSD: patch-lib_CMakeLists_txt,v 1.8 2015/07/16 16:44:59 jasper Exp $
  elseif ("${CMAKE_SYSTEM_NAME}" MATCHES "Windows")
      set(LIBFACTER_PLATFORM_SOURCES
          "src/facts/windows/dmi_resolver.cc"
-@@ -328,7 +346,7 @@ if (RUBY_FOUND)
+@@ -328,8 +346,13 @@ if (RUBY_FOUND)
          install(CODE "EXECUTE_PROCESS(COMMAND ln -sf libfacter.so libfacter.bundle WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX}/${LIBFACTER_INSTALL_DESTINATION})")
      endif()
  
 -    execute_process(COMMAND ${RUBY_EXECUTABLE} -rrbconfig -e "puts RbConfig::CONFIG['vendordir']" OUTPUT_VARIABLE RUBY_VENDORDIR_OUT)
-+    execute_process(COMMAND ${RUBY_EXECUTABLE} -rrbconfig -e "puts RbConfig::CONFIG['vendorlibdir']" OUTPUT_VARIABLE RUBY_VENDORDIR_OUT)
-     string(STRIP ${RUBY_VENDORDIR_OUT} RUBY_VENDORDIR)
+-    string(STRIP ${RUBY_VENDORDIR_OUT} RUBY_VENDORDIR)
++    set(RUBY_LIB_INSTALL "" CACHE PATH "Specify the location to install facter.rb")
++    if(RUBY_LIB_INSTALL)
++      set(RUBY_VENDORDIR ${RUBY_LIB_INSTALL})
++    else()
++      execute_process(COMMAND ${RUBY_EXECUTABLE} -rrbconfig -e "puts RbConfig::CONFIG['vendordir']" OUTPUT_VARIABLE RUBY_VENDORDIR_OUT)
++      string(STRIP ${RUBY_VENDORDIR_OUT} RUBY_VENDORDIR)
++    endif()
      message(STATUS "\"make install\" will install facter.rb to ${RUBY_VENDORDIR}")
      install(FILES ${CMAKE_BINARY_DIR}/lib/facter.rb DESTINATION ${RUBY_VENDORDIR})
+ 
