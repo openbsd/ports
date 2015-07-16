@@ -1,0 +1,15 @@
+$OpenBSD: patch-setup_rb,v 1.1 2015/07/16 15:49:03 jeremy Exp $
+
+Fix use of deprecated ::Config.
+
+--- setup.rb.orig	Thu Jul 16 08:44:10 2015
++++ setup.rb	Thu Jul 16 08:44:34 2015
+@@ -256,7 +256,7 @@ class ConfigTable_class
+ 
+ end
+ 
+-c = ::Config::CONFIG
++c = ::RbConfig::CONFIG
+ 
+ rubypath = c['bindir'] + '/' + c['ruby_install_name']
+ 
