@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/07/10 17:10:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2015/07/16 00:44:05 jasper Exp $
 
 COMMENT-main=		high performance webserver written in Erlang, libraries
 COMMENT-web=		high performance webserver written in Erlang, docroot
@@ -9,7 +9,7 @@ PKGNAME-main=		yaws-${VERSION}
 PKGNAME-web=		yaws-web-${VERSION}
 CATEGORIES=		www
 
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		http://yaws.hyber.org/
 
@@ -29,7 +29,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-pam \
 			--disable-sendfile
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ERL="${MODERL_ERL}"
 # erl(1) needs $HOME to be set.
 CONFIGURE_ENV+=		HOME="${WRKDIST}"
 
