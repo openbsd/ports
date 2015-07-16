@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/16 05:11:38 ajacoutot Exp $
+${P5SITE}/Package/
+${P5SITE}/Package/New/
+${P5SITE}/Package/New.pm
+${P5SITE}/Package/New/Dump.pm
+@man man/man3p/Package::New.3p
+@man man/man3p/Package::New::Dump.3p
