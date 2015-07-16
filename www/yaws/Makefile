@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/07/16 00:56:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2015/07/16 01:08:48 jasper Exp $
 
 COMMENT-main=		high performance webserver written in Erlang, libraries
 COMMENT-web=		high performance webserver written in Erlang, docroot
@@ -9,7 +9,7 @@ PKGNAME-main=		yaws-${VERSION}
 PKGNAME-web=		yaws-web-${VERSION}
 CATEGORIES=		www
 
-REVISION=		5
+REVISION=		6
 
 HOMEPAGE=		http://yaws.hyber.org/
 
