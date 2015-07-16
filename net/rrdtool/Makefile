@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2015/06/10 21:42:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.90 2015/07/16 17:27:09 jeremy Exp $
 
 PORTROACH_COMMENT= rrdcached crashes at startup in 1.5.0 to at least 1.5.3
 
@@ -17,6 +17,7 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}
 PKGNAME-python= py-rrd-${VERSION}
 PKGNAME-ruby=	ruby-rrd-${VERSION}
+REVISION-ruby=	0
 
 SHARED_LIBS +=	rrd                  4.0      # 6.1
 SHARED_LIBS +=	rrd_th               4.0      # 6.1
