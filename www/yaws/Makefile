@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/07/16 00:44:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2015/07/16 00:56:25 jasper Exp $
 
 COMMENT-main=		high performance webserver written in Erlang, libraries
 COMMENT-web=		high performance webserver written in Erlang, docroot
@@ -26,8 +26,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 			textproc/latex2html
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-pam \
-			--disable-sendfile
+CONFIGURE_ARGS+=	--disable-pam
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ERL="${MODERL_ERL}"
