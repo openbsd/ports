@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_polkitbackend_polkitbackendjsauthority_c,v 1.8 2015/07/03 05:57:26 ajacoutot Exp $
+$OpenBSD: patch-src_polkitbackend_polkitbackendjsauthority_c,v 1.9 2015/07/16 17:45:38 ajacoutot Exp $
+
+https://bugs.freedesktop.org/show_bug.cgi?id=75187
+
 --- src/polkitbackend/polkitbackendjsauthority.c.orig	Fri Jun 19 22:39:58 2015
 +++ src/polkitbackend/polkitbackendjsauthority.c	Fri Jul  3 07:31:00 2015
 @@ -24,7 +24,11 @@
