@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2014/05/30 10:28:17 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2015/07/16 01:25:48 ajacoutot Exp $
 @conflict munin-server-<2.0.21
 @newgroup _munin:644
 @newgroup _munin-plugin:645
@@ -15,7 +15,6 @@
 @sample /var/db/munin/spool/
 @sample /var/db/munin-pluginstate/
 @sample /var/log/munin/
-@sample /var/run/munin/
 @mode
 @owner
 @group
