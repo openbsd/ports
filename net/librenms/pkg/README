@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2015/07/06 11:25:36 sthen Exp $
+$OpenBSD: README,v 1.5 2015/07/16 02:50:33 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -119,7 +119,7 @@ chown root ${INSTDIR}	# protect again
 Periodic tasks
 ==============
 Cron jobs are used to discover and poll hosts, send alerts, and carry out
-other housekeeping. Samples are provided in ${INSTDIR}/librenms.cron
+other housekeeping. Samples are provided in ${INSTDIR}/librenms.nonroot.cron
 and should be added to /etc/crontab (creating the file if necessary).
 The parameter to poller-wrapper.py sets the number of threads running
 SNMP queries in parallel; you may need to adjust this e.g. if you fetch

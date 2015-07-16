@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/07/03 19:17:26 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/07/16 02:50:33 sthen Exp $
+@newgroup _librenms:755
+@newuser _librenms:755:_librenms:daemon:librenms user:/var/www/librenms:/sbin/nologin
 librenms/
 librenms/.gitignore
 librenms/.scrutinizer.yml
@@ -24,6 +26,7 @@ librenms/contrib/
 librenms/contrib/dev_init
 librenms/contrib/findit
 librenms/contrib/generate-iplist.php
+librenms/cronic
 librenms/daily.php
 librenms/daily.sh
 librenms/delhost.php
@@ -1524,6 +1527,7 @@ librenms/html/images/icons/inventory.png
 librenms/html/images/icons/ipmi.png
 librenms/html/images/icons/ipv4.png
 librenms/html/images/icons/ipv6.png
+librenms/html/images/icons/load.png
 librenms/html/images/icons/loadbalancer.png
 librenms/html/images/icons/memory.png
 librenms/html/images/icons/mempools.png
@@ -1547,6 +1551,7 @@ librenms/html/images/icons/sensors.png
 librenms/html/images/icons/server.png
 librenms/html/images/icons/services.png
 librenms/html/images/icons/snmp.png
+librenms/html/images/icons/state.png
 librenms/html/images/icons/storage.png
 librenms/html/images/icons/syslog.png
 librenms/html/images/icons/system.png
@@ -1623,6 +1628,8 @@ librenms/html/images/os/kyocera.png
 librenms/html/images/os/linksys.png
 librenms/html/images/os/linux.png
 librenms/html/images/os/mandrake.png
+librenms/html/images/os/mellanox.png
+librenms/html/images/os/meraki.png
 librenms/html/images/os/mge.png
 librenms/html/images/os/minkelsrms.png
 librenms/html/images/os/monowall.png
@@ -2574,7 +2581,6 @@ librenms/html/pages/bills/
 librenms/html/pages/bills.inc.php
 librenms/html/pages/bills/pmonth.inc.php
 librenms/html/pages/bills/search.inc.php
-librenms/html/pages/configuration.inc.php
 librenms/html/pages/customers.inc.php
 librenms/html/pages/deleted-ports.inc.php
 librenms/html/pages/delhost.inc.php
@@ -2623,7 +2629,6 @@ librenms/html/pages/device/graphs/fortigate-sessions.inc.php
 librenms/html/pages/device/graphs/hrprocesses.inc.php
 librenms/html/pages/device/graphs/hrusers.inc.php
 librenms/html/pages/device/graphs/ipSytemStats.inc.php
-librenms/html/pages/device/graphs/laload.inc.php
 librenms/html/pages/device/graphs/memory.inc.php
 librenms/html/pages/device/graphs/netstats.inc.php
 librenms/html/pages/device/graphs/netstats_icmp_info.inc.php
@@ -2864,6 +2869,7 @@ librenms/includes/discovery/fanspeeds/
 librenms/includes/discovery/fanspeeds.inc.php
 librenms/includes/discovery/fanspeeds/areca.inc.php
 librenms/includes/discovery/fanspeeds/dell.inc.php
+librenms/includes/discovery/fanspeeds/drac.inc.php
 librenms/includes/discovery/fanspeeds/equallogic.inc.php
 librenms/includes/discovery/fanspeeds/lmsensors.inc.php
 librenms/includes/discovery/fanspeeds/mikrotik.inc.php
@@ -2918,7 +2924,6 @@ librenms/includes/discovery/os/
 librenms/includes/discovery/os.inc.php
 librenms/includes/discovery/os/3com.inc.php
 librenms/includes/discovery/os/acsw.inc.php
-librenms/includes/discovery/os/adva.inc.php
 librenms/includes/discovery/os/airport.inc.php
 librenms/includes/discovery/os/akcp.inc.php
 librenms/includes/discovery/os/alcatel-lucent.inc.php
@@ -2965,6 +2970,7 @@ librenms/includes/discovery/os/freebsd.inc.php
 librenms/includes/discovery/os/ftos.inc.php
 librenms/includes/discovery/os/gamatronicups.inc.php
 librenms/includes/discovery/os/hikvision.inc.php
+librenms/includes/discovery/os/huaweiups.inc.php
 librenms/includes/discovery/os/ibmnos.inc.php
 librenms/includes/discovery/os/ies.inc.php
 librenms/includes/discovery/os/ios.inc.php
@@ -2978,6 +2984,10 @@ librenms/includes/discovery/os/konica.inc.php
 librenms/includes/discovery/os/kyocera.inc.php
 librenms/includes/discovery/os/liebert.inc.php
 librenms/includes/discovery/os/linux.inc.php
+librenms/includes/discovery/os/mellanox.inc.php
+librenms/includes/discovery/os/merakimr.inc.php
+librenms/includes/discovery/os/merakims.inc.php
+librenms/includes/discovery/os/merakimx.inc.php
 librenms/includes/discovery/os/mgepdu.inc.php
 librenms/includes/discovery/os/mgeups.inc.php
 librenms/includes/discovery/os/mrvld.inc.php
@@ -2990,6 +3000,7 @@ librenms/includes/discovery/os/netopia.inc.php
 librenms/includes/discovery/os/netscaler.inc.php
 librenms/includes/discovery/os/netvision.inc.php
 librenms/includes/discovery/os/netware.inc.php
+librenms/includes/discovery/os/nos.inc.php
 librenms/includes/discovery/os/nrg.inc.php
 librenms/includes/discovery/os/nxos.inc.php
 librenms/includes/discovery/os/okilan.inc.php
@@ -3071,6 +3082,7 @@ librenms/includes/discovery/services.inc.php
 librenms/includes/discovery/states/
 librenms/includes/discovery/states.inc.php
 librenms/includes/discovery/states/dell.inc.php
+librenms/includes/discovery/states/drac.inc.php
 librenms/includes/discovery/states/dsm.inc.php
 librenms/includes/discovery/states/equallogic.inc.php
 librenms/includes/discovery/states/rfc1628.inc.php
@@ -3090,6 +3102,7 @@ librenms/includes/discovery/temperatures/cisco-envmon.inc.php
 librenms/includes/discovery/temperatures/ciscowlc.inc.php
 librenms/includes/discovery/temperatures/cometsystem-p85xx.inc.php
 librenms/includes/discovery/temperatures/dell.inc.php
+librenms/includes/discovery/temperatures/drac.inc.php
 librenms/includes/discovery/temperatures/dsm.inc.php
 librenms/includes/discovery/temperatures/equallogic.inc.php
 librenms/includes/discovery/temperatures/fiberhome.inc.php
@@ -3128,6 +3141,7 @@ librenms/includes/discovery/voltages/
 librenms/includes/discovery/voltages.inc.php
 librenms/includes/discovery/voltages/apc.inc.php
 librenms/includes/discovery/voltages/areca.inc.php
+librenms/includes/discovery/voltages/drac.inc.php
 librenms/includes/discovery/voltages/dsm.inc.php
 librenms/includes/discovery/voltages/gamatronicups.inc.php
 librenms/includes/discovery/voltages/ipoman.inc.php
@@ -3270,6 +3284,10 @@ librenms/includes/polling/os/junose.inc.php
 librenms/includes/polling/os/jwos.inc.php
 librenms/includes/polling/os/konica.inc.php
 librenms/includes/polling/os/kyocera.inc.php
+librenms/includes/polling/os/mellanox.inc.php
+librenms/includes/polling/os/merakimr.inc.php
+librenms/includes/polling/os/merakims.inc.php
+librenms/includes/polling/os/merakimx.inc.php
 librenms/includes/polling/os/mgeups.inc.php
 librenms/includes/polling/os/minkelsrms.inc.php
 librenms/includes/polling/os/multimatic.inc.php
@@ -3277,6 +3295,7 @@ librenms/includes/polling/os/netapp.inc.php
 librenms/includes/polling/os/netgear.inc.php
 librenms/includes/polling/os/netmanplus.inc.php
 librenms/includes/polling/os/netscaler.inc.php
+librenms/includes/polling/os/nos.inc.php
 librenms/includes/polling/os/nrg.inc.php
 librenms/includes/polling/os/nxos.inc.php
 librenms/includes/polling/os/okilan.inc.php
@@ -3341,7 +3360,6 @@ librenms/includes/polling/unix-agent/dmi.inc.php
 librenms/includes/polling/unix-agent/hddtemp.inc.php
 librenms/includes/polling/unix-agent/munin-plugins.inc.php
 librenms/includes/polling/unix-agent/packages.inc.php
-librenms/includes/polling/ups.inc.php
 librenms/includes/polling/wifi.inc.php
 librenms/includes/port-descr-parser.inc.php
 librenms/includes/rewrites.php
@@ -3360,8 +3378,12 @@ librenms/includes/services/icmp/
 librenms/includes/services/icmp/check.inc
 librenms/includes/services/imap/
 librenms/includes/services/imap/check.inc
+librenms/includes/services/ircd/
+librenms/includes/services/ircd/check.inc
 librenms/includes/services/mysql/
 librenms/includes/services/mysql/check.inc
+librenms/includes/services/ntp/
+librenms/includes/services/ntp/check.inc
 librenms/includes/services/pop/
 librenms/includes/services/pop/check.inc
 librenms/includes/services/simap/
@@ -5323,7 +5345,7 @@ librenms/licenses/
 librenms/licenses/GPLv3-LICENSE.txt
 librenms/licenses/MIT-LICENSE
 @mode 775
-@owner root
+@owner _librenms
 @group www
 librenms/logs/
 @mode
@@ -5455,6 +5477,8 @@ librenms/mibs/ATMF-CES
 librenms/mibs/ATMF-CES-MIB
 librenms/mibs/AtiL2-MIB
 librenms/mibs/AtiSwitch-MIB
+librenms/mibs/BASP-Config-MIB
+librenms/mibs/BASP-Statistics-MIB
 librenms/mibs/BAY-STACK-ADAC-MIB
 librenms/mibs/BAY-STACK-ARP-INSPECTION-MIB
 librenms/mibs/BAY-STACK-DHCP-SNOOPING-MIB
@@ -5491,6 +5515,8 @@ librenms/mibs/BROADCOM-POWER-ETHERNET-MIB
 librenms/mibs/BROADCOM-REF-MIB
 librenms/mibs/BROCADE-NP-TM-STATS-MIB
 librenms/mibs/BROCADE-SYSLOG-MIB
+librenms/mibs/Brcm-BASPTrap-MIB
+librenms/mibs/Brcm-adapterInfo-MIB
 librenms/mibs/Brocade-REG-MIB
 librenms/mibs/CABLETRON-TRAPS
 librenms/mibs/CABLETRON-TRAPS-IRM
@@ -5551,6 +5577,9 @@ librenms/mibs/CISCO-IPSEC-FLOW-MONITOR-MIB
 librenms/mibs/CISCO-ISDN-MIB
 librenms/mibs/CISCO-L2L3-INTERFACE-CONFIG-MIB
 librenms/mibs/CISCO-LAG-MIB
+librenms/mibs/CISCO-LWAPP-DOT11-CLIENT-MIB
+librenms/mibs/CISCO-LWAPP-SYS-MIB
+librenms/mibs/CISCO-LWAPP-TC-MIB
 librenms/mibs/CISCO-MAC-NOTIFICATION-MIB
 librenms/mibs/CISCO-MEDIA-GATEWAY-MIB
 librenms/mibs/CISCO-MEMORY-POOL-MIB
@@ -5815,6 +5844,9 @@ librenms/mibs/CYCLADES-MIB
 librenms/mibs/DATA-DMSWITCH.mib
 librenms/mibs/DATACOM-REG.mib
 librenms/mibs/DATACOM-SMI.mib
+librenms/mibs/DCS3FRU-MIB
+librenms/mibs/DCS3RMT-MIB
+librenms/mibs/DELL-ASF-MIB
 librenms/mibs/DELL-RAC-MIB
 librenms/mibs/DEVBASE-MIB
 librenms/mibs/DEVCONTROL-MIB
@@ -6067,6 +6099,8 @@ librenms/mibs/IANA-RTPROTO-MIB
 librenms/mibs/IANAifType-MIB
 librenms/mibs/ICF-ETWIST
 librenms/mibs/ICF-VG-RPTR
+librenms/mibs/IDRAC-MIB
+librenms/mibs/IDRAC-MIB-SMIv2
 librenms/mibs/IEEE-802DOT17-RPR-MIB
 librenms/mibs/IEEE8021-BRIDGE-MIB
 librenms/mibs/IEEE8021-CFM-MIB
@@ -6081,6 +6115,7 @@ librenms/mibs/IGMP-MIB
 librenms/mibs/IGMP-STD-MIB
 librenms/mibs/INET-ADDRESS-MIB
 librenms/mibs/INTEGRATED-SERVICES-MIB
+librenms/mibs/INTEL-LAN-ADAPTERS-MIB
 librenms/mibs/IP-FORWARD-MIB
 librenms/mibs/IP-MIB
 librenms/mibs/IPMROUTE-MIB
@@ -6120,6 +6155,8 @@ librenms/mibs/MAU-MIB
 librenms/mibs/MB-MIB
 librenms/mibs/MG-SNMP-UPS-MIB
 librenms/mibs/MIB-DELL-10892
+librenms/mibs/MIB-Dell-CM
+librenms/mibs/MIB-Dell-OME
 librenms/mibs/MIKROTIK-MIB
 librenms/mibs/MPLS-L3VPN-STD-MIB
 librenms/mibs/MPLS-LDP-CAPABILITY
@@ -7296,8 +7333,8 @@ librenms/poller-wrapper.py
 librenms/poller.php
 librenms/renamehost.php
 @mode 775
-@owner root
-@group www
+@owner _librenms
+@group _librenms
 librenms/rrd/
 @mode
 @owner
@@ -7420,6 +7457,7 @@ librenms/sql-schema/053.sql
 librenms/sql-schema/054.sql
 librenms/sql-schema/055.sql
 librenms/sql-schema/056.sql
+librenms/sql-schema/057.sql
 librenms/syslog.php
 librenms/upgrade-scripts/
 librenms/upgrade-scripts/fix-billing-2758.inc.php

@@ -1,12 +1,12 @@
-$OpenBSD: patch-scripts_powerdns_php,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
---- scripts/powerdns.php.orig	Fri Mar 20 15:19:22 2015
-+++ scripts/powerdns.php	Fri Mar 20 15:19:46 2015
-@@ -18,7 +18,7 @@
+$OpenBSD: patch-scripts_powerdns_php,v 1.2 2015/07/16 02:50:33 sthen Exp $
+--- scripts/powerdns.php.orig	Thu Jul 16 01:06:30 2015
++++ scripts/powerdns.php	Thu Jul 16 01:11:14 2015
+@@ -12,7 +12,7 @@
+ // All In One - Dennis de Houx <info@all-in-one.be>
  
  // START SETTINGS ///
- 
--	$pdnscontrol	= "/usr/bin/pdns_control";
-+	$pdnscontrol	= "/usr/local/bin/pdns_control";
- 
+-$pdnscontrol = '/usr/bin/pdns_control';
++$pdnscontrol = '/usr/local/bin/pdns_control';
  // END SETTINGS ///
  
+ // DO NOT EDIT UNDER THIS LINE

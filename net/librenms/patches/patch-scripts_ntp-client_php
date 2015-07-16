@@ -1,12 +1,12 @@
-$OpenBSD: patch-scripts_ntp-client_php,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
---- scripts/ntp-client.php.orig	Fri Mar 20 15:18:34 2015
-+++ scripts/ntp-client.php	Fri Mar 20 15:19:54 2015
-@@ -18,7 +18,7 @@
+$OpenBSD: patch-scripts_ntp-client_php,v 1.2 2015/07/16 02:50:33 sthen Exp $
+--- scripts/ntp-client.php.orig	Thu Jul 16 01:06:30 2015
++++ scripts/ntp-client.php	Thu Jul 16 01:10:46 2015
+@@ -13,7 +13,7 @@
+ //
  
-     // START SETTINGS ///
- 
--	$ntpq		= "/usr/sbin/ntpq";
-+	$ntpq		= "/usr/local/sbin/ntpq";
- 	
- 	# Change this to true if you have clk_jitter, sys_jitter in the ntpq -c rv output
- 	$newstats_style	= false;
+ // START SETTINGS ///
+-$ntpq = '/usr/sbin/ntpq';
++$ntpq = '/usr/local/sbin/ntpq';
+ // Change this to true if you have clk_jitter, sys_jitter in the ntpq -c rv output
+ $newstats_style = false;
+ // END SETTINGS ///
