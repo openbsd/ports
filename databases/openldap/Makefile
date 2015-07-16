@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.136 2015/02/16 15:32:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.137 2015/07/16 15:30:47 sthen Exp $
+
+DPB_PROPERTIES =	parallel
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
