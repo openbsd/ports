@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2015/07/16 02:25:39 sthen Exp $
+
+Seems to avoid an intermittent crash when running vlc-cache-gen.
+
+Appears related to https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=752544
+though in glib2 we do already have -Wl,nodelete when linking libgobject.
+
+--- Makefile.am.orig	Thu Jul 16 03:14:03 2015
++++ Makefile.am	Thu Jul 16 03:13:29 2015
+@@ -984,6 +984,7 @@ install-exec-hook:
+ 	if test "$(build)" = "$(host)"; then \
+ 		PATH="$(DESTDIR)$(bindir):$$PATH" \
+ 		LD_LIBRARY_PATH="$(DESTDIR)$(libdir):$$LD_LIBRARY_PATH" \
++		LD_PRELOAD=${LOCALBASE}/lib/libgobject-2.0.so \
+ 		"$(DESTDIR)$(vlclibdir)/vlc-cache-gen$(EXEEXT)" \
+ 			 "$(DESTDIR)$(vlclibdir)/plugins" ; \
+ 	else \
