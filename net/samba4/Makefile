@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/07/15 21:50:31 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2015/07/16 00:17:00 jca Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.1.19
@@ -21,9 +21,9 @@ PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${TALLOC_V}
 PKGNAME-docs =		samba-docs-${VERSION}
 
-REVISION-main =		0
-REVISION-ldb =		0
-REVISION-tdb =		0
+REVISION-main =		1
+REVISION-ldb =		1
+REVISION-tdb =		1
 REVISION-tevent =	0
 REVISION-util =		0
 
@@ -189,6 +189,7 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--with-privatedir=${VARBASE}/samba/private \
 			--with-lockdir=${VARBASE}/run/samba \
 			--with-privileged-socket-dir=${VARBASE}/samba \
+			--without-pie \
 			--enable-selftest \
 			--pedantic \
 			--without-regedit
