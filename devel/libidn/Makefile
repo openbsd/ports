@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2015/05/18 11:29:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2015/07/16 16:23:22 ajacoutot Exp $
 
 COMMENT=		internationalized string handling
 
-DISTNAME=		libidn-1.30
+DISTNAME=		libidn-1.31
 
-SHARED_LIBS +=  idn                  17.1     # 17.13
+SHARED_LIBS +=  idn                  17.2     # 17.14
 
 CATEGORIES=		devel
+
 HOMEPAGE=		https://www.gnu.org/software/libidn/
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
