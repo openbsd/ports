@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2015/04/21 18:40:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/07/16 15:16:13 ajacoutot Exp $
 
 COMMENT =		free karaoke player
 
-V =			0.7.1
+V =			0.7.5
 MODPY_EGG_VERSION =	${V}
 DISTNAME =		pykaraoke-${V}
-REVISION =		6
 CATEGORIES =		audio
 
 HOMEPAGE =		http://kibosh.org/pykaraoke/
@@ -21,6 +20,8 @@ EXTRACT_SUFX =		.zip
 
 MODULES =		lang/python
 
+NO_TEST =		Yes
+
 BUILD_DEPENDS =		x11/py-wxPython	\
 			audio/py-mutagen>=1.9 \
 			devel/pygame
@@ -31,7 +32,7 @@ RUN_DEPENDS =		x11/py-wxPython	\
 			devel/desktop-file-utils
 
 pre-configure:
-		${SUBST_CMD} ${WRKDIST}/setup.cfg
-		@perl -pi -e 's,python,${MODPY_BIN},g' ${WRKDIST}/install/*
+	${SUBST_CMD} ${WRKDIST}/setup.cfg
+	@perl -pi -e 's,python,${MODPY_BIN},g' ${WRKDIST}/install/*
 
 .include <bsd.port.mk>
