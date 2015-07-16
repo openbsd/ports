@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/07/16 16:44:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2015/07/16 16:59:23 jasper Exp $
 
 COMMENT =		collect and display system facts
 
 DISTNAME =		facter-3.0.1
-REVISION =		10
+REVISION =		11
 SHARED_LIBS +=  	facter                    3.0 # 3.0
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
@@ -64,6 +64,11 @@ post-extract:
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
+
+# Install symlinked libfacter.so so Ruby can load libfacter.so as it refuses
+# to load with the version appended.
+post-install:
+	ln -s ${PREFIX}/lib/libfacter.so.* ${PREFIX}/lib/libfacter.so
 
 .include <bsd.port.mk>
 
