@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/01/11 22:37:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2015/07/16 00:39:38 jeremy Exp $
 
 COMMENT =	fast database API and ORM for ruby 1.9+
 
@@ -11,7 +11,6 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	lang/ruby
-FLAVORS =	ruby19 ruby20 ruby21
 
 CONFIGURE_STYLE = ruby gem
 
