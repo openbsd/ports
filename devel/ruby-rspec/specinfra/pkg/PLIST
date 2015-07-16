@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2015/07/15 00:17:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2015/07/16 04:40:33 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -246,6 +246,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/base/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/base/file.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/base/host.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/base/iptables.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/base/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/base/port.rb
@@ -256,6 +257,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/v5.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/v5/iptables.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/v7/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/v7.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/v7/host.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/v7/port.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/v7/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/smartos/
@@ -422,10 +424,11 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/module/zfs_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/
-${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/interface_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat7/
+${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat7/host_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat7/interface_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat7/port_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat7/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/ubuntu/
