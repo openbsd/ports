@@ -1,6 +1,7 @@
-$OpenBSD: patch-lib_inc_internal_ruby_api_hpp,v 1.1 2015/07/16 15:52:01 jasper Exp $
+$OpenBSD: patch-lib_inc_internal_ruby_api_hpp,v 1.2 2015/07/16 16:31:52 jasper Exp $
 
-Initialize the ruby loadpath ($:) so that rbconfig.rb gets loaded.
+- Initialize the ruby loadpath so that rbconfig.rb gets loaded.
+  https://github.com/puppetlabs/facter/pull/1059
 
 --- lib/inc/internal/ruby/api.hpp.orig	Thu Jul 16 09:36:21 2015
 +++ lib/inc/internal/ruby/api.hpp	Thu Jul 16 09:39:27 2015
