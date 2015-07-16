@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2015/07/16 04:45:18 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2015/07/16 05:12:57 jasper Exp $
 
 - From 4aa96f13f233dcff08e732c38168989913b44f2f Mon Sep 17 00:00:00 2001
   From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -12,7 +12,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.3 2015/07/16 04:45:18 jasper Exp $
 - allow building curl on OpenBSD
 
 --- CMakeLists.txt.orig	Thu Jun 25 17:47:38 2015
-+++ CMakeLists.txt	Wed Jul 15 20:50:53 2015
++++ CMakeLists.txt	Wed Jul 15 23:04:59 2015
 @@ -22,7 +22,7 @@ set(FACTER_RUBY "" CACHE FILEPATH "Specify the locatio
  if (FACTER_RUBY)
      file(TO_CMAKE_PATH ${FACTER_RUBY} FACTER_RUBY_PATH)
@@ -33,6 +33,15 @@ $OpenBSD: patch-CMakeLists_txt,v 1.3 2015/07/16 04:45:18 jasper Exp $
  else()
      set(PRECOMPILED_HEADERS TRUE)
  endif()
+@@ -56,7 +60,7 @@ if (WIN32)
+ endif()
+ find_package(Boost 1.54 REQUIRED COMPONENTS ${BOOST_PKGS})
+ 
+-find_package(Ruby 1.9)
++find_package(Ruby ${MODRUBY_REV})
+ 
+ find_package(YAMLCPP REQUIRED)
+ if (NOT WITHOUT_OPENSSL)
 @@ -66,7 +70,7 @@ if ("${CMAKE_SYSTEM_NAME}" MATCHES "Linux" AND NOT WIT
      find_package(BLKID)
  endif()

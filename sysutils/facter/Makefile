@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/07/16 04:45:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/07/16 05:12:57 jasper Exp $
 
 COMMENT =		collect and display system facts
 
 DISTNAME =		facter-3.0.1
-REVISION =		7
+REVISION =		8
 SHARED_LIBS +=  	facter                    3.0 # 3.0
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
@@ -20,7 +20,6 @@ MODULES +=		devel/cmake \
 			gcc4
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c++
-MODRUBY_REV =		1.9
 
 WANTLIB += boost_chrono-mt boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_log boost_log-mt boost_log_setup-mt boost_program_options-mt
@@ -33,7 +32,7 @@ LIB_DEPENDS =		devel/boost>=1.58 \
 CONFIGURE_ARGS+=	-DWITHOUT_JRUBY:Bool=Yes \
 			-DFACTER_RUBY="${LOCALBASE}/lib/libruby${MODRUBY_BINREV}.so"
 
-SUBST_VARS +=		MODRUBY_BINREV
+SUBST_VARS +=		MODRUBY_BINREV MODRUBY_REV
 
 # XXX: Remove on upgrade
 # https://github.com/puppetlabs/facter/pull/1041
@@ -64,7 +63,7 @@ post-extract:
 		${WRKSRC}/lib/src/facts/openbsd/
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/lib/CMakeLists.txt
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
 
