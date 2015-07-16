@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/07/16 21:20:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2015/07/16 21:30:55 ajacoutot Exp $
 
 COMMENT =	session and caching library with wsgi middleware
 
@@ -28,7 +28,7 @@ TEST_DEPENDS = databases/py-sqlalchemy \
 		  devel/py-coverage${MODPY_FLAVOR} \
 		  devel/py-mock \
 		  devel/py-nose${MODPY_FLAVOR} \
-		  misc/py-memcached \
+		  misc/py-memcached${MODPY_FLAVOR} \
 		  www/py-webtest \
 		  ${RUN_DEPENDS}
 
