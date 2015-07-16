@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_inc_internal_ruby_api_hpp,v 1.1 2015/07/16 15:52:01 jasper Exp $
+
+Initialize the ruby loadpath ($:) so that rbconfig.rb gets loaded.
+
+--- lib/inc/internal/ruby/api.hpp.orig	Thu Jul 16 09:36:21 2015
++++ lib/inc/internal/ruby/api.hpp	Thu Jul 16 09:39:27 2015
+@@ -619,6 +619,7 @@ namespace facter {  namespace ruby {
+         void (* const ruby_init)();
+         void* (* const ruby_options)(int, char**);
+         int (* const ruby_cleanup)(volatile int);
++        void (* const ruby_init_loadpath)();
+ 
+         static std::unique_ptr<api> create();
+         static facter::util::dynamic_library find_library();

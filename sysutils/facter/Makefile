@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/07/16 05:25:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2015/07/16 15:52:01 jasper Exp $
 
 COMMENT =		collect and display system facts
 
 DISTNAME =		facter-3.0.1
-REVISION =		9
+REVISION =		10
 SHARED_LIBS +=  	facter                    3.0 # 3.0
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
