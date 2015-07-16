@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2015/06/07 10:22:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2015/07/16 21:56:23 jasper Exp $
+
+PORTROACH=	limit:^2
 
 COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
