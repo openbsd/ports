@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/22 11:31:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/07/16 23:18:22 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Structured Terminal Forms Language/Library
 
-DISTNAME=	stfl-0.22
-REVISION=	0
+DISTNAME=	stfl-0.24
 
 SHARED_LIBS+=	stfl 0.0
 
@@ -18,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ncursesw pthread
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	http://www.clifford.at/stfl/
 
 MODULES=	converters/libiconv
 
