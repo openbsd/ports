@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/07/15 16:58:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/07/16 04:45:18 jasper Exp $
 
 COMMENT =		collect and display system facts
 
 DISTNAME =		facter-3.0.1
-REVISION =		6
+REVISION =		7
 SHARED_LIBS +=  	facter                    3.0 # 3.0
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
@@ -30,7 +30,8 @@ WANTLIB += m pthread yaml-cpp
 LIB_DEPENDS =		devel/boost>=1.58 \
 			devel/yaml-cpp
 
-CONFIGURE_ARGS+=	-DWITHOUT_JRUBY:Bool=Yes
+CONFIGURE_ARGS+=	-DWITHOUT_JRUBY:Bool=Yes \
+			-DFACTER_RUBY="${LOCALBASE}/lib/libruby${MODRUBY_BINREV}.so"
 
 SUBST_VARS +=		MODRUBY_BINREV
 
@@ -63,7 +64,7 @@ post-extract:
 		${WRKSRC}/lib/src/facts/openbsd/
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/lib/src/ruby/api.cc ${WRKSRC}/lib/CMakeLists.txt
+	${SUBST_CMD} ${WRKSRC}/lib/CMakeLists.txt
 
 .include <bsd.port.mk>
 
