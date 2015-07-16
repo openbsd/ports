@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/06/17 18:56:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/07/16 23:13:01 ajacoutot Exp $
 @conflict jakarta-ant-*
 ant/
 ant/bin/
@@ -1627,7 +1627,6 @@ share/doc/java/ant/proxy.html
 share/doc/java/ant/running.html
 share/doc/java/ant/runninglist.html
 share/doc/java/ant/stylesheets/
-share/doc/java/ant/stylesheets/antmanual.css
 share/doc/java/ant/stylesheets/style.css
 share/doc/java/ant/sysclasspath.html
 share/doc/java/ant/targets.html
