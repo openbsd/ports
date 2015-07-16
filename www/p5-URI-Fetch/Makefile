@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/19 16:28:30 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2015/07/16 02:56:35 ajacoutot Exp $
 
 COMMENT=		smart URI fetching/caching
 
 MODULES=		cpan
-DISTNAME =		URI-Fetch-0.10
+DISTNAME =		URI-Fetch-0.11
 CATEGORIES=		www
 
 # perl
