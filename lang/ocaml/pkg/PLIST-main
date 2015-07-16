@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2014/10/25 11:55:54 chrisz Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2015/07/16 15:05:55 sthen Exp $
 %%native%%
 %%SHARED%%
 bin/ocaml
@@ -817,6 +817,7 @@ share/doc/ocaml/html/libref/type_Weak.html
 share/doc/ocaml/html/libstr.html
 share/doc/ocaml/html/libthreads.html
 share/doc/ocaml/html/libunix.html
+share/doc/ocaml/html/manual.css
 share/doc/ocaml/html/manual001.html
 share/doc/ocaml/html/manual043.html
 share/doc/ocaml/html/modtypes.html
