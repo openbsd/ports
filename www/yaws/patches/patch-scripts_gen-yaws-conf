@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_gen-yaws-conf,v 1.1 2011/05/27 17:04:43 jasper Exp $
+$OpenBSD: patch-scripts_gen-yaws-conf,v 1.2 2015/07/16 01:12:33 ajacoutot Exp $
 --- scripts/gen-yaws-conf.orig	Fri May 27 18:55:53 2011
 +++ scripts/gen-yaws-conf	Fri May 27 18:56:03 2011
 @@ -9,7 +9,7 @@ cat yaws.conf.template | \
@@ -6,7 +6,7 @@ $OpenBSD: patch-scripts_gen-yaws-conf,v 1.1 2011/05/27 17:04:43 jasper Exp $
      ./Subst %logdir% "$LOGDIR" | \
      ./Subst %vardir% "$VARDIR" | \
 -    ./Subst %host% `hostname` | \
-+    ./Subst %host% `FULL_HOSTNAME_HERE` | \
++    ./Subst %host% 'FULL_HOSTNAME_HERE' | \
      ./Subst %port% $PORT | \
      ./Subst %docroot% "$DOCROOT" | \
      ./Subst %certdir% "$CERTDIR" | \
