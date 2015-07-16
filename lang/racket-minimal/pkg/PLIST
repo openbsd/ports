@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/16 00:20:53 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/16 00:34:13 ajacoutot Exp $
+@conflict racket-<6.2
+@pkgpath lang/racket
 @bin bin/racket
 bin/racket-user-bin-paths
 bin/raco
