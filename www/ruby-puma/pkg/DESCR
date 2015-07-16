@@ -1,0 +1,3 @@
+Unlike other Ruby Webservers, Puma was built for speed and parallelism. Puma is
+a small library that provides a very fast and concurrent HTTP 1.1 server for
+Ruby web applications. It is designed for running Rack apps only.
