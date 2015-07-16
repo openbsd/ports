@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2015/07/16 00:20:53 juanfra Exp $
+$OpenBSD: README,v 1.2 2015/07/16 00:26:20 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -62,7 +62,7 @@ The binaries of the raco packages are installed to a directory in your $HOME
 "racket-user-bin-paths" to get the correct path. You only to need modify your
 $PATH:
 
-if [ -x /usr/local/bin/racket-user-bin-paths ]; then
+if [ -x ${TRUEPREFIX}/bin/racket-user-bin-paths ]; then
 	export PATH="$PATH:$(racket-user-bin-paths)"
 fi
 
@@ -85,4 +85,3 @@ Not yet. Racket's package manager is not widely tested in systems which mix
 different versions of different packages in different pkg scopes. The
 integration of raco packages in OpenBSD's ports framework would make future
 updates of Racket difficult with no benefit for the users.
-

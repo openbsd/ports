@@ -11,4 +11,3 @@ The primary components of Racket platform are:
 - raco, command line tool for finding documentation, compiling Racket
   source to bytecode, packaging executables, packaging installable
   archives, and installing packages from remote servers.
-

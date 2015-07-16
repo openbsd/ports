@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/16 00:20:53 juanfra Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/16 00:26:20 ajacoutot Exp $
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
@@ -16,6 +16,7 @@ COMMENT =		multi-paradigm programming language
 
 V =			6.2
 PKGNAME =		racket-minimal-$V
+REVISION =		0
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
 
@@ -40,7 +41,7 @@ MASTER_SITES =		https://www.cs.utah.edu/plt/installers/${V}/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
-MODULES +=		converters/libiconv
+MODULES =		converters/libiconv
 
 LIB_DEPENDS =		devel/libffi>=3.0.9p2
 
