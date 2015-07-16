@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.6 2015/03/16 18:07:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2015/07/16 23:21:48 jasper Exp $
 
 COMMENT=	regular expressions library
-DISTNAME=	onig-5.9.2
-SHARED_LIBS=	onig 2.0
-PKGNAME=	oniguruma-5.9.2
-MASTER_SITES=	${HOMEPAGE}/archive/
+
+V=		5.9.6
+DISTNAME=	onig-$V
+SHARED_LIBS=	onig 2.1
+PKGNAME=	oniguruma-$V
 CATEGORIES=	textproc
-REVISION=	0
 
 HOMEPAGE=	http://www.geocities.jp/kosako3/oniguruma/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
+MASTER_SITES=	${HOMEPAGE}/archive/
 
 CONFIGURE_STYLE=gnu
+
+USE_GMAKE=	Yes
 
 .include <bsd.port.mk>
