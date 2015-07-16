@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/07/02 18:06:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2015/07/16 01:07:06 jeremy Exp $
 
 COMMENT=		tool for managing events and logs
 
@@ -6,6 +6,7 @@ V=			1.5.2
 DISTNAME=		logstash-$V
 PKGNAME=		logstash-${V:S/-/./}
 EPOCH=			0
+REVISION=		0
 
 MASTER_SITES=		https://download.elastic.co/logstash/logstash/
 
@@ -14,6 +15,7 @@ MODULES=		java \
 MODJAVA_VER=		1.7+
 MODJAVA_JRERUN=		Yes
 MODRUBY_BUILDDEP=	No
+MODRUBY_RUNDEP=		No
 
 RUN_DEPENDS=		java/javaPathHelper \
 			lang/jruby
