@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.41 2015/06/11 06:25:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.42 2015/07/16 04:55:46 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -208,6 +208,7 @@ share/foomatic/db/source/PPD/HP/hp-deskjet_1000_j110_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1010_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1050_j410_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1100-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-deskjet_1110_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1120-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1125-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1200c-hpijs.ppd.gz
@@ -248,6 +249,7 @@ share/foomatic/db/source/PPD/HP/hp-deskjet_3816-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3819-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3820-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3822-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-deskjet_3830_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3840-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3870-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3900-hpijs.ppd.gz
@@ -745,6 +747,7 @@ share/foomatic/db/source/PPD/HP/hp-officejet-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_100_mobile_l411-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_150_mobile_l511-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_2620_series-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-officejet_3830_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4000_k210-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4100_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4105-hpijs.ppd.gz
@@ -789,6 +792,7 @@ share/foomatic/db/source/PPD/HP/hp-officejet_7200_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_7300_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_7400_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_7500_e910-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-officejet_7510_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_7610_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_8040_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_9100_series-hpijs-pcl3.ppd.gz
