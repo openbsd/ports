@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/17 11:43:09 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2015/07/16 00:12:02 ajacoutot Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
 VERSION =			0.7.20
@@ -7,6 +7,7 @@ PKGNAME =			sabnzbd-${VERSION}
 CATEGORIES =			news
 HOMEPAGE =			http://sabnzbd.org/
 MAINTAINER =			Marcus Glocker <marcus@nazgul.ch>
+REVISION =			0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes

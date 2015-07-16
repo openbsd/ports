@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: sabnzbd.rc,v 1.1 2013/05/20 18:36:06 abieber Exp $
+# $OpenBSD: sabnzbd.rc,v 1.2 2015/07/16 00:12:02 ajacoutot Exp $
 
 datadir="/var/sabnzbd"
 
@@ -9,8 +9,6 @@ daemon_flags="-b 0 -f ${datadir} -p ${datadir}/sabnzbd.pid"
 daemon_user="_sabnzbd"
 
 . /etc/rc.d/rc.subr
-
-pexp="${MODPY_BIN} ${TRUEPREFIX}/lib/python${MODPY_VERSION}/site-packages/sabnzbd/SABnzbd.py.*"
 
 rc_reload=NO
 
