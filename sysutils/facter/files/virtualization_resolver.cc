@@ -16,8 +16,7 @@ namespace facter { namespace facts { namespace openbsd {
     {
         string value = get_product_name_vm(facts);
 
-	return value;
-
+        return value;
     }
 
     string virtualization_resolver::get_product_name_vm(collection& facts)
@@ -49,4 +48,4 @@ namespace facter { namespace facts { namespace openbsd {
         return {};
     }
 
-} } } // namespace facter::facts::openbsd
+} } }  // namespace facter::facts::openbsd

@@ -16,11 +16,11 @@ namespace facter { namespace facts { namespace openbsd {
     dmi_resolver::data dmi_resolver::collect_data(collection& facts)
     {
         data result;
-	result.bios_vendor = sysctl_lookup(HW_VENDOR);
-	result.uuid = sysctl_lookup(HW_UUID);
-	result.serial_number = sysctl_lookup(HW_SERIALNO);
-	result.product_name = sysctl_lookup(HW_PRODUCT);
-	result.bios_version = sysctl_lookup(HW_VERSION);
+        result.bios_vendor = sysctl_lookup(HW_VENDOR);
+        result.uuid = sysctl_lookup(HW_UUID);
+        result.serial_number = sysctl_lookup(HW_SERIALNO);
+        result.product_name = sysctl_lookup(HW_PRODUCT);
+        result.bios_version = sysctl_lookup(HW_VERSION);
 
         return result;
     }

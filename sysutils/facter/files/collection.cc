@@ -28,10 +28,10 @@ namespace facter { namespace facts {
         add(make_shared<posix::timezone_resolver>());
         add(make_shared<glib::load_average_resolver>());
         add(make_shared<openbsd::networking_resolver>());
-	add(make_shared<openbsd::dmi_resolver>());
+        add(make_shared<openbsd::dmi_resolver>());
         add(make_shared<openbsd::processor_resolver>());
-	add(make_shared<openbsd::memory_resolver>());
-	add(make_shared<openbsd::virtualization_resolver>());
+        add(make_shared<openbsd::memory_resolver>());
+        add(make_shared<openbsd::virtualization_resolver>());
     }
 
 }}  // namespace facter::facts
