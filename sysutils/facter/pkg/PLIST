@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/01 09:13:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/16 05:25:50 jasper Exp $
 @conflict facter-<3.0.1
 @bin bin/facter
 include/facter/
@@ -36,5 +36,5 @@ include/facter/util/scoped_resource.hpp
 include/facter/util/string.hpp
 include/facter/version.h
 @lib lib/libfacter.so.${LIBfacter_VERSION}
-lib/ruby/vendor_ruby/facter.rb
+lib/ruby/vendor_ruby/${MODRUBY_REV}/facter.rb
 @man man/man8/facter.8

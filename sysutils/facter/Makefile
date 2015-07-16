@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/07/16 05:12:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/07/16 05:25:50 jasper Exp $
 
 COMMENT =		collect and display system facts
 
 DISTNAME =		facter-3.0.1
-REVISION =		8
+REVISION =		9
 SHARED_LIBS +=  	facter                    3.0 # 3.0
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
@@ -64,6 +64,12 @@ post-extract:
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
+
+# XXX: Fix RbConfig::CONFIG['vendordir'] to point to the right dir.
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/ruby/vendor_ruby/${MODRUBY_REV}/
+	mv ${PREFIX}/lib/ruby/vendor_ruby/facter.rb \
+		${PREFIX}/lib/ruby/vendor_ruby/${MODRUBY_REV}/facter.rb
 
 .include <bsd.port.mk>
 
