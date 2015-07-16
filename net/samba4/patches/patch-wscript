@@ -1,12 +1,17 @@
-$OpenBSD: patch-wscript,v 1.1 2015/06/20 00:07:13 jca Exp $
---- wscript.orig	Thu Jun 18 03:15:28 2015
-+++ wscript	Thu Jun 18 03:16:13 2015
-@@ -155,7 +155,7 @@ def configure(conf):
+$OpenBSD: patch-wscript,v 1.2 2015/07/16 00:29:41 jca Exp $
+
+- samba is unusable (slow startup) with --as-needed; no visible drawback yet
+
+--- wscript.orig	Wed Jul 15 17:52:28 2015
++++ wscript	Wed Jul 15 18:27:29 2015
+@@ -154,9 +154,7 @@ def configure(conf):
+     # strict as the strictest OS we support, so adding this here
      # allows us to find problems on our development hosts faster.
      # It also results in faster load time.
- 
+-
 -    if not sys.platform.startswith("openbsd"):
-+    if not sys.platform.startswith("whatever"):
-         conf.env.asneeded_ldflags = conf.ADD_LDFLAGS('-Wl,--as-needed', testflags=True)
+-        conf.env.asneeded_ldflags = conf.ADD_LDFLAGS('-Wl,--as-needed', testflags=True)
++    conf.env.asneeded_ldflags = conf.ADD_LDFLAGS('-Wl,--as-needed', testflags=True)
  
      if not conf.CHECK_NEED_LC("-lc not needed"):
+         conf.ADD_LDFLAGS('-lc', testflags=False)
