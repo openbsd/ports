@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.25 2013/12/04 22:05:47 naddy Exp $
+# $OpenBSD: config.site,v 1.26 2015/07/16 01:56:14 sthen Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -1153,3 +1153,6 @@ ac_cv_header_wchar_h=${ac_cv_header_wchar_h=yes}
 ac_cv_header_wctype_h=${ac_cv_header_wctype_h=yes}
 ac_cv_type_dev_t=${ac_cv_type_dev_t=yes}
 ac_cv_type_ssize_t=${ac_cv_type_ssize_t=yes}
+ax_cv_check_cflags___fPIE=${ax_cv_check_cflags___fPIE=no}
+ax_cv_check_ldflags___fPIE=${ax_cv_check_ldflags___fPIE=no}
+ax_cv_check_ldflags___pie=${ax_cv_check_ldflags___pie=no}
