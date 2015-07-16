@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/23 19:26:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/16 04:54:41 ajacoutot Exp $
 bin/ioflo
 bin/ioflo2
 lib/python${MODPY_VERSION}/site-packages/ioflo/
@@ -14,10 +14,24 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/__metadata__.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/aiding.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/aiding.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/blending.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/blending.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/httping.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/httping.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/metaing.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/metaing.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/navigating.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/navigating.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/nonblocking.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/nonblocking.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/odicting.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/odicting.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/optimizing.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/optimizing.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/osetting.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/osetting.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/sixing.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/sixing.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/
@@ -27,10 +41,18 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/_test_httping_w_ext_serv
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/_test_httping_w_ext_server.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/_test_tls_w_ext_serverclient.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/_test_tls_w_ext_serverclient.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_blending.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_blending.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_httping.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_httping.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_metaing.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_metaing.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_nonblocking.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_nonblocking.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_odicting.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_odicting.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/timing.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/timing.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/app/
 lib/python${MODPY_VERSION}/site-packages/ioflo/app/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/app/__init__.pyc
@@ -106,8 +128,6 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/base/nonblocking.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/nonblocking.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/odicting.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/odicting.pyc
-lib/python${MODPY_VERSION}/site-packages/ioflo/base/optimize.py
-lib/python${MODPY_VERSION}/site-packages/ioflo/base/optimize.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/osetting.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/osetting.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/poking.py
@@ -125,8 +145,6 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/base/tasking.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testAiding.py
-lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testAiding.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testArbiting.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testArbiting.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testFraming.py
@@ -135,10 +153,8 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testLogging.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testLogging.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testMonitoring.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testMonitoring.pyc
-lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testRegister.py
-lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testRegister.pyc
-lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testRegistry.py
-lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testRegistry.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testRegistrar.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testRegistrar.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testServing.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testServing.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/test/_testStoring.py
