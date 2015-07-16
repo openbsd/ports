@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2015/07/16 05:12:57 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2015/07/16 19:57:36 jasper Exp $
 
 - From 4aa96f13f233dcff08e732c38168989913b44f2f Mon Sep 17 00:00:00 2001
   From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -8,7 +8,10 @@ $OpenBSD: patch-CMakeLists_txt,v 1.4 2015/07/16 05:12:57 jasper Exp $
   From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
   Date: Tue, 30 Jun 2015 10:34:05 +0200
   Subject: [PATCH] (maint) Use correct manpage path on OpenBSD
-- https://github.com/puppetlabs/facter/pull/1058
+- From 1dccdcee37f5d58bec7e7a05e7080edbcd766dae Mon Sep 17 00:00:00 2001
+  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+  Date: Wed, 15 Jul 2015 20:51:40 -0600
+  Subject: [PATCH] (MAINT) Fix FACTER_RUBY_PATH path in cmake message
 - allow building curl on OpenBSD
 
 --- CMakeLists.txt.orig	Thu Jun 25 17:47:38 2015
