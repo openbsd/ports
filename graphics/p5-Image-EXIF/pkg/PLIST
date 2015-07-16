@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/07/12 18:36:53 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/07/16 23:57:24 ajacoutot Exp $
 @comment ${P5ARCH}/Image/create_web_gallery.pl
-@comment ${P5ARCH}/auto/Image/EXIF/EXIF.bs
 ${P5ARCH}/
 ${P5ARCH}/Image/
 ${P5ARCH}/Image/EXIF.pm

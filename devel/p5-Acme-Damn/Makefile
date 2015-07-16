@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/11/14 09:04:52 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2015/07/16 23:57:20 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		unbless perl objects
 
 DISTNAME =		Acme-Damn-0.06
 CATEGORIES=		devel
+REVISION =		0
 
 MODULES=		cpan
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/11/01 19:59:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2015/07/16 23:57:21 ajacoutot Exp $
 
 COMMENT =		perl objected oriented Date Time
 
@@ -8,7 +8,7 @@ MODULES =		cpan
 DISTNAME =		DateTime-1.07
 EPOCH =			0
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 MAINTAINER = Andrew Fresh <afresh1@openbsd.org>
 

@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/06/14 23:26:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/07/16 23:57:27 ajacoutot Exp $
 ${P5ARCH}/
 ${P5ARCH}/Crypt/
 ${P5ARCH}/Crypt/Twofish.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Crypt/
 ${P5ARCH}/auto/Crypt/Twofish/
-@comment ${P5ARCH}/auto/Crypt/Twofish/Twofish.bs
 ${P5ARCH}/auto/Crypt/Twofish/Twofish.so
 @man man/man3p/Crypt::Twofish.3p

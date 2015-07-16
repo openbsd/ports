@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2014/06/14 23:26:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2015/07/16 23:57:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	interface to the UNIX system logger
 
 DISTNAME=	Unix-Syslog-1.1
-REVISION=	3
+REVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	Ibrahim Khalifa <ibo@toontown.org>

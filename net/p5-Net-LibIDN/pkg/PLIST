@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/19 18:46:33 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/16 23:57:25 ajacoutot Exp $
 ${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/LibIDN.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/LibIDN/
-@comment ${P5ARCH}/auto/Net/LibIDN/LibIDN.bs
 ${P5ARCH}/auto/Net/LibIDN/autosplit.ix
 @man man/man3p/Net::LibIDN.3p
 ${P5ARCH}/auto/Net/LibIDN/LibIDN.so

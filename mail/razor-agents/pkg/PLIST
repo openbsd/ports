@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/06/14 10:34:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/07/16 23:57:25 ajacoutot Exp $
 bin/razor-admin
 bin/razor-check
 bin/razor-client
@@ -33,7 +33,6 @@ ${P5ARCH}/auto/Razor2/
 ${P5ARCH}/auto/Razor2/Preproc/
 ${P5ARCH}/auto/Razor2/Preproc/deHTMLxs/
 ${P5ARCH}/auto/Razor2/Preproc/deHTMLxs/autosplit.ix
-@comment ${P5ARCH}/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.bs
 ${P5ARCH}/auto/Razor2/Preproc/deHTMLxs/deHTMLxs.so
 ${P5ARCH}/auto/Razor2/Syslog/
 ${P5ARCH}/auto/Razor2/Syslog/autosplit.ix

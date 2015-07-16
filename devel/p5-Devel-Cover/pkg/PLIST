@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/06/14 23:24:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/07/16 23:57:21 ajacoutot Exp $
 bin/cover
 bin/cpancover
 bin/gcov2perl
@@ -51,7 +51,6 @@ ${P5ARCH}/Devel/Cover/Util.pm
 ${P5ARCH}/Devel/Cover/Web.pm
 ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/Cover/
-@comment ${P5ARCH}/auto/Devel/Cover/Cover.bs
 ${P5ARCH}/auto/Devel/Cover/Cover.so
 @man man/man1/cover.1
 @man man/man1/cpancover.1

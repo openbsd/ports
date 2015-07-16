@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/06/14 23:25:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/07/16 23:57:26 ajacoutot Exp $
 ${P5ARCH}/
 ${P5ARCH}/NetAddr/
 ${P5ARCH}/NetAddr/IP/
@@ -23,7 +23,6 @@ ${P5ARCH}/auto/NetAddr/IP/InetBase/inet_ntoa.al
 ${P5ARCH}/auto/NetAddr/IP/InetBase/ipv6_aton.al
 ${P5ARCH}/auto/NetAddr/IP/InetBase/ipv6_ntoa.al
 ${P5ARCH}/auto/NetAddr/IP/Util/
-@comment ${P5ARCH}/auto/NetAddr/IP/Util/Util.bs
 ${P5ARCH}/auto/NetAddr/IP/Util/Util.so
 ${P5ARCH}/auto/NetAddr/IP/Util/autosplit.ix
 ${P5ARCH}/auto/NetAddr/IP/UtilPP/

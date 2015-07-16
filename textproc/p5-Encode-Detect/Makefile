@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:41:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/07/16 23:57:27 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	Encode::Encoding subclass that detects the encoding of data
 
 MODULES =	cpan
 DISTNAME =	Encode-Detect-1.01
-REVISION =	3
+REVISION =	4
 CATEGORIES =	textproc
 
 # Perl

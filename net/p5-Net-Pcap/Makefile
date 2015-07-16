@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.25 2014/06/14 23:25:42 sthen Exp $
+#   $OpenBSD: Makefile,v 1.26 2015/07/16 23:57:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	module for pcap access
 
 MODULES=	cpan
 DISTNAME=	Net-Pcap-0.16
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 
 PERMIT_PACKAGE_CDROM=	Yes

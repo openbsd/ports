@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/01/21 06:23:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.21 2015/07/16 23:57:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	module for sending and receiving multicast messages
 
 MODULES=	cpan
 DISTNAME=	IO-Socket-Multicast-1.12
-REVISION=	4
+REVISION=	5
 CATEGORIES=	net
 
 # perl

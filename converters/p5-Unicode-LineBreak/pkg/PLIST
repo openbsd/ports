@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/04/05 12:20:20 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/07/16 23:57:19 ajacoutot Exp $
 ${P5ARCH}/
 ${P5ARCH}/POD2/
 ${P5ARCH}/POD2/JA/
@@ -20,7 +20,6 @@ ${P5ARCH}/Unicode/LineBreak/Defaults.pm.sample
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Unicode/
 ${P5ARCH}/auto/Unicode/LineBreak/
-@comment ${P5ARCH}/auto/Unicode/LineBreak/LineBreak.bs
 ${P5ARCH}/auto/Unicode/LineBreak/LineBreak.so
 ${P5ARCH}/auto/sombok/
 ${P5ARCH}/auto/sombok/extralibs.ld

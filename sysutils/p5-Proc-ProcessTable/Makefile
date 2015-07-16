@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/11/10 19:10:47 benoit Exp $
+# $OpenBSD: Makefile,v 1.23 2015/07/16 23:57:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	interface to the system's process table
 
 DISTNAME =	Proc-ProcessTable-0.51
 CATEGORIES=	sysutils
+REVISION =	0
 
 MAINTAINER=	William Yodlowsky <william@openbsd.org>
 

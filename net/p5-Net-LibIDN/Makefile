@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/19 18:46:33 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/16 23:57:25 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,6 +7,7 @@ COMMENT =	Perl bindings for GNU Libidn
 MODULES =	cpan
 DISTNAME =	Net-LibIDN-0.12
 CATEGORIES =	net
+REVISION =	0
 
 # Artistic
 PERMIT_PACKAGE_CDROM =Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/01/22 12:52:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2015/07/16 23:57:24 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,7 +8,7 @@ VERSION =	2.1.1
 DISTNAME =	nkf-${VERSION}
 PKGNAME =	ja-nkf-${VERSION}
 EPOCH =		0
-REVISION =	1
+REVISION =	2
 CATEGORIES =	japanese textproc
 
 HOMEPAGE =	http://sourceforge.jp/projects/nkf/

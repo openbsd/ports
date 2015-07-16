@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2014/06/14 23:26:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/07/16 23:57:29 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Perl bindings to the GtkImageView image viewer widget
 
 DISTNAME=		Gtk2-ImageView-0.05
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 

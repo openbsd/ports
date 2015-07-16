@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/07/12 19:39:49 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/07/16 23:57:19 ajacoutot Exp $
 bin/json_xs
-@comment ${P5ARCH}/auto/JSON/XS/XS.bs
 ${P5ARCH}/
 ${P5ARCH}/JSON/
 ${P5ARCH}/JSON/XS/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/18 12:59:49 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2015/07/16 23:57:21 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,6 +6,7 @@ COMMENT =		XS implementation of parts of Class::Load
 
 DISTNAME =		Class-Load-XS-0.09
 CATEGORIES =		devel
+REVISION =		0
 
 # artistic 2.0
 PERMIT_PACKAGE_CDROM =	Yes

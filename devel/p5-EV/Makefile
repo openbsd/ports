@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/25 09:56:15 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.10 2015/07/16 23:57:22 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	perl interface to libev
@@ -7,6 +7,7 @@ MODULES =	cpan
 DISTNAME =	EV-4.20
 CATEGORIES =	devel
 CPAN_AUTHOR =	MLEHMANN
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2015/06/17 06:16:51 bentley Exp $
+# $OpenBSD: Makefile,v 1.50 2015/07/16 23:57:28 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT =		modules to parse and extract information from HTML
 MODULES =		cpan
 DISTNAME =		HTML-Parser-3.71
 CATEGORIES =		www
-REVISION =		1
+REVISION =		2
 
 RUN_DEPENDS =		www/p5-HTML-Tagset>=3
 BUILD_DEPENDS =		${RUN_DEPENDS}

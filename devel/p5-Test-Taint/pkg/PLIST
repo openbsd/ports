@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/06/14 23:24:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/07/16 23:57:24 ajacoutot Exp $
 ${P5ARCH}/
 ${P5ARCH}/Test/
 ${P5ARCH}/Test/Taint.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Test/
 ${P5ARCH}/auto/Test/Taint/
-@comment ${P5ARCH}/auto/Test/Taint/Taint.bs
 ${P5ARCH}/auto/Test/Taint/Taint.so
 @man man/man3p/Test::Taint.3p

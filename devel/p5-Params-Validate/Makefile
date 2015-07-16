@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/06/14 23:24:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2015/07/16 23:57:23 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	perl module to validate function/method parameters
 
 DISTNAME =	Params-Validate-1.09
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 

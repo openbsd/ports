@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/06/14 23:23:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/07/16 23:57:19 ajacoutot Exp $
 ${P5ARCH}/
 ${P5ARCH}/Convert/
 ${P5ARCH}/Convert/UUlib.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Convert/
 ${P5ARCH}/auto/Convert/UUlib/
-@comment ${P5ARCH}/auto/Convert/UUlib/UUlib.bs
 ${P5ARCH}/auto/Convert/UUlib/UUlib.so
 @man man/man3p/Convert::UUlib.3p

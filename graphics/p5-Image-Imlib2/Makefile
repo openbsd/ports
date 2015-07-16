@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2015/03/20 22:47:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2015/07/16 23:57:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Perl interface to the Imlib2 image library
 
 DISTNAME=	Image-Imlib2-2.03
-REVISION=	2
+REVISION=	3
 CATEGORIES=	graphics
 
 # Perl

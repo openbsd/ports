@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/12/29 10:48:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2015/07/16 23:57:25 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,6 +7,7 @@ COMMENT =	module for access to network card configuration information
 MODULES =	cpan
 DISTNAME =	IO-Interface-1.09
 CATEGORIES =	net
+REVISION =	0
 
 HOMEPAGE =	https://github.com/lstein/LibIO-Interface-Perl
 

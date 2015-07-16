@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/10/28 08:23:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2015/07/16 23:57:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	implementation of a "sounds like" algorithm
 
 MODULES=	cpan
 DISTNAME=	Text-DoubleMetaphone-0.07
-REVISION=	5
+REVISION=	6
 CATEGORIES=	textproc
 
 MAINTAINER=	Jim Razmus II <jim@openbsd.org>

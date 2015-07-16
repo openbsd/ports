@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/03/20 22:47:41 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/07/16 23:57:24 ajacoutot Exp $
 ${P5ARCH}/
 ${P5ARCH}/Image/
 ${P5ARCH}/Image/Imlib2.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Image/
 ${P5ARCH}/auto/Image/Imlib2/
-@comment ${P5ARCH}/auto/Image/Imlib2/Imlib2.bs
 ${P5ARCH}/auto/Image/Imlib2/Imlib2.so
 @man man/man3p/Image::Imlib2.3p

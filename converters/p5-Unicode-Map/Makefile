@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2014/06/14 23:23:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/07/16 23:57:19 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	conversions to and from arbitrary character sets
 
 DISTNAME=	Unicode-Map-0.112
-REVISION=	4
+REVISION=	5
 CATEGORIES=	converters
 MODULES=	cpan
 

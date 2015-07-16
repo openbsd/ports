@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/06/14 23:25:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/07/16 23:57:24 ajacoutot Exp $
 @pkgpath graphics/p5-Imager,libs
 ${P5ARCH}/
 ${P5ARCH}/Imager/
@@ -94,45 +94,32 @@ ${P5ARCH}/Imager/typemap
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Imager/
 ${P5ARCH}/auto/Imager/CountColor/
-@comment ${P5ARCH}/auto/Imager/CountColor/CountColor.bs
 ${P5ARCH}/auto/Imager/CountColor/CountColor.so
 ${P5ARCH}/auto/Imager/File/
 ${P5ARCH}/auto/Imager/File/GIF/
-@comment ${P5ARCH}/auto/Imager/File/GIF/GIF.bs
 ${P5ARCH}/auto/Imager/File/GIF/GIF.so
 ${P5ARCH}/auto/Imager/File/ICO/
-@comment ${P5ARCH}/auto/Imager/File/ICO/ICO.bs
 ${P5ARCH}/auto/Imager/File/ICO/ICO.so
 ${P5ARCH}/auto/Imager/File/JPEG/
-@comment ${P5ARCH}/auto/Imager/File/JPEG/JPEG.bs
 ${P5ARCH}/auto/Imager/File/JPEG/JPEG.so
 ${P5ARCH}/auto/Imager/File/PNG/
-@comment ${P5ARCH}/auto/Imager/File/PNG/PNG.bs
 ${P5ARCH}/auto/Imager/File/PNG/PNG.so
 ${P5ARCH}/auto/Imager/File/SGI/
-@comment ${P5ARCH}/auto/Imager/File/SGI/SGI.bs
 ${P5ARCH}/auto/Imager/File/SGI/SGI.so
 ${P5ARCH}/auto/Imager/File/TIFF/
-@comment ${P5ARCH}/auto/Imager/File/TIFF/TIFF.bs
 ${P5ARCH}/auto/Imager/File/TIFF/TIFF.so
 ${P5ARCH}/auto/Imager/Filter/
 ${P5ARCH}/auto/Imager/Filter/DynTest/
-@comment ${P5ARCH}/auto/Imager/Filter/DynTest/DynTest.bs
 ${P5ARCH}/auto/Imager/Filter/DynTest/DynTest.so
 ${P5ARCH}/auto/Imager/Filter/Flines/
-@comment ${P5ARCH}/auto/Imager/Filter/Flines/Flines.bs
 ${P5ARCH}/auto/Imager/Filter/Flines/Flines.so
 ${P5ARCH}/auto/Imager/Filter/Mandelbrot/
-@comment ${P5ARCH}/auto/Imager/Filter/Mandelbrot/Mandelbrot.bs
 ${P5ARCH}/auto/Imager/Filter/Mandelbrot/Mandelbrot.so
 ${P5ARCH}/auto/Imager/Font/
 ${P5ARCH}/auto/Imager/Font/FT2/
-@comment ${P5ARCH}/auto/Imager/Font/FT2/FT2.bs
 ${P5ARCH}/auto/Imager/Font/FT2/FT2.so
 ${P5ARCH}/auto/Imager/Font/T1/
-@comment ${P5ARCH}/auto/Imager/Font/T1/T1.bs
 ${P5ARCH}/auto/Imager/Font/T1/T1.so
-@comment ${P5ARCH}/auto/Imager/Imager.bs
 ${P5ARCH}/auto/Imager/Imager.so
 @man man/man3p/Imager.3p
 @man man/man3p/Imager::API.3p

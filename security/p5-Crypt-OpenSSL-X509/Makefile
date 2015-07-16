@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2015/01/25 09:09:31 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2015/07/16 23:57:26 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		access OpenSSL's X509 API from Perl#'
 
 DISTNAME =		Crypt-OpenSSL-X509-1.806
+REVISION =		0
 
 CATEGORIES =		security
 

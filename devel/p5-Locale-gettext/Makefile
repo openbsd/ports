@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/06/14 23:24:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2015/07/16 23:57:22 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	interface to gettext() internationalization function
 MODULES=	cpan
 DISTNAME=	gettext-1.05
 PKGNAME=	p5-Locale-${DISTNAME}
-REVISION=	5
+REVISION=	6
 CPAN_AUTHOR=	PVANDRY
 CATEGORIES=	converters devel
 

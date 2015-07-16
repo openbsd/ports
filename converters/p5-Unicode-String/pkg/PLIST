@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/06/14 23:23:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/07/16 23:57:19 ajacoutot Exp $
 ${P5ARCH}/
 ${P5ARCH}/Unicode/
 ${P5ARCH}/Unicode/CharName.pm
@@ -6,7 +6,6 @@ ${P5ARCH}/Unicode/String.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Unicode/
 ${P5ARCH}/auto/Unicode/String/
-@comment ${P5ARCH}/auto/Unicode/String/String.bs
 ${P5ARCH}/auto/Unicode/String/String.so
 @man man/man3p/Unicode::CharName.3p
 @man man/man3p/Unicode::String.3p

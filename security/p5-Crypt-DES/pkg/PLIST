@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/06/14 23:26:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/07/16 23:57:26 ajacoutot Exp $
 ${P5ARCH}/
 ${P5ARCH}/Crypt/
 ${P5ARCH}/Crypt/DES.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Crypt/
 ${P5ARCH}/auto/Crypt/DES/
-@comment ${P5ARCH}/auto/Crypt/DES/DES.bs
 ${P5ARCH}/auto/Crypt/DES/DES.so
 @man man/man3p/Crypt::DES.3p

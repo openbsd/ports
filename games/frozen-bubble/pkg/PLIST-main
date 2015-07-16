@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2014/06/14 10:34:44 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2015/07/16 23:57:24 ajacoutot Exp $
 bin/frozen-bubble
 bin/frozen-bubble-editor
 ${P5ARCH}/FBLE.pm
 ${P5ARCH}/auto/fb_c_stuff/
-@comment ${P5ARCH}/auto/fb_c_stuff/fb_c_stuff.bs
 ${P5ARCH}/auto/fb_c_stuff/fb_c_stuff.so
 ${P5ARCH}/fb_c_stuff.pm
 ${P5ARCH}/fb_config.pm

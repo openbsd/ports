@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/14 11:29:07 henning Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/16 23:57:26 ajacoutot Exp $
 ${P5ARCH}/Crypt/OpenSSL/PKCS10.pm
 ${P5ARCH}/auto/Crypt/OpenSSL/PKCS10/
-@comment ${P5ARCH}/auto/Crypt/OpenSSL/PKCS10/PKCS10.bs
 ${P5ARCH}/auto/Crypt/OpenSSL/PKCS10/PKCS10.so
 @man man/man3p/Crypt::OpenSSL::PKCS10.3p

@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/06/14 23:26:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/07/16 23:57:26 ajacoutot Exp $
 ${P5ARCH}/Crypt/OpenSSL/RSA.pm
 ${P5ARCH}/auto/Crypt/OpenSSL/RSA/
-@comment ${P5ARCH}/auto/Crypt/OpenSSL/RSA/RSA.bs
 ${P5ARCH}/auto/Crypt/OpenSSL/RSA/RSA.so
 ${P5ARCH}/auto/Crypt/OpenSSL/RSA/autosplit.ix
 ${P5ARCH}/auto/Crypt/OpenSSL/RSA/get_key_parameters.al

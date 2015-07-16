@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2014/06/14 23:24:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2015/07/16 23:57:20 ajacoutot Exp $
 
 DISTNAME=	sybperl-2.19
 PKGNAME=	p5-${DISTNAME}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	databases perl5
 
 # perl

@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/01/17 00:42:16 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/07/16 23:57:20 ajacoutot Exp $
 @comment ${P5ARCH}/Bundle/DBD/
 @comment ${P5ARCH}/Bundle/DBD/mysql.pm
 @comment ${P5ARCH}/DBD/README.pod
 @comment ${P5ARCH}/DBD/mysql/INSTALL.pod
-@comment ${P5ARCH}/auto/DBD/mysql/mysql.bs
 ${P5ARCH}/DBD/mysql/
 ${P5ARCH}/DBD/mysql.pm
 ${P5ARCH}/DBD/mysql/GetInfo.pm

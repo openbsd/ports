@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2014/06/14 23:25:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/07/16 23:57:25 ajacoutot Exp $
 
 SHARED_ONLY =		yes
 
 COMMENT =		efficient generation of combinatorial sequences
 
 DISTNAME =		Algorithm-Combinatorics-0.27
-REVISION =		1
+REVISION =		2
 CATEGORIES =		math
 
 CPAN_AUTHOR =		FXN

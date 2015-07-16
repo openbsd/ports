@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2014/06/14 23:24:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/07/16 23:57:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	Perl extension for mknod, major, minor and makedev
 
 MODULES=	cpan
 DISTNAME=	Unix-Mknod-0.04
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 # Perl

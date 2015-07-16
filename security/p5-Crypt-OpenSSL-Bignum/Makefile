@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/06/14 23:26:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2015/07/16 23:57:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	OpenSSL's multiprecision integer arithmetic
 
 MODULES=	cpan
 DISTNAME=	Crypt-OpenSSL-Bignum-0.04
-REVISION=	5
+REVISION=	6
 CATEGORIES=	security
 
 # Artistic licence

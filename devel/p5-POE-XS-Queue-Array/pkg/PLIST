@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/07/16 23:57:23 ajacoutot Exp $
 ${P5ARCH}/
 ${P5ARCH}/POE/
 ${P5ARCH}/POE/XS/
@@ -9,6 +9,5 @@ ${P5ARCH}/auto/POE/
 ${P5ARCH}/auto/POE/XS/
 ${P5ARCH}/auto/POE/XS/Queue/
 ${P5ARCH}/auto/POE/XS/Queue/Array/
-@comment ${P5ARCH}/auto/POE/XS/Queue/Array/Array.bs
 ${P5ARCH}/auto/POE/XS/Queue/Array/Array.so
 @man man/man3p/POE::XS::Queue::Array.3p

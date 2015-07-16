@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/07/12 18:36:52 giovanni Exp $
+# $OpenBSD: Makefile,v 1.20 2015/07/16 23:57:24 ajacoutot Exp $
 
 COMMENT=	interface to read EXIF tags in JPEG images
 
@@ -6,6 +6,7 @@ SHARED_ONLY=	Yes
 
 DISTNAME=	Image-EXIF-2.01
 CATEGORIES=	graphics
+REVISION=	0
 
 MODULES=	cpan
 CPAN_AUTHOR=	ARC
