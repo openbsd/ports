@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.27 2015/07/17 19:52:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2015/07/17 23:57:58 ajacoutot Exp $
+@pkgpath www/apache-httpd
 @bin bin/ab
 bin/dbmmanage2
 @bin bin/htdbm
@@ -1317,15 +1318,17 @@ share/doc/apache2/vhosts/name-based.html.ja.utf8
 share/doc/apache2/vhosts/name-based.html.ko.euc-kr
 share/doc/apache2/vhosts/name-based.html.tr.utf8
 share/examples/apache2/
-@sample /var/apache2/
 share/examples/apache2/cgi-bin/
-@sample /var/apache2/cgi-bin/
 share/examples/apache2/cgi-bin/printenv
-@sample /var/apache2/cgi-bin/printenv
+@mode 000
+@sample /var/www/cgi-bin/printenv
+@mode
 share/examples/apache2/cgi-bin/printenv.vbs
 share/examples/apache2/cgi-bin/printenv.wsf
 share/examples/apache2/cgi-bin/test-cgi
-@sample /var/apache2/cgi-bin/test-cgi
+@mode 000
+@sample /var/www/cgi-bin/test-cgi
+@mode
 share/examples/apache2/conf/
 @sample ${CONFDIR}/
 share/examples/apache2/conf/extra/
@@ -1375,518 +1378,57 @@ share/examples/apache2/conf/original/extra/httpd-vhosts.conf
 share/examples/apache2/conf/original/extra/proxy-html.conf
 share/examples/apache2/conf/original/httpd.conf
 share/examples/apache2/error/
-@sample /var/apache2/error/
+@sample /var/www/error/
 share/examples/apache2/error/HTTP_BAD_GATEWAY.html.var
-@sample /var/apache2/error/HTTP_BAD_GATEWAY.html.var
+@sample /var/www/error/HTTP_BAD_GATEWAY.html.var
 share/examples/apache2/error/HTTP_BAD_REQUEST.html.var
-@sample /var/apache2/error/HTTP_BAD_REQUEST.html.var
+@sample /var/www/error/HTTP_BAD_REQUEST.html.var
 share/examples/apache2/error/HTTP_FORBIDDEN.html.var
-@sample /var/apache2/error/HTTP_FORBIDDEN.html.var
+@sample /var/www/error/HTTP_FORBIDDEN.html.var
 share/examples/apache2/error/HTTP_GONE.html.var
-@sample /var/apache2/error/HTTP_GONE.html.var
+@sample /var/www/error/HTTP_GONE.html.var
 share/examples/apache2/error/HTTP_INTERNAL_SERVER_ERROR.html.var
-@sample /var/apache2/error/HTTP_INTERNAL_SERVER_ERROR.html.var
+@sample /var/www/error/HTTP_INTERNAL_SERVER_ERROR.html.var
 share/examples/apache2/error/HTTP_LENGTH_REQUIRED.html.var
-@sample /var/apache2/error/HTTP_LENGTH_REQUIRED.html.var
+@sample /var/www/error/HTTP_LENGTH_REQUIRED.html.var
 share/examples/apache2/error/HTTP_METHOD_NOT_ALLOWED.html.var
-@sample /var/apache2/error/HTTP_METHOD_NOT_ALLOWED.html.var
+@sample /var/www/error/HTTP_METHOD_NOT_ALLOWED.html.var
 share/examples/apache2/error/HTTP_NOT_FOUND.html.var
-@sample /var/apache2/error/HTTP_NOT_FOUND.html.var
+@sample /var/www/error/HTTP_NOT_FOUND.html.var
 share/examples/apache2/error/HTTP_NOT_IMPLEMENTED.html.var
-@sample /var/apache2/error/HTTP_NOT_IMPLEMENTED.html.var
+@sample /var/www/error/HTTP_NOT_IMPLEMENTED.html.var
 share/examples/apache2/error/HTTP_PRECONDITION_FAILED.html.var
-@sample /var/apache2/error/HTTP_PRECONDITION_FAILED.html.var
+@sample /var/www/error/HTTP_PRECONDITION_FAILED.html.var
 share/examples/apache2/error/HTTP_REQUEST_ENTITY_TOO_LARGE.html.var
-@sample /var/apache2/error/HTTP_REQUEST_ENTITY_TOO_LARGE.html.var
+@sample /var/www/error/HTTP_REQUEST_ENTITY_TOO_LARGE.html.var
 share/examples/apache2/error/HTTP_REQUEST_TIME_OUT.html.var
-@sample /var/apache2/error/HTTP_REQUEST_TIME_OUT.html.var
+@sample /var/www/error/HTTP_REQUEST_TIME_OUT.html.var
 share/examples/apache2/error/HTTP_REQUEST_URI_TOO_LARGE.html.var
-@sample /var/apache2/error/HTTP_REQUEST_URI_TOO_LARGE.html.var
+@sample /var/www/error/HTTP_REQUEST_URI_TOO_LARGE.html.var
 share/examples/apache2/error/HTTP_SERVICE_UNAVAILABLE.html.var
-@sample /var/apache2/error/HTTP_SERVICE_UNAVAILABLE.html.var
+@sample /var/www/error/HTTP_SERVICE_UNAVAILABLE.html.var
 share/examples/apache2/error/HTTP_UNAUTHORIZED.html.var
-@sample /var/apache2/error/HTTP_UNAUTHORIZED.html.var
+@sample /var/www/error/HTTP_UNAUTHORIZED.html.var
 share/examples/apache2/error/HTTP_UNSUPPORTED_MEDIA_TYPE.html.var
-@sample /var/apache2/error/HTTP_UNSUPPORTED_MEDIA_TYPE.html.var
+@sample /var/www/error/HTTP_UNSUPPORTED_MEDIA_TYPE.html.var
 share/examples/apache2/error/HTTP_VARIANT_ALSO_VARIES.html.var
-@sample /var/apache2/error/HTTP_VARIANT_ALSO_VARIES.html.var
+@sample /var/www/error/HTTP_VARIANT_ALSO_VARIES.html.var
 share/examples/apache2/error/README
-@sample /var/apache2/error/README
+@sample /var/www/error/README
 share/examples/apache2/error/contact.html.var
-@sample /var/apache2/error/contact.html.var
+@sample /var/www/error/contact.html.var
 share/examples/apache2/error/include/
-@sample /var/apache2/error/include/
+@sample /var/www/error/include/
 share/examples/apache2/error/include/bottom.html
-@sample /var/apache2/error/include/bottom.html
+@sample /var/www/error/include/bottom.html
 share/examples/apache2/error/include/spacer.html
-@sample /var/apache2/error/include/spacer.html
+@sample /var/www/error/include/spacer.html
 share/examples/apache2/error/include/top.html
-@sample /var/apache2/error/include/top.html
+@sample /var/www/error/include/top.html
 share/examples/apache2/htdocs/
-@sample /var/apache2/htdocs/
+@sample /var/www/htdocs/
 share/examples/apache2/htdocs/index.html
-@sample /var/apache2/htdocs/index.html
-share/examples/apache2/icons/
-@sample /var/apache2/icons/
-share/examples/apache2/icons/README
-@sample /var/apache2/icons/README
-share/examples/apache2/icons/README.html
-@sample /var/apache2/icons/README.html
-share/examples/apache2/icons/a.gif
-@sample /var/apache2/icons/a.gif
-share/examples/apache2/icons/a.png
-@sample /var/apache2/icons/a.png
-share/examples/apache2/icons/alert.black.gif
-@sample /var/apache2/icons/alert.black.gif
-share/examples/apache2/icons/alert.black.png
-@sample /var/apache2/icons/alert.black.png
-share/examples/apache2/icons/alert.red.gif
-@sample /var/apache2/icons/alert.red.gif
-share/examples/apache2/icons/alert.red.png
-@sample /var/apache2/icons/alert.red.png
-share/examples/apache2/icons/apache_pb.gif
-@sample /var/apache2/icons/apache_pb.gif
-share/examples/apache2/icons/apache_pb.png
-@sample /var/apache2/icons/apache_pb.png
-share/examples/apache2/icons/apache_pb.svg
-share/examples/apache2/icons/apache_pb2.gif
-@sample /var/apache2/icons/apache_pb2.gif
-share/examples/apache2/icons/apache_pb2.png
-@sample /var/apache2/icons/apache_pb2.png
-share/examples/apache2/icons/back.gif
-@sample /var/apache2/icons/back.gif
-share/examples/apache2/icons/back.png
-@sample /var/apache2/icons/back.png
-share/examples/apache2/icons/ball.gray.gif
-@sample /var/apache2/icons/ball.gray.gif
-share/examples/apache2/icons/ball.gray.png
-@sample /var/apache2/icons/ball.gray.png
-share/examples/apache2/icons/ball.red.gif
-@sample /var/apache2/icons/ball.red.gif
-share/examples/apache2/icons/ball.red.png
-@sample /var/apache2/icons/ball.red.png
-share/examples/apache2/icons/binary.gif
-@sample /var/apache2/icons/binary.gif
-share/examples/apache2/icons/binary.png
-@sample /var/apache2/icons/binary.png
-share/examples/apache2/icons/binhex.gif
-@sample /var/apache2/icons/binhex.gif
-share/examples/apache2/icons/binhex.png
-@sample /var/apache2/icons/binhex.png
-share/examples/apache2/icons/blank.gif
-@sample /var/apache2/icons/blank.gif
-share/examples/apache2/icons/blank.png
-@sample /var/apache2/icons/blank.png
-share/examples/apache2/icons/bomb.gif
-@sample /var/apache2/icons/bomb.gif
-share/examples/apache2/icons/bomb.png
-@sample /var/apache2/icons/bomb.png
-share/examples/apache2/icons/box1.gif
-@sample /var/apache2/icons/box1.gif
-share/examples/apache2/icons/box1.png
-@sample /var/apache2/icons/box1.png
-share/examples/apache2/icons/box2.gif
-@sample /var/apache2/icons/box2.gif
-share/examples/apache2/icons/box2.png
-@sample /var/apache2/icons/box2.png
-share/examples/apache2/icons/broken.gif
-@sample /var/apache2/icons/broken.gif
-share/examples/apache2/icons/broken.png
-@sample /var/apache2/icons/broken.png
-share/examples/apache2/icons/burst.gif
-@sample /var/apache2/icons/burst.gif
-share/examples/apache2/icons/burst.png
-@sample /var/apache2/icons/burst.png
-share/examples/apache2/icons/c.gif
-@sample /var/apache2/icons/c.gif
-share/examples/apache2/icons/c.png
-@sample /var/apache2/icons/c.png
-share/examples/apache2/icons/comp.blue.gif
-@sample /var/apache2/icons/comp.blue.gif
-share/examples/apache2/icons/comp.blue.png
-@sample /var/apache2/icons/comp.blue.png
-share/examples/apache2/icons/comp.gray.gif
-@sample /var/apache2/icons/comp.gray.gif
-share/examples/apache2/icons/comp.gray.png
-@sample /var/apache2/icons/comp.gray.png
-share/examples/apache2/icons/compressed.gif
-@sample /var/apache2/icons/compressed.gif
-share/examples/apache2/icons/compressed.png
-@sample /var/apache2/icons/compressed.png
-share/examples/apache2/icons/continued.gif
-@sample /var/apache2/icons/continued.gif
-share/examples/apache2/icons/continued.png
-@sample /var/apache2/icons/continued.png
-share/examples/apache2/icons/dir.gif
-@sample /var/apache2/icons/dir.gif
-share/examples/apache2/icons/dir.png
-@sample /var/apache2/icons/dir.png
-share/examples/apache2/icons/diskimg.gif
-@sample /var/apache2/icons/diskimg.gif
-share/examples/apache2/icons/diskimg.png
-@sample /var/apache2/icons/diskimg.png
-share/examples/apache2/icons/down.gif
-@sample /var/apache2/icons/down.gif
-share/examples/apache2/icons/down.png
-@sample /var/apache2/icons/down.png
-share/examples/apache2/icons/dvi.gif
-@sample /var/apache2/icons/dvi.gif
-share/examples/apache2/icons/dvi.png
-@sample /var/apache2/icons/dvi.png
-share/examples/apache2/icons/f.gif
-@sample /var/apache2/icons/f.gif
-share/examples/apache2/icons/f.png
-@sample /var/apache2/icons/f.png
-share/examples/apache2/icons/folder.gif
-@sample /var/apache2/icons/folder.gif
-share/examples/apache2/icons/folder.open.gif
-@sample /var/apache2/icons/folder.open.gif
-share/examples/apache2/icons/folder.open.png
-@sample /var/apache2/icons/folder.open.png
-share/examples/apache2/icons/folder.png
-@sample /var/apache2/icons/folder.png
-share/examples/apache2/icons/folder.sec.gif
-@sample /var/apache2/icons/folder.sec.gif
-share/examples/apache2/icons/folder.sec.png
-@sample /var/apache2/icons/folder.sec.png
-share/examples/apache2/icons/forward.gif
-@sample /var/apache2/icons/forward.gif
-share/examples/apache2/icons/forward.png
-@sample /var/apache2/icons/forward.png
-share/examples/apache2/icons/generic.gif
-@sample /var/apache2/icons/generic.gif
-share/examples/apache2/icons/generic.png
-@sample /var/apache2/icons/generic.png
-share/examples/apache2/icons/generic.red.gif
-@sample /var/apache2/icons/generic.red.gif
-share/examples/apache2/icons/generic.red.png
-@sample /var/apache2/icons/generic.red.png
-share/examples/apache2/icons/generic.sec.gif
-@sample /var/apache2/icons/generic.sec.gif
-share/examples/apache2/icons/generic.sec.png
-@sample /var/apache2/icons/generic.sec.png
-share/examples/apache2/icons/hand.right.gif
-@sample /var/apache2/icons/hand.right.gif
-share/examples/apache2/icons/hand.right.png
-@sample /var/apache2/icons/hand.right.png
-share/examples/apache2/icons/hand.up.gif
-@sample /var/apache2/icons/hand.up.gif
-share/examples/apache2/icons/hand.up.png
-@sample /var/apache2/icons/hand.up.png
-share/examples/apache2/icons/icon.sheet.gif
-@sample /var/apache2/icons/icon.sheet.gif
-share/examples/apache2/icons/icon.sheet.png
-@sample /var/apache2/icons/icon.sheet.png
-share/examples/apache2/icons/image1.gif
-@sample /var/apache2/icons/image1.gif
-share/examples/apache2/icons/image1.png
-@sample /var/apache2/icons/image1.png
-share/examples/apache2/icons/image2.gif
-@sample /var/apache2/icons/image2.gif
-share/examples/apache2/icons/image2.png
-@sample /var/apache2/icons/image2.png
-share/examples/apache2/icons/image3.gif
-@sample /var/apache2/icons/image3.gif
-share/examples/apache2/icons/image3.png
-@sample /var/apache2/icons/image3.png
-share/examples/apache2/icons/index.gif
-@sample /var/apache2/icons/index.gif
-share/examples/apache2/icons/index.png
-@sample /var/apache2/icons/index.png
-share/examples/apache2/icons/layout.gif
-@sample /var/apache2/icons/layout.gif
-share/examples/apache2/icons/layout.png
-@sample /var/apache2/icons/layout.png
-share/examples/apache2/icons/left.gif
-@sample /var/apache2/icons/left.gif
-share/examples/apache2/icons/left.png
-@sample /var/apache2/icons/left.png
-share/examples/apache2/icons/link.gif
-@sample /var/apache2/icons/link.gif
-share/examples/apache2/icons/link.png
-@sample /var/apache2/icons/link.png
-share/examples/apache2/icons/movie.gif
-@sample /var/apache2/icons/movie.gif
-share/examples/apache2/icons/movie.png
-@sample /var/apache2/icons/movie.png
-share/examples/apache2/icons/odf6odb.png
-share/examples/apache2/icons/odf6odc.png
-share/examples/apache2/icons/odf6odf.png
-share/examples/apache2/icons/odf6odg.png
-share/examples/apache2/icons/odf6odi.png
-share/examples/apache2/icons/odf6odm.png
-share/examples/apache2/icons/odf6odp.png
-share/examples/apache2/icons/odf6ods.png
-share/examples/apache2/icons/odf6odt.png
-share/examples/apache2/icons/odf6otc.png
-share/examples/apache2/icons/odf6otf.png
-share/examples/apache2/icons/odf6otg.png
-share/examples/apache2/icons/odf6oth.png
-share/examples/apache2/icons/odf6oti.png
-share/examples/apache2/icons/odf6otp.png
-share/examples/apache2/icons/odf6ots.png
-share/examples/apache2/icons/odf6ott.png
-share/examples/apache2/icons/p.gif
-@sample /var/apache2/icons/p.gif
-share/examples/apache2/icons/p.png
-@sample /var/apache2/icons/p.png
-share/examples/apache2/icons/patch.gif
-@sample /var/apache2/icons/patch.gif
-share/examples/apache2/icons/patch.png
-@sample /var/apache2/icons/patch.png
-share/examples/apache2/icons/pdf.gif
-@sample /var/apache2/icons/pdf.gif
-share/examples/apache2/icons/pdf.png
-@sample /var/apache2/icons/pdf.png
-share/examples/apache2/icons/pie0.gif
-@sample /var/apache2/icons/pie0.gif
-share/examples/apache2/icons/pie0.png
-@sample /var/apache2/icons/pie0.png
-share/examples/apache2/icons/pie1.gif
-@sample /var/apache2/icons/pie1.gif
-share/examples/apache2/icons/pie1.png
-@sample /var/apache2/icons/pie1.png
-share/examples/apache2/icons/pie2.gif
-@sample /var/apache2/icons/pie2.gif
-share/examples/apache2/icons/pie2.png
-@sample /var/apache2/icons/pie2.png
-share/examples/apache2/icons/pie3.gif
-@sample /var/apache2/icons/pie3.gif
-share/examples/apache2/icons/pie3.png
-@sample /var/apache2/icons/pie3.png
-share/examples/apache2/icons/pie4.gif
-@sample /var/apache2/icons/pie4.gif
-share/examples/apache2/icons/pie4.png
-@sample /var/apache2/icons/pie4.png
-share/examples/apache2/icons/pie5.gif
-@sample /var/apache2/icons/pie5.gif
-share/examples/apache2/icons/pie5.png
-@sample /var/apache2/icons/pie5.png
-share/examples/apache2/icons/pie6.gif
-@sample /var/apache2/icons/pie6.gif
-share/examples/apache2/icons/pie6.png
-@sample /var/apache2/icons/pie6.png
-share/examples/apache2/icons/pie7.gif
-@sample /var/apache2/icons/pie7.gif
-share/examples/apache2/icons/pie7.png
-@sample /var/apache2/icons/pie7.png
-share/examples/apache2/icons/pie8.gif
-@sample /var/apache2/icons/pie8.gif
-share/examples/apache2/icons/pie8.png
-@sample /var/apache2/icons/pie8.png
-share/examples/apache2/icons/portal.gif
-@sample /var/apache2/icons/portal.gif
-share/examples/apache2/icons/portal.png
-@sample /var/apache2/icons/portal.png
-share/examples/apache2/icons/ps.gif
-@sample /var/apache2/icons/ps.gif
-share/examples/apache2/icons/ps.png
-@sample /var/apache2/icons/ps.png
-share/examples/apache2/icons/quill.gif
-@sample /var/apache2/icons/quill.gif
-share/examples/apache2/icons/quill.png
-@sample /var/apache2/icons/quill.png
-share/examples/apache2/icons/right.gif
-@sample /var/apache2/icons/right.gif
-share/examples/apache2/icons/right.png
-@sample /var/apache2/icons/right.png
-share/examples/apache2/icons/screw1.gif
-@sample /var/apache2/icons/screw1.gif
-share/examples/apache2/icons/screw1.png
-@sample /var/apache2/icons/screw1.png
-share/examples/apache2/icons/screw2.gif
-@sample /var/apache2/icons/screw2.gif
-share/examples/apache2/icons/screw2.png
-@sample /var/apache2/icons/screw2.png
-share/examples/apache2/icons/script.gif
-@sample /var/apache2/icons/script.gif
-share/examples/apache2/icons/script.png
-@sample /var/apache2/icons/script.png
-share/examples/apache2/icons/small/
-@sample /var/apache2/icons/small/
-share/examples/apache2/icons/small/back.gif
-@sample /var/apache2/icons/small/back.gif
-share/examples/apache2/icons/small/back.png
-@sample /var/apache2/icons/small/back.png
-share/examples/apache2/icons/small/binary.gif
-@sample /var/apache2/icons/small/binary.gif
-share/examples/apache2/icons/small/binary.png
-@sample /var/apache2/icons/small/binary.png
-share/examples/apache2/icons/small/binhex.gif
-@sample /var/apache2/icons/small/binhex.gif
-share/examples/apache2/icons/small/binhex.png
-@sample /var/apache2/icons/small/binhex.png
-share/examples/apache2/icons/small/blank.gif
-@sample /var/apache2/icons/small/blank.gif
-share/examples/apache2/icons/small/blank.png
-@sample /var/apache2/icons/small/blank.png
-share/examples/apache2/icons/small/broken.gif
-@sample /var/apache2/icons/small/broken.gif
-share/examples/apache2/icons/small/broken.png
-@sample /var/apache2/icons/small/broken.png
-share/examples/apache2/icons/small/burst.gif
-@sample /var/apache2/icons/small/burst.gif
-share/examples/apache2/icons/small/burst.png
-@sample /var/apache2/icons/small/burst.png
-share/examples/apache2/icons/small/comp1.gif
-@sample /var/apache2/icons/small/comp1.gif
-share/examples/apache2/icons/small/comp1.png
-@sample /var/apache2/icons/small/comp1.png
-share/examples/apache2/icons/small/comp2.gif
-@sample /var/apache2/icons/small/comp2.gif
-share/examples/apache2/icons/small/comp2.png
-@sample /var/apache2/icons/small/comp2.png
-share/examples/apache2/icons/small/compressed.gif
-@sample /var/apache2/icons/small/compressed.gif
-share/examples/apache2/icons/small/compressed.png
-@sample /var/apache2/icons/small/compressed.png
-share/examples/apache2/icons/small/continued.gif
-@sample /var/apache2/icons/small/continued.gif
-share/examples/apache2/icons/small/continued.png
-@sample /var/apache2/icons/small/continued.png
-share/examples/apache2/icons/small/doc.gif
-@sample /var/apache2/icons/small/doc.gif
-share/examples/apache2/icons/small/doc.png
-@sample /var/apache2/icons/small/doc.png
-share/examples/apache2/icons/small/folder.gif
-share/examples/apache2/icons/small/folder.png
-share/examples/apache2/icons/small/folder2.gif
-share/examples/apache2/icons/small/folder2.png
-share/examples/apache2/icons/small/forward.gif
-@sample /var/apache2/icons/small/forward.gif
-share/examples/apache2/icons/small/forward.png
-@sample /var/apache2/icons/small/forward.png
-share/examples/apache2/icons/small/generic.gif
-@sample /var/apache2/icons/small/generic.gif
-share/examples/apache2/icons/small/generic.png
-@sample /var/apache2/icons/small/generic.png
-share/examples/apache2/icons/small/generic2.gif
-@sample /var/apache2/icons/small/generic2.gif
-share/examples/apache2/icons/small/generic2.png
-@sample /var/apache2/icons/small/generic2.png
-share/examples/apache2/icons/small/generic3.gif
-@sample /var/apache2/icons/small/generic3.gif
-share/examples/apache2/icons/small/generic3.png
-@sample /var/apache2/icons/small/generic3.png
-share/examples/apache2/icons/small/image.gif
-@sample /var/apache2/icons/small/image.gif
-share/examples/apache2/icons/small/image.png
-@sample /var/apache2/icons/small/image.png
-share/examples/apache2/icons/small/image2.gif
-@sample /var/apache2/icons/small/image2.gif
-share/examples/apache2/icons/small/image2.png
-@sample /var/apache2/icons/small/image2.png
-share/examples/apache2/icons/small/index.gif
-@sample /var/apache2/icons/small/index.gif
-share/examples/apache2/icons/small/index.png
-@sample /var/apache2/icons/small/index.png
-share/examples/apache2/icons/small/key.gif
-@sample /var/apache2/icons/small/key.gif
-share/examples/apache2/icons/small/key.png
-@sample /var/apache2/icons/small/key.png
-share/examples/apache2/icons/small/movie.gif
-@sample /var/apache2/icons/small/movie.gif
-share/examples/apache2/icons/small/movie.png
-@sample /var/apache2/icons/small/movie.png
-share/examples/apache2/icons/small/patch.gif
-@sample /var/apache2/icons/small/patch.gif
-share/examples/apache2/icons/small/patch.png
-@sample /var/apache2/icons/small/patch.png
-share/examples/apache2/icons/small/ps.gif
-@sample /var/apache2/icons/small/ps.gif
-share/examples/apache2/icons/small/ps.png
-@sample /var/apache2/icons/small/ps.png
-share/examples/apache2/icons/small/rainbow.gif
-@sample /var/apache2/icons/small/rainbow.gif
-share/examples/apache2/icons/small/rainbow.png
-@sample /var/apache2/icons/small/rainbow.png
-share/examples/apache2/icons/small/sound.gif
-@sample /var/apache2/icons/small/sound.gif
-share/examples/apache2/icons/small/sound.png
-@sample /var/apache2/icons/small/sound.png
-share/examples/apache2/icons/small/sound2.gif
-@sample /var/apache2/icons/small/sound2.gif
-share/examples/apache2/icons/small/sound2.png
-@sample /var/apache2/icons/small/sound2.png
-share/examples/apache2/icons/small/tar.gif
-@sample /var/apache2/icons/small/tar.gif
-share/examples/apache2/icons/small/tar.png
-@sample /var/apache2/icons/small/tar.png
-share/examples/apache2/icons/small/text.gif
-@sample /var/apache2/icons/small/text.gif
-share/examples/apache2/icons/small/text.png
-@sample /var/apache2/icons/small/text.png
-share/examples/apache2/icons/small/transfer.gif
-@sample /var/apache2/icons/small/transfer.gif
-share/examples/apache2/icons/small/transfer.png
-@sample /var/apache2/icons/small/transfer.png
-share/examples/apache2/icons/small/unknown.gif
-@sample /var/apache2/icons/small/unknown.gif
-share/examples/apache2/icons/small/unknown.png
-@sample /var/apache2/icons/small/unknown.png
-share/examples/apache2/icons/small/uu.gif
-@sample /var/apache2/icons/small/uu.gif
-share/examples/apache2/icons/small/uu.png
-@sample /var/apache2/icons/small/uu.png
-share/examples/apache2/icons/sound1.gif
-@sample /var/apache2/icons/sound1.gif
-share/examples/apache2/icons/sound1.png
-@sample /var/apache2/icons/sound1.png
-share/examples/apache2/icons/sound2.gif
-@sample /var/apache2/icons/sound2.gif
-share/examples/apache2/icons/sound2.png
-@sample /var/apache2/icons/sound2.png
-share/examples/apache2/icons/sphere1.gif
-@sample /var/apache2/icons/sphere1.gif
-share/examples/apache2/icons/sphere1.png
-@sample /var/apache2/icons/sphere1.png
-share/examples/apache2/icons/sphere2.gif
-@sample /var/apache2/icons/sphere2.gif
-share/examples/apache2/icons/sphere2.png
-@sample /var/apache2/icons/sphere2.png
-share/examples/apache2/icons/svg.png
-share/examples/apache2/icons/tar.gif
-@sample /var/apache2/icons/tar.gif
-share/examples/apache2/icons/tar.png
-@sample /var/apache2/icons/tar.png
-share/examples/apache2/icons/tex.gif
-@sample /var/apache2/icons/tex.gif
-share/examples/apache2/icons/tex.png
-@sample /var/apache2/icons/tex.png
-share/examples/apache2/icons/text.gif
-@sample /var/apache2/icons/text.gif
-share/examples/apache2/icons/text.png
-@sample /var/apache2/icons/text.png
-share/examples/apache2/icons/transfer.gif
-@sample /var/apache2/icons/transfer.gif
-share/examples/apache2/icons/transfer.png
-@sample /var/apache2/icons/transfer.png
-share/examples/apache2/icons/unknown.gif
-@sample /var/apache2/icons/unknown.gif
-share/examples/apache2/icons/unknown.png
-@sample /var/apache2/icons/unknown.png
-share/examples/apache2/icons/up.gif
-@sample /var/apache2/icons/up.gif
-share/examples/apache2/icons/up.png
-@sample /var/apache2/icons/up.png
-share/examples/apache2/icons/uu.gif
-@sample /var/apache2/icons/uu.gif
-share/examples/apache2/icons/uu.png
-@sample /var/apache2/icons/uu.png
-share/examples/apache2/icons/uuencoded.gif
-@sample /var/apache2/icons/uuencoded.gif
-share/examples/apache2/icons/uuencoded.png
-@sample /var/apache2/icons/uuencoded.png
-share/examples/apache2/icons/world1.gif
-@sample /var/apache2/icons/world1.gif
-share/examples/apache2/icons/world1.png
-@sample /var/apache2/icons/world1.png
-share/examples/apache2/icons/world2.gif
-@sample /var/apache2/icons/world2.gif
-share/examples/apache2/icons/world2.png
-@sample /var/apache2/icons/world2.png
-share/examples/apache2/icons/xml.png
+@sample /var/www/htdocs/index.html
 share/examples/apache2/logs/
-@sample /var/apache2/logs/
 %%ldap%%
 @rcscript ${RCDIR}/apache2

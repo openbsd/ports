@@ -1,11 +1,16 @@
-# $OpenBSD: Makefile,v 1.58 2015/07/17 19:52:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2015/07/17 23:57:58 ajacoutot Exp $
 
-COMMENT=	apache HTTP server
+COMMENT-main=	apache HTTP server
+COMMENT-common=	shared files for Apache 1 and 2
 
 V=		2.4.12
-PKGNAME=	apache-httpd-${V}
 DISTNAME=	httpd-${V}
-REVISION=	0
+
+PKGNAME-main=	apache-httpd-${V}
+FULLPKGNAME-common=	apache-httpd-common-${V}
+FULLPKGPATH-common=	www/apache-httpd,-common
+
+REVISION-main=	1
 
 CATEGORIES=	www net
 
@@ -14,16 +19,25 @@ HOMEPAGE=	http://httpd.apache.org/
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB-main += ${WANTLIB}
+WANTLIB-main += apr-1 aprutil-1 c crypto db expat lzma m pcre pthread
+WANTLIB-main += ssl xml2 z
+
 SHARED_ONLY=		Yes
 USE_GROFF =		Yes
 NO_TEST=		Yes
 
-WANTLIB += c crypto m ssl expat apr-1 db>=4 z lzma pcre pthread aprutil-1>=2 \
-	xml2
+MULTI_PACKAGES=		-main -common
 
-LIB_DEPENDS=		archivers/xz \
+RUN_DEPENDS-main=	www/apache-httpd,-common
+
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			archivers/xz \
 			devel/pcre \
 			textproc/libxml
+
+WANTLIB-common=		#empty
+LIB_DEPENDS-common=	# empty
 
 FLAVORS=		ldap
 FLAVOR?=
@@ -31,20 +45,21 @@ FLAVOR?=
 .if ${FLAVOR:Mldap}
 CONFIGURE_ARGS+=	--with-ldap --enable-ldap --enable-authnz-ldap
 WANTLIB+=		lber-2.4 ldap-2.4 sasl2
-LIB_DEPENDS+=		databases/openldap
-LIB_DEPENDS+=		apr-util-*-ldap:devel/apr-util,ldap
+LIB_DEPENDS-main+=	databases/openldap
+LIB_DEPENDS-main+=	apr-util-*-ldap:devel/apr-util,ldap
 .else
-LIB_DEPENDS+=		apr-util-*-!ldap:devel/apr-util
+LIB_DEPENDS-main+=	apr-util-*-!ldap:devel/apr-util
 .endif
 
 MODULES=		converters/libiconv
 
-
 MASTER_SITES=		${MASTER_SITE_APACHE:=httpd/}
 
-HTTPD_DIR=		${LOCALSTATEDIR}/apache2
+HTTPD_DIR=		/var/www
 CONFDIR=		${SYSCONFDIR}/apache2
 SUBST_VARS=		CONFDIR
+
+PREFIX-common=		/var/www
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--enable-layout=OpenBSD \
@@ -93,6 +108,9 @@ post-install:
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/bin
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/sbin
 	chown -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib
+
+	mv ${PREFIX}/share/examples/apache2/icons \
+		${WRKINST}${PREFIX-common}/
 
 .for i in ${A2MAN1}
 	mv ${PREFIX}/man/man1/${i}.1 ${PREFIX}/man/man1/${i}2.1
