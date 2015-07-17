@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2015/06/26 09:18:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/07/17 08:29:28 zhuk Exp $
 COMMENT =		accounting for KDE 4
 CATEGORIES =		productivity x11
 HOMEPAGE =		http://kmymoney2.sourceforge.net
 MAINTAINER =		Vadim Zhukov <zhuk@openbsd.org>
-VERSION =		4.6.4
+VERSION =		4.7.2
 DISTNAME =		kmymoney-${VERSION}
-REVISION =		3
 
-SHARED_LIBS =		kmm_kdchart		0.0
-SHARED_LIBS +=		kmm_mymoney		0.0
-SHARED_LIBS +=		kmm_plugin		0.0
-SHARED_LIBS +=		kmm_widgets		0.0
+SHARED_LIBS =		kmm_kdchart		1.0
+SHARED_LIBS +=		kmm_mymoney		1.0
+SHARED_LIBS +=		kmm_plugin		1.0
+SHARED_LIBS +=		kmm_widgets		1.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,9 +23,12 @@ WANTLIB += ${KDE4LIB}/khtml ${KDE4LIB}/kidletime ${KDE4LIB}/kio
 WANTLIB += ${KDE4LIB}/kjs ${KDE4LIB}/kparts ${KDE4LIB}/kprintutils
 WANTLIB += ${KDE4LIB}/kresources ${KDE4LIB}/kutils ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukutils
+WANTLIB += ${KDE4LIB}/akonadi-contact ${KDE4LIB}/akonadi-kde
+WANTLIB += ${KDE4LIB}/kcalcore ${KDE4LIB}/kmime
+WANTLIB += ${KDE4LIB}/kpimidentities ${KDE4LIB}/kpimutils
 WANTLIB += alkimia assuan gmp gpg-error gpgme++-pthread gpgme-pthread
 WANTLIB += ical icalss ofx osp qgpgme soprano
-WANTLIB += aqbanking gwengui-qt4 gwenhywfar
+WANTLIB += aqbanking gwengui-cpp gwengui-qt4 gwenhywfar
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kmymoney2/KMyMoney-KDE4/${VERSION}/}
 
