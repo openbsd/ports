@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.37 2015/07/09 10:22:43 ajacoutot Exp $
+$OpenBSD: README,v 1.38 2015/07/17 17:39:54 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -79,11 +79,8 @@ Apache2
 Apache2 configuration for ownCloud is stored under:
     ${PREFIX}/conf/modules.sample/httpd-owncloud.conf
 
-The Apache user group must be set to "www".
-
-Both can be done by editing ${SYSCONFDIR}/apache2/httpd2.conf:
+It needs to be included by adding the following to ${SYSCONFDIR}/apache2/httpd2.conf:
     Include ${PREFIX}/conf/modules.sample/httpd-owncloud.conf
-    Group www
 
 PHP  
 ---              

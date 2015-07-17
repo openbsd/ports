@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2015/07/09 08:09:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.47 2015/07/17 17:39:54 ajacoutot Exp $
 @extra owncloud/config/config.php
 conf/modules.sample/httpd-owncloud.conf.dist
 @sample conf/modules.sample/httpd-owncloud.conf
@@ -3459,11 +3459,13 @@ owncloud/3rdparty/symfony/routing/Symfony/Component/Routing/RouterInterface.php
 owncloud/3rdparty/symfony/routing/Symfony/Component/Routing/composer.json
 owncloud/AUTHORS
 owncloud/COPYING-AGPL
-@mode 0775
+@mode 0755
 @group www
+@owner www
 owncloud/apps/
 @mode
 @group
+@owner
 owncloud/apps/activity/
 owncloud/apps/activity/appinfo/
 owncloud/apps/activity/appinfo/app.php
@@ -8570,18 +8572,22 @@ owncloud/apps/user_webdavauth/settings.php
 owncloud/apps/user_webdavauth/templates/
 owncloud/apps/user_webdavauth/templates/settings.php
 owncloud/apps/user_webdavauth/user_webdavauth.php
-@mode 0770
+@mode 0750
 @group www
+@owner www
 owncloud/config/
 @mode
 @group
+@owner
 owncloud/config/.htaccess
 owncloud/config/ca-bundle.crt
-@mode 0660
+@mode 0640
 @group www
+@owner www
 owncloud/config/config.sample.php
 @mode
 @group
+@owner
 owncloud/console.php
 owncloud/core/
 owncloud/core/ajax/
@@ -11166,10 +11172,12 @@ owncloud/settings/tests/js/users/
 owncloud/settings/tests/js/users/deleteHandlerSpec.js
 owncloud/settings/users.php
 owncloud/status.php
-@mode 0770
+@mode 0750
+@owner www
 @group www
 owncloud/themes/
 @mode
+@owner
 @group
 owncloud/themes/README
 owncloud/themes/example/
@@ -11188,10 +11196,12 @@ owncloud/themes/example/core/img/logo.png
 owncloud/themes/example/core/img/logo.svg
 owncloud/themes/example/defaults.php
 owncloud/version.php
-@mode 0770
+@mode 0750
 @group www
+@owner www
 @sample owncloud/data/
 @mode
 @group
+@owner
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${FULLPKGNAME}
