@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2012/08/12 17:33:04 jasper Exp $
---- Makefile.in.orig	Fri May 18 21:28:05 2012
-+++ Makefile.in	Sat Jul 14 19:55:28 2012
+$OpenBSD: patch-Makefile_in,v 1.8 2015/07/17 21:48:40 jasper Exp $
+--- Makefile.in.orig	Fri May 18 13:28:05 2012
++++ Makefile.in	Fri Jul 17 15:44:26 2015
 @@ -16,10 +16,10 @@ STATIC		:= @STATIC@
  doc_files	:= docs INSTALL CREDITS FAQ GNUGPL HELP README TODO AGREEMENT remote.help
  
@@ -34,14 +34,9 @@ $OpenBSD: patch-Makefile_in,v 1.7 2012/08/12 17:33:04 jasper Exp $
  
  ifeq ($(STATIC),yes)
  CXXFLAGS += -static-libgcc -L.
-@@ -249,11 +247,13 @@ install:: $(FILES_TO_INSTALL) | install_libs
- 	done
- 
+@@ -251,9 +249,9 @@ install:: $(FILES_TO_INSTALL) | install_libs
  	# This doesn't work if the libdir has quotes in it
--	sed -i -e 's#^set lib_path ""$$#set lib_path "$(libdir)/$(PACKAGE)"#' $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn
-+	sed 's#^set lib_path ""$$#set lib_path "$(libdir)/$(PACKAGE)"#' $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn > $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn.patched
-+	mv $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn.patched \
-+	$(DESTDIR)$(dstdir)/$(PACKAGE)/amsn && chmod +x $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn
+ 	sed -i -e 's#^set lib_path ""$$#set lib_path "$(libdir)/$(PACKAGE)"#' $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn
  
 -	ln -sf $(dstdir)/$(PACKAGE)/amsn $(DESTDIR)$(slnkdir)/amsn
 -	ln -sf $(dstdir)/$(PACKAGE)/amsn-remote $(DESTDIR)$(slnkdir)/amsn-remote
