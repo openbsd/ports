@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/06/28 03:47:09 jsg Exp $
+# $OpenBSD: Makefile,v 1.8 2015/07/17 21:46:10 jasper Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -30,8 +30,7 @@ RUN_DEPENDS-main +=	${BASE_PKGPATH},-data>=${V} \
 			devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-BUILD_DEPENDS=		textproc/gsed \
-			graphics/GraphicsMagick
+BUILD_DEPENDS=		graphics/GraphicsMagick
 LIB_DEPENDS-main=	devel/sdl-mixer \
 			devel/sdl-image \
 			net/enet>=1.3.12

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2015/03/24 20:29:10 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2015/07/17 21:46:11 jasper Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Java web browser plugin
 DISTNAME =	icedtea-web-1.5.2
+REVISION =	0
 CATEGORIES =	www
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
@@ -24,9 +25,8 @@ MODULES =	java \
 
 MODJAVA_VER=	1.7+
 
-#build system does horrible things with bash and gsed
-RUN_DEPENDS =	shells/bash \
-		textproc/gsed
+#build system does horrible things with bash
+RUN_DEPENDS =	shells/bash
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		archivers/zip \
 		devel/xulrunner/24,-devel
@@ -36,7 +36,6 @@ LIB_DEPENDS =	devel/glib2
 WANTLIB += glib-2.0 m stdc++
 
 post-patch:
-	ln -sf ${LOCALBASE}/bin/gsed ${WRKDIR}/bin/sed;
 	${SUBST_CMD} ${WRKSRC}/launcher/launchers.in
 
 .include <bsd.port.mk>

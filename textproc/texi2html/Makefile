@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/02/16 22:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2015/07/17 21:46:11 jasper Exp $
 
 COMMENT=	texinfo to HTML converter
 
@@ -21,10 +21,5 @@ MAKE_FLAGS+=	texinfohtmldir=${PREFIX}/share/doc/texi2html
 
 BUILD_DEPENDS =	textproc/p5-Text-Unidecode
 RUN_DEPENDS =	textproc/p5-Text-Unidecode
-
-TEST_DEPENDS=	textproc/gsed
-
-pre-test:
-	@ln -s ${LOCALBASE}/bin/gsed ${WRKDIR}/bin/sed
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/07 21:33:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2015/07/17 21:46:11 jasper Exp $
 
 COMMENT =		Mac OS-X style lightweight application launcher
 
@@ -20,7 +20,6 @@ MASTER_SITES =		https://wbar.googlecode.com/files/
 MODULES =		devel/gettext \
 			textproc/intltool
 
-BUILD_DEPENDS =		textproc/gsed
 RUN_DEPENDS =		devel/desktop-file-utils
 
 LIB_DEPENDS =		graphics/imlib2
@@ -38,8 +37,5 @@ MAKE_FLAGS =		bashcompletiondir=${PREFIX}/share/bash-completion/completions \
 			autostartdir=${PREFIX}/share/applications
 
 FAKE_FLAGS =		defaultdir=${PREFIX}/share/examples/wbar/wbar.d
-
-pre-configure:
-	perl -pi -e 's,sed -i,gsed -i,g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

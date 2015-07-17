@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2014/12/07 19:12:58 kili Exp $
+# $OpenBSD: Makefile,v 1.58 2015/07/17 21:46:10 jasper Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
@@ -47,8 +47,7 @@ BUILD_DEPENDS +=	devel/hs-FindBin>=0.0,<0.1 \
 
 TEST_DEPENDS =	devel/hs-hlint \
 			shells/bash \
-			sysutils/coreutils \
-			textproc/gsed
+			sysutils/coreutils
 
 # For the documentation
 USE_GMAKE =		Yes
@@ -68,7 +67,6 @@ post-install:
 # Some of the tests rely on GNU functionality.
 pre-test:
 	ln -fs ${LOCALBASE}/bin/gdate ${WRKDIR}/bin/date
-	ln -fs ${LOCALBASE}/bin/gsed ${WRKDIR}/bin/sed
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

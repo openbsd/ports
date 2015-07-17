@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2015/03/24 20:29:10 landry Exp $
+$OpenBSD: patch-Makefile_in,v 1.8 2015/07/17 21:46:11 jasper Exp $
 javaws/itweb-settings/policyeditor are scripts not programs..
 --- Makefile.in.orig	Wed Nov 26 17:39:55 2014
 +++ Makefile.in	Tue Mar 24 21:16:40 2015
@@ -15,20 +15,6 @@ javaws/itweb-settings/policyeditor are scripts not programs..
  
  install-data-local:
  	${mkinstalldirs} -d $(DESTDIR)$(mandir)/man1
-@@ -1049,10 +1049,10 @@ netx-source-files.txt:
- 	find $(NETX_SRCDIR) -name '*.java' | sort > $@ ; \
- 	for src in $(NETX_EXCLUDE_SRCS) ; \
- 	do \
--	  sed -i "/$${src}/ d" $@ ; \
-+	  perl -pi -e "s/.*$${src}.*//" $@ ; \
- 	done
--@WITH_RHINO_FALSE@	sed -i '/RhinoBasedPacEvaluator/ d' $@
--@HAVE_JAVA7_FALSE@	sed -i '/VariableX509TrustManagerJDK7/ d' $@
-+@WITH_RHINO_FALSE@	perl -pi -e 's/^.*RhinoBasedPacEvaluator.*//' $@
-+@HAVE_JAVA7_FALSE@	perl -pi -e 's/^.*VariableX509TrustManagerJDK7.*//' $@
- 
- stamps/netx-html-gen.stamp:
- 	(cd $$NETX_SRCDIR/..; \
 @@ -1075,14 +1075,15 @@ stamps/netx.stamp: netx-source-files.txt stamps/bootst
  	    $(NETX_CLASSPATH_ARG) \
  	    @netx-source-files.txt
