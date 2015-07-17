@@ -1,11 +1,13 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.9 2015/07/16 20:57:42 jasper Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.10 2015/07/17 23:28:22 jasper Exp $
 
 - From f11bebbdfbe0ebfef9f1bfd7931bdc40511db871 Mon Sep 17 00:00:00 2001
   From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
   Date: Sat, 27 Jun 2015 09:57:48 +0200
   Subject: [PATCH] (maint) Don't attempt to link with libdl on OpenBSD.
-- Use vendorlibdir which is versioned, as opposed to unversioned vendordir.
-  https://github.com/puppetlabs/facter/pull/1060
+- From da47706518e493f9a165f15e0ed9ac5d7a19ab27 Mon Sep 17 00:00:00 2001
+  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+  Date: Thu, 16 Jul 2015 10:42:47 -0600
+  Subject: [PATCH] (FACT-1130) Allow specifying the location to install facter.rb to
 - Enable basic set of facts
 
 --- lib/CMakeLists.txt.orig	Thu Jun 25 17:47:38 2015
