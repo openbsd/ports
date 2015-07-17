@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.10 2014/09/14 05:58:07 ajacoutot Exp $
+$OpenBSD: README-server,v 1.11 2015/07/17 20:38:43 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -98,8 +98,8 @@ automatically created and initialized if it does not exist. Note that
 for obvious performance reasons, it is NOT encouraged to use the SQLite
 backend for a server.
 
-    $ cd ${TRUEPREFIX}/share/zabbix/schema/sqlite3
-    $ sudo -u _zabbix sqlite3 /var/db/zabbix/zabbix.db < schema.sql
+    # cd /usr/local/share/zabbix/schema/sqlite3
+    # su -m _zabbix -c "sqlite3 /var/db/zabbix/zabbix.db < schema.sql"
 The following steps are not required for setting up a Zabbix Proxy.
-    $ sudo -u _zabbix sqlite3 /var/db/zabbix/zabbix.db < images.sql
-    $ sudo -u _zabbix sqlite3 /var/db/zabbix/zabbix.db < data.sql
+    # su -m _zabbix -c "sqlite3 /var/db/zabbix/zabbix.db < images.sql"
+    # su -m _zabbix -c "sqlite3 /var/db/zabbix/zabbix.db < data.sql"
