@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/07/16 21:30:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/07/17 23:24:22 sthen Exp $
 
 COMMENT =	Python interface to memcached
 
@@ -14,12 +14,11 @@ MAINTAINER =	Ben Lovett <ben@tilderoot.com>
 # Python
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	ftp://ftp.tummy.com/pub/python-memcached/
-
 MODULES =	lang/python
 
 MODPY_ADJ_FILES =	memcache.py
 MODPY_SETUPTOOLS =	Yes
+MODPY_PI =		Yes
 
 NO_TEST =	Yes
 
