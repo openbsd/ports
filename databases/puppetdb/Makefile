@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.32 2015/07/17 14:47:24 nigel Exp $
+# $OpenBSD: Makefile,v 1.33 2015/07/17 15:07:51 jasper Exp $
 
 PORTROACH=	limit:^2
 
 COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
 
-V=		2.3.5
+V=		2.3.6
 DISTNAME=	puppetdb-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-plugin= puppetdb-terminus-$V
 CATEGORIES=	databases
-REVISION-plugin=	0
 
 HOMEPAGE=	http://docs.puppetlabs.com/puppetdb/latest/
 
