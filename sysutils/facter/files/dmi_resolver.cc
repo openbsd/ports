@@ -1,15 +1,9 @@
 #include <internal/facts/openbsd/dmi_resolver.hpp>
 #include <leatherman/logging/logging.hpp>
-#include <facter/util/file.hpp>
-#include <boost/filesystem.hpp>
-#include <boost/algorithm/string.hpp>
 
 #include <sys/sysctl.h>
 
 using namespace std;
-using namespace facter::util;
-using namespace boost::filesystem;
-namespace bs = boost::system;
 
 namespace facter { namespace facts { namespace openbsd {
 
@@ -36,7 +30,7 @@ namespace facter { namespace facts { namespace openbsd {
         len = sizeof(value) - 1;
 
         if (sysctl(mib, 2, &value, &len, nullptr, 0) == -1) {
-       	    LOG_DEBUG("sysctl_lookup failed: %1% (%2%).", strerror(errno), errno);
+            LOG_DEBUG("sysctl_lookup failed: %1% (%2%).", strerror(errno), errno);
             return "";
         }
 
