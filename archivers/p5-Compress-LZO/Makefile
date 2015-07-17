@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/07/16 23:57:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2015/07/17 21:13:14 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,6 +23,6 @@ CONFIGURE_STYLE= perl
 WRKDIST=	${WRKDIR}/Compress-LZO-1.08
 
 pre-configure:
-	@perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g" ${WRKSRC}/Makefile.PL
+	@sed -i "s,!!LOCALBASE!!,${LOCALBASE},g" ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
