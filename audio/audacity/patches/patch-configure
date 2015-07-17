@@ -1,5 +1,5 @@
---- configure.orig	Mon Aug 31 03:45:37 2009
-+++ configure	Sat Apr 11 22:02:36 2015
+--- configure.orig	Mon Aug 31 04:45:37 2009
++++ configure	Fri Jul 17 16:07:12 2015
 @@ -822,7 +822,6 @@ JACK_CFLAGS
  JACK_LIBS'
  ac_subdirs_all='"lib-src/FileDialog"
@@ -120,7 +120,7 @@
 -pa_libs=`grep 'Libs:' lib-src/portaudio-v19/portaudio-2.0.pc | sed -e 's/Libs://;s/-L${libdir}//;s/-lportaudio//'`
 -sed -i -e "s/@PA_LIBS@/$pa_libs/" src/Makefile
 +pa_libs=`pkg-config --libs portaudio-2.0`
-+perl -pi -e "s#\@PA_LIBS\@#$pa_libs#" src/Makefile
++sed -i -e "s,@PA_LIBS@,$pa_libs," src/Makefile
  
  echo ""
  echo "Finished configure:"
