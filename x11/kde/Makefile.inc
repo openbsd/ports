@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.45 2015/07/17 01:14:13 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.46 2015/07/17 01:17:30 zhuk Exp $
 DIST_SUBDIR ?=	kde
 HOMEPAGE ?=	http://www.kde.org
 
 MASTER_SITES ?=	${MASTER_SITE_KDE:S@$@Attic/${VERSION}/src/@}
 EXTRACT_SUFX ?=	.tar.bz2
-MASTER_SITES0 =	${MASTER_SITE_KDE:=security_patches/}
 
 # Parts of kde want shared libraries to work, as some symbols are
 # duplicated over the place.
