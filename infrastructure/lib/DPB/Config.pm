@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.53 2015/07/15 14:28:08 espie Exp $
+# $OpenBSD: Config.pm,v 1.54 2015/07/17 20:11:45 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -176,7 +176,9 @@ sub parse_command_line
 	$state->say("Build user: #1", $state->{build_user}->user);
 	$state->say("Fetch user: #1", $state->{fetch_user}->user);
 	$state->say("Log user: #1", $state->{log_user}->user);
-	$state->say("Unpriv user: #1", $state->{unpriv_user}->user);
+	if (defined $state->{unpriv_user}) {
+		$state->say("Unpriv user: #1", $state->{unpriv_user}->user);
+	}
 
 	$state->{chroot} = $state->{default_prop}{chroot};
 	# reparse things properly now that we can chroot
