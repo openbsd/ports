@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/12/31 15:08:35 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/07/17 16:52:11 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -16,23 +16,17 @@ lib/python${MODPY_VERSION}/site-packages/webtest/compat.py
 lib/python${MODPY_VERSION}/site-packages/webtest/compat.pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/debugapp.py
 lib/python${MODPY_VERSION}/site-packages/webtest/debugapp.pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/ext.py
+lib/python${MODPY_VERSION}/site-packages/webtest/ext.pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/forms.py
+lib/python${MODPY_VERSION}/site-packages/webtest/forms.pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/http.py
+lib/python${MODPY_VERSION}/site-packages/webtest/http.pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/lint.py
 lib/python${MODPY_VERSION}/site-packages/webtest/lint.pyc
-lib/python${MODPY_VERSION}/site-packages/webtest/lint3.py
-lib/python${MODPY_VERSION}/site-packages/webtest/lint3.pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/response.py
+lib/python${MODPY_VERSION}/site-packages/webtest/response.pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/sel.py
 lib/python${MODPY_VERSION}/site-packages/webtest/sel.pyc
-share/doc/${MODPY_PY_PREFIX}webtest/
-share/doc/${MODPY_PY_PREFIX}webtest/chipy-presentation/
-share/doc/${MODPY_PY_PREFIX}webtest/chipy-presentation/about.html
-share/doc/${MODPY_PY_PREFIX}webtest/chipy-presentation/comparisons.html
-share/doc/${MODPY_PY_PREFIX}webtest/chipy-presentation/proxy_example.html
-share/doc/${MODPY_PY_PREFIX}webtest/genindex.html
-share/doc/${MODPY_PY_PREFIX}webtest/index.html
-share/doc/${MODPY_PY_PREFIX}webtest/license.html
-share/doc/${MODPY_PY_PREFIX}webtest/modules/
-share/doc/${MODPY_PY_PREFIX}webtest/modules/sel.html
-share/doc/${MODPY_PY_PREFIX}webtest/modules/webtest.html
-share/doc/${MODPY_PY_PREFIX}webtest/news.html
-share/doc/${MODPY_PY_PREFIX}webtest/py-modindex.html
-share/doc/${MODPY_PY_PREFIX}webtest/search.html
+lib/python${MODPY_VERSION}/site-packages/webtest/utils.py
+lib/python${MODPY_VERSION}/site-packages/webtest/utils.pyc
