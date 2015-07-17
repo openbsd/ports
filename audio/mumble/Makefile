@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.13 2015/06/12 09:43:12 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2015/07/17 15:09:42 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		low-latency voice chat client
 
-DISTNAME =		mumble-1.2.9
+GH_ACCOUNT =		mumble-voip
+GH_PROJECT =		mumble
+GH_TAGNAME =		1.2.10
+DISTNAME =		${GH_PROJECT}-${GH_TAGNAME}
 
 CATEGORIES =		audio
 
-HOMEPAGE =		http://mumble.sourceforge.net/
-
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=mumble/}
+HOMEPAGE =		http://www.mumble.info/
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
