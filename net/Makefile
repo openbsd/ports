@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.916 2015/07/14 23:55:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.917 2015/07/17 20:53:03 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -472,7 +472,6 @@
      SUBDIR += php-weathermap
      SUBDIR += pidgin
      SUBDIR += pidgin,gtkspell
-     SUBDIR += pidgin-facebookchat
      SUBDIR += pidgin-icb
      SUBDIR += pidgin-sipe
      SUBDIR += pidgin-tlen
