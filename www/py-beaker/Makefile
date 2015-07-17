@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/16 21:45:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/07/17 16:55:57 ajacoutot Exp $
 
 COMMENT =	session and caching library with wsgi middleware
 
@@ -15,6 +15,7 @@ HOMEPAGE =	http://beaker.readthedocs.org/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODPY_PI =	Yes
+MODPY_SETUPTOOLS = Yes
 
 MODULES =	lang/python
 
@@ -23,19 +24,19 @@ FLAVOR?=
 
 RUN_DEPENDS =	security/py-crypto${MODPY_FLAVOR} 
 
-# XXX some TDEP are nissing a python3 FLAVOR
+# some TDEP are nissing a python3 FLAVOR
+.if ${FLAVOR:Mpython3}
+NO_TEST =	Yes
+.else
+# https://pypi.python.org/simple/waitress/ is needed
 TEST_DEPENDS =	databases/py-sqlalchemy \
 		devel/py-coverage${MODPY_FLAVOR} \
+		devel/py-mock \
 		devel/py-nose${MODPY_FLAVOR} \
 		misc/py-memcached${MODPY_FLAVOR} \
 		www/py-webtest \
 		${RUN_DEPENDS}
-
-.if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=	devel/py-mock
 .endif
-
-MODPY_SETUPTOOLS = Yes
 
 # needs a running memcached instance in 127.0.0.1:11211
 TEST_IS_INTERACTIVE = Yes
