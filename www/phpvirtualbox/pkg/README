@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2015/01/14 13:46:38 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2015/07/17 17:14:23 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,8 +9,9 @@ phpVirtualBox has been installed into:
 
 Configuration is done in:
     ${INSTDIR}/config.php
-When not using httpd(8), ensure that the HTTP server user (and only it)
-can read this file.
+
+When not using httpd(8), ensure that the HTTP server process is part of the
+"www" group.
 
 Default username/password is: admin/admin
 
