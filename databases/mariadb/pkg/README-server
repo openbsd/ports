@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.3 2013/04/08 02:49:53 brad Exp $
+$OpenBSD: README-server,v 1.4 2015/07/17 17:31:27 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,7 +12,7 @@ a default database first. In order to create the database, please run
 ${TRUEPREFIX}/bin/mysql_install_db
 
 You will need to tune the values in the my.cnf file (examples
-available in ${TRUEPREFIX}/share/mysql).
+available in ${TRUEPREFIX}/share/examples/mysql).
 
 By default, the _mysql user, and so the MariaDB processes run in the
 login(1) class of "daemon". On a busy server, it may be advisable
