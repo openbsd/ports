@@ -1,4 +1,4 @@
-# $OpenBSD: mariadb.port.mk,v 1.1 2015/07/17 14:41:58 zhuk Exp $
+# $OpenBSD: mariadb.port.mk,v 1.2 2015/07/17 20:56:59 zhuk Exp $
 #
 # Helps testing MySQL/MariaDB-based software, no B/L/R-DEPS here.
 
@@ -44,13 +44,14 @@ MODMARIADB_TEST_TARGET = \
 		${MODMARIADB_SERVER_ARGS} & \
 	started=false; \
 	for i in $$(jot 10); do \
-		if mysqladmin ${MODMARIADB_ADMIN_ARGS} ping; then \
+		sleep 1; \
+		if mysqladmin ${MODMARIADB_ADMIN_ARGS} \
+		    ping >/dev/null 2>&1; then \
 			started=true; \
 			break; \
 		fi; \
-		sleep 1; \
 	done; \
-	$$started || { kill $$!; exit 1; };
+	$$started || { echo "mysqld didn't start" >&2; kill $$!; exit 1; };
 .if !empty(MODMARIADB_TEST_DBNAME)
 MODMARIADB_TEST_TARGET += \
 	${LOCALBASE}/bin/mysqladmin ${MODMARIADB_ADMIN_ARGS} \
