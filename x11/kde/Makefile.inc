@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.44 2013/10/22 11:33:55 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.45 2015/07/17 01:14:13 zhuk Exp $
 DIST_SUBDIR ?=	kde
 HOMEPAGE ?=	http://www.kde.org
 
-MASTER_SITES ?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
+MASTER_SITES ?=	${MASTER_SITE_KDE:S@$@Attic/${VERSION}/src/@}
 EXTRACT_SUFX ?=	.tar.bz2
 MASTER_SITES0 =	${MASTER_SITE_KDE:=security_patches/}
 
