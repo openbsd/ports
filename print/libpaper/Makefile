@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2013/11/01 23:10:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2015/07/17 20:12:59 ajacoutot Exp $
+
+PORTROACH=	skipv:1.1.24+nmu4
 
 COMMENT=	library for handling paper characteristics
 
