@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2015/07/15 22:35:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2015/07/17 00:06:32 sthen Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
 VERSION=	1.9.3
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
-REVISION=	0
+REVISION=	1
 
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES0=	http://dropbox.eait.uq.edu.au/uqdgwynn/distfiles/
@@ -89,7 +89,7 @@ MODRUBY_BUILDDEP=	No
 MODRUBY_RUNDEP=		No
 CONFIGURE_ARGS+=	--add-module=${LOCALBASE}/lib/phusion-passenger${GEM_BIN_SUFFIX}/ext/nginx
 BUILD_DEPENDS+=		${MODRUBY_PKG_PREFIX}-passenger-*:www/ruby-passenger,-main
-RUN_DEPENDS+=		ruby-passenger-*|ruby19-passenger-*|ruby20-passenger-*|ruby21-passenger-*:www/ruby-passenger,-main
+RUN_DEPENDS+=		ruby-passenger-*|ruby19-passenger-*|ruby20-passenger-*|ruby21-passenger-*|ruby22-passenger-*:www/ruby-passenger,-main
 WANTLIB+=		m pthread stdc++
 .endif
 
