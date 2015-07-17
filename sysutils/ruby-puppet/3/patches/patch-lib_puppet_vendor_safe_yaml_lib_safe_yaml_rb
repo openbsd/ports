@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_puppet_vendor_safe_yaml_lib_safe_yaml_rb,v 1.1 2015/07/17 17:53:21 jasper Exp $
+
+From b50a4e3ce65596e753dc5e9d3e3e808f191b0ad0 Mon Sep 17 00:00:00 2001
+From: Kylo Ginsberg <kylo@puppetlabs.com>
+Date: Mon, 22 Dec 2014 10:11:38 -0800
+Subject: [PATCH 1/4] (maint) Change spec test to pass on ruby 2.2
+
+--- lib/puppet/vendor/safe_yaml/lib/safe_yaml.rb.orig	Fri Jul 17 11:52:30 2015
++++ lib/puppet/vendor/safe_yaml/lib/safe_yaml.rb	Fri Jul 17 11:52:47 2015
+@@ -3,7 +3,7 @@ require "yaml"
+ # This needs to be defined up front in case any internal classes need to base
+ # their behavior off of this.
+ module SafeYAML
+-  YAML_ENGINE = defined?(YAML::ENGINE) ? YAML::ENGINE.yamler : "syck"
++  YAML_ENGINE = defined?(YAML::ENGINE) ? YAML::ENGINE.yamler : (defined?(Psych) && YAML == Psych ? "psych" : "syck") 
+ end
+ 
+ require "set"
