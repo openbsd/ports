@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.26 2015/04/07 17:05:57 sebastia Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.27 2015/07/17 18:09:55 jasper Exp $
 
 * From 93f6754f9c886922d39e938251d4885c1ebb5a29 Mon Sep 17 00:00:00 2001
   From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -17,9 +17,12 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.26 2015/04/07 17:05:5
 
 * enhance initial service provisioning with regard to service_flags
 
---- lib/puppet/provider/service/openbsd.rb.orig	Tue Jan 27 00:46:47 2015
-+++ lib/puppet/provider/service/openbsd.rb	Tue Apr  7 11:46:42 2015
-@@ -2,341 +2,108 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
+* print a warning when rcctl failed to run, instead of having the user guess
+  at Ruby errors
+
+--- lib/puppet/provider/service/openbsd.rb.orig	Thu May 21 14:54:42 2015
++++ lib/puppet/provider/service/openbsd.rb	Fri Jul 17 12:08:57 2015
+@@ -2,341 +2,109 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
  
    desc "Provider for OpenBSD's rc.d daemon control scripts"
  
@@ -232,6 +235,7 @@ $OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.26 2015/04/07 17:05:5
 -      append = resource[:name] + '_flags="' + flags + '"'
 +      instances
 +    rescue Puppet::ExecutionFailure
++      Puppet.warning("Failed to execute rcctl")
 +      return nil
      end
 -
