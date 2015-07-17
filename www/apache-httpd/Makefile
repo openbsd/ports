@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2015/05/15 08:08:03 stsp Exp $
+# $OpenBSD: Makefile,v 1.58 2015/07/17 19:52:06 ajacoutot Exp $
 
 COMMENT=	apache HTTP server
 
 V=		2.4.12
 PKGNAME=	apache-httpd-${V}
 DISTNAME=	httpd-${V}
+REVISION=	0
 
 CATEGORIES=	www net
 
@@ -62,7 +63,7 @@ CONFIGURE_ARGS+=	--enable-layout=OpenBSD \
 			--enable-proxy=shared \
 			--enable-mods-shared=all \
 			--enable-suexec \
-			--with-suexec-caller=_apache2 \
+			--with-suexec-caller=www \
 			--with-suexec-bin=${TRUEPREFIX}/sbin/suexec2 \
 			--with-suexec-logfile=${LOCALSTATEDIR}/log/suexec2_log \
 			--with-pcre=${LOCALBASE}
@@ -70,7 +71,7 @@ CONFIGURE_ARGS+=	--enable-layout=OpenBSD \
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-FAKE_FLAGS+=		rel_user=_apache2 rel_group=_apache2 \
+FAKE_FLAGS+=		rel_user=www rel_group=www \
 			rel_datadir=${HTTPD_DIR} \
 			datadir=${PREFIX}/share/examples/apache2 \
 			sysconfdir=${PREFIX}/share/examples/apache2/conf

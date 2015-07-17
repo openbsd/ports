@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2015/05/15 08:08:04 stsp Exp $
-@newgroup _apache2:576
-@newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.27 2015/07/17 19:52:06 ajacoutot Exp $
 @bin bin/ab
 bin/dbmmanage2
 @bin bin/htdbm
