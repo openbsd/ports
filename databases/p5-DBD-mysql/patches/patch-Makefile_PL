@@ -1,73 +1,35 @@
-$OpenBSD: patch-Makefile_PL,v 1.3 2014/12/06 14:26:44 giovanni Exp $
+$OpenBSD: patch-Makefile_PL,v 1.4 2015/07/17 16:34:01 zhuk Exp $
 
 remove MariaDB mysql_config invalid options
 
---- Makefile.PL.orig	Wed Jul 30 00:14:24 2014
-+++ Makefile.PL	Thu Nov 20 17:26:17 2014
-@@ -19,23 +19,9 @@ our $opt = { "help" => \&Usage, };
- Getopt::Long::GetOptions(
-     $opt,
-     "help",
--    "testdb=s",
--    "testhost=s",
--    "testport=s",
--    "testuser=s",
--    "testpassword=s",
--    "testsocket=s",
-     "cflags=s",
-     "libs=s",
--    "verbose",
--    "ps-protocol",
--    "bind-type-guessing",
--    "nocatchstderr",
--    "ssl!",
--    "nofoundrows!",
--    "embedded=s",
-     "mysql_config=s",
--    "force-embedded",
+--- Makefile.PL.orig	Sat Nov 15 03:04:16 2014
++++ Makefile.PL	Thu Jan 22 00:26:27 2015
+@@ -39,6 +39,12 @@ Getopt::Long::GetOptions(
  	"with-mysql=s"
      ) || die Usage();
  
-@@ -78,9 +64,7 @@ MSG
-     $opt->{'mysql_config'} = "mysql_config";
-   }
++my %mysql_config_opts = map { $_ => 1 } (
++    "help",
++    "cflags",
++    "libs"
++    );
++
+ my $source = {};
  
--for my $key (qw/testdb testhost testuser testpassword testsocket testport
--                    cflags embedded libs nocatchstderr ssl nofoundrows
--                    ps-protocol bind-type-guessing force-embedded/)
-+for my $key (qw/cflags embedded libs/)
- {
-   Configure($opt, $source, $key);
- }
-@@ -175,15 +159,6 @@ for my $key (sort { $a cmp $b} keys %$opt)
- 	 $key, $source->{$key}, $opt->{$key})
- }
- 
--print <<"MSG";
--
--To change these settings, see 'perl Makefile.PL --help' and
--'perldoc DBD::mysql::INSTALL'.
--
--MSG
--
--sleep 5;
--
- eval { require File::Spec };
- my $dsn= '';
- if (exists $opt->{'ps-protocol'}) {
-@@ -430,7 +405,6 @@ it can be found):
-   mysql_config --cflags
-   mysql_config --libs
-   mysql_config --embedded
--  mysql_config --testdb
- 
- and so on. See DBD::mysql::INSTALL for details.
- USAGE
-@@ -467,6 +441,7 @@ sub Configure {
+   #Check for mysql_config first
+@@ -467,6 +473,7 @@ sub Configure {
      }
  
  # First try to get options values from mysql_config
-+
++if (exists $mysql_config_opts{$param}) {
      my $command = $opt->{'mysql_config'} . " --$param";
      eval
      {
+@@ -506,6 +513,7 @@ sub Configure {
+     else {
+         print "Can't find mysql_config. Use --mysql_config option to specify where mysql_config is located\n";
+     }
++}
+ 
+ # Ok, mysql_config doesn't work. We need to do our best
+ # First check environment variables
