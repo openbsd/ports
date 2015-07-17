@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.263 2015/07/16 23:23:32 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.264 2015/07/17 21:09:38 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -566,6 +566,7 @@ my $obsolete_reason = {
 	'ruby-amqp' => 5,
 	'dbh' => 5,
 	'yaws' => 6,
+	'pidgin-facebookchat' => 6,
 };
 
 # ->is_base_system($handle, $state):
