@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/01/29 14:07:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/07/17 23:58:43 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	Python WSGI compliant interface module for Apache2
 
 DISTNAME=	mod_wsgi-3.4
 PKGNAME=	ap2-${DISTNAME}
+REVISION=	1
 
 CATEGORIES=	www
 
