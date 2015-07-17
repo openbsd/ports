@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/10/08 13:26:02 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/07/17 23:54:37 jca Exp $
 lib/python${MODPY_VERSION}/site-packages/urwid/
 lib/python${MODPY_VERSION}/site-packages/urwid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/urwid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -47,8 +47,35 @@ lib/python${MODPY_VERSION}/site-packages/urwid/signals.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/split_repr.py
 lib/python${MODPY_VERSION}/site-packages/urwid/split_repr.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/str_util.so
-lib/python${MODPY_VERSION}/site-packages/urwid/tests.py
-lib/python${MODPY_VERSION}/site-packages/urwid/tests.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_canvas.py
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_canvas.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_container.py
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_container.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_decoration.py
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_decoration.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_doctests.py
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_doctests.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_event_loops.py
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_event_loops.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_graphics.py
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_graphics.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_listbox.py
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_listbox.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_str_util.py
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_str_util.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_text_layout.py
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_text_layout.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_util.py
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_util.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_vterm.py
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_vterm.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_widget.py
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/test_widget.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/util.py
+lib/python${MODPY_VERSION}/site-packages/urwid/tests/util.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/text_layout.py
 lib/python${MODPY_VERSION}/site-packages/urwid/text_layout.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/treetools.py
@@ -59,8 +86,6 @@ lib/python${MODPY_VERSION}/site-packages/urwid/version.py
 lib/python${MODPY_VERSION}/site-packages/urwid/version.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/vterm.py
 lib/python${MODPY_VERSION}/site-packages/urwid/vterm.pyc
-lib/python${MODPY_VERSION}/site-packages/urwid/vterm_test.py
-lib/python${MODPY_VERSION}/site-packages/urwid/vterm_test.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/web_display.py
 lib/python${MODPY_VERSION}/site-packages/urwid/web_display.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/widget.py

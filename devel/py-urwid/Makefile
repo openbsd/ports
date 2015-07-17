@@ -1,31 +1,24 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/21 18:33:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2015/07/17 23:54:37 jca Exp $
 
 COMMENT =	console user interface library for python
 
-MODPY_EGG_VERSION = 1.0.0
+MODPY_EGG_VERSION = 1.3.0
 DISTNAME =	urwid-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
-REVISION =	0
 
-HOMEPAGE =	http://excess.org/urwid/
+HOMEPAGE =	http://urwid.org/
 
-# GPL
+# LGPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += pthread
-
-WANTLIB- = # no-arch package
-
-MASTER_SITES =	${HOMEPAGE}
+WANTLIB += pthread ${MODPY_WANTLIB}
 
 TEST_DEPENDS =	devel/py-gobject \
 		lang/python/${MODPY_VERSION},-tests
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes
-
-PKG_ARCH =	*
+MODPY_PI =	Yes
 
 .include <bsd.port.mk>
