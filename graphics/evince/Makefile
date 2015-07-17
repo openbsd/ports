@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2015/05/29 09:40:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.130 2015/07/17 16:26:47 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
 GNOME_VERSION=		3.16.1
+REVISION=		0
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -36,7 +37,7 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection yelp
+MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection
 MODGNOME_TOOLS +=	gtk-update-icon-cache shared-mime-info
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
@@ -60,6 +61,7 @@ FLAVORS=		light
 FLAVOR?=
 
 .if ${FLAVOR:Mlight}
+BUILD_DEPENDS +=	textproc/itstool
 CONFIGURE_ARGS +=	--disable-dbus \
 			--disable-libgnome-desktop \
 			--disable-nautilus \
@@ -69,6 +71,7 @@ CONFIGURE_ARGS +=	--disable-dbus \
 			--disable-comics \
 			--disable-xps
 .else
+MODGNOME_TOOLS +=	yelp
 LIB_DEPENDS +=		graphics/djvulibre \
 			graphics/libgxps \
 			print/texlive/base \
