@@ -1,3 +1,8 @@
+$OpenBSD: patch-configure,v 1.16 2015/07/17 23:11:52 jasper Exp $
+
+- last hunk: use ',' as separator, otherwise the paths in $pa_libs get
+  interpreted as part of the regex.
+
 --- configure.orig	Mon Aug 31 04:45:37 2009
 +++ configure	Fri Jul 17 16:07:12 2015
 @@ -822,7 +822,6 @@ JACK_CFLAGS
