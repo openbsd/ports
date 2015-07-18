@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2015/07/18 14:33:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2015/07/18 15:10:23 jasper Exp $
 
 COMMENT=	Motif CD player
 
@@ -49,7 +49,8 @@ post-install:
 	cd ${PREFIX}/bin; \
 	    rm -f xmcd cda cddbcmd dp2xmcd wm2xmcd; mv .xmcd_start xmcd; \
 	    for i in cda cddbcmd dp2xmcd wm2xmcd; do ln -s xmcd $$i; done
-	sed -i 's,\@PREFIX@,${TRUEPREFIX},; s,\@X11BASE@,${X11BASE},;s,\@SYSCONFDIR@,${SYSCONFDIR},;' \
+	sed -i -e 's,\@PREFIX@,${TRUEPREFIX},; s,\@X11BASE@,${X11BASE},;' \
+		-e 's,\@SYSCONFDIR@,${SYSCONFDIR},;' \
 	    ${PREFIX}/bin/xmcd ${PREFIX}/sbin/xmcdconfig \
 	    ${PREFIX}/lib/X11/app-defaults/XMcd \
 	    ${PREFIX}/man/man1/cda.1 ${PREFIX}/man/man1/xmcd.1
