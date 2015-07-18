@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.17 2014/09/23 08:41:10 sthen Exp $
+$OpenBSD: README-server,v 1.18 2015/07/18 15:32:47 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -110,7 +110,7 @@ If you didn't install PostgreSQL by following this README,
 you must adapt these instructions to your setup.
 
 1) Backup all your data:
-# sudo -u _postgresql pg_dumpall -U postgres > /var/postgresql/full.sqldump
+# su _postgresql -c "pg_dumpall -U postgres > /var/postgresql/full.sqldump"
 
 2) Shutdown the server:
 # ${RCDIR}/postgresql stop
@@ -122,14 +122,14 @@ you must adapt these instructions to your setup.
 # mv /var/postgresql/data /var/postgresql/data.old
 
 5) Create a new data directory (using -E UTF8 if appropriate):
-# sudo -u _postgresql mkdir /var/postgresql/data
-# sudo -u _postgresql initdb -D /var/postgresql/data -U postgres -A md5 -W
+# su _postgresql -c "mkdir /var/postgresql/data"
+# su _postgresql -c "initdb -D /var/postgresql/data -U postgres -A md5 -W"
 
 6) Restore your old pg_hba.conf and (if used) SSL certificates
-# sudo -u _postgresql cp /var/postgresql/data.old/pg_hba.conf \
-    /var/postgresql/data/
-# sudo -u _postgresql cp /var/postgresql/data.old/server.{crt,key} \
-    /var/postgresql/data/
+# su _postgresql -c \
+    "cp /var/postgresql/data.old/pg_hba.conf /var/postgresql/data/"
+# su _postgresql -c \
+    "cp /var/postgresql/data.old/server.{crt,key} /var/postgresql/data/"
 
 Some postgresql.conf settings changed or disappeared in this version.
 Examine your old file for local changes and apply them to the new version.
@@ -138,7 +138,7 @@ Examine your old file for local changes and apply them to the new version.
 # ${RCDIR}/postgresql start
 
 8) Restore your data:
-# sudo -u _postgresql psql -U postgres < /var/postgresql/full.sqldump
+# su _postgresql -c "psql -U postgres < /var/postgresql/full.sqldump"
 
 Clients/Frontends
 =================
