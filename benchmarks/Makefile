@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/06/27 11:40:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2015/07/18 22:02:05 zhuk Exp $
 
      SUBDIR =
      SUBDIR += blogbench
@@ -7,7 +7,6 @@
      SUBDIR += fs_mark
      SUBDIR += httperf
      SUBDIR += iozone
-     SUBDIR += lmbench
      SUBDIR += netperf
      SUBDIR += netperf-wrapper
      SUBDIR += netpipe
