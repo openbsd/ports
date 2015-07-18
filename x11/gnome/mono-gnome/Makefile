@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/05/05 17:00:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2015/07/18 22:34:53 ajacoutot Exp $
 
 COMMENT=	.NET language bindings for assorted GNOME libraries
 
@@ -43,7 +43,7 @@ DLLMAP_FILES=	art/art-sharp.dll.config \
 		gnomevfs/gnome-vfs-sharp.dll.config
 
 pre-configure:
-	find ${WRKSRC} -name *\.pc.in -exec perl -pi \
-		-e 's,^prefix=.*,prefix=\@prefix\@,,' {} \;
+	find ${WRKSRC} -name *\.pc.in -exec sed -i \
+		's,^prefix=.*,prefix=\@prefix\@,' {} \;
 
 .include <bsd.port.mk>

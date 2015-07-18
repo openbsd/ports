@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2015/05/15 14:50:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.192 2015/07/18 22:34:53 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -102,7 +102,7 @@ CONFIGURE_ARGS +=	--disable-miner-evolution
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/meta-tracker/
 
 pre-configure:
-	perl -pi -e 's,/usr/bin,${LOCALBASE}/bin,' \
+	sed -i 's,/usr/bin,${LOCALBASE}/bin,' \
 		${WRKSRC}/src/tracker-needle/tracker-utils.vala
 
 post-install:
