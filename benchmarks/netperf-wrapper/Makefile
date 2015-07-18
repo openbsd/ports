@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/07/18 14:40:46 jasper Exp $
 
 COMMENT=	test network latency under load via netperf
 
@@ -22,7 +22,7 @@ RUN_DEPENDS=	benchmarks/netperf \
 NO_TEST=	Yes
 
 post-build:
-	perl -pi -e 's,/usr/local,${TRUEPREFIX},' \
-	    ${WRKSRC}/netperf_wrapper/build_info.py
+	sed -i 's,/usr/local,${TRUEPREFIX},' \
+		${WRKSRC}/netperf_wrapper/build_info.py
 
 .include <bsd.port.mk>
