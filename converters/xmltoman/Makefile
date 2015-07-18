@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/11 23:48:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2015/07/18 20:12:46 jasper Exp $
 
 COMMENT=		xml to manpage converter
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		textproc/p5-XML-Parser
 
 post-extract:
-	perl -pi -e 's,/usr/share,${PREFIX}/share,g;s,doc/xmltoman/examples,examples/xmltoman,g' \
+	sed -i 's,/usr/share,${PREFIX}/share,g;s,doc/xmltoman/examples,examples/xmltoman,g' \
 		${WRKSRC}/xml/xml*
 
 do-install:
