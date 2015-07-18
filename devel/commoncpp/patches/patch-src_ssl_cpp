@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ssl_cpp,v 1.1 2015/07/18 18:43:30 jca Exp $
+--- src/ssl.cpp.orig	Fri Jan 16 05:27:00 2009
++++ src/ssl.cpp	Sat Jul 18 12:12:03 2015
+@@ -386,7 +386,7 @@ bool SSLStream::getSession(void)
+ 	if(so == INVALID_SOCKET)
+ 		return false;
+ 
+-	ctx = SSL_CTX_new(SSLv3_client_method());
++	ctx = SSL_CTX_new(SSLv23_client_method());
+ 	if(!ctx) {
+ 		SSL_CTX_free(ctx);
+ 		return false;
