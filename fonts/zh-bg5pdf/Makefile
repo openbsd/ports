@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2015/07/18 21:54:37 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,6 +27,6 @@ NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile
-	perl -pi -e "s|/usr/bin/python|${MODPY_BIN}|" ${WRKSRC}/bg5pdf
+	sed -i "s|/usr/bin/python|${MODPY_BIN}|" ${WRKSRC}/bg5pdf
 
 .include <bsd.port.mk>
