@@ -1,0 +1,25 @@
+$OpenBSD: patch-buildtools_wafsamba_samba_install_py,v 1.1 2015/07/18 02:11:13 jca Exp $
+
+- install_link is used so encode the SONAME; use of SONAME is currenty
+  needed since the installed library is created with an improper name
+  (eg "libsomething.inst.so")
+
+- no need to setup symlinks on OpenBSD
+
+--- buildtools/wafsamba/samba_install.py.orig	Sun Jan 27 04:51:43 2013
++++ buildtools/wafsamba/samba_install.py	Thu Jul 16 13:57:59 2015
+@@ -112,9 +112,12 @@ def install_library(self):
+     elif self.vnum:
+         vnum_base    = self.vnum.split('.')[0]
+         install_name = bld.make_libname(target_name, version=self.vnum)
+-        install_link = bld.make_libname(target_name, version=vnum_base)
++        if sys.platform.startswith('openbsd'):
++            install_link = install_name
++        else:
++            install_link = bld.make_libname(target_name, version=vnum_base)
+         inst_name    = bld.make_libname(t.target)
+-        if not self.private_library:
++        if not self.private_library and not sys.platform.startswith('openbsd'):
+             # only generate the dev link for non-bundled libs
+             dev_link     = bld.make_libname(target_name)
+     elif getattr(self, 'soname', ''):

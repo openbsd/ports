@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_replace_replace_h,v 1.1 2015/07/18 02:11:13 jca Exp $
+
+- kill noisy warnings, malloc.h is deprecated
+
+--- lib/replace/replace.h.orig	Thu Jul 16 12:58:28 2015
++++ lib/replace/replace.h	Thu Jul 16 12:58:50 2015
+@@ -56,10 +56,6 @@
+ #undef HAVE_INTTYPES_H
+ #endif
+ 
+-#ifdef HAVE_MALLOC_H
+-#include <malloc.h>
+-#endif
+-
+ #ifndef __PRI64_PREFIX
+ # if __WORDSIZE == 64 && ! defined __APPLE__
+ #  define __PRI64_PREFIX	"l"

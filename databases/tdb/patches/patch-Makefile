@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile,v 1.1 2015/07/18 02:11:13 jca Exp $
+--- Makefile.orig	Thu Jul 16 12:58:06 2015
++++ Makefile	Thu Jul 16 12:58:16 2015
+@@ -1,6 +1,6 @@
+ # simple makefile wrapper to run waf
+ 
+-WAF=WAF_MAKE=1 PATH=buildtools/bin:../../buildtools/bin:$$PATH waf
++WAF=WAF_MAKE=1 PATH=buildtools/bin:../../buildtools/bin:$$PATH waf $(WAF_ARGS)
+ 
+ all:
+ 	$(WAF) build

@@ -1,32 +1,39 @@
-# $OpenBSD: Makefile,v 1.10 2015/03/29 12:28:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2015/07/18 02:11:13 jca Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	trivial database library
 
-DISTNAME=	tdb-1.2.7
-REVISION=	2
+DISTNAME=	tdb-1.2.12
+
+SHARED_LIBS+=	tdb	4.0
+
 CATEGORIES=	databases
-SHARED_LIBS+=	tdb	3.0
 
-MAINTAINER=	Nicholas Marriott <nicm@openbsd.org>
+HOMEPAGE=	https://tdb.samba.org/
 
-# GPLv2
+MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
+
+# LGPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c
+WANTLIB += c m pthread util ${MODPY_WANTLIB}
 
-HOMEPAGE=	http://tdb.samba.org/
 MASTER_SITES=	http://samba.org/ftp/tdb/
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS= --disable-python
-USE_GMAKE=	Yes
-MAKE_FLAGS=	TDB_SOLIB=libtdb.so.${LIBtdb_VERSION} \
-		TDB_SONAME=libtdb.so.${LIBtdb_VERSION}
+MODULES=	lang/python
+MODPY_RUNDEP=	No
+MODPY_ADJ_FILES= buildtools/bin/waf
 
-INSTALL_TARGET=	installdirs installbin installheaders installlibs
+LIB_DEPENDS=	${MODPY_LIB_DEPENDS}
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tdb
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/tdb/
+WAF_ARGS=	-v -j ${MAKE_JOBS}
+MAKE_FLAGS=	WAF_ARGS="${WAF_ARGS}"
+.for _l _v in ${SHARED_LIBS}
+MAKE_ENV +=             LIB${_l:S/-/_/g}_VERSION=${_v}
+.endfor
+
+CONFIGURE_STYLE= simple
+CONFIGURE_ARGS= --mandir="${PREFIX}/man"
 
 .include <bsd.port.mk>

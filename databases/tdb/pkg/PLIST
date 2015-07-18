@@ -1,14 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:39 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/07/18 02:11:13 jca Exp $
 @conflict samba-<3.5.0
 @bin bin/tdbbackup
 @bin bin/tdbdump
 @bin bin/tdbrestore
 @bin bin/tdbtool
 include/tdb.h
-lib/libtdb.a
 @lib lib/libtdb.so.${LIBtdb_VERSION}
 lib/pkgconfig/tdb.pc
-share/doc/tdb/
-share/doc/tdb/README
-share/doc/tdb/tdb.magic
-share/doc/tdb/tracing.txt
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/tdb.so
+@man man/man8/tdbbackup.8
+@man man/man8/tdbdump.8
+@man man/man8/tdbrestore.8
+@man man/man8/tdbtool.8

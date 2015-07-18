@@ -1,0 +1,19 @@
+$OpenBSD: patch-buildtools_wafsamba_wafsamba_py,v 1.1 2015/07/18 02:11:13 jca Exp $
+
+- allow the library version to be overriden
+
+--- buildtools/wafsamba/wafsamba.py.orig	Thu Jul 16 14:04:52 2015
++++ buildtools/wafsamba/wafsamba.py	Thu Jul 16 14:05:42 2015
+@@ -195,6 +195,12 @@ def SAMBA_LIBRARY(bld, libname, source,
+     realname = bld.map_shlib_extension(realname, python=(target_type=='PYTHON'))
+     link_name = bld.map_shlib_extension(link_name, python=(target_type=='PYTHON'))
+ 
++    if vnum is not None:
++        osvnum = os.getenv('LIB' + libname.replace('-', '_') + '_VERSION')
++        if osvnum:
++            print "Setup-specific version for library %s: %s" % (libname, osvnum)
++            vnum = osvnum
++
+     # we don't want any public libraries without version numbers
+     if (not private_library and target_type != 'PYTHON' and not realname):
+         if vnum is None and soname is None:
