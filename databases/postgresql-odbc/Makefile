@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2015/06/22 00:28:31 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2015/07/18 23:15:28 pirofti Exp $
 
 COMMENT=	ODBC driver for PostgreSQL
-VERSION=	08.03.0400
+VERSION=	09.03.0400
 PKGNAME=	postgresql-odbc-${VERSION}
 DISTNAME=	psqlodbc-${VERSION}
 CATEGORIES=	databases
-REVISION=	3
 
 HOMEPAGE=	https://odbc.postgresql.org/
 
@@ -18,16 +17,13 @@ MASTER_SITES=		https://ftp.postgresql.org/pub/odbc/versions/src/
 
 SHARED_ONLY =		Yes
 
-LIB_DEPENDS =		databases/postgresql>=8.3 \
+LIB_DEPENDS =		databases/postgresql>=9.3 \
 			databases/iodbc
 
 WANTLIB =		pq iodbc iodbcinst pthread crypto ssl
 
-USE_GMAKE=		Yes
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.60
-CONFIGURE_ARGS+=	--with-iodbc --without-unixodbc --enable-pthreads
-COPTS+=			-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--with-iodbc --without-unixodbc
 
 NO_TEST=		Yes
 
