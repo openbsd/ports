@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/07/18 14:33:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2015/07/18 19:19:48 ajacoutot Exp $
 
 COMMENT=	common interface to speech synthesis
 
@@ -50,7 +50,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/speech-dispatcher
 
 pre-configure:
-	sed -i 's,/usr/share,${LOCALBASE}/share,g;' \
+	sed -i -e 's,/usr/share,${LOCALBASE}/share,g;' \
 		-e 's,/usr/bin,${LOCALBASE}/bin,g' \
 		${WRKSRC}/config/modules/*.conf
 
