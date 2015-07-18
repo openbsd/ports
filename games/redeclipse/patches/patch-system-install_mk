@@ -1,12 +1,7 @@
-$OpenBSD: patch-system-install_mk,v 1.3 2015/06/28 03:47:09 jsg Exp $
---- system-install.mk.orig	Wed Jun 17 15:08:34 2015
-+++ system-install.mk	Sun Jun 28 13:24:41 2015
-@@ -1,11 +1,11 @@
- appname=$(APPNAME)
--appnamefull=$(shell sed -n 's/.define VERSION_NAME *"\([^"]*\)"/\1/p' version.h)
-+appnamefull=$(shell gsed -n 's/.define VERSION_NAME *"\([^"]*\)"/\1/p' version.h)
- appsrcname=$(APPNAME)
- cappname=$(shell echo $(appname) | tr '[:lower:]' '[:upper:]')# Captial appname
+$OpenBSD: patch-system-install_mk,v 1.4 2015/07/18 20:25:15 jasper Exp $
+--- system-install.mk.orig	Tue Jun 16 23:08:34 2015
++++ system-install.mk	Sat Jul 18 14:16:44 2015
+@@ -5,7 +5,7 @@ cappname=$(shell echo $(appname) | tr '[:lower:]' '[:u
  appclient=$(APPCLIENT)$(APPMODIFIER)$(BIN_SUFFIX)
  appserver=$(APPSERVER)$(APPMODIFIER)$(BIN_SUFFIX)
  
@@ -43,22 +38,15 @@ $OpenBSD: patch-system-install_mk,v 1.3 2015/06/28 03:47:09 jsg Exp $
  
  system-install-data:
  	$(MKDIR) $(datadir)/$(appname)
-@@ -114,21 +110,21 @@ system-install-data:
- system-install-docs: $(MANPAGES)
- 	$(MKDIR) $(mandir)/man6
- 	$(MKDIR) $(docdir)/$(appname)
--	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
-+	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
- 		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
+@@ -119,16 +115,16 @@ system-install-docs: $(MANPAGES)
  		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
  		-e 's,@APPNAME@,$(appname),g' \
  		-e 's,@CAPPNAME@,$(cappname),g' \
 -		../doc/man/$(appsrcname).6.am | \
 -		gzip -9 -n -c > $(mandir)/man6/$(appname).6.gz
--	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
 +		../doc/man/$(appsrcname).6.am \
 +		> $(mandir)/man6/$(appname).6
-+	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
+ 	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
  		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
  		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
  		-e 's,@APPNAME@,$(appname),g' \
@@ -72,22 +60,6 @@ $OpenBSD: patch-system-install_mk,v 1.3 2015/06/28 03:47:09 jsg Exp $
  
  system-install-menus: icons
  	$(MKDIR) $(menudir)
-@@ -139,13 +135,13 @@ system-install-menus: icons
- 	$(MKDIR) $(icondir)/64x64/apps
- 	$(MKDIR) $(icondir)/128x128/apps
- 	$(MKDIR) $(pixmapdir)
--	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
-+	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
- 		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
- 		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
- 		-e 's,@APPNAME@,$(appname),g' \
- 		install/nix/$(appsrcname).desktop.am > \
- 		$(menudir)/$(appname).desktop
--	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
-+	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
- 		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
- 		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
- 		-e 's,@APPNAME@,$(appname),g' \
 @@ -170,52 +166,51 @@ system-install-cube2font: cube2font system-install-cub
  
  system-install-cube2font-docs: ../doc/man/cube2font.1
