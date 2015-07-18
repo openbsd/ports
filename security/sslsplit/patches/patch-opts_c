@@ -1,0 +1,12 @@
+$OpenBSD: patch-opts_c,v 1.1 2015/07/18 15:53:08 sthen Exp $
+--- opts.c.orig	Fri Jul 17 22:51:48 2015
++++ opts.c	Fri Jul 17 22:54:07 2015
+@@ -143,7 +143,7 @@ opts_proto_force(opts_t *opts, const char *optarg, con
+ 		opts->sslmethod = SSLv2_method;
+ 	} else
+ #endif /* SSL_OP_NO_SSLv2 && WITH_SSLV2 */
+-#ifdef SSL_OP_NO_SSLv3
++#ifdef SSL_OP_NO_SSLv3 && !defined(OPENSSL_NO_SSL3_METHOD)
+ 	if (!strcmp(optarg, "ssl3")) {
+ 		opts->sslmethod = SSLv3_method;
+ 	} else
