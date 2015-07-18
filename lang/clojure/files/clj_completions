@@ -29,6 +29,7 @@
 *print-readably*
 *read-eval*
 *source-path*
+*suppress-read*
 *unchecked-math*
 *use-context-classloader*
 *verbose-defrecords*
@@ -40,6 +41,7 @@
 ->
 ->>
 ->ArrayChunk
+->Eduction
 ->Vec
 ->VecNode
 ->VecSeq
@@ -59,6 +61,7 @@ EMPTY-NODE
 IKVReduce
 IOFactory
 InternalReduce
+Throwable->map
 accessor
 aclone
 add-classpath
@@ -78,7 +81,6 @@ ancestors
 and
 apply
 areduce
-arr-impl
 array-map
 as->
 as-file
@@ -133,6 +135,7 @@ bytes
 capitalize
 case
 cast
+cat
 char
 char-array
 char-escape-string
@@ -161,6 +164,7 @@ compare
 compare-and-set!
 compile
 complement
+completing
 completions
 concat
 cond
@@ -183,6 +187,7 @@ dec
 dec'
 decimal?
 declare
+dedupe
 default-data-readers
 default-streams-impl
 definline
@@ -225,10 +230,11 @@ doubles
 drop
 drop-last
 drop-while
-emit-array-impls
+eduction
 empty
 empty?
 ensure
+ensure-reduced
 enumeration-seq
 error-handler
 error-mode
@@ -456,6 +462,7 @@ quot
 rand
 rand-int
 rand-nth
+random-sample
 range
 ratio?
 rational?
@@ -474,6 +481,8 @@ read-instant-timestamp
 read-line
 read-string
 reader
+reader-conditional
+reader-conditional?
 realized?
 record?
 reduce
@@ -522,6 +531,7 @@ reversible?
 root-cause
 rseq
 rsubseq
+run!
 satisfies?
 second
 select-keys
@@ -579,6 +589,8 @@ swap!
 symbol
 symbol?
 sync
+tagged-literal
+tagged-literal?
 take
 take-last
 take-nth
@@ -590,6 +602,7 @@ time
 to-array
 to-array-2d
 trampoline
+transduce
 transient
 tree-seq
 trim
@@ -622,7 +635,9 @@ unchecked-subtract-int
 underive
 unquote
 unquote-splicing
+unreduced
 unsigned-bit-shift-right
+update
 update-in
 update-proxy
 upper-case
@@ -638,6 +653,10 @@ vec
 vector
 vector-of
 vector?
+volatile!
+volatile?
+vreset!
+vswap!
 when
 when-first
 when-let

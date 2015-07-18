@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/03/30 20:38:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/07/18 00:50:23 jasper Exp $
 bin/clojure
 clojure/
 clojure/clj_completions
@@ -110,6 +110,7 @@ clojure/src/jvm/clojure/lang/ATransientSet.java
 clojure/src/jvm/clojure/lang/Agent.java
 clojure/src/jvm/clojure/lang/ArityException.java
 clojure/src/jvm/clojure/lang/ArrayChunk.java
+clojure/src/jvm/clojure/lang/ArrayIter.java
 clojure/src/jvm/clojure/lang/ArraySeq.java
 clojure/src/jvm/clojure/lang/Associative.java
 clojure/src/jvm/clojure/lang/Atom.java
@@ -122,6 +123,7 @@ clojure/src/jvm/clojure/lang/Compile.java
 clojure/src/jvm/clojure/lang/Compiler.java
 clojure/src/jvm/clojure/lang/Cons.java
 clojure/src/jvm/clojure/lang/Counted.java
+clojure/src/jvm/clojure/lang/Cycle.java
 clojure/src/jvm/clojure/lang/Delay.java
 clojure/src/jvm/clojure/lang/DynamicClassLoader.java
 clojure/src/jvm/clojure/lang/EdnReader.java
@@ -129,6 +131,7 @@ clojure/src/jvm/clojure/lang/EnumerationSeq.java
 clojure/src/jvm/clojure/lang/ExceptionInfo.java
 clojure/src/jvm/clojure/lang/Fn.java
 clojure/src/jvm/clojure/lang/FnLoaderThunk.java
+clojure/src/jvm/clojure/lang/IAtom.java
 clojure/src/jvm/clojure/lang/IBlockingDeref.java
 clojure/src/jvm/clojure/lang/IChunk.java
 clojure/src/jvm/clojure/lang/IChunkedSeq.java
@@ -142,6 +145,7 @@ clojure/src/jvm/clojure/lang/ILookup.java
 clojure/src/jvm/clojure/lang/ILookupSite.java
 clojure/src/jvm/clojure/lang/ILookupThunk.java
 clojure/src/jvm/clojure/lang/IMapEntry.java
+clojure/src/jvm/clojure/lang/IMapIterable.java
 clojure/src/jvm/clojure/lang/IMeta.java
 clojure/src/jvm/clojure/lang/IObj.java
 clojure/src/jvm/clojure/lang/IPending.java
@@ -154,6 +158,7 @@ clojure/src/jvm/clojure/lang/IPersistentVector.java
 clojure/src/jvm/clojure/lang/IProxy.java
 clojure/src/jvm/clojure/lang/IRecord.java
 clojure/src/jvm/clojure/lang/IReduce.java
+clojure/src/jvm/clojure/lang/IReduceInit.java
 clojure/src/jvm/clojure/lang/IRef.java
 clojure/src/jvm/clojure/lang/IReference.java
 clojure/src/jvm/clojure/lang/ISeq.java
@@ -166,6 +171,7 @@ clojure/src/jvm/clojure/lang/IType.java
 clojure/src/jvm/clojure/lang/Indexed.java
 clojure/src/jvm/clojure/lang/IndexedSeq.java
 clojure/src/jvm/clojure/lang/Intrinsics.java
+clojure/src/jvm/clojure/lang/Iterate.java
 clojure/src/jvm/clojure/lang/IteratorSeq.java
 clojure/src/jvm/clojure/lang/Keyword.java
 clojure/src/jvm/clojure/lang/KeywordLookupSite.java
@@ -174,6 +180,7 @@ clojure/src/jvm/clojure/lang/LazySeq.java
 clojure/src/jvm/clojure/lang/LineNumberingPushbackReader.java
 clojure/src/jvm/clojure/lang/LispReader.java
 clojure/src/jvm/clojure/lang/LockingTransaction.java
+clojure/src/jvm/clojure/lang/LongRange.java
 clojure/src/jvm/clojure/lang/MapEntry.java
 clojure/src/jvm/clojure/lang/MapEquivalence.java
 clojure/src/jvm/clojure/lang/MethodImplCache.java
@@ -196,9 +203,12 @@ clojure/src/jvm/clojure/lang/ProxyHandler.java
 clojure/src/jvm/clojure/lang/RT.java
 clojure/src/jvm/clojure/lang/Range.java
 clojure/src/jvm/clojure/lang/Ratio.java
+clojure/src/jvm/clojure/lang/ReaderConditional.java
+clojure/src/jvm/clojure/lang/RecordIterator.java
 clojure/src/jvm/clojure/lang/Reduced.java
 clojure/src/jvm/clojure/lang/Ref.java
 clojure/src/jvm/clojure/lang/Reflector.java
+clojure/src/jvm/clojure/lang/Repeat.java
 clojure/src/jvm/clojure/lang/Repl.java
 clojure/src/jvm/clojure/lang/RestFn.java
 clojure/src/jvm/clojure/lang/Reversible.java
@@ -211,9 +221,13 @@ clojure/src/jvm/clojure/lang/Settable.java
 clojure/src/jvm/clojure/lang/Sorted.java
 clojure/src/jvm/clojure/lang/StringSeq.java
 clojure/src/jvm/clojure/lang/Symbol.java
+clojure/src/jvm/clojure/lang/TaggedLiteral.java
 clojure/src/jvm/clojure/lang/TransactionalHashMap.java
+clojure/src/jvm/clojure/lang/TransformerIterator.java
 clojure/src/jvm/clojure/lang/Util.java
 clojure/src/jvm/clojure/lang/Var.java
+clojure/src/jvm/clojure/lang/Volatile.java
+clojure/src/jvm/clojure/lang/WarnBoxedMath.java
 clojure/src/jvm/clojure/lang/XMLHandler.java
 clojure/src/jvm/clojure/lang/package.html
 clojure/src/jvm/clojure/main.java
@@ -221,4 +235,5 @@ clojure/src/resources/
 clojure/src/resources/clojure/
 clojure/src/resources/clojure/version.properties
 clojure/src/script/
-clojure/src/script/run_tests.clj
+clojure/src/script/run_test.clj
+clojure/src/script/run_test_generative.clj
