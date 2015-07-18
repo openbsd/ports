@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/18 00:15:44 jca Exp $
+# $OpenBSD: Makefile,v 1.19 2015/07/18 00:35:57 jca Exp $
 
 COMMENT =	console user interface library for python
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB}
 
-TEST_DEPENDS =	devel/py-gobject \
+TEST_DEPENDS =	devel/py-gobject3,${MODPY_FLAVOR} \
 		lang/python/${MODPY_VERSION},-tests
 
 MODULES =	lang/python
