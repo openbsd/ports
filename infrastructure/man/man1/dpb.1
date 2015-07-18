@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.110 2015/07/15 15:41:41 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.111 2015/07/18 12:57:24 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: July 15 2015 $
+.Dd $Mdocdate: July 18 2015 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -809,6 +809,13 @@ without any
 .Xr sudo 8
 privileges.
 .Pp
+.Ox 5.8
+ships with a
+.Ar _pbuild ,
+and a
+.Ar _pfetch
+user.
+.Pp
 .Bl -bullet
 .It
 Start
@@ -857,6 +864,10 @@ does not happen as root.
 .It
 .Ar UNPRIV_USER
 is used as a fail-safe for any other activities that do not require any rights.
+It will default to
+.Ar _dpb
+starting with
+.Ox 5.8 .
 .It
 .Nm
 creates local directories as root, then gives them to the appropriate user.
