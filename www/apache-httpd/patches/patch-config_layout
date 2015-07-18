@@ -1,13 +1,11 @@
-$OpenBSD: patch-config_layout,v 1.7 2015/07/17 23:57:58 ajacoutot Exp $
+$OpenBSD: patch-config_layout,v 1.8 2015/07/18 00:33:53 ajacoutot Exp $
 --- config.layout.orig	Tue Apr 17 16:01:41 2012
-+++ config.layout	Sat Jan 10 14:31:17 2015
-@@ -228,26 +228,26 @@
- 
++++ config.layout	Sat Jul 18 02:20:52 2015
+@@ -229,25 +229,25 @@
  #   OpenBSD Layout
  <Layout OpenBSD>
--    prefix:        /var/www
+     prefix:        /var/www
 -    exec_prefix:   /usr
-+    prefix:        /var/www
 +    exec_prefix:   %%PREFIX%%
      bindir:        ${exec_prefix}/bin
      sbindir:       ${exec_prefix}/sbin

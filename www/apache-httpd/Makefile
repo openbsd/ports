@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.59 2015/07/17 23:57:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2015/07/18 00:33:53 ajacoutot Exp $
 
-COMMENT-main=	apache HTTP server
-COMMENT-common=	shared files for Apache 1 and 2
+COMMENT-main=		apache HTTP server
+COMMENT-common=		shared files for Apache 1 and 2
 
-V=		2.4.12
-DISTNAME=	httpd-${V}
+V=			2.4.12
+DISTNAME=		httpd-${V}
 
-PKGNAME-main=	apache-httpd-${V}
+PKGNAME-main=		apache-httpd-${V}
 FULLPKGNAME-common=	apache-httpd-common-${V}
 FULLPKGPATH-common=	www/apache-httpd,-common
 
-REVISION-main=	1
+REVISION-main=		2
+REVISION-common=	0
 
-CATEGORIES=	www net
+CATEGORIES=		www net
 
-HOMEPAGE=	http://httpd.apache.org/
+HOMEPAGE=		http://httpd.apache.org/
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,6 +23,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += apr-1 aprutil-1 c crypto db expat lzma m pcre pthread
 WANTLIB-main += ssl xml2 z
+
+MASTER_SITES=		${MASTER_SITE_APACHE:=httpd/}
+
+MODULES=		converters/libiconv
 
 SHARED_ONLY=		Yes
 USE_GROFF =		Yes
@@ -39,30 +44,13 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 WANTLIB-common=		#empty
 LIB_DEPENDS-common=	# empty
 
-FLAVORS=		ldap
-FLAVOR?=
-
-.if ${FLAVOR:Mldap}
-CONFIGURE_ARGS+=	--with-ldap --enable-ldap --enable-authnz-ldap
-WANTLIB+=		lber-2.4 ldap-2.4 sasl2
-LIB_DEPENDS-main+=	databases/openldap
-LIB_DEPENDS-main+=	apr-util-*-ldap:devel/apr-util,ldap
-.else
-LIB_DEPENDS-main+=	apr-util-*-!ldap:devel/apr-util
-.endif
-
-MODULES=		converters/libiconv
-
-MASTER_SITES=		${MASTER_SITE_APACHE:=httpd/}
-
 HTTPD_DIR=		/var/www
 CONFDIR=		${SYSCONFDIR}/apache2
 SUBST_VARS=		CONFDIR
-
 PREFIX-common=		/var/www
 
 CONFIGURE_STYLE=	simple
-CONFIGURE_ARGS+=	--enable-layout=OpenBSD \
+CONFIGURE_ARGS=		--enable-layout=OpenBSD \
 			--prefix=${HTTPD_DIR} \
 			--exec-prefix=${LOCALBASE} \
 			--sysconfdir=${CONFDIR} \
@@ -83,13 +71,25 @@ CONFIGURE_ARGS+=	--enable-layout=OpenBSD \
 			--with-suexec-logfile=${LOCALSTATEDIR}/log/suexec2_log \
 			--with-pcre=${LOCALBASE}
 
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-FAKE_FLAGS+=		rel_user=www rel_group=www \
+FAKE_FLAGS=		rel_user=www rel_group=www \
 			rel_datadir=${HTTPD_DIR} \
 			datadir=${PREFIX}/share/examples/apache2 \
 			sysconfdir=${PREFIX}/share/examples/apache2/conf
+
+FLAVORS=		ldap
+FLAVOR?=
+
+.if ${FLAVOR:Mldap}
+CONFIGURE_ARGS+=	--with-ldap --enable-ldap --enable-authnz-ldap
+WANTLIB+=		lber-2.4 ldap-2.4 sasl2
+LIB_DEPENDS-main+=	databases/openldap
+LIB_DEPENDS-main+=	apr-util-*-ldap:devel/apr-util,ldap
+.else
+LIB_DEPENDS-main+=	apr-util-*-!ldap:devel/apr-util
+.endif
 
 A2BIN=			apxs logresolve dbmmanage htdigest htpasswd
 A2SBIN=			apachectl rotatelogs suexec
@@ -97,10 +97,10 @@ A2MAN1=			dbmmanage apxs htdigest htpasswd logresolve
 A2MAN8=			apachectl httpd rotatelogs suexec
 
 pre-configure:
-	@perl -pi -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/config.layout
-	@perl -pi -e 's,%%CONFDIR%%,${CONFDIR},' ${WRKSRC}/config.layout \
-	${WRKSRC}/configure
-	@perl -pi -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/support/apxs.in
+	perl -pi -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/config.layout
+	perl -pi -e 's,%%CONFDIR%%,${CONFDIR},' ${WRKSRC}/config.layout \
+		${WRKSRC}/configure
+	perl -pi -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/support/apxs.in
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
@@ -109,6 +109,10 @@ post-install:
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/sbin
 	chown -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib
 
+	# -common
+	${INSTALL_DATA_DIR} ${WRKINST}${PREFIX-common}/cgi-bin
+	mv ${PREFIX}/share/examples/apache2/cgi-bin/{printenv,test-cgi} \
+		${WRKINST}${PREFIX-common}/cgi-bin/
 	mv ${PREFIX}/share/examples/apache2/icons \
 		${WRKINST}${PREFIX-common}/
 

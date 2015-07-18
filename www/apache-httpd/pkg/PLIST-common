@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST-common,v 1.1 2015/07/17 23:57:58 ajacoutot Exp $
-@conflict apache-httpd-<2.4.12p1
+@comment $OpenBSD: PLIST-common,v 1.2 2015/07/18 00:33:53 ajacoutot Exp $
+@conflict apache-httpd-<2.4.12p2
 @conflict apache-httpd-openbsd-<1.3.20140502p4
+@mode 000
+cgi-bin/printenv
+cgi-bin/test-cgi
+@mode
 icons/
 icons/README
 icons/README.html

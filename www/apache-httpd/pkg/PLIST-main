@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2015/07/17 23:57:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2015/07/18 00:33:53 ajacoutot Exp $
 @pkgpath www/apache-httpd
 @bin bin/ab
 bin/dbmmanage2
@@ -1319,16 +1319,8 @@ share/doc/apache2/vhosts/name-based.html.ko.euc-kr
 share/doc/apache2/vhosts/name-based.html.tr.utf8
 share/examples/apache2/
 share/examples/apache2/cgi-bin/
-share/examples/apache2/cgi-bin/printenv
-@mode 000
-@sample /var/www/cgi-bin/printenv
-@mode
 share/examples/apache2/cgi-bin/printenv.vbs
 share/examples/apache2/cgi-bin/printenv.wsf
-share/examples/apache2/cgi-bin/test-cgi
-@mode 000
-@sample /var/www/cgi-bin/test-cgi
-@mode
 share/examples/apache2/conf/
 @sample ${CONFDIR}/
 share/examples/apache2/conf/extra/
