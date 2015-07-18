@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-common,v 1.2 2015/07/18 00:33:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST-common,v 1.3 2015/07/18 00:55:09 ajacoutot Exp $
 @conflict apache-httpd-<2.4.12p2
 @conflict apache-httpd-openbsd-<1.3.20140502p4
 @mode 000
@@ -16,6 +16,7 @@ icons/alert.red.gif
 icons/alert.red.png
 icons/apache_pb.gif
 icons/apache_pb.png
+icons/apache_pb.svg
 icons/apache_pb2.gif
 icons/apache_pb2.png
 icons/back.gif
@@ -96,6 +97,23 @@ icons/link.gif
 icons/link.png
 icons/movie.gif
 icons/movie.png
+icons/odf6odb.png
+icons/odf6odc.png
+icons/odf6odf.png
+icons/odf6odg.png
+icons/odf6odi.png
+icons/odf6odm.png
+icons/odf6odp.png
+icons/odf6ods.png
+icons/odf6odt.png
+icons/odf6otc.png
+icons/odf6otf.png
+icons/odf6otg.png
+icons/odf6oth.png
+icons/odf6oti.png
+icons/odf6otp.png
+icons/odf6ots.png
+icons/odf6ott.png
 icons/p.gif
 icons/p.png
 icons/patch.gif
@@ -157,6 +175,10 @@ icons/small/continued.gif
 icons/small/continued.png
 icons/small/doc.gif
 icons/small/doc.png
+icons/small/folder.gif
+icons/small/folder.png
+icons/small/folder2.gif
+icons/small/folder2.png
 icons/small/forward.gif
 icons/small/forward.png
 icons/small/generic.gif
@@ -203,6 +225,7 @@ icons/sphere1.gif
 icons/sphere1.png
 icons/sphere2.gif
 icons/sphere2.png
+icons/svg.png
 icons/tar.gif
 icons/tar.png
 icons/tex.gif
@@ -223,3 +246,4 @@ icons/world1.gif
 icons/world1.png
 icons/world2.gif
 icons/world2.png
+icons/xml.png

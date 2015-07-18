@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2015/05/15 08:08:03 stsp Exp $
---- Makefile.in.orig	Mon Dec 17 12:50:41 2012
-+++ Makefile.in	Sat Jan 10 14:31:17 2015
+$OpenBSD: patch-Makefile_in,v 1.7 2015/07/18 00:55:09 ajacoutot Exp $
+--- Makefile.in.orig	Wed Apr 15 20:06:04 2015
++++ Makefile.in	Sat Jul 18 02:34:37 2015
 @@ -49,6 +49,8 @@ install-conf:
  	    			sed -e 's#@@ServerRoot@@#$(prefix)#g' \
  	    				-e 's#@@Port@@#$(PORT)#g' \
@@ -18,8 +18,8 @@ $OpenBSD: patch-Makefile_in,v 1.6 2015/05/15 08:08:03 stsp Exp $
 +					-e 's#@@Group@@#$(rel_group)#g' \
  	    				-e 'p' \
  	    				< $$i; \
- 	    			for j in $(DSO_MODULES) "^EOL^"; do \
-@@ -76,6 +80,8 @@ install-conf:
+ 	    			if echo " $(DSO_MODULES) "|$(EGREP) " cgi " > /dev/null ; then \
+@@ -96,6 +100,8 @@ install-conf:
  	    				-e 's#@@ServerRoot@@#$(prefix)#g' \
  	    				-e 's#@@Port@@#$(PORT)#g' \
  	    				-e 's#@@SSLPort@@#$(SSLPORT)#g' \

@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.60 2015/07/18 00:33:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2015/07/18 00:55:09 ajacoutot Exp $
 
 COMMENT-main=		apache HTTP server
 COMMENT-common=		shared files for Apache 1 and 2
 
-V=			2.4.12
+V=			2.4.16
 DISTNAME=		httpd-${V}
+PKGNAME=		apache-httpd-${V}
 
-PKGNAME-main=		apache-httpd-${V}
+PKGNAME-main=		${PKGNAME}
 FULLPKGNAME-common=	apache-httpd-common-${V}
 FULLPKGPATH-common=	www/apache-httpd,-common
-
-REVISION-main=		2
-REVISION-common=	0
 
 CATEGORIES=		www net
 
