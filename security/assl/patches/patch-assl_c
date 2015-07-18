@@ -1,6 +1,6 @@
-$OpenBSD: patch-assl_c,v 1.3 2014/05/22 11:33:05 naddy Exp $
---- assl.c.orig	Thu Nov  7 12:51:14 2013
-+++ assl.c	Tue May 20 19:12:23 2014
+$OpenBSD: patch-assl_c,v 1.4 2015/07/18 23:17:37 sthen Exp $
+--- assl.c.orig	Thu Nov  7 10:51:14 2013
++++ assl.c	Sat Jul 18 17:17:22 2015
 @@ -15,6 +15,7 @@
   */
  
@@ -9,3 +9,19 @@ $OpenBSD: patch-assl_c,v 1.3 2014/05/22 11:33:05 naddy Exp $
  #include <err.h>
  #include <fcntl.h>
  #include <poll.h>
+@@ -779,6 +780,7 @@ assl_alloc_context(enum assl_method m, int flags)
+ 		meth = SSLv23_server_method();
+ 		server = 1;
+ 		break;
++#ifndef OPENSSL_NO_SSL3
+ 	/* SSL v3 */
+ 	case ASSL_M_SSLV3:
+ 		meth = SSLv3_method();
+@@ -791,6 +793,7 @@ assl_alloc_context(enum assl_method m, int flags)
+ 		meth = SSLv3_server_method();
+ 		server = 1;
+ 		break;
++#endif
+ 	/* TLS 1.0 */
+ 	case ASSL_M_TLSV1:
+ 		meth = TLSv1_method();
