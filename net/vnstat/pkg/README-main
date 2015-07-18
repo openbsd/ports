@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2015/06/03 12:34:10 pea Exp $
+$OpenBSD: README-main,v 1.2 2015/07/18 01:29:03 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,7 +7,7 @@ $OpenBSD: README-main,v 1.1 2015/06/03 12:34:10 pea Exp $
 1) Launch vnstat --iflist to see all the available interfaces.
 
 2) For each interface that you want to monitor, launch this command:
-    # sudo -u _vnstat vnstat -i interface -u
+    # su -m _vnstat -c "vnstat -i interface -u"
 This will create the database for the specified interface.
 
 3) Edit ${SYSCONFDIR}/vnstat.conf if necessary.
