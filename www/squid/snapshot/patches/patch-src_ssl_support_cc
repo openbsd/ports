@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_ssl_support_cc,v 1.1 2015/07/18 21:00:13 sthen Exp $
+--- src/ssl/support.cc.orig	Sat Jul 18 14:59:03 2015
++++ src/ssl/support.cc	Sat Jul 18 14:59:41 2015
+@@ -1070,8 +1070,13 @@ Ssl::method(int version)
+         break;
+ 
+     case 3:
++#if !defined(OPENSSL_NO_SSL3)
+         debugs(83, 5, "Using SSLv3.");
+         return SSLv3_client_method();
++#else
++        debugs(83, DBG_IMPORTANT, "SSLv3 is not available in this Proxy.");
++        return NULL;
++#endif
+         break;
+ 
+     case 4:
