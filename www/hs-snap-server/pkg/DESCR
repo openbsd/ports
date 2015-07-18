@@ -1,3 +1,0 @@
-Simple and fast web development framework and server written in Haskell.
-The Snap HTTP server is a high performance, epoll-enabled, interatee
-based web server library written in Haskell.

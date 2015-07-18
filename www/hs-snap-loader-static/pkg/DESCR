@@ -1,3 +1,0 @@
-This library allows Snap applications to run at full compiled speed
-with no overhead, in a way that's drop-in compatible with
-snap-loader-dynamic.
