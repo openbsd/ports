@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/09/08 17:04:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2015/07/18 21:07:40 jeremy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -23,13 +23,13 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gonzui/}
 
 BUILD_DEPENDS=		databases/db/v4 \
 			databases/ruby-bdb,${MODRUBY_FLAVOR} \
-			${MODRUBY_ICONV_DEPENDS}
+			lang/ruby/1.8,-iconv
 RUN_DEPENDS=		archivers/bzip2 \
 			archivers/unzip \
 			archivers/xz \
 			databases/db/v4 \
 			databases/ruby-bdb,${MODRUBY_FLAVOR} \
-			${MODRUBY_ICONV_DEPENDS} \
+			lang/ruby/1.8,-iconv \
 			textproc/p5-PPI
 
 MODRUBY_ADJ_FILES=	gonzui-db \

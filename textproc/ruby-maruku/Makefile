@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/10/11 19:54:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2015/07/18 21:07:40 jeremy Exp $
 
 COMMENT =	Ruby markdown interpreter
 
 DISTNAME =	maruku-0.6.1
-REVISION =	1
+REVISION =	2
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://maruku.rubyforge.org/
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_CDROM = Yes
 MODULES =		lang/ruby
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		textproc/ruby-syntax,${MODRUBY_FLAVOR} \
-			${MODRUBY_ICONV_DEPENDS}
+RUN_DEPENDS =		textproc/ruby-syntax,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE =	ruby gem
 

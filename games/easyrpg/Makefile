@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/03/17 23:43:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.11 2015/07/18 21:07:40 jeremy Exp $
 
 V =		0.1.2
 COMMENT =	free interpreter for RPG Maker 2000/2003 and EasyRPG games
@@ -28,8 +28,8 @@ MODULES +=	converters/libiconv \
 # iconv is deprecated with ruby>1.8
 MODRUBY_REV =	1.8
 
-BUILD_DEPENDS =	${MODRUBY_ICONV_DEPENDS} \
-		devel/boost
+BUILD_DEPENDS =	devel/boost \
+		lang/ruby/1.8,-iconv
 
 LIB_DEPENDS =	audio/libsndfile \
 		audio/openal \

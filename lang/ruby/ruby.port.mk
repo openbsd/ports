@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.80 2015/07/16 17:27:08 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.81 2015/07/18 21:07:40 jeremy Exp $
 
 # ruby module
 
@@ -198,12 +198,6 @@ MODRUBY_LIB_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 .endif
 
 MODRUBY_BUILD_DEPENDS=	${MODRUBY_RUN_DEPENDS}
-
-.if ${MODRUBY_REV} == 1.8
-MODRUBY_ICONV_DEPENDS=	ruby-iconv->=1.8,<1.9:lang/ruby/${MODRUBY_REV},-iconv
-.else
-MODRUBY_ICONV_DEPENDS=	${MODRUBY_RUN_DEPENDS}
-.endif
 
 # location of ruby libraries
 .if ${MODRUBY_REV} == jruby
