@@ -1,0 +1,20 @@
+$OpenBSD: patch-test_test_mysql_rb,v 1.1 2015/07/18 11:51:28 zhuk Exp $
+MariaDB has more than one digit in major version number.
+
+Upstream pull request: https://github.com/luislavena/mysql-gem/pull/31
+--- test/test_mysql.rb.orig	Fri Jul 17 23:39:41 2015
++++ test/test_mysql.rb	Fri Jul 17 23:40:47 2015
+@@ -62,11 +62,11 @@ class TC_Mysql < Test::Unit::TestCase
+   end
+ 
+   def test_get_client_info()
+-    assert_match(/^\d.\d+.\d+[a-z]?(-.*)?$/, Mysql.get_client_info())
++    assert_match(/^\d+.\d+.\d+[a-z]?(-.*)?$/, Mysql.get_client_info())
+   end
+ 
+   def test_client_info()
+-    assert_match(/^\d.\d+.\d+[a-z]?(-.*)?$/, Mysql.client_info())
++    assert_match(/^\d+.\d+.\d+[a-z]?(-.*)?$/, Mysql.client_info())
+   end
+ 
+   def test_options()
