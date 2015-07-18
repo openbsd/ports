@@ -2,8 +2,7 @@ Tray-app is a set of small gtk programs that reside in the system tray
 (aka notification area).
 
 eject ("safely remove hardware") allows you to choose a device from a
-list, unmount filesystems and eject the device. This would normally be
-run using sudo to elevate privileges.
+list, unmount filesystems and eject the device.
 
 battery is a battery charge level meter.
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/21 18:19:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/07/18 01:44:36 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
 COMMENT=	small utilities for X11 system tray: eject, battery, mixer
 
 DISTNAME=	tray-app-0.3
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils x11
 
