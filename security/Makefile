@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.374 2015/07/10 19:02:31 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.375 2015/07/18 19:55:13 jca Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -256,7 +256,6 @@
      SUBDIR += py-pefile
      SUBDIR += py-secretstorage
      SUBDIR += py-secretstorage,python3
-     SUBDIR += py-sslwrapper
      SUBDIR += qca
      SUBDIR += qca-gnupg
      SUBDIR += qca-ossl
