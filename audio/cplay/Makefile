@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/07/18 04:46:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2015/07/18 14:33:49 jasper Exp $
 
 COMMENT=		curses front-end for various audio players
 
@@ -20,8 +20,8 @@ NO_TEST=		Yes
 PKG_ARCH=		*
 
 do-configure:
-	@perl -pi -e "s,/etc/,${SYSCONFDIR}/," ${WRKSRC}/cplay{,.1}
-	@perl -pi -e "s,^#!.*python,#!${MODPY_BIN}," ${WRKSRC}/cplay
+	@sed -i "s,/etc/,${SYSCONFDIR}/," ${WRKSRC}/cplay{,.1}
+	@sed -i "s,^#!.*python,#!${MODPY_BIN}," ${WRKSRC}/cplay
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cplay ${PREFIX}/bin/

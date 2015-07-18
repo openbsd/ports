@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/01 10:58:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/07/18 14:33:50 jasper Exp $
 
 COMMENT=		frontend to mpd written in Python
 
@@ -23,7 +23,7 @@ PKG_ARCH=		*
 NO_TEST=		Yes
 
 do-configure:
-	@perl -pi -e 's,/usr/bin/python,${MODPY_BIN},g; \
+	@sed -i 's,/usr/bin/python,${MODPY_BIN},g; \
 		s,PREFIX,${PREFIX},g;' ${WRKSRC}/pympd
 
 .include <bsd.port.mk>

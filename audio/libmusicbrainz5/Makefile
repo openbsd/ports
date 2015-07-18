@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/22 11:31:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/07/18 14:33:50 jasper Exp $
 
 COMMENT=		library for audio metadata lookup (v5)
 
@@ -27,7 +27,7 @@ NO_TEST=		Yes
 LIB_DEPENDS=		net/neon
 
 pre-configure:
-	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
+	sed -i 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/cmake/modules/FindNeon.cmake
 
 .include <bsd.port.mk>

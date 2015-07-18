@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/07/16 23:57:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/07/18 14:33:50 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,6 +19,6 @@ RUN_DEPENDS=	devel/p5-Inline
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 pre-configure:
-	@perl -pi -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/Header.pm
+	@sed -i 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/Header.pm
 
 .include <bsd.port.mk>

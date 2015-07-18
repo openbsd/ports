@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/12/31 08:42:26 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2015/07/18 14:33:50 jasper Exp $
 
 COMMENT =	solfege and ear training program
 DISTNAME =	solfege-3.22.2
@@ -35,11 +35,11 @@ USE_GMAKE =	Yes
 FAKE_FLAGS =	sysconfdir=${LOCALBASE}/share/examples/solfege
 
 post-patch:
-	perl -pi -e "s,cp,${LOCALBASE}/bin/gcp,g" ${WRKSRC}/Makefile.in
+	sed -i "s,cp,${LOCALBASE}/bin/gcp,g" ${WRKSRC}/Makefile.in
 
 pre-configure:
 	cd ${WRKSRC} && ${SUBST_CMD} default.config run-solfege.py.in system.rc && \
-		perl -pi -e "s,/bin/bash,/bin/sh,g" \
+		sed -i "s,/bin/bash,/bin/sh,g" \
 		${WRKSRC}/exercises/standard/lesson-files/bin/csound-play-harmonic-interval.sh
 
 do-test:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2015/04/28 06:35:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2015/07/18 14:33:50 jasper Exp $
 
 COMMENT =		audio player daemon with library management
 BROKEN-sparc64 =	waf build goes into an infinite loop
@@ -75,7 +75,7 @@ do-configure:
 
 post-configure:
 	# avoid linking to bogus libraries
-	perl -pi -e "s/SONAME_ST.*/SONAME_ST=''/" ${WRKSRC}/_build_/c4che/_cache.py
+	sed -i "s/SONAME_ST.*/SONAME_ST=''/" ${WRKSRC}/_build_/c4che/_cache.py
 
 do-build:
 	cd ${WRKSRC} && ${MODPY_BIN} ./waf build

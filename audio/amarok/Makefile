@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2015/04/04 09:20:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2015/07/18 14:33:49 jasper Exp $
 
 CATEGORIES =	audio x11 x11/kde
 COMMENT =	music player for KDE
@@ -68,6 +68,6 @@ CONFIGURE_ARGS +=	--with-xine \
 
 pre-configure:
 	cd ${WRKSRC} && find . -name '*.rb' -exec \
-		perl -pi -e 's,#!/usr/bin/env ruby,#!${RUBY},' {} \;
+		sed -i 's,#!/usr/bin/env ruby,#!${RUBY},' {} \;
 
 .include <bsd.port.mk>

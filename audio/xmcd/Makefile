@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2015/01/22 17:47:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2015/07/18 14:33:50 jasper Exp $
 
 COMMENT=	Motif CD player
 
@@ -14,10 +14,10 @@ WANTLIB=	ICE SM Xau Xdmcp X11 Xaw Xext Xmu Xpm Xt c curses \
 
 MASTER_SITES=	http://distfiles.nl/
 
-LIB_DEPENDS+=		x11/openmotif
+LIB_DEPENDS+=	x11/openmotif
 
 CONFIGURE_STYLE= imake
-MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
+MAKE_ENV+=	MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 NO_TEST=	Yes
 
 XMCDLIB=	${PREFIX}/share/xmcd
@@ -49,12 +49,11 @@ post-install:
 	cd ${PREFIX}/bin; \
 	    rm -f xmcd cda cddbcmd dp2xmcd wm2xmcd; mv .xmcd_start xmcd; \
 	    for i in cda cddbcmd dp2xmcd wm2xmcd; do ln -s xmcd $$i; done
-	perl -pi -e 's,\@PREFIX@,${TRUEPREFIX},; s,\@X11BASE@,${X11BASE},;' \
-	    -e 's,\@SYSCONFDIR@,${SYSCONFDIR},;' \
+	sed -i 's,\@PREFIX@,${TRUEPREFIX},; s,\@X11BASE@,${X11BASE},;s,\@SYSCONFDIR@,${SYSCONFDIR},;' \
 	    ${PREFIX}/bin/xmcd ${PREFIX}/sbin/xmcdconfig \
 	    ${PREFIX}/lib/X11/app-defaults/XMcd \
 	    ${PREFIX}/man/man1/cda.1 ${PREFIX}/man/man1/xmcd.1
-	perl -pi -e 's,${WRKINST},,g' ${PREFIX}/bin/xmcd \
+	sed -i 's,${WRKINST},,g' ${PREFIX}/bin/xmcd \
 	    ${XMCDLIB}/scripts/genidx ${PREFIX}/sbin/xmcdconfig \
 	    ${PREFIX}/share/examples/xmcd/discog.html
 

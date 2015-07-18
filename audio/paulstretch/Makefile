@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/04/16 02:01:59 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/18 14:33:50 jasper Exp $
 
 COMMENT =	program for extreme audio stretching
 DISTNAME =	paulstretch-2.2-2
@@ -28,7 +28,7 @@ LIB_DEPENDS =	audio/libmad \
 NO_TEST =	Yes
 
 post-patch:
-	perl -pi -e "s,g\+\+,${CXX} ${CXXFLAGS},g" \
+	sed -i "s,g\+\+,${CXX} ${CXXFLAGS},g" \
 		${WRKSRC}/compile_linux_kissfft.sh
 
 do-build:

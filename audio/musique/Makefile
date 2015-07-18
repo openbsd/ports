@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/03/27 08:43:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/07/18 14:33:50 jasper Exp $
 
 COMMENT =	graphical music player focused on a clean ui
 DISTNAME =	musique-1.4
@@ -36,6 +36,6 @@ do-configure:
 	cd ${WRKDIST} && env -i ${CONFIGURE_ENV} qmake4 PREFIX=${PREFIX}
 
 post-configure:
-	perl -pi -e "s,/usr/include,${LOCALBASE}/include,g" ${WRKSRC}/Makefile
+	sed -i "s,/usr/include,${LOCALBASE}/include,g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

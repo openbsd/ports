@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/08/07 21:31:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2015/07/18 14:33:49 jasper Exp $
 
 COMMENT=	command-line utility to rip and encode audio cds
 
@@ -25,7 +25,7 @@ RUN_DEPENDS=	audio/cdparanoia \
 NO_TEST=	Yes
 
 do-configure:
-	perl -pi -e 's,/etc/,${SYSCONFDIR}/,' ${WRKSRC}/abcde
+	sed -i 's,/etc/,${SYSCONFDIR}/,' ${WRKSRC}/abcde
 	${SUBST_CMD} ${WRKSRC}/abcde ${WRKSRC}/cddb-tool
 
 do-install:

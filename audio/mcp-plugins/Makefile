@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/10 22:55:03 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/07/18 14:33:50 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -25,7 +25,7 @@ MAKE_FLAGS =		CPPFLAGS="${CPPFLAGS} -D_REENTRANT -fPIC"
 NO_TEST =		Yes
 
 post-patch:
-	perl -pi -e 's#g\+\+ -shared#${CXX} -shared -fPIC#g' ${WRKSRC}/Makefile
+	sed -i 's#g\+\+ -shared#${CXX} -shared -fPIC#g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/lib/ladspa

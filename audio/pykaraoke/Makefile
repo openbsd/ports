@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/07/16 15:16:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/07/18 14:33:50 jasper Exp $
 
 COMMENT =		free karaoke player
 
-V =			0.7.5
-MODPY_EGG_VERSION =	${V}
-DISTNAME =		pykaraoke-${V}
+MODPY_EGG_VERSION =	0.7.5
+DISTNAME =		pykaraoke-${MODPY_EGG_VERSION}
 CATEGORIES =		audio
 
 HOMEPAGE =		http://kibosh.org/pykaraoke/
@@ -12,8 +11,7 @@ HOMEPAGE =		http://kibosh.org/pykaraoke/
 # LGPL v2.1 or later
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += SDL pthread
+WANTLIB += SDL pthread ${MODPY_WANTLIB}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pykaraoke/}
 EXTRACT_SUFX =		.zip
@@ -33,6 +31,6 @@ RUN_DEPENDS =		x11/py-wxPython	\
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/setup.cfg
-	@perl -pi -e 's,python,${MODPY_BIN},g' ${WRKDIST}/install/*
+	@sed -i 's,python,${MODPY_BIN},g' ${WRKDIST}/install/*
 
 .include <bsd.port.mk>

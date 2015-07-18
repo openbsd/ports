@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2015/04/16 06:38:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2015/07/18 14:33:50 jasper Exp $
 
 # XXX
 # util.c: implement pa_get_binary_name()
@@ -133,7 +133,7 @@ pre-configure:
 		intltoolize --force
 ### END SNDIO ###
 	${SUBST_CMD} ${WRKSRC}/src/daemon/default.pa.in
-	perl -pi -e 's,/bin/bash,/usr/bin/env bash,' \
+	sed -i 's,/bin/bash,/usr/bin/env bash,' \
 		${WRKSRC}/shell-completion/bash/pulseaudio
 
 post-install:

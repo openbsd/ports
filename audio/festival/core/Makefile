@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2015/07/18 14:33:49 jasper Exp $
 
 COMMENT=	general multi-lingual speech synthesis system
 V=		1.95
@@ -68,7 +68,7 @@ do-configure:
 .endif
 
 post-build:
-	@perl -pi -e s,'/bin/festival','${PREFIX}/bin/festival', ${WRKBUILD}/festival/bin/text2wave
+	@sed -i s,'/bin/festival','${PREFIX}/bin/festival', ${WRKBUILD}/festival/bin/text2wave
 
 do-install:
 .if ${FLAVOR:Mogi}

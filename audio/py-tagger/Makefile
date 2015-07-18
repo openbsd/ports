@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/07/18 14:33:50 jasper Exp $
 
 COMMENT=	Python ID3 tag reader/writer module
 
@@ -23,7 +23,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-tagger
 EXAMPLESDIR=	${PREFIX}/share/examples/py-tagger
 
 post-configure:
-	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' \
+	@sed -i 's,/usr/bin/env python,${MODPY_BIN},g' \
 		${WRKBUILD}/mp3check.py
 
 post-install:

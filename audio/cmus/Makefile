@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/07/18 14:33:49 jasper Exp $
 
 COMMENT-main=		ncurses-based music player
 COMMENT-flac=		FLAC input plugin for cmus
@@ -75,7 +75,7 @@ NO_TEST=		Yes
 
 post-patch:
 	@cp ${FILESDIR}/sndio.c ${WRKSRC}
-	perl -pi -e s,/usr,${LOCALBASE}, ${WRKSRC}/Doc/cmus.txt
-	perl -pi -e s,doc/cmus/examples,examples/cmus, ${WRKSRC}/Doc/cmus.txt
+	sed -i s,/usr,${LOCALBASE}, ${WRKSRC}/Doc/cmus.txt
+	sed -i s,doc/cmus/examples,examples/cmus, ${WRKSRC}/Doc/cmus.txt
 
 .include <bsd.port.mk>

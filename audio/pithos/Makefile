@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/20 03:29:07 bcallah Exp $
+# $OpenBSD: Makefile,v 1.13 2015/07/18 14:33:50 jasper Exp $
 
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
@@ -36,6 +36,6 @@ RUN_DEPENDS =	audio/py-last${MODPY_FLAVOR}>=0.5.11 \
 TEST_DEPENDS =	audio/py-last${MODPY_FLAVOR}>=0.5.11
 
 pre-configure:
-	perl -pi -e "s,/usr/s,s,g" ${WRKSRC}/setup.py
+	sed -i "s,/usr/s,s,g" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/05/09 09:00:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/07/18 14:33:49 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -28,8 +28,8 @@ BUILD_DEPENDS +=	devel/gtest
 CONFIGURE_ARGS =	-DBUILD_TESTS:Bool=Yes -DBUILD_EXAMPLES=ON
 
 post-patch:
-	perl -pi -e 's,/usr/local,${LOCALBASE},' \
-	    ${WRKSRC}/cmake/modules/FindGTest.cmake
+	sed -i 's,/usr/local,${LOCALBASE},' \
+		${WRKSRC}/cmake/modules/FindGTest.cmake
 
 do-test:
 	cd ${WRKBUILD}/tests && ./all_tests
