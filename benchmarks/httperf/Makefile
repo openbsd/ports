@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/06/19 16:24:06 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2015/07/18 17:13:49 jca Exp $
 
 COMMENT =		web server performance testing tool
 
 DISTNAME =		httperf-0.9.0
-REVISION =		0
+REVISION =		1
 CATEGORIES =		benchmarks www
 
 HOMEPAGE =		http://www.hpl.hp.com/research/linux/httperf/
