@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/07/09 17:13:26 jeremy Exp $
+# $OpenBSD: Makefile,v 1.34 2015/07/18 15:46:11 jeremy Exp $
 
 COMMENT=	access a SQLite3 database from ruby
 
@@ -22,7 +22,6 @@ CONFIGURE_STYLE=	ruby gem ext
 
 MODRUBY_TEST=	rake
 TEST_DEPENDS=	devel/ruby-mocha,${MODRUBY_FLAVOR} \
-			converters/ruby-json,${MODRUBY_FLAVOR} \
 			${MODRUBY_ICONV_DEPENDS} \
 			${FULLPKGNAME}:${BUILD_PKGPATH}
 

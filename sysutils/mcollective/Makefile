@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2015/07/16 17:27:09 jeremy Exp $
+# $OpenBSD: Makefile,v 1.32 2015/07/18 15:46:11 jeremy Exp $
 
 BROKEN-alpha=	SIGABRT during make fake
 COMMENT=	framework for server orchestration/parallel job execution
 
 DISTNAME=	mcollective-2.8.2
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 
@@ -21,8 +21,7 @@ MODULES=	lang/ruby
 
 NO_BUILD=	Yes
 BUILD_DEPENDS=	lang/ruby/${MODRUBY_REV}
-RUN_DEPENDS=	converters/ruby-json,${MODRUBY_FLAVOR} \
-		net/ruby-stomp,${MODRUBY_FLAVOR}>=1.3.4
+RUN_DEPENDS=	net/ruby-stomp,${MODRUBY_FLAVOR}>=1.3.4
 
 PKG_ARCH=	*
 NO_TEST=	Yes

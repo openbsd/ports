@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/03 07:24:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/07/18 15:46:11 jeremy Exp $
 
 COMMENT=	web scanner
 
 # git clone of b495eda
 DISTNAME=	whatweb-0.4.7.1
+REVISION=	0
 
 CATEGORIES=	net www
 
@@ -18,9 +19,6 @@ MODULES=	lang/ruby
 
 # WIP support for Ruby 1.9/2.0, but no 2.1 yet.
 MODRUBY_REV=	2.0
-
-RUN_DEPENDS=	converters/ruby-json,${MODRUBY_FLAVOR} \
-		${MODRUBY_ICONV_DEPENDS}
 
 MODRUBY_ADJ_FILES=	whatweb
 
