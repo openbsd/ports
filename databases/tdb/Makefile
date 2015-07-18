@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/07/18 02:22:33 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2015/07/18 02:34:57 jca Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,6 +25,9 @@ MASTER_SITES=	http://samba.org/ftp/tdb/
 MODULES=	lang/python
 MODPY_RUNDEP=	No
 MODPY_ADJ_FILES= buildtools/bin/waf
+
+BUILD_DEPENDS=	textproc/docbook-xsl \
+		textproc/libxslt
 
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS}
 
