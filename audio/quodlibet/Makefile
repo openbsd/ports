@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/04 09:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/07/18 23:44:17 sthen Exp $
 
 COMMENT=	audio player and tagger for GTK+ with regex support
 
-MODPY_EGG_VERSION= 3.3.1
+MODPY_EGG_VERSION= 3.4.1
 DISTNAME=	quodlibet-${MODPY_EGG_VERSION}
-REVISION=	1
 
 CATEGORIES=	audio
 
@@ -38,7 +37,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		textproc/intltool
 MODPY_ADJ_FILES= *py
 
-MODPY_DISTUTILS_INSTALLARGS= --mandir=${TRUEPREFIX}/man
+MODPY_DISTUTILS_INSTALLARGS= --mandir=${PREFIX}/man
 
 do-test:
 	cd ${WRKSRC}; ${MODPY_BIN} ./setup.py test
