@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2014/11/05 11:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2015/07/18 22:24:48 jasper Exp $
 
 SHARED_ONLY=		Yes
 COMMENT=		Python tools for computational molecular biology
 
-MODPY_EGG_VERSION=	1.50
+MODPY_EGG_VERSION=	1.65
 DISTNAME=		biopython-${MODPY_EGG_VERSION}
-REVISION =		4
+REVISION=0
 CATEGORIES=		biology
 
 HOMEPAGE=		http://www.biopython.org/
@@ -32,7 +32,7 @@ CFLAGS+=	-fPIC
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-biopython/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-biopython/
-	${INSTALL_DATA} ${WRKSRC}/Doc/*.txt ${PREFIX}/share/doc/py-biopython/
+	${INSTALL_DATA} ${WRKSRC}/Doc/*.pdf ${PREFIX}/share/doc/py-biopython/
 	cd ${WRKSRC}/Doc/examples; tar cf - * | \
 		tar xf - -C ${PREFIX}/share/examples/py-biopython
 

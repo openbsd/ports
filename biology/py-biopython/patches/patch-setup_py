@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.6 2009/06/02 04:48:32 wcmaier Exp $
---- setup.py.orig	Mon Jun  1 21:25:24 2009
-+++ setup.py	Mon Jun  1 21:25:13 2009
-@@ -71,6 +71,7 @@ def check_dependencies_once():
+$OpenBSD: patch-setup_py,v 1.7 2015/07/18 22:24:48 jasper Exp $
+--- setup.py.orig	Sat Dec 17 11:34:46 2005
++++ setup.py	Sat Jul 18 15:17:11 2015
+@@ -172,6 +172,7 @@ def is_automated():
  
  def check_dependencies():
      """Return whether the installation should continue."""
