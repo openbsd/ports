@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:38 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2015/07/18 06:01:44 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,5 +9,5 @@ for running the slave.  The default slave directory is expected to be
 found in ${HOMEDIR}.  Before being run for the first time, the
 slave directory must be initialized.  This is done as follows:
 
-    $ sudo -u _buildslave buildslave \
-        create-slave ${HOMEDIR} <master> <name> <passwd>
+    # su -m _buildslave -c \
+        "buildslave create-slave ${HOMEDIR} <master> <name> <passwd>"
