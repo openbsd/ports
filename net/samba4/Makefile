@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/07/16 00:17:00 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2015/07/18 08:04:16 jca Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.1.19
@@ -9,21 +9,18 @@ DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
 COMMENT-ldb =		LDAP-like embedded database
-COMMENT-tdb =		trivial database library
 COMMENT-tevent =	event system based on talloc
 COMMENT-util =		common libraries for Samba suite
 COMMENT-docs =		additional documentation and examples for Samba
 
 PKGNAME-main =		${PKGNAME}
 PKGNAME-ldb =		ldb-${LDB_V}
-PKGNAME-tdb =		tdb-${TDB_V}
 PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${TALLOC_V}
 PKGNAME-docs =		samba-docs-${VERSION}
 
 REVISION-main =		1
 REVISION-ldb =		1
-REVISION-tdb =		1
 REVISION-tevent =	0
 REVISION-util =		0
 
@@ -31,7 +28,6 @@ PKG_ARCH-docs =		*
 
 LDB_V =			1.1.17
 TALLOC_V =		2.1.2
-TDB_V =			1.2.12
 TEVENT_V =		0.9.18
 
 SHARED_LIBS =		asn1-samba4		0.0 \
@@ -73,7 +69,6 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			smbldap			0.0 \
 			smbsharemodes		2.0 \
 			talloc			1.0 \
-			tdb			5.0 \
 			tevent			0.0 \
 			tevent-util		0.0 \
 			torture			0.0 \
@@ -113,9 +108,6 @@ WANTLIB-main +=		${UTIL_WANTLIB}
 WANTLIB-ldb =		${WANTLIB-common} c popt tdb tevent
 WANTLIB-ldb +=		${UTIL_WANTLIB}
 
-WANTLIB-tdb =		${WANTLIB-common} c
-WANTLIB-tdb +=		${UTIL_WANTLIB}
-
 WANTLIB-tevent =	${WANTLIB-common}
 WANTLIB-tevent +=	${UTIL_WANTLIB}
 
@@ -128,7 +120,7 @@ MASTER_SITES =		https://download.samba.org/pub/samba/stable/ \
 
 MASTER_SITES0 =		https://www.samba.org/~samba-bugs/docs/v3-5-test/
 
-MULTI_PACKAGES =	-main -ldb -tdb -tevent -util -docs
+MULTI_PACKAGES =	-main -ldb -tevent -util -docs
 
 MODULES =		devel/gettext lang/python perl
 
@@ -142,10 +134,10 @@ RUN_DEPENDS-main =	net/py-dnspython
 RUN_DEPENDS-docs =
 
 LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
-			${BUILD_PKGPATH},-tdb>=${TDB_V} \
 			${BUILD_PKGPATH},-util>=${TALLOC_V} \
 			${MODGETTEXT_LIB_DEPENDS} \
 			databases/openldap \
+			databases/tdb>=1.2.12 \
 			devel/iniparser \
 			devel/libexecinfo \
 			net/avahi \
@@ -157,12 +149,10 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			sysutils/e2fsprogs \
 			sysutils/gamin
 
-LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tdb>=${TDB_V} \
-			${BUILD_PKGPATH},-tevent>=${TEVENT_V} \
+LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tevent>=${TEVENT_V} \
 			${BUILD_PKGPATH},-util>=${TALLOC_V} \
+			databases/tdb>=1.2.12 \
 			devel/popt
-
-LIB_DEPENDS-tdb =	${BUILD_PKGPATH},-util>=${TALLOC_V}
 
 LIB_DEPENDS-tevent =	${BUILD_PKGPATH},-util>=${TALLOC_V}
 
@@ -174,7 +164,7 @@ CONFIGURE_STYLE =	simple
 
 CONFIGURE_ARGS =	--enable-fhs \
 			--abi-check-disable \
-			--bundled-libraries="!crypto,ldb,ntdb,talloc,tdb,tevent" \
+			--bundled-libraries="!crypto,ldb,ntdb,talloc,!tdb,tevent" \
 			--prefix=${PREFIX} \
 			--destdir=${WRKINST} \
 			--docdir=${PREFIX}/share/doc \
