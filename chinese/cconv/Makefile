@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/03/16 18:07:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2015/07/18 14:57:48 jasper Exp $
 
 COMMENT=	simplified-traditional chinese translate tool
 
@@ -25,6 +25,6 @@ CONFIGURE_STYLE=gnu
 FAKE_FLAGS=	includedir=${PREFIX}/include/cconv/
 
 post-patch:
-	@perl -i -pe 's:UTF-TW:UTF8-TW:g' ${WRKSRC}/main.c
-	
+	@sed -i 's:UTF-TW:UTF8-TW:g' ${WRKSRC}/main.c
+
 .include <bsd.port.mk>

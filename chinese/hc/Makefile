@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/22 18:41:16 naddy Exp $	
+# $OpenBSD: Makefile,v 1.13 2015/07/18 14:57:48 jasper Exp $
 
 COMMENT=	convert between GB and BIG-5 codes
 
@@ -23,7 +23,7 @@ ALL_TARGET=	hc b2g g2b
 NO_TEST=	Yes
 
 pre-patch:
-	perl -pi -e 's|malloc.h|stdlib.h|' ${WRKSRC}/hclib.c
+	sed -i 's|malloc.h|stdlib.h|' ${WRKSRC}/hclib.c
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/hc
