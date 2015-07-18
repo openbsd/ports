@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/11 14:24:39 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.6 2015/07/18 15:31:16 jasper Exp $
 
 COMMENT=	tool to programme a wide range of amateur radios
 
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${COMMON_DEPS} \
 NO_TEST=	Yes
 
 post-extract:
-	perl -pi -e 's,/usr/share,${PREFIX}/share,' \
+	sed -i 's,/usr/share,${PREFIX}/share,' \
 	    ${WRKSRC}/chirpui/mainapp.py
 
 .include <bsd.port.mk>

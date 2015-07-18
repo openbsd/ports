@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2015/05/22 11:31:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2015/07/18 15:31:16 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -53,8 +53,8 @@ post-extract:
 	rm ${WRKSRC}/bindings/Perl/Pilot.xs.orig
 
 pre-configure:
-	perl -pi -e "s,!!CFLAGS!!,${CFLAGS},g" ${WRKSRC}/bindings/Perl/Makefile.PL.in
-	perl -pi -e "s,Libs: ,Libs: -pthread ,g" \
+	sed -i "s,!!CFLAGS!!,${CFLAGS},g" ${WRKSRC}/bindings/Perl/Makefile.PL.in
+	sed -i "s,Libs: ,Libs: -pthread ,g" \
 		${WRKSRC}/pilot-link.pc.in ${WRKSRC}/pilot-link-pp.pc.in
 
 post-install:

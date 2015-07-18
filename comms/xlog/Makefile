@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/07/15 17:23:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2015/07/18 15:31:17 jasper Exp $
 
 COMMENT=		logbook program for amateur radio operators
 
@@ -29,7 +29,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		UPDATE_DESKTOP_DATABASE=/usr/bin/true
 
 pre-configure:
-	perl -pi -e 's,.-Wno-unused-but-set-variable,,' \
+	sed -i 's,.-Wno-unused-but-set-variable,,' \
 		${WRKSRC}/configure
 # Needed for strptime(3); prevents a buttload of patches
 	perl -pi -e 's,^(#define _XOPEN_SOURCE)$$,\1\n#define _XOPEN_SOURCE_EXTENDED 1,g' \

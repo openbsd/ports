@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/05/16 11:01:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/07/18 15:31:17 jasper Exp $
 
 COMMENT=	RFC 2217 compliant serial port redirector
 
@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.ibiblio.org/pub/Linux/system/serial/
 NO_TEST=	Yes
 
 pre-build:
-	@perl -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/sredird.8
+	@sed -i "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/sredird.8
 
 do-build:
 	${CC} ${CFLAGS} -Wall -o ${WRKSRC}/sredird ${WRKSRC}/sredird.c

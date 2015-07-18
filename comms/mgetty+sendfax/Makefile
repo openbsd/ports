@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2015/01/24 13:46:44 schwarze Exp $
+# $OpenBSD: Makefile,v 1.52 2015/07/18 15:31:16 jasper Exp $
 
 COMMENT=	handle external logins, send and receive faxes
 
@@ -38,11 +38,11 @@ pre-configure:
 
 pre-install:
 .for i in faxq.1 faxrm.1 faxqueue.5 fax.1 faxq-helper.8 mgetty.texi
-	perl -pi -e "s,faxrm,mgetty-faxrm,g" ${WRKSRC}/doc/${i}
-	perl -pi -e "s,usage\: faxrm,usage\: mgetty-faxrm,g" ${WRKSRC}/fax/faxrm.in
+	sed -i "s,faxrm,mgetty-faxrm,g" ${WRKSRC}/doc/${i}
+	sed -i "s,usage\: faxrm,usage\: mgetty-faxrm,g" ${WRKSRC}/fax/faxrm.in
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mgetty+sendfax
-	
+
 post-install:
 	mv ${PREFIX}/bin/faxrm ${PREFIX}/bin/mgetty-faxrm
 	mv ${PREFIX}/man/man1/faxrm.1 ${PREFIX}/man/man1/mgetty-faxrm.1
