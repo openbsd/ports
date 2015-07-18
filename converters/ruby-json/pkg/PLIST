@@ -1,14 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/06/03 07:00:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/07/18 04:03:48 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
-${GEM_LIB}/extensions/${MODRUBY_ARCH}/
-${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
-@comment ${GEM_EXTENSIONS_DIR}/
-@comment ${GEM_EXTENSIONS_DIR}/gem.build_complete
-@comment ${GEM_EXTENSIONS_DIR}/gem_make.out
-@comment ${GEM_EXTENSIONS_DIR}/json/
-@comment ${GEM_EXTENSIONS_DIR}/json/ext/
-@comment ${GEM_EXTENSIONS_DIR}/json/ext/generator.so
-@comment ${GEM_EXTENSIONS_DIR}/json/ext/parser.so
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
@@ -28,50 +19,7 @@ ${GEM_LIB}/gems/${DISTNAME}/data/index.html
 ${GEM_LIB}/gems/${DISTNAME}/data/prototype.js
 ${GEM_LIB}/gems/${DISTNAME}/diagrams/
 ${GEM_LIB}/gems/${DISTNAME}/diagrams/.keep
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/json/
-${GEM_LIB}/gems/${DISTNAME}/ext/json/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/fbuffer/
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/fbuffer/fbuffer.h
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/generator/
-@comment ${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/generator/.RUBYARCHDIR.-.json.-.ext.time
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/generator/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/generator/depend
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/generator/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/generator/generator.c
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/generator/generator.h
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/generator/generator.o
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/generator/generator.so
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/parser/
-@comment ${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/parser/.RUBYARCHDIR.-.json.-.ext.time
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/parser/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/parser/depend
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/parser/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/parser/parser.c
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/parser/parser.h
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/parser/parser.o
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/parser/parser.rl
-${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/parser/parser.so
-${GEM_LIB}/gems/${DISTNAME}/ext/json/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/install.rb
-${GEM_LIB}/gems/${DISTNAME}/java/
-${GEM_LIB}/gems/${DISTNAME}/java/src/
-${GEM_LIB}/gems/${DISTNAME}/java/src/json/
-${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/
-${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/ByteListTranscoder.java
-${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/Generator.java
-${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/GeneratorMethods.java
-${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/GeneratorService.java
-${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/GeneratorState.java
-${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/OptionsReader.java
-${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/Parser.java
-${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/Parser.rl
-${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/ParserService.java
-${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/RuntimeInfo.java
-${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/StringDecoder.java
-${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/StringEncoder.java
-${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/Utils.java
 ${GEM_LIB}/gems/${DISTNAME}/json-java.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/json.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/json_pure.gemspec
