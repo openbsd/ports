@@ -1,9 +1,5 @@
 This package includes the following Samba4 components:
 
-talloc:
-    Hierarchical, reference counted memory pool system with destructors.
-    Includes Python binding to this library.
-
 nss_wrapper:
     Wrapper for system NSS library.
 

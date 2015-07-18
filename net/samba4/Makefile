@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/07/18 08:20:51 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2015/07/18 13:33:08 jca Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.1.19
@@ -16,18 +16,17 @@ COMMENT-docs =		additional documentation and examples for Samba
 PKGNAME-main =		${PKGNAME}
 PKGNAME-ldb =		ldb-${LDB_V}
 PKGNAME-tevent =	tevent-${TEVENT_V}
-PKGNAME-util =		samba-util-${TALLOC_V}
+PKGNAME-util =		samba-util-${VERSION}
 PKGNAME-docs =		samba-docs-${VERSION}
 
-REVISION-main =		2
-REVISION-ldb =		2
-REVISION-tevent =	0
-REVISION-util =		0
+REVISION-main =		3
+REVISION-ldb =		3
+REVISION-tevent =	1
+REVISION-util =		1
 
 PKG_ARCH-docs =		*
 
 LDB_V =			1.1.17
-TALLOC_V =		2.1.2
 TEVENT_V =		0.9.18
 
 SHARED_LIBS =		asn1-samba4		0.0 \
@@ -55,7 +54,6 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			ntdb			0.0 \
 			pdb			0.0 \
 			pyldb-util		0.0 \
-			pytalloc-util		0.0 \
 			registry		0.0 \
 			roken-samba4		0.0 \
 			samba-credentials	0.0 \
@@ -68,7 +66,6 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			smbconf			0.0 \
 			smbldap			0.0 \
 			smbsharemodes		2.0 \
-			talloc			1.0 \
 			tevent			0.0 \
 			tevent-util		0.0 \
 			torture			0.0 \
@@ -94,7 +91,7 @@ UTIL_LIBS =		nss_wrapper socket_wrapper uid_wrapper replace
 UTIL_LIBS +=		util_setid
 # TODO WAF scripts link to those without version info, but those are
 # not "plugins" or such.
-UTIL_WANTLIB =		${UTIL_LIBS:S@^@lib/samba/@} talloc
+UTIL_WANTLIB =		${UTIL_LIBS:S@^@lib/samba/@}
 
 WANTLIB-common =	m pthread util ${MODPY_WANTLIB}
 
@@ -102,16 +99,19 @@ WANTLIB-main =		${WANTLIB-common} ${MODGETTEXT_WANTLIB}
 WANTLIB-main +=		c com_err ncurses z
 WANTLIB-main +=		avahi-client avahi-common cups execinfo fam iniparser
 WANTLIB-main +=		lber ldap pam popt sasl2 gcrypt gnutls
-WANTLIB-main +=		ldb pyldb-util pytalloc-util tdb tevent
+WANTLIB-main +=		ldb pyldb-util pytalloc-util tdb talloc tevent
 WANTLIB-main +=		${UTIL_WANTLIB}
 
-WANTLIB-ldb =		${WANTLIB-common} c popt tdb tevent
+WANTLIB-ldb =		${WANTLIB-common}
+WANTLIB-ldb +=		c popt tdb talloc tevent
 WANTLIB-ldb +=		${UTIL_WANTLIB}
 
 WANTLIB-tevent =	${WANTLIB-common}
+WANTLIB-tevent +=	talloc
 WANTLIB-tevent +=	${UTIL_WANTLIB}
 
 WANTLIB-util =		${WANTLIB-common}
+WANTLIB-util +=		pytalloc-util talloc
 
 WANTLIB-docs =
 
@@ -134,12 +134,13 @@ RUN_DEPENDS-main =	net/py-dnspython
 RUN_DEPENDS-docs =
 
 LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
-			${BUILD_PKGPATH},-util>=${TALLOC_V} \
+			${BUILD_PKGPATH},-util>=${VERSION} \
 			${MODGETTEXT_LIB_DEPENDS} \
 			databases/openldap \
 			databases/tdb>=1.2.12 \
 			devel/iniparser \
 			devel/libexecinfo \
+			devel/libtalloc>=2.1.2 \
 			net/avahi \
 			print/cups,-libs \
 			security/cyrus-sasl2 \
@@ -150,13 +151,16 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			sysutils/gamin
 
 LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tevent>=${TEVENT_V} \
-			${BUILD_PKGPATH},-util>=${TALLOC_V} \
+			${BUILD_PKGPATH},-util>=${VERSION} \
 			databases/tdb>=1.2.12 \
+			devel/libtalloc>=2.1.2 \
 			devel/popt
 
-LIB_DEPENDS-tevent =	${BUILD_PKGPATH},-util>=${TALLOC_V}
+LIB_DEPENDS-tevent =	${BUILD_PKGPATH},-util>=${VERSION} \
+			devel/libtalloc>=2.1.2
 
-LIB_DEPENDS-util =	${MODPY_LIB_DEPENDS}
+LIB_DEPENDS-util =	${MODPY_LIB_DEPENDS} \
+			devel/libtalloc>=2.1.2
 
 LIB_DEPENDS-docs =
 
@@ -164,7 +168,7 @@ CONFIGURE_STYLE =	simple
 
 CONFIGURE_ARGS =	--enable-fhs \
 			--abi-check-disable \
-			--bundled-libraries="!crypto,ldb,ntdb,talloc,!tdb,tevent" \
+			--bundled-libraries="!crypto,ldb,ntdb,!talloc,!tdb,tevent" \
 			--prefix=${PREFIX} \
 			--destdir=${WRKINST} \
 			--docdir=${PREFIX}/share/doc \
