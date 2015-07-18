@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.62 2015/07/18 01:11:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2015/07/18 20:01:13 ajacoutot Exp $
 
 COMMENT-main=		apache HTTP server
 COMMENT-common=		shared files for Apache 1 and 2
 
 V=			2.4.16
-REVISION-main=		0
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
 
 PKGNAME-main=		${PKGNAME}
 FULLPKGNAME-common=	apache-httpd-common-${V}
 FULLPKGPATH-common=	www/apache-httpd,-common
+
+REVISION-main=		1
 
 CATEGORIES=		www net
 
@@ -107,6 +108,7 @@ post-install:
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/bin
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/sbin
 	chown -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib
+	rmdir ${PREFIX}/share/examples/apache2/logs
 
 	# -common
 	${INSTALL_DATA_DIR} ${WRKINST}${PREFIX-common}/cgi-bin
