@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2014/07/12 22:08:35 landry Exp $
+$OpenBSD: README,v 1.2 2015/07/18 21:13:41 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -28,9 +28,9 @@ Copy certificates in place
 --------------------------
 Copy resulting certificates into taskd's directory:
 
-  $ sudo cp {client,server}.{cert,key}.pem server.crl.pem ca.cert.pem \
+  # cp {client,server}.{cert,key}.pem server.crl.pem ca.cert.pem \
       /var/taskd
-  $ sudo chown -R _taskd:_taskd /var/taskd
+  # chown -R _taskd:_taskd /var/taskd
 
 
 Running taskd
@@ -38,8 +38,8 @@ Running taskd
 taskd by default listens on all interfaces on port 53589. You can change
 this with a command like:
 
-  $ sudo -u _taskd taskd config --force server \
-        localhost:12345 --data /var/taskd
+  # su -m _taskd -c \
+	"taskd config --force server localhost:12345 --data /var/taskd"
 
 To enable automatic startup on boot for taskd, add it to pkg_scripts
 in ${BASESYSCONFDIR}/rc.conf.local, for example:
@@ -48,7 +48,7 @@ in ${BASESYSCONFDIR}/rc.conf.local, for example:
 
 To start taskd, reboot or start it manually:
 
-   $ sudo /etc/rc.d/taskd start
+   # rcctl restart taskd
 
 
 Adding users
@@ -56,24 +56,22 @@ Adding users
 As described at http://taskwarrior.org/docs/server_user.html
 
 For most operations here you'll either have to
+  # export TASKDDATA=/var/taskd
 
-  $ export TASKDDATA=/var/taskd
-
-and run commands with sudo -E to pass that variable to taskd, or run
-taskd with '--data /var/taskd' appended to it's options. Both examples
-below.
+or run taskd with '--data /var/taskd' appended to it's options.
 
 Create organization and user
 ----------------------------
 First you need to create an organization to put user(s) into:
 
-  $ sudo -u _taskd taskd add org Public --data /var/taskd
+  # su -m _taskd -c "taskd add org Public --data /var/taskd"
+
   Created organization 'Public'
 
 
 Then you can proceed with creating a user:
 
-  $ sudo -E -u _taskd taskd add user 'Public' 'First Last'
+  # su -m _taskd -c "taskd add user 'Public' 'First Last' --data /var/taskd"
   New user key: cf31f287-ee9e-43a8-843e-e8bbd5de4294
   Created user 'First Last' for organization 'Public'
 

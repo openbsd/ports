@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/08/10 09:58:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/07/18 21:13:41 ajacoutot Exp $
 
 COMMENT =	lightweight server providing access to task data
 
 DISTNAME =	taskd-1.0.0
 CATEGORIES =	productivity net
+REVISION =	0
 
 HOMEPAGE =	http://www.taskwarrior.org/
 
