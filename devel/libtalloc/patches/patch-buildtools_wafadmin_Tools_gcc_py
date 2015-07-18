@@ -1,0 +1,18 @@
+$OpenBSD: patch-buildtools_wafadmin_Tools_gcc_py,v 1.1 2015/07/18 02:13:25 jca Exp $
+
+- until waf creates libraries with the correct name out of the box, we
+  need SONAME
+
+--- buildtools/wafadmin/Tools/gcc.py.orig	Thu Jul 16 14:42:05 2015
++++ buildtools/wafadmin/Tools/gcc.py	Thu Jul 16 14:42:20 2015
+@@ -114,10 +114,6 @@ def gcc_modifier_aix(conf):
+ 	v['SHLIB_MARKER']        = ''
+ 
+ @conftest
+-def gcc_modifier_openbsd(conf):
+-	conf.env['SONAME_ST'] = []
+-
+-@conftest
+ def gcc_modifier_platform(conf):
+ 	# * set configurations specific for a platform.
+ 	# * the destination platform is detected automatically by looking at the macros the compiler predefines,

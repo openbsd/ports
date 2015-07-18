@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_replace_replace_h,v 1.1 2015/07/18 02:13:25 jca Exp $
+--- lib/replace/replace.h.orig	Wed Jul 15 22:52:17 2015
++++ lib/replace/replace.h	Wed Jul 15 22:52:24 2015
+@@ -60,10 +60,6 @@
+ #undef HAVE_INTTYPES_H
+ #endif
+ 
+-#ifdef HAVE_MALLOC_H
+-#include <malloc.h>
+-#endif
+-
+ #ifndef __PRI64_PREFIX
+ # if __WORDSIZE == 64 && ! defined __APPLE__
+ #  define __PRI64_PREFIX	"l"

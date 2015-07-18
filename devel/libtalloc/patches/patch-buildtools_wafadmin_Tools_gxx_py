@@ -1,0 +1,18 @@
+$OpenBSD: patch-buildtools_wafadmin_Tools_gxx_py,v 1.1 2015/07/18 02:13:25 jca Exp $
+
+- until waf creates libraries with the correct name out of the box, we
+  need SONAME
+
+--- buildtools/wafadmin/Tools/gxx.py.orig	Thu Jul 16 14:42:07 2015
++++ buildtools/wafadmin/Tools/gxx.py	Thu Jul 16 14:42:41 2015
+@@ -112,10 +112,6 @@ def gxx_modifier_aix(conf):
+ 	v['SHLIB_MARKER']        = ''
+ 
+ @conftest
+-def gxx_modifier_openbsd(conf):
+-	conf.env['SONAME_ST'] = []
+-
+-@conftest
+ def gxx_modifier_platform(conf):
+ 	# * set configurations specific for a platform.
+ 	# * the destination platform is detected automatically by looking at the macros the compiler predefines,

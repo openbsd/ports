@@ -1,26 +1,41 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/03 22:47:25 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2015/07/18 02:13:25 jca Exp $
 
 SHARED_ONLY=	Yes
 
-SHARED_LIBS=	talloc 0.0	# .2.0
-
 COMMENT=	hierarchical memory pool system with destructors
-DISTNAME=	talloc-2.0.1
-REVISION=	2
+
+DISTNAME=	talloc-2.1.2
 PKGNAME=	lib${DISTNAME}
 
+SHARED_LIBS+=	talloc		1.0
+SHARED_LIBS+=	pytalloc-util	0.0
+
 CATEGORIES=	devel
+
 HOMEPAGE=	https://talloc.samba.org/
+
+MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # LGPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += m pthread util ${MODPY_WANTLIB}
+
 MASTER_SITES=	https://samba.org/ftp/talloc/
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -g"
-MAKE_FLAGS+=	TALLOC_SOLIB=libtalloc.so.${LIBtalloc_VERSION} \
-		SHLD_FLAGS="-g -shared" \
-		SONAMEFLAG="" TALLOC_SONAME=""
+MODULES=	lang/python
+MODPY_RUNDEP=	No
+MODPY_ADJ_FILES= buildtools/bin/waf
+
+LIB_DEPENDS=	${MODPY_LIB_DEPENDS}
+
+WAF_ARGS=	-v -j ${MAKE_JOBS}
+MAKE_FLAGS=	WAF_ARGS="${WAF_ARGS}"
+.for _l _v in ${SHARED_LIBS}
+MAKE_ENV +=             LIB${_l:S/-/_/g}_VERSION=${_v}
+.endfor
+
+CONFIGURE_STYLE= simple
+CONFIGURE_ARGS= --mandir="${PREFIX}/man"
 
 .include <bsd.port.mk>

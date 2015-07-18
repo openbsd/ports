@@ -1,0 +1,55 @@
+$OpenBSD: patch-buildtools_wafadmin_Tools_ccroot_py,v 1.1 2015/07/18 02:13:25 jca Exp $
+
+- badly computed target name, install fails
+
+- at build time, encode the full library name + version in the SONAME
+
+- remove openbsd-specific tests, install fails
+
+--- buildtools/wafadmin/Tools/ccroot.py.orig	Tue Mar 10 06:28:31 2015
++++ buildtools/wafadmin/Tools/ccroot.py	Thu Jul 16 14:29:24 2015
+@@ -183,10 +183,6 @@ def get_target_name(self):
+ 			# include the version in the dll file name,
+ 			# the import lib file name stays unversionned.
+ 			name = name + '-' + nums[0]
+-		elif self.env.DEST_OS == 'openbsd':
+-			pattern = '%s.%s' % (pattern, nums[0])
+-			if len(nums) >= 2:
+-				pattern += '.%s' % nums[1]
+ 
+ 	return os.path.join(dir, pattern % name)
+ 
+@@ -594,7 +590,10 @@ def apply_vnum(self):
+ 		name2 = libname + '.' + nums[0]
+ 
+ 	if self.env.SONAME_ST:
+-		v = self.env.SONAME_ST % name2
++		if sys.platform.startswith('openbsd'):
++			v = self.env.SONAME_ST % name3
++		else:
++			v = self.env.SONAME_ST % name2
+ 		self.env.append_value('LINKFLAGS', v.split())
+ 
+ 	bld = self.bld
+@@ -603,17 +602,12 @@ def apply_vnum(self):
+ 	path = self.install_path
+ 	if not path: return
+ 
+-	if self.env.DEST_OS == 'openbsd':
+-		libname = self.link_task.outputs[0].name
+-		bld.install_as('%s%s%s' % (path, os.sep, libname), node, env=self.env)
+-	else:
+-		bld.install_as(path + os.sep + name3, node, env=self.env)
+-		bld.symlink_as(path + os.sep + name2, name3)
+-		bld.symlink_as(path + os.sep + libname, name3)
++	bld.install_as(path + os.sep + name3, node, env=self.env)
++	bld.symlink_as(path + os.sep + name2, name3)
++	bld.symlink_as(path + os.sep + libname, name3)
+ 
+ 	# the following task is just to enable execution from the build dir :-/
+-	if self.env.DEST_OS != 'openbsd':
+-		self.create_task('vnum', node, [node.parent.find_or_declare(name2), node.parent.find_or_declare(name3)])
++	self.create_task('vnum', node, [node.parent.find_or_declare(name2), node.parent.find_or_declare(name3)])
+ 
+ def exec_vnum_link(self):
+ 	for x in self.outputs:
