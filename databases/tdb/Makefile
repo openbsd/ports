@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2015/07/18 02:11:13 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2015/07/18 02:22:33 jca Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	trivial database library
 
 DISTNAME=	tdb-1.2.12
+REVISION=	0
 
 SHARED_LIBS+=	tdb	4.0
 

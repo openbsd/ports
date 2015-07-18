@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/07/18 02:11:13 jca Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/07/18 02:22:33 jca Exp $
 @conflict samba-<3.5.0
 @bin bin/tdbbackup
 @bin bin/tdbdump
@@ -7,8 +7,6 @@
 include/tdb.h
 @lib lib/libtdb.so.${LIBtdb_VERSION}
 lib/pkgconfig/tdb.pc
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/tdb.so
 @man man/man8/tdbbackup.8
 @man man/man8/tdbdump.8
