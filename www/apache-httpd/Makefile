@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2015/07/18 00:55:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2015/07/18 01:11:40 sthen Exp $
 
 COMMENT-main=		apache HTTP server
 COMMENT-common=		shared files for Apache 1 and 2
 
 V=			2.4.16
+REVISION-main=		0
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
 
@@ -27,7 +28,6 @@ MASTER_SITES=		${MASTER_SITE_APACHE:=httpd/}
 MODULES=		converters/libiconv
 
 SHARED_ONLY=		Yes
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 MULTI_PACKAGES=		-main -common
@@ -44,7 +44,8 @@ LIB_DEPENDS-common=	# empty
 
 HTTPD_DIR=		/var/www
 CONFDIR=		${SYSCONFDIR}/apache2
-SUBST_VARS=		CONFDIR
+FLAVOR_COMMA=		${FLAVOR_EXT:S/-/,/g}
+SUBST_VARS=		CONFDIR FLAVOR_COMMA
 PREFIX-common=		/var/www
 
 CONFIGURE_STYLE=	simple
