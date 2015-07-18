@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_error_h,v 1.1 2015/07/18 11:09:38 kirby Exp $
+--- src/error.h.orig	Wed May 27 23:13:24 2015
++++ src/error.h	Wed May 27 23:13:37 2015
+@@ -35,7 +35,7 @@
+ #include <curses.h>
+ #endif
+ 
+-#include <settings.h>
++#include "settings.h"
+ 
+ #define TRACE_SIZE 128
+ 

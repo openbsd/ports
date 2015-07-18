@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2015/01/23 22:26:47 kirby Exp $
+# $OpenBSD: Makefile,v 1.4 2015/07/18 11:09:38 kirby Exp $
 
 PORTROACH = 		skipv:0.11,0.12
 
 COMMENT =		realtime console web log analyzer
 
-DISTNAME =		goaccess-0.8.5
+DISTNAME =		goaccess-0.9.2
 
 CATEGORIES =		www
 HOMEPAGE =		http://goaccess.io/
@@ -30,7 +30,7 @@ CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-build:
-	@perl -pi -e s,ncursesw/curses.h,curses.h, ${WRKSRC}/*.[ch]
+	@perl -pi -e s,ncursesw/curses.h,curses.h, ${WRKSRC}/src/*.[ch]
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/goaccess ${PREFIX}/bin/
