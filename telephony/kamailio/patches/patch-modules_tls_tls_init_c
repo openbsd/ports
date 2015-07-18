@@ -1,0 +1,15 @@
+$OpenBSD: patch-modules_tls_tls_init_c,v 1.1 2015/07/18 19:59:48 jca Exp $
+--- modules/tls/tls_init.c.orig	Mon Mar 11 09:27:18 2013
++++ modules/tls/tls_init.c	Sat Jul 18 12:09:30 2015
+@@ -347,9 +347,11 @@ static void init_ssl_methods(void)
+ 	ssl_methods[TLS_USE_SSLv2 - 1] = SSLv2_method();
+ #endif
+ 
++#ifndef OPENSSL_NO_SSL3
+ 	ssl_methods[TLS_USE_SSLv3_cli - 1] = SSLv3_client_method();
+ 	ssl_methods[TLS_USE_SSLv3_srv - 1] = SSLv3_server_method();
+ 	ssl_methods[TLS_USE_SSLv3 - 1] = SSLv3_method();
++#endif
+ 	
+ 	ssl_methods[TLS_USE_TLSv1_cli - 1] = TLSv1_client_method();
+ 	ssl_methods[TLS_USE_TLSv1_srv - 1] = TLSv1_server_method();
