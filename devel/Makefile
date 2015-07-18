@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1366 2015/07/18 00:20:15 jca Exp $
+# $OpenBSD: Makefile,v 1.1367 2015/07/18 00:33:33 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1191,6 +1191,7 @@
      SUBDIR += pscan
      SUBDIR += pth
      SUBDIR += ptlib
+     SUBDIR += pudb
      SUBDIR += py-Checker
      SUBDIR += py-SOAPpy
      SUBDIR += py-addons
