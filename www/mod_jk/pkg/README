@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2012/12/13 15:19:19 kurt Exp $
+$OpenBSD: README,v 1.4 2015/07/18 00:51:16 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -26,7 +26,7 @@ Sample configuration files will be installed to /var/www/conf if you don't
 already have them.
 
 1) Enable the module by executing ${TRUEPREFIX}/sbin/mod_jk-enable with root
-privileges (using sudo).
+privileges.
 
 2) If Tomcat is installed on another machine, edit the sample 
 /var/www/conf/workers.properties file and change the `worker.ajp13w.host'
