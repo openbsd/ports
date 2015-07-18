@@ -1,0 +1,16 @@
+$OpenBSD: patch-socket_c,v 1.8 2015/07/18 04:51:29 sthen Exp $
+--- socket.c.orig	Fri Jul 17 22:01:09 2015
++++ socket.c	Fri Jul 17 22:19:47 2015
+@@ -914,7 +914,12 @@ int SSLOpen(int sock, char *mycert, char *mykey, const
+ 			return -1;
+ #endif
+ 		} else if(!strcasecmp("ssl3",myproto)) {
++#if HAVE_DECL_SSLV3_CLIENT_METHOD + 0 > 0
+ 			_ctx[sock] = SSL_CTX_new(SSLv3_client_method());
++#else
++			report(stderr, GT_("Your operating system does not support SSLv3.\n"));
++			return -1;
++#endif
+ 		} else if(!strcasecmp("tls1",myproto)) {
+ 			_ctx[sock] = SSL_CTX_new(TLSv1_client_method());
+ 		} else if (!strcasecmp("ssl23",myproto)) {

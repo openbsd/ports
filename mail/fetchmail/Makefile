@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2015/05/25 07:54:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.146 2015/07/18 04:51:29 sthen Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
@@ -21,7 +21,8 @@ SUBST_VARS+=		MODPY_LIBDIR
 BUILD_DEPENDS=		devel/bison
 
 SEPARATE_BUILD=		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.68
 CFLAGS=			-I${LOCALBASE}/include
 CONFIGURE_ENV=		PYTHON=: YACC="bison -y"
 CONFIGURE_ARGS=		--with-ssl \

@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_ac,v 1.5 2015/07/18 04:51:29 sthen Exp $
+--- configure.ac.orig	Fri Jul 17 22:20:20 2015
++++ configure.ac	Fri Jul 17 22:20:34 2015
+@@ -803,6 +803,7 @@ fi
+ 
+ case "$LIBS" in *-lssl*)
+ 	AC_CHECK_DECLS([SSLv2_client_method],,,[#include <openssl/ssl.h>])
++	AC_CHECK_DECLS([SSLv3_client_method],,,[#include <openssl/ssl.h>])
+ 	;;
+ esac
+ 

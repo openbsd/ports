@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_h_in,v 1.1 2015/07/18 04:51:29 sthen Exp $
+--- config.h.in.orig	Fri Jul 17 22:18:55 2015
++++ config.h.in	Fri Jul 17 22:19:14 2015
+@@ -53,6 +53,10 @@
+    if you don't. */
+ #undef HAVE_DECL_SSLV2_CLIENT_METHOD
+ 
++/* Define to 1 if you have the declaration of `SSLv3_client_method', and to 0
++   if you don't. */
++#undef HAVE_DECL_SSLV3_CLIENT_METHOD
++
+ /* Define to 1 if you have the declaration of `strerror', and to 0 if you
+    don't. */
+ #undef HAVE_DECL_STRERROR
