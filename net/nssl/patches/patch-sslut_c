@@ -1,0 +1,12 @@
+$OpenBSD: patch-sslut_c,v 1.1 2015/07/18 16:36:22 jca Exp $
+--- sslut.c.orig	Sat Jul 18 10:34:52 2015
++++ sslut.c	Sat Jul 18 10:34:58 2015
+@@ -17,7 +17,7 @@ int	ssl_init_connect (SSL **ssl_socket, SSL_CTX **ctx)
+ {
+ 	SSLeay_add_ssl_algorithms ();
+ 
+-	if((*ctx = SSL_CTX_new (SSLv3_client_method())) == NULL)
++	if((*ctx = SSL_CTX_new (SSLv23_client_method())) == NULL)
+ 	   {
+ 		fprintf (stderr, "could not initialize SSL_CTX structure\n");
+ 		return (-1);

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/29 07:33:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/07/18 16:36:22 jca Exp $
 
 COMMENT=		netcat-like program with transparent SSL support
 
 DISTNAME=		nssl.005
 PKGNAME=		nssl-005
-REVISION=		2
+REVISION=		3
 CATEGORIES=		net
 
 HOMEPAGE=		http://nssl.sourceforge.net/
