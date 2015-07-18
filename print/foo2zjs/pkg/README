@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2015/07/07 14:33:34 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2015/07/18 21:38:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -17,7 +17,7 @@ run the following command as root each time the device is powered up:
 -> XXX is your printer firmware name
 -> /dev/ugenN.EE is the ugen(4) device (N) and endpoint (EE) of your
    printer; which can be found using
-   # sudo usbdevs -vd
+   # usbdevs -vd
 Alternatively, hotplugd(8) attach/detach scripts can automate this.
 
 Firmwares for some printers are available in the sysutils/firmware/ulpt
