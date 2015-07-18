@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/05/28 10:17:22 pascal Exp $
+# $OpenBSD: Makefile,v 1.39 2015/07/18 14:33:25 jasper Exp $
 
 COMMENT=	free open source planetarium
 
@@ -38,8 +38,7 @@ PORTHOME=	${WRKDIR}
 NO_TEST=	Yes
 
 pre-configure:
-	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
-		${WRKSRC}/CMakeLists.txt
+	sed -i 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/CMakeLists.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
