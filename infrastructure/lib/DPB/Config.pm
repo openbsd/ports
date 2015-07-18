@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.54 2015/07/17 20:11:45 espie Exp $
+# $OpenBSD: Config.pm,v 1.55 2015/07/18 08:35:37 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -42,6 +42,10 @@ sub setup_users
 				    $state->defines("DROPPRIV");
 			}
 		}
+	}
+	my $u = DPB::User->new('_dpb');
+	if (defined $u->{uid}) {
+		$state->{unpriv_user} = $u;
 	}
 	if (defined $state->{unpriv_user}) {
 		$state->{unpriv_user}->enforce_local;
