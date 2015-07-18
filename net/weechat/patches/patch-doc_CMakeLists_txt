@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_CMakeLists_txt,v 1.4 2014/10/08 13:46:16 nigel Exp $
---- doc/CMakeLists.txt.orig	Sun Sep 28 07:59:19 2014
-+++ doc/CMakeLists.txt	Mon Oct  6 19:20:37 2014
-@@ -23,12 +23,12 @@ if(ENABLE_MAN OR ENABLE_DOC)
-   find_package(Asciidoc)
-   if(ASCIIDOC_FOUND)
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.5 2015/07/18 23:10:37 ajacoutot Exp $
+--- doc/CMakeLists.txt.orig	Sun May 10 09:24:50 2015
++++ doc/CMakeLists.txt	Sun Jul 19 01:03:00 2015
+@@ -45,13 +45,13 @@ if(ENABLE_MAN OR ENABLE_DOC)
+     set(ASCIIDOC_ARGS_DEV        ${ASCIIDOC_ARGS} ${CSS_TOC2}   )
+ 
      add_subdirectory(en)
 -    add_subdirectory(fr)
 -    add_subdirectory(it)
@@ -19,5 +19,6 @@ $OpenBSD: patch-doc_CMakeLists_txt,v 1.4 2014/10/08 13:46:16 nigel Exp $
 +#    add_subdirectory(es)
 +#    add_subdirectory(ru)
 +#    add_subdirectory(ja)
+ 
    endif()
- endif()
+ 

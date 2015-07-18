@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/16 17:27:09 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2015/07/18 23:10:37 ajacoutot Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -6,7 +6,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		1.1
+V=		1.2
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -14,8 +14,6 @@ PKGNAME-lua=	weechat-lua-${V}
 PKGNAME-python=	weechat-python-${V}
 PKGNAME-ruby=	weechat-ruby-${V}
 PKGNAME-tcl=	weechat-tcl-${V}
-
-REVISION-ruby=	0
 
 CATEGORIES=	net
 
@@ -35,7 +33,7 @@ WANTLIB-main=	c curl m ncursesw perl pthread util \
 
 WANTLIB-lua=	${MODLUA_WANTLIB} m
 WANTLIB-python=	${MODPY_WANTLIB}
-WANTLIB-ruby=	${MODRUBY_WANTLIB} gmp m pthread
+WANTLIB-ruby=	${MODRUBY_WANTLIB}
 WANTLIB-tcl=	${MODTCL_WANTLIB}
 
 MODULES=	devel/cmake \
@@ -60,8 +58,7 @@ RUN_DEPENDS-lua=	net/weechat,-main ${MODLUA_RUN_DEPENDS}
 LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS}
 RUN_DEPENDS-python=	net/weechat,-main ${MODPY_RUN_DEPENDS}
 
-LIB_DEPENDS-ruby=	${MODRUBY_LIB_DEPENDS} \
-			devel/gmp
+LIB_DEPENDS-ruby=	${MODRUBY_LIB_DEPENDS}
 RUN_DEPENDS-ruby=	net/weechat,-main ${MODRUBY_RUN_DEPENDS}
 
 LIB_DEPENDS-tcl=	${MODTCL_LIB_DEPENDS}
