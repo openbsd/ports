@@ -1,0 +1,31 @@
+$OpenBSD: patch-autoconf_configure_in,v 1.1 2015/07/18 12:04:54 kirby Exp $
+
+Backport usb driver fix (rev2354)
+
+--- autoconf/configure.in.orig	Sat Jul 18 14:23:25 2015
++++ autoconf/configure.in	Sat Jul 18 14:37:43 2015
+@@ -589,6 +589,11 @@ AC_HELP_STRING([--disable-usb], [No USB UPS code (defa
+             ;;
+       esac
+ 
++      AC_DEFINE(HAVE_USB_DRIVER,, [Define if building USB driver])
++      USB_DRIVER="usb"
++      AC_SUBST(USB_DRIVER)
++      APCDRVLIBS="$APCDRVLIBS \$(topdir)/src/drivers/usb/libusbdrv.a"
++
+       case $usbhost in
+          *-*-linux*)
+             USB_TYPE="linux"
+@@ -608,12 +613,6 @@ AC_HELP_STRING([--disable-usb], [No USB UPS code (defa
+             USB_TYPE="generic"
+             ;;
+       esac
+-
+-      AC_DEFINE(HAVE_USB_DRIVER,, [Define if building USB driver])
+-      USB_DRIVER="usb"
+-      AC_SUBST(USB_DRIVER)
+-      AC_SUBST(USB_TYPE)
+-      APCDRVLIBS="$APCDRVLIBS \$(topdir)/src/drivers/usb/libusbdrv.a"
+ 
+       DISPLAY_USB_DRIVER=$USB_TYPE-$USB_DRIVER
+      fi ],

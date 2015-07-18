@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.1 2015/07/18 12:04:54 kirby Exp $
+
+Backport usb driver fix (rev2354)
+
+--- configure.orig	Sat Jul 18 14:24:09 2015
++++ configure	Sat Jul 18 14:33:17 2015
+@@ -679,9 +679,9 @@ SNMP_DRIVER
+ SNMPLITE_DRIVER
+ NET_DRIVER
+ USB_TYPE
+-USB_DRIVER
+ LIBUSBHIDINC
+ LIBUSBHID
++USB_DRIVER
+ DUMB_DRIVER
+ APCSMART_DRIVER
+ GDHEAD

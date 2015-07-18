@@ -1,0 +1,15 @@
+$OpenBSD: patch-autoconf_targets_mak,v 1.1 2015/07/18 12:04:54 kirby Exp $
+
+Backport usb driver fix (rev2354)
+
+--- autoconf/targets.mak.orig	Sat Jul 18 14:23:52 2015
++++ autoconf/targets.mak	Sat Jul 18 14:34:48 2015
+@@ -160,7 +160,7 @@ $(OBJDIR)/%.o: %.m
+ # Rule to link an executable
+ define LINK
+ 	@$(ECHO) "  LD   " $(RELDIR)$@
+-	$(V)$(LD) $(LDFLAGS) $^ -o $@ $(LIBS)
++	$(V)$(LD) $(LDFLAGS) $+ -o $@ $(LIBS)
+ endef
+ 
+ # Rule to generate an archive (library)
