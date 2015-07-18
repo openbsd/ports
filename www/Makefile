@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.727 2015/07/16 23:22:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.728 2015/07/18 20:32:04 kili Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -67,11 +67,6 @@
      SUBDIR += hs-html
      SUBDIR += hs-http-attoparsec
      SUBDIR += hs-http-types
-     SUBDIR += hs-snap
-     SUBDIR += hs-snap-core
-     SUBDIR += hs-snap-loader-dynamic
-     SUBDIR += hs-snap-loader-static
-     SUBDIR += hs-snap-server
      SUBDIR += hs-wai
      SUBDIR += hs-warp
      SUBDIR += hs-webkit
