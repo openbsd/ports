@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_ssl_stubs_c,v 1.1 2015/07/18 18:31:23 jca Exp $
+--- src/ssl_stubs.c.orig	Sun Oct 16 12:57:56 2011
++++ src/ssl_stubs.c	Sat Jul 18 12:28:06 2015
+@@ -269,6 +269,7 @@ static const SSL_METHOD *get_method(int protocol, int 
+       }
+       break;
+ 
++#ifndef OPENSSL_NO_SSL3
+     case 1:
+       switch (type)
+       {
+@@ -285,6 +286,7 @@ static const SSL_METHOD *get_method(int protocol, int 
+           break;
+       }
+       break;
++#endif
+ 
+     case 2:
+       switch (type)
