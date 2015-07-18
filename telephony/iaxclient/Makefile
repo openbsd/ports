@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/05/18 18:04:24 sebastia Exp $
+# $OpenBSD: Makefile,v 1.31 2015/07/18 23:59:54 jasper Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -60,7 +60,7 @@ LIB_DEPENDS=	audio/gsm \
 		audio/speex \
 		graphics/ffmpeg>=20130319 \
 		graphics/libvidcap \
-		multimedia/libtheora	
+		multimedia/libtheora
 
 LIB_DEPENDS-tcl=${LIB_DEPENDS} \
 		${BASE_PKGPATH} \
