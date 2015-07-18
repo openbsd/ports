@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/05/05 17:00:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2015/07/18 23:55:43 jasper Exp $
 
 COMMENT=	Xfce4 widget library
 
@@ -40,6 +40,6 @@ LIB_DEPENDS=	x11/xfce4/xfconf>=4.12.0 \
 FAKE_FLAGS=	settingsdir=${PREFIX}/share/examples/xfconf
 
 post-install:
-	perl -pi -e 's/Control/Primary/' ${PREFIX}/share/examples/xfconf/xfce4-keyboard-shortcuts.xml
+	sed -i 's/Control/Primary/' ${PREFIX}/share/examples/xfconf/xfce4-keyboard-shortcuts.xml
 
 .include <bsd.port.mk>
