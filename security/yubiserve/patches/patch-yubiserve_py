@@ -1,4 +1,4 @@
-$OpenBSD: patch-yubiserve_py,v 1.4 2014/12/22 14:10:58 sthen Exp $
+$OpenBSD: patch-yubiserve_py,v 1.5 2015/07/18 04:09:27 sthen Exp $
 
 sqlite3 support from
 http://code.google.com/p/yubico-yubiserve/source/list r39
@@ -6,8 +6,8 @@ http://code.google.com/p/yubico-yubiserve/source/list r39
 remove bogus timestamp checking code; that isn't what the timestamps are for,
 and they wrap after between 0 and 24-and-a-bit days uptime causing failures.
 
---- yubiserve.py.orig	Mon Dec 22 14:09:49 2014
-+++ yubiserve.py	Mon Dec 22 14:10:08 2014
+--- yubiserve.py.orig	Fri Jul 17 22:07:56 2015
++++ yubiserve.py	Fri Jul 17 22:07:56 2015
 @@ -1,4 +1,4 @@
 -#!/usr/bin/python
 +#!${MODPY_BIN}
@@ -172,14 +172,8 @@ and they wrap after between 0 and 24-and-a-bit days uptime causing failures.
  						api_key = cur.fetchone()[0]
  						otp_hmac = hmac.new(api_key, msg=result, digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
  			except KeyError:
-@@ -321,10 +331,11 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
- class SecureHTTPServer(BaseHTTPServer.HTTPServer):
- 	def __init__(self, server_address, HandlerClass):
- 		BaseHTTPServer.HTTPServer.__init__(self, server_address, HandlerClass)
--		ctx = SSL.Context(SSL.SSLv23_METHOD)
--		fpem = os.path.dirname(os.path.realpath(__file__)) + '/yubiserve.pem'
-+		ctx = SSL.Context(SSL.TLSv1_METHOD)
-+		fpem = '${SYSCONFDIR}/yubiserve/yubiserve.pem'
+@@ -325,6 +335,7 @@ class SecureHTTPServer(BaseHTTPServer.HTTPServer):
+ 		fpem = os.path.dirname(os.path.realpath(__file__)) + '/yubiserve.pem'
  		ctx.use_privatekey_file (fpem)
  		ctx.use_certificate_file(fpem)
 +		ctx.use_certificate_chain_file(fpem)
