@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/05/25 07:51:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2015/07/18 22:29:56 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -94,7 +94,7 @@ MAKE_FLAGS +=		INSTALL_DATA='/usr/bin/install -c -m 444'
 .endif
 
 post-patch:
-	find ${WRKSRC} -name Makefile.in -exec perl -pi -e \
+	find ${WRKSRC} -name Makefile.in -exec sed -i \
 		's|-r:Mono.Cairo|-r:${PREFIX}/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.dll|' {} \;
 
 post-install:

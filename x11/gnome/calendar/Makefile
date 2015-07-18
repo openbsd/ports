@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/12 06:41:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/07/18 22:29:56 ajacoutot Exp $
 
 COMMENT =		GNOME calendar
 
@@ -31,7 +31,7 @@ MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
 
 pre-configure:
 # XXX cc1: error: unrecognized command line option
-	perl -pi -e 's,-Wempty-body,,; \
-		s,-Wvla,,;' ${WRKSRC}/configure
+	sed -i -e 's,-Wempty-body,,' \
+		-e 's,-Wvla,,' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

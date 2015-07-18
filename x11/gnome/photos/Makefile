@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2015/05/13 13:33:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2015/07/18 22:29:56 ajacoutot Exp $
 
 TRACKER_API=		1.0
 
@@ -57,7 +57,7 @@ RUN_DEPENDS +=		x11/gnome/grilo-plugins
 # cc1: error: unrecognized command line option "-Wunused-but-set-variable"
 # cc1: error: unrecognized command line option "-Warray-bounds"
 pre-configure:
-	perl -pi -e 's,-Wunused-but-set-variable,,g;' \
+	sed -i -e 's,-Wunused-but-set-variable,,g' \
 		-e 's,-Warray-bounds,,g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

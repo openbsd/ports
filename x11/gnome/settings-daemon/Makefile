@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2015/05/12 15:30:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.147 2015/07/18 22:29:56 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -80,7 +80,7 @@ FAKE_FLAGS=		desktopdir=${PREFIX}/share/examples/gnome-settings-daemon/xdg/autos
 			DBUS_SYS_DIR=${PREFIX}/share/examples/gnome-settings-daemon/dbus-1/system.d
 
 pre-configure:
-	perl -pi -e 's,/etc/xdg,${SYSCONFDIR}/xdg,g;' \
+	sed -i -e 's,/etc/xdg,${SYSCONFDIR}/xdg,g' \
 		-e 's,/usr/share,${LOCALBASE}/share,g' \
 		${WRKSRC}/man/gnome-settings-daemon.xml
 

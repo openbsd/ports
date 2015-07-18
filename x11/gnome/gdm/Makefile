@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.232 2015/07/16 01:51:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.233 2015/07/18 22:29:56 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -85,10 +85,10 @@ CONFIGURE_ARGS=		--disable-systemd-journal \
 			--with-initial-vt=05
 
 pre-configure:
-	perl -pi -e 's,root:root,root:wheel,g;' \
-		-e 's,root:gdm,root:676,g;' \
+	sed -i -e 's,root:root,root:wheel,g' \
+		-e 's,root:gdm,root:676,g' \
 		-e 's,gdm:gdm,676:676,g' ${WRKSRC}/data/Makefile.in
-	perl -pi -e 's,/usr/local,${LOCALBASE},g;' \
+	sed -i -e 's,/usr/local,${LOCALBASE},g' \
 		-e 's,/bin/bash,/bin/ksh,g' \
 		${WRKSRC}/daemon/gdm-session-worker.c
 

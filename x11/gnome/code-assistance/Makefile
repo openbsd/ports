@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/07/16 17:27:09 jeremy Exp $
+# $OpenBSD: Makefile,v 1.18 2015/07/18 22:29:56 ajacoutot Exp $
 
 COMMENT=		code assistance services for GNOME
 
@@ -42,6 +42,6 @@ CONFIGURE_ARGS +=	--disable-go
 
 # python3 vs. python3.3
 post-extract:
-	perl -pi -e 's,PYTHON_VERSION_MAJOR,PYTHON_VERSION,g' ${WRKSRC}/backends/*/*.in
+	sed -i 's,PYTHON_VERSION_MAJOR,PYTHON_VERSION,g' ${WRKSRC}/backends/*/*.in
 
 .include <bsd.port.mk>

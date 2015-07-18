@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/04/15 09:40:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2015/07/18 22:29:56 ajacoutot Exp $
 
 COMMENT=		clock application for GNOME
 
@@ -37,7 +37,7 @@ RUN_DEPENDS +=		geo/geoclue2
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache vala yelp
 
 pre-configure:
-	perl -pi -e 's,.-Wno-unused-but-set-variable,,' \
+	sed -i 's,.-Wno-unused-but-set-variable,,' \
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

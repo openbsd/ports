@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/05/13 16:54:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2015/07/18 22:29:57 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,7 +43,7 @@ LIB_DEPENDS=	audio/libmusicbrainz5 \
 
 # XXX
 pre-configure:
-	perl -pi -e 's,clutter-gst-2.0,clutter-gst-3.0,g' ${WRKSRC}/configure
+	sed -i 's,clutter-gst-2.0,clutter-gst-3.0,g' ${WRKSRC}/configure
 
 post-install:
 	rm ${PREFIX}/lib/sushi/*.{a,la}

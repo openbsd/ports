@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2015/06/07 13:18:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.137 2015/07/18 22:29:57 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -39,8 +39,8 @@ MODGNOME_TOOLS=	desktop-file-utils vala yelp
 
 pre-configure:
 # XXX cc1: error: unrecognized command line option
-	perl -pi -e 's,-Wno-unused-but-set-variable,,; \
-		s,-Wno-suggest-attribute=format,,;' \
+	sed -i -e 's,-Wno-unused-but-set-variable,,' \
+		-e 's,-Wno-suggest-attribute=format,,' \
 		${WRKSRC}/src/Makefile.in
 
 post-install:

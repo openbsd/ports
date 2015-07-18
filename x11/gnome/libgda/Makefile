@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2015/06/13 13:16:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2015/07/18 22:29:56 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -147,7 +147,7 @@ RUN_DEPENDS-ldap=	${MODGETTEXT_RUN_DEPENDS}
 AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf no-autoheader
 post-patch:
-	perl -pi -e 's,bdb_libext="\$$linklibext",bdb_libext=".so.5.0",' ${WRKSRC}/m4/bdb.m4
+	sed -i 's,bdb_libext="\$$linklibext",bdb_libext=".so.5.0",' ${WRKSRC}/m4/bdb.m4
 
 post-install:
 	rm ${PREFIX}/lib/libgda-${GDA_MAJOR}/{plugins,providers}/*.la

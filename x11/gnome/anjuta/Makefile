@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2015/04/15 09:40:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.130 2015/07/18 22:29:56 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -75,10 +75,10 @@ CONFIGURE_ARGS=		--with-symbol-db-shm=/tmp \
 			--disable-neon
 
 pre-configure:
-	perl -pi -e "s,/usr/bin/python,${MODPY_BIN},g" \
+	sed -i "s,/usr/bin/python,${MODPY_BIN},g" \
 		${WRKSRC}/plugins/language-support-python/org.gnome.anjuta.plugins.python.gschema.xml.in
 
-	perl -pi -e "s,>python<,>python${MODPY_VERSION}<,g" \
+	sed -i "s,>python<,>python${MODPY_VERSION}<,g" \
 		${WRKSRC}/plugins/project-wizard/templates/pygtk.wiz.in \
 		${WRKSRC}/plugins/project-wizard/templates/python.wiz.in
 

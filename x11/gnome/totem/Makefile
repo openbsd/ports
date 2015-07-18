@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2015/06/29 15:20:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.136 2015/07/18 22:29:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -68,7 +68,7 @@ MODGNOME_TOOLS += vala yelp
 pre-configure:
 # XXX cc1: error: unrecognized command line option "-Wno-unused-but-set-variable"
 	find ${WRKSRC} -name Makefile.in | xargs -r \
-		perl -pi -e 's,-Wno-unused-but-set-variable,,' \
+		sed -i 's,-Wno-unused-but-set-variable,,' \
 		${WRKSRC}/src/Makefile.in
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/04/15 09:40:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2015/07/18 22:29:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -47,7 +47,7 @@ CONFIGURE_ARGS +=	--disable-bluetooth
 BUILD_DEPENDS +=	textproc/itstool
 
 pre-configure:
-	perl -pi -e 's,/usr/share,${TRUEPREFIX}/share,g' \
+	sed -i 's,/usr/share,${TRUEPREFIX}/share,g' \
 		${WRKSRC}/data/dav_user_2.*.conf
 
 post-install:

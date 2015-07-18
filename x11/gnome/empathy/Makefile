@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2015/05/13 13:24:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.173 2015/07/18 22:29:56 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
@@ -82,7 +82,7 @@ CONFIGURE_ARGS +=	--disable-ubuntu-online-accounts
 
 # XXX
 pre-configure:
-	perl -pi -e 's,clutter-gst-2.0,clutter-gst-3.0,g' ${WRKSRC}/configure
+	sed -i 's,clutter-gst-2.0,clutter-gst-3.0,g' ${WRKSRC}/configure
 
 post-install:
 	rm ${PREFIX}/lib/mission-control-plugins.0/*.{a,la}

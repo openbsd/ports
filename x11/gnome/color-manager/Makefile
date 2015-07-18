@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2015/04/15 09:40:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2015/07/18 22:29:56 ajacoutot Exp $
 
 COMMENT=		color profile manager for GNOME
 
@@ -44,7 +44,7 @@ CONFIGURE_ENV +=	ac_cv_path_DOCBOOK2MAN=no
 MAKE_FLAGS=		WARNINGFLAGS_C=
 
 pre-configure:
-	perl -pi -e 's,/usr/share,${LOCALBASE}/share,g;' \
+	sed -i -e 's,/usr/share,${LOCALBASE}/share,g' \
 		-e 's,/usr/bin,${LOCALBASE}/bin,g' \
 		${WRKSRC}/src/{gcm-calibrate.c,gcm-calibrate-argyll.c,gcm-picker.c,gcm-calibrate-main.c}
 
