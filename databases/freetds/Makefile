@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2015/06/28 19:24:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2015/07/18 21:11:18 jasper Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -59,7 +59,7 @@ pre-configure:
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		NOCONFIGURE=1 ./autogen.sh
-	perl -pi -e 's,/etc/odbc.ini,${SYSCONFDIR}/iodbc/odbc.ini,' \
+	sed -i 's,/etc/odbc.ini,${SYSCONFDIR}/iodbc/odbc.ini,' \
 		${WRKSRC}/src/odbc/connectparams.c
 
 .include <bsd.port.mk>

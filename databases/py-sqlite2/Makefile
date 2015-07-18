@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/04/21 18:40:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2015/07/18 21:11:18 jasper Exp $
 
 COMMENT =	SQLite3 adapter for Python
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS =	textproc/py-sphinx
 MODULES =	lang/python
 
 pre-configure:
-	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g' ${WRKSRC}/setup.cfg
+	@sed -i 's|_LOCALBASE_|${LOCALBASE}|g' ${WRKSRC}/setup.cfg
 
 post-build:
 	cd ${WRKSRC} && \

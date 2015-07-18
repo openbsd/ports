@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/02/16 22:57:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2015/07/18 21:11:18 jasper Exp $
 
 COMMENT=	open-source LDAP software (server, legacy version)
 
@@ -68,7 +68,7 @@ pre-build:
 	@cd ${WRKBUILD}; ${MAKE_PROGRAM} depend
 
 pre-configure:
-	@perl -pi -e 's,database	bdb,database	ldbm,' \
+	@sed -i 's,database	bdb,database	ldbm,' \
 		${WRKSRC}/servers/slapd/slapd.conf
 
 post-install:

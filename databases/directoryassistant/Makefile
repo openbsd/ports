@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/10/19 10:02:11 jung Exp $
+# $OpenBSD: Makefile,v 1.20 2015/07/18 21:11:18 jasper Exp $
 
 COMMENT=	small application for managing a LDAP address book
 
@@ -22,10 +22,10 @@ NO_TEST=	Yes
 PKG_ARCH=	*
 
 pre-install:
-	@perl -pi -e "s,/usr/bin/python,${MODPY_BIN}," \
+	sed -i -e "s,/usr/bin/python,${MODPY_BIN}," \
+		-e "s,/usr/local,${LOCALBASE},g" \
 		${WRKSRC}/directoryassistant
-	@perl -pi -e "s,/etc,${SYSCONFDIR}," ${WRKSRC}/directoryassistant*
-	@perl -pi -e "s,/usr/local,${LOCALBASE},g" ${WRKSRC}/directoryassistant
+	sed -i "s,/etc,${SYSCONFDIR}," ${WRKSRC}/directoryassistant*
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/directoryassistant ${PREFIX}/bin/

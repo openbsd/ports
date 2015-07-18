@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/10/15 02:22:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.21 2015/07/18 21:11:18 jasper Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
@@ -21,7 +21,7 @@ MASTER_SITES=	https://github.com/downloads/markokr/skytools/
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	databases/postgresql,-server 
+BUILD_DEPENDS=	databases/postgresql,-server
 
 RUN_DEPENDS=    databases/py-psycopg2
 
@@ -30,7 +30,7 @@ USE_GMAKE=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-python=${MODPY_BIN} 
+CONFIGURE_ARGS=	--with-python=${MODPY_BIN}
 
 BINFILES=	bulk_loader.py cube_dispatcher.py londiste.py \
 		pgqadm.py queue_mover.py queue_splitter.py \
@@ -40,7 +40,7 @@ BINFILES=	bulk_loader.py cube_dispatcher.py londiste.py \
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/doc/Makefile
 	@find ${WRKSRC} -name '*.py' \
-		-exec perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},' {} \; 
-	@perl -pi -e 's,share/doc,share/examples,' ${WRKSRC}/setup.py
+		-exec sed -i 's,/usr/bin/env python,${MODPY_BIN},' {} \;
+	@sed -i 's,share/doc,share/examples,' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

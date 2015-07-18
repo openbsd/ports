@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/16 02:43:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/18 21:11:18 jasper Exp $
 
 COMMENT=		simple pluggable hierarchical database
 
@@ -27,7 +27,7 @@ TEST_DEPENDS=		devel/ruby-mocha,${MODRUBY_FLAVOR}
 MODRUBY_TEST=		rspec3
 
 pre-configure:
-	perl -pi -e 's,/var/lib,/var/db,g' \
+	sed -i 's,/var/lib,/var/db,g' \
 		${WRKSRC}/lib/hiera/backend.rb \
 		${WRKSRC}/lib/hiera/util.rb \
 		${WRKSRC}/spec/unit/util_spec.rb \

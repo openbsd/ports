@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/02/16 22:57:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2015/07/18 21:11:18 jasper Exp $
 
 COMMENT=	import CSV data and Large Object to PostgreSQL
 
@@ -26,9 +26,9 @@ EGGDIRS=	allcols clob cluttered csv errors fixed parallel \
 		partial reformat serial simple udc
 
 pre-configure:
-	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},' \
+	@sed -i 's,/usr/bin/env python,${MODPY_BIN},' \
 		${WRKSRC}/pgloader.py
-	@perl -pi -e 's,/usr/share/python-support,${MODPY_LIBDIR},' \
+	@sed -i 's,/usr/share/python-support,${MODPY_LIBDIR},' \
 		${WRKSRC}/pgloader/options.py
 
 do-install:

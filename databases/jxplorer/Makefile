@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/05/07 15:42:15 kurt Exp $
+# $OpenBSD: Makefile,v 1.15 2015/07/18 21:11:18 jasper Exp $
 
 COMMENT=	standards compliant LDAP browser
 
@@ -27,7 +27,7 @@ NO_TEST=	Yes
 
 do-configure:
 	@cp ${FILESDIR}/jxplorer ${WRKSRC}
-	@perl -pi -e "s,%%PREFIX%%,${PREFIX}," \
+	@sed -i "s,%%PREFIX%%,${PREFIX}," \
 		${WRKSRC}/jxplorer \
 		${WRKSRC}/jxplorer.sh
 

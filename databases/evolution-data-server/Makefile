@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2015/07/13 07:02:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.194 2015/07/18 21:11:18 jasper Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -70,11 +70,11 @@ CONFIGURE_ARGS=		--with-openldap=${LOCALBASE}
 CONFIGURE_ARGS +=	--disable-uoa
 
 pre-configure:
-	perl -pi -e 's,/usr/sbin/imapd,${LOCALBASE}/libexec/imapd,g' \
+	sed -i 's,/usr/sbin/imapd,${LOCALBASE}/libexec/imapd,g' \
 		${WRKSRC}/camel/providers/imapx/camel-imapx-settings.c \
 		${WRKSRC}/docs/reference/camel/html/CamelIMAPXSettings.html
 # XXX cc1plus: error: unrecognized command line option "-Wnoexcept"
-	perl -pi -e 's,-Wnoexcept,,' ${WRKSRC}/configure
+	sed -i 's,-Wnoexcept,,' ${WRKSRC}/configure
 
 post-install:
 	rm ${PREFIX}/lib/evolution-data-server/*/*.{a,la}

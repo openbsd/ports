@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2014/11/01 19:29:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2015/07/18 21:11:18 jasper Exp $
 
 COMMENT=		GNU dbm
 
@@ -29,6 +29,6 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 TEST_DEPENDS +=		sysutils/coreutils
 
 post-extract:
-	perl -pi -e 's,sort,gsort,g' ${WRKSRC}/tests/testsuite
+	sed -i 's,sort,gsort,g' ${WRKSRC}/tests/testsuite
 
 .include <bsd.port.mk>

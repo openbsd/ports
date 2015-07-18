@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/06/12 17:57:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2015/07/18 21:11:18 jasper Exp $
 
 PORTROACH=		limit:^1
 
@@ -29,7 +29,7 @@ TEST_DEPENDS=		devel/ruby-mocha,${MODRUBY_FLAVOR}
 MODRUBY_TEST=		rspec3
 
 pre-configure:
-	perl -pi -e 's,/var/lib,/var/db,g' \
+	sed -i 's,/var/lib,/var/db,g' \
 		${WRKSRC}/lib/hiera/backend.rb \
 		${WRKSRC}/lib/hiera/util.rb \
 		${WRKSRC}/spec/unit/util_spec.rb \

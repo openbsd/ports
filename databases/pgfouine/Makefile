@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/06/05 06:00:21 robert Exp $
+# $OpenBSD: Makefile,v 1.14 2015/07/18 21:11:18 jasper Exp $
 
 COMMENT =	PostgreSQL log analyzer
 
@@ -25,7 +25,7 @@ MODULES =	lang/php
 RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-gd
 
 pre-configure:
-	@perl -pi -e 's,/usr/bin/php,${MODPHP_BIN},g;' \
+	@sed -i -e 's,/usr/bin/php,${MODPHP_BIN},g;' \
 		-e 's,!!PREFIX!!,${PREFIX},g' \
 		 ${WRKSRC}/pgfouine.php ${WRKSRC}/pgfouine_vacuum.php
 	@find ${WRKSRC} -type d -name CVS | xargs rm -fr

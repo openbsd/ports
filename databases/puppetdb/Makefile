@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/07/17 15:07:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2015/07/18 21:11:18 jasper Exp $
 
 PORTROACH=	limit:^2
 
@@ -46,7 +46,7 @@ do-configure:
 .for s in ${SCRIPTS}
 	${SUBST_CMD} ${WRKSRC}/ext/files/puppetdb-$s
 .endfor
-	perl -pi -e 's,/bin/bash,${LOCALBASE}/bin/bash,g;' \
+	sed -i -e 's,/bin/bash,${LOCALBASE}/bin/bash,g;' \
 		-e 's,/usr/libexec,${LOCALBASE}/libexec,g;' \
 		${WRKSRC}/ext/files/puppetdb*
 

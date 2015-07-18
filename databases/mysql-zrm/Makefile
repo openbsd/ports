@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/03/16 10:04:11 giovanni Exp $
+# $OpenBSD: Makefile,v 1.22 2015/07/18 21:11:18 jasper Exp $
 
 COMMENT =	MySQL backup scripts
 
@@ -33,7 +33,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/usr/bin/mysql-zrm-verify-backup
 	${SUBST_CMD} ${WRKSRC}/usr/lib/mysql-zrm/ZRM/MySQL.pm
 	${SUBST_CMD} ${WRKSRC}/etc/mysql-zrm/mysql-zrm.conf
-	@perl -pi -e 's,/usr/lib,${TRUEPREFIX}/lib,g;' \
+	@sed -i -e 's,/usr/lib,${TRUEPREFIX}/lib,g;' \
 	    -e 's,/usr/bin/mysql-,${TRUEPREFIX}/bin/mysql-,g;' \
 	    -e 's,/usr/bin/zrm-,${TRUEPREFIX}/bin/zrm-,g;' \
 	    ${WRKSRC}/usr/bin/*zrm*
