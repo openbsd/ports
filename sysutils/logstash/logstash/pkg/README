@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2015/06/10 13:25:32 jasper Exp $
+$OpenBSD: README,v 1.2 2015/07/18 01:54:26 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,14 +6,14 @@ $OpenBSD: README,v 1.1 2015/06/10 13:25:32 jasper Exp $
 
 Logstash should be started with it's own uid/gid _logstash, since this user
 has all necessary filesystem permissions. For example, if you want to check
-the configuration, use sudo(8):
+the configuration, use su(1):
 
-    sudo -u _logstash ${TRUEPREFIX}/logstash/bin/logstash 
-	-f /etc/logstash/conf
+    # su -m _logstash -c \
+        "${TRUEPREFIX}/logstash/bin/logstash -f /etc/logstash/conf"
 
 Or if you want to manage plugins:
 
-    $ sudo -u _logstash ${TRUEPREFIX}/logstash/bin/plugin install <plugin>
+    # su -m _logstash -c "${TRUEPREFIX}/logstash/bin/plugin install <plugin>"
 
 If you get an error from JVM stating that it could not reserve enough space
 for object heap, it indicates that your login(1) class has insufficient data
@@ -25,10 +25,10 @@ datasize-cur limit should be at least 780 megabytes.
 You can either adjust your limits in login.conf(5), or adjust the heap size 
 setting an it via the environment variable:
 
-    sudo -u _logstash env LS_HEAP_SIZE=200m \
-	${TRUEPREFIX}/logstash/bin/logstash -f /etc/logstash/conf
+    # su -m _logstash -c "env LS_HEAP_SIZE=200m \
+	${TRUEPREFIX}/logstash/bin/logstash -f /etc/logstash/conf"
 	
 or if you want to install plugin:
 
-    sudo -u _logstash env LS_HEAP_SIZE=200m \
-	${TRUEPREFIX}/logstash/bin/plugin install <plugin>
+    # su -m _logstash -c "env LS_HEAP_SIZE=200m \
+	${TRUEPREFIX}/logstash/bin/plugin install <plugin>"
