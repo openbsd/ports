@@ -2,10 +2,10 @@ To completely deinstall Hatchet, the following steps must be completed.
 
 1) Remove the relevant entry in httpd.conf and restart httpd.
 
-2) Remove the relevant lines from crontab.
+2) Remove the relevant lines from root's crontab.
 
-	14,29,44,59 * * * *     sudo ${PREFIX}/hatchet/sbin/hatchet
-	19,34,49,04 * * * *     sudo ${PREFIX}/hatchet/sbin/hatchart
+	14,29,44,59 * * * *     ${PREFIX}/hatchet/sbin/hatchet
+	19,34,49,04 * * * *     ${PREFIX}/hatchet/sbin/hatchart
 
 3) Delete the Hatchet directory (${PREFIX}/hatchet/).
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2013/07/05 07:45:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/07/18 21:05:38 ajacoutot Exp $
 
 COMMENT=	PF firewall log analysis
 
 DISTNAME=	hatchet-0.9.2
 CATEGORIES=	security www
 HOMEPAGE=	http://www.dixongroup.net/hatchet/
+REVISION=	0
 
 MAINTAINER=	Jason Dixon <jdixon@openbsd.org>
 

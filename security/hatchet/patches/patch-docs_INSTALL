@@ -1,16 +1,24 @@
-$OpenBSD: patch-docs_INSTALL,v 1.3 2008/11/30 22:33:30 jdixon Exp $
---- docs/INSTALL.orig	Sun Nov 30 00:29:12 2008
-+++ docs/INSTALL	Sun Nov 30 00:52:21 2008
-@@ -15,7 +15,7 @@
+$OpenBSD: patch-docs_INSTALL,v 1.4 2015/07/18 21:05:38 ajacoutot Exp $
+--- docs/INSTALL.orig	Sun Nov 30 06:29:12 2008
++++ docs/INSTALL	Sat Jul 18 23:03:36 2015
+@@ -14,8 +14,8 @@
+ 
  1) Install the Hatchet directory
  
- 	$ tar zxvf hatchet-0.9.2.tar.gz
+-	$ tar zxvf hatchet-0.9.2.tar.gz
 -	$ sudo mv hatchet-0.9.2 /var/www/hatchet
-+	$ sudo mv hatchet-0.9.2 ${PREFIX}/hatchet
++	# tar zxvf hatchet-0.9.2.tar.gz
++	# mv hatchet-0.9.2 ${PREFIX}/hatchet
  
  2) Install the following Perl modules
  
-@@ -33,12 +33,12 @@
+@@ -28,17 +28,17 @@
+ 
+ 3) Install mod_perl (www/mod_perl) and enable the module
+ 
+-	$ sudo mod_perl-enable
++	# mod_perl-enable
+ 
  4) Add an entry in httpd.conf and restart httpd.  Example:
  
          <VirtualHost _default_:80>
@@ -25,21 +33,23 @@ $OpenBSD: patch-docs_INSTALL,v 1.3 2008/11/30 22:33:30 jdixon Exp $
                  Options ExecCGI
                  PerlSendHeader On
                  allow from all
-@@ -47,14 +47,14 @@
+@@ -47,14 +47,13 @@
  
  5) Create the database
  
 -	$ cd /var/www/hatchet/sbin/
-+	$ cd ${PREFIX}/hatchet/sbin/
- 	$ sudo ./hatchet_mkdb
+-	$ sudo ./hatchet_mkdb
++	# cd ${PREFIX}/hatchet/sbin/
++	# ./hatchet_mkdb
  
- 6) Add the following lines in crontab.  If done as a non-root user, 
-     make sure to use sudo.
+-6) Add the following lines in crontab.  If done as a non-root user, 
+-    make sure to use sudo.
++6) Add the following lines in root's crontab.
  
 -	14,29,44,59 * * * *     sudo /var/www/hatchet/sbin/hatchet
 -	19,34,49,04 * * * *     sudo /var/www/hatchet/sbin/hatchart
-+	14,29,44,59 * * * *     sudo ${PREFIX}/hatchet/sbin/hatchet
-+	19,34,49,04 * * * *     sudo ${PREFIX}/hatchet/sbin/hatchart
++	14,29,44,59 * * * *     ${PREFIX}/hatchet/sbin/hatchet
++	19,34,49,04 * * * *     ${PREFIX}/hatchet/sbin/hatchart
  
  7) Voila!  That should be everything.  If I've forgotten something, 
     or it's not working quite right for you, please email me at 

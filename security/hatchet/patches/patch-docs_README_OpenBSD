@@ -1,7 +1,13 @@
-$OpenBSD: patch-docs_README_OpenBSD,v 1.1.1.1 2008/06/27 15:16:01 jdixon Exp $
---- docs/README.OpenBSD.orig	Mon Jun 23 21:39:58 2008
-+++ docs/README.OpenBSD	Mon Jun 23 21:40:19 2008
-@@ -13,12 +13,12 @@ To finish installing Hatchet, the following steps must
+$OpenBSD: patch-docs_README_OpenBSD,v 1.2 2015/07/18 21:05:38 ajacoutot Exp $
+--- docs/README.OpenBSD.orig	Sun Nov 30 06:29:12 2008
++++ docs/README.OpenBSD	Sat Jul 18 23:03:22 2015
+@@ -8,17 +8,17 @@ To finish installing Hatchet, the following steps must
+ 
+ 1) Install mod_perl (www/mod_perl) and enable the module
+ 
+-	$ sudo mod_perl-enable
++	# mod_perl-enable
+ 
  2) Add an entry in httpd.conf and restart httpd.  Example:
  
          <VirtualHost _default_:80>
@@ -16,20 +22,22 @@ $OpenBSD: patch-docs_README_OpenBSD,v 1.1.1.1 2008/06/27 15:16:01 jdixon Exp $
                  Options ExecCGI
                  PerlSendHeader On
                  allow from all
-@@ -27,13 +27,13 @@ To finish installing Hatchet, the following steps must
+@@ -27,13 +27,12 @@ To finish installing Hatchet, the following steps must
  
  3) Create the database
  
 -	$ cd /var/www/hatchet/sbin/
-+	$ cd ${PREFIX}/hatchet/sbin/
- 	$ sudo ./hatchet_mkdb
+-	$ sudo ./hatchet_mkdb
++	# cd ${PREFIX}/hatchet/sbin/
++	# ./hatchet_mkdb
  
- 4) Add the following lines in crontab.  If done as a non-root user, 
-     make sure to use sudo.
+-4) Add the following lines in crontab.  If done as a non-root user, 
+-    make sure to use sudo.
++4) Add the following lines to root's crontab.
  
 -	14,29,44,59 * * * *     sudo /var/www/hatchet/sbin/hatchet
 -	19,34,49,04 * * * *     sudo /var/www/hatchet/sbin/hatchart
-+	14,29,44,59 * * * *     sudo ${PREFIX}/hatchet/sbin/hatchet
-+	19,34,49,04 * * * *     sudo ${PREFIX}/hatchet/sbin/hatchart
++	14,29,44,59 * * * *     ${PREFIX}/hatchet/sbin/hatchet
++	19,34,49,04 * * * *     ${PREFIX}/hatchet/sbin/hatchart
  
  
