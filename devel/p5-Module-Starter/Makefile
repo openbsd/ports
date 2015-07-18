@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/07/18 21:14:07 jasper Exp $
 
 COMMENT =		simple starter kit for any module
 
 MODULES =		cpan
 DISTNAME =		Module-Starter-1.54
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 CPAN_AUTHOR =		PETDANCE
 
-MAINTAINER =		James Wright <jamesw@openbsd.org>
+MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
