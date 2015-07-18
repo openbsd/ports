@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2015/01/21 02:26:00 bcallah Exp $
+# $OpenBSD: Makefile,v 1.36 2015/07/18 01:11:18 ajacoutot Exp $
 
 COMMENT=	MS-Explorer like file manager for X
 
 DISTNAME=	xfe-1.40
 CATEGORIES=	x11
+REVISION=	0
 
 HOMEPAGE=	http://roland65.free.fr/xfe/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
