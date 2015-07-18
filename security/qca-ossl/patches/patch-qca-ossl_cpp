@@ -1,9 +1,9 @@
-$OpenBSD: patch-qca-ossl_cpp,v 1.3 2014/07/17 08:36:55 espie Exp $
+$OpenBSD: patch-qca-ossl_cpp,v 1.4 2015/07/18 22:50:47 jca Exp $
 
-Allow building against OpenSSL without MD2 or SSLv2 support.
+- allow building against OpenSSL without MD2 or SSLv2/3 support
 
---- qca-ossl.cpp.orig	Tue Dec 11 07:34:57 2007
-+++ qca-ossl.cpp	Thu Jul 17 10:18:40 2014
+--- qca-ossl.cpp.orig	Mon Dec 10 23:34:57 2007
++++ qca-ossl.cpp	Sat Jul 18 16:49:22 2015
 @@ -1771,8 +1771,10 @@ class RSAKey : public RSAContext (public)
  			md = EVP_sha1();
  		else if(alg == EMSA3_MD5)
@@ -62,7 +62,7 @@ Allow building against OpenSSL without MD2 or SSLv2 support.
  		case NID_ripemd160WithRSA:
  		    p.sigalgo = QCA::EMSA3_RIPEMD160;
  		    break;
-@@ -5133,9 +5143,11 @@ class MyTLSContext : public TLSContext (public)
+@@ -5133,12 +5143,16 @@ class MyTLSContext : public TLSContext (public)
  		OpenSSL_add_ssl_algorithms();
  		SSL_CTX *ctx = 0;
  		switch (version) {
@@ -71,10 +71,15 @@ Allow building against OpenSSL without MD2 or SSLv2 support.
  			ctx = SSL_CTX_new(SSLv2_client_method());
  			break;
 +#endif
++#ifndef OPENSSL_NO_SSL3
  		case TLS::SSL_v3:
  			ctx = SSL_CTX_new(SSLv3_client_method());
  			break;
-@@ -5538,7 +5550,7 @@ class MyTLSContext : public TLSContext (public)
++#endif
+ 		case TLS::TLS_v1:
+ 			ctx = SSL_CTX_new(TLSv1_client_method());
+ 			break;
+@@ -5538,7 +5552,7 @@ class MyTLSContext : public TLSContext (public)
  	{
  		SessionInfo sessInfo;
  
@@ -83,7 +88,7 @@ Allow building against OpenSSL without MD2 or SSLv2 support.
  
  		if (ssl->version == TLS1_VERSION)
  			sessInfo.version = TLS::TLS_v1;
-@@ -6582,7 +6594,9 @@ static QStringList all_hash_types()
+@@ -6582,7 +6596,9 @@ static QStringList all_hash_types()
  	list += "sha1";
  	list += "sha0";
  	list += "ripemd160";
@@ -93,7 +98,7 @@ Allow building against OpenSSL without MD2 or SSLv2 support.
  	list += "md4";
  	list += "md5";
  #ifdef SHA224_DIGEST_LENGTH
-@@ -6757,7 +6771,9 @@ class opensslProvider : public Provider (public)
+@@ -6757,7 +6773,9 @@ class opensslProvider : public Provider (public)
  		list += all_hash_types();
  		list += all_mac_types();
  		list += all_cipher_types();
@@ -103,7 +108,7 @@ Allow building against OpenSSL without MD2 or SSLv2 support.
  		list += "pbkdf1(sha1)";
  		list += "pbkdf2(sha1)";
  		list += "pkey";
-@@ -6788,8 +6804,10 @@ class opensslProvider : public Provider (public)
+@@ -6788,8 +6806,10 @@ class opensslProvider : public Provider (public)
  			return new opensslHashContext( EVP_sha(), this, type);
  		else if ( type == "ripemd160" )
  			return new opensslHashContext( EVP_ripemd160(), this, type);
@@ -114,7 +119,7 @@ Allow building against OpenSSL without MD2 or SSLv2 support.
  		else if ( type == "md4" )
  			return new opensslHashContext( EVP_md4(), this, type);
  		else if ( type == "md5" )
-@@ -6816,8 +6834,10 @@ class opensslProvider : public Provider (public)
+@@ -6816,8 +6836,10 @@ class opensslProvider : public Provider (public)
  #endif
  		else if ( type == "pbkdf1(sha1)" )
  			return new opensslPbkdf1Context( EVP_sha1(), this, type );
@@ -125,7 +130,7 @@ Allow building against OpenSSL without MD2 or SSLv2 support.
  		else if ( type == "pbkdf2(sha1)" )
  			return new opensslPbkdf2Context( this, type );
  		else if ( type == "hmac(md5)" )
-@@ -6934,7 +6954,7 @@ class opensslProvider : public Provider (public)
+@@ -6934,7 +6956,7 @@ class opensslProvider : public Provider (public)
  			return new CMSContext( this );
  		else if ( type == "ca" )
  			return new MyCAContext( this );
