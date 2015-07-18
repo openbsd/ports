@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2013/05/05 19:24:13 jasper Exp $
+$OpenBSD: README,v 1.5 2015/07/18 20:59:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,16 +16,16 @@ Installing Blogsum
 ==================
 1)  Enable the mod_perl module:
 
-	$ sudo mod_perl-enable
+	# mod_perl-enable
 
 2)  Setup the SQLite database:
 
-	$ sudo -u www sqlite3 ${INSTDIR}/data/site.db < \
-		${EXAMPLESDIR}/create_sqlite.sql
+	# su -m www -c \
+		sqlite3 ${INSTDIR}/data/site.db <${EXAMPLESDIR}/create_sqlite.sql
 
 3)  Create your local configuration and modify as necessary:
 
-	$ sudo cp ${INSTDIR}/Blogsum/Config.pm.dist \
+	# cp ${INSTDIR}/Blogsum/Config.pm.dist \
 		${INSTDIR}/Blogsum/Config.pm
 
 4)  If comments will be enabled, visit the CAPTCHA (http://www.captcha.net/)
@@ -33,11 +33,11 @@ Installing Blogsum
 
 5)  Edit the example httpd-blogsum.conf and enable it for your site:
 
-	$ sudo cp ${EXAMPLESDIR}/httpd-blogsum.conf /var/www/conf/modules/
+	# cp ${EXAMPLESDIR}/httpd-blogsum.conf /var/www/conf/modules/
 
 6)  Create your AuthUserFile file as defined in httpd-blogsum.conf:
 
-	$ sudo htpasswd -c ${PREFIX}/conf/blogsum.htpasswd
+	# htpasswd -c ${PREFIX}/conf/blogsum.htpasswd
 
 7)  Enable the following modules in ${PREFIX}/conf/httpd.conf:
 
