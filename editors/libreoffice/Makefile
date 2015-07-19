@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2015/07/09 17:05:14 robert Exp $
+# $OpenBSD: Makefile,v 1.133 2015/07/19 16:25:35 jasper Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -148,7 +148,6 @@ BUILD_DEPENDS+=	archivers/zip \
 		misc/findutils \
 		security/nss \
 		sysutils/coreutils \
-		textproc/gsed \
 		textproc/clucene \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
@@ -366,7 +365,6 @@ pre-patch:
 	@ln -fs /usr/local/bin/gfind ${WRKDIR}/bin/find
 	@ln -fs /usr/local/bin/gpatch ${WRKDIR}/bin/patch
 	@ln -fs /usr/local/bin/gcat ${WRKDIR}/bin/cat
-	@ln -fs /usr/local/bin/gsed ${WRKDIR}/bin/sed
 	@ln -fs /usr/local/bin/gtouch ${WRKDIR}/bin/touch
 	touch ${WRKSRC}/src.downloaded ${WRKSRC}/autogen.lastrun
 
