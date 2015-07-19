@@ -1,4 +1,4 @@
-# $OpenBSD: mariadb.port.mk,v 1.2 2015/07/17 20:56:59 zhuk Exp $
+# $OpenBSD: mariadb.port.mk,v 1.3 2015/07/19 12:34:41 zhuk Exp $
 #
 # Helps testing MySQL/MariaDB-based software, no B/L/R-DEPS here.
 
@@ -7,7 +7,7 @@ MODMARIADB_TEST_CMD ?= \
 
 MODMARIADB_TEST_DBNAME ?=
 MODMARIADB_TEST_SOCKET =	${WRKDIR}/mariadb.sock
-_MODMARIADB_TEST_DATA_DIR =	${WRKDIR}/testdb
+_MODMARIADB_TEST_DATA_DIR =	${WRKDIR}/testdb-mariadb
 
 MODMARIADB_SERVER_ARGS = \
 	--no-defaults \

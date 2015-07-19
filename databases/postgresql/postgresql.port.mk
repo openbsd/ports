@@ -1,4 +1,4 @@
-# $OpenBSD: postgresql.port.mk,v 1.2 2015/01/21 21:12:28 zhuk Exp $ 
+# $OpenBSD: postgresql.port.mk,v 1.3 2015/07/19 12:34:41 zhuk Exp $ 
 #
 # Helps testing PostgreSQL-based software, no B/L/R-DEPS here.
 
@@ -6,7 +6,7 @@ MODPOSTGRESQL_TEST_CMD ?= \
 	${MAKE_PROGRAM} ${ALL_TEST_FLAGS} -f ${MAKE_FILE} ${TEST_TARGET}
 
 MODPOSTGRESQL_TEST_PGHOST ?=	${WRKDIR}
-_MODPOSTGRESQL_TEST_PGDATA =	${WRKDIR}/testdb
+_MODPOSTGRESQL_TEST_PGDATA =	${WRKDIR}/testdb-pg
 
 TEST_DEPENDS +=		databases/postgresql,-server
 TEST_ENV +=		PGDATA=${_MODPOSTGRESQL_TEST_PGDATA} \
