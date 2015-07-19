@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/10/03 07:24:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/07/19 21:15:36 ajacoutot Exp $
 bin/whatweb
 @man man/man1/whatweb.1
 share/doc/whatweb/
@@ -64,6 +64,7 @@ share/whatweb/plugins-disabled/vary.rb
 share/whatweb/plugins/1024-CMS.rb
 share/whatweb/plugins/360-web-manager.rb
 share/whatweb/plugins/3COM-NBX.rb
+share/whatweb/plugins/3dcart.rb
 share/whatweb/plugins/4D.rb
 share/whatweb/plugins/4images.rb
 share/whatweb/plugins/68-Classifieds-Script.rb
@@ -198,6 +199,7 @@ share/whatweb/plugins/BlogEngine.NET.rb
 share/whatweb/plugins/BloofoxCMS.rb
 share/whatweb/plugins/Blue-Coat-ProxySG.rb
 share/whatweb/plugins/BlueDragon.rb
+share/whatweb/plugins/BlueNet-Video.rb
 share/whatweb/plugins/BlueOnyx.rb
 share/whatweb/plugins/BlueQuartz.rb
 share/whatweb/plugins/Boa-WebServer.rb
@@ -206,6 +208,7 @@ share/whatweb/plugins/Bomgar.rb
 share/whatweb/plugins/BoonEx-Dolphin.rb
 share/whatweb/plugins/BosClassifieds.rb
 share/whatweb/plugins/BrewBlogger.rb
+share/whatweb/plugins/Brightcove.rb
 share/whatweb/plugins/BroadWin-WebAccess.rb
 share/whatweb/plugins/BrowserCMS.rb
 share/whatweb/plugins/Buddy-Zone.rb
@@ -235,6 +238,7 @@ share/whatweb/plugins/CactuShop.rb
 share/whatweb/plugins/CafeEngine.rb
 share/whatweb/plugins/CalendarScript.rb
 share/whatweb/plugins/Calypso-ION-8r-Device.rb
+share/whatweb/plugins/Camera-Life.rb
 share/whatweb/plugins/Canon-Print-Server.rb
 share/whatweb/plugins/Car-Portal.rb
 share/whatweb/plugins/Card-Reader-Adapter.rb
@@ -286,6 +290,7 @@ share/whatweb/plugins/Conexant-EmWeb.rb
 share/whatweb/plugins/ConfTool.rb
 share/whatweb/plugins/Connect2.rb
 share/whatweb/plugins/Constructr-CMS.rb
+share/whatweb/plugins/Content-Language.rb
 share/whatweb/plugins/Content-Security-Policy.rb
 share/whatweb/plugins/ContentXXL.rb
 share/whatweb/plugins/Contentteller-CMS.rb
@@ -295,6 +300,7 @@ share/whatweb/plugins/CouchPotato.rb
 share/whatweb/plugins/Cougar.rb
 share/whatweb/plugins/Covalent-Enterprise-Ready-Server.rb
 share/whatweb/plugins/CoyotePoint-Load-Balancer.rb
+share/whatweb/plugins/CrazyEgg.rb
 share/whatweb/plugins/CreateLive-Cms.rb
 share/whatweb/plugins/CrushFTP.rb
 share/whatweb/plugins/CubeCart.rb
@@ -315,6 +321,7 @@ share/whatweb/plugins/DORG.rb
 share/whatweb/plugins/DSpace.rb
 share/whatweb/plugins/DV-Cart.rb
 share/whatweb/plugins/DVWA.rb
+share/whatweb/plugins/DXSock.rb
 share/whatweb/plugins/DZCP.rb
 share/whatweb/plugins/DaDaBIK.rb
 share/whatweb/plugins/Dada-Mail.rb
@@ -332,6 +339,7 @@ share/whatweb/plugins/Dedicated-Micros-Device.rb
 share/whatweb/plugins/DeleGate.rb
 share/whatweb/plugins/Dell-KACE-Appliance.rb
 share/whatweb/plugins/Dell-Remote-Access-Controller.rb
+share/whatweb/plugins/Deluge-web.rb
 share/whatweb/plugins/DeluxeBB.rb
 share/whatweb/plugins/DiY-CMS.rb
 share/whatweb/plugins/DiamondList.rb
@@ -442,6 +450,7 @@ share/whatweb/plugins/GetSimple.rb
 share/whatweb/plugins/Gitorious.rb
 share/whatweb/plugins/Gitweb.rb
 share/whatweb/plugins/GoServe.rb
+share/whatweb/plugins/Google-Analytics.rb
 share/whatweb/plugins/Google-Maps.rb
 share/whatweb/plugins/Google-Search-Appliance.rb
 share/whatweb/plugins/Google-Talk-Chatback.rb
@@ -561,6 +570,7 @@ share/whatweb/plugins/KMSoft-Guestbook.rb
 share/whatweb/plugins/KSS.rb
 share/whatweb/plugins/KSearch.rb
 share/whatweb/plugins/KaZaA.rb
+share/whatweb/plugins/Kabana.rb
 share/whatweb/plugins/KaiBB.rb
 share/whatweb/plugins/Kajona.rb
 share/whatweb/plugins/Kampyle.rb
@@ -848,7 +858,6 @@ share/whatweb/plugins/Phoenix-Contact-Device.rb
 share/whatweb/plugins/Phorum.rb
 share/whatweb/plugins/PhotoPost-PHP.rb
 share/whatweb/plugins/PhotoStore.rb
-share/whatweb/plugins/Phusion_Passenger.rb
 share/whatweb/plugins/Pi3Web.rb
 share/whatweb/plugins/PieCrust.rb
 share/whatweb/plugins/PithCMS.rb
@@ -1108,7 +1117,9 @@ share/whatweb/plugins/Tencent-QQ.rb
 share/whatweb/plugins/Tengine-Web-Server.rb
 share/whatweb/plugins/Tenon-iTools.rb
 share/whatweb/plugins/TestLink.rb
+share/whatweb/plugins/TeveoLive-Video-Broadcast-Software.rb
 share/whatweb/plugins/Textpattern-CMS.rb
+share/whatweb/plugins/The-Amazing-Little-Poll.rb
 share/whatweb/plugins/TheHostingTool.rb
 share/whatweb/plugins/Think-Plus.rb
 share/whatweb/plugins/ThoughtConduit.rb
@@ -1139,6 +1150,7 @@ share/whatweb/plugins/Tribiq.rb
 share/whatweb/plugins/Truition.rb
 share/whatweb/plugins/Tumblr.rb
 share/whatweb/plugins/TutorTrac.rb
+share/whatweb/plugins/TwistedWeb.rb
 share/whatweb/plugins/TwonkyServer.rb
 share/whatweb/plugins/Typekit.rb
 share/whatweb/plugins/UCenter-Home.rb
@@ -1209,6 +1221,7 @@ share/whatweb/plugins/Web-Crossing-Server.rb
 share/whatweb/plugins/Web-Publishing-Wizard.rb
 share/whatweb/plugins/Web-Wiz-Rich-Text-Editor.rb
 share/whatweb/plugins/Web2.rb
+share/whatweb/plugins/Web2py.rb
 share/whatweb/plugins/WebAsyst-Shop-Script.rb
 share/whatweb/plugins/WebDAV.rb
 share/whatweb/plugins/WebHare-Application-Portal.rb
@@ -1230,6 +1243,7 @@ share/whatweb/plugins/Webgrind.rb
 share/whatweb/plugins/Webmedia-Explorer.rb
 share/whatweb/plugins/WebsiteBaker-CMS.rb
 share/whatweb/plugins/WebspotBlogging.rb
+share/whatweb/plugins/Werkzeug.rb
 share/whatweb/plugins/WhatWeb-Plugin.rb
 share/whatweb/plugins/WhatsUp.rb
 share/whatweb/plugins/Whizzy-CMS.rb
@@ -1245,6 +1259,7 @@ share/whatweb/plugins/Winmail-Server.rb
 share/whatweb/plugins/Winstone.rb
 share/whatweb/plugins/Wiseguy.rb
 share/whatweb/plugins/WoW-Server-Status.rb
+share/whatweb/plugins/WolfCMS.rb
 share/whatweb/plugins/WooFramework.rb
 share/whatweb/plugins/WordFusion.rb
 share/whatweb/plugins/WordPress-Mobile-Pack.rb
@@ -1358,6 +1373,7 @@ share/whatweb/plugins/cartweaver.rb
 share/whatweb/plugins/censura.rb
 share/whatweb/plugins/cgi-backdoor.rb
 share/whatweb/plugins/cgiproxy.rb
+share/whatweb/plugins/cgit.rb
 share/whatweb/plugins/chillyCMS.rb
 share/whatweb/plugins/cisco-vpn-3000-concentrator.rb
 share/whatweb/plugins/citrix-metaframe.rb
@@ -1569,8 +1585,8 @@ share/whatweb/plugins/oki-pbx.rb
 share/whatweb/plugins/open-auto-classifieds.rb
 share/whatweb/plugins/open-blog.rb
 share/whatweb/plugins/open-freeway.rb
+share/whatweb/plugins/open-graph-protocol.rb
 share/whatweb/plugins/openEngine.rb
-share/whatweb/plugins/open_graph_protocol.rb
 share/whatweb/plugins/open_search.rb
 share/whatweb/plugins/opencms.rb
 share/whatweb/plugins/openid.rb
@@ -1582,6 +1598,7 @@ share/whatweb/plugins/otrs.rb
 share/whatweb/plugins/pageup-people.rb
 share/whatweb/plugins/panasonic-network-camera.rb
 share/whatweb/plugins/parked-domain.rb
+share/whatweb/plugins/passenger.rb
 share/whatweb/plugins/password_field.rb
 share/whatweb/plugins/pcextreme.rb
 share/whatweb/plugins/phPhotoAlbum.rb

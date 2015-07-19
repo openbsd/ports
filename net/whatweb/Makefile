@@ -1,30 +1,27 @@
-# $OpenBSD: Makefile,v 1.4 2015/07/18 15:46:11 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2015/07/19 21:15:36 ajacoutot Exp $
 
-COMMENT=	web scanner
+COMMENT=		web scanner
 
-# git clone of b495eda
-DISTNAME=	whatweb-0.4.7.1
-REVISION=	0
+DISTNAME=		whatweb-0.4.8
 
-CATEGORIES=	net www
+GH_PROJECT=		WhatWeb
+GH_ACCOUNT=		urbanadventurer
+GH_COMMIT=		48b9682a0fbf1607f1d3565f9aab3442aee14d12
 
-HOMEPAGE=	http://www.morningstarsecurity.com/research/whatweb
-MASTER_SITES=	http://distfiles.nl/
-#		http://www.morningstarsecurity.com/downloads/
+CATEGORIES=		net www
+
+HOMEPAGE=		http://www.morningstarsecurity.com/research/whatweb
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	lang/ruby
-
-# WIP support for Ruby 1.9/2.0, but no 2.1 yet.
-MODRUBY_REV=	2.0
+MODULES=		lang/ruby
 
 MODRUBY_ADJ_FILES=	whatweb
 
-PKG_ARCH=	*
-NO_TEST=	Yes
-NO_BUILD=	Yes
+PKG_ARCH=		*
+NO_TEST=		Yes
+NO_BUILD=		Yes
 
 do-install:
 	perl -pi -e 's,/usr/share,${TRUEPREFIX}/share,g' ${WRKSRC}/whatweb
