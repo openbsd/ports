@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2015/07/18 06:15:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2015/07/19 19:24:19 landry Exp $
 
 COMMENT =	continuous integration framework
 
 MODPY_EGG_VERSION =	0.8.12
 DISTNAME =	buildbot-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/p/pl/}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 
@@ -23,7 +23,7 @@ MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes
 
 RUN_DEPENDS =	databases/py-sqlalchemy \
-		databases/py-sqlalchemy-migrate \
+		databases/py-sqlalchemy-migrate>=0.7.2 \
 		devel/py-dateutil \
 		devel/py-twisted/core \
 		devel/py-twisted/conch \
