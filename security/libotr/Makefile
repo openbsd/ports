@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/04/03 16:15:40 stsp Exp $
+# $OpenBSD: Makefile,v 1.27 2015/07/19 08:18:52 jca Exp $
 
 COMMENT=	portable OTR messaging library and toolkit
 
@@ -27,7 +27,7 @@ LIB_DEPENDS +=	security/libgpg-error
 
 USE_LIBTOOL = 		gnu
 
-AUTOCONF_VERSION = 	2.65
+AUTOCONF_VERSION = 	2.68
 AUTOMAKE_VERSION = 	1.11
 CONFIGURE_STYLE=	autoconf automake
 # PIE is taken care of on a per-arch basis on OpenBSD, and stack
