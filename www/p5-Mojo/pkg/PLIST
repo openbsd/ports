@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/04/27 19:27:47 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/07/19 06:38:15 ajacoutot Exp $
 @conflict p5-Mojo-*
 bin/hypnotoad
 bin/mojo
@@ -37,6 +37,9 @@ ${P5SITE}/Mojo/IOLoop/Client.pm
 ${P5SITE}/Mojo/IOLoop/Delay.pm
 ${P5SITE}/Mojo/IOLoop/Server.pm
 ${P5SITE}/Mojo/IOLoop/Stream.pm
+${P5SITE}/Mojo/IOLoop/certs/
+${P5SITE}/Mojo/IOLoop/certs/server.crt
+${P5SITE}/Mojo/IOLoop/certs/server.key
 ${P5SITE}/Mojo/JSON/
 ${P5SITE}/Mojo/JSON.pm
 ${P5SITE}/Mojo/JSON/Pointer.pm
