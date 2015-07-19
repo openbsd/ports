@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/07/11 13:10:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2015/07/19 02:14:57 ajacoutot Exp $
 
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
@@ -26,8 +26,6 @@ CONFIGURE_STYLE =	gnu
 TEST_TARGET =		check
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 			ECLLIB_VERSION=${LIBecl_VERSION}
-FLAVORS =		debug
-FLAVOR ?=
 
 CONFIGURE_ARGS +=	--enable-boehm=system \
 			--enable-libatomic=system \
@@ -38,10 +36,6 @@ CONFIGURE_ARGS +=	--enable-boehm=system \
 # etags gets picked up if it's install, and dumps core while
 # generating the tags. so override it for now untill etags is fixed.
 CONFIGURE_ENV +=	ETAGS=/usr/bin/true
-
-.if ${FLAVOR:Mdebug}
-CONFIGURE_ARGS +=	--with-debug-cflags=-g
-.endif
 
 LIB_DEPENDS +=	devel/gmp \
 		devel/boehm-gc,-main \

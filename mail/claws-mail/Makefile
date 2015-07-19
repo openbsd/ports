@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2015/06/10 21:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2015/07/19 02:14:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -38,7 +38,7 @@ EXTRACT_SUFX=		.tar.bz2
 DIST_SUBDIR=		claws
 
 MULTI_PACKAGES=		-main -bogofilter -spamassassin -htmlviewer -pdfviewer -gdata
-FLAVORS=		jpilot compface ldap debug
+FLAVORS=		jpilot compface ldap
 FLAVOR?=
 
 FLAVOR_STRING=		${FLAVOR_EXT:S/-/,/g}
@@ -148,11 +148,6 @@ WANTLIB-main+=		lber-2.4 ldap-2.4
 LIB_DEPENDS-main+=	databases/openldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap
-.endif
-
-.if ${FLAVOR:Mdebug}
-CFLAGS+=	-O0 -g
-INSTALL_STRIP=
 .endif
 
 TOOLS=		OOo2claws-mail.pl \
