@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/30 12:48:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/07/19 21:44:08 jasper Exp $
 
 COMMENT=		Tangerine icon theme from Ubuntu
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=		x11/gtk+3,-guic
 
 BUILD_DEPENDS=		devel/gettext \
 			misc/findutils \
-			sysutils/coreutils \
 			x11/icon-naming-utils
 
 ALL_TARGET=		build

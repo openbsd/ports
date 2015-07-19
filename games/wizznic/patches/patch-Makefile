@@ -1,16 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2013/10/08 06:02:08 bentley Exp $
+$OpenBSD: patch-Makefile,v 1.2 2015/07/19 21:44:07 jasper Exp $
 --- Makefile.orig	Thu Dec 29 15:12:52 2011
-+++ Makefile	Sun Oct  6 17:09:14 2013
-@@ -46,12 +46,12 @@ $(TARGET): $(OBJS)
- 	$(MYCC) -c $< -o $@
- 
- install:
--	install -d -D -m 755 "$(DESTDIR)$(BINDIR)"
--	install -D -m 755 "$(TARGET)" "$(DESTDIR)$(BINDIR)"
--	install -d -D -m 755 "$(DESTDIR)$(DATADIR)"
-+	install -d -m 755 "$(DESTDIR)$(BINDIR)"
-+	install -m 755 "$(TARGET)" "$(DESTDIR)$(BINDIR)"
-+	install -d -m 755 "$(DESTDIR)$(DATADIR)"
++++ Makefile	Sat Jul 18 14:50:34 2015
+@@ -51,7 +51,7 @@ install:
+ 	install -d -D -m 755 "$(DESTDIR)$(DATADIR)"
  	cp -R data "$(DESTDIR)$(DATADIR)"
  	cp -R packs "$(DESTDIR)$(DATADIR)"
 -	chmod -R 755 "$(DESTIR)$(DATADIR)"

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1 2015/04/30 12:48:49 ajacoutot Exp $
---- Makefile.orig	Tue Sep  1 07:37:28 2009
-+++ Makefile	Thu Apr 30 14:43:02 2015
+$OpenBSD: patch-Makefile,v 1.2 2015/07/19 21:44:08 jasper Exp $
+--- Makefile.orig	Mon Aug 31 23:37:28 2009
++++ Makefile	Sat Jul 18 14:08:36 2015
 @@ -4,7 +4,7 @@ build: index.theme
  
  # intltool merging
@@ -17,7 +17,7 @@ $OpenBSD: patch-Makefile,v 1.1 2015/04/30 12:48:49 ajacoutot Exp $
 -	find [0-9]* scalable \( -name '*.png' -o -name '*.svg' -o -name '*.icon' \) -exec \
 -	    install -D -m 644 '{}' $$DESTDIR/usr/share/icons/Tangerine/'{}' \;
 +	gfind [0-9]* scalable \( -name '*.png' -o -name '*.svg' -o -name '*.icon' \) -exec \
-+	    ginstall -D -m 644 '{}' $$DESTDIR${PREFIX}/share/icons/Tangerine/'{}' \;
++	    install -D -m 644 '{}' $$DESTDIR${PREFIX}/share/icons/Tangerine/'{}' \;
  
  	# run icon-naming-utils
 -	for d in $$DESTDIR/usr/share/icons/Tangerine/*; do \
@@ -29,14 +29,13 @@ $OpenBSD: patch-Makefile,v 1.1 2015/04/30 12:48:49 ajacoutot Exp $
  	# install mo files
  	for f in po/*.po; do \
 -	    D=$$DESTDIR/usr/share/locale/`basename $$f .po`/LC_MESSAGES/; \
--	    install -d -m 755 $$D; \
 +	    D=$$DESTDIR${PREFIX}/share/locale/`basename $$f .po`/LC_MESSAGES/; \
-+	    ginstall -d -m 755 $$D; \
+ 	    install -d -m 755 $$D; \
  	    msgfmt -o $$D/$(GETTEXT_DOMAIN).mo $$f; \
  	done
  
  	# install index
 -	install -D -m 644 index.theme $$DESTDIR/usr/share/icons/Tangerine/index.theme
-+	ginstall -D -m 644 index.theme $$DESTDIR${PREFIX}/share/icons/Tangerine/index.theme
++	install -D -m 644 index.theme $$DESTDIR${PREFIX}/share/icons/Tangerine/index.theme
  
  .PHONY: build i18n clean install

@@ -1,15 +1,6 @@
-$OpenBSD: patch-wpa_supplicant_Makefile,v 1.6 2015/03/18 15:35:44 dcoppa Exp $
+$OpenBSD: patch-wpa_supplicant_Makefile,v 1.7 2015/07/19 21:44:07 jasper Exp $
 --- wpa_supplicant/Makefile.orig	Sun Mar 15 12:30:39 2015
 +++ wpa_supplicant/Makefile	Wed Mar 18 04:20:32 2015
-@@ -57,7 +57,7 @@ mkconfig:
- 	echo CONFIG_DRIVER_WEXT=y >> .config
- 
- $(DESTDIR)$(BINDIR)/%: %
--	install -D $(<) $(@)
-+	install $(<) $(@)
- 
- install: $(addprefix $(DESTDIR)$(BINDIR)/,$(BINALL))
- 	$(MAKE) -C ../src install
 @@ -121,13 +121,6 @@ CONFIG_ELOOP=eloop
  endif
  OBJS += ../src/utils/$(CONFIG_ELOOP).o

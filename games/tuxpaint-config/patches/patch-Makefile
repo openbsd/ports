@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.4 2009/12/20 21:13:31 naddy Exp $
+$OpenBSD: patch-Makefile,v 1.5 2015/07/19 21:44:07 jasper Exp $
 --- Makefile.orig	Fri May 29 00:08:08 2009
 +++ Makefile	Sun Dec 20 22:09:37 2009
 @@ -20,7 +20,6 @@ VER_DATE=`date +"%Y-%m-%d"`
@@ -158,13 +158,3 @@ $OpenBSD: patch-Makefile,v 1.4 2009/12/20 21:13:31 naddy Exp $
  	@echo Compiling defaults.cxx
  	$(CXX) $(ALL_CFLAGS) -c src/defaults.cxx -o obj/defaults.o
  
-@@ -340,7 +298,8 @@ MOFILES:=$(patsubst src/po/%.po,trans/%.mo,$(POFILES))
- INSTALLED_MOFILES:=$(patsubst trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint-config.mo,$(MOFILES))
- 
- $(INSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint-config.mo: trans/%.mo
--	install -D -m 644 $< $@
-+	$(BSD_INSTALL_DATA_DIR) $(@D)
-+	$(BSD_INSTALL_DATA) $< $@
- 
- .PHONY: uninstall-i18n
- uninstall-i18n:
