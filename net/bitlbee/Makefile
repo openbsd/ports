@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2015/05/14 09:50:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2015/07/19 08:22:14 jca Exp $
 
 COMMENT=		IRC proxy to connect to AIM, ICQ, Jabber and Yahoo
 
 DISTNAME=		bitlbee-3.4
+REVISION=		0
 CATEGORIES=		net
 
 HOMEPAGE=		http://bitlbee.org/
@@ -32,7 +33,8 @@ CONFIGURE_ARGS+=	--bindir=${PREFIX}/libexec \
 			--mandir=${PREFIX}/man \
 			--config=${DB_DIR} \
 			--etcdir=${ETCDIR} \
-			--ssl=openssl
+			--ssl=openssl \
+			--pie=0
 
 USE_GMAKE=		Yes
 MAKE_ENV=		"CC=${CC}" "CFLAGS=${CFLAGS}"
