@@ -5,9 +5,9 @@ use warnings;
 use Getopt::Std;
 
 my %opts;
-getopts('bCcdpSsB:f:g:m:o:', \%opts);
+getopts('bCcDdpSsB:f:g:m:o:', \%opts);
 
-for my $s (qw(b C c d p S s)) {
+for my $s (qw(b C c D d p S s)) {
 	if ($opts{$s}) {
 		unshift(@ARGV, "-$s");
 	}
