@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/10 17:50:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/19 19:23:26 landry Exp $
 bin/migrate
 bin/migrate-repository
 lib/python${MODPY_VERSION}/site-packages/migrate/
@@ -131,7 +131,6 @@ lib/python${MODPY_VERSION}/site-packages/migrate/versioning/templates/
 lib/python${MODPY_VERSION}/site-packages/migrate/versioning/templates/__init__.py
 lib/python${MODPY_VERSION}/site-packages/migrate/versioning/templates/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/migrate/versioning/templates/manage/
-lib/python${MODPY_VERSION}/site-packages/migrate/versioning/templates/manage.py_tmpl
 lib/python${MODPY_VERSION}/site-packages/migrate/versioning/templates/manage/default.py_tmpl
 lib/python${MODPY_VERSION}/site-packages/migrate/versioning/templates/manage/pylons.py_tmpl
 lib/python${MODPY_VERSION}/site-packages/migrate/versioning/templates/repository/
