@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2015/02/25 15:07:38 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2015/07/19 02:25:35 ajacoutot Exp $
 @newgroup _smmsp:745
 @newuser _smmsp:745:_smmsp::Sendmail Message Submission Program:/nonexistent:/sbin/nologin
 @bin libexec/mail.local
@@ -218,6 +218,7 @@ share/sendmail/feature/relay_mail_from.m4
 share/sendmail/feature/require_rdns.m4
 share/sendmail/feature/smrsh.m4
 share/sendmail/feature/stickyhost.m4
+share/sendmail/feature/tls_session_features.m4
 share/sendmail/feature/use_client_ptr.m4
 share/sendmail/feature/use_ct_file.m4
 share/sendmail/feature/use_cw_file.m4
