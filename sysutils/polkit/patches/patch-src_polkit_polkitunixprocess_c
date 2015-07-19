@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.7 2015/07/16 17:45:38 ajacoutot Exp $
+$OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.8 2015/07/19 00:31:29 ajacoutot Exp $
 
 https://bugs.freedesktop.org/show_bug.cgi?id=75187
 
 --- src/polkit/polkitunixprocess.c.orig	Tue Jan 14 23:42:25 2014
-+++ src/polkit/polkitunixprocess.c	Thu Jul 16 19:22:55 2015
++++ src/polkit/polkitunixprocess.c	Sun Jul 19 02:14:03 2015
 @@ -29,6 +29,9 @@
  #include <sys/sysctl.h>
  #include <sys/user.h>
@@ -23,7 +23,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=75187
  static gboolean get_kinfo_proc (gint pid, struct kinfo_proc *p);
  #endif
  
-@@ -554,12 +557,38 @@ get_kinfo_proc (pid_t pid, struct kinfo_proc *p)
+@@ -554,12 +557,36 @@ get_kinfo_proc (pid_t pid, struct kinfo_proc *p)
  }
  #endif
  
@@ -31,25 +31,23 @@ https://bugs.freedesktop.org/show_bug.cgi?id=75187
 +static gboolean
 +get_kinfo_proc (gint pid, struct kinfo_proc *p)
 +{
-+	int name[6];
-+	u_int namelen;
-+	size_t sz;
++  int name[6];
++  u_int namelen;
++  size_t sz;
 +
-+	sz = sizeof(*p);
-+	namelen = 0;
-+	name[namelen++] = CTL_KERN;
-+	name[namelen++] = KERN_PROC;
-+	name[namelen++] = KERN_PROC_PID;
-+	name[namelen++] = pid;
-+	name[namelen++] = sz;
-+	name[namelen++] = 1;
++  sz = sizeof(*p);
++  namelen = 0;
++  name[namelen++] = CTL_KERN;
++  name[namelen++] = KERN_PROC;
++  name[namelen++] = KERN_PROC_PID;
++  name[namelen++] = pid;
++  name[namelen++] = sz;
++  name[namelen++] = 1;
 +
-+	if (sysctl (name, namelen, p, &sz, NULL, 0) == -1) {
-+		perror("sysctl kern.proc.pid");
-+		return FALSE;
-+	}
++  if (sysctl (name, namelen, p, &sz, NULL, 0) == -1)
++    return FALSE;
 +
-+	return TRUE;
++  return TRUE;
 +}
 +#endif
 +
@@ -63,7 +61,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=75187
    gchar *filename;
    gchar *contents;
    size_t length;
-@@ -647,7 +676,11 @@ get_start_time_for_pid (pid_t    pid,
+@@ -647,7 +674,11 @@ get_start_time_for_pid (pid_t    pid,
        goto out;
      }
  
@@ -75,7 +73,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=75187
  
  out:
  #endif
-@@ -662,7 +695,7 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
+@@ -662,7 +693,7 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
    gint result;
    gchar *contents;
    gchar **lines;
@@ -84,7 +82,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=75187
    struct kinfo_proc p;
  #else
    gchar filename[64];
-@@ -676,7 +709,7 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
+@@ -676,7 +707,7 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
    lines = NULL;
    contents = NULL;
  
@@ -93,7 +91,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=75187
    if (get_kinfo_proc (process->pid, &p) == 0)
      {
        g_set_error (error,
-@@ -688,7 +721,11 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
+@@ -688,7 +719,11 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
        goto out;
      }
  

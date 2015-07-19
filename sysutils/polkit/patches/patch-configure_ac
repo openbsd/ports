@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.15 2015/07/16 17:45:38 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.16 2015/07/19 00:31:29 ajacoutot Exp $
 
 GTK_DOC_CHECK chunk:
 Remove when updating to a newer release with integrated bsd_auth(3) support.
@@ -6,7 +6,7 @@ Remove when updating to a newer release with integrated bsd_auth(3) support.
 https://bugs.freedesktop.org/show_bug.cgi?id=75187
 
 --- configure.ac.orig	Fri Jun 19 22:31:02 2015
-+++ configure.ac	Thu Jul 16 19:33:13 2015
++++ configure.ac	Sun Jul 19 02:18:31 2015
 @@ -46,7 +46,7 @@ AC_PATH_PROG([XSLTPROC], [xsltproc])
  fi
  AM_CONDITIONAL(MAN_PAGES_ENABLED, test x$enable_man_pages = xyes)
@@ -16,36 +16,27 @@ https://bugs.freedesktop.org/show_bug.cgi?id=75187
  
  #### gcc warning flags
  
-@@ -167,12 +167,22 @@ fi
+@@ -167,11 +167,15 @@ fi
  dnl ---------------------------------------------------------------------------
  dnl - Check whether setnetgrent has a return value
  dnl ---------------------------------------------------------------------------
--AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
++AC_CHECK_HEADERS([netgroup.h])
+ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
 -	#include <stddef.h>
 -	#include <netdb.h>
 -]], [[
 -	int r = setnetgrent (NULL);]])],
--[AC_DEFINE([HAVE_SETNETGRENT_RETURN], 1, [Define to 1 if setnetgrent has return value])])
-+case "$host_os" in
-+  *openbsd*)
-+	AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
-+	    #include <stddef.h>
-+	    #include <netgroup.h>
-+	]], [[int r = setnetgrent (NULL);]])],
-+	[AC_DEFINE([HAVE_SETNETGRENT_RETURN], 1, [Define to 1 if setnetgrent has return value])])
-+	;;
-+  *)
-+	AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
-+	    #include <stddef.h>
-+	    #include <netdb.h>
-+	]], [[int r = setnetgrent (NULL);]])],
-+	[AC_DEFINE([HAVE_SETNETGRENT_RETURN], 1, [Define to 1 if setnetgrent has return value])])
-+        ;;
-+esac
++    #include <stddef.h>
++    #ifdef HAVE_NETGROUP_H
++    #include <netgroup.h>
++    #else
++    #include <netdb.h>
++    #endif
++]], [[int r = setnetgrent (NULL);]])],
+ [AC_DEFINE([HAVE_SETNETGRENT_RETURN], 1, [Define to 1 if setnetgrent has return value])])
  
  dnl ---------------------------------------------------------------------------
- dnl - Check whether we want to build test
-@@ -318,6 +328,11 @@ case $POLKIT_AUTHFW in
+@@ -318,6 +322,11 @@ case $POLKIT_AUTHFW in
      AC_DEFINE(POLKIT_AUTHFW_SHADOW, 1, [If using the Shadow authentication framework])
      ;;
  
@@ -57,7 +48,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=75187
    *)
      AC_MSG_ERROR([Unknown Authentication Framework: $POLKIT_AUTHFW])
      ;;
-@@ -326,6 +341,7 @@ esac
+@@ -326,6 +335,7 @@ esac
  AM_CONDITIONAL(POLKIT_AUTHFW_NONE, [test x$POLKIT_AUTHFW = xnone], [Using no authfw])
  AM_CONDITIONAL(POLKIT_AUTHFW_PAM, [test x$POLKIT_AUTHFW = xpam], [Using PAM authfw])
  AM_CONDITIONAL(POLKIT_AUTHFW_SHADOW, [test x$POLKIT_AUTHFW = xshadow], [Using Shadow authfw])
@@ -65,13 +56,13 @@ https://bugs.freedesktop.org/show_bug.cgi?id=75187
  
  
  dnl ---------------------------------------------------------------------------
-@@ -504,6 +520,9 @@ case "$host_os" in
+@@ -504,6 +514,9 @@ case "$host_os" in
  	;;
    *freebsd*)
    	AC_DEFINE([HAVE_FREEBSD], 1, [Is this a FreeBSD system?])
 +	;;
 +  *openbsd*)
-+  	AC_DEFINE([HAVE_OPENBSD], 1, [Is this an OpenBSD system?])
++	AC_DEFINE([HAVE_OPENBSD], 1, [Is this an OpenBSD system?])
  	;;
  esac
  

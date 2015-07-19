@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_polkitbackend_polkitbackendinteractiveauthority_c,v 1.4 2015/07/16 17:45:38 ajacoutot Exp $
+$OpenBSD: patch-src_polkitbackend_polkitbackendinteractiveauthority_c,v 1.5 2015/07/19 00:31:29 ajacoutot Exp $
 
 https://bugs.freedesktop.org/show_bug.cgi?id=75187
 
 --- src/polkitbackend/polkitbackendinteractiveauthority.c.orig	Fri Jun 19 22:39:58 2015
-+++ src/polkitbackend/polkitbackendinteractiveauthority.c	Fri Jul  3 07:35:00 2015
++++ src/polkitbackend/polkitbackendinteractiveauthority.c	Sun Jul 19 02:08:14 2015
 @@ -23,7 +23,11 @@
  #include <errno.h>
  #include <pwd.h>
  #include <grp.h>
-+#if defined HAVE_OPENBSD
++#ifdef HAVE_NETGROUP_H
 +#include <netgroup.h>
 +#else
  #include <netdb.h>

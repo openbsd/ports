@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_polkitbackend_polkitbackendjsauthority_c,v 1.9 2015/07/16 17:45:38 ajacoutot Exp $
+$OpenBSD: patch-src_polkitbackend_polkitbackendjsauthority_c,v 1.10 2015/07/19 00:31:29 ajacoutot Exp $
 
 https://bugs.freedesktop.org/show_bug.cgi?id=75187
 
@@ -8,7 +8,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=75187
  #include <errno.h>
  #include <pwd.h>
  #include <grp.h>
-+#if defined HAVE_OPENBSD
++#ifdef HAVE_NETGROUP_H
 +#include <netgroup.h>
 +#else
  #include <netdb.h>
