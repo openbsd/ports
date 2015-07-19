@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/15 13:55:03 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/19 04:41:17 jturner Exp $
 include/kcgi.h
 include/kcgihtml.h
 include/kcgijson.h
@@ -13,6 +13,9 @@ lib/libkcgixml.a
 @man man/man3/kcgijson.3
 @man man/man3/kcgixml.3
 @man man/man3/khttp_body.3
+@man man/man3/khttp_fcgi_free.3
+@man man/man3/khttp_fcgi_init.3
+@man man/man3/khttp_fcgi_parse.3
 @man man/man3/khttp_free.3
 @man man/man3/khttp_head.3
 @man man/man3/khttp_parse.3
@@ -21,6 +24,8 @@ lib/libkcgixml.a
 @man man/man3/kmalloc.3
 @man man/man3/kutil_urlencode.3
 @man man/man3/kvalid_string.3
+@man man/man8/kfcgi.8
 share/kcgi/
+share/kcgi/sample-fcgi.c
 share/kcgi/sample.c
 share/kcgi/template.xml
