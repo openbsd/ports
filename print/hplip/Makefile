@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.130 2015/07/16 04:55:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.131 2015/07/19 14:40:54 ajacoutot Exp $
 
+PORTROACH=		skipv:${V}_py2.5
 SHARED_ONLY=		Yes
 
 COMMENT-main=		HP Linux Imaging and Printing
