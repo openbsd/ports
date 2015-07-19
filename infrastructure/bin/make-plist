@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.8 2014/11/03 19:50:01 bcallah Exp $
+# $OpenBSD: make-plist,v 1.9 2015/07/19 17:31:44 naddy Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -131,6 +131,7 @@ my $baseprefix=$ENV{PREFIX};
 my $shared_only;
 my $make = $ENV{MAKE};
 my $portsdir = $ENV{PORTSDIR};
+my $portsdir_path = $ENV{PORTSDIR_PATH};
 
 sub prettify
 {
@@ -172,7 +173,7 @@ sub build_mtree
 		$stripped->{$pkgpath} = 1;
 		if (!defined $cached_tree->{$pkgpath}) {
 			$cached_tree->{$pkgpath} = {};
-			open my $fh, "cd $portsdir && env -i SUBDIR=$pkgpath ECHO_MSG=: $make print-plist |" or die "blech\n";
+			open my $fh, "cd $portsdir && env -i PORTSDIR_PATH=$portsdir_path SUBDIR=$pkgpath ECHO_MSG=: $make print-plist |" or die "blech\n";
 			augment_mtree($cached_tree->{$pkgpath}, $fh);
 			close($fh);
 		}

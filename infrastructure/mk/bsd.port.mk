@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1297 2015/06/11 09:26:01 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1298 2015/07/19 17:31:44 naddy Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2452,6 +2452,7 @@ _internal-plist _internal-update-plist: _internal-fake ${_FAKESUDO_CHECK_COOKIE}
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
 	MAKE="${MAKE}" \
 	PORTSDIR=${PORTSDIR} \
+	PORTSDIR_PATH=${PORTSDIR_PATH} \
 	FLAVORS='${FLAVORS}' MULTI_PACKAGES='${MULTI_PACKAGES}' \
 	OKAY_FILES='${_FAKE_COOKIE} ${_INSTALL_PRE_COOKIE} ${WRKINST}/.saved_libs' \
 	SHARED_ONLY="${SHARED_ONLY}" \
