@@ -1,7 +1,7 @@
-$OpenBSD: patch-libquadmath_configure,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
---- libquadmath/configure.orig	Sun Dec  1 23:39:57 2013
-+++ libquadmath/configure	Mon Dec  2 12:20:08 2013
-@@ -9934,7 +9934,7 @@ openbsd*)
+$OpenBSD: patch-libquadmath_configure,v 1.2 2015/07/19 21:22:49 pascal Exp $
+--- libquadmath/configure.orig	Fri Jun 26 19:59:14 2015
++++ libquadmath/configure	Sat Jun 27 11:26:35 2015
+@@ -9972,7 +9972,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'

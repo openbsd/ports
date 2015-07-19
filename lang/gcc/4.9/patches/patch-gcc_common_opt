@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_common_opt,v 1.1.1.1 2014/06/26 16:30:16 pascal Exp $
---- gcc/common.opt.orig	Mon Apr  7 15:27:39 2014
-+++ gcc/common.opt	Wed Apr 23 12:49:00 2014
+$OpenBSD: patch-gcc_common_opt,v 1.2 2015/07/19 21:22:49 pascal Exp $
+--- gcc/common.opt.orig	Thu Feb 26 03:43:52 2015
++++ gcc/common.opt	Sat Jun 27 11:26:32 2015
 @@ -580,6 +580,10 @@ Wlarger-than=
  Common RejectNegative Joined UInteger Warning
  -Wlarger-than=<number>	Warn if an object is larger than <number> bytes
@@ -68,7 +68,7 @@ $OpenBSD: patch-gcc_common_opt,v 1.1.1.1 2014/06/26 16:30:16 pascal Exp $
  Generate position-independent code for executables if possible (large mode)
  
  fpic
-@@ -1959,7 +1967,7 @@ Common RejectNegative Joined Var(common_deferred_optio
+@@ -1964,7 +1972,7 @@ Common RejectNegative Joined Var(common_deferred_optio
  -fstack-limit-symbol=<name>	Trap if the stack goes past symbol <name>
  
  fstack-protector
@@ -77,7 +77,7 @@ $OpenBSD: patch-gcc_common_opt,v 1.1.1.1 2014/06/26 16:30:16 pascal Exp $
  Use propolice as a stack protection method
  
  fstack-protector-all
-@@ -2437,7 +2445,7 @@ Common JoinedOrMissing Negative(gdwarf-)
+@@ -2442,7 +2450,7 @@ Common JoinedOrMissing Negative(gdwarf-)
  Generate debug information in default version of DWARF format
  
  gdwarf-
@@ -86,7 +86,7 @@ $OpenBSD: patch-gcc_common_opt,v 1.1.1.1 2014/06/26 16:30:16 pascal Exp $
  Generate debug information in DWARF v2 (or later) format
  
  ggdb
-@@ -2525,6 +2533,9 @@ no-canonical-prefixes
+@@ -2530,6 +2538,9 @@ no-canonical-prefixes
  Driver
  
  nodefaultlibs

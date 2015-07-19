@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.5 2014/11/20 19:54:40 pascal Exp $
---- gcc/config.gcc.orig	Wed Sep 17 16:16:02 2014
-+++ gcc/config.gcc	Sat Nov 15 16:52:32 2014
+$OpenBSD: patch-gcc_config_gcc,v 1.6 2015/07/19 21:22:49 pascal Exp $
+--- gcc/config.gcc.orig	Thu May 21 22:50:59 2015
++++ gcc/config.gcc	Sat Jun 27 11:26:33 2015
 @@ -771,6 +771,14 @@ case ${target} in
        default_use_cxa_atexit=yes
        ;;
@@ -99,7 +99,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.5 2014/11/20 19:54:40 pascal Exp $
  powerpc-*-darwin*)
  	extra_options="${extra_options} rs6000/darwin.opt"
  	case ${target} in
-@@ -2740,11 +2770,19 @@ sparc64-*-netbsd*)
+@@ -2750,11 +2780,19 @@ sparc64-*-netbsd*)
  	extra_options="${extra_options} sparc/long-double-switch.opt"
  	tmake_file="${tmake_file} sparc/t-sparc sparc/t-netbsd64"
  	;;
@@ -120,7 +120,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.5 2014/11/20 19:54:40 pascal Exp $
  	gas=yes gnu_ld=yes
  	with_cpu=ultrasparc
  	tmake_file="${tmake_file} sparc/t-sparc"
-@@ -2931,6 +2969,12 @@ case ${target} in
+@@ -2941,6 +2979,12 @@ case ${target} in
      else
        arch=i386
      fi

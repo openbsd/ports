@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.15 2015/07/02 00:22:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.16 2015/07/19 21:22:49 pascal Exp $
 
 BROKEN-arm = needs binutils-2.17
 
 ONLY_FOR_ARCHS = amd64 arm hppa i386 powerpc sparc sparc64
 DPB_PROPERTIES = parallel
 
-V = 4.9.2
+V = 4.9.3
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-ADASTRAP_LIBC-i386 = 78.1
+ADASTRAP_LIBC-i386 = 80.0
 ADASTRAP_LIBM-i386 = 9.0
-ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
-ADASTRAP_LIBC-amd64 = 78.1
+ADASTRAP-i386 = adastrap-i386-$V-0.tar.xz
+ADASTRAP_LIBC-amd64 = 80.0
 ADASTRAP_LIBM-amd64 = 9.0
-ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
-ADASTRAP_LIBC-sparc64 = 78.1
+ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
+ADASTRAP_LIBC-sparc64 = 80.0
 ADASTRAP_LIBM-sparc64 = 9.0
-ADASTRAP-sparc64 = adastrap-sparc64-$V-1.tar.xz
-ADASTRAP_LIBC-hppa = 78.1
+ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
+ADASTRAP_LIBC-hppa = 80.0
 ADASTRAP_LIBM-hppa = 9.0
-ADASTRAP-hppa = adastrap-hppa-$V-1.tar.xz
+ADASTRAP-hppa = adastrap-hppa-$V-0.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-libs =	gcc-libs-${FULL_PKGVERSION}
@@ -32,14 +32,6 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 # needs [gs]etcontext
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.9,<4.10
-
-REVISION-main =	5
-REVISION-libs =	2
-REVISION-c++ =	2
-REVISION-f95 =	2
-REVISION-java =	3
-REVISION-objc =	2
-REVISION-ada =	3
 
 SHARED_LIBS =	estdc++		17.0 \
 		gfortran	6.0 \
