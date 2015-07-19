@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/07/19 01:36:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/07/19 01:37:26 ajacoutot Exp $
 
 COMMENT=	set region on dvd drives
 
@@ -9,7 +9,7 @@ CATEGORIES=	multimedia
 HOMEPAGE=	http://linvdr.org/projects/regionset/
 MASTER_SITES=	http://linvdr.org/download/regionset/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
