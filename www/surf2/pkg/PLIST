@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/19 03:13:14 czarkoff Exp $
+@bin bin/surf2
+@man man/man1/surf2.1

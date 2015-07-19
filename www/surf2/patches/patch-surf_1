@@ -1,0 +1,91 @@
+$OpenBSD: patch-surf_1,v 1.1.1.1 2015/07/19 03:13:14 czarkoff Exp $
+--- surf.1.orig	Fri Jul 17 23:15:41 2015
++++ surf.1	Fri Jul 17 23:18:13 2015
+@@ -1,8 +1,8 @@
+-.TH SURF 1 surf\-VERSION
++.TH SURF 1 surf2\-VERSION
+ .SH NAME
+-surf \- simple webkit-based browser
++surf2 \- simple webkit-based browser
+ .SH SYNOPSIS
+-.B surf
++.B surf2
+ .RB [-bBdDfFgGiIkKmMnNpPsSvx]
+ .RB [-a\ cookiepolicies]
+ .RB [-c\ cookiefile]
+@@ -13,10 +13,10 @@ surf \- simple webkit-based browser
+ .RB [-z\ zoomlevel]
+ .RB "URI"
+ .SH DESCRIPTION
+-surf is a simple Web browser based on WebKit/GTK+. It is able
++surf2 is a simple Web browser based on WebKit/GTK+. It is able
+ to display websites and follow links. It supports the XEmbed protocol
+ which makes it possible to embed it in another application. Furthermore,
+-one can point surf to another URI by setting its XProperties.
++one can point surf2 to another URI by setting its XProperties.
+ .SH OPTIONS
+ .TP
+ .B \-a cookiepolicies
+@@ -26,7 +26,7 @@ The default is "Aa@" but could be
+ redefined in the
+ .I config.h,
+ with "A" meaning to
+-accept all cookies, "a" to deny all cookies and "@", which tells surf to
++accept all cookies, "a" to deny all cookies and "@", which tells surf2 to
+ accept no third party cookies.
+ .TP
+ .B \-b
+@@ -51,7 +51,7 @@ Reparents to window specified by
+ .I xid.
+ .TP
+ .B \-f
+-Run surf in fullscreen mode.
++Run surf2 in fullscreen mode.
+ .TP
+ .B \-F
+ Disable to run in fullscreen by default.
+@@ -110,7 +110,7 @@ This does disable the site-specific styles.
+ .B \-u useragent 
+ Specify the
+ .I useragent
+-which surf should use.
++which surf2 should use.
+ .TP
+ .B \-v
+ Prints version information to standard output, then exits.
+@@ -123,7 +123,7 @@ example
+ .B \-z zoomlevel 
+ Specify the
+ .I zoomlevel
+-which surf should use.
++which surf2 should use.
+ .BR xprop(1).
+ .SH USAGE
+ .B Escape
+@@ -218,7 +218,7 @@ Open the Web Inspector (Developer Tools) window for th
+ Toggle script execution. This will reload the page.
+ .TP
+ .B Ctrl\-Shift\-v
+-Toggle the enabling of plugins on that surf instance. This will reload the
++Toggle the enabling of plugins on that surf2 instance. This will reload the
+ page.
+ .TP
+ .B F11
+@@ -277,14 +277,14 @@ no proxy
+ using proxy
+ .SH ENVIRONMENT
+ .B SURF_USERAGENT
+-If this variable is set upon startup, surf will use it as the
++If this variable is set upon startup, surf2 will use it as the
+ .I useragent
+ string
+ .TP
+ .B http_proxy
+-If this variable is set and not empty upon startup, surf will use it as the http proxy
++If this variable is set and not empty upon startup, surf2 will use it as the http proxy
+ .SH PLUGINS
+-For using plugins in surf, first determine your running architecture. Then get
++For using plugins in surf2, first determine your running architecture. Then get
+ the appropriate plugin for that architecture and copy it to
+ .BR /usr/lib/browser-plugins
+ or
