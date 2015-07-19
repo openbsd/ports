@@ -1,8 +1,0 @@
-Native TLS protocol implementation, focusing on purity and more
-type-checking.
-
-Currently implement the SSL3.0, TLS1.0 and TLS1.1 protocol. Not yet
-properly secure and missing some features. Do not yet use as replacement
-to more mature implementation.
-
-Only RSA supported as Key exchange for now.
