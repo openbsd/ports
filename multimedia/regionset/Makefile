@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/07/19 01:36:18 ajacoutot Exp $
 
 COMMENT=	set region on dvd drives
 
-DISTNAME=	regionset-0.1
+DISTNAME=	regionset-0.2
 
 CATEGORIES=	multimedia
 
@@ -12,13 +12,13 @@ MASTER_SITES=	http://linvdr.org/download/regionset/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c
+WANTLIB += c
+
+NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/regionset ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/regionset
 	${INSTALL_DATA} ${WRKBUILD}/README ${PREFIX}/share/doc/regionset
-
-NO_TEST=	Yes
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
-$OpenBSD: patch-README,v 1.1.1.1 2008/01/03 19:30:16 oga Exp $
---- README.orig	Thu Jan  3 03:58:18 2008
-+++ README	Thu Jan  3 03:58:35 2008
-@@ -53,7 +53,7 @@ The more, there absolutely definitively and in any cas
+$OpenBSD: patch-README,v 1.2 2015/07/19 01:36:18 ajacoutot Exp $
+--- README.orig	Mon Dec 31 03:32:43 2012
++++ README	Sun Jul 19 03:33:23 2015
+@@ -54,7 +54,7 @@ The more, there absolutely definitively and in any cas
  Data CD or Data/Video DVD in the drive -- it does not matter if it's your
  favourite Windows CD, a video or a DVD with your last backup.
  

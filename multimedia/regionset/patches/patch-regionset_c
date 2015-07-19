@@ -1,21 +1,12 @@
-$OpenBSD: patch-regionset_c,v 1.1.1.1 2008/01/03 19:30:16 oga Exp $
---- regionset.c.orig	Thu Jan  3 04:49:14 2008
-+++ regionset.c	Thu Jan  3 04:50:12 2008
+$OpenBSD: patch-regionset_c,v 1.2 2015/07/19 01:36:18 ajacoutot Exp $
+--- regionset.c.orig	Mon Dec 31 03:19:17 2012
++++ regionset.c	Sun Jul 19 03:34:44 2015
 @@ -27,7 +27,7 @@
  #include <stdio.h>
  #include "dvd_udf.h"
  
 -#define DEFAULTDEVICE "/dev/dvd"
 +#define DEFAULTDEVICE "/dev/cd0c"
- #define VERSION "0.1"
+ #define VERSION "0.2"
  
- int main (int argc, char* argv[]) 
-@@ -39,7 +39,7 @@ int main (int argc, char* argv[]) 
- 	if (argc>1) err=UDFOpenDisc(argv[1]);
- 	else err=UDFOpenDisc(DEFAULTDEVICE);
- 	if (err<0) {
--		printf("ERROR: Could not open disc \"%s\"!\n",((argc>=1)?argv[1]:DEFAULTDEVICE));
-+		printf("ERROR: Could not open disc \"%s\"!\n",((argc>1)?argv[1]:DEFAULTDEVICE));
-                 printf("Ensure that there is any readable CD or DVD in the drive.\n");
- 		return 1;
- 	}
+ int main (int argc, char* argv[]) {

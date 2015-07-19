@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/03 19:30:16 oga Exp $
-bin/regionset
+@comment $OpenBSD: PLIST,v 1.2 2015/07/19 01:36:18 ajacoutot Exp $
+@bin bin/regionset
 share/doc/regionset/
 share/doc/regionset/README
