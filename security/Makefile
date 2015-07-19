@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.376 2015/07/19 20:50:59 kili Exp $
+# $OpenBSD: Makefile,v 1.377 2015/07/19 21:01:55 kili Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -60,7 +60,6 @@
      SUBDIR += hatchet
      SUBDIR += heimdal
      SUBDIR += hlfl
-     SUBDIR += hs-certificate
      SUBDIR += hs-cprng-aes
      SUBDIR += hs-crypto
      SUBDIR += hs-crypto-api
@@ -70,7 +69,6 @@
      SUBDIR += hs-mwc-random
      SUBDIR += hs-pwstore-fast
      SUBDIR += hs-skein
-     SUBDIR += hs-tls
      SUBDIR += hydra
      SUBDIR += ikeman
      SUBDIR += integrit
