@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.81 2015/07/18 21:07:40 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.82 2015/07/19 02:10:31 jeremy Exp $
 
 # ruby module
 
@@ -132,7 +132,6 @@ MODRUBY_FLAVOR =	rbx
 GEM_MAN_SUFFIX =	-${MODRUBY_FLAVOR}
 .endif
 
-MODRUBY_RAKE_DEPENDS =	
 MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec/1,${MODRUBY_FLAVOR}<2.0
 MODRUBY_RSPEC3_DEPENDS = devel/ruby-rspec/3/rspec,${MODRUBY_FLAVOR}>=3.0
 
@@ -156,7 +155,6 @@ RUBY=			${LOCALBASE}/bin/ruby${MODRUBY_BINREV}
 RAKE=			${LOCALBASE}/bin/rake${MODRUBY_BINREV}
 MODRUBY_BIN_TESTRB =	${LOCALBASE}/bin/testrb${MODRUBY_BINREV}
 .  if ${MODRUBY_REV} == 1.8
-MODRUBY_RAKE_DEPENDS =	devel/ruby-rake
 RSPEC=			${LOCALBASE}/bin/spec
 MODRUBY_BIN_RSPEC =	${LOCALBASE}/bin/rspec
 .  else
@@ -242,8 +240,8 @@ BUILD_DEPENDS+=		${MODRUBY_BUILD_DEPENDS}
 RUN_DEPENDS+=		${MODRUBY_RUN_DEPENDS}
 .endif
 
-.if ${MODRUBY_TEST:L:Mrake}
-TEST_DEPENDS+=	${MODRUBY_RAKE_DEPENDS}
+.if ${MODRUBY_TEST:L:Mrake} && ${MODRUBY_REV} == 1.8
+TEST_DEPENDS+=	devel/ruby-rake
 .endif
 .if ${MODRUBY_TEST:L:Mrspec}
 TEST_DEPENDS+=	${MODRUBY_RSPEC_DEPENDS}

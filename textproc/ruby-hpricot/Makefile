@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/06/25 18:53:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2015/07/19 02:10:31 jeremy Exp $
 
 COMMENT=		flexible HTML parser
 
@@ -9,8 +9,6 @@ HOMEPAGE=		http://code.whytheluckystiff.net/hpricot/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-
-BUILD_DEPENDS=		${MODRUBY_RAKE_DEPENDS}
 
 MODULES=		lang/ruby
 

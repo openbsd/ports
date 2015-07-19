@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2015/07/17 14:36:29 jeremy Exp $
+# $OpenBSD: Makefile,v 1.42 2015/07/19 02:10:31 jeremy Exp $
 
 COMMENT-main =		Nginx module for deploying ruby applications
 COMMENT-standalone =	ruby web application server
@@ -8,7 +8,7 @@ BROKEN-hppa =	rake fails when linking PassengerHelperAgent
 PASS_VERSION =		4.0.44
 NGINX_VERSION =		1.4.7
 DISTNAME =		passenger-${PASS_VERSION}
-REVISION =		3
+REVISION =		4
 FULLPKGNAME-main =	${MODRUBY_PKG_PREFIX}-${DISTNAME}
 FULLPKGNAME-standalone = ${MODRUBY_PKG_PREFIX}-passenger-standalone-${PASS_VERSION}.${NGINX_VERSION}
 FULLPKGPATH-main =	${BASE_PKGPATH},-main
@@ -51,8 +51,7 @@ WANTLIB-standalone =	c crypto curl ev idn m pcre pthread ssl stdc++ z
 # also uses BSD make.
 BUILD_DEPENDS =		${RUN_DEPENDS-main} \
 			devel/gmake
-RUN_DEPENDS-main =	${MODRUBY_RAKE_DEPENDS} \
-			devel/ruby-daemon_controller,${MODRUBY_FLAVOR}>=1.2.0 \
+RUN_DEPENDS-main =	devel/ruby-daemon_controller,${MODRUBY_FLAVOR}>=1.2.0 \
 			www/ruby-rack,${MODRUBY_FLAVOR}
 LIB_DEPENDS-main =	${MODRUBY_LIB_DEPENDS} \
 			${LIB_DEPENDS-standalone}

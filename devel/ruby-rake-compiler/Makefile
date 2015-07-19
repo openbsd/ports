@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/10/11 19:54:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2015/07/19 02:10:31 jeremy Exp $
 
 COMMENT =	build and package Ruby extensions using Rake as glue
 
 DISTNAME =	rake-compiler-0.7.9
-REVISION =	5
+REVISION =	6
 CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/luislavena/rake-compiler
@@ -16,9 +16,6 @@ PERMIT_PACKAGE_CDROM =   Yes
 MODULES =	lang/ruby
 
 CONFIGURE_STYLE = ruby gem
-
-BUILD_DEPENDS = ${RUN_DEPENDS}
-RUN_DEPENDS =	${MODRUBY_RAKE_DEPENDS}
 
 pre-configure:
 	${SUBST_CMD} -DMAKE_PROGRAM=${MAKE_PROGRAM} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/26 23:55:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2015/07/19 02:10:31 jeremy Exp $
 
 COMMENT=		automate interaction with websites
 
@@ -11,8 +11,7 @@ HOMEPAGE=		http://mechanize.rubyforge.org/mechanize
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-BUILD_DEPENDS=		${RUN_DEPENDS} \
-			${MODRUBY_RAKE_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		textproc/ruby-nokogiri,${MODRUBY_FLAVOR}
 
 MODULES=		lang/ruby
