@@ -1,0 +1,10 @@
+$OpenBSD: patch-setup_cfg,v 1.1 2015/07/19 01:15:55 sthen Exp $
+--- setup.cfg.orig	Thu Mar 26 16:49:54 2015
++++ setup.cfg	Sat Jul 18 21:32:28 2015
+@@ -1,6 +1,4 @@
+ [egg_info]
+-tag_build = dev
+-tag_date = true
+ 
+ [aliases]
+ release = egg_info -RDb ''

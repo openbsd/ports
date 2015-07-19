@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/02 14:21:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/07/19 01:15:55 sthen Exp $
 
 COMMENT =		WSGI utility collection
 
-MODPY_EGG_VERSION =	0.9.4
+MODPY_EGG_VERSION =	0.10.4
 DISTNAME =		Werkzeug-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		0
 
 CATEGORIES =		www devel
 
 HOMEPAGE =		http://werkzeug.pocoo.org/
 
-MODPY_PI =		Yes
-
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
+
+GH_ACCOUNT=		mitsuhiko
+GH_PROJECT=		werkzeug
+GH_TAGNAME=		${MODPY_EGG_VERSION}
 
 MODULES =		lang/python
 
@@ -22,14 +23,21 @@ MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS =		textproc/py-sphinx
 
-PKG_ARCH =		*
+# too many deps not yet ported
+NO_TEST =		Yes
+
+FLAVORS =		python3
+FLAVOR ?=
 
 post-build:
 	@cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
 
+DOCS =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}werkzeug
+EXAMPLES =	${PREFIX}/share/examples/${MODPY_PY_PREFIX}werkzeug
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}werkzeug
-	cd ${WRKSRC}/docs/_build/html && \
-	    pax -rw * ${PREFIX}/share/doc/${MODPY_PY_PREFIX}werkzeug
+	${INSTALL_DATA_DIR} ${DOCS}
+	cd ${WRKSRC}/docs/_build/html && pax -rw * ${DOCS}
+	${INSTALL_DATA_DIR} ${EXAMPLES}
+	cd ${WRKSRC}/examples && pax -rw * ${EXAMPLES}
 
 .include <bsd.port.mk>
