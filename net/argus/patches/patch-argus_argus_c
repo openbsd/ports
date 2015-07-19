@@ -1,7 +1,7 @@
-$OpenBSD: patch-argus_argus_c,v 1.4 2015/01/26 13:12:17 steven Exp $
---- argus/argus.c.orig	Tue Jul 15 03:48:28 2014
-+++ argus/argus.c	Mon Sep 29 23:42:01 2014
-@@ -296,6 +296,7 @@ main (int argc, char *argv[])
+$OpenBSD: patch-argus_argus_c,v 1.5 2015/07/19 06:25:45 steven Exp $
+--- argus/argus.c.orig	Tue Apr 14 16:32:33 2015
++++ argus/argus.c	Thu Jul 16 21:37:14 2015
+@@ -297,6 +297,7 @@ main (int argc, char *argv[])
     uflag = 0;
     pflag = 6;
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-argus_argus_c,v 1.4 2015/01/26 13:12:17 steven Exp $
     
     if (strchr (argv[0], '/')) {
  #if defined(HAVE_STRLCPY)
-@@ -304,10 +305,9 @@ main (int argc, char *argv[])
+@@ -305,10 +306,9 @@ main (int argc, char *argv[])
        bzero(path, MAXPATHNAMELEN);
        strncpy(path, argv[0], MAXPATHNAMELEN - 1);
  #endif
@@ -21,7 +21,7 @@ $OpenBSD: patch-argus_argus_c,v 1.4 2015/01/26 13:12:17 steven Exp $
  
  #ifdef HAVE_SYSLOG
  #ifndef LOG_PERROR
-@@ -372,7 +372,7 @@ main (int argc, char *argv[])
+@@ -373,7 +373,7 @@ main (int argc, char *argv[])
     setArgusMarReportInterval (ArgusOutputTask,ARGUS_MARSTATUSTIMER);
  
     if (!doconf) {
@@ -30,7 +30,7 @@ $OpenBSD: patch-argus_argus_c,v 1.4 2015/01/26 13:12:17 steven Exp $
        if (stat (path, &statbuf) == 0) {
           ArgusParseResourceFile (ArgusModel, path);
        }
-@@ -610,7 +610,7 @@ main (int argc, char *argv[])
+@@ -611,7 +611,7 @@ main (int argc, char *argv[])
     if ((status = pthread_attr_init(ArgusAttr)) != 0)
        ArgusLog (LOG_ERR, "pthreads init error");
  
