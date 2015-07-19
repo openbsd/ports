@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/06/10 12:08:08 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/07/19 02:03:48 sthen Exp $
 @comment bin/pip
 @comment bin/pip2
 @comment bin/pip3
@@ -248,14 +248,6 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/tests/
-lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/tests/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/tests/${MODPY_PYCACHE}test_pkg_resources.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/tests/${MODPY_PYCACHE}test_resources.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/tests/test_pkg_resources.py
-lib/python${MODPY_VERSION}/site-packages/pip/_vendor/pkg_resources/tests/test_resources.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/progress/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/progress/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/progress/${MODPY_PYCACHE}/
