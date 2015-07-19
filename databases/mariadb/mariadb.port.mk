@@ -1,4 +1,4 @@
-# $OpenBSD: mariadb.port.mk,v 1.3 2015/07/19 12:34:41 zhuk Exp $
+# $OpenBSD: mariadb.port.mk,v 1.4 2015/07/19 12:42:20 zhuk Exp $
 #
 # Helps testing MySQL/MariaDB-based software, no B/L/R-DEPS here.
 
@@ -61,7 +61,7 @@ MODMARIADB_TEST_TARGET += \
 MODMARIADB_TEST_TARGET += \
 	set +e; \
 	cd ${WRKBUILD}; \
-	${MODMARIADB_TEST_CMD}; \
+	( ${MODMARIADB_TEST_CMD} ); \
 	Q=$$?; \
 	kill $$!; \
 	exit $$Q

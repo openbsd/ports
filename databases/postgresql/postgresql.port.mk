@@ -1,4 +1,4 @@
-# $OpenBSD: postgresql.port.mk,v 1.3 2015/07/19 12:34:41 zhuk Exp $ 
+# $OpenBSD: postgresql.port.mk,v 1.4 2015/07/19 12:42:20 zhuk Exp $ 
 #
 # Helps testing PostgreSQL-based software, no B/L/R-DEPS here.
 
@@ -32,7 +32,7 @@ MODPOSTGRESQL_TEST_TARGET += \
 MODPOSTGRESQL_TEST_TARGET += \
 	set +e; \
 	cd ${WRKBUILD}; \
-	${MODPOSTGRESQL_TEST_CMD}; \
+	( ${MODPOSTGRESQL_TEST_CMD} ); \
 	Q=$$?; \
 	${LOCALBASE}/bin/pg_ctl stop -D ${_MODPOSTGRESQL_TEST_PGDATA} -m i; \
 	exit $$Q
