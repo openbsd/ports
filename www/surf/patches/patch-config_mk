@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_mk,v 1.5 2013/03/11 17:08:51 bcallah Exp $
+$OpenBSD: patch-config_mk,v 1.6 2015/07/19 05:58:59 czarkoff Exp $
 use TRUEPREFIX instead of patching Makefile to remove DESTDIR
 --- config.mk.orig	Sun Mar 10 22:59:36 2013
 +++ config.mk	Sun Mar 10 23:01:27 2013
@@ -23,7 +23,7 @@ use TRUEPREFIX instead of patching Makefile to remove DESTDIR
 -INCS = -I. -I/usr/include -I${X11INC} ${GTKINC}
 -LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${GTKLIB} -lgthread-2.0
 +INCS = ${GTKINC}
-+LIBS = -pthread ${GTKLIB}
++LIBS = ${GTKLIB}
  
  # flags
  CPPFLAGS = -DVERSION=\"${VERSION}\" -D_BSD_SOURCE
