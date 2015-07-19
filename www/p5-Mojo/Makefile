@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2015/07/19 06:38:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2015/07/19 14:23:45 ajacoutot Exp $
 
 COMMENT =	next generation web framework for Perl
 
 MODULES =	cpan
 DISTNAME =	Mojolicious-6.14
 CATEGORIES =	www
+REVISION =	0
 
 MAINTAINER =	Mark Patruck <mark@wrapped.cx>
 
@@ -25,5 +26,9 @@ MAKE_ENV += TEST_MORBO=Yes
 MAKE_ENV += TEST_POD=Yes
 MAKE_ENV += TEST_PREFORK=Yes
 MAKE_ENV += TEST_TLS=Yes
+
+# see pkg/README for certificate handling
+post-install:
+	rm -rf ${PREFIX}/${P5SITE}/Mojo/IOLoop/certs/
 
 .include <bsd.port.mk>
