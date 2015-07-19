@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/05 15:09:04 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/19 21:09:57 afresh1 Exp $
+${P5SITE}/strictures/
 ${P5SITE}/strictures.pm
+${P5SITE}/strictures/extra.pm
 @man man/man3p/strictures.3p
+@man man/man3p/strictures::extra.3p
