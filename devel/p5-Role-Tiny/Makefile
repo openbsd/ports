@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/06 16:47:35 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2015/07/19 21:11:26 afresh1 Exp $
 
 COMMENT =	minimalist role composition tool
 
 MODULES =	cpan
-DISTNAME =	Role-Tiny-1.003004
+DISTNAME =	Role-Tiny-2.000001
 CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 CPAN_AUTHOR =	HAARG
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-TEST_DEPENDS =	devel/p5-Test-Fatal
+TEST_DEPENDS =	devel/p5-Class-Method-Modifiers>=1.05 \
+		devel/p5-Test-Fatal>=0.003
 
 .include <bsd.port.mk>
