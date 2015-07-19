@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/03/16 18:07:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2015/07/19 20:57:43 ajacoutot Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -7,7 +7,7 @@ DISTNAME=	libvmime-${VMIME_V}+svn603
 EXTRACT_SUFX=	.tar.bz2
 
 PKGNAME=	libvmime-${VMIME_V}
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS+=  vmime    2.0     # 0.0
 
@@ -33,7 +33,10 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += m stdc++
+WANTLIB += ffi gmp gnutls hogweed m nettle p11-kit pthread stdc++
+WANTLIB += tasn1 z
+
+MODULES=	devel/gettext
 
 WRKDIST=	${WRKDIR}/libvmime-${VMIME_V}
 
@@ -43,6 +46,7 @@ CFLAGS +=	-fpermissive
 USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	archivers/bzip2
+LIB_DEPENDS=	security/gnutls
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -52,9 +56,5 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 # security/libgsasl; not real need for this so far
 CONFIGURE_ARGS += --disable-sasl
-
-# XXX www/apache-httpd crashes with php-mapi from mail/zarafa/zarafa,-webaccess
-# /usr/local/lib/libvmime.so.2.0: undefined symbol '_ZN5vmime3net12serviceInfosD2Ev
-CONFIGURE_ARGS += --disable-tls
 
 .include <bsd.port.mk>
