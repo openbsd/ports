@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/28 10:17:31 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2015/07/19 23:46:08 naddy Exp $
 
 COMMENT =	convert PO files to XML
 DISTNAME =	poxml-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/poxml
@@ -13,5 +13,6 @@ WANTLIB += gettextpo
 
 MODULES =	devel/gettext
 MODKDE4_USE =	libs
+LIB_DEPENDS =	devel/gettext-tools
 
 .include <bsd.port.mk>

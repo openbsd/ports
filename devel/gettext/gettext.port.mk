@@ -1,4 +1,4 @@
-# $OpenBSD: gettext.port.mk,v 1.12 2010/11/22 10:04:18 espie Exp $
+# $OpenBSD: gettext.port.mk,v 1.13 2015/07/19 23:46:08 naddy Exp $
 
 _MODGETTEXT_SPEC =		devel/gettext>=0.10.38
 
@@ -14,3 +14,10 @@ LIB_DEPENDS +=		${MODGETTEXT_LIB_DEPENDS}
 BUILD_DEPENDS +=	${_MODGETTEXT_SPEC}
 RUN_DEPENDS +=		${MODGETTEXT_RUN_DEPENDS}
 WANTLIB +=		${MODGETTEXT_WANTLIB}
+
+# Always provide the development tools: msgfmt(1) etc.
+MODGETTEXT_TOOLS ?=	Yes
+
+.if ${MODGETTEXT_TOOLS:L} == yes
+BUILD_DEPENDS +=	devel/gettext-tools
+.endif

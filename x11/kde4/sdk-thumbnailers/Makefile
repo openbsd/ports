@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/28 10:17:31 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2015/07/19 23:46:08 naddy Exp $
 
 COMMENT =	KDE thumbnail generators for development files
 DISTNAME =	kdesdk-thumbnailers-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 #HOMEPAGE =	http://kdesdk-thumbnailers.kde.org/
@@ -15,5 +15,6 @@ WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio
 WANTLIB += gettextpo
 
 MODULES =	devel/gettext
+LIB_DEPENDS =	devel/gettext-tools
 
 .include <bsd.port.mk>

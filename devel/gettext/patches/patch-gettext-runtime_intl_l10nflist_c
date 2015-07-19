@@ -1,7 +1,7 @@
-$OpenBSD: patch-gettext-runtime_intl_l10nflist_c,v 1.4 2013/01/21 22:08:52 naddy Exp $
---- gettext-runtime/intl/l10nflist.c.orig	Tue Dec  4 07:28:58 2012
-+++ gettext-runtime/intl/l10nflist.c	Wed Jan 16 23:06:10 2013
-@@ -181,6 +181,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
+$OpenBSD: patch-gettext-runtime_intl_l10nflist_c,v 1.5 2015/07/19 23:46:08 naddy Exp $
+--- gettext-runtime/intl/l10nflist.c.orig	Fri Jun  5 09:01:10 2015
++++ gettext-runtime/intl/l10nflist.c	Sat Jul 18 19:13:09 2015
+@@ -177,6 +177,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
    struct loaded_l10nfile **lastp;
    struct loaded_l10nfile *retval;
    char *cp;
@@ -9,7 +9,7 @@ $OpenBSD: patch-gettext-runtime_intl_l10nflist_c,v 1.4 2013/01/21 22:08:52 naddy
    size_t dirlist_count;
    size_t entries;
    int cnt;
-@@ -191,7 +192,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
+@@ -187,7 +188,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
      dirlist_len = 0;
  
    /* Allocate room for the full file name.  */
@@ -18,7 +18,7 @@ $OpenBSD: patch-gettext-runtime_intl_l10nflist_c,v 1.4 2013/01/21 22:08:52 naddy
  				  + strlen (language)
  				  + ((mask & XPG_TERRITORY) != 0
  				     ? strlen (territory) + 1 : 0)
-@@ -202,6 +203,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
+@@ -198,6 +199,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
  				  + ((mask & XPG_MODIFIER) != 0
  				     ? strlen (modifier) + 1 : 0)
  				  + 1 + strlen (filename) + 1);
@@ -26,7 +26,7 @@ $OpenBSD: patch-gettext-runtime_intl_l10nflist_c,v 1.4 2013/01/21 22:08:52 naddy
  
    if (abs_filename == NULL)
      return NULL;
-@@ -215,32 +217,33 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
+@@ -211,32 +213,33 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_
        cp += dirlist_len;
        cp[-1] = '/';
      }
@@ -71,7 +71,7 @@ $OpenBSD: patch-gettext-runtime_intl_l10nflist_c,v 1.4 2013/01/21 22:08:52 naddy
  
    /* Look in list of already loaded domains whether it is already
       available.  */
-@@ -364,7 +367,7 @@ _nl_normalize_codeset (const char *codeset, size_t nam
+@@ -360,7 +363,7 @@ _nl_normalize_codeset (const char *codeset, size_t nam
    if (retval != NULL)
      {
        if (only_digit)
