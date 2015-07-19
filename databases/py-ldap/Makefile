@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/07/18 21:11:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2015/07/19 06:10:13 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -33,7 +33,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			devel/py-asn1-modules
 
 pre-configure:
-	sed -i 's,/opt/openldap-RE24/lib,${LOCALBASE}/lib,;' \
+	sed -i -e 's,/opt/openldap-RE24/lib,${LOCALBASE}/lib,;' \
 		-e 's,/opt/openldap-RE24/include,${LOCALBASE}/include,;' \
 		-e 's,/usr/include/sasl,${LOCALBASE}/include/sasl,' \
 		${WRKSRC}/setup.cfg
