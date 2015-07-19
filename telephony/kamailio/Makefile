@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2014/09/13 18:09:22 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2015/07/19 00:02:24 jasper Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -167,7 +167,7 @@ RUN_DEPENDS$i +=	kamailio-${VERSION}:telephony/kamailio
 .endfor
 
 pre-configure:
-	@perl -pi -e 's,#!/bin/bash,#!/bin/sh,;' \
+	@sed -i -e 's,#!/bin/bash,#!/bin/sh,;' \
 	    -e 's,exit -1,exit 255,' ${WRKSRC}/utils/kamctl/kam*
 
 .include <bsd.port.mk>

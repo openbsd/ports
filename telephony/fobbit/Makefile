@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/07/19 00:02:24 jasper Exp $
 
 COMMENT=	creative voip blaster driver/software
 DISTNAME=	fobbit-0.61
@@ -18,7 +18,7 @@ WRKSRC=	${WRKDIST}/src
 WANTLIB=c
 
 pre-configure:
-	@perl -pi -e 's|_PREFIX_|${PREFIX}|g;' ${WRKSRC}/ini.c ${WRKSRC}/vb.ini
+	@sed -i 's|_PREFIX_|${PREFIX}|g;' ${WRKSRC}/ini.c ${WRKSRC}/vb.ini
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fobbit
