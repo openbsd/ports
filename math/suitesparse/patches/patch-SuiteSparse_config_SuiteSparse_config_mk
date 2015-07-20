@@ -1,0 +1,40 @@
+$OpenBSD: patch-SuiteSparse_config_SuiteSparse_config_mk,v 1.1.1.1 2015/07/20 23:10:35 ajacoutot Exp $
+--- SuiteSparse_config/SuiteSparse_config.mk.orig	Wed Mar 25 19:15:00 2015
++++ SuiteSparse_config/SuiteSparse_config.mk	Mon Jul 20 04:52:54 2015
+@@ -90,13 +90,13 @@ F77FLAGS = $(FFLAGS) -O
+ F77LIB =
+ 
+ # C and Fortran libraries.  Remove -lrt if you don't have it.
+-  LIB = -lm -lrt
++  LIB = -lm
+ # Using the following requires CF = ... -DNTIMER on POSIX C systems.
+ # LIB = -lm
+ 
+ # For "make install"
+-INSTALL_LIB = /usr/local/lib
+-INSTALL_INCLUDE = /usr/local/include
++INSTALL_LIB = ${WRKINST}${PREFIX}/lib
++INSTALL_INCLUDE = ${WRKINST}${PREFIX}/include
+ 
+ # Which version of MAKE you are using (default is "make")
+ # MAKE = make
+@@ -119,8 +119,8 @@ INSTALL_INCLUDE = /usr/local/include
+ # naming the BLAS and LAPACK library (*.a or *.so) files.
+ 
+ # This is probably slow ... it might connect to the Standard Reference BLAS:
+-# BLAS = -lblas -lgfortran
+-  LAPACK = -llapack
++  BLAS = -L${LOCALBASE}/lib -lblas -lg2c
++  LAPACK = -L${LOCALBASE}/lib -llapack
+ 
+ # MKL 
+ # BLAS = -Wl,--start-group $(MKLROOT)/lib/intel64/libmkl_intel_lp64.a $(MKLROOT)/lib/intel64/libmkl_core.a $(MKLROOT)/lib/intel64/libmkl_intel_thread.a -Wl,--end-group -lpthread -lm
+@@ -131,7 +131,7 @@ INSTALL_INCLUDE = /usr/local/include
+ # LAPACK =
+ 
+ # OpenBLAS
+-  BLAS = -lopenblas
++# BLAS = -lopenblas
+ # LAPACK = 
+ 
+ # NOTE: this next option for the "Goto BLAS" has nothing to do with a "goto"

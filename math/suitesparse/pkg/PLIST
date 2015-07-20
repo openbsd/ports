@@ -1,0 +1,107 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/20 23:10:35 ajacoutot Exp $
+@conflict suitesparse_config-*
+@conflict amd-*
+@conflict camd-*
+@conflict ccolamd-*
+@conflict colamd-*
+@conflict ufconfig-*
+@conflict umfpack-*
+@pkgpath math/SuiteSparse_config
+@pkgpath math/amd
+@pkgpath math/camd
+@pkgpath math/ccolamd
+@pkgpath math/colamd
+@pkgpath math/ufconfig
+@pkgpath math/umfpack
+include/RBio.h
+include/SuiteSparseQR.hpp
+include/SuiteSparseQR_C.h
+include/SuiteSparseQR_definitions.h
+include/SuiteSparse_config.h
+include/amd.h
+include/btf.h
+include/camd.h
+include/ccolamd.h
+include/cholmod.h
+include/cholmod_blas.h
+include/cholmod_camd.h
+include/cholmod_check.h
+include/cholmod_cholesky.h
+include/cholmod_complexity.h
+include/cholmod_config.h
+include/cholmod_core.h
+include/cholmod_function.h
+include/cholmod_gpu.h
+include/cholmod_gpu_kernels.h
+include/cholmod_io64.h
+include/cholmod_matrixops.h
+include/cholmod_modify.h
+include/cholmod_partition.h
+include/cholmod_supernodal.h
+include/cholmod_template.h
+include/colamd.h
+include/cs.h
+include/klu.h
+include/ldl.h
+include/spqr.hpp
+include/umfpack.h
+include/umfpack_col_to_triplet.h
+include/umfpack_defaults.h
+include/umfpack_free_numeric.h
+include/umfpack_free_symbolic.h
+include/umfpack_get_determinant.h
+include/umfpack_get_lunz.h
+include/umfpack_get_numeric.h
+include/umfpack_get_symbolic.h
+include/umfpack_global.h
+include/umfpack_load_numeric.h
+include/umfpack_load_symbolic.h
+include/umfpack_numeric.h
+include/umfpack_qsymbolic.h
+include/umfpack_report_control.h
+include/umfpack_report_info.h
+include/umfpack_report_matrix.h
+include/umfpack_report_numeric.h
+include/umfpack_report_perm.h
+include/umfpack_report_status.h
+include/umfpack_report_symbolic.h
+include/umfpack_report_triplet.h
+include/umfpack_report_vector.h
+include/umfpack_save_numeric.h
+include/umfpack_save_symbolic.h
+include/umfpack_scale.h
+include/umfpack_solve.h
+include/umfpack_symbolic.h
+include/umfpack_tictoc.h
+include/umfpack_timer.h
+include/umfpack_transpose.h
+include/umfpack_triplet_to_col.h
+include/umfpack_wsolve.h
+lib/libamd.a
+@lib lib/libamd.so.${LIBamd_VERSION}
+lib/libbtf.a
+@lib lib/libbtf.so.${LIBbtf_VERSION}
+lib/libcamd.a
+@lib lib/libcamd.so.${LIBcamd_VERSION}
+lib/libccolamd.a
+@lib lib/libccolamd.so.${LIBccolamd_VERSION}
+lib/libcholmod.a
+@lib lib/libcholmod.so.${LIBcholmod_VERSION}
+lib/libcolamd.a
+@lib lib/libcolamd.so.${LIBcolamd_VERSION}
+lib/libcsparse.a
+@lib lib/libcsparse.so.${LIBcsparse_VERSION}
+lib/libcxsparse.a
+@lib lib/libcxsparse.so.${LIBcxsparse_VERSION}
+lib/libklu.a
+@lib lib/libklu.so.${LIBklu_VERSION}
+lib/libldl.a
+@lib lib/libldl.so.${LIBldl_VERSION}
+lib/librbio.a
+@lib lib/librbio.so.${LIBrbio_VERSION}
+lib/libspqr.a
+@lib lib/libspqr.so.${LIBspqr_VERSION}
+lib/libsuitesparseconfig.a
+@lib lib/libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION}
+lib/libumfpack.a
+@lib lib/libumfpack.so.${LIBumfpack_VERSION}
