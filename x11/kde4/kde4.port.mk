@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.32 2015/05/01 15:39:28 espie Exp $
+# $OpenBSD: kde4.port.mk,v 1.33 2015/07/20 07:17:40 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.14.3
@@ -286,6 +286,7 @@ CONFIGURE_ARGS +=	${MODKDE4_CONF_ARGS}
 # MAKE_FLAGS +=		${MODKDE4_CONF_ARGS}
 
 MODKDE4_FIX_GETTEXT ?=	Yes
+MODKDE4_GETTEXT_MARKER ?=	\$$\{_po_files\}
 .if ${MODKDE4_FIX_GETTEXT:L} == "yes"
 # System (CMake) FindGettext.cmake requires having PO_FILES marker
 MODKDE4_post-patch =	@echo '====> Fixing GETTEXT_PROCESS_PO_FILES() calls'; \
@@ -293,7 +294,7 @@ MODKDE4_post-patch =	@echo '====> Fixing GETTEXT_PROCESS_PO_FILES() calls'; \
 		while read F; do \
 			perl -pi.pofilesfix -e '\
 			if (/GETTEXT_PROCESS_PO_FILES/ and !/\sPO_FILES/) { \
-				s@\$$\{_po_files\}@PO_FILES $$&@; \
+				s@${MODKDE4_GETTEXT_MARKER}@PO_FILES $$&@; \
 			}' "$$F"; \
 			if cmp -s "$$F" "$$F".pofilesfix; then \
 				rm "$$F".pofilesfix; \
