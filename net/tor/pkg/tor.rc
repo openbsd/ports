@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: tor.rc,v 1.4 2015/07/15 13:54:55 ajacoutot Exp $
+# $OpenBSD: tor.rc,v 1.5 2015/07/20 19:55:58 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/tor"
 daemon_timeout=60
@@ -8,7 +8,7 @@ daemon_timeout=60
 . /etc/rc.d/rc.subr
 
 rc_stop() {
-	pkill -INT -xf "^${pexp}"
+	pkill -INT -xf "${pexp}"
 }
 
 rc_cmd $1
