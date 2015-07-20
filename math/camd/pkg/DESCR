@@ -1,3 +1,0 @@
-CAMD is a set of routines for ordering a sparse matrix prior to Cholesky
-factorization (or for LU factorization with diagonal pivoting). There
-are versions in both C and Fortran. A MATLAB interface is provided.

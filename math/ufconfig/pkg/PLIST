@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 17:39:22 steven Exp $
-include/UFconfig.h

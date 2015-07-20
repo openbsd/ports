@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/11/11 19:29:24 pirofti Exp $
-include/colamd/
-include/colamd/colamd.h
-lib/libcolamd.a
-@lib lib/libcolamd.so.${LIBcolamd_VERSION}
-lib/libcolamd_p.a

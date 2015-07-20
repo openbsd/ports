@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/11/11 13:27:11 pirofti Exp $
-include/amd/
-include/amd/amd.h
-lib/libamd.a
-@lib lib/libamd.so.${LIBamd_VERSION}
-lib/libamd_p.a
-lib/libamdf77.a
-@lib lib/libamdf77.so.${LIBamdf77_VERSION}
-lib/libamdf77_p.a

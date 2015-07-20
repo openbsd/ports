@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/11/11 19:27:09 pirofti Exp $
-include/camd/
-include/camd/camd.h
-lib/libcamd.a
-@lib lib/libcamd.so.${LIBcamd_VERSION}
-lib/libcamd_p.a

@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/11/18 08:07:33 pirofti Exp $
-include/SuiteSparse_config.h
-lib/libsuitesparseconfig.a
-@lib lib/libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION}
-lib/libsuitesparseconfig_p.a
