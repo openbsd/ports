@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/11/02 09:02:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/07/20 00:50:27 naddy Exp $
 @pkgpath print/enscript,a4
 bin/diffpp
 @bin bin/enscript
@@ -22,6 +22,7 @@ share/enscript/88597.enc
 share/enscript/88599.enc
 share/enscript/a2ps.hdr
 share/enscript/afm/
+share/enscript/afm/MustRead.html
 share/enscript/afm/agd.afm
 share/enscript/afm/agdo.afm
 share/enscript/afm/agw.afm
@@ -93,6 +94,7 @@ share/enscript/hl/diffs.st
 share/enscript/hl/diffu.st
 share/enscript/hl/elisp.st
 share/enscript/hl/enscript.st
+share/enscript/hl/f90.st
 share/enscript/hl/fortran.st
 share/enscript/hl/fortran_pp.st
 share/enscript/hl/haskell.st
@@ -111,10 +113,7 @@ share/enscript/hl/lang_texinfo.st
 share/enscript/hl/m4.st
 share/enscript/hl/mail.st
 share/enscript/hl/makefile.st
-share/enscript/hl/maple.st
 share/enscript/hl/matlab.st
-share/enscript/hl/modula_2.st
-share/enscript/hl/nested.st
 share/enscript/hl/nroff.st
 share/enscript/hl/objc.st
 share/enscript/hl/outline.st
@@ -122,6 +121,7 @@ share/enscript/hl/pascal.st
 share/enscript/hl/passthrough.st
 share/enscript/hl/perl.st
 share/enscript/hl/postscript.st
+share/enscript/hl/pyrex.st
 share/enscript/hl/python.st
 share/enscript/hl/rfc.st
 share/enscript/hl/scheme.st
@@ -155,5 +155,20 @@ share/enscript/simple.hdr
 share/enscript/squeeze.hdr
 share/enscript/vms.enc
 share/examples/enscript/
-share/examples/enscript/enscript.cfg-sample
+share/examples/enscript/enscript.cfg
 @sample ${SYSCONFDIR}/enscript.cfg
+share/locale/ca/LC_MESSAGES/enscript.mo
+share/locale/da/LC_MESSAGES/enscript.mo
+share/locale/de/LC_MESSAGES/enscript.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/enscript.mo
+share/locale/es/LC_MESSAGES/enscript.mo
+share/locale/fr/LC_MESSAGES/enscript.mo
+share/locale/hr/LC_MESSAGES/enscript.mo
+share/locale/nl/LC_MESSAGES/enscript.mo
+share/locale/pt_BR/LC_MESSAGES/enscript.mo
+share/locale/ru/LC_MESSAGES/enscript.mo
+share/locale/sl/LC_MESSAGES/enscript.mo
+share/locale/sv/LC_MESSAGES/enscript.mo
+share/locale/tr/LC_MESSAGES/enscript.mo

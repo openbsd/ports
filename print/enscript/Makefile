@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.32 2015/05/02 09:39:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2015/07/20 00:50:27 naddy Exp $
 
 COMMENT=		convert ASCII files to PostScript
 
-DISTNAME=		enscript-1.6.3
-REVISION=		4
+DISTNAME=		enscript-1.6.6
 CATEGORIES=     	print
 
-HOMEPAGE=		http://www.codento.com/people/mtr/genscript/
+HOMEPAGE=		https://www.gnu.org/software/enscript/
 
-# GPLv2
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m
+MASTER_SITES=		${MASTER_SITE_GNU:=enscript/}
 
-MASTER_SITES=		${HOMEPAGE} \
-			${MASTER_SITE_GNU:=enscript/}
+MODULES=		devel/gettext
+WANTLIB=		c m
 
 CONFIGURE_STYLE=	gnu
-# gettext detection is broken and the translations are severely lacking
-CONFIGURE_ARGS=		--disable-nls
 USE_GROFF =		Yes
+
+FAKE_FLAGS=		sysconfdir=${TRUEPREFIX}/share/examples/enscript
 
 .include <bsd.port.mk>
