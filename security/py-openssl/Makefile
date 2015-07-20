@@ -1,24 +1,27 @@
-# $OpenBSD: Makefile,v 1.23 2015/06/22 22:40:59 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2015/07/20 07:02:58 sthen Exp $
 
 COMMENT=	Python interface to the OpenSSL library
 
-MODPY_EGG_VERSION=	0.13
-REVISION=	1
+MODPY_EGG_VERSION=	0.14
 DISTNAME=	pyOpenSSL-${MODPY_EGG_VERSION}
 PKGNAME=	py-openssl-${MODPY_EGG_VERSION}
 CATEGORIES=	security devel
 
-HOMEPAGE=	https://launchpad.net/pyopenssl/
+HOMEPAGE=	https://github.com/pyca/pyopenssl
 
-MAINTAINER=	Eric Faurot <eric@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # Apache 2
 PERMIT_PACKAGE_CDROM=	Yes
+
+RUN_DEPENDS =	security/py-cryptography
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += crypto pthread ssl
 
 MODPY_PI =	Yes
+MODPY_SETUPTOOLS = Yes
 
 MODULES=	lang/python
 
