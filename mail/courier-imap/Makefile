@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2015/07/20 22:14:36 jca Exp $
+# $OpenBSD: Makefile,v 1.100 2015/07/20 23:46:53 ajacoutot Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -29,7 +29,7 @@ WANTLIB-pop3+=		idn pcre ${MODGETTEXT_WANTLIB}
 
 USE_GMAKE=		Yes
 USE_GROFF=		Yes
-CONFIGURE_STYLE=	autoconf autoheader automake
+CONFIGURE_STYLE=	autoconf automake
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.14
 
