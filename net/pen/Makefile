@@ -1,22 +1,25 @@
-# $OpenBSD: Makefile,v 1.16 2014/11/07 12:44:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2015/07/20 00:10:36 jca Exp $
 
 COMMENT=		load balancer for simple TCP-based protocols
 
-DISTNAME=		pen-0.18.0
-CATEGORIES=		net
-HOMEPAGE=		http://siag.nu/pen/
+DISTNAME=		pen-0.29.0
 
-MASTER_SITES=		http://siag.nu/pub/pen/
+CATEGORIES=		net
+
+HOMEPAGE=		http://siag.nu/pen/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c
+WANTLIB += GeoIP c crypto ssl
+
+MASTER_SITES=		http://siag.nu/pub/pen/
+
+LIB_DEPENDS=		net/GeoIP
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-docdir=${PREFIX}/share/doc/pen
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pen
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

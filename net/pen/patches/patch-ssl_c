@@ -1,0 +1,15 @@
+$OpenBSD: patch-ssl_c,v 1.1 2015/07/20 00:10:36 jca Exp $
+--- ssl.c.orig	Wed May 13 07:38:28 2015
++++ ssl.c	Sat Jul 18 20:38:03 2015
+@@ -277,9 +277,11 @@ static SSL_CTX *ssl_create_context(char *keyfile, char
+ 		ssl_context = SSL_CTX_new(SSLv2_method());
+ 		break;
+ #endif
++#if 0
+ 	case SRV_SSL_V3:
+ 		ssl_context = SSL_CTX_new(SSLv3_method());
+ 		break;
++#endif
+ 	default:
+ 	case SRV_SSL_V23:
+ 		ssl_context = SSL_CTX_new(SSLv23_method());
