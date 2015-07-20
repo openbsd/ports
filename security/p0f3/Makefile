@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/08 22:03:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/20 03:13:47 jca Exp $
 
 COMMENT=	passive OS fingerprinting tool
 
 V=		3.08b
+REVISION=	0
 DISTNAME=	p0f-$V
 PKGNAME=	p0f3-$V
 EXTRACT_SUFX=	.tgz

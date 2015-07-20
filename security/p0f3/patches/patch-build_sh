@@ -1,6 +1,19 @@
-$OpenBSD: patch-build_sh,v 1.1.1.1 2015/01/08 22:03:20 sthen Exp $
---- build.sh.orig	Wed Jan  7 15:09:18 2015
-+++ build.sh	Wed Jan  7 15:10:36 2015
+$OpenBSD: patch-build_sh,v 1.2 2015/07/20 03:13:47 jca Exp $
+--- build.sh.orig	Sun Jul 19 21:11:34 2015
++++ build.sh	Sun Jul 19 21:12:18 2015
+@@ -18,10 +18,10 @@ BASIC_CFLAGS="-Wall -Wno-format -I/usr/local/include/ 
+ 
+ BASIC_LDFLAGS="-L/usr/local/lib/ -L/opt/local/lib $LDFLAGS"
+ 
+-USE_CFLAGS="-fstack-protector-all -fPIE -D_FORTIFY_SOURCE=2 -g -ggdb \
++USE_CFLAGS="-fstack-protector-all -D_FORTIFY_SOURCE=2 -g -ggdb \
+             $BASIC_CFLAGS"
+ 
+-USE_LDFLAGS="-Wl,-z,relro -pie $BASIC_LDFLAGS"
++USE_LDFLAGS="-Wl,-z,relro $BASIC_LDFLAGS"
+ 
+ if [ "$OSTYPE" = "cygwin" ]; then
+   USE_LIBS="-lwpcap $LIBS"
 @@ -81,8 +81,8 @@ if [ "$1" = "clean" -o "$1" = "publish" ]; then
  elif [ "$1" = "all" -o "$1" = "" ]; then
  
