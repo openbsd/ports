@@ -1,36 +1,38 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/07/20 00:33:13 jca Exp $
 
 COMMENT =		serial interface class for Python
 
-MODPY_EGG_VERSION =	2.4
+MODPY_EGG_VERSION =	2.7
 DISTNAME =		pyserial-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		4
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://pyserial.wiki.sourceforge.net/pySerial
+HOMEPAGE =		http://pyserial.sourceforge.net/
 
-MAINTAINER =		Daniel Gruber <daniel@tydirium.org>
+MAINTAINER =		Daniel Winters <daniel@tydirium.org>
 
 # Python license
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pyserial/}
-
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PI =		Yes
 
-DOCSDIR =		${PREFIX}/share/doc/py-serial
-EXAMPLESDIR =		${PREFIX}/share/examples/py-serial
+FLAVORS =		python3
+FLAVOR ?=
+
+DOCSDIR =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}serial
+EXAMPLESDIR =		${PREFIX}/share/examples/${MODPY_PY_PREFIX}serial
 
 post-install:
+	cd ${PREFIX}/bin/ && mv miniterm.py miniterm-${MODPY_VERSION}.py
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${WRKSRC}/LICENSE.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/documentation/*.rst ${DOCSDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
 
-# NOTE: tests require a serial setup; see ${WRKSRC}/examples/test.py 
+# NOTE: tests require a serial setup; see ${WRKSRC}/examples/test.py
 # for more information
 do-test:
 	cd ${WRKSRC} && \
