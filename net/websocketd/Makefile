@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2015/06/08 09:17:04 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.5 2015/07/20 20:53:58 kspillner Exp $
 
 COMMENT =		access any command-line tool via a WebSocket
 
-V =			0.2.10
+V =			0.2.11
 VERSION =		$V
 DISTNAME =		websocketd-$V
 GH_ACCOUNT =		joewalnes
 GH_PROJECT =		websocketd
 GH_TAGNAME =		v$V
-REVISION =		1
 
 CATEGORIES =		net www
 
@@ -26,6 +25,10 @@ MODULES +=		lang/go
 BUILD_DEPENDS =		net/go-websocket
 
 NO_TEST =		Yes
+SUBST_VARS =		VERSION
+
+pre-build:
+	@${SUBST_CMD} ${WRKSRC}/version.go
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/release/websocketd.man			\
@@ -35,9 +38,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/bash/count.sh		\
 	    ${PREFIX}/share/examples/websocketd/bash/count.sh
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/websocketd/cgi-bin/
-	${INSTALL_DATA} ${WRKSRC}/examples/cgi-bin/README.txt		\
+	${SUBST_CMD} -c -m 755 ${WRKSRC}/examples/cgi-bin/README.txt		\
 	    ${PREFIX}/share/examples/websocketd/cgi-bin/README.txt
-	${INSTALL_DATA} ${WRKSRC}/examples/cgi-bin/dump-env.sh		\
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/cgi-bin/dump-env.sh		\
 	    ${PREFIX}/share/examples/websocketd/cgi-bin/dump-env.sh
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/websocketd/html/
 	${INSTALL_DATA} ${WRKSRC}/examples/html/count.html		\

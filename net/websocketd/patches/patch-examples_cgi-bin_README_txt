@@ -1,0 +1,13 @@
+$OpenBSD: patch-examples_cgi-bin_README_txt,v 1.1 2015/07/20 20:53:59 kspillner Exp $
+
+Tweak path to cgi directory for installed examples.
+--- examples/cgi-bin/README.txt.orig	Thu Jul 16 11:32:42 2015
++++ examples/cgi-bin/README.txt	Thu Jul 16 11:32:57 2015
+@@ -1,6 +1,6 @@
+ This examples directory shows how websocketd can also serve CGI scripts via HTTP.
+ 
+-$ websocketd --port=1234 --cgidir=examples/cgi-bin
++$ websocketd --port=1234 --cgidir=${LOCALBASE}/share/examples/websocketd/cgi-bin
+ # Then access http://localhost:1234/dump-env.sh
+ 
+ 

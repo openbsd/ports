@@ -1,0 +1,20 @@
+$OpenBSD: patch-examples_cgi-bin_dump-env_sh,v 1.1 2015/07/20 20:53:59 kspillner Exp $
+
+Drop Bash and tweak to work with our ksh.
+--- examples/cgi-bin/dump-env.sh.orig	Thu Jul 16 11:52:56 2015
++++ examples/cgi-bin/dump-env.sh	Thu Jul 16 11:58:52 2015
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Copyright 2013 Joe Walnes and the websocketd team.
+ # All rights reserved.
+@@ -36,7 +36,7 @@ echo
+ 
+ for NAME in ${NAMES}
+ do
+-	echo ${NAME}=${!NAME:-<unset>}
++	echo ${NAME}=${NAME:-<unset>}
+ done
+ 
+ # Additional HTTP headers
