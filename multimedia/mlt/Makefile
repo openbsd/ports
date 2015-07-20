@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/28 12:01:15 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2015/07/20 05:20:27 zhuk Exp $
 
 SHARED_ONLY =		Yes
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
-VERSION =		0.9.2
+VERSION =		0.9.6
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gpl2 =		mlt-gpl2-${VERSION}
-REVISION-main =		3
-REVISION-gpl2 =		3
 
 # XXX versions should be kept in sync together
-SHARED_LIBS =		mlt		0.0
-SHARED_LIBS +=		mlt++		0.0
+SHARED_LIBS =		mlt		1.0
+SHARED_LIBS +=		mlt++		1.0
 
 CATEGORIES =		multimedia devel
 HOMEPAGE =		http://www.mltframework.org/

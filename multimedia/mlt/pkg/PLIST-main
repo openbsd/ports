@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2014/07/17 08:30:58 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2015/07/20 05:20:27 zhuk Exp $
 @conflict freeze-<2.5p2
 @bin bin/melt
 include/mlt/
@@ -107,6 +107,7 @@ share/mlt/core/producer_loader.yml
 share/mlt/core/producer_melt.yml
 share/mlt/core/producer_melt_file.yml
 share/mlt/core/producer_noise.yml
+share/mlt/core/producer_tone.yml
 share/mlt/core/transition_composite.yml
 share/mlt/core/transition_luma.yml
 share/mlt/core/transition_matte.yml
@@ -216,6 +217,7 @@ share/mlt/plus/filter_dynamictext.yml
 share/mlt/plus/filter_invert.yml
 share/mlt/plus/filter_lift_gamma_gain.yml
 share/mlt/plus/filter_loudness.yml
+share/mlt/plus/filter_lumakey.yml
 share/mlt/plus/filter_rgblut.yml
 share/mlt/plus/filter_sepia.yml
 share/mlt/plus/producer_blipflash.yml
@@ -234,6 +236,8 @@ share/mlt/presets/consumer/avformat/MPEG-4-ASP
 share/mlt/presets/consumer/avformat/Sony-PSP
 share/mlt/presets/consumer/avformat/Vorbis
 share/mlt/presets/consumer/avformat/WAV
+share/mlt/presets/consumer/avformat/WMA
+share/mlt/presets/consumer/avformat/WMV
 share/mlt/presets/consumer/avformat/XDCAM-HD422
 share/mlt/presets/consumer/avformat/atsc_1080i_50/
 share/mlt/presets/consumer/avformat/atsc_1080i_50/DNxHD
@@ -307,6 +311,7 @@ share/mlt/presets/consumer/avformat/lossless/MJPEG
 share/mlt/presets/consumer/avformat/lossless/MPEG-2
 share/mlt/presets/consumer/avformat/lossless/MPEG-4
 share/mlt/presets/consumer/avformat/lossless/ProRes
+share/mlt/presets/consumer/avformat/lossless/ProRes-Kostya
 share/mlt/presets/consumer/avformat/stills/
 share/mlt/presets/consumer/avformat/stills/BMP
 share/mlt/presets/consumer/avformat/stills/DPX
@@ -317,10 +322,13 @@ share/mlt/presets/consumer/avformat/stills/TGA
 share/mlt/presets/consumer/avformat/stills/TIFF
 share/mlt/presets/consumer/avformat/vp9
 share/mlt/presets/consumer/avformat/webm
+share/mlt/presets/consumer/avformat/webm-pass1
 share/mlt/presets/consumer/avformat/x264-medium
 share/mlt/presets/consumer/avformat/x264-medium-baseline
 share/mlt/presets/consumer/avformat/x264-medium-main
 share/mlt/presets/consumer/avformat/x264-medium-pass1
+share/mlt/presets/consumer/avformat/x265-medium
+share/mlt/presets/consumer/avformat/x265-medium-pass1
 share/mlt/presets/filter/
 share/mlt/presets/filter/brightness/
 share/mlt/presets/filter/brightness/from_black
@@ -376,6 +384,14 @@ share/mlt/profiles/hdv_720_60p
 share/mlt/profiles/qcif_15
 share/mlt/profiles/qcif_ntsc
 share/mlt/profiles/qcif_pal
+share/mlt/profiles/qhd_1440p_2398
+share/mlt/profiles/qhd_1440p_24
+share/mlt/profiles/qhd_1440p_25
+share/mlt/profiles/qhd_1440p_2997
+share/mlt/profiles/qhd_1440p_30
+share/mlt/profiles/qhd_1440p_50
+share/mlt/profiles/qhd_1440p_5994
+share/mlt/profiles/qhd_1440p_60
 share/mlt/profiles/quarter_15
 share/mlt/profiles/quarter_ntsc
 share/mlt/profiles/quarter_ntsc_wide
@@ -391,6 +407,14 @@ share/mlt/profiles/svcd_ntsc
 share/mlt/profiles/svcd_ntsc_wide
 share/mlt/profiles/svcd_pal
 share/mlt/profiles/svcd_pal_wide
+share/mlt/profiles/uhd_2160p_2398
+share/mlt/profiles/uhd_2160p_24
+share/mlt/profiles/uhd_2160p_25
+share/mlt/profiles/uhd_2160p_2997
+share/mlt/profiles/uhd_2160p_30
+share/mlt/profiles/uhd_2160p_50
+share/mlt/profiles/uhd_2160p_5994
+share/mlt/profiles/uhd_2160p_60
 share/mlt/profiles/vcd_ntsc
 share/mlt/profiles/vcd_pal
 share/mlt/sdl/
