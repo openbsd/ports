@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/20 23:10:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/20 23:21:07 ajacoutot Exp $
 
 COMMENT=		suite of sparse matrix algorithms
 
@@ -43,15 +43,19 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/SuiteSparse_config/SuiteSparse_config.mk
 
 post-build:
+	# build shared libraries
 	cd ${WRKSRC}/SuiteSparse_config && \
 		${AR} x libsuitesparseconfig.a
 	cd ${WRKSRC} && \
-		${CC} -shared -o libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} \
+		${CC} -shared -o \
+			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} \
 			SuiteSparse_config/*.o -lm
 
 	cd ${WRKSRC} && \
 		${CC} -shared -o libamd.so.${LIBamd_VERSION} \
-			AMD/Lib/*.o libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} -lm
+			AMD/Lib/*.o \
+			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} \
+			-lm
 
 	cd ${WRKSRC} && \
 		${CC} -shared -o libbtf.so.${LIBbtf_VERSION} \
@@ -59,22 +63,30 @@ post-build:
 
 	cd ${WRKSRC} && \
 		${CC} -shared -o libcamd.so.${LIBcamd_VERSION} \
-			CAMD/Lib/*.o libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} -lm
+			CAMD/Lib/*.o \
+			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} \
+			-lm
 
 	cd ${WRKSRC} && \
 		${CC} -shared -o libcolamd.so.${LIBcolamd_VERSION} \
-			COLAMD/Lib/*.o libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} -lm
+			COLAMD/Lib/*.o \
+			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} \
+			-lm
 
 	cd ${WRKSRC} && \
 		${CC} -shared -o libccolamd.so.${LIBccolamd_VERSION} \
-			CCOLAMD/Lib/*.o libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} -lm
+			CCOLAMD/Lib/*.o \
+			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} \
+			-lm
 
 	cd ${WRKSRC} && \
 		${CC} -shared -o libcholmod.so.${LIBcholmod_VERSION} \
-			CHOLMOD/Lib/*.o libamd.so.${LIBamd_VERSION} libcamd.so.${LIBcamd_VERSION} \
-			libcolamd.so.${LIBcolamd_VERSION} libccolamd.so.${LIBccolamd_VERSION} \
-			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} -lm \
-			-L${LOCALBASE}/lib -lblas -lg2c -llapack
+			CHOLMOD/Lib/*.o libamd.so.${LIBamd_VERSION} \
+			libcamd.so.${LIBcamd_VERSION} \
+			libcolamd.so.${LIBcolamd_VERSION} \
+			libccolamd.so.${LIBccolamd_VERSION} \
+			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} \
+			-lm -L${LOCALBASE}/lib -lblas -lg2c -llapack
 
 	cd ${WRKSRC} && \
 		${CC} -shared -o libcsparse.so.${LIBcsparse_VERSION} \
@@ -86,8 +98,10 @@ post-build:
 
 	cd ${WRKSRC} && \
 		${CC} -shared -o libklu.so.${LIBklu_VERSION} \
-			KLU/Lib/*.o libamd.so.${LIBamd_VERSION} libbtf.so.${LIBbtf_VERSION} \
-			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} -lm
+			KLU/Lib/*.o libamd.so.${LIBamd_VERSION} \
+			libbtf.so.${LIBbtf_VERSION} \
+			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} \
+			-lm
 
 	cd ${WRKSRC} && \
 		${CC} -shared -o libldl.so.${LIBldl_VERSION} \
@@ -95,19 +109,22 @@ post-build:
 
 	cd ${WRKSRC} && \
 		${CC} -shared -o libumfpack.so.${LIBumfpack_VERSION} \
-			UMFPACK/Lib/*.o libamd.so.${LIBamd_VERSION} libcholmod.so.${LIBcholmod_VERSION} \
-			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} -lm \
-			-L${LOCALBASE}/lib -lblas -lg2c -llapack
+			UMFPACK/Lib/*.o libamd.so.${LIBamd_VERSION} \
+			libcholmod.so.${LIBcholmod_VERSION} \
+			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} \
+			-lm -L${LOCALBASE}/lib -lblas -lg2c -llapack
 
 	cd ${WRKSRC} && \
 		${CC} -shared -o libspqr.so.${LIBspqr_VERSION} \
 			SPQR/Lib/*.o libcholmod.so.${LIBcholmod_VERSION} \
-			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} -lm \
-			-L${LOCALBASE}/lib -lblas -lg2c -llapack
+			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} \
+			-lm -L${LOCALBASE}/lib -lblas -lg2c -llapack
 
 	cd ${WRKSRC} && \
 		${CC} -shared -o librbio.so.${LIBrbio_VERSION} \
-			RBio/Lib/*.o libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} -lm
+			RBio/Lib/*.o \
+			libsuitesparseconfig.so.${LIBsuitesparseconfig_VERSION} \
+			-lm
 
 post-install:
 	# remove versionned static archives, links and libcerbla
