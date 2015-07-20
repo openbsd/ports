@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.6 2014/05/04 20:17:35 landry Exp $
+@comment $OpenBSD: PLIST-python,v 1.7 2015/07/20 14:45:37 landry Exp $
 bin/epsg_tr.py
 bin/esri2wkt.py
 bin/gcps2vec.py
@@ -66,3 +66,15 @@ lib/python${MODPY_VERSION}/site-packages/osgeo/osr.py
 lib/python${MODPY_VERSION}/site-packages/osgeo/osr.pyc
 lib/python${MODPY_VERSION}/site-packages/osr.py
 lib/python${MODPY_VERSION}/site-packages/osr.pyc
+@man man/man1/gdal2tiles.1
+@man man/man1/gdal_calc.1
+@man man/man1/gdal_edit.1
+@man man/man1/gdal_fillnodata.1
+@man man/man1/gdal_polygonize.1
+@man man/man1/gdal_proximity.1
+@man man/man1/gdal_retile.1
+@man man/man1/gdal_sieve.1
+@man man/man1/gdalcompare.1
+@man man/man1/gdalmove.1
+@man man/man1/pct2rgb.1
+@man man/man1/rgb2pct.1

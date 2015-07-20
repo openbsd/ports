@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/06/27 06:55:38 landry Exp $
+# $OpenBSD: Makefile,v 1.37 2015/07/20 14:45:37 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -11,6 +11,8 @@ SHARED_ONLY =	Yes
 PKGNAME-main =	${DISTNAME}
 PKGNAME-python =py-${DISTNAME}
 PKGNAME-perl =	p5-Geo-GDAL-${V}
+REVISION-main =	0
+REVISION-python =	0
 
 SHARED_LIBS =	gdal 23.0 #20.0
 CATEGORIES =	geo devel
@@ -73,6 +75,7 @@ NO_TEST =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+INSTALL_TARGET =	install install-man
 
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 		--without-cfitsio \
