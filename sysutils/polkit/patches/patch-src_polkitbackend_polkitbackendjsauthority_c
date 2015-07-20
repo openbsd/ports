@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_polkitbackend_polkitbackendjsauthority_c,v 1.10 2015/07/19 00:31:29 ajacoutot Exp $
+$OpenBSD: patch-src_polkitbackend_polkitbackendjsauthority_c,v 1.11 2015/07/20 20:16:59 ajacoutot Exp $
 
-https://bugs.freedesktop.org/show_bug.cgi?id=75187
+From 074df27827fd773f1c76545cd08da568440ca41f Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 19 Jul 2015 02:19:08 +0200
+Subject: Add support for OpenBSD
 
 --- src/polkitbackend/polkitbackendjsauthority.c.orig	Fri Jun 19 22:39:58 2015
 +++ src/polkitbackend/polkitbackendjsauthority.c	Fri Jul  3 07:31:00 2015

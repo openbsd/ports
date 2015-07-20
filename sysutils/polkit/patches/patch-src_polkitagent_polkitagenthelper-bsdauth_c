@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.7 2015/07/03 06:42:27 ajacoutot Exp $
+$OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.8 2015/07/20 20:16:59 ajacoutot Exp $
 
-https://bugs.freedesktop.org/show_bug.cgi?id=75187
+From 074df27827fd773f1c76545cd08da568440ca41f Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 19 Jul 2015 02:19:08 +0200
+Subject: Add support for OpenBSD
 
 --- src/polkitagent/polkitagenthelper-bsdauth.c.orig	Fri Jul  3 08:35:33 2015
 +++ src/polkitagent/polkitagenthelper-bsdauth.c	Fri Jul  3 08:37:24 2015

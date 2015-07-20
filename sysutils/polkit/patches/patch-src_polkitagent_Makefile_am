@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_polkitagent_Makefile_am,v 1.5 2014/03/09 22:26:56 ajacoutot Exp $
+$OpenBSD: patch-src_polkitagent_Makefile_am,v 1.6 2015/07/20 20:16:59 ajacoutot Exp $
 
-https://bugs.freedesktop.org/show_bug.cgi?id=75187
+From 074df27827fd773f1c76545cd08da568440ca41f Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 19 Jul 2015 02:19:08 +0200
+Subject: Add support for OpenBSD
 
 --- src/polkitagent/Makefile.am.orig	Mon Jun  4 19:47:39 2012
 +++ src/polkitagent/Makefile.am	Fri Aug 17 09:23:26 2012

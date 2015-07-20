@@ -1,9 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.16 2015/07/19 00:31:29 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.17 2015/07/20 20:16:59 ajacoutot Exp $
 
 GTK_DOC_CHECK chunk:
 Remove when updating to a newer release with integrated bsd_auth(3) support.
 
-https://bugs.freedesktop.org/show_bug.cgi?id=75187
+From 074df27827fd773f1c76545cd08da568440ca41f Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 19 Jul 2015 02:19:08 +0200
+Subject: Add support for OpenBSD
 
 --- configure.ac.orig	Fri Jun 19 22:31:02 2015
 +++ configure.ac	Sun Jul 19 02:18:31 2015

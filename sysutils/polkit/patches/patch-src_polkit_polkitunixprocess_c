@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.8 2015/07/19 00:31:29 ajacoutot Exp $
+$OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.9 2015/07/20 20:16:59 ajacoutot Exp $
 
-https://bugs.freedesktop.org/show_bug.cgi?id=75187
+From 074df27827fd773f1c76545cd08da568440ca41f Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 19 Jul 2015 02:19:08 +0200
+Subject: Add support for OpenBSD
 
 --- src/polkit/polkitunixprocess.c.orig	Tue Jan 14 23:42:25 2014
 +++ src/polkit/polkitunixprocess.c	Sun Jul 19 02:14:03 2015
