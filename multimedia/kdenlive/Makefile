@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/28 10:17:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2015/07/20 07:18:29 zhuk Exp $
 
 COMMENT =		non-linear video editor for KDE
-VERSION =		0.9.8
+VERSION =		0.9.10
 DISTNAME =		kdenlive-${VERSION}
 CATEGORIES =		multimedia
-REVISION =		2
 
 HOMEPAGE =		http://www.kdenlive.org/
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
@@ -37,11 +36,12 @@ LIB_DEPENDS =		devel/qjson \
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2=Yes
 
+MODKDE4_GETTEXT_MARKER =	kdenlive.po
 # upstream bug, putting all l10n files at the same place
-post-patch:
-	cd ${WRKSRC}/po; for lc in */CMakeLists.txt; do \
-		l=$${lc%/CMakeLists.txt}; \
-		perl -pi -e "s,\(fr ,\($$l ," $$lc; \
-	done
+#post-patch:
+#	cd ${WRKSRC}/po; for lc in */CMakeLists.txt; do \
+#		l=$${lc%/CMakeLists.txt}; \
+#		perl -pi -e "s,\(fr ,\($$l ," $$lc; \
+#	done
 
 .include <bsd.port.mk>

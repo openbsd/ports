@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/14 09:16:51 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/20 07:18:29 zhuk Exp $
 @bin bin/kdenlive
 @bin bin/kdenlive_render
 lib/kde4/libkdenlive_sampleplugin.so
@@ -178,6 +178,16 @@ share/config/kdenlive_titles.knsrc
 share/config/kdenlive_wipes.knsrc
 share/config/kdenliveeffectscategory.rc
 share/config/kdenlivetranscodingrc
+share/doc/HTML/ca/
+share/doc/HTML/ca/kdenlive/
+share/doc/HTML/ca/kdenlive/common
+share/doc/HTML/ca/kdenlive/index.cache.bz2
+share/doc/HTML/ca/kdenlive/index.docbook
+share/doc/HTML/de/
+share/doc/HTML/de/kdenlive/
+share/doc/HTML/de/kdenlive/common
+share/doc/HTML/de/kdenlive/index.cache.bz2
+share/doc/HTML/de/kdenlive/index.docbook
 share/doc/HTML/en/kdenlive/
 share/doc/HTML/en/kdenlive/Kdenlive-Quickstart-Add-Last-Clip.png
 share/doc/HTML/en/kdenlive/Kdenlive-Quickstart-Add-Transition.png
@@ -200,6 +210,46 @@ share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-TimelineCursor.png
 share/doc/HTML/en/kdenlive/common
 share/doc/HTML/en/kdenlive/index.cache.bz2
 share/doc/HTML/en/kdenlive/index.docbook
+share/doc/HTML/es/
+share/doc/HTML/es/kdenlive/
+share/doc/HTML/es/kdenlive/common
+share/doc/HTML/es/kdenlive/index.cache.bz2
+share/doc/HTML/es/kdenlive/index.docbook
+share/doc/HTML/fr/
+share/doc/HTML/fr/kdenlive/
+share/doc/HTML/fr/kdenlive/common
+share/doc/HTML/fr/kdenlive/index.cache.bz2
+share/doc/HTML/fr/kdenlive/index.docbook
+share/doc/HTML/it/
+share/doc/HTML/it/kdenlive/
+share/doc/HTML/it/kdenlive/common
+share/doc/HTML/it/kdenlive/index.cache.bz2
+share/doc/HTML/it/kdenlive/index.docbook
+share/doc/HTML/nl/
+share/doc/HTML/nl/kdenlive/
+share/doc/HTML/nl/kdenlive/common
+share/doc/HTML/nl/kdenlive/index.cache.bz2
+share/doc/HTML/nl/kdenlive/index.docbook
+share/doc/HTML/pt/
+share/doc/HTML/pt/kdenlive/
+share/doc/HTML/pt/kdenlive/common
+share/doc/HTML/pt/kdenlive/index.cache.bz2
+share/doc/HTML/pt/kdenlive/index.docbook
+share/doc/HTML/pt_BR/
+share/doc/HTML/pt_BR/kdenlive/
+share/doc/HTML/pt_BR/kdenlive/common
+share/doc/HTML/pt_BR/kdenlive/index.cache.bz2
+share/doc/HTML/pt_BR/kdenlive/index.docbook
+share/doc/HTML/sv/
+share/doc/HTML/sv/kdenlive/
+share/doc/HTML/sv/kdenlive/common
+share/doc/HTML/sv/kdenlive/index.cache.bz2
+share/doc/HTML/sv/kdenlive/index.docbook
+share/doc/HTML/uk/
+share/doc/HTML/uk/kdenlive/
+share/doc/HTML/uk/kdenlive/common
+share/doc/HTML/uk/kdenlive/index.cache.bz2
+share/doc/HTML/uk/kdenlive/index.docbook
 share/icons/hicolor/128x128/actions/kdenlive-select-all.png
 share/icons/hicolor/128x128/mimetypes/application-x-kdenlivetitle.png
 share/icons/hicolor/16x16/actions/kdenlive-add-clip.png
@@ -368,10 +418,12 @@ share/icons/oxygen/scalable/mimetypes/application-x-kdenlivetitle.svgz
 share/kde4/services/westleypreview.desktop
 share/locale/bs/LC_MESSAGES/kdenlive.mo
 share/locale/ca/LC_MESSAGES/kdenlive.mo
+share/locale/ca@valencia/LC_MESSAGES/kdenlive.mo
 share/locale/cs/LC_MESSAGES/kdenlive.mo
 share/locale/da/LC_MESSAGES/kdenlive.mo
 share/locale/de/LC_MESSAGES/kdenlive.mo
 share/locale/el/LC_MESSAGES/kdenlive.mo
+share/locale/en_GB/LC_MESSAGES/kdenlive.mo
 share/locale/es/LC_MESSAGES/kdenlive.mo
 share/locale/et/LC_MESSAGES/kdenlive.mo
 share/locale/fi/LC_MESSAGES/kdenlive.mo
@@ -397,6 +449,7 @@ share/locale/sk/LC_MESSAGES/kdenlive.mo
 share/locale/sl/LC_MESSAGES/kdenlive.mo
 share/locale/sv/LC_MESSAGES/kdenlive.mo
 share/locale/tr/LC_MESSAGES/kdenlive.mo
+share/locale/ug/LC_MESSAGES/kdenlive.mo
 share/locale/uk/LC_MESSAGES/kdenlive.mo
 share/locale/zh_CN/LC_MESSAGES/kdenlive.mo
 share/locale/zh_TW/LC_MESSAGES/kdenlive.mo
