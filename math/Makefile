@@ -1,21 +1,16 @@
-# $OpenBSD: Makefile,v 1.122 2015/06/29 20:10:20 feinerer Exp $
+# $OpenBSD: Makefile,v 1.123 2015/07/20 23:13:42 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += R
-     SUBDIR += SuiteSparse_config
      SUBDIR += aamath
      SUBDIR += abs
-     SUBDIR += amd
      SUBDIR += arpack
      SUBDIR += blas
      SUBDIR += calc
      SUBDIR += calcoo
-     SUBDIR += camd
      SUBDIR += cblas
-     SUBDIR += ccolamd
      SUBDIR += cfitsio
      SUBDIR += cgal
-     SUBDIR += colamd
      SUBDIR += coq
      SUBDIR += ecm
      SUBDIR += eigen
@@ -109,9 +104,8 @@
      SUBDIR += qrupdate
      SUBDIR += qtoctave
      SUBDIR += sc
+     SUBDIR += suitesparse
      SUBDIR += udunits
-     SUBDIR += ufconfig
-     SUBDIR += umfpack
      SUBDIR += veusz
      SUBDIR += wcalc
      SUBDIR += wmcalc
