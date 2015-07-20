@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2015/07/20 23:13:59 ajacoutot Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 BROKEN-hppa =	undefined reference to lapack funcs
 
 V=		4.0
 DISTNAME=	FreeMat-${V}-Source
-REVISION=		1
+REVISION=	2
 PKGNAME=	freemat-${V}
 
 CATEGORIES=	graphics math
 
 HOMEPAGE=	http://freemat.sourceforge.net/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL GLU ICE SM X11 Xext c m ncurses pcre pthread stdc++
-WANTLIB += z amd fftw3 fftw3f portaudio umfpack
-WANTLIB += QtGui QtNetwork QtOpenGL QtSvg QtXml
+WANTLIB += GL GLU QtGui QtNetwork QtOpenGL QtSvg QtXml amd c fftw3
+WANTLIB += fftw3f m ncurses pcre portaudio pthread stdc++ umfpack
+WANTLIB += z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freemat/}
 
@@ -25,11 +25,9 @@ MODULES=	x11/qt4 devel/cmake
 
 LIB_DEPENDS=	audio/portaudio-svn \
 		devel/pcre \
-		math/amd \
+		math/suitesparse \
 		math/fftw3,double \
-		math/fftw3,float \
-		math/umfpack
-
+		math/fftw3,float
 
 NO_TEST=	Yes
 
