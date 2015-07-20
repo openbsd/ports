@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/04/21 18:24:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2015/07/20 23:08:19 ajacoutot Exp $
 
 BROKEN-sparc64 =	ICE in scipy/optimize/minpack/qrsolv.f:189
 BROKEN-hppa =		ICE in scipy/special/specfun/specfun.f:5151
@@ -10,7 +10,7 @@ MODPY_EGG_VERSION=	0.14.1
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		math devel
-REVISION=		0
+REVISION=		1
 
 MAINTAINER=		Daniel Dickman <daniel@openbsd.org>
 
@@ -18,7 +18,7 @@ MAINTAINER=		Daniel Dickman <daniel@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${MODFORTRAN_WANTLIB} ${MODPY_WANTLIB}
-WANTLIB += amd arpack blas lapack m pthread stdc++ umfpack util
+WANTLIB += blas lapack m pthread stdc++ util
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scipy/}
 HOMEPAGE=		http://numeric.scipy.org/
@@ -30,10 +30,7 @@ MODPY_SETUP=            setupegg.py
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODFORTRAN_BUILD_DEPENDS}
-LIB_DEPENDS=		math/umfpack \
-			math/arpack \
-			math/amd \
-			${MODFORTRAN_LIB_DEPENDS}
+LIB_DEPENDS=		${MODFORTRAN_LIB_DEPENDS}
 RUN_DEPENDS=		math/py-numpy>=1.6.0 \
 			devel/swig
 
