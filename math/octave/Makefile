@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.72 2015/06/17 20:03:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2015/07/20 23:14:58 ajacoutot Exp $
+
+BROKEN=		update is needed
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -23,7 +25,7 @@ MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODFORTRAN_WANTLIB}
-WANTLIB += amd blas>=1 c curl>=6 fftw3>=3 lapack>=3 m ncurses pcre>=1
+WANTLIB += amd blas c curl fftw3 lapack m ncurses pcre
 WANTLIB += pthread readline stdc++ umfpack z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
@@ -41,10 +43,7 @@ RUN_DEPENDS =	devel/gmake \
 
 LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		math/fftw3 \
-		math/lapack \
-		math/blas \
-		math/amd \
-		math/umfpack \
+		math/suitesparse \
 		devel/pcre \
 		net/curl
 
