@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.293 2015/07/16 02:43:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.294 2015/07/21 14:51:11 rpointel Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -169,6 +169,8 @@
      SUBDIR += py-ldap
      SUBDIR += py-mongo
      SUBDIR += py-mysql
+     SUBDIR += py-mysqlclient
+     SUBDIR += py-mysqlclient,python3
      SUBDIR += py-odbc
      SUBDIR += py-peewee
      SUBDIR += py-peewee,python3
