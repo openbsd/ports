@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2015/07/16 17:27:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.60 2015/07/21 03:27:25 ajacoutot Exp $
 
 COMMENT =	simplified wrapper and interface generator
 
 SUBST_VARS =	VERSION
 VERSION =	2.0.11
-REVISION =	1
+REVISION =	2
 
 DISTNAME =	swig-${VERSION}
 CATEGORIES =	devel
@@ -25,8 +25,7 @@ MODRUBY_RUNDEP = No
 MODPY_RUNDEP =	No
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} \
 		lang/guile
-LIB_DEPENDS =	devel/boost \
-		devel/pcre
+LIB_DEPENDS =	devel/pcre
 
 USE_GMAKE =	Yes
 CONFIGURE_STYLE = gnu
