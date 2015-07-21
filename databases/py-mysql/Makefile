@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2015/04/02 14:21:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2015/07/21 14:43:57 rpointel Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	Python interface to MySQL
 MODPY_EGG_VERSION = 1.2.5
 DISTNAME =	MySQL-python-${MODPY_EGG_VERSION}
 PKGNAME =	py-mysql-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	databases
 
