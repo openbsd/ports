@@ -1,17 +1,17 @@
-$OpenBSD: patch-src_src_pro,v 1.5 2013/01/10 22:39:07 landry Exp $
+$OpenBSD: patch-src_src_pro,v 1.6 2015/07/21 08:36:40 landry Exp $
 Properly set translations/plugins paths
---- src/src.pro.orig	Mon Jun 11 17:01:23 2012
-+++ src/src.pro	Thu Jan 10 18:03:39 2013
-@@ -145,7 +145,7 @@ unix:!macx {
-     isEmpty( LIBDIR ) {
+--- src/src.pro.orig	Sun Jul 19 16:50:09 2015
++++ src/src.pro	Tue Jul 21 09:54:35 2015
+@@ -142,7 +142,7 @@ unix:!macx {
          LIBDIR = $${PREFIX}/lib${LIB_SUFFIX}
      }
+ 
 -    DEFINES += PLUGINS_DIR=$${LIBDIR}/merkaartor/plugins
 +    DEFINES += PLUGINS_DIR=${TRUEPREFIX}/lib/merkaartor/plugins
+ 
      target.path = $${PREFIX}/bin
      SHARE_DIR = $${PREFIX}/share/merkaartor
- 
-@@ -214,7 +214,7 @@ BINTRANSLATIONS += \
+@@ -221,7 +221,7 @@ BINTRANSLATIONS += \
  
  translations.path =  $${TRANSDIR_MERKAARTOR}
  translations.files = $${BINTRANSLATIONS}

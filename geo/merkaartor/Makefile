@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2015/06/27 06:59:01 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2015/07/21 08:36:40 landry Exp $
 
 COMMENT =	OpenStreetMap editor
 
 GH_ACCOUNT =	openstreetmap
 GH_PROJECT =	merkaartor
-GH_TAGNAME =	0.18.1
+GH_TAGNAME =	0.18.2
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 SHARED_ONLY =	Yes
-REVISION =	1
 
 CATEGORIES =	geo x11
 
@@ -25,7 +24,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS =	devel/proj geo/gdal
 
 WANTLIB += QtGui QtNetwork QtSvg QtWebKit QtXml c m proj pthread gdal
-WANTLIB += stdc++ z ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
+WANTLIB += stdc++ z ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype sqlite3
 
 do-configure:
 	cd ${WRKSRC} && env ${CONFIGURE_ENV} qmake4 PROJ=1 NODEBUG=1 RELEASE=1 \
