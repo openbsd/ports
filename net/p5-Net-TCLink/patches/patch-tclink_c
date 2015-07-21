@@ -1,0 +1,12 @@
+$OpenBSD: patch-tclink_c,v 1.1 2015/07/21 18:08:34 jca Exp $
+--- tclink.c.orig	Sat Jul 18 12:50:03 2015
++++ tclink.c	Sat Jul 18 12:50:28 2015
+@@ -539,7 +539,7 @@ static int Connect(TCLinkCon *c, int host_hash)
+ 	{
+ 		do_SSL_randomize();        /* handle systems without /dev/urandom */
+ 		SSLeay_add_ssl_algorithms();
+-		c->meth = SSLv3_client_method();
++		c->meth = SSLv23_client_method();
+ 	}
+ 
+ 	if (!c->ctx)
