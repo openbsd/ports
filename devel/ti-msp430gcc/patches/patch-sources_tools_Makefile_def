@@ -1,0 +1,228 @@
+$OpenBSD: patch-sources_tools_Makefile_def,v 1.1.1.1 2015/07/21 15:51:37 jasper Exp $
+
+- remove bundled libraries
+- remove gdb/sim support for gdb sprays files all around leading to conflicts
+
+--- sources/tools/Makefile.def.orig	Mon Apr  7 12:31:57 2014
++++ sources/tools/Makefile.def	Mon Apr 27 20:18:45 2015
+@@ -36,9 +36,7 @@ host_modules= { module= opcodes; bootstrap=true; };
+ host_modules= { module= binutils; bootstrap=true; };
+ host_modules= { module= bison; no_check_cross= true; };
+ host_modules= { module= cgen; };
+-host_modules= { module= dejagnu; };
+ host_modules= { module= etc; };
+-host_modules= { module= fastjar; no_check_cross= true; };
+ host_modules= { module= fixincludes;
+ 		missing= TAGS; };
+ host_modules= { module= flex; no_check_cross= true; };
+@@ -74,10 +72,6 @@ host_modules= { module= libelf; lib_path=.libs; bootst
+ 		no_install= true; };
+ host_modules= { module= gold; bootstrap=true; };
+ host_modules= { module= gprof; };
+-host_modules= { module= intl; bootstrap=true; };
+-host_modules= { module= tcl;
+-                missing=mostlyclean; };
+-host_modules= { module= itcl; };
+ host_modules= { module= ld; bootstrap=true; };
+ host_modules= { module= libbacktrace; bootstrap=true; };
+ host_modules= { module= libcpp; bootstrap=true; };
+@@ -94,15 +88,9 @@ host_modules= { module= libiconv;
+ 		missing= install-html;
+ 		missing= install-info; };
+ host_modules= { module= m4; };
+-host_modules= { module= readline; };
+ host_modules= { module= sid; };
+-host_modules= { module= sim; };
+ host_modules= { module= texinfo; no_install= true; };
+ host_modules= { module= zlib; no_install=true; no_check=true; bootstrap=true; };
+-host_modules= { module= gdb; };
+-host_modules= { module= expect; };
+-host_modules= { module= guile; };
+-host_modules= { module= tk; };
+ host_modules= { module= libtermcap; no_check=true; 
+                 missing=mostlyclean;
+                 missing=clean;
+@@ -217,7 +205,6 @@ flags_to_pass = { flag= BISON ; };
+ flags_to_pass = { flag= CC_FOR_BUILD ; };
+ flags_to_pass = { flag= CFLAGS_FOR_BUILD ; };
+ flags_to_pass = { flag= CXX_FOR_BUILD ; };
+-flags_to_pass = { flag= EXPECT ; };
+ flags_to_pass = { flag= FLEX ; };
+ flags_to_pass = { flag= INSTALL ; };
+ flags_to_pass = { flag= INSTALL_DATA ; };
+@@ -293,7 +280,6 @@ dependencies = { module=all-build-m4; on=all-build-tex
+ dependencies = { module=all-build-fixincludes; on=all-build-libiberty; };
+ 
+ // Host modules specific to gcc.
+-dependencies = { module=configure-gcc; on=configure-intl; };
+ dependencies = { module=configure-gcc; on=all-gmp; };
+ dependencies = { module=configure-gcc; on=all-lto-plugin; };
+ dependencies = { module=configure-gcc; on=all-binutils; };
+@@ -302,7 +288,6 @@ dependencies = { module=configure-gcc; on=all-ld; };
+ dependencies = { module=configure-gcc; on=all-gold; };
+ dependencies = { module=configure-gcc; on=all-libelf; };
+ dependencies = { module=all-gcc; on=all-libiberty; hard=true; };
+-dependencies = { module=all-gcc; on=all-intl; };
+ dependencies = { module=all-gcc; on=all-mpfr; };
+ dependencies = { module=all-gcc; on=all-mpc; };
+ dependencies = { module=all-gcc; on=all-cloog; };
+@@ -328,9 +313,7 @@ dependencies = { module=install-strip-gcc ; on=install
+ dependencies = { module=install-strip-gcc ; on=install-strip-lto-plugin; };
+ 
+ dependencies = { module=configure-libcpp; on=configure-libiberty; hard=true; };
+-dependencies = { module=configure-libcpp; on=configure-intl; };
+ dependencies = { module=all-libcpp; on=all-libiberty; hard=true; };
+-dependencies = { module=all-libcpp; on=all-intl; };
+ 
+ dependencies = { module=all-fixincludes; on=all-libiberty; };
+ 
+@@ -347,46 +330,20 @@ dependencies = { module=configure-isl; on=all-gmp; };
+ dependencies = { module=configure-cloog; on=all-isl; };
+ dependencies = { module=configure-cloog; on=all-gmp; };
+ 
+-// Host modules specific to gdb.
+-dependencies = { module=configure-gdb; on=all-intl; };
+-dependencies = { module=configure-gdb; on=configure-sim; };
+-dependencies = { module=configure-gdb; on=all-bfd; };
+-// Depend on all-libiconv so that configure checks for iconv
+-// functions will work.
+-dependencies = { module=configure-gdb; on=all-libiconv; };
+-dependencies = { module=all-gdb; on=all-libiberty; };
+-dependencies = { module=all-gdb; on=all-libiconv; };
+-dependencies = { module=all-gdb; on=all-opcodes; };
+-dependencies = { module=all-gdb; on=all-readline; };
+-dependencies = { module=all-gdb; on=all-build-bison; };
+-dependencies = { module=all-gdb; on=all-sim; };
+-dependencies = { module=all-gdb; on=all-libdecnumber; };
+-dependencies = { module=all-gdb; on=all-libtermcap; };
+-
+-dependencies = { module=configure-libgui; on=configure-tcl; };
+-dependencies = { module=configure-libgui; on=configure-tk; };
+-dependencies = { module=all-libgui; on=all-tcl; };
+-dependencies = { module=all-libgui; on=all-tk; };
+-dependencies = { module=all-libgui; on=all-itcl; };
+-
+ // Host modules specific to binutils.
+ dependencies = { module=configure-bfd; on=configure-libiberty; hard=true; };
+-dependencies = { module=configure-bfd; on=configure-intl; };
+ dependencies = { module=all-bfd; on=all-libiberty; };
+-dependencies = { module=all-bfd; on=all-intl; };
+ dependencies = { module=configure-opcodes; on=configure-libiberty; hard=true; };
+ dependencies = { module=all-opcodes; on=all-libiberty; };
+ 
+ // We must build gas before binutils, gprof, ld and gold to avoid race
+ // condition in the prev-gcc/as script during bootstrap of combined tree
+ // with GCC and binutils.  See PR gas/14899 for details.
+-dependencies = { module=configure-binutils; on=configure-intl; };
+ dependencies = { module=all-binutils; on=all-libiberty; };
+ dependencies = { module=all-binutils; on=all-opcodes; };
+ dependencies = { module=all-binutils; on=all-bfd; };
+ dependencies = { module=all-binutils; on=all-build-flex; };
+ dependencies = { module=all-binutils; on=all-build-bison; };
+-dependencies = { module=all-binutils; on=all-intl; };
+ dependencies = { module=all-binutils; on=all-gas; };
+ 
+ // We put install-opcodes before install-binutils because the installed
+@@ -399,93 +356,41 @@ dependencies = { module=install-strip-binutils; on=ins
+ dependencies = { module=install-opcodes; on=install-bfd; };
+ dependencies = { module=install-strip-opcodes; on=install-strip-bfd; };
+ 
+-dependencies = { module=configure-gas; on=configure-intl; };
+ dependencies = { module=all-gas; on=all-libiberty; };
+ dependencies = { module=all-gas; on=all-opcodes; };
+ dependencies = { module=all-gas; on=all-bfd; };
+-dependencies = { module=all-gas; on=all-intl; };
+-dependencies = { module=configure-gprof; on=configure-intl; };
+ dependencies = { module=all-gprof; on=all-libiberty; };
+ dependencies = { module=all-gprof; on=all-bfd; };
+ dependencies = { module=all-gprof; on=all-opcodes; };
+-dependencies = { module=all-gprof; on=all-intl; };
+ dependencies = { module=all-gprof; on=all-gas; };
+-dependencies = { module=configure-ld; on=configure-intl; };
+ dependencies = { module=all-ld; on=all-libiberty; };
+ dependencies = { module=all-ld; on=all-bfd; };
+ dependencies = { module=all-ld; on=all-opcodes; };
+ dependencies = { module=all-ld; on=all-build-bison; };
+ dependencies = { module=all-ld; on=all-build-flex; };
+-dependencies = { module=all-ld; on=all-intl; };
+ dependencies = { module=all-ld; on=all-gas; };
+ dependencies = { module=install-ld; on=install-gold; };
+ dependencies = { module=install-strip-ld; on=install-strip-gold; };
+-dependencies = { module=configure-gold; on=configure-intl; };
+ dependencies = { module=all-gold; on=all-libiberty; };
+-dependencies = { module=all-gold; on=all-intl; };
+ dependencies = { module=all-gold; on=all-bfd; };
+ dependencies = { module=all-gold; on=all-build-bison; };
+ dependencies = { module=all-gold; on=all-gas; };
+ dependencies = { module=check-gold; on=all-binutils; };
+ dependencies = { module=check-gold; on=all-gas; };
+ 
+-dependencies = { module=configure-opcodes; on=configure-intl; };
+ dependencies = { module=all-opcodes; on=all-bfd; };
+ dependencies = { module=all-opcodes; on=all-libiberty; };
+-dependencies = { module=all-opcodes; on=all-intl; };
+ 
+-// Other host modules in the 'src' repository.
+-dependencies = { module=all-dejagnu; on=all-tcl; };
+-dependencies = { module=all-dejagnu; on=all-expect; };
+-dependencies = { module=all-dejagnu; on=all-tk; };
+-dependencies = { module=configure-expect; on=configure-tcl; };
+-dependencies = { module=configure-expect; on=configure-tk; };
+-dependencies = { module=all-expect; on=all-tcl; };
+-dependencies = { module=all-expect; on=all-tk; };
+-
+-// We put install-tcl before install-itcl because itcl wants to run a
+-// program on installation which uses the Tcl libraries.
+-dependencies = { module=configure-itcl; on=configure-tcl; };
+-dependencies = { module=configure-itcl; on=configure-tk; };
+-dependencies = { module=all-itcl; on=all-tcl; };
+-dependencies = { module=all-itcl; on=all-tk; };
+-dependencies = { module=install-itcl; on=install-tcl; };
+-dependencies = { module=install-strip-itcl; on=install-strip-tcl; };
+-
+-dependencies = { module=configure-tk; on=configure-tcl; };
+-dependencies = { module=all-tk; on=all-tcl; };
+-
+ dependencies = { module=all-sid; on=all-libiberty; };
+ dependencies = { module=all-sid; on=all-bfd; };
+ dependencies = { module=all-sid; on=all-opcodes; };
+-dependencies = { module=all-sid; on=all-tcl; };
+-dependencies = { module=all-sid; on=all-tk; };
+-dependencies = { module=install-sid; on=install-tcl; };
+-dependencies = { module=install-strip-sid; on=install-strip-tcl; };
+-dependencies = { module=install-sid; on=install-tk; };
+-dependencies = { module=install-strip-sid; on=install-strip-tk; };
+ 
+-dependencies = { module=configure-sim; on=configure-intl; };
+-dependencies = { module=all-sim; on=all-intl; };
+-dependencies = { module=all-sim; on=all-libiberty; };
+-dependencies = { module=all-sim; on=all-bfd; };
+-dependencies = { module=all-sim; on=all-opcodes; };
+-dependencies = { module=all-sim; on=all-readline; };
+-dependencies = { module=all-sim; on=configure-gdb; };
+-
+ // Other host modules.
+-dependencies = { module=all-fastjar; on=all-zlib; };
+-dependencies = { module=all-fastjar; on=all-build-texinfo; };
+-dependencies = { module=all-fastjar; on=all-libiberty; };
+-
+ // Warning, these are not well tested.
+-dependencies = { module=all-bison; on=all-intl; };
+ dependencies = { module=all-bison; on=all-build-texinfo; };
+ dependencies = { module=all-flex; on=all-build-bison; };
+-dependencies = { module=all-flex; on=all-intl; };
+ dependencies = { module=all-flex; on=all-m4; };
+ dependencies = { module=all-flex; on=all-build-texinfo; };
+-dependencies = { module=all-m4; on=all-intl; };
+ dependencies = { module=all-m4; on=all-build-texinfo; };
+ 
+ // Target modules.  These can also have dependencies on the language
+@@ -502,8 +407,6 @@ lang_env_dependencies = { module=libgcc; no_gcc=true; 
+ lang_env_dependencies = { module=libiberty; no_c=true; };
+ 
+ dependencies = { module=configure-target-boehm-gc; on=all-target-libstdc++-v3; };
+-dependencies = { module=configure-target-fastjar; on=configure-target-zlib; };
+-dependencies = { module=all-target-fastjar; on=all-target-zlib; };
+ dependencies = { module=configure-target-libgo; on=configure-target-libffi; };
+ dependencies = { module=configure-target-libgo; on=all-target-libstdc++-v3; };
+ dependencies = { module=all-target-libgo; on=all-target-libbacktrace; };

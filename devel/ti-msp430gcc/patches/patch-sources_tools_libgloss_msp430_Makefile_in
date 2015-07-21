@@ -1,0 +1,25 @@
+$OpenBSD: patch-sources_tools_libgloss_msp430_Makefile_in,v 1.1.1.1 2015/07/21 15:51:37 jasper Exp $
+--- sources/tools/libgloss/msp430/Makefile.in.orig	Wed Dec 10 06:01:36 2014
++++ sources/tools/libgloss/msp430/Makefile.in	Mon Jul 20 15:46:58 2015
+@@ -35,6 +35,7 @@ MULTISUBDIR =
+ MULTIDO = true
+ MULTICLEAN = true
+ 
++DESTDIR = ${DESTDIR}
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA = @INSTALL_DATA@
+@@ -157,11 +158,11 @@ write.o : $(SDEPS)
+ 
+ install: $(CRT) $(SIM_BSP) $(LIBNOSYS) $(LIB_CRT) $(SCRIPTS)
+ 	for c in $(CRT) $(SIM_BSP) $(LIBNOSYS) $(LIB_CRT); do \
+-	  $(INSTALL_DATA) $$c $(tooldir)/lib${MULTISUBDIR}/$$c ;\
++	  $(INSTALL_DATA) $$c $(DESTDIR)/$(tooldir)/lib${MULTISUBDIR}/$$c ;\
+ 	done
+ 	for c in $(SCRIPTS); do \
+ 	  b=`basename $$c`; \
+-	  $(INSTALL_DATA) $$c $(tooldir)/lib${MULTISUBDIR}/$$b ;\
++	  $(INSTALL_DATA) $$c $(DESTDIR)/$(tooldir)/lib${MULTISUBDIR}/$$b ;\
+ 	done
+ 
+ clean mostlyclean:
