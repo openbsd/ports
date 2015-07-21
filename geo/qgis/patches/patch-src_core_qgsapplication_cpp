@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_core_qgsapplication_cpp,v 1.4 2015/03/16 20:06:33 landry Exp $
+$OpenBSD: patch-src_core_qgsapplication_cpp,v 1.5 2015/07/21 10:06:14 landry Exp $
 Fix paths to various doc files, installed in share/doc/qgis
 per doc/CMakeLists.txt patch
---- src/core/qgsapplication.cpp.orig	Thu Feb 26 10:12:00 2015
-+++ src/core/qgsapplication.cpp	Tue Mar  3 10:18:12 2015
-@@ -433,25 +433,25 @@ const QString QgsApplication::themeName()
+--- src/core/qgsapplication.cpp.orig	Fri Jun 26 14:38:57 2015
++++ src/core/qgsapplication.cpp	Mon Jun 29 22:08:17 2015
+@@ -434,25 +434,25 @@ const QString QgsApplication::themeName()
  */
  const QString QgsApplication::authorsFilePath()
  {
@@ -33,7 +33,7 @@ per doc/CMakeLists.txt patch
  }
  
  /*!
-@@ -459,19 +459,19 @@ const QString QgsApplication::sponsorsFilePath()
+@@ -460,19 +460,19 @@ const QString QgsApplication::sponsorsFilePath()
  */
  const QString QgsApplication::donorsFilePath()
  {

@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_plugins_zonal_statistics_qgszonalstatisticsdialog_h,v 1.1 2015/07/21 10:06:14 landry Exp $
+--- src/plugins/zonal_statistics/qgszonalstatisticsdialog.h.orig	Mon Jun 29 23:46:33 2015
++++ src/plugins/zonal_statistics/qgszonalstatisticsdialog.h	Mon Jun 29 23:46:38 2015
+@@ -1,4 +1,4 @@
+-﻿/***************************************************************************
++/***************************************************************************
+                           qgszonalstatisticsdialog.h  -  description
+                              -----------------------
+     begin                : September 1st, 2009

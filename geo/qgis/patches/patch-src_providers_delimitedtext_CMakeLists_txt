@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_providers_delimitedtext_CMakeLists_txt,v 1.1 2014/10/07 07:07:40 dcoppa Exp $
+$OpenBSD: patch-src_providers_delimitedtext_CMakeLists_txt,v 1.2 2015/07/21 10:06:14 landry Exp $
 
 Fix dependency
 
---- src/providers/delimitedtext/CMakeLists.txt.orig	Tue Oct  7 07:04:36 2014
-+++ src/providers/delimitedtext/CMakeLists.txt	Tue Oct  7 07:05:33 2014
-@@ -31,6 +31,7 @@ ADD_LIBRARY(delimitedtextprovider MODULE ${DTEXT_SRCS}
+--- src/providers/delimitedtext/CMakeLists.txt.orig	Fri Jun 26 14:38:57 2015
++++ src/providers/delimitedtext/CMakeLists.txt	Mon Jun 29 22:08:17 2015
+@@ -32,6 +32,7 @@ ADD_LIBRARY(delimitedtextprovider MODULE ${DTEXT_SRCS}
  
  TARGET_LINK_LIBRARIES(delimitedtextprovider
    qgis_core

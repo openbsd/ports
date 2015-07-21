@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_CMakeLists_txt,v 1.7 2015/03/16 20:06:33 landry Exp $
---- doc/CMakeLists.txt.orig	Thu Feb 26 10:12:00 2015
-+++ doc/CMakeLists.txt	Tue Mar  3 10:15:34 2015
-@@ -22,8 +22,8 @@ ENDIF(TXT2TAGS_EXECUTABLE)
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.8 2015/07/21 10:06:14 landry Exp $
+--- doc/CMakeLists.txt.orig	Fri Jun 26 14:38:57 2015
++++ doc/CMakeLists.txt	Mon Jun 29 22:08:17 2015
+@@ -25,8 +25,8 @@ ENDIF(TXT2TAGS_EXECUTABLE)
  
  SET(QGIS_DOC_FILES ${QGIS_DOC_FILES} index.html news.html developersmap.html contributors.json favicon.ico style.css AUTHORS CONTRIBUTORS SPONSORS DONORS TRANSLATORS LICENSE)
  

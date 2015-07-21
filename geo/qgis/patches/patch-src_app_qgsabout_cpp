@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_app_qgsabout_cpp,v 1.5 2015/03/16 20:06:33 landry Exp $
---- src/app/qgsabout.cpp.orig	Thu Feb 26 10:12:00 2015
-+++ src/app/qgsabout.cpp	Tue Mar  3 10:15:34 2015
-@@ -235,7 +235,7 @@ void QgsAbout::setWhatsNew()
-   QString myStyle = QgsApplication::reportStyleSheet();
+$OpenBSD: patch-src_app_qgsabout_cpp,v 1.6 2015/07/21 10:06:14 landry Exp $
+--- src/app/qgsabout.cpp.orig	Fri Jun 26 14:38:57 2015
++++ src/app/qgsabout.cpp	Mon Jun 29 22:10:38 2015
+@@ -231,7 +231,7 @@ void QgsAbout::setWhatsNew()
+ {
    txtWhatsNew->clear();
-   txtWhatsNew->document()->setDefaultStyleSheet( myStyle );
+   txtWhatsNew->document()->setDefaultStyleSheet( QgsApplication::reportStyleSheet() );
 -  txtWhatsNew->setSource( "file:///" + QgsApplication::pkgDataPath() + "/doc/news.html" );
 +  txtWhatsNew->setSource( "file:///" + QgsApplication::pkgDataPath() + "/../doc/qgis/news.html" );
  }

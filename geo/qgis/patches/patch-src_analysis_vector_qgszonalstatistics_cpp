@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_analysis_vector_qgszonalstatistics_cpp,v 1.1 2015/07/21 10:06:14 landry Exp $
+--- src/analysis/vector/qgszonalstatistics.cpp.orig	Mon Jun 29 23:07:26 2015
++++ src/analysis/vector/qgszonalstatistics.cpp	Mon Jun 29 23:07:35 2015
+@@ -1,4 +1,4 @@
+-﻿/***************************************************************************
++/***************************************************************************
+                           qgszonalstatistics.cpp  -  description
+                           ----------------------------
+     begin                : August 29th, 2009
