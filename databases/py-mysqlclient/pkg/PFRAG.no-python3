@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.no-python3,v 1.1.1.1 2015/07/21 14:48:39 rpointel Exp $
+@conflict py-mysql-*
