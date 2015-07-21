@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.16 2015/05/20 11:54:35 espie Exp $
+# $OpenBSD: Shell.pm,v 1.17 2015/07/21 05:10:12 naddy Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -109,7 +109,7 @@ sub exec
 {
 	my ($self, @argv) = @_;
 	if ($self->{as_root}) {
-		unshift(@argv, OpenBSD::Paths->sudo, "-E");
+		unshift(@argv, OpenBSD::Paths->doas);
 	}
 	if (-t STDIN) {
 		close(STDIN);
@@ -138,7 +138,8 @@ sub exec
 		}
 	}
 	if ($self->{as_root} && !$chroot) {
-		unshift(@argv, 'exec', OpenBSD::Paths->sudo, "-E");
+		unshift(@argv, 'exec', OpenBSD::Paths->doas,
+		    OpenBSD::Paths->env);
 	}
 	my $cmd = join(' ', @argv);
 	if ($self->{dir}) {
@@ -152,7 +153,7 @@ sub exec
 	if ($chroot) {
 		my @cmd2 = ("chroot");
 		if (!$self->prop->{iamroot}) {
-			unshift(@cmd2, OpenBSD::Paths->sudo, "-E");
+			unshift(@cmd2, OpenBSD::Paths->doas);
 		}
 		if (!$self->{as_root} && defined $self->{user}) {
 			push(@cmd2, "-u", $self->{user}->user);
