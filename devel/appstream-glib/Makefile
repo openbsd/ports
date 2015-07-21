@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2015/05/27 06:49:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2015/07/21 04:27:23 ajacoutot Exp $
 
 PORTROACH=		limitw:1,even
 SHARED_ONLY=		Yes
 
 COMMENT=		library for AppStream metadata
 
-DISTNAME=		appstream-glib-0.4.0
+DISTNAME=		appstream-glib-0.4.1
 EXTRACT_SUFX=		.tar.xz
 
 SHARED_LIBS +=  appstream-glib       1.0      # 7.5
