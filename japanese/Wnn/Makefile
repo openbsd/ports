@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.74 2015/04/09 13:51:38 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2015/07/21 17:43:32 sthen Exp $
+
+BROKEN= persistent segfault during build 
 
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn
