@@ -1,5 +1,5 @@
-$OpenBSD: patch-src_core_qgshistogram_cpp,v 1.1 2015/07/21 10:06:14 landry Exp $
-remove utf bom
+$OpenBSD: patch-src_core_qgshistogram_cpp,v 1.2 2015/07/21 11:39:52 landry Exp $
+https://github.com/qgis/QGIS/pull/2215
 --- src/core/qgshistogram.cpp.orig	Mon Jun 29 22:31:50 2015
 +++ src/core/qgshistogram.cpp	Mon Jun 29 22:37:27 2015
 @@ -1,4 +1,4 @@
