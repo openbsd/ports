@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_afmongodb_libmongo-client_src_mongo-utils_c,v 1.1 2013/11/30 10:02:12 steven Exp $
---- modules/afmongodb/libmongo-client/src/mongo-utils.c.orig	Fri Jun 14 08:00:37 2013
-+++ modules/afmongodb/libmongo-client/src/mongo-utils.c	Tue Sep 24 01:44:07 2013
-@@ -38,8 +38,7 @@ mongo_util_oid_init (gint32 mid)
+$OpenBSD: patch-modules_afmongodb_libmongo-client_src_mongo-utils_c,v 1.2 2015/07/21 20:29:34 steven Exp $
+--- modules/afmongodb/libmongo-client/src/mongo-utils.c.orig	Mon Dec 15 15:49:47 2014
++++ modules/afmongodb/libmongo-client/src/mongo-utils.c	Fri Jan  2 21:25:29 2015
+@@ -40,8 +40,7 @@ mongo_util_oid_init (gint32 mid)
  
    if (mid == 0)
      {

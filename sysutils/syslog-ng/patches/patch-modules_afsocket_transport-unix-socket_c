@@ -1,0 +1,11 @@
+$OpenBSD: patch-modules_afsocket_transport-unix-socket_c,v 1.1 2015/07/21 20:29:34 steven Exp $
+--- modules/afsocket/transport-unix-socket.c.orig	Fri Jan  2 21:33:11 2015
++++ modules/afsocket/transport-unix-socket.c	Fri Jan  2 21:33:34 2015
+@@ -30,6 +30,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/socket.h>
++#include <sys/uio.h>
+ #include <fcntl.h>
+ 
+ static void

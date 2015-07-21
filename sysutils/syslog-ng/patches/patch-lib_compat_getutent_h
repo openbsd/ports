@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_compat_getutent_h,v 1.1 2015/07/21 20:29:34 steven Exp $
+--- lib/compat/getutent.h.orig	Fri Jan  2 21:32:48 2015
++++ lib/compat/getutent.h	Fri Jan  2 21:32:57 2015
+@@ -26,6 +26,7 @@
+ #define COMPAT_GETUTENT_H_INCLUDED
+ 
+ #include <inttypes.h>
++#include <time.h>
+ #include "compat/compat.h"
+ 
+ #ifdef HAVE_UTMPX_H

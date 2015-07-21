@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2014/12/31 11:33:56 steven Exp $
+$OpenBSD: patch-Makefile_in,v 1.8 2015/07/21 20:29:34 steven Exp $
 temporary hack until libtool is fixed.
---- Makefile.in.orig	Tue Oct 28 07:22:29 2014
-+++ Makefile.in	Tue Oct 28 07:23:34 2014
-@@ -3679,7 +3679,7 @@ lib/lib_libsyslog_ng_la-uuid.lo: lib/$(am__dirstamp) \
- 	lib/$(DEPDIR)/$(am__dirstamp)
- 
+--- Makefile.in.orig	Mon Jun  8 15:44:57 2015
++++ Makefile.in	Sat Jun 20 10:10:42 2015
+@@ -4362,7 +4362,7 @@ lib/transport/lib_libsyslog_ng_la-transport-tls.lo:  \
+ 	lib/transport/$(am__dirstamp) \
+ 	lib/transport/$(DEPDIR)/$(am__dirstamp)
  lib/libsyslog-ng.la: $(lib_libsyslog_ng_la_OBJECTS) $(lib_libsyslog_ng_la_DEPENDENCIES) $(EXTRA_lib_libsyslog_ng_la_DEPENDENCIES) lib/$(am__dirstamp)
 -	$(AM_V_CCLD)$(lib_libsyslog_ng_la_LINK) -rpath $(libdir) $(lib_libsyslog_ng_la_OBJECTS) $(lib_libsyslog_ng_la_LIBADD) $(LIBS)
 +	$(AM_V_CCLD)$(lib_libsyslog_ng_la_LINK) -rpath $(libdir) -version-info 0:0:0 $(lib_libsyslog_ng_la_OBJECTS) $(lib_libsyslog_ng_la_LIBADD) $(LIBS)

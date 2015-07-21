@@ -1,0 +1,11 @@
+$OpenBSD: patch-syslog-ng-ctl_control-client-unix_c,v 1.1 2015/07/21 20:29:34 steven Exp $
+--- syslog-ng-ctl/control-client-unix.c.orig	Sat Jun 20 10:10:49 2015
++++ syslog-ng-ctl/control-client-unix.c	Sat Jun 20 10:11:00 2015
+@@ -22,6 +22,7 @@
+  *
+  */
+ 
++#include <string.h>
+ #include "control-client.h"
+ #include "gsocket.h"
+ #include "stdio.h"
