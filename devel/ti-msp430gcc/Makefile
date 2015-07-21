@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/21 15:51:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/21 16:24:50 jasper Exp $
 
 COMMENT =		TI's open source compiler for MSP430 microcontrollers
 
 V =			3_03_04_00
+REVISION =		0
 PKGNAME =		ti-msp430gcc-${V:S/_/./g}
 GCC_V =			4.9.1
 SHARED_LIBS +=  lto_plugin                0.0 # 0.0
@@ -59,7 +60,7 @@ post-install:
 	rm ${PREFIX}/info/*
 	${INSTALL_SCRIPT} ${WRKDIR}/msp430-gcc-support-files/*.ld \
 		${PREFIX}/msp430-none-elf/lib/430/
-	${INSTALL_DATA} ${WRKDIR}/msp430-gcc-support-files/*.ld \
+	${INSTALL_DATA} ${WRKDIR}/msp430-gcc-support-files/*.h \
 		${PREFIX}/msp430-none-elf/include
 
 .include <bsd.port.mk>
