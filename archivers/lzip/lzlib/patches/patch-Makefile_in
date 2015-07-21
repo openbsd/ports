@@ -1,35 +1,35 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2014/09/13 22:12:40 juanfra Exp $
---- Makefile.in.orig	Fri Apr 25 20:50:01 2014
-+++ Makefile.in	Sun Jun 22 15:18:13 2014
-@@ -20,14 +21,14 @@ all : $(progname_static) $(progname_shared)
+$OpenBSD: patch-Makefile_in,v 1.4 2015/07/21 00:41:08 juanfra Exp $
+--- Makefile.in.orig	Tue Apr 21 22:43:12 2015
++++ Makefile.in	Tue Jul 21 02:19:29 2015
+@@ -22,14 +22,14 @@ all : $(progname_static) $(progname_shared)
  lib$(libname).a : lzlib.o
  	$(AR) -rcs $@ $<
  
 -lib$(libname).so.$(pkgversion) : lzlib_sh.o
--	$(CC) $(CFLAGS) $(LDFLAGS) -fpic -fPIC -shared -Wl,--soname=lib$(libname).so.$(soversion) -o $@ $<
+-	$(CC) $(LDFLAGS) $(CFLAGS) -fpic -fPIC -shared -Wl,--soname=lib$(libname).so.$(soversion) -o $@ $<
 +lib$(libname).so.$(LIBlz_VERSION) : lzlib_sh.o
-+	$(CC) $(CFLAGS) $(LDFLAGS) -fPIC -shared -o $@ $<
++	$(CC) $(LDFLAGS) $(CFLAGS) -fPIC -shared -o $@ $<
  
  $(progname) : $(objs) lib$(libname).a
- 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(objs) lib$(libname).a
+ 	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $(objs) lib$(libname).a
  
 -$(progname)_shared : $(objs) lib$(libname).so.$(pkgversion)
--	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(objs) lib$(libname).so.$(pkgversion)
+-	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $(objs) lib$(libname).so.$(pkgversion)
 +$(progname)_shared : $(objs) lib$(libname).so.$(LIBlz_VERSION)
-+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(objs) lib$(libname).so.$(LIBlz_VERSION)
++	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $(objs) lib$(libname).so.$(LIBlz_VERSION)
  
- $(progname)_profiled : $(objs) lib$(libname).a
- 	$(CC) $(CFLAGS) $(LDFLAGS) -pg -o $@ $(objs) lib$(libname).a
-@@ -42,7 +43,7 @@ main.o : main.c
- 	$(CC) $(CFLAGS) $(CPPFLAGS) -DPROGVERSION=\"$(pkgversion)\" -c -o $@ $<
+ bbexample : bbexample.o lib$(libname).a
+ 	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ bbexample.o lib$(libname).a
+@@ -41,7 +41,7 @@ main.o : main.c
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) -DPROGVERSION=\"$(pkgversion)\" -c -o $@ $<
  
  lzlib_sh.o : lzlib.c
--	$(CC) $(CFLAGS) $(CPPFLAGS) -fpic -fPIC -c -o $@ $<
-+	$(CC) $(CFLAGS) $(CPPFLAGS) -fPIC -c -o $@ $<
+-	$(CC) $(CPPFLAGS) $(CFLAGS) -fpic -fPIC -c -o $@ $<
++	$(CC) $(CPPFLAGS) $(CFLAGS) -fPIC -c -o $@ $<
  
  %.o : %.c
- 	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
-@@ -86,15 +87,13 @@ install-bin : all
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
+@@ -89,15 +89,13 @@ install-bin : all
  	  $(INSTALL_DATA) ./lib$(libname).a "$(DESTDIR)$(libdir)/lib$(libname).a" ; \
  	fi
  	if [ -n "$(progname_shared)" ] ; then \
@@ -46,7 +46,7 @@ $OpenBSD: patch-Makefile_in,v 1.3 2014/09/13 22:12:40 juanfra Exp $
  	  if [ "${disable_ldconfig}" != yes ] && [ $${run_ldconfig} = yes ] && \
  	     [ -x "$(LDCONFIG)" ] ; then "$(LDCONFIG)" -n "$(DESTDIR)$(libdir)" || true ; fi ; \
  	fi
-@@ -125,7 +124,7 @@ uninstall-bin :
+@@ -136,7 +134,7 @@ uninstall-bin :
  	-rm -f "$(DESTDIR)$(libdir)/lib$(libname).a"
  	-rm -f "$(DESTDIR)$(libdir)/lib$(libname).so"
  	-rm -f "$(DESTDIR)$(libdir)/lib$(libname).so.$(soversion)"
