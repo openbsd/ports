@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/21 14:48:39 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/21 14:53:37 ajacoutot Exp $
 
 COMMENT =		Python interface to MySQL
 
@@ -21,9 +21,10 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=m/mysqlclient/}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-FLAVORS ?=		python3
 
-BUILD_DEPENDS =		databases/mariadb
+FLAVORS =		python3
+FLAVOR?=
+
 LIB_DEPENDS = 		databases/mariadb
 
 TEST_DEPENDS =		devel/py-nose,${FLAVOR} \
