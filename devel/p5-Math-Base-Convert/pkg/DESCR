@@ -1,0 +1,6 @@
+This module provides fast functions and methods to convert between
+arbitrary number bases from 2 (binary) thru 65535.
+
+This module is pure Perl, has no external dependencies, and is backward
+compatible with old versions of Perl 5.
+

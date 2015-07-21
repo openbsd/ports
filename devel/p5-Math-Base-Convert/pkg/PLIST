@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/21 14:56:25 afresh1 Exp $
+${P5SITE}/Math/
+${P5SITE}/Math/Base/
+${P5SITE}/Math/Base/Convert/
+${P5SITE}/Math/Base/Convert.pm
+${P5SITE}/Math/Base/Convert/Bases.pm
+${P5SITE}/Math/Base/Convert/Bitmaps.pm
+${P5SITE}/Math/Base/Convert/CalcPP.pm
+${P5SITE}/Math/Base/Convert/Shortcuts.pm
+@man man/man3p/Math::Base::Convert.3p
+@man man/man3p/Math::Base::Convert::Bases.3p
+@man man/man3p/Math::Base::Convert::Bitmaps.3p
+@man man/man3p/Math::Base::Convert::CalcPP.3p
+@man man/man3p/Math::Base::Convert::Shortcuts.3p
