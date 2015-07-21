@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2012/07/06 16:41:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2015/07/21 15:52:23 jasper Exp $
 
 TOOL=			gdb
 TOOL_V= 		7.2a
 LTS_V=			20111205
 
-REVISION=		0
+REVISION=		1
 
 GNU_TOOL=		Yes
 

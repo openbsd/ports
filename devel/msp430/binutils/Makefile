@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/07/21 15:52:23 jasper Exp $
 
 TOOL=			binutils
 TOOL_V=			2.21.1a
 
-REVISION=		0
+REVISION=		1
 
 GNU_TOOL=		Yes
 

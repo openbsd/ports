@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/07/07 20:34:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/07/21 15:52:23 jasper Exp $
+@conflict ti-msp430gcc-*
 @bin bin/msp430-c++
 @bin bin/msp430-cpp
 @bin bin/msp430-g++
