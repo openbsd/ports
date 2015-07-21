@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2015/06/23 21:38:06 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2015/07/21 02:25:06 sthen Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -706,4 +706,4 @@ share/freeradius/dictionary.zyxel
 @owner
 @group
 @mode
-@rcscript ${RCDIR}/radiusd
+@rcscript ${RCDIR}/freeradius

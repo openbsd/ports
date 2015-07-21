@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: radiusd.rc,v 1.2 2014/10/31 13:26:38 ajacoutot Exp $
+# $OpenBSD: freeradius.rc,v 1.1 2015/07/21 02:25:06 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/radiusd"
 
