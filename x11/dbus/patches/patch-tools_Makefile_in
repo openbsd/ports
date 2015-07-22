@@ -1,10 +1,10 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.22 2015/05/15 06:50:05 ajacoutot Exp $
+$OpenBSD: patch-tools_Makefile_in,v 1.23 2015/07/22 18:09:17 ajacoutot Exp $
 
 /var/lib -> /var/db
 
---- tools/Makefile.in.orig	Thu May 14 14:38:35 2015
-+++ tools/Makefile.in	Fri May 15 08:36:32 2015
-@@ -418,7 +418,7 @@ AM_CPPFLAGS = \
+--- tools/Makefile.in.orig	Tue Jul 21 18:32:32 2015
++++ tools/Makefile.in	Wed Jul 22 20:05:10 2015
+@@ -428,7 +428,7 @@ AM_CPPFLAGS = \
  	$(DBUS_STATIC_BUILD_CPPFLAGS) \
  	$(DBUS_X_CFLAGS) \
  	-DDBUS_COMPILATION \
