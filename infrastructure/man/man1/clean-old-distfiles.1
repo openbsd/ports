@@ -1,4 +1,4 @@
-.\"	$OpenBSD: clean-old-distfiles.1,v 1.4 2012/12/23 13:28:55 espie Exp $
+.\"	$OpenBSD: clean-old-distfiles.1,v 1.5 2015/07/23 08:05:18 bentley Exp $
 .\"
 .\" Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: December 23 2012 $
+.Dd $Mdocdate: July 23 2015 $
 .Dt CLEAN-OLD-DISTFILES 1
 .Os
 .Sh NAME
@@ -81,10 +81,10 @@ lines.
 .Sh FILES
 .Bl -tag -width /usr/ports
 .It Pa /usr/ports
-base of the ports tree, can be overriden with env variable
+base of the ports tree, can be overridden with env variable
 .Ev PORTSDIR .
 .It Pa /usr/ports/distfiles
-location of the distfiles repository, can be overriden with env variable
+location of the distfiles repository, can be overridden with env variable
 .Ev DISTDIR .
 .It Pa /usr/ports/distfiles/history
 log of obsolete distfiles.
@@ -92,4 +92,4 @@ log of obsolete distfiles.
 .Sh SEE ALSO
 .Xr dpb 1 ,
 .Xr sha256 1 ,
-.Xr mirroring-ports 7 .
+.Xr mirroring-ports 7
