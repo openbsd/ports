@@ -1,12 +1,33 @@
-$OpenBSD: patch-Wnn_etc_pwd_c,v 1.1 2015/04/09 13:51:38 espie Exp $
---- Wnn/etc/pwd.c.orig	Thu Apr  9 15:46:37 2015
-+++ Wnn/etc/pwd.c	Thu Apr  9 15:47:00 2015
-@@ -84,7 +84,7 @@ char *src, *encd;
+--- Wnn/etc/pwd.c.orig	Tue Sep 22 06:29:26 1992
++++ Wnn/etc/pwd.c	Thu Jul 23 11:40:07 2015
+@@ -59,7 +59,9 @@
+ #endif
+ 
+ extern char *crypt();
++#define salt "$2a$08$bonjourcommentcavatoie"
+ 
++
+ #ifdef JS
+ static
+ #endif
+@@ -84,9 +86,9 @@ char *src, *encd;
  	    c += 6;
  	xx[i] = c;
      }
 -    cr = crypt(src, xx);
-+    cr = crypt(src, "$2");
++    cr = crypt(src, salt);
      bzero(encd, WNN_PASSWD_LEN);
-     strncpy(encd, cr, WNN_PASSWD_LEN);
+-    strncpy(encd, cr, WNN_PASSWD_LEN);
++    strncpy(encd, cr + sizeof(salt), WNN_PASSWD_LEN);
+ }
+ 
+ #ifdef JS
+@@ -97,5 +99,7 @@ check_pwd(src, encd)
+ char *src, *encd;
+ {
+     if(strcmp(encd, "") == 0) return(1);  /* No passwd */
+-    return(!strncmp(encd, crypt(src, encd),WNN_PASSWD_LEN));
++    char *cr = crypt(src, salt);
++
++    return(!strncmp(encd, cr + sizeof(salt), WNN_PASSWD_LEN));
  }

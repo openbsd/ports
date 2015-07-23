@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2015/07/21 17:43:32 sthen Exp $
-
-BROKEN= persistent segfault during build 
+# $OpenBSD: Makefile,v 1.76 2015/07/23 10:02:08 espie Exp $
 
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn
@@ -18,19 +16,19 @@ CATEGORIES =	japanese
 MULTI_PACKAGES =	-main -dict -zh -zhdict -ko -kodict -xwnmo -data
 
 PKGNAME-main =		ja-Wnn-4.2
-REVISION-main =		10
+REVISION-main =		11
 PKGNAME-dict =		ja-Wnndict-4.2
 REVISION-dict =		0
 PKGNAME-zh =		zh-Wnn-4.2
-REVISION-zh =		4
+REVISION-zh =		5
 PKGNAME-zhdict =	zh-Wnndict-4.2
 REVISION-zhdict =	0
 PKGNAME-ko =		ko-Wnn-4.2
-REVISION-ko =		4
+REVISION-ko =		5
 PKGNAME-kodict =	ko-Wnndict-4.2
 REVISION-kodict =	0
 PKGNAME-xwnmo =		Wnn-xwnmo-4.2
-REVISION-xwnmo =	5
+REVISION-xwnmo =	6
 PKGNAME-data =		Wnn-data-4.2
 
 WNNDICBASE =	/var
@@ -108,6 +106,7 @@ post-patch:
 do-configure:
 	@echo "   WNNDICDIR = ${WNNDICDIR}"   >${CONFIG_FILE}
 	@echo "  WNNBASEDIR = ${PREFIX}"     >>${CONFIG_FILE}
+	#	echo " CDEBUGFLAGS = -g	"		>>${CONFIG_FILE}
 	@echo "#define BuildWnn		YES" >>${CONFIG_FILE}
 	@echo "#define BuildJlibV3	YES" >>${CONFIG_FILE}
 	@echo "#define BuildCWnn	YES" >>${CONFIG_FILE}
