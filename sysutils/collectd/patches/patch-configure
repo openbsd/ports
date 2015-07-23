@@ -1,20 +1,9 @@
-$OpenBSD: patch-configure,v 1.7 2015/05/03 10:41:35 landry Exp $
+$OpenBSD: patch-configure,v 1.8 2015/07/23 07:33:17 landry Exp $
 no Werror, breaks with gcrypt deprecation warnings
 dont check for pcap-bpf.h, not installed on openbsd
-need to include sys/param.h and unistd.h to properly reach swapctl() prototype
-https://github.com/collectd/collectd/pull/779
---- configure.orig	Thu Feb 26 15:07:49 2015
-+++ configure	Sat May  2 20:22:14 2015
-@@ -12873,7 +12873,7 @@ eval "LTDLOPEN=\"$libname_spec\""
- 
- 
- 
--$as_echo "#define LIBTOOL_VERSION 2" >>confdefs.h
-+$as_echo "#define LIBTOOL_VERSION 1" >>confdefs.h
- 
- 
- 
-@@ -16954,7 +16954,7 @@ SAVE_CFLAGS="$CFLAGS"
+--- configure.orig	Wed May 27 10:51:50 2015
++++ configure	Wed Jun  3 15:45:37 2015
+@@ -17312,7 +17312,7 @@ SAVE_CFLAGS="$CFLAGS"
  # Emulate behavior of src/Makefile.am
  if test "x$GCC" = "xyes"
  then
@@ -23,69 +12,7 @@ https://github.com/collectd/collectd/pull/779
  fi
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for strtok_r" >&5
-@@ -17666,8 +17666,11 @@ else
- #  undef _LARGEFILE64_SOURCE
- #endif
- #include <sys/stat.h>
-+#include <sys/param.h>
- #include <sys/swap.h>
-+#include <unistd.h>
- 
-+
- int
- main ()
- {
-@@ -17703,7 +17706,9 @@ else
- #  undef _LARGEFILE64_SOURCE
- #endif
- #include <sys/stat.h>
-+#include <sys/param.h>
- #include <sys/swap.h>
-+#include <unistd.h>
- 
- int
- main ()
-@@ -18740,16 +18745,16 @@ else
- fi
- 
- 
--ac_fn_c_check_member "$LINENO" "struct kinfo_proc" "kp_proc" "ac_cv_member_struct_kinfo_proc_kp_proc" "
-+ac_fn_c_check_member "$LINENO" "struct kinfo_proc" "p_pid" "ac_cv_member_struct_kinfo_proc_p_pid" "
- #include <sys/param.h>
- #include <sys/sysctl.h>
- #include <kvm.h>
- 
- "
--if test "x$ac_cv_member_struct_kinfo_proc_kp_proc" = xyes; then :
-+if test "x$ac_cv_member_struct_kinfo_proc_p_pid" = xyes; then :
- 
- cat >>confdefs.h <<_ACEOF
--#define HAVE_STRUCT_KINFO_PROC_KP_PROC 1
-+#define HAVE_STRUCT_KINFO_PROC_P_PID 1
- _ACEOF
- 
- 
-@@ -18763,16 +18768,16 @@ else
- 		have_struct_kinfo_proc_openbsd="no"
- 
- fi
--ac_fn_c_check_member "$LINENO" "struct kinfo_proc" "kp_eproc" "ac_cv_member_struct_kinfo_proc_kp_eproc" "
-+ac_fn_c_check_member "$LINENO" "struct kinfo_proc" "p_ppid" "ac_cv_member_struct_kinfo_proc_p_ppid" "
- #include <sys/param.h>
- #include <sys/sysctl.h>
- #include <kvm.h>
- 
- "
--if test "x$ac_cv_member_struct_kinfo_proc_kp_eproc" = xyes; then :
-+if test "x$ac_cv_member_struct_kinfo_proc_p_ppid" = xyes; then :
- 
- cat >>confdefs.h <<_ACEOF
--#define HAVE_STRUCT_KINFO_PROC_KP_EPROC 1
-+#define HAVE_STRUCT_KINFO_PROC_P_PPID 1
- _ACEOF
- 
- 
-@@ -22990,23 +22995,7 @@ fi
+@@ -23486,23 +23486,7 @@ fi
  done
  
  fi
@@ -109,21 +36,3 @@ https://github.com/collectd/collectd/pull/779
  if test "x$with_libpcap" = "xyes"
  then
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether libpcap has PCAP_ERROR_IFACE_NOT_UP" >&5
-@@ -23235,7 +23224,7 @@ then
- 	SAVE_LIBS="$LIBS"
- 	# trigger an error if Perl_load_module*() uses __attribute__nonnull__(3)
- 	# (see issues #41 and #42)
--	CFLAGS="$CFLAGS $PERL_CFLAGS -Wall -Werror"
-+	CFLAGS="$CFLAGS $PERL_CFLAGS -Wall"
- 	LIBS="$LIBS $PERL_LIBS"
- 
- 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for broken Perl_load_module()" >&5
-@@ -26803,7 +26792,7 @@ then
- 	plugin_processes="yes"
- fi
- 
--if test "x$with_kvm_getprocs" = "xyes" && test "x$have_struct_kinfo_proc_freebsd" = "xyes"
-+if test "x$with_kvm_getprocs" = "xyes" && test "x$have_struct_kinfo_proc_openbsd" = "xyes"
- then
- 	plugin_processes="yes"
- fi

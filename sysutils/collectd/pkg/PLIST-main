@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2014/12/01 09:07:12 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2015/07/23 07:33:17 landry Exp $
 @newgroup _collectd:652
 @newuser _collectd:652:652:daemon:Collectd Daemon:/var/empty:/sbin/nologin
 @bin bin/collectd-nagios
@@ -10,6 +10,8 @@ include/collectd/lcc_features.h
 include/collectd/network.h
 include/collectd/network_buffer.h
 lib/collectd/
+@comment lib/collectd/aggregation.la
+lib/collectd/aggregation.so
 @comment lib/collectd/apache.la
 lib/collectd/apache.so
 @comment lib/collectd/apcups.la
@@ -24,6 +26,8 @@ lib/collectd/cpu.so
 lib/collectd/csv.so
 @comment lib/collectd/curl.la
 lib/collectd/curl.so
+@comment lib/collectd/curl_json.la
+lib/collectd/curl_json.so
 @comment lib/collectd/curl_xml.la
 lib/collectd/curl_xml.so
 @comment lib/collectd/df.la
@@ -36,12 +40,16 @@ lib/collectd/dns.so
 lib/collectd/email.so
 @comment lib/collectd/exec.la
 lib/collectd/exec.so
+@comment lib/collectd/fhcount.la
+lib/collectd/fhcount.so
 @comment lib/collectd/filecount.la
 lib/collectd/filecount.so
 @comment lib/collectd/interface.la
 lib/collectd/interface.so
 @comment lib/collectd/load.la
 lib/collectd/load.so
+@comment lib/collectd/log_logstash.la
+lib/collectd/log_logstash.so
 @comment lib/collectd/logfile.la
 lib/collectd/logfile.so
 @comment lib/collectd/match_empty_counter.la
@@ -102,6 +110,8 @@ lib/collectd/tcpconns.so
 lib/collectd/teamspeak2.so
 @comment lib/collectd/ted.la
 lib/collectd/ted.so
+@comment lib/collectd/threshold.la
+lib/collectd/threshold.so
 @comment lib/collectd/unixsock.la
 lib/collectd/unixsock.so
 @comment lib/collectd/uptime.la
@@ -114,12 +124,16 @@ lib/collectd/uuid.so
 lib/collectd/write_graphite.so
 @comment lib/collectd/write_http.la
 lib/collectd/write_http.so
+@comment lib/collectd/write_log.la
+lib/collectd/write_log.so
+@comment lib/collectd/write_riemann.la
+lib/collectd/write_riemann.so
 @comment lib/libcollectdclient.la
 @lib lib/libcollectdclient.so.${LIBcollectdclient_VERSION}
 lib/pkgconfig/libcollectdclient.pc
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.20.1/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.20.1/perllocal.pod
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.20.2/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.20.2/perllocal.pod
 libdata/perl5/site_perl/Collectd/
 libdata/perl5/site_perl/Collectd.pm
 libdata/perl5/site_perl/Collectd/Plugins/
@@ -145,13 +159,14 @@ libdata/perl5/site_perl/Collectd/Unixsock.pm
 share/collectd/
 share/collectd/postgresql_default.conf
 share/collectd/types.db
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/collectd.conf
+@group _collectd
 @mode 640
 @sample ${SYSCONFDIR}/collectd.conf
 @mode
 @owner _collectd
-@group _collectd
 @sample /var/collectd/
-@owner
 @group
+@owner
 @rcscript ${RCDIR}/collectd

@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST-virt,v 1.1 2015/05/03 10:41:35 landry Exp $
-@comment lib/collectd/libvirt.la
-lib/collectd/libvirt.so
+@comment $OpenBSD: PLIST-virt,v 1.2 2015/07/23 07:33:17 landry Exp $
+@comment lib/collectd/virt.la
+lib/collectd/virt.so

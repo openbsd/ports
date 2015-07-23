@@ -1,0 +1,21 @@
+$OpenBSD: README-main,v 1.1 2015/07/23 07:33:17 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+By default, collectd runs as root. Root privileges are required for some
+collectd plugins, namely dns and ping plugins.
+For more information, please referer to:
+${HOMEPAGE}wiki/index.php/Category:Plugins_requiring_privileges
+
+If you do not use these plugins, it is recommended to run collectd daemon
+with unpriviliged user account, _collectd. Adjust your configuration with
+the following command:
+
+	# rcctl set collectd user "_collectd"
+
+If you had previously run collectd as root using the rrdtool plugin,
+you should also change the ownership of /var/collectd to _collectd.
+
+	# chown -R _collectd /var/collectd

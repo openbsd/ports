@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/06/10 10:43:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2015/07/23 07:33:17 landry Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -10,8 +10,7 @@ COMMENT-python =	collectd python plugin
 COMMENT-memcachec =	collectd memcachec plugin
 COMMENT-nut =		collectd nut plugin
 
-V =			5.4.2
-REVISION-main =		0
+V =			5.5.0
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
 PKGNAME-mysql =		collectd-mysql-$V
@@ -83,12 +82,17 @@ LIB_DEPENDS +=	net/curl \
 		textproc/libxml \
 		sysutils/libstatgrab \
 		security/libgcrypt \
-		devel/libtool,-ltdl
+		devel/libtool,-ltdl \
+		devel/libyajl \
+		devel/protobuf-c>=1.0.1
 
 WANTLIB += c crypto gpg-error idn kvm curl xml2 ltdl lzma oping
 WANTLIB += m pcap pthread ssl xml2 z statgrab gcrypt ${MODGETTEXT_WANTLIB}
+WANTLIB += protobuf-c yajl
 
 CONFIGURE_STYLE =	gnu
+# wants to use -export-symbol-regex, but that doesnt change anything at runtime?
+#USE_LIBTOOL=		gnu
 LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_ARGS +=--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib \
@@ -109,7 +113,9 @@ ENABLED_PLUGINS =	apache apcups ascent bind cpu csv curl curl_xml \
 			processes rrdtool rrdcached snmp swap syslog table tail tail_csv \
 			target_notification target_replace target_scale \
 			target_set target_v5upgrade tcpconns teamspeak2 ted unixsock uptime \
-			users uuid write_http write_graphite pf python libvirt memcachec nut
+			users uuid write_http write_graphite pf python virt memcachec nut \
+			aggregation curl_json fhcount log_logstash memcached \
+			threshold write_log write_riemann
 
 .for _plugin in ${ENABLED_PLUGINS}
 CONFIGURE_ARGS += --enable-${_plugin}

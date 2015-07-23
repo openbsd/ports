@@ -1,8 +1,14 @@
 #!/bin/sh
 #
-# $OpenBSD: collectd.rc,v 1.1 2014/09/25 20:10:13 landry Exp $
+# $OpenBSD: collectd.rc,v 1.2 2015/07/23 07:33:17 landry Exp $
 
 daemon="${TRUEPREFIX}/sbin/collectd"
+
+# Ensure _collectd can read ${SYSCONFDIR}/collectd.conf
+rc_pre() {
+    chgrp _collectd /etc/collectd.conf
+    chmod g+r /etc/collectd.conf
+}
 
 . /etc/rc.d/rc.subr
 
