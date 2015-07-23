@@ -1,5 +1,0 @@
-Net::TCLink is a module that allows for fast, secure, reliable credit
-card and check transactions via the TrustCommerce IP gateway. The
-module consists of a single function call that accepts a hash
-describing the requested transaction and returns a map that describes
-the result.

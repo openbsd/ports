@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.917 2015/07/17 20:53:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.918 2015/07/23 20:22:09 jca Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -396,7 +396,6 @@
      SUBDIR += p5-Net-Server-SS-PreFork
      SUBDIR += p5-Net-Snort-Parser
      SUBDIR += p5-Net-Subnets
-     SUBDIR += p5-Net-TCLink
      SUBDIR += p5-Net-TFTP
      SUBDIR += p5-Net-Telnet
      SUBDIR += p5-Net-Telnet-Cisco
