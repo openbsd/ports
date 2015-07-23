@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/04/09 18:27:19 pascal Exp $
+# $OpenBSD: Makefile,v 1.32 2015/07/23 10:16:21 pascal Exp $
 
 SHARED_ONLY =	Yes
 
@@ -42,6 +42,7 @@ CONFIGURE_ARGS+= \
 	--linkflags="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \
 	--ld="${CXX}" \
 	--ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+	--make="${MAKE_PROGRAM}" \
 	--parrot_is_shared \
 	--icu-config="${LOCALBASE}/bin/icu-config"
 
