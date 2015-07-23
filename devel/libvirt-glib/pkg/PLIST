@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/06/17 10:23:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/07/23 10:26:24 jasper Exp $
 include/libvirt-gconfig-1.0/
 include/libvirt-gconfig-1.0/libvirt-gconfig/
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-capabilities-cpu-feature.h
@@ -19,6 +19,7 @@ include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-channel.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-chardev-source-pty.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-chardev-source-spiceport.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-chardev-source-spicevmc.h
+include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-chardev-source-unix.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-chardev-source.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-chardev.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-clock.h
@@ -100,6 +101,7 @@ include/libvirt-gobject-1.0/libvirt-gobject/libvirt-gobject-enums.h
 include/libvirt-gobject-1.0/libvirt-gobject/libvirt-gobject-interface.h
 include/libvirt-gobject-1.0/libvirt-gobject/libvirt-gobject-main.h
 include/libvirt-gobject-1.0/libvirt-gobject/libvirt-gobject-manager.h
+include/libvirt-gobject-1.0/libvirt-gobject/libvirt-gobject-network-dhcp-lease.h
 include/libvirt-gobject-1.0/libvirt-gobject/libvirt-gobject-network-filter.h
 include/libvirt-gobject-1.0/libvirt-gobject/libvirt-gobject-network.h
 include/libvirt-gobject-1.0/libvirt-gobject/libvirt-gobject-node-device.h
