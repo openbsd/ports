@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/02/16 22:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2015/07/23 07:35:13 ajacoutot Exp $
 
 COMMENT=	command-line online gallery generator
 
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://download.gna.org/llgal/
 EXTRACT_SUFX=	.tar.bz2
+
+BUILD_DEPENDS=	devel/gettext-tools
 
 RUN_DEPENDS=	graphics/ImageMagick \
 		graphics/p5-Image-ExifTool \
