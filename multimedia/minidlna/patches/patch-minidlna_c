@@ -1,7 +1,8 @@
-$OpenBSD: patch-minidlna_c,v 1.3 2015/07/16 21:46:54 sthen Exp $
+$OpenBSD: patch-minidlna_c,v 1.4 2015/07/23 16:29:02 sthen Exp $
 
 Fix missing address in location string sent to minissdpd
 http://miniupnp.tuxfamily.org/forum/viewtopic.php?p=4413
+http://sourceforge.net/p/minidlna/patches/151/
 
 --- minidlna.c.orig	Thu Jul 16 15:44:22 2015
 +++ minidlna.c	Thu Jul 16 15:44:58 2015
