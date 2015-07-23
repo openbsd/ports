@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2015/07/22 17:37:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/07/23 06:10:35 ajacoutot Exp $
 
 COMMENT=	library for handling paper characteristics
 
 MAJV=		1.1.24
 MINV=		4
-DISTNAME=	libpaper_${MAJV}%2bnmu${MINV}
+DISTNAME=	libpaper_${MAJV}+nmu${MINV}
 PKGNAME=	libpaper-${MAJV}.${MINV}
 
 SHARED_LIBS +=  paper                0.0      # 2.2
