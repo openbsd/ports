@@ -1,0 +1,11 @@
+$OpenBSD: patch-commands_c,v 1.1 2015/07/23 22:11:47 jca Exp $
+--- commands.c.orig	Thu Jul 23 13:51:04 2015
++++ commands.c	Thu Jul 23 13:51:14 2015
+@@ -287,7 +287,6 @@ Menu ip6tab[] = {
+ 
+ Menu mplstab[] = {
+ 	{ "ttl",	"MPLS ttl",			CMPL0 0, 0, 0, 1, ipsysctl },
+-	{ "ifq-maxlen", "MPLS IFQ maxlen",		CMPL0 0, 0, 0, 1, ipsysctl },
+ 	{ "mapttl-ip",	"MPLS mapttl IPv4",		CMPL0 0, 0, 0, 1, ipsysctl },
+ 	{ "mapttl-ip6",	"MPLS mapttl IPv6",		CMPL0 0, 0, 0, 1, ipsysctl },
+ 	{ "?",		"Help",				CMPL0 0, 0, 0, 0, sysctlhelp },
