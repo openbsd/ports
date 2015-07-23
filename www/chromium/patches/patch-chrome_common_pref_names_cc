@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_pref_names_cc,v 1.15 2015/05/24 15:51:53 robert Exp $
---- chrome/common/pref_names.cc.orig.port	Thu May 14 00:35:46 2015
-+++ chrome/common/pref_names.cc	Wed May 20 08:34:56 2015
-@@ -882,7 +882,7 @@ const char kForceYouTubeSafetyMode[] = "settings.force
+$OpenBSD: patch-chrome_common_pref_names_cc,v 1.16 2015/07/23 13:44:04 robert Exp $
+--- chrome/common/pref_names.cc.orig.port	Wed Jul 15 22:29:59 2015
++++ chrome/common/pref_names.cc	Wed Jul 22 08:37:29 2015
+@@ -870,7 +870,7 @@ const char kForceYouTubeSafetyMode[] = "settings.force
  // supervised users.
  const char kRecordHistory[] = "settings.history_recorded";
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_common_pref_names_cc,v 1.15 2015/05/24 15:51:53 robert Ex
  // Linux specific preference on whether we should match the system theme.
  const char kUsesSystemTheme[] = "extensions.theme.use_system";
  #endif
-@@ -1431,7 +1431,7 @@ const char kDownloadDefaultDirectory[] = "download.def
+@@ -1425,7 +1425,7 @@ const char kDownloadDefaultDirectory[] = "download.def
  // upgrade a unsafe location to a safe location.
  const char kDownloadDirUpgraded[] = "download.directory_upgrade";
  

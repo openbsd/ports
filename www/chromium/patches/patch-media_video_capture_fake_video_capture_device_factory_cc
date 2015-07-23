@@ -1,7 +1,7 @@
-$OpenBSD: patch-media_video_capture_fake_video_capture_device_factory_cc,v 1.1 2015/05/24 15:51:53 robert Exp $
---- media/video/capture/fake_video_capture_device_factory.cc.orig.port	Sat May 23 00:59:48 2015
-+++ media/video/capture/fake_video_capture_device_factory.cc	Sun May 24 17:21:39 2015
-@@ -48,7 +48,7 @@ void FakeVideoCaptureDeviceFactory::GetDeviceNames(
+$OpenBSD: patch-media_video_capture_fake_video_capture_device_factory_cc,v 1.2 2015/07/23 13:44:04 robert Exp $
+--- media/video/capture/fake_video_capture_device_factory.cc.orig.port	Wed Jul 15 22:30:05 2015
++++ media/video/capture/fake_video_capture_device_factory.cc	Wed Jul 22 08:37:30 2015
+@@ -50,7 +50,7 @@ void FakeVideoCaptureDeviceFactory::GetDeviceNames(
    for (int n = 0; n < number_of_devices_; ++n) {
      VideoCaptureDevice::Name name(base::StringPrintf("fake_device_%d", n),
                                    base::StringPrintf("/dev/video%d", n)

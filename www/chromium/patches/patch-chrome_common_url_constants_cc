@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_common_url_constants_cc,v 1.5 2015/05/24 15:51:53 robert Exp $
---- chrome/common/url_constants.cc.orig.port	Sat May 23 00:59:48 2015
-+++ chrome/common/url_constants.cc	Sat May 23 01:08:33 2015
-@@ -139,7 +139,7 @@ const char kChromeUISalsaURL[] = "chrome://salsa/";
- const char kChromeUISalsaHost[] = "salsa";
+$OpenBSD: patch-chrome_common_url_constants_cc,v 1.6 2015/07/23 13:44:04 robert Exp $
+--- chrome/common/url_constants.cc.orig.port	Wed Jul 15 22:29:59 2015
++++ chrome/common/url_constants.cc	Wed Jul 22 08:37:29 2015
+@@ -131,7 +131,7 @@ const char kChromeUIGestureConfigURL[] = "chrome://ges
+ const char kChromeUIGestureConfigHost[] = "gesture";
  #endif
  
 -#if (defined(OS_LINUX) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
@@ -10,8 +10,8 @@ $OpenBSD: patch-chrome_common_url_constants_cc,v 1.5 2015/05/24 15:51:53 robert 
  const char kChromeUITabModalConfirmDialogURL[] =
      "chrome://tab-modal-confirm-dialog/";
  #endif
-@@ -322,7 +322,7 @@ const char kChromeOSAssetHost[] = "chromeos-asset";
- const char kChromeOSAssetPath[] = "/usr/share/chromeos-assets/";
+@@ -312,7 +312,7 @@ const char kChromeOSAssetPath[] = "/usr/share/chromeos
+ const char kChromeUIMetroFlowHost[] = "make-metro";
  #endif
  
 -#if (defined(OS_LINUX) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)

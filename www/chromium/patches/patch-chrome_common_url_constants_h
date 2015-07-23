@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_common_url_constants_h,v 1.5 2015/05/24 15:51:53 robert Exp $
---- chrome/common/url_constants.h.orig.port	Sat May 23 00:59:48 2015
-+++ chrome/common/url_constants.h	Sat May 23 01:08:45 2015
-@@ -132,7 +132,7 @@ extern const char kChromeUISalsaURL[];
- extern const char kChromeUISalsaHost[];
+$OpenBSD: patch-chrome_common_url_constants_h,v 1.6 2015/07/23 13:44:04 robert Exp $
+--- chrome/common/url_constants.h.orig.port	Wed Jul 15 22:29:59 2015
++++ chrome/common/url_constants.h	Wed Jul 22 08:37:29 2015
+@@ -123,7 +123,7 @@ extern const char kChromeUIGestureConfigURL[];
+ extern const char kChromeUIGestureConfigHost[];
  #endif
  
 -#if (defined(OS_LINUX) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
@@ -10,8 +10,8 @@ $OpenBSD: patch-chrome_common_url_constants_h,v 1.5 2015/05/24 15:51:53 robert E
  extern const char kChromeUITabModalConfirmDialogURL[];
  #endif
  
-@@ -308,7 +308,7 @@ extern const char kChromeOSAssetHost[];
- extern const char kChromeOSAssetPath[];
+@@ -295,7 +295,7 @@ extern const char kChromeOSAssetPath[];
+ extern const char kChromeUIMetroFlowHost[];
  #endif
  
 -#if (defined(OS_LINUX) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)

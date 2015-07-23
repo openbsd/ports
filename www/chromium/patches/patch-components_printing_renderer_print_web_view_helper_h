@@ -1,7 +1,7 @@
-$OpenBSD: patch-components_printing_renderer_print_web_view_helper_h,v 1.1 2015/04/27 16:38:25 robert Exp $
---- components/printing/renderer/print_web_view_helper.h.orig.port	Wed Apr 15 09:31:19 2015
-+++ components/printing/renderer/print_web_view_helper.h	Wed Apr 15 09:31:31 2015
-@@ -246,7 +246,7 @@ class PrintWebViewHelper
+$OpenBSD: patch-components_printing_renderer_print_web_view_helper_h,v 1.2 2015/07/23 13:44:04 robert Exp $
+--- components/printing/renderer/print_web_view_helper.h.orig.port	Wed Jul 15 22:30:02 2015
++++ components/printing/renderer/print_web_view_helper.h	Wed Jul 22 08:37:29 2015
+@@ -254,7 +254,7 @@ class PrintWebViewHelper
    void FinishFramePrinting();
  
    // Prints the page listed in |params|.

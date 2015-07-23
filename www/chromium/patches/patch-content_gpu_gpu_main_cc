@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.5 2015/05/24 15:51:53 robert Exp $
---- content/gpu/gpu_main.cc.orig.port	Thu May 14 00:35:46 2015
-+++ content/gpu/gpu_main.cc	Wed May 20 08:34:56 2015
-@@ -79,7 +79,7 @@ bool WarmUpSandbox(const base::CommandLine& command_li
+$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.6 2015/07/23 13:44:04 robert Exp $
+--- content/gpu/gpu_main.cc.orig.port	Wed Jul 22 08:46:00 2015
++++ content/gpu/gpu_main.cc	Wed Jul 22 08:47:47 2015
+@@ -85,7 +85,7 @@ bool WarmUpSandbox(const base::CommandLine& command_li
  bool CollectGraphicsInfo(gpu::GPUInfo& gpu_info);
  #endif
  
@@ -10,23 +10,23 @@ $OpenBSD: patch-content_gpu_gpu_main_cc,v 1.5 2015/05/24 15:51:53 robert Exp $
  #if !defined(OS_CHROMEOS)
  bool CanAccessNvidiaDeviceFile();
  #endif
-@@ -164,13 +164,13 @@ int GpuMain(const MainFunctionParams& parameters) {
-     message_loop_type = base::MessageLoop::TYPE_UI;
-   }
-   base::MessageLoop main_message_loop(message_loop_type);
+@@ -163,13 +163,13 @@ int GpuMain(const MainFunctionParams& parameters) {
+   // Use a UI message loop because ANGLE and the desktop GL platform can
+   // create child windows to render to.
+   base::MessageLoop main_message_loop(base::MessageLoop::TYPE_UI);
 -#elif defined(OS_LINUX) && defined(USE_X11)
-+#elif defined(OS_BSD) && defined(USE_X11)
++#elif (defined(OS_BSD) || defined(OS_LINUX)) && defined(USE_X11)
    // We need a UI loop so that we can grab the Expose events. See GLSurfaceGLX
    // and https://crbug.com/326995.
    base::MessageLoop main_message_loop(base::MessageLoop::TYPE_UI);
    scoped_ptr<ui::PlatformEventSource> event_source =
        ui::PlatformEventSource::CreateDefault();
 -#elif defined(OS_LINUX)
-+#elif defined(OS_BSD)
++#elif defined(OS_LINUX) || defined(OS_BSD)
    base::MessageLoop main_message_loop(base::MessageLoop::TYPE_DEFAULT);
  #elif defined(OS_MACOSX)
    // This is necessary for CoreAnimation layers hosted in the GPU process to be
-@@ -237,6 +237,10 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -240,6 +240,10 @@ int GpuMain(const MainFunctionParams& parameters) {
        initialized_sandbox = true;
      }
  #endif  // defined(OS_LINUX)
@@ -37,7 +37,7 @@ $OpenBSD: patch-content_gpu_gpu_main_cc,v 1.5 2015/05/24 15:51:53 robert Exp $
  
      base::TimeTicks before_initialize_one_off = base::TimeTicks::Now();
  
-@@ -284,7 +288,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -287,7 +291,7 @@ int GpuMain(const MainFunctionParams& parameters) {
        }
  #endif
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-content_gpu_gpu_main_cc,v 1.5 2015/05/24 15:51:53 robert Exp $
        initialized_gl_context = true;
  #if !defined(OS_CHROMEOS)
        if (gpu_info.gpu.vendor_id == 0x10de &&  // NVIDIA
-@@ -322,14 +326,16 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -326,14 +330,16 @@ int GpuMain(const MainFunctionParams& parameters) {
        watchdog_thread = NULL;
      }
  
@@ -64,7 +64,7 @@ $OpenBSD: patch-content_gpu_gpu_main_cc,v 1.5 2015/05/24 15:51:53 robert Exp $
  #elif defined(OS_WIN)
      gpu_info.sandboxed = StartSandboxWindows(parameters.sandbox_info);
  #elif defined(OS_MACOSX)
-@@ -425,7 +431,7 @@ bool CollectGraphicsInfo(gpu::GPUInfo& gpu_info) {
+@@ -431,7 +437,7 @@ bool CollectGraphicsInfo(gpu::GPUInfo& gpu_info) {
  }
  #endif
  

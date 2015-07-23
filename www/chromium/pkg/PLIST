@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2015/05/24 15:51:53 robert Exp $
+@comment $OpenBSD: PLIST,v 1.50 2015/07/23 13:44:04 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -8,7 +8,6 @@ chrome/content_resources.pak
 chrome/icudtl.dat
 chrome/keyboard_resources.pak
 chrome/libexif.so
-chrome/libffmpegsumo.so
 chrome/locales/
 chrome/locales/am.pak
 chrome/locales/ar.pak
@@ -104,9 +103,8 @@ chrome/resources/inspector/Images/indexedDBObjectStore.png
 chrome/resources/inspector/Images/localStorage.png
 chrome/resources/inspector/Images/navigationControls.png
 chrome/resources/inspector/Images/navigationControls_2x.png
+chrome/resources/inspector/Images/notifications.svg
 chrome/resources/inspector/Images/paneAddButtons.png
-chrome/resources/inspector/Images/paneAnimationsButtons.png
-chrome/resources/inspector/Images/paneElementStateButtons.png
 chrome/resources/inspector/Images/paneFilterButtons.png
 chrome/resources/inspector/Images/paneRefreshButtons.png
 chrome/resources/inspector/Images/popoverArrows.png
@@ -131,23 +129,25 @@ chrome/resources/inspector/Images/settingsListRemove.png
 chrome/resources/inspector/Images/settingsListRemove_2x.png
 chrome/resources/inspector/Images/speech.png
 chrome/resources/inspector/Images/spinner.svg
-chrome/resources/inspector/Images/statusbarButtonGlyphs.png
-chrome/resources/inspector/Images/statusbarButtonGlyphs_2x.png
-chrome/resources/inspector/Images/statusbarResizerHorizontal.png
-chrome/resources/inspector/Images/statusbarResizerVertical.png
 chrome/resources/inspector/Images/thumbActiveHoriz.png
 chrome/resources/inspector/Images/thumbActiveVert.png
 chrome/resources/inspector/Images/thumbHoriz.png
 chrome/resources/inspector/Images/thumbHoverHoriz.png
 chrome/resources/inspector/Images/thumbHoverVert.png
 chrome/resources/inspector/Images/thumbVert.png
+chrome/resources/inspector/Images/toolbarButtonGlyphs.png
+chrome/resources/inspector/Images/toolbarButtonGlyphs_2x.png
 chrome/resources/inspector/Images/toolbarItemSelected.png
+chrome/resources/inspector/Images/toolbarResizerHorizontal.png
+chrome/resources/inspector/Images/toolbarResizerVertical.png
 chrome/resources/inspector/Images/touchCursor.png
 chrome/resources/inspector/Images/touchCursor_2x.png
+chrome/resources/inspector/Images/updateServiceWorker.svg
 chrome/resources/inspector/InspectorBackendCommands.js
 chrome/resources/inspector/SupportedCSSProperties.js
 chrome/resources/inspector/accessibility_module.js
 chrome/resources/inspector/audits_module.js
+chrome/resources/inspector/cm_modes_module.js
 chrome/resources/inspector/components_lazy_module.js
 chrome/resources/inspector/console_module.js
 chrome/resources/inspector/devtools.css

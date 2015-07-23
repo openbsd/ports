@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_public_common_content_switches_cc,v 1.6 2015/05/24 15:51:53 robert Exp $
---- content/public/common/content_switches.cc.orig.port	Thu May 14 00:35:46 2015
-+++ content/public/common/content_switches.cc	Wed May 20 08:34:56 2015
-@@ -944,7 +944,7 @@ const char kDisableVaapiAcceleratedVideoEncode[] =
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.7 2015/07/23 13:44:04 robert Exp $
+--- content/public/common/content_switches.cc.orig.port	Wed Jul 15 22:30:03 2015
++++ content/public/common/content_switches.cc	Wed Jul 22 08:37:30 2015
+@@ -969,7 +969,7 @@ const char kDisableVaapiAcceleratedVideoEncode[] =
      "disable-vaapi-accelerated-video-encode";
  #endif
  

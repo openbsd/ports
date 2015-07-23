@@ -1,0 +1,11 @@
+$OpenBSD: patch-third_party_ffmpeg_libavutil_autorename_libavutil_cpu_c,v 1.1 2015/07/23 13:44:04 robert Exp $
+--- third_party/ffmpeg/libavutil/autorename_libavutil_cpu.c.orig.port	Wed Jul 22 09:44:47 2015
++++ third_party/ffmpeg/libavutil/autorename_libavutil_cpu.c	Wed Jul 22 10:00:36 2015
+@@ -37,6 +37,7 @@
+ #if HAVE_SYS_PARAM_H
+ #include <sys/param.h>
+ #endif
++typedef unsigned long   u_long;
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+ #endif

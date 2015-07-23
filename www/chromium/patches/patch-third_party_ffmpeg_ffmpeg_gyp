@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_ffmpeg_ffmpeg_gyp,v 1.10 2015/05/24 15:51:53 robert Exp $
---- third_party/ffmpeg/ffmpeg.gyp.orig.port	Thu May 14 00:36:34 2015
-+++ third_party/ffmpeg/ffmpeg.gyp	Wed May 20 08:34:56 2015
-@@ -330,7 +330,6 @@
-                 ],
+$OpenBSD: patch-third_party_ffmpeg_ffmpeg_gyp,v 1.11 2015/07/23 13:44:04 robert Exp $
+--- third_party/ffmpeg/ffmpeg.gyp.orig.port	Wed Jul 15 22:31:25 2015
++++ third_party/ffmpeg/ffmpeg.gyp	Wed Jul 22 08:37:30 2015
+@@ -318,7 +318,6 @@
+               'link_settings': {
                  'libraries': [
                    '-lm',
 -                  '-lrt',

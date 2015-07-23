@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.6 2013/07/15 14:59:30 robert Exp $
---- base/sys_info_openbsd.cc.orig.port	Wed Jun 12 09:28:39 2013
-+++ base/sys_info_openbsd.cc	Sun Jul 14 10:59:41 2013
+$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.7 2015/07/23 13:44:04 robert Exp $
+--- base/sys_info_openbsd.cc.orig.port	Wed Jul 22 08:42:13 2015
++++ base/sys_info_openbsd.cc	Wed Jul 22 08:42:21 2015
 @@ -44,11 +44,6 @@ int64 SysInfo::AmountOfPhysicalMemory() {
  }
  
@@ -10,6 +10,6 @@ $OpenBSD: patch-base_sys_info_openbsd_cc,v 1.6 2013/07/15 14:59:30 robert Exp $
 -}
 -
 -// static
- size_t SysInfo::MaxSharedMemorySize() {
+ uint64 SysInfo::MaxSharedMemorySize() {
    int mib[] = { CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX };
    size_t limit;

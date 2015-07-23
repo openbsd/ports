@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.18 2015/05/24 15:51:52 robert Exp $
---- chrome/browser/about_flags.cc.orig.port	Thu May 14 00:35:45 2015
-+++ chrome/browser/about_flags.cc	Sat May 23 01:01:26 2015
-@@ -674,7 +674,7 @@ const Experiment kExperiments[] = {
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.19 2015/07/23 13:44:04 robert Exp $
+--- chrome/browser/about_flags.cc.orig.port	Wed Jul 15 22:29:57 2015
++++ chrome/browser/about_flags.cc	Wed Jul 22 08:37:29 2015
+@@ -743,7 +743,7 @@ const Experiment kExperiments[] = {
      kOsLinux,
      SINGLE_VALUE_TYPE(switches::kEnableSmoothScrolling)
    },
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_about_flags_cc,v 1.18 2015/05/24 15:51:52 robert 
    {
      "overlay-scrollbars",
      IDS_FLAGS_ENABLE_OVERLAY_SCROLLBARS_NAME,
-@@ -1538,7 +1538,7 @@ const Experiment kExperiments[] = {
+@@ -1584,7 +1584,7 @@ const Experiment kExperiments[] = {
      SINGLE_VALUE_TYPE(switches::kResetAppListInstallState)
    },
  #if defined(ENABLE_APP_LIST)

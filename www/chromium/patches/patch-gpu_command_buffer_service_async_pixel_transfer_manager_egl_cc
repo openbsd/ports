@@ -1,7 +1,7 @@
-$OpenBSD: patch-gpu_command_buffer_service_async_pixel_transfer_manager_egl_cc,v 1.3 2015/05/24 15:51:53 robert Exp $
---- gpu/command_buffer/service/async_pixel_transfer_manager_egl.cc.orig.port	Wed May 20 10:14:36 2015
-+++ gpu/command_buffer/service/async_pixel_transfer_manager_egl.cc	Wed May 20 10:14:53 2015
-@@ -89,7 +89,7 @@ class TransferThread : public base::Thread {
+$OpenBSD: patch-gpu_command_buffer_service_async_pixel_transfer_manager_egl_cc,v 1.4 2015/07/23 13:44:04 robert Exp $
+--- gpu/command_buffer/service/async_pixel_transfer_manager_egl.cc.orig.port	Wed Jul 15 22:30:04 2015
++++ gpu/command_buffer/service/async_pixel_transfer_manager_egl.cc	Wed Jul 22 08:37:30 2015
+@@ -91,7 +91,7 @@ class TransferThread : public base::Thread {
   public:
    TransferThread() : base::Thread(kAsyncTransferThreadName) {
      Start();
@@ -10,7 +10,7 @@ $OpenBSD: patch-gpu_command_buffer_service_async_pixel_transfer_manager_egl_cc,v
      SetPriority(base::ThreadPriority::BACKGROUND);
  #endif
    }
-@@ -465,14 +465,14 @@ bool AsyncPixelTransferDelegateEGL::TransferIsInProgre
+@@ -467,14 +467,14 @@ bool AsyncPixelTransferDelegateEGL::TransferIsInProgre
  
  void AsyncPixelTransferDelegateEGL::WaitForTransferCompletion() {
    if (state_->TransferIsInProgress()) {

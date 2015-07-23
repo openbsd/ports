@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.37 2015/05/24 15:51:53 robert Exp $
---- chrome/chrome_browser.gypi.orig.port	Thu May 14 00:35:46 2015
-+++ chrome/chrome_browser.gypi	Wed May 20 08:34:56 2015
-@@ -3335,7 +3335,7 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.38 2015/07/23 13:44:04 robert Exp $
+--- chrome/chrome_browser.gypi.orig.port	Wed Jul 15 22:29:59 2015
++++ chrome/chrome_browser.gypi	Wed Jul 22 08:37:29 2015
+@@ -3416,7 +3416,7 @@
              '../device/media_transfer_protocol/media_transfer_protocol.gyp:device_media_transfer_protocol',
            ],
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.37 2015/05/24 15:51:53 robert Exp
            'dependencies': [
              '../build/linux/system.gyp:libspeechd',
            ],
-@@ -3391,7 +3391,7 @@
+@@ -3472,7 +3472,7 @@
          ['use_x11==1', {
            'sources': [ '<@(chrome_browser_x11_sources)' ],
          }],
@@ -19,9 +19,9 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.37 2015/05/24 15:51:53 robert Exp
            'sources': [
              'app/chrome_crash_reporter_client.cc',
              'app/chrome_crash_reporter_client.h',
-@@ -3483,6 +3483,13 @@
-           'sources': [ '<@(chrome_browser_android_sources)' ],
-           'defines': [ 'ENABLE_DATA_REDUCTION_PROXY_DEBUGGING' ],
+@@ -3574,6 +3574,13 @@
+             }],
+           ],
          }],
 +        ['os_bsd==1', {
 +          'sources/': [
@@ -33,7 +33,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.37 2015/05/24 15:51:53 robert Exp
          ['OS=="mac"', {
            'dependencies': [
              '../third_party/google_toolbox_for_mac/google_toolbox_for_mac.gyp:google_toolbox_for_mac',
-@@ -3576,7 +3583,7 @@
+@@ -3667,7 +3674,7 @@
              }],
            ],
          }],

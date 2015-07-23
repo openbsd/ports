@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_heap_ThreadState_h,v 1.4 2015/05/24 15:51:53 robert Exp $
---- third_party/WebKit/Source/platform/heap/ThreadState.h.orig.port	Thu May 14 00:49:00 2015
-+++ third_party/WebKit/Source/platform/heap/ThreadState.h	Wed May 20 08:34:56 2015
-@@ -303,7 +303,7 @@ class PLATFORM_EXPORT ThreadState { (public)
+$OpenBSD: patch-third_party_WebKit_Source_platform_heap_ThreadState_h,v 1.5 2015/07/23 13:44:04 robert Exp $
+--- third_party/WebKit/Source/platform/heap/ThreadState.h.orig.port	Wed Jul 15 22:31:13 2015
++++ third_party/WebKit/Source/platform/heap/ThreadState.h	Wed Jul 22 08:37:30 2015
+@@ -262,7 +262,7 @@ class PLATFORM_EXPORT ThreadState { (public)
  
      static ThreadState* current()
      {
