@@ -1,11 +1,76 @@
-$OpenBSD: patch-IPython_html_base_handlers_py,v 1.1 2015/06/25 10:51:31 jasper Exp $
+$OpenBSD: patch-IPython_html_base_handlers_py,v 1.2 2015/07/23 12:46:01 jasper Exp $
 
 Security fix for CVE-2015-4707
 https://github.com/ipython/ipython/commit/c2078a53543ed502efd968649fee1125e0eb549c
 
---- IPython/html/base/handlers.py.orig	Wed Jun 24 16:41:55 2015
-+++ IPython/html/base/handlers.py	Wed Jun 24 16:42:45 2015
-@@ -339,6 +339,7 @@ def json_errors(method):
+Security fix for CVE-2015-5607
+https://github.com/ipython/ipython/commit/a05fe052a18810e92d9be8c1185952c13fe4e5b0
+
+--- IPython/html/base/handlers.py.orig	Thu Jul 23 14:39:34 2015
++++ IPython/html/base/handlers.py	Thu Jul 23 14:39:25 2015
+@@ -29,6 +29,10 @@ try:
+     from http.client import responses
+ except ImportError:
+     from httplib import responses
++try:
++    from urllib.parse import urlparse # Py 3
++except ImportError:
++    from urlparse import urlparse # Py 2
+ 
+ from jinja2 import TemplateNotFound
+ from tornado import web
+@@ -208,6 +212,50 @@ class IPythonHandler(AuthenticatedHandler):
+             origin = self.request.headers.get("Sec-Websocket-Origin", None)
+         return origin
+ 
++    def check_origin_api(self):
++        """Check Origin for cross-site API requests.
++        
++        Copied from WebSocket with changes:
++        
++        - allow unspecified host/origin (e.g. scripts)
++        """
++        if self.allow_origin == '*':
++            return True
++
++        host = self.request.headers.get("Host")
++        origin = self.request.headers.get("Origin")
++
++        # If no header is provided, assume it comes from a script/curl.
++        # We are only concerned with cross-site browser stuff here.
++        if origin is None or host is None:
++            return True
++        
++        origin = origin.lower()
++        origin_host = urlparse(origin).netloc
++        
++        # OK if origin matches host
++        if origin_host == host:
++            return True
++        
++        # Check CORS headers
++        if self.allow_origin:
++            allow = self.allow_origin == origin
++        elif self.allow_origin_pat:
++            allow = bool(self.allow_origin_pat.match(origin))
++        else:
++            # No CORS headers deny the request
++            allow = False
++        if not allow:
++            self.log.warn("Blocking Cross Origin API request.  Origin: %s, Host: %s",
++                origin, host,
++            )
++        return allow
++
++    def prepare(self):
++        if not self.check_origin_api():
++            raise web.HTTPError(404)
++        return super(IPythonHandler, self).prepare()
++
+     #---------------------------------------------------------------
+     # template rendering
+     #---------------------------------------------------------------
+@@ -339,6 +387,7 @@ def json_errors(method):
              message = e.log_message
              self.log.warn(message)
              self.set_status(e.status_code)
@@ -13,7 +78,7 @@ https://github.com/ipython/ipython/commit/c2078a53543ed502efd968649fee1125e0eb54
              self.finish(json.dumps(dict(message=message)))
          except Exception:
              self.log.error("Unhandled error in API request", exc_info=True)
-@@ -348,6 +349,7 @@ def json_errors(method):
+@@ -348,6 +397,7 @@ def json_errors(method):
              self.set_status(status)
              tb_text = ''.join(traceback.format_exception(t, value, tb))
              reply = dict(message=message, traceback=tb_text)

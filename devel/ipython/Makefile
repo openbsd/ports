@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2015/06/25 10:51:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2015/07/23 12:46:01 jasper Exp $
 
 COMMENT=		enhanced interactive Python shell
 
 MODPY_EGG_VERSION =	2.3.1
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://ipython.org/
