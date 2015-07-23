@@ -19,7 +19,7 @@ namespace facter { namespace facts { namespace openbsd {
         return result;
     }
 
-    string dmi_resolver::sysctl_lookup(uint64_t mib_2)
+    string dmi_resolver::sysctl_lookup(int mib_2)
     {
         int mib[2];
         size_t len;

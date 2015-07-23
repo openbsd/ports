@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_src_ruby_api_cc,v 1.4 2015/07/16 16:31:52 jasper Exp $
+$OpenBSD: patch-lib_src_ruby_api_cc,v 1.5 2015/07/23 08:06:28 jasper Exp $
 
 - Initialize the ruby loadpath so that rbconfig.rb gets loaded.
   https://github.com/puppetlabs/facter/pull/1059
 
---- lib/src/ruby/api.cc.orig	Thu Jun 25 17:47:38 2015
-+++ lib/src/ruby/api.cc	Thu Jul 16 09:46:32 2015
-@@ -98,6 +98,7 @@ namespace facter { namespace ruby {
+--- lib/src/ruby/api.cc.orig	Tue Jul 21 11:31:28 2015
++++ lib/src/ruby/api.cc	Thu Jul 23 01:25:11 2015
+@@ -96,6 +96,7 @@ namespace facter { namespace ruby {
          LOAD_SYMBOL(ruby_init),
          LOAD_SYMBOL(ruby_options),
          LOAD_SYMBOL(ruby_cleanup),
@@ -13,7 +13,7 @@ $OpenBSD: patch-lib_src_ruby_api_cc,v 1.4 2015/07/16 16:31:52 jasper Exp $
          _library(move(library))
      {
      }
-@@ -157,6 +158,8 @@ namespace facter { namespace ruby {
+@@ -155,6 +156,8 @@ namespace facter { namespace ruby {
          } else {
              ruby_init();
          }

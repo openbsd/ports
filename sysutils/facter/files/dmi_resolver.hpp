@@ -22,7 +22,7 @@ namespace facter { namespace facts { namespace openbsd {
         virtual data collect_data(collection& facts) override;
 
      private:
-        std::string sysctl_lookup(uint64_t mib);
+        std::string sysctl_lookup(int mib);
     };
 
 }}}  // namespace facter::facts::openbsd
