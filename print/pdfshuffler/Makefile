@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/04/27 21:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/07/23 07:50:00 ajacoutot Exp $
 
 COMMENT =		merge, split, rotate and crop PDF documents
 MODPY_EGG_VERSION =	0.6.0
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pdfshuffler/}
 
-BUILD_DEPENDS =		devel/gettext
+BUILD_DEPENDS =		devel/gettext-tools
 RUN_DEPENDS =		devel/gettext \
 			print/py-poppler \
 			textproc/py-pdf \
