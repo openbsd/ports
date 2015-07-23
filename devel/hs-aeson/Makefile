@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/27 21:45:36 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2015/07/23 18:00:11 kili Exp $
 
 COMMENT =		fast JSON parsing and encoding
 
-DISTNAME =		aeson-0.6.2.1
-REVISION =		0
+DISTNAME =		aeson-0.7.0.6
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/bos/aeson
@@ -20,10 +19,11 @@ RUN_DEPENDS =		devel/hs-blaze-builder>=0.2.1.4 \
 			devel/hs-hashable>=1.1.2.0 \
 			devel/hs-mtl \
 			devel/hs-syb \
+			devel/hs-scientific>=0.3.1,<0.4 \
 			devel/hs-text>=0.11.1.0 \
-			devel/hs-unordered-containers>=0.1.3.0 \
+			devel/hs-unordered-containers>=0.2.3.0 \
 			devel/hs-vector>=0.7.1 \
-			textproc/hs-attoparsec>=0.8.6.1
+			textproc/hs-attoparsec>=0.11.3.4
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

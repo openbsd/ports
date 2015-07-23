@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/11/27 21:45:36 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/07/23 18:00:11 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Aeson/
 lib/ghc/${DISTNAME}/Data/Aeson.hi
 lib/ghc/${DISTNAME}/Data/Aeson.p_hi
+lib/ghc/${DISTNAME}/Data/Aeson/Encode/
 lib/ghc/${DISTNAME}/Data/Aeson/Encode.hi
 lib/ghc/${DISTNAME}/Data/Aeson/Encode.p_hi
+lib/ghc/${DISTNAME}/Data/Aeson/Encode/ByteString.hi
+lib/ghc/${DISTNAME}/Data/Aeson/Encode/ByteString.p_hi
 lib/ghc/${DISTNAME}/Data/Aeson/Functions.hi
 lib/ghc/${DISTNAME}/Data/Aeson/Functions.p_hi
 lib/ghc/${DISTNAME}/Data/Aeson/Generic.hi
@@ -24,6 +27,8 @@ lib/ghc/${DISTNAME}/Data/Aeson/Types/Class.hi
 lib/ghc/${DISTNAME}/Data/Aeson/Types/Class.p_hi
 lib/ghc/${DISTNAME}/Data/Aeson/Types/Generic.hi
 lib/ghc/${DISTNAME}/Data/Aeson/Types/Generic.p_hi
+lib/ghc/${DISTNAME}/Data/Aeson/Types/Instances.hi
+lib/ghc/${DISTNAME}/Data/Aeson/Types/Instances.p_hi
 lib/ghc/${DISTNAME}/Data/Aeson/Types/Internal.hi
 lib/ghc/${DISTNAME}/Data/Aeson/Types/Internal.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
