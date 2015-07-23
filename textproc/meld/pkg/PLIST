@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/10/27 21:33:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/07/23 04:22:50 ajacoutot Exp $
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
 lib/python${MODPY_VERSION}/site-packages/meld-${GNOME_VERSION}-py${MODPY_VERSION}.egg-info
@@ -170,6 +170,25 @@ share/help/cs/meld/resolving-conflicts.page
 share/help/cs/meld/text-filters.page
 share/help/cs/meld/vc-mode.page
 share/help/cs/meld/vc-supported.page
+share/help/de/
+share/help/de/meld/
+share/help/de/meld/command-line.page
+share/help/de/meld/figures/
+share/help/de/meld/file-changes.page
+share/help/de/meld/file-filters.page
+share/help/de/meld/file-mode.page
+share/help/de/meld/flattened-view.page
+share/help/de/meld/folder-mode.page
+share/help/de/meld/index.page
+share/help/de/meld/introduction.page
+share/help/de/meld/keyboard-shortcuts.page
+share/help/de/meld/legal.xml
+share/help/de/meld/missing-functionality.page
+share/help/de/meld/preferences.page
+share/help/de/meld/resolving-conflicts.page
+share/help/de/meld/text-filters.page
+share/help/de/meld/vc-mode.page
+share/help/de/meld/vc-supported.page
 share/help/el/
 share/help/el/meld/
 share/help/el/meld/command-line.page
@@ -225,6 +244,7 @@ share/icons/hicolor/48x48/apps/meld.png
 share/icons/hicolor/scalable/apps/meld.svg
 share/locale/ar/LC_MESSAGES/meld.mo
 share/locale/bg/LC_MESSAGES/meld.mo
+share/locale/bs/LC_MESSAGES/meld.mo
 share/locale/ca/LC_MESSAGES/meld.mo
 share/locale/ca@valencia/LC_MESSAGES/meld.mo
 share/locale/cs/LC_MESSAGES/meld.mo
@@ -257,6 +277,7 @@ share/locale/pt_BR/LC_MESSAGES/meld.mo
 share/locale/ro/LC_MESSAGES/meld.mo
 share/locale/ru/LC_MESSAGES/meld.mo
 share/locale/rw/LC_MESSAGES/meld.mo
+share/locale/sk/LC_MESSAGES/meld.mo
 share/locale/sl/LC_MESSAGES/meld.mo
 share/locale/sq/LC_MESSAGES/meld.mo
 share/locale/sr/LC_MESSAGES/meld.mo
@@ -282,6 +303,7 @@ share/meld/icons/vc-push-24.png
 share/meld/icons/vc-remove-24.png
 share/meld/icons/vc-resolve-24.png
 share/meld/icons/vc-update-24.png
+share/meld/meld-dark.css
 share/meld/meld.css
 share/meld/ui/
 share/meld/ui/EditableList.ui
