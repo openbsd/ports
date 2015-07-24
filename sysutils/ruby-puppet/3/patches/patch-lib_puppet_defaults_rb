@@ -1,6 +1,9 @@
-$OpenBSD: patch-lib_puppet_defaults_rb,v 1.14 2015/07/24 18:19:36 jasper Exp $
+$OpenBSD: patch-lib_puppet_defaults_rb,v 1.15 2015/07/24 19:19:52 jasper Exp $
 
-https://github.com/puppetlabs/puppet/pull/4102
+From 05dad9b1d30a8ff1e8e4a06bc5eaf0b19dab43e2 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Fri, 24 Jul 2015 20:18:08 +0200
+Subject: [PATCH] (MAINT) Fix duplicate key which ruby 2.2 complains about
 
 --- lib/puppet/defaults.rb.orig	Thu May 21 22:54:42 2015
 +++ lib/puppet/defaults.rb	Fri Jul 24 20:16:34 2015
