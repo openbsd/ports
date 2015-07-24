@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/07/18 20:12:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/07/24 18:50:34 jasper Exp $
 
 COMMENT=		xml to manpage converter
 
@@ -23,11 +23,7 @@ post-extract:
 	sed -i 's,/usr/share,${PREFIX}/share,g;s,doc/xmltoman/examples,examples/xmltoman,g' \
 		${WRKSRC}/xml/xml*
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/{xmltoman,xmlmantohtml} $(PREFIX)/bin
-	${INSTALL_DATA_DIR} $(PREFIX)/share/xmltoman
-	${INSTALL_DATA} ${WRKSRC}/xmltoman.{css,dtd,xsl} \
-		$(PREFIX)/share/xmltoman
+post-install:
 	${INSTALL_MAN} ${WRKSRC}/*.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xmltoman
 	${INSTALL_DATA} ${WRKSRC}/xml/*.xml ${PREFIX}/share/examples/xmltoman
