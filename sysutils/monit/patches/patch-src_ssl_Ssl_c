@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_ssl_Ssl_c,v 1.1 2015/07/18 22:45:36 jca Exp $
+$OpenBSD: patch-src_ssl_Ssl_c,v 1.2 2015/07/24 07:17:03 jasper Exp $
+
+https://bitbucket.org/tildeslash/monit/pull-request/27/
+
 --- src/ssl/Ssl.c.orig	Sat Jul 18 11:14:50 2015
 +++ src/ssl/Ssl.c	Sat Jul 18 11:15:57 2015
 @@ -267,11 +267,16 @@ T Ssl_new(char *clientpemfile, Ssl_Version version) {
