@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/01 16:19:50 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2015/07/24 19:08:07 bluhm Exp $
 
 COMMENT =		check that a command is available
 
-DISTNAME =		Devel-CheckBin-0.03
+DISTNAME =		Devel-CheckBin-0.04
 
 CATEGORIES =		devel
 
