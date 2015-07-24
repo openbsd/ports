@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/01/17 00:06:34 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/07/24 02:08:17 jturner Exp $
 @owner root
 @group wheel
 bin/tsc
 lib/node_modules/typescript/
+lib/node_modules/typescript/.editorconfig
+lib/node_modules/typescript/.gitattributes
 lib/node_modules/typescript/.npmignore
 lib/node_modules/typescript/CONTRIBUTING.md
 lib/node_modules/typescript/CopyrightNotice.txt
+lib/node_modules/typescript/Jakefile.js
 lib/node_modules/typescript/LICENSE.txt
 lib/node_modules/typescript/README.md
 lib/node_modules/typescript/ThirdPartyNoticeText.txt
@@ -19,9 +22,10 @@ lib/node_modules/typescript/bin/lib.scriptHost.d.ts
 lib/node_modules/typescript/bin/lib.webworker.d.ts
 lib/node_modules/typescript/bin/tsc
 lib/node_modules/typescript/bin/tsc.js
+lib/node_modules/typescript/bin/tsserver
+lib/node_modules/typescript/bin/tsserver.js
 lib/node_modules/typescript/bin/typescript.d.ts
+lib/node_modules/typescript/bin/typescript.js
 lib/node_modules/typescript/bin/typescriptServices.d.ts
 lib/node_modules/typescript/bin/typescriptServices.js
-lib/node_modules/typescript/bin/typescriptServices_internal.d.ts
-lib/node_modules/typescript/bin/typescript_internal.d.ts
 lib/node_modules/typescript/package.json
