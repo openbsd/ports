@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/11/05 16:15:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2015/07/24 23:07:18 naddy Exp $
 
 COMMENT=	display technical and tag data for video and audio files
 
-VERSION=	0.7.70
+VERSION=	0.7.75
 PKGNAME=	mediainfo-${VERSION}
 CATEGORIES=	multimedia
 HOMEPAGE=	http://mediainfo.sourceforge.net/
@@ -34,9 +34,9 @@ SUBDIRS=	${ZENLIBDIR} ${MEDIAINFOLIBDIR} ${MEDIAINFODIR}
 NO_TEST=	Yes
 
 # fix line endings for files that are patched
-pre-patch:
-	@perl -i -pe 's/\r$$//' \
-	    ${WRKSRC}/MediaInfoLib/Source/MediaInfo/MediaInfo_Internal.cpp
+#pre-patch:
+#	@sed -i "s/$$(printf \\r)\$$//" \
+#	    ${WRKSRC}/MediaInfoLib/Source/MediaInfo/MediaInfo_Internal.cpp
 
 pre-configure:
 	@cp ${FILESDIR}/configure ${FILESDIR}/Makefile ${WRKSRC}
