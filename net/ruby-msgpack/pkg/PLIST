@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/07/10 07:21:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/07/24 18:20:24 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/extensions/${MODRUBY_ARCH}/
 ${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
-${GEM_EXTENSIONS_DIR}/
+@comment ${GEM_EXTENSIONS_DIR}/
 @comment ${GEM_EXTENSIONS_DIR}/gem.build_complete
 @comment ${GEM_EXTENSIONS_DIR}/gem_make.out
 @comment ${GEM_EXTENSIONS_DIR}/mkmf.log
@@ -48,7 +48,6 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Packer.java
 ${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Types.java
 ${GEM_LIB}/gems/${DISTNAME}/ext/java/org/msgpack/jruby/Unpacker.java
 ${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/
-@comment ${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/.RUBYARCHDIR.-.msgpack.time
 ${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/buffer.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/msgpack/buffer.h
