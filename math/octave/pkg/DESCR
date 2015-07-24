@@ -11,5 +11,3 @@ differential and differential-algebraic equations.  It is easily extensible
 and customizable via user-defined functions written in Octave's own
 language, or using dynamically loaded modules written in C++, C, Fortran,
 or other languages. 
-
-In order to use the plotting commands, you must also install gnuplot.

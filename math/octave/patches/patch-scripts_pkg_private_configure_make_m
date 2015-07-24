@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_pkg_private_configure_make_m,v 1.1 2015/07/24 14:54:01 feinerer Exp $
+--- scripts/pkg/private/configure_make.m.orig	Thu Jul 23 12:27:30 2015
++++ scripts/pkg/private/configure_make.m	Thu Jul 23 12:27:15 2015
+@@ -88,7 +88,7 @@ function configure_make (desc, packdir, verbose)
+     endif
+ 
+     if (exist (fullfile (src, "Makefile"), "file"))
+-      [status, output] = shell (sprintf ("%s make --jobs %i --directory '%s'",
++      [status, output] = shell (sprintf ("%s gmake --jobs %i --directory '%s'",
+                                          scenv, jobs, src), verbose);
+       if (status != 0)
+         rmdir (desc.dir, "s");

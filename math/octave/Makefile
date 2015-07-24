@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2015/07/20 23:14:58 ajacoutot Exp $
-
-BROKEN=		update is needed
+# $OpenBSD: Makefile,v 1.74 2015/07/24 14:54:01 feinerer Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -8,97 +6,83 @@ NOT_FOR_ARCHS =	vax sparc
 
 COMMENT =	high-level language for numerical computations
 
-VERSION =	3.0.5
+VERSION =	4.0.0
 DISTNAME =	octave-${VERSION}
-REVISION =	18
 CATEGORIES =	math
 
-SHARED_LIBS =	cruft		5.0 \
-		octave		5.0 \
-		octinterp	4.0
+SHARED_LIBS +=	octave		6.0 # 3.0
+SHARED_LIBS +=	octgui		0.0 # 1.0
+SHARED_LIBS +=	octinterp	5.0 # 3.0
 
 HOMEPAGE =	https://www.gnu.org/software/octave/
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
-# GPL v3
+# GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODFORTRAN_WANTLIB}
-WANTLIB += amd blas c curl fftw3 lapack m ncurses pcre
-WANTLIB += pthread readline stdc++ umfpack z
+WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE QtGui
+WANTLIB += QtNetwork QtOpenGL SM X11 X11-xcb Xau Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender
+WANTLIB += Xt Xxf86vm amd arpack blas bz2 c camd ccolamd cholmod
+WANTLIB += colamd crypto curl cxsparse drm expat fftw3 fftw3_threads
+WANTLIB += fftw3f fftw3f_threads fltk fltk_gl fontconfig freetype
+WANTLIB += gl2ps glapi glpk glut gmp hdf5 idn lapack lcms2
+WANTLIB += ltdl lzma m ncurses ogg pcre png portaudio pthread
+WANTLIB += pthread-stubs qhull qrupdate qscintilla2 sndfile sndio
+WANTLIB += ssl stdc++ suitesparseconfig umfpack usbhid util vorbis
+WANTLIB += vorbisenc xcb xcb-dri2 xcb-glx z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
 
-MODULES =	fortran
-MODFORTRAN_COMPILER = g77
+MODULES =	devel/gettext \
+		fortran \
+		x11/qt4
 
-BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS}
+BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} \
+		textproc/gsed
 
 # configure checks for desktop-file-install(1)
 BUILD_DEPENDS +=devel/desktop-file-utils
 
-RUN_DEPENDS =	devel/gmake \
-		devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils
 
 LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
-		math/fftw3 \
-		math/suitesparse \
+		audio/libsndfile \
+		audio/portaudio-svn \
+		devel/glpk \
 		devel/pcre \
-		net/curl
-
-USE_GMAKE =	Yes
+		editors/qscintilla \
+		graphics/GraphicsMagick \
+		math/arpack \
+		math/fftw3 \
+		math/fftw3,float \
+		math/hdf5 \
+		math/qhull \
+		math/qrupdate \
+		math/suitesparse \
+		net/curl \
+		print/gl2ps \
+		x11/fltk
 
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.61
+USE_GMAKE =		Yes
+CONFIGURE_STYLE =	gnu
+# --disable-readline: needs GNU readline
+# --without-OSMesa: "OSMesa library not found.  Offscreen rendering with OpenGL will be disabled."
 CONFIGURE_ARGS	=	${CONFIGURE_SHARED} \
-		--with-fftw \
-		--without-mpi \
-		--without-hdf5
-CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		F77=${FC} \
-		SED=/usr/bin/sed
-MAKE_ENV =	LIBcruft_VERSION=${LIBcruft_VERSION} \
-		LIBoctave_VERSION=${LIBoctave_VERSION} \
-		LIBoctinterp_VERSION=${LIBoctinterp_VERSION}
-
-.if ${MACHINE_ARCH} == "alpha"
-CONFIGURE_ENV +=	FFLAGS="${FFLAGS}"
-.endif
+			--disable-readline \
+			--disable-java \
+			--without-OSMesa
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		LRELEASE="lrelease4" \
+		F77=${FC}
 
 # needed to build on amd64
 GCC_ARCH =	${MACHINE_ARCH}-unknown-openbsd${OSREV}
 GNU_ARCH =	${GCC_ARCH:S/amd64/x86_64/}
 SUBST_VARS =	GNU_ARCH VERSION
-
-# need to use fpic version of libgcc.a
-post-configure:
-	@perl -pi -e 's#(gcc-lib/${GCC_ARCH}/[\d.]+)\s#\1/fpic #' \
-		${WRKBUILD}/Makeconf
-
-.ifmake test
-# some tests need HOME to be writable
-PORTHOME =	/tmp
-# define some user for tilde expansion test
-MAKE_ENV +=	USER=nobody
-.endif
-
-post-test:
-	@rm -f /tmp/oct-*
-
-# fix ls-R and install HTML documentation
-HTMLDOCS =	interpreter liboctave
-post-install:
-	@cd ${PREFIX}/share/octave && \
-		perl -pi -e "s,${PREFIX},${TRUEPREFIX}," ls-R
-	@cd ${PREFIX}/libexec/octave && \
-		perl -pi -e "s,${PREFIX},${TRUEPREFIX}," ls-R
-.for d in ${HTMLDOCS}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/octave/${d}
-	${INSTALL_DATA} ${WRKBUILD}/doc/${d}/HTML/*.html \
-		${PREFIX}/share/doc/octave/${d}
-.endfor
 
 .include <bsd.port.mk>
