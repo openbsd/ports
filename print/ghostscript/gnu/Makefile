@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2015/05/23 08:40:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2015/07/24 12:46:23 jasper Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -6,7 +6,7 @@ VERSION=	9.07
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	15.0
-REVISION=	1
+REVISION=	2
 
 MASTER_SITES=	http://downloads.ghostscript.com/public/
 
