@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2015/07/02 11:22:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2015/07/24 06:26:36 landry Exp $
 
 COMMENT=	lists of the country, language and currency iso names
 
@@ -23,6 +23,6 @@ MODULES=	lang/python
 MODPY_RUNDEP=	No
 MODPY_ADJ_FILES=iso2pot.py
 
-BUILD_DEPENDS=	devel/gettext
+BUILD_DEPENDS=	devel/gettext-tools
 
 .include <bsd.port.mk>
