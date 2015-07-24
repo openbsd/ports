@@ -1,0 +1,12 @@
+$OpenBSD: patch-st_c,v 1.1 2015/07/24 15:39:23 czarkoff Exp $
+--- st.c.orig	Fri Jul 24 13:33:47 2015
++++ st.c	Fri Jul 24 13:34:30 2015
+@@ -4052,7 +4052,7 @@ main(int argc, char *argv[]) {
+ 	case 'l':
+ 		opt_line = EARGF(usage());
+ 		break;
+-	case 't':
++	case 't': case 'T':
+ 		opt_title = EARGF(usage());
+ 		break;
+ 	case 'w':
