@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2015/07/24 18:49:04 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2015/07/24 22:41:50 ajacoutot Exp $
+
+BROKEN-hppa=		no atomic primitives
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
-BROKEN-hppa =		no atomic primitives
 
 V=			0.9.41
 DISTNAME=		harfbuzz-${V}
