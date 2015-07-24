@@ -1,0 +1,46 @@
+$OpenBSD: patch-configure,v 1.3 2015/07/24 23:43:17 juanfra Exp $
+
+https://github.com/feeley/gambit/issues/124
+
+--- configure.orig	Fri Jul 24 01:44:13 2015
++++ configure	Fri Jul 24 01:48:49 2015
+@@ -13592,32 +13592,32 @@ if test "$datadir" = "\${datarootdir}"; then
+   datadir="\${prefix}/share"
+ fi
+ 
+-GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR=\"\\\"`echo \"$prefix\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
++GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR=\"\\\"$prefix\\\"\""
+ 
+ if test "$ENABLE_SYMLINKS" != yes; then
+ 
+   if test "$bindir" != "\${prefix}/bin"; then
+-    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_BIN=\"\\\"`echo \"$bindir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
++    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_BIN=\"\\\"$bindir\\\"\""
+   fi
+ 
+   if test "$includedir" != "\${prefix}/include"; then
+-    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_INCLUDE=\"\\\"`echo \"$includedir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
++    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_INCLUDE=\"\\\"$includedir\\\"\""
+   fi
+ 
+   if test "$libdir" != "\${prefix}/lib"; then
+-    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_LIB=\"\\\"`echo \"$libdir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
++    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_LIB=\"\\\"$libdir\\\"\""
+   fi
+ 
+   if test "$docdir" != "\${prefix}/doc"; then
+-    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_DOC=\"\\\"`echo \"$docdir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
++    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_DOC=\"\\\"$docdir\\\"\""
+   fi
+ 
+   if test "$infodir" != "\${prefix}/info"; then
+-    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_INFO=\"\\\"`echo \"$infodir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
++    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_INFO=\"\\\"$infodir\\\"\""
+   fi
+ 
+   if test "$datadir" != "\${prefix}/share"; then
+-    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_SHARE=\"\\\"`echo \"$datadir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
++    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_SHARE=\"\\\"$datadir\\\"\""
+   fi
+ 
+ fi
