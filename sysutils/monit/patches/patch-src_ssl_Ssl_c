@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_ssl_Ssl_c,v 1.2 2015/07/24 07:17:03 jasper Exp $
+$OpenBSD: patch-src_ssl_Ssl_c,v 1.3 2015/07/24 12:50:38 jasper Exp $
 
-https://bitbucket.org/tildeslash/monit/pull-request/27/
+From f494be42d356fac9d53cb60f27464418a1a2f0f9 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Fri, 24 Jul 2015 09:14:52 +0200
+Subject: [PATCH] Guard SSLv3_client_method() in case no SSLv3 support is present
 
 --- src/ssl/Ssl.c.orig	Sat Jul 18 11:14:50 2015
 +++ src/ssl/Ssl.c	Sat Jul 18 11:15:57 2015
