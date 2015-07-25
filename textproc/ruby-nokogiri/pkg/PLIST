@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/09/27 17:00:19 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/07/25 23:28:23 jeremy Exp $
 ${GEM_BIN}/nokogiri${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.autotest
+${GEM_LIB}/gems/${DISTNAME}/.cross_rubies
 ${GEM_LIB}/gems/${DISTNAME}/.editorconfig
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
@@ -85,6 +86,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/xml/sax/parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/xml/sax/parser_context.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/xml/sax/push_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/xml/schema.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/xml/searchable.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/xml/syntax_error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/xml/text.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/xml/xpath/
@@ -97,8 +99,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/xslt/stylesheet.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/xsd/
 ${GEM_LIB}/gems/${DISTNAME}/lib/xsd/xmlparser/
 ${GEM_LIB}/gems/${DISTNAME}/lib/xsd/xmlparser/nokogiri.rb
+${GEM_LIB}/gems/${DISTNAME}/suppressions/
+${GEM_LIB}/gems/${DISTNAME}/suppressions/README.txt
+${GEM_LIB}/gems/${DISTNAME}/suppressions/nokogiri_ree-1.8.7.358.supp
+${GEM_LIB}/gems/${DISTNAME}/suppressions/nokogiri_ruby-1.8.7.370.supp
+${GEM_LIB}/gems/${DISTNAME}/suppressions/nokogiri_ruby-1.9.2.320.supp
+${GEM_LIB}/gems/${DISTNAME}/suppressions/nokogiri_ruby-1.9.3.327.supp
 ${GEM_LIB}/gems/${DISTNAME}/tasks/
-${GEM_LIB}/gems/${DISTNAME}/tasks/nokogiri.org.rb
 ${GEM_LIB}/gems/${DISTNAME}/tasks/test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/css/
@@ -153,6 +160,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/html/
 ${GEM_LIB}/gems/${DISTNAME}/test/html/sax/
 ${GEM_LIB}/gems/${DISTNAME}/test/html/sax/test_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/html/sax/test_parser_context.rb
+${GEM_LIB}/gems/${DISTNAME}/test/html/sax/test_push_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/html/test_builder.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/html/test_document.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/html/test_document_encoding.rb

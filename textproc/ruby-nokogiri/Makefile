@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2014/09/27 17:00:19 jeremy Exp $
+# $OpenBSD: Makefile,v 1.23 2015/07/25 23:28:23 jeremy Exp $
 
 COMMENT=		HTML, XML, SAX and Reader parser
 
-DISTNAME=		nokogiri-1.6.3.1
+DISTNAME=		nokogiri-1.6.6.2
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://nokogiri.org/
@@ -22,7 +22,8 @@ CONFIGURE_ARGS=		--use-system-libraries
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 MODRUBY_TEST=		ruby
-MODRUBY_TEST_TARGET=	-I test -rnokogiri -e 'ARGV.each{|path| require path}' \
-				./test/test_*.rb ./test/*/test_*.rb
+MODRUBY_TEST_TARGET=	-I test -rnokogiri \
+			-e 'ARGV.each{|f| require f}' \
+			./test/test_*.rb ./test/*/test_*.rb
 
 .include <bsd.port.mk>
