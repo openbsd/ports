@@ -1,0 +1,21 @@
+$OpenBSD: patch-ui_base_user_activity_user_activity_detector_cc,v 1.1 2015/07/25 12:59:15 robert Exp $
+--- ui/base/user_activity/user_activity_detector.cc.orig.port	Fri Jul 24 10:22:04 2015
++++ ui/base/user_activity/user_activity_detector.cc	Fri Jul 24 10:22:12 2015
+@@ -52,7 +52,7 @@ UserActivityDetector::UserActivityDetector() {
+ 
+   ui::PlatformEventSource* platform_event_source =
+       ui::PlatformEventSource::GetInstance();
+-#if defined(OS_CHROMEOS) || defined(OS_LINUX)
++#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
+   CHECK(platform_event_source);
+ #endif
+   if (platform_event_source)
+@@ -62,7 +62,7 @@ UserActivityDetector::UserActivityDetector() {
+ UserActivityDetector::~UserActivityDetector() {
+   ui::PlatformEventSource* platform_event_source =
+       ui::PlatformEventSource::GetInstance();
+-#if defined(OS_CHROMEOS) || defined(OS_LINUX)
++#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
+   CHECK(platform_event_source);
+ #endif
+   if (platform_event_source)

@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_extensions_api_tabs_tabs_api_cc,v 1.1 2015/07/25 12:59:15 robert Exp $
+--- chrome/browser/extensions/api/tabs/tabs_api.cc.orig.port	Fri Jul 24 10:30:19 2015
++++ chrome/browser/extensions/api/tabs/tabs_api.cc	Fri Jul 24 10:31:21 2015
+@@ -659,7 +659,7 @@ bool WindowsCreateFunction::RunSync() {
+ 
+   WindowController* controller = new_window->extension_window_controller();
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   // On Desktop Linux, window managers may ignore hints until the X11 window is
+   // mapped, which happens in the blocking call to Show() above.
+   // DesktopWindowTreeHostX11 currently only checks for an attempt to maximize
+@@ -669,7 +669,7 @@ bool WindowsCreateFunction::RunSync() {
+   if (create_params.initial_show_state == ui::SHOW_STATE_MINIMIZED)
+     new_window->window()->Minimize();
+ #endif
+-#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_WIN)
++#if ((defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)) || defined(OS_WIN)
+   // On Desktop Linux and Windows, managers don't handle fullscreen state to
+   // create window for now.
+   if (create_params.initial_show_state == ui::SHOW_STATE_FULLSCREEN)
