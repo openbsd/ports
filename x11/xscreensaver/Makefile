@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.84 2014/10/27 20:55:50 landry Exp $
+# $OpenBSD: Makefile,v 1.85 2015/07/25 22:34:46 ajacoutot Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
-DISTNAME=		xscreensaver-5.30
-REVISION=		0
+DISTNAME=		xscreensaver-5.33
 
 CATEGORIES=		x11
 
@@ -16,11 +15,12 @@ HOMEPAGE=		http://www.jwz.org/xscreensaver/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GL GLU ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xmu Xpm Xrandr Xrender Xt Xxf86misc Xxf86vm
-WANTLIB += atk-1.0 c cairo fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gdk_pixbuf_xlib-2.0 gio-2.0 glade-2.0 gle glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gtk-x11-2.0 jpeg m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread util xml2 z
+WANTLIB += Xft Xi Xinerama Xmu Xpm Xrandr Xrender Xt Xxf86misc
+WANTLIB += Xxf86vm atk-1.0 c cairo fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0 gio-2.0 glade-2.0
+WANTLIB += gle glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0 jpeg
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread util
+WANTLIB += xml2 z
 
 MASTER_SITES=		${HOMEPAGE}
 

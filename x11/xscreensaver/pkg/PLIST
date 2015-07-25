@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2014/10/08 12:21:55 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.35 2015/07/25 22:34:46 ajacoutot Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -30,6 +30,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/attraction
 @bin libexec/xscreensaver/atunnel
 @bin libexec/xscreensaver/barcode
+@bin libexec/xscreensaver/binaryring
 @bin libexec/xscreensaver/blaster
 @bin libexec/xscreensaver/blinkbox
 @bin libexec/xscreensaver/blitspin
@@ -48,6 +49,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/ccurve
 @bin libexec/xscreensaver/celtic
 @bin libexec/xscreensaver/circuit
+@bin libexec/xscreensaver/cityflow
 @bin libexec/xscreensaver/cloudlife
 @bin libexec/xscreensaver/companioncube
 @bin libexec/xscreensaver/compass
@@ -90,6 +92,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/galaxy
 @bin libexec/xscreensaver/gears
 @bin libexec/xscreensaver/geodesic
+@bin libexec/xscreensaver/geodesicgears
 @bin libexec/xscreensaver/gflux
 @bin libexec/xscreensaver/glblur
 @bin libexec/xscreensaver/glcells
@@ -174,6 +177,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/rd-bomb
 @bin libexec/xscreensaver/ripples
 @bin libexec/xscreensaver/rocks
+@bin libexec/xscreensaver/romanboy
 @bin libexec/xscreensaver/rorschach
 @bin libexec/xscreensaver/rotzoomer
 @bin libexec/xscreensaver/rubik
@@ -188,6 +192,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/sonar
 @bin libexec/xscreensaver/speedmine
 @bin libexec/xscreensaver/spheremonics
+@bin libexec/xscreensaver/splitflap
 @bin libexec/xscreensaver/spotlight
 @bin libexec/xscreensaver/sproingies
 @bin libexec/xscreensaver/squiral
@@ -246,6 +251,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/attraction.6
 @man man/man6/atunnel.6
 @man man/man6/barcode.6
+@man man/man6/binaryring.6
 @man man/man6/blaster.6
 @man man/man6/blinkbox.6
 @man man/man6/blitspin.6
@@ -264,6 +270,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/ccurve.6
 @man man/man6/celtic.6
 @man man/man6/circuit.6
+@man man/man6/cityflow.6
 @man man/man6/cloudlife.6
 @man man/man6/companioncube.6
 @man man/man6/compass.6
@@ -305,6 +312,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/galaxy.6
 @man man/man6/gears.6
 @man man/man6/geodesic.6
+@man man/man6/geodesicgears.6
 @man man/man6/gflux.6
 @man man/man6/glblur.6
 @man man/man6/glcells.6
@@ -387,6 +395,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/rd-bomb.6
 @man man/man6/ripples.6
 @man man/man6/rocks.6
+@man man/man6/romanboy.6
 @man man/man6/rorschach.6
 @man man/man6/rotzoomer.6
 @man man/man6/rubik.6
@@ -401,6 +410,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/sonar.6
 @man man/man6/speedmine.6
 @man man/man6/spheremonics.6
+@man man/man6/splitflap.6
 @man man/man6/spotlight.6
 @man man/man6/sproingies.6
 @man man/man6/squiral.6
@@ -455,6 +465,7 @@ share/applications/screensavers/atlantis.desktop
 share/applications/screensavers/attraction.desktop
 share/applications/screensavers/atunnel.desktop
 share/applications/screensavers/barcode.desktop
+share/applications/screensavers/binaryring.desktop
 share/applications/screensavers/blaster.desktop
 share/applications/screensavers/blinkbox.desktop
 share/applications/screensavers/blitspin.desktop
@@ -474,6 +485,7 @@ share/applications/screensavers/carousel.desktop
 share/applications/screensavers/ccurve.desktop
 share/applications/screensavers/celtic.desktop
 share/applications/screensavers/circuit.desktop
+share/applications/screensavers/cityflow.desktop
 share/applications/screensavers/cloudlife.desktop
 share/applications/screensavers/companioncube.desktop
 share/applications/screensavers/compass.desktop
@@ -520,6 +532,7 @@ share/applications/screensavers/fuzzyflakes.desktop
 share/applications/screensavers/galaxy.desktop
 share/applications/screensavers/gears.desktop
 share/applications/screensavers/geodesic.desktop
+share/applications/screensavers/geodesicgears.desktop
 share/applications/screensavers/gflux.desktop
 share/applications/screensavers/glblur.desktop
 share/applications/screensavers/glcells.desktop
@@ -614,6 +627,7 @@ share/applications/screensavers/rd-bomb.desktop
 share/applications/screensavers/rdbomb.desktop
 share/applications/screensavers/ripples.desktop
 share/applications/screensavers/rocks.desktop
+share/applications/screensavers/romanboy.desktop
 share/applications/screensavers/rorschach.desktop
 share/applications/screensavers/rotor.desktop
 share/applications/screensavers/rotzoomer.desktop
@@ -631,6 +645,7 @@ share/applications/screensavers/speedmine.desktop
 share/applications/screensavers/sphere.desktop
 share/applications/screensavers/spheremonics.desktop
 share/applications/screensavers/spiral.desktop
+share/applications/screensavers/splitflap.desktop
 share/applications/screensavers/spotlight.desktop
 share/applications/screensavers/sproingies.desktop
 share/applications/screensavers/squiral.desktop
@@ -716,6 +731,7 @@ share/xscreensaver/config/atlantis.xml
 share/xscreensaver/config/attraction.xml
 share/xscreensaver/config/atunnel.xml
 share/xscreensaver/config/barcode.xml
+share/xscreensaver/config/binaryring.xml
 share/xscreensaver/config/blaster.xml
 share/xscreensaver/config/blinkbox.xml
 share/xscreensaver/config/blitspin.xml
@@ -734,6 +750,7 @@ share/xscreensaver/config/carousel.xml
 share/xscreensaver/config/ccurve.xml
 share/xscreensaver/config/celtic.xml
 share/xscreensaver/config/circuit.xml
+share/xscreensaver/config/cityflow.xml
 share/xscreensaver/config/cloudlife.xml
 share/xscreensaver/config/companioncube.xml
 share/xscreensaver/config/compass.xml
@@ -776,6 +793,7 @@ share/xscreensaver/config/fuzzyflakes.xml
 share/xscreensaver/config/galaxy.xml
 share/xscreensaver/config/gears.xml
 share/xscreensaver/config/geodesic.xml
+share/xscreensaver/config/geodesicgears.xml
 share/xscreensaver/config/gflux.xml
 share/xscreensaver/config/glblur.xml
 share/xscreensaver/config/glcells.xml
@@ -859,6 +877,7 @@ share/xscreensaver/config/queens.xml
 share/xscreensaver/config/rd-bomb.xml
 share/xscreensaver/config/ripples.xml
 share/xscreensaver/config/rocks.xml
+share/xscreensaver/config/romanboy.xml
 share/xscreensaver/config/rorschach.xml
 share/xscreensaver/config/rotzoomer.xml
 share/xscreensaver/config/rubik.xml
@@ -873,6 +892,7 @@ share/xscreensaver/config/slip.xml
 share/xscreensaver/config/sonar.xml
 share/xscreensaver/config/speedmine.xml
 share/xscreensaver/config/spheremonics.xml
+share/xscreensaver/config/splitflap.xml
 share/xscreensaver/config/spotlight.xml
 share/xscreensaver/config/sproingies.xml
 share/xscreensaver/config/squiral.xml
