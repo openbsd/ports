@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/08 21:21:23 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2015/07/25 23:05:53 jeremy Exp $
 
 COMMENT =	mysql driver for swift
 
-DISTNAME =	swift-db-mysql-0.3.0
-REVISION =	4
+DISTNAME =	swift-db-mysql-0.3.2
 CATEGORIES =	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
@@ -18,8 +17,5 @@ LIB_DEPENDS =	sysutils/e2fsprogs>=1.42.7 \
 		databases/mariadb
 
 CONFIGURE_STYLE = ruby gem ext
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/ext/swift/db/mysql/extconf.rb
 
 .include <bsd.port.mk>
