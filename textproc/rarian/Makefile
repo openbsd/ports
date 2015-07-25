@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.22 2015/04/17 09:54:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/07/25 04:25:57 ajacoutot Exp $
 
 COMMENT=		documentation metadata library
 
 GNOME_PROJECT=		rarian
 GNOME_VERSION=		0.8.1
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		14
 
 SHARED_LIBS +=	rarian               0.0      # .0.0
 
 CATEGORIES=		textproc
-
-REVISION=		13
 
 HOMEPAGE=		http://rarian.freedesktop.org/
 
@@ -21,20 +20,20 @@ WANTLIB += c m stdc++
 
 MODULES=		x11/gnome
 
-BUILD_DEPENDS=		shells/bash \
-			textproc/libxslt
+BUILD_DEPENDS=		textproc/libxslt
 
-RUN_DEPENDS=		shells/bash \
-			textproc/docbook \
+RUN_DEPENDS=		textproc/docbook \
 			textproc/libxslt
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-skdb-update
+CONFIGURE_ENV=		ac_cv_path_have_bash=/bin/sh
 
 # The .in files in ${WRKSRC}/util/ don't have a newline at the end
 # of the file, which causes diff(1) to puke.
 post-extract:
-	@echo "" >> ${WRKSRC}/util/rarian-sk-*.in
+	@echo >> ${WRKSRC}/util/rarian-sk-*.in
+	@echo >> ${WRKSRC}/util/rarian-sk-extract.in
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/librarian/rarian-main.c \
