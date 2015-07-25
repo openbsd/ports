@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.175 2015/07/19 16:33:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.176 2015/07/25 06:51:50 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
+BROKEN-sparc64 =	xpcshell SIGBUS during fake
+
 
 MOZILLA_VERSION =	2.33.1
 MOZILLA_BRANCH =	release
