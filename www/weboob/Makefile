@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/27 08:15:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/07/25 04:21:05 ajacoutot Exp $
 
 COMMENT =	web out of browsers
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	https://symlink.me/attachments/download/289/
 
 MODULES =	lang/python
+
+USE_GMAKE =	Yes
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_DISTUTILS_BUILDARGS = --qt --xdg
