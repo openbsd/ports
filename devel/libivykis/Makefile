@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/22 11:31:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/07/25 08:18:20 steven Exp $
 
 COMMENT =		asynchronous I/O readiness notification library
 
-V =			0.36.2
+V =			0.36.3
 DISTNAME =		ivykis-$V
 PKGNAME =		lib${DISTNAME}
-REVISION =		0
 
 SHARED_LIBS =		ivykis	1.0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://libivykis.sourceforge.net/
+
+MAINTAINER =		Steven Mestdagh <steven@openbsd.org>
 
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes
