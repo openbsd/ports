@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2015/01/08 19:00:19 jeremy Exp $
+# $OpenBSD: Makefile,v 1.29 2015/07/25 22:51:32 jeremy Exp $
 
 COMMENT =	PostgreSQL database interface for ruby
 
-DISTNAME =	pg-0.18.0
+DISTNAME =	pg-0.18.2
 CATEGORIES =	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
