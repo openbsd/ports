@@ -1,0 +1,19 @@
+$OpenBSD: patch-Wnn_jserver_malloc_c,v 1.1 2015/07/25 16:47:12 espie Exp $
+--- Wnn/jserver/malloc.c.orig	Sat Jul 25 17:10:54 2015
++++ Wnn/jserver/malloc.c	Sat Jul 25 17:11:24 2015
+@@ -50,14 +50,7 @@
+  */
+ #include <stdio.h>
+ #include "wnn_malloc.h"
+-#undef	malloc
+-#undef	realloc
+-#undef	free
+-
+-extern char *malloc();
+-extern void free();
+-extern char *realloc();
+-extern char *calloc();
++#include <stdlib.h>
+ 
+ char *
+ malloc0(size)

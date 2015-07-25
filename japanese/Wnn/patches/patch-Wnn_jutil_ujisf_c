@@ -1,0 +1,11 @@
+$OpenBSD: patch-Wnn_jutil_ujisf_c,v 1.1 2015/07/25 16:47:12 espie Exp $
+--- Wnn/jutil/ujisf.c.orig	Sat Jul 25 17:04:27 2015
++++ Wnn/jutil/ujisf.c	Sat Jul 25 17:04:44 2015
+@@ -55,6 +55,7 @@
+ int wnnerror;
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "commonhd.h"
+ #include "jslib.h"
+ #include "jh.h"

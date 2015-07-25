@@ -1,7 +1,15 @@
-$OpenBSD: patch-Wnn_jutil_wddel_c,v 1.1 2014/03/23 17:22:45 espie Exp $
---- Wnn/jutil/wddel.c.orig	Sun Mar 23 18:10:08 2014
-+++ Wnn/jutil/wddel.c	Sun Mar 23 18:10:25 2014
-@@ -199,7 +199,7 @@ char **argv;
+$OpenBSD: patch-Wnn_jutil_wddel_c,v 1.2 2015/07/25 16:47:12 espie Exp $
+--- Wnn/jutil/wddel.c.orig	Mon Nov 30 08:35:07 1992
++++ Wnn/jutil/wddel.c	Sat Jul 25 17:05:26 2015
+@@ -53,6 +53,7 @@ static char *rcs_id = "$Id: wddel.c,v 1.5 1992/11/30 0
+ */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "commonhd.h"
+ #include "config.h"
+ #include "jllib.h"
+@@ -199,7 +200,7 @@ char **argv;
  	fprintf(stderr, "The specified dictionary isn't registable\n");
  	exit(1);
      }

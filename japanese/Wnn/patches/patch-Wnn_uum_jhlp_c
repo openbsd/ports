@@ -1,7 +1,15 @@
-$OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
---- Wnn/uum/jhlp.c.orig	Sun Dec  8 16:18:39 2013
-+++ Wnn/uum/jhlp.c	Sun Dec  8 17:24:56 2013
-@@ -80,6 +80,9 @@ struct passwd *getpwuid();
+$OpenBSD: patch-Wnn_uum_jhlp_c,v 1.5 2015/07/25 16:47:12 espie Exp $
+--- Wnn/uum/jhlp.c.orig	Fri Jul 24 17:43:06 2015
++++ Wnn/uum/jhlp.c	Fri Jul 24 18:05:03 2015
+@@ -49,6 +49,7 @@ static char *rcs_id = "$Id: jhlp.c,v 1.40 1994/08/19 0
+ /*	Version 4.0
+  */
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <signal.h>
+ #include "jllib.h"
+ #include "commonhd.h"
+@@ -80,6 +81,9 @@ struct passwd *getpwuid();
  
  jmp_buf kk_env;
  
@@ -11,7 +19,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  #ifdef SYSVR2
  #	include <sys/param.h>
  #endif /* SYSVR2 */
-@@ -88,9 +91,21 @@ jmp_buf kk_env;
+@@ -88,9 +92,21 @@ jmp_buf kk_env;
  #	include <sys/wait.h>
  #endif /* HAVE_WAIT3 */
  
@@ -34,7 +42,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  
  #ifdef SYSVR2
  #ifdef TERMINFO
-@@ -101,7 +116,7 @@ jmp_buf kk_env;
+@@ -101,7 +117,7 @@ jmp_buf kk_env;
  #if defined(SVR4) || defined(hpux) || defined(sgi)
  #include <sys/termio.h>
  #endif
@@ -43,7 +51,25 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  #include <termios.h>
  #endif
  
-@@ -166,14 +181,14 @@ char **argv;
+@@ -137,7 +153,7 @@ extern int errno;
+ extern char *optarg;
+ extern int optind;
+ 
+-extern char *ttyname(), *malloc(), *getenv();
++extern char *ttyname();
+ 
+ static void save_signals();
+ static void restore_signals();
+@@ -148,7 +164,7 @@ static void do_end(), open_pty(), open_ttyp(), do_main
+   change_size(), default_usage();
+ 
+ /** メイン */
+-void
++int
+ main(argc, argv)
+ int argc;
+ char **argv;
+@@ -166,14 +182,14 @@ char **argv;
      flow_control = FLOW_CONTROL;
      code_trans = default_code_trans;
  
@@ -61,7 +87,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  	    for (;i < argc; i++) {
  		argv[i - 2] = argv[i];
  	    }
-@@ -185,12 +200,7 @@ char **argv;
+@@ -185,12 +201,7 @@ char **argv;
  
      if(*lang_dir == '\0') {
  	if ((p = getenv("LANG")) != NULL) {
@@ -75,7 +101,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  	}
      }
      for (f = function_db; *lang_dir && f && f->lang; f++) {
-@@ -233,8 +243,8 @@ char **argv;
+@@ -233,8 +244,8 @@ char **argv;
  	    server_env = WNN_DEF_SERVER_ENV;
  	}
  	if(name = getenv(server_env)) {
@@ -86,7 +112,25 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  	}
      }
  
-@@ -263,9 +273,11 @@ char **argv;
+@@ -244,7 +255,7 @@ char **argv;
+     }
+ 
+     if((p = getenv(WNN_COUNTDOWN_ENV)) == NULL) {
+-      setenv(WNN_COUNTDOWN_ENV,"0");
++      setenv(WNN_COUNTDOWN_ENV,"0", 1);
+     } else if (atoi(p) <= 0) {
+ 	puteustring(MSG_GET(4), stdout);
+ 	/*
+@@ -253,7 +264,7 @@ char **argv;
+ 	exit(126);
+     } else {
+       sprintf(p,"%d",atoi(p) - 1);
+-      setenv(WNN_COUNTDOWN_ENV,p);
++      setenv(WNN_COUNTDOWN_ENV,p, 1);
+     }
+ 
+     if((tname = getenv("TERM")) == NULL) {
+@@ -263,9 +274,11 @@ char **argv;
  
  
  #if defined(BSD42) && !defined(DGUX)
@@ -98,7 +142,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  #endif /* BSD42 */
  
  
-@@ -312,7 +324,7 @@ char **argv;
+@@ -312,7 +325,7 @@ char **argv;
  #endif /* TERMCAP */
  
      open_pty();
@@ -107,7 +151,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
      open_ttyp();
  #endif
      exec_cmd(argv);
-@@ -492,7 +504,7 @@ static int do_X_opt()
+@@ -492,7 +505,7 @@ static int do_X_opt()
  
  static int do_k_opt()
  {
@@ -116,7 +160,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
      if (*uumkey_name_in_uumrc == '\0') {
  	return -1;
      }
-@@ -502,7 +514,7 @@ static int do_k_opt()
+@@ -502,7 +515,7 @@ static int do_k_opt()
  
  static int do_c_opt()
  {
@@ -125,7 +169,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
      if (*convkey_name_in_uumrc == '\0') {
  	return -1;
      }
-@@ -512,7 +524,7 @@ static int do_c_opt()
+@@ -512,7 +525,7 @@ static int do_c_opt()
  
  static int do_r_opt()
  {
@@ -134,7 +178,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
      if (*rkfile_name_in_uumrc == '\0') {
  	return -1;
      }
-@@ -528,8 +540,8 @@ static int do_l_opt()
+@@ -528,8 +541,8 @@ static int do_l_opt()
  
  static int do_D_opt()
  {
@@ -145,7 +189,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
      if (*def_servername == '\0') {
  	return -1;
      }
-@@ -538,7 +550,7 @@ static int do_D_opt()
+@@ -538,7 +551,7 @@ static int do_D_opt()
  
  static int do_n_opt()
  {
@@ -154,7 +198,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
      if (*username == '\0') {
  	return -1;
      }
-@@ -581,14 +593,14 @@ char **argv;
+@@ -581,14 +594,14 @@ char **argv;
  #endif	/* SYSVR2 */
    extern char *index();
    
@@ -173,7 +217,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  	    usage(ostr);
  	}
      }
-@@ -600,7 +612,7 @@ char **argv;
+@@ -600,7 +613,7 @@ char **argv;
  
  /** tty に対する ioctl のセット */
  
@@ -182,7 +226,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  struct sgttyb savetmio;
  /*
    struct sgttyb ttyb =
-@@ -642,11 +654,11 @@ j_term_init()
+@@ -642,11 +655,11 @@ j_term_init()
  }
  #endif /* BSD42 */
  
@@ -197,7 +241,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
      IGNBRK | ICRNL | IXON,	/* c_iflag */
      ONLCR | OPOST,		/* c_oflag */
      B9600 | CS8 | CSTOPB | CREAD | CLOCAL, /* c_cflag */
-@@ -678,13 +690,13 @@ get_rubout()
+@@ -678,13 +691,13 @@ get_rubout()
  int
  j_term_init()
  {
@@ -213,7 +257,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
      buf1.c_lflag &= ~(ECHONL | ECHOK | ECHOE | ECHO | XCASE | ICANON | ISIG);
      buf1.c_iflag = 0;
      buf1.c_oflag &= ~OPOST;
-@@ -705,7 +717,7 @@ j_term_init()
+@@ -705,7 +718,7 @@ j_term_init()
      buf1.c_cc[VEOF] = 1;	/* cf. ICANON */
      buf1.c_cc[VEOL] = 0;
  #endif /* linux */
@@ -222,7 +266,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  	fprintf(stderr, "error in ioctl TCSETA.\n");
  	exit(1);
      }
-@@ -764,14 +776,15 @@ intfntype
+@@ -764,14 +777,15 @@ intfntype
  chld_handler()
  {
  #ifdef HAVE_WAIT3
@@ -243,7 +287,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  	if (WIFSTOPPED(status)) {
  #ifdef SIGCONT
  	    kill(pid, SIGCONT);
-@@ -1107,7 +1120,7 @@ char **argv;
+@@ -1107,7 +1121,7 @@ char **argv;
  #ifdef BSD42
      int pid;
  #endif
@@ -252,7 +296,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
      struct winsize win;
      extern Term_RowWidth,crow;
  #endif
-@@ -1140,16 +1153,18 @@ char **argv;
+@@ -1140,16 +1154,18 @@ char **argv;
  	setpgrp(0, pid);
  #endif /* BSD42 */
  
@@ -273,7 +317,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  	dup2(ttypfd, 0);
  	dup2(ttypfd, 1);
  	dup2(ttypfd, 2);
-@@ -1187,7 +1202,7 @@ char **argv;
+@@ -1187,7 +1203,7 @@ char **argv;
  	    err("Can't set utmp.");
  	} 
  */
@@ -282,7 +326,23 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
   	crow = win.ws_row = Term_RowWidth = win.ws_row - conv_lines;
  	ioctl(ttyfd, TIOCSWINSZ, &win);
  	setgid(getgid());
-@@ -1342,7 +1357,7 @@ open_ttyp()
+@@ -1198,6 +1214,7 @@ char **argv;
+     }
+ }
+ 
++#if 0
+ /** 環境変数のセット */
+ void
+ setenv(var, value)
+@@ -1234,6 +1251,7 @@ char *value;
+     strcat(environ[i], "=");
+     strcat(environ[i], value);
+ }
++#endif
+ 
+ #ifdef SVR4
+ static int
+@@ -1342,7 +1360,7 @@ open_ttyp()
      chown(nmbuf, getuid(), getgid());
      chmod(nmbuf, 0622);
  #endif /* !linux */
@@ -291,7 +351,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
      ioctl(ttyfd, TIOCGETC, &tcharsv);
      ioctl(ttyfd, TIOCGLTC, &ltcharsv);
      ioctl(ttyfd, TIOCGETP, &ttyb);
-@@ -1446,11 +1461,23 @@ open_ttyp()
+@@ -1446,11 +1464,23 @@ open_ttyp()
      close(open(ttyname(ttypfd), O_WRONLY, 0));
  */
  #endif /* defined(SYSVR2) && !defined(linux) */
@@ -315,7 +375,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  }
  
  /** pty のオープン */
-@@ -1524,15 +1551,13 @@ do_end()
+@@ -1524,15 +1554,13 @@ do_end()
      signal(SIGCHLD, SIG_DFL);
      fcntl(ttyfd, F_SETFL, 0);
  
@@ -334,7 +394,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  	fprintf(stderr, "error in ioctl TCSETA.\n");
  	exit(1);
      }
-@@ -1562,9 +1587,11 @@ do_end()
+@@ -1562,9 +1590,11 @@ do_end()
  	perror(prog);
      }
  
@@ -346,7 +406,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  #ifdef TIOCSSIZE
      pty_rowcol.ts_lines = 0;
      pty_rowcol.ts_cols = 0;
-@@ -1636,7 +1663,16 @@ ptyname(b, pty, no)
+@@ -1636,7 +1666,16 @@ ptyname(b, pty, no)
  char *b, *pty;
  int no;
  {
@@ -363,7 +423,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  }
  #endif /* !sgi */
  
-@@ -1755,14 +1791,14 @@ change_size()
+@@ -1755,14 +1794,14 @@ change_size()
  
  		if ((i = win.ws_row) != 0) {
  			crow = Term_RowWidth = i - conv_lines;
@@ -380,7 +440,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  		ioctl(ttypfd, TIOCSWINSZ, &win);
  #else /* linux */
  #ifdef	TIOCSSIZE
-@@ -1770,7 +1806,8 @@ change_size()
+@@ -1770,7 +1809,8 @@ change_size()
      		pty_rowcol.ts_cols = maxlength; /* instead of columns */
      		ioctl(ttypfd, TIOCSSIZE, &pty_rowcol);
  #endif	/* TIOCSSIZE */
@@ -390,7 +450,7 @@ $OpenBSD: patch-Wnn_uum_jhlp_c,v 1.4 2013/12/08 16:42:24 espie Exp $
  		{
  		int grp;
  		ioctl(ptyfd, TIOCGPGRP, &grp);
-@@ -1781,7 +1818,6 @@ change_size()
+@@ -1781,7 +1821,6 @@ change_size()
  #endif
  		}
  #endif	/* sun */

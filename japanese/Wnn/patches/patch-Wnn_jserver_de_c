@@ -1,9 +1,18 @@
-$OpenBSD: patch-Wnn_jserver_de_c,v 1.1 2000/04/16 21:53:31 espie Exp $
+$OpenBSD: patch-Wnn_jserver_de_c,v 1.2 2015/07/25 16:47:12 espie Exp $
 --- Wnn/jserver/de.c.orig	Fri Aug 19 03:31:23 1994
-+++ Wnn/jserver/de.c	Thu Apr 13 20:41:38 2000
-@@ -65,6 +65,9 @@ extern int errno;		/* Pure BSD */
++++ Wnn/jserver/de.c	Fri Jul 24 10:33:32 2015
+@@ -61,10 +61,16 @@
  
+ #include <ctype.h>
+ #include <errno.h>
+-extern int errno;		/* Pure BSD */
+-
++#include <stdlib.h>
++#include <errno.h>
  #include <sys/ioctl.h>
++#include <sys/select.h>
++#include <time.h>
++#include <sys/socket.h>
  
 +#if (defined(__unix__) || defined(unix)) && !defined(USG)
 +#include <sys/param.h>
@@ -11,7 +20,16 @@ $OpenBSD: patch-Wnn_jserver_de_c,v 1.1 2000/04/16 21:53:31 espie Exp $
  #ifdef SYSVR2
  #include <sys/param.h>
  #ifndef SIGCHLD
-@@ -264,7 +267,16 @@ char **argv;
+@@ -187,7 +193,7 @@ int get2_cur();
+ char cmd_name[80];
+ 
+ /* No arguments are used. Only options. */
+-void
++int
+ main(argc, argv)
+ int argc;
+ char **argv;
+@@ -264,7 +270,16 @@ char **argv;
  	fclose(stdin);
  	fclose(stdout);
  	if(!noisy){

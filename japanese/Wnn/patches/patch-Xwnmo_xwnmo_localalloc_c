@@ -1,0 +1,12 @@
+$OpenBSD: patch-Xwnmo_xwnmo_localalloc_c,v 1.1 2015/07/25 16:47:12 espie Exp $
+--- Xwnmo/xwnmo/localalloc.c.orig	Fri Jul 24 18:27:58 2015
++++ Xwnmo/xwnmo/localalloc.c	Fri Jul 24 18:28:12 2015
+@@ -49,7 +49,7 @@
+ #include "ext.h"
+ #endif  /* XJUTIL */
+ 
+-extern char *malloc(), *realloc(), *calloc();
++#include <stdlib.h>
+ #ifdef ALLOC_DEBUG
+ #define DEBUG_TBL_SIZE	10000
+ typedef struct _alloc_debug_struct {

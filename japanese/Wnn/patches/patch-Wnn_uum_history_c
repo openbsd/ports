@@ -1,0 +1,28 @@
+$OpenBSD: patch-Wnn_uum_history_c,v 1.1 2015/07/25 16:47:12 espie Exp $
+--- Wnn/uum/history.c.orig	Tue Nov 26 07:48:10 1991
++++ Wnn/uum/history.c	Fri Jul 24 17:55:20 2015
+@@ -49,6 +49,7 @@
+ /*	Version 4.0
+  */
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "commonhd.h"
+ #include "sdefine.h"
+ #include "sheader.h"
+@@ -73,7 +74,6 @@ static void set_up_history();
+ int
+ init_history()
+ {
+-    char *malloc();
+     int	size1;
+     char *area_pter;
+ 
+@@ -108,8 +108,6 @@ make_history(wstr, n)
+ register w_char *wstr;
+ register int	n;
+ {
+-    extern char *malloc();
+-
+     if (!history_cunt)
+ 	return(0);
+     if (n <= 0 || n > maxchg || *wstr == NULL) 

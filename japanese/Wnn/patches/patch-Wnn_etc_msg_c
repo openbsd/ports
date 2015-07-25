@@ -1,0 +1,35 @@
+$OpenBSD: patch-Wnn_etc_msg_c,v 1.1 2015/07/25 16:47:12 espie Exp $
+--- Wnn/etc/msg.c.orig	Fri Jul 24 10:36:54 2015
++++ Wnn/etc/msg.c	Fri Jul 24 10:41:00 2015
+@@ -50,12 +50,12 @@
+ */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "commonhd.h"
+ #include "wnn_os.h"
+ #include "msg.h"
+ 
+-extern char *getenv();
+-
++#if 0
+ static char *
+ bsearch(ky, bs, nel, width, compar)
+ char *ky;
+@@ -100,6 +100,7 @@ int (*compar)();
+     }
+     return ((char *) 0);	/* not found */
+ }
++#endif
+ 
+ static char *
+ getlang(lang)
+@@ -361,7 +362,7 @@ char	*msg;
+ register char	*lang;
+ {
+     register struct msg_cat *cd;
+-    char ret[128];
++    static char ret[128];
+     register char *msg_bd;
+ 
+     if(catd == 0)

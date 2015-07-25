@@ -1,6 +1,6 @@
 --- Wnn/etc/pwd.c.orig	Tue Sep 22 06:29:26 1992
-+++ Wnn/etc/pwd.c	Thu Jul 23 11:40:07 2015
-@@ -59,7 +59,9 @@
++++ Wnn/etc/pwd.c	Fri Jul 24 10:26:59 2015
+@@ -59,34 +59,16 @@
  #endif
  
  extern char *crypt();
@@ -10,24 +10,39 @@
  #ifdef JS
  static
  #endif
-@@ -84,9 +86,9 @@ char *src, *encd;
- 	    c += 6;
- 	xx[i] = c;
-     }
+ void
+-new_pwd(src, encd)
+-char *src, *encd;
++new_pwd(char *src, char *encd)
+ {
+-    int i, x,c;
+-    char xx[2];
+-    char *cr;
+-
+-    if(encd == NULL)encd = src;
+-    if(strcmp(src, "") == 0){ bzero(encd, WNN_PASSWD_LEN);return;}
+-    x = time(NULL);
+-    xx[0] = x & 0x3f;
+-    xx[1] = (x & 0x3f00) >> 8;
+-    for (i = 0; i < 2; i++) {
+-	c = xx[i] + '.';
+-	if (c > '9')
+-	    c += 7;
+-	if (c > 'Z')
+-	    c += 6;
+-	xx[i] = c;
+-    }
 -    cr = crypt(src, xx);
-+    cr = crypt(src, salt);
-     bzero(encd, WNN_PASSWD_LEN);
+-    bzero(encd, WNN_PASSWD_LEN);
 -    strncpy(encd, cr, WNN_PASSWD_LEN);
-+    strncpy(encd, cr + sizeof(salt), WNN_PASSWD_LEN);
++    crypt_newhash(src, NULL, encd, WNN_PASSWD_LEN);
  }
  
  #ifdef JS
-@@ -97,5 +99,7 @@ check_pwd(src, encd)
+@@ -97,5 +79,5 @@ check_pwd(src, encd)
  char *src, *encd;
  {
      if(strcmp(encd, "") == 0) return(1);  /* No passwd */
 -    return(!strncmp(encd, crypt(src, encd),WNN_PASSWD_LEN));
-+    char *cr = crypt(src, salt);
-+
-+    return(!strncmp(encd, cr + sizeof(salt), WNN_PASSWD_LEN));
++    return crypt_checkpass(src, encd) == 0;
  }

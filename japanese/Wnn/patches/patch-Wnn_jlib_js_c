@@ -1,12 +1,40 @@
-$OpenBSD: patch-Wnn_jlib_js_c,v 1.1 2000/04/16 21:53:31 espie Exp $
+$OpenBSD: patch-Wnn_jlib_js_c,v 1.2 2015/07/25 16:47:12 espie Exp $
 --- Wnn/jlib/js.c.orig	Fri Aug 19 03:30:48 1994
-+++ Wnn/jlib/js.c	Thu Apr 13 20:41:38 2000
-@@ -221,7 +221,7 @@ register char *lang;
++++ Wnn/jlib/js.c	Fri Jul 24 11:01:24 2015
+@@ -71,8 +71,7 @@ extern	Variables
+ */
+ 
+ 
+-extern	char	*malloc();
+-
++#include <stdlib.h>
+ #include <stdio.h>
+ #include <ctype.h>
+ #ifdef UX386
+@@ -104,8 +103,6 @@ extern int errno;
+ #include "../etc/bdic.c"
+ #include "../etc/pwd.c"
+ 
+-char *malloc();
+-
+ #ifdef SYSVR2
+ #define	bzero(adr,n)	memset((adr),0,(n))
+ #endif
+@@ -221,7 +218,7 @@ register char *lang;
  #endif
  	return -1;
      }
 -    if (connect(sd,(caddr_t)&saddr,strlen(saddr.sun_path)+sizeof(saddr.sun_family)) == ERROR) {
-+    if (connect(sd,(caddr_t)&saddr,SUN_LEN(&saddr)) == ERROR) {
++    if (connect(sd,(void *)&saddr,SUN_LEN(&saddr)) == ERROR) {
  
  #if DEBUG
  	xerror("jslib:Can't connect socket.\n");
+@@ -294,7 +291,7 @@ register int timeout;
+ 	signal(SIGALRM, connect_timeout);
+ 	alarm(timeout);
+     }
+-    ret = connect(sd, (caddr_t)&saddr_in, sizeof(saddr_in));
++    ret = connect(sd, (void *)&saddr_in, sizeof(saddr_in));
+     if (timeout != 0 && timeout > 0) {
+ 	alarm(0);
+ 	signal(SIGALRM, SIG_IGN);

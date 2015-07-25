@@ -1,0 +1,18 @@
+$OpenBSD: patch-Wnn_include_wnn_malloc_h,v 1.1 2015/07/25 16:47:12 espie Exp $
+--- Wnn/include/wnn_malloc.h.orig	Mon Sep 16 23:30:10 1991
++++ Wnn/include/wnn_malloc.h	Sat Jul 25 17:12:43 2015
+@@ -50,6 +50,7 @@
+ #ifndef	WNN_MALLOC
+ #define	WNN_MALLOC
+ 
++#if 0
+ extern char *malloc0();
+ extern void free0();
+ extern char *realloc0();
+@@ -57,4 +58,6 @@ extern char *realloc0();
+ #define	malloc(s)	malloc0(s)
+ #define	free(p)		free0(p)
+ #define	realloc(p,s)	realloc0(p,s)
++#endif
++#include <stdlib.h>
+ #endif	/* WNN_MALLOC */

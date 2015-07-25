@@ -1,0 +1,20 @@
+$OpenBSD: patch-Wnn_jutil_atod_c,v 1.1 2015/07/25 16:47:12 espie Exp $
+--- Wnn/jutil/atod.c.orig	Tue Jun 28 04:07:27 1994
++++ Wnn/jutil/atod.c	Fri Jul 24 18:35:08 2015
+@@ -54,6 +54,8 @@ UJIS ·Á¼°¤ò¡¢¼­½ñÅÐÏ¿²ÄÇ½·Á¼°, µÚ¤Ó¸ÇÄê·Á¼°¼­½ñ¤ËÊÑ´¹¤
+ 
+ #include <stdio.h>
+ #include <ctype.h>
++#include <string.h>
++#include <stdlib.h>
+ #include "commonhd.h"
+ #include "config.h"
+ #include "jslib.h"
+@@ -113,7 +115,6 @@ struct uind1 *tary;		/* index 1 */
+ int tnum = 0;
+ struct uind2 *uhopter;
+ 
+-char *malloc();
+ char *hinsi_file_name = NULL;
+ 
+ 

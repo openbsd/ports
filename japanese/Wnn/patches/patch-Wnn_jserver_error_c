@@ -1,0 +1,12 @@
+$OpenBSD: patch-Wnn_jserver_error_c,v 1.1 2015/07/25 16:47:12 espie Exp $
+--- Wnn/jserver/error.c.orig	Fri Jul 24 10:33:44 2015
++++ Wnn/jserver/error.c	Fri Jul 24 10:34:05 2015
+@@ -55,6 +55,8 @@
+ #include "commonhd.h"
+ #include "de_header.h"
+ #include <pwd.h>
++#include <stdlib.h>
++#include <time.h>
+ 
+ extern int errno;
+ 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-Xwnmo_xwnmo_killxwnmo_c,v 1.1 2015/07/25 16:47:12 espie Exp $
+--- Xwnmo/xwnmo/killxwnmo.c.orig	Tue Oct  4 00:17:35 1994
++++ Xwnmo/xwnmo/killxwnmo.c	Sat Jul 25 17:01:22 2015
+@@ -33,6 +33,8 @@ static char rcs_id[] = "$Id: killxwnmo.c,v 1.3 1994/10
+  *				kuwa%omron.co.jp@uunet.uu.net
+  */				
+ #include <signal.h>
++#include <stdlib.h>
++#include <string.h>
+ #include <pwd.h>
+ #include "wnn_os.h"
+ #include <X11/Xlib.h>
+@@ -48,7 +50,7 @@ signal_catch()
+     exit(1);
+ }
+ 
+-void
++int
+ main(argc, argv)
+ int argc;
+ char **argv;

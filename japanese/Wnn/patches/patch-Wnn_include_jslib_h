@@ -1,0 +1,12 @@
+$OpenBSD: patch-Wnn_include_jslib_h,v 1.1 2015/07/25 16:47:12 espie Exp $
+--- Wnn/include/jslib.h.orig	Fri Jul 24 10:24:36 2015
++++ Wnn/include/jslib.h	Fri Jul 24 10:24:55 2015
+@@ -179,7 +179,7 @@ typedef struct wnn_env_info WNN_ENV_INFO;
+ 
+ #define WNN_COMMENT_LEN 512     /* jisho no comment no nagasa */
+ #define WNN_F_NAMELEN 100
+-#define WNN_PASSWD_LEN 16  /* File Passwd Length */
++#define WNN_PASSWD_LEN 61  /* blowfish password */
+ 
+ 
+ struct wnn_dic_info {

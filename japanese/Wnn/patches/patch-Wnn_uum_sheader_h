@@ -1,0 +1,11 @@
+$OpenBSD: patch-Wnn_uum_sheader_h,v 1.1 2015/07/25 16:47:12 espie Exp $
+--- Wnn/uum/sheader.h.orig	Fri Jul 24 17:54:53 2015
++++ Wnn/uum/sheader.h	Fri Jul 24 17:55:11 2015
+@@ -333,7 +333,6 @@ extern void set_screen_vars_default();
+ extern void set_keypad_on();
+ extern void set_keypad_off();
+ extern void set_scroll_region();
+-extern void setenv();
+ extern int setutmp();
+ extern int st_colum();
+ extern void t_cont_line_note_delete();
