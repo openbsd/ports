@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2014/01/15 02:13:57 jeremy Exp $
+# $OpenBSD: Makefile,v 1.34 2015/07/26 03:28:53 jeremy Exp $
 
 COMMENT=	Ruby interface to some common LDAP libraries
 
-PKGNAME=	ldap-0.9.12
-REVISION =	4
+PKGNAME=	ldap-0.9.17
 DISTNAME=	ruby-${PKGNAME}
 CATEGORIES=	databases
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/ruby
 
-WANTLIB=		crypto pthread ssl ldap lber
+WANTLIB=		crypto pthread ssl ldap_r lber
 
 LIB_DEPENDS=		databases/openldap
 
