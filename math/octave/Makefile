@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2015/07/24 14:54:01 feinerer Exp $
+# $OpenBSD: Makefile,v 1.75 2015/07/26 06:56:51 steven Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -41,7 +41,8 @@ MODULES =	devel/gettext \
 		x11/qt4
 
 BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} \
-		textproc/gsed
+		textproc/gsed \
+		math/gnuplot
 
 # configure checks for desktop-file-install(1)
 BUILD_DEPENDS +=devel/desktop-file-utils
