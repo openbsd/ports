@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/06/01 14:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2015/07/26 19:19:33 steven Exp $
 
 COMMENT =	framework for analysis of layer 2 network protocols
 
-DISTNAME =	yersinia-0.7.1
+DISTNAME =	yersinia-0.7.3
 CATEGORIES =	net security
-REVISION =	3
 
 HOMEPAGE =	http://www.yersinia.net/
 
@@ -25,6 +24,7 @@ CONFIGURE_ARGS =	--disable-gtk \
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBNET_CONFIG=${LOCALBASE}/bin/libnet-config-1.1 \
 			CPPFLAGS="${CPPFLAGS} -DLBL_ALIGN"
+WRKDIST =	${WRKDIR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/yersinia

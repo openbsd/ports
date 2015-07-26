@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.2 2013/06/01 14:18:40 ajacoutot Exp $
---- configure.orig	Fri Jan 26 20:22:30 2007
-+++ configure	Tue Sep 23 14:13:54 2008
-@@ -3470,7 +3470,7 @@ fi
+$OpenBSD: patch-configure,v 1.3 2015/07/26 19:19:33 steven Exp $
+--- configure.orig	Mon Sep  9 14:33:01 2013
++++ configure	Sun Jul 19 16:52:17 2015
+@@ -3809,7 +3809,7 @@ fi
  
  
  if test -n "$GCC"; then
 -     CFLAGS="-O3 -Wall -g"
 +     CFLAGS="$CFLAGS -Wall -g"
  else
-      { echo "$as_me:$LINENO: WARNING: Ouch!! Only gcc is supported..." >&5
- echo "$as_me: WARNING: Ouch!! Only gcc is supported..." >&2;}
-@@ -4687,7 +4687,7 @@ else
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Ouch!! Only gcc is supported..." >&5
+ $as_echo "$as_me: WARNING: Ouch!! Only gcc is supported..." >&2;}
+@@ -4747,7 +4747,7 @@ else
  
     LIBNET_INCLUDE="-I$libnet_dir"
     LIBNET_LINK="-L`dirname $libnet_dir`/lib"
