@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2015/07/15 22:19:23 jeremy Exp $
+# $OpenBSD: Makefile,v 1.52 2015/07/26 04:40:16 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		1.7.21
+V =		9.0.0.0
 DISTNAME =	jruby-bin-${V}
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
@@ -24,7 +24,7 @@ MASTER_SITES0 =	http://www.distfiles.nl/
 MASTER_SITES1 =	${MASTER_SITE_RUBYGEMS}
 
 MODULES =	java
-MODJAVA_VER =	1.7+
+MODJAVA_VER =	1.8+
 MODJAVA_JRERUN = Yes
 USE_GMAKE =	Yes
 
@@ -47,8 +47,8 @@ JFFI_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}-OpenBSD
 FFI_ARCH =	${JFFI_ARCH:L}
 RAKE_V =	10.1.0
 RDOC_V =	4.0.1
-JRUBY_LAUNCHER_GEM = jruby-launcher-1.0.19-java.gem
-SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH RAKE_V RDOC_V
+JRUBY_LAUNCHER_GEM = jruby-launcher-1.1.1-java.gem
+SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH RAKE_V RDOC_V JAVA_HOME
 
 post-extract:
 	mv ${WRKDIR}/jnr-jffi* ${JFFI_HOME}
@@ -73,7 +73,7 @@ do-build:
 	mkdir -p ${WRKSRC}/lib/jni/${JFFI_ARCH}
 	cp ${JFFI_HOME}/build/jni/libjffi-1.2.so \
 		${WRKSRC}/lib/jni/${JFFI_ARCH}
-	cd ${WRKSRC}/lib/ruby/shared/ffi/platform && \
+	cd ${WRKSRC}/lib/ruby/stdlib/ffi/platform && \
 		rm -r !(${FFI_ARCH}|*.ffi)
 	cd ${WRKSRC}/jruby-launcher/ && gmake && mv jruby ../bin
 

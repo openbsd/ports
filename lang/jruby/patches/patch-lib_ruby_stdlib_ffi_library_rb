@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_ruby_shared_ffi_library_rb,v 1.3 2014/09/27 20:37:04 jasper Exp $
---- lib/ruby/shared/ffi/library.rb.orig	Thu Sep 25 21:32:50 2014
-+++ lib/ruby/shared/ffi/library.rb	Sat Sep 27 23:32:09 2014
+$OpenBSD: patch-lib_ruby_stdlib_ffi_library_rb,v 1.1 2015/07/26 04:40:16 jeremy Exp $
+--- lib/ruby/stdlib/ffi/library.rb.orig	Thu Sep 25 21:32:50 2014
++++ lib/ruby/stdlib/ffi/library.rb	Sat Sep 27 23:32:09 2014
 @@ -81,6 +81,7 @@ module FFI
        raise LoadError.new("library names list must not be empty") if names.empty?
  

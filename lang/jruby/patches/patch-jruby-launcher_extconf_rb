@@ -1,10 +1,10 @@
-$OpenBSD: patch-jruby-launcher_extconf_rb,v 1.1 2013/03/19 23:43:06 jeremy Exp $
+$OpenBSD: patch-jruby-launcher_extconf_rb,v 1.2 2015/07/26 04:40:16 jeremy Exp $
 --- jruby-launcher/extconf.rb.orig	Tue May 22 10:27:56 2012
 +++ jruby-launcher/extconf.rb	Tue May 22 10:29:07 2012
 @@ -3,5 +3,6 @@ require 'rbconfig'
  mf = File.read('Makefile')
  mf = mf.gsub(/^BINDIR\s*=.*$/, "BINDIR = #{Config::CONFIG['bindir']}")
  mf = mf.gsub(/^PREFIX\s*=.*$/, "PREFIX = #{File.dirname(Config::CONFIG['libdir'])}")
-+mf = mf.gsub(/^INSTALLDIR\s*=.*$/, "INSTALLDIR = #{File.dirname(Config::CONFIG['libdir'])}/lib/ruby/shared/rubygems/defaults")
++mf = mf.gsub(/^INSTALLDIR\s*=.*$/, "INSTALLDIR = #{File.dirname(Config::CONFIG['libdir'])}/lib/ruby/stdlib/rubygems/defaults")
  puts mf
  File.open('Makefile', 'wb') {|f| f << mf}

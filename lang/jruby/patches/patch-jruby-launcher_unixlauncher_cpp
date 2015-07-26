@@ -1,4 +1,4 @@
-$OpenBSD: patch-jruby-launcher_unixlauncher_cpp,v 1.3 2013/03/19 23:43:06 jeremy Exp $
+$OpenBSD: patch-jruby-launcher_unixlauncher_cpp,v 1.4 2015/07/26 04:40:16 jeremy Exp $
 
 Attempt to replicate the following shell code:
 
@@ -28,9 +28,9 @@ defined, bin/jruby will segfault when run.
 +
 +      path = getenv("PATH");
 +      if (path == NULL || strlen(path) == 0) {
-+        setenv("PATH", "/usr/bin:${LOCALBASE}/bin:${LOCALBASE}/jdk-1.7.0/bin", 1);
++        setenv("PATH", "/usr/bin:${LOCALBASE}/bin:${JAVA_HOME}/bin", 1);
 +      } else {
-+        char *paths[3] = {(char *)"/usr/bin", (char *)"${LOCALBASE}/bin", (char *)"${LOCALBASE}/jdk-1.7.0/bin"};
++        char *paths[3] = {(char *)"/usr/bin", (char *)"${LOCALBASE}/bin", (char *)"${JAVA_HOME}/bin"};
 +        int modified = 0;
 +        int i;
 +
