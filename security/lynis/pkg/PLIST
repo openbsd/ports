@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/03/16 15:09:12 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/07/26 22:21:20 gonzalo Exp $
 bin/lynis
 @man man/man8/lynis.8
 share/doc/lynis/
@@ -29,6 +29,7 @@ share/lynis/include/consts
 share/lynis/include/data_upload
 share/lynis/include/functions
 share/lynis/include/helper_audit_dockerfile
+share/lynis/include/helper_update
 share/lynis/include/osdetection
 share/lynis/include/parameters
 share/lynis/include/profiles
@@ -37,6 +38,7 @@ share/lynis/include/tests_accounting
 share/lynis/include/tests_authentication
 share/lynis/include/tests_banners
 share/lynis/include/tests_boot_services
+share/lynis/include/tests_containers
 share/lynis/include/tests_crypto
 share/lynis/include/tests_custom.template
 share/lynis/include/tests_databases
@@ -45,7 +47,6 @@ share/lynis/include/tests_file_permissions
 share/lynis/include/tests_filesystems
 share/lynis/include/tests_firewalls
 share/lynis/include/tests_hardening
-share/lynis/include/tests_hardening_tools
 share/lynis/include/tests_homedirs
 share/lynis/include/tests_insecure_services
 share/lynis/include/tests_kernel
@@ -69,7 +70,6 @@ share/lynis/include/tests_squid
 share/lynis/include/tests_ssh
 share/lynis/include/tests_storage
 share/lynis/include/tests_storage_nfs
-share/lynis/include/tests_tcpwrappers
 share/lynis/include/tests_time
 share/lynis/include/tests_tooling
 share/lynis/include/tests_virtualization
