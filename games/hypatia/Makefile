@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/18 02:19:23 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2015/07/26 14:43:49 bcallah Exp $
 
 COMMENT =	2D action adventure game engine
 DISTNAME =	hypatia-${GH_TAGNAME}
@@ -7,7 +7,7 @@ SUBST_VARS +=	GH_TAGNAME
 
 GH_ACCOUNT =	lillian-lemmer
 GH_PROJECT =	hypatia
-GH_TAGNAME =	0.2.26
+GH_TAGNAME =	0.2.29
 
 HOMEPAGE =	http://lillian-lemmer.github.io/hypatia/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -23,7 +23,8 @@ RUN_DEPENDS =	devel/py-enum34 \
 		games/pyganim \
 		graphics/py-Pillow
 
-TEST_DEPENDS =	games/pyganim
+TEST_DEPENDS =	games/pyganim \
+		graphics/py-Pillow
 
 post-install:
 	${SUBST_PROGRAM} ${FILESDIR}/hypatia-demo ${PREFIX}/bin/hypatia-demo
