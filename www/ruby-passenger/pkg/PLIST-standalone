@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST-standalone,v 1.3 2014/06/24 21:45:06 jeremy Exp $
-${GEM_LIB}/gems/passenger-${PASS_VERSION}/standalone/
-@bin ${GEM_LIB}/gems/passenger-${PASS_VERSION}/standalone/PassengerWebHelper
-${GEM_LIB}/gems/passenger-${PASS_VERSION}/standalone/agents/
-@bin ${GEM_LIB}/gems/passenger-${PASS_VERSION}/standalone/agents/PassengerHelperAgent
-@bin ${GEM_LIB}/gems/passenger-${PASS_VERSION}/standalone/agents/PassengerLoggingAgent
-@bin ${GEM_LIB}/gems/passenger-${PASS_VERSION}/standalone/agents/PassengerWatchdog
-@bin ${GEM_LIB}/gems/passenger-${PASS_VERSION}/standalone/agents/SpawnPreparer
-@bin ${GEM_LIB}/gems/passenger-${PASS_VERSION}/standalone/agents/TempDirToucher
