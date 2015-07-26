@@ -1,0 +1,15 @@
+$OpenBSD: patch-ext_common_ApplicationPool2_Pool_AnalyticsCollection_cpp,v 1.1 2015/07/26 01:31:39 jeremy Exp $
+
+Remove unnecessary warning, as their metrics parser apparently
+doesn't work on OpenBSD.
+
+--- ext/common/ApplicationPool2/Pool/AnalyticsCollection.cpp.orig	Sun Jul 19 01:34:57 2015
++++ ext/common/ApplicationPool2/Pool/AnalyticsCollection.cpp	Sun Jul 19 01:36:09 2015
+@@ -186,7 +186,6 @@ Pool::realCollectAnalytics() {
+ 		P_DEBUG("Collecting process metrics");
+ 		processMetrics = ProcessMetricsCollector().collect(pids);
+ 	} catch (const ParseException &) {
+-		P_WARN("Unable to collect process metrics: cannot parse 'ps' output.");
+ 		return;
+ 	}
+ 	try {

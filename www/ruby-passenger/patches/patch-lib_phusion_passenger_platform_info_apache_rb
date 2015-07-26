@@ -1,0 +1,22 @@
+$OpenBSD: patch-lib_phusion_passenger_platform_info_apache_rb,v 1.1 2015/07/26 01:31:39 jeremy Exp $
+
+Don't attempt to build apache support.
+
+--- lib/phusion_passenger/platform_info/apache.rb.orig	Sun Jul 19 12:21:47 2015
++++ lib/phusion_passenger/platform_info/apache.rb	Sun Jul 19 12:22:04 2015
+@@ -46,6 +46,7 @@ module PhusionPassenger
+ 
+     # The absolute path to the 'apxs' or 'apxs2' executable, or nil if not found.
+     def self.apxs2
++      return nil
+       if env_defined?("APXS2")
+         return ENV["APXS2"]
+       end
+@@ -69,6 +70,7 @@ module PhusionPassenger
+     # The absolute path to the Apache binary (that is, 'httpd', 'httpd2', 'apache'
+     # or 'apache2'), or nil if not found.
+     def self.httpd(options = {})
++      return nil
+       apxs2 = options[:apxs2] || self.apxs2
+       if env_defined?('HTTPD')
+         return ENV['HTTPD']

@@ -1,0 +1,15 @@
+$OpenBSD: patch-helper-scripts_download_binaries_extconf_rb,v 1.1 2015/07/26 01:31:39 jeremy Exp $
+
+OpenBSD doesn't download binaries when building ports.
+
+--- helper-scripts/download_binaries/extconf.rb.orig	Sat Jul 18 18:36:28 2015
++++ helper-scripts/download_binaries/extconf.rb	Sat Jul 18 18:36:32 2015
+@@ -35,6 +35,8 @@ File.open("Makefile", "w") do |f|
+   f.puts "\ttrue"
+ end
+ 
++exit
++
+ # Don't do anything on Windows. We don't support Windows but exiting now
+ # will at least prevent the gem from being not installable on Windows.
+ exit if RUBY_PLATFORM =~ /mswin/i || RUBY_PLATFORM =~ /win32/i || RUBY_PLATFORM =~ /mingw/

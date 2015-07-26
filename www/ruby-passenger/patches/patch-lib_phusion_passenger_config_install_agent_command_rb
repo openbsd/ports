@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_phusion_passenger_config_install_agent_command_rb,v 1.1 2015/07/26 01:31:39 jeremy Exp $
+
+Don't attempt to download an agent binary when building the port.
+
+--- lib/phusion_passenger/config/install_agent_command.rb.orig	Sat Jul 18 18:47:58 2015
++++ lib/phusion_passenger/config/install_agent_command.rb	Sat Jul 18 18:48:00 2015
+@@ -49,9 +49,7 @@ module PhusionPassenger
+         parse_options
+         initialize_objects
+         sanity_check
+-        if !download
+           compile
+-        end
+       end
+ 
+     private

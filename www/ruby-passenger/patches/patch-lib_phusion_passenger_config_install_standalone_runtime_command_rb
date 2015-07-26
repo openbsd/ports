@@ -1,0 +1,27 @@
+$OpenBSD: patch-lib_phusion_passenger_config_install_standalone_runtime_command_rb,v 1.1 2015/07/26 01:31:39 jeremy Exp $
+
+Don't try to download an nginx binary when building the port.
+
+Fix the passing of --nginx-tarball to the compiling command.
+
+--- lib/phusion_passenger/config/install_standalone_runtime_command.rb.orig	Wed Jul 15 00:22:45 2015
++++ lib/phusion_passenger/config/install_standalone_runtime_command.rb	Sat Jul 18 21:01:49 2015
+@@ -56,9 +56,7 @@ module PhusionPassenger
+         sanity_check
+         PhusionPassenger::Utils.mktmpdir("passenger-install.", PlatformInfo.tmpexedir) do |tmpdir|
+           install_agent(tmpdir)
+-          if !download_nginx_engine
+             compile_nginx_engine(tmpdir)
+-          end
+         end
+       end
+ 
+@@ -98,6 +96,8 @@ module PhusionPassenger
+             "downloading it. You MUST also specify the#{nl}" +
+             "Nginx version with --nginx-version") do |val|
+             options[:nginx_tarball] = val
++            options[:compile_args] << "--nginx-tarball"
++            options[:compile_args] << val
+           end
+           opts.on("--brief", "Report progress in a brief style") do
+             options[:brief] = true

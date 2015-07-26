@@ -1,11 +1,23 @@
-$OpenBSD: patch-ext_nginx_config,v 1.6 2014/06/24 21:45:06 jeremy Exp $
---- ext/nginx/config.orig	Thu Jun  5 11:47:46 2014
-+++ ext/nginx/config	Thu Jun  5 11:48:08 2014
+$OpenBSD: patch-ext_nginx_config,v 1.7 2015/07/26 01:31:39 jeremy Exp $
+--- ext/nginx/config.orig	Wed Jul 15 00:22:45 2015
++++ ext/nginx/config	Sun Jul 19 13:20:46 2015
 @@ -1,6 +1,6 @@
  # passenger-config is run with the 'ruby' command in $PATH, even when natively packaged,
  # so we check whether 'ruby' is correctly in $PATH.
 -if ! ruby -v >/dev/null 2>/dev/null; then
 +if ! ${RUBY} -v >/dev/null 2>/dev/null; then
-     echo '*** ERROR: Cannot find the "ruby" command in $PATH. Please fix your $PATH. You can learn more about $PATH at: http://www.modrails.com/documentation/Users%20guide%20Nginx.html#_the_path_environment_variable'
-     echo '*** Do you think that you set $PATH correctly, and you happen to be using sudo or rvmsudo? Read this: http://www.modrails.com/documentation/Users%20guide%20Nginx.html#env_vars_and_sudo'
+     echo '*** ERROR: Cannot find the "ruby" command in $PATH. Please fix your $PATH. You can learn more about $PATH at: https://www.phusionpassenger.com/documentation/Users%20guide%20Nginx.html#_the_path_environment_variable'
+     echo '*** Do you think that you set $PATH correctly, and you happen to be using sudo or rvmsudo? Read this: https://www.phusionpassenger.com/documentation/Users%20guide%20Nginx.html#env_vars_and_sudo'
      exit 1
+@@ -11,9 +11,9 @@ fi
+ PATH="$ngx_addon_dir/../../bin:$PATH"
+ export PATH
+ 
+-PASSENGER_CONFIG=${PASSENGER_CONFIG:-passenger-config}
++PASSENGER_CONFIG=${PASSENGER_CONFIG:-passenger-config${GEM_BIN_SUFFIX}}
+ 
+-if test "x$PASSENGER_LIBS" = "x" && ! $PASSENGER_CONFIG --compiled; then
++if false; then
+     echo "*** The Phusion Passenger support files are not yet compiled. Compiling them for you... ***"
+     echo "*** Running 'rake nginx CACHING=false' in $ngx_addon_dir... ***"
+     old_dir=`pwd`
