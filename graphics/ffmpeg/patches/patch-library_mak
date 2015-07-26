@@ -1,7 +1,7 @@
-$OpenBSD: patch-library_mak,v 1.5 2015/04/28 06:32:47 ajacoutot Exp $
---- library.mak.orig	Wed Mar 25 18:11:40 2015
-+++ library.mak	Wed Mar 25 18:16:17 2015
-@@ -57,7 +57,7 @@ $(SUBDIR)$(SLIBNAME): $(SUBDIR)$(SLIBNAME_WITH_MAJOR)
+$OpenBSD: patch-library_mak,v 1.6 2015/07/26 07:22:15 ajacoutot Exp $
+--- library.mak.orig	Thu Jul 23 19:37:50 2015
++++ library.mak	Thu Jul 23 19:43:44 2015
+@@ -58,7 +58,7 @@ $(SUBDIR)$(SLIBNAME): $(SUBDIR)$(SLIBNAME_WITH_MAJOR)
  
  $(SUBDIR)$(SLIBNAME_WITH_MAJOR): $(OBJS) $(SLIBOBJS) $(SUBDIR)lib$(NAME).ver
  	$(SLIB_CREATE_DEF_CMD)
@@ -10,7 +10,7 @@ $OpenBSD: patch-library_mak,v 1.5 2015/04/28 06:32:47 ajacoutot Exp $
  	$(SLIB_EXTRA_CMD)
  
  ifdef SUBDIR
-@@ -74,8 +74,6 @@ distclean:: clean
+@@ -75,8 +75,6 @@ distclean:: clean
  install-lib$(NAME)-shared: $(SUBDIR)$(SLIBNAME)
  	$(Q)mkdir -p "$(SHLIBDIR)"
  	$$(INSTALL) -m 755 $$< "$(SHLIBDIR)/$(SLIB_INSTALL_NAME)"
