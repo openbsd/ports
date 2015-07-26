@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2014/06/28 04:08:48 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2015/07/26 06:08:15 jeremy Exp $
 
 COMMENT =	emulates numerous game consoles
 
-V =		0.9.35.1
+V =		0.9.38.5
 DISTNAME =	mednafen-${V}
 
 CATEGORIES =	emulators games
@@ -13,18 +13,19 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mednafen/}
+MASTER_SITES =	http://mednafen.fobby.net/releases/files/
 EXTRACT_SUFX =	.tar.bz2
 
-MODULES =	devel/gettext
+MODULES =	devel/gettext gcc4
 
-WANTLIB += SDL c cdio m pthread sndfile sndio stdc++ usbhid z
+WANTLIB += SDL c m pthread sndfile sndio usbhid z
 WANTLIB += FLAC ogg vorbis vorbisenc
 
 USE_GMAKE =	Yes
+MODGCC4_ARCHS=	*
+MODGCC4_LANGS=	c++
 
-LIB_DEPENDS =	audio/libcdio \
-		audio/libsndfile \
+LIB_DEPENDS =	audio/libsndfile \
 		devel/sdl
 		
 WRKDIST =	${WRKDIR}/mednafen
