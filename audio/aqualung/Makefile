@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2015/05/08 09:08:44 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2015/07/26 05:46:02 jeremy Exp $
 
 COMMENT=	advanced music player
 
-DISTNAME=	aqualung-0.9beta11
-REVISION=	13
+DISTNAME=	aqualung-1.0-rc1
+PKGNAME=	aqualung-1.0rc1
 EPOCH=		0
 CATEGORIES=	audio
 
@@ -21,7 +21,7 @@ WANTLIB += gthread-2.0 m mp3lame ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pthread samplerate sndfile sndio stdc++
 WANTLIB += vorbis vorbisenc vorbisfile z gtk-x11-2.0 gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 xml2 mac mad mpcdec FLAC avcodec
-WANTLIB += avformat avutil jack wavpack lrdf oggz speex cddb cdio
+WANTLIB += avformat avutil wavpack lrdf oggz speex cddb cdio
 WANTLIB += cdio_cdda cdio_paranoia modplug ${MODLUA_WANTLIB}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqualung/}
@@ -31,16 +31,13 @@ MODULES=	devel/gettext \
 
 MODLUA_SA=	Yes
 
-BUILD_DEPENDS=	devel/autoconf/2.63 \
-		devel/automake/1.10
-
 LIB_DEPENDS=	audio/flac \
-		audio/jack \
 		audio/lame \
 		audio/libcdio \
 		audio/libcddb \
 		audio/libmad \
 		audio/libmodplug \
+		audio/libsamplerate \
 		audio/libsndfile \
 		audio/libvorbis \
 		audio/mac \
@@ -56,49 +53,41 @@ LIB_DEPENDS=	audio/flac \
 
 RUN_DEPENDS=	devel/desktop-file-utils
 
-AUTOCONF_VERSION= 2.63
-AUTOMAKE_VERSION= 1.10
-
 CFLAGS+=	-DPTHREAD_MIN_PRIORITY=0 -DPTHREAD_MAX_PRIORITY=31 \
 		-I${LOCALBASE}/include -I${MODLUA_INCL_DIR}
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib "
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib " \
+		lua_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
+		lua_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
 
 # ifp (requires libifp) - no package
 CONFIGURE_ARGS=	--with-cdda \
 		--with-cddb \
 		--with-flac \
-		--with-jack \
 		--with-ladspa \
 		--with-lame \
 		--with-lavc \
-		--with-loop \
 		--with-lua \
 		--with-mac \
 		--with-mod \
 		--with-mpc \
 		--with-mpeg \
-		--with-ogg \
-		--with-podcast \
 		--with-sndfile \
 		--with-sndio \
 		--with-speex \
 		--with-src \
-		--with-systray \
+		--with-vorbis \
 		--with-vorbisenc \
 		--with-wavpack \
 		--without-alsa \
 		--without-ifp \
+		--without-jack \
 		--without-oss \
-		--without-pulse
-
-post-patch:
-	@cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+		--without-pulse \
+		--without-winmm
 
 post-install:
-	mv ${PREFIX}/share/aqualung/doc ${PREFIX}/share/doc/aqualung
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	@${SUBST_CMD} -m 0644 -c ${FILESDIR}/aqualung.desktop \
 		${PREFIX}/share/applications/aqualung.desktop
