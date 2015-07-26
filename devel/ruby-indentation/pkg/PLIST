@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 10:38:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/26 03:36:39 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
@@ -12,5 +12,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/indentation/string_mod.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/.rspec
 ${GEM_LIB}/gems/${DISTNAME}/spec/indentation_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/rdoc_examples_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
