@@ -1,23 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/01/11 22:51:03 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/07/26 01:15:55 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.rspec
+${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile.lock
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/bcrypt-ruby.gemspec
+${GEM_LIB}/gems/${DISTNAME}/bcrypt.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/bcrypt/
 ${GEM_LIB}/gems/${DISTNAME}/lib/bcrypt.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/bcrypt_engine.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/bcrypt/engine.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/bcrypt/error.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/bcrypt/password.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bcrypt_ext.so
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/TestBCrypt.java
 ${GEM_LIB}/gems/${DISTNAME}/spec/bcrypt/
 ${GEM_LIB}/gems/${DISTNAME}/spec/bcrypt/engine_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/bcrypt/error_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/bcrypt/password_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
