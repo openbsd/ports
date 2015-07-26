@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_phusion_passenger_vendor_daemon_controller_rb,v 1.1 2015/07/26 01:33:26 jeremy Exp $
+
+OpenBSD doesn't allowing connecting to 0.0.0.0.
+
+--- lib/phusion_passenger/vendor/daemon_controller.rb.orig	Sun Jul 19 00:49:22 2015
++++ lib/phusion_passenger/vendor/daemon_controller.rb	Sun Jul 19 00:50:01 2015
+@@ -708,6 +708,7 @@ private
+         case type
+         when :tcp
+           hostname, port = args
++          hostname = '127.0.0.1' if hostname == '0.0.0.0'
+           sockaddr = Socket.pack_sockaddr_in(port, hostname)
+           ping_tcp_socket(sockaddr)
+         when :unix

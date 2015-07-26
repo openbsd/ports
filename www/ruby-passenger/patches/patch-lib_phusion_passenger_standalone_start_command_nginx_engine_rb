@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_phusion_passenger_standalone_start_command_nginx_engine_rb,v 1.1 2015/07/26 01:33:26 jeremy Exp $
+
+OpenBSD doesn't allow connecting to 0.0.0.0.
+
+--- lib/phusion_passenger/standalone/start_command/nginx_engine.rb.orig	Sun Jul 19 00:58:47 2015
++++ lib/phusion_passenger/standalone/start_command/nginx_engine.rb	Sun Jul 19 00:59:34 2015
+@@ -69,7 +69,9 @@ module PhusionPassenger
+             if @options[:socket_file]
+               socket = UNIXSocket.new(@options[:socket_file])
+             else
+-              socket = TCPSocket.new(@options[:address], @options[:port])
++              address = @options[:address]
++              address = '127.0.0.1' if address == '0.0.0.0'
++              socket = TCPSocket.new(address, @options[:port])
+             end
+             begin
+               begin

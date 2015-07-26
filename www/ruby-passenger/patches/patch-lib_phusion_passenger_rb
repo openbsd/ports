@@ -1,13 +1,32 @@
-$OpenBSD: patch-lib_phusion_passenger_rb,v 1.4 2014/06/24 21:45:06 jeremy Exp $
---- lib/phusion_passenger.rb.orig	Thu May 29 05:13:25 2014
-+++ lib/phusion_passenger.rb	Thu Jun  5 10:47:23 2014
-@@ -51,8 +51,7 @@ module PhusionPassenger
- 	
- 	# Directories in which to look for plugins.
- 	PLUGIN_DIRS = [
--		"/usr/share/#{GLOBAL_NAMESPACE_DIRNAME}/plugins",
--		"/usr/local/share/#{GLOBAL_NAMESPACE_DIRNAME}/plugins",
-+		"${PASSENGER_ROOT}/plugins",
- 		"~/#{USER_NAMESPACE_DIRNAME}/plugins"
- 	]
- 	
+$OpenBSD: patch-lib_phusion_passenger_rb,v 1.5 2015/07/26 01:33:26 jeremy Exp $
+
+Use the specified version of nginx.
+
+Don't store or look for stuff in $HOME, use the passenger directory.
+
+--- lib/phusion_passenger.rb.orig	Wed Jul 15 00:22:45 2015
++++ lib/phusion_passenger.rb	Sun Jul 19 00:50:45 2015
+@@ -32,7 +32,7 @@ module PhusionPassenger
+   # Run 'rake ext/common/Constants.h' after changing this number.
+   VERSION_STRING = '5.0.14'
+ 
+-  PREFERRED_NGINX_VERSION = '1.8.0'
++  PREFERRED_NGINX_VERSION = '${NGINX_VERSION}'
+   NGINX_SHA256_CHECKSUM = '23cca1239990c818d8f6da118320c4979aadf5386deda691b1b7c2c96b9df3d5'
+ 
+   PREFERRED_PCRE_VERSION  = '8.34'
+@@ -322,13 +322,6 @@ private
+   # example `sudo` preserves it. That's why we don't respect it by
+   # default.
+   def self.home_dir(respect_home_env = false)
+-    if respect_home_env
+-      home = ENV['HOME'].to_s
+-    end
+-    if home.nil? || home.empty?
+-      require 'etc' if !defined?(Etc)
+-      home = Etc.getpwuid(Process.uid).dir
+-    end
+-    return home
++    File.dirname(File.dirname(File.expand_path(__FILE__)))
+   end
+ end if !defined?(PhusionPassenger::VERSION_STRING)
