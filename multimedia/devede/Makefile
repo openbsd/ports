@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/06/18 09:03:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2015/07/26 12:32:37 ajacoutot Exp $
 
 COMMENT=		video DVDs and CDs creation tool
 
@@ -20,6 +20,8 @@ MODULES=		lang/python
 
 MODPY_ADJ_FILES=	src/devede_ng.py
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+
+BUILD_DEPENDS=		devel/gettext-tools
 
 # needed because NO_BUILD is set below
 BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS}
