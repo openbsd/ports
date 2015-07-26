@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/04/01 20:55:45 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/07/26 03:20:01 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -31,18 +31,19 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/capybara-webkit.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/browser.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/configuration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/connection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/cookie_jar.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/driver.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/errors.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/matchers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/node.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/socket_debugger.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/webkit/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara_webkit_builder.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/browser_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/capybara_webkit_builder_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/configuration_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/connection_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cookie_jar_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/driver_rendering_spec.rb
@@ -56,9 +57,6 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/self_signed_ssl_cert.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/app_runner.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/support/matchers/
-${GEM_LIB}/gems/${DISTNAME}/spec/support/matchers/include_response.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/support/output_writer.rb
 ${GEM_LIB}/gems/${DISTNAME}/templates/
 ${GEM_LIB}/gems/${DISTNAME}/templates/Command.cpp
 ${GEM_LIB}/gems/${DISTNAME}/templates/Command.h
