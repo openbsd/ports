@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ext_lua_c,v 1.1 2015/07/26 05:49:37 jeremy Exp $
+
+Work with Lua 5.2 (r1302).
+
+--- src/ext_lua.c.orig	Sat Jul 18 00:52:28 2015
++++ src/ext_lua.c	Sat Jul 18 00:52:46 2015
+@@ -550,7 +550,7 @@ void setup_extended_title_formatting(void) {
+ 		L = NULL;
+ 	}
+ 
+-	L = lua_open();
++	L = luaL_newstate();
+ 	luaL_openlibs(L);
+ 
+ 	error = luaL_dostring(L, AQUALUNG_LUA_API);

@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/06/09 08:32:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/07/26 05:49:37 jeremy Exp $
 @bin bin/aqualung
 @man man/man1/aqualung.1
-@owner root
 share/applications/aqualung.desktop
 share/aqualung/
 share/aqualung/appearance.png
@@ -164,12 +163,16 @@ share/doc/aqualung/systray.png
 share/doc/aqualung/timer.eps
 share/doc/aqualung/timer.png
 share/locale/de/LC_MESSAGES/aqualung.mo
+share/locale/es/LC_MESSAGES/aqualung.mo
 share/locale/fr/LC_MESSAGES/aqualung.mo
 share/locale/hu/LC_MESSAGES/aqualung.mo
 share/locale/it/LC_MESSAGES/aqualung.mo
 share/locale/ja/LC_MESSAGES/aqualung.mo
+share/locale/nl/LC_MESSAGES/aqualung.mo
+share/locale/pl/LC_MESSAGES/aqualung.mo
 share/locale/ru/LC_MESSAGES/aqualung.mo
 share/locale/sv/LC_MESSAGES/aqualung.mo
 share/locale/uk/LC_MESSAGES/aqualung.mo
+share/locale/zh/LC_MESSAGES/aqualung.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
