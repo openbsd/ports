@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/01/11 22:51:02 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/07/26 03:39:53 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
-${GEM_LIB}/gems/${DISTNAME}/Changes
-${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/Changelog.md
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
+${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/THANKS
 ${GEM_LIB}/gems/${DISTNAME}/TODO
 ${GEM_LIB}/gems/${DISTNAME}/examples/
@@ -21,4 +23,5 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ncurses-ruby/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ncurses-ruby/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ncurses.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ncurses.so
+${GEM_LIB}/gems/${DISTNAME}/ncurses-ruby.gemspec
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
