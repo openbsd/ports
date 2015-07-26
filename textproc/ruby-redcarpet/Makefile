@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/16 04:41:23 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2015/07/26 03:49:06 jeremy Exp $
 
 COMMENT=	fast, safe and extensible Markdown to (X)HTML parser
 
-DISTNAME=	redcarpet-3.2.3
+DISTNAME=	redcarpet-3.3.2
 
 CATEGORIES=	textproc
 
@@ -13,7 +13,13 @@ MODULES=	lang/ruby
 
 CONFIGURE_STYLE=ruby gem ext
 
-MODRUBY_TEST=	testrb
-MODRUBY_TEST_TARGET=	test/*_test.rb
+MODRUBY_TEST=	ruby
+MODRUBY_TEST_TARGET=	-I test -e 'ARGV.each{|f| require f}' \
+			test/*_test.rb
+
+SUBST_VARS=	RUBY
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/test/redcarpet_bin_test.rb
 
 .include <bsd.port.mk>

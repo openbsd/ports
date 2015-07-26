@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_redcarpet_bin_test_rb,v 1.1 2015/07/26 03:49:06 jeremy Exp $
+--- test/redcarpet_bin_test.rb.orig	Sun Jul 19 20:02:51 2015
++++ test/redcarpet_bin_test.rb	Sun Jul 19 20:03:47 2015
+@@ -65,7 +65,7 @@ class RedcarpetBinTest < Redcarpet::TestCase
+   def run_bin(*args)
+     bin_path = File.expand_path('../../bin/redcarpet', __FILE__)
+ 
+-    IO.popen("#{bin_path} #{args.join(" ")}") do |stream|
++    IO.popen("${RUBY} #{bin_path} #{args.join(" ")}") do |stream|
+       @output = stream.read
+     end
+   end
