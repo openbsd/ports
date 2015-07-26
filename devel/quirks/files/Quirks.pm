@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.272 2015/07/23 20:24:49 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.273 2015/07/26 01:36:16 jeremy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -369,6 +369,11 @@ my $stem_extensions = {
 	'p5-Search-Xapian' => 'xapian-bindings-perl',
 	'ruby-archive-tar-minitar' => 'ruby-minitar',
 	'racket' => 'racket-minimal',
+	'ruby-passenger-standalone' => 'ruby-passenger',
+	'ruby19-passenger-standalone' => 'ruby19-passenger',
+	'ruby20-passenger-standalone' => 'ruby20-passenger',
+	'ruby21-passenger-standalone' => 'ruby21-passenger',
+	'ruby22-passenger-standalone' => 'ruby22-passenger',
 };
 
 # reasons for obsolete packages
