@@ -1,19 +1,19 @@
-$OpenBSD: patch-ext_gsl_matrix_complex_c,v 1.1 2014/09/24 22:17:39 jasper Exp $
+$OpenBSD: patch-ext_gsl_matrix_complex_c,v 1.2 2015/07/26 03:50:04 jeremy Exp $
 
 Fix conflicting types.
 
---- ext/gsl/matrix_complex.c.orig	Wed Sep 24 23:35:23 2014
-+++ ext/gsl/matrix_complex.c	Wed Sep 24 23:36:15 2014
-@@ -1524,7 +1524,7 @@ static VALUE rb_gsl_matrix_complex_indgen_singleton(in
+--- ext/gsl_native/matrix_complex.c.orig	Fri Jul  3 11:19:42 2015
++++ ext/gsl_native/matrix_complex.c	Sun Jul 19 19:03:38 2015
+@@ -1521,7 +1521,7 @@ static VALUE rb_gsl_matrix_complex_indgen_singleton(in
  // Starting with version 1.15, GSL provides a gsl_matrix_complex_equal
  // function, but it only determines absolute equality (i.e. is has no epsilon
  // argument).
 -static int gsl_matrix_complex_equal_eps(const gsl_matrix_complex *m1,
 +static int gsl_matrix_complex_equal_with_eps(const gsl_matrix_complex *m1,
-   const gsl_matrix_complex *m2, double eps)
+                                         const gsl_matrix_complex *m2, double eps)
  {
    gsl_complex z1, z2;
-@@ -1559,7 +1559,7 @@ static VALUE rb_gsl_matrix_complex_equal(int argc, VAL
+@@ -1556,7 +1556,7 @@ static VALUE rb_gsl_matrix_complex_equal(int argc, VAL
    Data_Get_Struct(obj, gsl_matrix_complex, m1);
    CHECK_MATRIX_COMPLEX(argv[0]);
    Data_Get_Struct(argv[0], gsl_matrix_complex, m2);

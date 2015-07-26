@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/07/18 21:07:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2015/07/26 03:50:04 jeremy Exp $
 
 COMMENT =	Ruby interface to GSL
 
-DISTNAME =	rb-gsl-1.16.0.4
-PKGNAME =	${DISTNAME:S/rb-//}
-REVISION =	0
+DISTNAME =	gsl-1.16.0.6
 CATEGORIES =	devel
 
 # GPLv2
@@ -19,5 +17,10 @@ RUN_DEPENDS =	devel/ruby-narray,${MODRUBY_FLAVOR}
 LIB_DEPENDS =	devel/gsl
 
 CONFIGURE_STYLE =ruby gem ext
+
+MODRUBY_TEST =	ruby
+MODRUBY_TEST_TARGET =	-I test \
+	-e 'ARGV.each{|f| require f}' \
+	test/gsl_test.rb test/gsl/*
 
 .include <bsd.port.mk>
