@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/28 21:59:01 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/26 03:31:04 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.coveralls.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile

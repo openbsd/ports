@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/28 21:59:01 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/26 03:31:04 jeremy Exp $
 
 COMMENT =		atomic reference implementation for Ruby
 
-DISTNAME =		atomic-1.1.16
+DISTNAME =		atomic-1.1.99
 CATEGORIES =		devel
 
 HOMEPAGE =		http://github.com/headius/ruby-atomic
@@ -16,8 +16,8 @@ WANTLIB +=		pthread
 
 CONFIGURE_STYLE =	ruby gem ext
 
-MODRUBY_TEST =		testrb
-MODRUBY_TEST_ENV =	RUBYOPT=-rubygems
+MODRUBY_TEST =		ruby
+MODRUBY_TEST_TARGET =	test/test_atomic.rb
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>
