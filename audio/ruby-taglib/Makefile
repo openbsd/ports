@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/28 21:59:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/26 03:18:00 jeremy Exp $
 
 COMMENT =	reads and writes metadata/tags for many audio formats
 
-VERSION =	0.6.0
+VERSION =	0.7.0
 DISTNAME =	taglib-ruby-${VERSION}
 PKGNAME =	taglib-${VERSION}
 CATEGORIES =	audio

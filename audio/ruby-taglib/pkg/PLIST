@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/28 21:59:41 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/07/26 03:18:00 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.yardopts
@@ -15,6 +15,7 @@ ${GEM_LIB}/gems/${DISTNAME}/docs/default/fulldoc/html/
 ${GEM_LIB}/gems/${DISTNAME}/docs/default/fulldoc/html/css/
 ${GEM_LIB}/gems/${DISTNAME}/docs/default/fulldoc/html/css/common.css
 ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/
+${GEM_LIB}/gems/${DISTNAME}/docs/taglib/aiff.rb
 ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/flac.rb
 ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/id3v1.rb
@@ -22,10 +23,13 @@ ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/id3v2.rb
 ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/mp4.rb
 ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/mpeg.rb
 ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/ogg.rb
+${GEM_LIB}/gems/${DISTNAME}/docs/taglib/riff.rb
 ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/vorbis.rb
+${GEM_LIB}/gems/${DISTNAME}/docs/taglib/wav.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/taglib/aiff.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib/flac.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib/id3v1.rb
@@ -35,6 +39,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/taglib/mpeg.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib/ogg.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib/vorbis.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/taglib/wav.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/taglib_aiff.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_base.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_flac.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_id3v1.so
@@ -43,6 +49,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_mp4.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_mpeg.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_ogg.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_vorbis.so
+${GEM_LIB}/gems/${DISTNAME}/lib/taglib_wav.so
 ${GEM_LIB}/gems/${DISTNAME}/taglib-ruby.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/tasks/
 ${GEM_LIB}/gems/${DISTNAME}/tasks/docs_coverage.rake
@@ -50,10 +57,14 @@ ${GEM_LIB}/gems/${DISTNAME}/tasks/ext.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/gemspec_check.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/swig.rake
 ${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/aiff_examples_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/aiff_file_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/aiff_file_write_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/base_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/data/
 ${GEM_LIB}/gems/${DISTNAME}/test/data/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/test/data/add-relative-volume.cpp
+${GEM_LIB}/gems/${DISTNAME}/test/data/aiff-sample.aiff
 ${GEM_LIB}/gems/${DISTNAME}/test/data/crash.mp3
 ${GEM_LIB}/gems/${DISTNAME}/test/data/flac-create.cpp
 ${GEM_LIB}/gems/${DISTNAME}/test/data/flac.flac
@@ -69,6 +80,10 @@ ${GEM_LIB}/gems/${DISTNAME}/test/data/sample.mp3
 ${GEM_LIB}/gems/${DISTNAME}/test/data/unicode.mp3
 ${GEM_LIB}/gems/${DISTNAME}/test/data/vorbis-create.cpp
 ${GEM_LIB}/gems/${DISTNAME}/test/data/vorbis.oga
+${GEM_LIB}/gems/${DISTNAME}/test/data/wav-create.cpp
+${GEM_LIB}/gems/${DISTNAME}/test/data/wav-dump.cpp
+${GEM_LIB}/gems/${DISTNAME}/test/data/wav-sample.wav
+${GEM_LIB}/gems/${DISTNAME}/test/file_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/fileref_open_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/fileref_properties_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/fileref_write_test.rb
@@ -82,6 +97,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/id3v2_memory_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/id3v2_relative_volume_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/id3v2_tag_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/id3v2_unicode_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/id3v2_unknown_frames_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/id3v2_write_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/mp4_file_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/mp4_file_write_test.rb
@@ -91,4 +107,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/tag_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unicode_filename_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/vorbis_file_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/vorbis_tag_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/wav_examples_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/wav_file_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/wav_file_write_test.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
