@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/10 20:48:10 okan Exp $
-@bin bin/pg_top
-@man man/man1/pg_top.1
