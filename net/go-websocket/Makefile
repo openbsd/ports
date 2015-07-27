@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2015/06/12 19:42:39 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.5 2015/07/27 21:06:22 kspillner Exp $
 
 COMMENT =		golang websocket package
 
-VERSION =		0.0
+VERSION =		0.1
 DISTNAME =		go-websocket-${VERSION}
-GH_COMMIT =		97d8e4e174133a4d1d2171380e510eb4dea8f5ea
+GH_COMMIT =		446d52dd4018303a13b36097e26d0888aca5d6ef
 GH_ACCOUNT =		golang
 GH_PROJECT =		net
-REVISION =		2
 
 CATEGORIES =		net www
 
