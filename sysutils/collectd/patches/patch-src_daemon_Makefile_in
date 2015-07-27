@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_daemon_Makefile_in,v 1.1 2015/07/27 14:53:38 landry Exp $
+--- src/daemon/Makefile.in.orig	Wed Jun  3 21:17:45 2015
++++ src/daemon/Makefile.in	Wed Jun  3 21:17:20 2015
+@@ -79,7 +79,7 @@ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-@BUILD_FEATURE_DAEMON_TRUE@am__append_1 = -DPIDFILE='"${localstatedir}/run/${PACKAGE_NAME}.pid"'
++@BUILD_FEATURE_DAEMON_TRUE@am__append_1 = -DPIDFILE='"${localstatedir}/${PACKAGE_NAME}/${PACKAGE_NAME}.pid"'
+ sbin_PROGRAMS = collectd$(EXEEXT)
+ 
+ # Link to these libraries..
+@@ -710,7 +710,7 @@ top_srcdir = @top_srcdir@
+ AM_CPPFLAGS = -I$(top_srcdir)/src -DPREFIX='"${prefix}"' \
+ 	-DCONFIGFILE='"${sysconfdir}/${PACKAGE_NAME}.conf"' \
+ 	-DLOCALSTATEDIR='"${localstatedir}"' \
+-	-DPKGLOCALSTATEDIR='"${localstatedir}/lib/${PACKAGE_NAME}"' \
++	-DPKGLOCALSTATEDIR='"${localstatedir}/${PACKAGE_NAME}"' \
+ 	$(am__append_1) -DPLUGINDIR='"${pkglibdir}"' \
+ 	-DPKGDATADIR='"${pkgdatadir}"'
+ AUTOMAKE_OPTIONS = subdir-objects

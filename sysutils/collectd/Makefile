@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/07/23 07:33:17 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2015/07/27 14:53:38 landry Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -11,6 +11,7 @@ COMMENT-memcachec =	collectd memcachec plugin
 COMMENT-nut =		collectd nut plugin
 
 V =			5.5.0
+REVISION-main =		0
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
 PKGNAME-mysql =		collectd-mysql-$V
@@ -91,8 +92,8 @@ WANTLIB += m pcap pthread ssl xml2 z statgrab gcrypt ${MODGETTEXT_WANTLIB}
 WANTLIB += protobuf-c yajl
 
 CONFIGURE_STYLE =	gnu
-# wants to use -export-symbol-regex, but that doesnt change anything at runtime?
-#USE_LIBTOOL=		gnu
+# uses -export-symbol-regex
+USE_LIBTOOL=		gnu
 LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_ARGS +=--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib \
