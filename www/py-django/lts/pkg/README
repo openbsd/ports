@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2013/05/13 08:59:26 benoit Exp $
+$OpenBSD: README,v 1.1 2015/07/27 20:01:02 rpointel Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,9 +19,9 @@ http://docs.djangoproject.com/en/dev/releases/${MODPY_EGG_VERSION}/
 Databases
 =========
 Django supports number of different databases, but you need
-to install Python database adapter(s) to use them:
-* py-mysql - for MySQL database, 
-* py-psycopg2 - for PostgreSQL database.
+to use install Python database adapter(s) to use them:
+* py3-mysqlclient - for MySQL database,
+* py3-psycopg2 - for PostgreSQL database.
 
 SQLite works out-of-the-box.
 
@@ -41,7 +41,4 @@ or configure your application server to pass this setting.
 
 Python 3
 ========
-Django 1.5 is the first Django release with support for 
-Python 3 (specifically, Python 3.2 and newer). Python 3 
-support is still considered experimental so please use at 
-your own risk. 
+Django 1.8 uses Python 3 by default.

@@ -1,4 +1,4 @@
-$OpenBSD: patch-django_core_servers_basehttp_py,v 1.6 2015/02/10 09:49:48 rpointel Exp $
+$OpenBSD: patch-django_core_servers_basehttp_py,v 1.1 2015/07/27 20:01:02 rpointel Exp $
 --- django/core/servers/basehttp.py.orig	Tue Jan 27 18:12:30 2015
 +++ django/core/servers/basehttp.py	Sat Feb  7 10:00:00 2015
 @@ -10,6 +10,7 @@ been reviewed for security issues. DON'T USE IT FOR PR

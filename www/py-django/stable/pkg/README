@@ -1,0 +1,47 @@
+$OpenBSD: README,v 1.1 2015/07/27 20:01:02 rpointel Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Documentation
+=============
+Complete project documentation may be found in:
+${PREFIX}/share/doc/${LNAME}/
+
+or online:
+http://docs.djangoproject.com/en/${MODPY_EGG_VERSION}/
+
+Release notes about the changes that occurred in this release
+may be found online at:
+http://docs.djangoproject.com/en/dev/releases/${MODPY_EGG_VERSION}/
+
+Databases
+=========
+Django supports number of different databases, but you need
+to install Python database adapter(s) to use them:
+* py-mysql - for MySQL database, 
+* py-psycopg2 - for PostgreSQL database.
+
+SQLite works out-of-the-box.
+
+UTF-8
+=====
+Django assumes that you're running UTF-8 capable system, but
+it doesn't enforce any locales, which results in regressions
+when running in an environment without enabled UTF-8 locale.
+
+This means that, unless you've got UTF-8 locale enabled for
+your profile, you need to enable UTF-8 while starting Django
+process:
+
+    $ env LC_CTYPE=en_US.UTF-8 ./manage.py runserver
+
+or configure your application server to pass this setting.
+
+Python 3
+========
+Django 1.5 is the first Django release with support for 
+Python 3 (specifically, Python 3.2 and newer). Python 3 
+support is still considered experimental so please use at 
+your own risk. 
