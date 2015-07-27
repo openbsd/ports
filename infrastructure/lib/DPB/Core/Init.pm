@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.27 2015/06/23 08:52:20 espie Exp $
+# $OpenBSD: Init.pm,v 1.28 2015/07/27 17:19:46 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -64,6 +64,7 @@ sub finalize
 		} 
 	}
 	close($fh);
+	&{$self->{extra_code}};
 	return 1;
 }
 
@@ -173,6 +174,38 @@ sub cores
 	return values %$init;
 }
 
+sub add_startup
+{
+	my ($self, $state, $logger, $core, $job, @startup) = @_;
+	my $fetch = $state->{fetch_user};
+	my $prop = $core->prop;
+	my $build = $prop->{build_user};
+
+	$job->add_tasks(DPB::Task::Fork->new(
+	    sub {
+		my $shell = shift;
+		$state->{log_user}->run_as(
+		    sub {
+			DPB::Task->redirect(
+			    $logger->logfile("init.".
+			    $core->hostname));
+		    });
+		$shell
+		    ->chdir($state->ports)
+		    ->as_root
+		    ->env(PORTSDIR => $state->ports,
+			MAKE => $state->make,
+			WRKOBJDIR => $prop->{wrkobjdir},
+			LOCKDIR => $prop->{portslockdir},
+			BUILD_USER => $build->{user},
+			BUILD_GROUP => $build->{group},
+			FETCH_USER => $fetch->{user},
+			FETCH_GROUP => $fetch->{group})
+		    ->exec(@startup);
+	    }
+	));
+}
+
 sub init_cores
 {
 	my ($self, $state) = @_;
@@ -184,39 +217,28 @@ sub init_cores
 	if (values %$init == 0) {
 		$state->fatal("configuration error: no job runner");
 	}
-	my $fetch = $state->{fetch_user};
 	for my $core (values %$init) {
-		my $build = $core->prop->{build_user};
 		my $job = DPB::Job::Init->new($logger);
-		$job->add_tasks(DPB::Task::WhoAmI->new);
+		my $t = DPB::Task::WhoAmI->new;
+		# XXX can't get these before I know who I am
+		$t->{extra_code} = sub {
+		    my $prop = $core->prop;
+		    ($prop->{wrkobjdir}, $prop->{portslockdir}) = 
+			DPB::Vars->get($core->shell, $state->{make}, 
+			"WRKOBJDIR", "LOCKDIR");
+		};
+		$job->add_tasks($t);
 		if (!defined $core->prop->{jobs}) {
 			$job->add_tasks(DPB::Task::Ncpu->new);
 		}
 		DPB::Signature->add_tasks($state->{xenocara}, $job);
+#		$self->add_startup($state, $logger, $core, $job, "/bin/sh",
+#		    $state->ports."/infrastructure/bin/default-dpb-startup");
 		if (defined $startup) {
-			my @args = split(/\s+/, $startup);
-			$job->add_tasks(DPB::Task::Fork->new(
-			    sub {
-				my $shell = shift;
-				$state->{log_user}->run_as(
-				    sub {
-					DPB::Task->redirect(
-					    $logger->logfile("init.".
-					    $core->hostname));
-				    });
-				$shell
-				    ->chdir($state->ports)
-				    ->as_root
-				    ->env(PORTSDIR => $state->ports,
-					MAKE => $state->make,
-					BUILD_USER => $build->{user},
-					BUILD_GROUP => $build->{group},
-					FETCH_USER => $fetch->{user},
-					FETCH_GROUP => $fetch->{group})
-				    ->exec(@args);
-			    }
-			));
+			$self->add_startup($state, $logger, $core, $job, 
+			    split(/\s+/, $startup));
 		}
+
 		my $tag = $state->locker->find_tag($core->hostname);
 		if (defined $tag) {
 			$core->prop->{tainted} = $tag;

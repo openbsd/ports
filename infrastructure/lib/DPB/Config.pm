@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.55 2015/07/18 08:35:37 espie Exp $
+# $OpenBSD: Config.pm,v 1.56 2015/07/27 17:19:46 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -115,10 +115,11 @@ sub parse_command_line
 	$class->setup_users($state);
 
 	($state->{ports}, $state->{localarch},
-	    $state->{distdir}, $state->{xenocara}) =
+	    $state->{distdir}, $state->{plist_db}, $state->{xenocara}) =
 		DPB::Vars->get(DPB::Host::Localhost->getshell($state), 
 		$state->make,
 		"PORTSDIR", "MACHINE_ARCH", "DISTDIR", 
+		"PLIST_DB",
 		"PORTS_BUILD_XENOCARA_TOO");
     	if (!defined $state->{ports}) {
 		$state->usage("Can't obtain vital information from the ports tree");
