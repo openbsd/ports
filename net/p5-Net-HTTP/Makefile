@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/16 15:00:24 nigel Exp $
+# $OpenBSD: Makefile,v 1.3 2015/07/28 09:53:30 nigel Exp $
 
 COMMENT =	Perl HTTP connection client
 
-DISTNAME =	Net-HTTP-6.07
+DISTNAME =	Net-HTTP-6.09
 CATEGORIES =	net
-REVISION =	0
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
