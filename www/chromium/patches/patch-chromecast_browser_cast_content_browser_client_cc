@@ -1,0 +1,12 @@
+$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.1 2015/07/28 11:30:25 robert Exp $
+--- chromecast/browser/cast_content_browser_client.cc.orig.port	Tue Jul 28 07:49:12 2015
++++ chromecast/browser/cast_content_browser_client.cc	Tue Jul 28 07:57:48 2015
+@@ -178,7 +178,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
+       command_line->AppendSwitch(switches::kEnableCmaMediaPipeline);
+   }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Necessary for accelerated 2d canvas.  By default on Linux, Chromium assumes
+   // GLES2 contexts can be lost to a power-save mode, which breaks GPU canvas
+   // apps.
