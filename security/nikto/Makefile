@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:41:26 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2015/07/28 10:07:59 nigel Exp $
 
 COMMENT =	web and CGI vulnerability scanner with SSL support
 
@@ -25,11 +25,9 @@ NO_TEST =	Yes
 PKG_ARCH =	*
 
 pre-configure:
-	perl -pi -e 's,# EXECDIR=.+,EXECDIR=${PREFIX}/share/nikto,' \
-		${WRKSRC}/nikto.conf
-	perl -pi -e 's,# DOCDIR=.+,DOCDIR=${PREFIX}/share/doc/nikto,' \
-		${WRKSRC}/nikto.conf
-	perl -pi -e 's,# DBDIR=.+,DBDIR=/var/db/nikto/databases,' \
+	sed -i 's%# EXECDIR=.*%EXECDIR=${PREFIX}/share/nikto%; \
+		s%# DOCDIR=.*%DOCDIR=${PREFIX}/share/doc/nikto%; \
+		s%# DBDIR=.*%DBDIR=/var/db/nikto/databases%' \
 		${WRKSRC}/nikto.conf
 
 do-install:
