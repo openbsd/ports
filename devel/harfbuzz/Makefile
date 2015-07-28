@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.33 2015/07/24 22:41:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2015/07/28 07:05:30 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			0.9.41
+V=			1.0.1
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
 
-SHARED_LIBS +=  harfbuzz             5.0      # 941.0
-SHARED_LIBS +=  harfbuzz-icu         0.2      # 941.0
-SHARED_LIBS +=  harfbuzz-gobject     0.0      # 941.0
+SHARED_LIBS +=  harfbuzz             5.1      # 10000.0
+SHARED_LIBS +=  harfbuzz-icu         0.2      # 10000.0
+SHARED_LIBS +=  harfbuzz-gobject     0.0      # 10000.0
 
 CATEGORIES=		devel graphics textproc
 
@@ -59,7 +59,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-gobject
 
 pre-configure:
-	perl -pi -e 's,for suffix in so,for suffix in so.${LIBharfbuzz_VERSION},,' \
+	sed -i -e 's,for suffix in so,for suffix in so.${LIBharfbuzz_VERSION},' \
 		${WRKSRC}/src/check-symbols.sh
 
 .include <bsd.port.mk>
