@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.52 2015/07/26 04:40:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.53 2015/07/28 21:55:32 jeremy Exp $
+
+# Runtime failures on i386 in IO#pos and IO#rewind
+ONLY_FOR_ARCHS = amd64
 
 SHARED_ONLY =	Yes
 
