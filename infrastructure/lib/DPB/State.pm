@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.13 2015/05/10 08:14:14 espie Exp $
+# $OpenBSD: State.pm,v 1.14 2015/07/28 09:20:54 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -120,9 +120,8 @@ sub interpret_paths
 			$scale = $1;
 		}
 
-		if (-f $file) {
-			open my $fh, '<', $file or
-			    $state->usage("Can't open $file");
+		my $fh = $state->logger->open('<', $file);
+		if (defined $fh) {
 			while (<$fh>) {
 				chomp;
 				s/\s*(?:\#.*)?$//;
