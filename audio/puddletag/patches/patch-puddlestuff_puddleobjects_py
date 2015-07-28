@@ -1,0 +1,18 @@
+$OpenBSD: patch-puddlestuff_puddleobjects_py,v 1.1 2015/07/28 11:23:53 jca Exp $
+
+Fix with recent PyQt4>=4.11.4
+
+  https://github.com/keithgg/puddletag/issues/261
+  https://github.com/keithgg/puddletag/commit/489acd2ee62eb5fbff95f8220dc8958c14871931
+
+--- puddlestuff/puddleobjects.py.orig	Mon Jul 21 19:26:46 2014
++++ puddlestuff/puddleobjects.py	Tue Jul 28 13:09:44 2015
+@@ -1418,7 +1418,7 @@ class ArtworkLabel(QGraphicsView):
+         super(ArtworkLabel, self).__init__(*args, **kwargs)
+ 
+         pal = self.palette()
+-        pal.setBrush(self.backgroundRole(), QBrush(QPalette.Window))
++        pal.setBrush(self.backgroundRole(), QBrush(pal.window()))
+         self.setAutoFillBackground(True)
+         self.setPalette(pal)
+ 
