@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/26 23:49:55 nigel Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/28 09:57:28 nigel Exp $
 
 COMMENT =	determine the locale encoding
 
-DISTNAME =	Encode-Locale-1.03
+DISTNAME =	Encode-Locale-1.05
 CATEGORIES =	textproc
 CPAN_AUTHOR =	GAAS
 
