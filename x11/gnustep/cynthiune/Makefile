@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/21 18:21:21 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2015/07/28 10:17:14 sebastia Exp $
 
 COMMENT =	audio player for GNUstep
 
 DISTNAME =	Cynthiune-1.0.0
-REVISION =	2
+REVISION =	3
 CATEGORIES +=	audio
 
 HOMEPAGE =	http://gap.nongnu.org/cynthiune/
@@ -12,12 +12,13 @@ MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
 SHARED_LIBS +=	Cynthiune	0.0
 
 MODULES =	x11/gnustep
-WANTLIB += 	FLAC ao ogg sndio vorbis vorbisfile z
+WANTLIB += 	FLAC ao ogg sndio vorbis vorbisfile z musicbrainz5
 WANTLIB += 	audiofile mad modplug tag tag_c id3tag mpcdec
 LIB_DEPENDS +=	audio/flac \
 		audio/libid3tag \
 		audio/libmad \
 		audio/libmodplug \
+		audio/libmusicbrainz5 \
 		audio/libvorbis \
 		audio/musepack \
 		audio/taglib \
