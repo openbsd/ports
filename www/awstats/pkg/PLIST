@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/05/30 13:14:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/07/28 16:47:24 rpe Exp $
 awstats/
-awstats/README.TXT
+awstats/README.md
 awstats/data/
 awstats/docs/
 awstats/docs/COPYING.TXT
@@ -31,6 +31,7 @@ awstats/docs/images/awstats.ico
 awstats/docs/images/awstats.png
 awstats/docs/images/awstats.svg
 awstats/docs/images/awstats_250x250.png
+awstats/docs/images/awstats_ban_460x270.jpg
 awstats/docs/images/awstats_ban_460x270.png
 awstats/docs/images/awstats_ban_800x160.svg
 awstats/docs/images/awstats_ban_960x540.jpg
@@ -84,6 +85,8 @@ awstats/tools/awstats_buildstaticpages.pl
 awstats/tools/awstats_configure.pl
 awstats/tools/awstats_exportlib.pl
 awstats/tools/awstats_updateall.pl
+awstats/tools/dolibarr/
+awstats/tools/dolibarr/README.md
 awstats/tools/geoip_generator.pl
 awstats/tools/httpd_conf
 @sample conf/modules.sample/
@@ -96,6 +99,7 @@ awstats/tools/nginx/awstats-fcgi.php
 awstats/tools/nginx/awstats-nginx.conf
 awstats/tools/urlaliasbuilder.pl
 awstats/tools/webmin/
+awstats/tools/webmin/README.md
 awstats/tools/webmin/awstats-2.0.wbm
 awstats/tools/xslt/
 awstats/tools/xslt/README.txt
@@ -232,6 +236,7 @@ awstats/wwwroot/cgi-bin/plugins/example/
 awstats/wwwroot/cgi-bin/plugins/example/example.pm
 awstats/wwwroot/cgi-bin/plugins/export_to_csv.pm
 awstats/wwwroot/cgi-bin/plugins/geoip.pm
+awstats/wwwroot/cgi-bin/plugins/geoip6.pm
 awstats/wwwroot/cgi-bin/plugins/geoip_asn_maxmind.pm
 awstats/wwwroot/cgi-bin/plugins/geoip_city_maxmind.pm
 awstats/wwwroot/cgi-bin/plugins/geoip_isp_maxmind.pm
@@ -730,6 +735,8 @@ awstats/wwwroot/icon/os/ibm.png
 awstats/wwwroot/icon/os/imode.png
 awstats/wwwroot/icon/os/inferno.png
 awstats/wwwroot/icon/os/ios.png
+awstats/wwwroot/icon/os/ios_ipad.png
+awstats/wwwroot/icon/os/ios_iphone.png
 awstats/wwwroot/icon/os/iphone.png
 awstats/wwwroot/icon/os/irix.png
 awstats/wwwroot/icon/os/j2me.png
@@ -752,6 +759,8 @@ awstats/wwwroot/icon/os/linuxzenwalk.png
 awstats/wwwroot/icon/os/mac.png
 awstats/wwwroot/icon/os/macintosh.png
 awstats/wwwroot/icon/os/macosx.png
+awstats/wwwroot/icon/os/macosx10.png
+awstats/wwwroot/icon/os/macosx11.png
 awstats/wwwroot/icon/os/macosx4.png
 awstats/wwwroot/icon/os/macosx5.png
 awstats/wwwroot/icon/os/macosx6.png
@@ -778,6 +787,7 @@ awstats/wwwroot/icon/os/vms.png
 awstats/wwwroot/icon/os/webtv.png
 awstats/wwwroot/icon/os/wii.png
 awstats/wwwroot/icon/os/win.png
+awstats/wwwroot/icon/os/win10.png
 awstats/wwwroot/icon/os/win16.png
 awstats/wwwroot/icon/os/win2000.png
 awstats/wwwroot/icon/os/win2003.png
@@ -785,6 +795,8 @@ awstats/wwwroot/icon/os/win2008.png
 awstats/wwwroot/icon/os/win7.png
 awstats/wwwroot/icon/os/win8.1.png
 awstats/wwwroot/icon/os/win8.png
+awstats/wwwroot/icon/os/win80.png
+awstats/wwwroot/icon/os/win81.png
 awstats/wwwroot/icon/os/win95.png
 awstats/wwwroot/icon/os/win98.png
 awstats/wwwroot/icon/os/wince.png

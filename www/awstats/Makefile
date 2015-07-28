@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2014/05/30 13:14:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/07/28 16:47:24 rpe Exp $
 
 COMMENT=		free real-time logfile analyzer
 
-DISTNAME=		awstats-7.3
-REVISION=		0
+DISTNAME=		awstats-7.4
 
 CATEGORIES=		www
 
@@ -24,31 +23,27 @@ NO_TEST=		Yes
 
 PKG_ARCH=		*
 
-PREFIX=		${VARBASE}/www
+PREFIX=			${VARBASE}/www
 INSTDIR=		${PREFIX}/awstats
 
-ACCESSLOG=		LogFile="${PREFIX}/logs/access_log"
+ACCESSLOG=		LogFile="${PREFIX}/logs/access.log"
 GEOIPDAT=		${LOCALBASE}/share/examples/GeoIP/GeoIP.dat
 GEOIPPLUGIN=		LoadPlugin="geoip GEOIP_STANDARD ${GEOIPDAT}"
 
 pre-configure:
-	@perl -pi \
-		-e "s,/usr/local/awstats,${INSTDIR},g;" \
+	sed -i -e "s,/usr/local/awstats,${INSTDIR},g;" \
 		-e "s,/var/lib/awstats,${INSTDIR}/data,g;" \
 		${WRKSRC}/docs/*.html \
-		${WRKSRC}/tools/*.pl \
-		${WRKSRC}/tools/httpd_conf \
-		${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf \
-		${WRKSRC}/wwwroot/cgi-bin/awstats.pl
-	@perl -pi \
-		-e 's,^LogFile="/var/log/httpd/mylog.log",${ACCESSLOG},g;' \
+		${WRKSRC}/tools/{httpd_conf,*.pl} \
+		${WRKSRC}/wwwroot/cgi-bin/awstats.{pl,model.conf}
+	sed -i -e 's,^LogFile="/var/log/httpd/mylog.log",${ACCESSLOG},g;' \
 		-e 's,^SiteDomain="",SiteDomain="localhost",g;' \
 		-e 's,^DirData=".",DirData="${INSTDIR}/data",g;' \
-		-e 's,^DirCgi="/cgi-bin",DirCgi="/awstats",g;' \
-		-e 's,^DirIcons="/icon",DirIcons="/awstatsicons",g;' \
+		-e 's,^DirCgi="/cgi-bin",DirCgi="/awstats/cgi-bin",g;' \
+		-e 's,^DirIcons="/icon",DirIcons="/awstats/icon",g;' \
 		-e 's,^#LoadPlugin="geoip GEOIP_STANDARD /pathto/GeoIP.dat",${GEOIPPLUGIN},g;' \
 		${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf
-	@rm ${WRKSRC}/tools/webmin/.gitignore
+	rm ${WRKSRC}/tools/webmin/.gitignore
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}/data
