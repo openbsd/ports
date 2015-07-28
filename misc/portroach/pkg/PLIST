@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/06/23 07:10:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/07/28 07:05:37 jasper Exp $
 @pkgpath misc/portscout
 bin/portroach
 ${P5SITE}/Portroach/
@@ -41,6 +41,7 @@ share/portroach/sql/
 share/portroach/sql/migrations/
 share/portroach/sql/migrations/pgsql_2.0.3.sql
 share/portroach/sql/migrations/pgsql_2.0.4.sql
+share/portroach/sql/migrations/pgsql_2.0.6.sql
 share/portroach/sql/pgsql_destroy.sql
 share/portroach/sql/pgsql_init.sql
 share/portroach/sql/sqlite_destroy.sql

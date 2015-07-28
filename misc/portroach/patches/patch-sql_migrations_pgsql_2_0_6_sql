@@ -1,0 +1,8 @@
+$OpenBSD: patch-sql_migrations_pgsql_2_0_6_sql,v 1.1 2015/07/28 07:05:37 jasper Exp $
+--- sql/migrations/pgsql_2.0.6.sql.orig	Tue Jul 28 09:04:48 2015
++++ sql/migrations/pgsql_2.0.6.sql	Tue Jul 28 09:05:01 2015
+@@ -0,0 +1,4 @@
++-- Migration for 2.0.6
++ALTER TABLE portdata ADD COLUMN homepage text;
++
++UPDATE portroach SET dbver = '2015072601';
