@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2015/04/04 15:33:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2015/07/28 07:25:57 ajacoutot Exp $
 
-# XXX updating requires Thread Local Storage support
+BROKEN=		does not work with owncloud-8.1.x;
+BROKEN +=	needs to be replaced by wip net/owncloudclient
 
 SHARED_ONLY=	Yes
 
