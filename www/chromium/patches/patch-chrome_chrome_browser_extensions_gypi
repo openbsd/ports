@@ -1,7 +1,15 @@
-$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.20 2015/07/23 13:44:04 robert Exp $
---- chrome/chrome_browser_extensions.gypi.orig.port	Wed Jul 15 22:29:59 2015
-+++ chrome/chrome_browser_extensions.gypi	Wed Jul 22 08:37:29 2015
-@@ -955,6 +955,11 @@
+$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.21 2015/07/28 10:06:07 sthen Exp $
+--- chrome/chrome_browser_extensions.gypi.orig.port	Fri Jul 24 21:26:02 2015
++++ chrome/chrome_browser_extensions.gypi	Mon Jul 27 22:31:20 2015
+@@ -907,6 +907,7 @@
+         'installer_util',
+         'safe_browsing_proto',
+         '../components/components.gyp:copresence',
++        '../components/components.gyp:dom_distiller_core',
+         '../components/components.gyp:onc_component',
+         '../components/components.gyp:proximity_auth',
+         '../components/components.gyp:update_client',
+@@ -955,6 +956,11 @@
          '<@(chrome_browser_extensions_enabled_sources)',
        ],
        'conditions': [
@@ -13,7 +21,7 @@ $OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.20 2015/07/23 13:44:04
          ['chromeos==1', {
            'include_dirs': [
              '../third_party/libjingle/source',
-@@ -989,7 +994,7 @@
+@@ -989,7 +995,7 @@
              '../ui/keyboard/keyboard.gyp:keyboard_resources',
            ],
          }],
