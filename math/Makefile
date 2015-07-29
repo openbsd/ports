@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2015/07/20 23:13:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2015/07/29 16:24:02 feinerer Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -102,7 +102,6 @@
      SUBDIR += py-sympy
      SUBDIR += qhull
      SUBDIR += qrupdate
-     SUBDIR += qtoctave
      SUBDIR += sc
      SUBDIR += suitesparse
      SUBDIR += udunits
