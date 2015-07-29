@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2015/07/23 18:51:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2015/07/29 08:41:10 ajacoutot Exp $
 
 COMMENT=		graphical diff and merge tool
 
 GNOME_VERSION=		3.14.0
 GNOME_PROJECT=		meld
 SUBST_VARS=		GNOME_VERSION
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		textproc
 
@@ -25,6 +25,9 @@ MODPY_ADJ_FILES=	bin/meld
 
 RUN_DEPENDS=		devel/py-gobject3 \
 			x11/gtksourceview3
+
+# org.gnome.desktop.interface
+RUN_DEPENDS +=		devel/gsettings-desktop-schemas
 
 NO_TEST=		yes
 
