@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/07/18 20:25:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/07/29 04:04:04 jsg Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -13,13 +13,21 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 MULTI_PACKAGES=	-main -data
 
 N=		redeclipse
-V=		1.5.2
+V=		1.5.3
 PKGNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}
 
-DISTFILES=	redeclipse-{base/archive/v}${V}${EXTRACT_SUFX} \
-		redeclipse-data-{data/archive/v}${V}${EXTRACT_SUFX}
+DISTFILES=	redeclipse-{base/archive/v}${V}${EXTRACT_SUFX}
+
+SM=	acerspyro actors appleflap blendbrush caustics crosshairs elyvisions \
+	fonts freezurbern john jojo jwin luckystrike maps mayhem mikeplus64 \
+	misc nobiax particles philipk projectiles props skyboxes sounds \
+	textures torley trak ulukai unnamed vanities vegetation weapons wicked 
+
+.for MOD in ${SM}
+DISTFILES+=	redeclipse-data-${MOD}-{${MOD}/archive/v}${V}${EXTRACT_SUFX}
+.endfor
 
 PKG_ARCH-data=	*
 
@@ -45,9 +53,11 @@ NO_TEST=		Yes
 INSTALL_TARGET=		system-install
 
 post-extract:
-	rm ${WRKDIR}/data-${V}/.gitattributes
-	rm ${WRKDIR}/data-${V}/.gitignore
-	rmdir ${WRKDIR}/base-${V}/data
-	mv ${WRKDIR}/data-${V} ${WRKDIR}/base-${V}/data
+.for MOD in ${SM}
+	rm -f ${WRKDIR}/${MOD}-${V}/.gitattributes
+	rm -f ${WRKDIR}/${MOD}-${V}/.gitignore
+	rmdir ${WRKDIR}/base-${V}/data/${MOD}
+	mv ${WRKDIR}/${MOD}-${V} ${WRKDIR}/base-${V}/data/${MOD}
+.endfor
 
 .include <bsd.port.mk>
