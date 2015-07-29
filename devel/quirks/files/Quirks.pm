@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.274 2015/07/28 13:13:13 okan Exp $
+# $OpenBSD: Quirks.pm,v 1.275 2015/07/29 16:26:55 feinerer Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -590,6 +590,7 @@ my $obsolete_reason = {
 	'redhat_libc5' => 2,
 	'p5-Net-TCLink' => 2,
 	'pg_top' => 5,
+	'qtoctave' => 3,
 };
 
 # ->is_base_system($handle, $state):
