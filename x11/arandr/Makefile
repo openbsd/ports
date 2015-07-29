@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/18 21:51:11 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/29 12:13:17 ajacoutot Exp $
 
 COMMENT =		xrandr gui
 MODPY_EGG_VERSION =	0.1.7.1
@@ -16,7 +16,8 @@ MASTER_SITES =		http://christian.amsuess.com/tools/arandr/files/
 MODULES =		lang/python
 RUN_DEPENDS =		x11/py-gtk2 \
 			devel/desktop-file-utils
-BUILD_DEPENDS =		textproc/py-docutils
+BUILD_DEPENDS =		devel/gettext-tools \
+			textproc/py-docutils
 
 NO_TEST =		Yes
 
