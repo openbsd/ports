@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.228 2015/07/28 11:30:25 robert Exp $
+# $OpenBSD: Makefile,v 1.229 2015/07/29 11:36:38 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			44.0.2403.107
+V=			44.0.2403.125
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -158,6 +157,13 @@ do-configure:
 		${GYP_DEFS} "--depth=${WRKSRC}"
 
 do-build:
+	# Build all the resources as the first step to avoid build failures
+	# due to internal dependency issues.
+	@cd ${WRKSRC}/out/${BUILDTYPE} && \
+	for _r in $$(ninja -t targets | grep 'resources: phony' | cut -d ':' -f1); do \
+		cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
+			-j ${MAKE_JOBS} -C out/${BUILDTYPE} $${_r}; \
+	done
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
 
