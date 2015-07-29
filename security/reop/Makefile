@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2014/08/31 14:21:12 jturner Exp $
+# $OpenBSD: Makefile,v 1.4 2015/07/29 17:39:49 jturner Exp $
 
 COMMENT =		create and verify cryptographic signatures
 
 VERSION =		2.1.0
+REVISION =		0
 DISTNAME =		reop-${VERSION}
 CATEGORIES =		security sysutils
 
 MAINTAINER =		James Turner <james@calminferno.net>
 
-HOMEPAGE =		https://github.com/tedu/reop/
-MASTER_SITES =		https://github.com/tedu/reop/releases/download/${VERSION}/
+HOMEPAGE =		http://www.tedunangst.com/flak/post/reop
+MASTER_SITES =		http://www.tedunangst.com/flak/files/
 EXTRACT_SUFX =		.tgz
 
 # ISC
