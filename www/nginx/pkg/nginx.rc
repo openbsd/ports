@@ -1,11 +1,11 @@
 #!/bin/sh
 #
-# $OpenBSD: nginx.rc,v 1.11 2015/07/15 22:35:43 ajacoutot Exp $
+# $OpenBSD: nginx.rc,v 1.12 2015/07/29 17:21:11 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/nginx"
 
 . /etc/rc.d/rc.subr
 
-pexp="nginx: master process ${daemon} ${daemon_flags:+ ${daemon_flags}}"
+pexp="nginx: master process ${daemon}${daemon_flags:+ ${daemon_flags}}"
 
 rc_cmd $1
