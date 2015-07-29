@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2015/07/04 17:06:33 kurt Exp $
+# $OpenBSD: Makefile,v 1.27 2015/07/29 07:59:36 ajacoutot Exp $
 
 COMMENT=	software project management and comprehension tool
 
-V=		3.2.3
+V=		3.3.1
 DISTNAME=	apache-maven-$V
 PKGNAME=	${DISTNAME:S/apache-//}
-REVISION=	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://maven.apache.org/
@@ -16,11 +15,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_APACHE:=maven/maven-3/${V}/binaries/} \
 		http://archive.apache.org/dist/maven/binaries/
 
-
 EXTRACT_SUFX=	-bin.tar.gz
 
 MODULES=	java
-MODJAVA_VER=	1.6+
+MODJAVA_VER=	1.7+
 RUN_DEPENDS=	java/javaPathHelper
 
 NO_BUILD=	Yes
@@ -37,7 +35,8 @@ do-install:
 	cd ${WRKDIST} && \
 		tar -cf - bin boot lib `find * -prune -type f` | \
 		tar -C ${PREFIX}/maven -xf -
-	find ${WRKINST} -name \*.orig -or -name \*.bat -or -name \*.exe | \
+	find ${WRKINST} \
+		-name \*.orig -o -name \*.bat -o -name \*.cmd -o -name \*.exe | \
 		xargs rm
 	${INSTALL_DATA_DIR} ${SAMPLEDIR}/logging/
 	${INSTALL_DATA} ${WRKSRC}/conf/logging/* ${SAMPLEDIR}/logging/
