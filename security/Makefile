@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.377 2015/07/19 21:01:55 kili Exp $
+# $OpenBSD: Makefile,v 1.378 2015/07/30 06:09:38 kirby Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -259,6 +259,7 @@
      SUBDIR += qca-tls
      SUBDIR += qca2
      SUBDIR += qoauth
+     SUBDIR += qtkeychain
      SUBDIR += radiusniff
      SUBDIR += rarcrack
      SUBDIR += rdp
