@@ -1,0 +1,134 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/30 06:14:14 kirby Exp $
+@conflict ocsync-*
+@conflict mirall-*
+@pkgpath net/ocsync
+@pkgpath net/mirall
+@bin bin/owncloud
+@bin bin/owncloudcmd
+include/httpbf.h
+include/owncloudsync/
+include/owncloudsync/creds/
+include/owncloudsync/creds/abstractcredentials.h
+include/owncloudsync/creds/httpcredentials.h
+include/owncloudsync/mirall/
+include/owncloudsync/mirall/account.h
+include/owncloudsync/mirall/configfile.h
+include/owncloudsync/mirall/networkjobs.h
+include/owncloudsync/mirall/progressdispatcher.h
+include/owncloudsync/mirall/syncengine.h
+include/owncloudsync/mirall/syncfileitem.h
+include/owncloudsync/mirall/syncjournaldb.h
+include/owncloudsync/mirall/syncresult.h
+lib/libhttpbf.a
+@lib lib/libowncloudsync.so.${LIBowncloudsync_VERSION}
+lib/owncloud/
+@lib lib/owncloud/libocsync.so.${LIBocsync_VERSION}
+share/applications/owncloud.desktop
+share/examples/mirall/
+share/examples/mirall/ownCloud/
+@sample ${SYSCONFDIR}/ownCloud/
+share/examples/mirall/ownCloud/sync-exclude.lst
+@sample ${SYSCONFDIR}/ownCloud/sync-exclude.lst
+share/icons/hicolor/128x128/apps/ownCloud_error.png
+share/icons/hicolor/128x128/apps/ownCloud_error_shared.png
+share/icons/hicolor/128x128/apps/ownCloud_ok.png
+share/icons/hicolor/128x128/apps/ownCloud_ok_shared.png
+share/icons/hicolor/128x128/apps/ownCloud_sync.png
+share/icons/hicolor/128x128/apps/ownCloud_sync_shared.png
+share/icons/hicolor/128x128/apps/ownCloud_warn.png
+share/icons/hicolor/128x128/apps/ownCloud_warn_shared.png
+share/icons/hicolor/128x128/apps/owncloud.png
+share/icons/hicolor/16x16/apps/ownCloud_error.png
+share/icons/hicolor/16x16/apps/ownCloud_error_shared.png
+share/icons/hicolor/16x16/apps/ownCloud_ok.png
+share/icons/hicolor/16x16/apps/ownCloud_ok_shared.png
+share/icons/hicolor/16x16/apps/ownCloud_sync.png
+share/icons/hicolor/16x16/apps/ownCloud_sync_shared.png
+share/icons/hicolor/16x16/apps/ownCloud_warn.png
+share/icons/hicolor/16x16/apps/ownCloud_warn_shared.png
+share/icons/hicolor/22x22/apps/owncloud.png
+share/icons/hicolor/256x256/apps/ownCloud_error.png
+share/icons/hicolor/256x256/apps/ownCloud_error_shared.png
+share/icons/hicolor/256x256/apps/ownCloud_ok.png
+share/icons/hicolor/256x256/apps/ownCloud_ok_shared.png
+share/icons/hicolor/256x256/apps/ownCloud_sync.png
+share/icons/hicolor/256x256/apps/ownCloud_sync_shared.png
+share/icons/hicolor/256x256/apps/ownCloud_warn.png
+share/icons/hicolor/256x256/apps/ownCloud_warn_shared.png
+share/icons/hicolor/256x256/apps/owncloud.png
+share/icons/hicolor/32x32/apps/ownCloud_error.png
+share/icons/hicolor/32x32/apps/ownCloud_error_shared.png
+share/icons/hicolor/32x32/apps/ownCloud_ok.png
+share/icons/hicolor/32x32/apps/ownCloud_ok_shared.png
+share/icons/hicolor/32x32/apps/ownCloud_sync.png
+share/icons/hicolor/32x32/apps/ownCloud_sync_shared.png
+share/icons/hicolor/32x32/apps/ownCloud_warn.png
+share/icons/hicolor/32x32/apps/ownCloud_warn_shared.png
+share/icons/hicolor/32x32/apps/owncloud.png
+share/icons/hicolor/48x48/apps/ownCloud_error.png
+share/icons/hicolor/48x48/apps/ownCloud_error_shared.png
+share/icons/hicolor/48x48/apps/ownCloud_ok.png
+share/icons/hicolor/48x48/apps/ownCloud_ok_shared.png
+share/icons/hicolor/48x48/apps/ownCloud_sync.png
+share/icons/hicolor/48x48/apps/ownCloud_sync_shared.png
+share/icons/hicolor/48x48/apps/ownCloud_warn.png
+share/icons/hicolor/48x48/apps/ownCloud_warn_shared.png
+share/icons/hicolor/48x48/apps/owncloud.png
+share/icons/hicolor/512x512/apps/owncloud.png
+share/icons/hicolor/64x64/apps/ownCloud_error.png
+share/icons/hicolor/64x64/apps/ownCloud_error_shared.png
+share/icons/hicolor/64x64/apps/ownCloud_ok.png
+share/icons/hicolor/64x64/apps/ownCloud_ok_shared.png
+share/icons/hicolor/64x64/apps/ownCloud_sync.png
+share/icons/hicolor/64x64/apps/ownCloud_sync_shared.png
+share/icons/hicolor/64x64/apps/ownCloud_warn.png
+share/icons/hicolor/64x64/apps/ownCloud_warn_shared.png
+share/icons/hicolor/64x64/apps/owncloud.png
+share/icons/hicolor/72x72/apps/ownCloud_error.png
+share/icons/hicolor/72x72/apps/ownCloud_error_shared.png
+share/icons/hicolor/72x72/apps/ownCloud_ok.png
+share/icons/hicolor/72x72/apps/ownCloud_ok_shared.png
+share/icons/hicolor/72x72/apps/ownCloud_sync.png
+share/icons/hicolor/72x72/apps/ownCloud_sync_shared.png
+share/icons/hicolor/72x72/apps/ownCloud_warn.png
+share/icons/hicolor/72x72/apps/ownCloud_warn_shared.png
+share/nautilus-python/
+share/nautilus-python/extensions/
+share/nautilus-python/extensions/syncstate.py
+share/owncloud/
+share/owncloud/i18n/
+share/owncloud/i18n/client_TW.qm
+share/owncloud/i18n/client_ca.qm
+share/owncloud/i18n/client_cs.qm
+share/owncloud/i18n/client_de.qm
+share/owncloud/i18n/client_el.qm
+share/owncloud/i18n/client_en.qm
+share/owncloud/i18n/client_es.qm
+share/owncloud/i18n/client_es_AR.qm
+share/owncloud/i18n/client_et.qm
+share/owncloud/i18n/client_eu.qm
+share/owncloud/i18n/client_fa.qm
+share/owncloud/i18n/client_fi.qm
+share/owncloud/i18n/client_fr.qm
+share/owncloud/i18n/client_gl.qm
+share/owncloud/i18n/client_hu.qm
+share/owncloud/i18n/client_it.qm
+share/owncloud/i18n/client_ja.qm
+share/owncloud/i18n/client_nl.qm
+share/owncloud/i18n/client_pl.qm
+share/owncloud/i18n/client_pt.qm
+share/owncloud/i18n/client_pt_BR.qm
+share/owncloud/i18n/client_ru.qm
+share/owncloud/i18n/client_sk.qm
+share/owncloud/i18n/client_sl.qm
+share/owncloud/i18n/client_sr.qm
+share/owncloud/i18n/client_sv.qm
+share/owncloud/i18n/client_th.qm
+share/owncloud/i18n/client_tr.qm
+share/owncloud/i18n/client_uk.qm
+share/owncloud/i18n/client_zh_CN.qm
+share/owncloud/i18n/client_zh_TW.qm
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_libsync_utility_cpp,v 1.1.1.1 2015/07/30 06:14:14 kirby Exp $
+--- src/libsync/utility.cpp.orig	Mon Jun 22 17:28:35 2015
++++ src/libsync/utility.cpp	Thu Jun 25 16:47:04 2015
+@@ -182,14 +182,14 @@ void Utility::setLaunchOnStartup(const QString &appNam
+ 
+ qint64 Utility::freeDiskSpace(const QString &path, bool *ok)
+ {
+-#if defined(Q_OS_MAC) || defined(Q_OS_FREEBSD) || defined(Q_OS_FREEBSD_KERNEL) || defined(Q_OS_NETBSD)
++#if defined(Q_OS_MAC) || defined(Q_OS_FREEBSD) || defined(Q_OS_FREEBSD_KERNEL) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+     struct statvfs stat;
+     statvfs(path.toUtf8().data(), &stat);
+     return (qint64) stat.f_bavail * stat.f_frsize;
+ #elif defined(Q_OS_UNIX)
+     Q_UNUSED(ok)
+-    struct statvfs64 stat;
+-    statvfs64(path.toUtf8().data(), &stat);
++    struct statvfs stat;
++    statvfs(path.toUtf8().data(), &stat);
+     return (qint64) stat.f_bavail * stat.f_frsize;
+ #elif defined(Q_OS_WIN)
+     ULARGE_INTEGER freeBytes;
+@@ -389,7 +389,7 @@ bool Utility::isLinux()
+ 
+ bool Utility::isBSD()
+ {
+-#if defined(Q_OS_FREEBSD) || defined(Q_OS_NETBSD)
++#if defined(Q_OS_FREEBSD) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+     return true;
+ #else
+     return false;

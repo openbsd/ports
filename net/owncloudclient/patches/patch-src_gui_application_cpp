@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_gui_application_cpp,v 1.1.1.1 2015/07/30 06:14:14 kirby Exp $
+
+Disable update check on statrup.
+
+--- src/gui/application.cpp.orig	Mon Jun 22 17:28:35 2015
++++ src/gui/application.cpp	Thu Jun 25 16:03:58 2015
+@@ -177,12 +177,6 @@ Application::Application(int &argc, char **argv) :
+     // Also check immediatly
+     QTimer::singleShot( 0, this, SLOT( slotCheckConnection() ));
+ 
+-    if( cfg.skipUpdateCheck() ) {
+-        qDebug() << Q_FUNC_INFO << "Skipping update check";
+-    } else {
+-        QTimer::singleShot( 3000, this, SLOT( slotStartUpdateDetector() ));
+-    }
+-
+     connect (this, SIGNAL(aboutToQuit()), SLOT(slotCleanup()));
+ 
+ }

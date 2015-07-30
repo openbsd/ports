@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_libsync_CMakeLists_txt,v 1.1.1.1 2015/07/30 06:14:14 kirby Exp $
+--- src/libsync/CMakeLists.txt.orig	Mon Jun 22 17:28:35 2015
++++ src/libsync/CMakeLists.txt	Thu Jul  2 19:01:31 2015
+@@ -22,11 +22,11 @@ if ( APPLE )
+     )
+ endif()
+ 
+-IF(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" OR ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD")
++IF(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD|NetBSD|OpenBSD")
+     list(APPEND OS_SPECIFIC_LINK_LIBRARIES
+ 	inotify
+     )
+-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" OR ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD")
++ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD|NetBSD|OpenBSD")
+ 
+ if(SPARKLE_FOUND AND NOT BUILD_LIBRARIES_ONLY)
+     list (APPEND OS_SPECIFIC_LINK_LIBRARIES ${SPARKLE_LIBRARY})
+@@ -133,6 +133,11 @@ if(QTKEYCHAIN_FOUND OR QT5KEYCHAIN_FOUND)
+     include_directories(${QTKEYCHAIN_INCLUDE_DIR})
+ endif()
+ 
++if(INOTIFY_FOUND)
++    include_directories(${INOTIFY_INCLUDE_DIR})
++    link_directories(${INOTIFY_LIBRARY_DIR})
++endif()
++
+ if(NEON_FOUND)
+     list(APPEND libsync_LINK_TARGETS ${NEON_LIBRARIES} httpbf)
+     include_directories(${NEON_INCLUDE_DIRS})
+@@ -171,6 +176,10 @@ set_target_properties( ${synclib_NAME} PROPERTIES
+ 	INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${LIB_INSTALL_DIR}/${APPLICATION_EXECUTABLE}" )
+ 
+ target_link_libraries(${synclib_NAME} ${libsync_LINK_TARGETS} )
++
++if(INOTIFY_FOUND)
++    target_link_libraries(${synclib_NAME} ${INOTIFY_LIBRARY} )
++endif()
+ 
+ if(BUILD_LIBRARIES_ONLY)
+     #add_library(${synclib_NAME}_static STATIC ${libsync_SRCS} ${syncMoc})

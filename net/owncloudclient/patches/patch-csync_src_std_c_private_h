@@ -1,0 +1,15 @@
+$OpenBSD: patch-csync_src_std_c_private_h,v 1.1.1.1 2015/07/30 06:14:14 kirby Exp $
+
+Disable Thread-Local-Storage
+
+--- csync/src/std/c_private.h.orig	Tue Jul 28 11:58:41 2015
++++ csync/src/std/c_private.h	Tue Jul 28 11:59:23 2015
+@@ -148,7 +148,7 @@ int c_close_iconv(void);
+ #endif
+ 
+ /* FIXME: Implement TLS for OS X */
+-#if defined(__GNUC__) && !defined(__APPLE__)
++#if defined(__GNUC__) && !defined(__APPLE__) && !defined(__OpenBSD__)
+ # define CSYNC_THREAD __thread
+ #elif defined(_MSC_VER)
+ # define CSYNC_THREAD __declspec(thread)
