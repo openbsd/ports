@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/30 06:07:09 kirby Exp $
+include/qtkeychain/
+include/qtkeychain/keychain.h
+include/qtkeychain/qkeychain_export.h
+lib/cmake/
+lib/cmake/QtKeychain/
+lib/cmake/QtKeychain/QtKeychainConfig.cmake
+lib/cmake/QtKeychain/QtKeychainConfigVersion.cmake
+lib/cmake/QtKeychain/QtKeychainLibraryDepends${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/QtKeychain/QtKeychainLibraryDepends.cmake
+@lib lib/libqtkeychain.so.${LIBqtkeychain_VERSION}
+lib/qt4/
+lib/qt4/translations/
+lib/qt4/translations/qtkeychain_de.qm
+lib/qt4/translations/qtkeychain_ro.qm
