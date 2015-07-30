@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.14 2015/07/18 05:49:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/07/30 07:53:26 jasper Exp $
 
 COMMENT=		tool for managing events and logs
 
-V=			1.5.2
+V=			1.5.3
 DISTNAME=		logstash-$V
 PKGNAME=		logstash-${V:S/-/./}
 EPOCH=			0
-REVISION=		1
 
 MASTER_SITES=		https://download.elastic.co/logstash/logstash/
 
 MODULES=		java
-MODJAVA_VER=		1.7+
+MODJAVA_VER=		1.8+
 MODJAVA_JRERUN=		Yes
 
 RUN_DEPENDS=		java/javaPathHelper \
-			lang/jruby
+			lang/jruby \
+			shells/bash
 
 NO_TEST=		Yes
 
@@ -28,10 +28,12 @@ SUBST_VARS=		JFFI_ARCH
 # get to "building". Wipe the jruby vendor directory as we'll later link to
 # the system jruby.
 do-build:
-	-rm -r ${WRKSRC}/vendor/jruby
+	-rm -r ${WRKSRC}/vendor/jruby/lib/jni
 	${SUBST_CMD} ${WRKSRC}/bin/logstash.lib.sh
 	@# apply hammer to fixup weird modes
 	find ${WRKSRC}/vendor/ -type f -exec chmod 0644 {} \;
+	find ${WRKSRC} -name '*.orig' -print0 | xargs -0r rm
+	chmod 755 ${WRKSRC}/vendor/jruby/bin/*
 
 do-install:
 	${INSTALL_DATA_DIR} ${LS_BASE}/{bin,lib,vendor}/
@@ -40,7 +42,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/$b ${LS_BASE}/bin/
 .endfor
 	cd ${WRKSRC} && cp -R lib vendor ${LS_BASE}
-	cd ${LS_BASE}/vendor/ && ln -sf ${LOCALBASE}/jruby
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/logstash/
 	${SUBST_CMD} -m 0644 -c ${FILESDIR}/logstash.conf \
 		${PREFIX}/share/examples/logstash/logstash.conf
