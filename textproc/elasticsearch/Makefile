@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/07/18 00:59:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/07/30 07:54:51 jasper Exp $
 
 COMMENT=		distributed RESTful search and analytics
 
-DISTNAME=		elasticsearch-1.6.0
+DISTNAME=		elasticsearch-1.7.1
 CATEGORIES=		textproc
-REVISION=		1
 
 HOMEPAGE=		https://www.elastic.co/products/elasticsearch
 
@@ -17,7 +16,7 @@ MASTER_SITES=		http://distfiles.nl/ \
 			https://download.elasticsearch.org/elasticsearch/elasticsearch/
 
 MODULES=		java
-MODJAVA_VER=		1.7+
+MODJAVA_VER=		1.8+
 MODJAVA_JRERUN=		Yes
 
 RUN_DEPENDS=		java/javaPathHelper
