@@ -1,18 +1,0 @@
-$OpenBSD: patch-hackerlab_vu_vu-virtual-null_h,v 1.1 2010/05/19 23:29:14 espie Exp $
---- hackerlab/vu/vu-virtual-null.h.orig	Thu May 20 01:20:33 2010
-+++ hackerlab/vu/vu-virtual-null.h	Thu May 20 01:20:58 2010
-@@ -16,14 +16,6 @@
- 
- 
- 
--/****************************************************************
-- * vu_virtual_null_vtable
-- *
-- * An in-process emulation of /dev/null.
-- *
-- */
--extern struct vu_fs_discipline vu_virtual_null_vtable;
--
- 
- /* automatically generated __STDC__ prototypes */
- extern int vu_make_virtual_null_fd (int * errn, int flags);

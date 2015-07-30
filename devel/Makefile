@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1371 2015/07/28 11:20:20 jca Exp $
+# $OpenBSD: Makefile,v 1.1372 2015/07/30 18:33:58 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1506,7 +1506,6 @@
      SUBDIR += tkcvs
      SUBDIR += tkdiff
      SUBDIR += tklib
-     SUBDIR += tla
      SUBDIR += tmake
      SUBDIR += tortoisehg
      SUBDIR += ucpp
