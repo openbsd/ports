@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/04/04 09:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2015/07/30 11:28:31 ajacoutot Exp $
 
 COMMENT=		GTD organizer for GNOME
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		https://launchpad.net/gtg/trunk/${MODPY_EGG_VERSION}/+download/
 
 MODULES=		lang/python
+
+BUILD_DEPENDS=		devel/gettext-tools
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-configobj \
