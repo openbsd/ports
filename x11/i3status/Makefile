@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2015/04/04 08:55:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2015/07/30 08:11:53 robert Exp $
 
 ONLY_FOR_ARCHS=		${APM_ARCHS}
 
 COMMENT=		generate a statusbar for use with i3/xmobar/dzen2
 
 DISTNAME=		i3status-2.9
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11 sysutils
 
 HOMEPAGE=		http://i3wm.org/i3status/
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB += c confuse ossaudio yajl
+WANTLIB += c confuse yajl
 
 USE_GMAKE=		Yes
 

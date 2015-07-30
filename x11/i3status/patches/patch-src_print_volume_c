@@ -1,0 +1,97 @@
+$OpenBSD: patch-src_print_volume_c,v 1.6 2015/07/30 08:11:53 robert Exp $
+
+Use mixer(4) directly and move away from ossaudio.
+This fixes the volume display where there is no hardware
+button available and also fixes showing the mute status.
+
+--- src/print_volume.c.orig	Wed Jul 29 15:31:44 2015
++++ src/print_volume.c	Wed Jul 29 15:31:47 2015
+@@ -20,7 +20,8 @@
+ #ifdef __OpenBSD__
+ #include <fcntl.h>
+ #include <unistd.h>
+-#include <soundcard.h>
++#include <sys/audioio.h>
++#include <sys/ioctl.h>
+ #endif
+ 
+ #include "i3status.h"
+@@ -145,6 +146,70 @@ void print_volume(yajl_gen json_gen, char *buffer, con
+     if (mixer_idx > 0)
+         free(mixerpath);
+ 
++#if defined(__OpenBSD__)
++    int oclass_idx = -1, master_idx = -1, master_mute_idx = -1;
++    mixer_devinfo_t devinfo, devinfo2;
++    mixer_ctrl_t vinfo;
++
++    devinfo.index = 0;
++    while (ioctl(mixfd, AUDIO_MIXER_DEVINFO, &devinfo) >= 0) {
++        if (devinfo.type != AUDIO_MIXER_CLASS) {
++            devinfo.index++;
++            continue;
++        }
++        if (strncmp(devinfo.label.name, AudioCoutputs, MAX_AUDIO_DEV_LEN) == 0)
++            oclass_idx = devinfo.index;
++
++        devinfo.index++;
++    }
++
++    devinfo2.index = 0;
++    while (ioctl(mixfd, AUDIO_MIXER_DEVINFO, &devinfo2) >= 0) {
++        if ((devinfo2.type == AUDIO_MIXER_VALUE)
++        &&  (devinfo2.mixer_class == oclass_idx)
++        &&  (strncmp(devinfo2.label.name, AudioNmaster, MAX_AUDIO_DEV_LEN) == 0))
++            master_idx = devinfo2.index;
++
++        if ((devinfo2.type == AUDIO_MIXER_ENUM)
++        &&  (devinfo2.mixer_class == oclass_idx)
++        &&  (strncmp(devinfo2.label.name, AudioNmute, MAX_AUDIO_DEV_LEN) == 0))
++            master_mute_idx = devinfo2.index;
++
++        devinfo2.index++;
++    }
++
++    if (master_idx == -1)
++        goto out;
++
++    devinfo.index = master_idx;
++    if (ioctl(mixfd, AUDIO_MIXER_DEVINFO, &devinfo) == -1)
++        goto out;
++
++    vinfo.dev = master_idx;
++    vinfo.type = AUDIO_MIXER_VALUE;
++    if (ioctl(mixfd, AUDIO_MIXER_READ, &vinfo) == -1)
++        goto out;
++
++    if (AUDIO_MAX_GAIN != 100) {
++        float avgf = ((float)vinfo.un.value.level[AUDIO_MIXER_LEVEL_MONO] / AUDIO_MAX_GAIN) * 100;
++        vol = (int)avgf;
++        vol = (avgf - vol < 0.5 ? vol : (vol + 1));
++    } else {
++        vol = (int)vinfo.un.value.level[AUDIO_MIXER_LEVEL_MONO];
++    }
++
++    vinfo.dev = master_mute_idx;
++    vinfo.type = AUDIO_MIXER_ENUM;
++    if (ioctl(mixfd, AUDIO_MIXER_READ, &vinfo) == -1)
++        goto out;
++
++    if (master_mute_idx != -1 && vinfo.un.ord) {
++        START_COLOR("color_degraded");
++        fmt = fmt_muted;
++        pbval = 0;
++    }
++
++#else
+     if (ioctl(mixfd, SOUND_MIXER_READ_DEVMASK, &devmask) == -1)
+         return;
+     if (ioctl(mixfd, MIXER_READ(0), &vol) == -1)
+@@ -154,6 +219,7 @@ void print_volume(yajl_gen json_gen, char *buffer, con
+         START_COLOR("color_degraded");
+         pbval = 0;
+     }
++#endif
+ 
+     const char *walk = fmt;
+     for (; *walk != '\0'; walk++) {

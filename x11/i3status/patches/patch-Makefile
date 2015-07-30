@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile,v 1.6 2015/07/30 08:11:53 robert Exp $
+
+We do not need to link to libossaudio due to moving
+away from it in the mixer code.
+
+--- Makefile.orig	Wed Jul 29 20:16:31 2015
++++ Makefile	Wed Jul 29 20:16:38 2015
+@@ -39,10 +39,6 @@ CFLAGS+=-I/usr/local/include/
+ LDFLAGS+=-L/usr/local/lib/
+ endif
+ 
+-ifeq ($(OS),OpenBSD)
+-LIBS+=-lossaudio
+-endif
+-
+ ifeq ($(OS), NetBSD)
+ LIBS+= -lprop
+ endif
