@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.11 2013/05/14 07:17:54 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2015/07/30 07:49:33 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM?=	Yes
 PERMIT_PACKAGE_FTP?=	Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
-MASTER_SITES?=		http://64.34.161.181/download/${MAJOR_VERSION}/sources/
+MASTER_SITES_NX=	http://code.x2go.org/releases/source/nx-libs/
 DIST_SUBDIR=		nx
 
 USE_GMAKE?=		Yes

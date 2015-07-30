@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/04/21 12:59:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/07/30 07:49:33 jasper Exp $
 
 COMMENT=	OpenSSH client and daemon for NX
 
@@ -10,6 +10,8 @@ REVISION=	6
 CATEGORIES=	net
 
 WANTLIB += Xcomp c crypto jpeg m png stdc++ util z
+
+MASTER_SITES=	http://distfiles.nl/
 
 LIB_DEPENDS=	x11/nx/nxcomp
 
