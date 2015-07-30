@@ -17,12 +17,11 @@ namespace facter { namespace facts { namespace openbsd {
     memory_resolver::data memory_resolver::collect_data(collection& facts)
     {
         data result;
-        size_t len;
 
         // Get the system page size
         int pagesize_mib[] = { CTL_HW, HW_PAGESIZE};
         int page_size = 0;
-        len = sizeof(page_size);
+        size_t len = sizeof(page_size);
         if (sysctl(pagesize_mib, 2, &page_size, &len, nullptr, 0) == -1) {
             LOG_DEBUG("sysctl failed: %1% (%2%): system page size is unknown.", strerror(errno), errno);
         } else {
@@ -34,8 +33,8 @@ namespace facter { namespace facts { namespace openbsd {
                 }
 
                 // Should we account for the buffer cache?
-                result.mem_total = (uint64_t) uvmexp.npages << uvmexp.pageshift;
-                result.mem_free = (uint64_t) uvmexp.free << uvmexp.pageshift;
+                result.mem_total = static_cast<u_int64_t>(uvmexp.npages) << uvmexp.pageshift;
+                result.mem_free = static_cast<u_int64_t>(uvmexp.free) << uvmexp.pageshift;
         }
 
 #if 0
