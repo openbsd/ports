@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.17 2014/03/13 17:33:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2015/07/30 16:05:51 sthen Exp $
 
 COMMENT=		Apache LDAP based virtual hosts module
 
-REVISION=		10
+REVISION=		11
 DISTNAME=		mod_ldapvhost-1.0.2
 CATEGORIES=		www
 
-HOMEPAGE=		https://www.msys.ch/products/unix/mod_ldapvhost/
-
-MASTER_SITES=		http://www.etc.msys.ch/software/mod_ldapvhost/
+MASTER_SITES=		http://spacehopper.org/mirrors/
 EXTRACT_SUFX=		.tgz
+
 MODULES+=		apache-module
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += lber ldap
 

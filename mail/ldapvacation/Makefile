@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2014/01/23 16:56:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/07/30 16:05:51 sthen Exp $
 
 COMMENT=	return 'I am not here' indication stored in a LDAP tree
 
 DISTNAME=	ldapvacation-1.1.3
-REVISION =	4
+REVISION =	5
 
-CATEGORIES=    	mail
-
-HOMEPAGE=	http://www.etc.msys.ch/software/ldapvacation/
+CATEGORIES=	mail
 
 SHARED_ONLY=	Yes
 
@@ -16,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c pthread ldap_r>=8 lber>=8
 
-MASTER_SITES=  	${HOMEPAGE}
+MASTER_SITES=	http://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz
 
 NO_TEST=	Yes

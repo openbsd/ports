@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2015/07/30 16:05:51 sthen Exp $
 
 COMMENT=	sudoku puzzle solver with cli, gui, and web ui
 
 DISTNAME=	sudoku-solver-1.0.1
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=    	games www x11
 
-HOMEPAGE=	http://www.etc.msys.ch/software/sudoku/
-
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
+
 WANTLIB=		Xt c crypto m pthread z fcgi Xm
 
-MASTER_SITES=  	${HOMEPAGE}
+MASTER_SITES=	http://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz
 
 MODULES=	devel/gettext

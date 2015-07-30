@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2014/01/23 17:46:02 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2015/07/30 16:05:51 sthen Exp $
 
 COMMENT=	LDAP enabled MDA to deliver mails as SMS
 
 DISTNAME=	smsmail-1.0.2
-REVISION=	4
+REVISION=	5
 
-CATEGORIES=    	mail
-
-HOMEPAGE=	http://www.etc.msys.ch/software/smsmail/
+CATEGORIES=	mail
 
 SHARED_ONLY=	Yes
 
@@ -16,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c pthread ldap_r>=8 lber>=8
 
-MASTER_SITES=  	${HOMEPAGE}
+MASTER_SITES=	http://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	databases/openldap
