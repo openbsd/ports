@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2015/06/18 21:18:04 kirby Exp $
+# $OpenBSD: Makefile,v 1.88 2015/07/30 23:08:10 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -61,6 +61,7 @@ CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/nut \
 			--with-statepath=/var/db/nut \
 			--with-user=_ups \
 			--with-group=_ups \
+			--without-ipmi \
 			CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS}"
 
