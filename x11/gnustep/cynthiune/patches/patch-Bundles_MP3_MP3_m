@@ -1,0 +1,16 @@
+$OpenBSD: patch-Bundles_MP3_MP3_m,v 1.1 2015/07/30 20:24:58 sebastia Exp $
+
+Fix from upstream, prevent crasher on playing MP3,
+svn rev 3064
+
+--- Bundles/MP3/MP3.m.orig	Thu Jul 30 19:47:29 2015
++++ Bundles/MP3/MP3.m	Thu Jul 30 19:47:41 2015
+@@ -118,7 +118,7 @@ calcInputRemain (MadStream *stream, unsigned char *iBu
+           inputRemain = 0;
+         }
+       else
+-        memcpy (iBuffer, stream->next_frame, inputRemain);
++        memmove (iBuffer, stream->next_frame, inputRemain);
+     }
+   else
+     inputRemain = 0;
