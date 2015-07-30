@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.918 2015/07/23 20:22:09 jca Exp $
+# $OpenBSD: Makefile,v 1.919 2015/07/30 06:17:27 kirby Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -231,7 +231,6 @@
      SUBDIR += microblog-purple
      SUBDIR += minbif
      SUBDIR += miniupnp
-     SUBDIR += mirall
      SUBDIR += mirmon
      SUBDIR += mirror
      SUBDIR += mktorrent
@@ -302,6 +301,7 @@
      SUBDIR += ortp
      SUBDIR += osrtspproxy
      SUBDIR += owamp
+     SUBDIR += owncloudclient
      SUBDIR += p5-AnyEvent-IRC
      SUBDIR += p5-BSD-Socket-Splice
      SUBDIR += p5-Bot-BasicBot
