@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/07/22 19:32:51 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2015/07/30 18:15:11 ajacoutot Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -77,7 +77,8 @@ CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 INSTALL_TARGET =	install install-man
 
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS =${CONFIGURE_SHARED} \
+		--without-hdf5 \
 		--without-cfitsio \
 		--without-netcdf \
 		--without-xerces \
