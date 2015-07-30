@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.38 2015/07/17 17:39:54 ajacoutot Exp $
+$OpenBSD: README,v 1.39 2015/07/30 16:04:38 kirby Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -82,8 +82,8 @@ Apache2 configuration for ownCloud is stored under:
 It needs to be included by adding the following to ${SYSCONFDIR}/apache2/httpd2.conf:
     Include ${PREFIX}/conf/modules.sample/httpd-owncloud.conf
 
-PHP  
----              
+PHP
+---
 Default PHP values for Apache2 are set under:
     ${TINSTDIR}/config/.htaccess
 
@@ -157,8 +157,8 @@ access is done over https instead of http.
 
 Synchronization
 ===============
-The "mirall" package (net/mirall) is a graphical (QT) application to
-synchronize with an ownCloud server.
+The "owncloudclient" package (net/owncloudclient) is a graphical (QT)
+application to synchronize with an ownCloud server.
 
 Apps and dependencies
 =====================
