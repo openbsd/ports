@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/03/16 18:07:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2015/07/30 14:16:47 sthen Exp $
 
 # needs machine/sysarch.h & machine/pio.h
 ONLY_FOR_ARCHS=	amd64 arm i386
@@ -24,7 +24,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c gpg-error m pthread gcrypt>=12
 
-MASTER_SITES=	ftp://ftp.zresearch.com/pub/freeipmi/${V}/
+MASTER_SITES=	http://spacehopper.org/mirrors/
+PORTROACH=	site:http://ftp.gnu.org/gnu/freeipmi/
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	devel/argp-standalone
