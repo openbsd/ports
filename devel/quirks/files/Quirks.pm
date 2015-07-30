@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.275 2015/07/29 16:26:55 feinerer Exp $
+# $OpenBSD: Quirks.pm,v 1.276 2015/07/30 06:25:37 kirby Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -374,6 +374,7 @@ my $stem_extensions = {
 	'ruby20-passenger-standalone' => 'ruby20-passenger',
 	'ruby21-passenger-standalone' => 'ruby21-passenger',
 	'ruby22-passenger-standalone' => 'ruby22-passenger',
+	'mirall' => 'owncloudclient',
 };
 
 # reasons for obsolete packages
@@ -591,6 +592,7 @@ my $obsolete_reason = {
 	'p5-Net-TCLink' => 2,
 	'pg_top' => 5,
 	'qtoctave' => 3,
+	'ocsync' => 6,
 };
 
 # ->is_base_system($handle, $state):
