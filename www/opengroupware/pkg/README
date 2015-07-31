@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.3 2015/07/18 21:08:28 ajacoutot Exp $
+# $OpenBSD: README,v 1.4 2015/07/31 11:48:22 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,22 +10,24 @@ The OpenGroupware system user
 The system user and group intended to run the OpenGroupware application server
 is called _opengroupware. The users home directory is ${VARBASE}/opengroupware.
 
-OpenGroupware with httpd from OpenBSD base
-==========================================
+OpenGroupware with apache-httpd-openbsd
+=======================================
 
-Since the httpd 1.3 configuration is slightly different than the Apache 2
-configuration explained in the OGo WIKI, here is an example. It's assumed
-that the httpd and OGo run on the same host. The httpd listens on port 80,
-and OGo is listening on its default port 20000.
+OpenGroupware requires the mod_ngobjweb module used with Apache. The one
+that comes with the OpenGroupware package is built against apache-httpd-openbsd
+package, which is based on Apache 1.3. Since the httpd 1.3 configuration is
+slightly different than the Apache 2 configuration explained in the OGo WIKI,
+here is an example. It's assumed that the httpd and OGo run on the same host.
+The httpd listens on port 80, and OGo is listening on its default port 20000.
 
-The OpenBSD httpd runs in a chroot environment, therefore you have to
+Per default the web server runs in a chroot environment. Therefore you have to
 copy some files into the server's chroot environment:
 
 # mkdir -p ${VARBASE}/www/htdocs/OpenGroupware55.woa
 # cp -R ${TRUEPREFIX}/share/opengroupware/www \
 	${VARBASE}/www/htdocs/OpenGroupware55.woa/WebServerResources
 
-OpenGroupware needs the ngobjweb Apache module loaded. Enable it
+The web server needs the ngobjweb Apache module loaded. Enable it
 by running:
 
 # ${TRUEPREFIX}/sbin/mod_ngobjweb-enable
