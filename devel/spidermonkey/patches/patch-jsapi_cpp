@@ -1,10 +1,12 @@
-$OpenBSD: patch-jsapi_cpp,v 1.1 2015/03/19 19:27:57 landry Exp $
---- jsapi.cpp.orig	Fri Dec  6 15:52:35 2013
-+++ jsapi.cpp	Mon Mar 16 07:11:01 2015
-@@ -866,6 +866,8 @@ JSRuntime::JSRuntime(JSUseHelperThreads useHelperThrea
+$OpenBSD: patch-jsapi_cpp,v 1.2 2015/07/31 11:45:14 jca Exp $
+--- jsapi.cpp.orig	Fri Dec  6 23:52:35 2013
++++ jsapi.cpp	Fri Jul 31 13:40:31 2015
+@@ -865,7 +865,9 @@ JSRuntime::JSRuntime(JSUseHelperThreads useHelperThrea
+     PodZero(&atomState);
  
  #if JS_STACK_GROWTH_DIRECTION > 0
-     nativeStackLimit = UINTPTR_MAX;
+-    nativeStackLimit = UINTPTR_MAX;
++    mainThread.nativeStackLimit = UINTPTR_MAX;
 +#else
 +    mainThread.nativeStackLimit = 0;
  #endif
