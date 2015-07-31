@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_dns_c,v 1.1 2014/09/25 20:10:13 landry Exp $
+$OpenBSD: patch-src_dns_c,v 1.2 2015/07/31 12:05:36 landry Exp $
 We dont install nor need pcap-bpf.h on openbsd
---- src/dns.c.orig	Mon Sep 22 17:26:48 2014
-+++ src/dns.c	Mon Sep 22 17:26:52 2014
-@@ -33,7 +33,6 @@
+--- src/dns.c.orig	Tue Mar 10 15:14:45 2015
++++ src/dns.c	Fri Jul 31 13:55:59 2015
+@@ -34,7 +34,6 @@
  #include <poll.h>
  
  #include <pcap.h>

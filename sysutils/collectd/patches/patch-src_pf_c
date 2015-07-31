@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_pf_c,v 1.1 2015/01/23 13:01:16 naddy Exp $
---- src/pf.c.orig	Sun Jan 26 09:09:14 2014
-+++ src/pf.c	Fri Jan 23 13:22:31 2015
-@@ -29,6 +29,7 @@
+$OpenBSD: patch-src_pf_c,v 1.2 2015/07/31 12:05:36 landry Exp $
+--- src/pf.c.orig	Tue Mar 10 15:14:45 2015
++++ src/pf.c	Fri Jul 31 13:55:59 2015
+@@ -33,6 +33,7 @@
  # include <net/if.h>
  #endif
  
