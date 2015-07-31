@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_gui_application_cpp,v 1.1.1.1 2015/07/30 06:14:14 kirby Exp $
+$OpenBSD: patch-src_gui_application_cpp,v 1.2 2015/07/31 08:00:42 ajacoutot Exp $
 
-Disable update check on statrup.
+Disable update check on startup.
 
 --- src/gui/application.cpp.orig	Mon Jun 22 17:28:35 2015
 +++ src/gui/application.cpp	Thu Jun 25 16:03:58 2015

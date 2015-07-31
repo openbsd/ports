@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/30 06:14:14 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2015/07/31 08:00:42 ajacoutot Exp $
 
 COMMENT =		owncloud sync client
 
@@ -41,6 +41,7 @@ CONFIGURE_ARGS +=	-DBUILD_WITH_QT4=ON \
 				-L${LOCALBASE}/lib/inotify -linotify \
 				-Wl,-rpath=${LOCALBASE}/lib/inotify"
 
+# see post-extract
 CFLAGS += 		 -DHAVE_ICONV -DHAVE_ICONV_H
 CXXFLAGS += 		 -DHAVE_ICONV -DHAVE_ICONV_H
 
@@ -49,6 +50,7 @@ NO_TEST =		Yes
 post-extract:
 	mv ${WRKSRC}/cmake/modules/FindIconv.cmake \
 		${WRKSRC}/cmake/modules/FindIconv_local.cmake
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
 	mv ${WRKINST}/etc ${PREFIX}/share/examples/mirall
