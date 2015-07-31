@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_tcpconns_c,v 1.7 2015/07/31 12:06:18 landry Exp $
+
+https://github.com/collectd/collectd/commit/924c9af78d535f4920d73a2cd8e5090747479f0f
+
+--- src/tcpconns.c.orig	Wed May 20 14:04:47 2015
++++ src/tcpconns.c	Fri Jul 31 13:58:04 2015
+@@ -981,7 +981,9 @@ static int conn_read (void)
+ #endif
+   {
+     /* Read the pcb pointed to by `next' into `inpcb' */
+-    kread ((u_long) next, &inpcb, sizeof (inpcb));
++    status = kread ((u_long) next, &inpcb, sizeof (inpcb));
++    if (status != 0)
++      return (-1);
+ 
+     /* Advance `next' */
+ #if defined(__OpenBSD__) || (defined(__NetBSD_Version__) && __NetBSD_Version__ > 699002700)
+@@ -1004,7 +1006,9 @@ static int conn_read (void)
+       continue;
+ #endif
+ 
+-    kread ((u_long) inpcb.inp_ppcb, &tcpcb, sizeof (tcpcb));
++    status = kread ((u_long) inpcb.inp_ppcb, &tcpcb, sizeof (tcpcb));
++    if (status != 0)
++      return (-1);
+     conn_handle_ports (ntohs(inpcb.inp_lport), ntohs(inpcb.inp_fport), tcpcb.t_state);
+   } /* while (next != head) */
+ 
