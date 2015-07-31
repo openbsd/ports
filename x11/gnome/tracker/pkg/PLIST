@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2015/05/04 11:37:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2015/07/31 18:39:30 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @conflict tracker-*
@@ -119,6 +119,7 @@ share/appdata/tracker-needle.appdata.xml
 share/appdata/tracker-preferences.appdata.xml
 share/applications/tracker-needle.desktop
 share/applications/tracker-preferences.desktop
+share/bash-completion/completions/tracker
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Applications.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Extract.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Files.service
@@ -126,10 +127,6 @@ share/dbus-1/services/org.freedesktop.Tracker1.Miner.Userguides.service
 share/dbus-1/services/org.freedesktop.Tracker1.Writeback.service
 share/dbus-1/services/org.freedesktop.Tracker1.service
 share/examples/meta-tracker/
-share/examples/meta-tracker/bash_completion.d/
-@sample ${SYSCONFDIR}/bash_completion.d/
-share/examples/meta-tracker/bash_completion.d/tracker-prompt.sh
-@sample ${SYSCONFDIR}/bash_completion.d/tracker-prompt.sh
 share/examples/meta-tracker/xdg/
 @sample ${SYSCONFDIR}/xdg/
 share/examples/meta-tracker/xdg/autostart/
@@ -158,7 +155,6 @@ share/gtk-doc/html/libtracker-control/annotation-glossary.html
 share/gtk-doc/html/libtracker-control/ch01.html
 share/gtk-doc/html/libtracker-control/home.png
 share/gtk-doc/html/libtracker-control/index.html
-share/gtk-doc/html/libtracker-control/index.sgml
 share/gtk-doc/html/libtracker-control/left-insensitive.png
 share/gtk-doc/html/libtracker-control/left.png
 share/gtk-doc/html/libtracker-control/libtracker-control.devhelp2
@@ -183,7 +179,6 @@ share/gtk-doc/html/libtracker-miner/ch04.html
 share/gtk-doc/html/libtracker-miner/ch05.html
 share/gtk-doc/html/libtracker-miner/home.png
 share/gtk-doc/html/libtracker-miner/index.html
-share/gtk-doc/html/libtracker-miner/index.sgml
 share/gtk-doc/html/libtracker-miner/left-insensitive.png
 share/gtk-doc/html/libtracker-miner/left.png
 share/gtk-doc/html/libtracker-miner/libtracker-miner-Enumerations.html
@@ -208,7 +203,6 @@ share/gtk-doc/html/libtracker-sparql/TrackerSparqlCursor.html
 share/gtk-doc/html/libtracker-sparql/annotation-glossary.html
 share/gtk-doc/html/libtracker-sparql/home.png
 share/gtk-doc/html/libtracker-sparql/index.html
-share/gtk-doc/html/libtracker-sparql/index.sgml
 share/gtk-doc/html/libtracker-sparql/left-insensitive.png
 share/gtk-doc/html/libtracker-sparql/left.png
 share/gtk-doc/html/libtracker-sparql/libtracker-sparql-Utilities.html
@@ -238,6 +232,7 @@ share/icons/hicolor/scalable/apps/tracker.svg
 share/locale/ar/LC_MESSAGES/tracker.mo
 share/locale/as/LC_MESSAGES/tracker.mo
 share/locale/be@latin/LC_MESSAGES/tracker.mo
+share/locale/bg/LC_MESSAGES/tracker.mo
 share/locale/bs/LC_MESSAGES/tracker.mo
 share/locale/ca/LC_MESSAGES/tracker.mo
 share/locale/ca@valencia/LC_MESSAGES/tracker.mo
