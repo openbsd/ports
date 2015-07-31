@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2015/07/31 12:40:11 juanfra Exp $
+# $OpenBSD: Makefile,v 1.4 2015/07/31 14:37:34 naddy Exp $
 
 # The next version will work on other architectures again
-ONLY_FOR_ARCH =	amd64 i386
+ONLY_FOR_ARCHS =	amd64 i386
 
 SHARED_ONLY =	Yes
 
