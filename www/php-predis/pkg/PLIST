@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/01/03 19:07:17 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/08/01 08:46:34 dcoppa Exp $
 @group daemon
 pear/
 pear/lib/
@@ -50,6 +50,7 @@ pear/lib/Predis/Command/HashScan.php
 pear/lib/Predis/Command/HashSet.php
 pear/lib/Predis/Command/HashSetMultiple.php
 pear/lib/Predis/Command/HashSetPreserve.php
+pear/lib/Predis/Command/HashStringLength.php
 pear/lib/Predis/Command/HashValues.php
 pear/lib/Predis/Command/HyperLogLogAdd.php
 pear/lib/Predis/Command/HyperLogLogCount.php
@@ -60,6 +61,7 @@ pear/lib/Predis/Command/KeyExists.php
 pear/lib/Predis/Command/KeyExpire.php
 pear/lib/Predis/Command/KeyExpireAt.php
 pear/lib/Predis/Command/KeyKeys.php
+pear/lib/Predis/Command/KeyMigrate.php
 pear/lib/Predis/Command/KeyMove.php
 pear/lib/Predis/Command/KeyPersist.php
 pear/lib/Predis/Command/KeyPreciseExpire.php
@@ -184,6 +186,7 @@ pear/lib/Predis/Command/ZSetRemoveRangeByLex.php
 pear/lib/Predis/Command/ZSetRemoveRangeByRank.php
 pear/lib/Predis/Command/ZSetRemoveRangeByScore.php
 pear/lib/Predis/Command/ZSetReverseRange.php
+pear/lib/Predis/Command/ZSetReverseRangeByLex.php
 pear/lib/Predis/Command/ZSetReverseRangeByScore.php
 pear/lib/Predis/Command/ZSetReverseRank.php
 pear/lib/Predis/Command/ZSetScan.php
