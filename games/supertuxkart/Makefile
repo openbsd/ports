@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/28 15:47:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/08/01 23:07:30 pascal Exp $
+
+ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		kart racing game with OSS mascots
 
