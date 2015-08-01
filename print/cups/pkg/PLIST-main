@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2015/06/09 07:39:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2015/08/01 07:18:12 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
@@ -82,6 +82,7 @@ libexec/cups/notifier/
 @man man/man5/client.conf.5
 @man man/man5/cups-files.conf.5
 @man man/man5/cups-snmp.conf.5
+@man man/man5/cupsd-logs.5
 @man man/man5/cupsd.conf.5
 @man man/man5/ipptoolfile.5
 @man man/man5/mailto.conf.5
@@ -103,7 +104,6 @@ libexec/cups/notifier/
 @man man/man8/cupsaddsmb.8
 @man man/man8/cupsctl.8
 @man man/man8/cupsd-helper.8
-@man man/man8/cupsd-logs.8
 @man man/man8/cupsd.8
 @man man/man8/cupsdisable.8
 @man man/man8/cupsenable.8
