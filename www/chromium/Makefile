@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.229 2015/07/29 11:36:38 robert Exp $
+# $OpenBSD: Makefile,v 1.230 2015/08/01 11:07:29 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -160,7 +160,7 @@ do-build:
 	# Build all the resources as the first step to avoid build failures
 	# due to internal dependency issues.
 	@cd ${WRKSRC}/out/${BUILDTYPE} && \
-	for _r in $$(ninja -t targets | grep 'resources: phony' | cut -d ':' -f1); do \
+	for _r in suggestions $$(ninja -t targets | grep 'resources: phony' | cut -d ':' -f1); do \
 		cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 			-j ${MAKE_JOBS} -C out/${BUILDTYPE} $${_r}; \
 	done
