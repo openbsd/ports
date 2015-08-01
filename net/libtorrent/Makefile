@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2015/07/31 16:08:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2015/08/01 08:13:01 mpi Exp $
 
 COMMENT=		BitTorrent library written in C++
 
@@ -11,7 +11,7 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 DISTNAME=		libtorrent-0.13.4
 EPOCH=			0
-REVISION=		0
+REVISION=		1
 SHARED_LIBS +=  	torrent 21.0	# .18.0
 CATEGORIES=		net devel
 
@@ -32,14 +32,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-static \
 			--with-kqueue \
 			--without-epoll \
+			--disable-instrumentation \
 			--disable-debug
-
-.include <bsd.port.arch.mk>
-
-# for 64-bit atomic ops
-.if ${ARCH:Mi386}
-CFLAGS+=	-march=i586 -fomit-frame-pointer
-CXXFLAGS+=	-march=i586 -fomit-frame-pointer
-.endif
 
 .include <bsd.port.mk>
