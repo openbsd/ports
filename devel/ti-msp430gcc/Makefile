@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2015/07/21 16:24:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/02 12:57:12 jasper Exp $
 
 COMMENT =		TI's open source compiler for MSP430 microcontrollers
 
 V =			3_03_04_00
-REVISION =		0
+REVISION =		1
 PKGNAME =		ti-msp430gcc-${V:S/_/./g}
 GCC_V =			4.9.1
-SHARED_LIBS +=  lto_plugin                0.0 # 0.0
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.ti.com/tool/msp430-gcc-opensource
@@ -33,7 +32,8 @@ CONFIGURE_ARGS =	--target=msp430-none-elf \
 			--disable-nls \
 			--with-mpc=${LOCALBASE} \
 			--with-mpfr=${LOCALBASE} \
-			--with-gmp=${LOCALBASE}
+			--with-gmp=${LOCALBASE} \
+			--disable-lto
 # Prevents building gdbtk, and a whole bunch of patching
 CONFIGURE_ARGS +=	--without-x
 CONFIGURE_ENV =		TARGET=msp430-none-elf

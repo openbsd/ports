@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/07/21 16:24:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/08/02 12:57:12 jasper Exp $
 @conflict msp430-binutils-*
 @conflict msp430-gcc-*
 @conflict msp430-gdb-*
@@ -280,10 +280,7 @@ libexec/gcc/msp430-none-elf/${GCC_V}/install-tools/fixinc.sh
 @bin libexec/gcc/msp430-none-elf/${GCC_V}/install-tools/fixincl
 libexec/gcc/msp430-none-elf/${GCC_V}/install-tools/mkheaders
 libexec/gcc/msp430-none-elf/${GCC_V}/install-tools/mkinstalldirs
-libexec/gcc/msp430-none-elf/${GCC_V}/liblto_plugin.la
-@lib libexec/gcc/msp430-none-elf/${GCC_V}/liblto_plugin.so.${LIBlto_plugin_VERSION}
 @bin libexec/gcc/msp430-none-elf/${GCC_V}/lto-wrapper
-@bin libexec/gcc/msp430-none-elf/${GCC_V}/lto1
 libexec/gcc/msp430-none-elf/${GCC_V}/plugin/
 @bin libexec/gcc/msp430-none-elf/${GCC_V}/plugin/gengtype
 @man man/man1/msp430-addr2line.1
