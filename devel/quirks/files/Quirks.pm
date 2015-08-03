@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.277 2015/07/30 18:36:27 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.278 2015/08/03 10:05:38 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -594,6 +594,7 @@ my $obsolete_reason = {
 	'qtoctave' => 3,
 	'ocsync' => 6,
 	'tla' => 3,
+	'googlecl' => 3,
 };
 
 # ->is_base_system($handle, $state):
