@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2015/06/19 13:09:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2015/08/03 10:03:23 jasper Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -16,7 +16,6 @@
      SUBDIR += gbirthday
      SUBDIR += glabels
      SUBDIR += gnucash
-     SUBDIR += googlecl
      SUBDIR += grisbi
      SUBDIR += gtg
      SUBDIR += homebank
