@@ -1,0 +1,15 @@
+$OpenBSD: patch-boost_atomic_detail_platform_hpp,v 1.1 2015/08/03 18:29:30 jca Exp $
+
+The gcc_sparc backend doesn't build.
+
+--- boost/atomic/detail/platform.hpp.orig	Wed Jul 29 20:47:08 2015
++++ boost/atomic/detail/platform.hpp	Wed Jul 29 21:51:19 2015
+@@ -59,7 +59,7 @@
+ 
+ #define BOOST_ATOMIC_DETAIL_PLATFORM gcc_arm
+ 
+-#elif defined(__GNUC__) && defined(__sparc_v9__)
++#elif defined(__GNUC__) && defined(__sparc_v9__) && defined(notyet)
+ 
+ #define BOOST_ATOMIC_DETAIL_PLATFORM gcc_sparc
+ 

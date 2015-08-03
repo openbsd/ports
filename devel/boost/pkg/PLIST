@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/07/01 08:41:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/08/03 18:29:30 jca Exp $
 @bin bin/b2
 @bin bin/bjam
 include/boost/
@@ -11559,12 +11559,6 @@ lib/libboost_container-mt.a
 @lib lib/libboost_container-mt.so.${LIBboost_container-mt_VERSION}
 lib/libboost_container.a
 @lib lib/libboost_container.so.${LIBboost_container_VERSION}
-lib/libboost_context-mt.a
-@lib lib/libboost_context-mt.so.${LIBboost_context-mt_VERSION}
-lib/libboost_coroutine-mt.a
-@lib lib/libboost_coroutine-mt.so.${LIBboost_coroutine-mt_VERSION}
-lib/libboost_coroutine.a
-@lib lib/libboost_coroutine.so.${LIBboost_coroutine_VERSION}
 lib/libboost_date_time-mt.a
 @lib lib/libboost_date_time-mt.so.${LIBboost_date_time-mt_VERSION}
 lib/libboost_date_time.a
