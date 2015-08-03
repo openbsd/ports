@@ -1,4 +1,4 @@
-# $OpenBSD: postgresql.port.mk,v 1.4 2015/07/19 12:42:20 zhuk Exp $ 
+# $OpenBSD: postgresql.port.mk,v 1.5 2015/08/03 07:42:30 kirby Exp $
 #
 # Helps testing PostgreSQL-based software, no B/L/R-DEPS here.
 

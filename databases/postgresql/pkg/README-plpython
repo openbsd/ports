@@ -1,3 +1,9 @@
+$OpenBSD: README-plpython,v 1.2 2015/08/03 07:42:30 kirby Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 pl/python requires pthreads in order to work.  OpenBSD does not allow
 shared objects that link to pthreads to be opened via dlopen if the
 executable program does not link to pthreads.  So to use pl/python, you
@@ -6,4 +12,4 @@ this is adding the following login class to login.conf:
 
 postgresql:\
         :setenv=LD_PRELOAD=libpthread.so:\
-        :tc=daemon: 
+        :tc=daemon:
