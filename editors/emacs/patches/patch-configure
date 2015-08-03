@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.4 2015/08/03 09:46:51 jca Exp $
+
+- Don't try to run the tputs conftest, it segfaults for unknown reasons
+  on at least hppa and powerpc.
+
+--- configure.orig	Wed Apr  8 19:11:56 2015
++++ configure	Sun Aug  2 19:26:24 2015
+@@ -15466,7 +15466,7 @@ else
+       msg=$LIBS_TERMCAP
+       LIBS="$LIBS_TERMCAP $LIBS"
+     fi
+-    if test "$cross_compiling" = yes; then :
++    if true; then :
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
