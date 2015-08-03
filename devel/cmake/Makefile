@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2015/08/01 11:48:16 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.131 2015/08/03 06:11:50 dcoppa Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -18,8 +18,8 @@ HOMEPAGE =	http://www.cmake.org/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
-MASTER_SITES =	${HOMEPAGE}files/v${VER:R}/ \
-		${HOMEPAGE}files/v3.3/
+MASTER_SITES =	${HOMEPAGE}files/v3.3/ \
+		${HOMEPAGE}files/v${VER:R}/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
