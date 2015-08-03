@@ -9,7 +9,7 @@ _BRIDGE=bridge0
 [ "$ETHER" ] || ETHER=${_ETHER}
 
 if test `id -u` -ne 0; then
-	SUDO=sudo
+	SUDO=doas
 fi
 
 echo -n " {$1 ($BRIDGE <-> $ETHER)"

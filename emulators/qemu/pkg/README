@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.10 2013/01/03 08:30:54 brad Exp $
+$OpenBSD: README,v 1.11 2015/08/03 19:14:56 jung Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -96,27 +96,28 @@ $OpenBSD: README,v 1.10 2013/01/03 08:30:54 brad Exp $
    descriptor to QEMU. The tun(4) interface should preferrably be
    configured before starting QEMU:
 
-    $ sudo ifconfig tun0 192.168.0.254 link0
+    $ doas ifconfig tun0 192.168.0.254 link0
 
    The interface can also be configured as part of a bridge(4), in
    which case the ip address can be omitted:
 
-    $ sudo ifconfig tun0 link0
-    $ sudo ifconfig bridge0 add tun0 add em0 up
+    $ doas ifconfig tun0 link0
+    $ doas ifconfig bridge0 add tun0 add em0 up
 
    The tunnel and bridge interfaces can also be configured at system
    startup by editing /etc/hostname.tunN and /etc/hostname.bridgeN,
    respectively (see hostname.if(5)).
 
-   After configuring the virtual network we can use sudo to let
-   root open the tunnel device and then use sudo again to drop
+   After configuring the virtual network we can use doas to let
+   root open the tunnel device and then use doas again to drop
    privileges and start QEMU:
 
-    $ sudo sh -c "sudo -u $USER qemu-system-i386 -nographic -net nic \
+    $ doas sh -c "doas -u $USER qemu-system-i386 -nographic -net nic \
 	-net tap,fd=3 -no-fd-bootchk -hda virtual.img 3<>/dev/tun0"
 
-   NOTE: sudo calls closefrom(2).  In order to have more than one
-         fd passed tap interface, a line to sudoers akin to:
+   NOTE: if you use sudo instead of doas, remember that sudo calls
+         closefrom(2).  In order to have more than one fd passed tap
+         interface, a line to sudoers akin to:
 
 		Defaults closefrom_override
 
@@ -250,7 +251,7 @@ $OpenBSD: README,v 1.10 2013/01/03 08:30:54 brad Exp $
             ifconfig tun0 link0
             ifconfig bridge101 add trunk101 add tun0 up
 
-            sh -c "sudo -u $USER \
+            sh -c "doas -u $USER \
                 ${TRUEPREFIX}/bin/qemu-system-i386 \
                 -daemonize \
                 -nographic \

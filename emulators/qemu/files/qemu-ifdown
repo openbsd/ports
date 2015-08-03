@@ -8,7 +8,7 @@ _BRIDGE=bridge0
 [ "$ETHER" ] || ETHER=${_ETHER}
 
 if test `id -u` -ne 0; then
-	SUDO=sudo
+	SUDO=doas
 fi
 
 $SUDO ifconfig $BRIDGE del $1 > /dev/null 2>&1
