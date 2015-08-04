@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2015/06/05 12:20:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2015/08/04 06:43:23 ajacoutot Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -37,7 +37,7 @@ RUN_DEPENDS =
 # bison needed if .y files are patched
 BUILD_DEPENDS =		devel/bison \
 			devel/flex \
-			devel/gettext
+			devel/gettext-tools
 
 commonLIB_DEPENDS =	x11/wxWidgets>=2.8.12 \
 			net/libupnp>=1.6.6
