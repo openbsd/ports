@@ -1,4 +1,0 @@
-Cyphertite is a tar-like secure remote deduplicating archiver.
-It deduplicates, compresses, and encrypts data prior to transmission
-providing total privacy while keeping chattering down on the wire.
-It seamlessly supports both IPv6 and IPv4 on a variety of platforms.
