@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/30 07:56:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2015/08/04 09:00:50 jasper Exp $
 
 COMMENT =		collect and display system facts
 
@@ -39,7 +39,7 @@ SUBST_VARS +=		MODRUBY_BINREV MODRUBY_REV
 # https://github.com/puppetlabs/facter/pull/1041 (networking: merged)
 # https://github.com/puppetlabs/facter/pull/1061 (dmi: merged)
 # https://github.com/puppetlabs/facter/pull/1073 (processor)
-# https://github.com/puppetlabs/facter/pull/1074 (memory)
+# https://github.com/puppetlabs/facter/pull/1074 (memory: merged)
 # https://github.com/puppetlabs/facter/pull/1075 (virtualization)
 post-extract:
 	${INSTALL_DATA_DIR} ${WRKSRC}/lib/inc/internal/facts/openbsd/
