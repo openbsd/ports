@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/03/15 08:34:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/08/04 07:27:41 ajacoutot Exp $
 @bin bin/idn
 include/idn-free.h
 include/idn-int.h
@@ -61,6 +61,8 @@ lib/pkgconfig/libidn.pc
 @man man/man3/tld_get_table.3
 @man man/man3/tld_get_z.3
 @man man/man3/tld_strerror.3
+share/emacs/
+share/emacs/site-lisp/
 share/emacs/site-lisp/idna.el
 share/emacs/site-lisp/punycode.el
 share/locale/cs/LC_MESSAGES/libidn.mo
