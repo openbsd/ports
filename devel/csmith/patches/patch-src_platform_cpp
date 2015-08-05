@@ -1,14 +1,62 @@
-$OpenBSD: patch-src_platform_cpp,v 1.1.1.1 2015/05/01 00:38:29 daniel Exp $
+$OpenBSD: patch-src_platform_cpp,v 1.2 2015/08/05 22:49:59 tobiasu Exp $
 
-No sys/timeb.h on OpenBSD.
+- No sys/timeb.h on OpenBSD
+- Generate a seed more portably.
 
---- src/platform.cpp.orig	Thu Jan 15 19:36:30 2015
-+++ src/platform.cpp	Thu Jan 15 19:36:38 2015
-@@ -40,7 +40,6 @@
+--- src/platform.cpp.orig	Wed Dec 31 16:46:24 2014
++++ src/platform.cpp	Fri Jul 31 22:24:40 2015
+@@ -40,50 +40,15 @@
  // Platform-Specific code to get a unique seed value (usually from the tick counter, etc)
  //
  #include <sys/types.h>
 -#include <sys/timeb.h>
++#include <stdlib.h>
  
  #include "platform.h"
  
+-#if (TARGET_CPU_powerpc == 1 || TARGET_CPU_powerpc64 == 1)
+-/*For PPC, got from:
+-http://lists.ozlabs.org/pipermail/linuxppc-dev/1999-October/003889.html
+-*/
+-static unsigned long long read_time(void) {
+-	unsigned long long retval;
+-	unsigned long junk;
+-	__asm__ __volatile__ ("\n\
+-1:	mftbu %1\n\
+-	mftb %L0\n\
+-	mftbu %0\n\
+-	cmpw %0,%1\n\
+-	bne 1b"
+-	: "=r" (retval), "=r" (junk));
+-	return retval;
+-}
+-#else
+-#ifdef WIN32
+-static unsigned __int64 read_time(void) {
+-        unsigned l, h;
+-        _asm {rdtsc    
+-        mov l, eax  
+-        mov h, edx 
+-        }
+-        return (h << 32) + l ;
+-}
+-#else
+-static long long read_time(void) {
+-        long long l;
+-        asm volatile(   "rdtsc\n\t"
+-                : "=A" (l)
+-        );
+-        return l;
+-}
+-#endif
+-#endif
+-
+ unsigned long platform_gen_seed()
+ {
+-	return (long) read_time();
++	unsigned long seed;
++	arc4random_buf(&seed, sizeof(unsigned long));
++	return seed;
+ }
+ 
+ //////////// platform specific mkdir /////////////////

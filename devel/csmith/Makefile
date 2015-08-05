@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/01 00:38:29 daniel Exp $
+# $OpenBSD: Makefile,v 1.2 2015/08/05 22:49:59 tobiasu Exp $
 
 COMMENT=	fuzzer for C compilers
 
 DISTNAME=	csmith-2.2.0
+REVISION=	0
+
 CATEGORIES=	devel
 
 MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
