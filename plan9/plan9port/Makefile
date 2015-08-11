@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/06/17 22:48:33 gsoares Exp $
+# $OpenBSD: Makefile,v 1.7 2015/08/11 21:41:58 jasper Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN-powerpc =	threading issues
@@ -58,7 +58,7 @@ do-build:
 
 do-install:
 	find ${WRKSRC}/src -name '*.orig' -exec rm -f {} \+
-	cd ${WRKSRC} && perl -pi -e 's#/usr/local#${TRUEPREFIX}#' \
+	cd ${WRKSRC} && sed -i 's#/usr/local#${TRUEPREFIX}#' \
 		`cat lib/moveplan9.files`
 
 	${INSTALL_DATA_DIR} ${PLAN9}
