@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1372 2015/07/30 18:33:58 jca Exp $
+# $OpenBSD: Makefile,v 1.1373 2015/08/11 21:44:35 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -88,7 +88,6 @@
      SUBDIR += cvstrac
      SUBDIR += cvsutils
      SUBDIR += cvsweb
-     SUBDIR += cxxtools
      SUBDIR += darcs
      SUBDIR += dbus-sharp
      SUBDIR += dbus-sharp-glib
