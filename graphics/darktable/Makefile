@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2015/06/10 22:27:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2015/08/11 20:46:04 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
-V=		1.6.7
-REVISION=	0
+V=		1.6.8
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
