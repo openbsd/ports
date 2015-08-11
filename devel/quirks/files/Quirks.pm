@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.279 2015/08/04 15:28:36 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.280 2015/08/11 21:47:55 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -596,6 +596,8 @@ my $obsolete_reason = {
 	'tla' => 3,
 	'googlecl' => 3,
 	'cyphertite' => 3,
+	'cxxtools' => 5,
+	'tntnet' => 6,
 };
 
 # ->is_base_system($handle, $state):
