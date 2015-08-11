@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_inc_internal_facts_linux_virtualization_resolver_hpp,v 1.1 2015/08/11 20:20:35 jasper Exp $
+--- lib/inc/internal/facts/linux/virtualization_resolver.hpp.orig	Tue Aug  4 21:05:41 2015
++++ lib/inc/internal/facts/linux/virtualization_resolver.hpp	Tue Aug  4 21:06:21 2015
+@@ -30,7 +30,6 @@ namespace facter { namespace facts { namespace linux {
+         static std::string get_vmware_vm();
+         static std::string get_openvz_vm();
+         static std::string get_xen_vm();
+-        static std::string get_product_name_vm(collection& facts);
+         static std::string get_lspci_vm();
+     };
+ 

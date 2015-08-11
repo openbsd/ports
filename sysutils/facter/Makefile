@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2015/08/04 09:00:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2015/08/11 20:20:34 jasper Exp $
 
 COMMENT =		collect and display system facts
 
 DISTNAME =		facter-3.0.2
-REVISION =		0
+REVISION =		1
 SHARED_LIBS +=  	facter                    3.0 # 3.0
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
@@ -40,7 +40,7 @@ SUBST_VARS +=		MODRUBY_BINREV MODRUBY_REV
 # https://github.com/puppetlabs/facter/pull/1061 (dmi: merged)
 # https://github.com/puppetlabs/facter/pull/1073 (processor)
 # https://github.com/puppetlabs/facter/pull/1074 (memory: merged)
-# https://github.com/puppetlabs/facter/pull/1075 (virtualization)
+# https://github.com/puppetlabs/facter/pull/1075 (virtualization: merged)
 post-extract:
 	${INSTALL_DATA_DIR} ${WRKSRC}/lib/inc/internal/facts/openbsd/
 	${INSTALL_DATA_DIR} ${WRKSRC}/lib/src/facts/openbsd/

@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_inc_internal_facts_resolvers_virtualization_resolver_hpp,v 1.1 2015/08/11 20:20:35 jasper Exp $
+--- lib/inc/internal/facts/resolvers/virtualization_resolver.hpp.orig	Tue Aug  4 21:04:52 2015
++++ lib/inc/internal/facts/resolvers/virtualization_resolver.hpp	Tue Aug  4 21:09:58 2015
+@@ -39,6 +39,14 @@ namespace facter { namespace facts { namespace resolve
+          * @return Returns true if the hypervisor is virtual or false if it is physical.
+          */
+         virtual bool is_virtual(std::string const& hypervisor);
++
++        /**
++	 * Gets the product name which is matched against a list of known
++	 * hypervisors.
++         * @param facts The fact collection that is resolving facts.
++	 * @return Returns the hypervisor product name if matched.
++	 */
++        static std::string get_product_name_vm(collection& facts);
+     };
+ 
+ }}}  // namespace facter::facts::resolvers

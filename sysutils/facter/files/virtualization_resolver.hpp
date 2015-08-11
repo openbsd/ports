@@ -21,8 +21,6 @@ namespace facter { namespace facts { namespace openbsd {
          */
         virtual std::string get_hypervisor(collection& facts) override;
 
-    protected:
-        static std::string get_product_name_vm(collection& facts);
     };
 
 }}}  // namespace facter::facts::osx

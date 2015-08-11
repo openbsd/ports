@@ -14,14 +14,6 @@ namespace facter { namespace facts { namespace openbsd {
         int mib[2];
         mib[0] = CTL_HW;
 
-        // Get the physical count of processors
-        len = sizeof(result.physical_count);
-        mib[1] = HW_NCPUFOUND;
-
-        if (sysctl(mib, 2, &result.physical_count, &len, nullptr, 0) == -1) {
-            LOG_DEBUG("sysctl hw.ncpufound failed: %1% (%2%): physical processor count is unavailable.", strerror(errno), errno);
-        }
-
         // Get the logical count of processors
         len = sizeof(result.logical_count);
         mib[1] = HW_NCPU;
