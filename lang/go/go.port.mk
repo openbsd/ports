@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.3 2015/06/12 05:20:48 czarkoff Exp $
+# $OpenBSD: go.port.mk,v 1.4 2015/08/11 20:16:21 jasper Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -33,6 +33,8 @@ SEPARATE_BUILD ?=	Yes
 WRKSRC ?=		${MODGO_WORKSPACE}/src/${ALL_TARGET}
 
 MODGO_SETUP_WORKSPACE =	mkdir -p ${WRKSRC:H}; mv ${MODGO_SUBDIR} ${WRKSRC};
+
+CATEGORIES +=		lang/go
 
 # Go tends to ignore environment and place some files to system-wide
 # directories.  To prevent such behavior, this modules fixes paths in
