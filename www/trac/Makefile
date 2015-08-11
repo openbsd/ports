@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2015/07/18 01:27:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2015/08/11 20:55:17 sthen Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
-MODPY_EGG_VERSION=1.0.7
+MODPY_EGG_VERSION=1.0.8
 PORTROACH=	limitw:1,even
 DISTNAME=	Trac-${MODPY_EGG_VERSION:S/post/.post/}
 PKGNAME=	trac-${MODPY_EGG_VERSION:S/post/pl/}
