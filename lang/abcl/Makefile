@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/04 21:12:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/08/11 20:12:01 jasper Exp $
 
 COMMENT =		Common Lisp dialect for the Java Virtual Machine
 
-V =			1.3.1
+V =			1.3.2
 DISTNAME =		abcl-src-${V}
 PKGNAME =		abcl-${V}
 PKG_ARCH =		*
@@ -45,6 +45,6 @@ do-test:
 
 # maintainer target to generate completions file
 completions: install
-	${LOCALBASE}/bin/abcl --load ${FILESDIR}/gen-completions.lisp
+	${LOCALBASE}/bin/abcl --noinit --load ${FILESDIR}/gen-completions.lisp
 
 .include <bsd.port.mk>
