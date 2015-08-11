@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/06/11 20:02:53 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/08/11 20:15:41 jasper Exp $
 @pkgpath devel/gocover
 @pkgpath textproc/godoc
+@conflict stress-*
 @bin bin/benchcmp
 @bin bin/callgraph
 @bin bin/digraph

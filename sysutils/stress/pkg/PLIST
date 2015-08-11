@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/05/26 04:51:16 lum Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/08/11 20:15:41 jasper Exp $
+@conflict go-tools-*
 @bin bin/stress
 @info info/stress.info
 @man man/man1/stress.1
