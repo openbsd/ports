@@ -1,0 +1,17 @@
+$OpenBSD: patch-hw_ide_atapi_c,v 1.1 2015/08/11 21:28:53 sthen Exp $
+
+ide/atapi: Fix START STOP UNIT command completion
+
+The command must be completed on all code paths. START STOP UNIT with
+pwrcnd set should succeed without doing anything.
+
+--- hw/ide/atapi.c.orig	Wed Aug  5 04:12:14 2015
++++ hw/ide/atapi.c	Wed Aug  5 04:12:37 2015
+@@ -880,6 +880,7 @@ static void cmd_start_stop_unit(IDEState *s, uint8_t* 
+ 
+     if (pwrcnd) {
+         /* eject/load only happens for power condition == 0 */
++        ide_atapi_cmd_ok(s);
+         return;
+     }
+ 

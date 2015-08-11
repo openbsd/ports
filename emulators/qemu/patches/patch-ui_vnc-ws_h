@@ -1,0 +1,34 @@
+$OpenBSD: patch-ui_vnc-ws_h,v 1.1 2015/08/11 21:28:53 sthen Exp $
+
+CVE-2015-1779: incrementally decode websocket frames
+
+The logic for decoding websocket frames wants to fully
+decode the frame header and payload, before allowing the
+VNC server to see any of the payload data. There is no
+size limit on websocket payloads, so this allows a
+malicious network client to consume 2^64 bytes in memory
+in QEMU. It can trigger this denial of service before
+the VNC server even performs any authentication.
+
+The fix is to decode the header, and then incrementally
+decode the payload data as it is needed. With this fix
+the websocket decoder will allow at most 4k of data to
+be buffered before decoding and processing payload.
+
+--- ui/vnc-ws.h.orig	Tue Mar 10 13:38:32 2015
++++ ui/vnc-ws.h	Wed Aug  5 03:56:50 2015
+@@ -83,7 +83,12 @@ long vnc_client_read_ws(VncState *vs);
+ void vncws_process_handshake(VncState *vs, uint8_t *line, size_t size);
+ void vncws_encode_frame(Buffer *output, const void *payload,
+             const size_t payload_size);
+-int vncws_decode_frame(Buffer *input, uint8_t **payload,
+-                               size_t *payload_size, size_t *frame_size);
++int vncws_decode_frame_header(Buffer *input,
++                              size_t *header_size,
++                              size_t *payload_remain,
++                              WsMask *payload_mask);
++int vncws_decode_frame_payload(Buffer *input,
++                               size_t *payload_remain, WsMask *payload_mask,
++                               uint8_t **payload, size_t *payload_size);
+ 
+ #endif /* __QEMU_UI_VNC_WS_H */
