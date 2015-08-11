@@ -1,31 +1,28 @@
-# $OpenBSD: Makefile,v 1.19 2015/07/30 14:16:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/08/11 21:12:44 sthen Exp $
 
 # needs machine/sysarch.h & machine/pio.h
 ONLY_FOR_ARCHS=	amd64 arm i386
 
-COMMENT=	FreeIPMI provides in-band and out-of-band IPMI software
+COMMENT=	IPMI library and tools (in- and out-of-band)
 
-V=		0.4.6
+V=		1.4.9
 DISTNAME=	freeipmi-${V}
-REVISION=	5
 
-SHARED_LIBS +=  freeipmi 4.0                  # .4.0
-SHARED_LIBS +=  ipmidetect 0.0                # .0.0
-SHARED_LIBS +=  freeipmi 4.0                  # .4.0
-SHARED_LIBS +=  ipmiconsole 1.1               # .1.1
-SHARED_LIBS +=  ipmimonitoring 0.1            # .0.1
+SHARED_LIBS +=	freeipmi             5.0      # 16.5
+SHARED_LIBS +=	ipmiconsole          2.0      # 5.3
+SHARED_LIBS +=	ipmimonitoring       1.0      # 5.6
+SHARED_LIBS +=	ipmidetect           1.0      # 0.0
 
 CATEGORIES=	sysutils
 
 HOMEPAGE=	https://www.gnu.org/software/freeipmi/
 
-# GPL v2
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c gpg-error m pthread gcrypt>=12
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
-PORTROACH=	site:http://ftp.gnu.org/gnu/freeipmi/
+MASTER_SITES=	${MASTER_SITE_GNU:=freeipmi/}
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	devel/argp-standalone
@@ -33,18 +30,18 @@ LIB_DEPENDS=	security/libgcrypt
 
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=--disable-dependency-tracking
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 FAKE_FLAGS=	localstatedir=${PREFIX}/share/examples/freeipmi \
-		sysconfdir=${PREFIX}/share/examples/freeipmi
+		sysconfdir=${PREFIX}/share/examples/freeipmi \
+		FREEIPMI_SYSCONFDIR=${PREFIX}/share/examples/freeipmi
 
 post-install:
 	cd ${PREFIX}/share/examples/freeipmi && \
-	    mv ${WRKINST}${SYSCONFDIR}/ipmi_monitoring_sensors.conf . && \
-	    mv db/freeipmi/bmc-config-template db/freeipmi/ipckey . && \
-	    rm -rf init.d logrotate.d && \
-	    rmdir db/freeipmi db log/freeipmi log
+	    mv lib/freeipmi/ipckey . && \
+	    rm -r init.d sysconfig lib
 
 .include <bsd.port.mk>

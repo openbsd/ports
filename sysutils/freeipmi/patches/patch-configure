@@ -1,7 +1,15 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/10/25 18:17:02 wilfried Exp $
---- configure.orig	Thu Oct 11 17:58:33 2007
-+++ configure	Tue Oct 23 18:52:24 2007
-@@ -3756,6 +3756,10 @@ nto-qnx*)
+$OpenBSD: patch-configure,v 1.2 2015/08/11 21:12:45 sthen Exp $
+--- configure.orig	Thu Jul 30 14:28:44 2015
++++ configure	Thu Jul 30 14:31:26 2015
+@@ -880,6 +880,7 @@ LIBFREEIPMI_VERSION_MINOR
+ LIBFREEIPMI_VERSION_MAJOR
+ LIBFREEIPMI_VERSION_INFO
+ LIBFREEIPMI_VERSION
++IOPL_LIBS
+ ISODATE
+ am__untar
+ am__tar
+@@ -10414,6 +10415,10 @@ newsos6)
    ;;
  
  openbsd*)
@@ -9,14 +17,6 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/10/25 18:17:02 wilfried Exp $
 +    i386) IOPL_LIBS="-li386";;
 +    x86_64) IOPL_LIBS="-lamd64";;
 +  esac
-   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-     lt_cv_deplibs_check_method='match_pattern /lib[^/]+(\.so\.[0-9]+\.[0-9]+|\.so|_pic\.a)$'
-   else
-@@ -23859,6 +23863,7 @@ s,@am__leading_dot@,$am__leading_dot,;t t
- s,@AMTAR@,$AMTAR,;t t
- s,@am__tar@,$am__tar,;t t
- s,@am__untar@,$am__untar,;t t
-+s,@IOPL_LIBS@,$IOPL_LIBS,;t t
- s,@ISODATE@,$ISODATE,;t t
- s,@LIBFREEIPMI_VERSION@,$LIBFREEIPMI_VERSION,;t t
- s,@LIBFREEIPMI_VERSION_INFO@,$LIBFREEIPMI_VERSION_INFO,;t t
+   version_type=sunos
+   sys_lib_dlsearch_path_spec="/usr/lib"
+   need_lib_prefix=no

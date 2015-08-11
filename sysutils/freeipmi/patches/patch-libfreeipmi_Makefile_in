@@ -1,12 +1,21 @@
-$OpenBSD: patch-libfreeipmi_Makefile_in,v 1.1 2012/04/13 20:53:19 sthen Exp $
---- libfreeipmi/Makefile.in.orig	Fri Apr 13 16:41:25 2012
-+++ libfreeipmi/Makefile.in	Fri Apr 13 16:43:37 2012
-@@ -196,7 +196,7 @@ CLEANFILES = 
- DISTCLEANFILES = .deps/*.P
- 
- # Semaphore IPC Key file for ftok:
--Ipckeydir = $(localstatedir)/lib/$(PACKAGE_NAME)
-+Ipckeydir = $(localstatedir)/db/$(PACKAGE_NAME)
- Ipckey_DATA = ipckey
- EXTRA_DIST = ipckey
- all: all-recursive
+$OpenBSD: patch-libfreeipmi_Makefile_in,v 1.2 2015/08/11 21:12:45 sthen Exp $
+--- libfreeipmi/Makefile.in.orig	Mon Jun  1 15:25:18 2015
++++ libfreeipmi/Makefile.in	Thu Jul 30 14:31:58 2015
+@@ -362,7 +362,7 @@ LIBIPMIMONITORING_VERSION_MAJOR = @LIBIPMIMONITORING_V
+ LIBIPMIMONITORING_VERSION_MINOR = @LIBIPMIMONITORING_VERSION_MINOR@
+ LIBIPMIMONITORING_VERSION_PATCH = @LIBIPMIMONITORING_VERSION_PATCH@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ @PTHREAD_CFLAGS@ @IOPL_LIBS@
+ LIBTOOL = @LIBTOOL@
+ LIPO = @LIPO@
+ LN_S = @LN_S@
+@@ -462,7 +462,7 @@ libfreeipmi_la_CPPFLAGS = \
+ 	-I$(top_builddir)/libfreeipmi/include \
+ 	-I$(top_srcdir)/libfreeipmi/include \
+ 	-I$(top_srcdir)/libfreeipmi \
+-	-DIPMI_IPCKEY=\"$(localstatedir)/lib/$(PACKAGE_NAME)/ipckey\" \
++	-DIPMI_IPCKEY=\"$(localstatedir)/db/$(PACKAGE_NAME)/ipckey\" \
+ 	-DIPMI_DEBUG_IPCKEY=\"$(top_builddir)/libfreeipmi/driver/ipmi-semaphores.h\" \
+ 	-D_GNU_SOURCE \
+ 	-D_REENTRANT

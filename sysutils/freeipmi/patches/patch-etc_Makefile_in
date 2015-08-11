@@ -1,0 +1,24 @@
+$OpenBSD: patch-etc_Makefile_in,v 1.1 2015/08/11 21:12:45 sthen Exp $
+--- etc/Makefile.in.orig	Mon Jun  1 15:25:16 2015
++++ etc/Makefile.in	Thu Jul 30 11:26:45 2015
+@@ -414,13 +414,13 @@ uninstall-am: uninstall-local
+ 
+ install-data-local: $(INSTALL_INIT_SCRIPTS)
+ 	$(INSTALL) -m 755 -d $(DESTDIR)$(FREEIPMI_SYSCONFDIR)
+-	$(INSTALL) -m 644 $(srcdir)/freeipmi.conf $(DESTDIR)$(FREEIPMI_CONFIG_FILE_DEFAULT)
+-	$(INSTALL) -m 644 $(srcdir)/freeipmi_interpret_sel.conf $(DESTDIR)$(INTERPRET_SEL_CONFIG_FILE_DEFAULT)
+-	$(INSTALL) -m 644 $(srcdir)/freeipmi_interpret_sensor.conf $(DESTDIR)$(INTERPRET_SENSOR_CONFIG_FILE_DEFAULT)
+-	$(INSTALL) -m 644 $(srcdir)/ipmidetect.conf $(DESTDIR)$(IPMIDETECT_CONFIG_FILE_DEFAULT)
+-	$(INSTALL) -m 644 $(srcdir)/ipmidetectd.conf $(DESTDIR)$(IPMIDETECTD_CONFIG_FILE_DEFAULT)
+-	$(INSTALL) -m 644 $(srcdir)/ipmiseld.conf $(DESTDIR)$(IPMISELD_CONFIG_FILE_DEFAULT)
+-	$(INSTALL) -m 644 $(srcdir)/libipmiconsole.conf $(DESTDIR)$(LIBIPMICONSOLE_CONFIG_FILE_DEFAULT)
++	$(INSTALL) -m 644 $(srcdir)/freeipmi.conf $(DESTDIR)$(FREEIPMI_SYSCONFDIR)/
++	$(INSTALL) -m 644 $(srcdir)/freeipmi_interpret_sel.conf $(DESTDIR)$(FREEIPMI_SYSCONFDIR)/
++	$(INSTALL) -m 644 $(srcdir)/freeipmi_interpret_sensor.conf $(DESTDIR)$(FREEIPMI_SYSCONFDIR)/
++	$(INSTALL) -m 644 $(srcdir)/ipmidetect.conf $(DESTDIR)$(FREEIPMI_SYSCONFDIR)/
++	$(INSTALL) -m 644 $(srcdir)/ipmidetectd.conf $(DESTDIR)$(FREEIPMI_SYSCONFDIR)/
++	$(INSTALL) -m 644 $(srcdir)/ipmiseld.conf $(DESTDIR)$(FREEIPMI_SYSCONFDIR)/
++	$(INSTALL) -m 644 $(srcdir)/libipmiconsole.conf $(DESTDIR)$(FREEIPMI_SYSCONFDIR)/
+ 
+ install-init-scripts:
+ 	$(INSTALL) -m 755 -d $(DESTDIR)$(sysconfdir)/init.d

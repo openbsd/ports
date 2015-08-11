@@ -1,0 +1,12 @@
+$OpenBSD: patch-libfreeipmi_driver_ipmi-semaphores_h,v 1.1 2015/08/11 21:12:45 sthen Exp $
+--- libfreeipmi/driver/ipmi-semaphores.h.orig	Thu Oct  9 22:41:22 2014
++++ libfreeipmi/driver/ipmi-semaphores.h	Thu Oct  9 22:41:29 2014
+@@ -30,7 +30,7 @@
+ #include <sys/ipc.h>
+ #include <sys/sem.h>
+ 
+-#if defined(__FreeBSD__) || defined(__APPLE__)
++#if defined(__FreeBSD__) || defined(__APPLE__) || defined(__OpenBSD__)
+ /* union semun is defined by including <sys/sem.h> */
+ #else
+ /* according to X/OPEN we have to define it ourselves */

@@ -1,80 +1,186 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:55 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/08/11 21:12:45 sthen Exp $
 include/freeipmi/
-include/freeipmi/fiid.h
+include/freeipmi/api/
+include/freeipmi/api/ipmi-api.h
+include/freeipmi/api/ipmi-chassis-cmds-api.h
+include/freeipmi/api/ipmi-dcmi-cmds-api.h
+include/freeipmi/api/ipmi-device-global-cmds-api.h
+include/freeipmi/api/ipmi-event-cmds-api.h
+include/freeipmi/api/ipmi-firmware-firewall-command-discovery-cmds-api.h
+include/freeipmi/api/ipmi-fru-inventory-device-cmds-api.h
+include/freeipmi/api/ipmi-lan-cmds-api.h
+include/freeipmi/api/ipmi-messaging-support-cmds-api.h
+include/freeipmi/api/ipmi-oem-intel-node-manager-cmds-api.h
+include/freeipmi/api/ipmi-pef-and-alerting-cmds-api.h
+include/freeipmi/api/ipmi-rmcpplus-support-and-payload-cmds-api.h
+include/freeipmi/api/ipmi-sdr-repository-cmds-api.h
+include/freeipmi/api/ipmi-sel-cmds-api.h
+include/freeipmi/api/ipmi-sensor-cmds-api.h
+include/freeipmi/api/ipmi-serial-modem-cmds-api.h
+include/freeipmi/api/ipmi-sol-cmds-api.h
+include/freeipmi/cmds/
+include/freeipmi/cmds/ipmi-bmc-watchdog-timer-cmds.h
+include/freeipmi/cmds/ipmi-chassis-cmds.h
+include/freeipmi/cmds/ipmi-dcmi-cmds.h
+include/freeipmi/cmds/ipmi-dcmi-oem-cmds.h
+include/freeipmi/cmds/ipmi-device-global-cmds.h
+include/freeipmi/cmds/ipmi-event-cmds.h
+include/freeipmi/cmds/ipmi-firmware-firewall-command-discovery-cmds.h
+include/freeipmi/cmds/ipmi-fru-inventory-device-cmds.h
+include/freeipmi/cmds/ipmi-lan-cmds.h
+include/freeipmi/cmds/ipmi-messaging-support-cmds.h
+include/freeipmi/cmds/ipmi-oem-intel-node-manager-cmds.h
+include/freeipmi/cmds/ipmi-pef-and-alerting-cmds.h
+include/freeipmi/cmds/ipmi-rmcpplus-support-and-payload-cmds.h
+include/freeipmi/cmds/ipmi-sdr-repository-cmds.h
+include/freeipmi/cmds/ipmi-sel-cmds.h
+include/freeipmi/cmds/ipmi-sensor-cmds.h
+include/freeipmi/cmds/ipmi-serial-modem-cmds.h
+include/freeipmi/cmds/ipmi-sol-cmds.h
+include/freeipmi/cmds/rmcp-cmds.h
+include/freeipmi/debug/
+include/freeipmi/debug/ipmi-debug.h
+include/freeipmi/driver/
+include/freeipmi/driver/ipmi-inteldcmi-driver.h
+include/freeipmi/driver/ipmi-kcs-driver.h
+include/freeipmi/driver/ipmi-openipmi-driver.h
+include/freeipmi/driver/ipmi-ssif-driver.h
+include/freeipmi/driver/ipmi-sunbmc-driver.h
+include/freeipmi/fiid/
+include/freeipmi/fiid/fiid.h
 include/freeipmi/freeipmi.h
-include/freeipmi/ipmi-authentication-type-spec.h
-include/freeipmi/ipmi-bmc-watchdog-timer-cmds.h
-include/freeipmi/ipmi-channel-spec.h
-include/freeipmi/ipmi-chassis-boot-options-parameter-spec.h
-include/freeipmi/ipmi-chassis-cmds.h
-include/freeipmi/ipmi-cipher-suite-spec.h
-include/freeipmi/ipmi-cmd-spec.h
-include/freeipmi/ipmi-comp-code-spec.h
-include/freeipmi/ipmi-crypt.h
-include/freeipmi/ipmi-debug.h
-include/freeipmi/ipmi-device-global-cmds.h
-include/freeipmi/ipmi-error.h
-include/freeipmi/ipmi-fru-information-storage-definition.h
-include/freeipmi/ipmi-fru-inventory-device-cmds.h
-include/freeipmi/ipmi-ipmb-interface.h
-include/freeipmi/ipmi-kcs-api.h
-include/freeipmi/ipmi-kcs.h
-include/freeipmi/ipmi-lan-cmds.h
-include/freeipmi/ipmi-lan-interface.h
-include/freeipmi/ipmi-lan-parameter-spec.h
-include/freeipmi/ipmi-lan-utils.h
-include/freeipmi/ipmi-lan.h
-include/freeipmi/ipmi-locate.h
-include/freeipmi/ipmi-messaging-support-cmds.h
-include/freeipmi/ipmi-netfn-spec.h
-include/freeipmi/ipmi-openipmi-api.h
-include/freeipmi/ipmi-pef-and-alerting-cmds.h
-include/freeipmi/ipmi-pef-parameter-spec.h
-include/freeipmi/ipmi-privilege-level-spec.h
-include/freeipmi/ipmi-rmcpplus-interface.h
-include/freeipmi/ipmi-rmcpplus-status-spec.h
-include/freeipmi/ipmi-rmcpplus-support-and-payload-cmds.h
-include/freeipmi/ipmi-rmcpplus-utils.h
-include/freeipmi/ipmi-rmcpplus.h
-include/freeipmi/ipmi-sdr-record-types.h
-include/freeipmi/ipmi-sdr-repository-cmds.h
-include/freeipmi/ipmi-sel-cmds.h
-include/freeipmi/ipmi-sel-record-types.h
-include/freeipmi/ipmi-sensor-and-event-code-tables.h
-include/freeipmi/ipmi-sensor-cmds.h
-include/freeipmi/ipmi-sensor-types-spec.h
-include/freeipmi/ipmi-sensor-units-spec.h
-include/freeipmi/ipmi-sensor-utils.h
-include/freeipmi/ipmi-serial-modem-cmds.h
-include/freeipmi/ipmi-serial-modem-parameter-spec.h
-include/freeipmi/ipmi-slave-address-spec.h
-include/freeipmi/ipmi-smic-api.h
-include/freeipmi/ipmi-sol-cmds.h
-include/freeipmi/ipmi-sol-parameter-spec.h
-include/freeipmi/ipmi-ssif-api.h
-include/freeipmi/ipmi-utils.h
-include/freeipmi/rmcp-utils.h
-include/freeipmi/rmcp.h
-include/freeipmi/udm/
-include/freeipmi/udm/ipmi-chassis-cmds-udm.h
-include/freeipmi/udm/ipmi-device-global-cmds-udm.h
-include/freeipmi/udm/ipmi-fru-inventory-device-cmds-udm.h
-include/freeipmi/udm/ipmi-kcs-api-udm.h
-include/freeipmi/udm/ipmi-lan-cmds-udm.h
-include/freeipmi/udm/ipmi-lan-interface-udm.h
-include/freeipmi/udm/ipmi-messaging-support-cmds-udm.h
-include/freeipmi/udm/ipmi-openipmi-api-udm.h
-include/freeipmi/udm/ipmi-pef-and-alerting-cmds-udm.h
-include/freeipmi/udm/ipmi-rmcpplus-support-and-payload-cmds-udm.h
-include/freeipmi/udm/ipmi-sdr-repository-cmds-udm.h
-include/freeipmi/udm/ipmi-sel-cmds-udm.h
-include/freeipmi/udm/ipmi-sensor-cmds-udm.h
-include/freeipmi/udm/ipmi-serial-modem-cmds-udm.h
-include/freeipmi/udm/ipmi-sol-cmds-udm.h
-include/freeipmi/udm/ipmi-ssif-api-udm.h
-include/freeipmi/udm/ipmi-udm.h
-include/freeipmi/udm/udm.h
+include/freeipmi/fru/
+include/freeipmi/fru/ipmi-fru.h
+include/freeipmi/interface/
+include/freeipmi/interface/ipmi-interface.h
+include/freeipmi/interface/ipmi-ipmb-interface.h
+include/freeipmi/interface/ipmi-kcs-interface.h
+include/freeipmi/interface/ipmi-lan-interface.h
+include/freeipmi/interface/ipmi-rmcpplus-interface.h
+include/freeipmi/interface/rmcp-interface.h
+include/freeipmi/interpret/
+include/freeipmi/interpret/ipmi-interpret.h
+include/freeipmi/locate/
+include/freeipmi/locate/ipmi-locate.h
+include/freeipmi/payload/
+include/freeipmi/payload/ipmi-sol-payload.h
+include/freeipmi/record-format/
+include/freeipmi/record-format/ipmi-cipher-suite-record-format.h
+include/freeipmi/record-format/ipmi-fru-dimmspd-record-format.h
+include/freeipmi/record-format/ipmi-fru-information-record-format.h
+include/freeipmi/record-format/ipmi-fru-oem-record-format.h
+include/freeipmi/record-format/ipmi-platform-event-trap-record-format.h
+include/freeipmi/record-format/ipmi-sdr-oem-record-format.h
+include/freeipmi/record-format/ipmi-sdr-record-format.h
+include/freeipmi/record-format/ipmi-sel-oem-record-format.h
+include/freeipmi/record-format/ipmi-sel-record-format.h
+include/freeipmi/sdr/
+include/freeipmi/sdr/ipmi-sdr-oem.h
+include/freeipmi/sdr/ipmi-sdr.h
+include/freeipmi/sel/
+include/freeipmi/sel/ipmi-sel.h
+include/freeipmi/sensor-read/
+include/freeipmi/sensor-read/ipmi-sensor-read.h
+include/freeipmi/spec/
+include/freeipmi/spec/ipmi-authentication-type-spec.h
+include/freeipmi/spec/ipmi-channel-spec.h
+include/freeipmi/spec/ipmi-cmd-dcmi-spec.h
+include/freeipmi/spec/ipmi-cmd-oem-spec.h
+include/freeipmi/spec/ipmi-cmd-spec.h
+include/freeipmi/spec/ipmi-comp-code-dcmi-spec.h
+include/freeipmi/spec/ipmi-comp-code-oem-spec.h
+include/freeipmi/spec/ipmi-comp-code-spec.h
+include/freeipmi/spec/ipmi-device-types-oem-spec.h
+include/freeipmi/spec/ipmi-device-types-spec.h
+include/freeipmi/spec/ipmi-entity-ids-spec.h
+include/freeipmi/spec/ipmi-event-reading-type-code-oem-spec.h
+include/freeipmi/spec/ipmi-event-reading-type-code-spec.h
+include/freeipmi/spec/ipmi-fru-chassis-types-spec.h
+include/freeipmi/spec/ipmi-fru-language-codes-spec.h
+include/freeipmi/spec/ipmi-iana-enterprise-numbers-spec.h
+include/freeipmi/spec/ipmi-ipmb-lun-spec.h
+include/freeipmi/spec/ipmi-jedec-manufacturer-identification-code-spec.h
+include/freeipmi/spec/ipmi-lan-configuration-parameters-oem-spec.h
+include/freeipmi/spec/ipmi-lan-configuration-parameters-spec.h
+include/freeipmi/spec/ipmi-netfn-oem-spec.h
+include/freeipmi/spec/ipmi-netfn-spec.h
+include/freeipmi/spec/ipmi-oem-spec.h
+include/freeipmi/spec/ipmi-pef-configuration-parameters-oem-spec.h
+include/freeipmi/spec/ipmi-pef-configuration-parameters-spec.h
+include/freeipmi/spec/ipmi-privilege-level-spec.h
+include/freeipmi/spec/ipmi-product-id-spec.h
+include/freeipmi/spec/ipmi-rmcpplus-status-spec.h
+include/freeipmi/spec/ipmi-sensor-and-event-code-tables-oem-spec.h
+include/freeipmi/spec/ipmi-sensor-and-event-code-tables-spec.h
+include/freeipmi/spec/ipmi-sensor-numbers-oem-spec.h
+include/freeipmi/spec/ipmi-sensor-types-oem-spec.h
+include/freeipmi/spec/ipmi-sensor-types-spec.h
+include/freeipmi/spec/ipmi-sensor-units-spec.h
+include/freeipmi/spec/ipmi-serial-modem-configuration-parameters-oem-spec.h
+include/freeipmi/spec/ipmi-serial-modem-configuration-parameters-spec.h
+include/freeipmi/spec/ipmi-slave-address-oem-spec.h
+include/freeipmi/spec/ipmi-slave-address-spec.h
+include/freeipmi/spec/ipmi-sol-configuration-parameters-oem-spec.h
+include/freeipmi/spec/ipmi-sol-configuration-parameters-spec.h
+include/freeipmi/spec/ipmi-system-boot-option-parameters-oem-spec.h
+include/freeipmi/spec/ipmi-system-boot-option-parameters-spec.h
+include/freeipmi/spec/ipmi-system-info-parameters-oem-spec.h
+include/freeipmi/spec/ipmi-system-info-parameters-spec.h
+include/freeipmi/spec/ipmi-system-software-id-spec.h
+include/freeipmi/spec/ipmi-timestamp-spec.h
+include/freeipmi/templates/
+include/freeipmi/templates/ipmi-bmc-watchdog-timer-cmds-templates.h
+include/freeipmi/templates/ipmi-chassis-cmds-templates.h
+include/freeipmi/templates/ipmi-cipher-suite-record-format-templates.h
+include/freeipmi/templates/ipmi-dcmi-cmds-templates.h
+include/freeipmi/templates/ipmi-device-global-cmds-templates.h
+include/freeipmi/templates/ipmi-event-cmds-templates.h
+include/freeipmi/templates/ipmi-firmware-firewall-command-discovery-cmds-templates.h
+include/freeipmi/templates/ipmi-fru-dimmspd-record-format-templates.h
+include/freeipmi/templates/ipmi-fru-information-record-format-templates.h
+include/freeipmi/templates/ipmi-fru-inventory-device-cmds-templates.h
+include/freeipmi/templates/ipmi-ipmb-interface-templates.h
+include/freeipmi/templates/ipmi-kcs-interface-templates.h
+include/freeipmi/templates/ipmi-lan-cmds-templates.h
+include/freeipmi/templates/ipmi-lan-interface-templates.h
+include/freeipmi/templates/ipmi-messaging-support-cmds-templates.h
+include/freeipmi/templates/ipmi-oem-intel-node-manager-cmds-templates.h
+include/freeipmi/templates/ipmi-pef-and-alerting-cmds-templates.h
+include/freeipmi/templates/ipmi-rmcpplus-interface-templates.h
+include/freeipmi/templates/ipmi-rmcpplus-support-and-payload-cmds-templates.h
+include/freeipmi/templates/ipmi-sdr-oem-record-format-templates.h
+include/freeipmi/templates/ipmi-sdr-record-format-templates.h
+include/freeipmi/templates/ipmi-sdr-repository-cmds-templates.h
+include/freeipmi/templates/ipmi-sel-cmds-templates.h
+include/freeipmi/templates/ipmi-sel-record-format-templates.h
+include/freeipmi/templates/ipmi-sensor-cmds-templates.h
+include/freeipmi/templates/ipmi-serial-modem-cmds-templates.h
+include/freeipmi/templates/ipmi-sol-cmds-templates.h
+include/freeipmi/templates/ipmi-sol-payload-templates.h
+include/freeipmi/templates/rmcp-cmds-templates.h
+include/freeipmi/templates/rmcp-interface-templates.h
+include/freeipmi/util/
+include/freeipmi/util/ipmi-channel-util.h
+include/freeipmi/util/ipmi-cipher-suite-util.h
+include/freeipmi/util/ipmi-dcmi-util.h
+include/freeipmi/util/ipmi-device-types-util.h
+include/freeipmi/util/ipmi-entity-ids-util.h
+include/freeipmi/util/ipmi-error-dcmi-util.h
+include/freeipmi/util/ipmi-error-util.h
+include/freeipmi/util/ipmi-iana-enterprise-numbers-util.h
+include/freeipmi/util/ipmi-ipmb-util.h
+include/freeipmi/util/ipmi-jedec-manufacturer-identification-code-util.h
+include/freeipmi/util/ipmi-lan-util.h
+include/freeipmi/util/ipmi-outofband-util.h
+include/freeipmi/util/ipmi-rmcpplus-util.h
+include/freeipmi/util/ipmi-sensor-and-event-code-tables-util.h
+include/freeipmi/util/ipmi-sensor-util.h
+include/freeipmi/util/ipmi-timestamp-util.h
+include/freeipmi/util/ipmi-util.h
+include/freeipmi/util/rmcp-util.h
 include/ipmi_monitoring.h
+include/ipmi_monitoring_bitmasks.h
+include/ipmi_monitoring_offsets.h
 include/ipmiconsole.h
 include/ipmidetect.h
 @info info/freeipmi-faq.info
@@ -90,23 +196,50 @@ lib/libipmidetect.la
 lib/libipmimonitoring.a
 lib/libipmimonitoring.la
 @lib lib/libipmimonitoring.so.${LIBipmimonitoring_VERSION}
+lib/pkgconfig/libfreeipmi.pc
+lib/pkgconfig/libipmiconsole.pc
+lib/pkgconfig/libipmidetect.pc
+lib/pkgconfig/libipmimonitoring.pc
+@man man/man3/libfreeipmi.3
 @man man/man3/libipmiconsole.3
 @man man/man3/libipmidetect.3
 @man man/man3/libipmimonitoring.3
 @man man/man5/bmc-config.conf.5
+@man man/man5/freeipmi.conf.5
+@man man/man5/freeipmi_interpret_sel.conf.5
+@man man/man5/freeipmi_interpret_sensor.conf.5
+@man man/man5/ipmi-config.conf.5
+@man man/man5/ipmi_monitoring_sensors.conf.5
 @man man/man5/ipmiconsole.conf.5
 @man man/man5/ipmidetect.conf.5
 @man man/man5/ipmidetectd.conf.5
+@man man/man5/ipmimonitoring.conf.5
+@man man/man5/ipmimonitoring_sensors.conf.5
 @man man/man5/ipmipower.conf.5
-@man man/man8/bmc-autoconfig.8
+@man man/man5/ipmiseld.conf.5
+@man man/man5/libipmiconsole.conf.5
+@man man/man5/libipmimonitoring.conf.5
+@man man/man7/freeipmi.7
 @man man/man8/bmc-config.8
+@man man/man8/bmc-device.8
 @man man/man8/bmc-info.8
 @man man/man8/bmc-watchdog.8
+@man man/man8/ipmi-chassis-config.8
 @man man/man8/ipmi-chassis.8
+@man man/man8/ipmi-config.8
+@man man/man8/ipmi-console.8
+@man man/man8/ipmi-dcmi.8
+@man man/man8/ipmi-detect.8
 @man man/man8/ipmi-fru.8
 @man man/man8/ipmi-locate.8
+@man man/man8/ipmi-oem.8
+@man man/man8/ipmi-pef-config.8
+@man man/man8/ipmi-pet.8
+@man man/man8/ipmi-ping.8
+@man man/man8/ipmi-power.8
 @man man/man8/ipmi-raw.8
 @man man/man8/ipmi-sel.8
+@man man/man8/ipmi-sensors-config.8
 @man man/man8/ipmi-sensors.8
 @man man/man8/ipmiconsole.8
 @man man/man8/ipmidetect.8
@@ -114,69 +247,125 @@ lib/libipmimonitoring.la
 @man man/man8/ipmimonitoring.8
 @man man/man8/ipmiping.8
 @man man/man8/ipmipower.8
+@man man/man8/ipmiseld.8
 @man man/man8/pef-config.8
+@man man/man8/rmcp-ping.8
 @man man/man8/rmcpping.8
-sbin/bmc-autoconfig
-@bin sbin/bmc-config
+sbin/bmc-config
+@bin sbin/bmc-device
 @bin sbin/bmc-info
 @bin sbin/bmc-watchdog
 @bin sbin/ipmi-chassis
+sbin/ipmi-chassis-config
+@bin sbin/ipmi-config
+sbin/ipmi-console
+@bin sbin/ipmi-dcmi
+sbin/ipmi-detect
 @bin sbin/ipmi-fru
 @bin sbin/ipmi-locate
+@bin sbin/ipmi-oem
+sbin/ipmi-pef-config
+@bin sbin/ipmi-pet
+sbin/ipmi-ping
+sbin/ipmi-power
 @bin sbin/ipmi-raw
 @bin sbin/ipmi-sel
 @bin sbin/ipmi-sensors
+sbin/ipmi-sensors-config
 @bin sbin/ipmiconsole
 @bin sbin/ipmidetect
 @bin sbin/ipmidetectd
-@bin sbin/ipmimonitoring
+sbin/ipmimonitoring
 @bin sbin/ipmiping
 @bin sbin/ipmipower
-@bin sbin/pef-config
+@bin sbin/ipmiseld
+sbin/pef-config
+sbin/rmcp-ping
 @bin sbin/rmcpping
 share/doc/freeipmi/
 share/doc/freeipmi/AUTHORS
 share/doc/freeipmi/COPYING
 share/doc/freeipmi/COPYING.ZRESEARCH
 share/doc/freeipmi/COPYING.bmc-watchdog
+share/doc/freeipmi/COPYING.ipmi-dcmi
 share/doc/freeipmi/COPYING.ipmi-fru
 share/doc/freeipmi/COPYING.ipmiconsole
 share/doc/freeipmi/COPYING.ipmidetect
 share/doc/freeipmi/COPYING.ipmimonitoring
 share/doc/freeipmi/COPYING.ipmiping
 share/doc/freeipmi/COPYING.ipmipower
+share/doc/freeipmi/COPYING.ipmiseld
 share/doc/freeipmi/COPYING.pstdout
-share/doc/freeipmi/COPYING.rmcpping
+share/doc/freeipmi/COPYING.sunbmc
 share/doc/freeipmi/ChangeLog
 share/doc/freeipmi/ChangeLog.0
 share/doc/freeipmi/DISCLAIMER.bmc-watchdog
+share/doc/freeipmi/DISCLAIMER.bmc-watchdog.UC
+share/doc/freeipmi/DISCLAIMER.ipmi-dcmi
 share/doc/freeipmi/DISCLAIMER.ipmi-fru
+share/doc/freeipmi/DISCLAIMER.ipmi-fru.UC
 share/doc/freeipmi/DISCLAIMER.ipmiconsole
+share/doc/freeipmi/DISCLAIMER.ipmiconsole.UC
 share/doc/freeipmi/DISCLAIMER.ipmidetect
+share/doc/freeipmi/DISCLAIMER.ipmidetect.UC
 share/doc/freeipmi/DISCLAIMER.ipmimonitoring
+share/doc/freeipmi/DISCLAIMER.ipmimonitoring.UC
 share/doc/freeipmi/DISCLAIMER.ipmiping
+share/doc/freeipmi/DISCLAIMER.ipmiping.UC
 share/doc/freeipmi/DISCLAIMER.ipmipower
+share/doc/freeipmi/DISCLAIMER.ipmipower.UC
+share/doc/freeipmi/DISCLAIMER.ipmiseld
 share/doc/freeipmi/DISCLAIMER.pstdout
-share/doc/freeipmi/DISCLAIMER.rmcpping
+share/doc/freeipmi/DISCLAIMER.pstdout.UC
 share/doc/freeipmi/INSTALL
 share/doc/freeipmi/NEWS
 share/doc/freeipmi/README
+share/doc/freeipmi/README.argp
+share/doc/freeipmi/README.build
+share/doc/freeipmi/README.openipmi
 share/doc/freeipmi/TODO
+share/doc/freeipmi/contrib/
+share/doc/freeipmi/contrib/ganglia/
+share/doc/freeipmi/contrib/ganglia/README
+share/doc/freeipmi/contrib/ganglia/ganglia_ipmi_sensors.pl
+share/doc/freeipmi/contrib/libipmimonitoring/
+share/doc/freeipmi/contrib/libipmimonitoring/ipmimonitoring-sel.c
+share/doc/freeipmi/contrib/libipmimonitoring/ipmimonitoring-sensors.c
+share/doc/freeipmi/contrib/nagios/
+share/doc/freeipmi/contrib/nagios/README
+share/doc/freeipmi/contrib/nagios/nagios_ipmi_sensors.pl
+share/doc/freeipmi/contrib/pet/
+share/doc/freeipmi/contrib/pet/README
+share/doc/freeipmi/contrib/pet/check_rmcpping
+share/doc/freeipmi/contrib/pet/ipminodes.cfg
+share/doc/freeipmi/contrib/pet/petalert.pl
+share/doc/freeipmi/freeipmi-bugs-issues-and-workarounds.txt
 share/doc/freeipmi/freeipmi-coding.txt
+share/doc/freeipmi/freeipmi-design.txt
 share/doc/freeipmi/freeipmi-hostrange.txt
 share/doc/freeipmi/freeipmi-libraries.txt
+share/doc/freeipmi/freeipmi-oem-documentation-requirements.txt
+share/doc/freeipmi/freeipmi-testing.txt
 share/examples/freeipmi/
 @sample /var/db/freeipmi/
-share/examples/freeipmi/bmc-config-template
-@sample /var/db/freeipmi/bmc-config-template
-share/examples/freeipmi/ipckey
-@sample /var/db/freeipmi/ipckey
-share/examples/freeipmi/ipmi_monitoring_sensors.conf
-@sample ${SYSCONFDIR}/ipmi_monitoring_sensors.conf
-share/examples/freeipmi/sysconfig/
-@sample ${SYSCONFDIR}/sysconfig/
-share/examples/freeipmi/sysconfig/freeipmi-bmc-watchdog
-@sample ${SYSCONFDIR}/sysconfig/freeipmi-bmc-watchdog
 @sample /var/cache/ipmimonitoringsdrcache/
+@sample /var/cache/ipmiseld/
 @sample /var/log/freeipmi/
 @sample /var/log/ipmiconsole/
+@sample ${SYSCONFDIR}/freeipmi/
+share/examples/freeipmi/freeipmi.conf
+@sample ${SYSCONFDIR}/freeipmi/freeipmi.conf
+share/examples/freeipmi/freeipmi_interpret_sel.conf
+@sample ${SYSCONFDIR}/freeipmi/freeipmi_interpret_sel.conf
+share/examples/freeipmi/freeipmi_interpret_sensor.conf
+@sample ${SYSCONFDIR}/freeipmi/freeipmi_interpret_sensor.conf
+share/examples/freeipmi/ipckey
+@sample /var/db/freeipmi/ipckey
+share/examples/freeipmi/ipmidetect.conf
+@sample ${SYSCONFDIR}/freeipmi/ipmidetect.conf
+share/examples/freeipmi/ipmidetectd.conf
+@sample ${SYSCONFDIR}/freeipmi/ipmidetectd.conf
+share/examples/freeipmi/ipmiseld.conf
+@sample ${SYSCONFDIR}/freeipmi/ipmiseld.conf
+share/examples/freeipmi/libipmiconsole.conf
+@sample ${SYSCONFDIR}/freeipmi/libipmiconsole.conf

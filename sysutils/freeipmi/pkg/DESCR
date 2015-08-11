@@ -1,29 +1,32 @@
-FreeIPMI is a collection of Intelligent Platform Management IPMI
-system software. It provides in-band and out-of-band software and
-a development library conforming to the Intelligent Platform
-Management Interface (IPMI v1.5 and v2.0) standards.
+FreeIPMI provides a library and tools to access IPMI Base Management
+Controllers, either in-band (host) or out-of-band (LAN etc), based on
+the IPMI v1.5/2.0 specification.
 
-The FreeIPMI project currently includes:
+In-band is not available under the usual securelevel(7) with OpenBSD
+but in some special situations it may be useful to run in insecure mode
+to allow configuration of the local BMC (e.g. using ipmi-config to
+adjust or disable network access or remove vendor default usernames).
 
-* Libfreeipmi - OpenIPMI, KCS, SMIC, SSIF, LAN drivers, and an IPMI
-  API in a C Library
-* Bmc-info - A tool to read information about the local BMC.
-* Bmc-config - A BMC configuration tool.
-* Bmc-watchdog - A BMC Watchdog tool/daemon.
-* Ipmi-chassis - An IPMI Chassis management tool.
-* Ipmi-fru - A field replaceable unit (FRU) reading tool
-* Ipmi-locate - A tool to probe for an IPMI BMC Device.
-* Ipmi-raw - A raw interface for IPMI commands.
-* Ipmi-sel - An IPMI System Event Log (SEL) reading tool.
-* Ipmi-sensors - An IPMI sensor reading tool.
-* Ipmiconsole - A Serial-over-Lan (SOL) console tool.
-* Libipmiconsole - A library for Serial-over-Lan (SOL).
-* Ipmidetect/Ipmidetectd/libipmidetect - A tool, daemon, and library
-  for IPMI node detection.
-* Ipmimonitoring/Libipmimonitoring - A tool and library for sensor
-  monitoring.
-* Ipmipower - An IPMI power control tool.
-* Ipmiping - An IPMI ping tool for debugging.
-* Rmcpping - An RMCP ping tool for debugging.
-* Pef-config - An IPMI Platform Event Filtering (PEF) Configuration
-  tool.
+bmc-device	perform advanced BMC commands
+bmc-info	read information about BMC (device ID, version, etc)
+bmc-watchdog	watchdog tool/daemon (in-band only)
+ipmi-chassis	manage/monitor a chassis (power, ID LED, status)
+ipmi-config	configure BMC/IPMI usernames, network, security,
+		power restoration policy, sensor thresholds, etc
+ipmi-dcmi	perform Data Center Manageability Interface (DCMI)
+		IPMI extension commands - supports extensions for
+		asset management and power usage management
+ipmi-fru	read field replaceable unit (FRU) information
+ipmi-locate	probe for an IPMI BMC Device (in-band only)
+ipmi-oem	tool for OEM specific commands
+ipmi-pet	parse and interpret Platform Event Traps (PET)
+ipmi-raw	hex input/output of IPMI commands
+ipmi-sel	read System Event Log (SEL) records
+ipmi-sensors	read sensors and sensor data repository (SDR)
+ipmiconsole	connect to a Serial-over-Lan (SOL) console
+ipmidetect/d	tool and daemon to detect alive IPMI nodes
+ipmiping	IPMI ping tool for debugging
+ipmipower	remotely control power
+ipmiseld	daemon that regularly polls the SEL and stores
+		the events to the local syslog
+rmcpping	RMCP ping tool for debugging

@@ -1,0 +1,9 @@
+$OpenBSD: patch-libipmiconsole_libipmiconsole_pc_in,v 1.1 2015/08/11 21:12:45 sthen Exp $
+--- libipmiconsole/libipmiconsole.pc.in.orig	Thu Jul 30 16:38:01 2015
++++ libipmiconsole/libipmiconsole.pc.in	Thu Jul 30 16:38:18 2015
+@@ -7,4 +7,4 @@ Name: libipmiconsole
+ Description: FreeIPMI library for serial-over-lan (SOL) remote console access
+ Version: @PACKAGE_VERSION@
+ Cflags: -I${includedir}
+-Libs: -L${libdir} -lipmiconsole
++Libs: -L${libdir} -lipmiconsole @IOPL_LIBS@

@@ -1,0 +1,35 @@
+$OpenBSD: patch-libfreeipmi_driver_ipmi-kcs-driver_c,v 1.1 2015/08/11 21:12:45 sthen Exp $
+--- libfreeipmi/driver/ipmi-kcs-driver.c.orig	Fri Jan  3 16:45:22 2014
++++ libfreeipmi/driver/ipmi-kcs-driver.c	Thu Jul 30 15:04:29 2015
+@@ -150,6 +150,7 @@
+ # include <machine/sysarch.h>
+ #elif defined(__NetBSD__) || defined(__OpenBSD__)
+ # include <machine/pio.h>               /* inb/outb */
++# include <sys/types.h>
+ # include <machine/sysarch.h>   /* sysarch call */
+ #elif defined(HAVE_SYS_IO_H)
+ /* Linux, _AXP_ */
+@@ -488,7 +489,22 @@ ipmi_kcs_ctx_io_init (ipmi_kcs_ctx_t ctx)
+   if (ctx->io_init)
+     goto out;
+ 
+-#ifdef __FreeBSD__
++#ifdef __OpenBSD__
++# if defined(__amd64__)
++  if (amd64_iopl (3) < 0)
++# elif defined(__i386__)
++  if (i386_iopl (3) < 0)
++# else
++  if (0)
++# endif
++    {
++      if (errno == EPERM || errno == EACCES)
++        ctx->errnum = IPMI_KCS_ERR_PERMISSION;
++      else
++        KCS_ERRNO_TO_KCS_ERRNUM (ctx, errno);
++      return (-1);
++    }
++#elif __FreeBSD__
+ #ifdef USE_IOPERM
+   /* i386_set_ioperm has known problems on FBSD 5.x (bus errors). */
+   if (i386_set_ioperm (ctx->driver_address, 0x02, 0x01))

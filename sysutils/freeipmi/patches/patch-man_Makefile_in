@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_Makefile_in,v 1.1 2015/08/11 21:12:45 sthen Exp $
+--- man/Makefile.in.orig	Thu Oct  9 22:43:00 2014
++++ man/Makefile.in	Thu Oct  9 22:43:37 2014
+@@ -885,7 +885,7 @@ uninstall-man: uninstall-man3 uninstall-man5 uninstall
+ 
+ 
+ $(MANS_CPP): $(MANS_CPP:%=%.pre)
+-	$(CPP) -nostdinc -w -C -P -I$(top_srcdir)/man $@.pre  $@
++	$(CPP) -nostdinc -w -C -P -I$(top_srcdir)/man < $@.pre > $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

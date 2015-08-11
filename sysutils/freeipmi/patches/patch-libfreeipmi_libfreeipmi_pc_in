@@ -1,0 +1,9 @@
+$OpenBSD: patch-libfreeipmi_libfreeipmi_pc_in,v 1.1 2015/08/11 21:12:45 sthen Exp $
+--- libfreeipmi/libfreeipmi.pc.in.orig	Thu Jul 30 16:39:16 2015
++++ libfreeipmi/libfreeipmi.pc.in	Thu Jul 30 16:39:19 2015
+@@ -7,4 +7,4 @@ Name: libfreeipmi
+ Description: FreeIPMI library
+ Version: @PACKAGE_VERSION@
+ Cflags: -I${includedir}
+-Libs: -L${libdir} -lfreeipmi
++Libs: -L${libdir} -lfreeipmi @IOPL_LIBS@
