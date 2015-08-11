@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2013/12/10 17:37:54 joshe Exp $
+# $OpenBSD: Makefile,v 1.23 2015/08/11 21:41:04 jasper Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
-V =			1.1.14
+V =			1.2.14
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
 WRKDIST=		${WRKDIR}/sbcl-${V}
@@ -25,8 +25,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sbcl/}
 PSEUDO_FLAVORS=		native_bootstrap
 FLAVOR?=
 
-USE_GROFF =		Yes
-
 .if ${FLAVOR:Mnative_bootstrap}
 BUILD_DEPENDS+=		lang/sbcl
 BOOTSTRAP_CMD=		${LOCALBASE}/bin/sbcl \
@@ -40,9 +38,7 @@ TEST_DEPENDS =		devel/gmp
 USE_GMAKE=		Yes
 PORTHOME=		${TMPDIR}
 MAKE_ENV=		GNUMAKE=${GMAKE} INSTALL_ROOT=${PREFIX} \
-			MAN_DIR=${PREFIX}/man INFO_DIR=${PREFIX}/info \
-			LINKFLAGS="-nopie" LDFLAGS="-nopie"
-CFLAGS +=		-fno-pie
+			MAN_DIR=${PREFIX}/man INFO_DIR=${PREFIX}/info
 
 # Upstream asks that packagers append something like this to the
 # version to distinguish official tarballs from third-party packages.
@@ -59,10 +55,10 @@ pre-configure:
 	mv ${VERSION_FILE}.new ${VERSION_FILE}
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} SBCL_CONTRIB_TARGET=all \
-		/bin/sh make.sh --prefix=${PREFIX} --xc-host="${BOOTSTRAP_CMD}"
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} /bin/sh make.sh \
+		--prefix=${PREFIX} --xc-host="${BOOTSTRAP_CMD}"
 	cd ${WRKSRC}/doc/manual && touch sbcl.texinfo && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} asdf.info sbcl.info html
+		${SETENV} ${MAKE_ENV} ${GMAKE} asdf.info sbcl.info
 
 do-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} /bin/sh install.sh

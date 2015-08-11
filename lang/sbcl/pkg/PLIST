@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/12/10 17:37:54 joshe Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/08/11 21:41:04 jasper Exp $
 @bin bin/sbcl
 @info info/asdf.info
 @info info/sbcl.info
@@ -25,6 +25,8 @@ lib/sbcl/contrib/sb-introspect.asd
 lib/sbcl/contrib/sb-introspect.fasl
 lib/sbcl/contrib/sb-md5.asd
 lib/sbcl/contrib/sb-md5.fasl
+lib/sbcl/contrib/sb-mpfr.asd
+lib/sbcl/contrib/sb-mpfr.fasl
 lib/sbcl/contrib/sb-posix.asd
 lib/sbcl/contrib/sb-posix.fasl
 lib/sbcl/contrib/sb-queue.asd
@@ -37,6 +39,7 @@ lib/sbcl/contrib/sb-simple-streams.asd
 lib/sbcl/contrib/sb-simple-streams.fasl
 lib/sbcl/contrib/sb-sprof.asd
 lib/sbcl/contrib/sb-sprof.fasl
+lib/sbcl/contrib/uiop.fasl
 lib/sbcl/sbcl.core
 lib/sbcl/site-systems/
 @man man/man1/sbcl.1
@@ -45,6 +48,4 @@ share/doc/sbcl/BUGS
 share/doc/sbcl/COPYING
 share/doc/sbcl/CREDITS
 share/doc/sbcl/NEWS
-share/doc/sbcl/asdf.html
-share/doc/sbcl/html/
-share/doc/sbcl/sbcl.html
+
