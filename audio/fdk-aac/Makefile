@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/18 09:48:39 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.5 2015/08/11 20:13:31 jasper Exp $
+
+BROKEN-mips64 =		Error: opcode not supported on this processor: mips3
 
 COMMENT =		modified Fraunhofer FDK AAC encoder and decoder
 DISTNAME =		fdk-aac-0.1.4
