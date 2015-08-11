@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2015/07/19 01:16:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2015/08/11 21:06:11 jeremy Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 DISTNAME=	freetds-0.95.18
+REVISION=	0
 
 SHARED_LIBS +=  ct                   6.0      # 4.0
 SHARED_LIBS +=  sybdb                8.0      # 5.0
@@ -42,7 +43,9 @@ TEST_IS_INTERACTIVE=Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_prog_DOXYGEN=
+# --disable-threadsafe required by databases/ruby-tiny_tds
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-threadsafe \
 		--enable-static \
 		--with-iodbc="${LOCALBASE}" \
 		--with-libiconv-prefix="${LOCALBASE}" \
