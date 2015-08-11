@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2015/06/11 14:57:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2015/08/11 20:47:47 sthen Exp $
 
-V=		3.4.13
-REVISION=	0
+V=		3.4.14
 PORTROACH=	limit:^3\.4\.*
 
 WANTLIB+=	stdc++
