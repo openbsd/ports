@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/14 00:29:15 juanfra Exp $
+# $OpenBSD: Makefile,v 1.6 2015/08/11 21:00:00 juanfra Exp $
 
 COMMENT =		creates DjVu files from PDF files
 
-DISTNAME =		pdf2djvu-0.7.21
+DISTNAME =		pdf2djvu-0.8
 
 CATEGORIES =		graphics
 
@@ -36,7 +36,8 @@ USE_GROFF =		Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-openmp \
-			--disable-rpath
+			--disable-rpath \
+			--without-pstreams
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
