@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2015/08/11 20:13:39 jasper Exp $
 
 COMMENT=	creates cover for audio cds using cddb and latex
 
@@ -25,7 +25,7 @@ EX_DIR=		${PREFIX}/share/examples/disc-cover
 PNGS=		busy.png offline.png online.png
 
 pre-configure:
-	@perl -i -pe "s#%%PREFIX%%#${PREFIX}#" ${WRKSRC}/disc-cover
+	@sed -i "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/disc-cover
 
 do-build:
 	@cd ${WRKSRC}; pod2man disc-cover disc-cover.1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/11 23:48:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2015/08/11 20:13:39 jasper Exp $
 
 COMMENT=		audio CD to audio file encoder
 DISTNAME=		vlorb-1.2
@@ -23,7 +23,7 @@ NO_TEST =		Yes
 PKG_ARCH=		*
 
 pre-install:
-	@perl -i -pe 's:/etc/vlorbrc:${SYSCONFDIR}/vlorbrc:g' \
+	@sed -i 's,/etc/vlorbrc,${SYSCONFDIR}/vlorbrc,g' \
 		${WRKSRC}/vlorb ${WRKSRC}/vlorb.1
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/07/16 23:57:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2015/08/11 20:13:39 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -21,6 +21,6 @@ CPAN_AUTHOR=		FOOF
 LIB_DEPENDS=		audio/libvorbis
 
 pre-configure:
-	@perl -i -p -e 's#/usr/local#${LOCALBASE}#' ${WRKDIST}/Makefile.PL
+	@sed -i 's,/usr/local,${LOCALBASE},' ${WRKDIST}/Makefile.PL
 
 .include <bsd.port.mk>

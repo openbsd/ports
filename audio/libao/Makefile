@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2015/05/22 11:31:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2015/08/11 20:13:39 jasper Exp $
 
 COMMENT=	portable audio output library
 
@@ -32,7 +32,7 @@ CONFIGURE_ENV=	ac_cv_header_sys_audioio_h=no
 MAKE_FLAGS=	ckport_DATA=""
 
 pre-build:
-	@perl -i -pe 's:/etc/libao.conf:${SYSCONFDIR}/libao.conf:g' \
+	@sed -i 's:/etc/libao.conf:${SYSCONFDIR}/libao.conf:g' \
 	    ${WRKDIST}/include/ao/ao_private.h \
 	    ${WRKDIST}/libao.conf.5 \
 	    ${WRKDIST}/doc/config.html
