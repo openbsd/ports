@@ -1,8 +1,8 @@
-$OpenBSD: patch-gfx_skia_moz_build,v 1.9 2015/07/05 20:03:36 landry Exp $
+$OpenBSD: patch-gfx_skia_moz_build,v 1.10 2015/08/11 21:14:53 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=1028827
---- gfx/skia/moz.build.orig	Thu May 21 02:11:23 2015
-+++ gfx/skia/moz.build	Fri May 22 11:06:52 2015
-@@ -868,7 +868,7 @@ if not CONFIG['INTEL_ARCHITECTURE'] and CONFIG['CPU_AR
+--- gfx/skia/moz.build.orig	Fri Jul  3 02:42:06 2015
++++ gfx/skia/moz.build	Sun Jul  5 22:38:40 2015
+@@ -870,7 +870,7 @@ if not CONFIG['INTEL_ARCHITECTURE'] and CONFIG['CPU_AR
              'trunk/src/opts/memset32_neon.S',
          ]
  
