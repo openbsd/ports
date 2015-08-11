@@ -1,24 +1,7 @@
-$OpenBSD: patch-lib_puppet_defaults_rb,v 1.15 2015/07/24 19:19:52 jasper Exp $
-
-From 05dad9b1d30a8ff1e8e4a06bc5eaf0b19dab43e2 Mon Sep 17 00:00:00 2001
-From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-Date: Fri, 24 Jul 2015 20:18:08 +0200
-Subject: [PATCH] (MAINT) Fix duplicate key which ruby 2.2 complains about
-
---- lib/puppet/defaults.rb.orig	Thu May 21 22:54:42 2015
-+++ lib/puppet/defaults.rb	Fri Jul 24 20:16:34 2015
-@@ -486,10 +486,6 @@ module Puppet
-       :default    => "stomp",
-       :desc       => "Which type of queue to use for asynchronous processing.",
-     },
--    :queue_type => {
--      :default    => "stomp",
--      :desc       => "Which type of queue to use for asynchronous processing.",
--    },
-     :queue_source => {
-       :default    => "stomp://localhost:61613/",
-       :desc       => "Which type of queue to use for asynchronous processing.  If your stomp server requires
-@@ -1044,11 +1040,11 @@ EOT
+$OpenBSD: patch-lib_puppet_defaults_rb,v 1.16 2015/08/11 20:19:45 jasper Exp $
+--- lib/puppet/defaults.rb.orig	Thu Aug  6 18:17:42 2015
++++ lib/puppet/defaults.rb	Sat Aug  8 10:37:45 2015
+@@ -1040,11 +1040,11 @@ EOT
  
    define_settings(:master,
      :user => {
@@ -32,7 +15,7 @@ Subject: [PATCH] (MAINT) Fix duplicate key which ruby 2.2 complains about
        :desc       => "The group puppet master should run as.",
      },
      :manifestdir => {
-@@ -1171,7 +1167,7 @@ EOT
+@@ -1167,7 +1167,7 @@ EOT
        :desc       => "Whether the master should function as a certificate authority.",
      },
      :basemodulepath => {
