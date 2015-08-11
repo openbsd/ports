@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2015/07/06 13:43:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2015/08/11 21:54:55 sthen Exp $
 
-V=		3.5.6
+V=		3.5.7
 
 # needs c++11. other parts for gcc MODULES are in ../Makefile.inc.
 MODGCC4_ARCHS=	*

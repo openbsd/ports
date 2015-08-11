@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_squid_8_in,v 1.1 2013/11/15 19:09:17 sthen Exp $
---- src/squid.8.in.orig	Tue Mar 12 10:15:58 2013
-+++ src/squid.8.in	Tue Mar 12 14:21:28 2013
-@@ -194,12 +194,14 @@ Some packaging distributions block even that.
+$OpenBSD: patch-src_squid_8_in,v 1.2 2015/08/11 21:54:55 sthen Exp $
+--- src/squid.8.in.orig	Sat Aug  1 07:08:17 2015
++++ src/squid.8.in	Tue Aug 11 21:48:28 2015
+@@ -192,12 +192,14 @@ Some packaging distributions block even that.
  .if !'po4a'hide' .IP "squid.conf.default"
  Reference copy of the configuration file. Always kept up to date with
  the version of Squid you are using.
