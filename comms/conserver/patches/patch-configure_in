@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.4 2014/10/07 22:14:17 sthen Exp $
---- configure.in.orig	Fri Apr 18 05:55:38 2014
-+++ configure.in	Tue Oct  7 21:24:43 2014
+$OpenBSD: patch-configure_in,v 1.5 2015/08/11 21:13:14 sthen Exp $
+--- configure.in.orig	Thu Apr 17 22:55:38 2014
++++ configure.in	Thu Jul 30 16:52:11 2015
 @@ -413,14 +413,14 @@ AC_ARG_WITH(uds,
  			    AC_TRY_COMPILE([#include <sys/types.h>
  				    #include <sys/socket.h>],
@@ -60,3 +60,35 @@ $OpenBSD: patch-configure_in,v 1.4 2014/10/07 22:14:17 sthen Exp $
  				    ])
  			    ;;
  			*)
+@@ -653,27 +669,26 @@ AC_ARG_WITH(freeipmi,
+ 		FREEIPMILDFLAGS="-L$withval/lib -R$withval/lib"
+ 	    fi
+ 	else
+-	    FREEIPMICPPFLAGS=""
+-	    FREEIPMILDFLAGS=""
++	    FREEIPMICPPFLAGS="`pkg-config --cflags libfreeipmi`"
++	    FREEIPMILDFLAGS="`pkg-config --libs libfreeipmi`"
+ 	fi
+ 
+ 	oCPPFLAGS="$CPPFLAGS"
+ 	oLDFLAGS="$LDFLAGS"
+ 	oLIBS="$LIBS"
+ 	have_freeipmi=no
+-
+ 	CPPFLAGS="$CPPFLAGS $FREEIPMICPPFLAGS"
+ 	LDFLAGS="$LDFLAGS $FREEIPMILDFLAGS"
+ 
+ 	AC_CHECK_HEADER([ipmiconsole.h],
+-	    [LIBS="$LIBS -lipmiconsole"
++	    [LIBS="$LIBS `pkg-config --libs libipmiconsole`"
+ 	    AC_MSG_CHECKING(for freeipmi libraries -lipmiconsole)
+ 	    AC_TRY_LINK([#include <ipmiconsole.h>
+ 		],[ipmiconsole_ctx_fd(0)],
+ 		[AC_MSG_RESULT(yes)
+ 		cons_with_freeipmi="YES"
+ 		AC_DEFINE(HAVE_FREEIPMI)
+-		CONSLIBS="$CONSLIBS -lipmiconsole"
++		CONSLIBS="$CONSLIBS `pkg-config --libs libipmiconsole`"
+ 		have_freeipmi=yes],
+ 		[AC_MSG_RESULT(no)])],)
+ 

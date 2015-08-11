@@ -15,3 +15,5 @@ Flavors:
 net - use network sockets rather than unix domain sockets
 (as was previously the default). This is mainly useful when
 the conserver server is on a separate machine to the client.
+
+ipmi - build with internal support for IPMI serial-over-lan
