@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/04/21 18:33:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/08/11 21:43:03 jasper Exp $
 
 COMMENT=	update LDAP entries with a text editor
 
@@ -35,7 +35,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 NO_TEST=	Yes
 
 pre-build:
-	@perl -pi -e "s,/etc/ldap,${SYSCONFDIR}/openldap,g" ${WRKSRC}/ldapvi.1
+	@sed -i "s,/etc/ldap,${SYSCONFDIR}/openldap,g" ${WRKSRC}/ldapvi.1
 
 do-install:
 	cd ${WRKSRC}/manual && ${MAKE_PROGRAM} ${MAKE_FILE} manual.html

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/05/02 18:22:23 bcallah Exp $
+# $OpenBSD: Makefile,v 1.39 2015/08/11 21:43:02 jasper Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64
@@ -67,7 +67,7 @@ pre-patch:
 #.for v in 1
 #	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/0${V}u${v}.diff
 #.endfor
-	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
+	@sed -i 's|\r\n|\n|g' ${WRKDIST}/makefile \
 	    ${WRKDIST}/src/emu/fileio.h \
 	    ${WRKDIST}/src/emu/cpu/m68000/m68kmake.c \
 	    ${WRKDIST}/src/emu/machine/netlist.h \

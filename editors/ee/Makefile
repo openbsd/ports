@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/03/17 23:43:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.17 2015/08/11 21:43:02 jasper Exp $
 
 COMMENT=		easy to use text editor
 
@@ -27,7 +27,7 @@ MAKE_ENV=		SYSCONFDIR=${SYSCONFDIR} \
 NO_TEST=		Yes
 
 do-install:
-	@perl -i -pe 's:%%SYSCONFDIR%%:${SYSCONFDIR}:g' ${WRKSRC}/ee.1
+	@sed -i 's,%%SYSCONFDIR%%,${SYSCONFDIR},g' ${WRKSRC}/ee.1
 	${INSTALL_PROGRAM} ${WRKDIST}/ee ${PREFIX}/bin/ee
 	${INSTALL_DATA} ${WRKDIST}/ee.1	${PREFIX}/man/man1/ee.1
 

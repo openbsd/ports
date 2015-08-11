@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/05 17:00:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/08/11 21:43:03 jasper Exp $
 
 COMMENT =	simple, fast GTK-based text editor
 DISTNAME =	tpad-5.7.1.3
@@ -42,6 +42,6 @@ FAKE_FLAGS =		itlocaledir=${PREFIX}/share/locale \
 NO_TEST =		Yes
 
 post-patch:
-	perl -pi -e "s,Linux User's,OpenBSD Reference,g" ${WRKSRC}/man/tpad.1
+	sed -i "s,Linux User's,OpenBSD Reference,g" ${WRKSRC}/man/tpad.1
 
 .include <bsd.port.mk>

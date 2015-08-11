@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2015/07/16 04:26:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2015/08/11 21:43:03 jasper Exp $
 
 COMMENT=	Pico editor clone with enhancements
 
@@ -28,7 +28,7 @@ pre-configure:
 	@ln -s /usr/bin/false ${WRKDIR}/bin/groff
 
 post-install:
-	perl -i -pe 's:/etc:${SYSCONFDIR}:g; s:PREFIX:${TRUEPREFIX}:g;' \
+	sed -i -e 's:/etc:${SYSCONFDIR}:g;' -e 's:PREFIX:${TRUEPREFIX}:g;' \
 	    ${PREFIX}/man/man5/nanorc.5
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nano
 	${INSTALL_DATA} ${WRKBUILD}/doc/nanorc.sample \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/07/03 20:07:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2015/08/11 21:43:02 jasper Exp $
 
 BROKEN= needs adapting to audio changes
 
@@ -32,7 +32,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/example.cfg ${PREFIX}/share/examples/spectemu
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/spectemu
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/spectemu
-	perl -i -pe 's!__SYSCONFDIR__!${SYSCONFDIR}!' \
+	sed -i 's!__SYSCONFDIR__!${SYSCONFDIR}!' \
 		${PREFIX}/share/doc/spectemu/README
 
 .include <bsd.port.mk>

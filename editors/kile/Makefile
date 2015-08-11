@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/03/27 08:11:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2015/08/11 21:43:02 jasper Exp $
 
 COMMENT=	integrated LaTeX environment for KDE
 DISTNAME=	kile-2.0
@@ -48,7 +48,7 @@ CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV} \
 		LDADD="-pthread -lm"
 
 pre-configure:
-	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
+	@sed -i 's,!!LOCALBASE!!,${LOCALBASE},g' \
 		${WRKSRC}/src/kile/kile.kcfg
 
 .include <bsd.port.mk>

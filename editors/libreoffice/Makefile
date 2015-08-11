@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2015/07/19 16:25:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.134 2015/08/11 21:43:03 jasper Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -386,7 +386,7 @@ post-install:
 
 	for _d in calc draw impress math \
 		qstart startcenter writer; do \
-		perl -pi -e "s,Icon=libreoffice${BV}-,Icon=libreoffice-,g" \
+		sed -i "s,Icon=libreoffice${BV}-,Icon=libreoffice-,g" \
 			${PREFIX}/lib/libreoffice/share/xdg/$${_d}.desktop && \
 		ln -sf ${TRUEPREFIX}/lib/libreoffice/share/xdg/$${_d}.desktop \
 			${PREFIX}/share/applications/$${_d}.desktop; done
