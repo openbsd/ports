@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.7 2015/05/18 16:35:15 espie Exp $
+# $OpenBSD: Clock.pm,v 1.8 2015/08/11 22:39:57 espie Exp $
 #
 # Copyright (c) 2011-2013 Marc Espie <espie@openbsd.org>
 #
@@ -162,7 +162,7 @@ sub frozen_message
 sub reset_offset
 {
 	my $self = shift;
-	my $sz = (stat $self->{name})[7];
+	my $sz = ($self->{file}->stat)[7];
 	if (defined $sz) {
 		$self->{offset} = $sz;
 	}
