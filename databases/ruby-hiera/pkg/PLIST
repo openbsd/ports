@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/06/12 17:57:55 jasper Exp $
-@conflict ruby21-hiera->=2.0.0
+@comment $OpenBSD: PLIST,v 1.9 2015/08/11 20:15:03 jasper Exp $
+@conflict ruby22-hiera->=2.0.0
 ${GEM_BIN}/hiera${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/07/18 21:11:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2015/08/11 20:15:03 jasper Exp $
 
 PORTROACH=		limit:^1
 
@@ -6,7 +6,7 @@ COMMENT=		simple pluggable hierarchical database
 
 V=			1.3.4
 DISTNAME=		hiera-${V}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		databases
 
