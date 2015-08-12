@@ -1,0 +1,125 @@
+$OpenBSD: patch-configure,v 1.1 2015/08/12 06:20:45 ajacoutot Exp $
+
+XXX build breaks with our in-tree ocaml-graph;
+should be fixed at next frama-c release
+
+--- configure.orig	Wed Aug  5 08:30:44 2015
++++ configure	Wed Aug  5 08:29:56 2015
+@@ -3441,116 +3441,7 @@ OCAMLGRAPH_HOME=$OCAMLLIB/ocamlgraph
+ OCAMLGRAPH_EXISTS=no
+ OCAMLGRAPH_INCLUDE=
+ OCAMLGRAPH_CUSTOM=no
+-
+-
+-# Check whether --with-ocamlgraph was given.
+-if test "${with_ocamlgraph+set}" = set; then :
+-  withval=$with_ocamlgraph; OCAMLGRAPH_HOME=$withval
+-         OCAMLGRAPH_CUSTOM=yes
+-fi
+-
+-
+-if test "$OCAMLFIND" = "no" -o "$OCAMLGRAPH_CUSTOM" = "yes"; then
+-
+-# check if any ocamlgraph is installed in the right place
+-  as_ac_File=`$as_echo "ac_cv_file_$OCAMLGRAPH_HOME/graph.$OBJ_SUFFIX" | $as_tr_sh`
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $OCAMLGRAPH_HOME/graph.$OBJ_SUFFIX" >&5
+-$as_echo_n "checking for $OCAMLGRAPH_HOME/graph.$OBJ_SUFFIX... " >&6; }
+-if eval \${$as_ac_File+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  test "$cross_compiling" = yes &&
+-  as_fn_error $? "cannot check for file existence when cross compiling" "$LINENO" 5
+-if test -r "$OCAMLGRAPH_HOME/graph.$OBJ_SUFFIX"; then
+-  eval "$as_ac_File=yes"
+-else
+-  eval "$as_ac_File=no"
+-fi
+-fi
+-eval ac_res=\$$as_ac_File
+-	       { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_res" >&5
+-$as_echo "$ac_res" >&6; }
+-if eval test \"x\$"$as_ac_File"\" = x"yes"; then :
+-  OCAMLGRAPH_EXISTS="yes" OCAMLGRAPH_INCLUDE="-I +ocamlgraph"
+-fi
+-
+-
+-  if test "$OCAMLGRAPH_EXISTS"="no" -a "$OCAMLGRAPH_CUSTOM" = "yes"; then
+-    as_fn_error $? "unable to find OCamlGraph in custom location $OCAMLGRAPH_HOME.
+-      Please give an appropriate value, or use default OCamlGraph library" "$LINENO" 5;
+-  fi
+-else
+-  OCAMLGRAPH_HOME=$($OCAMLFIND query ocamlgraph 2>/dev/null \
+-                          | tr -d '\r\n');
+-  if test "$OCAMLGRAPH_HOME" != ""; then
+-     OCAMLGRAPH_INCLUDE="-I $OCAMLGRAPH_HOME";
+-     OCAMLGRAPH_EXISTS="yes";
+-  else
+-     { $as_echo "$as_me:${as_lineno-$LINENO}: no package ocamlgraph in ocamlfind" >&5
+-$as_echo "$as_me: no package ocamlgraph in ocamlfind" >&6;}
+-  fi;
+-fi
+-
+-ocamlgraph_error() {
+-  if test "$OCAMLGRAPH_CUSTOM" = "yes"; then
+-  as_fn_error $? "Custom OCamlGraph library version $OCAMLGRAPH_VERSION is incompatible with
+-    Frama-C. Please provide another location or use default OCamlGraph" "$LINENO" 5;
+-  else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: OcamlGraph $OCAMLGRAPH_VERSION is incompatible with Frama-C." >&5
+-$as_echo "$as_me: OcamlGraph $OCAMLGRAPH_VERSION is incompatible with Frama-C." >&6;}
+-  OCAMLGRAPH_EXISTS=no
+-  OCAMLGRAPH_INCLUDE=
+-  :;
+-  fi
+-}
+-
+-# if any, check if it is a compatible version
+-if test "$OCAMLGRAPH_EXISTS" = "yes"; then
+-  test_ocamlgraph_version='print_string Graph.Version.version;;'
+-  echo $test_ocamlgraph_version > test_ocamlgraph.ml
+-  if $OCAMLC -o test_ocamlgraph $OCAMLGRAPH_INCLUDE graph.cmo \
+-       test_ocamlgraph.ml 2> /dev/null; \
+-  then
+-    OCAMLGRAPH_VERSION=`./test_ocamlgraph`
+-    case $OCAMLGRAPH_VERSION in
+-    1.8.1) ocamlgraph_error;;
+-    1.8.2) ocamlgraph_error;;
+-    1.8.3) ocamlgraph_error;;
+-    1.8.4) { $as_echo "$as_me:${as_lineno-$LINENO}: OcamlGraph $OCAMLGRAPH_VERSION found: great!" >&5
+-$as_echo "$as_me: OcamlGraph $OCAMLGRAPH_VERSION found: great!" >&6;};;
+-    1.8.*) { $as_echo "$as_me:${as_lineno-$LINENO}: OcamlGraph $OCAMLGRAPH_VERSION > 1.8.4 found: should be compatible, but no warranty. Use it at your own risk!" >&5
+-$as_echo "$as_me: OcamlGraph $OCAMLGRAPH_VERSION > 1.8.4 found: should be compatible, but no warranty. Use it at your own risk!" >&6;};;
+-    *) ocamlgraph_error;;
+-    esac
+-    if test "$OCAMLGRAPH_EXISTS" = "yes"; then # current version is ok
+-      if test "$OCAMLBEST" = "opt"; then
+-        if $OCAMLOPT -o test_ocamlgraph $OCAMLGRAPH_INCLUDE graph.cmxa \
+-          test_ocamlgraph.ml 2> /dev/null; \
+-        then
+-          { $as_echo "$as_me:${as_lineno-$LINENO}: OcamlGraph native version is ok" >&5
+-$as_echo "$as_me: OcamlGraph native version is ok" >&6;}
+-        else
+-          { $as_echo "$as_me:${as_lineno-$LINENO}: OcamlGraph native version is not ok" >&5
+-$as_echo "$as_me: OcamlGraph native version is not ok" >&6;}
+-          ocamlgraph_error
+-        fi
+-      else
+-        ocamlgraph_error
+-      fi
+-    fi
+-  else
+-    ocamlgraph_error
+-  fi
+-  rm -f test_ocamlgraph test_ocamlgraph.ml test_ocamlgraph.cm*
+-fi
+-
+-# allow local ocamlgraph
+-# Check whether --enable-local-ocamlgraph was given.
+-if test "${enable_local_ocamlgraph+set}" = set; then :
+-  enableval=$enable_local_ocamlgraph; ENABLE_LOCAL_OCAMLGRAPH=$enableval
+-else
+-  ENABLE_LOCAL_OCAMLGRAPH=yes
+-fi
++ENABLE_LOCAL_OCAMLGRAPH=yes
+ 
+ 
+ # revert back to local version of ocamlgraph
