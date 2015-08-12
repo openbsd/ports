@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/07/15 09:56:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2015/08/12 10:00:50 zhuk Exp $
 
 COMMENT =		CD/DVD creator
 DISTNAME =		k3b-2.0.3a
@@ -30,6 +30,7 @@ WANTLIB += mpcdec samplerate soprano sndfile tag vorbis
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/k3b/}
 
 MODULES =		x11/kde4 devel/gettext
+MODGETTEXT_TOOLS =	Yes
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \

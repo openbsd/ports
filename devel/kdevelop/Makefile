@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/07/10 18:28:14 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2015/08/12 10:00:50 zhuk Exp $
 
 CATEGORIES =	devel x11
 COMMENT =	integrated development environment for KDE 4
@@ -41,6 +41,7 @@ WANTLIB += processcore processui qjson soprano sublime
 
 MODULES =	x11/kde4 devel/gettext lang/python
 MODKDE4_USE =	workspace
+MODGETTEXT_TOOLS =	Yes
 
 BUILD_DEPENDS =	misc/shared-mime-info
 

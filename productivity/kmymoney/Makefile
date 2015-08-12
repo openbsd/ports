@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/07/17 08:29:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2015/08/12 10:00:50 zhuk Exp $
 COMMENT =		accounting for KDE 4
 CATEGORIES =		productivity x11
 HOMEPAGE =		http://kmymoney2.sourceforge.net
@@ -32,8 +32,9 @@ WANTLIB += aqbanking gwengui-cpp gwengui-qt4 gwenhywfar
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kmymoney2/KMyMoney-KDE4/${VERSION}/}
 
-MODULES =	x11/kde4 devel/gettext multimedia/phonon
-MODKDE4_USE =	pim
+MODULES =		x11/kde4 devel/gettext multimedia/phonon
+MODGETTEXT_TOOLS =	Yes
+MODKDE4_USE =		pim
 
 BUILD_DEPENDS =	devel/boost \
 		devel/doxygen \

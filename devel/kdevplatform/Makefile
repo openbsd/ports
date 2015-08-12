@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/10 18:28:14 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2015/08/12 10:00:50 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	IDE creation toolkit for KDE 4
@@ -43,6 +43,7 @@ WANTLIB += grantlee_core
 MODULES =	x11/kde4 gcc4 devel/gettext
 MODGCC4_ARCHS =	*
 MODGCC4_LANGS =	c++
+MODGETTEXT_TOOLS =	Yes
 
 BUILD_DEPENDS =	devel/boost
 
