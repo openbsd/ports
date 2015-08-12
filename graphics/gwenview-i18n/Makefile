@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/22 11:34:17 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2015/08/12 20:03:53 naddy Exp $
 
 COMMENT=	image viewer for KDE, translations
 
@@ -13,7 +13,8 @@ HOMEPAGE=	http://gwenview.sourceforge.net/home/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-BUILD_DEPENDS = x11/kde/libs3
+BUILD_DEPENDS = x11/kde/libs3 \
+		devel/gettext-tools
 RUN_DEPENDS = x11/kde/libs3
 
 MODULES=	x11/kde
