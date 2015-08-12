@@ -1,16 +1,16 @@
-$OpenBSD: patch-ui_events_x_keysym_to_unicode_cc,v 1.1 2014/10/13 06:49:19 robert Exp $
---- ui/events/x/keysym_to_unicode.cc.orig.port	Sat Oct 11 19:35:42 2014
-+++ ui/events/x/keysym_to_unicode.cc	Sat Oct 11 19:57:17 2014
-@@ -35,7 +35,7 @@
- #include <X11/X.h>
- #include <X11/keysym.h>
+$OpenBSD: patch-ui_events_x_keysym_to_unicode_cc,v 1.2 2015/08/12 05:55:16 robert Exp $
+--- ui/events/x/keysym_to_unicode.cc.orig.port	Tue Aug 11 22:09:41 2015
++++ ui/events/x/keysym_to_unicode.cc	Wed Aug 12 07:52:18 2015
+@@ -39,7 +39,7 @@
+ #define XK_dead_greek 0xfe8c
+ #endif
  
 -#include <unordered_map>
 +#include <ext/hash_map>
  
  #include "base/lazy_instance.h"
  #include "base/macros.h"
-@@ -832,7 +832,7 @@ class KeySymToUnicode {
+@@ -873,7 +873,7 @@ class KeySymToUnicode {
    }
  
   private:

@@ -1,6 +1,6 @@
-$OpenBSD: patch-device_usb_usb_service_impl_cc,v 1.4 2015/07/23 13:44:04 robert Exp $
---- device/usb/usb_service_impl.cc.orig.port	Wed Jul 22 09:49:51 2015
-+++ device/usb/usb_service_impl.cc	Wed Jul 22 10:05:18 2015
+$OpenBSD: patch-device_usb_usb_service_impl_cc,v 1.5 2015/08/12 05:55:16 robert Exp $
+--- device/usb/usb_service_impl.cc.orig.port	Tue Aug 11 22:09:35 2015
++++ device/usb/usb_service_impl.cc	Wed Aug 12 07:52:18 2015
 @@ -286,12 +286,15 @@ UsbServiceImpl::UsbServiceImpl(
      PlatformUsbContext context,
      scoped_refptr<base::SequencedTaskRunner> blocking_task_runner)
@@ -38,7 +38,7 @@ $OpenBSD: patch-device_usb_usb_service_impl_cc,v 1.4 2015/07/23 13:44:04 robert 
  }
  
  scoped_refptr<UsbDevice> UsbServiceImpl::GetDeviceById(uint32 unique_id) {
-@@ -566,6 +572,7 @@ void UsbServiceImpl::RemoveDevice(scoped_refptr<UsbDev
+@@ -572,6 +578,7 @@ void UsbServiceImpl::RemoveDevice(scoped_refptr<UsbDev
    device->OnDisconnect();
  }
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-device_usb_usb_service_impl_cc,v 1.4 2015/07/23 13:44:04 robert 
  // static
  int LIBUSB_CALL UsbServiceImpl::HotplugCallback(libusb_context* context,
                                                  PlatformUsbDevice device,
-@@ -603,6 +610,7 @@ int LIBUSB_CALL UsbServiceImpl::HotplugCallback(libusb
+@@ -609,6 +616,7 @@ int LIBUSB_CALL UsbServiceImpl::HotplugCallback(libusb
  
    return 0;
  }
