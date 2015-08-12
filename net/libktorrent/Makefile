@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/08/12 10:00:50 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2015/08/12 12:33:02 zhuk Exp $
 
 CATEGORIES =	net
 COMMENT =	KTorrent engine
@@ -23,7 +23,6 @@ WANTLIB += gcrypt gmp qca2
 MASTER_SITES =	${HOMEPAGE}downloads/${V:C/^./4/}/
 
 MODULES =		devel/gettext x11/kde4
-MODGETTEXT_TOOLS =	Yes
 MODKDE4_USE =		libs
 MODKDE4_LIB_LINKS =	Yes
 

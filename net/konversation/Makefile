@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/08/12 10:00:50 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2015/08/12 12:33:02 zhuk Exp $
 
 CATEGORIES =	net
 COMMENT =	IRC client for KDE 4
@@ -25,7 +25,6 @@ PERMIT_PACKAGE_CDROM =          Yes
 
 MODULES =	x11/kde4 multimedia/phonon devel/gettext lang/python
 MODKDE4_USE =	pim
-MODGETTEXT_TOOLS =	Yes
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/12 10:00:50 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2015/08/12 12:33:02 zhuk Exp $
 
 CATEGORIES =	productivity
 COMMENT =	Google contacts/calendar connector for Akonadi
@@ -21,7 +21,6 @@ EXTRACT_SUFX =	.tar.bz2
 PERMIT_PACKAGE_CDROM =          Yes
 
 MODULES =		x11/kde4 devel/gettext
-MODGETTEXT_TOOLS =	Yes
 MODKDE4_USE =		pim
 
 BUILD_DEPENDS =	devel/boost \

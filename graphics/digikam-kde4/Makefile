@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/08/12 10:00:50 zhuk Exp $
+# $OpenBSD: Makefile,v 1.17 2015/08/12 12:33:02 zhuk Exp $
 
 COMMENT-kipi =		KDE image plugins collection
 COMMENT-main =		KDE photo management utility
@@ -35,7 +35,6 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/}
 MULTI_PACKAGES =	-main -kipi -mediawiki
 
 MODULES =		x11/kde4 multimedia/phonon devel/gettext
-MODGETTEXT_TOOLS =	Yes
 
 # Do not use WANTLIB due to gettext module automatically adding to it
 
