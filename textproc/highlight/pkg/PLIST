@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/02/03 13:26:21 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/08/12 06:40:04 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -52,6 +52,7 @@ share/highlight/langDefs/clojure.lang
 share/highlight/langDefs/clp.lang
 share/highlight/langDefs/cobol.lang
 share/highlight/langDefs/coldfusion.lang
+share/highlight/langDefs/conf.lang
 share/highlight/langDefs/crk.lang
 share/highlight/langDefs/csharp.lang
 share/highlight/langDefs/css.lang
@@ -162,6 +163,7 @@ share/highlight/langDefs/rexx.lang
 share/highlight/langDefs/rnc.lang
 share/highlight/langDefs/rpg.lang
 share/highlight/langDefs/rpl.lang
+share/highlight/langDefs/rs.lang
 share/highlight/langDefs/ruby.lang
 share/highlight/langDefs/s.lang
 share/highlight/langDefs/sas.lang
