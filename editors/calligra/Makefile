@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/07/03 15:43:12 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2015/08/12 09:56:12 zhuk Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra-suite.org/
-DISTNAME =	calligra-2.9.5
+DISTNAME =	calligra-2.9.6
 CATEGORIES =	editors
 
 DIST_SUBDIR =	kde
@@ -79,8 +79,8 @@ SHARED_LIBS +=  kovectorimage             50.0 # 13.0
 SHARED_LIBS +=  koversion                 0.0 # 14.0
 SHARED_LIBS +=  kritacolor                0.0 # 14.0
 SHARED_LIBS +=  wordsprivate              14.0 # 1.0
-SHARED_LIBS +=  libglobal                 0.0 # 14.0
-SHARED_LIBS +=  libkispsd                 0.0 # 14.0
+SHARED_LIBS +=  kritaglobal               0.0 # 14.0
+SHARED_LIBS +=  kritapsd                  0.0 # 14.0
 
 WANTLIB =  c m pthread z
 WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath SM X11 Xext Xi

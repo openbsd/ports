@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/07/03 15:43:12 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/08/12 09:56:12 zhuk Exp $
 @conflict koffice-*
 @bin bin/braindump
 @bin bin/calligra
@@ -861,13 +861,13 @@ lib/libkdeinit4_karbon.so
 @lib lib/libkplatoui.so.${LIBkplatoui_VERSION}
 @lib lib/libkritacolor.so.${LIBkritacolor_VERSION}
 lib/libkritacolord.so
+@lib lib/libkritaglobal.so.${LIBkritaglobal_VERSION}
 @lib lib/libkritaimage.so.${LIBkritaimage_VERSION}
 @lib lib/libkritalibbrush.so.${LIBkritalibbrush_VERSION}
 @lib lib/libkritalibpaintop.so.${LIBkritalibpaintop_VERSION}
+@lib lib/libkritapsd.so.${LIBkritapsd_VERSION}
 @lib lib/libkritaui.so.${LIBkritaui_VERSION}
 @lib lib/libkundo2.so.${LIBkundo2_VERSION}
-@lib lib/liblibglobal.so.${LIBlibglobal_VERSION}
-@lib lib/liblibkispsd.so.${LIBlibkispsd_VERSION}
 @lib lib/libpigmentcms.so.${LIBpigmentcms_VERSION}
 @lib lib/libplanprivate.so.${LIBplanprivate_VERSION}
 @lib lib/libplanworkapp.so.${LIBplanworkapp_VERSION}
@@ -6010,8 +6010,8 @@ share/apps/krita/defaultpresets/spraybrush.kpp
 share/apps/krita/dtd/
 share/apps/krita/dtd/krita.dtd
 share/apps/krita/gmic/
-share/apps/krita/gmic/gmic_def.gmic
 share/apps/krita/gmic/gmic_def.gmic.blacklist
+share/apps/krita/gmic/update1610.gmic
 share/apps/krita/gradients/
 share/apps/krita/gradients/BG-Krita2.ggr
 share/apps/krita/gradients/GPS-FG-Glare.ggr
@@ -6639,7 +6639,7 @@ share/apps/krita/workspaces/
 share/apps/krita/workspaces/Big_Paint.kws
 share/apps/krita/workspaces/Big_Paint_2.kws
 share/apps/krita/workspaces/Big_Vector.kws
-share/apps/krita/workspaces/Small_Paint.kws
+share/apps/krita/workspaces/Default.kws
 share/apps/krita/workspaces/Small_Vector.kws
 share/apps/krita/workspaces/VFX_Paint.kws
 share/apps/kritaanimation/
@@ -7826,10 +7826,6 @@ share/kde4/services/calligra/kspreadreferencemodule.desktop
 share/kde4/services/calligra/kspreadstatisticalmodule.desktop
 share/kde4/services/calligra/kspreadtextmodule.desktop
 share/kde4/services/calligra/kspreadtrigonometrymodule.desktop
-share/kde4/services/calligra/libokularGenerator_doc_calligra.desktop
-share/kde4/services/calligra/libokularGenerator_docx_calligra.desktop
-share/kde4/services/calligra/okularDoc_calligra.desktop
-share/kde4/services/calligra/okularDocx_calligra.desktop
 share/kde4/services/calligra/plan_icalendar_export.desktop
 share/kde4/services/calligra/plan_kplato_import.desktop
 share/kde4/services/calligra/planpart.desktop
@@ -7848,8 +7844,12 @@ share/kde4/services/karbon_karbon1x_thumbnail.desktop
 share/kde4/services/karbon_wmf_thumbnail.desktop
 share/kde4/services/karbon_xfig_thumbnail.desktop
 share/kde4/services/krita_kra_thumbnail.desktop
+share/kde4/services/libokularGenerator_doc_calligra.desktop
+share/kde4/services/libokularGenerator_docx_calligra.desktop
 share/kde4/services/libokularGenerator_odp.desktop
 share/kde4/services/libokularGenerator_odt.desktop
+share/kde4/services/okularDoc_calligra.desktop
+share/kde4/services/okularDocx_calligra.desktop
 share/kde4/services/okularOdp.desktop
 share/kde4/services/okularOdt.desktop
 share/kde4/services/qimageioplugins/kra.desktop

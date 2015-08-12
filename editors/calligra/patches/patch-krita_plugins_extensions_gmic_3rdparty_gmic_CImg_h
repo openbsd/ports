@@ -1,11 +1,11 @@
-$OpenBSD: patch-krita_plugins_extensions_gmic_3rdparty_gmic_CImg_h,v 1.1 2015/07/03 15:43:12 zhuk Exp $
+$OpenBSD: patch-krita_plugins_extensions_gmic_3rdparty_gmic_CImg_h,v 1.2 2015/08/12 09:56:12 zhuk Exp $
 
 Variables starting by underscore ("_") sign are reserved and should not be used
 in applications.
 
---- krita/plugins/extensions/gmic/3rdparty/gmic/CImg.h.orig	Mon May  4 21:17:23 2015
-+++ krita/plugins/extensions/gmic/3rdparty/gmic/CImg.h	Mon May  4 21:22:58 2015
-@@ -37389,19 +37389,19 @@ namespace cimg_library_suffixed {
+--- krita/plugins/extensions/gmic/3rdparty/gmic/CImg.h.orig	Wed Jul  8 09:20:50 2015
++++ krita/plugins/extensions/gmic/3rdparty/gmic/CImg.h	Thu Jul 16 18:17:41 2015
+@@ -37408,19 +37408,19 @@ namespace cimg_library_suffixed {
              else { if (!visible_cursor) { disp.show_mouse(); visible_cursor = true; }}
              const int d = (depth()>1)?depth():0;
              int
@@ -36,7 +36,7 @@ in applications.
                xc = (xp + xn)/2,
                yc = (yp + yn)/2,
                zxc = (zxp + zxn)/2,
-@@ -37439,14 +37439,14 @@ namespace cimg_library_suffixed {
+@@ -37458,14 +37458,14 @@ namespace cimg_library_suffixed {
              // Draw selection.
              if (phase) {
                const int
