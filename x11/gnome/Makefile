@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.249 2015/04/13 08:55:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.250 2015/08/12 06:24:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -85,6 +85,7 @@
      SUBDIR += online-miners
      SUBDIR += orca
      SUBDIR += photos
+     SUBDIR += pinpoint
      SUBDIR += planner
      SUBDIR += power-manager
      SUBDIR += py-atspi
