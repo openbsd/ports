@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/05/26 17:37:40 robert Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/08/12 10:56:13 robert Exp $
 bin/iridium
 iridium/
 iridium/chrome_100_percent.pak
@@ -7,7 +7,6 @@ iridium/icudtl.dat
 @bin iridium/iridium
 iridium/keyboard_resources.pak
 iridium/libexif.so
-iridium/libffmpegsumo.so
 iridium/locales/
 iridium/locales/am.pak
 iridium/locales/ar.pak
@@ -103,9 +102,8 @@ iridium/resources/inspector/Images/indexedDBObjectStore.png
 iridium/resources/inspector/Images/localStorage.png
 iridium/resources/inspector/Images/navigationControls.png
 iridium/resources/inspector/Images/navigationControls_2x.png
+iridium/resources/inspector/Images/notifications.svg
 iridium/resources/inspector/Images/paneAddButtons.png
-iridium/resources/inspector/Images/paneAnimationsButtons.png
-iridium/resources/inspector/Images/paneElementStateButtons.png
 iridium/resources/inspector/Images/paneFilterButtons.png
 iridium/resources/inspector/Images/paneRefreshButtons.png
 iridium/resources/inspector/Images/popoverArrows.png
@@ -130,23 +128,25 @@ iridium/resources/inspector/Images/settingsListRemove.png
 iridium/resources/inspector/Images/settingsListRemove_2x.png
 iridium/resources/inspector/Images/speech.png
 iridium/resources/inspector/Images/spinner.svg
-iridium/resources/inspector/Images/statusbarButtonGlyphs.png
-iridium/resources/inspector/Images/statusbarButtonGlyphs_2x.png
-iridium/resources/inspector/Images/statusbarResizerHorizontal.png
-iridium/resources/inspector/Images/statusbarResizerVertical.png
 iridium/resources/inspector/Images/thumbActiveHoriz.png
 iridium/resources/inspector/Images/thumbActiveVert.png
 iridium/resources/inspector/Images/thumbHoriz.png
 iridium/resources/inspector/Images/thumbHoverHoriz.png
 iridium/resources/inspector/Images/thumbHoverVert.png
 iridium/resources/inspector/Images/thumbVert.png
+iridium/resources/inspector/Images/toolbarButtonGlyphs.png
+iridium/resources/inspector/Images/toolbarButtonGlyphs_2x.png
 iridium/resources/inspector/Images/toolbarItemSelected.png
+iridium/resources/inspector/Images/toolbarResizerHorizontal.png
+iridium/resources/inspector/Images/toolbarResizerVertical.png
 iridium/resources/inspector/Images/touchCursor.png
 iridium/resources/inspector/Images/touchCursor_2x.png
+iridium/resources/inspector/Images/updateServiceWorker.svg
 iridium/resources/inspector/InspectorBackendCommands.js
 iridium/resources/inspector/SupportedCSSProperties.js
 iridium/resources/inspector/accessibility_module.js
 iridium/resources/inspector/audits_module.js
+iridium/resources/inspector/cm_modes_module.js
 iridium/resources/inspector/components_lazy_module.js
 iridium/resources/inspector/console_module.js
 iridium/resources/inspector/devtools.css

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.3 2015/05/26 17:37:40 robert Exp $
---- chrome/chrome_browser_ui.gypi.orig.port	Thu May 14 00:35:46 2015
-+++ chrome/chrome_browser_ui.gypi	Wed May 20 08:34:56 2015
-@@ -2939,7 +2939,7 @@
+$OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.4 2015/08/12 10:56:13 robert Exp $
+--- chrome/chrome_browser_ui.gypi.orig.port	Wed Jul 22 08:45:00 2015
++++ chrome/chrome_browser_ui.gypi	Wed Jul 22 08:45:52 2015
+@@ -2922,7 +2922,7 @@
              }],
            ],
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.3 2015/05/26 17:37:40 robert E
            'dependencies': [
              # gtk2 is the only component that can interact with gtk2 in our new
              # world.
-@@ -2947,7 +2947,7 @@
+@@ -2930,7 +2930,7 @@
              '../build/linux/system.gyp:gio',
            ],
          }],
@@ -19,16 +19,7 @@ $OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.3 2015/05/26 17:37:40 robert E
            'sources': [ '<@(chrome_browser_ui_desktop_sources)' ],
          }],
          ['use_aura==1', {
-@@ -2982,7 +2982,7 @@
-         ['enable_print_preview==1', {
-           'sources': [ '<@(chrome_browser_ui_print_preview_sources)' ],
-         }],
--        ['OS=="linux" or OS=="android"', {
-+        ['OS=="linux" or OS=="android" or os_bsd==1', {
-           'sources': [ '<@(chrome_browser_ui_android_linux_sources)' ],
-         }],
-         ['OS=="android"', {
-@@ -3090,10 +3090,10 @@
+@@ -3083,10 +3083,10 @@
              }],
            ],
          }],

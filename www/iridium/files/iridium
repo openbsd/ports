@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: iridium,v 1.1.1.1 2015/05/03 15:35:35 robert Exp $
+# $OpenBSD: iridium,v 1.2 2015/08/12 10:56:13 robert Exp $
 
 DATASIZE="716800"
 OPENFILES="400"
@@ -23,14 +23,14 @@ if [ $(ulimit -Sn) -lt ${OPENFILES} ]; then
 fi
 
 #
-# Temporary workaround for the case when chromium crashes and leaves
-# the SingletonLock, which prevents chromium to start up.
+# Temporary workaround for the case when iridium crashes and leaves
+# the SingletonLock, which prevents iridium to start up.
 #
-if [ -h ${HOME}/.config/chromium/SingletonLock ]; then
-	_pid=`readlink ${HOME}/.config/chromium/SingletonLock | cut -d '-' -f 2`
+if [ -h ${HOME}/.config/iridium/SingletonLock ]; then
+	_pid=`readlink ${HOME}/.config/iridium/SingletonLock | cut -d '-' -f 2`
 	kill -0 ${_pid} 2>/dev/null
 	if [ $? -gt 0 ]; then
-		rm ${HOME}/.config/chromium/SingletonLock
+		rm ${HOME}/.config/iridium/SingletonLock
 	fi
 fi
 

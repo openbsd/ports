@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_h,v 1.1 2015/05/26 17:37:40 robert Exp $
---- content/renderer/renderer_blink_platform_impl.h.orig.port	Thu May 21 20:45:47 2015
-+++ content/renderer/renderer_blink_platform_impl.h	Thu May 21 20:46:46 2015
-@@ -218,7 +218,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_h,v 1.2 2015/08/12 10:56:13 robert Exp $
+--- content/renderer/renderer_blink_platform_impl.h.orig.port	Wed Jul 15 22:30:03 2015
++++ content/renderer/renderer_blink_platform_impl.h	Wed Jul 22 08:37:30 2015
+@@ -223,7 +223,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    class MimeRegistry;
    scoped_ptr<MimeRegistry> mime_registry_;
  

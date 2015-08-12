@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_download_download_commands_h,v 1.1 2015/05/26 17:37:39 robert Exp $
---- chrome/browser/download/download_commands.h.orig.port	Wed May 20 10:03:41 2015
-+++ chrome/browser/download/download_commands.h	Wed May 20 10:03:49 2015
-@@ -41,7 +41,7 @@ class DownloadCommands {
+$OpenBSD: patch-chrome_browser_download_download_commands_h,v 1.2 2015/08/12 10:56:13 robert Exp $
+--- chrome/browser/download/download_commands.h.orig.port	Wed Jul 15 22:29:57 2015
++++ chrome/browser/download/download_commands.h	Wed Jul 22 08:37:29 2015
+@@ -40,7 +40,7 @@ class DownloadCommands {
    void ExecuteCommand(Command command);
  
  #if defined(OS_WIN) || defined(OS_LINUX) || \

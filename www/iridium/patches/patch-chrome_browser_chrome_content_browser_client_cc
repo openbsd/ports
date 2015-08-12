@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.3 2015/05/26 17:37:39 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Thu May 14 00:35:45 2015
-+++ chrome/browser/chrome_content_browser_client.cc	Wed May 20 08:34:56 2015
-@@ -160,7 +160,7 @@
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.4 2015/08/12 10:56:13 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Jul 15 22:29:57 2015
++++ chrome/browser/chrome_content_browser_client.cc	Wed Jul 22 08:37:29 2015
+@@ -167,7 +167,7 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.3 2015/05/26
  #include "base/debug/leak_annotations.h"
  #include "components/crash/app/breakpad_linux.h"
  #include "components/crash/browser/crash_handler_host_linux.h"
-@@ -428,7 +428,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
+@@ -429,7 +429,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
    return false;
  }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.3 2015/05/26
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -1155,7 +1155,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -1178,7 +1178,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
      command_line->AppendSwitchASCII(switches::kMetricsClientID,
                                      client_info->client_id);
    }
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.3 2015/05/26
    if (breakpad::IsCrashReporterEnabled()) {
      scoped_ptr<metrics::ClientInfo> client_info =
          GoogleUpdateSettings::LoadMetricsClientInfo();
-@@ -2177,7 +2177,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -2219,7 +2219,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  

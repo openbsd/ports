@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_time_zone_monitor_cc,v 1.1 2015/08/12 10:56:13 robert Exp $
+--- content/browser/time_zone_monitor.cc.orig.port	Fri Jul 24 10:34:08 2015
++++ content/browser/time_zone_monitor.cc	Fri Jul 24 10:34:17 2015
+@@ -28,7 +28,7 @@ void TimeZoneMonitor::NotifyRenderers() {
+   scoped_ptr<icu::TimeZone> new_zone(icu::TimeZone::createDefault());
+ #else
+   icu::TimeZone* new_zone = icu::TimeZone::detectHostTimeZone();
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // We get here multiple times on Linux per a single tz change, but
+   // want to update the ICU default zone and notify renderer only once.
+   scoped_ptr<icu::TimeZone> current_zone(icu::TimeZone::createDefault());

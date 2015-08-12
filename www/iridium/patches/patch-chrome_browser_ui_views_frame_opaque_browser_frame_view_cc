@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.3 2015/05/26 17:37:40 robert Exp $
---- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig.port	Thu May 14 00:35:45 2015
-+++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc	Wed May 20 08:34:56 2015
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.4 2015/08/12 10:56:13 robert Exp $
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig.port	Wed Jul 15 22:29:58 2015
++++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc	Wed Jul 22 08:37:29 2015
 @@ -53,7 +53,7 @@
  #include "chrome/browser/ui/views/profiles/supervised_user_avatar_label.h"
  #endif
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.3
  // The number of pixels to move the frame background image upwards when using
  // the GTK+ theme and the titlebar is condensed.
  const int kGTKThemeCondensedFrameTopInset = 15;
-@@ -338,7 +338,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
+@@ -333,7 +333,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
  
  void OpaqueBrowserFrameView::OnMenuButtonClicked(views::View* source,
                                                   const gfx::Point& point) {
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.3
    views::MenuRunner menu_runner(frame()->GetSystemMenuModel(),
                                  views::MenuRunner::HAS_MNEMONICS);
    ignore_result(menu_runner.RunMenuAt(browser_view()->GetWidget(),
-@@ -624,7 +624,7 @@ void OpaqueBrowserFrameView::PaintMaximizedFrameBorder
+@@ -619,7 +619,7 @@ void OpaqueBrowserFrameView::PaintMaximizedFrameBorder
    frame_background_->set_theme_image(GetFrameImage());
    frame_background_->set_theme_overlay_image(GetFrameOverlayImage());
    frame_background_->set_top_area_height(GetTopAreaHeight());
