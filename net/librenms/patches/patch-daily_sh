@@ -1,27 +1,30 @@
-$OpenBSD: patch-daily_sh,v 1.2 2015/06/25 20:47:27 sthen Exp $
---- daily.sh.orig	Thu Jun 25 20:56:52 2015
-+++ daily.sh	Thu Jun 25 20:56:55 2015
-@@ -1,15 +1,15 @@
--#!/usr/local/bin/bash
+$OpenBSD: patch-daily_sh,v 1.3 2015/08/12 15:25:04 sthen Exp $
+--- daily.sh.orig	Fri Aug  7 22:09:06 2015
++++ daily.sh	Fri Aug  7 22:10:19 2015
+@@ -1,17 +1,17 @@
+-#!/usr/bin/env bash
 +#!/bin/ksh
  
- cd $(dirname $0) || exit 1
+ set -eu
  
--if [ $(php daily.php -f update) -eq 1 ]; then 
-+if [ $(%PHP% daily.php -f update) -eq 1 ]; then 
-   git pull --quiet
--  php includes/sql-schema/update.php
-+  %PHP% includes/sql-schema/update.php
+ cd "$(dirname "$0")"
+ 
+-if [ "$(php daily.php -f update)" -eq 1 ]; then
++if [ "$(%PHP% daily.php -f update)" -eq 1 ]; then
+     git pull --quiet
+-    php includes/sql-schema/update.php
++    %PHP% includes/sql-schema/update.php
  fi
  
 -php daily.php -f syslog
 -php daily.php -f eventlog
 -php daily.php -f authlog
--php daily.php -f perf_times 
+-php daily.php -f perf_times
 -php daily.php -f callback
+-php daily.php -f device_perf
 +%PHP% daily.php -f syslog
 +%PHP% daily.php -f eventlog
 +%PHP% daily.php -f authlog
-+%PHP% daily.php -f perf_times 
++%PHP% daily.php -f perf_times
 +%PHP% daily.php -f callback
- php daily.php -f device_perf
++%PHP% daily.php -f device_perf

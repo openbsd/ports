@@ -1,11 +1,11 @@
-$OpenBSD: patch-includes_definitions_inc_php,v 1.6 2015/07/16 02:50:33 sthen Exp $
+$OpenBSD: patch-includes_definitions_inc_php,v 1.7 2015/08/12 15:25:04 sthen Exp $
 
 Minimal handling for running inside chroot. Not really recommended and some
 functionality will be lost, but it might be enough for some users.
 
---- includes/definitions.inc.php.orig	Thu Jul 16 01:06:21 2015
-+++ includes/definitions.inc.php	Thu Jul 16 01:10:11 2015
-@@ -1942,6 +1942,8 @@ if (isset($config['enable_printers']) && $config['enab
+--- includes/definitions.inc.php.orig	Fri Aug  7 22:09:07 2015
++++ includes/definitions.inc.php	Fri Aug  7 22:09:17 2015
+@@ -1605,6 +1605,8 @@ if (isset($config['enable_printers']) && $config['enab
      $config['device_types'][$i]['icon'] = 'printer.png';
  }
  
