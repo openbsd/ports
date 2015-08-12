@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/07/18 22:31:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/08/12 15:09:38 sthen Exp $
 @newgroup _lldpd:720
 @newuser _lldpd:720:_lldpd:daemon:lldpd user:/nonexistent:/sbin/nologin
 %%snmp%%
@@ -14,17 +14,18 @@ lib/pkgconfig/lldpctl.pc
 @bin sbin/lldpcli
 sbin/lldpctl
 @bin sbin/lldpd
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/lldpcli
+@sample ${SYSCONFDIR}/bash_completion.d/
+@sample ${SYSCONFDIR}/bash_completion.d/lldpcli
 share/doc/lldpd/
+@sample ${SYSCONFDIR}/lldpd.d/
 share/doc/lldpd/CONTRIBUTE.md
 share/doc/lldpd/ChangeLog
 share/doc/lldpd/NEWS
 share/doc/lldpd/README.md
-share/examples/lldpd/
-share/examples/lldpd/bash_completion.d/
-@sample ${SYSCONFDIR}/bash_completion.d/
-share/examples/lldpd/bash_completion.d/lldpcli.bash-completion
-@sample ${SYSCONFDIR}/bash_completion.d/lldpcli.bash-completion
-@sample ${SYSCONFDIR}/lldpd.d/
+@comment share/examples/lldpd/
 @comment share/examples/lldpd/lldpd.d/
 @comment share/examples/lldpd/lldpd.d/README.conf
 share/zsh/
