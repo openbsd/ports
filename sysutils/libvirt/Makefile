@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.36 2015/07/17 15:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2015/08/12 06:53:42 jasper Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-1.2.17
+DISTNAME=		libvirt-1.2.18
 CATEGORIES=		sysutils devel
 
-SHARED_LIBS +=  virt-qemu                 0.3 # 1002.17
-SHARED_LIBS +=  virt                      0.7 # 1002.17
-SHARED_LIBS +=	virt-lxc		  0.0 # 1002.17
-SHARED_LIBS +=	virt-admin                0.0 # 1002.17
+SHARED_LIBS +=  virt-qemu                 0.3 # 1002.18
+SHARED_LIBS +=  virt                      0.7 # 1002.18
+SHARED_LIBS +=	virt-lxc		  0.0 # 1002.18
+SHARED_LIBS +=	virt-admin                0.0 # 1002.18
 
 HOMEPAGE=		https://libvirt.org/
 
