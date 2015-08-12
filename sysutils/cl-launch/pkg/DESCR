@@ -1,0 +1,2 @@
+cl-launch is a unix utility to make your Lisp software easily invokable
+from the shell command-line.
