@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/12 06:23:39 ajacoutot Exp $
+@bin bin/pinpoint
+share/doc/pinpoint/
+share/doc/pinpoint/introduction.pin
+share/pinpoint/
+share/pinpoint/action.json
+share/pinpoint/fade.json
+share/pinpoint/page-curl-both.json
+share/pinpoint/page-curl.json
+share/pinpoint/sheet.json
+share/pinpoint/slide-in-left.json
+share/pinpoint/slide-left.json
+share/pinpoint/slide-up.json
+share/pinpoint/spin-bg.json
+share/pinpoint/spin-text.json
+share/pinpoint/spin.json
+share/pinpoint/swing.json
+share/pinpoint/text-slide-down.json
+share/pinpoint/text-slide-left.json
+share/pinpoint/text-slide-up.json

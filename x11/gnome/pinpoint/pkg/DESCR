@@ -1,0 +1,17 @@
+Pinpoint a simple presentation tool that hopes to avoid audience death by bullet
+point and instead encourage presentations containing beautiful images and small
+amounts of concise text in slides.
+
+Some of pinpoints core features are:
+
+ * Text position
+ * Styling of font, text-color, contrast background and text positioning for
+   global default and per slide overrides
+ * Image backgrounds
+ * Video backgrounds
+ * Pango markup inside slides
+ * Transitions, extendable through json
+ * PDF export
+ * Embedding commands to run for demos in slides, with editable commandline
+   during presentation
+ * Monitoring of source file with live updates of changed slide for authoring
