@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/10/31 23:19:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/08/12 15:22:49 sthen Exp $
 @newgroup _scamper:677
 @newuser _scamper:677:_scamper:daemon:Scamper Account:/nonexistent:/sbin/nologin
 @bin bin/sc_ally
@@ -7,6 +7,7 @@
 @bin bin/sc_ipiddump
 @bin bin/sc_speedtrap
 @bin bin/sc_tracediff
+@bin bin/sc_warts2csv
 @bin bin/sc_warts2json
 @bin bin/sc_warts2pcap
 @bin bin/sc_warts2text
