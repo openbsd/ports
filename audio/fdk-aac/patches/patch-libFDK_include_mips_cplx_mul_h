@@ -1,0 +1,17 @@
+$OpenBSD: patch-libFDK_include_mips_cplx_mul_h,v 1.1 2015/08/12 19:38:49 miod Exp $
+
+Only enable code using mips32/mips64 instructions if the compiler is targetting
+this ISA. (integer madd and msub instructions aren't available in the
+``canonical'' mips ISAs)
+
+--- libFDK/include/mips/cplx_mul.h.orig	Wed Mar 11 15:27:03 2015
++++ libFDK/include/mips/cplx_mul.h	Wed Aug 12 11:47:59 2015
+@@ -89,7 +89,7 @@ amm-info@iis.fraunhofer.de
+ ******************************************************************************/
+ 
+ 
+-#if defined(__GNUC__) && defined(__mips__) && __mips_isa_rev < 6
++#if defined(__GNUC__) && defined(__mips_isa_rev) && __mips_isa_rev < 6
+ 
+ 
+ //#define FUNCTION_cplxMultDiv2_32x16
