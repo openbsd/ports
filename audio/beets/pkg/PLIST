@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/05/20 08:14:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/08/12 15:04:07 sthen Exp $
 bin/beet
 lib/python${MODPY_VERSION}/site-packages/beets/
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -116,6 +116,8 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/info.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/info.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/inline.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/inline.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/ipfs.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/ipfs.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/keyfinder.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/keyfinder.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/lastgenre/
@@ -136,6 +138,8 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/metasync/__init__.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/metasync/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/metasync/amarok.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/metasync/amarok.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/metasync/itunes.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/metasync/itunes.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/missing.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/missing.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/mpdstats.py
