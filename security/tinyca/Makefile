@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/05/25 15:33:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/08/12 06:13:56 ajacoutot Exp $
 
 COMMENT=	GUI to manage a certification authority
 
@@ -14,7 +14,8 @@ MASTER_SITES=	https://distfiles.bsdfrog.org/
 RUN_DEPENDS=	archivers/zip \
 		devel/p5-Locale-gettext \
 		x11/p5-Gtk2
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		devel/gettext-tools
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

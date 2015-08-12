@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/04 09:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/08/12 06:13:56 ajacoutot Exp $
 
 COMMENT =	streaming radio player
 
@@ -31,7 +31,8 @@ RUN_DEPENDS =	devel/py-gobject${MODPY_FLAVOR} \
 		textproc/py-lxml \
 		x11/dbus-python
 
-BUILD_DEPENDS = devel/py-xdg${MODPY_FLAVOR}
+BUILD_DEPENDS = devel/gettext-tools \
+		devel/py-xdg${MODPY_FLAVOR}
 
 NO_TEST =	Yes
 pre-configure:

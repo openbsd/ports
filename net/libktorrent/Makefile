@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/28 10:17:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2015/08/12 06:13:56 ajacoutot Exp $
 
 CATEGORIES =	net
 COMMENT =	KTorrent engine
@@ -27,7 +27,8 @@ MODKDE4_USE =		libs
 MODKDE4_LIB_LINKS =	Yes
 
 BUILD_DEPENDS =	devel/boost \
-		devel/doxygen
+		devel/doxygen \
+		devel/gettext-tools
 
 LIB_DEPENDS =	devel/gmp \
 		security/libgcrypt \

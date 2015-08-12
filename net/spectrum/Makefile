@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/07/15 17:49:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2015/08/12 06:13:56 ajacoutot Exp $
 
 COMMENT =	XMPP transport/gateway
 
@@ -18,6 +18,8 @@ WANTLIB += PocoData PocoFoundation PocoDataMySQL PocoDataODBC PocoDataSQLite
 WANTLIB += Magick++
 
 MODULES =	lang/python devel/cmake
+
+BUILD_DEPENDS =	devel/gettext-tools
 
 LIB_DEPENDS =	devel/libev \
 		graphics/ImageMagick \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2015/06/01 13:40:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2015/08/12 06:13:56 ajacoutot Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
@@ -25,7 +25,7 @@ USE_GROFF =		Yes
 
 MULTI_PACKAGES =	-main -x11
 
-BUILD_DEPENDS =		devel/gettext
+BUILD_DEPENDS =		devel/gettext-tools
 TEST_DEPENDS =	${RUN_DEPENDS} \
 			archivers/unzip \
 			devel/git
