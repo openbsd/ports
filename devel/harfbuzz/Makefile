@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.34 2015/07/28 07:05:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2015/08/12 07:23:10 jasper Exp $
 
 BROKEN-hppa=		no atomic primitives
+BROKEN-mips64=		no atomic primitives
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
