@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2015/06/22 20:15:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2015/08/12 20:25:50 matthieu Exp $
 
 COMMENT=	X Render extension test suite
 
-DISTNAME=	rendercheck-1.4
+DISTNAME=	rendercheck-1.5
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.freedesktop.org/
