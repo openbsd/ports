@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2015/06/29 22:17:46 ratchov Exp $
+# $OpenBSD: Makefile,v 1.14 2015/08/12 22:27:31 sthen Exp $
 
 COMMENT=	access software for a blind person using a braille terminal
 
 SHARED_ONLY=	Yes
 DISTNAME=	brltty-3.6
-REVISION=	0
+REVISION=	1
 CATEGORIES=	misc
 HOMEPAGE=	http://mielke.cc/brltty
 MASTER_SITES=	${HOMEPAGE}/releases/
@@ -13,7 +13,7 @@ MAINTAINER=	Mario Lang <mlang@delysid.org>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c curses pthread
+WANTLIB=		c curses pthread sndio
 
 RUN_DEPENDS=	screen-*-shm:misc/screen,shm
 USE_GMAKE=	Yes

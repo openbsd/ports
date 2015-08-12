@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/07/31 12:06:18 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2015/08/12 22:27:31 sthen Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -12,6 +12,9 @@ COMMENT-nut =		collectd nut plugin
 
 V =			5.5.0
 REVISION-main =		1
+REVISION-nut =		0
+REVISION-rrdtool =		0
+REVISION-virt =		0
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
 PKGNAME-mysql =		collectd-mysql-$V
@@ -46,7 +49,7 @@ WANTLIB-pgsql =		pq pthread crypto ssl
 LIB_DEPENDS-pgsql =	databases/postgresql
 RUN_DEPENDS-pgsql =	collectd-$V:${BASE_PKGPATH},-main
 
-WANTLIB-rrdtool =	X11 Xext Xrender cairo expat ffi fontconfig \
+WANTLIB-rrdtool =	X11 Xext Xrender c cairo expat ffi fontconfig \
 			freetype glib-2.0 gmodule-2.0 gobject-2.0 \
 			graphite2 gthread-2.0 harfbuzz iconv intl lzma m \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
@@ -60,7 +63,7 @@ LIB_DEPENDS-snmp =	net/net-snmp
 RUN_DEPENDS-snmp =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-virt =	sysutils/libvirt
-WANTLIB-virt =		avahi-client avahi-common dbus-1 ffi gmp gnutls hogweed \
+WANTLIB-virt =		avahi-client avahi-common c dbus-1 ffi gmp gnutls hogweed \
 			nettle p11-kit ssh2 tasn1 util virt crypto curl iconv \
 			idn intl lzma m pthread ssl xml2 z
 RUN_DEPENDS-virt =	collectd-$V:${BASE_PKGPATH},-main
@@ -76,7 +79,7 @@ RUN_DEPENDS-memcachec =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-nut =	nut->=2.7.3p0:sysutils/nut
 RUN_DEPENDS-nut =	collectd-$V:${BASE_PKGPATH},-main
-WANTLIB-nut =		upsclient
+WANTLIB-nut =		crypto pthread ssl upsclient
 
 LIB_DEPENDS +=	net/curl \
 		net/liboping \

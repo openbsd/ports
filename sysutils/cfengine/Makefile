@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2015/02/17 22:08:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2015/08/12 22:27:31 sthen Exp $
 
 COMMENT =	GNU system administration tool for networks
 
 DISTNAME =	cfengine-3.4.5
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  promises	0.0 # 1.0
 CATEGORIES =	sysutils
@@ -23,9 +23,10 @@ SUBST_VARS +=		CFENGINE_BASE CFENGINE_EXAMPLES
 FLAVORS =		pgsql
 FLAVOR ?=
 
-WANTLIB =		c crypto m pcre pthread qdbm
+WANTLIB =		c crypto m pcre pthread qdbm z
 CONFIGURE_STYLE =	gnu
 USE_GMAKE =		Yes
+MODULES =		converters/libiconv
 LIB_DEPENDS =		databases/qdbm \
 			devel/pcre
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \

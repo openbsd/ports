@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2015/07/28 14:46:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2015/08/12 22:27:31 sthen Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -28,11 +28,11 @@ PKGNAME-ui=		avahi-ui-${V}
 
 REVISION-main=		19
 REVISION-gtk=		6
-REVISION-gtk3=		6
-REVISION-gui=		9
+REVISION-gtk3=		7
+REVISION-gui=		10
 REVISION-mono=		3
 REVISION-qt3=		4
-REVISION-qt4=		4
+REVISION-qt4=		5
 REVISION-ui=		4
 REVISION-python=	1
 
@@ -140,7 +140,7 @@ WANTLIB-gtk3 += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
 WANTLIB-gtk3 += xcb-shm z ffi ${MODGETTEXT_WANTLIB}
 WANTLIB-gtk3 += ICE SM atk-bridge-2.0 atspi harfbuzz
-WANTLIB-gtk3 += graphite2
+WANTLIB-gtk3 += graphite2 epoxy
 
 ### -gui
 LIB_DEPENDS-gui=	${MODGETTEXT_LIB_DEPENDS} \
@@ -162,7 +162,7 @@ WANTLIB-gui += gobject-2.0 gthread-2.0 gtk-3 m pango-1.0
 WANTLIB-gui += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB-gui += pthread-stubs xcb xcb-render xcb-shm z ffi
 WANTLIB-gui += ICE SM atk-bridge-2.0 atspi harfbuzz
-WANTLIB-gui += graphite2
+WANTLIB-gui += graphite2 epoxy
 WANTLIB-gui += ${MODGETTEXT_WANTLIB}
 
 ### -python
@@ -207,7 +207,7 @@ MODULES+=		x11/qt4
 LIB_DEPENDS-qt4=	${MODGETTEXT_LIB_DEPENDS} \
 			x11/qt4 \
 			${BUILD_PKGPATH}
-WANTLIB-qt4 += QtCore avahi-common m stdc++ ${MODGETTEXT_WANTLIB} pthread
+WANTLIB-qt4 += QtCore avahi-common m stdc++ ${MODGETTEXT_WANTLIB} pthread glib-2.0 gthread-2.0 pcre z
 .else
 CONFIGURE_ARGS+=	--disable-qt4
 .endif

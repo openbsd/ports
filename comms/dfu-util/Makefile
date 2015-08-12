@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2014/10/21 15:08:51 abieber Exp $
+# $OpenBSD: Makefile,v 1.13 2015/08/12 22:27:31 sthen Exp $
 
 COMMENT =		device firmware update (DFU) USB programmer
 
 DISTNAME =		dfu-util-0.8
+REVISION =		0
 
 CATEGORIES =		comms
 
@@ -15,8 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/releases/
 
-LIB_DEPENDS =		devel/libusb-compat
-WANTLIB =		c usb pthread
+LIB_DEPENDS =		devel/libusb1
+WANTLIB =		c usb-1.0 pthread
 
 CONFIGURE_STYLE =	gnu
 

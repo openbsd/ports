@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2015/05/19 16:31:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2015/08/12 22:27:31 sthen Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
 DISTNAME =	amide-1.0.5
 CATEGORIES =	graphics
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	http://amide.sourceforge.net/
 
@@ -21,7 +21,7 @@ WANTLIB += ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs speex stdc++ vorbis
 WANTLIB += vorbisenc vpx x264 xcb xcb-render xcb-shm xml2 z
 WANTLIB += dbus-1 dbus-glib-1 ffi graphite2 opus
-WANTLIB += harfbuzz xvidcore
+WANTLIB += harfbuzz xvidcore lzma swresample x265
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=amide/}
 

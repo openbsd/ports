@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/10 10:55:10 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/12 22:27:31 sthen Exp $
 
 COMMENT=	gdb for arm-none-eabi cross-development
 
 DISTNAME=	gdb-7.9.1
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
-WANTLIB=	c expat m ncurses z
+WANTLIB=	c expat m ncurses pthread z
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gdb/}
 DIST_SUBDIR=	gdb
