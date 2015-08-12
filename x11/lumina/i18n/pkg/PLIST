@@ -1,34 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/05/02 07:39:02 ajacoutot Exp $
-@bin bin/Lumina-DE
-@bin bin/lumina-config
-@bin bin/lumina-fileinfo
-@bin bin/lumina-fm
-@bin bin/lumina-info
-@bin bin/lumina-open
-@bin bin/lumina-screenshot
-@bin bin/lumina-search
-@bin bin/lumina-xconfig
-include/LuminaOS.h
-include/LuminaSingleApplication.h
-include/LuminaThemes.h
-include/LuminaUtils.h
-include/LuminaX11.h
-include/LuminaXDG.h
-@lib lib/libLuminaUtils.so.${LIBLuminaUtils_VERSION}
-share/Lumina-DE/
-share/Lumina-DE/Login.ogg
-share/Lumina-DE/Logout.ogg
-share/Lumina-DE/colors/
-share/Lumina-DE/colors/Lumina-Glass.qss.colors
-share/Lumina-DE/colors/Lumina-Gold.qss.colors
-share/Lumina-DE/colors/Lumina-Green.qss.colors
-share/Lumina-DE/colors/Lumina-Purple.qss.colors
-share/Lumina-DE/colors/Lumina-Red.qss.colors
-share/Lumina-DE/colors/PCBSD10-Default.qss.colors
-share/Lumina-DE/defaultapps.conf
-share/Lumina-DE/desktop-background.jpg
-share/Lumina-DE/fluxbox-init-rc
-share/Lumina-DE/fluxbox-keys
+@comment $OpenBSD: PLIST,v 1.1 2015/08/12 06:26:34 ajacoutot Exp $
+@conflict lumina-<0.8.6
 share/Lumina-DE/i18n/
 share/Lumina-DE/i18n/lumina-config_af.qm
 share/Lumina-DE/i18n/lumina-config_ar.qm
@@ -51,6 +22,7 @@ share/Lumina-DE/i18n/lumina-config_fa.qm
 share/Lumina-DE/i18n/lumina-config_fi.qm
 share/Lumina-DE/i18n/lumina-config_fr.qm
 share/Lumina-DE/i18n/lumina-config_fr_CA.qm
+share/Lumina-DE/i18n/lumina-config_fur.qm
 share/Lumina-DE/i18n/lumina-config_gl.qm
 share/Lumina-DE/i18n/lumina-config_he.qm
 share/Lumina-DE/i18n/lumina-config_hi.qm
@@ -69,6 +41,7 @@ share/Lumina-DE/i18n/lumina-config_mn.qm
 share/Lumina-DE/i18n/lumina-config_ms.qm
 share/Lumina-DE/i18n/lumina-config_mt.qm
 share/Lumina-DE/i18n/lumina-config_nb.qm
+share/Lumina-DE/i18n/lumina-config_ne.qm
 share/Lumina-DE/i18n/lumina-config_nl.qm
 share/Lumina-DE/i18n/lumina-config_pa.qm
 share/Lumina-DE/i18n/lumina-config_pl.qm
@@ -76,6 +49,7 @@ share/Lumina-DE/i18n/lumina-config_pt.qm
 share/Lumina-DE/i18n/lumina-config_pt_BR.qm
 share/Lumina-DE/i18n/lumina-config_ro.qm
 share/Lumina-DE/i18n/lumina-config_ru.qm
+share/Lumina-DE/i18n/lumina-config_sa.qm
 share/Lumina-DE/i18n/lumina-config_sk.qm
 share/Lumina-DE/i18n/lumina-config_sl.qm
 share/Lumina-DE/i18n/lumina-config_sr.qm
@@ -86,6 +60,7 @@ share/Lumina-DE/i18n/lumina-config_tg.qm
 share/Lumina-DE/i18n/lumina-config_th.qm
 share/Lumina-DE/i18n/lumina-config_tr.qm
 share/Lumina-DE/i18n/lumina-config_uk.qm
+share/Lumina-DE/i18n/lumina-config_ur.qm
 share/Lumina-DE/i18n/lumina-config_uz.qm
 share/Lumina-DE/i18n/lumina-config_vi.qm
 share/Lumina-DE/i18n/lumina-config_zh_CN.qm
@@ -113,6 +88,7 @@ share/Lumina-DE/i18n/lumina-desktop_fa.qm
 share/Lumina-DE/i18n/lumina-desktop_fi.qm
 share/Lumina-DE/i18n/lumina-desktop_fr.qm
 share/Lumina-DE/i18n/lumina-desktop_fr_CA.qm
+share/Lumina-DE/i18n/lumina-desktop_fur.qm
 share/Lumina-DE/i18n/lumina-desktop_gl.qm
 share/Lumina-DE/i18n/lumina-desktop_he.qm
 share/Lumina-DE/i18n/lumina-desktop_hi.qm
@@ -131,6 +107,7 @@ share/Lumina-DE/i18n/lumina-desktop_mn.qm
 share/Lumina-DE/i18n/lumina-desktop_ms.qm
 share/Lumina-DE/i18n/lumina-desktop_mt.qm
 share/Lumina-DE/i18n/lumina-desktop_nb.qm
+share/Lumina-DE/i18n/lumina-desktop_ne.qm
 share/Lumina-DE/i18n/lumina-desktop_nl.qm
 share/Lumina-DE/i18n/lumina-desktop_pa.qm
 share/Lumina-DE/i18n/lumina-desktop_pl.qm
@@ -138,6 +115,7 @@ share/Lumina-DE/i18n/lumina-desktop_pt.qm
 share/Lumina-DE/i18n/lumina-desktop_pt_BR.qm
 share/Lumina-DE/i18n/lumina-desktop_ro.qm
 share/Lumina-DE/i18n/lumina-desktop_ru.qm
+share/Lumina-DE/i18n/lumina-desktop_sa.qm
 share/Lumina-DE/i18n/lumina-desktop_sk.qm
 share/Lumina-DE/i18n/lumina-desktop_sl.qm
 share/Lumina-DE/i18n/lumina-desktop_sr.qm
@@ -148,6 +126,7 @@ share/Lumina-DE/i18n/lumina-desktop_tg.qm
 share/Lumina-DE/i18n/lumina-desktop_th.qm
 share/Lumina-DE/i18n/lumina-desktop_tr.qm
 share/Lumina-DE/i18n/lumina-desktop_uk.qm
+share/Lumina-DE/i18n/lumina-desktop_ur.qm
 share/Lumina-DE/i18n/lumina-desktop_uz.qm
 share/Lumina-DE/i18n/lumina-desktop_vi.qm
 share/Lumina-DE/i18n/lumina-desktop_zh_CN.qm
@@ -175,6 +154,7 @@ share/Lumina-DE/i18n/lumina-fileinfo_fa.qm
 share/Lumina-DE/i18n/lumina-fileinfo_fi.qm
 share/Lumina-DE/i18n/lumina-fileinfo_fr.qm
 share/Lumina-DE/i18n/lumina-fileinfo_fr_CA.qm
+share/Lumina-DE/i18n/lumina-fileinfo_fur.qm
 share/Lumina-DE/i18n/lumina-fileinfo_gl.qm
 share/Lumina-DE/i18n/lumina-fileinfo_he.qm
 share/Lumina-DE/i18n/lumina-fileinfo_hi.qm
@@ -193,6 +173,7 @@ share/Lumina-DE/i18n/lumina-fileinfo_mn.qm
 share/Lumina-DE/i18n/lumina-fileinfo_ms.qm
 share/Lumina-DE/i18n/lumina-fileinfo_mt.qm
 share/Lumina-DE/i18n/lumina-fileinfo_nb.qm
+share/Lumina-DE/i18n/lumina-fileinfo_ne.qm
 share/Lumina-DE/i18n/lumina-fileinfo_nl.qm
 share/Lumina-DE/i18n/lumina-fileinfo_pa.qm
 share/Lumina-DE/i18n/lumina-fileinfo_pl.qm
@@ -200,6 +181,7 @@ share/Lumina-DE/i18n/lumina-fileinfo_pt.qm
 share/Lumina-DE/i18n/lumina-fileinfo_pt_BR.qm
 share/Lumina-DE/i18n/lumina-fileinfo_ro.qm
 share/Lumina-DE/i18n/lumina-fileinfo_ru.qm
+share/Lumina-DE/i18n/lumina-fileinfo_sa.qm
 share/Lumina-DE/i18n/lumina-fileinfo_sk.qm
 share/Lumina-DE/i18n/lumina-fileinfo_sl.qm
 share/Lumina-DE/i18n/lumina-fileinfo_sr.qm
@@ -210,6 +192,7 @@ share/Lumina-DE/i18n/lumina-fileinfo_tg.qm
 share/Lumina-DE/i18n/lumina-fileinfo_th.qm
 share/Lumina-DE/i18n/lumina-fileinfo_tr.qm
 share/Lumina-DE/i18n/lumina-fileinfo_uk.qm
+share/Lumina-DE/i18n/lumina-fileinfo_ur.qm
 share/Lumina-DE/i18n/lumina-fileinfo_uz.qm
 share/Lumina-DE/i18n/lumina-fileinfo_vi.qm
 share/Lumina-DE/i18n/lumina-fileinfo_zh_CN.qm
@@ -237,6 +220,7 @@ share/Lumina-DE/i18n/lumina-fm_fa.qm
 share/Lumina-DE/i18n/lumina-fm_fi.qm
 share/Lumina-DE/i18n/lumina-fm_fr.qm
 share/Lumina-DE/i18n/lumina-fm_fr_CA.qm
+share/Lumina-DE/i18n/lumina-fm_fur.qm
 share/Lumina-DE/i18n/lumina-fm_gl.qm
 share/Lumina-DE/i18n/lumina-fm_he.qm
 share/Lumina-DE/i18n/lumina-fm_hi.qm
@@ -255,6 +239,7 @@ share/Lumina-DE/i18n/lumina-fm_mn.qm
 share/Lumina-DE/i18n/lumina-fm_ms.qm
 share/Lumina-DE/i18n/lumina-fm_mt.qm
 share/Lumina-DE/i18n/lumina-fm_nb.qm
+share/Lumina-DE/i18n/lumina-fm_ne.qm
 share/Lumina-DE/i18n/lumina-fm_nl.qm
 share/Lumina-DE/i18n/lumina-fm_pa.qm
 share/Lumina-DE/i18n/lumina-fm_pl.qm
@@ -262,6 +247,7 @@ share/Lumina-DE/i18n/lumina-fm_pt.qm
 share/Lumina-DE/i18n/lumina-fm_pt_BR.qm
 share/Lumina-DE/i18n/lumina-fm_ro.qm
 share/Lumina-DE/i18n/lumina-fm_ru.qm
+share/Lumina-DE/i18n/lumina-fm_sa.qm
 share/Lumina-DE/i18n/lumina-fm_sk.qm
 share/Lumina-DE/i18n/lumina-fm_sl.qm
 share/Lumina-DE/i18n/lumina-fm_sr.qm
@@ -272,6 +258,7 @@ share/Lumina-DE/i18n/lumina-fm_tg.qm
 share/Lumina-DE/i18n/lumina-fm_th.qm
 share/Lumina-DE/i18n/lumina-fm_tr.qm
 share/Lumina-DE/i18n/lumina-fm_uk.qm
+share/Lumina-DE/i18n/lumina-fm_ur.qm
 share/Lumina-DE/i18n/lumina-fm_uz.qm
 share/Lumina-DE/i18n/lumina-fm_vi.qm
 share/Lumina-DE/i18n/lumina-fm_zh_CN.qm
@@ -299,6 +286,7 @@ share/Lumina-DE/i18n/lumina-info_fa.qm
 share/Lumina-DE/i18n/lumina-info_fi.qm
 share/Lumina-DE/i18n/lumina-info_fr.qm
 share/Lumina-DE/i18n/lumina-info_fr_CA.qm
+share/Lumina-DE/i18n/lumina-info_fur.qm
 share/Lumina-DE/i18n/lumina-info_gl.qm
 share/Lumina-DE/i18n/lumina-info_he.qm
 share/Lumina-DE/i18n/lumina-info_hi.qm
@@ -317,6 +305,7 @@ share/Lumina-DE/i18n/lumina-info_mn.qm
 share/Lumina-DE/i18n/lumina-info_ms.qm
 share/Lumina-DE/i18n/lumina-info_mt.qm
 share/Lumina-DE/i18n/lumina-info_nb.qm
+share/Lumina-DE/i18n/lumina-info_ne.qm
 share/Lumina-DE/i18n/lumina-info_nl.qm
 share/Lumina-DE/i18n/lumina-info_pa.qm
 share/Lumina-DE/i18n/lumina-info_pl.qm
@@ -324,6 +313,7 @@ share/Lumina-DE/i18n/lumina-info_pt.qm
 share/Lumina-DE/i18n/lumina-info_pt_BR.qm
 share/Lumina-DE/i18n/lumina-info_ro.qm
 share/Lumina-DE/i18n/lumina-info_ru.qm
+share/Lumina-DE/i18n/lumina-info_sa.qm
 share/Lumina-DE/i18n/lumina-info_sk.qm
 share/Lumina-DE/i18n/lumina-info_sl.qm
 share/Lumina-DE/i18n/lumina-info_sr.qm
@@ -334,6 +324,7 @@ share/Lumina-DE/i18n/lumina-info_tg.qm
 share/Lumina-DE/i18n/lumina-info_th.qm
 share/Lumina-DE/i18n/lumina-info_tr.qm
 share/Lumina-DE/i18n/lumina-info_uk.qm
+share/Lumina-DE/i18n/lumina-info_ur.qm
 share/Lumina-DE/i18n/lumina-info_uz.qm
 share/Lumina-DE/i18n/lumina-info_vi.qm
 share/Lumina-DE/i18n/lumina-info_zh_CN.qm
@@ -361,6 +352,7 @@ share/Lumina-DE/i18n/lumina-open_fa.qm
 share/Lumina-DE/i18n/lumina-open_fi.qm
 share/Lumina-DE/i18n/lumina-open_fr.qm
 share/Lumina-DE/i18n/lumina-open_fr_CA.qm
+share/Lumina-DE/i18n/lumina-open_fur.qm
 share/Lumina-DE/i18n/lumina-open_gl.qm
 share/Lumina-DE/i18n/lumina-open_he.qm
 share/Lumina-DE/i18n/lumina-open_hi.qm
@@ -379,6 +371,7 @@ share/Lumina-DE/i18n/lumina-open_mn.qm
 share/Lumina-DE/i18n/lumina-open_ms.qm
 share/Lumina-DE/i18n/lumina-open_mt.qm
 share/Lumina-DE/i18n/lumina-open_nb.qm
+share/Lumina-DE/i18n/lumina-open_ne.qm
 share/Lumina-DE/i18n/lumina-open_nl.qm
 share/Lumina-DE/i18n/lumina-open_pa.qm
 share/Lumina-DE/i18n/lumina-open_pl.qm
@@ -386,6 +379,7 @@ share/Lumina-DE/i18n/lumina-open_pt.qm
 share/Lumina-DE/i18n/lumina-open_pt_BR.qm
 share/Lumina-DE/i18n/lumina-open_ro.qm
 share/Lumina-DE/i18n/lumina-open_ru.qm
+share/Lumina-DE/i18n/lumina-open_sa.qm
 share/Lumina-DE/i18n/lumina-open_sk.qm
 share/Lumina-DE/i18n/lumina-open_sl.qm
 share/Lumina-DE/i18n/lumina-open_sr.qm
@@ -396,6 +390,7 @@ share/Lumina-DE/i18n/lumina-open_tg.qm
 share/Lumina-DE/i18n/lumina-open_th.qm
 share/Lumina-DE/i18n/lumina-open_tr.qm
 share/Lumina-DE/i18n/lumina-open_uk.qm
+share/Lumina-DE/i18n/lumina-open_ur.qm
 share/Lumina-DE/i18n/lumina-open_uz.qm
 share/Lumina-DE/i18n/lumina-open_vi.qm
 share/Lumina-DE/i18n/lumina-open_zh_CN.qm
@@ -423,6 +418,7 @@ share/Lumina-DE/i18n/lumina-screenshot_fa.qm
 share/Lumina-DE/i18n/lumina-screenshot_fi.qm
 share/Lumina-DE/i18n/lumina-screenshot_fr.qm
 share/Lumina-DE/i18n/lumina-screenshot_fr_CA.qm
+share/Lumina-DE/i18n/lumina-screenshot_fur.qm
 share/Lumina-DE/i18n/lumina-screenshot_gl.qm
 share/Lumina-DE/i18n/lumina-screenshot_he.qm
 share/Lumina-DE/i18n/lumina-screenshot_hi.qm
@@ -441,6 +437,7 @@ share/Lumina-DE/i18n/lumina-screenshot_mn.qm
 share/Lumina-DE/i18n/lumina-screenshot_ms.qm
 share/Lumina-DE/i18n/lumina-screenshot_mt.qm
 share/Lumina-DE/i18n/lumina-screenshot_nb.qm
+share/Lumina-DE/i18n/lumina-screenshot_ne.qm
 share/Lumina-DE/i18n/lumina-screenshot_nl.qm
 share/Lumina-DE/i18n/lumina-screenshot_pa.qm
 share/Lumina-DE/i18n/lumina-screenshot_pl.qm
@@ -448,6 +445,7 @@ share/Lumina-DE/i18n/lumina-screenshot_pt.qm
 share/Lumina-DE/i18n/lumina-screenshot_pt_BR.qm
 share/Lumina-DE/i18n/lumina-screenshot_ro.qm
 share/Lumina-DE/i18n/lumina-screenshot_ru.qm
+share/Lumina-DE/i18n/lumina-screenshot_sa.qm
 share/Lumina-DE/i18n/lumina-screenshot_sk.qm
 share/Lumina-DE/i18n/lumina-screenshot_sl.qm
 share/Lumina-DE/i18n/lumina-screenshot_sr.qm
@@ -458,6 +456,7 @@ share/Lumina-DE/i18n/lumina-screenshot_tg.qm
 share/Lumina-DE/i18n/lumina-screenshot_th.qm
 share/Lumina-DE/i18n/lumina-screenshot_tr.qm
 share/Lumina-DE/i18n/lumina-screenshot_uk.qm
+share/Lumina-DE/i18n/lumina-screenshot_ur.qm
 share/Lumina-DE/i18n/lumina-screenshot_uz.qm
 share/Lumina-DE/i18n/lumina-screenshot_vi.qm
 share/Lumina-DE/i18n/lumina-screenshot_zh_CN.qm
@@ -485,6 +484,7 @@ share/Lumina-DE/i18n/lumina-search_fa.qm
 share/Lumina-DE/i18n/lumina-search_fi.qm
 share/Lumina-DE/i18n/lumina-search_fr.qm
 share/Lumina-DE/i18n/lumina-search_fr_CA.qm
+share/Lumina-DE/i18n/lumina-search_fur.qm
 share/Lumina-DE/i18n/lumina-search_gl.qm
 share/Lumina-DE/i18n/lumina-search_he.qm
 share/Lumina-DE/i18n/lumina-search_hi.qm
@@ -503,6 +503,7 @@ share/Lumina-DE/i18n/lumina-search_mn.qm
 share/Lumina-DE/i18n/lumina-search_ms.qm
 share/Lumina-DE/i18n/lumina-search_mt.qm
 share/Lumina-DE/i18n/lumina-search_nb.qm
+share/Lumina-DE/i18n/lumina-search_ne.qm
 share/Lumina-DE/i18n/lumina-search_nl.qm
 share/Lumina-DE/i18n/lumina-search_pa.qm
 share/Lumina-DE/i18n/lumina-search_pl.qm
@@ -510,6 +511,7 @@ share/Lumina-DE/i18n/lumina-search_pt.qm
 share/Lumina-DE/i18n/lumina-search_pt_BR.qm
 share/Lumina-DE/i18n/lumina-search_ro.qm
 share/Lumina-DE/i18n/lumina-search_ru.qm
+share/Lumina-DE/i18n/lumina-search_sa.qm
 share/Lumina-DE/i18n/lumina-search_sk.qm
 share/Lumina-DE/i18n/lumina-search_sl.qm
 share/Lumina-DE/i18n/lumina-search_sr.qm
@@ -520,6 +522,7 @@ share/Lumina-DE/i18n/lumina-search_tg.qm
 share/Lumina-DE/i18n/lumina-search_th.qm
 share/Lumina-DE/i18n/lumina-search_tr.qm
 share/Lumina-DE/i18n/lumina-search_uk.qm
+share/Lumina-DE/i18n/lumina-search_ur.qm
 share/Lumina-DE/i18n/lumina-search_uz.qm
 share/Lumina-DE/i18n/lumina-search_vi.qm
 share/Lumina-DE/i18n/lumina-search_zh_CN.qm
@@ -547,6 +550,7 @@ share/Lumina-DE/i18n/lumina-xconfig_fa.qm
 share/Lumina-DE/i18n/lumina-xconfig_fi.qm
 share/Lumina-DE/i18n/lumina-xconfig_fr.qm
 share/Lumina-DE/i18n/lumina-xconfig_fr_CA.qm
+share/Lumina-DE/i18n/lumina-xconfig_fur.qm
 share/Lumina-DE/i18n/lumina-xconfig_gl.qm
 share/Lumina-DE/i18n/lumina-xconfig_he.qm
 share/Lumina-DE/i18n/lumina-xconfig_hi.qm
@@ -565,6 +569,7 @@ share/Lumina-DE/i18n/lumina-xconfig_mn.qm
 share/Lumina-DE/i18n/lumina-xconfig_ms.qm
 share/Lumina-DE/i18n/lumina-xconfig_mt.qm
 share/Lumina-DE/i18n/lumina-xconfig_nb.qm
+share/Lumina-DE/i18n/lumina-xconfig_ne.qm
 share/Lumina-DE/i18n/lumina-xconfig_nl.qm
 share/Lumina-DE/i18n/lumina-xconfig_pa.qm
 share/Lumina-DE/i18n/lumina-xconfig_pl.qm
@@ -572,6 +577,7 @@ share/Lumina-DE/i18n/lumina-xconfig_pt.qm
 share/Lumina-DE/i18n/lumina-xconfig_pt_BR.qm
 share/Lumina-DE/i18n/lumina-xconfig_ro.qm
 share/Lumina-DE/i18n/lumina-xconfig_ru.qm
+share/Lumina-DE/i18n/lumina-xconfig_sa.qm
 share/Lumina-DE/i18n/lumina-xconfig_sk.qm
 share/Lumina-DE/i18n/lumina-xconfig_sl.qm
 share/Lumina-DE/i18n/lumina-xconfig_sr.qm
@@ -582,32 +588,10 @@ share/Lumina-DE/i18n/lumina-xconfig_tg.qm
 share/Lumina-DE/i18n/lumina-xconfig_th.qm
 share/Lumina-DE/i18n/lumina-xconfig_tr.qm
 share/Lumina-DE/i18n/lumina-xconfig_uk.qm
+share/Lumina-DE/i18n/lumina-xconfig_ur.qm
 share/Lumina-DE/i18n/lumina-xconfig_uz.qm
 share/Lumina-DE/i18n/lumina-xconfig_vi.qm
 share/Lumina-DE/i18n/lumina-xconfig_zh_CN.qm
 share/Lumina-DE/i18n/lumina-xconfig_zh_HK.qm
 share/Lumina-DE/i18n/lumina-xconfig_zh_TW.qm
 share/Lumina-DE/i18n/lumina-xconfig_zu.qm
-share/Lumina-DE/luminaDesktop.conf
-share/Lumina-DE/themes/
-share/Lumina-DE/themes/Lumina-default.qss.template
-share/Lumina-DE/themes/None.qss.template
-share/applications/lumina-fm.desktop
-share/applications/lumina-info.desktop
-share/applications/lumina-screenshot.desktop
-share/applications/lumina-search.desktop
-share/examples/lumina/
-share/examples/lumina/luminaDesktop.conf.dist
-@sample ${SYSCONFDIR}/luminaDesktop.conf
-share/pixmaps/Insight-FileManager.png
-share/pixmaps/Lumina-DE.png
-share/wallpapers/
-share/wallpapers/Lumina-DE/
-share/wallpapers/Lumina-DE/Lumina_Wispy_gold_1920x1080.jpg
-share/wallpapers/Lumina-DE/Lumina_Wispy_green_1920x1080.jpg
-share/wallpapers/Lumina-DE/Lumina_Wispy_purple_1920x1080.jpg
-share/wallpapers/Lumina-DE/Lumina_Wispy_red_1920x1080.jpg
-share/xsessions/
-share/xsessions/Lumina-DE.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database

@@ -1,0 +1,57 @@
+@comment $OpenBSD: PLIST,v 1.1 2015/08/12 06:26:34 ajacoutot Exp $
+@pkgpath x11/lumina
+@bin bin/Lumina-DE
+@bin bin/lumina-config
+@bin bin/lumina-fileinfo
+@bin bin/lumina-fm
+@bin bin/lumina-info
+@bin bin/lumina-open
+@bin bin/lumina-screenshot
+@bin bin/lumina-search
+@bin bin/lumina-xconfig
+include/LuminaOS.h
+include/LuminaSingleApplication.h
+include/LuminaThemes.h
+include/LuminaUtils.h
+include/LuminaX11.h
+include/LuminaXDG.h
+@lib lib/libLuminaUtils.so.${LIBLuminaUtils_VERSION}
+share/Lumina-DE/
+share/Lumina-DE/Login.ogg
+share/Lumina-DE/Logout.ogg
+share/Lumina-DE/colors/
+share/Lumina-DE/colors/Lumina-Glass.qss.colors
+share/Lumina-DE/colors/Lumina-Gold.qss.colors
+share/Lumina-DE/colors/Lumina-Green.qss.colors
+share/Lumina-DE/colors/Lumina-Purple.qss.colors
+share/Lumina-DE/colors/Lumina-Red.qss.colors
+share/Lumina-DE/colors/PCBSD10-Default.qss.colors
+share/Lumina-DE/defaultapps.conf
+share/Lumina-DE/desktop-background.jpg
+share/Lumina-DE/fluxbox-init-rc
+share/Lumina-DE/fluxbox-keys
+share/Lumina-DE/luminaDesktop.conf
+share/Lumina-DE/quickplugins/
+share/Lumina-DE/quickplugins/quick-sample.qml
+share/Lumina-DE/themes/
+share/Lumina-DE/themes/Lumina-default.qss.template
+share/Lumina-DE/themes/None.qss.template
+share/applications/lumina-fm.desktop
+share/applications/lumina-info.desktop
+share/applications/lumina-screenshot.desktop
+share/applications/lumina-search.desktop
+share/examples/lumina/
+share/examples/lumina/luminaDesktop.conf.dist
+@sample ${SYSCONFDIR}/luminaDesktop.conf
+share/pixmaps/Insight-FileManager.png
+share/pixmaps/Lumina-DE.png
+share/wallpapers/
+share/wallpapers/Lumina-DE/
+share/wallpapers/Lumina-DE/Lumina_Wispy_gold_1920x1080.jpg
+share/wallpapers/Lumina-DE/Lumina_Wispy_green_1920x1080.jpg
+share/wallpapers/Lumina-DE/Lumina_Wispy_purple_1920x1080.jpg
+share/wallpapers/Lumina-DE/Lumina_Wispy_red_1920x1080.jpg
+share/xsessions/
+share/xsessions/Lumina-DE.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
