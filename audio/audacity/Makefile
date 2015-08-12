@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/04/14 08:38:14 bentley Exp $
+# $OpenBSD: Makefile,v 1.41 2015/08/12 20:53:15 naddy Exp $
 
 COMMENT=	free audio editor
 
@@ -25,7 +25,8 @@ WANTLIB += FLAC>=8 FLAC++>=7 vorbis>=5 vorbisfile>=4 vorbisenc>=2
 WANTLIB += id3tag>=2 mad>=2 portaudio>=1 SoundTouch vamp-hostsdk>=1
 WANTLIB += tag
 
-BUILD_DEPENDS=	archivers/zip
+BUILD_DEPENDS=	archivers/zip \
+		devel/gettext-tools
 LIB_DEPENDS=	x11/wxWidgets>=2.8.6 \
 		audio/libsamplerate \
 		audio/flac \
