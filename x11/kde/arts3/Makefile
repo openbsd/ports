@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.79 2015/08/12 22:27:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2015/08/13 14:40:56 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, aRTs
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
-REVISION =		0
+REVISION =		9
 DISTNAME =		arts-1.5.10
 MODKDE_VERSION =	3.5.8
 
@@ -38,8 +38,6 @@ CONFIGURE_ENV =	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ARGS +=	${ENABLE_SHARED} \
 			--without-jack \
 			--without-esd
-
-REVISION =	8
 
 WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu
 WANTLIB += Xrandr Xrender Xt Xxf86vm audiofile c drm expat fontconfig
