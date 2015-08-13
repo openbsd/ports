@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.18 2015/05/11 19:30:20 kettenis Exp $
---- configure.orig	Thu Dec 18 22:45:04 2014
-+++ configure	Sat May  9 21:57:03 2015
+$OpenBSD: patch-configure,v 1.19 2015/08/13 07:35:21 ajacoutot Exp $
+--- configure.orig	Tue Jul 28 16:45:03 2015
++++ configure	Tue Jul 28 21:52:10 2015
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  
  if test x"$1" = x"-h" -o x"$1" = x"--help" ; then
  cat <<EOF
-@@ -1051,18 +1051,18 @@ if [ "$pic" = "yes" ] ; then
+@@ -1127,18 +1127,18 @@ if [ "$pic" = "yes" ] ; then
      [ $SYS = SunOS -a "$ARCH" = "X86" ] && SOFLAGS="$SOFLAGS -mimpure-text"
  fi
  
@@ -31,7 +31,7 @@ $OpenBSD: patch-configure,v 1.18 2015/05/11 19:30:20 kettenis Exp $
  fi
  
  if cc_check '' -fno-tree-vectorize ; then
-@@ -1089,10 +1089,6 @@ if cc_check '' -Wshadow ; then
+@@ -1165,10 +1165,6 @@ if cc_check '' -Wshadow ; then
      CFLAGS="-Wshadow $CFLAGS"
  fi
  
@@ -39,10 +39,10 @@ $OpenBSD: patch-configure,v 1.18 2015/05/11 19:30:20 kettenis Exp $
 -    CFLAGS="-Wno-maybe-uninitialized $CFLAGS"
 -fi
 -
- if [ "$bit_depth" -gt "8" ]; then
-     define HIGH_BIT_DEPTH
-     ASFLAGS="$ASFLAGS -DHIGH_BIT_DEPTH=1"
-@@ -1245,7 +1241,6 @@ if [ "$cli" = "yes" ]; then
+ if [ $compiler = ICC -o $compiler = ICL ] ; then
+     if cc_check 'extras/intel_dispatcher.h' '' 'x264_intel_dispatcher_override();' ; then
+         define HAVE_INTEL_DISPATCHER
+@@ -1339,7 +1335,6 @@ if [ "$cli" = "yes" ]; then
  fi
  
  if [ "$shared" = "yes" ]; then
@@ -50,7 +50,7 @@ $OpenBSD: patch-configure,v 1.18 2015/05/11 19:30:20 kettenis Exp $
      if [ "$SYS" = "WINDOWS" -o "$SYS" = "CYGWIN" ]; then
          echo "SONAME=libx264-$API.dll" >> config.mak
          if [ $compiler_style = MS ]; then
-@@ -1273,7 +1268,7 @@ if [ "$shared" = "yes" ]; then
+@@ -1367,7 +1362,7 @@ if [ "$shared" = "yes" ]; then
      else
          echo "SOSUFFIX=so" >> config.mak
          echo "SONAME=libx264.so.$API" >> config.mak
