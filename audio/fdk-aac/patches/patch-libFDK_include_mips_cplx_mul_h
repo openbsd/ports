@@ -1,5 +1,6 @@
-$OpenBSD: patch-libFDK_include_mips_cplx_mul_h,v 1.1 2015/08/12 19:38:49 miod Exp $
+$OpenBSD: patch-libFDK_include_mips_cplx_mul_h,v 1.2 2015/08/13 08:57:27 jasper Exp $
 
+https://github.com/mstorsjo/fdk-aac/pull/34:
 Only enable code using mips32/mips64 instructions if the compiler is targetting
 this ISA. (integer madd and msub instructions aren't available in the
 ``canonical'' mips ISAs)
