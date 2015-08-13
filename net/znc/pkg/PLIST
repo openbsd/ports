@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/05/15 06:47:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/08/13 07:33:06 ajacoutot Exp $
 @bin bin/znc
 bin/znc-buildmod
 include/znc/
@@ -149,6 +149,7 @@ share/znc/webskins/_default_/pub/External.png
 share/znc/webskins/_default_/pub/_default_.css
 share/znc/webskins/_default_/pub/favicon.ico
 share/znc/webskins/_default_/pub/global.css
+share/znc/webskins/_default_/pub/jquery-1.11.2.js
 share/znc/webskins/_default_/pub/jquery-1.11.2.min.js
 share/znc/webskins/_default_/pub/robots.txt
 share/znc/webskins/_default_/tmpl/
