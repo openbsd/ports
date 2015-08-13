@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/04/25 23:40:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/08/13 19:52:04 zhuk Exp $
 include/ortp/
 include/ortp/b64.h
 include/ortp/event.h
@@ -31,10 +31,10 @@ share/doc/ortp/html/bc_s.png
 share/doc/ortp/html/bdwn.png
 share/doc/ortp/html/classes.html
 share/doc/ortp/html/closed.png
-share/doc/ortp/html/dir_4965d371426d90663c0429fda2d6c829.html
-share/doc/ortp/html/dir_8a072669574b409385ee2ab1924784d1.html
-share/doc/ortp/html/dir_b0eb73f52adfd85f29c5d369336b48e2.html
-share/doc/ortp/html/dir_fcdf9244ced58e9ec2397ba6f12374a6.html
+share/doc/ortp/html/dir_1237c0c4ac8a40c5981d204c92d68506.html
+share/doc/ortp/html/dir_36adbd774c1c6f000b1297d70be35b2a.html
+share/doc/ortp/html/dir_6bf604f68eb5164e4b2a9bb0b07c3bf3.html
+share/doc/ortp/html/dir_82e548d772bf9edbe5ac623da58159b2.html
 share/doc/ortp/html/doxygen.css
 share/doc/ortp/html/doxygen.png
 share/doc/ortp/html/dynsections.js

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/25 23:40:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/08/13 19:52:04 zhuk Exp $
 
 COMMENT =		RTP (RFC3550) library
-DISTNAME =		ortp-0.24.1
+DISTNAME =		ortp-0.24.2
 
 SHARED_LIBS +=	ortp                 2.0      # 9.0
 
