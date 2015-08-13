@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2015/07/17 17:39:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.48 2015/08/13 06:53:37 ajacoutot Exp $
 @extra owncloud/config/config.php
 conf/modules.sample/httpd-owncloud.conf.dist
 @sample conf/modules.sample/httpd-owncloud.conf
@@ -3460,12 +3460,12 @@ owncloud/3rdparty/symfony/routing/Symfony/Component/Routing/composer.json
 owncloud/AUTHORS
 owncloud/COPYING-AGPL
 @mode 0755
-@group www
 @owner www
+@group www
 owncloud/apps/
 @mode
-@group
 @owner
+@group
 owncloud/apps/activity/
 owncloud/apps/activity/appinfo/
 owncloud/apps/activity/appinfo/app.php
@@ -4050,6 +4050,7 @@ owncloud/apps/files/appinfo/info.xml
 owncloud/apps/files/appinfo/register_command.php
 owncloud/apps/files/appinfo/remote.php
 owncloud/apps/files/appinfo/routes.php
+owncloud/apps/files/appinfo/update.php
 owncloud/apps/files/appinfo/version
 owncloud/apps/files/command/
 owncloud/apps/files/command/deleteorphanedfiles.php
@@ -6348,6 +6349,7 @@ owncloud/apps/files_sharing/tests/js/externalSpec.js
 owncloud/apps/files_sharing/tests/js/publicAppSpec.js
 owncloud/apps/files_sharing/tests/js/shareSpec.js
 owncloud/apps/files_sharing/tests/js/sharedfilelistSpec.js
+owncloud/apps/files_sharing/tests/locking.php
 owncloud/apps/files_sharing/tests/middleware/
 owncloud/apps/files_sharing/tests/middleware/sharingcheckmiddleware.php
 owncloud/apps/files_sharing/tests/migrationtest.php
@@ -8380,11 +8382,20 @@ owncloud/apps/user_ldap/templates/part.wizard-userfilter.php
 owncloud/apps/user_ldap/templates/part.wizardcontrols.php
 owncloud/apps/user_ldap/templates/settings.php
 owncloud/apps/user_ldap/tests/
+owncloud/apps/user_ldap/tests/.htaccess
 owncloud/apps/user_ldap/tests/access.php
 owncloud/apps/user_ldap/tests/connection.php
 owncloud/apps/user_ldap/tests/group_ldap.php
 owncloud/apps/user_ldap/tests/integration/
 owncloud/apps/user_ldap/tests/integration/exceptionOnLostConnection.php
+owncloud/apps/user_ldap/tests/integration/lib/
+owncloud/apps/user_ldap/tests/integration/lib/IntegrationTestAccessGroupsMatchFilter.php
+owncloud/apps/user_ldap/tests/integration/readme.md
+owncloud/apps/user_ldap/tests/integration/run-test.sh
+owncloud/apps/user_ldap/tests/integration/setup-scripts/
+owncloud/apps/user_ldap/tests/integration/setup-scripts/createExplicitGroups.php
+owncloud/apps/user_ldap/tests/integration/setup-scripts/createExplicitGroupsDifferentOU.php
+owncloud/apps/user_ldap/tests/integration/setup-scripts/createExplicitUsers.php
 owncloud/apps/user_ldap/tests/jobs/
 owncloud/apps/user_ldap/tests/jobs/cleanup.php
 owncloud/apps/user_ldap/tests/mapping/
@@ -8573,21 +8584,21 @@ owncloud/apps/user_webdavauth/templates/
 owncloud/apps/user_webdavauth/templates/settings.php
 owncloud/apps/user_webdavauth/user_webdavauth.php
 @mode 0750
-@group www
 @owner www
+@group www
 owncloud/config/
 @mode
-@group
 @owner
+@group
 owncloud/config/.htaccess
 owncloud/config/ca-bundle.crt
 @mode 0640
-@group www
 @owner www
+@group www
 owncloud/config/config.sample.php
 @mode
-@group
 @owner
+@group
 owncloud/console.php
 owncloud/core/
 owncloud/core/ajax/
@@ -8695,7 +8706,6 @@ owncloud/core/doc/admin/_images/antivirus-daemon-socket.png
 owncloud/core/doc/admin/_images/antivirus-executable.png
 owncloud/core/doc/admin/_images/antivirus-logging.png
 owncloud/core/doc/admin/_images/app-sharepoint-enable.png
-owncloud/core/doc/admin/_images/build-a-cloud-of-servers-320.png
 owncloud/core/doc/admin/_images/cert-1.png
 owncloud/core/doc/admin/_images/cert-11.png
 owncloud/core/doc/admin/_images/cert-12.png
@@ -8734,8 +8744,17 @@ owncloud/core/doc/admin/_images/cert-46.png
 owncloud/core/doc/admin/_images/cert-47.png
 owncloud/core/doc/admin/_images/cert-5.png
 owncloud/core/doc/admin/_images/cert-50.png
-owncloud/core/doc/admin/_images/cert-52.png
+owncloud/core/doc/admin/_images/cert-53.png
+owncloud/core/doc/admin/_images/cert-54.png
+owncloud/core/doc/admin/_images/cert-55.png
+owncloud/core/doc/admin/_images/cert-56.png
+owncloud/core/doc/admin/_images/cert-57.png
+owncloud/core/doc/admin/_images/cert-58.png
+owncloud/core/doc/admin/_images/cert-59.png
 owncloud/core/doc/admin/_images/cert-6.png
+owncloud/core/doc/admin/_images/cert-60.png
+owncloud/core/doc/admin/_images/cert-61.png
+owncloud/core/doc/admin/_images/cert-62.png
 owncloud/core/doc/admin/_images/cert-7.png
 owncloud/core/doc/admin/_images/cert-8.png
 owncloud/core/doc/admin/_images/cert-9.png
@@ -8787,7 +8806,6 @@ owncloud/core/doc/admin/_images/external-storage-google-drive7.png
 owncloud/core/doc/admin/_images/external-storage-google-drive8.png
 owncloud/core/doc/admin/_images/external-storage-smb.png
 owncloud/core/doc/admin/_images/external-storage-webdav.png
-owncloud/core/doc/admin/_images/file-lock-status.png
 owncloud/core/doc/admin/_images/files-drop-1.png
 owncloud/core/doc/admin/_images/files-drop-2.png
 owncloud/core/doc/admin/_images/files-drop-3.png
@@ -8804,6 +8822,21 @@ owncloud/core/doc/admin/_images/ios-p12-4.png
 owncloud/core/doc/admin/_images/ios-p12-5.png
 owncloud/core/doc/admin/_images/ios-p12-6.png
 owncloud/core/doc/admin/_images/ios-p12.png
+owncloud/core/doc/admin/_images/ios-publish-10.png
+owncloud/core/doc/admin/_images/ios-publish-11.png
+owncloud/core/doc/admin/_images/ios-publish-12.png
+owncloud/core/doc/admin/_images/ios-publish-13.png
+owncloud/core/doc/admin/_images/ios-publish-14.png
+owncloud/core/doc/admin/_images/ios-publish-15.png
+owncloud/core/doc/admin/_images/ios-publish-2.png
+owncloud/core/doc/admin/_images/ios-publish-3.png
+owncloud/core/doc/admin/_images/ios-publish-4.png
+owncloud/core/doc/admin/_images/ios-publish-5.png
+owncloud/core/doc/admin/_images/ios-publish-6.png
+owncloud/core/doc/admin/_images/ios-publish-7.png
+owncloud/core/doc/admin/_images/ios-publish-8.png
+owncloud/core/doc/admin/_images/ios-publish-9.png
+owncloud/core/doc/admin/_images/ios-publish.png
 owncloud/core/doc/admin/_images/itunes-udid-3.png
 owncloud/core/doc/admin/_images/itunes-udid-4.png
 owncloud/core/doc/admin/_images/itunes-udid.png
@@ -8833,12 +8866,9 @@ owncloud/core/doc/admin/_images/mac-4.png
 owncloud/core/doc/admin/_images/mac-5.png
 owncloud/core/doc/admin/_images/mac-6.png
 owncloud/core/doc/admin/_images/mac-7.png
-owncloud/core/doc/admin/_images/oc-video-1.png
-owncloud/core/doc/admin/_images/oc-video-2.png
 owncloud/core/doc/admin/_images/oc_admin_app_page.png
 owncloud/core/doc/admin/_images/oracle-1.png
 owncloud/core/doc/admin/_images/ownbrander-1.png
-owncloud/core/doc/admin/_images/ownbrander-10.png
 owncloud/core/doc/admin/_images/ownbrander-11.png
 owncloud/core/doc/admin/_images/ownbrander-12.png
 owncloud/core/doc/admin/_images/ownbrander-13.png
@@ -8859,13 +8889,16 @@ owncloud/core/doc/admin/_images/ownbrander-25.png
 owncloud/core/doc/admin/_images/ownbrander-26.png
 owncloud/core/doc/admin/_images/ownbrander-27.png
 owncloud/core/doc/admin/_images/ownbrander-28.png
+owncloud/core/doc/admin/_images/ownbrander-29.png
 owncloud/core/doc/admin/_images/ownbrander-3.png
+owncloud/core/doc/admin/_images/ownbrander-30.png
+owncloud/core/doc/admin/_images/ownbrander-31.png
+owncloud/core/doc/admin/_images/ownbrander-32.png
 owncloud/core/doc/admin/_images/ownbrander-4.png
 owncloud/core/doc/admin/_images/ownbrander-5.png
 owncloud/core/doc/admin/_images/ownbrander-6.png
 owncloud/core/doc/admin/_images/ownbrander-7.png
 owncloud/core/doc/admin/_images/ownbrander-8.png
-owncloud/core/doc/admin/_images/ownbrander-9.png
 owncloud/core/doc/admin/_images/phpinfo.png
 owncloud/core/doc/admin/_images/preview_images.png
 owncloud/core/doc/admin/_images/remote_shares.png
@@ -8900,6 +8933,8 @@ owncloud/core/doc/admin/_images/theming-5.png
 owncloud/core/doc/admin/_images/theming-6.png
 owncloud/core/doc/admin/_images/theming-7.png
 owncloud/core/doc/admin/_images/theming-8.png
+owncloud/core/doc/admin/_images/transactional-locking-1.png
+owncloud/core/doc/admin/_images/transactional-locking-2.png
 owncloud/core/doc/admin/_images/ucs-app-center-install.png
 owncloud/core/doc/admin/_images/ucs-app-center-module.png
 owncloud/core/doc/admin/_images/ucsint.png
@@ -8919,6 +8954,9 @@ owncloud/core/doc/admin/_images/users-config-2.png
 owncloud/core/doc/admin/_images/users-config.png
 owncloud/core/doc/admin/_images/users-create.png
 owncloud/core/doc/admin/_images/users-groups.png
+owncloud/core/doc/admin/_images/video_externalstorage.png
+owncloud/core/doc/admin/_images/video_firstminute.png
+owncloud/core/doc/admin/_images/video_usermanagement.png
 owncloud/core/doc/admin/_sources/
 owncloud/core/doc/admin/_sources/configuration_database/
 owncloud/core/doc/admin/_sources/configuration_database/db_conversion.txt
@@ -8935,7 +8973,7 @@ owncloud/core/doc/admin/_sources/configuration_files/external_storage_configurat
 owncloud/core/doc/admin/_sources/configuration_files/federated_cloud_sharing_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_files/file_sharing_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_files/files_locking_enabling.txt
-owncloud/core/doc/admin/_sources/configuration_files/files_locking_experimental.txt
+owncloud/core/doc/admin/_sources/configuration_files/files_locking_transactional.txt
 owncloud/core/doc/admin/_sources/configuration_files/index.txt
 owncloud/core/doc/admin/_sources/configuration_files/previews_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_files/serving_static_files_configuration.txt
@@ -9034,8 +9072,6 @@ owncloud/core/doc/admin/_sources/operations/index.txt
 owncloud/core/doc/admin/_sources/operations/scaling_multiple_machines.txt
 owncloud/core/doc/admin/_sources/operations/theming.txt
 owncloud/core/doc/admin/_sources/release_notes.txt
-owncloud/core/doc/admin/_sources/videos/
-owncloud/core/doc/admin/_sources/videos/index.txt
 owncloud/core/doc/admin/_sources/whats_new_admin.txt
 owncloud/core/doc/admin/_static/
 owncloud/core/doc/admin/_static/ajax-loader.gif
@@ -9089,7 +9125,7 @@ owncloud/core/doc/admin/configuration_files/external_storage_configuration_gui.h
 owncloud/core/doc/admin/configuration_files/federated_cloud_sharing_configuration.html
 owncloud/core/doc/admin/configuration_files/file_sharing_configuration.html
 owncloud/core/doc/admin/configuration_files/files_locking_enabling.html
-owncloud/core/doc/admin/configuration_files/files_locking_experimental.html
+owncloud/core/doc/admin/configuration_files/files_locking_transactional.html
 owncloud/core/doc/admin/configuration_files/index.html
 owncloud/core/doc/admin/configuration_files/previews_configuration.html
 owncloud/core/doc/admin/configuration_files/serving_static_files_configuration.html
@@ -9192,8 +9228,6 @@ owncloud/core/doc/admin/operations/theming.html
 owncloud/core/doc/admin/release_notes.html
 owncloud/core/doc/admin/search.html
 owncloud/core/doc/admin/searchindex.js
-owncloud/core/doc/admin/videos/
-owncloud/core/doc/admin/videos/index.html
 owncloud/core/doc/admin/whats_new_admin.html
 owncloud/core/doc/user/
 owncloud/core/doc/user/_images/
@@ -10902,6 +10936,7 @@ owncloud/lib/repair/repairmimetypes.php
 owncloud/lib/repair/searchlucenetables.php
 owncloud/lib/repair/sqliteautoincrement.php
 owncloud/lib/repair/updatecertificatestore.php
+owncloud/lib/repair/updateoutdatedocsids.php
 owncloud/occ
 owncloud/ocs/
 owncloud/ocs-provider/
@@ -11197,8 +11232,8 @@ owncloud/themes/example/core/img/logo.svg
 owncloud/themes/example/defaults.php
 owncloud/version.php
 @mode 0750
-@group www
 @owner www
+@group www
 @sample owncloud/data/
 @mode
 @group
