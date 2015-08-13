@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/15 13:28:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/08/13 11:05:48 ajacoutot Exp $
 @bin bin/xpstojpeg
 @bin bin/xpstopdf
 @bin bin/xpstopng
 @bin bin/xpstops
 @bin bin/xpstosvg
 include/libgxps/
+include/libgxps/gxps-core-properties.h
 include/libgxps/gxps-document-structure.h
 include/libgxps/gxps-document.h
 include/libgxps/gxps-error.h
@@ -24,22 +25,27 @@ share/gir-1.0/GXPS-0.1.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/libgxps/
+share/gtk-doc/html/libgxps/GXPSCoreProperties.html
 share/gtk-doc/html/libgxps/GXPSDocument.html
 share/gtk-doc/html/libgxps/GXPSDocumentStructure.html
 share/gtk-doc/html/libgxps/GXPSFile.html
 share/gtk-doc/html/libgxps/GXPSPage.html
 share/gtk-doc/html/libgxps/annotation-glossary.html
 share/gtk-doc/html/libgxps/api-index-0-2-1.html
+share/gtk-doc/html/libgxps/api-index-0-2-3.html
 share/gtk-doc/html/libgxps/api-index-full.html
 share/gtk-doc/html/libgxps/ch01.html
 share/gtk-doc/html/libgxps/home.png
 share/gtk-doc/html/libgxps/index.html
 share/gtk-doc/html/libgxps/index.sgml
+share/gtk-doc/html/libgxps/left-insensitive.png
 share/gtk-doc/html/libgxps/left.png
 share/gtk-doc/html/libgxps/libgxps-GXPS-Links.html
 share/gtk-doc/html/libgxps/libgxps-GXPSError.html
 share/gtk-doc/html/libgxps/libgxps-Version-Information.html
 share/gtk-doc/html/libgxps/libgxps.devhelp2
+share/gtk-doc/html/libgxps/right-insensitive.png
 share/gtk-doc/html/libgxps/right.png
 share/gtk-doc/html/libgxps/style.css
+share/gtk-doc/html/libgxps/up-insensitive.png
 share/gtk-doc/html/libgxps/up.png
