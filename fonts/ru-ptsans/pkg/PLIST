@@ -1,14 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/08/13 20:02:43 zhuk Exp $
 @pkgpath x11/ptsans
 share/fonts/
 @fontdir share/fonts/ptsans/
 share/fonts/ptsans/PTC55F.ttf
 share/fonts/ptsans/PTC75F.ttf
+share/fonts/ptsans/PTF55F.ttf
+share/fonts/ptsans/PTF56F.ttf
+share/fonts/ptsans/PTF75F.ttf
+share/fonts/ptsans/PTF76F.ttf
+share/fonts/ptsans/PTM55F.ttf
+share/fonts/ptsans/PTM75F.ttf
 share/fonts/ptsans/PTN57F.ttf
 share/fonts/ptsans/PTN77F.ttf
 share/fonts/ptsans/PTS55F.ttf
 share/fonts/ptsans/PTS56F.ttf
 share/fonts/ptsans/PTS75F.ttf
 share/fonts/ptsans/PTS76F.ttf
+share/fonts/ptsans/PTZ55F.ttf
+share/fonts/ptsans/PTZ56F.ttf
 share/ptsans/
-share/ptsans/PTSansOFL.txt
+share/ptsans/OT_TT_Install_E.txt
+share/ptsans/OT_TT_Install_R.txt
+share/ptsans/PT Free Font License_eng_1.2.txt
+share/ptsans/PT Free Font License_eng_1.3.txt
+share/ptsans/PT Free Font License_rus_1.2.txt
+share/ptsans/PT Free Font License_rus_1.3.txt
