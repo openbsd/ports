@@ -1,13 +1,13 @@
-$OpenBSD: patch-Makefile_PL,v 1.4 2008/10/10 12:12:07 jasper Exp $
---- Makefile.PL.orig	Fri Oct 10 13:52:55 2008
-+++ Makefile.PL	Fri Oct 10 13:53:31 2008
-@@ -8,7 +8,8 @@ my $output = WriteMakefile
- 	(
- 	 'NAME'	        => 'Math::GMP',
- 	 'VERSION_FROM' => 'lib/Math/GMP.pm',
--	 'LIBS'	        => ['-lgmp'],
-+	 'LIBS'		=> ["$ENV{LDFLAGS} -lgmp"],
-+	 'INC'		=> "$ENV{CPPFLAGS}",
- 	 'NO_META'      => 1,
- 	 );
+$OpenBSD: patch-Makefile_PL,v 1.5 2015/08/13 08:47:52 benoit Exp $
+--- Makefile.PL.orig	Wed Aug 12 14:56:32 2015
++++ Makefile.PL	Thu Aug 13 09:19:35 2015
+@@ -52,7 +52,8 @@
  
+ %WriteMakefileArgs = (
+     %WriteMakefileArgs,
+-    'LIBS' => ['-lgmp'],,
++    'INC'  => "$ENV{CPPFLAGS}",
++    'LIBS' => ["$ENV{LDFLAGS} -lgmp"],,
+ );
+ 
+ my %FallbackPrereqs = (
