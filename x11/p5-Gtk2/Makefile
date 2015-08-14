@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2015/05/02 15:53:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2015/08/14 09:57:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	set of modules to use Gtk+2 libraries from Perl
 
-DISTNAME=	Gtk2-1.2495
+DISTNAME=	Gtk2-1.2496
 CPAN_AUTHOR=	XAOC
 
 CATEGORIES=	x11
