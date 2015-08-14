@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/27 13:42:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/08/14 14:55:01 benoit Exp $
 
 COMMENT=		portable implementation of 'which' in Perl
 MODULES=		cpan
-DISTNAME=		File-Which-1.18
+DISTNAME =		File-Which-1.19
 CATEGORIES=		sysutils
 
 # Artistic/GPL
