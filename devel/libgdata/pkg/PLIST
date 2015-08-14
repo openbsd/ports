@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/09/18 08:10:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/08/14 07:34:48 jasper Exp $
 include/libgdata/
 include/libgdata/gdata/
 include/libgdata/gdata/app/
@@ -43,6 +43,7 @@ include/libgdata/gdata/gdata-enums.h
 include/libgdata/gdata/gdata-feed.h
 include/libgdata/gdata/gdata-goa-authorizer.h
 include/libgdata/gdata/gdata-oauth1-authorizer.h
+include/libgdata/gdata/gdata-oauth2-authorizer.h
 include/libgdata/gdata/gdata-parsable.h
 include/libgdata/gdata/gdata-query.h
 include/libgdata/gdata/gdata-service.h
@@ -58,6 +59,7 @@ include/libgdata/gdata/media/gdata-media-enums.h
 include/libgdata/gdata/media/gdata-media-thumbnail.h
 include/libgdata/gdata/services/
 include/libgdata/gdata/services/calendar/
+include/libgdata/gdata/services/calendar/gdata-calendar-access-rule.h
 include/libgdata/gdata/services/calendar/gdata-calendar-calendar.h
 include/libgdata/gdata/services/calendar/gdata-calendar-event.h
 include/libgdata/gdata/services/calendar/gdata-calendar-feed.h
@@ -69,6 +71,7 @@ include/libgdata/gdata/services/contacts/gdata-contacts-group.h
 include/libgdata/gdata/services/contacts/gdata-contacts-query.h
 include/libgdata/gdata/services/contacts/gdata-contacts-service.h
 include/libgdata/gdata/services/documents/
+include/libgdata/gdata/services/documents/gdata-documents-access-rule.h
 include/libgdata/gdata/services/documents/gdata-documents-document.h
 include/libgdata/gdata/services/documents/gdata-documents-drawing.h
 include/libgdata/gdata/services/documents/gdata-documents-entry.h
@@ -111,6 +114,7 @@ include/libgdata/gdata/services/youtube/gdata-youtube-comment.h
 include/libgdata/gdata/services/youtube/gdata-youtube-content.h
 include/libgdata/gdata/services/youtube/gdata-youtube-credit.h
 include/libgdata/gdata/services/youtube/gdata-youtube-enums.h
+include/libgdata/gdata/services/youtube/gdata-youtube-feed.h
 include/libgdata/gdata/services/youtube/gdata-youtube-query.h
 include/libgdata/gdata/services/youtube/gdata-youtube-service.h
 include/libgdata/gdata/services/youtube/gdata-youtube-state.h
@@ -130,6 +134,7 @@ share/gtk-doc/html/gdata/GDataAuthorizationDomain.html
 share/gtk-doc/html/gdata/GDataAuthorizer.html
 share/gtk-doc/html/gdata/GDataBatchOperation.html
 share/gtk-doc/html/gdata/GDataBatchable.html
+share/gtk-doc/html/gdata/GDataCalendarAccessRule.html
 share/gtk-doc/html/gdata/GDataCalendarCalendar.html
 share/gtk-doc/html/gdata/GDataCalendarEvent.html
 share/gtk-doc/html/gdata/GDataCalendarFeed.html
@@ -144,6 +149,7 @@ share/gtk-doc/html/gdata/GDataContactsContact.html
 share/gtk-doc/html/gdata/GDataContactsGroup.html
 share/gtk-doc/html/gdata/GDataContactsQuery.html
 share/gtk-doc/html/gdata/GDataContactsService.html
+share/gtk-doc/html/gdata/GDataDocumentsAccessRule.html
 share/gtk-doc/html/gdata/GDataDocumentsDocument.html
 share/gtk-doc/html/gdata/GDataDocumentsDrawing.html
 share/gtk-doc/html/gdata/GDataDocumentsEntry.html
@@ -191,6 +197,7 @@ share/gtk-doc/html/gdata/GDataMediaContent.html
 share/gtk-doc/html/gdata/GDataMediaCredit.html
 share/gtk-doc/html/gdata/GDataMediaThumbnail.html
 share/gtk-doc/html/gdata/GDataOAuth1Authorizer.html
+share/gtk-doc/html/gdata/GDataOAuth2Authorizer.html
 share/gtk-doc/html/gdata/GDataParsable.html
 share/gtk-doc/html/gdata/GDataPicasaWebAlbum.html
 share/gtk-doc/html/gdata/GDataPicasaWebComment.html
@@ -210,13 +217,12 @@ share/gtk-doc/html/gdata/GDataYouTubeCategory.html
 share/gtk-doc/html/gdata/GDataYouTubeComment.html
 share/gtk-doc/html/gdata/GDataYouTubeContent.html
 share/gtk-doc/html/gdata/GDataYouTubeCredit.html
+share/gtk-doc/html/gdata/GDataYouTubeFeed.html
 share/gtk-doc/html/gdata/GDataYouTubeQuery.html
 share/gtk-doc/html/gdata/GDataYouTubeService.html
 share/gtk-doc/html/gdata/GDataYouTubeState.html
 share/gtk-doc/html/gdata/GDataYouTubeVideo.html
 share/gtk-doc/html/gdata/annotation-glossary.html
-share/gtk-doc/html/gdata/api-index-deprecated.html
-share/gtk-doc/html/gdata/api-index-full.html
 share/gtk-doc/html/gdata/cancellation.png
 share/gtk-doc/html/gdata/ch01.html
 share/gtk-doc/html/gdata/ch02.html
@@ -245,7 +251,8 @@ share/gtk-doc/html/gdata/gdata-running.html
 share/gtk-doc/html/gdata/gdata.devhelp2
 share/gtk-doc/html/gdata/home.png
 share/gtk-doc/html/gdata/index.html
-share/gtk-doc/html/gdata/index.sgml
+share/gtk-doc/html/gdata/ix01.html
+share/gtk-doc/html/gdata/ix02.html
 share/gtk-doc/html/gdata/ix03.html
 share/gtk-doc/html/gdata/ix04.html
 share/gtk-doc/html/gdata/ix05.html
@@ -265,6 +272,8 @@ share/gtk-doc/html/gdata/ix18.html
 share/gtk-doc/html/gdata/ix19.html
 share/gtk-doc/html/gdata/ix20.html
 share/gtk-doc/html/gdata/ix21.html
+share/gtk-doc/html/gdata/ix22.html
+share/gtk-doc/html/gdata/ix23.html
 share/gtk-doc/html/gdata/left-insensitive.png
 share/gtk-doc/html/gdata/left.png
 share/gtk-doc/html/gdata/pt01.html
@@ -283,6 +292,7 @@ share/locale/as/LC_MESSAGES/gdata.mo
 share/locale/be/LC_MESSAGES/gdata.mo
 share/locale/bg/LC_MESSAGES/gdata.mo
 share/locale/bn_IN/LC_MESSAGES/gdata.mo
+share/locale/bs/LC_MESSAGES/gdata.mo
 share/locale/ca/LC_MESSAGES/gdata.mo
 share/locale/ca@valencia/LC_MESSAGES/gdata.mo
 share/locale/cs/LC_MESSAGES/gdata.mo
@@ -312,6 +322,7 @@ share/locale/ml/LC_MESSAGES/gdata.mo
 share/locale/mr/LC_MESSAGES/gdata.mo
 share/locale/nb/LC_MESSAGES/gdata.mo
 share/locale/nl/LC_MESSAGES/gdata.mo
+share/locale/oc/LC_MESSAGES/gdata.mo
 share/locale/or/LC_MESSAGES/gdata.mo
 share/locale/pa/LC_MESSAGES/gdata.mo
 share/locale/pl/LC_MESSAGES/gdata.mo
