@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_xfeutils_cpp,v 1.4 2015/08/14 03:42:15 bcallah Exp $
+
+Sent upstream (use OpenBSD's strl* functions).
+
+--- src/xfeutils.cpp.orig	Thu Aug 13 12:46:07 2015
++++ src/xfeutils.cpp	Thu Aug 13 12:47:06 2015
+@@ -560,7 +560,6 @@ int lstatmt(const char* filename, struct stat* buf)
+ {
+ 	return lstat(filename,buf);
+ }
+-#endif
+ 
+ 
+ // Safe strcpy function (Public domain, by C.B. Falconer)
+@@ -605,6 +604,7 @@ size_t strlcat(char* dst, const char* src, size_t sz)
+    dst--;
+    return dst - start + strlcpy(dst, src, sz);
+ }
++#endif
+ 
+ 
+ // Obtain the non recursive size of a directory
