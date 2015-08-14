@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD: cnupm.rc,v 1.1 2015/08/14 13:06:52 zhuk Exp $
+
+daemon="${TRUEPREFIX}/sbin/cnupm"
+
+. /etc/rc.d/rc.subr
+
+cnupm_interface="${daemon_flags##*(* )-i*( )}"
+cnupm_interface="${cnupm_interface%% *}"
+[ -n "${cnupm_interface}" ] || cnupm_interface=".*"
+pexp="cnupm: collecting traffic on ${cnupm_interface}"
+
+rc_cmd $1

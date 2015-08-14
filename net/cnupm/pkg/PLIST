@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/01/26 08:03:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/08/14 13:06:52 zhuk Exp $
 @newgroup _cnupm:531
 @newuser _cnupm:531:_cnupm:daemon:cnupm traffic collector:/var/cnupm:/sbin/nologin
 @man man/man8/cnupm.8
@@ -9,3 +9,4 @@
 @owner _cnupm
 @group _cnupm
 @sample /var/cnupm/
+@rcscript ${RCDIR}/cnupm
