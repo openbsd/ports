@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/14 15:58:21 benoit Exp $
 
 COMMENT =	run HTTP tests on external live servers
 
 MODULES =	cpan
-DISTNAME =	Plack-Test-ExternalServer-0.01
+DISTNAME =	Plack-Test-ExternalServer-0.02
 CATEGORIES =	www
 
 # same as perl
