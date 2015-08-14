@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2015/08/14 10:04:24 benoit Exp $
 
-COMMENT=	perl common defaults with lower memory usage
+COMMENT =	perl common defaults with lower memory usage
 
-MODULES=	cpan
-DISTNAME=	common-sense-3.73
-CATEGORIES=	devel
-REVISION =	0
+MODULES =	cpan
+DISTNAME =	common-sense-3.74
+CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-CPAN_AUTHOR=	MLEHMANN
+CPAN_AUTHOR =	MLEHMANN
 
 .include <bsd.port.mk>
