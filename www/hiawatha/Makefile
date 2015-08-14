@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.42 2015/05/25 09:24:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2015/08/14 09:59:06 ajacoutot Exp $
 
 COMMENT=	secure webserver
-DISTNAME =	hiawatha-9.13
+DISTNAME =	hiawatha-9.14
 CATEGORIES=	www net
 
-SHARED_LIBS +=	mbedtls                   0.0 # 1.3
+SHARED_LIBS +=	mbedcrypto                0.0 # 2.0
+SHARED_LIBS +=	mbedtls                   1.0 # 1.3
+SHARED_LIBS +=	mbedx509                  0.0 # 2.0
 
 HOMEPAGE=	http://www.hiawatha-webserver.org/
 
