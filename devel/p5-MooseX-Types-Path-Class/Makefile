@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/18 10:34:39 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2015/08/14 12:28:22 benoit Exp $
 
 COMMENT=		Path::Class type library for Moose
 
-DISTNAME =		MooseX-Types-Path-Class-0.06
+DISTNAME =		MooseX-Types-Path-Class-0.07
 
 CATEGORIES=		devel
 
