@@ -1,0 +1,12 @@
+$OpenBSD: patch-console_Makefile_in,v 1.1 2015/08/14 13:49:41 sthen Exp $
+--- console/Makefile.in.orig	Fri Aug 14 14:47:09 2015
++++ console/Makefile.in	Fri Aug 14 14:47:20 2015
+@@ -55,7 +55,7 @@ distclean: clean
+ 
+ install: console
+ 	$(MKDIR) $(DESTDIR)$(bindir)
+-	$(INSTALL_PROGRAM) console $(DESTDIR)$(bindir)
++	$(BSD_INSTALL_PROGRAM) console $(DESTDIR)$(bindir)
+ 	$(MKDIR) $(DESTDIR)$(mandir)/man1
+ 	$(INSTALL) -m 0644 console.man $(DESTDIR)$(mandir)/man1/console.1
+ 
