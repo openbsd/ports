@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/07/16 23:57:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/14 14:30:05 benoit Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,9 +6,8 @@ COMMENT =	Perl extension to OpenSSL's PKCS10 API
 
 MODULES =	cpan
 
-DISTNAME =	Crypt-OpenSSL-PKCS10-0.14
+DISTNAME =	Crypt-OpenSSL-PKCS10-0.15
 CATEGORIES =	security
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE_CDROM = Yes
