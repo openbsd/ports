@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/22 11:31:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/08/14 07:02:47 ajacoutot Exp $
 
 COMMENT=	rendering for complex writing systems
 
-DISTNAME=	graphite2-1.2.4
+DISTNAME=	graphite2-1.3.0
 EXTRACT_SUFX=	.tgz
-REVISION=	0
 
-SHARED_LIBS=	graphite2 0.0 # 3.0.1
+SHARED_LIBS=	graphite2 1.0 # 3.0.1
 
 CATEGORIES=	graphics
 
@@ -28,6 +27,10 @@ MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 
 TEST_DEPENDS=${MODPY_RUN_DEPENDS}
+
+# XXX push upstream: collides with swap32(3)
+pre-configure:
+	sed -i 's,swap32,gr_swap32,g' ${WRKSRC}/tests/comparerenderer/FeatureParser.h
 
 # regress tests need python
 pre-test:
