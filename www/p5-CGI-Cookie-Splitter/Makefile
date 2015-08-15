@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 14:42:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/08/15 07:30:04 benoit Exp $
 
-COMMENT=	splits big cookies into small pieces
+COMMENT =	splits big cookies into small pieces
 
-MODULES=	cpan
-DISTNAME=	CGI-Cookie-Splitter-0.02
-REVISION=	0
-CATEGORIES=	www
+MODULES =	cpan
+DISTNAME =	CGI-Cookie-Splitter-0.04
+CATEGORIES =	www
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=		www/p5-CGI-Simple
-TEST_DEPENDS=	devel/p5-Test-use-ok
+RUN_DEPENDS =		www/p5-CGI-Simple
+TEST_DEPENDS =		devel/p5-Test-use-ok
 
 .include <bsd.port.mk>
