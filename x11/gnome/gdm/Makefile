@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.233 2015/07/18 22:29:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.234 2015/08/15 11:46:16 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -40,7 +40,7 @@ RUN_DEPENDS=		devel/iso-codes
 BUILD_DEPENDS +=	devel/dconf
 
 # cyclic dependency, see pkg/DESCR
-# bring _all_ runtime dependencies (including consolekit and zenity)
+# bring _all_ runtime dependencies (including consolekit2 and zenity)
 #RUN_DEPENDS +=		x11/gnome/session
 
 # cyclic dependency
