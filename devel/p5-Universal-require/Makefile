@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/21 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/08/15 17:51:32 benoit Exp $
 
 COMMENT=	extends require to work on variables
 
-V=		0.13
+V =		0.18
 MODULES=	cpan
 DISTNAME=	UNIVERSAL-require-${V}
 PKGNAME=	p5-Universal-require-${V}
-REVISION=	0
 CATEGORIES=	devel
 
 # perl
