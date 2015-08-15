@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/06/23 07:11:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/08/15 08:34:02 jasper Exp $
 ${GEM_BIN}/serverspec-init${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -68,6 +68,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/ipfilter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/ipnat.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/iptables.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/kernel_module.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/linux_audit_system.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/linux_kernel_parameter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/lxc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/mail_alias.rb
@@ -160,6 +161,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/interface_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/ip6tables_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/iptables_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/kernel_module_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/linux_audit_system_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/linux_kernel_parameter_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/lxc_container_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/type/linux/selinux_module_spec.rb
