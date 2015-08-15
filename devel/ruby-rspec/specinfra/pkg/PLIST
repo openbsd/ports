@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2015/07/16 04:40:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2015/08/15 08:33:49 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -64,6 +64,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/alpine/base/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/alpine/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/alpine/base/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/alpine/base/process.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/alpine/base/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/amazon/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/amazon.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/amazon/base.rb
@@ -154,6 +155,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/file.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/host.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/interface.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/inventory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/freebsd/base/port.rb
@@ -380,7 +383,10 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/backend/
 ${GEM_LIB}/gems/${DISTNAME}/spec/backend/exec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/backend/exec/build_command_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/backend/exec/child_process_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/backend/exec/env_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/backend/exec/read_noblock_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/backend/exec/stdxxx_handler_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/backend/ssh/
 ${GEM_LIB}/gems/${DISTNAME}/spec/backend/ssh/build_command_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/
@@ -404,6 +410,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/esxi/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/factory_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/freebsd/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/freebsd/file_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/freebsd/interface_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/bond_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/bridge_spec.rb
@@ -423,6 +430,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/module/systemd_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/module/zfs_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/file_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/interface_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/service_spec.rb
@@ -456,6 +464,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/freebsd/filesystem_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/cpu_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/filesystem_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/kernel_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/memory_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/virtualization_docker_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/virtualization_kvm_spec.rb
