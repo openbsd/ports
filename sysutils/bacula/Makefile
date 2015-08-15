@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2015/07/15 15:53:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.91 2015/08/15 07:50:02 ajacoutot Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -12,7 +12,7 @@ COMMENT-mysql=		Bacula libbaccats support for MySQL
 COMMENT-pgsql=		Bacula libbaccats support for PostgreSQL
 COMMENT-sqlite3=	Bacula libbaccats support for SQLite3
 
-V=			7.0.5
+V=			7.2.0
 DISTNAME=		bacula-$V
 PKGNAME-main=		bacula-client-$V
 PKGNAME-server=		bacula-server-$V
@@ -20,10 +20,6 @@ PKGNAME-bat=		bacula-bat-$V
 PKGNAME-mysql=		bacula-mysql-$V
 PKGNAME-pgsql=		bacula-pgsql-$V
 PKGNAME-sqlite3=	bacula-sqlite3-$V
-
-REVISION-main=		2
-REVISION-server=	6
-REVISION-mysql=		0
 
 CATEGORIES=		sysutils
 
@@ -166,8 +162,6 @@ post-install:
 	rm ${PREFIX}/sbin/bacula
 # does nothing
 	cd ${PREFIX}/libexec/bacula/updatedb && rm update_bacula_tables_8_to_9
-# broken: tries to run scripts from /etc
-	cd ${PREFIX}/libexec/bacula/updatedb && rm update_bdb_tables_8_to_9
 # unneeded: SQLite2
 	cd ${PREFIX}/libexec/bacula/updatedb && rm update_sqlite_tables_4_to_5 \
 		update_sqlite_tables_5_to_6 update_sqlite_tables_6_to_7 \

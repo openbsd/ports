@@ -1,17 +1,17 @@
-$OpenBSD: patch-src_cats_Makefile_in,v 1.5 2014/04/19 09:44:11 ajacoutot Exp $
---- src/cats/Makefile.in.orig	Wed Apr  2 19:32:30 2014
-+++ src/cats/Makefile.in	Thu Apr 10 17:31:03 2014
-@@ -142,26 +142,26 @@ libbaccats.a: $(LIBBACCATS_OBJS)
+$OpenBSD: patch-src_cats_Makefile_in,v 1.6 2015/08/15 07:50:02 ajacoutot Exp $
+--- src/cats/Makefile.in.orig	Thu Aug 13 15:52:24 2015
++++ src/cats/Makefile.in	Fri Aug 14 10:20:19 2015
+@@ -125,26 +125,26 @@ libbaccats.a: $(LIBBACCATS_OBJS)
  
  libbacsql.la: Makefile $(LIBBACSQL_LOBJS)
  	@echo "Making $@ ..."	  
 -	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACSQL_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACSQL_LT_RELEASE) $(DB_LIBS)
 +	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACSQL_LOBJS) -export-dynamic -rpath $(libdir) $(DB_LIBS)
  
- libbaccats.la: Makefile cats_dummy.lo
+ libbaccats.la: Makefile cats_null.lo
  	@echo "Making $@ ..."
--	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ cats_dummy.lo -export-dynamic -rpath $(libdir) -release $(LIBBACCATS_LT_RELEASE)
-+	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ cats_dummy.lo -export-dynamic -rpath $(libdir)
+-	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ cats_null.lo -export-dynamic -rpath $(libdir) -release $(LIBBACCATS_LT_RELEASE)
++	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ cats_null.lo -export-dynamic -rpath $(libdir)
  
  libbaccats-mysql.la: Makefile $(MYSQL_LOBJS)
  	@echo "Making $@ ..."
@@ -33,6 +33,6 @@ $OpenBSD: patch-src_cats_Makefile_in,v 1.5 2014/04/19 09:44:11 ajacoutot Exp $
 -							   -soname libbaccats-$(LIBBACCATS_LT_RELEASE).so $(SQLITE_LIBS)
 +	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(SQLITE_LOBJS) -export-dynamic -rpath $(libdir) \
 +							   $(SQLITE_LIBS)
- 
- #libbaccats-ingres.la: Makefile $(INGRES_LOBJS)
+ #libbaccats-dbi.la: Makefile $(DBI_LOBJS)
  #	 @echo "Making $@ ..."
+ #	 $(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(DBI_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACCATS_LT_RELEASE) \

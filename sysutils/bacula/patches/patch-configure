@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.16 2014/05/21 10:12:34 ajacoutot Exp $
---- configure.orig	Sun May 11 12:34:12 2014
-+++ configure	Wed May 21 10:05:14 2014
-@@ -4776,7 +4776,7 @@ $as_echo "no" >&6; }
+$OpenBSD: patch-configure,v 1.17 2015/08/15 07:50:02 ajacoutot Exp $
+--- configure.orig	Thu Aug 13 15:52:24 2015
++++ configure	Fri Aug 14 10:16:41 2015
+@@ -4802,7 +4802,7 @@ $as_echo "no" >&6; }
  fi
  
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.16 2014/05/21 10:12:34 ajacoutot Exp $
     as_fn_error $? "Unable to find C++ compiler" "$LINENO" 5
  fi
  
-@@ -16708,7 +16708,7 @@ if test x$use_libtool != xno; then
+@@ -16693,7 +16693,7 @@ if test x$use_libtool != xno; then
     LIBTOOL_INSTALL_TARGET="libtool-install"
     LIBTOOL_UNINSTALL_TARGET="libtool-uninstall"
     LIBTOOL_CLEAN_TARGET="libtool-clean"
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.16 2014/05/21 10:12:34 ajacoutot Exp $
     FD_PLUGIN_DIR="src/plugins/fd"
     have_plugins=yes
  else
-@@ -22319,7 +22319,7 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
+@@ -22331,7 +22331,7 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
  
  $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.16 2014/05/21 10:12:34 ajacoutot Exp $
  		    got_readline="yes"
  
  else
-@@ -22358,7 +22358,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
+@@ -22370,7 +22370,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
  			got_readline="yes"
  			CONS_INC="-I${TOP_DIR}/depkgs/readline"
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.16 2014/05/21 10:12:34 ajacoutot Exp $
  			CONS_LDFLAGS="-L${TOP_DIR}/depkgs/readline"
  			PRTREADLINE_SRC="${TOP_DIR}/depkgs/readline"
  
-@@ -30546,6 +30546,7 @@ openbsd)
+@@ -30669,6 +30669,7 @@ netbsd)
     DISTVER=`uname -a |awk '{print $3}'`
     lld="qd"
     llu="qu"
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure,v 1.16 2014/05/21 10:12:34 ajacoutot Exp $
     TAPEDRIVE="/dev/nrst0"
     PSCMD="ps -ax -o pid,command"
     PTHREAD_LIB="-pthread"
-@@ -30555,6 +30556,7 @@ openbsd)
+@@ -30687,6 +30688,7 @@ openbsd)
         platforms/openbsd/bacula-fd \
         platforms/openbsd/bacula-sd \
         platforms/openbsd/bacula-dir"

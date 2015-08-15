@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.19 2014/08/14 06:52:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.20 2015/08/15 07:50:02 ajacoutot Exp $
 @conflict bacula-<2.2.7
 @conflict bacula-client-<5.2.6p2
 @pkgpath sysutils/bacula,-server,mysql
@@ -53,7 +53,6 @@ libexec/bacula/updatedb/README
 @bin sbin/bcopy
 @bin sbin/bextract
 @bin sbin/bls
-@bin sbin/bpluginfo
 @bin sbin/bregex
 @bin sbin/bscan
 @bin sbin/bsmtp

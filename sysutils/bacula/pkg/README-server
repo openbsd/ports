@@ -1,13 +1,13 @@
-$OpenBSD: README-server,v 1.17 2015/07/07 14:44:58 sthen Exp $
+$OpenBSD: README-server,v 1.18 2015/08/15 07:50:02 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-Note: If upgrading from a version older than 5.2.0, a database upgrade
+Note: If upgrading from a version older than 7.2.0, a database upgrade
 is necessary (see the ${TRUEPREFIX}/libexec/bacula/update_* scripts).
 Also, the Director and Storage Daemons must be upgraded at the same
-time, but older File Daemons can be used with 5.2.x.
+time, but older File Daemons can be used with 7.2.x.
 
 The official Bacula documentation can be found at:
     http://blog.bacula.org/documentation/documentation/
@@ -22,8 +22,8 @@ Replace 'dbpassword' with the bacula DB user password (configured in
 ${SYSCONFDIR}/bacula-dir.conf).
 
 While SQLite3 may be of interest for quickly testing a setup, it is
-usually not advised to use it in production but rather go for a full
-RDBMS like PostgreSQL or MariaDB.
+not advised to use it in production but rather go for a full RDBMS
+like PostgreSQL or MariaDB.
 
 PostgreSQL
 ----------
@@ -39,6 +39,10 @@ Creating the database and tables:
     $ ./make_postgresql_tables postgresql -U bacula
     $ ./grant_postgresql_privileges -U bacula
 
+Upgrading the schema following a Bacula version upgrade:
+    $ cd ${TRUEPREFIX}/libexec/bacula
+    $ ./update_postgresql_tables -U bacula
+
 MariaDB
 -------
 Creating the DB, table and bacula user.
@@ -52,11 +56,19 @@ Setting up the bacula DB user password.
     MariaDB [bacula]> SET PASSWORD FOR 'bacula'@'localhost' = PASSWORD('dbpassword');
     MariaDB [bacula]> QUIT
 
+Upgrading the schema following a Bacula version upgrade:
+    $ cd ${TRUEPREFIX}/libexec/bacula
+    $ ./update_mysql_tables -U bacula
+
 SQLite3
 -------
 Creating the DB and tables (default to ${LOCALSTATEDIR}/bacula.db).
     # cd ${TRUEPREFIX}/libexec/bacula
     # su -m _bacula -c ./make_sqlite3_tables
+
+Upgrading the schema following a Bacula version upgrade:
+    # cd ${TRUEPREFIX}/libexec/bacula
+    # su -m _bacula -c ./update_sqlite3_tables
 
 Device permissions
 ==================

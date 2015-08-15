@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.1 2014/06/23 07:57:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-pgsql,v 1.2 2015/08/15 07:50:02 ajacoutot Exp $
 @conflict bacula-server-<7.0.4p2
 @conflict bacula-mysql-*
 @conflict bacula-sqlite3-*
@@ -17,7 +17,8 @@ libexec/bacula/update_postgresql_tables
 libexec/bacula/updatedb/
 libexec/bacula/updatedb/update_postgresql_tables_10_to_11
 libexec/bacula/updatedb/update_postgresql_tables_11_to_12
-libexec/bacula/updatedb/update_postgresql_tables_12_to_14
+libexec/bacula/updatedb/update_postgresql_tables_12_to_13
+libexec/bacula/updatedb/update_postgresql_tables_13_to_14
 libexec/bacula/updatedb/update_postgresql_tables_7_to_8
 libexec/bacula/updatedb/update_postgresql_tables_8_to_9
 libexec/bacula/updatedb/update_postgresql_tables_9_to_10

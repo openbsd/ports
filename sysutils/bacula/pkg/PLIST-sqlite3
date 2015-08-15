@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sqlite3,v 1.1 2014/06/23 07:57:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-sqlite3,v 1.2 2015/08/15 07:50:02 ajacoutot Exp $
 @conflict bacula-server-<7.0.4p2
 @conflict bacula-pgsql-*
 @conflict bacula-mysql-*
@@ -17,7 +17,6 @@ libexec/bacula/update_sqlite3_tables
 libexec/bacula/updatedb/
 libexec/bacula/updatedb/update_sqlite3_tables_10_to_11
 libexec/bacula/updatedb/update_sqlite3_tables_11_to_12
-libexec/bacula/updatedb/update_sqlite3_tables_12_to_14
 libexec/bacula/updatedb/update_sqlite3_tables_8_to_9
 libexec/bacula/updatedb/update_sqlite3_tables_9_to_10
 @exec cp %D/lib/libbaccats-sqlite3.so.${LIBbaccats-sqlite3_VERSION} %D/lib/libbaccats.so.${LIBbaccats_VERSION}
