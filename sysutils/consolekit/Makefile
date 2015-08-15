@@ -1,58 +1,59 @@
-# $OpenBSD: Makefile,v 1.48 2015/04/04 09:30:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2015/08/15 11:12:54 ajacoutot Exp $
 
-# NOTE: spam in /var/log/authlog is "expected"
-# http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=678506
-# https://bugzilla.redhat.com/show_bug.cgi?id=810052#c8
-# https://bugzilla.redhat.com/show_bug.cgi?id=809213
+COMMENT=		framework for defining and tracking users, sessions & seats
 
-COMMENT=	framework for defining and tracking users
+DISTNAME=		ConsoleKit2-${GH_TAGNAME}
+PKGNAME=		${DISTNAME:L}
 
-DISTNAME=	ConsoleKit-0.4.6
-EXTRACT_SUFX=	.tar.xz
-PKGNAME=	${DISTNAME:L}
-REVISION=	14
+GH_TAGNAME=		1.0.0
+GH_ACCOUNT=		ConsoleKit2
+GH_PROJECT=		ConsoleKit2
 
-CATEGORIES=	sysutils	
+CATEGORIES=		sysutils	
 
-SHARED_LIBS +=  ck-connector         1.0      # 0.0
+SHARED_LIBS +=  ck-connector         1.1      # 0.0
 
-HOMEPAGE=	http://www.freedesktop.org/wiki/Software/ConsoleKit
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 kvm pcre polkit-gobject-1 pthread
-WANTLIB += xcb z
+WANTLIB += X11 c dbus-1 ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 kvm pcre polkit-gobject-1 pthread xcb z
 
-MASTER_SITES=	http://www.freedesktop.org/software/ConsoleKit/dist/
+MODULES=		devel/gettext
 
-MODULES=	devel/gettext
+USE_GMAKE=		Yes
 
-LIB_DEPENDS=	sysutils/polkit \
-		x11/dbus-glib
+LIB_DEPENDS=		sysutils/polkit
 
 # /usr/local/share/dbus-1/system-services/
-RUN_DEPENDS +=	x11/dbus,-suid
+RUN_DEPENDS +=		x11/dbus,-suid
 
-AUTOCONF_VERSION= 2.69
-CONFIGURE_STYLE= autoconf
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-pid-file=/var/run/ConsoleKit/pid \
-		--disable-pam-module
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--disable-pam-module \
+			--with-pam-module-dir=${LOCALBASE}/lib/security
 
-USE_GMAKE=	Yes
+FAKE_FLAGS=		DBUS_SYS_DIR=${TRUEPREFIX}/share/examples/consolekit/dbus-1 \
+			sysconfdir=${TRUEPREFIX}/share/examples/consolekit
 
-FAKE_FLAGS=	DBUS_SYS_DIR=${TRUEPREFIX}/share/examples/consolekit/dbus-1 \
-		sysconfdir=${TRUEPREFIX}/share/examples/consolekit
 
-pre-patch:
-	@cd ${WRKSRC}/tools && \
-		cp -R freebsd openbsd && \
-		perl -pi -e "s,freebsd,openbsd,g" openbsd/Makefile.in
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+
+pre-configure:
+	cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		NOCONFIGURE=1 \
+		/bin/sh ./autogen.sh
+
+post-install:
+	rmdir ${WRKINST}/var/run/ConsoleKit
+	rm -r ${WRKINST}/${SYSCONFDIR}/X11/xinit/xinitrc.d \
+		${PREFIX}/share/examples/consolekit/logrotate.d
 
 .include <bsd.port.mk>

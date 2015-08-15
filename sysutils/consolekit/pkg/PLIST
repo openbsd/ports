@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/11/27 09:38:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/08/15 11:12:55 ajacoutot Exp $
 @extra /var/log/ConsoleKit/history
 @bin bin/ck-history
 @bin bin/ck-launch-session
@@ -10,8 +10,11 @@ lib/ConsoleKit/
 lib/ConsoleKit/run-seat.d/
 lib/ConsoleKit/run-session.d/
 lib/ConsoleKit/scripts/
+lib/ConsoleKit/scripts/ck-system-hibernate
+lib/ConsoleKit/scripts/ck-system-hybridsleep
 lib/ConsoleKit/scripts/ck-system-restart
 lib/ConsoleKit/scripts/ck-system-stop
+lib/ConsoleKit/scripts/ck-system-suspend
 lib/libck-connector.a
 lib/libck-connector.la
 @lib lib/libck-connector.so.${LIBck-connector_VERSION}
@@ -19,16 +22,18 @@ lib/pkgconfig/ck-connector.pc
 @bin libexec/ck-collect-session-info
 @bin libexec/ck-get-x11-display-device
 @bin libexec/ck-get-x11-server-pid
+@man man/man1/ck-history.1
+@man man/man1/ck-launch-session.1
+@man man/man1/ck-list-sessions.1
+@man man/man1/console-kit-daemon.1m
 @bin sbin/ck-log-system-restart
 @bin sbin/ck-log-system-start
 @bin sbin/ck-log-system-stop
 @bin sbin/console-kit-daemon
-share/dbus-1/
 share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Manager.xml
 share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Seat.xml
 share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Session.xml
-share/dbus-1/system-services/
 share/dbus-1/system-services/org.freedesktop.ConsoleKit.service
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/consolekit/
@@ -46,6 +51,12 @@ share/examples/consolekit/dbus-1/
 @sample ${SYSCONFDIR}/dbus-1/
 share/examples/consolekit/dbus-1/ConsoleKit.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/ConsoleKit.conf
+share/locale/bg/LC_MESSAGES/ConsoleKit2.mo
+share/locale/es/LC_MESSAGES/ConsoleKit2.mo
+share/locale/es_419/
+share/locale/es_419/LC_MESSAGES/
+share/locale/es_419/LC_MESSAGES/ConsoleKit2.mo
+share/locale/ru/LC_MESSAGES/ConsoleKit2.mo
 share/polkit-1/
 share/polkit-1/actions/
 share/polkit-1/actions/org.freedesktop.consolekit.policy
