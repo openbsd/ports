@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/08/15 09:38:21 stsp Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/15 10:43:59 jasper Exp $
 
 COMMENT =	aquarium animation in ASCII art
 
-V =		1.1
-DISTNAME =	asciiquarium_${V}
-PKGNAME = 	asciiquarium-${V}
+DISTNAME =	asciiquarium_1.1
+PKGNAME = 	${DISTNAME:S/_/-/}
 
 CATEGORIES =	games
 
