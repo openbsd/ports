@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/08/15 09:00:07 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2015/08/15 09:38:21 stsp Exp $
 
-COMMENT =	an aquarium/sea animation in ASCII art
+COMMENT =	aquarium animation in ASCII art
 
 V =		1.1
 DISTNAME =	asciiquarium_${V}
