@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.6 2015/07/21 07:14:31 ajacoutot Exp $
+$OpenBSD: README-main,v 1.7 2015/08/15 11:48:28 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -23,10 +23,10 @@ If your installation supports complete shutdown, clicking on the logout
 button on panel will permit you to either logout, rebooting or halt
 the computer.
 
-Halting and rebooting require consolekit and policykit: you'll need to
+Halting and rebooting require consolekit2 and polkit: you'll need to
 run a systemwide D-BUS service (add messagebus to pkg_scripts in
 rc.local) and pass --with-ck-launch argument to startxfce4. If you run
-a systemwide D-BUS service, have consolekit/policykit installed and
+a systemwide D-BUS service, have consolekit2/polkit installed and
 don't use --with-ck-launch you will not be able to shutdown/reboot.
 
 Power management
@@ -34,7 +34,7 @@ Power management
 If you use Xfce on a laptop, you can install xfce4-power-manager
 package, which will provide battery levels/information, and will allow
 to configure actions upon low battery level or AC plugging. If using
-consolekit and policykit, it will also allow you to suspend the laptop
+consolekit2 and polkit, it will also allow you to suspend the laptop
 from the logout dialog.
 
 Screensaver management
@@ -50,7 +50,7 @@ gvfs-smb package. You can also try gigolo package, which is a GUI to
 configure GVfs mounts.
 You install the toad package if you want to use the auto-mount
 feature in thunar, provided natively by gudev on Linux and FreeBSD.
-Since toad requires consolekit you'll need to pass --with-ck-launch
+Since toad requires consolekit2 you'll need to pass --with-ck-launch
 to startxfce4 to use auto-mount.
 
 Terminal, special characters and localized applications
