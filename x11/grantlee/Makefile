@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/13 22:35:15 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2015/08/15 22:30:57 zhuk Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		template and text document library for Qt4
-PKG_VERSION =		0.5.0
+PKG_VERSION =		0.5.1
 PLIST_VERSION =		${PKG_VERSION:R}
 DISTNAME =		grantlee-${PKG_VERSION}
 CATEGORIES =		devel x11
 HOMEPAGE =		http://www.gitorious.org/grantlee/
-REVISION =		0
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 PORTROACH =		limit:^[0-4].*
