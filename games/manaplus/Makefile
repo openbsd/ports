@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.70 2015/08/11 20:57:08 bcallah Exp $
+# $OpenBSD: Makefile,v 1.71 2015/08/15 17:38:56 bcallah Exp $
 
 COMMENT =	client for The Mana World
-V =		1.5.8.1
+V =		1.5.8.15
 DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
