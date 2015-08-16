@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1373 2015/08/11 21:44:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.1374 2015/08/16 19:49:25 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1241,6 +1241,7 @@
      SUBDIR += py-epsilon
      SUBDIR += py-extremes
      SUBDIR += py-fpconst
+     SUBDIR += py-functools32
      SUBDIR += py-futures
      SUBDIR += py-gdata
      SUBDIR += py-gevent
@@ -1260,6 +1261,7 @@
      SUBDIR += py-isodate
      SUBDIR += py-isodate,python3
      SUBDIR += py-jsonrpclib
+     SUBDIR += py-jsonschema
      SUBDIR += py-kid
      SUBDIR += py-liblarch
      SUBDIR += py-libmagic
@@ -1306,6 +1308,7 @@
      SUBDIR += py-setuptools,python3
      SUBDIR += py-sh
      SUBDIR += py-silc
+     SUBDIR += py-simplegeneric
      SUBDIR += py-simplejson
      SUBDIR += py-singledispatch
      SUBDIR += py-sip
