@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/08/16 14:53:01 benoit Exp $
 
 COMMENT=		source filter for inline code templates (macros)
-DISTNAME=		Filter-Template-1.02
-REVISION=		0
+DISTNAME =		Filter-Template-1.043
 CATEGORIES=		devel
 
 # GPL
