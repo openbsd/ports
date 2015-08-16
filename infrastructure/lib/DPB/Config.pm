@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.56 2015/07/27 17:19:46 espie Exp $
+# $OpenBSD: Config.pm,v 1.57 2015/08/16 08:39:23 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -213,10 +213,9 @@ sub parse_command_line
 
 	$state->{size_log} = "%f/build-stats/%a-size";
 
-	if ($state->define_present("STARTUP")) {
-		$state->{startup_script} = $state->{subst}->value("STARTUP");
-	} elsif ($state->define_present("CLEANUP")) {
-		$state->{startup_script} = $state->{subst}->value("CLEANUP");
+	my $k = $state->{interactive} ? "STARTUPI" : "STARTUP";
+	if ($state->define_present($k)) {
+		$state->{startup_script} = $state->{subst}->value($k);
 	}
 	if ($state->define_present('LOGDIR')) {
 		$state->{logdir} = $state->subst->value('LOGDIR');
