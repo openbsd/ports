@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 14:27:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/08/16 08:12:53 benoit Exp $
 
 COMMENT =	generates iCalendar (RFC 2445) calendar files
 
-DISTNAME =	Data-ICal-0.16
-REVISION =	1
+DISTNAME =	Data-ICal-0.22
 
 CATEGORIES =	devel
 
