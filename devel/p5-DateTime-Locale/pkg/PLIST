@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/08/17 09:36:00 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/08/16 14:21:21 benoit Exp $
 ${P5SITE}/DateTime/
 ${P5SITE}/DateTime/Locale/
 ${P5SITE}/DateTime/Locale.pm
 ${P5SITE}/DateTime/Locale/Base.pm
 ${P5SITE}/DateTime/Locale/Catalog.pm
+${P5SITE}/DateTime/Locale/Conflicts.pm
 ${P5SITE}/DateTime/Locale/aa.pm
 ${P5SITE}/DateTime/Locale/aa_DJ.pm
 ${P5SITE}/DateTime/Locale/aa_ER.pm
@@ -470,7 +471,6 @@ ${P5SITE}/DateTime/Locale/zh_SG.pm
 ${P5SITE}/DateTime/Locale/zh_TW.pm
 ${P5SITE}/DateTime/Locale/zu.pm
 ${P5SITE}/DateTime/Locale/zu_ZA.pm
-${P5SITE}/DateTime/LocaleCatalog.pm
 @man man/man3p/DateTime::Locale.3p
 @man man/man3p/DateTime::Locale::Base.3p
 @man man/man3p/DateTime::Locale::Catalog.3p
@@ -940,4 +940,3 @@ ${P5SITE}/DateTime/LocaleCatalog.pm
 @man man/man3p/DateTime::Locale::zh_TW.3p
 @man man/man3p/DateTime::Locale::zu.3p
 @man man/man3p/DateTime::Locale::zu_ZA.3p
-@man man/man3p/DateTime::LocaleCatalog.3p
