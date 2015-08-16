@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/16 07:03:20 benoit Exp $
 
 COMMENT=	introspect many-to-many shortcuts
 
-DISTNAME=	DBIx-Class-IntrospectableM2M-0.001001
+DISTNAME =	DBIx-Class-IntrospectableM2M-0.001002
 CATEGORIES=	databases devel
 
 # Same as Perl
