@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.232 2015/08/12 05:55:16 robert Exp $
+# $OpenBSD: Makefile,v 1.233 2015/08/16 20:42:46 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -8,6 +8,7 @@ COMMENT=		Chromium browser
 V=			44.0.2403.155
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -41,7 +42,7 @@ WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0
 WANTLIB += png pthread speex
 WANTLIB += xml2 xslt
-WANTLIB += usb-1.0 sndio
+WANTLIB += sndio
 WANTLIB += Xcomposite
 WANTLIB += stdc++
 WANTLIB += Xi Xtst
@@ -66,7 +67,6 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		x11/gnome/libgnome-keyring
 BUILD_DEPENDS+=	devel/ninja
 LIB_DEPENDS=	devel/libexecinfo \
-		devel/libusb1 \
 		security/nss \
 		devel/gconf2 \
 		textproc/libxslt \
@@ -98,7 +98,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_libevent=1 \
 		-Duse_system_libjpeg=1 \
 		-Duse_system_libpng=1 \
-		-Duse_system_libusb=1 \
+		-Duse_system_libusb=0 \
 		-Duse_system_libvpx=0 \
 		-Duse_system_libxml=1 \
 		-Duse_system_speex=1 \
