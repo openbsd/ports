@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.113 2015/06/17 07:31:25 espie Exp $
+# $OpenBSD: Engine.pm,v 1.114 2015/08/16 08:36:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -489,6 +489,7 @@ sub add_fatal
 		print $fh "error=$error\n" if $fh;
 	}
 	$self->{logger}->log_error($v, @messages);
+	$self->stub_out($v);
 }
 
 sub rebuild_info
