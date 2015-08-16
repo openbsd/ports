@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/21 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/08/16 08:42:11 benoit Exp $
 
 COMMENT =	DateTime extension for computing rfc2445 recurrences
 
-DISTNAME =	DateTime-Event-ICal-0.10
-REVISION =	0
+DISTNAME =	DateTime-Event-ICal-0.12
 
 CATEGORIES =	devel
 
