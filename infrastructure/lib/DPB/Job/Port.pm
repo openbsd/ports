@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.166 2015/07/02 08:04:22 espie Exp $
+# $OpenBSD: Port.pm,v 1.167 2015/08/16 08:35:39 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -497,9 +497,6 @@ sub finalize
 {
 	my ($self, $core) = @_;
 	$core->{status} = 0;
-	# keep log position to be able to seek back.
-	my $job = $core->job;
-	$job->{pos} = tell($job->{logfh});
 
 	$self->SUPER::finalize($core);
 	return 1;
@@ -508,6 +505,14 @@ sub finalize
 package DPB::Task::Port::PrepareResults;
 our @ISA = qw(DPB::Task::Port::Serialized);
 
+sub setup
+{
+	my ($task, $core) = @_;
+	my $job = $core->job;
+	$job->{pos} = tell($job->{logfh});
+	return $task->SUPER::setup($core);
+}
+
 sub finalize
 {
 	my ($self, $core) = @_;
@@ -515,7 +520,6 @@ sub finalize
 	my $job = $core->{job};
 	my $v = $job->{v};
 	# reopen log at right location
-	$job->{pos} //= 0;
 	my $fh = $job->{builder}->logger->open('<', $job->{log});
 	if (defined $fh && seek($fh, $job->{pos}, 0)) {
 		my @r;
