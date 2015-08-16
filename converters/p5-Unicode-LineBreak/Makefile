@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2015/07/16 23:57:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/08/16 06:46:01 benoit Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Unicode line breaking algorithm
 
-DISTNAME =	Unicode-LineBreak-2014.06
+DISTNAME =	Unicode-LineBreak-2015.06
 CATEGORIES =	converters
 MODULES =	cpan
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
