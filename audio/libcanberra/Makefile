@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/04/04 09:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2015/08/17 12:06:27 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,8 +15,8 @@ PKGNAME-gtk=	libcanberra-gtk-${V}
 PKGNAME-gtk3=	libcanberra-gtk3-${V}
 
 REVISION-main=	2
-REVISION-gtk=	2
-REVISION-gtk3=	2
+REVISION-gtk=	3
+REVISION-gtk3=	3
 
 SHARED_LIBS +=  canberra             2.0      # 2.5
 SHARED_LIBS +=  canberra-gtk3        1.8      # 1.8
@@ -45,6 +45,7 @@ WANTLIB-gtk += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-gtk += gtk-x11-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB-gtk += pixman-1 png pthread-stubs xcb xcb-render xcb-shm z stdc++
 WANTLIB-gtk += harfbuzz
+WANTLIB-gtk += graphite2
 
 WANTLIB-gtk3 += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 WANTLIB-gtk3 += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
@@ -55,6 +56,7 @@ WANTLIB-gtk3 += gthread-2.0 gtk-3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread-stubs xcb xcb-render
 WANTLIB-gtk3 += xcb-shm z stdc++
 WANTLIB-gtk3 += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz
+WANTLIB-gtk3 += epoxy graphite2
 
 MODULES=		devel/gettext
 
