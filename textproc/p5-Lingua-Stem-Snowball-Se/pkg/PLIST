@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/30 04:12:43 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/08/17 07:16:12 benoit Exp $
+@comment ${P5SITE}/Lingua/Stem/Snowball/stemmer.pl
+bin/stemmer-se.pl
 ${P5SITE}/Lingua/
 ${P5SITE}/Lingua/Stem/
 ${P5SITE}/Lingua/Stem/Snowball/
 ${P5SITE}/Lingua/Stem/Snowball/Se.pm
-@comment ${P5SITE}/Lingua/Stem/Snowball/stemmer.pl
 @man man/man3p/Lingua::Stem::Snowball::Se.3p
