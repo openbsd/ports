@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/11 23:51:43 naddy Exp $
-COMMENT=	URI objects for Rose
+# $OpenBSD: Makefile,v 1.9 2015/08/17 12:26:20 benoit Exp $
 
-MODULES=	cpan
-DISTNAME=	Rose-URI-0.50
-REVISION=	0
-CATEGORIES=	www
+COMMENT =	URI objects for Rose
 
-RUN_DEPENDS=	www/p5-URI \
-		databases/p5-Rose-Object
+MODULES =	cpan
+DISTNAME =	Rose-URI-1.00
+CATEGORIES =	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+
+RUN_DEPENDS =	www/p5-URI \
+		databases/p5-Rose-Object
 
 .include <bsd.port.mk>
