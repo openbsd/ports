@@ -1,0 +1,15 @@
+$OpenBSD: patch-panels_datetime_datetime_gresource_xml,v 1.1 2015/08/17 10:39:36 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=753643
+
+--- panels/datetime/datetime.gresource.xml.orig	Tue Jul 21 16:28:02 2015
++++ panels/datetime/datetime.gresource.xml	Mon Aug 17 12:32:48 2015
+@@ -76,6 +76,8 @@
+     <file alias="timezone_-8_dim.png">data/timezone_-8_dim.png</file>
+     <file alias="timezone_8.png">data/timezone_8.png</file>
+     <file alias="timezone_8_dim.png">data/timezone_8_dim.png</file>
++    <file alias="timezone_8.5.png">data/timezone_8.5.png</file>
++    <file alias="timezone_8.5_dim.png">data/timezone_8.5_dim.png</file>
+     <file alias="timezone_8.75.png">data/timezone_8.75.png</file>
+     <file alias="timezone_8.75_dim.png">data/timezone_8.75_dim.png</file>
+     <file alias="timezone_-9.png">data/timezone_-9.png</file>
