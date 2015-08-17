@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2015/05/25 07:54:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/08/17 20:04:16 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		lightweight and simple DVD slide show maker
 DISTNAME =		imagination-3.0
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		multimedia
 
@@ -23,7 +23,7 @@ WANTLIB += harfbuzz id3tag m mad magic mp3lame
 WANTLIB += ogg opencore-amrnb opencore-amrwb pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sndfile sndio sox twolame vorbis vorbisenc vorbisfile
-WANTLIB += wavpack xcb xcb-render xcb-shm z
+WANTLIB += wavpack xcb xcb-render xcb-shm z opus opusfile
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=imagination/}
 

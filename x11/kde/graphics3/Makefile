@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2015/03/27 08:16:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.116 2015/08/17 20:04:16 sthen Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -9,8 +9,8 @@ VERSION =		3.5.10
 DISTNAME =		kdegraphics-${VERSION}
 MODKDE_VERSION =	3.5.8
 
-REVISION-main =		23
-REVISION-kamera =	13
+REVISION-main =		24
+REVISION-kamera =	14
 REVISION-kpov =		12
 REVISION-sane =		16
 
@@ -69,7 +69,7 @@ LIB_DEPENDS-sane =	${LIB_DEPENDS} \
 
 WANTLIB-main = 		${WANTLIB}
 WANTLIB-kpov =		${WANTLIB}
-WANTLIB-kamera =	${WANTLIB}
+WANTLIB-kamera =	${WANTLIB} fam pthread-stubs
 WANTLIB-sane =		${WANTLIB}
 
 WANTLIB-main +=	 GL Half ICE Iex IlmImf IlmThread Imath Imlib SM \
@@ -77,7 +77,8 @@ WANTLIB-main +=	 GL Half ICE Iex IlmImf IlmThread Imath Imlib SM \
 	Xxf86vm c drm expat fontconfig freetype fribidi lcms lib/kde3/kdeprint \
 	lib/kde3/khtml lib/kde3/kjs lib/kde3/kparts lib/kde3/kutils \
 	lib/kde3/kwalletclient mng openjpeg pcre pcreposix poppler \
-	poppler-qt pthread tiff gif
+	poppler-qt pthread tiff gif X11-xcb Xau Xdmcp fam glapi lcms2 \
+	pthread-stubs xcb-dri2 xcb-glx
 
 WANTLIB-kpov += GL GLU Xdamage Xfixes Xi Xmu Xrender Xt Xxf86vm c \
 	drm freetype lib/kde3/kparts lib/kde3/kwalletclient pthread \

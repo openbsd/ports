@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2015/03/27 08:16:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2015/08/17 20:04:17 sthen Exp $
 
 COMMENT-main = 		K Desktop Environment, network applications
 COMMENT-kopsounds =	notification sounds for Kopete
@@ -10,7 +10,7 @@ PKGNAME-main =		${DISTNAME}
 PKGNAME-kopsounds =	kde3-kopete-sounds-${VERSION}
 PKGSPEC-main =		kdenetwork->=3,<4
 PKG_ARCH-kopsounds =	*
-REVISION-main = 	14
+REVISION-main = 	15
 REVISION-kopsounds =	0
 
 SHARED_LIBS +=	kopete               2.0      # .1.0
@@ -50,7 +50,9 @@ WANTLIB-main = ${WANTLIB} \
 	lib/kde3/knewstuff lib/kde3/kparts lib/kde3/kresources lib/kde3/kspell \
 	lib/kde3/ktexteditor lib/kde3/kutils lib/kde3/kwalletclient \
 	lib/kde3/vcard m meanwhile mng pcre pcreposix png pthread \
-	pthread-stubs ssl stdc++ util xcb xml2 xmms xslt z
+	pthread-stubs ssl stdc++ util xcb xml2 xmms xslt z \
+	X11-xcb avahi-client avahi-common dbus-1 dns_sd glapi \
+	lzma xcb-dri2 xcb-glx
 
 CONFIGURE_ARGS =	--disable-jingle \
 			--disable-ortp \

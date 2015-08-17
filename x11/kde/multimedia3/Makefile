@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.82 2015/03/27 08:16:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2015/08/17 20:04:16 sthen Exp $
 
 COMMENT =		K Desktop Environment, multimedia applications
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
-REVISION =		17
+REVISION =		18
 DISTNAME =		kdemultimedia-${VERSION}
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	artsbuilder          1.0      # .0.0
@@ -72,7 +72,8 @@ WANTLIB += lib/kde3/kwalletclient lib/kde3/mcop lib/kde3/qtmcop
 WANTLIB += lib/kde3/soundserver_idl ltdl m mad mng ogg ossaudio pcre
 WANTLIB += pcreposix png pthread sndio stdc++ tag theora util
 WANTLIB += vorbis vorbisenc vorbisfile xcb xine xml2 z
-
+WANTLIB += X11-xcb Xau Xdmcp glapi lzma pthread-stubs xcb-dri2
+WANTLIB += xcb-glx xdg-basedir
 
 post-extract:
 	cp ${FILESDIR}/audioIO_sndio.cpp ${WRKSRC}/mpeglib/lib/util/audio

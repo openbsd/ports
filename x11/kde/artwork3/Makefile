@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2015/03/27 08:16:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2015/08/17 20:04:16 sthen Exp $
 
 COMMENT-main = 		K Desktop Environment, additional artwork
 COMMENT-emoticons =	KDE emoticons
@@ -8,7 +8,7 @@ DISTNAME =		kdeartwork-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-emoticons =	kde-emoticons-${VERSION}
 PKGSPEC-main =		kdeartwork->=3,<4
-REVISION-main =		17
+REVISION-main =		18
 REVISION-emoticons =	0
 
 MODULES =		x11/kde devel/gettext
@@ -39,6 +39,6 @@ WANTLIB +=	lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kio lib/kde3/kparts
 WANTLIB +=	lib/kde3/kscreensaver m mad mcop ogg pcre png pthread
 WANTLIB +=	pthread-stubs qtmcop sndio soundserver_idl stdc++
 WANTLIB +=	util vorbis vorbisenc vorbisfile xcb z
-
+WANTLIB +=	X11-xcb Xau Xdmcp glapi xcb-dri2 xcb-glx
 
 .include <bsd.port.mk>
