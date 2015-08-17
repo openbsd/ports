@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/17 07:41:59 benoit Exp $
 
 COMMENT=		module to split text into sentences
 
 MODULES=		cpan
-DISTNAME=		Lingua-EN-Sentence-0.25
+DISTNAME =		Lingua-EN-Sentence-0.29
 CATEGORIES=		textproc
 
 # Perl
