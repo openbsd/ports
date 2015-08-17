@@ -1,0 +1,139 @@
+$OpenBSD: patch-doc_tree_1,v 1.1.1.1 2015/08/17 09:07:22 bentley Exp $
+--- doc/tree.1.orig	Wed Apr 23 21:39:12 2014
++++ doc/tree.1	Sun Jul 19 19:41:39 2015
+@@ -17,22 +17,22 @@
+ .\" Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ .\"
+ ...
+-.TH TREE 1 "" "Tree 1.7.0"
++.TH COLORTREE 1 "" "Colortree 1.7.0"
+ .SH NAME
+-tree \- list contents of directories in a tree-like format.
++colortree \- list contents of directories in a tree-like format.
+ .SH SYNOPSIS
+-\fBtree\fP [\fB-acdfghilnpqrstuvxACDFQNSUX\fP] [\fB-L\fP \fIlevel\fP [\fB-R\fP]] [\fB-H\fP \fIbaseHREF\fP] [\fB-T\fP \fItitle\fP] [\fB-o\fP \fIfilename\fP] [\fB--nolinks\fP] [\fB-P\fP \fIpattern\fP] [\fB-I\fP \fIpattern\fP] [\fB--inodes\fP] [\fB--device\fP] [\fB--noreport\fP] [\fB--dirsfirst\fP] [\fB--version\fP] [\fB--help\fP] [\fB--filelimit\fP \fI#\fP] [\fB--si\fP] [\fB--prune\fP] [\fB--du\fP] [\fB--timefmt\fP \fIformat\fP] [\fB--matchdirs\fP] [\fB--\fP] [\fIdirectory\fP ...]
++\fBcolortree\fP [\fB-acdfghilnpqrstuvxACDFQNSUX\fP] [\fB-L\fP \fIlevel\fP [\fB-R\fP]] [\fB-H\fP \fIbaseHREF\fP] [\fB-T\fP \fItitle\fP] [\fB-o\fP \fIfilename\fP] [\fB--nolinks\fP] [\fB-P\fP \fIpattern\fP] [\fB-I\fP \fIpattern\fP] [\fB--inodes\fP] [\fB--device\fP] [\fB--noreport\fP] [\fB--dirsfirst\fP] [\fB--version\fP] [\fB--help\fP] [\fB--filelimit\fP \fI#\fP] [\fB--si\fP] [\fB--prune\fP] [\fB--du\fP] [\fB--timefmt\fP \fIformat\fP] [\fB--matchdirs\fP] [\fB--\fP] [\fIdirectory\fP ...]
+ 
+ .br
+ .SH DESCRIPTION
+-\fITree\fP is a recursive directory listing program that produces a depth
++\fIColortree\fP is a recursive directory listing program that produces a depth
+ indented listing of files, which is colorized ala \fIdircolors\fP if the
+ \fBLS_COLORS\fP environment variable is set and output is to tty.  With no
+-arguments, \fItree\fP lists the files in the current directory.  When directory
+-arguments are given, \fItree\fP lists all the files and/or directories found in
+-the given directories each in turn.  Upon completion of listing all
+-files/directories found, \fItree\fP returns the total number of files and/or
+-directories listed.
++arguments, \fIcolortree\fP lists the files in the current directory.  When
++directory arguments are given, \fIcolortree\fP lists all the files and/or
++directories found in the given directories each in turn.  Upon completion of
++listing all files/directories found, \fIcolortree\fP returns the total number of
++files and/or directories listed.
+ 
+ By default, when a symbolic link is encountered, the path that the symbolic
+ link refers to is printed after the name of the link in the format:
+@@ -42,19 +42,19 @@ link refers to is printed after the name of the link i
+ .br
+ 
+ If the `\fB-l\fP' option is given and the symbolic link refers to an actual
+-directory, then \fItree\fP will follow the path of the symbolic link as if
++directory, then \fIcolortree\fP will follow the path of the symbolic link as if
+ it were a real directory.
+ .br
+ 
+ .SH OPTIONS
+-\fITree\fP understands the following command line switches:
++\fIColortree\fP understands the following command line switches:
+ 
+ .SH LISTING OPTIONS
+ 
+ .TP
+ .B -a
+-All files are printed.  By default tree does not print hidden files (those
+-beginning with a dot `.').  In no event does tree print the file system
++All files are printed.  By default colortree does not print hidden files (those
++beginning with a dot `.').  In no event does colortree print the file system
+ constructs `.' (current directory) and `..' (previous directory).
+ .PP
+ .TP
+@@ -82,8 +82,8 @@ Max display depth of the directory tree.
+ .TP
+ .B -R
+ Recursively cross down the tree each \fIlevel\fP directories (see \fB-L\fP
+-option), and at each of them execute \fBtree\fP again adding `-o 00Tree.html'
+-as a new option.
++option), and at each of them execute \fBcolortree\fP again adding
++`-o 00Colortree.html' as a new option.
+ .PP
+ .TP
+ .B -P \fIpattern\fP
+@@ -114,7 +114,7 @@ pattern will not be pruned.
+ .PP
+ .TP
+ .B --prune
+-Makes tree prune empty directories from the output, useful when used in
++Makes colortree prune empty directories from the output, useful when used in
+ conjunction with \fB-P\fP or \fB-I\fP.  See \fBBUGS AND NOTES\fP below for
+ more information on this option. 
+ .PP
+@@ -187,7 +187,7 @@ Like \fB-h\fP but use SI units (powers of 1000) instea
+ For each directory report its size as the accumulation of sizes of all its files
+ and sub-directories (and their files, and so on).  The total amount of used
+ space is also given in the final report (like the 'du -c' command.) This option
+-requires tree to read the entire directory tree before emitting it, see
++requires colortree to read the entire directory tree before emitting it, see
+ \fBBUGS AND NOTES\fP below.  Implies \fB-s\fP.
+ .PP
+ .TP
+@@ -247,7 +247,7 @@ Sort the output by name (as per ls): name (default), c
+ 
+ .TP
+ .B -i
+-Makes tree not print the indentation lines, useful when used in conjunction
++Makes colortree not print the indentation lines, useful when used in conjunction
+ with the \fB-f\fP option.  Also removes as much whitespace as possible when used
+ with the \fB-J\fP or \fB-x\fP options.
+ .PP
+@@ -308,7 +308,7 @@ Outputs a verbose usage listing.
+ .PP
+ .TP
+ .B --version
+-Outputs the version of tree.
++Outputs the version of colortree.
+ .PP
+ .TP
+ .B --
+@@ -327,7 +327,7 @@ Option processing terminator.  No further options will
+ .br
+ \fBTREE_COLORS\fP	Uses this for color information over LS_COLORS if it is set.
+ .br
+-\fBTREE_CHARSET\fP	Character set for tree to use in HTML mode.
++\fBTREE_CHARSET\fP	Character set for colortree to use in HTML mode.
+ .br
+ \fBLC_CTYPE\fP		Locale for filename output.
+ .br
+@@ -343,8 +343,8 @@ HTML output hacked by Francesc Rocher (rocher@econ.udg
+ Charsets and OS/2 support by Kyosuke Tokoro (NBG01720@nifty.ne.jp)
+ 
+ .SH BUGS AND NOTES
+-Tree does not prune "empty" directories when the -P and -I options are used by
+-default. Use the --prune option.
++Colortree does not prune "empty" directories when the -P and -I options are used
++by default. Use the --prune option.
+ 
+ The -h and --si options round to the nearest whole number unlike the ls
+ implementations which rounds up always.
+@@ -352,9 +352,9 @@ implementations which rounds up always.
+ Pruning files and directories with the -I, -P and --filelimit options will
+ lead to incorrect file/directory count reports.
+ 
+-The --prune and --du options cause tree to accumulate the entire tree in memory
+-before emitting it. For large directory trees this can cause a significant delay
+-in output and the use of large amounts of memory.
++The --prune and --du options cause colortree to accumulate the entire tree in
++memory before emitting it. For large directory trees this can cause a
++significant delay in output and the use of large amounts of memory.
+ 
+ The timefmt expansion buffer is limited to a ridiculously large 255 characters.
+ Output of time strings longer than this will be undefined, but are guaranteed

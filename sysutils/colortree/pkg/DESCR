@@ -1,0 +1,3 @@
+More feature-rich GPL'ed version of the tree(1) port, which includes filter and
+color support. The executable is called "colortree", so you may want to use an
+alias such as tree="${PREFIX}/bin/colortree -C".
