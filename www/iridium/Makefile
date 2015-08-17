@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/08/12 10:56:13 robert Exp $
+# $OpenBSD: Makefile,v 1.20 2015/08/17 17:21:31 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -9,6 +9,7 @@ V=			44.0
 DISTNAME=		iridium-browser-44.0
 DISTFILES=		${DISTNAME}~rc1${EXTRACT_SUFX}
 PKGNAME=		iridium-${V}
+REVISION=		0
 
 # The update from 43.4 to 43.5 is released as a patch
 # this time due to the size of the tarball.
@@ -48,7 +49,7 @@ WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0
 WANTLIB += png pthread speex
 WANTLIB += xml2 xslt
-WANTLIB += usb-1.0 sndio
+WANTLIB += sndio
 WANTLIB += Xcomposite
 WANTLIB += stdc++
 WANTLIB += Xi Xtst
@@ -73,7 +74,6 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		x11/gnome/libgnome-keyring
 BUILD_DEPENDS+=	devel/ninja
 LIB_DEPENDS=	devel/libexecinfo \
-		devel/libusb1 \
 		security/nss \
 		devel/gconf2 \
 		textproc/libxslt \
@@ -105,7 +105,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_libevent=1 \
 		-Duse_system_libjpeg=1 \
 		-Duse_system_libpng=1 \
-		-Duse_system_libusb=1 \
+		-Duse_system_libusb=0 \
 		-Duse_system_libvpx=0 \
 		-Duse_system_libxml=1 \
 		-Duse_system_speex=1 \

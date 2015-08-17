@@ -1,0 +1,28 @@
+$OpenBSD: patch-third_party_libusb_libusb_gyp,v 1.1 2015/08/17 17:21:31 robert Exp $
+--- third_party/libusb/libusb.gyp.orig.port	Sun Aug 16 11:01:39 2015
++++ third_party/libusb/libusb.gyp	Sun Aug 16 17:04:47 2015
+@@ -34,7 +34,7 @@
+         ],
+       },
+       'conditions': [
+-        ['OS=="linux" or OS=="mac"', {
++        ['OS=="linux" or OS=="mac" or os_bsd==1', {
+           'sources': [
+             'src/libusb/os/poll_posix.c',
+             'src/libusb/os/poll_posix.h',
+@@ -49,6 +49,15 @@
+             'LIBUSB_DESCRIBE="1.0.16"',
+             'POLL_NFDS_TYPE=nfds_t',
+             'THREADS_POSIX=1',
++          ],
++        }],
++        ['OS=="openbsd"', {
++          'defines': [
++            'OS_OPENBSD=1',
++            '_GNU_SOURCE=1',
++          ],
++          'sources': [
++            'src/libusb/os/openbsd_usb.c',
+           ],
+         }],
+         ['OS=="linux"', {
