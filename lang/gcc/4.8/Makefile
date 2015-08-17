@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2015/07/02 00:22:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.49 2015/08/17 19:52:39 sthen Exp $
 
 BROKEN-mips64 = ld: not enough GOT space for local GOT entries
 BROKEN-mips64el = ld: not enough GOT space for local GOT entries
@@ -38,10 +38,10 @@ PKGSPEC-main = gcc->=4.8,<4.9
 REVISION-main =	4
 REVISION-c++ =	2
 REVISION-estdc =2
-REVISION-f95 =	2
+REVISION-f95 =	3
 REVISION-java =	3
 REVISION-objc =	2
-REVISION-ada =	2
+REVISION-ada =	3
 
 SHARED_LIBS =	estdc++		16.0 \
 		gfortran	5.0 \
@@ -223,6 +223,8 @@ RUN_DEPENDS-c++ =	${RUN_DEPENDS} \
 WANTLIB-estdc =		m
 WANTLIB-java =		${WANTLIB} pthread
 WANTLIB-main =		${WANTLIB} pthread
+WANTLIB-f95 =		${WANTLIB} quadmath
+WANTLIB-ada =		${WANTLIB} pthread util
 
 LIB_DEPENDS +=		devel/gmp>=4.2 \
 			devel/mpfr \

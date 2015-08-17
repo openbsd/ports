@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2015/06/17 08:21:15 bentley Exp $
+# $OpenBSD: Makefile,v 1.42 2015/08/17 19:52:39 sthen Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
 DISTNAME=	gnokii-0.6.14
-REVISION=	18
+REVISION=	19
 CATEGORIES=	comms x11
 SHARED_LIBS +=	gnokii               2.7      # .3.0
 
@@ -43,14 +43,13 @@ LIB_DEPENDS=		x11/gtk+2 \
 			textproc/libical
 RUN_DEPENDS+=		devel/desktop-file-utils
 
-WANTLIB += X11 Xau Xdmcp Xpm Xrender fontconfig freetype z Xcomposite Xdamage
-WANTLIB += pixman-1 gio-2.0 m pthread pcre atk-1.0>=800 glib-2.0>=400.8
-WANTLIB += gmodule-2.0>=400.8 gobject-2.0>=400.8 pango-1.0>=600
-WANTLIB += pangoft2-1.0>=600 pangocairo-1.0 cairo png expat Xcursor
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr pthread-stubs xcb ical
-WANTLIB += gtk-x11-2.0>=400.13 gdk-x11-2.0>=400.13 gdk_pixbuf-2.0>=400.13
-WANTLIB += gthread-2.0 xcb-render
-WANTLIB += GL Xxf86vm drm ffi stdc++ xcb-shm
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xpm Xrandr Xrender atk-1.0 cairo expat ffi fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
+WANTLIB += harfbuzz ical m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
+WANTLIB += xcb-shm z
 .endif
 
 WANTLIB += usb usb-1.0

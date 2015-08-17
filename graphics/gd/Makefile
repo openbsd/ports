@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.61 2015/05/22 11:31:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2015/08/17 19:52:39 sthen Exp $
 
 COMMENT=	library for dynamic creation of images
 
 V=		2.1.0
 DISTNAME=	libgd-$V
 PKGNAME=	gd-$V
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS=	gd	21.0
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://www.libgd.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c expat fontconfig freetype jpeg m png pthread
-WANTLIB += pthread-stubs tiff vpx z
+WANTLIB += pthread-stubs stdc++ tiff vpx z
 
 MASTER_SITES=	https://bitbucket.org/libgd/gd-libgd/downloads/
 

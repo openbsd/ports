@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.82 2015/05/22 11:31:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2015/08/17 19:52:39 sthen Exp $
 
 PORTROACH=	limit:^1\.2\.
 
 COMMENT=	General Toolkit for X11 GUI
 
 DISTNAME=	gtk+-1.2.10
-REVISION=	13
+REVISION=	14
 
 SHARED_LIBS=	gdk 3.0 \
 		gtk 3.0
@@ -22,7 +22,7 @@ FAKE=			all
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xext Xi glib gmodule m xcb
+WANTLIB += X11 Xext Xi glib gmodule m xcb Xau Xdmcp pthread-stubs
 
 
 CONFIGURE_STYLE= gnu

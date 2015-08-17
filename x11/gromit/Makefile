@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2015/08/17 19:52:39 sthen Exp $
 
 COMMENT=		small tool to make annotations on the screen
 
 DISTNAME=		gromit-20041213
-REVISION=		10
+REVISION=		11
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.home.unix-ag.org/simon/gromit/
@@ -24,6 +24,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += z pthread-stubs xcb gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
+WANTLIB += harfbuzz pcre pthread xcb-render xcb-shm
 
 NO_TEST=		Yes
 

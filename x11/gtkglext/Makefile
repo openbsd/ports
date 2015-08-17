@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2015/03/16 18:07:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2015/08/17 19:52:40 sthen Exp $
 
 COMMENT=	OpenGL extension to GTK+ 2.0 and later
 
 DISTNAME=	gtkglext-1.2.0
-REVISION=	11
+REVISION=	12
 SHARED_LIBS=	gdkglext-x11-1.0	0.0 \
 		gtkglext-x11-1.0	0.0
 CATEGORIES=	x11 graphics devel
@@ -25,6 +25,7 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb
 WANTLIB += xcb-render xcb-shm z
+WANTLIB += X11-xcb glapi graphite2 xcb-dri2 xcb-glx
 
 MODULES=	devel/gettext
 
