@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.73 2015/06/26 18:54:47 feinerer Exp $
+# $OpenBSD: Makefile,v 1.74 2015/08/17 15:33:04 feinerer Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-3.2.1
-REVISION=	0
+DISTNAME=	R-3.2.2
 
 SHARED_LIBS=	R	3.1
 SHARED_LIBS+=	Rlapack	31.2 	# 31.2
@@ -50,6 +49,7 @@ BUILD_DEPENDS=	archivers/gtar \
 		archivers/unzip \
 		archivers/zip \
 		devel/xdg-utils
+
 LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 		${MODTK_LIB_DEPENDS} \
 		archivers/bzip2 \
@@ -78,7 +78,6 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/tools
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--enable-BLAS-shlib \
 		--enable-R-shlib \
-		--enable-prebuilt-html \
 		--with-tcl-config=${MODTCL_CONFIG} \
 		--with-tk-config=${MODTK_CONFIG}
 
@@ -101,7 +100,7 @@ TEXMFLOCAL=	${PREFIX}/share/texmf-local
 
 post-install:
 	mv ${WRKINST}/${LOCALBASE}/lib/R/share/texmf ${TEXMFLOCAL}
-	@perl -i -pe 's:^R_HOME_DIR=.*:R_HOME_DIR=${TRUEPREFIX}/lib/R:' \
+	sed -i 's:^R_HOME_DIR=.*:R_HOME_DIR=${TRUEPREFIX}/lib/R:' \
 		${PREFIX}/bin/R
 
 .include <bsd.port.mk>
