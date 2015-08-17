@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2015/05/05 17:00:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2015/08/17 20:34:21 sthen Exp $
 
 COMMENT =	kde wrapper around exiv2
 CATEGORIES =	graphics
 DISTNAME =	libkexiv2-0.1.9
-REVISION =	9
+REVISION =	10
 HOMEPAGE =	http://sourceforge.net/projects/kipi/
 EXTRACT_SUFX =	.tar.bz2
 PKGSPEC =	libkexiv2-<0.2.0
@@ -29,7 +29,7 @@ WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx
 WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu
 WANTLIB += Xrandr Xrender Xt Xxf86vm art_lgpl_2 drm exiv2 expat
 WANTLIB += fontconfig freetype idn jpeg lcms m mng png stdc++ util xcb
-WANTLIB += xcb-glx z
+WANTLIB += xcb-glx z X11-xcb Xau Xdmcp glapi pthread pthread-stubs xcb-dri2
 
 LIB_DEPENDS =	graphics/exiv2>=0.22 \
 		x11/kde/libs3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/12/24 21:08:41 zhuk Exp $
+# $OpenBSD: Makefile,v 1.44 2015/08/17 20:34:20 sthen Exp $
 
 COMMENT-main =		kde image plugins
 COMMENT-cal =		kde image calendar plugin
@@ -7,8 +7,8 @@ DISTNAME =		kipi-plugins-0.1.6
 PKGNAME-main =		${DISTNAME}
 PKGNAME-cal =		kipi-kcal-plugin-0.1.6
 PKGSPEC-main =		kipi-plugins-<1
-REVISION-main =		10
-REVISION-cal =		8
+REVISION-main =		11
+REVISION-cal =		9
 
 HOMEPAGE =		http://extragear.kde.org/apps/kipi/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=kipi/}
@@ -40,7 +40,7 @@ MODULES =	devel/gettext \
 WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
 WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 drm expat
 WANTLIB += fontconfig freetype idn jpeg lcms m mng png stdc++ util xcb
-WANTLIB += z 
+WANTLIB += z X11-xcb Xau Xdmcp fam glapi pthread pthread-stubs xcb-dri2 xcb-glx
 WANTLIB += lib/qt3/qt-mt>=3.33
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdeprint
 WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/kio ${KDE}/kipi ${KDE}/kparts
@@ -51,7 +51,7 @@ WANTLIB-main += gphoto2_port ltdl pcre pcreposix tiff xml2 xslt
 WANTLIB-main += ${KDE}/kdcraw ${KDE}/kexiv2 ${KDE}/khtml ${KDE}/kjs
 WANTLIB-main += ${KDE}/kutils
 
-WANTLIB-cal =  ${WANTLIB} ${KDE}/kabc ${KDE}/kcal kipiplugins
+WANTLIB-cal =  ${WANTLIB} ${KDE}/kabc ${KDE}/kcal kipiplugins lzma
 WANTLIB-cal += ${KDE}/kmime ${KDE}/kresources ${KDE}/ktnef ${KDE}/vcard
 
 CONFIGURE_STYLE =	autoconf

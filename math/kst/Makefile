@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2015/05/05 17:00:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2015/08/17 20:34:20 sthen Exp $
 
 CATEGORIES=	math x11/kde
 COMMENT=	data viewing/plotting tool
 
 DISTNAME=	kst-1.2.1
-REVISION=	12
+REVISION=	13
 SHARED_ONLY=	Yes
 SHARED_LIBS=	kst		4.0 \
 		kstapp		4.0 \
@@ -26,6 +26,7 @@ WANTLIB += Xrandr Xrender Xt Xxf86vm art_lgpl_2 c cfitsio drm expat
 WANTLIB += fontconfig freetype gsl>=7 gslcblas idn jpeg lcms lib/qt3/qui
 WANTLIB += m mng ncurses netcdf netcdf_c++ pcre pcreposix png pthread
 WANTLIB += readline stdc++ util xcb xcb-glx z
+WANTLIB += X11-xcb Xau Xdmcp fam glapi pthread-stubs xcb-dri2
 
 MODULES=		x11/kde devel/gettext
 MODKDE_VERSION=		3.5.3

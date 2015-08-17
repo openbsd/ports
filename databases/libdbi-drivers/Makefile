@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/09/13 18:09:20 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2015/08/17 20:34:20 sthen Exp $
 
 V =			0.8.3-1
 COMMENT-main =		mysql driver for libdbi
@@ -8,7 +8,7 @@ COMMENT-sqlite3 =	sqlite3 driver for libdbi
 COMMENT-freetds =	freetds driver for libdbi
 DISTNAME =		libdbi-drivers-$V
 PKGNAME-main =		libdbi-drivers-mysql-${V:S/-/./}
-REVISION-main =		4
+REVISION-main =		5
 PKGNAME-pgsql =		libdbi-drivers-pgsql-${V:S/-/./}
 REVISION-pgsql =	3
 PKGNAME-sqlite =	libdbi-drivers-sqlite-${V:S/-/./}
@@ -16,7 +16,7 @@ REVISION-sqlite =	0
 PKGNAME-sqlite3 =	libdbi-drivers-sqlite3-${V:S/-/./}
 REVISION-sqlite3 =	2
 PKGNAME-freetds =	libdbi-drivers-freetds-${V:S/-/./}
-REVISION-freetds =	5
+REVISION-freetds =	6
 CATEGORIES =		databases
 
 HOMEPAGE =		http://libdbi-drivers.sourceforge.net/
@@ -46,7 +46,7 @@ CONFIGURE_ARGS =	--disable-docs \
 			--with-freetds-incdir=${LOCALBASE}/include \
 			--with-freetds-libdir=${LOCALBASE}/lib
 
-WANTLIB-main =		crypto m ssl z mysqlclient dbi
+WANTLIB-main =		crypto m pthread ssl stdc++ z mysqlclient dbi
 LIB_DEPENDS-main =	databases/mariadb \
 			databases/libdbi
 RUN_DEPENDS-main =
@@ -65,7 +65,7 @@ WANTLIB-sqlite3 =	m sqlite3 dbi
 LIB_DEPENDS-sqlite3 =	databases/libdbi
 RUN_DEPENDS-sqlite3 =
 
-WANTLIB-freetds =	crypto ct dbi m ssl ${MODGETTEXT_WANTLIB}
+WANTLIB-freetds =	crypto ct dbi m pthread ssl ${MODGETTEXT_WANTLIB}
 LIB_DEPENDS-freetds =	databases/freetds \
 			databases/libdbi
 

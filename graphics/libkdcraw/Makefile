@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/03/27 08:11:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2015/08/17 20:34:21 sthen Exp $
 
 COMMENT-main =	grab raw data from digital cameras
 COMMENT-icons =	icons for libkdcraw
@@ -8,7 +8,7 @@ V =		0.1.9
 DISTNAME =	libkdcraw-${V}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-icons =	libkdcraw-icons-${V}
-REVISION-main =	10
+REVISION-main =	11
 REVISION-icons =2
 
 PKGSPEC-main =	libkdcraw-<0.2.0
@@ -48,6 +48,7 @@ WANTLIB-main += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
 WANTLIB-main += Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 drm expat fam
 WANTLIB-main += fontconfig freetype idn jpeg lcms m mng png pthread
 WANTLIB-main += pthread-stubs stdc++ util xcb z
+WANTLIB-main += X11-xcb Xau Xdmcp glapi xcb-dri2 xcb-glx
 WANTLIB-main += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB-main += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
 WANTLIB-icons =

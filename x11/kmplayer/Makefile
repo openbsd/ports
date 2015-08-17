@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2015/05/23 10:44:37 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2015/08/17 20:34:20 sthen Exp $
 
 COMMENT=	front-end/embeddable KPart for MPlayer
 CATEGORIES=	x11 x11/kde
 DISTNAME=	kmplayer-0.6.4
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	11
+REVISION=	12
 
 SHARED_LIBS=	kparts_kmplayer  0.0 \
 		kdeinit_kmplayer 0.0
@@ -41,6 +41,7 @@ WANTLIB =  ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 audiofile c
 WANTLIB += expat fam fontconfig freetype glib-2.0 gmodule-2.0
 WANTLIB += gthread-2.0 idn m mad mcop ogg pcre png pthread sndio
 WANTLIB += stdc++ util vorbis vorbisenc vorbisfile xcb z
+WANTLIB += FLAC pthread-stubs
 WANTLIB += ${KDE}/DCOP ${KDE}/artsflow ${KDE}/artsflow_idl
 WANTLIB += ${KDE}/artskde ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kmedia2_idl
