@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2015/04/08 07:51:54 kirby Exp $
+# $OpenBSD: Makefile,v 1.45 2015/08/17 19:04:51 kirby Exp $
 
 COMMENT-main=	checks HTML documents for broken links, CLI
 COMMENT-x11=	checks HTML documents for broken links, GUI
 
 V=		9.3
-REVISION-main=	0
+REVISION-main=	1
+REVISION-x11=	0
 MODPY_EGG_VERSION=${V}
 GH_ACCOUNT=	wummel
 GH_PROJECT=	linkchecker
@@ -16,8 +17,6 @@ PKGNAME-x11=	${GH_PROJECT}-gui-${V}
 CATEGORIES=    	www
 
 HOMEPAGE=	http://wummel.github.io/linkchecker/
-
-MAINTAINER=	Amit Kulkarni <amitkulz@gmail.com>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
