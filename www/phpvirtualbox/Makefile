@@ -1,35 +1,34 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/17 17:40:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/08/17 07:38:27 ajacoutot Exp $
 
-COMMENT=	web-based VirtualBox front-end
+COMMENT=		web-based VirtualBox front-end
+	
+V=			5.0-2
+DISTNAME=		phpvirtualbox-${V}
+PKGNAME=		phpvirtualbox-${V:S/-/./}
+EXTRACT_SUFX=		.zip
 
-V=		4.3-3
-DISTNAME=	phpvirtualbox-${V}
-PKGNAME=	phpvirtualbox-${V:S/-/./}
-EXTRACT_SUFX=	.zip
-REVISION=	2
+CATEGORIES=		www sysutils
 
-CATEGORIES=	www sysutils
+HOMEPAGE=		http://sourceforge.net/projects/phpvirtualbox/
 
-HOMEPAGE=	http://sourceforge.net/projects/phpvirtualbox/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=phpvirtualbox/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=phpvirtualbox/}
 
-MODULES=	lang/php
-RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-soap
+MODULES=		lang/php
+RUN_DEPENDS=		lang/php/${MODPHP_VERSION},-soap
 
-NO_BUILD=	Yes
-NO_TEST=	Yes
-PKG_ARCH=	*
+NO_BUILD=		Yes
+NO_TEST=		Yes
+PKG_ARCH=		*
 
-PREFIX=		${VARBASE}/www
-INSTDIR=	${PREFIX}/phpvirtualbox
-TINSTDIR=	${TRUEPREFIX}/phpvirtualbox
-SUBST_VARS=	INSTDIR TINSTDIR
+PREFIX=			${VARBASE}/www
+INSTDIR=		${PREFIX}/phpvirtualbox
+TINSTDIR=		${TRUEPREFIX}/phpvirtualbox
+SUBST_VARS=		INSTDIR TINSTDIR
 
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
