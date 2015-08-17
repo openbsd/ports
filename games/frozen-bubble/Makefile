@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/07/16 23:57:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/08/17 19:10:12 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -10,7 +10,7 @@ DISTNAME =		frozen-bubble-${VER}
 PKGNAME-main =		${DISTNAME}
 REVISION-main =		11
 PKGNAME-server =	frozen-bubble-server-${VER}
-REVISION-server =	6
+REVISION-server =	7
 CATEGORIES =		games
 
 HOMEPAGE =		http://www.frozen-bubble.org
@@ -49,7 +49,7 @@ WANTLIB-main =		${MODGETTEXT_WANTLIB} \
 			SDL m pango-1.0 pthread \
 			SDL_Pango SDL_mixer glib-2.0 \
 			gobject-2.0
-WANTLIB-server =	${MODGETTEXT_WANTLIB} c glib-2.0
+WANTLIB-server =	${MODGETTEXT_WANTLIB} c glib-2.0 pthread
 
 MULTI_PACKAGES =	-main -server
 

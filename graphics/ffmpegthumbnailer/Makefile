@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2015/03/16 18:07:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2015/08/17 19:10:12 sthen Exp $
 
 COMMENT=	lightweight video thumbnailer for file managers
 
 DISTNAME=	ffmpegthumbnailer-2.0.8
-REVISION=	1
+REVISION=	2
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpegthumbnailer.googlecode.com/files/
 
@@ -15,7 +15,7 @@ HOMEPAGE=	https://code.google.com/p/ffmpegthumbnailer
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += avcodec avformat avutil c jpeg m png pthread stdc++
-WANTLIB += swscale
+WANTLIB += swscale x264
 
 LIB_DEPENDS=	graphics/ffmpeg \
 		graphics/jpeg \

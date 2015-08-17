@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/04/05 17:10:07 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2015/08/17 19:10:12 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT =		open source compiler for Pascal/Object Pascal
 V =			2.6.4
 DISTNAME =		fpcbuild-${V}
 PKGNAME =		fpc-${V}
-REVISION =		0
+REVISION =		1
 BOOT_GEN =		0
 
 CATEGORIES =		lang
@@ -18,6 +18,10 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # compiler: GPLv2+, packages/rtl: modified LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += c pthread
+
+MODULES =		converters/libiconv
 
 MASTER_SITES =		ftp://ftp.freepascal.org/pub/fpc/dist/$V/source/
 MASTER_SITES0 =		https://distfiles.bsdfrog.org/

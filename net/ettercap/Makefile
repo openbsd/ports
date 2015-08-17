@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2015/03/27 08:13:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2015/08/17 19:10:12 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multi-purpose sniffer/interceptor/logger
 
 DISTNAME=	ettercap-0.7.5.3
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/}
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.ettercap-project.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB += c crypto curl curses form lib/libnet-1.1/net=11 menu ncurses
+WANTLIB += c crypto curl form lib/libnet-1.1/net=11 menu ncurses
 WANTLIB += panel pcap pcre pthread ssl z
 
 MODULES=	devel/cmake \
@@ -47,8 +47,9 @@ LIB_DEPENDS+=	x11/gtk+2
 RUN_DEPENDS+=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-WANTLIB += atk-1.0 cairo curl freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += atk-1.0 cairo curl gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 pango-1.0
+WANTLIB += gio-2.0 gmodule-2.0 pangocairo-1.0 pangoft2-1.0 pangoxft-1.0
 .endif
 
 NO_TEST=	Yes

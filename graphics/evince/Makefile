@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2015/07/17 16:26:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.131 2015/08/17 19:10:12 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
 GNOME_VERSION=		3.16.1
-REVISION=		0
+REVISION=		1
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -27,7 +27,7 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += avahi-common c cairo cairo-gobject dbus-1 expat ffi
 WANTLIB += fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
-WANTLIB += gs gthread-2.0 gtk-3 harfbuzz jpeg lcms2 lzma m openjpeg
+WANTLIB += gs gthread-2.0 gtk-3 harfbuzz jpeg lcms2 lzma lzo2 m openjpeg
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png poppler poppler-glib pthread pthread-stubs secret-1
 WANTLIB += spectre stdc++ tiff xcb xcb-render xcb-shm xml2 z
