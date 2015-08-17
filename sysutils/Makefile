@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.351 2015/08/12 18:09:44 feinerer Exp $
+# $OpenBSD: Makefile,v 1.352 2015/08/17 09:08:09 bentley Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -23,6 +23,7 @@
      SUBDIR += collectd
      SUBDIR += colorls
      SUBDIR += colortail
+     SUBDIR += colortree
      SUBDIR += conky
      SUBDIR += conky,no_x11
      SUBDIR += conky,xmms2
