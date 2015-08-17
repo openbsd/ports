@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/22 20:25:22 jasper Exp $
-bin/wsdl2perl.pl
+@comment $OpenBSD: PLIST,v 1.2 2015/08/17 09:46:24 benoit Exp $
 ${P5SITE}/SOAP/
 ${P5SITE}/SOAP/WSDL/
 ${P5SITE}/SOAP/WSDL.pm
@@ -224,7 +223,7 @@ ${P5SITE}/SOAP/WSDL/XSD/Typelib/ComplexType.pm
 ${P5SITE}/SOAP/WSDL/XSD/Typelib/Element.pm
 ${P5SITE}/SOAP/WSDL/XSD/Typelib/SimpleType.pm
 ${P5SITE}/SOAP/WSDL/XSD/WhiteSpace.pm
-@man man/man1/wsdl2perl.pl.1
+${P5SITE}/SOAP/test_html.pl
 @man man/man3p/SOAP::WSDL.3p
 @man man/man3p/SOAP::WSDL::Client.3p
 @man man/man3p/SOAP::WSDL::Client::Base.3p
@@ -246,9 +245,6 @@ ${P5SITE}/SOAP/WSDL/XSD/WhiteSpace.pm
 @man man/man3p/SOAP::WSDL::Generator::Template.3p
 @man man/man3p/SOAP::WSDL::Generator::Template::Plugin::XSD.3p
 @man man/man3p/SOAP::WSDL::Generator::Template::XSD.3p
-@man man/man3p/SOAP::WSDL::Generator::Template::XSD::complexType.tt.3p
-@man man/man3p/SOAP::WSDL::Generator::Template::XSD::complexType::POD::attributeSet.tt.3p
-@man man/man3p/SOAP::WSDL::Generator::Template::XSD::element.tt.3p
 @man man/man3p/SOAP::WSDL::Generator::Visitor.3p
 @man man/man3p/SOAP::WSDL::Generator::Visitor::Typemap.3p
 @man man/man3p/SOAP::WSDL::Manual.3p

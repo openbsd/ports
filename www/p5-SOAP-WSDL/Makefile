@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/17 09:46:24 benoit Exp $
 
 COMMENT=		SOAP with WSDL support
 
-DISTNAME=		SOAP-WSDL-2.00.10
+DISTNAME =		SOAP-WSDL-3.003
 CATEGORIES=		www
 
 # perl
@@ -12,12 +12,11 @@ MODULES=		cpan
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	example
 
-CONFIGURE_STYLE=	modbuild
-
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/p5-Class-Std-Fast \
 			textproc/p5-Template \
 			textproc/p5-XML-Parser \
-			www/p5-libwww
+			www/p5-libwww \
+			www/p5-URI
 
 .include <bsd.port.mk>
