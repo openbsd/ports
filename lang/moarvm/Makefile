@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/09 17:20:50 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2015/08/17 09:02:36 jasper Exp $
 
 # theoretically supported by dyncall; mips* doesn't have libatomic_ops
-ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc sparc64
+ONLY_FOR_ARCHS =	amd64 arm i386 mips64el powerpc sparc sparc64
 
 BROKEN-arm =		missing atomic ops (both AO_* and gcc builtin)
 BROKEN-sparc64 =	undefined reference to `AO_fetch_compare_and_swap_full'
