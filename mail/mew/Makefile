@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2015/07/16 17:27:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2015/08/18 03:12:21 yasuoka Exp $
 
 COMMENT=	emacs-based mail client
 
-DISTNAME=	mew-6.6
+DISTNAME=	mew-6.7
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mew.org/
-REVISION=	2
 
 MAINTAINER=	YASUOKA Masahiko <yasuoka@yasuoka.net>
 

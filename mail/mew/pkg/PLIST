@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/05/29 05:13:07 yasuoka Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/08/18 03:12:21 yasuoka Exp $
 bin/cmew
 @bin bin/incm
 bin/mew-pinentry
@@ -34,6 +34,7 @@ share/doc/mew/00changes.6.3
 share/doc/mew/00changes.6.4
 share/doc/mew/00changes.6.5
 share/doc/mew/00changes.6.6
+share/doc/mew/00changes.6.7
 share/doc/mew/00copyright
 share/doc/mew/00copyright.ja
 share/doc/mew/00diff
