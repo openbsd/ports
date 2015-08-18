@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2015/04/15 09:40:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2015/08/18 08:08:56 jasper Exp $
 
 # XXX the "postr" plugin needs postr which hasn't been ported yet
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
-GNOME_VERSION=		3.16.0
-REVISION=		1
+GNOME_VERSION=		3.16.1
 
 CATEGORIES=		graphics
 
