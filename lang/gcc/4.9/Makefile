@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/08/06 18:38:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2015/08/18 10:16:55 sthen Exp $
 
 BROKEN-arm = needs binutils-2.17
 
@@ -48,7 +48,9 @@ SHARED_LIBS =	estdc++		17.0 \
 		quadmath	1.0 \
 		cilkrts		0.0
 
-
+# XXX the BUILD_PACKAGES / PSEUDO_FLAVORS setup is broken because
+# XXX the no_* flavours disable building files which are included in
+# XXX the common -libs package.
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada no_go full
 FLAVOR ?= 
 
