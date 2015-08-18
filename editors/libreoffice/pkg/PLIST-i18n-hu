@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-hu,v 1.15 2015/07/09 17:05:15 robert Exp $
+@comment $OpenBSD: PLIST-i18n-hu,v 1.16 2015/08/18 08:15:40 kirby Exp $
 !%%no_java%%
 lib/libreoffice/program/resource/abphu.res
 lib/libreoffice/program/resource/acchu.res
@@ -116,6 +116,7 @@ lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_fr.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_hu.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_hu_HU.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_it.properties
+lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_kk.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_lt.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_lv.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_nl.properties

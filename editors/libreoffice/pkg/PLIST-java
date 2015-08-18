@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.15 2015/05/03 11:30:34 robert Exp $
+@comment $OpenBSD: PLIST-java,v 1.16 2015/08/18 08:15:40 kirby Exp $
 lib/libreoffice/program/classes/
 lib/libreoffice/program/classes/ScriptFramework.jar
 lib/libreoffice/program/classes/ScriptProviderForBeanShell.jar
@@ -147,6 +147,8 @@ lib/libreoffice/share/extensions/wiki-publisher/help/hu-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/hu.done
 lib/libreoffice/share/extensions/wiki-publisher/help/it-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/it.done
+lib/libreoffice/share/extensions/wiki-publisher/help/kk-xhp.done
+lib/libreoffice/share/extensions/wiki-publisher/help/kk.done
 lib/libreoffice/share/extensions/wiki-publisher/help/lt-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/lt.done
 lib/libreoffice/share/extensions/wiki-publisher/help/lv-xhp.done

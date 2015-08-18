@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ru,v 1.15 2015/07/09 17:05:15 robert Exp $
+@comment $OpenBSD: PLIST-i18n-ru,v 1.16 2015/08/18 08:15:40 kirby Exp $
 !%%no_java%%
 lib/libreoffice/program/resource/abpru.res
 lib/libreoffice/program/resource/accru.res
@@ -113,6 +113,7 @@ lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_fi.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_fr.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_hu.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_it.properties
+lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_kk.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_lt.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_lv.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_nl.properties

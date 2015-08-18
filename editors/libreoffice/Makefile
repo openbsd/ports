@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2015/08/13 08:38:36 robert Exp $
+# $OpenBSD: Makefile,v 1.136 2015/08/18 08:15:40 kirby Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -15,6 +15,7 @@ PKGNAME=	libreoffice-${VERSION}
 PKGNAME-main=	libreoffice-${VERSION}
 PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
+REVISION-java=	0
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
 
@@ -119,7 +120,7 @@ FLAVOR?=
 
 .if !${FLAVOR:Mno_lang}
 LANGS=			ar bg ca de es fa fi fr hu it \
-			lt lv nl pl pt-BR ru sl sv
+			kk lt lv nl pl pt-BR ru sl sv
 
 CONFIGURE_ARGS+=	--with-lang="en-US ${LANGS}"
 .for l in ${LANGS:L}
@@ -129,6 +130,8 @@ COMMENT-i18n-$l=	$l language pack for LibreOffice
 RUN_DEPENDS-i18n-$l=	editors/libreoffice
 WANTLIB-i18n-$l=
 LIB_DEPENDS-i18n-$l=
+REVISION-i18n-hu=	0
+REVISION-i18n-ru=	0
 .endfor
 .endif
 
