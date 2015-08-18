@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.3 2014/10/13 19:10:44 sthen Exp $
+$OpenBSD: patch-configure_in,v 1.4 2015/08/18 20:41:29 bluhm Exp $
 --- configure.in.orig	Tue Jan 18 21:35:28 2011
 +++ configure.in	Mon Oct 13 20:09:28 2014
 @@ -60,7 +60,7 @@ if [[ -n "$snprintf" ]]; then
@@ -10,18 +10,16 @@ $OpenBSD: patch-configure_in,v 1.3 2014/10/13 19:10:44 sthen Exp $
  
  AC_SUBST(linux_pthread)
  AC_TRY_COMPILE([#define _GNU_SOURCE
-@@ -92,6 +92,14 @@ AC_TRY_RUN([#ifndef _LARGEFILE64_SOURCE
+@@ -92,6 +92,12 @@ AC_TRY_RUN([#ifndef _LARGEFILE64_SOURCE
  #include <fcntl.h>
  #include <unistd.h>
  #include <stdlib.h>
 +
-+#ifdef BSD
 +#define O_LARGEFILE 0
 +#define off64_t off_t
 +#define lseek64 lseek
 +#define creat64 creat
 +#define open64  open
-+#endif
  
  int main () {
    int fd;

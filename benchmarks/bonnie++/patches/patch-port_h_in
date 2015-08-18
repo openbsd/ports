@@ -1,6 +1,6 @@
-$OpenBSD: patch-port_h_in,v 1.2 2014/10/13 19:10:44 sthen Exp $
---- port.h.in.orig	Wed Dec 24 00:16:16 2008
-+++ port.h.in	Mon Oct 13 20:09:28 2014
+$OpenBSD: patch-port_h_in,v 1.3 2015/08/18 20:41:29 bluhm Exp $
+--- port.h.in.orig	Wed Dec 24 01:16:16 2008
++++ port.h.in	Wed Aug  5 23:15:25 2015
 @@ -1,6 +1,8 @@
  #ifndef PORT_UNIX_H
  #define PORT_UNIX_H
@@ -10,22 +10,19 @@ $OpenBSD: patch-port_h_in,v 1.2 2014/10/13 19:10:44 sthen Exp $
  #include "conf.h"
  
  #ifndef HAVE_MIN_MAX
-@@ -37,10 +39,18 @@
+@@ -37,10 +39,11 @@
  typedef struct timeval TIMEVAL_TYPE;
  
  #ifdef _LARGEFILE64_SOURCE
-+#ifdef BSD
+-#define OFF_TYPE off64_t
+-#define file_lseek lseek64
+-#define file_creat creat64
+-#define file_open open64
 +#define O_LARGEFILE 0
 +#define OFF_TYPE off_t
 +#define file_lseek lseek
 +#define file_creat creat
 +#define file_open open
-+#else
- #define OFF_TYPE off64_t
- #define file_lseek lseek64
- #define file_creat creat64
- #define file_open open64
-+#endif
  #else
  #define OFF_TYPE off_t
  #define file_lseek lseek
