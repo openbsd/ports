@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.732 2015/08/11 21:44:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.733 2015/08/18 13:04:26 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -40,7 +40,6 @@
      SUBDIR += drupal6
      SUBDIR += drupal7
      SUBDIR += drush
-     SUBDIR += dwb
      SUBDIR += elinks
      SUBDIR += elinks,js
      SUBDIR += epiphany
