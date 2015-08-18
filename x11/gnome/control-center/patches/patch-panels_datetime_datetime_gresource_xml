@@ -1,9 +1,14 @@
-$OpenBSD: patch-panels_datetime_datetime_gresource_xml,v 1.1 2015/08/17 10:39:36 ajacoutot Exp $
+$OpenBSD: patch-panels_datetime_datetime_gresource_xml,v 1.2 2015/08/18 09:55:47 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=753643
+See post-extract.
+
+From cc600a918b2a6c34ae81cf85ef7b49a8e3f02ee6 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Fr=C3=A9d=C3=A9ric=20P=C3=A9ters?= <fpeters@0d.be>
+Date: Tue, 18 Aug 2015 00:16:44 +0200
+Subject: datetime: update timezones for new "Pyongyang Time"
 
 --- panels/datetime/datetime.gresource.xml.orig	Tue Jul 21 16:28:02 2015
-+++ panels/datetime/datetime.gresource.xml	Mon Aug 17 12:32:48 2015
++++ panels/datetime/datetime.gresource.xml	Tue Aug 18 10:38:12 2015
 @@ -76,6 +76,8 @@
      <file alias="timezone_-8_dim.png">data/timezone_-8_dim.png</file>
      <file alias="timezone_8.png">data/timezone_8.png</file>

@@ -1,9 +1,0 @@
-$OpenBSD: patch-panels_datetime_data_timezone_8_5_png,v 1.1 2015/08/17 10:39:36 ajacoutot Exp $
-
-https://bugzilla.gnome.org/show_bug.cgi?id=753643
-
---- panels/datetime/data/timezone_8.5.png.orig	Mon Aug 17 12:32:48 2015
-+++ panels/datetime/data/timezone_8.5.png	Mon Aug 17 12:32:48 2015
-@@ -0,0 +1 @@
-+timezone_9.png
-\ No newline at end of file
