@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2015/04/13 13:46:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2015/08/19 17:06:51 naddy Exp $
 
 .if !defined(BSD_OWN_MK)
 .  include <bsd.own.mk>
@@ -81,7 +81,7 @@ index:
 
 ${.CURDIR}/INDEX:
 	@echo "Generating INDEX..."
-	@${_MAKE} describe MACHINE_ARCH=amd64 ECHO_MSG="echo 1>&2" > ${.CURDIR}/INDEX
+	@${_MAKE} describe MACHINE_ARCH=amd64 ARCH=amd64 ECHO_MSG="echo 1>&2" > ${.CURDIR}/INDEX
 	@echo "Done."
 
 print-index:	${.CURDIR}/INDEX
