@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/03/15 10:08:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/08/19 07:22:55 jasper Exp $
 @newgroup _activemq:714
 @newuser _activemq:714:714:daemon:Apache ActiveMQ:/var/db/activemq:/sbin/nologin
 @comment needs a RW homedir to prevent java.io.IOException
@@ -10,9 +10,8 @@ activemq/README.txt
 activemq/activemq-all-${V}.jar
 activemq/bin/
 activemq/bin/activemq
-activemq/bin/activemq-admin
+activemq/bin/activemq-diag
 activemq/bin/activemq.jar
-activemq/bin/diag
 activemq/bin/env
 activemq/bin/wrapper.jar
 activemq/conf
@@ -42,6 +41,7 @@ activemq/examples/conf/activemq-dynamic-network-broker2.xml
 activemq/examples/conf/activemq-jdbc-performance.xml
 activemq/examples/conf/activemq-jdbc.xml
 activemq/examples/conf/activemq-leveldb-replicating.xml
+activemq/examples/conf/activemq-mqtt.xml
 activemq/examples/conf/activemq-scalability.xml
 activemq/examples/conf/activemq-security.xml
 activemq/examples/conf/activemq-specjms.xml
@@ -363,9 +363,9 @@ activemq/lib/activemq-spring-${V}.jar
 activemq/lib/activemq-web-${V}.jar
 activemq/lib/camel/
 activemq/lib/camel/activemq-camel-${V}.jar
-activemq/lib/camel/camel-core-2.14.1.jar
-activemq/lib/camel/camel-jms-2.14.1.jar
-activemq/lib/camel/camel-spring-2.14.1.jar
+activemq/lib/camel/camel-core-2.15.2.jar
+activemq/lib/camel/camel-jms-2.15.2.jar
+activemq/lib/camel/camel-spring-2.15.2.jar
 activemq/lib/extra/
 activemq/lib/extra/mqtt-client-1.10.jar
 activemq/lib/geronimo-j2ee-management_1.1_spec-1.0.1.jar
@@ -390,10 +390,10 @@ activemq/lib/optional/activemq-stomp-${V}.jar
 activemq/lib/optional/commons-beanutils-1.8.3.jar
 activemq/lib/optional/commons-codec-1.6.jar
 activemq/lib/optional/commons-collections-3.2.1.jar
-activemq/lib/optional/commons-dbcp-1.4.jar
+activemq/lib/optional/commons-dbcp2-2.1.jar
 activemq/lib/optional/commons-lang-2.6.jar
 activemq/lib/optional/commons-net-3.3.jar
-activemq/lib/optional/commons-pool-1.6.jar
+activemq/lib/optional/commons-pool2-2.3.jar
 activemq/lib/optional/geronimo-j2ee-connector_1.5_spec-2.0.0.jar
 activemq/lib/optional/guava-12.0.jar
 activemq/lib/optional/hawtbuf-proto-1.11.jar
@@ -405,13 +405,13 @@ activemq/lib/optional/httpclient-4.2.5.jar
 activemq/lib/optional/httpcore-4.2.4.jar
 activemq/lib/optional/insight-log-core-1.2.0.Beta4.jar
 activemq/lib/optional/insight-log4j-1.2.0.Beta4.jar
-activemq/lib/optional/jackson-annotations-2.4.1.jar
-activemq/lib/optional/jackson-core-2.4.1.jar
-activemq/lib/optional/jackson-databind-2.4.1.jar
+activemq/lib/optional/jackson-annotations-2.4.3.jar
+activemq/lib/optional/jackson-core-2.4.3.jar
+activemq/lib/optional/jackson-databind-2.4.3.jar
 activemq/lib/optional/jasypt-1.9.2.jar
-activemq/lib/optional/jasypt-spring3-1.9.2.jar
+activemq/lib/optional/jasypt-spring31-1.9.2.jar
 activemq/lib/optional/jaxb2-basics-runtime-0.6.4.jar
-activemq/lib/optional/jettison-1.3.5.jar
+activemq/lib/optional/jettison-1.3.7.jar
 activemq/lib/optional/jmdns-3.4.1.jar
 activemq/lib/optional/leveldb-0.6.jar
 activemq/lib/optional/leveldb-api-0.6.jar
@@ -420,8 +420,7 @@ activemq/lib/optional/log4j-1.2.17.jar
 activemq/lib/optional/org.apache.servicemix.bundles.josql-1.5_5.jar
 activemq/lib/optional/org.linkedin.util-core-1.4.0.jar
 activemq/lib/optional/org.linkedin.zookeeper-impl-1.4.0.jar
-activemq/lib/optional/proton-j-0.8.jar
-activemq/lib/optional/proton-jms-0.8.jar
+activemq/lib/optional/proton-j-0.9.1.jar
 activemq/lib/optional/scala-library-2.11.0.jar
 activemq/lib/optional/shiro-core-1.2.2.jar
 activemq/lib/optional/shiro-spring-1.2.2.jar
@@ -447,7 +446,7 @@ activemq/lib/web/core-3.1.1.jar
 activemq/lib/web/geronimo-servlet_3.0_spec-1.0.jar
 activemq/lib/web/jdom-1.0.jar
 activemq/lib/web/jetty-all-8.1.16.v20140903.jar
-activemq/lib/web/jolokia-core-1.2.2.jar
+activemq/lib/web/jolokia-core-1.3.1.jar
 activemq/lib/web/json-simple-1.1.1.jar
 activemq/lib/web/jsp-2.1-glassfish-2.1.v20100127.jar
 activemq/lib/web/jsp-api-2.1-glassfish-2.1.v20100127.jar
