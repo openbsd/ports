@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.72 2015/07/03 07:41:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2015/08/19 07:45:35 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.0.71
+DISTNAME=	cups-filters-1.0.73
 CATEGORIES=	print
 
 SHARED_LIBS +=  cupsfilters          1.0      # 1.0
@@ -72,15 +72,25 @@ CONFIGURE_ARGS +=	--with-pdftops=pdftops
 BUILD_DEPENDS +=	print/poppler,-utils
 RUN_DEPENDS +=		print/poppler,-utils
 
+FLAVORS=	ldap
+FLAVOR?=
+
+.if ${FLAVOR:Mldap}
+WANTLIB += crypto lber-2.4 ldap-2.4 sasl2 ssl
+LIB_DEPENDS +=		databases/openldap
+.else
+CONFIGURE_ARGS +=	--disable-ldap
+.endif
+
 pre-configure:
-	perl -pi -e 's,/usr/share/cups,${LOCALBASE}/share/cups,g;' \
+	sed -i -e 's,/usr/share/cups,${LOCALBASE}/share/cups,g;' \
 		-e 's,/usr/bin,${LOCALBASE}/bin,g' \
 		${WRKSRC}/filter/{gstoraster.c,gstopxl}
-	perl -pi -e 's,/etc/cups,${SYSCONFDIR}/cups,g' \
+	sed -i 's,/etc/cups,${SYSCONFDIR}/cups,g' \
 		${WRKSRC}/filter/foomatic-rip/spooler.c
-	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
+	sed -i 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/filter/foomatic-rip/foomaticrip.c
-	perl -pi -e 's,/bin/bash,/bin/ksh,g' ${WRKSRC}/filter/textonly
+	sed -i 's,/bin/bash,/bin/ksh,g' ${WRKSRC}/filter/textonly
 
 post-install:
 	rm -rf ${WRKINST}/rc?.d

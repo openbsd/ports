@@ -1,0 +1,16 @@
+$OpenBSD: patch-backend_implicitclass_c,v 1.1 2015/08/19 07:45:35 ajacoutot Exp $
+
+XXX push upstream
+warning: implicit declaration of function 'open'
+error: 'O_RDONLY' undeclared (first use in this function)
+
+--- backend/implicitclass.c.orig	Wed Aug 19 09:21:58 2015
++++ backend/implicitclass.c	Wed Aug 19 09:22:10 2015
+@@ -21,6 +21,7 @@
+ #include "backend-private.h"
+ #include <cups/array.h>
+ #include <ctype.h>
++#include <fcntl.h>
+ 
+ /*
+  * Local globals...

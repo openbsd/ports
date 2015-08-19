@@ -1,11 +1,11 @@
-$OpenBSD: patch-filter_foomatic-rip_foomaticrip_c,v 1.5 2015/06/27 11:00:15 ajacoutot Exp $
+$OpenBSD: patch-filter_foomatic-rip_foomaticrip_c,v 1.6 2015/08/19 07:45:35 ajacoutot Exp $
 
 XXX from pkgsrc (foomatic-filters).
 Prevent bogus 'Job does not start with "%!", is it PostScript?' errors.
 
---- filter/foomatic-rip/foomaticrip.c.orig	Fri Jun 26 17:45:26 2015
-+++ filter/foomatic-rip/foomaticrip.c	Sat Jun 27 12:50:26 2015
-@@ -653,6 +653,7 @@ int print_file(const char *filename, int convert)
+--- filter/foomatic-rip/foomaticrip.c.orig	Tue Aug  4 06:01:48 2015
++++ filter/foomatic-rip/foomaticrip.c	Wed Aug 19 09:11:32 2015
+@@ -655,6 +655,7 @@ int print_file(const char *filename, int convert)
                  if (dup2(fileno(out), fileno(stdin)) < 0)
                      rip_die(EXIT_PRNERR_NORETRY_BAD_SETTINGS,
                              "Couldn't dup stdout of pdf-to-ps\n");
