@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/06/12 18:01:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2015/08/19 07:22:22 jasper Exp $
 bin/mco
 ${MODRUBY_SITEDIR}/mcollective/
 ${MODRUBY_SITEDIR}/mcollective.rb
@@ -25,6 +25,7 @@ ${MODRUBY_SITEDIR}/mcollective/aggregate/summary.rb
 ${MODRUBY_SITEDIR}/mcollective/application/
 ${MODRUBY_SITEDIR}/mcollective/application.rb
 ${MODRUBY_SITEDIR}/mcollective/application/completion.rb
+${MODRUBY_SITEDIR}/mcollective/application/describe_filter.rb
 ${MODRUBY_SITEDIR}/mcollective/application/facts.rb
 ${MODRUBY_SITEDIR}/mcollective/application/find.rb
 ${MODRUBY_SITEDIR}/mcollective/application/help.rb
