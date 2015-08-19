@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/05/28 12:03:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2015/08/19 20:34:33 sthen Exp $
 
 BROKEN-mips64 =		missing atomic ops
 BROKEN-mips64el =	missing atomic ops
@@ -15,8 +15,8 @@ V =			1.9.0
 DISTNAME =		ogre-$V
 PKGNAME-main =		ogre-${V}
 PKGNAME-samples =	ogre-samples-${V}
-REVISION-main =		1
-REVISION-samples =	1
+REVISION-main =		2
+REVISION-samples =	2
 
 MULTI_PACKAGES =	-main -samples
 
@@ -37,7 +37,7 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE SM X11 Xaw Xext Xt atomic boost_date_time-mt
+WANTLIB += ICE SM X11 Xaw Xext Xt atomic boost_atomic-mt boost_date_time-mt
 WANTLIB += boost_chrono-mt boost_system-mt boost_thread-mt c
 WANTLIB += freeimage freetype m pthread z zzip
 

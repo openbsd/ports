@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.61 2015/06/06 14:19:35 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2015/08/19 20:34:33 sthen Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
 
 VERSION=		2.3.4
-REVISION-main=		1
+REVISION-main=		2
+REVISION-demos=		0
 DISTNAME=		motif-${VERSION}
 EXTRACT_SUFX=		-src.tgz
 PKGNAME-main=		openmotif-${VERSION}
@@ -58,7 +59,7 @@ LIB_DEPENDS-demos=	x11/openmotif \
 			${LIB_DEPENDS}
 WANTLIB=		ICE SM X11 Xext Xt c Xft Xmu Xrender \
 			expat fontconfig freetype m z xcb \
-			jpeg png
+			jpeg png pthread-stubs
 WANTLIB-demos=		${WANTLIB} Xm Mrm
 
 # XXX  Large, complicated, only partially automated test suite available

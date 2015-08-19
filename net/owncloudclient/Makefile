@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/07/31 08:00:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/19 20:34:33 sthen Exp $
 
 COMMENT =		owncloud sync client
 
 DISTNAME =		owncloudclient-1.8.3
+REVISION =		0
 
 SHARED_LIBS =		owncloudsync	1.0
 SHARED_LIBS +=		ocsync		1.0
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += QtDBus QtGui QtNetwork QtSql QtWebKit QtXml c
 WANTLIB += crypto lib/inotify/inotify m neon pthread qtkeychain
-WANTLIB += sqlite3 ssl
+WANTLIB += sqlite3 ssl z
 
 MASTER_SITES =		https://download.owncloud.com/desktop/stable/
 EXTRACT_SUFX =		.tar.xz

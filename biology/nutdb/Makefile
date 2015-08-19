@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2015/05/09 08:31:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2015/08/19 20:34:33 sthen Exp $
 
 COMMENT=	record and analyze your meals for nutrient composition
 
 V=		20.1
+REVISION=	0
 DISTNAME=	nut-${V}
 PKGNAME=	nutdb-${V}
 CATEGORIES=	biology
@@ -11,7 +12,8 @@ HOMEPAGE=	http://nut.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xau Xdmcp Xext Xft Xpm Xinerama c fltk fontconfig m pthread stdc++
+WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xpm Xinerama
+WANTLIB += c fltk fontconfig m pthread stdc++
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nut/}
 
