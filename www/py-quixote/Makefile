@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/11/01 16:21:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2015/08/19 20:13:59 sthen Exp $
 
 COMMENT=		simple Python framework for web-based applications
 
 MODPY_EGG_VERSION=	2.8
+REVISION=		0
 DISTNAME=		Quixote-${MODPY_EGG_VERSION}
 PKGNAME=		py-quixote-${MODPY_EGG_VERSION}
 
@@ -13,6 +14,8 @@ MASTER_SITES=		${HOMEPAGE}releases/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB += ${MODPY_WANTLIB} pthread
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes

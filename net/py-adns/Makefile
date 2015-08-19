@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/08/07 21:32:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2015/08/19 20:13:59 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		python interface to adns
 V=			1.2.1
 DISTNAME=		adns-python-$V
 PKGNAME=		py-adns-$V
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		https://adns-python.googlecode.com/
 
@@ -21,7 +21,7 @@ MODPY_ADJ_FILES=	ADNS.py DNSBL.py
 CATEGORIES =		net
 
 LIB_DEPENDS=		net/adns
-WANTLIB =		adns
+WANTLIB =		adns ${MODPY_WANTLIB} pthread
 
 NO_TEST=		Yes
 

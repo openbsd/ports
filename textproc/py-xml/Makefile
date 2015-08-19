@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2015/08/19 20:13:59 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ MODPY_EGG_VERSION=0.8.4
 VERSION=	${MODPY_EGG_VERSION}
 DISTNAME=	PyXML-${VERSION}
 PKGNAME=	py-xml-${VERSION}
-REVISION=	12
+REVISION=	13
 CATEGORIES=	textproc devel
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyxml/}
@@ -33,7 +33,7 @@ FLAVOR?=
 WANTLIB += expat
 .endif
 
-WANTLIB +=	${MODPY_WANTLIB}
+WANTLIB +=	${MODPY_WANTLIB} pthread
 
 TEST_DEPENDS= lang/python/${MODPY_VERSION},-tests
 

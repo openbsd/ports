@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/07/21 14:53:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/19 20:13:59 sthen Exp $
 
 COMMENT =		Python interface to MySQL
 
 MODPY_EGG_VERSION =	1.3.6
+REVISION =		0
 DISTNAME =		mysqlclient-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += crypto m pthread ssl z
 WANTLIB += lib/mysql/mysqlclient_r
-
+WANTLIB += ${MODPY_WANTLIB}
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=m/mysqlclient/}
 

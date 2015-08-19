@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2015/04/04 09:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2015/08/19 20:13:59 sthen Exp $
 
 COMMENT=		python bindings for the WebKit GTK+ port
 
 V=			1.1.8
 DISTNAME=		pywebkitgtk-$V
 PKGNAME=		py-webkitgtk-$V
-REVISION=		14
+REVISION=		15
 CATEGORIES=		www
 
 HOMEPAGE=		https://pywebkitgtk.googlecode.com/
@@ -16,20 +16,21 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		${HOMEPAGE}/files/
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 cairo
-WANTLIB += enchant expat ffi fontconfig freetype gailutil
+WANTLIB += enchant expat ffi fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gstbase-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += icui18n jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs soup-2.4
 WANTLIB += sqlite3 stdc++ xcb xml2 z gstapp-1.0 xcb-render
-WANTLIB += GL Xxf86vm drm xcb-shm xslt webkitgtk-1.0
+WANTLIB += GL xcb-shm xslt webkitgtk-1.0
 WANTLIB += javascriptcoregtk-1.0 orc-0.4
-WANTLIB += dbus-1 gcrypt gpg-error graphite2
+WANTLIB += gcrypt gpg-error graphite2
 WANTLIB += gstaudio-1.0 gstfft-1.0 gsttag-1.0 harfbuzz
 WANTLIB += pthread secret-1 webp
+WANTLIB += EGL gbm harfbuzz-icu icudata icuuc lzma
 
 MODULES=		lang/python \
 			devel/gettext
