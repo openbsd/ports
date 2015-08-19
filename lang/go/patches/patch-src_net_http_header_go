@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_net_http_header_go,v 1.1 2015/08/19 06:57:20 jasper Exp $
+
+Security fix for CVE-2015-5739, "Content Length" treated as valid header
+https://github.com/golang/go/commit/117ddcb83d7f42d6aa72241240af99ded81118e9
+
+--- src/net/http/header.go.orig	Wed Feb 18 05:38:34 2015
++++ src/net/http/header.go	Thu Aug 13 18:10:28 2015
+@@ -168,6 +168,8 @@ func (h Header) WriteSubset(w io.Writer, exclude map[s
+ // letter and any letter following a hyphen to upper case;
+ // the rest are converted to lowercase.  For example, the
+ // canonical key for "accept-encoding" is "Accept-Encoding".
++// If s contains a space or invalid header field bytes, it is
++// returned without modifications.
+ func CanonicalHeaderKey(s string) string { return textproto.CanonicalMIMEHeaderKey(s) }
+ 
+ // hasToken reports whether token appears with v, ASCII
