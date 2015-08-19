@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2014/09/13 18:09:22 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2015/08/19 18:55:05 sthen Exp $
 
 COMMENT=	turns Apache into an MP3 or Ogg streaming server
 
-REVISION=	8
+REVISION=	9
 DISTNAME=	mod_mp3-0.40
 CATEGORIES=	www audio
 
@@ -38,7 +38,7 @@ LIB_DEPENDS+=	databases/mariadb
 CONFIGURE_ARGS+=--with-mysql="${LOCALBASE}/bin"
 CONF=		${EXAMPLESRC}/mp3_with_mysql.conf
 EXAMPLES+=	${EXAMPLESRC}/mysql_schema
-WANTLIB+=	crypto lib/mysql/mysqlclient m ssl z
+WANTLIB+=	crypto lib/mysql/mysqlclient m ssl z pthread
 .endif
 
 .if ${FLAVOR:Mpostgresql}

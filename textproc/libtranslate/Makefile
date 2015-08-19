@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/22 11:31:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/08/19 18:55:04 sthen Exp $
 
 SHARED_LIBS +=  translate                 0.0 # 0.0
 
 COMMENT=	library/CLI tool interfacing to online translation services
 
 DISTNAME=	libtranslate-0.99
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	textproc
 
@@ -17,7 +17,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c ffi glib-2.0 gio-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += pcre pthread soup-2.4 xml2
+WANTLIB += pcre pthread soup-2.4 xml2 lzma m sqlite3 z
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=libtranslate/}
 

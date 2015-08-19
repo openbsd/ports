@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2014/11/07 10:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2015/08/19 18:55:04 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,7 +12,7 @@ PKGNAME-main=		libproxy-${VERSION}
 PKGNAME-webkit=		libproxy-webkit-${VERSION}
 
 REVISION-main=		3
-REVISION-webkit=	3
+REVISION-webkit=	4
 
 CATEGORIES=		net
 
@@ -55,7 +55,7 @@ WANTLIB-main += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 WANTLIB-main += c gio-2.0 glib-2.0 gobject-2.0 perl pthread
 
 WANTLIB-webkit += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
-WANTLIB-webkit += glib-2.0 javascriptcoregtk-3.0 proxy
+WANTLIB-webkit += glib-2.0 javascriptcoregtk-3.0 proxy pthread
 
 CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS}" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \

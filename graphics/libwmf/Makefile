@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2015/06/26 08:52:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2015/08/19 18:55:05 sthen Exp $
 
 COMMENT=	WMF handling and conversion library
 
 DISTNAME=	libwmf-0.2.8.4
-REVISION=	3
+REVISION=	4
 SHARED_LIBS=	wmf		8.0	\
 		wmf-0.2		8.0	\
 		wmflite		7.1	\
@@ -17,7 +17,8 @@ MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB +=	X11 c expat freetype m xcb z jpeg png
+
+WANTLIB +=	X11 c expat freetype m xcb z jpeg png Xau Xdmcp pthread-stubs
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}
 
