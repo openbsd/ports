@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2015/06/20 19:50:55 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.34 2015/08/19 17:08:48 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -26,6 +26,8 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLMOPT_PIPELINING.3
 @man man/man3/CURLMOPT_PIPELINING_SERVER_BL.3
 @man man/man3/CURLMOPT_PIPELINING_SITE_BL.3
+@man man/man3/CURLMOPT_PUSHDATA.3
+@man man/man3/CURLMOPT_PUSHFUNCTION.3
 @man man/man3/CURLMOPT_SOCKETDATA.3
 @man man/man3/CURLMOPT_SOCKETFUNCTION.3
 @man man/man3/CURLMOPT_TIMERDATA.3
@@ -301,6 +303,8 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/libcurl-multi.3
 @man man/man3/libcurl-share.3
 @man man/man3/libcurl-symbols.3
+@man man/man3/libcurl-thread.3
 @man man/man3/libcurl-tutorial.3
 @man man/man3/libcurl.3
+share/aclocal/
 share/aclocal/libcurl.m4
