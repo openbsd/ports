@@ -1,0 +1,15 @@
+$OpenBSD: patch-acinclude_m4,v 1.1.1.1 2015/08/20 07:50:30 bentley Exp $
+
+Don't error on --disable-silent-rules.
+
+--- acinclude.m4.orig	Fri Oct 26 23:33:44 2012
++++ acinclude.m4	Fri Oct 26 23:34:21 2012
+@@ -242,7 +242,7 @@ fi[]dnl
+ # -------------
+ AC_DEFUN([VICE_ARG_INIT],
+ [
+-vice_arg_enable_list="dependency-tracking"
++vice_arg_enable_list="silent-rules gtk-doc dependency-tracking"
+ vice_arg_with_list="x"
+ ])# VICE_ARG_INIT
+ 

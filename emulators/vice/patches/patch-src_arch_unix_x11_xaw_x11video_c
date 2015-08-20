@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_arch_unix_x11_xaw_x11video_c,v 1.1.1.1 2015/08/20 07:50:30 bentley Exp $
+
+Fix a crash on exit. See
+https://sourceforge.net/tracker/?func=detail&aid=3613134&group_id=223021&atid=1057617
+
+--- src/arch/unix/x11/xaw/x11video.c.orig	Sun Oct 28 15:26:24 2012
++++ src/arch/unix/x11/xaw/x11video.c	Wed May 15 17:36:13 2013
+@@ -60,6 +60,8 @@
+ #include <X11/Xutil.h>
+ #include <X11/Intrinsic.h>
+ #include <X11/cursorfont.h>
++#include <X11/Xmd.h>
++#include <X11/extensions/shmproto.h>
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -796,7 +798,6 @@ void video_canvas_destroy(video_canvas_t *canvas)
+                 XvSetPortAttribute(dpy, canvas->xv_port, xv_settings[i].atom, xv_settings[i].xv_default);
+             }
+         }
+-        video_canvas_refresh(canvas, 0, 0, 0, 0, 0, 0); /* settings not restored unless it's displayed once... */
+     }
+ #endif
+ #ifdef HAVE_FULLSCREEN

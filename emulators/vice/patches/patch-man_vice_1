@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_vice_1,v 1.1.1.1 2015/08/20 07:50:30 bentley Exp $
+--- man/vice.1.orig	Tue Feb 15 13:43:14 2011
++++ man/vice.1	Thu Jul 30 01:12:09 2015
+@@ -43,7 +43,7 @@ a Commodore BASIC de-tokenizer;
+ .PP
+ The whole documentation for these programs is available in HTML
+ format; the main file should be installed on your system as
+-/usr/local/lib/VICE/doc/vice_toc.html.
++${PREFIX}/lib/vice/doc/vice_toc.html.
+ .P
+ For up to date news about VICE, have a look at the official home page
+ at

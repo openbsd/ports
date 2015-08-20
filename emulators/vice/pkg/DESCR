@@ -1,0 +1,18 @@
+VICE is a multi-platform C64, C128, VIC20, PET, PLUS4 and CBM-II
+emulator.
+
+The following programs are included:
+
+   - x64, a C64 emulator;
+   - x64sc, a C64 emulator focused on accuracy;
+   - x64dtv, a C64 Direct-to-TV (DTV) emulator;
+   - x128, a C128 emulator;
+   - xvic, a VIC20 emulator;
+   - xpet, a PET emulator;
+   - xplus4, a PLUS4 emulator;
+   - xcbm2, a CBM-II emulator;
+   - xcbm5x0, a CBM-5x0 emulator;
+   - vsid, a SID player;
+   - c1541, a stand-alone disk image maintenance utility;
+   - petcat, a CBM BASIC de-tokenizer;
+   - cartconv, a C64/C128 cartridge conversion program.

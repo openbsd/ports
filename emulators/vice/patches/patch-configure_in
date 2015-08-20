@@ -1,0 +1,33 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2015/08/20 07:50:30 bentley Exp $
+
+Don't build a redundant copy of the documentation.
+Don't run fc-cache on install.
+
+--- configure.in.orig	Thu Nov  1 09:37:51 2012
++++ configure.in	Fri Mar  7 21:07:53 2014
+@@ -301,12 +301,7 @@ AM_PROG_AS
+ AC_CHECK_PROGS(MAKEINFO, makeinfo, no)
+ 
+ AC_CHECK_PROGS(TEXI2DVI, texi2dvi, no)
+-AC_CHECK_PROGS(PDFTEX, pdftex, no)
+-if test x"$TEXI2DVI" = "xno" -o x"$PDFTEX" = "xno"; then
+   AM_CONDITIONAL(BUILD_PDF, false)
+-else
+-  AM_CONDITIONAL(BUILD_PDF, true)
+-fi
+ 
+ AC_CHECK_PROGS(DOS2UNIX, dos2unix, dos2unix)
+ 
+@@ -2090,12 +2085,7 @@ if test x"$enable_lame" != "xno" ; then
+ 
+ fi
+ 
+-AC_PATH_PROGS(FCCACHE, fc-cache, false)
+-if test x"$FCCACHE" = "xfalse"; then
+   AM_CONDITIONAL(HAVE_FC_CACHE, false)
+-else
+-  AM_CONDITIONAL(HAVE_FC_CACHE, true)
+-fi
+ 
+ if test x"$is_amigaos4" = "xyes"; then
+   if test x"$enable_sdlui" != "xyes"; then
