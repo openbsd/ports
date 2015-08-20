@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.19 2015/07/15 14:28:08 espie Exp $
+# $OpenBSD: User.pm,v 1.20 2015/08/20 16:03:07 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -127,6 +127,10 @@ sub open
 	local $> = 0;
 	local $) = $self->{grouplist};
 	$> = $self->{uid};
+	# XXX don't try to read directories, there's opendir for that.
+	if ($mode eq '<' && !-f $parms[0]) {
+		return undef;
+	}
 	if (open(my $fh, $mode, @parms)) {
 		my $flags = fcntl($fh, F_GETFL, 0);
 		fcntl($fh, F_SETFL, $flags | FD_CLOEXEC);
