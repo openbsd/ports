@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2015/08/19 07:45:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2015/08/20 18:39:41 feinerer Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -59,6 +59,7 @@
     SUBDIR += scribus
     SUBDIR += splix
     SUBDIR += t1utils
+    SUBDIR += texinfo
     SUBDIR += texlive
     SUBDIR += transfig
     SUBDIR += unpaper
