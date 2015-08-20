@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.9 2014/12/29 07:35:19 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2015/08/20 00:49:59 bcallah Exp $
 
-V =		3.2.0
+V =		3.3.0
 COMMENT =	GTK and VTE based terminal emulator
 DISTNAME =	sakura-${V}
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	x11
 
 HOMEPAGE =	http://www.pleyades.net/david/projects/sakura/
-
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread vte-2.91
-WANTLIB += z
+WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gnutls gobject-2.0
+WANTLIB += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread
+WANTLIB += vte-2.91 z
 
 MASTER_SITES =	https://launchpad.net/sakura/trunk/${V}/+download/
 
@@ -28,5 +27,9 @@ LIB_DEPENDS =	devel/vte3
 RUN_DEPENDS =	devel/desktop-file-utils
 
 NO_TEST =	Yes
+
+pre-configure:
+	sed -i 's,-O2,,g' ${WRKSRC}/CMakeLists.txt
+	sed -i 's,share/man,man,g' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
