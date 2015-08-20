@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/07/16 04:54:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/08/20 07:50:36 ajacoutot Exp $
 bin/ioflo
 bin/ioflo2
 lib/python${MODPY_VERSION}/site-packages/ioflo/
@@ -41,6 +41,8 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/_test_httping_w_ext_serv
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/_test_httping_w_ext_server.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/_test_tls_w_ext_serverclient.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/_test_tls_w_ext_serverclient.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_aiding.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_aiding.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_blending.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_blending.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_httping.py
@@ -51,6 +53,8 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_nonblocking.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_nonblocking.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_odicting.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_odicting.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_timing.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_timing.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/timing.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/timing.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/app/
