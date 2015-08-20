@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.43 2015/06/26 13:03:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2015/08/20 10:02:25 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
+
+# XXX Be particularly careful when testing updates. 
+#     API breaks often - do runtime tests, not just build tests.
 
 V=		4.11.4
 DISTNAME=	PyQt-x11-gpl-${V}

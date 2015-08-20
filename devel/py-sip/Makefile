@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2015/06/26 13:03:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2015/08/20 10:02:25 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	automatically generate Python bindings for C and C++ libs
+
+# XXX Be particularly careful when testing updates. 
+#     API breaks often.
 
 DISTNAME=	sip-4.16.8
 PKGNAME=	py-${DISTNAME}
