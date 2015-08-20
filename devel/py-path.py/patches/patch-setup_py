@@ -1,0 +1,23 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2015/08/20 12:56:32 edd Exp $
+
+Patch away use of setuptools_scm. It's broken.
+
+--- setup.py.orig	Mon Aug 17 22:03:36 2015
++++ setup.py	Mon Aug 17 22:05:10 2015
+@@ -14,7 +14,7 @@ pytest_runner = ['pytest-runner>=2.6'] if needs_pytest
+ 
+ setup_params = dict(
+     name="path.py",
+-    use_scm_version=True,
++    version ="${MODPY_EGG_VERSION}",
+     description="A module wrapper for os.path",
+     long_description=long_description,
+     author="Jason Orendorff",
+@@ -36,7 +36,6 @@ setup_params = dict(
+         'Topic :: Software Development :: Libraries :: Python Modules'
+     ],
+     setup_requires=[
+-        'setuptools_scm',
+     ] + sphinx_req + pytest_runner,
+     tests_require=['pytest'],
+     extras_require={
