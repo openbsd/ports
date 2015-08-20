@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_platform_qt_CMakeLists_txt,v 1.1 2015/08/20 07:25:59 bentley Exp $
+Fix install path of XDG desktop file.
+
+From upstream 1f10613d1b7e96d362660c81c37ccf78c2276f7d
+--- src/platform/qt/CMakeLists.txt.orig	Sun Aug 16 21:01:24 2015
++++ src/platform/qt/CMakeLists.txt	Tue Aug 18 05:46:49 2015
+@@ -167,7 +167,7 @@ install(TARGETS ${BINARY_NAME}-qt
+ if(UNIX AND NOT APPLE)
+ 	find_program(DESKTOP_FILE_INSTALL desktop-file-install)
+ 	if(DESKTOP_FILE_INSTALL)
+-		install(CODE "execute_process(COMMAND ${DESKTOP_FILE_INSTALL} \"${CMAKE_SOURCE_DIR}/res/mgba-qt.desktop\" --dir \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/share/applications/\")")
++		install(CODE "execute_process(COMMAND ${DESKTOP_FILE_INSTALL} \"${CMAKE_SOURCE_DIR}/res/mgba-qt.desktop\" --dir \"\$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/applications/\")")
+ 	endif()
+ endif()
+ if(UNIX)

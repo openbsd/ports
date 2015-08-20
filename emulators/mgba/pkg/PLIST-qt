@@ -1,2 +1,17 @@
-@comment $OpenBSD: PLIST-qt,v 1.1.1.1 2015/07/19 21:00:00 bentley Exp $
+@comment $OpenBSD: PLIST-qt,v 1.2 2015/08/20 07:25:59 bentley Exp $
 @bin bin/mgba-qt
+@man man/man6/mgba-qt.6
+share/applications/mgba-qt.desktop
+share/icons/hicolor/128x128/apps/mgba.png
+share/icons/hicolor/16x16/apps/mgba.png
+share/icons/hicolor/24x24/apps/mgba.png
+share/icons/hicolor/256x256/apps/mgba.png
+share/icons/hicolor/32x32/apps/mgba.png
+share/icons/hicolor/48x48/apps/mgba.png
+share/icons/hicolor/512x512/apps/mgba.png
+share/icons/hicolor/64x64/apps/mgba.png
+share/icons/hicolor/96x96/apps/mgba.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

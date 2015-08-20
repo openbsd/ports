@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2015/07/19 21:00:00 bentley Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2015/08/20 07:25:59 bentley Exp $
 @bin bin/mgba
 @lib lib/libmgba.so.${LIBmgba_VERSION}
+@man man/man6/mgba.6
 share/doc/mGBA/
 share/doc/mGBA/CHANGES
 share/doc/mGBA/README.md
