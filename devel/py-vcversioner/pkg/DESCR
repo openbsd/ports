@@ -1,0 +1,3 @@
+Write a setup.py with no version information specified, and vcversioner
+will find a recent, properly-formatted VCS tag and extract a version
+from it.
