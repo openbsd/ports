@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/08/19 18:55:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/08/20 17:59:41 ajacoutot Exp $
 
 COMMENT-main =	tilt the floor to roll a ball through an obstacle course
 COMMENT-data =	data for Neverball/Neverputt
@@ -9,7 +9,7 @@ DISTNAME =	neverball-$V
 PKGNAME-main =	neverball-$V
 PKGNAME-data =	neverball-data-$V
 EPOCH =		0
-REVISION-main = 2
+REVISION-main = 3
 
 CATEGORIES =	games x11
 
@@ -27,7 +27,8 @@ WANTLIB =	GL SDL X11 c m pthread ogg vorbis vorbisfile \
 
 MASTER_SITES =	${HOMEPAGE}
 
-LIB_DEPENDS-main =	audio/libogg \
+LIB_DEPENDS-main =	${MODGETTEXT_LIB_DEPENDS} \
+			audio/libogg \
 			audio/libvorbis \
 			graphics/jpeg \
 			graphics/png \
