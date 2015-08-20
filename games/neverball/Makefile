@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/08/20 17:59:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/08/20 18:03:53 ajacoutot Exp $
 
 COMMENT-main =	tilt the floor to roll a ball through an obstacle course
 COMMENT-data =	data for Neverball/Neverputt
@@ -10,6 +10,7 @@ PKGNAME-main =	neverball-$V
 PKGNAME-data =	neverball-data-$V
 EPOCH =		0
 REVISION-main = 3
+REVISION-data =	0
 
 CATEGORIES =	games x11
 
