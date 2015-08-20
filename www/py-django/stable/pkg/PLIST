@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2015/07/27 20:01:02 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/08/20 11:28:46 jasper Exp $
 @pkgpath www/py-django
 @comment bin/${LNAME}-admin
 bin/${LNAME}-admin.py
@@ -7560,6 +7560,7 @@ share/doc/${LNAME}/releases/1.4.19.txt
 share/doc/${LNAME}/releases/1.4.2.txt
 share/doc/${LNAME}/releases/1.4.20.txt
 share/doc/${LNAME}/releases/1.4.21.txt
+share/doc/${LNAME}/releases/1.4.22.txt
 share/doc/${LNAME}/releases/1.4.3.txt
 share/doc/${LNAME}/releases/1.4.4.txt
 share/doc/${LNAME}/releases/1.4.5.txt
@@ -7594,6 +7595,7 @@ share/doc/${LNAME}/releases/1.6.8.txt
 share/doc/${LNAME}/releases/1.6.9.txt
 share/doc/${LNAME}/releases/1.6.txt
 share/doc/${LNAME}/releases/1.7.1.txt
+share/doc/${LNAME}/releases/1.7.10.txt
 share/doc/${LNAME}/releases/1.7.2.txt
 share/doc/${LNAME}/releases/1.7.3.txt
 share/doc/${LNAME}/releases/1.7.4.txt
@@ -7601,7 +7603,7 @@ share/doc/${LNAME}/releases/1.7.5.txt
 share/doc/${LNAME}/releases/1.7.6.txt
 share/doc/${LNAME}/releases/1.7.7.txt
 share/doc/${LNAME}/releases/1.7.8.txt
-share/doc/${LNAME}/releases/${MODPY_EGG_VERSION}.txt
+share/doc/${LNAME}/releases/1.7.9.txt
 share/doc/${LNAME}/releases/1.7.txt
 share/doc/${LNAME}/releases/index.txt
 share/doc/${LNAME}/releases/security.txt
