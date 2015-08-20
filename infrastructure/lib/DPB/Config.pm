@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.57 2015/08/16 08:39:23 espie Exp $
+# $OpenBSD: Config.pm,v 1.58 2015/08/20 16:06:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -46,12 +46,12 @@ sub setup_users
 	my $u = DPB::User->new('_dpb');
 	if (defined $u->{uid}) {
 		$state->{unpriv_user} = $u;
+	} else {
+		$state->fatal("No _dpb user");
 	}
-	if (defined $state->{unpriv_user}) {
-		$state->{unpriv_user}->enforce_local;
-		$> = $state->{unpriv_user}{uid};
-		$) = $state->{unpriv_user}{grouplist};
-	}
+	$state->{unpriv_user}->enforce_local;
+	$> = $state->{unpriv_user}{uid};
+	$) = $state->{unpriv_user}{grouplist};
 }
 
 sub parse_command_line
@@ -181,9 +181,7 @@ sub parse_command_line
 	$state->say("Build user: #1", $state->{build_user}->user);
 	$state->say("Fetch user: #1", $state->{fetch_user}->user);
 	$state->say("Log user: #1", $state->{log_user}->user);
-	if (defined $state->{unpriv_user}) {
-		$state->say("Unpriv user: #1", $state->{unpriv_user}->user);
-	}
+	$state->say("Unpriv user: #1", $state->{unpriv_user}->user);
 
 	$state->{chroot} = $state->{default_prop}{chroot};
 	# reparse things properly now that we can chroot
