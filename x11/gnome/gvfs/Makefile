@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2015/04/15 09:40:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.137 2015/08/20 14:24:00 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,14 +7,11 @@ COMMENT-smb=		GVFS mount module for samba
 COMMENT-goa=		GVFS volume monitor for gnome-online-account
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.24.1
+GNOME_VERSION=		1.24.2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
-REVISION-goa=		0
-REVISION-main=		0
-REVISION-smb=		0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
