@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_var_c,v 1.1 2015/08/04 09:53:26 jasper Exp $
+$OpenBSD: patch-src_var_c,v 1.2 2015/08/20 07:54:34 jasper Exp $
 
-Fix a buffer overflow with unspecified consequences.
+CVE-2015-5957 remind: unspecified buffer overflow flaw
 http://seclists.org/oss-sec/2015/q3/232
 
 --- src/var.c.orig	Tue Aug  4 11:50:13 2015
