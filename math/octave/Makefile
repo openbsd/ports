@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2015/07/26 06:56:51 steven Exp $
+# $OpenBSD: Makefile,v 1.76 2015/08/20 21:58:22 juanfra Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -7,6 +7,7 @@ NOT_FOR_ARCHS =	vax sparc
 COMMENT =	high-level language for numerical computations
 
 VERSION =	4.0.0
+REVISION =	0
 DISTNAME =	octave-${VERSION}
 CATEGORIES =	math
 
@@ -22,7 +23,7 @@ MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODFORTRAN_WANTLIB}
-WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE QtGui
+WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE OSMesa QtGui
 WANTLIB += QtNetwork QtOpenGL SM X11 X11-xcb Xau Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender
 WANTLIB += Xt Xxf86vm amd arpack blas bz2 c camd ccolamd cholmod
@@ -71,11 +72,9 @@ SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 # --disable-readline: needs GNU readline
-# --without-OSMesa: "OSMesa library not found.  Offscreen rendering with OpenGL will be disabled."
 CONFIGURE_ARGS	=	${CONFIGURE_SHARED} \
 			--disable-readline \
-			--disable-java \
-			--without-OSMesa
+			--disable-java
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LRELEASE="lrelease4" \
