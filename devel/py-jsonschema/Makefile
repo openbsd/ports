@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/08/16 19:46:22 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2015/08/20 12:50:53 edd Exp $
 
 COMMENT =		implementation of JSON Schema validation for Python
 
@@ -10,6 +10,7 @@ CATEGORIES =		devel
 
 HOMEPAGE =		http://github.com/Julian/jsonschema
 
+BUILD_DEPENDS =		devel/py-vcversioner
 RUN_DEPENDS =		devel/py-functools32
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-test \
