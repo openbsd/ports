@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2015/07/27 20:01:02 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/08/20 11:26:54 jasper Exp $
 @comment bin/django-admin
 bin/${LNAME}-admin.py
 lib/python${MODPY_VERSION}/site-packages/Django-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -5472,7 +5472,9 @@ lib/python${MODPY_VERSION}/site-packages/django/core/checks/compatibility/__init
 lib/python${MODPY_VERSION}/site-packages/django/core/checks/compatibility/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/django/core/checks/compatibility/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/django/core/checks/compatibility/${MODPY_PYCACHE}django_1_7_0.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/django/core/checks/compatibility/${MODPY_PYCACHE}django_1_8_0.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/django/core/checks/compatibility/django_1_7_0.py
+lib/python${MODPY_VERSION}/site-packages/django/core/checks/compatibility/django_1_8_0.py
 lib/python${MODPY_VERSION}/site-packages/django/core/checks/messages.py
 lib/python${MODPY_VERSION}/site-packages/django/core/checks/model_checks.py
 lib/python${MODPY_VERSION}/site-packages/django/core/checks/registry.py
@@ -6503,6 +6505,7 @@ share/doc/${LNAME}/releases/1.4.19.txt
 share/doc/${LNAME}/releases/1.4.2.txt
 share/doc/${LNAME}/releases/1.4.20.txt
 share/doc/${LNAME}/releases/1.4.21.txt
+share/doc/${LNAME}/releases/1.4.22.txt
 share/doc/${LNAME}/releases/1.4.3.txt
 share/doc/${LNAME}/releases/1.4.4.txt
 share/doc/${LNAME}/releases/1.4.5.txt
@@ -6537,6 +6540,7 @@ share/doc/${LNAME}/releases/1.6.8.txt
 share/doc/${LNAME}/releases/1.6.9.txt
 share/doc/${LNAME}/releases/1.6.txt
 share/doc/${LNAME}/releases/1.7.1.txt
+share/doc/${LNAME}/releases/1.7.10.txt
 share/doc/${LNAME}/releases/1.7.2.txt
 share/doc/${LNAME}/releases/1.7.3.txt
 share/doc/${LNAME}/releases/1.7.4.txt
@@ -6548,7 +6552,8 @@ share/doc/${LNAME}/releases/1.7.9.txt
 share/doc/${LNAME}/releases/1.7.txt
 share/doc/${LNAME}/releases/1.8.1.txt
 share/doc/${LNAME}/releases/1.8.2.txt
-share/doc/${LNAME}/releases/${MODPY_EGG_VERSION}.txt
+share/doc/${LNAME}/releases/1.8.3.txt
+share/doc/${LNAME}/releases/1.8.4.txt
 share/doc/${LNAME}/releases/1.8.txt
 share/doc/${LNAME}/releases/index.txt
 share/doc/${LNAME}/releases/security.txt
