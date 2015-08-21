@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2015/07/18 21:38:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2015/08/21 14:50:24 jasper Exp $
 
 COMMENT=	driver for ZjStream wire protocol compatible printers
 
@@ -38,13 +38,13 @@ NO_TEST=	Yes
 
 # remove CVS ID
 post-extract:
-	perl -pi -e "s,^VERSION=.*,VERSION=\'${VERSION}\'," ${WRKSRC}/getweb.in
+	sed -i "s,^VERSION=.*,VERSION=\'${VERSION}\'," ${WRKSRC}/getweb.in
 
 post-patch:
 	ln -sf ${WRKSRC}/modify-ppd ${WRKDIR}/bin/modify-ppd
 
 pre-configure:
-	perl -pi -e 's,/usr/bin,${PREFIX}/bin,g' \
+	sed -i 's,/usr/bin,${PREFIX}/bin,g' \
 		${WRKSRC}/*.1in
 	${SUBST_CMD} ${WRKSRC}/getweb.in
 

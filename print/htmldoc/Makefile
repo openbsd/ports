@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2015/05/25 07:54:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2015/08/21 14:50:24 jasper Exp $
 
 COMMENT=	convert HTML pages to PDF/PS format
 
@@ -34,7 +34,7 @@ post-extract:
 	rm -r ${WRKSRC}/jpeg ${WRKSRC}/png ${WRKSRC}/zlib
 
 post-configure:
-	@perl -pi -e "s,\\$$\\{DESTDIR},," ${WRKSRC}/config.h
+	@sed -i "s,\\${DESTDIR},," ${WRKSRC}/config.h
 
 NO_TEST=		Yes
 

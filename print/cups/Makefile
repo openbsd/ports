@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2015/08/01 07:18:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.202 2015/08/21 14:50:24 jasper Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -109,7 +109,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/{Makedefs.in,cups/Makefile}
 
 post-configure:
-	cd ${WRKBUILD} && perl -pi -e 's|\$${DESTDIR}||g' \
+	cd ${WRKBUILD} && sed -i 's|\$${DESTDIR}||g' \
 		config.h cups-config man/*.man
 
 post-install:

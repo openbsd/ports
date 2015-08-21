@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/07/23 06:10:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/08/21 14:50:24 jasper Exp $
 
 COMMENT=	library for handling paper characteristics
 
@@ -30,7 +30,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 pre-configure:
-	perl -pi -e 's,/bin/bash,/bin/sh,g' ${WRKSRC}/src/paperconfig.in
+	sed -i 's,/bin/bash,/bin/sh,g' ${WRKSRC}/src/paperconfig.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/libpaper

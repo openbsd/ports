@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2015/07/19 14:40:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2015/08/21 14:50:24 jasper Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 SHARED_ONLY=		Yes
@@ -146,7 +146,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 pre-configure:
 	find ${WRKSRC} -name \*.py | \
 		xargs perl -pi -e 's,(/usr/bin/python|/usr/bin/env python),${MODPY_BIN},g'
-	perl -pi -e 's,/usr/bin/python,${MODPY_BIN},g' \
+	sed -i 's,/usr/bin/python,${MODPY_BIN},g' \
 		${WRKSRC}/fax/filters/pstotiff
 	${SUBST_CMD} \
 		${WRKSRC}/Makefile.in \

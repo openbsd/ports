@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/04/21 18:24:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/08/21 14:50:24 jasper Exp $
 
 COMMENT=		LaTeX symbols selector
 
@@ -33,6 +33,6 @@ CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-extract:
-	@perl -pi -e 's,/usr,${LOCALBASE},g' ${WRKSRC}/po/Makefile.in
+	@sed -i 's,/usr,${LOCALBASE},g' ${WRKSRC}/po/Makefile.in
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2015/05/03 20:47:28 landry Exp $
+# $OpenBSD: Makefile,v 1.72 2015/08/21 14:50:24 jasper Exp $
 
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
@@ -50,7 +50,7 @@ CONFIGURE_ENV+=	PYTHON=${MODPY_BIN} MOC4=${MODQT4_MOC} UIC4=${MODQT4_UIC} \
 		QT4DIR=${LOCALBASE}/lib/qt4
 
 pre-configure:
-	perl -pi -e "s,python -tt,${MODPY_BIN} -tt," \
+	sed -i "s,python -tt,${MODPY_BIN} -tt," \
 		${WRKSRC}/src/support/os.cpp
 	perl -pi -e "s,#! ?/usr/bin/(env )?python,#!${MODPY_BIN}," \
 		${WRKSRC}/lib/lyx2lyx/lyx2lyx \
