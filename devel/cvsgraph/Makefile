@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.19 2015/04/09 15:08:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2015/08/21 07:03:05 jasper Exp $
 
 COMMENT=		graphical representation of CVS repository
 
-DISTNAME=		cvsgraph-1.6.1
-REVISION=		0
+DISTNAME=		cvsgraph-1.7.0
 CATEGORIES=		devel
 HOMEPAGE=		http://www.akhphd.au.dk/~bertho/cvsgraph
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c gd>=18 jpeg m png pthread z
+WANTLIB += c fontconfig freetype gd jpeg m png pthread tiff vpx
+WANTLIB += z
 
 MODULES=		converters/libiconv
 
@@ -20,24 +20,16 @@ LIB_DEPENDS=		graphics/gd
 
 ALL_TARGET=
 
-CONFIGURE_STYLE=	gnu dest
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			LIBS="-lpng -ljpeg -lz -lm -liconv"
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-gd-inc=${LOCALBASE}/include \
-			--with-gd-lib=${LOCALBASE}/lib \
-			--with-freetype-lib=${X11BASE}/lib
+			--with-gd-lib=${LOCALBASE}/lib
+CFLAGS +=		-I${LOCALBASE}/include
 
 NO_TEST=		Yes
 
-pre-build:
-	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' ${WRKSRC}/cvsgraph.1
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cvsgraph ${PREFIX}/bin
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cvsgraph
 	${INSTALL_DATA} ${WRKSRC}/cvsgraph.conf \
 			${PREFIX}/share/examples/cvsgraph
-	${INSTALL_MAN} ${WRKSRC}/cvsgraph.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/cvsgraph.conf.5 ${PREFIX}/man/man5
 
 .include <bsd.port.mk>
