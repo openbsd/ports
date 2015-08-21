@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/16 16:14:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2015/08/21 22:34:18 jca Exp $
 
 COMMENT =		various utility functions
 
 MODULES =		cpan
-DISTNAME =		Data-Munge-0.093
+DISTNAME =		Data-Munge-0.095
 CATEGORIES =		devel
 
 MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
