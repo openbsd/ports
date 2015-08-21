@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/05/28 18:17:45 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2015/08/21 14:42:50 jasper Exp $
 
 COMMENT =	command line todo list manager
 
@@ -42,11 +42,11 @@ CONFIGURE_ENV +=	CFLAGS="-I${LOCALBASE}/include" \
 NO_TEST =		Yes
 
 pre-configure:
-	@perl -pi -e 's|share/doc/task/|share/taskwarrior/|g' \
+	@sed -i 's,share/doc/task/,share/taskwarrior/,g' \
 		${WRKSRC}/doc/man/task-color.5.in \
 		${WRKSRC}/doc/man/taskrc.5.in \
 		${WRKSRC}/src/Config.cpp
-	@perl -pi -e 's|share/doc/task-VERSION/|share/taskwarrior/|g' \
+	@sed -i 's,share/doc/task-VERSION/,share/taskwarrior/,g' \
 		${WRKSRC}/scripts/vim/README
 
 post-install:

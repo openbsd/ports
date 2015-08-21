@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/05/05 17:00:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2015/08/21 14:42:50 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -49,7 +49,7 @@ LIB_DEPENDS=	devel/libnotify>=0.7.2 \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure
-	@find ${WRKSRC} -name Makefile.in -exec perl -pi \
+	@find ${WRKSRC} -name Makefile.in -exec sed -i \
 		-e 's,-Wall -g,-Wall,g;' \
 		-e 's,-Wmissing-prototypes -g,-Wmissing-prototypes,g' {} \;
 

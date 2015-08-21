@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/06/28 05:47:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2015/08/21 14:42:51 jasper Exp $
 
 COMMENT =		event logging framework
 
@@ -63,7 +63,7 @@ pre-configure:
 .for i in datahub/Makefile.in examples/vala/Makefile.in extensions/Makefile.in \
     extensions/fts++/Makefile.in libzeitgeist/Makefile.in src/Makefile.in \
     test/direct/Makefile.in
-	perl -pi -e 's,--target-glib=2.26,--target-glib=2.36,g' ${WRKSRC}/$i
+	sed -i 's,--target-glib=2.26,--target-glib=2.36,g' ${WRKSRC}/$i
 .endfor
 
 .include <bsd.port.mk>

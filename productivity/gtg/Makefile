@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/07/30 11:28:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2015/08/21 14:42:50 jasper Exp $
 
 COMMENT=		GTD organizer for GNOME
 
@@ -34,6 +34,6 @@ MODPY_ADJ_FILES=	GTG/gtg.py gtg
 NO_TEST=		Yes
 
 pre-configure:
-	perl -pi -e "s,share/man,man,g" ${WRKSRC}/setup.py
+	sed -i "s,share/man,man,g" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

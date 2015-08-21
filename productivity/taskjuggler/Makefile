@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/03/27 08:14:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2015/08/21 14:42:50 jasper Exp $
 
 COMMENT=	project management tool
 BROKEN-i386=	self-checks fail with 64-bit time_t
@@ -54,7 +54,7 @@ post-extract:
 	@rm ${WRKSRC}/TestSuite/Syntax/Errors/Timezone.tjp
 
 pre-configure:
-	@perl -pi -e "s,\@PACKAGES_DIR\@Examples/,\@PACKAGES_DIR\@," \
+	@sed -i "s,\@PACKAGES_DIR\@Examples/,\@PACKAGES_DIR\@," \
 		${WRKSRC}/Examples/*/Makefile.in \
 		${WRKSRC}/Examples/*/*/Makefile.in
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2015/06/29 06:12:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2015/08/21 14:42:50 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -83,7 +83,7 @@ DOC_DIR =		${WRKDIR}/gnucash-docs-${GNOME_VERSION}
 # cannot use CPPFLAGS/CFLAGS since they get appended last
 #MAKE_FLAGS +=		CC="${CC} -I${LOCALBASE}/include/guile/2.0"
 pre-configure:
-	perl -pi -e 's,guile-2.0,guile-99.99,g' ${WRKSRC}/configure
+	sed -i 's,guile-2.0,guile-99.99,g' ${WRKSRC}/configure
 	
 post-configure:
 	cd ${DOC_DIR} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/10 17:04:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/08/21 14:42:50 jasper Exp $
 
 COMMENT=		simple but effective personal calendar
 
@@ -21,7 +21,7 @@ WRKDIST=		${WRKDIR}/when_dist/
 NO_TEST=		Yes
 
 do-configure:
-	@perl -pi -e 's,/usr/bin,${PREFIX}/bin,' ${WRKSRC}/when.1
+	@sed -i 's,/usr/bin,${PREFIX}/bin,' ${WRKSRC}/when.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/when ${PREFIX}/bin

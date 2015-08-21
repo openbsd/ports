@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/06/04 15:10:09 kirby Exp $
+# $OpenBSD: Makefile,v 1.5 2015/08/21 14:42:50 jasper Exp $
 
 COMMENT =		birthday reminder with tray notification
 
@@ -27,7 +27,7 @@ MODPY_ADJ_FILES += 	src/gb
 PKG_ARCH = 		*
 
 post-patch:
-	perl -pi -e 's|_Comment|Comment|' ${WRKSRC}/gbirthday.desktop.in
+	sed -i 's,_Comment,Comment,' ${WRKSRC}/gbirthday.desktop.in
 
 do-build:
 	# dummy. cannot be "NO_BUILD" as that zaps BUILD_DEPENDS.
