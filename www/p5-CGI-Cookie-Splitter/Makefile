@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/08/15 07:30:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2015/08/21 13:32:40 benoit Exp $
 
 COMMENT =	splits big cookies into small pieces
 
 MODULES =	cpan
-DISTNAME =	CGI-Cookie-Splitter-0.04
+DISTNAME =	CGI-Cookie-Splitter-0.05
 CATEGORIES =	www
 
 # perl
