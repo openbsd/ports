@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2014/09/13 18:09:21 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2015/08/21 22:51:10 sthen Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -7,7 +7,7 @@ COMMENT-pgsql=	PostgreSQL backend for perdition mail proxy
 
 DISTVER=	1.19-rc5
 REVISION=	6
-REVISION-mysql=	7
+REVISION-mysql=	8
 DISTNAME=	perdition-${DISTVER}
 PKGNAME-main=	perdition-${DISTVER:S/-//}
 PKGNAME-ldap=	perdition-ldap-${DISTVER:S/-//}
@@ -84,7 +84,8 @@ CONFIGURE_ARGS+=	--with-ldap-libraries=${LOCALBASE}/lib \
 .endif
 
 LIB_DEPENDS-mysql=	${LIB_DEPENDS} databases/mariadb
-WANTLIB-mysql=		crypto ssl util m z lib/mysql/mysqlclient ${cWANTLIB}
+WANTLIB-mysql=		crypto ssl util m z lib/mysql/mysqlclient \
+			pthread stdc++ ${cWANTLIB}
 
 .if !${BUILD_PACKAGES:M-mysql}
 CONFIGURE_ARGS+=	--disable-mysql

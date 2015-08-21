@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2015/04/04 09:21:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/08/21 22:51:09 sthen Exp $
 
 COMMENT=	tiling window manager
 
 DISTNAME=	parti-all-0.0.6
 PKGNAME=	${DISTNAME:S/-all//}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	x11
 
 HOMEPAGE=	https://partiwm.googlecode.com/
@@ -20,10 +20,10 @@ MODULES=	devel/gettext \
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xtst atk-1.0 cairo expat
 WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png pthread-stubs xcb xcb-render xcb-render-util
-WANTLIB += z
+WANTLIB += pixman-1 png pthread-stubs xcb xcb-render
+WANTLIB += z harfbuzz pcre pthread xcb-shm ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/ipython \

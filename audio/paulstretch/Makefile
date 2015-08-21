@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/07/18 14:33:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/21 22:51:10 sthen Exp $
 
 COMMENT =	program for extreme audio stretching
 DISTNAME =	paulstretch-2.2-2
+REVISION =	0
 PKGNAME =	paulstretch-2.2.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio x11
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xft Xinerama audiofile c fltk fontconfig
 WANTLIB += m mad mxml ogg portaudio pthread stdc++ vorbis vorbisenc
-WANTLIB += vorbisfile z
+WANTLIB += vorbisfile z Xcursor Xfixes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=hypermammut/}
 

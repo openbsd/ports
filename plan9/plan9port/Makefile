@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/11 21:41:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/08/21 22:51:10 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN-powerpc =	threading issues
@@ -6,7 +6,7 @@ BROKEN-powerpc =	threading issues
 COMMENT =		Plan 9 from user space
 
 DISTNAME =		plan9port-20140306
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		plan9
 
@@ -18,7 +18,7 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # certain fonts may NOT be redistributed separately
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		X11 Xext c kvm m pthread util
+WANTLIB =		X11 Xext c kvm m pthread util fontconfig freetype z
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} pgw.tar.bz2 \
 				roget.tar.bz2:0 scat.tgz:1

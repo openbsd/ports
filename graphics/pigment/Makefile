@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/05/22 11:31:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/08/21 22:51:10 sthen Exp $
 
 COMMENT =	3D scene graph library for rich UI
 
@@ -7,7 +7,7 @@ CATEGORIES =	graphics
 DISTNAME =	pigment-0.3.17
 MASTER_SITES =	http://distfiles.nl/
 
-REVISION =	6
+REVISION =	7
 
 SHARED_LIBS +=	pigment-0.3 0.0 \
 		pigment-gtk-0.3 0.0 \
@@ -41,5 +41,7 @@ WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre xml2
 WANTLIB += pixman-1 png pthread-stubs xcb z gstbase-0.10 gstreamer-0.10
 WANTLIB += gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0 gtk-x11-2.0 gdk-x11-2.0
 WANTLIB += gstvideo-0.10 Xxf86vm drm ffi stdc++ xcb-render xcb-shm
+WANTLIB += X11-xcb glapi graphite2 harfbuzz lzma orc-0.4 pthread
+WANTLIB += xcb-dri2 xcb-glx
 
 .include <bsd.port.mk>

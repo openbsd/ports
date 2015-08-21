@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.69 2014/09/13 18:09:21 brad Exp $
+# $OpenBSD: Makefile,v 1.70 2015/08/21 22:51:10 sthen Exp $
 
 COMMENT=	small, easy to set up, fast and very secure FTP server
 
 DISTNAME=	pure-ftpd-1.0.36
-REVISION=	5
+REVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -44,7 +44,7 @@ CONF_FILE+= pureftpd-ldap.conf
 
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS+=	databases/mariadb
-WANTLIB +=	lib/mysql/mysqlclient m z
+WANTLIB +=	lib/mysql/mysqlclient m z pthread
 CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
 DOCS+=	README.MySQL
 CONF_FILE+= pureftpd-mysql.conf
