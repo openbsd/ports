@@ -1,0 +1,39 @@
+$OpenBSD: patch-gemrb_GemRB_cfg_sample_in,v 1.1.1.1 2015/08/21 09:14:21 kirby Exp $
+--- gemrb/GemRB.cfg.sample.in.orig	Fri Jul 24 20:23:18 2015
++++ gemrb/GemRB.cfg.sample.in	Thu Jul 30 23:59:38 2015
+@@ -188,7 +188,7 @@ CD5=/mnt/windows/Programmi/Black Isle/BGII - SoA/CD5/
+ #  Cache directory.                                 #
+ #####################################################
+ 
+-CachePath=./Cache2/
++CachePath=~/.cache/gemrb/
+ 
+ #####################################################
+ #  GemRB Save Path [String]                         #
+@@ -225,7 +225,7 @@ CachePath=./Cache2/
+ #  the 'GUIScript' subdirectory.                    #
+ #####################################################
+ 
+-#GUIScriptsPath=@DATA_DIR@
++GUIScriptsPath=@DATA_DIR@
+ 
+ #####################################################
+ #  GemRB Plugins Path [String]                      #
+@@ -239,7 +239,7 @@ CachePath=./Cache2/
+ #  GemRB from source directory on Linux.            #
+ #####################################################
+ 
+-#PluginsPath=@PLUGIN_DIR@
++PluginsPath=@PLUGIN_DIR@
+ 
+ #####################################################
+ #  Custom Font Path [String]           		    #
+@@ -283,7 +283,7 @@ CachePath=./Cache2/
+ #####################################################
+ 
+ #GemRBOverridePath=@DATA_DIR@
+-#GemRBUnhardcodedPath=@DATA_DIR@
++GemRBUnhardcodedPath=@DATA_DIR@
+ 
+ #####################################################
+ #  Input Parameters                                 #
