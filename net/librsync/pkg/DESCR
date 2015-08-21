@@ -1,6 +1,16 @@
-librsync is a free software library that implements the rsync
-remote-delta algorithm. This algorithm allows efficient remote updates
-of a file, without requiring the old and new versions to both be present
-at the sending end. The library uses a streaming design similar to that
-of zlib with the aim of allowing it to be embedded into many different
-applications.
+librsync implements the rolling-checksum algorithm of remote file
+synchronization that was popularized by the rsync utility. This algorithm
+transfers the differences between 2 files without needing both files on
+the same system.
+
+librsync is for building other programs that transfer files as efficiently
+as rsync. You can use librsync in a program you write to do backups,
+distribute binary patches to programs, or sync directories to a server
+or between peers.
+
+librsync does not implement the rsync wire protocol or network functions.
+
+This tree also produces the rdiff command-line tool that exposes the key
+operations of librsync: generating file signatures, generating the delta
+from a signature to a new file, and applying the delta to regenerate the
+new file given the old file.
