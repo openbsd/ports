@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/11/30 05:41:35 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2015/08/21 19:17:11 sthen Exp $
 
 COMMENT-main =		library for encoding data in several barcode variants
 COMMENT-x11 = 		graphical interface for the zint barcode generator
@@ -9,7 +9,7 @@ PKGNAME-main = 		${DISTNAME}
 PKGNAME-x11 = 		zint-gui-${V}
 
 REVISION-main =		2
-REVISION-x11 =		2
+REVISION-x11 =		3
 
 SHARED_ONLY = 		Yes
 
@@ -25,7 +25,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 cWANTLIB = 		c m png z
 WANTLIB-main = 		${cWANTLIB}
-WANTLIB-x11 = 		${cWANTLIB} QtCore QtGui QtXml stdc++ zint
+WANTLIB-x11 = 		${cWANTLIB} QtCore QtGui QtXml stdc++ zint pthread
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zint/}
 

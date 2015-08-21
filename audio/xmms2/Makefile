@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/07/18 14:33:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2015/08/21 19:17:10 sthen Exp $
 
 COMMENT =		audio player daemon with library management
 BROKEN-sparc64 =	waf build goes into an infinite loop
@@ -6,7 +6,7 @@ BROKEN-sparc64 =	waf build goes into an infinite loop
 V =			0.8
 DISTNAME =		xmms2-${V}DrO_o
 PKGNAME =		xmms2-${V}
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=		xmmsclient++		2.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	1.0 # 1.0.0
@@ -26,7 +26,7 @@ WANTLIB += FLAC ao avahi-client avahi-common avahi-glib avcodec
 WANTLIB += avutil c curl gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 jack m mad ncurses ogg pcre pthread readline
 WANTLIB += sndfile speex sqlite3 stdc++ vorbis vorbisfile
-WANTLIB += vorbisidec vpx x264 xml2
+WANTLIB += vorbisidec vpx x264 xml2 opus swresample x265 ${MODPY_WANTLIB}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmms2/}
 

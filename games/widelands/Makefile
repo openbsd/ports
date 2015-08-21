@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2014/03/27 04:00:25 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2015/08/21 19:17:10 sthen Exp $
 
 COMMENT=	economic and military simulation game
 
-V =		17
+V=		17
+REVISION=	0
 DISTNAME= 	widelands-build${V}-src
 PKGNAME=	widelands-0.${V}
 CATEGORIES=	games
@@ -17,12 +18,12 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-BUILD_DEPENDS =	devel/boost
-
 WANTLIB +=	GL GLEW SDL SDL_gfx SDL_image SDL_mixer SDL_net SDL_ttf
 WANTLIB +=	c m png pthread stdc++ z execinfo ${MODLUA_WANTLIB}
+WANTLIB +=	boost_signals-mt
 
-LIB_DEPENDS =	devel/libexecinfo \
+LIB_DEPENDS =	devel/boost \
+		devel/libexecinfo \
 		devel/sdl-gfx \
 		devel/sdl-image \
 		devel/sdl-mixer \
