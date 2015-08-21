@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2015/08/04 09:53:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2015/08/21 14:11:14 jasper Exp $
 
 COMMENT=	scripting language for reminders, with a Tk front end
 
-DISTNAME=	remind-03.01.14
-PKGNAME=	remind-3.1.14
-REVISION=	0
+DISTNAME=	remind-03.01.15
+PKGNAME=	remind-3.1.15
 CATEGORIES=	misc
 
 MASTER_SITES=	http://www.roaringpenguin.com/files/download/
@@ -17,8 +16,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 WANTLIB=		c m
 
 MODULES=		x11/tk
-RUN_DEPENDS=	${MODTK_RUN_DEPENDS} \
-		devel/tcllib
+RUN_DEPENDS=		${MODTK_RUN_DEPENDS} \
+			devel/tcllib
 
 CONFIGURE_STYLE=	gnu
 
