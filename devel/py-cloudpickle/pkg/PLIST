@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/21 23:44:49 bcallah Exp $
+lib/python${MODPY_VERSION}/site-packages/cloudpickle/
+lib/python${MODPY_VERSION}/site-packages/cloudpickle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/cloudpickle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/cloudpickle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/cloudpickle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/cloudpickle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
+lib/python${MODPY_VERSION}/site-packages/cloudpickle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/cloudpickle/__init__.py
+lib/python${MODPY_VERSION}/site-packages/cloudpickle/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/cloudpickle/cloudpickle.py
+lib/python${MODPY_VERSION}/site-packages/cloudpickle/cloudpickle.pyc
