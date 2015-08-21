@@ -1,0 +1,24 @@
+$OpenBSD: patch-_librsyncmodule_c,v 1.1 2015/08/21 19:43:27 sthen Exp $
+
+Fix with librsync v1.0.0; similar to
+https://bugs.launchpad.net/duplicity/+bug/1416344
+
+This uses the backwards-compatible format that uses the insecure
+truncated MD4 hash.
+
+--- _librsyncmodule.c.orig	Wed Aug 19 20:33:42 2015
++++ _librsyncmodule.c	Wed Aug 19 20:34:42 2015
+@@ -59,8 +59,13 @@ _librsync_new_sigmaker(PyObject* self, PyObject* args)
+   if (sm == NULL) return NULL;
+   sm->x_attr = NULL;
+ 
++#ifdef RS_DEFAULT_STRONG_LEN
+   sm->sig_job = rs_sig_begin((size_t)blocklen,
+ 							 (size_t)RS_DEFAULT_STRONG_LEN);
++#else
++  sm->sig_job = rs_sig_begin((size_t)blocklen,
++							 (size_t)8, RS_MD4_SIG_MAGIC);
++#endif
+   return (PyObject*)sm;
+ }
+ 

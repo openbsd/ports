@@ -1,10 +1,10 @@
-$OpenBSD: patch-rdiff_backup_SetConnections_py,v 1.1 2010/09/15 09:02:50 pea Exp $
---- rdiff_backup/SetConnections.py.orig	Mon Mar 16 15:36:21 2009
-+++ rdiff_backup/SetConnections.py	Wed Sep 15 09:54:41 2010
+$OpenBSD: patch-rdiff_backup_SetConnections_py,v 1.2 2015/08/21 19:43:27 sthen Exp $
 
 Bugfix: DeprecationWarning: os.popen2 is deprecated
 cf http://bugs.gentoo.org/attachment.cgi?id=216585&action=view
 
+--- rdiff_backup/SetConnections.py.orig	Mon Mar 16 14:36:21 2009
++++ rdiff_backup/SetConnections.py	Wed Aug 19 20:31:28 2015
 @@ -135,10 +135,10 @@ def init_connection(remote_cmd):
  	if not remote_cmd: return Globals.local_connection
  
