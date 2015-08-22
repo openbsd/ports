@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.313 2015/08/21 09:16:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.314 2015/08/22 09:38:47 bentley Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -225,6 +225,7 @@
      SUBDIR += sumwars
      SUBDIR += supertux
      SUBDIR += supertuxkart
+     SUBDIR += taisei
      SUBDIR += taxipilot
      SUBDIR += teeworlds
      SUBDIR += tetrinetx
