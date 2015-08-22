@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.1.1.1 2015/01/08 18:48:36 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.2 2015/08/22 15:14:15 jeremy Exp $
 share/ri/
 share/ri/${RUBYLIBREV}/
 share/ri/${RUBYLIBREV}/system/
@@ -6038,7 +6038,10 @@ share/ri/${RUBYLIBREV}/system/Object/Digest-i.ri
 share/ri/${RUBYLIBREV}/system/Object/ParseError/
 share/ri/${RUBYLIBREV}/system/Object/ParseError/cdesc-ParseError.ri
 share/ri/${RUBYLIBREV}/system/Object/TimeoutError/
+share/ri/${RUBYLIBREV}/system/Object/TimeoutError/catch-c.ri
 share/ri/${RUBYLIBREV}/system/Object/TimeoutError/cdesc-TimeoutError.ri
+share/ri/${RUBYLIBREV}/system/Object/TimeoutError/exception-i.ri
+share/ri/${RUBYLIBREV}/system/Object/TimeoutError/thread-i.ri
 share/ri/${RUBYLIBREV}/system/Object/cdesc-Object.ri
 share/ri/${RUBYLIBREV}/system/Object/class-i.ri
 share/ri/${RUBYLIBREV}/system/Object/clone-i.ri
@@ -6698,6 +6701,7 @@ share/ri/${RUBYLIBREV}/system/OpenSSL/SSL/SSLSocket/sysread-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/SSL/SSLSocket/sysread_nonblock-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/SSL/SSLSocket/syswrite-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/SSL/SSLSocket/syswrite_nonblock-i.ri
+share/ri/${RUBYLIBREV}/system/OpenSSL/SSL/SSLSocket/using_anon_cipher%3f-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/SSL/SSLSocket/verify_result-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/SSL/Session/
 share/ri/${RUBYLIBREV}/system/OpenSSL/SSL/Session/%3d%3d-i.ri
@@ -13877,9 +13881,20 @@ share/ri/${RUBYLIBREV}/system/Time/zone_offset-c.ri
 share/ri/${RUBYLIBREV}/system/Time/zone_utc%3f-c.ri
 share/ri/${RUBYLIBREV}/system/Timeout/
 share/ri/${RUBYLIBREV}/system/Timeout/Error/
+share/ri/${RUBYLIBREV}/system/Timeout/Error/catch-c.ri
 share/ri/${RUBYLIBREV}/system/Timeout/Error/cdesc-Error.ri
+share/ri/${RUBYLIBREV}/system/Timeout/Error/exception-i.ri
+share/ri/${RUBYLIBREV}/system/Timeout/Error/thread-i.ri
+share/ri/${RUBYLIBREV}/system/Timeout/ExitException/
+share/ri/${RUBYLIBREV}/system/Timeout/ExitException/catch-c.ri
+share/ri/${RUBYLIBREV}/system/Timeout/ExitException/cdesc-ExitException.ri
+share/ri/${RUBYLIBREV}/system/Timeout/ExitException/exception-i.ri
+share/ri/${RUBYLIBREV}/system/Timeout/ExitException/thread-i.ri
 share/ri/${RUBYLIBREV}/system/Timeout/TimeoutError/
+share/ri/${RUBYLIBREV}/system/Timeout/TimeoutError/catch-c.ri
 share/ri/${RUBYLIBREV}/system/Timeout/TimeoutError/cdesc-TimeoutError.ri
+share/ri/${RUBYLIBREV}/system/Timeout/TimeoutError/exception-i.ri
+share/ri/${RUBYLIBREV}/system/Timeout/TimeoutError/thread-i.ri
 share/ri/${RUBYLIBREV}/system/Timeout/cdesc-Timeout.ri
 share/ri/${RUBYLIBREV}/system/Timeout/timeout-c.ri
 share/ri/${RUBYLIBREV}/system/Timeout/timeout-i.ri
