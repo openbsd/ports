@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.58 2015/08/20 16:06:12 espie Exp $
+# $OpenBSD: Config.pm,v 1.59 2015/08/22 09:24:42 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -154,13 +154,17 @@ sub parse_command_line
 	# keep cmdline subst values
 	my %cmdline = %{$state->{subst}};
 
+	if (!defined $state->{port_user}) {
+		my ($uid, $gid) = (stat $state->{realports})[4,5];
+		$state->{port_user} = DPB::User->from_uid($uid, $gid);
+	}
 	$class->parse_config_files($state);
 	# ... as those must override the config files contents
 	while (my ($k, $v) = each %cmdline) {
 		$state->{subst}->{$k} = $v;
 	}
-	$state->{build_user} //= $state->{default_prop}{build_user};
 	$class->setup_users($state);
+	$state->{build_user} //= $state->{default_prop}{build_user};
 	if (!defined $state->{port_user}) {
 		my ($uid, $gid) = (stat $state->{realports})[4,5];
 		$state->{port_user} = DPB::User->from_uid($uid, $gid);
@@ -303,6 +307,9 @@ sub command_line_overrides
 
 	if (defined $state->{base_user}) {
 		$override_prop->{base_user} = $state->{base_user};
+	}
+	if (defined $state->{port_user}) {
+		$override_prop->{port_user} = $state->{port_user};
 	}
 	if (!$state->{subst}->empty('HISTORY_ONLY')) {
 		$state->{want_fetchinfo} = 1;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.14 2015/07/02 08:04:22 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.15 2015/08/22 09:24:42 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -78,7 +78,11 @@ sub finalize
 		$prop->{build_user} = DPB::User->new($prop->{build_user}) 
 		    unless ref $prop->{build_user};
 	} else {
-		$prop->{build_user} = $prop->{base_user};
+		if ($prop->{base_user}{uid} != 0) {
+			$prop->{build_user} = $prop->{base_user};
+		} else {
+			$prop->{build_user} = $prop->{port_user};
+		}
 	}
 	if (defined $prop->{dirmode}) {
 		$prop->{build_user}{dirmode} = oct($prop->{dirmode});
