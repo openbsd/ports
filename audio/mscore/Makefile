@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2015/05/28 10:17:22 pascal Exp $
+# $OpenBSD: Makefile,v 1.24 2015/08/22 02:47:27 bcallah Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 BROKEN-powerpc = libmscore/pitchspelling.h:56:42: error: enumerator value -1 is too large for underlying type 'char'
 
-
-V =		2.0.1
+V =		2.0.2
 COMMENT =	WYSIWYG music notation software (MuseScore)
 DISTNAME =	MuseScore-${V}
 PKGNAME =	musescore-${V}
 EXTRACT_SUFX =	.zip
 CATEGORIES =	audio x11
-REVISION =	0
 
 SHARED_ONLY =	Yes
 
@@ -20,12 +18,11 @@ HOMEPAGE =	http://musescore.org/
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += Qt5Concurrent Qt5Core Qt5Declarative Qt5Designer Qt5Gui
-WANTLIB += Qt5Help Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Script Qt5ScriptTools Qt5Sql
-WANTLIB += Qt5Svg Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets
-WANTLIB += Qt5Xml Qt5XmlPatterns c m ogg portaudio pthread sndfile
-WANTLIB += vorbis vorbisfile z
+WANTLIB += Qt5Concurrent Qt5Core Qt5Designer Qt5Gui Qt5Help Qt5Network
+WANTLIB += Qt5OpenGL Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets
+WANTLIB += Qt5Sql Qt5Svg Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets
+WANTLIB += Qt5Xml Qt5XmlPatterns c freetype m ogg portaudio pthread
+WANTLIB += sndfile vorbis vorbisfile z
 
 MASTER_SITES =	http://ftp.osuosl.org/pub/musescore/releases/MuseScore-${V}/
 
@@ -47,11 +44,5 @@ CONFIGURE_ARGS =-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DBUILD_JACK=OFF
 
 NO_TEST =	Yes
-
-post-install:
-.for i in 1024 128 16 2048 24 32 48 512 64 96
-	@cd ${PREFIX}/share/icons/hicolor/${i}x${i}/apps \
-		&& mv musescore-icon-round-${i}.png musescore.png
-.endfor
 
 .include <bsd.port.mk>

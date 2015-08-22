@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_gen-qt-projectfile,v 1.1 2015/03/23 19:08:52 bcallah Exp $
---- build/gen-qt-projectfile.orig	Fri Mar 13 05:24:59 2015
-+++ build/gen-qt-projectfile	Sat Mar 14 03:01:04 2015
-@@ -58,14 +58,14 @@ echo "      $1/share/locale/mscore_zh_TW.ts"
+$OpenBSD: patch-build_gen-qt-projectfile,v 1.2 2015/08/22 02:47:27 bcallah Exp $
+--- build/gen-qt-projectfile.orig	Thu Jul 16 17:02:34 2015
++++ build/gen-qt-projectfile	Fri Aug 21 17:00:51 2015
+@@ -59,14 +59,14 @@ echo "      $1/share/locale/mscore_zh_TW.ts"
  
  
  echo "FORMS = \\"

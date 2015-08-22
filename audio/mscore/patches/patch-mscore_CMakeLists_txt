@@ -1,7 +1,7 @@
-$OpenBSD: patch-mscore_CMakeLists_txt,v 1.4 2015/03/23 19:08:52 bcallah Exp $
---- mscore/CMakeLists.txt.orig	Sat Mar 21 06:32:53 2015
-+++ mscore/CMakeLists.txt	Sat Mar 21 16:19:37 2015
-@@ -462,7 +462,6 @@ else (MINGW)
+$OpenBSD: patch-mscore_CMakeLists_txt,v 1.5 2015/08/22 02:47:27 bcallah Exp $
+--- mscore/CMakeLists.txt.orig	Thu Jul 16 17:02:34 2015
++++ mscore/CMakeLists.txt	Fri Aug 21 18:16:55 2015
+@@ -474,7 +474,6 @@ else (MINGW)
        ${ALSA_LIB}
        ${QT_LIBRARIES}
        z
@@ -9,7 +9,7 @@ $OpenBSD: patch-mscore_CMakeLists_txt,v 1.4 2015/03/23 19:08:52 bcallah Exp $
        pthread
        )
      if (USE_PORTAUDIO)
-@@ -492,15 +491,15 @@ else (MINGW)
+@@ -504,15 +503,15 @@ else (MINGW)
       endif (USE_PORTMIDI)
       target_link_libraries(mscore ${OsxFrameworks})
     else (APPLE)
@@ -28,21 +28,3 @@ $OpenBSD: patch-mscore_CMakeLists_txt,v 1.4 2015/03/23 19:08:52 bcallah Exp $
     endif (NOT APPLE)
  
     if (APPLE)
-@@ -514,7 +513,16 @@ else (MINGW)
-      install (FILES data/musescoreDocument.icns DESTINATION ${Mscore_SHARE_NAME}${Mscore_INSTALL_NAME})
-    else (APPLE)
-      install( TARGETS mscore RUNTIME DESTINATION bin )
--     install( FILES   data/mscore.png DESTINATION share/pixmaps)
-+     install( FILES   ../assets/musescore-icon-round-1024.png DESTINATION share/icons/hicolor/1024x1024/apps)
-+     install( FILES   ../assets/musescore-icon-round-128.png DESTINATION share/icons/hicolor/128x128/apps)
-+     install( FILES   ../assets/musescore-icon-round-16.png DESTINATION share/icons/hicolor/16x16/apps)
-+     install( FILES   ../assets/musescore-icon-round-2048.png DESTINATION share/icons/hicolor/2048x2048/apps)
-+     install( FILES   ../assets/musescore-icon-round-24.png DESTINATION share/icons/hicolor/24x24/apps)
-+     install( FILES   ../assets/musescore-icon-round-32.png DESTINATION share/icons/hicolor/32x32/apps)
-+     install( FILES   ../assets/musescore-icon-round-48.png DESTINATION share/icons/hicolor/48x48/apps)
-+     install( FILES   ../assets/musescore-icon-round-512.png DESTINATION share/icons/hicolor/512x512/apps)
-+     install( FILES   ../assets/musescore-icon-round-64.png DESTINATION share/icons/hicolor/64x64/apps)
-+     install( FILES   ../assets/musescore-icon-round-96.png DESTINATION share/icons/hicolor/96x96/apps)
-    endif (APPLE)
- endif (MINGW)
- 
