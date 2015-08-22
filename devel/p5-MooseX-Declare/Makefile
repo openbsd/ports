@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/06/13 08:00:12 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2015/08/22 12:23:49 benoit Exp $
 
 COMMENT=		declarative syntax for Moose
 
-DISTNAME =		MooseX-Declare-0.42
+DISTNAME =		MooseX-Declare-0.43
 CATEGORIES=		devel
 
 # perl
