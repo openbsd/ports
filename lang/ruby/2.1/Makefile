@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/06/29 18:55:03 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2015/08/22 15:13:41 jeremy Exp $
 
 BROKEN-mips64 =		miniruby spins on rbconfig.rb
 
@@ -7,7 +7,7 @@ COMMENT-gdbm =		gdbm interface for ruby
 COMMENT-tk =		tk interface for ruby
 COMMENT-ri_docs =	ri documentation files for ruby
 
-VERSION =		2.1.6
+VERSION =		2.1.7
 RUBYLIBREV =		2.1
 DISTNAME =		ruby-${VERSION}
 
@@ -17,7 +17,6 @@ PKGNAME-gdbm =		ruby21-gdbm-${VERSION}
 PKGNAME-tk =		ruby21-tk-${VERSION}
 PKGNAME-ri_docs =	ruby21-ri_docs-${VERSION}
 
-REVISION-main =		0
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
 
