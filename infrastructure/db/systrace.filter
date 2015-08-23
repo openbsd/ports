@@ -116,6 +116,7 @@
 	native-getuid: permit
 	native-ioctl: permit
 	native-issetugid: permit
+	native-kbind: permit
 	native-kevent: permit
 	native-kill: permit
 	native-kqueue: permit
