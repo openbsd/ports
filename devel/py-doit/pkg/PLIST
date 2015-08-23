@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/09/02 11:16:49 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/08/23 00:29:43 bcallah Exp $
 bin/doit
 lib/python${MODPY_VERSION}/site-packages/doit/
 lib/python${MODPY_VERSION}/site-packages/doit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -36,6 +36,8 @@ lib/python${MODPY_VERSION}/site-packages/doit/cmd_info.py
 lib/python${MODPY_VERSION}/site-packages/doit/cmd_info.pyc
 lib/python${MODPY_VERSION}/site-packages/doit/cmd_list.py
 lib/python${MODPY_VERSION}/site-packages/doit/cmd_list.pyc
+lib/python${MODPY_VERSION}/site-packages/doit/cmd_resetdep.py
+lib/python${MODPY_VERSION}/site-packages/doit/cmd_resetdep.pyc
 lib/python${MODPY_VERSION}/site-packages/doit/cmd_run.py
 lib/python${MODPY_VERSION}/site-packages/doit/cmd_run.pyc
 lib/python${MODPY_VERSION}/site-packages/doit/cmd_strace.py
@@ -56,6 +58,8 @@ lib/python${MODPY_VERSION}/site-packages/doit/filewatch.py
 lib/python${MODPY_VERSION}/site-packages/doit/filewatch.pyc
 lib/python${MODPY_VERSION}/site-packages/doit/loader.py
 lib/python${MODPY_VERSION}/site-packages/doit/loader.pyc
+lib/python${MODPY_VERSION}/site-packages/doit/plugin.py
+lib/python${MODPY_VERSION}/site-packages/doit/plugin.pyc
 lib/python${MODPY_VERSION}/site-packages/doit/reporter.py
 lib/python${MODPY_VERSION}/site-packages/doit/reporter.pyc
 lib/python${MODPY_VERSION}/site-packages/doit/runner.py
