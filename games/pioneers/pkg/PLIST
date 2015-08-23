@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/04/23 07:38:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/08/23 05:20:53 bentley Exp $
 @conflict gnocatan-*
 @pkgpath games/gnocatan
 @bin bin/pioneers
 @bin bin/pioneers-editor
-@bin bin/pioneers-meta-server
+@bin bin/pioneers-metaserver
 @bin bin/pioneers-server-console
 @bin bin/pioneers-server-gtk
 @bin bin/pioneersai
 @man man/man6/pioneers-editor.6
-@man man/man6/pioneers-meta-server.6
+@man man/man6/pioneers-metaserver.6
 @man man/man6/pioneers-server-console.6
 @man man/man6/pioneers-server-gtk.6
 @man man/man6/pioneers.6
@@ -67,6 +67,7 @@ share/icons/hicolor/scalable/apps/pioneers-editor.svg
 share/icons/hicolor/scalable/apps/pioneers-server.svg
 share/icons/hicolor/scalable/apps/pioneers.svg
 share/locale/af/LC_MESSAGES/pioneers.mo
+share/locale/ca/LC_MESSAGES/pioneers.mo
 share/locale/cs/LC_MESSAGES/pioneers.mo
 share/locale/da/LC_MESSAGES/pioneers.mo
 share/locale/de/LC_MESSAGES/pioneers.mo
@@ -80,6 +81,7 @@ share/locale/ja/LC_MESSAGES/pioneers.mo
 share/locale/nl/LC_MESSAGES/pioneers.mo
 share/locale/pt/LC_MESSAGES/pioneers.mo
 share/locale/sv/LC_MESSAGES/pioneers.mo
+share/locale/zh_CN/LC_MESSAGES/pioneers.mo
 share/omf/
 share/omf/pioneers/
 share/omf/pioneers/pioneers-C.omf
@@ -99,6 +101,7 @@ share/pioneers/conquest.game
 share/pioneers/crane_island.game
 share/pioneers/default.game
 share/pioneers/four-islands.game
+share/pioneers/genetic_core.c
 share/pioneers/henjes.game
 share/pioneers/iles.game
 share/pioneers/lobby.game
@@ -207,12 +210,14 @@ share/pixmaps/pioneers/finish.svg
 share/pixmaps/pioneers/grain.png
 share/pixmaps/pioneers/lumber.png
 share/pixmaps/pioneers/ore.png
+share/pixmaps/pioneers/pioneers.ico
+share/pixmaps/pioneers/pioneers.rc
 share/pixmaps/pioneers/road.svg
 share/pixmaps/pioneers/settlement.svg
 share/pixmaps/pioneers/ship.svg
 share/pixmaps/pioneers/ship_move.svg
 share/pixmaps/pioneers/splash.png
-share/pixmaps/pioneers/style-ai.png
+share/pixmaps/pioneers/style-ai.svg
 share/pixmaps/pioneers/style-human-1.png
 share/pixmaps/pioneers/style-human-2.png
 share/pixmaps/pioneers/style-human-3.png

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2010/11/17 19:23:05 jasper Exp $
---- configure.orig	Sun Sep 26 11:18:09 2010
-+++ configure	Wed Nov 17 18:57:54 2010
-@@ -14435,7 +14435,7 @@ if test $pioneers_is_mingw_port = yes; then
+$OpenBSD: patch-configure,v 1.5 2015/08/23 05:20:53 bentley Exp $
+--- configure.orig	Mon Jul  7 11:08:41 2014
++++ configure	Mon Jul 27 18:27:53 2015
+@@ -16024,7 +16024,7 @@ if test $pioneers_is_mingw_port = yes; then
  	DATADIRNAME=.
  else
  	pioneers_datadir=$datadir
