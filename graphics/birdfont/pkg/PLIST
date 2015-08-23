@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/06/23 00:20:35 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.17 2015/08/23 00:30:47 bcallah Exp $
 @bin bin/birdfont
 @bin bin/birdfont-autotrace
 @bin bin/birdfont-export
@@ -24,6 +24,7 @@ share/birdfont/ucd.sqlite
 share/icons/hicolor/128x128/apps/birdfont.png
 share/icons/hicolor/256x256/apps/birdfont.png
 share/icons/hicolor/48x48/apps/birdfont.png
+share/locale/cs/LC_MESSAGES/birdfont.mo
 share/locale/sv/LC_MESSAGES/birdfont.mo
 share/mime/packages/birdfont.xml
 @exec %D/bin/update-mime-database %D/share/mime
