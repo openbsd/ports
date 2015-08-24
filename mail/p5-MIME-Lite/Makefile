@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2015/01/21 14:19:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2015/08/24 10:58:55 benoit Exp $
 
 COMMENT =		low-calorie MIME generator
 
-DISTNAME =		MIME-Lite-3.027
-REVISION =		1
+DISTNAME =		MIME-Lite-3.030
 CATEGORIES =		mail
 
 PERMIT_PACKAGE_CDROM =	Yes
