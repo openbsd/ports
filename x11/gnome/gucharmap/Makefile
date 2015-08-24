@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2015/05/11 07:25:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.99 2015/08/24 09:35:23 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
 GNOME_VERSION=		3.16.2
+REVISION=		0
 
 SHARED_LIBS +=  gucharmap_2_90            7.0 # 7.0
 
@@ -27,8 +28,5 @@ MODULES=		devel/gettext \
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala yelp
 
 LIB_DEPENDS=		x11/gtk+3,-main
-
-# error: -Bsymbolic requested but not supported by ld
-CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 .include <bsd.port.mk>

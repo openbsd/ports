@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2015/08/12 06:19:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2015/08/24 09:35:23 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		SAX-based render library for SVG files
 
 GNOME_PROJECT=		librsvg
 GNOME_VERSION=		2.40.10
+REVISION=		0
 
 SHARED_LIBS +=  rsvg-2               38.2     # 42.10
 
@@ -31,9 +32,6 @@ LIB_DEPENDS=		devel/pango \
 			www/libcroco
 
 CONFIGURE_ARGS=		--disable-tools
-
-# error: -Bsymbolic requested but not supported by ld
-CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 post-install:
 	rm ${PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.{a,la}
