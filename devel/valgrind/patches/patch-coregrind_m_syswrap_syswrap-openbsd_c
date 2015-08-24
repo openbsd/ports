@@ -1,7 +1,19 @@
-$OpenBSD: patch-coregrind_m_syswrap_syswrap-openbsd_c,v 1.1 2015/08/24 03:34:43 uebayasi Exp $
---- coregrind/m_syswrap/syswrap-openbsd.c.orig	Sat Aug  1 11:57:49 2015
-+++ coregrind/m_syswrap/syswrap-openbsd.c	Mon Aug 24 12:18:13 2015
-@@ -2752,6 +2752,11 @@ PRE(sys_futimens)
+$OpenBSD: patch-coregrind_m_syswrap_syswrap-openbsd_c,v 1.2 2015/08/24 04:44:29 uebayasi Exp $
+--- coregrind/m_syswrap/syswrap-openbsd.c.orig	Mon Aug 24 13:33:28 2015
++++ coregrind/m_syswrap/syswrap-openbsd.c	Mon Aug 24 13:30:18 2015
+@@ -541,6 +541,11 @@ PRE(sys_listen)
+    PRE_REG_READ2(long, "listen", int, s, int, backlog);
+ }
+ 
++PRE(sys_tame)
++{
++// XXXTBD
++}
++
+ PRE(sys_ppoll)
+ {
+ // XXXTBD
+@@ -2752,6 +2757,11 @@ PRE(sys_futimens)
  // XXXTBD
  }
  
@@ -13,7 +25,7 @@ $OpenBSD: patch-coregrind_m_syswrap_syswrap-openbsd_c,v 1.1 2015/08/24 03:34:43 
  PRE(sys___set_tcb)
  {
  // XXXTBD
-@@ -3964,6 +3969,7 @@ const SyscallTableEntry ML_(syscall_table)[] = {
+@@ -3964,6 +3974,7 @@ const SyscallTableEntry ML_(syscall_table)[] = {
    BSDX_(__NR_utimensat,		sys_utimensat),		// 84
    BSDX_(__NR_futimens,		sys_futimens),		// 85
  
@@ -21,3 +33,12 @@ $OpenBSD: patch-coregrind_m_syswrap_syswrap-openbsd_c,v 1.1 2015/08/24 03:34:43 
    BSDXY(__NR_clock_gettime,	sys_clock_gettime),	// 87
    BSDX_(__NR_clock_settime,	sys_clock_settime),	// 88
    BSDXY(__NR_clock_getres,	sys_clock_getres),	// 89
+@@ -3988,7 +3999,7 @@ const SyscallTableEntry ML_(syscall_table)[] = {
+ 
+   BSDX_(__NR_listen,		sys_listen),		// 106
+   // obsol vtimes					// 107
+-  // obsol osigvec					// 108
++  BSDX_(__NR_tame,		sys_tame),		// 108
+   BSDX_(__NR_ppoll,		sys_ppoll),		// 109
+   BSDX_(__NR_pselect,		sys_pselect),		// 110
+ 
