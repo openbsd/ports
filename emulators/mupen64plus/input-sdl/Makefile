@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/11 09:40:40 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2015/08/24 04:10:56 bentley Exp $
 
 COMMENT =		n64 emulator input plugin
+REVISION =		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
