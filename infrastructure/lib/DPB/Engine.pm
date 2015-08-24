@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.114 2015/08/16 08:36:53 espie Exp $
+# $OpenBSD: Engine.pm,v 1.115 2015/08/24 09:58:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -422,7 +422,6 @@ sub new_path
 		return;
 	}
 	if (defined $v->{info}{MISSING_FILES}) {
-		$self->log('!', $v, " fetch manually");
 		$self->add_fatal($v, "fetch manually", 
 		    "Missing distfiles: ".
 		    $v->{info}{MISSING_FILES}->string, 
@@ -481,6 +480,7 @@ sub add_fatal
 {
 	my ($self, $v, $error, @messages) = @_;
 	push(@{$self->{errors}}, $v);
+	$self->log('!', $v, " $error");
 	if ($self->{heldlocks}{$v}) {
 		print {$self->{heldlocks}{$v}} "error=$error\n";
 		delete $self->{heldlocks}{$v};
@@ -488,7 +488,7 @@ sub add_fatal
 		my $fh = $self->{locker}->lock($v);
 		print $fh "error=$error\n" if $fh;
 	}
-	$self->{logger}->log_error($v, @messages);
+	$self->{logger}->log_error($v, $error, @messages);
 	$self->stub_out($v);
 }
 
