@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2015/07/28 20:03:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2015/08/24 20:46:49 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 V=		9.10.2-P3
+REVISION=	0
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
@@ -27,7 +28,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c crypto lzma m pthread xml2 z
+WANTLIB=	c lzma m pthread xml2 z
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
 
@@ -47,17 +48,23 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-python=${MODPY_BIN}
 
 # JSON stats support is built if json-c is found at build time; however this
-# breaks on hppa, so it's forcibly disabled at this time.
+# breaks on hppa and mips64, so it's forcibly disabled at this time.
 CONFIGURE_ARGS+= --without-libjson
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/bind9
 
-FLAVORS=	geoip
+FLAVORS=	geoip no_ssl
 FLAVOR?=
 .if ${FLAVOR:Mgeoip}
 CONFIGURE_ARGS+= --with-geoip
 LIB_DEPENDS+=	net/GeoIP
 WANTLIB+=	GeoIP
+.endif
+
+.if ${FLAVOR:Mno_ssl}
+CONFIGURE_ARGS+= --without-openssl
+.else
+WANTLIB+=	crypto
 .endif
 
 # not strictly speaking interactive, but it configures temporary addresses on

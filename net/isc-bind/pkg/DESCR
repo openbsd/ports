@@ -5,3 +5,4 @@ suitable for use in high-volume and high-reliability applications.
 
 Flavours:
 	geoip - build BIND with support for geolocation using the GeoIP api.
+	no_ssl - build BIND without crypto support
