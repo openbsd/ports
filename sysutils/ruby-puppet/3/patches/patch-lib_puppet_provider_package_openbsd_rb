@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.28 2015/04/07 17:05:57 sebastia Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.29 2015/08/24 11:24:26 jasper Exp $
 
 From a85e6635d608a280a1766d21da8d5d114b04034e Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -7,8 +7,10 @@ Subject: [PATCH] (PUP-3604) Rework handling of :ensure with a version
 
 Handle the flavor as a property, not as a parameter.
 
---- lib/puppet/provider/package/openbsd.rb.orig	Tue Jan 27 00:46:47 2015
-+++ lib/puppet/provider/package/openbsd.rb	Tue Apr  7 11:46:59 2015
+Handle errors from pkg_add
+
+--- lib/puppet/provider/package/openbsd.rb.orig	Thu Aug  6 18:17:42 2015
++++ lib/puppet/provider/package/openbsd.rb	Fri Aug 21 15:03:15 2015
 @@ -20,48 +20,49 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    has_feature :install_options
    has_feature :uninstall_options
@@ -88,7 +90,7 @@ Handle the flavor as a property, not as a parameter.
    def latest
      parse_pkgconf
  
-@@ -149,31 +150,46 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -149,31 +150,51 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
  
      if @resource[:source][-1,1] == ::File::SEPARATOR
        e_vars = { 'PKG_PATH' => @resource[:source] }
@@ -119,7 +121,13 @@ Handle the flavor as a property, not as a parameter.
 +      cmd.unshift('-z')
      end
  
-     Puppet::Util.withenv(e_vars) { pkgadd cmd.flatten.compact }
+-    Puppet::Util.withenv(e_vars) { pkgadd cmd.flatten.compact }
++    # pkg_add(1) doesn't set the return value upon failure so we have to peek
++    # at it's output to see if something went wrong.
++    output = Puppet::Util.withenv(e_vars) { pkgadd cmd.flatten.compact }
++    if output.nil? or output.size == 0 or output =~ /Can't find /
++      self.fail "pkg_add returned: #{output.chomp}"
++    end
 +  end
 +
 +  def get_full_name(latest = false)
