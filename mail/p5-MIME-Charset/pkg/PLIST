@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/12 20:23:02 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/08/24 11:35:41 benoit Exp $
 ${P5SITE}/MIME/
 ${P5SITE}/MIME/Charset/
 ${P5SITE}/MIME/Charset.pm
 ${P5SITE}/MIME/Charset/Defaults.pm.sample
-${P5SITE}/MIME/Charset/JA_JP.pod
+${P5SITE}/MIME/Charset/UTF.pm
 ${P5SITE}/MIME/Charset/_Compat.pm
+${P5SITE}/POD2/
+${P5SITE}/POD2/JA/
+${P5SITE}/POD2/JA/MIME/
+${P5SITE}/POD2/JA/MIME/Charset.pod
 @man man/man3p/MIME::Charset.3p
-@man man/man3p/MIME::Charset::JA_JP.3p
+@man man/man3p/POD2::JA::MIME::Charset.3p
