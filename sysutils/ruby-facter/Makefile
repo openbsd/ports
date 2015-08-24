@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2015/07/16 23:00:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2015/08/24 10:32:00 jasper Exp $
 
 PORTROACH=	limit:^2
 
@@ -6,7 +6,7 @@ COMMENT=	Ruby library for retrieving facts from operating systems
 
 VERSION=	2.4.4
 DISTNAME=	facter-${VERSION}
-REVISION=	2
+REVISION=	3
 PKGSPEC=	facter->=2.0,<3.0
 CATEGORIES=	sysutils
 

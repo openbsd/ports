@@ -1,0 +1,52 @@
+$OpenBSD: patch-lib_facter_util_partitions_openbsd_rb,v 1.4 2015/08/24 10:32:00 jasper Exp $
+
+Cache df/mount output to prevent running these programs 3 times for every partition found.
+
+--- lib/facter/util/partitions/openbsd.rb.orig	Mon Aug 24 09:42:02 2015
++++ lib/facter/util/partitions/openbsd.rb	Mon Aug 24 09:42:05 2015
+@@ -1,7 +1,11 @@
+ module Facter::Util::Partitions
+   module OpenBSD
++    @df_output = nil
++    @mount_output = nil
++
+     def self.list
+-      Facter::Core::Execution.exec('df').scan(/\/dev\/(\S+)/).flatten
++      @df_output ||= run_df
++      @df_output.scan(/\/dev\/(\S+)/).flatten
+     end
+ 
+     # On OpenBSD partitions don't have a UUID; disks have DUID but that's not
+@@ -22,19 +26,29 @@ module Facter::Util::Partitions
+     def self.filesystem(partition)
+       scan_mount(/\/dev\/#{partition}\son\s\S+\stype\s(\S+)/)
+     end
+-   
++
+     # On OpenBSD there are no labels for partitions
+     def self.label(partition)
+       nil
+     end
+ 
+     private
++    def self.run_mount
++      Facter::Core::Execution.exec('mount')
++    end
++
++    def self.run_df
++      Facter::Core::Execution.exec('df -k')
++    end
++    
+     def self.scan_mount(scan_regex)
+-      Facter::Core::Execution.exec('mount').scan(scan_regex).flatten.first
++      @mount_output ||= run_mount
++      @mount_output.scan(scan_regex).flatten.first
+     end
+ 
+     def self.scan_df(scan_regex)
+-      Facter::Core::Execution.exec('df -k').scan(scan_regex).flatten.first
++      @df_output ||= run_df
++      @df_output.scan(scan_regex).flatten.first
+     end
+   end
+ end
