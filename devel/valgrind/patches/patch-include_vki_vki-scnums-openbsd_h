@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_vki_vki-scnums-openbsd_h,v 1.1 2015/08/24 03:34:43 uebayasi Exp $
+--- include/vki/vki-scnums-openbsd.h.orig	Sat Aug  1 11:57:49 2015
++++ include/vki/vki-scnums-openbsd.h	Mon Aug 24 12:18:13 2015
+@@ -119,6 +119,7 @@
+ #define	__NR_sendsyslog		83
+ #define __NR_utimensat		84
+ #define __NR_futimens		85
++#define __NR_kbind		86
+ #define __NR_clock_gettime	87
+ #define __NR_clock_settime	88
+ #define __NR_clock_getres	89

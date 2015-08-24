@@ -1,0 +1,23 @@
+$OpenBSD: patch-coregrind_m_syswrap_syswrap-openbsd_c,v 1.1 2015/08/24 03:34:43 uebayasi Exp $
+--- coregrind/m_syswrap/syswrap-openbsd.c.orig	Sat Aug  1 11:57:49 2015
++++ coregrind/m_syswrap/syswrap-openbsd.c	Mon Aug 24 12:18:13 2015
+@@ -2752,6 +2752,11 @@ PRE(sys_futimens)
+ // XXXTBD
+ }
+ 
++PRE(sys_kbind)
++{
++// XXXTBD
++}
++
+ PRE(sys___set_tcb)
+ {
+ // XXXTBD
+@@ -3964,6 +3969,7 @@ const SyscallTableEntry ML_(syscall_table)[] = {
+   BSDX_(__NR_utimensat,		sys_utimensat),		// 84
+   BSDX_(__NR_futimens,		sys_futimens),		// 85
+ 
++  BSDX_(__NR_kbind,		sys_kbind),		// 86
+   BSDXY(__NR_clock_gettime,	sys_clock_gettime),	// 87
+   BSDX_(__NR_clock_settime,	sys_clock_settime),	// 88
+   BSDXY(__NR_clock_getres,	sys_clock_getres),	// 89
