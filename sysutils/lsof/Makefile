@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.97 2015/06/28 05:23:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2015/08/24 15:57:31 bluhm Exp $
 
 COMMENT=	list information about open files
 
 VERSION=	4.88
+REVISION=	1
 DISTNAME=	lsof_${VERSION}
 PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	sysutils
