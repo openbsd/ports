@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.68 2015/03/20 14:59:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.69 2015/08/24 12:37:51 jasper Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	console client for pandora
-BROKEN-hppa =	libjson-c.so.0.0: undefined reference to __sync_val_compare_and_swap_4
 
 DISTNAME =	pianobar-2014.09.28
 REVISION =	1
