@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/24 23:43:17 juanfra Exp $
+# $OpenBSD: Makefile,v 1.19 2015/08/24 16:36:32 juanfra Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
-V=		4.7.7
+V=		4.7.8
 DISTNAME=	gambc-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 API_V=		${V:R:S/./0/}00${V:E}
@@ -42,8 +42,9 @@ do-test:
 	cd ${WRKSRC}/tests && ${SETENV} ${TEST_ENV} ${MAKE_PROGRAM} \
 		${TEST_FLAGS} -f makefile ${TEST_TARGET}
 
-# "virtual memory exhausted: Cannot allocate memory" (in a system with 2GB RAM)
-.if ${MACHINE_ARCH} == "hppa"
+# hppa: "virtual memory exhausted: Cannot allocate memory" (in a system with 2GB RAM)
+# XXX sparc64: "cc: Internal error: Illegal instruction" on __gambc.c
+.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "sparc64"
 CFLAGS += -O0
 .endif
 
