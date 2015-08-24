@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/16 19:56:09 miod Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/24 04:01:04 bentley Exp $
 
 # __builtin_clz
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
 
 COMMENT =		deflate-compatible compression format
 
-DISTNAME =		zopfli-1.0.0
+V =			1.0.0
+DISTNAME =		zopfli-$V
+REVISION =		0
 
 CATEGORIES =		archivers
-
-HOMEPAGE =		https://code.google.com/p/zopfli/
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m
 
-MASTER_SITES =		https://zopfli.googlecode.com/files/
-EXTRACT_SUFX =		.zip
+GH_ACCOUNT =		google
+GH_PROJECT =		zopfli
+GH_TAGNAME =		zopfli-$V
 
 MAKE_FLAGS =		CC="${CC}" \
 			CFLAGS="${CFLAGS}"
