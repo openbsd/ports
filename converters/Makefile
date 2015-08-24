@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2015/01/10 17:35:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.75 2015/08/24 14:39:49 bluhm Exp $
 
     SUBDIR =
     SUBDIR += base64
@@ -40,6 +40,7 @@
     SUBDIR += p5-JSON
     SUBDIR += p5-JSON-Any
     SUBDIR += p5-JSON-DWIW
+    SUBDIR += p5-JSON-MaybeXS
     SUBDIR += p5-JSON-XS
     SUBDIR += p5-JSON-XS-VersionOneAndTwo
     SUBDIR += p5-Jcode
