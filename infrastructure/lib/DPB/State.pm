@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.14 2015/07/28 09:20:54 espie Exp $
+# $OpenBSD: State.pm,v 1.15 2015/08/24 10:16:18 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -17,6 +17,29 @@
 
 use strict;
 use warnings;
+
+package DPB::InteractiveStub;
+
+sub new
+{
+	my $class = shift;
+	bless {}, $class;
+}
+
+sub is_interactive
+{
+	return 0;
+}
+
+sub want_report
+{
+	return 1;
+}
+
+sub may_ask_for_commands
+{
+	return 0;
+}
 
 package DPB::State;
 our @ISA = qw(OpenBSD::State);
@@ -48,8 +71,27 @@ sub init
 	$self->{heuristics} = DPB::Heuristics->new($self);
 	$self->{make} = $ENV{MAKE} || OpenBSD::Paths->make;
 	$self->{starttime} = time();
+	$self->{interactive} = DPB::InteractiveStub->new;
 
 	return $self;
+}
+
+sub is_interactive
+{
+	my $self = shift;
+	return $self->{interactive}->is_interactive;
+}
+
+sub want_report
+{
+	my $self = shift;
+	return $self->{interactive}->want_report;
+}
+
+sub may_ask_for_commands
+{
+	my $self = shift;
+	return $self->{interactive}->may_ask_for_commands;
 }
 
 sub startdate

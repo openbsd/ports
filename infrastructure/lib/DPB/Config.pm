@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.59 2015/08/22 09:24:42 espie Exp $
+# $OpenBSD: Config.pm,v 1.60 2015/08/24 10:16:18 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -103,7 +103,11 @@ sub parse_command_line
 			$state->usage("-$l takes an integer argument, not $o");
 		}
 	}
-	$state->{interactive} = $state->opt('i');
+	if ($state->opt('i')) {
+		require DPB::Interactive;
+		$state->{interactive} = DPB::Interactive->new;
+	}
+
     	$state->{chroot} = $state->opt('B');
 	$state->{base_user} = DPB::User->from_uid($<);
 	if (!defined $state->{base_user}) {
@@ -215,7 +219,7 @@ sub parse_command_line
 
 	$state->{size_log} = "%f/build-stats/%a-size";
 
-	my $k = $state->{interactive} ? "STARTUPI" : "STARTUP";
+	my $k = $state->is_interactive ? "STARTUPI" : "STARTUP";
 	if ($state->define_present($k)) {
 		$state->{startup_script} = $state->{subst}->value($k);
 	}
