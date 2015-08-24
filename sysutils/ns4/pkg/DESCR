@@ -1,9 +1,0 @@
-ns4 is a command line configuration management tool.  It allows the
-automated backup of node (i.e. routers and switches) configurations to
-an FTP/SFTP server or local media on a daily basis to create
-configuration archives. It can run ad-hoc commands on multiple nodes as
-well as custom scripts for automating complex tasks. It uses Perl and
-allows you to manipulate the output of commands using regular
-expressions within scripts.  Configuration based cartridges are used to
-specify new node types, allowing the user to extend its functionality in
-a simple and dynamic way.
