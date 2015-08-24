@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.21 2015/08/24 16:12:03 bluhm Exp $
+# $OpenBSD: Makefile,v 1.22 2015/08/24 16:28:10 bluhm Exp $
 
-COMMENT=	extends the Net::DNS module with DNSSEC functionality
+COMMENT =		extends the Net::DNS module with DNSSEC functionality
 
-MODULES=	cpan
-DISTNAME=	Net-DNS-SEC-1.01
-CATEGORIES=	net security
+DISTNAME =		Net-DNS-SEC-1.01
 
-HOMEPAGE=	http://www.net-dns.org/
+CATEGORIES =		net security
 
-MAINTAINER=	Alexander Bluhm <bluhm@openbsd.org>
+HOMEPAGE =		http://www.net-dns.org/
+
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://www.net-dns.org/download/
 
+MODULES =		cpan
 RUN_DEPENDS =		net/p5-Net-DNS>=1.01 \
 			security/p5-Crypt-OpenSSL-RSA>=0.27 \
 			security/p5-Crypt-OpenSSL-DSA>=0.14 \
@@ -22,7 +23,7 @@ RUN_DEPENDS =		net/p5-Net-DNS>=1.01 \
 TEST_DEPENDS =		devel/p5-Test-Pod>=1.45 \
 			security/p5-Crypt-OpenSSL-Random>=0.06 \
 
-MODCPAN_EXAMPLES=	Yes
-MODCPAN_EXAMPLES_DIST=	demo
+MODCPAN_EXAMPLES =	Yes
+MODCPAN_EXAMPLES_DIST =	demo
 
 .include <bsd.port.mk>
