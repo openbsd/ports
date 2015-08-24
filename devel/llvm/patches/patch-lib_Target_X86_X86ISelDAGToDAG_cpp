@@ -1,0 +1,60 @@
+$OpenBSD: patch-lib_Target_X86_X86ISelDAGToDAG_cpp,v 1.1 2015/08/24 07:45:56 ajacoutot Exp $
+
+r219009
+[ISel] Keep matching state consistent when folding during X86 address match
+
+In the X86 backend, matching an address is initiated by the 'addr' complex
+pattern and its friends.  During this process we may reassociate and-of-shift
+into shift-of-and (FoldMaskedShiftToScaledMask) to allow folding of the
+shift into the scale of the address.
+
+However as demonstrated by the testcase, this can trigger CSE of not only the
+shift and the AND which the code is prepared for but also the underlying load
+node.  In the testcase this node is sitting in the RecordedNode and MatchScope
+data structures of the matcher and becomes a deleted node upon CSE.  Returning
+from the complex pattern function, we try to access it again hitting an assert
+because the node is no longer a load even though this was checked before.
+
+Now obviously changing the DAG this late is bending the rules but I think it
+makes sense somewhat.  Outside of addresses we prefer and-of-shift because it
+may lead to smaller immediates (FoldMaskAndShiftToScale is an even better
+example because it create a non-canonical node).  We currently don't recognize
+addresses during DAGCombiner where arguably this canonicalization should be
+performed.  On the other hand, having this in the matcher allows us to cover
+all the cases where an address can be used in an instruction.
+
+I've also talked a little bit to Dan Gohman on llvm-dev who added the RAUW for
+the new shift node in FoldMaskedShiftToScaledMask.  This RAUW is responsible
+for initiating the recursive CSE on users
+(http://lists.cs.uiuc.edu/pipermail/llvmdev/2014-September/076903.html) but it
+is not strictly necessary since the shift is hooked into the visited user.  Of
+course it's safer to keep the DAG consistent at all times (e.g. for accurate
+number of uses, etc.).
+
+So rather than changing the fundamentals, I've decided to continue along the
+previous patches and detect the CSE.  This patch installs a very targeted
+DAGUpdateListener for the duration of a complex-pattern match and updates the
+matching state accordingly.  (Previous patches used HandleSDNode to detect the
+CSE but that's not practical here).  The listener is only installed on X86.
+
+I tested that there is no measurable overhead due to this while running
+through the spec2k BC files with llc.  The only thing we pay for is the
+creation of the listener.  The callback never ever triggers in spec2k since
+this is a corner case.
+
+--- lib/Target/X86/X86ISelDAGToDAG.cpp.orig	Tue Aug  4 22:53:05 2015
++++ lib/Target/X86/X86ISelDAGToDAG.cpp	Tue Aug  4 22:53:59 2015
+@@ -290,6 +290,13 @@ namespace {
+     const X86InstrInfo *getInstrInfo() const {
+       return getTargetMachine().getInstrInfo();
+     }
++
++    /// \brief Address-mode matching performs shift-of-and to and-of-shift
++    /// reassociation in order to expose more scaled addressing
++    /// opportunities.
++    bool ComplexPatternFuncMutatesDAG() const {
++      return true;
++    }
+   };
+ }
+ 
