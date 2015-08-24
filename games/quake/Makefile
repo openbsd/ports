@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/05/22 11:31:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2015/08/24 10:01:10 sthen Exp $
 
 COMMENT-main =		Quake/QuakeWorld client
 COMMENT-libs =		Quake common libs
@@ -16,7 +16,7 @@ FULLPKGPATH-server =	games/quake,-server
 EPOCH-main =		0
 EPOCH-libs =		0
 EPOCH-server =		1
-REVISION-libs =		0
+REVISION-libs =		1
 REVISION-main =		0
 REVISION-server =	0
 
@@ -53,7 +53,7 @@ WANTLIB-main += c crypto idn m ncurses png pthread sndio ssl usbhid
 WANTLIB-main += xcb z curl ${MODGETTEXT_WANTLIB}
 
 WANTLIB-libs += FLAC SDL m ncurses ogg png samplerate sndio usbhid
-WANTLIB-libs += vorbis vorbisfile z iconv
+WANTLIB-libs += vorbis vorbisfile z iconv pthread
 
 WANTLIB-server += QFconsole QFgamecode QFgib QFimage QFmodels QFruamoko
 WANTLIB-server += QFutil c m ncurses png pthread z

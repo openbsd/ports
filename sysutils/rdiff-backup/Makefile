@@ -1,10 +1,10 @@
-#	$OpenBSD: Makefile,v 1.19 2015/08/21 19:43:27 sthen Exp $
+#	$OpenBSD: Makefile,v 1.20 2015/08/24 10:01:10 sthen Exp $
 
 COMMENT = 	incremental backup
 
 MODPY_EGG_VERSION =	1.2.8
 DISTNAME =	rdiff-backup-${MODPY_EGG_VERSION}
-REVISION =	6
+REVISION =	7
 CATEGORIES =	sysutils
 
 HOMEPAGE = 	http://www.nongnu.org/rdiff-backup/
@@ -14,7 +14,8 @@ MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM = 	Yes
 
-WANTLIB +=		rsync
+WANTLIB +=		rsync pthread ${MODPY_WANTLIB}
+
 LIB_DEPENDS += 		net/librsync
 
 MASTER_SITES = 		${MASTER_SITE_SAVANNAH:=rdiff-backup/}
