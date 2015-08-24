@@ -1,81 +1,89 @@
-@comment $OpenBSD: PLIST,v 1.26 2015/03/28 16:43:07 bluhm Exp $
-${P5ARCH}/
-${P5ARCH}/Net/
-${P5ARCH}/Net/DNS/
-${P5ARCH}/Net/DNS.pm
-${P5ARCH}/Net/DNS/Domain.pm
-${P5ARCH}/Net/DNS/DomainName.pm
-@comment ${P5ARCH}/Net/DNS/FAQ.pod
-${P5ARCH}/Net/DNS/Header.pm
-${P5ARCH}/Net/DNS/Mailbox.pm
-${P5ARCH}/Net/DNS/Nameserver.pm
-${P5ARCH}/Net/DNS/Packet.pm
-${P5ARCH}/Net/DNS/Parameters.pm
-${P5ARCH}/Net/DNS/Question.pm
-${P5ARCH}/Net/DNS/RR/
-${P5ARCH}/Net/DNS/RR.pm
-${P5ARCH}/Net/DNS/RR/A.pm
-${P5ARCH}/Net/DNS/RR/AAAA.pm
-${P5ARCH}/Net/DNS/RR/AFSDB.pm
-${P5ARCH}/Net/DNS/RR/APL.pm
-${P5ARCH}/Net/DNS/RR/CAA.pm
-${P5ARCH}/Net/DNS/RR/CERT.pm
-${P5ARCH}/Net/DNS/RR/CNAME.pm
-${P5ARCH}/Net/DNS/RR/CSYNC.pm
-${P5ARCH}/Net/DNS/RR/DHCID.pm
-${P5ARCH}/Net/DNS/RR/DNAME.pm
-${P5ARCH}/Net/DNS/RR/EUI48.pm
-${P5ARCH}/Net/DNS/RR/EUI64.pm
-${P5ARCH}/Net/DNS/RR/GPOS.pm
-${P5ARCH}/Net/DNS/RR/HINFO.pm
-${P5ARCH}/Net/DNS/RR/HIP.pm
-${P5ARCH}/Net/DNS/RR/IPSECKEY.pm
-${P5ARCH}/Net/DNS/RR/ISDN.pm
-${P5ARCH}/Net/DNS/RR/KX.pm
-${P5ARCH}/Net/DNS/RR/L32.pm
-${P5ARCH}/Net/DNS/RR/L64.pm
-${P5ARCH}/Net/DNS/RR/LOC.pm
-${P5ARCH}/Net/DNS/RR/LP.pm
-${P5ARCH}/Net/DNS/RR/MB.pm
-${P5ARCH}/Net/DNS/RR/MG.pm
-${P5ARCH}/Net/DNS/RR/MINFO.pm
-${P5ARCH}/Net/DNS/RR/MR.pm
-${P5ARCH}/Net/DNS/RR/MX.pm
-${P5ARCH}/Net/DNS/RR/NAPTR.pm
-${P5ARCH}/Net/DNS/RR/NID.pm
-${P5ARCH}/Net/DNS/RR/NS.pm
-${P5ARCH}/Net/DNS/RR/NULL.pm
-${P5ARCH}/Net/DNS/RR/OPENPGPKEY.pm
-${P5ARCH}/Net/DNS/RR/OPT.pm
-${P5ARCH}/Net/DNS/RR/PTR.pm
-${P5ARCH}/Net/DNS/RR/PX.pm
-${P5ARCH}/Net/DNS/RR/RP.pm
-${P5ARCH}/Net/DNS/RR/RT.pm
-${P5ARCH}/Net/DNS/RR/SOA.pm
-${P5ARCH}/Net/DNS/RR/SPF.pm
-${P5ARCH}/Net/DNS/RR/SRV.pm
-${P5ARCH}/Net/DNS/RR/SSHFP.pm
-${P5ARCH}/Net/DNS/RR/TKEY.pm
-${P5ARCH}/Net/DNS/RR/TLSA.pm
-${P5ARCH}/Net/DNS/RR/TSIG.pm
-${P5ARCH}/Net/DNS/RR/TXT.pm
-${P5ARCH}/Net/DNS/RR/X25.pm
-${P5ARCH}/Net/DNS/Resolver/
-${P5ARCH}/Net/DNS/Resolver.pm
-${P5ARCH}/Net/DNS/Resolver/Base.pm
-${P5ARCH}/Net/DNS/Resolver/MSWin32.pm
-${P5ARCH}/Net/DNS/Resolver/Recurse.pm
-${P5ARCH}/Net/DNS/Resolver/UNIX.pm
-${P5ARCH}/Net/DNS/Resolver/android.pm
-${P5ARCH}/Net/DNS/Resolver/cygwin.pm
-${P5ARCH}/Net/DNS/Resolver/os2.pm
-${P5ARCH}/Net/DNS/Text.pm
-${P5ARCH}/Net/DNS/Update.pm
-${P5ARCH}/Net/DNS/ZoneFile.pm
-${P5ARCH}/auto/
-${P5ARCH}/auto/Net/
-${P5ARCH}/auto/Net/DNS/
-${P5ARCH}/auto/Net/DNS/DNS.so
+@comment $OpenBSD: PLIST,v 1.27 2015/08/24 16:12:03 bluhm Exp $
+@conflict net/p5-Net-DNS-SEC-<1.01
+${P5SITE}/Net/
+${P5SITE}/Net/DNS/
+${P5SITE}/Net/DNS.pm
+${P5SITE}/Net/DNS/Domain.pm
+${P5SITE}/Net/DNS/DomainName.pm
+@comment ${P5SITE}/Net/DNS/FAQ.pod
+${P5SITE}/Net/DNS/Header.pm
+${P5SITE}/Net/DNS/Mailbox.pm
+${P5SITE}/Net/DNS/Nameserver.pm
+${P5SITE}/Net/DNS/Packet.pm
+${P5SITE}/Net/DNS/Parameters.pm
+${P5SITE}/Net/DNS/Question.pm
+${P5SITE}/Net/DNS/RR/
+${P5SITE}/Net/DNS/RR.pm
+${P5SITE}/Net/DNS/RR/A.pm
+${P5SITE}/Net/DNS/RR/AAAA.pm
+${P5SITE}/Net/DNS/RR/AFSDB.pm
+${P5SITE}/Net/DNS/RR/APL.pm
+${P5SITE}/Net/DNS/RR/CAA.pm
+${P5SITE}/Net/DNS/RR/CDNSKEY.pm
+${P5SITE}/Net/DNS/RR/CDS.pm
+${P5SITE}/Net/DNS/RR/CERT.pm
+${P5SITE}/Net/DNS/RR/CNAME.pm
+${P5SITE}/Net/DNS/RR/CSYNC.pm
+${P5SITE}/Net/DNS/RR/DHCID.pm
+${P5SITE}/Net/DNS/RR/DLV.pm
+${P5SITE}/Net/DNS/RR/DNAME.pm
+${P5SITE}/Net/DNS/RR/DNSKEY.pm
+${P5SITE}/Net/DNS/RR/DS.pm
+${P5SITE}/Net/DNS/RR/EUI48.pm
+${P5SITE}/Net/DNS/RR/EUI64.pm
+${P5SITE}/Net/DNS/RR/GPOS.pm
+${P5SITE}/Net/DNS/RR/HINFO.pm
+${P5SITE}/Net/DNS/RR/HIP.pm
+${P5SITE}/Net/DNS/RR/IPSECKEY.pm
+${P5SITE}/Net/DNS/RR/ISDN.pm
+${P5SITE}/Net/DNS/RR/KEY.pm
+${P5SITE}/Net/DNS/RR/KX.pm
+${P5SITE}/Net/DNS/RR/L32.pm
+${P5SITE}/Net/DNS/RR/L64.pm
+${P5SITE}/Net/DNS/RR/LOC.pm
+${P5SITE}/Net/DNS/RR/LP.pm
+${P5SITE}/Net/DNS/RR/MB.pm
+${P5SITE}/Net/DNS/RR/MG.pm
+${P5SITE}/Net/DNS/RR/MINFO.pm
+${P5SITE}/Net/DNS/RR/MR.pm
+${P5SITE}/Net/DNS/RR/MX.pm
+${P5SITE}/Net/DNS/RR/NAPTR.pm
+${P5SITE}/Net/DNS/RR/NID.pm
+${P5SITE}/Net/DNS/RR/NS.pm
+${P5SITE}/Net/DNS/RR/NSEC.pm
+${P5SITE}/Net/DNS/RR/NSEC3.pm
+${P5SITE}/Net/DNS/RR/NSEC3PARAM.pm
+${P5SITE}/Net/DNS/RR/NULL.pm
+${P5SITE}/Net/DNS/RR/OPENPGPKEY.pm
+${P5SITE}/Net/DNS/RR/OPT.pm
+${P5SITE}/Net/DNS/RR/PTR.pm
+${P5SITE}/Net/DNS/RR/PX.pm
+${P5SITE}/Net/DNS/RR/RP.pm
+${P5SITE}/Net/DNS/RR/RRSIG.pm
+${P5SITE}/Net/DNS/RR/RT.pm
+${P5SITE}/Net/DNS/RR/SIG.pm
+${P5SITE}/Net/DNS/RR/SOA.pm
+${P5SITE}/Net/DNS/RR/SPF.pm
+${P5SITE}/Net/DNS/RR/SRV.pm
+${P5SITE}/Net/DNS/RR/SSHFP.pm
+${P5SITE}/Net/DNS/RR/TKEY.pm
+${P5SITE}/Net/DNS/RR/TLSA.pm
+${P5SITE}/Net/DNS/RR/TSIG.pm
+${P5SITE}/Net/DNS/RR/TXT.pm
+${P5SITE}/Net/DNS/RR/URI.pm
+${P5SITE}/Net/DNS/RR/X25.pm
+${P5SITE}/Net/DNS/Resolver/
+${P5SITE}/Net/DNS/Resolver.pm
+${P5SITE}/Net/DNS/Resolver/Base.pm
+${P5SITE}/Net/DNS/Resolver/MSWin32.pm
+${P5SITE}/Net/DNS/Resolver/Recurse.pm
+${P5SITE}/Net/DNS/Resolver/UNIX.pm
+${P5SITE}/Net/DNS/Resolver/android.pm
+${P5SITE}/Net/DNS/Resolver/cygwin.pm
+${P5SITE}/Net/DNS/Resolver/os2.pm
+${P5SITE}/Net/DNS/Text.pm
+${P5SITE}/Net/DNS/Update.pm
+${P5SITE}/Net/DNS/ZoneFile.pm
 @man man/man3p/Net::DNS.3p
 @man man/man3p/Net::DNS::Domain.3p
 @man man/man3p/Net::DNS::DomainName.3p
@@ -92,11 +100,16 @@ ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS::RR::AFSDB.3p
 @man man/man3p/Net::DNS::RR::APL.3p
 @man man/man3p/Net::DNS::RR::CAA.3p
+@man man/man3p/Net::DNS::RR::CDNSKEY.3p
+@man man/man3p/Net::DNS::RR::CDS.3p
 @man man/man3p/Net::DNS::RR::CERT.3p
 @man man/man3p/Net::DNS::RR::CNAME.3p
 @man man/man3p/Net::DNS::RR::CSYNC.3p
 @man man/man3p/Net::DNS::RR::DHCID.3p
+@man man/man3p/Net::DNS::RR::DLV.3p
 @man man/man3p/Net::DNS::RR::DNAME.3p
+@man man/man3p/Net::DNS::RR::DNSKEY.3p
+@man man/man3p/Net::DNS::RR::DS.3p
 @man man/man3p/Net::DNS::RR::EUI48.3p
 @man man/man3p/Net::DNS::RR::EUI64.3p
 @man man/man3p/Net::DNS::RR::GPOS.3p
@@ -104,6 +117,7 @@ ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS::RR::HIP.3p
 @man man/man3p/Net::DNS::RR::IPSECKEY.3p
 @man man/man3p/Net::DNS::RR::ISDN.3p
+@man man/man3p/Net::DNS::RR::KEY.3p
 @man man/man3p/Net::DNS::RR::KX.3p
 @man man/man3p/Net::DNS::RR::L32.3p
 @man man/man3p/Net::DNS::RR::L64.3p
@@ -117,13 +131,18 @@ ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS::RR::NAPTR.3p
 @man man/man3p/Net::DNS::RR::NID.3p
 @man man/man3p/Net::DNS::RR::NS.3p
+@man man/man3p/Net::DNS::RR::NSEC.3p
+@man man/man3p/Net::DNS::RR::NSEC3.3p
+@man man/man3p/Net::DNS::RR::NSEC3PARAM.3p
 @man man/man3p/Net::DNS::RR::NULL.3p
 @man man/man3p/Net::DNS::RR::OPENPGPKEY.3p
 @man man/man3p/Net::DNS::RR::OPT.3p
 @man man/man3p/Net::DNS::RR::PTR.3p
 @man man/man3p/Net::DNS::RR::PX.3p
 @man man/man3p/Net::DNS::RR::RP.3p
+@man man/man3p/Net::DNS::RR::RRSIG.3p
 @man man/man3p/Net::DNS::RR::RT.3p
+@man man/man3p/Net::DNS::RR::SIG.3p
 @man man/man3p/Net::DNS::RR::SOA.3p
 @man man/man3p/Net::DNS::RR::SPF.3p
 @man man/man3p/Net::DNS::RR::SRV.3p
@@ -132,6 +151,7 @@ ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS::RR::TLSA.3p
 @man man/man3p/Net::DNS::RR::TSIG.3p
 @man man/man3p/Net::DNS::RR::TXT.3p
+@man man/man3p/Net::DNS::RR::URI.3p
 @man man/man3p/Net::DNS::RR::X25.3p
 @man man/man3p/Net::DNS::Resolver.3p
 @man man/man3p/Net::DNS::Resolver::Base.3p

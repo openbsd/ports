@@ -1,20 +1,4 @@
-This module implements RFC 2545, RFC 2931 and
-draft-ietf-dnsext-delegation-signer-09.txt.
-
-The extensions provide the following additional features on top of
-the Net::DNS module:
-
- - DS, SIG, KEY and NXT records. These are all implemented as RR
-   objects. The cryptography has been implemented using Crypt::OpenSSL::DSA
-   and Crypt::OpenSSL::RSA.
-
-The reason for not making these RRs a part of the regular Net::DNS
-module is that they rely on crypto modules which are not portable.
-
-In addition to the RR classes, Net::DNS::Keyset provides an abstract
-interface for working with keysets. Keysets are administrative files
-used by the BIND tools for key maintenance tasks.
-
-The DNSSEC protocol is a moving target. Follow the IETF DNSEXT
-working group if you are interested in the protocol development.
-We try to keep the code in sync with the development.
+The Net::DNS::SEC suite provides additional packages required to
+support DNSSEC as described in RFC4033, RFC4034, RFC4035 and
+subsequent related documents.  Net::DNS::SEC is installed as an
+extension to an existing Net::DNS installation.

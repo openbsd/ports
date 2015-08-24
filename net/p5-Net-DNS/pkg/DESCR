@@ -1,4 +1,4 @@
-Net::DNS is a DNS resolver implemented in Perl.  It allows the
-programmer to perform nearly any type of DNS query from a Perl
-script.  For details and examples, please read the Net::DNS manual
-page.
+Net::DNS is a collection of Perl modules that act as a Domain Name
+System (DNS) resolver.  It allows the programmer to perform DNS
+queries that are beyond the capabilities of "gethostbyname" and
+"gethostbyaddr".
