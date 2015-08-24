@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2015/08/24 16:12:03 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.28 2015/08/24 16:29:55 bluhm Exp $
 @conflict net/p5-Net-DNS-SEC-<1.01
 ${P5SITE}/Net/
 ${P5SITE}/Net/DNS/
@@ -164,3 +164,13 @@ ${P5SITE}/Net/DNS/ZoneFile.pm
 @man man/man3p/Net::DNS::Text.3p
 @man man/man3p/Net::DNS::Update.3p
 @man man/man3p/Net::DNS::ZoneFile.3p
+share/examples/p5-Net-DNS/
+share/examples/p5-Net-DNS/README
+share/examples/p5-Net-DNS/axfr
+share/examples/p5-Net-DNS/check_soa
+share/examples/p5-Net-DNS/check_zone
+share/examples/p5-Net-DNS/example_recurse.pl
+share/examples/p5-Net-DNS/mresolv
+share/examples/p5-Net-DNS/mx
+share/examples/p5-Net-DNS/perldig
+share/examples/p5-Net-DNS/trace_dns.pl

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2015/08/24 16:12:03 bluhm Exp $
+# $OpenBSD: Makefile,v 1.58 2015/08/24 16:29:55 bluhm Exp $
 
 COMMENT =		perl interface to the domain name system
 
 DISTNAME =		Net-DNS-1.01
+REVISION =		1
 
 CATEGORIES =		net
 
@@ -25,5 +26,8 @@ TEST_DEPENDS =		devel/p5-Test-Pod>=1.45 \
 			security/p5-Digest-BubbleBabble>=0.01
 
 CONFIGURE_ARGS =	--noonline-tests
+
+MODCPAN_EXAMPLES =	Yes
+MODCPAN_EXAMPLES_DIST =	demo
 
 .include <bsd.port.mk>
