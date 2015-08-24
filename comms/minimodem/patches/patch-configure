@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2014/12/20 19:31:44 bcallah Exp $
+$OpenBSD: patch-configure,v 1.2 2015/08/24 23:02:31 bcallah Exp $
 
 configure is stupid. Force it to do the right thing.
 
---- configure.orig	Mon Nov 24 11:35:31 2014
-+++ configure	Mon Dec 15 18:00:26 2014
-@@ -3571,7 +3571,7 @@ fi
+--- configure.orig	Mon Aug 24 16:56:13 2015
++++ configure	Mon Aug 24 18:24:30 2015
+@@ -3572,7 +3572,7 @@ fi
  
  
  #   fftw3f
@@ -13,7 +13,7 @@ configure is stupid. Force it to do the right thing.
  
  #   ALSA
  
-@@ -3596,20 +3596,8 @@ _ACEOF
+@@ -3597,20 +3597,8 @@ _ACEOF
  
  #   pulseaudio
  
@@ -35,7 +35,7 @@ configure is stupid. Force it to do the right thing.
  cat >>confdefs.h <<_ACEOF
  #define USE_PULSEAUDIO $use_pulseaudio
  _ACEOF
-@@ -3617,20 +3605,8 @@ _ACEOF
+@@ -3618,20 +3606,8 @@ _ACEOF
  
  #   sndfile
  
@@ -57,7 +57,7 @@ configure is stupid. Force it to do the right thing.
  cat >>confdefs.h <<_ACEOF
  #define USE_SNDFILE $use_sndfile
  _ACEOF
-@@ -3813,7 +3789,7 @@ if test -n "$DEPS_CFLAGS"; then
+@@ -3814,7 +3790,7 @@ if test -n "$DEPS_CFLAGS"; then
    pkg_cv_DEPS_CFLAGS=`$PKG_CONFIG --cflags " $deps_packages " 2>/dev/null`
  		      test "x$?" != "x0" && pkg_failed=yes
  else
@@ -66,7 +66,7 @@ configure is stupid. Force it to do the right thing.
  fi
   else
      pkg_failed=untried
-@@ -3830,7 +3806,7 @@ if test -n "$DEPS_LIBS"; then
+@@ -3831,7 +3807,7 @@ if test -n "$DEPS_LIBS"; then
    pkg_cv_DEPS_LIBS=`$PKG_CONFIG --libs " $deps_packages " 2>/dev/null`
  		      test "x$?" != "x0" && pkg_failed=yes
  else
