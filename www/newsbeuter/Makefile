@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2014/12/31 08:42:27 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2015/08/24 11:31:07 jasper Exp $
+
+BROKEN-hppa =		undefined reference to `__sync_val_compare_and_swap_4' in libjson-c
+BROKEN-mips64 =		undefined reference to `__sync_val_compare_and_swap_4' in libjson-c
 
 COMMENT =		open-source RSS/Atom feed reader for text terminals
 DISTNAME =		newsbeuter-2.7
 CATEGORIES =		www
-BROKEN-hppa =	undefined reference to `__sync_val_compare_and_swap_4' in libjson-c
 
 HOMEPAGE =		http://newsbeuter.org/
 
