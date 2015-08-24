@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/11 23:49:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2015/08/24 12:05:53 benoit Exp $
 
-COMMENT= 	override subroutines in a module for unit testing
+COMMENT =	override subroutines in a module for unit testing
 
-MODULES=	cpan
-DISTNAME=	Test-MockModule-0.05
-REVISION=	2
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Test-MockModule-0.10
+CATEGORIES =	devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
+CONFIGURE_STYLE =	modbuild
+
+RUN_DEPENDS =		devel/p5-SUPER
+ 
 .include <bsd.port.mk>
