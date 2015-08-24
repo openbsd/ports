@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2015/06/11 14:57:30 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2015/08/24 10:44:26 sthen Exp $
 
 MULTI_PACKAGES=	-main
 # -ntlm may come back with samba 4
@@ -15,7 +15,8 @@ PKGNAME-ldap=	squid-ldap-$V
 CATEGORIES=	www
 
 # bzr repository at https://code.launchpad.net/squid
-MASTER_SITES=	${HOMEPAGE}Versions/v${V:C/^([0-9]).*/\1/}/${V:C/([0-9.]{3}).*/\1/}/
+MASTER_SITES=	${HOMEPAGE}Versions/v${V:C/^([0-9]).*/\1/}/${V:C/([0-9.]{3}).*/\1/}/ \
+		http://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:C/([0-9.]{3}).*/\1/}/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
