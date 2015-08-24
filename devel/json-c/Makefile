@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/22 11:31:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/08/24 18:35:39 jca Exp $
+
+BROKEN-hppa=		undefined reference to __sync_val_compare_and_swap_4
+BROKEN-mips64=		undefined reference to __sync_val_compare_and_swap_4
 
 COMMENT=		JSON implementation in C
 
