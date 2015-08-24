@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2015/05/03 19:44:48 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/08/24 23:01:53 bcallah Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -196,6 +196,7 @@ lib/seed7/lib/utf16.s7i
 lib/seed7/lib/utf8.s7i
 lib/seed7/lib/vecfont10.s7i
 lib/seed7/lib/vecfont18.s7i
+lib/seed7/lib/vector3d.s7i
 lib/seed7/lib/vectorfont.s7i
 lib/seed7/lib/window.s7i
 lib/seed7/lib/wrinum.s7i
@@ -297,6 +298,7 @@ share/examples/seed7/printpi1.sd7
 share/examples/seed7/printpi2.sd7
 share/examples/seed7/printpi3.sd7
 share/examples/seed7/rand.sd7
+share/examples/seed7/raytrace.sd7
 share/examples/seed7/red.dna
 share/examples/seed7/rever.sd7
 share/examples/seed7/roman.sd7
