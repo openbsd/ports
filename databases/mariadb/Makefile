@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/07/17 17:31:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2015/08/24 10:21:10 giovanni Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,13 +11,11 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.0.20
+VERSION=	10.0.21
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests= 	mariadb-tests-${VERSION}
-REVISION-main=	0
-REVISION-server=0
 EPOCH=		0
 CATEGORIES=	databases
 MASTER_SITES=	http://mariadb.mirror.iweb.com//${DISTNAME}/source/ \
