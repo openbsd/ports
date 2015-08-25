@@ -1,175 +1,252 @@
-# $OpenBSD: Makefile,v 1.201 2015/07/07 14:43:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.202 2015/08/25 11:04:39 jca Exp $
 
-SHARED_ONLY=		Yes
+SHARED_ONLY =		Yes
+VERSION =		4.1.19
+DISTNAME =		samba-${VERSION}
+DOCSVERSION =		v3-5-test-4c5a1b6b
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			samba-docs-${DOCSVERSION}.tar.bz2:0
 
-COMMENT-main=		SMB and CIFS client and server for UNIX
-COMMENT-docs=		additional documentation and examples for Samba
+COMMENT-main =		SMB and CIFS client and server for UNIX
+COMMENT-ldb =		LDAP-like embedded database
+COMMENT-tevent =	event system based on talloc
+COMMENT-util =		common libraries for Samba suite
+COMMENT-docs =		additional documentation and examples for Samba
 
-DISTNAME=		samba-3.6.15
-PKGNAME-main=		${DISTNAME}
-FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
-FULLPKGPATH-docs=	net/samba,-docs
-REVISION-main=		15
-REVISION-docs=		1
+PKGNAME-main =		${PKGNAME}
+PKGNAME-ldb =		ldb-${LDB_V}
+PKGNAME-tevent =	tevent-${TEVENT_V}
+PKGNAME-util =		samba-util-${VERSION}
+PKGNAME-docs =		samba-docs-${VERSION}
 
-SHARED_LIBS=		smbclient	3.0 \
-			smbsharemodes	1.0 \
-			netapi		1.0 \
-			wbclient	1.0
+REVISION-main =		4
+REVISION-ldb =		4
+REVISION-tevent =	2
+REVISION-util =		2
+REVISION-docs =		1
 
-CATEGORIES=		net
+PKG_ARCH-docs =		*
 
-HOMEPAGE=		http://www.samba.org/
+LDB_V =			1.1.17
+TEVENT_V =		0.9.18
 
-MAINTAINER=		Ian McWilliam <kaosagnt@tpg.com.au>
+SHARED_LIBS =		asn1-samba4		0.0 \
+			dcerpc			0.0 \
+			dcerpc-atsvc		0.0 \
+			dcerpc-binding		0.0 \
+			dcerpc-samr		0.0 \
+			dcerpc-server		0.0 \
+			gensec			0.0 \
+			gssapi-samba4		0.0 \
+			hcrypto-samba4		0.0 \
+			hdb-samba4		0.0 \
+			heimbase-samba4		0.0 \
+			heimntlm-samba4		0.0 \
+			hx509-samba4		0.0 \
+			kdc-samba4		0.0 \
+			krb5-samba4		0.0 \
+			ldb			0.0 \
+			mit_samba		0.0 \
+			ndr			0.0 \
+			ndr-krb5pac		0.0 \
+			ndr-nbt			0.0 \
+			ndr-standard		0.0 \
+			netapi			2.0 \
+			ntdb			0.0 \
+			pdb			0.0 \
+			pyldb-util		0.0 \
+			registry		0.0 \
+			roken-samba4		0.0 \
+			samba-credentials	0.0 \
+			samba-hostconfig	0.0 \
+			samba-policy		0.0 \
+			samba-util		0.0 \
+			samdb			0.0 \
+			smbclient		4.0 \
+			smbclient-raw		0.0 \
+			smbconf			0.0 \
+			smbldap			0.0 \
+			smbsharemodes		2.0 \
+			tevent			0.0 \
+			tevent-util		0.0 \
+			torture			0.0 \
+			wbclient		2.0 \
+			wind-samba4		0.0 \
+			winbind_krb5_locator	0.0 \
+			nss_wrapper		0.0 \
+			socket_wrapper		0.0 \
+			uid_wrapper		0.0 \
+			replace			0.0 \
+			util_setid		0.0
 
-# GPLv3+
-PERMIT_PACKAGE_CDROM=		Yes
+CATEGORIES =		net sysutils security
 
-WANTLIB += c cups execinfo iniparser ncurses popt pthread readline talloc
-WANTLIB += tdb z
+HOMEPAGE =		https://www.samba.org/
 
-MASTER_SITES=	http://ftp.samba.org/pub/samba/stable/ \
-		http://ftp.samba.org/pub/samba/old-versions/
+#MAINTAINER =		???
 
-MODULES=	converters/libiconv
+# GPLv3, LGPLv3
+PERMIT_PACKAGE_CDROM =	Yes
 
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
-LIB_DEPENDS=	databases/tdb>=1.2.7 \
-		devel/iniparser \
-		devel/libexecinfo \
-		devel/libtalloc \
-		devel/popt \
-		print/cups,-libs
+UTIL_LIBS =		nss_wrapper socket_wrapper uid_wrapper replace
+UTIL_LIBS +=		util_setid
+# TODO WAF scripts link to those without version info, but those are
+# not "plugins" or such.
+UTIL_WANTLIB =		${UTIL_LIBS:S@^@lib/samba/@}
 
-MAKE_FLAGS+=	PASSWD_PROGRAM="/usr/bin/passwd" \
-		LIBSMBCLIENT_SHARED_TARGET_SONAME="bin/libsmbclient.so.${LIBsmbclient_VERSION}" \
-		LIBSMBSHAREMODES_SHARED_TARGET_SONAME="bin/libsmbsharemodes.so.${LIBsmbsharemodes_VERSION}" \
-		LIBNETAPI_SHARED_TARGET_SONAME="bin/libnetapi.so.${LIBnetapi_VERSION}" \
-		LIBADDNS_SHARED_TARGET_SONAME="bin/libaddns.so.${LIBaddns_VERSION}" \
-		LIBWBCLIENT_SHARED_TARGET_SONAME="bin/libwbclient.so.${LIBwbclient_VERSION}"
+WANTLIB-common =	m pthread util ${MODPY_WANTLIB}
 
-CONFDIR=		${SYSCONFDIR}/samba
-SAMBA_LOGDIR=		/var/log/samba
-SUBST_VARS=		CONFDIR
+WANTLIB-main =		${WANTLIB-common} ${MODGETTEXT_WANTLIB}
+WANTLIB-main +=		c com_err ncurses z
+WANTLIB-main +=		avahi-client avahi-common cups execinfo fam iniparser
+WANTLIB-main +=		lber ldap pam popt sasl2 gcrypt gnutls
+WANTLIB-main +=		ldb pyldb-util pytalloc-util tdb talloc tevent
+WANTLIB-main +=		${UTIL_WANTLIB}
 
-USE_GMAKE=		Yes
-USE_GROFF=		Yes
-CONFIGURE_STYLE=	gnu
-AUTOCONF_VERSION=	2.69
+WANTLIB-ldb =		${WANTLIB-common}
+WANTLIB-ldb +=		c popt tdb talloc tevent
+WANTLIB-ldb +=		${UTIL_WANTLIB}
 
-CONFIGURE_ARGS=		--disable-fam \
-			--without-ads \
-			--without-pam \
-			--libdir="${PREFIX}/lib/samba" \
-			--sbindir="${PREFIX}/libexec" \
-			--with-configdir="${CONFDIR}" \
-			--with-modulesdir="${PREFIX}/lib/samba" \
-			--with-lockdir="/var/spool/samba" \
-			--with-piddir="/var/run" \
-			--with-logfilebase="${SAMBA_LOGDIR}" \
-			--with-privatedir="${CONFDIR}" \
-			--with-libsmbclient \
-			--with-swatdir="${PREFIX}/share/swat" \
-			--with-syslog \
-			--with-utmp \
-			--with-winbind \
-			--with-wbclient \
-			--enable-avahi=no \
-			--enable-external-libtdb=yes \
-			--enable-external-libtalloc=yes \
-			--enable-pthreadpool
+WANTLIB-tevent =	${WANTLIB-common}
+WANTLIB-tevent +=	talloc
+WANTLIB-tevent +=	${UTIL_WANTLIB}
 
-# Uncomment to enable debugging symbols.
-#CONFIGURE_ARGS+=	--enable-debug
+WANTLIB-util =		${WANTLIB-common}
+WANTLIB-util +=		pytalloc-util talloc
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+WANTLIB-docs =
 
-FLAVORS=		ldap
-FLAVOR?=
+MASTER_SITES =		https://download.samba.org/pub/samba/stable/ \
+			https://download.samba.org/pub/samba/old-versions/
 
-MULTI_PACKAGES=		-main -docs
+MASTER_SITES0 =		https://www.samba.org/~samba-bugs/docs/v3-5-test/
 
-.if ${FLAVOR:Mldap}
-LIB_DEPENDS+=	databases/openldap
-WANTLIB +=	ldap lber
-.else
-CONFIGURE_ARGS+=	--without-ldap
-.endif
+MULTI_PACKAGES =	-main -ldb -tevent -util -docs
 
-PKG_ARCH-docs=		*
-LIB_DEPENDS-docs=
-WANTLIB-docs=
-RUN_DEPENDS-docs=
+MODULES =		devel/gettext lang/python perl
 
-# REGRESSION testing is currently borked. Builds, runs
-# tests fail. Fix one day.
-NO_TEST=		Yes
-#TEST_TARGET=	test
-#.ifmake test
-#CONFIGURE_ARGS+=	--enable-socket-wrapper \
-#			--enable-nss-wrapper
-#.endif
+BUILD_DEPENDS =		devel/p5-Parse-Yapp>=1.0.5 \
+			net/py-dnspython \
+			textproc/docbook-xsl \
+			textproc/libxslt
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/source3
+RUN_DEPENDS-main =	net/py-dnspython
 
-SAMBA_DOCS=	${WRKDIST}/README \
-		${WRKDIST}/docs/history \
-		${WRKDIST}/docs/registry/*.reg
+RUN_DEPENDS-docs =
 
-SAMPLE_CONFIG=	${PREFIX}/share/examples/samba/smb.conf.default
+LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
+			${BUILD_PKGPATH},-util>=${VERSION} \
+			${MODGETTEXT_LIB_DEPENDS} \
+			databases/openldap \
+			databases/tdb>=1.2.12 \
+			devel/iniparser \
+			devel/libexecinfo \
+			devel/libtalloc>=2.1.2 \
+			net/avahi \
+			print/cups,-libs \
+			security/cyrus-sasl2 \
+			security/gnutls \
+			security/libgcrypt \
+			security/openpam \
+			sysutils/e2fsprogs \
+			sysutils/gamin
 
-SAMBA_MANPAGES= ${WRKDIST}/docs/manpages
+LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tevent>=${TEVENT_V} \
+			${BUILD_PKGPATH},-util>=${VERSION} \
+			databases/tdb>=1.2.12 \
+			devel/libtalloc>=2.1.2 \
+			devel/popt
+
+LIB_DEPENDS-tevent =	${BUILD_PKGPATH},-util>=${VERSION} \
+			devel/libtalloc>=2.1.2
+
+LIB_DEPENDS-util =	${MODPY_LIB_DEPENDS} \
+			devel/libtalloc>=2.1.2
+
+LIB_DEPENDS-docs =
+
+CONFIGURE_STYLE =	simple
+
+CONFIGURE_ARGS =	--enable-fhs \
+			--abi-check-disable \
+			--bundled-libraries="!crypto,ldb,ntdb,!talloc,!tdb,tevent" \
+			--prefix=${PREFIX} \
+			--destdir=${WRKINST} \
+			--docdir=${PREFIX}/share/doc \
+			--mandir=${PREFIX}/man \
+			--localedir=${PREFIX}/share/locale \
+			--localstatedir=${BASELOCALSTATEDIR} \
+			--private-libraries="NONE" \
+			--sharedstatedir=${VARBASE} \
+			--sysconfdir=${SYSCONFDIR} \
+			--with-configdir=${SYSCONFDIR}/samba \
+			--with-statedir=${VARBASE}/samba \
+			--with-privatedir=${VARBASE}/samba/private \
+			--with-lockdir=${VARBASE}/run/samba \
+			--with-privileged-socket-dir=${VARBASE}/samba \
+			--without-pie \
+			--enable-selftest \
+			--pedantic \
+			--without-regedit
+
+# XXX Remember to remove --enable-developer, it prints passwords in logs.
+#CONFIGURE_ARGS +=	--enable-developer
+
+WAF =			${WRKSRC}/buildtools/bin/waf
+WAF_ARGS =		-v -j ${MAKE_JOBS}
+
+CONFIGURE_ENV =		LC_ALL=en_US.UTF-8
+
+MAKE_ENV =		LC_ALL=en_US.UTF-8 \
+			PYTHON=${MODPY_BIN} \
+			WAF_ARGS="${WAF_ARGS}"
+
+.for _l _v in ${SHARED_LIBS}
+MAKE_ENV +=		LIB${_l:S/-/_/g}_VERSION=${_v}
+.endfor
+
+SAMBA_CONFIG =		${PREFIX}/share/examples/samba/smb.conf.default
+SAMBA_LOGDIR =		${VARBASE}/log/samba
+
+SUBST_VARS =		SAMBA_LOGDIR
 
 post-patch:
-	@cd ${WRKSRC}; \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    ./autogen.sh
+	find ${WRKSRC} -type f | xargs ${MODPY_BIN_ADJ}
+	${SUBST_CMD} ${WRKSRC}/lib/testtools/testtools/tests/test_compat.py
 
-pre-configure:
-	@${SUBST_CMD} ${SAMBA_MANPAGES}/swat.8
+# Avoid bogus -L/usr/local/lib at the start of linker options
+post-configure:
+	perl -pi.ldflags -e 's/^LINKFLAGS_PYEMBED.*/LINKFLAGS_PYEMBED = []/' \
+	    ${WRKBUILD}/bin/c4che/default.cache.py
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/samba/pdf
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/samba/htmldocs
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/samba
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
-	${INSTALL_DATA} ${WRKSRC}/pkgconfig/*.pc \
-		${PREFIX}/lib/pkgconfig
-	@cp -R ${WRKDIST}/examples/* ${PREFIX}/share/examples/samba
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/samba
-	@find ${PREFIX}/share/examples/samba -type f | \
-	    xargs chmod ${SHAREMODE}
-	@find ${PREFIX}/share/examples/samba -type d | \
-	    xargs chmod ${DIRMODE}
-	@for i in ${SAMBA_DOCS}; do \
-	 ${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba ;	\
-	done
-	@for i in ${WRKDIST}/docs/*.pdf ; do \
-	 ${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba/pdf ; \
-	done
-	@for i in ${WRKDIST}/docs/htmldocs/* ; do \
-	 if [ -f $$i ]; then \
-	  ${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba/htmldocs ;\
-	 fi \
-	done
-	@sed -e 's:/usr/spool/samba:/var/spool/samba:g' \
-	 -e 's:/usr/local/samba/var/log:${SAMBA_LOGDIR}/smbd:g' \
-	 -e 's:MYGROUP:WORKGROUP:' \
-	 ${WRKDIST}/examples/smb.conf.default > ${SAMPLE_CONFIG}
-	${INSTALL_SCRIPT} ${WRKSRC}/script/mksmbpasswd.sh \
-	 ${PREFIX}/bin/mksmbpasswd
-	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/smbpasswd
-	@ln -s samba/libsmbclient.so.${LIBsmbclient_VERSION} \
-	 ${PREFIX}/lib/libsmbclient.so.${LIBsmbclient_VERSION}
-	@ln -s samba/libsmbsharemodes.so.${LIBsmbsharemodes_VERSION} \
-	 ${PREFIX}/lib/libsmbsharemodes.so.${LIBsmbsharemodes_VERSION}
-	@ln -s samba/libnetapi.so.${LIBnetapi_VERSION} \
-	 ${PREFIX}/lib/libnetapi.so.${LIBnetapi_VERSION}
-	@ln -s samba/libwbclient.so.${LIBwbclient_VERSION} \
-	 ${PREFIX}/lib/libwbclient.so.${LIBwbclient_VERSION}
-	@rmdir ${WRKINST}${SYSCONFDIR}/samba
-	@rmdir ${WRKINST}/var/spool/samba
+	# removing extra files
+	find ${PREFIX} \
+	    -name '*${PATCHORIG}' -or \
+	    -name '*.beforesubst' -or \
+	    -name '*.deconforig' | \
+		xargs -rt rm --
+	# fix path to perl modules
+	mv ${PREFIX}/share/perl5/* ${PREFIX}/${P5SITE}
+	# precompiling Python modules
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
+	${MODPY_BIN} -O ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
+	# creating library symlinks
+.for _l in ${UTIL_LIBS}
+	cd ${PREFIX}/lib && ln -fs samba/lib${_l}.so.${LIB${_l}_VERSION}
+.endfor
+	# install samba docs and sample config
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/samba
+	${INSTALL_DATA} ${WRKDIR}/samba-docs-${DOCSVERSION}/*.pdf \
+		${PREFIX}/share/doc/samba
+	cp -R ${WRKDIST}/examples/* ${PREFIX}/share/examples/samba
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/samba
+	find ${PREFIX}/share/examples/samba -type f | xargs chmod ${SHAREMODE}
+	find ${PREFIX}/share/examples/samba -type d | xargs chmod ${DIRMODE}
+	sed -e 's:/usr/spool/samba:/var/spool/samba:g' \
+	     -e 's:/usr/local/samba/var/log:${SAMBA_LOGDIR}/smbd:g' \
+	     -e 's:MYGROUP:WORKGROUP:' \
+	     ${WRKDIST}/examples/smb.conf.default > ${SAMBA_CONFIG}.tmp && \
+	    mv ${SAMBA_CONFIG}.tmp ${SAMBA_CONFIG}
 
 .include <bsd.port.mk>

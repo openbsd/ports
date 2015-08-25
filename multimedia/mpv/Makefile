@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/05/30 07:27:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/08/25 11:04:38 jca Exp $
 
 ONLY_FOR_ARCHS =	alpha amd64 i386 powerpc sparc64
 
@@ -46,7 +46,7 @@ LIB_DEPENDS =		audio/libcdio \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-CFLAGS +=		-I. -I.. -I${LOCALBASE}/include
+CFLAGS +=		-I. -I.. -I${LOCALBASE}/include `pkg-config --cflags smbclient`
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	old-configure

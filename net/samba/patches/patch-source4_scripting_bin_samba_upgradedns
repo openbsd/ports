@@ -1,0 +1,15 @@
+$OpenBSD: patch-source4_scripting_bin_samba_upgradedns,v 1.1 2015/08/25 11:04:39 jca Exp $
+
+- net/isc-bind group name
+
+--- source4/scripting/bin/samba_upgradedns.orig	Wed Jul 15 15:24:50 2015
++++ source4/scripting/bin/samba_upgradedns	Wed Jul 15 15:25:05 2015
+@@ -75,7 +75,7 @@ __docformat__ = 'restructuredText'
+ def find_bind_gid():
+     """Find system group id for bind9
+     """
+-    for name in ["bind", "named"]:
++    for name in ["_bind"]:
+         try:
+             return grp.getgrnam(name)[2]
+         except KeyError:

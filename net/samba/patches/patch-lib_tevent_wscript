@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_tevent_wscript,v 1.1 2015/08/25 11:04:39 jca Exp $
+Force building standalone library (e.g., put headers in appropriate place).
+--- lib/tevent/wscript.orig	Mon May 27 20:46:20 2013
++++ lib/tevent/wscript	Mon May 27 20:46:32 2013
+@@ -33,6 +33,7 @@ def configure(conf):
+     conf.RECURSE('lib/talloc')
+ 
+     conf.env.standalone_tevent = conf.IN_LAUNCH_DIR()
++    conf.env.standalone_tevent = True
+ 
+     if not conf.env.standalone_tevent:
+         if conf.CHECK_BUNDLED_SYSTEM_PKG('tevent', minversion=VERSION,

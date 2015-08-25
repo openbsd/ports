@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.921 2015/08/24 20:47:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.922 2015/08/25 11:04:38 jca Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -569,7 +569,6 @@
      SUBDIR += ruby-stomp
      SUBDIR += ruby-xmpp4r
      SUBDIR += samba
-     SUBDIR += samba,ldap
      SUBDIR += scamper
      SUBDIR += scapy
      SUBDIR += seafile

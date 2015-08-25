@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_ntdb_wscript,v 1.1 2015/08/25 11:04:39 jca Exp $
+Force building standalone library (e.g., put headers in apporiate place).
+--- lib/ntdb/wscript.orig	Thu Dec  5 10:16:48 2013
++++ lib/ntdb/wscript	Wed Jun 17 13:18:09 2015
+@@ -102,6 +102,7 @@ def configure(conf):
+                                    'test/tap-interface.c']
+ 
+     conf.env.standalone_ntdb = conf.IN_LAUNCH_DIR()
++    conf.env.standalone_ntdb = True
+     conf.env.disable_python = getattr(Options.options, 'disable_python', False)
+ 
+     if not conf.env.standalone_ntdb:

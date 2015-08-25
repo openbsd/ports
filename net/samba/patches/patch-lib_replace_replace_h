@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_replace_replace_h,v 1.1 2015/08/25 11:04:39 jca Exp $
+Avoid extra warnings.
+XXX Probably there should be added another configure time check that <stdlib.h> is enough.
+--- lib/replace/replace.h.orig	Mon Sep  8 11:26:14 2014
++++ lib/replace/replace.h	Wed Jun 17 13:18:09 2015
+@@ -56,10 +56,6 @@
+ #undef HAVE_INTTYPES_H
+ #endif
+ 
+-#ifdef HAVE_MALLOC_H
+-#include <malloc.h>
+-#endif
+-
+ #ifndef __PRI64_PREFIX
+ # if __WORDSIZE == 64 && ! defined __APPLE__
+ #  define __PRI64_PREFIX	"l"

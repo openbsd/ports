@@ -1,0 +1,14 @@
+This package includes the following Samba4 components:
+
+nss_wrapper:
+    Wrapper for system NSS library.
+
+libreplace:
+    Wrapper for some other required system components. Contains
+    implementation of routines not found in system.
+
+uid_wrapper:
+    TODO
+
+util_setid:
+    TODO

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2015/08/25 06:42:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.139 2015/08/25 11:04:38 jca Exp $
 
 SHARED_ONLY=		Yes
 
@@ -14,6 +14,8 @@ PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
+
+REVISION-smb=		0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -37,7 +39,7 @@ WANTLIB-main += soup-2.4 sqlite3 gthread-2.0 xcb xcb-render
 WANTLIB-main += gcrypt gpg-error secret-1 epoxy lzo2
 
 WANTLIB-smb += ${WANTLIB}
-WANTLIB-smb += smbclient execinfo talloc tdb wbclient
+WANTLIB-smb += smbclient
 WANTLIB-smb += gcrypt gpg-error secret-1
 
 WANTLIB-goa += ${WANTLIB}
@@ -47,6 +49,10 @@ WANTLIB-nfs += ${WANTLIB}
 WANTLIB-nfs += gcrypt gpg-error nfs secret-1
 
 MODGNOME_TOOLS=		docbook
+
+# XXX base libtool errors out since it can't find libs in local/lib/samba
+# brought in by libsmbclient
+USE_LIBTOOL=		gnu
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archivers/libarchive \

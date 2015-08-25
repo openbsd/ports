@@ -1,17 +1,3 @@
 The Samba suite is a set of programs that implement a server for the
-Windows file- and printer-sharing protocols (SMB/CIFS).
-
-Samba allows Windows clients to use filesystem space and printers of
-your OpenBSD system as if they were local drives or printers.
-
-While configuration for larger sites can be quite complex, the default
-installation of this package allows for immediate use of your OpenBSD
-machine as a server for Windows clients.
-
-Available flavors:
-
-ldap	Enable LDAP support
-
-Available subpackage:
-
-docs	Documentation in HTML and PDF (man pages are part of the base package)
+Windows file- and printer-sharing protocols (SMB/CIFS) and Active
+Directory compatible Domain Controller.

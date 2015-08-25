@@ -1,0 +1,32 @@
+$OpenBSD: patch-buildtools_wafsamba_samba_bundled_py,v 1.1 2015/08/25 11:04:39 jca Exp $
+--- buildtools/wafsamba/samba_bundled.py.orig	Fri Jul 17 23:56:31 2015
++++ buildtools/wafsamba/samba_bundled.py	Sat Jul 18 00:00:08 2015
+@@ -70,19 +70,24 @@ def minimum_library_version(conf, libname, default):
+ 
+ @conf
+ def LIB_MAY_BE_BUNDLED(conf, libname):
+-    return ('NONE' not in conf.env.BUNDLED_LIBS and
++    r = ('NONE' not in conf.env.BUNDLED_LIBS and
+             '!%s' % libname not in conf.env.BUNDLED_LIBS)
++    print >> sys.stderr, "LIB_MAY_BE_BUNDLED(%s), BUNDLED_LIBS=%s, result=%s" % (libname, str(conf.env.BUNDLED_LIBS), r)
++    return r
+ 
+-
+ @conf
+ def LIB_MUST_BE_BUNDLED(conf, libname):
+-    return ('ALL' in conf.env.BUNDLED_LIBS or
++    r = ('ALL' in conf.env.BUNDLED_LIBS or
+             libname in conf.env.BUNDLED_LIBS)
++    print >> sys.stderr, "LIB_MUST_BE_BUNDLED(%s), BUNDLED_LIBS=%s, result=%s" % (libname, str(conf.env.BUNDLED_LIBS), r)
++    return r
+ 
+ @conf
+ def LIB_MUST_BE_PRIVATE(conf, libname):
+-    return ('ALL' in conf.env.PRIVATE_LIBS or
++    r = ('ALL' in conf.env.PRIVATE_LIBS or
+             libname in conf.env.PRIVATE_LIBS)
++    print >> sys.stderr, "LIB_MUST_BE_PRIVATE(%s), PRIVATE_LIBS=%s, result=%s" % (libname, str(conf.env.PRIVATE_LIBS), r)
++    return r
+ 
+ @conf
+ def CHECK_PREREQUISITES(conf, prereqs):

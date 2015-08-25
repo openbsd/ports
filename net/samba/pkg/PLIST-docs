@@ -1,52 +1,46 @@
-@comment $OpenBSD: PLIST-docs,v 1.21 2015/02/05 02:04:00 jca Exp $
-@conflict samba-<=3.6.15p11
-@pkgpath net/samba,-docs,ads
-@pkgpath net/samba,-docs,cups
-@pkgpath net/samba,-docs,cups,ads
-@pkgpath net/samba,-docs,cups,ldap
-@pkgpath net/samba,-docs,ldap
+@comment $OpenBSD: PLIST-docs,v 1.22 2015/08/25 11:04:39 jca Exp $
+@pkgpath net/samba,-docs
 share/doc/samba/
-share/doc/samba/NT4-Locking.reg
-share/doc/samba/NT4_PlainPassword.reg
-share/doc/samba/Win-2Kx-XPP-DeleteCachedProfiles.reg
-share/doc/samba/Win-2Kx-XPP-ForceLocalProfile.reg
-share/doc/samba/Win-NT-DeleteRoamingProfile.reg
-share/doc/samba/Win2000_PlainPassword.reg
-share/doc/samba/Win7_Samba3DomainMember.reg
-share/doc/samba/Win95_PlainPassword.reg
-share/doc/samba/Win98_PlainPassword.reg
-share/doc/samba/Win9X-CacheHandling.reg
-share/doc/samba/WinME_PlainPassword.reg
-share/doc/samba/WinXP_PlainPassword.reg
-share/doc/samba/WindowsTerminalServer.reg
-share/doc/samba/history
-share/doc/samba/htmldocs/
-share/doc/samba/htmldocs/index.html
-share/doc/samba/htmldocs/samba.css
-share/doc/samba/pdf/
-share/doc/samba/pdf/Samba3-ByExample.pdf
-share/doc/samba/pdf/Samba3-Developers-Guide.pdf
-share/doc/samba/pdf/Samba3-HOWTO.pdf
+share/doc/samba/Samba3-ByExample.pdf
+share/doc/samba/Samba3-Developers-Guide.pdf
+share/doc/samba/Samba3-HOWTO.pdf
+share/examples/samba/LDAP/
+share/examples/samba/LDAP/README
+share/examples/samba/LDAP/get_next_oid
+share/examples/samba/LDAP/ol-schema-migrate.pl
+share/examples/samba/LDAP/samba-nds.schema
+share/examples/samba/LDAP/samba-schema-FDS.ldif
+share/examples/samba/LDAP/samba-schema-netscapeds5.x.README
+share/examples/samba/LDAP/samba-schema.IBMSecureWay
+share/examples/samba/LDAP/samba.ldif
+share/examples/samba/LDAP/samba.schema
+share/examples/samba/LDAP/samba.schema.at.IBM-DS
+share/examples/samba/LDAP/samba.schema.oc.IBM-DS
 share/examples/samba/README
 share/examples/samba/VFS/
-share/examples/samba/VFS/Makefile.in
 share/examples/samba/VFS/README
-share/examples/samba/VFS/autogen.sh
-share/examples/samba/VFS/config.guess
-share/examples/samba/VFS/config.sub
-share/examples/samba/VFS/configure
-share/examples/samba/VFS/configure.in
-share/examples/samba/VFS/install-sh
-share/examples/samba/VFS/module_config.h.in
 share/examples/samba/VFS/shadow_copy_test.c
 share/examples/samba/VFS/skel_opaque.c
 share/examples/samba/VFS/skel_transparent.c
+share/examples/samba/VFS/wscript_build
+share/examples/samba/ad-bench/
+share/examples/samba/ad-bench/README
+share/examples/samba/ad-bench/ad-bench.sh
+share/examples/samba/ad-bench/settings.sh
+share/examples/samba/ad-bench/test_utils.sh
+share/examples/samba/ad-bench/time_group.sh
+share/examples/samba/ad-bench/time_join.sh
+share/examples/samba/ad-bench/time_kinit.sh
+share/examples/samba/ad-bench/time_ldap.sh
+share/examples/samba/ad-bench/time_user.sh
+share/examples/samba/ad-bench/utils.sh
 share/examples/samba/auth/
 share/examples/samba/auth/Makefile
 share/examples/samba/auth/auth_skel.c
 share/examples/samba/auth/crackcheck/
 share/examples/samba/auth/crackcheck/Makefile
 share/examples/samba/auth/crackcheck/crackcheck.c
+share/examples/samba/auth/wscript_build
 share/examples/samba/autofs/
 share/examples/samba/autofs/auto.smb
 share/examples/samba/dce-dfs/
@@ -54,28 +48,9 @@ share/examples/samba/dce-dfs/README
 share/examples/samba/dce-dfs/smb.conf
 share/examples/samba/libsmbclient/
 share/examples/samba/libsmbclient/Makefile
-share/examples/samba/libsmbclient/Makefile.internal
 share/examples/samba/libsmbclient/Makefile.internal.in
 share/examples/samba/libsmbclient/README
 share/examples/samba/libsmbclient/get_auth_data_fn.h
-share/examples/samba/libsmbclient/smbwrapper/
-share/examples/samba/libsmbclient/smbwrapper/Makefile
-share/examples/samba/libsmbclient/smbwrapper/README
-share/examples/samba/libsmbclient/smbwrapper/bsd-strlcat.c
-share/examples/samba/libsmbclient/smbwrapper/bsd-strlcpy.c
-share/examples/samba/libsmbclient/smbwrapper/bsd-strlfunc.h
-share/examples/samba/libsmbclient/smbwrapper/opendir_smbsh.c
-share/examples/samba/libsmbclient/smbwrapper/select.c
-share/examples/samba/libsmbclient/smbwrapper/smbsh.1
-share/examples/samba/libsmbclient/smbwrapper/smbsh.1.html
-share/examples/samba/libsmbclient/smbwrapper/smbsh.1.xml
-share/examples/samba/libsmbclient/smbwrapper/smbsh.c
-share/examples/samba/libsmbclient/smbwrapper/smbw.c
-share/examples/samba/libsmbclient/smbwrapper/smbw.h
-share/examples/samba/libsmbclient/smbwrapper/smbw_dir.c
-share/examples/samba/libsmbclient/smbwrapper/smbw_stat.c
-share/examples/samba/libsmbclient/smbwrapper/wrapper.c
-share/examples/samba/libsmbclient/smbwrapper/wrapper.h
 share/examples/samba/libsmbclient/testacl.c
 share/examples/samba/libsmbclient/testacl2.c
 share/examples/samba/libsmbclient/testacl3.c
@@ -87,13 +62,17 @@ share/examples/samba/libsmbclient/testfstatvfs.c
 share/examples/samba/libsmbclient/testread.c
 share/examples/samba/libsmbclient/testsmbc.c
 share/examples/samba/libsmbclient/teststat.c
+@comment share/examples/samba/libsmbclient/teststat.c.orig
 share/examples/samba/libsmbclient/teststat2.c
+@comment share/examples/samba/libsmbclient/teststat2.c.orig
 share/examples/samba/libsmbclient/teststat3.c
 share/examples/samba/libsmbclient/teststatvfs.c
 share/examples/samba/libsmbclient/testtruncate.c
 share/examples/samba/libsmbclient/testutime.c
+@comment share/examples/samba/libsmbclient/testutime.c.orig
 share/examples/samba/libsmbclient/testwrite.c
 share/examples/samba/libsmbclient/tree.c
+share/examples/samba/libsmbclient/wscript_build
 share/examples/samba/logon/
 share/examples/samba/logon/genlogon/
 share/examples/samba/logon/genlogon/genlogon.pl
@@ -109,7 +88,6 @@ share/examples/samba/misc/adssearch.pl
 share/examples/samba/misc/check_multiple_LDAP_entries.pl
 share/examples/samba/misc/cldap.pl
 share/examples/samba/misc/extra_smbstatus
-share/examples/samba/misc/swat.pl
 share/examples/samba/misc/wall.perl
 share/examples/samba/nss/
 share/examples/samba/nss/nss_winbind.c
@@ -145,6 +123,7 @@ share/examples/samba/pdb/
 share/examples/samba/pdb/Makefile
 share/examples/samba/pdb/README
 share/examples/samba/pdb/test.c
+share/examples/samba/pdb/wscript_build
 share/examples/samba/perfcounter/
 share/examples/samba/perfcounter/Makefile
 share/examples/samba/perfcounter/perf.h
@@ -166,8 +145,7 @@ share/examples/samba/printing/
 share/examples/samba/printing/VampireDriversFunctions
 share/examples/samba/printing/prtpub.c
 share/examples/samba/printing/readme.prtpub
-share/examples/samba/printing/smbprint
-share/examples/samba/printing/smbprint.sysv
+@comment share/examples/samba/printing/smbprint.sysv
 share/examples/samba/scripts/
 @comment share/examples/samba/scripts/debugging/
 @comment share/examples/samba/scripts/debugging/linux/
@@ -198,6 +176,9 @@ share/examples/samba/scripts/shares/python/smbparm.py
 share/examples/samba/scripts/users_and_groups/
 share/examples/samba/scripts/users_and_groups/adduserstogroups.pl
 share/examples/samba/scripts/users_and_groups/createdomobj.pl
+share/examples/samba/scripts/vfs/
+share/examples/samba/scripts/vfs/media_harmony/
+share/examples/samba/scripts/vfs/media_harmony/trigger_avid_update.py
 share/examples/samba/scripts/wins_hook/
 share/examples/samba/scripts/wins_hook/README
 share/examples/samba/scripts/wins_hook/dns_update
@@ -214,408 +195,3 @@ share/examples/samba/validchars/nwdos70.out
 share/examples/samba/validchars/readme
 share/examples/samba/validchars/validchr.c
 share/examples/samba/validchars/validchr.com
-share/locale/
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
-@comment share/locale/ar/LC_MESSAGES/pam_winbind.mo
-share/locale/cs/
-share/locale/cs/LC_MESSAGES/
-@comment share/locale/cs/LC_MESSAGES/pam_winbind.mo
-share/locale/da/
-share/locale/da/LC_MESSAGES/
-@comment share/locale/da/LC_MESSAGES/pam_winbind.mo
-share/locale/de/
-share/locale/de/LC_MESSAGES/
-share/locale/de/LC_MESSAGES/net.mo
-@comment share/locale/de/LC_MESSAGES/pam_winbind.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
-@comment share/locale/es/LC_MESSAGES/pam_winbind.mo
-share/locale/fi/
-share/locale/fi/LC_MESSAGES/
-@comment share/locale/fi/LC_MESSAGES/pam_winbind.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
-@comment share/locale/fr/LC_MESSAGES/pam_winbind.mo
-share/locale/hu/
-share/locale/hu/LC_MESSAGES/
-@comment share/locale/hu/LC_MESSAGES/pam_winbind.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
-@comment share/locale/it/LC_MESSAGES/pam_winbind.mo
-share/locale/ja/
-share/locale/ja/LC_MESSAGES/
-@comment share/locale/ja/LC_MESSAGES/pam_winbind.mo
-share/locale/ko/
-share/locale/ko/LC_MESSAGES/
-@comment share/locale/ko/LC_MESSAGES/pam_winbind.mo
-share/locale/nb/
-share/locale/nb/LC_MESSAGES/
-@comment share/locale/nb/LC_MESSAGES/pam_winbind.mo
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
-@comment share/locale/nl/LC_MESSAGES/pam_winbind.mo
-share/locale/pl/
-share/locale/pl/LC_MESSAGES/
-@comment share/locale/pl/LC_MESSAGES/pam_winbind.mo
-share/locale/pt_BR/
-share/locale/pt_BR/LC_MESSAGES/
-@comment share/locale/pt_BR/LC_MESSAGES/pam_winbind.mo
-share/locale/ru/
-share/locale/ru/LC_MESSAGES/
-@comment share/locale/ru/LC_MESSAGES/pam_winbind.mo
-share/locale/sv/
-share/locale/sv/LC_MESSAGES/
-@comment share/locale/sv/LC_MESSAGES/pam_winbind.mo
-share/locale/zh_CN/
-share/locale/zh_CN/LC_MESSAGES/
-@comment share/locale/zh_CN/LC_MESSAGES/pam_winbind.mo
-share/locale/zh_TW/
-share/locale/zh_TW/LC_MESSAGES/
-@comment share/locale/zh_TW/LC_MESSAGES/pam_winbind.mo
-share/swat/help/Samba3-ByExample/
-share/swat/help/Samba3-ByExample/Big500users.html
-share/swat/help/Samba3-ByExample/DMSMig.html
-share/swat/help/Samba3-ByExample/DomApps.html
-share/swat/help/Samba3-ByExample/ExNetworks.html
-share/swat/help/Samba3-ByExample/HA.html
-share/swat/help/Samba3-ByExample/RefSection.html
-share/swat/help/Samba3-ByExample/apa.html
-share/swat/help/Samba3-ByExample/appendix.html
-share/swat/help/Samba3-ByExample/ch14.html
-share/swat/help/Samba3-ByExample/go01.html
-share/swat/help/Samba3-ByExample/happy.html
-share/swat/help/Samba3-ByExample/images/
-share/swat/help/Samba3-ByExample/images/AccountingNetwork.png
-share/swat/help/Samba3-ByExample/images/Charity-Network.png
-share/swat/help/Samba3-ByExample/images/Domain-WorkgroupAnnouncement.png
-share/swat/help/Samba3-ByExample/images/HostAnnouncment.png
-share/swat/help/Samba3-ByExample/images/LocalMasterAnnouncement.png
-share/swat/help/Samba3-ByExample/images/NullConnect.png
-share/swat/help/Samba3-ByExample/images/UNIX-Samba-and-LDAP.png
-share/swat/help/Samba3-ByExample/images/UserConnect.png
-share/swat/help/Samba3-ByExample/images/UserMgrNT4.png
-share/swat/help/Samba3-ByExample/images/WINREPRESSME-Capture.png
-share/swat/help/Samba3-ByExample/images/WINREPRESSME-Capture2.png
-share/swat/help/Samba3-ByExample/images/Windows-ME-WINEPRESSME-Startup-30min-ProtocolStats.png
-share/swat/help/Samba3-ByExample/images/Windows-ME-WINEPRESSME-Startup-30min-TraceStats.png
-share/swat/help/Samba3-ByExample/images/WindowsXP-NullConnection.png
-share/swat/help/Samba3-ByExample/images/WindowsXP-UserConnection.png
-share/swat/help/Samba3-ByExample/images/XP-screen001.png
-share/swat/help/Samba3-ByExample/images/acct2net.png
-share/swat/help/Samba3-ByExample/images/ch7-dual-additive-LDAP-Ok.png
-share/swat/help/Samba3-ByExample/images/ch7-dual-additive-LDAP.png
-share/swat/help/Samba3-ByExample/images/ch7-fail-overLDAP.png
-share/swat/help/Samba3-ByExample/images/ch7-singleLDAP.png
-share/swat/help/Samba3-ByExample/images/ch8-migration.png
-share/swat/help/Samba3-ByExample/images/chap4-net.png
-share/swat/help/Samba3-ByExample/images/chap5-net.png
-share/swat/help/Samba3-ByExample/images/chap6-net.png
-share/swat/help/Samba3-ByExample/images/chap7-idresol.png
-share/swat/help/Samba3-ByExample/images/chap7-net-A.png
-share/swat/help/Samba3-ByExample/images/chap7-net-Ar.png
-share/swat/help/Samba3-ByExample/images/chap7-net.png
-share/swat/help/Samba3-ByExample/images/chap7-net2-B.png
-share/swat/help/Samba3-ByExample/images/chap7-net2-Br.png
-share/swat/help/Samba3-ByExample/images/chap7-net2.png
-share/swat/help/Samba3-ByExample/images/chap7-net2r.png
-share/swat/help/Samba3-ByExample/images/chap7-netr.png
-share/swat/help/Samba3-ByExample/images/chap9-ADSDC.png
-share/swat/help/Samba3-ByExample/images/chap9-SambaDC.png
-share/swat/help/Samba3-ByExample/images/imc-usermanager2.png
-share/swat/help/Samba3-ByExample/images/lam-config.png
-share/swat/help/Samba3-ByExample/images/lam-group-members.png
-share/swat/help/Samba3-ByExample/images/lam-groups.png
-share/swat/help/Samba3-ByExample/images/lam-hosts.png
-share/swat/help/Samba3-ByExample/images/lam-login.png
-share/swat/help/Samba3-ByExample/images/lam-users.png
-share/swat/help/Samba3-ByExample/images/openmag.png
-share/swat/help/Samba3-ByExample/images/wxpp001.png
-share/swat/help/Samba3-ByExample/images/wxpp004.png
-share/swat/help/Samba3-ByExample/images/wxpp006.png
-share/swat/help/Samba3-ByExample/images/wxpp007.png
-share/swat/help/Samba3-ByExample/images/wxpp008.png
-share/swat/help/Samba3-ByExample/images/wxpp010.png
-share/swat/help/Samba3-ByExample/images/wxpp011.png
-share/swat/help/Samba3-ByExample/images/wxpp012.png
-share/swat/help/Samba3-ByExample/images/wxpp013.png
-share/swat/help/Samba3-ByExample/images/wxpp015.png
-share/swat/help/Samba3-ByExample/index.html
-share/swat/help/Samba3-ByExample/ix01.html
-share/swat/help/Samba3-ByExample/kerberos.html
-share/swat/help/Samba3-ByExample/net2000users.html
-share/swat/help/Samba3-ByExample/ntmigration.html
-share/swat/help/Samba3-ByExample/nw4migration.html
-share/swat/help/Samba3-ByExample/pr01.html
-share/swat/help/Samba3-ByExample/pr02.html
-share/swat/help/Samba3-ByExample/pr03.html
-share/swat/help/Samba3-ByExample/preface.html
-share/swat/help/Samba3-ByExample/primer.html
-share/swat/help/Samba3-ByExample/secure.html
-share/swat/help/Samba3-ByExample/simple.html
-share/swat/help/Samba3-ByExample/small.html
-share/swat/help/Samba3-ByExample/unixclients.html
-share/swat/help/Samba3-ByExample/upgrades.html
-share/swat/help/Samba3-Developers-Guide/
-share/swat/help/Samba3-Developers-Guide/CodingSuggestions.html
-share/swat/help/Samba3-Developers-Guide/Packaging.html
-share/swat/help/Samba3-Developers-Guide/architecture.html
-share/swat/help/Samba3-Developers-Guide/contributing.html
-share/swat/help/Samba3-Developers-Guide/debug.html
-share/swat/help/Samba3-Developers-Guide/devprinting.html
-share/swat/help/Samba3-Developers-Guide/index.html
-share/swat/help/Samba3-Developers-Guide/internals.html
-share/swat/help/Samba3-Developers-Guide/modules.html
-share/swat/help/Samba3-Developers-Guide/ntdomain.html
-share/swat/help/Samba3-Developers-Guide/parsing.html
-share/swat/help/Samba3-Developers-Guide/pr01.html
-share/swat/help/Samba3-Developers-Guide/pt01.html
-share/swat/help/Samba3-Developers-Guide/pt02.html
-share/swat/help/Samba3-Developers-Guide/pt03.html
-share/swat/help/Samba3-Developers-Guide/pt04.html
-share/swat/help/Samba3-Developers-Guide/pt05.html
-share/swat/help/Samba3-Developers-Guide/pwencrypt.html
-share/swat/help/Samba3-Developers-Guide/rpc-plugin.html
-share/swat/help/Samba3-Developers-Guide/tracing.html
-share/swat/help/Samba3-Developers-Guide/unix-smb.html
-share/swat/help/Samba3-Developers-Guide/vfs.html
-share/swat/help/Samba3-Developers-Guide/wins.html
-share/swat/help/Samba3-HOWTO/
-share/swat/help/Samba3-HOWTO/AccessControls.html
-share/swat/help/Samba3-HOWTO/AdvancedNetworkManagement.html
-share/swat/help/Samba3-HOWTO/Appendix.html
-share/swat/help/Samba3-HOWTO/Backup.html
-share/swat/help/Samba3-HOWTO/CUPS-printing.html
-share/swat/help/Samba3-HOWTO/ChangeNotes.html
-share/swat/help/Samba3-HOWTO/ClientConfig.html
-share/swat/help/Samba3-HOWTO/DNSDHCP.html
-share/swat/help/Samba3-HOWTO/FastStart.html
-share/swat/help/Samba3-HOWTO/InterdomainTrusts.html
-share/swat/help/Samba3-HOWTO/IntroSMB.html
-share/swat/help/Samba3-HOWTO/NT4Migration.html
-share/swat/help/Samba3-HOWTO/NetCommand.html
-share/swat/help/Samba3-HOWTO/NetworkBrowsing.html
-share/swat/help/Samba3-HOWTO/Other-Clients.html
-share/swat/help/Samba3-HOWTO/PolicyMgmt.html
-share/swat/help/Samba3-HOWTO/Portability.html
-share/swat/help/Samba3-HOWTO/ProfileMgmt.html
-share/swat/help/Samba3-HOWTO/SWAT.html
-share/swat/help/Samba3-HOWTO/SambaHA.html
-share/swat/help/Samba3-HOWTO/ServerType.html
-share/swat/help/Samba3-HOWTO/StandAloneServer.html
-share/swat/help/Samba3-HOWTO/TOSHpreface.html
-share/swat/help/Samba3-HOWTO/VFS.html
-share/swat/help/Samba3-HOWTO/apa.html
-share/swat/help/Samba3-HOWTO/bugreport.html
-share/swat/help/Samba3-HOWTO/cfgsmarts.html
-share/swat/help/Samba3-HOWTO/ch-ldap-tls.html
-share/swat/help/Samba3-HOWTO/ch47.html
-share/swat/help/Samba3-HOWTO/classicalprinting.html
-share/swat/help/Samba3-HOWTO/compiling.html
-share/swat/help/Samba3-HOWTO/diagnosis.html
-share/swat/help/Samba3-HOWTO/domain-member.html
-share/swat/help/Samba3-HOWTO/go01.html
-share/swat/help/Samba3-HOWTO/groupmapping.html
-share/swat/help/Samba3-HOWTO/idmapper.html
-share/swat/help/Samba3-HOWTO/images/
-share/swat/help/Samba3-HOWTO/images/10small.png
-share/swat/help/Samba3-HOWTO/images/11small.png
-share/swat/help/Samba3-HOWTO/images/12small.png
-share/swat/help/Samba3-HOWTO/images/13small.png
-share/swat/help/Samba3-HOWTO/images/14small.png
-share/swat/help/Samba3-HOWTO/images/1small.png
-share/swat/help/Samba3-HOWTO/images/2small.png
-share/swat/help/Samba3-HOWTO/images/3small.png
-share/swat/help/Samba3-HOWTO/images/4small.png
-share/swat/help/Samba3-HOWTO/images/5small.png
-share/swat/help/Samba3-HOWTO/images/6small.png
-share/swat/help/Samba3-HOWTO/images/7small.png
-share/swat/help/Samba3-HOWTO/images/8small.png
-share/swat/help/Samba3-HOWTO/images/9small.png
-share/swat/help/Samba3-HOWTO/images/WME001.png
-share/swat/help/Samba3-HOWTO/images/WME002.png
-share/swat/help/Samba3-HOWTO/images/WME003.png
-share/swat/help/Samba3-HOWTO/images/WME004.png
-share/swat/help/Samba3-HOWTO/images/WME005.png
-share/swat/help/Samba3-HOWTO/images/WME006.png
-share/swat/help/Samba3-HOWTO/images/WME007.png
-share/swat/help/Samba3-HOWTO/images/WME008.png
-share/swat/help/Samba3-HOWTO/images/WME009.png
-share/swat/help/Samba3-HOWTO/images/WME010.png
-share/swat/help/Samba3-HOWTO/images/WME011.png
-share/swat/help/Samba3-HOWTO/images/WME012.png
-share/swat/help/Samba3-HOWTO/images/WME013.png
-share/swat/help/Samba3-HOWTO/images/WME014.png
-share/swat/help/Samba3-HOWTO/images/WXPP002.png
-share/swat/help/Samba3-HOWTO/images/WXPP003.png
-share/swat/help/Samba3-HOWTO/images/WXPP005.png
-share/swat/help/Samba3-HOWTO/images/WXPP009.png
-share/swat/help/Samba3-HOWTO/images/WXPP014.png
-share/swat/help/Samba3-HOWTO/images/a_small.png
-share/swat/help/Samba3-HOWTO/images/access1.png
-share/swat/help/Samba3-HOWTO/images/browsing1.png
-share/swat/help/Samba3-HOWTO/images/cups1.png
-share/swat/help/Samba3-HOWTO/images/cups2.png
-share/swat/help/Samba3-HOWTO/images/domain.png
-share/swat/help/Samba3-HOWTO/images/ethereal1.png
-share/swat/help/Samba3-HOWTO/images/ethereal2.png
-share/swat/help/Samba3-HOWTO/images/idmap-gid2sid.png
-share/swat/help/Samba3-HOWTO/images/idmap-groups.png
-share/swat/help/Samba3-HOWTO/images/idmap-sid2gid.png
-share/swat/help/Samba3-HOWTO/images/idmap-sid2uid.png
-share/swat/help/Samba3-HOWTO/images/idmap-store-gid2sid.png
-share/swat/help/Samba3-HOWTO/images/idmap-uid2sid.png
-share/swat/help/Samba3-HOWTO/images/idmap.png
-share/swat/help/Samba3-HOWTO/images/idmap_winbind_no_loop.png
-share/swat/help/Samba3-HOWTO/images/pdftoepsonusb.png
-share/swat/help/Samba3-HOWTO/images/pdftosocket.png
-share/swat/help/Samba3-HOWTO/images/trusts1.png
-share/swat/help/Samba3-HOWTO/images/w2kp001.png
-share/swat/help/Samba3-HOWTO/images/w2kp002.png
-share/swat/help/Samba3-HOWTO/images/w2kp003.png
-share/swat/help/Samba3-HOWTO/images/w2kp004.png
-share/swat/help/Samba3-HOWTO/images/w2kp005.png
-share/swat/help/Samba3-HOWTO/images/w2kp006.png
-share/swat/help/Samba3-HOWTO/images/wxpp001.png
-share/swat/help/Samba3-HOWTO/images/wxpp004.png
-share/swat/help/Samba3-HOWTO/images/wxpp006.png
-share/swat/help/Samba3-HOWTO/images/wxpp007.png
-share/swat/help/Samba3-HOWTO/images/wxpp008.png
-share/swat/help/Samba3-HOWTO/images/wxpp010.png
-share/swat/help/Samba3-HOWTO/images/wxpp011.png
-share/swat/help/Samba3-HOWTO/images/wxpp012.png
-share/swat/help/Samba3-HOWTO/images/wxpp013.png
-share/swat/help/Samba3-HOWTO/images/wxpp015.png
-share/swat/help/Samba3-HOWTO/index.html
-share/swat/help/Samba3-HOWTO/install.html
-share/swat/help/Samba3-HOWTO/integrate-ms-networks.html
-share/swat/help/Samba3-HOWTO/introduction.html
-share/swat/help/Samba3-HOWTO/ix01.html
-share/swat/help/Samba3-HOWTO/largefile.html
-share/swat/help/Samba3-HOWTO/locking.html
-share/swat/help/Samba3-HOWTO/migration.html
-share/swat/help/Samba3-HOWTO/msdfs.html
-share/swat/help/Samba3-HOWTO/optional.html
-@comment share/swat/help/Samba3-HOWTO/pam.html
-share/swat/help/Samba3-HOWTO/passdb.html
-share/swat/help/Samba3-HOWTO/pr01.html
-share/swat/help/Samba3-HOWTO/pr02.html
-share/swat/help/Samba3-HOWTO/pr03.html
-share/swat/help/Samba3-HOWTO/problems.html
-share/swat/help/Samba3-HOWTO/rights.html
-share/swat/help/Samba3-HOWTO/samba-bdc.html
-share/swat/help/Samba3-HOWTO/samba-pdc.html
-share/swat/help/Samba3-HOWTO/securing-samba.html
-share/swat/help/Samba3-HOWTO/speed.html
-share/swat/help/Samba3-HOWTO/tdb.html
-share/swat/help/Samba3-HOWTO/troubleshooting.html
-share/swat/help/Samba3-HOWTO/type.html
-share/swat/help/Samba3-HOWTO/unicode.html
-share/swat/help/Samba3-HOWTO/upgrading-to-3.0.html
-share/swat/help/Samba3-HOWTO/winbind.html
-share/swat/help/manpages/
-share/swat/help/manpages/eventlogadm.8.html
-share/swat/help/manpages/findsmb.1.html
-share/swat/help/manpages/idmap_ad.8.html
-share/swat/help/manpages/idmap_adex.8.html
-share/swat/help/manpages/idmap_autorid.8.html
-share/swat/help/manpages/idmap_hash.8.html
-share/swat/help/manpages/idmap_ldap.8.html
-share/swat/help/manpages/idmap_nss.8.html
-share/swat/help/manpages/idmap_rid.8.html
-share/swat/help/manpages/idmap_tdb.8.html
-share/swat/help/manpages/idmap_tdb2.8.html
-share/swat/help/manpages/index.html
-share/swat/help/manpages/libsmbclient.7.html
-share/swat/help/manpages/lmhosts.5.html
-share/swat/help/manpages/log2pcap.1.html
-share/swat/help/manpages/net.8.html
-share/swat/help/manpages/nmbd.8.html
-share/swat/help/manpages/nmblookup.1.html
-share/swat/help/manpages/ntlm_auth.1.html
-@comment share/swat/help/manpages/pam_winbind.8.html
-@comment share/swat/help/manpages/pam_winbind.conf.5.html
-share/swat/help/manpages/pdbedit.8.html
-share/swat/help/manpages/profiles.1.html
-share/swat/help/manpages/rpcclient.1.html
-share/swat/help/manpages/samba.7.html
-share/swat/help/manpages/sharesec.1.html
-share/swat/help/manpages/smb.conf.5.html
-share/swat/help/manpages/smbcacls.1.html
-share/swat/help/manpages/smbclient.1.html
-share/swat/help/manpages/smbcontrol.1.html
-share/swat/help/manpages/smbcquotas.1.html
-share/swat/help/manpages/smbd.8.html
-share/swat/help/manpages/smbget.1.html
-share/swat/help/manpages/smbgetrc.5.html
-share/swat/help/manpages/smbpasswd.5.html
-share/swat/help/manpages/smbpasswd.8.html
-share/swat/help/manpages/smbspool.8.html
-share/swat/help/manpages/smbstatus.1.html
-share/swat/help/manpages/smbta-util.8.html
-share/swat/help/manpages/smbtar.1.html
-share/swat/help/manpages/smbtree.1.html
-share/swat/help/manpages/swat.8.html
-share/swat/help/manpages/tdbbackup.8.html
-share/swat/help/manpages/tdbdump.8.html
-share/swat/help/manpages/tdbtool.8.html
-share/swat/help/manpages/testparm.1.html
-share/swat/help/manpages/vfs_acl_tdb.8.html
-share/swat/help/manpages/vfs_acl_xattr.8.html
-share/swat/help/manpages/vfs_aio_fork.8.html
-share/swat/help/manpages/vfs_aio_pthread.8.html
-share/swat/help/manpages/vfs_audit.8.html
-share/swat/help/manpages/vfs_cacheprime.8.html
-share/swat/help/manpages/vfs_cap.8.html
-share/swat/help/manpages/vfs_catia.8.html
-share/swat/help/manpages/vfs_commit.8.html
-share/swat/help/manpages/vfs_crossrename.8.html
-share/swat/help/manpages/vfs_default_quota.8.html
-share/swat/help/manpages/vfs_dirsort.8.html
-share/swat/help/manpages/vfs_extd_audit.8.html
-share/swat/help/manpages/vfs_fake_perms.8.html
-share/swat/help/manpages/vfs_fileid.8.html
-share/swat/help/manpages/vfs_full_audit.8.html
-share/swat/help/manpages/vfs_gpfs.8.html
-share/swat/help/manpages/vfs_netatalk.8.html
-share/swat/help/manpages/vfs_notify_fam.8.html
-share/swat/help/manpages/vfs_prealloc.8.html
-share/swat/help/manpages/vfs_preopen.8.html
-share/swat/help/manpages/vfs_readahead.8.html
-share/swat/help/manpages/vfs_readonly.8.html
-share/swat/help/manpages/vfs_recycle.8.html
-share/swat/help/manpages/vfs_scannedonly.8.html
-share/swat/help/manpages/vfs_shadow_copy.8.html
-share/swat/help/manpages/vfs_shadow_copy2.8.html
-share/swat/help/manpages/vfs_smb_traffic_analyzer.8.html
-share/swat/help/manpages/vfs_streams_depot.8.html
-share/swat/help/manpages/vfs_streams_xattr.8.html
-share/swat/help/manpages/vfs_time_audit.8.html
-share/swat/help/manpages/vfs_xattr_tdb.8.html
-share/swat/help/manpages/vfstest.1.html
-share/swat/help/manpages/wbinfo.1.html
-share/swat/help/manpages/winbind_krb5_locator.7.html
-share/swat/help/manpages/winbindd.8.html
-share/swat/help/welcome.html
-@comment share/swat/js/
-@comment share/swat/lang/
-@comment share/swat/lang/ja/
-@comment share/swat/lang/ja/help/
-@comment share/swat/lang/ja/help/welcome.html
-@comment share/swat/lang/ja/images/
-@comment share/swat/lang/ja/include/
-@comment share/swat/lang/ja/js/
-@comment share/swat/lang/tr/
-@comment share/swat/lang/tr/help/
-@comment share/swat/lang/tr/help/welcome.html
-@comment share/swat/lang/tr/images/
-@comment share/swat/lang/tr/images/globals.gif
-@comment share/swat/lang/tr/images/home.gif
-@comment share/swat/lang/tr/images/passwd.gif
-@comment share/swat/lang/tr/images/printers.gif
-@comment share/swat/lang/tr/images/samba.gif
-@comment share/swat/lang/tr/images/shares.gif
-@comment share/swat/lang/tr/images/status.gif
-@comment share/swat/lang/tr/images/viewconfig.gif
-@comment share/swat/lang/tr/include/
-@comment share/swat/lang/tr/js/
