@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/11 23:49:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2015/08/25 16:21:13 benoit Exp $
 
 COMMENT=	automated driving and testing of terminal-based programs
 
 MODULES=	cpan
-DISTNAME=	Test-Expect-0.31
-REVISION=	0
+DISTNAME =	Test-Expect-0.33
 CATEGORIES=	devel
 
 # perl
