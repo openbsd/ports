@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.205 2015/08/25 11:41:15 jca Exp $
+# $OpenBSD: Makefile,v 1.206 2015/08/25 12:03:21 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.1.19
@@ -128,8 +128,7 @@ MODULES =		devel/gettext lang/python perl
 
 BUILD_DEPENDS =		devel/p5-Parse-Yapp>=1.0.5 \
 			net/py-dnspython \
-			textproc/docbook-xsl \
-			textproc/libxslt
+			textproc/docbook-xsl
 
 RUN_DEPENDS-main =	net/py-dnspython
 
