@@ -1,4 +1,9 @@
-$OpenBSD: patch-socket_c,v 1.8 2015/07/18 04:51:29 sthen Exp $
+$OpenBSD: patch-socket_c,v 1.9 2015/08/25 17:44:09 jca Exp $
+
+Fixed upstream
+
+  https://gitlab.com/fetchmail/fetchmail/commit/a2ae6f8d15d7caf815d7bdd13df833fd1b2af5cc
+
 --- socket.c.orig	Fri Jul 17 22:01:09 2015
 +++ socket.c	Fri Jul 17 22:19:47 2015
 @@ -914,7 +914,12 @@ int SSLOpen(int sock, char *mycert, char *mykey, const
