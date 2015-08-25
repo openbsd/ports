@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.134 2015/07/22 12:48:53 benoit Exp $
+# $OpenBSD: Makefile,v 1.135 2015/08/25 21:25:03 benoit Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
 COMMENT-x11 =	GIT - graphical tools
 
-V =		2.4.6
+V =		2.5.0
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
@@ -109,7 +109,7 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/post-receive-email \
 		${PREFIX}/share/git-core/templates/hooks/post-receive-email.sample
 	${INSTALL_DATA_DIR} ${PREFIX}/share/git-core/templates/hooks/multimail
-.for f in git_multimail.py migrate-mailhook-config post-receive
+.for f in git_multimail.py migrate-mailhook-config
 	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/multimail/$f \
 		${PREFIX}/share/git-core/templates/hooks/multimail
 .endfor

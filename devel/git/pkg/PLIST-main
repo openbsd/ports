@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.63 2015/05/07 20:45:35 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.64 2015/08/25 21:25:03 benoit Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -172,6 +172,7 @@ libexec/git/git-submodule
 @bin libexec/git/git-verify-tag
 libexec/git/git-web--browse
 @bin libexec/git/git-whatchanged
+@bin libexec/git/git-worktree
 @bin libexec/git/git-write-tree
 libexec/git/mergetools/
 libexec/git/mergetools/araxis
@@ -196,6 +197,7 @@ libexec/git/mergetools/tortoisemerge
 libexec/git/mergetools/vimdiff
 libexec/git/mergetools/vimdiff2
 libexec/git/mergetools/vimdiff3
+libexec/git/mergetools/winmerge
 libexec/git/mergetools/xxdiff
 @man man/man1/git-add.1
 @man man/man1/git-am.1
@@ -340,6 +342,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-verify-tag.1
 @man man/man1/git-web--browse.1
 @man man/man1/git-whatchanged.1
+@man man/man1/git-worktree.1
 @man man/man1/git-write-tree.1
 @man man/man1/git.1
 @man man/man1/gitremote-helpers.1
@@ -365,6 +368,8 @@ libexec/git/mergetools/xxdiff
 @man man/man7/gittutorial.7
 @man man/man7/gitworkflows.7
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/emacs/
+share/emacs/site-lisp/
 share/emacs/site-lisp/git-blame.el
 share/emacs/site-lisp/git.el
 share/git-core/
@@ -377,7 +382,6 @@ share/git-core/templates/hooks/commit-msg.sample
 share/git-core/templates/hooks/multimail/
 share/git-core/templates/hooks/multimail/git_multimail.py
 share/git-core/templates/hooks/multimail/migrate-mailhook-config
-share/git-core/templates/hooks/multimail/post-receive
 share/git-core/templates/hooks/post-receive-email.sample
 share/git-core/templates/hooks/post-update.sample
 share/git-core/templates/hooks/pre-applypatch.sample
