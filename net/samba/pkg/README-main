@@ -1,67 +1,39 @@
-$OpenBSD: README-main,v 1.11 2015/07/07 14:43:36 ajacoutot Exp $
+$OpenBSD: README-main,v 1.12 2015/08/25 11:07:45 jca Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-1. Edit ${SYSCONFDIR}/samba/smb.conf to suit your needs.
+Configuration
+=============
+The configuration file, found at ${CONFDIR}/smb.conf can be used right
+away for simple configurations.  Local users should be added to the
+Samba user database using the pdbedit(1) utility in order to use the
+Samba server.
 
-Steps 2 and 3 are only necessary if you want to enable swat (Samba 
-Web Administration Tool). Please note that administering the server
-with swat over a network is inadvisable as passwords are passed in
-the clear. You can avoid this problem by using ssh forwarding to
-port 901.
-
-2. add the following entry to /etc/inetd.conf:
-
-   ...
-   swat  stream  tcp  nowait.400  root  ${TRUEPREFIX}/libexec/swat  swat
-   ...
-
-inetd(8) must be reloaded (or started). To enable it at boot, the
-following line needs to be added to rc.conf.local(8):
-inetd_flags=
+# pdbedit -a -u <username>
 
 Install the samba-docs package and see documentation files in
 ${PREFIX}/share/doc/samba and example config files in
 ${PREFIX}/share/examples/samba for more information.
 
+Useful documentation is also available from the Samba wiki at
+
+  https://wiki.samba.org/index.php/Main_Page
+
+Winbind
+=======
 Winbind on OpenBSD does not support local user logins as there
-is no nsswitch support.
+is no nsswitch support.  Winbind support is included for external
+systems like Dovecot or Squid that are able to use it to authenticate
+users.
 
-Winbind support is included for external systems like Dovecot or
-Squid that are able to use it to authenticate users.
+Max open files limit
+====================
+To use Samba as a domain controller it is advised to bump the values of
+openfiles-max in /etc/login.conf and kern.maxfiles over 16384.  If you
+are using /etc/login.conf.db (not usually recommended) then be sure to
+rebuild it.
 
-!!! ATTENTION !!!
-The default passdb backend has been changed to 'tdbsam'! That breaks
-existing setups using the 'smbpasswd' backend without explicit
-declaration! Please use 'passdb backend = smbpasswd' if you would like
-to stick to the 'smbpasswd' backend or convert your smbpasswd entries
-using e.g. 'pdbedit -i smbpasswd -e tdbsam'.
-
-The 'tdbsam' backend is much more flexible concerning per user settings
-like 'profile path' or 'home directory' and there are some commands which
-do not work with the 'smbpasswd' backend at all.
-
-The configuration file, found at ${CONFDIR}/smb.conf can be used right
-away for simple configurations.  Local users must be added to the Samba user
-database using the pdbedit utility in order to use the Samba server.
-        
-# pdbedit -a -u <username>
-or the old way if for smbpasswd
-# smbpasswd -a <username>
-
-Samba contains an implementation of the SMB2 protocol. It is
-disabled by default.SMB2 can be enabled by setting 
-"max protocol = smb2". SMB2 is a new implementation of the SMB 
-protocol used by Windows Vista and higher.
-
-To use Samba as a PDC the values of openfiles-max in /etc/login.conf
-and kern.maxfiles should be increased to 16384.
-
-Rebuild the login.conf.db file if necessary:
-
-        # [ -f /etc/login/conf.db ] && cap_mkdb /etc/login.conf
-
-Don't forget to add the entry kern.maxfiles=16384 to the /etc/sysctl.conf
-file to keep the change across reboots.
+Don't forget to add the entry kern.maxfiles=16384 to the
+/etc/sysctl.conf file to keep the change across reboots.

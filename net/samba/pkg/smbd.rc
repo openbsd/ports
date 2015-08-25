@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: smbd.rc,v 1.6 2012/08/04 15:28:14 ajacoutot Exp $
+# $OpenBSD: smbd.rc,v 1.7 2015/08/25 11:07:45 jca Exp $
 
 smbcontrol="${TRUEPREFIX}/bin/smbcontrol"
 
-daemon="${TRUEPREFIX}/libexec/smbd -D"
+daemon="${TRUEPREFIX}/sbin/smbd -D"
 
 . /etc/rc.d/rc.subr
 

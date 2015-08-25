@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: winbindd.rc,v 1.6 2012/08/04 15:28:14 ajacoutot Exp $
+# $OpenBSD: winbindd.rc,v 1.7 2015/08/25 11:07:45 jca Exp $
 
 smbcontrol="${TRUEPREFIX}/bin/smbcontrol"
 
-daemon="${TRUEPREFIX}/libexec/winbindd -D"
+daemon="${TRUEPREFIX}/sbin/winbindd -D"
 
 . /etc/rc.d/rc.subr
 
