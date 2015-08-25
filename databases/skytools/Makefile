@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2015/07/19 05:51:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2015/08/25 12:57:33 sthen Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
 MODPY_EGG_VERSION=	3.1.1
 DISTNAME=		skytools-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	databases
 
@@ -15,7 +15,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB= 	c ${MODPY_WANTLIB}
+WANTLIB= 	c pq pthread ${MODPY_WANTLIB}
 
 MASTER_SITES=	https://github.com/downloads/markokr/skytools/
 

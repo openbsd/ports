@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/06/01 12:55:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/25 12:57:33 sthen Exp $
 
 COMMENT =	minimalistic GIS on top of spatialite and rasterlite
 PROJECT =	spatialite_gis
 DISTNAME =	${PROJECT}-1.0.0c
-REVISION=	0
+REVISION=	1
 
 LIB_DEPENDS +=	print/libharu \
 		x11/wxWidgets \
@@ -23,7 +23,7 @@ WANTLIB += sndio spatialite sqlite3 stdc++ tiff usbhid wx_base
 WANTLIB += wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui
 WANTLIB += wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa
 WANTLIB += wx_gtk2_richtext wx_gtk2_xrc xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += z lzma xml2
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{pixmaps,applications}

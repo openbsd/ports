@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2015/07/16 16:52:59 stu Exp $
+# $OpenBSD: Makefile,v 1.76 2015/08/25 12:57:33 sthen Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
@@ -14,7 +14,7 @@ IGNORE-main = "--${FULLPKGNAME-main} comes with OpenBSD as of release 5.2"
 SUBPACKAGE ?= -lemon
 REVISION-lemon=	0
 REVISION-main=	0
-REVISION-tcl=	1
+REVISION-tcl=	2
 
 MASTER_SITES =	${HOMEPAGE}2013/
 
@@ -52,7 +52,7 @@ MODULES+=	lang/tcl
 
 BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS-tcl=${MODTCL_RUN_DEPENDS}
-WANTLIB-tcl =	sqlite3
+WANTLIB-tcl =	pthread sqlite3
 
 CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR}
 CONFIGURE_ARGS+=TCLSH_CMD="${MODTCL_BIN}"

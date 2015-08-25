@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/06/17 10:22:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/08/25 12:57:33 sthen Exp $
 
 COMMENT=	Ruby bindings for libvirt
 
 DISTNAME=	ruby-libvirt-0.5.2
-REVISION=	2
+REVISION=	3
 PKGNAME=	${DISTNAME:S/ruby-//}
 CATEGORIES=	sysutils
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/ruby
 
-WANTLIB += c m pthread virt virt-qemu ${MODRUBY_WANTLIB}
+WANTLIB += c m pthread virt virt-lxc virt-qemu ${MODRUBY_WANTLIB}
 
 LIB_DEPENDS=	sysutils/libvirt
 
