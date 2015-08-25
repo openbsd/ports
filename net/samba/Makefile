@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2015/08/25 11:07:45 jca Exp $
+# $OpenBSD: Makefile,v 1.204 2015/08/25 11:10:41 jca Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.1.19
@@ -83,7 +83,8 @@ CATEGORIES =		net sysutils security
 
 HOMEPAGE =		https://www.samba.org/
 
-#MAINTAINER =		???
+MAINTAINER =		Ian McWilliam <kaosagnt@tpg.com.au>, \
+			Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv3, LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
