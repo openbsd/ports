@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.355 2015/08/25 00:22:13 jturner Exp $
+# $OpenBSD: Makefile,v 1.356 2015/08/25 11:55:05 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -39,6 +39,7 @@
      SUBDIR += deja-dup
      SUBDIR += detox
      SUBDIR += dfc
+     SUBDIR += direvent
      SUBDIR += diskrescue
      SUBDIR += dmassage
      SUBDIR += dmidecode
