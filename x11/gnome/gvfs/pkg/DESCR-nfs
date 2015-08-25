@@ -1,0 +1,2 @@
+This package provides the NFS module for GVFS, which allows it to
+mount NFS shares.
