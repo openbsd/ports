@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/08/24 18:35:39 jca Exp $
-
-BROKEN-hppa=		undefined reference to __sync_val_compare_and_swap_4
-BROKEN-mips64=		undefined reference to __sync_val_compare_and_swap_4
+# $OpenBSD: Makefile,v 1.13 2015/08/25 11:37:02 jca Exp $
 
 COMMENT=		JSON implementation in C
 
@@ -18,7 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES =		https://s3.amazonaws.com/json-c_releases/releases/
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf autoheader
+AUTOCONF_VERSION=	2.69
 
 # not enabled by default at present, but we want to make sure we
 # don't use it if it's later enabled as it disables using random(4).

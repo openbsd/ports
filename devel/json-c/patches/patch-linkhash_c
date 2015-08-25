@@ -1,0 +1,25 @@
+$OpenBSD: patch-linkhash_c,v 1.1 2015/08/25 11:37:02 jca Exp $
+--- linkhash.c.orig	Fri Apr 11 02:41:08 2014
++++ linkhash.c	Mon Aug 24 20:41:34 2015
+@@ -23,6 +23,7 @@
+ 
+ #include "random_seed.h"
+ #include "linkhash.h"
++#include "config.h"
+ 
+ void lh_abort(const char *msg, ...)
+ {
+@@ -405,12 +406,11 @@ unsigned long lh_char_hash(const void *k)
+ 		int seed;
+ 		/* we can't use -1 as it is the unitialized sentinel */
+ 		while ((seed = json_c_get_random_seed()) == -1);
+-#if defined __GNUC__
++#if defined HAS___SYNC_VAL_COMPARE_AND_SWAP_INT
+ 		__sync_val_compare_and_swap(&random_seed, -1, seed);
+ #elif defined _MSC_VER
+ 		InterlockedCompareExchange(&random_seed, seed, -1);
+ #else
+-#warning "racy random seed initializtion if used by multiple threads"
+ 		random_seed = seed; /* potentially racy */
+ #endif
+ 	}

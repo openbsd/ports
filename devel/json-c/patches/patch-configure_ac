@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure_ac,v 1.1 2015/08/25 11:37:02 jca Exp $
+--- configure.ac.orig	Mon Aug 24 20:07:25 2015
++++ configure.ac	Mon Aug 24 20:06:41 2015
+@@ -66,6 +66,21 @@ int main(int c,char* v) {return 0;}
+    AC_MSG_RESULT(no)
+ ])
+ 
++AC_MSG_CHECKING([if compiler supports __sync_val_compare_and_swap with int objects])
++AC_LINK_IFELSE([AC_LANG_SOURCE([[
++int
++main(void) {
++    int r = 0;
++    __sync_val_compare_and_swap(&r, 0, 1);
++    return 0;
++}
++]])], [
++    AC_DEFINE(HAS___SYNC_VAL_COMPARE_AND_SWAP_INT, 1, [Define if compiler supports __sync_val_compare_and_swap.])
++    AC_MSG_RESULT(yes)
++], [
++   AC_MSG_RESULT(no)
++])
++
+ AC_LANG_POP([C])
+ 
+ AM_PROG_LIBTOOL
