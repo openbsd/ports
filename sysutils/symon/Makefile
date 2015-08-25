@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.66 2015/06/10 10:43:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2015/08/25 14:17:45 sthen Exp $
 
 COMMENT-main=	active host monitoring tool
 COMMENT-mux=	symon data gatherer
 
 V=		2.87
 REVISION-main=	2
+REVISION-mux=	0
 DISTNAME=	symon-$V
 WRKDIST=	${WRKDIR}/symon
 PKGNAME-main=	${DISTNAME}
@@ -20,7 +21,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB-main=	c
-WANTLIB-mux=	c fontconfig rrd
+WANTLIB-mux=	c fontconfig pthread rrd
 
 MASTER_SITES=	${HOMEPAGE}/philes/
 

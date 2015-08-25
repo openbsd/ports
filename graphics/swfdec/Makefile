@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2015/03/16 18:07:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2015/08/25 14:17:44 sthen Exp $
 
 COMMENT=	flash rendering library
 
 DISTNAME=	swfdec-0.8.4
-REVISION=	9
+REVISION=	10
 SHARED_LIBS +=	swfdec-0.8           0.0      # .90.0
 SHARED_LIBS +=	swfdec-gtk-0.8       0.0      # .90.0
 CATEGORIES=	graphics
@@ -15,16 +15,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE}download/swfdec/0.8/
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
-WANTLIB += freetype gdk_pixbuf-2.0 gdk-x11-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gstpbutils-0.10 gstreamer-0.10 gthread-2.0 gtk-x11-2.0
-WANTLIB += m oil-0.3 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread-stubs sndio soup-2.4 xcb
-WANTLIB += xcb-render xml2 z
-WANTLIB += GL Xxf86vm drm ffi gstbase-0.10 gstvideo-0.10 stdc++
-WANTLIB += xcb-shm
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gstpbutils-0.10 gstreamer-0.10 gthread-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz lzma m oil-0.3 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += sndio soup-2.4 sqlite3 xcb xcb-render xcb-shm xml2 z
 
 LIB_DEPENDS=	devel/libsoup \
 		devel/liboil \

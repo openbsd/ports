@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2015/07/16 17:27:09 jeremy Exp $
+# $OpenBSD: Makefile,v 1.91 2015/08/25 14:17:45 sthen Exp $
 
 PORTROACH_COMMENT= rrdcached crashes at startup in 1.5.0 to at least 1.5.3
 
@@ -17,7 +17,7 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}
 PKGNAME-python= py-rrd-${VERSION}
 PKGNAME-ruby=	ruby-rrd-${VERSION}
-REVISION-ruby=	0
+REVISION-ruby=	1
 
 SHARED_LIBS +=	rrd                  4.0      # 6.1
 SHARED_LIBS +=	rrd_th               4.0      # 6.1
@@ -83,7 +83,7 @@ CONFIGURE_ENV+=	NROFF="/usr/bin/true" \
 cWANTLIB=	pthread
 WANTLIB-update=	${cWANTLIB} c m
 WANTLIB-python=	${cWANTLIB} ${MODPY_WANTLIB} rrd
-WANTLIB-ruby=	${cWANTLIB} ${MODRUBY_WANTLIB} c m rrd
+WANTLIB-ruby=	${cWANTLIB} ${MODRUBY_WANTLIB} c gmp m rrd
 # depends on Perl ABI
 WANTLIB-main=	${cWANTLIB} ${MODGETTEXT_WANTLIB} perl
 WANTLIB-main += X11 Xext Xrender c cairo expat ffi fontconfig freetype

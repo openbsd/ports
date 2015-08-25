@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/28 10:17:23 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2015/08/25 14:17:44 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT =		role playing game
 V =			0.5.8
 DISTNAME =		sumwars-${V}-src
 PKGNAME =		sumwars-${V}
-REVISION =		0
+REVISION =		1
 
 SUBST_VARS +=		V
 
@@ -24,7 +24,7 @@ WANTLIB += CEGUIBase-0 CEGUIOgreRenderer-0 OIS OgreMain OgreRTShaderSystem
 WANTLIB += OgreTerrain X11 Xrandr alut boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_system-mt boost_thread-mt
 WANTLIB += c enet m ogg openal physfs pthread tinyxml vorbis
-WANTLIB += vorbisfile ${MODLUA_WANTLIB}
+WANTLIB += vorbisfile boost_atomic-mt ${MODLUA_WANTLIB}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sumwars/}
 EXTRACT_SUFX =		.tar.bz2
