@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/15 08:41:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2015/08/25 06:59:07 benoit Exp $
 
 COMMENT =	perl binding for Redis database
 
-DISTNAME =	Redis-1.979
+DISTNAME =	Redis-1.980
 CATEGORIES =	databases
 
 EPOCH =		0
