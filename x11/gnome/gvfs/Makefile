@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2015/08/25 11:04:38 jca Exp $
+# $OpenBSD: Makefile,v 1.140 2015/08/25 11:25:21 jca Exp $
 
 SHARED_ONLY=		Yes
 
@@ -15,7 +15,10 @@ PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 
+REVISION-main=		0
 REVISION-smb=		0
+REVISION-goa=		0
+REVISION-nfs=		0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
