@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2015/08/25 11:39:25 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2015/08/25 15:38:16 jca Exp $
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
@@ -1318,7 +1318,6 @@ share/samba/setup/ypServ30.ldif
 @sample /var/cache/samba/
 @sample ${SAMBA_LOGDIR}/
 @mode
-@sample /var/run/samba/
 @mode 0750
 @sample /var/samba/
 @mode 0700
