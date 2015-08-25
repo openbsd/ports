@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-client,v 1.13 2015/04/04 18:15:12 kirby Exp $
+@comment $OpenBSD: PLIST-client,v 1.14 2015/08/25 14:27:20 bentley Exp $
 @conflict freeciv-share-<2
 @conflict freeciv-server-<2.4.4
 @pkgpath games/freeciv,-client,gtk2
@@ -2344,6 +2344,8 @@ share/freeciv/hex2t/select.png
 share/freeciv/hex2t/select.spec
 share/freeciv/hex2t/tiles.png
 share/freeciv/hex2t/tiles.spec
+share/freeciv/hex2t/unitcost.png
+share/freeciv/hex2t/unitcost.spec
 share/freeciv/isophex/
 share/freeciv/isophex.tilespec
 share/freeciv/isophex/darkness.png
@@ -2376,6 +2378,8 @@ share/freeciv/isotrident/terrain2.png
 share/freeciv/isotrident/terrain2.spec
 share/freeciv/isotrident/tiles.png
 share/freeciv/isotrident/tiles.spec
+share/freeciv/isotrident/unitcost.png
+share/freeciv/isotrident/unitcost.spec
 share/freeciv/isotrident/unitextras.png
 share/freeciv/isotrident/unitextras.spec
 share/freeciv/misc/

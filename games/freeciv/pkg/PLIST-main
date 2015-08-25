@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2015/04/04 18:15:12 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2015/08/25 14:27:20 bentley Exp $
 @conflict freeciv-client-<2.4.4
 @pkgpath games/freeciv
 @bin bin/freeciv-manual
@@ -31,10 +31,10 @@ share/doc/freeciv/README.AI_modules
 share/doc/freeciv/README.SDLClient
 share/doc/freeciv/README.agents
 share/doc/freeciv/README.attributes
-share/doc/freeciv/README.cma
 share/doc/freeciv/README.delta
 share/doc/freeciv/README.effects
 share/doc/freeciv/README.fcdb
+share/doc/freeciv/README.governor
 share/doc/freeciv/README.graphics
 share/doc/freeciv/README.nations
 share/doc/freeciv/README.packaging
