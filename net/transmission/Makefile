@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2015/08/21 10:14:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.100 2015/08/25 14:03:21 sthen Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -10,6 +10,7 @@ PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
 REVISION=	3
+REVISION-gtk=	4
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
 
@@ -39,7 +40,7 @@ WANTLIB-gtk=	${WANTLIB-common} ICE SM X11 Xcomposite Xcursor Xdamage \
 		gobject-2.0 graphite2 gthread-2.0 gtk-3 \
 		harfbuzz idn pango-1.0 pangoft2-1.0 \
 		pangocairo-1.0 pixman-1 png pcre pthread-stubs xcb \
-		xcb-render xcb-shm
+		xcb-render xcb-shm epoxy
 WANTLIB-qt=	${WANTLIB-common} ${MODQT_WANTLIB} \
 		lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtXml \
 		ICE SM X11 Xext Xi Xinerama Xrender \

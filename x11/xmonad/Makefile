@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2015/08/21 19:17:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2015/08/25 14:03:21 sthen Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
@@ -6,7 +6,7 @@ COMMENT-lib =		libraries for runtime configuration
 DISTNAME =		xmonad-0.11
 PKGNAME-main =		${DISTNAME}
 PKGNAME-lib =		${DISTNAME:S,-,-lib-,}
-REVISION-main =		2
+REVISION-main =		3
 REVISION-lib =		2
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
@@ -16,7 +16,7 @@ MULTI_PACKAGES =		-main -lib
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main =		${WANTLIB} X11 Xext Xinerama Xrandr  c m \
+WANTLIB-main =		${WANTLIB} X11 Xext Xinerama Xrandr Xss c m \
 			pthread util
 WANTLIB-lib =
 

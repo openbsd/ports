@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2015/08/25 00:30:41 bentley Exp $
+# $OpenBSD: Makefile,v 1.51 2015/08/25 14:03:21 sthen Exp $
 
 SHARED_ONLY=		Yes
 DPB_PROPERTIES=		tag:kde3
@@ -21,7 +21,7 @@ PKGNAME-kde=		uim-kde-$V
 PKGNAME-qt=		uim-qt-$V
 PKGNAME-qt4=		uim-qt4-$V
 REVISION-gtk=		1
-REVISION-gtk3=		1
+REVISION-gtk3=		2
 REVISION-kde=		1
 REVISION-main=		1
 REVISION-qt=		1
@@ -79,7 +79,7 @@ WANTLIB-gtk3 += dbus-1 expat ffi gcroots gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB-gtk3 += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB-gtk3 += gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread pthread-stubs uim uim-custom
-WANTLIB-gtk3 += uim-scm xcb xcb-render xcb-shm z
+WANTLIB-gtk3 += uim-scm xcb xcb-render xcb-shm z epoxy
 
 LIB_DEPENDS-gtk3=	inputmethods/uim \
 			x11/gtk+3

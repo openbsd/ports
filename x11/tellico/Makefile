@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2015/05/05 17:00:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2015/08/25 14:03:21 sthen Exp $
 
 COMMENT=	organizer for book/dvd/music collections
 
 DISTNAME=	tellico-1.3.6
-REVISION=	13
+REVISION=	14
 
 CATEGORIES=	x11 databases
 
@@ -23,6 +23,7 @@ WANTLIB += Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm exempi expat exslt
 WANTLIB += fam fontconfig freetype gcrypt gpg-error idn jpeg lcms lcms2
 WANTLIB += m mng openjpeg pcre pcreposix png poppler poppler-qt>=3
 WANTLIB += pthread stdc++ tag tiff util xcb xcb-glx xml2 xslt yaz z
+WANTLIB += X11-xcb Xau Xdmcp glapi lzma pthread-stubs xcb-dri2
 
 MODULES=	x11/kde \
 		lang/python \
