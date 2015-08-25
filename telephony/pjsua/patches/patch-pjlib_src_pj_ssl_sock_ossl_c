@@ -1,4 +1,9 @@
-$OpenBSD: patch-pjlib_src_pj_ssl_sock_ossl_c,v 1.1 2015/07/18 15:37:29 sthen Exp $
+$OpenBSD: patch-pjlib_src_pj_ssl_sock_ossl_c,v 1.2 2015/08/25 17:49:18 jca Exp $
+
+Fixed upstream
+
+  http://trac.pjsip.org/repos/changeset/5074/pjproject/trunk/pjlib/src/pj/ssl_sock_ossl.c
+
 --- pjlib/src/pj/ssl_sock_ossl.c.orig	Sat Jul 18 09:36:21 2015
 +++ pjlib/src/pj/ssl_sock_ossl.c	Sat Jul 18 09:36:50 2015
 @@ -333,8 +333,10 @@ static pj_status_t init_openssl(void)
