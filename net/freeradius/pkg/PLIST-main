@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2015/07/21 02:25:06 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2015/08/25 07:30:29 ajacoutot Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -698,7 +698,6 @@ share/freeradius/dictionary.zyxel
 @owner _freeradius
 @sample /var/log/radius/
 @sample /var/log/radius/radacct/
-@sample /var/run/radiusd/
 @exec-add ln -s ../sites-available/control-socket ${SYSCONFDIR}/raddb/sites-enabled/
 @exec-add ln -s ../sites-available/default ${SYSCONFDIR}/raddb/sites-enabled/
 @exec-add ln -s ../sites-available/inner-tunnel ${SYSCONFDIR}/raddb/sites-enabled/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2015/06/03 12:34:10 pea Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2015/08/25 07:30:30 ajacoutot Exp $
 @pkgpath net/vnstat
 @newgroup _vnstat:658
 @newuser _vnstat:658:_vnstat:daemon:vnstat daemon:/var/db/vnstat:/sbin/nologin
@@ -9,7 +9,6 @@
 @bin sbin/vnstatd
 @owner _vnstat
 @sample /var/log/vnstat/
-@sample /var/run/vnstat/
 @group _vnstat
 @sample /var/db/vnstat/
 @owner

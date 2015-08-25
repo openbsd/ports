@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/06 17:58:55 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/08/25 07:30:30 ajacoutot Exp $
 bin/tetrinetx
 share/doc/tetrinetx/
 share/doc/tetrinetx/README
@@ -28,4 +28,3 @@ share/examples/tetrinetx/game.secure
 @mode g+w
 @sample /var/games/tetrinetx/
 @sample /var/log/tetrinetx/
-@sample /var/run/tetrinetx/

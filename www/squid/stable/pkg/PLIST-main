@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2015/05/04 11:04:08 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2015/08/25 07:30:30 ajacoutot Exp $
 @pkgpath www/squid[,ldap][,ntlm][,snmp][,transparent]
 @pkgpath www/squid,-main
 @newgroup _squid:515
@@ -2176,4 +2176,3 @@ share/squid/icons/silk/script.png
 share/squid/icons/silk/script_gear.png
 share/squid/icons/silk/script_palette.png
 @rcscript ${RCDIR}/squid
-@extra /var/run/squid.pid

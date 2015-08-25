@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.13 2015/05/12 18:03:41 giovanni Exp $
+@comment $OpenBSD: PLIST-server,v 1.14 2015/08/25 07:30:29 ajacoutot Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -383,5 +383,4 @@ share/mysql/swedish/
 share/mysql/swedish/errmsg.sys
 share/mysql/ukrainian/
 share/mysql/ukrainian/errmsg.sys
-@extraunexec rm -rf ${SOCKET_DIR}
 @rcscript ${RCDIR}/mysqld

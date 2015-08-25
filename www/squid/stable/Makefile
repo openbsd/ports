@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2015/08/11 20:47:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2015/08/25 07:30:29 ajacoutot Exp $
+
+PORTROACH=	limit:^3\.4\.*
 
 V=		3.4.14
-PORTROACH=	limit:^3\.4\.*
+REVISION=	0
 
 WANTLIB+=	stdc++
 

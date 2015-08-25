@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/18 06:56:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/08/25 07:30:30 ajacoutot Exp $
 
 COMMENT=	tetrinet server
 
 DISTNAME=	tetrinetx-1.13.16+qirc-1.40c
 PKGNAME=	tetrinetx-1.13.16
+REVISION=	0
+
 CATEGORIES=	games
 
 HOMEPAGE=	http://tetrinetx.sourceforge.net/
