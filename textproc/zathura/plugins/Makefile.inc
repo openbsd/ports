@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2015/05/11 12:06:21 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2015/08/25 14:23:25 sthen Exp $
 
 CATEGORIES ?=		textproc x11
 MASTER_SITES ?=		https://pwmt.org/projects/zathura/plugins/download/
@@ -17,3 +17,5 @@ MAKE_FLAGS ?=	VERBOSE=1 \
 
 NO_TEST ?=	Yes
 USE_GMAKE ?=	Yes
+
+MODULES +=	devel/gettext

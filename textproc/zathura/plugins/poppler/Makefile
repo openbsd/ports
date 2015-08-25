@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/27 13:51:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/08/25 14:23:25 sthen Exp $
 
 V =		0.2.5
 COMMENT =	poppler pdf plugin for zathura
 DISTNAME =	zathura-pdf-poppler-${V}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://pwmt.org/projects/zathura/plugins/zathura-pdf-poppler/
 
-MODULES =	devel/gettext
 WANTLIB += cairo gio-2.0 girara-gtk3 glib-2.0 gobject-2.0
 WANTLIB += poppler-glib
 
