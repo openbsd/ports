@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/08/12 00:54:09 jturner Exp $
+# $OpenBSD: Makefile,v 1.9 2015/08/25 11:16:12 sthen Exp $
 
 COMMENT =		minimal CGI library for web applications
 
 DISTNAME =		kcgi-0.7.1
+REVISION =		0
 CATEGORIES =		www
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -13,6 +14,8 @@ EXTRACT_SUFX =		.tgz
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += c
 
 NO_CONFIGURE =		Yes
 

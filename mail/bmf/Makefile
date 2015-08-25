@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2015/08/12 22:27:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2015/08/25 11:16:12 sthen Exp $
 
 COMMENT=		easy to use Bayesian spam filter
 DISTNAME=		bmf-0.9.4
-REVISION=		8
+REVISION=		9
 CATEGORIES=		mail
 HOMEPAGE=		http://sourceforge.net/projects/bmf/
 
@@ -24,7 +24,7 @@ CONFIGURE_ARGS=		--without-mysql \
 
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS+=		databases/mariadb
-WANTLIB +=		mysqlclient stdc++
+WANTLIB +=		mysqlclient pthread
 CONFIGURE_ARGS+=	--without-libdb --with-mysql="${LOCALBASE}"
 CFLAGS+=		"-I${LOCALBASE}/include/mysql"
 .endif
