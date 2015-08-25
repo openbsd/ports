@@ -1,4 +1,9 @@
-$OpenBSD: patch-src_ssl_sock_c,v 1.1 2015/07/18 15:43:44 sthen Exp $
+$OpenBSD: patch-src_ssl_sock_c,v 1.2 2015/08/25 17:51:52 jca Exp $
+
+Committed upstream
+
+  https://github.com/haproxy/haproxy/commit/17c3f6284cf605e47f6525c077bc644c45272849
+
 --- src/ssl_sock.c.orig	Sat Jul 18 09:40:46 2015
 +++ src/ssl_sock.c	Sat Jul 18 09:42:45 2015
 @@ -1405,8 +1405,10 @@ int ssl_sock_prepare_ctx(struct bind_conf *bind_conf, 
