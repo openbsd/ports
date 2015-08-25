@@ -1,5 +1,0 @@
-DHCP (Dynamic Host Configuration Protocol) is a protocol which provides
-informations to computer when it boots. This package provides WIDE's IPv4
-implementation of DHCP: server, relay agent, and client.
-
-For WIDE's DHCPv6 implementation, see the "wide-dhcpv6" package.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.922 2015/08/25 11:04:38 jca Exp $
+# $OpenBSD: Makefile,v 1.923 2015/08/25 11:28:41 jca Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -658,7 +658,6 @@
      SUBDIR += weex
      SUBDIR += wget
      SUBDIR += whatweb
-     SUBDIR += wide-dhcp
      SUBDIR += wide-dhcpv6
      SUBDIR += winexe
      SUBDIR += wireshark

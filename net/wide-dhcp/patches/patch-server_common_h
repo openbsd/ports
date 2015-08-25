@@ -1,8 +1,0 @@
-$OpenBSD: patch-server_common_h,v 1.1 2013/05/10 09:56:45 sthen Exp $
---- server/common.h.orig	Fri Jan 30 08:48:43 1998
-+++ server/common.h	Fri May 10 10:49:50 2013
-@@ -339,3 +339,4 @@ void    restart();
- char    *haddrtos();
- char    *cidtos();
- char    *_ctime();
-+char    *chaddrtos();
