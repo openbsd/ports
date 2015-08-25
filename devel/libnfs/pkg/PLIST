@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/25 06:40:04 ajacoutot Exp $
+@bin bin/nfs-cat
+@bin bin/nfs-cp
+@bin bin/nfs-ls
+include/nfsc/
+include/nfsc/libnfs-raw-mount.h
+include/nfsc/libnfs-raw-nfs.h
+include/nfsc/libnfs-raw-nlm.h
+include/nfsc/libnfs-raw-nsm.h
+include/nfsc/libnfs-raw-portmap.h
+include/nfsc/libnfs-raw-rquota.h
+include/nfsc/libnfs-raw.h
+include/nfsc/libnfs-zdr.h
+include/nfsc/libnfs.h
+lib/libnfs.a
+lib/libnfs.la
+@lib lib/libnfs.so.${LIBnfs_VERSION}
+lib/pkgconfig/libnfs.pc
+@man man/man1/nfs-cat.1
+@man man/man1/nfs-cp.1
+@man man/man1/nfs-ls.1
