@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2015/08/25 11:04:39 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2015/08/25 11:39:25 jca Exp $
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
@@ -1311,6 +1311,7 @@ share/samba/setup/spn_update_list
 share/samba/setup/ypServ30.ldif
 @rcscript ${RCDIR}/nmbd
 @rcscript ${RCDIR}/samba
+@rcscript ${RCDIR}/samba_ad_dc
 @rcscript ${RCDIR}/smbd
 @rcscript ${RCDIR}/winbindd
 @mode 0750

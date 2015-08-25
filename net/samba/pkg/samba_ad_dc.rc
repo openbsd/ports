@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $OpenBSD: samba_ad_dc.rc,v 1.1 2015/08/25 11:39:25 jca Exp $
+
+smbcontrol="${TRUEPREFIX}/bin/smbcontrol"
+
+daemon="${TRUEPREFIX}/sbin/samba -D"
+
+. /etc/rc.d/rc.subr
+
+rc_usercheck=NO
+
+rc_check() {
+	${smbcontrol} samba ping
+}
+
+rc_reload() {
+	${smbcontrol} samba reload-config
+}
+
+rc_stop() {
+	${smbcontrol} samba shutdown
+}
+
+rc_cmd $1
