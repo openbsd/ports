@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_socket_c,v 1.1.1.1 2015/08/25 06:40:28 ajacoutot Exp $
+--- lib/socket.c.orig	Thu Aug 20 12:33:27 2015
++++ lib/socket.c	Thu Aug 20 12:34:29 2015
+@@ -140,7 +140,7 @@ static int set_tcp_sockopt(int sockfd, int optname, in
+ {
+ 	int level;
+ 
+-	#if defined(__FreeBSD__) || defined(__sun) || (defined(__APPLE__) && defined(__MACH__))
++	#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__sun) || (defined(__APPLE__) && defined(__MACH__))
+ 	struct protoent *buf;
+ 
+ 	if ((buf = getprotobyname("tcp")) != NULL)
