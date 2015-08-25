@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.112 2015/07/23 08:05:18 bentley Exp $
+.\"	$OpenBSD: dpb.1,v 1.113 2015/08/25 22:40:56 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: July 23 2015 $
+.Dd $Mdocdate: August 25 2015 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -298,12 +298,6 @@ call
 on every task start/end while creating packages.
 This does produce lots of messages, it is intended to route the logging
 on another machine, while tracking down panics and other hangs.
-.It Ar UNPRIV_USER
-.Nm
-should normally be run as root.
-As far as possible, it will drop privileges to
-.Ar UNPRIV_USER
-which should be a fairly restricted user.
 .It Ar WANTSIZE
 Alternate way to specify
 .Fl s .
@@ -861,12 +855,8 @@ Thus,
 .Xr ftp 1
 does not happen as root.
 .It
-.Ar UNPRIV_USER
-is used as a fail-safe for any other activities that do not require any rights.
-It will default to
 .Ar _dpb
-starting with
-.Ox 5.8 .
+is used as a fail-safe for any other activities that do not require any rights.
 .It
 .Nm
 creates local directories as root, then gives them to the appropriate user.

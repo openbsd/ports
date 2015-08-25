@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.60 2015/08/24 10:16:18 espie Exp $
+# $OpenBSD: Config.pm,v 1.61 2015/08/25 22:40:56 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -27,7 +27,7 @@ use DPB::User;
 sub setup_users
 {
 	my ($class, $state) = @_;
-	for my $u (qw(unpriv_user build_user log_user fetch_user port_user)) {
+	for my $u (qw(build_user log_user fetch_user port_user)) {
 		my $U = uc($u);
 		if ($state->defines($U)) {
 			$state->{$u} = DPB::User->new($state->defines($U));
