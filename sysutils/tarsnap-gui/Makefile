@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/08/25 00:19:42 jturner Exp $
+# $OpenBSD: Makefile,v 1.2 2015/08/25 06:09:37 ajacoutot Exp $
+
 COMMENT = 		frontend to the popular Tarsnap backup service
 
 V = 			0.6
