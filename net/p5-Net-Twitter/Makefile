@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/21 06:23:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2015/08/25 08:21:44 benoit Exp $
 
 COMMENT=	perl interface to the Twitter API
 
-DISTNAME=	Net-Twitter-4.00006
-REVISION =	0
+DISTNAME =	Net-Twitter-4.01010
 
 CATEGORIES=	net
 
@@ -17,7 +16,6 @@ RUN_DEPENDS=	converters/p5-JSON-Any \
 		devel/p5-Data-Visitor \
 		devel/p5-DateTime-Format-Strptime \
 		devel/p5-Devel-StackTrace \
-		devel/p5-MooseX-Aliases \
 		devel/p5-MooseX-Role-Parameterized \
 		devel/p5-namespace-autoclean \
 		net/p5-Net-OAuth

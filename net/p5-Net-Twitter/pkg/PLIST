@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/03/10 08:39:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/08/25 08:21:44 benoit Exp $
 ${P5SITE}/Net/Identica.pm
 ${P5SITE}/Net/Twitter/
 ${P5SITE}/Net/Twitter.pm
@@ -19,6 +19,8 @@ ${P5SITE}/Net/Twitter/Role/API/Search.pm
 ${P5SITE}/Net/Twitter/Role/API/Search/Trends.pm
 ${P5SITE}/Net/Twitter/Role/API/TwitterVision.pm
 ${P5SITE}/Net/Twitter/Role/API/Upload.pm
+${P5SITE}/Net/Twitter/Role/API/UploadMedia.pm
+${P5SITE}/Net/Twitter/Role/AppAuth.pm
 ${P5SITE}/Net/Twitter/Role/AutoCursor.pm
 ${P5SITE}/Net/Twitter/Role/InflateObjects.pm
 ${P5SITE}/Net/Twitter/Role/Legacy.pm
@@ -42,6 +44,8 @@ ${P5SITE}/Net/Twitter/Search.pm
 @man man/man3p/Net::Twitter::Role::API::Search::Trends.3p
 @man man/man3p/Net::Twitter::Role::API::TwitterVision.3p
 @man man/man3p/Net::Twitter::Role::API::Upload.3p
+@man man/man3p/Net::Twitter::Role::API::UploadMedia.3p
+@man man/man3p/Net::Twitter::Role::AppAuth.3p
 @man man/man3p/Net::Twitter::Role::AutoCursor.3p
 @man man/man3p/Net::Twitter::Role::InflateObjects.3p
 @man man/man3p/Net::Twitter::Role::Legacy.3p
