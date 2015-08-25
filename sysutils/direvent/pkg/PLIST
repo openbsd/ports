@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/25 11:54:37 ajacoutot Exp $
+@bin bin/direvent
+@info info/direvent.info
+@man man/man5/direvent.conf.5
+@man man/man8/direvent.8
+share/locale/de/LC_MESSAGES/direvent.mo
+share/locale/fr/LC_MESSAGES/direvent.mo
+share/locale/hu/LC_MESSAGES/direvent.mo
+share/locale/nl/LC_MESSAGES/direvent.mo
+share/locale/pl/LC_MESSAGES/direvent.mo
+share/locale/pt_BR/LC_MESSAGES/direvent.mo
+share/locale/uk/LC_MESSAGES/direvent.mo
