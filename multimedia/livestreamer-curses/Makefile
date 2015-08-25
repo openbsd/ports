@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/05/23 16:34:40 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.14 2015/08/25 13:18:27 sthen Exp $
 
 MODPY_EGG_VERSION =	1.5.2
 COMMENT =	curses-based front-end for livestreamer
@@ -7,8 +7,7 @@ GH_PROJECT =	livestreamer-curses
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 DISTNAME =	${GH_PROJECT}-${MODPY_EGG_VERSION}
 CATEGORIES =	multimedia net
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+REVISION =	0
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

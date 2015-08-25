@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2015/06/28 13:33:07 bcallah Exp $
+# $OpenBSD: Makefile,v 1.51 2015/08/25 13:18:28 sthen Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -8,6 +8,7 @@ COMMENT=	Fast-Light Tool Kit
 VER=		1.3.3
 DISTNAME=	fltk-${VER}-source
 PKGNAME=	fltk-${VER}
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -18,7 +19,6 @@ SHARED_LIBS=	fltk		8.0 \
 		fltk_images	8.0
 
 HOMEPAGE=	http://www.fltk.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv2 with exceptions (see COPYING)
 PERMIT_PACKAGE_CDROM=	Yes

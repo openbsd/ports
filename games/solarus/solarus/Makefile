@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/12/05 17:37:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2015/08/25 13:18:26 sthen Exp $
 
 V =		1.1.1
 COMMENT =	open-source Zelda-like 2D game engine
 DISTNAME =	solarus-${V}-src
 PKGNAME =	solarus-${V}
+REVISION =	0
 
 HOMEPAGE =	http://www.solarus-games.org/
 

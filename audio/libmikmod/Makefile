@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.27 2014/10/18 14:56:28 bcallah Exp $
+# $OpenBSD: Makefile,v 1.28 2015/08/25 13:18:24 sthen Exp $
 
 COMMENT=	mikmod sound library
 
 DISTNAME=	libmikmod-3.3.7
 SHARED_LIBS +=	mikmod               4.0      # .3.0
 CATEGORIES=	audio devel
+REVISION=	0
 
 HOMEPAGE=	http://mikmod.shlomifish.org/
-MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes

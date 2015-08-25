@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2015/01/10 05:00:40 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2015/08/25 13:18:24 sthen Exp $
 
 COMMENT =	Qt/C++ wrapper for ZIP/UNZIP package
 DISTNAME =	quazip-0.7.1
 CATEGORIES =	archivers
+REVISION =	0
 
 SHARED_LIBS =	quazip 1.0		# 1.0
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 HOMEPAGE =	http://quazip.sourceforge.net/
 
 # LGPLv2.1

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2015/03/14 20:58:56 bcallah Exp $
+# $OpenBSD: Makefile,v 1.11 2015/08/25 13:18:27 sthen Exp $
 
 COMMENT=	modern gopher server
 DISTNAME=	gophernicus-1.7
 CATEGORIES=	net
+REVISION=	0
 
 HOMEPAGE=	http://gophernicus.org
-
-MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

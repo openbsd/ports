@@ -1,13 +1,13 @@
 # $RuOBSD: Makefile,v 1.3 2002/04/10 05:14:52 form Exp $
-# $OpenBSD: Makefile,v 1.43 2015/03/31 12:26:40 bcallah Exp $
+# $OpenBSD: Makefile,v 1.44 2015/08/25 13:18:25 sthen Exp $
 
 COMMENT=		Joe's Own Editor
 
 DISTNAME=		joe-4.0
 CATEGORIES=		editors
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=joe-editor/}
+REVISION=		0
 
-MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 HOMEPAGE=		http://joe-editor.sourceforge.net/
 
 # GPLv2 only

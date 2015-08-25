@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2015/08/24 23:02:30 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/25 13:18:25 sthen Exp $
 
 COMMENT =	general-purpose software audio FSK modem
 DISTNAME =	minimodem-0.22.1
 CATEGORIES =	comms
+REVISION =	0
 
 HOMEPAGE =	http://www.whence.com/minimodem/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

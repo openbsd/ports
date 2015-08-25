@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/02 18:31:32 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/25 13:18:27 sthen Exp $
 
 COMMENT =		load average history on a tty
 
 DISTNAME =		ttyload-0.5.3
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://www.daveltd.com/src/util/ttyload/
-
-MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2014/05/03 17:50:21 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/25 13:18:26 sthen Exp $
 
 COMMENT =	Tetris and Pong played simultaneously on one playing field
 DISTNAME =	tong-1.3
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	http://www.nongnu.org/tong/
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

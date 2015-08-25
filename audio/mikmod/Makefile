@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2014/12/09 20:29:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/08/25 13:18:24 sthen Exp $
 
 COMMENT =	module audio player
 DISTNAME =	mikmod-3.2.6
-REVISION =	0
+REVISION =	1
 CATEGORIES =	audio
 
 HOMEPAGE =	http://mikmod.shlomifish.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

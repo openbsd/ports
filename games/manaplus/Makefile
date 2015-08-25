@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.71 2015/08/15 17:38:56 bcallah Exp $
+# $OpenBSD: Makefile,v 1.72 2015/08/25 13:18:26 sthen Exp $
 
 COMMENT =	client for The Mana World
 V =		1.5.8.15
 DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	http://manaplus.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

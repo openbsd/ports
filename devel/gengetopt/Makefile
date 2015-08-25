@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/13 20:39:46 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/08/25 13:18:25 sthen Exp $
 
 V =		2.22.6
 COMMENT =	command line parser for c programs
 DISTNAME =	gengetopt-${V}
 CATEGORIES =	devel
+REVISION =	0
 
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 HOMEPAGE =	http://www.gnu.org/software/gengetopt/
 
 # GPLv3+

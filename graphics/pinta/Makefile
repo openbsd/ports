@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/13 13:44:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2015/08/25 13:18:27 sthen Exp $
 
 BROKEN =	unreliable build, frequently hangs after compiling translations
 
@@ -6,10 +6,9 @@ V =		1.6
 COMMENT =	open source drawing/editing program modeled after Paint.NET
 DISTNAME =	pinta-${V}
 CATEGORIES =	graphics x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://pinta-project.com/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

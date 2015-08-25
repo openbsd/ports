@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/12/05 17:37:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2015/08/25 13:18:26 sthen Exp $
 
 V =		1.7.1
 COMMENT =	fan made parody Zelda game for Solarus engine
 DISTNAME =	zsxd-${V}
+REVISION =	0
 
 HOMEPAGE =	http://www.solarus-games.org/games/zelda-mystery-of-solarus-xd/
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2015/06/25 22:57:36 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2015/08/25 13:18:28 sthen Exp $
 
 COMMENT =	modal webkit-based browser inspired by vim
 DISTNAME =	vimb-${GH_TAGNAME}
 CATEGORIES =	www x11
+REVISION =	0
 
 HOMEPAGE =	http://fanglingsu.github.io/vimb/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

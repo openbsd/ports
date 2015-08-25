@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/07/17 17:08:38 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/25 13:18:26 sthen Exp $
 
 COMMENT =	color correction utility for digital images
 DISTNAME =	delaboratory-0.8
 CATEGORIES =	graphics x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://code.google.com/p/delaboratory/
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

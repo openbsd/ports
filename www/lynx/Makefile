@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/05/07 19:40:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.19 2015/08/25 13:18:28 sthen Exp $
 
 V =		2.8.9
 PL =		6
@@ -7,9 +7,9 @@ DISTNAME =	lynx${V}dev.${PL}
 PKGNAME =	lynx-${V}pl${PL}
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	www net
+REVISION =	0
 
 HOMEPAGE =	http://lynx.isc.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes

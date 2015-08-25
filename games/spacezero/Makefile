@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2013/12/22 01:00:35 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2015/08/25 13:18:26 sthen Exp $
 
 COMMENT =	2D RTS space combat game
 DISTNAME =	spacezero-0.86.00
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	http://spacezero.sourceforge.net/
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

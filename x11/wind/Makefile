@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/12/01 23:05:53 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/08/25 13:18:28 sthen Exp $
 
 COMMENT =	small standards-compliant window manager
 DISTNAME =	wind-1.5
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	http://windwm.sourceforge.net
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

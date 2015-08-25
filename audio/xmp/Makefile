@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.56 2015/01/24 11:07:57 schwarze Exp $
+# $OpenBSD: Makefile,v 1.57 2015/08/25 13:18:25 sthen Exp $
 
 COMMENT=		extended module player
 
 DISTNAME=		xmp-4.0.10
 CATEGORIES=		audio
+REVISION=		0
 
 HOMEPAGE=		http://xmp.sourceforge.net/
-MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2013/04/26 13:04:14 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2015/08/25 13:18:26 sthen Exp $
 
 V =		2.1
 COMMENT =	scrabble game
 DISTNAME =	eliot-${V}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	http://nongnu.org/eliot/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 MASTER_SITES =	${MASTER_SITE_SAVANNAH:=eliot/releases/${V}/}
 

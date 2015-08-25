@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/17 23:43:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2015/08/25 13:18:27 sthen Exp $
 
 COMMENT =	substantially more useful ls
 DISTNAME =	sl-ls-1.1.2
-REVISION =	0
+REVISION =	1
 CATEGORIES =	productivity sysutils
 
 HOMEPAGE =	http://practicalthought.com/sl/
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =		Yes

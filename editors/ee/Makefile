@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.17 2015/08/11 21:43:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2015/08/25 13:18:25 sthen Exp $
 
 COMMENT=		easy to use text editor
 
 VERSION=		1.5.2
 DISTNAME=		ee-${VERSION}.src
 PKGNAME=		ee-${VERSION}
-REVISION=		1
+REVISION=		2
 EPOCH=			0
 CATEGORIES=		editors
 
 HOMEPAGE=		http://www.users.uswest.net/~hmahon/
-MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes

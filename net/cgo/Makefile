@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2015/03/17 23:43:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2015/08/25 13:18:27 sthen Exp $
 
 COMMENT =	simple terminal based gopher client
 DISTNAME =	cgo-20141022
 CATEGORIES =	net
+REVISION =	0
 
 HOMEPAGE =	https://github.com/kieselsteini/cgo/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes

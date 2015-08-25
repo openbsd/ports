@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/06/11 22:09:45 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/08/25 13:18:28 sthen Exp $
 
 COMMENT =	small and simple window manager of novel design
 DISTNAME =	windowlab-1.40
 EXTRACT_SUFX =	.tar
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	http://nickgravgaard.com/windowlab/
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes

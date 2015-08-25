@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.54 2015/04/21 18:42:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2015/08/25 13:18:28 sthen Exp $
 
 COMMENT=	graphics and text browser
 VER=		2.9
-REVISION=	0
+REVISION=	1
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 CATEGORIES=	www
 
 HOMEPAGE=	http://links.twibright.com/
-MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

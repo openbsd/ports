@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/13 20:40:36 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/08/25 13:18:25 sthen Exp $
 
 COMMENT =	falling block puzzle game similar to Xixit
 DISTNAME =	blockrage-0.2.3
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	http://blockrage.sourceforge.net/
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

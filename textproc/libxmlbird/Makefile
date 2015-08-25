@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/30 05:38:59 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/25 13:18:27 sthen Exp $
 
 COMMENT =	XML parser written in Vala
 DISTNAME =	libxmlbird-1.0.6
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	textproc
+REVISION =	0
 
 SHARED_LIBS +=	xmlbird 0.0			# 1.0.5
 
 HOMEPAGE =	http://birdfont.org/xmlbird.php
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

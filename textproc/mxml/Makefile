@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2014/10/20 03:41:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.11 2015/08/25 13:18:27 sthen Exp $
 
 COMMENT=		minimal XML library
 DISTNAME=		mxml-2.9
 CATEGORIES=		textproc
+REVISION=		0
 
 SHARED_LIBS=		mxml	0.2	# 1.5
 
 HOMEPAGE=		http://www.msweet.org/projects.php?Z3
-MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv2 with exceptions
 PERMIT_PACKAGE_CDROM=	Yes

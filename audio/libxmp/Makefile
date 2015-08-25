@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/06/25 03:27:23 bcallah Exp $
+# $OpenBSD: Makefile,v 1.13 2015/08/25 13:18:24 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,11 +6,11 @@ COMMENT =	module player library
 
 DISTNAME =	libxmp-4.3.9
 CATEGORIES =	audio
+REVISION =	0
 
 SHARED_LIBS +=	xmp		1.0	# 4.3
 
 HOMEPAGE =	http://xmp.sourceforge.net/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes

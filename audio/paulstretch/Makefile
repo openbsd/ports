@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/21 22:51:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/08/25 13:18:24 sthen Exp $
 
 COMMENT =	program for extreme audio stretching
 DISTNAME =	paulstretch-2.2-2
-REVISION =	0
+REVISION =	1
 PKGNAME =	paulstretch-2.2.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio x11
 
 HOMEPAGE =	http://hypermammut.sourceforge.net/paulstretch/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes

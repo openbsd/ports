@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2015/06/19 22:02:01 bcallah Exp $
+# $OpenBSD: Makefile,v 1.11 2015/08/25 13:18:27 sthen Exp $
 
 COMMENT =	scientific plotting and graphing package
 MODPY_EGG_VERSION =	1.23.1
 DISTNAME =	veusz-${MODPY_EGG_VERSION}
 CATEGORIES =	math graphics
+REVISION =	0
 
 HOMEPAGE =	http://home.gna.org/veusz/
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes

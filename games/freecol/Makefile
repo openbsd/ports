@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/11 20:45:02 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2015/08/25 13:18:26 sthen Exp $
 
 COMMENT =	free Colonization clone
 DISTNAME =	freecol-0.11.5
 EXTRACT_SUFX =	.zip
 CATEGORIES =	games java x11
+REVISION =	0
 
 HOMEPAGE =	http://www.freecol.org/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

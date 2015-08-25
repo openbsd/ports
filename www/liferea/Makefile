@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2015/08/19 23:38:03 bcallah Exp $
+# $OpenBSD: Makefile,v 1.81 2015/08/25 13:18:28 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,9 +7,9 @@ COMMENT=		simple GTK desktop news aggregator
 DISTNAME=		liferea-${V}
 CATEGORIES=		www x11
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 HOMEPAGE=		http://lzone.de/liferea/
-MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

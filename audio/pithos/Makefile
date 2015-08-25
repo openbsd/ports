@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/07/18 14:33:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2015/08/25 13:18:24 sthen Exp $
 
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
@@ -8,9 +8,9 @@ COMMENT =	Pandora client for GNOME
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES =	audio x11
 SUBST_VARS +=	GH_TAGNAME
+REVISION =	0
 
 HOMEPAGE =	http://pithos.github.io/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Github page says GPLv3+
 # But the code says GPLv3 only

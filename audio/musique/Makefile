@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2015/07/18 14:33:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/08/25 13:18:24 sthen Exp $
 
 COMMENT =	graphical music player focused on a clean ui
 DISTNAME =	musique-1.4
 CATEGORIES =	audio
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://flavio.tordini.org/musique/
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes

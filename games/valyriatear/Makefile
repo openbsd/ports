@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2015/04/05 13:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/08/25 13:18:26 sthen Exp $
 
 COMMENT =	free J-RPG game
 DISTNAME =	valyriatear-${GH_TAGNAME}
 CATEGORIES =	games x11
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	Bertram25
 GH_PROJECT =	ValyriaTear
 GH_TAGNAME =	1.0.0
 
 HOMEPAGE =	http://valyriatear.blogspot.com/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Main game is GPLv2+
 # Art/music a variety of CC and GPL.

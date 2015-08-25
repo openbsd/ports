@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/18 14:33:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/08/25 13:18:25 sthen Exp $
 
 COMMENT =	solfege and ear training program
 DISTNAME =	solfege-3.22.2
 CATEGORIES =	audio x11
 BROKEN-hppa =	SIGILL when running lilypond
+REVISION =	0
 
 HOMEPAGE =	http://www.solfege.org/
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2015/05/03 02:51:35 bcallah Exp $
+# $OpenBSD: Makefile,v 1.25 2015/08/25 13:18:27 sthen Exp $
 
 MODPY_EGG_VERSION =	1.12.2
 COMMENT =	pipe video streams into a video player
 DISTNAME =	livestreamer-${MODPY_EGG_VERSION}
 CATEGORIES =	multimedia net
+REVISION =	0
 
 HOMEPAGE =	http://livestreamer.io/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 # src/livestreamer/packages/pbs.py: MIT

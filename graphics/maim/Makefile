@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2015/06/23 01:45:34 bcallah Exp $
+# $OpenBSD: Makefile,v 1.12 2015/08/25 13:18:27 sthen Exp $
 
 V =		3.4.43
 COMMENT =	desktop screenshot utility (make image)
 DISTNAME =	maim-${V}
 CATEGORIES =	graphics x11
+REVISION =	0
 
 GH_ACCOUNT =	naelstrof
 GH_PROJECT =	maim
 GH_TAGNAME =	v${V}
-
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

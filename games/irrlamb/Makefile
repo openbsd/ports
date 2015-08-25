@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/25 05:12:44 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2015/08/25 13:18:26 sthen Exp $
 
 V =		0.1.1
 COMMENT =	third person, 3D physics game
 DISTNAME =	irrlamb-$V-src
 PKGNAME =	irrlamb-$V
-REVISION =	1
+REVISION =	2
 CATEGORIES =	games x11
 
 # GPLv3+
