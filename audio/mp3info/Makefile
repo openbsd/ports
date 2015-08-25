@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2015/08/19 18:55:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2015/08/25 11:41:54 sthen Exp $
 
 PORTROACH=	limit:.*[^a]$$
 
 COMMENT=	MP3 technical info viewer and ID3 1.x tag editor
 
 DISTNAME=	mp3info-0.8.5a
-REVISION=	9
+REVISION=	10
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.ibiblio.org/mp3info/
@@ -35,7 +35,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gtk-x11-2.0 harfbuzz m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm z graphite2
 .endif
 
 .include <bsd.port.mk>
