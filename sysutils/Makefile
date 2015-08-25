@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.354 2015/08/24 21:16:19 jca Exp $
+# $OpenBSD: Makefile,v 1.355 2015/08/25 00:22:13 jturner Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -226,6 +226,7 @@
      SUBDIR += syslog-ng
      SUBDIR += tabled
      SUBDIR += tarsnap
+     SUBDIR += tarsnap-gui
      SUBDIR += tentakel
      SUBDIR += testdisk
      SUBDIR += tkdvd
