@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2015/08/24 09:35:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2015/08/25 06:36:46 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		terminal emulation library
 GNOME_PROJECT=		vte
 GNOME_VERSION=		0.40.2
 API_V=			2.91
-REVISION=		0
+REVISION=		1
 
 PKGNAME=		vte3-${GNOME_VERSION}
 
@@ -49,6 +49,9 @@ CONFIGURE_STYLE=	gnu
 
 # needed by VTE-based terminals to update login records
 CONFIGURE_ARGS +=	--enable-gnome-pty-helper
+
+# error: -Bsymbolic requested but not supported by ld
+CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 TEST_DEPENDS=		shells/bash
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2015/08/24 09:35:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.118 2015/08/25 06:36:46 ajacoutot Exp $
 
 PORTROACH +=		limit:^0\.2
 
@@ -13,8 +13,8 @@ SHARED_LIBS+=	vte	14.1    # 2609.0
 FULLPKGNAME-main=	vte-${GNOME_VERSION}
 FULLPKGNAME-python= 	py-${DISTNAME}
 
-REVISION-main =		15
-REVISION-python = 	11
+REVISION-main =		16
+REVISION-python = 	12
 
 CATEGORIES=		devel
 
@@ -61,6 +61,9 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-gtk=2.0 \
 			--enable-python \
 			--program-suffix=2
+
+# error: -Bsymbolic requested but not supported by ld
+CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 post-install:
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gtk-2.0/*.{a,la}
