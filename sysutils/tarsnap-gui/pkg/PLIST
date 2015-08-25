@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/25 00:19:42 jturner Exp $
+@bin bin/tarsnap-gui

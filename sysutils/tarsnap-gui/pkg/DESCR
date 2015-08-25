@@ -1,0 +1,10 @@
+The Tarsnap frontend is an open source cross-platform Graphical User Interface
+for the popular Tarsnap backup service, that's easy to use, light and open as
+the Tarsnap command line client itself.
+
+While the original Tarsnap command line client is oriented towards server and
+scripted backups, facilitating workflows from inside a terminal, the GUI
+frontend application allows the desktop user to easily back up important files
+and directories using a lean and no-fuss interface while benefiting from the
+same power, flexibility, openness and cost effectiveness that the Tarsnap
+service implies and provides.
