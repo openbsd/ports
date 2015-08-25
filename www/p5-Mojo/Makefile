@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2015/07/19 14:23:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/08/25 10:38:53 benoit Exp $
 
 COMMENT =	next generation web framework for Perl
 
 MODULES =	cpan
-DISTNAME =	Mojolicious-6.14
+DISTNAME =	Mojolicious-6.17
 CATEGORIES =	www
-REVISION =	0
 
 MAINTAINER =	Mark Patruck <mark@wrapped.cx>
 
