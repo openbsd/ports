@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.378 2015/07/30 06:09:38 kirby Exp $
+# $OpenBSD: Makefile,v 1.379 2015/08/25 11:16:27 jca Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -19,7 +19,6 @@
      SUBDIR += burpsuite
      SUBDIR += ccid
      SUBDIR += ccrypt
-     SUBDIR += cfs
      SUBDIR += cgichk
      SUBDIR += chntpw
      SUBDIR += chrootuid
