@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2015/06/30 09:19:48 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2015/08/25 13:53:28 sthen Exp $
 @newgroup _icinga:667
 @newgroup _icingacmd:734
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
@@ -197,8 +197,6 @@ share/icinga2/include/windows-plugins
 @sample ${LOCALSTATEDIR}/log/icinga2/
 @sample ${LOCALSTATEDIR}/log/icinga2/compat/
 @sample ${LOCALSTATEDIR}/log/icinga2/compat/archives/
-@sample ${LOCALSTATEDIR}/run/icinga2/
-@sample ${LOCALSTATEDIR}/run/icinga2/cmd/
 @sample ${LOCALSTATEDIR}/spool/icinga2/
 @sample ${LOCALSTATEDIR}/spool/icinga2/perfdata/
 @sample ${LOCALSTATEDIR}/spool/icinga2/tmp/

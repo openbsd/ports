@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: icinga2.rc,v 1.4 2015/05/12 09:37:03 sthen Exp $
+# $OpenBSD: icinga2.rc,v 1.5 2015/08/25 13:53:28 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/icinga2 daemon -d"
 daemon_user="_icinga"
@@ -11,7 +11,7 @@ pexp="${TRUEPREFIX}/sbin/icinga2.*daemon${daemon_flags:+ ${daemon_flags}}"
 rc_bg=YES # XXX Should not be needed with -d!
 
 rc_pre() {
-	install -d -o ${daemon_user} /var/run/icinga2
+	install -d -o ${daemon_user} /var/run/icinga2{,/cmd}
 }
 
 rc_cmd $1
