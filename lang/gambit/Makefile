@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/08/24 16:36:32 juanfra Exp $
+# $OpenBSD: Makefile,v 1.20 2015/08/26 15:38:46 juanfra Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,6 +33,12 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 
 MAKE_FILE=	${WRKSRC}/makefile
 
+# On sparc64, gcc crashes with the default stack limit:
+# "cc: Internal error: Illegal instruction" on _gambc.c
+do-build:
+	ulimit -s 12288 && cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
+
 post-install:
 .for l in gambc gambcgsc gambcgsi
 	cd ${PREFIX}/lib/ && ln -s gambit-c/lib$l.so
@@ -43,8 +49,7 @@ do-test:
 		${TEST_FLAGS} -f makefile ${TEST_TARGET}
 
 # hppa: "virtual memory exhausted: Cannot allocate memory" (in a system with 2GB RAM)
-# XXX sparc64: "cc: Internal error: Illegal instruction" on __gambc.c
-.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "hppa"
 CFLAGS += -O0
 .endif
 
