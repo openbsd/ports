@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/10/24 16:44:55 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/08/26 06:20:21 benoit Exp $
 ${P5SITE}/Finance/
 ${P5SITE}/Finance/Quote/
 ${P5SITE}/Finance/Quote.pm
@@ -19,6 +19,7 @@ ${P5SITE}/Finance/Quote/Deka.pm
 ${P5SITE}/Finance/Quote/FTPortfolios.pm
 ${P5SITE}/Finance/Quote/FTfunds.pm
 ${P5SITE}/Finance/Quote/Fidelity.pm
+${P5SITE}/Finance/Quote/FidelityFixed.pm
 ${P5SITE}/Finance/Quote/FinanceCanada.pm
 ${P5SITE}/Finance/Quote/Finanzpartner.pm
 ${P5SITE}/Finance/Quote/Fool.pm
@@ -31,7 +32,6 @@ ${P5SITE}/Finance/Quote/MStaruk.pm
 ${P5SITE}/Finance/Quote/ManInvestments.pm
 ${P5SITE}/Finance/Quote/Morningstar.pm
 ${P5SITE}/Finance/Quote/MorningstarJP.pm
-${P5SITE}/Finance/Quote/MtGox.pm
 ${P5SITE}/Finance/Quote/NZX.pm
 ${P5SITE}/Finance/Quote/Platinum.pm
 ${P5SITE}/Finance/Quote/SEB.pm
@@ -59,6 +59,7 @@ ${P5SITE}/Finance/Quote/Yahoo/Europe.pm
 ${P5SITE}/Finance/Quote/Yahoo/NZ.pm
 ${P5SITE}/Finance/Quote/Yahoo/USA.pm
 ${P5SITE}/Finance/Quote/YahooJSON.pm
+${P5SITE}/Finance/Quote/YahooYQL.pm
 ${P5SITE}/Finance/Quote/ZA.pm
 ${P5SITE}/Finance/Quote/ZA_UnitTrusts.pm
 @man man/man3p/Finance::Quote.3p
@@ -79,6 +80,7 @@ ${P5SITE}/Finance/Quote/ZA_UnitTrusts.pm
 @man man/man3p/Finance::Quote::FTPortfolios.3p
 @man man/man3p/Finance::Quote::FTfunds.3p
 @man man/man3p/Finance::Quote::Fidelity.3p
+@man man/man3p/Finance::Quote::FidelityFixed.3p
 @man man/man3p/Finance::Quote::FinanceCanada.3p
 @man man/man3p/Finance::Quote::Finanzpartner.3p
 @man man/man3p/Finance::Quote::Fool.3p
@@ -91,7 +93,6 @@ ${P5SITE}/Finance/Quote/ZA_UnitTrusts.pm
 @man man/man3p/Finance::Quote::ManInvestments.3p
 @man man/man3p/Finance::Quote::Morningstar.3p
 @man man/man3p/Finance::Quote::MorningstarJP.3p
-@man man/man3p/Finance::Quote::MtGox.3p
 @man man/man3p/Finance::Quote::NZX.3p
 @man man/man3p/Finance::Quote::Platinum.3p
 @man man/man3p/Finance::Quote::SEB.3p
@@ -114,6 +115,7 @@ ${P5SITE}/Finance/Quote/ZA_UnitTrusts.pm
 @man man/man3p/Finance::Quote::Yahoo::NZ.3p
 @man man/man3p/Finance::Quote::Yahoo::USA.3p
 @man man/man3p/Finance::Quote::YahooJSON.3p
+@man man/man3p/Finance::Quote::YahooYQL.3p
 @man man/man3p/Finance::Quote::ZA.3p
 @man man/man3p/Finance::Quote::ZA_UnitTrusts.3p
 share/examples/p5-Finance-Quote/
