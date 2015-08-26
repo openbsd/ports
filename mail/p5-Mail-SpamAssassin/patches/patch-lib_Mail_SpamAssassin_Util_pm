@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Mail_SpamAssassin_Util_pm,v 1.1 2015/08/26 13:28:54 sthen Exp $
+--- lib/Mail/SpamAssassin/Util.pm.orig	Wed Aug 26 14:14:36 2015
++++ lib/Mail/SpamAssassin/Util.pm	Wed Aug 26 14:21:17 2015
+@@ -108,7 +108,7 @@ BEGIN {
+     if ( !$displayed_path++ ) {
+       dbg("util: current PATH is: ".join($Config{'path_sep'},File::Spec->path()));
+     }
+-    foreach my $path (File::Spec->path()) {
++    foreach my $path (File::Spec->path(), qw(${LOCALBASE}/bin ${LOCALBASE}/sbin)) {
+       my $fname = File::Spec->catfile ($path, $filename);
+       if ( -f $fname ) {
+         if (-x $fname) {

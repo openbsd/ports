@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.95 2015/05/23 14:18:55 bluhm Exp $
+# $OpenBSD: Makefile,v 1.96 2015/08/26 13:28:54 sthen Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
 VER=			3.4.1
 DISTNAME=		Mail-SpamAssassin-${VER}
 PKGNAME=		p5-${DISTNAME}
-REVISION=		1
+REVISION=		2
 RULESNAME=		Mail-SpamAssassin-rules-${VER}.r1675274.tgz
 CATEGORIES=		mail perl5
 
@@ -68,6 +68,9 @@ DOCS=		CREDITS NOTICE README UPGRADE USAGE LICENSE TRADEMARK \
 _R=		${WRKSRC}/_dist_rules
 post-extract:
 	mkdir ${_R} && cd ${_R} && tar xzf ${FULLDISTDIR}/${RULESNAME}
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/lib/Mail/SpamAssassin/Util.pm
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin
