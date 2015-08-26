@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.207 2015/08/25 15:38:16 jca Exp $
+# $OpenBSD: Makefile,v 1.208 2015/08/26 18:05:31 jca Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.1.19
@@ -23,7 +23,7 @@ REVISION-main =		7
 REVISION-ldb =		4
 REVISION-tevent =	2
 REVISION-util =		2
-REVISION-docs =		1
+REVISION-docs =		2
 
 PKG_ARCH-docs =		*
 
