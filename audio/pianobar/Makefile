@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.69 2015/08/24 12:37:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2015/08/26 05:56:22 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	console client for pandora
 
-DISTNAME =	pianobar-2014.09.28
-REVISION =	1
+DISTNAME =	pianobar-2015.08.04
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
@@ -13,20 +12,20 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE =	http://6xq.net/projects/pianobar/
 
-MASTER_SITES =	${HOMEPAGE}
+MASTER_SITES =	https://distfiles.bsdfrog.org/
 
-SHARED_LIBS =	piano	7.0	# 0.0.0
+SHARED_LIBS =	piano	8.0	# 0.0.0
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	ao avcodec avfilter avformat avutil c gcrypt \
-		gnutls json-c m pthread
+WANTLIB =	ao avcodec avfilter avformat avutil c curl \
+		gcrypt json-c m pthread
 
 LIB_DEPENDS =	audio/libao \
 		devel/json-c \
 		graphics/ffmpeg>=20140412 \
-		security/gnutls>=2.10.0 \
+		net/curl \
 		security/libgcrypt
 
 .if !defined(DEBUG)
@@ -48,14 +47,11 @@ FAKE_FLAGS =	PREFIX="${PREFIX}" \
 
 USE_GMAKE =	Yes
 
-TEST_TARGET = 	test
+NO_TEST =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pianobar
 	${INSTALL_DATA} ${WRKSRC}/contrib/config-example \
 		${PREFIX}/share/examples/pianobar/config
-
-pre-test:
-	@touch ${WRKSRC}/src/libwaitress/waitress.c
 
 .include <bsd.port.mk>
