@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2015/08/25 11:25:21 jca Exp $
+# $OpenBSD: Makefile,v 1.141 2015/08/26 10:00:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -15,10 +15,10 @@ PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-smb=		0
-REVISION-goa=		0
-REVISION-nfs=		0
+REVISION-goa=		1
+REVISION-nfs=		1
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -53,10 +53,6 @@ WANTLIB-nfs += gcrypt gpg-error nfs secret-1
 
 MODGNOME_TOOLS=		docbook
 
-# XXX base libtool errors out since it can't find libs in local/lib/samba
-# brought in by libsmbclient
-USE_LIBTOOL=		gnu
-
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archivers/libarchive \
 			devel/libsoup \
@@ -90,7 +86,7 @@ CONFIGURE_ARGS=		--disable-libsystemd-login \
 			--disable-udev \
 			--disable-gdu
 
-MULTI_PACKAGES=		-main -smb -goa -nfs
+MULTI_PACKAGES=		-main -goa -nfs
 
 PSEUDO_FLAVORS=		no_smb no_goa no_nfs bootstrap
 FLAVOR?=		no_smb no_goa no_nfs bootstrap
