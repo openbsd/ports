@@ -1,9 +1,8 @@
-pianobar is a console client for the personalized web radio pandora
-(http://www.pandora.com).
+pianobar is a command-line client for the personalized web radio
+Pandora (http://www.pandora.com).
 
 - play and manage (create, add more music, delete, rename, ...) your
   stations
-- rate played songs and let pandora explain why they have been selected
+- rate played songs and let Pandora explain why they have been selected
 - show upcoming songs
-- configure key bindings
 - proxy support for listeners outside the USA
