@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/08/25 12:57:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2015/08/26 13:31:37 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -32,17 +32,19 @@ BIN_SUFFIX =		20
 MODRUBY_REV =		2.1
 FULLPKGNAME =		ruby21-hyperestraier-1.0.0
 BIN_SUFFIX =		21
+WANTLIB +=		gmp
 .elif ${FLAVOR:Mruby22}
 MODRUBY_REV =		2.2
 FULLPKGNAME =		ruby22-hyperestraier-1.0.0
 BIN_SUFFIX =		22
+WANTLIB +=		gmp
 .else
 MODRUBY_REV =		1.8
 BIN_SUFFIX =		
 .endif
 SUBST_VARS +=		BIN_SUFFIX
 
-WANTLIB=		c gmp m pthread estraier ${MODRUBY_WANTLIB}
+WANTLIB +=		c m pthread estraier ${MODRUBY_WANTLIB}
 MODULES=		lang/ruby
 
 LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS} \
