@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2015/05/16 10:45:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.123 2015/08/26 09:59:01 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extras=		GNOME desktop meta-package (full installation)
@@ -9,7 +9,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-extras=	0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -57,8 +57,7 @@ RUN_DEPENDS-main +=	x11/gnome/baobab \
 RUN_DEPENDS-main +=	x11/gnome/initial-setup
 
 # gnome-control-center already depends on samba and gnome-online-accounts
-RUN_DEPENDS-main +=	x11/gnome/gvfs,-goa, \
-			x11/gnome/gvfs,-smb,
+RUN_DEPENDS-main +=	x11/gnome/gvfs,-goa,
 
 # "Make it fancy!"
 RUN_DEPENDS-main +=	x11/gnome/bijiben \
