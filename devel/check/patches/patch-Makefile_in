@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2014/03/18 09:12:01 ajacoutot Exp $
---- Makefile.in.orig	Tue Jan 21 01:21:14 2014
-+++ Makefile.in	Tue Mar 18 10:07:17 2014
+$OpenBSD: patch-Makefile_in,v 1.5 2015/08/26 15:12:24 jasper Exp $
+--- Makefile.in.orig	Sun Aug  2 21:31:55 2015
++++ Makefile.in	Mon Aug 24 08:23:07 2015
 @@ -293,7 +293,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
