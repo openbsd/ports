@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/26 14:16:07 sthen Exp $
+share/fonts/
+@fontdir share/fonts/msctfonts/
+share/fonts/msctfonts/calibri.ttf
+share/fonts/msctfonts/calibrib.ttf
+share/fonts/msctfonts/calibrii.ttf
+share/fonts/msctfonts/calibriz.ttf
+share/fonts/msctfonts/cambria.ttf
+share/fonts/msctfonts/cambriab.ttf
+share/fonts/msctfonts/cambriai.ttf
+share/fonts/msctfonts/cambriaz.ttf
+share/fonts/msctfonts/candara.ttf
+share/fonts/msctfonts/candarab.ttf
+share/fonts/msctfonts/candarai.ttf
+share/fonts/msctfonts/candaraz.ttf
+share/fonts/msctfonts/consola.ttf
+share/fonts/msctfonts/consolab.ttf
+share/fonts/msctfonts/consolai.ttf
+share/fonts/msctfonts/consolaz.ttf
+share/fonts/msctfonts/constan.ttf
+share/fonts/msctfonts/constanb.ttf
+share/fonts/msctfonts/constani.ttf
+share/fonts/msctfonts/constanz.ttf
+share/fonts/msctfonts/corbel.ttf
+share/fonts/msctfonts/corbelb.ttf
+share/fonts/msctfonts/corbeli.ttf
+share/fonts/msctfonts/corbelz.ttf
