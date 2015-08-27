@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2014/12/03 18:13:09 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2015/08/27 08:46:43 benoit Exp $
 
-COMMENT=	simple parallel processing fork manager
+COMMENT =	simple parallel processing fork manager
 
-MODULES=	cpan
-DISTNAME =	Parallel-ForkManager-1.07
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Parallel-ForkManager-1.15
+CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES =	Yes
 
 .include <bsd.port.mk>
