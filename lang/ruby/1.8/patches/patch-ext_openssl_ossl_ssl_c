@@ -1,0 +1,16 @@
+$OpenBSD: patch-ext_openssl_ossl_ssl_c,v 1.1 2015/08/27 15:55:04 kili Exp $
+--- ext/openssl/ossl_ssl.c.orig	Wed Feb  8 07:09:40 2012
++++ ext/openssl/ossl_ssl.c	Thu Aug 27 17:12:23 2015
+@@ -107,9 +107,12 @@ struct {
+     OSSL_SSL_METHOD_ENTRY(SSLv2_server),
+     OSSL_SSL_METHOD_ENTRY(SSLv2_client),
+ #endif
++#if defined(HAVE_SSLV3_METHOD) && defined(HAVE_SSLV3_SERVER_METHOD) && \
++        defined(HAVE_SSLV3_CLIENT_METHOD)	
+     OSSL_SSL_METHOD_ENTRY(SSLv3),
+     OSSL_SSL_METHOD_ENTRY(SSLv3_server),
+     OSSL_SSL_METHOD_ENTRY(SSLv3_client),
++#endif
+     OSSL_SSL_METHOD_ENTRY(SSLv23),
+     OSSL_SSL_METHOD_ENTRY(SSLv23_server),
+     OSSL_SSL_METHOD_ENTRY(SSLv23_client),

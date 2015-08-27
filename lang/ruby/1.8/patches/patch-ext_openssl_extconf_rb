@@ -1,0 +1,13 @@
+$OpenBSD: patch-ext_openssl_extconf_rb,v 1.1 2015/08/27 15:55:04 kili Exp $
+--- ext/openssl/extconf.rb.orig	Sun Jun 26 10:58:06 2011
++++ ext/openssl/extconf.rb	Thu Aug 27 17:13:54 2015
+@@ -103,6 +103,9 @@ end
+ have_func("SSLv2_method")
+ have_func("SSLv2_server_method")
+ have_func("SSLv2_client_method")
++have_func("SSLv3_method")
++have_func("SSLv3_server_method")
++have_func("SSLv3_client_method")
+ unless have_func("SSL_set_tlsext_host_name", ['openssl/ssl.h'])
+   have_macro("SSL_set_tlsext_host_name", ['openssl/ssl.h']) && $defs.push("-DHAVE_SSL_SET_TLSEXT_HOST_NAME")
+ end
