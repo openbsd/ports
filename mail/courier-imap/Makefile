@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.101 2015/07/21 14:44:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2015/08/27 09:33:16 giovanni Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
-V=			4.16.0
+V=			4.16.2
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
-
-REVISION=		0
 
 CATEGORIES=		mail
 
@@ -31,7 +29,7 @@ USE_GMAKE=		Yes
 USE_GROFF=		Yes
 CONFIGURE_STYLE=	autoconf automake
 AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.14
+AUTOMAKE_VERSION=	1.15
 
 # AM_PROG_LIBTOOL, aclocal is run during build
 BUILD_DEPENDS +=	devel/libtool
@@ -47,7 +45,6 @@ LIB_DEPENDS=		mail/courier-authlib \
 			devel/libidn \
 			devel/pcre
 
-LOCALSTATEDIR=		${BASELOCALSTATEDIR}/run/courier
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier
 SYSCONFDIR=		/etc/courier
 
@@ -63,7 +60,7 @@ CONFIGURE_ARGS=		--sbindir=${PREFIX}/sbin \
 			--enable-unicode \
 			--with-locking-method=fcntl \
 			--with-mailuser=_courier \
-			--with-piddir=${LOCALSTATEDIR} \
+			--with-piddir=${BASELOCALSTATEDIR}/run/courier \
 			--with-makedatprog \
 			--with-db=gdbm \
 			--with-certsdir=/etc/ssl \
@@ -96,11 +93,11 @@ CONFIGURE_ARGS+=	--disable-workarounds-for-imap-client-bugs
 MULTI_PACKAGES=		-main -pop3
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			mail/courier-unicode \
+			mail/courier-unicode>=1.3 \
 			databases/gdbm
 RUN_DEPENDS-pop3=	mail/courier-imap,-main
 
-WANTLIB-main=		${WANTLIB} ssl crypto unicode
+WANTLIB-main=		${WANTLIB} ssl crypto courier-unicode
 
 MODULES=		devel/gettext
 
