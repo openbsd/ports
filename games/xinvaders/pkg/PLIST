@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/08/27 15:00:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/08/27 20:16:24 naddy Exp $
 @mode g+s
 @group games
 @bin bin/xinvaders
@@ -12,3 +12,4 @@ share/examples/xinvaders/xinvaders.scores
 @sample /var/games/xinvaders.scores
 @mode
 @group
+share/locale/es/LC_MESSAGES/xinvaders.mo
