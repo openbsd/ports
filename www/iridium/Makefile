@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/08/25 15:08:44 robert Exp $
+# $OpenBSD: Makefile,v 1.23 2015/08/27 14:24:32 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -9,6 +9,7 @@ V=			44.1
 DISTNAME=		iridium-browser-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 PKGNAME=		iridium-${V}
+REVISION=		0
 
 # The update from 43.4 to 43.5 is released as a patch
 # this time due to the size of the tarball.
@@ -163,6 +164,14 @@ do-configure:
 		${GYP_DEFS} "--depth=${WRKSRC}"
 
 do-build:
+	# Build all the resources as the first step to avoid build failures
+	# due to internal dependency issues.
+	@cd ${WRKSRC}/out/${BUILDTYPE} && \
+	for _r in net_interfaces suggestions \
+	$$(ninja -t targets | grep 'resources: phony' | cut -d ':' -f1); do \
+		cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
+			-j ${MAKE_JOBS} -C out/${BUILDTYPE} $${_r}; \
+	done
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
 
@@ -181,8 +190,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/iridium/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/iridium/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/iridium/resources
-.for f in libexif.so libffmpegsumo.so libpdf.so protoc icudtl.dat mksnapshot
-	if [ -f ${BUILDDIR}/${f} ]; then ${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/iridium; fi
+.for f in libexif.so protoc icudtl.dat mksnapshot
+	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
 .endfor
 .for s in 22 24 48 64 128 256
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps

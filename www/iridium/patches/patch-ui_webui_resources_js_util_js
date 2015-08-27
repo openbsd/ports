@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_webui_resources_js_util_js,v 1.1 2015/08/27 14:24:32 robert Exp $
+--- ui/webui/resources/js/util.js.orig.port	Thu Aug 27 16:09:25 2015
++++ ui/webui/resources/js/util.js	Thu Aug 27 16:09:31 2015
+@@ -58,7 +58,7 @@ function chromeSend(name, params, callbackName, callba
+  */
+ function getSupportedScaleFactors() {
+   var supportedScaleFactors = [];
+-  if (cr.isMac || cr.isChromeOS || cr.isWindows || cr.isLinux) {
++  if (cr.isMac || cr.isChromeOS || cr.isWindows || cr.isLinux || cr.isBSD) {
+     // All desktop platforms support zooming which also updates the
+     // renderer's device scale factors (a.k.a devicePixelRatio), and
+     // these platforms has high DPI assets for 2.0x. Use 1x and 2x in

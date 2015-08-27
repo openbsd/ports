@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.4 2015/08/12 10:56:13 robert Exp $
---- chrome/browser/ui/browser_command_controller.cc.orig.port	Wed Jul 15 22:29:58 2015
-+++ chrome/browser/ui/browser_command_controller.cc	Wed Jul 22 08:37:29 2015
+$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.5 2015/08/27 14:24:32 robert Exp $
+--- chrome/browser/ui/browser_command_controller.cc.orig.port	Mon Aug 24 17:49:59 2015
++++ chrome/browser/ui/browser_command_controller.cc	Tue Aug 25 09:36:58 2015
 @@ -69,7 +69,7 @@
  #include "chrome/browser/ui/browser_commands_chromeos.h"
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.4 2015/08/12
  #include "ui/events/linux/text_edit_key_bindings_delegate_auralinux.h"
  #endif
  
-@@ -281,7 +281,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+@@ -282,7 +282,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
    if (window()->IsFullscreen() && command_id == IDC_FULLSCREEN)
      return true;
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.4 2015/08/12
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
-@@ -474,7 +474,7 @@ void BrowserCommandController::ExecuteCommandWithDispo
+@@ -475,7 +475,7 @@ void BrowserCommandController::ExecuteCommandWithDispo
        break;
  #endif
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.4 2015/08/12
      case IDC_USE_SYSTEM_TITLE_BAR: {
        PrefService* prefs = browser_->profile()->GetPrefs();
        prefs->SetBoolean(prefs::kUseCustomChromeFrame,
-@@ -902,7 +902,7 @@ void BrowserCommandController::InitCommandState() {
+@@ -903,7 +903,7 @@ void BrowserCommandController::InitCommandState() {
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_2, true);
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_3, true);
  #endif
