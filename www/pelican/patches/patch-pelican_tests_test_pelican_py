@@ -1,0 +1,12 @@
+$OpenBSD: patch-pelican_tests_test_pelican_py,v 1.1 2015/08/27 14:29:07 ajacoutot Exp $
+--- pelican/tests/test_pelican.py.orig	Thu Aug 27 12:10:02 2015
++++ pelican/tests/test_pelican.py	Thu Aug 27 12:10:50 2015
+@@ -60,7 +60,7 @@ class TestPelican(LoggedTestCase):
+ 
+     def assertDirsEqual(self, left_path, right_path):
+         out, err = subprocess.Popen(
+-            ['git', 'diff', '--no-ext-diff', '--exit-code', '-w', left_path, right_path],
++            ['${LOCALBASE}/bin/git', 'diff', '--no-ext-diff', '--exit-code', '-w', left_path, right_path],
+             env={str('PAGER'): str('')}, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+         ).communicate()
+         def ignorable_git_crlf_errors(line):

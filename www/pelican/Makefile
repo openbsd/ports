@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/07/10 17:24:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/27 14:29:07 ajacoutot Exp $
 
 COMMENT =		static site generator written in Python
 
@@ -7,7 +7,7 @@ DISTNAME =		pelican-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =		getpelican
 GH_PROJECT =		pelican
-GH_TAGNAME =		3.6.0
+GH_TAGNAME =		3.6.3
 
 CATEGORIES =		www
 
@@ -30,6 +30,10 @@ RUN_DEPENDS =		devel/py-blinker \
 			www/py-jinja2
 
 TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/git \
 			devel/py-mock
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/pelican/tests/test_pelican.py
 
 .include <bsd.port.mk>
