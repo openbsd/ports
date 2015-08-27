@@ -37,7 +37,6 @@ namespace facter { namespace facts { namespace openbsd {
                 result.mem_free = static_cast<u_int64_t>(uvmexp.free) << uvmexp.pageshift;
         }
 
-#if 0
         struct swapent *swapdev;
         int nswaps, s;
         uint64_t swap_used = 0;
@@ -53,29 +52,23 @@ namespace facter { namespace facts { namespace openbsd {
 
         for (s = 0; s < nswaps; s++) {
             if (swapdev[s].se_flags & SWF_ENABLE) {
-                result.swap_total += (swapdev[s].se_nblks * DEV_BSIZE) * 1024;
-                swap_used += (swapdev[s].se_inuse * DEV_BSIZE) * 1024;
+                result.swap_total += (swapdev[s].se_nblks * DEV_BSIZE);
+                swap_used += (swapdev[s].se_inuse * DEV_BSIZE);
             }
         }
 
         result.swap_free = result.swap_total - swap_used;
 
-        // Adjust for blocksize to have it scale to 1024 if needed as facter
-        // will re-adjust to 1024
-        if (DEV_BSIZE == 512) {
-                result.swap_total *= 4;
-                result.swap_free *= 4;
-        }
-
-        int swap_encrypted_mib[] = { CTL_VM, VM_SWAPENCRYPT };
+        // 0 is for CTL_SWPENC_NAMES' "enable", see uvm_swap_encrypt.h
+        int swap_encrypted_mib[] = { CTL_VM, VM_SWAPENCRYPT, 0 };
         int encrypted;
         len = sizeof(encrypted);
-        if (sysctl(swap_encrypted_mib, 2, &encrypted, &len, nullptr, 0) == -1) {
+
+        if (sysctl(swap_encrypted_mib, 3, &encrypted, &len, nullptr, 0) == -1) {
                 LOG_DEBUG("sysctl failed: %1% (%2%): encrypted swap fact not available.", strerror(errno), errno);
         }
 
         result.swap_encryption = encrypted ? encryption_status::encrypted : encryption_status::not_encrypted;
-#endif
         return result;
     }
 
