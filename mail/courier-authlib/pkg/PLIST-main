@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2014/01/25 13:12:12 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2015/08/27 09:29:53 giovanni Exp $
 @conflict courier-authlib-*
 @pkgpath mail/courier-authlib
 @newgroup _courier:571
@@ -39,6 +39,7 @@ libexec/courier-authlib/sysconftool
 @man man/man3/auth_getoption.3
 @man man/man3/auth_getuserinfo.3
 @man man/man3/auth_login.3
+@man man/man3/auth_mkhomedir.3
 @man man/man3/auth_passwd.3
 @man man/man3/auth_sasl.3
 @man man/man3/auth_sasl_ex.3
