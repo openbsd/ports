@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/28 07:06:37 giovanni Exp $
-include/unicode.h
-lib/libunicode.a
-lib/libunicode.la
-@lib lib/libunicode.so.${LIBunicode_VERSION}
+@comment $OpenBSD: PLIST,v 1.2 2015/08/27 09:27:10 giovanni Exp $
+include/courier-unicode.h
+lib/libcourier-unicode.a
+lib/libcourier-unicode.la
+@lib lib/libcourier-unicode.so.${LIBcourier-unicode_VERSION}
 @man man/man3/unicode::iconvert::convert.3
 @man man/man3/unicode::iconvert::convert_tocase.3
 @man man/man3/unicode::iconvert::fromu.3
@@ -47,6 +47,7 @@ lib/libunicode.la
 @man man/man3/unicode_lbc_next_cnt.3
 @man man/man3/unicode_lbc_set_opts.3
 @man man/man3/unicode_lc.3
+@man man/man3/unicode_script.3
 @man man/man3/unicode_tc.3
 @man man/man3/unicode_u_ucs2_native.3
 @man man/man3/unicode_u_ucs4_native.3

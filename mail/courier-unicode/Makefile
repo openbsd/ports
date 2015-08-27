@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/28 07:06:37 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2015/08/27 09:27:10 giovanni Exp $
 
-SHARED_LIBS +=  unicode                   0.0 # 1.0
+SHARED_LIBS +=  courier-unicode		0.0 # 2.0
 
 COMMENT =		courier unicode library
 
-DISTNAME =		courier-unicode-1.1
+DISTNAME =		courier-unicode-1.3
 
 CATEGORIES =		mail devel
 
