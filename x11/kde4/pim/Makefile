@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2015/07/08 23:51:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.28 2015/08/27 07:30:26 zhuk Exp $
 
 COMMENT =	KDE personal information management
 DISTNAME =	kdepim-4.14.10
 PKGSPEC =	kdepim-${MODKDE4_SPEC}
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/15.04.3/src/}
 
@@ -124,6 +124,6 @@ LIB_DEPENDS =	databases/soprano \
 		x11/grantlee \
 		${MODKDE4_DEP_DIR}/baloo>=${MODKDE4_DEP_VERSION}
 
-MODKDE4_SYSCONF_FILES =	dbus-1	share/examples
+MODKDE4_SYSCONF_FILES =	dbus-1	share/examples/kde
 
 .include <bsd.port.mk>

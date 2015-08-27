@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2015/07/02 00:10:15 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2015/08/27 07:30:25 zhuk Exp $
 @option no-default-conflict
 @conflict kdelibs->=4
 @pkgpath x11/kde4/libs
@@ -3542,7 +3542,7 @@ share/doc/HTML/en/sonnet/
 share/doc/HTML/en/sonnet/common
 share/doc/HTML/en/sonnet/index.cache.bz2
 share/doc/HTML/en/sonnet/index.docbook
-share/examples/dbus-1/system.d/org.kde.auth.conf
+share/examples/kde/dbus-1/system.d/org.kde.auth.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.auth.conf
 share/examples/xdg/
 @sample ${SYSCONFDIR}/xdg/

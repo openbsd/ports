@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/28 10:17:29 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2015/08/27 07:30:26 zhuk Exp $
 
 COMMENT =	KDE password management
 DISTNAME =	kwalletmanager-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 WANTLIB =  c m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
@@ -15,6 +15,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 # /usr/local/share/dbus-1/system-services/
 RUN_DEPENDS +=	x11/dbus,-suid
 
-MODKDE4_SYSCONF_FILES =	dbus-1		share/examples
+MODKDE4_SYSCONF_FILES =	dbus-1		share/examples/kde
 
 .include <bsd.port.mk>

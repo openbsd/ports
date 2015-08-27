@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2015/07/06 11:38:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2015/08/27 07:30:25 zhuk Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
 COMMENT-langlist =	list of languages supported by KDE
 CATEGORIES =		devel
 V =			4.14.10
-REVISION-main =		0
+REVISION-main =		1
 DISTNAME =		kdelibs-$V
 PKGNAME-main =		${DISTNAME}
 PKGNAME-en_US =		kde4-locale-en_US-$V
@@ -99,7 +99,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
 			misc/shared-desktop-ontologies \
-			net/cagibi \
+			net/cagibi>=0.2.0p4 \
 			security/sudo \
 			sysutils/gamin \
 			sysutils/upower \
@@ -155,7 +155,7 @@ REWR_CMAKE_MODULES =	FindKexiv2 FindXine FindXKB FindPolkitQt
 # Contain (required) additional functionality compared to system ones
 WRAP_CMAKE_MODULES =	FindLibXslt
 
-MODKDE4_SYSCONF_FILES =	dbus-1	share/examples \
+MODKDE4_SYSCONF_FILES =	dbus-1	share/examples/kde \
 			xdg	share/examples
 
 TEST_IS_INTERACTIVE =	X11

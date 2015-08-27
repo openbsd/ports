@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2015/08/15 11:13:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2015/08/27 07:30:26 zhuk Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-4.11.21
-REVISION =	1
+REVISION =	2
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/15.04.3/src/}
 
@@ -122,7 +122,7 @@ CONFIGURE_ARGS =	-DWITH_OpenGLES:Bool=False \
 			-DWITH_UDev:Bool=False \
 			-DWITH_Wayland:Bool=False
 
-MODKDE4_SYSCONF_FILES =	dbus-1		share/examples \
+MODKDE4_SYSCONF_FILES =	dbus-1		share/examples/kde \
 			ksysguarddrc	share/examples/kde \
 			kdm		share/examples/kde
 

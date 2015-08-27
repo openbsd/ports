@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/09 19:52:26 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/08/27 07:30:26 zhuk Exp $
 @conflict kdeutils-<4
 @conflict kwallet-*
 @pkgpath x11/kde4/kwallet
@@ -32,7 +32,7 @@ share/doc/HTML/en/kwallet/oxygen48-status-wallet-closed.png
 share/doc/HTML/en/kwallet/oxygen48-status-wallet-open.png
 share/doc/HTML/en/kwallet/save-login-information.png
 share/doc/HTML/en/kwallet/wallet-encryption-selection.png
-share/examples/dbus-1/system.d/org.kde.kcontrol.kcmkwallet.conf
+share/examples/kde/dbus-1/system.d/org.kde.kcontrol.kcmkwallet.conf
 @sample /etc/dbus-1/system.d/org.kde.kcontrol.kcmkwallet.conf
 share/icons/hicolor/128x128/apps/kwalletmanager.png
 share/icons/hicolor/128x128/apps/kwalletmanager2.png

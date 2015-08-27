@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2014/11/01 21:09:47 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2015/08/27 07:30:26 zhuk Exp $
 @pkgpath x11/kde4/runtime
 @bin bin/kcmshell4
 @bin bin/kde-cp
@@ -937,7 +937,7 @@ share/emoticons/kde4/unhappy.png
 share/emoticons/kde4/unlove.png
 share/emoticons/kde4/wilted_rose.png
 share/emoticons/kde4/wink.png
-share/examples/dbus-1/system.d/org.kde.kcontrol.kcmremotewidgets.conf
+share/examples/kde/dbus-1/system.d/org.kde.kcontrol.kcmremotewidgets.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kcontrol.kcmremotewidgets.conf
 share/examples/xdg/menus/kde-information.menu
 @sample ${SYSCONFDIR}/xdg/menus/kde-information.menu

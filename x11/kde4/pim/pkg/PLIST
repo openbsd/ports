@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/07/08 23:51:08 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/08/27 07:30:26 zhuk Exp $
 @conflict kdeutils-<4
 @bin bin/akonadi_archivemail_agent
 @bin bin/akonadi_followupreminder_agent
@@ -1149,7 +1149,8 @@ share/doc/HTML/en/sieveeditor/
 share/doc/HTML/en/sieveeditor/common
 share/doc/HTML/en/sieveeditor/index.cache.bz2
 share/doc/HTML/en/sieveeditor/index.docbook
-share/examples/dbus-1/system.d/org.kde.kalarmrtcwake.conf
+share/examples/kde/dbus-1/system.d/org.kde.kalarmrtcwake.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kalarmrtcwake.conf
 share/icons/hicolor/128x128/actions/upload-media.png
 share/icons/hicolor/128x128/apps/akonadiconsole.png
 share/icons/hicolor/128x128/apps/akregator.png
