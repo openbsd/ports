@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/05/26 15:29:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/08/27 15:18:44 benoit Exp $
 
 COMMENT =	read/write YAML files with as little code as possible
 
 MODULES =	cpan
-DISTNAME =	YAML-Tiny-1.51
+DISTNAME =	YAML-Tiny-1.69
 CATEGORIES =	devel
-CPAN_AUTHOR =	ADAMK
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
