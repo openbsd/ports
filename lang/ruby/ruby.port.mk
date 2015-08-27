@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.83 2015/07/26 04:41:37 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.84 2015/08/27 14:36:14 jeremy Exp $
 
 # ruby module
 
@@ -263,6 +263,14 @@ MODRUBY_ADJ_REPLACE=	for pat in ${MODRUBY_ADJ_FILES:QL}; do \
 MODRUBY_pre-configure += ${MODRUBY_ADJ_REPLACE}
 .endif
 
+MODRUBY_WANTLIB+=	c m
+.if ${MODRUBY_REV} != 1.8
+MODRUBY_WANTLIB+=	pthread
+.endif
+.if ${MODRUBY_REV} == 2.1 || ${MODRUBY_REV} == 2.2
+MODRUBY_WANTLIB+=	gmp
+.endif
+
 .if ${CONFIGURE_STYLE:L:Mext} || ${CONFIGURE_STYLE:L:Mextconf}
 # Ruby C exensions are specific to an arch and are loaded as
 # shared libraries (not compiled into ruby), so set SHARED_ONLY
@@ -274,13 +282,6 @@ SHARED_ONLY=	Yes
 
 # Add appropriate libraries to WANTLIB depending on ruby version and
 # implementation
-MODRUBY_WANTLIB+=	c m
-.  if ${MODRUBY_REV} != 1.8
-MODRUBY_WANTLIB+=	pthread
-.  endif
-.  if ${MODRUBY_REV} == 2.1 || ${MODRUBY_REV} == 2.2
-MODRUBY_WANTLIB+=	gmp
-.  endif
 WANTLIB+=	${MODRUBY_WANTLIB}
 LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
 .endif
