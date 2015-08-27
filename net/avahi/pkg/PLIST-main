@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2013/01/20 10:44:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2015/08/27 06:48:30 ajacoutot Exp $
 @conflict howl-*
 @newgroup _avahi:629
 @newuser _avahi:629:629:daemon:Avahi User:/var/empty:/sbin/nologin
@@ -121,7 +121,6 @@ share/dbus-1/interfaces/org.freedesktop.Avahi.Server.xml
 share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceBrowser.xml
 share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceResolver.xml
 share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceTypeBrowser.xml
-share/dbus-1/system-services/
 share/dbus-1/system-services/org.freedesktop.Avahi.service
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/avahi/
@@ -130,6 +129,10 @@ share/examples/avahi/avahi-daemon.conf
 @sample ${SYSCONFDIR}/avahi/avahi-daemon.conf
 share/examples/avahi/avahi-dnsconfd.action
 @sample ${SYSCONFDIR}/avahi/avahi-dnsconfd.action
+share/examples/avahi/dbus-1/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
+share/examples/avahi/dbus-1/avahi-dbus.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/avahi-dbus.conf
 share/examples/avahi/hosts
 @sample ${SYSCONFDIR}/avahi/hosts
 share/examples/avahi/services/
@@ -138,10 +141,6 @@ share/examples/avahi/services/sftp-ssh.service
 @sample ${SYSCONFDIR}/avahi/services/sftp-ssh.service
 share/examples/avahi/services/ssh.service
 @sample ${SYSCONFDIR}/avahi/services/ssh.service
-share/examples/dbus-1/
-@sample ${SYSCONFDIR}/dbus-1/
-share/examples/dbus-1/avahi-dbus.conf
-@sample ${SYSCONFDIR}/dbus-1/system.d/avahi-dbus.conf
 share/gir-1.0/
 share/gir-1.0/Avahi-0.6.gir
 share/gir-1.0/AvahiCore-0.6.gir

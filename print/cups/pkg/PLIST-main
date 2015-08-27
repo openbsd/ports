@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2015/08/01 07:18:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2015/08/27 06:48:30 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
@@ -663,6 +663,7 @@ share/examples/cups/cupsd.conf.default
 @group
 share/examples/cups/dbus-1/
 share/examples/cups/dbus-1/system.d/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
 @group _cups
 share/examples/cups/dbus-1/system.d/cups.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/cups.conf

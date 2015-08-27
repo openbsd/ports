@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2015/08/12 22:27:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.108 2015/08/27 06:48:30 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -26,7 +26,7 @@ PKGNAME-qt3=		avahi-qt3-${V}
 PKGNAME-qt4=		avahi-qt4-${V}
 PKGNAME-ui=		avahi-ui-${V}
 
-REVISION-main=		19
+REVISION-main=		20
 REVISION-gtk=		6
 REVISION-gtk3=		7
 REVISION-gui=		10
@@ -273,9 +273,9 @@ pre-configure:
 			-e 's,Cflags:,Cflags: -pthread,' ${WRKSRC}/$${i}.in; done
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
-	mv ${WRKINST}${SYSCONFDIR}/dbus-1 ${PREFIX}/share/examples/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/avahi
 	mv ${WRKINST}${SYSCONFDIR}/avahi ${PREFIX}/share/examples/
+	mv ${WRKINST}${SYSCONFDIR}/dbus-1 ${PREFIX}/share/examples/avahi/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/dbus-1/system-services
 	${INSTALL_DATA} ${WRKBUILD}/avahi-daemon/org.freedesktop.Avahi.service \
 		${PREFIX}/share/dbus-1/system-services

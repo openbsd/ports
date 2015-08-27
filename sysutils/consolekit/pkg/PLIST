@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/08/17 08:40:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/08/27 06:48:30 ajacoutot Exp $
 @conflict consolekit-*
 @extra /var/log/ConsoleKit/history
 @bin bin/ck-history
@@ -49,7 +49,7 @@ share/examples/consolekit/ConsoleKit/seats.d/
 share/examples/consolekit/ConsoleKit/seats.d/00-primary.seat
 @sample ${SYSCONFDIR}/ConsoleKit/seats.d/00-primary.seat
 share/examples/consolekit/dbus-1/
-@sample ${SYSCONFDIR}/dbus-1/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/consolekit/dbus-1/ConsoleKit.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/ConsoleKit.conf
 share/locale/bg/LC_MESSAGES/ConsoleKit2.mo

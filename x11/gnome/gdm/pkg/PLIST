@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.80 2015/04/15 07:25:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.81 2015/08/27 06:48:30 ajacoutot Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
@@ -39,6 +39,7 @@ share/examples/gdm/
 share/examples/gdm/etc/
 share/examples/gdm/etc/dbus-1/
 share/examples/gdm/etc/dbus-1/system.d/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/gdm/etc/dbus-1/system.d/gdm.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/gdm.conf
 share/examples/gdm/etc/gdm/

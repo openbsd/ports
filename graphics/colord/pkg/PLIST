@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2015/06/09 05:17:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/08/27 06:48:30 ajacoutot Exp $
 @conflict shared-color-profiles-*
 @conflict shared-color-profiles-extra-*
 @pkgpath graphics/colord
@@ -154,6 +154,7 @@ share/dbus-1/system-services/org.freedesktop.ColorManager.service
 share/examples/colord/
 share/examples/colord/dbus-1/
 share/examples/colord/dbus-1/system.d/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/colord/dbus-1/system.d/org.freedesktop.ColorManager.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.ColorManager.conf
 share/gir-1.0/

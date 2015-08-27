@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/25 09:33:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/08/27 06:48:30 ajacoutot Exp $
 @conflict jday-*
 @bin bin/ad
 @bin bin/afpldaptest
@@ -74,6 +74,7 @@ share/aclocal/netatalk.m4
 share/examples/netatalk/
 share/examples/netatalk/dbus-1/
 share/examples/netatalk/dbus-1/system.d/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/netatalk/dbus-1/system.d/netatalk-dbus.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/netatalk-dbus.conf
 share/examples/netatalk/netatalk/
