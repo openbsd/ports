@@ -1,20 +1,19 @@
-$OpenBSD: patch-defaults_make,v 1.2 2014/07/04 18:26:49 juanfra Exp $
---- defaults.make.orig	Wed Jun 18 16:55:23 2014
-+++ defaults.make	Wed Jun 18 16:57:01 2014
-@@ -42,10 +42,10 @@ BINDIR = $(PREFIX)/bin
- LIBDIR = $(PREFIX)/lib
- SHAREDIR = $(PREFIX)/share
- DATADIR = $(SHAREDIR)/$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)
--TOPMANDIR = $(SHAREDIR)/man
-+TOPMANDIR = $(PREFIX)/man
- MANDIR = $(TOPMANDIR)/man1
- INCDIR = $(PREFIX)/include/$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)
--DOCDIR = $(DATADIR)/doc
-+DOCDIR = $(SHAREDIR)/doc/chicken
+$OpenBSD: patch-defaults_make,v 1.3 2015/08/27 22:40:33 juanfra Exp $
+--- defaults.make.orig	Thu Aug 27 19:08:10 2015
++++ defaults.make	Thu Aug 27 19:09:56 2015
+@@ -42,9 +42,9 @@ LIBDIR ?= $(PREFIX)/lib
+ SHAREDIR ?= $(PREFIX)/share
+ DATADIR ?= $(SHAREDIR)/$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)
+ INCLUDEDIR ?= $(PREFIX)/include
+-MANDIR ?= $(SHAREDIR)/man
++MANDIR ?= $(PREFIX)/man
+ 
+-DOCDIR ?= $(DATADIR)/doc
++DOCDIR ?= $(SHAREDIR)/doc/chicken
  VARDIR ?= $(LIBDIR)
- CHICKENLIBDIR = $(VARDIR)/$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)
- EGGDIR ?= $(CHICKENLIBDIR)/$(BINARYVERSION)
-@@ -211,8 +211,8 @@ ifeq ($(PLATFORM),cygwin)
+ MAN1DIR ?= $(MANDIR)/man1
+ CHICKENLIBDIR ?= $(VARDIR)/$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)
+@@ -187,8 +187,8 @@ ifeq ($(PLATFORM),cygwin)
  PRIMARY_LIBCHICKEN = cyg$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)-0.dll
  LIBCHICKEN_SO_FILE = cyg$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)-0.dll
  else

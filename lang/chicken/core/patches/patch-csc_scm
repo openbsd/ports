@@ -1,8 +1,8 @@
-$OpenBSD: patch-csc_scm,v 1.2 2014/07/04 18:26:49 juanfra Exp $
---- csc.scm.orig	Wed Jun 18 16:54:05 2014
-+++ csc.scm	Wed Jun 18 16:55:06 2014
-@@ -980,9 +980,7 @@ EOF
- 	      libchicken
+$OpenBSD: patch-csc_scm,v 1.3 2015/08/27 22:40:33 juanfra Exp $
+--- csc.scm.orig	Tue Aug  4 21:46:22 2015
++++ csc.scm	Thu Aug 27 19:07:56 2015
+@@ -981,9 +981,7 @@ EOF
+ 	      dynamic-libchicken
  	      (cond (osx "dylib")
  		    ((or mingw cygwin) "dll")
 -		    (else (string-append

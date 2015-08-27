@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.4 2014/07/04 18:26:49 juanfra Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2015/08/27 22:40:33 juanfra Exp $
 
 COMMENT=	practical and portable Scheme system
 
-V=		4.9.0.1
+V=		4.10.0
 DISTNAME=	chicken-${V}
 
 MAINTAINER=	Timo Myyra <timo.myyra@wickedbsd.net>
@@ -30,6 +30,6 @@ FAKE_FLAGS=	PREFIX=${TRUEPREFIX}
 # Based on param.h:MACHINE_STACK_GROWS_UP
 pre-build:
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "hppa64"
-	perl -pi -e 's/C_STACK_GROWS_DOWNWARD 1/C_STACK_GROWS_DOWNWARD 0/g' "${WRKSRC}/Makefile.bsd"
+	sed -i 's/C_STACK_GROWS_DOWNWARD 1/C_STACK_GROWS_DOWNWARD 0/g' "${WRKSRC}/Makefile.bsd"
 .endif
 

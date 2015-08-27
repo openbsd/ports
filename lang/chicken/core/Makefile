@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/06/16 14:45:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/08/27 22:40:33 juanfra Exp $
 
 SHARED_ONLY=	Yes
 
-REVISION=	1
-
-SHARED_LIBS=	chicken	3.0
+SHARED_LIBS=	chicken	4.0 # 7
 
 TEST_TARGET=	check
 TEST_DEPENDS=	${BUILD_PKGPATH}
