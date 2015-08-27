@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/21 14:42:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/08/27 07:14:07 benoit Exp $
 
 COMMENT =	easy config file management
 
 MODULES =	cpan
-DISTNAME =	CGI-Application-Plugin-ConfigAuto-1.30
-REVISION =	0
+DISTNAME =	CGI-Application-Plugin-ConfigAuto-1.33
 CATEGORIES =	www
 
 # perl
 PERMIT_PACKAGE_CDROM =		Yes
-
-CONFIGURE_STYLE =	modbuild
 
 RUN_DEPENDS =		devel/p5-Config-Auto \
 			www/p5-CGI-Application
