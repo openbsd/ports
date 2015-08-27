@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/07/19 18:00:16 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/08/27 07:04:35 ajacoutot Exp $
 @newgroup _gonzui:581
 @newuser _gonzui:581:581:daemon:gonzui daemon:/var/empty:/sbin/nologin
 bin/gonzui-db
@@ -115,4 +115,3 @@ share/gonzui/doc/text.png
 @group _gonzui
 @sample /var/gonzui/
 @sample /var/log/gonzui/
-@sample /var/run/gonzui/
