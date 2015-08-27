@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/22 11:31:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/08/27 13:42:09 jca Exp $
 
 COMMENT =		reverse engineers disassembler and debugger
 
 DISTNAME =		radare2-${V}
-REVISION =		0
+REVISION =		1
 
 # In radare, all libs have the same version
 LIBV =			1.0	# 0.8.8

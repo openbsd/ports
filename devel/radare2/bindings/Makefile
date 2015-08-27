@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/21 01:35:51 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2015/08/27 13:42:09 jca Exp $
 
 COMMENT =		Vala bindings for Radare2
 
 DISTNAME =		r2-bindings-${V}
 PKGNAME =		radare-bindings2-${V}
+REVISION =		0
 
 BUILD_DEPENDS =		devel/radare2/main>=${V}
 RUN_DEPENDS =		lang/vala \
