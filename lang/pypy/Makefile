@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/28 10:17:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.16 2015/08/27 14:21:32 edd Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -12,12 +12,11 @@ COMMENT =		fast implementation of the Python language
 #   * Set BOOTSTRAP_V back to ${V} in the port Makefile
 #   * make bootstrap && make makesum (note, FLAVOR no longer set)
 #   * Try the build using the bootstrap
-V =			2.5.1
-BOOTSTRAP_V =		${V}-1
+V =			2.6.0
+BOOTSTRAP_V =		${V}
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
-REVISION =		0
 
 CATEGORIES =		lang
 
@@ -73,13 +72,20 @@ post-extract:
 SUBST_VARS +=	MODTK_INCDIR MODTCL_INCDIR MODTK_LIB MODTCL_LIB
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/lib_pypy/_tkinter/tklib.py
+	${SUBST_CMD} ${WRKSRC}/lib_pypy/_tkinter/tklib_build.py
 	# prevent crap in the plist
-	rm ${WRKSRC}/lib_pypy/_tkinter/tklib.py.beforesubst
+	rm ${WRKSRC}/lib_pypy/_tkinter/tklib_build.py.beforesubst
 
 # When updating the port, see pypy/tool/release/package.py and check for
-# new modules which require a cffi cache.
-CFFI_CACHES =	_sqlite3, audioop, _curses, syslog, gdbm, _tkinter
+# new modules which require a cffi cache. In post-fake we must mimic
+# the function create_cffi_import_libraries().
+CFFI_CACHES =		_sqlite3_build.py \
+			_audioop_build.py \
+			_tkinter/tklib_build.py \
+			_curses_build.py \
+			_syslog_build.py \
+			_gdbm_build.py \
+			_pwdgrp_build.py
 
 do-build:
 .if ${FLAVOR:Mno_bootstrap}
@@ -118,20 +124,16 @@ do-install:
 	${PYPY_LD_LIBRARY_PATH} sh -c \
 		'find ${PREFIX}/pypy/lib-python/2.7 -name "*.py" | grep -v test \
 		  | xargs ${PREFIX}/pypy/bin/pypy -m compileall'
-	# make cffi cache
-	# this will generate various __pycache__ directories in lib_pypy.
-	# and it puts absolute paths in there too, yay...
-	${PYPY_LD_LIBRARY_PATH} LDFLAGS=-L${LOCALBASE}/lib \
+	find ${PREFIX}/pypy/lib_pypy/ -name '*.c' -or -name '*.o' | xargs rm
+	# make cffi shared objects
+.for i in ${CFFI_CACHES}
+	cd ${WRKSRC}/lib_pypy && ${PYPY_LD_LIBRARY_PATH} \
+		LDFLAGS=-L${LOCALBASE}/lib \
 		CPPFLAGS=-I${LOCALBASE}/include \
-		${PREFIX}/pypy/bin/pypy -c 'import ${CFFI_CACHES}'
-	${INSTALL_DATA_DIR} ${PREFIX}/pypy/lib_pypy/__pycache__/${TRUEPREFIX}/pypy/
-	mv ${PREFIX}/pypy/lib_pypy/__pycache__/${PREFIX}/pypy/* \
-		${PREFIX}/pypy/lib_pypy/__pycache__/${TRUEPREFIX}/pypy/
-	rm -Rf ${PREFIX}/pypy/lib_pypy/__pycache__/${PORTSDIR}
-	${INSTALL_DATA_DIR} ${PREFIX}/pypy/lib_pypy/_tkinter/__pycache__/${TRUEPREFIX}/pypy/
-	mv ${PREFIX}/pypy/lib_pypy/_tkinter/__pycache__/${PREFIX}/pypy/* \
-		${PREFIX}/pypy/lib_pypy/_tkinter/__pycache__/${TRUEPREFIX}/pypy/
-	rm -Rf ${PREFIX}/pypy/lib_pypy/_tkinter/__pycache__/${PORTSDIR}
+		${PREFIX}/pypy/bin/pypy ${i}
+.endfor
+	cp ${WRKSRC}/lib_pypy/*.so ${PREFIX}/pypy/lib_pypy/
+	cp ${WRKSRC}/lib_pypy/_tkinter/*.so ${PREFIX}/pypy/lib_pypy/_tkinter/
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/lib_pypy
 	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy/lib-python/2.7
 	cd ${PREFIX}/bin && ln -s ../pypy/bin/pypy

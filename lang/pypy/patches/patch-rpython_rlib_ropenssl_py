@@ -1,6 +1,6 @@
-$OpenBSD: patch-rpython_rlib_ropenssl_py,v 1.4 2015/04/05 11:15:08 edd Exp $
---- rpython/rlib/ropenssl.py.orig	Mon Mar 23 16:17:54 2015
-+++ rpython/rlib/ropenssl.py	Thu Apr  2 20:03:48 2015
+$OpenBSD: patch-rpython_rlib_ropenssl_py,v 1.5 2015/08/27 14:21:32 edd Exp $
+--- rpython/rlib/ropenssl.py.orig	Sun May 31 08:19:51 2015
++++ rpython/rlib/ropenssl.py	Mon Jun  8 10:40:07 2015
 @@ -29,7 +29,8 @@ includes += [
      'openssl/rand.h',
      'openssl/evp.h',
@@ -11,7 +11,7 @@ $OpenBSD: patch-rpython_rlib_ropenssl_py,v 1.4 2015/04/05 11:15:08 edd Exp $
  
  eci = ExternalCompilationInfo(
      libraries = libraries,
-@@ -279,7 +280,6 @@ ssl_external('CRYPTO_set_id_callback',
+@@ -284,7 +285,6 @@ ssl_external('CRYPTO_set_id_callback',
  if HAVE_OPENSSL_RAND:
      ssl_external('RAND_add', [rffi.CCHARP, rffi.INT, rffi.DOUBLE], lltype.Void)
      ssl_external('RAND_status', [], rffi.INT)
