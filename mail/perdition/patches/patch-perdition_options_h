@@ -1,10 +1,19 @@
-$OpenBSD: patch-perdition_options_h,v 1.1 2013/03/15 15:17:36 sthen Exp $
+$OpenBSD: patch-perdition_options_h,v 1.2 2015/08/27 13:51:27 giovanni Exp $
 
 Auth timeout used for SO_RECVTIMEO in ssl.c which has a max of
 USHRT_MAX hz otherwise it fails with EDOM.
 
---- perdition/options.h.orig	Thu Mar 14 13:58:46 2013
-+++ perdition/options.h	Thu Mar 14 14:00:47 2013
+--- perdition/options.h.orig	Fri Oct  4 03:44:12 2013
++++ perdition/options.h	Fri Jul 17 15:22:50 2015
+@@ -128,7 +128,7 @@
+ #define DEFAULT_IMAP_CAPABILITY              "IMAP4 IMAP4REV1"
+ #define DEFAULT_INETD_MODE                   0
+ #define DEFAULT_MAP_LIB                      PERDITION_LIBDIR \
+-			                     "/libperditiondb_gdbm.so.0"
++			                     "/libperditiondb_bdb.so.0"
+ #define DEFAULT_LOG_FACILITY                 "mail"
+ #define DEFAULT_LOGIN_DISABLED               0
+ #define DEFAULT_LOWER_CASE                   STATE_NONE
 @@ -145,7 +145,7 @@
  #define DEFAULT_STRIP_DOMAIN                 STATE_NONE
  #define DEFAULT_SERVER_RESP_LINE             0
