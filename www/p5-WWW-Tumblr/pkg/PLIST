@@ -1,3 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/27 20:37:19 ckuethe Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/08/27 06:55:48 benoit Exp $
+${P5SITE}/WWW/Tumblr/
 ${P5SITE}/WWW/Tumblr.pm
+${P5SITE}/WWW/Tumblr/API.pm
+${P5SITE}/WWW/Tumblr/Authentication/
+${P5SITE}/WWW/Tumblr/Authentication.pm
+${P5SITE}/WWW/Tumblr/Authentication/APIKey.pm
+${P5SITE}/WWW/Tumblr/Authentication/None.pm
+${P5SITE}/WWW/Tumblr/Authentication/OAuth.pm
+${P5SITE}/WWW/Tumblr/Blog.pm
+${P5SITE}/WWW/Tumblr/ResponseError.pm
+${P5SITE}/WWW/Tumblr/Tagged.pm
+${P5SITE}/WWW/Tumblr/Test.pm
+${P5SITE}/WWW/Tumblr/User.pm
 @man man/man3p/WWW::Tumblr.3p
+@man man/man3p/WWW::Tumblr::Blog.3p
+@man man/man3p/WWW::Tumblr::ResponseError.3p
+@man man/man3p/WWW::Tumblr::Tagged.3p
+@man man/man3p/WWW::Tumblr::User.3p

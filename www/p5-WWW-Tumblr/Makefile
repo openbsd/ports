@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/11 23:51:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2015/08/27 06:55:48 benoit Exp $
 
-COMMENT=		Perl interface for the Tumblr API
+COMMENT =		Perl interface for the Tumblr API
 
-DISTNAME=		WWW-Tumblr-4.1
-REVISION=		1
-CATEGORIES=		www
+DISTNAME =		WWW-Tumblr-5.1
+CATEGORIES =		www
 
-MODULES=		cpan
+MODULES =		cpan
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM = 	Yes
 
-RUN_DEPENDS= www/p5-libwww
-
-WRKSRC=${WRKDIR}/WWW-Tumblr
+RUN_DEPENDS =		www/p5-libwww \
+			devel/p5-Moose \
+			net/p5-Net-OAuth
 
 .include <bsd.port.mk>
