@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2015/07/22 18:09:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2015/08/27 06:46:46 ajacoutot Exp $
 @pkgpath x11/dbus
 @newgroup _dbus:572
 @newuser _dbus:572:_dbus:daemon:dbus user:/nonexistent:/sbin/nologin
@@ -10,6 +10,8 @@
 @bin bin/dbus-monitor
 @bin bin/dbus-run-session
 @bin bin/dbus-send
+@bin bin/dbus-test-tool
+@bin bin/dbus-update-activation-environment
 @bin bin/dbus-uuidgen
 include/dbus-1.0/
 include/dbus-1.0/dbus/
@@ -45,9 +47,15 @@ lib/pkgconfig/dbus-1.pc
 @man man/man1/dbus-monitor.1
 @man man/man1/dbus-run-session.1
 @man man/man1/dbus-send.1
+@man man/man1/dbus-test-tool.1
+@man man/man1/dbus-update-activation-environment.1
 @man man/man1/dbus-uuidgen.1
 share/dbus-1/
 share/dbus-1/services/
+share/dbus-1/session.conf
+share/dbus-1/session.d/
+share/dbus-1/system.conf
+share/dbus-1/system.d/
 share/doc/dbus/
 share/doc/dbus/dbus-cleanup-sockets.1.html
 share/doc/dbus/dbus-daemon.1.html
@@ -58,10 +66,16 @@ share/doc/dbus/dbus-run-session.1.html
 share/doc/dbus/dbus-send.1.html
 share/doc/dbus/dbus-specification.html
 share/doc/dbus/dbus-test-plan.html
+share/doc/dbus/dbus-test-tool.1.html
 share/doc/dbus/dbus-tutorial.html
+share/doc/dbus/dbus-update-activation-environment.1.html
 share/doc/dbus/dbus-uuidgen.1.html
 share/doc/dbus/diagram.png
 share/doc/dbus/diagram.svg
+share/doc/dbus/examples/
+share/doc/dbus/examples/GetAllMatchRules.py
+share/doc/dbus/examples/example-session-disable-stats.conf
+share/doc/dbus/examples/example-system-enable-stats.conf
 share/doc/dbus/system-activation.txt
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/dbus/
@@ -69,12 +83,8 @@ share/examples/dbus/dbus-1/
 @sample ${SYSCONFDIR}/dbus-1/
 share/examples/dbus/dbus-1/session.conf
 @sample ${SYSCONFDIR}/dbus-1/session.conf
-share/examples/dbus/dbus-1/session.d/
-@sample ${SYSCONFDIR}/dbus-1/session.d/
 share/examples/dbus/dbus-1/system.conf
 @sample ${SYSCONFDIR}/dbus-1/system.conf
-share/examples/dbus/dbus-1/system.d/
-@sample ${SYSCONFDIR}/dbus-1/system.d/
 @sample /var/db/dbus/
 @exec ${PREFIX}/bin/dbus-uuidgen --ensure=${SYSCONFDIR}/machine-id
 @rcscript ${RCDIR}/messagebus
