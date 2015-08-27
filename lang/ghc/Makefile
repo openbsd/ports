@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2015/06/25 11:40:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.119 2015/08/27 09:33:25 juanfra Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -9,9 +9,12 @@ COMMENT-doc =		documentation for GHC
 # "non-dterministic", "unresolved symbol", "signature mismatch" etc. to
 # find the appropriate bug tickets)
 
+# ghc hardcodes ${WRKDIR}/bin/gcc when the package is compiled with ccache 
+NO_CCACHE =		Yes
+
 DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
-REVISION-main =		2
+REVISION-main =		3
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
 REVISION-doc =		0
 CATEGORIES =		lang devel
