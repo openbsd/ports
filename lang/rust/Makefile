@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/06/27 15:37:32 semarie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/08/28 06:51:07 semarie Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -7,8 +7,8 @@ PKG_ARCH-doc =		*
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.1.0
-RUST_HASH =		7d23ff90
+V =			1.2.0
+RUST_HASH =		62abc69f
 DISTNAME =		rustc-${V}-src
 
 SUBST_VARS +=		RUST_HASH
@@ -20,13 +20,13 @@ PKGNAME-doc =		rust-doc-${V}
 MULTI_PACKAGES =	-main -doc
 
 # the snapshot version should be the version in src/snapshots.txt
-SNAPSHOT-amd64 =	rust-stage0-2015-04-27-857ef6e-openbsd-x86_64-20046defe7d1f3f37e25b5b2714cd54e61cabc61.tar.bz2
+SNAPSHOT-amd64 =	rust-stage0-2015-05-24-ba0e1cd-openbsd-x86_64-7c249db2a0f4e6ace9c3a343ba62c990635d665a.tar.bz2
 
 CATEGORIES =		lang
 
 HOMEPAGE =		http://www.rust-lang.org/
 
-MAINTAINER =		Sebastien Marie <semarie-openbsd@latrappe.fr>
+MAINTAINER =		Sebastien Marie <semarie@openbsd.org>
 
 # both MIT and Apache2.0
 # with portions covered by various BSD-like licenses

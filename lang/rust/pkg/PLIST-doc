@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-doc,v 1.4 2015/06/27 15:37:32 semarie Exp $
+@comment $OpenBSD: PLIST-doc,v 1.5 2015/08/28 06:51:07 semarie Exp $
 share/doc/rust/html/
 share/doc/rust/html/.lock
 share/doc/rust/html/FiraSans-Medium.woff
@@ -18,10 +18,10 @@ share/doc/rust/html/alloc/arc/sidebar-items.js
 share/doc/rust/html/alloc/arc/struct.Arc.html
 share/doc/rust/html/alloc/arc/struct.Weak.html
 share/doc/rust/html/alloc/boxed/
+share/doc/rust/html/alloc/boxed/constant.HEAP.html
 share/doc/rust/html/alloc/boxed/fn.into_raw.html
 share/doc/rust/html/alloc/boxed/index.html
 share/doc/rust/html/alloc/boxed/sidebar-items.js
-share/doc/rust/html/alloc/boxed/static.HEAP.html
 share/doc/rust/html/alloc/boxed/struct.Box.html
 share/doc/rust/html/alloc/boxed/trait.FnBox.html
 share/doc/rust/html/alloc/fn.oom.html
@@ -87,7 +87,6 @@ share/doc/rust/html/book/inline-assembly.html
 share/doc/rust/html/book/installing-rust.html
 share/doc/rust/html/book/intrinsics.html
 share/doc/rust/html/book/iterators.html
-share/doc/rust/html/book/jquery.js
 share/doc/rust/html/book/lang-items.html
 share/doc/rust/html/book/learn-rust.html
 share/doc/rust/html/book/lifetimes.html
@@ -163,10 +162,10 @@ share/doc/rust/html/collections/borrow/trait.BorrowMut.html
 share/doc/rust/html/collections/borrow/trait.IntoCow.html
 share/doc/rust/html/collections/borrow/trait.ToOwned.html
 share/doc/rust/html/collections/boxed/
+share/doc/rust/html/collections/boxed/constant.HEAP.html
 share/doc/rust/html/collections/boxed/fn.into_raw.html
 share/doc/rust/html/collections/boxed/index.html
 share/doc/rust/html/collections/boxed/sidebar-items.js
-share/doc/rust/html/collections/boxed/static.HEAP.html
 share/doc/rust/html/collections/boxed/struct.Box.html
 share/doc/rust/html/collections/boxed/trait.FnBox.html
 share/doc/rust/html/collections/btree/
@@ -456,8 +455,6 @@ share/doc/rust/html/core/cell/struct.RefMut.html
 share/doc/rust/html/core/cell/struct.UnsafeCell.html
 share/doc/rust/html/core/char/
 share/doc/rust/html/core/char/constant.MAX.html
-share/doc/rust/html/core/char/fn.encode_utf16_raw.html
-share/doc/rust/html/core/char/fn.encode_utf8_raw.html
 share/doc/rust/html/core/char/fn.from_digit.html
 share/doc/rust/html/core/char/fn.from_u32.html
 share/doc/rust/html/core/char/index.html
@@ -653,6 +650,7 @@ share/doc/rust/html/core/i8/sidebar-items.js
 share/doc/rust/html/core/index.html
 share/doc/rust/html/core/intrinsics/
 share/doc/rust/html/core/intrinsics/fn.abort.html
+share/doc/rust/html/core/intrinsics/fn.arith_offset.html
 share/doc/rust/html/core/intrinsics/fn.assume.html
 share/doc/rust/html/core/intrinsics/fn.atomic_and.html
 share/doc/rust/html/core/intrinsics/fn.atomic_and_acq.html
@@ -853,7 +851,9 @@ share/doc/rust/html/core/isize/index.html
 share/doc/rust/html/core/isize/sidebar-items.js
 share/doc/rust/html/core/iter/
 share/doc/rust/html/core/iter/enum.MinMaxResult.html
+share/doc/rust/html/core/iter/fn.empty.html
 share/doc/rust/html/core/iter/fn.iterate.html
+share/doc/rust/html/core/iter/fn.once.html
 share/doc/rust/html/core/iter/fn.range_inclusive.html
 share/doc/rust/html/core/iter/fn.repeat.html
 share/doc/rust/html/core/iter/index.html
@@ -873,6 +873,7 @@ share/doc/rust/html/core/iter/sidebar-items.js
 share/doc/rust/html/core/iter/struct.Chain.html
 share/doc/rust/html/core/iter/struct.Cloned.html
 share/doc/rust/html/core/iter/struct.Cycle.html
+share/doc/rust/html/core/iter/struct.Empty.html
 share/doc/rust/html/core/iter/struct.Enumerate.html
 share/doc/rust/html/core/iter/struct.Filter.html
 share/doc/rust/html/core/iter/struct.FilterMap.html
@@ -880,6 +881,7 @@ share/doc/rust/html/core/iter/struct.FlatMap.html
 share/doc/rust/html/core/iter/struct.Fuse.html
 share/doc/rust/html/core/iter/struct.Inspect.html
 share/doc/rust/html/core/iter/struct.Map.html
+share/doc/rust/html/core/iter/struct.Once.html
 share/doc/rust/html/core/iter/struct.Peekable.html
 share/doc/rust/html/core/iter/struct.RangeInclusive.html
 share/doc/rust/html/core/iter/struct.Repeat.html
@@ -956,7 +958,6 @@ share/doc/rust/html/core/nonzero/sidebar-items.js
 share/doc/rust/html/core/nonzero/struct.NonZero.html
 share/doc/rust/html/core/nonzero/trait.Zeroable.html
 share/doc/rust/html/core/num/
-share/doc/rust/html/core/num/enum.FloatErrorKind.html
 share/doc/rust/html/core/num/enum.FpCategory.html
 share/doc/rust/html/core/num/index.html
 share/doc/rust/html/core/num/sidebar-items.js
@@ -1102,11 +1103,9 @@ share/doc/rust/html/core/slice/struct.SplitNMut.html
 share/doc/rust/html/core/slice/struct.Windows.html
 share/doc/rust/html/core/slice/trait.IntSliceExt.html
 share/doc/rust/html/core/str/
-share/doc/rust/html/core/str/fn.char_range_at_raw.html
 share/doc/rust/html/core/str/fn.from_utf8.html
 share/doc/rust/html/core/str/fn.from_utf8_unchecked.html
 share/doc/rust/html/core/str/fn.next_code_point.html
-share/doc/rust/html/core/str/fn.next_code_point_reverse.html
 share/doc/rust/html/core/str/index.html
 share/doc/rust/html/core/str/pattern/
 share/doc/rust/html/core/str/pattern/enum.SearchStep.html
@@ -1199,9 +1198,6 @@ share/doc/rust/html/guide-tasks.html
 share/doc/rust/html/guide-testing.html
 share/doc/rust/html/guide.html
 share/doc/rust/html/implementors/
-share/doc/rust/html/implementors/alloc/
-share/doc/rust/html/implementors/alloc/boxed/
-share/doc/rust/html/implementors/alloc/boxed/trait.FnBox.js
 share/doc/rust/html/implementors/collections/
 share/doc/rust/html/implementors/collections/borrow/
 share/doc/rust/html/implementors/collections/borrow/trait.Borrow.js
@@ -1240,8 +1236,6 @@ share/doc/rust/html/implementors/collections/str/pattern/trait.Pattern.js
 share/doc/rust/html/implementors/collections/str/pattern/trait.ReverseSearcher.js
 share/doc/rust/html/implementors/collections/str/pattern/trait.Searcher.js
 share/doc/rust/html/implementors/collections/str/trait.FromStr.js
-share/doc/rust/html/implementors/collections/string/
-share/doc/rust/html/implementors/collections/string/trait.ToString.js
 share/doc/rust/html/implementors/core/
 share/doc/rust/html/implementors/core/any/
 share/doc/rust/html/implementors/core/any/trait.Any.js
@@ -2286,7 +2280,13 @@ share/doc/rust/html/rustc_unicode/char/sidebar-items.js
 share/doc/rust/html/rustc_unicode/char/struct.EscapeDefault.html
 share/doc/rust/html/rustc_unicode/char/struct.EscapeUnicode.html
 share/doc/rust/html/rustc_unicode/char/struct.ToLowercase.html
+share/doc/rust/html/rustc_unicode/char/struct.ToTitlecase.html
 share/doc/rust/html/rustc_unicode/char/struct.ToUppercase.html
+share/doc/rust/html/rustc_unicode/derived_property/
+share/doc/rust/html/rustc_unicode/derived_property/fn.Case_Ignorable.html
+share/doc/rust/html/rustc_unicode/derived_property/fn.Cased.html
+share/doc/rust/html/rustc_unicode/derived_property/index.html
+share/doc/rust/html/rustc_unicode/derived_property/sidebar-items.js
 share/doc/rust/html/rustc_unicode/index.html
 share/doc/rust/html/rustc_unicode/normalize/
 share/doc/rust/html/rustc_unicode/normalize/fn.compose.html
@@ -2312,6 +2312,11 @@ share/doc/rust/html/rustc_unicode/str/trait.UnicodeStr.html
 share/doc/rust/html/rustc_unicode/str/type.Words.html
 share/doc/rust/html/rustc_unicode/tables/
 share/doc/rust/html/rustc_unicode/tables/constant.UNICODE_VERSION.html
+share/doc/rust/html/rustc_unicode/tables/derived_property/
+share/doc/rust/html/rustc_unicode/tables/derived_property/fn.Case_Ignorable.html
+share/doc/rust/html/rustc_unicode/tables/derived_property/fn.Cased.html
+share/doc/rust/html/rustc_unicode/tables/derived_property/index.html
+share/doc/rust/html/rustc_unicode/tables/derived_property/sidebar-items.js
 share/doc/rust/html/rustc_unicode/tables/index.html
 share/doc/rust/html/rustc_unicode/tables/normalization/
 share/doc/rust/html/rustc_unicode/tables/normalization/fn.canonical_combining_class.html
@@ -2497,7 +2502,8 @@ share/doc/rust/html/src/std/rt/backtrace.rs.html
 share/doc/rust/html/src/std/rt/libunwind.rs.html
 share/doc/rust/html/src/std/rt/macros.rs.html
 share/doc/rust/html/src/std/rt/mod.rs.html
-share/doc/rust/html/src/std/rt/unwind.rs.html
+share/doc/rust/html/src/std/rt/unwind/
+share/doc/rust/html/src/std/rt/unwind/mod.rs.html
 share/doc/rust/html/src/std/rt/util.rs.html
 share/doc/rust/html/src/std/rtdeps.rs.html
 share/doc/rust/html/src/std/sync/
@@ -2575,10 +2581,10 @@ share/doc/rust/html/std/borrow/trait.BorrowMut.html
 share/doc/rust/html/std/borrow/trait.IntoCow.html
 share/doc/rust/html/std/borrow/trait.ToOwned.html
 share/doc/rust/html/std/boxed/
+share/doc/rust/html/std/boxed/constant.HEAP.html
 share/doc/rust/html/std/boxed/fn.into_raw.html
 share/doc/rust/html/std/boxed/index.html
 share/doc/rust/html/std/boxed/sidebar-items.js
-share/doc/rust/html/std/boxed/static.HEAP.html
 share/doc/rust/html/std/boxed/struct.Box.html
 share/doc/rust/html/std/boxed/trait.FnBox.html
 share/doc/rust/html/std/cell/
@@ -2605,6 +2611,7 @@ share/doc/rust/html/std/char/sidebar-items.js
 share/doc/rust/html/std/char/struct.EscapeDefault.html
 share/doc/rust/html/std/char/struct.EscapeUnicode.html
 share/doc/rust/html/std/char/struct.ToLowercase.html
+share/doc/rust/html/std/char/struct.ToTitlecase.html
 share/doc/rust/html/std/char/struct.ToUppercase.html
 share/doc/rust/html/std/clone/
 share/doc/rust/html/std/clone/index.html
@@ -2673,7 +2680,6 @@ share/doc/rust/html/std/collections/enum.Bound.html
 share/doc/rust/html/std/collections/hash/
 share/doc/rust/html/std/collections/hash/index.html
 share/doc/rust/html/std/collections/hash/map/
-share/doc/rust/html/std/collections/hash/map/constant.INITIAL_CAPACITY.html
 share/doc/rust/html/std/collections/hash/map/enum.Entry.html
 share/doc/rust/html/std/collections/hash/map/index.html
 share/doc/rust/html/std/collections/hash/map/sidebar-items.js
@@ -2705,7 +2711,6 @@ share/doc/rust/html/std/collections/hash/state/sidebar-items.js
 share/doc/rust/html/std/collections/hash/state/struct.DefaultState.html
 share/doc/rust/html/std/collections/hash/state/trait.HashState.html
 share/doc/rust/html/std/collections/hash_map/
-share/doc/rust/html/std/collections/hash_map/constant.INITIAL_CAPACITY.html
 share/doc/rust/html/std/collections/hash_map/enum.Entry.html
 share/doc/rust/html/std/collections/hash_map/index.html
 share/doc/rust/html/std/collections/hash_map/sidebar-items.js
@@ -3016,6 +3021,7 @@ share/doc/rust/html/std/i8/sidebar-items.js
 share/doc/rust/html/std/index.html
 share/doc/rust/html/std/intrinsics/
 share/doc/rust/html/std/intrinsics/fn.abort.html
+share/doc/rust/html/std/intrinsics/fn.arith_offset.html
 share/doc/rust/html/std/intrinsics/fn.assume.html
 share/doc/rust/html/std/intrinsics/fn.atomic_and.html
 share/doc/rust/html/std/intrinsics/fn.atomic_and_acq.html
@@ -3304,7 +3310,9 @@ share/doc/rust/html/std/isize/index.html
 share/doc/rust/html/std/isize/sidebar-items.js
 share/doc/rust/html/std/iter/
 share/doc/rust/html/std/iter/enum.MinMaxResult.html
+share/doc/rust/html/std/iter/fn.empty.html
 share/doc/rust/html/std/iter/fn.iterate.html
+share/doc/rust/html/std/iter/fn.once.html
 share/doc/rust/html/std/iter/fn.range_inclusive.html
 share/doc/rust/html/std/iter/fn.repeat.html
 share/doc/rust/html/std/iter/index.html
@@ -3324,6 +3332,7 @@ share/doc/rust/html/std/iter/sidebar-items.js
 share/doc/rust/html/std/iter/struct.Chain.html
 share/doc/rust/html/std/iter/struct.Cloned.html
 share/doc/rust/html/std/iter/struct.Cycle.html
+share/doc/rust/html/std/iter/struct.Empty.html
 share/doc/rust/html/std/iter/struct.Enumerate.html
 share/doc/rust/html/std/iter/struct.Filter.html
 share/doc/rust/html/std/iter/struct.FilterMap.html
@@ -3331,6 +3340,7 @@ share/doc/rust/html/std/iter/struct.FlatMap.html
 share/doc/rust/html/std/iter/struct.Fuse.html
 share/doc/rust/html/std/iter/struct.Inspect.html
 share/doc/rust/html/std/iter/struct.Map.html
+share/doc/rust/html/std/iter/struct.Once.html
 share/doc/rust/html/std/iter/struct.Peekable.html
 share/doc/rust/html/std/iter/struct.RangeInclusive.html
 share/doc/rust/html/std/iter/struct.Repeat.html
@@ -4113,11 +4123,8 @@ share/doc/rust/html/std/sys_common/thread_info/index.html
 share/doc/rust/html/std/sys_common/thread_info/sidebar-items.js
 share/doc/rust/html/std/sys_common/thread_info/trait.NewThread.html
 share/doc/rust/html/std/sys_common/thread_local/
-share/doc/rust/html/std/sys_common/thread_local/constant.INIT.html
-share/doc/rust/html/std/sys_common/thread_local/constant.INIT_INNER.html
 share/doc/rust/html/std/sys_common/thread_local/index.html
 share/doc/rust/html/std/sys_common/thread_local/sidebar-items.js
-share/doc/rust/html/std/sys_common/thread_local/struct.StaticKey.html
 share/doc/rust/html/std/sys_common/wtf8/
 share/doc/rust/html/std/sys_common/wtf8/index.html
 share/doc/rust/html/std/sys_common/wtf8/sidebar-items.js
@@ -4140,10 +4147,12 @@ share/doc/rust/html/std/thread/local/enum.LocalKeyState.html
 share/doc/rust/html/std/thread/local/index.html
 share/doc/rust/html/std/thread/local/sidebar-items.js
 share/doc/rust/html/std/thread/local/struct.LocalKey.html
+share/doc/rust/html/std/thread/local/struct.__KeyInner.html
 share/doc/rust/html/std/thread/scoped_tls/
 share/doc/rust/html/std/thread/scoped_tls/index.html
 share/doc/rust/html/std/thread/scoped_tls/sidebar-items.js
 share/doc/rust/html/std/thread/scoped_tls/struct.ScopedKey.html
+share/doc/rust/html/std/thread/scoped_tls/struct.__KeyInner.html
 share/doc/rust/html/std/thread/sidebar-items.js
 share/doc/rust/html/std/thread/struct.Builder.html
 share/doc/rust/html/std/thread/struct.JoinGuard.html
@@ -4251,7 +4260,6 @@ share/doc/rust/html/style/features/types/README.html
 share/doc/rust/html/style/features/types/conversions.html
 share/doc/rust/html/style/features/types/newtype.html
 share/doc/rust/html/style/index.html
-share/doc/rust/html/style/jquery.js
 share/doc/rust/html/style/ownership/
 share/doc/rust/html/style/ownership/README.html
 share/doc/rust/html/style/ownership/builders.html

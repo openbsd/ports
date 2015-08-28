@@ -1,19 +1,23 @@
-$OpenBSD: patch-src_etc_mklldeps_py,v 1.1.1.1 2015/04/06 16:01:05 landry Exp $
+$OpenBSD: patch-src_etc_mklldeps_py,v 1.2 2015/08/28 06:51:07 semarie Exp $
 Configure linking to estdc++ (stdc++ library from devel/gcc, not from base)
---- src/etc/mklldeps.py.orig	Thu Apr  2 18:29:13 2015
-+++ src/etc/mklldeps.py	Fri Apr  3 20:04:01 2015
-@@ -88,12 +88,12 @@ for lib in out.strip().split(' '):
+--- src/etc/mklldeps.py.orig	Tue Aug  4 21:28:48 2015
++++ src/etc/mklldeps.py	Fri Aug  7 06:43:26 2015
+@@ -78,15 +78,15 @@ for lib in out.strip().split(' '):
  out = run([llconfig, '--cxxflags'])
  if enable_static == '1':
      assert('stdlib=libc++' not in out)
 -    f.write("#[link(name = \"stdc++\", kind = \"static\")]\n")
 +    f.write("#[link(name = \"estdc++\", kind = \"static\")]\n")
  else:
+     # Note that we use `cfg_attr` here because on MSVC the C++ standard library
+-    # is not c++ or stdc++, but rather the linker takes care of linking the
++    # is not c++ or estdc++, but rather the linker takes care of linking the
+     # right standard library.
      if 'stdlib=libc++' in out:
-         f.write("#[link(name = \"c++\")]\n")
+         f.write("#[cfg_attr(not(target_env = \"msvc\"), link(name = \"c++\"))]\n")
      else:
--        f.write("#[link(name = \"stdc++\")]\n")
-+        f.write("#[link(name = \"estdc++\")]\n")
+-        f.write("#[cfg_attr(not(target_env = \"msvc\"), link(name = \"stdc++\"))]\n")
++        f.write("#[cfg_attr(not(target_env = \"msvc\"), link(name = \"estdc++\"))]\n")
  
  # Attach everything to an extern block
  f.write("extern {}\n")
