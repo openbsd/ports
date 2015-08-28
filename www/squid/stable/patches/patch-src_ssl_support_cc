@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ssl_support_cc,v 1.1 2015/07/18 21:00:13 sthen Exp $
---- src/ssl/support.cc.orig	Sat Jul 18 14:57:38 2015
-+++ src/ssl/support.cc	Sat Jul 18 14:58:27 2015
+$OpenBSD: patch-src_ssl_support_cc,v 1.2 2015/08/28 11:45:40 jca Exp $
+--- src/ssl/support.cc.orig	Sat Aug  1 09:23:34 2015
++++ src/ssl/support.cc	Fri Aug 28 13:07:28 2015
 @@ -1031,8 +1031,13 @@ sslCreateClientContext(const char *certfile, const cha
          break;
  
@@ -8,6 +8,20 @@ $OpenBSD: patch-src_ssl_support_cc,v 1.1 2015/07/18 21:00:13 sthen Exp $
 +#ifndef OPENSSL_NO_SSL3
          debugs(83, 5, "Using SSLv3.");
          method = SSLv3_client_method();
++#else
++        debugs(83, DBG_IMPORTANT, "SSLv3 is not available in this Proxy.");
++        return NULL;
++#endif
+         break;
+ 
+     case 4:
+@@ -1416,8 +1421,13 @@ Ssl::contextMethod(int version)
+         break;
+ 
+     case 3:
++#ifndef OPENSSL_NO_SSL3
+         debugs(83, 5, "Using SSLv3.");
+         method = SSLv3_server_method();
 +#else
 +        debugs(83, DBG_IMPORTANT, "SSLv3 is not available in this Proxy.");
 +        return NULL;

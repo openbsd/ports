@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2015/08/25 07:30:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2015/08/28 11:45:39 jca Exp $
 
 PORTROACH=	limit:^3\.4\.*
 
 V=		3.4.14
-REVISION=	0
+REVISION=	1
 
 WANTLIB+=	stdc++
 
