@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.285 2015/08/25 11:29:52 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.286 2015/08/28 14:48:05 jeremy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -605,6 +605,7 @@ my $obsolete_reason = {
 	'tcplist' => 0,
 	'wide-dhcp' => 0,
 	'cfs' => 0,
+	'rubinius' => 5,
 };
 
 # ->is_base_system($handle, $state):
