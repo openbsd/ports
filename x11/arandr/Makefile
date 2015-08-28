@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2015/07/29 12:13:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/28 16:37:18 jca Exp $
 
 COMMENT =		xrandr gui
-MODPY_EGG_VERSION =	0.1.7.1
+MODPY_EGG_VERSION =	0.1.8
 DISTNAME =		arandr-${MODPY_EGG_VERSION}
 CATEGORIES =		x11 sysutils
 HOMEPAGE =		http://christian.amsuess.com/tools/arandr/
