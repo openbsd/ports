@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/08/26 14:16:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2015/08/28 17:59:33 jca Exp $
 
      SUBDIR =
      SUBDIR += adobe-source-code-pro
@@ -27,6 +27,7 @@
      SUBDIR += ja-mplus-ttf
      SUBDIR += ja-sazanami-ttf
      SUBDIR += jmk-fonts
+     SUBDIR += junicode
      SUBDIR += ko-baekmuk-fonts
      SUBDIR += ko-baekmuk-ttf
      SUBDIR += ko-hanterm-fonts
