@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/11/05 11:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2015/08/28 15:35:24 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -36,6 +36,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		ac_cv_lib_bind_gethostent=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static
+
+# Do not configure bundled software we don't use.  This also avoids
+# build failures from those configures picking up dependencies that
+# happen to be temporarily installed during part of the configure run.
+CONFIGURE_ARGS+=--no-recursion
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
