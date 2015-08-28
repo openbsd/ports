@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/28 17:51:18 jca Exp $
+share/doc/junicode/
+share/doc/junicode/Junicode.pdf
+share/doc/junicode/Junicode.tex
+share/doc/junicode/aelfric_job.pdf
+share/doc/junicode/aelfric_job.tex
+share/doc/junicode/homer_sample.pdf
+share/doc/junicode/homer_sample.tex
+share/doc/junicode/mt-Junicode.cfg
+share/fonts/
+@fontdir share/fonts/junicode/
+share/fonts/junicode/Junicode-Bold.ttf
+share/fonts/junicode/Junicode-BoldItalic.ttf
+share/fonts/junicode/Junicode-Italic.ttf
+share/fonts/junicode/Junicode.ttf
