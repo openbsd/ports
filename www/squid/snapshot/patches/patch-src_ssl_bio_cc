@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_ssl_bio_cc,v 1.3 2015/08/28 21:43:50 sthen Exp $
+
+Cope with SSLv3 removal.
+https://marc.info/?l=openbsd-tech&m=144079285816974&w=2
+
+--- src/ssl/bio.cc.orig	Fri Aug 28 20:21:00 2015
++++ src/ssl/bio.cc	Fri Aug 28 20:21:06 2015
+@@ -1007,7 +1007,7 @@ Ssl::Bio::sslFeatures::parseV3Hello(const unsigned cha
+ 
+         ciphers += 2;
+         if (ciphersLen) {
+-            const SSL_METHOD *method = SSLv3_method();
++            const SSL_METHOD *method = SSLv23_method();
+             const int cs = method->put_cipher_by_char(NULL, NULL);
+             assert(cs > 0);
+             for (size_t i = 0; i < ciphersLen; i += cs) {
