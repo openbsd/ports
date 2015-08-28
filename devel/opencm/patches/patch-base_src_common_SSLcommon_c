@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_src_common_SSLcommon_c,v 1.1 2015/08/28 16:28:15 jca Exp $
+--- base/src/common/SSLcommon.c.orig	Fri Aug 28 13:26:58 2015
++++ base/src/common/SSLcommon.c	Fri Aug 28 13:27:08 2015
+@@ -75,7 +75,7 @@ ssl_init_ctx(const char *keyfile, const char *certfile
+   signal(SIGPIPE,sigpipe_handle);
+ 
+   /* Create the context */
+-  meth=SSLv3_method();
++  meth=SSLv23_method();
+   context=SSL_CTX_new(meth);
+ 
+   /* Load the keys and certs */
