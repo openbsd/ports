@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.296 2015/08/16 19:38:51 edd Exp $
+# $OpenBSD: Makefile,v 1.297 2015/08/29 15:56:08 jeremy Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -194,18 +194,14 @@
      SUBDIR += redis
      SUBDIR += repmgr
      SUBDIR += riak
-     SUBDIR += ruby-amalgalite,ruby20
      SUBDIR += ruby-amalgalite,ruby21
      SUBDIR += ruby-amalgalite,ruby22
      SUBDIR += ruby-bdb,ruby20
      SUBDIR += ruby-data_objects
-     SUBDIR += ruby-do_mysql,ruby20
      SUBDIR += ruby-do_mysql,ruby21
      SUBDIR += ruby-do_mysql,ruby22
-     SUBDIR += ruby-do_postgres,ruby20
      SUBDIR += ruby-do_postgres,ruby21
      SUBDIR += ruby-do_postgres,ruby22
-     SUBDIR += ruby-do_sqlite3,ruby20
      SUBDIR += ruby-do_sqlite3,ruby21
      SUBDIR += ruby-do_sqlite3,ruby22
      SUBDIR += ruby-hiera
@@ -217,39 +213,29 @@
      SUBDIR += ruby-jdbc-postgres
      SUBDIR += ruby-jdbc-sqlite3
      SUBDIR += ruby-kirbybase
-     SUBDIR += ruby-ldap,ruby20
      SUBDIR += ruby-ldap,ruby21
      SUBDIR += ruby-ldap,ruby22
-     SUBDIR += ruby-mysql,ruby20
      SUBDIR += ruby-mysql,ruby21
      SUBDIR += ruby-mysql,ruby22
-     SUBDIR += ruby-mysql2,ruby20
      SUBDIR += ruby-mysql2,ruby21
      SUBDIR += ruby-mysql2,ruby22
-     SUBDIR += ruby-pg,ruby20
      SUBDIR += ruby-pg,ruby21
      SUBDIR += ruby-pg,ruby22
      SUBDIR += ruby-redis
      SUBDIR += ruby-redis-namespace
      SUBDIR += ruby-resque
      SUBDIR += ruby-sequel
-     SUBDIR += ruby-sequel_pg,ruby20
      SUBDIR += ruby-sequel_pg,ruby21
      SUBDIR += ruby-sequel_pg,ruby22
-     SUBDIR += ruby-sqlite3,ruby20
      SUBDIR += ruby-sqlite3,ruby21
      SUBDIR += ruby-sqlite3,ruby22
      SUBDIR += ruby-swift
-     SUBDIR += ruby-swift-db-mysql,ruby20
      SUBDIR += ruby-swift-db-mysql,ruby21
      SUBDIR += ruby-swift-db-mysql,ruby22
-     SUBDIR += ruby-swift-db-postgres,ruby20
      SUBDIR += ruby-swift-db-postgres,ruby21
      SUBDIR += ruby-swift-db-postgres,ruby22
-     SUBDIR += ruby-swift-db-sqlite3,ruby20
      SUBDIR += ruby-swift-db-sqlite3,ruby21
      SUBDIR += ruby-swift-db-sqlite3,ruby22
-     SUBDIR += ruby-tiny_tds,ruby20
      SUBDIR += ruby-tiny_tds,ruby21
      SUBDIR += ruby-validatable
      SUBDIR += sharedance

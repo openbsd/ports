@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1378 2015/08/25 06:41:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1379 2015/08/29 15:56:08 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1370,7 +1370,6 @@
      SUBDIR += rlog
      SUBDIR += ruby-abstract
      SUBDIR += ruby-arrayfields
-     SUBDIR += ruby-atomic,ruby20
      SUBDIR += ruby-atomic,ruby21
      SUBDIR += ruby-atomic,ruby22
      SUBDIR += ruby-bacon
@@ -1388,7 +1387,6 @@
      SUBDIR += ruby-deep_merge
      SUBDIR += ruby-diff-lcs
      SUBDIR += ruby-extlib
-     SUBDIR += ruby-ffi,ruby20
      SUBDIR += ruby-ffi,ruby21
      SUBDIR += ruby-ffi-inliner
      SUBDIR += ruby-flexmock
@@ -1404,7 +1402,6 @@
      SUBDIR += ruby-isolate
      SUBDIR += ruby-jeweler
      SUBDIR += ruby-json_pure
-     SUBDIR += ruby-kgio,ruby20
      SUBDIR += ruby-kgio,ruby21
      SUBDIR += ruby-kgio,ruby22
      SUBDIR += ruby-locale
@@ -1413,26 +1410,21 @@
      SUBDIR += ruby-minitest
      SUBDIR += ruby-mocha
      SUBDIR += ruby-mspec
-     SUBDIR += ruby-narray,ruby20
      SUBDIR += ruby-narray,ruby21
      SUBDIR += ruby-narray,ruby22
-     SUBDIR += ruby-ncurses,ruby20
      SUBDIR += ruby-ncurses,ruby21
      SUBDIR += ruby-ncurses,ruby22
      SUBDIR += ruby-needle
      SUBDIR += ruby-ole
      SUBDIR += ruby-open4
      SUBDIR += ruby-polyglot
-     SUBDIR += ruby-prof,ruby20
      SUBDIR += ruby-prof,ruby21
      SUBDIR += ruby-prof,ruby22
-     SUBDIR += ruby-racc,ruby20
      SUBDIR += ruby-racc,ruby21
      SUBDIR += ruby-racc,ruby22
      SUBDIR += ruby-rake
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
-     SUBDIR += ruby-rb-gsl,ruby20
      SUBDIR += ruby-rb-gsl,ruby21
      SUBDIR += ruby-rb-gsl,ruby22
      SUBDIR += ruby-ref
@@ -1446,11 +1438,9 @@
      SUBDIR += ruby-semantic_puppet
      SUBDIR += ruby-sexp_processor
      SUBDIR += ruby-stringex
-     SUBDIR += ruby-subset_sum,ruby20
      SUBDIR += ruby-subset_sum,ruby21
      SUBDIR += ruby-subset_sum,ruby22
      SUBDIR += ruby-systemu
-     SUBDIR += ruby-therubyracer,ruby20
      SUBDIR += ruby-therubyracer,ruby21
      SUBDIR += ruby-therubyracer,ruby22
      SUBDIR += ruby-thor
@@ -1459,7 +1449,6 @@
      SUBDIR += ruby-trollop
      SUBDIR += ruby-uuid
      SUBDIR += ruby-uuidtools
-     SUBDIR += ruby-yajl,ruby20
      SUBDIR += ruby-yajl,ruby21
      SUBDIR += ruby-yajl,ruby22
      SUBDIR += ruby-zentest
