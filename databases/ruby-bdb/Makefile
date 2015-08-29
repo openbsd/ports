@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/07/18 21:11:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2015/08/29 16:19:13 jeremy Exp $
 
 COMMENT=		ruby interface to Berkeley DB
 DISTNAME=		bdb-0.6.5
@@ -33,7 +33,7 @@ DOC_DIR=		${MODRUBY_DOCDIR}/bdb
 EXAMPLE_DIR=		${MODRUBY_EXAMPLEDIR}/bdb
 
 FLAVORS=		ruby18 ruby19 ruby20
-FLAVOR?=		ruby20
+FLAVOR?=		ruby18
 
 pre-install:
 		@sed -i 's,/usr,${LOCALBASE},' ${WRKSRC}/examples/*.rb
