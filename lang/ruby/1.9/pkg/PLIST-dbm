@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-dbm,v 1.1 2010/09/23 21:58:50 jeremy Exp $
-@option no-default-conflict
-@conflict ruby-dbm->=1.9,<1.10
-lib/ruby/${RUBYLIBREV}/${SUB}/dbm.so
