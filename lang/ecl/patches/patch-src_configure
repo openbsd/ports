@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_configure,v 1.5 2013/06/11 10:30:54 sthen Exp $
---- src/configure.orig	Mon May 27 23:37:36 2013
-+++ src/configure	Tue Jun  4 07:28:28 2013
-@@ -4947,7 +4947,7 @@ case "${host_os}" in
+$OpenBSD: patch-src_configure,v 1.6 2015/08/29 14:48:34 jasper Exp $
+--- src/configure.orig	Mon Aug 24 15:30:10 2015
++++ src/configure	Mon Aug 24 15:31:21 2015
+@@ -4948,7 +4948,7 @@ case "${host_os}" in
  		BUNDLE_LDFLAGS="-shared ${LDFLAGS}"
  		ECL_LDRPATH="-Wl,--rpath,~A"
  		clibs="-lpthread -lm"
@@ -10,12 +10,12 @@ $OpenBSD: patch-src_configure,v 1.5 2013/06/11 10:30:54 sthen Exp $
  		SONAME_LDFLAGS="-Wl,-soname,SONAME"
  		;;
  	solaris*)
-@@ -9213,7 +9213,7 @@ if test ${enable_shared} = "yes"; then
+@@ -9376,7 +9376,7 @@ if test ${enable_shared} = "yes"; then
  
  $as_echo "#define ENABLE_DLOPEN 1" >>confdefs.h
  
 -  LSP_LIBRARIES="${SHAREDPREFIX}ecl.${SHAREDEXT}"
 +  LSP_LIBRARIES="${SHAREDPREFIX}ecl.${SHAREDEXT}.${ECLLIB_VERSION}"
  
- LSP_FEATURES="(cons :wants-dlopen ${LSP_FEATURES})"
  
+ LSP_FEATURES="(cons :wants-dlopen ${LSP_FEATURES})"

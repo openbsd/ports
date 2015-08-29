@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/07/19 02:14:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2015/08/29 14:48:34 jasper Exp $
 
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
@@ -6,30 +6,29 @@ CATEGORIES =	lang
 BROKEN-sparc =	infinite loop while building
 BROKEN-arm =	infinite loop while building
 
-V =		13.5.1
+V =		16.0.0
 DISTNAME =	ecl-$V
-SHARED_LIBS +=	ecl	3.0
+SHARED_LIBS +=	ecl	4.0
 SHARED_ONLY =	Yes
 
-REVISION =	1
+HOMEPAGE =	https://common-lisp.net/project/ecl/
 
-HOMEPAGE =	http://ecls.sourceforge.net/
 SUBST_VARS =	V
 EXTRACT_SUFX =	.tgz
 
 # GPLv2 or later
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ecls/}
+MASTER_SITES =		${HOMEPAGE}files/
 
 CONFIGURE_STYLE =	gnu
 TEST_TARGET =		check
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
-			ECLLIB_VERSION=${LIBecl_VERSION}
+			ECLLIB_VERSION=${LIBecl_VERSION} \
+			ecldir=${LOCALBASE}/lib/ecl
 
 CONFIGURE_ARGS +=	--enable-boehm=system \
 			--enable-libatomic=system \
-			--enable-threads=pthreads \
 			--with-system-gmp \
 			--with-gmp-prefix=${LOCALBASE}
 
@@ -37,11 +36,13 @@ CONFIGURE_ARGS +=	--enable-boehm=system \
 # generating the tags. so override it for now untill etags is fixed.
 CONFIGURE_ENV +=	ETAGS=/usr/bin/true
 
+WANTLIB +=	atomic_ops c ffi gc gmp m pthread
+
 LIB_DEPENDS +=	devel/gmp \
 		devel/boehm-gc,-main \
 		devel/boehm-gc,-atomic \
 		devel/libffi
 
-WANTLIB +=	atomic_ops c ffi gc gmp m pthread
+TEST_DEPENDS =	${BASE_PKGPATH}
 
 .include <bsd.port.mk>

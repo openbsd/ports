@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2013/06/11 10:30:54 sthen Exp $
---- src/Makefile.in.orig	Mon May 27 23:37:36 2013
-+++ src/Makefile.in	Mon Jun 10 17:44:28 2013
-@@ -166,30 +166,15 @@ install:
+$OpenBSD: patch-src_Makefile_in,v 1.5 2015/08/29 14:48:34 jasper Exp $
+--- src/Makefile.in.orig	Mon Aug 24 15:25:08 2015
++++ src/Makefile.in	Mon Aug 24 15:28:43 2015
+@@ -173,30 +173,15 @@ install:
  	done
  	$(RM) -f $(DESTDIR)$(includedir)/ecl/config.h
  	mv $(DESTDIR)$(includedir)/ecl/config-install.h $(DESTDIR)$(includedir)/ecl/config.h
@@ -18,9 +18,9 @@ $OpenBSD: patch-src_Makefile_in,v 1.4 2013/06/11 10:30:54 sthen Exp $
 -	   $(INSTALL_LIBRARY) $$i $(DESTDIR)$(libdir); \
 -	  fi \
 -	done
--	if [ "x@SONAME@" != "x" -a -f "@SONAME@" ]; then \
--	  ( cd $(DESTDIR)$(libdir) && $(RM) -f @SONAME3@ @SONAME2@ @SONAME1@ && \
--	    mv @SONAME@ @SONAME3@ && \
+-	if [ "x@SONAME3@" != "x" -a -f "@SONAME3@" ]; then \
+-	  ( $(INSTALL_LIBRARY) @SONAME3@ $(DESTDIR)$(libdir) && \
+-	    cd $(DESTDIR)$(libdir) && $(RM) -f @SONAME2@ @SONAME1@ @SONAME@ && \
 -	    $(LN_S) @SONAME3@ @SONAME2@ && \
 -	    $(LN_S) @SONAME3@ @SONAME1@ && \
 -	    $(LN_S) @SONAME3@ @SONAME@ ) \
