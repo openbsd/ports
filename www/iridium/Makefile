@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/08/27 14:24:32 robert Exp $
+# $OpenBSD: Makefile,v 1.24 2015/08/29 07:27:24 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -191,7 +191,7 @@ do-install:
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/iridium/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/iridium/resources
 .for f in libexif.so protoc icudtl.dat mksnapshot
-	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
+	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/iridium
 .endfor
 .for s in 22 24 48 64 128 256
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
