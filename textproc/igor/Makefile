@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/07 19:13:50 schwarze Exp $
+# $OpenBSD: Makefile,v 1.4 2015/08/30 14:30:22 schwarze Exp $
 
 COMMENT =		FreeBSD Documentation Project sanity check script
-VERSION =		1.502
+VERSION =		1.555
 DISTNAME =		igor-${VERSION}
 CATEGORIES =		textproc
 HOMEPAGE =		http://www.wonkity.com/~wblock/igor/
@@ -16,7 +16,7 @@ NO_BUILD =		Yes
 NO_TEST =		Yes
 
 post-patch:
-	perl -pi -e 's,/usr/local/etc,${SYSCONFDIR},g' \
+	sed -i 's,/usr/local/etc,${SYSCONFDIR},g' \
 		${WRKSRC}/igor ${WRKSRC}/igor.1
 
 do-install:

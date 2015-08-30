@@ -1,7 +1,8 @@
-$OpenBSD: patch-igor,v 1.1 2014/10/07 19:13:50 schwarze Exp $
---- igor.orig	Tue Oct  7 10:02:06 2014
-+++ igor	Tue Oct  7 10:14:36 2014
-@@ -102,7 +102,7 @@ usage: $prog -h
+$OpenBSD: patch-igor,v 1.2 2015/08/30 14:30:22 schwarze Exp $
+do not report contractions by default (local change)
+--- igor.orig	Sun Aug 16 23:40:00 2015
++++ igor	Sun Aug 30 16:06:04 2015
+@@ -104,7 +104,7 @@ usage: $prog -h
          -f  FreeBSD obsolete features
          -r  repeated words
          -s  spelling
@@ -10,7 +11,7 @@ $OpenBSD: patch-igor,v 1.1 2014/10/07 19:13:50 schwarze Exp $
          -w  whitespace
          -y  style suggestions (off by default)
  
-@@ -221,13 +221,13 @@ sub initialize {
+@@ -234,13 +234,13 @@ sub initialize {
  	# -D equals -abefgmprsuw
  	if ( $opt_D ) {
  		$opt_a = $opt_b = $opt_e = $opt_f = $opt_g = $opt_m = $opt_p
@@ -26,7 +27,7 @@ $OpenBSD: patch-igor,v 1.1 2014/10/07 19:13:50 schwarze Exp $
  			   = $opt_E = 1;
  	}
  
-@@ -250,7 +250,7 @@ sub initialize {
+@@ -263,7 +263,7 @@ sub initialize {
  		$opt_a = $opt_b = $opt_c = $opt_d = $opt_e
  			   = $opt_f = $opt_g = $opt_i = $opt_l = $opt_m
  			   = $opt_n = $opt_o = $opt_p = $opt_r = $opt_s

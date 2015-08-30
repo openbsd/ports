@@ -1,7 +1,8 @@
-$OpenBSD: patch-igor_1,v 1.1 2014/10/07 19:13:50 schwarze Exp $
---- igor.1.orig	Tue Oct  7 10:02:06 2014
-+++ igor.1	Tue Oct  7 10:13:03 2014
-@@ -97,7 +97,7 @@ When ready for the actual commit, run
+$OpenBSD: patch-igor_1,v 1.2 2015/08/30 14:30:22 schwarze Exp $
+do not report contractions by default (local change)
+--- igor.1.orig	Sun Aug 16 23:40:00 2015
++++ igor.1	Sun Aug 30 16:06:04 2015
+@@ -104,7 +104,7 @@ When ready for the actual commit, run
  .Nm
  without this option to check the date.
  Equivalent to
@@ -10,7 +11,7 @@ $OpenBSD: patch-igor_1,v 1.1 2014/10/07 19:13:50 schwarze Exp $
  .It Fl z
  Run all applicable non-whitespace
  .Pq content
-@@ -156,6 +156,12 @@ The Debian project has a list of words at
+@@ -163,6 +163,12 @@ The Debian project has a list of words at
  .Li http://anonscm.debian.org/gitweb/?p=lintian/lintian.git;a=blob_plain;f=vendors/debian/ftp-master-auto-reject/data/spelling/corrections;hb=HEAD
  .It Fl u
  Identify contractions, which make translation more difficult.
