@@ -1,12 +1,12 @@
-$OpenBSD: patch-t_test-lib_sh,v 1.10 2015/08/25 21:25:03 benoit Exp $
+$OpenBSD: patch-t_test-lib_sh,v 1.11 2015/08/30 08:53:29 benoit Exp $
 
 Force usage of GNU tar in the test suite: 't5004-archive-corner-cases.sh'
 wants it badly.
 
 Fix sum() function
 
---- t/test-lib.sh.orig	Mon Jul 27 22:34:56 2015
-+++ t/test-lib.sh	Tue Aug 25 23:06:57 2015
+--- t/test-lib.sh.orig	Fri Aug 28 21:37:13 2015
++++ t/test-lib.sh	Sat Aug 29 10:36:25 2015
 @@ -48,6 +48,11 @@ fi
  . "$GIT_BUILD_DIR"/GIT-BUILD-OPTIONS
  export PERL_PATH SHELL_PATH
@@ -19,7 +19,7 @@ Fix sum() function
  # if --tee was passed, write the output not only to the terminal, but
  # additionally to the file test-results/$BASENAME.out, too.
  case "$GIT_TEST_TEE_STARTED, $* " in
-@@ -936,6 +941,12 @@ case $(uname -s) in
+@@ -945,6 +950,12 @@ case $(uname -s) in
  	test_set_prereq CYGWIN
  	test_set_prereq SED_STRIPS_CR
  	test_set_prereq GREP_STRIPS_CR
