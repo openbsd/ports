@@ -1,0 +1,12 @@
+$OpenBSD: patch-deb_sources_ml,v 1.1 2015/08/30 15:56:12 avsm Exp $
+--- deb/sources.ml.orig	Tue Nov 18 11:42:46 2014
++++ deb/sources.ml	Mon Aug  3 18:07:28 2015
+@@ -15,7 +15,7 @@
+ open ExtLib
+ open Common
+ 
+-include Util.Logging(struct let label = __FILE__ end) ;;
++include Util.Logging(struct let label = "deb/sources.ml" end) ;;
+ 
+ type source = {
+   name : Format822.name;

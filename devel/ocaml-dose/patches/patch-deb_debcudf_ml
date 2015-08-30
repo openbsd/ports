@@ -1,0 +1,12 @@
+$OpenBSD: patch-deb_debcudf_ml,v 1.1 2015/08/30 15:56:12 avsm Exp $
+--- deb/debcudf.ml.orig	Tue Nov 18 11:42:46 2014
++++ deb/debcudf.ml	Mon Aug  3 18:07:28 2015
+@@ -18,7 +18,7 @@ open ExtLib
+ open Common
+ open Packages
+ 
+-include Util.Logging(struct let label = __FILE__ end) ;;
++include Util.Logging(struct let label = "deb/debcudf.ml" end) ;;
+ module SMap = Map.Make (String)
+ 
+ type tables = {

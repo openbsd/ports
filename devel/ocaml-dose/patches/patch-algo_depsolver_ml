@@ -1,54 +1,15 @@
-$OpenBSD: patch-algo_depsolver_ml,v 1.1.1.1 2014/10/25 17:05:14 chrisz Exp $
-
-Changes for OPAM
-
---- algo/depsolver.ml.orig	Mon May 26 08:11:52 2014
-+++ algo/depsolver.ml	Tue Sep  2 23:34:27 2014
-@@ -369,9 +369,7 @@ let upgrade_constr universe name = 
-       let p = List.hd(List.sort ~cmp:Cudf.(>%) pl) 
-       in (name,Some(`Geq,p.Cudf.version))
- 
--(** check if a cudf request is satisfiable. we do not care about
-- * universe consistency . We try to install a dummy package *)
--let check_request ?cmd ?callback ?criteria ?(explain=false) (pre,universe,request) =
-+let check_request_using ?call_solver ?callback ?criteria ?(explain=false) (pre,universe,request) =
-   let intSolver ?(explain=false) universe request =
- 
-     let deps = 
-@@ -413,19 +411,30 @@ let check_request ?cmd ?callback ?criteria ?(explain=f
-       let criteria_array = Array.of_list (criteria_parser (Option.get criteria)) in
-       minimize ?callback criteria_array universe dummy
-   in
--  if Option.is_none cmd then begin
-+  match call_solver with
-+  | None ->
-     let d = intSolver universe request in
-     if Diagnostic.is_solution d then
-       let is = Diagnostic.get_installationset d in
-       Sat (Some pre,Cudf.load_universe is)
-     else
-       if explain then Unsat (Some d) else Unsat None
--  end else begin
--    let cmd = Option.get cmd in
--    let criteria = if Option.is_none criteria then "-removed,-new" else Option.get criteria in
--    try Sat(CudfSolver.execsolver cmd criteria (pre,universe,request)) with
-+  | Some call_solver ->
-+    try Sat(call_solver (pre,universe,request)) with
-     |CudfSolver.Unsat when not explain -> Unsat None
-     |CudfSolver.Unsat when explain -> Unsat (Some (intSolver ~explain universe request))
-     |CudfSolver.Error s -> Error s
--  end
-+
-+(** check if a cudf request is satisfiable. we do not care about
-+ * universe consistency . We try to install a dummy package *)
-+let check_request ?cmd ?callback ?criteria ?explain cudf =
-+  let call_solver =
-+    match cmd with
-+    | Some cmd ->
-+        let criteria = Option.default "-removed,-new" criteria in
-+        Some (CudfSolver.execsolver cmd criteria)
-+    | None -> None
-+  in
-+  check_request_using ?call_solver ?callback ?explain cudf
-+
- ;;
+$OpenBSD: patch-algo_depsolver_ml,v 1.2 2015/08/30 15:56:12 avsm Exp $
+--- algo/depsolver.ml.orig	Mon Aug  3 18:07:28 2015
++++ algo/depsolver.ml	Mon Aug  3 18:07:28 2015
+@@ -37,11 +37,6 @@ let reason map universe =
+   let globalid = Cudf.universe_size universe in
+   List.filter_map (function
+     |Diagnostic_int.Dependency(i,vl,il) when i = globalid -> None
+-    |Diagnostic_int.Missing(i,vl) when i = globalid -> 
+-        fatal "the package encoding global constraints can't be missing"
+-    |Diagnostic_int.Conflict(i,j,vpkg) when i = globalid || j = globalid -> 
+-        fatal "the package encoding global constraints can't be in conflict"
+-
+     |Diagnostic_int.Dependency(i,vl,il) -> Some (
+         Diagnostic.Dependency(from_sat (map#inttovar i),vl,List.map (fun i -> from_sat (map#inttovar i)) il)
+     )

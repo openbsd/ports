@@ -1,0 +1,21 @@
+$OpenBSD: patch-opencsw_packages_ml,v 1.1 2015/08/30 15:56:12 avsm Exp $
+--- opencsw/packages.ml.orig	Tue Nov 18 11:42:46 2014
++++ opencsw/packages.ml	Mon Aug  3 18:07:28 2015
+@@ -17,7 +17,7 @@ module Pcre = Re_pcre
+ open ExtLib
+ open Common
+ 
+-include Util.Logging(struct let label = __FILE__ end) ;;
++include Util.Logging(struct let label = "opencsw/packages.ml" end) ;;
+ 
+ type name = string
+ type version = string
+@@ -45,7 +45,7 @@ module Set = Set.Make(struct
+ end)
+ 
+ let input_raw_priv parse_packages files =
+-  let timer = Util.Timer.create __FILE__ in
++  let timer = Util.Timer.create "opencsw/packages.ml" in
+   Util.Timer.start timer;
+   if List.length files > 1 then info "Merging input lists" ;
+   let s =

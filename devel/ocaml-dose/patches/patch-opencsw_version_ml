@@ -1,0 +1,12 @@
+$OpenBSD: patch-opencsw_version_ml,v 1.1 2015/08/30 15:56:12 avsm Exp $
+--- opencsw/version.ml.orig	Tue Nov 18 11:42:46 2014
++++ opencsw/version.ml	Mon Aug  3 18:07:28 2015
+@@ -23,7 +23,7 @@ open Common
+  alpha ::= [a..zA..Z]
+ *)
+ 
+-include Util.Logging(struct let label = __FILE__ end) ;;
++include Util.Logging(struct let label = "opencsw/version.ml" end) ;;
+ 
+ let rex = Pcre.regexp "^\\d+(\\.\\d+(\\.\\d+(\\.[\\w_-]+)?)?)?$" ;;
+ let parse_version s =

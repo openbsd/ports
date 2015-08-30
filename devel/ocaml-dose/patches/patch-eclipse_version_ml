@@ -1,0 +1,12 @@
+$OpenBSD: patch-eclipse_version_ml,v 1.1 2015/08/30 15:56:12 avsm Exp $
+--- eclipse/version.ml.orig	Tue Nov 18 11:42:46 2014
++++ eclipse/version.ml	Mon Aug  3 18:07:28 2015
+@@ -21,7 +21,7 @@ open Common
+  alpha ::= [a..zA..Z]
+ *)
+ 
+-include Util.Logging(struct let label = __FILE__ end) ;;
++include Util.Logging(struct let label = "eclipse/version.ml" end) ;;
+ 
+ let rex = Pcre.regexp "^\\d+(\\.\\d+(\\.\\d+(\\.[\\w_-]+)?)?)?$" ;;
+ let parse_version s =

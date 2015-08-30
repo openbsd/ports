@@ -1,0 +1,85 @@
+$OpenBSD: patch-doseparse_stdLoaders_ml,v 1.1 2015/08/30 15:56:12 avsm Exp $
+--- doseparse/stdLoaders.ml.orig	Mon Aug  3 18:07:28 2015
++++ doseparse/stdLoaders.ml	Mon Aug  3 18:07:28 2015
+@@ -121,23 +121,12 @@ let deb_load_universe options l =
+  * refactor or not refactor ? *)
+ (** transform a list of rpm control stanza into a cudf packages list *)
+ let rpm_load_list dll =
+-IFDEF HASRPM THEN
+-  let tables =  Rpm.Rpmcudf.init_tables (List.flatten dll) in
+-  let cll = 
+-    List.map (fun l -> 
+-      List.map (Rpm.Rpmcudf.tocudf tables) l 
+-    ) dll
+-  in
+-  (* Rpm.Rpmcudf.clear tables; *)
+-  let from_cudf (p,i) = (p,string_of_int i) in
+-  let to_cudf (p,v) = (p,Rpm.Rpmcudf.get_cudf_version tables (p,v)) in
+-  let preamble = Rpm.Rpmcudf.preamble in
+-  let request = Cudf.default_request in
+-  (preamble,cll,request,from_cudf,to_cudf)
+-ELSE
++
++
+   failwith "librpm not available. re-configure with --with-rpm"
+-END
+ 
++
++
+ (** transform a list of rpm control stanza into a cudf universe *)
+ let rpm_load_universe l =
+   let (pr,cll,r,f,t) = rpm_load_list [l] in
+@@ -301,41 +290,29 @@ let parse_input ?(options=None) urilist =
+   |`Cv, Some (StdOptions.Cv opt) -> cv_parse_input opt filelist
+ 
+   |`Hdlist, None -> 
+-IFDEF HASRPM THEN
+-      let dll = 
+-        List.map (fun l ->
+-          let filelist = List.map unpack l in
+-          Rpm.Packages.Hdlists.input_raw filelist
+-        ) filelist 
+-      in
+-      rpm_load_list dll
+-ELSE
++
++
+     fatal "hdlist Not supported. re-configure with --with-rpm"
+-END
+ 
++
++
+   |`Synthesis, None -> 
+-IFDEF HASRPM THEN
+-      let dll = 
+-        List.map (fun l ->
+-          let filelist = List.map unpack l in
+-          Rpm.Packages.Synthesis.input_raw filelist
+-        ) filelist
+-      in
+-      rpm_load_list dll
+-ELSE
++
++
+     fatal "synthesis input format not supported. re-configure with --with-rpm"
+-END
++
++
+     |s,_ -> fatal "%s Not supported" (Url.scheme_to_string s)
+ ;;
+ 
+ let supported_formats () =
+   let standard = ["cudf://";"deb://";"deb://-";"eclipse://"] in
+   let rpm = 
+-IFDEF HASRPM THEN
+-     ["hdlist://";"synthesis://"]
+-ELSE
++
++
+      []
+-END
++
++
+    in
+    standard@rpm
+ ;;

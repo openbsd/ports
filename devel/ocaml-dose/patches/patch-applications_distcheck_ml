@@ -1,75 +1,19 @@
-$OpenBSD: patch-applications_distcheck_ml,v 1.1.1.1 2014/10/25 17:05:14 chrisz Exp $
-
-Changes from upstream to fix building under OCaml 4.02
-
---- applications/distcheck.ml.orig	Mon May 26 08:11:52 2014
-+++ applications/distcheck.ml	Tue Sep  2 23:39:55 2014
-@@ -21,6 +21,7 @@ open Algo
+$OpenBSD: patch-applications_distcheck_ml,v 1.2 2015/08/30 15:56:12 avsm Exp $
+--- applications/distcheck.ml.orig	Tue Nov 18 11:42:46 2014
++++ applications/distcheck.ml	Mon Aug  3 18:07:28 2015
+@@ -45,7 +45,7 @@ module Options = struct
  
- module Options = struct
-   open OptParse
-+  open OptParser
-   let description = "Compute the list broken packages in a repository"
-   let options = OptParser.make ~description
-   include Boilerplate.MakeOptions(struct let options = options end)
-@@ -35,10 +36,12 @@ module Options = struct
-   let default = List.remove Boilerplate.DistribOptions.default_options "deb-host-arch" in
-   Boilerplate.DistribOptions.add_options ~default options ;;
- 
--  let coinst = Boilerplate.vpkglist_option ()
--  open OptParser
--  add options ~long_name:"coinst" ~help:"Check if these packages are coinstallable" coinst;
-+  let coinst = StdDebian.vpkglist_option ();;
-+  add options ~long_name:"coinst" ~help:"Check if these packages are coinstallable" coinst;;
- 
-+  let realversionfield = StdOpt.str_option ~default:"version" ();;
-+  add options ~long_name:"real-version-field" ~help:"Specify field where the original version of a package is stored in the CUDF file" realversionfield;;
-+
  end
  
- include Util.Logging(struct let label = __FILE__ end) ;;
-@@ -62,16 +65,16 @@ let main () =
-   let inputlist = posargs@(OptParse.Opt.get Options.foreground) in
-   let (input_type,implicit) = guess_format Options.inputtype inputlist in
+-include Util.Logging(struct let label = __FILE__ end) ;;
++include Util.Logging(struct let label = "applications/distcheck.ml" end) ;;
  
--  Boilerplate.enable_debug (OptParse.Opt.get Options.verbose);
--  Boilerplate.enable_timers (OptParse.Opt.get Options.timers) ["Solver"];
--  Boilerplate.enable_bars (OptParse.Opt.get Options.progress)
-+  StdDebug.enable_debug (OptParse.Opt.get Options.verbose);
-+  StdDebug.enable_timers (OptParse.Opt.get Options.timers) ["Solver"];
-+  StdDebug.enable_bars (OptParse.Opt.get Options.progress)
-     ["Depsolver_int.univcheck";"Depsolver_int.init_solver"] ;
--  Boilerplate.all_quiet (OptParse.Opt.get Options.quiet);
-+  StdDebug.all_quiet (OptParse.Opt.get Options.quiet);
+ let timer = Util.Timer.create "Solver" 
  
-   let options = Options.set_options input_type in
-   let (fg,bg) = Options.parse_cmdline (input_type,implicit) posargs in
- 
--  let (preamble,pkgll,_,from_cudf,to_cudf) = Boilerplate.load_list ~options [fg;bg] in
-+  let (preamble,pkgll,_,from_cudf,to_cudf) = StdLoaders.load_list ~options [fg;bg] in
-   let (fg_pkglist, bg_pkglist) = match pkgll with [fg;bg] -> (fg,bg) | _ -> assert false in
-   let fg_pkglist = 
-     if OptParse.Opt.get Options.latest then CudfAdd.latest fg_pkglist
-@@ -147,7 +150,7 @@ let main () =
-     Format.fprintf fmt "total-packages: %d@." universe_size;
-     Format.fprintf fmt "total-tuples: %d@." number_checks;
-     Format.fprintf fmt "broken-tuples: %d@." nbt;
--    Boilerplate.exit(nbt)
-+    StdUtils.exit(nbt)
-   end else begin 
-     let global_constraints = not(OptParse.Opt.get Options.deb_ignore_essential) in
-     let nbp =
-@@ -184,11 +187,11 @@ let main () =
-     Format.fprintf fmt "broken-packages: %d@." nbp;
-     if summary then 
-       Format.fprintf fmt "@[%a@]@." (Diagnostic.pp_summary ~pp ()) results;
--    Boilerplate.exit(nbp)
-+    StdUtils.exit(nbp)
-   end
- ;;
- 
--Boilerplate.if_application
-+StdUtils.if_application
- ~alternatives:[
+@@ -193,5 +193,5 @@ StdUtils.if_application
    "debcheck";"dose-debcheck"; "dose-distcheck";
    "eclipsecheck";"dose-eclipsecheck";
+   "rpmcheck";"dose-rpmcheck"]
+-__FILE__ main ;;
++"applications/distcheck.ml" main ;;
+ 

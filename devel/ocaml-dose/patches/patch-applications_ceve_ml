@@ -1,0 +1,72 @@
+$OpenBSD: patch-applications_ceve_ml,v 1.1 2015/08/30 15:56:12 avsm Exp $
+--- applications/ceve.ml.orig	Mon Aug  3 18:07:28 2015
++++ applications/ceve.ml	Mon Aug  3 18:07:28 2015
+@@ -18,11 +18,9 @@ open Doseparse
+ 
+ include Util.Logging(struct let label = "applications/ceve.ml" end) ;;
+ 
+-IFDEF HASOCAMLGRAPH THEN
+-  module DGraph = Defaultgraphs.SyntacticDependencyGraph
+-  module PGraph = Defaultgraphs.PackageGraph
+-END
+ 
++
++
+ module Options = struct
+   open OptParse
+   let description = "Ceve - integrated metadata parser and transformer"
+@@ -227,46 +225,18 @@ let main () =
+       |"dimacs" -> Printf.fprintf oc "%s" (Depsolver.output_clauses ~global_constraints ~enc:Depsolver.Dimacs u)
+       |"cudf" -> Cudf_printer.pp_cudf oc doc
+       |"table" ->
+-IFDEF HASOCAMLGRAPH THEN
+-        Printf.fprintf oc "%d\t%d\t%d\n"
+-        (Cudf.universe_size u) (DGraph.G.nb_edges (DGraph.dependency_graph u))
+-        (nr_conflicts u)
+-ELSE
++
++
+         failwith (Printf.sprintf "format table not supported: needs ocamlgraph")
+-END
+ 
++
++
+       |("dot" | "gml" | "grml") as t -> 
+-IFDEF HASOCAMLGRAPH THEN
+-        let fmt = Format.formatter_of_out_channel oc in
+-        begin match OptParse.Opt.get Options.grp_type with
+-          |"syn" ->
+-            let g = DGraph.dependency_graph u in
+-            if t = "dot" then DGraph.DotPrinter.print fmt g
+-            else if t = "gml" then DGraph.GmlPrinter.print fmt g
+-            else if t = "grml" then DGraph.GraphmlPrinter.print fmt g
+-            else assert false
+-          |("pkg" | "strdeps" | "conj"| "dom") as gt ->
+-            let g =
+-              if gt = "pkg" then PGraph.dependency_graph u
+-              else if gt = "strdeps" then Strongdeps.strongdeps_univ u
+-              else if gt = "conj" then Strongdeps.conjdeps_univ u
+-              else if gt = "dom" then
+-                let g = Strongdeps.strongdeps_univ ~transitive:true universe in
+-                Dominators.dominators_tarjan g
+-              else assert false
+-            in
+-            if t = "dot" then
+-              PGraph.DotPrinter.print fmt g
+-            else if t = "gml" then
+-              PGraph.GmlPrinter.print fmt g
+-            else if t = "grml" then
+-              PGraph.GraphmlPrinter.print fmt g
+-            else assert false
+-          |s -> failwith (Printf.sprintf "type %s not supported" s)
+-        end
+-ELSE
++
++
+         failwith (Printf.sprintf "format %s not supported: needs ocamlgraph" t)
+-END
++
++
+       |_ -> assert false
+       end ;
+       close_out oc;

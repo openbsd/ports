@@ -1,0 +1,12 @@
+$OpenBSD: patch-rpm_packages_ml,v 1.1 2015/08/30 15:56:12 avsm Exp $
+--- rpm/packages.ml.orig	Tue Nov 18 11:42:46 2014
++++ rpm/packages.ml	Mon Aug  3 18:07:28 2015
+@@ -14,7 +14,7 @@ module Pcre = Re_pcre
+ open ExtLib
+ open Common
+ 
+-include Util.Logging(struct let label = __FILE__ end) ;;
++include Util.Logging(struct let label = "rpm/packages.ml" end) ;;
+ 
+ type name = string
+ type version = string

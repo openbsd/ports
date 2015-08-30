@@ -1,0 +1,19 @@
+$OpenBSD: patch-applications_deb-coinstall_ml,v 1.1 2015/08/30 15:56:12 avsm Exp $
+--- applications/deb-coinstall.ml.orig	Tue Nov 18 11:42:46 2014
++++ applications/deb-coinstall.ml	Mon Aug  3 18:07:28 2015
+@@ -58,7 +58,7 @@ module Options = struct
+ 
+ end
+ 
+-include Util.Logging(struct let label = __FILE__ end) ;;
++include Util.Logging(struct let label = "applications/deb-coinstall.ml" end) ;;
+ 
+ let timer = Util.Timer.create "Solver" 
+ 
+@@ -256,5 +256,5 @@ let main () =
+ ;;
+ 
+ StdUtils.if_application
+-~alternatives:["dose-debcoinstall";"deb-coinstall"] __FILE__ main ;;
++~alternatives:["dose-debcoinstall";"deb-coinstall"] "applications/deb-coinstall.ml" main ;;
+ 

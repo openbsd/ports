@@ -1,0 +1,12 @@
+$OpenBSD: patch-applications_smallworld_ml,v 1.1 2015/08/30 15:56:12 avsm Exp $
+--- applications/smallworld.ml.orig	Tue Nov 18 11:42:46 2014
++++ applications/smallworld.ml	Mon Aug  3 18:07:28 2015
+@@ -51,7 +51,7 @@ module Options = struct
+   add options ~long_name:"trim" ~help:"Consider only installable packages" trim;
+ end
+ 
+-include Util.Logging(struct let label = __FILE__ end) ;;
++include Util.Logging(struct let label = "applications/smallworld.ml" end) ;;
+ 
+ (**********************************)
+ 
