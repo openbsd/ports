@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/25 16:53:42 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/08/30 15:58:32 avsm Exp $
 %%native%%
-bin/graph-editor
+@bin bin/graph-editor
 bin/graph-editor.byte
-bin/graph-viewer
+@bin bin/graph-viewer
 bin/graph-viewer.byte
 lib/ocaml/ocamlgraph/
 lib/ocaml/ocamlgraph/META
