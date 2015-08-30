@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/08/18 21:55:08 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/08/30 15:49:08 avsm Exp $
 lib/ocaml/postgresql/
 lib/ocaml/postgresql/META
 lib/ocaml/postgresql/libpostgresql_stubs.a
+lib/ocaml/postgresql/postgresql.annot
 lib/ocaml/postgresql/postgresql.cma
 lib/ocaml/postgresql/postgresql.cmi
+lib/ocaml/postgresql/postgresql.cmt
+lib/ocaml/postgresql/postgresql.cmti
 lib/ocaml/postgresql/postgresql.mli
 %%native%%
 %%SHARED%%
@@ -20,6 +23,7 @@ share/doc/ocaml-postgresql/api/index_attributes.html
 share/doc/ocaml-postgresql/api/index_class_types.html
 share/doc/ocaml-postgresql/api/index_classes.html
 share/doc/ocaml-postgresql/api/index_exceptions.html
+share/doc/ocaml-postgresql/api/index_extensions.html
 share/doc/ocaml-postgresql/api/index_methods.html
 share/doc/ocaml-postgresql/api/index_module_types.html
 share/doc/ocaml-postgresql/api/index_modules.html
@@ -32,6 +36,7 @@ share/doc/ocaml-postgresql/api/type_Postgresql.html
 share/doc/ocaml-postgresql/api/type_Postgresql.result.html
 share/examples/ocaml-postgresql/
 share/examples/ocaml-postgresql/README
+share/examples/ocaml-postgresql/async.ml
 share/examples/ocaml-postgresql/cursor.ml
 share/examples/ocaml-postgresql/dump.ml
 share/examples/ocaml-postgresql/populate.ml
