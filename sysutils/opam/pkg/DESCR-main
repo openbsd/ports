@@ -3,3 +3,9 @@ simultaneous compiler installations, flexible package constraints, and a
 Git-friendly development workflow.
 
 This package contains only the OPAM CLI tools.
+
+Because the Aspcud constraint solver is not ported to OpenBSD yet, this
+package is configured to use the IRILL online solver by default.  To
+disable this and use the internal solver, set the "OPAMNOASPCUD" env
+variable to "1".  You will need to do this if you want to use OPAM
+when offline.

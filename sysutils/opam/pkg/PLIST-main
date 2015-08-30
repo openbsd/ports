@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2014/10/25 17:10:14 chrisz Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2015/08/30 16:30:45 avsm Exp $
+@bin bin/aspcud
 @bin bin/opam
 @bin bin/opam-admin
-bin/opam-admin.top
+@bin bin/opam-admin.top
 @bin bin/opam-installer
 @man man/man1/opam-admin-check.1
 @man man/man1/opam-admin-depexts.1
@@ -26,3 +27,15 @@ bin/opam-admin.top
 share/doc/opam/
 share/doc/opam/CHANGES
 share/doc/opam/README.md
+share/doc/opam/depexts-plugins
+share/doc/opam/depopts-and-features
+share/doc/opam/pages/
+share/doc/opam/pages/About.md
+share/doc/opam/pages/FAQ.md
+share/doc/opam/pages/Install.md
+share/doc/opam/pages/Manual.md
+share/doc/opam/pages/Packaging.md
+share/doc/opam/pages/Specifying_Solver_Preferences.md
+share/doc/opam/pages/Tricks.md
+share/doc/opam/pages/Usage.md
+share/doc/opam/provides.md
