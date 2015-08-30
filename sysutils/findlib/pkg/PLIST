@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/10/21 19:12:28 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/08/30 15:43:47 avsm Exp $
 %%native%%
 @bin bin/ocamlfind
+@bin bin/safe_camlp4
 lib/ocaml/bigarray/
 lib/ocaml/bigarray/META
 lib/ocaml/bytes/
