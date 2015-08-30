@@ -1,12 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/11/06 20:55:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/08/30 16:31:26 avsm Exp $
 %%native%%
+@bin bin/csvtool
 lib/ocaml/csv/
 lib/ocaml/csv/META
+lib/ocaml/csv/csv.annot
 lib/ocaml/csv/csv.cma
 lib/ocaml/csv/csv.cmi
+lib/ocaml/csv/csv.cmt
+lib/ocaml/csv/csv.cmti
 lib/ocaml/csv/csv.mli
 share/doc/ocaml-csv/
 share/doc/ocaml-csv/api/
+share/doc/ocaml-csv/api/Csv.Row.html
+share/doc/ocaml-csv/api/Csv.Rows.html
 share/doc/ocaml-csv/api/Csv.html
 share/doc/ocaml-csv/api/Csv.in_obj_channel-c.html
 share/doc/ocaml-csv/api/Csv.out_obj_channel-c.html
@@ -15,12 +21,15 @@ share/doc/ocaml-csv/api/index_attributes.html
 share/doc/ocaml-csv/api/index_class_types.html
 share/doc/ocaml-csv/api/index_classes.html
 share/doc/ocaml-csv/api/index_exceptions.html
+share/doc/ocaml-csv/api/index_extensions.html
 share/doc/ocaml-csv/api/index_methods.html
 share/doc/ocaml-csv/api/index_module_types.html
 share/doc/ocaml-csv/api/index_modules.html
 share/doc/ocaml-csv/api/index_types.html
 share/doc/ocaml-csv/api/index_values.html
 share/doc/ocaml-csv/api/style.css
+share/doc/ocaml-csv/api/type_Csv.Row.html
+share/doc/ocaml-csv/api/type_Csv.Rows.html
 share/doc/ocaml-csv/api/type_Csv.html
 share/doc/ocaml-csv/api/type_Csv.in_obj_channel.html
 share/doc/ocaml-csv/api/type_Csv.out_obj_channel.html
