@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2015/05/23 16:34:40 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.15 2015/08/30 15:59:21 avsm Exp $
 
 COMMENT =	library for manipulating the terminal
 CATEGORIES =	devel
 
-V =		1.6
-DISTNAME =	lambda-term-1.6
+V =		1.9
+DISTNAME =	lambda-term-${V}
 GH_ACCOUNT =	diml
 GH_PROJECT =	lambda-term
 GH_TAGNAME =	$V

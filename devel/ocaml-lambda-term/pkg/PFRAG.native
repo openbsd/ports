@@ -1,7 +1,9 @@
-@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2012/08/18 22:56:33 avsm Exp $
+@comment $OpenBSD: PFRAG.native,v 1.2 2015/08/30 15:59:21 avsm Exp $
 %%dynlink%%
 lib/ocaml/lambda-term/lTerm.cmx
+lib/ocaml/lambda-term/lTerm_buttons_impl.cmx
 lib/ocaml/lambda-term/lTerm_color_mappings.cmx
+lib/ocaml/lambda-term/lTerm_containers_impl.cmx
 lib/ocaml/lambda-term/lTerm_draw.cmx
 lib/ocaml/lambda-term/lTerm_edit.cmx
 lib/ocaml/lambda-term/lTerm_event.cmx
@@ -13,11 +15,15 @@ lib/ocaml/lambda-term/lTerm_mouse.cmx
 lib/ocaml/lambda-term/lTerm_read_line.cmx
 lib/ocaml/lambda-term/lTerm_resource_lexer.cmx
 lib/ocaml/lambda-term/lTerm_resources.cmx
+lib/ocaml/lambda-term/lTerm_running_impl.cmx
 lib/ocaml/lambda-term/lTerm_style.cmx
 lib/ocaml/lambda-term/lTerm_text.cmx
+lib/ocaml/lambda-term/lTerm_toplevel_impl.cmx
 lib/ocaml/lambda-term/lTerm_ui.cmx
 lib/ocaml/lambda-term/lTerm_unix.cmx
 lib/ocaml/lambda-term/lTerm_widget.cmx
+lib/ocaml/lambda-term/lTerm_widget_base_impl.cmx
+lib/ocaml/lambda-term/lTerm_widget_callbacks.cmx
 lib/ocaml/lambda-term/lTerm_windows.cmx
 lib/ocaml/lambda-term/lambda-term.a
 lib/ocaml/lambda-term/lambda-term.cmxa
