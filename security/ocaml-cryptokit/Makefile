@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2014/08/23 06:54:18 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2015/08/30 16:07:09 avsm Exp $
 
 COMMENT=	cryptographic framework for the Objective-ML language
 CATEGORIES=	security
 
-DISTNAME=	cryptokit-1.6
-REVISION=	4
+DISTNAME=	cryptokit-1.10
 PKGNAME=	ocaml-${DISTNAME}
-MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/891/
+MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/1493/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 HOMEPAGE=	http://forge.ocamlcore.org/projects/cryptokit/
