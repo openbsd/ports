@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/30 15:47:06 avsm Exp $
+%%native%%
+lib/ocaml/ppx_tools/
+lib/ocaml/ppx_tools/META
+lib/ocaml/ppx_tools/ast_convenience.cmi
+lib/ocaml/ppx_tools/ast_mapper_class.cmi
+lib/ocaml/ppx_tools/dumpast
+lib/ocaml/ppx_tools/genlifter
+lib/ocaml/ppx_tools/ppx_metaquot
+lib/ocaml/ppx_tools/ppx_tools.cma
+lib/ocaml/ppx_tools/rewriter
