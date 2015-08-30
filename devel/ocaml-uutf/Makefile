@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/25 16:56:00 chrisz Exp $
+# $OpenBSD: Makefile,v 1.2 2015/08/30 16:04:24 avsm Exp $
 
 COMMENT =	non-blocking streaming unicode codec
 CATEGORIES =	devel
 
-V =		0.9.3
+V =		0.9.4
 NAME =		uutf
 DISTNAME =	${NAME}-${V}
 EXTRACT_SUFX =	.tbz
