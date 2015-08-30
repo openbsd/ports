@@ -1,8 +1,9 @@
-@comment $OpenBSD: PFRAG.native,v 1.4 2014/08/27 07:54:22 chrisz Exp $
+@comment $OpenBSD: PFRAG.native,v 1.5 2015/08/30 15:52:33 avsm Exp $
 %%dynlink%%
 lib/ocaml/batteries/batArray.cmx
 lib/ocaml/batteries/batAvlTree.cmx
 lib/ocaml/batteries/batBase64.cmx
+lib/ocaml/batteries/batBytes.cmx
 lib/ocaml/batteries/batBig_int.cmx
 lib/ocaml/batteries/batBigarray.cmx
 lib/ocaml/batteries/batBitSet.cmx
