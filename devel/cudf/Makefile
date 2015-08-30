@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/08/17 20:34:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/08/30 16:20:29 avsm Exp $
 
 MULTI_PACKAGES =	-ocaml -main
 
@@ -12,6 +12,7 @@ REVISION =		0
 DISTNAME =		cudf-${VERSION}
 PKGNAME-ocaml =		ocaml-cudf-${VERSION}
 PKGNAME-main =		libcudf-${VERSION}
+REVISION =		1
 
 MASTER_SITES =		https://gforge.inria.fr/frs/download.php/latestfile/4606/
 
