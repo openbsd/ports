@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/07/18 21:25:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/08/30 13:17:31 sthen Exp $
 
 SHARED_LIBS +=	lz4                       0.2 # 0.0
 
@@ -9,6 +9,7 @@ GH_PROJECT=	lz4
 GH_TAGNAME=	r131
 DISTNAME=	lz4-${GH_TAGNAME}
 PKGNAME=	lz4-0.${GH_TAGNAME:S/r//}
+REVISION=	0
 WRKDIST=	${WRKDIR}/lz4-${GH_TAGNAME}
 
 CATEGORIES=	archivers
@@ -25,10 +26,10 @@ WANTLIB += c
 USE_GMAKE=	Yes
 MAKE_FLAGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS}" \
-		MANDIR="${WRKINST}/${PREFIX}/man/man1" \
+		MANDIR="${PREFIX}/man/man1" \
 		SONAME_FLAGS= \
 		SHARED_EXT_VER="so.${LIBlz4_VERSION}"
-FAKE_FLAGS=	DESTDIR=
+FAKE_FLAGS=	PREFIX=${PREFIX}
 
 # XXX upstream are shipping a "test" directory, breaking the "make test"
 # target in their Makefile.
