@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/25 16:59:17 chrisz Exp $
+# $OpenBSD: Makefile,v 1.2 2015/08/30 16:03:42 avsm Exp $
 
 COMMENT =	regular expression library for OCaml
 CATEGORIES =	devel
 
-V =		1.2.2
+V =		1.4.1
 GH_ACCOUNT =	ocaml
 GH_PROJECT =	ocaml-re
 GH_TAGNAME =	${GH_PROJECT}-${V}
@@ -19,6 +19,7 @@ MODULES =		lang/ocaml
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	oasis
 CONFIGURE_ARGS =	--enable-tests
+BUILD_DEPENDS =         devel/ounit
 
 
 post-install:

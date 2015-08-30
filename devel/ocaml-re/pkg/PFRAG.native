@@ -1,7 +1,5 @@
-@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2014/10/25 16:59:17 chrisz Exp $
+@comment $OpenBSD: PFRAG.native,v 1.2 2015/08/30 16:03:42 avsm Exp $
 %%dynlink%%
-lib/ocaml/re/automata.cmx
-lib/ocaml/re/cset.cmx
 lib/ocaml/re/re.a
 lib/ocaml/re/re.cmx
 lib/ocaml/re/re.cmxa
@@ -23,3 +21,5 @@ lib/ocaml/re/re_posix.cmxa
 lib/ocaml/re/re_str.a
 lib/ocaml/re/re_str.cmx
 lib/ocaml/re/re_str.cmxa
+lib/ocaml/re/re_automata.cmx
+lib/ocaml/re/re_cset.cmx
