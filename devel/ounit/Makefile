@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2014/10/22 13:00:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/08/30 16:24:35 avsm Exp $
 
 COMMENT =	unit test framework for OCaml
 CATEGORIES =	devel
 
 DISTNAME =	ounit-2.0.0
-REVISION =	0
+REVISION =	1
 
 # The last url component (the number) changes every release, too.
 MASTER_SITES =	http://forge.ocamlcore.org/frs/download.php/1258/
