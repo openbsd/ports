@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2014/09/22 12:58:04 chrisz Exp $
+# $OpenBSD: Makefile,v 1.7 2015/08/30 16:23:41 avsm Exp $
 
 COMMENT =	functional reactive programming (FRP) for OCaml
 CATEGORIES =	devel
 
 V =		1.2.0
+REVISION =      1
 NAME =		react
 DISTNAME =	${NAME}-${V}
 EXTRACT_SUFX =	.tbz
