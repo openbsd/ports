@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2014/09/04 19:44:09 chrisz Exp $
+# $OpenBSD: Makefile,v 1.9 2015/08/30 16:18:48 avsm Exp $
 
 COMMENT=		extended standard library for OCaml
 
 DISTNAME=		extlib-1.6.1
 PKGNAME=		ocaml-${DISTNAME}
 CATEGORIES=		devel
+REVISION=               1
 
 HOMEPAGE=		https://ocaml-extlib.googlecode.com/
 
