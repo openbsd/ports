@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2012/08/18 23:35:30 avsm Exp $
-lib/ocaml/stublibs/dllcamlimages_all.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2015/08/30 16:06:35 avsm Exp $
+lib/ocaml/stublibs/dllcamlimages_all_formats.so
+lib/ocaml/stublibs/dllcamlimages_exif.so
 lib/ocaml/stublibs/dllcamlimages_freetype.so
 lib/ocaml/stublibs/dllcamlimages_gif.so
 lib/ocaml/stublibs/dllcamlimages_jpeg.so

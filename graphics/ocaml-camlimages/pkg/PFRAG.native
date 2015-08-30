@@ -1,8 +1,10 @@
-@comment $OpenBSD: PFRAG.native,v 1.1 2012/08/18 23:35:30 avsm Exp $
-lib/ocaml/camlimages/camlimages_all.a
-lib/ocaml/camlimages/camlimages_all.cmxa
+@comment $OpenBSD: PFRAG.native,v 1.2 2015/08/30 16:06:35 avsm Exp $
+lib/ocaml/camlimages/camlimages_all_formats.a
+lib/ocaml/camlimages/camlimages_all_formats.cmxa
 lib/ocaml/camlimages/camlimages_core.a
 lib/ocaml/camlimages/camlimages_core.cmxa
+lib/ocaml/camlimages/camlimages_exif.a
+lib/ocaml/camlimages/camlimages_exif.cmxa
 lib/ocaml/camlimages/camlimages_freetype.a
 lib/ocaml/camlimages/camlimages_freetype.cmxa
 lib/ocaml/camlimages/camlimages_gif.a
@@ -11,6 +13,8 @@ lib/ocaml/camlimages/camlimages_graphics.a
 lib/ocaml/camlimages/camlimages_graphics.cmxa
 lib/ocaml/camlimages/camlimages_jpeg.a
 lib/ocaml/camlimages/camlimages_jpeg.cmxa
+lib/ocaml/camlimages/camlimages_lablgtk2.a
+lib/ocaml/camlimages/camlimages_lablgtk2.cmxa
 lib/ocaml/camlimages/camlimages_png.a
 lib/ocaml/camlimages/camlimages_png.cmxa
 lib/ocaml/camlimages/camlimages_ps.a
@@ -21,6 +25,15 @@ lib/ocaml/camlimages/camlimages_tiff.a
 lib/ocaml/camlimages/camlimages_tiff.cmxa
 lib/ocaml/camlimages/camlimages_xpm.a
 lib/ocaml/camlimages/camlimages_xpm.cmxa
+lib/ocaml/camlimages/libcamlimages_all_formats.a
+lib/ocaml/camlimages/libcamlimages_exif.a
+lib/ocaml/camlimages/libcamlimages_freetype.a
+lib/ocaml/camlimages/libcamlimages_gif.a
+lib/ocaml/camlimages/libcamlimages_jpeg.a
+lib/ocaml/camlimages/libcamlimages_png.a
+lib/ocaml/camlimages/libcamlimages_supported.a
+lib/ocaml/camlimages/libcamlimages_tiff.a
+lib/ocaml/camlimages/libcamlimages_xpm.a
 share/examples/ocaml-camlimages/converter/converter.cmx
 share/examples/ocaml-camlimages/converter/converter.o
 @bin share/examples/ocaml-camlimages/converter/converter.opt
@@ -30,9 +43,55 @@ share/examples/ocaml-camlimages/crop/crop.o
 share/examples/ocaml-camlimages/edgedetect/edge.cmx
 share/examples/ocaml-camlimages/edgedetect/edge.o
 @bin share/examples/ocaml-camlimages/edgedetect/edge.opt
+share/examples/ocaml-camlimages/gifanim/gifanim.cmx
+share/examples/ocaml-camlimages/gifanim/gifanim.o
+@bin share/examples/ocaml-camlimages/gifanim/gifanim.opt
+share/examples/ocaml-camlimages/gifanim/guienv.cmx
+share/examples/ocaml-camlimages/gifanim/guienv.o
+share/examples/ocaml-camlimages/gifanim/usleep.cmx
+share/examples/ocaml-camlimages/gifanim/usleep.o
 share/examples/ocaml-camlimages/imgstat/imgstat.cmx
 share/examples/ocaml-camlimages/imgstat/imgstat.o
 @bin share/examples/ocaml-camlimages/imgstat/imgstat.opt
+share/examples/ocaml-camlimages/liv/cache.cmx
+share/examples/ocaml-camlimages/liv/cache.o
+share/examples/ocaml-camlimages/liv/deficon.cmx
+share/examples/ocaml-camlimages/liv/deficon.o
+share/examples/ocaml-camlimages/liv/display.cmx
+share/examples/ocaml-camlimages/liv/display.o
+share/examples/ocaml-camlimages/liv/edge.cmx
+share/examples/ocaml-camlimages/liv/edge.o
+share/examples/ocaml-camlimages/liv/enhance.cmx
+share/examples/ocaml-camlimages/liv/enhance.o
+share/examples/ocaml-camlimages/liv/gui.cmx
+share/examples/ocaml-camlimages/liv/gui.o
+share/examples/ocaml-camlimages/liv/icon.cmx
+share/examples/ocaml-camlimages/liv/icon.o
+share/examples/ocaml-camlimages/liv/iconcap.cmx
+share/examples/ocaml-camlimages/liv/iconcap.o
+share/examples/ocaml-camlimages/liv/jWidget.cmx
+share/examples/ocaml-camlimages/liv/jWidget.o
+share/examples/ocaml-camlimages/liv/jpf.cmx
+share/examples/ocaml-camlimages/liv/jpf.o
+share/examples/ocaml-camlimages/liv/liv.cmx
+share/examples/ocaml-camlimages/liv/liv.o
+@bin share/examples/ocaml-camlimages/liv/liv.opt
+share/examples/ocaml-camlimages/liv/livmisc.cmx
+share/examples/ocaml-camlimages/liv/livmisc.o
+share/examples/ocaml-camlimages/liv/livshtype.cmx
+share/examples/ocaml-camlimages/liv/livshtype.o
+share/examples/ocaml-camlimages/liv/mylazy.cmx
+share/examples/ocaml-camlimages/liv/mylazy.o
+share/examples/ocaml-camlimages/liv/pathfind.cmx
+share/examples/ocaml-camlimages/liv/pathfind.o
+share/examples/ocaml-camlimages/liv/scandir.cmx
+share/examples/ocaml-camlimages/liv/scandir.o
+share/examples/ocaml-camlimages/liv/seq.cmx
+share/examples/ocaml-camlimages/liv/seq.o
+share/examples/ocaml-camlimages/liv/tout.cmx
+share/examples/ocaml-camlimages/liv/tout.o
+share/examples/ocaml-camlimages/liv/viewer.cmx
+share/examples/ocaml-camlimages/liv/viewer.o
 share/examples/ocaml-camlimages/monochrome/monochrome.cmx
 share/examples/ocaml-camlimages/monochrome/monochrome.o
 @bin share/examples/ocaml-camlimages/monochrome/monochrome.opt

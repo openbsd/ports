@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2012/08/18 23:35:30 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/08/30 16:06:35 avsm Exp $
 @conflict camlimages-*
 %%SHARED%%
 %%native%%
@@ -11,12 +11,14 @@ lib/ocaml/camlimages/blend.mli
 lib/ocaml/camlimages/bmp.cmi
 lib/ocaml/camlimages/bmp.mli
 lib/ocaml/camlimages/camlimages.cmi
-lib/ocaml/camlimages/camlimages_all.cma
+lib/ocaml/camlimages/camlimages_all_formats.cma
 lib/ocaml/camlimages/camlimages_core.cma
+lib/ocaml/camlimages/camlimages_exif.cma
 lib/ocaml/camlimages/camlimages_freetype.cma
 lib/ocaml/camlimages/camlimages_gif.cma
 lib/ocaml/camlimages/camlimages_graphics.cma
 lib/ocaml/camlimages/camlimages_jpeg.cma
+lib/ocaml/camlimages/camlimages_lablgtk2.cma
 lib/ocaml/camlimages/camlimages_png.cma
 lib/ocaml/camlimages/camlimages_ps.cma
 lib/ocaml/camlimages/camlimages_supported.cma
@@ -28,6 +30,10 @@ lib/ocaml/camlimages/color.cmi
 lib/ocaml/camlimages/color.mli
 lib/ocaml/camlimages/colorhist.cmi
 lib/ocaml/camlimages/colorhist.mli
+lib/ocaml/camlimages/exif.cmi
+lib/ocaml/camlimages/exif.mli
+lib/ocaml/camlimages/exifanalyze.cmi
+lib/ocaml/camlimages/exifutil.cmi
 lib/ocaml/camlimages/freetype.cmi
 lib/ocaml/camlimages/freetype.mli
 lib/ocaml/camlimages/ftlow.cmi
@@ -44,6 +50,7 @@ lib/ocaml/camlimages/graphic_image.cmi
 lib/ocaml/camlimages/graphic_image.mli
 lib/ocaml/camlimages/image_intf.cmi
 lib/ocaml/camlimages/image_intf.mli
+lib/ocaml/camlimages/imagegdk.cmi
 lib/ocaml/camlimages/imagegdk.mli
 lib/ocaml/camlimages/images.cmi
 lib/ocaml/camlimages/images.mli
@@ -58,14 +65,6 @@ lib/ocaml/camlimages/jis_unicode.cmi
 lib/ocaml/camlimages/jis_unicode.mli
 lib/ocaml/camlimages/jpeg.cmi
 lib/ocaml/camlimages/jpeg.mli
-lib/ocaml/camlimages/libcamlimages_all.a
-lib/ocaml/camlimages/libcamlimages_freetype.a
-lib/ocaml/camlimages/libcamlimages_gif.a
-lib/ocaml/camlimages/libcamlimages_jpeg.a
-lib/ocaml/camlimages/libcamlimages_png.a
-lib/ocaml/camlimages/libcamlimages_supported.a
-lib/ocaml/camlimages/libcamlimages_tiff.a
-lib/ocaml/camlimages/libcamlimages_xpm.a
 lib/ocaml/camlimages/mstring.cmi
 lib/ocaml/camlimages/mstring.mli
 lib/ocaml/camlimages/oBmp.cmi
@@ -83,7 +82,9 @@ lib/ocaml/camlimages/oPng.mli
 lib/ocaml/camlimages/oPpm.cmi
 lib/ocaml/camlimages/oPs.cmi
 lib/ocaml/camlimages/oTiff.cmi
+lib/ocaml/camlimages/oXimage.cmi
 lib/ocaml/camlimages/oXimage.mli
+lib/ocaml/camlimages/oXimage2.cmi
 lib/ocaml/camlimages/oXpm.cmi
 lib/ocaml/camlimages/oXvthumb.cmi
 lib/ocaml/camlimages/oXvthumb.mli
@@ -106,7 +107,11 @@ lib/ocaml/camlimages/tiff.mli
 lib/ocaml/camlimages/tmpfile.cmi
 lib/ocaml/camlimages/tmpfile.mli
 lib/ocaml/camlimages/units.cmi
+lib/ocaml/camlimages/util.cmi
+lib/ocaml/camlimages/util.mli
+lib/ocaml/camlimages/ximage.cmi
 lib/ocaml/camlimages/ximage.mli
+lib/ocaml/camlimages/ximage2.cmi
 lib/ocaml/camlimages/xpm.cmi
 lib/ocaml/camlimages/xpm.mli
 lib/ocaml/camlimages/xvthumb.cmi
@@ -128,6 +133,8 @@ lib/ocaml/camlimages/xvthumb.mli
 @comment share/examples/camlimages/ttfimg/.cvsignore
 @comment lib/ocaml/stublibs/
 @comment lib/ocaml/stublibs/dllcamlimages_all.so.owner
+@comment lib/ocaml/stublibs/dllcamlimages_all_formats.so.owner
+@comment lib/ocaml/stublibs/dllcamlimages_exif.so.owner
 @comment lib/ocaml/stublibs/dllcamlimages_freetype.so.owner
 @comment lib/ocaml/stublibs/dllcamlimages_gif.so.owner
 @comment lib/ocaml/stublibs/dllcamlimages_jpeg.so.owner
@@ -174,8 +181,16 @@ share/examples/ocaml-camlimages/gifanim/
 share/examples/ocaml-camlimages/gifanim/.depend
 share/examples/ocaml-camlimages/gifanim/OMakefile
 share/examples/ocaml-camlimages/gifanim/README
+share/examples/ocaml-camlimages/gifanim/gifanim
+share/examples/ocaml-camlimages/gifanim/gifanim.cmi
+share/examples/ocaml-camlimages/gifanim/gifanim.cmo
 share/examples/ocaml-camlimages/gifanim/gifanim.ml
+share/examples/ocaml-camlimages/gifanim/gifanim.run
+share/examples/ocaml-camlimages/gifanim/guienv.cmi
+share/examples/ocaml-camlimages/gifanim/guienv.cmo
 share/examples/ocaml-camlimages/gifanim/guienv.ml
+share/examples/ocaml-camlimages/gifanim/usleep.cmi
+share/examples/ocaml-camlimages/gifanim/usleep.cmo
 share/examples/ocaml-camlimages/gifanim/usleep.ml
 share/examples/ocaml-camlimages/imgstat/
 @comment share/examples/ocaml-camlimages/imgstat/.cvsignore
@@ -187,48 +202,7 @@ share/examples/ocaml-camlimages/imgstat/imgstat.cmo
 share/examples/ocaml-camlimages/imgstat/imgstat.ml
 share/examples/ocaml-camlimages/imgstat/imgstat.run
 share/examples/ocaml-camlimages/liv/
-share/examples/ocaml-camlimages/liv-furuse/
 @comment share/examples/ocaml-camlimages/liv-furuse/.cvsignore
-share/examples/ocaml-camlimages/liv-furuse/.depend
-share/examples/ocaml-camlimages/liv-furuse/BulletHole.xpm
-share/examples/ocaml-camlimages/liv-furuse/File.xpm
-share/examples/ocaml-camlimages/liv-furuse/FileUnknown.xpm
-share/examples/ocaml-camlimages/liv-furuse/FilesLink.xpm
-share/examples/ocaml-camlimages/liv-furuse/Folder.xpm
-share/examples/ocaml-camlimages/liv-furuse/FolderLink.xpm
-share/examples/ocaml-camlimages/liv-furuse/Monalisa.xpm
-share/examples/ocaml-camlimages/liv-furuse/OMakefile
-share/examples/ocaml-camlimages/liv-furuse/README
-share/examples/ocaml-camlimages/liv-furuse/cache.ml
-share/examples/ocaml-camlimages/liv-furuse/cache.mli
-share/examples/ocaml-camlimages/liv-furuse/deficon.ml
-share/examples/ocaml-camlimages/liv-furuse/display.ml
-share/examples/ocaml-camlimages/liv-furuse/edge.ml
-share/examples/ocaml-camlimages/liv-furuse/enhance.ml
-share/examples/ocaml-camlimages/liv-furuse/faceanm.gif
-share/examples/ocaml-camlimages/liv-furuse/gui.ml
-share/examples/ocaml-camlimages/liv-furuse/icon.ml
-share/examples/ocaml-camlimages/liv-furuse/iconcap
-share/examples/ocaml-camlimages/liv-furuse/iconcap.ml
-share/examples/ocaml-camlimages/liv-furuse/jWidget.ml
-share/examples/ocaml-camlimages/liv-furuse/jpf.ml
-share/examples/ocaml-camlimages/liv-furuse/liv
-share/examples/ocaml-camlimages/liv-furuse/liv-jpf.ml
-share/examples/ocaml-camlimages/liv-furuse/liv-org.ml
-share/examples/ocaml-camlimages/liv-furuse/liv.ml
-share/examples/ocaml-camlimages/liv-furuse/livdemo.jpg
-share/examples/ocaml-camlimages/liv-furuse/livmisc.ml
-share/examples/ocaml-camlimages/liv-furuse/livsh.ml
-share/examples/ocaml-camlimages/liv-furuse/livshtype.ml
-share/examples/ocaml-camlimages/liv-furuse/livshtype.mli
-share/examples/ocaml-camlimages/liv-furuse/mylazy.ml
-share/examples/ocaml-camlimages/liv-furuse/mylazy.mli
-share/examples/ocaml-camlimages/liv-furuse/pathfind.ml
-share/examples/ocaml-camlimages/liv-furuse/scandir.ml
-share/examples/ocaml-camlimages/liv-furuse/seq.ml
-share/examples/ocaml-camlimages/liv-furuse/sound.xpm
-share/examples/ocaml-camlimages/liv-furuse/tout.ml
-share/examples/ocaml-camlimages/liv-furuse/viewer.ml
 @comment share/examples/ocaml-camlimages/liv/.cvsignore
 share/examples/ocaml-camlimages/liv/BulletHole.xpm
 share/examples/ocaml-camlimages/liv/File.xpm
@@ -239,32 +213,72 @@ share/examples/ocaml-camlimages/liv/FolderLink.xpm
 share/examples/ocaml-camlimages/liv/Monalisa.xpm
 share/examples/ocaml-camlimages/liv/OMakefile
 share/examples/ocaml-camlimages/liv/README
+share/examples/ocaml-camlimages/liv/cache.cmi
+share/examples/ocaml-camlimages/liv/cache.cmo
 share/examples/ocaml-camlimages/liv/cache.ml
 share/examples/ocaml-camlimages/liv/cache.mli
+share/examples/ocaml-camlimages/liv/deficon.cmi
+share/examples/ocaml-camlimages/liv/deficon.cmo
 share/examples/ocaml-camlimages/liv/deficon.ml
+share/examples/ocaml-camlimages/liv/display.cmi
+share/examples/ocaml-camlimages/liv/display.cmo
 share/examples/ocaml-camlimages/liv/display.ml
+share/examples/ocaml-camlimages/liv/edge.cmi
+share/examples/ocaml-camlimages/liv/edge.cmo
 share/examples/ocaml-camlimages/liv/edge.ml
+share/examples/ocaml-camlimages/liv/enhance.cmi
+share/examples/ocaml-camlimages/liv/enhance.cmo
 share/examples/ocaml-camlimages/liv/enhance.ml
 share/examples/ocaml-camlimages/liv/faceanm.gif
+share/examples/ocaml-camlimages/liv/gui.cmi
+share/examples/ocaml-camlimages/liv/gui.cmo
 share/examples/ocaml-camlimages/liv/gui.ml
+share/examples/ocaml-camlimages/liv/icon.cmi
+share/examples/ocaml-camlimages/liv/icon.cmo
 share/examples/ocaml-camlimages/liv/icon.ml
 share/examples/ocaml-camlimages/liv/iconcap
+share/examples/ocaml-camlimages/liv/iconcap.cmi
+share/examples/ocaml-camlimages/liv/iconcap.cmo
 share/examples/ocaml-camlimages/liv/iconcap.ml
+share/examples/ocaml-camlimages/liv/jWidget.cmi
+share/examples/ocaml-camlimages/liv/jWidget.cmo
 share/examples/ocaml-camlimages/liv/jWidget.ml
+share/examples/ocaml-camlimages/liv/jpf.cmi
+share/examples/ocaml-camlimages/liv/jpf.cmo
 share/examples/ocaml-camlimages/liv/jpf.ml
+share/examples/ocaml-camlimages/liv/liv
+share/examples/ocaml-camlimages/liv/liv.cmi
+share/examples/ocaml-camlimages/liv/liv.cmo
 share/examples/ocaml-camlimages/liv/liv.ml
+share/examples/ocaml-camlimages/liv/liv.run
 share/examples/ocaml-camlimages/liv/livdemo.jpg
+share/examples/ocaml-camlimages/liv/livmisc.cmi
+share/examples/ocaml-camlimages/liv/livmisc.cmo
 share/examples/ocaml-camlimages/liv/livmisc.ml
 share/examples/ocaml-camlimages/liv/livsh.ml
+share/examples/ocaml-camlimages/liv/livshtype.cmi
+share/examples/ocaml-camlimages/liv/livshtype.cmo
 share/examples/ocaml-camlimages/liv/livshtype.ml
 share/examples/ocaml-camlimages/liv/livshtype.mli
+share/examples/ocaml-camlimages/liv/mylazy.cmi
+share/examples/ocaml-camlimages/liv/mylazy.cmo
 share/examples/ocaml-camlimages/liv/mylazy.ml
 share/examples/ocaml-camlimages/liv/mylazy.mli
+share/examples/ocaml-camlimages/liv/pathfind.cmi
+share/examples/ocaml-camlimages/liv/pathfind.cmo
 share/examples/ocaml-camlimages/liv/pathfind.ml
+share/examples/ocaml-camlimages/liv/scandir.cmi
+share/examples/ocaml-camlimages/liv/scandir.cmo
 share/examples/ocaml-camlimages/liv/scandir.ml
+share/examples/ocaml-camlimages/liv/seq.cmi
+share/examples/ocaml-camlimages/liv/seq.cmo
 share/examples/ocaml-camlimages/liv/seq.ml
 share/examples/ocaml-camlimages/liv/sound.xpm
+share/examples/ocaml-camlimages/liv/tout.cmi
+share/examples/ocaml-camlimages/liv/tout.cmo
 share/examples/ocaml-camlimages/liv/tout.ml
+share/examples/ocaml-camlimages/liv/viewer.cmi
+share/examples/ocaml-camlimages/liv/viewer.cmo
 share/examples/ocaml-camlimages/liv/viewer.ml
 share/examples/ocaml-camlimages/monochrome/
 @comment share/examples/ocaml-camlimages/monochrome/.cvsignore
