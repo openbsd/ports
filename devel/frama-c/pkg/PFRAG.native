@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.2 2014/04/23 14:12:28 jca Exp $
+@comment $OpenBSD: PFRAG.native,v 1.3 2015/08/30 16:22:15 avsm Exp $
 %%dynlink%%
 @bin bin/ptests.opt
 lib/frama-c/Constant_Propagation.cmx
@@ -55,8 +55,6 @@ lib/frama-c/ast.cmx
 lib/frama-c/ast.o
 lib/frama-c/ast_info.cmx
 lib/frama-c/ast_info.o
-lib/frama-c/availexpslv.cmx
-lib/frama-c/availexpslv.o
 lib/frama-c/bag.cmx
 lib/frama-c/bag.o
 lib/frama-c/base.cmx
@@ -71,18 +69,13 @@ lib/frama-c/book_manager.cmx
 lib/frama-c/book_manager.o
 lib/frama-c/boot.cmx
 lib/frama-c/boot.o
-lib/frama-c/buckx.cmx
-lib/frama-c/buckx.o
+lib/frama-c/buckx_c.o
 lib/frama-c/cabs.cmx
 lib/frama-c/cabs.o
 lib/frama-c/cabs2cil.cmx
 lib/frama-c/cabs2cil.o
 lib/frama-c/cabs_debug.cmx
 lib/frama-c/cabs_debug.o
-lib/frama-c/cabsbranches.cmx
-lib/frama-c/cabsbranches.o
-lib/frama-c/cabscond.cmx
-lib/frama-c/cabscond.o
 lib/frama-c/cabshelper.cmx
 lib/frama-c/cabshelper.o
 lib/frama-c/cabsvisit.cmx
@@ -111,6 +104,8 @@ lib/frama-c/cilmsg.cmx
 lib/frama-c/cilmsg.o
 lib/frama-c/clexer.cmx
 lib/frama-c/clexer.o
+lib/frama-c/clone.cmx
+lib/frama-c/clone.o
 lib/frama-c/cmdline.cmx
 lib/frama-c/cmdline.o
 lib/frama-c/command.cmx
@@ -133,8 +128,6 @@ lib/frama-c/datatype.cmx
 lib/frama-c/datatype.o
 lib/frama-c/db.cmx
 lib/frama-c/db.o
-lib/frama-c/deadcodeelim.cmx
-lib/frama-c/deadcodeelim.o
 lib/frama-c/debug_manager.cmx
 lib/frama-c/debug_manager.o
 lib/frama-c/descr.cmx
@@ -155,8 +148,8 @@ lib/frama-c/errorloc.cmx
 lib/frama-c/errorloc.o
 lib/frama-c/escape.cmx
 lib/frama-c/escape.o
-lib/frama-c/expcompare.cmx
-lib/frama-c/expcompare.o
+lib/frama-c/exn_flow.cmx
+lib/frama-c/exn_flow.o
 lib/frama-c/extlib.cmx
 lib/frama-c/extlib.o
 lib/frama-c/file.cmx
@@ -171,14 +164,14 @@ lib/frama-c/filter.cmx
 lib/frama-c/filter.o
 lib/frama-c/floating_point.cmx
 lib/frama-c/floating_point.o
+lib/frama-c/frama_c_init.cmx
+lib/frama-c/frama_c_init.o
 lib/frama-c/frontc.cmx
 lib/frama-c/frontc.o
 lib/frama-c/function_Froms.cmx
 lib/frama-c/function_Froms.o
 lib/frama-c/globals.cmx
 lib/frama-c/globals.o
-lib/frama-c/graph.cmx
-lib/frama-c/graph.o
 lib/frama-c/gtk_form.cmx
 lib/frama-c/gtk_form.o
 lib/frama-c/gtk_helper.cmx
@@ -203,10 +196,8 @@ lib/frama-c/inout_type.cmx
 lib/frama-c/inout_type.o
 lib/frama-c/int_Base.cmx
 lib/frama-c/int_Base.o
-lib/frama-c/int_Interv.cmx
-lib/frama-c/int_Interv.o
-lib/frama-c/int_Interv_Map.cmx
-lib/frama-c/int_Interv_Map.o
+lib/frama-c/int_Intervals.cmx
+lib/frama-c/int_Intervals.o
 lib/frama-c/integer.cmx
 lib/frama-c/integer.o
 lib/frama-c/ival.cmx
@@ -217,14 +208,10 @@ lib/frama-c/kernel.cmx
 lib/frama-c/kernel.o
 lib/frama-c/kernel_function.cmx
 lib/frama-c/kernel_function.o
-lib/frama-c/lattice_Interval_Set.cmx
-lib/frama-c/lattice_Interval_Set.o
 lib/frama-c/launcher.cmx
 lib/frama-c/launcher.o
 lib/frama-c/lexerhack.cmx
 lib/frama-c/lexerhack.o
-lib/frama-c/liveness.cmx
-lib/frama-c/liveness.o
 lib/frama-c/lmap.cmx
 lib/frama-c/lmap.o
 lib/frama-c/lmap_bitwise.cmx
@@ -255,14 +242,8 @@ lib/frama-c/logic_utils.cmx
 lib/frama-c/logic_utils.o
 lib/frama-c/loop.cmx
 lib/frama-c/loop.o
-lib/frama-c/machdep_ppc_32.cmx
-lib/frama-c/machdep_ppc_32.o
-lib/frama-c/machdep_x86_16.cmx
-lib/frama-c/machdep_x86_16.o
-lib/frama-c/machdep_x86_32.cmx
-lib/frama-c/machdep_x86_32.o
-lib/frama-c/machdep_x86_64.cmx
-lib/frama-c/machdep_x86_64.o
+lib/frama-c/machdeps.cmx
+lib/frama-c/machdeps.o
 lib/frama-c/map_Lattice.cmx
 lib/frama-c/map_Lattice.o
 lib/frama-c/menu_manager.cmx
@@ -273,8 +254,6 @@ lib/frama-c/messages.cmx
 lib/frama-c/messages.o
 lib/frama-c/offsetmap.cmx
 lib/frama-c/offsetmap.o
-lib/frama-c/offsetmap_bitwise.cmx
-lib/frama-c/offsetmap_bitwise.o
 lib/frama-c/oneret.cmx
 lib/frama-c/oneret.o
 lib/frama-c/ordered_stmt.cmx
@@ -283,6 +262,8 @@ lib/frama-c/origin.cmx
 lib/frama-c/origin.o
 lib/frama-c/parameter_builder.cmx
 lib/frama-c/parameter_builder.o
+lib/frama-c/parameter_category.cmx
+lib/frama-c/parameter_category.o
 lib/frama-c/parameter_customize.cmx
 lib/frama-c/parameter_customize.o
 lib/frama-c/parameter_state.cmx
@@ -309,6 +290,8 @@ lib/frama-c/plugins/gui/Security_slicing.cmi
 lib/frama-c/plugins/gui/Security_slicing.cmo
 lib/frama-c/plugins/gui/Wp.cma
 lib/frama-c/plugins/gui/Wp.cmi
+lib/frama-c/precise_locs.cmx
+lib/frama-c/precise_locs.o
 lib/frama-c/pretty_source.cmx
 lib/frama-c/pretty_source.o
 lib/frama-c/pretty_utils.cmx
@@ -335,10 +318,6 @@ lib/frama-c/qstack.cmx
 lib/frama-c/qstack.o
 lib/frama-c/rangemap.cmx
 lib/frama-c/rangemap.o
-lib/frama-c/reachingdefs.cmx
-lib/frama-c/reachingdefs.o
-lib/frama-c/rmciltmps.cmx
-lib/frama-c/rmciltmps.o
 lib/frama-c/rmtmps.cmx
 lib/frama-c/rmtmps.o
 lib/frama-c/service_graph.cmx
@@ -393,8 +372,6 @@ lib/frama-c/unmarshal_nums.cmx
 lib/frama-c/unmarshal_nums.o
 lib/frama-c/unroll_loops.cmx
 lib/frama-c/unroll_loops.o
-lib/frama-c/usedef.cmx
-lib/frama-c/usedef.o
 lib/frama-c/utf8_logic.cmx
 lib/frama-c/utf8_logic.o
 lib/frama-c/value_messages.cmx
