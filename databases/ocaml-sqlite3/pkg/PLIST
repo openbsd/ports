@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/08/18 21:57:24 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/08/30 15:50:24 avsm Exp $
 lib/ocaml/sqlite3/
 lib/ocaml/sqlite3/META
 lib/ocaml/sqlite3/libsqlite3_stubs.a
+lib/ocaml/sqlite3/sqlite3.annot
 lib/ocaml/sqlite3/sqlite3.cma
 lib/ocaml/sqlite3/sqlite3.cmi
+lib/ocaml/sqlite3/sqlite3.cmt
+lib/ocaml/sqlite3/sqlite3.cmti
 lib/ocaml/sqlite3/sqlite3.mli
 %%native%%
 %%SHARED%%
@@ -20,6 +23,7 @@ share/doc/ocaml-sqlite3/api/index_attributes.html
 share/doc/ocaml-sqlite3/api/index_class_types.html
 share/doc/ocaml-sqlite3/api/index_classes.html
 share/doc/ocaml-sqlite3/api/index_exceptions.html
+share/doc/ocaml-sqlite3/api/index_extensions.html
 share/doc/ocaml-sqlite3/api/index_methods.html
 share/doc/ocaml-sqlite3/api/index_module_types.html
 share/doc/ocaml-sqlite3/api/index_modules.html
