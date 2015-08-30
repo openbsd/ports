@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/08/18 22:22:42 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/08/30 16:02:58 avsm Exp $
 %%SHARED%%
 %%native%%
 lib/ocaml/pcre/
 lib/ocaml/pcre/META
 lib/ocaml/pcre/libpcre_stubs.a
+lib/ocaml/pcre/pcre.annot
 lib/ocaml/pcre/pcre.cma
 lib/ocaml/pcre/pcre.cmi
+lib/ocaml/pcre/pcre.cmt
+lib/ocaml/pcre/pcre.cmti
 lib/ocaml/pcre/pcre.mli
 @comment lib/ocaml/stublibs/dllpcre_stubs.so.owner
 share/doc/ocaml-pcre/
@@ -16,6 +19,7 @@ share/doc/ocaml-pcre/api/index_attributes.html
 share/doc/ocaml-pcre/api/index_class_types.html
 share/doc/ocaml-pcre/api/index_classes.html
 share/doc/ocaml-pcre/api/index_exceptions.html
+share/doc/ocaml-pcre/api/index_extensions.html
 share/doc/ocaml-pcre/api/index_methods.html
 share/doc/ocaml-pcre/api/index_module_types.html
 share/doc/ocaml-pcre/api/index_modules.html
