@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2014/08/22 22:21:53 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2015/08/30 16:31:57 avsm Exp $
 
 COMMENT=	Objective Caml library to parse RSS 2.0
 CATEGORIES=	textproc
 
 V=		2.0
-REVISION=	1
+REVISION=	2
 DISTNAME=	ocamlrss-${V}
 PKGNAME=	ocaml-rss-${V}
 MASTER_SITES=	http://zoggy.github.com/ocamlrss/
