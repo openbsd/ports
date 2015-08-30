@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2014/10/22 13:00:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/08/30 16:02:11 avsm Exp $
 
 COMMENT =	the Ocamlnet internet protocol foundation library
 CATEGORIES =	devel www mail
 
-V =		3.7.5
+V =		4.0.2
 DISTNAME =	ocamlnet-${V}
 PKGNAME =	ocaml-net-${V}
-REVISION =	0
 
 MASTER_SITES =	http://download.camlcity.org/download/
 HOMEPAGE =	http://projects.camlcity.org/projects/ocamlnet.html
