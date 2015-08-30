@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/25 16:50:30 chrisz Exp $
+# $OpenBSD: Makefile,v 1.2 2015/08/30 15:57:25 avsm Exp $
 
 COMMENT =	declarative definition of command line interfaces
 CATEGORIES =	devel
 
-V =		0.9.5
+V =		0.9.7
 NAME =		cmdliner
 DISTNAME =	${NAME}-${V}
 EXTRACT_SUFX =	.tbz
