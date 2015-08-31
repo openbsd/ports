@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2015/08/13 07:33:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2015/08/31 17:39:46 jca Exp $
+
+BROKEN=		src/Csocket.cpp:1590:43: error: 'SSLv3_server_method' was not declared in this scope
 
 SHARED_ONLY=	Yes
 
