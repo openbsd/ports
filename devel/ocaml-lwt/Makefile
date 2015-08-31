@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/08/30 16:01:16 avsm Exp $
+# $OpenBSD: Makefile,v 1.17 2015/08/31 11:41:42 sthen Exp $
 
 COMMENT =	cooperative lightweight thread library
 CATEGORIES =	devel
@@ -6,6 +6,9 @@ CATEGORIES =	devel
 GH_ACCOUNT =	ocsigen
 GH_PROJECT =	lwt
 GH_TAGNAME =	2.4.8
+# This is not the latest upstream version, but the last one that is most
+# compatible due to an API change. Be careful about upgrading to lwt-2.5.0
+# without checking that no in-tree ports break due to new buffer APIs.
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME =	ocaml-${DISTNAME}
 
