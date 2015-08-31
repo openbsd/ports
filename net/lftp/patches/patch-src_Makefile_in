@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.9 2014/04/24 16:29:03 benoit Exp $
---- src/Makefile.in.orig	Fri Jan 24 08:59:54 2014
-+++ src/Makefile.in	Sun Apr 13 08:55:09 2014
-@@ -225,7 +225,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(p
+$OpenBSD: patch-src_Makefile_in,v 1.10 2015/08/31 07:50:59 benoit Exp $
+--- src/Makefile.in.orig	Thu Aug 20 11:49:33 2015
++++ src/Makefile.in	Sun Aug 30 17:51:08 2015
+@@ -227,7 +227,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(p
  	"$(DESTDIR)$(pkgdatadir)"
  LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES) \
  	$(pkgverlib_LTLIBRARIES)

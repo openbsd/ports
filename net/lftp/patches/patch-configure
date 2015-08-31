@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.10 2015/06/17 15:13:05 sthen Exp $
+$OpenBSD: patch-configure,v 1.11 2015/08/31 07:50:59 benoit Exp $
 
 Use GNU readline as our base readline lacks add_history_time().
 
---- configure.orig	Wed Jun 17 16:04:35 2015
-+++ configure	Wed Jun 17 16:36:48 2015
-@@ -47773,7 +47773,7 @@ if ${lftp_cv_precompiled_readline+:} false; then :
+--- configure.orig	Thu Aug 20 11:49:32 2015
++++ configure	Sun Aug 30 17:51:08 2015
+@@ -47962,7 +47962,7 @@ if ${lftp_cv_precompiled_readline+:} false; then :
  else
  
     old_LIBS="$LIBS"
@@ -13,7 +13,7 @@ Use GNU readline as our base readline lacks add_history_time().
     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  extern int (*rl_getc_function)();
-@@ -47813,7 +47813,7 @@ if test $lftp_cv_precompiled_readline = yes; then
+@@ -48002,7 +48002,7 @@ if test $lftp_cv_precompiled_readline = yes; then
     READLINE_DIR=''
     { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  $as_echo "yes" >&6; }
