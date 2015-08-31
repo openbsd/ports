@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/08/11 21:41:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2015/08/31 18:37:30 jasper Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -18,9 +18,13 @@ MAINTAINER =		Joshua Elsasser <joshe@openbsd.org>
 # Public domain and BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m util
-
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sbcl/}
+
+MODULES=		gcc4
+MODGCC4_ARCHS=		i386
+MODGCC4_LANGS=		c
+
+WANTLIB=		c m util
 
 PSEUDO_FLAVORS=		native_bootstrap
 FLAVOR?=
@@ -53,6 +57,7 @@ pre-configure:
 	sed 's/^"\([0-9.]*\)"$$/"\1.${LOCAL_VERSION}"/' \
 		< ${VERSION_FILE} > ${VERSION_FILE}.new
 	mv ${VERSION_FILE}.new ${VERSION_FILE}
+	sed -i 's,egcc,${CC},g' ${WRKSRC}/src/runtime/Config.*-openbsd
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} /bin/sh make.sh \
