@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/28 06:54:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/08/31 12:14:12 avsm Exp $
 
 MULTI_PACKAGES =	-main -lib
 
@@ -7,13 +7,11 @@ COMMENT-lib =		OPAM library
 
 CATEGORIES =		sysutils devel
 
-V =			1.2.0
+V =			1.2.2
 GH_ACCOUNT =		ocaml
 GH_PROJECT =		opam
 GH_TAGNAME =		${V}
 DISTNAME =		${GH_PROJECT}-${V}
-REVISION-main =		2
-REVISION-lib =		3
 
 PKGNAME-main =		opam-${V}
 PKGNAME-lib =		opam-lib-${V}
@@ -40,7 +38,9 @@ BUILD_DEPENDS =		devel/git \
 RUN_DEPENDS =		lang/ocaml-camlp4 \
 			net/rsync \
 			archivers/unzip \
-			devel/gmake
+			devel/gmake \
+			archivers/bzip2 \
+			net/curl
 
 USE_GMAKE =		Yes
 
@@ -54,13 +54,14 @@ docdir =		${PREFIX}/share/doc/opam
 
 
 post-install:
-	${INSTALL_DATA_DIR} ${docdir}/{tutorials,api}
+	${INSTALL_DATA_DIR} ${docdir}/{pages,api}
 	${INSTALL_DATA} \
 		${WRKSRC}/{CHANGES,README.md} \
 		${WRKSRC}/doc/design/* \
 		${docdir}/
-	${INSTALL_DATA} ${WRKSRC}/doc/tutorials/*.html ${docdir}/tutorials
+	${INSTALL_DATA} ${WRKSRC}/doc/pages/*.md ${docdir}/pages
 	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${docdir}/api
 	${INSTALL_DATA} ${WRKSRC}/doc/dev-manual/dev-manual.pdf ${docdir}/
+	${INSTALL_SCRIPT} ${FILESDIR}/aspcud ${PREFIX}/bin/aspcud
 
 .include <bsd.port.mk>
