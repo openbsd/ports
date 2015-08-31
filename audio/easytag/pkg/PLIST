@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/02/06 19:51:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/08/31 06:15:58 ajacoutot Exp $
 @bin bin/easytag
 @man man/man1/easytag.1
 share/appdata/
+share/appdata/easytag-nautilus.metainfo.xml
 share/appdata/easytag.appdata.xml
 share/applications/easytag.desktop
+share/glib-2.0/schemas/org.gnome.EasyTAG.enums.xml
+share/glib-2.0/schemas/org.gnome.EasyTAG.gschema.xml
 share/help/
 share/help/C/
 share/help/C/easytag/
@@ -25,8 +28,32 @@ share/help/C/easytag/problems-id3.page
 share/help/C/easytag/problems-ogg-split.page
 share/help/C/easytag/scanner.page
 share/help/C/easytag/starting.page
+share/help/C/easytag/tag-capitalization.page
 share/help/C/easytag/tag-field.page
 share/help/C/easytag/tag.page
+share/help/ca/
+share/help/ca/easytag/
+share/help/ca/easytag/cddb-search.page
+share/help/ca/easytag/file-rename.page
+share/help/ca/easytag/file-select.page
+share/help/ca/easytag/format-specifier.page
+share/help/ca/easytag/image-delete.page
+share/help/ca/easytag/image-export.page
+share/help/ca/easytag/image.page
+share/help/ca/easytag/index.page
+share/help/ca/easytag/introduction.page
+share/help/ca/easytag/keyboard-shortcuts.page
+share/help/ca/easytag/legal.xml
+share/help/ca/easytag/media/
+share/help/ca/easytag/media/icon.png
+share/help/ca/easytag/playlist-generate.page
+share/help/ca/easytag/problems-id3.page
+share/help/ca/easytag/problems-ogg-split.page
+share/help/ca/easytag/scanner.page
+share/help/ca/easytag/starting.page
+share/help/ca/easytag/tag-capitalization.page
+share/help/ca/easytag/tag-field.page
+share/help/ca/easytag/tag.page
 share/help/cs/
 share/help/cs/easytag/
 share/help/cs/easytag/cddb-search.page
@@ -47,6 +74,7 @@ share/help/cs/easytag/problems-id3.page
 share/help/cs/easytag/problems-ogg-split.page
 share/help/cs/easytag/scanner.page
 share/help/cs/easytag/starting.page
+share/help/cs/easytag/tag-capitalization.page
 share/help/cs/easytag/tag-field.page
 share/help/cs/easytag/tag.page
 share/help/de/
@@ -69,6 +97,7 @@ share/help/de/easytag/problems-id3.page
 share/help/de/easytag/problems-ogg-split.page
 share/help/de/easytag/scanner.page
 share/help/de/easytag/starting.page
+share/help/de/easytag/tag-capitalization.page
 share/help/de/easytag/tag-field.page
 share/help/de/easytag/tag.page
 share/help/el/
@@ -91,6 +120,7 @@ share/help/el/easytag/problems-id3.page
 share/help/el/easytag/problems-ogg-split.page
 share/help/el/easytag/scanner.page
 share/help/el/easytag/starting.page
+share/help/el/easytag/tag-capitalization.page
 share/help/el/easytag/tag-field.page
 share/help/el/easytag/tag.page
 share/help/es/
@@ -113,8 +143,55 @@ share/help/es/easytag/problems-id3.page
 share/help/es/easytag/problems-ogg-split.page
 share/help/es/easytag/scanner.page
 share/help/es/easytag/starting.page
+share/help/es/easytag/tag-capitalization.page
 share/help/es/easytag/tag-field.page
 share/help/es/easytag/tag.page
+share/help/fr/
+share/help/fr/easytag/
+share/help/fr/easytag/cddb-search.page
+share/help/fr/easytag/file-rename.page
+share/help/fr/easytag/file-select.page
+share/help/fr/easytag/format-specifier.page
+share/help/fr/easytag/image-delete.page
+share/help/fr/easytag/image-export.page
+share/help/fr/easytag/image.page
+share/help/fr/easytag/index.page
+share/help/fr/easytag/introduction.page
+share/help/fr/easytag/keyboard-shortcuts.page
+share/help/fr/easytag/legal.xml
+share/help/fr/easytag/media/
+share/help/fr/easytag/media/icon.png
+share/help/fr/easytag/playlist-generate.page
+share/help/fr/easytag/problems-id3.page
+share/help/fr/easytag/problems-ogg-split.page
+share/help/fr/easytag/scanner.page
+share/help/fr/easytag/starting.page
+share/help/fr/easytag/tag-capitalization.page
+share/help/fr/easytag/tag-field.page
+share/help/fr/easytag/tag.page
+share/help/hu/
+share/help/hu/easytag/
+share/help/hu/easytag/cddb-search.page
+share/help/hu/easytag/file-rename.page
+share/help/hu/easytag/file-select.page
+share/help/hu/easytag/format-specifier.page
+share/help/hu/easytag/image-delete.page
+share/help/hu/easytag/image-export.page
+share/help/hu/easytag/image.page
+share/help/hu/easytag/index.page
+share/help/hu/easytag/introduction.page
+share/help/hu/easytag/keyboard-shortcuts.page
+share/help/hu/easytag/legal.xml
+share/help/hu/easytag/media/
+share/help/hu/easytag/media/icon.png
+share/help/hu/easytag/playlist-generate.page
+share/help/hu/easytag/problems-id3.page
+share/help/hu/easytag/problems-ogg-split.page
+share/help/hu/easytag/scanner.page
+share/help/hu/easytag/starting.page
+share/help/hu/easytag/tag-capitalization.page
+share/help/hu/easytag/tag-field.page
+share/help/hu/easytag/tag.page
 share/icons/hicolor/128x128/apps/easytag.png
 share/icons/hicolor/16x16/apps/easytag.png
 share/icons/hicolor/22x22/apps/easytag.png
@@ -124,7 +201,9 @@ share/icons/hicolor/32x32/apps/easytag.png
 share/icons/hicolor/48x48/apps/easytag.png
 share/icons/hicolor/64x64/apps/easytag.png
 share/icons/hicolor/scalable/apps/easytag.svg
+share/icons/hicolor/symbolic/apps/easytag-symbolic.svg
 share/locale/bg/LC_MESSAGES/easytag.mo
+share/locale/bs/LC_MESSAGES/easytag.mo
 share/locale/ca/LC_MESSAGES/easytag.mo
 share/locale/cs/LC_MESSAGES/easytag.mo
 share/locale/da/LC_MESSAGES/easytag.mo
@@ -143,6 +222,7 @@ share/locale/lt/LC_MESSAGES/easytag.mo
 share/locale/nb/LC_MESSAGES/easytag.mo
 share/locale/nl/LC_MESSAGES/easytag.mo
 share/locale/pl/LC_MESSAGES/easytag.mo
+share/locale/pt/LC_MESSAGES/easytag.mo
 share/locale/pt_BR/LC_MESSAGES/easytag.mo
 share/locale/ro/LC_MESSAGES/easytag.mo
 share/locale/ru/LC_MESSAGES/easytag.mo
@@ -155,6 +235,8 @@ share/locale/tr/LC_MESSAGES/easytag.mo
 share/locale/uk/LC_MESSAGES/easytag.mo
 share/locale/zh_CN/LC_MESSAGES/easytag.mo
 share/locale/zh_TW/LC_MESSAGES/easytag.mo
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
