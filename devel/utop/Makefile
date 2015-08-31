@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/08/30 16:26:32 avsm Exp $
+# $OpenBSD: Makefile,v 1.10 2015/08/31 11:39:47 sthen Exp $
 
 COMMENT =	enhanced OCaml toplevel
 CATEGORIES =	devel
@@ -8,7 +8,7 @@ GH_ACCOUNT =	diml
 GH_PROJECT =	utop
 GH_TAGNAME =	${V}
 DISTNAME =	${GH_PROJECT}-$V
-REVISION =	1 
+REVISION =	1
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
