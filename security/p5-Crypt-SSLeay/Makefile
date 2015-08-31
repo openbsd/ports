@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2015/05/04 21:52:31 bluhm Exp $
+# $OpenBSD: Makefile,v 1.38 2015/08/31 06:58:45 bluhm Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		library to provide LWP https support via OpenSSL
 
 DISTNAME =		Crypt-SSLeay-0.72
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security
 

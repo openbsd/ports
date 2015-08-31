@@ -1,0 +1,41 @@
+$OpenBSD: patch-SSLeay_xs,v 1.1 2015/08/31 06:58:45 bluhm Exp $
+--- SSLeay.xs.orig	Thu Apr 24 00:36:24 2014
++++ SSLeay.xs	Mon Aug 31 00:43:25 2015
+@@ -45,13 +45,6 @@ extern "C" {
+ }
+ #endif
+ 
+-
+-#if SSLEAY_VERSION_NUMBER >= 0x0900
+-#define CRYPT_SSL_CLIENT_METHOD SSLv3_client_method()
+-#else
+-#define CRYPT_SSL_CLIENT_METHOD SSLv2_client_method()
+-#endif
+-
+ static void InfoCallback(const SSL *s,int where,int ret)
+     {
+     const char *str;
+@@ -145,22 +138,7 @@ SSL_CTX_new(packname, ssl_version)
+             RAND_seed(buf, CRYPT_SSLEAY_RAND_BUFSIZE);
+         }
+ 
+-        if(ssl_version == 23) {
+-            ctx = SSL_CTX_new(SSLv23_client_method());
+-        }
+-        else if(ssl_version == 3) {
+-            ctx = SSL_CTX_new(SSLv3_client_method());
+-        }
+-        else {
+-#ifndef OPENSSL_NO_SSL2
+-            /* v2 is the default */
+-            ctx = SSL_CTX_new(SSLv2_client_method());
+-#else
+-            /* v3 is the default */
+-            ctx = SSL_CTX_new(SSLv3_client_method());
+-#endif
+-        }
+-
++        ctx = SSL_CTX_new(SSLv23_client_method());
+         SSL_CTX_set_options(ctx,SSL_OP_ALL|0);
+         SSL_CTX_set_default_verify_paths(ctx);
+         SSL_CTX_set_verify(ctx, SSL_VERIFY_NONE, NULL);
