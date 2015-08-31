@@ -25,16 +25,16 @@ namespace facter { namespace facts { namespace openbsd {
         if (sysctl(pagesize_mib, 2, &page_size, &len, nullptr, 0) == -1) {
             LOG_DEBUG("sysctl failed: %1% (%2%): system page size is unknown.", strerror(errno), errno);
         } else {
-                int uvmexp_mib[] = { CTL_VM, VM_UVMEXP };
-                struct uvmexp uvmexp;
-                len = sizeof(uvmexp);
-                if (sysctl(uvmexp_mib, 2, &uvmexp, &len, nullptr, 0) == -1) {
-                    LOG_DEBUG("sysctl uvmexp failed: %1% (%2%): free memory is not available.", strerror(errno), errno);
-                }
+            int uvmexp_mib[] = { CTL_VM, VM_UVMEXP };
+            struct uvmexp uvmexp;
+            len = sizeof(uvmexp);
+            if (sysctl(uvmexp_mib, 2, &uvmexp, &len, nullptr, 0) == -1) {
+                LOG_DEBUG("sysctl uvmexp failed: %1% (%2%): free memory is not available.", strerror(errno), errno);
+            }
 
-                // Should we account for the buffer cache?
-                result.mem_total = static_cast<u_int64_t>(uvmexp.npages) << uvmexp.pageshift;
-                result.mem_free = static_cast<u_int64_t>(uvmexp.free) << uvmexp.pageshift;
+            // Should we account for the buffer cache?
+            result.mem_total = static_cast<u_int64_t>(uvmexp.npages) << uvmexp.pageshift;
+            result.mem_free = static_cast<u_int64_t>(uvmexp.free) << uvmexp.pageshift;
         }
 
         // NB: swapctl(2) for SWAP_NSWAP cannot fail
@@ -48,10 +48,10 @@ namespace facter { namespace facts { namespace openbsd {
 
         uint64_t swap_used = 0;
         for (auto &&swap : swapdev) {
-          if (swap.se_flags & SWF_ENABLE) {
-              result.swap_total += swap.se_nblks * DEV_BSIZE;
-              swap_used += swap.se_inuse * DEV_BSIZE;
-          }
+            if (swap.se_flags & SWF_ENABLE) {
+                result.swap_total += swap.se_nblks * DEV_BSIZE;
+                swap_used += swap.se_inuse * DEV_BSIZE;
+            }
         }
 
         result.swap_free = result.swap_total - swap_used;
