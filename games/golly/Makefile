@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/12/24 17:21:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2015/08/31 01:21:39 jca Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	game of life simulator
 
-PKGNAME =	golly-2.6
+PKGNAME =	golly-2.7
 DISTNAME =	${PKGNAME}-src
 WRKSRC =	${WRKDIST}/gui-wx/configure
 CATEGORIES =	games math
@@ -24,7 +24,7 @@ RUN_DEPENDS =		devel/desktop-file-utils
 # Note: perl and python are loaded with wxDynamicLibrary.Load(), and
 # python needs libutil to prevent undefined openpty and forkpty symbols.
 WANTLIB += c m perl pthread stdc++ util wx_base wx_base_net wx_gtk2_adv
-WANTLIB += wx_gtk2_core wx_gtk2_html z ${MODPY_WANTLIB}
+WANTLIB += wx_gtk2_core wx_gtk2_html wx_gtk2_richtext z ${MODPY_WANTLIB}
 
 CONFIGURE_STYLE =		gnu
 CONFIGURE_ARGS =		--enable-unicode
