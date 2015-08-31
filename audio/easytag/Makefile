@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2015/08/31 06:15:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2015/08/31 07:32:28 ajacoutot Exp $
 
 COMMENT=		tag editor for various audio file formats
 
@@ -37,7 +37,6 @@ LIB_DEPENDS=		audio/id3lib \
 			x11/gtk+3
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-nautilus-actions
+CONFIGURE_ARGS=		--disable-nautilus-actions
 
 .include <bsd.port.mk>
