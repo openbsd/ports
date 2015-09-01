@@ -1,10 +1,10 @@
-$OpenBSD: patch-xwindow_xlib_x_window_c,v 1.7 2015/06/09 12:55:33 dcoppa Exp $
+$OpenBSD: patch-xwindow_xlib_x_window_c,v 1.8 2015/09/01 07:45:47 dcoppa Exp $
 
 'XKeycodeToKeysym' is deprecated
 
---- xwindow/xlib/x_window.c.orig	Sun Jun  7 03:36:22 2015
-+++ xwindow/xlib/x_window.c	Tue Jun  9 14:28:59 2015
-@@ -4318,7 +4318,7 @@ x_window_get_mod_meta_mask(
+--- xwindow/xlib/x_window.c.orig	Sun Aug 30 02:03:13 2015
++++ xwindow/xlib/x_window.c	Tue Sep  1 09:33:14 2015
+@@ -4326,7 +4326,7 @@ x_window_get_mod_meta_mask(
  				break ;
  			}
  

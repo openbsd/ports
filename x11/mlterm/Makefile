@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2015/06/29 08:37:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.46 2015/09/01 07:45:47 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	color terminal emulator with unicode support
-DISTNAME=	mlterm-3.5.0
-REVISION=	0
+DISTNAME=	mlterm-3.5.1
 
 SHARED_LIBS+=	kik	12.0 # 16.0
 SHARED_LIBS+=	mkf	14.1 # 16.1

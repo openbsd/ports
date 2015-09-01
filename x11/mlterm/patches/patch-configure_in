@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure_in,v 1.10 2015/05/18 06:06:49 dcoppa Exp $
+$OpenBSD: patch-configure_in,v 1.11 2015/09/01 07:45:47 dcoppa Exp $
 
 setuid root/setgid utmp are handled by PLIST
 
 Do not enable VTE support if libvte is around
 
---- configure.in.orig	Sat Mar 14 05:47:32 2015
-+++ configure.in	Mon May 18 07:35:37 2015
-@@ -661,46 +661,14 @@ AC_ARG_ENABLE(pty_helper,
+--- configure.in.orig	Sun Aug 30 02:03:13 2015
++++ configure.in	Tue Sep  1 09:37:52 2015
+@@ -661,44 +661,14 @@ AC_ARG_ENABLE(pty_helper,
  	pty_helper=$enable_pty_helper)
  if test "$utmp" = "yes" -a "$pty_helper" != "yes" ; then
  	UTMP_CFLAGS="-DUSE_UTMP"
@@ -32,21 +32,19 @@ Do not enable VTE support if libvte is around
 -	if test "${gtk_version}" = "3.0" ; then
 -		PKG_CHECK_MODULES(VTE, vte-2.91, have_vte=yes, have_vte=no)
 -		if test "$have_vte" = "yes" ; then
--			LIBVTE_SUFFIX=-2.91
+-			VTE_ABI=2.91
 -		else
 -			PKG_CHECK_MODULES(VTE, vte-2.90, have_vte=yes, have_vte=no)
--			LIBVTE_SUFFIX=2_90
+-			if test "$have_vte" = "yes"; then
+-				VTE_ABI=2.90
+-			fi
 -		fi
--		AC_SUBST(LIBVTE_SUFFIX)
 -	else
 -		PKG_CHECK_MODULES(VTE, vte, have_vte=yes, have_vte=no)
 -	fi
 -	if test "$have_vte" = "yes" ; then
 -		OUTPUT_FILES="gtk/Makefile ${OUTPUT_FILES}"
--		# "tr ..." is hack for cygwin.
--		# (removing \r which is output by win32 native pkg-config.)
--		VTE_CFLAGS="`echo $VTE_CFLAGS | tr -d '\r'`"
--		AC_SUBST(VTE_CFLAGS)
+-		AC_SUBST(VTE_ABI)
 -	fi
 -else
 -	have_vte=no
