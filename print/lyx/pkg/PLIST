@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2015/05/03 20:47:28 landry Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/09/01 14:37:50 landry Exp $
 @pkgpath print/lyx,qt
 @pkgpath print/lyx,xforms
 @bin bin/lyx
@@ -32,7 +32,10 @@ share/locale/nb/LC_MESSAGES/lyx.mo
 share/locale/nl/LC_MESSAGES/lyx.mo
 share/locale/nn/LC_MESSAGES/lyx.mo
 share/locale/pl/LC_MESSAGES/lyx.mo
-share/locale/pt/LC_MESSAGES/lyx.mo
+share/locale/pt_BR/LC_MESSAGES/lyx.mo
+share/locale/pt_PT/
+share/locale/pt_PT/LC_MESSAGES/
+share/locale/pt_PT/LC_MESSAGES/lyx.mo
 share/locale/ro/LC_MESSAGES/lyx.mo
 share/locale/ru/LC_MESSAGES/lyx.mo
 share/locale/sk/LC_MESSAGES/lyx.mo
@@ -298,6 +301,7 @@ share/lyx/examples/ItemizeBullets.lyx
 share/lyx/examples/Literate.lyx
 share/lyx/examples/MultilingualCaptions.lyx
 share/lyx/examples/PDF-comment.lyx
+share/lyx/examples/PDF-form.lyx
 share/lyx/examples/R-S-statements.lyx
 share/lyx/examples/aa_sample.lyx
 share/lyx/examples/aas_sample.lyx
@@ -336,8 +340,10 @@ share/lyx/examples/da/splash.lyx
 share/lyx/examples/de/
 share/lyx/examples/de/Braille.lyx
 share/lyx/examples/de/Dezimal.lyx
+share/lyx/examples/de/FeynmanDiagrams.lyx
 share/lyx/examples/de/ItemizeBullets.lyx
 share/lyx/examples/de/Lebenslauf.lyx
+share/lyx/examples/de/MultilingualCaptions.lyx
 share/lyx/examples/de/beamer-article.lyx
 share/lyx/examples/de/beamer.lyx
 share/lyx/examples/de/beispiel_gelyxt.lyx
@@ -377,6 +383,8 @@ share/lyx/examples/fr/Braille.lyx
 share/lyx/examples/fr/FeynmanDiagrams.lyx
 share/lyx/examples/fr/Foils.lyx
 share/lyx/examples/fr/ListesPuces.lyx
+share/lyx/examples/fr/MultilingualCaptions.lyx
+share/lyx/examples/fr/PDF-comment.lyx
 share/lyx/examples/fr/beamer-article.lyx
 share/lyx/examples/fr/beamer.lyx
 share/lyx/examples/fr/exemple-powerdot.lyx
@@ -1086,6 +1094,7 @@ share/lyx/images/math/blacktriangle.png
 share/lyx/images/math/blacktriangledown.png
 share/lyx/images/math/blacktriangleleft.png
 share/lyx/images/math/blacktriangleright.png
+share/lyx/images/math/boldsymbol.png
 share/lyx/images/math/bot.png
 share/lyx/images/math/bowtie.png
 share/lyx/images/math/bowtie2.png
@@ -1415,12 +1424,15 @@ share/lyx/images/math/mapsto2.png
 share/lyx/images/math/mapstochar.png
 share/lyx/images/math/mapstochar2.png
 share/lyx/images/math/mars.png
+share/lyx/images/math/mathbb.png
 share/lyx/images/math/mathbb_C.png
 share/lyx/images/math/mathbb_H.png
 share/lyx/images/math/mathbb_N.png
 share/lyx/images/math/mathbb_Q.png
 share/lyx/images/math/mathbb_R.png
 share/lyx/images/math/mathbb_Z.png
+share/lyx/images/math/mathbf.png
+share/lyx/images/math/mathcal.png
 share/lyx/images/math/mathcal_F.png
 share/lyx/images/math/mathcal_H.png
 share/lyx/images/math/mathcal_L.png
@@ -1428,12 +1440,18 @@ share/lyx/images/math/mathcal_O.png
 share/lyx/images/math/mathcircumflex.png
 share/lyx/images/math/mathclap.png
 share/lyx/images/math/mathdollar.png
+share/lyx/images/math/mathfrak.png
+share/lyx/images/math/mathit.png
 share/lyx/images/math/mathllap.png
 share/lyx/images/math/mathparagraph.png
 share/lyx/images/math/mathring.png
 share/lyx/images/math/mathrlap.png
+share/lyx/images/math/mathrm.png
 share/lyx/images/math/mathrm_T.png
+share/lyx/images/math/mathscr.png
 share/lyx/images/math/mathsection.png
+share/lyx/images/math/mathsf.png
+share/lyx/images/math/mathtt.png
 share/lyx/images/math/matrix.png
 share/lyx/images/math/measuredangle.png
 share/lyx/images/math/mercury.png
@@ -1691,6 +1709,7 @@ share/lyx/images/math/talloblong.png
 share/lyx/images/math/tau.png
 share/lyx/images/math/taurus.png
 share/lyx/images/math/textdegree.png
+share/lyx/images/math/textrm.png
 share/lyx/images/math/textrm_AA.png
 share/lyx/images/math/textrm_O.png
 share/lyx/images/math/therefore.png
@@ -2167,6 +2186,7 @@ share/lyx/layouts/numreport.inc
 share/lyx/layouts/numrevtex.inc
 share/lyx/layouts/paper.layout
 share/lyx/layouts/pdfcomment.module
+share/lyx/layouts/pdfform.module
 share/lyx/layouts/powerdot.layout
 share/lyx/layouts/recipebook.layout
 share/lyx/layouts/report.layout
@@ -2330,6 +2350,7 @@ share/lyx/scripts/TeXFiles.py
 share/lyx/scripts/bash_completion
 share/lyx/scripts/clean_dvi.py
 share/lyx/scripts/convertDefault.py
+share/lyx/scripts/convert_pdf.py
 share/lyx/scripts/csv2lyx.py
 share/lyx/scripts/date.py
 share/lyx/scripts/ext_copy.py
@@ -2388,6 +2409,7 @@ share/lyx/templates/g-brief-de.lyx
 share/lyx/templates/g-brief-en.lyx
 share/lyx/templates/g-brief2.lyx
 share/lyx/templates/hollywood.lyx
+share/lyx/templates/ja_beamer-conference-ornate-20min.lyx
 share/lyx/templates/kluwer.lyx
 share/lyx/templates/koma-letter2.lyx
 share/lyx/templates/letter.lyx
