@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2015/08/27 06:48:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2015/09/01 16:23:51 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
@@ -227,6 +227,7 @@ share/cups/templates/de/error.tmpl
 share/cups/templates/de/header.tmpl
 share/cups/templates/de/help-header.tmpl
 share/cups/templates/de/help-printable.tmpl
+share/cups/templates/de/help-trailer.tmpl
 share/cups/templates/de/job-cancel.tmpl
 share/cups/templates/de/job-hold.tmpl
 share/cups/templates/de/job-move.tmpl
@@ -481,6 +482,7 @@ share/cups/templates/ru/error.tmpl
 share/cups/templates/ru/header.tmpl
 share/cups/templates/ru/help-header.tmpl
 share/cups/templates/ru/help-printable.tmpl
+share/cups/templates/ru/help-trailer.tmpl
 share/cups/templates/ru/job-cancel.tmpl
 share/cups/templates/ru/job-hold.tmpl
 share/cups/templates/ru/job-move.tmpl
@@ -656,6 +658,7 @@ share/examples/cups/
 @mode 0640
 share/examples/cups/cups-files.conf
 @sample ${SYSCONFDIR}/cups/cups-files.conf
+share/examples/cups/cups-files.conf.default
 share/examples/cups/cupsd.conf
 share/examples/cups/cupsd.conf.default
 @sample ${SYSCONFDIR}/cups/cupsd.conf
@@ -685,6 +688,7 @@ share/examples/cups/ppd/
 @mode 0640
 share/examples/cups/snmp.conf
 @sample ${SYSCONFDIR}/cups/snmp.conf
+share/examples/cups/snmp.conf.default
 @mode
 share/examples/cups/ssl/
 @mode 0700

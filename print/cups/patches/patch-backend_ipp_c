@@ -1,11 +1,11 @@
-$OpenBSD: patch-backend_ipp_c,v 1.11 2015/08/01 07:18:12 ajacoutot Exp $
+$OpenBSD: patch-backend_ipp_c,v 1.12 2015/09/01 16:23:51 ajacoutot Exp $
 
 Increase timeout for the PPD file to be copied so that it doesn't fail
 on low-end configurations.
 
---- backend/ipp.c.orig	Wed Jun 24 22:06:30 2015
-+++ backend/ipp.c	Sat Aug  1 09:14:22 2015
-@@ -681,7 +681,7 @@ main(int  argc,				/* I - Number of command-line args 
+--- backend/ipp.c.orig	Wed Jun 24 21:55:31 2015
++++ backend/ipp.c	Tue Sep  1 18:13:41 2015
+@@ -684,7 +684,7 @@ main(int  argc,				/* I - Number of command-line args 
  
    http = httpConnect2(hostname, port, addrlist, AF_UNSPEC, cupsEncryption(), 1,
                        0, NULL);
@@ -14,7 +14,7 @@ on low-end configurations.
  
    if (httpIsEncrypted(http))
    {
-@@ -2306,7 +2306,7 @@ monitor_printer(
+@@ -2311,7 +2311,7 @@ monitor_printer(
  
    http = httpConnect2(monitor->hostname, monitor->port, NULL, AF_UNSPEC,
                        monitor->encryption, 1, 0, NULL);

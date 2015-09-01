@@ -1,6 +1,6 @@
-$OpenBSD: patch-test_run-stp-tests_sh,v 1.14 2015/02/10 08:29:33 ajacoutot Exp $
---- test/run-stp-tests.sh.orig	Fri Dec 19 17:56:15 2014
-+++ test/run-stp-tests.sh	Tue Feb 10 09:04:12 2015
+$OpenBSD: patch-test_run-stp-tests_sh,v 1.15 2015/09/01 16:23:51 ajacoutot Exp $
+--- test/run-stp-tests.sh.orig	Fri Aug 28 15:38:46 2015
++++ test/run-stp-tests.sh	Tue Sep  1 18:13:41 2015
 @@ -36,7 +36,7 @@ umask 022
  # Make the IPP test program...
  #
@@ -10,7 +10,7 @@ $OpenBSD: patch-test_run-stp-tests_sh,v 1.14 2015/02/10 08:29:33 ajacoutot Exp $
  
  #
  # Solaris has a non-POSIX grep in /bin...
-@@ -593,7 +593,7 @@ fi
+@@ -594,7 +594,7 @@ fi
  
  export LD_LIBRARY_PATH
  
