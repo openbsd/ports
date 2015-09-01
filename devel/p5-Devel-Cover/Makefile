@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2015/07/16 23:57:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/09/01 07:04:04 benoit Exp $
 
 COMMENT =	code coverage metrics for Perl
 SHARED_ONLY =	Yes
 
 MODULES =	cpan
-DISTNAME =	Devel-Cover-1.00
+DISTNAME =	Devel-Cover-1.20
 CATEGORIES =	devel
-REVISION =	1
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/07/16 23:57:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/09/01 07:04:04 benoit Exp $
 bin/cover
 bin/cpancover
 bin/gcov2perl
@@ -10,6 +10,7 @@ ${P5ARCH}/Devel/Cover/Annotation/Git.pm
 ${P5ARCH}/Devel/Cover/Annotation/Random.pm
 ${P5ARCH}/Devel/Cover/Annotation/Svk.pm
 ${P5ARCH}/Devel/Cover/Branch.pm
+${P5ARCH}/Devel/Cover/Collection.pm
 ${P5ARCH}/Devel/Cover/Condition.pm
 ${P5ARCH}/Devel/Cover/Condition_and_2.pm
 ${P5ARCH}/Devel/Cover/Condition_and_3.pm
@@ -24,6 +25,7 @@ ${P5ARCH}/Devel/Cover/DB/File.pm
 ${P5ARCH}/Devel/Cover/DB/IO/
 ${P5ARCH}/Devel/Cover/DB/IO.pm
 ${P5ARCH}/Devel/Cover/DB/IO/JSON.pm
+${P5ARCH}/Devel/Cover/DB/IO/Sereal.pm
 ${P5ARCH}/Devel/Cover/DB/IO/Storable.pm
 ${P5ARCH}/Devel/Cover/DB/Structure.pm
 ${P5ARCH}/Devel/Cover/Dumper.pm
@@ -37,6 +39,7 @@ ${P5ARCH}/Devel/Cover/Report/Html.pm
 ${P5ARCH}/Devel/Cover/Report/Html_basic.pm
 ${P5ARCH}/Devel/Cover/Report/Html_minimal.pm
 ${P5ARCH}/Devel/Cover/Report/Html_subtle.pm
+${P5ARCH}/Devel/Cover/Report/Json.pm
 ${P5ARCH}/Devel/Cover/Report/Sort.pm
 ${P5ARCH}/Devel/Cover/Report/Text.pm
 ${P5ARCH}/Devel/Cover/Report/Text2.pm
@@ -60,6 +63,7 @@ ${P5ARCH}/auto/Devel/Cover/Cover.so
 @man man/man3p/Devel::Cover::Annotation::Random.3p
 @man man/man3p/Devel::Cover::Annotation::Svk.3p
 @man man/man3p/Devel::Cover::Branch.3p
+@man man/man3p/Devel::Cover::Collection.3p
 @man man/man3p/Devel::Cover::Condition.3p
 @man man/man3p/Devel::Cover::Condition_and_2.3p
 @man man/man3p/Devel::Cover::Condition_and_3.3p
@@ -72,6 +76,7 @@ ${P5ARCH}/auto/Devel/Cover/Cover.so
 @man man/man3p/Devel::Cover::DB::File.3p
 @man man/man3p/Devel::Cover::DB::IO.3p
 @man man/man3p/Devel::Cover::DB::IO::JSON.3p
+@man man/man3p/Devel::Cover::DB::IO::Sereal.3p
 @man man/man3p/Devel::Cover::DB::IO::Storable.3p
 @man man/man3p/Devel::Cover::DB::Structure.3p
 @man man/man3p/Devel::Cover::Dumper.3p
@@ -83,6 +88,7 @@ ${P5ARCH}/auto/Devel/Cover/Cover.so
 @man man/man3p/Devel::Cover::Report::Html_basic.3p
 @man man/man3p/Devel::Cover::Report::Html_minimal.3p
 @man man/man3p/Devel::Cover::Report::Html_subtle.3p
+@man man/man3p/Devel::Cover::Report::Json.3p
 @man man/man3p/Devel::Cover::Report::Sort.3p
 @man man/man3p/Devel::Cover::Report::Text.3p
 @man man/man3p/Devel::Cover::Report::Text2.3p
