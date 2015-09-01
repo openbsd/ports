@@ -1,0 +1,65 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1 2015/09/01 15:58:26 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=754154
+
+--- tests/Makefile.in.orig	Tue Sep  1 13:46:32 2015
++++ tests/Makefile.in	Tue Sep  1 17:39:50 2015
+@@ -96,7 +96,7 @@ host_triplet = @host@
+ TESTS = $(am__EXEEXT_2)
+ installed_test_PROGRAMS = $(am__EXEEXT_5)
+ noinst_PROGRAMS = $(am__EXEEXT_6) pixbuf-read$(EXEEXT) \
+-	pixbuf-lowmem$(EXEEXT) pixbuf-random$(EXEEXT) $(am__EXEEXT_1)
++	pixbuf-random$(EXEEXT) $(am__EXEEXT_1)
+ check_PROGRAMS = $(am__EXEEXT_4)
+ @ENABLE_ALWAYS_BUILD_TESTS_TRUE@am__append_1 = $(all_test_ltlibs)
+ @ENABLE_ALWAYS_BUILD_TESTS_TRUE@am__append_2 = $(all_test_programs)
+@@ -243,12 +243,6 @@ pixbuf_jpeg_LDADD = $(LDADD)
+ pixbuf_jpeg_DEPENDENCIES = $(top_builddir)/gdk-pixbuf/libgdk_pixbuf-$(GDK_PIXBUF_API_VERSION).la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+-pixbuf_lowmem_SOURCES = pixbuf-lowmem.c
+-pixbuf_lowmem_OBJECTS = pixbuf-lowmem.$(OBJEXT)
+-pixbuf_lowmem_LDADD = $(LDADD)
+-pixbuf_lowmem_DEPENDENCIES = $(top_builddir)/gdk-pixbuf/libgdk_pixbuf-$(GDK_PIXBUF_API_VERSION).la \
+-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+-	$(am__DEPENDENCIES_1)
+ pixbuf_random_SOURCES = pixbuf-random.c
+ pixbuf_random_OBJECTS = pixbuf-random.$(OBJEXT)
+ pixbuf_random_LDADD = $(LDADD)
+@@ -355,7 +349,7 @@ am__v_CCLD_1 = 
+ SOURCES = animation.c $(cve_2015_4491_SOURCES) \
+ 	$(pixbuf_composite_SOURCES) $(pixbuf_dpi_SOURCES) \
+ 	$(pixbuf_icc_SOURCES) $(pixbuf_icon_serialize_SOURCES) \
+-	$(pixbuf_jpeg_SOURCES) pixbuf-lowmem.c pixbuf-random.c \
++	$(pixbuf_jpeg_SOURCES) pixbuf-random.c \
+ 	pixbuf-randomly-modified.c pixbuf-read.c \
+ 	$(pixbuf_readonly_to_mutable_SOURCES) \
+ 	$(pixbuf_resource_SOURCES) $(pixbuf_save_SOURCES) \
+@@ -364,7 +358,7 @@ SOURCES = animation.c $(cve_2015_4491_SOURCES) \
+ DIST_SOURCES = animation.c $(cve_2015_4491_SOURCES) \
+ 	$(pixbuf_composite_SOURCES) $(pixbuf_dpi_SOURCES) \
+ 	$(pixbuf_icc_SOURCES) $(pixbuf_icon_serialize_SOURCES) \
+-	$(pixbuf_jpeg_SOURCES) pixbuf-lowmem.c pixbuf-random.c \
++	$(pixbuf_jpeg_SOURCES) pixbuf-random.c \
+ 	pixbuf-randomly-modified.c pixbuf-read.c \
+ 	$(pixbuf_readonly_to_mutable_SOURCES) \
+ 	$(pixbuf_resource_SOURCES) $(pixbuf_save_SOURCES) \
+@@ -1145,10 +1139,6 @@ pixbuf-jpeg$(EXEEXT): $(pixbuf_jpeg_OBJECTS) $(pixbuf_
+ 	@rm -f pixbuf-jpeg$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(pixbuf_jpeg_OBJECTS) $(pixbuf_jpeg_LDADD) $(LIBS)
+ 
+-pixbuf-lowmem$(EXEEXT): $(pixbuf_lowmem_OBJECTS) $(pixbuf_lowmem_DEPENDENCIES) $(EXTRA_pixbuf_lowmem_DEPENDENCIES) 
+-	@rm -f pixbuf-lowmem$(EXEEXT)
+-	$(AM_V_CCLD)$(LINK) $(pixbuf_lowmem_OBJECTS) $(pixbuf_lowmem_LDADD) $(LIBS)
+-
+ pixbuf-random$(EXEEXT): $(pixbuf_random_OBJECTS) $(pixbuf_random_DEPENDENCIES) $(EXTRA_pixbuf_random_DEPENDENCIES) 
+ 	@rm -f pixbuf-random$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(pixbuf_random_OBJECTS) $(pixbuf_random_LDADD) $(LIBS)
+@@ -1237,7 +1227,6 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pixbuf-icc.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pixbuf-icon-serialize.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pixbuf-jpeg.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pixbuf-lowmem.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pixbuf-random.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pixbuf-randomly-modified.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pixbuf-read.Po@am__quote@

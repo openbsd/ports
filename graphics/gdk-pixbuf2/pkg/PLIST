@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2015/05/22 11:31:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/09/01 15:58:26 ajacoutot Exp $
 @conflict gtk+2-<2.22
 @conflict gtk+2-docs-<2.22
 @unexec-delete rm -f %D/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
@@ -12,6 +12,7 @@ include/gdk-pixbuf-2.0/gdk-pixbuf-xlib/
 include/gdk-pixbuf-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlib.h
 include/gdk-pixbuf-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-animation.h
+include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-autocleanups.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-core.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-enum-types.h
 include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixbuf-features.h
@@ -50,6 +51,7 @@ share/gtk-doc/html/gdk-pixbuf/api-index-2-2.html
 share/gtk-doc/html/gdk-pixbuf/api-index-2-26.html
 share/gtk-doc/html/gdk-pixbuf/api-index-2-28.html
 share/gtk-doc/html/gdk-pixbuf/api-index-2-30.html
+share/gtk-doc/html/gdk-pixbuf/api-index-2-32.html
 share/gtk-doc/html/gdk-pixbuf/api-index-2-4.html
 share/gtk-doc/html/gdk-pixbuf/api-index-2-6.html
 share/gtk-doc/html/gdk-pixbuf/api-index-2-8.html
@@ -78,7 +80,6 @@ share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-query-loaders.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf.devhelp2
 share/gtk-doc/html/gdk-pixbuf/home.png
 share/gtk-doc/html/gdk-pixbuf/index.html
-share/gtk-doc/html/gdk-pixbuf/index.sgml
 share/gtk-doc/html/gdk-pixbuf/left-insensitive.png
 share/gtk-doc/html/gdk-pixbuf/left.png
 share/gtk-doc/html/gdk-pixbuf/license.html
@@ -96,8 +97,6 @@ share/locale/ang/
 share/locale/ang/LC_MESSAGES/
 share/locale/ang/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/ar/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/as/
-share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/ast/
 share/locale/ast/LC_MESSAGES/
@@ -148,8 +147,6 @@ share/locale/fi/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/fr/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/ga/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/gl/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/gu/
-share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/he/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/hi/LC_MESSAGES/gdk-pixbuf.mo
@@ -169,11 +166,10 @@ share/locale/is/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/it/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/ja/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/ka/LC_MESSAGES/gdk-pixbuf.mo
+share/locale/kk/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/km/
 share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/kn/
-share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/ko/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/ku/
@@ -193,14 +189,10 @@ share/locale/mi/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/ml/
-share/locale/ml/LC_MESSAGES/
 share/locale/ml/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/mn/
 share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/mr/
-share/locale/mr/LC_MESSAGES/
 share/locale/mr/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/ms/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/my/
@@ -218,11 +210,7 @@ share/locale/nn/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/nso/
 share/locale/nso/LC_MESSAGES/
 share/locale/nso/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/oc/
-share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/or/
-share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/pa/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/pl/LC_MESSAGES/gdk-pixbuf.mo
@@ -245,15 +233,11 @@ share/locale/sr@ije/LC_MESSAGES/
 share/locale/sr@ije/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/sr@latin/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/sv/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/ta/
-share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/te/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/tg/
 share/locale/tg/LC_MESSAGES/
 share/locale/tg/LC_MESSAGES/gdk-pixbuf.mo
-share/locale/th/
-share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/tk/
 share/locale/tk/LC_MESSAGES/
