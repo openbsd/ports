@@ -1,23 +1,18 @@
-# $OpenBSD: Makefile,v 1.13 2014/05/07 15:42:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.14 2015/09/01 19:29:22 jasper Exp $
 
 COMMENT=	Java Native Access (JNA)
 
-V=		3.5.1
-DISTNAME=	jna-$V-a31faf3026
-PKGNAME=	jna-$V
-EXTRACT_SUFX=	.zip
+GH_PROJECT=	jna
+GH_ACCOUNT=	java-native-access
+GH_TAGNAME=	4.1.0
+DISTNAME=	${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES=	devel
-REVISION=	1
-
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-HOMEPAGE=	https://github.com/twall/jna
+HOMEPAGE=	https://github.com/java-native-access/jna
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
-
-# git tag of $V
-MASTER_SITES=	http://distfiles.nl/
 
 MODULES=	java
 MODJAVA_VER=	1.6+
@@ -28,16 +23,13 @@ USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	sysutils/ggrep
 
-_BD = build
-.if ${MACHINE_ARCH} != "i386"
-_BD = build-*
-.endif
+GNU_ARCH=	${ARCH:S/amd64/x86-64/}
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR} ${MODJAVA_DOC_DIR}/jna/
-	${INSTALL_DATA} ${WRKSRC}/${_BD}/openbsd-${ARCH}.jar \
+	${INSTALL_DATA} ${WRKSRC}/build/openbsd-${GNU_ARCH}.jar \
 		${MODJAVA_JAR_DIR}/jna-platform.jar
-	${INSTALL_DATA} ${WRKSRC}/${_BD}/jna.jar ${MODJAVA_JAR_DIR}
+	${INSTALL_DATA} ${WRKSRC}/build/jna*.jar ${MODJAVA_JAR_DIR}
 	cp -r ${WRKSRC}/www/javadoc/ ${MODJAVA_DOC_DIR}
 
 do-test:

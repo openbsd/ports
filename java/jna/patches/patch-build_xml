@@ -1,16 +1,16 @@
-$OpenBSD: patch-build_xml,v 1.1 2013/03/08 10:25:34 jasper Exp $
---- build.xml.orig	Tue Feb 12 23:28:31 2013
-+++ build.xml	Tue Feb 12 23:29:10 2013
-@@ -105,7 +105,7 @@
+$OpenBSD: patch-build_xml,v 1.2 2015/09/01 19:29:22 jasper Exp $
+--- build.xml.orig	Thu Mar  6 17:06:40 2014
++++ build.xml	Tue Sep  1 21:13:00 2015
+@@ -128,7 +128,7 @@
    <!-- Miscellaneous -->
    <property name="build.compiler.emacs" value="true"/>
  
 -  <target name="default" depends="test" description="Build and Test."/>
-+  <target name="default" depends="javadoc,jar,contrib-jars" description="Build and Test."/>
++  <target name="default" depends="-enable-native,jar,javadoc" description="Build and Test."/>
  
    <target name="init" depends="-setup"/>
    <target name="compile-test-single" depends="compile-tests"/>
-@@ -716,9 +716,6 @@ osname=macos
+@@ -827,9 +827,6 @@ osname=macosx;processor=x86;processor=x86-64;processor
      <jar jarfile="${build}/jws/jnidispatch.jar">
        <fileset dir="${build.native}" includes="*jnidispatch.*"/>
      </jar>
