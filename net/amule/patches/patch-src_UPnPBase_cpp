@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_UPnPBase_cpp,v 1.1 2015/09/01 07:30:30 dcoppa Exp $
+
+Fix the return value of CUPnPService::GetStateVariable
+(from upstream git commit 171bc8f931dccae64f1f7d43c84a4e8ce0f0dc49)
+
+--- src/UPnPBase.cpp.orig	Tue Sep  1 09:11:11 2015
++++ src/UPnPBase.cpp	Tue Sep  1 09:11:59 2015
+@@ -751,7 +751,7 @@ const std::string CUPnPService::GetStateVariable(
+ 		StVarVal <<
+ 		"'.";
+ 	AddDebugLogLineN(logUPnP, msg);
+-	return stdEmptyString;
++	return StVarVal;
+ }
+ 
+ 

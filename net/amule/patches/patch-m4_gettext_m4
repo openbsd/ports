@@ -1,0 +1,21 @@
+$OpenBSD: patch-m4_gettext_m4,v 1.1 2015/09/01 07:30:30 dcoppa Exp $
+--- m4/gettext.m4.orig	Fri Nov 11 21:59:19 2011
++++ m4/gettext.m4	Tue Aug 18 11:41:52 2015
+@@ -265,7 +265,7 @@ return (int) gettext ("")]ifelse([$2], [need-ngettext]
+     if test "$gt_use_preinstalled_gnugettext" = "yes"; then
+       if test "$gt_cv_func_gnugettext_libintl" = "yes"; then
+         AC_MSG_CHECKING([how to link with libintl])
+-        AC_MSG_RESULT([$LIBINTL])
++        AC_MSG_RESULT([$LTLIBINTL])
+         AC_LIB_APPENDTOVAR([CPPFLAGS], [$INCINTL])
+       fi
+ 
+@@ -315,7 +315,7 @@ return (int) gettext ("")]ifelse([$2], [need-ngettext]
+   ])
+ 
+   dnl For backward compatibility. Some Makefiles may be using this.
+-  INTLLIBS="$LIBINTL"
++  INTLLIBS="$LTLIBINTL"
+   AC_SUBST(INTLLIBS)
+ 
+   dnl Make all documented variables known to autoconf.

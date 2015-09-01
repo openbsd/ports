@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2015/08/04 06:43:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2015/09/01 07:30:30 dcoppa Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -6,9 +6,9 @@ COMMENT-daemon =stand-alone daemon/cmdline for amule
 
 V =		2.3.1
 DISTNAME =	aMule-$V
-REVISION-main =	19
-REVISION-web =	18
-REVISION-daemon =18
+REVISION-main =	20
+REVISION-web =	19
+REVISION-daemon =19
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
@@ -26,9 +26,7 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=amule/}
 EXTRACT_SUFX =	.tar.xz
 
-.if defined (SUBPACKAGE) && ${SUBPACKAGE:M-main}
-MODULES +=	converters/libiconv
-.endif
+MODULES =	devel/gettext
 
 LIB_DEPENDS =
 WANTLIB =
@@ -36,8 +34,7 @@ RUN_DEPENDS =
 
 # bison needed if .y files are patched
 BUILD_DEPENDS =		devel/bison \
-			devel/flex \
-			devel/gettext-tools
+			devel/flex
 
 commonLIB_DEPENDS =	x11/wxWidgets>=2.8.12 \
 			net/libupnp>=1.6.6
