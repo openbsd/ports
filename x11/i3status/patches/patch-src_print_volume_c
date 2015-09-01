@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_print_volume_c,v 1.6 2015/07/30 08:11:53 robert Exp $
+$OpenBSD: patch-src_print_volume_c,v 1.7 2015/09/01 11:09:37 jasper Exp $
 
-Use mixer(4) directly and move away from ossaudio.
-This fixes the volume display where there is no hardware
-button available and also fixes showing the mute status.
+From 15f2279592032af1507de09ef31eba81aee53191 Mon Sep 17 00:00:00 2001
+From: "Dmitrij D. Czarkoff" <czarkoff@gmail.com>
+Date: Fri, 31 Jul 2015 01:51:40 +0200
+Subject: [PATCH] Use SndIO for volume module on OpenBSD
 
 --- src/print_volume.c.orig	Wed Jul 29 15:31:44 2015
 +++ src/print_volume.c	Wed Jul 29 15:31:47 2015
