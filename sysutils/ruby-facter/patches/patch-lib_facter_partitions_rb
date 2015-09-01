@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_facter_partitions_rb,v 1.4 2015/09/01 07:23:35 jasper Exp $
+
+Cache df/mount output to prevent running these programs 3 times for every partition found.
+https://github.com/puppetlabs/facter/pull/1119
+
+--- lib/facter/partitions.rb.orig	Mon Aug 31 19:03:25 2015
++++ lib/facter/partitions.rb	Mon Aug 31 19:03:35 2015
+@@ -36,4 +36,7 @@ Facter.add(:partitions) do
+     end
+     partitions
+   end
++  on_flush do
++    Facter::Util::Partitions.flush! if Facter::Util::Partitions.flushable?
++  end
+ end
