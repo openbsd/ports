@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/08/25 14:44:10 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2015/09/01 09:36:30 benoit Exp $
 
 COMMENT =	elapsed and estimated finish time reporting
 
-DISTNAME =	Time-Progress-1.9
+DISTNAME =	Time-Progress-1.10
 CATEGORIES =	devel
 
 # Perl
