@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_common_py,v 1.1 2015/09/02 18:50:08 juanfra Exp $
+
+https://bitbucket.org/jwilk/pdf2djvu/issues/108/pdf2djvu-081-the-tests-fail-on-openbsd
+
+--- tests/common.py.orig	Thu Aug 13 17:49:20 2015
++++ tests/common.py	Mon Aug 31 20:22:47 2015
+@@ -133,6 +133,9 @@ class case(object):
+             env=env,
+         )
+         stdout, stderr = child.communicate()
++        if sys.platform.startswith('openbsd'):
++            # FIXME: https://bitbucket.org/jwilk/pdf2djvu/issues/108
++            stderr = re(r'Magick: Failed to close module [(]"\w*: Invalid handle\"[)].\n').sub('', stderr)
+         stderr = re(r'^(?:  \S+ --> \S+ \(\d+ bytes\)\n)+$').sub('', stderr)  # strip djvuextract cruft
+         return ipc_result(stdout, stderr, child.returncode)
+ 
