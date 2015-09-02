@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/09/02 19:33:51 benoit Exp $
 
 COMMENT =	datetime sets and set math
 
 MODULES =	cpan
-DISTNAME =	DateTime-Set-0.28
-REVISION =	0
+DISTNAME =	DateTime-Set-0.3400
 CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
-
-CONFIGURE_STYLE =	modbuild
 
 RUN_DEPENDS =		devel/p5-DateTime \
 			devel/p5-Params-Validate \
