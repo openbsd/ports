@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.380 2015/08/29 15:56:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.381 2015/09/02 16:10:38 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -85,6 +85,7 @@
      SUBDIR += kpcli
      SUBDIR += kqoauth
      SUBDIR += l0phtcrack
+     SUBDIR += lastpass-cli
      SUBDIR += libassuan
      SUBDIR += libfprint
      SUBDIR += libgcrypt
