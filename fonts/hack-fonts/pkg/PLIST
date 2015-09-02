@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/02 08:51:42 jasper Exp $
+share/fonts/
+@fontdir share/fonts/Hack/
+share/fonts/Hack/Hack-Bold.otf
+share/fonts/Hack/Hack-BoldOblique.otf
+share/fonts/Hack/Hack-Regular.otf
+share/fonts/Hack/Hack-RegularOblique.otf
