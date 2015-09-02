@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/30 06:14:14 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/02 07:54:00 kirby Exp $
 @conflict ocsync-*
 @conflict mirall-*
 @pkgpath net/ocsync
@@ -114,6 +114,7 @@ share/owncloud/i18n/client_gl.qm
 share/owncloud/i18n/client_hu.qm
 share/owncloud/i18n/client_it.qm
 share/owncloud/i18n/client_ja.qm
+share/owncloud/i18n/client_nb_NO.qm
 share/owncloud/i18n/client_nl.qm
 share/owncloud/i18n/client_pl.qm
 share/owncloud/i18n/client_pt.qm

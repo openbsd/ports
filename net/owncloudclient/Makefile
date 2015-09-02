@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/19 20:34:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/02 07:53:59 kirby Exp $
 
 COMMENT =		owncloud sync client
 
-DISTNAME =		owncloudclient-1.8.3
-REVISION =		0
+DISTNAME =		owncloudclient-2.0.0
 
-SHARED_LIBS =		owncloudsync	1.0
-SHARED_LIBS +=		ocsync		1.0
+SHARED_LIBS =		owncloudsync	2.0
+SHARED_LIBS +=		ocsync		2.0
 
 CATEGORIES =		net
 
@@ -53,7 +52,7 @@ post-extract:
 		${WRKSRC}/cmake/modules/FindIconv_local.cmake
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
-	mv ${WRKINST}/etc ${PREFIX}/share/examples/mirall
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mirall/
+	mv ${WRKINST}/etc/ownCloud ${PREFIX}/share/examples/mirall/
 
 .include <bsd.port.mk>

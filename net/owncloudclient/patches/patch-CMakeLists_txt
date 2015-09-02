@@ -1,12 +1,14 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2015/08/11 21:25:47 kirby Exp $
---- CMakeLists.txt.orig	Mon Jun 22 17:28:35 2015
-+++ CMakeLists.txt	Sun Aug  9 23:22:04 2015
-@@ -193,7 +193,7 @@ add_subdirectory(csync)
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2015/09/02 07:53:59 kirby Exp $
+--- CMakeLists.txt.orig	Mon Aug 24 15:23:54 2015
++++ CMakeLists.txt	Mon Aug 31 13:47:57 2015
+@@ -201,8 +201,8 @@ add_subdirectory(csync)
  add_subdirectory(src)
  if(NOT BUILD_LIBRARIES_ONLY)
  add_subdirectory(shell_integration)
 -add_subdirectory(doc)
+-add_subdirectory(doc/dev)
 +#add_subdirectory(doc)
++#add_subdirectory(doc/dev)
  add_subdirectory(admin)
  endif(NOT BUILD_LIBRARIES_ONLY)
  
