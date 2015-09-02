@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/02 06:53:24 benoit Exp $
 
 COMMENT=	handle GnuPG-encrypted/signed messages
 
-DISTNAME=	Mail-GnuPG-0.16
+DISTNAME =	Mail-GnuPG-0.21
 CATEGORIES=	mail security
 
 # perl
