@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/19 09:17:17 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/02 12:35:33 benoit Exp $
 
 COMMENT =		module to do NFS (or not) locking
 
-DISTNAME =		File-NFSLock-1.21
+DISTNAME =		File-NFSLock-1.27
 CATEGORIES =		sysutils
 
 # perl
