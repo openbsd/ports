@@ -1,6 +1,6 @@
-$OpenBSD: patch-pgadmin_frm_events_cpp,v 1.1 2014/10/24 15:01:18 dcoppa Exp $
---- pgadmin/frm/events.cpp.orig	Fri Sep 27 16:51:46 2013
-+++ pgadmin/frm/events.cpp	Thu Oct 23 12:46:41 2014
+$OpenBSD: patch-pgadmin_frm_events_cpp,v 1.2 2015/09/02 10:03:34 landry Exp $
+--- pgadmin/frm/events.cpp.orig	Fri May 30 12:42:41 2014
++++ pgadmin/frm/events.cpp	Mon Aug 24 17:37:18 2015
 @@ -41,7 +41,7 @@
  
  // Mutex to protect the "currentObject" from race conditions.
@@ -14,11 +14,10 @@ $OpenBSD: patch-pgadmin_frm_events_cpp,v 1.1 2014/10/24 15:01:18 dcoppa Exp $
  	//
  	// Lock the assignment to prevent the race conditions between onSelRightClick and execSelChange.
  	//
--		s_currentObjectMutex.Lock();
--		currentObject = browser->GetObject(item);
--		s_currentObjectMutex.Unlock();
+-	s_currentObjectMutex.Lock();
 +	currentObjectMutex->Lock();
-+	currentObject = browser->GetObject(item);
+ 	currentObject = browser->GetObject(item);
+-	s_currentObjectMutex.Unlock();
 +	currentObjectMutex->Unlock();
  
  	// If we didn't get an object, then we may have a right click, or
