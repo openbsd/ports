@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/21 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/02 06:25:01 benoit Exp $
 
 COMMENT =	use Hash::Util::FieldHash or ties, depending on availability
 
 MODULES =	cpan
-DISTNAME =	Hash-Util-FieldHash-Compat-0.03
-REVISION =	0
+DISTNAME =	Hash-Util-FieldHash-Compat-0.09
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 TEST_DEPENDS =	devel/p5-Test-use-ok
 
