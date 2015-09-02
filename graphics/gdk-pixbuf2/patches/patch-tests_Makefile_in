@@ -1,6 +1,9 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.1 2015/09/01 15:58:26 ajacoutot Exp $
+$OpenBSD: patch-tests_Makefile_in,v 1.2 2015/09/02 07:13:36 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=754154
+From 844bf5d40cce33a75088a6c5ab1bc82970fbfa0b Mon Sep 17 00:00:00 2001
+From: Yaakov Selkowitz <yselkowi@redhat.com>
+Date: Tue, 1 Sep 2015 17:23:06 -0500
+Subject: Fix build on non-linux systems after commit
 
 --- tests/Makefile.in.orig	Tue Sep  1 13:46:32 2015
 +++ tests/Makefile.in	Tue Sep  1 17:39:50 2015
