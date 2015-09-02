@@ -1,41 +1,15 @@
-$OpenBSD: patch-generator_py,v 1.1 2015/07/14 23:30:27 jasper Exp $
+$OpenBSD: patch-generator_py,v 1.2 2015/09/02 06:35:26 jasper Exp $
 
-- revert:
-  From d3e2aff6a701480bf19bdfe748c1c6def2db0a50 Mon Sep 17 00:00:00 2001
-  From: Jiri Denemark <jdenemar@redhat.com>
-  Date: Fri, 5 Jun 2015 10:17:53 +0200
-  Subject: [PATCH] Provide symbolic names for typed parameters
+https://bugzilla.redhat.com/show_bug.cgi?id=1222795
 
-  https://bugzilla.redhat.com/show_bug.cgi?id=1222795
-
---- generator.py.orig	Thu Jul  2 07:32:19 2015
-+++ generator.py	Fri Jul 10 21:16:15 2015
-@@ -10,7 +10,6 @@ enums = {} # { enumType: { enumConstant: enumValue } }
- lxc_enums = {} # { enumType: { enumConstant: enumValue } }
- qemu_enums = {} # { enumType: { enumConstant: enumValue } }
- event_ids = []
--params = [] # [ (parameName, paramValue)... ]
- 
- import os
- import sys
-@@ -135,9 +134,6 @@ class docParser(xml.sax.handler.ContentHandler):
-                 lxc_enum(attrs['type'],attrs['name'],attrs['value'])
+--- generator.py.orig	Wed Sep  2 08:33:58 2015
++++ generator.py	Wed Sep  2 08:34:11 2015
+@@ -136,7 +136,7 @@ class docParser(xml.sax.handler.ContentHandler):
              elif attrs['file'] == "libvirt-qemu":
                  qemu_enum(attrs['type'],attrs['name'],attrs['value'])
--        elif tag == "macro":
+         elif tag == "macro":
 -            if "string" in attrs:
--                params.append((attrs['name'], attrs['string']))
++            if "string" in attrs.keys():
+                 params.append((attrs['name'], attrs['string']))
  
      def end(self, tag):
-         if debug:
-@@ -1884,10 +1880,6 @@ def buildWrappers(module):
-         for name,value in items:
-             classes.write("%s = %s\n" % (name,value))
-         classes.write("\n")
--
--    classes.write("# typed parameter names\n")
--    for name, value in params:
--        classes.write("%s = \"%s\"\n" % (name, value))
- 
-     classes.close()
- 
