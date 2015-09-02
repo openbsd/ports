@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2014/11/15 22:17:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2015/09/02 06:41:23 benoit Exp $
 
 COMMENT=	classes to create and decode MIME messages in PHP
 
-DISTNAME=	Mail_Mime-1.8.9
+DISTNAME=	Mail_Mime-1.9.0
 CATEGORIES=	mail
 
 MODULES=	www/pear
