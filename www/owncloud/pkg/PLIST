@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2015/08/13 06:53:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.49 2015/09/03 05:43:57 ajacoutot Exp $
 @extra owncloud/config/config.php
 conf/modules.sample/httpd-owncloud.conf.dist
 @sample conf/modules.sample/httpd-owncloud.conf
@@ -5221,6 +5221,7 @@ owncloud/apps/files_external/3rdparty/icewind/smb/
 owncloud/apps/files_external/3rdparty/icewind/smb/LICENSE.txt
 owncloud/apps/files_external/3rdparty/icewind/smb/composer.json
 owncloud/apps/files_external/3rdparty/icewind/smb/src/
+owncloud/apps/files_external/3rdparty/icewind/smb/src/AbstractShare.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Connection.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/ErrorCodes.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/
@@ -5235,8 +5236,10 @@ owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/FileInUseExcepti
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/ForbiddenException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/HostDownException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidHostException.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidPathException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidRequestException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidTypeException.php
+owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/NoLoginServerException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/NoRouteToHostException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/NotEmptyException.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Exception/NotFoundException.php
@@ -5254,16 +5257,6 @@ owncloud/apps/files_external/3rdparty/icewind/smb/src/RawConnection.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Server.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/Share.php
 owncloud/apps/files_external/3rdparty/icewind/smb/src/TimeZoneProvider.php
-owncloud/apps/files_external/3rdparty/icewind/smb/tests/
-owncloud/apps/files_external/3rdparty/icewind/smb/tests/AbstractShare.php
-owncloud/apps/files_external/3rdparty/icewind/smb/tests/NativeShare.php
-owncloud/apps/files_external/3rdparty/icewind/smb/tests/NativeStream.php
-owncloud/apps/files_external/3rdparty/icewind/smb/tests/Parser.php
-owncloud/apps/files_external/3rdparty/icewind/smb/tests/Server.php
-owncloud/apps/files_external/3rdparty/icewind/smb/tests/Share.php
-owncloud/apps/files_external/3rdparty/icewind/smb/tests/bootstrap.php
-owncloud/apps/files_external/3rdparty/icewind/smb/tests/config.json
-owncloud/apps/files_external/3rdparty/icewind/smb/tests/phpunit.xml
 owncloud/apps/files_external/3rdparty/icewind/streams/
 owncloud/apps/files_external/3rdparty/icewind/streams/composer.json
 owncloud/apps/files_external/3rdparty/icewind/streams/src/
@@ -6341,6 +6334,7 @@ owncloud/apps/files_sharing/tests/etagpropagation.php
 owncloud/apps/files_sharing/tests/external/
 owncloud/apps/files_sharing/tests/external/cache.php
 owncloud/apps/files_sharing/tests/external/managertest.php
+owncloud/apps/files_sharing/tests/external/scannertest.php
 owncloud/apps/files_sharing/tests/externalstorage.php
 owncloud/apps/files_sharing/tests/helper.php
 owncloud/apps/files_sharing/tests/js/
@@ -8387,9 +8381,16 @@ owncloud/apps/user_ldap/tests/access.php
 owncloud/apps/user_ldap/tests/connection.php
 owncloud/apps/user_ldap/tests/group_ldap.php
 owncloud/apps/user_ldap/tests/integration/
+owncloud/apps/user_ldap/tests/integration/abstractintegrationtest.php
+owncloud/apps/user_ldap/tests/integration/data/
+owncloud/apps/user_ldap/tests/integration/data/avatar-invalid.gif
+owncloud/apps/user_ldap/tests/integration/data/avatar-valid.jpg
 owncloud/apps/user_ldap/tests/integration/exceptionOnLostConnection.php
+owncloud/apps/user_ldap/tests/integration/fakemanager.php
 owncloud/apps/user_ldap/tests/integration/lib/
 owncloud/apps/user_ldap/tests/integration/lib/IntegrationTestAccessGroupsMatchFilter.php
+owncloud/apps/user_ldap/tests/integration/lib/user/
+owncloud/apps/user_ldap/tests/integration/lib/user/IntegrationTestUserAvatar.php
 owncloud/apps/user_ldap/tests/integration/readme.md
 owncloud/apps/user_ldap/tests/integration/run-test.sh
 owncloud/apps/user_ldap/tests/integration/setup-scripts/
@@ -8674,10 +8675,6 @@ owncloud/core/css/styles.css
 owncloud/core/doc/
 owncloud/core/doc/admin/
 owncloud/core/doc/admin/_images/
-owncloud/core/doc/admin/_images/100000000000023100000082EE8AC471.png
-owncloud/core/doc/admin/_images/100000000000023F000000F8D2CD2E60.png
-owncloud/core/doc/admin/_images/100000000000030C00000070A51C0EF4.png
-owncloud/core/doc/admin/_images/100000000000033300000106C232E69B.png
 owncloud/core/doc/admin/_images/android_custom_1.png
 owncloud/core/doc/admin/_images/android_custom_10.png
 owncloud/core/doc/admin/_images/android_custom_11.png
@@ -8795,14 +8792,15 @@ owncloud/core/doc/admin/_images/external-storage-dropbox-configapp.png
 owncloud/core/doc/admin/_images/external-storage-dropbox-oc.png
 owncloud/core/doc/admin/_images/external-storage-dropbox.png
 owncloud/core/doc/admin/_images/external-storage-ftp.png
-owncloud/core/doc/admin/_images/external-storage-google-drive-0auth.png
-owncloud/core/doc/admin/_images/external-storage-google-drive-9.png
-owncloud/core/doc/admin/_images/external-storage-google-drive-sdk.png
 owncloud/core/doc/admin/_images/external-storage-google-drive.png
 owncloud/core/doc/admin/_images/external-storage-google-drive1.png
+owncloud/core/doc/admin/_images/external-storage-google-drive10.png
+owncloud/core/doc/admin/_images/external-storage-google-drive11.png
 owncloud/core/doc/admin/_images/external-storage-google-drive2.png
+owncloud/core/doc/admin/_images/external-storage-google-drive3.png
+owncloud/core/doc/admin/_images/external-storage-google-drive4.png
 owncloud/core/doc/admin/_images/external-storage-google-drive5.png
-owncloud/core/doc/admin/_images/external-storage-google-drive7.png
+owncloud/core/doc/admin/_images/external-storage-google-drive6.png
 owncloud/core/doc/admin/_images/external-storage-google-drive8.png
 owncloud/core/doc/admin/_images/external-storage-smb.png
 owncloud/core/doc/admin/_images/external-storage-webdav.png
@@ -9038,7 +9036,6 @@ owncloud/core/doc/admin/_sources/enterprise_ios_app/publishing_ios_app_7.txt
 owncloud/core/doc/admin/_sources/enterprise_ios_app/publishing_ios_app_8.txt
 owncloud/core/doc/admin/_sources/enterprise_ios_app/publishing_ios_app_9.txt
 owncloud/core/doc/admin/_sources/enterprise_user_management/
-owncloud/core/doc/admin/_sources/enterprise_user_management/file_firewall_configuration.txt
 owncloud/core/doc/admin/_sources/enterprise_user_management/index.txt
 owncloud/core/doc/admin/_sources/enterprise_user_management/user_auth_shibboleth.txt
 owncloud/core/doc/admin/_sources/index.txt
@@ -9190,7 +9187,6 @@ owncloud/core/doc/admin/enterprise_ios_app/publishing_ios_app_7.html
 owncloud/core/doc/admin/enterprise_ios_app/publishing_ios_app_8.html
 owncloud/core/doc/admin/enterprise_ios_app/publishing_ios_app_9.html
 owncloud/core/doc/admin/enterprise_user_management/
-owncloud/core/doc/admin/enterprise_user_management/file_firewall_configuration.html
 owncloud/core/doc/admin/enterprise_user_management/index.html
 owncloud/core/doc/admin/enterprise_user_management/user_auth_shibboleth.html
 owncloud/core/doc/admin/genindex.html
