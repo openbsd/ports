@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2015/04/02 14:21:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/09/03 07:20:06 benoit Exp $
 
 COMMENT =		library for getting/setting process names
 
-MODPY_EGG_VERSION =	1.1.8
+MODPY_EGG_VERSION =	1.1.9
 DISTNAME =		setproctitle-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-
-REVISION = 0
 
 CATEGORIES =		devel
 
