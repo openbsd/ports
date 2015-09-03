@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.66 2014/12/13 22:55:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2015/09/03 20:41:57 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-1.5.23
+DISTNAME=	mutt-1.5.24
 EPOCH=		0
-REVISION=	9
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
@@ -16,9 +15,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB+=	c crypto idn qdbm>=14 ssl z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mutt/} \
-		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
-		ftp://ftp.mutt.org/mutt/
+MASTER_SITES=	http://ftp.mutt.org/pub/mutt/ \
+		https://bitbucket.org/mutt/mutt/downloads/ \
+		ftp://ftp.mutt.org/pub/mutt/
 MASTER_SITES1=	http://lunar-linux.org/~tchan/mutt/
 MASTER_SITES2=	http://spacehopper.org/mutt/
 DIST_SUBDIR=	mutt
@@ -34,15 +33,11 @@ BUILD_DEPENDS+=	textproc/docbook-xsl \
 FLAVORS=	compressed gpgme sasl sidebar slang
 FLAVOR?=
 
-AUTOCONF_VERSION= 2.65
-AUTOMAKE_VERSION= 1.9
-CONFIGURE_STYLE=  autoconf
+CONFIGURE_STYLE=  gnu
 
 FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=	FLAVOR_COMMA
 
-BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
 CONFIGURE_ARGS+= --enable-external_dotlock \
 		--disable-fcntl \
 		--enable-flock \
@@ -100,14 +95,14 @@ WANTLIB+=	ncurses
 # already fixed: http://prefix.gentooexperimental.org:8000/mutt-patches
 
 # sidebar patch (not good, but people seem to like it...)
-DIST_SIDEBAR=	sidebar-1.5.22.diff1.gz:2
+DIST_SIDEBAR=	sidebar-1.5.24.diff.gz:2
 SUPDISTFILES+=	${DIST_SIDEBAR}
 .if ${FLAVOR:Msidebar}
 PATCHFILES+=	${DIST_SIDEBAR}
 .endif
 
 # compressed folders patch http://www.spinnaker.de/mutt/compressed/
-DIST_COMPR=	compressed-1.5.22.diff0.gz:2
+DIST_COMPR=	compressed-1.5.24.diff.gz:2
 SUPDISTFILES+=	${DIST_COMPR}
 .if ${FLAVOR:Mcompressed}
 PATCHFILES+=	${DIST_COMPR}
@@ -117,13 +112,18 @@ CONFIGURE_ARGS+= --enable-compressed
 # trashfolder, http://cedricduval.free.fr/mutt/patches/
 # enabled unconditionally, it's not *too* intrusive (additional flavours
 # mean a big increase in ports testing required).
-PATCHFILES+=	trashfolder-1.5.22.diff0.gz:2
+PATCHFILES+=	trashfolder-1.5.24.diff.gz:2
+
+.if ${FLAVOR:Msidebar} || ${FLAVOR:Mcompressed}
+AUTOCONF_VERSION= 2.65
+AUTOMAKE_VERSION= 1.9
+BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
 
 post-patch:
-	cd ${WRKSRC}; \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	    autoreconf --install
+	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf --install
+.endif
 
 post-install:
 	@mv -f ${PREFIX}/share/doc/mutt/samples/* ${PREFIX}/share/examples/mutt

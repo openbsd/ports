@@ -1,14 +1,15 @@
-$OpenBSD: patch-imap_browse_c,v 1.1 2014/05/13 14:27:53 sthen Exp $
---- imap/browse.c.orig	Tue Jan 20 04:36:13 2009
-+++ imap/browse.c	Mon Jun 15 21:06:09 2009
-@@ -322,7 +322,9 @@ int imap_mailbox_rename(const char* mailbox)
+$OpenBSD: patch-imap_browse_c,v 1.2 2015/09/03 20:41:57 sthen Exp $
+
+Use the old mailbox name, rather than uninitialized memory, as a suggestion
+for new mailbox name when renaming an IMAP folder.
+
+--- imap/browse.c.orig	Sun Aug 30 18:06:38 2015
++++ imap/browse.c	Thu Sep  3 21:05:49 2015
+@@ -322,6 +322,7 @@ int imap_mailbox_rename(const char* mailbox)
    }
  
    snprintf(buf, sizeof (buf), _("Rename mailbox %s to: "), mx.mbox);
--  
-+
 +  strfcpy (newname, NONULL (mx.mbox), sizeof (newname));
-+
+   
   if (mutt_get_field (buf, newname, sizeof (newname), M_FILE) < 0)
      goto fail;
- 
