@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/07/14 23:28:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2015/09/03 07:44:43 jasper Exp $
 @bin bin/virsh
 @bin bin/virt-host-validate
 bin/virt-pki-validate
@@ -76,13 +76,13 @@ share/doc/libvirt/html/drvesx.html
 share/doc/libvirt/html/drvhyperv.html
 share/doc/libvirt/html/drvlxc.html
 share/doc/libvirt/html/drvopenvz.html
-share/doc/libvirt/html/drvparallels.html
 share/doc/libvirt/html/drvphyp.html
 share/doc/libvirt/html/drvqemu.html
 share/doc/libvirt/html/drvremote.html
 share/doc/libvirt/html/drvtest.html
 share/doc/libvirt/html/drvuml.html
 share/doc/libvirt/html/drvvbox.html
+share/doc/libvirt/html/drvvirtuozzo.html
 share/doc/libvirt/html/drvvmware.html
 share/doc/libvirt/html/drvxen.html
 share/doc/libvirt/html/errors.html
