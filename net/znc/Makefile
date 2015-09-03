@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2015/08/31 17:39:46 jca Exp $
-
-BROKEN=		src/Csocket.cpp:1590:43: error: 'SSLv3_server_method' was not declared in this scope
+# $OpenBSD: Makefile,v 1.27 2015/09/03 15:48:59 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	advanced IRC bouncer
 
 DISTNAME=	znc-1.6.1
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}releases/
 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Csocket_cpp,v 1.2 2015/05/15 06:47:27 ajacoutot Exp $
---- src/Csocket.cpp.orig	Thu May 14 23:10:24 2015
-+++ src/Csocket.cpp	Thu May 14 23:11:00 2015
+$OpenBSD: patch-src_Csocket_cpp,v 1.3 2015/09/03 15:48:59 sthen Exp $
+--- src/Csocket.cpp.orig	Tue Aug  4 00:00:04 2015
++++ src/Csocket.cpp	Fri Aug 28 23:38:42 2015
 @@ -47,6 +47,7 @@
  #include <stdio.h>
  #include <openssl/conf.h>
@@ -9,3 +9,55 @@ $OpenBSD: patch-src_Csocket_cpp,v 1.2 2015/05/15 06:47:27 ajacoutot Exp $
  #endif /* HAVE_LIBSSL */
  
  #ifdef HAVE_ICU
+@@ -1463,6 +1464,7 @@ bool Csock::SSLClientSetup()
+ 
+ 	switch( m_iMethod )
+ 	{
++#ifndef OPENSSL_NO_SSL3
+ 	case SSL3:
+ 		m_ssl_ctx = SSL_CTX_new( SSLv3_client_method() );
+ 		if( !m_ssl_ctx )
+@@ -1471,6 +1473,7 @@ bool Csock::SSLClientSetup()
+ 			return( false );
+ 		}
+ 		break;
++#endif /* OPENSSL_NO_SSL3 */
+ 	case TLS12:
+ #if defined( TLS1_2_VERSION ) && defined( OPENSSL_VERSION_NUMBER ) && OPENSSL_VERSION_NUMBER >= 0x1000100f
+ 		m_ssl_ctx = SSL_CTX_new( TLSv1_2_client_method() );
+@@ -1510,6 +1513,9 @@ bool Csock::SSLClientSetup()
+ 		break;
+ #endif /* OPENSSL_NO_SSL2 */
+ 		/* Fall through if SSL2 is disabled */
++#ifdef OPENSSL_NO_SSL3
++	case SSL3:
++#endif
+ 	case SSL23:
+ 	default:
+ 		if( m_iMethod != SSL23 )
+@@ -1585,6 +1591,7 @@ SSL_CTX * Csock::SetupServerCTX()
+ 	SSL_CTX * pCTX = NULL;
+ 	switch( m_iMethod )
+ 	{
++#ifndef OPENSSL_NO_SSL3
+ 	case SSL3:
+ 		pCTX = SSL_CTX_new( SSLv3_server_method() );
+ 		if( !pCTX )
+@@ -1593,6 +1600,7 @@ SSL_CTX * Csock::SetupServerCTX()
+ 			return( NULL );
+ 		}
+ 		break;
++#endif
+ 	case TLS12:
+ #if defined( TLS1_2_VERSION ) && defined( OPENSSL_VERSION_NUMBER ) && OPENSSL_VERSION_NUMBER >= 0x1000100f
+ 		pCTX = SSL_CTX_new( TLSv1_2_server_method() );
+@@ -1632,6 +1640,9 @@ SSL_CTX * Csock::SetupServerCTX()
+ 		break;
+ #endif /* OPENSSL_NO_SSL2 */
+ 		/* Fall through if SSL2 is disabled */
++#ifndef OPENSSL_NO_SSL3
++	case SSL3:
++#endif
+ 	case SSL23:
+ 	default:
+ 		if( m_iMethod != SSL23 )
