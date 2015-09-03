@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2014/09/11 07:40:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.44 2015/09/03 15:47:06 dcoppa Exp $
 
 COMMENT=	SOCKS client and server
 
@@ -10,10 +10,9 @@ SHARED_LIBS=	dsocks	1.2 \
 MODGNU_SHARED_LIBS=dsocks	'-all-dynamic' \
 		socks		''
 
-MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
-		ftp://ftp.inet.no/pub/socks/old/
-
 HOMEPAGE=	http://www.inet.no/dante/
+
+MASTER_SITES=	${HOMEPAGE}/files/
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
