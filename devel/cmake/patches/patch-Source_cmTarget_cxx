@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmTarget_cxx,v 1.25 2015/03/26 07:10:02 dcoppa Exp $
---- Source/cmTarget.cxx.orig	Tue Mar 10 09:38:44 2015
-+++ Source/cmTarget.cxx	Wed Mar 18 06:24:00 2015
-@@ -322,7 +322,7 @@ void cmTarget::SetMakefile(cmMakefile* mf)
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.26 2015/09/03 07:09:25 dcoppa Exp $
+--- Source/cmTarget.cxx.orig	Thu Aug 13 16:57:00 2015
++++ Source/cmTarget.cxx	Mon Aug 17 15:39:13 2015
+@@ -309,7 +309,7 @@ void cmTarget::SetMakefile(cmMakefile* mf)
      this->SetPropertyDefault("ANDROID_API_MIN", 0);
      this->SetPropertyDefault("INSTALL_NAME_DIR", 0);
      this->SetPropertyDefault("INSTALL_RPATH", "");
@@ -10,7 +10,7 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.25 2015/03/26 07:10:02 dcoppa Exp $
      this->SetPropertyDefault("SKIP_BUILD_RPATH", "OFF");
      this->SetPropertyDefault("BUILD_WITH_INSTALL_RPATH", "OFF");
      this->SetPropertyDefault("ARCHIVE_OUTPUT_DIRECTORY", 0);
-@@ -3610,12 +3610,16 @@ std::string cmTarget::GetCompilePDBPath(const std::str
+@@ -3597,12 +3597,16 @@ std::string cmTarget::GetCompilePDBPath(const std::str
  //----------------------------------------------------------------------------
  bool cmTarget::HasSOName(const std::string& config) const
  {
@@ -27,7 +27,7 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.25 2015/03/26 07:10:02 dcoppa Exp $
  }
  
  //----------------------------------------------------------------------------
-@@ -4081,9 +4085,14 @@ void cmTarget::GetLibraryNames(std::string& name,
+@@ -4068,9 +4072,14 @@ void cmTarget::GetLibraryNames(std::string& name,
    // Check for library version properties.
    const char* version = this->GetProperty("VERSION");
    const char* soversion = this->GetProperty("SOVERSION");
@@ -42,7 +42,7 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.25 2015/03/26 07:10:02 dcoppa Exp $
      {
      // Versioning is supported only for shared libraries and modules,
      // and then only when the platform supports an soname flag.
-@@ -4111,6 +4120,36 @@ void cmTarget::GetLibraryNames(std::string& name,
+@@ -4098,6 +4107,36 @@ void cmTarget::GetLibraryNames(std::string& name,
    // The library name.
    name = prefix+base+suffix;
  
@@ -79,7 +79,7 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.25 2015/03/26 07:10:02 dcoppa Exp $
    if(this->IsFrameworkOnApple())
      {
      realName = prefix;
-@@ -4122,9 +4161,15 @@ void cmTarget::GetLibraryNames(std::string& name,
+@@ -4109,9 +4148,15 @@ void cmTarget::GetLibraryNames(std::string& name,
      }
    else
      {
@@ -95,7 +95,7 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.25 2015/03/26 07:10:02 dcoppa Exp $
      // The library's real name on disk.
      this->ComputeVersionedName(realName, prefix, base, suffix,
                                 name, version);
-@@ -4157,7 +4202,23 @@ void cmTarget::ComputeVersionedName(std::string& vName
+@@ -4144,7 +4189,23 @@ void cmTarget::ComputeVersionedName(std::string& vName
    if(version)
      {
      vName += ".";

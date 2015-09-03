@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.16 2015/03/26 07:10:02 dcoppa Exp $
---- CMakeLists.txt.orig	Tue Mar 10 09:38:44 2015
-+++ CMakeLists.txt	Wed Mar 18 06:23:59 2015
-@@ -249,6 +249,15 @@ macro (CMAKE_BUILD_UTILITIES)
+$OpenBSD: patch-CMakeLists_txt,v 1.17 2015/09/03 07:09:25 dcoppa Exp $
+--- CMakeLists.txt.orig	Thu Aug 13 16:56:59 2015
++++ CMakeLists.txt	Mon Aug 17 15:39:13 2015
+@@ -257,6 +257,15 @@ macro (CMAKE_BUILD_UTILITIES)
    # (a macro defined in this file)
    CMAKE_HANDLE_SYSTEM_LIBRARIES()
  
