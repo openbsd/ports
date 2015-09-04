@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.924 2015/08/29 15:56:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.925 2015/09/04 12:01:50 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -190,6 +190,7 @@
      SUBDIR += lftp
      SUBDIR += libaccounts-glib
      SUBDIR += libbgpdump
+     SUBDIR += libbind
      SUBDIR += libcares
      SUBDIR += libdnet
      SUBDIR += libepc
