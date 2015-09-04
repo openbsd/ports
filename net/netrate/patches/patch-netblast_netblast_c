@@ -1,12 +1,12 @@
-$OpenBSD: patch-netblast_netblast_c,v 1.1.1.1 2007/05/30 02:35:17 robert Exp $
---- netblast/netblast.c.orig	Fri Apr 27 16:49:23 2007
-+++ netblast/netblast.c	Fri Apr 27 16:49:29 2007
-@@ -50,7 +50,7 @@ usage(void)
- static int	global_stop_flag;
+$OpenBSD: patch-netblast_netblast_c,v 1.2 2015/09/04 15:52:41 sthen Exp $
+--- netblast/netblast.c.orig	Fri Sep  4 16:39:29 2015
++++ netblast/netblast.c	Fri Sep  4 16:47:35 2015
+@@ -40,6 +40,8 @@
+ #include <string.h>
+ #include <unistd.h>			/* close */
  
++#include "../netrate_be32.h"
++
  static void
--signal_handler(int signum __unused)
-+signal_handler(int signum)
+ usage(void)
  {
- 
- 	global_stop_flag = 1;

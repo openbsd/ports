@@ -1,0 +1,14 @@
+$OpenBSD: patch-netrate_be32_h,v 1.1 2015/09/04 15:52:41 sthen Exp $
+--- netrate_be32.h.orig	Fri Sep  4 16:46:24 2015
++++ netrate_be32.h	Fri Sep  4 16:46:27 2015
+@@ -0,0 +1,10 @@
++static inline void
++be32enc(void *pp, uint32_t x)
++{
++        uint8_t * p = (uint8_t *)pp;
++
++        p[3] = x & 0xff;
++        p[2] = (x >> 8) & 0xff;
++        p[1] = (x >> 16) & 0xff;
++        p[0] = (x >> 24) & 0xff;
++}
