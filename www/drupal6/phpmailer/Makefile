@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/01/11 14:04:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/04 11:01:37 sthen Exp $
 
 COMMENT =	send mail by smtp/smtp-auth from drupal
 
 DISTNAME = 	phpmailer-6.x-2.2
+REVISION =	0
 PKGNAME =	drupal6-phpmailer-2.2
-
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # drupal module is GPL, third-party phpMailer code is LGPL
 MASTER_SITES0 =	${MASTER_SITE_SOURCEFORGE:=phpmailer/}
