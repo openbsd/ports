@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2014/03/28 12:18:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/09/04 08:51:00 benoit Exp $
 
 COMMENT=	client and server-side SOAP implementation
 
-DISTNAME=	SOAP-Lite-1.11
+DISTNAME=	SOAP-Lite-1.19
 CATEGORIES=	www
 
 # perl
@@ -21,6 +21,7 @@ RUN_DEPENDS=	devel/p5-Class-Inspector \
 		textproc/p5-XML-Parser \
 		www/p5-URI \
 		www/p5-libwww
+TEST_DEPENDS =	textproc/p5-XML-Parser-Lite
 
 pre-patch:
 	cd ${WRKSRC} && \

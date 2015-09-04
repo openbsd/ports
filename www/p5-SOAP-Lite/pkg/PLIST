@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/03/28 12:18:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/09/04 08:51:00 benoit Exp $
 bin/SOAPsh.pl
 bin/stubmaker.pl
 ${P5SITE}/Apache/
@@ -114,6 +114,13 @@ share/examples/p5-SOAP-Lite/WSDL/dynamic1.pl
 share/examples/p5-SOAP-Lite/WSDL/dynamic2.pl
 share/examples/p5-SOAP-Lite/WSDL/dynamic3.pl
 share/examples/p5-SOAP-Lite/WSDL/dynamic4.pl
+share/examples/p5-SOAP-Lite/WSDL/say_hello_doclit.pl
+share/examples/p5-SOAP-Lite/WSDL/say_hello_doclit.wsdl
+share/examples/p5-SOAP-Lite/WSDL/say_hello_rpcenc.pl
+share/examples/p5-SOAP-Lite/WSDL/say_hello_rpcenc.wsdl
+share/examples/p5-SOAP-Lite/WSDL/say_hello_rpcenc_schema.pl
+share/examples/p5-SOAP-Lite/WSDL/say_hello_rpclit.pl
+share/examples/p5-SOAP-Lite/WSDL/say_hello_rpclit.wsdl
 share/examples/p5-SOAP-Lite/WSDL/stub1.pl
 share/examples/p5-SOAP-Lite/WSDL/stub2.pl
 share/examples/p5-SOAP-Lite/WSDL/stub3.pl
