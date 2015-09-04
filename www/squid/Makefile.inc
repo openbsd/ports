@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile.inc,v 1.13 2015/08/24 10:44:26 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2015/09/04 21:39:31 sthen Exp $
 
-MULTI_PACKAGES=	-main
-# -ntlm may come back with samba 4
+MULTI_PACKAGES=	-main -ntlm
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
-#COMMENT-ntlm=	NTLM authentication/ACL support for Squid
+COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
 DISTNAME?=	squid-$V
 EXTRACT_SUFX?=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
-#PKGNAME-ntlm=	squid-ntlm-$V
+PKGNAME-ntlm=	squid-ntlm-$V
 CATEGORIES=	www
 
 # bzr repository at https://code.launchpad.net/squid
@@ -108,9 +107,9 @@ LIB_DEPENDS-ldap += ${LIB_DEPENDS} databases/openldap
 WANTLIB-ldap +=	${WANTLIB} crypto lber-2.4 ldap-2.4 sasl2 ssl
 .endif
 
-#RUN_DEPENDS-ntlm= net/samba,ads ${BASE_PKGPATH}
-#LIB_DEPENDS-ntlm += security/libnettle
-#WANTLIB-ntlm +=	${WANTLIB}
+RUN_DEPENDS-ntlm= net/samba ${BASE_PKGPATH}
+LIB_DEPENDS-ntlm += security/libnettle
+WANTLIB-ntlm +=	${WANTLIB}
 
 pre-build:
 	@cd ${WRKSRC}; \
