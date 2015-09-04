@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/09/01 19:29:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2015/09/04 21:22:29 sthen Exp $
 
 COMMENT=	Java Native Access (JNA)
 
@@ -23,7 +23,7 @@ USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	sysutils/ggrep
 
-GNU_ARCH=	${ARCH:S/amd64/x86-64/}
+GNU_ARCH=	${ARCH:S/amd64/x86-64/:S/i386/x86/}
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR} ${MODJAVA_DOC_DIR}/jna/
