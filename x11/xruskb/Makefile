@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2014/08/30 13:17:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/04 09:20:46 kirby Exp $
 
 COMMENT=	english-russian keyboard switcher for X11
 
 DISTNAME=	xruskb-1.15.4
 REVISION=	3
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.yars.free.net/pub/source/xruskb/
+MASTER_SITES=	http://lav.yar.ru/download/xruskb/
+EXTRACT_SUFX=	.tar.bz2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
