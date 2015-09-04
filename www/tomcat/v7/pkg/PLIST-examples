@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.28 2015/07/07 14:30:37 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.29 2015/09/04 13:06:26 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -1311,6 +1311,7 @@ webapps/docs/api/org/apache/naming/resources/package-summary.html
 webapps/docs/api/org/apache/naming/resources/package-tree.html
 webapps/docs/api/org/apache/tomcat/
 webapps/docs/api/org/apache/tomcat/InstanceManager.html
+webapps/docs/api/org/apache/tomcat/InstrumentableClassLoader.html
 webapps/docs/api/org/apache/tomcat/JarScanner.html
 webapps/docs/api/org/apache/tomcat/JarScannerCallback.html
 webapps/docs/api/org/apache/tomcat/PeriodicEventListener.html
@@ -1564,6 +1565,7 @@ webapps/docs/api/org/apache/tomcat/util/http/Cookies.html
 webapps/docs/api/org/apache/tomcat/util/http/FastHttpDateFormat.html
 webapps/docs/api/org/apache/tomcat/util/http/HttpMessages.html
 webapps/docs/api/org/apache/tomcat/util/http/MimeHeaders.html
+webapps/docs/api/org/apache/tomcat/util/http/Parameters.FailReason.html
 webapps/docs/api/org/apache/tomcat/util/http/Parameters.html
 webapps/docs/api/org/apache/tomcat/util/http/RequestUtil.html
 webapps/docs/api/org/apache/tomcat/util/http/ServerCookie.html
