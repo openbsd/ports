@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.16 2015/01/21 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2015/09/04 06:38:41 benoit Exp $
 
 COMMENT=	dispatches messages to one or more outputs
 
 MODULES=	cpan
-DISTNAME=	Log-Dispatch-2.41
-REVISION=	0
+DISTNAME =	Log-Dispatch-2.50
 CATEGORIES=	devel
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/p5-Class-Load \
+RUN_DEPENDS=	devel/p5-Module-Runtime \
 		devel/p5-Dist-CheckConflicts \
 		devel/p5-Params-Validate
 
