@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2015/07/18 21:11:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2015/09/04 10:44:46 giovanni Exp $
 
 COMMENT =	MySQL backup scripts
 
 V =		3.0
 DISTNAME =	MySQL-zrm-${V}-release
 PKGNAME =	mysql-zrm-${V}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	databases perl5
 
 HOMEPAGE =	http://www.zmanda.com/
@@ -30,7 +30,9 @@ NO_TEST =	Yes
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/usr/bin/mysql-zrm
 	${SUBST_CMD} ${WRKSRC}/usr/bin/mysql-zrm-backup
+	${SUBST_CMD} ${WRKSRC}/usr/bin/mysql-zrm-scheduler
 	${SUBST_CMD} ${WRKSRC}/usr/bin/mysql-zrm-verify-backup
+	${SUBST_CMD} ${WRKSRC}/usr/bin/zrm-pre-scheduler
 	${SUBST_CMD} ${WRKSRC}/usr/lib/mysql-zrm/ZRM/MySQL.pm
 	${SUBST_CMD} ${WRKSRC}/etc/mysql-zrm/mysql-zrm.conf
 	@sed -i -e 's,/usr/lib,${TRUEPREFIX}/lib,g;' \

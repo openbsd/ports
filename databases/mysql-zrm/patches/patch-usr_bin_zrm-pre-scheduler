@@ -1,6 +1,6 @@
-$OpenBSD: patch-usr_bin_zrm-pre-scheduler,v 1.1 2013/03/11 20:59:05 sthen Exp $
---- usr/bin/zrm-pre-scheduler.orig	Mon Mar 11 20:48:00 2013
-+++ usr/bin/zrm-pre-scheduler	Mon Mar 11 20:48:07 2013
+$OpenBSD: patch-usr_bin_zrm-pre-scheduler,v 1.2 2015/09/04 10:44:46 giovanni Exp $
+--- usr/bin/zrm-pre-scheduler.orig	Mon Aug 26 22:45:37 2013
++++ usr/bin/zrm-pre-scheduler	Fri Sep  4 11:56:40 2015
 @@ -95,7 +95,7 @@ sub reschedule()
      my $lev     = $_[4];
      my $found=0;
@@ -10,3 +10,12 @@ $OpenBSD: patch-usr_bin_zrm-pre-scheduler,v 1.1 2013/03/11 20:59:05 sthen Exp $
      $mycrontab_fh=$mycrontab_fh; # quiet warnings
      system ("crontab -l > $mycrontab 2> /dev/null");
      $exit_value  = $? >> 8;
+@@ -161,7 +161,7 @@ sub reschedule()
+ 	if ( $int eq "daily" ) {
+ 	    $mday = $wday = "*";
+ 	}
+-	print OUTF "$min $hr $mday * $wday /usr/bin/$prog ";
++	print OUTF "$min $hr $mday * $wday ${TRUEPREFIX}/bin/$prog ";
+ 	print OUTF "--action $myaction ";
+         print OUTF "--interval $int " if ( $int );
+ 	print OUTF "--backup-level $lev " if ( $lev );
