@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/06/04 11:00:11 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/09/04 21:59:36 sthen Exp $
 @bin bin/otter-browser
 @man man/man1/otter-browser.1
 share/applications/otter-browser.desktop
@@ -21,7 +21,6 @@ share/otter-browser/locale/otter-browser_es_ES.qm
 share/otter-browser/locale/otter-browser_es_MX.qm
 share/otter-browser/locale/otter-browser_et.qm
 share/otter-browser/locale/otter-browser_fi.qm
-share/otter-browser/locale/otter-browser_fr_CA.qm
 share/otter-browser/locale/otter-browser_fr_FR.qm
 share/otter-browser/locale/otter-browser_hr_HR.qm
 share/otter-browser/locale/otter-browser_hu.qm
@@ -43,6 +42,7 @@ share/otter-browser/locale/otter-browser_sr.qm
 share/otter-browser/locale/otter-browser_sr@Ijekavian.qm
 share/otter-browser/locale/otter-browser_sr@ijekavianlatin.qm
 share/otter-browser/locale/otter-browser_sr@latin.qm
+share/otter-browser/locale/otter-browser_sv.qm
 share/otter-browser/locale/otter-browser_tr_TR.qm
 share/otter-browser/locale/otter-browser_uk_UA.qm
 share/otter-browser/locale/otter-browser_zh_CN.qm
