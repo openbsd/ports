@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2015/09/05 00:20:08 daniel Exp $
+
+compcert.ini should go in share/compcert not share.
+
+--- configure.orig	Tue Sep  1 02:15:46 2015
++++ configure	Tue Sep  1 02:16:53 2015
+@@ -335,7 +335,7 @@ fi
+ 
+ # Generate Makefile.config
+ 
+-sharedir="$(dirname "$bindir")"/share
++sharedir="$(dirname "$bindir")"/share/compcert
+ 
+ rm -f Makefile.config
+ cat > Makefile.config <<EOF
