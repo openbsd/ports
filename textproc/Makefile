@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.461 2015/08/29 15:56:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.462 2015/09/05 10:01:50 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -311,6 +311,7 @@
      SUBDIR += pilot_makedoc
      SUBDIR += pinfo
      SUBDIR += pod2mdoc
+     SUBDIR += podofo
      SUBDIR += py-Chart
      SUBDIR += py-HappyDoc
      SUBDIR += py-ICU
