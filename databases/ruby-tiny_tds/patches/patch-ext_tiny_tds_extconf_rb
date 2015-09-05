@@ -1,0 +1,40 @@
+$OpenBSD: patch-ext_tiny_tds_extconf_rb,v 1.3 2015/09/05 14:49:32 jeremy Exp $
+
+Don't require mini_portile to build.
+
+--- ext/tiny_tds/extconf.rb.orig	Sun Aug  9 11:30:35 2015
++++ ext/tiny_tds/extconf.rb	Wed Sep  2 11:13:23 2015
+@@ -3,7 +3,7 @@ ENV['RC_ARCHS'] = '' if RUBY_PLATFORM =~ /darwin/
+ # :stopdoc:
+ 
+ require 'mkmf'
+-require 'mini_portile'
++#require 'mini_portile'
+ require 'fileutils'
+ 
+ # If your using 0.82, you may have to make a conf file to get it to work. For example:
+@@ -85,6 +85,7 @@ def searchable_paths_with_directories(*directories)
+   end.flatten.compact
+ end
+ 
++=begin
+ class BuildRecipe < MiniPortile
+   def initialize(name, version, files)
+     super(name, version)
+@@ -222,6 +223,7 @@ def define_freetds_recipe(host, libiconv, libssl)
+     end
+   end
+ end
++=end
+ 
+ if RbConfig::CONFIG['target_os'] =~ /mswin32|mingw32/
+   lib_prefix = 'lib' unless RbConfig::CONFIG['target_os'] =~ /mingw32/
+@@ -279,7 +281,7 @@ def freetds_usable?(lib_prefix)
+ end
+ 
+ # We use freetds, when available already, and fallback to compilation of ports
+-system_freetds = enable_config('system-freetds', ENV['TINYTDS_SKIP_PORTS'] || freetds_usable?(lib_prefix))
++system_freetds = enable_config('system-freetds', true)
+ 
+ # We expect to have iconv and OpenSSL available on non-Windows systems
+ host = RbConfig::CONFIG["host"]

@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/11/26 17:43:53 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/09/05 14:49:32 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
+${GEM_LIB}/gems/${DISTNAME}/CODE_OF_CONDUCT.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/compile/
-${GEM_LIB}/gems/${DISTNAME}/compile/rake-compiler-dev-box.patch
+${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds/
 ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds.rb
@@ -17,9 +17,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds/error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds/result.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds/tiny_tds.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/tiny_tds/version.rb
-${GEM_LIB}/gems/${DISTNAME}/tasks/
-${GEM_LIB}/gems/${DISTNAME}/tasks/ports.rake
 ${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/appveyor/
+${GEM_LIB}/gems/${DISTNAME}/test/appveyor/dbsetup.ps1
+${GEM_LIB}/gems/${DISTNAME}/test/appveyor/dbsetup.sql
 ${GEM_LIB}/gems/${DISTNAME}/test/benchmark/
 ${GEM_LIB}/gems/${DISTNAME}/test/benchmark/query.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/benchmark/query_odbc.rb
@@ -31,6 +32,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/schema/1px.gif
 ${GEM_LIB}/gems/${DISTNAME}/test/schema/sqlserver_2000.sql
 ${GEM_LIB}/gems/${DISTNAME}/test/schema/sqlserver_2005.sql
 ${GEM_LIB}/gems/${DISTNAME}/test/schema/sqlserver_2008.sql
+${GEM_LIB}/gems/${DISTNAME}/test/schema/sqlserver_2014.sql
 ${GEM_LIB}/gems/${DISTNAME}/test/schema/sqlserver_azure.sql
 ${GEM_LIB}/gems/${DISTNAME}/test/schema/sybase_ase.sql
 ${GEM_LIB}/gems/${DISTNAME}/test/schema_test.rb

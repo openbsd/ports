@@ -1,0 +1,12 @@
+$OpenBSD: patch-_metadata,v 1.1 2015/09/05 14:49:32 jeremy Exp $
+--- .metadata.orig	Mon Aug 10 16:52:24 2015
++++ .metadata	Mon Aug 10 16:52:40 2015
+@@ -19,7 +19,7 @@ dependencies:
+     - - '='
+       - !ruby/object:Gem::Version
+         version: 0.6.2
+-  type: :runtime
++  type: :development
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+     requirements:
