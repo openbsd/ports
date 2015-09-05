@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/28 08:48:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/05 07:25:15 benoit Exp $
 
 COMMENT =	Perl extension for doing ident requests
 
-DISTNAME =	Net-Ident-1.23
+DISTNAME =	Net-Ident-1.24
 CATEGORIES =	net
 
 # perl
