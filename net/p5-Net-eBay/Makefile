@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2015/01/21 14:40:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/05 06:47:12 benoit Exp $
 
 COMMENT=		interface to XML based eBay API
 
-DISTNAME=		Net-eBay-0.54
+DISTNAME =		Net-eBay-0.61
 CATEGORIES=		net
 
 # perl
