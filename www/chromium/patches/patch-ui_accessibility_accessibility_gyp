@@ -1,6 +1,6 @@
-$OpenBSD: patch-ui_accessibility_accessibility_gyp,v 1.1 2015/05/24 15:51:53 robert Exp $
---- ui/accessibility/accessibility.gyp.orig.port	Sat May 23 00:23:00 2015
-+++ ui/accessibility/accessibility.gyp	Sat May 23 00:23:37 2015
+$OpenBSD: patch-ui_accessibility_accessibility_gyp,v 1.2 2015/09/05 16:06:50 robert Exp $
+--- ui/accessibility/accessibility.gyp.orig.port	Tue Sep  1 22:10:43 2015
++++ ui/accessibility/accessibility.gyp	Wed Sep  2 07:31:55 2015
 @@ -63,7 +63,7 @@
              '../../third_party/iaccessible2/iaccessible2.gyp:iaccessible2'
            ],
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui_accessibility_accessibility_gyp,v 1.1 2015/05/24 15:51:53 rob
            'dependencies': [
              '../../build/linux/system.gyp:atk',
              '../../build/linux/system.gyp:gconf',
-@@ -76,7 +76,7 @@
+@@ -80,7 +80,7 @@
              ],
            },
          }],

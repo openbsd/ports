@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_pdfium_fpdfsdk_src_javascript_PublicMethods_cpp,v 1.4 2015/07/23 13:44:04 robert Exp $
---- third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp.orig.port	Wed Jul 15 22:31:51 2015
-+++ third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp	Wed Jul 22 08:37:30 2015
-@@ -1052,7 +1052,7 @@ CFX_WideString CJS_PublicMethods::MakeFormatDate(doubl
+$OpenBSD: patch-third_party_pdfium_fpdfsdk_src_javascript_PublicMethods_cpp,v 1.5 2015/09/05 16:06:50 robert Exp $
+--- third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp.orig.port	Tue Sep  1 22:10:52 2015
++++ third_party/pdfium/fpdfsdk/src/javascript/PublicMethods.cpp	Wed Sep  2 07:31:55 2015
+@@ -1023,7 +1023,7 @@ CFX_WideString CJS_PublicMethods::MakeFormatDate(doubl
  //function AFNumber_Format(nDec, sepStyle, negStyle, currStyle, strCurrency, bCurrencyPrepend)
  FX_BOOL CJS_PublicMethods::AFNumber_Format(IFXJS_Context* cc, const CJS_Parameters& params, CJS_Value& vRet, CFX_WideString& sError)
  {
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_pdfium_fpdfsdk_src_javascript_PublicMethods_cpp,v 1.
  	v8::Isolate* isolate = ::GetIsolate(cc);
  	CJS_Context* pContext = (CJS_Context *)cc;
  	ASSERT(pContext != NULL);
-@@ -1391,7 +1391,7 @@ FX_BOOL CJS_PublicMethods::AFNumber_Keystroke(IFXJS_Co
+@@ -1361,7 +1361,7 @@ FX_BOOL CJS_PublicMethods::AFNumber_Keystroke(IFXJS_Co
  //function AFPercent_Format(nDec, sepStyle)
  FX_BOOL CJS_PublicMethods::AFPercent_Format(IFXJS_Context* cc, const CJS_Parameters& params, CJS_Value& vRet, CFX_WideString& sError)
  {

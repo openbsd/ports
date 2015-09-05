@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_webrtc_system_wrappers_source_thread_posix_cc,v 1.6 2015/05/24 15:51:53 robert Exp $
---- third_party/webrtc/system_wrappers/source/thread_posix.cc.orig.port	Thu May 14 00:36:30 2015
-+++ third_party/webrtc/system_wrappers/source/thread_posix.cc	Wed May 20 08:34:56 2015
-@@ -15,9 +15,13 @@
+$OpenBSD: patch-third_party_webrtc_system_wrappers_source_thread_posix_cc,v 1.7 2015/09/05 16:06:50 robert Exp $
+--- third_party/webrtc/system_wrappers/source/thread_posix.cc.orig.port	Wed Sep  2 20:15:15 2015
++++ third_party/webrtc/system_wrappers/source/thread_posix.cc	Wed Sep  2 20:50:56 2015
+@@ -15,7 +15,9 @@
  #include <errno.h>
  #include <unistd.h>
  #ifdef WEBRTC_LINUX
@@ -9,18 +9,5 @@ $OpenBSD: patch-third_party_webrtc_system_wrappers_source_thread_posix_cc,v 1.6 
  #include <linux/unistd.h>
 +#endif
  #include <sched.h>
-+#if !defined(__OpenBSD__)
- #include <sys/prctl.h>
-+#endif
- #include <sys/syscall.h>
  #include <sys/types.h>
  #endif
-@@ -152,7 +156,7 @@ void ThreadPosix::Run() {
-   if (!name_.empty()) {
-     // Setting the thread name may fail (harmlessly) if running inside a
-     // sandbox. Ignore failures if they happen.
--#if defined(WEBRTC_LINUX) || defined(WEBRTC_ANDROID)
-+#if (defined(WEBRTC_LINUX) || defined(WEBRTC_ANDROID)) && !defined(__OpenBSD__)
-     prctl(PR_SET_NAME, reinterpret_cast<unsigned long>(name_.c_str()));
- #elif defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
-     pthread_setname_np(name_.substr(0, 63).c_str());

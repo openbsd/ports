@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.22 2015/07/23 13:44:04 robert Exp $
---- content/browser/child_process_launcher.cc.orig.port	Wed Jul 15 22:30:02 2015
-+++ content/browser/child_process_launcher.cc	Wed Jul 22 08:37:29 2015
-@@ -111,7 +111,11 @@ void LaunchOnLauncherThread(const NotifyCallback& call
+$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.23 2015/09/05 16:06:50 robert Exp $
+--- content/browser/child_process_launcher.cc.orig.port	Wed Sep  2 07:44:50 2015
++++ content/browser/child_process_launcher.cc	Wed Sep  2 07:46:27 2015
+@@ -114,7 +114,11 @@ void LaunchOnLauncherThread(const NotifyCallback& call
    base::EnvironmentMap env = delegate->GetEnvironment();
    base::ScopedFD ipcfd = delegate->TakeIpcFd();
  #elif defined(OS_POSIX) && !defined(OS_ANDROID)
@@ -13,16 +13,16 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.22 2015/07/23 13:4
    base::EnvironmentMap env = delegate->GetEnvironment();
    base::ScopedFD ipcfd = delegate->TakeIpcFd();
  #endif
-@@ -157,7 +161,7 @@ void LaunchOnLauncherThread(const NotifyCallback& call
+@@ -196,7 +200,7 @@ void LaunchOnLauncherThread(const NotifyCallback& call
    // We need to close the client end of the IPC channel to reliably detect
    // child termination.
  
 -#if !defined(OS_MACOSX)
 +#if !defined(OS_MACOSX) && !defined(OS_BSD)
-   GetContentClient()->browser()->GetAdditionalMappedFilesForChildProcess(
-       *cmd_line, child_process_id, files_to_register.get());
    if (use_zygote) {
-@@ -173,7 +177,7 @@ void LaunchOnLauncherThread(const NotifyCallback& call
+     base::ProcessHandle handle = ZygoteHostImpl::GetInstance()->ForkRequest(
+         cmd_line->argv(), files_to_register.Pass(), process_type);
+@@ -210,7 +214,7 @@ void LaunchOnLauncherThread(const NotifyCallback& call
          files_to_register->GetMappingWithIDAdjustment(
              base::GlobalDescriptors::kBaseDescriptor);
  
@@ -31,7 +31,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.22 2015/07/23 13:4
      if (process_type == switches::kRendererProcess) {
        const int sandbox_fd =
            RenderSandboxHostLinux::GetInstance()->GetRendererSocket();
-@@ -254,7 +258,7 @@ void TerminateOnLauncherThread(bool zygote, base::Proc
+@@ -294,7 +298,7 @@ void TerminateOnLauncherThread(bool zygote, base::Proc
    process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.
  #if defined(OS_POSIX)
@@ -40,7 +40,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.22 2015/07/23 13:4
    if (zygote) {
      // If the renderer was created via a zygote, we have to proxy the reaping
      // through the zygote process.
-@@ -359,7 +363,7 @@ void ChildProcessLauncher::Launch(
+@@ -399,7 +403,7 @@ void ChildProcessLauncher::Launch(
  
  void ChildProcessLauncher::UpdateTerminationStatus(bool known_dead) {
    DCHECK(CalledOnValidThread());
@@ -49,7 +49,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.22 2015/07/23 13:4
    if (zygote_) {
      termination_status_ = ZygoteHostImpl::GetInstance()->
          GetTerminationStatus(process_.Handle(), known_dead, &exit_code_);
-@@ -441,7 +445,7 @@ void ChildProcessLauncher::Notify(
+@@ -481,7 +485,7 @@ void ChildProcessLauncher::Notify(
    starting_ = false;
    process_ = process.Pass();
  

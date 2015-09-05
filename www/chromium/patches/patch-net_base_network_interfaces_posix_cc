@@ -1,0 +1,21 @@
+$OpenBSD: patch-net_base_network_interfaces_posix_cc,v 1.1 2015/09/05 16:06:50 robert Exp $
+--- net/base/network_interfaces_posix.cc.orig.port	Fri Sep  4 09:33:24 2015
++++ net/base/network_interfaces_posix.cc	Fri Sep  4 09:33:09 2015
+@@ -9,7 +9,7 @@
+ 
+ #include "base/memory/scoped_ptr.h"
+ 
+-#if !defined(OS_NACL)
++#if !defined(OS_NACL) && !defined(OS_BSD)
+ #include "net/base/network_interfaces_posix.h"
+ #include <net/if.h>
+ #include <netinet/in.h>
+@@ -17,7 +17,7 @@
+ 
+ namespace net {
+ 
+-#if !defined(OS_NACL)
++#if !defined(OS_NACL) && !defined(OS_BSD)
+ namespace internal {
+ 
+ // The application layer can pass |policy| defined in net_util.h to

@@ -1,11 +1,11 @@
-$OpenBSD: patch-chrome_chrome_utility_gypi,v 1.2 2015/07/23 13:44:04 robert Exp $
---- chrome/chrome_utility.gypi.orig.port	Wed Jul 15 22:29:59 2015
-+++ chrome/chrome_utility.gypi	Wed Jul 22 08:37:29 2015
-@@ -100,6 +100,7 @@
+$OpenBSD: patch-chrome_chrome_utility_gypi,v 1.3 2015/09/05 16:06:50 robert Exp $
+--- chrome/chrome_utility.gypi.orig.port	Tue Sep  1 22:10:42 2015
++++ chrome/chrome_utility.gypi	Wed Sep  2 07:31:55 2015
+@@ -102,6 +102,7 @@
        'variables': { 'enable_wexit_time_destructors': 1, },
        'dependencies': [
          '../base/base.gyp:base',
 +	'../chrome/chrome.gyp:safe_browsing_proto',
          '../components/components_strings.gyp:components_strings',
+         '../components/components.gyp:safe_json_parser_message_filter',
          '../components/components.gyp:search_engines',
-         '../components/components.gyp:url_fixer',

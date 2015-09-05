@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.13 2015/07/23 13:44:04 robert Exp $
---- chrome/common/chrome_switches.cc.orig.port	Wed Jul 15 22:29:59 2015
-+++ chrome/common/chrome_switches.cc	Wed Jul 22 08:37:29 2015
-@@ -1211,7 +1211,7 @@ const char kHelpShort[]                     = "h";
+$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.14 2015/09/05 16:06:50 robert Exp $
+--- chrome/common/chrome_switches.cc.orig.port	Tue Sep  1 22:10:42 2015
++++ chrome/common/chrome_switches.cc	Wed Sep  2 07:31:55 2015
+@@ -1217,7 +1217,7 @@ const char kHelpShort[]                     = "h";
  const char kPasswordStore[]                 = "password-store";
  #endif
  

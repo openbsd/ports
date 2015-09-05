@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_webui_options_browser_options_handler_cc,v 1.15 2015/07/23 13:44:04 robert Exp $
---- chrome/browser/ui/webui/options/browser_options_handler.cc.orig.port	Wed Jul 15 22:29:59 2015
-+++ chrome/browser/ui/webui/options/browser_options_handler.cc	Wed Jul 22 08:37:29 2015
-@@ -476,7 +476,7 @@ void BrowserOptionsHandler::GetLocalizedValues(base::D
+$OpenBSD: patch-chrome_browser_ui_webui_options_browser_options_handler_cc,v 1.16 2015/09/05 16:06:50 robert Exp $
+--- chrome/browser/ui/webui/options/browser_options_handler.cc.orig.port	Tue Sep  1 22:10:42 2015
++++ chrome/browser/ui/webui/options/browser_options_handler.cc	Wed Sep  2 07:31:55 2015
+@@ -480,7 +480,7 @@ void BrowserOptionsHandler::GetLocalizedValues(base::D
      { "syncButtonTextStart", IDS_SYNC_SETUP_BUTTON_LABEL },
  #endif  // defined(OS_CHROMEOS)
  

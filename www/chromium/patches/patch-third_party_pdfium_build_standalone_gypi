@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_pdfium_build_standalone_gypi,v 1.5 2015/07/23 13:44:04 robert Exp $
---- third_party/pdfium/build/standalone.gypi.orig.port	Wed Jul 15 22:31:51 2015
-+++ third_party/pdfium/build/standalone.gypi	Wed Jul 22 08:37:30 2015
+$OpenBSD: patch-third_party_pdfium_build_standalone_gypi,v 1.6 2015/09/05 16:06:50 robert Exp $
+--- third_party/pdfium/build/standalone.gypi.orig.port	Sat Aug 22 21:03:37 2015
++++ third_party/pdfium/build/standalone.gypi	Wed Sep  2 07:31:55 2015
 @@ -13,7 +13,7 @@
        'variables': {
          'variables': {
@@ -19,10 +19,3 @@ $OpenBSD: patch-third_party_pdfium_build_standalone_gypi,v 1.5 2015/07/23 13:44:
              'cflags': [
                '-fdata-sections',
                '-ffunction-sections',
-@@ -283,4 +283,4 @@
-     # See comment in Chromium's common.gypi for why this is needed.
-     'SYMROOT': '<(DEPTH)/xcodebuild',
-   }
--}
-\ No newline at end of file
-+}

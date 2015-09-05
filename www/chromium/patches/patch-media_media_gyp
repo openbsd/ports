@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_media_gyp,v 1.37 2015/07/23 13:44:04 robert Exp $
---- media/media.gyp.orig.port	Wed Jul 22 08:49:15 2015
-+++ media/media.gyp	Wed Jul 22 08:51:52 2015
+$OpenBSD: patch-media_media_gyp,v 1.38 2015/09/05 16:06:50 robert Exp $
+--- media/media.gyp.orig.port	Wed Sep  2 07:47:24 2015
++++ media/media.gyp	Wed Sep  2 07:49:32 2015
 @@ -21,7 +21,7 @@
          'media_use_libvpx%': 1,
        }],
@@ -18,10 +18,10 @@ $OpenBSD: patch-media_media_gyp,v 1.37 2015/07/23 13:44:04 robert Exp $
 +      ['OS=="openbsd"', {
 +        'use_sndioaudio%': 0,
 +      }],
-       ['sysroot!=""', {
-         'pkg-config': '../build/linux/pkg-config-wrapper "<(sysroot)" "<(target_arch)" "<(system_libdir)"',
-       }, {
-@@ -173,6 +177,8 @@
+       # low memory buffer is used in non-Android based chromecast build due to hardware limitation.
+       ['chromecast==1 and OS!="android"', {
+         'use_low_memory_buffer%': 1,
+@@ -168,6 +172,8 @@
          'audio/pulse/pulse_output.h',
          'audio/pulse/pulse_util.cc',
          'audio/pulse/pulse_util.h',
@@ -30,7 +30,7 @@ $OpenBSD: patch-media_media_gyp,v 1.37 2015/07/23 13:44:04 robert Exp $
          'audio/sample_rates.cc',
          'audio/sample_rates.h',
          'audio/scoped_task_runner_observer.cc',
-@@ -707,6 +713,24 @@
+@@ -723,6 +729,24 @@
              'filters/h264_bitstream_buffer.h',
            ],
          }],
@@ -55,7 +55,7 @@ $OpenBSD: patch-media_media_gyp,v 1.37 2015/07/23 13:44:04 robert Exp $
          ['use_alsa==1', {
            'link_settings': {
              'libraries': [
-@@ -729,11 +753,21 @@
+@@ -745,11 +769,21 @@
            ],
          }, {  # else: openbsd==1
            'sources!': [
@@ -74,21 +74,21 @@ $OpenBSD: patch-media_media_gyp,v 1.37 2015/07/23 13:44:04 robert Exp $
            ],
          }],
 -        ['OS=="linux"', {
-+        ['OS=="linux" or OS=="openbsd"', {
++        ['OS=="linux" or os_bsd==1', {
            'conditions': [
              ['use_x11==1', {
                'dependencies': [
-@@ -824,7 +858,7 @@
+@@ -840,7 +874,7 @@
              'ozone/media_ozone_platform.h',
            ]
          }],
 -        ['OS!="linux"', {
-+        ['OS!="linux" and OS!="openbsd"', {
++        ['OS!="linux" and os_bsd!=1', {
            'sources!': [
              'audio/cras/audio_manager_cras.cc',
              'audio/cras/audio_manager_cras.h',
-@@ -1043,7 +1077,7 @@
-             'base/simd/convert_yuv_to_rgb_x86.cc',
+@@ -1063,7 +1097,7 @@
+             'base/simd/filter_yuv_sse2.cc',
            ],
          }],
 -        ['OS!="linux" and OS!="win"', {
@@ -96,12 +96,12 @@ $OpenBSD: patch-media_media_gyp,v 1.37 2015/07/23 13:44:04 robert Exp $
            'sources!': [
              'base/keyboard_event_counter.cc',
              'base/keyboard_event_counter.h',
-@@ -1833,7 +1867,7 @@
+@@ -1854,7 +1888,7 @@
              'test/pipeline_integration_test_base.cc',
            ],
            'conditions': [
 -            ['os_posix==1 and OS!="mac"', {
-+            ['os_posix==1 and OS!="mac" and OS!="openbsd"', {
++            ['os_posix==1 and OS!="mac" and os_bsd!=1', {
                'conditions': [
                  ['use_allocator!="none"', {
                    'dependencies': [

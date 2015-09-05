@@ -1,15 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.21 2015/07/28 10:06:07 sthen Exp $
---- chrome/chrome_browser_extensions.gypi.orig.port	Fri Jul 24 21:26:02 2015
-+++ chrome/chrome_browser_extensions.gypi	Mon Jul 27 22:31:20 2015
-@@ -907,6 +907,7 @@
-         'installer_util',
-         'safe_browsing_proto',
-         '../components/components.gyp:copresence',
-+        '../components/components.gyp:dom_distiller_core',
-         '../components/components.gyp:onc_component',
-         '../components/components.gyp:proximity_auth',
-         '../components/components.gyp:update_client',
-@@ -955,6 +956,11 @@
+$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.22 2015/09/05 16:06:50 robert Exp $
+--- chrome/chrome_browser_extensions.gypi.orig.port	Wed Sep  2 07:43:13 2015
++++ chrome/chrome_browser_extensions.gypi	Wed Sep  2 07:44:13 2015
+@@ -985,6 +985,11 @@
          '<@(chrome_browser_extensions_enabled_sources)',
        ],
        'conditions': [
@@ -19,14 +11,14 @@ $OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.21 2015/07/28 10:06:07
 +          ],
 +        }],
          ['chromeos==1', {
-           'include_dirs': [
-             '../third_party/libjingle/source',
-@@ -989,7 +995,7 @@
-             '../ui/keyboard/keyboard.gyp:keyboard_resources',
+           'dependencies': [
+             '../build/linux/system.gyp:dbus',
+@@ -1021,7 +1026,7 @@
+             '../ui/views/views.gyp:views',
            ],
          }],
 -        ['OS=="linux"', {
-+        ['OS=="linux" or OS=="openbsd"', {
++        ['OS=="linux" or os_bsd==1', {
            'conditions': [
              ['use_aura==1', {
                'dependencies': [

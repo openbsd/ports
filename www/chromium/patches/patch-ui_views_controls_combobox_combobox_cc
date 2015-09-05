@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_views_controls_combobox_combobox_cc,v 1.1 2015/01/22 11:16:41 robert Exp $
---- ui/views/controls/combobox/combobox.cc.orig.port	Sat Dec 27 12:54:25 2014
-+++ ui/views/controls/combobox/combobox.cc	Sat Dec 27 12:56:07 2014
-@@ -848,7 +848,7 @@ int Combobox::GetDisclosureArrowRightPadding() const {
+$OpenBSD: patch-ui_views_controls_combobox_combobox_cc,v 1.2 2015/09/05 16:06:50 robert Exp $
+--- ui/views/controls/combobox/combobox.cc.orig.port	Sat Aug 22 21:01:59 2015
++++ ui/views/controls/combobox/combobox.cc	Wed Sep  2 07:31:55 2015
+@@ -851,7 +851,7 @@ int Combobox::GetDisclosureArrowRightPadding() const {
  }
  
  gfx::Size Combobox::ArrowSize() const {

@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_extensions_api_messaging_message_service_cc,v 1.1 2015/05/24 15:51:53 robert Exp $
---- chrome/browser/extensions/api/messaging/message_service.cc.orig.port	Sat May 23 00:59:48 2015
-+++ chrome/browser/extensions/api/messaging/message_service.cc	Sat May 23 01:03:20 2015
+$OpenBSD: patch-chrome_browser_extensions_api_messaging_message_service_cc,v 1.2 2015/09/05 16:06:50 robert Exp $
+--- chrome/browser/extensions/api/messaging/message_service.cc.orig.port	Tue Sep  1 22:10:41 2015
++++ chrome/browser/extensions/api/messaging/message_service.cc	Wed Sep  2 07:31:55 2015
 @@ -108,7 +108,7 @@ MessageService::PolicyPermission MessageService::IsNat
  
  const char kReceivingEndDoesntExistError[] =
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_extensions_api_messaging_message_service_cc,v 1.1
  const char kMissingPermissionError[] =
      "Access to native messaging requires nativeMessaging permission.";
  const char kProhibitedByPoliciesError[] =
-@@ -406,7 +406,7 @@ void MessageService::OpenChannelToNativeApp(
+@@ -412,7 +412,7 @@ void MessageService::OpenChannelToNativeApp(
    if (!source)
      return;
  

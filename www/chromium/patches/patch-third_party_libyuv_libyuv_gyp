@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_libyuv_libyuv_gyp,v 1.8 2015/01/22 11:16:41 robert Exp $
---- third_party/libyuv/libyuv.gyp.orig.port	Wed Dec  3 03:32:35 2014
-+++ third_party/libyuv/libyuv.gyp	Sat Dec  6 11:34:27 2014
-@@ -110,11 +110,15 @@
+$OpenBSD: patch-third_party_libyuv_libyuv_gyp,v 1.9 2015/09/05 16:06:50 robert Exp $
+--- third_party/libyuv/libyuv.gyp.orig.port	Tue Sep  1 22:10:51 2015
++++ third_party/libyuv/libyuv.gyp	Wed Sep  2 07:31:55 2015
+@@ -115,11 +115,15 @@
                ],
              }],
              [ 'use_system_libjpeg == 1', {

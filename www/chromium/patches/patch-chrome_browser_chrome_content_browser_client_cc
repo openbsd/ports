@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.20 2015/07/23 13:44:04 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Jul 15 22:29:57 2015
-+++ chrome/browser/chrome_content_browser_client.cc	Wed Jul 22 08:37:29 2015
-@@ -167,7 +167,7 @@
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.21 2015/09/05 16:06:50 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Sep  2 07:36:55 2015
++++ chrome/browser/chrome_content_browser_client.cc	Wed Sep  2 07:37:42 2015
+@@ -178,7 +178,7 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.20 2015/07/2
  #include "base/debug/leak_annotations.h"
  #include "components/crash/app/breakpad_linux.h"
  #include "components/crash/browser/crash_handler_host_linux.h"
-@@ -429,7 +429,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
+@@ -444,7 +444,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
    return false;
  }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.20 2015/07/2
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -1178,7 +1178,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -1246,7 +1246,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
      command_line->AppendSwitchASCII(switches::kMetricsClientID,
                                      client_info->client_id);
    }
@@ -28,12 +28,12 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.20 2015/07/2
    if (breakpad::IsCrashReporterEnabled()) {
      scoped_ptr<metrics::ClientInfo> client_info =
          GoogleUpdateSettings::LoadMetricsClientInfo();
-@@ -2219,7 +2219,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
-   }
+@@ -2332,7 +2332,7 @@ void ChromeContentBrowserClient::GetAdditionalMappedFi
+   PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
+   DCHECK(!app_data_path.empty());
  }
- 
--#if defined(OS_POSIX) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+-#elif defined(OS_POSIX) && !defined(OS_MACOSX)
++#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,

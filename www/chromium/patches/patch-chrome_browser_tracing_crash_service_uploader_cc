@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_tracing_crash_service_uploader_cc,v 1.1 2015/04/27 16:38:25 robert Exp $
---- chrome/browser/tracing/crash_service_uploader.cc.orig.port	Wed Apr 15 15:38:34 2015
-+++ chrome/browser/tracing/crash_service_uploader.cc	Wed Apr 15 15:38:45 2015
-@@ -127,6 +127,8 @@ void TraceCrashServiceUploader::DoUploadOnFileThread(
+$OpenBSD: patch-chrome_browser_tracing_crash_service_uploader_cc,v 1.2 2015/09/05 16:06:50 robert Exp $
+--- chrome/browser/tracing/crash_service_uploader.cc.orig.port	Tue Sep  1 22:10:42 2015
++++ chrome/browser/tracing/crash_service_uploader.cc	Wed Sep  2 07:31:55 2015
+@@ -143,6 +143,8 @@ void TraceCrashServiceUploader::DoUploadOnFileThread(
    const char product[] = "Chrome_Android";
  #elif defined(OS_CHROMEOS)
    const char product[] = "Chrome_ChromeOS";

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2015/07/23 13:44:04 robert Exp $
+@comment $OpenBSD: PLIST,v 1.51 2015/09/05 16:06:50 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -123,6 +123,14 @@ chrome/resources/inspector/Images/responsiveDesign.png
 chrome/resources/inspector/Images/responsiveDesign_2x.png
 chrome/resources/inspector/Images/searchNext.png
 chrome/resources/inspector/Images/searchPrev.png
+chrome/resources/inspector/Images/securityStateHttp.png
+chrome/resources/inspector/Images/securityStateHttp_2x.png
+chrome/resources/inspector/Images/securityStateInsecure.png
+chrome/resources/inspector/Images/securityStateInsecure_2x.png
+chrome/resources/inspector/Images/securityStateSecure.png
+chrome/resources/inspector/Images/securityStateSecure_2x.png
+chrome/resources/inspector/Images/securityStateWarning.png
+chrome/resources/inspector/Images/securityStateWarning_2x.png
 chrome/resources/inspector/Images/serviceWorker.svg
 chrome/resources/inspector/Images/sessionStorage.png
 chrome/resources/inspector/Images/settingsListRemove.png
@@ -146,15 +154,15 @@ chrome/resources/inspector/Images/updateServiceWorker.svg
 chrome/resources/inspector/InspectorBackendCommands.js
 chrome/resources/inspector/SupportedCSSProperties.js
 chrome/resources/inspector/accessibility_module.js
+chrome/resources/inspector/animation_module.js
 chrome/resources/inspector/audits_module.js
 chrome/resources/inspector/cm_modes_module.js
 chrome/resources/inspector/components_lazy_module.js
 chrome/resources/inspector/console_module.js
-chrome/resources/inspector/devtools.css
-chrome/resources/inspector/devtools.html
 chrome/resources/inspector/devtools.js
 chrome/resources/inspector/devtools_extension_api.js
 chrome/resources/inspector/elements_module.js
+chrome/resources/inspector/emulated_devices_module.js
 chrome/resources/inspector/heap_snapshot_worker_module.js
 chrome/resources/inspector/inspector.css
 chrome/resources/inspector/inspector.html
@@ -166,6 +174,7 @@ chrome/resources/inspector/promises_module.js
 chrome/resources/inspector/resources_module.js
 chrome/resources/inspector/screencast_module.js
 chrome/resources/inspector/script_formatter_worker_module.js
+chrome/resources/inspector/security_module.js
 chrome/resources/inspector/settings_module.js
 chrome/resources/inspector/snippets_module.js
 chrome/resources/inspector/source_frame_module.js

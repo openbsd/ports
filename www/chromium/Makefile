@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.236 2015/08/27 14:16:50 robert Exp $
+# $OpenBSD: Makefile,v 1.237 2015/09/05 16:06:50 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			44.0.2403.157
+V=			45.0.2454.85
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -27,7 +26,7 @@ PERMIT_PACKAGE_FTP =	Yes
 
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 
-MODULES=	lang/clang lang/python
+MODULES=	lang/clang lang/python gcc4
 
 MODCLANG_ARCHS=	*
 MODCLANG_LANGS=	c++
@@ -44,7 +43,7 @@ WANTLIB += png pthread speex
 WANTLIB += xml2 xslt
 WANTLIB += sndio
 WANTLIB += Xcomposite
-WANTLIB += stdc++
+WANTLIB += estdc++>=17
 WANTLIB += Xi Xtst
 WANTLIB += Xdamage
 WANTLIB += Xcursor Xrandr gio-2.0
@@ -64,15 +63,17 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		shells/bash \
 		sysutils/flock \
 		sysutils/pciutils \
-		x11/gnome/libgnome-keyring
-BUILD_DEPENDS+=	devel/ninja
+		x11/gnome/libgnome-keyring \
+		devel/ninja \
+		lang/gcc/4.9,-c++>=4.9,<4.10
 LIB_DEPENDS=	devel/libexecinfo \
 		security/nss \
 		devel/gconf2 \
 		textproc/libxslt \
 		x11/gtk+2 \
 		audio/speex \
-		print/cups,-libs
+		print/cups,-libs \
+		lang/gcc/4.9,-libs>=4.9,<4.10
 
 .include <bsd.own.mk>
 
@@ -123,6 +124,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Dno_gc_sections=1 \
 		-Ddisable_fatal_linker_warnings=1 \
 		-Dv8_use_external_startup_data=0 \
+		-Dlibraries_for_target='-lestdc++' \
 		-DOS=openbsd
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
@@ -132,6 +134,14 @@ GYP_DEFS+=	-Dgoogle_api_key='AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI' \
 		-Dgoogle_default_client_secret='nQcDyaBvDyCeDrsRqKIWSHJn' \
 		-Dffmpeg_branding=Chrome \
 		-Dproprietary_codecs=1
+
+.if ${MACHINE_ARCH} == "i386"
+CARCH=		i386
+.elif ${MACHINE_ARCH} == "amd64"
+CARCH=		x86_64
+.endif
+
+MAKE_ENV+=	CPATH=${LOCALBASE}/include/c++/4.9.3/bits/:${LOCALBASE}/include/c++/4.9.3/:${LOCALBASE}/include/c++/4.9.3/${CARCH}-unknown-openbsd5.8/
 
 .if ${FLAVOR:Mdebug}
 GYP_DEFS+=	-Dremove_webcore_debug_symbols=1

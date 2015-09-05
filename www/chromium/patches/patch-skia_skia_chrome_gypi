@@ -1,8 +1,8 @@
-$OpenBSD: patch-skia_skia_chrome_gypi,v 1.10 2015/04/27 16:38:25 robert Exp $
---- skia/skia_chrome.gypi.orig.port	Wed Apr 15 00:18:57 2015
-+++ skia/skia_chrome.gypi	Wed Apr 15 08:32:50 2015
-@@ -79,6 +79,11 @@
-     'ext/skia_utils_win.h',
+$OpenBSD: patch-skia_skia_chrome_gypi,v 1.11 2015/09/05 16:06:50 robert Exp $
+--- skia/skia_chrome.gypi.orig.port	Tue Sep  1 22:10:43 2015
++++ skia/skia_chrome.gypi	Wed Sep  2 07:31:55 2015
+@@ -54,6 +54,11 @@
+     'ext/skia_utils_win.cc',
    ],
    'conditions': [
 +    [ 'use_cairo == 1', {

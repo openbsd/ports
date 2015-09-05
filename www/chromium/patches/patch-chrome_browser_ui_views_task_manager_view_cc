@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_task_manager_view_cc,v 1.1 2015/05/24 15:51:53 robert Exp $
---- chrome/browser/ui/views/task_manager_view.cc.orig.port	Sat May 23 00:59:48 2015
-+++ chrome/browser/ui/views/task_manager_view.cc	Sat May 23 01:06:30 2015
-@@ -326,7 +326,7 @@ void TaskManagerView::Init() {
-                       ui::TableColumn::RIGHT, -1, 0));
+$OpenBSD: patch-chrome_browser_ui_views_task_manager_view_cc,v 1.2 2015/09/05 16:06:50 robert Exp $
+--- chrome/browser/ui/views/task_manager_view.cc.orig.port	Tue Sep  1 22:10:42 2015
++++ chrome/browser/ui/views/task_manager_view.cc	Wed Sep  2 07:31:55 2015
+@@ -339,7 +339,7 @@ void TaskManagerView::Init() {
    columns_.back().sortable = true;
+   columns_.back().initial_sort_is_ascending = false;
    // TODO(port) http://crbug.com/120488 for non-Linux.
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

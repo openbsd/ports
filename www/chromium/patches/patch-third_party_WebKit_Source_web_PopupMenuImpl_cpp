@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_web_PopupMenuImpl_cpp,v 1.1 2015/09/05 16:06:50 robert Exp $
+--- third_party/WebKit/Source/web/PopupMenuImpl.cpp.orig.port	Wed Sep  2 20:13:12 2015
++++ third_party/WebKit/Source/web/PopupMenuImpl.cpp	Wed Sep  2 20:13:26 2015
+@@ -168,7 +168,7 @@ class PopupMenuImpl::ItemIterationContext { (public)
+         , m_buffer(buffer)
+     {
+         ASSERT(m_buffer);
+-#if OS(LINUX)
++#if OS(LINUX) || OS(OPENBSD)
+         // On other platforms, the <option> background color is the same as the
+         // <select> background color. On Linux, that makes the <option>
+         // background color very dark, so by default, try to use a lighter

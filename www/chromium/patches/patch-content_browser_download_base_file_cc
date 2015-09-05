@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_download_base_file_cc,v 1.4 2014/11/19 21:27:32 robert Exp $
---- content/browser/download/base_file.cc.orig.port	Wed Nov 19 05:53:03 2014
-+++ content/browser/download/base_file.cc	Wed Nov 19 08:38:25 2014
-@@ -208,7 +208,7 @@ void BaseFile::SetClientGuid(const std::string& guid) 
+$OpenBSD: patch-content_browser_download_base_file_cc,v 1.5 2015/09/05 16:06:50 robert Exp $
+--- content/browser/download/base_file.cc.orig.port	Sat Aug 22 21:01:54 2015
++++ content/browser/download/base_file.cc	Wed Sep  2 07:31:55 2015
+@@ -209,7 +209,7 @@ void BaseFile::SetClientGuid(const std::string& guid) 
  }
  
  // OS_WIN, OS_MACOSX and OS_LINUX have specialized implementations.

@@ -1,12 +1,12 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.4 2015/07/23 13:44:04 robert Exp $
---- content/renderer/render_thread_impl.cc.orig.port	Wed Jul 15 22:30:03 2015
-+++ content/renderer/render_thread_impl.cc	Wed Jul 22 08:37:30 2015
-@@ -670,7 +670,7 @@ void RenderThreadImpl::Init() {
-                   static_cast<unsigned>(compositor_raster_threads_.size() + 1))
-                   .c_str()));
-       raster_thread->Start();
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.5 2015/09/05 16:06:50 robert Exp $
+--- content/renderer/render_thread_impl.cc.orig.port	Wed Sep  2 07:46:34 2015
++++ content/renderer/render_thread_impl.cc	Wed Sep  2 07:46:41 2015
+@@ -768,7 +768,7 @@ void RenderThreadImpl::Init() {
+   is_gather_pixel_refs_enabled_ = num_raster_threads > 1;
+ 
+   base::SimpleThread::Options thread_options;
 -#if defined(OS_ANDROID) || defined(OS_LINUX)
 +#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
-       if (!command_line.HasSwitch(
-               switches::kUseNormalPriorityForTileTaskWorkerThreads)) {
-         raster_thread->SetThreadPriority(base::ThreadPriority::BACKGROUND);
+   if (!command_line.HasSwitch(
+           switches::kUseNormalPriorityForTileTaskWorkerThreads)) {
+     thread_options.set_priority(base::ThreadPriority::BACKGROUND);

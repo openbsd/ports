@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.5 2015/07/23 13:44:04 robert Exp $
---- content/renderer/renderer_blink_platform_impl.cc.orig.port	Wed Jul 15 22:30:03 2015
-+++ content/renderer/renderer_blink_platform_impl.cc	Wed Jul 22 08:37:30 2015
-@@ -99,7 +99,7 @@
+$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.6 2015/09/05 16:06:50 robert Exp $
+--- content/renderer/renderer_blink_platform_impl.cc.orig.port	Tue Sep  1 22:10:42 2015
++++ content/renderer/renderer_blink_platform_impl.cc	Wed Sep  2 07:31:55 2015
+@@ -102,7 +102,7 @@
  
  #if defined(OS_POSIX)
  #include "base/file_descriptor_posix.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.5 2015/07/2
  #include <map>
  #include <string>
  
-@@ -189,7 +189,7 @@ class RendererBlinkPlatformImpl::FileUtilities : publi
+@@ -192,7 +192,7 @@ class RendererBlinkPlatformImpl::FileUtilities : publi
    scoped_refptr<ThreadSafeSender> thread_safe_sender_;
  };
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.5 2015/07/2
  class RendererBlinkPlatformImpl::SandboxSupport
      : public blink::WebSandboxSupport {
   public:
-@@ -232,7 +232,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -235,7 +235,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
        plugin_refresh_allowed_(true),
        default_task_runner_(renderer_scheduler->DefaultTaskRunner()),
        web_scrollbar_behavior_(new WebScrollbarBehaviorImpl) {
@@ -28,7 +28,7 @@ $OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.5 2015/07/2
    if (g_sandbox_enabled && sandboxEnabled()) {
      sandbox_support_.reset(new RendererBlinkPlatformImpl::SandboxSupport);
    } else {
-@@ -285,7 +285,7 @@ blink::WebFileUtilities* RendererBlinkPlatformImpl::fi
+@@ -288,7 +288,7 @@ blink::WebFileUtilities* RendererBlinkPlatformImpl::fi
  }
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::sandboxSupport() {
@@ -37,7 +37,7 @@ $OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.5 2015/07/2
    // These platforms do not require sandbox support.
    return NULL;
  #else
-@@ -553,7 +553,7 @@ bool RendererBlinkPlatformImpl::SandboxSupport::loadFo
+@@ -556,7 +556,7 @@ bool RendererBlinkPlatformImpl::SandboxSupport::loadFo
    return FontLoader::CGFontRefFromBuffer(font_data, font_data_size, out);
  }
  

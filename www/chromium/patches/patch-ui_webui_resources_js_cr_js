@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_webui_resources_js_cr_js,v 1.1 2015/08/27 14:16:50 robert Exp $
---- ui/webui/resources/js/cr.js.orig.port	Thu Aug 27 16:09:00 2015
-+++ ui/webui/resources/js/cr.js	Thu Aug 27 16:09:22 2015
-@@ -348,6 +348,11 @@ var cr = function() {
-       return /Linux/.test(navigator.userAgent);
+$OpenBSD: patch-ui_webui_resources_js_cr_js,v 1.2 2015/09/05 16:06:50 robert Exp $
+--- ui/webui/resources/js/cr.js.orig.port	Wed Sep  2 20:17:29 2015
++++ ui/webui/resources/js/cr.js	Wed Sep  2 20:17:52 2015
+@@ -427,6 +427,11 @@ var cr = function() {
+       return /CrOS/.test(navigator.userAgent);
      },
  
 +    /** Whether this is on *BSD. */
@@ -10,6 +10,6 @@ $OpenBSD: patch-ui_webui_resources_js_cr_js,v 1.1 2015/08/27 14:16:50 robert Exp
 +      return /BSD/.test(navigator.userAgent);
 +    },
 +
-     /** Whether this uses the views toolkit or not. */
-     get isViews() {
-       return typeof chrome.getVariableValue == 'function' &&
+     /** Whether this is on vanilla Linux (not chromeOS). */
+     get isLinux() {
+       return /Linux/.test(navigator.userAgent);

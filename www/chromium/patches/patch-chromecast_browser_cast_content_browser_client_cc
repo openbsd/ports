@@ -1,8 +1,8 @@
-$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.1 2015/07/28 11:30:25 robert Exp $
---- chromecast/browser/cast_content_browser_client.cc.orig.port	Tue Jul 28 07:49:12 2015
-+++ chromecast/browser/cast_content_browser_client.cc	Tue Jul 28 07:57:48 2015
-@@ -178,7 +178,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
-       command_line->AppendSwitch(switches::kEnableCmaMediaPipeline);
+$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.2 2015/09/05 16:06:50 robert Exp $
+--- chromecast/browser/cast_content_browser_client.cc.orig.port	Tue Sep  1 22:10:42 2015
++++ chromecast/browser/cast_content_browser_client.cc	Wed Sep  2 07:31:55 2015
+@@ -200,7 +200,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
+       command_line->AppendSwitch(switches::kEnableLegacyHolePunching);
    }
  
 -#if defined(OS_LINUX)

@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_posix_unix_domain_socket_linux_cc,v 1.4 2015/05/24 15:51:52 robert Exp $
---- base/posix/unix_domain_socket_linux.cc.orig.port	Wed May 20 09:59:28 2015
-+++ base/posix/unix_domain_socket_linux.cc	Wed May 20 11:34:37 2015
+$OpenBSD: patch-base_posix_unix_domain_socket_linux_cc,v 1.5 2015/09/05 16:06:50 robert Exp $
+--- base/posix/unix_domain_socket_linux.cc.orig.port	Sat Aug 22 21:01:50 2015
++++ base/posix/unix_domain_socket_linux.cc	Wed Sep  2 07:31:54 2015
 @@ -5,7 +5,10 @@
  #include "base/posix/unix_domain_socket_linux.h"
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-base_posix_unix_domain_socket_linux_cc,v 1.4 2015/05/24 15:51:52
  #include <unistd.h>
  
  #include <vector>
-@@ -23,6 +26,14 @@
+@@ -25,6 +28,14 @@ namespace base {
  
  const size_t UnixDomainSocket::kMaxFileDescriptors = 16;
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-base_posix_unix_domain_socket_linux_cc,v 1.4 2015/05/24 15:51:52
  #if !defined(OS_NACL_NONSFI)
  // Creates a connected pair of UNIX-domain SOCK_SEQPACKET sockets, and passes
  // ownership of the newly allocated file descriptors to |one| and |two|.
-@@ -148,7 +159,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+@@ -150,7 +161,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
            cmsg->cmsg_type == SCM_CREDENTIALS) {
          DCHECK_EQ(payload_len, sizeof(struct ucred));
          DCHECK_EQ(pid, -1);

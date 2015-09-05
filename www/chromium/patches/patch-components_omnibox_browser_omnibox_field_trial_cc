@@ -1,6 +1,6 @@
-$OpenBSD: patch-components_omnibox_omnibox_field_trial_cc,v 1.1 2015/05/24 15:51:53 robert Exp $
---- components/omnibox/omnibox_field_trial.cc.orig.port	Sat May 23 00:59:48 2015
-+++ components/omnibox/omnibox_field_trial.cc	Sat May 23 01:09:33 2015
+$OpenBSD: patch-components_omnibox_browser_omnibox_field_trial_cc,v 1.1 2015/09/05 16:06:50 robert Exp $
+--- components/omnibox/browser/omnibox_field_trial.cc.orig.port	Wed Sep  2 07:44:30 2015
++++ components/omnibox/browser/omnibox_field_trial.cc	Wed Sep  2 07:44:44 2015
 @@ -155,7 +155,7 @@ bool OmniboxFieldTrial::InZeroSuggestFieldTrial() {
            kBundledExperimentFieldTrialName, kZeroSuggestRule) == "false")
      return false;

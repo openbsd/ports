@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_resources_plugin_metadata_plugins_linux_json,v 1.1 2013/05/31 15:38:59 robert Exp $
---- chrome/browser/resources/plugin_metadata/plugins_linux.json.orig.port	Thu May 30 22:40:41 2013
-+++ chrome/browser/resources/plugin_metadata/plugins_linux.json	Thu May 30 22:42:13 2013
+$OpenBSD: patch-chrome_browser_resources_plugin_metadata_plugins_linux_json,v 1.2 2015/09/05 16:06:50 robert Exp $
+--- chrome/browser/resources/plugin_metadata/plugins_linux.json.orig.port	Wed Sep  2 07:40:25 2015
++++ chrome/browser/resources/plugin_metadata/plugins_linux.json	Wed Sep  2 07:40:38 2015
 @@ -70,28 +70,6 @@
      "displayurl": true,
      "group_name_matcher": "Java*"
@@ -15,15 +15,15 @@ $OpenBSD: patch-chrome_browser_resources_plugin_metadata_plugins_linux_json,v 1.
 -    ],
 -    "versions": [
 -      {
--        "version": "11.1.102",
+-        "version": "18.0.0.233",
 -        "status": "up_to_date",
--        "reference": "http://www.adobe.com/support/security/bulletins/apsb12-03.html"
+-        "reference": "https://helpx.adobe.com/security/products/flash-player/apsb15-19.html"
 -      }
 -    ],
 -    "lang": "en-US",
 -    "name": "Adobe Flash Player",
 -    "help_url": "https://support.google.com/chrome/?p=plugin_flash",
--    "url": "http://get.adobe.com/flashplayer/",
+-    "url": "https://support.google.com/chrome/answer/6258784",
 -    "displayurl": true,
 -    "group_name_matcher": "*Shockwave Flash*"
 -  },

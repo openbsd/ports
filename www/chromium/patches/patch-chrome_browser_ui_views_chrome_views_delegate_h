@@ -1,27 +1,21 @@
-$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_h,v 1.7 2015/07/23 13:44:04 robert Exp $
---- chrome/browser/ui/views/chrome_views_delegate.h.orig.port	Wed Jul 22 08:44:23 2015
-+++ chrome/browser/ui/views/chrome_views_delegate.h	Wed Jul 22 08:44:55 2015
-@@ -31,7 +31,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
+$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_h,v 1.8 2015/09/05 16:06:50 robert Exp $
+--- chrome/browser/ui/views/chrome_views_delegate.h.orig.port	Wed Sep  2 07:42:47 2015
++++ chrome/browser/ui/views/chrome_views_delegate.h	Thu Sep  3 07:29:00 2015
+@@ -33,7 +33,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
    HICON GetDefaultWindowIcon() const override;
    HICON GetSmallWindowIcon() const override;
    bool IsWindowInMetro(gfx::NativeWindow window) const override;
 -#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#elif (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
++#elif (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    gfx::ImageSkia* GetDefaultWindowIcon() const override;
  #endif
  
-@@ -44,12 +44,12 @@ class ChromeViewsDelegate : public views::ViewsDelegat
+@@ -46,7 +46,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
    void OnBeforeWidgetInit(
        views::Widget::InitParams* params,
        views::internal::NativeWidgetDelegate* delegate) override;
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    bool WindowManagerProvidesTitleBar(bool maximized) override;
  #endif
    ui::ContextFactory* GetContextFactory() override;
-   std::string GetApplicationName() override;
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
-   scoped_refptr<base::TaskRunner>
-       GetTaskRunnerForAuraLinuxAccessibilityInit() override;
- #endif

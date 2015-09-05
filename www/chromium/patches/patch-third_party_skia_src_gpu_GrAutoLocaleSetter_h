@@ -1,12 +1,12 @@
-$OpenBSD: patch-third_party_skia_src_gpu_GrAutoLocaleSetter_h,v 1.1 2015/05/24 15:51:53 robert Exp $
---- third_party/skia/src/gpu/GrAutoLocaleSetter.h.orig.port	Wed May 20 11:10:19 2015
-+++ third_party/skia/src/gpu/GrAutoLocaleSetter.h	Wed May 20 11:37:43 2015
+$OpenBSD: patch-third_party_skia_src_gpu_GrAutoLocaleSetter_h,v 1.2 2015/09/05 16:06:50 robert Exp $
+--- third_party/skia/src/gpu/GrAutoLocaleSetter.h.orig.port	Wed Sep  2 20:14:12 2015
++++ third_party/skia/src/gpu/GrAutoLocaleSetter.h	Wed Sep  2 20:14:31 2015
 @@ -28,7 +28,7 @@ class GrAutoLocaleSetter { (public)
  #if defined(SK_BUILD_FOR_WIN)
          fOldPerThreadLocale = _configthreadlocale(_ENABLE_PER_THREAD_LOCALE);
          fOldLocale = setlocale(LC_ALL, name);
--#elif !defined(SK_BUILD_FOR_ANDROID)
-+#elif !defined(SK_BUILD_FOR_ANDROID) && !defined(__OpenBSD__)
+-#elif !defined(SK_BUILD_FOR_ANDROID) && !defined(__UCLIBC__)
++#elif !defined(SK_BUILD_FOR_ANDROID) && !defined(__UCLIBC__) && !defined(__OpenBSD__)
          fLocale = newlocale(LC_ALL, name, 0);
          if (fLocale) {
              fOldLocale = uselocale(fLocale);
@@ -14,8 +14,8 @@ $OpenBSD: patch-third_party_skia_src_gpu_GrAutoLocaleSetter_h,v 1.1 2015/05/24 1
  #if defined(SK_BUILD_FOR_WIN)
          setlocale(LC_ALL, fOldLocale);
          _configthreadlocale(fOldPerThreadLocale);
--#elif !defined(SK_BUILD_FOR_ANDROID)
-+#elif !defined(SK_BUILD_FOR_ANDROID) && !defined(__OpenBSD__)
+-#elif !defined(SK_BUILD_FOR_ANDROID) && !defined(__UCLIBC__)
++#elif !defined(SK_BUILD_FOR_ANDROID) && !defined(__UCLIBC__) && !defined(__OpenBSD__)
          if (fLocale) {
               uselocale(fOldLocale);
               freelocale(fLocale);
@@ -23,8 +23,8 @@ $OpenBSD: patch-third_party_skia_src_gpu_GrAutoLocaleSetter_h,v 1.1 2015/05/24 1
  #if defined(SK_BUILD_FOR_WIN)
      int fOldPerThreadLocale;
      const char* fOldLocale;
--#elif !defined(SK_BUILD_FOR_ANDROID)
-+#elif !defined(SK_BUILD_FOR_ANDROID) && !defined(__OpenBSD__)
+-#elif !defined(SK_BUILD_FOR_ANDROID) && !defined(__UCLIBC__)
++#elif !defined(SK_BUILD_FOR_ANDROID) && !defined(__UCLIBC__) && !defined(__OpenBSD__)
      locale_t fOldLocale;
      locale_t fLocale;
  #endif

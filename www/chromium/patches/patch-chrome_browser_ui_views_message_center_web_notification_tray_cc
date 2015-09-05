@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_message_center_web_notification_tray_cc,v 1.1 2015/01/22 11:16:41 robert Exp $
---- chrome/browser/ui/views/message_center/web_notification_tray.cc.orig.port	Sat Dec 27 12:59:28 2014
-+++ chrome/browser/ui/views/message_center/web_notification_tray.cc	Sat Dec 27 13:07:51 2014
-@@ -31,7 +31,7 @@
+$OpenBSD: patch-chrome_browser_ui_views_message_center_web_notification_tray_cc,v 1.2 2015/09/05 16:06:50 robert Exp $
+--- chrome/browser/ui/views/message_center/web_notification_tray.cc.orig.port	Sat Aug 22 21:01:52 2015
++++ chrome/browser/ui/views/message_center/web_notification_tray.cc	Wed Sep  2 07:31:55 2015
+@@ -34,7 +34,7 @@
  #include "ui/strings/grit/ui_strings.h"
  #include "ui/views/widget/widget.h"
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_views_message_center_web_notification_tray_cc,
  #include "base/environment.h"
  #include "base/nix/xdg_util.h"
  #endif
-@@ -66,7 +66,7 @@ gfx::ImageSkia* GetIcon(int unread_count, bool is_quie
+@@ -69,7 +69,7 @@ gfx::ImageSkia* GetIcon(int unread_count, bool is_quie
  }
  
  bool CanDestroyStatusIcon() {

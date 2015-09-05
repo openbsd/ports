@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_panels_panel_frame_view_cc,v 1.4 2015/05/24 15:51:53 robert Exp $
---- chrome/browser/ui/views/panels/panel_frame_view.cc.orig.port	Thu May 14 00:23:04 2015
-+++ chrome/browser/ui/views/panels/panel_frame_view.cc	Wed May 20 08:34:56 2015
-@@ -586,7 +586,7 @@ bool PanelFrameView::OnMousePressed(const ui::MouseEve
+$OpenBSD: patch-chrome_browser_ui_views_panels_panel_frame_view_cc,v 1.5 2015/09/05 16:06:50 robert Exp $
+--- chrome/browser/ui/views/panels/panel_frame_view.cc.orig.port	Sat Aug 22 21:01:52 2015
++++ chrome/browser/ui/views/panels/panel_frame_view.cc	Wed Sep  2 07:31:55 2015
+@@ -587,7 +587,7 @@ bool PanelFrameView::OnMousePressed(const ui::MouseEve
  }
  
  bool PanelFrameView::OnMouseDragged(const ui::MouseEvent& event) {

@@ -1,16 +1,16 @@
-$OpenBSD: patch-build_common_gypi,v 1.35 2015/07/23 13:44:04 robert Exp $
---- build/common.gypi.orig.port	Wed Jul 15 22:29:56 2015
-+++ build/common.gypi	Wed Jul 22 08:37:29 2015
-@@ -97,7 +97,7 @@
+$OpenBSD: patch-build_common_gypi,v 1.36 2015/09/05 16:06:50 robert Exp $
+--- build/common.gypi.orig.port	Wed Sep  2 07:33:36 2015
++++ build/common.gypi	Wed Sep  2 07:36:10 2015
+@@ -105,7 +105,7 @@
  
            'conditions': [
-             # ChromeOS and Windows use Aura and Ash.
--            ['chromeos==1 or OS=="win" or OS=="linux"', {
-+            ['chromeos==1 or OS=="win" or OS=="linux" or OS=="openbsd"', {
+             # Windows and Linux (including Chrome OS) use Aura and Ash.
+-            ['OS=="win" or OS=="linux"', {
++            ['OS=="win" or OS=="linux" or OS=="openbsd"', {
                'use_ash%': 1,
                'use_aura%': 1,
              }],
-@@ -735,7 +735,7 @@
+@@ -767,7 +767,7 @@
          }],
  
          # DBus usage.
@@ -19,7 +19,7 @@ $OpenBSD: patch-build_common_gypi,v 1.35 2015/07/23 13:44:04 robert Exp $
            'use_dbus%': 1,
          }, {
            'use_dbus%': 0,
-@@ -845,7 +845,7 @@
+@@ -880,7 +880,7 @@
  
          # Use GPU accelerated cross process image transport by default
          # on linux builds with the Aura window manager
@@ -28,7 +28,7 @@ $OpenBSD: patch-build_common_gypi,v 1.35 2015/07/23 13:44:04 robert Exp $
            'ui_compositor_image_transport%': 1,
          }, {
            'ui_compositor_image_transport%': 0,
-@@ -970,7 +970,7 @@
+@@ -981,7 +981,7 @@
          # --help for more information. Meant to be overriden with GYP_DEFINES.
          # TODO(maruel): Remove the conditions as more configurations are
          # supported.
@@ -37,7 +37,7 @@ $OpenBSD: patch-build_common_gypi,v 1.35 2015/07/23 13:44:04 robert Exp $
            'test_isolation_mode%': 'check',
          }, {
            'test_isolation_mode%': 'noop',
-@@ -986,7 +986,7 @@
+@@ -997,7 +997,7 @@
          }, {
            'use_openmax_dl_fft%': 0,
          }],
@@ -46,7 +46,7 @@ $OpenBSD: patch-build_common_gypi,v 1.35 2015/07/23 13:44:04 robert Exp $
              'enable_mdns%' : 1,
          }],
  
-@@ -3561,6 +3561,14 @@
+@@ -3612,6 +3612,14 @@
      },
    },
    'conditions': [
@@ -61,7 +61,7 @@ $OpenBSD: patch-build_common_gypi,v 1.35 2015/07/23 13:44:04 robert Exp $
      ['os_posix==1', {
        'target_defaults': {
          'ldflags': [
-@@ -4626,7 +4634,7 @@
+@@ -4693,7 +4701,7 @@
      }],
      # FreeBSD-specific options; note that most FreeBSD options are set above,
      # with Linux.
@@ -70,7 +70,7 @@ $OpenBSD: patch-build_common_gypi,v 1.35 2015/07/23 13:44:04 robert Exp $
        'target_defaults': {
          'ldflags': [
            '-Wl,--no-keep-memory',
-@@ -5860,8 +5868,8 @@
+@@ -5939,8 +5947,8 @@
      ['clang==1 and ((OS!="mac" and OS!="ios") or clang_xcode==0) '
          'and OS!="win"', {
        'make_global_settings': [
