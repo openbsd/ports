@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2015/07/26 04:40:16 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.31 2015/09/05 14:48:53 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -40,11 +40,11 @@ jruby/lib/ruby/gems/1.8/gems/rdoc-4.1.0/bin/ri
 jruby/lib/ruby/gems/1.8/specifications/
 jruby/lib/ruby/gems/1.8/specifications/default/
 jruby/lib/ruby/gems/1.8/specifications/default/jar-dependencies-0.1.15.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.9.7-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.9.11-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/json-1.8.0-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/minitest-5.4.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/power_assert-0.2.3.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/psych-2.0.14.pre1-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/psych-2.0.15-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rake-${RAKE_V}.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rdoc-4.1.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/ruby-maven-3.3.3.gemspec
@@ -229,6 +229,8 @@ jruby/lib/ruby/stdlib/debug.rb
 jruby/lib/ruby/stdlib/delegate.rb
 jruby/lib/ruby/stdlib/digest/
 jruby/lib/ruby/stdlib/digest.rb
+jruby/lib/ruby/stdlib/digest/digest/
+jruby/lib/ruby/stdlib/digest/digest/bubblebabble.rb
 jruby/lib/ruby/stdlib/digest/sha2.rb
 jruby/lib/ruby/stdlib/drb/
 jruby/lib/ruby/stdlib/drb.rb
@@ -424,6 +426,16 @@ jruby/lib/ruby/stdlib/jopenssl21/openssl/config.rb
 jruby/lib/ruby/stdlib/jopenssl21/openssl/digest.rb
 jruby/lib/ruby/stdlib/jopenssl21/openssl/ssl.rb
 jruby/lib/ruby/stdlib/jopenssl21/openssl/x509.rb
+jruby/lib/ruby/stdlib/jopenssl22/
+jruby/lib/ruby/stdlib/jopenssl22/openssl/
+jruby/lib/ruby/stdlib/jopenssl22/openssl.rb
+jruby/lib/ruby/stdlib/jopenssl22/openssl/bn.rb
+jruby/lib/ruby/stdlib/jopenssl22/openssl/buffering.rb
+jruby/lib/ruby/stdlib/jopenssl22/openssl/cipher.rb
+jruby/lib/ruby/stdlib/jopenssl22/openssl/config.rb
+jruby/lib/ruby/stdlib/jopenssl22/openssl/digest.rb
+jruby/lib/ruby/stdlib/jopenssl22/openssl/ssl.rb
+jruby/lib/ruby/stdlib/jopenssl22/openssl/x509.rb
 jruby/lib/ruby/stdlib/jruby/
 jruby/lib/ruby/stdlib/jruby/compiler/
 jruby/lib/ruby/stdlib/jruby/compiler.rb
