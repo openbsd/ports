@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_decoder_dec_mac_cpp,v 1.1 2015/09/05 14:59:34 jeremy Exp $
+
+Use glib character conversion function instead of MAC library function,
+since the function used isn't supported in the mac 3.99 version we
+have in ports.  Taken from a patch in Aqualung Mantis bug #191.
+
+--- src/decoder/dec_mac.cpp.orig	Sun Apr 19 05:49:49 2015
++++ src/decoder/dec_mac.cpp	Sun Aug 30 13:19:54 2015
+@@ -24,6 +24,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <glib.h>
+ 
+ 
+ /* expand this to nothing so there's no error when including MACLib.h */
+@@ -174,9 +175,9 @@ mac_decoder_open(decoder_t * dec, char * filename) {
+ 
+ 
+ 	int ret = 0;
+-        wchar_t * pUTF16 = CAPECharacterHelper::GetUTF16FromANSI(filename);
+-        pdecompress = CreateIAPEDecompress(pUTF16, &ret);
+-        free(pUTF16);
++        gunichar2 * pUTF16 = g_utf8_to_utf16(filename, -1, NULL, NULL, NULL);
++        pdecompress = CreateIAPEDecompress((wchar_t *)pUTF16, &ret);
++        g_free(pUTF16);
+ 
+         if (!pdecompress || ret != ERROR_SUCCESS) {
+                 return DECODER_OPEN_BADLIB;

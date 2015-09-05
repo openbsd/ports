@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.40 2015/07/26 05:46:02 jeremy Exp $
+# $OpenBSD: Makefile,v 1.41 2015/09/05 14:59:34 jeremy Exp $
 
 COMMENT=	advanced music player
 
-DISTNAME=	aqualung-1.0-rc1
-PKGNAME=	aqualung-1.0rc1
+VERSION=	1.0
+DISTNAME=	aqualung-${VERSION}
 EPOCH=		0
 CATEGORIES=	audio
 
-HOMEPAGE=	http://aqualung.factorial.hu/
+HOMEPAGE=	https://github.com/jeremyevans/aqualung
 
 MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 
@@ -24,7 +24,7 @@ WANTLIB += gdk_pixbuf-2.0 xml2 mac mad mpcdec FLAC avcodec
 WANTLIB += avformat avutil wavpack lrdf oggz speex cddb cdio
 WANTLIB += cdio_cdda cdio_paranoia modplug ${MODLUA_WANTLIB}
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqualung/}
+MASTER_SITES=	https://github.com/jeremyevans/aqualung/releases/download/${VERSION}/
 
 MODULES=	devel/gettext \
 		lang/lua
