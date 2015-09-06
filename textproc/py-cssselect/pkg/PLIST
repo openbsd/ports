@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/09 13:57:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/06 16:37:51 jca Exp $
 lib/python${MODPY_VERSION}/site-packages/cssselect/
 lib/python${MODPY_VERSION}/site-packages/cssselect-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cssselect-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -6,10 +6,11 @@ lib/python${MODPY_VERSION}/site-packages/cssselect-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/cssselect-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/cssselect-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/cssselect/__init__.py
-lib/python${MODPY_VERSION}/site-packages/cssselect/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cssselect/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cssselect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cssselect/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cssselect/${MODPY_PYCACHE}tests.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cssselect/${MODPY_PYCACHE}xpath.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cssselect/parser.py
-lib/python${MODPY_VERSION}/site-packages/cssselect/parser.pyc
 lib/python${MODPY_VERSION}/site-packages/cssselect/tests.py
-lib/python${MODPY_VERSION}/site-packages/cssselect/tests.pyc
 lib/python${MODPY_VERSION}/site-packages/cssselect/xpath.py
-lib/python${MODPY_VERSION}/site-packages/cssselect/xpath.pyc

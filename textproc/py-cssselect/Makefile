@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/06 16:37:51 jca Exp $
 
 COMMENT =	parse CSS3 Selectors and translates them to XPath 1.0
 
 MODPY_EGG_VERSION = 0.9.1
+REVISION =	0
 DISTNAME =	cssselect-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -13,10 +14,12 @@ HOMEPAGE =	https://pypi.python.org/pypi/cssselect
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODPY_PI =	Yes
-
 MODULES =	lang/python
 
+MODPY_PI =	Yes
 MODPY_SETUPTOOLS = Yes
+
+FLAVORS =	python3
+FLAVOR ?=
 
 .include <bsd.port.mk>
