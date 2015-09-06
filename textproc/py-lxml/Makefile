@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/09/06 16:36:16 jca Exp $
+# $OpenBSD: Makefile,v 1.25 2015/09/06 16:43:43 jca Exp $
 
 BROKEN-hppa=	OOM on src/lxml/lxml.etree.c
 
@@ -23,7 +23,7 @@ WANTLIB=	${MODPY_WANTLIB} exslt m pthread xml2 xslt z
 MODULES=	lang/python
 
 LIB_DEPENDS=	textproc/libxslt
-TEST_DEPENDS=	textproc/py-cssselect
+TEST_DEPENDS=	textproc/py-cssselect${MODPY_FLAVOR}
 
 MODPY_PI =	Yes
 MODPY_SETUPTOOLS=Yes
