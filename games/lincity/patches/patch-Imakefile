@@ -1,9 +1,0 @@
-$OpenBSD: patch-Imakefile,v 1.2 2002/09/28 21:25:05 naddy Exp $
---- Imakefile.orig	Sat Feb 13 23:55:02 1999
-+++ Imakefile	Sat Sep 28 23:23:22 2002
-@@ -15,4 +15,4 @@ LOCAL_LIBRARIES = $(XLIB)
-            OBJS = xmain.o xmouse.o xscreen.o xmps.o xtypeinit.o\
-                   xengine.o xtransport.o xmarket.o xhelp.o lcx11.o
- 
--ComplexProgramTarget(xlincity)
-+ComplexCplusplusProgramTarget(xlincity)

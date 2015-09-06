@@ -1,27 +1,23 @@
-# $OpenBSD: Makefile,v 1.16 2015/01/22 21:17:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2015/09/06 12:01:39 kirby Exp $
 
 COMMENT=		Rich city simulation game for X
 
-DISTNAME=		lincity-1.11
-REVISION =		2
+DISTNAME=		lincity-1.12.1
 CATEGORIES=		games
 HOMEPAGE=		http://lincity.sourceforge.net/
 
-MAINTAINER=		Wilbern Cobb <wcobb@openbsd.org>
-
-# GPL
+# GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		X11 Xau Xdmcp Xext c m pthread-stubs stdc++ xcb
+WANTLIB=		ICE SM X11 Xext c m
 
-MASTER_SITES=		http://www.linklevel.net/distfiles/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lincity/}
 
-BUILD_DEPENDS=		devel/imake
+MODULES=		devel/gettext
 
-MAKE_FLAGS=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
-ALL_TARGET=		xlincity
-NO_TEST=		Yes
-
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+				LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 post-extract:
-	@cd ${WRKSRC}; ln -s lincity.man xlincity.man
+	@cd ${WRKSRC}; ln -s lincity.6 xlincity.6
 
 .include <bsd.port.mk>
