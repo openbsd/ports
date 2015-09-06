@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2015/08/26 15:38:46 juanfra Exp $
+# $OpenBSD: Makefile,v 1.21 2015/09/06 22:32:17 juanfra Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
-V=		4.7.8
+V=		4.7.9
 DISTNAME=	gambc-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 API_V=		${V:R:S/./0/}00${V:E}
@@ -26,9 +26,9 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--disable-cplusplus \
 		--disable-absolute-shared-libs \
-		--docdir=${PREFIX}/share/doc/gambit-c/ \
-		--includedir=${PREFIX}/include/gambit-c/ \
-		--libdir=${PREFIX}/lib/gambit-c/ \
+		--docdir=${PREFIX}/share/doc/gambit/ \
+		--includedir=${PREFIX}/include/gambit/ \
+		--libdir=${PREFIX}/lib/gambit/ \
 		--enable-c-opt="${CFLAGS}"
 
 MAKE_FILE=	${WRKSRC}/makefile
@@ -41,7 +41,7 @@ do-build:
 
 post-install:
 .for l in gambc gambcgsc gambcgsi
-	cd ${PREFIX}/lib/ && ln -s gambit-c/lib$l.so
+	cd ${PREFIX}/lib/ && ln -s gambit/lib$l.so
 .endfor
 
 do-test:

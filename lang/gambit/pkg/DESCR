@@ -1,7 +1,7 @@
 The Gambit Scheme system is a complete, portable, efficient and reliable
 implementation of the Scheme programming language.
 
-The Gambit-C system conforms to the R4RS, R5RS and IEEE Scheme
+The Gambit system conforms to the R4RS, R5RS and IEEE Scheme
 standards.  The full numeric tower is implemented, including: infinite
 precision integers (bignums), rationals, inexact reals (floating point
 numbers), and complex numbers.
