@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/06 16:43:43 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/06 16:52:26 jca Exp $
 
 COMMENT =	parse CSS3 Selectors and translates them to XPath 1.0
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	lang/python
 
-TEST_DEPENDS =	textproc/py-xlml${MODPY_FLAVOR}
+TEST_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR}
 
 MODPY_PI =	Yes
 MODPY_SETUPTOOLS = Yes
