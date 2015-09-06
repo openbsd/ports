@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2015/04/29 16:09:54 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2015/09/06 16:36:16 jca Exp $
 
-COMMENT=	Python binding for the libxml2 and libxslt libraries
 BROKEN-hppa=	OOM on src/lxml/lxml.etree.c
 
+COMMENT=	Python binding for the libxml2 and libxslt libraries
+
 MODPY_EGG_VERSION=	3.4.3
+REVISION=	0
 DISTNAME=	lxml-${MODPY_EGG_VERSION}
 PKGNAME=	py-lxml-${MODPY_EGG_VERSION}
+
 CATEGORIES=	textproc devel
 
 HOMEPAGE=	http://lxml.de/
@@ -15,8 +18,6 @@ MAINTAINER =	Sean Levy <attila@stalphonsos.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODPY_PI =	Yes
-
 WANTLIB=	${MODPY_WANTLIB} exslt m pthread xml2 xslt z
 
 MODULES=	lang/python
@@ -24,11 +25,15 @@ MODULES=	lang/python
 LIB_DEPENDS=	textproc/libxslt
 TEST_DEPENDS=	textproc/py-cssselect
 
+MODPY_PI =	Yes
 MODPY_SETUPTOOLS=Yes
 
+FLAVORS=	python3
+FLAVOR?=
+
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-lxml
-	@cp -r ${WRKSRC}/doc/* ${PREFIX}/share/doc/py-lxml/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}lxml
+	@cp -r ${WRKSRC}/doc/* ${PREFIX}/share/doc/${MODPY_PY_PREFIX}lxml/
 
 do-test:
 	cd ${WRKSRC} && cp lib.openbsd-*/lxml/*.so src/lxml; \
