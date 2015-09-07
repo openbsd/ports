@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_awful_tag_lua_in,v 1.7 2015/09/07 10:30:01 dcoppa Exp $
+
+commit 2efc09d103693ad130b79577996cfa4e0f6b8f40
+Author: Daniel Hahler <git@thequod.de>
+Date:   Tue Mar 17 16:23:40 2015 +0100
+
+tag.lua: add "property::icon_only" signal
+
+--- lib/awful/tag.lua.in.orig	Sat Jan 10 20:36:35 2015
++++ lib/awful/tag.lua.in	Mon Sep  7 11:03:51 2015
+@@ -622,6 +622,7 @@ capi.tag.connect_signal("request::select", tag.viewonl
+ 
+ capi.tag.add_signal("property::hide")
+ capi.tag.add_signal("property::icon")
++capi.tag.add_signal("property::icon_only")
+ capi.tag.add_signal("property::layout")
+ capi.tag.add_signal("property::mwfact")
+ capi.tag.add_signal("property::ncol")

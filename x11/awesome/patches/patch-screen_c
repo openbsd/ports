@@ -1,0 +1,27 @@
+$OpenBSD: patch-screen_c,v 1.4 2015/09/07 10:30:01 dcoppa Exp $
+
+commit 4c517cf9d32a6926bf97ac06fcec55b67d9db7bb
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Jun 13 11:18:47 2015 +0200
+
+Screen __index: Don't turn argument into a string
+
+Calling lua_tostring() on a number/integer, turns that stack slot into a string.
+This patch changes the code to only call lua_tostring() if the function argument
+really is a string.
+
+This partly also caused https://github.com/awesomeWM/awesome/issues/238.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- screen.c.orig	Sat Jan 10 20:36:35 2015
++++ screen.c	Mon Sep  7 11:13:41 2015
+@@ -422,7 +422,7 @@ luaA_screen_module_index(lua_State *L)
+ {
+     const char *name;
+ 
+-    if((name = lua_tostring(L, 2)))
++    if(lua_type(L, 2) == LUA_TSTRING && (name = lua_tostring(L, 2)))
+         foreach(screen, globalconf.screens)
+             foreach(output, screen->outputs)
+                 if(A_STREQ(output->name, name))

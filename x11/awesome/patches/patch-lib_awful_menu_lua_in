@@ -1,0 +1,31 @@
+$OpenBSD: patch-lib_awful_menu_lua_in,v 1.4 2015/09/07 10:30:01 dcoppa Exp $
+
+commit 84f09d9c69d8844dc2fa02f26745a6471bad7df7
+Author: dodo.the.last@gmail.com
+Date:   Sat Apr 18 08:53:57 2015 +0200
+
+awful.menu: update t new layout api
+
+Apparently the style to get the direction of a wibox.layout.* changed
+from calling get_dir to just accessing the attribute dir.
+
+--- lib/awful/menu.lua.in.orig	Sat Jan 10 20:36:35 2015
++++ lib/awful/menu.lua.in	Mon Sep  7 11:06:24 2015
+@@ -101,7 +101,7 @@ end
+ 
+ local function item_position(_menu, child)
+     local in_dir, other, a, b = 0, 0, "height", "width"
+-    local dir = _menu.layout.get_dir and _menu.layout:get_dir() or "y"
++    local dir = _menu.layout.dir or "y"
+     if dir == "x" then  a, b = b, a  end
+ 
+     local in_dir, other = 0, _menu[b]
+@@ -162,7 +162,7 @@ end
+ 
+ local function set_size(_menu)
+     local in_dir, other, a, b = 0, 0, "height", "width"
+-    local dir = _menu.layout.get_dir and _menu.layout:get_dir() or "y"
++    local dir = _menu.layout.dir or "y"
+     if dir == "x" then  a, b = b, a  end
+     for _, item in ipairs(_menu.items) do
+         other = math.max(other, item[b])

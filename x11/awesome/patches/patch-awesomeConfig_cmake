@@ -1,6 +1,6 @@
-$OpenBSD: patch-awesomeConfig_cmake,v 1.15 2014/09/11 10:27:17 dcoppa Exp $
---- awesomeConfig.cmake.orig	Fri Apr 11 11:07:10 2014
-+++ awesomeConfig.cmake	Wed Sep  3 10:53:42 2014
+$OpenBSD: patch-awesomeConfig_cmake,v 1.16 2015/09/07 10:30:01 dcoppa Exp $
+--- awesomeConfig.cmake.orig	Sat Jan 10 20:36:35 2015
++++ awesomeConfig.cmake	Mon Sep  7 11:20:25 2015
 @@ -16,12 +16,11 @@ option(COMPRESS_MANPAGES "compress manpages" ON)
  option(GENERATE_DOC "generate API documentation" ON)
  
@@ -70,3 +70,12 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.15 2014/09/11 10:27:17 dcoppa Exp $
  endif()
  
  # Hide to avoid confusion
+@@ -290,7 +282,7 @@ macro(a_configure_file file)
+     message(STATUS "Configuring ${outfile}")
+     configure_file(${SOURCE_DIR}/${file}
+                    ${BUILD_DIR}/${outfile}
+-                   ESCAPE_QUOTE
++                   ESCAPE_QUOTES
+                    @ONLY)
+ endmacro()
+ 

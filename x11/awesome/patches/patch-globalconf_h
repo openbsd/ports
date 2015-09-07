@@ -1,0 +1,27 @@
+$OpenBSD: patch-globalconf_h,v 1.8 2015/09/07 10:30:01 dcoppa Exp $
+
+commit f320cc74d0ec4111ef04b3523a55970167d28f36
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Aug 12 10:26:27 2015 +0200
+
+Force systray redraw on BG color change
+
+This commit makes awesome track the current background color of the systray
+window. When Lua applies another color, a redraw of all icons is forced.
+
+Fixes: https://github.com/awesomeWM/awesome/issues/359
+Closes: https://github.com/awesomeWM/awesome/pull/402
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- globalconf.h.orig	Sat Jan 10 20:36:35 2015
++++ globalconf.h	Mon Sep  7 11:33:47 2015
+@@ -127,6 +127,8 @@ typedef struct
+         bool registered;
+         /** Systray window parent */
+         drawin_t *parent;
++        /** Background color */
++        uint32_t background_pixel;
+     } systray;
+     /** The monitor of startup notifications */
+     SnMonitorContext *snmonitor;
