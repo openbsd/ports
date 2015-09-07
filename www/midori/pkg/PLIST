@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2015/06/26 08:03:24 landry Exp $
+@comment $OpenBSD: PLIST,v 1.39 2015/09/07 19:35:05 landry Exp $
 !%%gtk3%%
 @bin bin/midori
 @lib lib/libmidori-core.so.${LIBmidori-core_VERSION}
@@ -10,7 +10,7 @@ lib/midori/libcolorful-tabs.so
 lib/midori/libcookie-manager.so
 lib/midori/libcopy-tabs.so
 lib/midori/libdelayed-load.so
-lib/midori/libdevpet.so
+@comment lib/midori/libdevpet.so
 lib/midori/libdomain-keys.so
 lib/midori/libfeed-panel.so
 lib/midori/libflummi.so
@@ -56,6 +56,9 @@ share/icons/hicolor/16x16/status/internet-news-reader.png
 share/icons/hicolor/22x22/apps/midori.png
 share/icons/hicolor/22x22/categories/extension.png
 share/icons/hicolor/22x22/status/internet-news-reader.png
+share/icons/hicolor/24x24/status/adblock-blocked.svg
+share/icons/hicolor/24x24/status/adblock-disabled.svg
+share/icons/hicolor/24x24/status/adblock-enabled.svg
 share/icons/hicolor/scalable/apps/midori.svg
 share/icons/hicolor/scalable/categories/extension.svg
 share/icons/hicolor/scalable/status/internet-news-reader.svg
@@ -100,6 +103,7 @@ share/locale/ka/LC_MESSAGES/midori.mo
 share/locale/kk/LC_MESSAGES/midori.mo
 share/locale/km/LC_MESSAGES/midori.mo
 share/locale/ko/LC_MESSAGES/midori.mo
+share/locale/ku/LC_MESSAGES/midori.mo
 share/locale/ky/LC_MESSAGES/midori.mo
 share/locale/lb/
 share/locale/lb/LC_MESSAGES/
@@ -144,16 +148,12 @@ share/midori/res/
 share/midori/res/about.css
 share/midori/res/adblock/
 share/midori/res/adblock.list
-share/midori/res/adblock/blocked.png
-share/midori/res/adblock/disabled.png
 share/midori/res/adblock/element_hider.js
-share/midori/res/adblock/enabled.png
 share/midori/res/autosuggestcontrol.css
 share/midori/res/autosuggestcontrol.js
 share/midori/res/bookmarks/
 share/midori/res/bookmarks/Create.sql
 share/midori/res/bookmarks/Import_old_db_bookmarks.sql
-share/midori/res/close.png
 share/midori/res/error.html
 share/midori/res/flummi/
 share/midori/res/flummi/Create.sql

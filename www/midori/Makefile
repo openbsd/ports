@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.73 2015/06/26 08:03:24 landry Exp $
+# $OpenBSD: Makefile,v 1.74 2015/09/07 19:35:05 landry Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	lightweight web browser
 
-XFCE_VERSION =	0.5.10
+XFCE_VERSION =	0.5.11
 XFCE_GOODIE =	midori
-DISTNAME =	midori_0.5.10_all_
-WRKDIST =	${WRKDIR}
+DISTNAME =	midori_0.5.11_all_
+WRKDIST =	${WRKDIR}/${PKGNAME}
 
 HOMEPAGE =	http://www.midori-browser.org
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
