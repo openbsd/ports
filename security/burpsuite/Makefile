@@ -1,19 +1,23 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/19 11:30:14 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/07 18:07:58 rpointel Exp $
 
 COMMENT =		tool for testing security of web applications
 
-VERSION =		1.6.01
+VERSION =		1.6.25
 DISTNAME =		burpsuite_free_v${VERSION}
 PKGNAME =		burpsuite-${VERSION}
+
+DISTFILES=${DISTNAME}${EXTRACT_SUFX}{DownloadUpdate.ashx?Product=Free}
 
 CATEGORIES =		security
 
 HOMEPAGE =		http://portswigger.net/burp/
 
-# http://portswigger.net/burp/eula-free.html
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_CDROM=   https://portswigger.net/burp/eula-free.html
+PERMIT_PACKAGE_FTP=     https://portswigger.net/burp/eula-free.html
+PERMIT_DISTFILES_FTP=   https://portswigger.net/burp/eula-free.html
 
-MASTER_SITES =		${HOMEPAGE}
+
+MASTER_SITES =		https://portswigger.net/
 
 EXTRACT_ONLY =		
 EXTRACT_SUFX =		.jar
@@ -27,7 +31,7 @@ NO_TEST =		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/java/classes/
-	cp -r ${FULLDISTDIR}/${DISTFILES} ${PREFIX}/share/java/classes/burpsuite.jar
+	cp -r ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${PREFIX}/share/java/classes/burpsuite.jar
 	${SUBST_PROGRAM} ${FILESDIR}/burpsuite.sh ${PREFIX}/bin/burpsuite
 
 .include <bsd.port.mk>
