@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1380 2015/08/31 11:04:53 jca Exp $
+# $OpenBSD: Makefile,v 1.1381 2015/09/07 10:40:17 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -766,6 +766,7 @@
      SUBDIR += p5-File-ShareDir
      SUBDIR += p5-File-ShareDir-Install
      SUBDIR += p5-File-Slurp
+     SUBDIR += p5-File-Slurper
      SUBDIR += p5-File-Sync
      SUBDIR += p5-File-Tail
      SUBDIR += p5-File-Tempdir
