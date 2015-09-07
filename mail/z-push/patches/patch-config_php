@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_php,v 1.7 2013/11/01 14:02:50 robert Exp $
---- config.php.orig	Fri Nov  1 12:02:53 2013
-+++ config.php	Fri Nov  1 12:03:14 2013
-@@ -66,7 +66,7 @@
+$OpenBSD: patch-config_php,v 1.8 2015/09/07 18:56:59 robert Exp $
+--- config.php.orig	Thu Sep  3 01:04:22 2015
++++ config.php	Mon Sep  7 20:54:16 2015
+@@ -72,7 +72,7 @@
  /**********************************************************************************
   *  Default FileStateMachine settings
   */
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_php,v 1.7 2013/11/01 14:02:50 robert Exp $
  
  
  /**********************************************************************************
-@@ -255,4 +255,4 @@
+@@ -282,4 +282,4 @@
  */
      );
  

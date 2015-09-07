@@ -1,7 +1,7 @@
-$OpenBSD: patch-index_php,v 1.3 2013/11/01 14:02:50 robert Exp $
---- index.php.orig	Tue Sep 17 16:16:20 2013
-+++ index.php	Fri Nov  1 12:02:35 2013
-@@ -122,6 +122,22 @@ include_once('lib/request/requestprocessor.php');
+$OpenBSD: patch-index_php,v 1.4 2015/09/07 18:56:59 robert Exp $
+--- index.php.orig	Thu Sep  3 01:04:22 2015
++++ index.php	Mon Sep  7 20:54:16 2015
+@@ -123,6 +123,22 @@ include_once('lib/request/requestprocessor.php');
  include_once('config.php');
  include_once('version.php');
  

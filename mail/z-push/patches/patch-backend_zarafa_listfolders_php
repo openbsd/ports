@@ -1,6 +1,6 @@
-$OpenBSD: patch-backend_zarafa_listfolders_php,v 1.1 2012/06/24 18:47:20 ajacoutot Exp $
---- backend/zarafa/listfolders.php.orig	Thu Jun 21 18:28:55 2012
-+++ backend/zarafa/listfolders.php	Thu Jun 21 18:30:36 2012
+$OpenBSD: patch-backend_zarafa_listfolders_php,v 1.2 2015/09/07 18:56:59 robert Exp $
+--- backend/zarafa/listfolders.php.orig	Mon Sep  7 20:54:51 2015
++++ backend/zarafa/listfolders.php	Mon Sep  7 20:55:26 2015
 @@ -45,8 +45,8 @@
  * Consult LICENSE file for details
  ************************************************/
@@ -9,6 +9,13 @@ $OpenBSD: patch-backend_zarafa_listfolders_php,v 1.1 2012/06/24 18:47:20 ajacout
 -define('MAPI_SERVER', 'file:///var/run/zarafa');
 +define("PHP_MAPI_PATH", "/include/php/");
 +define('MAPI_SERVER', 'http://localhost:236/zarafa');
+ define('SSLCERT_FILE', null);
+ define('SSLCERT_PASS', null);
  
- $supported_classes = array (
-     "IPF.Note"          => "SYNC_FOLDER_TYPE_USER_MAIL",
+@@ -191,4 +191,4 @@ function listfolders_getlist ($adminStore, $session, $
+     }
+ }
+ 
+-?>
+\ No newline at end of file
++?>
