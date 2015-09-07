@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/07/15 23:56:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2015/09/07 19:05:30 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -8,15 +8,13 @@ COMMENT-utils=	mapserver utilities
 COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 
-V =		6.4.1
+V =		7.0.0
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
 PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
-SHARED_LIBS +=	mapserver 1.0
-REVISION-main =	1
-REVISION-php=	1
+SHARED_LIBS +=	mapserver 2.0
 
 CATEGORIES=	geo www
 
@@ -36,6 +34,7 @@ BUILD_DEPENDS +=	devel/swig databases/postgresql,-server
 
 LIB_DEPENDS=	devel/proj \
 		devel/fribidi \
+		devel/harfbuzz \
 		graphics/cairo \
 		geo/gdal \
 		geo/geos \
@@ -43,7 +42,7 @@ LIB_DEPENDS=	devel/proj \
 		www/fcgi
 
 WANTLIB += curl freetype jpeg m png pq xml2 z proj
-WANTLIB += gdal geos_c cairo fribidi gif
+WANTLIB += gdal geos_c cairo fribidi gif harfbuzz
 
 LIB_DEPENDS-utils =	STEM->=${V}:${BUILD_PKGPATH},-main
 LIB_DEPENDS-php =	STEM->=${V}:${BUILD_PKGPATH},-main
