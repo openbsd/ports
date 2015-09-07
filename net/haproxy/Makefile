@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2015/07/04 03:12:08 gsoares Exp $
+# $OpenBSD: Makefile,v 1.21 2015/09/07 22:20:52 juanfra Exp $
+
+BROKEN-hppa =	undefined reference to __sync atomic ops
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
