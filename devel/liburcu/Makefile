@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/12 15:02:32 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/07 23:12:13 juanfra Exp $
+
+BROKEN-hppa =		undefined reference to __sync atomic ops
 
 COMMENT =		user-level RCU implementation
 
