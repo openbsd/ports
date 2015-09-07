@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2015/08/15 08:33:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.25 2015/09/07 10:50:59 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -122,9 +122,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/host.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/interface.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/inventory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/port.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/process.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/darwin/base/user.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/debian/
@@ -225,6 +227,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/bond.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/bridge.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/fstab.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/host.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/interface.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/inventory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/mail_alias.rb
@@ -233,6 +236,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/port.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/routing_table.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/base/user.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/v57/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/v57.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/openbsd/v57/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/opensuse/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/opensuse.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/opensuse/base/
@@ -244,6 +250,14 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/plamo/base/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/plamo/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/plamo/base/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/plamo/base/service.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/poky/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/poky.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/poky/base/
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/poky/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/poky/base/interface.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/poky/base/inventory.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/poky/base/package.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/poky/base/service.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/base/
@@ -352,6 +366,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/gentoo.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/nixos.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/openbsd.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/plamo.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/poky.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/redhat.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/solaris.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/detect_os/suse.rb
@@ -397,11 +412,15 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/amazon/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/group_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/base/host_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/localhost_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/user_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/file_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/host_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/interface_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/process_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/user_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/debian/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/debian/service_spec.rb
@@ -410,6 +429,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/esxi/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/factory_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/freebsd/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/freebsd/file_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/freebsd/host_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/freebsd/interface_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/linux/bond_spec.rb
@@ -430,7 +450,11 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/module/systemd_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/module/zfs_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/file_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/host_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/interface_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/service_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd57/
+${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd57/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/redhat/service_spec.rb
