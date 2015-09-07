@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.38 2015/07/01 21:10:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2015/09/07 20:24:55 jca Exp $
+
+BROKEN-hppa =		"undefined reference to `__sync_fetch_and_add_4'"
 
 SHARED_ONLY=		Yes
 
