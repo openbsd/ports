@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2015/05/20 13:34:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2015/09/07 12:20:47 ajacoutot Exp $
 
 COMMENT=		brain teaser game
 
-DISTNAME=		gbrainy-2.2.5
-EPOCH=			0
+DISTNAME=		gbrainy-2.2.6
 
 CATEGORIES=		games
 
@@ -16,18 +15,16 @@ MASTER_SITES=		http://gent.softcatala.org/jmas/gbrainy/
 EXTRACT_SUFX=		.tar.gz
 
 MODULES=		lang/mono \
+			textproc/intltool \
 			x11/gnome
 
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		devel/mono-addins \
-			shells/bash \
-			textproc/intltool \
+BUILD_DEPENDS=		shells/bash \
 			x11/gnome/mono-gnome \
 			x11/gnome/librsvg
 
-RUN_DEPENDS=		devel/mono-addins \
-			shells/bash \
+RUN_DEPENDS=		shells/bash \
 			x11/gnome/mono-gnome
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp

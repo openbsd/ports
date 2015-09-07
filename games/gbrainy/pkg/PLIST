@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/07/09 13:51:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/09/07 12:20:47 ajacoutot Exp $
 bin/gbrainy
 lib/gbrainy/
 lib/gbrainy/gbrainy.Core.dll
@@ -500,6 +500,29 @@ share/gnome/help/gbrainy/sr@latin/pause.page
 share/gnome/help/gbrainy/sr@latin/score.page
 share/gnome/help/gbrainy/sr@latin/times.page
 share/gnome/help/gbrainy/sr@latin/tips.page
+share/gnome/help/gbrainy/sv/
+share/gnome/help/gbrainy/sv/customgame.page
+share/gnome/help/gbrainy/sv/difficulty.page
+share/gnome/help/gbrainy/sv/export.page
+share/gnome/help/gbrainy/sv/figures/
+share/gnome/help/gbrainy/sv/figures/all-games.png
+share/gnome/help/gbrainy/sv/figures/gbrainy.png
+share/gnome/help/gbrainy/sv/figures/logic-games.png
+share/gnome/help/gbrainy/sv/figures/math-games.png
+share/gnome/help/gbrainy/sv/figures/memory-games.png
+share/gnome/help/gbrainy/sv/figures/verbal-games.png
+share/gnome/help/gbrainy/sv/gameplay.page
+share/gnome/help/gbrainy/sv/gametypes.page
+share/gnome/help/gbrainy/sv/history.page
+share/gnome/help/gbrainy/sv/index.page
+share/gnome/help/gbrainy/sv/legal.xml
+share/gnome/help/gbrainy/sv/license.page
+share/gnome/help/gbrainy/sv/multiplayer.page
+share/gnome/help/gbrainy/sv/newgame.page
+share/gnome/help/gbrainy/sv/pause.page
+share/gnome/help/gbrainy/sv/score.page
+share/gnome/help/gbrainy/sv/times.page
+share/gnome/help/gbrainy/sv/tips.page
 share/icons/hicolor/16x16/apps/gbrainy.png
 share/icons/hicolor/32x32/apps/gbrainy.png
 share/icons/hicolor/48x48/apps/gbrainy.png
