@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.237 2015/09/05 16:06:50 robert Exp $
+# $OpenBSD: Makefile,v 1.238 2015/09/07 14:29:38 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -25,6 +25,10 @@ PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP =	Yes
 
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
+MASTER_SITES0=	http://nerd.hu/distfiles/
+
+PATCHFILES+=		issue1236863006_160001.diff:0
+PATCH_DIST_STRIP=	-p1
 
 MODULES=	lang/clang lang/python gcc4
 
