@@ -1,8 +1,6 @@
-$OpenBSD: patch-util_mapcache_seed_c,v 1.1.1.1 2014/08/26 18:38:49 landry Exp $
-/usr/obj/ports/mapcache-1.2.1/mapcache-rel-1-2-1/util/mapcache_seed.c:1182: error: 'S_IRUSR' undeclared (first use in this function)
-/usr/obj/ports/mapcache-1.2.1/mapcache-rel-1-2-1/util/mapcache_seed.c:1182: error: (Each undeclared identifier is reported only once
-/usr/obj/ports/mapcache-1.2.1/mapcache-rel-1-2-1/util/mapcache_seed.c:1182: error: for each function it appears in.)
-/usr/obj/ports/mapcache-1.2.1/mapcache-rel-1-2-1/util/mapcache_seed.c:1182: error: 'S_IWUSR' undeclared (first use in this function)
+$OpenBSD: patch-util_mapcache_seed_c,v 1.2 2015/09/07 18:57:55 landry Exp $
+
+https://github.com/mapserver/mapcache/pull/128
 
 --- util/mapcache_seed.c.orig	Mon May 19 22:30:46 2014
 +++ util/mapcache_seed.c	Mon May 19 22:31:00 2014

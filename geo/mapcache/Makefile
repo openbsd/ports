@@ -1,20 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2015/07/15 23:56:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/07 18:57:55 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GIS WMTS/TMS tile caching server
 
-GH_TAGNAME =	rel-1-2-1
-GH_ACCOUNT =	mapserver
-GH_PROJECT =	mapcache
-DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
-PKGNAME =	${GH_PROJECT}-1.2.1
-SHARED_LIBS +=	mapcache 0.0
-REVISION =	1
+DISTNAME =	mapcache-1.4.0
+SHARED_LIBS +=	mapcache 1.0
 
 CATEGORIES=	geo www
 
 HOMEPAGE=	http://www.mapserver.org/
+MASTER_SITES=	http://download.osgeo.org/mapserver/
+
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
