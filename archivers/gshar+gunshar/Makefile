@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2013/11/09 23:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2015/09/07 17:57:07 jasper Exp $
 
 COMMENT=	packing and unpacking of shell archives
 
-DISTNAME=	sharutils-4.13.1
-REVISION=	0
+DISTNAME=	sharutils-4.15.2
 
 CATEGORIES=	archivers
 
@@ -22,6 +21,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --program-prefix="g" \
 		 --disable-nls \
 		 --disable-uucode
+CONFIGURE_ENV += LDFLAGS="-L${LOCALBASE}/lib"
 
 # Regression tests pass without --disable-uuencode
 NO_TEST=Yes
