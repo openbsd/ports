@@ -1,15 +1,15 @@
---- Makefile.orig	Sat Feb 16 19:55:52 2008
-+++ Makefile	Wed Jan  7 12:11:35 2009
-@@ -8,25 +8,25 @@
- #	Licensed under the GNU Public License.
+--- Makefile.orig	Thu Sep  3 08:03:19 2015
++++ Makefile	Tue Sep  8 21:22:53 2015
+@@ -13,7 +13,7 @@
  #
  
--CC      = gcc
+ CC      = gcc
 -CFLAGS  = -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
-+#CC      = gcc
 +CFLAGS  += -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
            -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef
- #CFLAGS += -DBIGENDIAN
+ 
+ # Let lseek and mmap support 64-bit wide offsets
+@@ -23,7 +23,7 @@ CFLAGS += -D_FILE_OFFSET_BITS=64
  #CFLAGS += -DALIGNMENT_WORKAROUND
  
  # When debugging, disable -O2 and enable -g.
@@ -18,24 +18,7 @@
  #CFLAGS += -g
  
  # Pass linker flags here
--LDFLAGS =
-+LDFLAGS +=
- 
--DESTDIR =
--prefix  = /usr/local
--sbindir = $(prefix)/sbin
--mandir  = $(prefix)/share/man
-+#DESTDIR =
-+#prefix  = /usr/local
-+sbindir = $(PREFIX)/sbin
-+mandir  = $(PREFIX)/man
- man8dir = $(mandir)/man8
--docdir  = $(prefix)/share/doc/dmidecode
-+docdir  = $(PREFIX)/share/doc/dmidecode
- 
- INSTALL         := install
- INSTALL_DATA    := $(INSTALL) -m 644
-@@ -100,28 +100,28 @@
+@@ -114,28 +114,28 @@ install : install-bin install-man install-doc
  uninstall : uninstall-bin uninstall-man uninstall-doc
  
  install-bin : $(PROGRAMS)
