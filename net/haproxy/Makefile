@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/09/08 18:28:50 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2015/09/08 18:35:41 jca Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
@@ -26,6 +26,8 @@ MAKE_FLAGS +=	CFLAGS="${CFLAGS} -fno-strict-aliasing" LDFLAGS="${LDFLAGS}"
 MAKE_FLAGS +=	CC="${CC}" LD="${CC}" TARGET="openbsd"
 MAKE_FLAGS +=	USE_OPENSSL=1 USE_PCRE=1
 
+# The shared SSL session cache needs either atomics ops unsupported on
+# hppa or pthreads features unsupported on OpenBSD.
 .if ${MACHINE_ARCH:Mhppa}
 MAKE_FLAGS +=	USE_PRIVATE_CACHE=1
 .endif
