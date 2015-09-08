@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.55 2015/07/12 19:06:22 jca Exp $
+# $OpenBSD: Makefile,v 1.56 2015/09/08 18:32:00 jca Exp $
+
+BROKEN-powerpc=		needs a working ld(1) -Z
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
