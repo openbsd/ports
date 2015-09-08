@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/08 15:08:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/08 18:25:12 sthen Exp $
 
 COMMENT=	tools for use with PC/SC drivers, cards, readers
 
-DISTNAME=	pcsc-tools-1.4.23
+DISTNAME=	pcsc-tools-1.4.24
 
 CATEGORIES=	security sysutils
 
