@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2015/09/08 01:53:11 juanfra Exp $
 
 COMMENT=		GTK+2 graphical filemanager
 
 DISTNAME=		gentoo-0.19.13
 
-CATEGORIES=		x11	
+CATEGORIES=		x11
 
 HOMEPAGE=		http://www.obsession.se/gentoo/
 
