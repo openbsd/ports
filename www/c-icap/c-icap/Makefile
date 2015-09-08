@@ -1,28 +1,28 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/25 07:30:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/09/08 18:17:49 sthen Exp $
 
 MULTI_PACKAGES=	-main -db -ldap
 COMMENT-main=	ICAP server for use with web proxies
 COMMENT-db=	Berkeley DB module for c-icap
 COMMENT-ldap=	LDAP module for c-icap
 
-V=		0.3.5
+V=		0.4.1
 DISTNAME=	c_icap-$V
 PKGNAME-main=	c-icap-$V
 PKGNAME-db=	c-icap-db-$V
 PKGNAME-ldap=	c-icap-ldap-$V
 
-REVISION-main=	0
+SHARED_LIBS +=	icapapi                   1.1 # 4.1
 
-SHARED_LIBS +=	icapapi                   1.0 # 3.1
-
-WANTLIB += bz2 pthread z
+WANTLIB += bz2 pcre pthread z
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 # ipv6 not yet supported in *BSD.
 CONFIGURE_ARGS=	--disable-ipv6 \
-		--enable-large-files
+		--enable-large-files \
+		--without-memcached \
+		--with-pcre
 
 FAKE_FLAGS=	CONFIGDIR=${PREFIX}/share/examples/c-icap
 
@@ -30,13 +30,20 @@ FAKE_FLAGS=	CONFIGDIR=${PREFIX}/share/examples/c-icap
 RUN_DEPENDS$i = ${BASE_PKGPATH}
 .endfor
 
-WANTLIB-main=	${WANTLIB} c
-LIB_DEPENDS-main= archivers/bzip2
+LIB_DEPENDS=	devel/pcre
 
-LIB_DEPENDS-db=	databases/db/v4 ${BASE_PKGPATH}
+WANTLIB-main=	${WANTLIB} c
+LIB_DEPENDS-main= ${LIB_DEPENDS} \
+		archivers/bzip2
+
+LIB_DEPENDS-db=	${LIB_DEPENDS} \
+		${BASE_PKGPATH} \
+		databases/db/v4
 WANTLIB-db=	${WANTLIB} c db icapapi
 
-LIB_DEPENDS-ldap= databases/openldap ${BASE_PKGPATH}
+LIB_DEPENDS-ldap= ${LIB_DEPENDS} \
+		${BASE_PKGPATH} \
+		databases/openldap
 WANTLIB-ldap=	${WANTLIB} crypto icapapi lber-2.4 ldap-2.4 sasl2 ssl
 
 post-install:

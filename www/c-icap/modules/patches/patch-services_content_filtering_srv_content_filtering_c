@@ -1,0 +1,12 @@
+$OpenBSD: patch-services_content_filtering_srv_content_filtering_c,v 1.1 2015/09/08 18:17:49 sthen Exp $
+--- services/content_filtering/srv_content_filtering.c.orig	Tue Sep  8 19:07:47 2015
++++ services/content_filtering/srv_content_filtering.c	Tue Sep  8 19:08:28 2015
+@@ -248,7 +248,7 @@ int srv_content_filtering_check_preview_handler(char *
+      srv_content_filtering_data->expectedData = content_len;
+ 
+      if (content_len > srv_content_filtering_data->maxBodyData) {
+-         ci_debug_printf(4, "Srv_Content_Filtering  content-length=%"PRINTF_OFF_T" > %ld will not process\n", (CAST_OFF_T)content_len, srv_content_filtering_data->maxBodyData);
++         ci_debug_printf(4, "Srv_Content_Filtering  content-length=%"PRINTF_OFF_T" > %"PRINTF_OFF_T" will not process\n", (CAST_OFF_T)content_len, srv_content_filtering_data->maxBodyData);
+          return CI_MOD_ALLOW204;
+      }
+ 
