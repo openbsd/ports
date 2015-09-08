@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/14 15:50:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/08 19:10:19 sthen Exp $
 libexec/dhcpcd-hooks/
 libexec/dhcpcd-hooks/01-test
 libexec/dhcpcd-hooks/02-dump
-libexec/dhcpcd-hooks/10-mtu
 libexec/dhcpcd-hooks/10-wpa_supplicant
 libexec/dhcpcd-hooks/15-timezone
 libexec/dhcpcd-hooks/20-resolv.conf
