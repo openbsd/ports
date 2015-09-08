@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2015/09/07 12:20:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2015/09/08 07:54:44 ajacoutot Exp $
 
 COMMENT=		brain teaser game
 
 DISTNAME=		gbrainy-2.2.6
+EPOCH=			0
 
 CATEGORIES=		games
 
