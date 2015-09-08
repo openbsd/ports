@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/22 20:37:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/09/08 18:18:04 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	clamd-based virus scanner for c-icap
 
 DISTNAME=	squidclamav-6.13
+REVISION=	0
 
 CATEGORIES=	www
 
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=squidclamav/}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	www/c-icap/c-icap>=0.3.1
+RUN_DEPENDS=	www/c-icap/c-icap>=0.4.1
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.68
