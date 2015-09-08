@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/09/07 22:20:52 juanfra Exp $
-
-BROKEN-hppa =	undefined reference to __sync atomic ops
+# $OpenBSD: Makefile,v 1.22 2015/09/08 18:28:50 jca Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
@@ -27,6 +25,10 @@ USE_GMAKE =	Yes
 MAKE_FLAGS +=	CFLAGS="${CFLAGS} -fno-strict-aliasing" LDFLAGS="${LDFLAGS}"
 MAKE_FLAGS +=	CC="${CC}" LD="${CC}" TARGET="openbsd"
 MAKE_FLAGS +=	USE_OPENSSL=1 USE_PCRE=1
+
+.if ${MACHINE_ARCH:Mhppa}
+MAKE_FLAGS +=	USE_PRIVATE_CACHE=1
+.endif
 
 NO_TEST =	Yes
 LIB_DEPENDS =	devel/pcre
