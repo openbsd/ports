@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/08 18:17:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/09/09 13:19:37 sthen Exp $
 
 MULTI_PACKAGES=	-main -urlcheck
 COMMENT-main=	libclamav-based virus scanner for c-icap
@@ -30,7 +30,8 @@ WANTLIB-main+=		clamav crypto ltdl lzma m pthread ssl stdc++ xml2 z
 
 LIB_DEPENDS-urlcheck=	archivers/bzip2 \
 			databases/db/v4 \
-			devel/pcre
+			devel/pcre \
+			www/c-icap/c-icap
 WANTLIB-urlcheck=	c db icapapi pcre ${cWANTLIB}
 
 pre-install:
