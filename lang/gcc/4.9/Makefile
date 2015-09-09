@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/08/18 10:16:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2015/09/09 16:05:29 pascal Exp $
 
 BROKEN-arm = needs binutils-2.17
 
@@ -30,8 +30,6 @@ PKGNAME-f95 =   g95-${FULL_PKGVERSION}
 PKGNAME-java =  gcj-${FULL_PKGVERSION}
 PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
-# needs [gs]etcontext
-#PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.9,<4.10
 
 SHARED_LIBS =	estdc++		17.0 \
@@ -48,10 +46,7 @@ SHARED_LIBS =	estdc++		17.0 \
 		quadmath	1.0 \
 		cilkrts		0.0
 
-# XXX the BUILD_PACKAGES / PSEUDO_FLAVORS setup is broken because
-# XXX the no_* flavours disable building files which are included in
-# XXX the common -libs package.
-PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada no_go full
+PSEUDO_FLAVORS = no_java no_ada full
 FLAVOR ?= 
 
 ONLY_FOR_ARCHS-ada = amd64 i386 sparc64 hppa
@@ -62,11 +57,6 @@ MULTI_PACKAGES = -main -libs -f95 -objc -c++ -java -ada
 MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 .include <bsd.port.arch.mk>
-
-# kill both C++ subpackages
-.if !${BUILD_PACKAGES:M-c++}
-BUILD_PACKAGES := ${BUILD_PACKAGES:N-estdc}
-.endif
 
 DISTNAME =   	gcc-${FULL_VERSION}
 DISTFILES =	${DISTNAME}.tar.bz2
@@ -80,7 +70,8 @@ BUILD_DEPENDS +=	devel/bison \
 			devel/libexecinfo
 
 TEST_DEPENDS = 	devel/dejagnu \
-		devel/autogen
+		devel/autogen \
+		${BUILD_PKGPATH},-libs>=4.9,<4.10
 
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
 MASTER_SITES0 =	http://spacehopper.org/mirrors/ \
@@ -88,17 +79,7 @@ MASTER_SITES0 =	http://spacehopper.org/mirrors/ \
 		https://distfiles.bsdfrog.org/
 MASTER_SITES1 =	ftp://sources.redhat.com/pub/java/
 
-LANGS = c
-.if ${BUILD_PACKAGES:M-c++}
-LANGS := ${LANGS},c++
-TEST_DEPENDS += 	${BUILD_PKGPATH},-libs>=4.9,<4.10
-.endif
-.if ${BUILD_PACKAGES:M-f95}
-LANGS := ${LANGS},fortran
-.endif
-.if ${BUILD_PACKAGES:M-objc}
-LANGS := ${LANGS},objc
-.endif
+LANGS = c,c++,fortran,objc
 .if ${BUILD_PACKAGES:M-java}
 LANGS := ${LANGS},java
 DISTFILES +=		${ECJ}:1
@@ -114,9 +95,6 @@ CC = ${WRKDIR}/bin/egcc
 CXX = ${WRKDIR}/bin/eg++
 TEST_DEPENDS += ${BUILD_PKGPATH},-ada
 .endif
-#.if ${BUILD_PACKAGES:M-go}
-#LANGS := ${LANGS},go
-#.endif
 
 CONFIGURE_STYLE =		gnu
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
