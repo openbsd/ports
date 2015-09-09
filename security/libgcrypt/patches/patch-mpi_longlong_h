@@ -1,9 +1,9 @@
-$OpenBSD: patch-mpi_longlong_h,v 1.5 2014/01/04 08:54:21 ajacoutot Exp $
+$OpenBSD: patch-mpi_longlong_h,v 1.6 2015/09/09 07:46:44 ajacoutot Exp $
 
 Fix build on sparc.
 
---- mpi/longlong.h.orig	Mon Dec  9 08:48:50 2013
-+++ mpi/longlong.h	Fri Jan  3 07:40:15 2014
+--- mpi/longlong.h.orig	Mon Sep  7 15:33:48 2015
++++ mpi/longlong.h	Wed Sep  9 09:39:42 2015
 @@ -170,6 +170,7 @@ MA 02111-1307, USA. */
      (pl) = __m0 * __m1; 						\
    } while (0)
@@ -24,8 +24,8 @@ Fix build on sparc.
  	     "rJ" ((USItype)(al)),                                      \
  	     "rI" ((USItype)(bl))                                       \
  	   __CLOBBER_CC)
--#if defined (__sparc_v8__)
-+#if defined (__sparc_v8__) || defined (__sparc__)
+-#if defined (__sparc_v8__) || defined(__sparcv8)
++#if defined (__sparc_v8__) || defined(__sparcv8) || defined (__sparc__)
  /* Don't match immediate range because, 1) it is not often useful,
     2) the 'I' flag thinks of the range as a 13 bit signed interval,
     while we want to match a 13 bit interval, sign extended to 32 bits,
