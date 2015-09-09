@@ -1,0 +1,16 @@
+$OpenBSD: patch-pcapsource_cc,v 1.4 2015/09/09 15:28:32 sthen Exp $
+
+The only media types used here are already shifted so using IFM_MAKEMODE
+here is wrong.
+
+--- pcapsource.cc.orig	Wed Sep  9 16:21:06 2015
++++ pcapsource.cc	Wed Sep  9 16:22:17 2015
+@@ -3104,7 +3104,7 @@ bool RadiotapBSD::setmediaopt(int options, int mode) {
+     memset(&ifr, 0, sizeof(ifr));
+     strncpy(ifr.ifr_name, ifname.c_str(), sizeof(ifr.ifr_name)-1);
+     ifr.ifr_media = (ifmr.ifm_current &~ IFM_OMASK) | options;
+-    ifr.ifr_media = (ifr.ifr_media &~ IFM_MMASK) | IFM_MAKEMODE(mode);
++    ifr.ifr_media = (ifr.ifr_media &~ IFM_MMASK) | mode;
+ 
+     if (ioctl(s, SIOCSIFMEDIA, (caddr_t)&ifr) < 0) {
+         perror("cannot set ifmedia");
