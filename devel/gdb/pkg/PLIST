@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/06/10 10:55:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2015/09/09 19:47:17 pascal Exp $
 @conflict arm-none-eabi-gdb-*
 @conflict libbfd-*
 @bin bin/egdb
@@ -35,6 +35,7 @@ share/gdb/python/gdb/command/frame_filters.py
 share/gdb/python/gdb/command/pretty_printers.py
 share/gdb/python/gdb/command/prompt.py
 share/gdb/python/gdb/command/type_printers.py
+share/gdb/python/gdb/command/unwinders.py
 share/gdb/python/gdb/command/xmethods.py
 share/gdb/python/gdb/frames.py
 share/gdb/python/gdb/function/
@@ -47,8 +48,10 @@ share/gdb/python/gdb/printer/bound_registers.py
 share/gdb/python/gdb/printing.py
 share/gdb/python/gdb/prompt.py
 share/gdb/python/gdb/types.py
+share/gdb/python/gdb/unwinder.py
 share/gdb/python/gdb/xmethod.py
 share/gdb/syscalls/
+share/gdb/syscalls/aarch64-linux.xml
 share/gdb/syscalls/amd64-linux.xml
 share/gdb/syscalls/arm-linux.xml
 share/gdb/syscalls/gdb-syscalls.dtd
