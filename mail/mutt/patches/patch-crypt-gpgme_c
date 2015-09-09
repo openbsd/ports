@@ -1,7 +1,9 @@
-$OpenBSD: patch-crypt-gpgme_c,v 1.1 2015/09/09 18:39:40 sthen Exp $
+$OpenBSD: patch-crypt-gpgme_c,v 1.2 2015/09/09 18:40:55 sthen Exp $
 
 gpgme's gpgme_subkey_t->timestamp is an unsigned long and can't be passed
 directly to localtime which takes a time_t.
+
+http://dev.mutt.org/trac/changeset/6498/crypt-gpgme.c
 
 --- crypt-gpgme.c.orig	Wed Sep  9 20:33:56 2015
 +++ crypt-gpgme.c	Wed Sep  9 20:34:28 2015
