@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2015/08/12 06:13:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2015/09/09 19:26:36 rpointel Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 
-MODPY_EGG_VERSION =	3.2.3
-REVISION-main =		0
+MODPY_EGG_VERSION =	3.5.1
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =     	devel
 
@@ -36,7 +35,7 @@ FILES =			hgeditor hgweb.cgi
 
 CONTRIBFILES =		bash_completion mercurial.el \
 			tcsh_completion zsh_completion \
-			mergetools.hgrc mq.el
+			mq.el
 
 CONTRIBDIRS =		hgsh vim
 SCRIPTS =		hg-ssh hgk \
