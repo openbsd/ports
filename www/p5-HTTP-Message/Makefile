@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/07/28 10:03:06 nigel Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/10 20:08:40 nigel Exp $
 
 COMMENT =	HTTP Style Messages
 
-DISTNAME =	HTTP-Message-6.10
+DISTNAME =	HTTP-Message-6.11
 CATEGORIES =	www
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
