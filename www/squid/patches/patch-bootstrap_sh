@@ -1,4 +1,4 @@
-$OpenBSD: patch-bootstrap_sh,v 1.2 2015/01/06 22:51:55 sthen Exp $
+$OpenBSD: patch-bootstrap_sh,v 1.4 2015/09/10 13:00:10 sthen Exp $
 --- bootstrap.sh.orig	Sun Dec 21 05:11:48 2014
 +++ bootstrap.sh	Tue Jan  6 22:32:47 2015
 @@ -144,7 +144,7 @@ do

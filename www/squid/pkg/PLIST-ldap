@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-ldap,v 1.2 2015/06/11 14:57:30 sthen Exp $
+@comment $OpenBSD: PLIST-ldap,v 1.4 2015/09/10 13:00:10 sthen Exp $
 @conflict squid-<3.5.5
-@pkgpath www/squid,-ldap
+@pkgpath www/squid/snapshot,-ldap
+@pkgpath www/squid/stable,-ldap
 @bin libexec/squid/basic_ldap_auth
 @bin libexec/squid/digest_edirectory_auth
 @bin libexec/squid/digest_ldap_auth
