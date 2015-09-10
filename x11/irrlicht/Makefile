@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/22 13:28:25 kirby Exp $
+# $OpenBSD: Makefile,v 1.10 2015/09/10 18:38:53 pascal Exp $
 
 COMMENT =		fast, real time 3D engine
-DISTNAME =		irrlicht-1.8.1
+DISTNAME =		irrlicht-1.8.2
 
 SO_VERSION =		2.0
 SHARED_LIBS =		Irrlicht ${SO_VERSION}
@@ -54,9 +54,6 @@ EXAMPLEDIRS =		01.HelloWorld 02.Quake3Map 03.CustomSceneNode \
 			16.Quake3MapShader 17.HelloWorld_Mobile 18.SplitScreen \
 			19.MouseAndJoystick 20.ManagedLights 21.Quake3Explorer \
 			22.MaterialViewer 23.SMeshHandling Demo
-
-post-extract:
-	perl -pi -e 's/Date: //' ${WRKSRC}/glext.h
 
 pre-patch:
 	@perl -pi -e 's/\015//g' ${WRKSRC}/*.{cpp,h} ${WRKSRC}/Makefile \
