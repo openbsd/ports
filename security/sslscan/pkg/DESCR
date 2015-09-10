@@ -2,3 +2,6 @@ SSLScan queries SSL services, such as HTTPS, in order to determine the
 ciphers that are supported. SSLScan is designed to be easy, lean and
 fast. The output includes prefered ciphers of the SSL service, the
 certificate and is in Text and XML formats.
+
+Optional flavour: openssl - build against OpenSSL rather than LibreSSL,
+allowing detection of SSLv2/v3.

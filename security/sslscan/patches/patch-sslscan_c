@@ -1,6 +1,6 @@
-$OpenBSD: patch-sslscan_c,v 1.4 2015/09/10 13:55:51 sthen Exp $
+$OpenBSD: patch-sslscan_c,v 1.5 2015/09/10 14:08:44 sthen Exp $
 --- sslscan.c.orig	Thu Aug  6 11:23:13 2015
-+++ sslscan.c	Thu Sep 10 15:43:02 2015
++++ sslscan.c	Thu Sep 10 16:07:10 2015
 @@ -83,7 +83,7 @@
    #include <unistd.h>
  #endif
@@ -10,3 +10,73 @@ $OpenBSD: patch-sslscan_c,v 1.4 2015/09/10 13:55:51 sthen Exp $
  #include <netinet/in.h>
  #endif
  
+@@ -750,6 +750,7 @@ int testCompression(struct sslCheckOptions *options, c
+ 
+                         session = *SSL_get_session(ssl);
+ 
++#ifndef OPENSSL_NO_COMP
+                         printf_xml("  <compression supported=\"%d\" />\n",
+                             session.compress_meth);
+ 
+@@ -761,6 +762,7 @@ int testCompression(struct sslCheckOptions *options, c
+                         {
+                             printf("Compression %senabled%s (CRIME)\n\n", COL_RED, RESET);
+                         }
++#endif
+ 
+                         // Disconnect SSL over socket
+                         SSL_shutdown(ssl);
+@@ -1134,7 +1136,7 @@ int testHeartbleed(struct sslCheckOptions *options, co
+ 
+ int ssl_print_tmp_key(struct sslCheckOptions *options, SSL *s)
+ {
+-#if OPENSSL_VERSION_NUMBER >= 0x10002000L
++#if OPENSSL_VERSION_NUMBER >= 0x10002000L && !defined(LIBRESSL_VERSION_NUMBER)
+     EVP_PKEY *key;
+     if (!SSL_get_server_tmp_key(s, &key))
+         return 1;
+@@ -1379,7 +1381,11 @@ int testCipher(struct sslCheckOptions *options, struct
+                     {
+                         printf("%s%-29s%s", COL_PURPLE, sslCipherPointer->name, RESET);
+                     }
+-                    else if (strstr(sslCipherPointer->name, "EXP") || (sslCipherPointer->sslMethod == SSLv3_client_method() && !strstr(sslCipherPointer->name, "RC4")))
++                    else if (strstr(sslCipherPointer->name, "EXP")
++#ifndef OPENSSL_NO_SSL3
++				    || (sslCipherPointer->sslMethod == SSLv3_client_method() && !strstr(sslCipherPointer->name, "RC4"))
++#endif
++                    )
+                     {
+                         printf("%s%-29s%s", COL_RED, sslCipherPointer->name, RESET);
+                     }
+@@ -1490,12 +1496,15 @@ int defaultCipher(struct sslCheckOptions *options, con
+                             }
+                             else
+ #endif
++#ifndef OPENSSL_NO_SSL3
+                             if (sslMethod == SSLv3_client_method())
+                             {
+                                 printf_xml("  <defaultcipher sslversion=\"SSLv3\" bits=\"");
+                                 printf("%sSSLv3%s    ", COL_RED, RESET);
+                             }
+-                            else if (sslMethod == TLSv1_client_method())
++			    else
++#endif
++                            if (sslMethod == TLSv1_client_method())
+                             {
+                                 printf_xml("  <defaultcipher sslversion=\"TLSv1.0\" bits=\"");
+                                 printf("TLSv1.0  ");
+@@ -1539,8 +1548,12 @@ int defaultCipher(struct sslCheckOptions *options, con
+                                 printf(" ");
+                             }
+                             printf_xml("%d\" cipher=\"%s\"", SSL_get_cipher_bits(ssl, &tempInt2), SSL_get_cipher_name(ssl));
+-                            if (strstr(SSL_get_cipher_name(ssl), "EXP") || (sslMethod == SSLv3_client_method() && strstr(SSL_get_cipher_name(ssl), "CBC")))
+-                            {
++                            if (strstr(SSL_get_cipher_name(ssl), "EXP")
++#ifndef OPENSSL_NO_SSL3
++                                            || (sslMethod == SSLv3_client_method() && strstr(SSL_get_cipher_name(ssl), "CBC"))
++#endif
++			    )
++			    {
+                                 printf("%s%-29s%s", COL_RED, SSL_get_cipher_name(ssl), RESET);
+                             }
+                             else if (strstr(SSL_get_cipher_name(ssl), "RC4"))
