@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2014/09/13 18:09:22 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2015/09/10 13:31:25 sthen Exp $
 
 COMMENT =		filter, redirector and access controller for Squid
 
 DISTNAME =		squidGuard-1.4
-REVISION =		13
+REVISION =		14
 CATEGORIES =		www
 
 HOMEPAGE =		http://www.squidguard.org/
@@ -21,7 +21,7 @@ CONFIG_DIR =		${SYSCONFDIR}/squidguard
 SUBST_VARS =		CONFIG_DIR
 
 LIB_DEPENDS =		databases/db/v4
-RUN_DEPENDS =		www/squid/stable
+RUN_DEPENDS =		www/squid
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 CONFIGURE_ENV =		CFLAGS='${CFLAGS} -I${LOCALBASE}/include' \
