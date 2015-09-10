@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.49 2015/07/26 07:22:15 ajacoutot Exp $
---- configure.orig	Thu Jul 23 19:37:50 2015
-+++ configure	Thu Jul 23 19:43:44 2015
-@@ -4204,7 +4204,7 @@ case $target_os in
+$OpenBSD: patch-configure,v 1.50 2015/09/10 07:10:04 ajacoutot Exp $
+--- configure.orig	Mon Sep  7 21:58:01 2015
++++ configure	Wed Sep  9 03:08:46 2015
+@@ -4307,7 +4307,7 @@ case $target_os in
      openbsd|bitrig)
          disable symver
          SHFLAGS='-shared'
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.49 2015/07/26 07:22:15 ajacoutot Exp $
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -4555,7 +4555,7 @@ die_license_disabled version3 libvo_amrwbenc
+@@ -4671,7 +4671,7 @@ die_license_disabled version3 libvo_amrwbenc
  
  enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
  
@@ -19,10 +19,10 @@ $OpenBSD: patch-configure,v 1.49 2015/07/26 07:22:15 ajacoutot Exp $
  
  enable_weak_pic() {
      disabled pic && return
-@@ -5394,7 +5394,9 @@ check_disable_warning -Wno-pointer-sign
- check_ldflags -Wl,--warn-common
+@@ -5556,7 +5556,9 @@ check_ldflags -Wl,--warn-common
  check_ldflags -Wl,-rpath-link=libpostproc:libswresample:libswscale:libavfilter:libavdevice:libavformat:libavcodec:libavutil:libavresample
  enabled rpath && add_ldexeflags -Wl,-rpath,$libdir
+ enabled rpath && add_ldlibflags -Wl,-rpath,$libdir
 -test_ldflags -Wl,-Bsymbolic && append SHFLAGS -Wl,-Bsymbolic
 +if ! enabled mips; then
 +    test_ldflags -Wl,-Bsymbolic && append SHFLAGS -Wl,-Bsymbolic
@@ -30,7 +30,7 @@ $OpenBSD: patch-configure,v 1.49 2015/07/26 07:22:15 ajacoutot Exp $
  
  # add some strip flags
  # -wN '..@*' is more selective than -x, but not available everywhere.
-@@ -5600,6 +5602,11 @@ if test $target_os = "haiku"; then
+@@ -5784,6 +5786,11 @@ if test $target_os = "haiku"; then
      disable posix_memalign
  fi
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-configure,v 1.49 2015/07/26 07:22:15 ajacoutot Exp $
  enabled_all dxva2 dxva2api_cobj CoTaskMemFree &&
      prepend ffmpeg_libs $($ldflags_filter "-lole32" "-luser32") &&
      enable dxva2_lib
-@@ -6025,8 +6032,8 @@ pkgconfig_generate(){
+@@ -6216,8 +6223,8 @@ pkgconfig_generate(){
      comment=$2
      version=$3
      libs=$4
@@ -53,7 +53,7 @@ $OpenBSD: patch-configure,v 1.49 2015/07/26 07:22:15 ajacoutot Exp $
      enabled ${name#lib} || return 0
      mkdir -p $name
      cat <<EOF > $name/$name${build_suffix}.pc
-@@ -6041,7 +6048,7 @@ Version: $version
+@@ -6232,7 +6239,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -62,7 +62,7 @@ $OpenBSD: patch-configure,v 1.49 2015/07/26 07:22:15 ajacoutot Exp $
  Libs.private: $(enabled shared && echo $libs)
  Cflags: -I\${includedir}
  EOF
-@@ -6065,12 +6072,12 @@ Cflags: -I\${includedir}
+@@ -6256,12 +6263,12 @@ Cflags: -I\${includedir}
  EOF
  }
  

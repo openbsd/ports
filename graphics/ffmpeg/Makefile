@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.122 2015/08/01 07:50:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.123 2015/09/10 07:10:04 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
-V=		20150723
+V=		20150909
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	avcodec		22.1 \
+SHARED_LIBS=	avcodec		22.2 \
 		avdevice	10.0 \
-		avfilter	7.2 \
-		avformat	19.3 \
+		avfilter	7.3 \
+		avformat	19.4 \
 		avresample	1.0 \
-		avutil		12.3 \
+		avutil		12.4 \
 		postproc	16.1 \
 		swresample	1.2 \
 		swscale		6.1
@@ -99,13 +98,13 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-iconv \
 		--disable-indev=jack \
 		--disable-indev=oss \
-		--disable-loongson3 \
 		--disable-lzma \
 		--disable-mips32r5 \
 		--disable-mips64r6 \
 		--disable-mipsdspr1 \
 		--disable-mipsdspr2 \
 		--disable-mipsfpu \
+		--disable-mmi \
 		--disable-msa \
 		--disable-neon \
 		--disable-outdev=oss \

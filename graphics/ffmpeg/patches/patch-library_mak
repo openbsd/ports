@@ -1,12 +1,12 @@
-$OpenBSD: patch-library_mak,v 1.6 2015/07/26 07:22:15 ajacoutot Exp $
---- library.mak.orig	Thu Jul 23 19:37:50 2015
-+++ library.mak	Thu Jul 23 19:43:44 2015
+$OpenBSD: patch-library_mak,v 1.7 2015/09/10 07:10:04 ajacoutot Exp $
+--- library.mak.orig	Mon Sep  7 21:58:02 2015
++++ library.mak	Wed Sep  9 03:07:49 2015
 @@ -58,7 +58,7 @@ $(SUBDIR)$(SLIBNAME): $(SUBDIR)$(SLIBNAME_WITH_MAJOR)
  
  $(SUBDIR)$(SLIBNAME_WITH_MAJOR): $(OBJS) $(SLIBOBJS) $(SUBDIR)lib$(NAME).ver
  	$(SLIB_CREATE_DEF_CMD)
--	$$(LD) $(SHFLAGS) $(LDFLAGS) $$(LD_O) $$(filter %.o,$$^) $(FFEXTRALIBS)
-+	$$(LD) $(SHFLAGS) $(LDFLAGS) $$(LD_O) $$(filter %.o,$$^) $(LIB$(NAME)_EXTRALIBS)
+-	$$(LD) $(SHFLAGS) $(LDFLAGS) $(LDLIBFLAGS) $$(LD_O) $$(filter %.o,$$^) $(FFEXTRALIBS)
++	$$(LD) $(SHFLAGS) $(LDFLAGS) $(LDLIBFLAGS) $$(LD_O) $$(filter %.o,$$^) $(LIB$(NAME)_EXTRALIBS)
  	$(SLIB_EXTRA_CMD)
  
  ifdef SUBDIR
