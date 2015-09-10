@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/06 09:20:57 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/10 18:40:24 pascal Exp $
 
 COMMENT =		manipulate Unicode strings
 
-DISTNAME =		libunistring-0.9.5
+DISTNAME =		libunistring-0.9.6
 
 SHARED_LIBS +=		unistring                 0.1 # 2.0
 
