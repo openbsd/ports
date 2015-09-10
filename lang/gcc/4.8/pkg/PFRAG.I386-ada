@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.I386-ada,v 1.1 2013/04/12 10:01:47 tobiasu Exp $
-lib/gcc/${CONFIG}/${V}/adainclude/a-numaux.adb

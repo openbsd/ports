@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.SPARC-main,v 1.1.1.1 2013/04/08 08:20:24 pascal Exp $
-lib/gcc/${CONFIG}/${V}/include/visintrin.h

@@ -1,7 +1,0 @@
-@comment $OpenBSD: PFRAG.QUADMATH-main,v 1.1.1.1 2013/04/08 08:20:24 pascal Exp $
-@info info/libquadmath.info
-lib/gcc/${CONFIG}/${V}/include/quadmath.h
-lib/gcc/${CONFIG}/${V}/include/quadmath_weak.h
-lib/libquadmath.a
-lib/libquadmath.la
-@lib lib/libquadmath.so.${LIBquadmath_VERSION}
