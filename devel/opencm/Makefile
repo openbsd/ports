@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/08/28 16:28:15 jca Exp $
+# $OpenBSD: Makefile,v 1.35 2015/09/10 16:49:53 sthen Exp $
 
 COMMENT=		OpenCM change management system
 
@@ -7,18 +7,17 @@ sV=			-2
 DISTFILES=		opencm-${V}${sV}-src.tgz
 DISTNAME=		opencm-${V}
 PKGNAME=		opencm-${V}
-REVISION =		4
+REVISION=		5
 CATEGORIES=		devel
-
-HOMEPAGE=		http://www.opencm.org/
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
 # BSD/(GPL for diff3)
 PERMIT_PACKAGE_CDROM=	Yes
+
 WANTLIB=		c crypto ncurses pthread readline ssl z gc>=3
 
-MASTER_SITES=		${HOMEPAGE}releases/
+MASTER_SITES=		http://spacehopper.org/mirrors/
 
 USE_GMAKE=		Yes
 AUTOCONF_VERSION=	2.57
