@@ -1,7 +1,7 @@
-$OpenBSD: patch-DOCS_man_mpv_rst,v 1.2 2015/05/24 10:30:55 ajacoutot Exp $
---- DOCS/man/mpv.rst.orig	Mon May 18 22:19:25 2015
-+++ DOCS/man/mpv.rst	Sat May 23 16:45:01 2015
-@@ -893,7 +893,7 @@ Play a multi-angle DVD:
+$OpenBSD: patch-DOCS_man_mpv_rst,v 1.3 2015/09/10 10:43:06 bentley Exp $
+--- DOCS/man/mpv.rst.orig	Thu Sep  3 13:59:59 2015
++++ DOCS/man/mpv.rst	Thu Sep  3 23:50:23 2015
+@@ -926,7 +926,7 @@ Play a multi-angle DVD:
      ``mpv dvd://1 --dvd-angle=2``
  
  Play from a different DVD device:

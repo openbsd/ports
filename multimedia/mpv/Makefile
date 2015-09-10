@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/08/25 11:04:38 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2015/09/10 10:43:06 bentley Exp $
 
 ONLY_FOR_ARCHS =	alpha amd64 i386 powerpc sparc64
 
 COMMENT =		movie player based on MPlayer/mplayer2
-V =			0.9.2
+V =			0.10.0
 DISTNAME =		mpv-${V}
 
 GH_ACCOUNT=		mpv-player
@@ -49,7 +49,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 CFLAGS +=		-I. -I.. -I${LOCALBASE}/include `pkg-config --cflags smbclient`
 
 CONFIGURE_STYLE =	simple
-CONFIGURE_SCRIPT =	old-configure
+CONFIGURE_SCRIPT =	TOOLS/old-configure
 CONFIGURE_ARGS +=	--confdir=${SYSCONFDIR}/mpv \
 			--mandir=${LOCALBASE}/man \
 			--extra-ldflags="-L${LOCALBASE}/lib" \
@@ -57,12 +57,14 @@ CONFIGURE_ARGS +=	--confdir=${SYSCONFDIR}/mpv \
 			--disable-caca \
 			--disable-enca \
 			--disable-jack \
+			--disable-libarchive \
 			--disable-libguess \
 			--disable-ossaudio \
 			--disable-optimization \
 			--disable-openal \
 			--disable-pulse \
-			--disable-rsound
+			--disable-rsound \
+			--disable-uchardet
 CONFIGURE_ENV +=	TMPDIR=${WRKBUILD}
 
 # pkg-config says smbclient's version is 0
