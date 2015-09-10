@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2015/09/07 06:32:04 jca Exp $
+# $OpenBSD: Makefile,v 1.65 2015/09/10 10:30:04 ajacoutot Exp $
 
 COMMENT-main=		apache HTTP server
 COMMENT-common=		shared files for Apache 1 and 2
@@ -72,7 +72,8 @@ CONFIGURE_ARGS=		--enable-layout=OpenBSD \
 			--with-pcre=${LOCALBASE}
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			AWK=awk
 
 FAKE_FLAGS=		rel_user=www rel_group=www \
 			rel_datadir=${HTTPD_DIR} \
