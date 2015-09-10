@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/13 11:34:53 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/10 17:05:15 pascal Exp $
 
 COMMENT =		Tor controller library
 
-MODPY_EGG_VERSION =	1.3.0
-DISTNAME =		stem-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	1.4.1
+DISTNAME =		stem-${MODPY_EGG_VERSION}b
+PKGNAME =		stem-${MODPY_EGG_VERSION}
+WRKDIST =		${WRKDIR}/stem-${MODPY_EGG_VERSION}
 
 CATEGORIES =		net
 

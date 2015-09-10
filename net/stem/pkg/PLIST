@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/13 11:34:53 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/10 17:05:15 pascal Exp $
 bin/tor-prompt
 lib/python${MODPY_VERSION}/site-packages/stem/
 lib/python${MODPY_VERSION}/site-packages/stem-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -15,6 +15,8 @@ lib/python${MODPY_VERSION}/site-packages/stem/descriptor/export.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/export.pyc
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/extrainfo_descriptor.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/extrainfo_descriptor.pyc
+lib/python${MODPY_VERSION}/site-packages/stem/descriptor/hidden_service_descriptor.py
+lib/python${MODPY_VERSION}/site-packages/stem/descriptor/hidden_service_descriptor.pyc
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/microdescriptor.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/microdescriptor.pyc
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/networkstatus.py
@@ -50,6 +52,8 @@ lib/python${MODPY_VERSION}/site-packages/stem/process.pyc
 lib/python${MODPY_VERSION}/site-packages/stem/response/
 lib/python${MODPY_VERSION}/site-packages/stem/response/__init__.py
 lib/python${MODPY_VERSION}/site-packages/stem/response/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/stem/response/add_onion.py
+lib/python${MODPY_VERSION}/site-packages/stem/response/add_onion.pyc
 lib/python${MODPY_VERSION}/site-packages/stem/response/authchallenge.py
 lib/python${MODPY_VERSION}/site-packages/stem/response/authchallenge.pyc
 lib/python${MODPY_VERSION}/site-packages/stem/response/events.py
@@ -79,6 +83,7 @@ lib/python${MODPY_VERSION}/site-packages/stem/util/lru_cache.py
 lib/python${MODPY_VERSION}/site-packages/stem/util/lru_cache.pyc
 lib/python${MODPY_VERSION}/site-packages/stem/util/ordereddict.py
 lib/python${MODPY_VERSION}/site-packages/stem/util/ordereddict.pyc
+lib/python${MODPY_VERSION}/site-packages/stem/util/ports.cfg
 lib/python${MODPY_VERSION}/site-packages/stem/util/proc.py
 lib/python${MODPY_VERSION}/site-packages/stem/util/proc.pyc
 lib/python${MODPY_VERSION}/site-packages/stem/util/str_tools.py
