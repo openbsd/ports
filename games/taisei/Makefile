@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/08/22 09:38:07 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/10 13:00:09 ajacoutot Exp $
 
 COMMENT =		clone of the touhou games
 
 V =			1.0a
 DISTNAME =		taisei-$V
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -24,7 +25,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		audio/freealut \
 			audio/openal \
-			devel/sdl-ttf
+			devel/sdl-ttf \
+			graphics/png
 
 NO_TEST =		Yes
 
