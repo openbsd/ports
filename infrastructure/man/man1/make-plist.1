@@ -1,4 +1,4 @@
-.\"	$OpenBSD: make-plist.1,v 1.4 2015/07/23 08:05:18 bentley Exp $
+.\"	$OpenBSD: make-plist.1,v 1.5 2015/09/10 20:11:27 schwarze Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: July 23 2015 $
+.Dd $Mdocdate: September 10 2015 $
 .Dt MAKE-PLIST 1
 .Os
 .Sh NAME
@@ -22,7 +22,7 @@
 .Nd create or update packing-list(s) for a given port.
 .Sh SYNOPSIS
 .Nm make-plist
-.Ar var=value ...
+.Ar var Ns = Ns Ar value ...
 .Sh DESCRIPTION
 .Nm
 is a helper script for the target
@@ -35,13 +35,13 @@ looks in
 .Ev MULTI_PACKAGES
 to know which packing-lists to regenerate,
 the corresponding filenames are passed as variable assignments
-.Ar PLIST-sub=filename .
+.Ev PLIST Ns - Ns Ar sub Ns = Ns Ar filename .
 .Pp
 .Nm
 will scan all files under
 .Ev DESTDIR
 and dispatch them into corresponding subpackages, according to
-.Ev PREFIX-sub=directory .
+.Ev PREFIX Ns - Ns Ar sub Ns = Ns Ar directory .
 .Pp
 .Nm
 is usually run as root to be able to thoroughly scan
@@ -71,7 +71,7 @@ will dispatch them to the most likely packing-list.
 will also scan dependencies for those packages, in order to strip common
 directories.
 Those are passed as
-.Ar DEPPATH-sub=list ,
+.Ev DEPPATH Ns - Ns Ar sub Ns = Ns Ar list ,
 a list of
 .Ev FULLPKGPATH
 for each subpackage.
@@ -87,7 +87,7 @@ Variables from
 should be
 back-substituted into the regenerated packing-lists,
 and so should be passed as
-.Ar var=value
+.Ar var Ns = Ns Ar value
 on the command line.
 .Pp
 Shared libraries versions will also be backsubstituted.
