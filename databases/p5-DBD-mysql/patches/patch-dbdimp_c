@@ -1,9 +1,10 @@
-$OpenBSD: patch-dbdimp_c,v 1.1 2015/01/17 00:42:16 giovanni Exp $
+$OpenBSD: patch-dbdimp_c,v 1.2 2015/09/10 15:54:06 giovanni Exp $
+
 Fix a use-after-free if my_login fails
 
---- dbdimp.c.orig	Mon Dec  8 09:44:50 2014
-+++ dbdimp.c	Sun Dec 28 00:40:38 2014
-@@ -2061,8 +2061,11 @@ static int my_login(pTHX_ SV* dbh, imp_dbh_t *imp_dbh)
+--- dbdimp.c.orig	Mon Jun 15 10:43:03 2015
++++ dbdimp.c	Thu Sep 10 05:09:34 2015
+@@ -2086,8 +2086,11 @@ static int my_login(pTHX_ SV* dbh, imp_dbh_t *imp_dbh)
    result = mysql_dr_connect(dbh, imp_dbh->pmysql, mysql_socket, host, port, user,
  			  password, dbname, imp_dbh) ? TRUE : FALSE;
    if (fresh && !result) {
@@ -15,7 +16,7 @@ Fix a use-after-free if my_login fails
    }
    return result;
  }
-@@ -4953,9 +4956,11 @@ int mysql_db_reconnect(SV* h)
+@@ -5017,9 +5020,11 @@ int mysql_db_reconnect(SV* h)
     */
    if (!dbd_db_disconnect(h, imp_dbh) || !my_login(aTHX_ h, imp_dbh))
    {
