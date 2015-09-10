@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.381 2015/09/02 16:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.382 2015/09/10 14:09:34 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -294,6 +294,7 @@
      SUBDIR += sshguard
      SUBDIR += sslScanner
      SUBDIR += sslscan
+     SUBDIR += sslscan,openssl
      SUBDIR += sslsplit
      SUBDIR += stegdetect
      SUBDIR += steghide
