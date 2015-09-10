@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.77 2015/05/11 23:23:17 ajacoutot Exp $
---- configure.orig	Sun May 10 18:35:37 2015
-+++ configure	Sun May 10 18:40:30 2015
+$OpenBSD: patch-configure,v 1.78 2015/09/10 08:31:36 ajacoutot Exp $
+--- configure.orig	Thu Sep 10 03:13:54 2015
++++ configure	Thu Sep 10 03:18:41 2015
 @@ -1498,39 +1498,39 @@ echo configuration: $configuration > "$TMPLOG"
  echo >> "$TMPLOG"
  
@@ -100,7 +100,7 @@ $OpenBSD: patch-configure,v 1.77 2015/05/11 23:23:17 ajacoutot Exp $
    # Checking assembler (_as) compatibility...
    # Added workaround for older as that reads from stdin by default - atmos
    as_version=$(echo '' | $_as -version 2>&1 | sed -n 's/^.*assembler \(version \)*\([0-9.]*\).*$/\2/p')
-@@ -6176,7 +6176,7 @@ echocheck "cdparanoia"
+@@ -6190,7 +6190,7 @@ echocheck "cdparanoia"
  if test "$_cdparanoia" = auto ; then
      _cdparanoia=no
      for inc_tmp in "" "-I/usr/include/cdda" "-I/usr/local/include/cdda" ; do
@@ -109,7 +109,7 @@ $OpenBSD: patch-configure,v 1.77 2015/05/11 23:23:17 ajacoutot Exp $
          _cdparanoia=yes && extra_cflags="$extra_cflags $inc_tmp" && break
      done
  fi
-@@ -8082,6 +8082,7 @@ extra_ldflags="$extra_ldflags $libm"
+@@ -8103,6 +8103,7 @@ extra_ldflags="$extra_ldflags $libm"
  # XML documentation tests
  echocheck "XML catalogs"
  for try_catalog in \
@@ -117,7 +117,7 @@ $OpenBSD: patch-configure,v 1.77 2015/05/11 23:23:17 ajacoutot Exp $
    /etc/sgml/catalog \
    /usr/share/xml/docbook/*/catalog.xml \
    /opt/local/share/xml/docbook-xml/*/catalog.xml \
-@@ -8109,6 +8110,7 @@ fi
+@@ -8130,6 +8131,7 @@ fi
  
  echocheck "XML chunked stylesheet"
  for try_chunk_xsl in \
@@ -125,7 +125,7 @@ $OpenBSD: patch-configure,v 1.77 2015/05/11 23:23:17 ajacoutot Exp $
    /usr/share/xml/docbook/*/html/chunk.xsl \
    /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/html/chunk.xsl \
    /usr/share/sgml/docbook/yelp/docbook/html/chunk.xsl \
-@@ -8134,6 +8136,7 @@ fi
+@@ -8155,6 +8157,7 @@ fi
  
  echocheck "XML monolithic stylesheet"
  for try_docbook_xsl in \
@@ -133,7 +133,7 @@ $OpenBSD: patch-configure,v 1.77 2015/05/11 23:23:17 ajacoutot Exp $
    /usr/share/xml/docbook/*/html/docbook.xsl \
    /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/html/docbook.xsl \
    /usr/share/sgml/docbook/yelp/docbook/html/docbook.xsl \
-@@ -8187,6 +8190,7 @@ EOF
+@@ -8208,6 +8211,7 @@ EOF
  echocheck "XML DTD"
  #FIXME: This should prefer higher version numbers, not the other way around ..
  for try_dtd in \
