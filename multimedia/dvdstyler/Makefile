@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2015/04/28 07:40:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2015/09/10 07:07:45 ajacoutot Exp $
 
 COMMENT=		DVD authoring application
 
-DISTNAME=		DVDStyler-2.9.2
+DISTNAME=		DVDStyler-2.9.3
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dvdstyler/}
