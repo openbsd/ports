@@ -1,25 +1,30 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/19 00:07:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/10 13:55:51 sthen Exp $
 
 COMMENT=	SSL port scanner
 
-DISTNAME=	sslscan-1.8.2
-REVISION=	2
-EXTRACT_SUFX=	.tgz
+V=		1.10.6
+DISTNAME=	sslscan-$V
+DISTFILES=	${DISTNAME}{$V-rbsec}.tar.gz
+WRKDIST=	${WRKDIR}/${DISTNAME}-rbsec
 
 CATEGORIES=	security net
 
-HOMEPAGE=	http://sourceforge.net/projects/sslscan/
+HOMEPAGE=	https://github.com/rbsec/sslscan
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c lib/eopenssl/crypto lib/eopenssl/ssl
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sslscan/}
+MASTER_SITES=	https://github.com/rbsec/sslscan/archive/
+USE_GMAKE=	Yes
 
 LIB_DEPENDS=	security/openssl
 
-MAKE_FLAGS=	CC="${CC}" \
+MAKE_FLAGS=	BINPATH=${WRKINST}${PREFIX}/bin/ \
+		MANPATH=${WRKINST}${PREFIX}/man/ \
+		GIT_VERSION="$V" \
+		CC="${CC}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include/eopenssl" \
 		LDFLAGS="-L${LOCALBASE}/lib/eopenssl -Wl,-rpath,${LOCALBASE}/lib/eopenssl"
 

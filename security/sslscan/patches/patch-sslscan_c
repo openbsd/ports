@@ -1,118 +1,12 @@
-$OpenBSD: patch-sslscan_c,v 1.3 2012/07/16 08:49:31 jasper Exp $
---- sslscan.c.orig	Tue Sep  1 08:35:59 2009
-+++ sslscan.c	Sat Jul 14 15:23:49 2012
-@@ -41,6 +41,7 @@
- #include <openssl/pkcs12.h>
- #include <openssl/x509.h>
- #include <openssl/x509v3.h>
-+#include <netinet/in.h>
+$OpenBSD: patch-sslscan_c,v 1.4 2015/09/10 13:55:51 sthen Exp $
+--- sslscan.c.orig	Thu Aug  6 11:23:13 2015
++++ sslscan.c	Thu Sep 10 15:43:02 2015
+@@ -83,7 +83,7 @@
+   #include <unistd.h>
+ #endif
  
- // Defines...
- #define false 0
-@@ -59,7 +60,7 @@
- #define tls_v1 3
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <netinet/in.h>
+ #endif
  
- // Colour Console Output...
--#if !defined(__WIN32__)
-+#if !defined(__WIN32__) && !defined(__OpenBSD__)
- const char *RESET = "[0m";			// DEFAULT
- const char *COL_RED = "[31m";		// RED
- const char *COL_BLUE = "[34m";		// BLUE
-@@ -563,6 +564,7 @@ int testCipher(struct sslCheckOptions *options, struct
- 					}
- 					if (options->xmlOutput != 0)
- 						fprintf(options->xmlOutput, " sslversion=\"");
-+#ifndef OPENSSL_NO_SSL2
- 					if (sslCipherPointer->sslMethod == SSLv2_client_method())
- 					{
- 						if (options->xmlOutput != 0)
-@@ -572,7 +574,9 @@ int testCipher(struct sslCheckOptions *options, struct
- 						else
- 							printf("SSLv2  ");
- 					}
--					else if (sslCipherPointer->sslMethod == SSLv3_client_method())
-+					else
-+#endif
-+					if (sslCipherPointer->sslMethod == SSLv3_client_method())
- 					{
- 						if (options->xmlOutput != 0)
- 							fprintf(options->xmlOutput, "SSLv3\" bits=\"");
-@@ -688,6 +692,7 @@ int defaultCipher(struct sslCheckOptions *options, SSL
- 						cipherStatus = SSL_connect(ssl);
- 						if (cipherStatus == 1)
- 						{
-+#ifndef OPENSSL_NO_SSL2
- 							if (sslMethod == SSLv2_client_method())
- 							{
- 								if (options->xmlOutput != 0)
-@@ -697,7 +702,9 @@ int defaultCipher(struct sslCheckOptions *options, SSL
- 								else
- 									printf("    SSLv2  ");
- 							}
--							else if (sslMethod == SSLv3_client_method())
-+							else
-+#endif
-+							if (sslMethod == SSLv3_client_method())
- 							{
- 								if (options->xmlOutput != 0)
- 									fprintf(options->xmlOutput, "  <defaultcipher sslversion=\"SSLv3\" bits=\"");
-@@ -1192,15 +1199,19 @@ int testHost(struct sslCheckOptions *options)
- 		switch (options->sslVersion)
- 		{
- 			case ssl_all:
-+#ifndef OPENSSL_NO_SSL2
- 				status = defaultCipher(options, SSLv2_client_method());
- 				if (status != false)
-+#endif
- 					status = defaultCipher(options, SSLv3_client_method());
- 				if (status != false)
- 					status = defaultCipher(options, TLSv1_client_method());
- 				break;
-+#ifndef OPENSSL_NO_SSL2
- 			case ssl_v2:
- 				status = defaultCipher(options, SSLv2_client_method());
- 				break;
-+#endif
- 			case ssl_v3:
- 				status = defaultCipher(options, SSLv3_client_method());
- 				break;
-@@ -1298,9 +1309,11 @@ int main(int argc, char *argv[])
- 			options.starttls = true;
- 		}
- 
-+#ifndef OPENSSL_NO_SSL2
- 		// SSL v2 only...
- 		else if (strcmp("--ssl2", argv[argLoop]) == 0)
- 			options.sslVersion = ssl_v2;
-+#endif
- 
- 		// SSL v3 only...
- 		else if (strcmp("--ssl3", argv[argLoop]) == 0)
-@@ -1379,7 +1392,9 @@ int main(int argc, char *argv[])
- 			printf("                       ports (i.e. host:port).\n");
- 			printf("  %s--no-failed%s          List only accepted ciphers  (default\n", COL_GREEN, RESET);
- 			printf("                       is to listing all ciphers).\n");
-+#ifndef OPENSSL_NO_SSL2
- 			printf("  %s--ssl2%s               Only check SSLv2 ciphers.\n", COL_GREEN, RESET);
-+#endif
- 			printf("  %s--ssl3%s               Only check SSLv3 ciphers.\n", COL_GREEN, RESET);
- 			printf("  %s--tls1%s               Only check TLSv1 ciphers.\n", COL_GREEN, RESET);
- 			printf("  %s--pk=<file>%s          A file containing the private key or\n", COL_GREEN, RESET);
-@@ -1415,13 +1430,17 @@ int main(int argc, char *argv[])
- 			switch (options.sslVersion)
- 			{
- 				case ssl_all:
-+#ifndef OPENSSL_NO_SSL2
- 					populateCipherList(&options, SSLv2_client_method());
-+#endif
- 					populateCipherList(&options, SSLv3_client_method());
- 					populateCipherList(&options, TLSv1_client_method());
- 					break;
-+#ifndef OPENSSL_NO_SSL2
- 				case ssl_v2:
- 					populateCipherList(&options, SSLv2_client_method());
- 					break;
-+#endif
- 				case ssl_v3:
- 					populateCipherList(&options, SSLv3_client_method());
- 					break;

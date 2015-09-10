@@ -1,22 +1,14 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2011/06/21 21:05:48 ajacoutot Exp $
---- Makefile.orig	Tue Sep  1 14:35:59 2009
-+++ Makefile	Tue Jun 21 19:25:44 2011
-@@ -1,13 +1,13 @@
- SRCS = sslscan.c
--BINPATH = /usr/bin/
--MANPATH = /usr/share/man/
-+BINPATH = ${PREFIX}/bin/
-+MANPATH = ${PREFIX}/man
- 
- all:
--	gcc -g -Wall -lssl -o sslscan $(SRCS) $(LDFLAGS) $(CFLAGS)
-+	${CC} -g -Wall -lssl -lcrypto -o sslscan $(SRCS) $(LDFLAGS) $(CFLAGS)
- 
+$OpenBSD: patch-Makefile,v 1.2 2015/09/10 13:55:51 sthen Exp $
+--- Makefile.orig	Thu Aug  6 11:23:13 2015
++++ Makefile	Thu Sep 10 15:41:10 2015
+@@ -43,8 +43,8 @@ sslscan: $(SRCS)
  install:
+ 	mkdir -p $(BINPATH)
+ 	mkdir -p $(MANPATH)man1/
 -	cp sslscan $(BINPATH)
--	cp sslscan.1 $(MANPATH)man1
+-	cp sslscan.1 $(MANPATH)man1/
 +	$(BSD_INSTALL_PROGRAM) sslscan $(BINPATH)
-+	$(BSD_INSTALL_MAN) sslscan.1 $(MANPATH)/man1
++	$(BSD_INSTALL_MAN) sslscan.1 $(MANPATH)man1/
  
  uninstall:
  	rm -f $(BINPATH)sslscan
