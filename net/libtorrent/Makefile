@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/08/01 08:13:01 mpi Exp $
+# $OpenBSD: Makefile,v 1.43 2015/09/11 09:15:40 pascal Exp $
 
 COMMENT=		BitTorrent library written in C++
 
@@ -9,19 +9,18 @@ BROKEN-sh =		undefined references to __sync atomic ops
 # requires C++ tr1 headers
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
-DISTNAME=		libtorrent-0.13.4
+DISTNAME=		libtorrent-0.13.6
 EPOCH=			0
-REVISION=		1
-SHARED_LIBS +=  	torrent 21.0	# .18.0
+SHARED_LIBS +=  	torrent 22.0	# .18.0
 CATEGORIES=		net devel
 
-HOMEPAGE=		http://libtorrent.rakshasa.no/
+HOMEPAGE=		https://rakshasa.github.io/rtorrent/
 MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${HOMEPAGE}downloads/
+MASTER_SITES=		http://rtorrent.net/downloads/
 
 WANTLIB=		crypto m pthread stdc++ z
 BUILD_DEPENDS=		devel/cppunit

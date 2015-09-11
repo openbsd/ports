@@ -1,37 +1,12 @@
-$OpenBSD: patch-test_Makefile_in,v 1.5 2015/03/24 13:35:09 dcoppa Exp $
-
-Correct library dependencies for tests.
-
---- test/Makefile.in.orig	Tue Jun 21 09:06:06 2011
-+++ test/Makefile.in	Mon Dec 10 15:34:39 2012
-@@ -137,8 +137,8 @@ LibTorrentTest_DEPENDENCIES = ../src/libtorrent.la \
- 	../src/torrent/download/libsub_torrentdownload.la \
- 	../src/torrent/peer/libsub_torrentpeer.la \
- 	../src/data/libsub_data.la ../src/dht/libsub_dht.la \
--	../src/download/libsub_download.la ../src/net/libsub_net.la \
--	../src/protocol/libsub_protocol.la \
-+	../src/net/libsub_net.la ../src/protocol/libsub_protocol.la \
-+	../src/download/libsub_download.la \
- 	../src/tracker/libsub_tracker.la ../src/utils/libsub_utils.la \
- 	../src/torrent/utils/libsub_torrentutils.la
- AM_V_lt = $(am__v_lt_@AM_V@)
-@@ -577,9 +577,9 @@ LibTorrentTest_LDADD = \
- 	../src/torrent/peer/libsub_torrentpeer.la \
- 	../src/data/libsub_data.la \
- 	../src/dht/libsub_dht.la \
--	../src/download/libsub_download.la \
- 	../src/net/libsub_net.la \
- 	../src/protocol/libsub_protocol.la \
-+	../src/download/libsub_download.la \
- 	../src/tracker/libsub_tracker.la \
- 	../src/utils/libsub_utils.la \
- 	../src/torrent/utils/libsub_torrentutils.la
-@@ -643,7 +643,7 @@ LibTorrentTest_SOURCES = \
+$OpenBSD: patch-test_Makefile_in,v 1.6 2015/09/11 09:15:40 pascal Exp $
+--- test/Makefile.in.orig	Thu Sep 10 20:12:55 2015
++++ test/Makefile.in	Thu Sep 10 20:13:00 2015
+@@ -644,7 +644,7 @@ LibTorrentTest_SOURCES = \
  	main.cc
  
  LibTorrentTest_CXXFLAGS = $(CPPUNIT_CFLAGS)
 -LibTorrentTest_LDFLAGS = $(CPPUNIT_LIBS)  -ldl
-+LibTorrentTest_LDFLAGS = $(CPPUNIT_LIBS)  -lpthread
++LibTorrentTest_LDFLAGS = $(CPPUNIT_LIBS)
  AM_CPPFLAGS = -I$(srcdir) -I$(top_srcdir) -I$(top_srcdir)/src
  all: all-am
  
