@@ -1,0 +1,12 @@
+$OpenBSD: patch-openbsd__ifconfig_c,v 1.1 2015/09/11 14:43:54 sthen Exp $
+--- openbsd/_ifconfig.c.orig	Fri Sep 11 08:42:58 2015
++++ openbsd/_ifconfig.c	Fri Sep 11 08:43:02 2015
+@@ -162,7 +162,7 @@ PyObject *decodeMediaWord(int mw){
+ PyObject *getifmedia(PyObject *self, PyObject *args){
+ 	struct ifmediareq ifmr;
+ 	char *ifname;
+-	int *media_list;
++	uint64_t *media_list;
+ 	int s, i;
+ 	PyObject *retdict, *optionlist, *tmp, *tmp2;
+ 
