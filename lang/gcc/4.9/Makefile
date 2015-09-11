@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2015/09/09 16:05:29 pascal Exp $
+# $OpenBSD: Makefile,v 1.20 2015/09/11 08:07:44 pascal Exp $
 
 BROKEN-arm = needs binutils-2.17
 
-ONLY_FOR_ARCHS = amd64 arm hppa i386 powerpc sparc sparc64
+ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc sparc64
 DPB_PROPERTIES = parallel
 
 V = 4.9.3
@@ -68,6 +68,10 @@ EXTRACT_ONLY =	${DISTNAME}.tar.bz2
 
 BUILD_DEPENDS +=	devel/bison \
 			devel/libexecinfo
+
+.if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
+BUILD_DEPENDS +=	textproc/gsed
+.endif
 
 TEST_DEPENDS = 	devel/dejagnu \
 		devel/autogen \
