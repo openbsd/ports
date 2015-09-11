@@ -1,0 +1,2 @@
+This package contains state variables, which are references in the
+IO monad, like IORefs or parts of the OpenGL state.
