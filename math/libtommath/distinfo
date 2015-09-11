@@ -1,2 +1,4 @@
-SHA256 (libtommath-0.42.0.tar.gz) = UkY1a6GMG27fSnvINqPSI4QrhpFM26bdjBEr/FniJ8g=
-SIZE (libtommath-0.42.0.tar.gz) = 1732144
+SHA256 (ltm-0.42.0.tar.bz2) = e1wlgwTDSsWQHP3bn4CbmzuKx9BPcAzwBqx2apI+shc=
+SHA256 (ltm-manual-0.42.0.pdf.gz) = ZJFcElR9Hy+nIhq7uD421IJxwBGtueiGI4G7Q/hSrG4=
+SIZE (ltm-0.42.0.tar.bz2) = 1968961
+SIZE (ltm-manual-0.42.0.pdf.gz) = 372580

@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/27 16:30:37 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/11 11:44:03 czarkoff Exp $
 include/tommath.h
 include/tommath_class.h
 include/tommath_superclass.h
 lib/libtommath.a
 share/doc/libtommath/
 share/doc/libtommath/manual.pdf
-share/doc/libtommath/tommath.pdf

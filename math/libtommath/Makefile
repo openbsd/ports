@@ -1,23 +1,20 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/16 07:47:47 czarkoff Exp $
-
-PORTROACH =		skipv:semver
+# $OpenBSD: Makefile,v 1.3 2015/09/11 11:44:03 czarkoff Exp $
 
 COMMENT =		number theoretic multiple-precision integer library
 V =			0.42.0
+REVISION =		0
 DISTNAME =		libtommath-$V
 CATEGORIES =		math
 HOMEPAGE =		http://libtom.net/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
-GH_ACCOUNT =		libtom
-GH_PROJECT =		libtommath
-GH_TAGNAME =		v${V}
+MASTER_SITES0 =		http://libtom.net/files/
+MASTER_SITES1 =		http://spacehopper.org/mirrors/
+DISTFILES +=		ltm-$V.tar.bz2:0 ltm-manual-$V.pdf.gz:1
 
 # Public Domain
 PERMIT_PACKAGE_CDROM =	Yes
-
-BUILD_DEPENDS =		print/texlive/base
 
 MAKE_FLAGS =		IGNORE_SPEED=Yes
 FAKE_FLAGS =		DESTDIR=${WRKINST}${PREFIX} \
@@ -27,9 +24,11 @@ USE_GMAKE =		Yes
 MAKE_FILE =		makefile
 WRKDIST =		${WRKDIR}/${PKGNAME}
 
-ALL_TARGET =		default docs manual
+ALL_TARGET =		default
 TEST_TARGET =		mtest
 TEST_IS_INTERACTIVE =	Yes
+
+CFLAGS +=		-fPIC
 
 DOCPATH=${PREFIX}/share/doc/libtommath
 
@@ -39,7 +38,6 @@ post-test:
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCPATH}
-	${INSTALL_DATA} ${WRKDIST}/bn.pdf ${DOCPATH}/manual.pdf
-	${INSTALL_DATA} ${WRKDIST}/tommath.pdf ${DOCPATH}/tommath.pdf
+	${INSTALL_DATA} ${WRKDIR}/ltm-manual-$V.pdf ${DOCPATH}/manual.pdf
 
 .include <bsd.port.mk>
