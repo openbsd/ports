@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_testpcsc_c,v 1.1 2015/09/11 10:18:36 dcoppa Exp $
+--- src/testpcsc.c.orig	Fri Sep 11 11:44:10 2015
++++ src/testpcsc.c	Fri Sep 11 11:44:29 2015
+@@ -471,8 +471,6 @@ wait_for_card_again:
+ 		(void)SCardReleaseContext(hContext);
+ 	}
+ 
+-	printf("Press enter: ");
+-	(void)getchar();
+ 	printf("Testing SCardReconnect\t\t: ");
+ 	rv = SCardReconnect(hCard, SCARD_SHARE_SHARED,
+ 		SCARD_PROTOCOL_T0 | SCARD_PROTOCOL_T1, SCARD_UNPOWER_CARD, &dwPref);
