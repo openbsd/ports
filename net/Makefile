@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.926 2015/09/05 10:01:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.927 2015/09/11 20:32:19 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -669,7 +669,6 @@
      SUBDIR += xl2tpd
      SUBDIR += xmlrpc-c
      SUBDIR += xmlrpc-epi
-     SUBDIR += xorp
      SUBDIR += xprobe
      SUBDIR += yafc
      SUBDIR += yaz
