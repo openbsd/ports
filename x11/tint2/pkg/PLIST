@@ -1,0 +1,53 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/11 14:14:07 sthen Exp $
+@pkgpath x11/tint
+@bin bin/tint2
+@bin bin/tint2conf
+@man man/man1/tint2.1
+share/applications/tint2.desktop
+share/applications/tint2conf.desktop
+share/doc/tint2/
+share/doc/tint2/AUTHORS
+share/doc/tint2/ChangeLog
+share/doc/tint2/README.md
+share/examples/tint2/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/tint2/horizontal-dark-opaque.tint2rc
+share/examples/tint2/horizontal-dark-transparent.tint2rc
+share/examples/tint2/horizontal-light-opaque.tint2rc
+share/examples/tint2/horizontal-light-transparent.tint2rc
+share/examples/tint2/icon_and_text_1.tint2rc
+share/examples/tint2/icon_and_text_2.tint2rc
+share/examples/tint2/icon_and_text_3.tint2rc
+share/examples/tint2/icon_and_text_4.tint2rc
+share/examples/tint2/icon_only_1.tint2rc
+share/examples/tint2/icon_only_2.tint2rc
+share/examples/tint2/icon_only_3.tint2rc
+share/examples/tint2/icon_only_4.tint2rc
+share/examples/tint2/icon_only_6.tint2rc
+share/examples/tint2/icon_only_7.tint2rc
+share/examples/tint2/text_only_1.tint2rc
+share/examples/tint2/text_only_2.tint2rc
+share/examples/tint2/text_only_3.tint2rc
+share/examples/tint2/text_only_4.tint2rc
+share/examples/tint2/text_only_5.tint2rc
+share/examples/tint2/text_only_6.tint2rc
+share/examples/tint2/tint2rc
+@sample ${SYSCONFDIR}/xdg/tint2/
+@sample ${SYSCONFDIR}/xdg/tint2/tint2rc
+share/examples/tint2/vertical-dark-opaque.tint2rc
+share/examples/tint2/vertical-dark-transparent.tint2rc
+share/examples/tint2/vertical-light-opaque.tint2rc
+share/examples/tint2/vertical-light-transparent.tint2rc
+share/icons/hicolor/scalable/apps/tint2.svg
+share/icons/hicolor/scalable/apps/tint2conf.svg
+share/locale/bs/LC_MESSAGES/tint2conf.mo
+share/locale/fr/LC_MESSAGES/tint2conf.mo
+share/locale/hr/LC_MESSAGES/tint2conf.mo
+share/locale/pl/LC_MESSAGES/tint2conf.mo
+share/locale/sr/LC_MESSAGES/tint2conf.mo
+share/tint2/
+share/tint2/default_icon.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

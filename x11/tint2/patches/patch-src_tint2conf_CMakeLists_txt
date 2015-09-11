@@ -1,0 +1,8 @@
+$OpenBSD: patch-src_tint2conf_CMakeLists_txt,v 1.1.1.1 2015/09/11 14:14:07 sthen Exp $
+--- src/tint2conf/CMakeLists.txt.orig	Tue Aug 11 09:26:49 2015
++++ src/tint2conf/CMakeLists.txt	Fri Sep 11 15:30:10 2015
+@@ -71,4 +71,3 @@ add_subdirectory(po)
+ install( TARGETS tint2conf DESTINATION bin )
+ install( FILES tint2conf.svg DESTINATION ${DATADIR}/icons/hicolor/scalable/apps )
+ install( FILES tint2conf.desktop DESTINATION ${DATADIR}/applications )
+-install( CODE "execute_process(COMMAND gtk-update-icon-cache -f -t ${DATADIR}/icons/hicolor WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX})" )

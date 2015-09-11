@@ -1,0 +1,4 @@
+Tint2 is a simple panel/taskbar made for modern X window managers. It
+was specifically made for Openbox but it should also work with other
+window managers (GNOME, KDE, XFCE etc.). It is based on ttm
+http://code.google.com/p/ttm/.
