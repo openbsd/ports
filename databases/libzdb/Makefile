@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/04 19:17:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/11 19:28:37 kirby Exp $
 
 COMMENT =		easy to use database connection pool Library
 
-DISTNAME =		libzdb-2.12
-REVISION =		0
+DISTNAME =		libzdb-3.1
 
-SHARED_LIBS += 		zdb 0.0 # 10.0
+SHARED_LIBS += 		zdb 1.0 # 11.0
 
 CATEGORIES =		databases
 
