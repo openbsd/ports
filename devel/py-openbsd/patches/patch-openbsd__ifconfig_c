@@ -1,6 +1,6 @@
-$OpenBSD: patch-openbsd__ifconfig_c,v 1.1 2015/09/11 14:43:54 sthen Exp $
---- openbsd/_ifconfig.c.orig	Fri Sep 11 08:42:58 2015
-+++ openbsd/_ifconfig.c	Fri Sep 11 08:43:02 2015
+$OpenBSD: patch-openbsd__ifconfig_c,v 1.2 2015/09/11 18:48:41 sthen Exp $
+--- openbsd/_ifconfig.c.orig	Tue Dec 21 07:32:04 2004
++++ openbsd/_ifconfig.c	Fri Sep 11 20:48:18 2015
 @@ -162,7 +162,7 @@ PyObject *decodeMediaWord(int mw){
  PyObject *getifmedia(PyObject *self, PyObject *args){
  	struct ifmediareq ifmr;
@@ -10,3 +10,12 @@ $OpenBSD: patch-openbsd__ifconfig_c,v 1.1 2015/09/11 14:43:54 sthen Exp $
  	int s, i;
  	PyObject *retdict, *optionlist, *tmp, *tmp2;
  
+@@ -186,7 +186,7 @@ PyObject *getifmedia(PyObject *self, PyObject *args){
+ 	if (ioctl(s, SIOCGIFMEDIA, (caddr_t)&ifmr) < 0) 
+ 		goto error;
+ 
+-	media_list = malloc(ifmr.ifm_count * sizeof(int));
++	media_list = malloc(ifmr.ifm_count * sizeof(uint64_t));
+ 	if (media_list == NULL)
+ 		goto error;
+ 	ifmr.ifm_ulist = media_list;
