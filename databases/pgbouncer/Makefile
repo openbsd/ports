@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2015/06/01 09:51:42 pea Exp $
+# $OpenBSD: Makefile,v 1.22 2015/09/11 12:39:27 pea Exp $
 
 COMMENT = 	lightweight connection pooler for PostgreSQL
 
-DISTNAME = 	pgbouncer-1.5.5
+V = 		1.6.1
+DISTNAME = 	pgbouncer-${V}
 
 CATEGORIES = 	databases
 
@@ -15,14 +16,14 @@ PERMIT_PACKAGE_CDROM = 	Yes
 
 WANTLIB = 	c event
 
-MASTER_SITES = 	https://pgbouncer.github.io/downloads/
+MASTER_SITES = 	https://pgbouncer.github.io/downloads/files/${V}/
 
 BUILD_DEPENDS =	devel/libeventextra
 
 CONFIGURE_STYLE = 	gnu
 #Disable the detection of asciidoc since docs are already included
 CONFIGURE_ENV =         ASCIIDOC=' '
-CONFIGURE_ARGS = 	--with-libevent=${LOCALBASE}
+CONFIGURE_ARGS = 	--with-libevent=${LOCALBASE} --without-cares
 MAKE_FLAGS+=		V=1
 
 USE_GMAKE = 		Yes
