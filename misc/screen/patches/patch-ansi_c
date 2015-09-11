@@ -1,7 +1,7 @@
-$OpenBSD: patch-ansi_c,v 1.3 2015/09/01 12:05:19 jasper Exp $
+$OpenBSD: patch-ansi_c,v 1.4 2015/09/11 14:04:59 jasper Exp $
 
-http://seclists.org/oss-sec/2015/q3/462
-http://git.savannah.gnu.org/cgit/screen.git/commit/?h=screen-v4&id=b7484c224738247b510ed0d268cd577076958f1b
+Security fix for CVE-2015-6806,
+screen: Stack overflow due to deep recursion causing process freeze
 
 --- ansi.c.orig	Fri Dec  5 14:57:05 2003
 +++ ansi.c	Tue Sep  1 14:03:33 2015
