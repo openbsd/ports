@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/12/18 14:40:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2015/09/11 12:15:21 pea Exp $
 
 COMMENT =	FTP over SSL/TLS client class
 
 MODULES =	cpan
-DISTNAME =	Net-FTPSSL-0.25
+DISTNAME =	Net-FTPSSL-0.30
 CATEGORIES =	net 
 
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
