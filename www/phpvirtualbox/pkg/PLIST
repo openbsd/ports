@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/08/17 07:38:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/09/11 07:03:07 ajacoutot Exp $
 phpvirtualbox/
 phpvirtualbox/CHANGELOG.txt
 phpvirtualbox/GPLv3.txt
@@ -503,6 +503,7 @@ phpvirtualbox/js/phpvirtualbox.js
 phpvirtualbox/js/utils.js
 phpvirtualbox/languages/
 phpvirtualbox/languages/de.xml
+phpvirtualbox/languages/en.xml
 phpvirtualbox/languages/es.xml
 phpvirtualbox/languages/fr.xml
 phpvirtualbox/languages/it.xml
