@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.78 2015/09/08 18:32:00 jca Exp $
+# $OpenBSD: Makefile,v 1.79 2015/09/11 11:33:35 jca Exp $
 
 BROKEN-i386= segfault during build (./temacs -batch -l loadup dump)
-BROKEN-powerpc= needs a working ld(1) -Z
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
