@@ -1,0 +1,190 @@
+$OpenBSD: patch-media_c,v 1.1 2015/09/11 14:25:47 sthen Exp $
+
+fix with ifmedia64
+
+--- media.c.orig	Tue Sep  1 22:11:42 2015
++++ media.c	Fri Sep 11 08:23:27 2015
+@@ -49,12 +49,12 @@
+ 
+ int init_current_media(int, char *); 
+ void process_media_commands(int, char *, int);
+-const char *get_media_type_string(int);
+-const char *get_media_subtype_string(int);
+-int get_media_subtype(int, const char *);
+-int get_media_options(int, const char *);
+-int lookup_media_word(const struct ifmedia_description *, int, const char *);
+-void print_media_word(int, int, int);
++const char *get_media_type_string(uint64_t);
++const char *get_media_subtype_string(uint64_t);
++uint64_t get_media_subtype(uint64_t, const char *);
++uint64_t get_media_options(uint64_t, const char *);
++uint64_t lookup_media_word(const struct ifmedia_description *, uint64_t, const char *);
++void print_media_word(uint64_t, int, int);
+ void conf_print_media_word(FILE *, int);
+ 
+ const int ifm_status_valid_list[] =
+@@ -76,7 +76,7 @@ int
+ intmedia(char *ifname, int ifs, int argc, char **argv)
+ {
+ 	const char *errmsg = NULL;
+-	int set, media_current, type, subtype, inst;
++	uint64_t set, media_current, type, subtype, inst;
+ 
+ 	if (NO_ARG(argv[0])) {
+ 		set = 0;
+@@ -229,8 +229,7 @@ init_current_media(int s, char *ifname)
+ }
+ 
+ const char     *
+-get_media_type_string(mword)
+-	int             mword;
++get_media_type_string(uint64_t mword)
+ {
+ 	const struct ifmedia_description *desc;
+ 
+@@ -243,8 +242,7 @@ get_media_type_string(mword)
+ }
+ 
+ const char     *
+-get_media_subtype_string(mword)
+-	int             mword;
++get_media_subtype_string(uint64_t mword)
+ {
+ 	const struct ifmedia_description *desc;
+ 
+@@ -257,12 +255,10 @@ get_media_subtype_string(mword)
+ 	return ("<unknown subtype>");
+ }
+ 
+-int
+-get_media_subtype(type, val)
+-	int             type;
+-	const char     *val;
++uint64_t
++get_media_subtype(uint64_t type, const char *val)
+ {
+-	int             rval;
++	uint64_t	rval;
+ 
+ 	rval = lookup_media_word(ifm_subtype_descriptions, type, val);
+ 	if (rval == -1) {
+@@ -273,13 +269,11 @@ get_media_subtype(type, val)
+ 	return (rval);
+ }
+ 
+-int
+-get_media_options(type, val)
+-	int             type;
+-	const char     *val;
++uint64_t
++get_media_options(uint64_t type, const char *val)
+ {
+ 	char           *optlist, *str;
+-	int             option, rval = 0;
++	uint64_t	option, rval = 0;
+ 
+ 	/* We muck with the string, so copy it. */
+ 	optlist = (char *)strdup(val);
+@@ -307,13 +301,9 @@ get_media_options(type, val)
+ 	return (rval);
+ }
+ 
+-int
+-lookup_media_word(desc, type, val)
+-	const struct ifmedia_description *desc;
+-	int             type;
+-	const char     *val;
++uint64_t
++lookup_media_word(const struct ifmedia_description *desc, uint64_t type, const char *val)
+ {
+-
+ 	for (; desc->ifmt_string != NULL; desc++) {
+ 		if (IFM_TYPE_MATCH(desc->ifmt_word, type) &&
+ 		    strcasecmp(desc->ifmt_string, val) == 0)
+@@ -323,18 +313,17 @@ lookup_media_word(desc, type, val)
+ }
+ 
+ void
+-print_media_word(ifmw, print_type, as_syntax)
+-	int             ifmw, print_type, as_syntax;
++print_media_word(uint64_t ifmw, int print_type, int as_syntax)
+ {
+ 	const struct ifmedia_description *desc;
+-	int             seen_option = 0;
++	uint64_t	seen_option = 0;
+ 
+ 	if (print_type)
+ 		printf("%s ", get_media_type_string(ifmw));
+ 	printf("%s%s", as_syntax ? "media " : "",
+ 	       get_media_subtype_string(ifmw));
+ 	if (IFM_INST(ifmw) != 0)
+-		printf(" %d", IFM_INST(ifmw));
++		printf(" %lld", IFM_INST(ifmw));
+ 
+ 	/* Find options. */
+ 	for (desc = ifm_option_descriptions; desc->ifmt_string != NULL;
+@@ -359,7 +348,7 @@ conf_print_media_word(FILE *output, int ifmw)
+ 
+ 	fprintf(output, " media %s", get_media_subtype_string(ifmw));
+ 	if (IFM_INST(ifmw) != 0)
+-		printf(" %d", IFM_INST(ifmw));
++		printf(" %lld", IFM_INST(ifmw));
+ 	fprintf(output, "\n");
+ 
+ 	/* Find options. */
+@@ -420,7 +409,8 @@ int buf_len, int buf2_len)
+ int
+ conf_media_status(FILE *output, int s, char *ifname)
+ {
+-	int *media_list, rval = 0;
++	int rval = 0;
++	uint64_t *media_list;
+ 	struct ifmediareq ifmr;
+ 
+ 	memset(&ifmr, 0, sizeof(ifmr));
+@@ -436,7 +426,7 @@ conf_media_status(FILE *output, int s, char *ifname)
+ 	if (ifmr.ifm_count == 0)
+ 		return(0);
+ 
+-	media_list = (int *)malloc(ifmr.ifm_count * sizeof(int));
++	media_list = (uint64_t *)malloc(ifmr.ifm_count * sizeof(int));
+ 	if (media_list == NULL) {
+ 		printf("%% conf_media_status: malloc: %s\n", strerror(errno));
+ 		return(0);
+@@ -463,7 +453,7 @@ conf_media_status(FILE *output, int s, char *ifname)
+ void
+ media_status(int s, char *ifname, char *delim)
+ {
+-	int *media_list;
++	uint64_t *media_list;
+ 	struct ifmediareq ifmr;
+ 
+ 	memset(&ifmr, 0, sizeof(ifmr));
+@@ -482,7 +472,7 @@ media_status(int s, char *ifname, char *delim)
+ 		return;
+ 	}
+ 
+-	media_list = (int *)malloc(ifmr.ifm_count * sizeof(int));
++	media_list = (uint64_t *)malloc(ifmr.ifm_count * sizeof(int));
+ 	if (media_list == NULL) {
+ 		printf("%% media_status: malloc: %s\n", strerror(errno));
+ 		return;
+@@ -543,7 +533,8 @@ media_status(int s, char *ifname, char *delim)
+ void
+ media_supported(int s, char *ifname, char *hdr_delim, char *body_delim)
+ {
+-	int *media_list, i, type, printed_type;
++	int i, type, printed_type;
++	uint64_t *media_list;
+ 	struct ifmediareq ifmr;
+ 
+ 	memset(&ifmr, 0, sizeof(ifmr));
+@@ -556,7 +547,7 @@ media_supported(int s, char *ifname, char *hdr_delim, 
+ 		return;
+ 	}
+ 
+-	media_list = (int *)malloc(ifmr.ifm_count * sizeof(int));
++	media_list = (uint64_t *)malloc(ifmr.ifm_count * sizeof(int));
+ 	if (media_list == NULL) {
+ 		printf("%% media_status: malloc: %s\n", strerror(errno));
+ 		return;
