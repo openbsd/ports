@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_kernel_bsd_c,v 1.1 2001/04/16 12:15:26 lebel Exp $
---- lib/kernel/bsd.c.orig	Wed Feb  2 15:46:42 2000
-+++ lib/kernel/bsd.c	Thu Apr 12 10:56:21 2001
+$OpenBSD: patch-lib_kernel_bsd_c,v 1.2 2015/09/11 20:57:21 sthen Exp $
+--- lib/kernel/bsd.c.orig	Wed Feb  2 21:46:42 2000
++++ lib/kernel/bsd.c	Fri Sep 11 22:56:50 2015
 @@ -7,7 +7,7 @@
  
  #include <sys/sysctl.h>
@@ -10,3 +10,13 @@ $OpenBSD: patch-lib_kernel_bsd_c,v 1.1 2001/04/16 12:15:26 lebel Exp $
  
  struct sockaddr_dl *index2dl[MAX_INTERFACES];
  
+@@ -588,7 +588,9 @@ sys_kernel_rt_msg (u_char *buf, int bufsize)
+ 	    if (rtm->rtm_flags &
+ 		    ~(RTF_UP|RTF_GATEWAY|RTF_HOST|RTF_STATIC
+ 			|RTF_CLONING /* direct if */
++#ifdef RTF_XRESOLVE
+ 			|RTF_XRESOLVE /* direct if for IPv6 */
++#endif /* RTF_XRESOLVE */
+ 			|RTF_DONE /* on injection */
+ #ifdef RTF_PRCLONING
+ 			|RTF_PRCLONING /* usual route has this */
