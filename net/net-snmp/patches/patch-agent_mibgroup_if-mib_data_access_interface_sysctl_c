@@ -1,0 +1,21 @@
+$OpenBSD: patch-agent_mibgroup_if-mib_data_access_interface_sysctl_c,v 1.5 2015/09/11 16:33:05 sthen Exp $
+--- agent/mibgroup/if-mib/data_access/interface_sysctl.c.orig	Fri Sep 11 10:30:28 2015
++++ agent/mibgroup/if-mib/data_access/interface_sysctl.c	Fri Sep 11 10:30:46 2015
+@@ -241,7 +241,7 @@ netsnmp_sysctl_get_if_speed(char *name, u_int *speed,
+ {
+     int s;
+     struct ifmediareq ifmr;
+-    int *media_list, i;
++    uint64_t *media_list, i;
+     u_int t_speed, t_speed_high; 
+     u_int m_speed, m_speed_high;
+ 
+@@ -272,7 +272,7 @@ netsnmp_sysctl_get_if_speed(char *name, u_int *speed,
+     netsnmp_sysctl_ifmedia_to_speed(ifmr.ifm_current, speed, speed_high);
+ 
+     if (*speed == 0 &&
+-        (media_list = (int *) malloc(ifmr.ifm_count * sizeof(int))) != NULL ) {
++        (media_list = (uint64_t *) malloc(ifmr.ifm_count * sizeof(uint64_t))) != NULL ) {
+ 
+         ifmr.ifm_ulist = media_list;
+ 
