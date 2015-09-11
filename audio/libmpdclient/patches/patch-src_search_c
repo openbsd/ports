@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_search_c,v 1.1 2015/09/11 12:21:47 dcoppa Exp $
+
+commit 7a4726844b0b27363d53267c6906b57aca47e5d9
+Author: Pieter De Gendt <pieter.degendt@gmail.com>
+Date:   Thu Jun 18 10:56:29 2015 +0200
+
+Space required before window search argument
+
+Signed-off-by: Pieter De Gendt <pieter.degendt@gmail.com>
+
+--- src/search.c.orig	Fri Sep 11 14:17:51 2015
++++ src/search.c	Fri Sep 11 14:18:15 2015
+@@ -300,7 +300,7 @@ mpd_search_add_window(struct mpd_connection *connectio
+ 	if (dest == NULL)
+ 		return false;
+ 
+-	snprintf(dest, size, "window %u:%u", start, end);
++	snprintf(dest, size, " window %u:%u", start, end);
+ 	return true;
+ }
+ 
