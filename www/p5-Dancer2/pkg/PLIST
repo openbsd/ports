@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/18 13:48:47 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/11 21:02:51 landry Exp $
 bin/dancer2
 ${P5SITE}/Dancer2/
 ${P5SITE}/Dancer2.pm
@@ -23,14 +23,15 @@ ${P5SITE}/Dancer2/Core/MIME.pm
 ${P5SITE}/Dancer2/Core/Request/
 ${P5SITE}/Dancer2/Core/Request.pm
 ${P5SITE}/Dancer2/Core/Request/Upload.pm
+${P5SITE}/Dancer2/Core/Response/
 ${P5SITE}/Dancer2/Core/Response.pm
+${P5SITE}/Dancer2/Core/Response/Delayed.pm
 ${P5SITE}/Dancer2/Core/Role/
 ${P5SITE}/Dancer2/Core/Role/ConfigReader.pm
 ${P5SITE}/Dancer2/Core/Role/DSL.pm
 ${P5SITE}/Dancer2/Core/Role/Engine.pm
 ${P5SITE}/Dancer2/Core/Role/Handler.pm
 ${P5SITE}/Dancer2/Core/Role/HasLocation.pm
-${P5SITE}/Dancer2/Core/Role/Headers.pm
 ${P5SITE}/Dancer2/Core/Role/Hookable.pm
 ${P5SITE}/Dancer2/Core/Role/Logger.pm
 ${P5SITE}/Dancer2/Core/Role/Serializer.pm
@@ -59,6 +60,7 @@ ${P5SITE}/Dancer2/Logger/Note.pm
 ${P5SITE}/Dancer2/Logger/Null.pm
 ${P5SITE}/Dancer2/Manual/
 ${P5SITE}/Dancer2/Manual.pod
+${P5SITE}/Dancer2/Manual/Deployment.pod
 ${P5SITE}/Dancer2/Manual/Migration.pod
 ${P5SITE}/Dancer2/Manual/Testing.pod
 ${P5SITE}/Dancer2/Plugin.pm
@@ -134,12 +136,12 @@ ${P5SITE}/auto/share/dist/Dancer2/skel/views/layouts/main.tt
 @man man/man3p/Dancer2::Core::Request.3p
 @man man/man3p/Dancer2::Core::Request::Upload.3p
 @man man/man3p/Dancer2::Core::Response.3p
+@man man/man3p/Dancer2::Core::Response::Delayed.3p
 @man man/man3p/Dancer2::Core::Role::ConfigReader.3p
 @man man/man3p/Dancer2::Core::Role::DSL.3p
 @man man/man3p/Dancer2::Core::Role::Engine.3p
 @man man/man3p/Dancer2::Core::Role::Handler.3p
 @man man/man3p/Dancer2::Core::Role::HasLocation.3p
-@man man/man3p/Dancer2::Core::Role::Headers.3p
 @man man/man3p/Dancer2::Core::Role::Hookable.3p
 @man man/man3p/Dancer2::Core::Role::Logger.3p
 @man man/man3p/Dancer2::Core::Role::Serializer.3p
@@ -163,6 +165,7 @@ ${P5SITE}/auto/share/dist/Dancer2/skel/views/layouts/main.tt
 @man man/man3p/Dancer2::Logger::Note.3p
 @man man/man3p/Dancer2::Logger::Null.3p
 @man man/man3p/Dancer2::Manual.3p
+@man man/man3p/Dancer2::Manual::Deployment.3p
 @man man/man3p/Dancer2::Manual::Migration.3p
 @man man/man3p/Dancer2::Manual::Testing.3p
 @man man/man3p/Dancer2::Plugin.3p

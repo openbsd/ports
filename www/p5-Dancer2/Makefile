@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/18 13:48:47 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/11 21:02:51 landry Exp $
 
 COMMENT =		lightweight yet powerful web application framework
 
 MODULES =		cpan
-DISTNAME =		Dancer2-0.158000
+DISTNAME =		Dancer2-0.162000
 CATEGORIES =		www
 
 MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
@@ -19,10 +19,9 @@ RUN_DEPENDS = 		devel/p5-App-Cmd \
 			devel/p5-Config-Any \
 			www/p5-HTTP-Body \
 			www/p5-HTTP-Date \
-			www/p5-HTTP-Message \
+			www/p5-HTTP-Headers-Fast \
 			devel/p5-Hash-Merge-Simple \
 			converters/p5-JSON \
-			mail/p5-MIME-Types \
 			devel/p5-Moo>=1.003000 \
 			devel/p5-MooX-Types-MooseLike \
 			www/p5-Plack>=1.0029 \
