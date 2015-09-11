@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/09/11 11:47:41 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/11 17:57:13 jca Exp $
 
 COMMENT =		mobile shell
 
-DISTNAME =		mosh-1.2.4.95rc2
+DISTNAME =		mosh-1.2.5
 
 CATEGORIES =		net
 
@@ -16,25 +16,15 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=		c crypto m ncursesw protobuf pthread ssl stdc++ util
 WANTLIB +=		z
 
-MASTER_SITES =		https://github.com/keithw/mosh/archive/
+MASTER_SITES =		${HOMEPAGE}
 
 LIB_DEPENDS =		devel/protobuf
 
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	autoconf automake
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.14
+CONFIGURE_STYLE =	gnu
 # --enable-hardening forces PIE on, which doesn't work on all arches
 # pick only ld(1) -z now to match upstream
 CONFIGURE_ARGS =	--disable-hardening
 CONFIGURE_ENV =		LDFLAGS="-Wl,-z,now ${LDFLAGS}"
-
-WRKDIST =		${WRKDIR}/mosh-${DISTNAME}
-
-post-patch:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	    ./autogen.sh
 
 .include <bsd.port.mk>
