@@ -1,0 +1,110 @@
+$OpenBSD: patch-scanner_c,v 1.4 2015/09/11 09:51:12 sthen Exp $
+
+Support -r for incremental rescan
+http://sourceforge.net/p/minidlna/patches/145/
+
+--- scanner.c.orig	Thu Sep 10 21:24:09 2015
++++ scanner.c	Fri Sep 11 11:43:37 2015
+@@ -46,6 +46,7 @@
+ #include "albumart.h"
+ #include "containers.h"
+ #include "log.h"
++#include "rescan.h"
+ 
+ #if SCANDIR_CONST
+ typedef const struct dirent scan_filter;
+@@ -87,7 +88,7 @@ get_next_available_id(const char *table, const char *p
+ 
+ int
+ insert_container(const char *item, const char *rootParent, const char *refID, const char *class,
+-                 const char *artist, const char *genre, const char *album_art, int64_t *objectID, int64_t *parentID)
++		 const char *artist, const char *genre, const char *album_art, int64_t *objectID, int64_t *parentID)
+ {
+ 	char *result;
+ 	char *base;
+@@ -850,44 +851,51 @@ start_scanner()
+ 
+ 	av_register_all();
+ 	av_log_set_level(AV_LOG_PANIC);
+-	for( media_path = media_dirs; media_path != NULL; media_path = media_path->next )
++	if (rescan_db)
+ 	{
+-		int64_t id;
+-		char *bname, *parent = NULL;
+-		char buf[8];
+-		strncpyt(path, media_path->path, sizeof(path));
+-		bname = basename(path);
+-		/* If there are multiple media locations, add a level to the ContentDirectory */
+-		if( !GETFLAG(MERGE_MEDIA_DIRS_MASK) && media_dirs->next )
++		rescan_scanner();
++	}
++	else
++	{
++		for( media_path = media_dirs; media_path != NULL; media_path = media_path->next )
+ 		{
+-			int startID = get_next_available_id("OBJECTS", BROWSEDIR_ID);
+-			id = insert_directory(bname, path, BROWSEDIR_ID, "", startID);
+-			sprintf(buf, "$%X", startID);
+-			parent = buf;
++			int64_t id;
++			char *bname, *parent = NULL;
++			char buf[8];
++			strncpyt(path, media_path->path, sizeof(path));
++			bname = basename(path);
++			/* If there are multiple media locations, add a level to the ContentDirectory */
++			if( !GETFLAG(MERGE_MEDIA_DIRS_MASK) && media_dirs->next )
++			{
++				int startID = get_next_available_id("OBJECTS", BROWSEDIR_ID);
++				id = insert_directory(bname, path, BROWSEDIR_ID, "", startID);
++				sprintf(buf, "$%X", startID);
++				parent = buf;
++			}
++			else
++				id = GetFolderMetadata(bname, media_path->path, NULL, NULL, 0);
++			/* Use TIMESTAMP to store the media type */
++			sql_exec(db, "UPDATE DETAILS set TIMESTAMP = %d where ID = %lld", media_path->types, (long long)id);
++			ScanDirectory(media_path->path, parent, media_path->types);
++			sql_exec(db, "INSERT into SETTINGS values (%Q, %Q)", "media_dir", media_path->path);
+ 		}
++		_notify_stop();
++		/* Create this index after scanning, so it doesn't slow down the scanning process.
++		 * This index is very useful for large libraries used with an XBox360 (or any
++		 * client that uses UPnPSearch on large containers). */
++		sql_exec(db, "create INDEX IDX_SEARCH_OPT ON OBJECTS(OBJECT_ID, CLASS, DETAIL_ID);");
++
++		if( GETFLAG(NO_PLAYLIST_MASK) )
++		{
++			DPRINTF(E_WARN, L_SCANNER, "Playlist creation disabled\n");
++		}
+ 		else
+-			id = GetFolderMetadata(bname, media_path->path, NULL, NULL, 0);
+-		/* Use TIMESTAMP to store the media type */
+-		sql_exec(db, "UPDATE DETAILS set TIMESTAMP = %d where ID = %lld", media_path->types, (long long)id);
+-		ScanDirectory(media_path->path, parent, media_path->types);
+-		sql_exec(db, "INSERT into SETTINGS values (%Q, %Q)", "media_dir", media_path->path);
+-	}
+-	_notify_stop();
+-	/* Create this index after scanning, so it doesn't slow down the scanning process.
+-	 * This index is very useful for large libraries used with an XBox360 (or any
+-	 * client that uses UPnPSearch on large containers). */
+-	sql_exec(db, "create INDEX IDX_SEARCH_OPT ON OBJECTS(OBJECT_ID, CLASS, DETAIL_ID);");
++		{
++			fill_playlists();
++		}
+ 
+-	if( GETFLAG(NO_PLAYLIST_MASK) )
+-	{
+-		DPRINTF(E_WARN, L_SCANNER, "Playlist creation disabled\n");	  
++		DPRINTF(E_DEBUG, L_SCANNER, "Initial file scan completed\n");
++		//JM: Set up a db version number, so we know if we need to rebuild due to a new structure.
++		sql_exec(db, "pragma user_version = %d;", DB_VERSION);
+ 	}
+-	else
+-	{
+-		fill_playlists();
+-	}
+-
+-	DPRINTF(E_DEBUG, L_SCANNER, "Initial file scan completed\n");
+-	//JM: Set up a db version number, so we know if we need to rebuild due to a new structure.
+-	sql_exec(db, "pragma user_version = %d;", DB_VERSION);
+ }

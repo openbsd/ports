@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2015/09/11 09:51:12 sthen Exp $
+
+Support -r for incremental rescan
+http://sourceforge.net/p/minidlna/patches/145/
+
+--- Makefile.am.orig	Thu Sep 10 21:24:09 2015
++++ Makefile.am	Fri Sep 11 11:43:37 2015
+@@ -28,7 +28,7 @@ minidlnad_SOURCES = minidlna.c upnphttp.c upnpdescgen.
+ 			sql.c utils.c metadata.c scanner.c inotify.c \
+ 			tivo_utils.c tivo_beacon.c tivo_commands.c \
+ 			playlist.c image_utils.c albumart.c log.c \
+-			containers.c tagutils/tagutils.c
++			containers.c tagutils/tagutils.c rescan.c
+ 
+ #if NEED_VORBIS
+ vorbisflag = -lvorbis

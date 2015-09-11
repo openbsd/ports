@@ -1,0 +1,10 @@
+$OpenBSD: patch-rescan_h,v 1.1 2015/09/11 09:51:12 sthen Exp $
+
+Support -r for incremental rescan
+http://sourceforge.net/p/minidlna/patches/145/
+
+--- rescan.h.orig	Fri Sep 11 11:43:37 2015
++++ rescan.h	Fri Sep 11 11:43:37 2015
+@@ -0,0 +1,2 @@
++void
++rescan_scanner(void);

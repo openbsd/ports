@@ -1,0 +1,34 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2015/09/11 09:51:12 sthen Exp $
+
+Support -r for incremental rescan
+http://sourceforge.net/p/minidlna/patches/145/
+
+--- Makefile.in.orig	Fri Sep 11 11:44:51 2015
++++ Makefile.in	Fri Sep 11 11:44:42 2015
+@@ -133,7 +133,8 @@ am_minidlnad_OBJECTS = minidlna.$(OBJEXT) upnphttp.$(O
+ 	tivo_utils.$(OBJEXT) tivo_beacon.$(OBJEXT) \
+ 	tivo_commands.$(OBJEXT) playlist.$(OBJEXT) \
+ 	image_utils.$(OBJEXT) albumart.$(OBJEXT) log.$(OBJEXT) \
+-	containers.$(OBJEXT) tagutils/tagutils.$(OBJEXT)
++	containers.$(OBJEXT) tagutils/tagutils.$(OBJEXT) \
++	rescan.$(OBJEXT)
+ minidlnad_OBJECTS = $(am_minidlnad_OBJECTS)
+ am__DEPENDENCIES_1 =
+ minidlnad_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+@@ -394,7 +395,7 @@ minidlnad_SOURCES = minidlna.c upnphttp.c upnpdescgen.
+ 			sql.c utils.c metadata.c scanner.c inotify.c \
+ 			tivo_utils.c tivo_beacon.c tivo_commands.c \
+ 			playlist.c image_utils.c albumart.c log.c \
+-			containers.c tagutils/tagutils.c
++			containers.c tagutils/tagutils.c rescan.c
+ 
+ 
+ #if NEED_VORBIS
+@@ -574,6 +575,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/options.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/playlist.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/process.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rescan.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/scanner.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sql.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/testupnpdescgen.Po@am__quote@

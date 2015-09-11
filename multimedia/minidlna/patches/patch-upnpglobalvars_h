@@ -1,0 +1,16 @@
+$OpenBSD: patch-upnpglobalvars_h,v 1.1 2015/09/11 09:51:12 sthen Exp $
+
+Support -r for incremental rescan
+http://sourceforge.net/p/minidlna/patches/145/
+
+--- upnpglobalvars.h.orig	Thu Sep 10 21:24:09 2015
++++ upnpglobalvars.h	Fri Sep 11 11:43:37 2015
+@@ -231,7 +231,7 @@ extern char db_path[];
+ extern char log_path[];
+ extern struct media_dir_s *media_dirs;
+ extern struct album_art_name_s *album_art_names;
+-extern short int scanning;
++extern short int scanning, rescan_db;
+ extern volatile short int quitting;
+ extern volatile uint32_t updateID;
+ extern const char *force_sort_criteria;
