@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.286 2015/08/28 14:48:05 jeremy Exp $
+# $OpenBSD: Quirks.pm,v 1.287 2015/09/11 14:15:18 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -377,6 +377,7 @@ my $stem_extensions = {
 	'mirall' => 'owncloudclient',
 # 5.9
 	'consolekit' => 'consolekit2',
+	'tint' => 'tint2',
 };
 
 # reasons for obsolete packages
