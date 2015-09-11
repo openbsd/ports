@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_netif_c,v 1.1 2015/09/11 15:13:35 sthen Exp $
+--- src/netif.c.orig	Fri Sep 11 09:11:24 2015
++++ src/netif.c	Fri Sep 11 09:11:49 2015
+@@ -1068,7 +1068,7 @@ int netif_media(struct netif *netif) {
+ 
+ #if HAVE_NET_IF_MEDIA_H
+     struct ifmediareq ifmr = {};
+-    int *media_list;
++    uint64_t *media_list;
+ #endif /* HAVE_HAVE_NET_IF_MEDIA_H */
+ 
+     if (sockfd == -1)
+@@ -1219,7 +1219,7 @@ int netif_media(struct netif *netif) {
+ 	return(EXIT_FAILURE);
+     }
+ 
+-    media_list = my_malloc(ifmr.ifm_count * sizeof(int));
++    media_list = my_malloc(ifmr.ifm_count * sizeof(uint64_t));
+     ifmr.ifm_ulist = media_list;
+ 
+     if (ioctl(sockfd, SIOCGIFMEDIA, (caddr_t)&ifmr) < 0) {
