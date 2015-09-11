@@ -1,10 +1,28 @@
-$OpenBSD: patch-pcapsource_cc,v 1.4 2015/09/09 15:28:32 sthen Exp $
+$OpenBSD: patch-pcapsource_cc,v 1.5 2015/09/11 16:27:41 sthen Exp $
 
 The only media types used here are already shifted so using IFM_MAKEMODE
 here is wrong.
 
---- pcapsource.cc.orig	Wed Sep  9 16:21:06 2015
-+++ pcapsource.cc	Wed Sep  9 16:22:17 2015
+--- pcapsource.cc.orig	Wed May 21 09:56:43 2008
++++ pcapsource.cc	Fri Sep 11 10:26:57 2015
+@@ -3068,7 +3068,7 @@ bool RadiotapBSD::getmediaopt(int& options, int& mode)
+ bool RadiotapBSD::setmediaopt(int options, int mode) {
+     struct ifmediareq ifmr;
+     struct ifreq ifr;
+-    int *mwords;
++    uint64_t *mwords;
+ 
+     if (!checksocket())
+         return false;
+@@ -3089,7 +3089,7 @@ bool RadiotapBSD::setmediaopt(int options, int mode) {
+         seterror("%s: no media types?", ifname.c_str());
+         return false;
+     }
+-    mwords = new int[ifmr.ifm_count];
++    mwords = new uint64_t[ifmr.ifm_count];
+     if (mwords == NULL) {
+         seterror("cannot malloc");
+         return false;
 @@ -3104,7 +3104,7 @@ bool RadiotapBSD::setmediaopt(int options, int mode) {
      memset(&ifr, 0, sizeof(ifr));
      strncpy(ifr.ifr_name, ifname.c_str(), sizeof(ifr.ifr_name)-1);
