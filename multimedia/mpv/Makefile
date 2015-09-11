@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/09/10 10:43:06 bentley Exp $
+# $OpenBSD: Makefile,v 1.16 2015/09/11 14:46:29 bentley Exp $
 
 ONLY_FOR_ARCHS =	alpha amd64 i386 powerpc sparc64
 
@@ -42,6 +42,10 @@ LIB_DEPENDS =		audio/libcdio \
 			multimedia/libbluray>=0.8.0 \
 			multimedia/libdvdnav \
 			net/samba
+
+# zsh.pl needs to find the binary that was just built
+PORTPATH =		\
+	${WRKDIR}/bin:${WRKBUILD}:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
