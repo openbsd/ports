@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2015/06/10 13:04:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2015/09/11 16:18:23 sthen Exp $
 
 COMMENT=	monitoring and managing daemons utility
 
 DISTNAME=	monit-5.14
+REVISION=	0
 
 CATEGORIES=	sysutils
 
