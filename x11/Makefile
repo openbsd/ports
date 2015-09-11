@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.555 2015/07/18 23:56:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.556 2015/09/11 14:15:11 sthen Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -271,7 +271,7 @@
      SUBDIR += terminator
      SUBDIR += thewidgetfactory
      SUBDIR += tilda
-     SUBDIR += tint
+     SUBDIR += tint2
      SUBDIR += tk
      SUBDIR += tkcon
      SUBDIR += tkdnd
