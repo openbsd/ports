@@ -1,9 +1,9 @@
-$OpenBSD: patch-test_Makefile_in,v 1.4 2015/03/24 13:36:20 dcoppa Exp $
+$OpenBSD: patch-test_Makefile_in,v 1.5 2015/09/11 09:16:03 pascal Exp $
 
 Unbreak build.
 
---- test/Makefile.in.orig	Wed May 14 09:34:50 2014
-+++ test/Makefile.in	Tue Mar 24 08:06:24 2015
+--- test/Makefile.in.orig	Thu Sep 10 20:20:28 2015
++++ test/Makefile.in	Thu Sep 10 20:20:33 2015
 @@ -561,7 +561,7 @@ rtorrentTest_SOURCES = \
  	main.cc
  
