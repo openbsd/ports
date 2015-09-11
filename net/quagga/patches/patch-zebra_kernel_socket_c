@@ -1,6 +1,6 @@
-$OpenBSD: patch-zebra_kernel_socket_c,v 1.10 2015/04/18 10:39:34 sthen Exp $
---- zebra/kernel_socket.c.orig	Sat Mar  7 01:58:00 2015
-+++ zebra/kernel_socket.c	Wed Mar 18 18:28:11 2015
+$OpenBSD: patch-zebra_kernel_socket_c,v 1.11 2015/09/11 20:56:11 sthen Exp $
+--- zebra/kernel_socket.c.orig	Sat Mar  7 07:58:00 2015
++++ zebra/kernel_socket.c	Fri Sep 11 22:55:36 2015
 @@ -185,7 +185,7 @@ const struct message rtm_type_str[] =
    {RTM_REDIRECT, "RTM_REDIRECT"},
    {RTM_MISS,     "RTM_MISS"},
@@ -10,7 +10,17 @@ $OpenBSD: patch-zebra_kernel_socket_c,v 1.10 2015/04/18 10:39:34 sthen Exp $
    {RTM_OLDADD,   "RTM_OLDADD"},
  #endif /* RTM_OLDADD */
  #ifdef RTM_OLDDEL
-@@ -799,9 +799,7 @@ rtm_read_mesg (struct rt_msghdr *rtm,
+@@ -225,7 +225,9 @@ static const struct message rtm_flag_str[] =
+ #ifdef RTF_CLONING
+   {RTF_CLONING,   "CLONING"},
+ #endif /* RTF_CLONING */
++#ifdef RTF_XRESOLVE
+   {RTF_XRESOLVE,  "XRESOLVE"},
++#endif /* RTF_XRESOLVE */
+   {RTF_LLINFO,    "LLINFO"},
+   {RTF_STATIC,    "STATIC"},
+   {RTF_BLACKHOLE, "BLACKHOLE"},
+@@ -799,9 +801,7 @@ rtm_read_mesg (struct rt_msghdr *rtm,
  
    /* rt_msghdr version check. */
    if (rtm->rtm_version != RTM_VERSION) 
