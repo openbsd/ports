@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2015/07/19 02:14:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2015/09/12 14:14:17 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,7 +10,7 @@ COMMENT-htmlviewer=	fancy htmlviewer plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 COMMENT-gdata=		gdata plugin
 
-V=			3.11.1
+V=			3.12.0
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
@@ -18,22 +18,16 @@ PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-htmlviewer=	claws-mail-htmlviewer-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
-REVISION-main=		2
-REVISION-bogofilter=	2
-REVISION-spamassassin=	2
-REVISION-htmlviewer=	2
-REVISION-pdfviewer=	2
-REVISION-gdata=		2
 
 CATEGORIES=		mail news
 
 HOMEPAGE=		http://www.claws-mail.org/
+MAINTAINER=		Daniel Jakots <obsd@chown.me>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=claws-mail/}
-EXTRACT_SUFX=		.tar.bz2
+MASTER_SITES=		http://www.claws-mail.org/releases/
 
 DIST_SUBDIR=		claws
 
