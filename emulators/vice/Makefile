@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/08/20 07:50:30 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/12 10:01:25 ajacoutot Exp $
 
 BROKEN-i386 =		platform_x86_runtime_cpu.c:203: error: 'asm' operand has impossible constraints
 
 COMMENT =		versatile Commodore emulator
 
 DISTNAME =		vice-2.4
+REVISION =		0
 
 CATEGORIES =		emulators
 
@@ -24,18 +25,21 @@ LIB_DEPENDS =		devel/sdl \
 			graphics/jpeg \
 			graphics/png
 
-CONFIGURE_STYLE =	gnu autoconf
-
+CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.68
 
 CONFIGURE_ARGS +=	--without-oss \
 			--without-pulse \
-			--with-sdlsound
+			--with-sdlsound \
+			--disable-lame
 
 # XXX broken with ffmpeg-20131216
 CONFIGURE_ARGS +=	--disable-ffmpeg
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/man/vice.1
+
+post-install:
+	rm ${PREFIX}/lib/vice/doc/vice.info
 
 .include <bsd.port.mk>
