@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/12 09:56:12 zhuk Exp $
+# $OpenBSD: Makefile,v 1.12 2015/09/12 17:37:03 zhuk Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra-suite.org/
-DISTNAME =	calligra-2.9.6
+DISTNAME =	calligra-2.9.7
 CATEGORIES =	editors
 
 DIST_SUBDIR =	kde
@@ -87,8 +87,7 @@ WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath SM X11 Xext Xi
 WANTLIB += fontconfig
 WANTLIB += lib/qt4/QtDeclarative lib/qt4/QtWebKit lib/qt4/QtDBus
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtOpenGL
-WANTLIB += lib/qt4/QtScript lib/qt4/QtXml
-WANTLIB +=  lib/qt4/QtSql
+WANTLIB += lib/qt4/QtScript lib/qt4/QtXml lib/qt4/QtSql
 WANTLIB += ${KDE4LIB}/akonadi-contact ${KDE4LIB}/akonadi-kde
 WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kactivities
 WANTLIB += ${KDE4LIB}/kcalcore ${KDE4LIB}/kcmutils ${KDE4LIB}/kdcraw
@@ -107,7 +106,6 @@ WANTLIB += jpeg lcms2 mysqlclient openjpeg png poppler poppler-qt4 pqxx
 WANTLIB += qca2 soprano sqlite3 sybdb tiff
 WANTLIB += boost_system-mt curl ktexteditor gslcblas
 
-
 # kexi needs headers in postgresql,{-main,-server}
 # kexi needs all db drivers to be present while building
 BUILD_DEPENDS =	devel/boost \
@@ -119,7 +117,6 @@ BUILD_DEPENDS =	devel/boost \
 
 # kexi needs all db driver installed to run,
 # assuming sqlite3 is in base...
-
 RUN_DEPENDS =	databases/mariadb \
 		databases/postgresql,-main \
 		databases/postgresql,-server \
@@ -156,6 +153,8 @@ CONFIGURE_ARGS =	-DPQXX_VERSION=4.0.1 \
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.
 CONFIGURE_ARGS +=	-DWITH_Cauchy:BOOL=Off \
+			-DWITH_Libgit2:BOOL=Off \
+			-DWITH_Libqgit2:BOOL=Off \
 			-DWITH_LibEtonyek:BOOL=Off \
 			-DWITH_LibOdfGen:BOOL=Off \
 			-DWITH_LibVisio:BOOL=Off \
@@ -171,6 +170,8 @@ CONFIGURE_ARGS +=	-DWITH_Pstoedit:BOOL=Off
 
 # XXX Silently ignore non-existent dependencies
 CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0046=OLD
+# XXX Don't treat ``DEFINITIONS`` as a built-in directory property
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0059=OLD
 
 # Running D-Bus daemon is required
 TEST_IS_INTERACTIVE =	X11

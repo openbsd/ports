@@ -1,0 +1,19 @@
+$OpenBSD: patch-libs_pigment_tests_CMakeLists_txt,v 1.1 2015/09/12 17:37:03 zhuk Exp $
+
+fix ninja: multiple rules generate
+cmake_order_depends_target_TestKoColorSpaceRegistry
+
+--- libs/pigment/tests/CMakeLists.txt.orig	Tue Sep  8 20:27:17 2015
++++ libs/pigment/tests/CMakeLists.txt	Tue Sep  8 20:33:09 2015
+@@ -13,9 +13,9 @@ endif()
+ 
+ set(TestKoColorSpaceRegistry_test_SRCS TestKoColorSpaceRegistry.cpp )
+ 
+-kde4_add_unit_test(TestKoColorSpaceRegistry TESTNAME libs-pigment-TestKoColorSpaceRegistry ${TestKoColorSpaceRegistry_test_SRCS})
++kde4_add_unit_test(libs-pigment-TestKoColorSpaceRegistry TESTNAME libs-pigment-TestKoColorSpaceRegistry ${TestKoColorSpaceRegistry_test_SRCS})
+ 
+-target_link_libraries(TestKoColorSpaceRegistry  ${KDE4_KDEUI_LIBS} pigmentcms ${QT_QTTEST_LIBRARY})
++target_link_libraries(libs-pigment-TestKoColorSpaceRegistry  ${KDE4_KDEUI_LIBS} pigmentcms ${QT_QTTEST_LIBRARY})
+ 
+ ########### next target ###############
+ 
