@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/29 20:33:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/09/12 20:30:00 sthen Exp $
 
 COMMENT=	SSL library with an intuitive API and readable source code
 
-DISTNAME=	mbedtls-1.3.11
-REVISION=	0
+DISTNAME=	mbedtls-2.1.0
 EXTRACT_SUFX=	-gpl.tgz
 
 # check SOVERSION
 SHARED_LIBS +=	mbedtls                  1.1
+SHARED_LIBS +=  mbedcrypto                0.0 # 2.1
+SHARED_LIBS +=  mbedx509                  0.0 # 2.1
 
 CATEGORIES=	security
 
@@ -33,7 +34,7 @@ CONFIGURE_ARGS+= -DUSE_SHARED_MBEDTLS_LIBRARY=ON
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mbedtls
-	cd ${WRKSRC}; ${INSTALL_DATA} README.rst ChangeLog \
+	cd ${WRKSRC}; ${INSTALL_DATA} README.md ChangeLog \
 	    ${PREFIX}/share/doc/mbedtls
 	mv ${PREFIX}/bin ${PREFIX}/share/examples/mbedtls
 	(echo "These programs are useful code samples for a crypto expert, but";\

@@ -1,76 +1,80 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/06/10 09:28:08 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/09/12 20:30:00 sthen Exp $
 @conflict polarssl-*
-include/polarssl/
-include/polarssl/aes.h
-include/polarssl/aesni.h
-include/polarssl/arc4.h
-include/polarssl/asn1.h
-include/polarssl/asn1write.h
-include/polarssl/base64.h
-include/polarssl/bignum.h
-include/polarssl/blowfish.h
-include/polarssl/bn_mul.h
-include/polarssl/camellia.h
-include/polarssl/ccm.h
-include/polarssl/certs.h
-include/polarssl/check_config.h
-include/polarssl/cipher.h
-include/polarssl/cipher_wrap.h
-include/polarssl/compat-1.2.h
-include/polarssl/config.h
-include/polarssl/ctr_drbg.h
-include/polarssl/debug.h
-include/polarssl/des.h
-include/polarssl/dhm.h
-include/polarssl/ecdh.h
-include/polarssl/ecdsa.h
-include/polarssl/ecp.h
-include/polarssl/entropy.h
-include/polarssl/entropy_poll.h
-include/polarssl/error.h
-include/polarssl/gcm.h
-include/polarssl/havege.h
-include/polarssl/hmac_drbg.h
-include/polarssl/md.h
-include/polarssl/md2.h
-include/polarssl/md4.h
-include/polarssl/md5.h
-include/polarssl/md_wrap.h
-include/polarssl/memory.h
-include/polarssl/memory_buffer_alloc.h
-include/polarssl/net.h
-include/polarssl/oid.h
-include/polarssl/openssl.h
-include/polarssl/padlock.h
-include/polarssl/pbkdf2.h
-include/polarssl/pem.h
-include/polarssl/pk.h
-include/polarssl/pk_wrap.h
-include/polarssl/pkcs11.h
-include/polarssl/pkcs12.h
-include/polarssl/pkcs5.h
-include/polarssl/platform.h
-include/polarssl/ripemd160.h
-include/polarssl/rsa.h
-include/polarssl/sha1.h
-include/polarssl/sha256.h
-include/polarssl/sha512.h
-include/polarssl/ssl.h
-include/polarssl/ssl_cache.h
-include/polarssl/ssl_ciphersuites.h
-include/polarssl/threading.h
-include/polarssl/timing.h
-include/polarssl/version.h
-include/polarssl/x509.h
-include/polarssl/x509_crl.h
-include/polarssl/x509_crt.h
-include/polarssl/x509_csr.h
-include/polarssl/xtea.h
+include/mbedtls/
+include/mbedtls/aes.h
+include/mbedtls/aesni.h
+include/mbedtls/arc4.h
+include/mbedtls/asn1.h
+include/mbedtls/asn1write.h
+include/mbedtls/base64.h
+include/mbedtls/bignum.h
+include/mbedtls/blowfish.h
+include/mbedtls/bn_mul.h
+include/mbedtls/camellia.h
+include/mbedtls/ccm.h
+include/mbedtls/certs.h
+include/mbedtls/check_config.h
+include/mbedtls/cipher.h
+include/mbedtls/cipher_internal.h
+include/mbedtls/compat-1.3.h
+include/mbedtls/config.h
+include/mbedtls/ctr_drbg.h
+include/mbedtls/debug.h
+include/mbedtls/des.h
+include/mbedtls/dhm.h
+include/mbedtls/ecdh.h
+include/mbedtls/ecdsa.h
+include/mbedtls/ecp.h
+include/mbedtls/entropy.h
+include/mbedtls/entropy_poll.h
+include/mbedtls/error.h
+include/mbedtls/gcm.h
+include/mbedtls/havege.h
+include/mbedtls/hmac_drbg.h
+include/mbedtls/md.h
+include/mbedtls/md2.h
+include/mbedtls/md4.h
+include/mbedtls/md5.h
+include/mbedtls/md_internal.h
+include/mbedtls/memory_buffer_alloc.h
+include/mbedtls/net.h
+include/mbedtls/oid.h
+include/mbedtls/padlock.h
+include/mbedtls/pem.h
+include/mbedtls/pk.h
+include/mbedtls/pk_internal.h
+include/mbedtls/pkcs11.h
+include/mbedtls/pkcs12.h
+include/mbedtls/pkcs5.h
+include/mbedtls/platform.h
+include/mbedtls/ripemd160.h
+include/mbedtls/rsa.h
+include/mbedtls/sha1.h
+include/mbedtls/sha256.h
+include/mbedtls/sha512.h
+include/mbedtls/ssl.h
+include/mbedtls/ssl_cache.h
+include/mbedtls/ssl_ciphersuites.h
+include/mbedtls/ssl_cookie.h
+include/mbedtls/ssl_internal.h
+include/mbedtls/ssl_ticket.h
+include/mbedtls/threading.h
+include/mbedtls/timing.h
+include/mbedtls/version.h
+include/mbedtls/x509.h
+include/mbedtls/x509_crl.h
+include/mbedtls/x509_crt.h
+include/mbedtls/x509_csr.h
+include/mbedtls/xtea.h
+lib/libmbedcrypto.a
+@lib lib/libmbedcrypto.so.${LIBmbedcrypto_VERSION}
 lib/libmbedtls.a
 @lib lib/libmbedtls.so.${LIBmbedtls_VERSION}
+lib/libmbedx509.a
+@lib lib/libmbedx509.so.${LIBmbedx509_VERSION}
 share/doc/mbedtls/
 share/doc/mbedtls/ChangeLog
-share/doc/mbedtls/README.rst
+share/doc/mbedtls/README.md
 share/examples/mbedtls/
 share/examples/mbedtls/README
 @bin share/examples/mbedtls/aescrypt2
@@ -83,6 +87,8 @@ share/examples/mbedtls/README
 @bin share/examples/mbedtls/dh_client
 @bin share/examples/mbedtls/dh_genprime
 @bin share/examples/mbedtls/dh_server
+@bin share/examples/mbedtls/dtls_client
+@bin share/examples/mbedtls/dtls_server
 @bin share/examples/mbedtls/gen_entropy
 @bin share/examples/mbedtls/gen_key
 @bin share/examples/mbedtls/gen_random_ctr_drbg
@@ -90,10 +96,8 @@ share/examples/mbedtls/README
 @bin share/examples/mbedtls/generic_sum
 @bin share/examples/mbedtls/hello
 @bin share/examples/mbedtls/key_app
-@bin share/examples/mbedtls/md5sum
 @bin share/examples/mbedtls/mini_client
 @bin share/examples/mbedtls/mpi_demo
-@bin share/examples/mbedtls/o_p_test
 @bin share/examples/mbedtls/pem2der
 @bin share/examples/mbedtls/pk_decrypt
 @bin share/examples/mbedtls/pk_encrypt
@@ -106,8 +110,6 @@ share/examples/mbedtls/README
 @bin share/examples/mbedtls/rsa_sign
 @bin share/examples/mbedtls/rsa_verify
 @bin share/examples/mbedtls/selftest
-@bin share/examples/mbedtls/sha1sum
-@bin share/examples/mbedtls/sha2sum
 @bin share/examples/mbedtls/ssl_cert_test
 @bin share/examples/mbedtls/ssl_client1
 @bin share/examples/mbedtls/ssl_client2
@@ -115,5 +117,5 @@ share/examples/mbedtls/README
 @bin share/examples/mbedtls/ssl_mail_client
 @bin share/examples/mbedtls/ssl_pthread_server
 @bin share/examples/mbedtls/ssl_server
-@bin share/examples/mbedtls/ssl_test
 @bin share/examples/mbedtls/strerror
+@bin share/examples/mbedtls/udp_proxy

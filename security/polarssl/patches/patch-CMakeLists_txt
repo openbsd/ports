@@ -1,21 +1,19 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2015/02/10 12:21:55 sthen Exp $
---- CMakeLists.txt.orig	Mon Feb  9 10:21:24 2015
-+++ CMakeLists.txt	Mon Feb  9 10:22:44 2015
-@@ -4,8 +4,7 @@ project(MBEDTLS C)
- string(REGEX MATCH "Clang" CMAKE_COMPILER_IS_CLANG "${CMAKE_C_COMPILER_ID}")
- 
- if(CMAKE_COMPILER_IS_GNUCC)
--  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -W -Wdeclaration-after-statement -Wwrite-strings -Wlogical-op")
--  set(CMAKE_C_FLAGS_RELEASE     "-O2")
-+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -W -Wdeclaration-after-statement -Wwrite-strings")
-   set(CMAKE_C_FLAGS_DEBUG       "-O0 -g3")
-   set(CMAKE_C_FLAGS_COVERAGE    "-O0 -g3 --coverage")
-   set(CMAKE_C_FLAGS_ASAN        "-Werror -fsanitize=address -fno-common -O3")
-@@ -16,7 +15,6 @@ endif(CMAKE_COMPILER_IS_GNUCC)
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2015/09/12 20:30:00 sthen Exp $
+--- CMakeLists.txt.orig	Fri Sep  4 13:38:26 2015
++++ CMakeLists.txt	Tue Sep  8 20:19:54 2015
+@@ -32,7 +32,6 @@ if(CMAKE_COMPILER_IS_GNUCC)
+     if (GCC_VERSION VERSION_GREATER 4.8 OR GCC_VERSION VERSION_EQUAL 4.8)
+         set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wshadow")
+     endif()
+-    set(CMAKE_C_FLAGS_RELEASE     "-O2")
+     set(CMAKE_C_FLAGS_DEBUG       "-O0 -g3")
+     set(CMAKE_C_FLAGS_COVERAGE    "-O0 -g3 --coverage")
+     set(CMAKE_C_FLAGS_ASAN        "-Werror -fsanitize=address -fno-common -O3")
+@@ -43,7 +42,6 @@ endif(CMAKE_COMPILER_IS_GNUCC)
  
  if(CMAKE_COMPILER_IS_CLANG)
-   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -W -Wdeclaration-after-statement -Wwrite-strings -Wpointer-arith")
--  set(CMAKE_C_FLAGS_RELEASE     "-O2")
-   set(CMAKE_C_FLAGS_DEBUG       "-O0 -g3")
-   set(CMAKE_C_FLAGS_COVERAGE    "-O0 -g3 --coverage")
-   set(CMAKE_C_FLAGS_ASAN        "-Werror -fsanitize=address -fno-common -fsanitize=undefined -fno-sanitize-recover -O3")
+     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -W -Wdeclaration-after-statement -Wwrite-strings -Wpointer-arith -Wimplicit-fallthrough -Wshadow")
+-    set(CMAKE_C_FLAGS_RELEASE     "-O2")
+     set(CMAKE_C_FLAGS_DEBUG       "-O0 -g3")
+     set(CMAKE_C_FLAGS_COVERAGE    "-O0 -g3 --coverage")
+     set(CMAKE_C_FLAGS_ASAN        "-Werror -fsanitize=address -fno-common -fsanitize=undefined -fno-sanitize-recover -O3")
