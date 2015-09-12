@@ -1,0 +1,18 @@
+$OpenBSD: patch-arts_midi_timestampmath_cc,v 1.1 2015/09/12 01:12:22 zhuk Exp $
+Fix time types handling (see artsmidi.h).
+--- arts/midi/timestampmath.cc.orig	Tue Jan 14 20:46:49 2014
++++ arts/midi/timestampmath.cc	Tue Jan 14 20:51:40 2014
+@@ -70,11 +70,11 @@ string timeStampToString(const TimeStamp& t)
+ 	char buffer[1024];
+ 	if(t.sec < 0 && t.usec != 0)
+ 	{
+-		sprintf(buffer, "-%d.%06d", -t.sec-1, 1000000-t.usec);
++		snprintf(buffer, sizeof(buffer), "-%ld.%06ld", (long)(-t.sec-1), (long)(1000000-t.usec));
+ 	}
+ 	else
+ 	{
+-		sprintf(buffer, "%d.%06d", t.sec, t.usec);
++		snprintf(buffer, sizeof(buffer), "%ld.%06ld", (long)t.sec, (long)t.usec);
+ 	}
+ 	return buffer;
+ }

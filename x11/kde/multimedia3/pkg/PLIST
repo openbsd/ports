@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2013/12/22 19:24:34 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.41 2015/09/12 01:12:22 zhuk Exp $
 @bin bin/artsbuilder
 @bin bin/artscontrol
 @bin bin/juk
@@ -217,7 +217,7 @@ ${KDE}/krec.so
 @lib ${KDE}/libarts_mpeglib-0.3.0.so.${LIBarts_mpeglib-0.3.0_VERSION}
 @lib ${KDE}/libarts_mpeglib.so.${LIBarts_mpeglib_VERSION}
 @lib ${KDE}/libarts_splay.so.${LIBarts_splay_VERSION}
-@lib ${KDE}/libarts_xine.so.${LIBarts_xine_VERSION}
+@comment @lib ${KDE}/libarts_xine.so.${LIBarts_xine_VERSION}
 @lib ${KDE}/libartsbuilder.so.${LIBartsbuilder_VERSION}
 @lib ${KDE}/libartscontrolapplet.so.${LIBartscontrolapplet_VERSION}
 @lib ${KDE}/libartscontrolsupport.so.${LIBartscontrolsupport_VERSION}
@@ -302,8 +302,8 @@ lib/libarts_mpeglib.la
 @lib lib/libarts_mpeglib.so.${LIBarts_mpeglib_VERSION}
 lib/libarts_splay.la
 @lib lib/libarts_splay.so.${LIBarts_splay_VERSION}
-lib/libarts_xine.la
-@lib lib/libarts_xine.so.${LIBarts_xine_VERSION}
+@comment lib/libarts_xine.la
+@comment @lib lib/libarts_xine.so.${LIBarts_xine_VERSION}
 lib/libartsbuilder.la
 @lib lib/libartsbuilder.so.${LIBartsbuilder_VERSION}
 lib/libartscontrolapplet.la
@@ -505,8 +505,8 @@ lib/mcop/noatunarts.mcopclass
 lib/mcop/noatunarts.mcoptype
 lib/mcop/winskinvis.mcopclass
 lib/mcop/winskinvis.mcoptype
-lib/mcop/xineAudioPlayObject.mcopclass
-lib/mcop/xineVideoPlayObject.mcopclass
+@comment lib/mcop/xineAudioPlayObject.mcopclass
+@comment lib/mcop/xineVideoPlayObject.mcopclass
 share/applications/kde/artsbuilder.desktop
 share/applications/kde/artscontrol.desktop
 share/applications/kde/audiocd.desktop

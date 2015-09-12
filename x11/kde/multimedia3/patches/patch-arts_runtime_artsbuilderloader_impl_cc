@@ -1,0 +1,13 @@
+$OpenBSD: patch-arts_runtime_artsbuilderloader_impl_cc,v 1.1 2015/09/12 01:12:22 zhuk Exp $
+Fix for 64-bit time_t.
+--- arts/runtime/artsbuilderloader_impl.cc.orig	Tue Jan 14 20:45:25 2014
++++ arts/runtime/artsbuilderloader_impl.cc	Tue Jan 14 20:46:12 2014
+@@ -247,7 +247,7 @@ class ArtsBuilderLoader_impl : virtual public ArtsBuil
+ 			if( stat(filename.c_str(), &st) == 0 )
+ 			{
+ 				char mtime[32];
+-				sprintf(mtime,"[%ld]",st.st_mtime);
++				snprintf(mtime, sizeof(mtime), "[%lld]", (long long)st.st_mtime);
+ 				result += filename + mtime;
+ 			}
+ 			else

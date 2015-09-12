@@ -1,0 +1,19 @@
+$OpenBSD: patch-xine_artsplugin_configure_in_in,v 1.1 2015/09/12 01:12:22 zhuk Exp $
+Unbreak playing with Xine 1.2+.
+--- xine_artsplugin/configure.in.in.orig	Sat Sep 12 00:31:59 2015
++++ xine_artsplugin/configure.in.in	Sat Sep 12 00:35:22 2015
+@@ -232,11 +232,11 @@ int shmCompletionType = XShmGetEventBase( display );
+ AC_LANG_RESTORE()
+ 
+ dnl Check for new internal xine symbol names
+-KDE_CHECK_LIB(xine, _x_ao_new_port, :, 
++KDE_CHECK_LIB(xine, ao_new_port, :, 
+ [
+-  AC_DEFINE(_x_ao_new_port, ao_new_port, [Compatibility with older version of xine])
++  AC_DEFINE(ao_new_port, _x_ao_new_port, [Compatibility with newer versions of xine])
+ ])
+-AC_CHECK_FUNC([ao_new_port])
++AC_CHECK_FUNC([_x_ao_new_port])
+ 
+ AC_ARG_WITH([xine],
+   [AC_HELP_STRING([--with-xine],

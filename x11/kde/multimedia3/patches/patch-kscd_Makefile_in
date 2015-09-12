@@ -1,6 +1,6 @@
-$OpenBSD: patch-kscd_Makefile_in,v 1.16 2007/10/24 21:52:18 espie Exp $
---- kscd/Makefile.in.orig	Mon Oct  8 16:27:12 2007
-+++ kscd/Makefile.in	Wed Oct 24 12:02:26 2007
+$OpenBSD: patch-kscd_Makefile_in,v 1.17 2015/09/12 01:12:22 zhuk Exp $
+--- kscd/Makefile.in.orig	Wed Aug 20 19:47:00 2008
++++ kscd/Makefile.in	Tue Jan 14 14:40:21 2014
 @@ -54,7 +54,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(noinst_LTLIBRARIES)
@@ -19,3 +19,12 @@ $OpenBSD: patch-kscd_Makefile_in,v 1.16 2007/10/24 21:52:18 espie Exp $
  kde_kcfg_DATA = kscd.kcfg
  kscd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
  kscd_LDADD = $(LIBCDROM) $(LIBCDAUDIO) \
+@@ -580,7 +580,7 @@ clean-binPROGRAMS:
+ 	done
+ kscd$(EXEEXT): $(kscd_OBJECTS) $(kscd_DEPENDENCIES) 
+ 	@rm -f kscd$(EXEEXT)
+-	$(kscd_LINK) $(kscd_OBJECTS) $(kscd_LDADD) $(LIBS)
++	$(kscd_LINK) $(kscd_OBJECTS) $(LIBS) $(kscd_LDADD)
+ install-binSCRIPTS: $(bin_SCRIPTS)
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(bindir)" || $(MKDIR_P) "$(DESTDIR)$(bindir)"

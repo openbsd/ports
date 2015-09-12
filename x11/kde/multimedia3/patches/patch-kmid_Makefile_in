@@ -1,0 +1,52 @@
+$OpenBSD: patch-kmid_Makefile_in,v 1.1 2015/09/12 01:12:22 zhuk Exp $
+Fix linking.
+--- kmid/Makefile.in.orig	Wed Aug 20 19:47:00 2008
++++ kmid/Makefile.in	Tue Jan 14 15:58:28 2014
+@@ -87,7 +87,7 @@ libkmidlib_la_nofinal_OBJECTS = kmidframe.lo kmidclien
+ #>+ 3
+ libkmidlib_la_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+-	$(CXXFLAGS) $(KDE_CXXFLAGS) $(libkmidlib_la_LDFLAGS) $(LDFLAGS) -o $@
++	$(CXXFLAGS) $(KDE_CXXFLAGS) $(LDFLAGS) $(libkmidlib_la_LDFLAGS) -o $@
+ libkmidpart_la_DEPENDENCIES = libkmidlib.la
+ am_libkmidpart_la_OBJECTS = part_dummy.lo
+ #>- libkmidpart_la_OBJECTS = $(am_libkmidpart_la_OBJECTS)
+@@ -99,7 +99,7 @@ libkmidpart_la_OBJECTS = part_dummy.lo
+ #>+ 3
+ libkmidpart_la_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+-	$(CXXFLAGS) $(KDE_CXXFLAGS) $(libkmidpart_la_LDFLAGS) $(LDFLAGS) -o $@
++	$(CXXFLAGS) $(KDE_CXXFLAGS) $(LDFLAGS) $(libkmidpart_la_LDFLAGS) -o $@
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(bin_PROGRAMS)
+ am_kmid_OBJECTS = main.$(OBJEXT)
+@@ -479,7 +479,7 @@ INCLUDES = $(all_includes)
+ kde_module_LTLIBRARIES = libkmidpart.la
+ lib_LTLIBRARIES = libkmidlib.la
+ libkmidlib_la_LDFLAGS = $(all_libraries)
+-libkmidlib_la_LIBADD = $(LIB_KFILE) $(LIB_KPARTS) $(LIB_KIO) -lkmid
++libkmidlib_la_LIBADD = -lkmid $(LIB_KFILE) $(LIB_KPARTS) $(LIB_KIO)
+ libkmidpart_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+ libkmidpart_la_LIBADD = libkmidlib.la
+ #>- libkmidlib_la_SOURCES = kmidframe.cpp kmidclient.cpp kdisptext.cpp \
+@@ -627,9 +627,9 @@ clean-libLTLIBRARIES:
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+ libkmidlib.la: $(libkmidlib_la_OBJECTS) $(libkmidlib_la_DEPENDENCIES) 
+-	$(libkmidlib_la_LINK) -rpath $(libdir) $(libkmidlib_la_OBJECTS) $(libkmidlib_la_LIBADD) $(LIBS)
++	$(libkmidlib_la_LINK) -rpath $(libdir) $(libkmidlib_la_OBJECTS) $(LDFLAGS) $(LIBS) $(libkmidlib_la_LIBADD)
+ libkmidpart.la: $(libkmidpart_la_OBJECTS) $(libkmidpart_la_DEPENDENCIES) 
+-	$(libkmidpart_la_LINK) -rpath $(kde_moduledir) $(libkmidpart_la_OBJECTS) $(libkmidpart_la_LIBADD) $(LIBS)
++	$(libkmidpart_la_LINK) -rpath $(kde_moduledir) $(libkmidpart_la_OBJECTS) $(LDFLAGS) $(LIBS) $(libkmidpart_la_LIBADD)
+ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(bindir)" || $(MKDIR_P) "$(DESTDIR)$(bindir)"
+@@ -660,7 +660,7 @@ clean-binPROGRAMS:
+ 	done
+ kmid$(EXEEXT): $(kmid_OBJECTS) $(kmid_DEPENDENCIES) 
+ 	@rm -f kmid$(EXEEXT)
+-	$(kmid_LINK) $(kmid_OBJECTS) $(kmid_LDADD) $(LIBS)
++	$(kmid_LINK) $(kmid_OBJECTS) $(LIBS) $(kmid_LDADD)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)

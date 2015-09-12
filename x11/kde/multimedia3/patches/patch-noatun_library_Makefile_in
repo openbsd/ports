@@ -1,0 +1,24 @@
+$OpenBSD: patch-noatun_library_Makefile_in,v 1.9 2015/09/12 01:12:22 zhuk Exp $
+Fix linking.
+--- noatun/library/Makefile.in.orig	Tue Jan 14 10:59:31 2014
++++ noatun/library/Makefile.in	Tue Jan 14 11:02:55 2014
+@@ -514,8 +514,8 @@ libnoatun_la_LDFLAGS = \
+ 
+ libnoatun_la_LIBADD = $(top_builddir)/arts/gui/common/libartsgui.la \
+ 	$(top_builddir)/arts/gui/kde/libartsgui_kde.la $(top_builddir)/arts/modules/libartsmodules.la \
+-	-lkio -lqtmcop -lkmedia2_idl $(top_builddir)/noatun/library/noatunarts/libnoatunarts.la \
+-	-lartsflow -lsoundserver_idl -lartskde $(LIBDL)
++	$(LIB_KIO) -lqtmcop -lkmedia2_idl $(top_builddir)/noatun/library/noatunarts/libnoatunarts.la \
++	-lartsflow -lsoundserver_idl $(LIB_ARTS) $(LIBDL)
+ 
+ libnoatuncontrols_la_SOURCES = controls.cpp scrollinglabel.cpp
+ libnoatuncontrols_la_LDFLAGS = -version-info 3:0:2 $(KDE_RPATH) $(all_libraries) -no-undefined
+@@ -602,7 +602,7 @@ clean-libLTLIBRARIES:
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+ libnoatun.la: $(libnoatun_la_OBJECTS) $(libnoatun_la_DEPENDENCIES) 
+-	$(libnoatun_la_LINK) -rpath $(libdir) $(libnoatun_la_OBJECTS) $(libnoatun_la_LIBADD) $(LIBS)
++	$(libnoatun_la_LINK) -rpath $(libdir) $(libnoatun_la_OBJECTS) $(LIBS) $(libnoatun_la_LIBADD)
+ libnoatuncontrols.la: $(libnoatuncontrols_la_OBJECTS) $(libnoatuncontrols_la_DEPENDENCIES) 
+ 	$(libnoatuncontrols_la_LINK) -rpath $(libdir) $(libnoatuncontrols_la_OBJECTS) $(libnoatuncontrols_la_LIBADD) $(LIBS)
+ 
