@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.23 2015/09/12 16:00:35 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.24 2015/09/12 18:27:27 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
-
+BROKEN-sparc64 = cc: Internal error: Illegal instruction (program cc1)
 COMMENT-main =	graphical network protocol analyzer
 COMMENT-text =	network protocol analyzer
 
