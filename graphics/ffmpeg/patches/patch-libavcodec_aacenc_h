@@ -1,0 +1,14 @@
+$OpenBSD: patch-libavcodec_aacenc_h,v 1.1 2015/09/12 09:44:54 ajacoutot Exp $
+
+aacenc: copy PRNG from the decoder
+
+--- libavcodec/aacenc.h.orig	Sat Sep 12 02:09:39 2015
++++ libavcodec/aacenc.h	Sat Sep 12 02:09:54 2015
+@@ -98,6 +98,7 @@ typedef struct AACEncContext {
+     AACCoefficientsEncoder *coder;
+     int cur_channel;
+     int last_frame;
++    int random_state;
+     float lambda;
+     AudioFrameQueue afq;
+     DECLARE_ALIGNED(16, int,   qcoefs)[96];      ///< quantized coefficients
