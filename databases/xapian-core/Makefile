@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/03/16 18:07:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2015/09/12 14:15:32 ajacoutot Exp $
 
 COMMENT=	search engine library
 
@@ -22,7 +22,7 @@ MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 
 LIB_DEPENDS=	sysutils/e2fsprogs>=1.42.7
 
-CONFIGURE_STYLE= gnu autoconf
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/05/28 18:38:16 sebastia Exp $
+# $OpenBSD: Makefile,v 1.41 2015/09/12 14:15:32 ajacoutot Exp $
 
 COMMENT=	GNUstep gui library
 
@@ -32,7 +32,7 @@ LIB_DEPENDS=	audio/flite \
 		textproc/aspell/core
 
 AUTOCONF_VERSION = 2.69
-CONFIGURE_STYLE=autoconf gnu
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstdc++ -lm"
 CONFIGURE_ARGS=	--with-x

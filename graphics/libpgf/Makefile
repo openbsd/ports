@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/01 12:02:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/12 14:15:32 ajacoutot Exp $
 
 COMMENT =	PGF image format handling library
 V =		6.12.24
@@ -21,7 +21,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=libpgf/}
 # needs libtoolize
 BUILD_DEPENDS +=	devel/libtool
 
-CONFIGURE_STYLE =	gnu autoconf automake
+CONFIGURE_STYLE =	autoconf automake
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.9
 

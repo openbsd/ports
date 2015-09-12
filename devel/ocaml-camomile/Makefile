@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/08/30 16:18:48 avsm Exp $
+# $OpenBSD: Makefile,v 1.11 2015/09/12 14:15:32 ajacoutot Exp $
 
 COMMENT =	unicode library for objective caml
 
@@ -22,7 +22,7 @@ MODULES =	lang/ocaml
 
 BUILD_DEPENDS =	sysutils/findlib lang/ocaml-camlp4
 
-CONFIGURE_STYLE =	gnu dest autoconf no-autoheader
+CONFIGURE_STYLE =	dest autoconf no-autoheader
 AUTOCONF_VERSION =	2.69
 
 NO_TEST =	Yes

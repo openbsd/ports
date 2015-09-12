@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/28 08:09:46 pascal Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/12 14:15:32 ajacoutot Exp $
 
 COMMENT =	implementation of the FITS WCS standard
 CATEGORIES =	astro devel
@@ -24,7 +24,7 @@ LIB_DEPENDS =	math/cfitsio
 TEST_DEPENDS =	lang/gcc/${MODGCC4_VERSION},-f95
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	gnu autoconf
+CONFIGURE_STYLE =	autoconf
 CONFIGURE_ENV =		LIBwcs_VERSION=${LIBwcs_VERSION}
 
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \

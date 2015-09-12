@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/03/27 08:41:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2015/09/12 14:15:32 ajacoutot Exp $
 
 COMMENT=	puzzle game for KDE
 
@@ -32,7 +32,7 @@ MODULES=	x11/kde devel/gettext
 CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
 MAKE_ENV=	${CONFIGURE_ENV}
 
-CONFIGURE_STYLE=	gnu autoconf
+CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS} ${MODKDE_CONFIGURE_ARGS}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/05 17:00:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/09/12 14:15:32 ajacoutot Exp $
 
 BROKEN-macppc =	make: don't know how to make all
 
@@ -30,7 +30,7 @@ LIB_DEPENDS =		graphics/ImageMagick \
 			graphics/lcms2 \
 			textproc/libxml
 
-CONFIGURE_STYLE =	gnu autoconf
+CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
 

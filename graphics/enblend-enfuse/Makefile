@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/04/13 01:01:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2015/09/12 14:15:32 ajacoutot Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 .if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64")
@@ -43,7 +43,7 @@ LIB_DEPENDS =	devel/boost \
 		graphics/png \
 		graphics/tiff
 
-CONFIGURE_STYLE = autoconf gnu
+CONFIGURE_STYLE = autoconf
 AUTOCONF_VERSION = 2.61
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}
 USE_GMAKE = Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/21 18:51:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/12 14:15:32 ajacoutot Exp $
 
 COMMENT =	applied math library
 CATEGORIES =	math devel
@@ -30,7 +30,7 @@ LIB_DEPENDS =	devel/cln \
 
 USE_LIBTOOL =		gnu
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu autoconf automake
+CONFIGURE_STYLE =	autoconf automake
 CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${WRKSRC} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
