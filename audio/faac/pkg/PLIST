@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:35 naddy Exp $
-@bin bin/faac
-include/faac.h
-include/faaccfg.h
-lib/libfaac.a
-lib/libfaac.la
-@lib lib/libfaac.so.${LIBfaac_VERSION}
-@man man/man1/faac.1
