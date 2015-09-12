@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/08/12 12:33:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.18 2015/09/12 13:52:13 zhuk Exp $
 
 COMMENT-kipi =		KDE image plugins collection
 COMMENT-main =		KDE photo management utility
@@ -6,7 +6,7 @@ COMMENT-mediawiki =	KIPI interface for MediaWiki
 
 CATEGORIES =		graphics
 HOMEPAGE =		http://www.digikam.org/
-VERSION =		4.11.0
+VERSION =		4.13.0
 DISTNAME =		digikam-${VERSION}
 
 PKGSPEC-main =		digikam->=1
@@ -16,9 +16,7 @@ PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 
-REVISION-main =		0
-REVISION-kipi =		0
-REVISION-mediawiki =	3
+REVISION-mediawiki =	4
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -95,7 +93,6 @@ BUILD_DEPENDS =		devel/bison \
 			devel/boost \
 			devel/doxygen \
 			devel/flex \
-			databases/mariadb,-server \
 			math/eigen3 \
 			misc/shared-desktop-ontologies
 
@@ -109,7 +106,6 @@ RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
 RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS} \
 			${MODKDE4_RUN_DEPENDS} \
 			devel/desktop-file-utils \
-			databases/mariadb,-server \
 			misc/shared-desktop-ontologies \
 			x11/gtk+3,-guic \
 			${MODKDE4_DEP_DIR}/pim-runtime
@@ -173,6 +169,9 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Hupnp:Bool=Yes \
 # no official release yet
 CONFIGURE_ARGS +=	-DDIGIKAMSC_COMPILE_LIBMEDIAWIKI=Yes
 
+# XXX Don't treat ``DEFINITIONS`` as a built-in directory property
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0059=OLD
+
 FLAVOR ?=
 
 TEST_IS_INTERACTIVE =	X11
@@ -193,8 +192,6 @@ CONFIGURE_ENV =		CXXFLAGS="${CXXFLAGS} -DOPENBSD_LIBKDCRAW_NO_CRASH=0"
 post-extract:
 	# use our Kexiv2Config.cmake instead
 	rm ${WRKSRC}/cmake/modules/FindKexiv2.cmake
-	# doesn't work with recent versions of libvkontakte
-	rm ${WRKSRC}/cmake/modules/FindLibKVkontakte.cmake
 
 # XXX because OBJECT_DEPENDS doesn't work as it should in
 # the patches/patch-extra_kipi-plugins_common_libkipiplugins_CMakeLists_txt
