@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/12 13:01:57 zhuk Exp $
+share/doc/adobe-source-serif-pro/
+share/doc/adobe-source-serif-pro/LICENSE.txt
+share/doc/adobe-source-serif-pro/README.md
+share/doc/adobe-source-serif-pro/ReadMe.html
+share/doc/adobe-source-serif-pro/SourceSerifProReadMe.html
+share/doc/adobe-source-serif-pro/bower.json
+share/doc/adobe-source-serif-pro/source-serif-pro.css
+share/fonts/
+@fontdir share/fonts/adobe-source-serif-pro/
+share/fonts/adobe-source-serif-pro/SourceSerifPro-Black.otf
+share/fonts/adobe-source-serif-pro/SourceSerifPro-Black.ttf
+share/fonts/adobe-source-serif-pro/SourceSerifPro-Bold.otf
+share/fonts/adobe-source-serif-pro/SourceSerifPro-Bold.ttf
+share/fonts/adobe-source-serif-pro/SourceSerifPro-ExtraLight.otf
+share/fonts/adobe-source-serif-pro/SourceSerifPro-ExtraLight.ttf
+share/fonts/adobe-source-serif-pro/SourceSerifPro-Light.otf
+share/fonts/adobe-source-serif-pro/SourceSerifPro-Light.ttf
+share/fonts/adobe-source-serif-pro/SourceSerifPro-Regular.otf
+share/fonts/adobe-source-serif-pro/SourceSerifPro-Regular.ttf
+share/fonts/adobe-source-serif-pro/SourceSerifPro-Semibold.otf
+share/fonts/adobe-source-serif-pro/SourceSerifPro-Semibold.ttf

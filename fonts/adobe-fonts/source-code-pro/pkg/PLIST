@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/12 13:01:57 zhuk Exp $
+@pkgpath fonts/adobe-source-code-pro
+share/doc/adobe-source-code-pro/
+share/doc/adobe-source-code-pro/LICENSE.txt
+share/doc/adobe-source-code-pro/README.md
+share/doc/adobe-source-code-pro/bower.json
+share/doc/adobe-source-code-pro/source-code-pro.css
+share/fonts/
+@fontdir share/fonts/adobe-source-code-pro/
+share/fonts/adobe-source-code-pro/SourceCodePro-Black.otf
+share/fonts/adobe-source-code-pro/SourceCodePro-Black.ttf
+share/fonts/adobe-source-code-pro/SourceCodePro-BlackIt.otf
+share/fonts/adobe-source-code-pro/SourceCodePro-BlackIt.ttf
+share/fonts/adobe-source-code-pro/SourceCodePro-Bold.otf
+share/fonts/adobe-source-code-pro/SourceCodePro-Bold.ttf
+share/fonts/adobe-source-code-pro/SourceCodePro-BoldIt.otf
+share/fonts/adobe-source-code-pro/SourceCodePro-BoldIt.ttf
+share/fonts/adobe-source-code-pro/SourceCodePro-ExtraLight.otf
+share/fonts/adobe-source-code-pro/SourceCodePro-ExtraLight.ttf
+share/fonts/adobe-source-code-pro/SourceCodePro-ExtraLightIt.otf
+share/fonts/adobe-source-code-pro/SourceCodePro-ExtraLightIt.ttf
+share/fonts/adobe-source-code-pro/SourceCodePro-It.otf
+share/fonts/adobe-source-code-pro/SourceCodePro-It.ttf
+share/fonts/adobe-source-code-pro/SourceCodePro-Light.otf
+share/fonts/adobe-source-code-pro/SourceCodePro-Light.ttf
+share/fonts/adobe-source-code-pro/SourceCodePro-LightIt.otf
+share/fonts/adobe-source-code-pro/SourceCodePro-LightIt.ttf
+share/fonts/adobe-source-code-pro/SourceCodePro-Medium.otf
+share/fonts/adobe-source-code-pro/SourceCodePro-Medium.ttf
+share/fonts/adobe-source-code-pro/SourceCodePro-MediumIt.otf
+share/fonts/adobe-source-code-pro/SourceCodePro-MediumIt.ttf
+share/fonts/adobe-source-code-pro/SourceCodePro-Regular.otf
+share/fonts/adobe-source-code-pro/SourceCodePro-Regular.ttf
+share/fonts/adobe-source-code-pro/SourceCodePro-Semibold.otf
+share/fonts/adobe-source-code-pro/SourceCodePro-Semibold.ttf
+share/fonts/adobe-source-code-pro/SourceCodePro-SemiboldIt.otf
+share/fonts/adobe-source-code-pro/SourceCodePro-SemiboldIt.ttf
