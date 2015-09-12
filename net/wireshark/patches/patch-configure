@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2015/09/12 16:00:35 tobiasu Exp $
+--- configure.orig	Sat Sep 12 16:25:16 2015
++++ configure	Sat Sep 12 16:25:41 2015
+@@ -31414,7 +31414,7 @@ fi
+ if test "$have_gtk" = "yes" ; then
+ 	# If we have GTK then add flags for it.
+ 
+-	CPPFLAGS="-DGDK_PIXBUF_DISABLE_DEPRECATED $CPPFLAGS"
++	#CPPFLAGS="-DGDK_PIXBUF_DISABLE_DEPRECATED $CPPFLAGS" # Segfault on startup
+ 	CPPFLAGS="-DGDK_DISABLE_DEPRECATED $CPPFLAGS"
+ 	if test \( $gtk_config_major_version -eq 3 -a $gtk_config_minor_version -ge 10 \) ; then
+ 		## Allow use of deprecated & disable deprecated warnings if Gtk >= 3.10;

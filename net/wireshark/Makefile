@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/08/21 19:17:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2015/09/12 16:00:35 tobiasu Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -32,7 +32,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 MODLUA_VERSION = 5.2
-REVISION =	0
+REVISION =	1
 MODULES =	lang/lua lang/python
 MODLUA_SA =	Yes
 MODLUA_RUNDEP =	No
