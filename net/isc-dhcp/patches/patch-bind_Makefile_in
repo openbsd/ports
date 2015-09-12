@@ -1,0 +1,35 @@
+$OpenBSD: patch-bind_Makefile_in,v 1.1 2015/09/12 19:00:41 sthen Exp $
+--- bind/Makefile.in.orig	Tue Sep  1 23:21:26 2015
++++ bind/Makefile.in	Tue Sep  1 23:26:02 2015
+@@ -64,7 +64,7 @@ bind1:
+ 		echo Configuring BIND Export libraries for DHCP. ;      \
+ 		rm -rf ${cleandirs} ${cleanfiles} ;                     \
+ 		(cd ${bindsrcdir} &&                                    \
+-                 ./configure ${bindconfig} > ${binddir}/configure.log); \
++                 ./configure ${bindconfig} 2>&1 | tee ${binddir}/configure.log); \
+ 	fi
+ 
+ atf:
+@@ -74,7 +74,7 @@ atf:
+ 	else							      \
+ 		echo Building ATF support ;			      \
+ 		(cd ${bindsrcdir}/unit;				      \
+-		 MAKE=${GMAKE} ${GMAKE} atf > ${binddir}/build.log ;  \
++		 MAKE=${GMAKE} ${GMAKE} atf 2>&1 | tee ${binddir}/build.log ;  \
+ 		 cp -rp atf ${binddir}) ;			      \
+ 	fi
+ 
+@@ -87,11 +87,11 @@ bind2:
+ 		echo Building BIND Export libraries - this takes some time. ;\
+ 		(cd ${bindsrcdir}/lib/export ;                               \
+ 		  echo building in `pwd` ;                                   \
+-		  MAKE=${GMAKE} ${GMAKE} >> ${binddir}/build.log) ;          \
++		  MAKE=${GMAKE} ${GMAKE} 2>&1 | tee ${binddir}/build.log) ;          \
+                                                                              \
+ 		echo Installing BIND Export libraries to ${binddir}. ;       \
+ 		(cd ${bindsrcdir}/lib/export ;                               \
+-		  MAKE=${GMAKE} ${GMAKE} install > ${binddir}/install.log) ; \
++		  MAKE=${GMAKE} ${GMAKE} install 2>&1 | tee ${binddir}/install.log) ; \
+ 	fi
+ 
+ clean:

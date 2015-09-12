@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-omapi,v 1.4 2012/01/14 12:43:25 sthen Exp $
+@comment $OpenBSD: PLIST-omapi,v 1.5 2015/09/12 19:00:41 sthen Exp $
 @conflict isc-dhcp-*
 @bin bin/omshell
 include/dhcpctl/
@@ -16,7 +16,6 @@ include/omapip/omapip_p.h
 include/omapip/result.h
 include/omapip/trace.h
 lib/libdhcpctl.a
-lib/libdst.a
 lib/libomapi.a
 @man man/man1/omshell.1
 @man man/man3/dhcpctl.3

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2015/05/29 07:29:09 giovanni Exp $
+# $OpenBSD: Makefile,v 1.39 2015/09/12 19:00:41 sthen Exp $
 
 COMMENT-main=	ISC DHCP Server
 COMMENT-client=	ISC DHCP Client
 COMMENT-omapi=	ISC DHCP OMAPI
 
-VERSION=	4.3.2
-REVISION=	0
+VERSION=	4.3.3
 DISTNAME=	isc-dhcp-${VERSION}
 PKGNAME=	isc-dhcp-${VERSION:S/-P/./}
 PKGNAME-main=	isc-dhcp-server-${VERSION:S/-P/./}

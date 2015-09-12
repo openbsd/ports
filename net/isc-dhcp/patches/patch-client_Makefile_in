@@ -1,7 +1,7 @@
-$OpenBSD: patch-client_Makefile_in,v 1.5 2015/05/12 20:07:51 sthen Exp $
---- client/Makefile.in.orig	Thu Feb 26 14:35:43 2015
-+++ client/Makefile.in	Mon May 11 01:14:55 2015
-@@ -846,7 +846,8 @@ uninstall-man: uninstall-man5 uninstall-man8
+$OpenBSD: patch-client_Makefile_in,v 1.6 2015/09/12 19:00:41 sthen Exp $
+--- client/Makefile.in.orig	Thu Jul 30 09:17:16 2015
++++ client/Makefile.in	Tue Sep  1 23:20:54 2015
+@@ -848,7 +848,8 @@ uninstall-man: uninstall-man5 uninstall-man8
  
  dhclient.o: dhclient.c
  	$(COMPILE) -DCLIENT_PATH='"PATH=$(sbindir):/sbin:/bin:/usr/sbin:/usr/bin"' \
