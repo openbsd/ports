@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.358 2015/08/29 15:56:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.359 2015/09/12 09:42:17 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -38,7 +38,6 @@
      SUBDIR += easytag
      SUBDIR += espeak
      SUBDIR += exaile
-     SUBDIR += faac
      SUBDIR += faad
      SUBDIR += fdk-aac
      SUBDIR += festival
