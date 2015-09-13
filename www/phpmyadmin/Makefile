@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.116 2015/06/05 06:00:23 robert Exp $
+# $OpenBSD: Makefile,v 1.117 2015/09/13 21:29:13 giovanni Exp $
 
 COMMENT=	tool to handle the administration of MySQL over the web
 
-V=		4.3.13.1
+V=		4.3.13.3
 
 PKGNAME=	phpMyAdmin-$V
 DISTNAME=	phpMyAdmin-$V-all-languages
 CATEGORIES=	www
 HOMEPAGE=	http://www.phpmyadmin.net/
-REVISION=	0
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=phpmyadmin/}
+MASTER_SITES=	http://files.phpmyadmin.net/phpMyAdmin/${V}/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
