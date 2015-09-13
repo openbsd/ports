@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1381 2015/09/07 10:40:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.1382 2015/09/13 15:20:49 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -499,6 +499,7 @@
      SUBDIR += ocaml-menhir
      SUBDIR += ocaml-mlgmp
      SUBDIR += ocaml-net
+     SUBDIR += ocaml-parmap
      SUBDIR += ocaml-pcre
      SUBDIR += ocaml-ppx-tools
      SUBDIR += ocaml-re
