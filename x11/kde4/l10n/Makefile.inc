@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile.inc,v 1.10 2015/08/12 12:33:02 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2015/09/13 10:09:01 zhuk Exp $
 
-IGNORE_SILENT =		Yes
 COMMENT =		K Desktop Environment, language localization pack
 DISTNAME =		kde-l10n-${KDE_L10N_LANG}-${MODKDE4_VERSION}
 REVISION =		1
