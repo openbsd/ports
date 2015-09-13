@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.99 2015/07/05 12:26:26 zhuk Exp $
+# $OpenBSD: portcheck,v 1.100 2015/09/13 10:02:09 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -283,6 +283,8 @@ FETCH_PACKAGES
 FETCH_SYMLINK_DISTFILES
 FORCE_UPDATE
 FTP_PACKAGES
+IGNORE_IS_FATAL
+IGNORE_SILENT
 INTERACTIVE
 LIST_DB
 LOCKDIR
