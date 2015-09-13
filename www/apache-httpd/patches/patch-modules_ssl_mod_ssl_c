@@ -1,0 +1,25 @@
+$OpenBSD: patch-modules_ssl_mod_ssl_c,v 1.1 2015/09/13 12:31:45 sthen Exp $
+
+https://bz.apache.org/bugzilla/attachment.cgi?id=33101
+https://bz.apache.org/bugzilla/show_bug.cgi?id=58349
+
+--- modules/ssl/mod_ssl.c.orig	Sat May 23 13:13:21 2015
++++ modules/ssl/mod_ssl.c	Sun Sep 13 14:00:17 2015
+@@ -125,10 +125,15 @@ static const command_rec ssl_config_cmds[] = {
+     SSL_CMD_SRV(SessionCacheTimeout, TAKE1,
+                 "SSL Session Cache object lifetime "
+                 "('N' - number of seconds)")
++#ifdef OPENSSL_NO_SSL3
++#define SSLv3_PROTO_PREFIX ""
++#else
++#define SSLv3_PROTO_PREFIX "SSLv3|"
++#endif
+ #ifdef HAVE_TLSV1_X
+-#define SSL_PROTOCOLS "SSLv3|TLSv1|TLSv1.1|TLSv1.2"
++#define SSL_PROTOCOLS SSLv3_PROTO_PREFIX "TLSv1|TLSv1.1|TLSv1.2"
+ #else
+-#define SSL_PROTOCOLS "SSLv3|TLSv1"
++#define SSL_PROTOCOLS SSLv3_PROTO_PREFIX "TLSv1"
+ #endif
+     SSL_CMD_SRV(Protocol, RAW_ARGS,
+                 "Enable or disable various SSL protocols "

@@ -1,0 +1,17 @@
+$OpenBSD: patch-modules_ssl_ssl_engine_io_c,v 1.3 2015/09/13 12:31:46 sthen Exp $
+
+https://bz.apache.org/bugzilla/attachment.cgi?id=33101
+https://bz.apache.org/bugzilla/show_bug.cgi?id=58349
+
+--- modules/ssl/ssl_engine_io.c.orig	Fri May 29 22:07:15 2015
++++ modules/ssl/ssl_engine_io.c	Sun Sep 13 14:00:17 2015
+@@ -1077,7 +1077,9 @@ static apr_status_t ssl_io_filter_handshake(ssl_filter
+          * IPv4 and IPv6 addresses are not permitted".)
+          */
+         if (hostname_note &&
++#ifndef OPENSSL_NO_SSL3
+             sc->proxy->protocol != SSL_PROTOCOL_SSLV3 &&
++#endif
+             apr_ipsubnet_create(&ip, hostname_note, NULL,
+                                 c->pool) != APR_SUCCESS) {
+             if (SSL_set_tlsext_host_name(filter_ctx->pssl, hostname_note)) {

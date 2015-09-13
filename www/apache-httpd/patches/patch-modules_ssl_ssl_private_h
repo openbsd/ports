@@ -1,0 +1,33 @@
+$OpenBSD: patch-modules_ssl_ssl_private_h,v 1.1 2015/09/13 12:31:46 sthen Exp $
+
+https://bz.apache.org/bugzilla/attachment.cgi?id=33101
+https://bz.apache.org/bugzilla/show_bug.cgi?id=58349
+
+--- modules/ssl/ssl_private.h.orig	Sat May 23 13:13:21 2015
++++ modules/ssl/ssl_private.h	Sun Sep 13 14:00:17 2015
+@@ -292,16 +292,22 @@ typedef int ssl_opt_t;
+  * Define the SSL Protocol options
+  */
+ #define SSL_PROTOCOL_NONE  (0)
+-#define SSL_PROTOCOL_SSLV2 (1<<0)
++#ifndef OPENSSL_NO_SSL3
+ #define SSL_PROTOCOL_SSLV3 (1<<1)
++#endif
+ #define SSL_PROTOCOL_TLSV1 (1<<2)
++#ifndef OPENSSL_NO_SSL3
++#define SSL_PROTOCOL_BASIC SSL_PROTOCOL_SSLV3|SSL_PROTOCOL_TLSV1
++#else
++#define SSL_PROTOCOL_BASIC SSL_PROTOCOL_TLSV1
++#endif
+ #ifdef HAVE_TLSV1_X
+ #define SSL_PROTOCOL_TLSV1_1 (1<<3)
+ #define SSL_PROTOCOL_TLSV1_2 (1<<4)
+-#define SSL_PROTOCOL_ALL   (SSL_PROTOCOL_SSLV3|SSL_PROTOCOL_TLSV1| \
++#define SSL_PROTOCOL_ALL   (SSL_PROTOCOL_BASIC| \
+                             SSL_PROTOCOL_TLSV1_1|SSL_PROTOCOL_TLSV1_2)
+ #else
+-#define SSL_PROTOCOL_ALL   (SSL_PROTOCOL_SSLV3|SSL_PROTOCOL_TLSV1)
++#define SSL_PROTOCOL_ALL   (SSL_PROTOCOL_BASIC)
+ #endif
+ typedef int ssl_proto_t;
+ 
