@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2015/09/13 12:31:46 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2015/09/13 12:37:49 sthen Exp $
 @pkgpath www/apache-httpd${FLAVOR_COMMA}
 @bin bin/ab
 bin/dbmmanage2
@@ -1421,3 +1421,4 @@ share/examples/apache2/htdocs/
 share/examples/apache2/htdocs/index.html
 @sample /var/www/htdocs/index.html
 %%ldap%%
+@rcscript ${RCDIR}/apache2
