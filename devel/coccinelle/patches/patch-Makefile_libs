@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_libs,v 1.1 2015/09/13 15:21:15 sthen Exp $
+--- Makefile.libs.orig	Tue Aug 18 09:21:41 2015
++++ Makefile.libs	Thu Sep 10 18:14:58 2015
+@@ -80,5 +80,5 @@ LOCAL_parmap     = $(PARMAPDIR)/parmap.cma
+ LOCALOPT_parmap  = $(PARMAPDIR)/parmap.cmxa
+ GLOBAL_parmap    = $(PARMAPDIR)/parmap.cma
+ GLOBALOPT_parmap = $(PARMAPDIR)/parmap.cmxa
+-FLAGS_parmap     = -cclib -lparmap_stubs
+-OPTFLAGS_parmap  = -cclib -lparmap_stubs
++#FLAGS_parmap     = -cclib -lparmap_stubs
++#OPTFLAGS_parmap  = -cclib -lparmap_stubs

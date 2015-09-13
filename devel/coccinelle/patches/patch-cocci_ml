@@ -1,32 +1,32 @@
-$OpenBSD: patch-cocci_ml,v 1.5 2012/10/12 19:59:32 sthen Exp $
---- cocci.ml.orig	Mon Jul 16 17:22:27 2012
-+++ cocci.ml	Sun Aug  5 09:31:54 2012
-@@ -269,8 +269,8 @@ let show_or_not_diff2 cfile outfile =
+$OpenBSD: patch-cocci_ml,v 1.6 2015/09/13 15:21:15 sthen Exp $
+--- cocci.ml.orig	Tue Aug 18 09:31:35 2015
++++ cocci.ml	Thu Sep 10 17:50:24 2015
+@@ -267,8 +267,8 @@ let show_or_not_diff2 cfile outfile =
  
- 	let line =
- 	  match !Flag_parsing_c.diff_lines with
--	  | None ->   "diff -u -p " ^ cfile ^ " " ^ outfile
--	  | Some n -> "diff -U "^n^" -p "^cfile^" "^outfile in
-+	  | None ->   "gdiff -u -p " ^ cfile ^ " " ^ outfile
-+	  | Some n -> "gdiff -U "^n^" -p "^cfile^" "^outfile in
- 	let res = Common.cmd_to_list line in
- 	let res =
- 	  List.map
-@@ -529,7 +529,7 @@ let worth_trying cfiles tokens =
- 	| _ -> s
+       let line =
+ 	match !Flag_parsing_c.diff_lines with
+-	| None ->   "diff -u -p " ^ cfile ^ " " ^ outfile
+-	| Some n -> "diff -U "^n^" -p "^cfile^" "^outfile in
++	| None ->   "gdiff -u -p " ^ cfile ^ " " ^ outfile
++	| Some n -> "gdiff -U "^n^" -p "^cfile^" "^outfile in
+       let res = Common.cmd_to_list line in
+       (match res with
+ 	[] -> ()
+@@ -546,7 +546,7 @@ let worth_trying2 cfiles (tokens,_,query,_) =
  
        ) in
--      let com = sprintf "egrep -q '(%s)' %s" (join "|" tokens) (join " " cfiles)
-+      let com = sprintf "gegrep -q '(%s)' %s" (join "|" tokens) (join " " cfiles)
+       let com =
+-	sprintf "egrep -q '(%s)' %s" (join "|" tokens) (join " " cfiles)
++	sprintf "gegrep -q '(%s)' %s" (join "|" tokens) (join " " cfiles)
        in
        (match Sys.command com with
        | 0 (* success *) -> true
-@@ -2049,7 +2049,7 @@ let check_duplicate_modif2 xs =
+@@ -2314,7 +2314,7 @@ let check_duplicate_modif2 xs =
                match res2 with
                | None -> false
                | Some res2 ->
 -                  let diff = Common.cmd_to_list ("diff -u -b -B "^res^" "^res2)
 +                  let diff = Common.cmd_to_list ("gdiff -u -b -B "^res^" "^res2)
                    in
-                   null diff
+                   diff = []
              ) xs) then begin

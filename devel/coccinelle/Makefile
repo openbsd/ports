@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/08/30 16:18:48 avsm Exp $
+# $OpenBSD: Makefile,v 1.26 2015/09/13 15:21:15 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,9 +6,7 @@ COMMENT =	program matching and transformation engine
 
 # if updating, check for any additional use of diff/grep which
 # may need to be switched to gdiff/ggrep
-DISTNAME =	coccinelle-1.0.0-rc15
-REVISION =	4
-PKGNAME =	${DISTNAME:S/-rc/rc/}
+DISTNAME =	coccinelle-1.0.2
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	devel
@@ -25,12 +23,15 @@ MASTER_SITES = ${HOMEPAGE}distrib/
 MODULES =		lang/ocaml \
 			lang/python
 
-BUILD_DEPENDS =		${RUN_DEPENDS} lang/ocaml-camlp4
-RUN_DEPENDS =		devel/ocaml-pcre \
+BUILD_DEPENDS =		${RUN_DEPENDS} \
+			lang/ocaml-camlp4 \
+			print/texlive/base \
+			print/texlive/texmf,-full
+RUN_DEPENDS =		devel/ocaml-parmap \
+			devel/ocaml-pcre \
 			sysutils/findlib \
 			sysutils/ggrep \
 			textproc/gdiff
-TEST_DEPENDS =	${FULLPKGPATH}
 
 # asks questions at the end if it does better than expected
 TEST_IS_INTERACTIVE = Yes
@@ -38,19 +39,23 @@ TEST_IS_INTERACTIVE = Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		MAKE_PROGRAM=${MAKE_PROGRAM}
 # The PKG_CHECK_MODULES autoconf macro doesn't have a way to use .private
-CONFIGURE_ENV +=	PYTHON_LIBS="`pkg-config --static --libs python`"
+CONFIGURE_ENV +=	PYTHON_LIBS="`pkg-config --static --libs python`" \
+			ac_cv_path_PATCH="patch -z.ccorig"
 CONFIGURE_ARGS =	--with-python=${MODPY_BIN}
+CONFIGURE_ARGS +=	--disable-menhirLib # version in ports is too new
 
-USE_GMAKE =		Yes
+USE_GMAKE =	Yes
+PORTHOME =	${WRKDIR}
 
 TEST_TARGET =	test
+TEST_DEPENDS =	${FULLPKGPATH}
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mocaml_native_dynlink}
-# word builds both: opt AND byte
+# "world" builds both: opt AND byte
 ALL_TARGET =		world
 .else
-# all-release builds either opt OR byte
+# "all-release" builds either opt OR byte
 ALL_TARGET =		all-release
 .endif
 
@@ -60,8 +65,10 @@ pre-configure:
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 	    ${PREFIX}/share/coccinelle/python/coccilib
-	mv \
-		${PREFIX}/share/coccinelle/dllpycaml_stubs.so \
+	mv ${PREFIX}/lib/coccinelle/dllpycaml_stubs.so \
 		${PREFIX}/lib/ocaml/stublibs/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/coccinelle
+	cd ${WRKSRC}/docs/manual; \
+		${MAKE_PROGRAM} WEBDOCS=${PREFIX}/share/doc/coccinelle install
 
 .include <bsd.port.mk>

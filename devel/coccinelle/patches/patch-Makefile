@@ -1,36 +1,24 @@
-$OpenBSD: patch-Makefile,v 1.7 2012/10/12 20:53:39 sthen Exp $
---- Makefile.orig	Thu Aug 16 18:52:07 2012
-+++ Makefile	Fri Oct 12 21:23:42 2012
-@@ -275,9 +275,9 @@ purebytecode:
- # copies the stubs libraries (if any) to the root directory
- copy-stubs:
- 	@if test -f ./bundles/pycaml/dllpycaml_stubs.so; then \
--		cp -fv ./bundles/pycaml/dllpycaml_stubs.so .; fi
-+		cp -f ./bundles/pycaml/dllpycaml_stubs.so .; fi
- 	@if test -f ./bundles/pcre/dllpcre_stubs.so; then \
--		cp -fv ./bundles/pcre/dllpcre_stubs.so .; fi
-+		cp -f ./bundles/pcre/dllpcre_stubs.so .; fi
- 
- ##############################################################################
- # Build version information
-@@ -358,7 +358,7 @@ install-man:
- 	$(MKDIR_P) $(DESTDIR)$(MANDIR)/man1
+$OpenBSD: patch-Makefile,v 1.8 2015/09/13 15:21:15 sthen Exp $
+--- Makefile.orig	Tue Aug 18 09:31:35 2015
++++ Makefile	Thu Sep 10 18:19:21 2015
+@@ -472,7 +472,7 @@ install-man:
  	$(MKDIR_P) $(DESTDIR)$(MANDIR)/man3
  	$(INSTALL_DATA) docs/spatch.1 $(DESTDIR)$(MANDIR)/man1/
+ 	$(INSTALL_DATA) docs/pycocci.1 $(DESTDIR)$(MANDIR)/man1/
 -	$(INSTALL_DATA) docs/Coccilib.3cocci $(DESTDIR)$(MANDIR)/man3/
 +	$(INSTALL_DATA) docs/Coccilib.3cocci $(DESTDIR)$(MANDIR)/man3/Coccilib.3
  
  install-bash:
- 	@echo "Installing bash completion in: ${DESTDIR}${BASH_COMPLETION_DIR}"
-@@ -389,9 +389,9 @@ install-python:
+ 	@$(ECHO) "Installing bash completion in: ${DESTDIR}${BASH_COMPLETION_DIR}"
+@@ -503,9 +503,9 @@ install-python:
  install-stubs:
- 	$(MKDIR_P) $(DESTDIR)$(SHAREDIR)
+ 	$(MKDIR_P) $(DESTDIR)$(LIBDIR)
  	@if test -f ./bundles/pycaml/dllpycaml_stubs.so; then \
--		cp -fv ./bundles/pycaml/dllpycaml_stubs.so $(DESTDIR)$(SHAREDIR); fi
-+		cp -f ./bundles/pycaml/dllpycaml_stubs.so $(DESTDIR)$(SHAREDIR); fi
+-		cp -fv ./bundles/pycaml/dllpycaml_stubs.so $(DESTDIR)$(LIBDIR); fi
++		cp -f ./bundles/pycaml/dllpycaml_stubs.so $(DESTDIR)$(LIBDIR); fi
  	@if test -f ./bundles/pcre/dllpcre_stubs.so; then \
--		cp -fv ./bundles/pcre/dllpcre_stubs.so $(DESTDIR)$(SHAREDIR); fi
-+		cp -f ./bundles/pcre/dllpcre_stubs.so $(DESTDIR)$(SHAREDIR); fi
+-		cp -fv ./bundles/pcre/dllpcre_stubs.so $(DESTDIR)$(LIBDIR); fi
++		cp -f ./bundles/pcre/dllpcre_stubs.so $(DESTDIR)$(LIBDIR); fi
  
  install: install-man install-common install-stubs $(PYTHON_INSTALL_TARGET)
- 	rm -f $(DESTDIR)$(SHAREDIR)/spatch
+ 	rm -f $(DESTDIR)$(LIBDIR)/spatch
