@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/13 15:20:19 sthen Exp $
+lib/ocaml/parmap/
+lib/ocaml/parmap/META
+lib/ocaml/parmap/bytearray.cmi
+lib/ocaml/parmap/bytearray.mli
+lib/ocaml/parmap/bytearray_stubs.o
+lib/ocaml/parmap/libparmap.a
+lib/ocaml/parmap/parmap.a
+lib/ocaml/parmap/parmap.cma
+lib/ocaml/parmap/parmap.cmi
+lib/ocaml/parmap/parmap.cmxa
+@bin lib/ocaml/parmap/parmap.cmxs
+lib/ocaml/parmap/parmap.mli
+lib/ocaml/parmap/parmap_utils.cmi
+lib/ocaml/parmap/parmap_utils.mli
+lib/ocaml/parmap/setcore.cmi
+lib/ocaml/parmap/setcore.mli
+lib/ocaml/parmap/setcore_stubs.o
+lib/ocaml/stublibs/dllparmap.so
+lib/ocaml/stublibs/dllparmap.so.owner
