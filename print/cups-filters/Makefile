@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.75 2015/09/08 08:07:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2015/09/13 07:25:39 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.0.75
+DISTNAME=	cups-filters-1.0.76
 CATEGORIES=	print
 
 SHARED_LIBS +=  cupsfilters          1.0      # 1.0
@@ -51,8 +51,6 @@ RUN_DEPENDS +=	print/ghostscript/gnu
 
 # don't enforce dependency on colord; it'll be used only if found
 #RUN_DEPENDS +=	graphics/colord
-
-USE_GMAKE=	Yes
 
 FAKE_FLAGS=	pkgfontconfigdir=${PREFIX}/share/examples/cups-filters \
 		pkgcupsserverrootdir=${PREFIX}/share/examples/cups-filters/cups
