@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/06/19 16:40:21 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/13 12:52:19 sthen Exp $
+
+BROKEN=		libtls api changes
 
 COMMENT=	socks proxy and tls support for ucspi
 
