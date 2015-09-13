@@ -8,3 +8,5 @@ weights, from ExtraLight to Black, in upright and italic styles. The
 typeface has wide language support for Latin script, including Western
 and Eastern European languages, Vietnamese, pinyin Romanization of
 Chinese, and Navajo.
+
+Contains Roman version ${VERSION} and Italic version ${VERSION_I} fonts.
