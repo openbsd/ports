@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/28 10:17:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.12 2015/09/14 07:26:02 ajacoutot Exp $
 
 COMMENT =		fast Qt IMAP e-mail client
 
@@ -33,6 +33,7 @@ CONFIGURE_ENV +=	QTDIR="${MODQT_LIBDIR}"
 CONFIGURE_ARGS +=	-DWITH_HARMATTAN=OFF \
 			-DWITH_RAGEL=OFF \
 			-DWITH_QT5=OFF \
+			-DWITH_QTKEYCHAIN_PLUGIN=OFF \
 			-DGIT_EXECUTABLE=""
 
 TEST_IS_INTERACTIVE =	X11
