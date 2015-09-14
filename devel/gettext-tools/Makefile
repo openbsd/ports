@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1 2015/07/19 23:46:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/14 19:48:45 naddy Exp $
 
 COMMENT=	GNU gettext development and translation tools
 
-VERSION=	0.19.5.1
+VERSION=	0.19.6
 DISTNAME=	gettext-${VERSION}
 PKGNAME=	gettext-tools-${VERSION}
 SHARED_LIBS +=  gettextlib           6.0      # unknown

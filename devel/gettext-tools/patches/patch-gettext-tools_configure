@@ -1,10 +1,10 @@
-$OpenBSD: patch-gettext-tools_configure,v 1.1 2015/07/19 23:46:08 naddy Exp $
+$OpenBSD: patch-gettext-tools_configure,v 1.2 2015/09/14 19:48:45 naddy Exp $
 
 Allow use of pre-installed gettext with gettexts-tools.
 
---- gettext-tools/configure.orig	Wed Jul 15 03:32:24 2015
-+++ gettext-tools/configure	Sat Jul 18 19:11:13 2015
-@@ -22215,8 +22215,7 @@ $as_echo "$ac_res" >&6; }
+--- gettext-tools/configure.orig	Fri Sep 11 05:05:06 2015
++++ gettext-tools/configure	Mon Sep 14 16:53:57 2015
+@@ -22218,8 +22218,7 @@ $as_echo "$ac_res" >&6; }
  
                                          if { eval "gt_val=\$$gt_func_gnugettext_libc"; test "$gt_val" = "yes"; } \
             || { { eval "gt_val=\$$gt_func_gnugettext_libintl"; test "$gt_val" = "yes"; } \
