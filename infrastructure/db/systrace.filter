@@ -2,7 +2,6 @@
 	native-__getcwd: permit
 	native-__semctl: permit
 	native-__set_tcb: permit
-	native-__sysctl: permit
 	native-__tfork: permit
 	native-__threxit: permit
 	native-__thrsigdivert: permit
@@ -240,6 +239,7 @@
 	native-symlinkat: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-symlinkat: string eq "" and filename eq "" then deny[enoent]
 	native-sync: permit
+	native-sysctl: permit
 	native-umask: permit
 	native-utimensat: permit
 	native-utimes: permit
