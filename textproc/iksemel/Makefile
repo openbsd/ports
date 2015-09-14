@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/05 17:00:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2015/09/14 07:02:44 ajacoutot Exp $
 
 COMMENT=		XML parser designed for Jabber applications
 DISTNAME=		iksemel-1.4
@@ -26,5 +26,17 @@ LIB_DEPENDS=		security/gnutls
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+
+pre-configure:
+	cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -fi
 
 .include <bsd.port.mk>
