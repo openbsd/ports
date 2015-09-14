@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.112 2015/08/12 07:05:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2015/09/14 07:02:14 ajacoutot Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
-V=		3.3.17.1
+V=		3.3.18
 DISTNAME=	gnutls-${V}
 EXTRACT_SUFX=	.tar.xz
 
@@ -63,8 +63,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gnutls
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/*.c \
 		${PREFIX}/share/examples/gnutls
-	# needed by at least:
-	# devel/libvmime, security/prelude/manager, textproc/iksemel
-	${INSTALL} -m 555 ${FILESDIR}/libgnutls-config ${PREFIX}/bin
 
 .include <bsd.port.mk>
