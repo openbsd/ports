@@ -1,4 +1,4 @@
-$OpenBSD: patch-libusb_core_c,v 1.3 2012/06/19 21:10:59 kili Exp $
+$OpenBSD: patch-libusb_core_c,v 1.4 2015/09/15 09:03:53 dcoppa Exp $
 
 On OpenBSD USB controllers are shown as normal devices, making the
 itinial limit too small. On a recent machine this value is almost
@@ -6,7 +6,7 @@ always exceeded, so bump it.
 
 --- libusb/core.c.orig	Fri Apr 20 08:44:27 2012
 +++ libusb/core.c	Tue Jun 12 15:48:05 2012
-@@ -468,7 +468,7 @@ libusb_free_device_list(list, 1);
+@@ -601,7 +601,7 @@ libusb_free_device_list(list, 1);
   * which grows when required. it can be freed once discovery has completed,
   * eliminating the need for a list node in the libusb_device structure
   * itself. */
