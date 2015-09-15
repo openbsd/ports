@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_command_c,v 1.7 2015/09/11 12:28:54 dcoppa Exp $
+$OpenBSD: patch-src_command_c,v 1.8 2015/09/15 08:14:34 dcoppa Exp $
 
 commit 2aba75803de7b4cc7319f804977b7a12a61b7f92
-Author: Thorsten Wi<C3><9F>mann <edu@thorsten-wissmann.de>
+Author: Thorsten Wissmann <edu@thorsten-wissmann.de>
 Date:   Tue Jul 28 12:09:24 2015 +0200
 
 command: let listall print songs only, as described by the man page
