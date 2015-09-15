@@ -1,0 +1,21 @@
+$OpenBSD: patch-sandbox-systrace_c,v 1.1 2015/09/15 20:25:16 jturner Exp $
+--- sandbox-systrace.c.orig	Tue Sep 15 16:21:40 2015
++++ sandbox-systrace.c	Tue Sep 15 16:21:56 2015
+@@ -74,7 +74,7 @@ static const struct systrace_preauth preauth_control[]
+ 	{ SYS_fcntl, SYSTR_POLICY_PERMIT },
+ 	{ SYS_sendmsg, SYSTR_POLICY_PERMIT },
+ 
+-	{ SYS___sysctl, SYSTR_POLICY_PERMIT },
++	{ SYS_sysctl, SYSTR_POLICY_PERMIT },
+ 	{ SYS_close, SYSTR_POLICY_PERMIT },
+ 	{ SYS_exit, SYSTR_POLICY_PERMIT },
+ 	{ SYS_getpid, SYSTR_POLICY_PERMIT },
+@@ -102,7 +102,7 @@ static const struct systrace_preauth preauth_control[]
+ static const struct systrace_preauth preauth_worker[] = {
+ 	{ SYS_open, SYSTR_POLICY_NEVER },
+ 
+-	{ SYS___sysctl, SYSTR_POLICY_PERMIT },
++	{ SYS_sysctl, SYSTR_POLICY_PERMIT },
+ 	{ SYS_close, SYSTR_POLICY_PERMIT },
+ 	{ SYS_exit, SYSTR_POLICY_PERMIT },
+ 	{ SYS_getpid, SYSTR_POLICY_PERMIT },
