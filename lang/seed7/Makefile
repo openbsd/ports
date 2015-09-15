@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.43 2015/08/25 13:18:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2015/09/15 08:47:30 benoit Exp $
 
-V =		20150823
+V =		20150914
 COMMENT =	high-level, extensible programming language
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	lang
 BROKEN-hppa =	SIGILL during build
-REVISION =	0
 
 HOMEPAGE =	http://seed7.sourceforge.net/
 
