@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.129 2015/09/04 14:20:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.130 2015/09/15 12:48:39 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
 DISTNAME=	qemu-2.2.1
-REVISION=	5
+REVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -22,7 +22,7 @@ WANTLIB=	GL SDL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gnutls gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 iscsi jpeg lzo2 m ncurses nfs pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread pthread-stubs \
-		ssh2 stdc++ util uuid vte z
+		ssh2 stdc++ usb-1.0 util uuid vte z
 
 MODULES=	devel/gettext \
 		lang/python
@@ -32,6 +32,7 @@ LIB_DEPENDS=	archivers/lzo2 \
 		devel/glib2 \
 		devel/libiscsi \
 		devel/libnfs \
+		devel/libusb1>=1.0.20 \
 		devel/sdl \
 		devel/vte \
 		graphics/jpeg \
@@ -68,7 +69,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--extra-cflags="${EXTRA_CFLAGS}" \
 		--extra-ldflags="${EXTRA_LDFLAGS}" \
 		--disable-bsd-user \
-		--disable-libusb \
 		--disable-smartcard-nss \
 		--disable-spice \
 		--disable-usb-redir \
