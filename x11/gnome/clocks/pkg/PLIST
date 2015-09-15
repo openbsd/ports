@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/04/13 16:37:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/09/15 06:06:47 ajacoutot Exp $
 @bin bin/gnome-clocks
 share/appdata/
 share/appdata/org.gnome.clocks.appdata.xml
 share/applications/org.gnome.clocks.desktop
+share/dbus-1/
+share/dbus-1/services/
 share/dbus-1/services/org.gnome.clocks.service
 share/glib-2.0/schemas/org.gnome.clocks.gschema.xml
 share/gnome-clocks/
@@ -28,6 +30,21 @@ share/help/C/gnome-clocks/timer.page
 share/help/C/gnome-clocks/world-add.page
 share/help/C/gnome-clocks/world-check.page
 share/help/C/gnome-clocks/world-remove.page
+share/help/ca/
+share/help/ca/gnome-clocks/
+share/help/ca/gnome-clocks/alarm-add.page
+share/help/ca/gnome-clocks/alarm-edit.page
+share/help/ca/gnome-clocks/alarm-remove.page
+share/help/ca/gnome-clocks/alarm-snooze-stop.page
+share/help/ca/gnome-clocks/figures/
+share/help/ca/gnome-clocks/figures/gnome-clocks.png
+share/help/ca/gnome-clocks/index.page
+share/help/ca/gnome-clocks/legal.xml
+share/help/ca/gnome-clocks/stopwatch.page
+share/help/ca/gnome-clocks/timer.page
+share/help/ca/gnome-clocks/world-add.page
+share/help/ca/gnome-clocks/world-check.page
+share/help/ca/gnome-clocks/world-remove.page
 share/help/cs/
 share/help/cs/gnome-clocks/
 share/help/cs/gnome-clocks/alarm-add.page
@@ -221,8 +238,6 @@ share/locale/eu/LC_MESSAGES/gnome-clocks.mo
 share/locale/fa/LC_MESSAGES/gnome-clocks.mo
 share/locale/fi/LC_MESSAGES/gnome-clocks.mo
 share/locale/fr/LC_MESSAGES/gnome-clocks.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-clocks.mo
 share/locale/ga/LC_MESSAGES/gnome-clocks.mo
 share/locale/gd/LC_MESSAGES/gnome-clocks.mo
@@ -245,6 +260,7 @@ share/locale/mr/LC_MESSAGES/gnome-clocks.mo
 share/locale/nb/LC_MESSAGES/gnome-clocks.mo
 share/locale/ne/LC_MESSAGES/gnome-clocks.mo
 share/locale/nl/LC_MESSAGES/gnome-clocks.mo
+share/locale/oc/LC_MESSAGES/gnome-clocks.mo
 share/locale/or/LC_MESSAGES/gnome-clocks.mo
 share/locale/pa/LC_MESSAGES/gnome-clocks.mo
 share/locale/pl/LC_MESSAGES/gnome-clocks.mo
