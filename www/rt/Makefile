@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/07/15 22:20:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2015/09/16 06:55:39 kirby Exp $
 
 COMMENT=		industrial-grade ticketing system
 
@@ -10,8 +10,8 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=		http://www.bestpractical.com/rt/
 
-MASTER_SITES=		http://www.fsck.com/pub/rt/release/ \
-			ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
+MASTER_SITES=		https://download.bestpractical.com/pub/rt/release/ \
+			http://www.fsck.com/pub/rt/release/
 
 RUN_DEPENDS=		converters/p5-Convert-Color \
 			converters/p5-JSON \
