@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2015/01/24 11:16:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2015/09/16 07:18:45 benoit Exp $
 
 COMMENT=	perl implementation of the SSH1 and SSH2 protocols
 
 MODULES=	cpan
-DISTNAME =	Net-SSH-Perl-1.38
+DISTNAME =	Net-SSH-Perl-1.39
 CATEGORIES=	net security
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
 # SSHv1
 RUN_DEPENDS=	devel/p5-String-CRC32 \
 		math/p5-Math-GMP
@@ -21,7 +20,8 @@ RUN_DEPENDS+=	converters/p5-Convert-PEM \
 		security/p5-Crypt-RSA \
 		security/p5-Digest-BubbleBabble \
 		security/p5-Digest-HMAC \
-		security/p5-Digest-SHA1>=2.10
+		security/p5-Digest-SHA1>=2.10 \
+		devel/p5-File-HomeDir
 
 # 03-packet.t just hangs in test 2, known since early 2004
 NO_TEST=	Yes

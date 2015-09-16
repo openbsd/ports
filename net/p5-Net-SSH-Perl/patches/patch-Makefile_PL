@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2005/02/23 20:14:34 sturm Exp $
---- Makefile.PL.orig	Tue Feb 22 22:22:43 2005
-+++ Makefile.PL	Tue Feb 22 22:23:52 2005
-@@ -47,7 +47,7 @@ MSG
+$OpenBSD: patch-Makefile_PL,v 1.2 2015/09/16 07:18:45 benoit Exp $
+--- Makefile.PL.orig	Tue Sep 15 11:48:58 2015
++++ Makefile.PL	Wed Sep 16 09:12:07 2015
+@@ -48,7 +48,7 @@ MSG
  printf "    [%d] SSH%d\n", $_, $_ for 1..2;
  printf "    [3] Both SSH1 and SSH2\n";
  
@@ -10,9 +10,9 @@ $OpenBSD: patch-Makefile_PL,v 1.1.1.1 2005/02/23 20:14:34 sturm Exp $
  print "\n";
  
  @prereq{keys %{$SSH_PREREQ{$p}}} = values %{$SSH_PREREQ{$p}};
-@@ -73,7 +73,7 @@ my $i = 1;
+@@ -74,7 +74,7 @@ my $i = 1;
  for my $ciph(sort { $a->[0] <=> $b->[0] } @cryptmod) {
- 	printf "    [%d] %s\n", $i++, $ciph->[0];
+     printf "    [%d] %s\n", $i++, $ciph->[0];
  }
 -my $c = prompt("\nEnter your choices, separated by spaces:", 1);
 +my $c = "2 3 4 5";
