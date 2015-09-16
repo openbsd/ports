@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_dns_openssldh_link_c,v 1.1 2015/09/16 15:28:16 sthen Exp $
+--- lib/dns/openssldh_link.c.orig	Wed Sep 16 14:01:23 2015
++++ lib/dns/openssldh_link.c	Wed Sep 16 14:02:06 2015
+@@ -173,7 +173,7 @@ openssldh_generate(dst_key_t *key, int generator, void
+ 	DH *dh = NULL;
+ #if OPENSSL_VERSION_NUMBER > 0x00908000L
+ 	BN_GENCB *cb;
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ 	BN_GENCB _cb;
+ #endif
+ 	union {
+@@ -210,7 +210,7 @@ openssldh_generate(dst_key_t *key, int generator, void
+ 		if (dh == NULL)
+ 			return (dst__openssl_toresult(ISC_R_NOMEMORY));
+ 		cb = BN_GENCB_new();
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 		if (cb == NULL) {
+ 			DH_free(dh);
+ 			return (dst__openssl_toresult(ISC_R_NOMEMORY));
