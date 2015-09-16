@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/16 15:40:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/09/16 11:32:27 sthen Exp $
 
-COMMENT =		extremely fast password cracker, with community patches
+COMMENT =	extremely fast password cracker, with community patches
 BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
 
 V =		1.8.0
 JV =		1
+REVISION =	0
 EXTRACT_SUFX =	.tar.xz
 
 DISTNAME =	john-$V-jumbo-${JV}
@@ -74,7 +75,8 @@ BINS += mkvcalcproba raw2dyna tgtsnarf uaf2john vncpcap2john wpapcap2john
 
 do-configure:
 	perl -pi -e 's,\$$JOHN/john.conf,${SYSCONFDIR}/john.conf,' ${WRKSRC}/params.h
-	rm ${WRKSRC}/KRB4_*_plug.c # undefined reference to `des_set_odd_parity'
+	rm ${WRKSRC}/KRB4_*_plug.c	# no DES support in LibreSSL
+	rm ${WRKSRC}/rawSHA0_fmt_plug.c # no SHA-0 support in LibreSSL
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/john
