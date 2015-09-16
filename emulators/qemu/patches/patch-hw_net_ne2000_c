@@ -1,0 +1,73 @@
+$OpenBSD: patch-hw_net_ne2000_c,v 1.1 2015/09/16 09:18:13 ajacoutot Exp $
+
+net: add checks to validate ring buffer pointers(CVE-2015-5279)
+
+Ne2000 NIC uses ring buffer of NE2000_MEM_SIZE(49152)
+bytes to process network packets. While receiving packets
+via ne2000_receive() routine, a local 'index' variable
+could exceed the ring buffer size, which could lead to a
+memory buffer overflow. Added other checks at initialisation.
+
+net: avoid infinite loop when receiving packets(CVE-2015-5278)
+
+Ne2000 NIC uses ring buffer of NE2000_MEM_SIZE(49152)
+bytes to process network packets. While receiving packets
+via ne2000_receive() routine, a local 'index' variable
+could exceed the ring buffer size, leading to an infinite
+loop situation.
+
+--- hw/net/ne2000.c.orig	Wed Sep 16 03:30:14 2015
++++ hw/net/ne2000.c	Wed Sep 16 03:35:01 2015
+@@ -230,6 +230,9 @@ ssize_t ne2000_receive(NetClientState *nc, const uint8
+     }
+ 
+     index = s->curpag << 8;
++    if (index >= NE2000_PMEM_END) {
++        index = s->start;
++    }
+     /* 4 bytes for header */
+     total_len = size + 4;
+     /* address for next packet (4 bytes for CRC) */
+@@ -253,7 +256,7 @@ ssize_t ne2000_receive(NetClientState *nc, const uint8
+         if (index <= s->stop)
+             avail = s->stop - index;
+         else
+-            avail = 0;
++            break;
+         len = size;
+         if (len > avail)
+             len = avail;
+@@ -315,13 +318,19 @@ static void ne2000_ioport_write(void *opaque, uint32_t
+         offset = addr | (page << 4);
+         switch(offset) {
+         case EN0_STARTPG:
+-            s->start = val << 8;
++            if (val << 8 <= NE2000_PMEM_END) {
++                s->start = val << 8;
++            }
+             break;
+         case EN0_STOPPG:
+-            s->stop = val << 8;
++            if (val << 8 <= NE2000_PMEM_END) {
++                s->stop = val << 8;
++            }
+             break;
+         case EN0_BOUNDARY:
+-            s->boundary = val;
++            if (val << 8 < NE2000_PMEM_END) {
++                s->boundary = val;
++            }
+             break;
+         case EN0_IMR:
+             s->imr = val;
+@@ -362,7 +371,9 @@ static void ne2000_ioport_write(void *opaque, uint32_t
+             s->phys[offset - EN1_PHYS] = val;
+             break;
+         case EN1_CURPAG:
+-            s->curpag = val;
++            if (val << 8 < NE2000_PMEM_END) {
++                s->curpag = val;
++            }
+             break;
+         case EN1_MULT ... EN1_MULT + 7:
+             s->mult[offset - EN1_MULT] = val;

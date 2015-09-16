@@ -1,0 +1,22 @@
+$OpenBSD: patch-hw_net_e1000_c,v 1.1 2015/09/16 09:18:13 ajacoutot Exp $
+
+e1000: Avoid infinite loop in processing transmit descriptor (CVE-2015-6815)
+
+While processing transmit descriptors, it could lead to an infinite
+loop if 'bytes' was to become zero; Add a check to avoid it.
+
+[The guest can force 'bytes' to 0 by setting the hdr_len and mss
+descriptor fields to 0.
+
+--- hw/net/e1000.c.orig	Wed Sep 16 03:27:05 2015
++++ hw/net/e1000.c	Wed Sep 16 03:28:19 2015
+@@ -736,7 +736,8 @@ process_tx_desc(E1000State *s, struct e1000_tx_desc *d
+                 memmove(tp->data, tp->header, tp->hdr_len);
+                 tp->size = tp->hdr_len;
+             }
+-        } while (split_size -= bytes);
++            split_size -= bytes;
++        } while (bytes && split_size);
+     } else if (!tp->tse && tp->cptse) {
+         // context descriptor TSE is not set, while data descriptor TSE is set
+         DBGOUT(TXERR, "TCP segmentation error\n");

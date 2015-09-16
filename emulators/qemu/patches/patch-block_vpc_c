@@ -1,0 +1,69 @@
+$OpenBSD: patch-block_vpc_c,v 1.1 2015/09/16 09:18:13 ajacoutot Exp $
+
+block: vpc - prevent overflow if max_table_entries >= 0x40000000
+
+When we allocate the pagetable based on max_table_entries, we multiply
+the max table entry value by 4 to accomodate a table of 32-bit integers.
+However, max_table_entries is a uint32_t, and the VPC driver accepts
+ranges for that entry over 0x40000000.  So during this allocation:
+
+s->pagetable = qemu_try_blockalign(bs->file, s->max_table_entries * 4);
+
+The size arg overflows, allocating significantly less memory than
+expected.
+
+Since qemu_try_blockalign() size argument is size_t, cast the
+multiplication correctly to prevent overflow.
+
+The value of "max_table_entries * 4" is used elsewhere in the code as
+well, so store the correct value for use in all those cases.
+
+We also check the Max Tables Entries value, to make sure that it is <
+SIZE_MAX / 4, so we know the pagetable size will fit in size_t.
+
+--- block/vpc.c.orig	Wed Sep 16 03:08:08 2015
++++ block/vpc.c	Wed Sep 16 03:11:21 2015
+@@ -167,6 +167,7 @@ static int vpc_open(BlockDriverState *bs, QDict *optio
+     uint8_t buf[HEADER_SIZE];
+     uint32_t checksum;
+     uint64_t computed_size;
++    uint64_t pagetable_size;
+     int disk_type = VHD_DYNAMIC;
+     int ret;
+ 
+@@ -269,7 +270,17 @@ static int vpc_open(BlockDriverState *bs, QDict *optio
+             goto fail;
+         }
+ 
+-        s->pagetable = qemu_try_blockalign(bs->file, s->max_table_entries * 4);
++        if (s->max_table_entries > SIZE_MAX / 4 ||
++            s->max_table_entries > (int) INT_MAX / 4) {
++            error_setg(errp, "Max Table Entries too large (%" PRId32 ")",
++                        s->max_table_entries);
++            ret = -EINVAL;
++            goto fail;
++        }
++
++        pagetable_size = (uint64_t) s->max_table_entries * 4;
++
++        s->pagetable = qemu_try_blockalign(bs->file, pagetable_size);
+         if (s->pagetable == NULL) {
+             ret = -ENOMEM;
+             goto fail;
+@@ -277,14 +288,13 @@ static int vpc_open(BlockDriverState *bs, QDict *optio
+ 
+         s->bat_offset = be64_to_cpu(dyndisk_header->table_offset);
+ 
+-        ret = bdrv_pread(bs->file, s->bat_offset, s->pagetable,
+-                         s->max_table_entries * 4);
++        ret = bdrv_pread(bs->file, s->bat_offset, s->pagetable, pagetable_size);
+         if (ret < 0) {
+             goto fail;
+         }
+ 
+         s->free_data_block_offset =
+-            (s->bat_offset + (s->max_table_entries * 4) + 511) & ~511;
++            ROUND_UP(s->bat_offset + pagetable_size, 512);
+ 
+         for (i = 0; i < s->max_table_entries; i++) {
+             be32_to_cpus(&s->pagetable[i]);

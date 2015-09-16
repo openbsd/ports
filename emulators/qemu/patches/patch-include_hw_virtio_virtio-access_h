@@ -1,0 +1,31 @@
+$OpenBSD: patch-include_hw_virtio_virtio-access_h,v 1.1 2015/09/16 09:18:13 ajacoutot Exp $
+
+virtio-net: unbreak any layout
+
+Commit 032a74a1c0fcdd5fd1c69e56126b4c857ee36611
+("virtio-net: byteswap virtio-net header") breaks any layout by
+requiring out_sg[0].iov_len >= n->guest_hdr_len. Fixing this by
+copying header to temporary buffer if swap is needed, and then use
+this buffer as part of out_sg.
+
+Fixes 032a74a1c0fcdd5fd1c69e56126b4c857ee36611
+("virtio-net: byteswap virtio-net header")
+
+--- include/hw/virtio/virtio-access.h.orig	Wed Sep 16 03:17:28 2015
++++ include/hw/virtio/virtio-access.h	Wed Sep 16 03:18:03 2015
+@@ -126,6 +126,15 @@ static inline uint64_t virtio_ldq_p(VirtIODevice *vdev
+     }
+ }
+ 
++static inline bool virtio_needs_swap(VirtIODevice *vdev)
++{
++#ifdef HOST_WORDS_BIGENDIAN
++    return virtio_access_is_big_endian(vdev) ? false : true;
++#else
++    return virtio_access_is_big_endian(vdev) ? true : false;
++#endif
++}
++
+ static inline uint16_t virtio_tswap16(VirtIODevice *vdev, uint16_t s)
+ {
+ #ifdef HOST_WORDS_BIGENDIAN
