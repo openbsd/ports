@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2015/02/24 23:40:02 bentley Exp $
+# $OpenBSD: Makefile,v 1.19 2015/09/16 09:34:12 schwarze Exp $
 
 COMMENT =	portable release of Doom, Heretic, Hexen, and Strife
-V =		2.1.0
+V =		2.2.1
 DISTNAME =	chocolate-doom-${V}
 CATEGORIES =	games x11
-REVISION =	0
 
 HOMEPAGE =	http://www.chocolate-doom.org/
 
@@ -31,9 +30,6 @@ USE_GMAKE =		Yes
 # we don't need to require python to build
 CONFIGURE_ENV +=	HAVE_PYTHON=false
 
-# set correct program directory
-MAKE_FLAGS =	execgamesdir="${TRUEPREFIX}/bin"
-
 MAN_5 =		chocolate-doom.cfg default.cfg \
 		chocolate-heretic.cfg heretic.cfg \
 		chocolate-hexen.cfg hexen.cfg \
@@ -42,9 +38,11 @@ MAN_6 =		chocolate-doom chocolate-server chocolate-setup \
 		chocolate-heretic chocolate-hexen chocolate-strife
 
 post-extract:
+	# set correct program directory
+	@sed -i 's,{exec_prefix}/games,{exec_prefix}/bin,' \
+		${WRKSRC}/src/Makefile.in
 	# set correct data directory
-	@perl -pi -e "s,/usr/share/games/doom,${TRUEPREFIX}/share/doom," \
-		${WRKSRC}/src/d_iwad.c
+	@sed -i 's,"/games/doom","/doom",g' ${WRKSRC}/src/d_iwad.c
 
 post-install:
 	# Data files get installed to this directory.
