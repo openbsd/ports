@@ -1,6 +1,9 @@
-$OpenBSD: patch-x11vnc_enc_h,v 1.1 2015/09/16 10:36:08 sthen Exp $
+$OpenBSD: patch-x11vnc_enc_h,v 1.2 2015/09/16 10:43:18 sthen Exp $
 
-LibreSSL 2.3 gets rid of SHA-0 (EVP_sha). There is no suitable OPENSSL_NO_xxx.
+LibreSSL 2.3 gets rid of SHA-0 (EVP_sha).
+
+OpenSSL has no targetted way to disable this, thus OPENSSL_NO_SHA0 is
+LibreSSL-only at prsent.
 
 --- x11vnc/enc.h.orig	Wed Sep 16 04:32:40 2015
 +++ x11vnc/enc.h	Wed Sep 16 04:35:00 2015
@@ -8,7 +11,7 @@ LibreSSL 2.3 gets rid of SHA-0 (EVP_sha). There is no suitable OPENSSL_NO_xxx.
  		p++;
  		if (strstr(p, "md5+") == p) {
  			Digest = EVP_md5();        p += strlen("md5+");
-+#if !(LIBRESSL_VERSION_NUMBER >= 0x20030000L)
++#ifndef OPENSSL_NO_SHA0
  		} else if (strstr(p, "sha+") == p) {
  			Digest = EVP_sha();        p += strlen("sha+");
 +#endif
