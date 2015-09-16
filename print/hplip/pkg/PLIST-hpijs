@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.42 2015/07/16 04:55:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.43 2015/09/16 06:25:39 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -391,7 +391,10 @@ share/foomatic/db/source/PPD/HP/hp-envy_100_d410_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_110_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_120_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_4500_series-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-envy_4510_series-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-envy_4520_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_5530_series-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-envy_5540_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_5640_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_5660_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_7640_series-hpijs.ppd.gz
@@ -763,6 +766,7 @@ share/foomatic/db/source/PPD/HP/hp-officejet_4500_k710-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4610_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4620_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4630_series-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-officejet_4650_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_5100_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_5105-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_5110-hpijs.ppd.gz

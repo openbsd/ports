@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.132 2015/08/21 14:50:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.133 2015/09/16 06:25:39 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
+
 SHARED_ONLY=		Yes
 
 COMMENT-main=		HP Linux Imaging and Printing
@@ -10,7 +11,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.15.7
+V=			3.15.9
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
