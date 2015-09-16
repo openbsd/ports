@@ -1,0 +1,19 @@
+$OpenBSD: patch-hw_char_virtio-serial-bus_c,v 1.1 2015/09/16 07:08:41 ajacoutot Exp $
+
+virtio-serial: fix ANY_LAYOUT
+
+Don't assume a specific layout for control messages.
+Required by virtio 1.
+
+--- hw/char/virtio-serial-bus.c.orig	Tue Sep 15 01:03:13 2015
++++ hw/char/virtio-serial-bus.c	Tue Sep 15 01:04:01 2015
+@@ -194,7 +194,8 @@ static size_t send_control_msg(VirtIOSerial *vser, voi
+         return 0;
+     }
+ 
+-    memcpy(elem.in_sg[0].iov_base, buf, len);
++    /* TODO: detect a buffer that's too short, set NEEDS_RESET */
++    iov_from_buf(elem.in_sg, elem.in_num, 0, buf, len);
+ 
+     virtqueue_push(vq, &elem, len);
+     virtio_notify(VIRTIO_DEVICE(vser), vq);
