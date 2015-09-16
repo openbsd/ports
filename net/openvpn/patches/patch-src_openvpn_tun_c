@@ -1,41 +1,160 @@
-$OpenBSD: patch-src_openvpn_tun_c,v 1.4 2015/06/25 08:46:49 sthen Exp $
---- src/openvpn/tun.c.orig	Mon Jun  8 07:16:35 2015
-+++ src/openvpn/tun.c	Thu Jun 25 09:38:54 2015
-@@ -944,7 +944,19 @@ do_ifconfig (struct tuntap *tt,
- 			  );
- 	}
-       else
+$OpenBSD: patch-src_openvpn_tun_c,v 1.5 2015/09/16 08:45:16 sthen Exp $
+--- src/openvpn/tun.c.orig	Fri Jul 17 06:43:38 2015
++++ src/openvpn/tun.c	Mon Sep 14 06:07:23 2015
+@@ -912,8 +912,17 @@ do_ifconfig (struct tuntap *tt,
+ 
+       tt->did_ifconfig = true;
+ 
+-#elif defined(TARGET_OPENBSD)
++#elif defined(TARGET_NETBSD) || defined(TARGET_OPENBSD)
+ 
++/*
++ * OpenBSD can do IPv6. NetBSD's IPv6 support over tun can be detected by
++ * availability of the TUNSIFHEAD ioctl() - see next TARGET_NETBSD block
++ * for more details.
++ */
++#if defined(TUNSIFHEAD)||defined(TARGET_OPENBSD)
++# define MULTI_AF
++#endif
++
+       /*
+        * On OpenBSD, tun interfaces are persistent if created with
+        * "ifconfig tunX create", and auto-destroyed if created by
+@@ -923,67 +932,11 @@ do_ifconfig (struct tuntap *tt,
+       /* example: ifconfig tun2 10.2.0.2 10.2.0.1 mtu 1450 netmask 255.255.255.255 up */
+       if (tun)
+ 	argv_printf (&argv,
++#if defined(TARGET_OPENBSD)
+ 			  "%s %s %s %s mtu %d netmask 255.255.255.255 up -link0",
+-			  IFCONFIG_PATH,
+-			  actual,
+-			  ifconfig_local,
+-			  ifconfig_remote_netmask,
+-			  tun_mtu
+-			  );
+-      else
+-	if ( tt->topology == TOP_SUBNET )
+-	{
+-	    argv_printf (&argv,
+-			  "%s %s %s %s mtu %d netmask %s up -link0",
+-			  IFCONFIG_PATH,
+-			  actual,
+-			  ifconfig_local,
+-			  ifconfig_local,
+-			  tun_mtu,
+-			  ifconfig_remote_netmask
+-			  );
+-	}
+-      else
 -	argv_printf (&argv,
-+      {
-+        if (tt->topology == TOP_SUBNET)
-+          argv_printf (&argv,
-+                              "%s %s %s %s netmask %s mtu %d up",
-+                              IFCONFIG_PATH,
-+                              actual,
-+                              ifconfig_local,
-+                              ifconfig_local,
-+                              ifconfig_remote_netmask,
-+                              tun_mtu
-+                              );
-+        else
-+	  argv_printf (&argv,
- 			  "%s %s %s netmask %s mtu %d broadcast %s link0",
+-			  "%s %s %s netmask %s mtu %d broadcast %s link0",
+-			  IFCONFIG_PATH,
+-			  actual,
+-			  ifconfig_local,
+-			  ifconfig_remote_netmask,
+-			  tun_mtu,
+-			  ifconfig_broadcast
+-			  );
+-      argv_msg (M_INFO, &argv);
+-      openvpn_execve_check (&argv, es, S_FATAL, "OpenBSD ifconfig failed");
+-      if ( do_ipv6 )
+-	{
+-	  argv_printf (&argv,
+-			  "%s %s inet6 %s/%d",
+-			  IFCONFIG_PATH,
+-			  actual,
+-			  ifconfig_ipv6_local,
+-			  tt->netbits_ipv6
+-			  );
+-	  argv_msg (M_INFO, &argv);
+-	  openvpn_execve_check (&argv, es, S_FATAL, "OpenBSD ifconfig inet6 failed");
+-
+-	  /* and, hooray, we explicitely need to add a route... */
+-	  add_route_connected_v6_net(tt, es);
+-	}
+-      tt->did_ifconfig = true;
+-
+-#elif defined(TARGET_NETBSD)
+-
+-/* whether or not NetBSD can do IPv6 can be seen by the availability of
+- * the TUNSIFHEAD ioctl() - see next TARGET_NETBSD block for more details
+- */
+-#ifdef TUNSIFHEAD
+-# define NETBSD_MULTI_AF
+-#endif
+-
+-      if (tun)
+-	argv_printf (&argv,
++#else
+ 			  "%s %s %s %s mtu %d netmask 255.255.255.255 up",
++#endif
  			  IFCONFIG_PATH,
  			  actual,
-@@ -953,6 +965,7 @@ do_ifconfig (struct tuntap *tt,
- 			  tun_mtu,
+ 			  ifconfig_local,
+@@ -994,7 +947,11 @@ do_ifconfig (struct tuntap *tt,
+ 	if ( tt->topology == TOP_SUBNET )
+ 	{
+ 	    argv_printf (&argv,
++#if defined(TARGET_OPENBSD)
++			  "%s %s %s %s mtu %d netmask %s up link0",
++#else
+ 			  "%s %s %s %s mtu %d netmask %s up",
++#endif
+ 			  IFCONFIG_PATH,
+ 			  actual,
+ 			  ifconfig_local,
+@@ -1005,12 +962,14 @@ do_ifconfig (struct tuntap *tt,
+ 	}
+       else
+       /*
+-       * NetBSD has distinct tun and tap devices
+-       * so we don't need the "link0" extra parameter to specify we want to do 
+-       * tunneling at the ethernet level
++       * NetBSD and OpenBSD 5.9+ have distinct tun and tap devices
+        */
+ 		argv_printf (&argv,
++#if defined(TARGET_OPENBSD)
++			  "%s %s %s netmask %s mtu %d broadcast %s link0",
++#else
+ 			  "%s %s %s netmask %s mtu %d broadcast %s",
++#endif
+ 			  IFCONFIG_PATH,
+ 			  actual,
+ 			  ifconfig_local,
+@@ -1019,11 +978,11 @@ do_ifconfig (struct tuntap *tt,
  			  ifconfig_broadcast
  			  );
-+      }
        argv_msg (M_INFO, &argv);
-       openvpn_execve_check (&argv, es, S_FATAL, "OpenBSD ifconfig failed");
+-      openvpn_execve_check (&argv, es, S_FATAL, "NetBSD ifconfig failed");
++      openvpn_execve_check (&argv, es, S_FATAL, "OpenBSD/NetBSD ifconfig failed");
+ 
        if ( do_ipv6 )
-@@ -971,6 +984,18 @@ do_ifconfig (struct tuntap *tt,
+ 	{
+-#ifdef NETBSD_MULTI_AF
++#if defined(MULTI_AF)
+ 	  argv_printf (&argv,
+ 			  "%s %s inet6 %s/%d",
+ 			  IFCONFIG_PATH,
+@@ -1032,17 +991,30 @@ do_ifconfig (struct tuntap *tt,
+ 			  tt->netbits_ipv6
+ 			  );
+ 	  argv_msg (M_INFO, &argv);
+-	  openvpn_execve_check (&argv, es, S_FATAL, "NetBSD ifconfig inet6 failed");
++	  openvpn_execve_check (&argv, es, S_FATAL, "OpenBSD/NetBSD ifconfig inet6 failed");
+ 
+ 	  /* and, hooray, we explicitely need to add a route... */
  	  add_route_connected_v6_net(tt, es);
+-#else
++#else /* MULTI_AF */
+ 	  msg( M_INFO, "no IPv6 support for tun interfaces on NetBSD before 4.0 (if your system is newer, recompile openvpn)" );
+ 	  tt->ipv6 = false;
+-#endif
++#endif /* MULTI_AF */
  	}
        tt->did_ifconfig = true;
-+
-+      /* Add a network route for the local tun interface */
+ 
++#if defined(TARGET_OPENBSD)
++      /* On OpenBSD, add a network route for the local tun interface */
 +      if (!tun && tt->topology == TOP_SUBNET)
 +        {
 +          struct route_ipv4 r;
@@ -46,6 +165,7 @@ $OpenBSD: patch-src_openvpn_tun_c,v 1.4 2015/06/25 08:46:49 sthen Exp $
 +          r.gateway = tt->local;
 +          add_route (&r, tt, 0, NULL, es);
 +        }
- 
- #elif defined(TARGET_NETBSD)
- 
++#endif
+ #elif defined(TARGET_DARWIN)
+       /*
+        * Darwin (i.e. Mac OS X) seems to exhibit similar behaviour to OpenBSD...
