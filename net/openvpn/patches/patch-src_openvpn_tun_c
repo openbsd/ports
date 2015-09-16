@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_openvpn_tun_c,v 1.5 2015/09/16 08:45:16 sthen Exp $
+$OpenBSD: patch-src_openvpn_tun_c,v 1.6 2015/09/16 09:07:30 sthen Exp $
 --- src/openvpn/tun.c.orig	Fri Jul 17 06:43:38 2015
-+++ src/openvpn/tun.c	Mon Sep 14 06:07:23 2015
++++ src/openvpn/tun.c	Wed Sep 16 10:04:54 2015
 @@ -912,8 +912,17 @@ do_ifconfig (struct tuntap *tt,
  
        tt->did_ifconfig = true;
@@ -20,23 +20,24 @@ $OpenBSD: patch-src_openvpn_tun_c,v 1.5 2015/09/16 08:45:16 sthen Exp $
        /*
         * On OpenBSD, tun interfaces are persistent if created with
         * "ifconfig tunX create", and auto-destroyed if created by
-@@ -923,67 +932,11 @@ do_ifconfig (struct tuntap *tt,
+@@ -923,7 +932,11 @@ do_ifconfig (struct tuntap *tt,
        /* example: ifconfig tun2 10.2.0.2 10.2.0.1 mtu 1450 netmask 255.255.255.255 up */
        if (tun)
  	argv_printf (&argv,
 +#if defined(TARGET_OPENBSD)
  			  "%s %s %s %s mtu %d netmask 255.255.255.255 up -link0",
--			  IFCONFIG_PATH,
--			  actual,
--			  ifconfig_local,
--			  ifconfig_remote_netmask,
--			  tun_mtu
--			  );
--      else
--	if ( tt->topology == TOP_SUBNET )
--	{
--	    argv_printf (&argv,
--			  "%s %s %s %s mtu %d netmask %s up -link0",
++#else
++			  "%s %s %s %s mtu %d netmask 255.255.255.255 up",
++#endif
+ 			  IFCONFIG_PATH,
+ 			  actual,
+ 			  ifconfig_local,
+@@ -934,83 +947,29 @@ do_ifconfig (struct tuntap *tt,
+ 	if ( tt->topology == TOP_SUBNET )
+ 	{
+ 	    argv_printf (&argv,
++#if defined(TARGET_OPENBSD)
+ 			  "%s %s %s %s mtu %d netmask %s up -link0",
 -			  IFCONFIG_PATH,
 -			  actual,
 -			  ifconfig_local,
@@ -81,29 +82,31 @@ $OpenBSD: patch-src_openvpn_tun_c,v 1.5 2015/09/16 08:45:16 sthen Exp $
 - */
 -#ifdef TUNSIFHEAD
 -# define NETBSD_MULTI_AF
--#endif
++#else
++			  "%s %s %s %s mtu %d netmask %s up",
+ #endif
 -
 -      if (tun)
 -	argv_printf (&argv,
-+#else
- 			  "%s %s %s %s mtu %d netmask 255.255.255.255 up",
-+#endif
+-			  "%s %s %s %s mtu %d netmask 255.255.255.255 up",
  			  IFCONFIG_PATH,
  			  actual,
  			  ifconfig_local,
-@@ -994,7 +947,11 @@ do_ifconfig (struct tuntap *tt,
- 	if ( tt->topology == TOP_SUBNET )
- 	{
- 	    argv_printf (&argv,
-+#if defined(TARGET_OPENBSD)
-+			  "%s %s %s %s mtu %d netmask %s up link0",
-+#else
- 			  "%s %s %s %s mtu %d netmask %s up",
-+#endif
- 			  IFCONFIG_PATH,
- 			  actual,
+-			  ifconfig_remote_netmask,
+-			  tun_mtu
+-			  );
+-      else
+-	if ( tt->topology == TOP_SUBNET )
+-	{
+-	    argv_printf (&argv,
+-			  "%s %s %s %s mtu %d netmask %s up",
+-			  IFCONFIG_PATH,
+-			  actual,
  			  ifconfig_local,
-@@ -1005,12 +962,14 @@ do_ifconfig (struct tuntap *tt,
+-			  ifconfig_local,
+ 			  tun_mtu,
+ 			  ifconfig_remote_netmask
+ 			  );
  	}
        else
        /*
