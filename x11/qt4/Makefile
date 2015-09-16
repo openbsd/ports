@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2015/06/03 07:28:01 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.128 2015/09/16 07:13:02 dcoppa Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -24,6 +24,7 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
+REVISION-main =		0
 
 # XXX qmake include parser is bogus
 DPB_PROPERTIES =	parallel	nojunk
@@ -220,8 +221,8 @@ DOCS =	README
 
 NO_TEST =	Yes
 
-PROGRAMS4 =	assistant designer findtr linguist lrelease lupdate moc qmake \
-		qtconfig uic uic3
+PROGRAMS4 =	assistant designer findtr lconvert linguist \
+		lrelease lupdate moc qmake qtconfig uic uic3
 PROGRAMS +=	pixeltool qdbus qt3to4 qtdemo rcc syncqt
 
 

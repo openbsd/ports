@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.34 2015/06/03 07:28:01 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.35 2015/09/16 07:13:02 dcoppa Exp $
 @pkgpath x11/qt4
 @pkgpath x11/qt4,-phonon
 @pkgpath x11/qt4,-sqlite
@@ -6,6 +6,7 @@
 bin/assistant4
 bin/designer4
 bin/findtr4
+bin/lconvert4
 bin/linguist4
 bin/lrelease4
 bin/lupdate4
