@@ -1,0 +1,27 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2015/09/16 08:46:43 sthen Exp $
+--- Makefile.orig	Sat Aug 29 21:28:46 2015
++++ Makefile	Sat Aug 29 21:28:48 2015
+@@ -9,10 +9,10 @@ TESTS=hiredis-test
+ LIBNAME=libhiredis
+ PKGCONFNAME=hiredis.pc
+ 
+-HIREDIS_MAJOR=$(shell grep HIREDIS_MAJOR hiredis.h | awk '{print $$3}')
+-HIREDIS_MINOR=$(shell grep HIREDIS_MINOR hiredis.h | awk '{print $$3}')
+-HIREDIS_PATCH=$(shell grep HIREDIS_PATCH hiredis.h | awk '{print $$3}')
+-HIREDIS_SONAME=$(shell grep HIREDIS_SONAME hiredis.h | awk '{print $$3}')
++_HIREDIS_MAJOR=$(shell grep HIREDIS_MAJOR hiredis.h | awk '{print $$3}')
++_HIREDIS_MINOR=$(shell grep HIREDIS_MINOR hiredis.h | awk '{print $$3}')
++_HIREDIS_PATCH=$(shell grep HIREDIS_PATCH hiredis.h | awk '{print $$3}')
++_HIREDIS_SONAME=$(shell grep HIREDIS_SONAME hiredis.h | awk '{print $$3}')
+ 
+ # Installation related variables and target
+ PREFIX?=/usr/local
+@@ -176,7 +176,7 @@ $(PKGCONFNAME): hiredis.h
+ 	@echo >> $@
+ 	@echo Name: hiredis >> $@
+ 	@echo Description: Minimalistic C client library for Redis. >> $@
+-	@echo Version: $(HIREDIS_MAJOR).$(HIREDIS_MINOR).$(HIREDIS_PATCH) >> $@
++	@echo Version: $(_HIREDIS_MAJOR).$(_HIREDIS_MINOR).$(HIREDIS_PATCH) >> $@
+ 	@echo Libs: -L\$${libdir} -lhiredis >> $@
+ 	@echo Cflags: -I\$${includedir} -D_FILE_OFFSET_BITS=64 >> $@
+ 
