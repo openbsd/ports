@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.6 2015/07/19 21:22:49 pascal Exp $
+$OpenBSD: patch-gcc_config_gcc,v 1.7 2015/09/16 10:59:25 pascal Exp $
 --- gcc/config.gcc.orig	Thu May 21 22:50:59 2015
-+++ gcc/config.gcc	Sat Jun 27 11:26:33 2015
++++ gcc/config.gcc	Tue Aug 25 21:42:44 2015
 @@ -771,6 +771,14 @@ case ${target} in
        default_use_cxa_atexit=yes
        ;;
@@ -92,7 +92,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.6 2015/07/19 21:22:49 pascal Exp $
 -#	;;
 +powerpc-*-openbsd*)
 +	tm_defines="${tm_defines} PIE_DEFAULT=2"
-+	tm_file="${tm_file} dbxelf.h elfos.h openbsd.h openbsd-libpthread.h freebsd-spec.h rs6000/sysv4.h rs6000/openbsd.h"
++	tm_file="rs6000/secureplt.h ${tm_file} dbxelf.h elfos.h openbsd.h openbsd-libpthread.h freebsd-spec.h rs6000/sysv4.h rs6000/openbsd.h"
 +	tmake_file="${tmake_file} rs6000/t-openbsd"
 +	extra_options="${extra_options} rs6000/sysv4.opt openbsd.opt"
 +	;;
