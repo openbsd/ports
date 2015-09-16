@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/09/16 11:32:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/09/16 12:10:34 sthen Exp $
 
 COMMENT =	extremely fast password cracker, with community patches
 BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
@@ -75,7 +75,7 @@ BINS += mkvcalcproba raw2dyna tgtsnarf uaf2john vncpcap2john wpapcap2john
 
 do-configure:
 	perl -pi -e 's,\$$JOHN/john.conf,${SYSCONFDIR}/john.conf,' ${WRKSRC}/params.h
-	rm ${WRKSRC}/KRB4_*_plug.c	# no DES support in LibreSSL
+	rm ${WRKSRC}/KRB4_*_plug.c	# no old DES API support in LibreSSL
 	rm ${WRKSRC}/rawSHA0_fmt_plug.c # no SHA-0 support in LibreSSL
 
 do-install:
