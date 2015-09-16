@@ -1,12 +1,13 @@
-$OpenBSD: patch-qca-ossl_cpp,v 1.5 2015/07/18 22:52:43 jca Exp $
+$OpenBSD: patch-qca-ossl_cpp,v 1.6 2015/09/16 10:47:30 sthen Exp $
 
-- allow building against OpenSSL without MD2 or SSLv2/3 support
+- allow building against OpenSSL without MD2 or SSLv2/3 support and
+  LibreSSL without SHA0 support
 - restrict visible ciphers not to TLSv1.0 but to TLSv1+; note that this
   relies on the fact that SSLv2 and SSLv3 are disabled by default in
   LibreSSL
 
 --- qca-ossl.cpp.orig	Mon Dec 10 23:34:57 2007
-+++ qca-ossl.cpp	Sat Jul 18 16:51:22 2015
++++ qca-ossl.cpp	Wed Sep 16 04:43:59 2015
 @@ -1771,8 +1771,10 @@ class RSAKey : public RSAContext (public)
  			md = EVP_sha1();
  		else if(alg == EMSA3_MD5)
@@ -114,8 +115,14 @@ $OpenBSD: patch-qca-ossl_cpp,v 1.5 2015/07/18 22:52:43 jca Exp $
  		list += "pbkdf1(sha1)";
  		list += "pbkdf2(sha1)";
  		list += "pkey";
-@@ -6788,8 +6806,10 @@ class opensslProvider : public Provider (public)
+@@ -6784,12 +6802,16 @@ class opensslProvider : public Provider (public)
+ 			return new opensslInfoContext(this);
+ 		else if ( type == "sha1" )
+ 			return new opensslHashContext( EVP_sha1(), this, type);
++#ifndef OPENSSL_NO_SHA0
+ 		else if ( type == "sha0" )
  			return new opensslHashContext( EVP_sha(), this, type);
++#endif
  		else if ( type == "ripemd160" )
  			return new opensslHashContext( EVP_ripemd160(), this, type);
 +#ifdef MD2_DIGEST_LENGTH
@@ -125,7 +132,7 @@ $OpenBSD: patch-qca-ossl_cpp,v 1.5 2015/07/18 22:52:43 jca Exp $
  		else if ( type == "md4" )
  			return new opensslHashContext( EVP_md4(), this, type);
  		else if ( type == "md5" )
-@@ -6816,8 +6836,10 @@ class opensslProvider : public Provider (public)
+@@ -6816,8 +6838,10 @@ class opensslProvider : public Provider (public)
  #endif
  		else if ( type == "pbkdf1(sha1)" )
  			return new opensslPbkdf1Context( EVP_sha1(), this, type );
@@ -136,7 +143,7 @@ $OpenBSD: patch-qca-ossl_cpp,v 1.5 2015/07/18 22:52:43 jca Exp $
  		else if ( type == "pbkdf2(sha1)" )
  			return new opensslPbkdf2Context( this, type );
  		else if ( type == "hmac(md5)" )
-@@ -6934,7 +6956,7 @@ class opensslProvider : public Provider (public)
+@@ -6934,7 +6958,7 @@ class opensslProvider : public Provider (public)
  			return new CMSContext( this );
  		else if ( type == "ca" )
  			return new MyCAContext( this );
