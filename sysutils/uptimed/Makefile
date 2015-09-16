@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/22 13:55:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/16 17:21:55 sthen Exp $
 
 COMMENT =	keeps a list of uptime records
 DISTNAME =	uptimed-0.3.17
 CATEGORIES =	sysutils
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	uptimed                   0.0 # 0.0
 
-HOMEPAGE =	http://podgorny.cz/moin/Uptimed
+HOMEPAGE =	https://github.com/rpodgorny/uptimed/
 
 MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
