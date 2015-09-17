@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2015/09/11 15:20:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2015/09/17 12:35:14 sthen Exp $
 
 COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
-DISTNAME=	lldpd-0.7.16
-REVISION=	1
+DISTNAME=	lldpd-0.7.17
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		LLDP-MIB-200505060000Z.txt:0
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -37,6 +36,11 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-privsep-chroot=/var/run/lldpd \
 			--without-json \
 			--without-xml
+# OpenBSD already enables PIE by default where it works; don't force
+# on remaining arch. But do keep -fstack-protector-all which the default
+# --with-hardening also adds.
+CONFIGURE_ARGS+=	--without-hardening
+CFLAGS+=		-fstack-protector-all
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
 FAKE_FLAGS=		sysconfdir="${PREFIX}/share/examples/lldpd"
