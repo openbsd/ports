@@ -1,7 +1,7 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.6 2015/08/12 15:25:04 sthen Exp $
---- includes/defaults.inc.php.orig	Fri Aug  7 22:09:07 2015
-+++ includes/defaults.inc.php	Fri Aug  7 22:09:17 2015
-@@ -40,35 +40,35 @@ $config['project_name'] = 'LibreNMS';
+$OpenBSD: patch-includes_defaults_inc_php,v 1.7 2015/09/17 12:17:45 sthen Exp $
+--- includes/defaults.inc.php.orig	Thu Sep 17 12:35:30 2015
++++ includes/defaults.inc.php	Thu Sep 17 12:46:27 2015
+@@ -40,7 +40,7 @@ $config['project_name'] = 'LibreNMS';
  $config['project_id']   = strtolower($config['project_name']);
  
  $config['temp_dir']    = '/tmp';
@@ -9,7 +9,8 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.6 2015/08/12 15:25:04 sthen Exp $
 +$config['install_dir'] = '/var/www/librenms';
  $config['log_dir']     = $config['install_dir'].'/logs';
  
- // What is my own hostname (used to identify this host in its own database)
+ // MySQL extension to use
+@@ -50,24 +50,24 @@ $config['db']['extension']       = 'mysql';//mysql and
  $config['own_hostname'] = 'localhost';
  
  // Location of executables
@@ -20,12 +21,10 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.6 2015/08/12 15:25:04 sthen Exp $
  $config['fping_options']['retries'] = 3;
  $config['fping_options']['timeout'] = 500;
  $config['fping_options']['count']   = 3;
- $config['fping_options']['millisec'] = 20;
--$config['fping6']                    = '/usr/bin/fping6';
+ $config['fping_options']['millisec'] = 200;
 -$config['snmpwalk']                  = '/usr/bin/snmpwalk';
 -$config['snmpget']                   = '/usr/bin/snmpget';
 -$config['snmpbulkwalk']              = '/usr/bin/snmpbulkwalk';
-+$config['fping6']                    = '/usr/local/sbin/fping6';
 +$config['snmpwalk']                  = '/usr/local/bin/snmpwalk';
 +$config['snmpget']                   = '/usr/local/bin/snmpget';
 +$config['snmpbulkwalk']              = '/usr/local/bin/snmpbulkwalk';
@@ -37,10 +36,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.6 2015/08/12 15:25:04 sthen Exp $
 -$config['ipmitool']       = '/usr/bin/ipmitool';
 -$config['virsh']          = '/usr/bin/virsh';
 -$config['dot']            = '/usr/bin/dot';
--$config['unflatten']      = '/usr/bin/unflatten';
--$config['neato']          = '/usr/bin/neato';
 -$config['sfdp']           = '/usr/bin/sfdp';
--$config['svn']            = '/usr/bin/svn';
 +$config['ping']           = '/sbin/ping';
 +$config['mtr']            = '/usr/local/sbin/mtr';
 +$config['nmap']           = '/usr/local/bin/nmap';
@@ -48,14 +44,11 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.6 2015/08/12 15:25:04 sthen Exp $
 +$config['ipmitool']       = '/usr/local/bin/ipmitool';
 +$config['virsh']          = '/usr/local/bin/virsh';
 +$config['dot']            = '/usr/local/bin/dot';
-+$config['unflatten']      = '/usr/local/bin/unflatten';
-+$config['neato']          = '/usr/local/bin/neato';
 +$config['sfdp']           = '/usr/local/bin/sfdp';
-+$config['svn']            = '/usr/local/bin/svn';
  
  // Memcached - Keep immediate statistics
  $config['memcached']['enable'] = false;
-@@ -428,17 +428,17 @@ $config['billing']['bill_autoadd'] = 0;
+@@ -411,17 +411,17 @@ $config['billing']['bill_autoadd'] = 0;
  $config['billing']['base'] = 1000;
  // Set the base to divider bytes to kB, MB, GB ,... (1000|1024)
  // External Integration
@@ -77,7 +70,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.6 2015/08/12 15:25:04 sthen Exp $
  // $config['nfsen_suffix']   = "_yourdomain_com";
  // Location Mapping
  // Use this feature to map ugly locations to pretty locations
-@@ -749,7 +749,7 @@ $config['api_demo'] = 0;
+@@ -730,7 +730,7 @@ $config['api_demo'] = 0;
  // Set this to 1 if you want to disable some untrusting features for the API
  // Distributed Poller-Settings
  $config['distributed_poller']                = false;

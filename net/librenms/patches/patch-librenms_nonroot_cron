@@ -1,13 +1,13 @@
-$OpenBSD: patch-librenms_nonroot_cron,v 1.1 2015/07/16 02:50:33 sthen Exp $
---- librenms.nonroot.cron.orig	Thu Jul 16 01:22:26 2015
-+++ librenms.nonroot.cron	Thu Jul 16 01:22:54 2015
+$OpenBSD: patch-librenms_nonroot_cron,v 1.2 2015/09/17 12:17:45 sthen Exp $
+--- librenms.nonroot.cron.orig	Thu Sep 17 12:35:31 2015
++++ librenms.nonroot.cron	Thu Sep 17 12:35:34 2015
 @@ -1,7 +1,7 @@
  # Using this cron file requires an additional user on your system, please see install docs.
  
 -33  */6   * * *   librenms    /var/www/librenms/discovery.php -h all >> /dev/null 2>&1
 -*/5  *    * * *   librenms    /var/www/librenms/discovery.php -h new >> /dev/null 2>&1
 -*/5  *    * * *   librenms    /var/www/librenms/cronic /var/www/librenms/poller-wrapper.py 16
--15   0    * * *   librenms    sh /var/www/librenms/daily.sh >> /dev/null 2>&1
+-15   0    * * *   librenms    /var/www/librenms/daily.sh >> /dev/null 2>&1
 -*    *    * * *   librenms    /var/www/librenms/alerts.php >> /dev/null 2>&1
 +33  */6   * * *   _librenms   /var/www/librenms/discovery.php -h all >> /dev/null 2>&1
 +*/5  *    * * *   _librenms   /var/www/librenms/discovery.php -h new >> /dev/null 2>&1

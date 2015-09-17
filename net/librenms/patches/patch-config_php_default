@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_php_default,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
---- config.php.default.orig	Wed Apr 22 09:32:44 2015
-+++ config.php.default	Thu Apr 23 13:41:45 2015
-@@ -21,8 +21,9 @@ $config['memcached']['port']    = 11211;
+$OpenBSD: patch-config_php_default,v 1.2 2015/09/17 12:17:45 sthen Exp $
+--- config.php.default.orig	Thu Sep 17 12:35:30 2015
++++ config.php.default	Thu Sep 17 12:35:34 2015
+@@ -22,8 +22,9 @@ $config['memcached']['port']    = 11211;
  #$config['base_url']        = "http://librenms.company.com";
  
  ### Enable this to use rrdcached. Be sure rrd_dir is within the rrdcached dir
@@ -13,7 +13,7 @@ $OpenBSD: patch-config_php_default,v 1.1.1.1 2015/04/23 16:44:34 sthen Exp $
  
  ### Default community
  $config['snmp']['community'] = array("public");
-@@ -39,8 +40,8 @@ $config['auth_mechanism'] = "mysql"; # default, other 
+@@ -40,8 +41,8 @@ $config['auth_mechanism'] = "mysql"; # default, other 
  # following is necessary for poller-wrapper
  # poller-wrapper is released public domain
  $config['poller-wrapper']['alerter'] = FALSE;
