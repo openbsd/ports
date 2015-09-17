@@ -1,38 +1,48 @@
-$OpenBSD: patch-doc_cpio_1,v 1.3 2015/03/31 15:36:52 naddy Exp $
+$OpenBSD: patch-doc_cpio_1,v 1.4 2015/09/17 20:16:49 naddy Exp $
 
 CVE-2015-1197: cpio directory traversal
 
---- doc/cpio.1.orig	Sat Feb 14 19:15:50 2009
-+++ doc/cpio.1	Sun Mar 29 21:11:10 2015
-@@ -1,8 +1,8 @@
- .TH CPIO 1L \" -*- nroff -*-
+--- doc/cpio.1.orig	Sat Sep 12 12:57:30 2015
++++ doc/cpio.1	Wed Sep 16 23:20:28 2015
+@@ -15,9 +15,9 @@
+ .\" along with GNU cpio.  If not, see <http://www.gnu.org/licenses/>.
+ .TH CPIO 1 "December 1, 2014" "CPIO" "GNU CPIO"
  .SH NAME
 -cpio \- copy files to and from archives
 +gcpio \- copy files to and from archives
  .SH SYNOPSIS
 -.B cpio
 +.B gcpio
- {\-o|\-\-create} [\-0acvABLV] [\-C bytes] [\-H format] [\-M message]
- [\-O [[user@]host:]archive] [\-F [[user@]host:]archive]
- [\-\-file=[[user@]host:]archive] [\-\-format=format] [\-\-message=message]
-@@ -11,7 +11,7 @@ cpio \- copy files to and from archives
- [\-\-force\-local] [\-\-rsh-command=command] [\-\-help] [\-\-version]
- < name-list [> archive]
+ {\fB\-o\fR|\fB\-\-create\fR} [\fB\-0acvABLV\fR] [\fB\-C\fR \fIBYTES\fR]
+ [\fB\-H\fR \fIFORMAT\fR] [\fB\-M\fR \fIMESSAGE\fR]
+ [\fB\-O\fR [[\fIUSER\fB@\fR]\fIHOST\fB:\fR]\fIARCHIVE\fR]
+@@ -31,7 +31,7 @@ cpio \- copy files to and from archives
+ [\fB\-\-force\-local\fR] [\fB\-\-rsh\-command=\fICOMMAND\fR]
+ \fB<\fR \fIname-list\fR [\fB>\fR \fIarchive\fR]
  
 -.B cpio
 +.B gcpio
- {\-i|\-\-extract} [\-bcdfmnrtsuvBSV] [\-C bytes] [\-E file] [\-H format]
- [\-M message] [\-R [user][:.][group]] [\-I [[user@]host:]archive]
- [\-F [[user@]host:]archive] [\-\-file=[[user@]host:]archive]
-@@ -22,9 +22,10 @@ cpio \- copy files to and from archives
- [\-\-owner=[user][:.][group]] [\-\-no-preserve-owner] [\-\-message=message]
- [\-\-force\-local] [\-\-no\-absolute\-filenames] [\-\-sparse]
- [\-\-only\-verify\-crc] [\-\-to\-stdout] [\-\-quiet] [\-\-rsh-command=command]
-+[\-\-extract\-over\-symlinks]
- [\-\-help] [\-\-version] [pattern...] [< archive]
+ {\fB\-i\fR|\fB\-\-extract\fR} [\fB\-bcdfmnrtsuvBSV\fR] [\fB\-C\fR \fIBYTES\fR]
+ [\fB\-E\fR \fIFILE\fR] [\fB\-H\fR \fIFORMAT\fR]
+ [\fB\-M\fR \fIMESSAGE\fR] [\fB\-R\fR [\fIUSER\fR][\fB:.\fR][\fIGROUP\fR]]
+@@ -50,9 +50,10 @@ cpio \- copy files to and from archives
+ [\fB\-\-force\-local\fR] [\fB\-\-no\-absolute\-filenames\fR] [\fB\-\-sparse\fR]
+ [\fB\-\-only\-verify\-crc\fR] [\fB\-\-to\-stdout\fR] [\fB\-\-quiet\fR]
+ [\fB\-\-rsh\-command=\fICOMMAND\fR]
++[\fB\-\-extract\-over\-symlinks\fR]
+ [\fIpattern\fR...] [\fB<\fR \fIarchive\fR]
  
 -.B cpio
 +.B gcpio
- {\-p|\-\-pass-through} [\-0adlmuvLV] [\-R [user][:.][group]]
- [\-\-null] [\-\-reset-access-time] [\-\-make-directories] [\-\-link] [\-\-quiet]
- [\-\-preserve-modification-time] [\-\-unconditional] [\-\-verbose] [\-\-dot]
+ {\fB\-p\fR|\fB\-\-pass\-through\fR} [\fB\-0adlmuvLV\fR]
+ [\fB\-R\fR [\fIUSER\fR][\fB:.\fR][\fIGROUP\fR]]
+ [\fB\-\-null\fR] [\fB\-\-reset\-access\-time\fR]
+@@ -63,7 +64,7 @@ cpio \- copy files to and from archives
+ [\fB\-\-no\-preserve\-owner\fR] [\fB\-\-sparse\fR]
+ \fIdestination-directory\fR \fB<\fR \fIname-list\fR
+ 
+-.B cpio
++.B gcpio
+ {\fB\-?\fR|\fB\-\-help\fR|\fB\-\-usage\fR|\fB\-\-version\fR}
+ .SH NOTE
+ This manpage is a short description of GNU \fBcpio\fR.  For a detailed

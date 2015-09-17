@@ -1,97 +1,10 @@
-$OpenBSD: patch-src_copyin_c,v 1.3 2015/03/31 15:36:52 naddy Exp $
+$OpenBSD: patch-src_copyin_c,v 1.4 2015/09/17 20:16:49 naddy Exp $
 
-CVE-2014-9112: heap overflow in process_copy_in()
 CVE-2015-1197: cpio directory traversal
 
---- src/copyin.c.orig	Mon Feb 15 11:02:23 2010
-+++ src/copyin.c	Sun Mar 29 21:11:10 2015
-@@ -124,10 +124,30 @@ tape_skip_padding (int in_file_des, off_t offset)
-   if (pad != 0)
-     tape_toss_input (in_file_des, pad);
- }
--
- 
-+static char *
-+get_link_name (struct cpio_file_stat *file_hdr, int in_file_des)
-+{
-+  char *link_name;
-+  
-+  if (file_hdr->c_filesize < 0 || file_hdr->c_filesize > SIZE_MAX-1)
-+    {
-+      error (0, 0, _("%s: stored filename length is out of range"),
-+	     file_hdr->c_name);
-+      link_name = NULL;
-+    }
-+  else
-+    {
-+      link_name = xmalloc (file_hdr->c_filesize + 1);
-+      tape_buffered_read (link_name, in_file_des, file_hdr->c_filesize);
-+      link_name[file_hdr->c_filesize] = '\0';
-+      tape_skip_padding (in_file_des, file_hdr->c_filesize);
-+    }
-+  return link_name;
-+}
-+
- static void
--list_file(struct cpio_file_stat* file_hdr, int in_file_des)
-+list_file (struct cpio_file_stat* file_hdr, int in_file_des)
- {
-   if (verbose_flag)
-     {
-@@ -136,21 +156,16 @@ list_file(struct cpio_file_stat* file_hdr, int in_file
- 	{
- 	  if (archive_format != arf_tar && archive_format != arf_ustar)
- 	    {
--	      char *link_name = NULL;	/* Name of hard and symbolic links.  */
--
--	      link_name = (char *) xmalloc ((unsigned int) file_hdr->c_filesize + 1);
--	      link_name[file_hdr->c_filesize] = '\0';
--	      tape_buffered_read (link_name, in_file_des, file_hdr->c_filesize);
--	      long_format (file_hdr, link_name);
--	      free (link_name);
--	      tape_skip_padding (in_file_des, file_hdr->c_filesize);
--	      return;
-+	      char *link_name = get_link_name (file_hdr, in_file_des);
-+	      if (link_name)
-+		{
-+		  long_format (file_hdr, link_name);
-+		  free (link_name);
-+		}
- 	    }
- 	  else
--	    {
--	      long_format (file_hdr, file_hdr->c_tar_linkname);
--	      return;
--	    }
-+	    long_format (file_hdr, file_hdr->c_tar_linkname);
-+	  return;
- 	}
-       else
- #endif
-@@ -640,7 +655,7 @@ copyin_device (struct cpio_file_stat* file_hdr)
- }
- 
- static void
--copyin_link(struct cpio_file_stat *file_hdr, int in_file_des)
-+copyin_link (struct cpio_file_stat *file_hdr, int in_file_des)
- {
-   char *link_name = NULL;	/* Name of hard and symbolic links.  */
-   int res;			/* Result of various function calls.  */
-@@ -650,10 +665,9 @@ copyin_link(struct cpio_file_stat *file_hdr, int in_fi
- 
-   if (archive_format != arf_tar && archive_format != arf_ustar)
-     {
--      link_name = (char *) xmalloc ((unsigned int) file_hdr->c_filesize + 1);
--      link_name[file_hdr->c_filesize] = '\0';
--      tape_buffered_read (link_name, in_file_des, file_hdr->c_filesize);
--      tape_skip_padding (in_file_des, file_hdr->c_filesize);
-+      link_name = get_link_name (file_hdr, in_file_des);
-+      if (!link_name)
-+	return;
-     }
-   else
-     {
-@@ -686,6 +700,51 @@ copyin_link(struct cpio_file_stat *file_hdr, int in_fi
+--- src/copyin.c.orig	Sat Sep 12 12:57:30 2015
++++ src/copyin.c	Wed Sep 16 23:21:15 2015
+@@ -695,6 +695,51 @@ copyin_link (struct cpio_file_stat *file_hdr, int in_f
    free (link_name);
  }
  
@@ -143,27 +56,7 @@ CVE-2015-1197: cpio directory traversal
  static void
  copyin_file (struct cpio_file_stat *file_hdr, int in_file_des)
  {
-@@ -1005,7 +1064,7 @@ read_in_header (struct cpio_file_stat *file_hdr, int i
- 
-   file_hdr->c_tar_linkname = NULL;
- 
--  tape_buffered_read (magic.str, in_des, 6L);
-+  tape_buffered_read (magic.str, in_des, sizeof (magic.str));
-   while (1)
-     {
-       if (append_flag)
-@@ -1050,8 +1109,8 @@ read_in_header (struct cpio_file_stat *file_hdr, int i
- 	  break;
- 	}
-       bytes_skipped++;
--      memmove (magic.str, magic.str + 1, 5);
--      tape_buffered_read (magic.str, in_des, 1L);
-+      memmove (magic.str, magic.str + 1, sizeof (magic.str) - 1);
-+      tape_buffered_read (magic.str + sizeof (magic.str) - 1, in_des, 1L);
-     }
- }
- 
-@@ -1456,6 +1515,23 @@ process_copy_in ()
+@@ -1467,6 +1512,23 @@ process_copy_in ()
        else
  	{
  	  /* Copy the input file into the directory structure.  */
@@ -181,7 +74,7 @@ CVE-2015-1197: cpio directory traversal
 +                  continue;
 +                  */
 +                  /* terminate */
-+	          error (1, 0, _("Can't write over symlinks: %s\n"), file_hdr.c_name);
++	          error (PAXEXIT_FAILURE, 0, _("Can't write over symlinks: %s\n"), file_hdr.c_name);
 +                }
 +            }
  
