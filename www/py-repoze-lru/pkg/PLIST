@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/01 12:21:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/17 08:24:36 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/repoze/
 lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -8,6 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
 lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/repoze/lru/
 lib/python${MODPY_VERSION}/site-packages/repoze/lru/__init__.py
