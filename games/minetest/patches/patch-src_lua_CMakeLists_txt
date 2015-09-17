@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_lua_CMakeLists_txt,v 1.1 2014/11/04 15:41:40 dcoppa Exp $
---- src/lua/CMakeLists.txt.orig	Tue Nov  4 16:40:05 2014
-+++ src/lua/CMakeLists.txt	Tue Nov  4 16:40:33 2014
-@@ -97,17 +97,6 @@ endif(LUA_ANSI)
+$OpenBSD: patch-src_lua_CMakeLists_txt,v 1.2 2015/09/17 22:06:30 landry Exp $
+--- src/lua/CMakeLists.txt.orig	Thu Aug 20 04:02:00 2015
++++ src/lua/CMakeLists.txt	Thu Sep 17 23:21:09 2015
+@@ -62,16 +62,5 @@ endif(LUA_ANSI)
+ # COMMON_CFLAGS has no effect without this line
  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${COMMON_CFLAGS}")
  
- #
--# standard flags to use for each build type.
--#
+-
+-# Standard flags to use for each build type.
 -if(CMAKE_COMPILER_IS_GNUCC)
 -	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pipe -Wall -Wextra -Wshadow -W -pedantic -std=gnu99")
 -	set(CMAKE_C_FLAGS_RELEASE        "${CMAKE_C_FLAGS_RELEASE}     -O2")
@@ -15,7 +15,6 @@ $OpenBSD: patch-src_lua_CMakeLists_txt,v 1.1 2014/11/04 15:41:40 dcoppa Exp $
 -	set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_WITHDEBINFO} -O2 -g")
 -endif(CMAKE_COMPILER_IS_GNUCC)
 -
--#
- # sub-folders
- #
- ADD_SUBDIRECTORY(src build)
+-
+ add_subdirectory(src build)
+ 

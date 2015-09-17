@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.13 2015/09/10 06:57:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/09/17 22:06:30 landry Exp $
 
 COMMENT =		infinite-world block sandbox game
-V =			0.4.12
+V =			0.4.13
 DISTNAME =		minetest-${V}
 CATEGORIES =		games x11
-REVISION =		0
 
 HOMEPAGE =		http://www.minetest.net/
 
 # source LGPLv2.1/ datas CC BY-SA 3.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU ICE Irrlicht SM X11 Xext Xxf86vm bz2 c curl jpeg m ogg openal
-WANTLIB += png pthread sqlite3 stdc++ vorbis vorbisfile z
+WANTLIB += GL GLU ICE Irrlicht SM X11 Xext Xxf86vm bz2 c curl freetype jpeg m ogg openal
+WANTLIB += png pthread spatialindex sqlite3 stdc++ vorbis vorbisfile z
 WANTLIB += luajit-${MODLUA_VERSION}
 
 MASTER_SITES =		https://github.com/minetest/
@@ -31,6 +30,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
 LIB_DEPENDS =		audio/openal \
+			geo/spatialindex \
 			audio/libvorbis \
 			lang/luajit \
 			net/curl \
