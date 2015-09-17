@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_low-level_mime_mailmime_types_helper_c,v 1.1 2015/09/17 20:28:33 jca Exp $
+--- src/low-level/mime/mailmime_types_helper.c.orig	Thu Sep 17 19:02:07 2015
++++ src/low-level/mime/mailmime_types_helper.c	Thu Sep 17 19:02:32 2015
+@@ -518,7 +518,7 @@ char * mailmime_generate_boundary(void)
+   value = random();
+ 
+   gethostname(name, MAX_MESSAGE_ID);
+-  snprintf(id, MAX_MESSAGE_ID, "%lx_%lx_%x", now, value, getpid());
++  snprintf(id, MAX_MESSAGE_ID, "%llx_%lx_%x", (long long)now, value, getpid());
+ 
+   return strdup(id);
+ }

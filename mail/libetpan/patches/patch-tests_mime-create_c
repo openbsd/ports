@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_mime-create_c,v 1.1 2015/09/17 20:28:33 jca Exp $
+--- tests/mime-create.c.orig	Thu Sep 17 19:03:11 2015
++++ tests/mime-create.c	Thu Sep 17 19:03:31 2015
+@@ -272,7 +272,7 @@ static char * generate_boundary(const char * boundary_
+     if (boundary_prefix == NULL)
+         boundary_prefix = "";
+     
+-    snprintf(id, MAX_MESSAGE_ID, "%s%lx_%lx_%x", boundary_prefix, now, value, getpid());
++    snprintf(id, MAX_MESSAGE_ID, "%s%llx_%lx_%x", boundary_prefix, (long long)now, value, getpid());
+     
+     return strdup(id);
+ }

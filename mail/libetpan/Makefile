@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/21 18:24:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2015/09/17 20:28:33 jca Exp $
 
 COMMENT=	mail purpose library
 
-DISTNAME=	libetpan-1.0
-REVISION=	3
+GH_ACCOUNT=	dinhviethoa
+GH_PROJECT=	libetpan
+GH_TAGNAME=	1.6
+DISTNAME=	libetpan-1.6
 CATEGORIES=	mail devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libetpan/}
 
-SHARED_LIBS=	etpan	14.0
+SHARED_LIBS=	etpan	15.0
 
-HOMEPAGE=	http://libetpan.sourceforge.net/
+HOMEPAGE=	http://www.etpan.org/libetpan.html
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,26 +19,28 @@ WANTLIB += crypto curl expat idn m pthread sasl2 ssl stdc++ z
 
 MODULES=	devel/gettext
 
-
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/libtool
 LIB_DEPENDS+=	net/curl \
 		devel/libidn \
 		security/cyrus-sasl2
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --without-gnutls --with-sasl=${LOCALBASE}
+CONFIGURE_ARGS+= --with-curl=auto \
+		--with-sasl="${LOCALBASE}" \
+		--without-gnutls
 CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-NO_TEST=	Yes
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libetpan/html/{API,README}
-	${INSTALL_DATA} ${WRKSRC}/{COPYRIGHT,doc/{DOCUMENTATION,{API,README}.txt}} ${PREFIX}/share/doc/libetpan
-.       for d in API README
-	  ${INSTALL_DATA} ${WRKSRC}/doc/${d}.html ${PREFIX}/share/doc/libetpan/html
-	  cd ${WRKSRC}/doc/${d};\
-	  find * -exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/libetpan/html/${d}/{} \;
-.	endfor
+post-patch:
+	cd ${WRKSRC} && ${SETENV} \
+	    AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
+	    AUTOMAKE_VERSION="${AUTOMAKE_VERSION}" \
+	    NOCONFIGURE=1 \
+	   ./autogen.sh
 
 .include <bsd.port.mk>

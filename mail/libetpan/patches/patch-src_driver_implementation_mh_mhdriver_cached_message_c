@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_driver_implementation_mh_mhdriver_cached_message_c,v 1.1 2015/09/17 20:28:33 jca Exp $
+--- src/driver/implementation/mh/mhdriver_cached_message.c.orig	Fri Oct 31 22:41:02 2014
++++ src/driver/implementation/mh/mhdriver_cached_message.c	Thu Sep 17 20:27:20 2015
+@@ -187,8 +187,8 @@ static int mh_initialize(mailmessage * msg_info)
+   
+   mh_msg_info = data.data;
+ 
+-  snprintf(static_uid, PATH_MAX, "%u-%lu-%lu", msg_info->msg_index,
+-	   mh_msg_info->msg_mtime, (unsigned long) mh_msg_info->msg_size);
++  snprintf(static_uid, PATH_MAX, "%u-%lld-%zu", msg_info->msg_index,
++           (long long)mh_msg_info->msg_mtime, mh_msg_info->msg_size);
+   uid = strdup(static_uid);
+   if (uid == NULL)
+     return MAIL_ERROR_MEMORY;

@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure_ac,v 1.1 2015/09/17 20:28:33 jca Exp $
+
+Fix wrong logic that turns off curl and expat support.
+
+--- configure.ac.orig	Fri Oct 31 22:41:02 2014
++++ configure.ac	Thu Sep 17 19:08:19 2015
+@@ -581,7 +581,7 @@ dnl libcurl
+ libcurl=no
+ AC_ARG_WITH(curl,   [  --with-curl[=DIR]    curl install directory (default=auto)],
+             [], [with_curl=auto])
+-if test "x$with_curl" != "xno"; then
++if test "x$with_curl" = "xno"; then
+   :
+ elif test "x$with_curl" != "xauto"; then
+   OCPPFLAGS="$CPPFLAGS"
+@@ -639,7 +639,7 @@ dnl expat
+ libexpat=no
+ AC_ARG_WITH(expat,   [  --with-expat[=DIR]    expat install directory (default=auto)],
+             [], [with_expat=auto])
+-if test "x$with_expat" != "xno"; then
++if test "x$with_expat" = "xno"; then
+ 	:
+ elif test "x$with_expat" != "xauto"; then
+   OCPPFLAGS="$CPPFLAGS"
