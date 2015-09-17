@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/06/02 10:40:49 nigel Exp $
+# $OpenBSD: Makefile,v 1.13 2015/09/17 08:07:51 benoit Exp $
 
 COMMENT=	simple standalone HTTP server
 
 MODULES=	cpan
-DISTNAME=	HTTP-Server-Simple-0.50
+DISTNAME =	HTTP-Server-Simple-0.51
 CATEGORIES=	www
 
 # perl
