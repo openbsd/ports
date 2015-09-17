@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/07/24 02:08:17 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/09/17 14:31:00 jturner Exp $
 @owner root
 @group wheel
 bin/tsc
@@ -6,6 +6,7 @@ lib/node_modules/typescript/
 lib/node_modules/typescript/.editorconfig
 lib/node_modules/typescript/.gitattributes
 lib/node_modules/typescript/.npmignore
+lib/node_modules/typescript/AUTHORS.md
 lib/node_modules/typescript/CONTRIBUTING.md
 lib/node_modules/typescript/CopyrightNotice.txt
 lib/node_modules/typescript/Jakefile.js
@@ -13,19 +14,21 @@ lib/node_modules/typescript/LICENSE.txt
 lib/node_modules/typescript/README.md
 lib/node_modules/typescript/ThirdPartyNoticeText.txt
 lib/node_modules/typescript/bin/
-lib/node_modules/typescript/bin/lib.core.d.ts
-lib/node_modules/typescript/bin/lib.core.es6.d.ts
-lib/node_modules/typescript/bin/lib.d.ts
-lib/node_modules/typescript/bin/lib.dom.d.ts
-lib/node_modules/typescript/bin/lib.es6.d.ts
-lib/node_modules/typescript/bin/lib.scriptHost.d.ts
-lib/node_modules/typescript/bin/lib.webworker.d.ts
 lib/node_modules/typescript/bin/tsc
-lib/node_modules/typescript/bin/tsc.js
 lib/node_modules/typescript/bin/tsserver
-lib/node_modules/typescript/bin/tsserver.js
-lib/node_modules/typescript/bin/typescript.d.ts
-lib/node_modules/typescript/bin/typescript.js
-lib/node_modules/typescript/bin/typescriptServices.d.ts
-lib/node_modules/typescript/bin/typescriptServices.js
+lib/node_modules/typescript/lib/
+lib/node_modules/typescript/lib/lib.core.d.ts
+lib/node_modules/typescript/lib/lib.core.es6.d.ts
+lib/node_modules/typescript/lib/lib.d.ts
+lib/node_modules/typescript/lib/lib.dom.d.ts
+lib/node_modules/typescript/lib/lib.es6.d.ts
+lib/node_modules/typescript/lib/lib.scriptHost.d.ts
+lib/node_modules/typescript/lib/lib.webworker.d.ts
+lib/node_modules/typescript/lib/tsc.js
+lib/node_modules/typescript/lib/tsserver.js
+lib/node_modules/typescript/lib/typescript.d.ts
+lib/node_modules/typescript/lib/typescript.js
+lib/node_modules/typescript/lib/typescriptServices.d.ts
+lib/node_modules/typescript/lib/typescriptServices.js
 lib/node_modules/typescript/package.json
+lib/node_modules/typescript/tslint.json

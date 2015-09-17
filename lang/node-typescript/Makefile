@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2015/07/24 02:08:17 jturner Exp $
+# $OpenBSD: Makefile,v 1.13 2015/09/17 14:31:00 jturner Exp $
 
 COMMENT =		typed superset of JavaScript
 
-NPM_VERSION =		1.5.3
+NPM_VERSION =		1.6.2
 NPM_NAME =		typescript
 CATEGORIES =		lang
 
