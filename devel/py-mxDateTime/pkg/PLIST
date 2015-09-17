@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/12/03 18:06:25 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/09/17 12:33:00 benoit Exp $
 @pkgpath devel/py-mxDateTime[,python2.4][,python2.5][,python2.6][,python2.7]
 lib/python${MODPY_VERSION}/site-packages/egenix_mx_base-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/mx/
@@ -46,6 +46,9 @@ lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/mxh.h
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/test.py
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/test.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/test.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/test64bit.py
+lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/test64bit.pyc
+lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/test64bit.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/testernesto.py
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/testernesto.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/testernesto.pyo
@@ -145,6 +148,9 @@ lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testcomdates.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testnow.py
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testnow.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testnow.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testnumpy.py
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testnumpy.pyc
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testnumpy.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testpydatetime.py
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testpydatetime.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testpydatetime.pyo
