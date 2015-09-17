@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.native,v 1.1 2015/09/17 17:18:35 jca Exp $
+%%dynlink%%
+lib/ocaml/parmap/parmap.a
+lib/ocaml/parmap/parmap.cmxa

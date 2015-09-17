@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2015/09/17 17:18:35 jca Exp $
+lib/ocaml/stublibs/dllparmap_stubs.so

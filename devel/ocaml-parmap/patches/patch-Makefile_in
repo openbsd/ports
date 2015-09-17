@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2015/09/17 17:18:34 jca Exp $
+
+Fixed in https://github.com/rdicosmo/parmap/commit/58f56f50c3af179c33bb3e55b0b22190e85208a3
+
+--- Makefile.in.orig	Mon Feb  9 11:42:28 2015
++++ Makefile.in	Wed Sep 16 21:19:13 2015
+@@ -46,12 +46,11 @@ CMXSLIBS=
+ ALIBS=
+ 
+ ifeq ("@OCAMLBEST@","opt")
++  ALIBS = $(BYTELIBS:%.cma=%.a)
+   OPTLIBS += $(BYTELIBS:%.cma=%.cmxa)
+   CMXSLIBS += $(BYTELIBS:%.cma=%.cmxs)
+ endif
+ 
+-ALIBS = $(BYTELIBS:%.cma=%.a)
+-
+ all:
+ 	$(OCAMLBUILD) $(OBFLAGS) $(BYTELIBS) $(OPTLIBS) $(CMXSLIBS) $(ALIBS)
+ 
+@@ -86,7 +85,7 @@ install: $(LIBS) META
+ 	$(INSTALL) -patch-version $(VERSION) $(NAME) $(INSTALL_STUFF)
+ 	(cd _build; ocamldoc -man -man-mini parmap.ml parmap.mli)
+ 	test -d $(MANDIR) || mkdir -p $(MANDIR)
+-	cp -a _build/Parmap.3o $(MANDIR)
++	cp -p _build/Parmap.3o $(MANDIR)
+ 
+ uninstall:
+ 	$(UNINSTALL) $(NAME)

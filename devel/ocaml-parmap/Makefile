@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/09/13 15:20:19 sthen Exp $
-
-SHARED_ONLY =	Yes
-ONLY_FOR_ARCHS = ${OCAML_NATIVE_ARCHS}
+# $OpenBSD: Makefile,v 1.2 2015/09/17 17:18:34 jca Exp $
 
 COMMENT =	OCaml parallel map primitive for multicores
 CATEGORIES =	devel
 
 V =		1.0-rc6
+REVISION =	0
 NAME =		ocaml-parmap
 DISTNAME =	ocaml-parmap-$V
 DISTFILES =	${DISTNAME}{$V}.tar.gz
@@ -24,6 +22,13 @@ BUILD_DEPENDS =	sysutils/findlib
 USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =	gnu
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mocaml_native_dynlink}
+MAKE_FLAGS+=	CMXSLIBS=
+.endif
+
+FAKE_FLAGS =	DESTDIR=${WRKINST}${TRUEPREFIX}
 
 TEST_TARGET =	tests
 TEST_DEPENDS =	${BASE_PKGPATH}
