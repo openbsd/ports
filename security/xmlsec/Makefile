@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/08/21 19:17:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2015/09/17 10:30:33 ajacoutot Exp $
 
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
@@ -48,6 +48,10 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--without-nspr
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# do not pick up ansidecl.h from devel/gdb
+# see /usr/local/include/libxml2/libxml/xmlversion.h:413
+CONFIGURE_ENV +=	ac_cv_header_ansidecl_h=no
 
 TEST_DEPENDS=		security/xmlsec
 TEST_FLAGS=		ABS_BUILDDIR="${WRKSRC}"
