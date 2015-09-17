@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/27 14:09:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/09/17 08:05:38 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/nltk/
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/nltk/VERSION
 lib/python${MODPY_VERSION}/site-packages/nltk/__init__.py
@@ -26,6 +27,12 @@ lib/python${MODPY_VERSION}/site-packages/nltk/align/ibm2.py
 lib/python${MODPY_VERSION}/site-packages/nltk/align/ibm2.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/align/ibm3.py
 lib/python${MODPY_VERSION}/site-packages/nltk/align/ibm3.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/align/ibm4.py
+lib/python${MODPY_VERSION}/site-packages/nltk/align/ibm4.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/align/ibm5.py
+lib/python${MODPY_VERSION}/site-packages/nltk/align/ibm5.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/align/ibm_model.py
+lib/python${MODPY_VERSION}/site-packages/nltk/align/ibm_model.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/align/phrase_based.py
 lib/python${MODPY_VERSION}/site-packages/nltk/align/phrase_based.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/align/util.py
@@ -214,6 +221,8 @@ lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/timit.py
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/timit.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/toolbox.py
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/toolbox.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/twitter.py
+lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/twitter.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/udhr.py
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/udhr.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/corpus/reader/util.py
@@ -412,8 +421,6 @@ lib/python${MODPY_VERSION}/site-packages/nltk/tag/brill.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/brill.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/brill_trainer.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/brill_trainer.pyc
-lib/python${MODPY_VERSION}/site-packages/nltk/tag/brill_trainer_orig.py
-lib/python${MODPY_VERSION}/site-packages/nltk/tag/brill_trainer_orig.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/crf.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/crf.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/hmm.py
@@ -535,6 +542,19 @@ lib/python${MODPY_VERSION}/site-packages/nltk/test/treetransforms.doctest
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/align/
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/align/__init__.py
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/align/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/align/test_ibm1.py
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/align/test_ibm1.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/align/test_ibm2.py
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/align/test_ibm2.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/align/test_ibm4.py
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/align/test_ibm4.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/align/test_ibm5.py
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/align/test_ibm5.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/align/test_ibm_model.py
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/align/test_ibm_model.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_2x_compat.py
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_2x_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_classify.py
@@ -547,6 +567,8 @@ lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_corpus_views.py
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_corpus_views.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_hmm.py
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_hmm.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_json2csv_corpus.py
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_json2csv_corpus.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_naivebayes.py
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_naivebayes.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_seekable_unicode_stream_reader.py
@@ -557,6 +579,8 @@ lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_tag.py
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_tag.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_tgrep.py
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_tgrep.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_twitter_auth.py
+lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/test_twitter_auth.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/utils.py
 lib/python${MODPY_VERSION}/site-packages/nltk/test/unit/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/test/util.doctest
@@ -574,6 +598,8 @@ lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/api.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/api.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/casual.py
+lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/casual.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/punkt.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/punkt.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/tokenize/regexp.py
@@ -598,6 +624,17 @@ lib/python${MODPY_VERSION}/site-packages/nltk/treeprettyprinter.py
 lib/python${MODPY_VERSION}/site-packages/nltk/treeprettyprinter.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/treetransforms.py
 lib/python${MODPY_VERSION}/site-packages/nltk/treetransforms.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/twitter/
+lib/python${MODPY_VERSION}/site-packages/nltk/twitter/__init__.py
+lib/python${MODPY_VERSION}/site-packages/nltk/twitter/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/twitter/api.py
+lib/python${MODPY_VERSION}/site-packages/nltk/twitter/api.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/twitter/twitter_demo.py
+lib/python${MODPY_VERSION}/site-packages/nltk/twitter/twitter_demo.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/twitter/twitterclient.py
+lib/python${MODPY_VERSION}/site-packages/nltk/twitter/twitterclient.pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/twitter/util.py
+lib/python${MODPY_VERSION}/site-packages/nltk/twitter/util.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/util.py
 lib/python${MODPY_VERSION}/site-packages/nltk/util.pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/wsd.py
