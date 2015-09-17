@@ -1,0 +1,20 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2015/09/17 12:03:42 sthen Exp $
+
+remove unnecessary GNUism; in traditional make(1), $< may only be used
+in a suffix rule.
+
+--- doc/Makefile.in.orig	Thu Sep 17 12:55:36 2015
++++ doc/Makefile.in	Thu Sep 17 12:55:13 2015
+@@ -478,10 +478,10 @@ uninstall-man: uninstall-man8
+ 
+ 
+ fping.8: fping.pod
+-	pod2man  -c "" -s 8 -r "fping" $< >$@
++	pod2man  -c "" -s 8 -r "fping" $> >$@
+ 
+ fping6.8: fping.pod
+-	pod2man  -c "" -s 8 -r "fping" -n fping6 $< >$@
++	pod2man  -c "" -s 8 -r "fping" -n fping6 $> >$@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
