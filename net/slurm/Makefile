@@ -1,11 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2015/09/11 15:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/09/17 13:38:39 dcoppa Exp $
 
 COMMENT =	network traffic monitor and statistics
-DISTNAME =	slurm-0.3.3
-REVISION =	3
+
+GH_VERSION =	0.3.3
+GH_ACCOUNT =	mattthias
+GH_PROJECT =	slurm
+GH_TAGNAME =	upstream/${GH_VERSION}
+DISTNAME =	${GH_PROJECT}-${GH_VERSION}
+REVISION =	4
 CATEGORIES =	net
 
-HOMEPAGE =	http://www.wormulon.net/slurm/
+HOMEPAGE =	http://github.com/mattthias/slurm/wiki/
 
 MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
@@ -14,9 +19,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	c ncurses
 
-MASTER_SITES =	${HOMEPAGE}
-
 CONFIGURE_STYLE =	gnu
+
+WRKDIST =	${WRKDIR}/${GH_PROJECT}-upstream-${GH_VERSION}
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/theme.c ${WRKSRC}/slurm.1
