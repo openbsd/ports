@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/02 14:21:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/17 10:09:36 benoit Exp $
 
 COMMENT =	fast, simple object-to-object and broadcast signaling
 
-MODPY_EGG_VERSION = 1.3
+MODPY_EGG_VERSION = 1.4
 DISTNAME =	blinker-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODPY_PI =	Yes
 
 MODULES =	lang/python
+
+MODPY_SETUPTOOLS =	Yes
 
 TEST_DEPENDS =	devel/py-nose
 
