@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/19 03:13:14 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/18 18:25:54 czarkoff Exp $
 
 COMMENT =	simple webbrowser based on webkit/gtk+
 
-DISTNAME =	surf2-0.6.20150714
+DISTNAME =	surf2-0.6.20150813
 CATEGORIES =	www
 HOMEPAGE =	http://surf.suckless.org/
 
-MAINTAINER=	Dmitrij D. Czarkoff
+MAINTAINER=	Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
