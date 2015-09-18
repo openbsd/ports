@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/25 15:34:35 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/09/18 07:52:42 landry Exp $
 @bin bin/cs2cs
 @bin bin/geod
 bin/invgeod
@@ -42,6 +42,7 @@ share/proj/ntv1_can.dat
 share/proj/null
 share/proj/nzgd2kgrid0005.gsb
 share/proj/other.extra
+share/proj/proj_def.dat
 share/proj/prvi
 share/proj/stgeorge
 share/proj/stlrnc
