@@ -1,4 +1,4 @@
-$OpenBSD: patch-charmrc_5,v 1.1 2005/07/01 06:55:49 xsa Exp $
+$OpenBSD: patch-charmrc_5,v 1.2 2015/09/18 19:24:09 jasper Exp $
 --- charmrc.5.orig	Mon Jun 13 23:20:22 2005
 +++ charmrc.5	Fri Jul  1 08:44:03 2005
 @@ -190,11 +190,11 @@ journal, or put all archived posts under
@@ -6,12 +6,12 @@ $OpenBSD: patch-charmrc_5,v 1.1 2005/07/01 06:55:49 xsa Exp $
  .SH EXAMPLES
  There is an example charmrc file. It can usually be found in
 -.B /usr/share/doc/charm/sample.charmrc
-+.B %%PREFIX%%/share/examples/charm/sample.charmrc
++.B ${PREFIX}/share/examples/charm/sample.charmrc
  
  .SH MANUAL
  There is a full manual for Charm. It can usually be found in
 -.B /usr/share/doc/charm/charm.html
-+.B %%PREFIX%%/share/doc/charm/charm.html
++.B ${PREFIX}/share/doc/charm/charm.html
  
  .SH SEE ALSO
  charm(1)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2015/09/18 19:24:09 jasper Exp $
 
 COMMENT=	LiveJournal client for Python
 
@@ -21,12 +21,10 @@ NO_TEST=	Yes
 DOCSDIR=	${PREFIX}/share/doc/charm
 
 post-configure:
-	@perl -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/charm.1 \
-		${WRKSRC}/charmrc.5
+	${SUBST_CMD} ${WRKSRC}/charm.1 ${WRKSRC}/charmrc.5
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.charm ${DOCSDIR}/README
-	
+
 .include <bsd.port.mk>
