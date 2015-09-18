@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: php_fpm.rc,v 1.2 2015/07/15 16:03:07 ajacoutot Exp $
+# $OpenBSD: php54_fpm.rc,v 1.1 2015/09/18 09:18:22 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/php-fpm-${PV}"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.65 2015/07/30 09:46:18 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.66 2015/09/18 09:18:22 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -321,8 +321,9 @@ LIB_DEPENDS-zip=
 WANTLIB-zip=		z pthread
 
 # some variables to substitute
-SUBST_VARS=	MODPHP_CONFIG_PATH PV ^MODULE_NAME
+SUBST_VARS=	MODPHP_CONFIG_PATH SV PV ^MODULE_NAME
 PHP_VERSION=	${V}
+SV=		${PV:S/.//}
 
 .for i in TRUEPREFIX MODULES_DIR PHP_VERSION APACHE_MODULE_DIR
 PHPXS_SUBST+= -e 's,${i},${${i}},'
