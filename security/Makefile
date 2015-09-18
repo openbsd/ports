@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.382 2015/09/10 14:09:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.383 2015/09/18 21:36:47 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -315,6 +315,7 @@
      SUBDIR += wpa_supplicant
      SUBDIR += xca
      SUBDIR += xmlsec
+     SUBDIR += yara
      SUBDIR += yubikey-personalization-gui
      SUBDIR += yubiserve
      SUBDIR += zebedee
