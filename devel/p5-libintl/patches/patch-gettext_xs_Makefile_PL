@@ -1,0 +1,12 @@
+$OpenBSD: patch-gettext_xs_Makefile_PL,v 1.1 2015/09/18 13:28:39 ajacoutot Exp $
+--- gettext_xs/Makefile.PL.orig	Fri Sep 18 15:02:35 2015
++++ gettext_xs/Makefile.PL	Fri Sep 18 15:02:49 2015
+@@ -37,7 +37,7 @@ WriteMakefile (
+     ),
+     PREREQ_PM => { File::Spec => 0 },
+ 	PL_FILES        => {},
+-	LIBS => ['-lintl -liconv'],
++	LIBS => ['-L${LOCALBASE}/lib' . ' -lintl -liconv'],
+ );
+ 
+ __END__

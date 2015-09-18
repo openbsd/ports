@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/19 10:09:27 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/18 13:28:39 ajacoutot Exp $
+%%SHARED%%
 ${P5SITE}/Locale/
 ${P5SITE}/Locale/Messages.pm
 ${P5SITE}/Locale/Recode/
@@ -146,8 +147,16 @@ ${P5SITE}/Locale/RecodeData/UTF_8.pm
 ${P5SITE}/Locale/RecodeData/VISCII.pm
 ${P5SITE}/Locale/RecodeData/_Encode.pm
 ${P5SITE}/Locale/TextDomain.pm
+${P5SITE}/Locale/Util.pm
+${P5SITE}/Locale/gettext_dumb.pm
 ${P5SITE}/Locale/gettext_pp.pm
+${P5SITE}/Locale/gettext_xs.pm
 ${P5SITE}/Locale/gettext_xs.pod
+${P5SITE}/Locale/libintlFAQ.pod
+${P5ARCH}/
+${P5ARCH}/auto/
+${P5ARCH}/auto/Locale/
+${P5ARCH}/auto/Locale/gettext_xs/
 @man man/man3p/Locale::Messages.3p
 @man man/man3p/Locale::Recode.3p
 @man man/man3p/Locale::Recode::_Aliases.3p
@@ -292,5 +301,8 @@ ${P5SITE}/Locale/gettext_xs.pod
 @man man/man3p/Locale::RecodeData::VISCII.3p
 @man man/man3p/Locale::RecodeData::_Encode.3p
 @man man/man3p/Locale::TextDomain.3p
+@man man/man3p/Locale::Util.3p
+@man man/man3p/Locale::gettext_dumb.3p
 @man man/man3p/Locale::gettext_pp.3p
 @man man/man3p/Locale::gettext_xs.3p
+@man man/man3p/Locale::libintlFAQ.3p
