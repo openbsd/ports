@@ -1,12 +1,11 @@
-$OpenBSD: patch-src_libevent-modified_evutil_rand_c,v 1.4 2015/06/11 14:23:09 sthen Exp $
+$OpenBSD: patch-src_libevent-modified_evutil_rand_c,v 1.5 2015/09/18 18:26:18 sthen Exp $
 
-Reinstate diff previously applied to libevent-modified.
-
-From cab22b04c04c0b710acff69c8c2e9bbb0d94bde7 Mon Sep 17 00:00:00 2001
+From 7c922518fb0bdf2deeb9c0acc45df45c62cb1e1f Mon Sep 17 00:00:00 2001
 From: Frank Denis <github@pureftpd.org>
-Date: Tue, 22 Oct 2013 13:05:32 -0700
-Subject: [PATCH] Check for arc4random_addrandom() presence - Needed for
- OpenBSD-current.
+Date: Fri, 18 Sep 2015 19:14:29 +0200
+Subject: [PATCH] Do not reference arc4random_addrandom() if it is not defined.
+ It can either be defined by the C library, or via arc4random.c. Either way,
+ it's useless for dnscrypt-proxy.
 
 --- src/libevent-modified/evutil_rand.c.orig	Thu Jun 11 15:09:08 2015
 +++ src/libevent-modified/evutil_rand.c	Thu Jun 11 15:11:28 2015
@@ -14,7 +13,7 @@ Subject: [PATCH] Check for arc4random_addrandom() presence - Needed for
  void
  evutil_secure_rng_add_bytes(const char *buf, size_t n)
  {
-+#ifdef HAVE_ARC4RANDOM_ADDRANDOM
++#if !defined(_EVENT_HAVE_ARC4RANDOM) || defined(_EVENT_HAVE_ARC4RANDOM_ADDRANDOM)
  	arc4random_addrandom((unsigned char*)buf,
  	    n>(size_t)INT_MAX ? INT_MAX : (int)n);
 +#else

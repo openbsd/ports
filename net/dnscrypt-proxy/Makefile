@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2015/06/11 14:23:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2015/09/18 18:26:18 sthen Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
 
-V=			1.5.0
+V=			1.6.0
 
 DISTNAME=		dnscrypt-proxy-${V}
 CATEGORIES=		net
@@ -34,7 +34,6 @@ LIB_DEPENDS-main=	${commonLIB_DEPENDS} \
 			devel/libtool,-ltdl
 LIB_DEPENDS-plugins=	${commonLIB_DEPENDS} \
 			net/ldns/libldns
-#BUILD_DEPENDS=		devel/libtool
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include \
