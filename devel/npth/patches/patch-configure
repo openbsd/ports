@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2012/10/17 11:56:22 pea Exp $
---- configure.orig	Mon Oct 15 17:36:14 2012
-+++ configure	Mon Oct 15 17:37:56 2012
-@@ -2276,8 +2276,8 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+$OpenBSD: patch-configure,v 1.2 2015/09/18 10:41:05 pea Exp $
+--- configure.orig	Sat Apr 11 14:02:28 2015
++++ configure	Fri Sep 11 14:50:04 2015
+@@ -2306,8 +2306,8 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  #   (Interfaces removed/changed:	AGE=0)
  #
  LIBNPTH_LT_CURRENT=0
 -LIBNPTH_LT_AGE=0
--LIBNPTH_LT_REVISION=2
+-LIBNPTH_LT_REVISION=5
 +LIBNPTH_LT_AGE=${LIBnpth_MAJOR}
 +LIBNPTH_LT_REVISION=${LIBnpth_MINOR}
  
