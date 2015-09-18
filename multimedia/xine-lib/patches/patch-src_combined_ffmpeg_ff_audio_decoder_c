@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_combined_ffmpeg_ff_audio_decoder_c,v 1.10 2015/09/18 05:45:26 ajacoutot Exp $
+
+Fix AVCodecContext/AVFrame freeing.
+
+--- src/combined/ffmpeg/ff_audio_decoder.c.orig	Thu Sep 17 17:50:50 2015
++++ src/combined/ffmpeg/ff_audio_decoder.c	Thu Sep 17 17:51:58 2015
+@@ -1117,11 +1117,11 @@ static void ff_audio_dispose (audio_decoder_t *this_ge
+   free16 (this->buf);
+   free16 (this->decode_buffer);
+ 
+-  if(this->context && this->context->extradata)
+-    free(this->context->extradata);
+-
+-  if(this->context)
+-    av_free(this->context);
++  if (this->context) {
++    _x_freep (&this->context->extradata);
++    this->context->extradata_size = 0;
++    avcodec_free_context (&this->context);
++  }
+ 
+   free (this_gen);
+ }

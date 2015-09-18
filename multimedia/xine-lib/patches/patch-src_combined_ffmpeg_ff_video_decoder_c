@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.20 2015/09/18 05:45:26 ajacoutot Exp $
+
+Fix AVCodecContext/AVFrame freeing.
+
+--- src/combined/ffmpeg/ff_video_decoder.c.orig	Thu Sep 17 17:52:07 2015
++++ src/combined/ffmpeg/ff_video_decoder.c	Thu Sep 17 17:53:32 2015
+@@ -2474,14 +2474,14 @@ static void ff_dispose (video_decoder_t *this_gen) {
+   if (this->slice_offset_table)
+     free (this->slice_offset_table);
+ 
+-  if(this->context && this->context->extradata)
+-    free(this->context->extradata);
++  if (this->context) {
++    _x_freep (&this->context->extradata);
++    this->context->extradata_size = 0;
++    avcodec_free_context (&this->context);
++  }
+ 
+-  if( this->context )
+-    av_free( this->context );
+-
+   if( this->av_frame )
+-    av_free( this->av_frame );
++    avcodec_free_frame( &this->av_frame );
+ 
+   if (this->buf)
+     free(this->buf);

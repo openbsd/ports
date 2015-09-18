@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_combined_ffmpeg_ffmpeg_compat_h,v 1.5 2015/09/18 05:45:26 ajacoutot Exp $
+
+Fix AVCodecContext/AVFrame freeing.
+
+--- src/combined/ffmpeg/ffmpeg_compat.h.orig	Thu Sep 17 17:49:47 2015
++++ src/combined/ffmpeg/ffmpeg_compat.h	Thu Sep 17 18:00:30 2015
+@@ -193,4 +193,15 @@
+ #  define AV_BUFFER 1
+ #endif
+ 
++#if LIBAVCODEC_VERSION_INT < ((55<<16)|(63<<8)|100)
++#  define avcodec_free_context(pp) av_free(*(pp))
++#endif
++
++#if LIBAVCODEC_VERSION_INT < ((54<<16)|(59<<8)|100)
++#  define avcodec_free_frame(pp) av_free(*(pp))
++#elif LIBAVCODEC_VERSION_INT >= ((55<<16)|(45<<8)|101)
++#  define avcodec_alloc_frame() av_frame_alloc()
++#  define avcodec_free_frame(pp) av_frame_free(pp)
++#endif
++
+ #endif /* XINE_AVCODEC_COMPAT_H */
