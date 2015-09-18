@@ -1,8 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/05/11 20:41:40 benoit Exp $
-lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+@comment $OpenBSD: PLIST,v 1.2 2015/09/18 09:30:02 ajacoutot Exp $
+bin/unidecode
+lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/unidecode/
 lib/python${MODPY_VERSION}/site-packages/unidecode/__init__.py
 lib/python${MODPY_VERSION}/site-packages/unidecode/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/unidecode/util.py
+lib/python${MODPY_VERSION}/site-packages/unidecode/util.pyc
 lib/python${MODPY_VERSION}/site-packages/unidecode/x000.py
 lib/python${MODPY_VERSION}/site-packages/unidecode/x000.pyc
 lib/python${MODPY_VERSION}/site-packages/unidecode/x001.py
