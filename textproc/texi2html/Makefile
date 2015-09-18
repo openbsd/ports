@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2015/07/17 21:46:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2015/09/18 13:29:15 ajacoutot Exp $
 
 COMMENT=	texinfo to HTML converter
 
-DISTNAME=	texi2html-1.82
+DISTNAME=	texi2html-5.0
 CATEGORIES=	textproc
-REVISION=	0
 
 HOMEPAGE=	http://www.nongnu.org/texi2html/
 
@@ -13,13 +12,22 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=texi2html/}
 
-CONFIGURE_STYLE= gnu
-
 USE_GMAKE=	Yes
 
-MAKE_FLAGS+=	texinfohtmldir=${PREFIX}/share/doc/texi2html
+MAKE_FLAGS=	texinfohtmldir=${PREFIX}/share/doc/texi2html
 
-BUILD_DEPENDS =	textproc/p5-Text-Unidecode
-RUN_DEPENDS =	textproc/p5-Text-Unidecode
+BUILD_DEPENDS=	devel/p5-libintl \
+		devel/gettext-tools \
+		textproc/p5-Text-Unidecode
+
+RUN_DEPENDS=	devel/p5-libintl \
+		textproc/p5-Text-Unidecode
+
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--with-external-libintl-perl
+
+# https://savannah.nongnu.org/bugs/?43457
+post-install:
+	rm -r ${PREFIX}/share/texi2html/lib/libintl-perl
 
 .include <bsd.port.mk>

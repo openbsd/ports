@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2015/09/18 13:29:15 ajacoutot Exp $
+--- Makefile.in.orig	Fri Sep 18 15:20:43 2015
++++ Makefile.in	Fri Sep 18 15:20:45 2015
+@@ -1046,7 +1046,7 @@ regenerate_i18n_ref: i18n i18n_ref
+ #	$(MKDIR_P) i18n
+ #	msgexec -i $< "$(srcdir)/gettext_to_separated.pl" | "$(srcdir)/separated_to_hash.pl" en > $@
+ 
+-translations.pl: i18n/en.thl
++_translations.pl: i18n/en.thl
+ 	$(PERL) manage_i18n.pl -d i18n -o $@ -I . -I $(srcdir) merge
+ 
+ # update the po files, and install locally the .mo files for the in
+@@ -1077,7 +1077,7 @@ clean-local:
+ distclean-local:
+ 	-rm -rf locales i18n
+ 
+-install-data-local: i18n
++install-data-local: i18n/en.thl
+ 	$(MKDIR_P) $(DESTDIR)$(pkgdatadir)/i18n
+ 	$(INSTALL_DATA) i18n/*.thl  $(DESTDIR)$(pkgdatadir)/i18n
+ 	$(MKDIR_P) $(DESTDIR)$(pkgdatadir)/lib/libintl-perl/lib/Locale/Recode \
