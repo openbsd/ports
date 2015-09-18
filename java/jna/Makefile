@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2015/09/04 21:22:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2015/09/18 18:36:27 jasper Exp $
 
 COMMENT=	Java Native Access (JNA)
 
 GH_PROJECT=	jna
 GH_ACCOUNT=	java-native-access
-GH_TAGNAME=	4.1.0
+GH_TAGNAME=	4.2.0
 DISTNAME=	${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES=	devel
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -18,10 +18,14 @@ MODULES=	java
 MODJAVA_VER=	1.6+
 MODJAVA_BUILD=	ant
 
+# use the system libffi
+MODJAVA_BUILD_ARGS +=-Ddynlink.native=true
+
 # build.xml specifically wants gmake (and ggrep)
 USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	sysutils/ggrep
+LIB_DEPENDS=	devel/libffi
 
 GNU_ARCH=	${ARCH:S/amd64/x86-64/:S/i386/x86/}
 
@@ -33,6 +37,7 @@ do-install:
 	cp -r ${WRKSRC}/www/javadoc/ ${MODJAVA_DOC_DIR}
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant test
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant \
+		${MODJAVA_BUILD_ARGS} test
 
 .include <bsd.port.mk>
