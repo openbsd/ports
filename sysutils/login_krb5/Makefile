@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/18 09:14:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/18 10:24:17 ajacoutot Exp $
 
 COMMENT=		authentication provider for KerberosV
 
@@ -7,7 +7,7 @@ GIT_COMMIT=		557c123
 
 DISTNAME=		${GIT_COMMIT}
 PKGNAME=		${GIT_PROJECT}-5.8.1
-REVISION=		0
+REVISION=		1
 
 DIST_SUBDIR=		${GIT_PROJECT}
 WRKDIST=		${WRKDIR}/${GIT_PROJECT}-${GIT_COMMIT}
@@ -31,5 +31,11 @@ NO_TEST=		Yes
 
 FAKE_FLAGS=		BINDIR=${PREFIX}/libexec/auth \
 			MANDIR=${PREFIX}/man/man
+
+pre-configure:
+	sed -i 's,/usr/local,${LOCALBASE},g' \
+		${WRKSRC}/Makefile.inc \
+		${WRKSRC}/login_krb5-or-pwd/Makefile \
+		${WRKSRC}/login_krb5/Makefile
 
 .include <bsd.port.mk>
