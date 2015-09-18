@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2015/08/27 06:48:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.109 2015/09/18 19:16:14 jasper Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -190,7 +190,7 @@ MODULES+=		x11/qt3
 LIB_DEPENDS-qt3=	${MODGETTEXT_LIB_DEPENDS} \
 			${MODQT3_LIB_DEPENDS} \
 			${BUILD_PKGPATH}
-		
+
 WANTLIB-qt3 += GL ICE SM X11 Xcursor Xext Xfixes Xft Xi
 WANTLIB-qt3 += Xinerama Xmu Xrandr Xrender Xt expat fontconfig
 WANTLIB-qt3 += freetype jpeg lcms m mng png pthread xcb z
