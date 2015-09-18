@@ -1,18 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/21 14:28:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/18 09:34:12 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/async/
-lib/python${MODPY_VERSION}/site-packages/async-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/async/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/async/README
+lib/python${MODPY_VERSION}/site-packages/async-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/async-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/async-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/async-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/async-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/async-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/async/__init__.py
 lib/python${MODPY_VERSION}/site-packages/async/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/async/channel.py
 lib/python${MODPY_VERSION}/site-packages/async/channel.pyc
 lib/python${MODPY_VERSION}/site-packages/async/graph.py
 lib/python${MODPY_VERSION}/site-packages/async/graph.pyc
-lib/python${MODPY_VERSION}/site-packages/async/mod/
-lib/python${MODPY_VERSION}/site-packages/async/mod/__init__.py
-lib/python${MODPY_VERSION}/site-packages/async/mod/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/async/mod/zlib.so
 lib/python${MODPY_VERSION}/site-packages/async/pool.py
 lib/python${MODPY_VERSION}/site-packages/async/pool.pyc
 lib/python${MODPY_VERSION}/site-packages/async/task.py
@@ -22,11 +21,6 @@ lib/python${MODPY_VERSION}/site-packages/async/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/async/test/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/async/test/lib.py
 lib/python${MODPY_VERSION}/site-packages/async/test/lib.pyc
-lib/python${MODPY_VERSION}/site-packages/async/test/mod/
-lib/python${MODPY_VERSION}/site-packages/async/test/mod/__init__.py
-lib/python${MODPY_VERSION}/site-packages/async/test/mod/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/async/test/mod/test_zlib.py
-lib/python${MODPY_VERSION}/site-packages/async/test/mod/test_zlib.pyc
 lib/python${MODPY_VERSION}/site-packages/async/test/task.py
 lib/python${MODPY_VERSION}/site-packages/async/test/task.pyc
 lib/python${MODPY_VERSION}/site-packages/async/test/test_channel.py
@@ -39,8 +33,6 @@ lib/python${MODPY_VERSION}/site-packages/async/test/test_performance.py
 lib/python${MODPY_VERSION}/site-packages/async/test/test_performance.pyc
 lib/python${MODPY_VERSION}/site-packages/async/test/test_pool.py
 lib/python${MODPY_VERSION}/site-packages/async/test/test_pool.pyc
-lib/python${MODPY_VERSION}/site-packages/async/test/test_task.py
-lib/python${MODPY_VERSION}/site-packages/async/test/test_task.pyc
 lib/python${MODPY_VERSION}/site-packages/async/test/test_thread.py
 lib/python${MODPY_VERSION}/site-packages/async/test/test_thread.pyc
 lib/python${MODPY_VERSION}/site-packages/async/thread.py
