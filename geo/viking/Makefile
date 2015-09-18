@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2015/05/25 07:54:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2015/09/18 20:09:26 landry Exp $
 
 COMMENT =	GPS track manager
 
 DISTNAME =	viking-1.6
+REVISION =	0
 
 CATEGORIES =	geo x11
 
@@ -15,9 +16,15 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=viking/}
 EXTRACT_SUFX = .tar.bz2
 
-MODULES =	devel/gettext textproc/intltool x11/gnome
+MODULES =	gcc4 devel/gettext textproc/intltool x11/gnome
 
-CONFIGURE_STYLE =	gnu
+MODGCC4_ARCHS =		amd64 i386 powerpc sparc64
+MODGCC4_LANGS =		c c++
+
+AUTOCONF_VERSION =	2.69
+CONFIGURE_STYLE =	autoconf
+# to ensure X11 libs are found when checking for -lmapnik
+CONFIGURE_ENV +=	CXXFLAGS="-L${X11BASE}/lib"
 MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
 
 USE_GMAKE =	Yes
@@ -41,7 +48,7 @@ WANTLIB += pthread ssl z gexiv2 mapnik sqlite3 stdc++
 
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure
+	${SUBST_CMD} ${WRKSRC}/src/vikmapniklayer.c
 
 post-install:
 	rm ${PREFIX}/share/gnome/help/viking/C/figures/*

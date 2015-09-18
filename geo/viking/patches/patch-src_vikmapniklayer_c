@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_vikmapniklayer_c,v 1.1 2015/09/18 20:09:26 landry Exp $
+--- src/vikmapniklayer.c.orig	Sun Mar 29 12:59:47 2015
++++ src/vikmapniklayer.c	Fri Sep 18 20:17:07 2015
+@@ -235,7 +235,7 @@ static VikLayerParamData plugins_default ( void )
+ 		// Current Debian location
+ 		data.s = g_strdup ( "/usr/lib/mapnik/2.2/input" );
+ 	else
+-		data.s = g_strdup ( "" );
++		data.s = g_strdup ( "${LOCALBASE}/lib/mapnik/input" );
+ #endif
+ 	return data;
+ }
+@@ -249,7 +249,7 @@ static VikLayerParamData fonts_default ( void )
+ #elif defined __APPLE__
+ 	data.s = g_strdup ( "/Library/Fonts" );
+ #else
+-	data.s = g_strdup ( "/usr/share/fonts" );
++	data.s = g_strdup ( "${LOCALBASE}/share/fonts" );
+ #endif
+ 	return data;
+ }

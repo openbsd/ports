@@ -1,0 +1,85 @@
+$OpenBSD: patch-src_mapnik_interface_cpp,v 1.1 2015/09/18 20:09:26 landry Exp $
+
+Mapnik 3 support
+http://sourceforge.net/p/viking/code/ci/616812b76e3127de72f7e62b86d8fe1d702e2e2c/
+
+--- src/mapnik_interface.cpp.orig	Fri Sep 18 19:50:34 2015
++++ src/mapnik_interface.cpp	Fri Sep 18 19:54:03 2015
+@@ -24,7 +24,12 @@
+ #include <mapnik/datasource_cache.hpp>
+ #include <mapnik/agg_renderer.hpp>
+ #include <mapnik/load_map.hpp>
++#include <mapnik/projection.hpp>
++#if MAPNIK_VERSION < 300000
+ #include <mapnik/graphics.hpp>
++#else
++#include <mapnik/value.hpp>
++#endif
+ #include <mapnik/image_util.hpp>
+ 
+ #include <exception>
+@@ -49,7 +54,12 @@
+ #define zoom_to_box zoomToBox
+ #else
+ #include <mapnik/box2d.hpp>
++#if MAPNIK_VERSION >= 300000
++// In Mapnik3 'image_32' has changed names once again
++#define image_32 image_rgba8
++#define raw_data data
+ #endif
++#endif
+ 
+ #define MAPNIK_INTERFACE_TYPE            (mapnik_interface_get_type ())
+ #define MAPNIK_INTERFACE(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), MAPNIK_INTERFACE_TYPE, MapnikInterface))
+@@ -130,18 +140,28 @@ void mapnik_interface_initialize (const char *plugins_
+  */
+ static void set_copyright ( MapnikInterface* mi )
+ {
+-	if ( mi->copyright )
+-		g_free ( mi->copyright );
++	g_free ( mi->copyright );
++	mi->copyright = NULL;
+ 
+ 	mapnik::parameters pmts = mi->myMap->get_extra_parameters();
++#if MAPNIK_VERSION < 300000
+ 	for (mapnik::parameters::const_iterator ii = pmts.begin(); ii != pmts.end(); ii++) {
+ 		if ( ii->first == "attribution" || ii->first == "copyright" ) {
+ 			std::stringstream ss;
+ 			ss << ii->second;
+ 			// Copy it
+ 			mi->copyright = g_strdup ( (gchar*)ss.str().c_str() );
++			break;
+ 		}
+ 	}
++#else
++	if ( pmts.get<std::string>("attribution") )
++		mi->copyright = g_strdup ( (*pmts.get<std::string>("attribution")).c_str() );
++
++	if ( !mi->copyright )
++		if ( pmts.get<std::string>("copyright") )
++			mi->copyright = g_strdup ( (*pmts.get<std::string>("copyright")).c_str() );
++#endif
+ }
+ 
+ #define VIK_SETTINGS_MAPNIK_BUFFER_SIZE "mapnik_buffer_size"
+@@ -292,11 +312,16 @@ GArray* mapnik_interface_get_parameters ( MapnikInterf
+ 	GArray *array = g_array_new (FALSE, TRUE, sizeof(gchar*));
+ 
+ 	mapnik::parameters pmts = mi->myMap->get_extra_parameters();
+-	for (mapnik::parameters::const_iterator ii = pmts.begin(); ii != pmts.end(); ii++) {
+-		// Dodgy hacking to avoid using boost or mapnik::utils visitor stuff (not available in mapnik 2.2)
+-		// Simply want the strings of each parameter so we can display something...
++	// Simply want the strings of each parameter so we can display something...
++#if MAPNIK_VERSION < 300000
++	for (mapnik::parameters::const_iterator pmt = pmts.begin(); pmt != pmts.end(); pmt++) {
+ 		std::stringstream ss;
+-		ss << ii->first << ": " << ii->second;
++		ss << pmt->first << ": " << pmt->second;
++#else
++	for (auto const& pmt : pmts) {
++		std::stringstream ss;
++		ss << pmt.first << ": " << *(pmts.get<std::string>(pmt.first,"empty"));
++#endif
+ 		// Copy - otherwise ss goes output scope and junk memory would be referenced.
+ 		gchar *str2 = g_strdup ( (gchar*)ss.str().c_str() );
+ 		g_array_append_val ( array, str2 );
