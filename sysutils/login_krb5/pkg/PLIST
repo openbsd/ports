@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/10 12:48:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/18 09:14:59 ajacoutot Exp $
 @mode 0750
 @group auth
 libexec/auth/
 @bin libexec/auth/login_krb5
+@comment needs mode 4555 to access passwd(5) and the Kerberos keytab
 @mode 4555
 @owner root
 @sample /usr/libexec/auth/login_-krb5

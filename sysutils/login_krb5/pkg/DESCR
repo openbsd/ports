@@ -2,5 +2,4 @@ The login_krb5 and login_krb5-or-pwd utilities implement the KerberosV
 authentication mechanism (with an optional fallback to standard password
 authentication).
 
-The code is based on OpenBSD 5.5-current before the removal of Kerberos
-with a few cleanups.
+The code was forked off OpenBSD 5.5-current before the removal of Kerberos.
