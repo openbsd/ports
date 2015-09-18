@@ -3,7 +3,7 @@
 COMMENT =		memory artifact extraction utility framework
 
 MODPY_EGG_VERSION =	2.4
-REVISION =		0
+REVISION =		1
 DISTNAME =		volatility-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
@@ -18,7 +18,8 @@ MASTER_SITES =		http://downloads.volatilityfoundation.org/releases/${MODPY_EGG_V
 MODULES =		lang/python
 MODPY_SETUPTOOLS = 	Yes
 
-RUN_DEPENDS =	security/distorm3
+RUN_DEPENDS =	security/distorm3 \
+		security/yara/python
 
 NO_TEST =		Yes
 
