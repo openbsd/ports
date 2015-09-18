@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/17 19:30:50 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/18 07:30:53 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/repoze/
 lib/python${MODPY_VERSION}/site-packages/repoze.who-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/repoze.who-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -11,6 +11,10 @@ lib/python${MODPY_VERSION}/site-packages/repoze.who-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/repoze.who-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/repoze.who-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/repoze/who/
+lib/python${MODPY_VERSION}/site-packages/repoze/who/_auth_tkt.py
+lib/python${MODPY_VERSION}/site-packages/repoze/who/_auth_tkt.pyc
+lib/python${MODPY_VERSION}/site-packages/repoze/who/_compat.py
+lib/python${MODPY_VERSION}/site-packages/repoze/who/_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/who/api.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/api.pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/who/classifiers.py
@@ -56,6 +60,10 @@ lib/python${MODPY_VERSION}/site-packages/repoze/who/restrict.pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test__auth_tkt.py
+lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test__auth_tkt.pyc
+lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test__compat.py
+lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test__compat.pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test_api.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test_api.pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test_classifiers.py
@@ -69,4 +77,4 @@ lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test_restrict.pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/who/utils.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/utils.pyc
 share/doc/${MODPY_PY_PREFIX}repoze-who/
-share/doc/${MODPY_PY_PREFIX}repoze-who/README.txt
+share/doc/${MODPY_PY_PREFIX}repoze-who/README.rst
