@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2013/09/14 21:59:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/18 22:04:44 sthen Exp $
+
+BROKEN =	relies on $$ENV:: in openssl .cnf files
 
 COMMENT =	small RSA key management package
 
