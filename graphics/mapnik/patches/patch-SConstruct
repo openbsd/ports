@@ -1,7 +1,8 @@
-$OpenBSD: patch-SConstruct,v 1.5 2015/07/01 08:45:19 jasper Exp $
---- SConstruct.orig	Tue Jun  4 03:35:26 2013
-+++ SConstruct	Mon Jun 29 09:15:50 2015
-@@ -273,7 +273,7 @@ opts.AddVariables(
+$OpenBSD: patch-SConstruct,v 1.6 2015/09/18 20:07:09 landry Exp $
+2nd chunk is needed for proper boost_thread detection
+--- SConstruct.orig	Thu Sep 17 09:32:46 2015
++++ SConstruct	Fri Sep 18 11:57:29 2015
+@@ -290,7 +290,7 @@ opts.AddVariables(
      ('CUSTOM_LDFLAGS', 'Custom linker flags, e.g. -L<lib dir> if you have libraries in a nonstandard directory <lib dir>', ''),
      EnumVariable('LINKING', "Set library format for libmapnik",'shared', ['shared','static']),
      EnumVariable('RUNTIME_LINK', "Set preference for linking dependencies",'shared', ['shared','static']),
@@ -10,20 +11,7 @@ $OpenBSD: patch-SConstruct,v 1.5 2015/07/01 08:45:19 jasper Exp $
      # Note: setting DEBUG=True will override any custom OPTIMIZATION level
      BoolVariable('DEBUG', 'Compile a debug version of Mapnik', 'False'),
      BoolVariable('DEBUG_UNDEFINED', 'Compile a version of Mapnik using clang/llvm undefined behavior asserts', 'False'),
-@@ -1122,6 +1122,12 @@ if not preconfigured:
-         thread_suffix = ''
-         env.Append(LIBS = 'pthread')
- 
-+    if env['PLATFORM'] == 'OpenBSD':
-+        thread_suffix = '-mt'
-+        env.Append(LIBS = 'pthread')
-+        env.Append(LINKFLAGS = ['-lstdc++'])
-+        env.Append(CPPDEFINES = '-DBOOST_SPIRIT_USE_PHOENIX_V3=1')
-+
-     # Solaris & Sun Studio settings (the `SUNCC` flag will only be
-     # set if the `CXX` option begins with `CC`)
-     SOLARIS = env['PLATFORM'] == 'SunOS'
-@@ -1277,6 +1283,9 @@ if not preconfigured:
+@@ -1398,6 +1398,9 @@ if not preconfigured:
              # of attaching to cxxflags after configure
              if env['PLATFORM'] == 'SunOS':
                  env.Append(CXXFLAGS = '-pthreads')

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_text_font_feature_settings_cpp,v 1.1 2015/09/18 20:07:09 landry Exp $
+
+boost build failure otherwise
+https://github.com/mapnik/mapnik/issues/3020
+
+--- src/text/font_feature_settings.cpp.orig	Sat Aug  8 14:13:19 2015
++++ src/text/font_feature_settings.cpp	Sat Aug  8 14:13:28 2015
+@@ -62,7 +62,7 @@ void font_feature_settings::from_string(std::string co
+     qi::char_type char_;
+     qi::as_string_type as_string;
+ 
+-#if BOOST_VERSION <= 104800
++#if 1
+     // Call correct overload.
+     using std::placeholders::_1;
+     void (font_feature_settings::*append)(std::string const&) = &font_feature_settings::append;

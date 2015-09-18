@@ -1,7 +1,6 @@
-$OpenBSD: patch-src_build_py,v 1.3 2013/07/06 11:19:48 landry Exp $
-Set shlib version, don't do stupid symlinks, dont call ldconfig
---- src/build.py.orig	Tue Jun  4 03:35:27 2013
-+++ src/build.py	Sat Jul  6 13:13:32 2013
+$OpenBSD: patch-src_build_py,v 1.4 2015/09/18 20:07:09 landry Exp $
+--- src/build.py.orig	Fri Jul 31 21:40:05 2015
++++ src/build.py	Sat Aug  8 15:27:39 2015
 @@ -37,9 +37,6 @@ def call(cmd, silent=True):
      elif not silent:
          print stderr
@@ -12,16 +11,16 @@ Set shlib version, don't do stupid symlinks, dont call ldconfig
  if env['LINKING'] == 'static':
      lib_env.Append(CXXFLAGS="-fPIC")
  
-@@ -98,7 +95,7 @@ if env['PLATFORM'] == 'Darwin':
-     _d = {'version':env['MAPNIK_VERSION_STRING'].replace('-pre','')}
-     mapnik_lib_link_flag += ' -current_version %(version)s -compatibility_version %(version)s' % _d
- else: # unix, non-macos
--    mapnik_libname = env.subst(env['MAPNIK_LIB_NAME']) + (".%d.%d" % (int(ABI_VERSION[0]),int(ABI_VERSION[1])))
-+    mapnik_libname = 'libmapnik.so.${LIBmapnik_VERSION}'
-     if env['PLATFORM'] == 'SunOS':
-         if env['CXX'].startswith('CC'):
-             mapnik_lib_link_flag += ' -R. -h %s' % mapnik_libname
-@@ -421,9 +418,7 @@ else:
+@@ -136,7 +133,7 @@ else: # unix, non-macos
+         else:
+             mapnik_lib_link_flag += ' -Wl,-h,%s' %  mapnik_libname
+     else: # Linux and others
+-        if env['PLATFORM'] != 'FreeBSD':
++        if env['PLATFORM'] != 'OpenBSD':
+             lib_env['LIBS'].append('dl')
+         mapnik_lib_link_flag += ' -Wl,-rpath-link,.'
+         if env['ENABLE_SONAME']:
+@@ -432,9 +429,7 @@ else:
              os.remove(trgt)
          os.symlink(os.path.basename(src), trgt)
  
@@ -32,8 +31,8 @@ Set shlib version, don't do stupid symlinks, dont call ldconfig
      target = os.path.join(env['MAPNIK_LIB_BASE_DEST'], soFile)
  
      if 'uninstall' not in COMMAND_LINE_TARGETS:
-@@ -433,30 +428,8 @@ else:
-             mapnik = lib_env_final.SharedLibrary('mapnik', source)
+@@ -444,30 +439,8 @@ else:
+             mapnik = lib_env_final.SharedLibrary(env['MAPNIK_NAME'], source)
          result = env.InstallAs(target=target, source=mapnik)
          env.Alias(target='install', source=result)
 -        if result:
