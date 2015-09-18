@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2015/06/26 07:44:39 landry Exp $
+# $OpenBSD: Makefile,v 1.51 2015/09/18 07:34:43 landry Exp $
 
 COMMENT=	Xfce4 extension library
 
-XFCE_VERSION=	0.10.6
+XFCE_VERSION=	0.10.7
 XFCE_PROJECT=	exo
 
 SHARED_LIBS=	exo-1		0.2
