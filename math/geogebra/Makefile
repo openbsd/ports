@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/03/27 08:13:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/18 19:03:24 jasper Exp $
 
 COMMENT=	educational mathematical software
 
@@ -37,8 +37,8 @@ PKG_ARCH=		*
 WRKDIST=		${WRKDIR}/geogebra-${V}
 
 pre-configure:
-	perl -pi -e 's,/usr,${WRKINST}${TRUEPREFIX},g' ${WRKSRC}/install.sh
-	perl -pi -e 's,/usr,${TRUEPREFIX},g' ${WRKSRC}/geogebra.desktop
+	sed -i 's,/usr,${WRKINST}${TRUEPREFIX},g' ${WRKSRC}/install.sh
+	sed -i 's,/usr,${TRUEPREFIX},g' ${WRKSRC}/geogebra.desktop
 	${SUBST_CMD} ${WRKSRC}/geogebra
 
 do-install:

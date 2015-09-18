@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/06/30 09:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/18 19:03:24 jasper Exp $
 
 COMMENT =		Hierarchical Data Format 5 Technology suite
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 
 # remove trailing whitespace from LT_VERS_REVISION
 pre-configure:
-	perl -pi -e 's,LT_VERS_REVISION = 1 ,LT_VERS_REVISION = 1,' \
+	sed -i 's,LT_VERS_REVISION = 1 ,LT_VERS_REVISION = 1,' \
 		${WRKSRC}/fortran/src/Makefile.in \
 		${WRKSRC}/c++/src/Makefile.in \
 		${WRKSRC}/src/Makefile.in \

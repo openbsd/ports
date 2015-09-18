@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2015/09/18 19:03:24 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -95,7 +95,7 @@ RUN_DEPENDS-c++ =
 RUN_DEPENDS-f77 =
 
 pre-configure:
-	@perl -pi -e 's/3plplot/3/g' ${DOCSRC}/*.3plplot
+	@sed -i 's/3plplot/3/g' ${DOCSRC}/*.3plplot
 	@cd ${DOCSRC} && for m in *.3plplot; do mv $$m $${m%\.3plplot}.3; done
 
 post-install:
