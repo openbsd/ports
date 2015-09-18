@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/25 13:18:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/18 19:35:05 jasper Exp $
 
 COMMENT =	simple terminal based gopher client
 DISTNAME =	cgo-20141022
@@ -21,7 +21,7 @@ ALL_TARGET =	default
 NO_TEST =	Yes
 
 pre-configure:
-	perl -pi -e "s,/etc,${SYSCONFDIR},g" ${WRKSRC}/cgo.1
+	sed -i "s,/etc,${SYSCONFDIR},g" ${WRKSRC}/cgo.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cgo ${PREFIX}/bin

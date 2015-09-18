@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2015/09/18 19:35:05 jasper Exp $
 
 COMMENT=	tiny download accelerator
 DISTNAME=	axel-2.4
@@ -32,6 +32,6 @@ MAKE_FLAGS=	CC=${CC} \
 FAKE_FLAGS=	ETCDIR=${PREFIX}/share/examples/axel
 
 pre-configure:
-	@perl -pi -e 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/axel.1
+	@sed -i 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/axel.1
 
 .include <bsd.port.mk>

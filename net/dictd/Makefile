@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/06/18 07:28:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2015/09/18 19:35:05 jasper Exp $
 
 COMMENT-main=	Dictionary Server Protocol client
 COMMENT-server=	Dictionary Server Protocol server
@@ -32,9 +32,9 @@ MULTI_PACKAGES=	-main -server
 NO_TEST=	Yes
 
 pre-build:
-	@perl -pi -e "s,/etc,${SYSCONFDIR},g" ${WRKSRC}/*.[18]
-	@perl -pi -e "s,/usr/sbin,${LOCALBASE}/sbin,g" ${WRKSRC}/*.[18]
-	@perl -pi -e "s,/usr/share,${LOCALBASE}/share,g" ${WRKSRC}/*.[18]
+	@sed -i -e "s,/etc,${SYSCONFDIR},g;" \
+		-e "s,/usr/sbin,${LOCALBASE}/sbin,g;" \
+		-e "s,/usr/share,${LOCALBASE}/share,g" ${WRKSRC}/*.[18]
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dictd/

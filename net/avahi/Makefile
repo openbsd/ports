@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2015/09/18 19:16:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.110 2015/09/18 19:35:04 jasper Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -255,21 +255,21 @@ PC_FILES=		avahi-ui.pc avahi-client.pc avahi-compat-howl.pc \
 
 pre-configure:
 	find ${WRKSRC} -name Makefile.in -exec \
-		perl -pi -e 's,LIBINTL,INTLLIBS,g;' \
+		sed -i -e 's,LIBINTL,INTLLIBS,g;' \
 			-e 's,LIBICONV,LTLIBICONV,g' {} \;
 	find ${WRKSRC}/man -name '*.[1-9]*' | xargs \
-		perl -pi -e 's,/etc/avahi,${SYSCONFDIR}/avahi,g'
-	perl -pi -e 's,dbus_connection_disconnect,dbus_connection_close,g' \
+		sed -i 's,/etc/avahi,${SYSCONFDIR}/avahi,g'
+	sed -i 's,dbus_connection_disconnect,dbus_connection_close,g' \
 		${WRKSRC}/avahi-client/client.c \
 		${WRKSRC}/avahi-daemon/dbus-protocol.c
-	perl -pi -e 's,-ldl,,g' ${WRKSRC}/configure \
+	sed -i 's,-ldl,,g' ${WRKSRC}/configure \
 		${WRKSRC}/avahi-client/Makefile.in \
 		${WRKSRC}/avahi-daemon/Makefile.in
-	perl -pi -e "s,/var/lib/dbus,/var/db/dbus,g;" \
+	sed -i -e "s,/var/lib/dbus,/var/db/dbus,g;" \
 		-e "s,/etc/machine-id,${SYSCONFDIR}/machine-id,g" \
 		${WRKSRC}/avahi-daemon/main.c
 	for i in ${PC_FILES}; do \
-		perl -pi -e 's,Libs:,Libs: -pthread,;' \
+		sed -i -e 's,Libs:,Libs: -pthread,;' \
 			-e 's,Cflags:,Cflags: -pthread,' ${WRKSRC}/$${i}.in; done
 
 post-install:

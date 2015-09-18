@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/07/15 17:24:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2015/09/18 19:35:05 jasper Exp $
 
 COMMENT=		Dynamic DNS service update client
 
@@ -25,7 +25,7 @@ SAMPLES=	sample-etc_cron.d_ddclient sample-etc_ddclient.conf \
 		sample-etc_ppp_ip-up.local sample-ddclient-wrapper.sh
 
 post-extract:
-	@perl -pi -e "s,/var/cache/ddclient/,/var/db/ddclient/,g;" \
+	@sed -i -e "s,/var/cache/ddclient/,/var/db/ddclient/,g;" \
 		-e "s,/etc/ddclient/,${SYSCONFDIR}/ddclient/,g" \
 		${WRKSRC}/ddclient
 

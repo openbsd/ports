@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/04/14 14:17:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2015/09/18 19:35:04 jasper Exp $
 
 COMMENT=	monitor arp & rarp requests
 
@@ -32,7 +32,7 @@ pre-configure:
 	    ./massagevendor < ../oui-iab/oui.txt > ethercodes.dat
 
 do-install:
-	@perl -pi -e 's,awk -f ,awk -f ${EXAMPLESDIR}/', ${WRKSRC}/massagevendor
+	@sed -i 's,awk -f ,awk -f ${EXAMPLESDIR}/', ${WRKSRC}/massagevendor
 	${INSTALL_PROGRAM} ${WRKSRC}/arpwatch ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/arpsnmp ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/arpwatch.8 ${PREFIX}/man/man8
