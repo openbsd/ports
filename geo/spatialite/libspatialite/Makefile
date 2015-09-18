@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/19 18:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/18 09:47:54 landry Exp $
 
 COMMENT=	sqlite extented with spatial SQL capabilities
 PROJECT =	libspatialite
-DISTNAME =	${PROJECT}-4.2.0
-SHARED_LIBS =	spatialite 1.0 # 7.0
-REVISION =	1
+DISTNAME =	${PROJECT}-4.3.0a
+SHARED_LIBS =	spatialite 1.1 # 8.0.1
 
 LIB_DEPENDS +=	geo/spatialite/freexl \
 		textproc/libxml \

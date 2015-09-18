@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/09/02 08:37:53 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/09/18 09:47:54 landry Exp $
 include/spatialite/
 include/spatialite.h
+include/spatialite/control_points.h
 include/spatialite/debug.h
 include/spatialite/gaiaaux.h
 include/spatialite/gaiaexif.h
 include/spatialite/gaiageo.h
+include/spatialite/gaiamatrix.h
 include/spatialite/geopackage.h
 include/spatialite/gg_advanced.h
 include/spatialite/gg_const.h
