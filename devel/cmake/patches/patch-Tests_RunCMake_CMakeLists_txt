@@ -1,0 +1,11 @@
+$OpenBSD: patch-Tests_RunCMake_CMakeLists_txt,v 1.1 2015/09/18 09:18:56 dcoppa Exp $
+--- Tests/RunCMake/CMakeLists.txt.orig	Fri Sep 18 10:37:12 2015
++++ Tests/RunCMake/CMakeLists.txt	Fri Sep 18 10:37:42 2015
+@@ -65,7 +65,6 @@ add_RunCMake_test(CMP0054)
+ add_RunCMake_test(CMP0055)
+ add_RunCMake_test(CMP0057)
+ add_RunCMake_test(CMP0059)
+-add_RunCMake_test(CMP0060)
+ if(CMAKE_GENERATOR STREQUAL "Ninja")
+   add_RunCMake_test(Ninja)
+ endif()
