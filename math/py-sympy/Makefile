@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/02 14:21:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/18 07:36:46 benoit Exp $
 
 COMMENT =		computer algebra system (CAS) in Python
 
-MODPY_EGG_VERSION =	0.7.5
+MODPY_EGG_VERSION =	0.7.6.1
 DISTNAME =		sympy-${MODPY_EGG_VERSION}
 PKGNAME =		py-sympy-${MODPY_EGG_VERSION}
 CATEGORIES =		math
