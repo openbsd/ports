@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/20 20:53:58 kspillner Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/18 14:37:50 kspillner Exp $
 
 COMMENT =		access any command-line tool via a WebSocket
 
@@ -8,6 +8,7 @@ DISTNAME =		websocketd-$V
 GH_ACCOUNT =		joewalnes
 GH_PROJECT =		websocketd
 GH_TAGNAME =		v$V
+REVISION =		0
 
 CATEGORIES =		net www
 
