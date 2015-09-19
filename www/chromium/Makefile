@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.239 2015/09/17 18:59:44 robert Exp $
+# $OpenBSD: Makefile,v 1.240 2015/09/19 09:52:36 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -173,12 +173,12 @@ do-configure:
 do-build:
 	# Build all the resources as the first step to avoid build failures
 	# due to internal dependency issues.
-#	@cd ${WRKSRC}/out/${BUILDTYPE} && \
-#	for _r in net_interfaces suggestions \
-#	$$(ninja -t targets | grep 'resources: phony' | cut -d ':' -f1); do \
-#		cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
-#			-j ${MAKE_JOBS} -C out/${BUILDTYPE} $${_r}; \
-#	done
+	@cd ${WRKSRC}/out/${BUILDTYPE} && \
+	for _r in net_interfaces suggestions cacheinvalidation and cacheinvalidation_proto_cpp \
+	$$(ninja -t targets | grep 'resources: phony' | cut -d ':' -f1); do \
+		cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
+			-j ${MAKE_JOBS} -C out/${BUILDTYPE} $${_r}; \
+	done
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
 
