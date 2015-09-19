@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/14 13:30:17 ajacoutot Exp $
-
-MODPY_EGG_VERSION =	3.2.2
+# $OpenBSD: Makefile,v 1.5 2015/09/19 21:52:34 ajacoutot Exp $
 
 TRYTOND_MODULE =	sale_credit_limit
 
