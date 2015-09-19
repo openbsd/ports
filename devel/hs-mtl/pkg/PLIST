@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/11/22 20:47:28 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/09/19 07:57:06 kili Exp $
 @conflict hs-monads-fd-*
 @pkgpath devel/hs-monads-fd
 lib/ghc/${DISTNAME}/
@@ -14,6 +14,8 @@ lib/ghc/${DISTNAME}/Control/Monad/Error.hi
 lib/ghc/${DISTNAME}/Control/Monad/Error.p_hi
 lib/ghc/${DISTNAME}/Control/Monad/Error/Class.hi
 lib/ghc/${DISTNAME}/Control/Monad/Error/Class.p_hi
+lib/ghc/${DISTNAME}/Control/Monad/Except.hi
+lib/ghc/${DISTNAME}/Control/Monad/Except.p_hi
 lib/ghc/${DISTNAME}/Control/Monad/Identity.hi
 lib/ghc/${DISTNAME}/Control/Monad/Identity.p_hi
 lib/ghc/${DISTNAME}/Control/Monad/List.hi
@@ -52,8 +54,9 @@ lib/ghc/${DISTNAME}/Control/Monad/Writer/Lazy.hi
 lib/ghc/${DISTNAME}/Control/Monad/Writer/Lazy.p_hi
 lib/ghc/${DISTNAME}/Control/Monad/Writer/Strict.hi
 lib/ghc/${DISTNAME}/Control/Monad/Writer/Strict.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
@@ -62,6 +65,7 @@ share/doc/hs-${DISTNAME}/html/Control-Monad-Cont-Class.html
 share/doc/hs-${DISTNAME}/html/Control-Monad-Cont.html
 share/doc/hs-${DISTNAME}/html/Control-Monad-Error-Class.html
 share/doc/hs-${DISTNAME}/html/Control-Monad-Error.html
+share/doc/hs-${DISTNAME}/html/Control-Monad-Except.html
 share/doc/hs-${DISTNAME}/html/Control-Monad-Identity.html
 share/doc/hs-${DISTNAME}/html/Control-Monad-List.html
 share/doc/hs-${DISTNAME}/html/Control-Monad-RWS-Class.html
@@ -112,6 +116,7 @@ share/doc/hs-${DISTNAME}/html/mini_Control-Monad-Cont-Class.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Monad-Cont.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Monad-Error-Class.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Monad-Error.html
+share/doc/hs-${DISTNAME}/html/mini_Control-Monad-Except.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Monad-Identity.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Monad-List.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Monad-RWS-Class.html
