@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/11/22 20:59:42 kili Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/09/19 08:14:34 kili Exp $
 @bin bin/HsColour
 lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Language/
 lib/ghc/${DISTNAME}/Language/Haskell/
 lib/ghc/${DISTNAME}/Language/Haskell/HsColour/
@@ -36,8 +37,8 @@ lib/ghc/${DISTNAME}/Language/Haskell/HsColour/Output.hi
 lib/ghc/${DISTNAME}/Language/Haskell/HsColour/Output.p_hi
 lib/ghc/${DISTNAME}/Language/Haskell/HsColour/TTY.hi
 lib/ghc/${DISTNAME}/Language/Haskell/HsColour/TTY.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENCE-GPL
