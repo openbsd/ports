@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/11/22 20:45:13 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/09/19 07:53:46 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/CaseInsensitive/
@@ -8,8 +8,9 @@ lib/ghc/${DISTNAME}/Data/CaseInsensitive/Internal.hi
 lib/ghc/${DISTNAME}/Data/CaseInsensitive/Internal.p_hi
 lib/ghc/${DISTNAME}/Data/CaseInsensitive/Unsafe.hi
 lib/ghc/${DISTNAME}/Data/CaseInsensitive/Unsafe.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
