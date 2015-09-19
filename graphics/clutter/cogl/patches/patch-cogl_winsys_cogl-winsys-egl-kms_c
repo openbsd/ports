@@ -1,7 +1,7 @@
-$OpenBSD: patch-cogl_winsys_cogl-winsys-egl-kms_c,v 1.6 2015/04/03 16:31:24 jasper Exp $
---- cogl/winsys/cogl-winsys-egl-kms.c.orig	Mon Feb 23 19:36:56 2015
-+++ cogl/winsys/cogl-winsys-egl-kms.c	Fri Apr  3 11:33:43 2015
-@@ -115,7 +115,7 @@ typedef struct _CoglOnscreenKMS
+$OpenBSD: patch-cogl_winsys_cogl-winsys-egl-kms_c,v 1.7 2015/09/19 11:06:30 jasper Exp $
+--- cogl/winsys/cogl-winsys-egl-kms.c.orig	Mon Sep  7 13:08:29 2015
++++ cogl/winsys/cogl-winsys-egl-kms.c	Thu Sep 17 08:32:54 2015
+@@ -117,7 +117,7 @@ typedef struct _CoglOnscreenKMS
    struct gbm_surface *pending_surface;
  } CoglOnscreenKMS;
  

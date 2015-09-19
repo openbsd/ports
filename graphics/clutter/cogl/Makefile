@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.32 2015/04/03 16:31:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2015/09/19 11:06:30 jasper Exp $
 
 COMMENT=		modern 3D graphics API
 
 GNOME_PROJECT=		cogl
-GNOME_VERSION=		1.20.0
+GNOME_VERSION=		1.22.0
 
-SHARED_LIBS +=  cogl                 3.0      # 23.0
-SHARED_LIBS +=	cogl-path            0.0      # 23.0
-SHARED_LIBS +=  cogl-pango           3.0      # 23.0
+SHARED_LIBS +=  cogl                 3.1      # 24.0
+SHARED_LIBS +=	cogl-path            0.0      # 24.0
+SHARED_LIBS +=  cogl-pango           3.0      # 24.0
 
 WANTLIB += X11 Xcomposite Xdamage Xext Xfixes Xrandr Xrender cairo
 WANTLIB += expat ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/10/05 17:34:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/09/19 11:06:30 jasper Exp $
 @conflict clutter-<1.8.0
 include/cogl/
 include/cogl/cogl/
@@ -137,6 +137,7 @@ share/locale/as/LC_MESSAGES/cogl.mo
 share/locale/ast/LC_MESSAGES/cogl.mo
 share/locale/be/LC_MESSAGES/cogl.mo
 share/locale/bg/LC_MESSAGES/cogl.mo
+share/locale/bs/LC_MESSAGES/cogl.mo
 share/locale/ca/LC_MESSAGES/cogl.mo
 share/locale/ca@valencia/LC_MESSAGES/cogl.mo
 share/locale/cs/LC_MESSAGES/cogl.mo
@@ -165,6 +166,7 @@ share/locale/lv/LC_MESSAGES/cogl.mo
 share/locale/ml/LC_MESSAGES/cogl.mo
 share/locale/nb/LC_MESSAGES/cogl.mo
 share/locale/nl/LC_MESSAGES/cogl.mo
+share/locale/oc/LC_MESSAGES/cogl.mo
 share/locale/or/LC_MESSAGES/cogl.mo
 share/locale/pa/LC_MESSAGES/cogl.mo
 share/locale/pl/LC_MESSAGES/cogl.mo
