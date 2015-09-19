@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/30 10:45:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/19 10:52:58 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/python_sql-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/python_sql-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/python_sql-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -28,6 +28,8 @@ lib/python${MODPY_VERSION}/site-packages/sql/tests/test_cast.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_cast.pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_column.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_column.pyc
+lib/python${MODPY_VERSION}/site-packages/sql/tests/test_combining_query.py
+lib/python${MODPY_VERSION}/site-packages/sql/tests/test_combining_query.pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_conditionals.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_conditionals.pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_delete.py
@@ -40,6 +42,8 @@ lib/python${MODPY_VERSION}/site-packages/sql/tests/test_insert.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_insert.pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_join.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_join.pyc
+lib/python${MODPY_VERSION}/site-packages/sql/tests/test_lateral.py
+lib/python${MODPY_VERSION}/site-packages/sql/tests/test_lateral.pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_literal.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_literal.pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_operators.py
@@ -48,5 +52,13 @@ lib/python${MODPY_VERSION}/site-packages/sql/tests/test_order.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_order.pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_select.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_select.pyc
+lib/python${MODPY_VERSION}/site-packages/sql/tests/test_table.py
+lib/python${MODPY_VERSION}/site-packages/sql/tests/test_table.pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_update.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_update.pyc
+lib/python${MODPY_VERSION}/site-packages/sql/tests/test_values.py
+lib/python${MODPY_VERSION}/site-packages/sql/tests/test_values.pyc
+lib/python${MODPY_VERSION}/site-packages/sql/tests/test_window.py
+lib/python${MODPY_VERSION}/site-packages/sql/tests/test_window.pyc
+lib/python${MODPY_VERSION}/site-packages/sql/tests/test_with.py
+lib/python${MODPY_VERSION}/site-packages/sql/tests/test_with.pyc
