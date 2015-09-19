@@ -1,13 +1,18 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/09/18 21:35:32 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/19 17:39:55 rpointel Exp $
+
+REVISION = 0
 
 COMMENT = pattern matching swiss knife
 
-WANTLIB += c crypto m pthread
+WANTLIB += c crypto m magic pthread z
 
 SHARED_LIBS +=  yara                      0.0 # 0.0
 
 CONFIGURE_STYLE =       gnu
-CONFIGURE_ARGS +=	--with-crypto
+CONFIGURE_ARGS +=	--with-crypto \
+			--enable-magic
+CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib" \
+			CFLAGS="-I${LOCALBASE}/include"
 
 pre-patch:
 	cd ${WRKSRC} && \
@@ -17,6 +22,8 @@ pre-patch:
 BUILD_DEPENDS +=	devel/libtool \
 			${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
+
+LIB_DEPENDS +=		devel/libmagic
 
 AUTOCONF_VERSION =      2.69
 AUTOMAKE_VERSION =      1.14
