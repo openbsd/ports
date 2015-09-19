@@ -1,25 +1,23 @@
-# $OpenBSD: Makefile,v 1.176 2015/07/25 06:51:50 landry Exp $
+# $OpenBSD: Makefile,v 1.177 2015/09/19 13:03:15 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 BROKEN-sparc64 =	xpcshell SIGBUS during fake
 
 
-MOZILLA_VERSION =	2.33.1
+MOZILLA_VERSION =	2.35
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-3.8
-REVISION-main =		4
-REVISION-lightning =	4
+PKGNAME-lightning =	lightning-seamonkey-4.0
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 
-SO_VERSION =	41.0
+SO_VERSION =	42.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
