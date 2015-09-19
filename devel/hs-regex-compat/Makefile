@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2014/11/22 20:59:41 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2015/09/19 08:03:12 kili Exp $
 
 COMMENT =		module layer over regex-posix to replace Text.Regex
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
 DISTNAME =		regex-compat-0.95.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 HOMEPAGE =		http://sourceforge.net/projects/lazy-regex
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
+
+MODGHC_PACKAGE_KEY =	LfevtAmd1jA93E87NZxMhh
 
 RUN_DEPENDS =		devel/hs-mtl \
 			devel/hs-regex-base>=0.93 \
