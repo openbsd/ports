@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.290 2015/09/18 07:12:18 kirby Exp $
+# $OpenBSD: Quirks.pm,v 1.291 2015/09/19 08:23:02 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -508,7 +508,6 @@ my $obsolete_reason = {
 	'erl-webmachine' => 0,
 	'commons-io' => 2,
 	'qt4-qtsolutions-singleinstance' => 3,
-	'hs-cgi' => 5,
 	'hs-HsParrot' => 5,
 	'hs-HsSyck' => 5,
 	'hs-MetaObject' => 5,
