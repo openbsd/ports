@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/04/22 21:48:51 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/09/19 07:50:58 kili Exp $
 @bin bin/happy
 share/doc/happy/
 @comment share/doc/${DISTNAME}/
@@ -29,6 +29,7 @@ share/doc/happy/sec-invoking.html
 share/doc/happy/sec-license.html
 share/doc/happy/sec-module-header.html
 share/doc/happy/sec-module-trailer.html
+share/doc/happy/sec-monad-alex.html
 share/doc/happy/sec-monads.html
 share/doc/happy/sec-multiple-parsers.html
 share/doc/happy/sec-obtaining.html
