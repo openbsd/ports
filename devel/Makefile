@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1382 2015/09/13 15:20:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.1383 2015/09/19 08:24:38 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -181,10 +181,12 @@
      SUBDIR += hs-MonadCatchIO-mtl
      SUBDIR += hs-MonadCatchIO-transformers
      SUBDIR += hs-MonadRandom
+     SUBDIR += hs-ObjectName
      SUBDIR += hs-OneTuple
      SUBDIR += hs-PSQueue
      SUBDIR += hs-QuickAnnotate
      SUBDIR += hs-QuickCheck
+     SUBDIR += hs-StateVar
      SUBDIR += hs-abstract-deque
      SUBDIR += hs-abstract-par
      SUBDIR += hs-aeson
@@ -225,6 +227,7 @@
      SUBDIR += hs-either
      SUBDIR += hs-enumerator
      SUBDIR += hs-errors
+     SUBDIR += hs-exceptions
      SUBDIR += hs-extensible-exceptions
      SUBDIR += hs-failure
      SUBDIR += hs-fgl
@@ -258,7 +261,10 @@
      SUBDIR += hs-nats
      SUBDIR += hs-network
      SUBDIR += hs-network-conduit
+     SUBDIR += hs-network-uri
      SUBDIR += hs-newtype
+     SUBDIR += hs-old-locale
+     SUBDIR += hs-old-time
      SUBDIR += hs-pango
      SUBDIR += hs-parallel
      SUBDIR += hs-parsec
@@ -287,7 +293,9 @@
      SUBDIR += hs-test-framework-hunit
      SUBDIR += hs-test-framework-quickcheck2
      SUBDIR += hs-text
+     SUBDIR += hs-tf-random
      SUBDIR += hs-transformers-base
+     SUBDIR += hs-transformers-compat
      SUBDIR += hs-tuple
      SUBDIR += hs-type-level
      SUBDIR += hs-unbounded-delays
