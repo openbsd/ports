@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/11/22 20:29:53 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/09/19 07:48:41 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Codec/
 lib/ghc/${DISTNAME}/Codec/Compression/
@@ -13,8 +13,9 @@ lib/ghc/${DISTNAME}/Codec/Compression/Zlib/Raw.hi
 lib/ghc/${DISTNAME}/Codec/Compression/Zlib/Raw.p_hi
 lib/ghc/${DISTNAME}/Codec/Compression/Zlib/Stream.hi
 lib/ghc/${DISTNAME}/Codec/Compression/Zlib/Stream.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
