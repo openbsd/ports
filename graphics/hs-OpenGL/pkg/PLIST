@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/11/22 20:54:08 kili Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/09/19 08:16:55 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/Rendering/
@@ -40,6 +40,8 @@ lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/CoordTrans.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/CoordTrans.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/DataType.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/DataType.p_hi
+lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/DebugOutput.hi
+lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/DebugOutput.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/DisplayLists.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/DisplayLists.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/Domain.hi
@@ -89,8 +91,6 @@ lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/IOState.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/IOState.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/LineSegments.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/LineSegments.p_hi
-lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/ObjectName.hi
-lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/ObjectName.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/PeekPoke.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/PeekPoke.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/PerFragment.hi
@@ -134,6 +134,8 @@ lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/Polygons.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/Polygons.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/PrimitiveMode.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/PrimitiveMode.p_hi
+lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/PrimitiveModeInternal.hi
+lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/PrimitiveModeInternal.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/QueryObject.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/QueryObject.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/QueryObjects.hi
@@ -180,8 +182,6 @@ lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/Shaders/Uniform.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/Shaders/Uniform.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/Shaders/Variables.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/Shaders/Variables.p_hi
-lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/StateVar.hi
-lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/StateVar.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/StringQueries.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/StringQueries.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GL/SyncObjects.hi
@@ -244,8 +244,9 @@ lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GLU/Quadrics.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GLU/Quadrics.p_hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GLU/Tessellation.hi
 lib/ghc/${DISTNAME}/Graphics/Rendering/OpenGL/GLU/Tessellation.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
@@ -259,6 +260,7 @@ share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-ColorSum.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-Colors.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-ConditionalRendering.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-CoordTrans.html
+share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-DebugOutput.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-DisplayLists.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-Evaluators.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-Feedback.html
@@ -271,7 +273,6 @@ share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-FramebufferObjects-Qu
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-FramebufferObjects.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-Hints.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-LineSegments.html
-share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-ObjectName.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-PerFragment.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-PixelRectangles-ColorTable.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-PixelRectangles-Convolution.html
@@ -285,6 +286,7 @@ share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-PixelRectangles.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-PixellikeObject.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-Points.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-Polygons.html
+share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-PrimitiveMode.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-QueryObjects.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-RasterPos.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-ReadCopyPixels.html
@@ -299,7 +301,6 @@ share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-Shaders-ShaderBinarie
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-Shaders-ShaderObjects.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-Shaders-Uniform.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-Shaders.html
-share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-StateVar.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-StringQueries.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-SyncObjects.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-Tensor.html
@@ -367,6 +368,7 @@ share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-ColorSum.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-Colors.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-ConditionalRendering.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-CoordTrans.html
+share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-DebugOutput.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-DisplayLists.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-Evaluators.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-Feedback.html
@@ -379,7 +381,6 @@ share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-FramebufferObjec
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-FramebufferObjects.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-Hints.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-LineSegments.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-ObjectName.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-PerFragment.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-PixelRectangles-ColorTable.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-PixelRectangles-Convolution.html
@@ -393,6 +394,7 @@ share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-PixelRectangles.
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-PixellikeObject.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-Points.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-Polygons.html
+share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-PrimitiveMode.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-QueryObjects.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-RasterPos.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-ReadCopyPixels.html
@@ -407,7 +409,6 @@ share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-Shaders-ShaderBi
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-Shaders-ShaderObjects.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-Shaders-Uniform.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-Shaders.html
-share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-StateVar.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-StringQueries.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-SyncObjects.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-Tensor.html
