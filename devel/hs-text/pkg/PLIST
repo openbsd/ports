@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/11/22 20:51:14 kili Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/09/19 08:11:38 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Text/
@@ -68,6 +68,8 @@ lib/ghc/${DISTNAME}/Data/Text/Internal/Lazy/Search.hi
 lib/ghc/${DISTNAME}/Data/Text/Internal/Lazy/Search.p_hi
 lib/ghc/${DISTNAME}/Data/Text/Internal/Private.hi
 lib/ghc/${DISTNAME}/Data/Text/Internal/Private.p_hi
+lib/ghc/${DISTNAME}/Data/Text/Internal/Read.hi
+lib/ghc/${DISTNAME}/Data/Text/Internal/Read.p_hi
 lib/ghc/${DISTNAME}/Data/Text/Internal/Search.hi
 lib/ghc/${DISTNAME}/Data/Text/Internal/Search.p_hi
 lib/ghc/${DISTNAME}/Data/Text/Internal/Unsafe/
@@ -97,10 +99,13 @@ lib/ghc/${DISTNAME}/Data/Text/Lazy/Read.hi
 lib/ghc/${DISTNAME}/Data/Text/Lazy/Read.p_hi
 lib/ghc/${DISTNAME}/Data/Text/Read.hi
 lib/ghc/${DISTNAME}/Data/Text/Read.p_hi
+lib/ghc/${DISTNAME}/Data/Text/Show.hi
+lib/ghc/${DISTNAME}/Data/Text/Show.p_hi
 lib/ghc/${DISTNAME}/Data/Text/Unsafe.hi
 lib/ghc/${DISTNAME}/Data/Text/Unsafe.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
@@ -131,6 +136,7 @@ share/doc/hs-${DISTNAME}/html/Data-Text-Internal-Lazy-Fusion.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Internal-Lazy-Search.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Internal-Lazy.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Internal-Private.html
+share/doc/hs-${DISTNAME}/html/Data-Text-Internal-Read.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Internal-Search.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Internal-Unsafe-Char.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Internal-Unsafe-Shift.html
@@ -205,6 +211,7 @@ share/doc/hs-${DISTNAME}/html/mini_Data-Text-Internal-Lazy-Fusion.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Internal-Lazy-Search.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Internal-Lazy.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Internal-Private.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Text-Internal-Read.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Internal-Search.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Internal-Unsafe-Char.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Internal-Unsafe-Shift.html
