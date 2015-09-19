@@ -1,11 +1,13 @@
-$OpenBSD: patch-libavcodec_aacenc_tns_c,v 1.1 2015/09/15 12:49:42 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_tns_c,v 1.2 2015/09/19 18:21:15 ajacoutot Exp $
 
 aacenc_tns: redo coefficient quantization and decision making
 
 aacenc_tns: encode coefficients directly and reenable compression
 
---- libavcodec/aacenc_tns.c.orig	Sat Sep 12 15:01:30 2015
-+++ libavcodec/aacenc_tns.c	Sat Sep 12 15:02:10 2015
+aacenc_tns: fix coefficient compression condition
+
+--- libavcodec/aacenc_tns.c.orig	Mon Sep  7 21:58:01 2015
++++ libavcodec/aacenc_tns.c	Thu Sep 17 22:11:34 2015
 @@ -31,17 +31,34 @@
  #include "aacenc_utils.h"
  #include "aacenc_quantization.h"
@@ -20,7 +22,7 @@ aacenc_tns: encode coefficients directly and reenable compression
 +    const int shift_val = c_bits ?  8 : 4;
 +    const int high_idx  = c_bits ? 11 : 5;
 +    for (i = 0; i < order; i++)
-+        if (coef[i] < low_idx && coef[i] > high_idx)
++        if (coef[i] < low_idx || coef[i] > high_idx)
 +            res++;
 +    if (res == order)
 +        for (i = 0; i < order; i++)
