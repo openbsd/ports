@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/25 08:51:16 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/19 22:58:23 ajacoutot Exp $
 lib/apache2/mod_jk.so
 share/doc/ap2-mod_jk/
 share/doc/ap2-mod_jk/LICENSE
@@ -6,9 +6,8 @@ share/doc/ap2-mod_jk/NOTICE
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/ap2-mod_jk/
 share/examples/ap2-mod_jk/apache2/
-@sample ${SYSCONFDIR}/apache2/
+share/examples/ap2-mod_jk/apache2/httpd-jk.conf
+@sample ${SYSCONFDIR}/apache2/httpd-jk.conf
 share/examples/ap2-mod_jk/apache2/uriworkermap.properties
 @sample ${SYSCONFDIR}/apache2/uriworkermap.properties
 share/examples/ap2-mod_jk/apache2/workers.properties
-share/examples/ap2-mod_jk/apache2/workers.properties.minimal
-@sample ${SYSCONFDIR}/apache2/workers.properties

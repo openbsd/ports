@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2015/07/17 23:58:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/19 22:58:23 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Apache-Tomcat AJP Connector for Apache2
 
-V =		1.2.40
+V =		1.2.41
 DISTNAME =	tomcat-connectors-${V}-src
 PKGNAME =	ap2-mod_jk-${V}
 CATEGORIES =	www
-REVISION =	1
 
 HOMEPAGE =	http://tomcat.apache.org/connectors-doc/index.html
 
@@ -34,7 +33,7 @@ MODGNU_CONFIG_GUESS_DIRS =${WRKSRC}/scripts/build/unix
 DOCDIR =	${PREFIX}/share/doc/ap2-mod_jk
 EXAMPLEDIR =	${PREFIX}/share/examples/ap2-mod_jk
 EXAMPLES =	uriworkermap.properties workers.properties \
-		workers.properties.minimal
+		httpd-jk.conf
 
 do-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/apache2
