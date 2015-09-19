@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/04/15 07:44:03 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/09/19 09:05:52 benoit Exp $
 @conflict py-pymilter-*
 lib/python${MODPY_VERSION}/site-packages/Milter/
 lib/python${MODPY_VERSION}/site-packages/Milter/__init__.py
@@ -31,7 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/milter.so
 lib/python${MODPY_VERSION}/site-packages/mime.py
 lib/python${MODPY_VERSION}/site-packages/mime.pyc
 lib/python${MODPY_VERSION}/site-packages/pymilter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-share/doc/py-milter/
-share/doc/py-milter/README
-share/examples/py-milter/
-share/examples/py-milter/sample.py
+share/doc/${MODPY_PY_PREFIX}milter/
+share/doc/${MODPY_PY_PREFIX}milter/README
+share/examples/${MODPY_PY_PREFIX}milter/
+share/examples/${MODPY_PY_PREFIX}milter/sample.py
