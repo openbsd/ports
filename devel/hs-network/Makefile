@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2014/11/22 20:48:00 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2015/09/19 07:58:00 kili Exp $
 
 COMMENT =		Haskell networking library
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
-DISTNAME =		network-2.4.2.3
+DISTNAME =		network-2.6.2.1
 CATEGORIES =		devel net
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -16,10 +16,9 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
+MODGHC_PACKAGE_KEY =	F6mK9sCIw3M5SbZMt2lUQE
+
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61
-
-RUN_DEPENDS =		devel/hs-parsec>=3.0
-BUILD_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

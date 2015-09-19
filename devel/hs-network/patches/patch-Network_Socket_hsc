@@ -1,11 +1,11 @@
-$OpenBSD: patch-Network_Socket_hsc,v 1.5 2014/11/22 20:48:00 kili Exp $
+$OpenBSD: patch-Network_Socket_hsc,v 1.6 2015/09/19 07:58:00 kili Exp $
 
 don't throw an error when attempting to setsockopt IPV6_V6ONLY
 
---- Network/Socket.hsc.orig	Fri Apr 18 09:16:03 2014
-+++ Network/Socket.hsc	Wed Nov 12 22:40:00 2014
-@@ -327,9 +327,10 @@ socket family stype protocol = do
-     socket_status <- newMVar NotConnected
+--- Network/Socket.hsc.orig	Tue Jul  7 20:40:52 2015
++++ Network/Socket.hsc	Tue Sep  1 10:14:57 2015
+@@ -318,9 +318,10 @@ socket family stype protocol = do
+     withSocketsDo $ return ()
      let sock = MkSocket fd family stype protocol socket_status
  #if HAVE_DECL_IPV6_V6ONLY
 -# if defined(mingw32_HOST_OS)
