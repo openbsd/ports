@@ -1,0 +1,14 @@
+$OpenBSD: patch-easy-rsa_1_0_build-key-pass,v 1.1 2015/09/19 12:44:38 sthen Exp $
+--- easy-rsa/1.0/build-key-pass.orig	Sat Sep 19 13:40:50 2015
++++ easy-rsa/1.0/build-key-pass	Sat Sep 19 13:41:04 2015
+@@ -12,8 +12,8 @@ fi
+ 
+ if test $KEY_DIR; then
+ 	cd $KEY_DIR && \
+-	openssl req -days 3650 -new -keyout $1.key -out $1.csr -config $KEY_CONFIG && \
+-	openssl ca -days 3650 -out $1.crt -in $1.csr -config $KEY_CONFIG && \
++	eopenssl req -days 3650 -new -keyout $1.key -out $1.csr -config $KEY_CONFIG && \
++	eopenssl ca -days 3650 -out $1.crt -in $1.csr -config $KEY_CONFIG && \
+ 	chmod 0600 $1.key
+ else
+ 	echo you must define KEY_DIR

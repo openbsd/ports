@@ -1,0 +1,12 @@
+$OpenBSD: patch-easy-rsa_2_0_pkitool,v 1.1 2015/09/19 12:44:38 sthen Exp $
+--- easy-rsa/2.0/pkitool.orig	Sat Sep 19 13:40:50 2015
++++ easy-rsa/2.0/pkitool	Sat Sep 19 13:41:52 2015
+@@ -122,7 +122,7 @@ usage()
+ }
+ 
+ # Set tool defaults
+-[ -n "$OPENSSL" ] || export OPENSSL="openssl"
++[ -n "$OPENSSL" ] || export OPENSSL="eopenssl"
+ [ -n "$PKCS11TOOL" ] || export PKCS11TOOL="pkcs11-tool"
+ [ -n "$GREP" ] || export GREP="grep"
+ 

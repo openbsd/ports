@@ -1,0 +1,12 @@
+$OpenBSD: patch-easy-rsa_1_0_list-crl,v 1.1 2015/09/19 12:44:38 sthen Exp $
+--- easy-rsa/1.0/list-crl.orig	Sat Sep 19 13:40:50 2015
++++ easy-rsa/1.0/list-crl	Sat Sep 19 13:41:19 2015
+@@ -12,7 +12,7 @@ fi
+ 
+ if test $KEY_DIR; then
+        cd $KEY_DIR && \
+-       openssl crl -text -noout -in $1
++       eopenssl crl -text -noout -in $1
+ else
+        echo you must define KEY_DIR
+ fi

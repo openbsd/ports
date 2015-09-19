@@ -1,0 +1,21 @@
+$OpenBSD: patch-easy-rsa_1_0_revoke-full,v 1.1 2015/09/19 12:44:38 sthen Exp $
+--- easy-rsa/1.0/revoke-full.orig	Sat Sep 19 13:40:50 2015
++++ easy-rsa/1.0/revoke-full	Sat Sep 19 13:41:36 2015
+@@ -16,14 +16,14 @@ if test $KEY_DIR; then
+        rm -f $RT
+ 
+        # revoke key and generate a new CRL
+-       openssl ca -revoke $1.crt -config $KEY_CONFIG
++       eopenssl ca -revoke $1.crt -config $KEY_CONFIG
+ 
+        # generate a new CRL
+-       openssl ca -gencrl -out $CRL -config $KEY_CONFIG
++       eopenssl ca -gencrl -out $CRL -config $KEY_CONFIG
+        cat ca.crt $CRL >$RT
+     
+        # verify the revocation
+-       openssl verify -CAfile $RT -crl_check $1.crt
++       eopenssl verify -CAfile $RT -crl_check $1.crt
+ else
+        echo you must define KEY_DIR
+ fi

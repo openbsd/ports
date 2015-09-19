@@ -1,0 +1,16 @@
+$OpenBSD: patch-easy-rsa_1_0_build-key-pkcs12,v 1.1 2015/09/19 12:44:38 sthen Exp $
+--- easy-rsa/1.0/build-key-pkcs12.orig	Sat Sep 19 13:40:50 2015
++++ easy-rsa/1.0/build-key-pkcs12	Sat Sep 19 13:41:08 2015
+@@ -12,9 +12,9 @@ fi                                                    
+ 
+ if test $KEY_DIR; then
+ 	cd $KEY_DIR && \
+-	openssl req -days 3650 -nodes -new -keyout $1.key -out $1.csr -config $KEY_CONFIG && \
+-	openssl ca -days 3650 -out $1.crt -in $1.csr -config $KEY_CONFIG && \
+-        openssl pkcs12 -export -inkey $1.key -in $1.crt -certfile ca.crt -out $1.p12 && \
++	eopenssl req -days 3650 -nodes -new -keyout $1.key -out $1.csr -config $KEY_CONFIG && \
++	eopenssl ca -days 3650 -out $1.crt -in $1.csr -config $KEY_CONFIG && \
++        eopenssl pkcs12 -export -inkey $1.key -in $1.crt -certfile ca.crt -out $1.p12 && \
+ 	chmod 0600 $1.key $1.p12
+ else
+ 	echo you must define KEY_DIR

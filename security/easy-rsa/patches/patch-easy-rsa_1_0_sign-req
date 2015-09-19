@@ -1,0 +1,12 @@
+$OpenBSD: patch-easy-rsa_1_0_sign-req,v 1.1 2015/09/19 12:44:38 sthen Exp $
+--- easy-rsa/1.0/sign-req.orig	Sat Sep 19 13:40:50 2015
++++ easy-rsa/1.0/sign-req	Sat Sep 19 13:41:38 2015
+@@ -12,7 +12,7 @@ fi                                                    
+ 
+ if test $KEY_DIR; then
+ 	cd $KEY_DIR && \
+-	openssl ca -days 3650 -out $1.crt -in $1.csr -config $KEY_CONFIG
++	eopenssl ca -days 3650 -out $1.crt -in $1.csr -config $KEY_CONFIG
+ else
+ 	echo you must define KEY_DIR
+ fi
