@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/17 19:27:34 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/19 09:17:35 benoit Exp $
+bin/mb
 lib/python${MODPY_VERSION}/site-packages/metlog/
 lib/python${MODPY_VERSION}/site-packages/metlog/__init__.py
 lib/python${MODPY_VERSION}/site-packages/metlog/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/metlog/client.py
 lib/python${MODPY_VERSION}/site-packages/metlog/client.pyc
+lib/python${MODPY_VERSION}/site-packages/metlog/command.py
+lib/python${MODPY_VERSION}/site-packages/metlog/command.pyc
 lib/python${MODPY_VERSION}/site-packages/metlog/config.py
 lib/python${MODPY_VERSION}/site-packages/metlog/config.pyc
 lib/python${MODPY_VERSION}/site-packages/metlog/decorators/
@@ -32,6 +35,8 @@ lib/python${MODPY_VERSION}/site-packages/metlog/senders/dev.py
 lib/python${MODPY_VERSION}/site-packages/metlog/senders/dev.pyc
 lib/python${MODPY_VERSION}/site-packages/metlog/senders/logging.py
 lib/python${MODPY_VERSION}/site-packages/metlog/senders/logging.pyc
+lib/python${MODPY_VERSION}/site-packages/metlog/senders/udp.py
+lib/python${MODPY_VERSION}/site-packages/metlog/senders/udp.pyc
 lib/python${MODPY_VERSION}/site-packages/metlog/senders/zmq.py
 lib/python${MODPY_VERSION}/site-packages/metlog/senders/zmq.pyc
 lib/python${MODPY_VERSION}/site-packages/metlog/tests/
@@ -63,6 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/metlog_${MODPY_PY_PREFIX}${MODPY_EGG_VE
 lib/python${MODPY_VERSION}/site-packages/metlog_${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/metlog_${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/metlog_${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/metlog_${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/metlog_${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/metlog_${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/metlog_${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
