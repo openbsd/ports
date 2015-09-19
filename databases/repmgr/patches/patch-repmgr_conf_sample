@@ -1,0 +1,16 @@
+$OpenBSD: patch-repmgr_conf_sample,v 1.1 2015/09/19 21:37:12 landry Exp $
+--- repmgr.conf.sample.orig	Sat Sep 19 23:17:31 2015
++++ repmgr.conf.sample	Sat Sep 19 23:18:09 2015
+@@ -118,8 +118,10 @@ reconnect_attempts=6
+ reconnect_interval=10
+ 
+ # Autofailover options
+-failover=automatic  # one of 'automatic', 'manual'
+-priority=100        # a value of zero or less prevents the node being promoted to master
++# one of 'automatic', 'manual'
++failover=automatic
++# a value of zero or less prevents the node being promoted to master
++priority=100
+ promote_command='repmgr standby promote -f /path/to/repmgr.conf'
+ follow_command='repmgr standby follow -f /path/to/repmgr.conf -W'
+ 

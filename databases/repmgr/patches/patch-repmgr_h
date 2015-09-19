@@ -1,0 +1,12 @@
+$OpenBSD: patch-repmgr_h,v 1.1 2015/09/19 21:37:12 landry Exp $
+--- repmgr.h.orig	Thu Apr 16 06:33:17 2015
++++ repmgr.h	Sat Sep 19 23:19:20 2015
+@@ -38,7 +38,7 @@
+ #define MAXFILENAME		1024
+ #define ERRBUFF_SIZE	512
+ 
+-#define DEFAULT_CONFIG_FILE		"./repmgr.conf"
++#define DEFAULT_CONFIG_FILE		"${SYSCONFDIR}/repmgr.conf"
+ #define DEFAULT_WAL_KEEP_SEGMENTS	"5000"
+ #define DEFAULT_DEST_DIR		"."
+ #define DEFAULT_MASTER_PORT		"5432"
