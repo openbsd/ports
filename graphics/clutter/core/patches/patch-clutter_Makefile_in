@@ -1,7 +1,7 @@
-$OpenBSD: patch-clutter_Makefile_in,v 1.9 2015/05/12 12:46:02 jasper Exp $
---- clutter/Makefile.in.orig	Tue May 12 12:24:20 2015
-+++ clutter/Makefile.in	Tue May 12 14:40:21 2015
-@@ -3229,13 +3229,8 @@ install-exec-local:
+$OpenBSD: patch-clutter_Makefile_in,v 1.10 2015/09/19 11:06:43 jasper Exp $
+--- clutter/Makefile.in.orig	Tue Sep 15 13:47:37 2015
++++ clutter/Makefile.in	Wed Sep 16 09:44:33 2015
+@@ -3231,13 +3231,8 @@ install-exec-local:
  	    rm -f $$lib.0.$(CLUTTER_LT_CURRENT).$(CLUTTER_LT_REVISION); \
  	  ) ; \
  	  (cd $(DESTDIR)$(libdir) && \

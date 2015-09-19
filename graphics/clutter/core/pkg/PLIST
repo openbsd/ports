@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/04/03 16:31:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/09/19 11:06:43 jasper Exp $
 @conflict cogl-<1.8.0
 include/clutter-${API_VERSION}/
 include/clutter-${API_VERSION}/cally/
@@ -20,6 +20,7 @@ include/clutter-${API_VERSION}/clutter/clutter-actor-meta.h
 include/clutter-${API_VERSION}/clutter/clutter-actor.h
 include/clutter-${API_VERSION}/clutter/clutter-align-constraint.h
 include/clutter-${API_VERSION}/clutter/clutter-animatable.h
+include/clutter-${API_VERSION}/clutter/clutter-autocleanups.h
 include/clutter-${API_VERSION}/clutter/clutter-backend.h
 include/clutter-${API_VERSION}/clutter/clutter-bin-layout.h
 include/clutter-${API_VERSION}/clutter/clutter-bind-constraint.h
@@ -63,11 +64,9 @@ include/clutter-${API_VERSION}/clutter/clutter-keyframe-transition.h
 include/clutter-${API_VERSION}/clutter/clutter-keysyms.h
 include/clutter-${API_VERSION}/clutter/clutter-layout-manager.h
 include/clutter-${API_VERSION}/clutter/clutter-layout-meta.h
-include/clutter-${API_VERSION}/clutter/clutter-list-model.h
 include/clutter-${API_VERSION}/clutter/clutter-macros.h
 include/clutter-${API_VERSION}/clutter/clutter-main.h
 include/clutter-${API_VERSION}/clutter/clutter-marshal.h
-include/clutter-${API_VERSION}/clutter/clutter-model.h
 include/clutter-${API_VERSION}/clutter/clutter-offscreen-effect.h
 include/clutter-${API_VERSION}/clutter/clutter-page-turn-effect.h
 include/clutter-${API_VERSION}/clutter/clutter-paint-node.h
@@ -123,8 +122,10 @@ include/clutter-${API_VERSION}/clutter/deprecated/clutter-frame-source.h
 include/clutter-${API_VERSION}/clutter/deprecated/clutter-group.h
 include/clutter-${API_VERSION}/clutter/deprecated/clutter-input-device.h
 include/clutter-${API_VERSION}/clutter/deprecated/clutter-keysyms.h
+include/clutter-${API_VERSION}/clutter/deprecated/clutter-list-model.h
 include/clutter-${API_VERSION}/clutter/deprecated/clutter-main.h
 include/clutter-${API_VERSION}/clutter/deprecated/clutter-media.h
+include/clutter-${API_VERSION}/clutter/deprecated/clutter-model.h
 include/clutter-${API_VERSION}/clutter/deprecated/clutter-rectangle.h
 include/clutter-${API_VERSION}/clutter/deprecated/clutter-score.h
 include/clutter-${API_VERSION}/clutter/deprecated/clutter-shader.h
@@ -166,42 +167,16 @@ share/gir-${API_VERSION}/Cally-${API_VERSION}.gir
 share/gir-${API_VERSION}/Clutter-${API_VERSION}.gir
 share/gir-${API_VERSION}/ClutterGdk-${API_VERSION}.gir
 share/gir-${API_VERSION}/ClutterX11-${API_VERSION}.gir
-share/gtk-doc/html/cally/
-share/gtk-doc/html/cally/CallyActor.html
-share/gtk-doc/html/cally/CallyClone.html
-share/gtk-doc/html/cally/CallyGroup.html
-share/gtk-doc/html/cally/CallyRectangle.html
-share/gtk-doc/html/cally/CallyRoot.html
-share/gtk-doc/html/cally/CallyStage.html
-share/gtk-doc/html/cally/CallyText.html
-share/gtk-doc/html/cally/CallyTexture.html
-share/gtk-doc/html/cally/CallyUtil.html
-share/gtk-doc/html/cally/cally-General-API.html
-share/gtk-doc/html/cally/cally.devhelp2
-share/gtk-doc/html/cally/callyannotationglossary.html
-share/gtk-doc/html/cally/callybase.html
-share/gtk-doc/html/cally/callyobjecthierarchy.html
-share/gtk-doc/html/cally/callyobjectindex.html
-share/gtk-doc/html/cally/callyobjects.html
-share/gtk-doc/html/cally/ch01.html
-share/gtk-doc/html/cally/ch02.html
-share/gtk-doc/html/cally/clutter-overview.html
-share/gtk-doc/html/cally/home.png
-share/gtk-doc/html/cally/index.html
-share/gtk-doc/html/cally/index.sgml
-share/gtk-doc/html/cally/ix01.html
-share/gtk-doc/html/cally/ix02.html
-share/gtk-doc/html/cally/ix03.html
-share/gtk-doc/html/cally/ix04.html
-share/gtk-doc/html/cally/left-insensitive.png
-share/gtk-doc/html/cally/left.png
-share/gtk-doc/html/cally/license.html
-share/gtk-doc/html/cally/right-insensitive.png
-share/gtk-doc/html/cally/right.png
-share/gtk-doc/html/cally/style.css
-share/gtk-doc/html/cally/up-insensitive.png
-share/gtk-doc/html/cally/up.png
 share/gtk-doc/html/clutter/
+share/gtk-doc/html/clutter/CallyActor.html
+share/gtk-doc/html/clutter/CallyClone.html
+share/gtk-doc/html/clutter/CallyGroup.html
+share/gtk-doc/html/clutter/CallyRectangle.html
+share/gtk-doc/html/clutter/CallyRoot.html
+share/gtk-doc/html/clutter/CallyStage.html
+share/gtk-doc/html/clutter/CallyText.html
+share/gtk-doc/html/clutter/CallyTexture.html
+share/gtk-doc/html/clutter/CallyUtil.html
 share/gtk-doc/html/clutter/ClutterAction.html
 share/gtk-doc/html/clutter/ClutterActor.html
 share/gtk-doc/html/clutter/ClutterActorMeta.html
@@ -240,6 +215,7 @@ share/gtk-doc/html/clutter/ClutterDropAction.html
 share/gtk-doc/html/clutter/ClutterEffect.html
 share/gtk-doc/html/clutter/ClutterFixedLayout.html
 share/gtk-doc/html/clutter/ClutterFlowLayout.html
+share/gtk-doc/html/clutter/ClutterGLXTexturePixmap.html
 share/gtk-doc/html/clutter/ClutterGestureAction.html
 share/gtk-doc/html/clutter/ClutterGridLayout.html
 share/gtk-doc/html/clutter/ClutterGroup.html
@@ -279,6 +255,7 @@ share/gtk-doc/html/clutter/ClutterTexture.html
 share/gtk-doc/html/clutter/ClutterTimeline.html
 share/gtk-doc/html/clutter/ClutterTransition.html
 share/gtk-doc/html/clutter/ClutterTransitionGroup.html
+share/gtk-doc/html/clutter/ClutterX11TexturePixmap.html
 share/gtk-doc/html/clutter/ClutterZoomAction.html
 share/gtk-doc/html/clutter/actor-box.png
 share/gtk-doc/html/clutter/actor-example.png
@@ -287,6 +264,7 @@ share/gtk-doc/html/clutter/annotation-glossary.html
 share/gtk-doc/html/clutter/bin-layout.png
 share/gtk-doc/html/clutter/box-layout.png
 share/gtk-doc/html/clutter/building-clutter.html
+share/gtk-doc/html/clutter/cally.html
 share/gtk-doc/html/clutter/ch01.html
 share/gtk-doc/html/clutter/ch02.html
 share/gtk-doc/html/clutter/ch03.html
@@ -299,16 +277,17 @@ share/gtk-doc/html/clutter/ch09.html
 share/gtk-doc/html/clutter/ch10.html
 share/gtk-doc/html/clutter/ch11.html
 share/gtk-doc/html/clutter/ch12.html
+share/gtk-doc/html/clutter/ch13.html
+share/gtk-doc/html/clutter/ch14.html
 share/gtk-doc/html/clutter/clutter-Base-geometric-types.html
 share/gtk-doc/html/clutter/clutter-Cairo-integration.html
-share/gtk-doc/html/clutter/clutter-ClutterGLXTexturePixmap.html
 share/gtk-doc/html/clutter/clutter-ClutterWaylandSurface.html
-share/gtk-doc/html/clutter/clutter-ClutterX11TexturePixmap.html
 share/gtk-doc/html/clutter/clutter-Colors.html
 share/gtk-doc/html/clutter/clutter-EGL-Specific-Support.html
 share/gtk-doc/html/clutter/clutter-Events.html
 share/gtk-doc/html/clutter/clutter-Features.html
 share/gtk-doc/html/clutter/clutter-GDK-Specific-Support.html
+share/gtk-doc/html/clutter/clutter-General-API.html
 share/gtk-doc/html/clutter/clutter-General.html
 share/gtk-doc/html/clutter/clutter-Implicit-Animations.html
 share/gtk-doc/html/clutter/clutter-Intel-CE3100-CE4100-Specific-Support.html
@@ -343,7 +322,6 @@ share/gtk-doc/html/clutter/flow-layout.png
 share/gtk-doc/html/clutter/go01.html
 share/gtk-doc/html/clutter/home.png
 share/gtk-doc/html/clutter/index.html
-share/gtk-doc/html/clutter/index.sgml
 share/gtk-doc/html/clutter/iterating-paths.html
 share/gtk-doc/html/clutter/ix01.html
 share/gtk-doc/html/clutter/ix02.html
@@ -363,6 +341,7 @@ share/gtk-doc/html/clutter/ix15.html
 share/gtk-doc/html/clutter/ix16.html
 share/gtk-doc/html/clutter/ix17.html
 share/gtk-doc/html/clutter/ix18.html
+share/gtk-doc/html/clutter/ix19.html
 share/gtk-doc/html/clutter/left-insensitive.png
 share/gtk-doc/html/clutter/left.png
 share/gtk-doc/html/clutter/license.html
@@ -373,7 +352,7 @@ share/gtk-doc/html/clutter/migrating-ClutterPath.html
 share/gtk-doc/html/clutter/migration.html
 share/gtk-doc/html/clutter/offscreen-redirect.png
 share/gtk-doc/html/clutter/path-alpha-func.png
-share/gtk-doc/html/clutter/pt09.html
+share/gtk-doc/html/clutter/pt10.html
 share/gtk-doc/html/clutter/right-insensitive.png
 share/gtk-doc/html/clutter/right.png
 share/gtk-doc/html/clutter/running-clutter.html
