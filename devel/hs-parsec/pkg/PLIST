@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/11/22 20:49:28 kili Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/09/19 07:59:19 kili Exp $
 lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Text/
 lib/ghc/${DISTNAME}/Text/Parsec/
 lib/ghc/${DISTNAME}/Text/Parsec.hi
@@ -56,8 +57,8 @@ lib/ghc/${DISTNAME}/Text/ParserCombinators/Parsec/Prim.hi
 lib/ghc/${DISTNAME}/Text/ParserCombinators/Parsec/Prim.p_hi
 lib/ghc/${DISTNAME}/Text/ParserCombinators/Parsec/Token.hi
 lib/ghc/${DISTNAME}/Text/ParserCombinators/Parsec/Token.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
