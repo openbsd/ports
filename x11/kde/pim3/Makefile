@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.87 2015/03/27 08:16:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2015/09/19 22:22:13 ajacoutot Exp $
 
 COMMENT = 		KDE personal information applications
 CATEGORIES =		x11 x11/kde productivity
 VERSION =		3.5.10
 DISTNAME =		kdepim-${VERSION}
 PKGSPEC =		kdepim->=3,<4
-REVISION =		20
+REVISION =		21
 
 MODKDE_VERSION =	3.5.8
 
@@ -23,7 +23,6 @@ SHARED_LIBS +=	mimelib              2.1      # .1.1
 SHARED_LIBS +=	kcal                 4.0      # .2.0
 SHARED_LIBS +=	kleopatra            2.0      # .1.0
 SHARED_LIBS +=	kdepim               2.0      # .1.0
-SHARED_LIBS +=	kpilot               1.0      # .0.0
 SHARED_LIBS +=	kpimidentities       2.0      # .1.0
 SHARED_LIBS +=	kpimexchange         2.0      # .1.0
 SHARED_LIBS +=	knodecommon          0.0      # .3.0
@@ -76,13 +75,12 @@ WANTLIB += ${KDE}/kwalletclient ${KDE}/mcop ${KDE}/qtmcop
 WANTLIB += ${KDE}/soundserver_idl ${KDE}/vcard
 WANTLIB += FLAC art_lgpl_2 assuan audiofile fam glib-2.0 gmodule-2.0 gnokii
 WANTLIB += gpg-error gpgme gthread-2.0 ical idn jpeg lcms mad mng ogg
-WANTLIB += pcre pcreposix pisock png qui sasl2 usb usb-1.0 vorbis
+WANTLIB += pcre pcreposix png qui sasl2 usb usb-1.0 vorbis
 WANTLIB += vorbisenc vorbisfile
 
 LIB_DEPENDS =	x11/kde/libs3 \
 		security/gpgme>=0.4.5 \
 		security/cyrus-sasl2 \
-		comms/pilot-link \
 		comms/gnokii
 
 RUN_DEPENDS =	x11/kde/base3 \
