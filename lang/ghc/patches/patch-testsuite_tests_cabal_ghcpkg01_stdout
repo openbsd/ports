@@ -1,51 +1,51 @@
-$OpenBSD: patch-testsuite_tests_cabal_ghcpkg01_stdout,v 1.1 2012/09/02 19:53:46 kili Exp $
---- testsuite/tests/cabal/ghcpkg01.stdout.orig	Wed Feb  1 19:11:16 2012
-+++ testsuite/tests/cabal/ghcpkg01.stdout	Sat Jun  9 21:36:25 2012
-@@ -14,6 +14,7 @@ synopsis:
- description: A Test Package
+$OpenBSD: patch-testsuite_tests_cabal_ghcpkg01_stdout,v 1.2 2015/09/19 07:42:57 kili Exp $
+--- testsuite/tests/cabal/ghcpkg01.stdout.orig	Tue Dec 23 03:31:10 2014
++++ testsuite/tests/cabal/ghcpkg01.stdout	Sun Aug  9 17:35:53 2015
+@@ -15,6 +15,7 @@ description:
+     A Test Package
  category: none
  author: simonmar@microsoft.com
 +pkgpath:
  exposed: True
- exposed-modules: A
- hidden-modules: B C.D
-@@ -48,6 +49,7 @@ synopsis:
- description: A Test Package
+ exposed-modules:
+     A
+@@ -40,6 +41,7 @@ description:
+     A Test Package
  category: none
  author: simonmar@microsoft.com
 +pkgpath:
  exposed: True
- exposed-modules: A
- hidden-modules: B C.D
-@@ -88,6 +90,7 @@ synopsis:
- description: A Test Package (new version)
+ exposed-modules:
+     A
+@@ -71,6 +73,7 @@ description:
+     A Test Package (new version)
  category: none
  author: simonmar@microsoft.com
 +pkgpath:
  exposed: False
- exposed-modules: A
- hidden-modules: B C.D C.E
-@@ -122,6 +125,7 @@ synopsis:
- description: A Test Package (new version)
+ exposed-modules:
+     A
+@@ -96,6 +99,7 @@ description:
+     A Test Package (new version)
  category: none
  author: simonmar@microsoft.com
 +pkgpath:
  exposed: False
- exposed-modules: A
- hidden-modules: B C.D C.E
-@@ -156,6 +160,7 @@ synopsis:
- description: A Test Package
+ exposed-modules:
+     A
+@@ -121,6 +125,7 @@ description:
+     A Test Package
  category: none
  author: simonmar@microsoft.com
 +pkgpath:
  exposed: True
- exposed-modules: A
- hidden-modules: B C.D
-@@ -197,6 +202,7 @@ synopsis:
- description: A Test Package
+ exposed-modules:
+     A
+@@ -153,6 +158,7 @@ description:
+     A Test Package
  category: none
  author: simonmar@microsoft.com
 +pkgpath:
  exposed: False
- exposed-modules: A
- hidden-modules: B C.D
+ exposed-modules:
+     A

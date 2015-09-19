@@ -1,11 +1,11 @@
-$OpenBSD: patch-ghc_mk,v 1.10 2015/01/01 19:25:36 kili Exp $
+$OpenBSD: patch-ghc_mk,v 1.11 2015/09/19 07:42:56 kili Exp $
 
 Fix the bindist-list (for building the bootstrapper); without this,
 gtar creates an archive which our tar can't extract.
 
---- ghc.mk.orig	Thu Jul 10 06:27:16 2014
-+++ ghc.mk	Sun Nov  2 21:50:31 2014
-@@ -1007,6 +1007,8 @@ unix-binary-dist-prep:
+--- ghc.mk.orig	Tue Jul 21 15:52:50 2015
++++ ghc.mk	Sun Aug  9 17:35:52 2015
+@@ -1024,6 +1024,8 @@ unix-binary-dist-prep:
  	echo "UseSystemLibFFI    = $(UseSystemLibFFI)"    >> $(BIN_DIST_MK)
  	cd $(BIN_DIST_PREP_DIR) && autoreconf
  	$(call removeFiles,$(BIN_DIST_PREP_TAR))

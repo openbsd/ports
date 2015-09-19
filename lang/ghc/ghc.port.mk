@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.35 2015/01/01 19:25:36 kili Exp $
+# $OpenBSD: ghc.port.mk,v 1.36 2015/09/19 07:42:56 kili Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
-MODGHC_VER =		7.8.4
+MODGHC_VER =		7.10.2
 SUBST_VARS +=		MODGHC_VER
 
 MODGHC_BIN =		${LOCALBASE}/bin/ghc
@@ -27,6 +27,8 @@ BUILD_DEPENDS +=	lang/ghc
 # necessary tags to your PLIST by hand).
 # Add "nort" if the port doesn't depend on the GHC runtime. This will
 # also turn off the default "hs-" prefix for PKGNAME.
+# If "nort" is not added, MODGHC_PACKAGE_KEY may be set to the 'package
+# key' of the library built and will be added to SUBST_VARS.
 # Finally, set it to or add "hackage" if the distfiles are available on
 # hackage.haskell.org.
 
@@ -36,13 +38,17 @@ MODGHC_BUILD ?=
 PKGNAME ?=		hs-${DISTNAME}
 RUN_DEPENDS +=		lang/ghc=${MODGHC_VER}
 CATEGORIES +=		lang/ghc
+MODGHC_PACKAGE_KEY ?=
+.  if ${MODGHC_PACKAGE_KEY} != ""
+SUBST_VARS +=			MODGHC_PACKAGE_KEY
+.  endif
 . endif
 
 . if ${MODGHC_BUILD:L:Mhackage}
 MODGHC_HACKAGE_NAME =		${DISTNAME:C,-[0-9.]*$,,}
 MODGHC_HACKAGE_VERSION =	${DISTNAME:C,.*-([0-9.]*)$,\1,}
-HOMEPAGE ?=			http://hackage.haskell.org/package/${MODGHC_HACKAGE_NAME}
-MASTER_SITES =			http://hackage.haskell.org/package/${DISTNAME}/
+HOMEPAGE ?=			https://hackage.haskell.org/package/${MODGHC_HACKAGE_NAME}
+MASTER_SITES =			https://hackage.haskell.org/package/${DISTNAME}/
 SUBST_VARS +=			DISTNAME MODGHC_HACKAGE_VERSION
 DIST_SUBDIR ?=			ghc
 . endif
@@ -68,8 +74,7 @@ MODGHC_SETUP_CONF_ARGS +=	--docdir=\$$datadir/doc/\$$pkgid
 .  endif
 
 .  if ${MODGHC_BUILD:L:Mhaddock}
-BUILD_DEPENDS +=		devel/haddock \
-				lang/ghc,-doc
+BUILD_DEPENDS +=		lang/ghc,-doc
 .  endif
 
 # Little hack to let ports still add CONFIGURE_STYLE = autoconf and go
@@ -101,8 +106,7 @@ MODGHC_BUILD_TARGET += \
 .  if ${MODGHC_BUILD:L:Mregister}
 MODGHC_BUILD_TARGET += \
 	;cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
-		${MODGHC_SETUP_PROG} register --gen-script \
-			--pkgpath="${PKGPATH}"; \
+		${MODGHC_SETUP_PROG} register --gen-script; \
 	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
 		${MODGHC_SETUP_PROG} unregister --gen-script
 .  endif

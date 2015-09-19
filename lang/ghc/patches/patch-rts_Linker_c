@@ -1,12 +1,12 @@
-$OpenBSD: patch-rts_Linker_c,v 1.9 2015/01/01 19:25:36 kili Exp $
+$OpenBSD: patch-rts_Linker_c,v 1.10 2015/09/19 07:42:57 kili Exp $
 
 Workaround error: unknown symbol '__guard_local'.
 
-Dissable check for .init_array sections, we don't have them.
+Disable check for .init_array sections, we don't have them.
 
---- rts/Linker.c.orig	Mon Dec 15 15:36:16 2014
-+++ rts/Linker.c	Mon Dec 29 10:24:49 2014
-@@ -849,6 +849,14 @@ typedef struct _RtsSymbolVal {
+--- rts/Linker.c.orig	Tue Jul 21 15:52:50 2015
++++ rts/Linker.c	Sun Aug  9 17:35:53 2015
+@@ -864,6 +864,14 @@ typedef struct _RtsSymbolVal {
  #define RTS_DARWIN_ONLY_SYMBOLS
  #endif
  
@@ -21,7 +21,7 @@ Dissable check for .init_array sections, we don't have them.
  #ifndef SMP
  # define MAIN_CAP_SYM SymI_HasProto(MainCapability)
  #else
-@@ -1434,6 +1442,7 @@ RTS_POSIX_ONLY_SYMBOLS
+@@ -1485,6 +1493,7 @@ RTS_POSIX_ONLY_SYMBOLS
  RTS_MINGW_ONLY_SYMBOLS
  RTS_CYGWIN_ONLY_SYMBOLS
  RTS_DARWIN_ONLY_SYMBOLS
@@ -29,7 +29,7 @@ Dissable check for .init_array sections, we don't have them.
  RTS_LIBGCC_SYMBOLS
  RTS_LIBFFI_SYMBOLS
  #undef SymI_NeedsProto
-@@ -1469,6 +1478,7 @@ static RtsSymbolVal rtsSyms[] = {
+@@ -1529,6 +1538,7 @@ static RtsSymbolVal rtsSyms[] = {
        RTS_MINGW_ONLY_SYMBOLS
        RTS_CYGWIN_ONLY_SYMBOLS
        RTS_DARWIN_ONLY_SYMBOLS
@@ -37,7 +37,7 @@ Dissable check for .init_array sections, we don't have them.
        RTS_LIBGCC_SYMBOLS
        RTS_LIBFFI_SYMBOLS
  #if defined(darwin_HOST_OS) && defined(i386_HOST_ARCH)
-@@ -4981,11 +4991,13 @@ static int getSectionKind_ELF( Elf_Shdr *hdr, int *is_
+@@ -5309,11 +5319,13 @@ static int getSectionKind_ELF( Elf_Shdr *hdr, int *is_
          return SECTIONKIND_CODE_OR_RODATA;
      }
  

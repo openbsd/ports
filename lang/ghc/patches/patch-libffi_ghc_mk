@@ -1,16 +1,16 @@
-$OpenBSD: patch-libffi_ghc_mk,v 1.4 2015/01/01 19:25:36 kili Exp $
+$OpenBSD: patch-libffi_ghc_mk,v 1.5 2015/09/19 07:42:56 kili Exp $
 
 Unbreak the build on OpenBSD/amd64: undefined references to
 'ffi_call_unix64', 'ffi_closure_unix64'
 
 gcc supports @unwind sections while ld (binutils 2.15) does not
 
---- libffi/ghc.mk.orig	Fri Dec 19 16:35:34 2014
-+++ libffi/ghc.mk	Mon Dec 29 10:24:49 2014
-@@ -96,6 +96,7 @@ $(libffi_STAMP_CONFIGURE): $(TOUCH_DEP)
+--- libffi/ghc.mk.orig	Tue Jul 21 15:52:50 2015
++++ libffi/ghc.mk	Sun Aug  9 17:42:25 2015
+@@ -104,6 +104,7 @@ $(libffi_STAMP_CONFIGURE): $(TOUCH_DEP)
  	    RANLIB=$(REAL_RANLIB_CMD) \
          CFLAGS="$(SRC_CC_OPTS) $(CONF_CC_OPTS_STAGE1) -w" \
-         LDFLAGS="$(SRC_LD_OPTS) $(CONF_GCC_LINKER_OPTS_STAGE1) -w" \
+         LDFLAGS="$(SRC_LD_OPTS) -w" \
 +        libffi_cv_as_x86_64_unwind_section_type=no \
          "$(SHELL)" ./configure \
  	          --prefix=$(TOP)/libffi/build/inst \

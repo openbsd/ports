@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2015/09/14 18:39:06 kili Exp $
+# $OpenBSD: Makefile,v 1.123 2015/09/19 07:42:56 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -14,9 +14,7 @@ NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
-REVISION-main =		6
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
-REVISION-doc =		0
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
@@ -63,6 +61,44 @@ DISTFILES =		ghc-${MODGHC_VER}-src.tar.bz2 \
 .for m in amd64 i386
 BINDISTFILE-$m =	ghc-${BIN_VER}-$m-unknown-openbsd.tar.bz2:0
 SUPDISTFILES +=		${BINDISTFILE-$m}
+.endfor
+
+# Newest madness from the haskell world: packages are now stored in a
+# directory named after the package 'key', which is made out of an
+# abbreviation of the package name and the package version or whatever.
+# At this point, we can as well factor out package version numbers to
+# get smaller PLIST diffs for future updates.
+
+GHC_ITEMS = \
+	CABAL			1.22.4.0	96aI7pZyaxU3dsgngOxbdK \
+	ARRAY			0.5.1.0		E0sTtauuKsGDLZoT7lTbgZ \
+	BASE			4.8.1.0		GDytRqRVSUX7zckgKqJjgw \
+	BINARY			0.7.5.0		IvYoLp9H6Xy3zEH13MmZwd \
+	BIN_PACKAGE_DB		0.0.0.0		HeqFuAPxbeUAPK6hSBHejU \
+	BYTESTRING		0.10.6.0	6elQVSg5cWdFrvRnfxTUrH \
+	CONTAINERS		0.5.6.2		LKCPrTJwOTOLk4OU37YmeN \
+	DEEPSEQ			1.4.1.1		LbCWUlehDDeLxurARKDH5o \
+	DIRECTORY		1.2.2.0		KowvXytSqazBcvN7MGpFtg \
+	FILEPATH		1.4.0.0		KsGE6pHE5eZHSN90ZVax6A \
+	GHC			7.10.2		JzwEp1oQ8kA7NFNTGk1ho5 \
+	GHC_PRIM		0.4.0.0		8TmvWUcS1U1IKHT0levwg3 \
+	HASKELINE		0.7.2.1		1dVCRhdIH7hAQWJrKwByYv \
+	HOOPL			3.10.0.2	DoMsb793VEWGUzPylcUNJi \
+	HPC			0.6.0.2		EoBo26ZW1TCDX9aShnDKTF \
+	INTEGER_GMP		1.0.0.0		2aU3IZNMF9a7mQ0OzsZ0dS \
+	PRETTY			1.1.2.0		7UQTOB05U7lIYPkFOVraeR \
+	PROCESS			1.2.3.0		FLTz0SLwyG6LJUpZ52HjkU \
+	TEMPLATE_HASKELL	2.10.0.0	1ejK907jvoTHoZ6iZtHeyN \
+	TERMINFO		0.4.0.1		KvtqTNXWuWjKicEYaZ7qsx \
+	TIME			1.5.0.1		AXTdBF9VRQoBOqJT6qtmVH \
+	TRANSFORMERS		1.5.0.1		3eG64VdP2vzGjP6wJiCp5X \
+	UNIX			2.7.1.0		A3WgcI5QiHK4PDo4jSYdwQ \
+	XHTML			3000.2.1	FxPylgBilld3tRCpn3X21N
+
+.for _i _v _s in ${GHC_ITEMS}
+${_i}_VER =	${_v}
+${_i}_KEY =	${_s}
+SUBST_VARS +=	${_i}_VER ${_i}_KEY
 .endfor
 
 USE_GMAKE =		Yes

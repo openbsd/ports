@@ -1,7 +1,7 @@
-$OpenBSD: patch-testsuite_driver_testlib_py,v 1.6 2014/11/22 20:23:23 kili Exp $
---- testsuite/driver/testlib.py.orig	Thu Jul 10 06:27:16 2014
-+++ testsuite/driver/testlib.py	Sun Nov  2 22:08:03 2014
-@@ -1604,6 +1604,13 @@ def compare_outputs( kind, normaliser, expected_file, 
+$OpenBSD: patch-testsuite_driver_testlib_py,v 1.7 2015/09/19 07:42:57 kili Exp $
+--- testsuite/driver/testlib.py.orig	Tue Jul 21 15:52:50 2015
++++ testsuite/driver/testlib.py	Sun Aug  9 17:35:53 2015
+@@ -1634,6 +1634,13 @@ def compare_outputs( kind, normaliser, expected_file, 
      actual_raw = read_no_crs(actual_file)
      actual_str = normaliser(actual_raw)
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-testsuite_driver_testlib_py,v 1.6 2014/11/22 20:23:23 kili Exp $
      if expected_str == actual_str:
          return 1
      else:
-@@ -1627,13 +1634,13 @@ def compare_outputs( kind, normaliser, expected_file, 
+@@ -1657,13 +1664,13 @@ def compare_outputs( kind, normaliser, expected_file, 
          # This does mean that the diff might contain changes that
          # would be normalised away.
          if (config.verbose >= 1):
