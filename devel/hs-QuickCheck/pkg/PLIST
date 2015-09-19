@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/11/22 20:59:41 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/09/19 07:52:36 kili Exp $
 lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Test/
 lib/ghc/${DISTNAME}/Test/QuickCheck/
 lib/ghc/${DISTNAME}/Test/QuickCheck.hi
@@ -12,8 +13,11 @@ lib/ghc/${DISTNAME}/Test/QuickCheck/Exception.hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Exception.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Function.hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Function.p_hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/Gen/
 lib/ghc/${DISTNAME}/Test/QuickCheck/Gen.hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Gen.p_hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/Gen/Unsafe.hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/Gen/Unsafe.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Modifiers.hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Modifiers.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Monadic.hi
@@ -22,14 +26,16 @@ lib/ghc/${DISTNAME}/Test/QuickCheck/Poly.hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Poly.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Property.hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Property.p_hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/Random.hi
+lib/ghc/${DISTNAME}/Test/QuickCheck/Random.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/State.hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/State.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Test.hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Test.p_hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Text.hi
 lib/ghc/${DISTNAME}/Test/QuickCheck/Text.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
@@ -37,12 +43,15 @@ share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/QuickCheck.haddock
 share/doc/hs-${DISTNAME}/html/Test-QuickCheck-All.html
 share/doc/hs-${DISTNAME}/html/Test-QuickCheck-Arbitrary.html
+share/doc/hs-${DISTNAME}/html/Test-QuickCheck-Exception.html
 share/doc/hs-${DISTNAME}/html/Test-QuickCheck-Function.html
+share/doc/hs-${DISTNAME}/html/Test-QuickCheck-Gen-Unsafe.html
 share/doc/hs-${DISTNAME}/html/Test-QuickCheck-Gen.html
 share/doc/hs-${DISTNAME}/html/Test-QuickCheck-Modifiers.html
 share/doc/hs-${DISTNAME}/html/Test-QuickCheck-Monadic.html
 share/doc/hs-${DISTNAME}/html/Test-QuickCheck-Poly.html
 share/doc/hs-${DISTNAME}/html/Test-QuickCheck-Property.html
+share/doc/hs-${DISTNAME}/html/Test-QuickCheck-Random.html
 share/doc/hs-${DISTNAME}/html/Test-QuickCheck-State.html
 share/doc/hs-${DISTNAME}/html/Test-QuickCheck-Test.html
 share/doc/hs-${DISTNAME}/html/Test-QuickCheck-Text.html
@@ -82,12 +91,15 @@ share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Test-QuickCheck-All.html
 share/doc/hs-${DISTNAME}/html/mini_Test-QuickCheck-Arbitrary.html
+share/doc/hs-${DISTNAME}/html/mini_Test-QuickCheck-Exception.html
 share/doc/hs-${DISTNAME}/html/mini_Test-QuickCheck-Function.html
+share/doc/hs-${DISTNAME}/html/mini_Test-QuickCheck-Gen-Unsafe.html
 share/doc/hs-${DISTNAME}/html/mini_Test-QuickCheck-Gen.html
 share/doc/hs-${DISTNAME}/html/mini_Test-QuickCheck-Modifiers.html
 share/doc/hs-${DISTNAME}/html/mini_Test-QuickCheck-Monadic.html
 share/doc/hs-${DISTNAME}/html/mini_Test-QuickCheck-Poly.html
 share/doc/hs-${DISTNAME}/html/mini_Test-QuickCheck-Property.html
+share/doc/hs-${DISTNAME}/html/mini_Test-QuickCheck-Random.html
 share/doc/hs-${DISTNAME}/html/mini_Test-QuickCheck-State.html
 share/doc/hs-${DISTNAME}/html/mini_Test-QuickCheck-Test.html
 share/doc/hs-${DISTNAME}/html/mini_Test-QuickCheck-Text.html

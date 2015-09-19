@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2014/11/22 20:59:41 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2015/09/19 07:52:36 kili Exp $
 
 COMMENT =		automatic testing of Haskell programs
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
-DISTNAME =		QuickCheck-2.6
-REVISION =		0
+DISTNAME =		QuickCheck-2.8.1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -17,7 +16,12 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS =		devel/hs-random
+MODGHC_PACKAGE_KEY =	1fWvpr9QgXz0phpE20gfU8
+
+RUN_DEPENDS =		devel/hs-old-locale \
+			devel/hs-old-time \
+			devel/hs-random \
+			devel/hs-tf-random>=0.4
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
