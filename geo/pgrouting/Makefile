@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/21 22:51:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/19 15:44:12 landry Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	geospatial routing extension for PostgreSQL
 
-#GH_TAGNAME =	v2.0.0
-GH_COMMIT =	d6ed2cba4c574b8ac463632df451b6f011fd522d
+GH_COMMIT =	6bb82c56e3c4a37ae6a18b5e3f1e551d8c9d10d8
 GH_PROJECT =	pgrouting
 GH_ACCOUNT =	pgRouting
-REVISION =	1
 
-DISTNAME =	pgrouting-2.0.0
+DISTNAME =	pgrouting-2.1.0
 CATEGORIES =	geo databases
 
 HOMEPAGE =	http://pgrouting.org/
@@ -20,7 +18,9 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES =	databases/postgresql devel/cmake
+MODULES =	databases/postgresql devel/cmake gcc4
+MODGCC4_ARCHS =	*
+MODGCC4_LANGS =	c c++
 
 LIB_DEPENDS =	math/cgal
 RUN_DEPENDS =	geo/postgis

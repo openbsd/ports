@@ -1,16 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/16 21:34:35 landry Exp $
-lib/postgresql/librouting.so
-lib/postgresql/librouting_bd.so
-lib/postgresql/librouting_dd.so
-lib/postgresql/librouting_ksp.so
-lib/postgresql/librouting_tsp.so
-share/postgresql/contrib/
-share/postgresql/contrib/pgrouting-2.0/
-share/postgresql/contrib/pgrouting-2.0/pgrouting.control
-share/postgresql/contrib/pgrouting-2.0/pgrouting.sql
-share/postgresql/contrib/pgrouting-2.0/pgrouting_dd_legacy.sql
-share/postgresql/contrib/pgrouting-2.0/pgrouting_legacy.sql
-share/postgresql/extension/pgrouting--2.0.0.sql
+@comment $OpenBSD: PLIST,v 1.2 2015/09/19 15:44:13 landry Exp $
+lib/postgresql/librouting-2.1.so
+share/postgresql/extension/pgrouting--2.0.0--2.1.0.sql
+share/postgresql/extension/pgrouting--2.1.0--2.1.0.sql
+share/postgresql/extension/pgrouting--2.1.0.sql
 share/postgresql/extension/pgrouting.control
-share/postgresql/extension/pgrouting_dd_legacy.sql
-share/postgresql/extension/pgrouting_legacy.sql
