@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2015/07/18 22:29:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2015/09/19 12:46:29 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -19,6 +19,8 @@ PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
+
+REVISION-main=		0
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -75,7 +77,7 @@ CONFIGURE_ARGS=		--enable-system-sqlite \
 			--with-postgres="${LOCALBASE}"
 
 # XXX sync with API_V in lang/vala
-CONFIGURE_ENV +=	VALA_API_VERSION=0.28
+CONFIGURE_ENV +=	VALA_API_VERSION=0.30
 
 FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
 
