@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.39 2015/09/19 13:04:14 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.40 2015/09/19 13:09:38 landry Exp $
 
 # keep in sync with working archs.. sigh
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
@@ -19,8 +19,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${FV}/langpack/ \
-		http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${FV}/langpack/ \
-		ftp://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${FV}/langpack/
+		http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${FV}/langpack/
 
 BUILD_DEPENDS =	archivers/unzip
 RUN_DEPENDS =	seamonkey-${FV:S/b/beta/}:www/seamonkey

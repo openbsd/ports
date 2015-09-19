@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.50 2015/08/31 20:08:40 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.51 2015/09/19 13:09:38 landry Exp $
 
 # keep in sync with working archs.. sigh
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
@@ -19,8 +19,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${FV}/linux-i686/xpi/ \
-		http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FV}/linux-i686/xpi/ \
-		ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${FV}/linux-i686/xpi/
+		http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FV}/linux-i686/xpi/
 
 LANGUAGES =	af ar ast be bg bn-BD bn-IN br bs ca cs cy da de el en-GB en-US en-ZA eo \
 		es-AR es-CL es-ES es-MX et eu fa fi fr fy-NL ga-IE gd gl gu-IN he \
