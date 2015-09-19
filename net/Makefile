@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.927 2015/09/11 20:32:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.928 2015/09/19 08:25:59 kili Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -127,6 +127,7 @@
      SUBDIR += hs-HTTP
      SUBDIR += hs-curl
      SUBDIR += hs-hostname
+     SUBDIR += hs-multipart
      SUBDIR += hs-network-info
      SUBDIR += httptunnel
      SUBDIR += icb
