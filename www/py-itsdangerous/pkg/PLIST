@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/25 15:23:38 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/19 10:14:44 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/itsdangerous-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/itsdangerous-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/itsdangerous-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -34,6 +34,6 @@ share/doc/${MODPY_PY_PREFIX}itsdangerous/_static/websupport.js
 share/doc/${MODPY_PY_PREFIX}itsdangerous/genindex.html
 share/doc/${MODPY_PY_PREFIX}itsdangerous/index.html
 share/doc/${MODPY_PY_PREFIX}itsdangerous/objects.inv
-share/doc/${MODPY_PY_PREFIX}itsdangerous/py-modindex.html
+share/doc/${MODPY_PY_PREFIX}itsdangerous/${MODPY_PY_PREFIX}modindex.html
 share/doc/${MODPY_PY_PREFIX}itsdangerous/search.html
 share/doc/${MODPY_PY_PREFIX}itsdangerous/searchindex.js
