@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.3 2014/09/27 16:53:53 miod Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/19 20:27:43 rpointel Exp $
 
 COMMENT =		powerful disassembler library for x86/amd64
 
-DISTNAME =		distorm3
-PKGNAME =		${DISTNAME}-3
-REVISION=		0
+MODPY_EGG_VERSION =	3.3.0
+DISTNAME =		distorm3-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
 
-HOMEPAGE =		https://code.google.com/p/distorm/
+HOMEPAGE =		https://github.com/gdabah/distorm/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += pthread
 
-MASTER_SITES =		https://distorm.googlecode.com/files/
-
-EXTRACT_SUFX =		.zip
+GH_ACCOUNT =		gdabah
+GH_PROJECT =		distorm
+GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
 MODULES =		lang/python
 
