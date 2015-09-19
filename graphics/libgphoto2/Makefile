@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/07/07 10:29:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2015/09/19 18:47:00 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT=		digital camera library
 VERSION=		2.5.8
 DISTNAME=		libgphoto2-${VERSION}
 PKGNAME=		libgphoto-${VERSION}
+REVISION=		0
 
 GPHOTO2_PORT_API=	0.12.0
 SUBST_VARS=		GPHOTO2_PORT_API VERSION
@@ -23,7 +24,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c exif expat fontconfig freetype gd jpeg ltdl lzma
+WANTLIB += c exif expat fontconfig freetype gd jpeg ltdl lzma usb
 WANTLIB += m png pthread pthread-stubs tiff usb-1.0 vpx xml2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gphoto/}
@@ -32,7 +33,7 @@ MODULES=		devel/gettext
 
 LIB_DEPENDS=		graphics/gd \
 			graphics/libexif \
-			devel/libusb1 \
+			devel/libusb-compat \
 			devel/libtool,-ltdl \
 			textproc/libxml
 
@@ -45,6 +46,9 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-static \
 			--without-hal \
 			--without-bonjour
+
+# XXX libusb1 is broken
+CONFIGURE_ARGS +=	--with-libusb-1.0=no
 
 # /usr/local/lib/libiconv.a(localcharset.o)(.text+0x0): In function `locale_charset':
 # : multiple definition of `locale_charset'

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/07/07 10:29:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/09/19 18:47:00 ajacoutot Exp $
 bin/gphoto2-config
 bin/gphoto2-port-config
 include/gphoto2/
@@ -98,7 +98,7 @@ lib/libgphoto2_port.la
 lib/libgphoto2_port/${GPHOTO2_PORT_API}/
 lib/libgphoto2_port/${GPHOTO2_PORT_API}/disk.so
 lib/libgphoto2_port/${GPHOTO2_PORT_API}/ptpip.so
-lib/libgphoto2_port/${GPHOTO2_PORT_API}/usb1.so
+lib/libgphoto2_port/${GPHOTO2_PORT_API}/usb.so
 lib/libgphoto2_port/${GPHOTO2_PORT_API}/usbdiskdirect.so
 lib/libgphoto2_port/${GPHOTO2_PORT_API}/usbscsi.so
 lib/pkgconfig/libgphoto2.pc
