@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/11/22 20:59:41 kili Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/09/19 07:51:55 kili Exp $
 @comment bin/basic-tests
 @comment bin/extended-tests
 @comment bin/optimize-1-tests
 @comment bin/terminal-tests
 lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Test/
 lib/ghc/${DISTNAME}/Test/HUnit/
 lib/ghc/${DISTNAME}/Test/HUnit.hi
@@ -16,8 +17,8 @@ lib/ghc/${DISTNAME}/Test/HUnit/Terminal.hi
 lib/ghc/${DISTNAME}/Test/HUnit/Terminal.p_hi
 lib/ghc/${DISTNAME}/Test/HUnit/Text.hi
 lib/ghc/${DISTNAME}/Test/HUnit/Text.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
