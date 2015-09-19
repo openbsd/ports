@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.36 2015/08/25 13:18:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2015/09/19 12:45:08 jasper Exp $
+
+BROKEN =	doesn't build with vala >= 0.30.0
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
 DISTNAME =	birdfont-2.11.2
