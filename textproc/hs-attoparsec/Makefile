@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2015/07/23 17:58:55 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2015/09/19 08:19:54 kili Exp $
 
 COMMENT =		fast combinator parsing for bytestrings
 
 # Dependency of meta/haskell-platform.
-# Please do *not* update without thinking (0.11.* should be ok).
-DISTNAME =		attoparsec-0.11.3.4
+# Please do *not* update without thinking.
+DISTNAME =		attoparsec-0.13.0.1
 CATEGORIES =		textproc
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \
@@ -17,7 +17,9 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS =		devel/hs-text>=0.11.1.5 \
+MODGHC_PACKAGE_KEY =	46jJ1gLWm1hDQN03fs9Cv6
+
+RUN_DEPENDS =		devel/hs-text>=1.1.1.3 \
 			devel/hs-scientific>=0.3.1,<0.4
 BUILD_DEPENDS =		${RUN_DEPENDS}
 

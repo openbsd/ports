@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/11/22 20:59:42 kili Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/09/19 08:19:54 kili Exp $
 @conflict hs-attoparsec-text-*
 @pkgpath textproc/hs-attoparsec-text
 lib/ghc/${DISTNAME}/
@@ -9,6 +9,8 @@ lib/ghc/${DISTNAME}/Data/Attoparsec.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/
 lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString.p_hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/Buffer.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/Buffer.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/Char8.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/Char8.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/FastSet.hi
@@ -24,6 +26,8 @@ lib/ghc/${DISTNAME}/Data/Attoparsec/Combinator.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Internal/
 lib/ghc/${DISTNAME}/Data/Attoparsec/Internal.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Internal.p_hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Internal/Fhthagn.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Internal/Fhthagn.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Internal/Types.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Internal/Types.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Lazy.hi
@@ -33,6 +37,8 @@ lib/ghc/${DISTNAME}/Data/Attoparsec/Number.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Text/
 lib/ghc/${DISTNAME}/Data/Attoparsec/Text.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Text.p_hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Text/Buffer.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Text/Buffer.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Text/FastSet.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Text/FastSet.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Text/Internal.hi
@@ -43,8 +49,9 @@ lib/ghc/${DISTNAME}/Data/Attoparsec/Types.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Types.p_hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Zepto.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Zepto.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
@@ -54,6 +61,8 @@ share/doc/hs-${DISTNAME}/html/Data-Attoparsec-ByteString-Lazy.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec-ByteString.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Char8.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Combinator.html
+share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Internal-Types.html
+share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Internal.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Lazy.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Number.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Text-Lazy.html
@@ -73,6 +82,8 @@ share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-ByteString-Lazy.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-ByteString.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Char8.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Combinator.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Internal-Types.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Internal.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Lazy.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Number.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Text-Lazy.html
