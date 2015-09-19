@@ -1,6 +1,6 @@
-$OpenBSD: patch-check_imap_receive_epn,v 1.1 2013/03/28 12:38:56 sthen Exp $
---- check_imap_receive_epn.orig	Thu Mar 28 12:26:36 2013
-+++ check_imap_receive_epn	Thu Mar 28 12:35:45 2013
+$OpenBSD: patch-check_imap_receive_epn,v 1.2 2015/09/19 12:21:04 sthen Exp $
+--- check_imap_receive_epn.orig	Sun Feb 26 01:03:10 2012
++++ check_imap_receive_epn	Sat Sep 19 13:13:36 2015
 @@ -47,7 +47,7 @@ my $download_max = "";
  my $peek = "";
  my $template = "";
@@ -10,12 +10,21 @@ $OpenBSD: patch-check_imap_receive_epn,v 1.1 2013/03/28 12:38:56 sthen Exp $
  my $tls = 0;
  my $time_hires = "";
  my $ok;
-@@ -129,7 +129,7 @@ eval {
+@@ -126,13 +126,16 @@ eval {
+ 	alarm $timeout;
+ 	
+ 	if( $ssl || $tls ) {
++		use IO::Socket::SSL;
  		$imap_port = $default_imap_ssl_port unless $imap_port;
  		my %ssl_args = ();
  		if( length($ssl_ca_file) > 0 ) {
 -			$ssl_args{SSL_verify_mode} = 1;
-+			$ssl_args{SSL_verify_mode} = qw(SSL_VERIFY_PEER);
++			$ssl_args{SSL_verify_mode} = SSL_VERIFY_PEER;
  			$ssl_args{SSL_ca_file} = $ssl_ca_file;
  			$ssl_args{SSL_verifycn_scheme} = 'imap';
  			$ssl_args{SSL_verifycn_name} = $imap_server;
++		} else {
++			$ssl_args{SSL_verify_mode} = SSL_VERIFY_NONE;
+ 		}
+ 		my $socket = IO::Socket::SSL->new(PeerAddr=>"$imap_server:$imap_port", %ssl_args);
+ 		die IO::Socket::SSL::errstr() . " (if you get this only when using both --ssl and --ssl-ca-file, but not when using just --ssl, the server SSL certificate failed validation)" unless $socket;
