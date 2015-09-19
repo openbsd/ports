@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-seamonkey,v 1.3 2014/03/24 21:01:46 landry Exp $
+@comment $OpenBSD: PLIST-seamonkey,v 1.4 2015/09/19 12:35:47 landry Exp $
 @conflict enigmail-seamonkey-<=1.6v0p1
 @pkgpath www/seamonkey,-enigmail
 lib/mozilla/
@@ -22,10 +22,14 @@ lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/commonFuncs.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/enigmailCommon.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/enigmailConvert.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/enigmailCore.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/fixExchangeMsg.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/gpgAgentHandler.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/installGnuPG.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/keyManagement.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/mimeVerify.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/passwordCheck.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/pipeConsole.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/subprocess.jsm
 lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/subprocess_worker_unix.js
