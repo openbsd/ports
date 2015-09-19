@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/11/22 20:45:52 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/09/19 07:54:21 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Graph/
@@ -12,8 +12,6 @@ lib/ghc/${DISTNAME}/Data/Graph/Inductive/Example.p_hi
 lib/ghc/${DISTNAME}/Data/Graph/Inductive/Graph.hi
 lib/ghc/${DISTNAME}/Data/Graph/Inductive/Graph.p_hi
 lib/ghc/${DISTNAME}/Data/Graph/Inductive/Internal/
-lib/ghc/${DISTNAME}/Data/Graph/Inductive/Internal/FiniteMap.hi
-lib/ghc/${DISTNAME}/Data/Graph/Inductive/Internal/FiniteMap.p_hi
 lib/ghc/${DISTNAME}/Data/Graph/Inductive/Internal/Heap.hi
 lib/ghc/${DISTNAME}/Data/Graph/Inductive/Internal/Heap.p_hi
 lib/ghc/${DISTNAME}/Data/Graph/Inductive/Internal/Queue.hi
@@ -62,10 +60,11 @@ lib/ghc/${DISTNAME}/Data/Graph/Inductive/Query/TransClos.hi
 lib/ghc/${DISTNAME}/Data/Graph/Inductive/Query/TransClos.p_hi
 lib/ghc/${DISTNAME}/Data/Graph/Inductive/Tree.hi
 lib/ghc/${DISTNAME}/Data/Graph/Inductive/Tree.p_hi
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Paths_fgl.hi
 lib/ghc/${DISTNAME}/Paths_fgl.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
@@ -73,7 +72,6 @@ share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Data-Graph-Inductive-Basic.html
 share/doc/hs-${DISTNAME}/html/Data-Graph-Inductive-Example.html
 share/doc/hs-${DISTNAME}/html/Data-Graph-Inductive-Graph.html
-share/doc/hs-${DISTNAME}/html/Data-Graph-Inductive-Internal-FiniteMap.html
 share/doc/hs-${DISTNAME}/html/Data-Graph-Inductive-Internal-Heap.html
 share/doc/hs-${DISTNAME}/html/Data-Graph-Inductive-Internal-Queue.html
 share/doc/hs-${DISTNAME}/html/Data-Graph-Inductive-Internal-RootPath.html
@@ -133,7 +131,6 @@ share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Graph-Inductive-Basic.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Graph-Inductive-Example.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Graph-Inductive-Graph.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Graph-Inductive-Internal-FiniteMap.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Graph-Inductive-Internal-Heap.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Graph-Inductive-Internal-Queue.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Graph-Inductive-Internal-RootPath.html
