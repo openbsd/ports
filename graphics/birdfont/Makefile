@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2015/09/19 12:45:08 jasper Exp $
-
-BROKEN =	doesn't build with vala >= 0.30.0
+# $OpenBSD: Makefile,v 1.38 2015/09/19 13:37:38 ajacoutot Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
-DISTNAME =	birdfont-2.11.2
+DISTNAME =	birdfont-2.11.3
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	graphics print
-REVISION =	0
 
 # Both libs must have the same SO number!
 # See scripts/bavala.py (or patches/patch-scripts_bavala_py)
@@ -25,7 +22,7 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gtk-3 harfbuzz javascriptcoregtk-3.0
 WANTLIB += m notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
-WANTLIB += webkitgtk-3.0 xcb xcb-render xcb-shm xml2 xmlbird z
+WANTLIB += webkitgtk-3.0 xcb xcb-render xcb-shm xml2 xmlbird z graphite2
 
 MASTER_SITES =	http://birdfont.org/releases/
 
