@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.25 2014/12/14 20:15:39 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.26 2015/09/19 23:23:13 naddy Exp $
 bin/irc
-@bin bin/irc-20141122
+@bin bin/irc-20150903
 bin/ircbug
 @bin bin/ircflush
 @bin libexec/ircio
@@ -588,6 +588,7 @@ share/irc/script/netsplit
 share/irc/script/newaway
 share/irc/script/newformat
 share/irc/script/nicks
+share/irc/script/nicksearch
 share/irc/script/nocolour
 share/irc/script/oldping
 share/irc/script/oper
