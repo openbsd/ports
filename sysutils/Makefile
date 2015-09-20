@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.358 2015/09/18 07:08:36 kirby Exp $
+# $OpenBSD: Makefile,v 1.359 2015/09/20 12:50:48 landry Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -173,6 +173,7 @@
      SUBDIR += relayd-updateconf
      SUBDIR += remotebox
      SUBDIR += resmon
+     SUBDIR += rofi
      SUBDIR += rpl
      SUBDIR += rsyslog
      SUBDIR += rtty
