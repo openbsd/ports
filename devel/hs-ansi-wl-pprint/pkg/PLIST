@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/11/24 16:07:58 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/09/20 15:11:19 kili Exp $
 lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Text/
 lib/ghc/${DISTNAME}/Text/PrettyPrint/
 lib/ghc/${DISTNAME}/Text/PrettyPrint/ANSI/
 lib/ghc/${DISTNAME}/Text/PrettyPrint/ANSI/Leijen.hi
 lib/ghc/${DISTNAME}/Text/PrettyPrint/ANSI/Leijen.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
