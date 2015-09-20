@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/08/21 23:44:49 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/20 12:45:50 jasper Exp $
 
 COMMENT =	extended pickling support for Python objects
-MODPY_EGG_VERSION =	0.1.0
+MODPY_EGG_VERSION =	0.1.1
 DISTNAME =	cloudpickle-${MODPY_EGG_VERSION}
 PKGNAME =	py-cloudpickle-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/cloudpipe/cloudpickle
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
