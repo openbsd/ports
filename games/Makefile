@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.315 2015/09/04 13:05:13 bluhm Exp $
+# $OpenBSD: Makefile,v 1.316 2015/09/20 12:12:39 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -120,7 +120,6 @@
      SUBDIR += icebreaker
      SUBDIR += instead
      SUBDIR += irrlamb
-     SUBDIR += ivan
      SUBDIR += jag
      SUBDIR += jbrickshooter
      SUBDIR += kbilliards
