@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/08/27 06:55:48 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2015/09/20 08:33:57 benoit Exp $
 
 COMMENT =		Perl interface for the Tumblr API
 
-DISTNAME =		WWW-Tumblr-5.1
+DISTNAME =		WWW-Tumblr-5.2
 CATEGORIES =		www
 
 MODULES =		cpan
