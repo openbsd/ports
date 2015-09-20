@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2014/03/18 08:16:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/09/20 07:36:50 ajacoutot Exp $
 
 COMMENT=	ICC compatible color management system
 
-V=		1.6.3
+V=		1.8.2
 DISTNAME=	Argyll_V${V}_src
 PKGNAME=	argyllcms-${V}
 EXTRACT_SUFX=	.zip
@@ -16,21 +16,19 @@ HOMEPAGE=	http://www.argyllcms.com/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xinerama Xrandr Xss Xxf86vm c jpeg
-WANTLIB += m pthread tiff
+WANTLIB += m png pthread ssl tiff z
 
 MASTER_SITES=	${HOMEPAGE}
 
 BUILD_DEPENDS=	devel/jam
 
-LIB_DEPENDS=	graphics/tiff
+LIB_DEPENDS=	graphics/png \
+		graphics/tiff
 
 MAKE_ENV=	CCOPTFLAG="${CFLAGS} -I${X11BASE}/include" \
 		REFSUBDIR="share/color/argyll/ref"
 
 NO_TEST=	Yes
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Jamtop
 
 do-build:
 	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/jam -q -fJambase

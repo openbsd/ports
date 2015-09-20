@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/03/18 08:16:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/09/20 07:36:50 ajacoutot Exp $
 @conflict argyll-*
 @bin bin/applycal
 @bin bin/average
@@ -23,6 +23,7 @@
 @bin bin/illumread
 @bin bin/invprofcheck
 @bin bin/kodak2ti3
+@bin bin/ls2ti3
 @bin bin/mppcheck
 @bin bin/mpplu
 @bin bin/mppprof
@@ -51,9 +52,9 @@ share/color/argyll/ref/
 share/color/argyll/ref/3dap5k.sp
 share/color/argyll/ref/CIE_C.sp
 share/color/argyll/ref/CMP_DT_003.cht
-share/color/argyll/ref/CMP_Digital_Target-3.cht
-share/color/argyll/ref/CMP_Digital_Target-3.cie
-share/color/argyll/ref/CMP_Digital_Target-3.ti2
+share/color/argyll/ref/CMP_Digital_Target-4.cht
+share/color/argyll/ref/CMP_Digital_Target-4.cie
+share/color/argyll/ref/CMP_Digital_Target-4.ti2
 share/color/argyll/ref/ClayRGB1998.icm
 share/color/argyll/ref/ColorChecker.cht
 share/color/argyll/ref/ColorChecker.cie
@@ -63,6 +64,7 @@ share/color/argyll/ref/ColorCheckerDC.ti2
 share/color/argyll/ref/ColorCheckerPassport.cht
 share/color/argyll/ref/ColorCheckerPassport.cie
 share/color/argyll/ref/ColorCheckerSG.cht
+share/color/argyll/ref/ColorCheckerSG.ti2
 share/color/argyll/ref/D50_0.0.sp
 share/color/argyll/ref/D50_0.1.sp
 share/color/argyll/ref/D50_0.3.sp
@@ -116,11 +118,13 @@ share/color/argyll/ref/linear.cal
 share/color/argyll/ref/sRGB.icm
 share/color/argyll/ref/strange.cal
 share/doc/argyllcms/
+share/doc/argyllcms/3dformat.html
+share/doc/argyllcms/ArgyllCMS_arts_tag.html
 share/doc/argyllcms/ArgyllDoc.html
 share/doc/argyllcms/ArgyllFlow.jpg
 share/doc/argyllcms/ArgyllFlowThumb.jpg
 share/doc/argyllcms/CMP_DT_003.jpg
-share/doc/argyllcms/CMP_Digital_Target-3.jpg
+share/doc/argyllcms/CMP_Digital_Target-4.jpg
 share/doc/argyllcms/CRTspectrum.jpg
 share/doc/argyllcms/ChangesSummary.html
 share/doc/argyllcms/Chroma4.jpg
@@ -142,6 +146,7 @@ share/doc/argyllcms/DTP51.jpg
 share/doc/argyllcms/DTP92.jpg
 share/doc/argyllcms/DTP94.jpg
 share/doc/argyllcms/DocLicense.txt
+share/doc/argyllcms/EX1.jpg
 share/doc/argyllcms/Environment.html
 share/doc/argyllcms/EyeOne_Display_1_NEC1990SXi.ccmx
 share/doc/argyllcms/EyeOne_Display_2_EIZO_S2233W.ccmx
@@ -169,6 +174,7 @@ share/doc/argyllcms/Installing_Linux.html
 share/doc/argyllcms/Installing_MSWindows.html
 share/doc/argyllcms/Installing_OSX.html
 share/doc/argyllcms/JETI_1211.jpg
+share/doc/argyllcms/K10A.jpg
 share/doc/argyllcms/Kgraph1.jpg
 share/doc/argyllcms/Kgraph2.jpg
 share/doc/argyllcms/Kgraph3.jpg
@@ -195,6 +201,7 @@ share/doc/argyllcms/QPcard202.jpg
 share/doc/argyllcms/SG.jpg
 share/doc/argyllcms/SG_footer.txt
 share/doc/argyllcms/SG_header.txt
+share/doc/argyllcms/SMCube.jpg
 share/doc/argyllcms/Scenarios.html
 share/doc/argyllcms/Smile.jpg
 share/doc/argyllcms/Source.html
@@ -202,6 +209,7 @@ share/doc/argyllcms/Spyd2.jpg
 share/doc/argyllcms/Spyd3.jpg
 share/doc/argyllcms/Spyd3x.jpg
 share/doc/argyllcms/Spyd4.jpg
+share/doc/argyllcms/Spyd5.jpg
 share/doc/argyllcms/Spyder2_EIZO_S2433W_standard_1931.ccmx
 share/doc/argyllcms/Spyder2_EIZO_S2433W_standard_1964.ccmx
 share/doc/argyllcms/Spyder3_EIZO_S2233_standard_1964.ccmx
@@ -210,6 +218,7 @@ share/doc/argyllcms/Spyder3_HP_LP2475w.ccmx
 share/doc/argyllcms/Spyder3_NEC2690WUXi2.ccmx
 share/doc/argyllcms/Spyder3_NEC_PA301W.ccmx
 share/doc/argyllcms/SpyderChecker.jpg
+share/doc/argyllcms/VideoEOTFs.html
 share/doc/argyllcms/WideGamutColmters.html
 share/doc/argyllcms/YellowGreen.jpg
 share/doc/argyllcms/afiles
