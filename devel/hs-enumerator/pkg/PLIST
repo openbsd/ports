@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/12/14 10:44:52 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/09/20 15:09:36 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Enumerator/
@@ -20,8 +20,9 @@ lib/ghc/${DISTNAME}/Data/Enumerator/Trans.hi
 lib/ghc/${DISTNAME}/Data/Enumerator/Trans.p_hi
 lib/ghc/${DISTNAME}/Data/Enumerator/Util.hi
 lib/ghc/${DISTNAME}/Data/Enumerator/Util.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/HS${DISTNAME}-AAmjNt08igrHulyFTlxTKz.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-AAmjNt08igrHulyFTlxTKz.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-AAmjNt08igrHulyFTlxTKz_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/html/

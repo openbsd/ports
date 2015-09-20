@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/12/02 20:45:23 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/09/20 15:09:36 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Constraint/
@@ -8,8 +8,9 @@ lib/ghc/${DISTNAME}/Data/Constraint/Forall.hi
 lib/ghc/${DISTNAME}/Data/Constraint/Forall.p_hi
 lib/ghc/${DISTNAME}/Data/Constraint/Unsafe.hi
 lib/ghc/${DISTNAME}/Data/Constraint/Unsafe.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
