@@ -1,29 +1,29 @@
-$OpenBSD: patch-install_py,v 1.10 2015/06/23 00:20:35 bcallah Exp $
---- install.py.orig	Sun Jun 21 12:41:19 2015
-+++ install.py	Mon Jun 22 19:32:18 2015
-@@ -144,10 +144,8 @@ if os.path.isfile ('build/bin/libbirdfont.so.' + versi
+$OpenBSD: patch-install_py,v 1.11 2015/09/20 12:07:35 jasper Exp $
+
+https://github.com/johanmattssonm/birdfont/pull/7
+
+--- install.py.orig	Sun Sep 20 13:49:48 2015
++++ install.py	Sun Sep 20 13:50:23 2015
+@@ -140,7 +140,9 @@ if not options.libdir:
+ else:
+ 	libdir = options.libdir
+ 
+-if os.path.isfile ('build/bin/libbirdfont.so.' + version.SO_VERSION):
++if "openbsd" in sys.platform:
++        install ('build/bin/libbirdfont.so.' + '${LIBbirdfont_VERSION}', '/lib', 644)
++elif os.path.isfile ('build/bin/libbirdfont.so.' + version.SO_VERSION):
  	install ('build/bin/libbirdfont.so.' + version.SO_VERSION, libdir, 644)
  	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so.' + version.SO_VERSION_MAJOR)
  	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so')
--elif os.path.isfile ('build/libbirdfont.so.' + version.SO_VERSION):
--	install ('build/libbirdfont.so.' + version.SO_VERSION, libdir, 644)
--	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so.' + version.SO_VERSION_MAJOR)
--	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so')
-+elif os.path.isfile ('build/libbirdfont.so.' + '${LIBbirdfont_VERSION}'):
-+	install ('build/libbirdfont.so.' + '${LIBbirdfont_VERSION}', '/lib', 644)
- elif os.path.isfile ('build/bin/libbirdfont.' + version.SO_VERSION + '.dylib'):
- 	install ('build/bin/libbirdfont.' + version.SO_VERSION + '.dylib', libdir, 644)
- 	link (libdir, 'libbirdfont.' + version.SO_VERSION + '.dylib', ' libbirdfont.dylib.' + version.SO_VERSION_MAJOR)
-@@ -163,10 +161,8 @@ elif os.path.isfile ('build/bin/libbirdgems.so.' + ver
+@@ -156,9 +158,8 @@ else:
+ 	print ("Can't find libbirdfont.")
+ 	exit (1)
+ 
+-if "bsd" in sys.platform:
+-        install ('build/libbirdfont.so.' + '${LIBbirdfont_VERSION}', '/lib', 644)
+-        install ('build/libbirdgems.so.' + '${LIBbirdgems_VERSION}', '/lib', 644)
++if "openbsd" in sys.platform:
++        install ('build/bin/libbirdgems.so.' + '${LIBbirdgems_VERSION}', '/lib', 644)
+ elif os.path.isfile ('build/bin/libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION):
          install ('build/bin/libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION, libdir, 644)
          link (libdir, 'libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION, ' libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION_MAJOR)
-         link (libdir, 'libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION, ' libbirdgems.so')
--elif os.path.isfile ('build/libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION):
--        install ('build/libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION, libdir, 644)
--        link (libdir, 'libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION, ' libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION_MAJOR)
--        link (libdir, 'libbirdgems.so.' + version.LIBBIRDGEMS_SO_VERSION, ' libbirdgems.so')
-+elif os.path.isfile ('build/libbirdgems.so.' + '${LIBbirdgems_VERSION}'):
-+        install ('build/libbirdgems.so.' + '${LIBbirdgems_VERSION}', '/lib', 644)
- elif os.path.isfile ('build/bin/libbirdgems.' + version.LIBBIRDGEMS_SO_VERSION + '.dylib'):
-         install ('build/bin/libbirdgems.' + version.LIBBIRDGEMS_SO_VERSION + '.dylib', libdir, 644)
-         link (libdir, 'libbirdgems.' + version.LIBBIRDGEMS_SO_VERSION + '.dylib', ' libbirdgems.dylib.' + version.LIBBIRDGEMS_SO_VERSION_MAJOR)
