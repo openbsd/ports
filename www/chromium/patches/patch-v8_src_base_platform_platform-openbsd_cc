@@ -1,0 +1,236 @@
+$OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.1 2015/09/20 18:32:18 robert Exp $
+--- v8/src/base/platform/platform-openbsd.cc.orig.port	Sat Sep 19 12:02:51 2015
++++ v8/src/base/platform/platform-openbsd.cc	Sat Sep 19 12:18:39 2015
+@@ -2,18 +2,20 @@
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
+ 
+-// Platform-specific code for OpenBSD and NetBSD goes here. For the
+-// POSIX-compatible parts, the implementation is in platform-posix.cc.
++// Platform-specific code for Linux goes here. For the POSIX-compatible
++// parts, the implementation is in platform-posix.cc.
+ 
+ #include <pthread.h>
+ #include <semaphore.h>
+ #include <signal.h>
++#include <stdio.h>
+ #include <stdlib.h>
+ #include <sys/resource.h>
+-#include <sys/syscall.h>
+ #include <sys/time.h>
+-#include <sys/types.h>
+ 
++// Ubuntu Dapper requires memory pages to be marked as
++// executable. Otherwise, OS raises an exception when executing code
++// in that page.
+ #include <errno.h>
+ #include <fcntl.h>      // open
+ #include <stdarg.h>
+@@ -23,6 +25,10 @@
+ #include <sys/types.h>  // mmap & munmap
+ #include <unistd.h>     // sysconf
+ 
++#if defined(LEAK_SANITIZER)
++#include <sanitizer/lsan_interface.h>
++#endif
++
+ #include <cmath>
+ 
+ #undef MAP_TYPE
+@@ -30,26 +36,44 @@
+ #include "src/base/macros.h"
+ #include "src/base/platform/platform.h"
+ 
++#if V8_OS_NACL
++#if !defined(MAP_NORESERVE)
++// PNaCL doesn't have this, so we always grab all of the memory, which is bad.
++#define MAP_NORESERVE 0
++#endif
++#else
++#include <sys/syscall.h>
++#endif
+ 
+ namespace v8 {
+ namespace base {
+ 
+ 
+ const char* OS::LocalTimezone(double time, TimezoneCache* cache) {
++#if V8_OS_NACL
++  // Missing support for tm_zone field.
++  return "";
++#else
+   if (std::isnan(time)) return "";
+   time_t tv = static_cast<time_t>(std::floor(time/msPerSecond));
+   struct tm* t = localtime(&tv);
+-  if (NULL == t) return "";
++  if (!t || !t->tm_zone) return "";
+   return t->tm_zone;
++#endif
+ }
+ 
+ 
+ double OS::LocalTimeOffset(TimezoneCache* cache) {
++#if V8_OS_NACL
++  // Missing support for tm_zone field.
++  return 0;
++#else
+   time_t tv = time(NULL);
+   struct tm* t = localtime(&tv);
+   // tm_gmtoff includes any daylight savings offset, so subtract it.
+   return static_cast<double>(t->tm_gmtoff * msPerSecond -
+                              (t->tm_isdst > 0 ? 3600 * msPerSecond : 0));
++#endif
+ }
+ 
+ 
+@@ -59,7 +83,7 @@ void* OS::Allocate(const size_t requested,
+   const size_t msize = RoundUp(requested, AllocateAlignment());
+   int prot = PROT_READ | PROT_WRITE | (is_executable ? PROT_EXEC : 0);
+   void* addr = OS::GetRandomMmapAddr();
+-  void* mbase = mmap(addr, msize, prot, MAP_PRIVATE | MAP_ANON, -1, 0);
++  void* mbase = mmap(addr, msize, prot, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+   if (mbase == MAP_FAILED) return NULL;
+   *allocated = msize;
+   return mbase;
+@@ -92,19 +116,20 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
+       // the beginning of the filename or the end of the line.
+       do {
+         c = getc(fp);
+-      } while ((c != EOF) && (c != '\n') && (c != '/'));
++      } while ((c != EOF) && (c != '\n') && (c != '/') && (c != '['));
+       if (c == EOF) break;  // EOF: Was unexpected, just exit.
+ 
+       // Process the filename if found.
+-      if (c == '/') {
+-        ungetc(c, fp);  // Push the '/' back into the stream to be read below.
++      if ((c == '/') || (c == '[')) {
++        // Push the '/' or '[' back into the stream to be read below.
++        ungetc(c, fp);
+ 
+         // Read to the end of the line. Exit if the read fails.
+         if (fgets(lib_name, kLibNameLen, fp) == NULL) break;
+ 
+         // Drop the newline character read by fgets. We do not need to check
+         // for a zero-length string because we know that we at least read the
+-        // '/' character.
++        // '/' or '[' character.
+         lib_name[strlen(lib_name) - 1] = '\0';
+       } else {
+         // No library name found, just record the raw address range.
+@@ -136,21 +161,27 @@ void OS::SignalCodeMovingGC() {
+   // it. This injects a GC marker into the stream of events generated
+   // by the kernel and allows us to synchronize V8 code log and the
+   // kernel log.
+-  int size = sysconf(_SC_PAGESIZE);
++  long size = sysconf(_SC_PAGESIZE);  // NOLINT(runtime/int)
+   FILE* f = fopen(OS::GetGCFakeMMapFile(), "w+");
+   if (f == NULL) {
+     OS::PrintError("Failed to open %s\n", OS::GetGCFakeMMapFile());
+     OS::Abort();
+   }
+-  void* addr = mmap(NULL, size, PROT_READ | PROT_EXEC, MAP_PRIVATE,
+-                    fileno(f), 0);
+-  DCHECK(addr != MAP_FAILED);
++  void* addr = mmap(OS::GetRandomMmapAddr(), size,
++#if V8_OS_NACL
++                    // The Native Client port of V8 uses an interpreter,
++                    // so code pages don't need PROT_EXEC.
++                    PROT_READ,
++#else
++                    PROT_READ | PROT_EXEC,
++#endif
++                    MAP_PRIVATE, fileno(f), 0);
++  DCHECK_NE(MAP_FAILED, addr);
+   OS::Free(addr, size);
+   fclose(f);
+ }
+ 
+ 
+-
+ // Constants used for mmap.
+ static const int kMmapFd = -1;
+ static const int kMmapFdOffset = 0;
+@@ -171,7 +202,7 @@ VirtualMemory::VirtualMemory(size_t size, size_t align
+   void* reservation = mmap(OS::GetRandomMmapAddr(),
+                            request_size,
+                            PROT_NONE,
+-                           MAP_PRIVATE | MAP_ANON | MAP_NORESERVE,
++                           MAP_PRIVATE | MAP_ANONYMOUS | MAP_NORESERVE,
+                            kMmapFd,
+                            kMmapFdOffset);
+   if (reservation == MAP_FAILED) return;
+@@ -200,6 +231,9 @@ VirtualMemory::VirtualMemory(size_t size, size_t align
+ 
+   address_ = static_cast<void*>(aligned_base);
+   size_ = aligned_size;
++#if defined(LEAK_SANITIZER)
++  __lsan_register_root_region(address_, size_);
++#endif
+ }
+ 
+ 
+@@ -243,26 +277,36 @@ void* VirtualMemory::ReserveRegion(size_t size) {
+   void* result = mmap(OS::GetRandomMmapAddr(),
+                       size,
+                       PROT_NONE,
+-                      MAP_PRIVATE | MAP_ANON | MAP_NORESERVE,
++                      MAP_PRIVATE | MAP_ANONYMOUS | MAP_NORESERVE,
+                       kMmapFd,
+                       kMmapFdOffset);
+ 
+   if (result == MAP_FAILED) return NULL;
+ 
++#if defined(LEAK_SANITIZER)
++  __lsan_register_root_region(result, size);
++#endif
+   return result;
+ }
+ 
+ 
+ bool VirtualMemory::CommitRegion(void* base, size_t size, bool is_executable) {
++#if V8_OS_NACL
++  // The Native Client port of V8 uses an interpreter,
++  // so code pages don't need PROT_EXEC.
++  int prot = PROT_READ | PROT_WRITE;
++#else
+   int prot = PROT_READ | PROT_WRITE | (is_executable ? PROT_EXEC : 0);
++#endif
+   if (MAP_FAILED == mmap(base,
+                          size,
+                          prot,
+-                         MAP_PRIVATE | MAP_ANON | MAP_FIXED,
++                         MAP_PRIVATE | MAP_ANONYMOUS | MAP_FIXED,
+                          kMmapFd,
+                          kMmapFdOffset)) {
+     return false;
+   }
++
+   return true;
+ }
+ 
+@@ -271,20 +315,22 @@ bool VirtualMemory::UncommitRegion(void* base, size_t 
+   return mmap(base,
+               size,
+               PROT_NONE,
+-              MAP_PRIVATE | MAP_ANON | MAP_NORESERVE | MAP_FIXED,
++              MAP_PRIVATE | MAP_ANONYMOUS | MAP_NORESERVE | MAP_FIXED,
+               kMmapFd,
+               kMmapFdOffset) != MAP_FAILED;
+ }
+ 
+ 
+ bool VirtualMemory::ReleaseRegion(void* base, size_t size) {
++#if defined(LEAK_SANITIZER)
++  __lsan_unregister_root_region(base, size);
++#endif
+   return munmap(base, size) == 0;
+ }
+ 
+ 
+ bool VirtualMemory::HasLazyCommits() {
+-  // TODO(alph): implement for the platform.
+-  return false;
++  return true;
+ }
+ 
+ } }  // namespace v8::base

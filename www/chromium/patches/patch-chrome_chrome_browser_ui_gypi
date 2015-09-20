@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.14 2015/09/05 16:06:50 robert Exp $
---- chrome/chrome_browser_ui.gypi.orig.port	Tue Sep  1 22:10:42 2015
-+++ chrome/chrome_browser_ui.gypi	Wed Sep  2 07:31:55 2015
-@@ -2934,7 +2934,7 @@
+$OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.15 2015/09/20 18:32:18 robert Exp $
+--- chrome/chrome_browser_ui.gypi.orig.port	Thu Sep 17 06:53:24 2015
++++ chrome/chrome_browser_ui.gypi	Thu Sep 17 06:53:24 2015
+@@ -2937,7 +2937,7 @@
              }],
            ],
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.14 2015/09/05 16:06:50 robert 
            'dependencies': [
              # gtk2 is the only component that can interact with gtk2 in our new
              # world.
-@@ -2942,7 +2942,7 @@
+@@ -2945,7 +2945,7 @@
              '../build/linux/system.gyp:gio',
            ],
          }],
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.14 2015/09/05 16:06:50 robert 
            'sources': [ '<@(chrome_browser_ui_desktop_sources)' ],
          }],
          ['use_aura==1', {
-@@ -3105,10 +3105,10 @@
+@@ -3108,10 +3108,10 @@
              }],
            ],
          }],
