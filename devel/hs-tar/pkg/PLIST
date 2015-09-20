@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/11/24 16:07:59 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/09/20 20:52:00 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Codec/
 lib/ghc/${DISTNAME}/Codec/Archive/
@@ -9,6 +9,13 @@ lib/ghc/${DISTNAME}/Codec/Archive/Tar/Check.hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Check.p_hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Entry.hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Entry.p_hi
+lib/ghc/${DISTNAME}/Codec/Archive/Tar/Index/
+lib/ghc/${DISTNAME}/Codec/Archive/Tar/Index.hi
+lib/ghc/${DISTNAME}/Codec/Archive/Tar/Index.p_hi
+lib/ghc/${DISTNAME}/Codec/Archive/Tar/Index/IntTrie.hi
+lib/ghc/${DISTNAME}/Codec/Archive/Tar/Index/IntTrie.p_hi
+lib/ghc/${DISTNAME}/Codec/Archive/Tar/Index/StringTable.hi
+lib/ghc/${DISTNAME}/Codec/Archive/Tar/Index/StringTable.p_hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Pack.hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Pack.p_hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Read.hi
@@ -19,14 +26,16 @@ lib/ghc/${DISTNAME}/Codec/Archive/Tar/Unpack.hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Unpack.p_hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Write.hi
 lib/ghc/${DISTNAME}/Codec/Archive/Tar/Write.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Codec-Archive-Tar-Check.html
 share/doc/hs-${DISTNAME}/html/Codec-Archive-Tar-Entry.html
+share/doc/hs-${DISTNAME}/html/Codec-Archive-Tar-Index.html
 share/doc/hs-${DISTNAME}/html/Codec-Archive-Tar.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
@@ -36,6 +45,7 @@ share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Codec-Archive-Tar-Check.html
 share/doc/hs-${DISTNAME}/html/mini_Codec-Archive-Tar-Entry.html
+share/doc/hs-${DISTNAME}/html/mini_Codec-Archive-Tar-Index.html
 share/doc/hs-${DISTNAME}/html/mini_Codec-Archive-Tar.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
