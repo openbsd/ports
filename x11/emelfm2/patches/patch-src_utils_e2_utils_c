@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_utils_e2_utils_c,v 1.6 2012/09/03 09:34:59 ajacoutot Exp $
+$OpenBSD: patch-src_utils_e2_utils_c,v 1.7 2015/09/20 08:39:35 landry Exp $
 
 Our file(1) doesn't have all that fancy options.
 
---- src/utils/e2_utils.c.orig	Fri Mar 12 14:19:31 2010
-+++ src/utils/e2_utils.c	Mon Sep  3 11:03:01 2012
-@@ -544,7 +544,7 @@ gchar *e2_utils_get_mimetype (VPATH *localpath)
+--- src/utils/e2_utils.c.orig	Tue Nov 19 00:05:55 2013
++++ src/utils/e2_utils.c	Sun Sep 20 09:24:15 2015
+@@ -549,7 +549,7 @@ gchar *e2_utils_get_mimetype (VPATH *localpath)
  			}
  #else
  			g_free (command);
 -			command = e2_utils_strcat ("file -bhprs --mime-type ", qp);
-+			command = e2_utils_strcat ("file -bNs ", qp);
++			command = e2_utils_strcat ("file -bs ", qp);
  			if (e2_fs_get_command_output (command, (gpointer *) &mime))
  			{
  				g_strstrip (mime); //strip trailing \n and any whitespace

@@ -1,25 +1,25 @@
-$OpenBSD: patch-Makefile,v 1.9 2014/03/23 18:17:35 kili Exp $
---- Makefile.orig	Wed Jun 16 23:56:54 2010
-+++ Makefile	Mon Sep  3 11:03:01 2012
-@@ -140,7 +140,7 @@ LIBS_XOBJECTS = $(LIBS_XSOURCES:%.c=$(OBJECTS_DIR)/%.s
+$OpenBSD: patch-Makefile,v 1.10 2015/09/20 08:39:35 landry Exp $
+--- Makefile.orig	Fri Jan 24 22:07:36 2014
++++ Makefile	Sun Sep 20 10:02:41 2015
+@@ -163,7 +163,7 @@ LIBS_XOBJECTS = $(LIBS_XSOURCES:%.c=$(OBJECTS_DIR)/%.s
  LIBS_XDEP_FILES = $(LIBS_XSOURCES:%.c=$(OBJECTS_DIR)/%.deps)
  
  # set up flags
 -lCFLAGS = $(CFLAGS)
-+lCFLAGS ?= ${CFLAGS}
- ifeq ($(USE_LATEST), 1)
++lCFLAGS ?= $(CFLAGS)
+ #ifeq ($(WITH_LATEST), 1)
  #these are redundant now
  #lCFLAGS += -DGTK_DISABLE_DEPRECATED
-@@ -228,7 +228,7 @@ lLIBS_CFLAGS = -shared -fPIC -DPIC
- 
- #setup linking
- # -lrt needed for clock_gettime()
--lLIBS = $(shell pkg-config --libs gtk+-2.0 gthread-2.0 gmodule-2.0) -lrt
-+lLIBS = $(shell pkg-config --libs gtk+-2.0 gthread-2.0 gmodule-2.0)
- ifeq ($(USE_FAM),1)
- lLIBS += -lfam
+@@ -292,7 +292,7 @@ else
+  lLIBS += $(shell pkg-config --libs gmodule-2.0)
  endif
-@@ -258,7 +258,7 @@ all: $(OBJECTS_DIR) $(BUILD_FILE) $(TARGET) $(LIBS) $(
+ # -lrt needed for clock_gettime(), explicit -lm, -ldl needed for some arch-linux distros
+-lLIBS += -lrt -lm -ldl
++lLIBS += -lm
+ ifeq ($(USE_GAMIN), 1)
+ #gamin code is a superset of FAM code, so gamin needs fam as well
+ lLIBS += -lfam
+@@ -329,7 +329,7 @@ all: $(OBJECTS_DIR) $(BUILD_FILE) $(TARGET) $(LIBS) $(
  
  plugins: $(OBJECTS_DIR)/$(LIBS) $(LIBS_OBJECTS) $(LIBS_XOBJECTS)
  
@@ -28,69 +28,12 @@ $OpenBSD: patch-Makefile,v 1.9 2014/03/23 18:17:35 kili Exp $
  	@echo "installing $(TARGET) to prefix '$(PREFIX)'"
  	@install -d -m 755 $(BIN_DIR)
  	@install -m 755 $(TARGET) $(BIN_DIR)
-@@ -270,8 +270,7 @@ install: all install_plugins
- 	@for file in `ls $(DOCS)/ |grep -v svn |grep -v desktop_environment |grep -v api |grep -v $(TARGET).1`; do \
- 		install -m 644 $(DOCS)/$$file $(DOC_DIR); \
- 	done
--	@install -d $(MAN_DIR)
--	@install -m 644 $(DOCS)/$(TARGET).1 $(MAN_DIR);
-+	@install -m 644 $(DOCS)/$(TARGET).1 $(PREFIX)/man/man1;
- #	@bzip2 -f $(MAN_DIR)/$(TARGET).1;
+@@ -356,7 +356,7 @@ endif
  
  	@if [ "`grep "#define E2_XDG" $(BUILD_FILE)`" = "#define E2_XDG" ]; then \
-@@ -348,11 +347,11 @@ endif
+ 		install -d $(XDG_DESKTOP_DIR); \
+-		install -m 644 -T $(DOCS)/desktop_environment/$(TARGET).desktop $(XDG_DESKTOP_DIR)/$(TARGET).desktop; \
++		install -m 644 $(DOCS)/desktop_environment/$(TARGET).desktop $(XDG_DESKTOP_DIR)/$(TARGET).desktop; \
+ 	fi
  
- $(OBJECTS): $(OBJECTS_DIR)/%.o: %.c
- 	@echo "compiling '$*.c'"
--	@$(CC) $(lCFLAGS) -c -o $@ $*.c
-+	$(CC) $(lCFLAGS) -c -o $@ $*.c
- 
- $(LIBS_OBJECTS): $(OBJECTS_DIR)/%.so: %.c
- 	@echo "compiling '$*.c'"
--	@$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(LDFLAGS) -o $@ $*.c
-+	$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(LDFLAGS) -o $@ $*.c
- ifeq ($(STRIP), 1)
- ifneq ($(DEBUG), 1)
- 	@strip -g $@
-@@ -400,27 +399,27 @@ $(DEP_FILES): $(OBJECTS_DIR)
- $(DEP_FILES): $(BUILD_FILE)
- $(DEP_FILES): $(OBJECTS_DIR)/%.deps: %.c
- 	@echo "generating '$@'"
--	@$(CC) $(lCFLAGS) -MM -o $@ $*.c
-+	$(CC) $(lCFLAGS) -MM -o $@ $*.c
- 
- #$(LIB_DEP_FILES): $(OBJECTS_DIR)
- #$(LIB_DEP_FILES): $(BUILD_FILE)
- #$(LIB_DEP_FILES): $(OBJECTS_DIR)/%.deps: %.c
- #	@echo "generating LIB '$@'"
--#	@$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(lLIB_LIBS) -MM -o $@ $*.c
-+#	$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(lLIB_LIBS) -MM -o $@ $*.c
- 
- $(DEPS_FILE): $(BUILD_FILE)
- 	@echo "generating dependencies: '$(DEPS_FILE)'"
- 	@touch $(DEPS_FILE)
--	@makedepend -s "# generated dependencies" -f $(DEPS_FILE) -- $(lCFLAGS) -- $(SOURCES)
-+	makedepend -s "# generated dependencies" -f $(DEPS_FILE) -- $(lCFLAGS) -- $(SOURCES)
- 	@rm $(DEPS_FILE).bak
- 
- $(MO): $(PO_DIR)/%.mo: $(PO_DIR)/%.po
- 	@echo "formatting '$*.po'"
--	@$(BIN_MSGFMT) $(PO_DIR)/$*.po -o $@
-+	$(BIN_MSGFMT) $(PO_DIR)/$*.po -o $@
- 
- #gettext:
- i18n:
--	@$(BIN_XGETTEXT) $(foreach dir, $(DIRS) $(LIBS) $(OPTLIBS), -D $(dir)) \
-+	$(BIN_XGETTEXT) $(foreach dir, $(DIRS) $(LIBS) $(OPTLIBS), -D $(dir)) \
- 		-p ./$(PO_DIR) --from-code=UTF-8 --no-wrap --omit-header -i -F \
- 		--copyright-holder="$(COPYRIGHT)" --keyword=_ --keyword=N_ \
- 		$(foreach file, $(SOURCES) $(HEADERS) $(LIBS_SOURCES) $(LIBS_HEADERS) \
-@@ -480,7 +479,7 @@ help:
- 
- $(OBJECTS_DIR):
- 	@echo "creating object directories in '$(OBJECTS_DIR)'"
--	@mkdir -p $(MKOBJDIRS)
-+	mkdir -p $(MKOBJDIRS)
- 
- $(OBJECTS_DIR)/$(LIBS):
- 	@echo "creating plugin-object directories in '$(OBJECTS_DIR)'"
+ # no i18n install unless specific target used

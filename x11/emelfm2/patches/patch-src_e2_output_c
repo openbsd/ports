@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_e2_output_c,v 1.5 2012/09/03 09:34:59 ajacoutot Exp $
+$OpenBSD: patch-src_e2_output_c,v 1.6 2015/09/20 08:39:35 landry Exp $
 
 Don't include ctype, _C macro conflicts. Use glib func instead.
 
---- src/e2_output.c.orig	Mon May 31 01:44:12 2010
-+++ src/e2_output.c	Mon Sep  3 11:03:01 2012
-@@ -39,7 +39,6 @@ ToDo
+--- src/e2_output.c.orig	Sun Nov 17 12:05:54 2013
++++ src/e2_output.c	Sun Sep 20 09:26:07 2015
+@@ -38,7 +38,6 @@ ToDo
  #include "emelfm2.h"
  #include <string.h>
  #include <pthread.h>
@@ -12,12 +12,12 @@ Don't include ctype, _C macro conflicts. Use glib func instead.
  #include "e2_output.h"
  #include "e2_dialog.h"
  //for pane-text activation
-@@ -635,7 +634,7 @@ nextchar:
+@@ -1605,7 +1604,7 @@ nextchar:
  				break;
- 			else if (g_unichar_isspace (d))
+ 			else if (sepcount > 0 && _e2_output_unistrchr (bounds, sepcount, d) != NULL)
  				break;
--			else if (ispunct ((guchar)d))
-+			else if (g_ascii_ispunct ((guchar)d))
+-			else if (ispunct ((guchar) d))
++			else if (g_ascii_ispunct ((guchar) d))
  			{
- 				if (!gtk_text_iter_forward_char (&iter))
- 					break;
+ 				if (gtk_text_iter_forward_char (&iter))
+ 					goto nextchar;

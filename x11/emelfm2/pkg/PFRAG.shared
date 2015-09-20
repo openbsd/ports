@@ -1,22 +1,23 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2009/05/06 16:20:01 giovanni Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.4 2015/09/20 08:39:35 landry Exp $
 lib/emelfm2/plugins/
+lib/emelfm2/plugins/e2p_clipnames.so
 lib/emelfm2/plugins/e2p_clone.so
 lib/emelfm2/plugins/e2p_config.so
-lib/emelfm2/plugins/e2p_cpbar.so
+lib/emelfm2/plugins/e2p_copy.so
 lib/emelfm2/plugins/e2p_crypt.so
 lib/emelfm2/plugins/e2p_dircmp.so
 lib/emelfm2/plugins/e2p_du.so
+lib/emelfm2/plugins/e2p_extsort.so
 lib/emelfm2/plugins/e2p_find.so
-lib/emelfm2/plugins/e2p_for_each.so
+lib/emelfm2/plugins/e2p_foreach.so
 lib/emelfm2/plugins/e2p_glob.so
-lib/emelfm2/plugins/e2p_mvbar.so
-lib/emelfm2/plugins/e2p_names_clip.so
+lib/emelfm2/plugins/e2p_move.so
 lib/emelfm2/plugins/e2p_pack.so
 lib/emelfm2/plugins/e2p_rename.so
 lib/emelfm2/plugins/e2p_selmatch.so
-lib/emelfm2/plugins/e2p_sort_by_ext.so
+lib/emelfm2/plugins/e2p_shred.so
 lib/emelfm2/plugins/e2p_tag.so
-lib/emelfm2/plugins/e2p_times.so
+lib/emelfm2/plugins/e2p_timeset.so
 lib/emelfm2/plugins/e2p_unpack.so
 lib/emelfm2/plugins/e2p_upgrade.so
 lib/emelfm2/plugins/e2p_view.so
