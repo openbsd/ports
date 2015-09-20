@@ -1,0 +1,9 @@
+$OpenBSD: patch-script_rofi-sensible-terminal,v 1.1.1.1 2015/09/20 12:49:52 landry Exp $
+--- script/rofi-sensible-terminal.orig	Sun Sep 20 11:13:39 2015
++++ script/rofi-sensible-terminal	Sun Sep 20 11:13:43 2015
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # This code is released in public domain by Han Boetes <han@mijncomputer.nl>
+ # Updated by Dave Davenport <qball@gmpclient.org>

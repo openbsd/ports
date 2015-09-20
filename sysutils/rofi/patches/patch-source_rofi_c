@@ -1,0 +1,17 @@
+$OpenBSD: patch-source_rofi_c,v 1.1.1.1 2015/09/20 12:49:52 landry Exp $
+--- source/rofi.c.orig	Sun Sep 20 10:31:20 2015
++++ source/rofi.c	Sun Sep 20 10:32:03 2015
+@@ -1741,10 +1741,9 @@ static gpointer rofi_signal_handler_process ( gpointer
+     sigaddset ( &set, SIGCHLD );
+     // loop forever.
+     while ( 1 ) {
+-        siginfo_t info;
+-        int       sig = sigwaitinfo ( &set, &info );
+-        if ( sig < 0 ) {
+-            perror ( "sigwaitinfo failed, lets restart" );
++        int       sig = 0;
++        if ( sigwait( &set, &sig ) < 0 ) {
++            perror ( "sigwait failed, lets restart" );
+         }
+         else {
+             // Send message to main thread.

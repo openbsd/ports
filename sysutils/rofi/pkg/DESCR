@@ -1,0 +1,19 @@
+Rofi is a graphical menu. Its features include:
+* Full (configurable) keyboard navigation.
+* Type to filter
+    - Tokenized: Type any word in any order to filter.
+    - Case insensitive
+* UTF-8 enabled.
+    - UTF-8 aware string collating.
+    - intl. keyboard support (`e -> è)
+* Pango font rendering.
+* RTL language support.
+* Window Switcher.
+    - I3 support.
+    - EWHM compatible WM.
+* Run dialog.
+* SSH launcher.
+* History based ordering: last 25 choices are ordered based on use.
+* Levenshtein distance ordering of matches.
+* Drop in dmenu replacement with many added improvements.
+* Can be easily extended using scripts.
