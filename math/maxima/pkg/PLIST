@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/06/16 05:04:43 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/09/20 06:50:26 feinerer Exp $
 bin/maxima
 bin/rmaxima
 bin/xmaxima
@@ -494,6 +494,8 @@ share/maxima/${VERSION}/share/contrib/bode.mac
 share/maxima/${VERSION}/share/contrib/boolsimp/
 share/maxima/${VERSION}/share/contrib/boolsimp/boolsimp.lisp
 share/maxima/${VERSION}/share/contrib/boolsimp/rtest_boolsimp.mac
+share/maxima/${VERSION}/share/contrib/celine.mac
+share/maxima/${VERSION}/share/contrib/cgrind.lisp
 share/maxima/${VERSION}/share/contrib/clebsch_gordan.mac
 share/maxima/${VERSION}/share/contrib/clebsh-gordan.tex
 share/maxima/${VERSION}/share/contrib/colorterm.lisp
@@ -558,6 +560,17 @@ share/maxima/${VERSION}/share/contrib/diffequations/tests/rtestode_murphy_2_5.ma
 share/maxima/${VERSION}/share/contrib/diffequations/tests/rtestode_odelin.mac
 share/maxima/${VERSION}/share/contrib/diffequations/tests/rtestode_utils.mac
 share/maxima/${VERSION}/share/contrib/diffequations/tests/testsuite.lisp
+share/maxima/${VERSION}/share/contrib/elliptic_curves/
+share/maxima/${VERSION}/share/contrib/elliptic_curves/curve_parameters.mac
+share/maxima/${VERSION}/share/contrib/elliptic_curves/ec2.lisp
+share/maxima/${VERSION}/share/contrib/elliptic_curves/elliptic_curves.lisp
+share/maxima/${VERSION}/share/contrib/elliptic_curves/elliptic_curves.mac
+share/maxima/${VERSION}/share/contrib/elliptic_curves/elliptic_curves.texi
+share/maxima/${VERSION}/share/contrib/elliptic_curves/figures/
+share/maxima/${VERSION}/share/contrib/elliptic_curves/figures/ec_Z13.pdf
+share/maxima/${VERSION}/share/contrib/elliptic_curves/figures/ec_Z13.png
+share/maxima/${VERSION}/share/contrib/elliptic_curves/modular_polynomials.lisp
+share/maxima/${VERSION}/share/contrib/elliptic_curves/rtest_elliptic_curves.mac
 share/maxima/${VERSION}/share/contrib/engineering-format.lisp
 share/maxima/${VERSION}/share/contrib/f90.lisp
 share/maxima/${VERSION}/share/contrib/floatproperties.lisp
@@ -793,6 +806,7 @@ share/maxima/${VERSION}/share/contrib/rkf45/rkf45.mac
 share/maxima/${VERSION}/share/contrib/rkf45/rkf45.pdf
 share/maxima/${VERSION}/share/contrib/rkf45/rtest_rkf45.mac
 share/maxima/${VERSION}/share/contrib/rtest_augmented_lagrangian.mac
+share/maxima/${VERSION}/share/contrib/rtest_ggf.mac
 share/maxima/${VERSION}/share/contrib/sarag/
 share/maxima/${VERSION}/share/contrib/sarag/aliases.mac
 share/maxima/${VERSION}/share/contrib/sarag/arag_test.mac
@@ -1485,6 +1499,7 @@ share/maxima/${VERSION}/share/stats/rtest_stats.mac
 share/maxima/${VERSION}/share/stats/stats.mac
 share/maxima/${VERSION}/share/stringproc/
 share/maxima/${VERSION}/share/stringproc/base64.lisp
+share/maxima/${VERSION}/share/stringproc/cryptools.lisp
 share/maxima/${VERSION}/share/stringproc/eval_string.lisp
 share/maxima/${VERSION}/share/stringproc/md5.lisp
 share/maxima/${VERSION}/share/stringproc/pregexp.lisp
@@ -1668,6 +1683,7 @@ share/maxima/${VERSION}/src/fcall.lisp
 share/maxima/${VERSION}/src/float.lisp
 share/maxima/${VERSION}/src/fortra.lisp
 share/maxima/${VERSION}/src/gamma.lisp
+share/maxima/${VERSION}/src/gcl-compat.lisp
 share/maxima/${VERSION}/src/generate-sys-proclaim.lisp
 share/maxima/${VERSION}/src/generr.lisp
 share/maxima/${VERSION}/src/getopt.lisp
@@ -1884,6 +1900,7 @@ share/maxima/${VERSION}/src/result.lisp
 share/maxima/${VERSION}/src/risch.lisp
 share/maxima/${VERSION}/src/rpart.lisp
 share/maxima/${VERSION}/src/rzmac.lisp
+share/maxima/${VERSION}/src/safe-recursion.lisp
 share/maxima/${VERSION}/src/schatc.lisp
 share/maxima/${VERSION}/src/scs.lisp
 share/maxima/${VERSION}/src/series.lisp
@@ -1901,7 +1918,6 @@ share/maxima/${VERSION}/src/strmac.lisp
 share/maxima/${VERSION}/src/sublis.lisp
 share/maxima/${VERSION}/src/sumcon.lisp
 share/maxima/${VERSION}/src/suprv1.lisp
-share/maxima/${VERSION}/src/sys-proclaim.lisp
 share/maxima/${VERSION}/src/tlimit.lisp
 share/maxima/${VERSION}/src/todd-coxeter.lisp
 share/maxima/${VERSION}/src/trans1.lisp

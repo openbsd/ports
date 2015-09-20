@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2015/06/16 05:04:43 feinerer Exp $
+# $OpenBSD: Makefile,v 1.32 2015/09/20 06:50:26 feinerer Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
-VERSION=		5.36.1
+VERSION=		5.37.2
 DISTNAME=		maxima-${VERSION}
 CATEGORIES=		math
 
@@ -17,6 +17,12 @@ WANTLIB += c ecl ffi gc gmp m pthread
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=maxima/}
 
 USE_GMAKE=		yes
+
+# Python is not needed for building but configure fails without it.
+# Instead of patching just add the lang/python dependency.
+# http://sourceforge.net/p/maxima/mailman/message/34462954/
+MODULES =		lang/python
+MODPY_RUNDEP =		No
 
 LIB_DEPENDS=		lang/ecl
 RUN_DEPENDS =		misc/rlwrap
@@ -33,7 +39,7 @@ FLAVOR?=
 MODULES+=		x11/tk
 RUN_DEPENDS +=		${MODTK_RUN_DEPENDS} \
 			math/gnuplot
-BUILD_DEPENDS +=	${MODTK_RUN_DEPENDS}
+BUILD_DEPENDS +=	${MODTK_BUILD_DEPENDS}
 CONFIGURE_ARGS +=	--with-wish=${MODTK_BIN}
 .endif
 
