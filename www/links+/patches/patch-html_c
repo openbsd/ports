@@ -1,7 +1,7 @@
-$OpenBSD: patch-html_c,v 1.14 2015/01/01 15:19:49 bcallah Exp $
---- html.c.orig	Sun Dec  7 13:39:00 2014
-+++ html.c	Fri Dec 26 11:41:31 2014
-@@ -981,6 +981,7 @@ static void html_a(unsigned char *a)
+$OpenBSD: patch-html_c,v 1.15 2015/09/20 08:01:09 landry Exp $
+--- html.c.orig	Sat Jul 25 13:41:36 2015
++++ html.c	Sun Sep 20 09:33:31 2015
+@@ -970,6 +970,7 @@ static void html_a(unsigned char *a)
  			format_.target = stracpy(format_.target_base);
  		}
  		/*format_.attr ^= AT_BOLD;*/
