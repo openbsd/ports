@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.27 2015/08/11 20:57:08 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.28 2015/09/20 12:24:47 ajacoutot Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
 @pkgpath games/tmw,-music
-@bin bin/dyecmd
 @bin bin/manaplus
 @man man/man6/manaplus.6
 @man man/man6/manaplustest.6
@@ -26,6 +25,7 @@ share/locale/pl/LC_MESSAGES/manaplus.mo
 share/locale/pt/LC_MESSAGES/manaplus.mo
 share/locale/pt_BR/LC_MESSAGES/manaplus.mo
 share/locale/ru/LC_MESSAGES/manaplus.mo
+share/locale/sr/LC_MESSAGES/manaplus.mo
 share/locale/sv/LC_MESSAGES/manaplus.mo
 share/locale/sv_SE/
 share/locale/sv_SE/LC_MESSAGES/
@@ -33,6 +33,7 @@ share/locale/sv_SE/LC_MESSAGES/manaplus.mo
 share/locale/tr/LC_MESSAGES/manaplus.mo
 share/locale/uk/LC_MESSAGES/manaplus.mo
 share/locale/zh_CN/LC_MESSAGES/manaplus.mo
+share/locale/zh_HK/LC_MESSAGES/manaplus.mo
 share/manaplus/
 share/manaplus/data/
 share/manaplus/data/fonts/
@@ -51,8 +52,14 @@ share/manaplus/data/fonts/mplus-1p-regular.ttf
 share/manaplus/data/fonts/wqy-microhei.ttf
 share/manaplus/data/graphics/
 share/manaplus/data/graphics/badges/
+share/manaplus/data/graphics/badges/away.png
+share/manaplus/data/graphics/badges/away.xml
 share/manaplus/data/graphics/badges/gm.png
 share/manaplus/data/graphics/badges/gm.xml
+share/manaplus/data/graphics/badges/inactive.png
+share/manaplus/data/graphics/badges/inactive.xml
+share/manaplus/data/graphics/badges/shop.png
+share/manaplus/data/graphics/badges/shop.xml
 share/manaplus/data/graphics/badges/team1.png
 share/manaplus/data/graphics/badges/team1.xml
 share/manaplus/data/graphics/badges/team2.png
@@ -60,6 +67,7 @@ share/manaplus/data/graphics/badges/team2.xml
 share/manaplus/data/graphics/badges/team3.png
 share/manaplus/data/graphics/badges/team3.xml
 share/manaplus/data/graphics/flags/
+share/manaplus/data/graphics/flags/ca.png
 share/manaplus/data/graphics/flags/cn.png
 share/manaplus/data/graphics/flags/cz.png
 share/manaplus/data/graphics/flags/de.png
@@ -67,6 +75,7 @@ share/manaplus/data/graphics/flags/en.png
 share/manaplus/data/graphics/flags/es.png
 share/manaplus/data/graphics/flags/fi.png
 share/manaplus/data/graphics/flags/fr.png
+share/manaplus/data/graphics/flags/hk.png
 share/manaplus/data/graphics/flags/id.png
 share/manaplus/data/graphics/flags/it.png
 share/manaplus/data/graphics/flags/jp.png
@@ -77,6 +86,7 @@ share/manaplus/data/graphics/flags/pt_BR.png
 share/manaplus/data/graphics/flags/ru.png
 share/manaplus/data/graphics/flags/se.png
 share/manaplus/data/graphics/flags/tr.png
+share/manaplus/data/graphics/flags/ua.png
 share/manaplus/data/graphics/gui/
 share/manaplus/data/graphics/gui/browserbox.xml
 share/manaplus/data/graphics/gui/bubble.png
