@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/27 21:45:36 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2015/09/20 21:16:14 kili Exp $
+
+BROKEN =		needs an update, not used by anything useful
 
 COMMENT =		Haskell 98 contravariant functors
 
