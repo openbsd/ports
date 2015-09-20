@@ -1,0 +1,14 @@
+$OpenBSD: patch-data_gpx-viewer-preferences_ui,v 1.1 2015/09/20 09:23:19 landry Exp $
+
+https://github.com/DaveDavenport/gpx-viewer/commit/9cb7021c05c118456ec21790d4a9b2454509c3b4
+
+--- data/gpx-viewer-preferences.ui.orig	Sun Sep 20 11:14:49 2015
++++ data/gpx-viewer-preferences.ui	Sun Sep 20 11:15:00 2015
+@@ -5,7 +5,6 @@
+   <object class="GtkDialog" id="preferences_dialog">
+     <property name="border_width">5</property>
+     <property name="type_hint">normal</property>
+-    <property name="has_separator">False</property>
+     <signal name="response" handler="gpx_viewer_preferences_close"/>
+     <child internal-child="vbox">
+       <object class="GtkVBox" id="dialog-vbox1">

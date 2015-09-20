@@ -1,0 +1,14 @@
+$OpenBSD: patch-data_gpx-viewer-file-chooser_ui,v 1.1 2015/09/20 09:23:19 landry Exp $
+
+https://github.com/DaveDavenport/gpx-viewer/commit/9cb7021c05c118456ec21790d4a9b2454509c3b4
+
+--- data/gpx-viewer-file-chooser.ui.orig	Sun Sep 20 11:15:03 2015
++++ data/gpx-viewer-file-chooser.ui	Sun Sep 20 11:15:08 2015
+@@ -7,7 +7,6 @@
+     <property name="title" translatable="yes">Choose gpx file(s)</property>
+     <property name="icon_name">gpx-viewer</property>
+     <property name="type_hint">normal</property>
+-    <property name="has_separator">False</property>
+     <property name="select_multiple">True</property>
+     <property name="filter">gpx_viewer_file_chooser_filter</property>
+     <property name="local_only">False</property>
