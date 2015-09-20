@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/12/18 21:12:54 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/09/20 18:29:21 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Crypto/
 lib/ghc/${DISTNAME}/Crypto/Hash/
@@ -35,8 +35,9 @@ lib/ghc/${DISTNAME}/Crypto/Hash/Whirlpool.p_hi
 lib/ghc/${DISTNAME}/Crypto/MAC/
 lib/ghc/${DISTNAME}/Crypto/MAC/HMAC.hi
 lib/ghc/${DISTNAME}/Crypto/MAC/HMAC.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

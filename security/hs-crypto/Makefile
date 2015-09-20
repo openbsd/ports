@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2014/11/25 22:11:04 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2015/09/20 18:29:21 kili Exp $
 
 COMMENT =	Haskell cryptographic library
 CATEGORIES =	security
 
 V =		4.2.5.1
 DISTNAME =	Crypto-$V
-REVISION =	0
+REVISION =	1
 # Historically named with a lower case `c'.
 PKGNAME =	hs-crypto-$V
 
@@ -16,6 +16,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
+
+MODGHC_PACKAGE_KEY =	e9d679e3d378e2518aed01b8b69ce058
+
 RUN_DEPENDS =		devel/hs-HUnit \
 			devel/hs-QuickCheck>=2.4.0.1 \
 			devel/hs-random

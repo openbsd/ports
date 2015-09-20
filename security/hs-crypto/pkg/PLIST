@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/11/25 22:11:05 kili Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/09/20 18:29:21 kili Exp $
 @comment bin/HMACTest
 @comment bin/QuickTest
 @comment bin/RSATest
@@ -65,8 +65,9 @@ lib/ghc/${DISTNAME}/Data/HMAC.hi
 lib/ghc/${DISTNAME}/Data/HMAC.p_hi
 lib/ghc/${DISTNAME}/Data/LargeWord.hi
 lib/ghc/${DISTNAME}/Data/LargeWord.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/HS${DISTNAME}-DI20CqNUCRO1lzrUqMLhtW.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-DI20CqNUCRO1lzrUqMLhtW.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-DI20CqNUCRO1lzrUqMLhtW_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/ReadMe.tex

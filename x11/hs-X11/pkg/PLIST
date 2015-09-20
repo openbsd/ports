@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/11/24 16:07:59 kili Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/09/20 18:29:21 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/X11/
@@ -60,12 +60,13 @@ lib/ghc/${DISTNAME}/Graphics/X11/Xlib/Window.hi
 lib/ghc/${DISTNAME}/Graphics/X11/Xlib/Window.p_hi
 lib/ghc/${DISTNAME}/Graphics/X11/Xrandr.hi
 lib/ghc/${DISTNAME}/Graphics/X11/Xrandr.p_hi
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/include/
 lib/ghc/${DISTNAME}/include/HsAllKeysyms.h
 lib/ghc/${DISTNAME}/include/HsXlib.h
 lib/ghc/${DISTNAME}/include/XlibExtras.h
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE

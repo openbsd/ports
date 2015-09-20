@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/12/15 20:19:37 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/09/20 18:29:21 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Crypto/
 lib/ghc/${DISTNAME}/Crypto/CPoly.hi
@@ -20,8 +20,9 @@ lib/ghc/${DISTNAME}/Crypto/Types.hi
 lib/ghc/${DISTNAME}/Crypto/Types.p_hi
 lib/ghc/${DISTNAME}/Crypto/Util.hi
 lib/ghc/${DISTNAME}/Crypto/Util.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
