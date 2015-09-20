@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/12/08 09:15:02 kili Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/09/20 20:55:07 kili Exp $
 @bin bin/Canonicalise
 @bin bin/CanonicaliseLazy
 @bin bin/DtdToHaskell
@@ -8,6 +8,7 @@
 @bin bin/XsdToHaskell
 @bin bin/Xtract
 lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Text/
 lib/ghc/${DISTNAME}/Text/XML/
 lib/ghc/${DISTNAME}/Text/XML/HaXml/
@@ -100,8 +101,8 @@ lib/ghc/${DISTNAME}/Text/XML/HaXml/Xtract/Lex.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/Xtract/Lex.p_hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/Xtract/Parse.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/Xtract/Parse.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/COPYRIGHT
