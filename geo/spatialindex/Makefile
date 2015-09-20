@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2014/08/24 09:03:04 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/20 07:58:20 landry Exp $
 
 COMMENT =	library for spatial indexing and querying
-DISTNAME=	spatialindex-src-1.8.1
+DISTNAME=	spatialindex-src-1.8.5
 PKGNAME =	${DISTNAME:S/-src//}
 CATEGORIES =	geo
-SHARED_LIBS =	spatialindex 1.0 \
-		spatialindex_c 0.1 #3.0
+SHARED_LIBS =	spatialindex 2.0 \
+		spatialindex_c 0.2 #4.1
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
