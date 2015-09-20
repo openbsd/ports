@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/14 09:44:02 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/20 10:31:19 benoit Exp $
 bin/http
 lib/python${MODPY_VERSION}/site-packages/httpie/
 lib/python${MODPY_VERSION}/site-packages/httpie-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -20,6 +20,8 @@ lib/python${MODPY_VERSION}/site-packages/httpie/compat.py
 lib/python${MODPY_VERSION}/site-packages/httpie/compat.pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/config.py
 lib/python${MODPY_VERSION}/site-packages/httpie/config.pyc
+lib/python${MODPY_VERSION}/site-packages/httpie/context.py
+lib/python${MODPY_VERSION}/site-packages/httpie/context.pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/core.py
 lib/python${MODPY_VERSION}/site-packages/httpie/core.pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/downloads.py
@@ -28,8 +30,24 @@ lib/python${MODPY_VERSION}/site-packages/httpie/input.py
 lib/python${MODPY_VERSION}/site-packages/httpie/input.pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/models.py
 lib/python${MODPY_VERSION}/site-packages/httpie/models.pyc
-lib/python${MODPY_VERSION}/site-packages/httpie/output.py
-lib/python${MODPY_VERSION}/site-packages/httpie/output.pyc
+lib/python${MODPY_VERSION}/site-packages/httpie/output/
+lib/python${MODPY_VERSION}/site-packages/httpie/output/__init__.py
+lib/python${MODPY_VERSION}/site-packages/httpie/output/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/
+lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/__init__.py
+lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/colors.py
+lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/colors.pyc
+lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/headers.py
+lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/headers.pyc
+lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/json.py
+lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/json.pyc
+lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/xml.py
+lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/xml.pyc
+lib/python${MODPY_VERSION}/site-packages/httpie/output/processing.py
+lib/python${MODPY_VERSION}/site-packages/httpie/output/processing.pyc
+lib/python${MODPY_VERSION}/site-packages/httpie/output/streams.py
+lib/python${MODPY_VERSION}/site-packages/httpie/output/streams.pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/plugins/
 lib/python${MODPY_VERSION}/site-packages/httpie/plugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/httpie/plugins/__init__.pyc
@@ -41,7 +59,5 @@ lib/python${MODPY_VERSION}/site-packages/httpie/plugins/manager.py
 lib/python${MODPY_VERSION}/site-packages/httpie/plugins/manager.pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/sessions.py
 lib/python${MODPY_VERSION}/site-packages/httpie/sessions.pyc
-lib/python${MODPY_VERSION}/site-packages/httpie/solarized.py
-lib/python${MODPY_VERSION}/site-packages/httpie/solarized.pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/utils.py
 lib/python${MODPY_VERSION}/site-packages/httpie/utils.pyc

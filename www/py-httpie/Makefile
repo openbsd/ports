@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/05 13:31:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/20 10:31:19 benoit Exp $
 
 COMMENT =	command-line HTTP client
 
-MODPY_EGG_VERSION =	0.8.0
+MODPY_EGG_VERSION =	0.9.2
 GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	jakubroztocil
 GH_PROJECT =	httpie
@@ -21,8 +21,5 @@ MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =	www/py-requests \
 		textproc/py-pygments
 TEST_DEPENDS =	${RUN_DEPENDS}
-
-do-test:
-	cd ${WRKBUILD} && ${MODPY_BIN} tests/tests.py
 
 .include <bsd.port.mk>
