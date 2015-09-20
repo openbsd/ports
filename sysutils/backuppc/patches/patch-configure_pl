@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_pl,v 1.2 2013/12/03 22:02:54 landry Exp $
---- configure.pl.orig	Sun Apr 14 22:43:32 2013
-+++ configure.pl	Tue Dec  3 22:53:53 2013
-@@ -521,7 +521,7 @@ exit unless prompt("--> Do you want to continue?", "y"
+$OpenBSD: patch-configure_pl,v 1.3 2015/09/20 07:23:37 landry Exp $
+--- configure.pl.orig	Mon Jan 12 01:19:53 2015
++++ configure.pl	Sun Sep 20 09:22:47 2015
+@@ -522,7 +522,7 @@ exit unless prompt("--> Do you want to continue?", "y"
  #
  # Create install directories
  #
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_pl,v 1.2 2013/12/03 22:02:54 landry Exp $
  		     lib/BackupPC/CGI
  		     lib/BackupPC/Config
  		     lib/BackupPC/Lang
-@@ -557,13 +557,7 @@ foreach my $dir ( ($Conf{CgiImageDir}) ) {
+@@ -558,13 +558,7 @@ foreach my $dir ( ($Conf{CgiImageDir}) ) {
  # Create other directories
  #
  foreach my $dir ( (
@@ -25,7 +25,7 @@ $OpenBSD: patch-configure_pl,v 1.2 2013/12/03 22:02:54 landry Exp $
          ) ) {
      mkpath("$DestDir$dir", 0, 0750) if ( !-d "$DestDir$dir" );
      if ( !-d "$DestDir$dir"
-@@ -692,21 +686,21 @@ foreach my $init ( qw(gentoo-backuppc gentoo-backuppc.
+@@ -693,21 +687,21 @@ foreach my $init ( qw(gentoo-backuppc gentoo-backuppc.
  printf("Making Apache configuration file for suid-perl\n");
  InstallFile("httpd/src/BackupPC.conf", "httpd/BackupPC.conf", 0644);
  
@@ -53,7 +53,7 @@ $OpenBSD: patch-configure_pl,v 1.2 2013/12/03 22:02:54 landry Exp $
  my ($distConf, $distVars) = ConfigParse("conf/config.pl");
  my ($oldConf, $oldVars);
  my ($newConf, $newVars) = ($distConf, $distVars);
-@@ -733,6 +727,7 @@ if ( !defined($Conf{CgiURL}) ) {
+@@ -734,6 +728,7 @@ if ( !defined($Conf{CgiURL}) ) {
      }
  }
  
