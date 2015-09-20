@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/20 06:50:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/09/20 14:04:45 jasper Exp $
+
+PORTROACH=	limit:^1\.1
+PORTROACH_COMMENT=	solarus >= 1.2.0 requires SDL2
 
 V =		1.1.1
 COMMENT =	open-source Zelda-like 2D game engine
