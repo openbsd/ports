@@ -1,0 +1,15 @@
+$OpenBSD: patch-dataenc_cabal,v 1.1 2015/09/20 15:12:28 kili Exp $
+
+Builds fine with base-4.8 (ghc-7.10).
+
+--- dataenc.cabal.orig	Tue Apr 22 20:38:41 2014
++++ dataenc.cabal	Sun Sep 20 16:16:17 2015
+@@ -21,7 +21,7 @@ flag tests
+ 
+ library
+     hs-source-dirs: src
+-    build-depends: array, base >= 3.0.0 && < 4.8, containers
++    build-depends: array, base >= 3.0.0 && < 4.9, containers
+     exposed-modules:
+             Codec.Binary.Base16
+             Codec.Binary.Base32
