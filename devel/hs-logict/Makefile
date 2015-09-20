@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/11/25 22:11:04 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2015/09/20 15:13:35 kili Exp $
 
 COMMENT =		backtracking logic-programming monad
 
-DISTNAME =		logict-0.5.0.1
-REVISION =		2
+DISTNAME =		logict-0.5.0.2
 CATEGORIES =		devel
 
 # BSD3
@@ -13,7 +12,9 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS =		devel/hs-mtl>=1.0.1,<2.2
+MODGHC_PACKAGE_KEY =	1iHNtOOGGglHyK9qFDuKF5
+
+RUN_DEPENDS =		devel/hs-mtl>=1.0.1,<2.3
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>
