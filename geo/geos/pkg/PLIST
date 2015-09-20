@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/08/27 08:28:29 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/09/20 07:59:09 landry Exp $
 bin/geos-config
 include/geos/
 include/geos.h
@@ -285,6 +285,10 @@ include/geos/operation/distance/ConnectedElementLocationFilter.h
 include/geos/operation/distance/ConnectedElementPointFilter.h
 include/geos/operation/distance/DistanceOp.h
 include/geos/operation/distance/GeometryLocation.h
+include/geos/operation/intersection/
+include/geos/operation/intersection/Rectangle.h
+include/geos/operation/intersection/RectangleIntersection.h
+include/geos/operation/intersection/RectangleIntersectionBuilder.h
 include/geos/operation/linemerge/
 include/geos/operation/linemerge/EdgeString.h
 include/geos/operation/linemerge/LineMergeDirectedEdge.h
@@ -385,6 +389,7 @@ include/geos/timeval.h
 include/geos/triangulate/
 include/geos/triangulate/DelaunayTriangulationBuilder.h
 include/geos/triangulate/IncrementalDelaunayTriangulator.h
+include/geos/triangulate/VoronoiDiagramBuilder.h
 include/geos/triangulate/quadedge/
 include/geos/triangulate/quadedge/LastFoundQuadEdgeLocator.h
 include/geos/triangulate/quadedge/LocateFailureException.h
@@ -412,7 +417,6 @@ include/geos/util/UnsupportedOperationException.h
 include/geos/util/math.h
 include/geos/version.h
 include/geos_c.h
-lib/geos/
 lib/libgeos.a
 lib/libgeos.la
 @lib lib/libgeos.so.${LIBgeos_VERSION}
@@ -641,7 +645,10 @@ share/doc/geos/html/QuadtreeNestedRingTester_8h_source.html
 share/doc/geos/html/Quadtree_8h_source.html
 share/doc/geos/html/RayCrossingCounter_8h_source.html
 share/doc/geos/html/RectangleContains_8h_source.html
+share/doc/geos/html/RectangleIntersectionBuilder_8h_source.html
+share/doc/geos/html/RectangleIntersection_8h_source.html
 share/doc/geos/html/RectangleIntersects_8h_source.html
+share/doc/geos/html/Rectangle_8h_source.html
 share/doc/geos/html/RelateComputer_8h_source.html
 share/doc/geos/html/RelateNodeFactory_8h_source.html
 share/doc/geos/html/RelateNodeGraph_8h_source.html
@@ -704,6 +711,7 @@ share/doc/geos/html/UnaryUnionOp_8h_source.html
 share/doc/geos/html/UniqueCoordinateArrayFilter_8h_source.html
 share/doc/geos/html/UnsupportedOperationException_8h_source.html
 share/doc/geos/html/Vertex_8h_source.html
+share/doc/geos/html/VoronoiDiagramBuilder_8h_source.html
 share/doc/geos/html/WKBConstants_8h_source.html
 share/doc/geos/html/WKBReader_8h_source.html
 share/doc/geos/html/WKBWriter_8h_source.html
@@ -1204,6 +1212,12 @@ share/doc/geos/html/classgeos_1_1operation_1_1geounion_1_1PointGeometryUnion-mem
 share/doc/geos/html/classgeos_1_1operation_1_1geounion_1_1PointGeometryUnion.html
 share/doc/geos/html/classgeos_1_1operation_1_1geounion_1_1UnaryUnionOp-members.html
 share/doc/geos/html/classgeos_1_1operation_1_1geounion_1_1UnaryUnionOp.html
+share/doc/geos/html/classgeos_1_1operation_1_1intersection_1_1Rectangle-members.html
+share/doc/geos/html/classgeos_1_1operation_1_1intersection_1_1Rectangle.html
+share/doc/geos/html/classgeos_1_1operation_1_1intersection_1_1RectangleIntersection-members.html
+share/doc/geos/html/classgeos_1_1operation_1_1intersection_1_1RectangleIntersection.html
+share/doc/geos/html/classgeos_1_1operation_1_1intersection_1_1RectangleIntersectionBuilder-members.html
+share/doc/geos/html/classgeos_1_1operation_1_1intersection_1_1RectangleIntersectionBuilder.html
 share/doc/geos/html/classgeos_1_1operation_1_1linemerge_1_1EdgeString-members.html
 share/doc/geos/html/classgeos_1_1operation_1_1linemerge_1_1EdgeString.html
 share/doc/geos/html/classgeos_1_1operation_1_1linemerge_1_1LineMergeDirectedEdge-members.html
@@ -1362,6 +1376,8 @@ share/doc/geos/html/classgeos_1_1triangulate_1_1DelaunayTriangulationBuilder-mem
 share/doc/geos/html/classgeos_1_1triangulate_1_1DelaunayTriangulationBuilder.html
 share/doc/geos/html/classgeos_1_1triangulate_1_1IncrementalDelaunayTriangulator-members.html
 share/doc/geos/html/classgeos_1_1triangulate_1_1IncrementalDelaunayTriangulator.html
+share/doc/geos/html/classgeos_1_1triangulate_1_1VoronoiDiagramBuilder-members.html
+share/doc/geos/html/classgeos_1_1triangulate_1_1VoronoiDiagramBuilder.html
 share/doc/geos/html/classgeos_1_1triangulate_1_1quadedge_1_1LastFoundQuadEdgeLocator-members.html
 share/doc/geos/html/classgeos_1_1triangulate_1_1quadedge_1_1LastFoundQuadEdgeLocator.html
 share/doc/geos/html/classgeos_1_1triangulate_1_1quadedge_1_1LastFoundQuadEdgeLocator.png
@@ -1412,6 +1428,7 @@ share/doc/geos/html/dir_0e3b37c82ffdfa0ddea472bb61fecadf.html
 share/doc/geos/html/dir_186f3b7b99125ebe9657fdbd48be27fb.html
 share/doc/geos/html/dir_266d7781c05ba74899fbd1b4ce8bcadf.html
 share/doc/geos/html/dir_2c23d5540d2a668b0550fa40aa20e858.html
+share/doc/geos/html/dir_2d35f9bf30fd7f2ba700dd48b1a1f158.html
 share/doc/geos/html/dir_2f7e588ee14e7ebbdbeee368f114a6f5.html
 share/doc/geos/html/dir_305cd355f6e9cdc9283d7e134fd1f764.html
 share/doc/geos/html/dir_3097f3e3896e85a18a9a832172177de5.html
@@ -1520,6 +1537,8 @@ share/doc/geos/html/functions_func_0x74.html
 share/doc/geos/html/functions_func_0x75.html
 share/doc/geos/html/functions_func_0x76.html
 share/doc/geos/html/functions_func_0x77.html
+share/doc/geos/html/functions_func_0x78.html
+share/doc/geos/html/functions_func_0x79.html
 share/doc/geos/html/functions_func_0x7a.html
 share/doc/geos/html/functions_func_0x7e.html
 share/doc/geos/html/functions_rela.html
