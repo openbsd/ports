@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/27 21:45:36 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2015/09/20 21:08:56 kili Exp $
+
+BROKEN =		needs update, not used by anythinb useful
 
 COMMENT =		Haskell 98 comonads
 
