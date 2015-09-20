@@ -1,10 +1,12 @@
-$OpenBSD: patch-src_mapnik_interface_cpp,v 1.1 2015/09/18 20:09:26 landry Exp $
+$OpenBSD: patch-src_mapnik_interface_cpp,v 1.2 2015/09/20 07:10:52 landry Exp $
 
 Mapnik 3 support
 http://sourceforge.net/p/viking/code/ci/616812b76e3127de72f7e62b86d8fe1d702e2e2c/
 
---- src/mapnik_interface.cpp.orig	Fri Sep 18 19:50:34 2015
-+++ src/mapnik_interface.cpp	Fri Sep 18 19:54:03 2015
+http://sourceforge.net/p/viking/code/ci/53991e791a53697aca742c4567121374724bf293/#diff-2
+
+--- src/mapnik_interface.cpp.orig	Fri Mar  6 19:36:57 2015
++++ src/mapnik_interface.cpp	Sun Sep 20 09:04:05 2015
 @@ -24,7 +24,12 @@
  #include <mapnik/datasource_cache.hpp>
  #include <mapnik/agg_renderer.hpp>
@@ -62,6 +64,21 @@ http://sourceforge.net/p/viking/code/ci/616812b76e3127de72f7e62b86d8fe1d702e2e2c
  }
  
  #define VIK_SETTINGS_MAPNIK_BUFFER_SIZE "mapnik_buffer_size"
+@@ -253,11 +273,11 @@ GdkPixbuf* mapnik_interface_render ( MapnikInterface* 
+ 		render.apply();
+ 
+ 		if ( image.painted() ) {
+-			unsigned char *ImageRawDataPtr = (unsigned char *) g_malloc(width * 3 * height);
++			unsigned char *ImageRawDataPtr = (unsigned char *) g_malloc(width * 4 * height);
+ 			if (!ImageRawDataPtr)
+ 				return NULL;
+-			convert_argb32_to_gdkpixbuf_data(image.raw_data(), width, height, ImageRawDataPtr);
+-			pixbuf = gdk_pixbuf_new_from_data(ImageRawDataPtr, GDK_COLORSPACE_RGB, FALSE, 8, width, height, width * 3, NULL, NULL);
++			memcpy(ImageRawDataPtr, image.raw_data(), width * height * 4);
++			pixbuf = gdk_pixbuf_new_from_data(ImageRawDataPtr, GDK_COLORSPACE_RGB, TRUE, 8, width, height, width * 4, NULL, NULL);
+ 		}
+ 		else
+ 			g_warning ("%s not rendered", __FUNCTION__ );
 @@ -292,11 +312,16 @@ GArray* mapnik_interface_get_parameters ( MapnikInterf
  	GArray *array = g_array_new (FALSE, TRUE, sizeof(gchar*));
  
