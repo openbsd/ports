@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/09/20 18:35:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/20 18:37:50 jasper Exp $
 
 COMMENT =		window switcher, run dialog and dmenu replacement
 
@@ -28,10 +28,10 @@ BUILD_DEPENDS+=		${MODGNU_AUTOMAKE_DEPENDS} \
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS=-I${LOCALBASE}/include
 
-BUILD_DEPENDS =		x11/i3
+BUILD_DEPENDS +=	x11/i3
 LIB_DEPENDS =		devel/pango
 
-TEST_TARGET =	test
+TEST_TARGET =		test
 
 pre-configure:
 	cd ${WRKSRC} && \
