@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2015/04/02 14:21:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/09/20 09:52:44 benoit Exp $
 
 COMMENT =	web error handling and exception catching
 
-MODPY_EGG_VERSION = 0.10.3
+MODPY_EGG_VERSION = 0.11
 DISTNAME =	WebError-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	0
 
 CATEGORIES =	www devel
 

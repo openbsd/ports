@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/29 23:59:20 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/20 09:52:44 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/WebError-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/WebError-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/WebError-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/WebError-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/WebError-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/WebError-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/WebError-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/paster_plugins.txt
 lib/python${MODPY_VERSION}/site-packages/WebError-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/WebError-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/weberror/
@@ -38,6 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/weberror/formatter.py
 lib/python${MODPY_VERSION}/site-packages/weberror/formatter.pyc
 lib/python${MODPY_VERSION}/site-packages/weberror/pdbcapture.py
 lib/python${MODPY_VERSION}/site-packages/weberror/pdbcapture.pyc
+lib/python${MODPY_VERSION}/site-packages/weberror/pdbcapture_response.html
 lib/python${MODPY_VERSION}/site-packages/weberror/reporter.py
 lib/python${MODPY_VERSION}/site-packages/weberror/reporter.pyc
 lib/python${MODPY_VERSION}/site-packages/weberror/util/
@@ -47,6 +47,8 @@ lib/python${MODPY_VERSION}/site-packages/weberror/util/errorapp.py
 lib/python${MODPY_VERSION}/site-packages/weberror/util/errorapp.pyc
 lib/python${MODPY_VERSION}/site-packages/weberror/util/escaping.py
 lib/python${MODPY_VERSION}/site-packages/weberror/util/escaping.pyc
+lib/python${MODPY_VERSION}/site-packages/weberror/util/security.py
+lib/python${MODPY_VERSION}/site-packages/weberror/util/security.pyc
 lib/python${MODPY_VERSION}/site-packages/weberror/util/serial_number_generator.py
 lib/python${MODPY_VERSION}/site-packages/weberror/util/serial_number_generator.pyc
 lib/python${MODPY_VERSION}/site-packages/weberror/util/source_encoding.py
