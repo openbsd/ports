@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/09 13:26:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/20 20:49:24 benoit Exp $
 bin/rrd2whisper.py
 bin/whisper-create.py
 bin/whisper-dump.py
 bin/whisper-fetch.py
+bin/whisper-fill.py
 bin/whisper-info.py
 bin/whisper-merge.py
 bin/whisper-resize.py
