@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.294 2015/09/20 12:14:10 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.295 2015/09/21 08:42:27 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -613,6 +613,7 @@ my $obsolete_reason = {
 	'jpilot' => 6,
 	'pilot-link' => 6,
 	'ivan' => 3,
+	'hs-xhtml-combinators' => 5,
 };
 
 # ->is_base_system($handle, $state):
