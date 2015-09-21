@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.737 2015/09/21 08:40:21 kili Exp $
+# $OpenBSD: Makefile,v 1.738 2015/09/21 11:05:58 kili Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -63,7 +63,6 @@
      SUBDIR += havp
      SUBDIR += hiawatha
      SUBDIR += hs-cgi
-     SUBDIR += hs-clientsession
      SUBDIR += hs-html
      SUBDIR += hs-http-attoparsec
      SUBDIR += hs-http-types
