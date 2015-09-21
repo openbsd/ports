@@ -1,4 +1,0 @@
-Common interface to various Haskell types that are list-like.
-Predefined interfaces include standard Haskell lists, Arrays,
-ByteStrings, and lazy ByteStrings.  Custom types can easily be made
-ListLike instances as well.
