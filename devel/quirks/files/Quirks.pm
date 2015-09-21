@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.296 2015/09/21 08:46:50 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.297 2015/09/21 08:52:25 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -612,6 +612,8 @@ my $obsolete_reason = {
 	'god' => 5,
 	'ivan' => 3,
 	'hs-xhtml-combinators' => 5,
+	'feldspar-compiler' => 5,
+	'feldspar-language' => 5,
 };
 
 # ->is_base_system($handle, $state):
