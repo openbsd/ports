@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/25 13:18:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/09/21 14:35:24 jasper Exp $
 
 COMMENT =	2D action adventure game engine
 DISTNAME =	hypatia-${GH_TAGNAME}
 CATEGORIES =	games x11
 SUBST_VARS +=	GH_TAGNAME
-REVISION =	0
+REVISION =	1
 
-GH_ACCOUNT =	lillian-lemmer
+GH_ACCOUNT =	hypatia-engine
 GH_PROJECT =	hypatia
 GH_TAGNAME =	0.2.29
 
-HOMEPAGE =	http://lillian-lemmer.github.io/hypatia/
+HOMEPAGE=	http://hypatia-engine.github.io/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
