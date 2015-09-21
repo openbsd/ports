@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/03/15 10:14:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/09/21 16:53:15 jasper Exp $
 include/libxml++-2.6/
 include/libxml++-2.6/libxml++/
 include/libxml++-2.6/libxml++/attribute.h
@@ -11,6 +11,7 @@ include/libxml++-2.6/libxml++/exceptions/exception.h
 include/libxml++-2.6/libxml++/exceptions/internal_error.h
 include/libxml++-2.6/libxml++/exceptions/parse_error.h
 include/libxml++-2.6/libxml++/exceptions/validity_error.h
+include/libxml++-2.6/libxml++/exceptions/wrapped_exception.h
 include/libxml++-2.6/libxml++/io/
 include/libxml++-2.6/libxml++/io/istreamparserinputbuffer.h
 include/libxml++-2.6/libxml++/io/ostreamoutputbuffer.h
@@ -67,6 +68,9 @@ share/doc/libxml++-2.6/reference/html/arrowright.png
 share/doc/libxml++-2.6/reference/html/bc_s.png
 share/doc/libxml++-2.6/reference/html/bdwn.png
 share/doc/libxml++-2.6/reference/html/classes.html
+share/doc/libxml++-2.6/reference/html/classhash__load__check__resize__trigger__size__base.html
+share/doc/libxml++-2.6/reference/html/classlu__counter__policy__base.html
+share/doc/libxml++-2.6/reference/html/classlu__counter__policy__base__inherit__graph.png
 share/doc/libxml++-2.6/reference/html/classxmlpp_1_1Attribute-members.html
 share/doc/libxml++-2.6/reference/html/classxmlpp_1_1Attribute.html
 share/doc/libxml++-2.6/reference/html/classxmlpp_1_1AttributeDeclaration-members.html
@@ -256,6 +260,8 @@ share/doc/libxml++-2.6/reference/html/inherit_graph_2.png
 share/doc/libxml++-2.6/reference/html/inherit_graph_3.png
 share/doc/libxml++-2.6/reference/html/inherit_graph_4.png
 share/doc/libxml++-2.6/reference/html/inherit_graph_5.png
+share/doc/libxml++-2.6/reference/html/inherit_graph_6.png
+share/doc/libxml++-2.6/reference/html/inherit_graph_7.png
 share/doc/libxml++-2.6/reference/html/inherits.html
 share/doc/libxml++-2.6/reference/html/jquery.js
 share/doc/libxml++-2.6/reference/html/namespacemembers.html
