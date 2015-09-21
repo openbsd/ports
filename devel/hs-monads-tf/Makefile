@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2014/11/27 21:45:36 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2015/09/21 08:25:49 kili Exp $
+
+BROKEN =		needs update, not used by anything useful
 
 COMMENT=		Monad classes, using type families
 
