@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2015/04/06 22:10:57 schwarze Exp $
+# $OpenBSD: Makefile,v 1.28 2015/09/21 14:35:23 jasper Exp $
 
 COMMENT=	GNU version of Shogi
 
-DISTNAME=	gnushogi-1.3
+DISTNAME=	gnushogi-1.4.2
 CATEGORIES=	games
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c curses m termcap
+WANTLIB=	c curses m
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gnushogi/}
 
@@ -27,8 +27,6 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/doc/BOOKFILES ${PREFIX}/share/doc/gnushogi
 	${INSTALL_DATA}	${WRKDIST}/doc/PORTING ${PREFIX}/share/doc/gnushogi
 	${INSTALL_DATA}	${WRKSRC}/doc/*.gam ${PREFIX}/share/doc/gnushogi
-	${INSTALL_DATA}	${WRKSRC}/doc/*.html ${PREFIX}/share/doc/gnushogi
-	${INSTALL_DATA}	${WRKSRC}/doc/*.ref ${PREFIX}/share/doc/gnushogi
 	${INSTALL_DATA}	${WRKSRC}/doc/*.rules ${PREFIX}/share/doc/gnushogi
 
 .include <bsd.port.mk>
