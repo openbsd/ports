@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1384 2015/09/19 08:32:53 kili Exp $
+# $OpenBSD: Makefile,v 1.1385 2015/09/21 11:04:43 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -177,13 +177,10 @@
      SUBDIR += hs-List
      SUBDIR += hs-ListLike
      SUBDIR += hs-MissingH
-     SUBDIR += hs-MonadCatchIO-mtl
-     SUBDIR += hs-MonadCatchIO-transformers
      SUBDIR += hs-MonadRandom
      SUBDIR += hs-ObjectName
      SUBDIR += hs-OneTuple
      SUBDIR += hs-PSQueue
-     SUBDIR += hs-QuickAnnotate
      SUBDIR += hs-QuickCheck
      SUBDIR += hs-StateVar
      SUBDIR += hs-abstract-deque
@@ -206,31 +203,21 @@
      SUBDIR += hs-cereal
      SUBDIR += hs-cmdargs
      SUBDIR += hs-cmdlib
-     SUBDIR += hs-comonad
-     SUBDIR += hs-comonad-transformers
-     SUBDIR += hs-comonads-fd
      SUBDIR += hs-concurrent-extra
      SUBDIR += hs-conduit
      SUBDIR += hs-configurator
      SUBDIR += hs-constraints
-     SUBDIR += hs-contravariant
      SUBDIR += hs-convertible
      SUBDIR += hs-data-default
      SUBDIR += hs-data-hash
-     SUBDIR += hs-data-lens
-     SUBDIR += hs-data-lens-template
      SUBDIR += hs-dataenc
      SUBDIR += hs-directory-tree
-     SUBDIR += hs-distributive
      SUBDIR += hs-dlist
-     SUBDIR += hs-either
      SUBDIR += hs-enumerator
-     SUBDIR += hs-errors
      SUBDIR += hs-exceptions
      SUBDIR += hs-extensible-exceptions
      SUBDIR += hs-failure
      SUBDIR += hs-fgl
-     SUBDIR += hs-ghc-mtl
      SUBDIR += hs-ghc-paths
      SUBDIR += hs-gio
      SUBDIR += hs-glade
@@ -238,15 +225,12 @@
      SUBDIR += hs-hashable
      SUBDIR += hs-hashed-storage
      SUBDIR += hs-hashtables
-     SUBDIR += hs-hint
      SUBDIR += hs-hlint
      SUBDIR += hs-hood
      SUBDIR += hs-hoogle
      SUBDIR += hs-hslogger
-     SUBDIR += hs-iteratee
      SUBDIR += hs-language-c
      SUBDIR += hs-largeword
-     SUBDIR += hs-lens
      SUBDIR += hs-lifted-base
      SUBDIR += hs-logict
      SUBDIR += hs-mmap
@@ -254,7 +238,6 @@
      SUBDIR += hs-monad-control
      SUBDIR += hs-monad-par
      SUBDIR += hs-monad-par-extras
-     SUBDIR += hs-monads-tf
      SUBDIR += hs-mtl
      SUBDIR += hs-murmur-hash
      SUBDIR += hs-nats
@@ -277,7 +260,6 @@
      SUBDIR += hs-resourcet
      SUBDIR += hs-safe
      SUBDIR += hs-scientific
-     SUBDIR += hs-semigroupoids
      SUBDIR += hs-semigroups
      SUBDIR += hs-sendfile
      SUBDIR += hs-shellish
@@ -296,7 +278,6 @@
      SUBDIR += hs-transformers-base
      SUBDIR += hs-transformers-compat
      SUBDIR += hs-tuple
-     SUBDIR += hs-type-level
      SUBDIR += hs-unbounded-delays
      SUBDIR += hs-uniplate
      SUBDIR += hs-unix-compat
