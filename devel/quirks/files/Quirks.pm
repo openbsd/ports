@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.297 2015/09/21 08:52:25 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.298 2015/09/21 11:08:16 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -614,6 +614,28 @@ my $obsolete_reason = {
 	'hs-xhtml-combinators' => 5,
 	'feldspar-compiler' => 5,
 	'feldspar-language' => 5,
+	'hs-MonadCatchIO-mtl' => 5,
+	'hs-MonadCatchIO-transformers' => 5,
+	'hs-QuickAnnotate' => 5,
+	'hs-clientsession' => 5,
+	'hs-comonad' => 5,
+	'hs-comonad-transformers' => 5,
+	'hs-comonads-fd' => 5,
+	'hs-contravariant' => 5,
+	'hs-cprng-aes' => 5,
+	'hs-data-lens' => 5,
+	'hs-data-lens-template' => 5,
+	'hs-distributive' => 5,
+	'hs-either' => 5,
+	'hs-errors' => 5,
+	'hs-ghc-mtl' => 5,
+	'hs-hint' => 5,
+	'hs-iteratee' => 5,
+	'hs-lens' => 5,
+	'hs-monads-tf' => 5,
+	'hs-semigroupoids' => 5,
+	'hs-syntactic' => 5,
+	'hs-type-level' => 5,
 };
 
 # ->is_base_system($handle, $state):
