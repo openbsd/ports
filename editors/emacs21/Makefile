@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2015/09/11 11:33:35 jca Exp $
-
-BROKEN-i386= segfault during build (./temacs -batch -l loadup dump)
+# $OpenBSD: Makefile,v 1.80 2015/09/21 20:23:26 sthen Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
