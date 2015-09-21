@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2014/12/14 23:22:39 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/21 03:06:40 kili Exp $
 
 COMMENT =		a Haskell 98 logically uninhabited data type
 
 DISTNAME =		void-0.6.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
+
+MODGHC_PACKAGE_KEY =	4DikSnrdttWJhA0hsBqx5F
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
