@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2015/09/12 20:30:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/09/21 11:44:50 benoit Exp $
 
 COMMENT=	SSL library with an intuitive API and readable source code
 
-DISTNAME=	mbedtls-2.1.0
+DISTNAME=	mbedtls-2.1.1
 EXTRACT_SUFX=	-gpl.tgz
 
 # check SOVERSION
-SHARED_LIBS +=	mbedtls                  1.1
+SHARED_LIBS +=	mbedtls                  2.0
 SHARED_LIBS +=  mbedcrypto                0.0 # 2.1
 SHARED_LIBS +=  mbedx509                  0.0 # 2.1
 
