@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_synfig_main_cpp,v 1.1.1.1 2014/09/06 07:03:52 bentley Exp $
---- src/synfig/main.cpp.orig	Fri Jul 18 13:25:34 2014
-+++ src/synfig/main.cpp	Fri Jul 18 13:25:35 2014
-@@ -433,6 +433,10 @@ synfig::get_binary_path(const String &fallback_path)
+$OpenBSD: patch-src_synfig_main_cpp,v 1.2 2015/09/21 16:58:56 jasper Exp $
+--- src/synfig/main.cpp.orig	Thu Jul  9 09:33:03 2015
++++ src/synfig/main.cpp	Mon Sep 21 18:58:47 2015
+@@ -459,6 +459,10 @@ synfig::get_binary_path(const String &fallback_path)
  	
  	free(path);
  
