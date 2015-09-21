@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2015/01/16 19:49:36 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2015/09/21 18:29:02 kili Exp $
 
 COMMENT=		mysql driver for HDBC
 
 DISTNAME=		HDBC-mysql-0.6.6.1
-REVISION=		5
+REVISION=		6
 CATEGORIES=		databases
 
 HOMEPAGE=		https://github.com/bos/hdbc-mysql
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES=		lang/ghc
 
 MODGHC_BUILD=		cabal hackage haddock register
+
+MODGHC_PACKAGE_KEY =	1IZZvsYLiaLCMDPJvqWPJZ
 
 RUN_DEPENDS +=		databases/hs-HDBC>=2.1.0 \
 			databases/mariadb \
