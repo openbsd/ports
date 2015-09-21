@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2015/09/21 08:48:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.178 2015/09/21 11:05:11 kili Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -35,7 +35,6 @@
      SUBDIR += guile2
      SUBDIR += hs-haskell-src
      SUBDIR += hs-haskell-src-exts
-     SUBDIR += hs-syntactic
      SUBDIR += hugs
      SUBDIR += icon
      SUBDIR += intel2gas
