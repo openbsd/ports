@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.736 2015/09/19 08:26:35 kili Exp $
+# $OpenBSD: Makefile,v 1.737 2015/09/21 08:40:21 kili Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -70,7 +70,6 @@
      SUBDIR += hs-wai
      SUBDIR += hs-warp
      SUBDIR += hs-webkit
-     SUBDIR += hs-xhtml-combinators
      SUBDIR += http_load
      SUBDIR += http_ping
      SUBDIR += httrack
