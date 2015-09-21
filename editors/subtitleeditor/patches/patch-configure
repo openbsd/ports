@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2015/09/21 16:56:41 jasper Exp $
+
+-ansi conflicts with -std=c++11
+
+--- configure.orig	Mon Sep 21 14:21:24 2015
++++ configure	Mon Sep 21 14:22:20 2015
+@@ -19575,7 +19575,7 @@ fi
+ # =========================================================================
+ # gcc flags
+ 
+-CXXFLAGS="$CXXFLAGS -ansi -Wall -Wextra -Wconversion" #-Werror
++CXXFLAGS="$CXXFLAGS -Wall -Wextra -Wconversion" #-Werror
+ 
+ # =========================================================================
+ # make use of ccache

@@ -1,0 +1,16 @@
+$OpenBSD: patch-plugins_actions_dialoguize_dialoguize_cc,v 1.1 2015/09/21 16:56:41 jasper Exp $
+
+<memory> is required for auto_ptr: https://gcc.gnu.org/onlinedocs/libstdc++/manual/memory.html
+
+--- plugins/actions/dialoguize/dialoguize.cc.orig	Mon Sep 21 14:41:19 2015
++++ plugins/actions/dialoguize/dialoguize.cc	Mon Sep 21 14:41:27 2015
+@@ -22,7 +22,8 @@
+  *	You should have received a copy of the GNU General Public License
+  *	along with this program. If not, see <http://www.gnu.org/licenses/>.
+  */
+- 
++
++#include <memory> 
+ #include <auto_ptr.h>
+ #include "extension/action.h"
+ #include "i18n.h"
