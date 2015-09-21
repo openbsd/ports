@@ -1,4 +1,0 @@
-This library permits performing computations on the type-level.
-Type-level functions are implemented using functional dependencies of
-multi parameter type classes. To date, Booleans and Numerals (Naturals
-and Positives) are supported.

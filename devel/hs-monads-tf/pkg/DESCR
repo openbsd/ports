@@ -1,3 +1,0 @@
-Monad classes using type families, with instances for various monad
-transformers, inspired by the paper "Functional Programming with
-Overloading and Higher-Order Polymorphism", by Mark P Jones.

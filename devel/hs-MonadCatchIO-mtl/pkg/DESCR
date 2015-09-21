@@ -1,5 +1,0 @@
-MonadCatchIO-mtl provides a monad-transformer version of the
-Control.Exception.catch function. For this, it defines the
-MonadCatchIO class, a subset of MonadIO.
-It also defines proper instances for most monad transformers
-in the mtl library.

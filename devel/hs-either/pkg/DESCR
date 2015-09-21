@@ -1,2 +1,0 @@
-This provides an `Either` monad transformer that unlike `ErrorT`
-is unencumbered by a constraint on its `Left` hand argument.

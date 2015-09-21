@@ -1,4 +1,0 @@
-Provides a wide array of semigroupoids and operations for working
-with semigroupds.
-A Semigroupoid is a Category without the requirement of identity
-arrows for every object in the category.

@@ -1,4 +1,0 @@
-Functions to throw and catch exceptions.  Unlike the functions from
-Control.Exception, which work in IO, these work in any stack of monad
-transformers (from the 'transformers' package) with IO as the base
-monad.

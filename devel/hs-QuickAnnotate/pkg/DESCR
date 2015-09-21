@@ -1,4 +1,0 @@
-A framework introducing annotations by preprocessing. For using it,
-it is enough to derive 'QuickAnnotate.Annotatable' and then use the
-preprocessor (qapp). The package contains an example demonstrating
-this procedure.
