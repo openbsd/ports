@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2015/09/01 07:04:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2015/09/21 06:30:02 benoit Exp $
 
 COMMENT =	code coverage metrics for Perl
 SHARED_ONLY =	Yes
 
 MODULES =	cpan
-DISTNAME =	Devel-Cover-1.20
+DISTNAME =	Devel-Cover-1.21
 CATEGORIES =	devel
 
 # Perl
@@ -16,6 +16,6 @@ RUN_DEPENDS =	devel/p5-Pod-Coverage \
 		devel/p5-Test-Differences \
 		textproc/p5-PPI-HTML \
 		textproc/p5-Template
-TEST_DEPENDS=devel/p5-Test-Warn
+TEST_DEPENDS =	devel/p5-Test-Warn
 
 .include <bsd.port.mk>
