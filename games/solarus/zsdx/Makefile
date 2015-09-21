@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/20 14:19:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/09/21 10:10:29 jasper Exp $
 
 PORTROACH=	limit:^1\.7
 PORTROACH_COMMENT=newer versions require an updated solarus engine
@@ -9,6 +9,7 @@ GH_ACCOUNT=	christopho
 GH_PROJECT=	zsdx
 GH_TAGNAME=	${GH_PROJECT}-1.7.1
 DISTNAME=	${GH_TAGNAME}
+REVISION=	2
 
 HOMEPAGE =	http://www.solarus-games.org/games/zelda-mystery-of-solarus-dx/
 
