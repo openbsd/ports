@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/07/01 13:52:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/09/21 10:22:28 sthen Exp $
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:/usr/local/share/unifi:/sbin/nologin
 bin/unifi
@@ -19,22 +19,27 @@ share/unifi/dl/firmware/BZ2/${FWA}/firmware.bin
 share/unifi/dl/firmware/U2HSR/
 share/unifi/dl/firmware/U2HSR/${FWA}/
 share/unifi/dl/firmware/U2HSR/${FWA}/firmware.bin
+share/unifi/dl/firmware/U2IW/
+share/unifi/dl/firmware/U2IW/${FWA}/
+share/unifi/dl/firmware/U2IW/${FWA}/firmware.bin
 share/unifi/dl/firmware/U7E/
 share/unifi/dl/firmware/U7E/${FWA}/
 share/unifi/dl/firmware/U7E/${FWA}/firmware.bin
 share/unifi/dl/firmware/U7P/
 share/unifi/dl/firmware/U7P/${FWA}/
 share/unifi/dl/firmware/U7P/${FWA}/firmware.bin
+share/unifi/dl/firmware/U7PG2/
+share/unifi/dl/firmware/U7PG2/${FWC}/
+share/unifi/dl/firmware/U7PG2/${FWC}/firmware.bin
 share/unifi/dl/firmware/UGW3/
 share/unifi/dl/firmware/UGW3/${FWB}/
 share/unifi/dl/firmware/UGW3/${FWB}/upgrade.tar
 share/unifi/dl/firmware/US24P250/
-share/unifi/dl/firmware/US24P250/${FWC}/
-share/unifi/dl/firmware/US24P250/${FWC}/firmware.bin
+share/unifi/dl/firmware/US24P250/${FWA}/
+share/unifi/dl/firmware/US24P250/${FWA}/firmware.bin
 share/unifi/dl/firmware/bundles.json
 @owner
 share/unifi/lib/
-share/unifi/lib/MRJAdapter.jar
 share/unifi/lib/ace.jar
 share/unifi/lib/annotations-2.0.0.jar
 share/unifi/lib/commons-beanutils-1.9.1.jar
@@ -56,7 +61,9 @@ share/unifi/lib/jul-log4j-bridge.jar
 share/unifi/lib/log4j-1.2.17.jar
 share/unifi/lib/mail-1.4.7.jar
 share/unifi/lib/mongo-java-driver-2.10.1.jar
-share/unifi/lib/servo-core-0.7.3.jar
+share/unifi/lib/servo-core-0.9.4.jar
+share/unifi/lib/servo-graphite-0.7.3.jar
+share/unifi/lib/servo-graphite-0.9.4.jar
 share/unifi/lib/slf4j-api-1.7.6.jar
 share/unifi/lib/slf4j-log4j12-1.7.6.jar
 share/unifi/lib/snappy-java-1.0.5.jar
@@ -148,6 +155,15 @@ share/unifi/webapps/ROOT/${LIB_V}/images/default-message-avatar@2x.jpg
 share/unifi/webapps/ROOT/${LIB_V}/images/default-profile-avatar.jpg
 share/unifi/webapps/ROOT/${LIB_V}/images/default-profile-avatar@2x.jpg
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/BZ2/
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/BZ2/connected-icon.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/BZ2/connected-icon@2x.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/BZ2/disconnected-icon.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/BZ2/disconnected-icon@2x.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/BZ2/icon-16.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/BZ2/icon-16@2x.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/BZ2/icon.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/BZ2/icon@2x.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2HSR/
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2HSR/connected-icon.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2HSR/connected-icon@2x.png
@@ -155,6 +171,13 @@ share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2HSR/disconnected-icon.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2HSR/disconnected-icon@2x.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2HSR/icon.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2HSR/icon@2x.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2IW/
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2IW/connected-icon.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2IW/connected-icon@2x.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2IW/disconnected-icon.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2IW/disconnected-icon@2x.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2IW/icon.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2IW/icon@2x.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2L48/
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2L48/connected-icon.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/U2L48/connected-icon@2x.png
@@ -265,6 +288,11 @@ share/unifi/webapps/ROOT/${LIB_V}/images/devices/US48/connected-icon.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/US48/disconnected-icon.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/US48/icon-16.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/US48/icon.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/US8/
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/US8/connected-icon.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/US8/disconnected-icon.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/US8/icon-16.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/US8/icon.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/ap-connected-icon.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/ap-connected-icon@2x.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/ap-disconnected-icon.png
@@ -508,6 +536,8 @@ share/unifi/webapps/ROOT/manage.html
 share/unifi/webapps/ROOT/pages/
 share/unifi/webapps/ROOT/pages/voucher.jsp
 share/unifi/webapps/ROOT/sso_login.html
+share/unifi/webapps/ROOT/unifi/
+share/unifi/webapps/ROOT/unifi/index.html
 share/unifi/webapps/ROOT/upnp.html
 share/unifi/webapps/ROOT/verify.html
 share/unifi/webapps/ROOT/waiting.html

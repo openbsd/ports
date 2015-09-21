@@ -1,3 +1,2 @@
-This package contains controller software for Ubiquiti UniFi access points.
-This is version 3.x which is still in beta, but provides support for newer
-access points, and additional features such as zero handoff roaming.
+This package contains controller software for Ubiquiti UniFi access points,
+switches, gateways and phones.
