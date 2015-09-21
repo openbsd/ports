@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2015/09/21 18:27:43 kili Exp $
+# $OpenBSD: Makefile,v 1.27 2015/09/21 20:30:14 kili Exp $
 
 COMMENT =		large library of utility functions
 
 DISTNAME =		MissingH-1.3.0.1
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/jgoerzen/missingh/wiki
 
@@ -23,6 +23,7 @@ RUN_DEPENDS +=		devel/hs-hslogger \
 			devel/hs-mtl \
 			devel/hs-old-locale \
 			devel/hs-old-time \
+			devel/hs-parsec \
 			devel/hs-random \
 			devel/hs-regex-compat
 BUILD_DEPENDS +=	${RUN_DEPENDS}
