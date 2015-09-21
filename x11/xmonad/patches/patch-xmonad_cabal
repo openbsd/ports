@@ -1,0 +1,17 @@
+$OpenBSD: patch-xmonad_cabal,v 1.7 2015/09/21 21:13:23 kili Exp $
+
+Another hackage infrastructure failure. Compare the .cabal file in the
+distfile with the one you get from
+http://hackage.haskell.org/package/xmonad-0.11.1/xmonad.cabal
+
+--- xmonad.cabal.orig	Fri Mar 27 18:59:21 2015
++++ xmonad.cabal	Mon Sep 21 22:45:11 2015
+@@ -58,7 +58,7 @@ library
+     else
+         build-depends: base < 3
+     build-depends: X11>=1.5 && < 1.7, mtl, unix,
+-                   utf8-string >= 0.3 && < 0.4
++                   utf8-string >= 0.3 && < 1.1
+ 
+     if true
+         ghc-options:        -funbox-strict-fields -Wall

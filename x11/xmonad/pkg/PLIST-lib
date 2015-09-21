@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-lib,v 1.12 2014/11/24 16:15:55 kili Exp $
+@comment $OpenBSD: PLIST-lib,v 1.13 2015/09/21 21:13:23 kili Exp $
+lib/ghc/
 lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/XMonad/
 lib/ghc/${DISTNAME}/XMonad.hi
 lib/ghc/${DISTNAME}/XMonad.p_hi
@@ -17,8 +19,7 @@ lib/ghc/${DISTNAME}/XMonad/Operations.hi
 lib/ghc/${DISTNAME}/XMonad/Operations.p_hi
 lib/ghc/${DISTNAME}/XMonad/StackSet.hi
 lib/ghc/${DISTNAME}/XMonad/StackSet.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/CONFIG
