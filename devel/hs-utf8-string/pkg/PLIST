@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/24 14:01:03 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/21 18:20:03 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Codec/
 lib/ghc/${DISTNAME}/Codec/Binary/
@@ -17,15 +17,9 @@ lib/ghc/${DISTNAME}/Data/ByteString/UTF8.p_hi
 lib/ghc/${DISTNAME}/Data/String/
 lib/ghc/${DISTNAME}/Data/String/UTF8.hi
 lib/ghc/${DISTNAME}/Data/String/UTF8.p_hi
-lib/ghc/${DISTNAME}/System/
-lib/ghc/${DISTNAME}/System/Environment/
-lib/ghc/${DISTNAME}/System/Environment/UTF8.hi
-lib/ghc/${DISTNAME}/System/Environment/UTF8.p_hi
-lib/ghc/${DISTNAME}/System/IO/
-lib/ghc/${DISTNAME}/System/IO/UTF8.hi
-lib/ghc/${DISTNAME}/System/IO/UTF8.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
@@ -35,8 +29,6 @@ share/doc/hs-${DISTNAME}/html/Codec-Binary-UTF8-String.html
 share/doc/hs-${DISTNAME}/html/Data-ByteString-Lazy-UTF8.html
 share/doc/hs-${DISTNAME}/html/Data-ByteString-UTF8.html
 share/doc/hs-${DISTNAME}/html/Data-String-UTF8.html
-share/doc/hs-${DISTNAME}/html/System-Environment-UTF8.html
-share/doc/hs-${DISTNAME}/html/System-IO-UTF8.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
@@ -48,8 +40,6 @@ share/doc/hs-${DISTNAME}/html/mini_Codec-Binary-UTF8-String.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ByteString-Lazy-UTF8.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ByteString-UTF8.html
 share/doc/hs-${DISTNAME}/html/mini_Data-String-UTF8.html
-share/doc/hs-${DISTNAME}/html/mini_System-Environment-UTF8.html
-share/doc/hs-${DISTNAME}/html/mini_System-IO-UTF8.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
