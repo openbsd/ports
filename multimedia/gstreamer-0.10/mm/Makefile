@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/04/21 18:51:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2015/09/21 18:31:50 jasper Exp $
 
 COMMENT=	C++ bindings for GStreamer
 
@@ -6,7 +6,7 @@ V=		0.10.11
 NAME=		gstreamermm
 DISTNAME=	${NAME}-${V}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  gstreamermm_get_plugin_defs-0.10 1.0 # .2.1
 SHARED_LIBS +=  gstreamermm-0.10                 1.0 # .2.1
@@ -17,9 +17,13 @@ WANTLIB += gstaudio-0.10 gstbase-0.10 gstcdda-0.10 gstcontroller-0.10
 WANTLIB += gstdataprotocol-0.10 gstinterfaces-0.10 gstnet-0.10
 WANTLIB += gstnetbuffer-0.10 gstpbutils-0.10 gstreamer-0.10 gstrtp-0.10
 WANTLIB += gsttag-0.10 gstvideo-0.10 gthread-2.0 lzma m orc-0.4 pcre
-WANTLIB += pthread sigc-2.0 stdc++ xml++-2.6 xml2 z
+WANTLIB += pthread sigc-2.0 xml++-2.6 xml2 z
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/${NAME}/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
+
+MODULES+=	gcc4
+MODGCC4_ARCHS=	*
+MODGCC4_LANGS=	c++
 
 BUILD_DEPENDS=	devel/doxygen
 LIB_DEPENDS=	devel/glib2mm>=2.33.12 \
@@ -30,6 +34,7 @@ LIB_DEPENDS=	devel/glib2mm>=2.33.12 \
 BUILD_DEPENDS += x11/gtk3mm
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		CXXFLAGS="-std=c++11"
 
 post-install:
 	# does nothing (overrides Makefile.inc)
