@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2015/08/26 10:00:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.142 2015/09/21 09:35:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -16,7 +16,7 @@ PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 
 REVISION-main=		1
-REVISION-smb=		0
+REVISION-smb=		1
 REVISION-goa=		1
 REVISION-nfs=		1
 
@@ -42,8 +42,21 @@ WANTLIB-main += soup-2.4 sqlite3 gthread-2.0 xcb xcb-render
 WANTLIB-main += gcrypt gpg-error secret-1 epoxy lzo2
 
 WANTLIB-smb += ${WANTLIB}
-WANTLIB-smb += smbclient
-WANTLIB-smb += gcrypt gpg-error secret-1
+WANTLIB-smb += gcrypt gpg-error secret-1 smbclient
+WANTLIB-smb += com_err crypto dcerpc-binding execinfo gensec gmp gnutls
+WANTLIB-smb += hogweed lber-2.4 ldap-2.4 ldb ndr ndr-krb5pac ndr-nbt
+WANTLIB-smb += ndr-standard nettle nss_wrapper ntdb p11-kit replace
+WANTLIB-smb += samba-credentials samba-hostconfig samba-util samdb
+WANTLIB-smb += sasl2 smbconf socket_wrapper ssl talloc tasn1 tdb tevent
+WANTLIB-smb += tevent-util uid_wrapper util_setid wbclient
+WANTLIB-smb += lib/samba/asn1-samba4
+WANTLIB-smb += lib/samba/gssapi-samba4
+WANTLIB-smb += lib/samba/hcrypto-samba4
+WANTLIB-smb += lib/samba/heimbase-samba4
+WANTLIB-smb += lib/samba/hx509-samba4
+WANTLIB-smb += lib/samba/krb5-samba4
+WANTLIB-smb += lib/samba/roken-samba4
+WANTLIB-smb += lib/samba/wind-samba4
 
 WANTLIB-goa += ${WANTLIB}
 WANTLIB-goa += goa-1.0
@@ -86,7 +99,7 @@ CONFIGURE_ARGS=		--disable-libsystemd-login \
 			--disable-udev \
 			--disable-gdu
 
-MULTI_PACKAGES=		-main -goa -nfs
+MULTI_PACKAGES=		-main -goa -nfs -smb
 
 PSEUDO_FLAVORS=		no_smb no_goa no_nfs bootstrap
 FLAVOR?=		no_smb no_goa no_nfs bootstrap
