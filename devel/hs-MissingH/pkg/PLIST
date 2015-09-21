@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/11/24 16:07:58 kili Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/09/21 18:27:43 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Concurrent/
@@ -55,6 +55,7 @@ lib/ghc/${DISTNAME}/Data/String/Utils.p_hi
 lib/ghc/${DISTNAME}/Data/Tuple/
 lib/ghc/${DISTNAME}/Data/Tuple/Utils.hi
 lib/ghc/${DISTNAME}/Data/Tuple/Utils.p_hi
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Network/
 lib/ghc/${DISTNAME}/Network/Email/
 lib/ghc/${DISTNAME}/Network/Email/Mailbox.hi
@@ -127,8 +128,8 @@ lib/ghc/${DISTNAME}/Text/ParserCombinators/
 lib/ghc/${DISTNAME}/Text/ParserCombinators/Parsec/
 lib/ghc/${DISTNAME}/Text/ParserCombinators/Parsec/Utils.hi
 lib/ghc/${DISTNAME}/Text/ParserCombinators/Parsec/Utils.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
