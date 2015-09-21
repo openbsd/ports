@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/05/18 21:25:15 bluhm Exp $
+# $OpenBSD: Makefile,v 1.11 2015/09/21 06:51:16 benoit Exp $
 
 COMMENT=	Event based transparent Client/Server RPC framework
 
 MODULES=	cpan
-DISTNAME=	Event-RPC-1.05
+DISTNAME =	Event-RPC-1.06
 CATEGORIES=	net devel
 
 # perl
