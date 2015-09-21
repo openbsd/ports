@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/21 09:36:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/21 13:24:46 sthen Exp $
 
 PORTROACH=	limit:^1\.
 
@@ -7,6 +7,8 @@ SHARED_ONLY=	Yes
 COMMENT=	software PKCS\#11 cryptographic token
 
 DISTNAME=	softhsm-1.3.7
+
+REVISION=	0
 
 CATEGORIES=	security
 

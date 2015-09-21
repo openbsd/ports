@@ -1,0 +1,84 @@
+$OpenBSD: patch-src_bin_softhsm_cpp,v 1.1 2015/09/21 13:24:46 sthen Exp $
+
+From aa2d1ebb0ef31c71a4db4435f3dc056cacf87209 Mon Sep 17 00:00:00 2001
+From: Rickard Bellgrim <rickard@opendnssec.org>
+Date: Sun, 26 Oct 2014 08:08:43 +0100
+Subject: [PATCH 1/2] SOFTHSM-101: softhsm-keyconv creates files with sensitive
+ material in insecure way. Also applies to softhsm when using --export or
+ --optimize.
+
+From 285ae80336ca57e186f69bd249736ade6445b873 Mon Sep 17 00:00:00 2001
+From: Rickard Bellgrim <rickard@opendnssec.org>
+Date: Sun, 26 Oct 2014 08:45:11 +0100
+Subject: [PATCH 2/2] SOFTHSM-101: Include more header files
+
+--- src/bin/softhsm.cpp.orig	Wed May 28 07:59:22 2014
++++ src/bin/softhsm.cpp	Mon Sep 21 14:25:56 2015
+@@ -46,6 +46,10 @@
+ #include <iostream>
+ #include <fstream>
+ #include <sched.h>
++#include <fcntl.h>
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <errno.h>
+ 
+ #ifdef HAVE_DLOPEN
+ #include <dlfcn.h>
+@@ -1005,6 +1009,15 @@ int removeSessionObjs(char *dbPath) {
+   CK_BBOOL ckFalse = CK_FALSE;
+   int retVal = 0;
+ 
++  // Create and set file permissions if the DB does not exist.
++  int fd = open(dbPath, O_CREAT, S_IRUSR | S_IWUSR);
++  if(fd == -1) {
++    fprintf(stderr, "Could not open the token database. errno=%i. "
++                    "Probably wrong privileges: %s", errno, dbPath);
++    return 1;
++  }
++  close(fd);
++
+   if(sqlite3_open(dbPath, &db) != 0) {
+     fprintf(stderr, "ERROR: Could not connect to database.\n");
+     return 1;
+@@ -1278,6 +1291,15 @@ CK_RV writeKeyToDisk(char *filePath, char *filePIN, Bo
+     return CKR_GENERAL_ERROR;
+   }
+ 
++  // Create and set file permissions if the file does not exist.
++  int fd = open(filePath, O_CREAT, S_IRUSR | S_IWUSR);
++  if (fd == -1) {
++    fprintf(stderr, "ERROR: Could not open the output file: %s (errno %i)\n",
++            filePath, errno);
++    return CKR_GENERAL_ERROR;
++  }
++  close(fd);
++
+   std::ofstream privFile(filePath);
+ 
+   if(!privFile) {
+@@ -1468,6 +1490,15 @@ Botan::Private_Key* getPrivKey(char *dbPath, CK_OBJECT
+   sqlite3_stmt *select_sql = NULL;
+   Botan::Private_Key *privKey = NULL;
+ 
++  // Create and set file permissions if the DB does not exist.
++  int fd = open(dbPath, O_CREAT, S_IRUSR | S_IWUSR);
++  if(fd == -1) {
++    fprintf(stderr, "Could not open the token database. errno=%i. "
++                    "Probably wrong privileges: %s", errno, dbPath);
++    return NULL;
++  }
++  close(fd);
++
+   if(sqlite3_open(dbPath, &db) == 0 && sqlite3_prepare_v2(db, select_str, -1, &select_sql, NULL) == 0) {
+     if(getObjectClass(select_sql, oHandle) == CKO_PRIVATE_KEY && getKeyType(select_sql, oHandle) == CKK_RSA) {
+       Botan::BigInt bigN = getBigIntAttribute(select_sql, oHandle, CKA_MODULUS);
+@@ -1477,7 +1508,7 @@ Botan::Private_Key* getPrivKey(char *dbPath, CK_OBJECT
+       Botan::BigInt bigQ = getBigIntAttribute(select_sql, oHandle, CKA_PRIME_2);
+ 
+       Botan::AutoSeeded_RNG *rng = new Botan::AutoSeeded_RNG();
+-      
++
+       try {
+         privKey = new Botan::RSA_PrivateKey(*rng, bigP, bigQ, bigE, bigD, bigN);
+       }

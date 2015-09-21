@@ -1,0 +1,113 @@
+$OpenBSD: patch-src_bin_softhsm-keyconv_cpp,v 1.1 2015/09/21 13:24:46 sthen Exp $
+
+From aa2d1ebb0ef31c71a4db4435f3dc056cacf87209 Mon Sep 17 00:00:00 2001
+From: Rickard Bellgrim <rickard@opendnssec.org>
+Date: Sun, 26 Oct 2014 08:08:43 +0100
+Subject: [PATCH 1/2] SOFTHSM-101: softhsm-keyconv creates files with sensitive
+ material in insecure way. Also applies to softhsm when using --export or
+ --optimize.
+
+From 285ae80336ca57e186f69bd249736ade6445b873 Mon Sep 17 00:00:00 2001
+From: Rickard Bellgrim <rickard@opendnssec.org>
+Date: Sun, 26 Oct 2014 08:45:11 +0100
+Subject: [PATCH 2/2] SOFTHSM-101: Include more header files
+
+--- src/bin/softhsm-keyconv.cpp.orig	Wed May 28 07:59:14 2014
++++ src/bin/softhsm-keyconv.cpp	Mon Sep 21 14:25:56 2015
+@@ -48,6 +48,10 @@
+ #include <iostream>
+ #include <fstream>
+ #include <stdint.h>
++#include <fcntl.h>
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <errno.h>
+ 
+ void usage() {
+   printf("Converting between BIND .private-key format and PKCS#8 key file format.\n");
+@@ -391,6 +395,15 @@ int to_pkcs8(char *in_path, char *out_path, char *file
+     return 1;
+   }
+ 
++  // Create and set file permissions if the file does not exist.
++  int fd = open(out_path, O_CREAT, S_IRUSR | S_IWUSR);
++  if (fd == -1) {
++    fprintf(stderr, "ERROR: Could not open the output file: %s (errno %i)\n",
++            out_path, errno);
++    return 1;
++  }
++  close(fd);
++
+   // Save the the key to the disk
+   switch(algorithm) {
+     case DNS_KEYALG_ERROR:
+@@ -735,8 +748,16 @@ int save_rsa_bind(char *name, int ttl, Botan::Private_
+   snprintf(priv_out, MAX_LINE, "K%s+%03i+%05i.private", name, algorithm, key_tag);
+   snprintf(pub_out, MAX_LINE, "K%s+%03i+%05i.key", name, algorithm, key_tag);
+ 
+-  // Create the private key file
++  // Create and set file permissions if the file does not exist.
++  int fd = open(priv_out, O_CREAT, S_IRUSR | S_IWUSR);
++  if (fd == -1) {
++    fprintf(stderr, "ERROR: Could not open the output file: %s (errno %i)\n",
++            priv_out, errno);
++    return 1;
++  }
++  close(fd);
+ 
++  // Create the private key file
+   file_pointer = fopen(priv_out, "w");
+   if (!file_pointer) {
+     fprintf(stderr, "Error: Could not open output file %.100s for writing.\n", priv_out);
+@@ -786,8 +807,16 @@ int save_rsa_bind(char *name, int ttl, Botan::Private_
+ 
+   printf("The private key has been written to %s\n", priv_out);
+ 
+-  // Create the public key file
++  // Create and set file permissions if the file does not exist.
++  fd = open(pub_out, O_CREAT, S_IRUSR | S_IWUSR);
++  if (fd == -1) {
++    fprintf(stderr, "ERROR: Could not open the output file: %s (errno %i)\n",
++            pub_out, errno);
++    return 1;
++  }
++  close(fd);
+ 
++  // Create the public key file
+   file_pointer = fopen(pub_out, "w");
+   if (!file_pointer) {
+     fprintf(stderr, "Error: Could not open output file %.100s for writing.\n", pub_out);
+@@ -836,6 +865,15 @@ int save_dsa_bind(char *name, int ttl, Botan::Private_
+   snprintf(priv_out, MAX_LINE, "K%s+%03i+%05i.private", name, algorithm, key_tag);
+   snprintf(pub_out, MAX_LINE, "K%s+%03i+%05i.key", name, algorithm, key_tag);
+ 
++  // Create and set file permissions if the file does not exist.
++  int fd = open(priv_out, O_CREAT, S_IRUSR | S_IWUSR);
++  if (fd == -1) {
++    fprintf(stderr, "ERROR: Could not open the output file: %s (errno %i)\n",
++            priv_out, errno);
++    return 1;
++  }
++  close(fd);
++
+   file_pointer = fopen(priv_out, "w");
+   if (!file_pointer) {
+     fprintf(stderr, "Error: Could not open output file %.100s for writing.\n", priv_out);
+@@ -873,8 +911,16 @@ int save_dsa_bind(char *name, int ttl, Botan::Private_
+ 
+   printf("The private key has been written to %s\n", priv_out);
+ 
+-  // Create the public key file
++  // Create and set file permissions if the file does not exist.
++  fd = open(pub_out, O_CREAT, S_IRUSR | S_IWUSR);
++  if (fd == -1) {
++    fprintf(stderr, "ERROR: Could not open the output file: %s (errno %i)\n",
++            pub_out, errno);
++    return 1;
++  }
++  close(fd);
+ 
++  // Create the public key file
+   file_pointer = fopen(pub_out, "w");
+   if (!file_pointer) {
+     fprintf(stderr, "Error: Could not open output file %.100s for writing.\n", pub_out);
