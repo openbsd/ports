@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2015/09/21 18:56:38 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2015/09/21 19:34:15 kili Exp $
+
+BROKEN =		newer version required but not available
 
 COMMENT =		tools to build Gtk2Hs
 
