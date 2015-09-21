@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.298 2015/09/21 11:08:16 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.299 2015/09/21 13:06:54 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -636,6 +636,7 @@ my $obsolete_reason = {
 	'hs-semigroupoids' => 5,
 	'hs-syntactic' => 5,
 	'hs-type-level' => 5,
+	'hs-vector-algorithms' => 5,
 };
 
 # ->is_base_system($handle, $state):
