@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2015/05/12 15:44:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2015/09/21 16:34:07 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -109,8 +109,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}settings.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}settings_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}settings_manager.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}sound.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}sound.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}speech.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}speech.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyc
@@ -682,7 +680,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/gtk/script.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/gtk/script_utilities.py
 lib/python${MODPY_VERSION}/site-packages/orca/settings.py
 lib/python${MODPY_VERSION}/site-packages/orca/settings_manager.py
-lib/python${MODPY_VERSION}/site-packages/orca/sound.py
 lib/python${MODPY_VERSION}/site-packages/orca/speech.py
 lib/python${MODPY_VERSION}/site-packages/orca/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/speechdispatcherfactory.py
