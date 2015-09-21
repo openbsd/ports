@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2014/12/15 20:02:57 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2015/09/21 20:32:18 kili Exp $
+
+BROKEN=			needs an update
 
 COMMENT=		abstract syntax, lexer, parser and pretty printer
 
