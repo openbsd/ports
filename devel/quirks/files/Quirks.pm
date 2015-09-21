@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.301 2015/09/21 17:05:00 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.302 2015/09/21 19:52:14 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -379,6 +379,7 @@ my $stem_extensions = {
 	'consolekit' => 'consolekit2',
 	'tint' => 'tint2',
 	'py-nmap' => 'py3-nmap',
+	'pudb' => 'py-pudb',
 };
 
 # reasons for obsolete packages
