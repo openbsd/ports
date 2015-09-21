@@ -1,0 +1,12 @@
+$OpenBSD: patch-libpisock_freebsdusb_c,v 1.5 2015/09/21 08:46:50 ajacoutot Exp $
+--- libpisock/freebsdusb.c.orig	Thu Oct 12 16:21:22 2006
++++ libpisock/freebsdusb.c	Thu Jan 17 09:00:40 2008
+@@ -46,7 +46,7 @@
+ # define O_NONBLOCK 0
+ #endif
+ 
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ /* freebsd usb header */
+ #include <dev/usb/usb.h>
+ #define MAX_BUF 256

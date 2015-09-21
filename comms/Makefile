@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2015/09/19 22:21:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2015/09/21 08:46:50 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -20,6 +20,7 @@
      SUBDIR += hamlib
      SUBDIR += hylafax
      SUBDIR += hylafax,a4
+     SUBDIR += jpilot
      SUBDIR += kermit
      SUBDIR += lcdproc
      SUBDIR += lrzsz
@@ -34,6 +35,7 @@
      SUBDIR += p5-Device-SerialPort
      SUBDIR += p5-SendPage
      SUBDIR += picocom
+     SUBDIR += pilot-link
      SUBDIR += qpage
      SUBDIR += rtl-sdr
      SUBDIR += scmxx

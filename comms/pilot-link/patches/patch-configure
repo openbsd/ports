@@ -1,0 +1,27 @@
+$OpenBSD: patch-configure,v 1.9 2015/09/21 08:46:50 ajacoutot Exp $
+--- configure.orig	Sun Feb  7 04:42:29 2010
++++ configure	Wed Mar 24 08:58:53 2010
+@@ -4797,7 +4797,7 @@ fi
+ if test "${lt_cv_path_LD+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+-  if test -z "$LD"; then
++  if true; then
+   lt_save_ifs="$IFS"; IFS=$PATH_SEPARATOR
+   for ac_dir in $PATH; do
+     IFS="$lt_save_ifs"
+@@ -15081,12 +15081,12 @@ $as_echo "#define HAVE_USB 1" >>confdefs.h
+ 			usb_type=linux
+ 			msg_usb="yes, Linux"
+ 		;;
+-		*freebsd*)
++		*bsd*)
+ 
+ $as_echo "#define HAVE_USB 1" >>confdefs.h
+ 
+ 			usb_type=freebsd
+-			msg_usb="yes, FreeBSD"
++			msg_usb="yes, FreeBSD (OpenBSD)"
+ 		;;
+ 	    *darwin*)
+ 

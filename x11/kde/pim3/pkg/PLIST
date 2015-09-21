@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2015/09/19 22:22:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2015/09/21 08:46:50 ajacoutot Exp $
 @conflict kdelibs-<3.4
 @conflict kdebase-<3.4
 @conflict kpilot-*
@@ -32,6 +32,9 @@ bin/kmail_sav.sh
 @bin bin/korgac
 @bin bin/korganizer
 @bin bin/korn
+@bin bin/kpalmdoc
+@bin bin/kpilot
+@bin bin/kpilotDaemon
 @bin bin/ktnef
 @bin bin/kwatchgnupg
 @bin bin/kxml_compiler
@@ -157,6 +160,19 @@ include/kde/korganizer/corehelper.h
 include/kde/korganizer/mainwindow.h
 include/kde/korganizer/part.h
 include/kde/korganizer/printplugin.h
+include/kde/kpilot/
+include/kde/kpilot/kpilotdevicelink.h
+include/kde/kpilot/kpilotlink.h
+include/kde/kpilot/kpilotlocallink.h
+include/kde/kpilot/pilot.h
+include/kde/kpilot/pilotDatabase.h
+include/kde/kpilot/pilotLinkVersion.h
+include/kde/kpilot/pilotLocalDatabase.h
+include/kde/kpilot/pilotRecord.h
+include/kde/kpilot/pilotSerialDatabase.h
+include/kde/kpilot/plugin.h
+include/kde/kpilot/pluginfactory.h
+include/kde/kpilot/syncAction.h
 include/kde/ksieve/
 include/kde/ksieve/error.h
 include/kde/ksieve/lexer.h
@@ -258,6 +274,26 @@ include/kde/qgpgme/
 include/kde/qgpgme/dataprovider.h
 include/kde/qgpgme/eventloopinteractor.h
 @bin lib/kconf_update_bin/korn-3-4-config_change
+${KDE}/conduit_address.la
+${KDE}/conduit_address.so
+${KDE}/conduit_doc.la
+${KDE}/conduit_doc.so
+${KDE}/conduit_knotes.la
+${KDE}/conduit_knotes.so
+${KDE}/conduit_memofile.la
+${KDE}/conduit_memofile.so
+${KDE}/conduit_notepad.la
+${KDE}/conduit_notepad.so
+${KDE}/conduit_popmail.la
+${KDE}/conduit_popmail.so
+${KDE}/conduit_sysinfo.la
+${KDE}/conduit_sysinfo.so
+${KDE}/conduit_time.la
+${KDE}/conduit_time.so
+${KDE}/conduit_todo.la
+${KDE}/conduit_todo.so
+${KDE}/conduit_vcal.la
+${KDE}/conduit_vcal.so
 ${KDE}/kabc_groupdav.la
 ${KDE}/kabc_groupdav.so
 ${KDE}/kabc_groupwise.la
@@ -320,12 +356,16 @@ ${KDE}/kcm_korganizer.la
 ${KDE}/kcm_korganizer.so
 ${KDE}/kcm_korgsummary.la
 ${KDE}/kcm_korgsummary.so
+${KDE}/kcm_kpilot.la
+${KDE}/kcm_kpilot.so
 ${KDE}/kcm_sdsummary.la
 ${KDE}/kcm_sdsummary.so
 ${KDE}/kded_networkstatus.la
 ${KDE}/kded_networkstatus.so
 ${KDE}/kfile_ics.la
 ${KDE}/kfile_ics.so
+${KDE}/kfile_palm.la
+${KDE}/kfile_palm.so
 ${KDE}/kfile_vcf.la
 ${KDE}/kfile_vcf.so
 ${KDE}/kio_groupwise.la
@@ -458,6 +498,8 @@ ${KDE}/libkontact_knotesplugin.la
 ${KDE}/libkontact_knotesplugin.so
 ${KDE}/libkontact_korganizerplugin.la
 ${KDE}/libkontact_korganizerplugin.so
+${KDE}/libkontact_kpilotplugin.la
+${KDE}/libkontact_kpilotplugin.so
 ${KDE}/libkontact_newstickerplugin.la
 ${KDE}/libkontact_newstickerplugin.so
 ${KDE}/libkontact_specialdatesplugin.la
@@ -485,6 +527,7 @@ ${KDE}/libkorg_yearlyprint.so
 ${KDE}/libkorganizerpart.la
 ${KDE}/libkorganizerpart.so
 @lib ${KDE}/libkpgp.so.${LIBkpgp_VERSION}
+@lib ${KDE}/libkpilot.so.${LIBkpilot_VERSION}
 @lib ${KDE}/libkpimexchange.so.${LIBkpimexchange_VERSION}
 @lib ${KDE}/libkpimidentities.so.${LIBkpimidentities_VERSION}
 @lib ${KDE}/libkpinterfaces.so.${LIBkpinterfaces_VERSION}
@@ -589,6 +632,8 @@ lib/libkorganizer_eventviewer.la
 @lib lib/libkorganizer_eventviewer.so.${LIBkorganizer_eventviewer_VERSION}
 lib/libkpgp.la
 @lib lib/libkpgp.so.${LIBkpgp_VERSION}
+lib/libkpilot.la
+@lib lib/libkpilot.so.${LIBkpilot_VERSION}
 lib/libkpimexchange.la
 @lib lib/libkpimexchange.so.${LIBkpimexchange_VERSION}
 lib/libkpimidentities.la
@@ -621,6 +666,9 @@ share/applications/kde/knotes.desktop
 share/applications/kde/konsolekalendar.desktop
 share/applications/kde/kontactdcop.desktop
 share/applications/kde/korganizer.desktop
+share/applications/kde/kpalmdoc.desktop
+share/applications/kde/kpilot.desktop
+share/applications/kde/kpilotdaemon.desktop
 share/applications/kde/ktnef.desktop
 share/applnk/.hidden/kalarmd.desktop
 share/applnk/Applications/
@@ -645,6 +693,8 @@ share/apps.kde3/akregator/pics/kmmsgnew.png
 share/apps.kde3/akregator/pics/kmmsgunseen.png
 share/apps.kde3/kaddressbook/
 share/apps.kde3/kaddressbook/bookmark_xxportui.rc
+share/apps.kde3/kaddressbook/contacteditorpages/
+share/apps.kde3/kaddressbook/contacteditorpages/KPilotCustomFieldEditor.ui
 share/apps.kde3/kaddressbook/csv-templates/
 share/apps.kde3/kaddressbook/csv-templates/kaddressbook.desktop
 share/apps.kde3/kaddressbook/csv-templates/outlook2000.desktop
@@ -766,8 +816,10 @@ share/apps.kde3/kconf_update/korn-3-4-config_change.upd
 share/apps.kde3/kconf_update/korn-3-5-metadata-update.pl
 share/apps.kde3/kconf_update/korn-3-5-ssl-update.pl
 share/apps.kde3/kconf_update/korn-3-5-update.upd
+share/apps.kde3/kconf_update/kpalmdoc.upd
 share/apps.kde3/kconf_update/kpgp-3.1-upgrade-address-data.pl
 share/apps.kde3/kconf_update/kpgp.upd
+share/apps.kde3/kconf_update/kpilot.upd
 share/apps.kde3/kconf_update/upgrade-resourcetype.pl
 share/apps.kde3/kconf_update/upgrade-signature.pl
 share/apps.kde3/kconf_update/upgrade-transport.pl
@@ -1103,6 +1155,64 @@ share/apps.kde3/korganizer/sounds/lightmag.wav
 share/apps.kde3/korganizer/sounds/onscreen.wav
 share/apps.kde3/korganizer/sounds/spinout.wav
 share/apps.kde3/korganizer/tips
+share/apps.kde3/kpilot/
+share/apps.kde3/kpilot/icons/
+share/apps.kde3/kpilot/icons/crystalsvg/
+share/apps.kde3/kpilot/icons/crystalsvg/16x16/
+share/apps.kde3/kpilot/icons/crystalsvg/16x16/actions/
+share/apps.kde3/kpilot/icons/crystalsvg/16x16/actions/backup.png
+share/apps.kde3/kpilot/icons/crystalsvg/16x16/actions/busysync.png
+share/apps.kde3/kpilot/icons/crystalsvg/16x16/actions/fastsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/16x16/actions/fullsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/16x16/actions/hotsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/16x16/actions/listsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/16x16/actions/nosync.png
+share/apps.kde3/kpilot/icons/crystalsvg/16x16/actions/restore.png
+share/apps.kde3/kpilot/icons/crystalsvg/16x16/apps/
+share/apps.kde3/kpilot/icons/crystalsvg/16x16/apps/kpalmdoc.png
+share/apps.kde3/kpilot/icons/crystalsvg/22x22/
+share/apps.kde3/kpilot/icons/crystalsvg/22x22/actions/
+share/apps.kde3/kpilot/icons/crystalsvg/22x22/actions/backup.png
+share/apps.kde3/kpilot/icons/crystalsvg/22x22/actions/busysync.png
+share/apps.kde3/kpilot/icons/crystalsvg/22x22/actions/fastsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/22x22/actions/fullsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/22x22/actions/hotsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/22x22/actions/listsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/22x22/actions/nosync.png
+share/apps.kde3/kpilot/icons/crystalsvg/22x22/actions/restore.png
+share/apps.kde3/kpilot/icons/crystalsvg/22x22/apps/
+share/apps.kde3/kpilot/icons/crystalsvg/22x22/apps/kpalmdoc.png
+share/apps.kde3/kpilot/icons/crystalsvg/32x32/
+share/apps.kde3/kpilot/icons/crystalsvg/32x32/actions/
+share/apps.kde3/kpilot/icons/crystalsvg/32x32/actions/fastsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/32x32/actions/fullsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/32x32/actions/hotsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/32x32/actions/listsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/32x32/apps/
+share/apps.kde3/kpilot/icons/crystalsvg/32x32/apps/kpalmdoc.png
+share/apps.kde3/kpilot/icons/crystalsvg/48x48/
+share/apps.kde3/kpilot/icons/crystalsvg/48x48/actions/
+share/apps.kde3/kpilot/icons/crystalsvg/48x48/actions/fastsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/48x48/actions/fullsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/48x48/actions/hotsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/48x48/actions/listsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/48x48/apps/
+share/apps.kde3/kpilot/icons/crystalsvg/48x48/apps/kpalmdoc.png
+share/apps.kde3/kpilot/icons/crystalsvg/64x64/
+share/apps.kde3/kpilot/icons/crystalsvg/64x64/actions/
+share/apps.kde3/kpilot/icons/crystalsvg/64x64/actions/kpilotaddress.png
+share/apps.kde3/kpilot/icons/crystalsvg/64x64/actions/kpilotbhotsync.png
+share/apps.kde3/kpilot/icons/crystalsvg/64x64/actions/kpilotcalendar.png
+share/apps.kde3/kpilot/icons/crystalsvg/64x64/actions/kpilotdb.png
+share/apps.kde3/kpilot/icons/crystalsvg/64x64/actions/kpilotfileinstaller.png
+share/apps.kde3/kpilot/icons/crystalsvg/64x64/actions/kpilotknotes.png
+share/apps.kde3/kpilot/icons/crystalsvg/64x64/actions/kpilottodo.png
+share/apps.kde3/kpilot/kpilotui.rc
+share/apps.kde3/kpilot/pics/
+share/apps.kde3/kpilot/pics/kpilot-splash.png
+share/apps.kde3/kpilot/sysinfoconduit/
+share/apps.kde3/kpilot/sysinfoconduit/Template.html
+share/apps.kde3/kpilot/sysinfoconduit/Template.txt
 share/apps.kde3/ktnef/
 share/apps.kde3/ktnef/icons/
 share/apps.kde3/ktnef/icons/hicolor/
@@ -1626,25 +1736,35 @@ share/apps.kde3/libkleopatra/pics/key_unknown.png
 share/autostart/kalarm.tray.desktop
 share/autostart/kalarmd.autostart.desktop
 share/autostart/korgac.desktop
+share/config.kcfg.kde3/abbrowserconduit.kcfg
 share/config.kcfg.kde3/akregator.kcfg
 share/config.kcfg.kde3/custommimeheader.kcfg
 share/config.kcfg.kde3/customtemplates_kfg.kcfg
+share/config.kcfg.kde3/docconduit.kcfg
 share/config.kcfg.kde3/egroupware.kcfg
 share/config.kcfg.kde3/groupwise.kcfg
 share/config.kcfg.kde3/kandy.kcfg
 share/config.kcfg.kde3/kmail.kcfg
 share/config.kcfg.kde3/knoteconfig.kcfg
+share/config.kcfg.kde3/knotesconduit.kcfg
 share/config.kcfg.kde3/knotesglobalconfig.kcfg
 share/config.kcfg.kde3/kolab.kcfg
 share/config.kcfg.kde3/kontact.kcfg
 share/config.kcfg.kde3/korganizer.kcfg
+share/config.kcfg.kde3/kpalmdoc.kcfg
+share/config.kcfg.kde3/kpilot.kcfg
+share/config.kcfg.kde3/kpilotlib.kcfg
+share/config.kcfg.kde3/memofileconduit.kcfg
 share/config.kcfg.kde3/mk4config.kcfg
 share/config.kcfg.kde3/pimemoticons.kcfg
+share/config.kcfg.kde3/popmail.kcfg
 share/config.kcfg.kde3/replyphrases.kcfg
 share/config.kcfg.kde3/scalix.kcfg
 share/config.kcfg.kde3/slox.kcfg
+share/config.kcfg.kde3/sysinfoconduit.kcfg
 share/config.kcfg.kde3/templatesconfiguration_kfg.kcfg
-share/config.kde3/
+share/config.kcfg.kde3/timeconduit.kcfg
+share/config.kcfg.kde3/vcalconduitbase.kcfg
 share/config.kde3/kmail.antispamrc
 share/config.kde3/kmail.antivirusrc
 share/config.kde3/libkleopatrarc
@@ -1749,6 +1869,12 @@ share/doc/HTML.kde3/en/kdepim-apidocs/kontact/
 share/doc/HTML.kde3/en/kdepim-apidocs/kontact/html/
 share/doc/HTML.kde3/en/kdepim-apidocs/korganizer/
 share/doc/HTML.kde3/en/kdepim-apidocs/korganizer/html/
+share/doc/HTML.kde3/en/kdepim-apidocs/kpilot/
+share/doc/HTML.kde3/en/kdepim-apidocs/kpilot/html/
+share/doc/HTML.kde3/en/kdepim-apidocs/kpilot/kpilot/
+share/doc/HTML.kde3/en/kdepim-apidocs/kpilot/kpilot/html/
+share/doc/HTML.kde3/en/kdepim-apidocs/kpilot/lib/
+share/doc/HTML.kde3/en/kdepim-apidocs/kpilot/lib/html/
 share/doc/HTML.kde3/en/kdepim-apidocs/libemailfunctions/
 share/doc/HTML.kde3/en/kdepim-apidocs/libemailfunctions/html/
 share/doc/HTML.kde3/en/kdepim-apidocs/libkcal/
@@ -1978,6 +2104,8 @@ share/icons/crystalsvg/16x16/apps/gpg.png
 share/icons/crystalsvg/16x16/apps/gpgsm.png
 share/icons/crystalsvg/16x16/apps/kmailcvt.png
 share/icons/crystalsvg/16x16/apps/konsolekalendar.png
+share/icons/crystalsvg/16x16/apps/kpalmdoc.png
+share/icons/crystalsvg/16x16/apps/kpilotDaemon.png
 share/icons/crystalsvg/22x22/actions/button_fewer.png
 share/icons/crystalsvg/22x22/actions/button_more.png
 share/icons/crystalsvg/22x22/actions/kalarm.png
@@ -1995,6 +2123,8 @@ share/icons/crystalsvg/22x22/apps/gpg.png
 share/icons/crystalsvg/22x22/apps/gpgsm.png
 share/icons/crystalsvg/22x22/apps/kmaillight.png
 share/icons/crystalsvg/22x22/apps/konsolekalendar.png
+share/icons/crystalsvg/22x22/apps/kpalmdoc.png
+share/icons/crystalsvg/22x22/apps/kpilotDaemon.png
 share/icons/crystalsvg/32x32/actions/kontact_contacts.png
 share/icons/crystalsvg/32x32/actions/kontact_date.png
 share/icons/crystalsvg/32x32/actions/kontact_journal.png
@@ -2010,6 +2140,8 @@ share/icons/crystalsvg/32x32/apps/gpgsm.png
 share/icons/crystalsvg/32x32/apps/kmailcvt.png
 share/icons/crystalsvg/32x32/apps/kmaillight.png
 share/icons/crystalsvg/32x32/apps/konsolekalendar.png
+share/icons/crystalsvg/32x32/apps/kpalmdoc.png
+share/icons/crystalsvg/32x32/apps/kpilotDaemon.png
 share/icons/crystalsvg/48x48/actions/kontact_contacts.png
 share/icons/crystalsvg/48x48/actions/kontact_date.png
 share/icons/crystalsvg/48x48/actions/kontact_journal.png
@@ -2021,6 +2153,8 @@ share/icons/crystalsvg/48x48/actions/kontact_summary_green.png
 share/icons/crystalsvg/48x48/actions/kontact_todo.png
 share/icons/crystalsvg/48x48/actions/rss_tag.png
 share/icons/crystalsvg/48x48/apps/kmailcvt.png
+share/icons/crystalsvg/48x48/apps/kpalmdoc.png
+share/icons/crystalsvg/48x48/apps/kpilotDaemon.png
 share/icons/crystalsvg/64x64/actions/kontact_contacts.png
 share/icons/crystalsvg/64x64/actions/kontact_date.png
 share/icons/crystalsvg/64x64/actions/kontact_journal.png
@@ -2051,11 +2185,13 @@ share/icons/hicolor/16x16/apps/knotes.png
 share/icons/hicolor/16x16/apps/kontact.png
 share/icons/hicolor/16x16/apps/korganizer.png
 share/icons/hicolor/16x16/apps/korn.png
+share/icons/hicolor/16x16/apps/kpilot.png
 share/icons/hicolor/22x22/apps/akregator.png
 share/icons/hicolor/22x22/apps/karm.png
 share/icons/hicolor/22x22/apps/kmail.png
 share/icons/hicolor/22x22/apps/knotes.png
 share/icons/hicolor/22x22/apps/kontact.png
+share/icons/hicolor/22x22/apps/kpilot.png
 share/icons/hicolor/32x32/apps/akregator.png
 share/icons/hicolor/32x32/apps/kaddressbook.png
 share/icons/hicolor/32x32/apps/kalarm.png
@@ -2067,6 +2203,7 @@ share/icons/hicolor/32x32/apps/knotes.png
 share/icons/hicolor/32x32/apps/kontact.png
 share/icons/hicolor/32x32/apps/korganizer.png
 share/icons/hicolor/32x32/apps/korn.png
+share/icons/hicolor/32x32/apps/kpilot.png
 share/icons/hicolor/48x48/apps/akregator.png
 share/icons/hicolor/48x48/apps/kaddressbook.png
 share/icons/hicolor/48x48/apps/kalarm.png
@@ -2078,6 +2215,7 @@ share/icons/hicolor/48x48/apps/knotes.png
 share/icons/hicolor/48x48/apps/kontact.png
 share/icons/hicolor/48x48/apps/korganizer.png
 share/icons/hicolor/48x48/apps/korn.png
+share/icons/hicolor/48x48/apps/kpilot.png
 share/icons/hicolor/48x48/apps/ktnef.png
 share/icons/hicolor/64x64/apps/akregator.png
 share/icons/hicolor/64x64/apps/kaddressbook.png
@@ -2093,13 +2231,16 @@ share/icons/hicolor/scalable/apps/kmail.svgz
 share/icons/locolor/
 share/icons/locolor/16x16/
 share/icons/locolor/16x16/apps/
+share/icons/locolor/16x16/apps/kpilot.png
 share/icons/locolor/16x16/apps/ktnef.png
 share/icons/locolor/32x32/
 share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/ktnef.png
 share/mimelnk/application/ms-tnef.desktop
+share/services/abbrowser_conduit.desktop
 share/services/akregator_mk4storage_plugin.desktop
 share/services/akregator_part.desktop
+share/services/doc_conduit.desktop
 share/services/feed.protocol
 share/services/groupwise.protocol
 share/services/groupwises.protocol
@@ -2143,6 +2284,7 @@ share/services/kcmkorgsummary.desktop
 share/services/kcmsdsummary.desktop
 share/services/kded/networkstatus.desktop
 share/services/kfile_ics.desktop
+share/services/kfile_palm.desktop
 share/services/kfile_vcf.desktop
 share/services/kleopatra_config_appear.desktop
 share/services/kleopatra_config_dirserv.desktop
@@ -2161,6 +2303,7 @@ share/services/knode_config_identity.desktop
 share/services/knode_config_post_news.desktop
 share/services/knode_config_privacy.desktop
 share/services/knode_config_read_news.desktop
+share/services/knotes-conduit.desktop
 share/services/kontact/
 share/services/kontact/akregatorplugin.desktop
 share/services/kontact/akregatorplugin3.2.desktop
@@ -2171,6 +2314,7 @@ share/services/kontact/kmailplugin.desktop
 share/services/kontact/knodeplugin.desktop
 share/services/kontact/knotesplugin.desktop
 share/services/kontact/korganizerplugin.desktop
+share/services/kontact/kpilotplugin.desktop
 share/services/kontact/newstickerplugin.desktop
 share/services/kontact/specialdatesplugin.desktop
 share/services/kontact/summaryplugin.desktop
@@ -2195,6 +2339,7 @@ share/services/korganizer_configmain.desktop
 share/services/korganizer_configplugins.desktop
 share/services/korganizer_configtime.desktop
 share/services/korganizer_configviews.desktop
+share/services/kpilot_config.desktop
 share/services/kresources/kabc/imap.desktop
 share/services/kresources/kabc/kabc_groupdav.desktop
 share/services/kresources/kabc/kabc_groupwise.desktop
@@ -2232,9 +2377,16 @@ share/services/kresources/knotes/scalix.desktop
 share/services/kresources/knotes_manager.desktop
 share/services/ldifvcardthumbnail.desktop
 share/services/mbox.protocol
+share/services/memofile-conduit.desktop
+share/services/notepad-conduit.desktop
+share/services/popmail-conduit.desktop
 share/services/scalix.protocol
 share/services/scalixs.protocol
 share/services/sieve.protocol
+share/services/sysinfo_conduit.desktop
+share/services/time_conduit.desktop
+share/services/todo-conduit.desktop
+share/services/vcal-conduit.desktop
 share/services/webcal.protocol
 share/servicetypes/akregator_plugin.desktop
 share/servicetypes/calendardecoration.desktop
@@ -2251,6 +2403,7 @@ share/servicetypes/kaddressbookimprotocol.desktop
 share/servicetypes/kontactplugin.desktop
 share/servicetypes/korganizerpart.desktop
 share/servicetypes/korgprintplugin.desktop
+share/servicetypes/kpilotconduit.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

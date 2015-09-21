@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.295 2015/09/21 08:42:27 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.296 2015/09/21 08:46:50 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -610,8 +610,6 @@ my $obsolete_reason = {
 	'xorp' => 5,
 	'faac' => 6,
 	'god' => 5,
-	'jpilot' => 6,
-	'pilot-link' => 6,
 	'ivan' => 3,
 	'hs-xhtml-combinators' => 5,
 };

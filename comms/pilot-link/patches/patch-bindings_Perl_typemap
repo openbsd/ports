@@ -1,0 +1,19 @@
+$OpenBSD: patch-bindings_Perl_typemap,v 1.3 2015/09/21 08:46:50 ajacoutot Exp $
+
+Allow pilot-link's perl bindings to build with newer Perl.
+From Debian ticket 628510
+
+--- bindings/Perl/typemap.orig	Sat Oct 28 01:23:48 2000
++++ bindings/Perl/typemap	Mon Mar 18 22:07:45 2013
+@@ -50,9 +50,9 @@ T_CHAR4
+ 
+ T_RESULT
+ 	if ($var < 0) {
+-		sv_setsv($arg, &sv_no);
++		sv_setsv($arg, &PL_sv_no);
+ 		self->errnop = $var;
+ 	} else
+-		sv_setsv($arg, &sv_yes);
++		sv_setsv($arg, &PL_sv_yes);
+ T_PTROBJ
+ 	sv_setref_pv($arg, \"${ntype}\", (void*)$var);
