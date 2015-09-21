@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1386 2015/09/21 13:05:46 kili Exp $
+# $OpenBSD: Makefile,v 1.1387 2015/09/21 14:14:31 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -175,7 +175,6 @@
      SUBDIR += hs-FindBin
      SUBDIR += hs-HUnit
      SUBDIR += hs-List
-     SUBDIR += hs-ListLike
      SUBDIR += hs-MissingH
      SUBDIR += hs-MonadRandom
      SUBDIR += hs-ObjectName
