@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1387 2015/09/21 14:14:31 kili Exp $
+# $OpenBSD: Makefile,v 1.1388 2015/09/21 17:02:41 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -188,7 +188,6 @@
      SUBDIR += hs-ansi-terminal
      SUBDIR += hs-ansi-wl-pprint
      SUBDIR += hs-async
-     SUBDIR += hs-atom
      SUBDIR += hs-base-unicode-symbols
      SUBDIR += hs-base16-bytestring
      SUBDIR += hs-base64-bytestring
