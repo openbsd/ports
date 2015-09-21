@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/28 10:17:23 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2015/09/21 11:27:08 pascal Exp $
 
 COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
-REVISION =		0
 
-WANTLIB += GL SDL X11 Xcursor boost_filesystem boost_system c
-WANTLIB += curl enet execinfo gloox icui18n icuuc jpeg m miniupnpc
-WANTLIB += mozjs-24 nspr4 ogg openal plc4 plds4 png pthread vorbis
-WANTLIB += vorbisfile xml2 z
+SO_VERSION =	0.0
+SHARED_LIBS +=  mozjs31-ps-release        ${SO_VERSION}
+
+WANTLIB += GL SDL X11 Xcursor boost_filesystem boost_system c curl
+WANTLIB += enet execinfo gloox icui18n icuuc jpeg m miniupnpc
+WANTLIB += nspr4 ogg openal plc4 plds4 png pthread vorbis vorbisfile
+WANTLIB += xml2 z
 
 BUILD_DEPENDS =		archivers/zip \
 			shells/bash
@@ -17,8 +19,8 @@ LIB_DEPENDS =		audio/libvorbis \
 			audio/openal \
 			devel/boost \
 			devel/libexecinfo \
+			devel/nspr \
 			devel/sdl \
-			devel/spidermonkey \
 			graphics/jpeg \
 			graphics/png \
 			net/curl \
@@ -50,8 +52,6 @@ PATCHORIG =		.orig.port
 
 USE_GMAKE =		Yes
 CONFIGURE_ARGS +=	--without-nvtt \
-			--with-system-miniupnpc \
-			--with-system-mozjs24 \
 			--datadir=${PREFIX}/share/0ad \
 			--libdir=${PREFIX}/lib \
 			--minimal-flags
@@ -66,13 +66,13 @@ CXXFLAGS +=		-march=i586
 
 WRKSRC =		${WRKDIST}/build/workspaces/gcc
 
-do-configure:
+do-build:
 	cd ${WRKDIST}/build/workspaces && \
 		${SETENV} CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
-		CXXFLAGS="${CXXFLAGS}" ${CONFIGURE_ENV} verbose=1 \
+		CXXFLAGS="${CXXFLAGS}" SO_VERSION="${SO_VERSION}" \
+		${CONFIGURE_ENV} verbose=1 \
 		./update-workspaces.sh ${CONFIGURE_ARGS}
 
-do-build:
 	cd ${WRKDIST}/libraries/source/fcollada/src && \
 		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 			-f ${MAKE_FILE} ${ALL_TARGET}

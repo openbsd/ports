@@ -1,0 +1,73 @@
+$OpenBSD: patch-libraries_source_spidermonkey_build_sh,v 1.1 2015/09/21 11:27:08 pascal Exp $
+--- libraries/source/spidermonkey/build.sh.orig.port	Sat Jan 24 15:46:52 2015
++++ libraries/source/spidermonkey/build.sh	Mon Aug 31 10:52:29 2015
+@@ -84,6 +84,13 @@ patch -p1 -i ../FixTraceLoggerFlushing.diff
+ # It makes quite a big difference for performance.
+ # https://bugzilla.mozilla.org/show_bug.cgi?id=1046176
+ patch -p1 -i ../FixForOfBailouts.diff
++
++# patch to fix compilation on systems with proper endian.h
++patch -p1 -i ../FixForEndian.diff
++
++# patch to fix SO_VERSION on OpenBSD
++patch -p1 -i ../FixSoVersionOpenBSD.diff
++
+ cd ..
+ 
+ # Clean up header files that may be left over by earlier versions of SpiderMonkey
+@@ -99,17 +106,17 @@ rm -rf build-release
+ # the LIBRARY_NAME for each build.
+ # (We use perl instead of sed so that it works with MozillaBuild on Windows,
+ # which has an ancient sed.)
+-perl -i.bak -pe 's/(LIBRARY_NAME\s+=).*/$1 '\''mozjs31-ps-debug'\''/' moz.build
+-mkdir -p build-debug
+-cd build-debug
+-CXXFLAGS="${TLCXXFLAGS}" ../configure ${CONF_OPTS} --with-nspr-libs="$NSPR_LIBS" --with-nspr-cflags="$NSPR_INCLUDES" --enable-debug --disable-optimize --enable-js-diagnostics --enable-gczeal # --enable-root-analysis
+-${MAKE} ${MAKE_OPTS}
+-cd ..
++#perl -i.bak -pe 's/(LIBRARY_NAME\s+=).*/$1 '\''mozjs31-ps-debug'\''/' moz.build
++#mkdir -p build-debug
++#cd build-debug
++#CXXFLAGS="${TLCXXFLAGS}" ../configure ${CONF_OPTS} --with-nspr-libs="$NSPR_LIBS" --with-nspr-cflags="$NSPR_INCLUDES" --enable-debug --disable-optimize --enable-js-diagnostics --enable-gczeal # --enable-root-analysis
++#${MAKE} ${MAKE_OPTS}
++#cd ..
+ 
+ perl -i.bak -pe 's/(LIBRARY_NAME\s+=).*/$1 '\''mozjs31-ps-release'\''/' moz.build
+ mkdir -p build-release
+ cd build-release
+-CXXFLAGS="${TLCXXFLAGS}" ../configure ${CONF_OPTS} --with-nspr-libs="$NSPR_LIBS" --with-nspr-cflags="$NSPR_INCLUDES" --enable-optimize  # --enable-gczeal --enable-debug-symbols
++CXXFLAGS="${TLCXXFLAGS}" MOZ_OPTIMIZE_FLAGS="${CFLAGS}" ../configure ${CONF_OPTS} --with-nspr-libs="$NSPR_LIBS" --with-nspr-cflags="$NSPR_INCLUDES" --enable-optimize  # --enable-gczeal --enable-debug-symbols
+ ${MAKE} ${MAKE_OPTS}
+ cd ..
+ 
+@@ -134,10 +141,10 @@ else
+   LIB_DST_SUFFIX=.so
+   if [ "`uname -s`" = "OpenBSD" ]
+   then
+-    DLL_SRC_SUFFIX=.so.1.0
+-    DLL_DST_SUFFIX=.so.1.0
+-    LIB_SRC_SUFFIX=.so.1.0
+-    LIB_DST_SUFFIX=:so.1.0
++    DLL_SRC_SUFFIX=.so.$SO_VERSION
++    DLL_DST_SUFFIX=.so.$SO_VERSION
++    LIB_SRC_SUFFIX=.so.$SO_VERSION
++    LIB_DST_SUFFIX=:so.$SO_VERSION
+   fi
+ fi
+ 
+@@ -147,12 +154,12 @@ fi
+ mkdir -p ${INCLUDE_DIR_DEBUG}
+ mkdir -p ${INCLUDE_DIR_RELEASE}
+ cp -R -L mozjs31/js/src/build-release/dist/include/* ${INCLUDE_DIR_RELEASE}/
+-cp -R -L mozjs31/js/src/build-debug/dist/include/* ${INCLUDE_DIR_DEBUG}/
++#cp -R -L mozjs31/js/src/build-debug/dist/include/* ${INCLUDE_DIR_DEBUG}/
+ 
+ mkdir -p lib/
+-cp -L mozjs31/js/src/build-debug/dist/lib/${LIB_PREFIX}mozjs31-ps-debug${LIB_SRC_SUFFIX} lib/${LIB_PREFIX}mozjs31-ps-debug${LIB_DST_SUFFIX}
++#cp -L mozjs31/js/src/build-debug/dist/lib/${LIB_PREFIX}mozjs31-ps-debug${LIB_SRC_SUFFIX} lib/${LIB_PREFIX}mozjs31-ps-debug${LIB_DST_SUFFIX}
+ cp -L mozjs31/js/src/build-release/dist/lib/${LIB_PREFIX}mozjs31-ps-release${LIB_SRC_SUFFIX} lib/${LIB_PREFIX}mozjs31-ps-release${LIB_DST_SUFFIX}
+-cp -L mozjs31/js/src/build-debug/dist/bin/${LIB_PREFIX}mozjs31-ps-debug${DLL_SRC_SUFFIX} ../../../binaries/system/${LIB_PREFIX}mozjs31-ps-debug${DLL_DST_SUFFIX}
++#cp -L mozjs31/js/src/build-debug/dist/bin/${LIB_PREFIX}mozjs31-ps-debug${DLL_SRC_SUFFIX} ../../../binaries/system/${LIB_PREFIX}mozjs31-ps-debug${DLL_DST_SUFFIX}
+ cp -L mozjs31/js/src/build-release/dist/bin/${LIB_PREFIX}mozjs31-ps-release${DLL_SRC_SUFFIX} ../../../binaries/system/${LIB_PREFIX}mozjs31-ps-release${DLL_DST_SUFFIX}
+ 
+ # Flag that it's already been built successfully so we can skip it next time

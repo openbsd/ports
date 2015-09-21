@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_third_party_cppformat_format_cpp,v 1.1 2015/09/21 11:27:08 pascal Exp $
+--- source/third_party/cppformat/format.cpp.orig.port	Fri Aug 14 00:28:07 2015
++++ source/third_party/cppformat/format.cpp	Fri Aug 14 00:28:25 2015
+@@ -431,7 +431,7 @@ int fmt::internal::safe_strerror(
+     int error_code, char *&buffer, std::size_t buffer_size) FMT_NOEXCEPT(true) {
+   assert(buffer != 0 && buffer_size != 0);
+   int result = 0;
+-#if defined(_GNU_SOURCE) && !defined(__BIONIC__)
++#if defined(_GNU_SOURCE) && !defined(__BIONIC__) && !defined(__OpenBSD__)
+   char *message = strerror_r(error_code, buffer, buffer_size);
+   // If the buffer is full then the message is probably truncated.
+   if (message == buffer && strlen(buffer) == buffer_size - 1)

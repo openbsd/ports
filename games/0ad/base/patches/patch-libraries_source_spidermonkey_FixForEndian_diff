@@ -1,0 +1,44 @@
+$OpenBSD: patch-libraries_source_spidermonkey_FixForEndian_diff,v 1.1 2015/09/21 11:27:08 pascal Exp $
+--- libraries/source/spidermonkey/FixForEndian.diff.orig.port	Thu Aug 13 15:16:44 2015
++++ libraries/source/spidermonkey/FixForEndian.diff	Thu Aug 13 15:21:36 2015
+@@ -0,0 +1,40 @@
++Deal with /usr/include/endian.h only providing BYTE_ORDER
++
++--- a/js/src/jscpucfg.h.orig	Sun Jul 13 19:23:20 2014
+++++ b/js/src/jscpucfg.h	Sun Jul 13 19:34:07 2014
++@@ -43,16 +43,27 @@
++ #elif defined(JS_HAVE_ENDIAN_H)
++ # include <endian.h>
++ 
++-# if defined(__BYTE_ORDER)
++-#  if __BYTE_ORDER == __LITTLE_ENDIAN
++-#   define IS_LITTLE_ENDIAN 1
++-#   undef  IS_BIG_ENDIAN
++-#  elif __BYTE_ORDER == __BIG_ENDIAN
++-#   undef  IS_LITTLE_ENDIAN
++-#   define IS_BIG_ENDIAN 1
+++# if defined(__BYTE_ORDER) || defined(BYTE_ORDER)
+++#  if defined(__BYTE_ORDER)
+++#   if __BYTE_ORDER == __LITTLE_ENDIAN
+++#    define IS_LITTLE_ENDIAN 1
+++#    undef  IS_BIG_ENDIAN
+++#   elif __BYTE_ORDER == __BIG_ENDIAN
+++#    undef  IS_LITTLE_ENDIAN
+++#    define IS_BIG_ENDIAN 1
+++#   endif
++ #  endif
+++#  if defined(BYTE_ORDER)
+++#   if BYTE_ORDER == LITTLE_ENDIAN
+++#    define IS_LITTLE_ENDIAN 1
+++#    undef  IS_BIG_ENDIAN
+++#   elif BYTE_ORDER == BIG_ENDIAN
+++#    undef  IS_LITTLE_ENDIAN
+++#    define IS_BIG_ENDIAN 1
+++#   endif
+++#  endif
++ # else /* !defined(__BYTE_ORDER) */
++-#  error "endian.h does not define __BYTE_ORDER. Cannot determine endianness."
+++#  error "endian.h does not define __BYTE_ORDER nor BYTE_ORDER. Cannot determine endianness."
++ # endif
++ 
++ /* BSDs */
