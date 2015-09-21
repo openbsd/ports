@@ -1,3 +1,0 @@
-Feldspar (Functional Embedded Language for DSP and PARallelism) is an
-embedded DSL for describing digital signal processing algorithms. This
-package contains the language front-end and an interpreter.

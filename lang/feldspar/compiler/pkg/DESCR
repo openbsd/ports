@@ -1,5 +1,0 @@
-Feldspar (Functional Embedded Language for DSP and PARallelism) is an
-embedded DSL for describing digital signal processing algorithms. This
-library (FeldsparCompiler) contains a prototype compiler that supports C
-code generation from programs written in this language both according to
-ANSI C and also targeted to a real DSP HW.
