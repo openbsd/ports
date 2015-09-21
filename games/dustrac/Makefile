@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/28 10:17:23 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/21 20:05:41 jasper Exp $
 
 COMMENT =		traditional top-down car racing game
 
-DISTNAME =		dustrac-1.7.3
-REVISION =		1
+DISTNAME =		dustrac-1.11.0
 
 CATEGORIES =		games
 
@@ -12,14 +11,14 @@ HOMEPAGE =		http://dustrac.sourceforge.net/
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU QtGui QtOpenGL QtXml X11 c m openal pthread
-WANTLIB += vorbisfile
+WANTLIB += GL GLU X11 c m openal pthread vorbisfile
+WANTLIB += Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets Qt5Xml
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dustrac/}
 
 MODULES =		devel/cmake \
 			gcc4 \
-			x11/qt4
+			x11/qt5
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c c++
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -29,7 +28,6 @@ LIB_DEPENDS =		audio/openal
 
 CONFIGURE_ARGS +=	-DReleaseBuild=ON \
 			-DDATA_PATH=${PREFIX}/share/dustrac \
-			-DDOC_PATH=${PREFIX}/share/dustrac \
-			-DUseQt5=OFF
+			-DDOC_PATH=${PREFIX}/share/dustrac
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/03 13:19:00 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/21 20:05:41 jasper Exp $
 @bin bin/dustrac-editor
 @bin bin/dustrac-game
 share/applications/dustrac-editor.desktop
@@ -15,7 +15,7 @@ share/dustrac/fonts/UbuntuMono-B.ttf
 share/dustrac/fonts/UbuntuMono-R.ttf
 share/dustrac/images/
 share/dustrac/images/about.png
-share/dustrac/images/asphalt.jpg
+share/dustrac/images/asphalt.png
 share/dustrac/images/brake.png
 share/dustrac/images/bridge.png
 share/dustrac/images/bridgeEditor.png
@@ -44,6 +44,7 @@ share/dustrac/images/corner45LeftPreview.png
 share/dustrac/images/corner45Right.png
 share/dustrac/images/corner45RightPreview.png
 share/dustrac/images/cornerPreview.png
+share/dustrac/images/crashOverlay.png
 share/dustrac/images/creditsHelpBack.png
 share/dustrac/images/cross.png
 share/dustrac/images/cursor.png
@@ -63,7 +64,6 @@ share/dustrac/images/left.png
 share/dustrac/images/lock.png
 share/dustrac/images/logo.png
 share/dustrac/images/mainMenuBack.png
-share/dustrac/images/monospace.png
 share/dustrac/images/mud.png
 share/dustrac/images/pit.png
 share/dustrac/images/plant.png
@@ -72,9 +72,13 @@ share/dustrac/images/rock.png
 share/dustrac/images/sand.png
 share/dustrac/images/sandAreaBig.png
 share/dustrac/images/sandAreaCurve.png
+share/dustrac/images/sandEditor.png
 share/dustrac/images/sandGrassCorner.png
 share/dustrac/images/sandGrassCorner2.png
+share/dustrac/images/sandGrassCorner2Editor.png
+share/dustrac/images/sandGrassCornerEditor.png
 share/dustrac/images/sandGrassStraight.png
+share/dustrac/images/sandGrassStraightEditor.png
 share/dustrac/images/settingsBack.png
 share/dustrac/images/skid.png
 share/dustrac/images/sky.png
@@ -106,6 +110,7 @@ share/dustrac/levels/infinity.trk
 share/dustrac/levels/monza.trk
 share/dustrac/levels/ring.trk
 share/dustrac/levels/straight.trk
+share/dustrac/levels/suzuka.trk
 share/dustrac/levels/triangle.trk
 share/dustrac/levels/twister.trk
 share/dustrac/meshes.conf
@@ -122,7 +127,16 @@ share/dustrac/sounds/menuBoom.ogg
 share/dustrac/sounds/menuClick.ogg
 share/dustrac/sounds/pit.ogg
 share/dustrac/sounds/skid.ogg
-share/dustrac/textures.conf
+share/dustrac/surfaces.conf
+share/dustrac/translations/
+share/dustrac/translations/dustrac-editor_cs.qm
+share/dustrac/translations/dustrac-editor_fi.qm
+share/dustrac/translations/dustrac-editor_fr.qm
+share/dustrac/translations/dustrac-editor_it.qm
+share/dustrac/translations/dustrac-game_cs.qm
+share/dustrac/translations/dustrac-game_fi.qm
+share/dustrac/translations/dustrac-game_fr.qm
+share/dustrac/translations/dustrac-game_it.qm
 share/icons/hicolor/64x64/apps/dustrac-editor.png
 share/icons/hicolor/64x64/apps/dustrac-game.png
 share/pixmaps/
