@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2014/12/02 20:45:23 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/21 18:26:30 kili Exp $
 
 COMMENT =		HTML/XML parsing library
 
-DISTNAME =		tagsoup-0.12.8
-REVISION =		1
+DISTNAME =		tagsoup-0.13.3
 CATEGORIES =		devel textproc
 HOMEPAGE =		http://community.haskell.org/~ndm/tagsoup/
 
@@ -16,11 +15,12 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
+MODGHC_PACKAGE_KEY =	9qqHmOAcei6CJidQ5Fzxeo
+
 MODGHC_SETUP_CONF_ARGS =	-f download
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/hs-mtl \
-			devel/hs-network \
+RUN_DEPENDS =		devel/hs-network \
 			devel/hs-text
 
 .include <bsd.port.mk>
