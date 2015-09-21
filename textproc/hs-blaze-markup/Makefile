@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2014/12/14 12:05:27 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/21 20:36:54 kili Exp $
+
+BROKEN =		needs an update
 
 COMMENT=		fast markup combinator library
 
