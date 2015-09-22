@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.303 2015/09/22 07:03:31 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.304 2015/09/22 18:40:32 pascal Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -380,6 +380,7 @@ my $stem_extensions = {
 	'tint' => 'tint2',
 	'py-nmap' => 'py3-nmap',
 	'pudb' => 'py-pudb',
+	'openexr-ctl' => 'ctl',
 };
 
 # reasons for obsolete packages
