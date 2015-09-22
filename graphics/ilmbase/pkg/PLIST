@@ -1,15 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/03/16 18:07:47 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/09/22 18:36:35 pascal Exp $
 @conflict OpenEXR-<=1.2.2p3
 include/OpenEXR/
 include/OpenEXR/Iex.h
 include/OpenEXR/IexBaseExc.h
 include/OpenEXR/IexErrnoExc.h
+include/OpenEXR/IexExport.h
+include/OpenEXR/IexForward.h
 include/OpenEXR/IexMacros.h
 include/OpenEXR/IexMathExc.h
+include/OpenEXR/IexMathFloatExc.h
+include/OpenEXR/IexMathFpu.h
+include/OpenEXR/IexMathIeeeExc.h
+include/OpenEXR/IexNamespace.h
 include/OpenEXR/IexThrowErrnoExc.h
 include/OpenEXR/IlmBaseConfig.h
 include/OpenEXR/IlmThread.h
+include/OpenEXR/IlmThreadExport.h
+include/OpenEXR/IlmThreadForward.h
 include/OpenEXR/IlmThreadMutex.h
+include/OpenEXR/IlmThreadNamespace.h
 include/OpenEXR/IlmThreadPool.h
 include/OpenEXR/IlmThreadSemaphore.h
 include/OpenEXR/ImathBox.h
@@ -18,8 +27,11 @@ include/OpenEXR/ImathColor.h
 include/OpenEXR/ImathColorAlgo.h
 include/OpenEXR/ImathEuler.h
 include/OpenEXR/ImathExc.h
+include/OpenEXR/ImathExport.h
+include/OpenEXR/ImathForward.h
 include/OpenEXR/ImathFrame.h
 include/OpenEXR/ImathFrustum.h
+include/OpenEXR/ImathFrustumTest.h
 include/OpenEXR/ImathFun.h
 include/OpenEXR/ImathGL.h
 include/OpenEXR/ImathGLU.h
@@ -32,6 +44,7 @@ include/OpenEXR/ImathLineAlgo.h
 include/OpenEXR/ImathMath.h
 include/OpenEXR/ImathMatrix.h
 include/OpenEXR/ImathMatrixAlgo.h
+include/OpenEXR/ImathNamespace.h
 include/OpenEXR/ImathPlane.h
 include/OpenEXR/ImathPlatform.h
 include/OpenEXR/ImathQuat.h
@@ -42,6 +55,7 @@ include/OpenEXR/ImathSphere.h
 include/OpenEXR/ImathVec.h
 include/OpenEXR/ImathVecAlgo.h
 include/OpenEXR/half.h
+include/OpenEXR/halfExport.h
 include/OpenEXR/halfFunction.h
 include/OpenEXR/halfLimits.h
 lib/libHalf.a
@@ -50,6 +64,9 @@ lib/libHalf.la
 lib/libIex.a
 lib/libIex.la
 @lib lib/libIex.so.${LIBIex_VERSION}
+lib/libIexMath.a
+lib/libIexMath.la
+@lib lib/libIexMath.so.${LIBIexMath_VERSION}
 lib/libIlmThread.a
 lib/libIlmThread.la
 @lib lib/libIlmThread.so.${LIBIlmThread_VERSION}
