@@ -1,28 +1,33 @@
-# $OpenBSD: Makefile,v 1.8 2015/03/16 18:07:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2015/09/22 18:38:10 pascal Exp $
 
 COMMENT =		Color Transformation Language interpreter
 
-DISTNAME =		ctl-1.4.1
-REVISION =		1
+V =			1.5.2
+DISTNAME =		ctl-$V
 
-SHARED_LIBS +=  IlmCtl               0.0      # .2.0
-SHARED_LIBS +=  IlmCtlMath           0.0      # .2.0
-SHARED_LIBS +=  IlmCtlSimd           0.0      # .2.0
+SHARED_LIBS +=  IlmCtl               1.0      # .2.0
+SHARED_LIBS +=  IlmCtlMath           1.0      # .2.0
+SHARED_LIBS +=  IlmCtlSimd           1.0      # .2.0
+SHARED_LIBS +=  IlmImfCtl            1.0      # 1.5
 
 CATEGORIES =		graphics lang
-HOMEPAGE =		http://www.oscars.org/science-technology/council/projects/ctl.html
+HOMEPAGE =		https://github.com/ampas/CTL/
 
 # 3-clause BSD license
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		m stdc++ Half Iex IlmThread Imath pthread
+WANTLIB += Half Iex IexMath IlmImf IlmThread Imath c m pthread
+WANTLIB += stdc++ tiff
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ampasctl/}
+GH_ACCOUNT =		ampas
+GH_PROJECT =		ctl
+GH_TAGNAME =		ctl-${V}
+MASTER_SITES =		${MASTER_SITES_GITHUB}
 
-LIB_DEPENDS =		graphics/ilmbase
+MODULES =		devel/cmake
+LIB_DEPENDS =		graphics/openexr \
+			graphics/tiff
 
-SEPARATE_BUILD =	Yes
-
-CONFIGURE_STYLE =	gnu
+WRKDIST =		${WRKDIR}/CTL-ctl-$V
 
 .include <bsd.port.mk>

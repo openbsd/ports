@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_IlmImfCtl_CMakeLists_txt,v 1.1 2015/09/22 18:38:10 pascal Exp $
+--- lib/IlmImfCtl/CMakeLists.txt.orig	Fri Sep 11 14:04:30 2015
++++ lib/IlmImfCtl/CMakeLists.txt	Fri Sep 11 14:04:45 2015
+@@ -7,6 +7,11 @@ add_library( IlmImfCtl ${DO_SHARED}
+   ImfCtlCopyFunctionArg.cpp
+ )
+ 
++set_target_properties( IlmImfCtl PROPERTIES
++  VERSION ${CTL_VERSION}
++  SOVERSION ${CTL_VERSION}
++)
++
+ target_link_libraries( IlmImfCtl IlmCtl IlmImf Iex IlmThread Half )
+ 
+ install( FILES ImfCtlApplyTransforms.h DESTINATION include/OpenEXR )

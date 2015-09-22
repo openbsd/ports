@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_cmake,v 1.1 2015/09/22 18:38:10 pascal Exp $
+--- configure.cmake.orig	Fri Sep 11 13:22:14 2015
++++ configure.cmake	Fri Sep 11 13:22:35 2015
+@@ -1,6 +1,6 @@
+ # Until we get some of these modules into the upstream packages, put them here
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules/")
+-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_INSTALL_PREFIX}/share/CMake")
++set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_INSTALL_PREFIX}/share/cmake")
+ 
+ find_package( PkgConfig QUIET )
+ 
