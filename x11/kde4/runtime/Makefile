@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/08/27 07:30:26 zhuk Exp $
+# $OpenBSD: Makefile,v 1.28 2015/09/22 16:38:07 zhuk Exp $
 
 COMMENT-main =		KDE core run-time components
 COMMENT-locale =	KDE locale data files
@@ -6,7 +6,7 @@ DISTNAME =		kde-runtime-${MODKDE4_VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-locale =	kde4-locale-${MODKDE4_VERSION}
 PKG_ARCH-locale =	*
-REVISION-main =		6
+REVISION-main =		7
 REVISION-locale =	1
 
 DPB_PROPERTIES =	parallel
@@ -59,7 +59,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			misc/shared-mime-info \
 			x11/kde-shared-data,${MODKDE4_FLAVOR}>=${MODKDE4_DEP_VERSION} \
 			${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
-			${BUILD_PKGPATH},-locale>=${MODKDE4_DEP_VERSION}
+			kde4-locale-*|kde3-locale-*:${BUILD_PKGPATH},-locale>=${MODKDE4_DEP_VERSION}
 
 # /usr/local/share/dbus-1/system-services/
 RUN_DEPENDS-main +=	x11/dbus,-suid
