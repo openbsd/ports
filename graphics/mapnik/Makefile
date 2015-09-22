@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2015/09/18 20:07:09 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2015/09/22 09:52:43 sthen Exp $
+
+# out of memory, renderer_common/process_group_symbolizer.cpp
+NOT_FOR_ARCHS =	i386
 
 COMMENT =	toolkit for developing mapping applications
 
