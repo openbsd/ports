@@ -1,0 +1,18 @@
+$OpenBSD: patch-simgear_scene_tgdb_ShaderGeometry_cxx,v 1.1 2015/09/22 18:50:08 pascal Exp $
+
+https://github.com/FlightGear/simgear/commit/51ff30f386ac098f477ff16c71756bcd089dcfae
+
+--- simgear/scene/tgdb/ShaderGeometry.cxx.orig	Sat Sep 12 17:08:41 2015
++++ simgear/scene/tgdb/ShaderGeometry.cxx	Sat Sep 12 17:09:17 2015
+@@ -47,7 +47,11 @@ void ShaderGeometry::addObject(const Vec3& position, f
+ void ShaderGeometry::drawImplementation(osg::RenderInfo& renderInfo) const
+ {
+     State& state = *renderInfo.getState();
++#if OSG_VERSION_LESS_THAN(3,3,3)
+     const Extensions* extensions = getExtensions(state.getContextID(), true);
++#else
++    const GLExtensions* extensions = GLExtensions::Get(state.getContextID(), true);
++#endif
+     Vec4Array::const_iterator citer = _posScaleArray->begin();
+     Vec4Array::const_iterator cend = _posScaleArray->end();
+     FloatArray::const_iterator viter = _vertexAttribArray->begin();

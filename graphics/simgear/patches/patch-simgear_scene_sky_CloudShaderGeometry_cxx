@@ -1,0 +1,18 @@
+$OpenBSD: patch-simgear_scene_sky_CloudShaderGeometry_cxx,v 1.1 2015/09/22 18:50:08 pascal Exp $
+
+https://github.com/FlightGear/simgear/commit/51ff30f386ac098f477ff16c71756bcd089dcfae
+
+--- simgear/scene/sky/CloudShaderGeometry.cxx.orig	Sat Sep 12 17:08:02 2015
++++ simgear/scene/sky/CloudShaderGeometry.cxx	Sat Sep 12 17:08:26 2015
+@@ -128,7 +128,11 @@ void CloudShaderGeometry::drawImplementation(RenderInf
+         sortData.frameSorted = frameNumber;
+     }
+     
++#if OSG_VERSION_LESS_THAN(3,3,3)
+     const Extensions* extensions = getExtensions(state.getContextID(),true);
++#else
++    const GLExtensions* extensions = GLExtensions::Get(state.getContextID(), true);
++#endif
+     GLfloat ua1[3] = { (GLfloat) alpha_factor,
+                        (GLfloat) shade_factor,
+                        (GLfloat) cloud_height };

@@ -1,0 +1,34 @@
+$OpenBSD: patch-simgear_scene_material_Technique_cxx,v 1.1 2015/09/22 18:50:08 pascal Exp $
+
+https://github.com/FlightGear/simgear/commit/51ff30f386ac098f477ff16c71756bcd089dcfae
+
+--- simgear/scene/material/Technique.cxx.orig	Sat Sep 12 17:06:34 2015
++++ simgear/scene/material/Technique.cxx	Sat Sep 12 17:20:10 2015
+@@ -326,9 +326,15 @@ class GLShaderLanguageExpression : public GeneralNaryE
+             = GL2Extensions::Get(static_cast<unsigned>(contextId), true);
+         if (!extensions)
+             return;
++#if OSG_VERSION_LESS_THAN(3,3,3)
+         if (!extensions->isGlslSupported())
+             return;
+         value = extensions->getLanguageVersion();
++#else
++        if (!extensions->isGlslSupported)
++            return;
++        value = extensions->glslLanguageVersion;
++#endif
+     }
+ };
+ 
+@@ -357,7 +363,11 @@ class GLSLSupportedExpression : public GeneralNaryExpr
+            = GL2Extensions::Get(static_cast<unsigned>(contextId), true);
+        if (!extensions)
+            return;
++#if OSG_VERSION_LESS_THAN(3,3,3)
+        value = extensions->isGlslSupported();
++#else
++       value = extensions->isGlslSupported;
++#endif
+    }
+ };
+ 

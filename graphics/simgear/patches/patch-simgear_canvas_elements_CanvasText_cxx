@@ -1,0 +1,46 @@
+$OpenBSD: patch-simgear_canvas_elements_CanvasText_cxx,v 1.1 2015/09/22 18:50:08 pascal Exp $
+
+https://github.com/FlightGear/simgear/commit/51ff30f386ac098f477ff16c71756bcd089dcfae
+
+--- simgear/canvas/elements/CanvasText.cxx.orig	Sat Sep 12 17:02:49 2015
++++ simgear/canvas/elements/CanvasText.cxx	Sat Sep 12 17:06:21 2015
+@@ -160,7 +160,12 @@ namespace canvas
+     if( empty() )
+       return pos;
+ 
++#if OSG_VERSION_LESS_THAN(3,3,4)
+     GlyphQuads::Coords2 const& coords = _quads->_coords;
++#else
++    GlyphQuads::Coords2 refCoords = _quads->_coords;
++    GlyphQuads::Coords2::element_type &coords = *refCoords.get();
++#endif
+     size_t global_i = _begin + i;
+ 
+     if( global_i == _begin )
+@@ -194,7 +199,12 @@ namespace canvas
+       return cursorPos(0);
+ 
+     GlyphQuads::Glyphs const& glyphs = _quads->_glyphs;
++#if OSG_VERSION_LESS_THAN(3,3,4)
+     GlyphQuads::Coords2 const& coords = _quads->_coords;
++#else
++    GlyphQuads::Coords2 refCoords = _quads->_coords;
++    GlyphQuads::Coords2::element_type &coords = *refCoords.get();
++#endif
+ 
+     float const HIT_FRACTION = 0.6;
+     float const character_width = _text->getCharacterHeight()
+@@ -627,7 +637,13 @@ namespace canvas
+ 
+     const GlyphQuads& quads = _textureGlyphQuadMap.begin()->second;
+     const GlyphQuads::Glyphs& glyphs = quads._glyphs;
++#if OSG_VERSION_LESS_THAN(3,3,4)
+     const GlyphQuads::Coords2& coords = quads._coords;
++#else
++    GlyphQuads::Coords2 refCoords = quads._coords;
++    GlyphQuads::Coords2::element_type &coords = *refCoords.get();
++#endif
++
+     const GlyphQuads::LineNumbers& line_numbers = quads._lineNumbers;
+ 
+     float wr = _characterHeight / getCharacterAspectRatio();
