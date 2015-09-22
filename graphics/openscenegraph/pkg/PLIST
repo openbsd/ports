@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/24 21:58:25 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/22 18:49:15 pascal Exp $
 @bin bin/osgarchive
 @bin bin/osgconv
 @bin bin/osgfilecache
@@ -30,22 +30,28 @@ include/osg/AutoTransform
 include/osg/Billboard
 include/osg/BlendColor
 include/osg/BlendEquation
+include/osg/BlendEquationi
 include/osg/BlendFunc
+include/osg/BlendFunci
 include/osg/BoundingBox
 include/osg/BoundingSphere
 include/osg/BoundsChecking
 include/osg/BufferIndexBinding
 include/osg/BufferObject
+include/osg/BufferTemplate
+include/osg/Callback
 include/osg/Camera
-include/osg/CameraNode
 include/osg/CameraView
+include/osg/Capability
 include/osg/ClampColor
 include/osg/ClearNode
+include/osg/ClipControl
 include/osg/ClipNode
 include/osg/ClipPlane
 include/osg/ClusterCullingCallback
 include/osg/CollectOccludersVisitor
 include/osg/ColorMask
+include/osg/ColorMaski
 include/osg/ColorMatrix
 include/osg/ComputeBoundsVisitor
 include/osg/Config
@@ -72,6 +78,7 @@ include/osg/FrontFace
 include/osg/GL
 include/osg/GL2Extensions
 include/osg/GLBeginEndAdapter
+include/osg/GLDefines
 include/osg/GLExtensions
 include/osg/GLObjects
 include/osg/GLU
@@ -134,6 +141,7 @@ include/osg/Referenced
 include/osg/RenderInfo
 include/osg/SampleMaski
 include/osg/Scissor
+include/osg/ScriptEngine
 include/osg/Sequence
 include/osg/ShadeModel
 include/osg/Shader
@@ -171,6 +179,7 @@ include/osg/TransferFunction
 include/osg/Transform
 include/osg/TriangleFunctor
 include/osg/TriangleIndexFunctor
+include/osg/Types
 include/osg/Uniform
 include/osg/UserDataContainer
 include/osg/ValueObject
@@ -202,6 +211,7 @@ include/osg/Vec4ub
 include/osg/Vec4ui
 include/osg/Vec4us
 include/osg/Version
+include/osg/VertexAttribDivisor
 include/osg/VertexProgram
 include/osg/View
 include/osg/Viewport
@@ -254,12 +264,15 @@ include/osgAnimation/TimelineAnimationManager
 include/osgAnimation/UpdateBone
 include/osgAnimation/UpdateMaterial
 include/osgAnimation/UpdateMatrixTransform
+include/osgAnimation/UpdateUniform
 include/osgAnimation/Vec3Packed
 include/osgAnimation/VertexInfluence
 include/osgDB/
 include/osgDB/Archive
 include/osgDB/AuthenticationMap
 include/osgDB/Callbacks
+include/osgDB/ClassInterface
+include/osgDB/ConvertBase64
 include/osgDB/ConvertUTF
 include/osgDB/DataTypes
 include/osgDB/DatabasePager
@@ -276,6 +289,7 @@ include/osgDB/ImagePager
 include/osgDB/ImageProcessor
 include/osgDB/Input
 include/osgDB/InputStream
+include/osgDB/ObjectCache
 include/osgDB/ObjectWrapper
 include/osgDB/Options
 include/osgDB/Output
@@ -312,6 +326,8 @@ include/osgGA/CameraManipulator
 include/osgGA/CameraViewSwitchManipulator
 include/osgGA/Device
 include/osgGA/DriveManipulator
+include/osgGA/Event
+include/osgGA/EventHandler
 include/osgGA/EventQueue
 include/osgGA/EventVisitor
 include/osgGA/Export
@@ -331,6 +347,7 @@ include/osgGA/TerrainManipulator
 include/osgGA/TrackballManipulator
 include/osgGA/UFOManipulator
 include/osgGA/Version
+include/osgGA/Widget
 include/osgManipulator/
 include/osgManipulator/AntiSquish
 include/osgManipulator/Command
@@ -407,6 +424,7 @@ include/osgParticle/range
 include/osgPresentation/
 include/osgPresentation/AnimationMaterial
 include/osgPresentation/CompileSlideCallback
+include/osgPresentation/Cursor
 include/osgPresentation/Export
 include/osgPresentation/KeyEventHandler
 include/osgPresentation/PickEventHandler
@@ -421,6 +439,7 @@ include/osgQt/QFontImplementation
 include/osgQt/QGraphicsViewAdapter
 include/osgQt/QWebViewImage
 include/osgQt/QWidgetImage
+include/osgQt/Version
 include/osgShadow/
 include/osgShadow/ConvexPolyhedron
 include/osgShadow/DebugShadowMap
@@ -469,7 +488,9 @@ include/osgSim/SphereSegment
 include/osgSim/Version
 include/osgSim/VisibilityGroup
 include/osgTerrain/
+include/osgTerrain/DisplacementMappingTechnique
 include/osgTerrain/Export
+include/osgTerrain/GeometryPool
 include/osgTerrain/GeometryTechnique
 include/osgTerrain/Layer
 include/osgTerrain/Locator
@@ -491,6 +512,23 @@ include/osgText/Text
 include/osgText/Text3D
 include/osgText/TextBase
 include/osgText/Version
+include/osgUI/
+include/osgUI/AlignmentSettings
+include/osgUI/Callbacks
+include/osgUI/ColorPalette
+include/osgUI/ComboBox
+include/osgUI/Dialog
+include/osgUI/Export
+include/osgUI/FrameSettings
+include/osgUI/Label
+include/osgUI/LineEdit
+include/osgUI/Popup
+include/osgUI/PushButton
+include/osgUI/Style
+include/osgUI/TabWidget
+include/osgUI/TextSettings
+include/osgUI/Validator
+include/osgUI/Widget
 include/osgUtil/
 include/osgUtil/ConvertVec
 include/osgUtil/CubeMapGenerator
@@ -515,6 +553,7 @@ include/osgUtil/PlaneIntersector
 include/osgUtil/PolytopeIntersector
 include/osgUtil/PositionalStateContainer
 include/osgUtil/PrintVisitor
+include/osgUtil/RayIntersector
 include/osgUtil/ReflectionMapGenerator
 include/osgUtil/RenderBin
 include/osgUtil/RenderLeaf
@@ -556,10 +595,13 @@ include/osgVolume/Export
 include/osgVolume/FixedFunctionTechnique
 include/osgVolume/Layer
 include/osgVolume/Locator
+include/osgVolume/MultipassTechnique
 include/osgVolume/Property
 include/osgVolume/RayTracedTechnique
 include/osgVolume/Version
 include/osgVolume/Volume
+include/osgVolume/VolumeScene
+include/osgVolume/VolumeSettings
 include/osgVolume/VolumeTechnique
 include/osgVolume/VolumeTile
 include/osgWidget/
@@ -601,6 +643,7 @@ include/osgWidget/WindowManager
 @lib lib/libosgSim.so.${LIBosgSim_VERSION}
 @lib lib/libosgTerrain.so.${LIBosgTerrain_VERSION}
 @lib lib/libosgText.so.${LIBosgText_VERSION}
+@lib lib/libosgUI.so.${LIBosgUI_VERSION}
 @lib lib/libosgUtil.so.${LIBosgUtil_VERSION}
 @lib lib/libosgViewer.so.${LIBosgViewer_VERSION}
 @lib lib/libosgVolume.so.${LIBosgVolume_VERSION}
@@ -633,6 +676,7 @@ lib/osgPlugins-${V}/osgdb_exr.so
 lib/osgPlugins-${V}/osgdb_ffmpeg.so
 lib/osgPlugins-${V}/osgdb_freetype.so
 lib/osgPlugins-${V}/osgdb_gif.so
+lib/osgPlugins-${V}/osgdb_gles.so
 lib/osgPlugins-${V}/osgdb_glsl.so
 lib/osgPlugins-${V}/osgdb_gz.so
 lib/osgPlugins-${V}/osgdb_hdr.so
@@ -651,6 +695,7 @@ lib/osgPlugins-${V}/osgdb_openflight.so
 lib/osgPlugins-${V}/osgdb_osc.so
 lib/osgPlugins-${V}/osgdb_osg.so
 lib/osgPlugins-${V}/osgdb_osga.so
+lib/osgPlugins-${V}/osgdb_osgjs.so
 lib/osgPlugins-${V}/osgdb_osgshadow.so
 lib/osgPlugins-${V}/osgdb_osgterrain.so
 lib/osgPlugins-${V}/osgdb_osgtgz.so
@@ -679,11 +724,14 @@ lib/osgPlugins-${V}/osgdb_serializers_osgshadow.so
 lib/osgPlugins-${V}/osgdb_serializers_osgsim.so
 lib/osgPlugins-${V}/osgdb_serializers_osgterrain.so
 lib/osgPlugins-${V}/osgdb_serializers_osgtext.so
+lib/osgPlugins-${V}/osgdb_serializers_osgui.so
+lib/osgPlugins-${V}/osgdb_serializers_osgutil.so
 lib/osgPlugins-${V}/osgdb_serializers_osgviewer.so
 lib/osgPlugins-${V}/osgdb_serializers_osgvolume.so
 lib/osgPlugins-${V}/osgdb_shp.so
 lib/osgPlugins-${V}/osgdb_stl.so
 lib/osgPlugins-${V}/osgdb_svg.so
+lib/osgPlugins-${V}/osgdb_tf.so
 lib/osgPlugins-${V}/osgdb_tga.so
 lib/osgPlugins-${V}/osgdb_tgz.so
 lib/osgPlugins-${V}/osgdb_tiff.so

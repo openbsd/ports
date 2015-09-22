@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/10 19:27:41 pascal Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/22 18:49:15 pascal Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -6,7 +6,7 @@ SHARED_ONLY =		Yes
 
 COMMENT =		3D graphics toolkit
 
-V =			3.2.1
+V =			3.4.0
 DISTNAME =		OpenSceneGraph-${V}
 PKGNAME =		openscenegraph-${V}
 
@@ -27,6 +27,7 @@ SHARED_LIBS +=  osgSim                    1.0 # 3.0
 SHARED_LIBS +=  osgTerrain                1.0 # 3.0
 SHARED_LIBS +=  osgText                   1.0 # 3.0
 SHARED_LIBS +=  osgUtil                   1.0 # 3.0
+SHARED_LIBS +=  osgUI                     0.0 # 3.4
 SHARED_LIBS +=  osgViewer                 1.0 # 3.0
 SHARED_LIBS +=  osgVolume                 1.0 # 3.0
 SHARED_LIBS +=  osgWidget                 1.0 # 3.0
@@ -41,12 +42,12 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL Half Iex IlmImf IlmThread QtGui QtOpenGL X11 Xrandr
-WANTLIB += avcodec avdevice avformat avutil c cairo curl freetype
-WANTLIB += gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += avcodec avdevice avformat avresample avutil c cairo curl
+WANTLIB += freetype gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += jasper jpeg m png poppler-glib pthread rsvg-2 stdc++
-WANTLIB += swscale tiff z SDL
+WANTLIB += swresample swscale tiff z SDL
 
-MASTER_SITES =		${HOMEPAGE}/downloads/developer_releases/
+MASTER_SITES =		${HOMEPAGE}/downloads/stable_releases/OpenSceneGraph-$V/source/
 EXTRACT_SUFX =		.zip
 
 MODULES =		devel/cmake \

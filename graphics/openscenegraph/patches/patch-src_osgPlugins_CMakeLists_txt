@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_osgPlugins_CMakeLists_txt,v 1.1 2013/11/28 16:54:25 pascal Exp $
---- src/osgPlugins/CMakeLists.txt.orig	Thu Nov 28 17:28:51 2013
-+++ src/osgPlugins/CMakeLists.txt	Thu Nov 28 17:28:58 2013
+$OpenBSD: patch-src_osgPlugins_CMakeLists_txt,v 1.2 2015/09/22 18:49:15 pascal Exp $
+--- src/osgPlugins/CMakeLists.txt.orig	Tue Aug 11 10:44:46 2015
++++ src/osgPlugins/CMakeLists.txt	Fri Sep 11 14:35:33 2015
 @@ -97,10 +97,6 @@ ENDIF()
  IF(TIFF_FOUND AND OSG_CPP_EXCEPTIONS_AVAILABLE)
      ADD_SUBDIRECTORY(tiff)
@@ -12,3 +12,26 @@ $OpenBSD: patch-src_osgPlugins_CMakeLists_txt,v 1.1 2013/11/28 16:54:25 pascal E
  IF(GTA_FOUND AND OSG_CPP_EXCEPTIONS_AVAILABLE)
      ADD_SUBDIRECTORY(gta)
  ENDIF()
+@@ -203,10 +199,6 @@ IF(FFMPEG_FOUND AND OSG_CPP_EXCEPTIONS_AVAILABLE)
+     ADD_SUBDIRECTORY(ffmpeg)
+ ENDIF()
+ 
+-IF(GSTREAMER_FOUND AND GLIB_FOUND)
+-    ADD_SUBDIRECTORY(gstreamer)
+-ENDIF()
+-
+ IF(DIRECTSHOW_FOUND)
+     ADD_SUBDIRECTORY(directshow)
+ ENDIF()
+@@ -275,11 +267,6 @@ ENDIF()
+ #
+ # ScriptEngines
+ #
+-IF ((LUA_LIBRARIES AND LUA_INCLUDE_DIR) OR (LUA_SOURCE_DIR AND LUA_INCLUDE_DIR) OR (OSG_USE_LOCAL_LUA_SOURCE))
+-    ADD_SUBDIRECTORY(lua)
+-ENDIF()
+-
+-
+ # V8 and Python plugins are tests for linking against these libraries but aren't functionality beyond this.
+ # IF (V8_FOUND)
+ #     ADD_SUBDIRECTORY(V8)

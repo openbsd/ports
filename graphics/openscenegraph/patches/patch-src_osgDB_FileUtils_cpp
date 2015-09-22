@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_osgDB_FileUtils_cpp,v 1.1.1.1 2013/11/24 21:58:24 pascal Exp $
---- src/osgDB/FileUtils.cpp.orig	Fri Jun 21 11:17:28 2013
-+++ src/osgDB/FileUtils.cpp	Sat Nov 23 12:58:45 2013
-@@ -77,7 +77,7 @@ typedef char TCHAR;
+$OpenBSD: patch-src_osgDB_FileUtils_cpp,v 1.2 2015/09/22 18:49:15 pascal Exp $
+--- src/osgDB/FileUtils.cpp.orig	Mon Jun  1 15:40:20 2015
++++ src/osgDB/FileUtils.cpp	Thu Sep 10 20:45:13 2015
+@@ -78,7 +78,7 @@ typedef char TCHAR;
          #define stat64 stat
      #endif
  #elif defined(__CYGWIN__) || defined(__FreeBSD__) || defined(__DragonFly__) || \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2015/03/17 17:16:47 pascal Exp $
---- CMakeLists.txt.orig	Fri Jul  4 13:29:02 2014
-+++ CMakeLists.txt	Sat Jan  3 14:55:44 2015
-@@ -522,7 +522,8 @@ ELSE()
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2015/09/22 18:49:15 pascal Exp $
+--- CMakeLists.txt.orig	Wed Aug 12 08:38:59 2015
++++ CMakeLists.txt	Thu Sep 10 20:45:13 2015
+@@ -658,7 +658,8 @@ ELSE()
      FIND_PACKAGE(COLLADA)
      FIND_PACKAGE(FBX)
      FIND_PACKAGE(ZLIB)
@@ -11,7 +11,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.4 2015/03/17 17:16:47 pascal Exp $
      FIND_PACKAGE(OpenVRML)
      FIND_PACKAGE(Performer)
      FIND_PACKAGE(GDAL)
-@@ -689,12 +690,6 @@ IF(CYGWIN)
+@@ -848,12 +849,6 @@ IF(CYGWIN)
    SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
  ENDIF()
  
