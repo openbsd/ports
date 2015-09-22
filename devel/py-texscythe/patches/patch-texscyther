@@ -1,0 +1,12 @@
+$OpenBSD: patch-texscyther,v 1.1.1.1 2015/09/22 19:49:05 edd Exp $
+--- texscyther.orig	Sun Jun  7 13:58:37 2015
++++ texscyther	Sun Jun  7 13:59:35 2015
+@@ -28,7 +28,7 @@ DESCR = "Compute subsets of the TeX Live texmf tree."
+ def print_version():
+         print(72 * "-")
+         print("  TeXScythe Version %s" % (VERSION))
+-        print("  (c) Edd Barrett 2013 <vext01@gmail.com> <edd@openbsd.org>")
++        print("  (c) Edd Barrett 2013-2015 <edd@theunixzoo.co.uk>")
+         print(72 * "-")
+ 
+ if __name__ == "__main__":
