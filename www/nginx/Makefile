@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.82 2015/08/20 08:58:14 robert Exp $
+# $OpenBSD: Makefile,v 1.83 2015/09/22 16:50:02 robert Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
-VERSION=	1.9.4
+VERSION=	1.9.5
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--with-http_gzip_static_module \
 			--with-http_ssl_module \
 			--with-http_stub_status_module \
-			--with-http_spdy_module \
+			--with-http_v2_module \
 			--with-mail \
 			--with-mail_ssl_module \
 			--with-ipv6 \
