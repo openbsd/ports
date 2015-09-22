@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/22 06:47:32 ajacoutot Exp $
+share/hyphen/hyph_de_AT.dic
+share/hyphen/hyph_de_BE.dic
+share/hyphen/hyph_de_CH.dic
+share/hyphen/hyph_de_DE.dic
+share/hyphen/hyph_de_LI.dic
+share/hyphen/hyph_de_LU.dic
