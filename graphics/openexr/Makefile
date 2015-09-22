@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.24 2015/03/19 20:25:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2015/09/22 18:36:58 pascal Exp $
 
 COMMENT-main=	high dynamic range image format
 COMMENT-tools=	image viewing tools for OpenEXR
 COMMENT-doc=	developer documentation for OpenEXR
 
-V=		1.6.1
+V=		2.2.0
 DISTNAME=	openexr-$V
 PKGNAME-main=	OpenEXR-$V
-REVISION-main=	3
 PKGNAME-tools=  OpenEXR-tools-$V
-REVISION-tools=	2
 PKGNAME-doc=	OpenEXR-doc-$V
-SHARED_LIBS=	IlmImf               4.0      # .6.0	
+SHARED_LIBS=	IlmImf               5.0      # .6.0	
+SHARED_LIBS+=   IlmImfUtil           0.0      # 22.0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.openexr.com/
@@ -24,7 +23,7 @@ MASTER_SITES=		${MASTER_SITE_SAVANNAH:=openexr/}
 
 MULTI_PACKAGES= 	-main -tools -doc
 
-WANTLIB-main=		m z stdc++ Half Iex Imath IlmThread pthread
+WANTLIB-main=		m z stdc++ Half Iex IexMath Imath IlmThread pthread
 LIB_DEPENDS-main=	graphics/ilmbase
 
 WANTLIB-tools=		${WANTLIB-main} c m pthread stdc++ IlmImf>=4
@@ -35,7 +34,7 @@ PKG_ARCH-doc=		*
 #SEPARATE_BUILD=	Yes
 
 CONFIGURE_STYLE=	gnu
-USE_GMAKE=		Yes
+CONFIGURE_ARGS+=	--disable-namespaceversioning
 
 DOCDIR= 		${PREFIX}/share/doc/OpenEXR
 FAKE_FLAGS+=		docdir=${DOCDIR}

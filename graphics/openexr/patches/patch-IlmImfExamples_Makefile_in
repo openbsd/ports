@@ -1,12 +1,12 @@
-$OpenBSD: patch-IlmImfExamples_Makefile_in,v 1.1 2008/04/11 11:16:20 jasper Exp $
---- IlmImfExamples/Makefile.in.orig	Thu Apr 10 20:32:46 2008
-+++ IlmImfExamples/Makefile.in	Thu Apr 10 20:33:07 2008
-@@ -227,7 +227,7 @@ imfexamples_SOURCES = main.cpp drawImage.cpp rgbaInter
- 		      rgbaInterfaceTiledExamples.h \
- 		      lowLevelIoExamples.h previewImageExamples.h
+$OpenBSD: patch-IlmImfExamples_Makefile_in,v 1.2 2015/09/22 18:36:58 pascal Exp $
+--- IlmImfExamples/Makefile.in.orig	Sun Aug 10 06:48:23 2014
++++ IlmImfExamples/Makefile.in	Fri Sep 11 10:21:50 2015
+@@ -261,7 +261,7 @@ imfexamples_SOURCES = main.cpp drawImage.cpp rgbaInter
+ 		      lowLevelIoExamples.h previewImageExamples.h \
+ 		      namespaceAlias.h
  
 -examplesdir = $(datadir)/doc/OpenEXR-@OPENEXR_VERSION@/examples
 +examplesdir = $(datadir)/doc/OpenEXR/examples
  examples_DATA = $(imfexamples_SOURCES)
  imfexamplesdir = $(examplesdir)
- all: all-am
+ EXTRA_DIST = CMakeLists.txt

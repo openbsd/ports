@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2015/03/19 20:25:26 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2015/09/22 18:36:58 pascal Exp $
 @pkgpath graphics/openexr
 include/OpenEXR/
+include/OpenEXR/ImfAcesFile.h
 include/OpenEXR/ImfArray.h
 include/OpenEXR/ImfAttribute.h
 include/OpenEXR/ImfB44Compressor.h
@@ -10,19 +11,37 @@ include/OpenEXR/ImfChannelList.h
 include/OpenEXR/ImfChannelListAttribute.h
 include/OpenEXR/ImfChromaticities.h
 include/OpenEXR/ImfChromaticitiesAttribute.h
+include/OpenEXR/ImfCompositeDeepScanLine.h
 include/OpenEXR/ImfCompression.h
 include/OpenEXR/ImfCompressionAttribute.h
 include/OpenEXR/ImfConvert.h
+include/OpenEXR/ImfDeepCompositing.h
+include/OpenEXR/ImfDeepFrameBuffer.h
+include/OpenEXR/ImfDeepImageState.h
+include/OpenEXR/ImfDeepImageStateAttribute.h
+include/OpenEXR/ImfDeepScanLineInputFile.h
+include/OpenEXR/ImfDeepScanLineInputPart.h
+include/OpenEXR/ImfDeepScanLineOutputFile.h
+include/OpenEXR/ImfDeepScanLineOutputPart.h
+include/OpenEXR/ImfDeepTiledInputFile.h
+include/OpenEXR/ImfDeepTiledInputPart.h
+include/OpenEXR/ImfDeepTiledOutputFile.h
+include/OpenEXR/ImfDeepTiledOutputPart.h
 include/OpenEXR/ImfDoubleAttribute.h
 include/OpenEXR/ImfEnvmap.h
 include/OpenEXR/ImfEnvmapAttribute.h
+include/OpenEXR/ImfExport.h
 include/OpenEXR/ImfFloatAttribute.h
+include/OpenEXR/ImfForward.h
 include/OpenEXR/ImfFrameBuffer.h
 include/OpenEXR/ImfFramesPerSecond.h
+include/OpenEXR/ImfGenericInputFile.h
+include/OpenEXR/ImfGenericOutputFile.h
 include/OpenEXR/ImfHeader.h
 include/OpenEXR/ImfHuf.h
 include/OpenEXR/ImfIO.h
 include/OpenEXR/ImfInputFile.h
+include/OpenEXR/ImfInputPart.h
 include/OpenEXR/ImfInt64.h
 include/OpenEXR/ImfIntAttribute.h
 include/OpenEXR/ImfKeyCode.h
@@ -31,9 +50,17 @@ include/OpenEXR/ImfLineOrder.h
 include/OpenEXR/ImfLineOrderAttribute.h
 include/OpenEXR/ImfLut.h
 include/OpenEXR/ImfMatrixAttribute.h
+include/OpenEXR/ImfMisc.h
+include/OpenEXR/ImfMultiPartInputFile.h
+include/OpenEXR/ImfMultiPartOutputFile.h
+include/OpenEXR/ImfMultiView.h
 include/OpenEXR/ImfName.h
+include/OpenEXR/ImfNamespace.h
 include/OpenEXR/ImfOpaqueAttribute.h
 include/OpenEXR/ImfOutputFile.h
+include/OpenEXR/ImfOutputPart.h
+include/OpenEXR/ImfPartHelper.h
+include/OpenEXR/ImfPartType.h
 include/OpenEXR/ImfPixelType.h
 include/OpenEXR/ImfPreviewImage.h
 include/OpenEXR/ImfPreviewImageAttribute.h
@@ -44,12 +71,15 @@ include/OpenEXR/ImfRgbaFile.h
 include/OpenEXR/ImfRgbaYca.h
 include/OpenEXR/ImfStandardAttributes.h
 include/OpenEXR/ImfStringAttribute.h
+include/OpenEXR/ImfStringVectorAttribute.h
 include/OpenEXR/ImfTestFile.h
 include/OpenEXR/ImfThreading.h
 include/OpenEXR/ImfTileDescription.h
 include/OpenEXR/ImfTileDescriptionAttribute.h
 include/OpenEXR/ImfTiledInputFile.h
+include/OpenEXR/ImfTiledInputPart.h
 include/OpenEXR/ImfTiledOutputFile.h
+include/OpenEXR/ImfTiledOutputPart.h
 include/OpenEXR/ImfTiledRgbaFile.h
 include/OpenEXR/ImfTimeCode.h
 include/OpenEXR/ImfTimeCodeAttribute.h
@@ -61,6 +91,9 @@ include/OpenEXR/OpenEXRConfig.h
 lib/libIlmImf.a
 lib/libIlmImf.la
 @lib lib/libIlmImf.so.${LIBIlmImf_VERSION}
+lib/libIlmImfUtil.a
+lib/libIlmImfUtil.la
+@lib lib/libIlmImfUtil.so.${LIBIlmImfUtil_VERSION}
 lib/pkgconfig/OpenEXR.pc
 share/aclocal/
 share/aclocal/openexr.m4

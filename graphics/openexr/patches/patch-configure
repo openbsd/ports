@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure,v 1.1 2015/09/22 18:36:58 pascal Exp $
+
+cc -O2 will optimise away the inline asm, causing the AVX test to succeed
+
+--- configure.orig	Sun Aug 10 06:48:26 2014
++++ configure	Fri Sep 11 11:11:44 2015
+@@ -17598,14 +17598,14 @@ main ()
+ 
+ _ACEOF
+ rm -f conftest.$ac_objext
+-if { (ac_try="$ac_compile"
++if { (ac_try="'$CC -c $CPPFLAGS conftest.$ac_ext >&5'"
+ case "(($ac_try" in
+   *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
+   *) ac_try_echo=$ac_try;;
+ esac
+ eval ac_try_echo="\"\$as_me:$LINENO: $ac_try_echo\""
+ $as_echo "$ac_try_echo") >&5
+-  (eval "$ac_compile") 2>conftest.er1
++  (eval "'$CC -c $CPPFLAGS conftest.$ac_ext >&5'") 2>conftest.er1
+   ac_status=$?
+   grep -v '^ *+' conftest.er1 >conftest.err
+   rm -f conftest.er1
