@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.48 2015/04/05 22:25:08 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.49 2015/09/22 07:06:08 jasper Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @comment chdir(2) to running_path which is set to /var/empty in the cfg files
 @extraunexec rm -rf /var/db/zarafa/{0,1,2,3,4,5,6,7,8,9}
 @extraunexec rm -rf /var/db/zarafa/attachments
+@extraunexec rm -rf /var/db/zarafa/autorespond
 @extraunexec rm -rf /var/db/zarafa/dagent/plugins/*
 @extraunexec rm -rf /var/db/zarafa/spooler/plugins/*
 @extraunexec rm -rf /var/db/zarafa/client/*

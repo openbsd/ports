@@ -1,0 +1,24 @@
+$OpenBSD: patch-installer_linux_autorespond,v 1.1 2015/09/22 07:06:07 jasper Exp $
+
+Security fix for CVE-2015-6566,
+https://bugzilla.redhat.com/show_bug.cgi?id=1263006
+https://download.zarafa.com/community/beta/7.2/changelog-7.2.txt
+
+--- installer/linux/autorespond.orig	Mon Sep 21 22:08:31 2015
++++ installer/linux/autorespond	Mon Sep 21 22:10:46 2015
+@@ -12,11 +12,13 @@ AUTORESPOND_NORECIP=0
+ # Only send reply to same e-mail address once per 24 hours
+ TIMELIMIT=$[24*60*60]
+ 
++BASE_PATH=/var/db/zarafa/autorespond
++
+ # File which contains where vacation message was sent
+-SENDDB=${TMP:-/tmp}/zarafa-vacation-$USER.db
++SENDDB=${BASE_PATH}/zarafa-vacation-$USER.db
+ 
+ # Tempfile containing message that will be send
+-SENDDBTMP=${TMP:-/tmp}/zarafa-vacation-$USER-$$.tmp
++SENDDBTMP=${BASE_PATH}/zarafa-vacation-$USER-$$.tmp
+ 
+ # Customize your actual mail command, normally sendmail
+ # Input to this command is the message to send

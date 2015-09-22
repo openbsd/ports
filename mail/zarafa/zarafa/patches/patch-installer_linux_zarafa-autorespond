@@ -1,9 +1,37 @@
-$OpenBSD: patch-installer_linux_zarafa-autorespond,v 1.1 2009/09/27 13:57:30 ajacoutot Exp $
---- installer/linux/zarafa-autorespond.orig	Sun Sep 27 15:53:26 2009
-+++ installer/linux/zarafa-autorespond	Sun Sep 27 15:53:45 2009
+$OpenBSD: patch-installer_linux_zarafa-autorespond,v 1.2 2015/09/22 07:06:08 jasper Exp $
+
+Security fix for CVE-2015-6566,
+https://bugzilla.redhat.com/show_bug.cgi?id=1263006
+https://download.zarafa.com/community/beta/7.2/changelog-7.2.txt
+
+--- installer/linux/zarafa-autorespond.orig	Thu Mar  5 16:52:42 2015
++++ installer/linux/zarafa-autorespond	Mon Sep 21 22:12:08 2015
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  
  FROM=$1
  TO=$2
+@@ -10,10 +10,20 @@ MSG=$5
+ AUTORESPOND_CC=0
+ AUTORESPOND_NORECIP=0
+ TIMELIMIT=$[24*60*60]
+-SENDDB=${TMP:-/tmp}/zarafa-vacation-$USER.db
+-SENDDBTMP=${TMP:-/tmp}/zarafa-vacation-$USER-$$.tmp
++BASE_PATH=/var/db/zarafa/autorespond
++SENDDB=${BASE_PATH}/zarafa-vacation-$USER.db
++SENDDBTMP=${BASE_PATH}/zarafa-vacation-$USER-$$.tmp
+ SENDMAILCMD=/usr/sbin/sendmail
+ SENDMAILPARAMS="-t -f"
++
++if [ ! -d "$BASE_PATH" ] ; then
++	/usr/bin/logger -p mail.notice -t 'zarafa-autorespond' "Created directory $BASE_PATH"
++	mkdir -p "$BASE_PATH"
++	chmod 750 "$BASE_PATH"
++
++	/usr/bin/logger -p mail.notice -t 'zarafa-autorespond' "Moving existing vacation-files from /tmp to $BASE_PATH"
++	mv -fv /tmp/zarafa-vacation-* "$BASE_PATH/"
++fi
+ 
+ if [ -r /etc/zarafa/autorespond ]; then
+ 	. /etc/zarafa/autorespond
