@@ -1,6 +1,6 @@
-$OpenBSD: patch-intern_cycles_util_util_aligned_malloc_cpp,v 1.1 2015/04/01 21:26:40 pascal Exp $
---- intern/cycles/util/util_aligned_malloc.cpp.orig	Wed Apr  1 13:21:04 2015
-+++ intern/cycles/util/util_aligned_malloc.cpp	Wed Apr  1 13:19:49 2015
+$OpenBSD: patch-intern_cycles_util_util_aligned_malloc_cpp,v 1.2 2015/09/22 18:48:40 pascal Exp $
+--- intern/cycles/util/util_aligned_malloc.cpp.orig	Tue Jun 30 14:38:37 2015
++++ intern/cycles/util/util_aligned_malloc.cpp	Thu Sep 10 19:35:17 2015
 @@ -21,7 +21,8 @@
  
  /* Adopted from Libmv. */
@@ -18,5 +18,5 @@ $OpenBSD: patch-intern_cycles_util_util_aligned_malloc_cpp,v 1.1 2015/04/01 21:2
 -#elif defined(__FreeBSD__) || defined(__NetBSD__)
 +#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
  	void *result;
- 	if (posix_memalign(&result, alignment, size)) {
+ 	if(posix_memalign(&result, alignment, size)) {
  		/* Non-zero means allocation error

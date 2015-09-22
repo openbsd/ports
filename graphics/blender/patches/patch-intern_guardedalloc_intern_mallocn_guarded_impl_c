@@ -1,6 +1,6 @@
-$OpenBSD: patch-intern_guardedalloc_intern_mallocn_guarded_impl_c,v 1.4 2015/04/01 21:26:40 pascal Exp $
---- intern/guardedalloc/intern/mallocn_guarded_impl.c.orig	Wed Mar 25 12:01:16 2015
-+++ intern/guardedalloc/intern/mallocn_guarded_impl.c	Wed Apr  1 11:56:33 2015
+$OpenBSD: patch-intern_guardedalloc_intern_mallocn_guarded_impl_c,v 1.5 2015/09/22 18:48:40 pascal Exp $
+--- intern/guardedalloc/intern/mallocn_guarded_impl.c.orig	Tue Jun 30 15:07:35 2015
++++ intern/guardedalloc/intern/mallocn_guarded_impl.c	Thu Sep 10 19:35:19 2015
 @@ -687,6 +687,9 @@ static int compare_len(const void *p1, const void *p2)
  
  void MEM_guarded_printmemlist_stats(void)
@@ -11,7 +11,7 @@ $OpenBSD: patch-intern_guardedalloc_intern_mallocn_guarded_impl_c,v 1.4 2015/04/
  	MemHead *membl;
  	MemPrintBlock *pb, *printblock;
  	unsigned int totpb, a, b;
-@@ -759,6 +762,7 @@ void MEM_guarded_printmemlist_stats(void)
+@@ -761,6 +764,7 @@ void MEM_guarded_printmemlist_stats(void)
  #ifdef HAVE_MALLOC_STATS
  	printf("System Statistics:\n");
  	malloc_stats();
