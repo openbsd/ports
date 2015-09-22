@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2015/05/18 21:37:58 edd Exp $
+# $OpenBSD: Makefile,v 1.42 2015/09/22 20:00:14 edd Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -113,5 +113,13 @@ do-install:
 post-install:
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmf.cnf
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmfcnf.lua
+
+# Generating PLISTs is special for texlive.
+# This target requires py-texscythe.
+update-plist: plist
+plist:
+	cd ${FILESDIR} && ${LOCALBASE}/bin/texscyther --initdb \
+		-t ${LOCALBASE}//share/examples/py-texscythe/texlive2014.tlpdb.gz && \
+		${MODPY_BIN} mk_plists.py
 
 .include <bsd.port.mk>
