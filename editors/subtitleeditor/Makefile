@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/09/21 16:56:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2015/09/22 08:30:07 ajacoutot Exp $
 
 SHARED_ONLY=	   	Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GTK+ subtitles editor
 
 V=			0.52.1
 DISTNAME=		subtitleeditor-${V}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics editors
 

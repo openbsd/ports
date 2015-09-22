@@ -1,0 +1,19 @@
+$OpenBSD: patch-plugins_actions_documentmanagement_documentmanagement_cc,v 1.1 2015/09/22 08:30:07 ajacoutot Exp $
+
+c++11 requires a space between string concatenation
+
+--- plugins/actions/documentmanagement/documentmanagement.cc.orig	Tue Sep 22 09:20:01 2015
++++ plugins/actions/documentmanagement/documentmanagement.cc	Tue Sep 22 09:19:48 2015
+@@ -178,9 +178,9 @@ class DocumentManagementPlugin : public Action (public
+ 
+ 		ui_id = ui->new_merge_id();
+ 
+-		#define ADD_UI(name) ui->add_ui(ui_id, "/menubar/menu-file/"name, name, name);
+-		#define ADD_OPEN_UI(name) ui->add_ui(ui_id, "/menubar/menu-file/menu-open/"name, name, name);
+-		#define ADD_SAVE_UI(name) ui->add_ui(ui_id, "/menubar/menu-file/menu-save/"name, name, name);
++		#define ADD_UI(name) ui->add_ui(ui_id, "/menubar/menu-file/" name, name, name);
++		#define ADD_OPEN_UI(name) ui->add_ui(ui_id, "/menubar/menu-file/menu-open/" name, name, name);
++		#define ADD_SAVE_UI(name) ui->add_ui(ui_id, "/menubar/menu-file/menu-save/" name, name, name);
+ 
+ 		ADD_UI("new-document");
+ 		ADD_OPEN_UI("open-document");
