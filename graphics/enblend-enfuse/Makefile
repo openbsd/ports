@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/09/12 14:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2015/09/22 18:47:52 pascal Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 .if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64")
@@ -14,7 +14,7 @@ COMMENT =	blend seams in panoramic image mosaics
 DISTNAME =	enblend-enfuse-4.0
 PKGNAME =	${DISTNAME:L}
 WRKDIST =	${WRKDIR}/enblend-enfuse-4.0-753b534c819d
-REVISION =	3
+REVISION =	4
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://enblend.sourceforge.net/
@@ -24,9 +24,9 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 # GPLv2+, MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath SM X11 Xi Xmu
-WANTLIB +=	boost_filesystem boost_system c glut>=4 jpeg lcms m png pthread
-WANTLIB +=	stdc++ tiff xmi z
+WANTLIB += GL GLEW GLU Half ICE Iex IexMath IlmImf IlmThread Imath
+WANTLIB += SM X11 Xi Xmu boost_system c glut jpeg lcms m png pthread
+WANTLIB += stdc++ tiff xmi z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=enblend/}
 

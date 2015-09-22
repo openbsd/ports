@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/09/21 16:58:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/22 18:47:52 pascal Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		2D animation software
+REVISION =		0
 
 V=			1.0.1
 DISTNAME =		synfig-$V
@@ -17,8 +18,8 @@ HOMEPAGE =		http://www.synfig.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += Half ICE Iex IlmImf IlmThread Imath Magick++ MagickCore
-WANTLIB += MagickWand SM X11 Xext Xrender Xt boost_program_options-mt
+WANTLIB += Half ICE Iex IexMath IlmImf IlmThread Imath Magick++
+WANTLIB += MagickCore MagickWand SM X11 Xext Xrender Xt boost_program_options-mt
 WANTLIB += bz2 c cairo djvulibre expat ffi fftw3 fontconfig freetype
 WANTLIB += glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 harfbuzz jasper jbig jpeg lcms2 ltdl lzma

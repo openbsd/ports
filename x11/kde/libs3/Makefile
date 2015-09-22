@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2015/06/10 21:42:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.147 2015/09/22 18:47:52 pascal Exp $
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
@@ -12,7 +12,7 @@ PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdelibs->=3,<4
 PKGNAME-langlist =	kde3-langlist-${VERSION}
 PKG_ARCH-langlist =	*
-REVISION-main =		37
+REVISION-main =		38
 REVISION-langlist =	1
 
 MODKDE_VERSION =	3.5.8
@@ -58,7 +58,7 @@ SHARED_LIBS +=	kimproxy             1.0      # .0.0
 SHARED_LIBS +=	katepartinterfaces   1.0      # .0.0
 
 WANTLIB-main += ${MODGETTEXT_WANTLIB}
-WANTLIB-main += FLAC GL Half ICE Iex IlmImf IlmThread Imath SM X11
+WANTLIB-main += FLAC GL Half ICE Iex IexMath IlmImf IlmThread Imath SM X11
 WANTLIB-main += X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi
 WANTLIB-main += Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow
 WANTLIB-main += artsflow_idl aspell audiofile avahi-client avahi-common
