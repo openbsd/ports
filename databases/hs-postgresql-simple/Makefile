@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2015/01/09 11:32:11 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2015/09/22 21:06:19 kili Exp $
 
 COMMENT =		mid-level PostgreSQL client library
 
 DISTNAME =		postgresql-simple-0.4.9.0
+REVISION =		0
 CATEGORIES =		databases
 
 HOMEPAGE =		https://github.com/lpsmith/postgresql-simple
@@ -15,6 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
+
+MODGHC_PACKAGE_KEY =	BQZpJFGK5S98sVdgR11b1k
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		databases/hs-postgresql-libpq>=0.9 \
