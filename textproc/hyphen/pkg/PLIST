@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/22 06:46:38 ajacoutot Exp $
+bin/substrings.pl
+include/hyphen.h
+lib/libhyphen.a
+lib/libhyphen.la
+@lib lib/libhyphen.so.${LIBhyphen_VERSION}
+share/hyphen/
+share/hyphen/hyph_en_AG.dic
+share/hyphen/hyph_en_AU.dic
+share/hyphen/hyph_en_BS.dic
+share/hyphen/hyph_en_BW.dic
+share/hyphen/hyph_en_BZ.dic
+share/hyphen/hyph_en_CA.dic
+share/hyphen/hyph_en_DK.dic
+share/hyphen/hyph_en_GB.dic
+share/hyphen/hyph_en_GH.dic
+share/hyphen/hyph_en_HK.dic
+share/hyphen/hyph_en_IE.dic
+share/hyphen/hyph_en_IN.dic
+share/hyphen/hyph_en_JM.dic
+share/hyphen/hyph_en_MW.dic
+share/hyphen/hyph_en_NA.dic
+share/hyphen/hyph_en_NZ.dic
+share/hyphen/hyph_en_PH.dic
+share/hyphen/hyph_en_SG.dic
+share/hyphen/hyph_en_TT.dic
+share/hyphen/hyph_en_US.dic
+share/hyphen/hyph_en_ZA.dic
+share/hyphen/hyph_en_ZM.dic
+share/hyphen/hyph_en_ZW.dic
