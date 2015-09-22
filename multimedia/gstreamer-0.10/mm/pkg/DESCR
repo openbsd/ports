@@ -1,9 +1,0 @@
-gstreamermm provides C++ bindings for the GStreamer streaming multimedia
-library.  With gstreamermm it is possible to develop applications that
-work with multimedia in C++.
-
-gstreamermm is developed over glibmm, libsigc++ and libxml++ and the
-functionalities they provide.  This means that, among other things,
-referencing and unreferencing of GObjects is handled automatically via
-glibmm's automatic pointer class, Glib:RefPtr<>, and libsigc++'s slots
-are used for callbacks and signals.
