@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.393 2015/08/29 15:56:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.394 2015/09/22 18:38:30 pascal Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -172,7 +172,6 @@
      SUBDIR += opencsg
      SUBDIR += opencv
      SUBDIR += openexr
-     SUBDIR += openexr-ctl
      SUBDIR += openexr-viewers
      SUBDIR += openimageio
      SUBDIR += openjp2
