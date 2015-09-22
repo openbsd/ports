@@ -1,7 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.10 2015/05/18 17:17:40 giovanni Exp $
---- Makefile.in.orig	Sat Jul 26 11:50:18 2014
-+++ Makefile.in	Sat May 16 09:11:39 2015
-@@ -338,8 +338,8 @@ man5dir = $(mandir)/man5
+--- Makefile.in.orig    2015-09-22 14:43:49.000000000 -0500
++++ Makefile.in 2015-09-22 14:45:08.000000000 -0500
+@@ -345,8 +345,8 @@
  man8dir = $(mandir)/man8
  NROFF = nroff
  MANS = $(man_MANS)
@@ -10,11 +9,11 @@ $OpenBSD: patch-Makefile_in,v 1.10 2015/05/18 17:17:40 giovanni Exp $
 +DATA = $(docs_DATA) $(drivedb_DATA) $(examples_DATA) \
 +	$(systemdsystemunit_DATA)
  am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \
- 	$(LISP)config.h.in
+        $(LISP)config.h.in
  # Read a list of newline-separated strings from the standard input,
-@@ -576,17 +576,7 @@ EXTRA_smartd_SOURCES = os_darwin.cpp os_darwin.h os_li
+@@ -587,16 +587,7 @@
  @OS_SOLARIS_FALSE@man_MANS = smartd.conf.5 smartctl.8 smartd.8 \
- @OS_SOLARIS_FALSE@	$(am__append_23)
+ @OS_SOLARIS_FALSE@     $(am__append_23)
  docsdir = $(docdir)
 -docs_DATA = \
 -        AUTHORS \
@@ -25,20 +24,19 @@ $OpenBSD: patch-Makefile_in,v 1.10 2015/05/18 17:17:40 giovanni Exp $
 -        NEWS \
 -        README \
 -        TODO \
--        WARNINGS \
 -        smartd.conf
 +docs_DATA = smartd.conf
- 
+
  examplesdir = $(exampledir)
  examples_DATA = \
-@@ -598,10 +588,11 @@ examples_SCRIPTS = \
+@@ -608,10 +599,11 @@
          examplescripts/Example3 \
          examplescripts/Example4 \
          examplescripts/Example5 \
 -        examplescripts/Example6
 +        examplescripts/Example6 \
-+	smartd_warning.sh
- 
++        smartd_warning.sh
+
  sysconf_DATA = smartd.conf
 -smartdscript_SCRIPTS = smartd_warning.sh
 +smartdscript_SCRIPTS =
