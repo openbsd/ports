@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/06/26 06:55:47 rpointel Exp $
+# $OpenBSD: Makefile,v 1.31 2015/09/23 20:14:53 jca Exp $
 
 COMMENT=		discovery-based unittest extension
 
@@ -22,12 +22,10 @@ MODULES=		lang/python
 FLAVORS=		python3
 FLAVOR?=
 
-.if ${FLAVOR:Mpython3}
-NO_TEST=		Yes
-.else
-TEST_DEPENDS=		${FULLPKGNAME}:devel/py-nose \
-			devel/py-twisted/core \
-			devel/py-coverage
+TEST_DEPENDS=		${FULLPKGNAME}:devel/py-nose${MODPY_FLAVOR} \
+			devel/py-coverage${MODPY_FLAVOR}
+.if !${FLAVOR:Mpython3}
+TEST_DEPENDS+=		devel/py-twisted/core
 .endif
 
 USE_GROFF =		Yes
