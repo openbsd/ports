@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2015/06/05 12:27:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2015/09/23 12:45:14 vgross Exp $
 
 COMMENT=	handle MIME messages
 
 MODULES=	cpan
-DISTNAME =	Email-MIME-1.929
+DISTNAME =	Email-MIME-1.936
 CATEGORIES=	mail
 
 # Same as Perl
