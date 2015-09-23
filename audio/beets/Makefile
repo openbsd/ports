@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/12 15:04:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/09/23 21:14:32 sthen Exp $
 
 COMMENT =	CLI tools to manage music collections
 
 MODPY_EGG_VERSION = 1.3.14
+REVISION =	0
 DISTNAME =	beets-${MODPY_EGG_VERSION}
 CATEGORIES =	audio
 

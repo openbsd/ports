@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2014/10/31 13:39:22 sthen Exp $
+$OpenBSD: README,v 1.3 2015/09/23 21:14:32 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -14,7 +14,10 @@ Here are a few common examples.
 
 discogs: The discogs plugin extends the autotagger's search capabilities
 to include matches from the Discogs database. Add 'discogs' to the plugins:
-line in ~/.config/beets/config.yaml.
+line in ~/.config/beets/config.yaml. You will need to login and obtain an
+OAuth token for Discogs; if updating from an older version and this no
+longer works, you may need to "rm ~/.config/beets/discogs_token.json"
+and login again.
 
 chroma: This plugin is for acoustic fingerprinting. Install py-acoustid
 and add 'chroma' to the plugins: line.
