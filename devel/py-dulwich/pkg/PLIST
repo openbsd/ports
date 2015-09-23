@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/23 11:06:39 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/09/23 07:17:00 czarkoff Exp $
 bin/dul-receive-pack
 bin/dul-upload-pack
 bin/dulwich
@@ -7,6 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dulwich/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/__init__.pyc
@@ -156,6 +157,9 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/repos/empty.git/refs
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/repos/empty.git/refs/heads/.gitignore
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/repos/empty.git/refs/tags/
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/repos/empty.git/refs/tags/.gitignore
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/repos/issue88_expect_ack_nak_client.export
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/repos/issue88_expect_ack_nak_other.export
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/repos/issue88_expect_ack_nak_server.export
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/repos/ooo_merge.git/
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/repos/ooo_merge.git/HEAD
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/repos/ooo_merge.git/objects/

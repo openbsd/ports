@@ -1,0 +1,12 @@
+$OpenBSD: patch-dulwich_tests_compat_utils_py,v 1.1 2015/09/23 07:17:00 czarkoff Exp $
+--- dulwich/tests/compat/utils.py.orig	Sat Sep 19 05:54:03 2015
++++ dulwich/tests/compat/utils.py	Sat Sep 19 05:54:24 2015
+@@ -30,6 +30,8 @@ import sys
+ import tempfile
+ import time
+ 
++subprocess._has_poll = False
++
+ from dulwich.repo import Repo
+ from dulwich.protocol import TCP_GIT_PORT
+ 
