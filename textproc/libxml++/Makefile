@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/09/21 16:53:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2015/09/23 09:11:56 ajacoutot Exp $
 
 COMMENT=		C++ wrapper for the libxml XML parser library
 
@@ -21,11 +21,12 @@ WANTLIB += ffi glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 lzma m pcre
 WANTLIB += pthread sigc-2.0 xml2 z
 
 MODULES=		devel/gettext \
-			x11/gnome \
-			gcc4
+			x11/gnome
 
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
+# c++11
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
 
 LIB_DEPENDS=		devel/glib2mm \
 			textproc/libxml
