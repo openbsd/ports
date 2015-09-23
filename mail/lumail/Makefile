@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/28 10:17:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.21 2015/09/23 11:58:28 ajacoutot Exp $
 
 COMMENT =		console-based e-mail client with Lua scripting support
 
@@ -18,8 +18,10 @@ WANTLIB +=		c gio-2.0 glib-2.0 glibmm-2.4 gmime-2.6 gobject-2.0
 WANTLIB +=		${MODLUA_WANTLIB} m ncursesw pcrecpp pthread
 WANTLIB +=		sigc-2.0
 
-MODULES =		devel/gettext gcc4 lang/lua
+MODULES =		devel/gettext lang/lua
 
+# c++11
+MODULES +=		gcc4
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c++
 
