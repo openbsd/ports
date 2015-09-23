@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1393 2015/09/23 10:58:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1394 2015/09/23 15:33:38 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1199,6 +1199,7 @@
      SUBDIR += py-backports-ssl-match-hostname
      SUBDIR += py-blessings
      SUBDIR += py-blinker
+     SUBDIR += py-blinker,python3
      SUBDIR += py-buildbot
      SUBDIR += py-buildslave
      SUBDIR += py-bytecodeassembler
