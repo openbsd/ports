@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2015/09/23 19:23:57 rpointel Exp $
+--- configure.ac.orig	Sun Sep 13 13:41:26 2015
++++ configure.ac	Tue Sep 22 23:15:55 2015
+@@ -114,7 +114,7 @@ VERSION=PYTHON_VERSION
+ 
+ # Version number of Python's own shared library file.
+ AC_SUBST(SOVERSION)
+-SOVERSION=1.0
++SOVERSION=${LIBpython3.5m_VERSION}
+ 
+ # The later defininition of _XOPEN_SOURCE disables certain features
+ # on Linux, so we need _GNU_SOURCE to re-enable them (makedev, tm_zone).
+@@ -2429,6 +2429,10 @@ AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-U
+ AC_CHECK_LIB(crypto, RAND_egd,
+              AC_DEFINE(HAVE_RAND_EGD, 1,
+              [Define if the libcrypto has RAND_egd]))
++AC_CHECK_LIB(ssl, ssl_alpn,
++             AC_DEFINE(HAVE_ALPN, 1,
++             [Define if the libssl has ALPN support]))
++
+ 
+ # only check for sem_init if thread support is requested
+ if test "$with_threads" = "yes" -o -z "$with_threads"; then

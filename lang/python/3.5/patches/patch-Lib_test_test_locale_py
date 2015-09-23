@@ -1,0 +1,21 @@
+$OpenBSD: patch-Lib_test_test_locale_py,v 1.1.1.1 2015/09/23 19:23:57 rpointel Exp $
+
+http://bugs.python.org/issue25191
+
+--- Lib/test/test_locale.py.orig	Sun Sep 13 13:41:23 2015
++++ Lib/test/test_locale.py	Sun Sep 20 10:09:14 2015
+@@ -512,8 +512,12 @@ class TestMiscellaneous(unittest.TestCase):
+         loc = locale.getlocale(locale.LC_CTYPE)
+         if verbose:
+             print('testing with %a' % (loc,), end=' ', flush=True)
+-        locale.setlocale(locale.LC_CTYPE, loc)
+-        self.assertEqual(loc, locale.getlocale(locale.LC_CTYPE))
++        try:
++            locale.setlocale(locale.LC_CTYPE, loc)
++            self.assertEqual(loc, locale.getlocale(locale.LC_CTYPE))
++        except locale.Error:
++            # Unsupported locale setting
++            self.skipTest('unsupported locale setting')
+ 
+     def test_invalid_locale_format_in_localetuple(self):
+         with self.assertRaises(TypeError):

@@ -1,0 +1,22 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2015/09/23 19:23:57 rpointel Exp $
+--- setup.py.orig	Sun Sep 13 13:41:26 2015
++++ setup.py	Sun Sep 20 10:00:48 2015
+@@ -754,6 +754,8 @@ class PyBuildExt(build_ext):
+                                                      'termcap'):
+                 readline_libs.append('termcap')
+             exts.append( Extension('readline', ['readline.c'],
++                                   extra_compile_args=['-nostdinc'],
++                                   include_dirs=['/usr/include'],
+                                    library_dirs=['/usr/lib/termcap'],
+                                    extra_link_args=readline_extra_link_args,
+                                    libraries=readline_libs) )
+@@ -1727,8 +1729,7 @@ class PyBuildExt(build_ext):
+         # The versions with dots are used on Unix, and the versions without
+         # dots on Windows, for detection by cygwin.
+         tcllib = tklib = tcl_includes = tk_includes = None
+-        for version in ['8.6', '86', '8.5', '85', '8.4', '84', '8.3', '83',
+-                        '8.2', '82', '8.1', '81', '8.0', '80']:
++        for version in ['85']:
+             tklib = self.compiler.find_library_file(lib_dirs,
+                                                         'tk' + version)
+             tcllib = self.compiler.find_library_file(lib_dirs,

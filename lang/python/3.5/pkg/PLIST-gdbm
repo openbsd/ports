@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-gdbm,v 1.1.1.1 2015/09/23 19:23:55 rpointel Exp $
+@option no-default-conflict
+@conflict python-gdbm->=3.5,<3.6
+@pkgpath lang/python3/3.5,-gdbm
+lib/python3.5/lib-dynload/_gdbm.so

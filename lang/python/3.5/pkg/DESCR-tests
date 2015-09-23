@@ -1,0 +1,14 @@
+Python is an interpreted, interactive, object-oriented programming
+language that combines remarkable power with very clear syntax. For
+an introduction to programming in Python you are referred to the
+Python Tutorial. The Python Library Reference documents built-in
+and standard types, constants, functions and modules. Finally, the
+Python Reference Manual describes the syntax and semantics of the
+core language in (perhaps too) much detail.
+
+Python's basic power can be extended with your own modules written
+in C or C++.  On most systems such modules may be dynamically loaded.
+Python is also adaptable as an extension language for existing
+applications. See the internal documentation for hints.
+
+This package contains the Python testsuite.
