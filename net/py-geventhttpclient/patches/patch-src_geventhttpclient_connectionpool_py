@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_geventhttpclient_connectionpool_py,v 1.1 2015/09/23 07:10:28 czarkoff Exp $
+--- src/geventhttpclient/connectionpool.py.orig	Sat Sep 19 11:20:54 2015
++++ src/geventhttpclient/connectionpool.py	Sat Sep 19 11:21:19 2015
+@@ -149,7 +149,7 @@ class ConnectionPool(object):
+ class SSLConnectionPool(ConnectionPool):
+ 
+     default_options = {
+-        'ssl_version': gevent.ssl.PROTOCOL_SSLv3,
++        'ssl_version': gevent.ssl.PROTOCOL_SSLv23,
+         'ca_certs': CA_CERTS,
+         'cert_reqs': gevent.ssl.CERT_REQUIRED
+     }
