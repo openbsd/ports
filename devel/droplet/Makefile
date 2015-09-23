@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/08/24 12:37:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/09/23 10:33:50 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -37,7 +37,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 post-patch:
-	cd ${WRKBUILD} && env AUTOCONF_VERSION=2.68 AUTOMAKE_VERSION=1.11 \
+	cd ${WRKBUILD} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		/bin/sh ./autogen.sh
 
 .include <bsd.port.mk>
