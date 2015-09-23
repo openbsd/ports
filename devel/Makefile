@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1390 2015/09/22 19:52:55 edd Exp $
+# $OpenBSD: Makefile,v 1.1391 2015/09/23 10:18:30 vgross Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -595,6 +595,7 @@
      SUBDIR += p5-Class-Std
      SUBDIR += p5-Class-Std-Fast
      SUBDIR += p5-Class-Std-Utils
+     SUBDIR += p5-Class-Tiny
      SUBDIR += p5-Class-Throwable
      SUBDIR += p5-Class-Trigger
      SUBDIR += p5-Class-Unload
