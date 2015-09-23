@@ -1,0 +1,11 @@
+$OpenBSD: patch-setup_py,v 1.1 2015/09/23 11:26:05 jca Exp $
+--- setup.py.orig	Wed Sep 23 13:19:05 2015
++++ setup.py	Wed Sep 23 13:19:45 2015
+@@ -11,6 +11,7 @@ setup(
+     version='0.24',
+     url='http://github.com/mitsuhiko/itsdangerous',
+     py_modules=['itsdangerous'],
++    test_suite='tests',
+     description='Various helpers to pass trusted data to '
+                 'untrusted environments and back.',
+     zip_safe=False,
