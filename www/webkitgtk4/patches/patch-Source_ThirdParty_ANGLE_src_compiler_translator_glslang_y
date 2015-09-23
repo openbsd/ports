@@ -1,12 +1,12 @@
-$OpenBSD: patch-Source_ThirdParty_ANGLE_src_compiler_translator_glslang_y,v 1.1.1.1 2014/09/30 08:25:27 ajacoutot Exp $
+$OpenBSD: patch-Source_ThirdParty_ANGLE_src_compiler_translator_glslang_y,v 1.2 2015/09/23 06:06:11 ajacoutot Exp $
 
 XXX rm when bison(1) is updated
 Source/ThirdParty/ANGLE/src/compiler/glslang.y:52.1-5: invalid directive: `%code'
 
---- Source/ThirdParty/ANGLE/src/compiler/translator/glslang.y.orig	Sun Sep 28 10:19:43 2014
-+++ Source/ThirdParty/ANGLE/src/compiler/translator/glslang.y	Sun Sep 28 10:20:25 2014
-@@ -48,12 +48,10 @@ WHICH GENERATES THE GLSL ES PARSER (glslang_tab.cpp AN
- %parse-param {TParseContext* context}
+--- Source/ThirdParty/ANGLE/src/compiler/translator/glslang.y.orig	Mon Sep 14 09:08:10 2015
++++ Source/ThirdParty/ANGLE/src/compiler/translator/glslang.y	Mon Sep 21 14:54:56 2015
+@@ -50,12 +50,10 @@ WHICH GENERATES THE GLSL ES PARSER (glslang_tab.cpp AN
+ %define api.pure full
  %locations
  
 -%code requires {

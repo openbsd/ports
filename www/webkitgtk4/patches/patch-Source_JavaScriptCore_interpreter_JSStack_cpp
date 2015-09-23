@@ -1,10 +1,10 @@
-$OpenBSD: patch-Source_JavaScriptCore_interpreter_JSStack_cpp,v 1.1.1.1 2014/09/30 08:25:27 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_interpreter_JSStack_cpp,v 1.2 2015/09/23 06:06:11 ajacoutot Exp $
 
 Fix alignment issue (from Fedora).
 
---- Source/JavaScriptCore/interpreter/JSStack.cpp.orig	Tue Aug 26 09:37:13 2014
-+++ Source/JavaScriptCore/interpreter/JSStack.cpp	Mon Sep 29 10:41:42 2014
-@@ -58,7 +58,8 @@ JSStack::JSStack(VM& vm)
+--- Source/JavaScriptCore/interpreter/JSStack.cpp.orig	Mon Sep 21 09:29:46 2015
++++ Source/JavaScriptCore/interpreter/JSStack.cpp	Mon Sep 21 14:54:56 2015
+@@ -55,7 +55,8 @@ JSStack::JSStack(VM& vm)
      size_t capacity = Options::maxPerThreadStackUsage();
      ASSERT(capacity && isPageAligned(capacity));
  
@@ -14,7 +14,7 @@ Fix alignment issue (from Fedora).
      setStackLimit(highAddress());
      m_commitTop = highAddress();
      
-@@ -92,7 +93,8 @@ bool JSStack::growSlowCase(Register* newTopOfStack)
+@@ -89,7 +90,8 @@ bool JSStack::growSlowCase(Register* newTopOfStack)
      // have it is still within our budget. If not, we'll fail to grow and
      // return false.
      ptrdiff_t delta = reinterpret_cast<char*>(m_commitTop) - reinterpret_cast<char*>(newTopOfStackWithReservedZone);
