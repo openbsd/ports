@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2015/09/08 07:12:11 benoit Exp $
+# $OpenBSD: Makefile,v 1.25 2015/09/23 09:51:48 benoit Exp $
 
 COMMENT =	next generation web framework for Perl
 
 MODULES =	cpan
-DISTNAME =	Mojolicious-6.18
+DISTNAME =	Mojolicious-6.21
 CATEGORIES =	www
 
 MAINTAINER =	Mark Patruck <mark@wrapped.cx>
@@ -24,7 +24,6 @@ MAKE_ENV += TEST_HYPNOTOAD=Yes
 MAKE_ENV += TEST_MORBO=Yes
 MAKE_ENV += TEST_POD=Yes
 MAKE_ENV += TEST_PREFORK=Yes
-MAKE_ENV += TEST_TLS=Yes
 
 # see pkg/README for certificate handling
 post-install:
