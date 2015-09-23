@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/19 09:38:41 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/23 20:04:10 jca Exp $
 
 COMMENT =	CEF logs emitter module
 
@@ -7,19 +7,20 @@ DISTNAME =	cef-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
 CATEGORIES =	sysutils
+
 HOMEPAGE =	http://pypi.python.org/pypi/cef
 
 # MPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODPY_PI =	Yes
-
 MODULES =	lang/python
 
+MODPY_PI =	Yes
 MODPY_SETUPTOOLS =	Yes
-NO_TEST =	Yes
 MODPY_DISTUTILS_INSTALL=	install --prefix=${LOCALBASE} \
 				--root=${DESTDIR}
+
+NO_TEST =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-cef
