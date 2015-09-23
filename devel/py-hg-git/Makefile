@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2015/03/18 18:04:55 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.18 2015/09/23 07:18:21 czarkoff Exp $
 
 COMMENT =		mercurial extension to work with git repositories
 
-MODPY_EGG_VERSION =	0.8.0
+MODPY_EGG_VERSION =	0.8.2
 DISTNAME =		py-hg-git-${MODPY_EGG_VERSION}
 
 CATEGORIES =		devel
@@ -20,9 +20,9 @@ DISTFILES =		${DISTNAME}{${MODPY_EGG_VERSION}}${EXTRACT_SUFX}
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-WRKDIST =		${WRKDIR}/durin42-hg-git-cf3dafce0611
+WRKDIST =		${WRKDIR}/durin42-hg-git-e183fdc198f0
 
-RUN_DEPENDS =		devel/py-dulwich>=0.9.5 \
+RUN_DEPENDS =		devel/py-dulwich>=0.10.1 \
 			devel/mercurial
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			archivers/bzip2 \
@@ -34,7 +34,7 @@ pre-test:
 	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 do-test:
-	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} run-tests.py \
-	    --with-hg=${LOCALBASE}/bin/hg
+	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} PYTHONPATH="${WRKSRC}" \
+	    ${MODPY_BIN} run-tests.py --with-hg=${LOCALBASE}/bin/hg
 
 .include <bsd.port.mk>
