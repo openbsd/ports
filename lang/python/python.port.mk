@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.80 2015/04/02 13:57:10 jasper Exp $
+# $OpenBSD: python.port.mk,v 1.81 2015/09/23 19:26:01 rpointel Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -24,7 +24,8 @@ MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_2}
 # verify if MODPY_VERSION forced is correct
 .else
 .  if ${MODPY_VERSION} != "2.7" && \
-      ${MODPY_VERSION} != "3.4"
+      ${MODPY_VERSION} != "3.4" && \
+      ${MODPY_VERSION} != "3.5"
 ERRORS += "Fatal: unknown or unsupported MODPY_VERSION: ${MODPY_VERSION}"
 .  endif
 .endif
