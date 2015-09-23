@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/02 14:21:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/23 07:07:54 czarkoff Exp $
 
 COMMENT =	network library for easy and scalable concurrency
 
 MODPY_EGG_VERSION =	0.13.7
 DISTNAME =	gevent-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
+MAINTAINER =	Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 CATEGORIES =	devel
 HOMEPAGE =	http://www.gevent.org/
