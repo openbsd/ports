@@ -1,0 +1,14 @@
+$OpenBSD: patch-libavcodec_psymodel_h,v 1.1 2015/09/23 09:16:45 ajacoutot Exp $
+
+AAC encoder: tweak rate-distortion logic
+
+--- libavcodec/psymodel.h.orig	Wed Sep 23 03:55:36 2015
++++ libavcodec/psymodel.h	Wed Sep 23 03:55:45 2015
+@@ -88,6 +88,7 @@ typedef struct FFPsyContext {
+     struct {
+         int size;                     ///< size of the bitresevoir in bits
+         int bits;                     ///< number of bits used in the bitresevoir
++        int alloc;                    ///< number of bits allocated by the psy, or -1 if no allocation was done
+     } bitres;
+ 
+     void* model_priv_data;            ///< psychoacoustic model implementation private data

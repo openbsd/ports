@@ -1,14 +1,22 @@
-$OpenBSD: patch-libavcodec_aacenc_h,v 1.1 2015/09/12 09:44:54 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_h,v 1.2 2015/09/23 09:16:45 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
---- libavcodec/aacenc.h.orig	Sat Sep 12 02:09:39 2015
-+++ libavcodec/aacenc.h	Sat Sep 12 02:09:54 2015
-@@ -98,6 +98,7 @@ typedef struct AACEncContext {
+AAC encoder: tweak rate-distortion logic
+
+--- libavcodec/aacenc.h.orig	Mon Sep  7 21:58:01 2015
++++ libavcodec/aacenc.h	Wed Sep 23 03:54:58 2015
+@@ -96,9 +96,12 @@ typedef struct AACEncContext {
+     FFPsyContext psy;
+     struct FFPsyPreprocessContext* psypp;
      AACCoefficientsEncoder *coder;
-     int cur_channel;
+-    int cur_channel;
++    int cur_channel;                             ///< current channel for coder context
      int last_frame;
 +    int random_state;
      float lambda;
++    enum RawDataBlockType cur_type;              ///< channel group type cur_channel belongs to
++
      AudioFrameQueue afq;
      DECLARE_ALIGNED(16, int,   qcoefs)[96];      ///< quantized coefficients
+     DECLARE_ALIGNED(32, float, scoefs)[1024];    ///< scaled coefficients
