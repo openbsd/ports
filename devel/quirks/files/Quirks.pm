@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.304 2015/09/22 18:40:32 pascal Exp $
+# $OpenBSD: Quirks.pm,v 1.305 2015/09/23 10:44:36 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -642,6 +642,7 @@ my $obsolete_reason = {
 	'hs-ListLike' => 5,
 	'hs-atom' => 5,
 	'gstreamermm' => 3,
+	'opencm' => 3,
 };
 
 # ->is_base_system($handle, $state):
