@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/22 18:47:52 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/23 09:41:18 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -31,11 +31,12 @@ WANTLIB += giomm-2.4 mlt mlt++ stdc++
 
 MASTER_SITES=		http://download.tuxfamily.org/synfig/releases/${V}/
 
-MODULES =		devel/gettext \
-			gcc4
+MODULES =		devel/gettext
 
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	c++
+# c++11
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
 
 BUILD_DEPENDS =		devel/etl>=0.04.19
 LIB_DEPENDS =		archivers/xz \

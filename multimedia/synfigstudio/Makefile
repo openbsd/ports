@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/21 16:59:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/23 09:41:18 ajacoutot Exp $
 
 COMMENT =		2D animation software studio
 BROKEN-alpha =		[keyframe_lock_past_on_icon.png] Bus error (core dumped)
@@ -33,11 +33,12 @@ WANTLIB += wmflite-0.2 xcb xcb-render xcb-shm xml++-2.6 xml2 z
 MASTER_SITES=		http://download.tuxfamily.org/synfig/releases/${V}/
 
 MODULES =		devel/gettext \
-			textproc/intltool \
-			gcc4
+			textproc/intltool
 
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
+# c++11
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
 
 BUILD_DEPENDS =		devel/etl>=0.04.19
 RUN_DEPENDS =		devel/desktop-file-utils \

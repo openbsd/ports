@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/09/21 16:57:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/23 09:41:18 ajacoutot Exp $
 
 COMMENT =	free multi-dimensional Tetris-like game
 DISTNAME =	galois-0.4
@@ -19,11 +19,12 @@ WANTLIB += pangomm-1.4 pthread sigc-2.0 xml++-2.6 xml2 z
 
 MASTER_SITES =	${MASTER_SITE_SAVANNAH:=galois/source/}
 
-MODULES =	devel/gettext \
-		gcc4
+MODULES =	devel/gettext
 
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	c++
+# c++11
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
 
 LIB_DEPENDS =	textproc/libxml++>=2.40.0 \
 		x11/gtk2mm

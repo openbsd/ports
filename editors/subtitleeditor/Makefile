@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/09/22 08:30:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2015/09/23 09:41:18 ajacoutot Exp $
 
 SHARED_ONLY=	   	Yes
 
@@ -50,6 +50,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 MODULES=		devel/gettext \
 			textproc/intltool
 
+# c++11
 MODULES +=		gcc4
 MODGCC4_ARCHS=		*
 MODGCC4_LANGS=		c++
