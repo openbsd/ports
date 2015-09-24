@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/23 09:41:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/24 10:38:57 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		2D animation software
-REVISION =		0
+REVISION =		1
 
 V=			1.0.1
 DISTNAME =		synfig-$V
@@ -27,7 +27,7 @@ WANTLIB += m mng pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs sigc-2.0 tiff webp
 WANTLIB += wmf wmflite xcb xcb-render xcb-shm xml++-2.6 xml2 z
 WANTLIB += boost_chrono-mt boost_filesystem boost_system gio-2.0
-WANTLIB += giomm-2.4 mlt mlt++ stdc++
+WANTLIB += giomm-2.4 mlt mlt++
 
 MASTER_SITES=		http://download.tuxfamily.org/synfig/releases/${V}/
 
