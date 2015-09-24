@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/09/24 10:28:08 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/24 10:31:14 jca Exp $
 
 COMMENT=	create MusicBrainz DiscIDs from audio CDs
 
@@ -21,8 +21,5 @@ SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	ac_cv_header_musicbrainz5_mb5_c_h=no
-
-# Some tests need an actual audio CD
-TEST_IS_INTERACTIVE=	Yes
 
 .include <bsd.port.mk>
