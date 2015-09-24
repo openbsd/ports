@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/03/29 11:53:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/09/24 10:32:23 ajacoutot Exp $
 include/gdkmm-3.0/
 include/gdkmm-3.0/gdkmm/
 include/gdkmm-3.0/gdkmm.h
@@ -12,6 +12,7 @@ include/gdkmm-3.0/gdkmm/displaymanager.h
 include/gdkmm-3.0/gdkmm/dragcontext.h
 include/gdkmm-3.0/gdkmm/event.h
 include/gdkmm-3.0/gdkmm/general.h
+include/gdkmm-3.0/gdkmm/glcontext.h
 include/gdkmm-3.0/gdkmm/pixbuf.h
 include/gdkmm-3.0/gdkmm/pixbufanimation.h
 include/gdkmm-3.0/gdkmm/pixbufanimationiter.h
@@ -27,6 +28,7 @@ include/gdkmm-3.0/gdkmm/private/display_p.h
 include/gdkmm-3.0/gdkmm/private/displaymanager_p.h
 include/gdkmm-3.0/gdkmm/private/dragcontext_p.h
 include/gdkmm-3.0/gdkmm/private/event_p.h
+include/gdkmm-3.0/gdkmm/private/glcontext_p.h
 include/gdkmm-3.0/gdkmm/private/pixbuf_p.h
 include/gdkmm-3.0/gdkmm/private/pixbufanimation_p.h
 include/gdkmm-3.0/gdkmm/private/pixbufanimationiter_p.h
@@ -143,6 +145,7 @@ include/gtkmm-3.0/gtkmm/gesturerotate.h
 include/gtkmm-3.0/gtkmm/gesturesingle.h
 include/gtkmm-3.0/gtkmm/gestureswipe.h
 include/gtkmm-3.0/gtkmm/gesturezoom.h
+include/gtkmm-3.0/gtkmm/glarea.h
 include/gtkmm-3.0/gtkmm/grid.h
 include/gtkmm-3.0/gtkmm/handlebox.h
 include/gtkmm-3.0/gtkmm/headerbar.h
@@ -180,6 +183,7 @@ include/gtkmm-3.0/gtkmm/menushell.h
 include/gtkmm-3.0/gtkmm/menutoolbutton.h
 include/gtkmm-3.0/gtkmm/messagedialog.h
 include/gtkmm-3.0/gtkmm/misc.h
+include/gtkmm-3.0/gtkmm/modelbutton.h
 include/gtkmm-3.0/gtkmm/notebook.h
 include/gtkmm-3.0/gtkmm/numerableicon.h
 include/gtkmm-3.0/gtkmm/object.h
@@ -193,6 +197,7 @@ include/gtkmm-3.0/gtkmm/papersize.h
 include/gtkmm-3.0/gtkmm/placessidebar.h
 include/gtkmm-3.0/gtkmm/plug.h
 include/gtkmm-3.0/gtkmm/popover.h
+include/gtkmm-3.0/gtkmm/popovermenu.h
 include/gtkmm-3.0/gtkmm/printcontext.h
 include/gtkmm-3.0/gtkmm/printer.h
 include/gtkmm-3.0/gtkmm/printjob.h
@@ -288,6 +293,7 @@ include/gtkmm-3.0/gtkmm/private/gesturerotate_p.h
 include/gtkmm-3.0/gtkmm/private/gesturesingle_p.h
 include/gtkmm-3.0/gtkmm/private/gestureswipe_p.h
 include/gtkmm-3.0/gtkmm/private/gesturezoom_p.h
+include/gtkmm-3.0/gtkmm/private/glarea_p.h
 include/gtkmm-3.0/gtkmm/private/grid_p.h
 include/gtkmm-3.0/gtkmm/private/handlebox_p.h
 include/gtkmm-3.0/gtkmm/private/headerbar_p.h
@@ -324,6 +330,7 @@ include/gtkmm-3.0/gtkmm/private/menushell_p.h
 include/gtkmm-3.0/gtkmm/private/menutoolbutton_p.h
 include/gtkmm-3.0/gtkmm/private/messagedialog_p.h
 include/gtkmm-3.0/gtkmm/private/misc_p.h
+include/gtkmm-3.0/gtkmm/private/modelbutton_p.h
 include/gtkmm-3.0/gtkmm/private/notebook_p.h
 include/gtkmm-3.0/gtkmm/private/numerableicon_p.h
 include/gtkmm-3.0/gtkmm/private/object_p.h
@@ -337,6 +344,7 @@ include/gtkmm-3.0/gtkmm/private/papersize_p.h
 include/gtkmm-3.0/gtkmm/private/placessidebar_p.h
 include/gtkmm-3.0/gtkmm/private/plug_p.h
 include/gtkmm-3.0/gtkmm/private/popover_p.h
+include/gtkmm-3.0/gtkmm/private/popovermenu_p.h
 include/gtkmm-3.0/gtkmm/private/printcontext_p.h
 include/gtkmm-3.0/gtkmm/private/printer_p.h
 include/gtkmm-3.0/gtkmm/private/printjob_p.h
