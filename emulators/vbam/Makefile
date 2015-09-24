@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/18 10:06:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.16 2015/09/24 10:38:34 ajacoutot Exp $
+
+# XXX check if still needed at next update
+CXXFLAGS +=		-std=c++11 -fpermissive
 
 COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
@@ -6,7 +9,7 @@ BROKEN-hppa =		ICE or OOM on src/filters/hq/c/hq_base.h:421
 
 DISTNAME =		vbam-1.8.0.1054-src
 PKGNAME =		${DISTNAME:S/-src//}
-REVISION =		8
+REVISION =		9
 
 CATEGORIES =		emulators
 
@@ -22,12 +25,17 @@ WANTLIB += gdk_pixbuf-2.0 gdkglext-x11-1.0 gdkglextmm-x11-1.2
 WANTLIB += gdkmm-2.4 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
 WANTLIB += gobject-2.0 gtk-x11-2.0 gtkglext-x11-1.0 gtkglextmm-x11-1.2
 WANTLIB += gtkmm-2.4 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
-WANTLIB += pangox-1.0 png pthread sigc-2.0 stdc++ z
+WANTLIB += pangox-1.0 png pthread sigc-2.0 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vbam/}
 
 MODULES =		devel/cmake \
 			devel/gettext
+
+# c++11
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
