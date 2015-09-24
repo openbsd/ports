@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2015/09/11 08:07:44 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2015/09/24 08:51:49 sthen Exp $
 @bin bin/ecpp
 @bin bin/egcc
 @bin bin/egcc-ar
@@ -238,7 +238,6 @@ lib/gcc/${CONFIG}/${V}/plugin/include/varasm.h
 lib/gcc/${CONFIG}/${V}/plugin/include/vec.h
 lib/gcc/${CONFIG}/${V}/plugin/include/version.h
 lib/libatomic.a
-lib/libatomic.la
 lib/libssp.a
 lib/libssp.la
 @lib lib/libssp.so.${LIBssp_VERSION}

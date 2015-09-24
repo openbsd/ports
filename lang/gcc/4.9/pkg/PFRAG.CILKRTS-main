@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.CILKRTS-main,v 1.1.1.1 2014/06/26 16:30:22 pascal Exp $
+@comment $OpenBSD: PFRAG.CILKRTS-main,v 1.2 2015/09/24 08:51:49 sthen Exp $
 lib/gcc/${CONFIG}/${V}/include/cilk/
 lib/gcc/${CONFIG}/${V}/include/cilk/cilk.h
 lib/gcc/${CONFIG}/${V}/include/cilk/cilk_api.h
@@ -23,5 +23,4 @@ lib/gcc/${CONFIG}/${V}/include/cilk/reducer_opxor.h
 lib/gcc/${CONFIG}/${V}/include/cilk/reducer_ostream.h
 lib/gcc/${CONFIG}/${V}/include/cilk/reducer_string.h
 lib/libcilkrts.a
-lib/libcilkrts.la
 lib/libcilkrts.spec

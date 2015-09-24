@@ -1,9 +1,17 @@
-@comment $OpenBSD: PLIST-libs,v 1.2 2015/02/03 20:32:12 pascal Exp $
+@comment $OpenBSD: PLIST-libs,v 1.3 2015/09/24 08:51:49 sthen Exp $
 @option no-default-conflict
 @conflict gcc-libs->=4.9,<4.10
+@conflict gcc->=4.9,<4.9.3p2
+@conflict g++->=4.9,<4.9.3p2
+@conflict g95->=4.9,<4.9.3p2
+@conflict gobjc->=4.9,<4.9.3p2
+lib/libatomic.la
 @lib lib/libatomic.so.${LIBatomic_VERSION}
+lib/libestdc++.la
 @lib lib/libestdc++.so.${LIBestdc++_VERSION}
+lib/libgfortran.la
 @lib lib/libgfortran.so.${LIBgfortran_VERSION}
+lib/libobjc.la
 @lib lib/libobjc.so.${LIBobjc_VERSION}
 %%CILKRTS%%
 %%ITM%%
