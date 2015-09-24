@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.33 2015/03/27 16:00:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.34 2015/09/24 10:28:18 ajacoutot Exp $
 @conflict gtk+3-docs-*
 @pkgpath x11/gtk+3,-docs
 @unexec-delete rm -f %D/lib/gtk-3.0/3.0.0/immodules.cache
+@bin bin/gtk-builder-tool
 @bin bin/gtk-encode-symbolic-svg
 @bin bin/gtk-launch
 @bin bin/gtk-query-immodules-3.0
@@ -427,6 +428,7 @@ lib/pkgconfig/gtk+-3.0.pc
 lib/pkgconfig/gtk+-unix-print-3.0.pc
 lib/pkgconfig/gtk+-x11-3.0.pc
 @man man/man1/broadwayd.1
+@man man/man1/gtk-builder-tool.1
 @man man/man1/gtk-encode-symbolic-svg.1
 @man man/man1/gtk-launch.1
 @man man/man1/gtk-query-immodules-3.0.1
@@ -478,12 +480,15 @@ share/gtk-doc/html/gdk3/GdkFrameClock.html
 share/gtk-doc/html/gdk3/GdkGLContext.html
 share/gtk-doc/html/gdk3/GdkScreen.html
 share/gtk-doc/html/gdk3/X_cursor.png
+share/gtk-doc/html/gdk3/alias_cursor.png
+share/gtk-doc/html/gdk3/all_scroll_cursor.png
 share/gtk-doc/html/gdk3/annotation-glossary.html
 share/gtk-doc/html/gdk3/api-index-3-0.html
 share/gtk-doc/html/gdk3/api-index-3-10.html
 share/gtk-doc/html/gdk3/api-index-3-12.html
 share/gtk-doc/html/gdk3/api-index-3-14.html
 share/gtk-doc/html/gdk3/api-index-3-16.html
+share/gtk-doc/html/gdk3/api-index-3-18.html
 share/gtk-doc/html/gdk3/api-index-3-2.html
 share/gtk-doc/html/gdk3/api-index-3-4.html
 share/gtk-doc/html/gdk3/api-index-3-6.html
@@ -500,13 +505,18 @@ share/gtk-doc/html/gdk3/bottom_right_corner.png
 share/gtk-doc/html/gdk3/bottom_side.png
 share/gtk-doc/html/gdk3/bottom_tee.png
 share/gtk-doc/html/gdk3/box_spiral.png
+share/gtk-doc/html/gdk3/cell_cursor.png
 share/gtk-doc/html/gdk3/center_ptr.png
 share/gtk-doc/html/gdk3/circle.png
 share/gtk-doc/html/gdk3/clock.png
 share/gtk-doc/html/gdk3/coffee_mug.png
+share/gtk-doc/html/gdk3/col_resize_cursor.png
+share/gtk-doc/html/gdk3/copy_cursor.png
 share/gtk-doc/html/gdk3/cross.png
 share/gtk-doc/html/gdk3/cross_reverse.png
 share/gtk-doc/html/gdk3/crosshair.png
+share/gtk-doc/html/gdk3/crosshair_cursor.png
+share/gtk-doc/html/gdk3/default_cursor.png
 share/gtk-doc/html/gdk3/diamond_cross.png
 share/gtk-doc/html/gdk3/dot.png
 share/gtk-doc/html/gdk3/dotbox.png
@@ -514,6 +524,8 @@ share/gtk-doc/html/gdk3/double_arrow.png
 share/gtk-doc/html/gdk3/draft_large.png
 share/gtk-doc/html/gdk3/draft_small.png
 share/gtk-doc/html/gdk3/draped_box.png
+share/gtk-doc/html/gdk3/e_resize_cursor.png
+share/gtk-doc/html/gdk3/ew_resize_cursor.png
 share/gtk-doc/html/gdk3/exchange.png
 share/gtk-doc/html/gdk3/fleur.png
 share/gtk-doc/html/gdk3/gdk3-Application-launching.html
@@ -540,10 +552,14 @@ share/gtk-doc/html/gdk3/gdk3-Windows.html
 share/gtk-doc/html/gdk3/gdk3-X-Window-System-Interaction.html
 share/gtk-doc/html/gdk3/gdk3.devhelp2
 share/gtk-doc/html/gdk3/gobbler.png
+share/gtk-doc/html/gdk3/grab_cursor.png
+share/gtk-doc/html/gdk3/grabbing_cursor.png
 share/gtk-doc/html/gdk3/gumby.png
 share/gtk-doc/html/gdk3/hand1.png
 share/gtk-doc/html/gdk3/hand2.png
+share/gtk-doc/html/gdk3/hand_cursor.png
 share/gtk-doc/html/gdk3/heart.png
+share/gtk-doc/html/gdk3/help_cursor.png
 share/gtk-doc/html/gdk3/home.png
 share/gtk-doc/html/gdk3/icon.png
 share/gtk-doc/html/gdk3/index.html
@@ -560,9 +576,20 @@ share/gtk-doc/html/gdk3/lr_angle.png
 share/gtk-doc/html/gdk3/man.png
 share/gtk-doc/html/gdk3/middlebutton.png
 share/gtk-doc/html/gdk3/mouse.png
+share/gtk-doc/html/gdk3/move_cursor.png
+share/gtk-doc/html/gdk3/n_resize_cursor.png
+share/gtk-doc/html/gdk3/ne_resize_cursor.png
+share/gtk-doc/html/gdk3/nesw_resize_cursor.png
+share/gtk-doc/html/gdk3/no_drop_cursor.png
+share/gtk-doc/html/gdk3/not_allowed_cursor.png
+share/gtk-doc/html/gdk3/ns_resize_cursor.png
+share/gtk-doc/html/gdk3/nw_resize_cursor.png
+share/gtk-doc/html/gdk3/nwse_resize_cursor.png
 share/gtk-doc/html/gdk3/pencil.png
 share/gtk-doc/html/gdk3/pirate.png
 share/gtk-doc/html/gdk3/plus.png
+share/gtk-doc/html/gdk3/pointer_cursor.png
+share/gtk-doc/html/gdk3/progress_cursor.png
 share/gtk-doc/html/gdk3/question_arrow.png
 share/gtk-doc/html/gdk3/reference.html
 share/gtk-doc/html/gdk3/right-insensitive.png
@@ -573,7 +600,9 @@ share/gtk-doc/html/gdk3/right_tee.png
 share/gtk-doc/html/gdk3/rightbutton.png
 share/gtk-doc/html/gdk3/rn02.html
 share/gtk-doc/html/gdk3/rotated-text.png
+share/gtk-doc/html/gdk3/row_resize_cursor.png
 share/gtk-doc/html/gdk3/rtl_logo.png
+share/gtk-doc/html/gdk3/s_resize_cursor.png
 share/gtk-doc/html/gdk3/sailboat.png
 share/gtk-doc/html/gdk3/sb_down_arrow.png
 share/gtk-doc/html/gdk3/sb_h_double_arrow.png
@@ -581,14 +610,17 @@ share/gtk-doc/html/gdk3/sb_left_arrow.png
 share/gtk-doc/html/gdk3/sb_right_arrow.png
 share/gtk-doc/html/gdk3/sb_up_arrow.png
 share/gtk-doc/html/gdk3/sb_v_double_arrow.png
+share/gtk-doc/html/gdk3/se_resize_cursor.png
 share/gtk-doc/html/gdk3/shuttle.png
 share/gtk-doc/html/gdk3/sizing.png
 share/gtk-doc/html/gdk3/spider.png
 share/gtk-doc/html/gdk3/spraycan.png
 share/gtk-doc/html/gdk3/star.png
 share/gtk-doc/html/gdk3/style.css
+share/gtk-doc/html/gdk3/sw_resize_cursor.png
 share/gtk-doc/html/gdk3/target.png
 share/gtk-doc/html/gdk3/tcross.png
+share/gtk-doc/html/gdk3/text_cursor.png
 share/gtk-doc/html/gdk3/top_left_arrow.png
 share/gtk-doc/html/gdk3/top_left_corner.png
 share/gtk-doc/html/gdk3/top_right_corner.png
@@ -600,8 +632,13 @@ share/gtk-doc/html/gdk3/umbrella.png
 share/gtk-doc/html/gdk3/up-insensitive.png
 share/gtk-doc/html/gdk3/up.png
 share/gtk-doc/html/gdk3/ur_angle.png
+share/gtk-doc/html/gdk3/vertical_text_cursor.png
+share/gtk-doc/html/gdk3/w_resize_cursor.png
+share/gtk-doc/html/gdk3/wait_cursor.png
 share/gtk-doc/html/gdk3/watch.png
 share/gtk-doc/html/gdk3/xterm.png
+share/gtk-doc/html/gdk3/zoom_in_cursor.png
+share/gtk-doc/html/gdk3/zoom_out_cursor.png
 share/gtk-doc/html/gtk3/
 share/gtk-doc/html/gtk3/AbstractObjects.html
 share/gtk-doc/html/gtk3/Application.html
@@ -850,6 +887,7 @@ share/gtk-doc/html/gtk3/api-index-3-10.html
 share/gtk-doc/html/gtk3/api-index-3-12.html
 share/gtk-doc/html/gtk3/api-index-3-14.html
 share/gtk-doc/html/gtk3/api-index-3-16.html
+share/gtk-doc/html/gtk3/api-index-3-18.html
 share/gtk-doc/html/gtk3/api-index-3-2.html
 share/gtk-doc/html/gtk3/api-index-3-4.html
 share/gtk-doc/html/gtk3/api-index-3-6.html
@@ -933,6 +971,7 @@ share/gtk-doc/html/gtk3/gradient3.png
 share/gtk-doc/html/gtk3/gradient4.png
 share/gtk-doc/html/gtk3/grid-packing.png
 share/gtk-doc/html/gtk3/gtk-broadway.html
+share/gtk-doc/html/gtk3/gtk-builder-tool.html
 share/gtk-doc/html/gtk3/gtk-building.html
 share/gtk-doc/html/gtk3/gtk-compiling.html
 share/gtk-doc/html/gtk3/gtk-encode-symbolic-svg.html
