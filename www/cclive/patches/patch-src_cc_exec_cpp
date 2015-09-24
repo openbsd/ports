@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cc_exec_cpp,v 1.1 2015/09/24 10:36:54 ajacoutot Exp $
+
+cc/exec.cpp:63:26: error: 'fork' was not declared in this scope
+
+--- src/cc/exec.cpp.orig	Wed Sep 23 13:40:12 2015
++++ src/cc/exec.cpp	Wed Sep 23 13:40:30 2015
+@@ -26,6 +26,7 @@
+ #include <cerrno>
+ 
+ #include <sys/wait.h>
++#include <unistd.h>
+ 
+ #include <boost/program_options/variables_map.hpp>
+ #include <boost/foreach.hpp>

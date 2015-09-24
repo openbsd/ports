@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2015/04/30 21:22:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2015/09/24 10:36:54 ajacoutot Exp $
+
+# XXX check if still needed at next update
+CXXFLAGS +=		-std=c++11
 
 COMMENT =		media download tool
 
 DISTNAME =		cclive-0.9.3
 EXTRACT_SUFX =		.tar.xz
+REVISION = 		0
 
 CATEGORIES =		www
 
@@ -21,6 +25,11 @@ WANTLIB += sigc-2.0 ssl stdc++ z
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cclive/}
 
 MODULES =		devel/gettext
+
+# c++11
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
 
 USE_GROFF =		Yes
 
