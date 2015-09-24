@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.76 2015/06/22 08:09:28 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.77 2015/09/24 08:28:48 dcoppa Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.19.10
+REVISION =		0
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -14,15 +15,15 @@ WANTLIB =		FLAC ao audiofile avcodec avformat \
 			avutil bz2 c cdio cdio_cdda \
 			cdio_paranoia curl expat faad glib-2.0 \
 			gthread-2.0 icudata icui18n icuuc id3tag \
-			m mikmod mp3lame mpcdec mpdclient ogg \
-			opus pthread samplerate shout sndfile \
-			sndio speex sqlite3 theora vorbis \
-			vorbisenc vorbisfile z
+			intl m mikmod mp3lame mpcdec mpdclient \
+			ogg opus pthread samplerate shout \
+			sndfile sndio speex sqlite3 theora \
+			vorbis vorbisenc vorbisfile yajl z
 
 MASTER_SITES =		http://www.musicpd.org/download/mpd/stable/
 
-MODULES =		devel/gettext gcc4
-MODGCC4_ARCHS =		i386 amd64 powerpc sparc64 alpha hppa
+MODULES =		gcc4
+MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c++
 
 BUILD_DEPENDS =		devel/boost
@@ -41,6 +42,7 @@ LIB_DEPENDS =		audio/faad>=2.6.1p0 \
 			audio/opus \
 			devel/glib2 \
 			devel/libaudiofile \
+			devel/libyajl \
 			graphics/ffmpeg \
 			net/curl \
 			net/libshout \
@@ -69,7 +71,6 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--disable-sidplay \
 			--disable-shine-encoder \
 			--disable-smbclient \
-			--disable-soundcloud \
 			--disable-soxr \
 			--disable-systemd-daemon \
 			--disable-twolame-encoder \
@@ -91,6 +92,7 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--enable-pipe-output \
 			--enable-shout \
 			--enable-sndfile \
+			--enable-soundcloud \
 			--enable-sqlite \
 			--enable-vorbis \
 			--enable-vorbis-encoder \
