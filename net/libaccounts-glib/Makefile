@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/24 04:36:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/09/24 12:32:52 ajacoutot Exp $
 
 COMMENT=		accounts management library for GLib applications
 
@@ -20,7 +20,8 @@ WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 lzma m pcre
 WANTLIB += pthread sqlite3 xml2 z
 
 # from https://gitlab.com/accounts-sso/libaccounts-glib/tags
-MASTER_SITES=		https://distfiles.bsdfrog.org/
+#MASTER_SITES=		https://distfiles.bsdfrog.org/
+MASTER_SITES=		http://ftp.fr.openbsd.org/pub/
 WRKDIST=		${WRKDIR}/${DISTNAME}-17201ad512e86d248ac158046ac322e7164adc87
 
 MODULES=		devel/gettext \
