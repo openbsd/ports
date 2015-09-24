@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/18 11:29:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2015/09/24 10:43:39 jca Exp $
 
 COMMENT = 	microframework based on Werkzeug and Jinja 2
 
 MODPY_EGG_VERSION =	0.10.1
+REVISION =	0
 DISTNAME =	Flask-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
 
@@ -13,19 +14,21 @@ HOMEPAGE =	http://flask.pocoo.org/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODPY_PI =	Yes
-
 MODULES =	lang/python
 
+MODPY_PI =	Yes
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =	devel/py-blinker \
-		www/py-itsdangerous \
-		www/py-jinja2>=2.4 \
-		www/py-werkzeug>=0.7
+FLAVORS =	python3
+FLAVOR ?=
+
+RUN_DEPENDS =	devel/py-blinker${MODPY_FLAVOR} \
+		www/py-itsdangerous${MODPY_FLAVOR} \
+		www/py-jinja2${MODPY_FLAVOR}>=2.4 \
+		www/py-werkzeug${MODPY_FLAVOR}>=0.7
 BUILD_DEPENDS =	textproc/py-sphinx \
-		www/py-itsdangerous \
-		www/py-werkzeug>=0.7
+		www/py-itsdangerous${MODPY_FLAVOR} \
+		www/py-werkzeug${MODPY_FLAVOR}>=0.7
 TEST_DEPENDS = ${RUN_DEPENDS}
 
 MAKE_ENV =	PYTHONPATH="${WRKSRC}"
