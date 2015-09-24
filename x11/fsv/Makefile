@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2015/07/02 12:14:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2015/09/24 10:37:10 ajacoutot Exp $
+
+# XXX check if still needed at next update
+#CXXFLAGS +=		-std=c++11
+MAKE_FLAGS +=		CXXFLAGS="${CXXFLAGS} -std=c++11"
 
 COMMENT=		3D filesystem visualizer
 
@@ -6,6 +10,7 @@ V=			1.1.0
 DISTNAME=		fsv2-$V
 PKGNAME=		fsv-$V
 CATEGORIES=		x11
+REVISION=		0
 
 SHARED_LIBS +=	fsvui                     0.0 # 0.0
 
@@ -29,6 +34,11 @@ MASTER_SITES=		http://fedorchenko.net/src/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
+
+# c++11
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
 
 LIB_DEPENDS=		graphics/ftgl \
 			x11/gtkglarea \
