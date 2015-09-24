@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.6 2015/09/24 10:35:54 ajacoutot Exp $
+
+From e5d3ac014d7acc73c5f508a937c5656ffa8f08ad Mon Sep 17 00:00:00 2001
+From: Ting-Wei Lan <lantw@src.gnome.org>
+Date: Sat, 1 Aug 2015 13:50:04 +0800
+Subject: build: Replace -std=c++98 with -std=c++11
+
+From 258ea1153bd5e7f54351fad025d8a994b21dd9be Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Beno=C3=AEt=20Dejean?= <bdejean@gmail.com>
+Date: Sun, 2 Aug 2015 06:38:47 +0200
+Subject: We don't need anymore the CFLAGS gnu89. Compilers are modern enough.
+
+--- configure.orig	Wed Sep 23 13:55:04 2015
++++ configure	Wed Sep 23 13:55:25 2015
+@@ -16272,9 +16272,8 @@ $as_echo "yes" >&6; }
+     -Wchar-subscripts -Wmissing-declarations -Wmissing-prototypes \
+     -Wnested-externs -Wpointer-arith \
+     -Wcast-align -Wsign-compare \
+-    -std=gnu89 \
+     $CFLAGS"
+-    CXXFLAGS="-Wall -std=c++98 $CXXFLAGS"
++    CXXFLAGS="-Wall -std=c++11 $CXXFLAGS"
+ else
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
