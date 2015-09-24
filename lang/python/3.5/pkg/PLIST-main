@@ -1,16 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2015/09/23 19:23:56 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2015/09/24 19:16:42 sthen Exp $
 @option no-default-conflict
 @conflict python->=3.5,<3.6
 @pkgpath lang/python3/3.5,-main
 @comment bin/pip3
-@comment lib/libpython3.4m.so
-@comment lib/python3.4/distutils/command/wininst-10.0-${MACHINE_ARCH}.exe
-@comment lib/python3.4/distutils/command/wininst-9.0-${MACHINE_ARCH}.exe
-@comment lib/python3.4/distutils/command/wininst-10.0.exe
-@comment lib/python3.4/distutils/command/wininst-6.0.exe
-@comment lib/python3.4/distutils/command/wininst-7.1.exe
-@comment lib/python3.4/distutils/command/wininst-8.0.exe
-@comment lib/python3.4/distutils/command/wininst-9.0.exe
 @comment bin/2to3
 bin/2to3-3.5
 @comment bin/pydoc3
@@ -122,7 +114,7 @@ include/python3.5m/ucnhash.h
 include/python3.5m/unicodeobject.h
 include/python3.5m/warnings.h
 include/python3.5m/weakrefobject.h
-lib/libpython3.5m.so
+@comment lib/libpython3.5m.so
 @lib lib/libpython3.5m.so.${LIBpython3.5m_VERSION}
 @comment lib/libpython3.so
 lib/pkgconfig/python-3.5.pc
@@ -1312,15 +1304,15 @@ lib/python3.5/distutils/command/install_scripts.py
 lib/python3.5/distutils/command/register.py
 lib/python3.5/distutils/command/sdist.py
 lib/python3.5/distutils/command/upload.py
-lib/python3.5/distutils/command/wininst-10.0-${MACHINE_ARCH}.exe
-lib/python3.5/distutils/command/wininst-10.0.exe
-lib/python3.5/distutils/command/wininst-14.0-${MACHINE_ARCH}.exe
-lib/python3.5/distutils/command/wininst-14.0.exe
-lib/python3.5/distutils/command/wininst-6.0.exe
-lib/python3.5/distutils/command/wininst-7.1.exe
-lib/python3.5/distutils/command/wininst-8.0.exe
-lib/python3.5/distutils/command/wininst-9.0-${MACHINE_ARCH}.exe
-lib/python3.5/distutils/command/wininst-9.0.exe
+@comment lib/python3.5/distutils/command/wininst-10.0-amd64.exe
+@comment lib/python3.5/distutils/command/wininst-10.0.exe
+@comment lib/python3.5/distutils/command/wininst-14.0-amd64.exe
+@comment lib/python3.5/distutils/command/wininst-14.0.exe
+@comment lib/python3.5/distutils/command/wininst-6.0.exe
+@comment lib/python3.5/distutils/command/wininst-7.1.exe
+@comment lib/python3.5/distutils/command/wininst-8.0.exe
+@comment lib/python3.5/distutils/command/wininst-9.0-amd64.exe
+@comment lib/python3.5/distutils/command/wininst-9.0.exe
 lib/python3.5/distutils/config.py
 lib/python3.5/distutils/core.py
 lib/python3.5/distutils/cygwinccompiler.py
