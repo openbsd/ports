@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2015/09/22 18:36:35 pascal Exp $
+# $OpenBSD: Makefile,v 1.14 2015/09/24 09:16:17 sthen Exp $
 
 COMMENT=	ILM base libraries
 
 DISTNAME=	ilmbase-2.2.0
 CATEGORIES=	graphics
 
-SHARED_LIBS +=	Half                 5.0      # .6.0
-SHARED_LIBS +=	Iex                  5.0      # .6.0
-SHARED_LIBS +=	Imath                5.0      # .6.0
-SHARED_LIBS +=	IlmThread            5.0      # .6.0
-SHARED_LIBS +=  IexMath              0.0      # 12.0
-
+SHARED_LIBS +=	Half                 5.0      # 12.0
+SHARED_LIBS +=	Iex                  5.0      # 12.0
+SHARED_LIBS +=	IexMath              0.0      # 12.0
+SHARED_LIBS +=	Imath                5.0      # 12.0
+SHARED_LIBS +=	IlmThread            5.0      # 12.0
 
 HOMEPAGE=	http://www.openexr.com/
 
@@ -22,10 +21,10 @@ WANTLIB += m pthread stdc++
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=openexr/}
 
-BUILD_DEPENDS =	shells/bash
+BUILD_DEPENDS=	shells/bash
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--disable-namespaceversioning
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= --disable-namespaceversioning
 
 post-patch:
 	# !@$#!%
