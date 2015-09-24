@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/04/03 09:09:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/09/24 10:27:38 ajacoutot Exp $
 @conflict libsoup-gnome-*
 @pkgpath devel/libsoup,-main
 @pkgpath devel/libsoup,-gnome
@@ -11,6 +11,7 @@ include/libsoup-${API_VERSION}/libsoup/soup-auth-domain-digest.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth-domain.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth-manager.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth.h
+include/libsoup-${API_VERSION}/libsoup/soup-autocleanups.h
 include/libsoup-${API_VERSION}/libsoup/soup-cache.h
 include/libsoup-${API_VERSION}/libsoup/soup-content-decoder.h
 include/libsoup-${API_VERSION}/libsoup/soup-content-sniffer.h
@@ -54,6 +55,7 @@ include/libsoup-${API_VERSION}/libsoup/soup-value-utils.h
 include/libsoup-${API_VERSION}/libsoup/soup-version.h
 include/libsoup-${API_VERSION}/libsoup/soup-websocket-connection.h
 include/libsoup-${API_VERSION}/libsoup/soup-websocket.h
+include/libsoup-${API_VERSION}/libsoup/soup-xmlrpc-old.h
 include/libsoup-${API_VERSION}/libsoup/soup-xmlrpc.h
 include/libsoup-${API_VERSION}/libsoup/soup.h
 include/libsoup-gnome-${API_VERSION}/
@@ -117,7 +119,6 @@ share/gtk-doc/html/libsoup-${API_VERSION}/index.sgml
 share/gtk-doc/html/libsoup-${API_VERSION}/ix01.html
 share/gtk-doc/html/libsoup-${API_VERSION}/left-insensitive.png
 share/gtk-doc/html/libsoup-${API_VERSION}/left.png
-share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-GValue-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-HTML-Form-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-Soup-Miscellaneous-Utilities.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-SoupServer-deprecated-API.html
@@ -174,6 +175,7 @@ share/locale/ml/LC_MESSAGES/libsoup.mo
 share/locale/mr/LC_MESSAGES/libsoup.mo
 share/locale/nb/LC_MESSAGES/libsoup.mo
 share/locale/nl/LC_MESSAGES/libsoup.mo
+share/locale/oc/LC_MESSAGES/libsoup.mo
 share/locale/or/LC_MESSAGES/libsoup.mo
 share/locale/pa/LC_MESSAGES/libsoup.mo
 share/locale/pl/LC_MESSAGES/libsoup.mo
