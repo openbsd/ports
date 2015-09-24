@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/22 11:31:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/09/24 10:35:23 ajacoutot Exp $
+
+# XXX check if still needed at next update
+CXXFLAGS +=		-std=c++11
 
 COMMENT =		C++ bindings for gtkglext
 
 DISTNAME =		gtkglextmm-1.2.0
-REVISION =		8
+REVISION =		9
 
 SHARED_LIBS +=		gdkglextmm-x11-1.2        0.0 # 0.0
 SHARED_LIBS +=		gtkglextmm-x11-1.2        0.0 # 0.0
@@ -30,7 +33,12 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gtkglext/}
 
 MODULES =		devel/gettext
 
-LIB_DEPENDS =		x11/gtk2mm>=2.24.4 \
+# c++11
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
+
+LIB_DEPENDS =		x11/gtk2mm \
 			x11/gtkglext
 
 USE_GMAKE =		Yes
