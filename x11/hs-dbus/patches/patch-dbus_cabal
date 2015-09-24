@@ -1,0 +1,24 @@
+$OpenBSD: patch-dbus_cabal,v 1.1 2015/09/24 20:10:29 kili Exp $
+
+Builds fine with hs-vector-0.11.
+
+--- dbus.cabal.orig	Wed Apr  1 07:21:47 2015
++++ dbus.cabal	Thu Sep 24 21:38:56 2015
+@@ -105,7 +105,7 @@ library
+     , text >= 0.11.1.5
+     , transformers >= 0.2
+     , unix >= 2.2
+-    , vector >= 0.7 && < 0.11
++    , vector >= 0.7 && < 0.12
+     , xml-types >= 0.3 && < 0.4
+ 
+   exposed-modules:
+@@ -147,7 +147,7 @@ test-suite dbus_tests
+     , text >= 0.11.1.5
+     , transformers >= 0.2
+     , unix >= 2.2
+-    , vector >= 0.7 && < 0.11
++    , vector >= 0.7 && < 0.12
+     , xml-types >= 0.3 && < 0.4
+ 
+ benchmark dbus_benchmarks
