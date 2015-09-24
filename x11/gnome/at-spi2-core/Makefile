@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.34 2015/04/04 09:21:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2015/09/24 10:26:47 ajacoutot Exp $
 
 COMMENT=	service interface for assistive technologies
 
-GNOME_PROJECT=	at-spi2-core
-GNOME_VERSION=	2.16.0
-REVISION=	0
+GNOME_PROJECT=		at-spi2-core
+GNOME_VERSION=		2.18.0
 
 SHARED_LIBS +=  atspi                0.1      # 0.1
 
-HOMEPAGE=	https://wiki.linuxfoundation.org/en/AT-SPI_on_D-Bus
+HOMEPAGE=		https://wiki.linuxfoundation.org/en/AT-SPI_on_D-Bus
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,17 +15,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE SM X11 Xext Xi Xtst c dbus-1 ffi gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 pcre pthread xcb z
 
-MODULES=	devel/gettext \
-		x11/gnome
+MODULES=		devel/gettext \
+			x11/gnome
 
-LIB_DEPENDS=	devel/glib2 \
-		x11/dbus
+LIB_DEPENDS=		devel/glib2 \
+			x11/dbus
 
-MODGNOME_TOOLS=	gobject-introspection
+MODGNOME_TOOLS=		gobject-introspection
 
 # connects to DBus
 TEST_IS_INTERACTIVE=	x11
 
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/at-spi2-core
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/at-spi2-core
 
 .include <bsd.port.mk>

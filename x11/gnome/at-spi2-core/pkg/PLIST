@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/03/27 16:01:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/09/24 10:26:47 ajacoutot Exp $
 include/at-spi-2.0/
 include/at-spi-2.0/atspi/
 include/at-spi-2.0/atspi/atspi-accessible.h
@@ -75,7 +75,6 @@ share/gtk-doc/html/libatspi/api-index-full.html
 share/gtk-doc/html/libatspi/ch01.html
 share/gtk-doc/html/libatspi/home.png
 share/gtk-doc/html/libatspi/index.html
-share/gtk-doc/html/libatspi/index.sgml
 share/gtk-doc/html/libatspi/left-insensitive.png
 share/gtk-doc/html/libatspi/left.png
 share/gtk-doc/html/libatspi/libatspi-AtspiApplication.html
@@ -185,6 +184,9 @@ share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/at-spi2-core.mo
 share/locale/nb/LC_MESSAGES/at-spi2-core.mo
 share/locale/nl/LC_MESSAGES/at-spi2-core.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/at-spi2-core.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/at-spi2-core.mo
