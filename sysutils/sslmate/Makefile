@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/07/04 00:17:00 jturner Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/24 01:05:02 jturner Exp $
 
 COMMENT =		client for the sslmate.com online certificate service
 
-DISTNAME =		sslmate-1.4.0
+DISTNAME =		sslmate-1.5.0
 CATEGORIES =		sysutils
 
 MAINTAINER =		James Turner <james@calminferno.net>
