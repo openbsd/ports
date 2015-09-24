@@ -1,4 +1,4 @@
-# $OpenBSD: postgresql.port.mk,v 1.5 2015/08/03 07:42:30 kirby Exp $
+# $OpenBSD: postgresql.port.mk,v 1.6 2015/09/24 20:35:31 zhuk Exp $
 #
 # Helps testing PostgreSQL-based software, no B/L/R-DEPS here.
 
@@ -19,7 +19,7 @@ MODPOSTGRESQL_TEST_TARGET = \
 	rm -Rf ${_MODPOSTGRESQL_TEST_PGDATA}; \
 	export ${ALL_TEST_ENV}; \
 	${LOCALBASE}/bin/initdb -D ${_MODPOSTGRESQL_TEST_PGDATA} \
-	    -A trust --locale=C --nosync; \
+	    -A trust --locale=C -E UTF8 --nosync; \
 	${LOCALBASE}/bin/pg_ctl start -w -D ${_MODPOSTGRESQL_TEST_PGDATA} \
 	    -l ${WRKDIR}/pg-test.log \
 	    -o "-F -h '' -k ${MODPOSTGRESQL_TEST_PGHOST}";
