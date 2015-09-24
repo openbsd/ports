@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.44 2015/05/29 12:24:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2015/09/24 10:38:17 ajacoutot Exp $
+
+# XXX check if still needed at next update
+CXXFLAGS +=		-std=c++11
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.91
 CATEGORIES=	graphics
-REVISION=	2
+REVISION=	3
 
 MASTER_SITES =	https://inkscape.org/en/gallery/item/3854/
 HOMEPAGE=	http://www.inkscape.org/
@@ -29,6 +32,11 @@ MODULES=	devel/gettext \
 		textproc/intltool \
 		lang/python \
 		lang/ruby
+
+# c++11
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
 
 # We are just substituting paths at build time
 MODPY_BUILDDEP =	No
