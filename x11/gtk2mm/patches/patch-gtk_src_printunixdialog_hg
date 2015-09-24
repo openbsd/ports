@@ -1,0 +1,18 @@
+$OpenBSD: patch-gtk_src_printunixdialog_hg,v 1.1 2015/09/24 10:34:31 ajacoutot Exp $
+
+From 9d52f886ffe556f9615f98a280d3a036a9ecf28e Mon Sep 17 00:00:00 2001
+From: Kjell Ahlstedt <kjell.ahlstedt@bredband.net>
+Date: Sun, 5 Jul 2015 15:41:11 +0200
+Subject:        More fixes to suit newish glibmm.
+
+--- gtk/src/printunixdialog.hg.orig	Tue Jun 25 21:34:31 2013
++++ gtk/src/printunixdialog.hg	Wed Sep 23 12:19:32 2015
+@@ -71,7 +71,7 @@ class PrintUnixDialog : public Dialog (public)
+   #m4 _CONVERSION(`GtkPrinter*',`Glib::RefPtr<const Printer>',`Glib::wrap($3)')
+ 
+   _WRAP_METHOD(Glib::RefPtr<Printer> get_selected_printer(), gtk_print_unix_dialog_get_selected_printer, refreturn)
+-  _WRAP_METHOD(Glib::RefPtr<const Printer> get_selected_printer() const, gtk_print_unix_dialog_get_selected_printer, refreturn. constversion)
++  _WRAP_METHOD(Glib::RefPtr<const Printer> get_selected_printer() const, gtk_print_unix_dialog_get_selected_printer, refreturn, constversion)
+ 
+   void add_custom_tab(const Widget& child, const Glib::ustring& tab_label);
+   _WRAP_METHOD(void add_custom_tab(const Widget& child, const Widget& tab_label), gtk_print_unix_dialog_add_custom_tab)

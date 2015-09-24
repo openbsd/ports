@@ -1,0 +1,18 @@
+$OpenBSD: patch-gtk_src_entrycompletion_hg,v 1.1 2015/09/24 10:34:31 ajacoutot Exp $
+
+From 9d52f886ffe556f9615f98a280d3a036a9ecf28e Mon Sep 17 00:00:00 2001
+From: Kjell Ahlstedt <kjell.ahlstedt@bredband.net>
+Date: Sun, 5 Jul 2015 15:41:11 +0200
+Subject:        More fixes to suit newish glibmm.
+
+--- gtk/src/entrycompletion.hg.orig	Tue Jun 25 21:34:31 2013
++++ gtk/src/entrycompletion.hg	Wed Sep 23 12:19:32 2015
+@@ -218,7 +218,7 @@ dnl
+ 
+   _WRAP_PROPERTY("model", Glib::RefPtr<Gtk::TreeModel>)
+   _WRAP_PROPERTY("minimum_key_length", int)
+-  _WRAP_PROPERTY("text_column, int)
++  _WRAP_PROPERTY("text_column", int)
+   _WRAP_PROPERTY("inline_completion", bool)
+   _WRAP_PROPERTY("popup_completion", bool)
+   _WRAP_PROPERTY("popup_set_width", bool)

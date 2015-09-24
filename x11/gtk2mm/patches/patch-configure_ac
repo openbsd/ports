@@ -1,0 +1,27 @@
+$OpenBSD: patch-configure_ac,v 1.1 2015/09/24 10:34:31 ajacoutot Exp $
+
+From 5b8f1294844e3639c6be802dda81fa853511bf30 Mon Sep 17 00:00:00 2001
+From: Murray Cumming <murrayc@murrayc.com>
+Date: Fri, 14 Aug 2015 13:50:40 +0200
+Subject: configure.ac: Use C++11 if the compiler supports it.
+
+--- configure.ac.orig	Tue Jun 25 21:34:40 2013
++++ configure.ac	Wed Sep 23 12:20:46 2015
+@@ -31,7 +31,7 @@ AM_MAINTAINER_MODE
+ AC_ARG_VAR([ACLOCAL_FLAGS], [aclocal flags, e.g. -I <macro dir>])
+ 
+ 
+-MM_PREREQ([0.9.5])
++MM_PREREQ([0.9.8])
+ MM_INIT_MODULE([gdkmm-2.4])
+ MM_INIT_MODULE([gtkmm-2.4])
+ 
+@@ -44,6 +44,8 @@ MM_CONFIG_DOCTOOL_DIR([docs])
+ AC_SUBST([LIBGTKMM_SO_VERSION], [2:0:1])
+ 
+ AC_PROG_CXX
++MM_AX_CXX_COMPILE_STDCXX_11([noext],[optional])
++
+ AC_DISABLE_STATIC
+ AC_LIBTOOL_WIN32_DLL
+ AC_PROG_LIBTOOL

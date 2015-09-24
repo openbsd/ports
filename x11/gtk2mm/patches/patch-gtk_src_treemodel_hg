@@ -1,0 +1,17 @@
+$OpenBSD: patch-gtk_src_treemodel_hg,v 1.1 2015/09/24 10:34:31 ajacoutot Exp $
+
+From 185abd365c2898ad77dbb33a099341fa28e5a496 Mon Sep 17 00:00:00 2001
+From: Kjell Ahlstedt <kjell.ahlstedt@bredband.net>
+Date: Thu, 2 Jul 2015 19:53:16 +0200
+Subject:        Add #includes needed with glibmm newer than 2.31.0.
+
+--- gtk/src/treemodel.hg.orig	Tue Jun 25 21:34:31 2013
++++ gtk/src/treemodel.hg	Wed Sep 23 12:15:37 2015
+@@ -18,6 +18,7 @@
+  */
+ 
+ #include <glibmm/interface.h>
++#include <glibmm/arrayhandle.h>
+ #include <gtkmm/treeiter.h>
+ 
+ _DEFS(gtkmm,gtk)

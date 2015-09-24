@@ -1,0 +1,21 @@
+$OpenBSD: patch-gdk_src_pixbuf_ccg,v 1.1 2015/09/24 10:34:31 ajacoutot Exp $
+
+From 33f4ecd007b2e4bd3511b36add8734b362c80d40 Mon Sep 17 00:00:00 2001
+From: Murray Cumming <murrayc@murrayc.com>
+Date: Fri, 14 Aug 2015 14:25:57 +0200
+Subject: Pixbuf: Avoid deprecations warnings that break --enable-warnings=fatal.
+
+--- gdk/src/pixbuf.ccg.orig	Tue Jun 25 21:34:31 2013
++++ gdk/src/pixbuf.ccg	Wed Sep 23 12:21:48 2015
+@@ -21,6 +21,11 @@
+ #include <gdk/gdk.h>
+ #include <gdk-pixbuf/gdk-pixbuf.h>
+ 
++//Turn off all deprecation warnings, to avoid the warning about
++//gdk_pixbuf_new_from_inline() in the generated code.
++//We don't bother using G_GNUC_END_IGNORE_DEPRECATIONS
++//because we are happy to keep it active for the whole file.
++G_GNUC_BEGIN_IGNORE_DEPRECATIONS
+ 
+ namespace
+ {

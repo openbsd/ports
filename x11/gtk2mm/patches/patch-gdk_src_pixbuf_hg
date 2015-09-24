@@ -1,0 +1,19 @@
+$OpenBSD: patch-gdk_src_pixbuf_hg,v 1.1 2015/09/24 10:34:31 ajacoutot Exp $
+
+From 33f4ecd007b2e4bd3511b36add8734b362c80d40 Mon Sep 17 00:00:00 2001
+From: Murray Cumming <murrayc@murrayc.com>
+Date: Fri, 14 Aug 2015 14:25:57 +0200
+Subject: Pixbuf: Avoid deprecations warnings that break --enable-warnings=fatal.
+
+--- gdk/src/pixbuf.hg.orig	Tue Jun 25 21:34:31 2013
++++ gdk/src/pixbuf.hg	Wed Sep 23 12:21:48 2015
+@@ -17,6 +17,9 @@
+ 
+ #m4 _PUSH(SECTION_CC_PRE_INCLUDES)
+ #undef GDK_DISABLE_DEPRECATED
++#define GDK_DISABLE_DEPRECATION_WARNINGS 1
++#undef GDK_PIXBUF_DISABLE_DEPRECATED
++#define GDK_PIXBUF_DISABLE_DEPRECATION_WARNINGS 1
+ #m4 _POP()
+ // This is for including the config header before any code (such as
+ // the #ifndef GDKMM_DISABLE_DEPRECATED in deprecated classes) is generated:
