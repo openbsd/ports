@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_ada_system-openbsd-x86_64_ads,v 1.1.1.1 2014/06/26 16:30:16 pascal Exp $
---- gcc/ada/system-openbsd-x86_64.ads.orig	Mon Jun 17 16:01:19 2013
-+++ gcc/ada/system-openbsd-x86_64.ads	Mon Jun 17 16:02:27 2013
+$OpenBSD: patch-gcc_ada_system-openbsd-x86_64_ads,v 1.2 2015/09/24 22:29:59 tobiasu Exp $
+--- gcc/ada/system-openbsd-x86_64.ads.orig	Wed Sep 16 16:53:13 2015
++++ gcc/ada/system-openbsd-x86_64.ads	Wed Sep 16 19:00:03 2015
 @@ -0,0 +1,144 @@
 +------------------------------------------------------------------------------
 +--                                                                          --
@@ -9,9 +9,9 @@ $OpenBSD: patch-gcc_ada_system-openbsd-x86_64_ads,v 1.1.1.1 2014/06/26 16:30:16 
 +--                               S Y S T E M                                --
 +--                                                                          --
 +--                                 S p e c                                  --
-+--                         (OpenBSD/x86_64 Version)                         --
++--                         (OpenBSD/amd64 Version)                          --
 +--                                                                          --
-+--          Copyright (C) 1992-2012, Free Software Foundation, Inc.         --
++--          Copyright (C) 1992-2015, Free Software Foundation, Inc.         --
 +--                                                                          --
 +-- This specification is derived from the Ada Reference Manual for use with --
 +-- GNAT. The copyright notice above, and the license provisions that follow --

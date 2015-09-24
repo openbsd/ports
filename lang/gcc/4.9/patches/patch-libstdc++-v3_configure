@@ -1,6 +1,9 @@
-$OpenBSD: patch-libstdc++-v3_configure,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp $
---- libstdc++-v3/configure.orig	Fri Nov 22 14:18:42 2013
-+++ libstdc++-v3/configure	Mon Dec  2 12:20:09 2013
+$OpenBSD: patch-libstdc++-v3_configure,v 1.2 2015/09/24 22:29:59 tobiasu Exp $
+
+*-openbsd* required for cross compiling libstdc++
+
+--- libstdc++-v3/configure.orig	Thu Mar 20 19:57:07 2014
++++ libstdc++-v3/configure	Tue Sep 15 13:15:34 2015
 @@ -10933,7 +10933,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
@@ -19,3 +22,12 @@ $OpenBSD: patch-libstdc++-v3_configure,v 1.1.1.1 2014/06/26 16:30:17 pascal Exp 
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
+@@ -64726,7 +64726,7 @@ done
+   CXXFLAGS="$ac_save_CXXFLAGS"
+ 
+     ;;
+-  *-netbsd*)
++  *-netbsd*|*-openbsd*)
+     SECTION_FLAGS='-ffunction-sections -fdata-sections'
+ 
+ 

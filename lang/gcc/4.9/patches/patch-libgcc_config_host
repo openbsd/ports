@@ -1,6 +1,6 @@
-$OpenBSD: patch-libgcc_config_host,v 1.3 2014/11/12 10:56:59 tobiasu Exp $
+$OpenBSD: patch-libgcc_config_host,v 1.4 2015/09/24 22:29:59 tobiasu Exp $
 --- libgcc/config.host.orig	Thu Mar 27 16:40:31 2014
-+++ libgcc/config.host	Tue Sep 30 19:50:35 2014
++++ libgcc/config.host	Thu Sep 17 08:19:38 2015
 @@ -364,6 +364,10 @@ arm-wrs-vxworks)
  arm*-*-netbsdelf*)
  	tmake_file="$tmake_file arm/t-arm arm/t-netbsd t-slibgcc-gld-nover"
@@ -30,7 +30,7 @@ $OpenBSD: patch-libgcc_config_host,v 1.3 2014/11/12 10:56:59 tobiasu Exp $
  	tmake_file="$tmake_file rs6000/t-netbsd rs6000/t-crtstuff"
  	;;
 +powerpc-*-openbsd*)
-+	tmake_file="$tmake_file rs6000/t-crtstuff"
++	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-crtstuff"
 +	;;
  powerpc-*-eabispe*)
  	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-savresfgpr rs6000/t-crtstuff t-crtstuff-pic t-fdpbit"

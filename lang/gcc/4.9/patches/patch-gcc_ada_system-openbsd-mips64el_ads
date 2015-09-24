@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_ada_system-openbsd-x86_ads,v 1.2 2015/09/24 22:29:59 tobiasu Exp $
---- gcc/ada/system-openbsd-x86.ads.orig	Wed Sep 16 16:53:13 2015
-+++ gcc/ada/system-openbsd-x86.ads	Wed Sep 16 18:59:47 2015
+$OpenBSD: patch-gcc_ada_system-openbsd-mips64el_ads,v 1.1 2015/09/24 22:29:59 tobiasu Exp $
+--- gcc/ada/system-openbsd-mips64el.ads.orig	Wed Sep 16 16:53:13 2015
++++ gcc/ada/system-openbsd-mips64el.ads	Wed Sep 16 18:58:49 2015
 @@ -0,0 +1,144 @@
 +------------------------------------------------------------------------------
 +--                                                                          --
@@ -9,7 +9,7 @@ $OpenBSD: patch-gcc_ada_system-openbsd-x86_ads,v 1.2 2015/09/24 22:29:59 tobiasu
 +--                               S Y S T E M                                --
 +--                                                                          --
 +--                                 S p e c                                  --
-+--                          (OpenBSD/i386 Version)                          --
++--                         (OpenBSD/mips64el Version)                       --
 +--                                                                          --
 +--          Copyright (C) 1992-2015, Free Software Foundation, Inc.         --
 +--                                                                          --
@@ -70,8 +70,8 @@ $OpenBSD: patch-gcc_ada_system-openbsd-x86_ads,v 1.2 2015/09/24 22:29:59 tobiasu
 +   Null_Address : constant Address;
 +
 +   Storage_Unit : constant := 8;
-+   Word_Size    : constant := 32;
-+   Memory_Size  : constant := 2 ** 32;
++   Word_Size    : constant := 64;
++   Memory_Size  : constant := 2 ** 64;
 +
 +   --  Address comparison
 +

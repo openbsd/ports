@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_ada_system-openbsd-hppa_ads,v 1.1 2015/02/17 12:04:44 tobiasu Exp $
---- gcc/ada/system-openbsd-hppa.ads.orig	Fri Feb  6 02:48:14 2015
-+++ gcc/ada/system-openbsd-hppa.ads	Fri Feb  6 02:47:57 2015
-@@ -0,0 +1,145 @@
+$OpenBSD: patch-gcc_ada_system-openbsd-hppa_ads,v 1.2 2015/09/24 22:29:59 tobiasu Exp $
+--- gcc/ada/system-openbsd-hppa.ads.orig	Wed Sep 16 16:53:13 2015
++++ gcc/ada/system-openbsd-hppa.ads	Wed Sep 16 18:58:35 2015
+@@ -0,0 +1,144 @@
 +------------------------------------------------------------------------------
 +--                                                                          --
 +--                        GNAT RUN-TIME COMPONENTS                          --
@@ -11,7 +11,7 @@ $OpenBSD: patch-gcc_ada_system-openbsd-hppa_ads,v 1.1 2015/02/17 12:04:44 tobias
 +--                                 S p e c                                  --
 +--                          (OpenBSD/hppa Version)                          --
 +--                                                                          --
-+--          Copyright (C) 1992-2012, Free Software Foundation, Inc.         --
++--          Copyright (C) 1992-2015, Free Software Foundation, Inc.         --
 +--                                                                          --
 +-- This specification is derived from the Ada Reference Manual for use with --
 +-- GNAT. The copyright notice above, and the license provisions that follow --
@@ -135,8 +135,8 @@ $OpenBSD: patch-gcc_ada_system-openbsd-hppa_ads,v 1.1 2015/02/17 12:04:44 tobias
 +   Stack_Check_Default       : constant Boolean := False;
 +   Stack_Check_Probes        : constant Boolean := True;
 +   Stack_Check_Limits        : constant Boolean := False;
-+   Support_64_Bit_Divides    : constant Boolean := True;
 +   Support_Aggregates        : constant Boolean := True;
++   Support_Atomic_Primitives : constant Boolean := True;
 +   Support_Composite_Assign  : constant Boolean := True;
 +   Support_Composite_Compare : constant Boolean := True;
 +   Support_Long_Shifts       : constant Boolean := True;
@@ -144,6 +144,5 @@ $OpenBSD: patch-gcc_ada_system-openbsd-hppa_ads,v 1.1 2015/02/17 12:04:44 tobias
 +   Suppress_Standard_Library : constant Boolean := False;
 +   Use_Ada_Main_Program_Name : constant Boolean := False;
 +   ZCX_By_Default            : constant Boolean := False;
-+   GCC_ZCX_Support           : constant Boolean := False;
 +
 +end System;
