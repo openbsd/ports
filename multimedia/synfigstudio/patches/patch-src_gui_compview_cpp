@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gui_compview_cpp,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/gui/compview.cpp.orig	Thu Jul  9 09:33:04 2015
++++ src/gui/compview.cpp	Thu Sep 24 11:08:06 2015
+@@ -39,7 +39,6 @@
+ #include <iostream>
+ #include "instance.h"
+ #include <sigc++/signal.h>
+-#include <sigc++/hide.h>
+ #include <sigc++/slot.h>
+ #include "canvasview.h"
+ #include <synfigapp/action.h>

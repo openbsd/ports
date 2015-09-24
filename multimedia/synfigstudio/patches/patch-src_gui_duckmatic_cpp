@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_gui_duckmatic_cpp,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/gui/duckmatic.cpp.orig	Sat Jul 18 07:34:53 2015
++++ src/gui/duckmatic.cpp	Thu Sep 24 11:08:06 2015
+@@ -68,8 +68,6 @@
+ #include <synfig/layers/layer_pastecanvas.h>
+ 
+ #include <sigc++/retype_return.h>
+-#include <sigc++/retype.h>
+-#include <sigc++/hide.h>
+ #include <sigc++/bind.h>
+ 
+ #include "ducktransform_matrix.h"

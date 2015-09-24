@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_gui_workarea_cpp,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/gui/workarea.cpp.orig	Sat Jul 18 07:34:53 2015
++++ src/gui/workarea.cpp	Thu Sep 24 11:08:06 2015
+@@ -45,8 +45,6 @@
+ #include <gtkmm/scrollbar.h>
+ #include <cmath>
+ #include <sigc++/retype_return.h>
+-#include <sigc++/retype.h>
+-#include <sigc++/hide.h>
+ #include <ETL/misc>
+ 
+ #include <synfig/target_scanline.h>

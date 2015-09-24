@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_gui_canvasview_cpp,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/gui/canvasview.cpp.orig	Sat Jul 18 10:59:00 2015
++++ src/gui/canvasview.cpp	Thu Sep 24 11:08:06 2015
+@@ -92,8 +92,6 @@
+ //#include <synfigapp/action_deletewaypoint.h>
+ 
+ #include <sigc++/retype_return.h>
+-#include <sigc++/retype.h>
+-//#include <sigc++/hide.h>
+ 
+ #include "canvasview.h"
+ #include "instance.h"

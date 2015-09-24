@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gui_states_state_zoom_cpp,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/gui/states/state_zoom.cpp.orig	Thu Jul  9 09:33:04 2015
++++ src/gui/states/state_zoom.cpp	Thu Sep 24 11:08:06 2015
+@@ -31,7 +31,6 @@
+ #endif
+ 
+ #include <sigc++/signal.h>
+-#include <sigc++/object.h>
+ 
+ #include <ETL/handle>
+ #include <synfig/vector.h>

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_synfigapp_action_system_h,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/synfigapp/action_system.h.orig	Thu Jul  9 09:33:04 2015
++++ src/synfigapp/action_system.h	Thu Sep 24 11:06:18 2015
+@@ -29,7 +29,6 @@
+ 
+ #include "action.h"
+ #include <sigc++/signal.h>
+-#include <sigc++/object.h>
+ #include <ETL/handle>
+ #include <synfig/canvas.h>
+ #include "uimanager.h"

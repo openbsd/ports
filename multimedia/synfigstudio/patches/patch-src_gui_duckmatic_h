@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gui_duckmatic_h,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/gui/duckmatic.h.orig	Sat Jul 18 07:34:53 2015
++++ src/gui/duckmatic.h	Thu Sep 24 11:06:18 2015
+@@ -40,7 +40,6 @@
+ #include <synfig/string.h>
+ #include <synfig/real.h>
+ #include <sigc++/signal.h>
+-#include <sigc++/object.h>
+ #include <synfig/time.h>
+ #include <synfig/color.h>
+ #include <ETL/smart_ptr>

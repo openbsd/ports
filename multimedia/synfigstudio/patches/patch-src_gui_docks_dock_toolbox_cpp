@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_gui_docks_dock_toolbox_cpp,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/gui/docks/dock_toolbox.cpp.orig	Thu Jul  9 09:33:04 2015
++++ src/gui/docks/dock_toolbox.cpp	Thu Sep 24 11:08:06 2015
+@@ -38,10 +38,8 @@
+ #include <gtkmm/accelmap.h>
+ 
+ #include <sigc++/signal.h>
+-#include <sigc++/hide.h>
+ #include <sigc++/slot.h>
+ #include <sigc++/retype_return.h>
+-#include <sigc++/retype.h>
+ 
+ #include "general.h"
+ #include <sstream>

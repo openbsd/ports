@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gui_docks_dockmanager_h,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/gui/docks/dockmanager.h.orig	Thu Jul  9 09:33:04 2015
++++ src/gui/docks/dockmanager.h	Thu Sep 24 11:06:18 2015
+@@ -32,7 +32,6 @@
+ #include <map>
+ #include <synfig/string.h>
+ #include <sigc++/signal.h>
+-#include <sigc++/object.h>
+ #include <ETL/smart_ptr>
+ 
+ #include <gtkmm/widget.h>

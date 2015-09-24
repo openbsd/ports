@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_synfigapp_main_h,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/synfigapp/main.h.orig	Thu Jul  9 09:33:04 2015
++++ src/synfigapp/main.h	Thu Sep 24 11:06:17 2015
+@@ -35,7 +35,6 @@
+ #include <synfig/real.h>
+ #include <synfig/waypoint.h>
+ #include <sigc++/signal.h>
+-#include <sigc++/object.h>
+ #include "inputdevice.h"
+ #include "settings.h"
+ 

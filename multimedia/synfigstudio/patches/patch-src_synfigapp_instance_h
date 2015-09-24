@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_synfigapp_instance_h,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/synfigapp/instance.h.orig	Thu Jul  9 09:33:04 2015
++++ src/synfigapp/instance.h	Thu Sep 24 11:06:18 2015
+@@ -36,7 +36,6 @@
+ #include <list>
+ #include <set>
+ #include <sigc++/signal.h>
+-#include <sigc++/object.h>
+ #include "action_system.h"
+ #include "selectionmanager.h"
+ #include "cvs.h"

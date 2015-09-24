@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gui_states_state_stroke_h,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/gui/states/state_stroke.h.orig	Thu Jul  9 09:33:04 2015
++++ src/gui/states/state_stroke.h	Thu Sep 24 11:06:18 2015
+@@ -29,7 +29,6 @@
+ 
+ #include "canvasview.h"
+ #include "workarea.h"
+-#include <sigc++/object.h>
+ #include "duckmatic.h"
+ #include <synfig/blinepoint.h>
+ #include <list>

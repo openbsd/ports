@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_synfigapp_canvasinterface_h,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/synfigapp/canvasinterface.h.orig	Thu Jul  9 09:33:04 2015
++++ src/synfigapp/canvasinterface.h	Thu Sep 24 11:06:18 2015
+@@ -31,7 +31,6 @@
+ //#include <synfig/canvas.h>
+ #include <synfig/value.h>
+ #include <sigc++/signal.h>
+-#include <sigc++/object.h>
+ #include <list>
+ #include "selectionmanager.h"
+ #include "uimanager.h"

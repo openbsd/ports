@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gui_docks_dock_children_cpp,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/gui/docks/dock_children.cpp.orig	Thu Jul  9 09:33:04 2015
++++ src/gui/docks/dock_children.cpp	Thu Sep 24 11:08:06 2015
+@@ -37,7 +37,6 @@
+ #include <cassert>
+ #include "instance.h"
+ #include <sigc++/signal.h>
+-#include <sigc++/hide.h>
+ #include <sigc++/retype_return.h>
+ #include <sigc++/slot.h>
+ #include "trees/childrentreestore.h"

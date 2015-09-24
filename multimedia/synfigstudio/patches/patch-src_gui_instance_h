@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gui_instance_h,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/gui/instance.h.orig	Thu Jul  9 09:33:04 2015
++++ src/gui/instance.h	Thu Sep 24 11:06:18 2015
+@@ -33,7 +33,6 @@
+ #include <gtkmm/treeview.h>
+ #include <gtkmm/treestore.h>
+ #include <synfigapp/instance.h>
+-#include <sigc++/object.h>
+ #include <synfigapp/value_desc.h>
+ #include "trees/historytreestore.h"
+ #include <synfig/canvas.h>

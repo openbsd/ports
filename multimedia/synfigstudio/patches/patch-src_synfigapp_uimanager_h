@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_synfigapp_uimanager_h,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/synfigapp/uimanager.h.orig	Thu Jul  9 09:33:04 2015
++++ src/synfigapp/uimanager.h	Thu Sep 24 11:06:18 2015
+@@ -30,7 +30,7 @@
+ #include <ETL/handle>
+ #include <synfig/general.h>
+ #include <synfig/string.h>
+-#include <sigc++/object.h>
++#include <sigc++/trackable.h>
+ 
+ /* === M A C R O S ========================================================= */
+ 

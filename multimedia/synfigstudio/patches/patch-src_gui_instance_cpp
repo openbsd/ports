@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gui_instance_cpp,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/gui/instance.cpp.orig	Thu Jul  9 09:33:04 2015
++++ src/gui/instance.cpp	Thu Sep 24 11:08:06 2015
+@@ -54,7 +54,6 @@
+ 
+ #include "autorecover.h"
+ #include <sigc++/retype_return.h>
+-#include <sigc++/retype.h>
+ //#include <sigc++/hide.h>
+ #include <synfig/valuenodes/valuenode_composite.h>
+ #include <synfig/valuenodes/valuenode_duplicate.h>

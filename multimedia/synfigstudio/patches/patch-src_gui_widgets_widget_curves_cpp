@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gui_widgets_widget_curves_cpp,v 1.1 2015/09/24 10:40:16 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6.0.
+
+--- src/gui/widgets/widget_curves.cpp.orig	Thu Jul  9 09:33:04 2015
++++ src/gui/widgets/widget_curves.cpp	Thu Sep 24 11:08:06 2015
+@@ -38,7 +38,6 @@
+ #include <map>
+ #include <vector>
+ #include <ETL/misc>
+-#include <sigc++/object.h>
+ 
+ #include "general.h"
+ 
