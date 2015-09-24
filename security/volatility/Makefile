@@ -3,12 +3,14 @@
 COMMENT =		memory artifact extraction utility framework
 
 MODPY_EGG_VERSION =	2.4
-REVISION =		1
+REVISION =		2
 DISTNAME =		volatility-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
 
 HOMEPAGE =		http://www.volatilityfoundation.org/
+
+MAINTAINER = 		Remi Pointel <rpointel@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM = Yes
@@ -19,7 +21,8 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS = 	Yes
 
 RUN_DEPENDS =	security/distorm3 \
-		security/yara/python
+		security/yara/python \
+		graphics/py-Pillow
 
 NO_TEST =		Yes
 
