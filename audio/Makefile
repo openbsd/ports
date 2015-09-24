@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.359 2015/09/12 09:42:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.360 2015/09/24 10:29:29 jca Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -76,6 +76,7 @@
      SUBDIR += libcdio
      SUBDIR += libcue
      SUBDIR += libdca
+     SUBDIR += libdiscid
      SUBDIR += libgpod
      SUBDIR += libid3tag
      SUBDIR += liblastfm
