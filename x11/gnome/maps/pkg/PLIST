@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/04/14 05:50:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/09/24 10:39:32 ajacoutot Exp $
 bin/gnome-maps
 lib/gnome-maps/
 lib/gnome-maps/girepository-1.0/
@@ -9,6 +9,8 @@ lib/gnome-maps/libgnome-maps.la
 share/appdata/
 share/appdata/org.gnome.Maps.appdata.xml
 share/applications/org.gnome.Maps.desktop
+share/dbus-1/
+share/dbus-1/services/
 share/dbus-1/services/org.gnome.Maps.service
 share/gir-1.0/
 share/gir-1.0/GnomeMaps-1.0.gir

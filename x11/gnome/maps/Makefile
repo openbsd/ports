@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/12 22:35:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2015/09/24 10:39:32 ajacoutot Exp $
 
 COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
 GNOME_VERSION=		3.16.2
+REVISION=		0
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0
 
@@ -37,5 +38,17 @@ BUILD_DEPENDS +=	geo/geoclue2 \
 			x11/gnome/gjs
 RUN_DEPENDS +=		geo/geoclue2 \
 			x11/gnome/gjs
+
+# patch-*
+AUTOCONF_VERSION=	2.68
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+pre-configure:
+	cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -fi
 
 .include <bsd.port.mk>
