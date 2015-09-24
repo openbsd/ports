@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2015/09/24 10:33:18 ajacoutot Exp $
+
+XXX until gtksourceview is updated
+
+--- configure.orig	Wed Sep 23 12:41:37 2015
++++ configure	Wed Sep 23 12:41:59 2015
+@@ -15886,7 +15886,7 @@ $as_echo "#define HAVE_CXX11 1" >>confdefs.h
+   fi
+ 
+ 
+-GTKSOURCEVIEWMM_MODULES='glibmm-2.4 >= 2.46.1 gtkmm-3.0 >= 3.18.0 gtksourceview-3.0 >= 3.18.0'
++GTKSOURCEVIEWMM_MODULES='glibmm-2.4 >= 2.46.1 gtkmm-3.0 >= 3.18.0 gtksourceview-3.0 >= 3.16.1'
+ 
+ 
+ 
