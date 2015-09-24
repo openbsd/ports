@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2015/03/29 11:52:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2015/09/24 10:31:08 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -180,8 +180,12 @@ include/giomm-${V}/giomm/private/resolver_p.h
 include/giomm-${V}/giomm/private/resource_p.h
 include/giomm-${V}/giomm/private/seekable_p.h
 include/giomm-${V}/giomm/private/settings_p.h
+include/giomm-${V}/giomm/private/settingsschema_p.h
+include/giomm-${V}/giomm/private/settingsschemakey_p.h
+include/giomm-${V}/giomm/private/settingsschemasource_p.h
 include/giomm-${V}/giomm/private/simpleaction_p.h
 include/giomm-${V}/giomm/private/simpleactiongroup_p.h
+include/giomm-${V}/giomm/private/simpleiostream_p.h
 include/giomm-${V}/giomm/private/simplepermission_p.h
 include/giomm-${V}/giomm/private/socket_p.h
 include/giomm-${V}/giomm/private/socketaddress_p.h
@@ -223,8 +227,12 @@ include/giomm-${V}/giomm/resolver.h
 include/giomm-${V}/giomm/resource.h
 include/giomm-${V}/giomm/seekable.h
 include/giomm-${V}/giomm/settings.h
+include/giomm-${V}/giomm/settingsschema.h
+include/giomm-${V}/giomm/settingsschemakey.h
+include/giomm-${V}/giomm/settingsschemasource.h
 include/giomm-${V}/giomm/simpleaction.h
 include/giomm-${V}/giomm/simpleactiongroup.h
+include/giomm-${V}/giomm/simpleiostream.h
 include/giomm-${V}/giomm/simplepermission.h
 include/giomm-${V}/giomm/socket.h
 include/giomm-${V}/giomm/socketaddress.h
@@ -316,6 +324,7 @@ include/glibmm-${V}/glibmm/private/interface_p.h
 include/glibmm-${V}/glibmm/private/iochannel_p.h
 include/glibmm-${V}/glibmm/private/keyfile_p.h
 include/glibmm-${V}/glibmm/private/markup_p.h
+include/glibmm-${V}/glibmm/private/miscutils_p.h
 include/glibmm-${V}/glibmm/private/module_p.h
 include/glibmm-${V}/glibmm/private/nodetree_p.h
 include/glibmm-${V}/glibmm/private/object_p.h
@@ -370,6 +379,7 @@ include/glibmm-${V}/glibmm/variantdict.h
 include/glibmm-${V}/glibmm/variantiter.h
 include/glibmm-${V}/glibmm/varianttype.h
 include/glibmm-${V}/glibmm/vectorutils.h
+include/glibmm-${V}/glibmm/weakref.h
 include/glibmm-${V}/glibmm/wrap.h
 include/glibmm-${V}/glibmm/wrap_init.h
 include/glibmm-${V}/glibmm_generate_extra_defs/
@@ -408,7 +418,6 @@ lib/glibmm-${V}/proc/m4/initialize_base.m4
 lib/glibmm-${V}/proc/m4/initialize_gio.m4
 lib/glibmm-${V}/proc/m4/initialize_glib.m4
 lib/glibmm-${V}/proc/m4/initialize_glibmm.m4
-lib/glibmm-${V}/proc/m4/list.m4
 lib/glibmm-${V}/proc/m4/member.m4
 lib/glibmm-${V}/proc/m4/method.m4
 lib/glibmm-${V}/proc/m4/property.m4
@@ -717,6 +726,12 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1Seekable.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Seekable__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1Settings-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Settings.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1SettingsSchema-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1SettingsSchema.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1SettingsSchemaKey-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1SettingsSchemaKey.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1SettingsSchemaSource-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1SettingsSchemaSource.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Settings__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1SignalSocket-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1SignalSocket.html
@@ -726,6 +741,9 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1SimpleActionGroup-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1SimpleActionGroup.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1SimpleActionGroup__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1SimpleAction__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1SimpleIOStream-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1SimpleIOStream.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1SimpleIOStream__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1SimplePermission-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1SimplePermission.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1SimplePermission__inherit__graph.png
@@ -1047,6 +1065,30 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxy6__inherit__graph.p
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyBase-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyBase.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyBase__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed0-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed0.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed0__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed1-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed1.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed1__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed2-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed2.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed2__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed3-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed3.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed3__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed4-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed4.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed4__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed5-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed5.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed5__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed6-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed6.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed6__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyDetailed__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyNormal-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyNormal.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1SignalProxyNormal__inherit__graph.png
@@ -1267,6 +1309,8 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant_3_01unsigned_01char_01
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant_3_01unsigned_01char_01_4.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant_3_01unsigned_01char_01_4__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1WeakRef-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1WeakRef.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ustring-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ustring.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ustring__Iterator-members.html
@@ -1423,6 +1467,10 @@ share/doc/glibmm-${V}/reference/html/inherit_graph_108.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_109.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_11.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_110.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_111.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_112.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_113.png
+share/doc/glibmm-${V}/reference/html/inherit_graph_114.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_12.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_13.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_14.png
@@ -1619,8 +1667,8 @@ share/doc/glibmm-${V}/reference/html/since_2_4.html
 share/doc/glibmm-${V}/reference/html/since_2_40.html
 share/doc/glibmm-${V}/reference/html/since_2_42.html
 share/doc/glibmm-${V}/reference/html/since_2_44.html
+share/doc/glibmm-${V}/reference/html/since_2_46.html
 share/doc/glibmm-${V}/reference/html/since_2_6.html
-share/doc/glibmm-${V}/reference/html/since_3_2.html
 share/doc/glibmm-${V}/reference/html/splitbar.png
 share/doc/glibmm-${V}/reference/html/structGlib_1_1Container__Helpers_1_1TypeTraits-members.html
 share/doc/glibmm-${V}/reference/html/structGlib_1_1Container__Helpers_1_1TypeTraits.html
