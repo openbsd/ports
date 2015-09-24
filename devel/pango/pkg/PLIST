@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2014/08/11 14:02:08 ajacoutot Exp $
-@unexec-delete rm -f %D/lib/pango/1.8.0/modules.cache
-@bin bin/pango-querymodules
+@comment $OpenBSD: PLIST,v 1.36 2015/09/24 10:26:18 ajacoutot Exp $
 @bin bin/pango-view
 include/pango-1.0/
 include/pango-1.0/pango/
@@ -37,7 +35,6 @@ include/pango-1.0/pango/pangofc-fontmap.h
 include/pango-1.0/pango/pangoft2.h
 include/pango-1.0/pango/pangoxft-render.h
 include/pango-1.0/pango/pangoxft.h
-lib/girepository-1.0/
 lib/girepository-1.0/Pango-1.0.typelib
 lib/girepository-1.0/PangoCairo-1.0.typelib
 lib/girepository-1.0/PangoFT2-1.0.typelib
@@ -54,19 +51,11 @@ lib/libpangoft2-1.0.la
 lib/libpangoxft-1.0.a
 lib/libpangoxft-1.0.la
 @lib lib/libpangoxft-1.0.so.${LIBpangoxft-1.0_VERSION}
-lib/pango/
-lib/pango/1.8.0/
-lib/pango/1.8.0/modules/
-lib/pango/1.8.0/modules/pango-arabic-lang.so
-lib/pango/1.8.0/modules/pango-basic-fc.so
-lib/pango/1.8.0/modules/pango-indic-lang.so
 lib/pkgconfig/pango.pc
 lib/pkgconfig/pangocairo.pc
 lib/pkgconfig/pangoft2.pc
 lib/pkgconfig/pangoxft.pc
-@man man/man1/pango-querymodules.1
 @man man/man1/pango-view.1
-share/gir-1.0/
 share/gir-1.0/Pango-1.0.gir
 share/gir-1.0/PangoCairo-1.0.gir
 share/gir-1.0/PangoFT2-1.0.gir
@@ -95,6 +84,7 @@ share/gtk-doc/html/pango/api-index-1-31-0.html
 share/gtk-doc/html/pango/api-index-1-32-4.html
 share/gtk-doc/html/pango/api-index-1-32.html
 share/gtk-doc/html/pango/api-index-1-34.html
+share/gtk-doc/html/pango/api-index-1-38.html
 share/gtk-doc/html/pango/api-index-1-4.html
 share/gtk-doc/html/pango/api-index-1-6.html
 share/gtk-doc/html/pango/api-index-1-8.html
@@ -102,7 +92,6 @@ share/gtk-doc/html/pango/api-index-deprecated.html
 share/gtk-doc/html/pango/api-index-full.html
 share/gtk-doc/html/pango/home.png
 share/gtk-doc/html/pango/index.html
-share/gtk-doc/html/pango/index.sgml
 share/gtk-doc/html/pango/layout.gif
 share/gtk-doc/html/pango/left-insensitive.png
 share/gtk-doc/html/pango/left.png
@@ -128,7 +117,6 @@ share/gtk-doc/html/pango/pango-Vertical-Text.html
 share/gtk-doc/html/pango/pango-Win32-Fonts-and-Rendering.html
 share/gtk-doc/html/pango/pango-Xft-Fonts-and-Rendering.html
 share/gtk-doc/html/pango/pango-hierarchy.html
-share/gtk-doc/html/pango/pango-querymodules.html
 share/gtk-doc/html/pango/pango.devhelp2
 share/gtk-doc/html/pango/pango.html
 share/gtk-doc/html/pango/rendering.html
@@ -136,7 +124,5 @@ share/gtk-doc/html/pango/right-insensitive.png
 share/gtk-doc/html/pango/right.png
 share/gtk-doc/html/pango/rotated-text.png
 share/gtk-doc/html/pango/style.css
-share/gtk-doc/html/pango/tools.html
 share/gtk-doc/html/pango/up-insensitive.png
 share/gtk-doc/html/pango/up.png
-@exec %D/bin/pango-querymodules --update-cache
