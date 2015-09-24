@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/02 12:57:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/24 17:33:14 sthen Exp $
 
-COMMENT =		TI's open source compiler for MSP430 microcontrollers
+COMMENT =		TI's open source compiler for MSP430 microcontrollers#'
 
 V =			3_03_04_00
 REVISION =		1
@@ -23,6 +23,7 @@ WANTLIB += c gmp m mpc mpfr stdc++ z
 BUILD_DEPENDS =		archivers/bzip2 \
 			archivers/unzip \
 			devel/autogen
+BUILD_DEPENDS =		sysutils/coreutils # autoconf picks up gmkdir
 LIB_DEPENDS =		devel/libmpc
 
 CONFIGURE_STYLE =	gnu
