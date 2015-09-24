@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.246 2015/05/13 06:13:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.247 2015/09/24 10:23:42 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
-GNOME_VERSION=		2.44.1
+GNOME_VERSION=		2.46.0
 PKGNAME=		${DISTNAME:S/glib/glib2/}
 
 CATEGORIES=		devel
@@ -16,11 +16,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # would trigger an abort():
 # GLib-GObject:ERROR:gvaluetypes.c:457:_g_value_types_init:
 # assertion failed: (type == G_TYPE_CHAR)
-SHARED_LIBS +=  glib-2.0             4200.1   # 4400.1
-SHARED_LIBS +=  gmodule-2.0          4200.1   # 4400.1
-SHARED_LIBS +=  gthread-2.0          4200.1   # 4400.1
-SHARED_LIBS +=  gobject-2.0          4200.1   # 4400.1
-SHARED_LIBS +=  gio-2.0              4200.1   # 4400.1
+SHARED_LIBS +=  glib-2.0             4200.2   # 4600.0
+SHARED_LIBS +=  gmodule-2.0          4200.2   # 4600.0
+SHARED_LIBS +=  gthread-2.0          4200.2   # 4600.0
+SHARED_LIBS +=  gobject-2.0          4200.2   # 4600.0
+SHARED_LIBS +=  gio-2.0              4200.2   # 4600.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -55,18 +55,18 @@ PATCH_LIST=	patch-* gcc3-*
 .endif
 
 pre-configure:
-	perl -pi -e "s,/usr/local,${LOCALBASE},g;" \
+	sed -i -e "s,/usr/local,${LOCALBASE},g;" \
 		-e "s,/etc/xdg,${SYSCONFDIR}/xdg,g" \
 		${WRKSRC}/glib/gutils.c \
 		${WRKSRC}/gio/xdgmime/xdgmime.c
-	perl -pi -e "s,/usr/share/locale,${LOCALBASE}/share/locale,g" \
+	sed -i "s,/usr/share/locale,${LOCALBASE}/share/locale,g" \
 		${WRKSRC}/glib/gcharset.c
-	perl -pi -e "s,/usr/share/applications,${LOCALBASE}/share/applications,g" \
+	sed -i "s,/usr/share/applications,${LOCALBASE}/share/applications,g" \
 		${WRKSRC}/gio/tests/desktop-app-info.c
-	perl -pi -e "s,/usr/share,${PREFIX}/share,g" \
+	sed -i "s,/usr/share,${PREFIX}/share,g" \
 		${WRKSRC}/docs/reference/gio/html/glib-compile-schemas.html \
 		${WRKSRC}/docs/reference/gio/glib-compile-schemas.xml
-	perl -pi -e "s,/var/lib/dbus,/var/db/dbus,g" \
+	sed -i "s,/var/lib/dbus,/var/db/dbus,g" \
 		${WRKSRC}/gio/gdbusconnection.c \
 		${WRKSRC}/gio/gdbusprivate.c \
 		${WRKSRC}/po/*.po
