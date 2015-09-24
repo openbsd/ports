@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_SciTEGlobal_properties,v 1.5 2011/11/15 19:17:09 jeremy Exp $
---- src/SciTEGlobal.properties.orig	Tue Nov 15 02:37:08 2011
-+++ src/SciTEGlobal.properties	Tue Nov 15 02:37:24 2011
-@@ -253,7 +253,7 @@ if PLAT_WIN
+$OpenBSD: patch-src_SciTEGlobal_properties,v 1.6 2015/09/24 04:47:08 ajacoutot Exp $
+--- src/SciTEGlobal.properties.orig	Tue Sep 30 02:14:42 2014
++++ src/SciTEGlobal.properties	Thu Sep 24 06:38:51 2015
+@@ -271,7 +271,7 @@ if PLAT_WIN
  	command.scite.help.subsystem=2
  if PLAT_GTK
  	command.print.*=a2ps "$(FileNameExt)"

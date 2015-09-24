@@ -1,5 +1,10 @@
+$OpenBSD
+
+Drop `-pedantic'
+/usr/local/include/gtk-3.0/gdk/gdktypes.h:318: error: comma at end of enumerator list
+
 --- gtk/makefile.orig	Sun Aug 10 01:52:11 2014
-+++ gtk/makefile	Mon Dec 22 23:03:04 2014
++++ gtk/makefile	Thu Sep 24 06:38:51 2015
 @@ -5,14 +5,6 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
@@ -15,7 +20,7 @@
  
  ifdef GTK3
  GTKVERSION=gtk+-3.0
-@@ -24,20 +16,21 @@
+@@ -24,20 +16,21 @@ endif
  CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
  CONFIGLIB:=$(shell pkg-config --libs $(GTKVERSION) gthread-2.0 gmodule-no-export-2.0)
  CONFIGTHREADS:=
@@ -40,7 +45,7 @@
  
  PROG	= ../bin/SciTE
  
-@@ -46,19 +39,21 @@
+@@ -46,19 +39,21 @@ all: $(PROG)
  vpath %.h ../src ../../scintilla/include
  vpath %.cxx ../src
  
@@ -67,7 +72,7 @@
  LUA_CORE_OBJS = lapi.o lcode.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o \
  		lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o \
  		ltable.o ltm.o lundump.o lvm.o lzio.o
-@@ -70,7 +65,7 @@
+@@ -70,7 +65,7 @@ LUA_OBJS = LuaExtension.o $(LUA_CORE_OBJS) $(LUA_LIB_O
  
  vpath %.c ../lua/src ../lua/src/lib
  
@@ -76,7 +81,7 @@
  
  .c.o:
  	$(CC) $(CFLAGS) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c $< -o $@
-@@ -106,15 +101,12 @@
+@@ -106,15 +101,12 @@ analyze:
  deps:
  	$(CXX) -MM $(CONFIGFLAGS) $(CXXTFLAGS) *.cxx ../src/*.cxx | sed -e 's/\/usr.* //' | grep [a-zA-Z] >deps.mak
  
@@ -96,7 +101,7 @@
  
  # Automatically generate header dependencies with "make deps"
  include deps.mak
-@@ -123,19 +115,18 @@
+@@ -123,19 +115,18 @@ include deps.mak
  # This is OK - just means no SciTE in the Gnome Applications menu
  # Dead:	install -D SciTEGTK.properties $(SYSCONF_PATH)/SciTEGlobal.properties
  install:
