@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/10/01 08:40:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/09/24 10:25:33 ajacoutot Exp $
 include/atk-1.0/
 include/atk-1.0/atk/
 include/atk-1.0/atk/atk-enum-types.h
@@ -99,7 +99,6 @@ share/gtk-doc/html/atk/data.html
 share/gtk-doc/html/atk/deprecated.html
 share/gtk-doc/html/atk/home.png
 share/gtk-doc/html/atk/index.html
-share/gtk-doc/html/atk/index.sgml
 share/gtk-doc/html/atk/interfaces.html
 share/gtk-doc/html/atk/left-insensitive.png
 share/gtk-doc/html/atk/left.png
