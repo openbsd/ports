@@ -1,0 +1,33 @@
+$OpenBSD: README,v 1.1 2015/09/24 15:14:11 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+DHCPv6-PD (Prefix Delegation)
+=============================
+As OpenBSD doesn't yet support DHCPv6 in the base OS, one common use of
+this package is to request Prefix Delegation from an ISP, which hands you
+one or more routable IPv6 subnet that can be assigned to interfaces
+facing your local network.
+
+Here is a sample configuration achieving this, fetching addresses over the
+pppoe0 interface and assigning it to multiple local networks. In this example,
+dhcpcd's router solicitation support is disabled (noipv6rs) - the kernel's
+support should be used instead ("rtsol" in /etc/hostname.pppoe0). It fetches
+addresses over pppoe0 and assigns them to "downstream" interfaces em0, vlan3
+and vlan5. These interfaces are listed explicitly so that dhcpcd doesn't
+touch other interfaces at all.
+
+noipv6rs
+ipv6only
+duid
+persistent
+option rapid_commit
+require dhcp_server_identifier
+nohook lookup-hostname
+allowinterfaces pppoe0 em0 vlan3 vlan5
+
+interface pppoe0
+  iaid 1
+  ia_pd 2 em0/1 vlan3/2 vlan5/3
