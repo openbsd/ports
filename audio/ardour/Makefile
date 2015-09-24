@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2015/08/25 11:16:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2015/09/24 10:42:57 ajacoutot Exp $
+
+BROKEN =		needs patching to work with libsigc++ >=2.6.0
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 SHARED_ONLY =		Yes
