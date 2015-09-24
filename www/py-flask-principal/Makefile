@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/24 17:37:40 jca Exp $
 
 COMMENT =		identity management for flask
 
 MODPY_EGG_VERSION =	0.4.0
+REVISION =		0
 DISTNAME =		Flask-Principal-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 
 CATEGORIES =		www
 
-HOMEPAGE =		http://packages.python.org/Flask-Principal/
+HOMEPAGE =		https://pythonhosted.org/Flask-Principal/
 
 MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 
