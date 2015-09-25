@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_task_manager_task_manager_cc,v 1.1 2015/09/25 13:08:54 robert Exp $
+--- chrome/browser/task_manager/task_manager.cc.orig.port	Thu Sep 24 12:59:35 2015
++++ chrome/browser/task_manager/task_manager.cc	Thu Sep 24 13:05:07 2015
+@@ -1201,7 +1201,7 @@ void TaskManagerModel::Refresh() {
+       values.is_cpu_usage_valid = true;
+       values.cpu_usage = metrics_iter->second->GetCPUUsage();
+     }
+-#if defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+     // TODO(port): Implement GetIdleWakeupsPerSecond() on other platforms,
+     // crbug.com/120488
+     if (!values.is_idle_wakeups_valid) {

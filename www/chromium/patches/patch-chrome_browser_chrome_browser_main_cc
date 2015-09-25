@@ -1,0 +1,39 @@
+$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.1 2015/09/25 13:08:54 robert Exp $
+--- chrome/browser/chrome_browser_main.cc.orig.port	Thu Sep 24 12:59:35 2015
++++ chrome/browser/chrome_browser_main.cc	Thu Sep 24 13:08:46 2015
+@@ -158,7 +158,7 @@
+ #include "chrome/browser/feedback/feedback_profile_observer.h"
+ #endif  // defined(OS_ANDROID)
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ #include "chrome/browser/first_run/upgrade_util_linux.h"
+ #include "chrome/browser/sxs_linux.h"
+ #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
+@@ -722,7 +722,7 @@ void ChromeBrowserMainParts::RecordBrowserStartupTime(
+ 
+ // CurrentProcessInfo::CreationTime() is currently only implemented on some
+ // platforms.
+-#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+   const base::Time process_creation_time =
+       base::CurrentProcessInfo::CreationTime();
+ 
+@@ -1003,7 +1003,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+   }
+ #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
+ 
+-#if defined(OS_LINUX) || defined(OS_OPENBSD) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX)
+   // Set the product channel for crash reports.
+   base::debug::SetCrashKeyValue(crash_keys::kChannel,
+       chrome::VersionInfo::GetVersionStringModifier());
+@@ -1329,7 +1329,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
+     return chrome::RESULT_CODE_MACHINE_LEVEL_INSTALL_EXISTS;
+ #endif  // defined(OS_WIN)
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+   if (sxs_linux::ShouldMigrateUserDataDir())
+     return sxs_linux::MigrateUserDataDir();
+ #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)

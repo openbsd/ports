@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_after_startup_task_utils_cc,v 1.1 2015/09/25 13:08:54 robert Exp $
+--- chrome/browser/after_startup_task_utils.cc.orig.port	Thu Sep 24 12:59:35 2015
++++ chrome/browser/after_startup_task_utils.cc	Thu Sep 24 13:01:01 2015
+@@ -89,7 +89,7 @@ void QueueTask(scoped_ptr<AfterStartupTask> queued_tas
+ 
+ void SetBrowserStartupIsComplete() {
+   DCHECK_CURRENTLY_ON(BrowserThread::UI);
+-#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+   // CurrentProcessInfo::CreationTime() is not available on all platforms.
+   const base::Time process_creation_time =
+       base::CurrentProcessInfo::CreationTime();

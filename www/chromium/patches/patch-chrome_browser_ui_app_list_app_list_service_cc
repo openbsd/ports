@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_app_list_app_list_service_cc,v 1.1 2015/09/25 13:08:54 robert Exp $
+--- chrome/browser/ui/app_list/app_list_service.cc.orig.port	Thu Sep 24 12:59:35 2015
++++ chrome/browser/ui/app_list/app_list_service.cc	Thu Sep 24 13:05:18 2015
+@@ -42,7 +42,7 @@ base::Time GetOriginalProcessStartTime(const base::Com
+ 
+ // base::CurrentProcessInfo::CreationTime() is only defined on some
+ // platforms.
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+   return base::CurrentProcessInfo::CreationTime();
+ #else
+   return base::Time();
