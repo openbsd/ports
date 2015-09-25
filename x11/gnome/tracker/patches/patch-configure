@@ -1,0 +1,42 @@
+$OpenBSD: patch-configure,v 1.17 2015/09/25 06:56:02 ajacoutot Exp $
+
+See pre-configure.
+
+--- configure.orig	Thu Sep 24 14:27:35 2015
++++ configure	Thu Sep 24 14:28:11 2015
+@@ -28009,7 +28009,7 @@ if ${ac_cv_lib_gif_DGifOpen+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgif  $LIBS"
++LIBS="-L${LOCALBASE}/lib -lgif  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -28119,7 +28119,7 @@ if ${ac_cv_lib_jpeg_jpeg_CreateCompress+:} false; then
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ljpeg  $LIBS"
++LIBS="-L${LOCALBASE}/lib -ljpeg  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -28229,7 +28229,7 @@ if ${ac_cv_lib_tiff_TIFFOpen+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ltiff  $LIBS"
++LIBS="-L${LOCALBASE}/lib -ltiff  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -28339,7 +28339,7 @@ if ${ac_cv_lib_png_png_create_read_struct+:} false; th
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpng  $LIBS"
++LIBS="-L${LOCALBASE}/lib -lpng  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.193 2015/07/31 18:39:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.194 2015/09/25 06:56:02 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		1.4.1
+GNOME_VERSION=		1.6.0
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
@@ -23,10 +23,10 @@ SUBST_VARS=		TRACKER_API
 
 SHARED_LIBS +=  tracker-common       3.1      # unknown
 SHARED_LIBS +=  tracker-data         3.1      # unknown
-SHARED_LIBS +=  tracker-sparql-1.0   0.0      # 400.0
+SHARED_LIBS +=  tracker-sparql-1.0   1.0      # 600.0
 SHARED_LIBS +=  tracker-extract      0.0      # unknown
-SHARED_LIBS +=  tracker-miner-1.0    0.0      # 400.0
-SHARED_LIBS +=  tracker-control-1.0  0.0      # 400.0
+SHARED_LIBS +=  tracker-miner-1.0    1.0      # 600.0
+SHARED_LIBS +=  tracker-control-1.0  1.0      # 600.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -103,6 +103,9 @@ FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/meta-tracker/
 pre-configure:
 	sed -i 's,/usr/bin,${LOCALBASE}/bin,' \
 		${WRKSRC}/src/tracker-needle/tracker-utils.vala
+# XXX LDFLAGS are reset in the configure script when checking for:
+# png, gif, jpeg and tiff
+	${SUBST_CMD} ${WRKSRC}/configure
 
 post-install:
 	rm ${PREFIX}/lib/tracker-${TRACKER_API}/extract-modules/*.{a,la}

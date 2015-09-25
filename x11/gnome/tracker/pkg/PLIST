@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2015/07/31 18:39:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2015/09/25 06:56:02 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @conflict tracker-*
@@ -145,6 +145,7 @@ share/glib-2.0/schemas/org.freedesktop.Tracker.DB.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.Tracker.Extract.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.Tracker.FTS.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.Tracker.Miner.Files.gschema.xml
+share/glib-2.0/schemas/org.freedesktop.Tracker.Needle.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.Tracker.Store.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.Tracker.Writeback.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.Tracker.enums.xml
