@@ -1,4 +1,4 @@
-.\"	$OpenBSD: pkg_subst.1,v 1.9 2015/07/23 08:05:18 bentley Exp $
+.\"	$OpenBSD: pkg_subst.1,v 1.10 2015/09/25 15:23:49 schwarze Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: July 23 2015 $
+.Dd $Mdocdate: September 25 2015 $
 .Dt PKG_SUBST 1
 .Os
 .Sh NAME
@@ -23,10 +23,7 @@
 .Sh SYNOPSIS
 .Nm pkg_subst
 .Op Fl ci
-.Oo Fl D Ar name
-.Oo = Ns Ar value
-.Oc
-.Oc
+.Op Fl D Ar name Ns Op = Ns Ar value
 .Op Fl g Ar group
 .Op Fl m Ar mode
 .Op Fl o Ar owner
@@ -39,11 +36,11 @@ the exact same conventions used by
 Constructs like
 .Li ${VAR}
 will be replaced with the variable value, according to
-.Fl D Ar name Ns = Ns Ar value
+.Fl D Ar name Ns Op = Ns Ar value
 options.
 .Pp
 The options are as follows
-.Bl -tag -width Dname=valuexxx
+.Bl -tag -width Dname[=value]xxx
 .It Fl c
 Copy and substitute.
 Number of
@@ -61,12 +58,13 @@ file is substituted and copied into the corresponding
 file.
 .It Xo
 .Fl D
-.Ar name Ns = Ns Ar value
+.Ar name Ns Op = Ns Ar value
 .Xc
 Define
 .Ar name
 to
-.Ar value .
+.Ar value ,
+or to 1 if no value is given.
 .It Fl g Ar group
 Change group of destination file to
 .Ar group .
