@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/06/15 14:28:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/25 07:17:57 landry Exp $
 
 COMMENT =	mount remote directories over ssh
 
-DISTNAME =	sshfs-fuse-2.4
-REVISION =	1
+DISTNAME =	sshfs-fuse-2.5
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://fuse.sourceforge.net/sshfs.html
