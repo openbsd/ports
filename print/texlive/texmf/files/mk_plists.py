@@ -272,17 +272,19 @@ buildset_pkgs = [
     "times", "courier",
     # coccinelle
     "comment", "xcolor",
+    # math/R
+    "inconsolata",
     ]
 
 print(">>> texlive_texmf-buildset")
 buildset_specs = runspecs(buildset_pkgs)  # note, no manuals
 buildset_top_matter = [
-    "@comment $OpenBSD: mk_plists.py,v 1.1 2015/09/22 20:00:14 edd Exp $",
+    "@comment $OpenBSD: mk_plists.py,v 1.2 2015/09/25 12:13:47 dcoppa Exp $",
     "@conflict teTeX_texmf-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
     "@conflict texlive_texmf-minimal-<%s" % YEAR,
-    "@conflict texlive_texmf-full-<%s" % YEAR,
+    "@conflict texlive_texmf-full-<%sp0" % YEAR,
     "@conflict texlive_texmf-context-<%s" % YEAR,
     "@pkgpath print/texlive/texmf-minimal",
     "@pkgpath print/teTeX/texmf",
@@ -344,7 +346,7 @@ context_pkgs = [
 
 print(">>> PLIST-context")
 context_top_matter = [
-    "@comment $OpenBSD: mk_plists.py,v 1.1 2015/09/22 20:00:14 edd Exp $",
+    "@comment $OpenBSD: mk_plists.py,v 1.2 2015/09/25 12:13:47 dcoppa Exp $",
     "@conflict teTeX_texmf-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
@@ -374,7 +376,7 @@ print("\n\n")
 print(">>> texlive_texmf-minimal")
 minimal_pkgs = ["scheme-tetex"]
 minimal_top_matter = [
-    "@comment $OpenBSD: mk_plists.py,v 1.1 2015/09/22 20:00:14 edd Exp $",
+    "@comment $OpenBSD: mk_plists.py,v 1.2 2015/09/25 12:13:47 dcoppa Exp $",
     "@conflict teTeX_texmf-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
@@ -405,7 +407,7 @@ print("\n\n")
 print(">>> texlive_texmf-full")
 full_pkgs = ["scheme-full"]
 full_top_matter = [
-    "@comment $OpenBSD: mk_plists.py,v 1.1 2015/09/22 20:00:14 edd Exp $",
+    "@comment $OpenBSD: mk_plists.py,v 1.2 2015/09/25 12:13:47 dcoppa Exp $",
     "@conflict teTeX_texmf-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
@@ -440,7 +442,7 @@ NO_MAN_INFO_PDFMAN_REGEX = \
 print(">>> texlive_texmf-docs")
 doc_specs = ["scheme-tetex:doc"]
 doc_top_matter = [
-    "@comment $OpenBSD: mk_plists.py,v 1.1 2015/09/22 20:00:14 edd Exp $",
+    "@comment $OpenBSD: mk_plists.py,v 1.2 2015/09/25 12:13:47 dcoppa Exp $",
     "@conflict teTeX_texmf-doc-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-minimal-<%s" % YEAR,

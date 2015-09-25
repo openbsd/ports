@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.79 2015/05/28 15:01:28 edd Exp $
+# $OpenBSD: Makefile,v 1.80 2015/09/25 12:13:46 dcoppa Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
-REVISION =		0
+REVISION =		1
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
@@ -25,7 +25,7 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 			print/ps2eps \
 			print/psutils \
 			print/t1utils \
-			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
+			texlive_texmf-buildset-${V}p0:print/texlive/texmf,-buildset
 
 LIB_DEPENDS =		graphics/png \
 			graphics/gd \
