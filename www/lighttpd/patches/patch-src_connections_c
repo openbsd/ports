@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_connections_c,v 1.25 2015/09/25 06:17:15 ajacoutot Exp $
+
+- [core] allocate at least 4k buffer for incoming data
+- [core] fix search for header end if split across chunks (fixes #2670)
+
+--- src/connections.c.orig	Fri Sep 25 01:53:03 2015
++++ src/connections.c	Fri Sep 25 01:54:52 2015
+@@ -336,10 +336,11 @@ static int connection_handle_read(server *srv, connect
+ 	len = recv(con->fd, mem, mem_len, 0);
+ #else /* __WIN32 */
+ 	if (ioctl(con->fd, FIONREAD, &toread) || toread == 0 || toread <= 4*1024) {
+-		if (toread > MAX_READ_LIMIT) toread = MAX_READ_LIMIT;
+-	} else {
+ 		toread = 4096;
+ 	}
++	else if (toread > MAX_READ_LIMIT) {
++		toread = MAX_READ_LIMIT;
++	}
+ 	chunkqueue_get_memory(con->read_queue, &mem, &mem_len, 0, toread);
+ 
+ 	len = read(con->fd, mem, mem_len);
+@@ -931,7 +932,7 @@ static int connection_handle_read_state(server *srv, c
+ 
+ 					for ( ; cc; cc = cc->next, j = 0 ) {
+ 						size_t bblen = buffer_string_length(cc->mem) - cc->offset;
+-						const char *bb = c->mem->ptr + cc->offset;
++						const char *bb = cc->mem->ptr + cc->offset;
+ 
+ 						for ( ; j < bblen; j++) {
+ 							ch = bb[j];
