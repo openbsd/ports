@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/31 09:45:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/25 12:50:08 sthen Exp $
+
+PKG_ARCH=	*
 
 COMMENT=	clear, readable monospaced font
 
 DISTNAME=	otf-hermit-1.21
 PKGNAME=	hermit-font-1.21
 CATEGORIES=	fonts x11
-REVISION=	0
+REVISION=	1
 
 # OFL 1.1
 PERMIT_PACKAGE_CDROM=	Yes

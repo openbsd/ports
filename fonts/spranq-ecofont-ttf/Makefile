@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/31 09:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/25 12:50:08 sthen Exp $
+
+PKG_ARCH=		*
 
 COMMENT=		ink-saving font based on Vera Sans
 
@@ -6,7 +8,7 @@ COMMENT=		ink-saving font based on Vera Sans
 V=			0.001
 DISTNAME=		spranq_eco_sans_regular-$V
 PKGNAME=		spranq-ecofont-ttf-$V
-REVISION=		1
+REVISION=		2
 CATEGORIES=		fonts x11
 
 HOMEPAGE=		http://www.ecofont.eu/ecofont_en.html

@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2015/06/06 04:49:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2015/09/25 12:50:08 sthen Exp $
+
+PKG_ARCH=	*
 
 COMMENT=	extra Korean fonts
 
 V=		2.0
 DISTNAME=	baekmuk-${V}
 PKGNAME=	ko-baekmuk-fonts-${V}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	fonts korean x11
 
 MASTER_SITES=	http://distcache.freebsd.org/ports-distfiles/ \

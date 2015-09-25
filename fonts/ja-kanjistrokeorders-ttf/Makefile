@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/02 19:32:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2015/09/25 12:50:08 sthen Exp $
+
+PKG_ARCH =		*
 
 COMMENT =		font to view stroke order diagrams for Kanji, Kana and etc
 
 DISTNAME =		KanjiStrokeOrders_v3.001
+REVISION =		0
 PKGNAME =		ja-${DISTNAME:L:S/_v/-ttf-/}
 CATEGORIES =		fonts japanese x11
 
