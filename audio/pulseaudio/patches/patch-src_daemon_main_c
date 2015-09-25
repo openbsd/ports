@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_daemon_main_c,v 1.12 2015/03/15 08:45:10 ajacoutot Exp $
---- src/daemon/main.c.orig	Thu Feb 12 15:10:35 2015
-+++ src/daemon/main.c	Mon Feb 16 14:46:39 2015
+$OpenBSD: patch-src_daemon_main_c,v 1.13 2015/09/25 06:57:12 ajacoutot Exp $
+--- src/daemon/main.c.orig	Tue Sep 15 06:46:06 2015
++++ src/daemon/main.c	Thu Sep 24 12:57:38 2015
 @@ -997,10 +997,12 @@ int main(int argc, char *argv[]) {
  
      pa_disable_sigpipe();
  
 +#ifdef __linux__
      if (pa_rtclock_hrtimer())
-         pa_log_info("Fresh high-resolution timers available! Bon appetit!");
+         pa_log_info("Fresh high-resolution timers available! Bon appetit.");
      else
-         pa_log_info("Dude, your kernel stinks! The chef's recommendation today is Linux with high-resolution timers enabled!");
+         pa_log_info("Dude, your kernel stinks! The chef's recommendation today is Linux with high-resolution timers enabled.");
 +#endif
  
      if (conf->lock_memory) {

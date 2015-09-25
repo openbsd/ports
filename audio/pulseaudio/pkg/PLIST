@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2015/08/27 06:48:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2015/09/25 06:57:12 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -145,7 +145,10 @@ lib/pulseaudio/libpulsecommon-${VERSION}.so
 @man man/man1/pacat.1
 @man man/man1/pacmd.1
 @man man/man1/pactl.1
+@man man/man1/pamon.1
 @man man/man1/paplay.1
+@man man/man1/parec.1
+@man man/man1/parecord.1
 @man man/man1/pasuspender.1
 @man man/man1/pax11publish.1
 @man man/man1/pulseaudio.1
@@ -154,11 +157,16 @@ lib/pulseaudio/libpulsecommon-${VERSION}.so
 @man man/man5/pulse-cli-syntax.5
 @man man/man5/pulse-client.conf.5
 @man man/man5/pulse-daemon.conf.5
+share/bash-completion/completions/pacat
+share/bash-completion/completions/pacmd
+share/bash-completion/completions/pactl
+share/bash-completion/completions/padsp
+share/bash-completion/completions/paplay
+share/bash-completion/completions/parec
+share/bash-completion/completions/parecord
+share/bash-completion/completions/pasuspender
+share/bash-completion/completions/pulseaudio
 share/examples/pulseaudio/
-share/examples/pulseaudio/bash_completion.d/
-@sample ${SYSCONFDIR}/bash_completion.d/
-share/examples/pulseaudio/bash_completion.d/pulseaudio
-@sample ${SYSCONFDIR}/bash_completion.d/pulseaudio
 share/examples/pulseaudio/dbus-1/
 share/examples/pulseaudio/dbus-1/system.d/
 @sample ${SYSCONFDIR}/dbus-1/system.d/
@@ -200,9 +208,11 @@ share/locale/id/LC_MESSAGES/pulseaudio.mo
 share/locale/it/LC_MESSAGES/pulseaudio.mo
 share/locale/ja/LC_MESSAGES/pulseaudio.mo
 share/locale/kn/LC_MESSAGES/pulseaudio.mo
+share/locale/ko/LC_MESSAGES/pulseaudio.mo
 share/locale/ml/LC_MESSAGES/pulseaudio.mo
 share/locale/mr/LC_MESSAGES/pulseaudio.mo
 share/locale/nl/LC_MESSAGES/pulseaudio.mo
+share/locale/oc/LC_MESSAGES/pulseaudio.mo
 share/locale/or/LC_MESSAGES/pulseaudio.mo
 share/locale/pa/LC_MESSAGES/pulseaudio.mo
 share/locale/pl/LC_MESSAGES/pulseaudio.mo
@@ -230,19 +240,3 @@ share/vala/vapi/libpulse.vapi
 share/zsh/
 share/zsh/site-functions/
 share/zsh/site-functions/_pulseaudio
-@exec ln -sf pulseaudio ${SYSCONFDIR}/bash_completion.d/pactl
-@exec ln -sf pulseaudio ${SYSCONFDIR}/bash_completion.d/pacmd
-@exec ln -sf pulseaudio ${SYSCONFDIR}/bash_completion.d/pasuspender
-@exec ln -sf pulseaudio ${SYSCONFDIR}/bash_completion.d/padsp
-@exec ln -sf pulseaudio ${SYSCONFDIR}/bash_completion.d/pacat
-@exec ln -sf pulseaudio ${SYSCONFDIR}/bash_completion.d/paplay
-@exec ln -sf pulseaudio ${SYSCONFDIR}/bash_completion.d/parec
-@exec ln -sf pulseaudio ${SYSCONFDIR}/bash_completion.d/parecord
-@unexec rm -f ${SYSCONFDIR}/bash_completion.d/pactl
-@unexec rm -f ${SYSCONFDIR}/bash_completion.d/pacmd
-@unexec rm -f ${SYSCONFDIR}/bash_completion.d/pasuspender
-@unexec rm -f ${SYSCONFDIR}/bash_completion.d/padsp
-@unexec rm -f ${SYSCONFDIR}/bash_completion.d/pacat
-@unexec rm -f ${SYSCONFDIR}/bash_completion.d/paplay
-@unexec rm -f ${SYSCONFDIR}/bash_completion.d/parec
-@unexec rm -f ${SYSCONFDIR}/bash_completion.d/parecord

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.10 2015/03/15 08:45:10 ajacoutot Exp $
---- configure.ac.orig	Thu Feb 12 15:10:35 2015
-+++ configure.ac	Mon Feb 16 14:47:42 2015
+$OpenBSD: patch-configure_ac,v 1.11 2015/09/25 06:57:12 ajacoutot Exp $
+--- configure.ac.orig	Thu Sep 17 04:47:47 2015
++++ configure.ac	Thu Sep 24 12:57:02 2015
 @@ -177,7 +177,7 @@ esac
  #### Compiler flags ####
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_ac,v 1.10 2015/03/15 08:45:10 ajacoutot Exp $
  AX_DEFINE_DIR(PA_MACHINE_ID_FALLBACK, PA_MACHINE_ID_FALLBACK,
  	      [Fallback machine-id file])
  
-@@ -1309,9 +1309,9 @@ fi
+@@ -1324,9 +1324,9 @@ fi
  
  PA_SYSTEM_RUNTIME_PATH="${localstatedir}/run/pulse"
  AX_DEFINE_DIR(PA_SYSTEM_RUNTIME_PATH, PA_SYSTEM_RUNTIME_PATH, [System runtime dir])

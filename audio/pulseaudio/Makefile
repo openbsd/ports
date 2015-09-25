@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2015/08/27 06:48:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2015/09/25 06:57:12 ajacoutot Exp $
 
 # XXX
 # util.c: implement pa_get_binary_name()
@@ -10,13 +10,12 @@ SHARED_ONLY=		Yes
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		6.0
+VERSION=		7.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		6
 
-SHARED_LIBS +=  pulse                4.0      # .18.0
-SHARED_LIBS +=  pulse-simple         0.0      # .1.0
+SHARED_LIBS +=  pulse                4.1      # .18.2
+SHARED_LIBS +=  pulse-simple         1.0      # .1.0
 SHARED_LIBS +=  pulse-mainloop-glib  1.0      # .0.5
 
 CATEGORIES=		audio
@@ -74,6 +73,8 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-system-group=_pulse \
 			--with-access-group=_pulse-access \
 			--with-database=gdbm \
+			--with-bash-completion-dir=${PREFIX}/share/bash-completion/completions \
+			--without-soxr \
 			--without-fftw \
 			--disable-oss-output \
 			--disable-oss-wrapper \
@@ -108,7 +109,7 @@ FAKE_FLAGS=		pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse" \
 
 ### SNDIO ###
 AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.14
+AUTOMAKE_VERSION=	1.15
 BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
 BUILD_DEPENDS +=	devel/libtool # needs needs libtoolize
@@ -134,7 +135,5 @@ post-install:
 	rm ${PREFIX}/lib/pulse-${VERSION}/modules/*.a
 # we don't install padsp
 	cd ${PREFIX} && rm man/man1/padsp.1
-# see WRKSRC/Makefile and the @exec/@unexec in PLIST
-	rm ${PREFIX}/share/examples/pulseaudio/bash_completion.d/pa*
 
 .include <bsd.port.mk>
