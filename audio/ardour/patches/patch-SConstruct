@@ -1,6 +1,6 @@
-$OpenBSD: patch-SConstruct,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
+$OpenBSD: patch-SConstruct,v 1.2 2015/09/25 14:12:16 ajacoutot Exp $
 --- SConstruct.orig	Fri Jul 20 17:25:16 2012
-+++ SConstruct	Fri Aug 17 15:23:17 2012
++++ SConstruct	Fri Sep 25 16:04:14 2015
 @@ -441,7 +441,6 @@ deps = \
  	'gtk+-2.0'             : '2.8.1',
  	'libxml-2.0'           : '2.6.0',
@@ -47,7 +47,16 @@ $OpenBSD: patch-SConstruct,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
  if config[config_cpu] == 'powerpc' and env['DIST_TARGET'] != 'none':
      # Apple/PowerPC optimization options
      #
-@@ -929,6 +932,7 @@ libraries['vamphost'] = LibraryInfo (LIBS='vamphostsdk
+@@ -860,6 +863,8 @@ if env['UNIVERSAL'] == 1:
+     env.Append(CCFLAGS="-arch i386 -arch ppc")
+     env.Append(LINKFLAGS="-arch i386 -arch ppc")
+ 
++env.Append(CFLAGS="!!CFLAGS!!")
++env.Append(CXXFLAGS="!!CXXFLAGS!!")
+ 
+ #
+ # warnings flags
+@@ -929,6 +934,7 @@ libraries['vamphost'] = LibraryInfo (LIBS='vamphostsdk
  
  env['RUBBERBAND'] = False
  
@@ -55,7 +64,7 @@ $OpenBSD: patch-SConstruct,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
  conf = Configure (env)
  
  if conf.CheckHeader ('fftw3.h'):
-@@ -1061,6 +1065,11 @@ elif conf.CheckCHeader('/System/Library/Frameworks/Cor
+@@ -1061,6 +1067,11 @@ elif conf.CheckCHeader('/System/Library/Frameworks/Cor
      env['SYSMIDI'] = 'CoreMIDI'
      subst_dict['%MIDITAG%'] = "ardour"
      subst_dict['%MIDITYPE%'] = "coremidi"
@@ -67,7 +76,7 @@ $OpenBSD: patch-SConstruct,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
  else:
      print "It appears you don't have the required MIDI libraries installed. For Linux this means you are missing the development package for ALSA libraries."
      sys.exit (1)
-@@ -1283,11 +1292,7 @@ subst_dict['%INSTALL_PREFIX%'] = install_prefix;
+@@ -1283,11 +1294,7 @@ subst_dict['%INSTALL_PREFIX%'] = install_prefix;
  subst_dict['%FINAL_PREFIX%'] = final_prefix;
  subst_dict['%PREFIX%'] = final_prefix;
  

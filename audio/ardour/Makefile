@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/09/24 10:42:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2015/09/25 14:12:16 ajacoutot Exp $
 
 BROKEN =		needs patching to work with libsigc++ >=2.6.0
 
@@ -70,6 +70,11 @@ LIB_DEPENDS =		audio/aubio \
 post-extract:
 	cp ${FILESDIR}/sndio_midiport.h ${WRKSRC}/libs/midi++2/midi++/
 	cp ${FILESDIR}/sndio_midiport.cc ${WRKSRC}/libs/midi++2/
+
+pre-configure:
+	sed -i -e "s,!!CFLAGS!!,${CFLAGS},g" \
+		-e "s,!!CXXFLAGS!!,${CXXFLAGS},g" \
+		${WRKSRC}/SConstruct
 
 post-install:
 	mv ${WRKINST}/etc/ardour2 ${PREFIX}/share/examples/
