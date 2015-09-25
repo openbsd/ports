@@ -1,9 +1,18 @@
-$OpenBSD: patch-unix_configure,v 1.5 2015/06/06 14:19:11 stu Exp $
+$OpenBSD: patch-unix_configure,v 1.6 2015/09/25 16:10:12 tobiasu Exp $
 
 Setting this here will allow it to propagate through everything.
 
---- unix/configure.orig	Fri Mar  6 10:13:58 2015
-+++ unix/configure	Sat Jun  6 10:02:51 2015
+--- unix/configure.orig	Fri Mar  6 16:13:58 2015
++++ unix/configure	Fri Sep 25 15:37:13 2015
+@@ -7577,7 +7577,7 @@ fi
+ 		;;
+ 	    *)
+ 		case "$arch" in
+-		alpha|sparc64)
++		alpha|sparc|sparc64)
+ 		    SHLIB_CFLAGS="-fPIC"
+ 		    ;;
+ 		*)
 @@ -18827,7 +18827,7 @@ if test "$FRAMEWORK_BUILD" = "1" ; then
  elif test "$prefix/lib" != "$libdir"; then
      TCL_PACKAGE_PATH="${libdir} ${prefix}/lib ${TCL_PACKAGE_PATH}"
