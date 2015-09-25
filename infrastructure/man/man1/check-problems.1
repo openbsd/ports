@@ -1,4 +1,4 @@
-.\"	$OpenBSD: check-problems.1,v 1.2 2015/07/23 08:05:18 bentley Exp $
+.\"	$OpenBSD: check-problems.1,v 1.3 2015/09/25 18:41:27 schwarze Exp $
 .\"
 .\" Copyright (c) 2010-2015 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: July 23 2015 $
+.Dd $Mdocdate: September 25 2015 $
 .Dt CHECK-PROBLEMS 1
 .Os
 .Sh NAME
@@ -47,7 +47,7 @@ or
 .Cm @conflict
 .Po
 see
-.Xr package-create 1
+.Xr pkg_create 1
 .Pc .
 .Pp
 Conflicts between packages mean that a user can't have both packages installed
@@ -64,7 +64,7 @@ will show up as an unregistered conflict.
 Directories can belong to distinct packages, as long as they are registered
 somewhere.
 Every directory that is not part of the standard
-.Xr mtree 1
+.Xr mtree 8
 set should appear in a packing-list somewhere.
 .Pp
 Contrary to files, directories can be shared between several packages.
