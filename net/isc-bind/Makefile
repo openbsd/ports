@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2015/09/16 15:28:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2015/09/25 14:02:31 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 V=		9.10.3
+REVISION=	0
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
@@ -46,6 +47,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-libtool \
 		--without-readline \
 		--with-python=${MODPY_BIN}
+
+CONFIGURE_ENV=	STD_CDEFINES="-DDIG_SIGCHASE=1"
 
 # JSON stats support is built if json-c is found at build time; however this
 # breaks on hppa and mips64, so it's forcibly disabled at this time.
