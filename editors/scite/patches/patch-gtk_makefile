@@ -4,7 +4,7 @@ Drop `-pedantic'
 /usr/local/include/gtk-3.0/gdk/gdktypes.h:318: error: comma at end of enumerator list
 
 --- gtk/makefile.orig	Sun Aug 10 01:52:11 2014
-+++ gtk/makefile	Thu Sep 24 06:38:51 2015
++++ gtk/makefile	Fri Sep 25 07:19:41 2015
 @@ -5,14 +5,6 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
@@ -55,7 +55,7 @@ Drop `-pedantic'
  DEPRECATED=-DGDK_PIXBUF_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED
  endif
 -CXXBASEFLAGS=-W -Wall -pedantic -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS) $(DEPRECATED)
-+CXXBASEFLAGS=-W -Wall -pedantic -Dunix -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS) $(DEPRECATED)
++CXXBASEFLAGS=-W -Wall -Dunix -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS) $(DEPRECATED)
  
  ifdef DEBUG
 -CXXTFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
