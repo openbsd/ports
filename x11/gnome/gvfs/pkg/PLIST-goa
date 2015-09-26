@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-goa,v 1.1 2013/03/30 18:08:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-goa,v 1.2 2015/09/26 06:26:04 ajacoutot Exp $
 @conflict gvfs-<1.16.0p1
 @bin libexec/gvfs-goa-volume-monitor
-share/dbus-1/services/org.gtk.Private.GoaVolumeMonitor.service
+share/dbus-1/services/org.gtk.vfs.GoaVolumeMonitor.service
 share/gvfs/remote-volume-monitors/goa.monitor

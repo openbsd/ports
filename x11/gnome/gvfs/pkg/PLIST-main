@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.34 2015/08/20 14:24:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.35 2015/09/26 06:26:04 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/gvfs-cat
 @bin bin/gvfs-copy
@@ -98,6 +98,7 @@ share/gvfs/mounts/dav+sd.mount
 share/gvfs/mounts/dav.mount
 share/gvfs/mounts/dns-sd.mount
 share/gvfs/mounts/ftp.mount
+share/gvfs/mounts/ftps.mount
 share/gvfs/mounts/http.mount
 share/gvfs/mounts/localtest.mount
 share/gvfs/mounts/network.mount
