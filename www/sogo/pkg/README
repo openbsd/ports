@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.18 2015/07/17 21:23:08 ajacoutot Exp $
+# $OpenBSD: README,v 1.19 2015/09/26 14:29:22 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -333,3 +333,14 @@ to 127.0.0.1:20000. To get back the old behaviour, run the following
 command:
 
 # su _sogo "defaults write sogod WOPort *:20000"
+
+Upgrade SOGo from < 2.3.0
+==========================
+With version 2.3.0, the database schema needs to be extended.
+
+Run one of the following scripts as the SOGo system user _sogo. Depending on
+the database you use, choose the postgres or mysql variant. The scripts
+will ask you for the database credentials.
+
+# su _sogo "${TRUEPREFIX}/share/doc/sogo/sql-update-2.2.17_to_2.3.0-postgres.sh"
+# su _sogo "${TRUEPREFIX}/share/doc/sogo/sql-update-2.2.17_to_2.3.0-mysql.sh"

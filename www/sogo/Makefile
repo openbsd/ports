@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.47 2015/07/17 21:23:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2015/09/26 14:29:22 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
-VERSION =	2.2.17
-DISTNAME =	SOGo-${VERSION}a
-PKGNAME =	sogo-${VERSION}.0
-REVISION =	0
+VERSION =	2.3.2
+DISTNAME =	SOGo-${VERSION}
+PKGNAME =	sogo-${VERSION}
 
 SHARED_LIBS +=	GDLContentStore 2.0
 SHARED_LIBS +=	NGCards		2.0
-SHARED_LIBS +=	SOGo		2.3
+SHARED_LIBS +=	SOGo		3.0
 SHARED_LIBS +=	SOGoUI		2.0
 
 CATEGORIES =	www
@@ -68,7 +67,17 @@ post-install:
 		${WRKSRC}/Scripts/sql-update-1.3.16_to_1.3.17-mysql.sh \
 		${PREFIX}/share/doc/sogo/sql-update-1.3.16_to_1.3.17-mysql.sh
 	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
+		${WRKSRC}/Scripts/sql-update-2.2.17_to_2.3.0.sh \
+		${PREFIX}/share/doc/sogo/sql-update-2.2.17_to_2.3.0-postgres.sh
+	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
+		${WRKSRC}/Scripts/sql-update-2.2.17_to_2.3.0-mysql.sh \
+		${PREFIX}/share/doc/sogo/sql-update-2.2.17_to_2.3.0-mysql.sh
+	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
 		${WRKSRC}/Scripts/updates.php \
 		${PREFIX}/share/doc/sogo/updates.php
+
+do-test:
+	cd ${WRKSRC}/Tests/Integration && ${MAKE_PROGRAM} && ./teststrings.sh
+	cd ${WRKSRC}/Tests/Unit && ${MAKE_PROGRAM} && obj/sogo-tests
 
 .include <bsd.port.mk>

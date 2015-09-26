@@ -1,0 +1,15 @@
+$OpenBSD: patch-Tests_Unit_GNUmakefile,v 1.3 2015/09/26 14:29:22 sebastia Exp $
+Do not hardcode libobjc library name, ask GNUstep what to use.
+--- Tests/Unit/GNUmakefile.orig	Fri Sep 25 10:52:19 2015
++++ Tests/Unit/GNUmakefile	Fri Sep 25 10:53:53 2015
+@@ -35,8 +35,8 @@ $(TEST_TOOL)_CPPFLAGS += \
+ 	-Wall -D_GNU_SOURCE -I../../SOPE/ -I../../SoObjects/ -I../../UI/
+ 
+ ADDITIONAL_LIB_DIRS += \
+-	-L../../SoObjects/SOGo/SOGo.framework/Versions/Current/sogo -L../../SOPE/NGCards/obj -L../../SOPE/GDLContentStore/obj -lSOGo -lNGMime -lNGCards -lGDLContentStore -lNGExtensions -lSBJson -lobjc \
+-	-L/usr/local/lib  -lSaxObjC \
++	-L../../SoObjects/SOGo/SOGo.framework/Versions/Current/sogo -L../../SOPE/NGCards/obj -L../../SOPE/GDLContentStore/obj -lSOGo -lNGMime -lNGCards -lGDLContentStore -lNGExtensions -lSBJson \
++	`gnustep-config --objc-libs` -lSaxObjC \
+ 	-Wl,-rpath,../../SoObjects/SOGo/SOGo.framework/Versions/Current/sogo -Wl,-rpath,../../SOPE/NGCards/obj -Wl,-rpath,../../SOPE/GDLContentStore/obj
+ ADDITIONAL_LDFLAGS += -Wl,--no-as-needed
+ 

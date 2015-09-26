@@ -1,0 +1,33 @@
+$OpenBSD: patch-Scripts_sql-update-2_2_17_to_2_3_0-mysql_sh,v 1.1 2015/09/26 14:29:22 sebastia Exp $
+--- Scripts/sql-update-2.2.17_to_2.3.0-mysql.sh.orig	Wed Sep 16 20:41:29 2015
++++ Scripts/sql-update-2.2.17_to_2.3.0-mysql.sh	Mon Sep 21 13:17:32 2015
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ set -e
+ 
+@@ -11,15 +11,19 @@ set -e
+ defaultusername=$USER
+ defaulthostname=127.0.0.1
+ defaultdatabase=$USER
+-indextable=$(sogo-tool dump-defaults -f /etc/sogo/sogo.conf | awk -F\" '/ OCSFolderInfoURL =/  {print $2}' |  awk -F/ '{print $NF}')
++if [ -f /etc/sogo/sogo.conf ];then
++  indextable=$(sogo-tool dump-defaults -f /etc/sogo/sogo.conf | awk -F\" '/ OCSFolderInfoURL =/  {print $2}' |  awk -F/ '{print $NF}')
++else
++  indextable=$(sogo-tool dump-defaults | awk -F\" '/ OCSFolderInfoURL =/  {print $2}' |  awk -F/ '{print $NF}')
++fi
+ if [ -z "$indextable" ]; then
+   echo "Couldn't fetch OCSFolderInfoURL value, aborting" >&2
+   exit 1
+ fi
+ 
+-read -p "Username ($defaultusername): " username
+-read -p "Hostname ($defaulthostname): " hostname
+-read -p "Database ($defaultdatabase): " database
++read username?"Username ($defaultusername): "
++read hostname?"Hostname ($defaulthostname): "
++read database?"Database ($defaultdatabase): "
+ 
+ if [ -z "$username" ]
+ then
