@@ -1,0 +1,11 @@
+3 of 9, sometimes called "code 39", is a widely used barcode standard that
+includes capital letters, numbers, and several symbols. This package includes
+two fonts making this available to applications:
+
+"Free 3 of 9" includes the basic 3 of 9 standard characters: numbers,
+upper-case letters and the following symbols:  $ % + - . /
+
+"Free 3 of 9 Extended" implements most of the extended standard,
+including all of the ASCII characters.
+
+They are suitable for scanning even at fairly small point sizes.

@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/26 08:35:09 sthen Exp $
+share/fonts/
+@fontdir share/fonts/free3of9/
+share/fonts/free3of9/fre3of9x.ttf
+share/fonts/free3of9/free3of9.ttf
+share/fonts/free3of9/free3of9.txt
+share/fonts/free3of9/license.txt
