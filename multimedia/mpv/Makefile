@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2015/09/11 14:46:29 bentley Exp $
+# $OpenBSD: Makefile,v 1.17 2015/09/26 04:02:31 czarkoff Exp $
 
 ONLY_FOR_ARCHS =	alpha amd64 i386 powerpc sparc64
 
 COMMENT =		movie player based on MPlayer/mplayer2
-V =			0.10.0
+
+V =			0.11.0
 DISTNAME =		mpv-${V}
 
 GH_ACCOUNT=		mpv-player
@@ -14,7 +15,7 @@ CATEGORIES =		multimedia x11
 
 HOMEPAGE =		http://mpv.io/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	patents
