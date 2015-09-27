@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/06/05 05:40:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/27 20:37:26 sthen Exp $
 
 COMMENT=		fast lexical analyzer generator
 
@@ -31,6 +31,10 @@ CONFIGURE_ARGS=		--includedir=${PREFIX}/include/flex \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_path_M4=/usr/bin/m4
+
+# otherwise doc/version.texi gets updated if you're in a timezone with
+# an offset of +9h or greater, triggering a doc rebuild which requires TeX.
+MAKE_ENV=		TZ=UTC
 
 post-install:
 	rm ${PREFIX}/lib/flex/*.la
