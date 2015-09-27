@@ -1,0 +1,16 @@
+$OpenBSD: patch-libraries_Cabal_Cabal_Distribution_Simple_Program_Strip_hs,v 1.1 2015/09/27 20:07:47 kili Exp $
+
+Work around unresolved symbols when linking against hs packages
+that use FFI and contain some code compiled from C sources.
+
+--- libraries/Cabal/Cabal/Distribution/Simple/Program/Strip.hs.orig	Wed Feb 25 06:13:11 2015
++++ libraries/Cabal/Cabal/Distribution/Simple/Program/Strip.hs	Sun Sep 27 21:41:40 2015
+@@ -52,6 +52,8 @@ stripLib verbosity (Platform arch os) conf path = do
+            return ()
+     IOS -> return ()
+     Solaris -> return ()
++    OpenBSD -> -- '--strip-unneeded' sometimes strips too much on OpenBSD.
++           return ()
+     Windows -> -- Stripping triggers a bug in 'strip.exe' for
+                -- libraries with lots identically named modules. See
+                -- #1784.
