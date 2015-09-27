@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.59 2015/09/13 12:34:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2015/09/27 21:38:01 bluhm Exp $
 
 COMMENT =		perl interface to the domain name system
 
-DISTNAME =		Net-DNS-1.01
-REVISION =		2
+DISTNAME =		Net-DNS-1.02
 
 CATEGORIES =		net
 
@@ -17,8 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		http://www.net-dns.org/download/
 
 MODULES =		cpan
-RUN_DEPENDS =		mail/p5-MIME-Base32>=1.01 \
-			security/p5-Digest-HMAC>=1.03
+RUN_DEPENDS =		security/p5-Digest-HMAC>=1.03
 TEST_DEPENDS =		devel/p5-Test-Pod>=1.45 \
 			net/p5-IO-Socket-INET6>=2.01 \
 			net/p5-Net-DNS-SEC>=1.01 \
