@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/11/07 10:05:29 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/09/27 08:23:55 ajacoutot Exp $
 include/QtGStreamer/
 include/QtGStreamer/QGlib/
 include/QtGStreamer/QGlib/Connect
@@ -117,7 +117,6 @@ include/QtGStreamer/QGst/taglist.h
 include/QtGStreamer/QGst/urihandler.h
 include/QtGStreamer/QGst/videoorientation.h
 include/QtGStreamer/QGst/videooverlay.h
-lib/cmake/
 lib/cmake/QtGStreamer/
 lib/cmake/QtGStreamer/QtGStreamerConfig.cmake
 lib/cmake/QtGStreamer/QtGStreamerConfigCommon.cmake
