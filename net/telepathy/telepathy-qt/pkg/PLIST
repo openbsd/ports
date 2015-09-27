@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/11/08 14:10:26 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/09/27 08:23:21 ajacoutot Exp $
 include/telepathy-qt4/
 include/telepathy-qt4/TelepathyQt/
 include/telepathy-qt4/TelepathyQt/AbstractAdaptor
@@ -411,7 +411,6 @@ include/telepathy-qt4/TelepathyQt/tls-certificate.h
 include/telepathy-qt4/TelepathyQt/tube-channel.h
 include/telepathy-qt4/TelepathyQt/types.h
 include/telepathy-qt4/TelepathyQt/utils.h
-lib/cmake/
 lib/cmake/TelepathyQt4/
 lib/cmake/TelepathyQt4/TelepathyQt4Config.cmake
 lib/cmake/TelepathyQt4/TelepathyQt4ConfigVersion.cmake

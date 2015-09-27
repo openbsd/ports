@@ -1,10 +1,17 @@
-$OpenBSD: patch-TelepathyQt_Farstream_CMakeLists_txt,v 1.2 2014/11/01 20:43:26 zhuk Exp $
+$OpenBSD: patch-TelepathyQt_Farstream_CMakeLists_txt,v 1.3 2015/09/27 08:23:21 ajacoutot Exp $
+
 Unbreak build: missing include dirs, wrong linking order.
---- TelepathyQt/Farstream/CMakeLists.txt.orig	Tue Sep  9 02:13:43 2014
-+++ TelepathyQt/Farstream/CMakeLists.txt	Mon Oct  6 00:03:02 2014
-@@ -4,6 +4,7 @@ if(FARSTREAM_COMPONENTS_FOUND)
+
+https://bugs.freedesktop.org/show_bug.cgi?id=91040
+
+--- TelepathyQt/Farstream/CMakeLists.txt.orig	Tue Sep  9 00:13:43 2014
++++ TelepathyQt/Farstream/CMakeLists.txt	Sun Sep 27 10:02:48 2015
+@@ -2,8 +2,9 @@ if(FARSTREAM_COMPONENTS_FOUND)
+     include_directories(${TELEPATHY_FARSTREAM_INCLUDE_DIR}
+                         ${TELEPATHY_GLIB_INCLUDE_DIR}
                          ${FARSTREAM_INCLUDE_DIR}
-                         ${GSTREAMER_INCLUDE_DIR}
+-                        ${GSTREAMER_INCLUDE_DIR}
++                        ${GSTREAMER_INCLUDE_DIRS}
                          ${GLIB2_INCLUDE_DIR}
 +                        ${ICONV_INCLUDE_DIR}
                          ${LIBXML2_INCLUDE_DIR}
