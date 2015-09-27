@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2015/01/07 08:42:04 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2015/09/27 08:22:06 ajacoutot Exp $
 @conflict gstreamer1-plugins-bad-<1.2.0
 lib/gstreamer-${API}/libgstalaw.so
 lib/gstreamer-${API}/libgstalpha.so
@@ -172,6 +172,7 @@ share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plug
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plugin-alphacolor.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plugin-apetag.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plugin-audiofx.html
+share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plugin-audioparsers.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plugin-auparse.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plugin-autodetect.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-plugin-avi.html
@@ -260,11 +261,16 @@ share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpb
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpbvdepay.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpbvpay.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpdec.html
+share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpdtmfdepay.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpdtmfmux.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpdtmfsrc.html
+share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtph261depay.html
+share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtph261pay.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpj2kpay.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpjitterbuffer.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpjpegpay.html
+share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpklvdepay.html
+share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpklvpay.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpmux.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtpptdemux.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-rtprtxreceive.html
@@ -278,6 +284,8 @@ share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-scal
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-shagadelictv.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-shapewipe.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-shout2send.html
+share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-smokedec.html
+share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-smokeenc.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-smpte.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-smptealpha.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-souphttpsrc.html
@@ -285,6 +293,8 @@ share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-spec
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-speexdec.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-speexenc.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-splitfilesrc.html
+share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-splitmuxsink.html
+share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-splitmuxsrc.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-streaktv.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-taginject.html
 share/gtk-doc/html/gst-plugins-good-plugins-${API}/gst-plugins-good-plugins-udpsink.html
