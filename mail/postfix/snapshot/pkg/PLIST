@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.67 2015/01/22 18:19:46 brad Exp $
+@comment $OpenBSD: PLIST,v 1.68 2015/09/27 13:56:38 sthen Exp $
 @conflict postfix-*
 @pkgpath mail/postfix/snapshot,sqlite
 @newgroup _postfix:507
@@ -148,6 +148,7 @@ share/doc/postfix/html/BACKSCATTER_README.html
 share/doc/postfix/html/BASIC_CONFIGURATION_README.html
 share/doc/postfix/html/BUILTIN_FILTER_README.html
 share/doc/postfix/html/CDB_README.html
+share/doc/postfix/html/COMPATIBILITY_README.html
 share/doc/postfix/html/CONNECTION_CACHE_README.html
 share/doc/postfix/html/CONTENT_INSPECTION_README.html
 share/doc/postfix/html/DATABASE_README.html
@@ -272,6 +273,7 @@ share/doc/postfix/readme/BACKSCATTER_README
 share/doc/postfix/readme/BASIC_CONFIGURATION_README
 share/doc/postfix/readme/BUILTIN_FILTER_README
 share/doc/postfix/readme/CDB_README
+share/doc/postfix/readme/COMPATIBILITY_README
 share/doc/postfix/readme/CONNECTION_CACHE_README
 share/doc/postfix/readme/CONTENT_INSPECTION_README
 share/doc/postfix/readme/DATABASE_README
