@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2015/08/26 10:28:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2015/09/27 06:38:16 ajacoutot Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-8.3.0
+DISTNAME=	mkvtoolnix-8.4.0
 CATEGORIES=	multimedia x11
 MASTER_SITES=	${HOMEPAGE}/sources/
 EXTRACT_SUFX=	.tar.xz
@@ -41,7 +41,6 @@ USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS=	--disable-optimization \
-		--disable-wxwidgets \
 		--with-boost-date-time=boost_date_time-mt \
 		--with-boost-filesystem=boost_filesystem-mt \
 		--with-boost-libdir=${LOCALBASE}/lib \
