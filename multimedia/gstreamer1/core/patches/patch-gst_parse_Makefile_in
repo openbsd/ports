@@ -1,11 +1,11 @@
-$OpenBSD: patch-gst_parse_Makefile_in,v 1.1 2014/10/07 16:04:04 ajacoutot Exp $
+$OpenBSD: patch-gst_parse_Makefile_in,v 1.2 2015/09/27 08:21:39 ajacoutot Exp $
 
 XXX our bison(1) is in fact a dinosaur
 
---- gst/parse/Makefile.in.orig	Tue Oct  7 16:15:03 2014
-+++ gst/parse/Makefile.in	Tue Oct  7 16:15:09 2014
-@@ -813,7 +813,6 @@ Android.mk: Makefile.am
- 	> $@
+--- gst/parse/Makefile.in.orig	Fri Sep 25 14:56:12 2015
++++ gst/parse/Makefile.in	Sat Sep 26 08:10:15 2015
+@@ -830,7 +830,6 @@ uninstall-am:
+ 
  
  grammar.tab.c grammar.tab.h: grammar.y
 -	$(AM_V_GEN)$(BISON_PATH) -d -v -ppriv_gst_parse_yy $(srcdir)/grammar.y -o grammar.tab.c && \
