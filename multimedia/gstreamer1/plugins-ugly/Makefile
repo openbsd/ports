@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2015/04/20 09:36:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2015/09/27 08:22:18 ajacoutot Exp $
 
 COMMENT=		ugly elements for GStreamer
 
 DISTNAME=		gst-plugins-ugly-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-ugly-${V}
-REVISION=		0
 
 PERMIT_PACKAGE_CDROM=	Patent issues
 
@@ -31,7 +30,7 @@ CONFIGURE_ARGS=		--disable-a52dec \
 			--disable-sidplay
 
 pre-configure:
-	perl -pi -e 's,/dev/dvd,/dev/rcd0c,g' \
+	sed -i 's,/dev/dvd,/dev/rcd0c,g' \
 		${WRKSRC}/ext/dvdread/dvdreadsrc.c
 
 .include <bsd.port.mk>
