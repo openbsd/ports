@@ -1,14 +1,16 @@
-$OpenBSD: patch-libavcodec_aacenctab_h,v 1.1 2015/09/23 09:16:45 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenctab_h,v 1.2 2015/09/27 06:35:33 ajacoutot Exp $
 
 AAC encoder: simplify and speed up find_min_book
 
---- libavcodec/aacenctab.h.orig	Wed Sep 23 03:53:28 2015
-+++ libavcodec/aacenctab.h	Wed Sep 23 03:53:35 2015
+avcodec/aacenctab: Make aac_maxval_cb const
+
+--- libavcodec/aacenctab.h.orig	Mon Sep  7 21:58:01 2015
++++ libavcodec/aacenctab.h	Fri Sep 25 15:47:31 2015
 @@ -110,4 +110,8 @@ static const uint8_t aac_cb_in_map[CB_TOT_ALL+1] = {0,
  static const uint8_t aac_cb_range [12] = {0, 3, 3, 3, 3, 9, 9, 8, 8, 13, 13, 17};
  static const uint8_t aac_cb_maxval[12] = {0, 1, 1, 2, 2, 4, 4, 7, 7, 12, 12, 16};
  
-+static unsigned char aac_maxval_cb[] = {
++static const unsigned char aac_maxval_cb[] = {
 +    0, 1, 3, 5, 5, 7, 7, 7, 9, 9, 9, 9, 9, 11
 +};
 +
