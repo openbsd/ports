@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/09/24 10:30:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/09/27 06:56:45 ajacoutot Exp $
 @conflict libsigc++-docs-*
 @pkgpath devel/libsigc++
 @pkgpath devel/libsigc++-2,-main
@@ -15,6 +15,9 @@ include/sigc++-${API_V}/sigc++/adaptors/compose.h
 include/sigc++-${API_V}/sigc++/adaptors/deduce_result_type.h
 include/sigc++-${API_V}/sigc++/adaptors/exception_catch.h
 include/sigc++-${API_V}/sigc++/adaptors/hide.h
+include/sigc++-${API_V}/sigc++/adaptors/lambda/
+include/sigc++-${API_V}/sigc++/adaptors/lambda/base.h
+include/sigc++-${API_V}/sigc++/adaptors/lambda/select.h
 include/sigc++-${API_V}/sigc++/adaptors/retype.h
 include/sigc++-${API_V}/sigc++/adaptors/retype_return.h
 include/sigc++-${API_V}/sigc++/adaptors/track_obj.h
@@ -388,6 +391,7 @@ share/doc/libsigc++-${API_V}/reference/html/deprecated.html
 share/doc/libsigc++-${API_V}/reference/html/dir_0bd3c8d814eb03171de012519d7a2ccd.html
 share/doc/libsigc++-${API_V}/reference/html/dir_5c02128c554eaa40138b2e605fc08970.html
 share/doc/libsigc++-${API_V}/reference/html/dir_5fbc72877197f8c6013d0f619df5433c.html
+share/doc/libsigc++-${API_V}/reference/html/dir_ea4abdd77c05d5873cecf571a6d96de7.html
 share/doc/libsigc++-${API_V}/reference/html/doc.png
 share/doc/libsigc++-${API_V}/reference/html/doxygen-extra.css
 share/doc/libsigc++-${API_V}/reference/html/doxygen.css
