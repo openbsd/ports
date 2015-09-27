@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.9 2014/10/07 16:05:11 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.10 2015/09/27 08:21:54 ajacoutot Exp $
 
 XXX old cdparanoia-3.a9.8 (cdparanoia-III-9.8) does not have cache control.
 
---- configure.ac.orig	Wed Sep 24 10:02:19 2014
-+++ configure.ac	Tue Oct  7 16:32:02 2014
-@@ -597,6 +597,21 @@ AG_GST_CHECK_FEATURE(ALSA, [ALSA], alsa, [
+--- configure.ac.orig	Fri Sep 25 14:50:50 2015
++++ configure.ac	Sat Sep 26 09:31:37 2015
+@@ -594,6 +594,21 @@ AG_GST_CHECK_FEATURE(ALSA, [ALSA], alsa, [
    ])
  ])
  
@@ -26,7 +26,7 @@ XXX old cdparanoia-3.a9.8 (cdparanoia-III-9.8) does not have cache control.
  dnl *** CDParanoia ***
  dnl Note: upstream has a pkg-config file only in post-10.2 SVN so far
  translit(dnm, m, l) AM_CONDITIONAL(USE_CDPARANOIA, true)
-@@ -627,10 +642,10 @@ AG_GST_CHECK_FEATURE(CDPARANOIA, [CDParanoia], cdparan
+@@ -624,10 +639,10 @@ AG_GST_CHECK_FEATURE(CDPARANOIA, [CDParanoia], cdparan
      if test "x$FOUND_CDPARANOIA" = "xyes";
      then
        AC_CHECK_LIB(cdda_paranoia,
@@ -39,7 +39,7 @@ XXX old cdparanoia-3.a9.8 (cdparanoia-III-9.8) does not have cache control.
      fi
  
      AC_SUBST(CDPARANOIA_LIBS)
-@@ -728,6 +743,7 @@ else
+@@ -731,6 +746,7 @@ else
  dnl not building plugins with external dependencies,
  dnl but we still need to set the conditionals
  AM_CONDITIONAL(USE_ALSA, false)
@@ -47,7 +47,7 @@ XXX old cdparanoia-3.a9.8 (cdparanoia-III-9.8) does not have cache control.
  AM_CONDITIONAL(USE_CDPARANOIA, false)
  AM_CONDITIONAL(USE_IVORBIS, false)
  AM_CONDITIONAL(USE_LIBVISUAL, false)
-@@ -850,6 +866,7 @@ sys/ximage/Makefile
+@@ -853,6 +869,7 @@ sys/ximage/Makefile
  sys/xvimage/Makefile
  ext/Makefile
  ext/alsa/Makefile
