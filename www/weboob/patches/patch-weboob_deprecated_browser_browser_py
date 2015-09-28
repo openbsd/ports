@@ -1,0 +1,15 @@
+$OpenBSD: patch-weboob_deprecated_browser_browser_py,v 1.1 2015/09/28 08:00:19 landry Exp $
+
+Use ssl.PROTOCOL_SSLv23 only, which means 'highest supported protocol (SSL or TLS).'
+
+--- weboob/deprecated/browser/browser.py.orig	Mon Sep 28 09:34:40 2015
++++ weboob/deprecated/browser/browser.py	Mon Sep 28 09:35:07 2015
+@@ -730,7 +730,7 @@ socket.getaddrinfo = my_getaddrinfo
+ 
+ class HTTPSConnection2(httplib.HTTPSConnection):
+     _HOSTS = {}
+-    _PROTOCOLS = [ssl.PROTOCOL_TLSv1, ssl.PROTOCOL_SSLv3]
++    _PROTOCOLS = [ssl.PROTOCOL_SSLv23]
+ 
+     def _my_create_connection(self):
+         sock = socket.create_connection((self.host, self.port), self.timeout)
