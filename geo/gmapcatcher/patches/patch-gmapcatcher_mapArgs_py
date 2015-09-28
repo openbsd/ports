@@ -1,25 +1,27 @@
-$OpenBSD: patch-gmapcatcher_mapArgs_py,v 1.1 2010/09/07 10:23:02 kevlo Exp $
---- gmapcatcher/mapArgs.py.orig	Tue Sep  7 17:02:14 2010
-+++ gmapcatcher/mapArgs.py	Tue Sep  7 17:02:53 2010
-@@ -42,9 +42,9 @@ class MapArgs():
+$OpenBSD: patch-gmapcatcher_mapArgs_py,v 1.2 2015/09/28 20:19:20 sthen Exp $
+--- gmapcatcher/mapArgs.py.orig	Fri Jul 19 09:20:47 2013
++++ gmapcatcher/mapArgs.py	Mon Sep 28 21:08:46 2015
+@@ -46,10 +46,10 @@ class MapArgs():
          print '                very useful to download maps of entire world'
          print ' '
          print 'SAMPLE USAGE'
 -        print '  download --location="Paris, France"'
 -        print '  download --min-zoom=13 --full-range'
 -        print '  download --latitude=37.979180 --longitude=23.716647'
+-        print '  download --gpx=myfile.gpx --width=2'
 +        print '  mapdownloader --location="Paris, France"'
 +        print '  mapdownloader --min-zoom=13 --full-range'
 +        print '  mapdownloader --latitude=37.979180 --longitude=23.716647'
++        print '  mapdownloader --gpx=myfile.gpx --width=2'
  
      def __init__(self, arrArgs=()):
          if len(arrArgs) > 1:
-@@ -89,7 +89,7 @@ class MapArgs():
+@@ -99,7 +99,7 @@ class MapArgs():
                          self.lng_range = 179
  
      def __str__(self):
--        return ("download.py --max-zoom=%s --min-zoom=%s" \
-+        return ("mapdownloader --max-zoom=%s --min-zoom=%s" \
-                 + " --latitude=%s --longitude=%s" \
-                 + " --width=%s --height=%s") % \
+-        return ("download.py --max-zoom=%s --min-zoom=%s" +
++        return ("mapdownload --max-zoom=%s --min-zoom=%s" +
+                 " --latitude=%s --longitude=%s" +
+                 " --width=%s --height=%s") % \
                 (self.max_zl, self.min_zl,
