@@ -1,0 +1,18 @@
+$OpenBSD: patch-giscanner_transformer_py,v 1.1 2015/09/28 12:02:01 jasper Exp $
+
+From 4d9453f218074d03a5c44dbd44eeadb8e9e89f6c Mon Sep 17 00:00:00 2001
+From: Giovanni Campagna <gcampagn@cs.stanford.edu>
+Date: Sat, 26 Sep 2015 15:23:35 -0700
+Subject: giscanner: fix alias resolution
+
+--- giscanner/transformer.py.orig	Sat Jul 18 15:27:49 2015
++++ giscanner/transformer.py	Mon Sep 28 13:37:02 2015
+@@ -979,7 +979,7 @@ Note that type resolution may not succeed."""
+             if typenode.target.target_giname is not None:
+                 typenode = self.lookup_giname(typenode.target.target_giname)
+             elif typenode.target.target_fundamental is not None:
+-                typenode = ast.type_names[typenode.target.target_fundamental]
++                typenode = typenode.target
+             else:
+                 break
+         return typenode
