@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2015/08/27 06:48:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2015/09/28 11:00:35 jasper Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
-VERSION=		2.2.0
+VERSION=		2.3.0
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
 CATEGORIES=		geo devel
-REVISION=		1
 
 HOMEPAGE=		http://geoclue.freedesktop.org/
 
@@ -21,13 +20,15 @@ EXTRACT_SUFX=		.tar.xz
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 json-glib-1.0
 WANTLIB += lzma m pcre pthread soup-2.4 sqlite3 xml2 z
+WANTLIB += avahi-client avahi-common avahi-glib dbus-1
 
 MODULES=		devel/gettext \
 			textproc/intltool \
 			x11/gnome
 
 LIB_DEPENDS=		devel/libsoup \
-			devel/json-glib
+			devel/json-glib \
+			net/avahi
 
 # XXX requires DBus support in wpa_supplicant
 # (wpa_supplicant in OpenBSD is also crippled in other ways)

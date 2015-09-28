@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/08/27 06:48:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/09/28 11:00:35 jasper Exp $
 @newgroup _geoclue:731
 @newuser _geoclue:731:_geoclue:daemon:GeoClue service user:/nonexistent:/sbin/nologin
 lib/pkgconfig/geoclue-2.0.pc
@@ -7,6 +7,7 @@ libexec/geoclue-2.0/
 libexec/geoclue-2.0/demos/
 @bin libexec/geoclue-2.0/demos/where-am-i
 share/applications/geoclue-where-am-i.desktop
+share/dbus-1/
 share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.Agent.xml
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.xml
