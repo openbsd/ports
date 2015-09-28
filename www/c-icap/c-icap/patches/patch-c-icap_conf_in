@@ -1,7 +1,7 @@
-$OpenBSD: patch-c-icap_conf_in,v 1.4 2015/09/08 18:17:49 sthen Exp $
---- c-icap.conf.in.orig	Thu Aug 27 10:01:51 2015
-+++ c-icap.conf.in	Fri Aug 28 10:38:53 2015
-@@ -263,7 +263,7 @@ TemplateDefaultLanguage en
+$OpenBSD: patch-c-icap_conf_in,v 1.5 2015/09/28 11:57:50 sthen Exp $
+--- c-icap.conf.in.orig	Tue Sep 15 10:00:59 2015
++++ c-icap.conf.in	Sun Sep 27 14:21:14 2015
+@@ -268,7 +268,7 @@ TemplateDefaultLanguage en
  #	It can be used more than once to use multiple magic files.
  # Default:
  #	LoadMagicFile @prefix@/etc/c-icap.magic
@@ -10,7 +10,7 @@ $OpenBSD: patch-c-icap_conf_in,v 1.4 2015/09/08 18:17:49 sthen Exp $
  
  # TAG: RemoteProxyUsers
  # Format: RemoteProxyUsers onoff
-@@ -330,7 +330,7 @@ RemoteProxyUserHeaderEncoded on
+@@ -335,7 +335,7 @@ RemoteProxyUserHeaderEncoded on
  # Default:
  #	No value
  # Example:
@@ -19,7 +19,7 @@ $OpenBSD: patch-c-icap_conf_in,v 1.4 2015/09/08 18:17:49 sthen Exp $
  
  # TAG: GroupSourceByGroup
  # Format: GroupSourceByGroup LookupTable
-@@ -342,7 +342,7 @@ RemoteProxyUserHeaderEncoded on
+@@ -347,7 +347,7 @@ RemoteProxyUserHeaderEncoded on
  # Default:
  #	No set
  # Example:
@@ -28,7 +28,7 @@ $OpenBSD: patch-c-icap_conf_in,v 1.4 2015/09/08 18:17:49 sthen Exp $
  
  # TAG: GroupSourceByUser
  # Format: GroupSourceByUser LookupTable
-@@ -354,7 +354,7 @@ RemoteProxyUserHeaderEncoded on
+@@ -359,7 +359,7 @@ RemoteProxyUserHeaderEncoded on
  # Default:
  #	No set
  # Example:
@@ -37,7 +37,7 @@ $OpenBSD: patch-c-icap_conf_in,v 1.4 2015/09/08 18:17:49 sthen Exp $
  
  # TAG: acl
  # Format: acl name type[{param}] value1 [value2] [...]
-@@ -510,7 +510,7 @@ RemoteProxyUserHeaderEncoded on
+@@ -515,7 +515,7 @@ RemoteProxyUserHeaderEncoded on
  #	information about the c-icap server.
  # Default:
  #	ServerLog @prefix@/var/log/server.log
@@ -46,7 +46,7 @@ $OpenBSD: patch-c-icap_conf_in,v 1.4 2015/09/08 18:17:49 sthen Exp $
  
  # TAG: AccessLog
  # Format: AccessLog LogFile [LogFormat] [[!]acl1] [[!]acl2] [...]
-@@ -525,7 +525,15 @@ ServerLog @prefix@/var/log/server.log
+@@ -530,7 +530,15 @@ ServerLog @prefix@/var/log/server.log
  #	AccessLog @prefix@/var/log/access.log
  # Example:
  #	AccessLog @prefix@/var/log/access.log MyFormat all
