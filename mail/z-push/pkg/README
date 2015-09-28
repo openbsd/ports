@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2012/06/25 06:47:25 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2015/09/28 18:20:29 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,7 +8,7 @@ Z-push is installed under
     ${INSTDIR}
 
 Some non defaults PHP settings are required on the ${INSTDIR}
-directory. For Apache ou can configure this as follows:
+directory. For Apache you can configure this as follows:
     # ln -s ${PREFIX}/conf/modules.sample/z-push.conf \
         /var/www/conf/modules
 
