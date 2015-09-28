@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2014/07/24 17:20:46 zhuk Exp $
+# $OpenBSD: Makefile,v 1.16 2015/09/28 17:54:05 jca Exp $
 
 COMMENT=		reimplementation of Dan Bernstein's daemontools#'
 
-DISTNAME=		freedt-0.22
-REVISION=		2
+DISTNAME=		freedt-23
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://offog.org/code/freedt.html
 
-# GPLv2+
+# ISC
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c

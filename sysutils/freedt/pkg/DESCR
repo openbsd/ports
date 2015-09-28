@@ -1,5 +1,5 @@
 freedt is a reimplementation of Dan Bernstein's daemontools under the
-GNU GPL, sharing no code with the original implementation.
+ISC licence, sharing no code with the original implementation.
 
 It currently includes feature-equivalent replacements for argv0, envdir,
 envuidgid, setlock, setuidgid, softlimit, supervise, svc, svok, svscan,
