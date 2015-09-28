@@ -1,25 +1,11 @@
-$OpenBSD: patch-buildtools_wafsamba_symbols_py,v 1.1 2015/08/25 11:04:39 jca Exp $
-1. Our nm(1) defaults to show dynamic symbol table, unless there are many.
-BUG: https://bugzilla.samba.org/show_bug.cgi?id=9891
-
-2. Add a bunch of common symbols to allow tests to run. Those that added in
+$OpenBSD: patch-buildtools_wafsamba_symbols_py,v 1.2 2015/09/28 22:51:25 jca Exp $
+Add a bunch of common symbols to allow tests to run. Those that added in
 safe_symbols initially should probably go upstream, _Jv_RegisterClasses is
 a strange one (weak symbol everywhere in the whole system) and others are
 coming from libgcc.a.
 BUG: https://bugzilla.samba.org/show_bug.cgi?id=9892
 --- buildtools/wafsamba/symbols.py.orig	Tue May 14 17:30:33 2013
 +++ buildtools/wafsamba/symbols.py	Tue May 14 19:58:59 2013
-@@ -46,8 +46,8 @@ def symbols_extract(bld, objfiles, dynamic=False):
-         return ret
- 
-     cmd = ["nm"]
--    if dynamic:
--        # needed for some .so files
-+    if dynamic and not sys.platform.startswith("openbsd"):
-+        # needed for some .so files on non-OpenBSD platforms
-         cmd.append("-D")
-     cmd.extend(list(objfiles))
- 
 @@ -569,7 +569,14 @@ def symbols_whyneeded(task):
  
  def report_duplicate(bld, binname, sym, libs, fail_on_error):
