@@ -1,0 +1,3 @@
+Test::File::ShareDir is some low level plumbing to enable a distribution
+to perform tests while consuming its own share directories in a manner
+similar to how they will be once installed.

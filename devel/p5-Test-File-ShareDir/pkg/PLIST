@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/28 07:55:48 vgross Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/File/
+${P5SITE}/Test/File/ShareDir/
+${P5SITE}/Test/File/ShareDir.pm
+${P5SITE}/Test/File/ShareDir/Dist.pm
+${P5SITE}/Test/File/ShareDir/Module.pm
+${P5SITE}/Test/File/ShareDir/Object/
+${P5SITE}/Test/File/ShareDir/Object/Dist.pm
+${P5SITE}/Test/File/ShareDir/Object/Inc.pm
+${P5SITE}/Test/File/ShareDir/Object/Module.pm
+${P5SITE}/Test/File/ShareDir/TempDirObject.pm
+${P5SITE}/Test/File/ShareDir/Utils.pm
+@man man/man3p/Test::File::ShareDir.3p
+@man man/man3p/Test::File::ShareDir::Dist.3p
+@man man/man3p/Test::File::ShareDir::Module.3p
+@man man/man3p/Test::File::ShareDir::Object::Dist.3p
+@man man/man3p/Test::File::ShareDir::Object::Inc.3p
+@man man/man3p/Test::File::ShareDir::Object::Module.3p
+@man man/man3p/Test::File::ShareDir::TempDirObject.3p
+@man man/man3p/Test::File::ShareDir::Utils.3p
