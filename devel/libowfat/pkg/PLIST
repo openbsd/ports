@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/09 19:47:41 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/09/28 16:52:49 jca Exp $
 include/lowfat/
 include/lowfat/array.h
 include/lowfat/buffer.h
@@ -6,6 +6,8 @@ include/lowfat/byte.h
 include/lowfat/case.h
 include/lowfat/cdb.h
 include/lowfat/cdb_make.h
+include/lowfat/compiletimeassert.h
+include/lowfat/critbit.h
 include/lowfat/dns.h
 include/lowfat/errmsg.h
 include/lowfat/fmt.h
@@ -59,6 +61,8 @@ share/lowfat/man/buffer.3
 share/lowfat/man/buffer_close.3
 share/lowfat/man/buffer_feed.3
 share/lowfat/man/buffer_flush.3
+share/lowfat/man/buffer_fromarray.3
+share/lowfat/man/buffer_frombuf.3
 share/lowfat/man/buffer_fromsa.3
 share/lowfat/man/buffer_get.3
 share/lowfat/man/buffer_get_new_token_sa.3
@@ -120,6 +124,11 @@ share/lowfat/man/cdb_keypos.3
 share/lowfat/man/cdb_nextkey.3
 share/lowfat/man/cdb_read.3
 share/lowfat/man/cdb_successor.3
+share/lowfat/man/critbit0_allprefixed.3
+share/lowfat/man/critbit0_clear.3
+share/lowfat/man/critbit0_contains.3
+share/lowfat/man/critbit0_delete.3
+share/lowfat/man/critbit0_insert.3
 share/lowfat/man/dns_ip4.3
 share/lowfat/man/dns_ip4_packet.3
 share/lowfat/man/dns_ip4_qualify.3
@@ -185,6 +194,7 @@ share/lowfat/man/io_dontwantwrite.3
 share/lowfat/man/io_eagain.3
 share/lowfat/man/io_fd.3
 share/lowfat/man/io_fd_canwrite.3
+share/lowfat/man/io_fd_flags.3
 share/lowfat/man/io_finishandshutdown.3
 share/lowfat/man/io_getcookie.3
 share/lowfat/man/io_nonblock.3
@@ -248,6 +258,7 @@ share/lowfat/man/scan_8int.3
 share/lowfat/man/scan_8long.3
 share/lowfat/man/scan_8short.3
 share/lowfat/man/scan_asn1derlength.3
+share/lowfat/man/scan_asn1derlengthvalue.3
 share/lowfat/man/scan_asn1dertag.3
 share/lowfat/man/scan_charsetnskip.3
 share/lowfat/man/scan_double.3
@@ -283,6 +294,9 @@ share/lowfat/man/socket_broadcast.3
 share/lowfat/man/socket_connect4.3
 share/lowfat/man/socket_connect6.3
 share/lowfat/man/socket_connected.3
+share/lowfat/man/socket_fastopen.3
+share/lowfat/man/socket_fastopen_connect4.3
+share/lowfat/man/socket_fastopen_connect6.3
 share/lowfat/man/socket_getifidx.3
 share/lowfat/man/socket_getifname.3
 share/lowfat/man/socket_listen.3
@@ -296,6 +310,7 @@ share/lowfat/man/socket_mcleave6.3
 share/lowfat/man/socket_mcloop4.3
 share/lowfat/man/socket_mcloop6.3
 share/lowfat/man/socket_mcttl4.3
+share/lowfat/man/socket_quickack.3
 share/lowfat/man/socket_recv4.3
 share/lowfat/man/socket_recv6.3
 share/lowfat/man/socket_remote4.3

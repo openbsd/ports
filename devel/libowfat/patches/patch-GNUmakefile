@@ -1,24 +1,22 @@
-$OpenBSD: patch-GNUmakefile,v 1.2 2014/11/17 13:28:43 sthen Exp $
---- GNUmakefile.orig	Tue Apr 17 22:26:31 2012
-+++ GNUmakefile	Mon Nov 17 13:27:11 2014
-@@ -18,8 +18,9 @@ all: $(LIBS) libowfat.a libsocket t
+$OpenBSD: patch-GNUmakefile,v 1.3 2015/09/28 16:52:49 jca Exp $
+--- GNUmakefile.orig	Sat Sep 19 00:13:11 2015
++++ GNUmakefile	Sat Sep 19 00:23:26 2015
+@@ -18,8 +18,9 @@ all: ent $(LIBS) libowfat.a libsocket t
  CROSS=
  #CROSS=i686-mingw-
  CC=$(CROSS)gcc
--CFLAGS=-pipe -W -Wall -O2 -fomit-frame-pointer
+-CFLAGS=-pipe -W -Wall -Wextra -O2 -fomit-frame-pointer
 +COPTFLAGS=-pipe -W -Wall -O2 -fomit-frame-pointer
  #CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
 +CFLAGS=$(COPTFLAGS)
  
- # CFLAGS += -fstrict-aliasing -Wstrict-aliasing=2
- 
-@@ -297,8 +298,8 @@ dns_nd6.o fmt_xlong.o scan_xlong.o fmt_ip6_flat.o $(TE
- 
+ ent: ent.c haveuint128.h
+ 	gcc -g -o ent ent.c -I.
+@@ -317,7 +318,7 @@ dns_nd6.o fmt_xlong.o scan_xlong.o fmt_ip6_flat.o $(TE
  iob_send.o scan_ip6if.o: havealloca.h
  
--dep: haveip6.h haven2i.h havesl.h haveinline.h iopause.h select.h haveepoll.h havekqueue.h havedevpoll.h havescope.h havesigio.h havebsdsf.h havesendfile.h
+ dep: haveip6.h haven2i.h havesl.h haveinline.h iopause.h select.h haveepoll.h havekqueue.h havedevpoll.h havescope.h havesigio.h havebsdsf.h havesendfile.h havealloca.h haveuint128.h
 -	gcc -I. -MM `ls */*.c | grep -v test` t.c | sed -e 's@ \./@ @g' > dep
-+dep: haveip6.h haven2i.h havesl.h haveinline.h iopause.h select.h haveepoll.h havekqueue.h havedevpoll.h havescope.h havesigio.h havebsdsf.h havesendfile.h havealloca.h
 +	$(CC) -I. -MM `ls */*.c | grep -v test` t.c | sed -e 's@ \./@ @g' > dep
  
  libdep:
