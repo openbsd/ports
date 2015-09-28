@@ -1,6 +1,7 @@
-$OpenBSD: patch-Modules__ssl_c,v 1.1.1.1 2015/09/23 19:23:57 rpointel Exp $
+$OpenBSD: patch-Modules__ssl_c,v 1.2 2015/09/28 04:50:37 rpointel Exp $
 
 http://bugs.python.org/issue23329
+commited upstream: https://hg.python.org/cpython/rev/38a5b0f6531b
 
 --- Modules/_ssl.c.orig	Sun Sep 13 13:41:24 2015
 +++ Modules/_ssl.c	Wed Sep 23 21:15:44 2015

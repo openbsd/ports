@@ -1,4 +1,4 @@
-$OpenBSD: CHANGES.OpenBSD,v 1.1.1.1 2015/09/23 19:23:57 rpointel Exp $
+$OpenBSD: CHANGES.OpenBSD,v 1.2 2015/09/28 04:50:37 rpointel Exp $
 
 As required by item 3 of the PSF license, here is a brief summary
 of changes made to this version of Python for the OpenBSD package.
@@ -6,6 +6,9 @@ of changes made to this version of Python for the OpenBSD package.
 1.  Regression tests have been taught about OpenBSD.
 
 2.  INSTSONAME could be incorrect, configure.ac was patched to fix it.
+
+3.  Check if ALPN is supported (not by checking the OpenSSL version)
+    http://bugs.python.org/issue23329
 
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python/3.5.
