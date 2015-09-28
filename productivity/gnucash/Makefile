@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2015/08/21 14:42:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.79 2015/09/28 12:55:40 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
-GNOME_VERSION =		2.6.7
+GNOME_VERSION =		2.6.8
 EXTRACT_SUFX =		.tar.bz2
 
 SHARED_LIBS +=  gnc-qof              2.0      # 1.4
