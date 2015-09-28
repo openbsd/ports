@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.25 2015/06/26 18:54:47 feinerer Exp $
+$OpenBSD: patch-configure,v 1.26 2015/09/28 07:32:19 dcoppa Exp $
 
 Unbreak build on powerpc (relocation truncated to fit: R_PPC_GOT16...)
 
 Fix linking with external libintl
 (https://marc.info/?l=openbsd-ports&m=143526271406832&w=2)
 
---- configure.orig	Thu Jun 11 00:16:27 2015
-+++ configure	Fri Jun 26 19:38:49 2015
-@@ -26276,7 +26276,7 @@ if test "${GCC}" = yes; then
+--- configure.orig	Thu Aug 13 11:21:16 2015
++++ configure	Thu Sep 24 15:12:30 2015
+@@ -26258,7 +26258,7 @@ if test "${GCC}" = yes; then
  ## has 32k and so can use -fpic.
  ## However, although the gcc docs do not mention it, it seems s390/s390x
  ## also supports and needs -fPIC
@@ -16,7 +16,7 @@ Fix linking with external libintl
        cpicflags="-fPIC"
        ;;
      *)
-@@ -26287,7 +26287,7 @@ if test "${GCC}" = yes; then
+@@ -26269,7 +26269,7 @@ if test "${GCC}" = yes; then
  fi
  if test "${G77}" = yes; then
    case "${host_cpu}" in
@@ -25,7 +25,7 @@ Fix linking with external libintl
        fpicflags="-fPIC"
        ;;
      *)
-@@ -26297,7 +26297,7 @@ if test "${G77}" = yes; then
+@@ -26279,7 +26279,7 @@ if test "${G77}" = yes; then
  fi
  if test "${GXX}" = yes; then
    case "${host_cpu}" in
@@ -34,7 +34,7 @@ Fix linking with external libintl
        cxxpicflags="-fPIC"
        ;;
      *)
-@@ -38862,7 +38862,7 @@ fi
+@@ -38836,7 +38836,7 @@ fi
  ## use this to pick out gfortran (even though it is unreliable).
  if test "${ac_cv_fc_compiler_gnu}" = yes; then
    case "${host_cpu}" in
@@ -43,7 +43,7 @@ Fix linking with external libintl
        fcpicflags="-fPIC"
        ;;
      *)
-@@ -42616,7 +42616,7 @@ else
+@@ -42590,7 +42590,7 @@ else
    gt_save_CPPFLAGS="$CPPFLAGS"
              CPPFLAGS="$CPPFLAGS $INCINTL"
              gt_save_LIBS="$LIBS"
@@ -52,7 +52,7 @@ Fix linking with external libintl
                          cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <libintl.h>
-@@ -42773,8 +42773,8 @@ $as_echo "$gt_source" >&6; }
+@@ -42747,8 +42747,8 @@ $as_echo "$gt_source" >&6; }
        if { eval "gt_val=\$$gt_func_gnugettext_libintl"; test "$gt_val" = "yes"; }; then
          { $as_echo "$as_me:${as_lineno-$LINENO}: checking how to link with libintl" >&5
  $as_echo_n "checking how to link with libintl... " >&6; }

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2015/08/17 15:33:04 feinerer Exp $
+# $OpenBSD: Makefile,v 1.75 2015/09/28 07:32:19 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-3.2.2
+REVISION=	0
 
 SHARED_LIBS=	R	3.1
 SHARED_LIBS+=	Rlapack	31.2 	# 31.2
@@ -48,7 +49,9 @@ MODGCC4_LANGS=	fortran
 BUILD_DEPENDS=	archivers/gtar \
 		archivers/unzip \
 		archivers/zip \
-		devel/xdg-utils
+		devel/xdg-utils \
+		print/texinfo \
+		print/texlive/base>=2014p1
 
 LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 		${MODTK_LIB_DEPENDS} \
@@ -69,7 +72,7 @@ RUN_DEPENDS=	archivers/gtar \
 		archivers/zip \
 		devel/gmake \
 		devel/xdg-utils \
-		print/texlive/base
+		print/texlive/base>=2014p1
 
 CONFIGURE_STYLE=gnu
 
@@ -85,7 +88,8 @@ CONFIGURE_ENV=	FFLAGS="${FFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -Wl,-R${LOCALBASE}/lib/R/lib" \
 		LIBnn=lib \
-		ac_cv_path_PDFLATEX="" \
+		MAKEINFO="${LOCALBASE}/bin/gtexi2any" \
+		TEXI2DVI="${LOCALBASE}/bin/gtexi2dvi" \
 		rdocdir="${PREFIX}/share/doc/R"
 
 MAKE_FLAGS=	DYLIB_EXT=".so.${LIBR_VERSION}" \
