@@ -1,12 +1,12 @@
-$OpenBSD: patch-bin_elixir,v 1.1 2015/06/25 13:23:19 jasper Exp $
---- bin/elixir.orig	Thu Jun 25 12:01:38 2015
-+++ bin/elixir	Thu Jun 25 12:02:31 2015
-@@ -93,7 +93,7 @@ if [ -z "$ERL_PATH" ]; then
-   if [ -f "$SCRIPT_PATH/../releases/RELEASES" ] && [ -f "$SCRIPT_PATH/erl" ]; then
-     ERL_PATH="$SCRIPT_PATH"/erl
-   else
--    ERL_PATH=erl
-+    ERL_PATH=erl${MODERL_VERSION}
-   fi
- fi
+$OpenBSD: patch-bin_elixir,v 1.2 2015/09/28 12:48:29 jasper Exp $
+--- bin/elixir.orig	Fri Sep 25 10:43:43 2015
++++ bin/elixir	Mon Sep 28 10:07:14 2015
+@@ -36,7 +36,7 @@ readlink_f () {
+ }
+ 
+ MODE="elixir"
+-ERL_EXEC="erl"
++ERL_EXEC="erl${MODERL_VERSION}"
+ ERL=""
+ I=1
  
