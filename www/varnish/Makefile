@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2015/07/16 00:43:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/09/28 02:42:39 gonzalo Exp $
 
 SHARED_ONLY =		Yes
 BROKEN-hppa =	execinfo.c:144: warning: unsupported argument to '__builtin_return_address' + Werror
 COMMENT =		high-performance HTTP accelerator
 
-DISTNAME =		varnish-4.0.2
-REVISION =		0
+DISTNAME =		varnish-4.0.3
 CATEGORIES =		www
 
 SHARED_LIBS =		varnishapi	1.0

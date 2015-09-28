@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/12/17 14:51:35 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/09/28 02:42:39 gonzalo Exp $
 @newgroup _varnish:625
 @newuser _varnish:625:_varnish:daemon:Varnish Cache:/var/varnish:/bin/sh
 @bin bin/varnishadm
@@ -9,6 +9,13 @@
 @bin bin/varnishtest
 @bin bin/varnishtop
 include/varnish/
+include/varnish/cache/
+include/varnish/cache/cache.h
+include/varnish/cache/cache_backend.h
+include/varnish/common/
+include/varnish/common/common.h
+include/varnish/common/params.h
+include/varnish/miniobj.h
 include/varnish/tbl/
 include/varnish/tbl/acct_fields_bereq.h
 include/varnish/tbl/acct_fields_req.h
@@ -44,7 +51,21 @@ include/varnish/vapi/vsl.h
 include/varnish/vapi/vsl_int.h
 include/varnish/vapi/vsm.h
 include/varnish/vapi/vsm_int.h
+include/varnish/vas.h
+include/varnish/vav.h
+include/varnish/vbm.h
+include/varnish/vcl.h
 include/varnish/vcli.h
+include/varnish/vcs.h
+include/varnish/vdef.h
+include/varnish/vmod_abi.h
+include/varnish/vqueue.h
+include/varnish/vre.h
+include/varnish/vrt.h
+include/varnish/vrt_obj.h
+include/varnish/vsa.h
+include/varnish/vsb.h
+include/varnish/vsha256.h
 lib/libvarnishapi.a
 lib/libvarnishapi.la
 @lib lib/libvarnishapi.so.${LIBvarnishapi_VERSION}
@@ -73,35 +94,13 @@ lib/varnish/vmods/libvmod_std.so
 @man man/man7/vsl-query.7
 @man man/man7/vsl.7
 @bin sbin/varnishd
-share/varnish/
-share/varnish/include/
-share/varnish/include/cache/
-share/varnish/include/cache/cache.h
-share/varnish/include/cache/cache_backend.h
-share/varnish/include/common/
-share/varnish/include/common/common.h
-share/varnish/include/common/params.h
-share/varnish/include/miniobj.h
-share/varnish/include/vas.h
-share/varnish/include/vav.h
-share/varnish/include/vbm.h
-share/varnish/include/vcl.h
-share/varnish/include/vcs.h
-share/varnish/include/vdef.h
-share/varnish/include/vmod_abi.h
-share/varnish/include/vqueue.h
-share/varnish/include/vre.h
-share/varnish/include/vrt.h
-share/varnish/include/vrt_obj.h
-share/varnish/include/vsa.h
-share/varnish/include/vsb.h
-share/varnish/include/vsha256.h
-share/varnish/vmodtool.py
 share/aclocal/
 share/aclocal/varnish.m4
 share/doc/varnish/
 share/doc/varnish/builtin.vcl
 share/doc/varnish/example.vcl
+share/varnish/
+share/varnish/vmodtool.py
 share/examples/varnish/
 @sample ${SYSCONFDIR}/varnish/
 share/examples/varnish/builtin.vcl
