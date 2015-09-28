@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST-lightning,v 1.25 2015/09/19 13:03:15 landry Exp $
+@comment $OpenBSD: PLIST-lightning,v 1.26 2015/09/28 09:30:39 landry Exp $
 @conflict lightning-seamonkey-<=1.0b1
 @pkgpath productivity/sunbird,-seamonkey
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome.manifest
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome/.mkdir.done
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome/gdata-provider/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome/gdata-provider-en-US/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome/gdata-provider-en-US/locale/
@@ -57,7 +56,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/modules/shim/Timer.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/modules/timezoneMap.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/application.ini
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/app.ini
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calAlarm.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calAlarmMonitor.js
@@ -107,7 +106,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calWeekPrinter.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome.manifest
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/.mkdir.done
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar-en-US/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar-en-US/locale/
@@ -507,7 +505,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/lightning/mode-switch-icons-inverted.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/lightning/suite-accountCentral.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/.mkdir.done
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calBackendLoader.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calBackendLoader.manifest
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calCompositeCalendar.js

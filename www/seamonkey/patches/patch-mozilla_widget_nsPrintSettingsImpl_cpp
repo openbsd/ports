@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_widget_nsPrintSettingsImpl_cpp,v 1.1 2015/03/16 20:00:29 landry Exp $
---- mozilla/widget/nsPrintSettingsImpl.cpp.orig	Mon Mar  9 06:34:28 2015
-+++ mozilla/widget/nsPrintSettingsImpl.cpp	Mon Mar  9 20:11:28 2015
-@@ -29,7 +29,7 @@ nsPrintSettings::nsPrintSettings() :
+$OpenBSD: patch-mozilla_widget_nsPrintSettingsImpl_cpp,v 1.2 2015/09/28 09:30:39 landry Exp $
+--- mozilla/widget/nsPrintSettingsImpl.cpp.orig	Fri Sep 25 09:35:18 2015
++++ mozilla/widget/nsPrintSettingsImpl.cpp	Mon Sep 28 08:55:29 2015
+@@ -31,7 +31,7 @@ nsPrintSettings::nsPrintSettings() :
    mIsCancelled(false),
    mPrintSilent(false),
    mPrintPreview(false),

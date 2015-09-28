@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.32 2015/03/16 20:00:29 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.33 2015/09/28 09:30:39 landry Exp $
 @conflict seamonkey-<=2.0.6
 @pkgpath www/seamonkey
 bin/${MOZILLA_PROJECT}
@@ -92,7 +92,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/movemail.rdf
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/rss.rdf
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libldap60.so.${LIBldap60_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libldif60.so.${LIBldif60_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozalloc.so.${LIBmozalloc_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libprldap60.so.${LIBprldap60_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libxul.so.${LIBxul_VERSION}
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/license.txt

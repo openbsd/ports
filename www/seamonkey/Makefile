@@ -1,28 +1,28 @@
-# $OpenBSD: Makefile,v 1.178 2015/09/24 20:19:15 landry Exp $
+# $OpenBSD: Makefile,v 1.179 2015/09/28 09:30:39 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 BROKEN-sparc64 =	xpcshell SIGBUS during fake
 
 
-MOZILLA_VERSION =	2.35
+MOZILLA_VERSION =	2.38
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
+EXTRACT_SUFX =		.tar.xz
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-REVISION-main =		0
-PKGNAME-lightning =	lightning-seamonkey-4.0
+PKGNAME-lightning =	lightning-seamonkey-4.3
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 
-SO_VERSION =	42.0
+SO_VERSION =	43.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = ldap60 ldif60 mozalloc mozgnome prldap60 suite xul calbasecomps
+MOZILLA_LIBS = ldap60 ldif60 mozgnome prldap60 suite xul calbasecomps
 
 CATEGORIES=	www mail net news
 
@@ -41,13 +41,10 @@ MODCLANG_LANGS =	c c++
 
 NO_TEST=	Yes
 
-MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/ldap/sdks/c-sdk/config/autoconf
-
 CONFIGURE_STYLE =	autoconf no-autoheader
 
 LIB_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xul \
-			lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/mozalloc \
 			c m stdc++ nspr4 plc4 plds4 pthread
 
 # build lightning xpi
@@ -71,7 +68,7 @@ BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-base
 
 ALL_TARGET =	default
 
-MOZILLA_AUTOCONF_DIRS =		ldap/sdks/c-sdk mozilla mozilla/js/src
+MOZILLA_AUTOCONF_DIRS =		mozilla mozilla/js/src
 
 GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 # guid for gdata-provider comes from em:id in install.rdf
