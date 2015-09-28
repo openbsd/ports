@@ -1,2 +1,4 @@
-SHA256 (ardour-2.8.14.tar.bz2) = 4H5IOhI1TADYIdr77F9dJpAGK3WCBdrOq3I78emmM/4=
-SIZE (ardour-2.8.14.tar.bz2) = 2169985
+SHA256 (ardour-2.8.16.tar.bz2) = N+4yEZuhBfoIg/qn4YxY7NUnaJRWjaIkpVTZ70kHXkA=
+SHA256 (ardour-sigc26.diff) = SQC0RS07l7FM9uMG/61sLe8ULOVi+UxT3wdzPo4PPoA=
+SIZE (ardour-2.8.16.tar.bz2) = 2169916
+SIZE (ardour-sigc26.diff) = 182839

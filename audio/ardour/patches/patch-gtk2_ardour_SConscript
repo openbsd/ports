@@ -1,6 +1,15 @@
-$OpenBSD: patch-gtk2_ardour_SConscript,v 1.2 2013/03/08 01:25:44 brad Exp $
---- gtk2_ardour/SConscript.orig	Thu Apr 19 14:33:57 2012
-+++ gtk2_ardour/SConscript	Sat Jan 26 01:17:52 2013
+$OpenBSD: patch-gtk2_ardour_SConscript,v 1.3 2015/09/28 15:45:25 ajacoutot Exp $
+--- gtk2_ardour/SConscript.orig	Sun Dec  2 20:43:52 2012
++++ gtk2_ardour/SConscript	Mon Sep 28 10:48:48 2015
+@@ -18,7 +18,7 @@ domain = 'gtk2_ardour'
+ gtkardour.Append(DOMAIN=domain, MAJOR=1,MINOR=0,MICRO=2)
+ gtkardour.Append(CCFLAGS="-DPACKAGE=\\\"" + domain + "\\\"")
+ gtkardour.Append(CXXFLAGS="-DPACKAGE=\\\"" + domain + "\\\"")
+-gtkardour.Append(CXXFLAGS="-DLIBSIGC_DISABLE_DEPRECATED")
++gtkardour.Append(CXXFLAGS="-DSIGCXX_DISABLE_DEPRECATED")
+ gtkardour.Append(CPPPATH="#/")  # for top level svn_revision.h
+ #gtkardour.Append(CXXFLAGS="-DFLOWCANVAS_AA")
+ gtkardour.Append(PACKAGE=domain)
 @@ -27,6 +27,8 @@ gtkardour.Append(POTFILE=domain + '.pot')
  if gtkardour['IS_OSX']:
  	gtkardour.Append (LINKFLAGS="-Xlinker -headerpad -Xlinker 2048")
@@ -10,7 +19,16 @@ $OpenBSD: patch-gtk2_ardour_SConscript,v 1.2 2013/03/08 01:25:44 brad Exp $
  gtkardour.Merge ([
      libraries['ardour'],
      libraries['ardour_cp'],
-@@ -413,7 +415,7 @@ for style in ['', 'BOLD', 'ITALIC']:
+@@ -58,7 +60,7 @@ gtkardour.Merge ([
+     libraries['boost']
+ ])
+ 
+-gtkmmtests.Append(CXXFLAGS="-DLIBSIGC_DISABLE_DEPRECATED")
++gtkmmtests.Append(CXXFLAGS="-DSIGCXX_DISABLE_DEPRECATED")
+ 
+ gtkmmtests.Merge ([
+     libraries['atkmm'],
+@@ -415,7 +417,7 @@ for style in ['', 'BOLD', 'ITALIC']:
  if env['GTKOSX']:
  	ardour_menus = env.Command ('ardour.menus', 'ardour.menus.in', "cpp -E -P -DGTKOSX -DTOP_MENUBAR ardour.menus.in ardour.menus", chdir=1)
  else:
@@ -19,7 +37,7 @@ $OpenBSD: patch-gtk2_ardour_SConscript,v 1.2 2013/03/08 01:25:44 brad Exp $
  
  ardour_dark_theme = env.SubstInFile ('ardour2_ui_dark.rc', 'ardour2_ui_dark.rc.in', SUBST_DICT = my_font_dict)
  ardour_light_theme = env.SubstInFile ('ardour2_ui_light.rc', 'ardour2_ui_light.rc.in', SUBST_DICT = my_font_dict)
-@@ -529,14 +531,9 @@ if env['FREEDESKTOP']:
+@@ -531,14 +533,9 @@ if env['FREEDESKTOP']:
  	env.Alias('install', env.InstallAs(os.path.join(desktop_icon_install_prefix, '22x22', 'mimetypes', 'application-x-ardour2.png'), 'icons/application-x-ardour_22px.png'))
  	env.Alias('install', env.InstallAs(os.path.join(desktop_icon_install_prefix, '32x32', 'mimetypes', 'application-x-ardour2.png'), 'icons/application-x-ardour_32px.png'))
  	env.Alias('install', env.InstallAs(os.path.join(desktop_icon_install_prefix, '48x48', 'mimetypes', 'application-x-ardour2.png'), 'icons/application-x-ardour_48px.png'))

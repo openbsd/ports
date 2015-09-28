@@ -1,6 +1,6 @@
-$OpenBSD: patch-libs_midi++2_SConscript,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
---- libs/midi++2/SConscript.orig	Mon Jan  2 20:01:31 2012
-+++ libs/midi++2/SConscript	Mon Jan  2 20:05:13 2012
+$OpenBSD: patch-libs_midi++2_SConscript,v 1.2 2015/09/28 15:45:25 ajacoutot Exp $
+--- libs/midi++2/SConscript.orig	Tue Feb 24 13:37:50 2009
++++ libs/midi++2/SConscript	Mon Sep 28 10:48:48 2015
 @@ -32,6 +32,7 @@ version.cc
  sysdep_sources = Split ("""
  alsa_sequencer_midiport.cc
@@ -9,7 +9,7 @@ $OpenBSD: patch-libs_midi++2_SConscript,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
  """)
  
  if env['SYSMIDI'] == 'CoreMIDI':
-@@ -39,6 +40,9 @@ if env['SYSMIDI'] == 'CoreMIDI':
+@@ -39,12 +40,15 @@ if env['SYSMIDI'] == 'CoreMIDI':
     midi2.Append (CCFLAGS="-DWITH_COREMIDI")
     midi2.Append (LINKFLAGS="-framework CoreMIDI")
     midi2.Append (LINKFLAGS="-framework CoreFoundation")
@@ -19,3 +19,10 @@ $OpenBSD: patch-libs_midi++2_SConscript,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
  else:
     sysdep_src = [ 'alsa_sequencer_midiport.cc' ]
     midi2.Append (CCFLAGS="-DWITH_ALSA")
+ 
+ midi2.Append(CCFLAGS="-D_REENTRANT -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE")
+-midi2.Append(CCFLAGS="-DLIBSIGC_DISABLE_DEPRECATED")
++midi2.Append(CCFLAGS="-DSIGCXX_DISABLE_DEPRECATED")
+ 
+ midi2.VersionBuild(['version.cc','midi++/version.h'],  [])
+ 

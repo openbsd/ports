@@ -1,13 +1,22 @@
-$OpenBSD: patch-libs_pbd_SConscript,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
---- libs/pbd/SConscript.orig	Wed Nov 23 15:08:24 2011
-+++ libs/pbd/SConscript	Sat Aug 11 15:12:45 2012
-@@ -58,6 +58,9 @@ if conf.CheckCHeader('execinfo.h'):
+$OpenBSD: patch-libs_pbd_SConscript,v 1.2 2015/09/28 15:45:25 ajacoutot Exp $
+--- libs/pbd/SConscript.orig	Sun Dec  2 20:15:35 2012
++++ libs/pbd/SConscript	Mon Sep 28 10:48:48 2015
+@@ -13,7 +13,7 @@ domain = 'libpbd'
+ pbd.Append(DOMAIN=domain,MAJOR=4,MINOR=1,MICRO=0)
+ pbd.Append(CXXFLAGS="-DPACKAGE=\\\"" + domain + "\\\"")
+ pbd.Append(CXXFLAGS="-D_REENTRANT -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE")
+-pbd.Append(CXXFLAGS="-DLIBSIGC_DISABLE_DEPRECATED")
++pbd.Append(CXXFLAGS="-DSIGCXX_DISABLE_DEPRECATED")
+ pbd.Append(PACKAGE=domain)
+ pbd.Append(POTFILE=domain + '.pot')
+ 
+@@ -57,6 +57,9 @@ if conf.CheckFunc('getmntent'):
+ if conf.CheckCHeader('execinfo.h'):
      conf.env.Append(CXXFLAGS="-DHAVE_EXECINFO")
  pbd = conf.Finish()
- 
++
 +if libraries.has_key('execinfo'):
 +    pbd.Merge([libraries['execinfo']])
-+
+ 
  pbd.Merge ([ libraries['sigc2'],
-              libraries['xml'],
-              libraries['glibmm2'],
+              libraries['boost'],

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2015/09/25 14:12:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2015/09/28 15:45:25 ajacoutot Exp $
 
-BROKEN =		needs patching to work with libsigc++ >=2.6.0
+# XXX check if still needed at next update
+CXXFLAGS +=		-std=c++11
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 SHARED_ONLY =		Yes
 
 COMMENT =		digital audio workstation
 
-DISTNAME =		ardour-2.8.14
+DISTNAME =		ardour-2.8.16
 CATEGORIES =		audio
 HOMEPAGE =		http://ardour.org
-REVISION =		8
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,16 +24,24 @@ WANTLIB += glibmm-2.4 gmodule-2.0 gnomecanvas-2 gnomecanvasmm-2.6
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz
 WANTLIB += jack lo lrdf m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pangomm-1.4 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += samplerate sigc-2.0 sndfile sndio stdc++ xcb xcb-render
+WANTLIB += samplerate sigc-2.0 sndfile sndio xcb xcb-render
 WANTLIB += xcb-shm xml2 xslt z expat graphite2
 
 # Use mirrors as official site has click-through donation-request download.
-MASTER_SITES =		http://stsp.name/openbsd/distfiles/ \
-			http://pkgs.fedoraproject.org/repo/pkgs/ardour/ardour-2.8.14.tar.bz2/c79219ba10735d0b061d53a84ae611a4/
+MASTER_SITES =		http://pkgs.fedoraproject.org/repo/pkgs/ardour/${DISTNAME}${EXTRACT_SUFX}/5bafe41df00d25e7a357baaa1038f16d/
 EXTRACT_SUFX =		.tar.bz2
+
+# Fix build with libsigc++ >= 2.6
+MASTER_SITES0 =		https://distfiles.bsdfrog.org/
+PATCHFILES =		ardour-sigc26.diff:0
 
 MODULES =		devel/gettext \
 			devel/scons
+
+# c++11
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
 
 NO_TEST=	Yes
 

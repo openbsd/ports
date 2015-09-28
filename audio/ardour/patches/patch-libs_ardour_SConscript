@@ -1,6 +1,15 @@
-$OpenBSD: patch-libs_ardour_SConscript,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
---- libs/ardour/SConscript.orig	Sat Aug 11 17:46:06 2012
-+++ libs/ardour/SConscript	Sat Aug 11 17:46:10 2012
+$OpenBSD: patch-libs_ardour_SConscript,v 1.2 2015/09/28 15:45:25 ajacoutot Exp $
+--- libs/ardour/SConscript.orig	Sun Dec  2 20:44:18 2012
++++ libs/ardour/SConscript	Mon Sep 28 10:48:48 2015
+@@ -16,7 +16,7 @@ domain = 'libardour2'
+ 
+ ardour.Append(DOMAIN = domain, MAJOR = 2, MINOR = 0, MICRO = 0)
+ ardour.Append(CXXFLAGS = "-DPACKAGE=\\\"" + domain + "\\\"")
+-ardour.Append(CXXFLAGS="-DLIBSIGC_DISABLE_DEPRECATED")
++ardour.Append(CXXFLAGS="-DSIGCXX_DISABLE_DEPRECATED")
+ ardour.Append(PACKAGE = domain)
+ ardour.Append(POTFILE = domain + '.pot')
+ 
 @@ -327,7 +327,6 @@ ardour.Merge ([
  	     libraries['lrdf'],
  	     libraries['midi++2'],
