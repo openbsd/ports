@@ -1,0 +1,33 @@
+$OpenBSD: patch-lib_replace_wscript,v 1.1 2015/09/28 22:46:06 jca Exp $
+
+Fix __sync_fetch_and_add check so that it properly fails instead of
+succeeding erroneously (eg on hppa/mips64).
+
+Also fix atomic_add_32 check so that it doesn't get picked up instead.
+
+--- lib/replace/wscript.orig	Tue Sep 29 00:11:42 2015
++++ lib/replace/wscript	Tue Sep 29 00:13:50 2015
+@@ -228,23 +228,15 @@ struct foo bar = { .y = 'X', .x = 1 };
+ 
+     # Check for atomic builtins. */
+     conf.CHECK_CODE('''
+-                    int main(void) {
+                         int i;
+                         (void)__sync_fetch_and_add(&i, 1);
+-                        return 0;
+-                    }
+                     ''',
+                     'HAVE___SYNC_FETCH_AND_ADD',
+                     msg='Checking for __sync_fetch_and_add compiler builtin')
+ 
+     conf.CHECK_CODE('''
+-                    #include <stdint.h>
+-                    #include <sys/atomic.h>
+-                    int main(void) {
+                         int32_t i;
+                         atomic_add_32(&i, 1);
+-                        return 0;
+-                    }
+                     ''',
+                     'HAVE_ATOMIC_ADD_32',
+                     headers='stdint.h sys/atomic.h',
