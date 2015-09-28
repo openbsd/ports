@@ -1,11 +1,11 @@
 #!/bin/sh
 #
-# $OpenBSD: zarafa.rc,v 1.15 2015/02/17 22:08:36 sthen Exp $
+# $OpenBSD: zarafa.rc,v 1.16 2015/09/28 19:05:24 robert Exp $
 
 # "meta" script running the following rc.d(8) scripts with the given argument;
 # note that daemon_flags, daemon_user and daemon_class are not passed to
 # the child scripts.
-_pkg_scripts="zarafa_server zarafa_spooler zarafa_monitor zarafa_gateway zarafa_ical zarafa_search"
+_pkg_scripts="zarafa_server zarafa_spooler zarafa_monitor zarafa_gateway zarafa_ical"
 
 if [ "$1" = restart ]; then
 	$0 stop && $0 start
