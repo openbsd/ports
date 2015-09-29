@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2015/09/07 10:50:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2015/09/29 14:59:53 jasper Exp $
 
 PORTROACH=	limitw:1,even
 
 COMMENT=	common layer for serverspec and configspec
-DISTNAME=	specinfra-2.42.2
+DISTNAME=	specinfra-2.43.9
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

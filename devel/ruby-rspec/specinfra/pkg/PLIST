@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2015/09/07 10:50:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2015/09/29 14:59:53 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -379,6 +379,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/helper/set.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/block_device.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/cpu.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/domain.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/host_inventory/ec2.rb
@@ -486,6 +487,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/darwin/filesystem_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/freebsd/
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/freebsd/filesystem_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/block_device_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/cpu_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/filesystem_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/kernel_spec.rb
