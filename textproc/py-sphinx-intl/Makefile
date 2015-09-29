@@ -1,10 +1,11 @@
-#	$OpenBSD: Makefile,v 1.2 2015/04/02 14:21:17 jasper Exp $
+#	$OpenBSD: Makefile,v 1.3 2015/09/29 10:52:53 sthen Exp $
 
 COMMENT =		internationalization helper for Sphinx
 
 MODPY_EGG_VERSION =	0.9.5
 PKGNAME =		py-sphinx-intl-${MODPY_EGG_VERSION}
 DISTNAME =		sphinx-intl-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 

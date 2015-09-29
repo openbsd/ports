@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 08:09:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/29 10:52:54 sthen Exp $
 
 PART =	reg
 
 MODPY_EGG_VERSION =	1.1
-REVISION =		0
+REVISION =		1
 
 STATIC_DIR =	${DESTDIR}/${MODPY_SITEPKG}/syncreg/static
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/29 09:02:55 edd Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/29 10:52:53 sthen Exp $
 
 COMMENT =		US-ASCII transliterations of Unicode text
 
 MODPY_EGG_VERSION =	0.4.18
-REVISION =		0
+REVISION =		1
 DISTNAME =		Unidecode-0.04.18
 PKGNAME = 		py-unidecode-0.04.18
 
@@ -15,8 +15,6 @@ HOMEPAGE =		https://pypi.python.org/pypi/Unidecode
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
-BUILD_DEPENDS +=	${RUN_DEPENDS}
-RUN_DEPENDS +=		devel/py-setuptools>=18.2v0
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 

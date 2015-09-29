@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/02 14:21:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/29 10:52:55 sthen Exp $
 
 COMMENT =	plugin for reCAPTCHA and reCAPTCHA Mailhide
 
 MODPY_EGG_VERSION = 1.0.6
 DISTNAME =	recaptcha-client-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	www devel
 HOMEPAGE =	http://pypi.python.org/pypi/recaptcha-client

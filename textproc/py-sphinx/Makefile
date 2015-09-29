@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/02 14:21:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/09/29 10:52:53 sthen Exp $
 
 COMMENT =		python documentation generator
 
 MODPY_EGG_VERSION =	1.2.3
-REVISION =		0
+REVISION =		1
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
 

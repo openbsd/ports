@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/09/29 09:02:55 edd Exp $
+# $OpenBSD: Makefile,v 1.10 2015/09/29 10:52:53 sthen Exp $
 
 COMMENT=		iCalendar library for Python
 
 MODPY_EGG_VERSION =	0.8.1rc0
-REVISION =		0
+REVISION =		1
 DISTNAME=		vobject-0.8.1c
 PKGNAME=		py-vobject-0.8.1c
 
@@ -21,8 +21,7 @@ MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		devel/py-dateutil \
-			devel/py-setuptools>=18.2v0
+RUN_DEPENDS=		devel/py-dateutil
 
 NO_TEST=		Yes
 

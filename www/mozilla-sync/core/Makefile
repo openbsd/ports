@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 08:09:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/29 10:52:53 sthen Exp $
 
 PART =	core
 
 MODPY_EGG_VERSION =	2.10
-REVISION =		0
+REVISION =		1
 
 .include <bsd.port.mk>

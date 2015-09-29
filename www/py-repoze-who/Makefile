@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/18 07:30:52 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/29 10:52:55 sthen Exp $
 
 COMMENT =	identification and authentication framework for WSGI
 
 MODPY_EGG_VERSION = 2.2
 DISTNAME =	repoze.who-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/./-/}
+REVISION =	0
 
 CATEGORIES =	www devel
 HOMEPAGE =	http://pypi.python.org/pypi/repoze.who

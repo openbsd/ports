@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/24 11:38:18 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/29 10:52:54 sthen Exp $
 
 COMMENT=	simple integration of Flask and WTForms
 
 MODPY_EGG_VERSION=0.9.4
 DISTNAME=	Flask-WTF-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 
 # BSD

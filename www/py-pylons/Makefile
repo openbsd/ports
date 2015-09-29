@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/09/20 11:54:58 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2015/09/29 10:52:55 sthen Exp $
 
 COMMENT =	rapid web application development framework
 
@@ -6,6 +6,7 @@ COMMENT =	rapid web application development framework
 MODPY_EGG_VERSION = 1.0.2
 DISTNAME =	Pylons-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	www devel
 

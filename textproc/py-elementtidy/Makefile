@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/21 22:39:09 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/29 10:52:53 sthen Exp $
 
 COMMENT =	HTML tree builder for ElementTree
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.0_20050212
 DISTNAME =	elementtidy-${MODPY_EGG_VERSION:S/_/-/}
 PKGNAME =	py-${DISTNAME:S/0-2/0.2/}
 EXTRACT_SUFX =	.zip
+REVISION =	0
 
 CATEGORIES =	textproc
 HOMEPAGE =	http://effbot.org/zone/element-tidylib.htm
