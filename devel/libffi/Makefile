@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2015/04/24 13:48:27 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.31 2015/09/29 07:45:33 jasper Exp $
 
 COMMENT=		Foreign Function Interface
 
-DISTNAME=		libffi-3.1
-REVISION=		0
-SHARED_LIBS +=  ffi                  1.1      # .6.2
+DISTNAME=		libffi-3.2.1
+SHARED_LIBS +=  ffi                  1.2      # .6.4
 CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -18,8 +17,7 @@ MASTER_SITES=		ftp://sourceware.org/pub/libffi/
 
 TEST_DEPENDS=		devel/dejagnu
 
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 FAKE_FLAGS+=		includesdir="${PREFIX}/include"
