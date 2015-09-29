@@ -1,10 +1,10 @@
-$OpenBSD: patch-wpa_supplicant_main_c,v 1.1 2014/09/08 08:28:23 dcoppa Exp $
+$OpenBSD: patch-wpa_supplicant_main_c,v 1.2 2015/09/29 11:57:54 dcoppa Exp $
 
 Remove Linuxisms from usage()
 
---- wpa_supplicant/main.c.orig	Wed Jun  4 15:26:14 2014
-+++ wpa_supplicant/main.c	Mon Sep  8 09:45:48 2014
-@@ -67,7 +67,7 @@ static void usage(void)
+--- wpa_supplicant/main.c.orig	Sun Sep 27 21:02:05 2015
++++ wpa_supplicant/main.c	Mon Sep 28 09:35:05 2015
+@@ -68,7 +68,7 @@ static void usage(void)
  	       "  -i = interface name\n"
  	       "  -I = additional configuration file\n"
  	       "  -d = increase debugging verbosity (-dd even more)\n"
@@ -13,7 +13,7 @@ Remove Linuxisms from usage()
  	       "  -e = entropy file\n");
  #ifdef CONFIG_DEBUG_FILE
  	printf("  -f = log output to debug file instead of stdout\n");
-@@ -101,8 +101,7 @@ static void usage(void)
+@@ -102,8 +102,7 @@ static void usage(void)
  	       "  -N = start describing new interface\n");
  
  	printf("example:\n"
