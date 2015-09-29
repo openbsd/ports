@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2015/04/21 18:33:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2015/09/29 10:52:12 sthen Exp $
 
 COMMENT=	object interface infrastructure from Zope 3
 
 MODPY_EGG_VERSION=	3.6.1
-REVISION=	3
+REVISION=	4
 
 DISTNAME=	zope.interface-${MODPY_EGG_VERSION}
 PKGNAME=	py-zopeinterface-${MODPY_EGG_VERSION}

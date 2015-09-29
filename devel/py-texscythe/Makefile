@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/09/22 19:49:05 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/29 10:52:12 sthen Exp $
 
 COMMENT =		TeX Live texmf subsetter tool and Python library.
 
 DISTNAME =		texscythe-${MODPY_EGG_VERSION}
 PKGNAME =		py-texscythe-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	0.1.1
+REVISION =		0
 
 CATEGORIES =		devel print
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/04 12:48:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/29 10:52:12 sthen Exp $
 
 COMMENT=		CIM operations over HTTP in Python
 
@@ -8,6 +8,7 @@ WRKDIST=		${WRKDIR}/pywbem-0.8.0-dev
 PKGNAME=		py-wbem-0.8.0pre728
 EXTRACT_SUFX=		.zip
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		http://sourceforge.net/apps/mediawiki/pywbem/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/09/23 20:14:53 jca Exp $
+# $OpenBSD: Makefile,v 1.32 2015/09/29 10:52:11 sthen Exp $
 
 COMMENT=		discovery-based unittest extension
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	1.3.7
 DISTNAME=		nose-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		http://readthedocs.org/docs/nose/en/latest/
 

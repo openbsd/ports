@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/08/20 12:45:47 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/29 10:52:12 sthen Exp $
 
 COMMENT =		use version control tags to discover version numbers
 
 MODPY_EGG_VERSION =	2.14.0.0
 DISTNAME =		vcversioner-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/09/29 08:49:37 edd Exp $
+# $OpenBSD: Makefile,v 1.28 2015/09/29 10:52:11 sthen Exp $
 
 COMMENT=	simplified packaging system for Python modules
 
@@ -8,6 +8,7 @@ PKGNAME=		py-${DISTNAME:S/c/./}
 EPOCH = 		0
 CATEGORIES=		devel
 PKG_ARCH=		*
+REVISION=		0
 
 
 MODPY_PI =	Yes

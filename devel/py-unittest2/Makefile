@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/29 10:52:12 sthen Exp $
 
 COMMENT =		backport of new features added to unittest
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.5.1
 DISTNAME =		unittest2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		http://pypi.python.org/pypi/unittest2
 MAINTAINER =		frantisek holop <minusf@obiit.org>

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/02 19:03:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/29 10:52:11 sthen Exp $
 
 COMMENT=		refactoring library
 
 MODPY_EGG_VERSION=	0.9.4
 DISTNAME=		rope-${MODPY_EGG_VERSION}
 CATEGORIES=     	devel
+REVISION=		0
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

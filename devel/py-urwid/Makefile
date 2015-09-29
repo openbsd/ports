@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2015/07/18 00:41:07 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2015/09/29 10:52:12 sthen Exp $
 
 COMMENT =	console user interface library for python
 
 MODPY_EGG_VERSION = 1.3.0
-REVISION =	0
+REVISION =	1
 DISTNAME =	urwid-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel

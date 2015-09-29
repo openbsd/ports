@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/25 13:18:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/29 10:52:11 sthen Exp $
 
 MODPY_EGG_VERSION =	3.4.0.3
 COMMENT =	backport of functools.singledispatch to Python 2.6-3.3
 DISTNAME =	singledispatch-${MODPY_EGG_VERSION}
 PKGNAME =	py-singledispatch-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://pypi.python.org/pypi/singledispatch
 

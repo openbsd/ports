@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/06/26 07:52:24 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/29 10:52:12 sthen Exp $
 
 COMMENT =	GIS WMTS/TMS tile caching server
 
@@ -6,6 +6,7 @@ GH_TAGNAME =	1.8.0
 GH_PROJECT =	mapproxy
 GH_ACCOUNT =	mapproxy
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
+REVISION =	0
 
 CATEGORIES =	geo www
 

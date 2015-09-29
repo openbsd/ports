@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/09/29 10:52:11 sthen Exp $
 
 COMMENT =		generic functions support systems
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.5
 REV = 			2582
 DISTNAME =		PEAK-Rules-${MODPY_EGG_VERSION}a1.dev-r${REV}
 PKGNAME =		py-peak-rules-${MODPY_EGG_VERSION}r${REV}
-REVISION=		0
+REVISION=		1
 EPOCH =			0
 
 CATEGORIES =		devel

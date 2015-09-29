@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/29 11:20:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/09/29 10:52:13 sthen Exp $
 
 COMMENT =		Python bindings for OpenGL
 MODPY_EGG_VERSION =	3.0.2
 DISTNAME =		PyOpenGL-${MODPY_EGG_VERSION}
 PKGNAME =		py-opengl-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		graphics
 HOMEPAGE =		http://pyopengl.sourceforge.net/

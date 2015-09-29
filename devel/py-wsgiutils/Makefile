@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:27 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/09/29 10:52:12 sthen Exp $
 
 COMMENT =		libraries for WSGI development
 
 MODPY_EGG_VERSION =	0.7
 DISTNAME =		WSGIUtils-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel textproc www
 
