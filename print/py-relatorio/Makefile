@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/02 14:21:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/29 10:52:29 sthen Exp $
 
 COMMENT=		templating library able to output odt and pdf files
 
 MODPY_EGG_VERSION=	0.5.5
 DISTNAME=		relatorio-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		print textproc

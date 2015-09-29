@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/23 20:04:10 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/29 10:52:34 sthen Exp $
 
 COMMENT =	CEF logs emitter module
 
 MODPY_EGG_VERSION =	0.5
 DISTNAME =	cef-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	sysutils
 

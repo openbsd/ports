@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/06/04 07:46:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/29 10:52:29 sthen Exp $
 
 COMMENT =	messagepack (de)serializer
 
 MODPY_EGG_VERSION =	0.4.6
 DISTNAME =	msgpack-python-${MODPY_EGG_VERSION}
 PKGNAME =	py-msgpack-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	net textproc
 

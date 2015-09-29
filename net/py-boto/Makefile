@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/02 14:21:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2015/09/29 10:52:29 sthen Exp $
 
 COMMENT =	python interface to amazon web services
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION = 2.28.0
 DISTNAME =	boto-${MODPY_EGG_VERSION}
 PKGNAME = 	py-${DISTNAME}
 CATEGORIES =	net
+REVISION =      0
 
 HOMEPAGE =	https://github.com/boto/boto
 MODPY_PI =	Yes

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/29 10:52:29 sthen Exp $
 
 COMMENT=	console CardDAV client with mutt support
 
 MODPY_EGG_VERSION=	0.7.0
 DISTNAME=		pyCardDAV-${MODPY_EGG_VERSION}
 PKGNAME=		${DISTNAME:S/py/${MODPY_PY_PREFIX}/}
+REVISION=		0
 
 HOMEPAGE=		http://lostpackets.de/pycarddav/
 

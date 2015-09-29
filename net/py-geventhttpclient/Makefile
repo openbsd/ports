@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/23 07:10:28 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/29 10:52:29 sthen Exp $
 
 COMMENT =		high performance, concurrent HTTP client library
 
 MODPY_EGG_VERSION =	1.1.0
 DISTNAME =		py-geventhttpclient-${MODPY_EGG_VERSION}
 CATEGORIES =		net devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/gwik/geventhttpclient
 

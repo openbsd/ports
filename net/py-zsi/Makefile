@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/09/29 10:52:29 sthen Exp $
 
 COMMENT=	Zolera SOAP Infrastructure
 
 MODPY_EGG_VERSION=2.0
 DISTNAME=	ZSI-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net devel
 
 HOMEPAGE=	http://pywebsvcs.sourceforge.net/

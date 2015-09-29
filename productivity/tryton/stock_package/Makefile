@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/19 21:52:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/29 10:52:33 sthen Exp $
 
 TRYTOND_MODULE =	stock_package
+REVISION =		0
 
 RUN_DEPENDS =		productivity/tryton/stock
 
