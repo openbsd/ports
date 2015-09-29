@@ -1,15 +1,14 @@
-$OpenBSD: patch-svx_Executable_gengal_mk,v 1.1 2015/05/03 11:30:33 robert Exp $
---- svx/Executable_gengal.mk.orig.port	Sun May  3 00:38:55 2015
-+++ svx/Executable_gengal.mk	Sun May  3 00:39:21 2015
-@@ -61,9 +61,9 @@ $(eval $(call gb_Executable_use_system_win32_libs,geng
+$OpenBSD: patch-svx_Executable_gengal_mk,v 1.2 2015/09/29 16:10:48 robert Exp $
+--- svx/Executable_gengal.mk.orig.port	Sun Sep 27 12:25:12 2015
++++ svx/Executable_gengal.mk	Sun Sep 27 19:48:24 2015
+@@ -67,9 +67,8 @@ $(eval $(call gb_Executable_add_libs,gengal,\
+ 	-lpthread \
  ))
- endif
- 
+ else
 -ifeq ($(OS),LINUX)
-+ifneq (,$(filter LINUX OPENBSD,$(OS)))
++ifeq ($(OS),OPENBSD)
  $(eval $(call gb_Executable_add_libs,gengal,\
 -	-ldl \
-+	$(if $(filter LINUX,$(OS)),-ldl) \
  	-lpthread \
      -lGL \
-     -lGLU \
+     -lX11 \

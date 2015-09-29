@@ -1,0 +1,12 @@
+$OpenBSD: patch-external_libwpd_ExternalPackage_libwpd_mk,v 1.1 2015/09/29 16:10:48 robert Exp $
+--- external/libwpd/ExternalPackage_libwpd.mk.orig.port	Sun Sep 27 19:11:39 2015
++++ external/libwpd/ExternalPackage_libwpd.mk	Sun Sep 27 19:11:44 2015
+@@ -16,7 +16,7 @@ $(eval $(call gb_ExternalPackage_add_file,libwpd,$(LIB
+ else ifeq ($(OS),WNT)
+ $(eval $(call gb_ExternalPackage_add_file,libwpd,$(LIBO_LIB_FOLDER)/libwpd-0.10.dll,src/lib/.libs/libwpd-0.10.dll))
+ else ifeq ($(filter IOS ANDROID,$(OS)),)
+-$(eval $(call gb_ExternalPackage_add_file,libwpd,$(LIBO_LIB_FOLDER)/libwpd-0.10-lo.so.10,src/lib/.libs/libwpd-0.10-lo.so.10.0.0))
++$(eval $(call gb_ExternalPackage_add_file,libwpd,$(LIBO_LIB_FOLDER)/libwpd-0.10-lo.so.10,src/lib/.libs/libwpd-0.10-lo.so.10.0))
+ endif
+ 
+ # vim: set noet sw=4 ts=4:

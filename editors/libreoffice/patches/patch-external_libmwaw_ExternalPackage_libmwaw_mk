@@ -1,12 +1,12 @@
-$OpenBSD: patch-external_libmwaw_ExternalPackage_libmwaw_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
---- external/libmwaw/ExternalPackage_libmwaw.mk.orig.port	Thu Mar 26 12:51:14 2015
-+++ external/libmwaw/ExternalPackage_libmwaw.mk	Wed Apr  8 16:01:42 2015
+$OpenBSD: patch-external_libmwaw_ExternalPackage_libmwaw_mk,v 1.3 2015/09/29 16:10:48 robert Exp $
+--- external/libmwaw/ExternalPackage_libmwaw.mk.orig.port	Sun Sep 27 12:21:07 2015
++++ external/libmwaw/ExternalPackage_libmwaw.mk	Sun Sep 27 18:48:18 2015
 @@ -16,7 +16,7 @@ $(eval $(call gb_ExternalPackage_add_file,libmwaw,$(LI
  else ifeq ($(OS),WNT)
  $(eval $(call gb_ExternalPackage_add_file,libmwaw,$(LIBO_LIB_FOLDER)/libmwaw-0.3.dll,src/lib/.libs/libmwaw-0.3.dll))
  else ifeq ($(filter IOS ANDROID,$(OS)),)
--$(eval $(call gb_ExternalPackage_add_file,libmwaw,$(LIBO_LIB_FOLDER)/libmwaw-0.3.so.3,src/lib/.libs/libmwaw-0.3.so.3.0.$(MWAW_VERSION_MICRO)))
-+$(eval $(call gb_ExternalPackage_add_file,libmwaw,$(LIBO_LIB_FOLDER)/libmwaw-0.3.so.3,src/lib/.libs/libmwaw-0.3.so.3.4))
+-$(eval $(call gb_ExternalPackage_add_file,libmwaw,$(LIBO_LIB_FOLDER)/libmwaw-0.3-lo.so.3,src/lib/.libs/libmwaw-0.3-lo.so.3.0.$(MWAW_VERSION_MICRO)))
++$(eval $(call gb_ExternalPackage_add_file,libmwaw,$(LIBO_LIB_FOLDER)/libmwaw-0.3-lo.so.3,src/lib/.libs/libmwaw-0.3-lo.so.3.$(MWAW_VERSION_MICRO)))
  endif
  
  # vim: set noet sw=4 ts=4:

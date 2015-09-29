@@ -1,0 +1,15 @@
+$OpenBSD: patch-vcl_Executable_mtfdemo_mk,v 1.1 2015/09/29 16:10:48 robert Exp $
+--- vcl/Executable_mtfdemo.mk.orig.port	Tue Sep 29 17:26:51 2015
++++ vcl/Executable_mtfdemo.mk	Tue Sep 29 17:26:56 2015
+@@ -40,10 +40,9 @@ $(eval $(call gb_Executable_use_static_libraries,mtfde
+     vclmain \
+ ))
+ 
+-ifeq ($(OS),LINUX)
++ifeq ($(OS),OPENBSD)
+ $(eval $(call gb_Executable_add_libs,mtfdemo,\
+ 	-lm \
+-	-ldl \
+ 	-lpthread \
+     -lGL \
+     -lX11 \

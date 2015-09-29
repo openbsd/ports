@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.37 2015/07/09 17:05:15 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.38 2015/09/29 16:10:49 robert Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -72,8 +72,6 @@ lib/libreoffice/presets/database/evolocal.odb
 lib/libreoffice/presets/gallery/
 lib/libreoffice/presets/gallery/sg30.sdv
 lib/libreoffice/presets/gallery/sg30.thm
-lib/libreoffice/presets/psprint/
-lib/libreoffice/presets/uno_packages/
 lib/libreoffice/program/
 lib/libreoffice/program/bootstraprc
 lib/libreoffice/program/flat_logo.svg
@@ -83,11 +81,13 @@ lib/libreoffice/program/gengal
 @bin lib/libreoffice/program/gengal.bin
 lib/libreoffice/program/gnome-open-url
 lib/libreoffice/program/intro.png
+lib/libreoffice/program/jvmfwk3rc
 lib/libreoffice/program/libOGLTranslo.so
 lib/libreoffice/program/libPresentationMinimizerlo.so
 lib/libreoffice/program/libPresenterScreenlo.so
 lib/libreoffice/program/libabplo.so
 lib/libreoffice/program/libacclo.so
+lib/libreoffice/program/libaffine_uno_uno.so
 lib/libreoffice/program/libanalysislo.so
 lib/libreoffice/program/libanimcorelo.so
 lib/libreoffice/program/libavmedialo.so
@@ -97,6 +97,8 @@ lib/libreoffice/program/libbasebmplo.so
 lib/libreoffice/program/libbasegfxlo.so
 lib/libreoffice/program/libbasprovlo.so
 lib/libreoffice/program/libbiblo.so
+lib/libreoffice/program/libbinaryurplo.so
+lib/libreoffice/program/libbootstraplo.so
 lib/libreoffice/program/libcached1.so
 lib/libreoffice/program/libcairocanvaslo.so
 lib/libreoffice/program/libcalclo.so
@@ -143,6 +145,7 @@ lib/libreoffice/program/libepslo.so
 lib/libreoffice/program/libeptlo.so
 lib/libreoffice/program/liberalo.so
 lib/libreoffice/program/libetilo.so
+@bin lib/libreoffice/program/libetonyek-0.1-lo.so.1
 lib/libreoffice/program/libevtattlo.so
 lib/libreoffice/program/libexplo.so
 lib/libreoffice/program/libexpwraplo.so
@@ -160,6 +163,7 @@ lib/libreoffice/program/libfwilo.so
 lib/libreoffice/program/libfwklo.so
 lib/libreoffice/program/libfwllo.so
 lib/libreoffice/program/libfwmlo.so
+lib/libreoffice/program/libgcc3_uno.so
 lib/libreoffice/program/libgraphicfilterlo.so
 lib/libreoffice/program/libguesslanglo.so
 lib/libreoffice/program/libhelplinkerlo.so
@@ -174,6 +178,10 @@ lib/libreoffice/program/libicglo.so
 lib/libreoffice/program/libidxlo.so
 lib/libreoffice/program/libimelo.so
 lib/libreoffice/program/libindex_data.so
+lib/libreoffice/program/libintrospectionlo.so
+lib/libreoffice/program/libinvocadaptlo.so
+lib/libreoffice/program/libinvocationlo.so
+lib/libreoffice/program/libiolo.so
 lib/libreoffice/program/libipblo.so
 lib/libreoffice/program/libipdlo.so
 lib/libreoffice/program/libipslo.so
@@ -182,6 +190,8 @@ lib/libreoffice/program/libipxlo.so
 lib/libreoffice/program/libiralo.so
 lib/libreoffice/program/libitglo.so
 lib/libreoffice/program/libitilo.so
+lib/libreoffice/program/libjvmaccesslo.so
+lib/libreoffice/program/libjvmfwklo.so
 lib/libreoffice/program/libldapbe2lo.so
 lib/libreoffice/program/liblibreofficekitgtk.so
 lib/libreoffice/program/liblnglo.so
@@ -191,6 +201,7 @@ lib/libreoffice/program/liblocaledata_en.so
 lib/libreoffice/program/liblocaledata_es.so
 lib/libreoffice/program/liblocaledata_euro.so
 lib/libreoffice/program/liblocaledata_others.so
+lib/libreoffice/program/liblog_uno_uno.so
 lib/libreoffice/program/libloglo.so
 lib/libreoffice/program/liblosessioninstalllo.so
 lib/libreoffice/program/liblpsolve55.so
@@ -204,11 +215,12 @@ lib/libreoffice/program/libmsfilterlo.so
 lib/libreoffice/program/libmsformslo.so
 lib/libreoffice/program/libmswordlo.so
 lib/libreoffice/program/libmtfrendererlo.so
-@bin lib/libreoffice/program/libmwaw-0.3.so.3
+@bin lib/libreoffice/program/libmwaw-0.3-lo.so.3
 lib/libreoffice/program/libmysqllo.so
+lib/libreoffice/program/libnamingservicelo.so
 lib/libreoffice/program/libodbclo.so
 lib/libreoffice/program/libodfflatxmllo.so
-@bin lib/libreoffice/program/libodfgen-0.1.so.1
+@bin lib/libreoffice/program/libodfgen-0.1-lo.so.1
 lib/libreoffice/program/liboffacclo.so
 lib/libreoffice/program/liboglcanvaslo.so
 lib/libreoffice/program/libooxlo.so
@@ -224,15 +236,19 @@ lib/libreoffice/program/libpostgresql-sdbc-impllo.so
 lib/libreoffice/program/libpostgresql-sdbclo.so
 lib/libreoffice/program/libpricinglo.so
 lib/libreoffice/program/libprotocolhandlerlo.so
+lib/libreoffice/program/libproxyfaclo.so
 lib/libreoffice/program/libpythonloaderlo.so
 lib/libreoffice/program/libpyuno.so
 lib/libreoffice/program/libqstart_gtklo.so
 lib/libreoffice/program/librecentfile.so
+lib/libreoffice/program/libreflectionlo.so
+lib/libreoffice/program/libreglo.so
 lib/libreoffice/program/libreslo.so
-@bin lib/libreoffice/program/librevenge-0.0.so.0
+@bin lib/libreoffice/program/librevenge-0.0-lo.so.0
 lib/libreoffice/program/librptlo.so
 lib/libreoffice/program/librptuilo.so
 lib/libreoffice/program/librptxmllo.so
+lib/libreoffice/program/libsal_textenclo.so
 lib/libreoffice/program/libsaxlo.so
 lib/libreoffice/program/libsblo.so
 lib/libreoffice/program/libscdlo.so
@@ -258,7 +274,9 @@ lib/libreoffice/program/libsotlo.so
 lib/libreoffice/program/libspelllo.so
 lib/libreoffice/program/libspllo.so
 lib/libreoffice/program/libsrtrs1.so
+lib/libreoffice/program/libstocserviceslo.so
 lib/libreoffice/program/libstoragefdlo.so
+lib/libreoffice/program/libstorelo.so
 lib/libreoffice/program/libstringresourcelo.so
 lib/libreoffice/program/libsvgfilterlo.so
 lib/libreoffice/program/libsvgiolo.so
@@ -289,12 +307,20 @@ lib/libreoffice/program/libucpgio1lo.so
 lib/libreoffice/program/libucphier1.so
 lib/libreoffice/program/libucppkg1.so
 lib/libreoffice/program/libucptdoc1lo.so
+@bin lib/libreoffice/program/libuno_cppu.so.3
+@bin lib/libreoffice/program/libuno_cppuhelpergcc3.so.3
+@bin lib/libreoffice/program/libuno_purpenvhelpergcc3.so.3
+@bin lib/libreoffice/program/libuno_sal.so.3
+@bin lib/libreoffice/program/libuno_salhelpergcc3.so.3
+lib/libreoffice/program/libunoidllo.so
 lib/libreoffice/program/libunopkgapp.so
 lib/libreoffice/program/libunordflo.so
 lib/libreoffice/program/libunoxmllo.so
+lib/libreoffice/program/libunsafe_uno_uno.so
 lib/libreoffice/program/libupdatefeedlo.so
 lib/libreoffice/program/libutllo.so
 lib/libreoffice/program/libuuilo.so
+lib/libreoffice/program/libuuresolverlo.so
 lib/libreoffice/program/libvbaeventslo.so
 lib/libreoffice/program/libvbahelperlo.so
 lib/libreoffice/program/libvbaobjlo.so
@@ -303,16 +329,18 @@ lib/libreoffice/program/libvclcanvaslo.so
 lib/libreoffice/program/libvcllo.so
 lib/libreoffice/program/libvclplug_genlo.so
 lib/libreoffice/program/libvclplug_gtklo.so
-lib/libreoffice/program/libvclplug_svplo.so
+@bin lib/libreoffice/program/libwpd-0.10-lo.so.10
 lib/libreoffice/program/libwpftcalclo.so
 lib/libreoffice/program/libwpftdrawlo.so
 lib/libreoffice/program/libwpftimpresslo.so
 lib/libreoffice/program/libwpftwriterlo.so
-@bin lib/libreoffice/program/libwps-0.3.so.3
+@bin lib/libreoffice/program/libwpg-0.3-lo.so.3
+@bin lib/libreoffice/program/libwps-0.4-lo.so.4
 lib/libreoffice/program/libwriterfilterlo.so
 lib/libreoffice/program/libwriterperfectlo.so
 lib/libreoffice/program/libxmlfalo.so
 lib/libreoffice/program/libxmlfdlo.so
+lib/libreoffice/program/libxmlreaderlo.so
 lib/libreoffice/program/libxmlscriptlo.so
 lib/libreoffice/program/libxmlsecurity.so
 lib/libreoffice/program/libxoflo.so
@@ -329,6 +357,7 @@ lib/libreoffice/program/officehelper.py
 @bin lib/libreoffice/program/oosplash
 lib/libreoffice/program/open-url
 lib/libreoffice/program/opengl/
+lib/libreoffice/program/opengl/areaHashCRC64TFragmentShader.glsl
 lib/libreoffice/program/opengl/areaScaleFastFragmentShader.glsl
 lib/libreoffice/program/opengl/areaScaleFragmentShader.glsl
 lib/libreoffice/program/opengl/backgroundFragmentShader.glsl
@@ -350,6 +379,7 @@ lib/libreoffice/program/opengl/linearMultiColorGradientFragmentShader.glsl
 lib/libreoffice/program/opengl/linearTwoColorGradientFragmentShader.glsl
 lib/libreoffice/program/opengl/maskFragmentShader.glsl
 lib/libreoffice/program/opengl/maskedTextureFragmentShader.glsl
+lib/libreoffice/program/opengl/maskedTextureVertexShader.glsl
 lib/libreoffice/program/opengl/pickingFragmentShader.glsl
 lib/libreoffice/program/opengl/pickingVertexShader.glsl
 lib/libreoffice/program/opengl/radialGradientFragmentShader.glsl
@@ -393,6 +423,8 @@ lib/libreoffice/program/pythonloader.unorc
 lib/libreoffice/program/pythonscript.py
 lib/libreoffice/program/pyuno.so
 lib/libreoffice/program/redirectrc
+@bin lib/libreoffice/program/regmerge
+@bin lib/libreoffice/program/regview
 lib/libreoffice/program/resource/
 lib/libreoffice/program/resource/abpen-US.res
 lib/libreoffice/program/resource/accen-US.res
@@ -455,6 +487,7 @@ lib/libreoffice/program/scalc
 lib/libreoffice/program/sdraw
 lib/libreoffice/program/senddoc
 lib/libreoffice/program/services/
+lib/libreoffice/program/services.rdb
 lib/libreoffice/program/services/postgresql-sdbc.rdb
 lib/libreoffice/program/services/pyuno.rdb
 lib/libreoffice/program/services/scriptproviderforpython.rdb
@@ -469,14 +502,18 @@ lib/libreoffice/program/soffice
 lib/libreoffice/program/sofficerc
 lib/libreoffice/program/swriter
 lib/libreoffice/program/types/
+lib/libreoffice/program/types.rdb
 lib/libreoffice/program/types/offapi.rdb
 lib/libreoffice/program/types/oovbaapi.rdb
 @bin lib/libreoffice/program/ui-previewer
+lib/libreoffice/program/uno
+@bin lib/libreoffice/program/uno.bin
 lib/libreoffice/program/uno.py
 lib/libreoffice/program/unohelper.py
 lib/libreoffice/program/unoinfo
 lib/libreoffice/program/unopkg
 @bin lib/libreoffice/program/unopkg.bin
+lib/libreoffice/program/unorc
 @bin lib/libreoffice/program/uri-encode
 lib/libreoffice/program/versionrc
 lib/libreoffice/program/wizards/
@@ -706,6 +743,8 @@ lib/libreoffice/share/basic/
 lib/libreoffice/share/basic/Access2Base/
 lib/libreoffice/share/basic/Access2Base/Application.xba
 lib/libreoffice/share/basic/Access2Base/Collect.xba
+lib/libreoffice/share/basic/Access2Base/CommandBar.xba
+lib/libreoffice/share/basic/Access2Base/CommandBarControl.xba
 lib/libreoffice/share/basic/Access2Base/Compatible.xba
 lib/libreoffice/share/basic/Access2Base/Control.xba
 lib/libreoffice/share/basic/Access2Base/DataDef.xba
@@ -727,6 +766,7 @@ lib/libreoffice/share/basic/Access2Base/SubForm.xba
 lib/libreoffice/share/basic/Access2Base/TempVar.xba
 lib/libreoffice/share/basic/Access2Base/Test.xba
 lib/libreoffice/share/basic/Access2Base/Trace.xba
+lib/libreoffice/share/basic/Access2Base/UtilProperty.xba
 lib/libreoffice/share/basic/Access2Base/Utils.xba
 lib/libreoffice/share/basic/Access2Base/_License.xba
 lib/libreoffice/share/basic/Access2Base/acConstants.xba
@@ -835,7 +875,7 @@ lib/libreoffice/share/basic/Tutorials/script.xlb
 lib/libreoffice/share/basic/dialog.xlc
 lib/libreoffice/share/basic/script.xlc
 lib/libreoffice/share/config/
-lib/libreoffice/share/config/images_crystal.zip
+lib/libreoffice/share/config/images_breeze.zip
 lib/libreoffice/share/config/images_galaxy.zip
 lib/libreoffice/share/config/images_hicontrast.zip
 lib/libreoffice/share/config/images_oxygen.zip
@@ -1031,6 +1071,7 @@ lib/libreoffice/share/config/soffice.cfg/cui/ui/textdialog.ui
 lib/libreoffice/share/config/soffice.cfg/cui/ui/textflowpage.ui
 lib/libreoffice/share/config/soffice.cfg/cui/ui/thesaurus.ui
 lib/libreoffice/share/config/soffice.cfg/cui/ui/transparencytabpage.ui
+lib/libreoffice/share/config/soffice.cfg/cui/ui/tsaurldialog.ui
 lib/libreoffice/share/config/soffice.cfg/cui/ui/twolinespage.ui
 lib/libreoffice/share/config/soffice.cfg/cui/ui/wordcompletionpage.ui
 lib/libreoffice/share/config/soffice.cfg/cui/ui/zoomdialog.ui
@@ -1676,6 +1717,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/customanimationtimi
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/customslideshows.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/definecustomslideshow.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/dlgfield.ui
+lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/dockinganimation.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/headerfooterdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/headerfootertab.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/insertslides.ui
@@ -1707,7 +1749,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/smath/toolbar/toolbar.xml
 lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/
 lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/alignmentdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/catalogdialog.ui
-lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/floatingelements.ui
+lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/dockingelements.ui
 lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/fontdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/fontsizedialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/fonttypedialog.ui
@@ -1985,6 +2027,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/linenumbering.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/mailconfigpage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/mailmerge.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/mailmergedialog.ui
+lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/managechangessidebar.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/mergeconnectdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/mergetabledialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/mmaddressblockpage.ui
@@ -2043,6 +2086,8 @@ lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/selectblockdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/selectindexdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/selecttabledialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/sidebarpage.ui
+lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/sidebarstylepresets.ui
+lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/sidebartheme.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/sidebarwrap.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/sortdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/splittable.ui
@@ -2191,6 +2236,9 @@ lib/libreoffice/share/config/soffice.cfg/svx/ui/compressgraphicdialog.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/datanavigator.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/deletefooterdialog.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/deleteheaderdialog.ui
+lib/libreoffice/share/config/soffice.cfg/svx/ui/docking3deffects.ui
+lib/libreoffice/share/config/soffice.cfg/svx/ui/dockingcolorreplace.ui
+lib/libreoffice/share/config/soffice.cfg/svx/ui/dockingfontwork.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/docrecoverybrokendialog.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/docrecoveryprogressdialog.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/docrecoveryrecoverdialog.ui
@@ -2228,6 +2276,7 @@ lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebarinsert.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebarline.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebarparagraph.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebarpossize.ui
+lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebarstylespanel.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebartextpanel.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/textcontrolchardialog.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/textcontrolparadialog.ui
@@ -2257,6 +2306,9 @@ lib/libreoffice/share/config/soffice.cfg/vcl/ui/printerpropertiesdialog.ui
 lib/libreoffice/share/config/soffice.cfg/vcl/ui/printprogressdialog.ui
 lib/libreoffice/share/config/soffice.cfg/vcl/ui/querydialog.ui
 lib/libreoffice/share/config/soffice.cfg/vcl/ui/res/
+lib/libreoffice/share/config/soffice.cfg/writerperfect/
+lib/libreoffice/share/config/soffice.cfg/writerperfect/ui/
+lib/libreoffice/share/config/soffice.cfg/writerperfect/ui/wpftencodingdialog.ui
 lib/libreoffice/share/config/soffice.cfg/xmlsec/
 lib/libreoffice/share/config/soffice.cfg/xmlsec/ui/
 lib/libreoffice/share/config/soffice.cfg/xmlsec/ui/certdetails.ui
@@ -3693,6 +3745,9 @@ lib/libreoffice/share/template/common/presnt/Alizarin.otp
 lib/libreoffice/share/template/common/presnt/Focus.otp
 lib/libreoffice/share/template/common/presnt/Impress.otp
 lib/libreoffice/share/template/common/presnt/Midnightblue.otp
+lib/libreoffice/share/template/common/styles/
+lib/libreoffice/share/template/common/styles/Default.ott
+lib/libreoffice/share/template/common/styles/Modern.ott
 lib/libreoffice/share/template/common/wizard/
 lib/libreoffice/share/template/common/wizard/agenda/
 lib/libreoffice/share/template/common/wizard/agenda/10grey.ott
@@ -3904,48 +3959,6 @@ lib/libreoffice/share/xslt/import/wordml/wordml2ooo_props.xsl
 lib/libreoffice/share/xslt/import/wordml/wordml2ooo_settings.xsl
 lib/libreoffice/share/xslt/import/wordml/wordml2ooo_table.xsl
 lib/libreoffice/share/xslt/import/wordml/wordml2ooo_text.xsl
-lib/libreoffice/ure/
-lib/libreoffice/ure-link
-lib/libreoffice/ure/bin/
-@bin lib/libreoffice/ure/bin/regmerge
-@bin lib/libreoffice/ure/bin/regview
-lib/libreoffice/ure/bin/startup.sh
-lib/libreoffice/ure/bin/uno
-@bin lib/libreoffice/ure/bin/uno.bin
-lib/libreoffice/ure/lib/
-lib/libreoffice/ure/lib/jvmfwk3rc
-lib/libreoffice/ure/lib/libaffine_uno_uno.so
-lib/libreoffice/ure/lib/libbinaryurplo.so
-lib/libreoffice/ure/lib/libbootstraplo.so
-lib/libreoffice/ure/lib/libgcc3_uno.so
-lib/libreoffice/ure/lib/libintrospectionlo.so
-lib/libreoffice/ure/lib/libinvocadaptlo.so
-lib/libreoffice/ure/lib/libinvocationlo.so
-lib/libreoffice/ure/lib/libiolo.so
-lib/libreoffice/ure/lib/libjvmaccesslo.so
-lib/libreoffice/ure/lib/libjvmfwklo.so
-lib/libreoffice/ure/lib/liblog_uno_uno.so
-lib/libreoffice/ure/lib/libnamingservicelo.so
-lib/libreoffice/ure/lib/libproxyfaclo.so
-lib/libreoffice/ure/lib/libreflectionlo.so
-lib/libreoffice/ure/lib/libreglo.so
-lib/libreoffice/ure/lib/libsal_textenclo.so
-lib/libreoffice/ure/lib/libstocserviceslo.so
-lib/libreoffice/ure/lib/libstorelo.so
-@bin lib/libreoffice/ure/lib/libuno_cppu.so.3
-@bin lib/libreoffice/ure/lib/libuno_cppuhelpergcc3.so.3
-@bin lib/libreoffice/ure/lib/libuno_purpenvhelpergcc3.so.3
-@bin lib/libreoffice/ure/lib/libuno_sal.so.3
-@bin lib/libreoffice/ure/lib/libuno_salhelpergcc3.so.3
-lib/libreoffice/ure/lib/libunoidllo.so
-lib/libreoffice/ure/lib/libunsafe_uno_uno.so
-lib/libreoffice/ure/lib/libuuresolverlo.so
-lib/libreoffice/ure/lib/libxmlreaderlo.so
-lib/libreoffice/ure/lib/unorc
-lib/libreoffice/ure/share/
-lib/libreoffice/ure/share/misc/
-lib/libreoffice/ure/share/misc/services.rdb
-lib/libreoffice/ure/share/misc/types.rdb
 share/applications/calc.desktop
 share/applications/draw.desktop
 share/applications/impress.desktop

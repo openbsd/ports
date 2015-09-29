@@ -1,7 +1,7 @@
-$OpenBSD: patch-Repository_mk,v 1.1 2015/05/03 11:30:33 robert Exp $
---- Repository.mk.orig.port	Wed Apr  8 08:50:01 2015
-+++ Repository.mk	Wed Apr  8 08:50:31 2015
-@@ -67,12 +67,12 @@ $(eval $(call gb_Helper_register_executables,NONE, \
+$OpenBSD: patch-Repository_mk,v 1.2 2015/09/29 16:10:48 robert Exp $
+--- Repository.mk.orig.port	Sun Sep 27 12:19:17 2015
++++ Repository.mk	Sun Sep 27 12:20:07 2015
+@@ -67,13 +67,13 @@ $(eval $(call gb_Helper_register_executables,NONE, \
          svptest \
          svpclient \
          pixelctl ) \
@@ -12,12 +12,13 @@ $OpenBSD: patch-Repository_mk,v 1.1 2015/05/03 11:30:33 robert Exp $
  	    outdevgrind) \
  	vcldemo \
  	tiledrendering \
+     mtfdemo \
 -	$(if $(and $(ENABLE_GTK), $(filter LINUX,$(OS))), gtktiledviewer) \
 +	$(if $(and $(ENABLE_GTK), $(filter OPENBSD LINUX,$(OS))), gtktiledviewer) \
  ))
  
  $(eval $(call gb_Helper_register_executables_for_install,SDK,sdk, \
-@@ -610,7 +610,7 @@ $(eval $(call gb_Helper_register_libraries_for_install
+@@ -581,7 +581,7 @@ $(eval $(call gb_Helper_register_libraries_for_install
  	i18nlangtag \
  	i18nutil \
  	index_data \

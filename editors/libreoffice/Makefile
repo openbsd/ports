@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2015/08/18 08:15:40 kirby Exp $
+# $OpenBSD: Makefile,v 1.137 2015/09/29 16:10:48 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,8 +6,8 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
-BV=		4.4
-VERSION=	${BV}.5.2
+BV=		5.0
+VERSION=	${BV}.2.2
 DISTNAME=	libreoffice-${VERSION}
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
@@ -15,7 +15,6 @@ PKGNAME=	libreoffice-${VERSION}
 PKGNAME-main=	libreoffice-${VERSION}
 PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
-REVISION-java=	0
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
 
@@ -74,7 +73,7 @@ DISTFILES+=	${EDISTFILES} \
 		5ade6ae2a99bc1e9e57031ca88d36dad-hyphen-2.8.8.tar.gz:0 \
 		a4e565e220b5de082c23995e256e3c12-dejavu-fonts-ttf-2.34.zip:0 \
 		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0 \
-		896272c1a9e396b871cb4dffbd694503-mdds_0.11.1.tar.bz2:0 \
+		mdds_0.12.1.tar.bz2:0 \
 		cb4207cb913c7a5a8bfa5b91234618ee-mdds_0.11.2.tar.bz2:0 \
 		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0 \
 		10d61fbaa6a06348823651b1bd7940fe-libexttextcat-3.4.4.tar.bz2:0 \
@@ -87,7 +86,7 @@ DISTFILES+=	${EDISTFILES} \
 		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:0 \
 		e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0 \
 		commons-logging-1.2-src.tar.gz:0 \
-		ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz:0 \
+		ec1941a74d3ef513c4ce57a9092b74e1-bsh-2.0b5-src.zip:0 \
 		edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1.065R-it.tar.gz:0 \
 		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0 \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
@@ -95,18 +94,18 @@ DISTFILES+=	${EDISTFILES} \
 		libabw-0.1.1.tar.bz2:0 \
 		libcdr-0.1.1.tar.bz2:0 \
 		libe-book-0.1.2.tar.bz2:0 \
-		libetonyek-0.1.1.tar.bz2:0 \
-		libfreehand-0.1.0.tar.bz2:0 \
+		libetonyek-0.1.3.tar.bz2:0 \
+		libfreehand-0.1.1.tar.bz2:0 \
 		libgltf-0.0.2.tar.bz2:1 \
 		libmspub-0.1.2.tar.bz2:0 \
-		libmwaw-0.3.4.tar.bz2:0 \
-		libodfgen-0.1.3.tar.bz2:0 \
+		libmwaw-0.3.5.tar.bz2:0 \
+		libodfgen-0.1.4.tar.bz2:0 \
 		libpagemaker-0.0.2.tar.bz2:0 \
 		librevenge-0.0.2.tar.bz2:0 \
 		libvisio-0.1.1.tar.bz2:0 \
 		libwpd-0.10.0.tar.bz2:0 \
 		libwpg-0.3.0.tar.bz2:0 \
-		libwps-0.3.1.tar.bz2:0
+		libwps-0.4.0.tar.bz2:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -130,8 +129,6 @@ COMMENT-i18n-$l=	$l language pack for LibreOffice
 RUN_DEPENDS-i18n-$l=	editors/libreoffice
 WANTLIB-i18n-$l=
 LIB_DEPENDS-i18n-$l=
-REVISION-i18n-hu=	0
-REVISION-i18n-ru=	0
 .endfor
 .endif
 
@@ -209,6 +206,7 @@ WANTLIB-main+=	lber ldap
 WANTLIB-main+=	poppler
 WANTLIB-main+=	GLEW
 WANTLIB-main+=	GL GLU harfbuzz harfbuzz-icu
+WANTLIB-main+= lzma
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \
@@ -280,6 +278,7 @@ CONFIGURE_ARGS+=\
 		--disable-packagekit \
 		--disable-dependency-tracking \
 		--disable-online-update \
+		--disable-orcus \
 		--enable-gio \
 		--enable-kde \
 		--enable-systray \

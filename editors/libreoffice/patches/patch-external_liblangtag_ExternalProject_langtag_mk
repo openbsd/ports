@@ -1,12 +1,12 @@
-$OpenBSD: patch-external_liblangtag_ExternalProject_langtag_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
---- external/liblangtag/ExternalProject_langtag.mk.orig.port	Tue Sep 16 22:10:41 2014
-+++ external/liblangtag/ExternalProject_langtag.mk	Fri Oct  3 19:58:20 2014
+$OpenBSD: patch-external_liblangtag_ExternalProject_langtag_mk,v 1.2 2015/09/29 16:10:48 robert Exp $
+--- external/liblangtag/ExternalProject_langtag.mk.orig.port	Sun Sep 27 12:20:51 2015
++++ external/liblangtag/ExternalProject_langtag.mk	Sun Sep 27 12:20:57 2015
 @@ -28,7 +28,7 @@ $(call gb_ExternalProject_get_state_target,langtag,bui
  		LIBXML2_CFLAGS="$(LIBXML_CFLAGS)" \
  		LIBXML2_LIBS="$(if $(filter WNTMSC,$(OS)$(COM)),-L$(call gb_UnpackedTarball_get_dir,xml2)/win32/bin.msvc -llibxml2,$(LIBXML_LIBS))" \
  		$(if $(filter MACOSX,$(OS)),--prefix=/@.__________________________________________________OOO) \
--		$(if $(filter-out LINUX FREEBSD,$(OS)),,LDFLAGS="-Wl$(COMMA)-z$(COMMA)origin -Wl$(COMMA)-rpath,\\"\$$\$$ORIGIN:'\'\$$\$$ORIGIN/../ure-link/lib) \
-+		$(if $(filter-out LINUX OPENBSD FREEBSD,$(OS)),,LDFLAGS="-Wl$(COMMA)-z$(COMMA)origin -Wl$(COMMA)-rpath,\\"\$$\$$ORIGIN:'\'\$$\$$ORIGIN/../ure-link/lib) \
- 		$(if $(filter-out SOLARIS,$(OS)),,LDFLAGS="-Wl$(COMMA)-z$(COMMA)origin -Wl$(COMMA)-R$(COMMA)\\"\$$\$$ORIGIN:'\'\$$\$$ORIGIN/../ure-link/lib) \
+-		$(if $(filter-out LINUX FREEBSD,$(OS)),,LDFLAGS="-Wl$(COMMA)-z$(COMMA)origin -Wl$(COMMA)-rpath,\\"\$$\$$ORIGIN) \
++		$(if $(filter-out OPENBSD LINUX FREEBSD,$(OS)),,LDFLAGS="-Wl$(COMMA)-z$(COMMA)origin -Wl$(COMMA)-rpath,\\"\$$\$$ORIGIN) \
+ 		$(if $(filter-out SOLARIS,$(OS)),,LDFLAGS="-Wl$(COMMA)-z$(COMMA)origin -Wl$(COMMA)-R$(COMMA)\\"\$$\$$ORIGIN) \
  		$(if $(filter-out WNTGCC,$(OS)$(COM)),,LDFLAGS="-Wl$(COMMA)--enable-runtime-pseudo-reloc-v2") \
  		&& $(if $(filter WNTMSC,$(OS)$(COM)),\

@@ -1,11 +1,16 @@
-$OpenBSD: patch-external_libwpd_ExternalProject_libwpd_mk,v 1.1 2015/05/26 08:44:58 robert Exp $
---- external/libwpd/ExternalProject_libwpd.mk.orig.port	Tue May 26 08:03:54 2015
-+++ external/libwpd/ExternalProject_libwpd.mk	Tue May 26 10:23:52 2015
-@@ -32,6 +32,7 @@ $(call gb_ExternalProject_get_state_target,libwpd,buil
- 			$(if $(filter MACOSX,$(OS)),--disable-werror) \
+$OpenBSD: patch-external_libwpd_ExternalProject_libwpd_mk,v 1.2 2015/09/29 16:10:48 robert Exp $
+--- external/libwpd/ExternalProject_libwpd.mk.orig.port	Sun Sep 27 12:22:50 2015
++++ external/libwpd/ExternalProject_libwpd.mk	Mon Sep 28 17:02:04 2015
+@@ -35,10 +35,11 @@ $(call gb_ExternalProject_get_state_target,libwpd,buil
+ 				--prefix=/@.__________________________________________________OOO) \
  			$(if $(VERBOSE)$(verbose),--disable-silent-rules,--enable-silent-rules) \
- 			$(if $(filter TRUE,$(DISABLE_DYNLOADING)),CFLAGS="$(CFLAGS) $(gb_VISIBILITY_FLAGS) $(gb_COMPILEROPTFLAGS)" CXXFLAGS="$(CXXFLAGS) $(gb_VISIBILITY_FLAGS) $(gb_COMPILEROPTFLAGS)") \
-+			CFLAGS="$(CFLAGS) $(gb_VISIBILITY_FLAGS) $(gb_COMPILEROPTFLAGS)" CXXFLAGS="$(CXXFLAGS) $(gb_VISIBILITY_FLAGS) $(gb_COMPILEROPTFLAGS)" \
+ 			$(if $(filter TRUE,$(DISABLE_DYNLOADING)),CFLAGS="$(CFLAGS) $(gb_VISIBILITY_FLAGS) $(gb_COMPILEROPTFLAGS)" CXXFLAGS="$(CXXFLAGS) $(gb_VISIBILITY_FLAGS) $(gb_VISIBILITY_FLAGS_CXX) $(gb_COMPILEROPTFLAGS)") \
+-			$(if $(filter LINUX,$(OS)),$(if $(SYSTEM_REVENGE),, \
++			$(if $(filter OPENBSD LINUX,$(OS)),$(if $(SYSTEM_REVENGE),, \
+ 				'LDFLAGS=-Wl$(COMMA)-z$(COMMA)origin \
+ 					-Wl$(COMMA)-rpath$(COMMA)\$$$$ORIGIN')) \
  			$(if $(CROSS_COMPILING),--build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM)) \
++			CPPFLAGS="-fPIC -DPIC" LDFLAGS="-fPIC -DPIC" \
  		&& $(MAKE) \
- 	)
+ 		$(if $(filter MACOSX,$(OS)),\
+ 			&& $(PERL) $(SRCDIR)/solenv/bin/macosx-change-install-names.pl shl OOO \

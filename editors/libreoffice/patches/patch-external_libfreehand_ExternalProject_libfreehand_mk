@@ -1,7 +1,7 @@
-$OpenBSD: patch-external_libfreehand_ExternalProject_libfreehand_mk,v 1.1 2015/05/26 08:44:58 robert Exp $
---- external/libfreehand/ExternalProject_libfreehand.mk.orig.port	Mon May 25 15:08:39 2015
-+++ external/libfreehand/ExternalProject_libfreehand.mk	Mon May 25 15:08:54 2015
-@@ -23,7 +23,7 @@ $(eval $(call gb_ExternalProject_use_externals,libfree
+$OpenBSD: patch-external_libfreehand_ExternalProject_libfreehand_mk,v 1.2 2015/09/29 16:10:48 robert Exp $
+--- external/libfreehand/ExternalProject_libfreehand.mk.orig.port	Thu Sep 17 15:33:12 2015
++++ external/libfreehand/ExternalProject_libfreehand.mk	Sun Sep 27 12:18:17 2015
+@@ -25,7 +25,7 @@ $(eval $(call gb_ExternalProject_use_externals,libfree
  $(call gb_ExternalProject_get_state_target,libfreehand,build) :
  	$(call gb_ExternalProject_run,build,\
  		export PKG_CONFIG="" \

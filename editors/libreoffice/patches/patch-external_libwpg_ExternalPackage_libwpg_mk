@@ -1,0 +1,12 @@
+$OpenBSD: patch-external_libwpg_ExternalPackage_libwpg_mk,v 1.1 2015/09/29 16:10:48 robert Exp $
+--- external/libwpg/ExternalPackage_libwpg.mk.orig.port	Sun Sep 27 19:12:28 2015
++++ external/libwpg/ExternalPackage_libwpg.mk	Sun Sep 27 19:12:31 2015
+@@ -16,7 +16,7 @@ $(eval $(call gb_ExternalPackage_add_file,libwpg,$(LIB
+ else ifeq ($(OS),WNT)
+ $(eval $(call gb_ExternalPackage_add_file,libwpg,$(LIBO_LIB_FOLDER)/libwpg-0.3.dll,src/lib/.libs/libwpg-0.3.dll))
+ else ifeq ($(filter IOS ANDROID,$(OS)),)
+-$(eval $(call gb_ExternalPackage_add_file,libwpg,$(LIBO_LIB_FOLDER)/libwpg-0.3-lo.so.3,src/lib/.libs/libwpg-0.3-lo.so.3.0.0))
++$(eval $(call gb_ExternalPackage_add_file,libwpg,$(LIBO_LIB_FOLDER)/libwpg-0.3-lo.so.3,src/lib/.libs/libwpg-0.3-lo.so.3.0))
+ endif
+ 
+ # vim: set noet sw=4 ts=4:

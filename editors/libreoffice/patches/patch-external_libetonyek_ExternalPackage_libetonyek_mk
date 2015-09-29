@@ -1,0 +1,12 @@
+$OpenBSD: patch-external_libetonyek_ExternalPackage_libetonyek_mk,v 1.1 2015/09/29 16:10:48 robert Exp $
+--- external/libetonyek/ExternalPackage_libetonyek.mk.orig.port	Tue Sep 29 08:01:07 2015
++++ external/libetonyek/ExternalPackage_libetonyek.mk	Tue Sep 29 08:01:11 2015
+@@ -16,7 +16,7 @@ $(eval $(call gb_ExternalPackage_add_file,libetonyek,$
+ else ifeq ($(OS),WNT)
+ $(eval $(call gb_ExternalPackage_add_file,libetonyek,$(LIBO_LIB_FOLDER)/libetonyek-0.1.dll,src/lib/.libs/libetonyek-0.1.dll))
+ else ifeq ($(filter IOS ANDROID,$(OS)),)
+-$(eval $(call gb_ExternalPackage_add_file,libetonyek,$(LIBO_LIB_FOLDER)/libetonyek-0.1-lo.so.1,src/lib/.libs/libetonyek-0.1-lo.so.1.0.$(ETONYEK_VERSION_MICRO)))
++$(eval $(call gb_ExternalPackage_add_file,libetonyek,$(LIBO_LIB_FOLDER)/libetonyek-0.1-lo.so.1,src/lib/.libs/libetonyek-0.1-lo.so.1.$(ETONYEK_VERSION_MICRO)))
+ endif
+ 
+ # vim: set noet sw=4 ts=4:

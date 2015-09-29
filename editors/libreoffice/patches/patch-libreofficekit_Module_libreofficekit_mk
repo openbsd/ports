@@ -1,6 +1,6 @@
-$OpenBSD: patch-libreofficekit_Module_libreofficekit_mk,v 1.1 2015/05/03 11:30:33 robert Exp $
---- libreofficekit/Module_libreofficekit.mk.orig.port	Sun May  3 12:38:20 2015
-+++ libreofficekit/Module_libreofficekit.mk	Sun May  3 12:39:21 2015
+$OpenBSD: patch-libreofficekit_Module_libreofficekit_mk,v 1.2 2015/09/29 16:10:48 robert Exp $
+--- libreofficekit/Module_libreofficekit.mk.orig.port	Thu Sep 17 15:33:12 2015
++++ libreofficekit/Module_libreofficekit.mk	Sun Sep 27 12:18:17 2015
 @@ -9,7 +9,7 @@
  
  $(eval $(call gb_Module_Module,libreofficekit))
@@ -8,5 +8,5 @@ $OpenBSD: patch-libreofficekit_Module_libreofficekit_mk,v 1.1 2015/05/03 11:30:3
 -ifeq ($(OS),LINUX)
 +ifneq (,$(filter LINUX OPENBSD,$(OS)))
  
- # $(eval $(call gb_Module_add_check_targets,libreofficekit,\
- #     CppunitTest_libreofficekit_tiledrendering \
+ $(eval $(call gb_Module_add_subsequentcheck_targets,libreofficekit,\
+     CppunitTest_libreofficekit_tiledrendering \

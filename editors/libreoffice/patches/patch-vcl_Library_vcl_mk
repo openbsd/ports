@@ -1,6 +1,6 @@
-$OpenBSD: patch-vcl_Library_vcl_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
---- vcl/Library_vcl.mk.orig.port	Thu Mar 26 12:51:14 2015
-+++ vcl/Library_vcl.mk	Mon Apr  6 15:44:07 2015
+$OpenBSD: patch-vcl_Library_vcl_mk,v 1.3 2015/09/29 16:10:48 robert Exp $
+--- vcl/Library_vcl.mk.orig.port	Thu Sep 17 15:33:12 2015
++++ vcl/Library_vcl.mk	Sun Sep 27 15:50:55 2015
 @@ -40,6 +40,7 @@ $(eval $(call gb_Library_use_custom_headers,vcl,office
  $(eval $(call gb_Library_set_include,vcl,\
      $$(INCLUDE) \
@@ -9,8 +9,17 @@ $OpenBSD: patch-vcl_Library_vcl_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
  	$(if $(filter WNTGCC,$(OS)$(COM)),-I$(MINGW_SYSROOT)/include/gdiplus) \
  ))
  
-@@ -703,10 +704,10 @@ endif
- endif
+@@ -58,7 +59,7 @@ $(eval $(call gb_Library_use_custom_headers,vcl,\
+ ))
+ 
+ $(eval $(call gb_Library_use_externals,vcl,\
+-	$(if $(filter LINUX MACOSX,$(OS)), \
++	$(if $(filter OPENBSD LINUX MACOSX,$(OS)), \
+ 		curl) \
+ 	jpeg \
+ 	$(if $(filter-out WNT,$(OS)), \
+@@ -718,10 +719,10 @@ $(eval $(call gb_Library_use_system_win32_libs,vcl,\
+ $(eval $(call gb_Library_add_nativeres,vcl,vcl/salsrc))
  endif
  
 -ifeq ($(OS),LINUX)
@@ -21,4 +30,4 @@ $OpenBSD: patch-vcl_Library_vcl_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
 +    $(if $(filter LINUX,$(OS)),-ldl) \
  	-lpthread \
      -lGL \
-     -lGLU \
+     -lX11 \

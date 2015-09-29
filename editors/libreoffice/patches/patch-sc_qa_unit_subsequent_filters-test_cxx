@@ -1,7 +1,7 @@
-$OpenBSD: patch-sc_qa_unit_subsequent_filters-test_cxx,v 1.5 2015/05/03 11:30:33 robert Exp $
---- sc/qa/unit/subsequent_filters-test.cxx.orig.port	Thu Jan 22 21:05:28 2015
-+++ sc/qa/unit/subsequent_filters-test.cxx	Sat Jan 31 16:03:15 2015
-@@ -239,7 +239,7 @@ class ScFiltersTest (public)
+$OpenBSD: patch-sc_qa_unit_subsequent_filters-test_cxx,v 1.6 2015/09/29 16:10:48 robert Exp $
+--- sc/qa/unit/subsequent_filters-test.cxx.orig.port	Thu Sep 17 15:33:12 2015
++++ sc/qa/unit/subsequent_filters-test.cxx	Sun Sep 27 12:18:17 2015
+@@ -269,7 +269,7 @@ class ScFiltersTest (public)
  
      //disable testPassword on MacOSX due to problems with libsqlite3
      //also crashes on DragonFly due to problems with nss/nspr headers

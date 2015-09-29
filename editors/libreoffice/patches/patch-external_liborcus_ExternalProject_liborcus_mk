@@ -1,6 +1,6 @@
-$OpenBSD: patch-external_liborcus_ExternalProject_liborcus_mk,v 1.1 2014/10/10 17:13:10 robert Exp $
---- external/liborcus/ExternalProject_liborcus.mk.orig.port	Mon Oct  6 08:28:52 2014
-+++ external/liborcus/ExternalProject_liborcus.mk	Mon Oct  6 08:30:02 2014
+$OpenBSD: patch-external_liborcus_ExternalProject_liborcus_mk,v 1.2 2015/09/29 16:10:48 robert Exp $
+--- external/liborcus/ExternalProject_liborcus.mk.orig.port	Thu Sep 17 15:33:12 2015
++++ external/liborcus/ExternalProject_liborcus.mk	Sun Sep 27 18:59:01 2015
 @@ -38,7 +38,8 @@ ifneq ($(SYSTEM_ZLIB),)
  liborcus_LIBS+=-lz
  endif
@@ -11,3 +11,13 @@ $OpenBSD: patch-external_liborcus_ExternalProject_liborcus_mk,v 1.1 2014/10/10 1
  else
  liborcus_LIBS+=-L$(gb_StaticLibrary_WORKDIR) -lboost_system -lboost_iostreams
  endif
+@@ -76,6 +77,9 @@ endif
+ ifneq (,$(PTHREAD_LIBS))
+ liborcus_LDFLAGS+=$(PTHREAD_LIBS)
+ endif
++
++liborcus_CPPFLAGS += -fPIC -DPIC
++liborcus_LDFLAGS += -fPIC -DPIC
+ 
+ $(call gb_ExternalProject_get_state_target,liborcus,build) :
+ 	$(call gb_ExternalProject_run,build,\

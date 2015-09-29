@@ -1,12 +1,16 @@
-$OpenBSD: patch-desktop_Library_sofficeapp_mk,v 1.1 2015/05/03 11:30:33 robert Exp $
---- desktop/Library_sofficeapp.mk.orig.port	Sat May  2 23:41:52 2015
-+++ desktop/Library_sofficeapp.mk	Sat May  2 23:42:19 2015
-@@ -94,14 +94,14 @@ $(eval $(call gb_Library_add_exception_objects,soffice
-     desktop/source/migration/migration \
+$OpenBSD: patch-desktop_Library_sofficeapp_mk,v 1.2 2015/09/29 16:10:48 robert Exp $
+--- desktop/Library_sofficeapp.mk.orig.port	Sun Sep 27 12:20:22 2015
++++ desktop/Library_sofficeapp.mk	Sun Sep 27 17:37:57 2015
+@@ -100,18 +100,16 @@ $(eval $(call gb_Library_add_exception_objects,soffice
+ ifeq ($(ENABLE_HEADLESS),TRUE)
+ $(eval $(call gb_Library_add_libs,sofficeapp,\
+ 	-lm \
+-	-ldl \
+ 	-lpthread \
  ))
- 
+ else
 -ifeq ($(OS),LINUX)
-+ifneq (,$(filter LINUX OPENBSD,$(OS)))
++ifeq ($(OS),OPENBSD)
  $(eval $(call gb_Library_use_static_libraries,sofficeapp,\
      glxtest \
  ))
@@ -14,7 +18,6 @@ $OpenBSD: patch-desktop_Library_sofficeapp_mk,v 1.1 2015/05/03 11:30:33 robert E
  $(eval $(call gb_Library_add_libs,sofficeapp,\
  	-lm \
 -	-ldl \
-+	$(if $(filter LINUX,$(OS)),-ldl) \
  	-lpthread \
      -lGL \
-     -lGLU \
+     -lX11 \

@@ -1,17 +1,15 @@
-$OpenBSD: patch-vcl_Executable_icontest_mk,v 1.1 2015/05/03 11:30:33 robert Exp $
---- vcl/Executable_icontest.mk.orig.port	Mon Apr  6 15:42:33 2015
-+++ vcl/Executable_icontest.mk	Mon Apr  6 16:14:12 2015
-@@ -25,11 +25,11 @@ $(eval $(call gb_Executable_use_static_libraries,icont
+$OpenBSD: patch-vcl_Executable_icontest_mk,v 1.2 2015/09/29 16:10:48 robert Exp $
+--- vcl/Executable_icontest.mk.orig.port	Sun Sep 27 12:25:49 2015
++++ vcl/Executable_icontest.mk	Mon Sep 28 17:40:32 2015
+@@ -25,10 +25,9 @@ $(eval $(call gb_Executable_use_static_libraries,icont
      vclmain \
  ))
  
 -ifeq ($(OS),LINUX)
-+ifneq (,$(filter LINUX OPENBSD,$(OS)))
- 
++ifeq ($(OS),OPENBSD)
  $(eval $(call gb_Executable_add_libs,icontest,\
  	-lm \
 -	-ldl \
-+	$(if $(filter LINUX,$(OS)),-ldl) \
  	-lpthread \
      -lGL \
-     -lGLU \
+     -lX11 \
