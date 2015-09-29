@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/12/20 12:44:44 florian Exp $
+# $OpenBSD: Makefile,v 1.4 2015/09/29 10:51:43 sthen Exp $
 
 COMMENT =	import changesets from CVS into Git
 
-REVISION =	0
+REVISION =	1
 
 MODPY_EGG_VERSION = 0.0.1
 

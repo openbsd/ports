@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/12/19 12:25:40 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2015/09/29 10:51:44 sthen Exp $
 
 COMMENT =		collection of ASN.1 data structures for py-asn1
 
@@ -7,6 +7,7 @@ DISTNAME =		pyasn1-modules-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
 PKG_ARCH =		*
+REVISION =		0
 
 HOMEPAGE =		http://pyasn1.sourceforge.net/
 

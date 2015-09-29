@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/11 10:54:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/09/29 10:51:43 sthen Exp $
 
 COMMENT =	semantic grep, based on coccinelle
 
 MODPY_EGG_VERSION = 1.13
 DISTNAME =	coccigrep-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	devel textproc
 

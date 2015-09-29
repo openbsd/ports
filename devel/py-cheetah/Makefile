@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2015/04/21 18:33:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2015/09/29 10:51:44 sthen Exp $
 
 COMMENT=		Python-powered template engine and code generator
 
 MODPY_EGG_VERSION=	2.4.4
-REVISION=		3
+REVISION=		4
 DISTNAME=		Cheetah-${MODPY_EGG_VERSION}
 PKGNAME=		py-cheetah-${MODPY_EGG_VERSION}
 CATEGORIES=		devel textproc

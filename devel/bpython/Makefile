@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2015/06/03 06:44:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/09/29 10:51:43 sthen Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
 MODPY_EGG_VERSION=0.14.2
 DISTNAME=	bpython-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	http://bpython-interpreter.org/
 

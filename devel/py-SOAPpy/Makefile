@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/04/02 14:21:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2015/09/29 10:51:43 sthen Exp $
 
 COMMENT=	Python API for SOAP HTTP/RPC
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=0.12.22
 DISTNAME=	SOAPpy-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/^/py-/}
 CATEGORIES=    	devel www
+REVISION=	0
 
 MODULES=	lang/python
 

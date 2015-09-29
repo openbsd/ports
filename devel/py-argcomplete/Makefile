@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/29 10:51:43 sthen Exp $
 
 COMMENT =	Bash tab completion for argparse
 
@@ -7,6 +7,7 @@ DISTNAME =	argcomplete-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
 HOMEPAGE =	http://packages.python.org/argcomplete
+REVISION =	0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes

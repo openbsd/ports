@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2015/04/21 18:40:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2015/09/29 10:51:43 sthen Exp $
 
 COMMENT=		generic object relational mapper for Python
 
 MODPY_EGG_VERSION=	0.19
 DISTNAME=		storm-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		databases
 

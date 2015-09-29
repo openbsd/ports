@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/02 14:21:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/29 10:51:44 sthen Exp $
 
 COMMENT =		command line interface tools for Python
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.3.7
 DISTNAME =		clint-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://pypi.python.org/pypi/clint
 MAINTAINER =		frantisek holop <minusf@obiit.org>
