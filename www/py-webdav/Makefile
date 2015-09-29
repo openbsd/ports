@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2013/08/07 21:32:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2015/09/29 10:53:17 sthen Exp $
 
 COMMENT=		standards compliant Python WebDAV server and library
 
 MODPY_EGG_VERSION=	0.9.8
 DISTNAME=		PyWebDAV-${MODPY_EGG_VERSION}
 PKGNAME=		py-webdav-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www
 

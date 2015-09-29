@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2015/04/02 14:21:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2015/09/29 10:53:17 sthen Exp $
 
 COMMENT =	http proxying tools for wsgi apps
 
 MODPY_EGG_VERSION = 0.2.2
 DISTNAME =	WSGIProxy-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	www devel
 

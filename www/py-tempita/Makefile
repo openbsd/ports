@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2015/04/02 14:21:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2015/09/29 10:53:17 sthen Exp $
 
 COMMENT =	very small text templating language
 
 MODPY_EGG_VERSION = 0.5.2
 DISTNAME =	Tempita-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	www
 

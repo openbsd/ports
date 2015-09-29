@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.138 2015/09/29 09:02:55 edd Exp $
+# $OpenBSD: Makefile,v 1.139 2015/09/29 10:53:17 sthen Exp $
 
 COMMENT =	CLI program to download videos from YouTube and other sites
 
 MODPY_EGG_VERSION =	2015.8.23
-REVISION =		0
+REVISION =		1
 
 DISTNAME =	youtube-dl-2015.08.23
 CATEGORIES =	www
@@ -20,8 +20,6 @@ MASTER_SITES =	https://yt-dl.org/downloads/${MODPY_EGG_VERSION}/
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
-BUILD_DEPENDS +=	${RUN_DEPENDS}
-RUN_DEPENDS +=		devel/py-setuptools>=18.2v0
 
 NO_TEST =	Yes
 

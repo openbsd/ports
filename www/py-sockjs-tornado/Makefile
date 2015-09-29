@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/29 10:53:17 sthen Exp $
 
 COMMENT =		sockjs python server implementation for tornado
 
 MODPY_EGG_VERSION =	1.0.1
 DISTNAME =		sockjs-tornado-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

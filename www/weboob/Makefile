@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/28 08:00:19 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/29 10:53:17 sthen Exp $
 
 COMMENT =	web out of browsers
 
 MODPY_EGG_VERSION =	1.0
 DISTNAME =	weboob-${MODPY_EGG_VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	www
 HOMEPAGE =	http://weboob.org
