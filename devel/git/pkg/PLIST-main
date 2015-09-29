@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.64 2015/08/25 21:25:03 benoit Exp $
+@comment $OpenBSD: PLIST-main,v 1.65 2015/09/29 11:42:59 benoit Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -16,7 +16,7 @@ libexec/git/
 @bin libexec/git/git
 @bin libexec/git/git-add
 libexec/git/git-add--interactive
-libexec/git/git-am
+@bin libexec/git/git-am
 @bin libexec/git/git-annotate
 @bin libexec/git/git-apply
 libexec/git/git-archimport
@@ -113,7 +113,7 @@ libexec/git/git-parse-remote
 @bin libexec/git/git-patch-id
 @bin libexec/git/git-prune
 @bin libexec/git/git-prune-packed
-libexec/git/git-pull
+@bin libexec/git/git-pull
 @bin libexec/git/git-push
 libexec/git/git-quiltimport
 @bin libexec/git/git-read-tree
