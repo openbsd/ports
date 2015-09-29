@@ -1,10 +1,32 @@
-$OpenBSD: patch-rtengine_dcraw_cc,v 1.2 2015/06/02 14:22:08 kirby Exp $
+$OpenBSD: patch-rtengine_dcraw_cc,v 1.3 2015/09/29 09:02:21 ajacoutot Exp $
+
+Fix build with libsigc++ >= 2.6
 
 dcraw input sanitization errors, CVE-2015-3885
 Commit ID 0440e663ae7f44a63420460dcb07cfbe0ba8ea42
 
---- rtengine/dcraw.cc.orig	Tue May 26 11:52:41 2015
-+++ rtengine/dcraw.cc	Tue May 26 11:54:01 2015
+--- rtengine/dcraw.cc.orig	Wed May 21 15:06:28 2014
++++ rtengine/dcraw.cc	Tue Sep 29 10:21:32 2015
+@@ -134,13 +134,13 @@ const float d65_white[3] = { 0.950456, 1, 1.088754 };
+ #define FORC4 FORC(4)
+ #define FORCC FORC(colors)
+ 
+-#define SQR(x) rtengine::SQR(x)
++#define SQR(x) ((x)*(x))
+ #define ABS(x) (((int)(x) ^ ((int)(x) >> 31)) - ((int)(x) >> 31))
+-#define MIN(a,b) rtengine::min(a,static_cast<typeof(a)>(b))
+-#define MAX(a,b) rtengine::max(a,static_cast<typeof(a)>(b))
+-#define LIM(x,min,max) rtengine::LIM(x,static_cast<typeof(x)>(min),static_cast<typeof(x)>(max))
+-#define ULIM(x,y,z) rtengine::ULIM(x,static_cast<typeof(x)>(y),static_cast<typeof(x)>(z))
+-#define CLIP(x) rtengine::CLIP(x)
++#define MIN(a,b) ((a) < (b) ? (a) : (b))
++#define MAX(a,b) ((a) > (b) ? (a) : (b))
++#define LIM(x,min,max) MAX(min,MIN(x,max))
++#define ULIM(x,y,z) ((y) < (z) ? LIM(x,y,z) : LIM(x,z,y))
++#define CLIP(x) LIM((int)(x),0,65535)
+ #define SWAP(a,b) { a=a+b; b=a-b; a=a-b; }
+ 
+ /*
 @@ -789,7 +789,8 @@ struct jhead {
  
  int CLASS ljpeg_start (struct jhead *jh, int info_only)
