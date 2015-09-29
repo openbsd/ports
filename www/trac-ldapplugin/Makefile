@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/03 16:37:18 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2015/09/29 09:02:55 edd Exp $
 
 COMMENT=		ldap authentication plugin for trac
 
-MODPY_EGG_VERSION=	0.6.0
-DISTNAME=		trac-ldapplugin-${MODPY_EGG_VERSION}
-REVISION=		3
+MODPY_EGG_VERSION =	0.6.0dev_r0
+DISTNAME=		trac-ldapplugin-0.6.0
+REVISION=		4
 CATEGORIES=		www devel
 
 MAINTAINER=		Michael Erdely <merdely@openbsd.org>
@@ -17,12 +17,14 @@ MASTER_SITES=		http://spacehopper.org/mirrors/
 PERMIT_PACKAGE_CDROM=   Yes
 
 RUN_DEPENDS=		www/trac \
-			databases/py-ldap
+			databases/py-ldap \
+			devel/py-setuptools>=18.2v0
 
 NO_TEST=		Yes
 
 MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
+BUILD_DEPENDS +=	devel/py-setuptools>=18.2v0
 
 .include <bsd.port.mk>

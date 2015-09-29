@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/21 14:30:56 jasper Exp $
-lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}.RC1-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}.RC1-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}.RC1-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}.RC1-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}.RC1-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}.RC1-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}.RC1-py${MODPY_VERSION}.egg-info/top_level.txt
+@comment $OpenBSD: PLIST,v 1.2 2015/09/29 09:02:54 edd Exp $
+lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/git/
 lib/python${MODPY_VERSION}/site-packages/git/__init__.py
 lib/python${MODPY_VERSION}/site-packages/git/__init__.pyc
