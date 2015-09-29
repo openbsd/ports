@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2015/04/02 14:21:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/09/29 10:51:53 sthen Exp $
 
 COMMENT =	add options to doctest examples while they are running
 
 MODPY_EGG_VERSION = 0.1
 DISTNAME =	dtopt-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 

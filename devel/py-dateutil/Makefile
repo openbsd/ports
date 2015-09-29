@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/04/12 12:01:01 benoit Exp $
+# $OpenBSD: Makefile,v 1.22 2015/09/29 10:51:53 sthen Exp $
 
 COMMENT =		Python API for advanced date calculations
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	2.4.2
 DISTNAME =		python-dateutil-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^python-/py-/}
 CATEGORIES =    	devel
+REVISION =		0
 
 HOMEPAGE =		https://dateutil.readthedocs.org/
 MAINTAINER =		frantisek holop <minusf@obiit.org>
