@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/23 10:53:24 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.11 2015/09/29 10:51:14 sthen Exp $
 
 COMMENT=		jukebox frontend to mpd
 
 MODPY_EGG_VERSION=	0.7.1
 DISTNAME=		fookebox-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 GH_TAGNAME=		${MODPY_EGG_VERSION}
 GH_ACCOUNT=		cockroach
 GH_PROJECT=		fookebox

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/13 20:11:24 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/29 10:51:14 sthen Exp $
 
 COMMENT =	backup and restoration manager for PostgreSQL
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.4.1
 DISTNAME =	barman-${MODPY_EGG_VERSION}
 CATEGORIES =	databases
 HOMEPAGE =	http://www.pgbarman.org/
+REVISION =	0
 
 MAINTAINER=	Eric Lalonde <eric.c.lalonde@gmail.com>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/08/25 13:18:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/09/29 10:51:14 sthen Exp $
 
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
@@ -8,7 +8,7 @@ COMMENT =	Pandora client for GNOME
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES =	audio x11
 SUBST_VARS +=	GH_TAGNAME
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://pithos.github.io/
 
