@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.26 2015/04/02 14:21:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2015/09/29 08:49:37 edd Exp $
 
 COMMENT=	simplified packaging system for Python modules
 
-MODPY_EGG_VERSION=	3.4.4
+MODPY_EGG_VERSION=	18.2
 DISTNAME=		setuptools-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:S/c/./}
 EPOCH = 		0
 CATEGORIES=		devel
 PKG_ARCH=		*
 
-REVISION =		2
 
 MODPY_PI =	Yes
 HOMEPAGE=	http://peak.telecommunity.com/DevCenter/setuptools
