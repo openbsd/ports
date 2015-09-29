@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2015/06/22 08:01:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2015/09/29 16:50:41 jasper Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
-DISTNAME=	spice-gtk-0.29
-REVISION=	0
+DISTNAME=	spice-gtk-0.30
 CATEGORIES=	x11 net
 
-SHARED_LIBS +=  spice-client-glib-2.0     2.0 # 13.0
+SHARED_LIBS +=  spice-client-glib-2.0     3.0 # 13.0
 SHARED_LIBS +=  spice-client-gtk-3.0      1.2 # 4.0
-SHARED_LIBS +=  spice-controller          0.1 # 0.0
+SHARED_LIBS +=  spice-controller          1.0 # 0.0
 
 HOMEPAGE=	http://www.spice-space.org/page/Spice-Gtk
 
@@ -40,12 +39,10 @@ MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	lang/vala \
 		devel/gobject-introspection \
-		devel/py-parsing \
-		devel/py-six \
-		devel/spice-protocol \
+		devel/spice-protocol>=0.12.10 \
 		sysutils/usbutils
 
-RUN_DEPENDS=	devel/spice-protocol \
+RUN_DEPENDS=	devel/spice-protocol>=0.12.10 \
 		sysutils/usbutils
 
 LIB_DEPENDS=	audio/opus \
@@ -58,8 +55,7 @@ USE_GMAKE=	Yes
 
 MODGNU_CONFIG_GUESS_DIRS= \
 		${WRKSRC} \
-		${WRKSRC}/spice-common \
-		${WRKSRC}/spice-common/spice-protocol
+		${WRKSRC}/spice-common
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
@@ -73,7 +69,5 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ARGS+=--disable-webdav
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-MODPY_ADJ_FILES=spice-common/spice_codegen.py
 
 .include <bsd.port.mk>

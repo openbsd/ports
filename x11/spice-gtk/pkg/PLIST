@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/10/30 12:18:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/09/29 16:50:41 jasper Exp $
 @bin bin/spicy
 @bin bin/spicy-screenshot
 @bin bin/spicy-stats
@@ -88,6 +88,7 @@ share/gtk-doc/html/spice-gtk/right-insensitive.png
 share/gtk-doc/html/spice-gtk/right.png
 share/gtk-doc/html/spice-gtk/spice-gtk-SpiceURI.html
 share/gtk-doc/html/spice-gtk/spice-gtk-Utilities.html
+share/gtk-doc/html/spice-gtk/spice-gtk-spice-version.html
 share/gtk-doc/html/spice-gtk/spice-gtk.devhelp2
 share/gtk-doc/html/spice-gtk/style.css
 share/gtk-doc/html/spice-gtk/up-insensitive.png
