@@ -1,0 +1,14 @@
+$OpenBSD: patch-gst-libs_gst_gl_Makefile_in,v 1.1 2015/09/30 06:43:41 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=755850
+
+--- gst-libs/gst/gl/Makefile.in.orig	Wed Sep 30 08:23:11 2015
++++ gst-libs/gst/gl/Makefile.in	Wed Sep 30 08:29:42 2015
+@@ -1611,6 +1611,7 @@ uninstall-am: uninstall-girDATA uninstall-libLTLIBRARI
+ @HAVE_INTROSPECTION_TRUE@		-I$(top_srcdir)/gst-libs \
+ @HAVE_INTROSPECTION_TRUE@		-I$(top_builddir)/gst-libs \
+ @HAVE_INTROSPECTION_TRUE@		$(GST_PLUGINS_BASE_CFLAGS) \
++@HAVE_INTROSPECTION_TRUE@		$(GL_CFLAGS) \
+ @HAVE_INTROSPECTION_TRUE@		--add-include-path=`PKG_CONFIG_PATH="$(GST_PKG_CONFIG_PATH)" $(PKG_CONFIG) --variable=girdir gstreamer-@GST_API_VERSION@` \
+ @HAVE_INTROSPECTION_TRUE@		--add-include-path=`PKG_CONFIG_PATH="$(GST_PKG_CONFIG_PATH)" $(PKG_CONFIG) --variable=girdir gstreamer-base-@GST_API_VERSION@` \
+ @HAVE_INTROSPECTION_TRUE@		--library=libgstgl-@GST_API_VERSION@.la \
