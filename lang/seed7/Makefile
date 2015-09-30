@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.44 2015/09/15 08:47:30 benoit Exp $
+# $OpenBSD: Makefile,v 1.45 2015/09/30 13:54:53 benoit Exp $
 
-V =		20150914
+V =		20150927
 COMMENT =	high-level, extensible programming language
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}

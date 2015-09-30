@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/08/24 23:01:53 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/09/30 13:54:53 benoit Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -23,12 +23,14 @@ lib/seed7/lib/bitmapfont.s7i
 lib/seed7/lib/bitset.s7i
 lib/seed7/lib/bitsetof.s7i
 lib/seed7/lib/boolean.s7i
+lib/seed7/lib/browser.s7i
 lib/seed7/lib/bstring.s7i
 lib/seed7/lib/bytedata.s7i
 lib/seed7/lib/cards.s7i
 lib/seed7/lib/category.s7i
 lib/seed7/lib/cc_conf.s7i
 lib/seed7/lib/cgi.s7i
+lib/seed7/lib/cgidialog.s7i
 lib/seed7/lib/char.s7i
 lib/seed7/lib/charsets.s7i
 lib/seed7/lib/chartype.s7i
@@ -278,6 +280,7 @@ share/examples/seed7/hal.sd7
 share/examples/seed7/hamu.sd7
 share/examples/seed7/hanoi.sd7
 share/examples/seed7/hello.sd7
+share/examples/seed7/ide7.sd7
 share/examples/seed7/indigo.dna
 share/examples/seed7/kbd.sd7
 share/examples/seed7/lander.sd7
