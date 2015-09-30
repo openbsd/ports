@@ -1,13 +1,15 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2015/09/30 11:29:13 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2015/09/30 17:43:23 jasper Exp $
 
-From 684b62e5407a5758b212a61ae5b624acc5325b7a Mon Sep 17 00:00:00 2001
-From: Robert Schroll <rschroll@gmail.com>
-Date: Wed, 3 Jun 2015 16:20:28 -0400
-Subject: [PATCH] Remove Vala_CMake submodule; include cmake module directly
+- From 684b62e5407a5758b212a61ae5b624acc5325b7a Mon Sep 17 00:00:00 2001
+  From: Robert Schroll <rschroll@gmail.com>
+  Date: Wed, 3 Jun 2015 16:20:28 -0400
+  Subject: [PATCH] Remove Vala_CMake submodule; include cmake module directly
 
---- CMakeLists.txt.orig	Wed Sep 30 10:52:27 2015
-+++ CMakeLists.txt	Wed Sep 30 10:52:37 2015
-@@ -1,7 +1,7 @@
+- https://github.com/pdfpc/pdfpc/pull/81
+
+--- CMakeLists.txt.orig	Mon Jun  1 04:37:51 2015
++++ CMakeLists.txt	Wed Sep 30 19:34:12 2015
+@@ -1,12 +1,13 @@
  project("pdfpc" C)
  cmake_minimum_required(VERSION 2.6)
  
@@ -16,3 +18,9 @@ Subject: [PATCH] Remove Vala_CMake submodule; include cmake module directly
  
  find_package(Vala "0.26" REQUIRED)
  include(${VALA_USE_FILE})
+ 
+ set(SYSCONFDIR "${CMAKE_INSTALL_PREFIX}/etc" CACHE FILEPATH "sysconfdir")
++set(MANDIR "share/man/man1" CACHE FILEPATH "mandir")
+ 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+ 
