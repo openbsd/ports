@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/08/12 06:22:48 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/30 08:00:29 benoit Exp $
 
 COMMENT =	IO::Socket with read/write timeout
 
-DISTNAME =	IO-Socket-Timeout-0.31
+DISTNAME =	IO-Socket-Timeout-0.32
 CATEGORIES =	net
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
