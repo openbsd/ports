@@ -1,0 +1,12 @@
+$OpenBSD: patch-rc_CMakeLists_txt,v 1.1.1.1 2015/09/30 11:29:13 jasper Exp $
+--- rc/CMakeLists.txt.orig	Wed Sep 30 11:09:17 2015
++++ rc/CMakeLists.txt	Wed Sep 30 11:14:16 2015
+@@ -1,7 +1,7 @@
+ install(FILES
+     pdfpcrc
+ DESTINATION
+-    ${SYSCONFDIR}
++    ${CMAKE_INSTALL_PREFIX}/share/examples/pdfpc/
+ )
+ 
+ install(FILES

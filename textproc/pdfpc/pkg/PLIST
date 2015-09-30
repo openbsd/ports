@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/30 11:29:13 jasper Exp $
+@bin bin/pdfpc
+@man man/man1/pdfpc.1
+share/examples/pdfpc/
+share/examples/pdfpc/pdfpcrc
+share/pixmaps/
+share/pixmaps/pdfpc/
+share/pixmaps/pdfpc/blank.svg
+share/pixmaps/pdfpc/pause.svg
+share/pixmaps/pdfpc/pdfpc.css
+share/pixmaps/pdfpc/snow.svg
