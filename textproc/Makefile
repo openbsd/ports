@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.464 2015/09/22 06:48:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.465 2015/09/30 11:30:04 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -302,6 +302,7 @@
      SUBDIR += patchutils
      SUBDIR += pdf4tcl
      SUBDIR += pdfgrep
+     SUBDIR += pdfpc
      SUBDIR += pdftk
      SUBDIR += pear-File
      SUBDIR += pear-File-Find
