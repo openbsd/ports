@@ -1,6 +1,9 @@
-$OpenBSD: patch-gst-libs_gst_gl_Makefile_in,v 1.1 2015/09/30 06:43:41 ajacoutot Exp $
+$OpenBSD: patch-gst-libs_gst_gl_Makefile_in,v 1.2 2015/09/30 09:26:55 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=755850
+From a1d39d385d04b963f6231a9619946f87d8deaa94 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Wed, 30 Sep 2015 08:36:15 +0200
+Subject: gl: Pass GL_CFLAGS to g-ir-scanner
 
 --- gst-libs/gst/gl/Makefile.in.orig	Wed Sep 30 08:23:11 2015
 +++ gst-libs/gst/gl/Makefile.in	Wed Sep 30 08:29:42 2015
