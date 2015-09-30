@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/23 16:34:40 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/30 06:57:35 jasper Exp $
 
 COMMENT =	weather in terminal, with ANSI colors and Unicode symbols
 DISTNAME =	ansiweather-${GH_TAGNAME}
@@ -11,10 +11,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 GH_ACCOUNT =	fcambus
 GH_PROJECT =	ansiweather
-GH_TAGNAME =	1.02
+GH_TAGNAME =	1.05
 
-RUN_DEPENDS =	shells/bash \
-		textproc/jq
+RUN_DEPENDS =	textproc/jq
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
