@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.85 2015/09/29 16:51:10 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.86 2015/09/30 11:44:20 sthen Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
-lib/python${MODPY_VERSION}/site-packages/youtube_dl-2015.9.28-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/youtube_dl-2015.9.28-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/youtube_dl-2015.9.28-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/youtube_dl-2015.9.28-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/youtube_dl-2015.9.28-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/youtube_dl-2015.9.28-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/YoutubeDL.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/YoutubeDL.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/__init__.py
