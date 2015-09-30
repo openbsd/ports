@@ -1,7 +1,11 @@
-$OpenBSD: patch-buildtools_wafsamba_samba_autoconf_py,v 1.1 2015/08/25 11:04:39 jca Exp $
-Sort -L flags to unbreak linking when any other version of Samba is installed.
---- buildtools/wafsamba/samba_autoconf.py.orig	Sat May 11 12:20:52 2013
-+++ buildtools/wafsamba/samba_autoconf.py	Sat May 11 13:04:26 2013
+$OpenBSD: patch-buildtools_wafsamba_samba_autoconf_py,v 1.2 2015/09/30 18:14:07 jca Exp $
+
+1. Sort -L flags to unbreak linking when any other version of Samba is installed.
+
+2. Use -Wl,-no-undefined as on other platforms.
+
+--- buildtools/wafsamba/samba_autoconf.py.orig	Tue Sep 29 23:55:20 2015
++++ buildtools/wafsamba/samba_autoconf.py	Tue Sep 29 23:56:33 2015
 @@ -716,6 +716,27 @@ def ADD_LDFLAGS(conf, flags, testflags=False):
      if not 'EXTRA_LDFLAGS' in conf.env:
          conf.env['EXTRA_LDFLAGS'] = []
@@ -30,3 +34,15 @@ Sort -L flags to unbreak linking when any other version of Samba is installed.
      return flags
  
  
+@@ -776,9 +797,8 @@ def SETUP_CONFIGURE_CACHE(conf, enable):
+ def SAMBA_CHECK_UNDEFINED_SYMBOL_FLAGS(conf):
+     # we don't want any libraries or modules to rely on runtime
+     # resolution of symbols
+-    if not sys.platform.startswith("openbsd"):
+-        conf.env.undefined_ldflags = conf.ADD_LDFLAGS('-Wl,-no-undefined', testflags=True)
++    conf.env.undefined_ldflags = conf.ADD_LDFLAGS('-Wl,-no-undefined', testflags=True)
+ 
+-    if not sys.platform.startswith("openbsd") and conf.env.undefined_ignore_ldflags == []:
++    if conf.env.undefined_ignore_ldflags == []:
+         if conf.CHECK_LDFLAGS(['-undefined', 'dynamic_lookup']):
+             conf.env.undefined_ignore_ldflags = ['-undefined', 'dynamic_lookup']
