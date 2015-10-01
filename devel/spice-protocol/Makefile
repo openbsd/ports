@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/09/29 16:50:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/10/01 08:49:16 jasper Exp $
 
 COMMENT=	SPICE protocol headers
 
 DISTNAME=	spice-protocol-0.12.10
+REVISION=	0
 CATEGORIES=	devel net
 
 HOMEPAGE=	http://www.spice-space.org/
@@ -17,7 +18,8 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	devel/py-parsing \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	devel/py-parsing \
 		devel/py-six
 
 CONFIGURE_STYLE=gnu
