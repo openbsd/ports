@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/30 17:43:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/10/01 08:48:11 jasper Exp $
 
 COMMENT=		presenter console with multi-monitor support
 
@@ -7,13 +7,13 @@ GH_PROJECT=		pdfpc
 GH_TAGNAME=		v4.0.0
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME=		${DISTNAME:S/v//}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		textproc
 
 HOMEPAGE=		https://pdfpc.github.io/
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org> 
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
