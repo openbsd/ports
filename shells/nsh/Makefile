@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2015/09/11 20:54:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2015/10/01 16:28:01 sthen Exp $
 
 COMMENT =		network switch style shell
 
-DISTNAME =		nsh-1.0.20150902
-REVISION =		1
+DISTNAME =		nsh-1.0.20150914
 
 GH_ACCOUNT =		yellowman
 GH_PROJECT =		nsh
-GH_COMMIT =		49782fe717102b640d1ab98d666bdc295a8a8b60
+GH_COMMIT =		d152f0631ad4e9cd40f093f548e771cf7d019286
 WRKDIST =		${WRKDIR}/nsh-${GH_COMMIT}
 
 CATEGORIES =		shells net
