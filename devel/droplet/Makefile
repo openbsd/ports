@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.11 2015/09/23 10:33:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/10/01 10:30:33 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 CATEGORIES=		devel
 COMMENT=		high performance Cloud Storage client library
 
-VERSION=		1.1
-REVISION=		3
+VERSION=		2.0
 DISTNAME=		droplet-${VERSION}
-HOMEPAGE=		https://github.com/scality/Droplet
+GH_ACCOUNT =		scality
+GH_PROJECT =		Droplet
+GH_COMMIT =		22e7e46214a26c36a2314ef0c23ee42c861ec6bd
 
-SHARED_LIBS=		droplet		0.0 #0.0
+SHARED_LIBS=		droplet		1.0 #0.0
 
 MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
 
@@ -19,9 +20,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += crypto json-c lzma m pthread ssl xml2 z
 
-MASTER_SITES=		http://www.sizeofvoid.org/pub/OpenBSD/distfiles/
-
-WRKDIST=		${WRKDIR}/scality-Droplet-e6692cc
 MODULES=		converters/libiconv
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
@@ -38,7 +36,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 post-patch:
 	cd ${WRKBUILD} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		/bin/sh ./autogen.sh
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/23 13:10:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/10/01 10:30:33 sthen Exp $
 include/droplet-1.0/
 include/droplet-1.0/droplet/
 include/droplet-1.0/droplet.h
@@ -25,16 +25,12 @@ include/droplet-1.0/droplet/s3/replyparser.h
 include/droplet-1.0/droplet/s3/reqbuilder.h
 include/droplet-1.0/droplet/s3/s3.h
 include/droplet-1.0/droplet/sbuf.h
-include/droplet-1.0/droplet/srest/
-include/droplet-1.0/droplet/srest/backend.h
-include/droplet-1.0/droplet/srest/replyparser.h
-include/droplet-1.0/droplet/srest/reqbuilder.h
-include/droplet-1.0/droplet/srest/srest.h
 include/droplet-1.0/droplet/srws/
 include/droplet-1.0/droplet/srws/backend.h
 include/droplet-1.0/droplet/srws/replyparser.h
 include/droplet-1.0/droplet/srws/reqbuilder.h
 include/droplet-1.0/droplet/srws/srws.h
+include/droplet-1.0/droplet/sysmd.h
 include/droplet-1.0/droplet/utils.h
 include/droplet-1.0/droplet/vec.h
 include/droplet-1.0/droplet/vfs.h
