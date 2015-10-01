@@ -1,0 +1,25 @@
+$OpenBSD: patch-source_common_version_cpp,v 1.4 2015/10/01 15:13:36 ajacoutot Exp $
+
+threading: add a slow-path for platforms with no system atomics
+
+--- source/common/version.cpp.orig	Thu Oct  1 04:15:54 2015
++++ source/common/version.cpp	Thu Oct  1 04:17:39 2015
+@@ -75,6 +75,12 @@
+ #define NVM_BITS        "[32 bit]"
+ #endif
+ 
++#if NO_ATOMICS
++#define ATOMICS "[no-atomics]"
++#else
++#define ATOMICS ""
++#endif
++
+ #if CHECKED_BUILD
+ #define CHECKED         "[CHECKED] "
+ #else
+@@ -90,4 +96,4 @@ const int x265_max_bit_depth = 8;
+ #endif
+ 
+ const char *x265_version_str = XSTR(X265_VERSION);
+-const char *x265_build_info_str = NVM_ONOS NVM_COMPILEDBY NVM_BITS CHECKED BITDEPTH;
++const char *x265_build_info_str = NVM_ONOS NVM_COMPILEDBY NVM_BITS ATOMICS CHECKED BITDEPTH;

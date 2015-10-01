@@ -1,0 +1,62 @@
+$OpenBSD: patch-source_common_threading_cpp,v 1.1 2015/10/01 15:13:36 ajacoutot Exp $
+
+threading: add a slow-path for platforms with no system atomics
+
+--- source/common/threading.cpp.orig	Thu Oct  1 04:12:44 2015
++++ source/common/threading.cpp	Thu Oct  1 04:14:11 2015
+@@ -33,6 +33,55 @@ extern "C" intptr_t x265_stack_align(void (*func)(), .
+ #define x265_stack_align(func, ...) func(__VA_ARGS__)
+ #endif
+ 
++#if NO_ATOMICS
++pthread_mutex_t g_mutex = PTHREAD_MUTEX_INITIALIZER;
++
++int no_atomic_or(int* ptr, int mask)
++{ 
++    pthread_mutex_lock(&g_mutex);
++    int ret = *ptr;
++    *ptr |= mask;
++    pthread_mutex_unlock(&g_mutex);
++    return ret;
++}
++
++int no_atomic_and(int* ptr, int mask)
++{
++    pthread_mutex_lock(&g_mutex);
++    int ret = *ptr;
++    *ptr &= mask;
++    pthread_mutex_unlock(&g_mutex);
++    return ret;
++}
++
++int no_atomic_inc(int* ptr)
++{
++    pthread_mutex_lock(&g_mutex);
++    *ptr += 1;
++    int ret = *ptr;
++    pthread_mutex_unlock(&g_mutex);
++    return ret;
++}
++
++int no_atomic_dec(int* ptr)
++{
++    pthread_mutex_lock(&g_mutex);
++    *ptr -= 1;
++    int ret = *ptr;
++    pthread_mutex_unlock(&g_mutex);
++    return ret;
++}
++
++int no_atomic_add(int* ptr, int val)
++{
++    pthread_mutex_lock(&g_mutex);
++    *ptr += val;
++    int ret = *ptr;
++    pthread_mutex_unlock(&g_mutex);
++    return ret;
++}
++#endif
++
+ /* C shim for forced stack alignment */
+ static void stackAlignMain(Thread *instance)
+ {
