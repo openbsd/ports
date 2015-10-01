@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/09/28 15:45:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/10/01 20:09:56 sthen Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -9,6 +9,7 @@ SHARED_ONLY =		Yes
 COMMENT =		digital audio workstation
 
 DISTNAME =		ardour-2.8.16
+REVISION =		0
 CATEGORIES =		audio
 HOMEPAGE =		http://ardour.org
 
@@ -25,7 +26,7 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz
 WANTLIB += jack lo lrdf m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pangomm-1.4 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += samplerate sigc-2.0 sndfile sndio xcb xcb-render
-WANTLIB += xcb-shm xml2 xslt z expat graphite2
+WANTLIB += xcb-shm xml2 xslt z expat graphite2 usb
 
 # Use mirrors as official site has click-through donation-request download.
 MASTER_SITES =		http://pkgs.fedoraproject.org/repo/pkgs/ardour/${DISTNAME}${EXTRACT_SUFX}/5bafe41df00d25e7a357baaa1038f16d/
@@ -71,6 +72,7 @@ LIB_DEPENDS =		audio/aubio \
 			audio/liblo \
 			devel/boost \
 			devel/libexecinfo \
+			devel/libusb-compat \
 			math/fftw3 \
 			textproc/liblrdf \
 			x11/gnome/libgnomecanvasmm
