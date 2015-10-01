@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/02 14:33:44 florian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/10/01 12:21:32 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/LDNS/
@@ -62,6 +62,7 @@ ${P5ARCH}/Net/LDNS/RR/RKEY.pm
 ${P5ARCH}/Net/LDNS/RR/RP.pm
 ${P5ARCH}/Net/LDNS/RR/RRSIG.pm
 ${P5ARCH}/Net/LDNS/RR/RT.pm
+${P5ARCH}/Net/LDNS/RR/SIG.pm
 ${P5ARCH}/Net/LDNS/RR/SINK.pm
 ${P5ARCH}/Net/LDNS/RR/SOA.pm
 ${P5ARCH}/Net/LDNS/RR/SPF.pm
@@ -79,6 +80,7 @@ ${P5ARCH}/Net/LDNS/RR/UNSPEC.pm
 ${P5ARCH}/Net/LDNS/RR/URI.pm
 ${P5ARCH}/Net/LDNS/RR/WKS.pm
 ${P5ARCH}/Net/LDNS/RR/X25.pm
+${P5ARCH}/Net/LDNS/RRList.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/LDNS/
@@ -142,6 +144,7 @@ ${P5ARCH}/auto/Net/LDNS/LDNS.so
 @man man/man3p/Net::LDNS::RR::RP.3p
 @man man/man3p/Net::LDNS::RR::RRSIG.3p
 @man man/man3p/Net::LDNS::RR::RT.3p
+@man man/man3p/Net::LDNS::RR::SIG.3p
 @man man/man3p/Net::LDNS::RR::SINK.3p
 @man man/man3p/Net::LDNS::RR::SOA.3p
 @man man/man3p/Net::LDNS::RR::SPF.3p
@@ -159,3 +162,4 @@ ${P5ARCH}/auto/Net/LDNS/LDNS.so
 @man man/man3p/Net::LDNS::RR::URI.3p
 @man man/man3p/Net::LDNS::RR::WKS.3p
 @man man/man3p/Net::LDNS::RR::X25.3p
+@man man/man3p/Net::LDNS::RRList.3p
