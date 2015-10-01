@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.28 2015/09/20 12:24:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2015/10/01 06:58:31 benoit Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
 @pkgpath games/tmw,-music
+@bin bin/dyecmd
 @bin bin/manaplus
 @man man/man6/manaplus.6
 @man man/man6/manaplustest.6
