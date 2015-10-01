@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/11 14:17:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/10/01 21:58:49 sthen Exp $
 
 COMMENT=        freedesktop-compliant panel
 
 V=		0.12.2
+REVISION=	0
 CATEGORIES=	x11
 DISTNAME=	tint2-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=v$V}
@@ -42,7 +43,10 @@ NO_TEST=	Yes
 CONFIGURE_ARGS= -DMANDIR="${PREFIX}/man"
 
 post-install:
-	cp -R ${WRKSRC}/sample/ ${PREFIX}/share/examples/tint2
+	cp -R ${WRKSRC}/sample/ ${PREFIX}/share/examples/tint2/
+	sed -i -e '/\/usr\/local\/share\/applications/d' -e \
+	    's,/usr/share/applications,${LOCALBASE}/share/applications,g' \
+	    ${PREFIX}/share/examples/tint2/*tint2rc
 	rm ${PREFIX}/share/tint2/*.tint2rc
 
 .include <bsd.port.mk>
