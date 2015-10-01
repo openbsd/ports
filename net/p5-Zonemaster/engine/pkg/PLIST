@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/02 19:55:39 florian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/10/01 12:22:24 sthen Exp $
 ${P5SITE}/Zonemaster/
 ${P5SITE}/Zonemaster.pm
 ${P5SITE}/Zonemaster/ASNLookup.pm
@@ -13,6 +13,7 @@ ${P5SITE}/Zonemaster/NSArray.pm
 ${P5SITE}/Zonemaster/Nameserver/
 ${P5SITE}/Zonemaster/Nameserver.pm
 ${P5SITE}/Zonemaster/Nameserver/Cache.pm
+${P5SITE}/Zonemaster/Overview.pod
 ${P5SITE}/Zonemaster/Packet.pm
 ${P5SITE}/Zonemaster/Recursor.pm
 ${P5SITE}/Zonemaster/Test/
@@ -62,6 +63,7 @@ ${P5SITE}/auto/share/dist/Zonemaster/sv.po
 @man man/man3p/Zonemaster::NSArray.3p
 @man man/man3p/Zonemaster::Nameserver.3p
 @man man/man3p/Zonemaster::Nameserver::Cache.3p
+@man man/man3p/Zonemaster::Overview.3p
 @man man/man3p/Zonemaster::Packet.3p
 @man man/man3p/Zonemaster::Recursor.3p
 @man man/man3p/Zonemaster::Test.3p

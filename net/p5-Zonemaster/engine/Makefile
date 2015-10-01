@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/02 19:55:39 florian Exp $
+# $OpenBSD: Makefile,v 1.2 2015/10/01 12:22:24 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	tool to check the quality of a DNS zone
 
 MODULES =	cpan
-V =		1.0.0
-CPAN_AUTHOR =	CDYBED
+V =		1.0.6
+CPAN_AUTHOR =	IIS
 DISTNAME =	Zonemaster-v$V
 PKGNAME =	p5-Zonemaster-engine-$V
 CATEGORIES =	net
@@ -30,7 +30,7 @@ RUN_DEPENDS =		converters/p5-JSON>=2.53 \
 			mail/p5-Mail-RFC822-Address \
 			net/p5-IO-Socket-INET6>=2.69 \
 			net/p5-Net-IP-XS \
-			net/p5-Net-LDNS>=0.64
+			net/p5-Net-LDNS>=0.71
 
 TEST_DEPENDS =		converters/p5-JSON-XS>=2.32 \
 			devel/p5-Pod-Coverage \
