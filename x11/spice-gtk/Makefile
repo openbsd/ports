@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2015/09/29 16:50:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2015/10/01 08:49:45 jasper Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
 DISTNAME=	spice-gtk-0.30
+REVISION=	0
 CATEGORIES=	x11 net
 
 SHARED_LIBS +=  spice-client-glib-2.0     3.0 # 13.0
@@ -39,10 +40,10 @@ MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	lang/vala \
 		devel/gobject-introspection \
-		devel/spice-protocol>=0.12.10 \
+		devel/spice-protocol>=0.12.10p0 \
 		sysutils/usbutils
 
-RUN_DEPENDS=	devel/spice-protocol>=0.12.10 \
+RUN_DEPENDS=	devel/spice-protocol>=0.12.10p0 \
 		sysutils/usbutils
 
 LIB_DEPENDS=	audio/opus \
