@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_zrtp_c,v 1.1 2015/10/01 20:13:39 czarkoff Exp $
+--- src/zrtp.c.orig	Wed Sep 30 20:13:58 2015
++++ src/zrtp.c	Wed Sep 30 20:15:23 2015
+@@ -810,6 +810,7 @@ void zrtp_profile_defaults(zrtp_profile_t* profile, zr
+ 	profile->cipher_types[0]	= ZRTP_CIPHER_AES256;
+ 	profile->cipher_types[1]	= ZRTP_CIPHER_AES128;
+ 	profile->auth_tag_lens[0]	= ZRTP_ATL_HS32;
++	profile->auth_tag_lens[1]	= ZRTP_ATL_HS80;
+ 	profile->hash_schemes[0]	= ZRTP_HASH_SHA256;
+ 
+ 	if (zrtp && (ZRTP_LICENSE_MODE_PASSIVE == zrtp->lic_mode)) {
+@@ -863,6 +864,11 @@ zrtp_status_t zrtp_profile_check(const zrtp_profile_t*
+      
+     if (0 > zrtp_profile_find(profile, ZRTP_CC_ATL, ZRTP_ATL_HS32)) {
+         ZRTP_LOG(1, (_ZTU_,"WARNING! can't find '32      ' in profile.\n"));
++        return zrtp_status_fail;
++    }
++
++    if (0 > zrtp_profile_find(profile, ZRTP_CC_ATL, ZRTP_ATL_HS80)) {
++        ZRTP_LOG(1, (_ZTU_,"WARNING! can't find '80      ' in profile.\n"));
+         return zrtp_status_fail;
+     }
+     

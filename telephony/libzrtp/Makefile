@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/17 21:16:54 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.6 2015/10/01 20:13:39 czarkoff Exp $
 
 COMMENT =		ZRTP library
 
 DISTNAME =		libzrtp-0.20130317
-REVISION =		2
+REVISION =		3
 CATEGORIES =		telephony security
 
 HOMEPAGE =		https://github.com/traviscross/libzrtp
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # AGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
