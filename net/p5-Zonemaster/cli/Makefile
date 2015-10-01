@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/01/02 19:55:39 florian Exp $
+# $OpenBSD: Makefile,v 1.2 2015/10/01 12:22:10 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	tool to check the quality of a DNS zone
 
 MODULES =	cpan
-V =		1.0.0
-CPAN_AUTHOR =	CDYBED
+V =		1.0.2
+CPAN_AUTHOR =	IIS
 DISTNAME =	Zonemaster-CLI-v$V
 PKGNAME =	zonemaster-$V
 CATEGORIES =	net
