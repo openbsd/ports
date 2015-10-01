@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2015/06/30 09:02:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.192 2015/10/01 15:16:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,6 +9,7 @@ V=		2.2.1
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
+REVISION-main=	0
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -36,7 +37,7 @@ WANTLIB-main=	EGL GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 \
 		ogg p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
 		pixman-1 png postproc pthread-stubs rsvg-2 samplerate sndio \
 		speex speexdsp stdc++ swscale tag tar tasn1 tiff usbhid \
-		vorbis vorbisenc webp x264 xcb-composite xcb-keysyms \
+		vorbis vorbisenc webp x264 x265 xcb-composite xcb-keysyms \
 		xcb-randr xcb-render xcb-shape xcb-shm xcb-xfixes xcb-xv \
 		xcb xml2 z ${WANTLIB-common}
 WANTLIB-jack=	db jack vlccore ${WANTLIB-common}
@@ -72,6 +73,7 @@ LIB_DEPENDS-main= ${MODQT4_LIB_DEPENDS} \
 		multimedia/libdvdnav \
 		multimedia/libmatroska \
 		multimedia/x264 \
+		multimedia/x265 \
 		security/gnutls \
 		security/libgcrypt \
 		textproc/libebml \
@@ -148,7 +150,6 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-vnc \
 		--disable-vpx \
 		--disable-vsxu \
-		--disable-x265 \
 		--disable-zvbi \
 		--enable-realrtsp \
 		--without-contrib \
