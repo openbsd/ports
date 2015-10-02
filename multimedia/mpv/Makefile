@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2015/09/26 04:02:31 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.18 2015/10/02 07:34:14 bentley Exp $
 
 ONLY_FOR_ARCHS =	alpha amd64 i386 powerpc sparc64
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 V =			0.11.0
+REVISION =		0
 DISTNAME =		mpv-${V}
 
 GH_ACCOUNT=		mpv-player
