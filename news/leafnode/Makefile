@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.59 2015/04/06 16:26:22 jca Exp $
+# $OpenBSD: Makefile,v 1.60 2015/10/02 11:55:05 jca Exp $
 
 COMMENT=		USENET software package designed for small sites
 
-DISTNAME=		leafnode-1.11.10
+DISTNAME=		leafnode-1.11.11
 CATEGORIES=		news
 
 HOMEPAGE=		http://leafnode.sourceforge.net/
