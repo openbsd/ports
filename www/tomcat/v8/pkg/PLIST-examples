@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.10 2015/09/04 13:06:26 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.11 2015/10/02 10:05:58 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -1635,6 +1635,11 @@ webapps/docs/api/org/apache/tomcat/util/collections/SynchronizedStack.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-tree.html
+webapps/docs/api/org/apache/tomcat/util/compat/
+webapps/docs/api/org/apache/tomcat/util/compat/JreVendor.html
+webapps/docs/api/org/apache/tomcat/util/compat/package-frame.html
+webapps/docs/api/org/apache/tomcat/util/compat/package-summary.html
+webapps/docs/api/org/apache/tomcat/util/compat/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/descriptor/
 webapps/docs/api/org/apache/tomcat/util/descriptor/Constants.html
 webapps/docs/api/org/apache/tomcat/util/descriptor/DigesterFactory.html
