@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/10/02 19:01:24 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.6 2015/10/02 19:37:40 czarkoff Exp $
 
 SHARED_ONLY =		Yes
 
@@ -23,7 +23,7 @@ WANTLIB-gtk2 += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0
 WANTLIB-gtk2 += gstbase-1.0 gstreamer-1.0 gtk-x11-2.0 intl pango-1.0
 WANTLIB-gtk2 += pangocairo-1.0 pangoft2-1.0
 
-BUILD_DEPENDS-main =	telephony/libzrtp
+BUILD_DEPENDS =		telephony/libzrtp
 LIB_DEPENDS-main =	audio/gsm \
 			audio/libsndfile \
 			audio/opus \
