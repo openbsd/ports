@@ -1,7 +1,7 @@
-$OpenBSD: patch-SConstruct,v 1.3 2014/04/10 06:04:42 bentley Exp $
+$OpenBSD: patch-SConstruct,v 1.4 2015/10/02 05:15:53 bentley Exp $
 Fix SCons install target. From upstream r3067.
---- SConstruct.orig	Thu Mar 13 23:30:04 2014
-+++ SConstruct	Thu Mar 13 23:30:28 2014
+--- SConstruct.orig	Thu Oct  1 22:43:24 2015
++++ SConstruct	Thu Oct  1 22:43:25 2015
 @@ -138,9 +138,9 @@ else:
        # Should work on any *nix
        env.Append(CCFLAGS = ["-DLUA_USE_LINUX"])
@@ -24,7 +24,7 @@ Fix SCons install target. From upstream r3067.
  
  if env['PLATFORM'] != 'win32' and env['PLATFORM'] != 'cygwin' and env['CREATE_AVI']:
    env.Append(CPPDEFINES=["CREATE_AVI"])
-@@ -205,7 +205,6 @@
+@@ -205,7 +203,6 @@ fceux_net_server_dst = 'bin/fceux-net-server' + exe_su
  
  auxlib_src = 'src/auxlib.lua'
  auxlib_dst = 'bin/auxlib.lua'
@@ -32,7 +32,7 @@ Fix SCons install target. From upstream r3067.
  
  fceux_h_src = 'output/fceux.chm'
  fceux_h_dst = 'bin/fceux.chm'
-@@ -217,25 +216,17 @@
+@@ -217,25 +214,17 @@ env.Command(auxlib_dst, auxlib_src, [Copy(auxlib_dst, 
  
  man_src = 'documentation/fceux.6'
  man_net_src = 'documentation/fceux-net-server.6'
@@ -47,7 +47,7 @@ Fix SCons install target. From upstream r3067.
  
  desktop_src = 'fceux.desktop'
 -desktop_dst = prefix + '/share/applications/'
--
+ 
 -env.Install(prefix + "/bin/", fceux)
 -env.Install(prefix + "/bin/", "fceux-net-server")
 -# TODO:  Where to put auxlib on "scons install?"
@@ -58,7 +58,6 @@ Fix SCons install target. From upstream r3067.
 -env.Alias('install', env.Command(image_dst, image_src, [Copy(image_dst, image_src)]))
 -env.Alias('install', env.Command(desktop_dst, desktop_src, [Copy(desktop_dst, desktop_src)]))
 -env.Alias('install', (prefix + "/bin/"))
-+
 +env.Install(prefix + "/bin/", [fceux, fceux_net_server_src])
 +env.InstallAs(prefix + '/share/fceux/', share_src)
 +env.Install(prefix + '/share/fceux/', auxlib_src)
