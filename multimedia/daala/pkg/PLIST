@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/02 16:55:54 czarkoff Exp $
+include/daala/
+include/daala/codec.h
+include/daala/daala_integer.h
+include/daala/daaladec.h
+include/daala/daalaenc.h
+lib/libdaalabase.a
+lib/libdaalabase.la
+@lib lib/libdaalabase.so.${LIBdaalabase_VERSION}
+lib/libdaaladec.a
+lib/libdaaladec.la
+@lib lib/libdaaladec.so.${LIBdaaladec_VERSION}
+lib/libdaalaenc.a
+lib/libdaalaenc.la
+@lib lib/libdaalaenc.so.${LIBdaalaenc_VERSION}
+lib/pkgconfig/daaladec.pc
+lib/pkgconfig/daalaenc.pc
+share/doc/daala/
+share/doc/daala/AUTHORS
+share/doc/daala/COPYING
