@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/12/14 09:31:20 kili Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/10/02 20:46:41 kili Exp $
 lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/XMonad/
 lib/ghc/${DISTNAME}/XMonad/Actions/
 lib/ghc/${DISTNAME}/XMonad/Actions/BluetileCommands.hi
@@ -462,8 +463,8 @@ lib/ghc/${DISTNAME}/XMonad/Util/XSelection.hi
 lib/ghc/${DISTNAME}/XMonad/Util/XSelection.p_hi
 lib/ghc/${DISTNAME}/XMonad/Util/XUtils.hi
 lib/ghc/${DISTNAME}/XMonad/Util/XUtils.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
