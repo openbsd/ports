@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/03/31 12:26:40 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/10/03 17:58:07 jca Exp $
 bin/jmacs
 @bin bin/joe
 bin/jpico
 bin/jstar
 bin/rjoe
-@bin bin/stringify
-@bin bin/termidx
 @man man/man1/joe.1
 man/ru/
 man/ru/man1/
@@ -27,6 +25,8 @@ share/examples/joe/jmacsrc
 @sample ${SYSCONFDIR}/joe/jmacsrc
 share/examples/joe/joerc
 @sample ${SYSCONFDIR}/joe/joerc
+share/examples/joe/joerc.zh_TW
+@sample ${SYSCONFDIR}/joe/joerc.zh_TW
 share/examples/joe/jpicorc
 @sample ${SYSCONFDIR}/joe/jpicorc
 share/examples/joe/jstarrc
@@ -43,13 +43,10 @@ share/joe/charmaps/klingon
 share/joe/lang/
 @sample ${SYSCONFDIR}/joe/lang/
 share/joe/lang/de.po
-@sample ${SYSCONFDIR}/joe/lang/de.po
 share/joe/lang/fr.po
-@sample ${SYSCONFDIR}/joe/lang/fr.po
 share/joe/lang/ru.po
-@sample ${SYSCONFDIR}/joe/lang/ru.po
 share/joe/lang/uk.po
-@sample ${SYSCONFDIR}/joe/lang/uk.po
+share/joe/lang/zh.po
 share/joe/syntax/
 @sample ${SYSCONFDIR}/joe/syntax/
 share/joe/syntax/4gl.jsf
@@ -60,14 +57,20 @@ share/joe/syntax/ant.jsf
 @sample ${SYSCONFDIR}/joe/syntax/ant.jsf
 share/joe/syntax/asm.jsf
 @sample ${SYSCONFDIR}/joe/syntax/asm.jsf
+share/joe/syntax/avr.jsf
+@sample ${SYSCONFDIR}/joe/syntax/avr.jsf
 share/joe/syntax/awk.jsf
 @sample ${SYSCONFDIR}/joe/syntax/awk.jsf
 share/joe/syntax/batch.jsf
 @sample ${SYSCONFDIR}/joe/syntax/batch.jsf
 share/joe/syntax/c.jsf
 @sample ${SYSCONFDIR}/joe/syntax/c.jsf
+share/joe/syntax/clojure.jsf
+@sample ${SYSCONFDIR}/joe/syntax/clojure.jsf
 share/joe/syntax/cobol.jsf
 @sample ${SYSCONFDIR}/joe/syntax/cobol.jsf
+share/joe/syntax/coffee.jsf
+@sample ${SYSCONFDIR}/joe/syntax/coffee.jsf
 share/joe/syntax/comment_todo.jsf
 @sample ${SYSCONFDIR}/joe/syntax/comment_todo.jsf
 share/joe/syntax/conf.jsf
@@ -78,6 +81,8 @@ share/joe/syntax/csharp.jsf
 @sample ${SYSCONFDIR}/joe/syntax/csharp.jsf
 share/joe/syntax/css.jsf
 @sample ${SYSCONFDIR}/joe/syntax/css.jsf
+share/joe/syntax/d.jsf
+@sample ${SYSCONFDIR}/joe/syntax/d.jsf
 share/joe/syntax/debian.jsf
 @sample ${SYSCONFDIR}/joe/syntax/debian.jsf
 share/joe/syntax/diff.jsf
@@ -96,6 +101,8 @@ share/joe/syntax/git-commit.jsf
 @sample ${SYSCONFDIR}/joe/syntax/git-commit.jsf
 share/joe/syntax/go.jsf
 @sample ${SYSCONFDIR}/joe/syntax/go.jsf
+share/joe/syntax/groovy.jsf
+@sample ${SYSCONFDIR}/joe/syntax/groovy.jsf
 share/joe/syntax/haml.jsf
 @sample ${SYSCONFDIR}/joe/syntax/haml.jsf
 share/joe/syntax/haskell.jsf
@@ -154,10 +161,16 @@ share/joe/syntax/puppet.jsf
 @sample ${SYSCONFDIR}/joe/syntax/puppet.jsf
 share/joe/syntax/python.jsf
 @sample ${SYSCONFDIR}/joe/syntax/python.jsf
+share/joe/syntax/r.jsf
+@sample ${SYSCONFDIR}/joe/syntax/r.jsf
 share/joe/syntax/rexx.jsf
 @sample ${SYSCONFDIR}/joe/syntax/rexx.jsf
 share/joe/syntax/ruby.jsf
 @sample ${SYSCONFDIR}/joe/syntax/ruby.jsf
+share/joe/syntax/rust.jsf
+@sample ${SYSCONFDIR}/joe/syntax/rust.jsf
+share/joe/syntax/scala.jsf
+@sample ${SYSCONFDIR}/joe/syntax/scala.jsf
 share/joe/syntax/sed.jsf
 @sample ${SYSCONFDIR}/joe/syntax/sed.jsf
 share/joe/syntax/sh.jsf
@@ -172,6 +185,8 @@ share/joe/syntax/spec.jsf
 @sample ${SYSCONFDIR}/joe/syntax/spec.jsf
 share/joe/syntax/sql.jsf
 @sample ${SYSCONFDIR}/joe/syntax/sql.jsf
+share/joe/syntax/swift.jsf
+@sample ${SYSCONFDIR}/joe/syntax/swift.jsf
 share/joe/syntax/tcl.jsf
 @sample ${SYSCONFDIR}/joe/syntax/tcl.jsf
 share/joe/syntax/tex.jsf
