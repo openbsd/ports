@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2014/07/24 13:59:37 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2015/10/03 12:08:31 robert Exp $
 
 COMMENT =		marathon / alephone map editor
-BROKEN =	because mono
+#BROKEN =	because mono
 
 V =			211
 DISTNAME =		weland-r${V}-src
@@ -19,6 +19,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=weland/}
 EXTRACT_SUFX =		.zip
 
 MODULES =		lang/mono
+MODMONO_GMCS_COMPAT =	Yes
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		x11/mono-gtk2
