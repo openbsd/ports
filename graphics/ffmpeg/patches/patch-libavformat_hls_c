@@ -1,0 +1,27 @@
+$OpenBSD: patch-libavformat_hls_c,v 1.1 2015/10/03 19:39:47 sthen Exp $
+
+From 26eb2940079d0ec433cf9b2deae24560707cbcf8 Mon Sep 17 00:00:00 2001
+From: wm4 <nfxjfg@googlemail.com>
+Date: Mon, 21 Sep 2015 14:43:06 +0200
+Subject: [PATCH] avformat/hls: fix some cases of HLS streams which require
+ cookies
+
+--- libavformat/hls.c.orig	Sat Oct  3 12:33:34 2015
++++ libavformat/hls.c	Sat Oct  3 12:33:55 2015
+@@ -516,15 +516,11 @@ static int url_connect(struct playlist *pls, AVDiction
+     av_dict_copy(&tmp, opts, 0);
+     av_dict_copy(&tmp, opts2, 0);
+ 
+-    if ((ret = av_opt_set_dict(pls->input, &tmp)) < 0)
+-        goto fail;
+-
+-    if ((ret = ffurl_connect(pls->input, NULL)) < 0) {
++    if ((ret = ffurl_connect(pls->input, &tmp)) < 0) {
+         ffurl_close(pls->input);
+         pls->input = NULL;
+     }
+ 
+-fail:
+     av_dict_free(&tmp);
+     return ret;
+ }
