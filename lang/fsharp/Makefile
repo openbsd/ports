@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/23 11:23:56 sthen Exp $
-
-BROKEN=		unreliable build, frequently hangs in dpb
+# $OpenBSD: Makefile,v 1.3 2015/10/03 12:37:46 robert Exp $
 
 COMMENT=	functional-first programming language
 
