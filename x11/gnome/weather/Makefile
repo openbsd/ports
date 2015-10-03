@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2015/04/28 07:02:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2015/10/03 13:22:06 ajacoutot Exp $
+
+PKG_ARCH=		*
 
 COMMENT=		weather application for GNOME
 
@@ -16,8 +18,6 @@ BUILD_DEPENDS=		x11/gnome/gjs \
 			x11/gnome/libgweather \
 			x11/gtk+3
 
-# gjs application
-PKG_ARCH=		*
 RUN_DEPENDS=		x11/gnome/gjs \
 			x11/gnome/libgweather \
 			x11/gtk+3
