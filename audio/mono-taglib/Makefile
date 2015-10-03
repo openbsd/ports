@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/10 22:55:03 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/10/03 11:55:38 robert Exp $
 
 COMMENT=	tagging library for the Mono framework
 
@@ -16,6 +16,7 @@ MASTER_SITES=	http://download.banshee-project.org/taglib-sharp/${V}/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/mono
+MODMONO_GMCS_COMPAT=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	x11/gnome/mono-gnome

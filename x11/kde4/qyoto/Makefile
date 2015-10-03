@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/06/26 09:18:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/10/03 11:55:39 robert Exp $
 
 CATEGORIES =	devel
 COMMENT =	Qt4 bindings for .NET/Mono
@@ -27,6 +27,7 @@ WANTLIB += ${KDE4LIB}/smokeqtuitools ${KDE4LIB}/smokeqtwebkit
 WANTLIB += qscintilla2
 
 MODULES =	multimedia/phonon lang/mono
+MODMONO_GMCS_COMPAT = Yes
 
 MODKDE4_USE =
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/04/04 09:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2015/10/03 11:55:39 robert Exp $
 
 COMMENT=	C\# implementation of dbus
 DISTNAME=	ndesk-dbus-0.6.1a
@@ -12,6 +12,8 @@ HOMEPAGE=	http://www.ndesk.org/DBusSharp
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/mono
+
+MODMONO_GMCS_COMPAT=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	x11/dbus
