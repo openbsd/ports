@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.34 2015/09/24 10:28:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.35 2015/10/03 20:37:27 ajacoutot Exp $
 @conflict gtk+3-docs-*
 @pkgpath x11/gtk+3,-docs
 @unexec-delete rm -f %D/lib/gtk-3.0/3.0.0/immodules.cache
@@ -462,7 +462,6 @@ share/gtk-doc/html/gail-libgail-util3/gail-libgail-util3-GailTextUtil.html
 share/gtk-doc/html/gail-libgail-util3/gail-libgail-util3.devhelp2
 share/gtk-doc/html/gail-libgail-util3/home.png
 share/gtk-doc/html/gail-libgail-util3/index.html
-share/gtk-doc/html/gail-libgail-util3/index.sgml
 share/gtk-doc/html/gail-libgail-util3/left-insensitive.png
 share/gtk-doc/html/gail-libgail-util3/left.png
 share/gtk-doc/html/gail-libgail-util3/libgail-util-main.html
@@ -563,7 +562,6 @@ share/gtk-doc/html/gdk3/help_cursor.png
 share/gtk-doc/html/gdk3/home.png
 share/gtk-doc/html/gdk3/icon.png
 share/gtk-doc/html/gdk3/index.html
-share/gtk-doc/html/gdk3/index.sgml
 share/gtk-doc/html/gdk3/iron_cross.png
 share/gtk-doc/html/gdk3/left-insensitive.png
 share/gtk-doc/html/gdk3/left.png
@@ -1035,7 +1033,6 @@ share/gtk-doc/html/gtk3/home.png
 share/gtk-doc/html/gtk3/icon-view.png
 share/gtk-doc/html/gtk3/image.png
 share/gtk-doc/html/gtk3/index.html
-share/gtk-doc/html/gtk3/index.sgml
 share/gtk-doc/html/gtk3/info-bar.png
 share/gtk-doc/html/gtk3/inspector.png
 share/gtk-doc/html/gtk3/label.png
