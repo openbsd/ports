@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Mono_WebServer_FastCgi_ConfigurationManager_cs,v 1.1 2015/10/03 11:54:42 robert Exp $
+--- src/Mono.WebServer.FastCgi/ConfigurationManager.cs.orig	Sun Sep 27 19:44:32 2015
++++ src/Mono.WebServer.FastCgi/ConfigurationManager.cs	Sun Sep 27 19:44:42 2015
+@@ -54,7 +54,7 @@ namespace Mono.WebServer.FastCgi {
+ 
+ 		readonly StringSetting filename = new StringSetting ("filename", "Specifies a unix socket filename to listen on.\n" +
+ 			"To use this argument, \"socket\" must be set to \"unix\".", "MonoUnixSocket", "MONO_FCGI_FILENAME", "/tmp/fastcgi-mono-server");
+-		readonly StringSetting socket = new StringSetting ("socket", Descriptions.Socket, "MonoSocketType", "MONO_FCGI_SOCKET", "pipe");
++		readonly StringSetting socket = new StringSetting ("socket", Descriptions.Socket, "MonoSocketType", "MONO_FCGI_SOCKET", "unix");
+ 		readonly StringSetting onDemandSock = new StringSetting ("ondemandsock", "The socket to listen on for ondemand service");
+ 		#endregion
+ 

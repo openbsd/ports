@@ -1,0 +1,12 @@
+$OpenBSD: patch-autogen_sh,v 1.1 2015/10/03 11:54:42 robert Exp $
+--- autogen.sh.orig	Sun Sep 27 19:39:33 2015
++++ autogen.sh	Sun Sep 27 19:40:12 2015
+@@ -73,7 +73,7 @@ fi
+ run aclocal -I build/m4/shamrock -I build/m4/shave $ACLOCAL_FLAGS
+ 
+ if test -z "$NO_LIBTOOLIZE"; then
+-  ${LIBTOOL}ize --force --copy
++  libtoolize --force --copy
+ fi
+ 
+ run autoconf
