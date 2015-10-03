@@ -1,0 +1,9 @@
+$OpenBSD: patch-mono_mini_test_op_il_seq_point_sh,v 1.1 2015/10/03 11:53:44 robert Exp $
+--- mono/mini/test_op_il_seq_point.sh.orig	Sat Sep 26 20:00:14 2015
++++ mono/mini/test_op_il_seq_point.sh	Sat Sep 26 20:00:21 2015
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ 
+ TEST_FILE=$1
+ USE_AOT=$2

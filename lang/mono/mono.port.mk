@@ -1,4 +1,4 @@
-# $OpenBSD: mono.port.mk,v 1.22 2013/07/02 08:36:16 espie Exp $
+# $OpenBSD: mono.port.mk,v 1.23 2015/10/03 11:53:44 robert Exp $
 
 # XXX list in infrastructure/mk/arch-defines.mk
 # XXX arm powerpc (no support for sigcontext)
@@ -13,6 +13,7 @@ MODMONO_BUILD_DEPENDS=	lang/mono
 MODMONO_RUN_DEPENDS=	lang/mono
 
 MODMONO_DEPS?=		Yes
+MODMONO_GMCS_COMPAT?=	No
 
 .if ${MODMONO_DEPS:L} != "no"
 BUILD_DEPENDS+=		${MODMONO_BUILD_DEPENDS}
@@ -20,7 +21,7 @@ RUN_DEPENDS+=		${MODMONO_RUN_DEPENDS}
 .endif
 
 # A list of files where we have to remove the stupid hardcoded .[0-9] major
-# version from library names. 
+# version from library names.
 DLLMAP_FILES?=
 
 .if defined(MODMONO_NANT) && ${MODMONO_NANT:L} == "yes"
@@ -43,6 +44,11 @@ do-install:
 	@${MODMONO_INSTALL_TARGET}
 .  endif
 
+.endif
+
+.if ${MODMONO_GMCS_COMPAT:L} != "no"
+pre-extract:
+	@ln -fs ${LOCALBASE}/bin/mcs ${WRKDIR}/bin/gmcs
 .endif
 
 post-configure:

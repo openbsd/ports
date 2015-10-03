@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.91 2015/08/12 06:13:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2015/10/03 11:53:44 robert Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
-DISTNAME=	mono-3.12.1
+V=		4.0.4
+DISTNAME=	mono-${V}.1
 
 CATEGORIES=	lang devel
 
@@ -54,6 +55,8 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV+=	CFLAGS="-march=i586"
 .endif
+
+WRKDIST=	${WRKDIR}/mono-${V}
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-gc=included \

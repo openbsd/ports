@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_profiler_Makefile_in,v 1.8 2015/01/17 12:24:25 robert Exp $
---- mono/profiler/Makefile.in.orig	Mon Jan 12 18:16:06 2015
-+++ mono/profiler/Makefile.in	Sat Jan 17 12:34:45 2015
-@@ -477,13 +477,13 @@ AM_CPPFLAGS = \
+$OpenBSD: patch-mono_profiler_Makefile_in,v 1.9 2015/10/03 11:53:44 robert Exp $
+--- mono/profiler/Makefile.in.orig	Wed Aug 26 00:09:26 2015
++++ mono/profiler/Makefile.in	Sat Sep 26 19:08:02 2015
+@@ -492,18 +492,18 @@ AM_CPPFLAGS = \
  @DISABLE_EXECUTABLES_FALSE@@SHARED_MONO_FALSE@@SUPPORT_BOEHM_TRUE@	$(LIBGC_STATIC_LIBS)
  
  libmono_profiler_cov_la_SOURCES = mono-cov.c
@@ -16,5 +16,12 @@ $OpenBSD: patch-mono_profiler_Makefile_in,v 1.8 2015/01/17 12:24:25 robert Exp $
 -libmono_profiler_iomap_la_LIBADD = $(LIBMONO) $(GLIB_LIBS) $(LIBICONV)
 +libmono_profiler_iomap_la_LIBADD = $(LIBMONO) $(LIBICONV)
  libmono_profiler_log_la_SOURCES = proflog.c
- libmono_profiler_log_la_LIBADD = $(LIBMONO) $(Z_LIBS) $(am__append_1)
+-libmono_profiler_log_la_LIBADD = $(LIBMONO) $(GLIB_LIBS) $(Z_LIBS)
++libmono_profiler_log_la_LIBADD = $(LIBMONO) $(Z_LIBS)
+ @HAVE_VTUNE_TRUE@libmono_profiler_vtune_la_SOURCES = mono-profiler-vtune.c
+ @HAVE_VTUNE_TRUE@libmono_profiler_vtune_la_CFLAGS = $(VTUNE_CFLAGS)
+-@HAVE_VTUNE_TRUE@libmono_profiler_vtune_la_LIBADD = $(VTUNE_LIBS) $(LIBMONO) $(GLIB_LIBS) $(LIBICONV)
++@HAVE_VTUNE_TRUE@libmono_profiler_vtune_la_LIBADD = $(VTUNE_LIBS) $(LIBMONO) $(LIBICONV)
  mprof_report_SOURCES = decode.c
+ mprof_report_LDADD = $(Z_LIBS)
+ PLOG_TESTS_SRC = test-alloc.cs test-busy.cs test-monitor.cs test-excleave.cs \

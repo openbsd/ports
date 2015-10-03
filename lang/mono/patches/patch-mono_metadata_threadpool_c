@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_metadata_threadpool_c,v 1.4 2015/01/17 12:24:25 robert Exp $
---- mono/metadata/threadpool.c.orig	Wed Dec  3 12:25:48 2014
-+++ mono/metadata/threadpool.c	Sat Jan 17 12:34:41 2015
-@@ -1672,11 +1672,7 @@ async_invoke_thread (gpointer data)
+$OpenBSD: patch-mono_metadata_threadpool_c,v 1.5 2015/10/03 11:53:44 robert Exp $
+--- mono/metadata/threadpool.c.orig	Wed Aug 26 00:09:13 2015
++++ mono/metadata/threadpool.c	Sat Sep 26 19:00:06 2015
+@@ -1667,11 +1667,7 @@ async_invoke_thread (gpointer data)
  
  			mono_gc_set_skip_thread (TRUE);
  
