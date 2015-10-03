@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/07/18 22:29:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2015/10/03 12:39:09 robert Exp $
 
 SHARED_ONLY=		Yes
 
@@ -33,6 +33,8 @@ WANTLIB += xcb-render xcb-shm xml2 xslt z
 MODULES=		devel/gettext \
 			lang/mono \
 			x11/gnome
+
+MODMONO_GMCS_COMPAT=	Yes
 
 COMMON_DEPENDS=		audio/mono-taglib \
 			devel/dbus-sharp-glib \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/28 10:17:28 pascal Exp $
+# $OpenBSD: Makefile,v 1.11 2015/10/03 12:39:09 robert Exp $
 
 CATEGORIES =	devel
 COMMENT =	KDE bindings for .NET
@@ -37,6 +37,7 @@ WANTLIB += mono-2.0 soprano sopranoclient sopranoserver sopranoindex
 
 MODULES =		lang/mono
 MODKDE4_USE =		libs
+MODMONO_GMCS_COMPAT =	Yes
 
 BUILD_DEPENDS =		misc/shared-desktop-ontologies \
 			productivity/akonadi>=${MIN_AKONADI_VERSION} \
