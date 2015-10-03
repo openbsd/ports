@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.21 2015/04/02 19:22:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/10/03 14:48:09 jasper Exp $
 @bin bin/peas-demo
 include/libpeas-1.0/
 include/libpeas-1.0/libpeas/
 include/libpeas-1.0/libpeas-gtk/
+include/libpeas-1.0/libpeas-gtk/peas-gtk-autocleanups.h
 include/libpeas-1.0/libpeas-gtk/peas-gtk-configurable.h
 include/libpeas-1.0/libpeas-gtk/peas-gtk-plugin-manager-view.h
 include/libpeas-1.0/libpeas-gtk/peas-gtk-plugin-manager.h
 include/libpeas-1.0/libpeas-gtk/peas-gtk.h
 include/libpeas-1.0/libpeas/peas-activatable.h
+include/libpeas-1.0/libpeas/peas-autocleanups.h
 include/libpeas-1.0/libpeas/peas-engine.h
 include/libpeas-1.0/libpeas/peas-extension-base.h
 include/libpeas-1.0/libpeas/peas-extension-set.h
@@ -67,7 +69,6 @@ share/gtk-doc/html/libpeas/ch02.html
 share/gtk-doc/html/libpeas/ch03.html
 share/gtk-doc/html/libpeas/home.png
 share/gtk-doc/html/libpeas/index.html
-share/gtk-doc/html/libpeas/index.sgml
 share/gtk-doc/html/libpeas/left-insensitive.png
 share/gtk-doc/html/libpeas/left.png
 share/gtk-doc/html/libpeas/libpeas-PeasExtension.html
@@ -112,6 +113,7 @@ share/locale/he/LC_MESSAGES/libpeas.mo
 share/locale/hi/LC_MESSAGES/libpeas.mo
 share/locale/hu/LC_MESSAGES/libpeas.mo
 share/locale/id/LC_MESSAGES/libpeas.mo
+share/locale/is/LC_MESSAGES/libpeas.mo
 share/locale/it/LC_MESSAGES/libpeas.mo
 share/locale/ja/LC_MESSAGES/libpeas.mo
 share/locale/kk/LC_MESSAGES/libpeas.mo
@@ -125,6 +127,7 @@ share/locale/nb/LC_MESSAGES/libpeas.mo
 share/locale/nds/LC_MESSAGES/libpeas.mo
 share/locale/ne/LC_MESSAGES/libpeas.mo
 share/locale/nl/LC_MESSAGES/libpeas.mo
+share/locale/oc/LC_MESSAGES/libpeas.mo
 share/locale/or/LC_MESSAGES/libpeas.mo
 share/locale/pa/LC_MESSAGES/libpeas.mo
 share/locale/pl/LC_MESSAGES/libpeas.mo
