@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2015/06/15 07:16:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2015/10/03 00:05:54 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -7,6 +7,7 @@
      SUBDIR += avinfo
      SUBDIR += ccextractor
      SUBDIR += coherence
+     SUBDIR += daala
      SUBDIR += devede
      SUBDIR += dvdauthor
      SUBDIR += dvdbackup
