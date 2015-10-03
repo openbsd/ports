@@ -1,6 +1,6 @@
-$OpenBSD: patch-Mono_Addins_Gui_Mono_Addins_Gui_csproj,v 1.1 2014/07/09 13:46:35 robert Exp $
---- Mono.Addins.Gui/Mono.Addins.Gui.csproj.orig	Tue Jul  8 18:39:01 2014
-+++ Mono.Addins.Gui/Mono.Addins.Gui.csproj	Tue Jul  8 18:39:10 2014
+$OpenBSD: patch-Mono_Addins_Gui_Mono_Addins_Gui_csproj,v 1.2 2015/10/03 11:56:05 robert Exp $
+--- Mono.Addins.Gui/Mono.Addins.Gui.csproj.orig	Sat Oct  3 13:26:57 2015
++++ Mono.Addins.Gui/Mono.Addins.Gui.csproj	Sat Oct  3 13:27:09 2015
 @@ -52,7 +52,7 @@
      </Reference>
      <Reference Include="System" />
@@ -10,10 +10,10 @@ $OpenBSD: patch-Mono_Addins_Gui_Mono_Addins_Gui_csproj,v 1.1 2014/07/09 13:46:35
      <Reference Include="System.Core" />
    </ItemGroup>
    <ItemGroup>
-@@ -181,4 +181,4 @@
-       </Properties>
-     </MonoDevelop>
-   </ProjectExtensions>
+@@ -166,4 +166,4 @@
+     <None Include="ChangeLog" />
+   </ItemGroup>
+   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 -</Project>
 \ No newline at end of file
 +</Project>

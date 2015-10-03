@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2015/04/05 13:31:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/10/03 11:56:05 robert Exp $
 
 COMMENT=	framework for creating extensible applications
 
-DISTNAME=	mono-addins-1.1
+DISTNAME=	mono-addins-1.2
 CATEGORIES=	devel lang
 
-HOMEPAGE=	http://monoaddins.codeplex.com/
+HOMEPAGE=	http://www.mono-project.com/Mono.Addins
 
 GH_ACCOUNT=	mono
 GH_PROJECT=	mono-addins
