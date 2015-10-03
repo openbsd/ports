@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_iconutils_cpp,v 1.1 2014/10/29 08:18:23 dcoppa Exp $
+$OpenBSD: patch-src_iconutils_cpp,v 1.2 2015/10/03 20:28:43 dcoppa Exp $
 
 Use the Adwaita icon theme unconditionally: fixes a problem with
 minitube GUI not having icons when executed outside of a Desktop
@@ -6,10 +6,10 @@ Environment
 
 Do not use symbolic icons
 
---- src/iconutils.cpp.orig	Thu Oct 23 12:47:15 2014
-+++ src/iconutils.cpp	Sat Oct 25 19:55:31 2014
-@@ -21,12 +21,8 @@ $END_LICENSE */
- #include "iconutils.h"
+--- src/iconutils.cpp.orig	Fri Oct  2 09:06:23 2015
++++ src/iconutils.cpp	Fri Oct  2 09:16:24 2015
+@@ -22,12 +22,8 @@ $END_LICENSE */
+ #include <QAction>
  
  QIcon IconUtils::fromTheme(const QString &name) {
 -    const QLatin1String symbolic("-symbolic");

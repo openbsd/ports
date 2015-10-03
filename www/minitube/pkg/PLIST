@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2015/05/21 05:52:10 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/10/03 20:28:43 dcoppa Exp $
 @bin bin/minitube
 share/applications/minitube.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
@@ -39,6 +39,7 @@ share/minitube/locale/ia.qm
 share/minitube/locale/id.qm
 share/minitube/locale/it.qm
 share/minitube/locale/ja_JP.qm
+share/minitube/locale/ko_KR.qm
 share/minitube/locale/ky.qm
 share/minitube/locale/ms_MY.qm
 share/minitube/locale/nb.qm
@@ -54,6 +55,7 @@ share/minitube/locale/sk.qm
 share/minitube/locale/sl.qm
 share/minitube/locale/sq.qm
 share/minitube/locale/sv_SE.qm
+share/minitube/locale/th.qm
 share/minitube/locale/tr.qm
 share/minitube/locale/uk.qm
 share/minitube/locale/uk_UA.qm

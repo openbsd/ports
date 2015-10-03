@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_mainwindow_cpp,v 1.4 2015/05/21 05:52:10 dcoppa Exp $
+$OpenBSD: patch-src_mainwindow_cpp,v 1.5 2015/10/03 20:28:43 dcoppa Exp $
 
 Do not use symbolic icons
 
---- src/mainwindow.cpp.orig	Wed Apr  8 11:38:01 2015
-+++ src/mainwindow.cpp	Mon May 11 20:49:56 2015
-@@ -567,7 +567,7 @@ void MainWindow::createActions() {
+--- src/mainwindow.cpp.orig	Thu Sep 17 16:14:00 2015
++++ src/mainwindow.cpp	Fri Oct  2 09:16:24 2015
+@@ -600,7 +600,7 @@ void MainWindow::createActions() {
      action = new QAction(tr("More..."), this);
      actions->insert("more-region", action);
  
