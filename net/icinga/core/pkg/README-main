@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.28 2015/07/07 14:44:59 sthen Exp $
+$OpenBSD: README-main,v 1.29 2015/10/04 16:59:25 kirby Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -161,12 +161,12 @@ icinga-cgi" or "pkg_add icinga-web").
 
    Afterwards, you can start it by rebooting, or manually:
 
-      # rcctl ido2db start
+      # rcctl start ido2db
 
    2.3) Enable the "broker_module=${TRUEPREFIX}/lib/idomod.so ..." line in
    ${SYSCONFDIR}/icinga.cfg and restart icinga:
 
-      # rcctl icinga restart
+      # rcctl restart icinga
 
    Now you should see in the icinga logfile, that icinga is storing
    information in the db.
