@@ -1,8 +1,8 @@
-$OpenBSD: patch-watchdog_wd_lifecheck_c,v 1.1 2012/09/24 19:39:59 pea Exp $
---- watchdog/wd_lifecheck.c.orig	Sun Sep 16 12:23:44 2012
-+++ watchdog/wd_lifecheck.c	Sun Sep 16 12:23:52 2012
-@@ -30,6 +30,7 @@
- #include <signal.h>
+$OpenBSD: patch-watchdog_wd_lifecheck_c,v 1.2 2015/10/04 20:22:21 benno Exp $
+--- watchdog/wd_lifecheck.c.orig	Wed Apr  8 09:59:48 2015
++++ watchdog/wd_lifecheck.c	Sun Jul  5 17:23:53 2015
+@@ -29,6 +29,7 @@
+ #include <stdlib.h>
  #include <unistd.h>
  #include <netdb.h>
 +#include <stdint.h>

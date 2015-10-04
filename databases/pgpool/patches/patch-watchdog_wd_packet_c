@@ -1,16 +1,11 @@
-$OpenBSD: patch-watchdog_wd_packet_c,v 1.1 2012/09/24 19:39:59 pea Exp $
---- watchdog/wd_packet.c.orig	Sun Sep 16 12:24:07 2012
-+++ watchdog/wd_packet.c	Sun Sep 16 12:24:23 2012
-@@ -34,10 +34,12 @@
- #include <sys/types.h>
- #include <sys/socket.h>
- #include <netinet/tcp.h>
-+#include <netinet/in.h>
- #include <netdb.h>
+$OpenBSD: patch-watchdog_wd_packet_c,v 1.2 2015/10/04 20:22:21 benno Exp $
+--- watchdog/wd_packet.c.orig	Wed Apr  8 09:59:48 2015
++++ watchdog/wd_packet.c	Sun Jul  5 17:29:19 2015
+@@ -39,6 +39,7 @@
  #include <arpa/inet.h>
  #include <unistd.h>
  #include <fcntl.h>
 +#include <stdint.h>
+ #include <sys/wait.h>
  
  #include "pool.h"
- #include "pool_config.h"

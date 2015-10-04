@@ -1,11 +1,11 @@
-$OpenBSD: patch-watchdog_wd_ping_c,v 1.1 2012/09/24 19:39:59 pea Exp $
---- watchdog/wd_ping.c.orig	Sun Sep 16 12:24:32 2012
-+++ watchdog/wd_ping.c	Sun Sep 16 12:24:44 2012
-@@ -31,6 +31,7 @@
- #include <sys/wait.h>
- #include <sys/stat.h>
+$OpenBSD: patch-watchdog_wd_ping_c,v 1.2 2015/10/04 20:22:21 benno Exp $
+--- watchdog/wd_ping.c.orig	Wed Apr  8 09:59:48 2015
++++ watchdog/wd_ping.c	Sun Jul  5 17:27:43 2015
+@@ -24,6 +24,7 @@
+ #include <pthread.h>
+ #include <stdio.h>
  #include <errno.h>
 +#include <stdint.h>
- #include "pool.h"
- #include "pool_config.h"
- #include "watchdog.h"
+ #include <string.h>
+ #include <stdlib.h>
+ #include <unistd.h>
