@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/05/19 15:41:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/10/04 12:59:15 pascal Exp $
 @conflict idiff-*
 @bin bin/iconvert
 @bin bin/idiff
@@ -8,7 +8,9 @@
 @bin bin/maketx
 @bin bin/oiiotool
 include/OpenImageIO/
+include/OpenImageIO/SHA1.h
 include/OpenImageIO/argparse.h
+include/OpenImageIO/array_view.h
 include/OpenImageIO/color.h
 include/OpenImageIO/dassert.h
 include/OpenImageIO/errorhandler.h
@@ -17,20 +19,27 @@ include/OpenImageIO/filesystem.h
 include/OpenImageIO/filter.h
 include/OpenImageIO/fmath.h
 include/OpenImageIO/hash.h
+include/OpenImageIO/image_view.h
 include/OpenImageIO/imagebuf.h
 include/OpenImageIO/imagebufalgo.h
 include/OpenImageIO/imagebufalgo_util.h
 include/OpenImageIO/imagecache.h
 include/OpenImageIO/imageio.h
+include/OpenImageIO/missing_math.h
+include/OpenImageIO/oiioversion.h
 include/OpenImageIO/optparser.h
 include/OpenImageIO/osdep.h
 include/OpenImageIO/paramlist.h
+include/OpenImageIO/platform.h
 include/OpenImageIO/plugin.h
 include/OpenImageIO/pugiconfig.hpp
 include/OpenImageIO/pugixml.cpp
 include/OpenImageIO/pugixml.hpp
 include/OpenImageIO/refcnt.h
+include/OpenImageIO/simd.h
+include/OpenImageIO/strided_ptr.h
 include/OpenImageIO/string_ref.h
+include/OpenImageIO/string_view.h
 include/OpenImageIO/strutil.h
 include/OpenImageIO/sysutil.h
 include/OpenImageIO/texture.h
@@ -38,11 +47,14 @@ include/OpenImageIO/thread.h
 include/OpenImageIO/timer.h
 include/OpenImageIO/tinyformat.h
 include/OpenImageIO/typedesc.h
+include/OpenImageIO/unittest.h
+include/OpenImageIO/unordered_map_concurrent.h
 include/OpenImageIO/ustring.h
 include/OpenImageIO/varyingref.h
 include/OpenImageIO/version.h
 @lib lib/libOpenImageIO.so.${LIBOpenImageIO_VERSION}
-lib/python${MODPY_VERSION}/site-packages/OpenImageIO.so.${LIBOpenImageIO_VERSION}
+@lib lib/libOpenImageIO_Util.so.${LIBOpenImageIO_Util_VERSION}
+lib/python${MODPY_VERSION}/site-packages/OpenImageIO.so.3.0
 @man man/man1/iconvert.1
 @man man/man1/idiff.1
 @man man/man1/igrep.1
@@ -50,7 +62,7 @@ lib/python${MODPY_VERSION}/site-packages/OpenImageIO.so.${LIBOpenImageIO_VERSION
 @man man/man1/iv.1
 @man man/man1/maketx.1
 @man man/man1/oiiotool.1
-share/doc/openimageio/
-share/doc/openimageio/CHANGES
-share/doc/openimageio/LICENSE
-share/doc/openimageio/openimageio.pdf
+share/doc/OpenImageIO/
+share/doc/OpenImageIO/CHANGES
+share/doc/OpenImageIO/LICENSE
+share/doc/OpenImageIO/openimageio.pdf

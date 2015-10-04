@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_libtexture_texture_pvt_h,v 1.1.1.1 2012/05/09 12:42:06 pascal Exp $
---- src/libtexture/texture_pvt.h.orig	Mon Apr  2 00:54:48 2012
-+++ src/libtexture/texture_pvt.h	Mon Apr  2 00:54:00 2012
-@@ -38,6 +38,8 @@
- 
- #include "version.h"
+$OpenBSD: patch-src_libtexture_texture_pvt_h,v 1.2 2015/10/04 12:59:15 pascal Exp $
+--- src/libtexture/texture_pvt.h.orig	Mon Sep 28 20:00:17 2015
++++ src/libtexture/texture_pvt.h	Mon Sep 28 22:21:50 2015
+@@ -32,6 +32,8 @@
+ /// \file
+ /// Non-public classes used internally by TextureSystemImpl.
  
 +#undef _P
 +
  
- OIIO_NAMESPACE_ENTER
- {
+ #ifndef OPENIMAGEIO_TEXTURE_PVT_H
+ #define OPENIMAGEIO_TEXTURE_PVT_H
