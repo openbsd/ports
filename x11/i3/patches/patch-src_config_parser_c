@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_config_parser_c,v 1.6 2015/03/30 12:33:46 dcoppa Exp $
---- src/config_parser.c.orig	Sun Mar 29 19:07:08 2015
-+++ src/config_parser.c	Mon Mar 30 14:13:25 2015
-@@ -1002,8 +1002,8 @@ bool parse_file(const char *f, bool use_nagbar) {
+$OpenBSD: patch-src_config_parser_c,v 1.7 2015/10/04 08:48:12 dcoppa Exp $
+--- src/config_parser.c.orig	Wed Sep 30 08:55:10 2015
++++ src/config_parser.c	Fri Oct  2 16:58:54 2015
+@@ -1007,8 +1007,8 @@ bool parse_file(const char *f, bool use_nagbar) {
  
          char *editaction,
              *pageraction;

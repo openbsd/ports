@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_log_c,v 1.9 2014/07/11 15:49:58 dcoppa Exp $
+$OpenBSD: patch-src_log_c,v 1.10 2015/10/04 08:48:12 dcoppa Exp $
 
 OpenBSD lacks pthread_condattr_setpshared()
 
---- src/log.c.orig	Sun Jun 15 19:12:43 2014 
-+++ src/log.c		Wed Jul  2 19:43:03 2014 
+--- src/log.c.orig	Wed Sep 30 08:55:10 2015
++++ src/log.c	Fri Oct  2 16:58:54 2015
 @@ -20,7 +20,9 @@
  #include <sys/mman.h>
  #include <sys/stat.h>
@@ -28,7 +28,7 @@ OpenBSD lacks pthread_condattr_setpshared()
  
      logwalk = logbuffer + sizeof(i3_shmlog_header);
      loglastwrap = logbuffer + logbuffer_size;
-@@ -264,8 +268,10 @@ static void vlog(const bool print, const char *fmt, va
+@@ -273,8 +277,10 @@ static void vlog(const bool print, const char *fmt, va
  
          store_log_markers();
  
