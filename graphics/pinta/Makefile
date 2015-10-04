@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2015/10/03 20:15:26 sthen Exp $
-
-BROKEN =	build error 'error CS0234: The type or namespace name Unix does not exist[...]'
+# $OpenBSD: Makefile,v 1.8 2015/10/04 13:04:02 robert Exp $
 
 V =		1.6
 COMMENT =	open source drawing/editing program modeled after Paint.NET
 DISTNAME =	pinta-${V}
 CATEGORIES =	graphics x11
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://pinta-project.com/
 
@@ -33,5 +31,14 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GMAKE =	Yes
+
+pre-configure:
+	@find ${WRKSRC} -name "*.sln" -exec \
+		sed -i 's/Format Version 10.00/Format Version 11.00/g' {} \;
+	@find ${WRKSRC} \( -name "*.csproj" -o -name "*.proj" \) -exec \
+		sed -i 's#ToolsVersion="3.5"#ToolsVersion="4.0"#g; \
+			s#<TargetFrameworkVersion>.*</TargetFrameworkVersion>##g; \
+			s#<PropertyGroup>#<PropertyGroup><TargetFrameworkVersion>v4.5</TargetFrameworkVersion>#g; \
+			s#Mono.Posix, Version.*"#Mono.Posix"#g' {} \;
 
 .include <bsd.port.mk>
