@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/08/24 12:37:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/10/05 19:46:22 jca Exp $
 
 COMMENT =		open-source RSS/Atom feed reader for text terminals
 DISTNAME =		newsbeuter-2.7
+REVISION =		0
 CATEGORIES =		www
 
 HOMEPAGE =		http://newsbeuter.org/
