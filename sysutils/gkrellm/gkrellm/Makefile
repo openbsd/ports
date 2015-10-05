@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2014/10/13 19:21:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2015/10/05 16:29:02 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ V=		2.3.5
 DISTNAME=	gkrellm-${V}
 PKGNAME-main=	gkrellm-server-${V}
 PKGNAME-client=	gkrellm-${V}
-REVISION-main=	7
+REVISION-main=	8
 REVISION-client=4
 CATEGORIES=	sysutils
 

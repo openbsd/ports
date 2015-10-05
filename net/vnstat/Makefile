@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.26 2015/08/25 07:30:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2015/10/05 16:29:02 sthen Exp $
 
 COMMENT-main =		network traffic monitor
 COMMENT-vnstati =	image output support for vnstat
 
-V = 		1.14
-DISTNAME =	vnstat-${V}
-PKGNAME-main = 	${DISTNAME}
-PKGNAME-vnstati = 	vnstati-${V}
-REVISION-main = 	3
+V = 			1.14
+REVISION-main = 	4
 REVISION-vnstati = 	1
+DISTNAME =		vnstat-${V}
+PKGNAME-main = 		${DISTNAME}
+PKGNAME-vnstati = 	vnstati-${V}
 
 CATEGORIES =	net sysutils
 

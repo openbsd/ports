@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2015/02/16 22:57:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.58 2015/10/05 16:29:02 sthen Exp $
 
 COMMENT=	small and fast window manager
 
 DISTNAME=	icewm-1.3.8
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.icewm.org/

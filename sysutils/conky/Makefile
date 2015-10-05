@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2015/09/11 14:50:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2015/10/05 16:29:01 sthen Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT=	light-weight system monitor
 DISTNAME=	conky-1.9.0
 CATEGORIES=	sysutils
 HOMEPAGE=	http://conky.sourceforge.net/
-REVISION=	6
+REVISION=	7
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=conky/}
 
