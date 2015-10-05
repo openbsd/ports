@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.4 2015/07/31 11:48:22 sebastia Exp $
+# $OpenBSD: README,v 1.5 2015/10/05 11:20:57 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -34,7 +34,7 @@ by running:
 
 A sample configuration is installed as example
 # cp ${TRUEPREFIX}/share/examples/opengroupware/opengroupware.conf ${VARBASE}/www/conf/modules
-# rcctl restart httpd
+# rcctl restart apache
 
 OpenGroupware configuration example
 ===================================
