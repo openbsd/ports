@@ -1,22 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/11/22 10:44:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/10/05 06:00:24 ajacoutot Exp $
 lib/nautilus/extensions-3.0/libnautilus-share-extension.so
 @bin libexec/gnome-user-share-webdav
 share/GConf/gsettings/gnome-user-share.convert
 share/applications/gnome-user-share-webdav.desktop
-share/examples/gnome-user-share/
-share/examples/gnome-user-share/xdg/
-share/examples/gnome-user-share/xdg/autostart/
-share/examples/gnome-user-share/xdg/autostart/gnome-user-share-obexpush.desktop
 share/glib-2.0/schemas/org.gnome.desktop.file-sharing.gschema.xml
 share/gnome-user-share/
 share/gnome-user-share/dav_groupfile
 share/gnome-user-share/dav_user_2.0.conf
 share/gnome-user-share/dav_user_2.2.conf
 share/gnome-user-share/dav_user_2.4.conf
-share/icons/hicolor/16x16/apps/gnome-obex-server.png
-share/icons/hicolor/22x22/apps/gnome-obex-server.png
-share/icons/hicolor/32x32/apps/gnome-obex-server.png
-share/icons/hicolor/48x48/apps/gnome-obex-server.png
 share/locale/af/LC_MESSAGES/gnome-user-share.mo
 share/locale/an/LC_MESSAGES/gnome-user-share.mo
 share/locale/ar/LC_MESSAGES/gnome-user-share.mo
@@ -27,6 +19,7 @@ share/locale/bg/LC_MESSAGES/gnome-user-share.mo
 share/locale/bn/LC_MESSAGES/gnome-user-share.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-user-share.mo
 share/locale/br/LC_MESSAGES/gnome-user-share.mo
+share/locale/bs/LC_MESSAGES/gnome-user-share.mo
 share/locale/ca/LC_MESSAGES/gnome-user-share.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-user-share.mo
 share/locale/cs/LC_MESSAGES/gnome-user-share.mo
@@ -53,6 +46,7 @@ share/locale/he/LC_MESSAGES/gnome-user-share.mo
 share/locale/hi/LC_MESSAGES/gnome-user-share.mo
 share/locale/hu/LC_MESSAGES/gnome-user-share.mo
 share/locale/id/LC_MESSAGES/gnome-user-share.mo
+share/locale/is/LC_MESSAGES/gnome-user-share.mo
 share/locale/it/LC_MESSAGES/gnome-user-share.mo
 share/locale/ja/LC_MESSAGES/gnome-user-share.mo
 share/locale/kk/LC_MESSAGES/gnome-user-share.mo
