@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/09/03 17:44:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2015/10/05 08:46:21 dcoppa Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=-DENABLE_ASPELL=no \
 		-DMODTCL_LIB=${MODTCL_LIB}
 
 pre-configure:
-	rm ${WRKSRC}/cmake/FindLua.cmake \
+	rm -f ${WRKSRC}/cmake/FindLua.cmake \
 		${WRKSRC}/cmake/FindRuby.cmake \
 		${WRKSRC}/cmake/FindTCL.cmake
 
