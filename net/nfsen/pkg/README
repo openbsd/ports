@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2015/07/07 14:44:58 sthen Exp $
+$OpenBSD: README,v 1.4 2015/10/05 12:59:12 kirby Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -43,7 +43,7 @@ the database directory.
 # su -m _nfcapd -c "nftrack -I -d /var/db/nfsen/ports-db/"
 
 - restart nfsen
-# rcctl nfsen restart
+# rcctl restart nfsen
 
 After the next processing interval, PortTracker should generate
 data and graphs. If you have problems then examine system logs (you
