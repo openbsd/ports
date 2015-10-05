@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.37 2015/05/11 17:51:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2015/10/05 05:59:40 ajacoutot Exp $
+%%SHARED%%
 bin/gnome-help
 @bin bin/yelp
 include/libyelp/
 include/libyelp/yelp-bookmarks.h
+include/libyelp/yelp-common-types.h
 include/libyelp/yelp-docbook-document.h
 include/libyelp/yelp-document.h
 include/libyelp/yelp-help-list.h
@@ -16,11 +18,14 @@ include/libyelp/yelp-sqlite-storage.h
 include/libyelp/yelp-storage.h
 include/libyelp/yelp-transform.h
 include/libyelp/yelp-types.h
+include/libyelp/yelp-uri-builder.h
 include/libyelp/yelp-uri.h
 include/libyelp/yelp-view.h
 lib/libyelp.a
 lib/libyelp.la
 @lib lib/libyelp.so.${LIByelp_VERSION}
+lib/yelp/
+lib/yelp/web-extensions/
 share/applications/yelp.desktop
 share/glib-2.0/schemas/org.gnome.yelp.gschema.xml
 share/gtk-doc/html/libyelp/
