@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/11 05:51:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/10/05 06:02:16 ajacoutot Exp $
 
 COMMENT =		suite of solitaire card games
 
 GNOME_PROJECT =		aisleriot
-GNOME_VERSION =		3.16.2
+GNOME_VERSION =		3.18.0
 
 CATEGORIES =		games
 
