@@ -34,6 +34,7 @@ AUTOMAKE_VERSION=	1.15
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/gettext \
+			devel/libtool \
 			misc/findutils \
 			shells/bash
 
