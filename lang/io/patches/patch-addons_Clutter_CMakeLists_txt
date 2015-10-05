@@ -1,4 +1,4 @@
-$OpenBSD: patch-addons_Clutter_CMakeLists_txt,v 1.1.1.1 2012/12/17 23:55:28 jeremy Exp $
+$OpenBSD: patch-addons_Clutter_CMakeLists_txt,v 1.2 2015/10/05 08:48:05 dcoppa Exp $
 
 The clutter addon appears to require some manual hacking
 to add include and library paths.
@@ -21,7 +21,7 @@ to add include and library paths.
          ${Pango_1_0_LIBRARIES}
 -        ${CAIRO_LIBRARIES})
 +        ${CAIRO_LIBRARIES}
-+        -L/usr/X11R6/lib)
++        -L${X11BASE}/lib)
  
  	# Install the addon to our global addons hierarchy.
  	install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} DESTINATION lib/io/addons)
