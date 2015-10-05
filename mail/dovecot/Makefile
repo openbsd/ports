@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.231 2015/06/15 08:50:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.232 2015/10/05 10:20:29 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-mysql=	MySQL authentication / dictionary support for Dovecot
 COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
 V_MAJOR=	2.2
-V_DOVECOT=	2.2.18
+V_DOVECOT=	2.2.19
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -17,7 +17,6 @@ PKGSPEC-server=	dovecot-=${V_DOVECOT}
 PKGNAME-ldap=	dovecot-ldap-${V_DOVECOT}
 PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
 PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
-REVISION-server=	0
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
 
