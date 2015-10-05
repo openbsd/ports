@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/05/24 10:32:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/10/05 06:08:39 ajacoutot Exp $
 include/dvbpsi/
 include/dvbpsi/atsc_eit.h
 include/dvbpsi/atsc_ett.h
@@ -24,8 +24,13 @@ include/dvbpsi/dr_0c.h
 include/dvbpsi/dr_0d.h
 include/dvbpsi/dr_0e.h
 include/dvbpsi/dr_0f.h
+include/dvbpsi/dr_10.h
+include/dvbpsi/dr_11.h
+include/dvbpsi/dr_12.h
 include/dvbpsi/dr_13.h
 include/dvbpsi/dr_14.h
+include/dvbpsi/dr_1b.h
+include/dvbpsi/dr_1c.h
 include/dvbpsi/dr_40.h
 include/dvbpsi/dr_41.h
 include/dvbpsi/dr_42.h
@@ -72,6 +77,8 @@ include/dvbpsi/rst.h
 include/dvbpsi/sdt.h
 include/dvbpsi/sis.h
 include/dvbpsi/tot.h
+include/dvbpsi/types/
+include/dvbpsi/types/aac_profile.h
 lib/libdvbpsi.a
 lib/libdvbpsi.la
 @lib lib/libdvbpsi.so.${LIBdvbpsi_VERSION}
