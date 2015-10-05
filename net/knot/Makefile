@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/29 21:01:55 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2015/10/05 19:20:20 jca Exp $
+
+PORTROACH =		limit:^1\.
+PORTROACH_COMMENT =	knot-2.x uses __thread and lmdb
 
 COMMENT =		authoritative DNS server
 
