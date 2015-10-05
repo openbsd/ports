@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2015/07/18 22:29:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2015/10/05 06:01:50 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
-GNOME_VERSION=	3.16.0
+GNOME_VERSION=	3.18.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,8 +29,7 @@ WANTLIB += secret-1 soup-2.4 sqlite3 ssl stdc++ tasn1 webkit2gtk-4.0
 WANTLIB += webp xcb xcb-dri2 xcb-glx xcb-render xcb-shape xcb-shm
 WANTLIB += xcb-xfixes xml2 xslt z
 
-MODULES=	devel/dconf \
-		devel/gettext \
+MODULES=	devel/gettext \
 		x11/gnome
 
 LIB_DEPENDS=	audio/libmusicbrainz5 \

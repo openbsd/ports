@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/05/13 16:54:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/10/05 06:01:50 ajacoutot Exp $
 bin/sushi
 lib/sushi/
 lib/sushi/girepository-1.0/
@@ -6,7 +6,6 @@ lib/sushi/girepository-1.0/Sushi-1.0.typelib
 lib/sushi/libsushi-1.0.so
 @bin libexec/sushi-start
 share/dbus-1/services/org.gnome.Sushi.service
-share/glib-2.0/schemas/org.gnome.sushi.gschema.xml
 share/locale/an/LC_MESSAGES/sushi.mo
 share/locale/ar/LC_MESSAGES/sushi.mo
 share/locale/as/LC_MESSAGES/sushi.mo
@@ -48,6 +47,7 @@ share/locale/ml/LC_MESSAGES/sushi.mo
 share/locale/mr/LC_MESSAGES/sushi.mo
 share/locale/nb/LC_MESSAGES/sushi.mo
 share/locale/nl/LC_MESSAGES/sushi.mo
+share/locale/oc/LC_MESSAGES/sushi.mo
 share/locale/or/LC_MESSAGES/sushi.mo
 share/locale/pa/LC_MESSAGES/sushi.mo
 share/locale/pl/LC_MESSAGES/sushi.mo
@@ -97,7 +97,3 @@ share/sushi/js/viewers/gst.js
 share/sushi/js/viewers/html.js
 share/sushi/js/viewers/image.js
 share/sushi/js/viewers/text.js
-share/sushi/style/
-share/sushi/style/gtk-style.css
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
