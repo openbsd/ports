@@ -1,22 +1,46 @@
-# $OpenBSD: Makefile,v 1.10 2015/04/19 17:52:47 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2015/10/05 16:50:14 sthen Exp $
 
-COMMENT=	command line implementation of the PAR v2.0 specification
-DISTNAME=	par2cmdline-0.4
-REVISION=	2
-CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=parchive/}
+COMMENT =	command line implementation of the PAR v2.0 specification
 
-HOMEPAGE=	http://parchive.sourceforge.net/\#client_par2cmdline
+V =		0.6.14
+DISTNAME =	par2cmdline-$V
+DISTFILES =	${DISTNAME}{v$V}.tar.gz
 
-# GPL
-PERMIT_PACKAGE_CDROM=	Yes
+CATEGORIES =	archivers
 
-WANTLIB=		c m stdc++
+HOMEPAGE =	https://github.com/BlackIkeEagle/par2cmdline/
 
-CONFIGURE_STYLE=gnu
+# GPLv2+
+PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB =	c m stdc++
+
+MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
+
+MASTER_SITES =	${HOMEPAGE}archive/
+
+BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
+
+CONFIGURE_STYLE =	gnu
+
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
+
+MAKE_ENV = 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
+
+post-patch:
+	cd ${WRKSRC}; \
+	    export AUTOCONF_VERSION=${AUTOCONF_VERSION}; \
+	    export AUTOMAKE_VERSION=${AUTOMAKE_VERSION}; \
+	    aclocal; automake --add-missing; autoconf
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/par2cmdline
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/par2cmdline
+
+pre-test:
+	sed -i -e 's,^tar -xf,tar -xzf,' ${WRKSRC}/tests/test*
 
 .include <bsd.port.mk>

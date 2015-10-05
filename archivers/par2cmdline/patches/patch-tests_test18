@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_test18,v 1.1 2015/10/05 16:50:14 sthen Exp $
+
+- Fix regress tests, head -c not working on OpenBSD
+
+--- tests/test18.orig	Sun Aug  2 17:09:46 2015
++++ tests/test18	Sun Oct  4 22:24:50 2015
+@@ -28,7 +28,7 @@ echo $banner
+ echo $dashes
+ 
+ mv flatdata.tar.gz flatdata.tar.gz-orig
+-head -c 1983 flatdata.tar.gz-orig > flatdata.tar.gz
++dd if=flatdata.tar.gz-orig bs=1983 count=1 status=none of=flatdata.tar.gz
+ rm -f flatdata.tar.gz-orig
+ 
+ ../../par2 r recovery.par2 ./* > ../$testname.log || { echo "ERROR: PAR 2.0 repair failed" ; exit 1; } >&2
