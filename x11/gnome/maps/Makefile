@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2015/09/24 10:39:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2015/10/05 06:00:48 ajacoutot Exp $
 
 COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
-GNOME_VERSION=		3.16.2
-REVISION=		0
+GNOME_VERSION=		3.18.0.1
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0
 
@@ -33,22 +32,9 @@ LIB_DEPENDS=		geo/geocode-glib \
 			geo/libchamplain \
 			net/telepathy/folks
 
-# loads JS from an included GResource
 BUILD_DEPENDS +=	geo/geoclue2 \
 			x11/gnome/gjs
 RUN_DEPENDS +=		geo/geoclue2 \
 			x11/gnome/gjs
-
-# patch-*
-AUTOCONF_VERSION=	2.68
-AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -fi
 
 .include <bsd.port.mk>
