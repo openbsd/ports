@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2015/07/07 14:44:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2015/10/05 12:58:44 kirby Exp $
 
 ONLY_FOR_ARCHS=	${LP64_ARCHS} # time_t format string issues
 
@@ -7,7 +7,7 @@ COMMENT-web=	cgis and webpages for nagios
 
 V=		4.0.8
 REVISION-web=	1
-REVISION-main=	1
+REVISION-main=	2
 DISTNAME=	nagios-$V
 PKGNAME-main=	nagios-$V
 PKGNAME-web=	nagios-web-$V

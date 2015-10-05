@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.7 2015/07/07 14:44:58 sthen Exp $
+$OpenBSD: README-main,v 1.8 2015/10/05 12:58:44 kirby Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -25,7 +25,7 @@ line in /etc/rc.conf.local.
 
 To start nagios, reboot or start it manually:
 
-   # rcctl nagios start
+   # rcctl start nagios
 
 
 Web User-Interface
