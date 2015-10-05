@@ -1,0 +1,24 @@
+$OpenBSD: patch-data_CMakeLists_txt,v 1.3 2015/10/05 08:48:51 dcoppa Exp $
+
+Fix conflicting target names
+
+--- data/CMakeLists.txt.orig	Mon Oct  5 10:25:29 2015
++++ data/CMakeLists.txt	Mon Oct  5 10:26:55 2015
+@@ -53,7 +53,7 @@ add_custom_command(
+ 		MAIN_DEPENDENCY ${CMAKE_CURRENT_SOURCE_DIR}/darktable.desktop.in
+ 		DEPENDS ${PO_FILES}
+ )
+-add_custom_target(darktable.desktop ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/darktable.desktop)
++add_custom_target(darktable_desktop_file ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/darktable.desktop)
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/darktable.desktop DESTINATION ./share/applications)
+ install(FILES darktable.appdata.xml DESTINATION ./share/appdata)
+ 
+@@ -116,7 +116,7 @@ else(NOT ${Xsltproc_BIN} STREQUAL "Xsltproc_BIN-NOTFOU
+   endif(NOT ${Saxon_BIN} STREQUAL "Saxon_BIN-NOTFOUND")
+ endif(NOT ${Xsltproc_BIN} STREQUAL "Xsltproc_BIN-NOTFOUND")
+ 
+-add_custom_target(darktablerc ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/darktablerc)
++add_custom_target(darktable_rc_file ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/darktablerc)
+ 
+ # first of all install darktablerc file into share as template
+ # postinst script should copy this into users homedirectory
