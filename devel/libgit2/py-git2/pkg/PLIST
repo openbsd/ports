@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/01/28 09:20:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/10/06 20:48:05 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/_pygit2.so
 lib/python${MODPY_VERSION}/site-packages/pygit2/
 lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -39,4 +39,4 @@ lib/python${MODPY_VERSION}/site-packages/pygit2/settings.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/settings.pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/utils.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/utils.pyc
-lib/python${MODPY_VERSION}/site-packages/pygit2_cffi_4091df83x5470904.so
+lib/python${MODPY_VERSION}/site-packages/pygit2_cffi_2c88a0e0x5470904.so
