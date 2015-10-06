@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.22 2015/03/21 21:28:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2015/10/06 13:32:56 gsoares Exp $
 
 COMMENT=	shell (clone of plan9 shell)
 
-DISTNAME=	rc-1.6
-REVISION=	1
+DISTNAME=	rc-1.7.4
 CATEGORIES=	plan9 shells
-MASTER_SITES=	http://www.star.le.ac.uk/~tjg/rc/release/ \
-		ftp://ftp.sys.toronto.edu/pub/rc/
-MASTER_SITES0=	http://www.star.le.ac.uk/~tjg/rc/misc/
+MASTER_SITES=	http://static.tobold.org/rc/
+MASTER_SITES0=	http://static.tobold.org/rc/
 SUPDISTFILES=	editline-1.5.tar.gz:0
 
-MAINTAINER=	Markus Friedl <markus@openbsd.org>
+HOMEPAGE=	http://tobold.org/article/rc
 
+MAINTAINER=	Michael Reed <m.reed@mykolab.com>
+
+# zlib license
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c
@@ -25,20 +26,15 @@ FLAVOR?=
 
 TEST_TARGET= trip
 
-.if defined(WITH_READLINE) && ${WITH_READLINE:U} == YES
-FLAVOR+=readline
-.elif defined(WITH_EDITLINE) && ${WITH_EDITLINE:U} == YES
-FLAVOR+=editline
-.endif
-
 .if ${FLAVOR} == "readline"
-CONFIGURE_ARGS+= --with-readline
+CONFIGURE_ARGS+= --with-edit=readline
 WANTLIB+=		readline termcap
 .elif ${FLAVOR} == "editline"
 DISTFILES=	${DISTNAME}.tar.gz editline-1.5.tar.gz:0
 EDITLINE=	${WRKSRC}/../editline
-CONFIGURE_ARGS+= --with-editline
-CONFIGURE_ENV=	LIBS="-L${EDITLINE}"
+CONFIGURE_ARGS+= --with-edit=edit
+CONFIGURE_ENV=	LIBS+="-L${EDITLINE}"
+WANTLIB += edit termcap
 .endif
 
 .if ${FLAVOR} == "editline"
