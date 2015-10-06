@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_plugins_thunderbird_chrome_content_bindings_js,v 1.1 2015/10/06 16:20:53 ajacoutot Exp $
+--- src/plugins/thunderbird/chrome/content/bindings.js.orig	Tue Oct  6 13:08:06 2015
++++ src/plugins/thunderbird/chrome/content/bindings.js	Tue Oct  6 13:08:29 2015
+@@ -2,8 +2,8 @@ if (!org.bustany.TrackerBird.TrackerSparql || !org.bus
+ org.bustany.TrackerBird.TrackerSparql = {
+ 	__initialized: true,
+ 
+-	_trackerSparqlPath1: "libtracker-sparql-1.0.so.0",
+-	_trackerSparqlPath2: "libtracker-sparql-0.16.so.0",
++	_trackerSparqlPath1: "libtracker-sparql-1.0.so",
++	_trackerSparqlPath2: "libtracker-sparql-0.16.so",
+ 	_lib: null,
+ 
+ 	init: function () {
