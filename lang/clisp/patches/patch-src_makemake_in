@@ -1,20 +1,34 @@
-$OpenBSD: patch-src_makemake_in,v 1.11 2010/09/23 13:42:22 joshe Exp $
+$OpenBSD: patch-src_makemake_in,v 1.12 2015/10/06 11:37:06 jca Exp $
 
 Override broken compiler test, attempting to build 32-bit clisp on a
 64-bit patform will not work out very well.
 
---- src/makemake.in.orig	Tue Jul 28 06:58:03 2009
-+++ src/makemake.in	Mon Sep 20 16:32:15 2010
-@@ -1108,6 +1108,8 @@ esac
- #   cpu=hppa ;;
+Use the correct recipe to build shared modules on OpenBSD.
+
+--- src/makemake.in.orig	Wed Jul  7 17:15:35 2010
++++ src/makemake.in	Tue Sep 29 00:28:57 2015
+@@ -1150,6 +1150,7 @@ esac
  # esac
  
+ test -z "$cpu" && cpu=${host_cpu}
 +test "$cpu" = "${host_cpu%*64}" && cpu=${host_cpu}
-+
- if [ "${verbose}" = true -o "${verbose}" = yes ]; then
+ 
+ test "${verbose}" = true -o "${verbose}" = yes && \
    cat <<EOF >&2
- # host system:
-@@ -1916,7 +1918,7 @@ echol "# This can also be used for pre-test and post-r
+@@ -1421,10 +1422,10 @@ if [ "${with_dynamic_modules}" != no ]; then
+     freebsd2.2*)
+       XCC_CREATESHARED='ld -Bshareable -o $lib $libs /usr/lib/c++rt0.o'
+       ;;
+-    freebsd2* | netbsd* | openbsd*)
++    freebsd2* | netbsd* )
+       XCC_CREATESHARED='ld -Bshareable -o $lib $libs'
+       ;;
+-    freebsd3* | gnu* | linux* | cygwin* | mingw* | k*bsd* | dragonfly*)
++    freebsd3* | gnu* | linux* | cygwin* | mingw* | k*bsd* | dragonfly* | openbsd* )
+       XCC_CREATESHARED='${CC} ${CFLAGS} ${CLFLAGS} -shared -o $lib $libs'
+       ;;
+     hpux9* | hpux10*)
+@@ -1904,7 +1905,7 @@ echol "# This can also be used for pre-test and post-r
  echol "#   make distrib VERSION_SUFFIX=pre"
  echol "VERSION_SUFFIX="
  echol "# The distribution's top directory"
@@ -23,7 +37,7 @@ Override broken compiler test, attempting to build 32-bit clisp on a
  echol
  echol '# Directories used by "make install":'
  echol "prefix = ${PREFIX}"
-@@ -3002,7 +3004,7 @@ fi
+@@ -2931,7 +2932,7 @@ fi
  CLISP_="${HERE_}lisp${LEXE} -M ${HERE_}lispinit.mem ${localeflags}${someflags}"
  
  if [ $CROSS = false ] ; then

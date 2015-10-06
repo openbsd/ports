@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.3 2010/01/07 10:55:28 edd Exp $
---- configure.orig	Thu Jan 15 08:37:34 2009
-+++ configure	Wed Dec 30 01:35:49 2009
-@@ -389,7 +389,7 @@ do
+$OpenBSD: patch-configure,v 1.4 2015/10/06 11:37:06 jca Exp $
+--- configure.orig	Mon Dec 14 15:37:22 2009
++++ configure	Tue Sep 29 01:08:02 2015
+@@ -383,7 +383,7 @@ do
          passnext=both ;;
  
        --elispdir=* | --elispdi=* | --elispd=* | --elisp=* | --elis=* | --eli=* | --el=*)
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.3 2010/01/07 10:55:28 edd Exp $
          makemake_args="$makemake_args --elispdir="`getarg "$arg"` ;;
  
        --elispdir | --elispdi | --elispd | --elisp | --elis | --eli | --el)
-@@ -399,7 +399,7 @@ do
+@@ -393,7 +393,7 @@ do
          passnext=both ;;
  
        --vimdir=* | --vimdi=* | --vimd=* | --vim=* | --vi=*)
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.3 2010/01/07 10:55:28 edd Exp $
          makemake_args="$makemake_args --vimdir="`getarg "$arg"` ;;
  
        --vimdir | --vimdi | --vimd | --vim | --vi)
-@@ -744,8 +744,7 @@ stacksizelimit=`ulimit -s 2>/dev/null || :` # cygwin /
+@@ -723,8 +723,7 @@ stacksizelimit=`ulimit -s 2>/dev/null || :` # cygwin /
  # need 3 separate test calls because of "integer expression expected" errors
  # when $stacksizelimit is "" or "unlimited" (no short-circuiting!)
  set +e;
