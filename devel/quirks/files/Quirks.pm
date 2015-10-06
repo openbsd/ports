@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.308 2015/09/24 19:09:05 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.309 2015/10/06 10:34:19 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -648,6 +648,7 @@ my $obsolete_reason = {
 	'hs-blaze-builder-enumerator' => 5,
 	'hs-monad-par' => 5,
 	'hs-monad-par-extras' => 5,
+	'swfdec-plugin' => 3,
 };
 
 # ->is_base_system($handle, $state):
