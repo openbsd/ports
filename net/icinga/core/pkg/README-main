@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.29 2015/10/04 16:59:25 kirby Exp $
+$OpenBSD: README-main,v 1.30 2015/10/06 21:53:05 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -219,7 +219,7 @@ configuration files by adding the following to /etc/rc.conf.local:
 	icinga_flags=-d ${BASESYSCONFDIR}/nagios/nagios.cfg
 
 You will need to merge the settings between Nagios' and Icinga's cgi.cfg
-files. sdiff(1), as used by sysmerge(8), can help with this. main_config_file
-and some other settings (admin usernames etc) should be taken from the
-Nagios file, whereas the various web-related settings (url_html_path,
-physical_html_path, etc) need to point to the Icinga files.
+files. sdiff(1) can help with this. main_config_file and some other settings
+(admin usernames etc) should be taken from the Nagios file, whereas the
+various web-related settings (url_html_path, physical_html_path, etc)
+need to point to the Icinga files.
