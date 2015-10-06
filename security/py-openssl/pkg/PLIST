@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/07/20 07:02:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/10/06 20:47:46 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/SSL.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/SSL.pyc
@@ -19,6 +19,10 @@ lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_rand.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_rand.pyc
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_ssl.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_ssl.pyc
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_tsafe.py
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_tsafe.pyc
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_util.py
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/test_util.pyc
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/util.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/test/util.pyc
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/tsafe.py
