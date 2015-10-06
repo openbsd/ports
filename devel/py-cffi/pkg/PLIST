@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/05/20 09:11:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/10/06 20:45:53 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/_cffi_backend.so
 lib/python${MODPY_VERSION}/site-packages/cffi/
 lib/python${MODPY_VERSION}/site-packages/cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
@@ -13,23 +14,31 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}backend_ctypes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}cffi_opcode.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}commontypes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}cparser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}ffiplatform.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}gc_weakref.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}lock.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}model.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}recompiler.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}setuptools_ext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}vengine_cpy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}vengine_gen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}verifier.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cffi/_cffi_include.h
 lib/python${MODPY_VERSION}/site-packages/cffi/api.py
 lib/python${MODPY_VERSION}/site-packages/cffi/backend_ctypes.py
+lib/python${MODPY_VERSION}/site-packages/cffi/cffi_opcode.py
 lib/python${MODPY_VERSION}/site-packages/cffi/commontypes.py
 lib/python${MODPY_VERSION}/site-packages/cffi/cparser.py
 lib/python${MODPY_VERSION}/site-packages/cffi/ffiplatform.py
 lib/python${MODPY_VERSION}/site-packages/cffi/gc_weakref.py
 lib/python${MODPY_VERSION}/site-packages/cffi/lock.py
 lib/python${MODPY_VERSION}/site-packages/cffi/model.py
+lib/python${MODPY_VERSION}/site-packages/cffi/parse_c_type.h
+lib/python${MODPY_VERSION}/site-packages/cffi/recompiler.py
+lib/python${MODPY_VERSION}/site-packages/cffi/setuptools_ext.py
 lib/python${MODPY_VERSION}/site-packages/cffi/vengine_cpy.py
 lib/python${MODPY_VERSION}/site-packages/cffi/vengine_gen.py
 lib/python${MODPY_VERSION}/site-packages/cffi/verifier.py
