@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2015/10/02 19:24:23 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.4 2015/10/06 22:47:29 czarkoff Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		modular and flexible STUN and TURN Server
 
-V =			0.4.11
+V =			0.4.12
 DISTNAME =		restund-${V}
-REVISION =		0
 
 WANTLIB =		c crypto mysqlclient pthread re ssl z
 LIB_DEPENDS =		telephony/baresip/re \
 			databases/mariadb,-main
 
 MAKE_FLAGS +=		USE_MYSQL=1 LIBS+="-lc -lre"
+
+NO_TEST =		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/restund/modules \
