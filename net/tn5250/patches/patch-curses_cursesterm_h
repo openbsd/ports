@@ -1,0 +1,14 @@
+$OpenBSD: patch-curses_cursesterm_h,v 1.1 2015/10/07 16:09:04 jca Exp $
+--- curses/cursesterm.h.orig	Tue Oct  6 21:38:05 2015
++++ curses/cursesterm.h	Tue Oct  6 21:39:49 2015
+@@ -29,8 +29,10 @@ extern "C" {
+ #if USE_CURSES
+ #ifdef HAVE_NCURSES_H
+ #include <ncurses.h>
++#include <term.h>
+ #else
+ #include <curses.h>
++#include <term.h>
+ #endif
+ #ifdef HAVE_TERMCAP_H
+ #include <termcap.h>

@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_sslstream_c,v 1.2 2015/07/18 04:59:42 sthen Exp $
+$OpenBSD: patch-lib5250_sslstream_c,v 1.1 2015/10/07 16:09:04 jca Exp $
 
 Allow building against OpenSSL without SSLv2/SSLv3 support.
 
---- src/sslstream.c.orig	Fri Apr  1 17:08:55 2005
-+++ src/sslstream.c	Fri Jul 17 22:58:15 2015
-@@ -367,13 +367,19 @@ int tn5250_ssl_stream_init (Tn5250Stream *This)
+--- lib5250/sslstream.c.orig	Fri Nov 21 09:12:21 2008
++++ lib5250/sslstream.c	Tue Oct  6 21:32:29 2015
+@@ -368,13 +368,19 @@ int tn5250_ssl_stream_init (Tn5250Stream *This)
          methstr[4] = '\0';
     }
  
