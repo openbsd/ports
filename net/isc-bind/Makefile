@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2015/10/03 19:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2015/10/07 19:36:50 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 V=		9.10.3
-REVISION=	1
+REVISION=	2
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
@@ -28,7 +28,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c lzma m pthread xml2 z
+WANTLIB=	c json-c lzma m pthread xml2 z
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
 
@@ -36,7 +36,8 @@ MODULES=	converters/libiconv \
 		lang/python
 # used for dnssec-checkds/dnssec-coverage, but don't want to force the run dep.
 MODPY_RUNDEP=	No
-LIB_DEPENDS=	textproc/libxml
+LIB_DEPENDS=	devel/json-c \
+		textproc/libxml
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= autoconf
