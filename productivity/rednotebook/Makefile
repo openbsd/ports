@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2015/05/09 12:13:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2015/10/07 11:38:42 jca Exp $
 
 COMMENT =		diary and journal application
 
-MODPY_EGG_VERSION =	1.10.1
+MODPY_EGG_VERSION =	1.10.2
 DISTNAME =		rednotebook-${MODPY_EGG_VERSION}
 
 CATEGORIES =		productivity
