@@ -1,0 +1,13 @@
+$OpenBSD: patch-bzip2_c,v 1.1 2015/10/07 11:06:49 sthen Exp $
+--- bzip2.c.orig	Mon Oct  5 10:03:08 2015
++++ bzip2.c	Mon Oct  5 10:05:18 2015
+@@ -1781,6 +1781,9 @@ IntNative main ( IntNative argc, Char *argv[] )
+    Cell   *aa;
+    Bool   decode;
+ 
++   if (tame("stdio wpath cpath fattr", NULL) == -1)
++      err(1, "tame");
++
+    /*-- Be really really really paranoid :-) --*/
+    if (sizeof(Int32) != 4 || sizeof(UInt32) != 4  ||
+        sizeof(Int16) != 2 || sizeof(UInt16) != 2  ||
