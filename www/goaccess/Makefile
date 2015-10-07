@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2015/07/18 11:09:38 kirby Exp $
+# $OpenBSD: Makefile,v 1.5 2015/10/07 19:28:22 kirby Exp $
 
 PORTROACH = 		skipv:0.11,0.12
 
 COMMENT =		realtime console web log analyzer
 
-DISTNAME =		goaccess-0.9.2
+DISTNAME =		goaccess-0.9.4
 
 CATEGORIES =		www
 HOMEPAGE =		http://goaccess.io/
@@ -14,7 +14,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		GeoIP c glib-2.0 m ncursesw pthread
+WANTLIB =		GeoIP c glib-2.0 ncursesw pthread
 
 MASTER_SITES =		http://tar.goaccess.io/
 
