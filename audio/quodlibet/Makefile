@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/07/18 23:44:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/10/07 05:50:25 ajacoutot Exp $
 
 COMMENT=	audio player and tagger for GTK+ with regex support
 
 MODPY_EGG_VERSION= 3.4.1
 DISTNAME=	quodlibet-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	audio
 
@@ -22,11 +23,8 @@ RUN_DEPENDS=	audio/py-mutagen \
 		devel/desktop-file-utils \
 		devel/py-gobject3 \
 		graphics/py-cairo \
-		multimedia/gstreamer1/core \
-		multimedia/gstreamer1/plugins-base \
 		multimedia/gstreamer1/plugins-good \
 		multimedia/gstreamer1/plugins-libav \
-		multimedia/gstreamer1/plugins-ugly \
 		multimedia/xine-lib \
 		textproc/py-feedparser \
 		x11/dbus-python \

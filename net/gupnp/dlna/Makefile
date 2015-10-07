@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2015/07/02 11:53:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2015/10/07 05:50:25 ajacoutot Exp $
 
 COMMENT=		DLNA integration for GUPnP
 
 GNOME_PROJECT=		gupnp-dlna
 GNOME_VERSION=		0.10.3
+REVISION=		0
 
 SHARED_LIBS +=	gupnp-dlna-2.0            0.0 # 3.0
 SHARED_LIBS +=	gupnp-dlna-gst-2.0        0.0 # 3.0
@@ -21,7 +22,8 @@ LIB_DEPENDS=		multimedia/gstreamer1/plugins-base
 RUN_DEPENDS=		net/gupnp/core
 
 # support for various media files
-RUN_DEPENDS+=		multimedia/gstreamer1/plugins-ugly
+RUN_DEPENDS+=		multimedia/gstreamer1/plugins-good \
+			multimedia/gstreamer1/plugins-libav
 
 # Needs media files which aren't distributed with the tarball.
 NO_TEST=		Yes

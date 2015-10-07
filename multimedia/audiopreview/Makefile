@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2015/10/07 05:50:25 ajacoutot Exp $
 
 COMMENT =	tool to play previews of audio and video files
 
 DISTNAME =	audiopreview-0.6
-REVISION=	3
+REVISION =	4
 
 CATEGORIES =	multimedia
 
@@ -19,10 +19,8 @@ MASTER_SITES = 	http://audiopreview.codealpha.net/files/
 
 MODULES =	devel/gettext \
 		textproc/intltool
-RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-base \
-		multimedia/gstreamer-0.10/plugins-ffmpeg \
-		multimedia/gstreamer-0.10/plugins-good \
-		multimedia/gstreamer-0.10/plugins-ugly
+RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-ffmpeg \
+		multimedia/gstreamer-0.10/plugins-good
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 CONFIGURE_STYLE =	gnu

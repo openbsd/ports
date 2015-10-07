@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2015/04/04 09:20:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2015/10/07 05:50:25 ajacoutot Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
 V =		3.3
 P =		1
 DISTNAME =	exaile-${V}.${P}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	audio x11
 
@@ -26,9 +26,8 @@ COMMON_DEPENDS =x11/dbus-python>=0.82.1 \
 		x11/py-gtk2>=2.17 \
 		devel/libglade2 \
 		multimedia/gstreamer-0.10/core \
-		multimedia/gstreamer-0.10/plugins-base \
 		multimedia/gstreamer-0.10/plugins-good \
-		multimedia/gstreamer-0.10/plugins-ugly \
+		multimedia/gstreamer-0.10/plugins-ffmpeg \
 		multimedia/gstreamer-0.10/py-gstreamer
 
 BUILD_DEPENDS =	${COMMON_DEPENDS}

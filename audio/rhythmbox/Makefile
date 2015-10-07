@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2015/04/19 10:22:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.148 2015/10/07 05:50:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.2.1
+REVISION=		0
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -66,7 +67,7 @@ RUN_DEPENDS +=		productivity/zeitgeist
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good
 
 # needed for mp3 support
-RUN_DEPENDS +=		multimedia/gstreamer1/plugins-ugly
+RUN_DEPENDS +=		multimedia/gstreamer1/plugins-libav
 
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection gtk-update-icon-cache
 MODGNOME_TOOLS += vala yelp

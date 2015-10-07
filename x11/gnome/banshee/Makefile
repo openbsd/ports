@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/10/03 12:39:09 robert Exp $
+# $OpenBSD: Makefile,v 1.30 2015/10/07 05:50:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		music management and playback application for GNOME
 
 GNOME_VERSION=		2.6.2
 GNOME_PROJECT=		banshee
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		audio multimedia
 
@@ -51,7 +51,7 @@ RUN_DEPENDS=		${COMMON_DEPENDS}
 
 RUN_DEPENDS +=		multimedia/gstreamer-0.10/plugins-good #libgstgconfelements
 RUN_DEPENDS +=		multimedia/gstreamer-0.10/plugins-bad #bpmdetect (soundtouch)
-RUN_DEPENDS +=		multimedia/gstreamer-0.10/plugins-ugly #mp3 support
+RUN_DEPENDS +=		multimedia/gstreamer-0.10/plugins-ffmpeg #mp3 support
 
 LIB_DEPENDS=		multimedia/gstreamer-0.10/plugins-base \
 			www/webkit
