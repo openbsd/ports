@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/10/07 05:50:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/10/07 07:50:37 ajacoutot Exp $
 
 COMMENT =	GStreamer-based Phonon backend
 VERSION =	4.8.2
@@ -8,7 +8,7 @@ REVISION =	1
 
 # allow playing Vorbis and MP3 notification sounds out of the box
 RUN_DEPENDS =	multimedia/gstreamer1/plugins-good \
-		multimedia/gstreamer1/plugins-ffmpeg \
+		multimedia/gstreamer1/plugins-libav \
 		x11/gtk+3,-guic
 
 LIB_DEPENDS =	multimedia/gstreamer1/core \
