@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.79 2015/09/28 12:55:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2015/10/07 20:51:05 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
-GNOME_VERSION =		2.6.8
+GNOME_VERSION =		2.6.9
 EXTRACT_SUFX =		.tar.bz2
 
 SHARED_LIBS +=  gnc-qof              2.0      # 1.4
@@ -84,16 +84,19 @@ DOC_DIR =		${WRKDIR}/gnucash-docs-${GNOME_VERSION}
 #MAKE_FLAGS +=		CC="${CC} -I${LOCALBASE}/include/guile/2.0"
 pre-configure:
 	sed -i 's,guile-2.0,guile-99.99,g' ${WRKSRC}/configure
-	
+
+# XXX hack: check if still needed at next release (autohell)
+DOCS_ENV=		ACLOCAL=true AUTOCONF=true AUTOMAKE=true AUTOHEADER=true
+
 post-configure:
 	cd ${DOC_DIR} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure
 
 post-build:
-	cd ${DOC_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
+	cd ${DOC_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${DOCS_ENV}
 
 post-install:
 	cd ${DOC_DIR} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} install
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} ${DOCS_ENV} install
 	rm ${PREFIX}/lib/gnucash/*.{a,la}
 # requires hardcoded gnucash sources path to work
 	rm ${PREFIX}/bin/gnucash-valgrind
