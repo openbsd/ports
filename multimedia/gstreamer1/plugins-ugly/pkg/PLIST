@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/04/20 09:36:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/10/07 05:52:42 ajacoutot Exp $
 lib/gstreamer-${API}/libgstasf.so
 lib/gstreamer-${API}/libgstdvdlpcmdec.so
 lib/gstreamer-${API}/libgstdvdread.so
 lib/gstreamer-${API}/libgstdvdsub.so
 lib/gstreamer-${API}/libgstlame.so
-lib/gstreamer-${API}/libgstmad.so
 lib/gstreamer-${API}/libgstrmdemux.so
 lib/gstreamer-${API}/libgsttwolame.so
 lib/gstreamer-${API}/libgstx264.so
