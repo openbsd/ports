@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2015/10/01 15:16:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.193 2015/10/07 05:31:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ V=		2.2.1
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	0
+REVISION-main=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -29,8 +29,8 @@ WANTLIB-common=	c dbus-1 idn m pthread ${MODGETTEXT_WANTLIB}
 WANTLIB-main=	EGL GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 \
 		Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xpm \
 		Xrender Xrandr ass atk-1.0 avcodec avformat avutil bluray \
-		cairo cddb croco-0.6 dvbpsi dvdnav dvdread ebml enca \
-		expat ffi fontconfig freetype fribidi gcrypt gdk-x11-2.0 \
+		cairo cddb croco-0.6 dvbpsi dvdnav dvdread ebml expat \
+		ffi fontconfig freetype fribidi gcrypt gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls \
 		gobject-2.0 gpg-error graphite2 gthread-2.0 gtk-x11-2.0 \
 		harfbuzz hogweed jpeg lzma matroska nettle notify opus \
