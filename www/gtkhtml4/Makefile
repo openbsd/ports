@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/05/05 17:00:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2015/10/08 08:42:53 jasper Exp $
 
 PORTROACH+=		limit:^4
 
@@ -7,13 +7,12 @@ SHARED_ONLY=		Yes
 COMMENT=		lightweight HTML rendering/printing/editing engine
 
 GNOME_PROJECT=		gtkhtml
-GNOME_VERSION=		4.8.5
+GNOME_VERSION=		4.10.0
 
 API_VERSION=		4.0
 SUBST_VARS=		API_VERSION
 
 PKGNAME=		gtkhtml4-${VERSION}
-REVISION=		1
 
 SHARED_LIBS +=  gtkhtml-4.0               0.0 # 0.0
 SHARED_LIBS +=  gtkhtml-editor-4.0        0.0 # 0.0
