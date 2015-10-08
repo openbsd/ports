@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.91 2015/04/15 10:08:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.92 2015/10/08 09:12:34 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	3.4.0
+GNOME_VERSION=	3.4.1
 
 API_V=		${GNOME_VERSION:R}
 SUBST_VARS=	API_V
@@ -55,12 +55,6 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_STYLE=	gnu
-
-# XXX remove at next major upgrade
-# https://git.gnome.org/browse/gthumb/commit/?id=4c64cb990fc1e32e269571b34065d7aa8d92c79e
-pre-configure:
-	perl -pi -e 's/webkit2gtk-3.0/webkit2gtk-4.0/g' \
-		${WRKSRC}/configure
 
 post-install:
 	rm ${PREFIX}/lib/gthumb/extensions/*.{a,la}
