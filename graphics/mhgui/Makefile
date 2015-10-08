@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/08/19 18:55:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2015/10/08 11:44:23 jasper Exp $
 
 COMMENT=	GUI widget library used in MakeHuman
 
@@ -30,14 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/GL" \
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
-pre-configure:
-	perl -pi -e 's,packagedocdir=doc,packagedocdir=share/doc,g' \
-		${WRKSRC}/configure
-	perl -pi -e 's,doc/mhgui,share/doc/mhgui,g' \
-		${WRKSRC}/Makefile.in
-
 # remove useless files (ChangeLog, INSTALL...)
 post-install:
-	rm -rf ${PREFIX}/share/doc
+	rm -r ${PREFIX}/share/doc
 
 .include <bsd.port.mk>
