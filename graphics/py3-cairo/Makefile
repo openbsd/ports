@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/04/21 18:24:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/10/08 12:02:03 jasper Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -55,7 +55,7 @@ do-install:
 	cd ${WRKBUILD} && ${MODPY_BIN} ./waf install
 
 do-test: install
-	perl -i -pe "s/python/python${MODPY_VERSION}/g" ${WRKSRC}/test/examples_test.py
+	sed -i "s/python/python${MODPY_VERSION}/g" ${WRKSRC}/test/examples_test.py
 	cd ${WRKSRC}/test && py.test${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/25 13:18:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT =	color correction utility for digital images
 DISTNAME =	delaboratory-0.8
@@ -29,7 +29,7 @@ MAKE_FLAGS =	CXX="${CXX}" OPTFLAGS="${CXXFLAGS}"
 NO_TEST =	Yes
 
 post-patch:
-	perl -pi -e "s,-Ofast,,g" ${WRKSRC}/Makefile
+	sed -i "s,-Ofast,,g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/delaboratory ${PREFIX}/bin

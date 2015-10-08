@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/22 11:31:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT=	2D barcodes / DataMatrix creation tool
 
@@ -28,6 +28,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 pre-test:
-	perl -pi -e 's,/bin/bash,/bin/sh,g' ${WRKSRC}/test/testsuite.sh
+	sed -i 's,/bin/bash,/bin/sh,g' ${WRKSRC}/test/testsuite.sh
 
 .include <bsd.port.mk>

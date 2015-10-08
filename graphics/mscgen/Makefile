@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/03/17 23:21:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT=		utility to create Message Sequence Charts
 
@@ -29,6 +29,6 @@ FAKE_FLAGS=		exampledir="${PREFIX}/share/examples/mscgen/" \
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-src//}
 
 pre-configure:
-	@perl -pi -e 's,/bin/bash,/bin/sh,g' ${WRKSRC}/test/renderercheck.sh
+	@sed -i 's,/bin/bash,/bin/sh,g' ${WRKSRC}/test/renderercheck.sh
 
 .include <bsd.port.mk>

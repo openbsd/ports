@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/03/27 08:11:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT=	full featured DVD copy program
 
@@ -38,7 +38,7 @@ TEST_DEPENDS=x11/p5-Gtk2-Ex-FormFactory
 TEST_FLAGS=	HOME=${TMPDIR}
 
 pre-build:
-	@perl -pi -e "s,/usr/sbin/fping,${LOCALBASE}/sbin/fping,g" \
+	@sed -i "s,/usr/sbin/fping,${LOCALBASE}/sbin/fping,g" \
 		${WRKSRC}/lib/Video/DVDRip/Cluster/Master.pm \
 		${WRKSRC}/lib/Video/DVDRip/Depend.pm
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/03/27 08:11:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT=	simple application for modifying PDF documents
 
@@ -37,7 +37,7 @@ MASTER_SITES0=		https://distfiles.bsdfrog.org/
 BUILD_DEPENDS +=	devel/gpatch
 PATCH=			${LOCALBASE}/bin/gpatch
 pre-configure:
-	perl -pi -e 's,gmcs,dmcs,g' ${WRKSRC}/configure
+	sed -i 's,gmcs,dmcs,g' ${WRKSRC}/configure
 ###
 
 .include <bsd.port.mk>

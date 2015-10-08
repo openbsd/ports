@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/03/23 18:17:34 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT =		3D fractal renderer
 
@@ -38,7 +38,7 @@ MAKE_FILE =		makefile
 WRKSRC =		${WRKDIST}/makefiles
 
 post-extract:
-	perl -pi -e 's#/usr/share/#${PREFIX}/share/#;' \
+	sed -i 's,/usr/share/,${PREFIX}/share/,g' \
 		${WRKDIST}/usr/share/defaults ${WRKDIST}/mandelbulber.desktop \
 		${WRKDIST}/usr/share/examples/*.fract \
 		${WRKDIST}/src/interface.h

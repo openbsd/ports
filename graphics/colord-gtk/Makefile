@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/05/05 17:00:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT=	GTK+ support library for colord
 
@@ -48,7 +48,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-vala
 
 pre-configure:
-	perl -pi -e 's,-Wclobbered,,g;' \
+	sed -i -e 's,-Wclobbered,,g;' \
 		-e 's,-Wempty-body,,g;' \
 		-e 's,-Wignored-qualifiers,,g;' \
 		-e 's,-Wtype-limits,,g;' \

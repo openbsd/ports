@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT =		extensible drawing editor
 
@@ -58,7 +58,7 @@ WRKDIST = ${WRKDIR}/${PKGNAME}
 WRKSRC = ${WRKDIST}/src
 
 post-install:
-	perl -pi -e "s,/usr/share/,${LOCALBASE}/share/," \
+	sed -i "s,/usr/share/,${LOCALBASE}/share/," \
 		${WRKDIST}/fontmaps/texlive-fontmap.xml
 	${INSTALL_DATA} -c ${WRKDIST}/fontmaps/texlive-fontmap.xml \
 		${PREFIX}/share/ipe/7.1.2/fontmap.xml

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/02/16 22:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT=	handle GIF89a transparent option and interlace mode
 
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/infosystems/misc/tools/
 NO_TEST=	Yes
 
 do-configure:
-	@perl -pi -e 's,/usr/lib,${X11BASE}/lib,g' ${WRKSRC}/giftrans.c
+	@sed -i 's,/usr/lib,${X11BASE}/lib,g' ${WRKSRC}/giftrans.c
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} giftrans.c -o giftrans

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2015/06/08 06:11:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2015/10/08 12:02:03 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -62,7 +62,7 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-build:
 	@cd ${WRKBUILD}/PerlMagick && perl Makefile.PL && \
-	perl -pi -e s,'^LDLOADLIBS = ','LDLOADLIBS = -lGraphicsMagick ', \
+	sed -i s,'^LDLOADLIBS = ','LDLOADLIBS = -lGraphicsMagick ', \
 		Makefile && ${MAKE} ${MAKE_FLAGS}
 
 post-install:

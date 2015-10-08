@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2015/08/11 20:46:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2015/10/08 12:02:03 jasper Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -81,7 +81,7 @@ CFLAGS+=	-msse3
 CXXFLAGS=	${CFLAGS}
 
 post-patch:
-	perl -pi -e 's,/usr/X11R6,${X11BASE},' \
+	sed -i 's,/usr/X11R6,${X11BASE},' \
 	    ${WRKSRC}/src/external/colord-gtk/CMakeLists.txt
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/09/22 18:47:52 pascal Exp $
+# $OpenBSD: Makefile,v 1.27 2015/10/08 12:02:03 jasper Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 .if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64")
@@ -66,6 +66,6 @@ CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS}" \
 
 # Fix with newer GNUplot versions. From Gentoo bz #334331
 post-extract:
-	@perl -pi -e 's,FreeSans 10,"FreeSans\,10",g' ${WRKSRC}/doc/*.gp.in
+	@sed -i 's,FreeSans 10,"FreeSans\,10",g' ${WRKSRC}/doc/*.gp.in
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/03/16 18:07:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT=		OpenGL Extrusion library
 
@@ -27,7 +27,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 post-extract:
-	perl -pi -e 's/3GLE/3/;' ${WRKSRC}/man/*.man
-	perl -pi -e 's,3gle,3,g' ${WRKSRC}/man/Makefile.in
+	sed -i 's/3GLE/3/;' ${WRKSRC}/man/*.man
+	sed -i 's,3gle,3,g' ${WRKSRC}/man/Makefile.in
 
 .include <bsd.port.mk>

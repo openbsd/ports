@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/08/19 18:55:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT=	parametrical modeling of 3D humanoid characters
 
@@ -33,15 +33,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 pre-configure:
-	perl -pi -e 's,packagedocdir=doc,packagedocdir=share/doc,g' \
-		${WRKSRC}/configure
-	perl -pi -e 's,doc/makehuman,share/doc/makehuman,g' \
-		${WRKSRC}/Makefile.in
-	perl -pi -e 's,cp --parents,gcp --parents,g' \
+	sed -i 's,cp --parents,gcp --parents,g' \
 		${WRKSRC}/{data,pixmaps}/Makefile.in
 
 # remove useless files (ChangeLog, INSTALL...)
 post-install:
-	rm -rf ${PREFIX}/share/doc
+	rm -r ${PREFIX}/doc
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/03/16 18:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT=	morphing engine
 
@@ -21,9 +21,9 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 pre-configure:
-	perl -pi -e 's,packagedocdir=doc,packagedocdir=share/doc,g' \
+	sed -i 's,packagedocdir=doc,packagedocdir=share/doc,g' \
 		${WRKSRC}/configure
-	perl -pi -e 's,doc/animorph,share/doc/animorph,g' \
+	sed -i 's,doc/animorph,share/doc/animorph,g' \
 		${WRKSRC}/Makefile.in
 
 # remove useless files (ChangeLog, INSTALL...)

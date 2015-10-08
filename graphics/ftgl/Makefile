@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/08/17 19:10:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT =		font rendering library for OpenGL applications
 
@@ -33,7 +33,7 @@ CONFIGURE_ENV +=	ac_cv_path_DOXYGEN=no
 # 2.1.3~rc5 is a ridiculous version to stow in a pkg-config file,
 # so add this workaround to prevent pkg-config from choking.
 pre-configure:
-	perl -pi -e 's,\@PACKAGE_VERSION\@,${V},' ${WRKSRC}/ftgl.pc.in
+	sed -i 's,\@PACKAGE_VERSION\@,${V},' ${WRKSRC}/ftgl.pc.in
 
 post-install:
 	${INSTALL_DATA} \

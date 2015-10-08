@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/09/29 15:05:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
 DISTNAME =	birdfont-2.12.0
@@ -47,7 +47,7 @@ NO_TEST =	Yes
 SUBST_VARS +=	DESTDIR
 
 pre-configure:
-	perl -pi -e "s,bash,sh,g" ${WRKSRC}/*.sh ${WRKSRC}/scripts/run.py
+	sed -i "s,bash,sh,g" ${WRKSRC}/*.sh ${WRKSRC}/scripts/run.py
 	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/install.py \
 		${WRKSRC}/dodo.py ${WRKSRC}/scripts/version.py
 

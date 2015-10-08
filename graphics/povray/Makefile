@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/06/02 15:38:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT=	3D image rendering package
 
@@ -61,7 +61,7 @@ pre-patch:
 	cd ${WRKSRC} && find . -type f -name \*.orig | xargs rm
 
 post-configure:
-	perl -pi -e 's,%INSTALLDIR%,${PREFIX}/share/povray/,g' \
+	sed -i 's,%INSTALLDIR%,${PREFIX}/share/povray/,g' \
 		${WRKSRC}/povray.conf
 .for f in povray.1 scripts/allanim.sh scripts/allscene.sh scripts/portfolio.sh
 	${SUBST_CMD} ${WRKSRC}/$f

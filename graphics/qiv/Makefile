@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/08/23 14:33:07 kirby Exp $
+# $OpenBSD: Makefile,v 1.28 2015/10/08 12:02:03 jasper Exp $
 
 COMMENT=		very small and pretty fast gdk/Imlib image viewer
 
@@ -33,7 +33,8 @@ NO_TEST=		Yes
 
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/qiv.1
-	perl -pi -e 's,bash,sh,' ${WRKSRC}/contrib/qiv-command.example
+	sed -i 's,bash,sh,' ${WRKSRC}/contrib/qiv-command.example
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qiv/
 	${INSTALL_DATA} ${WRKSRC}/contrib/qiv-command.example \
