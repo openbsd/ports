@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2015/10/08 09:12:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2015/10/08 09:41:10 jasper Exp $
 @bin bin/gthumb
 include/gthumb-${API_V}/
 include/gthumb-${API_V}/gthumb/
@@ -133,8 +133,10 @@ lib/gthumb/extensions/flicker_utils.extension
 lib/gthumb/extensions/gstreamer_tools.extension
 lib/gthumb/extensions/gstreamer_utils.extension
 lib/gthumb/extensions/image_print.extension
+lib/gthumb/extensions/image_rotation.extension
 lib/gthumb/extensions/image_viewer.extension
 lib/gthumb/extensions/importer.extension
+lib/gthumb/extensions/jpeg_utils.extension
 lib/gthumb/extensions/lib23hq.so
 lib/gthumb/extensions/libbookmarks.so
 lib/gthumb/extensions/libcairo_io.so
@@ -157,8 +159,10 @@ lib/gthumb/extensions/libflicker_utils.so
 lib/gthumb/extensions/libgstreamer_tools.so
 lib/gthumb/extensions/libgstreamer_utils.so
 lib/gthumb/extensions/libimage_print.so
+lib/gthumb/extensions/libimage_rotation.so
 lib/gthumb/extensions/libimage_viewer.so
 lib/gthumb/extensions/libimporter.so
+lib/gthumb/extensions/libjpeg_utils.so
 lib/gthumb/extensions/liblist_tools.so
 lib/gthumb/extensions/liboauth.so
 lib/gthumb/extensions/libphoto_importer.so
