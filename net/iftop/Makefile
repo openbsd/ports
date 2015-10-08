@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/10/05 16:29:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/10/08 21:19:22 sthen Exp $
 
 COMMENT =		display bandwidth usage on an interface
 
 DISTNAME =		iftop-1.0pre4
-REVISION =		1
+REVISION =		2
 CATEGORIES =		net
 
 HOMEPAGE =		http://www.ex-parrot.com/~pdw/iftop/

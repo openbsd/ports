@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2015/10/05 16:29:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2015/10/08 21:19:22 sthen Exp $
 
 COMMENT=	multi-threaded routing daemon
 
 DISTNAME=	quagga-0.99.24.1
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://download.savannah.gnu.org/releases/quagga/
 EXTRACT_SUFX=	.tar.xz
