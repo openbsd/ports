@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/06/10 11:05:02 jca Exp $
+# $OpenBSD: Makefile,v 1.41 2015/10/08 11:31:53 jca Exp $
 
 COMMENT=		C/C++ source code auditing tool
 
@@ -15,16 +15,13 @@ MASTER_SITES=		${HOMEPAGE}
 
 MODULES=		lang/python
 
+MODPY_ADJ_FILES=	flawfinder
+
 NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
 DOC_DIR=		${PREFIX}/share/doc/flawfinder
-
-do-configure:
-	@perl -pi -e \
-		"s|/usr/bin/env python|${LOCALBASE}/bin/python${MODPY_VERSION}|" \
-		${WRKSRC}/flawfinder
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/flawfinder ${PREFIX}/bin
