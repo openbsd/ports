@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.23 2015/09/03 07:44:43 jasper Exp $
---- src/Makefile.in.orig	Wed Sep  2 04:16:06 2015
-+++ src/Makefile.in	Thu Sep  3 09:29:59 2015
+$OpenBSD: patch-src_Makefile_in,v 1.24 2015/10/08 10:03:00 jasper Exp $
+--- src/Makefile.in.orig	Fri Oct  2 13:07:00 2015
++++ src/Makefile.in	Thu Oct  8 11:31:01 2015
 @@ -10559,9 +10559,6 @@ install-data-local: install-init install-systemd
  @WITH_LIBVIRTD_TRUE@	$(MKDIR_P) "$(DESTDIR)$(localstatedir)/lib/libvirt/lockd/files"
  @WITH_LIBVIRTD_TRUE@	$(MKDIR_P) "$(DESTDIR)$(localstatedir)/run/libvirt/lockd"
@@ -9,5 +9,5 @@ $OpenBSD: patch-src_Makefile_in,v 1.23 2015/09/03 07:44:43 jasper Exp $
 -	$(MKDIR_P) "$(DESTDIR)$(localstatedir)/lib/libvirt/filesystems"
 -	$(MKDIR_P) "$(DESTDIR)$(localstatedir)/lib/libvirt/boot"
  @WITH_SANLOCK_TRUE@	$(MKDIR_P) "$(DESTDIR)$(localstatedir)/lib/libvirt/sanlock"
- @WITH_QEMU_TRUE@	$(MKDIR_P) "$(DESTDIR)$(localstatedir)/lib/libvirt/qemu"
+ @WITH_QEMU_TRUE@	$(MKDIR_P) -m 0751 "$(DESTDIR)$(localstatedir)/lib/libvirt/qemu"
  @WITH_QEMU_TRUE@	$(MKDIR_P) "$(DESTDIR)$(localstatedir)/run/libvirt/qemu"
