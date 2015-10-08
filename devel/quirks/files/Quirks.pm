@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.310 2015/10/06 16:17:15 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.311 2015/10/08 08:03:25 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -651,6 +651,7 @@ my $obsolete_reason = {
 	'swfdec-plugin' => 3,
 	'yui' => 2,
 	'yui-docs' => 2,
+	'tkrat' => 3,
 };
 
 # ->is_base_system($handle, $state):
