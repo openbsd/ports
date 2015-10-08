@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2015/07/08 20:48:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.72 2015/10/08 11:48:39 jasper Exp $
 
 COMMENT=	toolkit for converting images between different formats
 
@@ -42,9 +42,7 @@ MAKE_FLAGS+=	NETPBMLIBTYPE=unixshared
 .endif
 
 pre-build:
-	perl -i -p \
-	    -e 's#%%X11BASE%%#${X11BASE}#g;' \
-	    -e 's#%%PREFIX%%#${PREFIX}#g;' ${WRKSRC}/pm_config.in.h
+	${SUBST_CMD} ${WRKSRC}/pm_config.in.h
 	cp ${FILESDIR}/Makefile.config.OpenBSD ${WRKSRC}/Makefile.config
 # Missing in some releases
 	cd ${WRKSRC}; buildtools/stamp-date >lib/compile.h
