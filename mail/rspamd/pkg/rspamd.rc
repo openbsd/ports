@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: rspamd.rc,v 1.1.1.1 2015/10/09 16:09:17 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/rspamd"
+daemon_flags="-u _rspamd -g _rspamd"
+
+. /etc/rc.d/rc.subr
+
+pexp="rspamd: main process"
+
+rc_cmd $1

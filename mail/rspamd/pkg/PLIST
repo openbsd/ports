@@ -1,0 +1,146 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/09 16:09:17 sthen Exp $
+@newgroup _rspamd:756
+@newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
+@bin bin/rspamadm
+@bin bin/rspamc
+@bin bin/rspamd
+lib/rspamd/
+lib/rspamd/librspamd-actrie.so
+@man man/man1/rspamadm.1
+@man man/man1/rspamc.1
+@man man/man8/rspamd.8
+share/examples/rspamd/
+@sample ${SYSCONFDIR}/rspamd/
+share/examples/rspamd/2tld.inc
+@sample ${SYSCONFDIR}/rspamd/2tld.inc
+share/examples/rspamd/common.conf
+@sample ${SYSCONFDIR}/rspamd/common.conf
+share/examples/rspamd/composites.conf
+@sample ${SYSCONFDIR}/rspamd/composites.conf
+share/examples/rspamd/dmarc_whitelist.inc
+@sample ${SYSCONFDIR}/rspamd/dmarc_whitelist.inc
+share/examples/rspamd/logging.inc
+@sample ${SYSCONFDIR}/rspamd/logging.inc
+share/examples/rspamd/metrics.conf
+@sample ${SYSCONFDIR}/rspamd/metrics.conf
+share/examples/rspamd/modules.conf
+@sample ${SYSCONFDIR}/rspamd/modules.conf
+share/examples/rspamd/modules.d/
+@sample ${SYSCONFDIR}/rspamd/modules.d/
+share/examples/rspamd/modules.d/chartable.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/chartable.conf
+share/examples/rspamd/modules.d/dkim.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/dkim.conf
+share/examples/rspamd/modules.d/dmarc.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/dmarc.conf
+share/examples/rspamd/modules.d/emails.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/emails.conf
+share/examples/rspamd/modules.d/forged_recipients.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/forged_recipients.conf
+share/examples/rspamd/modules.d/fuzzy_check.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/fuzzy_check.conf
+share/examples/rspamd/modules.d/hfilter.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/hfilter.conf
+share/examples/rspamd/modules.d/ip_score.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/ip_score.conf
+share/examples/rspamd/modules.d/maillist.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/maillist.conf
+share/examples/rspamd/modules.d/multimap.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/multimap.conf
+share/examples/rspamd/modules.d/once_received.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/once_received.conf
+share/examples/rspamd/modules.d/phishing.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/phishing.conf
+share/examples/rspamd/modules.d/ratelimit.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/ratelimit.conf
+share/examples/rspamd/modules.d/regexp.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/regexp.conf
+share/examples/rspamd/modules.d/spf.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/spf.conf
+share/examples/rspamd/modules.d/surbl.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/surbl.conf
+share/examples/rspamd/modules.d/whitelist.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/whitelist.conf
+share/examples/rspamd/options.inc
+@sample ${SYSCONFDIR}/rspamd/options.inc
+share/examples/rspamd/rspamd.conf
+@sample ${SYSCONFDIR}/rspamd/rspamd.conf
+@comment share/examples/rspamd/rspamd.systemd.conf
+@comment share/examples/rspamd/rspamd.sysvinit.conf
+share/examples/rspamd/spf_dkim_whitelist.inc
+@sample ${SYSCONFDIR}/rspamd/spf_dkim_whitelist.inc
+share/examples/rspamd/statistic.conf
+@sample ${SYSCONFDIR}/rspamd/statistic.conf
+share/examples/rspamd/surbl-whitelist.inc
+@sample ${SYSCONFDIR}/rspamd/surbl-whitelist.inc
+share/examples/rspamd/worker-controller.inc
+@sample ${SYSCONFDIR}/rspamd/worker-controller.inc
+share/examples/rspamd/worker-normal.inc
+@sample ${SYSCONFDIR}/rspamd/worker-normal.inc
+share/rspamd/
+share/rspamd/effective_tld_names.dat
+share/rspamd/lua/
+share/rspamd/lua/dmarc.lua
+share/rspamd/lua/emails.lua
+share/rspamd/lua/forged_recipients.lua
+share/rspamd/lua/fun.lua
+share/rspamd/lua/hfilter.lua
+share/rspamd/lua/ip_score.lua
+share/rspamd/lua/maillist.lua
+share/rspamd/lua/multimap.lua
+share/rspamd/lua/once_received.lua
+share/rspamd/lua/phishing.lua
+share/rspamd/lua/ratelimit.lua
+share/rspamd/lua/rbl.lua
+share/rspamd/lua/settings.lua
+share/rspamd/lua/spamassassin.lua
+share/rspamd/lua/trie.lua
+share/rspamd/lua/whitelist.lua
+share/rspamd/rules/
+share/rspamd/rules/html.lua
+share/rspamd/rules/misc.lua
+share/rspamd/rules/regexp/
+share/rspamd/rules/regexp/drugs.lua
+share/rspamd/rules/regexp/fraud.lua
+share/rspamd/rules/regexp/headers.lua
+share/rspamd/rules/regexp/lotto.lua
+share/rspamd/rules/rspamd.classifiers.lua
+share/rspamd/rules/rspamd.lua
+share/rspamd/www/
+share/rspamd/www/README.md
+share/rspamd/www/css/
+share/rspamd/www/css/datatables.min.css
+share/rspamd/www/css/glyphicons-halflings-regular.woff
+share/rspamd/www/css/glyphicons-halflings-regular.woff2
+share/rspamd/www/css/rspamd.css
+share/rspamd/www/favicon.ico
+share/rspamd/www/img/
+share/rspamd/www/img/asc.png
+share/rspamd/www/img/desc.png
+share/rspamd/www/img/spinner.gif
+share/rspamd/www/img/spinner.png
+share/rspamd/www/index.html
+share/rspamd/www/js/
+share/rspamd/www/js/d3pie.min.js
+share/rspamd/www/js/datatables.min.js
+share/rspamd/www/js/rspamd.js
+share/rspamd/www/plugins.txt
+share/rspamd/www/react-index.html
+share/rspamd/www/src/
+share/rspamd/www/src/Gruntfile.js
+share/rspamd/www/src/common.js
+share/rspamd/www/src/components/
+share/rspamd/www/src/components/app.jsx
+share/rspamd/www/src/components/dashboard.jsx
+share/rspamd/www/src/components/login.jsx
+share/rspamd/www/src/components/piechart.jsx
+share/rspamd/www/src/components/rrdgraph.jsx
+share/rspamd/www/src/package.json
+@sample ${LOCALSTATEDIR}/log/rspamd/
+@owner _rspamd
+@group _rspamd
+@sample ${LOCALSTATEDIR}/rspamd/
+@owner
+@group
+@sample ${LOCALSTATEDIR}/run/rspamd/
+@rcscript ${RCDIR}/rspamd

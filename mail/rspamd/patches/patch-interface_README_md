@@ -1,0 +1,12 @@
+$OpenBSD: patch-interface_README_md,v 1.1.1.1 2015/10/09 16:09:17 sthen Exp $
+--- interface/README.md.orig	Fri Oct  9 17:55:47 2015
++++ interface/README.md	Fri Oct  9 17:56:14 2015
+@@ -15,7 +15,7 @@ Basically this can be done by providing the following 
+ 
+ ~~~nginx
+ options {
+- dynamic_conf = "/var/lib/rspamd/rspamd_dynamic";
++ dynamic_conf = "${LOCALSTATEDIR}/rspamd/rspamd_dynamic";
+ }
+ ~~~
+ 
