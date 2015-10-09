@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2015/07/30 07:54:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2015/10/09 12:23:24 jasper Exp $
 
 COMMENT=		distributed RESTful search and analytics
 
-DISTNAME=		elasticsearch-1.7.1
+V=			1.7.2
+DISTNAME=		elasticsearch-$V
 CATEGORIES=		textproc
 
 HOMEPAGE=		https://www.elastic.co/products/elasticsearch
@@ -25,7 +26,7 @@ NO_BUILD=		Yes
 NO_TEST=		Yes
 
 ES_BASE=		${PREFIX}/elasticsearch/
-SUBST_VARS+=		VARBASE
+SUBST_VARS+=		VARBASE V
 
 do-install:
 	${SUBST_CMD} ${WRKSRC}/config/elasticsearch.yml \
