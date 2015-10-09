@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/30 16:27:32 avsm Exp $
+# $OpenBSD: Makefile,v 1.8 2015/10/09 00:28:23 jca Exp $
 
 COMMENT =	OCaml bindings for libssl
 CATEGORIES =	devel security
 
 NAME =		ocaml-ssl
-DISTNAME =	${NAME}-0.4.6
+DISTNAME =	${NAME}-0.5.1
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=savonet/ocaml-ssl/}
-REVISION =	4
 
 HOMEPAGE =	http://sourceforge.net/projects/savonet/files/ocaml-ssl/
 
@@ -26,10 +25,9 @@ USE_GMAKE =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${NAME}/html
-	${INSTALL_DATA} ${WRKDIST}/{README,CHANGES} ${PREFIX}/share/doc/${NAME}/
+	${INSTALL_DATA} ${WRKDIST}/{README.md,CHANGES} ${PREFIX}/share/doc/${NAME}/
 	${INSTALL_DATA} ${WRKDIST}/doc/html/* ${PREFIX}/share/doc/${NAME}/html/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
 	${INSTALL_DATA} ${WRKDIST}/examples/* ${PREFIX}/share/examples/${NAME}/
-
 
 .include <bsd.port.mk>
