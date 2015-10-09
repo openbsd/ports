@@ -1,5 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/09/20 21:07:20 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/10/09 07:06:35 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/extensions/${MODRUBY_ARCH}/
+${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
+${GEM_EXTENSIONS_DIR}/
+@comment ${GEM_EXTENSIONS_DIR}/gem.build_complete
+@comment ${GEM_EXTENSIONS_DIR}/gem_make.out
+@comment ${GEM_EXTENSIONS_DIR}/mkmf.log
+@comment ${GEM_EXTENSIONS_DIR}/shadow.so
 ${GEM_LIB}/gems/${DISTNAME}/
 @comment ${GEM_LIB}/gems/${DISTNAME}/.RUBYARCHDIR.time
 ${GEM_LIB}/gems/${DISTNAME}/HISTORY
@@ -16,6 +23,8 @@ ${GEM_LIB}/gems/${DISTNAME}/pwd/depend
 ${GEM_LIB}/gems/${DISTNAME}/pwd/shadow.c
 ${GEM_LIB}/gems/${DISTNAME}/ruby-shadow.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/shadow/
+${GEM_LIB}/gems/${DISTNAME}/shadow.o
+${GEM_LIB}/gems/${DISTNAME}/shadow.so
 ${GEM_LIB}/gems/${DISTNAME}/shadow/depend
 ${GEM_LIB}/gems/${DISTNAME}/shadow/shadow.c
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
