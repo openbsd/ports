@@ -1,4 +1,4 @@
-$OpenBSD: patch-validate,v 1.1.1.1 2003/02/03 16:41:33 naddy Exp $
+$OpenBSD: patch-validate,v 1.2 2015/10/09 12:23:29 jasper Exp $
 --- validate.orig	Mon Feb  3 17:10:52 2003
 +++ validate	Mon Feb  3 17:11:26 2003
 @@ -43,10 +43,10 @@ my $usage = "Usage: validate [OPTION] [F
@@ -6,11 +6,11 @@ $OpenBSD: patch-validate,v 1.1.1.1 2003/02/03 16:41:33 naddy Exp $
  
  # SGML directory (catalog, DTDs, SGML declarations)
 -my $sgmlDir = '/usr/local/share/wdg/sgml-lib';
-+my $sgmlDir = '%%LOCALBASE%%/share/wdg/sgml-lib';
++my $sgmlDir = '${LOCALBASE}/share/wdg/sgml-lib';
  
  # Location of lq-nsgmls executable
 -my $nsgmlsLocation = '/usr/local/bin/lq-nsgmls';
-+my $nsgmlsLocation = '%%LOCALBASE%%/bin/lq-nsgmls';
++my $nsgmlsLocation = '${LOCALBASE}/bin/lq-nsgmls';
  
  # lq-nsgmls command line
  # The SGML declaration and HTML document's filename will be appended

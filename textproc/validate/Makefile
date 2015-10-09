@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/10/09 12:23:29 jasper Exp $
 
 COMMENT=		HTML, XHTML validator
 
@@ -24,8 +24,10 @@ NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/validate
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/validate ${PREFIX}/bin/
-	perl -pi -e 's:%%LOCALBASE%%:${LOCALBASE}:g' ${PREFIX}/bin/validate
 
 .include <bsd.port.mk>

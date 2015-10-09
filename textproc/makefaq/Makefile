@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/01/22 22:31:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2015/10/09 12:23:30 jasper Exp $
 
 COMMENT=	Python program to create FAQ's list from formatted data file
 
@@ -23,8 +23,7 @@ PKG_ARCH=	*
 DOCDIR=		${PREFIX}/share/doc/makefaq
 
 do-configure:
-	@perl -pi -e 's,%%MODPY_VERSION%%,${MODPY_VERSION},g' \
-		${WRKSRC}/makefaq.{1,py}
+	${SUBST_CMD} ${WRKSRC}/makefaq.{1,py}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/makefaq.py ${PREFIX}/bin/makefaq
