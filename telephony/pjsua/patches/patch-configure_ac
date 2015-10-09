@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure_ac,v 1.1 2015/10/09 21:28:13 sthen Exp $
+--- configure.ac.orig	Tue Aug 19 03:18:07 2014
++++ configure.ac	Fri Feb 20 20:11:42 2015
+@@ -114,6 +114,7 @@ AC_CHECK_LIB(winmm,puts)
+ AC_CHECK_LIB(socket,puts)
+ AC_CHECK_LIB(rt,puts)
+ AC_CHECK_LIB(m,sin)
++AC_SEARCH_LIBS(uuid_create, [], [ac_has_uuid_lib=1; CFLAGS="${CFLAGS} -DHAVE_UUID_CREATE"])
+ AC_CHECK_LIB(uuid,uuid_generate)
+ AC_CHECK_LIB(uuid,uuid_generate,[ac_has_uuid_lib=1])
+ AC_SEARCH_LIBS(gethostbyname,nsl)
+@@ -256,6 +257,7 @@ AC_CHECK_HEADER(mswsock.h,[AC_DEFINE(PJ_HAS_MSWSOCK_H,
+           	  #endif
+           	 ])
+ AC_CHECK_HEADER(ws2tcpip.h,[AC_DEFINE(PJ_HAS_WS2TCPIP_H,1)])
++AC_CHECK_HEADER(uuid.h,[ac_has_uuid_h=1])
+ AC_CHECK_HEADER(uuid/uuid.h,[ac_has_uuid_h=1])
+ AC_CHECK_HEADER(net/if.h,[AC_DEFINE(PJ_HAS_NET_IF_H,1)],[],
+ 		 [#if PJ_HAS_SYS_TYPES_H

@@ -1,0 +1,5 @@
+PJSIP is a free and open source multimedia communication library written
+in C. It provides a high level API implementing standard protocols for
+multimedia communications and NAT traversal, such as SIP, SDP, RTP, STUN,
+TURN, and ICE. It is targeted at a range of systems, from desktops, to
+embedded systems, to mobile handsets.
