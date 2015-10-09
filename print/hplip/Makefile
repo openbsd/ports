@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2015/09/16 06:25:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.134 2015/10/09 18:21:34 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -21,6 +21,8 @@ PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
+
+REVISION-hpaio=		0
 
 SHARED_LIBS +=  hpmud                2.0      # 0.6
 SHARED_LIBS +=  hpipp                0.0      # 0.1
@@ -78,11 +80,12 @@ RUN_DEPENDS-common=	#empty
 
 ### -hpaio
 WANTLIB-hpaio += ${WANTLIB} ${cWANTLIB}
-WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 hpip hpmud
-WANTLIB-hpaio += jpeg netsnmp sane tiff usb usb-1.0 z hpipp
-WANTLIB-hpaio += ffi gmp gnutls hogweed nettle p11-kit tasn1
+WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 ffi gmp gnutls
+WANTLIB-hpaio += hogweed hpip hpipp hpmud jpeg netsnmp nettle p11-kit
+WANTLIB-hpaio += sane tasn1 tiff usb usb-1.0 z
 
 LIB_DEPENDS-hpaio=	print/hplip,-common \
+			print/cups,-libs \
 			graphics/sane-backends
 
 RUN_DEPENDS-hpaio=	${MODGETTEXT_RUN_DEPENDS}
