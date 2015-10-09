@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2015/03/31 09:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/10/09 22:16:51 tim Exp $
 
 COMMENT =		unicode sans-serif/monospace TrueType fonts from Ubuntu
 
-DISTNAME =		ubuntu-font-family-0.80
-REVISION =		1
+DISTNAME =		ubuntu-font-family-0.83
 PKGNAME =		${DISTNAME:S,-family,s,}
 
 CATEGORIES =		fonts
 
 HOMEPAGE =		http://font.ubuntu.com/
 
-MAINTAINER =		Tim van der Molen <tbvdm@xs4all.nl>
+MAINTAINER =		Tim van der Molen <tim@openbsd.org>
 
 # Ubuntu Font Licence 1.0
 # http://font.ubuntu.com/ufl/ubuntu-font-licence-1.0.txt
