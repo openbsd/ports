@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/05/22 11:31:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/10/09 07:06:52 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/spool/lock/sane/*
@@ -7,6 +7,7 @@
 bin/sane-config
 @bin bin/sane-find-scanner
 @bin bin/scanimage
+@bin bin/umax_pp
 include/sane/
 include/sane/sane.h
 include/sane/saneopts.h
@@ -15,162 +16,6 @@ lib/libsane.la
 @lib lib/libsane.so.${LIBsane_VERSION}
 lib/pkgconfig/sane-backends.pc
 lib/sane/
-@comment lib/sane/libsane-abaton.a
-@comment lib/sane/libsane-abaton.la
-@comment lib/sane/libsane-agfafocus.a
-@comment lib/sane/libsane-agfafocus.la
-@comment lib/sane/libsane-apple.a
-@comment lib/sane/libsane-apple.la
-@comment lib/sane/libsane-artec.a
-@comment lib/sane/libsane-artec.la
-@comment lib/sane/libsane-artec_eplus48u.a
-@comment lib/sane/libsane-artec_eplus48u.la
-@comment lib/sane/libsane-as6e.a
-@comment lib/sane/libsane-as6e.la
-@comment lib/sane/libsane-avision.a
-@comment lib/sane/libsane-avision.la
-@comment lib/sane/libsane-bh.a
-@comment lib/sane/libsane-bh.la
-@comment lib/sane/libsane-canon.a
-@comment lib/sane/libsane-canon.la
-@comment lib/sane/libsane-canon630u.a
-@comment lib/sane/libsane-canon630u.la
-@comment lib/sane/libsane-canon_dr.a
-@comment lib/sane/libsane-canon_dr.la
-@comment lib/sane/libsane-cardscan.a
-@comment lib/sane/libsane-cardscan.la
-@comment lib/sane/libsane-coolscan.a
-@comment lib/sane/libsane-coolscan.la
-@comment lib/sane/libsane-coolscan2.a
-@comment lib/sane/libsane-coolscan2.la
-@comment lib/sane/libsane-coolscan3.a
-@comment lib/sane/libsane-coolscan3.la
-@comment lib/sane/libsane-dc210.a
-@comment lib/sane/libsane-dc210.la
-@comment lib/sane/libsane-dc240.a
-@comment lib/sane/libsane-dc240.la
-@comment lib/sane/libsane-dc25.a
-@comment lib/sane/libsane-dc25.la
-@comment lib/sane/libsane-dell1600n_net.a
-@comment lib/sane/libsane-dell1600n_net.la
-@comment lib/sane/libsane-dll.a
-@comment lib/sane/libsane-dll.la
-@comment lib/sane/libsane-dmc.a
-@comment lib/sane/libsane-dmc.la
-@comment lib/sane/libsane-epjitsu.a
-@comment lib/sane/libsane-epjitsu.la
-@comment lib/sane/libsane-epson.a
-@comment lib/sane/libsane-epson.la
-@comment lib/sane/libsane-epson2.a
-@comment lib/sane/libsane-epson2.la
-@comment lib/sane/libsane-fujitsu.a
-@comment lib/sane/libsane-fujitsu.la
-@comment lib/sane/libsane-genesys.a
-@comment lib/sane/libsane-genesys.la
-@comment lib/sane/libsane-gt68xx.a
-@comment lib/sane/libsane-gt68xx.la
-@comment lib/sane/libsane-hp.a
-@comment lib/sane/libsane-hp.la
-@comment lib/sane/libsane-hp3500.a
-@comment lib/sane/libsane-hp3500.la
-@comment lib/sane/libsane-hp3900.a
-@comment lib/sane/libsane-hp3900.la
-@comment lib/sane/libsane-hp4200.a
-@comment lib/sane/libsane-hp4200.la
-@comment lib/sane/libsane-hp5400.a
-@comment lib/sane/libsane-hp5400.la
-@comment lib/sane/libsane-hp5590.a
-@comment lib/sane/libsane-hp5590.la
-@comment lib/sane/libsane-hpljm1005.a
-@comment lib/sane/libsane-hpljm1005.la
-@comment lib/sane/libsane-hs2p.a
-@comment lib/sane/libsane-hs2p.la
-@comment lib/sane/libsane-ibm.a
-@comment lib/sane/libsane-ibm.la
-@comment lib/sane/libsane-kodak.a
-@comment lib/sane/libsane-kodak.la
-@comment lib/sane/libsane-kodakaio.a
-@comment lib/sane/libsane-kodakaio.la
-@comment lib/sane/libsane-kvs1025.a
-@comment lib/sane/libsane-kvs1025.la
-@comment lib/sane/libsane-kvs20xx.a
-@comment lib/sane/libsane-kvs20xx.la
-@comment lib/sane/libsane-leo.a
-@comment lib/sane/libsane-leo.la
-@comment lib/sane/libsane-lexmark.a
-@comment lib/sane/libsane-lexmark.la
-@comment lib/sane/libsane-ma1509.a
-@comment lib/sane/libsane-ma1509.la
-@comment lib/sane/libsane-magicolor.a
-@comment lib/sane/libsane-magicolor.la
-@comment lib/sane/libsane-matsushita.a
-@comment lib/sane/libsane-matsushita.la
-@comment lib/sane/libsane-microtek.a
-@comment lib/sane/libsane-microtek.la
-@comment lib/sane/libsane-mustek.a
-@comment lib/sane/libsane-mustek.la
-@comment lib/sane/libsane-mustek_usb.a
-@comment lib/sane/libsane-mustek_usb.la
-@comment lib/sane/libsane-nec.a
-@comment lib/sane/libsane-nec.la
-@comment lib/sane/libsane-net.a
-@comment lib/sane/libsane-net.la
-@comment lib/sane/libsane-niash.a
-@comment lib/sane/libsane-niash.la
-@comment lib/sane/libsane-p5.a
-@comment lib/sane/libsane-p5.la
-@comment lib/sane/libsane-pie.a
-@comment lib/sane/libsane-pie.la
-@comment lib/sane/libsane-pint.a
-@comment lib/sane/libsane-pint.la
-@comment lib/sane/libsane-pixma.a
-@comment lib/sane/libsane-pixma.la
-@comment lib/sane/libsane-plustek.a
-@comment lib/sane/libsane-plustek.la
-@comment lib/sane/libsane-plustek_pp.a
-@comment lib/sane/libsane-plustek_pp.la
-@comment lib/sane/libsane-ricoh.a
-@comment lib/sane/libsane-ricoh.la
-@comment lib/sane/libsane-rts8891.a
-@comment lib/sane/libsane-rts8891.la
-@comment lib/sane/libsane-s9036.a
-@comment lib/sane/libsane-s9036.la
-@comment lib/sane/libsane-sceptre.a
-@comment lib/sane/libsane-sceptre.la
-@comment lib/sane/libsane-sharp.a
-@comment lib/sane/libsane-sharp.la
-@comment lib/sane/libsane-sm3600.a
-@comment lib/sane/libsane-sm3600.la
-@comment lib/sane/libsane-sm3840.a
-@comment lib/sane/libsane-sm3840.la
-@comment lib/sane/libsane-snapscan.a
-@comment lib/sane/libsane-snapscan.la
-@comment lib/sane/libsane-sp15c.a
-@comment lib/sane/libsane-sp15c.la
-@comment lib/sane/libsane-st400.a
-@comment lib/sane/libsane-st400.la
-@comment lib/sane/libsane-stv680.a
-@comment lib/sane/libsane-stv680.la
-@comment lib/sane/libsane-tamarack.a
-@comment lib/sane/libsane-tamarack.la
-@comment lib/sane/libsane-teco1.a
-@comment lib/sane/libsane-teco1.la
-@comment lib/sane/libsane-teco2.a
-@comment lib/sane/libsane-teco2.la
-@comment lib/sane/libsane-teco3.a
-@comment lib/sane/libsane-teco3.la
-@comment lib/sane/libsane-test.a
-@comment lib/sane/libsane-test.la
-@comment lib/sane/libsane-u12.a
-@comment lib/sane/libsane-u12.la
-@comment lib/sane/libsane-umax.a
-@comment lib/sane/libsane-umax.la
-@comment lib/sane/libsane-umax1220u.a
-@comment lib/sane/libsane-umax1220u.la
-@comment lib/sane/libsane-umax_pp.a
-@comment lib/sane/libsane-umax_pp.la
-@comment lib/sane/libsane-xerox_mfp.a
-@comment lib/sane/libsane-xerox_mfp.la
 @bin libexec/saned
 @man man/man1/gamma4scanimage.1
 @man man/man1/sane-config.1
@@ -199,6 +44,7 @@ lib/sane/
 @man man/man5/sane-epjitsu.5
 @man man/man5/sane-epson.5
 @man man/man5/sane-epson2.5
+@man man/man5/sane-epsonds.5
 @man man/man5/sane-fujitsu.5
 @man man/man5/sane-genesys.5
 @man man/man5/sane-gt68xx.5
@@ -228,6 +74,7 @@ lib/sane/
 @man man/man5/sane-niash.5
 @man man/man5/sane-p5.5
 @man man/man5/sane-pie.5
+@man man/man5/sane-pieusb.5
 @man man/man5/sane-pint.5
 @man man/man5/sane-pixma.5
 @man man/man5/sane-plustek.5
@@ -393,6 +240,7 @@ share/examples/sane-backends/sane.d/epson.conf
 @sample ${SYSCONFDIR}/sane.d/epson.conf
 share/examples/sane-backends/sane.d/epson2.conf
 @sample ${SYSCONFDIR}/sane.d/epson2.conf
+share/examples/sane-backends/sane.d/epsonds.conf
 share/examples/sane-backends/sane.d/fujitsu.conf
 @sample ${SYSCONFDIR}/sane.d/fujitsu.conf
 share/examples/sane-backends/sane.d/genesys.conf
@@ -439,6 +287,7 @@ share/examples/sane-backends/sane.d/p5.conf
 @sample ${SYSCONFDIR}/sane.d/p5.conf
 share/examples/sane-backends/sane.d/pie.conf
 @sample ${SYSCONFDIR}/sane.d/pie.conf
+share/examples/sane-backends/sane.d/pieusb.conf
 share/examples/sane-backends/sane.d/pixma.conf
 @sample ${SYSCONFDIR}/sane.d/pixma.conf
 share/examples/sane-backends/sane.d/plustek.conf
@@ -487,26 +336,66 @@ share/examples/sane-backends/sane.d/umax_pp.conf
 @sample ${SYSCONFDIR}/sane.d/umax_pp.conf
 share/examples/sane-backends/sane.d/xerox_mfp.conf
 @sample ${SYSCONFDIR}/sane.d/xerox_mfp.conf
+share/locale/
+share/locale/bg/
+share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/sane-backends.mo
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/sane-backends.mo
+share/locale/da/
+share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/sane-backends.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/sane-backends.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/sane-backends.mo
+share/locale/eo/
+share/locale/eo/LC_MESSAGES/
 share/locale/eo/LC_MESSAGES/sane-backends.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/sane-backends.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/sane-backends.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/sane-backends.mo
+share/locale/gl/
+share/locale/gl/LC_MESSAGES/
 share/locale/gl/LC_MESSAGES/sane-backends.mo
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
+share/locale/hu/LC_MESSAGES/sane-backends.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/sane-backends.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/sane-backends.mo
+share/locale/nb/
+share/locale/nb/LC_MESSAGES/
 share/locale/nb/LC_MESSAGES/sane-backends.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/sane-backends.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/sane-backends.mo
+share/locale/pt/
+share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/sane-backends.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/sane-backends.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/sane-backends.mo
+share/locale/uk/
+share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/sane-backends.mo
 share/sane/
 share/sane/artec_eplus48u/

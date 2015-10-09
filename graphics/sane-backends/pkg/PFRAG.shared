@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.14 2013/03/08 06:44:18 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.15 2015/10/09 07:06:52 ajacoutot Exp $
 lib/sane/libsane-abaton.so
 lib/sane/libsane-agfafocus.so
 lib/sane/libsane-apple.so
@@ -23,6 +23,7 @@ lib/sane/libsane-dmc.so
 lib/sane/libsane-epjitsu.so
 lib/sane/libsane-epson.so
 lib/sane/libsane-epson2.so
+lib/sane/libsane-epsonds.so
 lib/sane/libsane-fujitsu.so
 lib/sane/libsane-genesys.so
 lib/sane/libsane-gt68xx.so
@@ -52,6 +53,7 @@ lib/sane/libsane-net.so
 lib/sane/libsane-niash.so
 lib/sane/libsane-p5.so
 lib/sane/libsane-pie.so
+lib/sane/libsane-pieusb.so
 lib/sane/libsane-pint.so
 lib/sane/libsane-pixma.so
 lib/sane/libsane-plustek.so

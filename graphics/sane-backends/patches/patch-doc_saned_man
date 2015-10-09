@@ -1,13 +1,13 @@
-$OpenBSD: patch-doc_saned_man,v 1.6 2013/10/01 08:59:11 ajacoutot Exp $
---- doc/saned.man.orig	Sun Aug 25 23:22:58 2013
-+++ doc/saned.man	Tue Oct  1 10:18:57 2013
+$OpenBSD: patch-doc_saned_man,v 1.7 2015/10/09 07:06:52 ajacoutot Exp $
+--- doc/saned.man.orig	Sat Sep 26 02:53:25 2015
++++ doc/saned.man	Thu Oct  8 08:00:01 2015
 @@ -163,7 +163,7 @@ It is required to add a single line to the inetd confi
  The configuration line normally looks like this:
  .PP
  .RS
 -sane\-port stream tcp nowait saned.saned @SBINDIR@/saned saned
 +sane\-port stream tcp nowait _saned._saned @SBINDIR@/saned saned
- .E
+ .RE
  .PP
  However, if your system uses
 @@ -176,16 +176,16 @@ and use a line of the following form in

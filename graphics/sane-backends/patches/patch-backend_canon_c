@@ -1,0 +1,12 @@
+$OpenBSD: patch-backend_canon_c,v 1.1 2015/10/09 07:06:52 ajacoutot Exp $
+--- backend/canon.c.orig	Thu Oct  8 08:07:15 2015
++++ backend/canon.c	Thu Oct  8 08:07:25 2015
+@@ -1093,7 +1093,7 @@ do_cancel (CANON_Scanner * s)
+ 	  s->reset_flag = 0;
+ 	  DBG (21, "do_cancel: reset_flag = %d\n", s->reset_flag);
+ 	  s->time0 = -1;
+-	  DBG (21, "time0 = %ld\n", s->time0);
++	  DBG (21, "time0 = %lld\n", s->time0);
+ 	}
+ 
+       if (s->hw->info.model == FB1200)

@@ -1,67 +1,65 @@
-# $OpenBSD: Makefile,v 1.69 2015/07/07 14:33:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2015/10/09 07:06:52 ajacoutot Exp $
 
-BROKEN-alpha =	ICE hp5590.c:1141: error: unrecognizable insn
+BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
-COMMENT=	API for accessing scanners, backends
+COMMENT=		API for accessing scanners, backends
 
-DISTNAME=	sane-backends-1.0.24
-REVISION=	6
+DISTNAME=		sane-backends-1.0.25
 
 SHARED_LIBS +=  sane                 2.0      # unknown
 
-CATEGORIES=	graphics
+CATEGORIES=		graphics
 
-HOMEPAGE=	http://www.sane-project.org/
+HOMEPAGE=		http://www.sane-project.org/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += avahi-client avahi-common c cups dbus-1 ffi gmp gnutls hogweed
-WANTLIB += jpeg m nettle p11-kit pthread tasn1 tiff usb usb-1.0 z
+WANTLIB += c jpeg m png pthread tiff usb usb-1.0 z
 
-MASTER_SITES=	https://distfiles.bsdfrog.org/ \
-		ftp://ftp2.sane-project.org/pub/sane/${DISTNAME}/
+MASTER_SITES=		http://fossies.org/linux/misc/ \
+			https://alioth.debian.org/frs/download.php/file/4146/
 
-MODULES=	devel/gettext
+BUILD_DEPENDS=		devel/gettext-tools
 
-LIB_DEPENDS=	graphics/tiff \
-		devel/libusb-compat \
-		print/cups,-libs
+LIB_DEPENDS=		devel/libusb-compat \
+			graphics/png \
+			graphics/tiff
 
-FLAVORS=	snmp
+FLAVORS=		snmp
 FLAVOR?=
 
-USE_GMAKE=	Yes
+USE_GMAKE=		Yes
 
-LOCALSTATEDIR=	${BASELOCALSTATEDIR}/spool
+LOCALSTATEDIR=		${BASELOCALSTATEDIR}/spool
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--sbindir=${PREFIX}/libexec \
-		--with-docdir=${PREFIX}/share/doc/sane-backends \
-		--without-gphoto2 \
-		--with-group=553 \
-		--disable-latex
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--sbindir=${PREFIX}/libexec \
+			--with-docdir=${PREFIX}/share/doc/sane-backends \
+			--without-gphoto2 \
+			--with-group=553 \
+			--disable-latex
 
 # XXX doesn't work
-#CONFIGURE_ARGS+=--enable-avahi
+#CONFIGURE_ARGS +=	--enable-avahi
 
 .if ${FLAVOR:Msnmp}
-LIB_DEPENDS +=	net/net-snmp
-WANTLIB +=	crypto netsnmp
-CONFIGURE_ARGS += --with-snmp
+LIB_DEPENDS +=		net/net-snmp
+WANTLIB += crypto netsnmp
+CONFIGURE_ARGS +=	--with-snmp
 .else
-CONFIGURE_ARGS += --without-snmp
+CONFIGURE_ARGS +=	--without-snmp
 .endif
 
 # missing check in configure for config.h.in
-CFLAGS +=	-DHAVE_SYS_SOCKET_H
+CFLAGS +=		-DHAVE_SYS_SOCKET_H
 
-FAKE_FLAGS=	configdir=${PREFIX}/share/examples/sane-backends/sane.d
+FAKE_FLAGS=		configdir=${PREFIX}/share/examples/sane-backends/sane.d
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure
@@ -73,5 +71,6 @@ post-install:
 		${PREFIX}/share/examples/sane-backends/hotplug
 	rm ${PREFIX}/share/doc/sane-backends/README*
 	rm ${PREFIX}/share/examples/sane-backends/hotplug/{attach,detach}.orig
+	rm ${PREFIX}/lib/sane/*.{a,la}
 
 .include <bsd.port.mk>
