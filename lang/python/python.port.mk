@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.82 2015/09/29 10:50:16 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.83 2015/10/09 09:22:48 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -148,7 +148,7 @@ SUBST_VARS :=	MODPY_PYCACHE MODPY_COMMENT MODPY_PYC_MAGIC_TAG MODPY_BIN MODPY_EG
 
 # set MODPY_BIN for executable scripts
 MODPY_BIN_ADJ =	perl -pi \
-		-e '$$. == 1 && s|^.*env python.*$$|\#!${MODPY_BIN}|;' \
+		-e '$$. == 1 && s|^.*env +python.*$$|\#!${MODPY_BIN}|;' \
 		-e '$$. == 1 && s|^.*bin/python.*$$|\#!${MODPY_BIN}|;' \
 		-e 'close ARGV if eof;'
 
