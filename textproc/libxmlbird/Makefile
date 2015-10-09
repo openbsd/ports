@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/20 12:03:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/10/09 12:48:22 jasper Exp $
 
 COMMENT =	XML parser written in Vala
 DISTNAME =	libxmlbird-1.0.6
@@ -28,7 +28,7 @@ TEST_DEPENDS =		${BASE_PKGPATH}
 CONFIGURE_STYLE =	simple
 
 pre-configure:
-	perl -pi -e "s,bash,sh,g" ${WRKSRC}/scripts/run.py
+	sed -i "s,bash,sh,g" ${WRKSRC}/scripts/run.py
 	${SUBST_CMD} ${WRKSRC}/dodo.py
 
 do-build:

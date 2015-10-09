@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/09/18 14:54:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.19 2015/10/09 12:48:22 jasper Exp $
 
 COMMENT =	code searching tool, with a focus on speed (ag)
 
@@ -25,7 +25,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 NO_TEST =	YES
 
 pre-configure:
-	perl -pi -e "s,-O2,,g" ${WRKSRC}/configure
+	sed -i "s,-O2,,g" ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ag ${PREFIX}/bin/ag

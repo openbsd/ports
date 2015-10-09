@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/06/17 08:50:02 bentley Exp $
+# $OpenBSD: Makefile,v 1.26 2015/10/09 12:48:22 jasper Exp $
 
 COMMENT=	curses-based URL ripper
 
@@ -34,7 +34,7 @@ WANTLIB+=	ncurses
 
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/{urlview.c,url_handler.sh}
-	@perl -pi -e "s,/etc,${SYSCONFDIR},g" ${WRKSRC}/urlview.man
+	@sed -i "s,/etc,${SYSCONFDIR},g" ${WRKSRC}/urlview.man
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/urlview

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2015/06/01 06:58:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2015/10/09 12:48:21 jasper Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
@@ -74,7 +74,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-DU_IS_BIG_ENDIAN=1"
 # binutils bugs on mips64.
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 pre-configure:
-	perl -pi -e 's|-Wl,-Bsymbolic||g' ${WRKSRC}/config/mh-bsd-gcc
+	sed -i 's|-Wl,-Bsymbolic||g' ${WRKSRC}/config/mh-bsd-gcc
 .endif
 
 post-install:

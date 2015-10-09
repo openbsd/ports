@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/07/23 07:48:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2015/10/09 12:48:22 jasper Exp $
 
 COMMENT=	utility to turn simply formatted text into markup
 
@@ -26,11 +26,12 @@ DOCDIR=		${PREFIX}/share/doc/txt2tags
 EXAMPLESDIR=	${PREFIX}/share/examples/txt2tags
 LOCALEDIR=	${PREFIX}/share/locale
 
+MODPY_ADJ_FILES={txt2tags,extras/gensite,test/run.py} \
+		samples/module/module-{body,full}.py
+
 pre-configure:
-	@perl -pi -e "s,^#!/usr/bin/env python,#!${MODPY_BIN}," \
-		${WRKSRC}/{txt2tags,extras/gensite,test/run.py} \
-		${WRKSRC}/samples/module/module-{body,full}.py
-	@perl -pi -e "s,/usr/share/locale/,${LOCALBASE}/share/locale," \
+	${MODPYTHON_pre-configure}
+	sed -i "s,/usr/share/locale/,${LOCALBASE}/share/locale," \
 		${WRKSRC}/txt2tags
 
 do-build:
@@ -58,7 +59,7 @@ do-install:
 	done
 
 do-test:
-	@perl -pi -e 's,abspath,basename,' ${WRKSRC}/test/lib.py
+	@sed -i 's,abspath,basename,' ${WRKSRC}/test/lib.py
 	PATH=${WRKSRC}:$$PATH ${WRKSRC}/test/run.py
 
 .include <bsd.port.mk>

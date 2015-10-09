@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/07/23 11:41:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2015/10/09 12:48:21 jasper Exp $
 
 COMMENT=	text document format for writing documents and man pages
 
@@ -34,7 +34,7 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
 CONFIGURE_STYLE=gnu
 
 post-configure:
-	@perl -pi -e 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/asciidoc.py
+	@sed -i 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/asciidoc.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_SITEPKG}

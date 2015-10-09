@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/04/04 09:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2015/10/09 12:48:21 jasper Exp $
 
 COMMENT=	generic spell checking library/wrapper
 
@@ -44,7 +44,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 MAKE_FLAGS=	CXX_WARN_CFLAGS=""
 
 pre-configure:
-	@perl -pi -e 's,MKDIRPROG-mkdir,MKDIRPROG-mkdir -p,g' \
+	@sed -i 's,MKDIRPROG-mkdir,MKDIRPROG-mkdir -p,g' \
 		${WRKSRC}/install-sh
 	@perl -pi -e 's,\$$\(datadir\),${LOCALBASE}/share,g' \
 		${WRKSRC}/doc/enchant.1

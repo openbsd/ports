@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/06/25 22:57:01 jturner Exp $
+# $OpenBSD: Makefile,v 1.2 2015/10/09 12:48:22 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -21,7 +21,7 @@ MAKE_FLAGS =		LUAINC="-I${MODLUA_INCL_DIR}"
 FAKE_FLAGS =		DESTDIR=""
 
 pre-configure:
-	perl -pi -e 's,/usr/bin/env lua,${MODLUA_BIN},' ${WRKSRC}/test.lua
+	sed -i 's,/usr/bin/env lua,${MODLUA_BIN},' ${WRKSRC}/test.lua
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}

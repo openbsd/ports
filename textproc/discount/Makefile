@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/06/19 16:29:32 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2015/10/09 12:48:21 jasper Exp $
 
 COMMENT =		fast C implementation of Markdown
 
@@ -24,6 +24,6 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 INSTALL_TARGET =	install.everything
 
 pre-configure:
-	@perl -pi -e 's,\./markdown,\./discount,' ${WRKSRC}/tests/*
+	@sed -i 's,\./markdown,\./discount,' ${WRKSRC}/tests/*
 
 .include <bsd.port.mk>

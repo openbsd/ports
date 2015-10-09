@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/20 17:06:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/10/09 12:48:22 jasper Exp $
 
 COMMENT=	small tools to operate on patch files
 
@@ -32,7 +32,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-patch=${LOCALBASE}/bin/gpatch
 
 pre-test:
-	perl -pi -e "s|/bin/echo -ne '\\\t'|printf '\\\t'|" \
+	@sed -i "s|/bin/echo -ne '\\\t'|printf '\\\t'|" \
 	    ${WRKSRC}/tests/flip*/run-test
 
 .include <bsd.port.mk>

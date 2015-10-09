@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/05/28 10:17:25 pascal Exp $
+# $OpenBSD: Makefile,v 1.18 2015/10/09 12:48:22 jasper Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 COMMENT-main =		syntactic parser of different languages
@@ -72,7 +72,7 @@ CONFIGURE_ARGS +=	--disable-java-bindings
 .endif
 
 pre-configure:
-	perl -pi -e 's,-O2,,g;' -e 's,-O3,,g' ${WRKSRC}/configure
+	sed -i -e 's,-O2,,g;' -e 's,-O3,,g' ${WRKSRC}/configure
 
 post-install:
 	rm ${PREFIX}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.{a,la}

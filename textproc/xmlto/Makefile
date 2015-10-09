@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/17 08:01:32 phessler Exp $
+# $OpenBSD: Makefile,v 1.16 2015/10/09 12:48:22 jasper Exp $
 
 COMMENT=	front-end for converting XML files to various formats
 
@@ -46,7 +46,7 @@ CONFIGURE_ENV=  BASH=${LOCALBASE}/bin/bash \
 		ZIP_PATH=${LOCALBASE}/bin/zip
 
 pre-configure:
-	perl -pi -e 's,/bin/bash,${LOCALBASE}/bin/bash,g' \
+	sed -i 's,/bin/bash,${LOCALBASE}/bin/bash,g' \
 		${WRKSRC}/xmlif/test/run-test
 
 .include <bsd.port.mk>
