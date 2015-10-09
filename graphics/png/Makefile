@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2015/10/08 23:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.108 2015/10/09 15:28:24 naddy Exp $
 
 COMMENT=	library for manipulating PNG images
 
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 post-install:
 	cd ${PREFIX}/lib; \
 	    ln -s libpng16.so.${LIBpng16_VERSION} libpng.so.${LIBpng_VERSION}; \
-	    perl -pi -e 's/libpng16/libpng/g' libpng.la
+	    rm libpng.la; cp -p libpng16.la libpng.la; \
+	    sed -i 's/libpng16/libpng/g' libpng.la
 
 .include <bsd.port.mk>
