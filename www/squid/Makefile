@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.171 2015/09/30 08:56:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.172 2015/10/09 00:28:56 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
-V=		3.5.9
-REVISION=	0
+V=		3.5.10
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
@@ -21,7 +20,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi gmp gnutls hogweed m p11-kit nettle tasn1 pthread z
+WANTLIB += c m nettle pthread
+cWANTLIB = ${WANTLIB} ffi gmp gnutls hogweed p11-kit tasn1 z
 
 # bzr repository at https://code.launchpad.net/squid
 MASTER_SITES=	${HOMEPAGE}Versions/v${V:C/^([0-9]).*/\1/}/${V:C/([0-9.]{3}).*/\1/}/ \
@@ -46,7 +46,7 @@ CONFIGURE_ARGS=	--disable-strict-error-checking \
 EXTERNAL_ACL=	LDAP_group SQL_session file_userip time_quota \
 		unix_group wbinfo_group # kerberos_ldap_group (sasl/gssapi)
 
-WANTLIB-main +=	${WANTLIB} crypto db ssl
+WANTLIB-main +=	${cWANTLIB} crypto db ssl
 
 LIB_DEPENDS-main += ${LIB_DEPENDS} \
 		databases/db/v4 \
@@ -114,11 +114,10 @@ EXTERNAL_ACL+=	LDAP_group eDirectory_userip
 .endif
 RUN_DEPENDS-ldap=   ${BASE_PKGPATH}
 LIB_DEPENDS-ldap+=  ${LIB_DEPENDS} databases/openldap
-WANTLIB-ldap +=     ${WANTLIB} crypto lber-2.4 ldap-2.4 sasl2 ssl
+WANTLIB-ldap +=     ${cWANTLIB} crypto lber-2.4 ldap-2.4 sasl2 ssl
 
 RUN_DEPENDS-ntlm=   net/samba ${BASE_PKGPATH}
 LIB_DEPENDS-ntlm += security/libnettle
-WANTLIB-ntlm +=	    ${WANTLIB}
 
 pre-build:
 	@cd ${WRKSRC}; \
