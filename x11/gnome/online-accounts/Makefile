@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.72 2015/09/16 12:50:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2015/10/09 06:58:02 jasper Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts
-GNOME_VERSION=	3.16.4.1
+GNOME_VERSION=	3.18.0
 
-SHARED_LIBS +=  goa-1.0              3.0      # .0.0
-SHARED_LIBS +=  goa-backend-1.0      3.1      # .1.0
+SHARED_LIBS +=  goa-1.0              3.1      # .0.0
+SHARED_LIBS +=  goa-backend-1.0      3.2      # .1.0
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,10 +24,9 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs rest-0.7 secret-1 soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 stdc++ telepathy-glib
 WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z gbm
-WANTLIB += X11-xcb Xau Xdmcp Xxf86vm drm epoxy estdc++ glapi gmp
-WANTLIB += gnutls hogweed javascriptcoregtk-4.0 nettle notify
-WANTLIB += p11-kit tasn1 webkit2gtk-4.0 xcb-dri2 xcb-glx xcb-shape
-WANTLIB += xcb-xfixes
+WANTLIB += X11-xcb Xau Xdmcp Xxf86vm drm epoxy estdc++ glapi
+WANTLIB += javascriptcoregtk-4.0 notify webkit2gtk-4.0 xcb-dri2
+WANTLIB += xcb-xfixes xcb-glx xcb-shape hyphen
 
 MODULES=		devel/dconf \
 			devel/gettext \
