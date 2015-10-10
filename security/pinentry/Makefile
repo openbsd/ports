@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/03/26 18:17:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2015/10/10 10:15:09 ajacoutot Exp $
 
 # pinentry builds against it's own stripped version of libassuan
 # I will see with upstream how to change this behavior
@@ -10,7 +10,7 @@ VERSION = 	0.8.1
 DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
 
-REVISION-main = 1
+REVISION-main = 2
 REVISION-gtk2 = 1
 PKGNAME-main = 	${DISTNAME}
 PKGNAME-gtk2 = 	pinentry-gtk2-${VERSION}
@@ -27,6 +27,9 @@ PERMIT_PACKAGE_CDROM = 	Yes
 MULTI_PACKAGES = 	-main -gtk2
 
 WANTLIB-main = 		c ncurses ${MODLIBICONV_WANTLIB}
+LIB_DEPENDS-main =	${MODLIBICONV_LIB_DEPENDS}
+RUN_DEPENDS-main =	${MODLIBICONV_RUN_DEPENDS}
+
 WANTLIB-gtk2 = 		${WANTLIB} c X11 Xcomposite Xcursor Xdamage \
 			Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 \
 			cairo fontconfig freetype gdk-x11-2.0 \
