@@ -1,0 +1,9 @@
+$OpenBSD: patch-test_testCampaignAll,v 1.1 2015/10/10 13:00:04 sthen Exp $
+--- test/testCampaignAll.orig	Sat Oct 10 13:44:54 2015
++++ test/testCampaignAll	Sat Oct 10 13:45:03 2015
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#!/bin/sh
+ # This script check if we have the tests patterns and download them if needed
+ # then run all available tests
+ 

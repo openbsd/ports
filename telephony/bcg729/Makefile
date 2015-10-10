@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/10 12:33:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/10/10 13:00:04 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,15 @@ MASTER_SITES=	http://download-mirror.savannah.gnu.org/releases/linphone/plugins/
 
 CONFIGURE_STYLE=	gnu
 
-# there are tests, but need a separate (35MB) download, and fixing
-NO_TEST=	Yes
+# Use bundled libtool for the tests only; otherwise they fail to link.
+TEST_FLAGS=	LIBTOOL="/bin/sh ../../libtool"
+TEST_IS_INTERACTIVE=	Yes
+
+pre-test:
+	@if ! [ -d ${WRKSRC}/test/patterns ]; then echo; echo \
+	    ">>> Tests require an additional download. Please fetch"; echo \
+	    ">>> http://www.belledonne-communications.com/downloads/bcg729-patterns.zip"; echo \
+	    ">>> and unzip it in ${WRKSRC}/test"; \
+	    echo; exit 1; fi
 
 .include <bsd.port.mk>
