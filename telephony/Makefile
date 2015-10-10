@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/06/10 20:01:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2015/10/10 12:33:33 sthen Exp $
 
      SUBDIR =
      SUBDIR += asterisk
@@ -8,6 +8,7 @@
      SUBDIR += asterisk-sounds
      SUBDIR += astmanproxy
      SUBDIR += baresip
+     SUBDIR += bcg729
      SUBDIR += fobbit
      SUBDIR += gsutil
      SUBDIR += iaxclient
