@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/10/09 21:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2015/10/10 12:30:38 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT-main=	multimedia communication library (SIP, RTP, ICE, etc)
 COMMENT-pjsua=	lightweight sip client
 
 V=		2.4.5
+REVISION-pjsua=	0
 DISTNAME=	pjproject-$V
 PKGNAME-main=	pjsip-$V
 PKGNAME-pjsua=	pjsua-$V
@@ -55,7 +56,7 @@ LIB_DEPENDS-main= audio/gsm \
 		audio/portaudio-svn \
 		audio/speex
 
-LIB_DEPENDS-pjsua= telephony/pjsip,-main \
+LIB_DEPENDS-pjsua= telephony/pjsua,-main \
 		audio/portaudio-svn
 
 # statically linked
