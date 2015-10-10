@@ -1,0 +1,9 @@
+$OpenBSD: patch-man_CMakeLists_txt,v 1.1 2015/10/10 08:32:04 kirby Exp $
+--- man/CMakeLists.txt.orig	Wed Jun 17 08:12:09 2015
++++ man/CMakeLists.txt	Wed Jun 17 08:12:26 2015
+@@ -25,4 +25,4 @@ endforeach(_m)
+ 
+ add_custom_target(man ALL DEPENDS ${_manuals})
+ 
+-install(FILES ${_manuals} DESTINATION "share/man/man1" COMPONENT doc)
++install(FILES ${_manuals} DESTINATION "man/man1" COMPONENT doc)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:48 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/10/10 08:32:04 kirby Exp $
 @bin bin/PTblender
 @bin bin/PTcrop
 @bin bin/PTinfo
@@ -22,7 +22,6 @@ include/pano13/ptutils.h
 include/pano13/queryfeature.h
 include/pano13/version.h
 lib/libpano13.a
-lib/libpano13.la
 @lib lib/libpano13.so.${LIBpano13_VERSION}
 lib/pkgconfig/libpano13.pc
 @man man/man1/PTAInterpolate.1
@@ -37,3 +36,12 @@ lib/pkgconfig/libpano13.pc
 @man man/man1/PTtiffdump.1
 @man man/man1/PTuncrop.1
 @man man/man1/panoinfo.1
+share/pano13/
+share/pano13/doc/
+share/pano13/doc/AUTHORS
+share/pano13/doc/COPYING
+share/pano13/doc/Optimize.txt
+share/pano13/doc/PTblender.readme
+share/pano13/doc/PTmender.readme
+share/pano13/doc/README
+share/pano13/doc/stitch.txt
