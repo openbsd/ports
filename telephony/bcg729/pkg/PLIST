@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/10 12:33:16 sthen Exp $
+include/bcg729/
+include/bcg729/decoder.h
+include/bcg729/encoder.h
+lib/libbcg729.a
+lib/libbcg729.la
+@lib lib/libbcg729.so.${LIBbcg729_VERSION}
+lib/pkgconfig/libbcg729.pc

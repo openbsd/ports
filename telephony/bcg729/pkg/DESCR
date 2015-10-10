@@ -1,0 +1,4 @@
+Bcg729 is a software G729A encoder and decoder library written in C,
+developed by Belledonne Communications, the company supporting the
+Linphone project. It was written from scratch and is NOT a derivative
+work of ITU reference source code in any kind.
