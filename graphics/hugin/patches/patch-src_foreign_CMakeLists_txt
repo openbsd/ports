@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_foreign_CMakeLists_txt,v 1.1 2014/01/14 04:20:20 kirby Exp $
---- src/foreign/CMakeLists.txt.orig	Sun Jan 12 19:11:51 2014
-+++ src/foreign/CMakeLists.txt	Sun Jan 12 19:12:24 2014
+$OpenBSD: patch-src_foreign_CMakeLists_txt,v 1.2 2015/10/10 08:44:39 kirby Exp $
+--- src/foreign/CMakeLists.txt.orig	Wed Oct  8 22:21:49 2014
++++ src/foreign/CMakeLists.txt	Sun Aug 30 13:53:02 2015
 @@ -2,6 +2,9 @@
  add_subdirectory(vigra)
  add_subdirectory(levmar)

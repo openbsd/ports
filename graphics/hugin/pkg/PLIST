@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/07/11 21:25:23 kirby Exp $
-@bin bin/PTBatcher
+@comment $OpenBSD: PLIST,v 1.14 2015/10/10 08:44:39 kirby Exp $
 @bin bin/PTBatcherGUI
 @bin bin/align_image_stack
 @bin bin/autooptimiser
-bin/autopano-noop.sh
 @bin bin/calibrate_lens_gui
 @bin bin/celeste_standalone
 @bin bin/checkpto
@@ -17,15 +15,16 @@ bin/autopano-noop.sh
 @bin bin/hugin_stitch_project
 @bin bin/icpfind
 @bin bin/linefind
-@bin bin/matchpoint
 @bin bin/nona
-@bin bin/nona_gui
 @bin bin/pano_modify
 @bin bin/pano_trafo
 @bin bin/pto2mk
 @bin bin/pto_gen
 @bin bin/pto_lensstack
+@bin bin/pto_mask
 @bin bin/pto_merge
+@bin bin/pto_move
+@bin bin/pto_template
 @bin bin/pto_var
 @bin bin/tca_correct
 @bin bin/vig_optimize
@@ -45,11 +44,9 @@ lib/python${MODPY_VERSION}/site-packages/hpi.py
 lib/python${MODPY_VERSION}/site-packages/hpi.pyc
 lib/python${MODPY_VERSION}/site-packages/hsi.py
 lib/python${MODPY_VERSION}/site-packages/hsi.pyc
-@man man/man1/PTBatcher.1
 @man man/man1/PTBatcherGUI.1
 @man man/man1/align_image_stack.1
 @man man/man1/autooptimiser.1
-@man man/man1/autopano-noop.sh.1
 @man man/man1/calibrate_lens_gui.1
 @man man/man1/celeste_standalone.1
 @man man/man1/checkpto.1
@@ -63,18 +60,23 @@ lib/python${MODPY_VERSION}/site-packages/hsi.pyc
 @man man/man1/hugin_stitch_project.1
 @man man/man1/icpfind.1
 @man man/man1/linefind.1
-@man man/man1/matchpoint.1
 @man man/man1/nona.1
-@man man/man1/nona_gui.1
 @man man/man1/pano_modify.1
 @man man/man1/pano_trafo.1
 @man man/man1/pto2mk.1
 @man man/man1/pto_gen.1
 @man man/man1/pto_lensstack.1
+@man man/man1/pto_mask.1
 @man man/man1/pto_merge.1
+@man man/man1/pto_move.1
+@man man/man1/pto_template.1
 @man man/man1/pto_var.1
 @man man/man1/tca_correct.1
 @man man/man1/vig_optimize.1
+share/appdata/
+share/appdata/PTBatcherGUI.appdata.xml
+share/appdata/calibrate_lens_gui.appdata.xml
+share/appdata/hugin.appdata.xml
 share/applications/PTBatcherGUI.desktop
 share/applications/calibrate_lens_gui.desktop
 share/applications/hugin.desktop
@@ -84,15 +86,20 @@ share/hugin/Makefile.equirect.mk
 share/hugin/data/
 share/hugin/data/celeste.model
 share/hugin/data/default.setting
+share/hugin/data/hugin_exiftool_copy.arg
 share/hugin/data/plugins/
 share/hugin/data/plugins-templates/
 share/hugin/data/plugins-templates/dual_use.py
 share/hugin/data/plugins-templates/plugin_skeleton.py
 share/hugin/data/plugins/README_woa.txt
 share/hugin/data/plugins/crop_cp.py
+share/hugin/data/plugins/crop_cp.pyc
 share/hugin/data/plugins/shooting_pattern.py
+share/hugin/data/plugins/shooting_pattern.pyc
 share/hugin/data/plugins/top_five.py
+share/hugin/data/plugins/top_five.pyc
 share/hugin/data/plugins/woa.py
+share/hugin/data/plugins/woa.pyc
 share/hugin/xrc/
 share/hugin/xrc/about.xrc
 share/hugin/xrc/batch_frame.xrc
@@ -330,6 +337,7 @@ share/hugin/xrc/data/help_en_EN/Hugin_Main_window.html
 share/hugin/xrc/data/help_en_EN/Hugin_Mask_tab.html
 share/hugin/xrc/data/help_en_EN/Hugin_Optimiser_tab.html
 share/hugin/xrc/data/help_en_EN/Hugin_Panorama_Editor_window.html
+share/hugin/xrc/data/help_en_EN/Hugin_Panorama_Workflow.html
 share/hugin/xrc/data/help_en_EN/Hugin_Parameters_for_Control_Point_Detectors_dialog.html
 share/hugin/xrc/data/help_en_EN/Hugin_Photos_tab.html
 share/hugin/xrc/data/help_en_EN/Hugin_Preferences.html
@@ -377,7 +385,6 @@ share/hugin/xrc/data/help_en_EN/Lens_correction_model.html
 share/hugin/xrc/data/help_en_EN/Lens_distortion.html
 share/hugin/xrc/data/help_en_EN/Lightprobe.html
 share/hugin/xrc/data/help_en_EN/Linefind.html
-share/hugin/xrc/data/help_en_EN/MatchPoint.html
 share/hugin/xrc/data/help_en_EN/Medinet_habu_horizontal_fisheye.jpg
 share/hugin/xrc/data/help_en_EN/Medinet_habu_horizontal_stereographic.jpg
 share/hugin/xrc/data/help_en_EN/NPP.html
@@ -385,7 +392,6 @@ share/hugin/xrc/data/help_en_EN/Nadir.html
 share/hugin/xrc/data/help_en_EN/No-parallax_point.html
 share/hugin/xrc/data/help_en_EN/Nodal_Point.html
 share/hugin/xrc/data/help_en_EN/Nona.html
-share/hugin/xrc/data/help_en_EN/Nona_gui.html
 share/hugin/xrc/data/help_en_EN/OpenEXR.html
 share/hugin/xrc/data/help_en_EN/Optimization.html
 share/hugin/xrc/data/help_en_EN/PNG.html
@@ -421,7 +427,10 @@ share/hugin/xrc/data/help_en_EN/Projections.html
 share/hugin/xrc/data/help_en_EN/Pto2mk.html
 share/hugin/xrc/data/help_en_EN/Pto_gen.html
 share/hugin/xrc/data/help_en_EN/Pto_lensstack.html
+share/hugin/xrc/data/help_en_EN/Pto_mask.html
 share/hugin/xrc/data/help_en_EN/Pto_merge.html
+share/hugin/xrc/data/help_en_EN/Pto_move.html
+share/hugin/xrc/data/help_en_EN/Pto_template.html
 share/hugin/xrc/data/help_en_EN/Pto_var.html
 share/hugin/xrc/data/help_en_EN/QTVR.html
 share/hugin/xrc/data/help_en_EN/Qtvr2img.html
@@ -659,10 +668,6 @@ share/hugin/xrc/pref_dialog.xrc
 share/hugin/xrc/preview_frame.xrc
 share/hugin/xrc/reset_dialog.xrc
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-ptoptimizer-script.png
-share/locale/bg/LC_MESSAGES/hugin.mo
-share/locale/ca_ES/
-share/locale/ca_ES/LC_MESSAGES/
-share/locale/ca_ES/LC_MESSAGES/hugin.mo
 share/locale/cs_CZ/
 share/locale/cs_CZ/LC_MESSAGES/
 share/locale/cs_CZ/LC_MESSAGES/hugin.mo
@@ -676,16 +681,13 @@ share/locale/fr/LC_MESSAGES/hugin.mo
 share/locale/hu/LC_MESSAGES/hugin.mo
 share/locale/it/LC_MESSAGES/hugin.mo
 share/locale/ja/LC_MESSAGES/hugin.mo
-share/locale/ko/LC_MESSAGES/hugin.mo
 share/locale/nl/LC_MESSAGES/hugin.mo
 share/locale/pl/LC_MESSAGES/hugin.mo
 share/locale/pt_BR/LC_MESSAGES/hugin.mo
 share/locale/ro/LC_MESSAGES/hugin.mo
 share/locale/ru/LC_MESSAGES/hugin.mo
 share/locale/sk/LC_MESSAGES/hugin.mo
-share/locale/sl/LC_MESSAGES/hugin.mo
 share/locale/sv/LC_MESSAGES/hugin.mo
-share/locale/uk/LC_MESSAGES/hugin.mo
 share/locale/zh_CN/LC_MESSAGES/hugin.mo
 share/locale/zh_TW/LC_MESSAGES/hugin.mo
 share/mime/packages/hugin.xml
