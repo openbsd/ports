@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2015/10/07 05:31:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.194 2015/10/11 15:22:20 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ V=		2.2.1
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	1
+REVISION-main=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -62,6 +62,7 @@ LIB_DEPENDS-main= ${MODQT4_LIB_DEPENDS} \
 		audio/taglib \
 		devel/fribidi \
 		devel/libdvdread \
+		devel/libidn \
 		devel/libnotify \
 		devel/sdl \
 		devel/sdl-image \
