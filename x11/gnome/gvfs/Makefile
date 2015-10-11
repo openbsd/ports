@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2015/10/10 09:42:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.145 2015/10/11 07:52:52 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -112,8 +112,8 @@ CONFIGURE_ARGS=		--disable-libsystemd-login \
 
 MULTI_PACKAGES=		-main -goa -nfs -smb -google
 
-PSEUDO_FLAVORS=		no_smb no_goa no_nfs bootstrap
-FLAVOR?=		no_smb no_goa no_nfs bootstrap
+PSEUDO_FLAVORS=		no_smb no_goa no_nfs no_google bootstrap
+FLAVOR?=		no_smb no_goa no_nfs no_google bootstrap
 
 .include <bsd.port.arch.mk>
 
