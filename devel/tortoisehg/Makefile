@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2015/09/12 05:36:17 rpointel Exp $
+# $OpenBSD: Makefile,v 1.20 2015/10/11 15:57:33 rpointel Exp $
 
 COMMENT =		series of applications for Mercurial
 
-MODPY_EGG_VERSION =	3.5.1
+MODPY_EGG_VERSION =	3.5.2
 DISTNAME =		tortoisehg-${MODPY_EGG_VERSION}
 
 CATEGORIES =		devel
