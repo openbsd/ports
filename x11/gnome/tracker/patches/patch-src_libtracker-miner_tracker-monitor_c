@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_libtracker-miner_tracker-monitor_c,v 1.14 2015/10/11 17:33:33 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=755655
+
+--- src/libtracker-miner/tracker-monitor.c.orig	Sun Oct 11 18:42:32 2015
++++ src/libtracker-miner/tracker-monitor.c	Sun Oct 11 18:45:19 2015
+@@ -304,7 +304,8 @@ tracker_monitor_init (TrackerMonitor *object)
+ 			 */
+ 			priv->monitor_limit = MAX (priv->monitor_limit, 0);
+ 		}
+-		else if (strcmp (name, "GKqueueDirectoryMonitor") == 0) {
++		else if (strcmp (name, "GKqueueDirectoryMonitor") == 0 ||
++		         strcmp (name, "GKqueueFileMonitor") == 0) {
+ 			/* Using kqueue(2) */
+ 			g_message ("Monitor backend is kqueue");
+ 
