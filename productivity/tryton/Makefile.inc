@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.21 2015/09/19 21:52:33 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2015/10/11 07:30:34 ajacoutot Exp $
+
+PORTROACH=		limit:^3\.2
 
 MODPY_EGG_VERSION ?=	3.2.2
 
