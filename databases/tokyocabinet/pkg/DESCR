@@ -1,0 +1,6 @@
+Tokyo Cabinet, developed as the successor of QDBM, is a library of
+routines for managing a simple file-based key/value database.
+Keys and values are serial bytes with variable length; both binary
+data and character string can be used as key or value. Data are
+organized in a hash table, B+ tree, or fixed-length array.
+There is no concept of data tables or data types.

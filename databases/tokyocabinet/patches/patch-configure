@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2015/10/11 21:39:18 sthen Exp $
+--- configure.orig	Sat Aug 18 03:05:17 2012
++++ configure	Fri Oct  9 18:00:16 2015
+@@ -2054,8 +2054,8 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ 
+ # Package information
+-MYLIBVER=9
+-MYLIBREV=11
++MYLIBVER=0
++MYLIBREV=0
+ MYFORMATVER="1.0"
+ 
+ # Targets
+@@ -4238,9 +4238,7 @@ then
+     MYLIBRARYFILES="$MYLIBRARYFILES libtokyocabinet.dylib"
+     MYLDLIBPATHENV="DYLD_LIBRARY_PATH"
+   else
+-    MYLIBRARYFILES="$MYLIBRARYFILES libtokyocabinet.so.$MYLIBVER.$MYLIBREV.0"
+-    MYLIBRARYFILES="$MYLIBRARYFILES libtokyocabinet.so.$MYLIBVER"
+-    MYLIBRARYFILES="$MYLIBRARYFILES libtokyocabinet.so"
++    MYLIBRARYFILES="$MYLIBRARYFILES libtokyocabinet.so.$MYLIBVER.$MYLIBREV"
+   fi
+ fi
+ 

@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/10/11 21:39:18 sthen Exp $
+--- Makefile.in.orig	Sun Jul  4 09:36:20 2010
++++ Makefile.in	Wed Jun 20 13:52:41 2012
+@@ -679,13 +679,13 @@ libtokyocabinet.a : $(LIBOBJFILES)
+ 	$(AR) $(ARFLAGS) $@ $(LIBOBJFILES)
+ 
+ 
+-libtokyocabinet.so.$(LIBVER).$(LIBREV).0 : $(LIBOBJFILES)
++libtokyocabinet.so.$(LIBVER).$(LIBREV) : $(LIBOBJFILES)
+ 	if uname -a | egrep -i 'SunOS' > /dev/null ; \
+ 	  then \
+ 	    $(CC) $(CFLAGS) -shared -Wl,-G,-h,libtokyocabinet.so.$(LIBVER) -o $@ \
+ 	      $(LIBOBJFILES) $(LDFLAGS) $(LIBS) ; \
+ 	  else \
+-	    $(CC) $(CFLAGS) -shared -Wl,-soname,libtokyocabinet.so.$(LIBVER) -o $@ \
++	    $(CC) $(CFLAGS) -shared -Wl,-soname,libtokyocabinet.so.$(LIBVER).$(LIBREV) -o $@ \
+ 	      $(LIBOBJFILES) $(LDFLAGS) $(LIBS) ; \
+ 	  fi
+ 
