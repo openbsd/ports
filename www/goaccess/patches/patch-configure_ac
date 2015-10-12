@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2015/10/12 09:43:47 kirby Exp $
+--- configure.ac.orig	Mon Oct 12 01:13:41 2015
++++ configure.ac	Mon Oct 12 01:14:12 2015
+@@ -146,7 +146,7 @@ if test "$WITH_TC" = "yes"; then
+     CFLAGS="$CFLAGS $BZ2_FLAG"
+   fi
+ 
+-  CFLAGS="$CFLAGS -ltokyocabinet -lrt -lc"
++  CFLAGS="$CFLAGS -ltokyocabinet"
+ 
+ # GLib otherwise
+ else

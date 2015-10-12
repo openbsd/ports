@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2015/10/07 19:28:22 kirby Exp $
+# $OpenBSD: Makefile,v 1.6 2015/10/12 09:43:47 kirby Exp $
 
 PORTROACH = 		skipv:0.11,0.12
 
 COMMENT =		realtime console web log analyzer
 
 DISTNAME =		goaccess-0.9.4
+REVISION = 		0
 
 CATEGORIES =		www
 HOMEPAGE =		http://goaccess.io/
@@ -14,17 +15,19 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		GeoIP c glib-2.0 ncursesw pthread
+WANTLIB += GeoIP bz2 c ncursesw pthread tokyocabinet z
 
 MASTER_SITES =		http://tar.goaccess.io/
 
-LIB_DEPENDS =		devel/glib2 \
+LIB_DEPENDS =		databases/tokyocabinet \
 			net/GeoIP
 
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION = 	2.69
 CONFIGURE_ARGS +=	--enable-geoip \
-			--enable-utf8
+			--enable-utf8 \
+			--enable-tcb=btree
 
 CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
