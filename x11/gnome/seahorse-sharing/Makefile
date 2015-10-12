@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2015/05/05 17:00:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2015/10/12 05:48:08 ajacoutot Exp $
 
-COMMENT=	PGP public keys sharing via DNS-SD and HKP
+COMMENT=		PGP public keys sharing via DNS-SD and HKP
 
-GNOME_PROJECT=	seahorse-sharing
-GNOME_VERSION=	3.8.0
-REVISION=	5
+GNOME_PROJECT=		seahorse-sharing
+GNOME_VERSION=		3.8.0
+REVISION=		6
 
-CATEGORIES=	net security
+CATEGORIES=		net security
 
 # GPLv2/GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,18 +21,19 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread pthread-stubs soup-2.4 sqlite3 xcb xcb-render xcb-shm
 WANTLIB += xml2 z
 
-MODULES=	devel/gettext \
-		x11/gnome
+MODULES=		devel/gettext \
+			x11/gnome
 
-LIB_DEPENDS=	devel/libsoup \
-		security/gpgme \
-		net/avahi \
-		x11/gtk+3
+LIB_DEPENDS=		devel/libsoup \
+			security/gpgme \
+			net/avahi \
+			x11/gtk+3
 
 # security/gpgme depends on either gnupg-1 or gnupg-2; we want 1.X
-BUILD_DEPENDS+=	security/gnupg
-RUN_DEPENDS+=	security/gnupg
+BUILD_DEPENDS+=		gnupg->=2:security/gnupg2
+RUN_DEPENDS+=		gnupg->=2:security/gnupg2
+CONFIGURE_ENV +=	ac_cv_path_GNUPG=${LOCALBASE}/bin/gpg2
 
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/seahorse-sharing
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/seahorse-sharing
 
 .include <bsd.port.mk>
