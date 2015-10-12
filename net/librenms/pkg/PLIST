@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/10/12 11:30:32 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/10/12 15:39:06 sthen Exp $
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:/var/www/librenms:/sbin/nologin
 librenms/
@@ -3192,6 +3192,7 @@ librenms/includes/discovery/processors/vrp.inc.php
 librenms/includes/discovery/processors/watchguard.inc.php
 librenms/includes/discovery/processors/zywall.inc.php
 librenms/includes/discovery/sensors-netscaler.inc.php
+librenms/includes/discovery/sensors-openbsd.inc.php
 librenms/includes/discovery/sensors.inc.php
 librenms/includes/discovery/services.inc.php
 librenms/includes/discovery/states/
@@ -6771,6 +6772,12 @@ librenms/mibs/OLD-CISCO-INTERFACES-MIB
 librenms/mibs/OLD-CISCO-MEMORY-MIB
 librenms/mibs/OLD-CISCO-SYS-MIB
 librenms/mibs/ONEACCESS-GLOBAL-REG
+librenms/mibs/OPENBSD-BASE-MIB.txt
+librenms/mibs/OPENBSD-CARP-MIB.txt
+librenms/mibs/OPENBSD-MEM-MIB.txt
+librenms/mibs/OPENBSD-PF-MIB.txt
+librenms/mibs/OPENBSD-SENSORS-MIB.txt
+librenms/mibs/OPENBSD-SNMPD-CONF.txt
 librenms/mibs/OPT-IF-MIB
 librenms/mibs/ORiNOCO-MIB
 librenms/mibs/OSPF-MIB

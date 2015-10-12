@@ -1,0 +1,30 @@
+$OpenBSD: patch-includes_discovery_sensors_inc_php,v 1.1 2015/10/12 15:39:06 sthen Exp $
+
+From 92c2b3a14ef3471cbbf1e39871784f9879e2f51a Mon Sep 17 00:00:00 2001
+From: sthen <stu@spacehopper.org>
+Date: Mon, 12 Oct 2015 15:14:55 +0100
+Subject: [PATCH 1/3] add MIBs for OpenBSD's snmpd
+
+From 2544dfedb5f69f1e55176d4c14fb7615931340fe Mon Sep 17 00:00:00 2001
+From: sthen <stu@spacehopper.org>
+Date: Mon, 12 Oct 2015 15:15:14 +0100
+Subject: [PATCH 2/3] detect OpenBSD sensors
+
+From 5edf96223f994a0246e28c733d02b469d3a76e65 Mon Sep 17 00:00:00 2001
+From: sthen <stu@spacehopper.org>
+Date: Mon, 12 Oct 2015 15:52:58 +0100
+Subject: [PATCH 3/3] fix descriptions
+
+--- includes/discovery/sensors.inc.php.orig	Mon Oct 12 14:36:26 2015
++++ includes/discovery/sensors.inc.php	Mon Oct 12 14:36:41 2015
+@@ -12,6 +12,10 @@ if ($device['os'] == 'netscaler') {
+     include 'includes/discovery/sensors-netscaler.inc.php';
+ }
+ 
++if ($device['os'] == 'openbsd') {
++    include 'includes/discovery/sensors-openbsd.inc.php';
++}
++
+ require 'includes/discovery/temperatures.inc.php';
+ require 'includes/discovery/humidity.inc.php';
+ require 'includes/discovery/voltages.inc.php';
