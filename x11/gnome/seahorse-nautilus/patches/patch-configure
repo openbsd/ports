@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure,v 1.1 2015/10/12 05:48:33 ajacoutot Exp $
+
+From 0fad0fcf8adca04f9b0a5a8832a268c835fcd9bd Mon Sep 17 00:00:00 2001
+From: Kalev Lember <klember@redhat.com>
+Date: Tue, 1 Sep 2015 19:48:25 +0200
+Subject: Allow building with gnupg 2.1
+
+--- configure.orig	Sat Oct 10 12:38:25 2015
++++ configure	Sat Oct 10 12:38:30 2015
+@@ -14873,7 +14873,7 @@ fi
+ 
+ 
+ if test	"$DO_CHECK" = "yes"; then
+-	accepted_versions="1.2 1.4 2.0"
++	accepted_versions="1.2 1.4 2.0 2.1"
+ 	for ac_prog in gpg gpg2
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.

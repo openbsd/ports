@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/05 17:00:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2015/10/12 05:48:32 ajacoutot Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY=		Yes
 
-COMMENT=	GnuPG extension for nautilus(1)
+COMMENT=		GnuPG extension for nautilus(1)
 
-GNOME_PROJECT=	seahorse-nautilus
-GNOME_VERSION=	3.10.1
-REVISION=	4
+GNOME_PROJECT=		seahorse-nautilus
+GNOME_VERSION=		3.10.1
+REVISION=		5
 
-CATEGORIES=	security
+CATEGORIES=		security
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,19 +23,20 @@ WANTLIB += harfbuzz m nautilus-extension notify p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
 
-MODULES=	devel/gettext \
-		x11/gnome \
-		devel/dconf
+MODULES=		devel/gettext \
+			x11/gnome \
+			devel/dconf
 
-MODGNOME_TOOLS=	desktop-file-utils
+MODGNOME_TOOLS=		desktop-file-utils
 
-LIB_DEPENDS=	x11/gnome/gcr \
-		x11/gnome/nautilus \
-		x11/gnome/libcryptui
+LIB_DEPENDS=		x11/gnome/gcr \
+			x11/gnome/nautilus \
+			x11/gnome/libcryptui
 
-# security/gpgme depends on either gnupg-1 or gnupg-2; we want 1.X
-BUILD_DEPENDS+=	security/gnupg
-RUN_DEPENDS+=	security/gnupg
+# security/gpgme depends on either gnupg-1 or gnupg-2; we want 2.X
+BUILD_DEPENDS+=		gnupg->=2:security/gnupg2
+RUN_DEPENDS+=		gnupg->=2:security/gnupg2
+CONFIGURE_ENV +=	ac_cv_path_GNUPG=${LOCALBASE}/bin/gpg2
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
