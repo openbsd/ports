@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2013/07/19 07:03:04 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2015/10/12 21:47:19 kili Exp $
+
+BROKEN =		needs patches
 
 COMMENT =		Gradius clone
 
