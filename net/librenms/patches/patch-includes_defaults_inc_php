@@ -1,6 +1,6 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.7 2015/09/17 12:17:45 sthen Exp $
---- includes/defaults.inc.php.orig	Thu Sep 17 12:35:30 2015
-+++ includes/defaults.inc.php	Thu Sep 17 12:46:27 2015
+$OpenBSD: patch-includes_defaults_inc_php,v 1.8 2015/10/12 11:30:32 sthen Exp $
+--- includes/defaults.inc.php.orig	Mon Oct 12 12:05:37 2015
++++ includes/defaults.inc.php	Mon Oct 12 12:09:25 2015
 @@ -40,7 +40,7 @@ $config['project_name'] = 'LibreNMS';
  $config['project_id']   = strtolower($config['project_name']);
  
@@ -10,14 +10,17 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.7 2015/09/17 12:17:45 sthen Exp $
  $config['log_dir']     = $config['install_dir'].'/logs';
  
  // MySQL extension to use
-@@ -50,24 +50,24 @@ $config['db']['extension']       = 'mysql';//mysql and
+@@ -50,26 +50,26 @@ $config['db']['extension']       = 'mysql';//mysql and
  $config['own_hostname'] = 'localhost';
  
  // Location of executables
 -$config['rrdtool']                  = '/usr/bin/rrdtool';
--$config['fping']                    = '/usr/bin/fping';
 +$config['rrdtool']                  = '/usr/local/bin/rrdtool';
+ $config['rrdtool_version']          = 1.4; // Doesn't need to contain minor numbers.
+-$config['fping']                    = '/usr/bin/fping';
+-$config['fping6']                   = 'fping6';
 +$config['fping']                    = '/usr/local/sbin/fping';
++$config['fping6']                   = '/usr/local/sbin/fping6';
  $config['fping_options']['retries'] = 3;
  $config['fping_options']['timeout'] = 500;
  $config['fping_options']['count']   = 3;
@@ -48,7 +51,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.7 2015/09/17 12:17:45 sthen Exp $
  
  // Memcached - Keep immediate statistics
  $config['memcached']['enable'] = false;
-@@ -411,17 +411,17 @@ $config['billing']['bill_autoadd'] = 0;
+@@ -412,17 +412,17 @@ $config['billing']['bill_autoadd'] = 0;
  $config['billing']['base'] = 1000;
  // Set the base to divider bytes to kB, MB, GB ,... (1000|1024)
  // External Integration
@@ -70,7 +73,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.7 2015/09/17 12:17:45 sthen Exp $
  // $config['nfsen_suffix']   = "_yourdomain_com";
  // Location Mapping
  // Use this feature to map ugly locations to pretty locations
-@@ -730,7 +730,7 @@ $config['api_demo'] = 0;
+@@ -732,7 +732,7 @@ $config['api_demo'] = 0;
  // Set this to 1 if you want to disable some untrusting features for the API
  // Distributed Poller-Settings
  $config['distributed_poller']                = false;
