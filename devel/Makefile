@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1396 2015/09/28 08:04:20 vgross Exp $
+# $OpenBSD: Makefile,v 1.1397 2015/10/12 21:59:19 robert Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -836,6 +836,7 @@
      SUBDIR += p5-Memoize-ExpireLRU
      SUBDIR += p5-Modern-Perl
      SUBDIR += p5-Module-Build-Tiny
+     SUBDIR += p5-Module-Build-XSUtil
      SUBDIR += p5-Module-Find
      SUBDIR += p5-Module-Implementation
      SUBDIR += p5-Module-Install
