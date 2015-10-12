@@ -1,6 +1,13 @@
-$OpenBSD: patch-plugins_vfs_zip_vfs_zip_c,v 1.1 2015/05/11 21:22:02 jasper Exp $
+$OpenBSD: patch-plugins_vfs_zip_vfs_zip_c,v 1.2 2015/10/12 10:26:05 dcoppa Exp $
 
-s/zip_file_t/db_zip_file_t/g to prevent conflict with new typedef in libzip 1.0.0
+commit abec71d101a39e1b58e85749f7beada1f201b4bc
+Author: proudzhu <proudzhu.fdu@gmail.com>
+Date:   Tue May 19 21:26:08 2015 +0800
+
+rename zip_file_t to ddb_zip_file_t in vfs_zip.c to fix build with libzip > 1.0.0
+
+libzip 1.0.0 introduces a new struct named zip_file_t, thus the origin
+code cannot build against it.
 
 --- plugins/vfs_zip/vfs_zip.c.orig	Mon May 11 22:38:19 2015
 +++ plugins/vfs_zip/vfs_zip.c	Mon May 11 22:42:05 2015
@@ -9,7 +16,7 @@ s/zip_file_t/db_zip_file_t/g to prevent conflict with new typedef in libzip 1.0.
      int buffer_pos;
  #endif
 -} zip_file_t;
-+} db_zip_file_t;
++} ddb_zip_file_t;
  
  static const char *scheme_names[] = { "zip://", NULL };
  
@@ -19,8 +26,8 @@ s/zip_file_t/db_zip_file_t/g to prevent conflict with new typedef in libzip 1.0.
  
 -    zip_file_t *f = malloc (sizeof (zip_file_t));
 -    memset (f, 0, sizeof (zip_file_t));
-+    db_zip_file_t *f = malloc (sizeof (db_zip_file_t));
-+    memset (f, 0, sizeof (db_zip_file_t));
++    ddb_zip_file_t *f = malloc (sizeof (ddb_zip_file_t));
++    memset (f, 0, sizeof (ddb_zip_file_t));
      f->file.vfs = &plugin;
      f->z = z;
      f->zf = zf;
@@ -29,7 +36,7 @@ s/zip_file_t/db_zip_file_t/g to prevent conflict with new typedef in libzip 1.0.
  vfs_zip_close (DB_FILE *f) {
      trace ("vfs_zip: close\n");
 -    zip_file_t *zf = (zip_file_t *)f;
-+    db_zip_file_t *zf = (db_zip_file_t *)f;
++    ddb_zip_file_t *zf = (ddb_zip_file_t *)f;
      if (zf->zf) {
          zip_fclose (zf->zf);
      }
@@ -38,7 +45,7 @@ s/zip_file_t/db_zip_file_t/g to prevent conflict with new typedef in libzip 1.0.
  size_t
  vfs_zip_read (void *ptr, size_t size, size_t nmemb, DB_FILE *f) {
 -    zip_file_t *zf = (zip_file_t *)f;
-+    db_zip_file_t *zf = (db_zip_file_t *)f;
++    ddb_zip_file_t *zf = (ddb_zip_file_t *)f;
  //    printf ("read: %d\n", size*nmemb);
  
      size_t sz = size * nmemb;
@@ -47,7 +54,7 @@ s/zip_file_t/db_zip_file_t/g to prevent conflict with new typedef in libzip 1.0.
  int
  vfs_zip_seek (DB_FILE *f, int64_t offset, int whence) {
 -    zip_file_t *zf = (zip_file_t *)f;
-+    db_zip_file_t *zf = (db_zip_file_t *)f;
++    ddb_zip_file_t *zf = (ddb_zip_file_t *)f;
  //    printf ("seek: %lld (%d)\n", offset, whence);
  
      if (whence == SEEK_CUR) {
@@ -56,14 +63,14 @@ s/zip_file_t/db_zip_file_t/g to prevent conflict with new typedef in libzip 1.0.
  int64_t
  vfs_zip_tell (DB_FILE *f) {
 -    zip_file_t *zf = (zip_file_t *)f;
-+    db_zip_file_t *zf = (db_zip_file_t *)f;
++    ddb_zip_file_t *zf = (ddb_zip_file_t *)f;
      return zf->offset;
  }
  
  void
  vfs_zip_rewind (DB_FILE *f) {
 -    zip_file_t *zf = (zip_file_t *)f;
-+    db_zip_file_t *zf = (db_zip_file_t *)f;
++    ddb_zip_file_t *zf = (ddb_zip_file_t *)f;
      zip_fclose (zf->zf);
      zf->zf = zip_fopen_index (zf->z, zf->index, 0);
      assert (zf->zf); // FIXME: better error handling?
@@ -72,7 +79,7 @@ s/zip_file_t/db_zip_file_t/g to prevent conflict with new typedef in libzip 1.0.
  int64_t
  vfs_zip_getlength (DB_FILE *f) {
 -    zip_file_t *zf = (zip_file_t *)f;
-+    db_zip_file_t *zf = (db_zip_file_t *)f;
++    ddb_zip_file_t *zf = (ddb_zip_file_t *)f;
      return zf->size;
  }
  
