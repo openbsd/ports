@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2015/09/29 14:59:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.27 2015/10/12 07:20:54 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -258,6 +258,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/poky/base/interface.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/poky/base/inventory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/poky/base/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/poky/base/service.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/raspbian.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/specinfra/command/redhat/base/
@@ -415,6 +416,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/group_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/host_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/localhost_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/base/mail_alias.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/package_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/user_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/
@@ -453,6 +455,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/host_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/interface_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/mail_alias_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd57/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/openbsd57/service_spec.rb
@@ -492,12 +495,13 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/cpu_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/filesystem_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/kernel_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/memory_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/virtualization_docker_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/virtualization_kvm_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/linux/virtualization_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/openbsd/
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/openbsd/filesystem_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/openbsd/virtualization_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/solaris/
 ${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/solaris/filesystem_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/host_inventory/solaris/virtualization_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/specinfra.gemspec
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
