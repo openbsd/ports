@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2015/10/12 09:43:47 kirby Exp $
+# $OpenBSD: Makefile,v 1.7 2015/10/12 18:55:27 sthen Exp $
 
 PORTROACH = 		skipv:0.11,0.12
 
 COMMENT =		realtime console web log analyzer
 
 DISTNAME =		goaccess-0.9.4
-REVISION = 		0
+REVISION = 		1
 
 CATEGORIES =		www
 HOMEPAGE =		http://goaccess.io/
@@ -29,7 +29,7 @@ CONFIGURE_ARGS +=	--enable-geoip \
 			--enable-utf8 \
 			--enable-tcb=btree
 
-CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-build:
