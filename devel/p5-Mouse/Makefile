@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2015/07/16 23:57:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/10/12 11:29:15 robert Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Moose minus the antlers
 
 MODULES =	cpan
-DISTNAME =	Mouse-0.97
-REVISION =	2
+DISTNAME =	Mouse-2.4.2
 CATEGORIES =	devel
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
@@ -18,6 +17,9 @@ WANTLIB += c
 
 CPAN_AUTHOR =	GFUJI
 
+CONFIGURE_STYLE =	modbuild
+
+BUILD_DEPENDS =	devel/p5-Module-Build-XSUtil
 TEST_DEPENDS = devel/p5-Declare-Constraints-Simple \
 		  devel/p5-IO-String \
 		  devel/p5-Locale-US \
