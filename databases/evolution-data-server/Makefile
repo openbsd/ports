@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.195 2015/08/12 06:16:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.196 2015/10/12 05:44:51 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -7,19 +7,20 @@ SHARED_ONLY=		Yes
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.16.5
+GNOME_VERSION=		3.18.0
 
 CATEGORIES=		databases productivity
 
-SHARED_LIBS +=  camel-1.2            37.1     # 52.0
-SHARED_LIBS +=  edataserver-1.2      18.1     # 20.0
+SHARED_LIBS +=  camel-1.2            38.0     # 54.0
+SHARED_LIBS +=  edbus-private        0.0      # unknown
+SHARED_LIBS +=  edataserver-1.2      19.0     # 21.0
 SHARED_LIBS +=  ebackend-1.2         5.1      # 10.0
 SHARED_LIBS +=  edataserverui-1.2    1.1      # 1.0
-SHARED_LIBS +=  ebook-contacts-1.2   1.1      # 1.0
+SHARED_LIBS +=  ebook-contacts-1.2   2.0      # 2.0
 SHARED_LIBS +=  edata-book-1.2       16.1     # 25.0
 SHARED_LIBS +=  ebook-1.2            19.1     # 19.1
-SHARED_LIBS +=  ecal-1.2             15.1     # 18.0
-SHARED_LIBS +=  edata-cal-1.2        18.1     # 27.0
+SHARED_LIBS +=  ecal-1.2             16.0     # 19.0
+SHARED_LIBS +=  edata-cal-1.2        19.0     # 28.0
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
