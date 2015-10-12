@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/24 16:07:59 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2015/10/12 21:41:35 kili Exp $
+
+BROKEN =		will be removed soon
 
 COMMENT =		shell-/perl- like (systems) programming in Haskell
 
