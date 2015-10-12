@@ -1,0 +1,26 @@
+$OpenBSD: patch-configure,v 1.1 2015/10/12 05:43:53 ajacoutot Exp $
+
+Cope with our pkg-config(1) differences.
+
+--- configure.orig	Sat Oct 10 13:00:18 2015
++++ configure	Sat Oct 10 13:01:24 2015
+@@ -9543,7 +9543,7 @@ fi
+ if test "$pinentry_gnome_3" != "no"; then
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for gcr" >&5
+ $as_echo_n "checking for gcr... " >&6; }
+-	"${PKG_CONFIG}" --exists gcr-3,gcr-base-3
++	"${PKG_CONFIG}" --exists gcr-3 gcr-base-3
+ 	if test $? -ne 0 ; then
+ 		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+@@ -9553,8 +9553,8 @@ $as_echo "$as_me: WARNING: pkg-config could not find t
+ 	else
+ 		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+-		GNOME3CFLAGS=`"${PKG_CONFIG}" --cflags gcr-3,gcr-base-3`
+-		GNOME3LIBS=`"${PKG_CONFIG}" --libs gcr-3,gcr-base-3`
++		GNOME3CFLAGS=`"${PKG_CONFIG}" --cflags gcr-3 gcr-base-3`
++		GNOME3LIBS=`"${PKG_CONFIG}" --libs gcr-3 gcr-base-3`
+ 
+ 
+ 

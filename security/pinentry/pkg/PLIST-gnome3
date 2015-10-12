@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-gnome3,v 1.1 2015/10/12 05:43:53 ajacoutot Exp $
+@bin bin/pinentry-gnome3

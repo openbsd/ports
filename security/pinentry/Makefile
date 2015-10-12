@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.10 2015/10/10 10:15:09 ajacoutot Exp $
-
-# pinentry builds against it's own stripped version of libassuan
-# I will see with upstream how to change this behavior
+# $OpenBSD: Makefile,v 1.11 2015/10/12 05:43:53 ajacoutot Exp $
 
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gtk2 = 	PIN or passphrase entry dialog (gtk2 interface)
+COMMENT-gnome3 =PIN or passphrase entry dialog (GNOME 3 interface)
 
-VERSION = 	0.8.1
+VERSION = 	0.9.6
 DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
+EXTRACT_SUFX =	.tar.bz2
 
-REVISION-main = 2
-REVISION-gtk2 = 1
 PKGNAME-main = 	${DISTNAME}
 PKGNAME-gtk2 = 	pinentry-gtk2-${VERSION}
+PKGNAME-gnome3 =pinentry-gnome3-${VERSION}
 
 MASTER_SITES = 	${MASTER_SITES_GNUPG:=pinentry/}
 
@@ -24,30 +22,37 @@ MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM = 	Yes
 
-MULTI_PACKAGES = 	-main -gtk2
+MULTI_PACKAGES = 	-main -gtk2 -gnome3
 
-WANTLIB-main = 		c ncurses ${MODLIBICONV_WANTLIB}
-LIB_DEPENDS-main =	${MODLIBICONV_LIB_DEPENDS}
-RUN_DEPENDS-main =	${MODLIBICONV_RUN_DEPENDS}
+WANTLIB += c assuan gio-2.0 glib-2.0 gobject-2.0 gpg-error ncursesw
+WANTLIB += pthread secret-1
 
-WANTLIB-gtk2 = 		${WANTLIB} c X11 Xcomposite Xcursor Xdamage \
-			Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 \
-			cairo fontconfig freetype gdk-x11-2.0 \
-			gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-			gobject-2.0 gtk-x11-2.0 m ncurses \
-			pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-			pthread z
-LIB_DEPENDS-gtk2 = 	x11/gtk+2
+LIB_DEPENDS =		security/libassuan \
+			x11/gnome/libsecret
 
-MODULES = 		devel/gettext converters/libiconv
+WANTLIB-gtk2 += ${WANTLIB}
+WANTLIB-gtk2 += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB-gtk2 += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
+WANTLIB-gtk2 += gdk_pixbuf-2.0 gtk-x11-2.0 pango-1.0 pangocairo-1.0
+WANTLIB-gtk2 += pangoft2-1.0 z
+
+LIB_DEPENDS-gtk2 = 	${LIB_DEPENDS} \
+			x11/gtk+2
+
+WANTLIB-gnome3 += ${WANTLIB}
+WANTLIB-gnome3 += atk-1.0 cairo cairo-gobject gck-1 gcr-base-3 gcr-ui-3
+WANTLIB-gnome3 += gdk-3 gdk_pixbuf-2.0 gtk-3 p11-kit pango-1.0 pangocairo-1.0
+
+LIB_DEPENDS-gnome3 =	${LIB_DEPENDS} \
+			x11/gnome/gcr
+
+MODULES = 		devel/gettext
 
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"	
 CONFIGURE_ARGS = 	--enable-pinentry-curses \
 			--disable-pinentry-qt \
-			--disable-pinentry-qt4 \
-			--disable-pinentry-gtk \
 			--enable-pinentry-gtk2
 
 # Change default 'pinentry' to pinentry-curses in the -main package.
