@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2015/05/12 15:49:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2015/10/12 05:47:20 ajacoutot Exp $
 @bin bin/seahorse
 lib/seahorse/
 @bin lib/seahorse/seahorse-ssh-askpass
@@ -505,37 +505,6 @@ share/seahorse/icons/hicolor/48x48/status/seahorse-sign-bad.png
 share/seahorse/icons/hicolor/48x48/status/seahorse-sign-ok.png
 share/seahorse/icons/hicolor/48x48/status/seahorse-sign-unknown.png
 share/seahorse/icons/hicolor/48x48/status/seahorse-sign.png
-share/seahorse/ui/
-share/seahorse/ui/seahorse-add-keyring.xml
-share/seahorse/ui/seahorse-add-keyserver.xml
-share/seahorse/ui/seahorse-add-subkey.xml
-share/seahorse/ui/seahorse-add-uid.xml
-share/seahorse/ui/seahorse-change-passphrase.xml
-share/seahorse/ui/seahorse-expires.xml
-share/seahorse/ui/seahorse-generate-select.xml
-share/seahorse/ui/seahorse-gkr-add-item.xml
-share/seahorse/ui/seahorse-gkr-item-properties.xml
-share/seahorse/ui/seahorse-gkr-keyring.xml
-share/seahorse/ui/seahorse-key-manager.ui
-share/seahorse/ui/seahorse-key-manager.xml
-share/seahorse/ui/seahorse-keyserver-results.ui
-share/seahorse/ui/seahorse-keyserver-results.xml
-share/seahorse/ui/seahorse-keyserver-search.xml
-share/seahorse/ui/seahorse-keyserver-sync.xml
-share/seahorse/ui/seahorse-pgp-generate.xml
-share/seahorse/ui/seahorse-pgp-private-key-properties.xml
-share/seahorse/ui/seahorse-pgp-public-key-properties.xml
-share/seahorse/ui/seahorse-pkcs11-generate.xml
-share/seahorse/ui/seahorse-pkcs11-request.xml
-share/seahorse/ui/seahorse-prefs.xml
-share/seahorse/ui/seahorse-progress.xml
-share/seahorse/ui/seahorse-revoke.xml
-share/seahorse/ui/seahorse-sign.xml
-share/seahorse/ui/seahorse-signer.xml
-share/seahorse/ui/seahorse-ssh-generate.xml
-share/seahorse/ui/seahorse-ssh-key-properties.xml
-share/seahorse/ui/seahorse-ssh-upload.xml
-share/seahorse/ui/seahorse.css
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
