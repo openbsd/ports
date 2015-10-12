@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2014/11/24 16:07:59 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2015/10/12 21:38:47 kili Exp $
+
+BROKEN =		will be removed soon
 
 COMMENT =		hashed file storage support code for Haskell
 
