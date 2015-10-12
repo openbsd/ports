@@ -1,0 +1,126 @@
+$OpenBSD: patch-daemon_gkd-main_c,v 1.1 2015/10/12 05:44:17 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=756059
+
+--- daemon/gkd-main.c.orig	Mon Jun 29 17:24:02 2015
++++ daemon/gkd-main.c	Sun Oct 11 16:25:34 2015
+@@ -609,10 +609,8 @@ fork_and_print_environment (void)
+ {
+ 	int status;
+ 	pid_t pid;
+-	int fd, i;
+ 
+ 	if (run_foreground) {
+-		print_environment ();
+ 		return;
+ 	}
+ 
+@@ -632,9 +630,6 @@ fork_and_print_environment (void)
+ 			if (WEXITSTATUS (status) != 0)
+ 				exit (WEXITSTATUS (status));
+ 
+-		} else {
+-			/* Not double forking */
+-			print_environment ();
+ 		}
+ 
+ 		/* The initial process exits successfully */
+@@ -664,22 +659,11 @@ fork_and_print_environment (void)
+ 			if (pid == -1)
+ 				exit (1);
+ 
+-			/* We've done two forks. */
+-			print_environment ();
+-
+ 			/* The intermediate child exits */
+ 			exit (0);
+ 		}
+ 
+ 	}
+-
+-	/* Here we are in the resulting daemon or background process. */
+-
+-	for (i = 0; i < 3; ++i) {
+-		fd = open ("/dev/null", O_RDONLY);
+-		sane_dup2 (fd, i);
+-		close (fd);
+-	}
+ }
+ 
+ static gboolean
+@@ -810,6 +794,8 @@ on_login_timeout (gpointer data)
+ int
+ main (int argc, char *argv[])
+ {
++	int fd, i;
++
+ 	/*
+ 	 * The gnome-keyring startup is not as simple as I wish it could be.
+ 	 *
+@@ -876,6 +862,19 @@ main (int argc, char *argv[])
+ 		exit (0);
+ 	}
+ 
++	if (perform_unlock) {
++		login_password = read_login_password (STDIN);
++		atexit (clear_login_password);
++	}
++
++	signal (SIGPIPE, SIG_IGN);
++
++	/* The whole forking and daemonizing dance starts here. */
++	fork_and_print_environment();
++
++	/* Prepare logging a second time, since we may be in a different process */
++	prepare_logging();
++
+ 	/* The --start option */
+ 	if (run_for_start) {
+ 		if (discover_other_daemon (initialize_daemon_at, TRUE)) {
+@@ -898,6 +897,16 @@ main (int argc, char *argv[])
+ 			g_message ("Could not find daemon to replace, staring normally");
+ 	}
+ 
++	/* Here we are in the resulting daemon or background process. */
++	print_environment ();
++
++	if (!run_foreground)
++		for (i = 0; i < 3; ++i) {
++			fd = open ("/dev/null", O_RDONLY);
++			sane_dup2 (fd, i);
++			close (fd);
++		}
++
+ 	/* Initialize the main directory */
+ 	gkd_util_init_master_directory (control_directory);
+ 
+@@ -908,11 +917,6 @@ main (int argc, char *argv[])
+ 	if (!gkd_control_listen ())
+ 		return FALSE;
+ 
+-	if (perform_unlock) {
+-		login_password = read_login_password (STDIN);
+-		atexit (clear_login_password);
+-	}
+-
+ 	/* The --login option. Delayed initialization */
+ 	if (run_for_login) {
+ 		timeout_id = g_timeout_add_seconds (LOGIN_TIMEOUT, (GSourceFunc) on_login_timeout, NULL);
+@@ -924,17 +928,9 @@ main (int argc, char *argv[])
+ 			cleanup_and_exit (1);
+ 	}
+ 
+-	signal (SIGPIPE, SIG_IGN);
+-
+-	/* The whole forking and daemonizing dance starts here. */
+-	fork_and_print_environment();
+-
+ 	g_unix_signal_add (SIGTERM, on_signal_term, loop);
+ 	g_unix_signal_add (SIGHUP, on_signal_term, loop);
+ 	g_unix_signal_add (SIGUSR1, on_signal_usr1, loop);
+-
+-	/* Prepare logging a second time, since we may be in a different process */
+-	prepare_logging();
+ 
+ 	/* Remainder initialization after forking, if initialization not delayed */
+ 	if (!run_for_login) {
