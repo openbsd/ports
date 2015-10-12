@@ -1,6 +1,6 @@
-$OpenBSD: patch-sounds_sounds_xml,v 1.5 2015/06/08 08:44:52 sthen Exp $
---- sounds/sounds.xml.orig	Thu Jun  4 01:44:42 2015
-+++ sounds/sounds.xml	Fri Jun  5 10:41:19 2015
+$OpenBSD: patch-sounds_sounds_xml,v 1.6 2015/10/12 22:07:29 sthen Exp $
+--- sounds/sounds.xml.orig	Fri Aug  7 20:14:21 2015
++++ sounds/sounds.xml	Fri Oct  9 15:30:56 2015
 @@ -10,7 +10,6 @@
  		</member>
  		<member name="CORE-SOUNDS-EN-GSM" displayname="English, GSM format" >

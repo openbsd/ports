@@ -1,11 +1,7 @@
-$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.18 2014/11/10 20:43:18 sthen Exp $
-
-- more useful defaults
-- create /var/run/asterisk with sane ownership/perms
-
---- contrib/scripts/safe_asterisk.orig	Thu Oct  9 09:06:26 2014
-+++ contrib/scripts/safe_asterisk	Mon Nov 10 19:52:06 2014
-@@ -5,21 +5,22 @@ ASTVARRUNDIR="__ASTERISK_VARRUN_DIR__"
+$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.19 2015/10/12 22:07:29 sthen Exp $
+--- contrib/scripts/safe_asterisk.orig	Thu Oct  9 09:08:43 2014
++++ contrib/scripts/safe_asterisk	Thu Feb 19 21:08:57 2015
+@@ -6,21 +6,22 @@ ASTVARRUNDIR="__ASTERISK_VARRUN_DIR__"
  ASTVARLOGDIR="__ASTERISK_LOG_DIR__"
  
  CLIARGS="$*"			# Grab any args passed to safe_asterisk
@@ -33,7 +29,7 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.18 2014/11/10 20:43:18 sthen E
  
  # run asterisk with this priority
  PRIORITY=0
-@@ -47,6 +48,19 @@ message() {
+@@ -48,6 +49,19 @@ message() {
  	fi
  }
  
@@ -53,7 +49,7 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.18 2014/11/10 20:43:18 sthen E
  # Check if Asterisk is already running.  If it is, then bug out, because
  # starting safe_asterisk when Asterisk is running is very bad.
  VERSION=`"${ASTSBINDIR}/asterisk" -nrx 'core show version' 2>/dev/null`
-@@ -80,7 +94,7 @@ else
+@@ -81,7 +95,7 @@ else
  			fi
  		fi
  		SYSCTL_MAXFILES="fs.file-max"
@@ -62,7 +58,7 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.18 2014/11/10 20:43:18 sthen E
  		SYSCTL_MAXFILES="kern.maxfiles"
  	fi
  
-@@ -91,8 +105,10 @@ else
+@@ -92,8 +106,10 @@ else
  		fi
  	fi
  

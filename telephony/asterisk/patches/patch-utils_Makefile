@@ -1,0 +1,11 @@
+$OpenBSD: patch-utils_Makefile,v 1.5 2015/10/12 22:07:29 sthen Exp $
+--- utils/Makefile.orig	Sun Oct 11 22:53:21 2015
++++ utils/Makefile	Sun Oct 11 22:53:10 2015
+@@ -168,6 +168,7 @@ threadstorage.c: $(ASTTOPDIR)/main/threadstorage.c
+ 
+ extconf.o: extconf.c
+ 
++conf2ael: LIBS+=-lpthread
+ conf2ael: conf2ael.o ast_expr2f.o ast_expr2.o hashtab.o lock.o aelbison.o aelparse.o pbx_ael.o pval.o extconf.o strcompat.o
+ 
+ check_expr2: $(ASTTOPDIR)/main/ast_expr2f.c $(ASTTOPDIR)/main/ast_expr2.c $(ASTTOPDIR)/main/ast_expr2.h

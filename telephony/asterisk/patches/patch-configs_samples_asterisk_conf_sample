@@ -1,6 +1,6 @@
-$OpenBSD: patch-configs_asterisk_conf_sample,v 1.7 2014/05/31 00:35:31 sthen Exp $
---- configs/asterisk.conf.sample.orig	Fri Apr  4 19:46:18 2014
-+++ configs/asterisk.conf.sample	Thu May 29 21:32:09 2014
+$OpenBSD: patch-configs_samples_asterisk_conf_sample,v 1.1 2015/10/12 22:07:29 sthen Exp $
+--- configs/samples/asterisk.conf.sample.orig	Thu Jul 17 22:17:28 2014
++++ configs/samples/asterisk.conf.sample	Thu Feb 19 21:09:28 2015
 @@ -60,8 +60,8 @@ astsbindir => /usr/sbin
  				; not otherwise require one.
  ;transcode_via_sln = yes	; Build transcode paths via SLINEAR, instead of
@@ -22,8 +22,8 @@ $OpenBSD: patch-configs_asterisk_conf_sample,v 1.7 2014/05/31 00:35:31 sthen Exp
  				; functions from external sources (AMI,
  				; etc.) These functions (such as SHELL) are
  				; considered dangerous because they can allow
-@@ -90,11 +91,11 @@ documentation_language = en_US	; Set the language you 
- 				; Default yes, for backward compatability.
+@@ -90,8 +91,8 @@ documentation_language = en_US	; Set the language you 
+ 				; Default no
  
  ; Changing the following lines may compromise your security.
 -;[files]
@@ -36,6 +36,3 @@ $OpenBSD: patch-configs_asterisk_conf_sample,v 1.7 2014/05/31 00:35:31 sthen Exp
 +astctlowner = _asterisk
 +astctlgroup = wheel
 +astctl = asterisk.ctl
- 
- [compat]
- pbx_realtime=1.6

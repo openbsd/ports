@@ -1,6 +1,6 @@
-$OpenBSD: patch-main_editline_configure,v 1.1 2011/09/16 12:49:21 naddy Exp $
---- main/editline/configure.orig	Thu Sep 15 18:37:10 2011
-+++ main/editline/configure	Thu Sep 15 18:37:45 2011
+$OpenBSD: patch-main_editline_configure,v 1.2 2015/10/12 22:07:29 sthen Exp $
+--- main/editline/configure.orig	Wed Jul 25 13:21:54 2012
++++ main/editline/configure	Thu Feb 19 21:08:57 2015
 @@ -1963,7 +1963,7 @@ if test "x$enable_debug" = "xyes" ; then
    CPPFLAGS="$CPPFLAGS -DDEBUG_TTY -DDEBUG_KEY -DDEBUG_READ -DDEBUG"
    CPPFLAGS="$CPPFLAGS -DDEBUG_REFRESH -DDEBUG_PASTE"

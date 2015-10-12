@@ -1,6 +1,6 @@
-$OpenBSD: patch-configs_sip_conf_sample,v 1.2 2013/03/28 20:24:53 sthen Exp $
---- configs/sip.conf.sample.orig	Tue Sep 25 19:52:12 2012
-+++ configs/sip.conf.sample	Fri Oct 26 14:17:04 2012
+$OpenBSD: patch-configs_samples_sip_conf_sample,v 1.1 2015/10/12 22:07:29 sthen Exp $
+--- configs/samples/sip.conf.sample.orig	Sun Sep 14 16:53:35 2014
++++ configs/samples/sip.conf.sample	Thu Feb 19 21:08:57 2015
 @@ -158,11 +158,11 @@ allowoverlap=no                 ; Disable overlap dial
  ;  a) Listen on a specific IPv4 address.      Example: bindaddr=192.0.2.1
  ;  b) Listen on a specific IPv6 address.      Example: bindaddr=2001:db8::1

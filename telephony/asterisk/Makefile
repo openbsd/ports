@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.220 2015/10/10 19:58:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.221 2015/10/12 22:07:28 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			11.20.0
+VER=			13.6.0
 PORTROACH=		limitw:0,odd
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
@@ -22,10 +22,14 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	patent licensing clauses
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB-main += avcodec avformat avutil c crypto curl execinfo gsm idn
-WANTLIB-main += iksemel m ogg opencore-amrnb portaudio pthread spandsp
-WANTLIB-main += sqlite3 ssl stdc++ swscale termcap tiff uuid vorbis
-WANTLIB-main += vorbisenc vorbisfile xml2 z ${MODGETTEXT_WANTLIB}
+WANTLIB-main += c crypto curl execinfo g7221codec gsm idn iksemel ilbccodec
+WANTLIB-main += jansson m ogg opencore-amrnb opencore-amrwb pj pjlib-util
+WANTLIB-main += pjmedia pjmedia-audiodev pjmedia-codec pjmedia-videodev
+WANTLIB-main += pjnath pjsip pjsip-simple pjsip-ua pjsua pjsua2 portaudio
+WANTLIB-main += pthread resample spandsp speex speexdsp sqlite3 ssl
+WANTLIB-main += stdc++ termcap tiff uriparser uuid vorbis vorbisenc
+WANTLIB-main += vorbisfile xml2 xslt z
+WANTLIB-main += ${MODGETTEXT_WANTLIB}
 
 SHARED_LIBS=		asteriskssl 0.0		# 1
 
@@ -39,16 +43,18 @@ PSEUDO_FLAVORS=		no_calendar no_http_post no_ldap no_odbc \
 LIB_DEPENDS-main=	audio/gsm \
 			audio/libogg \
 			audio/libvorbis \
-			audio/opencore-amr \
 			audio/portaudio-svn \
 			devel/libexecinfo \
-			graphics/ffmpeg \
+			devel/jansson \
 			graphics/tiff \
 			net/curl \
 			sysutils/e2fsprogs \
+			telephony/pjsua,-main \
 			telephony/spandsp \
 			textproc/iksemel \
 			textproc/libxml \
+			textproc/libxslt \
+			www/uriparser \
 			${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
 			telephony/asterisk-sounds/core-sounds/en,gsm>=1.4.25 \
@@ -248,7 +254,7 @@ post-install:
 		${PREFIX}/share/doc/asterisk
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/openbsd
 .for i in ${EXAMPLEFILES}
-	@${SUBST_CMD} -m 0644 -c ${FILESDIR}/$i.sample \
+	@${SUBST_CMD} -c ${FILESDIR}/$i.sample \
 	    ${EXAMPLEDIR}/openbsd/$i.sample
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/contrib/scripts/asterisk.ldif \
