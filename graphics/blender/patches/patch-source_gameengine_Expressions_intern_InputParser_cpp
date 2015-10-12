@@ -1,6 +1,6 @@
-$OpenBSD: patch-source_gameengine_Expressions_InputParser_cpp,v 1.1 2014/03/24 21:16:15 pascal Exp $
---- source/gameengine/Expressions/InputParser.cpp.orig	Sun Sep  1 08:56:34 2013
-+++ source/gameengine/Expressions/InputParser.cpp	Sun Sep  1 08:56:59 2013
+$OpenBSD: patch-source_gameengine_Expressions_intern_InputParser_cpp,v 1.1 2015/10/12 12:29:02 pascal Exp $
+--- source/gameengine/Expressions/intern/InputParser.cpp.orig	Mon Oct 12 09:56:21 2015
++++ source/gameengine/Expressions/intern/InputParser.cpp	Mon Oct 12 09:56:32 2015
 @@ -474,7 +474,7 @@ CExpression *CParser::Ex(int i)
  						case inttype:
  						{

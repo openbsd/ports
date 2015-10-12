@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2015/09/22 18:48:40 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.24 2015/10/12 12:29:02 pascal Exp $
 @pkgpath graphics/blender,ffmpeg
 bin/blender
 @bin bin/blender-bin
@@ -188,6 +188,7 @@ share/blender/datafiles/blender_icons16/icon16_lamp_sun.dat
 share/blender/datafiles/blender_icons16/icon16_lattice_data.dat
 share/blender/datafiles/blender_icons16/icon16_layer_active.dat
 share/blender/datafiles/blender_icons16/icon16_layer_used.dat
+share/blender/datafiles/blender_icons16/icon16_library_data_broken.dat
 share/blender/datafiles/blender_icons16/icon16_library_data_direct.dat
 share/blender/datafiles/blender_icons16/icon16_library_data_indirect.dat
 share/blender/datafiles/blender_icons16/icon16_lightpaint.dat
@@ -294,6 +295,8 @@ share/blender/datafiles/blender_icons16/icon16_nla.dat
 share/blender/datafiles/blender_icons16/icon16_nla_pushdown.dat
 share/blender/datafiles/blender_icons16/icon16_nocurve.dat
 share/blender/datafiles/blender_icons16/icon16_node.dat
+share/blender/datafiles/blender_icons16/icon16_node_insert_off.dat
+share/blender/datafiles/blender_icons16/icon16_node_insert_on.dat
 share/blender/datafiles/blender_icons16/icon16_node_sel.dat
 share/blender/datafiles/blender_icons16/icon16_nodetree.dat
 share/blender/datafiles/blender_icons16/icon16_object_data.dat
@@ -412,6 +415,7 @@ share/blender/datafiles/blender_icons16/icon16_smooth.dat
 share/blender/datafiles/blender_icons16/icon16_smoothcurve.dat
 share/blender/datafiles/blender_icons16/icon16_snap_edge.dat
 share/blender/datafiles/blender_icons16/icon16_snap_face.dat
+share/blender/datafiles/blender_icons16/icon16_snap_grid.dat
 share/blender/datafiles/blender_icons16/icon16_snap_increment.dat
 share/blender/datafiles/blender_icons16/icon16_snap_normal.dat
 share/blender/datafiles/blender_icons16/icon16_snap_off.dat
@@ -665,6 +669,7 @@ share/blender/datafiles/blender_icons32/icon32_lamp_sun.dat
 share/blender/datafiles/blender_icons32/icon32_lattice_data.dat
 share/blender/datafiles/blender_icons32/icon32_layer_active.dat
 share/blender/datafiles/blender_icons32/icon32_layer_used.dat
+share/blender/datafiles/blender_icons32/icon32_library_data_broken.dat
 share/blender/datafiles/blender_icons32/icon32_library_data_direct.dat
 share/blender/datafiles/blender_icons32/icon32_library_data_indirect.dat
 share/blender/datafiles/blender_icons32/icon32_lightpaint.dat
@@ -771,6 +776,8 @@ share/blender/datafiles/blender_icons32/icon32_nla.dat
 share/blender/datafiles/blender_icons32/icon32_nla_pushdown.dat
 share/blender/datafiles/blender_icons32/icon32_nocurve.dat
 share/blender/datafiles/blender_icons32/icon32_node.dat
+share/blender/datafiles/blender_icons32/icon32_node_insert_off.dat
+share/blender/datafiles/blender_icons32/icon32_node_insert_on.dat
 share/blender/datafiles/blender_icons32/icon32_node_sel.dat
 share/blender/datafiles/blender_icons32/icon32_nodetree.dat
 share/blender/datafiles/blender_icons32/icon32_object_data.dat
@@ -889,6 +896,7 @@ share/blender/datafiles/blender_icons32/icon32_smooth.dat
 share/blender/datafiles/blender_icons32/icon32_smoothcurve.dat
 share/blender/datafiles/blender_icons32/icon32_snap_edge.dat
 share/blender/datafiles/blender_icons32/icon32_snap_face.dat
+share/blender/datafiles/blender_icons32/icon32_snap_grid.dat
 share/blender/datafiles/blender_icons32/icon32_snap_increment.dat
 share/blender/datafiles/blender_icons32/icon32_snap_normal.dat
 share/blender/datafiles/blender_icons32/icon32_snap_off.dat
@@ -1101,10 +1109,7 @@ share/blender/datafiles/fonts/droidsans.ttf.gz
 share/blender/datafiles/locale/
 share/blender/datafiles/locale/languages
 share/blender/datafiles/locale/po/
-share/blender/datafiles/locale/po/_POTFILES.in
 share/blender/datafiles/locale/po/ar.po
-share/blender/datafiles/locale/po/ar_raw.po
-share/blender/datafiles/locale/po/blender.pot
 share/blender/datafiles/locale/po/ca.po
 share/blender/datafiles/locale/po/cs.po
 share/blender/datafiles/locale/po/de.po
@@ -1112,10 +1117,8 @@ share/blender/datafiles/locale/po/eo.po
 share/blender/datafiles/locale/po/es.po
 share/blender/datafiles/locale/po/es_ES.po
 share/blender/datafiles/locale/po/fa.po
-share/blender/datafiles/locale/po/fa_raw.po
 share/blender/datafiles/locale/po/fr.po
 share/blender/datafiles/locale/po/he.po
-share/blender/datafiles/locale/po/he_raw.po
 share/blender/datafiles/locale/po/hi.po
 share/blender/datafiles/locale/po/hr.po
 share/blender/datafiles/locale/po/hu.po
@@ -1214,6 +1217,7 @@ share/blender/scripts/addons/add_mesh_extra_objects/add_mesh_twisted_torus.py
 share/blender/scripts/addons/add_mesh_extra_objects/add_mesh_vertex.py
 share/blender/scripts/addons/animation_add_corrective_shape_key.py
 share/blender/scripts/addons/animation_animall.py
+share/blender/scripts/addons/bone_selection_groups.py
 share/blender/scripts/addons/curve_simplify.py
 share/blender/scripts/addons/cycles/
 share/blender/scripts/addons/cycles/__init__.py
@@ -1395,6 +1399,7 @@ share/blender/scripts/addons/light_field_tools/
 share/blender/scripts/addons/light_field_tools/__init__.py
 share/blender/scripts/addons/light_field_tools/light_field_tools.py
 share/blender/scripts/addons/mesh_bsurfaces.py
+share/blender/scripts/addons/mesh_custom_normals_tools.py
 share/blender/scripts/addons/mesh_f2.py
 share/blender/scripts/addons/mesh_inset/
 share/blender/scripts/addons/mesh_inset/__init__.py
@@ -1546,16 +1551,6 @@ share/blender/scripts/addons/render_povray/df3.py
 share/blender/scripts/addons/render_povray/render.py
 share/blender/scripts/addons/render_povray/ui.py
 share/blender/scripts/addons/render_povray/update_files.py
-share/blender/scripts/addons/render_renderfarmfi/
-share/blender/scripts/addons/render_renderfarmfi/__init__.py
-share/blender/scripts/addons/render_renderfarmfi/exceptions.py
-share/blender/scripts/addons/render_renderfarmfi/operators.py
-share/blender/scripts/addons/render_renderfarmfi/ore_session.py
-share/blender/scripts/addons/render_renderfarmfi/panels.py
-share/blender/scripts/addons/render_renderfarmfi/prepare.py
-share/blender/scripts/addons/render_renderfarmfi/rpc.py
-share/blender/scripts/addons/render_renderfarmfi/upload.py
-share/blender/scripts/addons/render_renderfarmfi/utils.py
 share/blender/scripts/addons/rigify/
 share/blender/scripts/addons/rigify/CREDITS
 share/blender/scripts/addons/rigify/README
@@ -1701,6 +1696,8 @@ share/blender/scripts/modules/bl_i18n_utils/utils.py
 share/blender/scripts/modules/bl_i18n_utils/utils_languages_menu.py
 share/blender/scripts/modules/bl_i18n_utils/utils_rtl.py
 share/blender/scripts/modules/bl_i18n_utils/utils_spell_check.py
+share/blender/scripts/modules/bl_previews_utils/
+share/blender/scripts/modules/bl_previews_utils/bl_previews_render.py
 share/blender/scripts/modules/blend_render_info.py
 share/blender/scripts/modules/bpy/
 share/blender/scripts/modules/bpy/__init__.py
@@ -1733,6 +1730,7 @@ share/blender/scripts/modules/console_shell.py
 share/blender/scripts/modules/graphviz_export.py
 share/blender/scripts/modules/keyingsets_utils.py
 share/blender/scripts/modules/nodeitems_utils.py
+share/blender/scripts/modules/progress_report.py
 share/blender/scripts/modules/rna_info.py
 share/blender/scripts/modules/rna_keymap_ui.py
 share/blender/scripts/modules/rna_prop_ui.py
@@ -1921,6 +1919,7 @@ share/blender/scripts/startup/bl_operators/add_mesh_torus.py
 share/blender/scripts/startup/bl_operators/anim.py
 share/blender/scripts/startup/bl_operators/clip.py
 share/blender/scripts/startup/bl_operators/console.py
+share/blender/scripts/startup/bl_operators/file.py
 share/blender/scripts/startup/bl_operators/freestyle.py
 share/blender/scripts/startup/bl_operators/image.py
 share/blender/scripts/startup/bl_operators/mask.py
