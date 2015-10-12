@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/10/13 11:51:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/10/12 05:43:07 ajacoutot Exp $
 @conflict gnome-keyring-<3.4.0
 @bin bin/gcr-viewer
 include/gck-1/
@@ -259,6 +259,7 @@ share/locale/is/LC_MESSAGES/gcr.mo
 share/locale/it/LC_MESSAGES/gcr.mo
 share/locale/ja/LC_MESSAGES/gcr.mo
 share/locale/ka/LC_MESSAGES/gcr.mo
+share/locale/kk/LC_MESSAGES/gcr.mo
 share/locale/kn/LC_MESSAGES/gcr.mo
 share/locale/ko/LC_MESSAGES/gcr.mo
 share/locale/lt/LC_MESSAGES/gcr.mo

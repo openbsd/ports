@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.47 2015/05/12 15:46:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2015/10/12 05:43:07 ajacoutot Exp $
 
-COMMENT=	library for bits of crypto UI and parsing
+COMMENT=		library for bits of crypto UI and parsing
 
-GNOME_PROJECT=	gcr
-GNOME_VERSION=	3.16.0
+GNOME_PROJECT=		gcr
+GNOME_VERSION=		3.18.0
 
-SHARED_LIBS +=  gck-1                1.1      # 0.0
-SHARED_LIBS +=  gcr-base-3           2.1      # 1.0
-SHARED_LIBS +=  gcr-ui-3             2.1      # 1.0
+SHARED_LIBS +=  gck-1                1.2      # 0.0
+SHARED_LIBS +=  gcr-base-3           2.2      # 1.0
+SHARED_LIBS +=  gcr-ui-3             2.2      # 1.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,22 +20,23 @@ WANTLIB += gobject-2.0 gpg-error graphite2 gthread-2.0 gtk-3 harfbuzz m
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
 
-MODULES=	devel/gettext \
-		x11/gnome \
-		devel/dconf
+MODULES=		devel/gettext \
+			x11/gnome \
+			devel/dconf
 
-MODGNOME_TOOLS += desktop-file-utils gobject-introspection vala
-MODGNOME_TOOLS += gtk-update-icon-cache shared-mime-info
+MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection
+MODGNOME_TOOLS +=	gtk-update-icon-cache shared-mime-info vala
 
-LIB_DEPENDS=	x11/gtk+3 \
-		security/libgcrypt \
-		security/p11-kit
+LIB_DEPENDS=		x11/gtk+3 \
+			security/libgcrypt \
+			security/p11-kit
 
-BUILD_DEPENDS=	security/gnupg
-RUN_DEPENDS=	security/gnupg
+BUILD_DEPENDS +=	gnupg->=2:security/gnupg2
+RUN_DEPENDS +=		gnupg->=2:security/gnupg2
+CONFIGURE_ENV +=	ac_cv_path_GNUPG=${LOCALBASE}/bin/gpg2
 
 # Need xsltproc in order to build with gobject introspection
-BUILD_DEPENDS += textproc/libxslt
+BUILD_DEPENDS +=	textproc/libxslt
 
 # regression tests call 'env python'
 MODULES +=		lang/python
