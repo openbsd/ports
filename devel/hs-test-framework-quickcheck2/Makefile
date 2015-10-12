@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/24 16:10:48 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2015/10/12 21:44:18 kili Exp $
+
+BROKEN =		will be removed soon
 
 COMMENT =		QuickCheck2 support for hs-test-framework
 

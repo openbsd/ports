@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2014/11/24 16:10:20 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2015/10/12 21:44:18 kili Exp $
+
+BROKEN =		will be removed soon
 
 COMMENT =		HUnit support for hs-test-framework
 
