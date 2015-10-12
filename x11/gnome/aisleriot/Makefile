@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/10/05 06:02:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/10/12 23:19:07 ajacoutot Exp $
 
 COMMENT =		suite of solitaire card games
 
 GNOME_PROJECT =		aisleriot
-GNOME_VERSION =		3.18.0
+GNOME_VERSION =		3.18.1
 
 CATEGORIES =		games
 
@@ -36,12 +36,11 @@ MODGCONF2_SCHEMAS_DIR =	aisleriot
 LIB_DEPENDS =		audio/libcanberra,-gtk3 \
 			lang/guile2
 
-# https://bugzilla.gnome.org/show_bug.cgi?id=726780
 BUILD_DEPENDS =		shells/bash
 
 CONFIGURE_ARGS =	--with-card-theme-formats=svg
 
-CONFIGURE_ENV=		CONFIG_SHELL="${LOCALBASE}/bin/bash" \
+CONFIGURE_ENV =		CONFIG_SHELL="${LOCALBASE}/bin/bash" \
 			GUILE="${LOCALBASE}/bin/guile2"
 
 .include <bsd.port.mk>
