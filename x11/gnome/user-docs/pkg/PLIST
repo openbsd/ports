@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2015/04/02 17:43:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2015/10/12 05:45:10 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -409,6 +409,7 @@ share/help/C/system-admin-guide/keyboard-layout.page
 share/help/C/system-admin-guide/legal.xml
 share/help/C/system-admin-guide/lockdown-command-line.page
 share/help/C/system-admin-guide/lockdown-file-saving.page
+share/help/C/system-admin-guide/lockdown-online-accounts.page
 share/help/C/system-admin-guide/lockdown-printing.page
 share/help/C/system-admin-guide/lockdown-repartitioning.page
 share/help/C/system-admin-guide/login-automatic.page
