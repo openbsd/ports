@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/04/28 07:02:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/10/13 13:17:15 ajacoutot Exp $
 bin/gnome-weather
 share/appdata/
 share/appdata/org.gnome.Weather.Application.appdata.xml
@@ -57,6 +57,7 @@ share/locale/ml/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/nb/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ne/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/nl/LC_MESSAGES/org.gnome.Weather.mo
+share/locale/oc/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/pa/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/pl/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/pt/LC_MESSAGES/org.gnome.Weather.mo
