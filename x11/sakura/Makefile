@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/10/13 11:01:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2015/10/13 11:03:12 jasper Exp $
 
 V =		3.3.0
 COMMENT =	GTK and VTE based terminal emulator
@@ -28,7 +28,7 @@ RUN_DEPENDS =	devel/desktop-file-utils
 NO_TEST =	Yes
 
 pre-configure:
-	sed -i 's,-O2,,g' ${WRKSRC}/CMakeLists.txt
-	sed -i 's,share/man,man,g' ${WRKSRC}/CMakeLists.txt
+	sed -i -e 's,-O2,,g' -e 's,share/man,man,g' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
