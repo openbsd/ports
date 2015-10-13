@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/07/23 10:16:21 pascal Exp $
+# $OpenBSD: Makefile,v 1.33 2015/10/13 06:31:38 bentley Exp $
 
 SHARED_ONLY =	Yes
 
@@ -13,7 +13,8 @@ HOMEPAGE=	http://www.parrot.org/
 
 MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
-MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/all/$V/
+MASTER_SITES=	http://ftp.parrot.org/releases/all/$V/ \
+		ftp://ftp.parrot.org/pub/parrot/releases/all/$V/
 
 # Artistic2
 PERMIT_PACKAGE_CDROM=	Yes
