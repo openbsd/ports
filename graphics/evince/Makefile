@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2015/10/12 06:09:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2015/10/13 17:18:29 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
 GNOME_VERSION=		3.16.1
-REVISION=		2
+REVISION=		3
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -44,7 +44,8 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		print/libspectre \
 			print/poppler \
-			x11/gnome/libsecret
+			x11/gnome/libsecret \
+			x11/gtk+3
 
 RUN_DEPENDS=		archivers/unrar \
 			archivers/unzip \
