@@ -1,0 +1,15 @@
+$OpenBSD: patch-wxGlade_desktop,v 1.1.1.1 2015/10/13 16:58:07 jca Exp $
+
+Fix executable script name/path.
+
+--- wxGlade.desktop.orig	Tue Oct 21 07:17:59 2014
++++ wxGlade.desktop	Fri Oct  9 13:37:12 2015
+@@ -3,7 +3,7 @@ Version=0.7.0
+ Encoding=UTF-8
+ Name=wxGlade
+ Comment=A GUI designer written in Python with the popular GUI toolkit wxPython
+-Exec=wxGlade
++Exec=/usr/local/bin/wxglade
+ Terminal=false
+ Icon=mondrian.ico
+ Type=Application
