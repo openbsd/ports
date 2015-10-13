@@ -1,0 +1,18 @@
+$OpenBSD: patch-libavcodec_mathops_h,v 1.1 2015/10/13 05:44:18 ajacoutot Exp $
+
+AAC encoder: Extensive improvements
+
+--- libavcodec/mathops.h.orig	Mon Oct 12 21:57:54 2015
++++ libavcodec/mathops.h	Mon Oct 12 22:05:41 2015
+@@ -233,6 +233,11 @@ static inline av_const unsigned int ff_sqrt(unsigned i
+ }
+ #endif
+ 
++static inline av_const float ff_sqrf(float a)
++{
++    return a*a;
++}
++
+ static inline int8_t ff_u8_to_s8(uint8_t a)
+ {
+     union {

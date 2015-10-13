@@ -1,0 +1,15 @@
+$OpenBSD: patch-libavcodec_aacenc_pred_h,v 1.1 2015/10/13 05:44:18 ajacoutot Exp $
+
+aacenc: shorten name of ff_aac_adjust_common_prediction
+
+--- libavcodec/aacenc_pred.h.orig	Mon Oct 12 22:03:10 2015
++++ libavcodec/aacenc_pred.h	Mon Oct 12 22:05:15 2015
+@@ -40,7 +40,7 @@
+ #define PRED_SFB_START 10
+ 
+ void ff_aac_apply_main_pred(AACEncContext *s, SingleChannelElement *sce);
+-void ff_aac_adjust_common_prediction(AACEncContext *s, ChannelElement *cpe);
++void ff_aac_adjust_common_pred(AACEncContext *s, ChannelElement *cpe);
+ void ff_aac_search_for_pred(AACEncContext *s, SingleChannelElement *sce);
+ void ff_aac_encode_main_pred(AACEncContext *s, SingleChannelElement *sce);
+ 

@@ -1,9 +1,11 @@
-$OpenBSD: patch-libavcodec_aaccoder_trellis_h,v 1.1 2015/09/23 09:16:45 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aaccoder_trellis_h,v 1.2 2015/10/13 05:44:18 ajacoutot Exp $
 
 AAC encoder: refactor to resynchronize MIPS port
 
---- libavcodec/aaccoder_trellis.h.orig	Wed Sep 23 03:49:27 2015
-+++ libavcodec/aaccoder_trellis.h	Wed Sep 23 03:49:43 2015
+AAC encoder: Extensive improvements
+
+--- libavcodec/aaccoder_trellis.h.orig	Mon Oct 12 21:54:16 2015
++++ libavcodec/aaccoder_trellis.h	Mon Oct 12 22:04:49 2015
 @@ -0,0 +1,194 @@
 +/*
 + * AAC encoder trellis codebook selector
@@ -136,7 +138,7 @@ AAC encoder: refactor to resynchronize MIPS port
 +                                               &s->scoefs[start + w*128], size,
 +                                               sce->sf_idx[win*16+swb],
 +                                               aac_cb_out_map[cb],
-+                                               0, INFINITY, NULL, 0);
++                                               0, INFINITY, NULL, NULL, 0);
 +                }
 +                cost_stay_here = path[swb][cb].cost + bits;
 +                cost_get_here  = minbits            + bits + run_bits + 4;

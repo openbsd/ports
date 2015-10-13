@@ -1,0 +1,14 @@
+$OpenBSD: patch-libavutil_opt_h,v 1.1 2015/10/13 05:44:18 ajacoutot Exp $
+
+avutil/opt: add AV_OPT_TYPE_BOOL
+
+--- libavutil/opt.h.orig	Mon Oct 12 22:32:35 2015
++++ libavutil/opt.h	Mon Oct 12 22:33:51 2015
+@@ -236,6 +236,7 @@ enum AVOptionType{
+     AV_OPT_TYPE_DURATION   = MKBETAG('D','U','R',' '),
+     AV_OPT_TYPE_COLOR      = MKBETAG('C','O','L','R'),
+     AV_OPT_TYPE_CHANNEL_LAYOUT = MKBETAG('C','H','L','A'),
++    AV_OPT_TYPE_BOOL           = MKBETAG('B','O','O','L'),
+ #if FF_API_OLD_AVOPTIONS
+     FF_OPT_TYPE_FLAGS = 0,
+     FF_OPT_TYPE_INT,

@@ -1,17 +1,70 @@
-$OpenBSD: patch-libavcodec_aacenctab_h,v 1.2 2015/09/27 06:35:33 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenctab_h,v 1.3 2015/10/13 05:44:18 ajacoutot Exp $
 
 AAC encoder: simplify and speed up find_min_book
 
 avcodec/aacenctab: Make aac_maxval_cb const
 
+aacenc: add support for encoding 7.1 channel audio
+
+aacenc: add support for changing options based on a profile
+
 --- libavcodec/aacenctab.h.orig	Mon Sep  7 21:58:01 2015
-+++ libavcodec/aacenctab.h	Fri Sep 25 15:47:31 2015
-@@ -110,4 +110,8 @@ static const uint8_t aac_cb_in_map[CB_TOT_ALL+1] = {0,
++++ libavcodec/aacenctab.h	Mon Oct 12 22:07:27 2015
+@@ -36,21 +36,30 @@
+ /** Total number of codebooks, including special ones **/
+ #define CB_TOT_ALL 15
+ 
+-#define AAC_MAX_CHANNELS 6
++/** Profile option settings **/
++#define OPT_AUTO         -1
++#define OPT_BANNED     -256
++#define OPT_NEEDS_LTP  -384
++#define OPT_NEEDS_MAIN -512
++#define OPT_REQUIRED   -768
+ 
++#define AAC_MAX_CHANNELS 8
++
+ extern const uint8_t *ff_aac_swb_size_1024[];
+ extern const int      ff_aac_swb_size_1024_len;
+ extern const uint8_t *ff_aac_swb_size_128[];
+ extern const int      ff_aac_swb_size_128_len;
+ 
+ /** default channel configurations */
+-static const uint8_t aac_chan_configs[6][5] = {
+-    {1, TYPE_SCE},                               // 1 channel  - single channel element
+-    {1, TYPE_CPE},                               // 2 channels - channel pair
+-    {2, TYPE_SCE, TYPE_CPE},                     // 3 channels - center + stereo
+-    {3, TYPE_SCE, TYPE_CPE, TYPE_SCE},           // 4 channels - front center + stereo + back center
+-    {3, TYPE_SCE, TYPE_CPE, TYPE_CPE},           // 5 channels - front center + stereo + back stereo
+-    {4, TYPE_SCE, TYPE_CPE, TYPE_CPE, TYPE_LFE}, // 6 channels - front center + stereo + back stereo + LFE
++static const uint8_t aac_chan_configs[AAC_MAX_CHANNELS][6] = {
++    {1, TYPE_SCE},                                         // 1 channel  - single channel element
++    {1, TYPE_CPE},                                         // 2 channels - channel pair
++    {2, TYPE_SCE, TYPE_CPE},                               // 3 channels - center + stereo
++    {3, TYPE_SCE, TYPE_CPE, TYPE_SCE},                     // 4 channels - front center + stereo + back center
++    {3, TYPE_SCE, TYPE_CPE, TYPE_CPE},                     // 5 channels - front center + stereo + back stereo
++    {4, TYPE_SCE, TYPE_CPE, TYPE_CPE, TYPE_LFE},           // 6 channels - front center + stereo + back stereo + LFE
++    {0},                                                   // 7 channels - invalid without PCE
++    {5, TYPE_SCE, TYPE_CPE, TYPE_CPE, TYPE_CPE, TYPE_LFE}, // 8 channels - front center + front stereo + side stereo + back stereo + LFE
+ };
+ 
+ /**
+@@ -63,6 +72,8 @@ static const uint8_t aac_chan_maps[AAC_MAX_CHANNELS][A
+     { 2, 0, 1, 3 },
+     { 2, 0, 1, 3, 4 },
+     { 2, 0, 1, 4, 5, 3 },
++    { 0 },
++    { 2, 0, 1, 6, 7, 4, 5, 3 },
+ };
+ 
+ /* duplicated from avpriv_mpeg4audio_sample_rates to avoid shared build
+@@ -109,5 +120,9 @@ static const uint8_t aac_cb_in_map[CB_TOT_ALL+1] = {0,
+ 
  static const uint8_t aac_cb_range [12] = {0, 3, 3, 3, 3, 9, 9, 8, 8, 13, 13, 17};
  static const uint8_t aac_cb_maxval[12] = {0, 1, 1, 2, 2, 4, 4, 7, 7, 12, 12, 16};
- 
++
 +static const unsigned char aac_maxval_cb[] = {
 +    0, 1, 3, 5, 5, 7, 7, 7, 9, 9, 9, 9, 9, 11
 +};
-+
+ 
  #endif /* AVCODEC_AACENCTAB_H */

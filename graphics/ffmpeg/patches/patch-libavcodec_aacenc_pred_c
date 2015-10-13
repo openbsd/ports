@@ -1,10 +1,23 @@
-$OpenBSD: patch-libavcodec_aacenc_pred_c,v 1.1 2015/09/12 09:44:54 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_pred_c,v 1.2 2015/10/13 05:44:18 ajacoutot Exp $
 
 aacenc_pred: disable PNS SFBs and disable right predictors with IS
 
---- libavcodec/aacenc_pred.c.orig	Sat Sep 12 02:08:04 2015
-+++ libavcodec/aacenc_pred.c	Sat Sep 12 02:08:25 2015
-@@ -262,7 +262,9 @@ void ff_aac_search_for_pred(AACEncContext *s, SingleCh
+AAC encoder: Extensive improvements
+
+aacenc: shorten name of ff_aac_adjust_common_prediction
+
+--- libavcodec/aacenc_pred.c.orig	Mon Sep  7 21:58:01 2015
++++ libavcodec/aacenc_pred.c	Mon Oct 12 22:05:12 2015
+@@ -148,7 +148,7 @@ static inline int update_counters(IndividualChannelStr
+     return 0;
+ }
+ 
+-void ff_aac_adjust_common_prediction(AACEncContext *s, ChannelElement *cpe)
++void ff_aac_adjust_common_pred(AACEncContext *s, ChannelElement *cpe)
+ {
+     int start, w, w2, g, i, count = 0;
+     SingleChannelElement *sce0 = &cpe->ch[0];
+@@ -262,14 +262,16 @@ void ff_aac_search_for_pred(AACEncContext *s, SingleCh
          const int num_coeffs = sce->ics.swb_offset[sfb + 1] - start_coef;
          const FFPsyBand *band = &s->psy.ch[s->cur_channel].psy_bands[sfb];
  
@@ -15,3 +28,29 @@ aacenc_pred: disable PNS SFBs and disable right predictors with IS
              continue;
  
          /* Normal coefficients */
+         abs_pow34_v(O34, &sce->coeffs[start_coef], num_coeffs);
+         dist1 = quantize_and_encode_band_cost(s, NULL, &sce->coeffs[start_coef], NULL,
+                                               O34, num_coeffs, sce->sf_idx[sfb],
+-                                              cb_n, s->lambda / band->threshold, INFINITY, &cost1, 0);
++                                              cb_n, s->lambda / band->threshold, INFINITY, &cost1, NULL, 0);
+         cost_coeffs += cost1;
+ 
+         /* Encoded coefficients - needed for #bits, band type and quant. error */
+@@ -282,7 +284,7 @@ void ff_aac_search_for_pred(AACEncContext *s, SingleCh
+             cb_p = cb_n;
+         quantize_and_encode_band_cost(s, NULL, SENT, QERR, S34, num_coeffs,
+                                       sce->sf_idx[sfb], cb_p, s->lambda / band->threshold, INFINITY,
+-                                      &cost2, 0);
++                                      &cost2, NULL, 0);
+ 
+         /* Reconstructed coefficients - needed for distortion measurements */
+         for (i = 0; i < num_coeffs; i++)
+@@ -294,7 +296,7 @@ void ff_aac_search_for_pred(AACEncContext *s, SingleCh
+             cb_p = cb_n;
+         dist2 = quantize_and_encode_band_cost(s, NULL, &sce->prcoeffs[start_coef], NULL,
+                                               P34, num_coeffs, sce->sf_idx[sfb],
+-                                              cb_p, s->lambda / band->threshold, INFINITY, NULL, 0);
++                                              cb_p, s->lambda / band->threshold, INFINITY, NULL, NULL, 0);
+         for (i = 0; i < num_coeffs; i++)
+             dist_spec_err += (O34[i] - P34[i])*(O34[i] - P34[i]);
+         dist_spec_err *= s->lambda / band->threshold;

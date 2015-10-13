@@ -1,0 +1,14 @@
+$OpenBSD: patch-libavcodec_aac_h,v 1.1 2015/10/13 05:44:18 ajacoutot Exp $
+
+AAC encoder: Extensive improvements
+
+--- libavcodec/aac.h.orig	Mon Oct 12 21:55:54 2015
++++ libavcodec/aac.h	Mon Oct 12 22:04:41 2015
+@@ -252,6 +252,7 @@ typedef struct SingleChannelElement {
+     INTFLOAT sf[120];                               ///< scalefactors
+     int sf_idx[128];                                ///< scalefactor indices (used by encoder)
+     uint8_t zeroes[128];                            ///< band is not coded (used by encoder)
++    uint8_t can_pns[128];                           ///< band is allowed to PNS (informative)
+     float  is_ener[128];                            ///< Intensity stereo pos (used by encoder)
+     float pns_ener[128];                            ///< Noise energy values (used by encoder)
+     DECLARE_ALIGNED(32, INTFLOAT, pcoeffs)[1024];   ///< coefficients for IMDCT, pristine
