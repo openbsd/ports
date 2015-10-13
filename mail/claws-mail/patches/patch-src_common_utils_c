@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_common_utils_c,v 1.3 2015/10/13 07:10:22 landry Exp $
+
+Commited upsteam
+http://git.claws-mail.org/?p=claws.git;a=commit;h=9cd558c5357bc51acfaaa5e7227afc79c6e2bb8b
+http://git.claws-mail.org/?p=claws.git;a=commit;h=7a36263d6ba50788c9ca47076f334a9101c50297
+
+--- src/common/utils.c.orig	Sun Oct 11 10:19:33 2015
++++ src/common/utils.c	Mon Oct 12 20:13:57 2015
+@@ -49,6 +49,7 @@
+ #include <ctype.h>
+ #include <errno.h>
+ #include <sys/param.h>
++#include <sys/socket.h>
+ 
+ #if (HAVE_WCTYPE_H && HAVE_WCHAR_H)
+ #  include <wchar.h>
+@@ -5106,7 +5107,7 @@ size_t fast_strftime(gchar *buf, gint buflen, const gc
+ 				*curpos++ = '0'+(lt->tm_min % 10);
+ 				break;
+ 			case 's':
+-				snprintf(subbuf, 64, "%ld", mktime(lt));
++				snprintf(subbuf, 64, "%lld", (long long)mktime(lt));
+ 				len = strlen(subbuf); CHECK_SIZE();
+ 				strncpy2(curpos, subbuf, buflen - total_done);
+ 				break;
