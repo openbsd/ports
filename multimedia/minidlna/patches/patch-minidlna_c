@@ -1,15 +1,15 @@
-$OpenBSD: patch-minidlna_c,v 1.6 2015/09/11 09:51:12 sthen Exp $
+$OpenBSD: patch-minidlna_c,v 1.7 2015/10/13 10:34:00 sthen Exp $
 
 Support -r for incremental rescan
 http://sourceforge.net/p/minidlna/patches/145/
 
---- minidlna.c.orig	Thu Sep 10 21:24:09 2015
-+++ minidlna.c	Fri Sep 11 11:43:37 2015
+--- minidlna.c.orig	Thu Sep 10 20:24:09 2015
++++ minidlna.c	Tue Oct 13 11:23:03 2015
 @@ -351,12 +351,13 @@ check_db(sqlite3 *db, int new_db, pid_t *scanner_pid)
  	if (ret != 0)
  	{
  rescan:
-+	  	rescan_db = 0;
++		rescan_db = 0;
  		if (ret < 0)
  			DPRINTF(E_WARN, L_GENERAL, "Creating new database at %s/files.db\n", db_path);
  		else if (ret == 1)
