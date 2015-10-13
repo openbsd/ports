@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2015/10/10 09:44:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2015/10/13 17:14:16 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extras=		GNOME desktop meta-package (full installation)
@@ -9,7 +9,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		3
+REVISION-main=		4
 REVISION-extras=	0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -81,6 +81,12 @@ RUN_DEPENDS-main +=	x11/gnome/bijiben \
 			x11/gnome/tweak-tool \
 			x11/gnome/vino \
 			x11/gnome/weather
+
+# XXX
+# GnuPG2 gnome-keyring agent
+# cannot be added to x11/gnome/keyring because of a dependency loop
+# pinentry -> libsecret -> gnome-keyring -> gcr -> gnupg2 -> pinentry
+RUN_DEPENDS-main +=	security/pinentry,-gnome3
 
 RUN_DEPENDS-extras +=	STEM-=${V}:${BASE_PKGPATH},-main \
 			audio/rhythmbox \
