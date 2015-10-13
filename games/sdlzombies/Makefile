@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/10/13 06:29:38 bentley Exp $
 
 COMMENT=	zombies clone
 
 VERSION=	1.0.0
 DISTNAME=	sdlzombies-${VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://hocwp.free.fr/sdlzombies.html
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 PERMIT_PACKAGE_CDROM=   Yes
 WANTLIB=		SDL X11 Xext c m pthread pthread-stubs usbhid xcb \

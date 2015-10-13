@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/07/16 23:57:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2015/10/13 06:29:38 bentley Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,11 +7,11 @@ COMMENT=	generate and manipulate images
 DISTNAME =	Imager-1.000
 CATEGORIES=	graphics
 MODULES=	cpan
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE=	http://imager.perl.org/
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

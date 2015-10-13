@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/10/11 08:39:25 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2015/10/13 06:29:38 bentley Exp $
 
 # Memory hog, stuck for days on the same file during build.
 NOT_FOR_ARCHS=	sh
@@ -7,7 +7,7 @@ COMMENT=	interpreted language for scientific computing
 
 VERSION=	2.1.06
 DISTNAME=	yorick-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	math devel
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://yorick.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=yorick/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/10/11 23:49:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2015/10/13 06:29:38 bentley Exp $
 
 COMMENT=	jezzball-style, penguin puzzle game
 
 DISTNAME=	icebreaker-1.2.1
-REVISION =	0
+REVISION =	1
 CATEGORIES=	games
 EXTRACT_SUFX=	.tgz
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.mattdm.org/icebreaker/
 
 MASTER_SITES=	${HOMEPAGE}1.2.x/
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 PERMIT_PACKAGE_CDROM=   Yes
 WANTLIB=		SDL X11 Xext c m pthread pthread-stubs usbhid xcb \

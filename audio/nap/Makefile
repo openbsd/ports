@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.30 2014/04/13 01:01:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2015/10/13 06:29:37 bentley Exp $
 
 COMMENT=	gnu curses-based napster client
 
 VERSION=	1.5.3
 DISTNAME=	nap-${VERSION}
-REVISION=	0
+REVISION=	1
 CATEGORIES=    	audio
 
 HOMEPAGE=	http://nap.sourceforge.net/
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 

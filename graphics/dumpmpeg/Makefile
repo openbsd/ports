@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2015/02/16 22:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2015/10/13 06:29:38 bentley Exp $
 
 COMMENT=	dump frames from mpeg-1 movies
 
 VERSION=	0.6
 DISTNAME=	dumpmpeg-${VERSION}
-REVISION =	1
+REVISION =	2
 CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://sourceforge.net/projects/dumpmpeg/
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 PERMIT_PACKAGE_CDROM=   Yes
 

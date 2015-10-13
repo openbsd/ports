@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2013/08/07 21:32:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2015/10/13 06:29:38 bentley Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	general-purpose protocol-blind fuzzer for C programs
 
 DISTNAME=	bunny-0.93
-REVISION=	0
+REVISION=	1
 CATEGORIES=    	security net
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 HOMEPAGE=	https://code.google.com/p/bunny-the-fuzzer/
 

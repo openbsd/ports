@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2013/05/21 19:38:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2015/10/13 06:29:38 bentley Exp $
 
 COMMENT=	graphical display for the current uvm status
 
 DISTNAME=	xuvmstat20050909
 PKGNAME=	xuvmstat-20050909
-REVISION=	1
+REVISION=	2
 CATEGORIES=     sysutils x11
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 

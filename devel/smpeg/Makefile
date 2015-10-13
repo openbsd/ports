@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2015/03/16 18:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2015/10/13 06:29:37 bentley Exp $
 
 COMMENT=	MPEG video player library with sound support
 
 DISTNAME=	smpeg-0.4.4
-REVISION=	13
+REVISION=	14
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://mirrors.sunsite.dk/lokigames/open-source/smpeg/
 
@@ -11,7 +11,7 @@ SHARED_LIBS=	smpeg	2.0
 
 HOMEPAGE=	http://icculus.org/smpeg/
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes

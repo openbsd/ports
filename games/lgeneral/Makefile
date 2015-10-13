@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/10/13 06:29:38 bentley Exp $
 
 COMMENT=	turn-based strategy engine
 
 DISTNAME=	lgeneral-0.5.0
-REVISION =	0
+REVISION =	1
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://lgeneral.sourceforge.net/
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 PERMIT_PACKAGE_CDROM=   Yes
 WANTLIB=		X11 Xext c m pthread pthread-stubs usbhid xcb \

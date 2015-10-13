@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.98 2015/08/24 15:57:31 bluhm Exp $
+# $OpenBSD: Makefile,v 1.99 2015/10/13 06:29:38 bentley Exp $
 
 COMMENT=	list information about open files
 
 VERSION=	4.88
-REVISION=	1
+REVISION=	2
 DISTNAME=	lsof_${VERSION}
 PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	sysutils
@@ -18,7 +18,7 @@ MASTER_SITES=	http://www.mirrorservice.org/sites/lsof.itap.purdue.edu/pub/tools/
 
 HOMEPAGE=	https://people.freebsd.org/~abe/
 
-MAINTAINER=     Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c kvm>=13

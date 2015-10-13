@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2015/01/22 21:17:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2015/10/13 06:29:38 bentley Exp $
 
 COMMENT=	image viewer for X
 
 VERSION=	1.4
 DISTNAME=	iview-${VERSION}
-REVISION =	1
+REVISION =	2
 CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://math.smsu.edu/~erik/software.php?id=63
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 PERMIT_PACKAGE_CDROM=   Yes
 

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/10/13 06:29:38 bentley Exp $
 
 COMMENT=	bookmarks on your palm
 
 DISTNAME=	palm-bookmarks-0.2
-REVISION=	1
+REVISION=	2
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.vanhemert.co.uk/palmbookmarks.html
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
