@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.62 2015/08/25 06:36:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2015/10/13 10:55:45 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		terminal emulation library
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.40.2
+GNOME_VERSION=		0.42.0
 API_V=			2.91
-REVISION=		1
 
 PKGNAME=		vte3-${GNOME_VERSION}
 
-SHARED_LIBS +=  vte-2.91              0.0      # 4000.0
+SHARED_LIBS +=  vte-2.91              1.0      # 4200.0
 
 CATEGORIES=		devel
 
@@ -31,7 +30,11 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += tasn1 util xcb xcb-render xcb-shm z
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			gcc4
+
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c c++
 
 # src/box_drawing_generate.sh
 BUILD_DEPENDS=		shells/bash
@@ -41,14 +44,7 @@ LIB_DEPENDS=		security/gnutls \
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
-MODGNU_CONFIG_GUESS_DIRS= \
-			${WRKSRC} \
-			${WRKSRC}/gnome-pty-helper
-
 CONFIGURE_STYLE=	gnu
-
-# needed by VTE-based terminals to update login records
-CONFIGURE_ARGS +=	--enable-gnome-pty-helper
 
 # error: -Bsymbolic requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
@@ -56,10 +52,6 @@ CONFIGURE_ARGS +=	--disable-Bsymbolic
 TEST_DEPENDS=		shells/bash
 
 SUBST_VARS +=		API_V
-
-pre-configure:
-# XXX cc1: error: unrecognized command line option "-Wno-unused-but-set-variable"
-	perl -pi -e 's,-Wno-unused-but-set-variable,,' ${WRKSRC}/src/Makefile.in
 
 # XXX: https://bugzilla.gnome.org/show_bug.cgi?id=675987
 post-install:

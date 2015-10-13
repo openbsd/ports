@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_vte_cc,v 1.1 2015/10/13 10:55:45 jasper Exp $
+
+From 401d18e91bea12a0cf2e0c0b00605d99c1b372fd Mon Sep 17 00:00:00 2001
+From: Egmont Koblinger <egmont@gmail.com>
+Date: Fri, 2 Oct 2015 19:38:38 +0200
+Subject: widget: Fix painting the preedit text near the right margin
+
+--- src/vte.cc.orig	Tue Sep 22 13:47:14 2015
++++ src/vte.cc	Tue Oct 13 12:52:32 2015
+@@ -760,9 +760,9 @@ _vte_invalidate_cursor_once(VteTerminal *terminal, gbo
+ 				columns++;
+ 			}
+ 		}
+-		if (preedit_width > 0) {
+-			columns += preedit_width;
+-			columns++; /* one more for the preedit cursor */
++		columns = MAX(columns, preedit_width);
++		if (column + columns > terminal->pvt->column_count) {
++			column = MAX(0, terminal->pvt->column_count - columns);
+ 		}
+ 
+ 		_vte_debug_print(VTE_DEBUG_UPDATES,

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2015/04/10 10:56:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2015/10/13 10:55:45 jasper Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
 @bin bin/vte-${API_V}
@@ -18,15 +18,9 @@ lib/libvte-${API_V}.a
 lib/libvte-${API_V}.la
 @lib lib/libvte-${API_V}.so.${LIBvte-2.91_VERSION}
 lib/pkgconfig/vte-${API_V}.pc
-@mode 2555
-@group utmp
-@bin libexec/gnome-pty-helper
-@mode
-@group
 share/gir-1.0/Vte-${API_V}.gir
 share/gtk-doc/html/vte-${API_V}/
 share/gtk-doc/html/vte-${API_V}/VteTerminal.html
-share/gtk-doc/html/vte-${API_V}/annotation-glossary.html
 share/gtk-doc/html/vte-${API_V}/api-index-0-40.html
 share/gtk-doc/html/vte-${API_V}/api-index-deprecated.html
 share/gtk-doc/html/vte-${API_V}/api-index-full.html
@@ -35,7 +29,6 @@ share/gtk-doc/html/vte-${API_V}/ch02.html
 share/gtk-doc/html/vte-${API_V}/ch03.html
 share/gtk-doc/html/vte-${API_V}/home.png
 share/gtk-doc/html/vte-${API_V}/index.html
-share/gtk-doc/html/vte-${API_V}/index.sgml
 share/gtk-doc/html/vte-${API_V}/left-insensitive.png
 share/gtk-doc/html/vte-${API_V}/left.png
 share/gtk-doc/html/vte-${API_V}/licence.html
@@ -50,6 +43,7 @@ share/gtk-doc/html/vte-${API_V}/vte-${API_V}.devhelp2
 share/gtk-doc/html/vte-${API_V}/vte-Version-Information.html
 share/gtk-doc/html/vte-${API_V}/vte-Vte-PTY.html
 share/locale/am/LC_MESSAGES/vte-${API_V}.mo
+share/locale/an/LC_MESSAGES/vte-${API_V}.mo
 share/locale/ang/LC_MESSAGES/vte-${API_V}.mo
 share/locale/ar/LC_MESSAGES/vte-${API_V}.mo
 share/locale/as/LC_MESSAGES/vte-${API_V}.mo
