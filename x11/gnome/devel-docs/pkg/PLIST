@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2015/10/01 07:41:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2015/10/13 12:01:09 ajacoutot Exp $
 share/help/
 share/help/C/
 share/help/C/accessibility-devel-guide/
@@ -548,6 +548,7 @@ share/help/C/hig/figures/patterns/action-bar.svg
 share/help/C/hig/figures/patterns/action-dialog.svg
 share/help/C/hig/figures/patterns/application-menu.svg
 share/help/C/hig/figures/patterns/editable-lists.svg
+share/help/C/hig/figures/patterns/empty-placeholder.svg
 share/help/C/hig/figures/patterns/grid.svg
 share/help/C/hig/figures/patterns/header-bar-menu.svg
 share/help/C/hig/figures/patterns/header-bar.svg
@@ -2433,6 +2434,7 @@ share/help/de/hig/figures/patterns/action-bar.svg
 share/help/de/hig/figures/patterns/action-dialog.svg
 share/help/de/hig/figures/patterns/application-menu.svg
 share/help/de/hig/figures/patterns/editable-lists.svg
+share/help/de/hig/figures/patterns/empty-placeholder.svg
 share/help/de/hig/figures/patterns/grid.svg
 share/help/de/hig/figures/patterns/header-bar-menu.svg
 share/help/de/hig/figures/patterns/header-bar.svg
@@ -3141,6 +3143,7 @@ share/help/el/hig/figures/patterns/action-bar.svg
 share/help/el/hig/figures/patterns/action-dialog.svg
 share/help/el/hig/figures/patterns/application-menu.svg
 share/help/el/hig/figures/patterns/editable-lists.svg
+share/help/el/hig/figures/patterns/empty-placeholder.svg
 share/help/el/hig/figures/patterns/grid.svg
 share/help/el/hig/figures/patterns/header-bar-menu.svg
 share/help/el/hig/figures/patterns/header-bar.svg
@@ -3849,6 +3852,7 @@ share/help/es/hig/figures/patterns/action-bar.svg
 share/help/es/hig/figures/patterns/action-dialog.svg
 share/help/es/hig/figures/patterns/application-menu.svg
 share/help/es/hig/figures/patterns/editable-lists.svg
+share/help/es/hig/figures/patterns/empty-placeholder.svg
 share/help/es/hig/figures/patterns/grid.svg
 share/help/es/hig/figures/patterns/header-bar-menu.svg
 share/help/es/hig/figures/patterns/header-bar.svg
@@ -6037,6 +6041,7 @@ share/help/ru/hig/figures/patterns/action-bar.svg
 share/help/ru/hig/figures/patterns/action-dialog.svg
 share/help/ru/hig/figures/patterns/application-menu.svg
 share/help/ru/hig/figures/patterns/editable-lists.svg
+share/help/ru/hig/figures/patterns/empty-placeholder.svg
 share/help/ru/hig/figures/patterns/grid.svg
 share/help/ru/hig/figures/patterns/header-bar-menu.svg
 share/help/ru/hig/figures/patterns/header-bar.svg
