@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.384 2015/09/21 11:05:35 kili Exp $
+# $OpenBSD: Makefile,v 1.385 2015/10/13 17:06:22 jca Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -126,6 +126,7 @@
      SUBDIR += ocaml-ssl
      SUBDIR += onesixtyone
      SUBDIR += opencdk
+     SUBDIR += opendnssec
      SUBDIR += openpam
      SUBDIR += opensc
      SUBDIR += openssl
