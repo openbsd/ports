@@ -1,0 +1,90 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/13 17:03:55 jca Exp $
+@newgroup _opendnssec:757
+@newuser _opendnssec:757:_opendnssec:daemon:OpenDNSSEC Account:/nonexistent:/sbin/nologin
+@bin bin/ods-getconf
+@bin bin/ods-hsmspeed
+@bin bin/ods-hsmutil
+bin/ods-kasp2html
+@bin bin/ods-kaspcheck
+@bin bin/ods-ksmutil
+@man man/man1/ods-hsmspeed.1
+@man man/man1/ods-hsmutil.1
+@man man/man1/ods-kaspcheck.1
+@man man/man1/ods-ksmutil.1
+@man man/man5/ods-timing.5
+@man man/man7/opendnssec.7
+@man man/man8/ods-control.8
+@man man/man8/ods-enforcerd.8
+@man man/man8/ods-getconf.8
+@man man/man8/ods-signer.8
+@man man/man8/ods-signerd.8
+sbin/ods-control
+@bin sbin/ods-enforcerd
+@bin sbin/ods-signer
+@bin sbin/ods-signerd
+@mode 0750
+@group _opendnssec
+@sample /etc/opendnssec/
+@mode
+@group
+share/doc/opendnssec/
+share/doc/opendnssec/LICENSE
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/opendnssec/
+share/examples/opendnssec/addns.xml
+@mode 0640
+@group _opendnssec
+@sample ${SYSCONFDIR}/opendnssec/addns.xml
+@mode
+@group
+share/examples/opendnssec/addns.xml.sample
+@mode 0640
+@group _opendnssec
+share/examples/opendnssec/conf.xml
+@sample ${SYSCONFDIR}/opendnssec/conf.xml
+share/examples/opendnssec/conf.xml.sample
+@mode
+@group
+share/examples/opendnssec/kasp.xml
+@mode 0640
+@group _opendnssec
+@sample ${SYSCONFDIR}/opendnssec/kasp.xml
+@mode
+@group
+share/examples/opendnssec/kasp.xml.sample
+share/examples/opendnssec/zonelist.xml
+@mode 0640
+@group _opendnssec
+@sample ${SYSCONFDIR}/opendnssec/zonelist.xml
+@mode
+@group
+share/examples/opendnssec/zonelist.xml.sample
+share/opendnssec/
+share/opendnssec/addns.rnc
+share/opendnssec/addns.rng
+share/opendnssec/conf.rnc
+share/opendnssec/conf.rng
+%%sqlite3%%
+%%mysql%%
+share/opendnssec/enforcerstate.rnc
+share/opendnssec/enforcerstate.rng
+share/opendnssec/kasp.rnc
+share/opendnssec/kasp.rng
+share/opendnssec/kasp2html.xsl
+share/opendnssec/signconf.rnc
+share/opendnssec/signconf.rng
+share/opendnssec/simple-dnskey-mailer.sh
+share/opendnssec/zonelist.rnc
+share/opendnssec/zonelist.rng
+@sample ${LOCALSTATEDIR}/opendnssec/
+@owner _opendnssec
+@group _opendnssec
+@sample ${LOCALSTATEDIR}/opendnssec/db/
+@sample ${LOCALSTATEDIR}/opendnssec/signconf/
+@sample ${LOCALSTATEDIR}/opendnssec/signed/
+@sample ${LOCALSTATEDIR}/opendnssec/tmp/
+@sample ${LOCALSTATEDIR}/opendnssec/unsigned/
+@sample ${LOCALSTATEDIR}/opendnssec/softhsm/
+@owner
+@group
+@rcscript ${RCDIR}/opendnssec

@@ -1,0 +1,50 @@
+$OpenBSD: patch-conf_conf_xml_in,v 1.1.1.1 2015/10/13 17:03:55 jca Exp $
+--- conf/conf.xml.in.orig	Mon Jul 21 11:30:08 2014
++++ conf/conf.xml.in	Wed Aug 20 08:52:31 2014
+@@ -28,7 +28,7 @@
+ 		<Logging>
+ 			<!-- Command line verbosity will overwrite configure file -->
+ 			<Verbosity>3</Verbosity>
+-			<Syslog><Facility>local0</Facility></Syslog>
++			<Syslog><Facility>daemon</Facility></Syslog>
+ 		</Logging>
+ 		
+ 		<PolicyFile>@OPENDNSSEC_CONFIG_DIR@/kasp.xml</PolicyFile>
+@@ -36,19 +36,17 @@
+ 	</Common>
+ 
+ 	<Enforcer>
+-<!--
+ 		<Privileges>
+-			<User>opendnssec</User>
+-			<Group>opendnssec</Group>
++			<User>_opendnssec</User>
++			<Group>_opendnssec</Group>
+ 		</Privileges>
+--->
+ <!-- NOTE: Enforcer worker threads are not used; this option is ignored -->
+ <!--
+ 		<WorkerThreads>4</WorkerThreads>
+ -->
+ 
+ 		<!-- <PidFile>@OPENDNSSEC_ENFORCER_PIDFILE@</PidFile> -->
+-		<Datastore><SQLite>@OPENDNSSEC_STATE_DIR@/kasp.db</SQLite></Datastore>
++		<Datastore><SQLite>@OPENDNSSEC_STATE_DIR@/db/kasp.db</SQLite></Datastore>
+ 		<Interval>PT3600S</Interval>
+ 		<!-- <ManualKeyGeneration/> -->
+ 		<!-- <RolloverNotification>P14D</RolloverNotification> -->
+@@ -60,12 +58,10 @@
+ 	</Enforcer>
+ 
+ 	<Signer>
+-<!--
+ 		<Privileges>
+-			<User>opendnssec</User>
+-			<Group>opendnssec</Group>
++			<User>_opendnssec</User>
++			<Group>_opendnssec</Group>
+ 		</Privileges>
+--->
+ 
+ 		<!-- <PidFile>@OPENDNSSEC_SIGNER_PIDFILE@</PidFile> -->
+ 		<!-- <SocketFile>@OPENDNSSEC_SIGNER_SOCKET@</SocketFile> -->

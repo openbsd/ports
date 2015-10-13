@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# $OpenBSD: opendnssec.rc,v 1.1.1.1 2015/10/13 17:03:55 jca Exp $
+
+daemon="${TRUEPREFIX}/sbin/ods-control"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+pexp="${TRUEPREFIX}/sbin/ods-(enforcerd|signerd)"
+
+rc_start() {
+	${rcexec} "${daemon} start"
+}
+
+rc_stop() {
+	${daemon} stop
+}
+
+rc_cmd $1

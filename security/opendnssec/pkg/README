@@ -1,0 +1,50 @@
+$OpenBSD: README,v 1.1.1.1 2015/10/13 17:03:55 jca Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Getting started
+===============
+This is a summary of steps needed to get OpenDNSSEC up and running in a
+basic state using SoftHSM as the key backend. Make sure you have
+installed the softhsm package before proceeding.
+
+Initial setup of SoftHSM
+------------------------
+Configure SoftHSM to store it's token in
+${LOCALSTATEDIR}/opendnssec/softhsm/:
+# vi ${SYSCONFDIR}/softhsm.conf
+
+Initialize the SoftHSM token (here assuming you used slot 0).
+The user PIN code has to match the <PIN> configured in
+${SYSCONFDIR}/opendnssec/conf.xml:
+# softhsm --init-token --slot 0 --label OpenDNSSEC
+
+Make sure the token is writeable by the _opendnssec user:
+# chown _opendnssec ${LOCALSTATEDIR}/opendnssec/softhsm/slot0.db
+
+Bootstrapping OpenDNSSEC
+------------------------
+Create an initial KASP database (if you are running the mysql flavor you
+will first need to configure mariadb-server and modify <Datastore> in
+${SYSCONFDIR}/opendnssec/conf.xml):
+# ods-ksmutil setup
+
+Start the OpenDNSSEC system:
+# rcctl start opendnssec
+
+Copy an unsigned zone file into the unsigned/ directory:
+# cp <somewhere>/example.com ${LOCALSTATEDIR}/opendnssec/unsigned/
+
+Add the zone:
+# ods-ksmutil zone add --zone example.com --policy default
+
+Notify the enforcer of the updated database:
+# ods-control enforcer notify
+
+You now have a signed version of example.com in the signed/ directory:
+# cat ${LOCALSTATEDIR}/opendnssec/signed/example.com
+
+List the keys for the zone:
+# ods-ksmutil key list -v
