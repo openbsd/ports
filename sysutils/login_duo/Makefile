@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/09/05 01:23:22 jturner Exp $
+# $OpenBSD: Makefile,v 1.10 2015/10/13 15:10:41 jturner Exp $
 
 COMMENT =		two-factor authentication for unix systems
 
-V =			1.9.15
+V =			1.9.16
 PKGNAME =		login_duo-${V}
 DISTNAME =		duo_unix-${V}
 CATEGORIES =		sysutils
@@ -28,9 +28,6 @@ FAKE_FLAGS =		docdir="${PREFIX}/share/doc/login_duo" \
 			includedir="${PREFIX}/include/duo" \
 			sbindir="${PREFIX}/sbin" \
 			sysconfdir="${PREFIX}/share/examples/login_duo"
-
-# login_duo needs to be set up and running for tests to pass
-TEST_IS_INTERACTIVE =	Yes
 
 TEST_DEPENDS =		${MODPY_RUN_DEPENDS}
 
