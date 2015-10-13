@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2015/07/02 07:36:03 benoit Exp $
+# $OpenBSD: Makefile,v 1.42 2015/10/13 06:30:47 bentley Exp $
 
 COMMENT =	creating & editing GIF images and animations
 
@@ -14,9 +14,7 @@ WANTLIB =		c ICE SM X11 m
 
 HOMEPAGE =	http://www.lcdf.org/gifsicle/
 
-MASTER_SITES =	${HOMEPAGE}/ \
-		ftp://ftp.lcdf.org/pub/ \
-		ftp://ftp.lcdf.org/pub/OLD-VERSIONS/
+MASTER_SITES =	http://www.lcdf.org/gifsicle/
 
 CONFIGURE_STYLE =	gnu
 SEPARATE_BUILD =	Yes
