@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2014/12/15 16:37:59 kili Exp $
+# $OpenBSD: Makefile,v 1.29 2015/10/13 20:17:04 kili Exp $
+
+BROKEN=			will be removed soon
 
 COMMENT=		interface generator for Haskell to C bindings
 
