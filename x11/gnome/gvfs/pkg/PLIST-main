@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.35 2015/09/26 06:26:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.36 2015/10/13 18:54:45 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/gvfs-cat
 @bin bin/gvfs-copy
@@ -27,6 +27,11 @@ lib/gio/modules/libgvfsdbus.so
 lib/gvfs/
 lib/gvfs/libgvfscommon.so
 lib/gvfs/libgvfsdaemon.so
+lib/systemd/
+lib/systemd/user/
+lib/systemd/user/gvfs-daemon.service
+lib/systemd/user/gvfs-goa-volume-monitor.service
+lib/systemd/user/gvfs-metadata.service
 @bin libexec/gvfsd
 @bin libexec/gvfsd-afp
 @bin libexec/gvfsd-afp-browse
@@ -83,8 +88,8 @@ share/bash-completion/completions/gvfs-save
 share/bash-completion/completions/gvfs-set-attribute
 share/bash-completion/completions/gvfs-trash
 share/bash-completion/completions/gvfs-tree
-share/dbus-1/services/gvfs-daemon.service
-share/dbus-1/services/gvfs-metadata.service
+share/dbus-1/services/org.gtk.vfs.Daemon.service
+share/dbus-1/services/org.gtk.vfs.Metadata.service
 share/glib-2.0/schemas/org.gnome.system.dns_sd.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.gvfs.enums.xml
 share/gvfs/
