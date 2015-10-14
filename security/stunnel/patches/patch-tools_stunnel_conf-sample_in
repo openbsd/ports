@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.13 2015/06/25 14:44:30 gsoares Exp $
---- tools/stunnel.conf-sample.in.orig	Fri Jun 12 05:23:01 2015
-+++ tools/stunnel.conf-sample.in	Mon Jun 22 02:02:57 2015
+$OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.14 2015/10/14 02:05:06 gsoares Exp $
+--- tools/stunnel.conf-sample.in.orig	Wed Sep 23 11:05:10 2015
++++ tools/stunnel.conf-sample.in	Tue Oct  6 06:10:53 2015
 @@ -7,17 +7,18 @@
  ; * Global options                                                         *
  ; **************************************************************************
@@ -33,9 +33,9 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.13 2015/06/25 14:44:30 gsoares 
  
  ; **************************************************************************
  ; * Service definitions (remove all services for inetd mode)               *
-@@ -45,64 +46,64 @@
- 
- ; ***************************************** Example TLS client mode services
+@@ -50,72 +51,72 @@
+ ; a hardcoded path of the stunnel package, as it is not related to the
+ ; stunnel configuration in @sysconfdir@/stunnel/.
  
 -[gmail-pop3]
 -client = yes
@@ -44,6 +44,7 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.13 2015/06/25 14:44:30 gsoares 
 -verify = 2
 -CApath = /etc/ssl/certs
 -checkHost = pop.gmail.com
+-OCSPaia = yes
 +;[gmail-pop3]
 +;client = yes
 +;accept = 127.0.0.1:110
@@ -51,6 +52,7 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.13 2015/06/25 14:44:30 gsoares 
 +;verify = 2
 +;CApath = ${SYSCONFDIR}/ssl/certs
 +;checkHost = pop.gmail.com
++;OCSPaia = yes
  
 -[gmail-imap]
 -client = yes
@@ -59,6 +61,7 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.13 2015/06/25 14:44:30 gsoares 
 -verify = 2
 -CApath = /etc/ssl/certs
 -checkHost = imap.gmail.com
+-OCSPaia = yes
 +;[gmail-imap]
 +;client = yes
 +;accept = 127.0.0.1:143
@@ -66,6 +69,7 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.13 2015/06/25 14:44:30 gsoares 
 +;verify = 2
 +;CApath = ${SYSCONFDIR}/ssl/certs
 +;checkHost = imap.gmail.com
++;OCSPaia = yes
  
 -[gmail-smtp]
 -client = yes
@@ -74,6 +78,7 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.13 2015/06/25 14:44:30 gsoares 
 -verify = 2
 -CApath = /etc/ssl/certs
 -checkHost = smtp.gmail.com
+-OCSPaia = yes
 +;[gmail-smtp]
 +;client = yes
 +;accept = 127.0.0.1:25
@@ -81,6 +86,7 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.13 2015/06/25 14:44:30 gsoares 
 +;verify = 2
 +;CApath = ${SYSCONFDIR}/ssl/certs
 +;checkHost = smtp.gmail.com
++;OCSPaia = yes
  
  ; ***************************************** Example TLS server mode services
  
@@ -91,7 +97,7 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.13 2015/06/25 14:44:30 gsoares 
 +[pop3s]
 +accept  = 995
 +connect = 110
-+cert = ${SYSCONFDIR}/ssl/stunnel.pem
++cert = ${SYSCONFDIR}/stunnel/stunnel.pem
  
 -;[imaps]
 -;accept  = 993
@@ -100,7 +106,7 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.13 2015/06/25 14:44:30 gsoares 
 +[imaps]
 +accept  = 993
 +connect = 143
-+cert = ${SYSCONFDIR}/ssl/stunnel.pem
++cert = ${SYSCONFDIR}/stunnel/stunnel.pem
  
 -;[ssmtp]
 -;accept  = 465
@@ -109,14 +115,14 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.13 2015/06/25 14:44:30 gsoares 
 +[ssmtp]
 +accept  = 465
 +connect = 25
-+cert = ${SYSCONFDIR}/ssl/stunnel.pem
++cert = ${SYSCONFDIR}/stunnel/stunnel.pem
  
  ; TLS front-end to a web server
  ;[https]
  ;accept  = 443
  ;connect = 80
 -;cert = @sysconfdir@/stunnel/stunnel.pem
-+;cert = ${SYSCONFDIR}/ssl/stunnel.pem
++;cert = ${SYSCONFDIR}/stunnel/stunnel.pem
  ; "TIMEOUTclose = 0" is a workaround for a design flaw in Microsoft SChannel
  ; Microsoft implementations do not use TLS close-notify alert and thus they
  ; are vulnerable to truncation attacks
@@ -124,13 +130,19 @@ $OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.13 2015/06/25 14:44:30 gsoares 
  
  ; Remote shell protected with PSK-authenticated TLS
 -; Create "@sysconfdir@/stunnel/secrets.txt" containing IDENTITY:KEY pairs
-+; Create "${SYSCONFDIR}/ssl/secrets.txt" containing IDENTITY:KEY pairs
++; Create "${SYSCONFDIR}/stunnel/secrets.txt" containing IDENTITY:KEY pairs
  ;[shell]
  ;accept = 1337
  ;exec = /bin/sh
  ;execArgs = sh -i
  ;ciphers = PSK
 -;PSKsecrets = @sysconfdir@/stunnel/secrets.txt
-+;PSKsecrets = ${SYSCONFDIR}/ssl/secrets.txt
++;PSKsecrets = ${SYSCONFDIR}/stunnel/secrets.txt
  
- ; vim:ft=dosini
+ ; Non-standard MySQL-over-TLS encapsulation connecting the Unix socket
+ ;[mysql]
+-;cert = @sysconfdir@/stunnel/stunnel.pem
++;cert = ${SYSCONFDIR}/stunnel/stunnel.pem
+ ;accept = 3307
+ ;connect = /run/mysqld/mysqld.sock
+ 
