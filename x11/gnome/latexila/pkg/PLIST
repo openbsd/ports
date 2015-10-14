@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/08/18 17:17:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2015/10/14 18:23:42 ajacoutot Exp $
 @bin bin/latexila
 @man man/man1/latexila.1
 share/appdata/
@@ -17,11 +17,15 @@ share/gtk-doc/html/latexila/LatexilaPostProcessorAllOutput.html
 share/gtk-doc/html/latexila/LatexilaPostProcessorLatex.html
 share/gtk-doc/html/latexila/LatexilaPostProcessorLatexmk.html
 share/gtk-doc/html/latexila/LatexilaSynctex.html
+share/gtk-doc/html/latexila/LatexilaTemplatesDefault.html
+share/gtk-doc/html/latexila/LatexilaTemplatesManageDialog.html
+share/gtk-doc/html/latexila/LatexilaTemplatesPersonal.html
 share/gtk-doc/html/latexila/annotation-glossary.html
-share/gtk-doc/html/latexila/api-index-full.html
 share/gtk-doc/html/latexila/ch01.html
 share/gtk-doc/html/latexila/home.png
 share/gtk-doc/html/latexila/index.html
+share/gtk-doc/html/latexila/ix01.html
+share/gtk-doc/html/latexila/latexila-LatexilaTemplatesDialogs.html
 share/gtk-doc/html/latexila/latexila-LatexilaUtils.html
 share/gtk-doc/html/latexila/latexila.devhelp2
 share/gtk-doc/html/latexila/left-insensitive.png
