@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/14 17:36:11 robert Exp $
+${P5SITE}/Role/
+${P5SITE}/Role/Basic/
+${P5SITE}/Role/Basic.pm
+${P5SITE}/Role/Basic/Philosophy.pod
+@man man/man3p/Role::Basic.3p
+@man man/man3p/Role::Basic::Philosophy.3p
