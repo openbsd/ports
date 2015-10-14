@@ -1,0 +1,2 @@
+Crypt::X509 parses X.509 certificates, methods are provided for
+accessing most certificate elements.
