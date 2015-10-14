@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_connections_c,v 1.25 2015/09/25 06:17:15 ajacoutot Exp $
+$OpenBSD: patch-src_connections_c,v 1.26 2015/10/14 05:33:02 ajacoutot Exp $
 
 - [core] allocate at least 4k buffer for incoming data
 - [core] fix search for header end if split across chunks (fixes #2670)
+- [core] don't buffer request bodies smaller than 64k on disk
 
---- src/connections.c.orig	Fri Sep 25 01:53:03 2015
-+++ src/connections.c	Fri Sep 25 01:54:52 2015
+--- src/connections.c.orig	Sat Aug 29 08:22:38 2015
++++ src/connections.c	Tue Oct 13 17:31:54 2015
 @@ -336,10 +336,11 @@ static int connection_handle_read(server *srv, connect
  	len = recv(con->fd, mem, mem_len, 0);
  #else /* __WIN32 */
@@ -28,3 +29,16 @@ $OpenBSD: patch-src_connections_c,v 1.25 2015/09/25 06:17:15 ajacoutot Exp $
  
  						for ( ; j < bblen; j++) {
  							ch = bb[j];
+@@ -982,7 +983,11 @@ found_header_end:
+ 		}
+ 		break;
+ 	case CON_STATE_READ_POST:
+-		if (0 != chunkqueue_steal_with_tempfiles(srv, dst_cq, cq, con->request.content_length - dst_cq->bytes_in )) {
++		if (con->request.content_length <= 64*1024) {
++			/* don't buffer request bodies <= 64k on disk */
++			chunkqueue_steal(dst_cq, cq, con->request.content_length - dst_cq->bytes_in);
++		}
++		else if (0 != chunkqueue_steal_with_tempfiles(srv, dst_cq, cq, con->request.content_length - dst_cq->bytes_in )) {
+ 			con->http_status = 413; /* Request-Entity too large */
+ 			con->keep_alive = 0;
+ 			connection_set_state(srv, con, CON_STATE_HANDLE_REQUEST);
