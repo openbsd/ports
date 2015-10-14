@@ -1,10 +1,10 @@
-$OpenBSD: gcc3-patch-glib_tests_Makefile_in,v 1.4 2015/03/27 16:00:00 ajacoutot Exp $
+$OpenBSD: gcc3-patch-glib_tests_Makefile_in,v 1.5 2015/10/14 17:10:53 ajacoutot Exp $
 
 -Wstrict-aliasing is not supported by GCC3.
 
---- glib/tests/Makefile.in.orig	Mon Mar 23 17:29:13 2015
-+++ glib/tests/Makefile.in	Tue Mar 24 16:43:51 2015
-@@ -115,7 +115,7 @@ check_PROGRAMS = $(am__EXEEXT_9)
+--- glib/tests/Makefile.in.orig	Wed Oct 14 15:11:00 2015
++++ glib/tests/Makefile.in	Wed Oct 14 19:06:05 2015
+@@ -122,7 +122,7 @@ check_PROGRAMS = $(am__EXEEXT_9)
  @ENABLE_INSTALLED_TESTS_TRUE@	$(dist_installed_test_data)
  @ENABLE_INSTALLED_TESTS_TRUE@am__append_12 = $(test_ltlibraries) $(installed_test_ltlibraries)
  @ENABLE_INSTALLED_TESTS_TRUE@am__append_13 = $(installed_test_meta_DATA)

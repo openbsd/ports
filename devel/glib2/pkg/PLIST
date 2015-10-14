@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2015/09/24 10:23:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2015/10/14 17:10:53 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -340,8 +340,8 @@ share/bash-completion/completions/gsettings
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/gdb/
 share/gdb/auto-load/
-share/gdb/auto-load/libglib-2.0.so.0.4600.0-gdb.py
-share/gdb/auto-load/libgobject-2.0.so.0.4600.0-gdb.py
+share/gdb/auto-load/libglib-2.0.so.0.4600.1-gdb.py
+share/gdb/auto-load/libgobject-2.0.so.0.4600.1-gdb.py
 share/glib-2.0/
 share/glib-2.0/codegen/
 share/glib-2.0/codegen/__init__.py
@@ -600,6 +600,7 @@ share/gtk-doc/html/gio/highlevel-socket.html
 share/gtk-doc/html/gio/home.png
 share/gtk-doc/html/gio/icons.html
 share/gtk-doc/html/gio/index.html
+share/gtk-doc/html/gio/index.sgml
 share/gtk-doc/html/gio/left-insensitive.png
 share/gtk-doc/html/gio/left.png
 share/gtk-doc/html/gio/menu-example.png
@@ -751,6 +752,7 @@ share/gtk-doc/html/glib/gvariant-format-strings.html
 share/gtk-doc/html/glib/gvariant-text.html
 share/gtk-doc/html/glib/home.png
 share/gtk-doc/html/glib/index.html
+share/gtk-doc/html/glib/index.sgml
 share/gtk-doc/html/glib/left-insensitive.png
 share/gtk-doc/html/glib/left.png
 share/gtk-doc/html/glib/mainloop-states.gif
@@ -829,6 +831,7 @@ share/gtk-doc/html/gobject/howto-interface-properties.html
 share/gtk-doc/html/gobject/howto-interface.html
 share/gtk-doc/html/gobject/howto-signals.html
 share/gtk-doc/html/gobject/index.html
+share/gtk-doc/html/gobject/index.sgml
 share/gtk-doc/html/gobject/left-insensitive.png
 share/gtk-doc/html/gobject/left.png
 share/gtk-doc/html/gobject/pr01.html
