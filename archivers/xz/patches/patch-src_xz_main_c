@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_xz_main_c,v 1.1 2015/10/14 21:18:51 sthen Exp $
+--- src/xz/main.c.orig	Mon Oct  5 10:07:16 2015
++++ src/xz/main.c	Mon Oct  5 10:17:18 2015
+@@ -163,6 +163,9 @@ main(int argc, char **argv)
+ 	// on the command line, thus this must be done before args_parse().
+ 	hardware_init();
+ 
++	if (pledge("stdio rpath wpath cpath fattr", NULL) == -1)
++		err(1, "pledge");
++
+ 	// Parse the command line arguments and get an array of filenames.
+ 	// This doesn't return if something is wrong with the command line
+ 	// arguments. If there are no arguments, one filename ("-") is still

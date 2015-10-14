@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2015/03/31 18:00:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2015/10/14 21:18:51 sthen Exp $
 
 COMMENT=	LZMA compression and decompression tools
 
 DISTNAME=	xz-5.2.1
+REVISION=	0
 SHARED_LIBS=	lzma                 2.1      # .7.1
 CATEGORIES=	archivers
 DPB_PROPERTIES=	parallel
