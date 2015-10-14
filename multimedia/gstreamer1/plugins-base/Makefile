@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2015/09/27 08:21:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2015/10/14 05:37:08 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
+REVISION=		0
 
 SHARED_LIBS +=  gsttag-1.0           2.0      # 600.0
 SHARED_LIBS +=  gstaudio-1.0         2.0      # 600.0
@@ -44,7 +45,7 @@ LIB_DEPENDS=		${P}/core=${V} \
 			multimedia/libtheora
 
 # needed for the gio plugin
-RUN_DEPENDS +=		x11/gnome/gvfs
+#RUN_DEPENDS +=		x11/gnome/gvfs
 
 CONFIGURE_ARGS=		--enable-sndio \
 			--disable-libvisual #XXX libvisual needs to be ported
