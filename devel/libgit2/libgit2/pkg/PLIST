@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/01/28 09:19:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/10/14 18:13:08 jasper Exp $
 include/git2/
 include/git2.h
 include/git2/annotated_commit.h
@@ -36,7 +36,6 @@ include/git2/oidarray.h
 include/git2/pack.h
 include/git2/patch.h
 include/git2/pathspec.h
-include/git2/push.h
 include/git2/rebase.h
 include/git2/refdb.h
 include/git2/reflog.h
