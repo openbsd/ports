@@ -1,0 +1,5 @@
+Eksblowfish is a variant of the Blowfish cipher, modified to make
+the key setup very expensive. ("Eks" stands for "expensive key
+schedule".) This doesn't make it significantly cryptographically
+stronger, but is intended to hinder brute-force attacks.  It also
+makes it unsuitable for any application requiring key agility.

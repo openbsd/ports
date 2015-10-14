@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/14 17:36:22 robert Exp $
+${P5ARCH}/Crypt/
+${P5ARCH}/Crypt/Eksblowfish/
+${P5ARCH}/Crypt/Eksblowfish.pm
+${P5ARCH}/Crypt/Eksblowfish/Bcrypt.pm
+${P5ARCH}/Crypt/Eksblowfish/Blowfish.pm
+${P5ARCH}/Crypt/Eksblowfish/Family.pm
+${P5ARCH}/Crypt/Eksblowfish/Subkeyed.pm
+${P5ARCH}/Crypt/Eksblowfish/Uklblowfish.pm
+${P5ARCH}/auto/Crypt/
+${P5ARCH}/auto/Crypt/Eksblowfish/
+${P5ARCH}/auto/Crypt/Eksblowfish/Eksblowfish.bs
+${P5ARCH}/auto/Crypt/Eksblowfish/Eksblowfish.so
+@man man/man3p/Crypt::Eksblowfish.3p
+@man man/man3p/Crypt::Eksblowfish::Bcrypt.3p
+@man man/man3p/Crypt::Eksblowfish::Blowfish.3p
+@man man/man3p/Crypt::Eksblowfish::Family.3p
+@man man/man3p/Crypt::Eksblowfish::Subkeyed.3p
+@man man/man3p/Crypt::Eksblowfish::Uklblowfish.3p
