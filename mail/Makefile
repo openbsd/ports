@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.331 2015/10/09 16:09:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.332 2015/10/14 17:40:19 robert Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -115,6 +115,7 @@
      SUBDIR += p5-Catalyst-Plugin-Email
      SUBDIR += p5-Email-Abstract
      SUBDIR += p5-Email-Address
+     SUBDIR += p5-Email-Address-List
      SUBDIR += p5-Email-Date
      SUBDIR += p5-Email-Date-Format
      SUBDIR += p5-Email-Filter
