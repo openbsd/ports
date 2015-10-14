@@ -1,0 +1,4 @@
+Parser for From, To, Cc, Bcc, Reply-To, Sender and previous prefixed
+with Resent- (eg Resent-From) headers.  Email::Address is good at
+parsing addresses out of any text even mentioned headers and this
+module is derived work from Email::Address.
