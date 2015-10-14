@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/10/01 08:48:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/10/14 22:23:16 sthen Exp $
 
 COMMENT=		presenter console with multi-monitor support
 
@@ -7,7 +7,7 @@ GH_PROJECT=		pdfpc
 GH_TAGNAME=		v4.0.0
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME=		${DISTNAME:S/v//}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		textproc
 
@@ -29,7 +29,8 @@ WANTLIB += pangocairo-1.0 poppler-glib pthread
 BUILD_DEPENDS=		lang/vala
 LIB_DEPENDS=		devel/libgee \
 			multimedia/gstreamer1/plugins-base \
-			print/poppler
+			print/poppler \
+			x11/gtk+3
 
 CONFIGURE_ARGS+=	-DMANDIR="${PREFIX}/man/man1" \
 			-DSYSCONFDIR="${PREFIX}/share/examples/pdfpc"
