@@ -1,25 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2015/10/02 12:39:38 sthen Exp $
-
-BROKEN-hppa =	no __sync_bool_compare_and_swap support nor asm fallback
-
-# XXX use the bundled libtool because it needs some specific options we
-# don't have.
-USE_LIBTOOL=	No
+# $OpenBSD: Makefile,v 1.17 2015/10/14 19:36:02 robert Exp $
 
 PV=		5.6
 V=		${PV}.14
 
-INI_TEMPLATES=	development production
-
-CONFIGURE_ARGS+=	--enable-mysqlnd
+REVISION-main=	0
 
 WANTLIB-main+=		stdc++ ncurses readline
-
-# sybase-ct
-MULTI_PACKAGES+=	-sybase_ct
-COMMENT-sybase_ct=	sybase database access extensions for php5
-CONFIGURE_ARGS+=	--with-sybase-ct=shared,${LOCALBASE}
-LIB_DEPENDS-sybase_ct=	databases/freetds
-WANTLIB-sybase_ct=	ct pthread
 
 .include <bsd.port.mk>

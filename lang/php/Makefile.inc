@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.66 2015/09/18 09:18:22 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.67 2015/10/14 19:36:01 robert Exp $
+#
+
+BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -22,6 +25,7 @@ MASTER_SITES=		http://se.php.net/distributions/ \
 			http://us.php.net/distributions/ \
 			http://no.php.net/distributions/ \
 			http://uk.php.net/distributions/
+MASTER_SITES0=		https://download.suhosin.org/
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
@@ -40,7 +44,13 @@ CHROOT_DIR?=		/var/www
 MODULES_SUBDIR=		lib/php-${PV}/modules
 MODULES_DIR=		${LOCALBASE}/${MODULES_SUBDIR}
 
-FLAVORS=		ap2
+INI_TEMPLATES?=		development production
+
+# XXX use the bundled libtool because it needs some specific options we
+# don't have.
+USE_LIBTOOL?=		No
+
+FLAVORS=		ap2 no_suhosin
 FLAVOR?=
 
 PATCHORIG=		.orig.port
@@ -278,6 +288,13 @@ CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
 LIB_DEPENDS-snmp=	net/net-snmp
 WANTLIB-snmp=		crypto m netsnmp>=6.2 pthread
 
+# sybase-ct
+MULTI_PACKAGES+=	-sybase_ct
+COMMENT-sybase_ct=	sybase database access extensions for php5
+CONFIGURE_ARGS+=	--with-sybase-ct=shared,${LOCALBASE}
+LIB_DEPENDS-sybase_ct=	databases/freetds
+WANTLIB-sybase_ct=	ct pthread
+
 # pdo-dblib
 MULTI_PACKAGES+=	-pdo_dblib
 COMMENT-pdo_dblib=	PDO DB-LIB support for php5
@@ -343,6 +360,17 @@ LIB_DEPENDS-main=	textproc/libxml
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
 			mail/femail,-chroot
 LIB_DEPENDS-fastcgi=	${LIB_DEPENDS-main}
+
+SUHOSIN_V=		0.9.38
+.if ${FLAVOR:Mno_suhosin}
+SUPDISTFILES=		suhosin-${SUHOSIN_V}.tar.gz:0
+.else
+DISTFILES+=		suhosin-${SUHOSIN_V}.tar.gz:0
+CONFIGURE_ARGS+=	--enable-suhosin
+
+pre-patch:
+	@mv ${WRKDIR}/suhosin-${SUHOSIN_V} ${WRKSRC}/ext/suhosin
+.endif
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}/modules
