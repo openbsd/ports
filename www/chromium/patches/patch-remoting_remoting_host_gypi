@@ -1,6 +1,6 @@
-$OpenBSD: patch-remoting_remoting_host_gypi,v 1.11 2015/09/05 16:06:50 robert Exp $
---- remoting/remoting_host.gypi.orig.port	Tue Sep  1 22:10:43 2015
-+++ remoting/remoting_host.gypi	Wed Sep  2 07:31:55 2015
+$OpenBSD: patch-remoting_remoting_host_gypi,v 1.12 2015/10/14 16:42:07 robert Exp $
+--- remoting/remoting_host.gypi.orig.port	Tue Oct 13 21:04:33 2015
++++ remoting/remoting_host.gypi	Wed Oct 14 07:41:13 2015
 @@ -18,7 +18,7 @@
          'remoting_host_win.gypi',
        ],
@@ -19,7 +19,7 @@ $OpenBSD: patch-remoting_remoting_host_gypi,v 1.11 2015/09/05 16:06:50 robert Ex
                'conditions': [
                  ['use_x11==1', {
                    'dependencies': [
-@@ -661,7 +661,7 @@
+@@ -671,7 +671,7 @@
                  'host/it2me/it2me_native_messaging_host_main.h',
                ],
                'conditions': [

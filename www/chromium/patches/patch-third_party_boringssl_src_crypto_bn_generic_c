@@ -1,0 +1,13 @@
+$OpenBSD: patch-third_party_boringssl_src_crypto_bn_generic_c,v 1.1 2015/10/14 16:42:07 robert Exp $
+--- third_party/boringssl/src/crypto/bn/generic.c.orig.port	Wed Oct 14 09:03:41 2015
++++ third_party/boringssl/src/crypto/bn/generic.c	Wed Oct 14 09:04:43 2015
+@@ -72,7 +72,9 @@
+ #if defined(OPENSSL_WINDOWS)
+ #define alloca _alloca
+ #else
++#if !defined(__OpenBSD__)
+ #include <alloca.h>
++#endif
+ #endif
+ 
+ #ifdef BN_LLONG

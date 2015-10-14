@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.15 2015/09/20 18:32:18 robert Exp $
---- chrome/chrome_browser_ui.gypi.orig.port	Thu Sep 17 06:53:24 2015
-+++ chrome/chrome_browser_ui.gypi	Thu Sep 17 06:53:24 2015
-@@ -2937,7 +2937,7 @@
+$OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.16 2015/10/14 16:42:07 robert Exp $
+--- chrome/chrome_browser_ui.gypi.orig.port	Wed Oct 14 07:46:45 2015
++++ chrome/chrome_browser_ui.gypi	Wed Oct 14 07:47:43 2015
+@@ -2921,7 +2921,7 @@
              }],
            ],
          }],
@@ -10,16 +10,16 @@ $OpenBSD: patch-chrome_chrome_browser_ui_gypi,v 1.15 2015/09/20 18:32:18 robert 
            'dependencies': [
              # gtk2 is the only component that can interact with gtk2 in our new
              # world.
-@@ -2945,7 +2945,7 @@
+@@ -2929,7 +2929,7 @@
              '../build/linux/system.gyp:gio',
            ],
          }],
 -        ['OS=="win" or OS=="mac" or desktop_linux==1', {
 +        ['OS=="win" or OS=="mac" or desktop_linux==1 or os_bsd==1', {
-           'sources': [ '<@(chrome_browser_ui_desktop_sources)' ],
-         }],
-         ['use_aura==1', {
-@@ -3108,10 +3108,10 @@
+           # A temporary define to make it easier to remove CrOS dependencies on
+           # avatar button code. TODO(estade): remove.
+           'defines': [ 'FRAME_AVATAR_BUTTON=1', ],
+@@ -3095,10 +3095,10 @@
              }],
            ],
          }],

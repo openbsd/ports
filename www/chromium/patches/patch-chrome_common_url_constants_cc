@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_url_constants_cc,v 1.7 2015/09/05 16:06:50 robert Exp $
---- chrome/common/url_constants.cc.orig.port	Tue Sep  1 22:10:42 2015
-+++ chrome/common/url_constants.cc	Wed Sep  2 07:31:55 2015
-@@ -131,7 +131,7 @@ const char kChromeUIGestureConfigURL[] = "chrome://ges
+$OpenBSD: patch-chrome_common_url_constants_cc,v 1.8 2015/10/14 16:42:07 robert Exp $
+--- chrome/common/url_constants.cc.orig.port	Tue Oct 13 21:04:32 2015
++++ chrome/common/url_constants.cc	Wed Oct 14 07:41:13 2015
+@@ -130,7 +130,7 @@ const char kChromeUIGestureConfigURL[] = "chrome://ges
  const char kChromeUIGestureConfigHost[] = "gesture";
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_common_url_constants_cc,v 1.7 2015/09/05 16:06:50 robert 
  const char kChromeUITabModalConfirmDialogURL[] =
      "chrome://tab-modal-confirm-dialog/";
  #endif
-@@ -309,7 +309,7 @@ const char kChromeOSAssetPath[] = "/usr/share/chromeos
+@@ -314,7 +314,7 @@ const char kChromeOSAssetPath[] = "/usr/share/chromeos
  const char kChromeUIMetroFlowHost[] = "make-metro";
  #endif
  

@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.246 2015/09/25 21:09:19 robert Exp $
+# $OpenBSD: Makefile,v 1.247 2015/10/14 16:42:07 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			45.0.2454.101
+V=			46.0.2490.71
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -28,8 +27,8 @@ PERMIT_PACKAGE_FTP =	Yes
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 MASTER_SITES0=	http://nerd.hu/distfiles/
 
-PATCHFILES+=		issue1236863006_160001.diff:0
-PATCH_DIST_STRIP=	-p1
+#PATCHFILES+=		issue1236863006_160001.diff:0
+#PATCH_DIST_STRIP=	-p1
 
 MODULES=	lang/clang lang/python gcc4
 
@@ -44,7 +43,7 @@ WANTLIB += X11 Xext Xfixes Xrender Xss c cairo cups dbus-1 event
 WANTLIB += execinfo expat fontconfig freetype gconf-2 gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0
-WANTLIB += png pthread speex
+WANTLIB += png pthread
 WANTLIB += xml2 xslt
 WANTLIB += sndio
 WANTLIB += Xcomposite
@@ -52,7 +51,7 @@ WANTLIB += estdc++>=17
 WANTLIB += Xi Xtst
 WANTLIB += Xdamage
 WANTLIB += Xcursor Xrandr gio-2.0
-WANTLIB += jpeg nspr4 nss3 nssutil3 plc4 smime3
+WANTLIB += jpeg nspr4 nss3 nssutil3 smime3
 WANTLIB += atk-1.0 gmodule-2.0
 
 RUN_DEPENDS=	devel/xdg-utils \
@@ -76,7 +75,6 @@ LIB_DEPENDS=	devel/libexecinfo \
 		devel/gconf2 \
 		textproc/libxslt \
 		x11/gtk+2 \
-		audio/speex \
 		print/cups,-libs \
 		lang/gcc/4.9,-libs>=4.9,<4.10
 
@@ -107,7 +105,6 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_libusb=0 \
 		-Duse_system_libvpx=0 \
 		-Duse_system_libxml=1 \
-		-Duse_system_speex=1 \
 		-Duse_system_sqlite=0 \
 		-Duse_system_yasm=1 \
 		-Duse_system_zlib=0 \
@@ -163,6 +160,8 @@ pre-configure:
 .endfor
 	@mkdir -p ${WRKSRC}/media/audio/sndio
 	@cp ${FILESDIR}/sndio_output.{cc,h} ${WRKSRC}/media/audio/sndio
+	# XXX Create a missing html file to avoid a build failure (unused in the actual package)
+	@touch ${WRKSRC}/chrome/test/data/webui/i18n_process_css_test.html
 
 # gyp_chromium generates all the Makefiles from gyp
 do-configure:

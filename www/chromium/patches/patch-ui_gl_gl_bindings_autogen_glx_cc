@@ -1,6 +1,6 @@
-$OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.2 2015/09/05 16:06:50 robert Exp $
---- ui/gl/gl_bindings_autogen_glx.cc.orig.port	Tue Sep  1 22:10:44 2015
-+++ ui/gl/gl_bindings_autogen_glx.cc	Wed Sep  2 07:31:55 2015
+$OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.3 2015/10/14 16:42:07 robert Exp $
+--- ui/gl/gl_bindings_autogen_glx.cc.orig.port	Tue Oct 13 21:04:35 2015
++++ ui/gl/gl_bindings_autogen_glx.cc	Wed Oct 14 07:41:14 2015
 @@ -74,6 +74,7 @@ void DriverGLX::InitializeStaticBindings() {
    fn.glXGetFBConfigsFn = reinterpret_cast<glXGetFBConfigsProc>(
        GetGLProcAddress("glXGetFBConfigs"));
@@ -32,7 +32,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.2 2015/09/05 16:06:50 rober
    debug_fn.glXGetSyncValuesOMLFn = 0;
    if (ext.b_GLX_OML_sync_control) {
      fn.glXGetSyncValuesOMLFn = reinterpret_cast<glXGetSyncValuesOMLProc>(
-@@ -271,8 +281,8 @@ static void GL_BINDING_CALL Debug_glXCopySubBufferMESA
+@@ -272,8 +282,8 @@ static void GL_BINDING_CALL Debug_glXCopySubBufferMESA
                   << "(" << static_cast<const void*>(dpy) << ", " << drawable
                   << ", " << x << ", " << y << ", " << width << ", " << height
                   << ")");
@@ -43,7 +43,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.2 2015/09/05 16:06:50 rober
  }
  
  static GLXContext GL_BINDING_CALL Debug_glXCreateContext(Display* dpy,
-@@ -477,8 +487,8 @@ static int GL_BINDING_CALL Debug_glXGetFBConfigAttrib(
+@@ -481,8 +491,8 @@ static int GL_BINDING_CALL Debug_glXGetFBConfigAttrib(
                   << "(" << static_cast<const void*>(dpy) << ", " << config
                   << ", " << attribute << ", " << static_cast<const void*>(value)
                   << ")");
@@ -54,7 +54,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.2 2015/09/05 16:06:50 rober
    GL_SERVICE_LOG("GL_RESULT: " << result);
    return result;
  }
-@@ -519,6 +529,16 @@ static bool GL_BINDING_CALL Debug_glXGetMscRateOML(Dis
+@@ -524,6 +534,16 @@ static bool GL_BINDING_CALL Debug_glXGetMscRateOML(Dis
    return result;
  }
  
@@ -71,7 +71,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.2 2015/09/05 16:06:50 rober
  static void GL_BINDING_CALL Debug_glXGetSelectedEvent(Display* dpy,
                                                        GLXDrawable drawable,
                                                        unsigned long* mask) {
-@@ -834,6 +854,10 @@ void DriverGLX::InitializeDebugBindings() {
+@@ -851,6 +871,10 @@ void DriverGLX::InitializeDebugBindings() {
      debug_fn.glXGetMscRateOMLFn = fn.glXGetMscRateOMLFn;
      fn.glXGetMscRateOMLFn = Debug_glXGetMscRateOML;
    }
@@ -82,7 +82,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.2 2015/09/05 16:06:50 rober
    if (!debug_fn.glXGetSelectedEventFn) {
      debug_fn.glXGetSelectedEventFn = fn.glXGetSelectedEventFn;
      fn.glXGetSelectedEventFn = Debug_glXGetSelectedEvent;
-@@ -921,9 +945,7 @@ void DriverGLX::InitializeDebugBindings() {
+@@ -938,9 +962,7 @@ void DriverGLX::InitializeDebugBindings() {
    g_debugBindingsInitialized = true;
  }
  
@@ -93,7 +93,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.2 2015/09/05 16:06:50 rober
  
  void GLXApiBase::glXBindTexImageEXTFn(Display* dpy,
                                        GLXDrawable drawable,
-@@ -973,8 +995,8 @@ GLXContext GLXApiBase::glXCreateContextAttribsARBFn(Di
+@@ -990,8 +1012,8 @@ GLXContext GLXApiBase::glXCreateContextAttribsARBFn(Di
                                                      GLXContext share_context,
                                                      int direct,
                                                      const int* attrib_list) {
@@ -104,7 +104,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.2 2015/09/05 16:06:50 rober
  }
  
  GLXPixmap GLXApiBase::glXCreateGLXPixmapFn(Display* dpy,
-@@ -988,8 +1010,8 @@ GLXContext GLXApiBase::glXCreateNewContextFn(Display* 
+@@ -1005,8 +1027,8 @@ GLXContext GLXApiBase::glXCreateNewContextFn(Display* 
                                               int renderType,
                                               GLXContext shareList,
                                               int direct) {
@@ -115,7 +115,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.2 2015/09/05 16:06:50 rober
  }
  
  GLXPbuffer GLXApiBase::glXCreatePbufferFn(Display* dpy,
-@@ -1085,6 +1107,10 @@ bool GLXApiBase::glXGetMscRateOMLFn(Display* dpy,
+@@ -1102,6 +1124,10 @@ bool GLXApiBase::glXGetMscRateOMLFn(Display* dpy,
    return driver_->fn.glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);
  }
  
@@ -126,7 +126,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.2 2015/09/05 16:06:50 rober
  void GLXApiBase::glXGetSelectedEventFn(Display* dpy,
                                         GLXDrawable drawable,
                                         unsigned long* mask) {
-@@ -1183,9 +1209,7 @@ void GLXApiBase::glXUseXFontFn(Font font, int first, i
+@@ -1200,9 +1226,7 @@ void GLXApiBase::glXUseXFontFn(Font font, int first, i
    driver_->fn.glXUseXFontFn(font, first, count, list);
  }
  
@@ -137,7 +137,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.2 2015/09/05 16:06:50 rober
  
  int GLXApiBase::glXWaitVideoSyncSGIFn(int divisor,
                                        int remainder,
-@@ -1193,9 +1217,7 @@ int GLXApiBase::glXWaitVideoSyncSGIFn(int divisor,
+@@ -1210,9 +1234,7 @@ int GLXApiBase::glXWaitVideoSyncSGIFn(int divisor,
    return driver_->fn.glXWaitVideoSyncSGIFn(divisor, remainder, count);
  }
  
@@ -148,7 +148,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.2 2015/09/05 16:06:50 rober
  
  void TraceGLXApi::glXBindTexImageEXTFn(Display* dpy,
                                         GLXDrawable drawable,
-@@ -1252,8 +1274,8 @@ GLXContext TraceGLXApi::glXCreateContextAttribsARBFn(D
+@@ -1269,8 +1291,8 @@ GLXContext TraceGLXApi::glXCreateContextAttribsARBFn(D
                                                       int direct,
                                                       const int* attrib_list) {
    TRACE_EVENT_BINARY_EFFICIENT0("gpu", "TraceGLAPI::glXCreateContextAttribsARB")
@@ -159,7 +159,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.2 2015/09/05 16:06:50 rober
  }
  
  GLXPixmap TraceGLXApi::glXCreateGLXPixmapFn(Display* dpy,
-@@ -1269,8 +1291,8 @@ GLXContext TraceGLXApi::glXCreateNewContextFn(Display*
+@@ -1286,8 +1308,8 @@ GLXContext TraceGLXApi::glXCreateNewContextFn(Display*
                                                GLXContext shareList,
                                                int direct) {
    TRACE_EVENT_BINARY_EFFICIENT0("gpu", "TraceGLAPI::glXCreateNewContext")
@@ -170,7 +170,7 @@ $OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.2 2015/09/05 16:06:50 rober
  }
  
  GLXPbuffer TraceGLXApi::glXCreatePbufferFn(Display* dpy,
-@@ -1383,6 +1405,11 @@ bool TraceGLXApi::glXGetMscRateOMLFn(Display* dpy,
+@@ -1400,6 +1422,11 @@ bool TraceGLXApi::glXGetMscRateOMLFn(Display* dpy,
                                       int32* denominator) {
    TRACE_EVENT_BINARY_EFFICIENT0("gpu", "TraceGLAPI::glXGetMscRateOML")
    return glx_api_->glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);

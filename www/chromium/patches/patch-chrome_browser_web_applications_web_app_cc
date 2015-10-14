@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_web_applications_web_app_cc,v 1.15 2015/07/23 13:44:04 robert Exp $
---- chrome/browser/web_applications/web_app.cc.orig.port	Wed Jul 15 22:29:59 2015
-+++ chrome/browser/web_applications/web_app.cc	Wed Jul 22 08:37:29 2015
-@@ -54,7 +54,7 @@ namespace {
+$OpenBSD: patch-chrome_browser_web_applications_web_app_cc,v 1.16 2015/10/14 16:42:07 robert Exp $
+--- chrome/browser/web_applications/web_app.cc.orig.port	Wed Oct  7 04:42:09 2015
++++ chrome/browser/web_applications/web_app.cc	Wed Oct 14 07:41:13 2015
+@@ -53,7 +53,7 @@ namespace {
  #if defined(OS_MACOSX)
  const int kDesiredSizes[] = {16, 32, 128, 256, 512};
  const size_t kNumDesiredSizes = arraysize(kDesiredSizes);

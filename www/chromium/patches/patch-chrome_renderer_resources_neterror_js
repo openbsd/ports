@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_renderer_resources_neterror_js,v 1.1 2015/09/25 13:08:54 robert Exp $
---- chrome/renderer/resources/neterror.js.orig.port	Thu Sep 24 14:36:03 2015
-+++ chrome/renderer/resources/neterror.js	Thu Sep 24 14:36:10 2015
-@@ -136,7 +136,7 @@ function setUpCachedButton(buttonStrings) {
+$OpenBSD: patch-chrome_renderer_resources_neterror_js,v 1.2 2015/10/14 16:42:07 robert Exp $
+--- chrome/renderer/resources/neterror.js.orig.port	Wed Oct  7 04:42:09 2015
++++ chrome/renderer/resources/neterror.js	Wed Oct 14 07:41:13 2015
+@@ -141,7 +141,7 @@ function setUpCachedButton(buttonStrings) {
  }
  
  var primaryControlOnLeft = true;

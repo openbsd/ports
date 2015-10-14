@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.6 2015/09/05 16:06:50 robert Exp $
---- content/renderer/renderer_blink_platform_impl.cc.orig.port	Tue Sep  1 22:10:42 2015
-+++ content/renderer/renderer_blink_platform_impl.cc	Wed Sep  2 07:31:55 2015
+$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.7 2015/10/14 16:42:07 robert Exp $
+--- content/renderer/renderer_blink_platform_impl.cc.orig.port	Tue Oct 13 21:04:32 2015
++++ content/renderer/renderer_blink_platform_impl.cc	Wed Oct 14 07:41:13 2015
 @@ -102,7 +102,7 @@
  
  #if defined(OS_POSIX)
@@ -37,7 +37,7 @@ $OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.6 2015/09/0
    // These platforms do not require sandbox support.
    return NULL;
  #else
-@@ -556,7 +556,7 @@ bool RendererBlinkPlatformImpl::SandboxSupport::loadFo
+@@ -557,7 +557,7 @@ bool RendererBlinkPlatformImpl::SandboxSupport::loadFo
    return FontLoader::CGFontRefFromBuffer(font_data, font_data_size, out);
  }
  

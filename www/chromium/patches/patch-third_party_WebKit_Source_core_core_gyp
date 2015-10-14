@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.17 2015/09/05 16:06:50 robert Exp $
---- third_party/WebKit/Source/core/core.gyp.orig.port	Tue Sep  1 22:10:52 2015
-+++ third_party/WebKit/Source/core/core.gyp	Wed Sep  2 07:31:55 2015
+$OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.18 2015/10/14 16:42:07 robert Exp $
+--- third_party/WebKit/Source/core/core.gyp.orig.port	Tue Oct 13 21:04:34 2015
++++ third_party/WebKit/Source/core/core.gyp	Wed Oct 14 07:41:13 2015
 @@ -504,13 +504,13 @@
            # Due to a bug in gcc 4.6 in android NDK, we get warnings about uninitialized variable.
            'cflags': ['-Wno-uninitialized'],
@@ -17,7 +17,7 @@ $OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.17 2015/09/05 16:06:
            'sources!': [
              'layout/LayoutThemeFontProviderLinux.cpp',
            ],
-@@ -831,13 +831,13 @@
+@@ -832,13 +832,13 @@
                # Due to a bug in gcc 4.6 in android NDK, we get warnings about uninitialized variable.
                'cflags': ['-Wno-uninitialized'],
              }],

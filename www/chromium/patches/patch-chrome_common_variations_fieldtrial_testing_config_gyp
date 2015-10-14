@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_common_variations_fieldtrial_testing_config_gyp,v 1.1 2015/10/14 16:42:07 robert Exp $
+--- chrome/common/variations/fieldtrial_testing_config.gyp.orig.port	Wed Oct 14 17:21:45 2015
++++ chrome/common/variations/fieldtrial_testing_config.gyp	Wed Oct 14 17:21:57 2015
+@@ -19,7 +19,7 @@
+       'conditions': [
+         ['OS!="android"', {'sources/': [['exclude', '_android\\.json$']]}],
+         ['OS!="win"', {'sources/': [['exclude', '_win\\.json$']]}],
+-        ['OS!="linux" or chromeos==1', {'sources/': [['exclude', '_linux\\.json$']]}],
++        ['(OS!="linux" and OS!="openbsd") or chromeos==1', {'sources/': [['exclude', '_linux\\.json$']]}],
+         ['OS!="mac"', {'sources/': [['exclude', '_mac\\.json$']]}],
+         ['chromeos!=1', {'sources/': [['exclude', '_chromeos\\.json$']]}],
+         ['OS!="ios"', {'sources/': [['exclude', '_ios\\.json$']]}],

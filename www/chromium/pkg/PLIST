@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2015/09/05 16:06:50 robert Exp $
+@comment $OpenBSD: PLIST,v 1.52 2015/10/14 16:42:07 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -123,10 +123,10 @@ chrome/resources/inspector/Images/responsiveDesign.png
 chrome/resources/inspector/Images/responsiveDesign_2x.png
 chrome/resources/inspector/Images/searchNext.png
 chrome/resources/inspector/Images/searchPrev.png
-chrome/resources/inspector/Images/securityStateHttp.png
-chrome/resources/inspector/Images/securityStateHttp_2x.png
 chrome/resources/inspector/Images/securityStateInsecure.png
 chrome/resources/inspector/Images/securityStateInsecure_2x.png
+chrome/resources/inspector/Images/securityStateNeutral.png
+chrome/resources/inspector/Images/securityStateNeutral_2x.png
 chrome/resources/inspector/Images/securityStateSecure.png
 chrome/resources/inspector/Images/securityStateSecure_2x.png
 chrome/resources/inspector/Images/securityStateWarning.png
@@ -136,7 +136,6 @@ chrome/resources/inspector/Images/sessionStorage.png
 chrome/resources/inspector/Images/settingsListRemove.png
 chrome/resources/inspector/Images/settingsListRemove_2x.png
 chrome/resources/inspector/Images/speech.png
-chrome/resources/inspector/Images/spinner.svg
 chrome/resources/inspector/Images/thumbActiveHoriz.png
 chrome/resources/inspector/Images/thumbActiveVert.png
 chrome/resources/inspector/Images/thumbHoriz.png
@@ -162,6 +161,19 @@ chrome/resources/inspector/console_module.js
 chrome/resources/inspector/devtools.js
 chrome/resources/inspector/devtools_extension_api.js
 chrome/resources/inspector/elements_module.js
+chrome/resources/inspector/emulated_devices/
+chrome/resources/inspector/emulated_devices/google-nexus-5-horizontal-default-1x.png
+chrome/resources/inspector/emulated_devices/google-nexus-5-horizontal-default-2x.png
+chrome/resources/inspector/emulated_devices/google-nexus-5-horizontal-keyboard-1x.png
+chrome/resources/inspector/emulated_devices/google-nexus-5-horizontal-keyboard-2x.png
+chrome/resources/inspector/emulated_devices/google-nexus-5-horizontal-navigation-1x.png
+chrome/resources/inspector/emulated_devices/google-nexus-5-horizontal-navigation-2x.png
+chrome/resources/inspector/emulated_devices/google-nexus-5-vertical-default-1x.png
+chrome/resources/inspector/emulated_devices/google-nexus-5-vertical-default-2x.png
+chrome/resources/inspector/emulated_devices/google-nexus-5-vertical-keyboard-1x.png
+chrome/resources/inspector/emulated_devices/google-nexus-5-vertical-keyboard-2x.png
+chrome/resources/inspector/emulated_devices/google-nexus-5-vertical-navigation-1x.png
+chrome/resources/inspector/emulated_devices/google-nexus-5-vertical-navigation-2x.png
 chrome/resources/inspector/emulated_devices_module.js
 chrome/resources/inspector/heap_snapshot_worker_module.js
 chrome/resources/inspector/inspector.css

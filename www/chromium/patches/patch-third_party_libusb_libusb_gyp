@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_libusb_libusb_gyp,v 1.4 2015/08/16 20:42:46 robert Exp $
---- third_party/libusb/libusb.gyp.orig.port	Sun Aug 16 11:01:39 2015
-+++ third_party/libusb/libusb.gyp	Sun Aug 16 17:04:47 2015
-@@ -34,7 +34,7 @@
+$OpenBSD: patch-third_party_libusb_libusb_gyp,v 1.5 2015/10/14 16:42:07 robert Exp $
+--- third_party/libusb/libusb.gyp.orig.port	Tue Oct 13 21:04:35 2015
++++ third_party/libusb/libusb.gyp	Wed Oct 14 07:41:14 2015
+@@ -40,7 +40,7 @@
          ],
        },
        'conditions': [
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_libusb_libusb_gyp,v 1.4 2015/08/16 20:42:46 robert E
            'sources': [
              'src/libusb/os/poll_posix.c',
              'src/libusb/os/poll_posix.h',
-@@ -49,6 +49,15 @@
+@@ -55,6 +55,15 @@
              'LIBUSB_DESCRIBE="1.0.16"',
              'POLL_NFDS_TYPE=nfds_t',
              'THREADS_POSIX=1',

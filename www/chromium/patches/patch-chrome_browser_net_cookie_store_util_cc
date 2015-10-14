@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_net_cookie_store_util_cc,v 1.4 2015/05/24 15:51:53 robert Exp $
---- chrome/browser/net/cookie_store_util.cc.orig.port	Thu May 14 00:35:45 2015
-+++ chrome/browser/net/cookie_store_util.cc	Wed May 20 08:34:56 2015
-@@ -85,7 +85,7 @@ net::CookieMonsterDelegate* CreateCookieDelegate(Profi
-       new ChromeCookieMonsterDelegate(profile));
- }
+$OpenBSD: patch-chrome_browser_net_cookie_store_util_cc,v 1.5 2015/10/14 16:42:07 robert Exp $
+--- chrome/browser/net/cookie_store_util.cc.orig.port	Wed Oct  7 04:42:08 2015
++++ chrome/browser/net/cookie_store_util.cc	Wed Oct 14 07:41:13 2015
+@@ -15,7 +15,7 @@
+ 
+ namespace chrome_browser_net {
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)

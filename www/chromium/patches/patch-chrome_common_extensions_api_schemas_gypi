@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_extensions_api_schemas_gypi,v 1.7 2015/09/05 16:06:50 robert Exp $
---- chrome/common/extensions/api/schemas.gypi.orig.port	Tue Sep  1 22:10:42 2015
-+++ chrome/common/extensions/api/schemas.gypi	Wed Sep  2 07:31:55 2015
-@@ -166,6 +166,11 @@
+$OpenBSD: patch-chrome_common_extensions_api_schemas_gypi,v 1.8 2015/10/14 16:42:07 robert Exp $
+--- chrome/common/extensions/api/schemas.gypi.orig.port	Tue Oct 13 21:04:32 2015
++++ chrome/common/extensions/api/schemas.gypi	Wed Oct 14 07:41:13 2015
+@@ -170,6 +170,11 @@
            '<@(webrtc_schema_files)',
          ],
        }],
