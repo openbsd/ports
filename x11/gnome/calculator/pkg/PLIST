@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/10/26 13:51:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/10/14 20:04:38 jasper Exp $
 @conflict gcalctool-*
 @pkgpath x11/gnome/gcalctool
 @bin bin/gcalccmd
 @bin bin/gnome-calculator
+lib/gnome-calculator/
+lib/gnome-calculator/libcalculator.so
 @bin libexec/gnome-calculator-search-provider
 @man man/man1/gcalccmd.1
 @man man/man1/gnome-calculator.1
 share/appdata/
 share/appdata/gnome-calculator.appdata.xml
 share/applications/gnome-calculator.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.gnome.Calculator.SearchProvider.service
 share/glib-2.0/schemas/org.gnome.calculator.gschema.xml
 share/gnome-shell/
@@ -910,8 +910,6 @@ share/locale/ml/LC_MESSAGES/gnome-calculator.mo
 share/locale/mn/LC_MESSAGES/gnome-calculator.mo
 share/locale/mr/LC_MESSAGES/gnome-calculator.mo
 share/locale/ms/LC_MESSAGES/gnome-calculator.mo
-share/locale/my/
-share/locale/my/LC_MESSAGES/
 share/locale/my/LC_MESSAGES/gnome-calculator.mo
 share/locale/nb/LC_MESSAGES/gnome-calculator.mo
 share/locale/ne/LC_MESSAGES/gnome-calculator.mo
@@ -937,8 +935,6 @@ share/locale/ta/LC_MESSAGES/gnome-calculator.mo
 share/locale/te/LC_MESSAGES/gnome-calculator.mo
 share/locale/tg/LC_MESSAGES/gnome-calculator.mo
 share/locale/th/LC_MESSAGES/gnome-calculator.mo
-share/locale/tk/
-share/locale/tk/LC_MESSAGES/
 share/locale/tk/LC_MESSAGES/gnome-calculator.mo
 share/locale/tr/LC_MESSAGES/gnome-calculator.mo
 share/locale/ug/LC_MESSAGES/gnome-calculator.mo
