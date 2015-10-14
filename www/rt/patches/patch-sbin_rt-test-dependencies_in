@@ -1,0 +1,21 @@
+$OpenBSD: patch-sbin_rt-test-dependencies_in,v 1.1 2015/10/14 17:45:44 robert Exp $
+--- sbin/rt-test-dependencies.in.orig	Tue Jul 28 21:37:33 2015
++++ sbin/rt-test-dependencies.in	Sun Oct  4 12:05:58 2015
+@@ -208,7 +208,7 @@ Digest::MD5 2.27
+ Digest::SHA
+ Email::Address 1.897
+ Email::Address::List 0.02
+-Encode 2.64
++Encode 2.60
+ Errno
+ File::Glob
+ File::ShareDir
+@@ -306,7 +306,7 @@ XML::Simple
+ .
+ 
+ $deps{'FASTCGI'} = [ text_to_hash( << '.') ];
+-FCGI 0.74
++FCGI 0.67
+ FCGI::ProcManager
+ .
+ 

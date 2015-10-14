@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2015/09/16 06:55:39 kirby Exp $
+# $OpenBSD: Makefile,v 1.33 2015/10/14 17:45:44 robert Exp $
 
 COMMENT=		industrial-grade ticketing system
 
-DISTNAME=		rt-4.0.23
+DISTNAME=		rt-4.2.12
 CATEGORIES=		www
-REVISION=		0
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
@@ -14,13 +13,17 @@ MASTER_SITES=		https://download.bestpractical.com/pub/rt/release/ \
 			http://www.fsck.com/pub/rt/release/
 
 RUN_DEPENDS=		converters/p5-Convert-Color \
+			converters/p5-DateManip \
 			converters/p5-JSON \
 			databases/p5-DBD-mysql \
 			databases/p5-DBI \
 			databases/p5-DBIx-SearchBuilder \
 			devel/p5-Class-ReturnValue \
+			devel/p5-Data-GUID \
 			devel/p5-Data-ICal \
+			devel/p5-Date-Extract \
 			devel/p5-DateTime \
+			devel/p5-DateTime-Format-Natural \
 			devel/p5-Devel-GlobalDestruction \
 			devel/p5-Devel-StackTrace \
 			devel/p5-File-ShareDir \
@@ -30,9 +33,12 @@ RUN_DEPENDS=		converters/p5-Convert-Color \
 			devel/p5-Locale-Maketext-Fuzzy \
 			devel/p5-Locale-Maketext-Lexicon \
 			devel/p5-Log-Dispatch \
+			devel/p5-Module-Refresh \
 			devel/p5-Module-Versions-Report \
 			devel/p5-PerlIO-eol \
 			devel/p5-Regexp-IPv6 \
+			devel/p5-Role-Basic \
+			devel/p5-Symbol-Global-Name \
 			devel/p5-Term-ReadKey \
 			devel/p5-Time-modules \
 			devel/p5-Tree-Simple \
@@ -40,6 +46,8 @@ RUN_DEPENDS=		converters/p5-Convert-Color \
 			graphics/gd \
 			graphics/p5-GD-Graph \
 			mail/p5-Email-Address \
+			mail/p5-Email-Address-List \
+			mail/p5-Mail-Tools \
 			mail/p5-MIME-Types \
 			mail/p5-MIME-tools \
 			math/graphviz,-main \
@@ -47,10 +55,14 @@ RUN_DEPENDS=		converters/p5-Convert-Color \
 			net/p5-Net-CIDR \
 			net/p5-Regexp-Common-net-CIDR \
 			security/gnupg \
+			security/p5-Crypt-Eksblowfish \
+			security/p5-Crypt-X509 \
 			security/p5-GnuPG-Interface \
 			security/p5-Text-Password-Pronounceable \
+			sysutils/p5-File-Which \
 			textproc/p5-List-UtilsBy \
 			textproc/p5-Regexp-Common \
+			textproc/p5-String-ShellQuote \
 			textproc/p5-Text-Quoted \
 			textproc/p5-Text-Quoted \
 			textproc/p5-Text-Template \
@@ -63,6 +75,8 @@ RUN_DEPENDS=		converters/p5-Convert-Color \
 			www/p5-CGI-PSGI \
 			www/p5-CSS-Squish \
 			www/p5-HTML-Format \
+			www/p5-HTML-FormatText-WithLinks \
+			www/p5-HTML-FormatText-WithLinks-AndTables \
 			www/p5-HTML-Mason-PSGIHandler \
 			www/p5-HTML-Quoted \
 			www/p5-HTML-RewriteAttributes \

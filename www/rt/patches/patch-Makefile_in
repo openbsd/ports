@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Oct 19 21:55:31 2009
-+++ Makefile.in	Sun Nov  8 12:37:59 2009
-@@ -56,7 +56,13 @@ INSTALL			=	@INSTALL@
+--- Makefile.in.orig	Tue Jul 28 21:37:33 2015
++++ Makefile.in	Mon Oct  5 20:40:02 2015
+@@ -57,7 +57,13 @@ CC				=	@CC@
  
  RT_LAYOUT		=	@rt_layout_name@
  
@@ -15,7 +15,7 @@
  CONFIG_FILE		=	$(CONFIG_FILE_PATH)/RT_Config.pm
  SITE_CONFIG_FILE	=	$(CONFIG_FILE_PATH)/RT_SiteConfig.pm
  
-@@ -311,13 +317,13 @@ fixperms:
+@@ -283,13 +289,13 @@ fixperms:
  
  	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_BIN_PATH)
  
@@ -33,16 +33,25 @@
  
  	chmod 0440 $(DESTDIR)$(CONFIG_FILE)
  	chmod 0640 $(DESTDIR)$(SITE_CONFIG_FILE)
-@@ -362,7 +368,7 @@ dirs:
- 	$(INSTALL) -m 0755 -d $(DESTDIR)$(LOCAL_LEXICON_PATH)
- # }}}
+@@ -304,7 +310,7 @@ fixperms:
+ 	#
+ 	# Note that we use the deprecated (by GNU/POSIX find) -perm +0NNN syntax
+ 	# instead of -perm /0NNN since BSD find doesn't support the latter.
+-	( cd etc/upgrade && find . -type f -not -name '*.in' -perm +0111 -print ) | while read file ; do \
++	( cd etc/upgrade && find . -type f \! -name '*.in' -perm +0111 -print ) | while read file ; do \
+ 		chmod a+x "$(DESTDIR)$(RT_ETC_PATH)/upgrade/$$file" ; \
+ 	done
+ 
+@@ -359,7 +365,7 @@ clean-mason-cache:
+ 	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/etc/*
+ 	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/obj/*
  
 -install: testdeps config-install dirs files-install fixperms instruct
 +install: config-install dirs files-install fixperms instruct
  
- files-install: libs-install etc-install config-install bin-install sbin-install html-install local-install doc-install
+ files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install font-install po-install static-install
  
-@@ -370,6 +376,7 @@ config-install:
+@@ -367,6 +373,7 @@ config-install:
  @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -o $(BIN_OWNER) -g $(RTGROUP) -d $(DESTDIR)$(CONFIG_FILE_PATH)
  @COMMENT_INPLACE_LAYOUT@	-$(INSTALL) -m 0440 -o $(BIN_OWNER) -g $(RTGROUP)  etc/RT_Config.pm $(DESTDIR)$(CONFIG_FILE)
  @COMMENT_INPLACE_LAYOUT@	[ -f $(DESTDIR)$(SITE_CONFIG_FILE) ] || $(INSTALL) -m 0640 -o $(BIN_OWNER) -g $(RTGROUP) etc/RT_SiteConfig.pm $(DESTDIR)$(SITE_CONFIG_FILE) 
@@ -50,8 +59,8 @@
  @COMMENT_INPLACE_LAYOUT@	@echo "Installed configuration. About to install RT in  $(RT_PATH)"
  
  test: 
-@@ -434,9 +441,9 @@ doc-install:
- # {{{ etc-install
+@@ -453,15 +460,15 @@ doc-install:
+ 
  
  etc-install:
 -@COMMENT_INPLACE_LAYOUT@	[ -d $(DESTDIR)$(RT_ETC_PATH) ] || $(INSTALL) -m 0755 -d $(DESTDIR)$(RT_ETC_PATH)
@@ -60,5 +69,12 @@
 -@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 "etc/$$file" "$(DESTDIR)$(RT_ETC_PATH)/" ; \
 +@COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 -o root -g wheel "etc/$$file" "$(DESTDIR)$(CONFIG_FILE_PATH)/" ; \
  @COMMENT_INPLACE_LAYOUT@	done
- # }}}
+ @COMMENT_INPLACE_LAYOUT@	[ -d $(DESTDIR)$(RT_ETC_PATH)/upgrade ] || $(INSTALL) -m 0755 -d $(DESTDIR)$(RT_ETC_PATH)/upgrade
+ @COMMENT_INPLACE_LAYOUT@	-( cd etc/upgrade && find . -type d -print ) | while read dir ; do \
+ @COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0755 -d "$(DESTDIR)$(RT_ETC_PATH)/upgrade/$$dir" ; \
+ @COMMENT_INPLACE_LAYOUT@	done
+-@COMMENT_INPLACE_LAYOUT@	-( cd etc/upgrade && find . -type f -not -name '*.in' -print ) | while read file ; do \
++@COMMENT_INPLACE_LAYOUT@	-( cd etc/upgrade && find . -type f \! -name '*.in' -print ) | while read file ; do \
+ @COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 "etc/upgrade/$$file" "$(DESTDIR)$(RT_ETC_PATH)/upgrade/$$file" ; \
+ @COMMENT_INPLACE_LAYOUT@	done
  
