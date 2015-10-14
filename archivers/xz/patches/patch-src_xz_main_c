@@ -1,13 +1,21 @@
-$OpenBSD: patch-src_xz_main_c,v 1.1 2015/10/14 21:18:51 sthen Exp $
---- src/xz/main.c.orig	Mon Oct  5 10:07:16 2015
-+++ src/xz/main.c	Mon Oct  5 10:17:18 2015
-@@ -163,6 +163,9 @@ main(int argc, char **argv)
+$OpenBSD: patch-src_xz_main_c,v 1.2 2015/10/14 23:16:15 sthen Exp $
+--- src/xz/main.c.orig	Thu Feb 26 14:54:33 2015
++++ src/xz/main.c	Thu Oct 15 00:12:01 2015
+@@ -12,6 +12,7 @@
+ 
+ #include "private.h"
+ #include <ctype.h>
++#include <err.h>
+ 
+ /// Exit status to use. This can be changed with set_exit_status().
+ static enum exit_status_type exit_status = E_SUCCESS;
+@@ -162,6 +163,9 @@ main(int argc, char **argv)
+ 	// Set hardware-dependent default values. These can be overriden
  	// on the command line, thus this must be done before args_parse().
  	hardware_init();
- 
++
 +	if (pledge("stdio rpath wpath cpath fattr", NULL) == -1)
 +		err(1, "pledge");
-+
+ 
  	// Parse the command line arguments and get an array of filenames.
  	// This doesn't return if something is wrong with the command line
- 	// arguments. If there are no arguments, one filename ("-") is still
