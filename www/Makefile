@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.742 2015/10/06 16:17:15 jca Exp $
+# $OpenBSD: Makefile,v 1.743 2015/10/14 17:41:57 robert Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -237,6 +237,7 @@
      SUBDIR += p5-HTML-FormFu
      SUBDIR += p5-HTML-Format
      SUBDIR += p5-HTML-FormatText-WithLinks
+     SUBDIR += p5-HTML-FormatText-WithLinks-AndTables
      SUBDIR += p5-HTML-FromText
      SUBDIR += p5-HTML-Highlight
      SUBDIR += p5-HTML-Lint
