@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/04/15 07:39:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/10/14 19:52:18 jasper Exp $
 @bin bin/ghex
 include/gtkhex-3/
 include/gtkhex-3/gtkhex.h
@@ -97,6 +97,13 @@ share/help/pt_BR/ghex/figures/ghex_window_empty.png
 share/help/pt_BR/ghex/figures/ghex_window_open.png
 share/help/pt_BR/ghex/index.docbook
 share/help/pt_BR/ghex/legal.xml
+share/help/ru/
+share/help/ru/ghex/
+share/help/ru/ghex/figures/
+share/help/ru/ghex/figures/ghex_window_empty.png
+share/help/ru/ghex/figures/ghex_window_open.png
+share/help/ru/ghex/index.docbook
+share/help/ru/ghex/legal.xml
 share/help/sl/
 share/help/sl/ghex/
 share/help/sl/ghex/figures/
@@ -132,36 +139,20 @@ share/help/zh_TW/ghex/figures/ghex_window_empty.png
 share/help/zh_TW/ghex/figures/ghex_window_open.png
 share/help/zh_TW/ghex/index.docbook
 share/help/zh_TW/ghex/legal.xml
-share/icons/HighContrast/
-share/icons/HighContrast/16x16/
-share/icons/HighContrast/16x16/apps/
-share/icons/HighContrast/16x16/apps/ghex.png
-share/icons/HighContrast/22x22/
-share/icons/HighContrast/22x22/apps/
-share/icons/HighContrast/22x22/apps/ghex.png
-share/icons/HighContrast/24x24/
-share/icons/HighContrast/24x24/apps/
-share/icons/HighContrast/24x24/apps/ghex.png
-share/icons/HighContrast/256x256/
-share/icons/HighContrast/256x256/apps/
-share/icons/HighContrast/256x256/apps/ghex.png
-share/icons/HighContrast/32x32/
-share/icons/HighContrast/32x32/apps/
-share/icons/HighContrast/32x32/apps/ghex.png
-share/icons/HighContrast/48x48/
-share/icons/HighContrast/48x48/apps/
-share/icons/HighContrast/48x48/apps/ghex.png
 share/icons/hicolor/16x16/apps/ghex.png
 share/icons/hicolor/22x22/apps/ghex.png
 share/icons/hicolor/24x24/apps/ghex.png
+share/icons/hicolor/256x256/apps/ghex.png
 share/icons/hicolor/32x32/apps/ghex.png
 share/icons/hicolor/48x48/apps/ghex.png
-share/icons/hicolor/scalable/apps/ghex.svg
+share/icons/hicolor/512x512/apps/ghex.png
+share/icons/hicolor/scalable/apps/ghex-symbolic.svg
 share/locale/am/LC_MESSAGES/ghex-3.0.mo
 share/locale/ar/LC_MESSAGES/ghex-3.0.mo
 share/locale/az/LC_MESSAGES/ghex-3.0.mo
 share/locale/be/LC_MESSAGES/ghex-3.0.mo
 share/locale/bg/LC_MESSAGES/ghex-3.0.mo
+share/locale/bs/LC_MESSAGES/ghex-3.0.mo
 share/locale/ca/LC_MESSAGES/ghex-3.0.mo
 share/locale/cs/LC_MESSAGES/ghex-3.0.mo
 share/locale/da/LC_MESSAGES/ghex-3.0.mo
@@ -177,6 +168,7 @@ share/locale/fi/LC_MESSAGES/ghex-3.0.mo
 share/locale/fr/LC_MESSAGES/ghex-3.0.mo
 share/locale/ga/LC_MESSAGES/ghex-3.0.mo
 share/locale/gl/LC_MESSAGES/ghex-3.0.mo
+share/locale/he/LC_MESSAGES/ghex-3.0.mo
 share/locale/hr/LC_MESSAGES/ghex-3.0.mo
 share/locale/hu/LC_MESSAGES/ghex-3.0.mo
 share/locale/id/LC_MESSAGES/ghex-3.0.mo
