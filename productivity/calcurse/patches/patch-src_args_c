@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_args_c,v 1.1 2015/10/14 10:04:16 sthen Exp $
+--- src/args.c.orig	Sun Feb 22 10:34:11 2015
++++ src/args.c	Tue Oct 13 23:07:51 2015
+@@ -274,10 +274,11 @@ static void next_arg(void)
+ /*
+  * Print the date on stdout.
+  */
+-static void arg_print_date(long date)
++static void arg_print_date(long date_l)
+ {
+ 	char date_str[BUFSIZ];
+ 	struct tm lt;
++	time_t date = date_l;
+ 
+ 	localtime_r((time_t *) & date, &lt);
+ 	strftime(date_str, BUFSIZ, conf.output_datefmt, &lt);

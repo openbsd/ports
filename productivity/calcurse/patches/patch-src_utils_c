@@ -1,0 +1,50 @@
+$OpenBSD: patch-src_utils_c,v 1.1 2015/10/14 10:04:16 sthen Exp $
+--- src/utils.c.orig	Tue Oct 13 22:55:09 2015
++++ src/utils.c	Tue Oct 13 23:00:58 2015
+@@ -349,17 +349,19 @@ long get_item_time(long date)
+ 		      get_item_min(date) * MININSEC);
+ }
+ 
+-int get_item_hour(long date)
++int get_item_hour(long date_l)
+ {
+ 	struct tm lt;
++	time_t date = date_l;
+ 
+ 	localtime_r((time_t *) & date, &lt);
+ 	return lt.tm_hour;
+ }
+ 
+-int get_item_min(long date)
++int get_item_min(long date_l)
+ {
+ 	struct tm lt;
++	time_t date = date_l;
+ 
+ 	localtime_r((time_t *) & date, &lt);
+ 	return lt.tm_min;
+@@ -387,10 +389,11 @@ long date2sec(struct date day, unsigned hour, unsigned
+ }
+ 
+ /* Return a string containing the date, given a date in seconds. */
+-char *date_sec2date_str(long sec, const char *datefmt)
++char *date_sec2date_str(long sec_l, const char *datefmt)
+ {
+ 	struct tm lt;
+ 	char *datestr = (char *)mem_calloc(BUFSIZ, sizeof(char));
++	time_t sec = sec_l;
+ 
+ 	if (sec == 0) {
+ 		strncpy(datestr, "0", BUFSIZ);
+@@ -403,8 +406,10 @@ char *date_sec2date_str(long sec, const char *datefmt)
+ }
+ 
+ /* Generic function to format date. */
+-void date_sec2date_fmt(long sec, const char *fmt, char *datef)
++void date_sec2date_fmt(long sec_l, const char *fmt, char *datef)
+ {
++	time_t sec = sec_l;
++
+ #if ENABLE_NLS
+ 	/* TODO: Find a better way to deal with localization and strftime(). */
+ 	char *locale_old = mem_strdup(setlocale(LC_ALL, NULL));
