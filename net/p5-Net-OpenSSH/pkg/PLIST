@@ -1,14 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/25 15:43:37 okan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/10/14 08:21:03 benoit Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/OpenSSH/
 ${P5SITE}/Net/OpenSSH.pm
+${P5SITE}/Net/OpenSSH/ConnectionCache.pm
 ${P5SITE}/Net/OpenSSH/Constants.pm
+${P5SITE}/Net/OpenSSH/ModuleLoader.pm
+${P5SITE}/Net/OpenSSH/OSTracer.pm
+${P5SITE}/Net/OpenSSH/SSH.pm
+${P5SITE}/Net/OpenSSH/ShellQuoter/
+${P5SITE}/Net/OpenSSH/ShellQuoter.pm
+${P5SITE}/Net/OpenSSH/ShellQuoter/Chain.pm
+${P5SITE}/Net/OpenSSH/ShellQuoter/MSCmd.pm
+${P5SITE}/Net/OpenSSH/ShellQuoter/MSWin.pm
+${P5SITE}/Net/OpenSSH/ShellQuoter/POSIX.pm
+${P5SITE}/Net/OpenSSH/ShellQuoter/csh.pm
 @man man/man3p/Net::OpenSSH.3p
+@man man/man3p/Net::OpenSSH::ConnectionCache.3p
 @man man/man3p/Net::OpenSSH::Constants.3p
+@man man/man3p/Net::OpenSSH::OSTracer.3p
+@man man/man3p/Net::OpenSSH::SSH.3p
+@man man/man3p/Net::OpenSSH::ShellQuoter::MSCmd.3p
+@man man/man3p/Net::OpenSSH::ShellQuoter::MSWin.3p
 share/examples/p5-Net-OpenSSH/
 share/examples/p5-Net-OpenSSH/autosudo.pl
 share/examples/p5-Net-OpenSSH/change_passwd.pl
 share/examples/p5-Net-OpenSSH/expect.pl
+share/examples/p5-Net-OpenSSH/git_ssh_through_mux.pl
+share/examples/p5-Net-OpenSSH/git_with_password.pl
 share/examples/p5-Net-OpenSSH/keep_in_sync.pl
 share/examples/p5-Net-OpenSSH/login_handler.pl
 share/examples/p5-Net-OpenSSH/mod_perl_openssh.pm

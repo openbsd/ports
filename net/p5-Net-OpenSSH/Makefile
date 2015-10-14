@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/11 13:05:54 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.5 2015/10/14 08:21:03 benoit Exp $
 
 COMMENT =	perl SSH client package implemented on top of OpenSSH
 
-DISTNAME =	Net-OpenSSH-0.62
+DISTNAME =	Net-OpenSSH-0.64
 CATEGORIES =	net security
 MODULES =	cpan
 
