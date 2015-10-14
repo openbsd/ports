@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.386 2015/10/13 17:07:07 jca Exp $
+# $OpenBSD: Makefile,v 1.387 2015/10/14 17:41:21 robert Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -157,6 +157,7 @@
      SUBDIR += p5-Crypt-DES-EDE3
      SUBDIR += p5-Crypt-DH
      SUBDIR += p5-Crypt-DSA
+     SUBDIR += p5-Crypt-Eksblowfish
      SUBDIR += p5-Crypt-GpgME
      SUBDIR += p5-Crypt-IDEA
      SUBDIR += p5-Crypt-OpenPGP
@@ -180,6 +181,7 @@
      SUBDIR += p5-Crypt-SmbHash
      SUBDIR += p5-Crypt-TripleDES
      SUBDIR += p5-Crypt-Twofish
+     SUBDIR += p5-Crypt-X509
      SUBDIR += p5-Digest-BubbleBabble
      SUBDIR += p5-Digest-HMAC
      SUBDIR += p5-Digest-MD2
