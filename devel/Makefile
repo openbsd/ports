@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1397 2015/10/12 21:59:19 robert Exp $
+# $OpenBSD: Makefile,v 1.1398 2015/10/14 17:39:54 robert Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -584,6 +584,7 @@
      SUBDIR += p5-Class-Method-Modifiers
      SUBDIR += p5-Class-MethodMaker
      SUBDIR += p5-Class-MethodMapper
+     SUBDIR += p5-Class-Mix
      SUBDIR += p5-Class-Multimethods
      SUBDIR += p5-Class-ReturnValue
      SUBDIR += p5-Class-Singleton
@@ -623,6 +624,7 @@
      SUBDIR += p5-Data-Dumper-Simple
      SUBDIR += p5-Data-Flow
      SUBDIR += p5-Data-FormValidator
+     SUBDIR += p5-Data-GUID
      SUBDIR += p5-Data-HexDump
      SUBDIR += p5-Data-Hierarchy
      SUBDIR += p5-Data-ICal
@@ -643,6 +645,7 @@
      SUBDIR += p5-Data-Validate-Struct
      SUBDIR += p5-Data-Visitor
      SUBDIR += p5-Date-Calc
+     SUBDIR += p5-Date-Extract
      SUBDIR += p5-Date-Handler
      SUBDIR += p5-Date-ICal
      SUBDIR += p5-Date-Leapyear
@@ -959,6 +962,7 @@
      SUBDIR += p5-Regexp-Shellish
      SUBDIR += p5-Return-MultiLevel
      SUBDIR += p5-Return-Value
+     SUBDIR += p5-Role-Basic
      SUBDIR += p5-Role-Tiny
      SUBDIR += p5-SDL
      SUBDIR += p5-SUPER
@@ -998,6 +1002,7 @@
      SUBDIR += p5-Sub-Override
      SUBDIR += p5-Sub-Uplevel
      SUBDIR += p5-Switch
+     SUBDIR += p5-Symbol-Global-Name
      SUBDIR += p5-Sys-SigAction
      SUBDIR += p5-System-Command
      SUBDIR += p5-TAP-Formatter-JUnit
