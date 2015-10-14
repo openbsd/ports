@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/10/11 11:21:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/10/14 09:23:38 sthen Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	G.729a voice codec for Asterisk
@@ -26,17 +26,14 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/libtool # m4
-RUN_DEPENDS=	telephony/asterisk>=11.0,<=12.0
+RUN_DEPENDS=	telephony/asterisk>=13.0,<=14.0
 LIB_DEPENDS=	telephony/bcg729
 
 CONFIGURE_STYLE=  gnu
 CONFIGURE_ARGS+= --with-asterisk-includes=${LOCALBASE}/include \
-		--with-asterisk110 \
+		--with-asterisk130 \
 		--with-bcg729
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-
-#RUN_DEPENDS=	telephony/asterisk>=13.0,<=14.0
-#		--with-asterisk130
 
 post-patch:
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
