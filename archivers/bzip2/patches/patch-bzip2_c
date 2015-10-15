@@ -1,21 +1,15 @@
-$OpenBSD: patch-bzip2_c,v 1.4 2015/10/15 00:08:58 sthen Exp $
+$OpenBSD: patch-bzip2_c,v 1.5 2015/10/15 00:17:48 sthen Exp $
 --- bzip2.c.orig	Sat Sep 11 00:04:53 2010
-+++ bzip2.c	Thu Oct 15 01:08:13 2015
-@@ -54,6 +54,7 @@
- #include <math.h>
- #include <errno.h>
- #include <ctype.h>
-+#include <err.h>
- #include "bzlib.h"
- 
- #define ERROR_IF_EOF(i)       { if ((i) == EOF)  ioError(); }
-@@ -1780,6 +1781,9 @@ IntNative main ( IntNative argc, Char *argv[] )
-    Cell   *argList;
++++ bzip2.c	Thu Oct 15 01:14:51 2015
+@@ -1781,6 +1781,11 @@ IntNative main ( IntNative argc, Char *argv[] )
     Cell   *aa;
     Bool   decode;
-+
-+   if (pledge("stdio rpath wpath cpath fattr", NULL) == -1)
-+      err(1, "pledge");
  
++   if (pledge("stdio rpath wpath cpath fattr", NULL) == -1) {
++      fprintf ( stderr, "%s: pledge\n", progName );
++      exit ( 1 );
++   }
++
     /*-- Be really really really paranoid :-) --*/
     if (sizeof(Int32) != 4 || sizeof(UInt32) != 4  ||
+        sizeof(Int16) != 2 || sizeof(UInt16) != 2  ||
