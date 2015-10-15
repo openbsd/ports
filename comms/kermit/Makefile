@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2015/10/15 08:30:27 bentley Exp $
 
 COMMENT =		serial and network communications package
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c curses m util
 
-MASTER_SITES =		ftp://ftp.kermitproject.org/kermit/archives/
+MASTER_SITES =		http://www.kermitproject.org/ftp/kermit/archives/
 
 WRKDIST =		${WRKDIR}
 
