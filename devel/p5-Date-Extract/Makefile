@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/14 17:36:08 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2015/10/15 08:58:17 nigel Exp $
 
 COMMENT =	extract probable dates from strings
 
@@ -15,6 +15,9 @@ TEST_DEPENDS =	devel/p5-Test-MockTime
 
 RUN_DEPENDS =	devel/p5-DateTime-Format-Natural \
 		devel/p5-Class-Data-Inheritable
-BUILD_DEPENDS =	${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS} \
+		${TEST_DEPENDS}
+
+CONFIGURE_STYLE =	modinst
 
 .include <bsd.port.mk>
