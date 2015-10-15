@@ -1,7 +1,43 @@
-$OpenBSD: patch-bzip2_c,v 1.5 2015/10/15 00:17:48 sthen Exp $
+$OpenBSD: patch-bzip2_c,v 1.6 2015/10/15 20:14:36 sthen Exp $
 --- bzip2.c.orig	Sat Sep 11 00:04:53 2010
-+++ bzip2.c	Thu Oct 15 01:14:51 2015
-@@ -1781,6 +1781,11 @@ IntNative main ( IntNative argc, Char *argv[] )
++++ bzip2.c	Thu Oct 15 01:55:25 2015
+@@ -1257,6 +1257,17 @@ void compress ( Char *name )
+             setExit(1);
+             return;
+          };
++         if (numFileNames == 1) { /* stdout, and only one input file */
++            if (pledge("stdio", NULL) == -1) {
++               fprintf ( stderr, "%s: pledge\n", progName );
++               exit ( 1 );
++            }
++         } else {
++            if (pledge("stdio rpath", NULL) == -1) {
++               fprintf ( stderr, "%s: pledge\n", progName );
++               exit ( 1 );
++            }
++         }
+          break;
+ 
+       case SM_F2F:
+@@ -1434,6 +1445,17 @@ void uncompress ( Char *name )
+             setExit(1);
+             return;
+          };
++         if (numFileNames == 1) { /* stdout, and only one input file */
++            if (pledge("stdio", NULL) == -1) {
++               fprintf ( stderr, "%s: pledge\n", progName );
++               exit ( 1 );
++            }
++         } else {
++            if (pledge("stdio rpath", NULL) == -1) {
++               fprintf ( stderr, "%s: pledge\n", progName );
++               exit ( 1 );
++            }
++         }
+          break;
+ 
+       case SM_F2F:
+@@ -1781,6 +1803,11 @@ IntNative main ( IntNative argc, Char *argv[] )
     Cell   *aa;
     Bool   decode;
  
@@ -13,3 +49,25 @@ $OpenBSD: patch-bzip2_c,v 1.5 2015/10/15 00:17:48 sthen Exp $
     /*-- Be really really really paranoid :-) --*/
     if (sizeof(Int32) != 4 || sizeof(UInt32) != 4  ||
         sizeof(Int16) != 2 || sizeof(UInt16) != 2  ||
+@@ -1958,6 +1985,10 @@ IntNative main ( IntNative argc, Char *argv[] )
+ 
+    if (opMode == OM_Z) {
+      if (srcMode == SM_I2O) {
++        if (pledge("stdio", NULL) == -1) { /* stdin -> stdout */
++           fprintf ( stderr, "%s: pledge\n", progName );
++           exit ( 1 );
++        }
+         compress ( NULL );
+      } else {
+         decode = True;
+@@ -1974,6 +2005,10 @@ IntNative main ( IntNative argc, Char *argv[] )
+    if (opMode == OM_UNZ) {
+       unzFailsExist = False;
+       if (srcMode == SM_I2O) {
++         if (pledge("stdio", NULL) == -1) { /* stdin -> stdout */
++            fprintf ( stderr, "%s: pledge\n", progName );
++            exit ( 1 );
++         }
+          uncompress ( NULL );
+       } else {
+          decode = True;
