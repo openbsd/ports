@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2015/05/28 18:33:46 sebastia Exp $
+# $OpenBSD: Makefile,v 1.40 2015/10/15 08:26:18 bentley Exp $
 
 # WARNING: this port does NOT use the x11/gnustep MODULE
 
@@ -11,7 +11,7 @@ CATEGORIES=	devel x11/gnustep
 
 HOMEPAGE=	http://www.gnustep.org/
 
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
+MASTER_SITES=	http://ftp.gnustep.org/pub/gnustep/core/
 
 MODULES =	lang/clang
 BUILD_DEPENDS =	x11/gnustep/libobjc2

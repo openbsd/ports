@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.24 2014/11/21 18:21:21 sebastia Exp $
+# $OpenBSD: gnustep.port.mk,v 1.25 2015/10/15 08:26:18 bentley Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS ?=	alpha i386 amd64 macppc
@@ -76,4 +76,4 @@ CONFIGURE_ARGS +=       --disable-debug --enable-strip
 MAKE_ENV +=	debug=no strip=yes
 .endif
 
-MASTER_SITE_GNUSTEP = ftp://ftp.gnustep.org/pub/gnustep/
+MASTER_SITE_GNUSTEP = http://ftp.gnustep.org/pub/gnustep/
