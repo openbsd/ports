@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/10/12 05:48:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2015/10/15 17:39:51 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -34,8 +34,8 @@ LIB_DEPENDS=		x11/gnome/gcr \
 			x11/gnome/libcryptui
 
 # security/gpgme depends on either gnupg-1 or gnupg-2; we want 2.X
-BUILD_DEPENDS+=		gnupg->=2:security/gnupg2
-RUN_DEPENDS+=		gnupg->=2:security/gnupg2
+BUILD_DEPENDS +=	gnupg->=2:security/gnupg2
+RUN_DEPENDS +=		gnupg->=2:security/gnupg2
 CONFIGURE_ENV +=	ac_cv_path_GNUPG=${LOCALBASE}/bin/gpg2
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/10/12 05:48:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/10/15 17:39:51 ajacoutot Exp $
 
 COMMENT=		PGP public keys sharing via DNS-SD and HKP
 
@@ -30,8 +30,8 @@ LIB_DEPENDS=		devel/libsoup \
 			x11/gtk+3
 
 # security/gpgme depends on either gnupg-1 or gnupg-2; we want 1.X
-BUILD_DEPENDS+=		gnupg->=2:security/gnupg2
-RUN_DEPENDS+=		gnupg->=2:security/gnupg2
+BUILD_DEPENDS +=	gnupg->=2:security/gnupg2
+RUN_DEPENDS +=		gnupg->=2:security/gnupg2
 CONFIGURE_ENV +=	ac_cv_path_GNUPG=${LOCALBASE}/bin/gpg2
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/seahorse-sharing
