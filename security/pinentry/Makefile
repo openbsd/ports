@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/10/12 05:43:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/10/15 05:35:49 ajacoutot Exp $
 
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gtk2 = 	PIN or passphrase entry dialog (gtk2 interface)
@@ -52,8 +52,22 @@ CONFIGURE_STYLE = 	gnu
 CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"	
 CONFIGURE_ARGS = 	--enable-pinentry-curses \
-			--disable-pinentry-qt \
-			--enable-pinentry-gtk2
+			--disable-pinentry-qt
+
+MULTI_PACKAGES =	-main -gtk2 -gnome3
+
+PSEUDO_FLAVORS=		no_gtk2 no_gnome3 bootstrap
+FLAVOR?=		no_gtk2 no_gnome3 bootstrap
+
+.include <bsd.port.arch.mk>
+
+.if !${BUILD_PACKAGES:M-gtk2}
+CONFIGURE_ARGS +=	--disable-pinentry-gtk2
+.endif
+
+.if !${BUILD_PACKAGES:M-gnome3}
+CONFIGURE_ARGS +=	--disable-pinentry-gnome3
+.endif
 
 # Change default 'pinentry' to pinentry-curses in the -main package.
 # The shipped Makefiles insist on setting it to the gtk2 variant.
