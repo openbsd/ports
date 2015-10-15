@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.40 2015/10/08 12:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2015/10/15 22:53:48 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	image processing tools with stable ABI
 
-DISTNAME=	GraphicsMagick-1.3.21
-REVISION=	0
+DISTNAME=	GraphicsMagick-1.3.22
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	GraphicsMagick		4.3 \
-		GraphicsMagick++	4.0 \
-		GraphicsMagickWand	3.2 \
+SHARED_LIBS=	GraphicsMagick		5.0 \
+		GraphicsMagick++	5.0 \
+		GraphicsMagickWand	3.3 \
 
 HOMEPAGE=	http://www.graphicsmagick.org/
 
