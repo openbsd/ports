@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.210 2015/09/30 18:16:14 jca Exp $
+# $OpenBSD: Makefile,v 1.211 2015/10/15 16:57:19 jca Exp $
 
 SHARED_ONLY =		Yes
-VERSION =		4.1.20
+VERSION =		4.1.21
 DISTNAME =		samba-${VERSION}
 DOCSVERSION =		v3-5-test-4c5a1b6b
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
@@ -19,7 +19,6 @@ PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${VERSION}
 PKGNAME-docs =		samba-docs-${VERSION}
 
-REVISION-main =		0
 REVISION-ldb =		5
 REVISION-tevent =	3
 
