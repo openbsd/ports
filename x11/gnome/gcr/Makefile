@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2015/10/14 10:47:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2015/10/15 05:38:42 ajacoutot Exp $
 
 COMMENT=		library for bits of crypto UI and parsing
 
 GNOME_PROJECT=		gcr
 GNOME_VERSION=		3.18.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gck-1                1.2      # 0.0
 SHARED_LIBS +=  gcr-base-3           2.2      # 1.0
@@ -32,10 +32,9 @@ LIB_DEPENDS=		x11/gtk+3 \
 			security/libgcrypt \
 			security/p11-kit
 
-#BUILD_DEPENDS +=	gnupg->=2:security/gnupg2
-#RUN_DEPENDS +=		gnupg->=2:security/gnupg2
-#CONFIGURE_ENV +=	ac_cv_path_GNUPG=${LOCALBASE}/bin/gpg2
-CONFIGURE_ENV +=	ac_cv_path_GNUPG=
+BUILD_DEPENDS +=	gnupg->=2:security/gnupg2
+RUN_DEPENDS +=		gnupg->=2:security/gnupg2
+CONFIGURE_ENV +=	ac_cv_path_GNUPG=${LOCALBASE}/bin/gpg2
 
 # Need xsltproc in order to build with gobject introspection
 BUILD_DEPENDS +=	textproc/libxslt
