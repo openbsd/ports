@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/09/29 10:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/10/15 05:51:26 ajacoutot Exp $
 
 COMMENT=		secure storing of passwords using the SecretService DBus API
 
@@ -29,6 +29,7 @@ RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 FLAVORS =		python3
 FLAVOR ?=
 
+# org.freedesktop.secrets
 # (XXX add "gnome-keyring-*|ksecretsservice-*" when implemented)
 RUN_DEPENDS +=		x11/gnome/keyring
 
