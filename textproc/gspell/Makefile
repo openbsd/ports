@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/14 18:22:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/10/15 15:39:35 ajacoutot Exp $
 
 COMMENT=		spell-checking library for GTK+
 
 GNOME_PROJECT=		gspell
 GNOME_VERSION=		0.1.0
+REVISION=		0
 
 CATEGORIES=		textproc
 
@@ -28,6 +29,9 @@ MODGNOME_TOOLS=		gobject-introspection vala
 
 LIB_DEPENDS=		textproc/enchant \
 			x11/gtksourceview3
+
+BUILD_DEPENDS=		devel/iso-codes
+RUN_DEPENDS=		devel/iso-codes
 
 CONFIGURE_STYLE=	gnu
 
