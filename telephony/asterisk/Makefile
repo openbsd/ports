@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.221 2015/10/12 22:07:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.222 2015/10/15 13:16:50 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
 VER=			13.6.0
+REVISION-tds=		0
 PORTROACH=		limitw:0,odd
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
@@ -37,8 +38,7 @@ MODULES=		devel/gettext
 
 MULTI_PACKAGES=		-main -calendar -http_post -ldap -odbc \
 			-pgsql -snmp -speex -tds
-PSEUDO_FLAVORS=		no_calendar no_http_post no_ldap no_odbc \
-			no_pgsql no_snmp no_speex no_tds
+PSEUDO_FLAVORS=		${MULTI_PACKAGES:N-main:C/-/no_/g}
 
 LIB_DEPENDS-main=	audio/gsm \
 			audio/libogg \
@@ -172,7 +172,7 @@ CONFIGURE_ARGS+=	--with-ldap=no
 .endif
 
 # freetds
-COMMENT-tds=		LDAP support for Asterisk
+COMMENT-tds=		MSSQL/Sybase support for Asterisk
 LIB_DEPENDS-tds=	databases/freetds
 WANTLIB-tds=		sybdb
 .if !${BUILD_PACKAGES:M-tds}
@@ -180,18 +180,6 @@ CONFIGURE_ARGS+=	--with-tds=no
 .else
 CONFIGURE_ARGS+=	--with-tds=${LOCALBASE}
 .endif
-
-# mysql				need to handle building addons/ first XXX
-# up above .include <bsd.port.arch.mk>
-#PSEUDO_FLAVORS+=	no_mysql
-#MULTI_PACKAGES+=	-mysql
-#
-#COMMENT-mysql=		MySQL support for Asterisk
-#WANTLIB-mysql=		mysqlclient
-#LIB_DEPENDS-mysql=	databases/mariadb
-#.if !${BUILD_PACKAGES:M-mysql}
-#CONFIGURE_ARGS+=	--with-mysqlclient=no
-#.endif
 
 # odbc
 COMMENT-odbc=		ODBC support for Asterisk
