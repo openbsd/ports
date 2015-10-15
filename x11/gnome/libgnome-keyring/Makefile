@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/10/15 05:50:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2015/10/15 17:40:55 ajacoutot Exp $
 
 COMMENT=	library for gnome keyring integration
 
@@ -21,9 +21,6 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	security/libgcrypt \
 		x11/dbus \
 		devel/glib2
-
-# XXX see meta/gnome
-#RUN_DEPENDS +=	x11/gnome/keyring
 
 # regression tests call 'env python'
 MODULES +=		lang/python
