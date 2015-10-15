@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/06/10 11:05:02 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2015/10/15 09:46:56 bentley Exp $
 
 COMMENT=		control chroot and su access rights by application
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://www.porcupine.org/
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		ftp://ftp.porcupine.org/pub/security/ \
+MASTER_SITES=		http://ftp.porcupine.org/pub/security/ \
 			ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/chrootuid/
 
 ALL_TARGET=		chrootuid
