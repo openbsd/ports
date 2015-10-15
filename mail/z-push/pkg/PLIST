@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/09/07 18:56:59 robert Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/10/15 18:42:08 robert Exp $
 @extraunexec rm -rf /var/www/var/db/z-push/*
 @extraunexec rm -rf /var/www/var/log/z-push/*
 @unexec-delete rm -f /var/www/conf/modules/z-push.conf
@@ -55,6 +55,7 @@ z-push/backend/zarafa/mapistreamwrapper.php
 z-push/backend/zarafa/mapiutils.php
 z-push/backend/zarafa/tnefparser.php
 z-push/backend/zarafa/zarafa.php
+z-push/composer.json
 z-push/config.php.dist
 @sample z-push/config.php
 z-push/include/

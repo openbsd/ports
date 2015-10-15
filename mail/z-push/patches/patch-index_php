@@ -1,8 +1,8 @@
-$OpenBSD: patch-index_php,v 1.4 2015/09/07 18:56:59 robert Exp $
---- index.php.orig	Thu Sep  3 01:04:22 2015
-+++ index.php	Mon Sep  7 20:54:16 2015
-@@ -123,6 +123,22 @@ include_once('lib/request/requestprocessor.php');
- include_once('config.php');
+$OpenBSD: patch-index_php,v 1.5 2015/10/15 18:42:08 robert Exp $
+--- index.php.orig	Wed Sep 30 19:10:44 2015
++++ index.php	Thu Oct 15 20:41:21 2015
+@@ -130,6 +130,22 @@ if (!defined('ZPUSH_CONFIG')) define('ZPUSH_CONFIG', '
+ include_once(ZPUSH_CONFIG);
  include_once('version.php');
  
 +// Define apache_request_headers() in case we are using nginx or lighttpd
@@ -24,10 +24,10 @@ $OpenBSD: patch-index_php,v 1.4 2015/09/07 18:56:59 robert Exp $
  
      // Attempt to set maximum execution time
      ini_set('max_execution_time', SCRIPT_TIMEOUT);
-@@ -292,4 +308,4 @@ include_once('version.php');
+@@ -299,4 +315,4 @@ include_once('version.php');
  
      // end gracefully
-     ZLog::Write(LOGLEVEL_DEBUG, '-------- End');
+     ZLog::WriteEnd();
 -?>
 \ No newline at end of file
 +?>
