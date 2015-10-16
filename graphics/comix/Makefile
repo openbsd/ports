@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/03/27 08:11:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2015/10/16 15:35:18 naddy Exp $
 
 COMMENT=	gtk2 comic book viewer
 
@@ -32,7 +32,7 @@ RUN_DEPENDS=	graphics/py-Pillow \
 NO_TEST=	Yes
 
 post-extract:
-		${GUNZIP_CMD} ${WRKSRC}/comix.1.gz ${WRKSRC}/mime/comicthumb.1.gz
+		gzip -d ${WRKSRC}/comix.1.gz ${WRKSRC}/mime/comicthumb.1.gz
 
 do-build:
 		${SUBST_CMD} -c ${WRKSRC}/src/comix.py ${WRKSRC}/comix

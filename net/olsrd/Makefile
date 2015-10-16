@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/02/16 22:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2015/10/16 15:35:18 naddy Exp $
 
 COMMENT-main=		OLSR routing daemon
 COMMENT-gui=		OLSR routing daemon GUI
@@ -71,7 +71,7 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gui/linux-gtk/olsrd-gui ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/lib/dot_draw/olsr-topology-view.pl \
 		${PREFIX}/bin
-	cd ${PREFIX}/man; ${GUNZIP_CMD} man5/olsrd.conf.5.gz man8/olsrd.8.gz
+	cd ${PREFIX}/man; gzip -d man5/olsrd.conf.5.gz man8/olsrd.8.gz
 	${INSTALL_DATA} ${WRKSRC}/files/olsrd.conf.default.* \
 		${PREFIX}/share/examples/olsrd
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/olsrd
