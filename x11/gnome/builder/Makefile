@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2015/10/14 19:08:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/10/16 20:36:34 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		3.18.0
+GNOME_VERSION=		3.18.1
 
 SHARED_LIBS +=	egg-private               0.0 # 0.0
 SHARED_LIBS +=	gnome-builder             0.0 # 0.0
