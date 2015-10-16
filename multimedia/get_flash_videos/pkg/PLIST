@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/10/24 16:56:32 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/10/16 15:37:28 sthen Exp $
 bin/get_flash_videos
 ${P5SITE}/FlashVideo/
 ${P5SITE}/FlashVideo/Downloader.pm
@@ -19,6 +19,7 @@ ${P5SITE}/FlashVideo/Site/Adultswim.pm
 ${P5SITE}/FlashVideo/Site/Amazon.pm
 ${P5SITE}/FlashVideo/Site/Aniboom.pm
 ${P5SITE}/FlashVideo/Site/Apple.pm
+${P5SITE}/FlashVideo/Site/Ardmediathek.pm
 ${P5SITE}/FlashVideo/Site/Arte.pm
 ${P5SITE}/FlashVideo/Site/Bbc.pm
 ${P5SITE}/FlashVideo/Site/Bing.pm
@@ -35,7 +36,10 @@ ${P5SITE}/FlashVideo/Site/Channel5.pm
 ${P5SITE}/FlashVideo/Site/Cnet.pm
 ${P5SITE}/FlashVideo/Site/Collegehumor.pm
 ${P5SITE}/FlashVideo/Site/Ctv.pm
+${P5SITE}/FlashVideo/Site/Cultureunplugged.pm
+${P5SITE}/FlashVideo/Site/Cwtv.pm
 ${P5SITE}/FlashVideo/Site/Dailymotion.pm
+${P5SITE}/FlashVideo/Site/Daserste.pm
 ${P5SITE}/FlashVideo/Site/Daum.pm
 ${P5SITE}/FlashVideo/Site/Divxstage.pm
 ${P5SITE}/FlashVideo/Site/Ehow.pm
@@ -46,6 +50,7 @@ ${P5SITE}/FlashVideo/Site/Filebox.pm
 ${P5SITE}/FlashVideo/Site/Flickr.pm
 ${P5SITE}/FlashVideo/Site/Fliqz.pm
 ${P5SITE}/FlashVideo/Site/Fora.pm
+${P5SITE}/FlashVideo/Site/Four.pm
 ${P5SITE}/FlashVideo/Site/Freevideo.pm
 ${P5SITE}/FlashVideo/Site/Gamespot.pm
 ${P5SITE}/FlashVideo/Site/Gawker.pm
@@ -53,6 +58,7 @@ ${P5SITE}/FlashVideo/Site/Globaltv.pm
 ${P5SITE}/FlashVideo/Site/Google.pm
 ${P5SITE}/FlashVideo/Site/Googlevideosearch.pm
 ${P5SITE}/FlashVideo/Site/Gorillavid.pm
+${P5SITE}/FlashVideo/Site/Gosupark.pm
 ${P5SITE}/FlashVideo/Site/Grindtv.pm
 ${P5SITE}/FlashVideo/Site/Ima.pm
 ${P5SITE}/FlashVideo/Site/Itv.pm
@@ -67,18 +73,23 @@ ${P5SITE}/FlashVideo/Site/Metacafe.pm
 ${P5SITE}/FlashVideo/Site/Mitworld.pm
 ${P5SITE}/FlashVideo/Site/Mofosex.pm
 ${P5SITE}/FlashVideo/Site/Motherless.pm
+${P5SITE}/FlashVideo/Site/Movieclips.pm
+${P5SITE}/FlashVideo/Site/Movshare.pm
 ${P5SITE}/FlashVideo/Site/Msn.pm
 ${P5SITE}/FlashVideo/Site/Msnbc.pm
 ${P5SITE}/FlashVideo/Site/Mtvnservices.pm
+${P5SITE}/FlashVideo/Site/Munkvideo.pm
 ${P5SITE}/FlashVideo/Site/Muzu.pm
 ${P5SITE}/FlashVideo/Site/Mylifetime.pm
 ${P5SITE}/FlashVideo/Site/Myvideo.pm
 ${P5SITE}/FlashVideo/Site/Nasa.pm
 ${P5SITE}/FlashVideo/Site/Nbc.pm
 ${P5SITE}/FlashVideo/Site/Nfb.pm
+${P5SITE}/FlashVideo/Site/Nhk.pm
 ${P5SITE}/FlashVideo/Site/Nick.pm
 ${P5SITE}/FlashVideo/Site/Nicovideo.pm
 ${P5SITE}/FlashVideo/Site/Ooyala.pm
+${P5SITE}/FlashVideo/Site/Oppetarkiv.pm
 ${P5SITE}/FlashVideo/Site/Pbs.pm
 ${P5SITE}/FlashVideo/Site/Pennyarcade.pm
 ${P5SITE}/FlashVideo/Site/Pinkbike.pm
@@ -120,18 +131,23 @@ ${P5SITE}/FlashVideo/Site/Tv8play.pm
 ${P5SITE}/FlashVideo/Site/Tva.pm
 ${P5SITE}/FlashVideo/Site/Tvnz.pm
 ${P5SITE}/FlashVideo/Site/Ustream.pm
+${P5SITE}/FlashVideo/Site/Video44.pm
 ${P5SITE}/FlashVideo/Site/Videobb.pm
+${P5SITE}/FlashVideo/Site/Videofun.pm
 ${P5SITE}/FlashVideo/Site/Videojug.pm
 ${P5SITE}/FlashVideo/Site/Videolectures.pm
+${P5SITE}/FlashVideo/Site/Vidzur.pm
 ${P5SITE}/FlashVideo/Site/Vimeo.pm
 ${P5SITE}/FlashVideo/Site/Vitheque.pm
+${P5SITE}/FlashVideo/Site/Vk.pm
+${P5SITE}/FlashVideo/Site/Vkontakte.pm
 ${P5SITE}/FlashVideo/Site/Vrak.pm
 ${P5SITE}/FlashVideo/Site/Wat.pm
 ${P5SITE}/FlashVideo/Site/Xhamster.pm
 ${P5SITE}/FlashVideo/Site/Xnxx.pm
 ${P5SITE}/FlashVideo/Site/Xvideos.pm
 ${P5SITE}/FlashVideo/Site/Youku.pm
-${P5SITE}/FlashVideo/Site/Youtu.pm
+${P5SITE}/FlashVideo/Site/Yourupload.pm
 ${P5SITE}/FlashVideo/Site/Youtube.pm
 ${P5SITE}/FlashVideo/Site/Youtubenocookie.pm
 ${P5SITE}/FlashVideo/Site/Zdf.pm
