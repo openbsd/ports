@@ -1,0 +1,16 @@
+$OpenBSD: patch-mozilla_config_system-headers,v 1.3 2015/10/16 20:02:02 dcoppa Exp $
+
+Fix building with freetype>=2.6.1
+
+https://hg.mozilla.org/mozilla-central/rev/af40750720b5
+
+--- mozilla/config/system-headers.orig	Fri Oct 16 21:41:20 2015
++++ mozilla/config/system-headers	Fri Oct 16 21:41:53 2015
+@@ -455,6 +455,7 @@ frame/log.h
+ frame/req.h
+ freetype/freetype.h
+ freetype/ftcache.h
++freetype/ftfntfmt.h
+ freetype/ftglyph.h
+ freetype/ftsynth.h
+ freetype/ftoutln.h

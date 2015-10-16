@@ -1,11 +1,21 @@
-$OpenBSD: patch-config_system-headers,v 1.1 2015/06/29 18:41:44 dcoppa Exp $
+$OpenBSD: patch-config_system-headers,v 1.2 2015/10/16 20:02:02 dcoppa Exp $
 
-Fix building with freetype-2.6 or later
+Fix building with freetype>=2.6
+
 https://hg.mozilla.org/mozilla-central/rev/afd840d66e6a
+https://hg.mozilla.org/mozilla-central/rev/af40750720b5
 
---- config/system-headers.orig	Mon Jun 29 19:29:17 2015
-+++ config/system-headers	Mon Jun 29 19:30:18 2015
-@@ -471,6 +471,7 @@ freetype/ftbitmap.h
+--- config/system-headers.orig	Wed Sep 16 18:44:23 2015
++++ config/system-headers	Fri Oct 16 21:34:06 2015
+@@ -458,6 +458,7 @@ frame/log.h
+ frame/req.h
+ freetype/freetype.h
+ freetype/ftcache.h
++freetype/ftfntfmt.h
+ freetype/ftglyph.h
+ freetype/ftsynth.h
+ freetype/ftoutln.h
+@@ -471,6 +472,7 @@ freetype/ftbitmap.h
  freetype/ftxf86.h
  freetype.h
  ftcache.h
