@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/10/16 15:37:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2015/10/16 21:00:46 sthen Exp $
 
 COMMENT=	download flash video files from various sites
 
@@ -20,6 +20,7 @@ MODULES=	cpan
 GH_ACCOUNT=	monsieurvideo
 GH_PROJECT=	get-flash-videos
 GH_COMMIT=	e927a6cc9a62744a814cad691ab74855de4cc673
+MASTER_SITES=	${MASTER_SITES_GITHUB}
 
 BUILD_DEPENDS=	devel/p5-Tie-IxHash
 # main program, and listed in MYMETA.json
