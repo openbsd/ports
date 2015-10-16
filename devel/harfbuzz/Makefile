@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2015/10/14 18:33:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2015/10/16 06:08:29 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 BROKEN-mips64=		no atomic primitives
@@ -6,7 +6,7 @@ BROKEN-mips64=		no atomic primitives
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			1.0.5
+V=			1.0.6
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.bz2
 
