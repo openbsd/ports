@@ -1,0 +1,13 @@
+$OpenBSD: patch-unzip_c,v 1.1 2015/10/16 16:22:16 sthen Exp $
+--- unzip.c.orig	Wed Oct  7 12:11:04 2015
++++ unzip.c	Wed Oct  7 12:12:09 2015
+@@ -717,6 +717,9 @@ int MAIN(argc, argv)   /* return PK-type error code (e
+ {
+     int r;
+ 
++    if (tame("stdio rpath wpath cpath fattr tty", NULL) == -1)
++        err(1, "tame");
++
+     CONSTRUCTGLOBALS();
+     r = unzip(__G__ argc, argv);
+     DESTROYGLOBALS();
