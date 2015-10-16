@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1298 2015/07/19 17:31:44 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1299 2015/10/16 20:07:39 naddy Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1149,8 +1149,6 @@ ERRORS += "Fatal: Missing comment for ${_S:S/^-$/main package/}."
 .  endif
 .endfor
 
-GUNZIP_CMD ?= /usr/bin/gunzip -f
-GZCAT ?= /usr/bin/gzcat
 GZIP ?= -9
 GZIP_CMD ?= /usr/bin/gzip -nf ${GZIP}
 M4 ?= /usr/bin/m4
@@ -1295,15 +1293,15 @@ EXTRACT_CASES += *.zip) \
 	!empty(_LIST_EXTRACTED:M*.lzma)
 BUILD_DEPENDS += archivers/xz
 EXTRACT_CASES += *.tar.xz|*.tar.lzma) \
-	xzcat ${FULLDISTDIR}/$$archive| ${TAR} xf -;;
+	xz -d <${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 .endif
 
 .if !empty(_LIST_EXTRACTED:M*.tar.lz)
 BUILD_DEPENDS += archivers/lzip/lunzip
 EXTRACT_CASES += *.tar.lz) \
-	lunzip -c ${FULLDISTDIR}/$$archive| ${TAR} xf -;;
+	lunzip <${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 PATCH_CASES += *.lz) \
-	lunzip -c $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
+	lunzip <$$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
 .endif
 
 .if !empty(_LIST_EXTRACTED:M*.bz2) || \
@@ -1311,9 +1309,9 @@ PATCH_CASES += *.lz) \
 	!empty(_LIST_EXTRACTED:M*.tbz)
 BUILD_DEPENDS += archivers/bzip2
 EXTRACT_CASES += *.tar.bz2|*.tbz2|*.tbz) \
-	${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
+	${BZIP2} -d <${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 PATCH_CASES += *.bz2) \
-	${BZIP2} -dc $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
+	${BZIP2} -d <$$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
 .endif
 
 
@@ -1322,18 +1320,18 @@ _PERL_FIX_SHAR ?= perl -ne 'print if $$s || ($$s = m:^\#(\!\s*/bin/sh\s*| This i
 EXTRACT_CASES += *.tar) \
 	${TAR} xf ${FULLDISTDIR}/$$archive;;
 EXTRACT_CASES += *.shar.gz|*.shar.Z|*.sh.gz|*.sh.Z) \
-	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${_PERL_FIX_SHAR} | /bin/sh;;
+	${GZIP_CMD} -d <${FULLDISTDIR}/$$archive | ${_PERL_FIX_SHAR} | /bin/sh;;
 EXTRACT_CASES += *.shar | *.sh) \
 	${_PERL_FIX_SHAR} ${FULLDISTDIR}/$$archive | /bin/sh;;
 EXTRACT_CASES += *.tar.gz|*.tgz) \
-	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
+	${GZIP_CMD} -d <${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 EXTRACT_CASES += *.gz) \
-	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive >$$(basename $$archive .gz);;
+	${GZIP_CMD} -d <${FULLDISTDIR}/$$archive >$$(basename $$archive .gz);;
 EXTRACT_CASES += *) \
-	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
+	${GZIP_CMD} -d <${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 
 PATCH_CASES += *.Z|*.gz) \
-	${GZCAT} $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
+	${GZIP_CMD} -d <$$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
 PATCH_CASES += *) \
 	${PATCH} ${PATCH_DIST_ARGS} < $$patchfile;;
 

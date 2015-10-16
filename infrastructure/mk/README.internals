@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.12 2014/05/17 18:32:39 espie Exp $
+$OpenBSD: README.internals,v 1.13 2015/10/16 20:07:39 naddy Exp $
 Copyright (C) 2011-2012 Marc Espie <espie@openbsd.org>
 
  Permission to use, copy, modify, and distribute this software for any
@@ -416,8 +416,6 @@ fishy: FLAVORS tests ?
 fishy: TEST_STATUS_IGNORE
 
 fishy:
-	GUNZIP_CMD
-	GZCAT
 	GZIP
 	GZIP_CMD
 	M4
