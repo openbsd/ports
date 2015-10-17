@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_in,v 1.1 2015/01/09 18:16:56 sthen Exp $
+$OpenBSD: patch-configure_in,v 1.2 2015/10/17 19:35:02 sthen Exp $
 
 upstream changed default config directory in 6.12; put this back to avoid
 users having to make changes
 
---- configure.in.orig	Fri Jan  9 18:11:11 2015
-+++ configure.in	Fri Jan  9 18:12:26 2015
-@@ -81,7 +81,7 @@ CFLAGS="$CFLAGS $cicapflags"
+--- configure.in.orig	Sat Oct 17 10:35:42 2015
++++ configure.in	Sat Oct 17 20:33:50 2015
+@@ -84,7 +84,7 @@ CFLAGS="$CFLAGS $cicapflags"
  MODULES_LIBADD="$cicaplibs"
  UTILITIES_LIBADD="$cicapliblibs"
  UTILITIES_CFLAGS="$cicaplibflags"
