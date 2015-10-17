@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aaccoder_c,v 1.4 2015/10/13 05:44:18 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aaccoder_c,v 1.5 2015/10/17 06:49:22 ajacoutot Exp $
 
 aaccoder: use roundf() instead of ceilf()
 
@@ -20,8 +20,10 @@ AAC encoder: Extensive improvements
 
 aacenc: shorten name of ff_aac_adjust_common_prediction
 
+aacenc: add support for encoding files using Long Term Prediction
+
 --- libavcodec/aaccoder.c.orig	Mon Sep  7 21:58:01 2015
-+++ libavcodec/aaccoder.c	Mon Oct 12 22:04:45 2015
++++ libavcodec/aaccoder.c	Fri Oct 16 23:46:00 2015
 @@ -33,7 +33,9 @@
  #include "libavutil/libm.h" // brought forward to work around cygwin header breakage
  
@@ -32,8 +34,11 @@ aacenc: shorten name of ff_aac_adjust_common_prediction
  #include "avcodec.h"
  #include "put_bits.h"
  #include "aac.h"
-@@ -48,18 +50,18 @@
+@@ -46,20 +48,21 @@
+ 
+ #include "aacenc_is.h"
  #include "aacenc_tns.h"
++#include "aacenc_ltp.h"
  #include "aacenc_pred.h"
  
 -/** Frequency in Hz for lower limit of noise substitution **/
@@ -60,7 +65,7 @@ aacenc: shorten name of ff_aac_adjust_common_prediction
  /**
   * structure used in optimal codebook search
   */
-@@ -121,7 +123,7 @@ static void encode_window_bands_info(AACEncContext *s,
+@@ -121,7 +124,7 @@ static void encode_window_bands_info(AACEncContext *s,
                      rd += quantize_band_cost(s, &sce->coeffs[start + w*128],
                                               &s->scoefs[start + w*128], size,
                                               sce->sf_idx[(win+w)*16+swb], aac_cb_out_map[cb],
@@ -69,7 +74,7 @@ aacenc: shorten name of ff_aac_adjust_common_prediction
                  }
                  cost_stay_here = path[swb][cb].cost + rd;
                  cost_get_here  = minrd              + rd + run_bits + 4;
-@@ -182,138 +184,7 @@ static void encode_window_bands_info(AACEncContext *s,
+@@ -182,138 +185,7 @@ static void encode_window_bands_info(AACEncContext *s,
      }
  }
  
@@ -208,7 +213,7 @@ aacenc: shorten name of ff_aac_adjust_common_prediction
  typedef struct TrellisPath {
      float cost;
      int prev;
-@@ -332,11 +203,11 @@ static void set_special_band_scalefactors(AACEncContex
+@@ -332,11 +204,11 @@ static void set_special_band_scalefactors(AACEncContex
          start = 0;
          for (g = 0;  g < sce->ics.num_swb; g++) {
              if (sce->band_type[w*16+g] == INTENSITY_BT || sce->band_type[w*16+g] == INTENSITY_BT2) {
@@ -222,7 +227,7 @@ aacenc: shorten name of ff_aac_adjust_common_prediction
                  minscaler_n = FFMIN(minscaler_n, sce->sf_idx[w*16+g]);
                  bands++;
              }
-@@ -463,7 +334,7 @@ static void search_for_quantizers_anmr(AVCodecContext 
+@@ -463,7 +335,7 @@ static void search_for_quantizers_anmr(AVCodecContext 
                      for (w2 = 0; w2 < sce->ics.group_len[w]; w2++) {
                          FFPsyBand *band = &s->psy.ch[s->cur_channel].psy_bands[(w+w2)*16+g];
                          dist += quantize_band_cost(s, coefs + w2*128, s->scoefs + start + w2*128, sce->ics.swb_sizes[g],
@@ -231,7 +236,7 @@ aacenc: shorten name of ff_aac_adjust_common_prediction
                      }
                      minrd = FFMIN(minrd, dist);
  
-@@ -509,156 +380,7 @@ static void search_for_quantizers_anmr(AVCodecContext 
+@@ -509,156 +381,7 @@ static void search_for_quantizers_anmr(AVCodecContext 
                  sce->sf_idx[(w+w2)*16+g] = sce->sf_idx[w*16+g];
  }
  
@@ -388,7 +393,7 @@ aacenc: shorten name of ff_aac_adjust_common_prediction
  static void search_for_quantizers_faac(AVCodecContext *avctx, AACEncContext *s,
                                         SingleChannelElement *sce,
                                         const float lambda)
-@@ -776,7 +498,7 @@ static void search_for_quantizers_faac(AVCodecContext 
+@@ -776,7 +499,7 @@ static void search_for_quantizers_faac(AVCodecContext 
                                                 ESC_BT,
                                                 lambda,
                                                 INFINITY,
@@ -397,7 +402,7 @@ aacenc: shorten name of ff_aac_adjust_common_prediction
                                                 0);
                      dist -= b;
                  }
-@@ -863,92 +585,320 @@ static void search_for_quantizers_fast(AVCodecContext 
+@@ -863,92 +586,320 @@ static void search_for_quantizers_fast(AVCodecContext 
  
  static void search_for_pns(AACEncContext *s, AVCodecContext *avctx, SingleChannelElement *sce)
  {
@@ -772,59 +777,87 @@ aacenc: shorten name of ff_aac_adjust_common_prediction
              }
              start += sce0->ics.swb_sizes[g];
          }
-@@ -962,11 +912,12 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+@@ -961,13 +912,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+         encode_window_bands_info,
          quantize_and_encode_band,
          ff_aac_encode_tns_info,
++        ff_aac_encode_ltp_info,
          ff_aac_encode_main_pred,
 -        ff_aac_adjust_common_prediction,
 +        ff_aac_adjust_common_pred,
++        ff_aac_adjust_common_ltp,
          ff_aac_apply_main_pred,
          ff_aac_apply_tns,
++        ff_aac_update_ltp,
++        ff_aac_ltp_insert_new_frame,
          set_special_band_scalefactors,
          search_for_pns,
 +        mark_pns,
          ff_aac_search_for_tns,
++        ff_aac_search_for_ltp,
          search_for_ms,
          ff_aac_search_for_is,
-@@ -978,11 +929,12 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+         ff_aac_search_for_pred,
+@@ -977,13 +934,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+         encode_window_bands_info,
          quantize_and_encode_band,
          ff_aac_encode_tns_info,
++        ff_aac_encode_ltp_info,
          ff_aac_encode_main_pred,
 -        ff_aac_adjust_common_prediction,
 +        ff_aac_adjust_common_pred,
++        ff_aac_adjust_common_ltp,
          ff_aac_apply_main_pred,
          ff_aac_apply_tns,
++        ff_aac_update_ltp,
++        ff_aac_ltp_insert_new_frame,
          set_special_band_scalefactors,
          search_for_pns,
 +        mark_pns,
          ff_aac_search_for_tns,
++        ff_aac_search_for_ltp,
          search_for_ms,
          ff_aac_search_for_is,
-@@ -994,11 +946,12 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+         ff_aac_search_for_pred,
+@@ -993,13 +956,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+         codebook_trellis_rate,
          quantize_and_encode_band,
          ff_aac_encode_tns_info,
++        ff_aac_encode_ltp_info,
          ff_aac_encode_main_pred,
 -        ff_aac_adjust_common_prediction,
 +        ff_aac_adjust_common_pred,
++        ff_aac_adjust_common_ltp,
          ff_aac_apply_main_pred,
          ff_aac_apply_tns,
++        ff_aac_update_ltp,
++        ff_aac_ltp_insert_new_frame,
          set_special_band_scalefactors,
          search_for_pns,
 +        mark_pns,
          ff_aac_search_for_tns,
++        ff_aac_search_for_ltp,
          search_for_ms,
          ff_aac_search_for_is,
-@@ -1010,11 +963,12 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+         ff_aac_search_for_pred,
+@@ -1009,13 +978,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+         encode_window_bands_info,
          quantize_and_encode_band,
          ff_aac_encode_tns_info,
++        ff_aac_encode_ltp_info,
          ff_aac_encode_main_pred,
 -        ff_aac_adjust_common_prediction,
 +        ff_aac_adjust_common_pred,
++        ff_aac_adjust_common_ltp,
          ff_aac_apply_main_pred,
          ff_aac_apply_tns,
++        ff_aac_update_ltp,
++        ff_aac_ltp_insert_new_frame,
          set_special_band_scalefactors,
          search_for_pns,
 +        mark_pns,
          ff_aac_search_for_tns,
++        ff_aac_search_for_ltp,
          search_for_ms,
          ff_aac_search_for_is,
+         ff_aac_search_for_pred,

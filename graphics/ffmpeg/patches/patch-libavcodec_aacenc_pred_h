@@ -1,9 +1,20 @@
-$OpenBSD: patch-libavcodec_aacenc_pred_h,v 1.1 2015/10/13 05:44:18 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_pred_h,v 1.2 2015/10/17 06:49:22 ajacoutot Exp $
 
 aacenc: shorten name of ff_aac_adjust_common_prediction
 
---- libavcodec/aacenc_pred.h.orig	Mon Oct 12 22:03:10 2015
-+++ libavcodec/aacenc_pred.h	Mon Oct 12 22:05:15 2015
+aacenc_pred: correct header information
+
+--- libavcodec/aacenc_pred.h.orig	Mon Sep  7 21:58:01 2015
++++ libavcodec/aacenc_pred.h	Fri Oct 16 23:42:23 2015
+@@ -21,7 +21,7 @@
+ 
+ /**
+  * @file
+- * AAC encoder main prediction
++ * AAC encoder main-type prediction
+  * @author Rostislav Pehlivanov ( atomnuker gmail com )
+  */
+ 
 @@ -40,7 +40,7 @@
  #define PRED_SFB_START 10
  

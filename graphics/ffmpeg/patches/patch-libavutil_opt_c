@@ -1,9 +1,9 @@
-$OpenBSD: patch-libavutil_opt_c,v 1.1 2015/10/13 05:44:18 ajacoutot Exp $
+$OpenBSD: patch-libavutil_opt_c,v 1.2 2015/10/17 06:49:22 ajacoutot Exp $
 
 avutil/opt: add AV_OPT_TYPE_BOOL
 
---- libavutil/opt.c.orig	Mon Oct 12 22:22:56 2015
-+++ libavutil/opt.c	Mon Oct 12 22:32:30 2015
+--- libavutil/opt.c.orig	Mon Sep  7 21:58:02 2015
++++ libavutil/opt.c	Tue Oct 13 18:24:31 2015
 @@ -67,6 +67,7 @@ static int read_number(const AVOption *o, const void *
      case AV_OPT_TYPE_FLAGS:     *intnum = *(unsigned int*)dst;return 0;
      case AV_OPT_TYPE_PIXEL_FMT: *intnum = *(enum AVPixelFormat *)dst;return 0;
@@ -102,15 +102,7 @@ avutil/opt: add AV_OPT_TYPE_BOOL
              case AV_OPT_TYPE_CONST:
              default:
                  av_log(av_log_obj, AV_LOG_INFO, "%-12s ", "");
-@@ -1095,6 +1142,7 @@ static void opt_list(void *obj, void *av_log_obj, cons
- 
-         if (av_opt_query_ranges(&r, obj, opt->name, AV_OPT_SEARCH_FAKE_OBJ) >= 0) {
-             switch (opt->type) {
-+            case AV_OPT_TYPE_BOOL:
-             case AV_OPT_TYPE_INT:
-             case AV_OPT_TYPE_INT64:
-             case AV_OPT_TYPE_DOUBLE:
-@@ -1121,6 +1169,9 @@ static void opt_list(void *obj, void *av_log_obj, cons
+@@ -1121,6 +1168,9 @@ static void opt_list(void *obj, void *av_log_obj, cons
                    !opt->default_val.str)) {
              av_log(av_log_obj, AV_LOG_INFO, " (default ");
              switch (opt->type) {
@@ -120,6 +112,14 @@ avutil/opt: add AV_OPT_TYPE_BOOL
              case AV_OPT_TYPE_FLAGS:
                  av_log(av_log_obj, AV_LOG_INFO, "%"PRIX64, opt->default_val.i64);
                  break;
+@@ -1196,6 +1246,7 @@ void av_opt_set_defaults2(void *s, int mask, int flags
+             case AV_OPT_TYPE_CONST:
+                 /* Nothing to be done here */
+             break;
++            case AV_OPT_TYPE_BOOL:
+             case AV_OPT_TYPE_FLAGS:
+             case AV_OPT_TYPE_INT:
+             case AV_OPT_TYPE_INT64:
 @@ -1554,6 +1605,7 @@ void *av_opt_ptr(const AVClass *class, void *obj, cons
  static int opt_size(enum AVOptionType type)
  {

@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenctab_h,v 1.3 2015/10/13 05:44:18 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenctab_h,v 1.4 2015/10/17 06:49:22 ajacoutot Exp $
 
 AAC encoder: simplify and speed up find_min_book
 
@@ -8,25 +8,20 @@ aacenc: add support for encoding 7.1 channel audio
 
 aacenc: add support for changing options based on a profile
 
+aacenc: partially revert previous commits to set options via a profile
+
 --- libavcodec/aacenctab.h.orig	Mon Sep  7 21:58:01 2015
-+++ libavcodec/aacenctab.h	Mon Oct 12 22:07:27 2015
-@@ -36,21 +36,30 @@
++++ libavcodec/aacenctab.h	Fri Oct 16 23:46:59 2015
+@@ -36,7 +36,7 @@
  /** Total number of codebooks, including special ones **/
  #define CB_TOT_ALL 15
  
 -#define AAC_MAX_CHANNELS 6
-+/** Profile option settings **/
-+#define OPT_AUTO         -1
-+#define OPT_BANNED     -256
-+#define OPT_NEEDS_LTP  -384
-+#define OPT_NEEDS_MAIN -512
-+#define OPT_REQUIRED   -768
- 
 +#define AAC_MAX_CHANNELS 8
-+
+ 
  extern const uint8_t *ff_aac_swb_size_1024[];
  extern const int      ff_aac_swb_size_1024_len;
- extern const uint8_t *ff_aac_swb_size_128[];
+@@ -44,13 +44,15 @@ extern const uint8_t *ff_aac_swb_size_128[];
  extern const int      ff_aac_swb_size_128_len;
  
  /** default channel configurations */
@@ -49,7 +44,7 @@ aacenc: add support for changing options based on a profile
  };
  
  /**
-@@ -63,6 +72,8 @@ static const uint8_t aac_chan_maps[AAC_MAX_CHANNELS][A
+@@ -63,6 +65,8 @@ static const uint8_t aac_chan_maps[AAC_MAX_CHANNELS][A
      { 2, 0, 1, 3 },
      { 2, 0, 1, 3, 4 },
      { 2, 0, 1, 4, 5, 3 },
@@ -58,13 +53,20 @@ aacenc: add support for changing options based on a profile
  };
  
  /* duplicated from avpriv_mpeg4audio_sample_rates to avoid shared build
-@@ -109,5 +120,9 @@ static const uint8_t aac_cb_in_map[CB_TOT_ALL+1] = {0,
+@@ -109,5 +113,16 @@ static const uint8_t aac_cb_in_map[CB_TOT_ALL+1] = {0,
  
  static const uint8_t aac_cb_range [12] = {0, 3, 3, 3, 3, 9, 9, 8, 8, 13, 13, 17};
  static const uint8_t aac_cb_maxval[12] = {0, 1, 1, 2, 2, 4, 4, 7, 7, 12, 12, 16};
 +
 +static const unsigned char aac_maxval_cb[] = {
 +    0, 1, 3, 5, 5, 7, 7, 7, 9, 9, 9, 9, 9, 11
++};
++
++static const int aacenc_profiles[] = {
++    FF_PROFILE_AAC_MAIN,
++    FF_PROFILE_AAC_LOW,
++    FF_PROFILE_AAC_LTP,
++    FF_PROFILE_MPEG2_AAC_LOW,
 +};
  
  #endif /* AVCODEC_AACENCTAB_H */

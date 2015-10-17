@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_pred_c,v 1.2 2015/10/13 05:44:18 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_pred_c,v 1.3 2015/10/17 06:49:22 ajacoutot Exp $
 
 aacenc_pred: disable PNS SFBs and disable right predictors with IS
 
@@ -6,8 +6,21 @@ AAC encoder: Extensive improvements
 
 aacenc: shorten name of ff_aac_adjust_common_prediction
 
+aacenc_pred: correct header information
+
+aacenc_pred: only print predictor information if profile is aac_main
+
 --- libavcodec/aacenc_pred.c.orig	Mon Sep  7 21:58:01 2015
-+++ libavcodec/aacenc_pred.c	Mon Oct 12 22:05:12 2015
++++ libavcodec/aacenc_pred.c	Fri Oct 16 23:42:23 2015
+@@ -21,7 +21,7 @@
+ 
+ /**
+  * @file
+- * AAC encoder Intensity Stereo
++ * AAC encoder main-type prediction
+  * @author Rostislav Pehlivanov ( atomnuker gmail com )
+  */
+ 
 @@ -148,7 +148,7 @@ static inline int update_counters(IndividualChannelStr
      return 0;
  }
@@ -54,3 +67,13 @@ aacenc: shorten name of ff_aac_adjust_common_prediction
          for (i = 0; i < num_coeffs; i++)
              dist_spec_err += (O34[i] - P34[i])*(O34[i] - P34[i]);
          dist_spec_err *= s->lambda / band->threshold;
+@@ -331,7 +333,8 @@ void ff_aac_encode_main_pred(AACEncContext *s, SingleC
+     IndividualChannelStream *ics = &sce->ics;
+     const int pmax = FFMIN(ics->max_sfb, ff_aac_pred_sfb_max[s->samplerate_index]);
+ 
+-    if (!ics->predictor_present)
++    if (s->profile != FF_PROFILE_AAC_MAIN ||
++        !ics->predictor_present)
+         return;
+ 
+     put_bits(&s->pb, 1, !!ics->predictor_reset_group);

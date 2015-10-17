@@ -1,0 +1,14 @@
+$OpenBSD: patch-libavcodec_Makefile,v 1.21 2015/10/17 06:49:22 ajacoutot Exp $
+
+aacenc: add support for encoding files using Long Term Prediction
+
+--- libavcodec/Makefile.orig	Fri Oct 16 23:44:46 2015
++++ libavcodec/Makefile	Fri Oct 16 23:45:34 2015
+@@ -134,6 +134,7 @@ OBJS-$(CONFIG_AAC_ENCODER)             += aacenc.o aac
+                                           aacpsy.o aactab.o      \
+                                           aacenc_is.o \
+                                           aacenc_tns.o \
++                                          aacenc_ltp.o \
+                                           aacenc_pred.o \
+                                           psymodel.o mpeg4audio.o kbdwin.o
+ OBJS-$(CONFIG_AASC_DECODER)            += aasc.o msrledec.o
