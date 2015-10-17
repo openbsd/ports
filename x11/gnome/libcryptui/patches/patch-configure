@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2015/10/15 17:43:24 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.2 2015/10/17 06:57:45 ajacoutot Exp $
 
-Support GnuPG 2.1.
+https://bugzilla.gnome.org/show_bug.cgi?id=745843
 
 --- configure.orig	Thu Oct 15 19:35:52 2015
 +++ configure	Thu Oct 15 19:36:13 2015
