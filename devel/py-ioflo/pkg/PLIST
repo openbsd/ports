@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/08/20 07:50:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/10/17 06:46:26 ajacoutot Exp $
 bin/ioflo
 bin/ioflo2
 lib/python${MODPY_VERSION}/site-packages/ioflo/
@@ -18,8 +18,22 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/aid/aiding.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/aiding.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/blending.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/blending.pyc
-lib/python${MODPY_VERSION}/site-packages/ioflo/aid/httping.py
-lib/python${MODPY_VERSION}/site-packages/ioflo/aid/httping.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/clienting.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/clienting.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/httping.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/httping.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/serving.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/serving.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/test/
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/test/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/test/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/test/test_clienting.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/test/test_clienting.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/test/test_serving.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/test/test_serving.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/metaing.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/metaing.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/navigating.py
@@ -45,14 +59,14 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_aiding.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_aiding.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_blending.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_blending.pyc
-lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_httping.py
-lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_httping.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_metaing.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_metaing.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_nonblocking.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_nonblocking.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_odicting.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_odicting.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_sixing.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_sixing.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_timing.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/test/test_timing.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/timing.py
@@ -108,6 +122,8 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/base/consoling.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/consoling.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/deeding.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/deeding.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/base/doing.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/base/doing.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/excepting.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/excepting.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/base/fiating.py
