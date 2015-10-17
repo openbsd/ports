@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2015/04/04 09:18:54 ajacoutot Exp $
+$OpenBSD: README-main,v 1.2 2015/10/17 08:49:18 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,11 +6,9 @@ $OpenBSD: README-main,v 1.1 2015/04/04 09:18:54 ajacoutot Exp $
 
 To start a session bus instance of dbus-daemon (needed by applications
 installing ${PREFIX}/share/dbus-1/services/*.service files), add the
-following lines in .xinitrc or .xsession before starting the window
-manager (see dbus-launch(1) for more info) -- note that the default
-xinitrc and Xsession in OpenBSD (as well as some session/login managers,
-e.g. gnome-session(1)) already do this for you in which case these lines
-are not needed.
+following lines to .xinitrc or .xsession before starting the window manager
+(see dbus-launch(1) for more info) -- note that some session/login managers,
+e.g. gnome-session(1) already handle this automatically.
 
 if [ -x ${PREFIX}/bin/dbus-launch -a -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
 	eval `dbus-launch --sh-syntax --exit-with-session`
