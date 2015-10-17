@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.8 2015/10/10 07:35:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2015/10/17 07:18:03 ajacoutot Exp $
 
 COMMENT=		authentication provider for KerberosV
 
 GIT_PROJECT=		login_krb5
-GIT_COMMIT=		ece7386
+GIT_COMMIT=		fec4f3d
 
 DISTNAME=		${GIT_COMMIT}
-PKGNAME=		${GIT_PROJECT}-5.8.2
-REVISION=		0
+PKGNAME=		${GIT_PROJECT}-5.8.3
 
 DIST_SUBDIR=		${GIT_PROJECT}
 WRKDIST=		${WRKDIR}/${GIT_PROJECT}-${GIT_COMMIT}
 
-CATEGORIES=		sysutils
+CATEGORIES=		sysutils security
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
