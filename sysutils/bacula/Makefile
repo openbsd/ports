@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2015/08/15 07:50:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2015/10/17 10:30:16 ajacoutot Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -21,6 +21,8 @@ PKGNAME-mysql=		bacula-mysql-$V
 PKGNAME-pgsql=		bacula-pgsql-$V
 PKGNAME-sqlite3=	bacula-sqlite3-$V
 
+REVISION=		0
+
 CATEGORIES=		sysutils
 
 SHARED_LIBS +=  bac                  5.0
@@ -37,8 +39,7 @@ SHARED_LIBS +=  baccats-sqlite3      ${BACCATS_LIBV}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
 HOMEPAGE=		http://www.bacula.org/
 
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org> \
-			Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 WANTLIB += c pthread crypto ssl z m stdc++
 
