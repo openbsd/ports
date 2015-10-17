@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2015/10/05 16:29:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2015/10/17 10:29:04 ajacoutot Exp $
+
+BROKEN =		need to be adapted to current pflow(4)
 
 COMMENT =		network switch style shell
 
