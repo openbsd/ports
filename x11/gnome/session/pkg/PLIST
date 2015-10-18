@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.45 2014/03/27 12:42:05 ajacoutot Exp $
-@bin bin/gnome-session
+@comment $OpenBSD: PLIST,v 1.46 2015/10/18 13:25:31 ajacoutot Exp $
+bin/gnome-session
 @bin bin/gnome-session-inhibit
 @bin bin/gnome-session-quit
+@bin libexec/gnome-session-binary
 @bin libexec/gnome-session-check-accelerated
 @bin libexec/gnome-session-check-accelerated-helper
 @bin libexec/gnome-session-failed
@@ -13,8 +14,10 @@ share/doc/gnome-session/
 share/doc/gnome-session/dbus/
 share/doc/gnome-session/dbus/gnome-session.html
 share/glib-2.0/schemas/org.gnome.SessionManager.gschema.xml
+share/gnome-session/
 share/gnome-session/hardware-compatibility
 share/gnome-session/session-properties.ui
+share/gnome-session/sessions/
 share/gnome-session/sessions/gnome-dummy.session
 share/gnome-session/sessions/gnome-wayland.session
 share/gnome-session/sessions/gnome.session
@@ -24,6 +27,7 @@ share/icons/hicolor/24x24/apps/session-properties.png
 share/icons/hicolor/32x32/apps/session-properties.png
 share/icons/hicolor/48x48/apps/session-properties.png
 share/icons/hicolor/scalable/apps/session-properties.svg
+share/icons/hicolor/symbolic/apps/session-properties-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/am/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/an/LC_MESSAGES/gnome-session-3.0.mo
