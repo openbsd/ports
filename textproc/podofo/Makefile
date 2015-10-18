@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/16 10:46:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/10/18 13:09:38 sthen Exp $
 
 COMMENT=	library and tools to modify and parse PDF documents
 
-# note, this is not the latest; 0.9.3 does not build on OpenBSD as-is
-DISTNAME=	podofo-0.9.2
+DISTNAME=	podofo-0.9.3
 
-SHARED_LIBS +=	podofo                    0.0 # 0.9
+SHARED_LIBS +=	podofo                    1.0 # 0.9
 
 CATEGORIES=	textproc
 
@@ -36,14 +35,9 @@ CONFIGURE_ARGS+=	-DCMAKE_INCLUDE_PATH=${X11BASE}/include \
 post-extract:
 	rm ${WRKSRC}/cmake/modules/FindZLIB.cmake
 
-NO_TEST=	Yes
-# there are various cppunit-based tests (which must be installed during
-# configure), podofo-test is easy to run, but there's no framework to
-# automatically run the others.
-#
-#BUILD_DEPENDS=	devel/cppunit
-#do-test:
-#	${WRKBUILD}/test/unit/podofo-test
+BUILD_DEPENDS=	devel/cppunit
+do-test:
+	${WRKBUILD}/test/unit/podofo-test
 
 .include <bsd.port.arch.mk>
 

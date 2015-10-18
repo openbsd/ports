@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_base_PdfString_cpp,v 1.1.1.1 2014/04/06 11:31:21 sthen Exp $
+$OpenBSD: patch-src_base_PdfString_cpp,v 1.2 2015/10/18 13:09:38 sthen Exp $
 
 For some reason, alloca() doesn't seem to be working from C++ on OpenBSD,
 returning a linker error, so convert to malloc() instead.
 
---- src/base/PdfString.cpp.orig	Mon Mar 31 22:47:08 2014
-+++ src/base/PdfString.cpp	Mon Mar 31 22:50:17 2014
-@@ -530,7 +530,11 @@ void PdfString::InitFromUtf8( const pdf_utf8* pszStrin
+--- src/base/PdfString.cpp.orig	Sun Jun 15 13:53:43 2014
++++ src/base/PdfString.cpp	Sun Oct 18 13:51:24 2015
+@@ -554,7 +554,11 @@ void PdfString::InitFromUtf8( const pdf_utf8* pszStrin
  
      pdf_long        lBufLen = (lLen << 1) + sizeof(wchar_t);
      // twice as large buffer should always be enough
@@ -18,7 +18,7 @@ returning a linker error, so convert to malloc() instead.
  
      lBufLen = PdfString::ConvertUTF8toUTF16( pszStringUtf8, lLen, pBuffer, lBufLen );
  
-@@ -539,6 +543,7 @@ void PdfString::InitFromUtf8( const pdf_utf8* pszStrin
+@@ -563,6 +567,7 @@ void PdfString::InitFromUtf8( const pdf_utf8* pszStrin
      memcpy( m_buffer.GetBuffer(), reinterpret_cast<const char*>(pBuffer), lBufLen );
      m_buffer.GetBuffer()[lBufLen] = '\0';
      m_buffer.GetBuffer()[lBufLen+1] = '\0';

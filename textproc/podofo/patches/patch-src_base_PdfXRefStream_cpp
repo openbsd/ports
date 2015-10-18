@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_base_PdfXRefStream_cpp,v 1.1.1.1 2014/04/06 11:31:21 sthen Exp $
+$OpenBSD: patch-src_base_PdfXRefStream_cpp,v 1.2 2015/10/18 13:09:38 sthen Exp $
 
 For some reason, alloca() doesn't seem to be working from C++ on OpenBSD,
 returning a linker error, so convert to malloc() instead.
 
---- src/base/PdfXRefStream.cpp.orig	Mon Mar 31 22:47:08 2014
-+++ src/base/PdfXRefStream.cpp	Mon Mar 31 22:51:31 2014
-@@ -64,7 +64,11 @@ void PdfXRefStream::WriteSubSection( PdfOutputDevice*,
+--- src/base/PdfXRefStream.cpp.orig	Fri May  2 23:17:50 2014
++++ src/base/PdfXRefStream.cpp	Sun Oct 18 13:51:24 2015
+@@ -77,7 +77,11 @@ void PdfXRefStream::WriteSubSection( PdfOutputDevice*,
  void PdfXRefStream::WriteXRefEntry( PdfOutputDevice*, pdf_uint64 offset, pdf_gennum generation, 
                                      char cMode, pdf_objnum objectNumber ) 
  {
@@ -18,11 +18,11 @@ returning a linker error, so convert to malloc() instead.
  
      if( cMode == 'n' && objectNumber == m_pObject->Reference().ObjectNumber() )
          m_offset = offset;
-@@ -76,6 +80,7 @@ void PdfXRefStream::WriteXRefEntry( PdfOutputDevice*, 
-     memcpy( &buffer[1], reinterpret_cast<const char*>(&offset_be), sizeof(pdf_uint64) );
-     
+@@ -89,6 +93,7 @@ void PdfXRefStream::WriteXRefEntry( PdfOutputDevice*, 
+     memcpy( &buffer[1], reinterpret_cast<const char*>(&offset_be), sizeof(pdf_uint32) );
+ 
      m_pObject->GetStream()->Append( buffer, m_bufferLen );
 +    free(buffer);
  }
  
- void PdfXRefStream::EndWrite( PdfOutputDevice* pDevice ) 
+ void PdfXRefStream::EndWrite( PdfOutputDevice* pDevice )
