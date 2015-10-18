@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/18 09:55:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/10/18 13:23:56 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -7,8 +7,7 @@ SHARED_ONLY=		Yes
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		3.16.3
-REVISION=		2
+GNOME_VERSION=		3.18.1
 
 CATEGORIES=		x11
 
@@ -32,7 +31,7 @@ WANTLIB += pcre pixman-1 png polkit-gobject-1 pthread pthread-stubs
 WANTLIB += pulse pulse-mainloop-glib pwquality rest-0.7 secret-1
 WANTLIB += smbclient sndfile soup-2.4 soup-gnome-2.4 sqlite3 stdc++
 WANTLIB += tasn1 telepathy-glib upower-glib vorbis vorbisenc vorbisfile
-WANTLIB += webkit2gtk-4.0 xcb xcb-render xcb-shm xml2 z
+WANTLIB += webkit2gtk-4.0 xcb xcb-render xcb-shm xml2 z lber-2.4 sasl2 ssl
 WANTLIB += heimdal/lib/heimsqlite
 
 MODULES=		devel/gettext \
@@ -90,10 +89,5 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-control-center
-
-# XXX remove at the next major release
-# https://git.gnome.org/browse/gnome-control-center/commit/?id=cc600a918b2a6c34ae81cf85ef7b49a8e3f02ee6
-post-extract:
-	cp ${FILESDIR}/*.png ${WRKSRC}/panels/datetime/data/
 
 .include <bsd.port.mk>

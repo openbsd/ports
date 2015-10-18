@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/07/22 18:27:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/10/18 13:23:56 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -33,8 +33,6 @@ share/bash-completion/completions/gnome-control-center
 share/dbus-1/services/org.gnome.ControlCenter.SearchProvider.service
 share/dbus-1/services/org.gnome.ControlCenter.service
 share/gnome-control-center/
-share/gnome-control-center/datetime/
-share/gnome-control-center/datetime/backward
 share/gnome-control-center/icons/
 share/gnome-control-center/icons/hicolor/
 share/gnome-control-center/icons/hicolor/16x16/
@@ -202,6 +200,7 @@ share/locale/fi/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/fi/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/fr/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/fur/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/gl/LC_MESSAGES/gnome-control-center-2.0.mo
