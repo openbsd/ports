@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/13 08:32:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/10/18 13:58:31 sthen Exp $
 
 COMMENT=	library for network communications and cryptography
 
-DISTNAME=	libsodium-1.0.3
+DISTNAME=	libsodium-1.0.4
 
-SHARED_LIBS +=	sodium         5.0            # .15.0
+SHARED_LIBS +=	sodium         5.1            # .15.0
 
 CATEGORIES=	security net
 
@@ -14,8 +14,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
-
-WANTLIB += m
 
 MASTER_SITES=	https://download.libsodium.org/libsodium/releases/
 
