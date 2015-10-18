@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2015/10/15 05:46:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2015/10/18 05:14:50 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extras=		GNOME desktop meta-package (full installation)
@@ -9,13 +9,21 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		5
+REVISION-main=		6
 REVISION-extras=	0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 MULTI_PACKAGES=		-main -extras
+
+# XXX should be a RUN_DEPENDS of x11/gnome/{libgnome-keyring,libsecret} but that
+# would create dependency loops:
+# libsecret -> gnome-keyring -> pinentry -> libsecret
+# libsecret -> gnome-keyring -> gcr -> gnupg2 -> pinentry -> gcr
+# org.freedesktop.secrets
+# (XXX add "gnome-keyring-*|ksecretsservice-*" when implemented)
+RUN_DEPENDS-main +=	x11/gnome/keyring
 
 # remove when we don't use gtk+2 apps in GNOME
 # Gtk-Message: Failed to load module "canberra-gtk-module"
@@ -81,10 +89,6 @@ RUN_DEPENDS-main +=	x11/gnome/bijiben \
 			x11/gnome/tweak-tool \
 			x11/gnome/vino \
 			x11/gnome/weather
-
-# XXX should be a RUN_DEPENDS of x11/gnome/{libgnome-keyring,lisecret} but that
-# would create a dependency loop:
-RUN_DEPENDS-main +=	x11/gnome/keyring
 
 RUN_DEPENDS-extras +=	STEM-=${V}:${BASE_PKGPATH},-main \
 			audio/rhythmbox \
