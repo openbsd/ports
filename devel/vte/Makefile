@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2015/08/25 06:36:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2015/10/18 17:14:01 ajacoutot Exp $
 
 PORTROACH +=		limit:^0\.2
 
@@ -13,7 +13,7 @@ SHARED_LIBS+=	vte	14.1    # 2609.0
 FULLPKGNAME-main=	vte-${GNOME_VERSION}
 FULLPKGNAME-python= 	py-${DISTNAME}
 
-REVISION-main =		16
+REVISION-main =		17
 REVISION-python = 	12
 
 CATEGORIES=		devel
@@ -49,18 +49,14 @@ RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS} \
 
 LIB_DEPENDS-main+=	${LIB_DEPENDS} \
 			x11/gtk+2
-WANTLIB-main=		${WANTLIB} c util
+WANTLIB-main=		${WANTLIB} c
 
 MODGNOME_TOOLS +=	gobject-introspection
-
-MODGNU_CONFIG_GUESS_DIRS= \
-			${WRKSRC} \
-			${WRKSRC}/gnome-pty-helper
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-gtk=2.0 \
 			--enable-python \
-			--program-suffix=2
+			--disable-gnome-pty-helper
 
 # error: -Bsymbolic requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
