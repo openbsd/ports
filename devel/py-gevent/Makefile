@@ -1,29 +1,31 @@
-# $OpenBSD: Makefile,v 1.6 2015/09/29 10:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/10/18 14:50:31 czarkoff Exp $
 
-COMMENT =	network library for easy and scalable concurrency
+COMMENT =		network library for easy and scalable concurrency
 
-MODPY_EGG_VERSION =	0.13.7
-DISTNAME =	gevent-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
-REVISION =	2
-MAINTAINER =	Dmitrij D. Czarkoff <czarkoff@openbsd.org>
+MODPY_EGG_VERSION =	1.0.2
+DISTNAME =		gevent-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
-CATEGORIES =	devel
-HOMEPAGE =	http://www.gevent.org/
+CATEGORIES =		devel
+HOMEPAGE =		http://www.gevent.org/
 
 # MPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODPY_PI =	Yes
+WANTLIB += ${MODPY_WANTLIB} cares ev pthread
 
-MODULES =	lang/python
-
+MODULES =		lang/python
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_DISTUTILS_BUILD=	build --build-base=${WRKSRC} \
-	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-LIB_DEPENDS =	devel/libeventextra
-WANTLIB =	${MODPY_WANTLIB} event eventextra pthread
-RUN_DEPENDS =	devel/py-greenlet
+LIB_DEPENDS =		devel/libev \
+			net/libcares
+RUN_DEPENDS =		devel/py-greenlet
+TEST_DEPENDS =		${RUN_DEPENDS}
+
+MAKE_ENV =		CARES_EMBED=0 LIBEV_EMBED=0
+CFLAGS +=		-I${LOCALBASE}/include
+LDFLAGS +=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
