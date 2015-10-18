@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2015/05/12 06:22:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.141 2015/10/18 13:25:03 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,9 +6,9 @@ COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
-GNOME_VERSION=		3.16.2
+GNOME_VERSION=		3.18.1
 
-SHARED_LIBS +=  gnome-desktop-3      2.0      # 10.0
+SHARED_LIBS +=  gnome-desktop-3      2.1      # 12.0
 
 CATEGORIES=		x11
 
@@ -45,7 +45,9 @@ LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_TOOLS=		gobject-introspection yelp
 
-CONFIGURE_ARGS=		--with-gnome-distributor="OpenBSD Ports" \
-			--with-pnp-ids-path=${LOCALBASE}/share/hwdata
+CONFIGURE_ARGS=		--with-gnome-distributor="OpenBSD Ports"
+
+# https://bugzilla.gnome.org/show_bug.cgi?id=590059
+CONFIGURE_ARGS +=	--with-pnp-ids-path=${LOCALBASE}/share/hwdata
 
 .include <bsd.port.mk>
