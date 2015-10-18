@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/29 10:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/10/18 14:49:04 czarkoff Exp $
 
 COMMENT =	lightweight in-process concurrent programming
 # see slp_platformselect.h
 ONLY_FOR_ARCHS =	amd64 arm i386 powerpc sparc sparc64
 
-MODPY_EGG_VERSION = 0.4.0
+MODPY_EGG_VERSION = 0.4.9
 DISTNAME =	greenlet-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 EXTRACT_SUFX =	.zip
-REVISION =	1
 
 CATEGORIES =	devel
 HOMEPAGE =	http://pypi.python.org/pypi/greenlet
