@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2015/04/03 11:24:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2015/10/18 13:23:35 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gnome-settings-plugin.h
@@ -20,6 +20,7 @@ lib/gnome-settings-daemon-3.0/libhousekeeping.so
 lib/gnome-settings-daemon-3.0/libkeyboard.so
 lib/gnome-settings-daemon-3.0/libmedia-keys.so
 lib/gnome-settings-daemon-3.0/libmouse.so
+lib/gnome-settings-daemon-3.0/liborientation.so
 lib/gnome-settings-daemon-3.0/libpower.so
 lib/gnome-settings-daemon-3.0/libprint-notifications.so
 lib/gnome-settings-daemon-3.0/libscreensaver-proxy.so
@@ -30,6 +31,7 @@ lib/gnome-settings-daemon-3.0/libxrandr.so
 lib/gnome-settings-daemon-3.0/libxsettings.so
 lib/gnome-settings-daemon-3.0/media-keys.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/mouse.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/orientation.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/power.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/print-notifications.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/screensaver-proxy.gnome-settings-plugin
@@ -51,6 +53,7 @@ libexec/gnome-settings-daemon-localeexec
 @bin libexec/gsd-test-keyboard
 @bin libexec/gsd-test-media-keys
 @bin libexec/gsd-test-mouse
+@bin libexec/gsd-test-orientation
 @bin libexec/gsd-test-print-notifications
 @bin libexec/gsd-test-screensaver-proxy
 @bin libexec/gsd-test-smartcard
