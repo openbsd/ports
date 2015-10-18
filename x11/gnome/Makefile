@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.250 2015/08/12 06:24:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.251 2015/10/18 08:17:11 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -103,6 +103,7 @@
      SUBDIR += system-monitor
      SUBDIR += terminal
      SUBDIR += themes-standard
+     SUBDIR += todo
      SUBDIR += totem
      SUBDIR += totem-pl-parser
      SUBDIR += tracker
