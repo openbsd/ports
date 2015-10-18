@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1299 2015/10/16 20:07:39 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1300 2015/10/18 14:05:05 naddy Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1292,8 +1292,10 @@ EXTRACT_CASES += *.zip) \
 .if !empty(_LIST_EXTRACTED:M*.xz) || \
 	!empty(_LIST_EXTRACTED:M*.lzma)
 BUILD_DEPENDS += archivers/xz
-EXTRACT_CASES += *.tar.xz|*.tar.lzma) \
-	xz -d <${FULLDISTDIR}/$$archive | ${TAR} xf -;;
+EXTRACT_CASES += *.tar.xz) \
+	xzdec <${FULLDISTDIR}/$$archive | ${TAR} xf -;;
+EXTRACT_CASES += *.tar.lzma) \
+	lzmadec <${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 .endif
 
 .if !empty(_LIST_EXTRACTED:M*.tar.lz)
