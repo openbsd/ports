@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2014/12/15 20:59:15 nigel Exp $
+# $OpenBSD: Makefile,v 1.41 2015/10/18 21:34:25 nigel Exp $
 
 COMMENT=	library for WWW access in Perl
 
 MODULES=	cpan
-DISTNAME=	libwww-perl-6.08
+DISTNAME=	libwww-perl-6.13
 PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	www
-REVISION=	0
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,7 +24,7 @@ RUN_DEPENDS=	devel/p5-File-Listing>=6.0 \
 		www/p5-WWW-RobotRules>=6.0
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-CPAN_AUTHOR=	MSCHILLI
+CPAN_AUTHOR=	ETHER
 
 
 .include <bsd.port.mk>
