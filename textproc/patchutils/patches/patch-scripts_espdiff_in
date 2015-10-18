@@ -1,6 +1,6 @@
-$OpenBSD: patch-espdiff_in,v 1.1.1.1 2013/04/20 17:06:31 sthen Exp $
---- espdiff.in.orig	Wed Jun 11 11:01:28 2008
-+++ espdiff.in	Fri Apr 19 00:41:46 2013
+$OpenBSD: patch-scripts_espdiff_in,v 1.1 2015/10/18 13:37:56 sthen Exp $
+--- scripts/espdiff.in.orig	Wed Jun 11 11:01:28 2008
++++ scripts/espdiff.in	Tue Apr 21 15:07:14 2015
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
