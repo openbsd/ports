@@ -1,9 +1,9 @@
-$OpenBSD: patch-daemon_gdm-session-record_c,v 1.6 2015/07/02 14:29:52 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session-record_c,v 1.7 2015/10/18 13:25:54 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=722482
 
---- daemon/gdm-session-record.c.orig	Thu Jul  2 15:57:32 2015
-+++ daemon/gdm-session-record.c	Thu Jul  2 16:23:11 2015
+--- daemon/gdm-session-record.c.orig	Sun Oct 18 14:14:52 2015
++++ daemon/gdm-session-record.c	Sun Oct 18 14:18:27 2015
 @@ -33,6 +33,16 @@
  #include <utmp.h>
  #endif
@@ -31,7 +31,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  #if !defined(GDM_NEW_SESSION_RECORDS_FILE)
  #    if defined(WTMPX_FILE)
  #        define GDM_NEW_SESSION_RECORDS_FILE WTMPX_FILE
-@@ -195,6 +208,84 @@ record_set_line (UTMP       *u,
+@@ -183,6 +196,84 @@ record_set_line (UTMP       *u,
          g_debug ("using ut_line %.*s", (int) sizeof (u->ut_line), u->ut_line);
  }
  
@@ -116,10 +116,10 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  void
  gdm_session_record_login (GPid                  session_pid,
                            const char           *user_name,
-@@ -264,8 +355,9 @@ gdm_session_record_login (GPid                  sessio
-                 g_debug ("Adding new utmp record");
-                 pututxline (&session_record);
-         }
+@@ -227,8 +318,9 @@ gdm_session_record_login (GPid                  sessio
+ #if defined(HAVE_GETUTXENT)
+         g_debug ("Adding or updating utmp record for login");
+         pututxline (&session_record);
 -#elif defined(HAVE_LOGIN)
 -	login (&session_record);
 +#else
@@ -128,10 +128,10 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  #endif
  }
  
-@@ -339,8 +431,8 @@ gdm_session_record_logout (GPid                  sessi
-         }
- 
-         endutxent ();
+@@ -270,8 +362,8 @@ gdm_session_record_logout (GPid                  sessi
+ #if defined(HAVE_GETUTXENT)
+         g_debug ("Adding or updating utmp record for logout");
+         pututxline (&session_record);
 -#elif defined(HAVE_LOGOUT)
 -        logout (session_record.ut_line);
 +#else

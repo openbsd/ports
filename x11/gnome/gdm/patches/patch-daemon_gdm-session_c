@@ -1,0 +1,55 @@
+$OpenBSD: patch-daemon_gdm-session_c,v 1.5 2015/10/18 13:25:54 ajacoutot Exp $
+
+REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
+From 9be58c9ec9a3a411492a5182ac4b0d51fdc3a323 Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Fri, 12 Jun 2015 13:48:52 -0400
+Subject: require logind support
+
+REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
+From a9cacb929470eb82582396984c61d5b611bfeb1a Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Fri, 12 Jun 2015 14:33:40 -0400
+Subject: session: drop session-type property
+
+--- daemon/gdm-session.c.orig	Sun Oct 18 14:26:49 2015
++++ daemon/gdm-session.c	Sun Oct 18 14:23:39 2015
+@@ -3041,6 +3041,10 @@ gdm_session_get_display_mode (GdmSession *self)
+                  self->priv->is_program_session? "yes" : "no",
+                  self->priv->display_seat_id);
+ 
++        if (!LOGIND_RUNNING()) {
++                return GDM_SESSION_DISPLAY_MODE_REUSE_VT;
++        }
++
+ #ifdef ENABLE_WAYLAND_SUPPORT
+         /* Wayland sessions are for now assumed to run in a
+          * mutter-launch-like environment, so we allocate
+@@ -3079,6 +3083,27 @@ gdm_session_select_program (GdmSession *self,
+         g_free (self->priv->selected_program);
+ 
+         self->priv->selected_program = g_strdup (text);
++}
++
++void
++gdm_session_select_session_type (GdmSession *self,
++                                 const char *text)
++{
++        GHashTableIter iter;
++        gpointer key, value;
++
++        g_debug ("GdmSession: selecting session type '%s'", text);
++
++        g_hash_table_iter_init (&iter, self->priv->conversations);
++        while (g_hash_table_iter_next (&iter, &key, &value)) {
++                GdmSessionConversation *conversation;
++
++                conversation = (GdmSessionConversation *) value;
++
++                gdm_dbus_worker_call_set_session_type (conversation->worker_proxy,
++                                                       text,
++                                                       NULL, NULL, NULL);
++        }
+ }
+ 
+ void

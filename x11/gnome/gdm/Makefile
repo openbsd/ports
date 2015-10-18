@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.237 2015/09/18 20:30:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.238 2015/10/18 13:25:54 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.16.4
+GNOME_VERSION=		3.18.0
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -60,12 +60,12 @@ MODGNOME_TOOLS += gobject-introspection gtk-update-icon-cache yelp
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DHAS_SA_LEN
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	gnu
 
-CONFIGURE_ARGS=		--disable-systemd-journal \
+CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
+			--disable-systemd-journal \
+			--enable-gdm-xsession \
 			--without-systemd \
-			--mandir=${PREFIX}/man \
 			--without-plymouth \
 			--with-lang-file=${SYSCONFDIR}/gdm/locale.conf \
 			--with-at-spi-registryd-directory=${LOCALBASE}/libexec \
@@ -83,13 +83,23 @@ CONFIGURE_ARGS=		--disable-systemd-journal \
 			--with-xauth-dir=/var/run/gdm \
 			--with-initial-vt=05
 
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+
 pre-configure:
 	sed -i -e 's,root:root,root:wheel,g' \
 		-e 's,root:gdm,root:676,g' \
-		-e 's,gdm:gdm,676:676,g' ${WRKSRC}/data/Makefile.in
+		-e 's,gdm:gdm,676:676,g' ${WRKSRC}/data/Makefile.am
 	sed -i -e 's,/usr/local,${LOCALBASE},g' \
 		-e 's,/bin/bash,/bin/ksh,g' \
 		${WRKSRC}/daemon/gdm-session-worker.c
+	cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -i
 
 post-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/puflogh1000X248.gif \

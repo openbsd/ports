@@ -1,0 +1,20 @@
+$OpenBSD: patch-common_gdm-common_h,v 1.1 2015/10/18 13:25:54 ajacoutot Exp $
+
+REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
+From 9be58c9ec9a3a411492a5182ac4b0d51fdc3a323 Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Fri, 12 Jun 2015 13:48:52 -0400
+Subject: require logind support
+
+--- common/gdm-common.h.orig	Mon Sep 21 16:12:33 2015
++++ common/gdm-common.h	Sun Oct 18 14:23:39 2015
+@@ -33,6 +33,9 @@
+ 
+ #define GDM_CUSTOM_SESSION  "custom"
+ 
++/* check if logind is running */
++#define LOGIND_RUNNING() (access("/run/systemd/seats/", F_OK) >= 0)
++
+ GQuark gdm_common_error_quark (void);
+ #define GDM_COMMON_ERROR gdm_common_error_quark()
+ 

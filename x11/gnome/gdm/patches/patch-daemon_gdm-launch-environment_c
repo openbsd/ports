@@ -1,9 +1,21 @@
-$OpenBSD: patch-daemon_gdm-launch-environment_c,v 1.5 2015/04/15 07:25:46 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-launch-environment_c,v 1.6 2015/10/18 13:25:54 ajacoutot Exp $
 
 XXX fix+push upstream
 
---- daemon/gdm-launch-environment.c.orig	Fri Apr 10 21:13:44 2015
-+++ daemon/gdm-launch-environment.c	Wed Apr 15 09:18:13 2015
+REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
+From 1ac67f522f5690c27023d98096ca817f12f7eb88 Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Fri, 12 Jun 2015 13:28:01 -0400
+Subject: drop consolekit support
+
+REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
+From a9cacb929470eb82582396984c61d5b611bfeb1a Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Fri, 12 Jun 2015 14:33:40 -0400
+Subject: session: drop session-type property
+
+--- daemon/gdm-launch-environment.c.orig	Sun Oct 18 14:26:32 2015
++++ daemon/gdm-launch-environment.c	Sun Oct 18 14:24:34 2015
 @@ -50,7 +50,7 @@
  #include "gdm-settings-direct.h"
  #include "gdm-settings-keys.h"
@@ -13,3 +25,22 @@ XXX fix+push upstream
  #define GNOME_SESSION_SESSIONS_PATH DATADIR "/gnome-session/sessions"
  
  extern char **environ;
+@@ -176,6 +176,9 @@ build_launch_environment (GdmLaunchEnvironment *launch
+                 char *seat_id;
+ 
+                 seat_id = launch_environment->priv->x11_display_seat_id;
++                if (g_str_has_prefix (seat_id, "/org/freedesktop/ConsoleKit/")) {
++                        seat_id += strlen ("/org/freedesktop/ConsoleKit/");
++                }
+ 
+                 g_hash_table_insert (hash, g_strdup ("GDM_SEAT_ID"), g_strdup (seat_id));
+         }
+@@ -204,6 +207,8 @@ on_session_setup_complete (GdmSession        *session,
+                 gdm_session_set_environment_variable (launch_environment->priv->session, key, value);
+         }
+         g_hash_table_destroy (hash);
++
++        gdm_session_select_session_type (launch_environment->priv->session, "LoginWindow");
+ }
+ 
+ static void
