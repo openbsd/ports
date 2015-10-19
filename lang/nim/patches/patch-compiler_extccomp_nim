@@ -1,0 +1,47 @@
+$OpenBSD: patch-compiler_extccomp_nim,v 1.1.1.1 2015/10/19 21:50:14 juanfra Exp $
+--- compiler/extccomp.nim.orig	Sun Sep 13 00:55:21 2015
++++ compiler/extccomp.nim	Sun Sep 13 01:01:06 2015
+@@ -18,7 +18,7 @@ import
+ type
+   TSystemCC* = enum
+     ccNone, ccGcc, ccLLVM_Gcc, ccCLang, ccLcc, ccBcc, ccDmc, ccWcc, ccVcc,
+-    ccTcc, ccPcc, ccUcc, ccIcl
++    ccTcc, ccPcc, ccUcc, ccIcl, ccEGcc
+   TInfoCCProp* = enum         # properties of the C compiler:
+     hasSwitchRange,           # CC allows ranges in switch statements (GNU C)
+     hasComputedGoto,          # CC has computed goto (GNU C extension)
+@@ -66,8 +66,8 @@ compiler gcc:
+   result = (
+     name: "gcc",
+     objExt: "o",
+-    optSpeed: " -O3 -ffast-math ",
+-    optSize: " -Os -ffast-math ",
++    optSpeed: " -O2 ",
++    optSize: " -Os ",
+     compilerExe: "gcc",
+     cppCompiler: "g++",
+     compileTmpl: "-c $options $include -o $objfile $file",
+@@ -87,6 +87,13 @@ compiler gcc:
+     props: {hasSwitchRange, hasComputedGoto, hasCpp, hasGcGuard, hasGnuAsm,
+             hasNakedAttribute})
+ 
++compiler egcc:
++    result = gcc()
++
++    result.name = "egcc"
++    result.compilerExe = "egcc"
++    result.cppCompiler = "eg++"
++
+ # LLVM Frontend for GCC/G++
+ compiler llvmGcc:
+   result = gcc() # Uses settings from GCC
+@@ -330,7 +337,8 @@ const
+     tcc(),
+     pcc(),
+     ucc(),
+-    icl()]
++    icl(),
++    egcc()]
+ 
+   hExt* = ".h"
+ 
