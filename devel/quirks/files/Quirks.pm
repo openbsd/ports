@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.312 2015/10/19 20:20:42 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.313 2015/10/19 20:51:35 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -654,6 +654,13 @@ my $obsolete_reason = {
 	'tkrat' => 3,
 	'bustle' => 5,
 	'bluetile' => 5,
+	'hs-cairo' => 5,
+	'hs-gio' => 5,
+	'hs-glade' => 5,
+	'hs-glib' => 5,
+	'hs-gtk' => 5,
+	'hs-pango' => 5,
+	'hs-webkiet' => 5,
 };
 
 # ->is_base_system($handle, $state):
