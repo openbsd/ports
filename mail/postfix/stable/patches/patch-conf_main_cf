@@ -1,7 +1,15 @@
-$OpenBSD: patch-conf_main_cf,v 1.6 2015/04/09 19:49:59 sthen Exp $
---- conf/main.cf.orig	Thu Oct  9 19:46:44 2014
-+++ conf/main.cf	Thu Mar 12 01:12:07 2015
-@@ -133,6 +133,9 @@ mail_owner = postfix
+$OpenBSD: patch-conf_main_cf,v 1.7 2015/10/19 19:38:10 giovanni Exp $
+--- conf/main.cf.orig	Fri Oct 10 01:46:44 2014
++++ conf/main.cf	Thu Oct 15 15:08:37 2015
+@@ -28,6 +28,7 @@
+ # The level below is what should be used with new (not upgrade) installs.
+ #
+ compatibility_level = 2
++smtputf8_enable = no
+ 
+ # SOFT BOUNCE
+ #
+@@ -133,6 +134,9 @@ mail_owner = postfix
  #inet_interfaces = $myhostname
  #inet_interfaces = $myhostname, localhost
  
@@ -11,7 +19,7 @@ $OpenBSD: patch-conf_main_cf,v 1.6 2015/04/09 19:49:59 sthen Exp $
  # The proxy_interfaces parameter specifies the network interface
  # addresses that this mail system receives mail on by way of a
  # proxy or network address translation unit. This setting extends
-@@ -673,4 +676,3 @@ sample_directory =
+@@ -673,4 +677,3 @@ sample_directory =
  # readme_directory: The location of the Postfix README files.
  #
  readme_directory =
