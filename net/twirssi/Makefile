@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/06/15 08:09:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/10/19 12:52:27 robert Exp $
 
 COMMENT=	Twitter script for irssi
 
-V=		2.6.0
+V=		2.6.3
 DISTNAME=	twirssi-$V
 CATEGORIES=	net
 
@@ -11,12 +11,13 @@ HOMEPAGE=	http://www.twirssi.com/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	http://nerd.hu/distfiles/
 EXTRACT_ONLY=
 EXTRACT_SUFX=	.pl
 
 RUN_DEPENDS=	net/irssi \
 		net/p5-Net-Twitter \
+		www/p5-LWP-Protocol-https \
 		www/p5-WWW-Shorten
 
 NO_BUILD=	Yes
