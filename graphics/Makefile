@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.394 2015/09/22 18:38:30 pascal Exp $
+# $OpenBSD: Makefile,v 1.395 2015/10/19 20:44:01 kili Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -95,7 +95,6 @@
      SUBDIR += hs-GLUT
      SUBDIR += hs-OpenGL
      SUBDIR += hs-OpenGLRaw
-     SUBDIR += hs-cairo
      SUBDIR += hugin
      SUBDIR += icoutils
      SUBDIR += iec16022
