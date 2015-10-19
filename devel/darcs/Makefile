@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.58 2015/07/17 21:46:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2015/10/19 21:21:02 kili Exp $
+
+BROKEN =		needs an update
 
 COMMENT =		advanced revision control system written in Haskell
 
