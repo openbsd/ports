@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/23 19:28:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/10/19 05:47:22 ajacoutot Exp $
 bin/raetflo
 lib/python${MODPY_VERSION}/site-packages/raet/
 lib/python${MODPY_VERSION}/site-packages/raet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -97,3 +97,15 @@ lib/python${MODPY_VERSION}/site-packages/raet/test/test_nacling.py
 lib/python${MODPY_VERSION}/site-packages/raet/test/test_nacling.pyc
 lib/python${MODPY_VERSION}/site-packages/raet/test/test_template.py
 lib/python${MODPY_VERSION}/site-packages/raet/test/test_template.pyc
+lib/python${MODPY_VERSION}/site-packages/systest/
+lib/python${MODPY_VERSION}/site-packages/systest/__init__.py
+lib/python${MODPY_VERSION}/site-packages/systest/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/systest/lib/
+lib/python${MODPY_VERSION}/site-packages/systest/lib/__init__.py
+lib/python${MODPY_VERSION}/site-packages/systest/lib/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/systest/lib/data.py
+lib/python${MODPY_VERSION}/site-packages/systest/lib/data.pyc
+lib/python${MODPY_VERSION}/site-packages/systest/lib/mp_helper.py
+lib/python${MODPY_VERSION}/site-packages/systest/lib/mp_helper.pyc
+lib/python${MODPY_VERSION}/site-packages/systest/lib/netem.py
+lib/python${MODPY_VERSION}/site-packages/systest/lib/netem.pyc

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/29 10:52:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/10/19 05:47:22 ajacoutot Exp $
 
 COMMENT=		Reliable Asynchronous Event Transport protocol
 
-MODPY_EGG_VERSION=	0.6.3
+MODPY_EGG_VERSION=	0.6.5
 DISTNAME=		raet-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		net
 
@@ -21,8 +20,11 @@ MODPY_SETUPTOOLS=	Yes
 
 MODULES=		lang/python
 
-RUN_DEPENDS=		devel/py-ioflo \
+RUN_DEPENDS=		devel/py-enum34 \
+			devel/py-ioflo \
 			devel/py-six \
 			security/py-libnacl
+
+TEST_DEPENDS=		${RUN_DEPENDS}
 
 .include <bsd.port.mk>
