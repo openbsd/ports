@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/10/17 06:46:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/10/19 05:42:49 ajacoutot Exp $
 bin/ioflo
 bin/ioflo2
 lib/python${MODPY_VERSION}/site-packages/ioflo/
@@ -18,6 +18,8 @@ lib/python${MODPY_VERSION}/site-packages/ioflo/aid/aiding.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/aiding.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/blending.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/blending.pyc
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/consoling.py
+lib/python${MODPY_VERSION}/site-packages/ioflo/aid/consoling.pyc
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ioflo/aid/http/__init__.pyc
