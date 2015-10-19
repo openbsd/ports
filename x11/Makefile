@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.558 2015/10/19 20:07:07 kili Exp $
+# $OpenBSD: Makefile,v 1.559 2015/10/19 20:37:52 kili Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -118,7 +118,6 @@
      SUBDIR += hs-X11
      SUBDIR += hs-X11-xft
      SUBDIR += hs-dbus
-     SUBDIR += hs-gtk
      SUBDIR += hs-xmonad-contrib
      SUBDIR += human-icon-theme
      SUBDIR += i3

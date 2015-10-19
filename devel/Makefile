@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1399 2015/10/19 20:07:07 kili Exp $
+# $OpenBSD: Makefile,v 1.1400 2015/10/19 20:37:52 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -215,9 +215,6 @@
      SUBDIR += hs-failure
      SUBDIR += hs-fgl
      SUBDIR += hs-ghc-paths
-     SUBDIR += hs-gio
-     SUBDIR += hs-glade
-     SUBDIR += hs-glib
      SUBDIR += hs-hashable
      SUBDIR += hs-hashed-storage
      SUBDIR += hs-hashtables
@@ -241,7 +238,6 @@
      SUBDIR += hs-newtype
      SUBDIR += hs-old-locale
      SUBDIR += hs-old-time
-     SUBDIR += hs-pango
      SUBDIR += hs-parallel
      SUBDIR += hs-parsec
      SUBDIR += hs-patch-combinators
