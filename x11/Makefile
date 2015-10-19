@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.557 2015/10/13 17:01:38 jca Exp $
+# $OpenBSD: Makefile,v 1.558 2015/10/19 20:07:07 kili Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -23,7 +23,6 @@
      SUBDIR += bgs
      SUBDIR += blackbox
      SUBDIR += blast
-     SUBDIR += bluetile
      SUBDIR += bricons
      SUBDIR += bwidget
      SUBDIR += byzi

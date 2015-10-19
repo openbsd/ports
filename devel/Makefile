@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1398 2015/10/14 17:39:54 robert Exp $
+# $OpenBSD: Makefile,v 1.1399 2015/10/19 20:07:07 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -41,7 +41,6 @@
      SUBDIR += bouml
      SUBDIR += bpython
      SUBDIR += bullet
-     SUBDIR += bustle
      SUBDIR += bzr
      SUBDIR += bzr-svn
      SUBDIR += c2hs
