@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.11 2015/10/02 10:05:58 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.12 2015/10/19 08:52:43 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -875,6 +875,7 @@ webapps/docs/api/org/apache/catalina/webresources/AbstractResource.html
 webapps/docs/api/org/apache/catalina/webresources/AbstractResourceSet.html
 webapps/docs/api/org/apache/catalina/webresources/Cache.html
 webapps/docs/api/org/apache/catalina/webresources/CachedResource.html
+webapps/docs/api/org/apache/catalina/webresources/ClasspathURLStreamHandler.html
 webapps/docs/api/org/apache/catalina/webresources/Constants.html
 webapps/docs/api/org/apache/catalina/webresources/DirResourceSet.html
 webapps/docs/api/org/apache/catalina/webresources/EmptyResource.html
@@ -1727,6 +1728,7 @@ webapps/docs/api/org/apache/tomcat/util/digester/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/digester/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/digester/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/file/
+webapps/docs/api/org/apache/tomcat/util/file/ConfigFileLoader.html
 webapps/docs/api/org/apache/tomcat/util/file/Matcher.html
 webapps/docs/api/org/apache/tomcat/util/file/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/file/package-summary.html
