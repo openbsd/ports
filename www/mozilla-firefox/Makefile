@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.281 2015/10/16 12:04:40 landry Exp $
+# $OpenBSD: Makefile,v 1.282 2015/10/19 08:09:23 dcoppa Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -8,6 +8,7 @@ MOZILLA_VERSION =	41.0.2
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
+REVISION =		0
 BROKEN-sparc64 =	xpcshell SIGBUS during fake
 EXTRACT_SUFX =		.tar.xz
 
