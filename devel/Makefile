@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1401 2015/10/19 21:03:35 kili Exp $
+# $OpenBSD: Makefile,v 1.1402 2015/10/20 00:10:18 abieber Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -448,15 +448,6 @@
      SUBDIR += nasm
      SUBDIR += netbeans
      SUBDIR += ninja
-     SUBDIR += node-async
-     SUBDIR += node-bindings
-     SUBDIR += node-buffer-writer
-     SUBDIR += node-cloned
-     SUBDIR += node-expresso
-     SUBDIR += node-fibers
-     SUBDIR += node-generic-pool
-     SUBDIR += node-gir
-     SUBDIR += node-mnm
      SUBDIR += npth
      SUBDIR += nspr
      SUBDIR += ocaml-batteries
