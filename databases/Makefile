@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.301 2015/10/11 21:39:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.302 2015/10/20 00:09:10 abieber Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -46,8 +46,6 @@
      SUBDIR += mysql2pgsql
      SUBDIR += mysqlcc
      SUBDIR += mytop
-     SUBDIR += node-pg
-     SUBDIR += node-sqlite3
      SUBDIR += ocaml-postgresql
      SUBDIR += ocaml-sqlite3
      SUBDIR += openldap
