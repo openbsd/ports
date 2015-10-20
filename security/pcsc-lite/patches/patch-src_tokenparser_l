@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_tokenparser_l,v 1.1 2015/10/20 09:57:23 dcoppa Exp $
+
+commit 1f37c57feb81e8d263c696a845c4d054bdc11d0c
+Author: Ludovic Rousseau <ludovic.rousseau@free.fr>
+Date:   Fri Aug 7 15:04:12 2015 +0200
+
+tokenparser.l: config.h is a local file
+
+Use "config.h" instead of <config.h> so that the config.h is found
+in the local source directory.
+
+--- src/tokenparser.l.orig	Tue Oct 20 10:36:41 2015
++++ src/tokenparser.l	Tue Oct 20 10:36:59 2015
+@@ -42,7 +42,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
+ 
+ %{
+ 
+-#include <config.h>
++#include "config.h"
+ #include <stdio.h>
+ #include <string.h>
+ #include <errno.h>
