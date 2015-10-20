@@ -1,2 +1,0 @@
-Non-blocking PostgreSQL client for Node.js. Pure JavaScript and native
-libpq bindings. Active development, well tested, and production use.
