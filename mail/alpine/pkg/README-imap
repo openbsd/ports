@@ -1,4 +1,4 @@
-$OpenBSD: README-imap,v 1.2 2014/07/10 13:09:06 ajacoutot Exp $
+$OpenBSD: README-imap,v 1.3 2015/10/20 19:36:46 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -32,10 +32,10 @@ keys to /etc/ssl/private/{imapd,ipop3d}.pem.  See ssl(8) for how to do this.
 
 
 If you want to use the included mailbox lock program, you need to enable
-the setgid bit on the mlock binary, then give the "smmsp" group write
+the setgid bit on the mlock binary, then give the "_smmsp" group write
 permission on the /var/mail directory.  As root:
  chmod 2555 ${TRUEPREFIX}/libexec/mlock
- chgrp smmsp /var/mail
+ chgrp _smmsp /var/mail
  chmod 775 /var/mail
 
 Note that there are security implications to this!
