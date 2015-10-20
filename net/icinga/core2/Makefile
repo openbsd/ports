@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.32 2015/08/25 15:22:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2015/10/20 13:54:13 sthen Exp $
 
-BROKEN =	doesn't startup correctly; ConfigItem::ActivateItems() doesn't proceed after DynamicObject::RestoreObjects() call
 BROKEN-hppa =	needs 64-bit atomic ops; __sync_add_and_fetch_4
 SHARED_ONLY =	Yes
 
@@ -8,8 +7,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.3.8
-REVISION-main =	0
+V =		2.3.11
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2

@@ -1,0 +1,29 @@
+$OpenBSD: patch-lib_base_timer_hpp,v 1.1 2015/10/20 13:54:13 sthen Exp $
+
+Revert post-2.2.1 commit which causes hangs at startup on OpenBSD
+https://github.com/Icinga/icinga2/commit/86819f446e20f6aa0efab45d1e9e7eb87a2bd2b1.patch
+
+--- lib/base/timer.hpp.orig	Mon Oct 19 10:14:40 2015
++++ lib/base/timer.hpp	Tue Oct 20 14:19:55 2015
+@@ -52,6 +52,9 @@ class I2_BASE_API Timer : public Object (public)
+ 
+ 	boost::signals2::signal<void(const Timer::Ptr&)> OnTimerExpired;
+ 
++	static void Initialize(void);
++	static void Uninitialize(void);
++
+ 	class Holder {
+ 	public:
+ 		Holder(Timer *timer)
+@@ -87,11 +90,6 @@ class I2_BASE_API Timer : public Object (public)
+ 	void InternalReschedule(bool completed, double next = -1);
+ 
+ 	static void TimerThreadProc(void);
+-
+-	static void Initialize(void);
+-	static void Uninitialize(void);
+-
+-	friend class Application;
+ };
+ 
+ }

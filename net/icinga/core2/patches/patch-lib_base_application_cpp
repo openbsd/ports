@@ -1,0 +1,51 @@
+$OpenBSD: patch-lib_base_application_cpp,v 1.1 2015/10/20 13:54:13 sthen Exp $
+
+Revert post-2.2.1 commit which causes hangs at startup on OpenBSD
+https://github.com/Icinga/icinga2/commit/86819f446e20f6aa0efab45d1e9e7eb87a2bd2b1.patch
+
+--- lib/base/application.cpp.orig	Mon Oct 19 10:14:40 2015
++++ lib/base/application.cpp	Tue Oct 20 14:20:36 2015
+@@ -117,7 +117,7 @@ void Application::Exit(int rc)
+ 		logger->Flush();
+ 	}
+ 
+-	UninitializeBase();
++	Timer::Uninitialize();
+ #ifdef I2_DEBUG
+ 	exit(rc);
+ #else /* I2_DEBUG */
+@@ -140,20 +140,8 @@ void Application::InitializeBase(void)
+ #endif /* _WIN32 */
+ 
+ 	Utility::ExecuteDeferredInitializers();
+-
+-	/* make sure the thread pool gets initialized */
+-	GetTP();
+-
+-	Timer::Initialize();
+ }
+ 
+-void Application::UninitializeBase(void)
+-{
+-	Timer::Uninitialize();
+-
+-	GetTP().Stop();
+-}
+-
+ /**
+  * Retrieves a pointer to the application singleton object.
+  *
+@@ -319,7 +307,12 @@ mainloop:
+ 	DynamicObject::StopObjects();
+ 	Application::GetInstance()->OnShutdown();
+ 
+-	UninitializeBase();
++#ifdef _DEBUG
++	GetTP().Stop();
++	m_ShuttingDown = false;
++
++	Timer::Uninitialize();
++#endif /* _DEBUG */
+ }
+ 
+ void Application::OnShutdown(void)
