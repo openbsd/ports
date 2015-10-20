@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.359 2015/09/20 12:50:48 landry Exp $
+# $OpenBSD: Makefile,v 1.360 2015/10/20 00:12:05 abieber Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -119,10 +119,6 @@
      SUBDIR += ncdu
      SUBDIR += ndesk-dbus
      SUBDIR += ndesk-dbus-glib
-     SUBDIR += node-always
-     SUBDIR += node-daemon
-     SUBDIR += node-rmdir
-     SUBDIR += node-syslog
      SUBDIR += ntfs-3g
      SUBDIR += nut
      SUBDIR += opam
