@@ -1,0 +1,87 @@
+$OpenBSD: patch-src_ccid_usb_c,v 1.3 2015/10/20 09:51:09 dcoppa Exp $
+
+commit 7a46f702e3c4752304d94efc61a84618a0a566c9
+Author: Ludovic Rousseau <ludovic.rousseau@free.fr>
+Date:   Thu Aug 27 09:51:13 2015 +0200
+
+Use libusb_error_name() to display the error name
+
+libusb provides libusb_error_name() to display a human readable
+version of the error code returned by libusb.
+
+LIBUSB_ERROR_BUSY is easier to understand than -6
+
+commit 94142da9a4b11bf9cd2b429e1a15139936c751af
+Author: Ludovic Rousseau <ludovic.rousseau@free.fr>
+Date:   Wed Sep 16 18:10:45 2015 +0200
+
+OpenUSBByName(): fix the order of interfaces in log
+
+The log message "Found interface %d but expecting %d" has the
+parameters inverted.
+
+--- src/ccid_usb.c.orig	Fri Apr 10 20:30:23 2015
++++ src/ccid_usb.c	Tue Oct 20 11:02:24 2015
+@@ -307,7 +307,7 @@ status_t OpenUSBByName(unsigned int reader_index, /*@n
+ 		rv = libusb_init(&ctx);
+ 		if (rv != 0)
+ 		{
+-			DEBUG_CRITICAL2("libusb_init failed: %d", rv);
++			DEBUG_CRITICAL2("libusb_init failed: %s", libusb_error_name(rv));
+ 			return_value = STATUS_UNSUCCESSFUL;
+ 			goto end1;
+ 		}
+@@ -496,8 +496,8 @@ status_t OpenUSBByName(unsigned int reader_index, /*@n
+ 				r = libusb_open(dev, &dev_handle);
+ 				if (r < 0)
+ 				{
+-					DEBUG_CRITICAL4("Can't libusb_open(%d/%d): %d",
+-						bus_number, device_address, r);
++					DEBUG_CRITICAL4("Can't libusb_open(%d/%d): %s",
++						bus_number, device_address, libusb_error_name(r));
+ 
+ 					continue;
+ 				}
+@@ -522,8 +522,9 @@ again:
+ 						if (r < 0)
+ 						{
+ 							(void)libusb_close(dev_handle);
+-							DEBUG_CRITICAL4("Can't set configuration on %d/%d: %d",
+-									bus_number, device_address, r);
++							DEBUG_CRITICAL4("Can't set configuration on %d/%d: %s",
++									bus_number, device_address,
++									libusb_error_name(r));
+ 							continue;
+ 						}
+ 					}
+@@ -534,8 +535,8 @@ again:
+ 					{
+ #endif
+ 						(void)libusb_close(dev_handle);
+-						DEBUG_CRITICAL4("Can't get config descriptor on %d/%d: %d",
+-							bus_number, device_address, r);
++						DEBUG_CRITICAL4("Can't get config descriptor on %d/%d: %s",
++							bus_number, device_address, libusb_error_name(r));
+ 						continue;
+ 					}
+ #ifdef __APPLE__
+@@ -570,7 +571,7 @@ again:
+ 					/* an interface was specified and it is not the
+ 					 * current one */
+ 					DEBUG_INFO3("Found interface %d but expecting %d",
+-						interface_number, interface);
++						interface, interface_number);
+ 					DEBUG_INFO3("Wrong interface for USB device %d/%d."
+ 						" Checking next one.", bus_number, device_address);
+ 
+@@ -584,8 +585,8 @@ again:
+ 				if (r < 0)
+ 				{
+ 					(void)libusb_close(dev_handle);
+-					DEBUG_CRITICAL4("Can't claim interface %d/%d: %d",
+-						bus_number, device_address, r);
++					DEBUG_CRITICAL4("Can't claim interface %d/%d: %s",
++						bus_number, device_address, libusb_error_name(r));
+ 					claim_failed = TRUE;
+ 					interface_number = -1;
+ 					continue;
