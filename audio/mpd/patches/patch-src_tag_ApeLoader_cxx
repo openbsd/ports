@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_tag_ApeLoader_cxx,v 1.1 2015/10/20 15:10:42 dcoppa Exp $
+
+commit 205fba74cffffb9df985cdf928101633ffc41772
+Author: Max Kellermann <max@duempel.org>
+Date:   Fri Oct 16 14:40:46 2015 +0200
+
+tag/ApeLoader: fix buffer overflow after unterminated key
+
+--- src/tag/ApeLoader.cxx.orig	Tue Oct 20 16:35:46 2015
++++ src/tag/ApeLoader.cxx	Tue Oct 20 16:32:38 2015
+@@ -78,12 +78,12 @@ ape_scan_internal(FILE *fp, ApeTagCallback callback)
+ 
+ 		/* get the key */
+ 		const char *key = p;
+-		while (remaining > size && *p != '\0') {
+-			p++;
+-			remaining--;
+-		}
+-		p++;
+-		remaining--;
++		const char *key_end = (const char *)memchr(p, '\0', remaining);
++		if (key_end == nullptr)
++			break;
++
++		p = key_end + 1;
++		remaining -= p - key;
+ 
+ 		/* get the value */
+ 		if (remaining < size)
