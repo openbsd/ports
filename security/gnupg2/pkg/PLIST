@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/09/06 18:43:46 jca Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/10/20 09:20:50 pea Exp $
 @option no-default-conflict
 @conflict gnupg->=2
 @bin bin/dirmngr
@@ -57,6 +57,7 @@ share/doc/gnupg2/examples/trustlist.txt
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/gnupg/
 share/gnupg/com-certs.pem
+share/gnupg/dirmngr-conf.skel
 share/gnupg/distsigkey.gpg
 share/gnupg/gpg-conf.skel
 share/gnupg/help.be.txt
