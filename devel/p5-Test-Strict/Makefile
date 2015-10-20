@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/10/03 09:03:02 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2015/10/20 05:49:33 benoit Exp $
 
 COMMENT =	check syntax, presence of use strict; and test coverage
 
 MODULES =	cpan
-DISTNAME =	Test-Strict-0.28
+DISTNAME =	Test-Strict-0.29
 CATEGORIES =	devel
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
