@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2015/10/16 16:22:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2015/10/20 13:13:52 ajacoutot Exp $
 
 COMMENT =	extract, list & test files in a ZIP archive
 
 VERSION =	6.0
 DISTNAME =	unzip${VERSION:S/.//}
 PKGNAME =	unzip-${VERSION}
-REVISION =	8
+REVISION =	9
 CATEGORIES =	archivers
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=infozip/} \
 		ftp://ftp.info-zip.org/pub/infozip/src/
