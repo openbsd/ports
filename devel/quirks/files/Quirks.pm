@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.316 2015/10/20 19:07:44 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.317 2015/10/20 21:34:29 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -382,6 +382,8 @@ my $stem_extensions = {
 	'pudb' => 'py-pudb',
 	'openexr-ctl' => 'ctl',
 	'nimrod' => 'nim',
+	'icinga2-mysql' => 'icinga2-ido-mysql',
+	'icinga2-pgsql' => 'icinga2-ido-pgsql',
 };
 
 # reasons for obsolete packages
