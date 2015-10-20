@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.388 2015/10/15 05:40:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.389 2015/10/20 00:11:31 abieber Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -119,7 +119,6 @@
      SUBDIR += nfsshell
      SUBDIR += nikto
      SUBDIR += nipper
-     SUBDIR += node-bcrypt
      SUBDIR += nss
      SUBDIR += oath-toolkit
      SUBDIR += ocaml-cryptokit
