@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/12/21 10:29:48 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/10/20 13:38:35 dcoppa Exp $
 @bin bin/fbpanel
 lib/fbpanel/
 lib/fbpanel/dclock.so
@@ -19,6 +19,7 @@ lib/fbpanel/wincmd.so
 libexec/fbpanel/
 libexec/fbpanel/make_profile
 libexec/fbpanel/xlogout
+@man man/man1/fbpanel.1
 share/examples/fbpanel/
 share/examples/fbpanel/default
 share/fbpanel/

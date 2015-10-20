@@ -1,4 +1,4 @@
-$OpenBSD: patch-exec_make_profile_in,v 1.4 2012/01/14 22:14:10 dcoppa Exp $
+$OpenBSD: patch-exec_make_profile_in,v 1.5 2015/10/20 13:38:35 dcoppa Exp $
 
 remove bashism
 fix default config file path
@@ -33,21 +33,21 @@ task :-)
  
      local browser terminal filer
 -    for browser in x-www-browser firefox opera; do
-+    for browser in firefox firefox36 firefox35 chrome midori xxxterm epiphany opera; do
++    for browser in firefox chrome iridium midori epiphany xombrero ; do
          if which $browser 2> /dev/null > /dev/null; then
              opt="$opt -e s/x-www-browser/$browser/"
              break
          fi
      done
 -    for terminal in x-terminal urxvt gnome-terminal; do
-+    for terminal in urxvt gnome-terminal xfce4-terminal konsole roxterm xterm; do
++    for terminal in urxvt xfce4-terminal gnome-terminal konsole roxterm st xterm ; do
          if which $terminal 2> /dev/null > /dev/null; then
              opt="$opt -e s/x-terminal/$terminal/"
              break
          fi
      done
 -    for filer in x-file-manager thunar pcmanfm rox; do
-+    for filer in Thunar nautilus pcmanfm emelfm2 rox krusader konqueror; do
++    for filer in thunar nautilus dolphin pcmanfm xfe emelfm2 rox konqueror krusader ; do
          if which $filer 2> /dev/null > /dev/null; then
              opt="$opt -e s/x-file-manager/$filer/"
              break

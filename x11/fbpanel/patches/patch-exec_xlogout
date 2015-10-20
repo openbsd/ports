@@ -1,4 +1,4 @@
-$OpenBSD: patch-exec_xlogout,v 1.1 2010/04/13 16:28:44 dcoppa Exp $
+$OpenBSD: patch-exec_xlogout,v 1.2 2015/10/20 13:38:35 dcoppa Exp $
 
 fix xlogout script on OpenBSD
 use some sane defaults for X session names: that's a best effort 
@@ -12,7 +12,7 @@ task :-)
  
 -# xlogout - logs user out of its X session
 -# Linux specific since uses /proc
-+XSESS=$(pgrep -U `id -u` -f '(Xsession|cwm|fvwm|gnome-session|startkde|xfce4-session|xinit|xinitrc|xsession)')
++XSESS=$(pgrep -U `id -u` -f '(Xsession|cwm|fvwm|gnome-session|openbox|openbox-session|startkde|xfce4-session|xinit|xinitrc|xsession)')
  
 -# get display name without screen number
 -[ -z "$DISPLAY" ] && exit 1

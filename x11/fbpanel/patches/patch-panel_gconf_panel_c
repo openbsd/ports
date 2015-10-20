@@ -1,0 +1,17 @@
+$OpenBSD: patch-panel_gconf_panel_c,v 1.1 2015/10/20 13:38:35 dcoppa Exp $
+
+Fix typo in the GUI
+Bug-Debian: http://bugs.debian.org/590727
+Author: Dererk <dererk@debian.org>
+
+--- panel/gconf_panel.c.orig	Tue Oct 20 13:40:56 2015
++++ panel/gconf_panel.c	Tue Oct 20 13:42:01 2015
+@@ -233,7 +233,7 @@ mk_geom_block(xconf *xc)
+ 
+     w = gconf_edit_enum(geom_block, xconf_get(xc, "allign"),
+         allign_enum);
+-    gconf_block_add(geom_block, gtk_label_new("Allignment"), TRUE);
++    gconf_block_add(geom_block, gtk_label_new("Alignment"), TRUE);
+     gconf_block_add(geom_block, w, FALSE);
+     allign_opt = w;
+     

@@ -1,0 +1,94 @@
+$OpenBSD: patch-data_man_fbpanel_1_in,v 1.1 2015/10/20 13:38:35 dcoppa Exp $
+
+Fix some encoding issues and update documentation and paths
+Author: Dererk <dererk@debian.org>
+
+--- data/man/fbpanel.1.in.orig	Mon Jun  1 16:55:30 2009
++++ data/man/fbpanel.1.in	Tue Oct 20 15:17:16 2015
+@@ -1,15 +1,16 @@
+ .\" man page originally for the Debian/GNU Linux system
+-.TH FBPANEL "1" "May 2005" "fbpanel %%version%%" "User Commands"
++.TH FBPANEL "1" "2010-07-11" "fbpanel %%version%%" "User Commands"
+ .SH NAME
+-fbpanel \- a NETWM compliant lightweight GTK2-based panel for UNIX desktop.
++fbpanel \- a NETWM compliant lightweight GTK2-based panel for the UNIX desktop.
+ .SH SYNOPSIS
+ .B fbpanel
+ [\fIOPTION\fR]
+ .br
+ .SH DESCRIPTION
+ .PP
+-fbpanel is desktop panel which provides graphical information and feedback about 
+-desktop activity and allows interaction with the window manager. 
++fbpanel is a desktop panel which provides graphical informations
++and feedback about desktop activity and allows interaction with the
++window manager.
+ It features:
+ .HP
+ \(bu taskbar \- shows a list of the managed windows (tasks)
+@@ -26,7 +27,7 @@ It features:
+ .HP
+ \(bu system tray \- tray for XEMBED icons (aka docklets)
+ .PP
+-fbpanel requires NETWM (www.freedesktop.org) compliant window manager. 
++fbpanel requires a NETWM (www.freedesktop.org) compliant window manager. 
+ You can run many instances of fbpanel each with its own configuration
+ (see \fBOPTIONS\fR below).
+ 
+@@ -48,42 +49,36 @@ http://fbpanel.sf.net/
+ \-- open configuration dialog
+ .TP
+ \fB\--profile <name>\fR 
+-\-- use specified profile. The profile is loaded from the file ~/.fbpanel/<name>. 
+-If that fails, fbpanel will load @DATADIR@/<name>. 
+-No -p option is equivalent to -p default
++\-- use specified profile. The profile is loaded from the file ~/.config/fbpanel/<name>. 
++No \-p option is equivalent to \-p default
+ .TP
+ \fB\-h\fR 
+-\-- same as --help
++\-- same as \-\-help
+ .TP
+ \fB\-p\fR 
+-\-- same as --profile
++\-- same as \-\-profile
+ .TP
+ \fB\-v\fR 
+-\-- same as --version
++\-- same as \-\-version
+ .TP
+ \fB\-C\fR 
+-\-- same as --configure
++\-- same as \-\-configure
+ 
+ .SH CUSTOMIZATION
+-To change default settings, copy profile file to your home directory
+-.br
+-      mkdir -p ~/.fbpanel
+-      cp @DATADIR@/default ~/.fbpanel
+-.br
+-and edit it. Default profile file contains comments and explanation inside,
+-so it should be easy. For full list of options please visit fbpanel's home page.
+ 
++fbpanel will create a default profile file in case no one exists already.
++Default profile file contains comments and explanations inside, 
++so it should be easy.
++
+ .SH FILES
+ .TP
+-@DATADIR@/
+-Directory with system-wide resources and default settings
+-.TP
+-~/.fbpanel/
++~/.config/fbpanel/
+ Directory with the user's private profiles
+ .TP
+-~/.fbpanel/default
++~/.config/fbpanel/default
+ The user's default profile.
+ .SH AUTHOR
+ fbpanel was written by Anatoly Asviyan <aanatoly@users.sf.net>.
+ This manual page was originally written for the
+-Debian GNU/Linux system by Shyamal Prasad <shyamal@member.fsf.org>.
++Debian GNU/Linux system by Shyamal Prasad <shyamal@member.fsf.org> and updated
++by Ulises Vitulli <dererk@debian.org>.

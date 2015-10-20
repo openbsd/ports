@@ -1,0 +1,19 @@
+$OpenBSD: patch-scripts_custom_sh,v 1.1 2015/10/20 13:38:35 dcoppa Exp $
+
+https://gitweb.gentoo.org/repo/gentoo.git/plain/x11-misc/fbpanel/files/fbpanel-6.1-underlinking.patch
+
+--- scripts/custom.sh.orig	Tue Oct 20 13:43:52 2015
++++ scripts/custom.sh	Tue Oct 20 13:45:07 2015
+@@ -18,10 +18,10 @@
+ add_feature dependency "disable dependency tracking" disabled
+ 
+ add_var glib_cflags "glib cflags" '`RFS=$rfs scripts/rfs-pkg-config --cflags glib-2.0`'
+-add_var gtk_cflags "gtk cflags" '`RFS=$rfs scripts/rfs-pkg-config --cflags gtk+-2.0`'
++add_var gtk_cflags "gtk cflags" '`RFS=$rfs scripts/rfs-pkg-config --cflags gtk+-2.0 x11`'
+ 
+ add_var glib_libs "glib libs" '`RFS=$rfs scripts/rfs-pkg-config --libs glib-2.0`'
+-add_var gtk_libs "gtk libs" '`RFS=$rfs scripts/rfs-pkg-config --libs gtk+-2.0`'
++add_var gtk_libs "gtk libs" '`RFS=$rfs scripts/rfs-pkg-config --libs gtk+-2.0` -lm'
+ 
+ add_var cflagsx "C flags" '-I$topdir/panel $glib_cflags $gtk_cflags -fPIC'
+ add_var ldflagsx "linker flags" '$glib_libs $gtk_libs'
