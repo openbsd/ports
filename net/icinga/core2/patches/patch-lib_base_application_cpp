@@ -1,53 +1,25 @@
-$OpenBSD: patch-lib_base_application_cpp,v 1.2 2015/10/20 14:08:57 sthen Exp $
+$OpenBSD: patch-lib_base_application_cpp,v 1.3 2015/10/21 09:03:22 sthen Exp $
 
-Revert post-2.2.1 commit which causes hangs at startup on OpenBSD
-https://github.com/Icinga/icinga2/commit/86819f446e20f6aa0efab45d1e9e7eb87a2bd2b1.patch
+From e93dd3cf15dab8c63d6510334b1b27b1e208f83a Mon Sep 17 00:00:00 2001
+From: Gunnar Beutner <gunnar@beutner.name>
+Date: Wed, 21 Oct 2015 07:02:49 +0200
+Subject: [PATCH] Ensure that the main thread pool gets re-initialized properly
+ after fork()
 
-https://dev.icinga.org/issues/10410
+refs #10410
+---
+ lib/base/application.cpp |  2 +-
+ lib/base/threadpool.cpp  | 12 ++++++++++--
+ 2 files changed, 11 insertions(+), 3 deletions(-)
 
---- lib/base/application.cpp.orig	Mon Oct 19 10:14:40 2015
-+++ lib/base/application.cpp	Tue Oct 20 14:20:36 2015
-@@ -117,7 +117,7 @@ void Application::Exit(int rc)
- 		logger->Flush();
- 	}
- 
--	UninitializeBase();
-+	Timer::Uninitialize();
- #ifdef I2_DEBUG
- 	exit(rc);
- #else /* I2_DEBUG */
-@@ -140,20 +140,8 @@ void Application::InitializeBase(void)
- #endif /* _WIN32 */
- 
+--- lib/base/application.cpp.orig	Wed Oct 21 09:23:05 2015
++++ lib/base/application.cpp	Wed Oct 21 09:23:28 2015
+@@ -142,7 +142,7 @@ void Application::InitializeBase(void)
  	Utility::ExecuteDeferredInitializers();
--
--	/* make sure the thread pool gets initialized */
+ 
+ 	/* make sure the thread pool gets initialized */
 -	GetTP();
--
--	Timer::Initialize();
++	GetTP().Start();
+ 
+ 	Timer::Initialize();
  }
- 
--void Application::UninitializeBase(void)
--{
--	Timer::Uninitialize();
--
--	GetTP().Stop();
--}
--
- /**
-  * Retrieves a pointer to the application singleton object.
-  *
-@@ -319,7 +307,12 @@ mainloop:
- 	DynamicObject::StopObjects();
- 	Application::GetInstance()->OnShutdown();
- 
--	UninitializeBase();
-+#ifdef _DEBUG
-+	GetTP().Stop();
-+	m_ShuttingDown = false;
-+
-+	Timer::Uninitialize();
-+#endif /* _DEBUG */
- }
- 
- void Application::OnShutdown(void)
