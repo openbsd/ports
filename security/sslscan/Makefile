@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/16 21:24:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/10/21 13:23:54 sthen Exp $
 
 COMMENT=	SSL port scanner
 
-V=		1.10.6
-REVISION=	0
+V=		1.11.0
 DISTNAME=	sslscan-$V
 DISTFILES=	${DISTNAME}{$V-rbsec}.tar.gz
 WRKDIST=	${WRKDIR}/${DISTNAME}-rbsec
@@ -11,6 +10,8 @@ WRKDIST=	${WRKDIR}/${DISTNAME}-rbsec
 CATEGORIES=	security net
 
 HOMEPAGE=	https://github.com/rbsec/sslscan
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
