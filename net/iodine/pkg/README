@@ -1,0 +1,13 @@
+$OpenBSD: README,v 1.1 2015/10/21 21:24:42 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Starting iodined at boot time
+=============================
+The iodine server must be configured through the command line, see iodined(8)
+for options. An rc.d(8) script is provided, to start iodined at boot time:
+
+# rcctl set iodined status on
+# rcctl set iodined flags -u _iodine -t /var/empty -c -P secret 192.168.53.1 t1.mydomain.com

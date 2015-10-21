@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: iodined.rc,v 1.1 2015/10/21 21:24:42 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/sbin/iodined"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon} .*"
+rc_reload=NO
+
+rc_cmd $1
