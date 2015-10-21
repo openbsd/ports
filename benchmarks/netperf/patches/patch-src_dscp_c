@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dscp_c,v 1.1 2013/04/18 18:29:20 sthen Exp $
---- src/dscp.c.orig	Thu Apr 18 17:16:01 2013
-+++ src/dscp.c	Thu Apr 18 17:16:16 2013
-@@ -52,6 +52,9 @@ const char * iptos2str(int iptos);
+$OpenBSD: patch-src_dscp_c,v 1.2 2015/10/21 13:10:00 sthen Exp $
+--- src/dscp.c.orig	Thu Oct 11 21:42:06 2012
++++ src/dscp.c	Wed Oct 21 13:59:28 2015
+@@ -56,6 +56,9 @@ const char * iptos2str(int iptos);
  #if HAVE_NETINET_IN_SYSTM_H
  #include <netinet/in_systm.h>
  #endif

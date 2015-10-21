@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2014/04/30 14:01:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2015/10/21 13:10:00 sthen Exp $
 
 COMMENT=	network performance benchmark
 
-DISTNAME=	netperf-2.6.0
-REVISION=	1
+DISTNAME=	netperf-2.7.0
 
 CATEGORIES=	benchmarks net
 
@@ -18,7 +17,7 @@ WANTLIB += c m
 MASTER_SITES=	ftp://ftp.netperf.org/netperf/ \
 		ftp://ftp.netperf.org/netperf/archive/
 
-AUTOCONF_VERSION= 2.67
+AUTOCONF_VERSION= 2.68
 CONFIGURE_STYLE=  autoconf
 CONFIGURE_ARGS=   --enable-demo
 SEPARATE_BUILD=	  Yes
