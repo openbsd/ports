@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2015/10/08 12:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2015/10/21 11:06:35 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
-V=		1.6.8
+V=		1.6.9
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
@@ -81,7 +81,7 @@ CFLAGS+=	-msse3
 CXXFLAGS=	${CFLAGS}
 
 post-patch:
-	sed -i 's,/usr/X11R6,${X11BASE},' \
+	@sed -i 's,/usr/X11R6,${X11BASE},' \
 	    ${WRKSRC}/src/external/colord-gtk/CMakeLists.txt
 
 post-install:
