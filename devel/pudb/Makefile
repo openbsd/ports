@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2015/09/29 10:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/10/21 16:23:50 jca Exp $
 
 COMMENT =		console-based visual debugger for Python
 
-MODPY_EGG_VERSION =	2015.3
-REVISION =		1
+MODPY_EGG_VERSION =	2015.4.1
 DISTNAME =		pudb-${MODPY_EGG_VERSION}
 PKGNAME =		py-pudb-${MODPY_EGG_VERSION}
 
@@ -26,8 +25,12 @@ TEST_DEPENDS =          ${RUN_DEPENDS}
 FLAVORS =		python3
 FLAVOR ?=
 
-PUDB_MODPY_BIN_SUFFIX =	${MODPY_BIN_SUFFIX:S/-//}
+.if ${FLAVOR:Mpython3}
+PUDB_SCRIPT_NAME =	pudb3
+.else
+PUDB_SCRIPT_NAME =	pudb
+.endif
 
-SUBST_VARS +=		PUDB_MODPY_BIN_SUFFIX
+SUBST_VARS +=		PUDB_SCRIPT_NAME
 
 .include <bsd.port.mk>
