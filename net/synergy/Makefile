@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.28 2015/04/05 13:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2015/10/21 19:51:28 jturner Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
-DISTNAME=		synergy-${GH_TAGNAME}
-REVISION=		0
+VERSION=		1.7.4
+DISTNAME=		synergy-${VERSION}
 CATEGORIES=		net x11
 
 GH_ACCOUNT=		synergy
 GH_PROJECT=		synergy
-GH_TAGNAME=		1.6.2
+GH_TAGNAME=		v${VERSION}-stable
 
 HOMEPAGE=		http://synergy-foss.org/
 
@@ -16,10 +16,9 @@ HOMEPAGE=		http://synergy-foss.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xi Xinerama Xrandr Xtst \
-			c cryptopp curl m pthread stdc++
+			c curl m pthread stdc++
 
-LIB_DEPENDS=		devel/cryptopp \
-			net/curl
+LIB_DEPENDS=		net/curl
 
 MODULES=		devel/cmake
 

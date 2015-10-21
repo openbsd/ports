@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_lib_arch_CMakeLists_txt,v 1.1 2015/10/21 19:51:28 jturner Exp $
+--- src/lib/arch/CMakeLists.txt.orig	Thu Oct 15 21:09:45 2015
++++ src/lib/arch/CMakeLists.txt	Thu Oct 15 21:09:51 2015
+@@ -50,5 +50,5 @@ endif()
+ add_library(arch STATIC ${sources})
+ 
+ if (UNIX)
+-	target_link_libraries(arch dl ${libs})
++	target_link_libraries(arch ${libs})
+ endif()

@@ -1,16 +1,16 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.7 2015/01/03 04:59:27 bcallah Exp $
---- CMakeLists.txt.orig	Thu Nov  6 13:09:27 2014
-+++ CMakeLists.txt	Thu Nov  6 19:59:59 2014
-@@ -76,7 +76,7 @@ if (UNIX)
+$OpenBSD: patch-CMakeLists_txt,v 1.8 2015/10/21 19:51:28 jturner Exp $
+--- CMakeLists.txt.orig	Fri Aug  7 18:56:23 2015
++++ CMakeLists.txt	Thu Oct 15 17:57:00 2015
+@@ -77,7 +77,7 @@ if (UNIX)
  
  	# warnings as errors:
  	# we have a problem with people checking in code with warnings.
 -	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
 +	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
  
- 	# For config.h, detect the libraries, functions, etc.
- 	include(CheckIncludeFiles)
-@@ -98,7 +98,7 @@ if (UNIX)
+ 	if (NOT APPLE)
+ 		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+@@ -103,7 +103,7 @@ if (UNIX)
  	check_include_files(strings.h HAVE_STRINGS_H)
  	check_include_files(string.h HAVE_STRING_H)
  	check_include_files(sys/select.h HAVE_SYS_SELECT_H)
@@ -19,7 +19,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.7 2015/01/03 04:59:27 bcallah Exp $
  	check_include_files(sys/stat.h HAVE_SYS_STAT_H)
  	check_include_files(sys/time.h HAVE_SYS_TIME_H)
  	check_include_files(sys/utsname.h HAVE_SYS_UTSNAME_H)
-@@ -109,7 +109,6 @@ if (UNIX)
+@@ -114,7 +114,6 @@ if (UNIX)
  	check_function_exists(gmtime_r HAVE_GMTIME_R)
  	check_function_exists(nanosleep HAVE_NANOSLEEP)
  	check_function_exists(poll HAVE_POLL)
@@ -27,7 +27,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.7 2015/01/03 04:59:27 bcallah Exp $
  	check_function_exists(strftime HAVE_STRFTIME)
  	check_function_exists(vsnprintf HAVE_VSNPRINTF)
  	check_function_exists(inet_aton HAVE_INET_ATON)
-@@ -152,6 +151,8 @@ if (UNIX)
+@@ -157,6 +156,8 @@ if (UNIX)
  		message(FATAL_ERROR "Missing library: pthread")
  	endif()
  
@@ -36,7 +36,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.7 2015/01/03 04:59:27 bcallah Exp $
  	# curl is used on both Linux and Mac
  	find_package(CURL)
  	if (CURL_FOUND)
-@@ -196,78 +197,60 @@ if (UNIX)
+@@ -201,77 +202,59 @@ if (UNIX)
  
  	else() # not-apple
  
@@ -142,20 +142,11 @@ $OpenBSD: patch-CMakeLists_txt,v 1.7 2015/01/03 04:59:27 bcallah Exp $
 +		if(X11_Xrandr_FOUND)
 +			set(HAVE_X11_EXTENSIONS_XRANDR_H 1)
 +			list(APPEND libs ${X11_Xrandr_LIB})
- 		endif()
++		endif()
 +	
 +		if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
 +			include_directories(${OPENBSD_LOCALBASE}/include)
 +			link_directories(${OPENBSD_LOCALBASE}/lib)
-+		endif()
+ 		endif()
  
  	endif()
- 
-@@ -319,7 +302,6 @@ else() # not-unix
- endif()
- 
- add_subdirectory(src)
--add_subdirectory(ext)
- 
- if (WIN32)
- 	# TODO:	consider using /analyze to uncover potential bugs in the source code.
