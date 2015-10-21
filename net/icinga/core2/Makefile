@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/10/21 09:03:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2015/10/21 09:34:03 sthen Exp $
 
 BROKEN-hppa =	needs 64-bit atomic ops; __sync_add_and_fetch_4
 SHARED_ONLY =	Yes
@@ -9,6 +9,7 @@ COMMENT-pgsql =	PostgreSQL support for icinga2
 
 V =		2.3.11
 REVISION =	1
+REVISION-main =	2
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -30,6 +31,7 @@ MODULES =		devel/cmake
 
 BUILD_DEPENDS =		devel/bison \
 			devel/flex
+# needs flex 2.5.31+
 
 MULTI_PACKAGES =	-main -mysql -pgsql
 
@@ -49,31 +51,23 @@ LIB_DEPENDS-pgsql =	${LIB_DEPENDS} databases/postgresql
 RUN_DEPENDS-pgsql =	${BASE_PKGPATH},-main
 
 CONFIGURE_ARGS += \
-	-DCMAKE_INSTALL_MANDIR:String="${PREFIX}/man" \
-	-DCMAKE_INSTALL_SYSCONFDIR:String="${PREFIX}/share/examples" \
-	-DCMAKE_INSTALL_FULL_SYSCONFDIR:String="${WRKINST}${SYSCONFDIR}" \
-	-DCMAKE_INSTALL_LOCALSTATEDIR:String="${LOCALSTATEDIR}" \
-	-DICINGA2_COMMAND_USER:String="_icinga" \
-	-DICINGA2_COMMAND_GROUP:String="_icingacmd" \
-	-DICINGA2_USER:String="_icinga" \
-	-DICINGA2_GROUP:String="_icinga" \
-	-DICINGA2_GIT_VERSION_INFO:Boolean="OFF" \
-	-DICINGA2_PLUGINDIR:String="${LOCALBASE}/libexec/nagios"
-
-pre-configure:
-	ln -sf ${LOCALBASE}/bin/gflex ${WRKDIR}/bin/flex
-
-post-configure:
-	perl -pi -e 's,%SYSCONFDIR%,${SYSCONFDIR},' ${WRKBUILD}/config.h \
-	    ${WRKBUILD}/etc/icinga/icinga-classic-apache.conf
-
-pre-install:
-	mkdir -p ${PREFIX}
+	-DCMAKE_INSTALL_MANDIR:String=${PREFIX}/man \
+	-DCMAKE_INSTALL_SYSCONFDIR:String=${PREFIX}/share/examples \
+	-DCMAKE_INSTALL_FULL_SYSCONFDIR:String=${WRKINST}${SYSCONFDIR} \
+	-DCMAKE_INSTALL_LOCALSTATEDIR:String=${LOCALSTATEDIR} \
+	-DFLEX_EXECUTABLE=${LOCALBASE}/bin/gflex \
+	-DICINGA2_USER:String=_icinga \
+	-DICINGA2_GROUP:String=_icinga \
+	-DICINGA2_GIT_VERSION_INFO:Boolean=OFF \
+	-DICINGA2_PLUGINDIR:String=${LOCALBASE}/libexec/nagios
 
 post-install:
-	cp -r ${WRKSRC}/tools/syntax ${PREFIX}/share/examples/icinga2/
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/icinga2/syntax
-	chmod -R u=rwX,g=rX,o=rX ${PREFIX}/share/examples/icinga2/syntax
+	${INSTALL_DATA_DIR} ${PREFIX}/share/nano
+	${INSTALL_DATA} ${WRKSRC}/tools/syntax/nano/*nanorc ${PREFIX}/share/nano
+.for i in ftdetect syntax
+	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vimfiles/$i
+	${INSTALL_DATA} ${WRKSRC}/tools/syntax/vim/$i/* ${PREFIX}/share/vim/vimfiles/$i
+.endfor
 
 pre-test:
 	@if pkg_info | grep libconfig- > /dev/null; then \
