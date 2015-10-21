@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2015/09/22 21:06:19 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2015/10/21 19:08:13 kili Exp $
+
+BROKEN-i386 =		needs a fixed rts/Linker.c in ghc
 
 COMMENT =		mid-level PostgreSQL client library
 
