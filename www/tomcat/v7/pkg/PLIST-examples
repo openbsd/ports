@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.29 2015/09/04 13:06:26 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.30 2015/10/22 12:13:26 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -360,13 +360,15 @@ webapps/docs/api/org/apache/catalina/ha/util/package-tree.html
 webapps/docs/api/org/apache/catalina/loader/
 webapps/docs/api/org/apache/catalina/loader/Constants.html
 webapps/docs/api/org/apache/catalina/loader/JdbcLeakPrevention.html
+webapps/docs/api/org/apache/catalina/loader/ParallelWebappClassLoader.html
 webapps/docs/api/org/apache/catalina/loader/ResourceEntry.html
 webapps/docs/api/org/apache/catalina/loader/StandardClassLoader.html
 webapps/docs/api/org/apache/catalina/loader/StandardClassLoaderMBean.html
 webapps/docs/api/org/apache/catalina/loader/VirtualWebappLoader.html
-webapps/docs/api/org/apache/catalina/loader/WebappClassLoader.PrivilegedFindResourceByName.html
-webapps/docs/api/org/apache/catalina/loader/WebappClassLoader.PrivilegedGetClassLoader.html
 webapps/docs/api/org/apache/catalina/loader/WebappClassLoader.html
+webapps/docs/api/org/apache/catalina/loader/WebappClassLoaderBase.PrivilegedFindResourceByName.html
+webapps/docs/api/org/apache/catalina/loader/WebappClassLoaderBase.PrivilegedGetClassLoader.html
+webapps/docs/api/org/apache/catalina/loader/WebappClassLoaderBase.html
 webapps/docs/api/org/apache/catalina/loader/WebappLoader.html
 webapps/docs/api/org/apache/catalina/loader/package-frame.html
 webapps/docs/api/org/apache/catalina/loader/package-summary.html
@@ -1512,6 +1514,7 @@ webapps/docs/api/org/apache/tomcat/util/collections/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/compat/
 webapps/docs/api/org/apache/tomcat/util/compat/JreCompat.html
+webapps/docs/api/org/apache/tomcat/util/compat/JreVendor.html
 webapps/docs/api/org/apache/tomcat/util/compat/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/compat/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/compat/package-tree.html
