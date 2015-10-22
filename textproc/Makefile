@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.466 2015/10/14 18:22:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.467 2015/10/22 19:50:40 edd Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -338,6 +338,7 @@
      SUBDIR += py-jellyfish,python3
      SUBDIR += py-lxml
      SUBDIR += py-lxml,python3
+     SUBDIR += py-mistune
      SUBDIR += py-nltk
      SUBDIR += py-numpydoc
      SUBDIR += py-pdf
