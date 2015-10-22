@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2015/10/21 10:12:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2015/10/22 13:48:40 sthen Exp $
 
 COMMENT=	quickly ping N hosts w/o flooding the network
 
-DISTNAME=	fping-3.12
-REVISION=	0
+DISTNAME=	fping-3.13
 
 CATEGORIES=	net
 

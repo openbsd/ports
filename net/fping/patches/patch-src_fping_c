@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_fping_c,v 1.1 2015/10/22 13:48:40 sthen Exp $
+--- src/fping.c.orig	Wed Oct 14 20:48:07 2015
++++ src/fping.c	Wed Oct 21 11:06:05 2015
+@@ -369,6 +369,9 @@ int main( int argc, char **argv )
+         setuid( getuid() );
+     }
+ 
++    if (pledge("stdio inet rpath dns", NULL) == -1)
++        perror("pledge");
++
+     prog = argv[0];
+     ident = getpid() & 0xFFFF;
+     verbose_flag = 1;
+@@ -561,6 +564,11 @@ int main( int argc, char **argv )
+         }/* SWITCH */
+     }/* WHILE */
+ 
++    if (!filename) { /* drop rpath if not reading addrs from file */
++        if (pledge("stdio inet dns", NULL) == -1)
++            perror("pledge");
++    }
++
+     /* validate various option settings */
+ 
+     if (ttl > 255) {
+@@ -775,6 +783,14 @@ int main( int argc, char **argv )
+     }
+     else {
+         usage(1);
++    }
++
++    if (name_flag) { /* done with file, drop rpath */
++        if (pledge("stdio inet dns", NULL) == -1)
++            perror("pledge");
++    } else { /* and drop dns unless we do reverse lookups */
++        if (pledge("stdio inet", NULL) == -1)
++            perror("pledge");
+     }
+     
+     if( !num_hosts )
