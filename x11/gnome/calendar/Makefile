@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/18 22:29:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/10/22 17:56:31 jasper Exp $
 
 COMMENT =		GNOME calendar
 
 GNOME_PROJECT =		gnome-calendar
-GNOME_VERSION =		3.16.2
+GNOME_VERSION =		3.18.1
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -23,7 +23,7 @@ WANTLIB += icalss icalvcal icudata icui18n icuuc lzma m nspr4
 WANTLIB += nss3 nssutil3 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 xcb
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += xcb-render xcb-shm xml2 z goa-1.0
 
 LIB_DEPENDS =		databases/evolution-data-server
 
