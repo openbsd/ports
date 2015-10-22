@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2015/10/21 16:48:50 sthen Exp $
+$OpenBSD: README,v 1.6 2015/10/22 13:06:23 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,7 +10,7 @@ See ${INSTDIR}/INSTALL and ${INSTDIR}/UPGRADING
 for more information.
 
 OpenBSD's standard PHP package uses the Suhosin extension. Disable session
-encryption by adding "suhosin.session.encrypt = false;" to ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini.
+encryption by adding "suhosin.session.encrypt = false" to ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini.
 
 If upgrading from a version before 0.9, note that database access is now
 done via PDO.
