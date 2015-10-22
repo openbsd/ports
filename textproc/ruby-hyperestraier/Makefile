@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/08/26 13:31:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2015/10/22 15:41:39 jeremy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,11 +20,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hyperestraier/}
 
 FLAVORS =		ruby19 ruby20 ruby21 ruby22
 FLAVOR ?=		
-.if ${FLAVOR:Mruby19}
-MODRUBY_REV =		1.9
-FULLPKGNAME =		ruby19-hyperestraier-1.0.0
-BIN_SUFFIX =		19
-.elif ${FLAVOR:Mruby20}
+.if ${FLAVOR:Mruby20}
 MODRUBY_REV =		2.0
 FULLPKGNAME =		ruby20-hyperestraier-1.0.0
 BIN_SUFFIX =		20
