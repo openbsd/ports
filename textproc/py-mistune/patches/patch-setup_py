@@ -1,0 +1,20 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2015/10/22 19:49:09 edd Exp $
+
+Disable cython for now. Will make it easier to port to Python3 on OpenBSD.
+
+--- setup.py.orig	Mon Oct 19 21:50:54 2015
++++ setup.py	Mon Oct 19 21:51:12 2015
+@@ -13,11 +13,8 @@ from setuptools import setup, Extension
+ 
+ cmdclass = {}
+ 
+-try:
+-    from Cython.Distutils import build_ext
+-except ImportError:
+-    have_cython = False
+-else:
++have_cython = False
++if False:
+     have_cython = True
+     import sys
+ 
