@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_openvpn_tun_c,v 1.6 2015/09/16 09:07:30 sthen Exp $
+$OpenBSD: patch-src_openvpn_tun_c,v 1.7 2015/10/23 15:10:36 sthen Exp $
 --- src/openvpn/tun.c.orig	Fri Jul 17 06:43:38 2015
-+++ src/openvpn/tun.c	Wed Sep 16 10:04:54 2015
++++ src/openvpn/tun.c	Thu Oct 22 20:27:08 2015
 @@ -912,8 +912,17 @@ do_ifconfig (struct tuntap *tt,
  
        tt->did_ifconfig = true;
@@ -20,24 +20,22 @@ $OpenBSD: patch-src_openvpn_tun_c,v 1.6 2015/09/16 09:07:30 sthen Exp $
        /*
         * On OpenBSD, tun interfaces are persistent if created with
         * "ifconfig tunX create", and auto-destroyed if created by
-@@ -923,7 +932,11 @@ do_ifconfig (struct tuntap *tt,
+@@ -923,66 +932,6 @@ do_ifconfig (struct tuntap *tt,
        /* example: ifconfig tun2 10.2.0.2 10.2.0.1 mtu 1450 netmask 255.255.255.255 up */
        if (tun)
  	argv_printf (&argv,
-+#if defined(TARGET_OPENBSD)
- 			  "%s %s %s %s mtu %d netmask 255.255.255.255 up -link0",
-+#else
-+			  "%s %s %s %s mtu %d netmask 255.255.255.255 up",
-+#endif
- 			  IFCONFIG_PATH,
- 			  actual,
- 			  ifconfig_local,
-@@ -934,83 +947,29 @@ do_ifconfig (struct tuntap *tt,
- 	if ( tt->topology == TOP_SUBNET )
- 	{
- 	    argv_printf (&argv,
-+#if defined(TARGET_OPENBSD)
- 			  "%s %s %s %s mtu %d netmask %s up -link0",
+-			  "%s %s %s %s mtu %d netmask 255.255.255.255 up -link0",
+-			  IFCONFIG_PATH,
+-			  actual,
+-			  ifconfig_local,
+-			  ifconfig_remote_netmask,
+-			  tun_mtu
+-			  );
+-      else
+-	if ( tt->topology == TOP_SUBNET )
+-	{
+-	    argv_printf (&argv,
+-			  "%s %s %s %s mtu %d netmask %s up -link0",
 -			  IFCONFIG_PATH,
 -			  actual,
 -			  ifconfig_local,
@@ -82,31 +80,14 @@ $OpenBSD: patch-src_openvpn_tun_c,v 1.6 2015/09/16 09:07:30 sthen Exp $
 - */
 -#ifdef TUNSIFHEAD
 -# define NETBSD_MULTI_AF
-+#else
-+			  "%s %s %s %s mtu %d netmask %s up",
- #endif
+-#endif
 -
 -      if (tun)
 -	argv_printf (&argv,
--			  "%s %s %s %s mtu %d netmask 255.255.255.255 up",
+ 			  "%s %s %s %s mtu %d netmask 255.255.255.255 up",
  			  IFCONFIG_PATH,
  			  actual,
- 			  ifconfig_local,
--			  ifconfig_remote_netmask,
--			  tun_mtu
--			  );
--      else
--	if ( tt->topology == TOP_SUBNET )
--	{
--	    argv_printf (&argv,
--			  "%s %s %s %s mtu %d netmask %s up",
--			  IFCONFIG_PATH,
--			  actual,
- 			  ifconfig_local,
--			  ifconfig_local,
- 			  tun_mtu,
- 			  ifconfig_remote_netmask
- 			  );
+@@ -1005,9 +954,7 @@ do_ifconfig (struct tuntap *tt,
  	}
        else
        /*
@@ -116,15 +97,8 @@ $OpenBSD: patch-src_openvpn_tun_c,v 1.6 2015/09/16 09:07:30 sthen Exp $
 +       * NetBSD and OpenBSD 5.9+ have distinct tun and tap devices
         */
  		argv_printf (&argv,
-+#if defined(TARGET_OPENBSD)
-+			  "%s %s %s netmask %s mtu %d broadcast %s link0",
-+#else
  			  "%s %s %s netmask %s mtu %d broadcast %s",
-+#endif
- 			  IFCONFIG_PATH,
- 			  actual,
- 			  ifconfig_local,
-@@ -1019,11 +978,11 @@ do_ifconfig (struct tuntap *tt,
+@@ -1019,11 +966,11 @@ do_ifconfig (struct tuntap *tt,
  			  ifconfig_broadcast
  			  );
        argv_msg (M_INFO, &argv);
@@ -138,7 +112,7 @@ $OpenBSD: patch-src_openvpn_tun_c,v 1.6 2015/09/16 09:07:30 sthen Exp $
  	  argv_printf (&argv,
  			  "%s %s inet6 %s/%d",
  			  IFCONFIG_PATH,
-@@ -1032,17 +991,30 @@ do_ifconfig (struct tuntap *tt,
+@@ -1032,17 +979,30 @@ do_ifconfig (struct tuntap *tt,
  			  tt->netbits_ipv6
  			  );
  	  argv_msg (M_INFO, &argv);
