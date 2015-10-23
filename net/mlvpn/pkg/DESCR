@@ -1,0 +1,8 @@
+MLVPN is VPN software that encrypts data with the Salsa20 stream cipher and
+uses Poly1305 authentication. It can either run with a single ISP connection,
+or can aggregate multiple circuits with active monitoring to identify and
+remove faulty ones without dropping TCP connections. To avoid problems with
+out-of-order packet delivery, it can optionally add delays per-connection
+or buffer packets before delivering to the tun/tap interface.
+
+MLVPN uses privilege separation and supports Linux, OpenBSD and FreeBSD.

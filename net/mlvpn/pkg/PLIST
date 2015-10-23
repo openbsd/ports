@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/23 09:28:58 sthen Exp $
+@newgroup _mlvpn:758
+@newuser _mlvpn:758:_mlvpn:daemon:mlvpn user:/var/empty:/sbin/nologin
+@man man/man1/mlvpn.1
+@man man/man5/mlvpn.conf.5
+@bin sbin/mlvpn
+share/doc/mlvpn/
+share/doc/mlvpn/AUTHORS
+share/doc/mlvpn/README.Debian
+share/doc/mlvpn/README.NetBSD.md
+share/doc/mlvpn/README.OpenBSD.md
+share/doc/mlvpn/README.debug.md
+share/doc/mlvpn/README.md
+share/doc/mlvpn/mlvpn.default
+share/doc/mlvpn/mlvpn.init.d
+share/examples/mlvpn/
+@owner root
+@group wheel
+@mode 770
+@sample ${SYSCONFDIR}/mlvpn/
+@mode
+share/examples/mlvpn/mlvpn.conf
+@mode 600
+@sample ${SYSCONFDIR}/mlvpn/mlvpn.conf
+@mode
+share/examples/mlvpn/mlvpn_updown.sh
+@mode 700
+@sample ${SYSCONFDIR}/mlvpn/mlvpn_updown.sh
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/mlvpn
