@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/10/23 05:23:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/10/23 05:40:00 ajacoutot Exp $
 
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gtk2 = 	PIN or passphrase entry dialog (gtk2 interface)
@@ -13,7 +13,7 @@ PKGNAME-main = 	${DISTNAME}
 PKGNAME-gtk2 = 	pinentry-gtk2-${VERSION}
 PKGNAME-gnome3 =pinentry-gnome3-${VERSION}
 
-REVISION-main =	0
+REVISION-main =	1
 
 MASTER_SITES = 	${MASTER_SITES_GNUPG:=pinentry/}
 
@@ -69,21 +69,6 @@ CONFIGURE_ARGS +=	--disable-pinentry-gtk2
 
 .if !${BUILD_PACKAGES:M-gnome3}
 CONFIGURE_ARGS +=	--disable-pinentry-gnome3
-.endif
-
-MULTI_PACKAGES =       -main -gtk2 -gnome3
-
-PSEUDO_FLAVORS=                no_gtk2 no_gnome3 bootstrap
-FLAVOR?=               no_gtk2 no_gnome3 bootstrap
-
-.include <bsd.port.arch.mk>
-
-.if !${BUILD_PACKAGES:M-gtk2}
-CONFIGURE_ARGS +=      --disable-pinentry-gtk2
-.endif
-
-.if !${BUILD_PACKAGES:M-gnome3}
-CONFIGURE_ARGS +=      --disable-pinentry-gnome3
 .endif
 
 # http://pkgs.fedoraproject.org/cgit/pinentry.git/tree/pinentry-wrapper
