@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/10/15 05:35:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2015/10/23 05:23:59 ajacoutot Exp $
 
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gtk2 = 	PIN or passphrase entry dialog (gtk2 interface)
@@ -12,6 +12,8 @@ EXTRACT_SUFX =	.tar.bz2
 PKGNAME-main = 	${DISTNAME}
 PKGNAME-gtk2 = 	pinentry-gtk2-${VERSION}
 PKGNAME-gnome3 =pinentry-gnome3-${VERSION}
+
+REVISION-main =	0
 
 MASTER_SITES = 	${MASTER_SITES_GNUPG:=pinentry/}
 
@@ -69,9 +71,24 @@ CONFIGURE_ARGS +=	--disable-pinentry-gtk2
 CONFIGURE_ARGS +=	--disable-pinentry-gnome3
 .endif
 
-# Change default 'pinentry' to pinentry-curses in the -main package.
-# The shipped Makefiles insist on setting it to the gtk2 variant.
+MULTI_PACKAGES =       -main -gtk2 -gnome3
+
+PSEUDO_FLAVORS=                no_gtk2 no_gnome3 bootstrap
+FLAVOR?=               no_gtk2 no_gnome3 bootstrap
+
+.include <bsd.port.arch.mk>
+
+.if !${BUILD_PACKAGES:M-gtk2}
+CONFIGURE_ARGS +=      --disable-pinentry-gtk2
+.endif
+
+.if !${BUILD_PACKAGES:M-gnome3}
+CONFIGURE_ARGS +=      --disable-pinentry-gnome3
+.endif
+
+# http://pkgs.fedoraproject.org/cgit/pinentry.git/tree/pinentry-wrapper
 post-install:
-	ln -sf pinentry-curses ${PREFIX}/bin/pinentry
+	${SUBST_CMD} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
+		${FILESDIR}/pinentry-wrapper.in ${PREFIX}/bin/pinentry
 	
 .include <bsd.port.mk>
