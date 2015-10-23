@@ -1,6 +1,6 @@
-$OpenBSD: patch-Scripts_sql-update-2_2_17_to_2_3_0_sh,v 1.1 2015/09/26 14:29:22 sebastia Exp $
+$OpenBSD: patch-Scripts_sql-update-2_2_17_to_2_3_0_sh,v 1.2 2015/10/23 07:53:46 sebastia Exp $
 --- Scripts/sql-update-2.2.17_to_2.3.0.sh.orig	Wed Sep 16 20:41:29 2015
-+++ Scripts/sql-update-2.2.17_to_2.3.0.sh	Mon Sep 21 13:17:17 2015
++++ Scripts/sql-update-2.2.17_to_2.3.0.sh	Fri Oct 23 09:40:24 2015
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -31,3 +31,12 @@ $OpenBSD: patch-Scripts_sql-update-2_2_17_to_2_3_0_sh,v 1.1 2015/09/26 14:29:22 
  
  if [ -z "$username" ]
  then
+@@ -36,7 +40,7 @@ fi
+ 
+ sqlscript=""
+ 
+-function adjustSchema() {
++adjustSchema() {
+     oldIFS="$IFS"
+     IFS=" "
+     part1="`echo -e \"ALTER TABLE $table ALTER COLUMN c_partstates TYPE TEXT;\\n\"`";
