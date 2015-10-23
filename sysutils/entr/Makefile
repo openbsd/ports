@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/04/05 22:14:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/10/23 20:48:34 sthen Exp $
 
 COMMENT =	run arbitrary commands when files change
 
-DISTNAME =	entr-2.8
-REVISION =	0
-REV =		9192ece7198c
+DISTNAME =	entr-3.3
+REV =		220131754e1c
 
 CATEGORIES =	sysutils
 
