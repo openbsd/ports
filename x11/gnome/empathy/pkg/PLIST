@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2015/03/16 17:48:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.46 2015/10/23 15:34:57 jasper Exp $
 @bin bin/empathy
 @bin bin/empathy-accounts
 @bin bin/empathy-debugger
@@ -1608,6 +1608,7 @@ share/icons/hicolor/24x24/apps/empathy.png
 share/icons/hicolor/256x256/apps/empathy.png
 share/icons/hicolor/32x32/apps/empathy.png
 share/icons/hicolor/48x48/apps/empathy.png
+share/icons/hicolor/scalable/apps/empathy-symbolic.svg
 share/locale/an/LC_MESSAGES/empathy-tpaw.mo
 share/locale/an/LC_MESSAGES/empathy.mo
 share/locale/ar/LC_MESSAGES/empathy-tpaw.mo
@@ -1630,6 +1631,7 @@ share/locale/bn_IN/LC_MESSAGES/empathy-tpaw.mo
 share/locale/bn_IN/LC_MESSAGES/empathy.mo
 share/locale/br/LC_MESSAGES/empathy-tpaw.mo
 share/locale/br/LC_MESSAGES/empathy.mo
+share/locale/bs/LC_MESSAGES/empathy-tpaw.mo
 share/locale/bs/LC_MESSAGES/empathy.mo
 share/locale/ca/LC_MESSAGES/empathy-tpaw.mo
 share/locale/ca/LC_MESSAGES/empathy.mo
