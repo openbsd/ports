@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.929 2015/10/09 08:27:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.930 2015/10/23 09:30:26 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -238,6 +238,7 @@
      SUBDIR += mirror
      SUBDIR += mktorrent
      SUBDIR += mldonkey
+     SUBDIR += mlvpn
      SUBDIR += mon
      SUBDIR += monitoring-plugins
      SUBDIR += mono-zeroconf
