@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/03 07:35:27 pirofti Exp $
+# $OpenBSD: Makefile,v 1.3 2015/10/23 15:27:16 feinerer Exp $
 
 COMMENT =		OpenGL to PostScript printing library
 
-DISTNAME =		gl2ps-1.3.8
-REVISION =		0
+DISTNAME =		gl2ps-1.3.9
 
 SHARED_LIBS =		gl2ps	0.0 # 1.3
 
@@ -16,7 +15,7 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 # LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		GL GLU Xi Xmu glut png z
+WANTLIB =		GL GLU Xi Xmu glut m png z
 
 MASTER_SITES =		http://geuz.org/gl2ps/src/
 
