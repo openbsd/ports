@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/22 19:41:43 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2015/10/23 11:52:31 ajacoutot Exp $
 
 COMMENT =		object-oriented filesystem paths
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODPY_PI =		Yes
 MODULES =		lang/python
-BUILD_DEPENDS =		textproc/sphinx
+BUILD_DEPENDS =		textproc/py-sphinx
 TEST_DEPENDS =		lang/python/${MODPY_VERSION},-tests
 
 DOCDIR = ${PREFIX}/share/doc/py-pathlib
