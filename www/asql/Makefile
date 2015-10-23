@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/10/23 11:21:09 sthen Exp $
 
 COMMENT=	query Apache logfiles via SQL
 
-DISTNAME=	asql-1.6
+DISTNAME=	asql-1.7
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.steve.org.uk/Software/asql/
-
-MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
-RUN_DEPENDS =		devel/p5-Term-ReadLine-Gnu \
+RUN_DEPENDS=		devel/p5-Term-ReadLine-Gnu \
+			devel/p5-Regexp-IPv6 \
 			databases/p5-DBD-SQLite
 
-TEST_DEPENDS=	devel/p5-Test-Pod
+TEST_DEPENDS=		devel/p5-Test-Pod
 
 NO_BUILD=		Yes
 TEST_TARGET=		test
