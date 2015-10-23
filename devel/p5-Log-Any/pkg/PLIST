@@ -1,13 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/28 19:49:09 dhill Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/10/23 15:48:32 giovanni Exp $
 ${P5SITE}/Log/
 ${P5SITE}/Log/Any/
 ${P5SITE}/Log/Any.pm
 ${P5SITE}/Log/Any/Adapter/
-${P5SITE}/Log/Any/Adapter/Core.pm
+${P5SITE}/Log/Any/Adapter.pm
+${P5SITE}/Log/Any/Adapter/Base.pm
+${P5SITE}/Log/Any/Adapter/Development.pod
+${P5SITE}/Log/Any/Adapter/File.pm
 ${P5SITE}/Log/Any/Adapter/Null.pm
+${P5SITE}/Log/Any/Adapter/Stderr.pm
+${P5SITE}/Log/Any/Adapter/Stdout.pm
 ${P5SITE}/Log/Any/Adapter/Test.pm
+${P5SITE}/Log/Any/Adapter/Util.pm
+${P5SITE}/Log/Any/Manager.pm
+${P5SITE}/Log/Any/Proxy/
+${P5SITE}/Log/Any/Proxy.pm
+${P5SITE}/Log/Any/Proxy/Test.pm
 ${P5SITE}/Log/Any/Test.pm
 @man man/man3p/Log::Any.3p
-@man man/man3p/Log::Any::Adapter::Core.3p
+@man man/man3p/Log::Any::Adapter.3p
+@man man/man3p/Log::Any::Adapter::Development.3p
+@man man/man3p/Log::Any::Adapter::File.3p
 @man man/man3p/Log::Any::Adapter::Null.3p
+@man man/man3p/Log::Any::Adapter::Stderr.3p
+@man man/man3p/Log::Any::Adapter::Stdout.3p
+@man man/man3p/Log::Any::Adapter::Util.3p
+@man man/man3p/Log::Any::Proxy.3p
 @man man/man3p/Log::Any::Test.3p
