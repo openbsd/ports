@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2015/08/18 08:09:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.46 2015/10/23 15:12:45 jasper Exp $
 @bin bin/eog
 include/eog-3.0/
 include/eog-3.0/eog/
@@ -48,21 +48,17 @@ share/eog/icons/
 share/eog/icons/hicolor/
 share/eog/icons/hicolor/16x16/
 share/eog/icons/hicolor/16x16/actions/
-share/eog/icons/hicolor/16x16/actions/eog-image-gallery.png
 share/eog/icons/hicolor/16x16/actions/eog-plugin.png
 share/eog/icons/hicolor/16x16/actions/slideshow-play.png
 share/eog/icons/hicolor/22x22/
 share/eog/icons/hicolor/22x22/actions/
-share/eog/icons/hicolor/22x22/actions/eog-image-gallery.png
 share/eog/icons/hicolor/22x22/actions/eog-plugin.png
 share/eog/icons/hicolor/22x22/actions/slideshow-play.png
 share/eog/icons/hicolor/24x24/
 share/eog/icons/hicolor/24x24/actions/
-share/eog/icons/hicolor/24x24/actions/eog-image-gallery.png
 share/eog/icons/hicolor/24x24/actions/slideshow-play.png
 share/eog/icons/hicolor/32x32/
 share/eog/icons/hicolor/32x32/actions/
-share/eog/icons/hicolor/32x32/actions/eog-image-gallery.png
 share/eog/icons/hicolor/32x32/actions/eog-plugin.png
 share/eog/icons/hicolor/32x32/actions/slideshow-play.png
 share/eog/icons/hicolor/48x48/
@@ -70,7 +66,7 @@ share/eog/icons/hicolor/48x48/actions/
 share/eog/icons/hicolor/48x48/actions/slideshow-play.png
 share/eog/icons/hicolor/scalable/
 share/eog/icons/hicolor/scalable/actions/
-share/eog/icons/hicolor/scalable/actions/eog-image-gallery.svg
+share/eog/icons/hicolor/scalable/actions/eog-image-gallery-symbolic.svg
 share/eog/icons/hicolor/scalable/actions/eog-plugin.svg
 share/eog/icons/hicolor/scalable/actions/slideshow-play.svg
 share/glib-2.0/schemas/org.gnome.eog.enums.xml
