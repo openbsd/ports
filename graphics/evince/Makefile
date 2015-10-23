@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.133 2015/10/13 17:18:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.134 2015/10/23 15:23:16 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
-GNOME_VERSION=		3.16.1
-REVISION=		3
+GNOME_VERSION=		3.18.1
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -32,6 +31,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png poppler poppler-glib pthread pthread-stubs secret-1
 WANTLIB += spectre stdc++ tiff xcb xcb-render xcb-shm xml2 z
 WANTLIB += gmp hogweed nettle p11-kit tasn1 epoxy
+WANTLIB += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 orc-0.4
 
 MODULES=		devel/dconf \
 			devel/gettext \
