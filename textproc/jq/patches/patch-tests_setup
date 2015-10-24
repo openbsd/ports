@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_setup,v 1.1 2015/10/24 10:25:39 sthen Exp $
+
+https://github.com/stedolan/jq/issues/1000
+
+--- tests/setup.orig	Fri Oct 23 10:45:40 2015
++++ tests/setup	Fri Oct 23 10:45:51 2015
+@@ -29,7 +29,7 @@ clean () {
+     fi
+ }
+ trap clean EXIT
+-d=`mktemp -d -t jqXXXXX || true`
++d=`mktemp -d -t jqXXXXXX || true`
+ if [ -z "$d" ]; then
+     echo "Your OS does not support mktemp(1) -d" 1>&2
+     exit 1

@@ -1,0 +1,14 @@
+$OpenBSD: patch-builtin_c,v 1.1 2015/10/24 10:25:39 sthen Exp $
+
+Needed for strptime.  https://github.com/stedolan/jq/issues/999
+
+--- builtin.c.orig	Sat Oct 24 10:56:38 2015
++++ builtin.c	Sat Oct 24 11:01:19 2015
+@@ -1,6 +1,7 @@
+ #define _BSD_SOURCE
+ #define _GNU_SOURCE
+ #define _XOPEN_SOURCE
++#define _XOPEN_SOURCE_EXTENDED 1
+ #include <sys/time.h>
+ #include <stdlib.h>
+ #include <stddef.h>
