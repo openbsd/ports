@@ -158,6 +158,7 @@
 	native-pathconf: permit
 	native-pipe: permit
 	native-pipe2: permit
+	native-pledge: permit
 	native-poll: permit
 	native-ppoll: permit
 	native-pread: permit
