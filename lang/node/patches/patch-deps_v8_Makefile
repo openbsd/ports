@@ -1,17 +1,18 @@
-$OpenBSD: patch-deps_v8_Makefile,v 1.1 2013/10/22 15:29:14 abieber Exp $
---- deps/v8/Makefile.orig	Mon Sep 30 14:52:48 2013
-+++ deps/v8/Makefile	Tue Oct  8 09:25:06 2013
-@@ -254,14 +254,14 @@ clean: $(addsuffix .clean, $(ARCHES) $(ANDROID_ARCHES)
- OUT_MAKEFILES = $(addprefix $(OUTDIR)/Makefile.,$(ARCHES))
- $(OUT_MAKEFILES): $(GYPFILES) $(ENVFILE)
+$OpenBSD: patch-deps_v8_Makefile,v 1.2 2015/10/24 02:46:47 abieber Exp $
+--- deps/v8/Makefile.orig	Wed Jan 14 10:23:35 2015
++++ deps/v8/Makefile	Wed Jan 14 10:24:13 2015
+@@ -426,7 +426,7 @@ $(OUT_MAKEFILES): $(GYPFILES) $(ENVFILE)
+ 	$(eval V8_TARGET_ARCH:=$(subst .,,$(suffix $(basename $@))))
+ 	PYTHONPATH="$(shell pwd)/tools/generate_shim_headers:$(shell pwd)/build:$(PYTHONPATH):$(shell pwd)/build/gyp/pylib:$(PYTHONPATH)" \
  	GYP_GENERATORS=make \
 -	build/gyp/gyp --generator-output="$(OUTDIR)" build/all.gyp \
 +	gyp --generator-output="$(OUTDIR)" build/all.gyp \
  	              -Ibuild/standalone.gypi --depth=. \
- 	              -Dv8_target_arch=$(subst .,,$(suffix $@)) \
- 	              -S.$(subst .,,$(suffix $@)) $(GYPFLAGS)
- 
+ 	              -Dv8_target_arch=$(V8_TARGET_ARCH) \
+ 	              $(if $(findstring $(CXX_TARGET_ARCH),$(V8_TARGET_ARCH)), \
+@@ -437,7 +437,7 @@ $(OUT_MAKEFILES): $(GYPFILES) $(ENVFILE)
  $(OUTDIR)/Makefile.native: $(GYPFILES) $(ENVFILE)
+ 	PYTHONPATH="$(shell pwd)/tools/generate_shim_headers:$(shell pwd)/build:$(PYTHONPATH):$(shell pwd)/build/gyp/pylib:$(PYTHONPATH)" \
  	GYP_GENERATORS=make \
 -	build/gyp/gyp --generator-output="$(OUTDIR)" build/all.gyp \
 +	gyp --generator-output="$(OUTDIR)" build/all.gyp \

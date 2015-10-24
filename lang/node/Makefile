@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/02/03 15:48:20 abieber Exp $
+# $OpenBSD: Makefile,v 1.34 2015/10/24 02:46:47 abieber Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	V8 JavaScript for clients and servers
 
-NODE_VERSION=	v0.10.35
+NODE_VERSION=	v4.2.1
 
 DISTNAME=	node-${NODE_VERSION}
 PKGNAME=	${DISTNAME:S/v//g}
@@ -24,33 +24,43 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}dist/${NODE_VERSION}/
 
-MODULES=	lang/python
+MODULES=	gcc4 \
+		lang/python
 
-WANTLIB +=	c crypto execinfo kvm m pthread ssl stdc++ util z
+MODGCC4_LANGS =         c c++
+MODGCC4_ARCHS =         *
+
+WANTLIB += c execinfo kvm m pthread util z
 
 LIB_DEPENDS=	devel/libexecinfo
 
+NODE_ARCH=	i386
+.if ${MACHINE_ARCH} == "amd64"
+NODE_ARCH=	x86_64
+.endif
+
 USE_GMAKE=	Yes
 
-BUILD_DEPENDS=	devel/gyp \
-		sysutils/flock
+BUILD_DEPENDS=	sysutils/flock
 
-# node-gyp uses it at runtime
 RUN_DEPENDS=	devel/gmake \
-		devel/gyp \
+		lang/gcc/${MODGCC4_VERSION} \
 		sysutils/flock
 
-TEST_TARGET= test
-CONFIGURE_STYLE= simple
-CONFIGURE_ARGS= --openssl-use-sys \
+TEST_TARGET=		test
+CONFIGURE_STYLE=	simple
+
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--shared-zlib
 
 SUBST_VARS+=	CFLAGS
-SUBST_VARS+= 	PREFIX
-SUBST_VARS+= 	LOCALBASE
 SUBST_VARS+= 	DISTFILES
+SUBST_VARS+= 	LOCALBASE
+SUBST_VARS+= 	NODE_ARCH
+SUBST_VARS+= 	PREFIX
+SUBST_VARS+= 	WRKDIST
 
-MAKE_ENV+=	V=1 CXX=c++ CCFLAGS+="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV+=	V=1 CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 NO_CCACHE=	Yes
 
@@ -60,7 +70,8 @@ pre-configure:
 	${SUBST_CMD} ${WRKDIST}/lib/module.js \
 		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/configure.js \
 		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/install.js \
-		${WRKDIST}/common.gypi
+		${WRKDIST}/common.gypi \
+		${WRKDIST}/tools/test.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/node

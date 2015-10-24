@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_test_py,v 1.1 2015/10/24 02:46:47 abieber Exp $
+--- tools/test.py.orig	Thu Oct 22 13:48:11 2015
++++ tools/test.py	Thu Oct 22 14:55:03 2015
+@@ -773,9 +773,9 @@ class Context(object):
+ 
+   def GetVm(self, arch, mode):
+     if arch == 'none':
+-      name = 'out/Debug/node' if mode == 'debug' else 'out/Release/node'
++      name = '${WRKDIST}/out/Debug/node' if mode == 'debug' else '${WRKDIST}/out/Release/node'
+     else:
+-      name = 'out/%s.%s/node' % (arch, mode)
++      name = '${WRKDIST}/out/%s.%s/node' % (arch, mode)
+ 
+     # Currently GYP does not support output_dir for MSVS.
+     # http://code.google.com/p/gyp/issues/detail?id=40
