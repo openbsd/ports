@@ -1,7 +1,7 @@
-$OpenBSD: patch-media_video_capture_video_capture_device_h,v 1.2 2015/08/12 10:56:13 robert Exp $
---- media/video/capture/video_capture_device.h.orig.port	Wed Jul 15 22:30:05 2015
-+++ media/video/capture/video_capture_device.h	Wed Jul 22 08:37:30 2015
-@@ -42,7 +42,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
+$OpenBSD: patch-media_capture_video_video_capture_device_h,v 1.1 2015/10/24 18:22:21 robert Exp $
+--- media/capture/video/video_capture_device.h.orig.port	Wed Oct 14 07:54:27 2015
++++ media/capture/video/video_capture_device.h	Wed Oct 14 07:54:53 2015
+@@ -43,7 +43,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
      Name();
      Name(const std::string& name, const std::string& id);
  
@@ -10,17 +10,17 @@ $OpenBSD: patch-media_video_capture_video_capture_device_h,v 1.2 2015/08/12 10:5
      // Linux/CrOS targets Capture Api type: it can only be set on construction.
      enum CaptureApiType {
        V4L2_SINGLE_PLANE,
-@@ -86,7 +86,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
+@@ -75,7 +75,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
 -    defined(OS_ANDROID)
 +    defined(OS_ANDROID) || defined(OS_BSD)
-     Name(const std::string& name, const std::string& id,
+     Name(const std::string& name,
+          const std::string& id,
           const CaptureApiType api_type);
- #endif
-@@ -124,7 +124,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
-     }
+@@ -112,7 +112,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
+     bool operator<(const Name& other) const { return unique_id_ < other.id(); }
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
 -    defined(OS_ANDROID)
@@ -28,7 +28,7 @@ $OpenBSD: patch-media_video_capture_video_capture_device_h,v 1.2 2015/08/12 10:5
      CaptureApiType capture_api_type() const {
        return capture_api_class_.capture_api_type();
      }
-@@ -156,7 +156,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
+@@ -136,7 +136,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
      std::string device_name_;
      std::string unique_id_;
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \

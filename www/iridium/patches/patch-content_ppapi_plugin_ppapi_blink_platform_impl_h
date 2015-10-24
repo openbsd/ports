@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_h,v 1.1 2015/05/26 17:37:40 robert Exp $
---- content/ppapi_plugin/ppapi_blink_platform_impl.h.orig.port	Thu May 21 20:54:51 2015
-+++ content/ppapi_plugin/ppapi_blink_platform_impl.h	Thu May 21 20:54:58 2015
-@@ -50,7 +50,7 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
+$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_h,v 1.2 2015/10/24 18:22:21 robert Exp $
+--- content/ppapi_plugin/ppapi_blink_platform_impl.h.orig.port	Tue Oct 13 21:04:32 2015
++++ content/ppapi_plugin/ppapi_blink_platform_impl.h	Wed Oct 14 07:41:13 2015
+@@ -55,7 +55,7 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
                                   bool sync_dir);
  
   private:

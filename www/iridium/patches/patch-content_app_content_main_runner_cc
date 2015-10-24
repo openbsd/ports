@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_app_content_main_runner_cc,v 1.4 2015/08/12 10:56:13 robert Exp $
---- content/app/content_main_runner.cc.orig.port	Wed Jul 15 22:30:02 2015
-+++ content/app/content_main_runner.cc	Wed Jul 22 08:37:29 2015
-@@ -97,11 +97,11 @@
+$OpenBSD: patch-content_app_content_main_runner_cc,v 1.5 2015/10/24 18:22:21 robert Exp $
+--- content/app/content_main_runner.cc.orig.port	Tue Oct 13 21:04:32 2015
++++ content/app/content_main_runner.cc	Wed Oct 14 07:41:13 2015
+@@ -102,11 +102,11 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.4 2015/08/12 10:56:13 rob
  #include "content/zygote/zygote_main.h"
  #endif
  
-@@ -262,7 +262,7 @@ struct MainFunction {
+@@ -260,7 +260,7 @@ struct MainFunction {
    int (*function)(const MainFunctionParams&);
  };
  
@@ -24,7 +24,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.4 2015/08/12 10:56:13 rob
  // On platforms that use the zygote, we have a special subset of
  // subprocesses that are launched via the zygote.  This function
  // fills in some process-launching bits around ZygoteMain().
-@@ -382,7 +382,7 @@ int RunNamedProcessTypeMain(
+@@ -380,7 +380,7 @@ int RunNamedProcessTypeMain(
      }
    }
  
@@ -33,3 +33,16 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.4 2015/08/12 10:56:13 rob
    // Zygote startup is special -- see RunZygote comments above
    // for why we don't use ZygoteMain directly.
    if (process_type == switches::kZygoteProcess)
+@@ -512,10 +512,10 @@ class ContentMainRunnerImpl : public ContentMainRunner
+                kPrimaryIPCChannel + base::GlobalDescriptors::kBaseDescriptor);
+ #endif  // !OS_ANDROID && !OS_IOS
+ 
+-#if defined(OS_LINUX) || defined(OS_OPENBSD)
++#if defined(OS_LINUX)
+     g_fds->Set(kCrashDumpSignal,
+                kCrashDumpSignal + base::GlobalDescriptors::kBaseDescriptor);
+-#endif  // OS_LINUX || OS_OPENBSD
++#endif  // OS_LINUX
+ 
+ 
+ #endif  // !OS_WIN

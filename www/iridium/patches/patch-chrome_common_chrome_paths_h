@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_chrome_paths_h,v 1.4 2015/08/12 10:56:13 robert Exp $
---- chrome/common/chrome_paths.h.orig.port	Wed Jul 15 22:29:59 2015
-+++ chrome/common/chrome_paths.h	Wed Jul 22 08:37:29 2015
-@@ -111,7 +111,7 @@ enum {
+$OpenBSD: patch-chrome_common_chrome_paths_h,v 1.5 2015/10/24 18:22:21 robert Exp $
+--- chrome/common/chrome_paths.h.orig.port	Tue Oct 13 21:04:32 2015
++++ chrome/common/chrome_paths.h	Wed Oct 14 07:41:13 2015
+@@ -114,7 +114,7 @@ enum {
    DIR_SUPERVISED_USERS_DEFAULT_APPS,  // Directory where installer places .crx
                                        // files to be installed when managed user
                                        // session starts.

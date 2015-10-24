@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_renderer_resources_neterror_js,v 1.1 2015/10/24 18:22:21 robert Exp $
+--- chrome/renderer/resources/neterror.js.orig.port	Wed Oct  7 04:42:09 2015
++++ chrome/renderer/resources/neterror.js	Wed Oct 14 07:41:13 2015
+@@ -141,7 +141,7 @@ function setUpCachedButton(buttonStrings) {
+ }
+ 
+ var primaryControlOnLeft = true;
+-<if expr="is_macosx or is_ios or is_linux or is_android">
++<if expr="is_macosx or is_ios or is_linux or is_android or is_bsd">
+ primaryControlOnLeft = false;
+ </if>
+ 

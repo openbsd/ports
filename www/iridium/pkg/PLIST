@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/08/12 10:56:13 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/10/24 18:22:22 robert Exp $
 bin/iridium
 iridium/
 iridium/chrome_100_percent.pak
@@ -122,12 +122,19 @@ iridium/resources/inspector/Images/responsiveDesign.png
 iridium/resources/inspector/Images/responsiveDesign_2x.png
 iridium/resources/inspector/Images/searchNext.png
 iridium/resources/inspector/Images/searchPrev.png
+iridium/resources/inspector/Images/securityStateInsecure.png
+iridium/resources/inspector/Images/securityStateInsecure_2x.png
+iridium/resources/inspector/Images/securityStateNeutral.png
+iridium/resources/inspector/Images/securityStateNeutral_2x.png
+iridium/resources/inspector/Images/securityStateSecure.png
+iridium/resources/inspector/Images/securityStateSecure_2x.png
+iridium/resources/inspector/Images/securityStateWarning.png
+iridium/resources/inspector/Images/securityStateWarning_2x.png
 iridium/resources/inspector/Images/serviceWorker.svg
 iridium/resources/inspector/Images/sessionStorage.png
 iridium/resources/inspector/Images/settingsListRemove.png
 iridium/resources/inspector/Images/settingsListRemove_2x.png
 iridium/resources/inspector/Images/speech.png
-iridium/resources/inspector/Images/spinner.svg
 iridium/resources/inspector/Images/thumbActiveHoriz.png
 iridium/resources/inspector/Images/thumbActiveVert.png
 iridium/resources/inspector/Images/thumbHoriz.png
@@ -145,15 +152,28 @@ iridium/resources/inspector/Images/updateServiceWorker.svg
 iridium/resources/inspector/InspectorBackendCommands.js
 iridium/resources/inspector/SupportedCSSProperties.js
 iridium/resources/inspector/accessibility_module.js
+iridium/resources/inspector/animation_module.js
 iridium/resources/inspector/audits_module.js
 iridium/resources/inspector/cm_modes_module.js
 iridium/resources/inspector/components_lazy_module.js
 iridium/resources/inspector/console_module.js
-iridium/resources/inspector/devtools.css
-iridium/resources/inspector/devtools.html
 iridium/resources/inspector/devtools.js
 iridium/resources/inspector/devtools_extension_api.js
 iridium/resources/inspector/elements_module.js
+iridium/resources/inspector/emulated_devices/
+iridium/resources/inspector/emulated_devices/google-nexus-5-horizontal-default-1x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5-horizontal-default-2x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5-horizontal-keyboard-1x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5-horizontal-keyboard-2x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5-horizontal-navigation-1x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5-horizontal-navigation-2x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5-vertical-default-1x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5-vertical-default-2x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5-vertical-keyboard-1x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5-vertical-keyboard-2x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5-vertical-navigation-1x.png
+iridium/resources/inspector/emulated_devices/google-nexus-5-vertical-navigation-2x.png
+iridium/resources/inspector/emulated_devices_module.js
 iridium/resources/inspector/heap_snapshot_worker_module.js
 iridium/resources/inspector/inspector.css
 iridium/resources/inspector/inspector.html
@@ -165,6 +185,7 @@ iridium/resources/inspector/promises_module.js
 iridium/resources/inspector/resources_module.js
 iridium/resources/inspector/screencast_module.js
 iridium/resources/inspector/script_formatter_worker_module.js
+iridium/resources/inspector/security_module.js
 iridium/resources/inspector/settings_module.js
 iridium/resources/inspector/snippets_module.js
 iridium/resources/inspector/source_frame_module.js

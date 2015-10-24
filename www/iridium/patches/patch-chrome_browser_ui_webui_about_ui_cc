@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.4 2015/08/12 10:56:13 robert Exp $
---- chrome/browser/ui/webui/about_ui.cc.orig.port	Wed Jul 15 22:29:59 2015
-+++ chrome/browser/ui/webui/about_ui.cc	Wed Jul 22 08:37:29 2015
-@@ -64,7 +64,7 @@
+$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.5 2015/10/24 18:22:21 robert Exp $
+--- chrome/browser/ui/webui/about_ui.cc.orig.port	Tue Oct 13 21:04:32 2015
++++ chrome/browser/ui/webui/about_ui.cc	Wed Oct 14 07:41:13 2015
+@@ -67,7 +67,7 @@
  #include "chrome/browser/ui/webui/theme_source.h"
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.4 2015/08/12 10:56:13 ro
  #include "content/public/browser/zygote_host_linux.h"
  #include "content/public/common/sandbox_linux.h"
  #endif
-@@ -658,7 +658,7 @@ void FinishMemoryDataRequest(
+@@ -698,7 +698,7 @@ void FinishMemoryDataRequest(
    }
  }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.4 2015/08/12 10:56:13 ro
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data, 0,
-@@ -674,6 +674,7 @@ std::string AboutLinuxProxyConfig() {
+@@ -714,6 +714,7 @@ std::string AboutLinuxProxyConfig() {
    return data;
  }
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.4 2015/08/12 10:56:13 ro
  void AboutSandboxRow(std::string* data, int name_id, bool good) {
    data->append("<tr><td>");
    data->append(l10n_util::GetStringUTF8(name_id));
-@@ -741,6 +742,7 @@ std::string AboutSandbox() {
+@@ -781,6 +782,7 @@ std::string AboutSandbox() {
    return data;
  }
  #endif
@@ -35,7 +35,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.4 2015/08/12 10:56:13 ro
  
  // AboutMemoryHandler ----------------------------------------------------------
  
-@@ -913,7 +915,7 @@ void AboutUIHTMLSource::StartDataRequest(
+@@ -953,7 +955,7 @@ void AboutUIHTMLSource::StartDataRequest(
    } else if (source_name_ == chrome::kChromeUIDNSHost) {
      AboutDnsHandler::Start(profile(), callback);
      return;
@@ -44,7 +44,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.4 2015/08/12 10:56:13 ro
    } else if (source_name_ == chrome::kChromeUILinuxProxyConfigHost) {
      response = AboutLinuxProxyConfig();
  #endif
-@@ -927,7 +929,7 @@ void AboutUIHTMLSource::StartDataRequest(
+@@ -967,7 +969,7 @@ void AboutUIHTMLSource::StartDataRequest(
      ChromeOSCreditsHandler::Start(path, callback);
      return;
  #endif

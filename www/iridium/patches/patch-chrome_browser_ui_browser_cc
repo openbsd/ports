@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_browser_cc,v 1.4 2015/08/12 10:56:13 robert Exp $
---- chrome/browser/ui/browser.cc.orig.port	Wed Jul 15 22:29:58 2015
-+++ chrome/browser/ui/browser.cc	Wed Jul 22 08:37:29 2015
-@@ -1312,7 +1312,7 @@ void Browser::OnWindowDidShow() {
+$OpenBSD: patch-chrome_browser_ui_browser_cc,v 1.5 2015/10/24 18:22:21 robert Exp $
+--- chrome/browser/ui/browser.cc.orig.port	Tue Oct 13 21:04:32 2015
++++ chrome/browser/ui/browser.cc	Wed Oct 14 07:41:13 2015
+@@ -1377,7 +1377,7 @@ void Browser::OnWindowDidShow() {
    window_has_shown_ = true;
  
  // CurrentProcessInfo::CreationTime() is missing on some platforms.
