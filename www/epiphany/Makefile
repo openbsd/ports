@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.128 2015/07/09 21:36:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.129 2015/10/24 14:07:56 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.16.3
+GNOME_VERSION=	3.18.0
 MAJOR_V=	${GNOME_VERSION:R}
 SUBST_VARS=	MAJOR_V
 
@@ -33,7 +33,7 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += secret-1 soup-2.4 sqlite3 startup-notification-1 stdc++
 WANTLIB += webkit2gtk-4.0 webp wnck-3 xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shape xcb-shm xcb-util xcb-xfixes xml2 xslt z
-WANTLIB += epoxy gmp gnutls hogweed nettle tasn1
+WANTLIB += epoxy hyphen
 
 BUILD_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
