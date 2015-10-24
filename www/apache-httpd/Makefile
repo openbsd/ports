@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2015/09/13 12:37:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2015/10/24 12:17:50 claudio Exp $
 
 COMMENT-main=		apache HTTP server
 COMMENT-common=		shared files for Apache 1 and 2
@@ -11,7 +11,7 @@ PKGNAME-main=		${PKGNAME}
 FULLPKGNAME-common=	apache-httpd-common-${V}
 FULLPKGPATH-common=	www/apache-httpd,-common
 
-REVISION-main=		4
+REVISION-main=		5
 
 CATEGORIES=		www net
 
@@ -65,6 +65,7 @@ CONFIGURE_ARGS=		--enable-layout=OpenBSD \
 			--enable-disk-cache \
 			--enable-proxy=shared \
 			--enable-mods-shared=all \
+			--enable-cgi \
 			--enable-suexec \
 			--with-suexec-caller=www \
 			--with-suexec-bin=${TRUEPREFIX}/sbin/suexec2 \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2015/09/13 12:37:49 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2015/10/24 12:17:50 claudio Exp $
 @pkgpath www/apache-httpd${FLAVOR_COMMA}
 @bin bin/ab
 bin/dbmmanage2
@@ -98,7 +98,8 @@ lib/apache2/mod_buffer.so
 lib/apache2/mod_cache.so
 lib/apache2/mod_cache_disk.so
 lib/apache2/mod_cache_socache.so
-@comment lib/apache2/mod_cgid.so
+lib/apache2/mod_cgi.so
+lib/apache2/mod_cgid.so
 lib/apache2/mod_charset_lite.so
 lib/apache2/mod_data.so
 lib/apache2/mod_dav.so
