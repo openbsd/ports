@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/04 14:46:12 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/10/24 16:52:04 zhuk Exp $
 bin/instead
 @bin bin/sdl-instead
 @man man/man6/instead.6
@@ -18,10 +18,12 @@ share/instead/games/tutorial3/br.png
 share/instead/games/tutorial3/es.png
 share/instead/games/tutorial3/fr.png
 share/instead/games/tutorial3/gb.png
+share/instead/games/tutorial3/de.png
 share/instead/games/tutorial3/instead.ogg
 share/instead/games/tutorial3/instead.png
 share/instead/games/tutorial3/it.png
 share/instead/games/tutorial3/main-en.lua
+share/instead/games/tutorial3/main-de.lua
 share/instead/games/tutorial3/main-es.lua
 share/instead/games/tutorial3/main-fr.lua
 share/instead/games/tutorial3/main-it.lua
