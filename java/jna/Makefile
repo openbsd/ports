@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2015/09/18 18:36:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/10/24 14:08:41 jasper Exp $
 
 COMMENT=	Java Native Access (JNA)
 
 GH_PROJECT=	jna
 GH_ACCOUNT=	java-native-access
-GH_TAGNAME=	4.2.0
+GH_TAGNAME=	4.2.1
 DISTNAME=	${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES=	devel
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -28,6 +28,10 @@ BUILD_DEPENDS=	sysutils/ggrep
 LIB_DEPENDS=	devel/libffi
 
 GNU_ARCH=	${ARCH:S/amd64/x86-64/:S/i386/x86/}
+
+# XXX: remove stale distribution file
+post-extract:
+	rm native/libffi/src/powerpc/linux64_closure.S.orig
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR} ${MODJAVA_DOC_DIR}/jna/
