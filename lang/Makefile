@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2015/10/20 00:11:11 abieber Exp $
+# $OpenBSD: Makefile,v 1.181 2015/10/24 07:47:16 jasper Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -10,7 +10,6 @@
      SUBDIR += classpath
      SUBDIR += clisp
      SUBDIR += clojure
-     SUBDIR += coffeescript
      SUBDIR += cython
      SUBDIR += datalog
      SUBDIR += eagle
