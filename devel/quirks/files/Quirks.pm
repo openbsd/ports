@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.317 2015/10/20 21:34:29 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.318 2015/10/24 07:48:06 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -685,6 +685,7 @@ my $obsolete_reason = {
 	'node-rmdir' => 7,
 	'node-syslog' => 7,
 	'gtk2hs-buildtools' => 5,
+	'coffeescript' => 7,
 };
 
 # ->is_base_system($handle, $state):
