@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/07/02 18:02:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/10/24 14:07:41 jasper Exp $
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.classic-overrides.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.example.gschema.xml
@@ -85,6 +85,7 @@ share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.
 share/gnome-shell/modes/
 share/gnome-shell/modes/classic.json
 share/gnome-shell/theme/
+share/gnome-shell/theme/calendar-today.svg
 share/gnome-shell/theme/classic-process-working.svg
 share/gnome-shell/theme/classic-toggle-off-intl.svg
 share/gnome-shell/theme/classic-toggle-off-us.svg
