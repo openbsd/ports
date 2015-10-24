@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.131 2015/09/19 12:46:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.132 2015/10/24 14:06:03 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		3.16.0
-REVISION=		2
+GNOME_VERSION=		3.18.0
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -37,6 +36,7 @@ WANTLIB += svn_ra_serf-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
 WANTLIB += util vala-0.30 vte-2.91 webkit2gtk-4.0 webp xcb xcb-dri2
 WANTLIB += xcb-glx xcb-render xcb-shape xcb-shm xcb-xfixes xml2
 WANTLIB += epoxy gmp gnutls hogweed nettle notify p11-kit tasn1 xslt z
+WANTLIB += hyphen
 
 MODULES=		devel/dconf \
 			devel/gettext \
