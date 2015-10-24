@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2015/08/19 07:22:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2015/10/24 11:40:32 jasper Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	open source message broker implementing JMS 1.1
 
-V=		5.12.0
+V=		5.12.1
 DISTNAME=	apache-activemq-$V
 
 CATEGORIES=	net
@@ -32,15 +32,22 @@ NO_TEST=	Yes
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/bin/activemq
 
+INSTALL_DIRS=	${PREFIX}/activemq/lib/ \
+		${PREFIX}/activemq/webapps{,-demo}/ \
+		${PREFIX}/activemq/examples \
+		${PREFIX}/share/examples/activemq/
+
 do-install:
 	-rm -r ${WRKSRC}/bin/{macosx,linux-x86-*,*.orig} \
 		${WRKSRC}/data
 	${INSTALL_DATA_DIR} ${PREFIX}/activemq/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/activemq/conf
 	cd ${WRKSRC} && tar cf - * | tar xf - -C ${PREFIX}/activemq/
-	chmod -R ${SHAREMODE} ${PREFIX}/activemq/lib/optional/commons-collections-3.2.1.jar
 	${INSTALL_DATA} ${FILESDIR}/activemq.conf ${PREFIX}/share/examples/activemq/
 	mv ${PREFIX}/activemq/conf ${PREFIX}/share/examples/activemq/
+	# Lots of weird modes to fixup, use a sledgehammer
+	find ${INSTALL_DIRS} -type f -print0 | xargs -0 chmod ${SHAREMODE}
+	find ${PREFIX}/activemq/bin/ -type f -name \*.jar -print0 | xargs -0 chmod ${BINMODE}
 	cd ${PREFIX}/activemq && ln -sf /var/db/activemq/data data
 	cd ${PREFIX}/activemq && ln -sf /var/db/activemq/tmp tmp
 	cd ${PREFIX}/activemq && ln -sf ${SYSCONFDIR}/activemq conf
