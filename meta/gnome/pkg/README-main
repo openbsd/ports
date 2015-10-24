@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.34 2015/04/04 09:36:38 ajacoutot Exp $
+$OpenBSD: README-main,v 1.35 2015/10/24 08:46:25 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -52,16 +52,8 @@ To make use of it, rc.conf.local(8) needs to contain the following line:
     multicast_host=YES
 and "avahi_daemon" must be added to "pkg_scripts" _after_ "messagebus".
 
-GNOME Welcome Tour
-==================
-To run the GNOME Welcome Tour when a user logs in for the first time,
-the file ~/.config/run-welcome-tour must exist and contain "yes". Either
-create it manually or add it to skel (see user(8)) before creating users.
-
 Cheat sheet
 ===========
-$ echo "yes" > ~/.config/run-welcome-tour
-# rcctl disable xdm
-# rcctl enable multicast_host
-# for i in messagebus avahi_daemon gdm; do rcctl enable $i; done
+# rcctl set xdm status off
+# for i in multicast_host messagebus avahi_daemon gdm; do rcctl set $i status on; done
 # reboot
