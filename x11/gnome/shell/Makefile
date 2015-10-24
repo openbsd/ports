@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.122 2015/08/15 11:13:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2015/10/24 14:07:29 jasper Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.16.3
-REVISION=		0
+GNOME_VERSION=		3.18.1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -55,7 +54,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 			www/libcroco \
 			x11/gnome/gcr \
 			x11/gnome/gjs \
-			x11/gnome/mutter>=3.16.2
+			x11/gnome/mutter>=3.18.1
 
 # configure looks for gnome-keybindings.pc;
 # system.js, backgroundMenu.js, network.js, remoteSearch.js
