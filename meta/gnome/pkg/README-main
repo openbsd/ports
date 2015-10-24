@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.35 2015/10/24 08:46:25 ajacoutot Exp $
+$OpenBSD: README-main,v 1.36 2015/10/24 09:18:13 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -54,6 +54,6 @@ and "avahi_daemon" must be added to "pkg_scripts" _after_ "messagebus".
 
 Cheat sheet
 ===========
-# rcctl set xdm status off
-# for i in multicast_host messagebus avahi_daemon gdm; do rcctl set $i status on; done
+# rcctl disable xdm
+# rcctl enable multicast_host messagebus avahi_daemon gdm
 # reboot

@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.8 2015/07/28 14:46:13 ajacoutot Exp $
+$OpenBSD: README-main,v 1.9 2015/10/24 09:18:13 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,8 +10,7 @@ add the following line to /etc/rc.conf.local(8):
 
 Note that you MUST have a system-wide D-BUS daemon running BEFORE
 starting avahi, e.g.:
-    rcctl set messagebus status on
-    rcctl set avahi_daemon status on
+    rcctl enable messagebus avahi_daemon
     rcctl order messagebus avahi_daemon
 
 A rule similar to the one below can be used in pf.conf(5) to pass
