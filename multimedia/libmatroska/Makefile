@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2015/05/27 21:17:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/10/24 05:17:33 ajacoutot Exp $
 
 COMMENT=	extensible open standard audio/video container library
 
-DISTNAME=	libmatroska-1.4.2
+DISTNAME=	libmatroska-1.4.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.matroska.org/downloads/libmatroska/
 EXTRACT_SUFX=	.tar.bz2
@@ -16,9 +16,9 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	m stdc++
+WANTLIB=	ebml m stdc++
 
-BUILD_DEPENDS=	textproc/libebml>=1.3.1
+LIB_DEPENDS=	textproc/libebml>=1.3.2
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
