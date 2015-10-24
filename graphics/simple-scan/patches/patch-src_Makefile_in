@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2015/10/24 09:53:54 ajacoutot Exp $
+
+No gusb nor packagekit under OpenBSD.
+
+--- src/Makefile.in.orig	Mon Sep 21 22:03:39 2015
++++ src/Makefile.in	Sat Oct 24 11:43:14 2015
+@@ -310,8 +310,6 @@ simple_scan_SOURCES = \
+ 	book.vala \
+ 	book-view.vala \
+ 	colord.vapi \
+-	fixes.vapi \
+-	packagekit-glib2.vapi \
+ 	page.vala \
+ 	page-view.vala \
+ 	sane.vapi \
+@@ -321,7 +319,7 @@ simple_scan_SOURCES = \
+ 	autosave-manager.vala \
+ 	resources.c
+ 
+-simple_scan_VALAFLAGS = --pkg=posix --pkg=zlib --pkg=gusb \
++simple_scan_VALAFLAGS = --pkg=posix --pkg=zlib \
+ 	--pkg=gio-2.0 --pkg=gtk+-3.0 \
+ 	--gresources=$(top_srcdir)/data/simple-scan.gresource.xml \
+ 	--debug --target-glib 2.38 $(am__append_1)
+@@ -625,9 +623,9 @@ $(srcdir)/autosave-manager.c: $(srcdir)/simple_scan_va
+ 	@if test -f $@; then :; else \
+ 	  $(MAKE) $(AM_MAKEFLAGS) $(srcdir)/simple_scan_vala.stamp; \
+ 	fi
+-$(srcdir)/simple_scan_vala.stamp: config.vapi book.vala book-view.vala colord.vapi fixes.vapi packagekit-glib2.vapi page.vala page-view.vala sane.vapi simple-scan.vala scanner.vala ui.vala autosave-manager.vala
++$(srcdir)/simple_scan_vala.stamp: config.vapi book.vala book-view.vala colord.vapi page.vala page-view.vala sane.vapi simple-scan.vala scanner.vala ui.vala autosave-manager.vala
+ 	$(AM_V_at)rm -f $@ && echo stamp > $@-t
+-	$(AM_V_VALAC)$(am__cd) $(srcdir) && $(VALAC) $(simple_scan_VALAFLAGS) $(VALAFLAGS) -C config.vapi book.vala book-view.vala colord.vapi fixes.vapi packagekit-glib2.vapi page.vala page-view.vala sane.vapi simple-scan.vala scanner.vala ui.vala autosave-manager.vala
++	$(AM_V_VALAC)$(am__cd) $(srcdir) && $(VALAC) $(simple_scan_VALAFLAGS) $(VALAFLAGS) -C config.vapi book.vala book-view.vala colord.vapi page.vala page-view.vala sane.vapi simple-scan.vala scanner.vala ui.vala autosave-manager.vala
+ 	$(AM_V_at)mv -f $@-t $@
+ 
+ ID: $(am__tagged_files)

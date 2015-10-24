@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/04/02 16:12:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/10/24 09:53:54 ajacoutot Exp $
 @bin bin/simple-scan
 @man man/man1/simple-scan.1
 share/appdata/
@@ -43,6 +43,7 @@ share/help/de/simple-scan/save.page
 share/help/de/simple-scan/scanner.page
 share/help/de/simple-scan/scanning.page
 share/locale/af/LC_MESSAGES/simple-scan.mo
+share/locale/am/LC_MESSAGES/simple-scan.mo
 share/locale/ar/LC_MESSAGES/simple-scan.mo
 share/locale/ast/LC_MESSAGES/simple-scan.mo
 share/locale/az/LC_MESSAGES/simple-scan.mo
@@ -52,6 +53,9 @@ share/locale/bo/LC_MESSAGES/
 share/locale/bo/LC_MESSAGES/simple-scan.mo
 share/locale/ca/LC_MESSAGES/simple-scan.mo
 share/locale/ca@valencia/LC_MESSAGES/simple-scan.mo
+share/locale/ce/
+share/locale/ce/LC_MESSAGES/
+share/locale/ce/LC_MESSAGES/simple-scan.mo
 share/locale/cs/LC_MESSAGES/simple-scan.mo
 share/locale/da/LC_MESSAGES/simple-scan.mo
 share/locale/de/LC_MESSAGES/simple-scan.mo
@@ -107,6 +111,7 @@ share/locale/sl/LC_MESSAGES/simple-scan.mo
 share/locale/sq/LC_MESSAGES/simple-scan.mo
 share/locale/sr/LC_MESSAGES/simple-scan.mo
 share/locale/sv/LC_MESSAGES/simple-scan.mo
+share/locale/ta/LC_MESSAGES/simple-scan.mo
 share/locale/te/LC_MESSAGES/simple-scan.mo
 share/locale/th/LC_MESSAGES/simple-scan.mo
 share/locale/tr/LC_MESSAGES/simple-scan.mo

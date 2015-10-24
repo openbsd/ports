@@ -1,14 +1,15 @@
-$OpenBSD: patch-configure_ac,v 1.5 2014/03/24 10:13:29 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2015/10/24 09:53:54 ajacoutot Exp $
 
-No (g)udev under OpenBSD.
+No gusb nor packagekit under OpenBSD.
 
---- configure.ac.orig	Sun Mar 23 21:32:02 2014
-+++ configure.ac	Mon Mar 24 11:09:03 2014
-@@ -28,7 +28,6 @@ PKG_CHECK_MODULES(SIMPLE_SCAN, [
+--- configure.ac.orig	Mon Sep 21 22:03:01 2015
++++ configure.ac	Sat Oct 24 11:35:57 2015
+@@ -28,8 +28,6 @@ PKG_CHECK_MODULES(SIMPLE_SCAN, [
      zlib
      cairo
      gdk-pixbuf-2.0
--    gudev-1.0
+-    gusb
+-    packagekit-glib2
  ])
  
  PKG_CHECK_MODULES(COLORD, [

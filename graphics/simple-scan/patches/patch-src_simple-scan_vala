@@ -1,45 +1,77 @@
-$OpenBSD: patch-src_simple-scan_vala,v 1.2 2014/04/02 16:12:04 ajacoutot Exp $
+$OpenBSD: patch-src_simple-scan_vala,v 1.3 2015/10/24 09:53:54 ajacoutot Exp $
 
-No (g)udev under OpenBSD.
+No gusb under OpenBSD.
 
---- src/simple-scan.vala.orig	Tue Jan  7 09:54:14 2014
-+++ src/simple-scan.vala	Wed Apr  2 18:04:22 2014
+--- src/simple-scan.vala.orig	Sun Sep 13 23:35:03 2015
++++ src/simple-scan.vala	Sat Oct 24 11:40:31 2015
 @@ -31,7 +31,6 @@ public class SimpleScan : Gtk.Application
  
      private ScanDevice? default_device = null;
      private bool have_devices = false;
--    private GUdev.Client udev_client;
+-    private GUsb.Context usb_context;
      private UserInterface ui;
      private Scanner scanner;
      private Book book;
-@@ -62,10 +61,6 @@ public class SimpleScan : Gtk.Application
+@@ -62,17 +61,6 @@ public class SimpleScan : Gtk.Application
          scanner.scan_failed.connect (scanner_failed_cb);
          scanner.scanning_changed.connect (scanner_scanning_changed_cb);
  
--        string[]? subsystems = { "usb", null };
--        udev_client = new GUdev.Client (subsystems);
--        udev_client.uevent.connect (on_uevent);
+-        try
+-        {
+-            usb_context = new GUsb.Context ();
+-            usb_context.device_added.connect (() => { scanner.redetect (); });
+-            usb_context.device_removed.connect (() => { scanner.redetect (); });
+-        }
+-        catch (Error e)
+-        {
+-            warning ("Failed to create USB context: %s\n", e.message);
+-        }
 -
          if (default_device != null)
          {
              List<ScanDevice> device_list = null;
-@@ -88,7 +83,6 @@ public class SimpleScan : Gtk.Application
+@@ -95,7 +83,6 @@ public class SimpleScan : Gtk.Application
          base.shutdown ();
          book = null;
          ui = null;
--        udev_client = null;
+-        usb_context = null;
          scanner.free ();
      }
  
-@@ -448,11 +442,6 @@ public class SimpleScan : Gtk.Application
-         log_file.printf ("[%+.2fs] %s %s\n", log_timer.elapsed (), prefix, message);
-         if (debug_enabled)
-             stderr.printf ("[%+.2fs] %s %s\n", log_timer.elapsed (), prefix, message);
--    }
--
--    private void on_uevent (GUdev.Client client, string action, GUdev.Device device)
--    {
--        scanner.redetect ();
-     }
+@@ -180,36 +167,8 @@ public class SimpleScan : Gtk.Application
  
-     private static void fix_pdf (string filename) throws Error
+     public string? suggest_driver ()
+     {
+-        if (usb_context == null)
+-            return null;
+-
+-        var driver_map = new HashTable <uint32, string> (direct_hash, direct_equal);
+-        add_devices (driver_map, brscan_devices, "brscan");
+-        add_devices (driver_map, brscan2_devices, "brscan2");
+-        add_devices (driver_map, brscan3_devices, "brscan3");
+-        add_devices (driver_map, brscan4_devices, "brscan4");
+-        add_devices (driver_map, samsung_devices, "samsung");
+-        add_devices (driver_map, hpaio_devices, "hpaio");
+-        add_devices (driver_map, epkowa_devices, "epkowa");        
+-        var devices = GUsb.context_get_devices (usb_context);
+-        /* Fixed in GUsb 0.2.7: https://github.com/hughsie/libgusb/commit/83a6b1a20653c1a17f0a909f08652b5e1df44075 */
+-        /*var devices = GUSB.context_get_devices (context);*/
+-        for (var i = 0; i < devices.length; i++)
+-        {
+-            var device = devices.data[i];
+-            var driver = driver_map.lookup (device.get_vid () << 16 | device.get_pid ());
+-            if (driver != null)
+-                return driver;
+-        }
+-
+         return null;
+     }
+-
+-    private void add_devices (HashTable<uint32, string> map, uint32[] devices, string driver)
+-    {
+-        for (var i = 0; i < devices.length; i++)
+-            map.insert (devices[i], driver);
+-    }   
+ 
+     private void authorize_cb (Scanner scanner, string resource)
+     {
