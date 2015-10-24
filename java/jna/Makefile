@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/10/24 14:08:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2015/10/24 14:22:14 jasper Exp $
 
 COMMENT=	Java Native Access (JNA)
 
@@ -26,12 +26,15 @@ USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	sysutils/ggrep
 LIB_DEPENDS=	devel/libffi
+# clojure needs to have the jna.jar installed
+TEST_DEPENDS=	${BASE_PKGPATH} \
+		lang/clojure
 
 GNU_ARCH=	${ARCH:S/amd64/x86-64/:S/i386/x86/}
 
 # XXX: remove stale distribution file
 post-extract:
-	rm native/libffi/src/powerpc/linux64_closure.S.orig
+	rm -f native/libffi/src/powerpc/linux64_closure.S.orig
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR} ${MODJAVA_DOC_DIR}/jna/
@@ -43,5 +46,6 @@ do-install:
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant \
 		${MODJAVA_BUILD_ARGS} test
+	${SHELL} ${FILESDIR}/test.sh
 
 .include <bsd.port.mk>
