@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2015/07/02 18:02:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2015/10/24 14:07:00 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.16.3
+GNOME_VERSION=		3.18.1
 
 SHARED_LIBS +=  mutter                    1.0 # 0.0
 
@@ -46,5 +46,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
 
 # disable -Werror which breaks at least hppa/mips64/sparc64
 CONFIGURE_ARGS +=	--enable-compile-warnings=yes
+
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
 .include <bsd.port.mk>
