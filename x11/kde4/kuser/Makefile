@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/10/25 13:11:54 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2015/10/25 14:22:38 zhuk Exp $
 
 COMMENT =	user management application for KDE
 DISTNAME =	kuser-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	sysutils security
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdeadmin/kuser
@@ -17,5 +17,8 @@ MODKDE4_USE =	pim
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
+
+CONFIGURE_ARGS =	-DKU_FIRSTUID=1000 \
+			-DKU_FIRSTGID=1000
 
 .include <bsd.port.mk>
