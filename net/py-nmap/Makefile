@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/09/20 07:39:02 rpointel Exp $
+# $OpenBSD: Makefile,v 1.11 2015/10/25 08:18:25 rpointel Exp $
 
 COMMENT =		python interface to the nmap scan data
 
-MODPY_EGG_VERSION =	0.4.3
+MODPY_EGG_VERSION =	0.4.4
 DISTNAME =		python-nmap-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/python/py/}
 CATEGORIES =		net
