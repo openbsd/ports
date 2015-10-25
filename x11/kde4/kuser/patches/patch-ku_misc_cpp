@@ -1,0 +1,23 @@
+$OpenBSD: patch-ku_misc_cpp,v 1.1 2015/10/25 13:11:54 zhuk Exp $
+Add OpenBSD support.
+--- ku_misc.cpp.orig	Sun Aug  4 06:22:20 2013
++++ ku_misc.cpp	Sun Oct 25 14:10:42 2015
+@@ -229,6 +229,10 @@ QByteArray genSalt( int len )
+ 
+ QString encryptPass( const QString &pass, bool md5 )
+ {
++#if defined(__OpenBSD__)
++  char tmp[_PASSWORD_LEN];
++  crypt_newhash(pass.toLocal8Bit(), "bcrypt,a", tmp, _PASSWORD_LEN);
++#else
+   QByteArray salt;
+   char tmp[128];
+ 
+@@ -241,6 +245,7 @@ QString encryptPass( const QString &pass, bool md5 )
+     salt = genSalt( 2 );
+   }
+   strcpy( tmp, crypt( QFile::encodeName( pass ), salt ) );
++#endif
+   return QString::fromLocal8Bit( tmp );
+ }
+ 

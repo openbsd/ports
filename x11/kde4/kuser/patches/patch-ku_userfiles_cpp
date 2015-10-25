@@ -1,0 +1,40 @@
+$OpenBSD: patch-ku_userfiles_cpp,v 1.1 2015/10/25 13:11:54 zhuk Exp $
+Add OpenBSD support.
+--- ku_userfiles.cpp.orig	Sun Oct 25 13:25:27 2015
++++ ku_userfiles.cpp	Sun Oct 25 13:26:38 2015
+@@ -62,7 +62,7 @@ KU_UserFiles::KU_UserFiles(KU_PrefsBase *cfg) : KU_Use
+ #ifdef HAVE_SHADOW_H
+   if ( !mCfg->shadowsrc().isEmpty() ) caps |= Cap_Shadow;
+ #endif
+-#if defined(__FreeBSD__) || defined(__bsdi__)
++#if defined(__FreeBSD__) || defined(__bsdi__) || defined(__OpenBSD__)
+   caps |= Cap_BSD;
+ #endif
+ }
+@@ -145,7 +145,7 @@ bool KU_UserFiles::loadpwd()
+     user.setPwd( tmp );
+     user.setHomeDir(QString::fromLocal8Bit(p->pw_dir));
+     user.setShell(QString::fromLocal8Bit(p->pw_shell));
+-#if defined(__FreeBSD__) || defined(__bsdi__)
++#if defined(__FreeBSD__) || defined(__bsdi__) || defined(__OpenBSD__)
+     user.setClass(QString::fromLatin1(p->pw_class));
+     user.setLastChange(p->pw_change);
+     user.setExpire(p->pw_expire);
+@@ -343,7 +343,7 @@ bool KU_UserFiles::savepwd()
+     escstr( Shell );
+     escstr( Name );
+     escstr( FullName );
+-#if defined(__FreeBSD__) || defined(__bsdi__)
++#if defined(__FreeBSD__) || defined(__bsdi__) || defined(__OpenBSD__)
+     escstr( Class );
+     escstr( Office );
+     escstr( WorkPhone );
+@@ -436,7 +436,7 @@ bool KU_UserFiles::savepwd()
+ 
+   // need to run a utility program to build /etc/passwd, /etc/pwd.db
+   // and /etc/spwd.db from /etc/master.passwd
+-#if defined(__FreeBSD__) || defined(__bsdi__)
++#if defined(__FreeBSD__) || defined(__bsdi__) || defined(__OpenBSD__)
+   if (system(PWMKDB) != 0) {
+     mErrorString = i18n("Unable to build password database.");
+     return false;

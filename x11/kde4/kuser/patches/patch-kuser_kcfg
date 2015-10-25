@@ -1,0 +1,37 @@
+$OpenBSD: patch-kuser_kcfg,v 1.1 2015/10/25 13:11:54 zhuk Exp $
+Add OpenBSD support.
+--- kuser.kcfg.orig	Sun Oct 25 13:28:16 2015
++++ kuser.kcfg	Sun Oct 25 13:34:21 2015
+@@ -24,7 +24,7 @@
+   <group name="connection-$(connection)">
+     <entry name="source" type="Enum">
+     <label>The source of the user and group database</label>
+-    <whatsthis>This option allows you to select where the user/group data stored. Currently three storage backends are supported. &lt;BR&gt;&lt;B&gt;Files&lt;/B&gt; stores user/group data in traditional /etc/passwd and /etc/group flat files. &lt;BR&gt;&lt;B&gt;LDAP&lt;/B&gt; stores data in a directory server using the posixAccount and posixGroup object classes; this backend allows the management of Samba users/groups via the sambaSamAccount object class.&lt;BR&gt;&lt;B&gt;System&lt;/B&gt; provides a read-only access to all users and groups which your installation knows about.</whatsthis>
++    <whatsthis>This option allows you to select where the user/group data stored. Currently three storage backends are supported. &lt;BR&gt;&lt;B&gt;Files&lt;/B&gt; stores user/group data in traditional /etc/master.passwd and /etc/group flat files. &lt;BR&gt;&lt;B&gt;LDAP&lt;/B&gt; stores data in a directory server using the posixAccount and posixGroup object classes; this backend allows the management of Samba users/groups via the sambaSamAccount object class.&lt;BR&gt;&lt;B&gt;System&lt;/B&gt; provides a read-only access to all users and groups which your installation knows about.</whatsthis>
+     <choices>
+       <choice name="Files"/>
+       <choice name="LDAP"/>
+@@ -102,7 +102,7 @@
+     <entry name="passwdsrc" type="String">
+       <label>Password file</label>
+       <whatsthis>This specifies the users database file (usually /etc/passwd).</whatsthis>
+-      <default>/etc/passwd</default>
++      <default>/etc/master.passwd</default>
+     </entry>
+     <entry name="groupsrc" type="String">
+       <label>Group file</label>
+@@ -116,12 +116,12 @@
+     <entry name="shadowsrc" type="String">
+       <label>Shadow password file</label>
+       <whatsthis>Specifies the shadow password file (usually /etc/shadow). Leave this empty if your system does not use a shadow password file.</whatsthis>
+-      <default>/etc/shadow</default>
++      <default></default>
+     </entry>
+     <entry name="gshadowsrc" type="String">
+       <label>Group shadow file</label>
+       <whatsthis>Specifies the shadow group file (usually /etc/gshadow). Leave this empty if your system does not use a shadow group file.</whatsthis>
+-      <default>/etc/gshadow</default>
++      <default></default>
+     </entry>
+ 
+     <entry name="ldapuser" type="String">
