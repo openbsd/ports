@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2015/10/25 07:46:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.136 2015/10/25 11:30:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -43,7 +43,7 @@ MODGNOME_TOOLS +=	gtk-update-icon-cache shared-mime-info
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 
-LIB_DEPENDS=		multimedia/gstreamer1/base \
+LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
 			print/libspectre \
 			print/poppler \
 			x11/gnome/libsecret \
