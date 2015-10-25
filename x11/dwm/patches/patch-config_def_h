@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_def_h,v 1.9 2012/07/09 16:33:40 zinke Exp $
+$OpenBSD: patch-config_def_h,v 1.10 2015/10/25 14:23:07 jung Exp $
 --- config.def.h.orig	Mon Dec 19 16:02:46 2011
-+++ config.def.h	Sat Jul  7 22:28:18 2012
++++ config.def.h	Thu Oct  8 20:58:14 2015
 @@ -1,13 +1,13 @@
  /* See LICENSE file for copyright and license details. */
  
@@ -31,12 +31,3 @@ $OpenBSD: patch-config_def_h,v 1.9 2012/07/09 16:33:40 zinke Exp $
  };
  
  /* layout(s) */
-@@ -47,7 +49,7 @@ static const Layout layouts[] = {
- 
- /* commands */
- static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
--static const char *termcmd[]  = { "uxterm", NULL };
-+static const char *termcmd[]  = { "xterm", NULL };
- 
- static Key keys[] = {
- 	/* modifier                     key        function        argument */
