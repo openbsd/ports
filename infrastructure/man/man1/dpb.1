@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.113 2015/08/25 22:40:56 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.114 2015/10/25 09:05:20 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: August 25 2015 $
+.Dd $Mdocdate: October 25 2015 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -937,6 +937,12 @@ systematically appending to files or using atomic mv operations.
 .Pp
 For obvious reasons, this won't work as well with masters running on distinct
 machines sharing their logs through NFS.
+.Ss BUILD CYCLES
+There are some various interdependencies in package builds that can be hard
+to trace in case something goes wrong.
+Refer to
+.Pa summary.log
+to fix those specific issues.
 .Sh AFFINITY
 .Nm
 now maintains a list of pkgpath-per-host that are currently building in the
@@ -1163,6 +1169,16 @@ the most important dependencies will happen before the general LISTING.
 Log of the
 .Xr ftp 1
 process(es) that attempted to fetch the distfile.
+.It Pa dump.log
+A long log file generated at the end of build that yields any information
+pertinent to ports still in the
+.Sq to build
+and the
+.Sq built
+queues.
+See also
+.Pa summary.log
+for an expurged version of same.
 .It Pa engine.log
 Build engine log.
 Each line corresponds to a state change for a pkgpath and starts with the pid
@@ -1312,6 +1328,16 @@ creating new jobs.
 .It Pa stop-<hostname>
 Not a logfile at all, but created by the user to stop hostname creating
 new jobs.
+.It Pa summary.log
+A summary file generated at end of build that lists packages not built
+or not installable, along with a reason for it.
+This summarizes packages not built because of existing locks, because of
+errors, but also because they depend on something that was not built.
+.Pp
+In that last case,
+.Pa summary.log
+contains a chain of dependencies leading to the problematic package, or
+in case of build cycles, stopping at the first loop.
 .It Pa term-report.log
 Saves all terminal output, so that it can be replayed at hi speed with
 .Xr dpb-replay 1 .
