@@ -1,6 +1,13 @@
-$OpenBSD: patch-tests_setup,v 1.1 2015/10/24 10:25:39 sthen Exp $
+$OpenBSD: patch-tests_setup,v 1.2 2015/10/25 21:01:48 sthen Exp $
 
-https://github.com/stedolan/jq/issues/1000
+From b7a219a91dc1094022478dd9bc0f60275367ce25 Mon Sep 17 00:00:00 2001
+From: David Tolnay <dtolnay@gmail.com>
+Date: Sat, 24 Oct 2015 11:21:16 -0700
+Subject: [PATCH] mktemp needs 6 or more X's (fix #1000)
+
+mktemp(1) isn't posix specified, but it's reasonable to use
+mktemp(3) to implement it which requires 6 trailing X's in
+the format
 
 --- tests/setup.orig	Fri Oct 23 10:45:40 2015
 +++ tests/setup	Fri Oct 23 10:45:51 2015

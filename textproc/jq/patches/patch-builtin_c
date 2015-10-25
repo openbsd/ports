@@ -1,6 +1,17 @@
-$OpenBSD: patch-builtin_c,v 1.1 2015/10/24 10:25:39 sthen Exp $
+$OpenBSD: patch-builtin_c,v 1.2 2015/10/25 21:01:48 sthen Exp $
 
-Needed for strptime.  https://github.com/stedolan/jq/issues/999
+From 2f79004f856532c479b79e226798a3dcc0a127f0 Mon Sep 17 00:00:00 2001
+From: David Tolnay <dtolnay@gmail.com>
+Date: Sat, 24 Oct 2015 11:23:37 -0700
+Subject: [PATCH] strptime() on OpenBSD requires _XOPEN_SOURCE_EXTENDED 1 (fix
+ #999)
+
+strptime() is an XPG4v2 function, on OpenBSD the prototype
+is not included in time.h unless visibility is set, it needs
+either "#define _XOPEN_SOURCE_EXTENDED 1" or _XOPEN_SOURCE
+>= 500. Without this the prototype isn't included and
+strptime's returned pointer is truncated to an int, causing
+SEGV on 64-bit arches when using it.
 
 --- builtin.c.orig	Sat Oct 24 10:56:38 2015
 +++ builtin.c	Sat Oct 24 11:01:19 2015
