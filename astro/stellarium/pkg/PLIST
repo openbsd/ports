@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/04/26 08:25:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/10/26 06:35:05 ajacoutot Exp $
 @bin bin/stellarium
 @man man/man1/stellarium.1
 share/appdata/
@@ -42,7 +42,6 @@ share/stellarium/data/shaders/s3d_vertexlit.vert
 share/stellarium/data/ssystem.ini
 share/stellarium/data/ssystem_1000comets.ini
 share/stellarium/data/stellarium.ico
-share/stellarium/data/updates.json
 share/stellarium/landscapes/
 share/stellarium/landscapes/garching/
 share/stellarium/landscapes/garching/description.ar.utf8
@@ -83,6 +82,10 @@ share/stellarium/landscapes/grossmugl/description.hu.utf8
 share/stellarium/landscapes/grossmugl/description.pt_BR.utf8
 share/stellarium/landscapes/grossmugl/description.ru.utf8
 share/stellarium/landscapes/grossmugl/description.uk.utf8
+share/stellarium/landscapes/grossmugl/gazetteer.de.utf8
+share/stellarium/landscapes/grossmugl/gazetteer.en.utf8
+share/stellarium/landscapes/grossmugl/gazetteer.fr.utf8
+share/stellarium/landscapes/grossmugl/gazetteer.ru.utf8
 share/stellarium/landscapes/grossmugl/grossmugl_leeberg_crop11.25_2048.png
 share/stellarium/landscapes/grossmugl/grossmugl_leeberg_fog_crop22.5_w512.png
 share/stellarium/landscapes/grossmugl/grossmugl_leeberg_illum_crop0_2048.png
@@ -254,21 +257,17 @@ share/stellarium/landscapes/zero/description.de.utf8
 share/stellarium/landscapes/zero/description.en.utf8
 share/stellarium/landscapes/zero/description.fr.utf8
 share/stellarium/landscapes/zero/description.hu.utf8
+share/stellarium/landscapes/zero/description.pt_BR.utf8
 share/stellarium/landscapes/zero/description.ru.utf8
 share/stellarium/landscapes/zero/description.uk.utf8
 share/stellarium/landscapes/zero/landscape.ini
 share/stellarium/landscapes/zero/zero_horizon.txt
 share/stellarium/nebulae/
 share/stellarium/nebulae/default/
-share/stellarium/nebulae/default/BarnardCat_tabbed.txt
-share/stellarium/nebulae/default/LBNCat_tabbed.txt
-share/stellarium/nebulae/default/LDNCat_tabbed.txt
-share/stellarium/nebulae/default/RCWCat_tabbed.txt
-share/stellarium/nebulae/default/SharplessCat_tabbed.txt
-share/stellarium/nebulae/default/VandenBerghCat_tabbed.txt
 share/stellarium/nebulae/default/barnard142-vasey.png
 share/stellarium/nebulae/default/barnard173-vasey.png
 share/stellarium/nebulae/default/barnard22-vasey.png
+share/stellarium/nebulae/default/catalog.dat
 share/stellarium/nebulae/default/etaCarinae_gzotti.png
 share/stellarium/nebulae/default/ic1805.png
 share/stellarium/nebulae/default/ic1848.png
@@ -445,9 +444,8 @@ share/stellarium/nebulae/default/n7590-trev.png
 share/stellarium/nebulae/default/n7635-vasey.png
 share/stellarium/nebulae/default/n869-884spano.png
 share/stellarium/nebulae/default/n891oleg.png
+share/stellarium/nebulae/default/names.dat
 share/stellarium/nebulae/default/nebula_textures.fab
-share/stellarium/nebulae/default/ngc2000.dat
-share/stellarium/nebulae/default/ngc2000names.dat
 share/stellarium/nebulae/default/pleiades.png
 share/stellarium/nebulae/default/rcw158-trev.png
 share/stellarium/nebulae/default/rho-a00.png
@@ -485,19 +483,29 @@ share/stellarium/scenery3d/Sterngarten/Sterngarten_Wien_innerArea_ground.mtl
 share/stellarium/scenery3d/Sterngarten/Sterngarten_Wien_innerArea_ground.obj
 share/stellarium/scenery3d/Sterngarten/description.de.utf8
 share/stellarium/scenery3d/Sterngarten/description.en.utf8
+share/stellarium/scenery3d/Sterngarten/description.fr.utf8
+share/stellarium/scenery3d/Sterngarten/description.pt_BR.utf8
 share/stellarium/scenery3d/Sterngarten/description.ru.utf8
 share/stellarium/scenery3d/Sterngarten/scenery3d.ini
 share/stellarium/scenery3d/Sterngarten/viewpoints.ini
 share/stellarium/scenery3d/Testscene/
+share/stellarium/scenery3d/Testscene/Stellarium-Testscene.mtl
+share/stellarium/scenery3d/Testscene/Stellarium-Testscene.obj
 share/stellarium/scenery3d/Testscene/Stellarium-Testscene_ground.mtl
 share/stellarium/scenery3d/Testscene/Stellarium-Testscene_ground.obj
+share/stellarium/scenery3d/Testscene/Stellarium-Testscene_withGrid.mtl
+share/stellarium/scenery3d/Testscene/Stellarium-Testscene_withGrid.obj
 share/stellarium/scenery3d/Testscene/Stellarium-Testscene_withGrid_Bump-separateSpheres.mtl
+share/stellarium/scenery3d/Testscene/Stellarium-Testscene_withGrid_Bump-separateSpheres.obj
 share/stellarium/scenery3d/Testscene/Stellarium-Testscene_withGrid_Bump-separateSpheres.obj.gz
+share/stellarium/scenery3d/Testscene/Stellarium-Testscene_withGrid_Bump.mtl
+share/stellarium/scenery3d/Testscene/Stellarium-Testscene_withGrid_Bump.obj
 share/stellarium/scenery3d/Testscene/TX_Stellarium-Testscene/
 share/stellarium/scenery3d/Testscene/TX_Stellarium-Testscene/Bodenbelag_Schotter_Indisch.jpg
 share/stellarium/scenery3d/Testscene/TX_Stellarium-Testscene/Bodenbelag_Stein_Schotter_5cm.jpg
 share/stellarium/scenery3d/Testscene/TX_Stellarium-Testscene/Stein_Mauerwerk_mehrfarbig.jpg
 share/stellarium/scenery3d/Testscene/TX_Stellarium-Testscene/Stein_Platte_Quaderstein.jpg
+share/stellarium/scenery3d/Testscene/TX_Stellarium-Testscene_ground/
 share/stellarium/scenery3d/Testscene/TX_Stellarium-Testscene_withGrid/
 share/stellarium/scenery3d/Testscene/TX_Stellarium-Testscene_withGrid/Bodenbelag_Stein_Schotter_5cm.png
 share/stellarium/scenery3d/Testscene/TX_Stellarium-Testscene_withGrid/Bodenbelag_Stein_Schotter_5cm_bump.png
@@ -515,6 +523,8 @@ share/stellarium/scenery3d/Testscene/TX_Stellarium-Testscene_withGrid/Stein_Plat
 share/stellarium/scenery3d/Testscene/TX_Stellarium-Testscene_withGrid/Stein_Platte_Quaderstein_bump.png
 share/stellarium/scenery3d/Testscene/TX_Stellarium-Testscene_withGrid/Stein_Platte_Quaderstein_bump_dontUse.jpg
 share/stellarium/scenery3d/Testscene/TX_Stellarium-Testscene_withGrid/Stein_Platte_Quaderstein_dontUse.jpg
+share/stellarium/scenery3d/Testscene/description.pt_BR.utf8
+share/stellarium/scenery3d/Testscene/description.ru.utf8
 share/stellarium/scenery3d/Testscene/scenery3d.ini
 share/stellarium/scripts/
 share/stellarium/scripts/analemma.ssc
@@ -526,6 +536,7 @@ share/stellarium/scripts/earth_3.ssc
 share/stellarium/scripts/earth_4.ssc
 share/stellarium/scripts/earth_5.ssc
 share/stellarium/scripts/earth_6.ssc
+share/stellarium/scripts/earth_7.ssc
 share/stellarium/scripts/landscapes.ssc
 share/stellarium/scripts/lunar_partial.ssc
 share/stellarium/scripts/lunar_total.ssc
@@ -534,6 +545,7 @@ share/stellarium/scripts/phobos_phun_2.ssc
 share/stellarium/scripts/phobos_phun_3.ssc
 share/stellarium/scripts/phobos_phun_4.ssc
 share/stellarium/scripts/phobos_phun_5.ssc
+share/stellarium/scripts/save_state.inc
 share/stellarium/scripts/screensaver.ssc
 share/stellarium/scripts/sky_cultures.ssc
 share/stellarium/scripts/solar_eclipse.ssc
@@ -542,6 +554,7 @@ share/stellarium/scripts/startup.ssc
 share/stellarium/scripts/sun.ssc
 share/stellarium/scripts/supernova.ssc
 share/stellarium/scripts/transit_of_venus.ssc
+share/stellarium/scripts/translation.inc
 share/stellarium/scripts/triple_sunrise_and_sunsets.ssc
 share/stellarium/scripts/zodiac.ssc
 share/stellarium/skycultures/
@@ -669,6 +682,7 @@ share/stellarium/skycultures/boorong/cwar.png
 share/stellarium/skycultures/boorong/cwarepil.png
 share/stellarium/skycultures/boorong/description.de.utf8
 share/stellarium/skycultures/boorong/description.en.utf8
+share/stellarium/skycultures/boorong/description.hu.utf8
 share/stellarium/skycultures/boorong/description.ru.utf8
 share/stellarium/skycultures/boorong/description.uk.utf8
 share/stellarium/skycultures/boorong/djuit.png
@@ -721,12 +735,14 @@ share/stellarium/skycultures/egyptian/description.bs.utf8
 share/stellarium/skycultures/egyptian/description.de.utf8
 share/stellarium/skycultures/egyptian/description.en.utf8
 share/stellarium/skycultures/egyptian/description.fr.utf8
+share/stellarium/skycultures/egyptian/description.hu.utf8
 share/stellarium/skycultures/egyptian/description.it.utf8
 share/stellarium/skycultures/egyptian/description.nb.utf8
 share/stellarium/skycultures/egyptian/description.pt_BR.utf8
 share/stellarium/skycultures/egyptian/description.ru.utf8
 share/stellarium/skycultures/egyptian/description.uk.utf8
 share/stellarium/skycultures/egyptian/info.ini
+share/stellarium/skycultures/egyptian/planet_names.fab
 share/stellarium/skycultures/egyptian/star_names.fab
 share/stellarium/skycultures/indian/
 share/stellarium/skycultures/indian/aquarius.png
@@ -773,6 +789,7 @@ share/stellarium/skycultures/inuit/description.be.utf8
 share/stellarium/skycultures/inuit/description.de.utf8
 share/stellarium/skycultures/inuit/description.en.utf8
 share/stellarium/skycultures/inuit/description.fr.utf8
+share/stellarium/skycultures/inuit/description.hu.utf8
 share/stellarium/skycultures/inuit/description.it.utf8
 share/stellarium/skycultures/inuit/description.pt_BR.utf8
 share/stellarium/skycultures/inuit/description.ru.utf8
@@ -851,6 +868,7 @@ share/stellarium/skycultures/lakota/description.bs.utf8
 share/stellarium/skycultures/lakota/description.de.utf8
 share/stellarium/skycultures/lakota/description.en.utf8
 share/stellarium/skycultures/lakota/description.fr.utf8
+share/stellarium/skycultures/lakota/description.hu.utf8
 share/stellarium/skycultures/lakota/description.it.utf8
 share/stellarium/skycultures/lakota/description.pt_BR.utf8
 share/stellarium/skycultures/lakota/description.ru.utf8
@@ -867,6 +885,7 @@ share/stellarium/skycultures/maori/description.be.utf8
 share/stellarium/skycultures/maori/description.de.utf8
 share/stellarium/skycultures/maori/description.en.utf8
 share/stellarium/skycultures/maori/description.fr.utf8
+share/stellarium/skycultures/maori/description.hu.utf8
 share/stellarium/skycultures/maori/description.it.utf8
 share/stellarium/skycultures/maori/description.pt_BR.utf8
 share/stellarium/skycultures/maori/description.ru.utf8
@@ -881,6 +900,7 @@ share/stellarium/skycultures/mongolian/constellations_boundaries.dat
 share/stellarium/skycultures/mongolian/constellationship.fab
 share/stellarium/skycultures/mongolian/description.en.utf8
 share/stellarium/skycultures/mongolian/description.fr.utf8
+share/stellarium/skycultures/mongolian/description.hu.utf8
 share/stellarium/skycultures/mongolian/description.uk.utf8
 share/stellarium/skycultures/mongolian/doloon_burkhan.png
 share/stellarium/skycultures/mongolian/info.ini
@@ -996,6 +1016,7 @@ share/stellarium/skycultures/sami/description.ar.utf8
 share/stellarium/skycultures/sami/description.be.utf8
 share/stellarium/skycultures/sami/description.en.utf8
 share/stellarium/skycultures/sami/description.fr.utf8
+share/stellarium/skycultures/sami/description.hu.utf8
 share/stellarium/skycultures/sami/description.nb.utf8
 share/stellarium/skycultures/sami/description.pt_BR.utf8
 share/stellarium/skycultures/sami/description.ru.utf8
@@ -1007,6 +1028,8 @@ share/stellarium/skycultures/siberian/constellation_names.eng.fab
 share/stellarium/skycultures/siberian/constellations_boundaries.dat
 share/stellarium/skycultures/siberian/constellationship.fab
 share/stellarium/skycultures/siberian/description.en.utf8
+share/stellarium/skycultures/siberian/description.hu.utf8
+share/stellarium/skycultures/siberian/description.pt_BR.utf8
 share/stellarium/skycultures/siberian/description.ru.utf8
 share/stellarium/skycultures/siberian/description.uk.utf8
 share/stellarium/skycultures/siberian/info.ini
@@ -1169,6 +1192,7 @@ share/stellarium/skycultures/western_rey/info.ini
 share/stellarium/skycultures/western_rey/star_names.fab
 share/stellarium/stars/
 share/stellarium/stars/default/
+share/stellarium/stars/default/cross-index.dat
 share/stellarium/stars/default/defaultStarsConfig.json
 share/stellarium/stars/default/gcvs_hip_part.dat
 share/stellarium/stars/default/name.fab
