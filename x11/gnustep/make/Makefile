@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/10/15 08:26:18 bentley Exp $
+# $OpenBSD: Makefile,v 1.41 2015/10/26 11:36:39 sebastia Exp $
 
 # WARNING: this port does NOT use the x11/gnustep MODULE
 
@@ -6,6 +6,7 @@ PKG_ARCH=	*
 
 COMMENT=	GNUstep makefile package
 
+REVISION =	0
 DISTNAME =	gnustep-make-2.6.7
 CATEGORIES=	devel x11/gnustep
 
@@ -40,6 +41,7 @@ CONFIGURE_ARGS=	--with-layout=openbsd \
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV +=	CXX=clang++ CC=clang AS=llvm-as CPP="clang -E"
+CONFIGURE_ENV +=	OBJCFLAGS=-fobjc-runtime=gnustep-1.7
 CONFIGURE_ARGS +=	--enable-objc-nonfragile-abi
 .endif
 
