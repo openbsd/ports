@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/08/17 19:52:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/10/26 18:21:48 jasper Exp $
 
 COMMENT =	platform independent hotkey handling for Gtk+ applications
 
@@ -19,8 +19,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += xcb xcb-shm z ffi graphite2 gthread-2.0 harfbuzz pthread xcb-render
 
-# launchpad sucks.
-MASTER_SITES =	http://launchpadlibrarian.net/31288851/
+MASTER_SITES =	https://launchpad.net/gtkhotkey/0.2/0.2.1/+download/
 
 MODULES =	devel/gettext \
 		textproc/intltool
