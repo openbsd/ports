@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/08/13 08:44:47 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/10/26 18:08:01 jasper Exp $
 @newuser _puppetboard:739:www:daemon:Puppetboard user:/nonexistent:/sbin/nologin
 puppetboard/
 puppetboard/CHANGELOG.rst
@@ -21,13 +21,55 @@ puppetboard/puppetboard/forms.py
 puppetboard/puppetboard/public/
 puppetboard/puppetboard/static/
 puppetboard/puppetboard/static/css/
+puppetboard/puppetboard/static/css/jquery.tablesorter.filter.formatter.css
 puppetboard/puppetboard/static/css/puppetboard.css
+puppetboard/puppetboard/static/css/semantic.min.css
+puppetboard/puppetboard/static/fonts/
+puppetboard/puppetboard/static/fonts/Open_Sans.woff
+puppetboard/puppetboard/static/fonts/basic.icons.eot
+puppetboard/puppetboard/static/fonts/basic.icons.svg
+puppetboard/puppetboard/static/fonts/basic.icons.ttf
+puppetboard/puppetboard/static/fonts/basic.icons.woff
+puppetboard/puppetboard/static/fonts/icons.eot
+puppetboard/puppetboard/static/fonts/icons.otf
+puppetboard/puppetboard/static/fonts/icons.svg
+puppetboard/puppetboard/static/fonts/icons.ttf
+puppetboard/puppetboard/static/fonts/icons.woff
+puppetboard/puppetboard/static/jquery-2.1.1/
+puppetboard/puppetboard/static/jquery-2.1.1/jquery.min.js
+puppetboard/puppetboard/static/jquery.tablesorter-2.17.2/
+puppetboard/puppetboard/static/jquery.tablesorter-2.17.2/css/
+puppetboard/puppetboard/static/jquery.tablesorter-2.17.2/css/filter.formatter.css
+puppetboard/puppetboard/static/jquery.tablesorter-2.17.2/jquery.tablesorter.min.js
 puppetboard/puppetboard/static/js/
-puppetboard/puppetboard/static/js/Chart.js
+puppetboard/puppetboard/static/js/c3.min.js
+puppetboard/puppetboard/static/js/d3.min.js
+puppetboard/puppetboard/static/js/jquery.min.js
+puppetboard/puppetboard/static/js/jquery.tablesorter.min.js
 puppetboard/puppetboard/static/js/lists.js
-puppetboard/puppetboard/static/js/moment.js
+puppetboard/puppetboard/static/js/moment.min.js
+puppetboard/puppetboard/static/js/scroll.top.js
+puppetboard/puppetboard/static/js/semantic.min.js
 puppetboard/puppetboard/static/js/tables.js
 puppetboard/puppetboard/static/js/timestamps.js
+puppetboard/puppetboard/static/moment.js-${MODPY_VERSION}.0/
+puppetboard/puppetboard/static/moment.js-${MODPY_VERSION}.0/moment.min.js
+puppetboard/puppetboard/static/semantic-ui-0.16.1/
+puppetboard/puppetboard/static/semantic-ui-0.16.1/packaged/
+puppetboard/puppetboard/static/semantic-ui-0.16.1/packaged/css/
+puppetboard/puppetboard/static/semantic-ui-0.16.1/packaged/css/semantic.min.css
+puppetboard/puppetboard/static/semantic-ui-0.16.1/packaged/fonts/
+puppetboard/puppetboard/static/semantic-ui-0.16.1/packaged/fonts/basic.icons.eot
+puppetboard/puppetboard/static/semantic-ui-0.16.1/packaged/fonts/basic.icons.svg
+puppetboard/puppetboard/static/semantic-ui-0.16.1/packaged/fonts/basic.icons.ttf
+puppetboard/puppetboard/static/semantic-ui-0.16.1/packaged/fonts/basic.icons.woff
+puppetboard/puppetboard/static/semantic-ui-0.16.1/packaged/fonts/icons.eot
+puppetboard/puppetboard/static/semantic-ui-0.16.1/packaged/fonts/icons.otf
+puppetboard/puppetboard/static/semantic-ui-0.16.1/packaged/fonts/icons.svg
+puppetboard/puppetboard/static/semantic-ui-0.16.1/packaged/fonts/icons.ttf
+puppetboard/puppetboard/static/semantic-ui-0.16.1/packaged/fonts/icons.woff
+puppetboard/puppetboard/static/semantic-ui-0.16.1/packaged/javascript/
+puppetboard/puppetboard/static/semantic-ui-0.16.1/packaged/javascript/semantic.min.js
 puppetboard/puppetboard/templates/
 puppetboard/puppetboard/templates/400.html
 puppetboard/puppetboard/templates/403.html
@@ -35,9 +77,11 @@ puppetboard/puppetboard/templates/404.html
 puppetboard/puppetboard/templates/412.html
 puppetboard/puppetboard/templates/500.html
 puppetboard/puppetboard/templates/_macros.html
+puppetboard/puppetboard/templates/catalog.html
 puppetboard/puppetboard/templates/fact.html
 puppetboard/puppetboard/templates/facts.html
 puppetboard/puppetboard/templates/index.html
+puppetboard/puppetboard/templates/inventory.html
 puppetboard/puppetboard/templates/layout.html
 puppetboard/puppetboard/templates/metric.html
 puppetboard/puppetboard/templates/metrics.html
@@ -50,7 +94,6 @@ puppetboard/puppetboard/templates/reports_node.html
 puppetboard/puppetboard/tmp/
 puppetboard/puppetboard/utils.py
 puppetboard/puppetboard_wsgi.py
-puppetboard/requirements.txt
 puppetboard/setup.cfg
 puppetboard/setup.py
 @rcscript ${RCDIR}/puppetboard
