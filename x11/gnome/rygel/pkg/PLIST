@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.22 2015/05/11 07:20:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2015/10/26 12:09:27 jasper Exp $
 @bin bin/rygel
 @bin bin/rygel-preferences
 include/rygel-${API_V}/
 include/rygel-${API_V}/rygel-core.h
+include/rygel-${API_V}/rygel-db.h
 include/rygel-${API_V}/rygel-renderer-gst.h
 include/rygel-${API_V}/rygel-renderer.h
 include/rygel-${API_V}/rygel-ruih.h
@@ -14,6 +15,9 @@ lib/girepository-1.0/RygelServer-${API_V}.typelib
 lib/librygel-core-${API_V}.a
 lib/librygel-core-${API_V}.la
 @lib lib/librygel-core-${API_V}.so.${LIBrygel-core-2.6_VERSION}
+lib/librygel-db-${API_V}.a
+lib/librygel-db-${API_V}.la
+@lib lib/librygel-db-${API_V}.so.${LIBrygel-db-2.6_VERSION}
 lib/librygel-renderer-${API_V}.a
 lib/librygel-renderer-${API_V}.la
 @lib lib/librygel-renderer-${API_V}.so.${LIBrygel-renderer-2.6_VERSION}
@@ -51,6 +55,8 @@ lib/rygel-${API_V}/plugins/mpris.plugin
 lib/rygel-${API_V}/plugins/playbin.plugin
 lib/rygel-${API_V}/plugins/ruih.plugin
 lib/rygel-${API_V}/plugins/tracker.plugin
+libexec/rygel/
+@bin libexec/rygel/mx-extract
 @man man/man1/rygel.1
 @man man/man5/rygel.conf.5
 share/applications/rygel-preferences.desktop
@@ -95,7 +101,6 @@ share/gtk-doc/html/librygel-core/deprecated-api-index.html
 share/gtk-doc/html/librygel-core/docs-org-gnome-Rygel1.html
 share/gtk-doc/html/librygel-core/home.png
 share/gtk-doc/html/librygel-core/index.html
-share/gtk-doc/html/librygel-core/index.sgml
 share/gtk-doc/html/librygel-core/left-insensitive.png
 share/gtk-doc/html/librygel-core/left.png
 share/gtk-doc/html/librygel-core/librygel-core.devhelp2
@@ -119,7 +124,6 @@ share/gtk-doc/html/librygel-renderer-gst/implementing-renderers-gst-simple-examp
 share/gtk-doc/html/librygel-renderer-gst/implementing-renderers-gst-x-window-example.html
 share/gtk-doc/html/librygel-renderer-gst/implementing-renderers-gst.html
 share/gtk-doc/html/librygel-renderer-gst/index.html
-share/gtk-doc/html/librygel-renderer-gst/index.sgml
 share/gtk-doc/html/librygel-renderer-gst/left-insensitive.png
 share/gtk-doc/html/librygel-renderer-gst/left.png
 share/gtk-doc/html/librygel-renderer-gst/librygel-renderer-gst.devhelp2
@@ -144,7 +148,6 @@ share/gtk-doc/html/librygel-renderer/implementing-renderer-plugins.html
 share/gtk-doc/html/librygel-renderer/implementing-renderers-full-example.html
 share/gtk-doc/html/librygel-renderer/implementing-renderers.html
 share/gtk-doc/html/librygel-renderer/index.html
-share/gtk-doc/html/librygel-renderer/index.sgml
 share/gtk-doc/html/librygel-renderer/left-insensitive.png
 share/gtk-doc/html/librygel-renderer/left.png
 share/gtk-doc/html/librygel-renderer/librygel-renderer.devhelp2
@@ -219,7 +222,6 @@ share/gtk-doc/html/librygel-server/implementing-server-plugins.html
 share/gtk-doc/html/librygel-server/implementing-servers-simple-example.html
 share/gtk-doc/html/librygel-server/implementing-servers.html
 share/gtk-doc/html/librygel-server/index.html
-share/gtk-doc/html/librygel-server/index.sgml
 share/gtk-doc/html/librygel-server/left-insensitive.png
 share/gtk-doc/html/librygel-server/left.png
 share/gtk-doc/html/librygel-server/librygel-server.devhelp2
@@ -233,8 +235,6 @@ share/gtk-doc/html/librygel-server/up.png
 share/icons/hicolor/128x128/apps/rygel.png
 share/icons/hicolor/32x32/apps/rygel.png
 share/icons/hicolor/48x48/apps/rygel.png
-share/icons/hicolor/scalable/apps/rygel-full.svg
-share/icons/hicolor/scalable/apps/rygel.svg
 share/locale/af/LC_MESSAGES/rygel.mo
 share/locale/ar/LC_MESSAGES/rygel.mo
 share/locale/as/LC_MESSAGES/rygel.mo
@@ -252,6 +252,7 @@ share/locale/eo/LC_MESSAGES/rygel.mo
 share/locale/es/LC_MESSAGES/rygel.mo
 share/locale/et/LC_MESSAGES/rygel.mo
 share/locale/eu/LC_MESSAGES/rygel.mo
+share/locale/fa/LC_MESSAGES/rygel.mo
 share/locale/fi/LC_MESSAGES/rygel.mo
 share/locale/fr/LC_MESSAGES/rygel.mo
 share/locale/gl/LC_MESSAGES/rygel.mo
@@ -270,6 +271,7 @@ share/locale/ml/LC_MESSAGES/rygel.mo
 share/locale/nb/LC_MESSAGES/rygel.mo
 share/locale/ne/LC_MESSAGES/rygel.mo
 share/locale/nl/LC_MESSAGES/rygel.mo
+share/locale/oc/LC_MESSAGES/rygel.mo
 share/locale/pa/LC_MESSAGES/rygel.mo
 share/locale/pl/LC_MESSAGES/rygel.mo
 share/locale/pt/LC_MESSAGES/rygel.mo
@@ -328,6 +330,8 @@ share/rygel/xml/UIList.xml
 share/rygel/xml/X_MS_MediaReceiverRegistrar1.xml
 share/vala/vapi/rygel-core-${API_V}.deps
 share/vala/vapi/rygel-core-${API_V}.vapi
+share/vala/vapi/rygel-db-${API_V}.deps
+share/vala/vapi/rygel-db-${API_V}.vapi
 share/vala/vapi/rygel-renderer-${API_V}.deps
 share/vala/vapi/rygel-renderer-${API_V}.vapi
 share/vala/vapi/rygel-renderer-gst-${API_V}.deps
