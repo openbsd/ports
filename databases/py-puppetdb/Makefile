@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2015/09/29 10:51:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/10/26 13:12:10 jasper Exp $
+
+PORTROACH=		limit:^0\.1
+PORTROACH_COMMENT=	py-puppetdb >= 0.2.0 only support PuppetDB >= 3
 
 COMMENT=		library for working with the PuppetDB API
 
