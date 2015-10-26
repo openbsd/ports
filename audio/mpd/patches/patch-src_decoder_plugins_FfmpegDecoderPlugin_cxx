@@ -1,45 +1,56 @@
-$OpenBSD: patch-src_decoder_plugins_FfmpegDecoderPlugin_cxx,v 1.1 2015/10/23 07:53:05 dcoppa Exp $
+$OpenBSD: patch-src_decoder_plugins_FfmpegDecoderPlugin_cxx,v 1.2 2015/10/26 16:03:56 dcoppa Exp $
 
-Avoid a double free error while decoding a stream
-http://stackoverflow.com/questions/9604633/reading-a-file-located-in-memory-with-libavformat
+commit 1958f78cc1bd47ce1c9b57db41194f85aed942ab
+Author: Max Kellermann <max@duempel.org>
+Date:   Mon Oct 26 13:06:29 2015 +0100
+
+decoder/ffmpeg: fix crash due to wrong avio_alloc_context() call
+
+Allocate the buffer dynamically using av_malloc(), and free
+AVIOContext.buffer in the destructor, as mandated by the libavformat
+documentation.
+
+Fixes http://bugs.musicpd.org/view.php?id=4446
 
 --- src/decoder/plugins/FfmpegDecoderPlugin.cxx.orig	Sat Jun 20 15:08:30 2015
-+++ src/decoder/plugins/FfmpegDecoderPlugin.cxx	Fri Oct 23 09:33:49 2015
-@@ -92,14 +92,18 @@ struct AvioStream {
++++ src/decoder/plugins/FfmpegDecoderPlugin.cxx	Mon Oct 26 16:42:44 2015
+@@ -92,14 +92,14 @@ struct AvioStream {
  
  	AVIOContext *io;
  
 -	unsigned char buffer[8192];
-+	uint8_t *io_buffer = nullptr;
-+	int io_buffer_size = 8192;
- 
+-
  	AvioStream(Decoder *_decoder, InputStream &_input)
  		:decoder(_decoder), input(_input), io(nullptr) {}
  
  	~AvioStream() {
 -		if (io != nullptr)
 +		if (io != nullptr) {
-+			if (io->buffer != nullptr)
-+				av_free(io->buffer);
++			av_free(io->buffer);
  			av_free(io);
 +		}
  	}
  
  	bool Open();
-@@ -153,7 +157,15 @@ mpd_ffmpeg_stream_seek(void *opaque, int64_t pos, int 
+@@ -153,11 +153,20 @@ mpd_ffmpeg_stream_seek(void *opaque, int64_t pos, int 
  bool
  AvioStream::Open()
  {
 -	io = avio_alloc_context(buffer, sizeof(buffer),
-+	io_buffer = (uint8_t*)av_malloc(io_buffer_size);
-+
-+	if (!io_buffer) {
-+		/* Not enough memory - shouldn't happen */
-+		LogError(ffmpeg_domain, "av_malloc(io_buffer_size) failed");
++	constexpr size_t BUFFER_SIZE = 8192;
++	auto buffer = (unsigned char *)av_malloc(BUFFER_SIZE);
++	if (buffer == nullptr)
 +		return false;
-+	}
 +
-+	io = avio_alloc_context(io_buffer, io_buffer_size,
++	io = avio_alloc_context(buffer, BUFFER_SIZE,
  				false, this,
  				mpd_ffmpeg_stream_read, nullptr,
  				input.IsSeekable()
+ 				? mpd_ffmpeg_stream_seek : nullptr);
++	/* If avio_alloc_context() fails, who frees the buffer?  The
++	   libavformat API documentation does not specify this, it
++	   only says that AVIOContext.buffer must be freed in the end,
++	   however no AVIOContext exists in that failure code path. */
+ 	return io != nullptr;
+ }
+ 
