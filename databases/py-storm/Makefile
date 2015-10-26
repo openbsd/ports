@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/09/29 10:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/10/26 18:34:44 jasper Exp $
 
 COMMENT=		generic object relational mapper for Python
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread
 
-MASTER_SITES=		http://launchpad.net/storm/trunk/0.19/+download/
+MASTER_SITES=		http://launchpad.net/storm/trunk/${MODPY_EGG_VERSION}/+download/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		lang/python
