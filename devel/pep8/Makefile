@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/09/29 10:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/10/26 06:09:22 ajacoutot Exp $
 
 COMMENT =		python style guide checker
 
-MODPY_EGG_VERSION =	1.5.7
+MODPY_EGG_VERSION =	1.6.2
 DISTNAME =		pep8-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
