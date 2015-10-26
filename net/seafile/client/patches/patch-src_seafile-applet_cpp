@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_seafile-applet_cpp,v 1.3 2015/09/14 12:56:15 kirby Exp $
+$OpenBSD: patch-src_seafile-applet_cpp,v 1.4 2015/10/26 17:19:00 kirby Exp $
 
 Disable checking for updates.
 
---- src/seafile-applet.cpp.orig	Fri Sep 11 05:34:58 2015
-+++ src/seafile-applet.cpp	Mon Sep 14 12:27:17 2015
-@@ -380,10 +380,6 @@ void SeafileApplet::onDaemonStarted()
+--- src/seafile-applet.cpp.orig	Fri Sep 18 09:13:19 2015
++++ src/seafile-applet.cpp	Fri Sep 18 21:26:37 2015
+@@ -410,10 +410,6 @@ void SeafileApplet::onDaemonStarted()
      configurator_->installCustomUrlHandler();
  #endif
  
