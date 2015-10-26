@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2015/09/24 10:36:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2015/10/26 20:24:54 edd Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
 
 COMMENT=		reminder program for prevention of RSI
 
-DISTNAME=		workrave-1.9.4
-REVISION=		11
+DISTNAME=		workrave-1.10.1
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://www.workrave.org/
@@ -14,31 +13,38 @@ HOMEPAGE=		http://www.workrave.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xtst atk-1.0 atkmm-1.6 c cairo cairomm-1.0
-WANTLIB += dbus-1 dbus-glib-1 expat ffi fontconfig freetype gconf-2
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0 giomm-2.4
-WANTLIB += glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz
-WANTLIB += lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs sigc-2.0 xcb
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender Xss Xtst atk-1.0 atk-bridge-2.0
+WANTLIB += atkmm-1.6 atspi c cairo cairo-gobject cairomm-1.0 dbus-1
+WANTLIB += dbus-glib-1 epoxy expat ffi fontconfig freetype gconf-2
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0
+WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2 gstreamer-0.10
+WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 harfbuzz lzma m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1
+WANTLIB += png pthread pthread-stubs sigc-2.0 xcb xcb-render
+WANTLIB += xcb-shm xml2 z
+
+SHARED_LIBS +=		workrave-private-1.0      0.0
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=workrave/}
 
-BUILD_DEPENDS=		devel/py-cheetah
+BUILD_DEPENDS=		devel/py-cheetah \
+			devel/gobject-introspection \
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS=		devel/gconf2 \
 			multimedia/gstreamer-0.10/core \
 			x11/dbus-glib \
-			x11/gtk2mm>=2.24.4
+			x11/gtk3mm
 
 MODULES=		devel/gettext \
 			lang/python \
 			textproc/intltool
 
-# c++11
+# c++11 (although only for building against libsigc++)
 MODULES +=		gcc4
 MODGCC4_ARCHS=		*
 MODGCC4_LANGS=		c++
@@ -46,22 +52,21 @@ MODGCC4_LANGS=		c++
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.11
 CONFIGURE_ARGS+=	--disable-xml \
 			--disable-pulse \
 			--enable-dbus
 
-# XXX: Disabled for now as workrave isn't ported to libpanel-applet-4.0 yet
-CONFIGURE_ARGS+=	--disable-gnome
+# Someone can add GNOME support later if they like
+# (GNOME support requires libpanelapplet)
+CONFIGURE_ARGS+=	--disable-gnome2 \
+			--disable-gnome3
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/frontend/gtkmm/src/Makefile.in \
-		${WRKSRC}/frontend/gtkmm/src/gnome_applet/Makefile.in
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/workrave/sound/events
-	${INSTALL_DATA} ${WRKSRC}/frontend/common/share/sounds/workrave.soundlist \
-		${PREFIX}/share/examples/workrave/sound/events
+	@cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf
 
 .include <bsd.port.mk>

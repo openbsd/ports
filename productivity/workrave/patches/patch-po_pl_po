@@ -1,0 +1,16 @@
+$OpenBSD: patch-po_pl_po,v 1.1 2015/10/26 20:24:54 edd Exp $
+
+Two line desktop entry confuses update-desktop-database.
+
+--- po/pl.po.orig	Fri Apr  3 11:41:48 2015
++++ po/pl.po	Fri Apr  3 11:42:41 2015
+@@ -904,8 +904,7 @@ msgstr "Opóźnienie trwa:"
+ msgid ""
+ "Assists in the prevention and recovery of Repetitive Strain Injury (RSI)"
+ msgstr ""
+-"Pomaga w zapobieganiu urazom na skutek chronicznego przeciążenia\n"
+-"- RSI (Repetitive Strain Injury) oraz wspomaga rekonwalescencję"
++"Pomaga w zapobieganiu urazom na skutek chronicznego przeciążenia - RSI (Repetitive Strain Injury) oraz wspomaga rekonwalescencję"
+ 
+ #: ../frontend/plugin/distribution/gtkmm/src/NetworkJoinDialog.cc:55
+ #: ../frontend/plugin/distribution/gtkmm/src/NetworkJoinDialog.cc:79

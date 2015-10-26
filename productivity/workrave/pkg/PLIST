@@ -1,16 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/08/20 22:05:58 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/10/26 20:24:54 edd Exp $
 @bin bin/workrave
+lib/girepository-1.0/Workrave-1.0.typelib
+lib/libworkrave-private-1.0.a
+lib/libworkrave-private-1.0.la
+@lib lib/libworkrave-private-1.0.so.${LIBworkrave-private-1.0_VERSION}
 share/applications/workrave.desktop
 share/dbus-1/services/org.workrave.Workrave.service
-share/examples/workrave/
-share/examples/workrave/sound/
-@sample ${SYSCONFDIR}/sound/
-share/examples/workrave/sound/events/
-@sample ${SYSCONFDIR}/sound/events/
-share/examples/workrave/sound/events/workrave.soundlist
-@sample ${SYSCONFDIR}/sound/events/workrave.soundlist
-share/icons/hicolor/48x48/apps/workrave-icon-huge.png
-share/icons/hicolor/scalable/apps/workrave-sheep.svg
+share/gir-1.0/Workrave-1.0.gir
+@comment share/gnome-shell/
+@comment share/gnome-shell/extensions/
+@comment share/gnome-shell/extensions/workrave@workrave.org/
+@comment share/gnome-shell/extensions/workrave@workrave.org/extension.js
+@comment share/gnome-shell/extensions/workrave@workrave.org/metadata.json
+@comment share/gnome-shell/extensions/workrave@workrave.org/stylesheet.css
+share/icons/hicolor/128x128/apps/workrave.png
+share/icons/hicolor/16x16/apps/workrave.png
+share/icons/hicolor/24x24/apps/workrave.png
+share/icons/hicolor/32x32/apps/workrave.png
+share/icons/hicolor/48x48/apps/workrave.png
+share/icons/hicolor/64x64/apps/workrave.png
+share/icons/hicolor/96x96/apps/workrave.png
+share/icons/hicolor/scalable/apps/workrave.svg
+share/icons/hicolor/scalable/workrave-sheep.svg
 share/locale/bg/LC_MESSAGES/workrave.mo
 share/locale/ca/LC_MESSAGES/workrave.mo
 share/locale/cs/LC_MESSAGES/workrave.mo
@@ -21,9 +32,12 @@ share/locale/eo/LC_MESSAGES/workrave.mo
 share/locale/es/LC_MESSAGES/workrave.mo
 share/locale/et/LC_MESSAGES/workrave.mo
 share/locale/eu/LC_MESSAGES/workrave.mo
+share/locale/fa/LC_MESSAGES/workrave.mo
+share/locale/fi/LC_MESSAGES/workrave.mo
 share/locale/fr/LC_MESSAGES/workrave.mo
 share/locale/ga/LC_MESSAGES/workrave.mo
 share/locale/he/LC_MESSAGES/workrave.mo
+share/locale/hr/LC_MESSAGES/workrave.mo
 share/locale/hu/LC_MESSAGES/workrave.mo
 share/locale/it/LC_MESSAGES/workrave.mo
 share/locale/ja/LC_MESSAGES/workrave.mo
@@ -37,11 +51,14 @@ share/locale/ro/LC_MESSAGES/workrave.mo
 share/locale/ru/LC_MESSAGES/workrave.mo
 share/locale/sk/LC_MESSAGES/workrave.mo
 share/locale/sl/LC_MESSAGES/workrave.mo
+share/locale/sr@latin/LC_MESSAGES/workrave.mo
 share/locale/sv/LC_MESSAGES/workrave.mo
 share/locale/te/LC_MESSAGES/workrave.mo
 share/locale/tr/LC_MESSAGES/workrave.mo
+share/locale/uk/LC_MESSAGES/workrave.mo
 share/locale/zh_CN/LC_MESSAGES/workrave.mo
 share/locale/zh_TW/LC_MESSAGES/workrave.mo
+share/sounds/
 share/sounds/workrave/
 share/sounds/workrave/default/
 share/sounds/workrave/default/break-ignored.wav
@@ -106,10 +123,7 @@ share/workrave/images/time.png
 share/workrave/images/timer-daily.png
 share/workrave/images/timer-micro-break.png
 share/workrave/images/timer-rest-break.png
-share/workrave/images/workrave-icon-huge.png
-share/workrave/images/workrave-icon-large.png
 share/workrave/images/workrave-icon-medium.png
-share/workrave/images/workrave-icon-small.png
 share/workrave/images/workrave-quiet-icon-medium.png
 share/workrave/images/workrave-suspended-icon-medium.png
 share/workrave/images/workrave.png

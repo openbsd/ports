@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure_ac,v 1.1 2015/10/26 20:24:54 edd Exp $
+
+Bashisms.
+
+--- configure.ac.orig	Wed Jun 12 17:40:10 2013
++++ configure.ac	Thu Apr  2 21:00:18 2015
+@@ -426,11 +426,8 @@ then
+ 
+     loop=${enable_monitors},
+  
+-    while echo $loop | grep \, &> /dev/null
++    for monitor in `echo ${loop} | sed -e 's/,/ /g'`;
+     do
+-        monitor=${loop%%\,*}
+-        loop=${loop#*\,}
+-
+         case "$monitor" in
+            record)
+ 	       if test "x$have_xrecord" != "xyes" ; then

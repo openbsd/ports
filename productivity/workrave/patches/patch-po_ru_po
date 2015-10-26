@@ -1,0 +1,16 @@
+$OpenBSD: patch-po_ru_po,v 1.1 2015/10/26 20:24:54 edd Exp $
+
+Two line desktop entry confuses update-desktop-database.
+
+--- po/ru.po.orig	Fri Apr  3 11:42:48 2015
++++ po/ru.po	Fri Apr  3 11:43:12 2015
+@@ -760,8 +760,7 @@ msgstr "Расположение в системном
+ msgid ""
+ "Assists in the prevention and recovery of Repetitive Strain Injury (RSI)"
+ msgstr ""
+-"Эта программа помогает в предупреждении и лечении туннельного синдрома\n "
+-"запястья и снятии общего мышечного напряжения."
++"Эта программа помогает в предупреждении и лечении туннельного синдрома запястья и снятии общего мышечного напряжения."
+ 
+ #: ../frontend/gtkmm/src/gnome_applet/GNOME_WorkraveApplet.xml.in.h:1
+ #: ../frontend/gtkmm/src/gnome_applet3/WorkraveApplet.c:874
