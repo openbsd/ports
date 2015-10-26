@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/04 20:40:40 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2015/10/26 11:53:15 sebastia Exp $
 
 COMMENT =	GNUstep sudoku generator
 
 V =		0.7
+REVISION =	7
 DISTNAME =	Sudoku-$V
-REVISION =	6
 PKGNAME =	gnustep-sudoku-$V
 CATEGORIES =	games
 

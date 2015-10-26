@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/21 18:21:21 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2015/10/26 11:53:14 sebastia Exp $
 
 COMMENT =	GNUstep wrapper around libgphoto2
 
 V =		20041011
-REVISION =	2
+REVISION =	3
 DISTNAME =	CameraKit-${V}
 PKGNAME =	gnustep-camerakit-${V}
 EXTRACT_SUFX =	.tar.bz2

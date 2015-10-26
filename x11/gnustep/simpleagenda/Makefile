@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2014/11/21 18:21:22 sebastia Exp $
+# $OpenBSD: Makefile,v 1.16 2015/10/26 11:53:15 sebastia Exp $
 
 COMMENT=	calendaring application based on GNUstep
 
 VERSION=	0.43
-REVISION=	3
+REVISION=	4
 DISTNAME=	SimpleAgenda-${VERSION}
 CATEGORIES+=	productivity
 

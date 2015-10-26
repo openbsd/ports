@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2015/05/08 12:36:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/10/26 11:53:15 sebastia Exp $
 
 COMMENT =	asynchronous networking framework for GNUstep
 
 VERSION =	1.1.0
+REVISION =	0
+EPOCH =		0
 DISTNAME =	netclasses-${VERSION}
 PKGNAME =	gnustep-netclasses-${VERSION}
 CATEGORIES =	net
 SHARED_LIBS +=  netclasses	0.0
-EPOCH =		0
 
 HOMEPAGE =	http://gap.nongnu.org/talksoup/
 MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}

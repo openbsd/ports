@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/11/21 18:21:21 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2015/10/26 11:53:14 sebastia Exp $
 
 COMMENT =	simple code editor for GNUstep
 
+REVISION =	1
 DISTNAME =	Gemas-0.4
-REVISION =	0
 PKGNAME =	gnustep-${DISTNAME:L}
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/Gemas.app

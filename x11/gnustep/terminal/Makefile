@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/21 18:21:22 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2015/10/26 11:53:15 sebastia Exp $
 
 COMMENT=	terminal emulator for GNUstep
 
+REVISION =	5
 DISTNAME=	Terminal-0.9.8
-REVISION =	4
 PKGNAME=	gnustep-${DISTNAME:L}
 CATEGORIES=	sysutils
 

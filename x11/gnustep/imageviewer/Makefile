@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2014/11/21 18:21:22 sebastia Exp $
+# $OpenBSD: Makefile,v 1.15 2015/10/26 11:53:15 sebastia Exp $
 
 COMMENT=	GNUstep image viewer
 
+REVISION =	8
 DISTNAME=	ImageViewer-0.6.3
-REVISION =	7
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://freshmeat.net/projects/imageviewer

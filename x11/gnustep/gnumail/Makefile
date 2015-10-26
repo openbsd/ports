@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2014/11/21 18:21:21 sebastia Exp $
+# $OpenBSD: Makefile,v 1.22 2015/10/26 11:53:14 sebastia Exp $
 
 COMMENT=	GNUstep mail application
 
 DISTNAME =	GNUMail-1.2.2
-REVISION =	0
+REVISION =	1
 SHLIB_VERSION =	2.1
 SHARED_LIBS =	GNUMail ${SHLIB_VERSION}
 CATEGORIES=	mail

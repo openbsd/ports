@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2014/11/21 18:21:22 sebastia Exp $
+# $OpenBSD: Makefile,v 1.18 2015/10/26 11:53:16 sebastia Exp $
 
 COMMENT =	GNUstep webservices framework
 
 VERSION =	0.7.2
+REVISION =	1
 DISTNAME =	WebServices-${VERSION}
-REVISION =	0
 PKGNAME =	gnustep-webservices-${VERSION}
 CATEGORIES =	www
 SHARED_LIBS +=  WebServices	0.4

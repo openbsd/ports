@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/11/21 18:21:22 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2015/10/26 11:53:15 sebastia Exp $
 
 COMMENT =	GNUstep wrapper around libpcap
 
 V =		0.2
+REVISION =	2
 DISTNAME =	PcapKit-${V}
-REVISION =	1
 PKGNAME =	gnustep-pcapkit-${V}
 CATEGORIES =	net
 

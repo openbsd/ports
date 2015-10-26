@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/11/21 18:21:22 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2015/10/26 11:53:15 sebastia Exp $
 
 COMMENT=	GNUstep rdesktop frontend
+
+REVISION =	7
 DISTNAME=	RemoteDesk-0.1
-REVISION =	6
 
 CATEGORIES=	x11
 HOMEPAGE=	http://gap.nongnu.org/remotedesk/
