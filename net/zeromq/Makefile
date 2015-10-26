@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2015/06/16 12:22:56 ajacoutot Exp $
-
-# Note: use 'ulimit -n 1024' for regress tests
+# $OpenBSD: Makefile,v 1.18 2015/10/26 18:10:56 jasper Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		open source message queue optimised for performance
 
-DISTNAME =		zeromq-4.1.2
+DISTNAME =		zeromq-4.1.3
 
 SHARED_LIBS +=  zmq                  4.1      # 4.0
 
@@ -32,5 +30,9 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 
 # XXX libsodium: https://github.com/jedisct1/libsodium/pull/104
 CONFIGURE_ENV =		CXXFLAGS="-Wno-long-long ${CXXFLAGS}"
+
+# test_system needs to be able to create at least 496 sockets
+do-test:
+	cd ${WRKSRC} && ulimit -n 1024 && ${MAKE_PROGRAM} ${TEST_TARGET}
 
 .include <bsd.port.mk>
