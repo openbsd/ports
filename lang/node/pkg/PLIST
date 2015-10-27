@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2015/10/24 02:46:47 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/10/27 11:58:01 sthen Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -20,8 +20,10 @@ include/node/node_version.h
 include/node/openssl/
 include/node/openssl/aes.h
 include/node/openssl/archs/
-include/node/openssl/archs/BSD-${NODE_ARCH}/
-include/node/openssl/archs/BSD-${NODE_ARCH}/opensslconf.h
+include/node/openssl/archs/BSD-x86/
+include/node/openssl/archs/BSD-x86/opensslconf.h
+include/node/openssl/archs/BSD-x86_64/
+include/node/openssl/archs/BSD-x86_64/opensslconf.h
 include/node/openssl/asn1.h
 include/node/openssl/asn1_mac.h
 include/node/openssl/asn1t.h
@@ -942,7 +944,6 @@ lib/node_modules/npm/bin/
 lib/node_modules/npm/bin/node-gyp-bin/
 lib/node_modules/npm/bin/node-gyp-bin/node-gyp
 lib/node_modules/npm/bin/node-gyp-bin/node-gyp.cmd
-@comment lib/node_modules/npm/bin/node-gyp-bin/node-gyp.orig
 lib/node_modules/npm/bin/npm
 lib/node_modules/npm/bin/npm-cli.js
 lib/node_modules/npm/bin/npm.cmd

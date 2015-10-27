@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/10/24 02:46:47 abieber Exp $
+# $OpenBSD: Makefile,v 1.35 2015/10/27 11:58:01 sthen Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -9,6 +9,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 COMMENT=	V8 JavaScript for clients and servers
 
 NODE_VERSION=	v4.2.1
+REVISION=	0
 
 DISTNAME=	node-${NODE_VERSION}
 PKGNAME=	${DISTNAME:S/v//g}
@@ -34,17 +35,12 @@ WANTLIB += c execinfo kvm m pthread util z
 
 LIB_DEPENDS=	devel/libexecinfo
 
-NODE_ARCH=	i386
-.if ${MACHINE_ARCH} == "amd64"
-NODE_ARCH=	x86_64
-.endif
-
 USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	sysutils/flock
 
 RUN_DEPENDS=	devel/gmake \
-		lang/gcc/${MODGCC4_VERSION} \
+		lang/gcc/${MODGCC4_VERSION},-c++ \
 		sysutils/flock
 
 TEST_TARGET=		test
@@ -53,10 +49,8 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--shared-zlib
 
-SUBST_VARS+=	CFLAGS
 SUBST_VARS+= 	DISTFILES
 SUBST_VARS+= 	LOCALBASE
-SUBST_VARS+= 	NODE_ARCH
 SUBST_VARS+= 	PREFIX
 SUBST_VARS+= 	WRKDIST
 
@@ -83,6 +77,7 @@ post-install:
 		mv $$x ../..; \
 		ln -s ../../$$x $$x; \
 	done
-
+	cd ${PREFIX}/include/node/openssl/archs; rm -rf \
+		{VC,aix,darwin,linux,solaris}*
 
 .include <bsd.port.mk>
