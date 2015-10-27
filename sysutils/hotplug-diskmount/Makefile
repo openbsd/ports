@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/02/16 14:39:01 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2015/10/27 11:32:31 sthen Exp $
 
 COMMENT =	disk auto-mounter
 
 DISTNAME =	hotplug-diskmount-0.9
+REVISION =	0
 
 CATEGORIES =	sysutils
 
