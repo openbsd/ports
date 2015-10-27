@@ -1,7 +1,7 @@
-$OpenBSD: patch-bus_Makefile_in,v 1.26 2015/08/27 06:46:46 ajacoutot Exp $
---- bus/Makefile.in.orig	Tue Aug 25 17:52:09 2015
-+++ bus/Makefile.in	Wed Aug 26 10:50:04 2015
-@@ -1686,13 +1686,6 @@ install-data-hook:
+$OpenBSD: patch-bus_Makefile_in,v 1.27 2015/10/27 15:22:28 ajacoutot Exp $
+--- bus/Makefile.in.orig	Mon Oct 26 13:54:47 2015
++++ bus/Makefile.in	Tue Oct 27 16:03:53 2015
+@@ -1688,13 +1688,6 @@ install-data-hook:
  @DBUS_ENABLE_USER_SESSION_TRUE@	ln -fs ../dbus.socket $(DESTDIR)$(systemduserunitdir)/sockets.target.wants/dbus.socket
  
  @DBUS_UNIX_TRUE@install-exec-hook:

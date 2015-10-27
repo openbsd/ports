@@ -1,10 +1,10 @@
-$OpenBSD: patch-dbus_Makefile_in,v 1.23 2015/08/27 06:46:46 ajacoutot Exp $
+$OpenBSD: patch-dbus_Makefile_in,v 1.24 2015/10/27 15:22:28 ajacoutot Exp $
 
 /var/lib -> /var/db
 
---- dbus/Makefile.in.orig	Tue Aug 25 17:52:09 2015
-+++ dbus/Makefile.in	Wed Aug 26 10:50:27 2015
-@@ -589,7 +589,7 @@ dbusdatadir = $(datadir)/dbus-1
+--- dbus/Makefile.in.orig	Mon Oct 26 13:54:47 2015
++++ dbus/Makefile.in	Tue Oct 27 16:03:53 2015
+@@ -591,7 +591,7 @@ dbusdatadir = $(datadir)/dbus-1
  AM_CPPFLAGS = -I$(top_builddir) -I$(top_srcdir) \
  	$(DBUS_STATIC_BUILD_CPPFLAGS) $(SYSTEMD_CFLAGS) \
  	$(VALGRIND_CFLAGS) -DDBUS_COMPILATION \
