@@ -1,6 +1,6 @@
-$OpenBSD: patch-docs_conf_httpd_conf_in,v 1.4 2015/05/15 08:08:04 stsp Exp $
---- docs/conf/httpd.conf.in.orig	Thu Nov  8 04:05:38 2012
-+++ docs/conf/httpd.conf.in	Sat Jan 10 15:10:12 2015
+$OpenBSD: patch-docs_conf_httpd_conf_in,v 1.5 2015/10/27 18:18:17 sthen Exp $
+--- docs/conf/httpd.conf.in.orig	Thu Oct  8 13:55:53 2015
++++ docs/conf/httpd.conf.in	Mon Oct 26 12:28:59 2015
 @@ -74,8 +74,8 @@ Listen @@Port@@
  # It is usually good practice to create a dedicated user and group for
  # running httpd, as with most system services.
@@ -12,3 +12,9 @@ $OpenBSD: patch-docs_conf_httpd_conf_in,v 1.4 2015/05/15 08:08:04 stsp Exp $
  
  </IfModule>
  
+@@ -418,3 +418,5 @@ SSLRandomSeed connect builtin
+ #RequestHeader unset DNT env=bad_DNT
+ #</IfModule>
+ 
++# Include extra module configuration files
++Include @rel_sysconfdir@/modules/*.conf

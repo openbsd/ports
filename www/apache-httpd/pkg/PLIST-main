@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2015/10/24 12:17:50 claudio Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2015/10/27 18:18:17 sthen Exp $
 @pkgpath www/apache-httpd${FLAVOR_COMMA}
 @bin bin/ab
 bin/dbmmanage2
@@ -718,6 +718,8 @@ share/doc/apache2/mod/mod_heartbeat.html.fr
 share/doc/apache2/mod/mod_heartmonitor.html
 share/doc/apache2/mod/mod_heartmonitor.html.en
 share/doc/apache2/mod/mod_heartmonitor.html.fr
+share/doc/apache2/mod/mod_http2.html
+share/doc/apache2/mod/mod_http2.html.en
 share/doc/apache2/mod/mod_ident.html
 share/doc/apache2/mod/mod_ident.html.en
 share/doc/apache2/mod/mod_ident.html.fr
@@ -1355,6 +1357,8 @@ share/examples/apache2/conf/magic
 @sample ${CONFDIR}/magic
 share/examples/apache2/conf/mime.types
 @sample ${CONFDIR}/mime.types
+@sample ${CONFDIR}/modules/
+@sample ${CONFDIR}/modules.sample/
 share/examples/apache2/conf/original/
 share/examples/apache2/conf/original/extra/
 share/examples/apache2/conf/original/extra/httpd-autoindex.conf
