@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2014/11/02 10:36:35 bluhm Exp $
+# $OpenBSD: Makefile,v 1.12 2015/10/27 14:12:31 bluhm Exp $
 
 COMMENT =		checks intelligently if files have changed
 
-DISTNAME =		File-Modified-0.09
+DISTNAME =		File-Modified-0.10
 
 CATEGORIES =		devel
 
