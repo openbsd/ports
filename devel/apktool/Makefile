@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2015/07/17 15:08:16 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2015/10/27 18:32:05 rpointel Exp $
 
 COMMENT =		tool for reverse engineering Android apk files
 
-DISTNAME =		apktool_2.0.1
+DISTNAME =		apktool_2.0.2
 PKGNAME =		${DISTNAME:S/_/-/}
 
 CATEGORIES =		devel security java
 
 HOMEPAGE =		http://ibotpeaches.github.io/Apktool/
+
+MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # Apache v2
 PERMIT_PACKAGE_CDROM =	Yes
