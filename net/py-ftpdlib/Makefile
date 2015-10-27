@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2015/09/29 10:52:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/10/27 18:10:09 juanfra Exp $
 
 COMMENT =		FTP server library for Python
 
 MODPY_EGG_VERSION =	1.4.0
+REVISION =		1
 DISTNAME =		pyftpdlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-ftpdlib-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		net devel
 
-HOMEPAGE =		https://pyftpdlib.googlecode.com/
+HOMEPAGE =		https://github.com/giampaolo/pyftpdlib
 
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
