@@ -1,0 +1,33 @@
+$OpenBSD: patch-util_c,v 1.1 2015/10/27 13:31:16 sthen Exp $
+
+Don't fallback to cleartext if StartTLS failed.
+"hard TLS" (SSL-wrapped LDAP, aka ldaps://) is already handled correctly.
+
+--- util.c.orig	Tue Oct 27 13:09:52 2015
++++ util.c	Tue Oct 27 13:27:47 2015
+@@ -183,11 +183,11 @@ do_conn(struct auth_ctx *ctx)
+ 
+ 	/* 
+ 	 * it would be better to use ldap_init here as the manpages state
+-	 * ldap_open will be depreciated. however, if the server is 
++	 * ldap_open will be deprecated. however, if the server is 
+ 	 * unavailable we wont know till we try to bind when we use ldap_init,
+ 	 * which makes a mess of check alternate servers from login.conf. so,
+ 	 * we use ldap_open which will let us know straight away if a server 
+-	 * is unreachable servers. XXX gibberish
++	 * is unreachable.
+ 	 *
+ 	 * the other option is to use ldap_initalize() and ldap_open_defconn()
+ 	 * but since they are undocumented im avoiding them.
+@@ -212,8 +212,10 @@ do_conn(struct auth_ctx *ctx)
+ 	if (ctx->s.mode == MODE_STARTTLS) {
+ 		dlog(1, "starttls!");
+ 		rc = ldap_start_tls_s(ctx->ld, NULL, NULL);
+-		if (rc != LDAP_SUCCESS)
++		if (rc != LDAP_SUCCESS) {
+ 			dlog(0, "could not start tls!");
++			return(0);
++		}
+ 	}
+ 	return(1);
+ }
