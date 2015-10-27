@@ -1,7 +1,7 @@
-$OpenBSD: patch-docs_mydumper_usage_rst,v 1.1 2013/09/25 09:02:09 giovanni Exp $
+$OpenBSD: patch-docs_mydumper_usage_rst,v 1.2 2015/10/27 10:51:32 giovanni Exp $
 remove tags that breaks textproc/py-sphinx
---- docs/mydumper_usage.rst.orig	Wed Sep 25 09:12:54 2013
-+++ docs/mydumper_usage.rst	Wed Sep 25 09:13:37 2013
+--- docs/mydumper_usage.rst.orig	Fri Sep  5 18:48:12 2014
++++ docs/mydumper_usage.rst	Tue Oct 27 08:41:44 2015
 @@ -48,10 +48,8 @@ The :program:`mydumper` tool has several available opt
  
     The port for the MySQL connection.
@@ -26,7 +26,7 @@ remove tags that breaks textproc/py-sphinx
  .. option:: --outputdir, -o
  
     Output directory name, default is export-YYYYMMDD-HHMMSS
-@@ -148,6 +144,4 @@ The :program:`mydumper` tool has several available opt
+@@ -148,9 +144,7 @@ The :program:`mydumper` tool has several available opt
  
     Do not execute the temporary shared read lock.
  
@@ -34,3 +34,6 @@ remove tags that breaks textproc/py-sphinx
 -      
 -      This will cause inconsistent backups.
 +   Warning: This will cause inconsistent backups.
+ 
+ .. option:: --[skip-]tz-utc
+ 
