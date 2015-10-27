@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/12/12 21:39:08 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2015/10/27 19:00:53 kirby Exp $
 
 COMMENT=	The Dungeons of Moria
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	c curses termcap
 
-MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/games/moria/source/ \
-		ftp://alge.anart.no/pub/games/RPG/moria/
+MASTER_SITES=	http://www.nic.funet.fi/pub/unix/games/moria/source/
+
 EXTRACT_SUFX=	.tar.Z
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS='-DPREFIX=\"${PREFIX}\" ${CFLAGS}'
