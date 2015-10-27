@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/09/18 20:36:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2015/10/27 14:43:07 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,8 +6,7 @@ COMMENT =	program matching and transformation engine
 
 # if updating, check for any additional use of diff/grep which
 # may need to be switched to gdiff/ggrep
-DISTNAME =	coccinelle-1.0.2
-REVISION =	0
+DISTNAME =	coccinelle-1.0.3
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	devel
@@ -27,7 +26,9 @@ MODULES =		lang/ocaml \
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			lang/ocaml-camlp4 \
 			print/texlive/base \
-			print/texlive/texmf,-full
+			print/texlive/texmf,-full \
+			textproc/hevea \
+			textproc/latexmk
 RUN_DEPENDS =		devel/ocaml-parmap \
 			devel/ocaml-pcre \
 			sysutils/findlib \
@@ -50,6 +51,7 @@ PORTHOME =	${WRKDIR}
 
 TEST_TARGET =	test
 TEST_DEPENDS =	${FULLPKGPATH}
+TEST_ENV =	COCCINELLE_HOME=${TRUEPREFIX}/lib/coccinelle
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mocaml_native_dynlink}

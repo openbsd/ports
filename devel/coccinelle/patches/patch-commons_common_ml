@@ -1,7 +1,7 @@
-$OpenBSD: patch-commons_common_ml,v 1.5 2015/09/13 15:21:15 sthen Exp $
---- commons/common.ml.orig	Sat Jun 13 23:58:25 2015
-+++ commons/common.ml	Wed Jul 15 14:33:39 2015
-@@ -3335,7 +3335,7 @@ let glob pattern =
+$OpenBSD: patch-commons_common_ml,v 1.6 2015/10/27 14:43:07 sthen Exp $
+--- commons/common.ml.orig	Mon Oct 26 16:22:50 2015
++++ commons/common.ml	Tue Oct 27 14:23:22 2015
+@@ -3277,7 +3277,7 @@ let glob pattern =
  let files_of_dir_or_files ext xs =
    xs +> List.map (fun x ->
      if is_directory x
@@ -10,7 +10,7 @@ $OpenBSD: patch-commons_common_ml,v 1.5 2015/09/13 15:21:15 sthen Exp $
      else [x]
    ) +> List.concat
  
-@@ -3345,7 +3345,7 @@ let files_of_dir_or_files_no_vcs ext xs =
+@@ -3287,7 +3287,7 @@ let files_of_dir_or_files_no_vcs ext xs =
      if is_directory x
      then
        cmd_to_list
@@ -19,7 +19,7 @@ $OpenBSD: patch-commons_common_ml,v 1.5 2015/09/13 15:21:15 sthen Exp $
              "| grep -v /.hg/ |grep -v /CVS/ | grep -v /.git/ |grep -v /_darcs/"
          )
      else [x]
-@@ -3358,7 +3358,7 @@ let files_of_dir_or_files_no_vcs_post_filter regex xs 
+@@ -3300,7 +3300,7 @@ let files_of_dir_or_files_no_vcs_post_filter regex xs 
      then
        cmd_to_list
          ("find " ^ x  ^
@@ -28,7 +28,7 @@ $OpenBSD: patch-commons_common_ml,v 1.5 2015/09/13 15:21:15 sthen Exp $
          )
          +> List.filter (fun s -> s =~ regex)
      else [x]
-@@ -5295,7 +5295,7 @@ let (diff: (int -> int -> diff -> unit)-> (string list
+@@ -5241,7 +5241,7 @@ let (diff: (int -> int -> diff -> unit)-> (string list
      write_file file1 (unwords xs);
      write_file file2 (unwords ys);
      command2
@@ -37,7 +37,7 @@ $OpenBSD: patch-commons_common_ml,v 1.5 2015/09/13 15:21:15 sthen Exp $
      let res = cat fileresult in
      let a = ref 0 in
      let b = ref 0 in
-@@ -5323,7 +5323,7 @@ let (diff2: (int -> int -> diff -> unit) -> (string * 
+@@ -5269,7 +5269,7 @@ let (diff2: (int -> int -> diff -> unit) -> (string * 
      write_file "/tmp/diff1" xstr;
      write_file "/tmp/diff2" ystr;
      command2
