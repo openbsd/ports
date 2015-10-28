@@ -1,0 +1,19 @@
+$OpenBSD: patch-modules_demux_mp4_libmp4_c,v 1.5 2015/10/28 08:44:16 jasper Exp $
+
+Security fix for CVE-2015-5949
+http://www.ocert.org/advisories/ocert-2015-009.html
+
+--- modules/demux/mp4/libmp4.c.orig	Fri Dec 12 13:05:42 2014
++++ modules/demux/mp4/libmp4.c	Tue Oct 27 13:18:44 2015
+@@ -3634,6 +3634,11 @@ void MP4_BoxFree( stream_t *s, MP4_Box_t *p_box )
+     {
+         for( i_index = 0; ; i_index++ )
+         {
++            if ( MP4_Box_Function[i_index].i_parent &&
++                 p_box->p_father &&
++                 p_box->p_father->i_type != MP4_Box_Function[i_index].i_parent )
++                continue;
++
+             if( ( MP4_Box_Function[i_index].i_type == p_box->i_type )||
+                 ( MP4_Box_Function[i_index].i_type == 0 ) )
+             {
