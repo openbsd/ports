@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_shellbags_test_pl,v 1.1.1.1 2015/10/28 09:55:17 rpointel Exp $
+--- plugins/shellbags_test.pl.orig	Mon Sep 14 14:39:32 2015
++++ plugins/shellbags_test.pl	Sun Oct 25 10:03:27 2015
+@@ -9,7 +9,7 @@
+ package shellbags_test;
+ use strict;
+ 
+-require 'shellitems.pl';
++require 'regripper/shellitems.pl';
+ 
+ my %config = (hive          => "USRCLASS\.DAT",
+ 							hivemask      => 32,
