@@ -1,7 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2015/06/22 08:00:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2015/10/28 09:48:47 sthen Exp $
 
 COMMENT =	free open-source SQL full-text search engine
 BROKEN-hppa =	internal compiler error: internal consistency failure
+
+# Note: this is not Sphinx (the Python documentation generator) -
+# see also textproc/py-sphinx.
 
 VERSION =	2.2.9
 DISTNAME =	sphinx-${VERSION}-release
