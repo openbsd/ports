@@ -1,0 +1,12 @@
+Provides a very clunky interface to access the Windows registry, and is
+not currently being developed actively.  It only exists for backward
+compatibility with old code that uses it.  For more powerful and
+flexible ways to access the registry, use Win32::TieRegistry.
+
+Dependencies for the GUI tools are not enforced.
+
+To use the Gtk+ tools (gtkregcompare.pl, gtkregscope.pl, gtkregview.pl):
+# pkg_add p5-Gtk2
+
+To use the Wx tools (wxregcompare.pl, wxregscope.pl, wxregview.pl):
+# pkg_add p5-Wx
