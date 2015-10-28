@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.26 2015/06/29 07:31:40 jasper Exp $
+$OpenBSD: patch-configure,v 1.27 2015/10/28 19:01:39 dcoppa Exp $
 
 - Don't reset CPPFLAGS
 - XXX: boost/intrusive/detail/array_initializer.hpp:62:7: error: exception handling disabled, use -fexceptions to enable
 
---- configure.orig	Wed Mar 25 18:03:22 2015
-+++ configure	Sun Jun 28 23:30:15 2015
-@@ -12455,7 +12455,7 @@ if test x$enable_aac = xyes; then
+--- configure.orig	Fri Oct 16 14:56:12 2015
++++ configure	Wed Oct 28 19:21:48 2015
+@@ -12467,7 +12467,7 @@ if test x$enable_aac = xyes; then
  	oldcppflags=$CPPFLAGS
  	CFLAGS="$CFLAGS $FAAD_CFLAGS"
  	LIBS="$LIBS $FAAD_LIBS"
@@ -14,7 +14,7 @@ $OpenBSD: patch-configure,v 1.26 2015/06/29 07:31:40 jasper Exp $
  	ac_fn_c_check_header_mongrel "$LINENO" "faad.h" "ac_cv_header_faad_h" "$ac_includes_default"
  if test "x$ac_cv_header_faad_h" = xyes; then :
  
-@@ -17113,6 +17113,7 @@ fi
+@@ -17125,6 +17125,7 @@ fi
  done
  
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-configure,v 1.26 2015/06/29 07:31:40 jasper Exp $
  if test x$no_exceptions = xyes; then
  
  
-@@ -17178,7 +17179,7 @@ else
+@@ -17190,7 +17191,7 @@ else
  fi
  
  done
