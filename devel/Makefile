@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1403 2015/10/22 19:45:36 edd Exp $
+# $OpenBSD: Makefile,v 1.1404 2015/10/28 09:51:42 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -919,6 +919,7 @@
      SUBDIR += p5-Parse-Method-Signatures
      SUBDIR += p5-Parse-PlainConfig
      SUBDIR += p5-Parse-RecDescent
+     SUBDIR += p5-Parse-Win32Registry
      SUBDIR += p5-Parse-Yapp
      SUBDIR += p5-Path-Class
      SUBDIR += p5-Path-Tiny
