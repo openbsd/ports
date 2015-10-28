@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.20 2015/07/14 22:52:56 jasper Exp $
+# $OpenBSD: erlang.port.mk,v 1.21 2015/10/28 19:18:31 jasper Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -103,6 +103,7 @@ MODERL_ERLC =		${LOCALBASE}/bin/erlc${MODERL_VERSION}
 # the build will use.
 _MODERL_LINKS +=	erl${MODERL_VERSION} erl \
 			erlc${MODERL_VERSION} erlc \
+			erl_call${MODERL_VERSION} erl_call \
 			escript${MODERL_VERSION} escript
 
 .if !empty(_MODERL_LINKS)

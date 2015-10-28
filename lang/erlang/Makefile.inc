@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2015/07/09 19:46:39 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2015/10/28 19:18:31 jasper Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
@@ -72,7 +72,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/make/install_bin ${WRKSRC}/erts/etc/common/escript.c
 
 post-install:
-	ln -sf ../lib/erlang/lib/${EI}/bin/erl_call ${PREFIX}/bin/erl_call${MAJ_V}
+	ln -sf ../lib/erlang${MAJ_V}/lib/${EI}/bin/erl_call ${PREFIX}/bin/erl_call${MAJ_V}
 	tar zxf ${FULLDISTDIR}/otp_doc_man_${V}.tar.gz -C ${DOC_DIR}
 	tar zxf ${FULLDISTDIR}/otp_doc_html_${V}.tar.gz -C ${DOC_DIR}
 	rm -r ${DOC_DIR}/lib/${JINTERFACE}
