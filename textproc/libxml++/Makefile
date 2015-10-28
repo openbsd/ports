@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2015/09/23 09:11:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2015/10/28 18:10:10 jasper Exp $
 
 COMMENT=		C++ wrapper for the libxml XML parser library
 
-GNOME_VERSION=		2.40.0
+GNOME_VERSION=		2.40.1
 GNOME_PROJECT=		libxml++
 
 SHARED_LIBS +=  xml++-2.6            2.0      # 2.7
