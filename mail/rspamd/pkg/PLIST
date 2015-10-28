@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/09 16:09:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/10/28 09:57:35 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @bin bin/rspamadm
@@ -98,6 +98,7 @@ share/rspamd/lua/trie.lua
 share/rspamd/lua/whitelist.lua
 share/rspamd/rules/
 share/rspamd/rules/html.lua
+share/rspamd/rules/http_headers.lua
 share/rspamd/rules/misc.lua
 share/rspamd/rules/regexp/
 share/rspamd/rules/regexp/drugs.lua

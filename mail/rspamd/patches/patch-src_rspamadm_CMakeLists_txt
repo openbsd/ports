@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_rspamadm_CMakeLists_txt,v 1.1.1.1 2015/10/09 16:09:17 sthen Exp $
---- src/rspamadm/CMakeLists.txt.orig	Tue Sep 29 00:14:47 2015
-+++ src/rspamadm/CMakeLists.txt	Tue Sep 29 00:15:29 2015
-@@ -14,8 +14,8 @@ TARGET_LINK_LIBRARIES(rspamadm ${RSPAMD_REQUIRED_LIBRA
- TARGET_LINK_LIBRARIES(rspamadm stemmer)
+$OpenBSD: patch-src_rspamadm_CMakeLists_txt,v 1.2 2015/10/28 09:57:35 sthen Exp $
+--- src/rspamadm/CMakeLists.txt.orig	Fri Oct 23 06:23:36 2015
++++ src/rspamadm/CMakeLists.txt	Wed Oct 28 01:43:41 2015
+@@ -17,8 +17,8 @@ IF (ENABLE_SNOWBALL MATCHES "ON")
+ ENDIF()
  TARGET_LINK_LIBRARIES(rspamadm rspamd-actrie)
  
 -IF (NOT DEBIAN_BUILD)
