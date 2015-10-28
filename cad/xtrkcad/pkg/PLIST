@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/07/09 14:40:20 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/10/28 09:37:57 sebastia Exp $
 @bin bin/xtrkcad
 share/locale/de_DE/
 share/locale/de_DE/LC_MESSAGES/
@@ -57,17 +57,39 @@ share/xtrkcad/demos/dmtoyard.xtr
 share/xtrkcad/demos/dmtrkwid.xtr
 share/xtrkcad/demos/dmtrntab.xtr
 share/xtrkcad/examples/
+share/xtrkcad/examples/2_train_round_mrklnhomde_v1_2014_01.xtc
+share/xtrkcad/examples/2oval8_mrklnhomde_v1_2013_03.xtc
+share/xtrkcad/examples/2way2loop_mrklnhomde_v1_2013_04.xtc
+share/xtrkcad/examples/2x8+L+layout+01c.xtc
+share/xtrkcad/examples/3_circles_loops_mrklnhomde_2013_06_jruppert.xtc
+share/xtrkcad/examples/3oval1circle_mrklnhomde_v1_2013_03.xtc
+share/xtrkcad/examples/3oval2loops_mrklnhomde_v1_2013_04.xtc
+share/xtrkcad/examples/3oval8_mrklnhomde_v1_2013_03.xtc
+share/xtrkcad/examples/3way_track_and_looping_mrklnhomde_2013_02_jruppert.xtc
+share/xtrkcad/examples/4_Triangles_mrklnhomde_2012_11_jruppert.xtc
+share/xtrkcad/examples/Bridge_over_central_station.xtc
+share/xtrkcad/examples/Central_Station_City_mrklnhomde_2013_06_jruppert.xtc
+share/xtrkcad/examples/Central_Station_mrklnhomde_2013_04_jruppert.xtc
 share/xtrkcad/examples/Control-Panels.xtc
+share/xtrkcad/examples/DVRR v3.0 E Stroudsburg - Pt Jervis.xtc
 share/xtrkcad/examples/Eishindo T Track Test Layout.xtc
+share/xtrkcad/examples/MaerklinLayout_ReverseLoop4.xtc
+share/xtrkcad/examples/Station_2ladder_v1_2014_07_jruppert.xtc
+share/xtrkcad/examples/Station_and_Circles_mrklnhomde_2013_02_jruppert.xtc
+share/xtrkcad/examples/bridge_and_loops_mrklnhomde_v1_2013_03.xtc
 share/xtrkcad/examples/cascade.xtc
 share/xtrkcad/examples/iota.xtc
 share/xtrkcad/examples/katoxing.xtc
 share/xtrkcad/examples/laurel_hon3.xtc
 share/xtrkcad/examples/mr03.xtc
+share/xtrkcad/examples/mrklnhomde_v1_geometry.xtc
 share/xtrkcad/examples/ntrak4.xtc
 share/xtrkcad/examples/ntrak6.xtc
 share/xtrkcad/examples/ntrak8.xtc
 share/xtrkcad/examples/pmi.xtc
+share/xtrkcad/examples/port_dinllean.xtc
+share/xtrkcad/examples/psr.xtc
+share/xtrkcad/examples/rack-rail-ski-train-t-trak-triple-double-wide.xtc
 share/xtrkcad/examples/spagw1.xtc
 share/xtrkcad/examples/spagw2.xtc
 share/xtrkcad/examples/spagw3.xtc
@@ -524,35 +546,120 @@ share/xtrkcad/html/workDir.html
 share/xtrkcad/html/xtrkcad_lin.css
 share/xtrkcad/logo.bmp
 share/xtrkcad/params/
+share/xtrkcad/params/ACG19.350 Track.xtp
+share/xtrkcad/params/ACG20.000 Track.xtp
+share/xtrkcad/params/ACG20.000_Track.xtp
+share/xtrkcad/params/Any-CTC_panel.xtp
+share/xtrkcad/params/Any-CabooseIndustries.xtp
+share/xtrkcad/params/Any-ElecSymbol.xtp
 share/xtrkcad/params/AtlasTrueTrk.xtp
+share/xtrkcad/params/Azatrax.xtp
 share/xtrkcad/params/BachmannEZ-HO.xtp
 share/xtrkcad/params/BachmannEZ-N.xtp
 share/xtrkcad/params/Central Valley turnout kits.xtp
+share/xtrkcad/params/Central Valley turnouts.xtp
+share/xtrkcad/params/Circuits.xtp
+share/xtrkcad/params/DiamondSc.xtp
+share/xtrkcad/params/EM-UK Fine Scale.xtp
 share/xtrkcad/params/FastTrack-HO.xtp
 share/xtrkcad/params/FastTrack_n.xtp
+share/xtrkcad/params/G-aristo.xtp
+share/xtrkcad/params/Gn15-nmra.xtp
 share/xtrkcad/params/H0_ncb-Roads.xtp
+share/xtrkcad/params/HO-AtlasHOstruct.xtp
+share/xtrkcad/params/HO-DapolHOOO.xtp
+share/xtrkcad/params/HO-HornbyHO.xtp
+share/xtrkcad/params/HO-LifeLike-Power-Loc.xtp
+share/xtrkcad/params/HO-MetcalfeHOOO.xtp
+share/xtrkcad/params/HO-OldJouefHO100.xtp
+share/xtrkcad/params/HO-RatioHOOO.xtp
+share/xtrkcad/params/HO-Slot-Car-AFX-Track.xtp
+share/xtrkcad/params/HO-Slot-Car-Adapter-Track.xtp
+share/xtrkcad/params/HO-Slot-Car-Aurora-Track-Manually-Modified.xtp
+share/xtrkcad/params/HO-Slot-Car-Aurora-Track.xtp
+share/xtrkcad/params/HO-Slot-Cars.xtp
+share/xtrkcad/params/HO-Superquick.xtp
+share/xtrkcad/params/HO-WillsHOOO.xtp
 share/xtrkcad/params/HO-atl100ho.xtp
+share/xtrkcad/params/HO-cmr-ho.xtp
+share/xtrkcad/params/HO_toolkit-Roads.xtp
+share/xtrkcad/params/Hornby Dublo 2 Rail Buildings.xtp
+share/xtrkcad/params/Hornby Dublo 2 Rail.xtp
+share/xtrkcad/params/Hornby Dublo 3 Rail with Turntable.xtp
+share/xtrkcad/params/Hornby Dublo Signals.xtp
+share/xtrkcad/params/Hornby Dublo Wood Buildings.xtp
+share/xtrkcad/params/HornbyOO.xtp
 share/xtrkcad/params/JouefHO.xtp
+share/xtrkcad/params/K-Line  O Structures (Kits).xtp
 share/xtrkcad/params/LifeLike-N.xtp
 share/xtrkcad/params/LimaHO.xtp
+share/xtrkcad/params/Lionel  O Misc.xtp
+share/xtrkcad/params/Lionel  O Operating Structures.xtp
+share/xtrkcad/params/Lionel  O Structures (Kits).xtp
 share/xtrkcad/params/Lionel-O-O27.xtp
+share/xtrkcad/params/Lionel-O.xtp
+share/xtrkcad/params/Lionel27.xtp
 share/xtrkcad/params/LionelFasttrack.xtp
+share/xtrkcad/params/Lionel_Marx Beacons & Floodlight Towers.xtp
+share/xtrkcad/params/Lionel_Marx Highway Signals & Blocks.xtp
 share/xtrkcad/params/Marx.xtp
 share/xtrkcad/params/N-AtlasTrueTrack.xtp
+share/xtrkcad/params/N-BRIDGES.xtp
+share/xtrkcad/params/N-Bonus Commercial Structures.xtp
+share/xtrkcad/params/N-Bonus Generic Industrial Structures.xtp
+share/xtrkcad/params/N-Bonus Industrial Structures.xtp
+share/xtrkcad/params/N-Bonus Railroad Structures.xtp
+share/xtrkcad/params/N-Bonus Residential Structures.xtp
+share/xtrkcad/params/N-Bonus Structures.xtp
+share/xtrkcad/params/N-DESIGN-PRESERVATION.xtp
+share/xtrkcad/params/N-GRAIN-ELEVATORS.xtp
+share/xtrkcad/params/N-Greenmax-Engine sheds.xtp
+share/xtrkcad/params/N-Greenmax-Island platform 16.xtp
+share/xtrkcad/params/N-Kato-Unitram.xtp
+share/xtrkcad/params/N-Katocn.xtp
+share/xtrkcad/params/N-LifeLike Power-Loc.xtp
 share/xtrkcad/params/N-ME Structures.xtp
-share/xtrkcad/params/N-atlasn.xtp
+share/xtrkcad/params/N-MOBILE-HOMES.xtp
+share/xtrkcad/params/N-N- 90ft-ROUNDHOUSE.xtp
+share/xtrkcad/params/N-NScaleArchitect.xtp
+share/xtrkcad/params/N-NULINE.xtp
+share/xtrkcad/params/N-Shinohara70.xtp
 share/xtrkcad/params/N-atlasn55.xtp
+share/xtrkcad/params/N-cmr.xtp
+share/xtrkcad/params/N-kato-n-gl-trk.xtp
+share/xtrkcad/params/N-kato-turntable.xtp
+share/xtrkcad/params/N-me.xtp
+share/xtrkcad/params/NJI.xtp
+share/xtrkcad/params/NScale_SectorPlate_Traverser_Examples.xtp
+share/xtrkcad/params/Ninco_SCX Slot Car.xtp
+share/xtrkcad/params/O-RealTrax.xtp
+share/xtrkcad/params/O-Ross.xtp
 share/xtrkcad/params/O-atlaso3rail.xtp
+share/xtrkcad/params/O-nmra-lapped.xtp
+share/xtrkcad/params/On14mm KBScale.xtp
 share/xtrkcad/params/On30-FastTrack.xtp
+share/xtrkcad/params/On30-Guy.xtp
+share/xtrkcad/params/On30-Interfaceplates.xtp
 share/xtrkcad/params/On30.xtp
 share/xtrkcad/params/Peco-On30.xtp
+share/xtrkcad/params/Piko-A.xtp
 share/xtrkcad/params/Piko-g.xtp
 share/xtrkcad/params/ProZ-Track.xtp
+share/xtrkcad/params/Proto-AmSlotCar.xtp
+share/xtrkcad/params/RSLaserKits.xtp
 share/xtrkcad/params/RocoGeoLineHO.xtp
+share/xtrkcad/params/S-AmericanModel.xtp
 share/xtrkcad/params/S-Trax.xtp
+share/xtrkcad/params/S_ACG_18.824in Radius Track.xtp
+share/xtrkcad/params/S_ACG_20.000 Track.xtp
+share/xtrkcad/params/SideTrk.xtp
 share/xtrkcad/params/T-Eishindo.xtp
+share/xtrkcad/params/Tables (all scales).xtp
 share/xtrkcad/params/TilligAdvTT.xtp
+share/xtrkcad/params/TilligEliteHO-V2a.xtp
 share/xtrkcad/params/USA-G.xtp
+share/xtrkcad/params/Woodland.xtp
+share/xtrkcad/params/Z-Rokuhan.xtp
 share/xtrkcad/params/accurail.xtp
 share/xtrkcad/params/amb-n.xtp
 share/xtrkcad/params/arnold.xtp
@@ -561,6 +668,7 @@ share/xtrkcad/params/atlascho.xtp
 share/xtrkcad/params/atlascn.xtp
 share/xtrkcad/params/atlaseho.xtp
 share/xtrkcad/params/atlasen.xtp
+share/xtrkcad/params/atlasn.xtp
 share/xtrkcad/params/atlaso2rail.xtp
 share/xtrkcad/params/bach-n.xtp
 share/xtrkcad/params/br.xtp
@@ -588,11 +696,14 @@ share/xtrkcad/params/kato-ho.xtp
 share/xtrkcad/params/kato-n-DblTrk.xtp
 share/xtrkcad/params/kato-n.xtp
 share/xtrkcad/params/lgb.xtp
+share/xtrkcad/params/marcway-EM.xtp
 share/xtrkcad/params/me-ho.xtp
 share/xtrkcad/params/minitrix.xtp
 share/xtrkcad/params/mp-n.xtp
-share/xtrkcad/params/mrkhocde.xtp
+share/xtrkcad/params/mrkholde.xtp
+share/xtrkcad/params/mrkhomde.xtp
 share/xtrkcad/params/mrkln1.xtp
+share/xtrkcad/params/mrklnhoc-de.xtp
 share/xtrkcad/params/mrklnhoc.xtp
 share/xtrkcad/params/mrklnhok.xtp
 share/xtrkcad/params/mrklnhom.xtp
@@ -607,6 +718,7 @@ share/xtrkcad/params/nmra-o3.xtp
 share/xtrkcad/params/nmra-s.xtp
 share/xtrkcad/params/nmra-tt.xtp
 share/xtrkcad/params/p4.xtp
+share/xtrkcad/params/peco turntable wo routes.xtp
 share/xtrkcad/params/peco-O-Bullhead.xtp
 share/xtrkcad/params/pecoho.xtp
 share/xtrkcad/params/pecoho83.xtp
@@ -618,25 +730,26 @@ share/xtrkcad/params/pecon80.xtp
 share/xtrkcad/params/peconst.xtp
 share/xtrkcad/params/pikestuf.xtp
 share/xtrkcad/params/protoam.xtp
+share/xtrkcad/params/protosteam.xtp
 share/xtrkcad/params/prototype-de.xtp
 share/xtrkcad/params/revell.xtp
 share/xtrkcad/params/rocho100.xtp
 share/xtrkcad/params/rocho83.xtp
 share/xtrkcad/params/rocon.xtp
+share/xtrkcad/params/signals_HO.xtp
 share/xtrkcad/params/smltown.xtp
 share/xtrkcad/params/t-trak-notes.txt
 share/xtrkcad/params/t-trak.xtp
+share/xtrkcad/params/taylor-ho.xtp
 share/xtrkcad/params/tillig-hom.xtp
 share/xtrkcad/params/tomix-n.xtp
 share/xtrkcad/params/toolkit-n.xtp
 share/xtrkcad/params/tortoise.xtp
 share/xtrkcad/params/trees.xtp
+share/xtrkcad/params/walth-bkgrd-ho.xtp
 share/xtrkcad/params/walth-ho.xtp
 share/xtrkcad/params/walth-n.xtp
 share/xtrkcad/params/wlthho10.xtp
 share/xtrkcad/params/wlthho83.xtp
-share/xtrkcad/xtrkcad.bug
-share/xtrkcad/xtrkcad.enh
-share/xtrkcad/xtrkcad.fix
 share/xtrkcad/xtrkcad.tip
 share/xtrkcad/xtrkcad.xtq
