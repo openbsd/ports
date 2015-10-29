@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/11/15 23:39:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/10/29 21:52:06 sthen Exp $
 @group daemon
 lib/
 lib/php/
@@ -27,7 +27,6 @@ pear/tests/XML_Parser/tests/003.phpt
 pear/tests/XML_Parser/tests/004.phpt
 pear/tests/XML_Parser/tests/004b.phpt
 pear/tests/XML_Parser/tests/005.phpt
-pear/tests/XML_Parser/tests/AllTests.php
 pear/tests/XML_Parser/tests/bug-9328.phpt
 pear/tests/XML_Parser/tests/bug-9328b.phpt
 pear/tests/XML_Parser/tests/bug-9328c.phpt
