@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2015/04/21 18:53:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/10/29 18:25:32 ajacoutot Exp $
 
 COMMENT =		web/text search engine
 
 DISTNAME =		swish-e-2.4.7
-REVISION =		3
+REVISION =		4
 SHARED_LIBS =		swish-e	2.1
 CATEGORIES =		textproc www
 
 HOMEPAGE =		http://swish-e.org/
 MASTER_SITES =		${HOMEPAGE}distribution/
-
-MAINTAINER =		Michael Erdely <merdely@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

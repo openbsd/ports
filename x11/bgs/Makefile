@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2015/05/23 11:58:19 jung Exp $
+# $OpenBSD: Makefile,v 1.15 2015/10/29 18:25:32 ajacoutot Exp $
 
 COMMENT =		simple background setter
 
 VERSION =		0.7.1
 DISTNAME =		${GH_PROJECT}-${VERSION}
 CATEGORIES =		x11 graphics
-
-MAINTAINER =		Michael Erdely <merdely@openbsd.org>
+REVISION =		0
 
 # MIT/X
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/16 15:09:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2015/10/29 18:25:32 ajacoutot Exp $
 
 COMMENT =	representation of an iTunes Library
 
 MODULES =	cpan
 DISTNAME =	Mac-iTunes-Library-1.0
 CATEGORIES =	multimedia
+REVISION =	0
 
 HOMEPAGE =	https://github.com/dinomite/Mac-iTunes-Library
-
-MAINTAINER =	Michael Erdely <merdely@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/10/29 18:25:32 ajacoutot Exp $
 
 COMMENT=	interface for getting PID info
 
 DISTNAME=	Unix-PID-0.23
 CATEGORIES=	sysutils
-
-MAINTAINER=	Michael Erdely <merdely@openbsd.org>
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
