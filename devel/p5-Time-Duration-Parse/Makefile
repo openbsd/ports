@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/07/03 07:34:51 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2015/10/29 07:09:38 benoit Exp $
 
 COMMENT =	parse strings that represent time durations
 
-DISTNAME =	Time-Duration-Parse-0.12
+DISTNAME =	Time-Duration-Parse-0.13
 CATEGORIES =	devel
 MODULES =	cpan
 
