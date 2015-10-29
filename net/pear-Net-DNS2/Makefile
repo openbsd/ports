@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/10/16 17:04:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/10/29 21:54:20 sthen Exp $
 
 COMMENT=	resolver library used to communicate with a DNS server
 
-DISTNAME=	Net_DNS2-1.3.1
-REVISION=	3
+DISTNAME=	Net_DNS2-1.4.1
 CATEGORIES=	net
 
 MODULES=	www/pear
