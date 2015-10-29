@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/15 00:18:30 dlg Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/10/29 21:24:05 sthen Exp $
 lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
+@sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini
 share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/
 share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}.h
 share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_api.h
@@ -29,6 +30,7 @@ share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_object
 share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_options.h
 share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_params.h
 share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_querystring.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_strlist.h
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_response_codes.h
 share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_url.h
+share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_utf8.h
 share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_version.h
