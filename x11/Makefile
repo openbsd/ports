@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.559 2015/10/19 20:37:52 kili Exp $
+# $OpenBSD: Makefile,v 1.560 2015/10/29 00:40:44 jcs Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -346,6 +346,7 @@
      SUBDIR += xdaliclock
      SUBDIR += xdesktopwaves
      SUBDIR += xdg-user-dirs-gtk
+     SUBDIR += xdimmer
      SUBDIR += xdmchoose
      SUBDIR += xdotool
      SUBDIR += xdrawchem
