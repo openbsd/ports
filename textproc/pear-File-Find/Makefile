@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/10/29 22:12:08 sthen Exp $
 
 COMMENT=	php class to facilitate the search of filesystems
 
-DISTNAME=	File_Find-1.3.0
-REVISION=	2
+DISTNAME=	File_Find-1.3.3
 CATEGORIES=	textproc
 
 MASTER_SITES=	http://pear.php.net/get/
