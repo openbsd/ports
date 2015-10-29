@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/10/09 12:48:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/10/29 08:47:21 jasper Exp $
 
 COMMENT =	XML parser written in Vala
-DISTNAME =	libxmlbird-1.0.6
+DISTNAME =	libxmlbird-1.0.7
 CATEGORIES =	textproc
-REVISION =	1
 
 SHARED_LIBS +=	xmlbird 0.0			# 1.0.6
 
@@ -17,32 +16,31 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		http://birdfont.org/xmlbird-releases/
 EXTRACT_SUFX =		.tar.xz
 
-MODULES =		lang/python
-MODPY_ADJ_FILES =       configure
+WANTLIB += glib-2.0
+
+MODULES =		devel/gettext \
+			lang/python
+MODPY_ADJ_FILES =       configure install.py
 
 BUILD_DEPENDS =		devel/py-doit \
 			lang/vala
+LIB_DEPENDS =		devel/glib2
 
 TEST_DEPENDS =		${BASE_PKGPATH}
 
 CONFIGURE_STYLE =	simple
 
+SUBST_VARS +=		DESTDIR
+
 pre-configure:
 	sed -i "s,bash,sh,g" ${WRKSRC}/scripts/run.py
-	${SUBST_CMD} ${WRKSRC}/dodo.py
+	${SUBST_CMD} ${WRKSRC}/dodo.py ${WRKSRC}/configure ${WRKSRC}/install.py
 
 do-build:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/doit
+	cd ${WRKSRC} && ${LOCALBASE}/bin/doit libxmlbird libxmlbird_pkgconfig
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/build/xmlbird.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/build/libxmlbird.so.${LIBxmlbird_VERSION} \
-		${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/build/xmlbird.pc \
-		${PREFIX}/lib/pkgconfig
-	${INSTALL_DATA_DIR} ${PREFIX}/share/vala/vapi
-	${INSTALL_DATA} ${WRKSRC}/build/xmlbird.vapi \
-		${PREFIX}/share/vala/vapi
+	cd ${WRKSRC} && ./install.py
 
 do-test:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/doit test

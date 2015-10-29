@@ -1,0 +1,15 @@
+$OpenBSD: patch-install_py,v 1.1 2015/10/29 08:47:21 jasper Exp $
+--- install.py.orig	Thu Oct 29 09:17:58 2015
++++ install.py	Thu Oct 29 09:21:36 2015
+@@ -89,8 +89,9 @@ if not options.libdir:	
+ else:
+ 	libdir = options.libdir
+ 
+-
+-if os.path.isfile ('build/bin/libxmlbird.so.' + version.LIBXMLBIRD_SO_VERSION):
++if "openbsd" in sys.platform:
++    install ('build/bin/libxmlbird.so.' + '${LIBxmlbird_VERSION}', '/lib', 644) 
++elif os.path.isfile ('build/bin/libxmlbird.so.' + version.LIBXMLBIRD_SO_VERSION):
+    install ('build/bin/libxmlbird.so.' + version.LIBXMLBIRD_SO_VERSION, libdir, 644)
+    link (libdir, 'libxmlbird.so.' + version.LIBXMLBIRD_SO_VERSION, ' libxmlbird.so.' + version.LIBXMLBIRD_SO_VERSION_MAJOR)
+    link (libdir, 'libxmlbird.so.' + version.LIBXMLBIRD_SO_VERSION, ' libxmlbird.so')
