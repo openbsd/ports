@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.14 2015/08/25 07:30:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.15 2015/10/29 09:55:18 sthen Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -33,6 +33,11 @@ bin/mytop
 @bin bin/replace
 @bin bin/resolve_stack_dump
 @bin bin/resolveip
+bin/wsrep_sst_common
+bin/wsrep_sst_mysqldump
+bin/wsrep_sst_rsync
+bin/wsrep_sst_xtrabackup
+bin/wsrep_sst_xtrabackup-v2
 include/mysql/private/authors.h
 include/mysql/private/bounded_queue.h
 include/mysql/private/client_settings.h
@@ -57,10 +62,6 @@ include/mysql/private/filesort_utils.h
 include/mysql/private/gcalc_slicescan.h
 include/mysql/private/gcalc_tools.h
 include/mysql/private/gstream.h
-include/mysql/private/ha_ndbcluster.h
-include/mysql/private/ha_ndbcluster_binlog.h
-include/mysql/private/ha_ndbcluster_cond.h
-include/mysql/private/ha_ndbcluster_tables.h
 include/mysql/private/ha_partition.h
 include/mysql/private/handler.h
 include/mysql/private/hash_filo.h
@@ -175,7 +176,6 @@ include/mysql/private/sql_partition_admin.h
 include/mysql/private/sql_plist.h
 include/mysql/private/sql_plugin.h
 include/mysql/private/sql_plugin_compat.h
-include/mysql/private/sql_plugin_services.h
 include/mysql/private/sql_prepare.h
 include/mysql/private/sql_priv.h
 include/mysql/private/sql_profile.h
@@ -202,7 +202,6 @@ include/mysql/private/sql_view.h
 include/mysql/private/sql_yacc.h
 include/mysql/private/strfunc.h
 include/mysql/private/structs.h
-include/mysql/private/sys_vars.h
 include/mysql/private/sys_vars_shared.h
 include/mysql/private/table.h
 include/mysql/private/table_cache.h
@@ -219,9 +218,11 @@ lib/mysql/plugin/auth_0x0100.so
 lib/mysql/plugin/auth_socket.so
 lib/mysql/plugin/auth_test_plugin.so
 lib/mysql/plugin/daemon_example.ini
+lib/mysql/plugin/debug_key_management.so
 lib/mysql/plugin/dialog.so
 lib/mysql/plugin/dialog_examples.so
-lib/mysql/plugin/feedback.so
+lib/mysql/plugin/example_key_management.so
+lib/mysql/plugin/file_key_management.so
 lib/mysql/plugin/ha_archive.so
 lib/mysql/plugin/ha_blackhole.so
 lib/mysql/plugin/ha_connect.so
@@ -229,7 +230,6 @@ lib/mysql/plugin/ha_example.so
 lib/mysql/plugin/ha_federated.so
 lib/mysql/plugin/ha_federatedx.so
 lib/mysql/plugin/ha_innodb.so
-lib/mysql/plugin/ha_sequence.so
 lib/mysql/plugin/ha_sphinx.so
 lib/mysql/plugin/ha_spider.so
 lib/mysql/plugin/ha_test_sql_discovery.so
@@ -247,7 +247,9 @@ lib/mysql/plugin/query_response_time.so
 lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
 lib/mysql/plugin/server_audit.so
+lib/mysql/plugin/simple_password_check.so
 lib/mysql/plugin/sql_errlog.so
+lib/mysql/plugin/wsrep_info.so
 @bin libexec/mysqld
 @man man/man1/aria_chk.1
 @man man/man1/aria_dump_log.1
@@ -281,16 +283,14 @@ lib/mysql/plugin/sql_errlog.so
 share/doc/mysql/
 share/doc/mysql/COPYING
 share/doc/mysql/COPYING.LESSER
+share/doc/mysql/COPYING.thirdparty
 share/doc/mysql/CREDITS
 share/doc/mysql/EXCEPTIONS-CLIENT
 share/doc/mysql/INSTALL-BINARY
 share/doc/mysql/README
+share/doc/mysql/README-wsrep
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/mysql/
-share/examples/mysql/SELinux/
-share/examples/mysql/SELinux/RHEL4/
-share/examples/mysql/SELinux/RHEL4/mysql.fc
-share/examples/mysql/SELinux/RHEL4/mysql.te
 share/examples/mysql/binary-configure
 share/examples/mysql/magic
 share/examples/mysql/my-huge.cnf
@@ -302,6 +302,17 @@ share/examples/mysql/my-small.cnf
 share/examples/mysql/mysql-log-rotate
 share/examples/mysql/mysql.server
 share/examples/mysql/mysqld_multi.server
+share/examples/mysql/policy/
+share/examples/mysql/policy/apparmor/
+share/examples/mysql/policy/apparmor/README
+share/examples/mysql/policy/apparmor/usr.sbin.mysqld
+share/examples/mysql/policy/apparmor/usr.sbin.mysqld.local
+share/examples/mysql/policy/selinux/
+share/examples/mysql/policy/selinux/README
+share/examples/mysql/policy/selinux/mariadb-server.fc
+share/examples/mysql/policy/selinux/mariadb-server.te
+share/examples/mysql/wsrep.cnf
+share/examples/mysql/wsrep_notify
 share/mysql/
 share/mysql/charsets/
 share/mysql/charsets/Index.xml
@@ -357,6 +368,8 @@ share/mysql/japanese/
 share/mysql/japanese/errmsg.sys
 share/mysql/korean/
 share/mysql/korean/errmsg.sys
+share/mysql/maria_add_gis_sp.sql
+share/mysql/maria_add_gis_sp_bootstrap.sql
 share/mysql/mysql_performance_tables.sql
 share/mysql/mysql_system_tables.sql
 share/mysql/mysql_system_tables_data.sql
