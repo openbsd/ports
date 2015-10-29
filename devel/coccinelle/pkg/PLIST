@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/10/27 14:43:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/10/29 15:41:36 sthen Exp $
 %%dynlink%%
 bin/pycocci
 bin/spatch
 bin/spatch.byte
-bin/spgen
 lib/coccinelle/
 lib/coccinelle/ocaml/
 lib/coccinelle/ocaml/ast0_cocci.cmi
@@ -47,14 +46,11 @@ lib/coccinelle/python/coccilib/report.py
 lib/coccinelle/python/coccilib/trac.py
 lib/coccinelle/python/coccilib/xml_firehose.py
 @bin lib/coccinelle/spatch
-lib/coccinelle/spgen/
-@bin lib/coccinelle/spgen/spgen
 lib/coccinelle/standard.h
 lib/coccinelle/standard.iso
 lib/ocaml/stublibs/dllpycaml_stubs.so
 @man man/man1/pycocci.1
 @man man/man1/spatch.1
-@man man/man1/spgen.1
 @man man/man3/Coccilib.3
 share/doc/coccinelle/
 share/doc/coccinelle/contents_motif.gif

@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile,v 1.9 2015/10/27 14:43:07 sthen Exp $
---- Makefile.orig	Mon Oct 26 16:22:50 2015
-+++ Makefile	Tue Oct 27 14:33:05 2015
-@@ -360,7 +360,7 @@ install-man:
+$OpenBSD: patch-Makefile,v 1.10 2015/10/29 15:41:36 sthen Exp $
+--- Makefile.orig	Wed Oct 28 14:07:59 2015
++++ Makefile	Thu Oct 29 15:36:45 2015
+@@ -347,7 +347,7 @@ install-man:
  	$(INSTALL_DATA) docs/spatch.1 $(DESTDIR)$(MANDIR)/man1/
  	$(INSTALL_DATA) docs/pycocci.1 $(DESTDIR)$(MANDIR)/man1/
- 	$(INSTALL_DATA) docs/spgen.1 $(DESTDIR)$(MANDIR)/man1/
+ #	$(INSTALL_DATA) docs/spgen.1 $(DESTDIR)$(MANDIR)/man1/
 -	$(INSTALL_DATA) docs/Coccilib.3cocci $(DESTDIR)$(MANDIR)/man3/
 +	$(INSTALL_DATA) docs/Coccilib.3cocci $(DESTDIR)$(MANDIR)/man3/Coccilib.3
  
  install-bash:
  	@$(ECHO) "Installing bash completion in: ${DESTDIR}${BASH_COMPLETION_DIR}"
-@@ -391,9 +391,9 @@ install-python:
+@@ -378,9 +378,9 @@ install-python:
  install-stubs:
  	$(MKDIR_P) $(DESTDIR)$(LIBDIR)
  	@if test -f ./bundles/pycaml/dllpycaml_stubs.so; then \
@@ -20,5 +20,5 @@ $OpenBSD: patch-Makefile,v 1.9 2015/10/27 14:43:07 sthen Exp $
 -		cp -fv ./bundles/pcre/dllpcre_stubs.so $(DESTDIR)$(LIBDIR); fi
 +		cp -f ./bundles/pcre/dllpcre_stubs.so $(DESTDIR)$(LIBDIR); fi
  
- install: install-man install-common install-stubs $(PYTHON_INSTALL_TARGET)
+ install: install-common install-man install-stubs $(PYTHON_INSTALL_TARGET)
  	rm -f $(DESTDIR)$(LIBDIR)/spatch
