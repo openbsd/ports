@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.143 2015/07/08 16:36:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.144 2015/10/30 13:00:37 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-VERSION=	7.4.769
-DISTNAME=	vim-${VERSION}
-PKGNAME-main=	vim-${VERSION}
-PKGNAME-lang=	vim-lang-${VERSION}
-P=		vim${VERSION:R:S/.//}
+V=		7.4.900
+DISTNAME=	vim-$V
+DISTFILES=	vim-$V{v$V}.tar.gz
+PKGNAME-main=	vim-$V
+PKGNAME-lang=	vim-lang-$V
+P=		vim${V:R:S/.//}
 CATEGORIES=	editors
-# Upstream's normal distribution (http://ftp.vim.org/pub/vim/unix/) consists
-# of a relatively old tar, plus hundreds of patches, many of which require
-# gnu patch. Port is using a distribution produced by the hgtar target below.
-MASTER_SITES=	http://spacehopper.org/mirrors/
-EXTRACT_SUFX=	.tar.bz2
+MASTER_SITES=	https://github.com/vim/vim/archive/
 
 HOMEPAGE=	http://www.vim.org/
 
@@ -29,7 +26,7 @@ WANTLIB +=	c curses
 
 MULTI_PACKAGES=	-main -lang
 
-FULLPKGNAME-lang= vim-lang-${VERSION}
+FULLPKGNAME-lang= vim-lang-$V
 FULLPKGPATH-lang= ${PKGPATH},-lang
 
 FLAVORS=	huge gtk2 athena motif no_x11 lua perl python python3 ruby
@@ -47,7 +44,7 @@ CONFIGURE_ARGS+= --with-tlib="curses" \
 		--enable-multibyte \
 		--enable-cscope
 
-AUTOCONF_VERSION= 2.65
+AUTOCONF_VERSION= 2.69
 BUILD_DEPENDS= ${MODGNU_AUTOCONF_DEPENDS}
 
 .if ${FLAVOR:Mhuge}
@@ -174,17 +171,5 @@ post-install:
 
 RUN_DEPENDS+= devel/desktop-file-utils
 .endif
-
-# convenience targets
-hg:
-	mkdir -p ${FULLDISTDIR}/hg
-	cd ${FULLDISTDIR}/hg; [ -d vim ] || hg clone \
-	    https://vim.googlecode.com/hg/ vim
-	cd ${FULLDISTDIR}/hg/vim; hg pull; hg update
-
-tar:
-	cd ${FULLDISTDIR}/hg/vim && F=${FULLDISTDIR}/vim-${VERSION:R}.`grep -A2 'Add new patch number' ${FULLDISTDIR}/hg/vim/src/version.c | tail -1 | sed 's/[ ,]//g'`${EXTRACT_SUFX}; hg archive $$F -X ".hg*" && ls -l $$F
-
-hgtar: hg tar
 
 .include <bsd.port.mk>

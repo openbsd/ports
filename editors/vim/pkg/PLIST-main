@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2015/07/08 16:36:41 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2015/10/30 13:00:37 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -300,6 +300,7 @@ share/vim/${P}/ftplugin/automake.vim
 share/vim/${P}/ftplugin/bdf.vim
 share/vim/${P}/ftplugin/bst.vim
 share/vim/${P}/ftplugin/btm.vim
+share/vim/${P}/ftplugin/bzl.vim
 share/vim/${P}/ftplugin/c.vim
 share/vim/${P}/ftplugin/calendar.vim
 share/vim/${P}/ftplugin/cdrdaoconf.vim
@@ -455,6 +456,7 @@ share/vim/${P}/ftplugin/sshconfig.vim
 share/vim/${P}/ftplugin/sudoers.vim
 share/vim/${P}/ftplugin/svg.vim
 share/vim/${P}/ftplugin/sysctl.vim
+share/vim/${P}/ftplugin/systemd.vim
 share/vim/${P}/ftplugin/systemverilog.vim
 share/vim/${P}/ftplugin/tcl.vim
 share/vim/${P}/ftplugin/tcsh.vim
@@ -496,6 +498,7 @@ share/vim/${P}/indent/automake.vim
 share/vim/${P}/indent/awk.vim
 share/vim/${P}/indent/bib.vim
 share/vim/${P}/indent/bst.vim
+share/vim/${P}/indent/bzl.vim
 share/vim/${P}/indent/c.vim
 share/vim/${P}/indent/cdl.vim
 share/vim/${P}/indent/ch.vim
@@ -579,9 +582,11 @@ share/vim/${P}/indent/sh.vim
 share/vim/${P}/indent/sml.vim
 share/vim/${P}/indent/sql.vim
 share/vim/${P}/indent/sqlanywhere.vim
+share/vim/${P}/indent/systemd.vim
 share/vim/${P}/indent/systemverilog.vim
 share/vim/${P}/indent/tcl.vim
 share/vim/${P}/indent/tcsh.vim
+share/vim/${P}/indent/teraterm.vim
 share/vim/${P}/indent/tex.vim
 share/vim/${P}/indent/tf.vim
 share/vim/${P}/indent/tilde.vim
@@ -823,6 +828,7 @@ share/vim/${P}/syntax/bindzone.vim
 share/vim/${P}/syntax/blank.vim
 share/vim/${P}/syntax/bst.vim
 share/vim/${P}/syntax/btm.vim
+share/vim/${P}/syntax/bzl.vim
 share/vim/${P}/syntax/bzr.vim
 share/vim/${P}/syntax/c.vim
 share/vim/${P}/syntax/cabal.vim
@@ -1265,6 +1271,7 @@ share/vim/${P}/syntax/syncolor.vim
 share/vim/${P}/syntax/synload.vim
 share/vim/${P}/syntax/syntax.vim
 share/vim/${P}/syntax/sysctl.vim
+share/vim/${P}/syntax/systemd.vim
 share/vim/${P}/syntax/systemverilog.vim
 share/vim/${P}/syntax/tads.vim
 share/vim/${P}/syntax/tags.vim
@@ -1277,6 +1284,7 @@ share/vim/${P}/syntax/taskedit.vim
 share/vim/${P}/syntax/tasm.vim
 share/vim/${P}/syntax/tcl.vim
 share/vim/${P}/syntax/tcsh.vim
+share/vim/${P}/syntax/teraterm.vim
 share/vim/${P}/syntax/terminfo.vim
 share/vim/${P}/syntax/tex.vim
 share/vim/${P}/syntax/texinfo.vim
