@@ -1,7 +1,7 @@
-$OpenBSD: patch-client_Makefile_in,v 1.1 2007/12/05 12:53:50 ajacoutot Exp $
---- client/Makefile.in.orig	Wed Dec  5 12:15:05 2007
-+++ client/Makefile.in	Wed Dec  5 12:15:52 2007
-@@ -652,12 +652,12 @@ install-data-local:
+$OpenBSD: patch-client_Makefile_in,v 1.2 2015/10/30 15:54:50 benoit Exp $
+--- client/Makefile.in.orig	Sat Oct 17 18:10:11 2015
++++ client/Makefile.in	Wed Oct 21 07:50:52 2015
+@@ -670,12 +670,12 @@ install-data-local:
  	$(mkinstalldirs) $(DESTDIR)$(inst_dir)
  	$(mkinstalldirs) $(DESTDIR)$(hi_dir)
  	if ! test -f $(DESTDIR)$(hi_dir)/lbreakout2.hscr; then \
