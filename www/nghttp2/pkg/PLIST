@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/30 00:21:57 sthen Exp $
+include/nghttp2/
+include/nghttp2/nghttp2.h
+include/nghttp2/nghttp2ver.h
+lib/libnghttp2.a
+lib/libnghttp2.la
+@lib lib/libnghttp2.so.${LIBnghttp2_VERSION}
+lib/pkgconfig/libnghttp2.pc
+@comment @man man/man1/h2load.1
+@comment @man man/man1/nghttp.1
+@comment @man man/man1/nghttpd.1
+@comment @man man/man1/nghttpx.1
+share/doc/nghttp2/
+share/doc/nghttp2/README.rst
+share/nghttp2/
+share/nghttp2/fetch-ocsp-response
