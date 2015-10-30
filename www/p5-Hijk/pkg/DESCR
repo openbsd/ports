@@ -1,0 +1,3 @@
+Hijk is a fast & minimal low-level HTTP client intended to be used
+where you control both the client and the server, e.g. for talking
+to some internal service from a frontend user-facing web application.
