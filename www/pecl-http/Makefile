@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2015/10/30 12:19:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/10/30 15:51:30 sthen Exp $
 
 COMMENT=	extended HTTP support
 
 _PECLMOD=	http
 V=		2.5.3
-REVISION=	0
+REVISION=	1
 PKGNAME=	pecl-${_PECLMOD}-${V}
 DISTNAME=	pecl_${_PECLMOD}-${V}
+
+HOMEPAGE=	http://pecl.php.net/package/pecl_http
 
 # PHP
 PERMIT_PACKAGE_CDROM =	Yes
