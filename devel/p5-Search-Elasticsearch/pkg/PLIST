@@ -1,0 +1,138 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/30 18:17:30 giovanni Exp $
+${P5SITE}/Search/
+${P5SITE}/Search/Elasticsearch/
+${P5SITE}/Search/Elasticsearch.pm
+${P5SITE}/Search/Elasticsearch/Bulk.pm
+${P5SITE}/Search/Elasticsearch/Client/
+${P5SITE}/Search/Elasticsearch/Client/0_90/
+${P5SITE}/Search/Elasticsearch/Client/0_90/Direct/
+${P5SITE}/Search/Elasticsearch/Client/0_90/Direct.pm
+${P5SITE}/Search/Elasticsearch/Client/0_90/Direct/Cluster.pm
+${P5SITE}/Search/Elasticsearch/Client/0_90/Direct/Indices.pm
+${P5SITE}/Search/Elasticsearch/Client/1_0/
+${P5SITE}/Search/Elasticsearch/Client/1_0/Direct/
+${P5SITE}/Search/Elasticsearch/Client/1_0/Direct.pm
+${P5SITE}/Search/Elasticsearch/Client/1_0/Direct/Cat.pm
+${P5SITE}/Search/Elasticsearch/Client/1_0/Direct/Cluster.pm
+${P5SITE}/Search/Elasticsearch/Client/1_0/Direct/Indices.pm
+${P5SITE}/Search/Elasticsearch/Client/1_0/Direct/Nodes.pm
+${P5SITE}/Search/Elasticsearch/Client/1_0/Direct/Snapshot.pm
+${P5SITE}/Search/Elasticsearch/Client/2_0/
+${P5SITE}/Search/Elasticsearch/Client/2_0/Direct/
+${P5SITE}/Search/Elasticsearch/Client/2_0/Direct.pm
+${P5SITE}/Search/Elasticsearch/Client/2_0/Direct/Cat.pm
+${P5SITE}/Search/Elasticsearch/Client/2_0/Direct/Cluster.pm
+${P5SITE}/Search/Elasticsearch/Client/2_0/Direct/Indices.pm
+${P5SITE}/Search/Elasticsearch/Client/2_0/Direct/Nodes.pm
+${P5SITE}/Search/Elasticsearch/Client/2_0/Direct/Snapshot.pm
+${P5SITE}/Search/Elasticsearch/Client/Direct.pm
+${P5SITE}/Search/Elasticsearch/Cxn/
+${P5SITE}/Search/Elasticsearch/Cxn/Factory.pm
+${P5SITE}/Search/Elasticsearch/Cxn/HTTPTiny.pm
+${P5SITE}/Search/Elasticsearch/Cxn/Hijk.pm
+${P5SITE}/Search/Elasticsearch/Cxn/LWP.pm
+${P5SITE}/Search/Elasticsearch/CxnPool/
+${P5SITE}/Search/Elasticsearch/CxnPool/Sniff.pm
+${P5SITE}/Search/Elasticsearch/CxnPool/Static/
+${P5SITE}/Search/Elasticsearch/CxnPool/Static.pm
+${P5SITE}/Search/Elasticsearch/CxnPool/Static/NoPing.pm
+${P5SITE}/Search/Elasticsearch/Error.pm
+${P5SITE}/Search/Elasticsearch/Logger/
+${P5SITE}/Search/Elasticsearch/Logger/LogAny.pm
+${P5SITE}/Search/Elasticsearch/Role/
+${P5SITE}/Search/Elasticsearch/Role/API/
+${P5SITE}/Search/Elasticsearch/Role/API/0_90.pm
+${P5SITE}/Search/Elasticsearch/Role/API/1_0.pm
+${P5SITE}/Search/Elasticsearch/Role/API/2_0.pm
+${P5SITE}/Search/Elasticsearch/Role/Bulk.pm
+${P5SITE}/Search/Elasticsearch/Role/Client/
+${P5SITE}/Search/Elasticsearch/Role/Client.pm
+${P5SITE}/Search/Elasticsearch/Role/Client/Direct/
+${P5SITE}/Search/Elasticsearch/Role/Client/Direct.pm
+${P5SITE}/Search/Elasticsearch/Role/Client/Direct/Main.pm
+${P5SITE}/Search/Elasticsearch/Role/Cxn/
+${P5SITE}/Search/Elasticsearch/Role/Cxn.pm
+${P5SITE}/Search/Elasticsearch/Role/Cxn/HTTP.pm
+${P5SITE}/Search/Elasticsearch/Role/CxnPool/
+${P5SITE}/Search/Elasticsearch/Role/CxnPool.pm
+${P5SITE}/Search/Elasticsearch/Role/CxnPool/Sniff.pm
+${P5SITE}/Search/Elasticsearch/Role/CxnPool/Static/
+${P5SITE}/Search/Elasticsearch/Role/CxnPool/Static.pm
+${P5SITE}/Search/Elasticsearch/Role/CxnPool/Static/NoPing.pm
+${P5SITE}/Search/Elasticsearch/Role/Is_Sync.pm
+${P5SITE}/Search/Elasticsearch/Role/Logger.pm
+${P5SITE}/Search/Elasticsearch/Role/Scroll.pm
+${P5SITE}/Search/Elasticsearch/Role/Serializer/
+${P5SITE}/Search/Elasticsearch/Role/Serializer.pm
+${P5SITE}/Search/Elasticsearch/Role/Serializer/JSON.pm
+${P5SITE}/Search/Elasticsearch/Role/Transport.pm
+${P5SITE}/Search/Elasticsearch/Scroll.pm
+${P5SITE}/Search/Elasticsearch/Serializer/
+${P5SITE}/Search/Elasticsearch/Serializer/JSON/
+${P5SITE}/Search/Elasticsearch/Serializer/JSON.pm
+${P5SITE}/Search/Elasticsearch/Serializer/JSON/Cpanel.pm
+${P5SITE}/Search/Elasticsearch/Serializer/JSON/PP.pm
+${P5SITE}/Search/Elasticsearch/Serializer/JSON/XS.pm
+${P5SITE}/Search/Elasticsearch/TestServer.pm
+${P5SITE}/Search/Elasticsearch/Transport.pm
+${P5SITE}/Search/Elasticsearch/Util/
+${P5SITE}/Search/Elasticsearch/Util.pm
+${P5SITE}/Search/Elasticsearch/Util/API/
+${P5SITE}/Search/Elasticsearch/Util/API/Path.pm
+${P5SITE}/Search/Elasticsearch/Util/API/QS.pm
+@man man/man3p/Search::Elasticsearch.3p
+@man man/man3p/Search::Elasticsearch::Bulk.3p
+@man man/man3p/Search::Elasticsearch::Client::0_90::Direct.3p
+@man man/man3p/Search::Elasticsearch::Client::0_90::Direct::Cluster.3p
+@man man/man3p/Search::Elasticsearch::Client::0_90::Direct::Indices.3p
+@man man/man3p/Search::Elasticsearch::Client::1_0::Direct.3p
+@man man/man3p/Search::Elasticsearch::Client::1_0::Direct::Cat.3p
+@man man/man3p/Search::Elasticsearch::Client::1_0::Direct::Cluster.3p
+@man man/man3p/Search::Elasticsearch::Client::1_0::Direct::Indices.3p
+@man man/man3p/Search::Elasticsearch::Client::1_0::Direct::Nodes.3p
+@man man/man3p/Search::Elasticsearch::Client::1_0::Direct::Snapshot.3p
+@man man/man3p/Search::Elasticsearch::Client::2_0::Direct.3p
+@man man/man3p/Search::Elasticsearch::Client::2_0::Direct::Cat.3p
+@man man/man3p/Search::Elasticsearch::Client::2_0::Direct::Cluster.3p
+@man man/man3p/Search::Elasticsearch::Client::2_0::Direct::Indices.3p
+@man man/man3p/Search::Elasticsearch::Client::2_0::Direct::Nodes.3p
+@man man/man3p/Search::Elasticsearch::Client::2_0::Direct::Snapshot.3p
+@man man/man3p/Search::Elasticsearch::Client::Direct.3p
+@man man/man3p/Search::Elasticsearch::Cxn::Factory.3p
+@man man/man3p/Search::Elasticsearch::Cxn::HTTPTiny.3p
+@man man/man3p/Search::Elasticsearch::Cxn::Hijk.3p
+@man man/man3p/Search::Elasticsearch::Cxn::LWP.3p
+@man man/man3p/Search::Elasticsearch::CxnPool::Sniff.3p
+@man man/man3p/Search::Elasticsearch::CxnPool::Static.3p
+@man man/man3p/Search::Elasticsearch::CxnPool::Static::NoPing.3p
+@man man/man3p/Search::Elasticsearch::Error.3p
+@man man/man3p/Search::Elasticsearch::Logger::LogAny.3p
+@man man/man3p/Search::Elasticsearch::Role::API::0_90.3p
+@man man/man3p/Search::Elasticsearch::Role::API::1_0.3p
+@man man/man3p/Search::Elasticsearch::Role::API::2_0.3p
+@man man/man3p/Search::Elasticsearch::Role::Bulk.3p
+@man man/man3p/Search::Elasticsearch::Role::Client.3p
+@man man/man3p/Search::Elasticsearch::Role::Client::Direct.3p
+@man man/man3p/Search::Elasticsearch::Role::Client::Direct::Main.3p
+@man man/man3p/Search::Elasticsearch::Role::Cxn.3p
+@man man/man3p/Search::Elasticsearch::Role::Cxn::HTTP.3p
+@man man/man3p/Search::Elasticsearch::Role::CxnPool.3p
+@man man/man3p/Search::Elasticsearch::Role::CxnPool::Sniff.3p
+@man man/man3p/Search::Elasticsearch::Role::CxnPool::Static.3p
+@man man/man3p/Search::Elasticsearch::Role::CxnPool::Static::NoPing.3p
+@man man/man3p/Search::Elasticsearch::Role::Is_Sync.3p
+@man man/man3p/Search::Elasticsearch::Role::Logger.3p
+@man man/man3p/Search::Elasticsearch::Role::Scroll.3p
+@man man/man3p/Search::Elasticsearch::Role::Serializer.3p
+@man man/man3p/Search::Elasticsearch::Role::Serializer::JSON.3p
+@man man/man3p/Search::Elasticsearch::Role::Transport.3p
+@man man/man3p/Search::Elasticsearch::Scroll.3p
+@man man/man3p/Search::Elasticsearch::Serializer::JSON.3p
+@man man/man3p/Search::Elasticsearch::Serializer::JSON::Cpanel.3p
+@man man/man3p/Search::Elasticsearch::Serializer::JSON::PP.3p
+@man man/man3p/Search::Elasticsearch::Serializer::JSON::XS.3p
+@man man/man3p/Search::Elasticsearch::TestServer.3p
+@man man/man3p/Search::Elasticsearch::Transport.3p
+@man man/man3p/Search::Elasticsearch::Util.3p
+@man man/man3p/Search::Elasticsearch::Util::API::Path.3p
+@man man/man3p/Search::Elasticsearch::Util::API::QS.3p
