@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/09/27 08:22:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/10/30 20:29:22 ajacoutot Exp $
 include/gstreamer-${API}/gst/basecamerabinsrc/
 include/gstreamer-${API}/gst/basecamerabinsrc/gstbasecamerasrc.h
 include/gstreamer-${API}/gst/basecamerabinsrc/gstcamerabin-enum.h
@@ -101,7 +101,6 @@ lib/gstreamer-${API}/libgstcompositor.so
 lib/gstreamer-${API}/libgstdashdemux.so
 lib/gstreamer-${API}/libgstdataurisrc.so
 lib/gstreamer-${API}/libgstdebugutilsbad.so
-lib/gstreamer-${API}/libgstdtls.so
 lib/gstreamer-${API}/libgstdvdspu.so
 lib/gstreamer-${API}/libgstfestival.so
 lib/gstreamer-${API}/libgstfieldanalysis.so
