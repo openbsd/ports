@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/07/16 23:57:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/10/30 16:20:11 landry Exp $
 @pkgpath databases/p5-DBD-Pg,regress
 ${P5ARCH}/Bundle/DBD/
 ${P5ARCH}/Bundle/DBD/Pg.pm
 ${P5ARCH}/DBD/Pg.pm
-${P5ARCH}/DBD/testme.tmp.pl
 ${P5ARCH}/auto/DBD/
 ${P5ARCH}/auto/DBD/Pg/
 ${P5ARCH}/auto/DBD/Pg/Pg.so

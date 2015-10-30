@@ -1,22 +1,23 @@
-# $OpenBSD: Makefile,v 1.70 2015/07/16 23:57:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2015/10/30 16:20:11 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	access to PostgreSQL databases through the DBI
 
-MODULES=	cpan
-DISTNAME=	DBD-Pg-2.19.3
+MODULES=	cpan databases/postgresql
+DISTNAME=	DBD-Pg-3.5.3
 CATEGORIES=	databases
-REVISION=	1
 
 LIB_DEPENDS=	databases/postgresql
 RUN_DEPENDS=	databases/p5-DBI>=1.52
 BUILD_DEPENDS=	${RUN_DEPENDS}
-TEST_DEPENDS=databases/postgresql,-server \
-		devel/p5-Test-Warn
+TEST_DEPENDS=	devel/p5-Test-Warn
 
-TEST_FLAGS=	DBI_DSN="dbi:Pg:dbname=template1" DBI_USER="_postgresql" \
-		DBI_PASS=""
+MODPOSTGRESQL_TEST_DBNAME =	testdb
+TEST_FLAGS=	DBI_DSN="dbi:Pg:dbname=${MODPOSTGRESQL_TEST_DBNAME}"\
+		DBI_PASS="" \
+		DBI_USER=`id -nu`
+# XXX if DBI_USER is empty tests try to roll their own initdb + createdb
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
