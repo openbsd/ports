@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.114 2015/10/25 09:05:20 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.115 2015/10/30 08:39:31 espie Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: October 25 2015 $
+.Dd $Mdocdate: October 30 2015 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -1160,6 +1160,12 @@ Paths that do not clean correctly, and required root to clean the directory.
 Shows the actual concurrency achieved as a result of job starvation /
 parallel handling.
 Only gets a new line when the value changes: pid timestamp jobs
+.It Pa debug.log
+contains various information related to the main engine spinning (RTFS, haven't
+figured that one yet) along with the more useful warning and die traces that
+happen when something wrong occurs.
+Especially useful for the warning messages that tend to be overwritten by
+subsequent displays.
 .It Pa dependencies.log
 List of pkgpath frequencies, filled at end of LISTING if
 .Fl a .
