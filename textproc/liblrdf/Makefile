@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2015/04/21 18:53:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/10/30 12:59:17 sthen Exp $
 
 COMMENT =		light RDF manipulation with LADSPA plugin support
 
 DISTNAME =		LRDF-0.5.0
 PKGNAME =		lib${DISTNAME:L}
-REVISION =		3
+REVISION =		4
 CATEGORIES =		textproc
 
 SHARED_LIBS =		lrdf	1.0	# 0.0
@@ -14,7 +14,7 @@ HOMEPAGE =		https://github.com/swh/LRDF/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += crypto curl idn lzma m pthread raptor2 ssl xml2 xslt yajl z
+WANTLIB += crypto curl idn lzma m nghttp2 pthread raptor2 ssl xml2 xslt yajl z
 
 MASTER_SITES =		http://spacehopper.org/mirrors/
 MODULES =		devel/gettext

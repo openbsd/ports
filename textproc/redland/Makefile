@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/08/24 10:01:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/10/30 12:59:17 sthen Exp $
 
 MULTI_PACKAGES=		-main -mysql -pgsql
 
@@ -7,7 +7,7 @@ COMMENT-mysql=		MySQL driver for redland
 COMMENT-pgsql=		PostgreSQL driver for redland
 
 V=			1.0.17
-REVISION=		0
+REVISION=		1
 DISTNAME=		redland-$V
 PKGNAME-main=		redland-$V
 PKGNAME-mysql=		redland-mysql-$V
@@ -24,7 +24,7 @@ MASTER_SITES=		http://download.librdf.org/source/
 # LGPL 2.1+, GPL 2+ or Apache 2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += crypto curl gcrypt gmp gpg-error idn ltdl m mpfr
+WANTLIB += crypto curl gcrypt gmp gpg-error idn ltdl m mpfr nghttp2
 WANTLIB += pcre pthread raptor2 rasqal ssl xml2 xslt yajl z
 WANTLIB += lzma uuid
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/06/28 05:46:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2015/10/30 12:59:17 sthen Exp $
 
 COMMENT=		RDF Query Library for Redland
 DISTNAME=		rasqal-0.9.33
 CATEGORIES=		textproc
+REVISION=		0
 
 SHARED_LIBS +=  rasqal               2.0      # 3.0
 
@@ -14,7 +15,7 @@ MASTER_SITES=		http://download.librdf.org/source/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto curl gcrypt gmp gpg-error idn lzma m mpfr
-WANTLIB += pcre pthread raptor2 ssl uuid xml2 xslt yajl z
+WANTLIB += nghttp2 pcre pthread raptor2 ssl uuid xml2 xslt yajl z
 
 MODULES=		devel/gettext
 

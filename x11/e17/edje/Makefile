@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2015/01/25 07:46:44 rpe Exp $
+# $OpenBSD: Makefile,v 1.39 2015/10/30 12:59:17 sthen Exp $
 
 COMMENT =		complex graphical design & layout library
 
 DISTNAME =		edje-1.7.10
 EPOCH =			2
 SHARED_LIBS +=	edje                 4.0      # 8.10
+REVISION =		0
 
 # BSD (epp binary GPLv2)
 PERMIT_PACKAGE_CDROM =	Yes
@@ -14,7 +15,7 @@ WANTLIB += Xrandr Xrender Xss Xtst c cares crypto curl ecore ecore_con
 WANTLIB += ecore_evas ecore_file ecore_imf ecore_imf_evas ecore_input
 WANTLIB += ecore_input_evas ecore_ipc ecore_x eet eina eio embryo
 WANTLIB += evas expat fontconfig freetype fribidi glib-2.0
-WANTLIB += graphite2 harfbuzz idn jpeg
+WANTLIB += graphite2 harfbuzz idn jpeg nghttp2
 WANTLIB += m pcre pthread pthread-stubs ssl xcb z ${MODLUA_WANTLIB}
 
 MODULES =		devel/gettext \

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2015/01/25 07:46:44 rpe Exp $
+# $OpenBSD: Makefile,v 1.29 2015/10/30 12:59:17 sthen Exp $
 
 COMMENT =		implementations of freedesktop.org specifications
 
 DISTNAME =		efreet-1.7.10
 EPOCH =			2
+REVISION =		0
 
 SO_VERSION =		4.0	# 8.10
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -16,7 +17,7 @@ SHARED_LIBS +=		${_lib} ${SO_VERSION}
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c cares crypto curl ecore ecore_con ecore_file eet
-WANTLIB += eina glib-2.0 idn jpeg m pcre pthread ssl z
+WANTLIB += eina glib-2.0 idn jpeg m nghttp2 pcre pthread ssl z
 
 MODULES =		devel/gettext
 

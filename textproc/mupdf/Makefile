@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2015/05/20 16:34:14 jca Exp $
+# $OpenBSD: Makefile,v 1.58 2015/10/30 12:59:17 sthen Exp $
 
 SHARED_ONLY =	Yes
 SHARED_LIBS +=	mupdf 3.0
@@ -8,7 +8,7 @@ COMMENT =	graphic library, pdf parser, viewer and utilities
 V =		1.7a
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc x11
 
@@ -22,7 +22,7 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xext c crypto curl freetype idn jbig2dec jpeg m
-WANTLIB += openjp2 pthread ssl z
+WANTLIB += nghttp2 openjp2 pthread ssl z
 
 # http://git.ghostscript.com/?p=mupdf.git;a=summary
 MASTER_SITES =	http://mupdf.com/downloads/ \

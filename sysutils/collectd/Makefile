@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/10/05 16:29:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2015/10/30 12:59:16 sthen Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -11,10 +11,10 @@ COMMENT-memcachec =	collectd memcachec plugin
 COMMENT-nut =		collectd nut plugin
 
 V =			5.5.0
-REVISION-main =		2
+REVISION-main =		3
 REVISION-nut =		0
 REVISION-rrdtool =	0
-REVISION-virt =		0
+REVISION-virt =		1
 DISTNAME =		collectd-$V
 PKGNAME-main =		collectd-$V
 PKGNAME-mysql =		collectd-mysql-$V
@@ -65,7 +65,7 @@ RUN_DEPENDS-snmp =	collectd-$V:${BASE_PKGPATH},-main
 LIB_DEPENDS-virt =	sysutils/libvirt
 WANTLIB-virt =		avahi-client avahi-common c dbus-1 ffi gmp gnutls hogweed \
 			nettle p11-kit ssh2 tasn1 util virt crypto curl iconv \
-			idn intl lzma m pthread ssl xml2 z
+			idn intl lzma m nghttp2 pthread ssl xml2 z
 RUN_DEPENDS-virt =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-python =	${MODPY_LIB_DEPENDS}
@@ -90,7 +90,7 @@ LIB_DEPENDS +=	net/curl \
 		devel/libyajl \
 		devel/protobuf-c>=1.0.1
 
-WANTLIB += c crypto gpg-error idn kvm curl xml2 ltdl lzma oping
+WANTLIB += c crypto gpg-error idn kvm curl xml2 ltdl lzma oping nghttp2
 WANTLIB += m pcap pthread ssl xml2 z statgrab gcrypt ${MODGETTEXT_WANTLIB}
 WANTLIB += protobuf-c yajl
 

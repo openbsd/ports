@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2015/01/25 07:46:44 rpe Exp $
+# $OpenBSD: Makefile,v 1.35 2015/10/30 12:59:17 sthen Exp $
 
 COMMENT =		core event/X abstraction layer
 
 DISTNAME =		ecore-1.7.10
 EPOCH =			2
+REVISION =		0
 
 SO_VERSION =		4.0		# 8.10
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -20,8 +21,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender Xss Xtst cares crypto curl eet eina
 WANTLIB += evas expat ffi fontconfig freetype fribidi gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 harfbuzz
-WANTLIB += ibus-1.0 idn jpeg m pcre pthread
-WANTLIB += idn jpeg m pcre pthread
+WANTLIB += ibus-1.0 idn jpeg m nghttp2 pcre pthread
 WANTLIB += pthread-stubs ssl xcb z
 
 MODULES =		devel/gettext

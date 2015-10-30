@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/10/17 08:35:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/10/30 12:59:17 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.18.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	egg-private               0.0 # 0.0
 SHARED_LIBS +=	gnome-builder             0.0 # 0.0
@@ -30,7 +30,7 @@ WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 gtk-3 gtksourceview-3.0 harfbuzz harfbuzz-icu
 WANTLIB += hogweed hyphen icudata icui18n icuuc idn javascriptcoregtk-4.0
-WANTLIB += jpeg lzma m mozjs-24 ncurses ncursesw nettle notify
+WANTLIB += jpeg lzma m mozjs-24 ncurses ncursesw nettle nghttp2 notify
 WANTLIB += nspr4 orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre peas-1.0 pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += readline secret-1 soup-2.4 sqlite3 ssh2 ssl stdc++

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2015/10/16 19:48:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2015/10/30 12:59:18 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -16,6 +16,8 @@ PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
+
+REVISION-google=	0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -65,7 +67,7 @@ WANTLIB-nfs += p11-kit gthread-2.0
 
 WANTLIB-google += ${WANTLIB}
 WANTLIB-google += crypto curl gck-1 gcr-base-3 gcrypt gdata goa-1.0 gpg-error
-WANTLIB-google += gthread-2.0 idn json-glib-1.0 lzma m nspr4 nss3 oauth
+WANTLIB-google += gthread-2.0 idn json-glib-1.0 lzma m nghttp2 nspr4 nss3 oauth
 WANTLIB-google += p11-kit plc4 plds4 secret-1 smime3 softokn3 soup-2.4
 WANTLIB-google += sqlite3 ssl ssl3 xml2
 
