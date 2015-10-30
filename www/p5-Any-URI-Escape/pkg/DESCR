@@ -1,0 +1,2 @@
+This module loads URI::Escape::XS and imports the two most common
+methods if XS is installed.
