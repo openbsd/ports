@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.8 2015/06/22 12:18:00 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.9 2015/10/30 10:27:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -233,7 +233,7 @@ sub checksize
 	my ($self, $name) = @_;
 	# XXX if we matched once, then we match "forever"
 	return 1 if $self->{okay};
-	if ($self->{sz} == 0) {
+	if (!defined $self->{sz}) {
 		my $fh = $self->logger->append('dist/'.$self->{name});
 		print $fh "incomplete distinfo: no size\n";
 	}
@@ -257,6 +257,23 @@ sub checkcached
 		print $fh "incomplete distinfo: no sha\n";
 		return 0;
 	}
+	if (!defined $self->{sz}) {
+		my $fh = $self->logger->append('dist/'.$self->{name});
+		print $fh "incomplete distinfo: no size\n";
+		return 0;
+	}
+	if (!$self->stat($name) || ($self->stat($name))[7] != $self->{sz}) {
+		delete $self->cached->{$self->{name}};
+		delete $self->{repo}{reverse}{$self->{sha}->stringize};
+		$self->run_as(
+		    sub {
+			unlink($name);
+		    });
+		my $fh = $self->logger->append('dist/'.$self->{name});
+		print $fh "size does not match, actual file deleted\n";
+		return 0;
+	}
+		
 	if ($self->cached->{$self->{name}}->equals($self->{sha})) {
 		$self->{okay} = 1;
 		return 1;
