@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/03/15 21:01:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2015/10/30 10:13:55 sthen Exp $
 
 # strictly speaking not, as they are just sound files, but packaging
 # these on arch which don't build asterisk is a waste of cycles on build
@@ -7,10 +7,11 @@ BUILD_DEPENDS =	telephony/asterisk
 
 COMMENT =		add OpenBSD songs to Asterisk music-on-hold
 
-PKGNAME =		asterisk-openbsd-moh-5.7
+PKGNAME =		asterisk-openbsd-moh-5.8
 REL_LIST =		30 31 32 33 34 35 36 37 38 39 \
 			40 41 42 43 44 45 46 47 48 49 \
-			50 51 52 53 54 55 56 57
+			50 51 52 53 54 55 56 57 \
+			58a 58b 58c 58d
 .for release in ${REL_LIST}
 DISTFILES += song${release}.mp3
 .endfor

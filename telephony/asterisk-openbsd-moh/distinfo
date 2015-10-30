@@ -26,6 +26,10 @@ SHA256 (openbsd_songs/song54.mp3) = BRr6sWTfTWJYNQRiPIecIuKL6KKLzHRBQFrKVG4i7p4=
 SHA256 (openbsd_songs/song55.mp3) = EGFYKeVZaDaIQWhYwxcSj2CiPPZ5CkT118VqVV2S82g=
 SHA256 (openbsd_songs/song56.mp3) = gjWMUxHaoW+oNs2/MeOGEAotVw3Q24ou40uZhgI9ppw=
 SHA256 (openbsd_songs/song57.mp3) = qNyuFH8Kr7wRHAeHJ4Ukh7uliYm+/O7NYaZnOSLKBkM=
+SHA256 (openbsd_songs/song58a.mp3) = 0NBr9jXaLPxIBU4ZrTyKW/0wrye25jef8RICYH9joKk=
+SHA256 (openbsd_songs/song58b.mp3) = yAHO5MsZcI3/xmovIO9v1tpgDi8KxC4KDh9Dw2geDxg=
+SHA256 (openbsd_songs/song58c.mp3) = J68w0J9hL0HhqsBlr9Ck7NUAk87XQztiXX1T7KDeLGY=
+SHA256 (openbsd_songs/song58d.mp3) = YQ9n+v/4zFSI2s2htT0m/AOnnIyN6+ZJhaWyatQcmVA=
 SIZE (openbsd_songs/song30.mp3) = 2898547
 SIZE (openbsd_songs/song31.mp3) = 2912757
 SIZE (openbsd_songs/song32.mp3) = 2589676
@@ -54,3 +58,7 @@ SIZE (openbsd_songs/song54.mp3) = 4712070
 SIZE (openbsd_songs/song55.mp3) = 8272247
 SIZE (openbsd_songs/song56.mp3) = 7489827
 SIZE (openbsd_songs/song57.mp3) = 5778702
+SIZE (openbsd_songs/song58a.mp3) = 4443741
+SIZE (openbsd_songs/song58b.mp3) = 7010846
+SIZE (openbsd_songs/song58c.mp3) = 5979323
+SIZE (openbsd_songs/song58d.mp3) = 9332191
