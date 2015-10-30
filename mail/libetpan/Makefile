@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/09/17 20:28:33 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2015/10/30 12:47:40 sthen Exp $
 
 COMMENT=	mail purpose library
 
@@ -6,6 +6,7 @@ GH_ACCOUNT=	dinhviethoa
 GH_PROJECT=	libetpan
 GH_TAGNAME=	1.6
 DISTNAME=	libetpan-1.6
+REVISION=	0
 CATEGORIES=	mail devel
 
 SHARED_LIBS=	etpan	15.0
@@ -15,7 +16,7 @@ HOMEPAGE=	http://www.etpan.org/libetpan.html
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += crypto curl expat idn m pthread sasl2 ssl stdc++ z
+WANTLIB += crypto curl expat idn m nghttp2 pthread sasl2 ssl stdc++ z
 
 MODULES=	devel/gettext
 

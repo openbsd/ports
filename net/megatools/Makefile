@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/15 06:10:43 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2015/10/30 12:47:40 sthen Exp $
 
 COMMENT =		command line client application for Mega
 
 DISTNAME =		megatools-1.9.95
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  mega                      0.0 # 0.0
 
@@ -15,7 +15,7 @@ HOMEPAGE =		http://megatools.megous.com/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c crypto curl ffi fuse gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 idn pcre pthread ssl z
+WANTLIB += gobject-2.0 idn nghttp2 pcre pthread ssl z
 
 MASTER_SITES =		http://megatools.megous.com/builds/
 

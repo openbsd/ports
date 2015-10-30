@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2015/09/29 10:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2015/10/30 12:47:39 sthen Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -11,6 +11,8 @@ SHARED_ONLY =	Yes
 PKGNAME-main =	${DISTNAME}
 PKGNAME-python =py-${DISTNAME}
 PKGNAME-perl =	p5-Geo-GDAL-${V}
+REVISION-main =	0
+REVISION-perl =	0
 REVISION-python =	0
 
 SHARED_LIBS =	gdal 23.0 #20.0
@@ -48,7 +50,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 
 WANTLIB-main =		${WANTLIB} c expat m stdc++ z tiff openjp2 ssl crypto \
 			curl pq geos geos_c idn png gif jpeg jasper json-c geotiff \
-			proj pthread freexl pcre spatialite sqlite3 xml2 lzma
+			proj pthread freexl pcre spatialite sqlite3 xml2 lzma nghttp2
 
 
 LIB_DEPENDS-python =	${PKGNAME}:${BASE_PKGPATH},-main
@@ -58,7 +60,7 @@ LIB_DEPENDS-perl =	${PKGNAME}:${BASE_PKGPATH},-main
 WANTLIB-perl =		gdal crypto curl expat geos_c geotiff gif idn \
 			jasper jpeg openjp2 m png pq ssl tiff z pthread \
 			json-c freexl pcre spatialite sqlite3 xml2 \
-			${MODGETTEXT_WANTLIB}
+			nghttp2 ${MODGETTEXT_WANTLIB}
 
 RUN_DEPENDS +=		math/py-numpy
 BUILD_DEPENDS +=	${RUN_DEPENDS} devel/swig

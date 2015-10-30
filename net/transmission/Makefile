@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2015/08/25 14:03:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.101 2015/10/30 12:47:40 sthen Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -9,8 +9,7 @@ DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
-REVISION=	3
-REVISION-gtk=	4
+REVISION=	5
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
 
@@ -31,16 +30,16 @@ FLAVOR?=
 
 WANTLIB-common=	c crypto curl event_core event_extra m miniupnpc>=2.0 \
 		natpmp pthread ssl z ${MODGETTEXT_WANTLIB}
-WANTLIB-main=	${WANTLIB-common} idn
+WANTLIB-main=	${WANTLIB-common} idn nghttp2
 WANTLIB-gtk=	${WANTLIB-common} ICE SM X11 Xcomposite Xcursor Xdamage \
 		Xext Xfixes Xi Xinerama Xrandr Xrender \
 		atk-1.0 atk-bridge-2.0 atspi cairo cairo-gobject \
 		dbus-1 expat ffi fontconfig freetype \
 		gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 graphite2 gthread-2.0 gtk-3 \
-		harfbuzz idn pango-1.0 pangoft2-1.0 \
+		harfbuzz pango-1.0 pangoft2-1.0 \
 		pangocairo-1.0 pixman-1 png pcre pthread-stubs xcb \
-		xcb-render xcb-shm epoxy
+		xcb-render xcb-shm epoxy idn nghttp2
 WANTLIB-qt=	${WANTLIB-common} ${MODQT_WANTLIB} \
 		lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtXml \
 		ICE SM X11 Xext Xi Xinerama Xrender \

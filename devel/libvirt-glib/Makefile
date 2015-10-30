@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2015/07/23 10:26:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/10/30 12:47:39 sthen Exp $
 
 COMMENT=		libvirt wrapper suited for GObject-based applications
 
 DISTNAME=		libvirt-glib-0.2.2
+REVISION=		0
 CATEGORIES=		devel sysutils
 
 SHARED_LIBS +=  virt-gconfig-1.0          0.4 # 2.2
@@ -25,7 +26,7 @@ MODULES=		devel/gettext \
 
 WANTLIB += avahi-client avahi-common crypto curl dbus-1 ffi
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 lzma
-WANTLIB += gthread-2.0 hogweed idn m nettle p11-kit gnutls
+WANTLIB += gthread-2.0 hogweed idn m nettle nghttp2 p11-kit gnutls
 WANTLIB += pcre pthread ssh2 ssl tasn1 util virt xml2 z gmp
 
 BUILD_DEPENDS=		devel/gobject-introspection \

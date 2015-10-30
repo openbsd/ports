@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.102 2015/08/25 14:27:20 bentley Exp $
+# $OpenBSD: Makefile,v 1.103 2015/10/30 12:47:39 sthen Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv
 
 VERSION=	2.5.1
+REVISION-main=	0
+REVISION-client= 0
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
 PKGNAME-client=	freeciv-client-${VERSION}
@@ -20,7 +22,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeciv/}
 EXTRACT_SUFX=	.tar.bz2
 
-cWANTLIB += bz2 c crypto curl idn lzma m pthread ssl z
+cWANTLIB += bz2 c crypto curl idn lzma m nghttp2 pthread ssl z
 cWANTLIB += ${MODLUA_WANTLIB} ${MODGETTEXT_WANTLIB}
 
 WANTLIB-main += ncurses readline ${cWANTLIB}

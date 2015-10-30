@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/02 09:25:28 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2015/10/30 12:47:39 sthen Exp $
 
 COMMENT =	WMS viewer built on top of spatialite and rasterlite2
 DISTNAME =	librewms-1.0.0
+REVISION =	0
 
 # Licence: GPLv3
 
@@ -22,7 +23,7 @@ WANTLIB += sndio spatialite sqlite3 stdc++ tiff usbhid wx_base
 WANTLIB += wx_base_net wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui
 WANTLIB += wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa
 WANTLIB += wx_gtk2_richtext wx_gtk2_xrc xcb xcb-render xcb-shm
-WANTLIB += crypto curl gif idn lzma rasterlite2 ssl webp xml2 z
+WANTLIB += crypto curl gif idn lzma rasterlite2 ssl webp xml2 z nghttp2
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{pixmaps,applications}

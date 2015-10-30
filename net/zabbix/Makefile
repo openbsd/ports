@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.116 2015/10/05 16:29:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.117 2015/10/30 12:47:40 sthen Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
 COMMENT-web =		network and application monitoring - web frontend
 
 VERSION =		2.4.6
-REVISION-main =		0
+REVISION-main =		1
+REVISION-server =	0
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
@@ -34,7 +35,7 @@ FLAVORS =		mysql pgsql sqlite3
 
 SUBST_VARS +=		PREFIX-web ZABBIX_WEB MAJV
 
-WANTLIB =		c kvm m execinfo lber ldap crypto ssl z curl idn
+WANTLIB =		c kvm m execinfo lber ldap crypto ssl z curl idn nghttp2
 
 LIB_DEPENDS =		databases/openldap \
 			devel/libexecinfo \
@@ -48,7 +49,7 @@ LIB_DEPENDS-server =	${LIB_DEPENDS} \
 RUN_DEPENDS-server =	net/fping
 # we want the _zabbix user&group as well as README-main
 RUN_DEPENDS-server +=	net/zabbix,-main>=${VERSION}
-WANTLIB-server =	${WANTLIB} crypto idn ssl z curl netsnmp iksemel pthread
+WANTLIB-server =	${WANTLIB} crypto ssl z netsnmp iksemel pthread
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-server \

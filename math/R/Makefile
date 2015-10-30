@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.75 2015/09/28 07:32:19 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.76 2015/10/30 12:47:40 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-3.2.2
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	R	3.1
 SHARED_LIBS+=	Rlapack	31.2 	# 31.2
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	ICE SM X11 Xext Xmu Xss Xt bz2 c crypto curl \
 		cairo readline fontconfig freetype glib-2.0 \
 		gobject-2.0 icui18n icuuc idn jpeg lzma m \
-		ncurses pango-1.0 pangocairo-1.0 \
+		ncurses nghttp2 pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre png pthread ssl tiff z \
 		${MODTK_WANTLIB}
 

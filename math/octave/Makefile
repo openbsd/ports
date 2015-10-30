@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2015/08/20 21:58:22 juanfra Exp $
+# $OpenBSD: Makefile,v 1.77 2015/10/30 12:47:40 sthen Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -7,7 +7,7 @@ NOT_FOR_ARCHS =	vax sparc
 COMMENT =	high-level language for numerical computations
 
 VERSION =	4.0.0
-REVISION =	0
+REVISION =	1
 DISTNAME =	octave-${VERSION}
 CATEGORIES =	math
 
@@ -30,7 +30,7 @@ WANTLIB += Xt Xxf86vm amd arpack blas bz2 c camd ccolamd cholmod
 WANTLIB += colamd crypto curl cxsparse drm expat fftw3 fftw3_threads
 WANTLIB += fftw3f fftw3f_threads fltk fltk_gl fontconfig freetype
 WANTLIB += gl2ps glapi glpk glut gmp hdf5 idn lapack lcms2
-WANTLIB += ltdl lzma m ncurses ogg pcre png portaudio pthread
+WANTLIB += ltdl lzma m ncurses nghttp2 ogg pcre png portaudio pthread
 WANTLIB += pthread-stubs qhull qrupdate qscintilla2 sndfile sndio
 WANTLIB += ssl stdc++ suitesparseconfig umfpack usbhid util vorbis
 WANTLIB += vorbisenc xcb xcb-dri2 xcb-glx z

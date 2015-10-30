@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2015/10/06 12:41:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2015/10/30 12:47:38 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		Google Data API based Glib client library
 
 GNOME_PROJECT=		libgdata
 GNOME_VERSION=		0.17.3
+REVISION=		0
 
 SHARED_LIBS +=  gdata                19.0     # 23.1
 
@@ -19,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += crypto curl ffi gck-1 gcr-base-3 gcrypt gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 goa-1.0 gobject-2.0 gpg-error gthread-2.0
-WANTLIB += idn m nspr4 nss3 oauth p11-kit pcre plc4 plds4 pthread
+WANTLIB += idn m nghttp2 nspr4 nss3 oauth p11-kit pcre plc4 plds4 pthread
 WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 xml2 z json-glib-1.0
 WANTLIB += lzma
 

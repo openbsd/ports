@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2014/08/10 09:58:06 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2015/10/30 12:47:40 sthen Exp $
 
 COMMENT =	UPnP media server
 
 VER =		0.12.1
 DISTNAME =	mediatomb-${VER}
-REVISION =	11
+REVISION =	12
 
 CATEGORIES =	multimedia
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://mediatomb.cc/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	avformat avutil c crypto curl exif expat ffmpegthumbnailer idn
-WANTLIB +=	m magic mozjs mp4v2 pthread sqlite3 ssl stdc++ tag z
+WANTLIB +=	m magic mozjs mp4v2 nghttp2 pthread sqlite3 ssl stdc++ tag z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mediatomb/}
 

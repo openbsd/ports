@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2015/04/06 12:49:52 stsp Exp $
+# $OpenBSD: Makefile,v 1.8 2015/10/30 12:47:39 sthen Exp $
 
 COMMENT =		3D real-time strategy game
 DISTNAME =		megaglest-source-${V}
 PKGNAME =		megaglest-${V}
+REVISION =		0
 
 WANTLIB += GL GLU GLEW SDL X11 c crypto curl fontconfig ftgl
 WANTLIB += fribidi freetype glib-2.0 idn ircclient jpeg ${MODLUA_WANTLIB}
-WANTLIB += m miniupnpc openal png pthread ssl stdc++ vlc vlccore
+WANTLIB += m miniupnpc nghttp2 openal png pthread ssl stdc++ vlc vlccore
 WANTLIB += vorbisfile wx_base wx_gtk2_core wx_gtk2_gl z
 
 MODULES =		devel/gettext \

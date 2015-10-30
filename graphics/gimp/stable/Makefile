@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.104 2015/06/21 20:06:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.105 2015/10/30 12:47:39 sthen Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 SHARED_ONLY=	Yes
 
 DISTNAME=	gimp-2.8.14
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS+=	gimp-2.0	272.0	# 800.0
 SHARED_LIBS+=	gimpbase-2.0	272.0	# 800.0
@@ -58,7 +58,7 @@ WANTLIB += cups cupsimage curl dbus-1 dbus-glib-1 execinfo exif
 WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gegl-0.2 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gs gthread-2.0 gtk-x11-2.0 harfbuzz idn ijs jasper
-WANTLIB += jbig2dec jpeg lcms lcms2 m mng ncurses openjpeg pango-1.0
+WANTLIB += jbig2dec jpeg lcms lcms2 m mng ncurses nghttp2 openjpeg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png poppler
 WANTLIB += poppler-glib pthread pthread-stubs rsvg-2 ssl tiff
 WANTLIB += wmf-0.2 wmflite-0.2 xcb xcb-render xcb-shm xml2 z

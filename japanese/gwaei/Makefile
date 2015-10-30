@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/05 17:00:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2015/10/30 12:47:40 sthen Exp $
 
 COMMENT =	japanese-english dictionary program
 
 DISTNAME =	gwaei-3.2.0
-REVISION =	12
+REVISION =	13
 
 SHARED_LIBS =	waei	0.0
 
@@ -19,7 +19,7 @@ WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
 WANTLIB += cairo-gobject crypto curl dbus-1 epoxy expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz idn m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
+WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread pthread-stubs ssl xcb xcb-render xcb-shm z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gwaei/}
