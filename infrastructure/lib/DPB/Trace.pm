@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Trace.pm,v 1.1 2015/07/15 14:30:27 espie Exp $
+# $OpenBSD: Trace.pm,v 1.2 2015/10/30 09:46:45 espie Exp $
 #
 # Copyright (c) 2015 Marc Espie <espie@openbsd.org>
 #
@@ -58,11 +58,11 @@ sub setup
 	$olddie = $SIG{__DIE__};
 	$oldwarn = $SIG{__WARN__};
 	$sig->{__WARN__} = sub {
+		$sig->{__WARN__} = $oldwarn;
 		my $a = pop @_;
 		$a =~ s/(.*)( at .*? line .*?)\n$/$1$2/s;
 		push @_, $a;
-		$sig->{__WARN__} = $oldwarn;
-		my $msg = &trace_message;
+		my $msg = join("\n", @_, &trace_message);
 		if (defined $logfile) {
 			print $logfile $msg;
 			print $logfile '-'x70, "\n";
@@ -76,16 +76,17 @@ sub setup
 
 	$sig->{__DIE__} = sub {
 		die @_ if $^S;
+		$sig->{__DIE__} = $olddie;
 		my $a = pop @_;
 		$a =~ s/(.*)( at .*? line .*?)\n$/$1$2/s;
 		push @_, $a;
 		if (defined $reporter) {
 			$reporter->reset_cursor;
 		}
-		$sig->{__DIE__} = $olddie;
 		my $msg = join("\n", @_, &trace_message);
 		if (defined $logfile) {
 			print $logfile $msg;
+			print $logfile '-'x70, "\n";
 		}
 		die $msg;
 	};
