@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.745 2015/10/30 00:22:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.746 2015/10/30 18:16:29 giovanni Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -139,6 +139,7 @@
      SUBDIR += otter-browser
      SUBDIR += owncloud
      SUBDIR += p5-Alien-Tidyp
+     SUBDIR += p5-Any-URI-Escape
      SUBDIR += p5-Apache-ASP
      SUBDIR += p5-Apache-DB
      SUBDIR += p5-Apache-DBI
@@ -225,6 +226,7 @@
      SUBDIR += p5-FCGI-ProcManager
      SUBDIR += p5-Feed-Find
      SUBDIR += p5-Gravatar-URL
+     SUBDIR += p5-Hijk
      SUBDIR += p5-HTML-Base
      SUBDIR += p5-HTML-CGIChecker
      SUBDIR += p5-HTML-Calendar-Month-Simple
