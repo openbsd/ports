@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/30 16:52:04 landry Exp $
+${P5SITE}/Mojo/Pg/
+${P5SITE}/Mojo/Pg.pm
+${P5SITE}/Mojo/Pg/Database.pm
+${P5SITE}/Mojo/Pg/Migrations.pm
+${P5SITE}/Mojo/Pg/PubSub.pm
+${P5SITE}/Mojo/Pg/Results.pm
+${P5SITE}/Mojo/Pg/Transaction.pm
+@man man/man3p/Mojo::Pg.3p
+@man man/man3p/Mojo::Pg::Database.3p
+@man man/man3p/Mojo::Pg::Migrations.3p
+@man man/man3p/Mojo::Pg::PubSub.3p
+@man man/man3p/Mojo::Pg::Results.3p
+@man man/man3p/Mojo::Pg::Transaction.3p
