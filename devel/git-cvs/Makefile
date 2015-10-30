@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/29 10:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/10/30 10:06:21 sthen Exp $
 
 COMMENT =	import changesets from CVS into Git
 
-REVISION =	1
+MODPY_EGG_VERSION = 0.1.0
 
-MODPY_EGG_VERSION = 0.0.1
-
-DISTNAME =	git-cvs-0.0.2012.01.28
+DISTNAME =	git-cvs-${MODPY_EGG_VERSION}
+DISTFILES =	${DISTNAME}{${MODPY_EGG_VERSION}}.tar.gz
 CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/ustuehler/git-cvs
@@ -16,7 +15,7 @@ MAINTAINER =	Florian Obser <florian+ports@narrans.de>
 # BSD
 PERMIT_PACKAGE_CDROM = Yes
 
-MASTER_SITES =	http://sha256.net/git-cvs/
+MASTER_SITES =	https://github.com/ustuehler/git-cvs/archive/
 
 MODULES =	lang/python
 
@@ -29,6 +28,11 @@ RUN_DEPENDS=	devel/git \
 
 PKG_ARCH =	*
 
-NO_TEST =	Yes
+TEST_DEPENDS =	devel/py-nose \
+		${RUN_DEPENDS}
+
+# for regression tests:
+# cvs(1) insists on doing a chdir(2) to HOME before checkout
+PORTHOME =	${WRKDIR}
 
 .include <bsd.port.mk>
