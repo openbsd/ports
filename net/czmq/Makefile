@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/06/23 10:26:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/10/30 22:20:21 espie Exp $
 
 COMMENT=		high-level C binding for ZeroMQ
 
@@ -23,6 +23,9 @@ CONFIGURE_STYLE=	gnu
 
 # conflicts with lang/mono
 CONFIGURE_ARGS +=	--without-makecert
+
+CONFIGURE_ENV += 	ac_cv_prog_czmq_have_xmlto=no \
+			ac_cv_prog_czmq_have_asciidoc=no
 
 ### XXX error: stray '\357' in program
 UTFAIL=			zactor zauth zarmour zbeacon zcertstore zchunk zconfig \
