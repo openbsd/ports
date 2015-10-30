@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2015/08/12 06:26:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/10/30 22:41:09 ajacoutot Exp $
 @pkgpath x11/lumina
 @bin bin/Lumina-DE
 @bin bin/lumina-config
@@ -20,13 +20,16 @@ share/Lumina-DE/
 share/Lumina-DE/Login.ogg
 share/Lumina-DE/Logout.ogg
 share/Lumina-DE/colors/
+share/Lumina-DE/colors/Blue-Light.qss.colors
+share/Lumina-DE/colors/Grey-Dark.qss.colors
 share/Lumina-DE/colors/Lumina-Glass.qss.colors
 share/Lumina-DE/colors/Lumina-Gold.qss.colors
 share/Lumina-DE/colors/Lumina-Green.qss.colors
 share/Lumina-DE/colors/Lumina-Purple.qss.colors
 share/Lumina-DE/colors/Lumina-Red.qss.colors
 share/Lumina-DE/colors/PCBSD10-Default.qss.colors
-share/Lumina-DE/defaultapps.conf
+share/Lumina-DE/colors/Solarized-Dark.qss.colors
+share/Lumina-DE/colors/Solarized-Light.qss.colors
 share/Lumina-DE/desktop-background.jpg
 share/Lumina-DE/fluxbox-init-rc
 share/Lumina-DE/fluxbox-keys
@@ -47,10 +50,10 @@ share/pixmaps/Insight-FileManager.png
 share/pixmaps/Lumina-DE.png
 share/wallpapers/
 share/wallpapers/Lumina-DE/
-share/wallpapers/Lumina-DE/Lumina_Wispy_gold_1920x1080.jpg
-share/wallpapers/Lumina-DE/Lumina_Wispy_green_1920x1080.jpg
-share/wallpapers/Lumina-DE/Lumina_Wispy_purple_1920x1080.jpg
-share/wallpapers/Lumina-DE/Lumina_Wispy_red_1920x1080.jpg
+share/wallpapers/Lumina-DE/Lumina_Wispy_gold.jpg
+share/wallpapers/Lumina-DE/Lumina_Wispy_green.jpg
+share/wallpapers/Lumina-DE/Lumina_Wispy_purple.jpg
+share/wallpapers/Lumina-DE/Lumina_Wispy_red.jpg
 share/xsessions/
 share/xsessions/Lumina-DE.desktop
 @exec %D/bin/update-desktop-database
