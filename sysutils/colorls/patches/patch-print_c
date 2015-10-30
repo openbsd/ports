@@ -1,9 +1,9 @@
-$OpenBSD: patch-print_c,v 1.12 2015/03/16 14:17:48 naddy Exp $
---- print.c.orig	Fri Jan 16 07:39:32 2015
-+++ print.c	Mon Mar 16 15:15:47 2015
+$OpenBSD: patch-print_c,v 1.13 2015/10/30 14:12:42 bentley Exp $
+--- print.c.orig	Thu Jan 15 23:39:32 2015
++++ print.c	Thu Oct 29 01:01:20 2015
 @@ -1,4 +1,4 @@
--/*	$OpenBSD: patch-print_c,v 1.12 2015/03/16 14:17:48 naddy Exp $	*/
-+/*	$OpenBSD: patch-print_c,v 1.12 2015/03/16 14:17:48 naddy Exp $	*/
+-/*	$OpenBSD: patch-print_c,v 1.13 2015/10/30 14:12:42 bentley Exp $	*/
++/*	$OpenBSD: patch-print_c,v 1.13 2015/10/30 14:12:42 bentley Exp $	*/
  /*	$NetBSD: print.c,v 1.15 1996/12/11 03:25:39 thorpej Exp $	*/
  
  /*
@@ -121,7 +121,17 @@ $OpenBSD: patch-print_c,v 1.12 2015/03/16 14:17:48 naddy Exp $
  	if (f_type || (f_typedir && S_ISDIR(sp->st_mode)))
  		chcnt += printtype(sp->st_mode);
  	return (chcnt);
-@@ -342,6 +400,151 @@ printtype(u_int mode)
+@@ -309,7 +367,8 @@ printstream(DISPLAY *dp)
+ 			continue;
+ 		if (col > 0) {
+ 			(void)putchar(','), col++;
+-			if (col + 1 + extwidth + p->fts_namelen >= termwidth)
++			if (col + 1 + extwidth + strwidth(p->fts_name) >=
++			    termwidth)
+ 				(void)putchar('\n'), col = 0;
+ 			else
+ 				(void)putchar(' '), col++;
+@@ -342,6 +401,151 @@ printtype(u_int mode)
  	}
  	return (0);
  }

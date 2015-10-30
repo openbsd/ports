@@ -1,6 +1,6 @@
-$OpenBSD: patch-ls_c,v 1.14 2015/06/18 20:43:01 naddy Exp $
---- ls.c.orig	Mon Mar 31 22:54:37 2014
-+++ ls.c	Thu Jun 18 22:35:05 2015
+$OpenBSD: patch-ls_c,v 1.15 2015/10/30 14:12:42 bentley Exp $
+--- ls.c.orig	Mon Mar 31 14:54:37 2014
++++ ls.c	Thu Oct 29 01:00:04 2015
 @@ -42,12 +42,17 @@
  #include <errno.h>
  #include <fts.h>
@@ -132,3 +132,14 @@ $OpenBSD: patch-ls_c,v 1.14 2015/06/18 20:43:01 naddy Exp $
  		fts_options |= FTS_COMFOLLOW;
  
  	/* If -l or -s, figure out block size. */
+@@ -463,8 +527,8 @@ display(FTSENT *p, FTSENT *list)
+ 				continue;
+ 			}
+ 		}
+-		if (cur->fts_namelen > maxlen)
+-			maxlen = cur->fts_namelen;
++		if (strwidth(cur->fts_name) > maxlen)
++			maxlen = strwidth(cur->fts_name);
+ 		if (needstats) {
+ 			sp = cur->fts_statp;
+ 			if (sp->st_blocks > maxblock)
