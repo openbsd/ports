@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.302 2015/10/20 00:09:10 abieber Exp $
+# $OpenBSD: Makefile,v 1.303 2015/10/30 16:52:54 landry Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -112,6 +112,7 @@
      SUBDIR += p5-GDBM_File
      SUBDIR += p5-Ima-DBI
      SUBDIR += p5-Jifty-DBI
+     SUBDIR += p5-Mojo-Pg
      SUBDIR += p5-Redis
      SUBDIR += p5-Rose-DB
      SUBDIR += p5-Rose-DB-Object
