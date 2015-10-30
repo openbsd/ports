@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.26 2015/07/21 08:02:38 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2015/10/30 12:07:11 landry Exp $
 
 SHARED_ONLY=	Yes
 
-V =	2.1.8
+V =	2.2.0
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
+
+SHARED_LIBS +=	lwgeom 0.0 lwgeom-2.2 0.0 # 4.0
 
 HOMEPAGE=	http://www.postgis.org/
 
@@ -33,13 +35,13 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		graphics/ImageMagick
 
 USE_GMAKE=	Yes
+USE_LIBTOOL =	Yes
 #for iconv.h
 CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib \
 		CFLAGS=-I${LOCALBASE}/include
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-xsldir=${PREFIX}/share/xsl/docbook/ \
 		--libdir=${PREFIX}/lib/postgresql
-TEST_ENV +=	LD_PRELOAD=libpthread.so
 
 SUBST_VARS +=	V
 DOCDIR =	${PREFIX}/share/doc/postgresql/postgis/
