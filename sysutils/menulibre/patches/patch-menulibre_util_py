@@ -1,17 +1,16 @@
-$OpenBSD: patch-menulibre_util_py,v 1.1.1.1 2015/04/04 18:37:11 landry Exp $
---- menulibre/util.py.orig	Sun Mar  1 19:56:49 2015
-+++ menulibre/util.py	Sun Mar  1 19:57:16 2015
-@@ -20,9 +20,6 @@ import re
+$OpenBSD: patch-menulibre_util_py,v 1.2 2015/10/30 15:00:43 landry Exp $
+--- menulibre/util.py.orig	Fri Oct  9 00:39:41 2015
++++ menulibre/util.py	Fri Oct 30 13:36:56 2015
+@@ -19,8 +19,6 @@ import os
+ import re
  
  import getpass
- 
 -import psutil
 -old_psutil_format = isinstance(psutil.Process.username, property)
--
- from gi.repository import GLib
  
- import logging
-@@ -41,73 +38,9 @@ MenuItemTypes = enum(
+ from gi.repository import GLib, Gdk
+ 
+@@ -40,58 +38,6 @@ MenuItemTypes = enum(
  )
  
  
@@ -48,8 +47,12 @@ $OpenBSD: patch-menulibre_util_py,v 1.1.1.1 2015/04/04 18:37:11 landry Exp $
 -def getProcessList():
 -    """Return a list of unique process names for the current user."""
 -    username = getpass.getuser()
+-    try:
+-        pids = psutil.get_pid_list()
+-    except AttributeError:
+-        pids = psutil.pids()
 -    processes = []
--    for pid in psutil.get_pid_list():
+-    for pid in pids:
 -        try:
 -            process = psutil.Process(pid)
 -            p_user = getProcessUsername(process)
@@ -63,6 +66,11 @@ $OpenBSD: patch-menulibre_util_py,v 1.1.1.1 2015/04/04 18:37:11 landry Exp $
 -    return processes
 -
 -
+ def getBasename(filename):
+     if filename.endswith('.desktop'):
+         basename = filename.split('/applications/', 1)[1]
+@@ -102,23 +48,7 @@ def getBasename(filename):
+ 
  def getDefaultMenuPrefix():
      """Return the default menu prefix."""
 -    prefix = os.environ.get('XDG_MENU_PREFIX', '')
