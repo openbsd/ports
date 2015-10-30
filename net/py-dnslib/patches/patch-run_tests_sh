@@ -1,0 +1,12 @@
+$OpenBSD: patch-run_tests_sh,v 1.1.1.1 2015/10/30 16:44:54 rpointel Exp $
+--- run_tests.sh.orig	Thu Oct 23 00:14:08 2014
++++ run_tests.sh	Tue Oct 27 20:52:29 2015
+@@ -2,7 +2,7 @@
+ 
+ export PYTHONPATH=$(pwd)
+ 
+-: ${VERSIONS:="python python3"}
++: ${VERSIONS:="python${MODPY_VERSION}"}
+ 
+ for src in __init__.py bimap.py bit.py buffer.py label.py dns.py lex.py server.py digparser.py ranges.py test_decode.py
+ do
