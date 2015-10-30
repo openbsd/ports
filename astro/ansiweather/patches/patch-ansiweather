@@ -1,11 +1,11 @@
-$OpenBSD: patch-ansiweather,v 1.2 2015/09/30 06:57:35 jasper Exp $
---- ansiweather.orig	Sun Sep 27 22:49:33 2015
-+++ ansiweather	Tue Sep 29 09:41:11 2015
+$OpenBSD: patch-ansiweather,v 1.3 2015/10/30 16:40:18 sthen Exp $
+--- ansiweather.orig	Fri Oct 30 05:38:36 2015
++++ ansiweather	Fri Oct 30 05:40:15 2015
 @@ -36,7 +36,7 @@ get_config() {
  	fi
  }
  
--fetch_cmd=$(get_config "fetch_cmd" || echo "curl -s")
+-fetch_cmd=$(get_config "fetch_cmd" || echo "curl -sf")
 +fetch_cmd=$(get_config "fetch_cmd" || echo "ftp -V -o -")
  
  
