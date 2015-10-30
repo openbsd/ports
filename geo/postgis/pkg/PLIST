@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/10/30 12:07:12 landry Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/10/30 12:09:51 jasper Exp $
 @bin bin/pgsql2shp
 @bin bin/raster2pgsql
 @bin bin/shp2pgsql
@@ -14,7 +14,6 @@ lib/postgresql/postgis_topology-2.2.so
 lib/postgresql/rtpostgis-2.2.so
 @man man/man1/pgsql2shp.1
 @man man/man1/shp2pgsql.1
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/postgresql/
 share/doc/postgresql/extension/
 share/doc/postgresql/extension/README.address_standardizer
