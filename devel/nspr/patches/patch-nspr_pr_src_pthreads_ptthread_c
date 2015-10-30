@@ -1,9 +1,9 @@
-$OpenBSD: patch-nspr_pr_src_pthreads_ptthread_c,v 1.4 2015/03/16 19:39:45 landry Exp $
+$OpenBSD: patch-nspr_pr_src_pthreads_ptthread_c,v 1.5 2015/10/30 07:58:52 landry Exp $
 
 On OpenBSD pthread_set_name_np returns void
 
---- nspr/pr/src/pthreads/ptthread.c.orig	Thu Jun  5 23:42:08 2014
-+++ nspr/pr/src/pthreads/ptthread.c	Wed Jun 11 07:58:34 2014
+--- nspr/pr/src/pthreads/ptthread.c.orig	Fri Oct 16 15:22:19 2015
++++ nspr/pr/src/pthreads/ptthread.c	Wed Oct 21 08:55:29 2015
 @@ -16,6 +16,7 @@
  #include "prpdce.h"
  
@@ -12,7 +12,7 @@ On OpenBSD pthread_set_name_np returns void
  #include <unistd.h>
  #include <string.h>
  #include <signal.h>
-@@ -1750,7 +1755,8 @@ PR_IMPLEMENT(PRStatus) PR_SetCurrentThreadName(const c
+@@ -1752,7 +1753,8 @@ PR_IMPLEMENT(PRStatus) PR_SetCurrentThreadName(const c
      memcpy(thread->name, name, nameLen + 1);
  
  #if defined(OPENBSD) || defined(FREEBSD)

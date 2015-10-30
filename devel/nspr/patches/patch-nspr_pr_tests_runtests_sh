@@ -1,6 +1,6 @@
-$OpenBSD: patch-nspr_pr_tests_runtests_sh,v 1.1 2013/06/23 18:36:50 landry Exp $
---- nspr/pr/tests/runtests.sh.orig	Tue May 28 23:39:29 2013
-+++ nspr/pr/tests/runtests.sh	Wed Jun 12 21:26:28 2013
+$OpenBSD: patch-nspr_pr_tests_runtests_sh,v 1.2 2015/10/30 07:58:52 landry Exp $
+--- nspr/pr/tests/runtests.sh.orig	Fri Oct 16 15:22:19 2015
++++ nspr/pr/tests/runtests.sh	Wed Oct 21 08:55:29 2015
 @@ -58,11 +58,10 @@ fi
  # Tests not run (but should)
  #
@@ -31,7 +31,7 @@ $OpenBSD: patch-nspr_pr_tests_runtests_sh,v 1.1 2013/06/23 18:36:50 landry Exp $
  poll_nm
  poll_to
  pollable
-@@ -153,9 +154,6 @@ selct_er
+@@ -154,9 +155,6 @@ selct_er
  selct_nm
  selct_to
  selintr
