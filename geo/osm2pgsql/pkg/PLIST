@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/30 17:18:53 landry Exp $
+@bin bin/nodecachefilereader
+@bin bin/osm2pgsql
+@man man/man1/nodecachefilereader.1
+@man man/man1/osm2pgsql.1
+share/osm2pgsql/
+share/osm2pgsql/900913.sql
+share/osm2pgsql/default.style
