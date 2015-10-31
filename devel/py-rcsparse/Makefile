@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/10/31 16:53:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2015/10/31 16:54:10 sthen Exp $
 
 COMMENT=		RCS parsing library for Python
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB +=		${MODPY_WANTLIB} pthread
 
-USE_GMAKE=		Yes
 MODULES=		lang/python
 NO_TEST=		Yes
 
