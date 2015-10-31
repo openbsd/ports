@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/08/11 20:45:02 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/10/31 22:46:00 benoit Exp $
 bin/freecol
 share/doc/freecol/
 share/doc/freecol/FreeCol.pdf
@@ -10,11 +10,6 @@ share/freecol/data/base/client-options.xml
 share/freecol/data/base/resources/
 share/freecol/data/base/resources.properties
 share/freecol/data/base/resources/fonts/
-share/freecol/data/base/resources/fonts/Imperator.ttf
-share/freecol/data/base/resources/fonts/LiberationSerif-Bold.ttf
-share/freecol/data/base/resources/fonts/LiberationSerif-BoldItalic.ttf
-share/freecol/data/base/resources/fonts/LiberationSerif-Italic.ttf
-share/freecol/data/base/resources/fonts/LiberationSerif-Regular.ttf
 share/freecol/data/base/resources/fonts/README
 share/freecol/data/base/resources/fonts/ShadowedBlack.ttf
 share/freecol/data/base/resources/fonts/signature.faf
@@ -1366,8 +1361,6 @@ share/freecol/data/rules/classic/resources/images/units/wagon/damagedArtillery.p
 share/freecol/data/rules/classic/resources/images/units/wagon/treasureTrain.png
 share/freecol/data/rules/classic/resources/images/units/wagon/wagonTrain.png
 share/freecol/data/rules/classic/resources/sound/
-share/freecol/data/rules/classic/resources/sound/README
-share/freecol/data/rules/classic/resources/sound/alert.ogg
 share/freecol/data/rules/classic/resources/sound/anthem/
 share/freecol/data/rules/classic/resources/sound/anthem/dutch.ogg
 share/freecol/data/rules/classic/resources/sound/anthem/english.ogg
@@ -1377,18 +1370,21 @@ share/freecol/data/rules/classic/resources/sound/attack/
 share/freecol/data/rules/classic/resources/sound/attack/artillery.ogg
 share/freecol/data/rules/classic/resources/sound/attack/dragoon.ogg
 share/freecol/data/rules/classic/resources/sound/attack/naval.ogg
-share/freecol/data/rules/classic/resources/sound/building.ogg
-share/freecol/data/rules/classic/resources/sound/colony.ogg
-share/freecol/data/rules/classic/resources/sound/fountain.ogg
-share/freecol/data/rules/classic/resources/sound/illegal.ogg
+share/freecol/data/rules/classic/resources/sound/event/
+share/freecol/data/rules/classic/resources/sound/event/README
+share/freecol/data/rules/classic/resources/sound/event/alert.ogg
+share/freecol/data/rules/classic/resources/sound/event/building.ogg
+share/freecol/data/rules/classic/resources/sound/event/colony.ogg
+share/freecol/data/rules/classic/resources/sound/event/fountain.ogg
+share/freecol/data/rules/classic/resources/sound/event/illegal.ogg
+share/freecol/data/rules/classic/resources/sound/event/load.ogg
+share/freecol/data/rules/classic/resources/sound/event/mission.ogg
+share/freecol/data/rules/classic/resources/sound/event/sell.ogg
+share/freecol/data/rules/classic/resources/sound/event/sunk.ogg
 share/freecol/data/rules/classic/resources/sound/intro/
 share/freecol/data/rules/classic/resources/sound/intro/generic.ogg
-share/freecol/data/rules/classic/resources/sound/load.ogg
 share/freecol/data/rules/classic/resources/sound/meet/
 share/freecol/data/rules/classic/resources/sound/meet/aztec.ogg
-share/freecol/data/rules/classic/resources/sound/mission.ogg
-share/freecol/data/rules/classic/resources/sound/sell.ogg
-share/freecol/data/rules/classic/resources/sound/sunk.ogg
 share/freecol/data/rules/classic/resources/video/
 share/freecol/data/rules/classic/resources/video/freecol-opening.video.ogg
 share/freecol/data/rules/classic/specification.xml
@@ -1481,7 +1477,7 @@ share/freecol/freecol.xpm
 share/freecol/jars/
 share/freecol/jars/commons-cli-1.1.jar
 share/freecol/jars/cortado-0.6.0.jar
-share/freecol/jars/jogg-0.0.7.jar
-share/freecol/jars/jorbis-0.0.15.jar
+share/freecol/jars/jogg-0.0.17.jar
+share/freecol/jars/jorbis-0.0.17.jar
 share/freecol/jars/miglayout-core-4.2.jar
 share/freecol/jars/miglayout-swing-4.2.jar
