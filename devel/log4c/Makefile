@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/04/21 18:33:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/10/31 17:32:07 benoit Exp $
 
 COMMENT=	logging for c library
-DISTNAME=	log4c-1.2.1
-REVISION=	3
-SHARED_LIBS +=  log4c                0.0      # 4.0
+DISTNAME =	log4c-1.2.4
+SHARED_LIBS +=  log4c                1.0      # 6.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=log4c/}
 

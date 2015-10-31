@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:43 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/10/31 17:32:07 benoit Exp $
 bin/log4c-config
 include/log4c/
 include/log4c.h
@@ -17,6 +17,8 @@ include/log4c/layout.h
 include/log4c/layout_type_basic.h
 include/log4c/layout_type_basic_r.h
 include/log4c/layout_type_dated.h
+include/log4c/layout_type_dated_local.h
+include/log4c/layout_type_dated_local_r.h
 include/log4c/layout_type_dated_r.h
 include/log4c/location_info.h
 include/log4c/logging_event.h
@@ -28,6 +30,8 @@ include/log4c/version.h
 lib/liblog4c.a
 lib/liblog4c.la
 @lib lib/liblog4c.so.${LIBlog4c_VERSION}
+lib/pkgconfig/log4c.pc
+@man man/man1/log4c-config.1
 share/aclocal/
 share/aclocal/log4c.m4
 share/examples/log4c/
