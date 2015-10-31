@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.318 2015/10/24 07:48:06 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.319 2015/10/31 16:27:44 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -384,6 +384,7 @@ my $stem_extensions = {
 	'nimrod' => 'nim',
 	'icinga2-mysql' => 'icinga2-ido-mysql',
 	'icinga2-pgsql' => 'icinga2-ido-pgsql',
+	'rcsparse' => 'py-rcsparse',
 };
 
 # reasons for obsolete packages
