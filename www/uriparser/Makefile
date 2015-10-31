@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/10/05 19:40:26 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2015/10/31 23:02:07 ajacoutot Exp $
 
 COMMENT =		URI parsing library
 
-DISTNAME =		uriparser-0.8.3
+DISTNAME =		uriparser-0.8.4
 
 SHARED_LIBS +=  uriparser                 0.1 # 1.19
 
