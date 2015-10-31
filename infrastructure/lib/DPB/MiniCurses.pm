@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: MiniCurses.pm,v 1.7 2014/03/09 20:31:04 espie Exp $
+# $OpenBSD: MiniCurses.pm,v 1.8 2015/10/31 09:39:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -92,6 +92,8 @@ sub create_terminal
 	if ($o->{color}) {
 		$self->{bg} = $self->{terminal}->Tputs('AB', 1);
 		$self->{fg} = $self->{terminal}->Tputs('AF', 1);
+		$self->{blink} = $self->{terminal}->Tputs('mb', 1);
+		$self->{dontblink} = $self->{terminal}->Tputs('me', 1);
 	}
 	if ($o->{nocursor}) {
 		$self->{invisible} = 
@@ -156,6 +158,12 @@ sub bg
 	return sprintf($self->{bg}, $color).$expr.$self->{resetbg};
 }
 
+sub blink
+{
+	my ($self, $expr, $color) = @_;
+	return $self->{blink}.$expr.$self->{dontblink};
+}
+
 sub mogrify
 {
 	my ($self, $line) = @_;
@@ -188,7 +196,8 @@ sub mogrify
 		$line = $self->color($line, RED);
 		$self->default_fg(RED);
 	} elsif ($line =~ m/^Hosts:/) {
-		$line =~ s/([\@\w\.\-]+)(\s|\(|$)/$self->color($1, RED).$2/ge;
+		$line =~ s/([\@\w\.\-]*[\@\w.])(\s|\(|$)/$self->color($1, RED).$2/ge;
+		$line =~ s/([\@\w\.\-]+\-)(\s|\(|$)/$self->blink($self->bg($self->color($1, BLACK), RED)).$2/ge;
 		$line =~ s/(^Hosts:)/$self->color($1, BLUE)/ge;
 	}
 	$line =~ s/(\[\d+\])/$self->color($1, GREEN)/ge;
