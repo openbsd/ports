@@ -1,6 +1,6 @@
-$OpenBSD: patch-cmake_FindGEOS_cmake,v 1.7 2015/03/16 20:06:33 landry Exp $
---- cmake/FindGEOS.cmake.orig	Thu Feb 26 10:12:00 2015
-+++ cmake/FindGEOS.cmake	Tue Mar  3 10:15:34 2015
+$OpenBSD: patch-cmake_FindGEOS_cmake,v 1.8 2015/10/31 15:29:44 landry Exp $
+--- cmake/FindGEOS.cmake.orig	Fri Oct 23 14:10:38 2015
++++ cmake/FindGEOS.cmake	Fri Oct 30 16:42:16 2015
 @@ -148,7 +148,7 @@ ELSE(WIN32)
              SET(GEOS_LIBRARY ${GEOS_LINK_DIRECTORIES}/lib${GEOS_LIB_NAME}.dylib CACHE STRING INTERNAL FORCE)
            ENDIF (NOT GEOS_LIBRARY)

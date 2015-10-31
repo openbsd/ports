@@ -1,6 +1,6 @@
-$OpenBSD: patch-cmake_FindGDAL_cmake,v 1.6 2015/03/16 20:06:33 landry Exp $
---- cmake/FindGDAL.cmake.orig	Thu Feb 26 10:12:00 2015
-+++ cmake/FindGDAL.cmake	Tue Mar  3 10:15:34 2015
+$OpenBSD: patch-cmake_FindGDAL_cmake,v 1.7 2015/10/31 15:29:44 landry Exp $
+--- cmake/FindGDAL.cmake.orig	Fri Oct 23 14:10:38 2015
++++ cmake/FindGDAL.cmake	Fri Oct 30 16:42:16 2015
 @@ -160,7 +160,7 @@ ELSE(WIN32)
              SET(GDAL_LIBRARY ${GDAL_LINK_DIRECTORIES}/lib${GDAL_LIB_NAME}.dylib CACHE STRING INTERNAL FORCE)
            ENDIF (NOT GDAL_LIBRARY)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_app_qgsabout_cpp,v 1.6 2015/07/21 10:06:14 landry Exp $
---- src/app/qgsabout.cpp.orig	Fri Jun 26 14:38:57 2015
-+++ src/app/qgsabout.cpp	Mon Jun 29 22:10:38 2015
-@@ -231,7 +231,7 @@ void QgsAbout::setWhatsNew()
+$OpenBSD: patch-src_app_qgsabout_cpp,v 1.7 2015/10/31 15:29:44 landry Exp $
+--- src/app/qgsabout.cpp.orig	Fri Oct 23 14:10:38 2015
++++ src/app/qgsabout.cpp	Fri Oct 30 15:44:07 2015
+@@ -237,7 +237,7 @@ void QgsAbout::setWhatsNew()
  {
    txtWhatsNew->clear();
    txtWhatsNew->document()->setDefaultStyleSheet( QgsApplication::reportStyleSheet() );

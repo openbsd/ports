@@ -124,7 +124,7 @@ struct expression_parser_context
 
 
 /* Line 336 of yacc.c  */
-#line 128 "/tmp/qgsexpressionparser.cpp"
+#line 128 "src/core/qgsexpressionparser.cpp"
 
 # ifndef YY_NULL
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -144,8 +144,8 @@ struct expression_parser_context
 
 /* In a future release of Bison, this section will be replaced
    by #include "qgsexpressionparser.hpp".  */
-#ifndef EXP_TMP_QGSEXPRESSIONPARSER_HPP
-# define EXP_TMP_QGSEXPRESSIONPARSER_HPP
+#ifndef EXP_SRC_CORE_QGSEXPRESSIONPARSER_HPP
+# define EXP_SRC_CORE_QGSEXPRESSIONPARSER_HPP
 /* Enabling traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 1
@@ -183,19 +183,21 @@ extern int exp_debug;
      IN = 278,
      NUMBER_FLOAT = 279,
      NUMBER_INT = 280,
-     NULLVALUE = 281,
-     CASE = 282,
-     WHEN = 283,
-     THEN = 284,
-     ELSE = 285,
-     END = 286,
-     STRING = 287,
-     COLUMN_REF = 288,
-     FUNCTION = 289,
-     SPECIAL_COL = 290,
-     COMMA = 291,
-     Unknown_CHARACTER = 292,
-     UMINUS = 293
+     BOOLEAN = 281,
+     NULLVALUE = 282,
+     CASE = 283,
+     WHEN = 284,
+     THEN = 285,
+     ELSE = 286,
+     END = 287,
+     STRING = 288,
+     COLUMN_REF = 289,
+     FUNCTION = 290,
+     SPECIAL_COL = 291,
+     VARIABLE = 292,
+     COMMA = 293,
+     Unknown_CHARACTER = 294,
+     UMINUS = 295
    };
 #endif
 
@@ -210,6 +212,7 @@ typedef union YYSTYPE
   QgsExpression::NodeList* nodelist;
   double numberFloat;
   int    numberInt;
+  bool   boolVal;
   QString* text;
   QgsExpression::BinaryOperator b_op;
   QgsExpression::UnaryOperator u_op;
@@ -218,7 +221,7 @@ typedef union YYSTYPE
 
 
 /* Line 350 of yacc.c  */
-#line 222 "/tmp/qgsexpressionparser.cpp"
+#line 225 "src/core/qgsexpressionparser.cpp"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -240,12 +243,12 @@ int exp_parse ();
 #endif
 #endif /* ! YYPARSE_PARAM */
 
-#endif /* !EXP_TMP_QGSEXPRESSIONPARSER_HPP  */
+#endif /* !EXP_SRC_CORE_QGSEXPRESSIONPARSER_HPP  */
 
 /* Copy the second part of user declarations.  */
 
 /* Line 353 of yacc.c  */
-#line 249 "/tmp/qgsexpressionparser.cpp"
+#line 252 "src/core/qgsexpressionparser.cpp"
 
 #ifdef short
 # undef short
@@ -463,22 +466,22 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  23
+#define YYFINAL  25
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   220
+#define YYLAST   248
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  41
+#define YYNTOKENS  43
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  6
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  41
+#define YYNRULES  44
 /* YYNRULES -- Number of states.  */
-#define YYNSTATES  85
+#define YYNSTATES  88
 
 /* YYTRANSLATE(YYLEX) -- Bison symbol number corresponding to YYLEX.  */
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   293
+#define YYMAXUTOK   295
 
 #define YYTRANSLATE(YYX)						\
   ((unsigned int) (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
@@ -490,7 +493,7 @@ static const yytype_uint8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-      39,    40,     2,     2,     2,     2,     2,     2,     2,     2,
+      41,    42,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -515,7 +518,7 @@ static const yytype_uint8 yytranslate[] =
        5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
       15,    16,    17,    18,    19,    20,    21,    22,    23,    24,
       25,    26,    27,    28,    29,    30,    31,    32,    33,    34,
-      35,    36,    37,    38
+      35,    36,    37,    38,    39,    40
 };
 
 #if YYDEBUG
@@ -525,39 +528,40 @@ static const yytype_uint8 yyprhs[] =
 {
        0,     0,     3,     5,     9,    13,    17,    21,    25,    29,
       33,    37,    41,    45,    49,    53,    57,    61,    65,    69,
-      73,    77,    81,    84,    88,    93,    99,   106,   109,   112,
-     116,   122,   124,   126,   128,   130,   132,   134,   138,   140,
-     143,   145
+      73,    77,    81,    84,    88,    93,    97,   103,   110,   113,
+     116,   120,   126,   128,   130,   132,   134,   136,   138,   140,
+     142,   146,   148,   151,   153
 };
 
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
 static const yytype_int8 yyrhs[] =
 {
-      42,     0,    -1,    43,    -1,    43,     4,    43,    -1,    43,
-       3,    43,    -1,    43,     5,    43,    -1,    43,     6,    43,
-      -1,    43,     7,    43,    -1,    43,     8,    43,    -1,    43,
-       9,    43,    -1,    43,    10,    43,    -1,    43,    11,    43,
-      -1,    43,    12,    43,    -1,    43,    13,    43,    -1,    43,
-      14,    43,    -1,    43,    15,    43,    -1,    43,    16,    43,
-      -1,    43,    18,    43,    -1,    43,    17,    43,    -1,    43,
-      19,    43,    -1,    43,    21,    43,    -1,    43,    20,    43,
-      -1,    22,    43,    -1,    39,    43,    40,    -1,    34,    39,
-      44,    40,    -1,    43,    23,    39,    44,    40,    -1,    43,
-      22,    23,    39,    44,    40,    -1,    14,    43,    -1,    15,
-      43,    -1,    27,    45,    31,    -1,    27,    45,    30,    43,
-      31,    -1,    33,    -1,    35,    -1,    24,    -1,    25,    -1,
-      32,    -1,    26,    -1,    44,    36,    43,    -1,    43,    -1,
-      45,    46,    -1,    46,    -1,    28,    43,    29,    43,    -1
+      44,     0,    -1,    45,    -1,    45,     4,    45,    -1,    45,
+       3,    45,    -1,    45,     5,    45,    -1,    45,     6,    45,
+      -1,    45,     7,    45,    -1,    45,     8,    45,    -1,    45,
+       9,    45,    -1,    45,    10,    45,    -1,    45,    11,    45,
+      -1,    45,    12,    45,    -1,    45,    13,    45,    -1,    45,
+      14,    45,    -1,    45,    15,    45,    -1,    45,    16,    45,
+      -1,    45,    18,    45,    -1,    45,    17,    45,    -1,    45,
+      19,    45,    -1,    45,    21,    45,    -1,    45,    20,    45,
+      -1,    22,    45,    -1,    41,    45,    42,    -1,    35,    41,
+      46,    42,    -1,    35,    41,    42,    -1,    45,    23,    41,
+      46,    42,    -1,    45,    22,    23,    41,    46,    42,    -1,
+      14,    45,    -1,    15,    45,    -1,    28,    47,    32,    -1,
+      28,    47,    31,    45,    32,    -1,    34,    -1,    36,    -1,
+      37,    -1,    24,    -1,    25,    -1,    26,    -1,    33,    -1,
+      27,    -1,    46,    38,    45,    -1,    45,    -1,    47,    48,
+      -1,    48,    -1,    29,    45,    30,    45,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
-static const yytype_uint8 yyrline[] =
+static const yytype_uint16 yyrline[] =
 {
-       0,   153,   153,   157,   158,   159,   160,   161,   162,   163,
-     164,   165,   166,   167,   168,   169,   170,   171,   172,   173,
-     174,   175,   176,   177,   179,   199,   200,   202,   203,   205,
-     206,   209,   212,   236,   237,   238,   239,   243,   244,   248,
-     249,   253
+       0,   157,   157,   161,   162,   163,   164,   165,   166,   167,
+     168,   169,   170,   171,   172,   173,   174,   175,   176,   177,
+     178,   179,   180,   181,   183,   205,   224,   225,   227,   228,
+     230,   231,   234,   237,   262,   273,   274,   275,   276,   277,
+     281,   282,   286,   287,   291
 };
 #endif
 
@@ -569,9 +573,9 @@ static const char *const yytname[] =
   "$end", "error", "$undefined", "OR", "AND", "EQ", "NE", "LE", "GE",
   "LT", "GT", "REGEXP", "LIKE", "IS", "PLUS", "MINUS", "MUL", "DIV",
   "INTDIV", "MOD", "CONCAT", "POW", "NOT", "IN", "NUMBER_FLOAT",
-  "NUMBER_INT", "NULLVALUE", "CASE", "WHEN", "THEN", "ELSE", "END",
-  "STRING", "COLUMN_REF", "FUNCTION", "SPECIAL_COL", "COMMA",
-  "Unknown_CHARACTER", "UMINUS", "'('", "')'", "$accept", "root",
+  "NUMBER_INT", "BOOLEAN", "NULLVALUE", "CASE", "WHEN", "THEN", "ELSE",
+  "END", "STRING", "COLUMN_REF", "FUNCTION", "SPECIAL_COL", "VARIABLE",
+  "COMMA", "Unknown_CHARACTER", "UMINUS", "'('", "')'", "$accept", "root",
   "expression", "exp_list", "when_then_clauses", "when_then_clause", YY_NULL
 };
 #endif
@@ -584,19 +588,19 @@ static const yytype_uint16 yytoknum[] =
        0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
      265,   266,   267,   268,   269,   270,   271,   272,   273,   274,
      275,   276,   277,   278,   279,   280,   281,   282,   283,   284,
-     285,   286,   287,   288,   289,   290,   291,   292,   293,    40,
-      41
+     285,   286,   287,   288,   289,   290,   291,   292,   293,   294,
+     295,    40,    41
 };
 # endif
 
 /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,    41,    42,    43,    43,    43,    43,    43,    43,    43,
-      43,    43,    43,    43,    43,    43,    43,    43,    43,    43,
-      43,    43,    43,    43,    43,    43,    43,    43,    43,    43,
-      43,    43,    43,    43,    43,    43,    43,    44,    44,    45,
-      45,    46
+       0,    43,    44,    45,    45,    45,    45,    45,    45,    45,
+      45,    45,    45,    45,    45,    45,    45,    45,    45,    45,
+      45,    45,    45,    45,    45,    45,    45,    45,    45,    45,
+      45,    45,    45,    45,    45,    45,    45,    45,    45,    45,
+      46,    46,    47,    47,    48
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
@@ -604,9 +608,9 @@ static const yytype_uint8 yyr2[] =
 {
        0,     2,     1,     3,     3,     3,     3,     3,     3,     3,
        3,     3,     3,     3,     3,     3,     3,     3,     3,     3,
-       3,     3,     2,     3,     4,     5,     6,     2,     2,     3,
-       5,     1,     1,     1,     1,     1,     1,     3,     1,     2,
-       1,     4
+       3,     3,     2,     3,     4,     3,     5,     6,     2,     2,
+       3,     5,     1,     1,     1,     1,     1,     1,     1,     1,
+       3,     1,     2,     1,     4
 };
 
 /* YYDEFACT[STATE-NAME] -- Default reduction number in state STATE-NUM.
@@ -614,43 +618,43 @@ static const yytype_uint8 yyr2[] =
    means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       0,     0,     0,     0,    33,    34,    36,     0,    35,    31,
-       0,    32,     0,     0,     2,    27,    28,    22,     0,     0,
-      40,     0,     0,     1,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,    35,    36,    37,    39,     0,    38,
+      32,     0,    33,    34,     0,     0,     2,    28,    29,    22,
+       0,     0,    43,     0,     0,     1,     0,     0,     0,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,     0,     0,    29,    39,    38,
-       0,    23,     4,     3,     5,     6,     7,     8,     9,    10,
-      11,    12,    13,    14,    15,    16,    18,    17,    19,    21,
-      20,     0,     0,     0,     0,     0,    24,     0,     0,    41,
-      30,    37,     0,    25,    26
+       0,     0,     0,     0,     0,     0,     0,     0,     0,    30,
+      42,    25,    41,     0,    23,     4,     3,     5,     6,     7,
+       8,     9,    10,    11,    12,    13,    14,    15,    16,    18,
+      17,    19,    21,    20,     0,     0,     0,     0,     0,    24,
+       0,     0,    44,    31,    40,     0,    26,    27
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,    13,    49,    50,    19,    20
+      -1,    15,    52,    53,    21,    22
 };
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-#define YYPACT_NINF -59
+#define YYPACT_NINF -64
 static const yytype_int16 yypact[] =
 {
-     121,   121,   121,   121,   -59,   -59,   -59,   -13,   -59,   -59,
-     -16,   -59,   121,    43,   158,   -59,   -59,   197,   121,    78,
-     -59,   121,    44,   -59,   121,   121,   121,   121,   121,   121,
-     121,   121,   121,   121,   121,   121,   121,   121,   121,   121,
-     121,   121,   121,    21,     6,   111,   121,   -59,   -59,   158,
-     -23,   -59,   178,   197,   -10,   -10,   -10,   -10,   -10,   -10,
-     -10,   -10,   -10,    60,    60,     1,     1,     1,     1,   -59,
-       1,    30,   121,   121,    82,   121,   -59,   121,   -20,   158,
-     -59,   158,    32,   -59,   -59
+     147,   147,   147,   147,   -64,   -64,   -64,   -64,   -16,   -64,
+     -64,   -25,   -64,   -64,   147,    45,   186,   -64,   -64,   225,
+     147,    48,   -64,    97,    46,   -64,   147,   147,   147,   147,
+     147,   147,   147,   147,   147,   147,   147,   147,   147,   147,
+     147,   147,   147,   147,   147,    23,     6,   137,   147,   -64,
+     -64,   -64,   186,   -23,   -64,   206,   225,   -10,   -10,   -10,
+     -10,   -10,   -10,   -10,   -10,   -10,    54,    54,     3,     3,
+       3,     3,   -64,     3,    40,   147,   147,    86,   147,   -64,
+     147,   -20,   186,   -64,   186,   -17,   -64,   -64
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -59,   -59,     0,   -58,   -59,    51
+     -64,   -64,     0,   -63,   -64,    61
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
@@ -659,33 +663,35 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-      14,    15,    16,    17,    35,    36,    37,    38,    39,    40,
-      41,    42,    22,    75,    78,    18,    75,    76,    45,    82,
-      83,    41,    42,    21,    52,    53,    54,    55,    56,    57,
-      58,    59,    60,    61,    62,    63,    64,    65,    66,    67,
-      68,    69,    70,    23,    71,    72,    74,    24,    25,    26,
+      16,    17,    18,    19,    37,    38,    39,    40,    41,    42,
+      43,    44,    81,    20,    24,    78,    23,    85,    78,    79,
+      47,    78,    86,    43,    44,    87,    55,    56,    57,    58,
+      59,    60,    61,    62,    63,    64,    65,    66,    67,    68,
+      69,    70,    71,    72,    73,    25,    74,    75,    77,    26,
       27,    28,    29,    30,    31,    32,    33,    34,    35,    36,
-      37,    38,    39,    40,    41,    42,    43,    44,    75,    77,
-      48,     0,    84,    79,     0,    81,    37,    38,    39,    40,
-      41,    42,     0,     0,    51,    24,    25,    26,    27,    28,
-      29,    30,    31,    32,    33,    34,    35,    36,    37,    38,
-      39,    40,    41,    42,    43,    44,    18,     0,    46,    47,
-       0,     0,     0,    80,    24,    25,    26,    27,    28,    29,
-      30,    31,    32,    33,    34,    35,    36,    37,    38,    39,
-      40,    41,    42,    43,    44,     1,     2,     0,     0,     0,
-      73,     0,     0,     3,     0,     4,     5,     6,     7,     0,
-       0,     0,     0,     8,     9,    10,    11,     0,     0,     0,
-      12,    24,    25,    26,    27,    28,    29,    30,    31,    32,
-      33,    34,    35,    36,    37,    38,    39,    40,    41,    42,
-      43,    44,    25,    26,    27,    28,    29,    30,    31,    32,
-      33,    34,    35,    36,    37,    38,    39,    40,    41,    42,
-      43,    44,    26,    27,    28,    29,    30,    31,    32,    33,
-      34,    35,    36,    37,    38,    39,    40,    41,    42,    43,
-      44
+      37,    38,    39,    40,    41,    42,    43,    44,    45,    46,
+      39,    40,    41,    42,    43,    44,    82,    20,    84,    48,
+      49,    80,    50,     0,     0,     0,     0,     0,    54,    26,
+      27,    28,    29,    30,    31,    32,    33,    34,    35,    36,
+      37,    38,    39,    40,    41,    42,    43,    44,    45,    46,
+       0,     1,     2,     0,     0,     0,     0,     0,    83,     3,
+       0,     4,     5,     6,     7,     8,     0,     0,     0,     0,
+       9,    10,    11,    12,    13,     0,     0,     0,    14,    51,
+      26,    27,    28,    29,    30,    31,    32,    33,    34,    35,
+      36,    37,    38,    39,    40,    41,    42,    43,    44,    45,
+      46,     1,     2,     0,     0,     0,     0,    76,     0,     3,
+       0,     4,     5,     6,     7,     8,     0,     0,     0,     0,
+       9,    10,    11,    12,    13,     0,     0,     0,    14,    26,
+      27,    28,    29,    30,    31,    32,    33,    34,    35,    36,
+      37,    38,    39,    40,    41,    42,    43,    44,    45,    46,
+      27,    28,    29,    30,    31,    32,    33,    34,    35,    36,
+      37,    38,    39,    40,    41,    42,    43,    44,    45,    46,
+      28,    29,    30,    31,    32,    33,    34,    35,    36,    37,
+      38,    39,    40,    41,    42,    43,    44,    45,    46
 };
 
 #define yypact_value_is_default(yystate) \
-  ((yystate) == (-59))
+  ((yystate) == (-64))
 
 #define yytable_value_is_error(yytable_value) \
   YYID (0)
@@ -693,43 +699,45 @@ static const yytype_uint8 yytable[] =
 static const yytype_int8 yycheck[] =
 {
        0,     1,     2,     3,    14,    15,    16,    17,    18,    19,
-      20,    21,    12,    36,    72,    28,    36,    40,    18,    77,
-      40,    20,    21,    39,    24,    25,    26,    27,    28,    29,
+      20,    21,    75,    29,    14,    38,    41,    80,    38,    42,
+      20,    38,    42,    20,    21,    42,    26,    27,    28,    29,
       30,    31,    32,    33,    34,    35,    36,    37,    38,    39,
-      40,    41,    42,     0,    23,    39,    46,     3,     4,     5,
-       6,     7,     8,     9,    10,    11,    12,    13,    14,    15,
-      16,    17,    18,    19,    20,    21,    22,    23,    36,    39,
-      19,    -1,    40,    73,    -1,    75,    16,    17,    18,    19,
-      20,    21,    -1,    -1,    40,     3,     4,     5,     6,     7,
-       8,     9,    10,    11,    12,    13,    14,    15,    16,    17,
-      18,    19,    20,    21,    22,    23,    28,    -1,    30,    31,
-      -1,    -1,    -1,    31,     3,     4,     5,     6,     7,     8,
-       9,    10,    11,    12,    13,    14,    15,    16,    17,    18,
-      19,    20,    21,    22,    23,    14,    15,    -1,    -1,    -1,
-      29,    -1,    -1,    22,    -1,    24,    25,    26,    27,    -1,
-      -1,    -1,    -1,    32,    33,    34,    35,    -1,    -1,    -1,
-      39,     3,     4,     5,     6,     7,     8,     9,    10,    11,
-      12,    13,    14,    15,    16,    17,    18,    19,    20,    21,
-      22,    23,     4,     5,     6,     7,     8,     9,    10,    11,
-      12,    13,    14,    15,    16,    17,    18,    19,    20,    21,
-      22,    23,     5,     6,     7,     8,     9,    10,    11,    12,
+      40,    41,    42,    43,    44,     0,    23,    41,    48,     3,
+       4,     5,     6,     7,     8,     9,    10,    11,    12,    13,
+      14,    15,    16,    17,    18,    19,    20,    21,    22,    23,
+      16,    17,    18,    19,    20,    21,    76,    29,    78,    31,
+      32,    41,    21,    -1,    -1,    -1,    -1,    -1,    42,     3,
+       4,     5,     6,     7,     8,     9,    10,    11,    12,    13,
+      14,    15,    16,    17,    18,    19,    20,    21,    22,    23,
+      -1,    14,    15,    -1,    -1,    -1,    -1,    -1,    32,    22,
+      -1,    24,    25,    26,    27,    28,    -1,    -1,    -1,    -1,
+      33,    34,    35,    36,    37,    -1,    -1,    -1,    41,    42,
+       3,     4,     5,     6,     7,     8,     9,    10,    11,    12,
       13,    14,    15,    16,    17,    18,    19,    20,    21,    22,
-      23
+      23,    14,    15,    -1,    -1,    -1,    -1,    30,    -1,    22,
+      -1,    24,    25,    26,    27,    28,    -1,    -1,    -1,    -1,
+      33,    34,    35,    36,    37,    -1,    -1,    -1,    41,     3,
+       4,     5,     6,     7,     8,     9,    10,    11,    12,    13,
+      14,    15,    16,    17,    18,    19,    20,    21,    22,    23,
+       4,     5,     6,     7,     8,     9,    10,    11,    12,    13,
+      14,    15,    16,    17,    18,    19,    20,    21,    22,    23,
+       5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
+      15,    16,    17,    18,    19,    20,    21,    22,    23
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
    symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,    14,    15,    22,    24,    25,    26,    27,    32,    33,
-      34,    35,    39,    42,    43,    43,    43,    43,    28,    45,
-      46,    39,    43,     0,     3,     4,     5,     6,     7,     8,
-       9,    10,    11,    12,    13,    14,    15,    16,    17,    18,
-      19,    20,    21,    22,    23,    43,    30,    31,    46,    43,
-      44,    40,    43,    43,    43,    43,    43,    43,    43,    43,
-      43,    43,    43,    43,    43,    43,    43,    43,    43,    43,
-      43,    23,    39,    29,    43,    36,    40,    39,    44,    43,
-      31,    43,    44,    40,    40
+       0,    14,    15,    22,    24,    25,    26,    27,    28,    33,
+      34,    35,    36,    37,    41,    44,    45,    45,    45,    45,
+      29,    47,    48,    41,    45,     0,     3,     4,     5,     6,
+       7,     8,     9,    10,    11,    12,    13,    14,    15,    16,
+      17,    18,    19,    20,    21,    22,    23,    45,    31,    32,
+      48,    42,    45,    46,    42,    45,    45,    45,    45,    45,
+      45,    45,    45,    45,    45,    45,    45,    45,    45,    45,
+      45,    45,    45,    45,    23,    41,    30,    45,    38,    42,
+      41,    46,    45,    32,    45,    46,    42,    42
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1275,47 +1283,68 @@ yydestruct (yymsg, yytype, yyvaluep, parser_ctx)
 
   switch (yytype)
     {
-      case 32: /* STRING */
+      case 33: /* STRING */
 /* Line 1381 of yacc.c  */
-#line 149 "src/core/qgsexpressionparser.yy"
+#line 151 "src/core/qgsexpressionparser.yy"
 	{ delete ((*yyvaluep).text); };
 /* Line 1381 of yacc.c  */
-#line 1284 "/tmp/qgsexpressionparser.cpp"
+#line 1292 "src/core/qgsexpressionparser.cpp"
 	break;
-      case 33: /* COLUMN_REF */
+      case 34: /* COLUMN_REF */
 /* Line 1381 of yacc.c  */
-#line 149 "src/core/qgsexpressionparser.yy"
+#line 151 "src/core/qgsexpressionparser.yy"
 	{ delete ((*yyvaluep).text); };
 /* Line 1381 of yacc.c  */
-#line 1291 "/tmp/qgsexpressionparser.cpp"
+#line 1299 "src/core/qgsexpressionparser.cpp"
 	break;
-      case 34: /* FUNCTION */
+      case 35: /* FUNCTION */
 /* Line 1381 of yacc.c  */
-#line 149 "src/core/qgsexpressionparser.yy"
+#line 151 "src/core/qgsexpressionparser.yy"
 	{ delete ((*yyvaluep).text); };
 /* Line 1381 of yacc.c  */
-#line 1298 "/tmp/qgsexpressionparser.cpp"
+#line 1306 "src/core/qgsexpressionparser.cpp"
 	break;
-      case 35: /* SPECIAL_COL */
+      case 36: /* SPECIAL_COL */
 /* Line 1381 of yacc.c  */
-#line 149 "src/core/qgsexpressionparser.yy"
+#line 151 "src/core/qgsexpressionparser.yy"
 	{ delete ((*yyvaluep).text); };
 /* Line 1381 of yacc.c  */
-#line 1305 "/tmp/qgsexpressionparser.cpp"
+#line 1313 "src/core/qgsexpressionparser.cpp"
 	break;
-      case 43: /* expression */
+      case 37: /* VARIABLE */
 /* Line 1381 of yacc.c  */
-#line 147 "src/core/qgsexpressionparser.yy"
+#line 151 "src/core/qgsexpressionparser.yy"
+	{ delete ((*yyvaluep).text); };
+/* Line 1381 of yacc.c  */
+#line 1320 "src/core/qgsexpressionparser.cpp"
+	break;
+      case 45: /* expression */
+/* Line 1381 of yacc.c  */
+#line 149 "src/core/qgsexpressionparser.yy"
 	{ delete ((*yyvaluep).node); };
 /* Line 1381 of yacc.c  */
-#line 1312 "/tmp/qgsexpressionparser.cpp"
+#line 1327 "src/core/qgsexpressionparser.cpp"
 	break;
-      case 44: /* exp_list */
+      case 46: /* exp_list */
 /* Line 1381 of yacc.c  */
-#line 148 "src/core/qgsexpressionparser.yy"
+#line 150 "src/core/qgsexpressionparser.yy"
 	{ delete ((*yyvaluep).nodelist); };
 /* Line 1381 of yacc.c  */
-#line 1319 "/tmp/qgsexpressionparser.cpp"
+#line 1334 "src/core/qgsexpressionparser.cpp"
+	break;
+      case 47: /* when_then_clauses */
+/* Line 1381 of yacc.c  */
+#line 153 "src/core/qgsexpressionparser.yy"
+	{ delete ((*yyvaluep).whenthenlist); };
+/* Line 1381 of yacc.c  */
+#line 1341 "src/core/qgsexpressionparser.cpp"
+	break;
+      case 48: /* when_then_clause */
+/* Line 1381 of yacc.c  */
+#line 152 "src/core/qgsexpressionparser.yy"
+	{ delete ((*yyvaluep).whenthen); };
+/* Line 1381 of yacc.c  */
+#line 1348 "src/core/qgsexpressionparser.cpp"
 	break;
 
       default:
@@ -1601,141 +1630,167 @@ yyreduce:
     {
         case 2:
 /* Line 1787 of yacc.c  */
-#line 153 "src/core/qgsexpressionparser.yy"
+#line 157 "src/core/qgsexpressionparser.yy"
     { parser_ctx->rootNode = (yyvsp[(1) - (1)].node); }
     break;
 
   case 3:
 /* Line 1787 of yacc.c  */
-#line 157 "src/core/qgsexpressionparser.yy"
+#line 161 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 4:
 /* Line 1787 of yacc.c  */
-#line 158 "src/core/qgsexpressionparser.yy"
+#line 162 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 5:
 /* Line 1787 of yacc.c  */
-#line 159 "src/core/qgsexpressionparser.yy"
+#line 163 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 6:
 /* Line 1787 of yacc.c  */
-#line 160 "src/core/qgsexpressionparser.yy"
+#line 164 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 7:
 /* Line 1787 of yacc.c  */
-#line 161 "src/core/qgsexpressionparser.yy"
+#line 165 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 8:
 /* Line 1787 of yacc.c  */
-#line 162 "src/core/qgsexpressionparser.yy"
+#line 166 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 9:
 /* Line 1787 of yacc.c  */
-#line 163 "src/core/qgsexpressionparser.yy"
+#line 167 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 10:
 /* Line 1787 of yacc.c  */
-#line 164 "src/core/qgsexpressionparser.yy"
+#line 168 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 11:
 /* Line 1787 of yacc.c  */
-#line 165 "src/core/qgsexpressionparser.yy"
+#line 169 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 12:
 /* Line 1787 of yacc.c  */
-#line 166 "src/core/qgsexpressionparser.yy"
+#line 170 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 13:
 /* Line 1787 of yacc.c  */
-#line 167 "src/core/qgsexpressionparser.yy"
+#line 171 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 14:
 /* Line 1787 of yacc.c  */
-#line 168 "src/core/qgsexpressionparser.yy"
+#line 172 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 15:
 /* Line 1787 of yacc.c  */
-#line 169 "src/core/qgsexpressionparser.yy"
+#line 173 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 16:
 /* Line 1787 of yacc.c  */
-#line 170 "src/core/qgsexpressionparser.yy"
+#line 174 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 17:
 /* Line 1787 of yacc.c  */
-#line 171 "src/core/qgsexpressionparser.yy"
+#line 175 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 18:
 /* Line 1787 of yacc.c  */
-#line 172 "src/core/qgsexpressionparser.yy"
+#line 176 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 19:
 /* Line 1787 of yacc.c  */
-#line 173 "src/core/qgsexpressionparser.yy"
+#line 177 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 20:
 /* Line 1787 of yacc.c  */
-#line 174 "src/core/qgsexpressionparser.yy"
+#line 178 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 21:
 /* Line 1787 of yacc.c  */
-#line 175 "src/core/qgsexpressionparser.yy"
+#line 179 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = BINOP((yyvsp[(2) - (3)].b_op), (yyvsp[(1) - (3)].node), (yyvsp[(3) - (3)].node)); }
     break;
 
   case 22:
 /* Line 1787 of yacc.c  */
-#line 176 "src/core/qgsexpressionparser.yy"
+#line 180 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = new QgsExpression::NodeUnaryOperator((yyvsp[(1) - (2)].u_op), (yyvsp[(2) - (2)].node)); }
     break;
 
   case 23:
 /* Line 1787 of yacc.c  */
-#line 177 "src/core/qgsexpressionparser.yy"
+#line 181 "src/core/qgsexpressionparser.yy"
     { (yyval.node) = (yyvsp[(2) - (3)].node); }
     break;
 
   case 24:
 /* Line 1787 of yacc.c  */
-#line 180 "src/core/qgsexpressionparser.yy"
+#line 184 "src/core/qgsexpressionparser.yy"
     {
           int fnIndex = QgsExpression::functionIndex(*(yyvsp[(1) - (4)].text));
+          delete (yyvsp[(1) - (4)].text);
+          if (fnIndex == -1)
+          {
+            // this should not actually happen because already in lexer we check whether an identifier is a known function
+            // (if the name is not known the token is parsed as a column)
+            exp_error(parser_ctx, "Function is not known");
+            delete (yyvsp[(3) - (4)].nodelist);
+            YYERROR;
+          }
+          if ( QgsExpression::Functions()[fnIndex]->params() != -1
+               && QgsExpression::Functions()[fnIndex]->params() != (yyvsp[(3) - (4)].nodelist)->count() )
+          {
+            exp_error(parser_ctx, "Function is called with wrong number of arguments");
+            delete (yyvsp[(3) - (4)].nodelist);
+            YYERROR;
+          }
+          (yyval.node) = new QgsExpression::NodeFunction(fnIndex, (yyvsp[(3) - (4)].nodelist));
+        }
+    break;
+
+  case 25:
+/* Line 1787 of yacc.c  */
+#line 206 "src/core/qgsexpressionparser.yy"
+    {
+          int fnIndex = QgsExpression::functionIndex(*(yyvsp[(1) - (3)].text));
+          delete (yyvsp[(1) - (3)].text);
           if (fnIndex == -1)
           {
             // this should not actually happen because already in lexer we check whether an identifier is a known function
@@ -1743,142 +1798,160 @@ yyreduce:
             exp_error(parser_ctx, "Function is not known");
             YYERROR;
           }
-          if ( QgsExpression::Functions()[fnIndex]->params() != -1
-               && QgsExpression::Functions()[fnIndex]->params() != (yyvsp[(3) - (4)].nodelist)->count() )
+          if ( QgsExpression::Functions()[fnIndex]->params() != 0 )
           {
             exp_error(parser_ctx, "Function is called with wrong number of arguments");
             YYERROR;
           }
-          (yyval.node) = new QgsExpression::NodeFunction(fnIndex, (yyvsp[(3) - (4)].nodelist));
-          delete (yyvsp[(1) - (4)].text);
+          (yyval.node) = new QgsExpression::NodeFunction(fnIndex, new QgsExpression::NodeList());
         }
-    break;
-
-  case 25:
-/* Line 1787 of yacc.c  */
-#line 199 "src/core/qgsexpressionparser.yy"
-    { (yyval.node) = new QgsExpression::NodeInOperator((yyvsp[(1) - (5)].node), (yyvsp[(4) - (5)].nodelist), false);  }
     break;
 
   case 26:
 /* Line 1787 of yacc.c  */
-#line 200 "src/core/qgsexpressionparser.yy"
-    { (yyval.node) = new QgsExpression::NodeInOperator((yyvsp[(1) - (6)].node), (yyvsp[(5) - (6)].nodelist), true); }
+#line 224 "src/core/qgsexpressionparser.yy"
+    { (yyval.node) = new QgsExpression::NodeInOperator((yyvsp[(1) - (5)].node), (yyvsp[(4) - (5)].nodelist), false);  }
     break;
 
   case 27:
 /* Line 1787 of yacc.c  */
-#line 202 "src/core/qgsexpressionparser.yy"
-    { (yyval.node) = (yyvsp[(2) - (2)].node); }
+#line 225 "src/core/qgsexpressionparser.yy"
+    { (yyval.node) = new QgsExpression::NodeInOperator((yyvsp[(1) - (6)].node), (yyvsp[(5) - (6)].nodelist), true); }
     break;
 
   case 28:
 /* Line 1787 of yacc.c  */
-#line 203 "src/core/qgsexpressionparser.yy"
-    { (yyval.node) = new QgsExpression::NodeUnaryOperator( QgsExpression::uoMinus, (yyvsp[(2) - (2)].node)); }
+#line 227 "src/core/qgsexpressionparser.yy"
+    { (yyval.node) = (yyvsp[(2) - (2)].node); }
     break;
 
   case 29:
 /* Line 1787 of yacc.c  */
-#line 205 "src/core/qgsexpressionparser.yy"
-    { (yyval.node) = new QgsExpression::NodeCondition((yyvsp[(2) - (3)].whenthenlist)); }
+#line 228 "src/core/qgsexpressionparser.yy"
+    { (yyval.node) = new QgsExpression::NodeUnaryOperator( QgsExpression::uoMinus, (yyvsp[(2) - (2)].node)); }
     break;
 
   case 30:
 /* Line 1787 of yacc.c  */
-#line 206 "src/core/qgsexpressionparser.yy"
-    { (yyval.node) = new QgsExpression::NodeCondition((yyvsp[(2) - (5)].whenthenlist),(yyvsp[(4) - (5)].node)); }
+#line 230 "src/core/qgsexpressionparser.yy"
+    { (yyval.node) = new QgsExpression::NodeCondition((yyvsp[(2) - (3)].whenthenlist)); }
     break;
 
   case 31:
 /* Line 1787 of yacc.c  */
-#line 209 "src/core/qgsexpressionparser.yy"
-    { (yyval.node) = new QgsExpression::NodeColumnRef( *(yyvsp[(1) - (1)].text) ); delete (yyvsp[(1) - (1)].text); }
+#line 231 "src/core/qgsexpressionparser.yy"
+    { (yyval.node) = new QgsExpression::NodeCondition((yyvsp[(2) - (5)].whenthenlist),(yyvsp[(4) - (5)].node)); }
     break;
 
   case 32:
 /* Line 1787 of yacc.c  */
-#line 213 "src/core/qgsexpressionparser.yy"
+#line 234 "src/core/qgsexpressionparser.yy"
+    { (yyval.node) = new QgsExpression::NodeColumnRef( *(yyvsp[(1) - (1)].text) ); delete (yyvsp[(1) - (1)].text); }
+    break;
+
+  case 33:
+/* Line 1787 of yacc.c  */
+#line 238 "src/core/qgsexpressionparser.yy"
     {
           int fnIndex = QgsExpression::functionIndex(*(yyvsp[(1) - (1)].text));
           if (fnIndex == -1)
           {
             if ( !QgsExpression::hasSpecialColumn( *(yyvsp[(1) - (1)].text) ) )
-	    {
+            {
               exp_error(parser_ctx, "Special column is not known");
-	      YYERROR;
-	    }
-	    // $var is equivalent to _specialcol_( "$var" )
-	    QgsExpression::NodeList* args = new QgsExpression::NodeList();
-	    QgsExpression::NodeLiteral* literal = new QgsExpression::NodeLiteral( *(yyvsp[(1) - (1)].text) );
-	    args->append( literal );
-	    (yyval.node) = new QgsExpression::NodeFunction( QgsExpression::functionIndex( "_specialcol_" ), args );
+              delete (yyvsp[(1) - (1)].text);
+              YYERROR;
+            }
+            // $var is equivalent to _specialcol_( "$var" )
+            QgsExpression::NodeList* args = new QgsExpression::NodeList();
+            QgsExpression::NodeLiteral* literal = new QgsExpression::NodeLiteral( *(yyvsp[(1) - (1)].text) );
+            args->append( literal );
+            (yyval.node) = new QgsExpression::NodeFunction( QgsExpression::functionIndex( "_specialcol_" ), args );
           }
-	  else
-	  {
-	    (yyval.node) = new QgsExpression::NodeFunction( fnIndex, NULL );
-	    delete (yyvsp[(1) - (1)].text);
-	  }
+          else
+          {
+            (yyval.node) = new QgsExpression::NodeFunction( fnIndex, NULL );
+          }
+          delete (yyvsp[(1) - (1)].text);
         }
-    break;
-
-  case 33:
-/* Line 1787 of yacc.c  */
-#line 236 "src/core/qgsexpressionparser.yy"
-    { (yyval.node) = new QgsExpression::NodeLiteral( QVariant((yyvsp[(1) - (1)].numberFloat)) ); }
     break;
 
   case 34:
 /* Line 1787 of yacc.c  */
-#line 237 "src/core/qgsexpressionparser.yy"
-    { (yyval.node) = new QgsExpression::NodeLiteral( QVariant((yyvsp[(1) - (1)].numberInt)) ); }
+#line 263 "src/core/qgsexpressionparser.yy"
+    {
+          // @var is equivalent to var( "var" )
+          QgsExpression::NodeList* args = new QgsExpression::NodeList();
+          QgsExpression::NodeLiteral* literal = new QgsExpression::NodeLiteral( QString(*(yyvsp[(1) - (1)].text)).mid(1) );
+          args->append( literal );
+          (yyval.node) = new QgsExpression::NodeFunction( QgsExpression::functionIndex( "var" ), args );
+          delete (yyvsp[(1) - (1)].text);
+        }
     break;
 
   case 35:
 /* Line 1787 of yacc.c  */
-#line 238 "src/core/qgsexpressionparser.yy"
-    { (yyval.node) = new QgsExpression::NodeLiteral( QVariant(*(yyvsp[(1) - (1)].text)) ); delete (yyvsp[(1) - (1)].text); }
+#line 273 "src/core/qgsexpressionparser.yy"
+    { (yyval.node) = new QgsExpression::NodeLiteral( QVariant((yyvsp[(1) - (1)].numberFloat)) ); }
     break;
 
   case 36:
 /* Line 1787 of yacc.c  */
-#line 239 "src/core/qgsexpressionparser.yy"
-    { (yyval.node) = new QgsExpression::NodeLiteral( QVariant() ); }
+#line 274 "src/core/qgsexpressionparser.yy"
+    { (yyval.node) = new QgsExpression::NodeLiteral( QVariant((yyvsp[(1) - (1)].numberInt)) ); }
     break;
 
   case 37:
 /* Line 1787 of yacc.c  */
-#line 243 "src/core/qgsexpressionparser.yy"
-    { (yyval.nodelist) = (yyvsp[(1) - (3)].nodelist); (yyvsp[(1) - (3)].nodelist)->append((yyvsp[(3) - (3)].node)); }
+#line 275 "src/core/qgsexpressionparser.yy"
+    { (yyval.node) = new QgsExpression::NodeLiteral( QVariant((yyvsp[(1) - (1)].boolVal)) ); }
     break;
 
   case 38:
 /* Line 1787 of yacc.c  */
-#line 244 "src/core/qgsexpressionparser.yy"
-    { (yyval.nodelist) = new QgsExpression::NodeList(); (yyval.nodelist)->append((yyvsp[(1) - (1)].node)); }
+#line 276 "src/core/qgsexpressionparser.yy"
+    { (yyval.node) = new QgsExpression::NodeLiteral( QVariant(*(yyvsp[(1) - (1)].text)) ); delete (yyvsp[(1) - (1)].text); }
     break;
 
   case 39:
 /* Line 1787 of yacc.c  */
-#line 248 "src/core/qgsexpressionparser.yy"
-    { (yyval.whenthenlist) = (yyvsp[(1) - (2)].whenthenlist); (yyvsp[(1) - (2)].whenthenlist)->append((yyvsp[(2) - (2)].whenthen)); }
+#line 277 "src/core/qgsexpressionparser.yy"
+    { (yyval.node) = new QgsExpression::NodeLiteral( QVariant() ); }
     break;
 
   case 40:
 /* Line 1787 of yacc.c  */
-#line 249 "src/core/qgsexpressionparser.yy"
-    { (yyval.whenthenlist) = new QgsExpression::WhenThenList(); (yyval.whenthenlist)->append((yyvsp[(1) - (1)].whenthen)); }
+#line 281 "src/core/qgsexpressionparser.yy"
+    { (yyval.nodelist) = (yyvsp[(1) - (3)].nodelist); (yyvsp[(1) - (3)].nodelist)->append((yyvsp[(3) - (3)].node)); }
     break;
 
   case 41:
 /* Line 1787 of yacc.c  */
-#line 253 "src/core/qgsexpressionparser.yy"
+#line 282 "src/core/qgsexpressionparser.yy"
+    { (yyval.nodelist) = new QgsExpression::NodeList(); (yyval.nodelist)->append((yyvsp[(1) - (1)].node)); }
+    break;
+
+  case 42:
+/* Line 1787 of yacc.c  */
+#line 286 "src/core/qgsexpressionparser.yy"
+    { (yyval.whenthenlist) = (yyvsp[(1) - (2)].whenthenlist); (yyvsp[(1) - (2)].whenthenlist)->append((yyvsp[(2) - (2)].whenthen)); }
+    break;
+
+  case 43:
+/* Line 1787 of yacc.c  */
+#line 287 "src/core/qgsexpressionparser.yy"
+    { (yyval.whenthenlist) = new QgsExpression::WhenThenList(); (yyval.whenthenlist)->append((yyvsp[(1) - (1)].whenthen)); }
+    break;
+
+  case 44:
+/* Line 1787 of yacc.c  */
+#line 291 "src/core/qgsexpressionparser.yy"
     { (yyval.whenthen) = new QgsExpression::WhenThen((yyvsp[(2) - (4)].node),(yyvsp[(4) - (4)].node)); }
     break;
 
 
 /* Line 1787 of yacc.c  */
-#line 1882 "/tmp/qgsexpressionparser.cpp"
+#line 1955 "src/core/qgsexpressionparser.cpp"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -2108,7 +2181,7 @@ yyreturn:
 
 
 /* Line 2048 of yacc.c  */
-#line 256 "src/core/qgsexpressionparser.yy"
+#line 294 "src/core/qgsexpressionparser.yy"
 
 
 
@@ -2131,6 +2204,7 @@ QgsExpression::Node* parseExpression(const QString& str, QString& parserErrorMsg
   else // error?
   {
     parserErrorMsg = ctx.errorMsg;
+    delete ctx.rootNode;
     return NULL;
   }
 }

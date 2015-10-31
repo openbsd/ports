@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef EXP_TMP_QGSEXPRESSIONPARSER_HPP
-# define EXP_TMP_QGSEXPRESSIONPARSER_HPP
+#ifndef EXP_SRC_CORE_QGSEXPRESSIONPARSER_HPP
+# define EXP_SRC_CORE_QGSEXPRESSIONPARSER_HPP
 /* Enabling traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 1
@@ -69,19 +69,21 @@ extern int exp_debug;
      IN = 278,
      NUMBER_FLOAT = 279,
      NUMBER_INT = 280,
-     NULLVALUE = 281,
-     CASE = 282,
-     WHEN = 283,
-     THEN = 284,
-     ELSE = 285,
-     END = 286,
-     STRING = 287,
-     COLUMN_REF = 288,
-     FUNCTION = 289,
-     SPECIAL_COL = 290,
-     COMMA = 291,
-     Unknown_CHARACTER = 292,
-     UMINUS = 293
+     BOOLEAN = 281,
+     NULLVALUE = 282,
+     CASE = 283,
+     WHEN = 284,
+     THEN = 285,
+     ELSE = 286,
+     END = 287,
+     STRING = 288,
+     COLUMN_REF = 289,
+     FUNCTION = 290,
+     SPECIAL_COL = 291,
+     VARIABLE = 292,
+     COMMA = 293,
+     Unknown_CHARACTER = 294,
+     UMINUS = 295
    };
 #endif
 
@@ -96,6 +98,7 @@ typedef union YYSTYPE
   QgsExpression::NodeList* nodelist;
   double numberFloat;
   int    numberInt;
+  bool   boolVal;
   QString* text;
   QgsExpression::BinaryOperator b_op;
   QgsExpression::UnaryOperator u_op;
@@ -104,7 +107,7 @@ typedef union YYSTYPE
 
 
 /* Line 2049 of yacc.c  */
-#line 108 "/tmp/qgsexpressionparser.hpp"
+#line 111 "src/core/qgsexpressionparser.hpp"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -126,4 +129,4 @@ int exp_parse ();
 #endif
 #endif /* ! YYPARSE_PARAM */
 
-#endif /* !EXP_TMP_QGSEXPRESSIONPARSER_HPP  */
+#endif /* !EXP_SRC_CORE_QGSEXPRESSIONPARSER_HPP  */

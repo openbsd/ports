@@ -1,58 +1,59 @@
-$OpenBSD: patch-src_core_qgsapplication_cpp,v 1.5 2015/07/21 10:06:14 landry Exp $
+$OpenBSD: patch-src_core_qgsapplication_cpp,v 1.6 2015/10/31 15:29:44 landry Exp $
 Fix paths to various doc files, installed in share/doc/qgis
 per doc/CMakeLists.txt patch
---- src/core/qgsapplication.cpp.orig	Fri Jun 26 14:38:57 2015
-+++ src/core/qgsapplication.cpp	Mon Jun 29 22:08:17 2015
-@@ -434,25 +434,25 @@ const QString QgsApplication::themeName()
+--- src/core/qgsapplication.cpp.orig	Fri Oct 23 14:10:38 2015
++++ src/core/qgsapplication.cpp	Fri Oct 30 15:48:30 2015
+@@ -528,18 +528,18 @@ QHash<QString, QString> QgsApplication::uiThemes()
  */
- const QString QgsApplication::authorsFilePath()
+ QString QgsApplication::authorsFilePath()
  {
--  return ABISYM( mPkgDataPath ) + QString( "/doc/AUTHORS" );
-+  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/AUTHORS" );
+-  return ABISYM( mPkgDataPath ) + QLatin1String( "/doc/AUTHORS" );
++  return ABISYM( mPkgDataPath ) + QLatin1String( "../doc/qgis/AUTHORS" );
  }
  /*!
    Returns the path to the contributors file.
  */
- const QString QgsApplication::contributorsFilePath()
+ QString QgsApplication::contributorsFilePath()
  {
--  return ABISYM( mPkgDataPath ) + QString( "/doc/CONTRIBUTORS" );
-+  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/CONTRIBUTORS" );
+-  return ABISYM( mPkgDataPath ) + QLatin1String( "/doc/CONTRIBUTORS" );
++  return ABISYM( mPkgDataPath ) + QLatin1String( "../doc/qgis/CONTRIBUTORS" );
  }
- const QString QgsApplication::developersMapFilePath()
+ QString QgsApplication::developersMapFilePath()
  {
--  return ABISYM( mPkgDataPath ) + QString( "/doc/developersmap.html" );
-+  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/developersmap.html" );
- }
- /*!
-   Returns the path to the sponsors file.
- */
- const QString QgsApplication::sponsorsFilePath()
- {
--  return ABISYM( mPkgDataPath ) + QString( "/doc/SPONSORS" );
-+  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/SPONSORS" );
+-  return ABISYM( mPkgDataPath ) + QLatin1String( "/doc/developersmap.html" );
++  return ABISYM( mPkgDataPath ) + QLatin1String( "../doc/qgis/developersmap.html" );
  }
  
  /*!
-@@ -460,19 +460,19 @@ const QString QgsApplication::sponsorsFilePath()
+@@ -547,7 +547,7 @@ QString QgsApplication::developersMapFilePath()
  */
- const QString QgsApplication::donorsFilePath()
+ QString QgsApplication::sponsorsFilePath()
  {
--  return ABISYM( mPkgDataPath ) + QString( "/doc/DONORS" );
-+  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/DONORS" );
+-  return ABISYM( mPkgDataPath ) + QLatin1String( "/doc/SPONSORS" );
++  return ABISYM( mPkgDataPath ) + QLatin1String( "../doc/qgis/SPONSORS" );
+ }
+ 
+ /*!
+@@ -555,19 +555,19 @@ QString QgsApplication::sponsorsFilePath()
+ */
+ QString QgsApplication::donorsFilePath()
+ {
+-  return ABISYM( mPkgDataPath ) + QLatin1String( "/doc/DONORS" );
++  return ABISYM( mPkgDataPath ) + QLatin1String( "../doc/qgis/DONORS" );
  }
  
  /** Returns the path to the sponsors file. */
- const QString QgsApplication::translatorsFilePath()
+ QString QgsApplication::translatorsFilePath()
  {
--  return ABISYM( mPkgDataPath ) + QString( "/doc/TRANSLATORS" );
-+  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/TRANSLATORS" );
+-  return ABISYM( mPkgDataPath ) + QLatin1String( "/doc/TRANSLATORS" );
++  return ABISYM( mPkgDataPath ) + QLatin1String( "../doc/qgis/TRANSLATORS" );
  }
  
  /** Returns the path to the licence file. */
- const QString QgsApplication::licenceFilePath()
+ QString QgsApplication::licenceFilePath()
  {
--  return ABISYM( mPkgDataPath ) + QString( "/doc/LICENSE" );
-+  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/LICENSE" );
+-  return ABISYM( mPkgDataPath ) + QLatin1String( "/doc/LICENSE" );
++  return ABISYM( mPkgDataPath ) + QLatin1String( "../doc/qgis/LICENSE" );
  }
  
  /*!
