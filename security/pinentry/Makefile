@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/10/30 06:35:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/10/31 16:20:11 ajacoutot Exp $
 
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gtk2 = 	PIN or passphrase entry dialog (gtk2 interface)
@@ -13,7 +13,7 @@ PKGNAME-main = 	${DISTNAME}
 PKGNAME-gtk2 = 	pinentry-gtk2-${VERSION}
 PKGNAME-gnome3 =pinentry-gnome3-${VERSION}
 
-REVISION-main =	2
+REVISION-main =	3
 
 MASTER_SITES = 	${MASTER_SITES_GNUPG:=pinentry/}
 
@@ -51,7 +51,7 @@ LIB_DEPENDS-gnome3 =	${LIB_DEPENDS} \
 MODULES = 		devel/gettext
 
 CONFIGURE_STYLE = 	gnu
-CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include -D_XOPEN_SOURCE_EXTENDED" \
 			LDFLAGS="-L${LOCALBASE}/lib"	
 CONFIGURE_ARGS = 	--enable-pinentry-curses \
 			--disable-pinentry-qt
