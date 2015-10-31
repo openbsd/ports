@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2015/07/25 22:34:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2015/10/31 22:58:16 ajacoutot Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -661,6 +661,7 @@ share/applications/screensavers/swirl.desktop
 share/applications/screensavers/t3d.desktop
 share/applications/screensavers/tangram.desktop
 share/applications/screensavers/tessellimage.desktop
+share/applications/screensavers/testx11.desktop
 share/applications/screensavers/thornbird.desktop
 share/applications/screensavers/timetunnel.desktop
 share/applications/screensavers/topblock.desktop
