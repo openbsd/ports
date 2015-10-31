@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2015/09/25 06:57:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2015/10/31 15:26:20 ajacoutot Exp $
 
 # XXX
 # util.c: implement pa_get_binary_name()
@@ -10,7 +10,7 @@ SHARED_ONLY=		Yes
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		7.0
+VERSION=		7.1
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
 
