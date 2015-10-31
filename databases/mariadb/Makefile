@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/10/29 09:55:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2015/10/31 19:40:43 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,17 +11,17 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.1.8
+VERSION=	10.0.21
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests= 	mariadb-tests-${VERSION}
-EPOCH=		0
+EPOCH=		1
 CATEGORIES=	databases
 MASTER_SITES=	http://mariadb.mirror.iweb.com//${DISTNAME}/source/ \
 		http://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/ \
 
-LIB_VERSION=	26
+LIB_VERSION=	27
 SHARED_LIBS=	mysqlclient_r	${LIB_VERSION}.0 \
 		mysqlclient	${LIB_VERSION}.0
 
@@ -44,11 +44,11 @@ SUBST_VARS=	SOCKET_DIR
 MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/bison
 
-RUN_DEPENDS-server=	${BASE_PKGPATH}>=10.1v0,<10.2v0 \
+RUN_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
 			databases/p5-DBD-mysql \
 			devel/p5-Term-ReadKey
-LIB_DEPENDS-server=	${BASE_PKGPATH}>=10.1v0,<10.2v0
-LIB_DEPENDS-tests=	${BASE_PKGPATH}>=10.1v0,<10.2v0
+LIB_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1
+LIB_DEPENDS-tests=	${BASE_PKGPATH}>=10.0v1,<10.1v1
 
 USE_GROFF=	Yes
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
