@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_alpha_osf_S,v 1.1 2015/10/31 10:24:52 landry Exp $
+
+Fix build on alpha, this part of code was removed upstream in master
+
+--- src/alpha/osf.S.orig	Sat Oct 31 04:17:37 2015
++++ src/alpha/osf.S	Sat Oct 31 04:18:02 2015
+@@ -294,7 +294,8 @@ $load_table:
+ 	|| FFI_TYPE_SINT64 != 12	\
+ 	|| FFI_TYPE_STRUCT != 13	\
+ 	|| FFI_TYPE_POINTER != 14	\
+-	|| FFI_TYPE_LAST != 14
++	|| FFI_TYPE_COMPLEX != 15	\
++	|| FFI_TYPE_LAST != 15
+ #error "osf.S out of sync with ffi.h"
+ #endif
+ 
