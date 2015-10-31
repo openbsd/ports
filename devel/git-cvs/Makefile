@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/10/30 10:06:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/10/31 16:30:29 sthen Exp $
 
 COMMENT =	import changesets from CVS into Git
 
 MODPY_EGG_VERSION = 0.1.0
+REVISION =	0
 
 DISTNAME =	git-cvs-${MODPY_EGG_VERSION}
 DISTFILES =	${DISTNAME}{${MODPY_EGG_VERSION}}.tar.gz
@@ -23,13 +24,13 @@ MODPY_SETUPTOOLS = Yes
 
 MODPY_ADJ_FILES = scripts/git-cvs
 
+BUILD_DEPENDS =	devel/py-nose
 RUN_DEPENDS=	devel/git \
 		devel/py-rcsparse
+TEST_DEPENDS=	${BUILD_DEPENDS} \
+		${RUN_DEPENDS}
 
 PKG_ARCH =	*
-
-TEST_DEPENDS =	devel/py-nose \
-		${RUN_DEPENDS}
 
 # for regression tests:
 # cvs(1) insists on doing a chdir(2) to HOME before checkout
