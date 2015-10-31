@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:58 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/10/31 11:08:39 ajacoutot Exp $
 bin/croco-0.6-config
 @bin bin/csslint-0.6
 include/libcroco-0.6/
@@ -41,7 +41,7 @@ share/gtk-doc/html/libcroco/
 share/gtk-doc/html/libcroco/ch01.html
 share/gtk-doc/html/libcroco/home.png
 share/gtk-doc/html/libcroco/index.html
-share/gtk-doc/html/libcroco/index.sgml
+share/gtk-doc/html/libcroco/left-insensitive.png
 share/gtk-doc/html/libcroco/left.png
 share/gtk-doc/html/libcroco/libcroco-cr-additional-sel.html
 share/gtk-doc/html/libcroco/libcroco-cr-attr-sel.html
@@ -71,6 +71,8 @@ share/gtk-doc/html/libcroco/libcroco-cr-token.html
 share/gtk-doc/html/libcroco/libcroco-cr-utils.html
 share/gtk-doc/html/libcroco/libcroco-libcroco-config.html
 share/gtk-doc/html/libcroco/libcroco.devhelp2
+share/gtk-doc/html/libcroco/right-insensitive.png
 share/gtk-doc/html/libcroco/right.png
 share/gtk-doc/html/libcroco/style.css
+share/gtk-doc/html/libcroco/up-insensitive.png
 share/gtk-doc/html/libcroco/up.png
