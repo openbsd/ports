@@ -2,9 +2,10 @@
 
 COMMENT =		memory artifact extraction utility framework
 
-MODPY_EGG_VERSION =	2.4
-REVISION =		3
+MODPY_EGG_VERSION =	2.5
 DISTNAME =		volatility-${MODPY_EGG_VERSION}
+
+EXTRACT_SUFX =		.zip
 
 CATEGORIES =		security
 
@@ -23,6 +24,8 @@ MODPY_SETUPTOOLS = 	Yes
 RUN_DEPENDS =	security/distorm3 \
 		security/yara/python \
 		graphics/py-Pillow
+
+WRKDIST = 	${WRKDIR}/volatility-master
 
 NO_TEST =		Yes
 
