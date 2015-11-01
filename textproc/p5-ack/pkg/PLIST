@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/11/15 00:53:36 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/11/01 11:19:11 ajacoutot Exp $
 bin/ack
 ${P5SITE}/App/
 ${P5SITE}/App/Ack/
@@ -16,7 +16,10 @@ ${P5SITE}/App/Ack/Filter/FirstLineMatch.pm
 ${P5SITE}/App/Ack/Filter/Inverse.pm
 ${P5SITE}/App/Ack/Filter/Is.pm
 ${P5SITE}/App/Ack/Filter/IsGroup.pm
+${P5SITE}/App/Ack/Filter/IsPath.pm
+${P5SITE}/App/Ack/Filter/IsPathGroup.pm
 ${P5SITE}/App/Ack/Filter/Match.pm
+${P5SITE}/App/Ack/Filter/MatchGroup.pm
 ${P5SITE}/App/Ack/Resource/
 ${P5SITE}/App/Ack/Resource.pm
 ${P5SITE}/App/Ack/Resource/Basic.pm

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2014/10/22 14:24:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2015/11/01 11:19:11 ajacoutot Exp $
 
 COMMENT=		grep like tool, aimed at programmers
 
 MODULES=		cpan
-DISTNAME=		ack-2.12
-REVISION=		0
+V=			2.15_01
+DISTNAME=		ack-${V}
+PKGNAME=		p5-${DISTNAME:S/_/./}
 CPAN_AUTHOR=		PETDANCE
 CATEGORIES=		textproc
 
@@ -15,6 +16,8 @@ HOMEPAGE =		http://beyondgrep.com/
 PERMIT_PACKAGE_CDROM=   Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		devel/p5-File-Next>=1.1
+RUN_DEPENDS=		devel/p5-File-Next
+
+# IO::Pty for TEST_DEPENDS -- not ported yet
 
 .include <bsd.port.mk>
