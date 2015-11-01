@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/06/30 08:57:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/11/01 09:59:49 benoit Exp $
 ${P5ARCH}/
 ${P5ARCH}/Glib/
 ${P5ARCH}/Glib.pm
 ${P5ARCH}/Glib/BookmarkFile.pod
 ${P5ARCH}/Glib/Boxed.pod
+${P5ARCH}/Glib/Bytes.pod
 ${P5ARCH}/Glib/CodeGen.pm
 ${P5ARCH}/Glib/Error.pod
 ${P5ARCH}/Glib/Flags.pod
@@ -50,6 +51,7 @@ ${P5ARCH}/auto/Glib/Glib.so
 @man man/man3p/Glib.3p
 @man man/man3p/Glib::BookmarkFile.3p
 @man man/man3p/Glib::Boxed.3p
+@man man/man3p/Glib::Bytes.3p
 @man man/man3p/Glib::CodeGen.3p
 @man man/man3p/Glib::Error.3p
 @man man/man3p/Glib::Flags.3p
