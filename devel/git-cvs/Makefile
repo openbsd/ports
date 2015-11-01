@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/10/31 16:30:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/11/01 23:09:18 espie Exp $
 
 COMMENT =	import changesets from CVS into Git
 
 MODPY_EGG_VERSION = 0.1.0
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	git-cvs-${MODPY_EGG_VERSION}
 DISTFILES =	${DISTNAME}{${MODPY_EGG_VERSION}}.tar.gz
