@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/07/09 13:28:54 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2015/11/01 09:04:23 espie Exp $
 
 COMMENT =	powerful content management system
 MAINTAINER =	Marc Espie <espie@openbsd.org>
@@ -15,7 +15,7 @@ do-install:
 		# copy base distrib
 		cp -R ${WRKDIST}/* ${PREFIX}/${DRUPAL_ROOT}
 		# copy config file
-		${SUBST_CMD} -c ${FILESDIR}/drupal.conf \
+		${SUBST_CMD} -m 440 -c ${FILESDIR}/drupal.conf \
 			${PREFIX}/${DRUPAL_ROOT}/misc/drupal.conf
 		install -d -o www ${PREFIX}/${DRUPAL_ROOT}/files
 		chmod 640 ${PREFIX}/${DRUPAL_ROOT}/sites/default/default.settings.php
