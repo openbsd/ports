@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/11/02 08:37:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/11/02 10:47:41 nigel Exp $
 
 COMMENT=		grep like tool, aimed at programmers
 
@@ -18,6 +18,6 @@ PERMIT_PACKAGE_CDROM=   Yes
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/p5-File-Next
 
-# IO::Pty for TEST_DEPENDS -- not ported yet
-
+TEST_DEPENDS +=		devel/p5-IO-Tty \
+			shells/bash
 .include <bsd.port.mk>
