@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2015/10/26 21:43:01 kili Exp $
+# $OpenBSD: Makefile,v 1.126 2015/11/02 21:31:26 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -92,7 +92,7 @@ GHC_ITEMS = \
 	TEMPLATE_HASKELL	2.10.0.0	1ejK907jvoTHoZ6iZtHeyN \
 	TERMINFO		0.4.0.1		KvtqTNXWuWjKicEYaZ7qsx \
 	TIME			1.5.0.1		AXTdBF9VRQoBOqJT6qtmVH \
-	TRANSFORMERS		1.5.0.1		3eG64VdP2vzGjP6wJiCp5X \
+	TRANSFORMERS		0.4.2.0		3eG64VdP2vzGjP6wJiCp5X \
 	UNIX			2.7.1.0		A3WgcI5QiHK4PDo4jSYdwQ \
 	XHTML			3000.2.1	FxPylgBilld3tRCpn3X21N
 

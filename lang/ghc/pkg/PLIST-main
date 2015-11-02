@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2015/09/19 07:42:57 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2015/11/02 21:31:26 kili Exp $
 @conflict hs-xhtml-*
 @conflict hs-deepseq-<=1.1.0.2p0
 @conflict hs-binary-*
@@ -2222,9 +2222,9 @@ lib/ghc/trans_${TRANSFORMERS_KEY}/Data/Functor/Reverse.hi
 lib/ghc/trans_${TRANSFORMERS_KEY}/Data/Functor/Reverse.p_hi
 lib/ghc/trans_${TRANSFORMERS_KEY}/Data/Functor/Sum.hi
 lib/ghc/trans_${TRANSFORMERS_KEY}/Data/Functor/Sum.p_hi
-lib/ghc/trans_${TRANSFORMERS_KEY}/HStransformers-0.4.2.0-${TRANSFORMERS_KEY}.o
-lib/ghc/trans_${TRANSFORMERS_KEY}/libHStransformers-0.4.2.0-${TRANSFORMERS_KEY}.a
-lib/ghc/trans_${TRANSFORMERS_KEY}/libHStransformers-0.4.2.0-${TRANSFORMERS_KEY}_p.a
+lib/ghc/trans_${TRANSFORMERS_KEY}/HStransformers-${TRANSFORMERS_VER}-${TRANSFORMERS_KEY}.o
+lib/ghc/trans_${TRANSFORMERS_KEY}/libHStransformers-${TRANSFORMERS_VER}-${TRANSFORMERS_KEY}.a
+lib/ghc/trans_${TRANSFORMERS_KEY}/libHStransformers-${TRANSFORMERS_VER}-${TRANSFORMERS_KEY}_p.a
 lib/ghc/unix_${UNIX_KEY}/
 lib/ghc/unix_${UNIX_KEY}/HSunix-${UNIX_VER}-${UNIX_KEY}.o
 lib/ghc/unix_${UNIX_KEY}/System/
