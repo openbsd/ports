@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.21 2015/04/05 22:25:08 robert Exp $
---- installer/linux/server.cfg.orig	Sun Apr  5 17:45:06 2015
-+++ installer/linux/server.cfg	Sun Apr  5 17:47:09 2015
+$OpenBSD: patch-installer_linux_server_cfg,v 1.22 2015/11/02 11:06:34 robert Exp $
+--- installer/linux/server.cfg.orig	Wed Aug  5 17:28:49 2015
++++ installer/linux/server.cfg	Thu Aug 20 12:36:50 2015
 @@ -46,16 +46,16 @@ owner_auto_full_access = true
  system_email_address	= postmaster@localhost
  
@@ -30,8 +30,8 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.21 2015/04/05 22:25:08 robert Exp
  
  # Time (in seconds) to wait for a connection to the license server before 
  # terminating the request.
-@@ -131,7 +131,7 @@ mysql_database		= zarafa
- attachment_storage	= files 
+@@ -151,7 +151,7 @@ attachment_storage	= files 
+ attachment_files_fsync  = yes
  
  # When attachment_storage is 'files', use this path to store the files
 -attachment_path		= /var/lib/zarafa/attachments
@@ -39,7 +39,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.21 2015/04/05 22:25:08 robert Exp
  
  # Compression level for attachments when attachment_storage is 'files'.
  # Set compression level for attachments disabled=0, max=9
-@@ -147,13 +147,13 @@ server_ssl_enabled	= no
+@@ -167,13 +167,13 @@ server_ssl_enabled	= no
  server_ssl_port		= 237
  
  # Required Server certificate, contains the certificate and the private key parts
@@ -55,7 +55,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.21 2015/04/05 22:25:08 robert Exp
  
  # Path with CA certificates, e.g. /etc/ssl/certs
  server_ssl_ca_path	=
-@@ -168,7 +168,7 @@ server_ssl_ciphers = ALL:!LOW:!SSLv2:!EXP:!aNULL
+@@ -188,7 +188,7 @@ server_ssl_ciphers = ALL:!LOW:!SSLv2:!EXP:!aNULL
  server_ssl_prefer_server_ciphers = no
  
  # Path of SSL Public keys of clients
@@ -64,7 +64,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.21 2015/04/05 22:25:08 robert Exp
  
  ##############################################################
  # THREAD SETTINGS
-@@ -300,20 +300,20 @@ companyquota_warn      = 0
+@@ -320,20 +320,20 @@ companyquota_warn      = 0
  user_plugin		= db
  
  # configuration file of the user plugin, examples can be found in /usr/share/doc/zarafa/example-config
@@ -93,7 +93,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.21 2015/04/05 22:25:08 robert Exp
  
  # Set this option to 'yes' to skip the creation and deletion of new users
  # The action will be logged, so you can see if your changes to the plugin
-@@ -370,7 +370,7 @@ client_update_enabled = false
+@@ -390,7 +390,7 @@ client_update_enabled = false
  
  # Place the correct Zarafa Outlook Client in this directory for
  # Windows clients to download through the Zarafa server

@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: zarafa_server.rc,v 1.5 2011/03/08 13:37:11 ajacoutot Exp $
+# $OpenBSD: zarafa_server.rc,v 1.6 2015/11/02 11:06:34 robert Exp $
 
-daemon="${TRUEPREFIX}/bin/zarafa-server"
+daemon="${TRUEPREFIX}/sbin/zarafa-server"
 
 . /etc/rc.d/rc.subr
 

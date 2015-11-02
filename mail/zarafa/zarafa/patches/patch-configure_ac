@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure_ac,v 1.1 2015/11/02 11:06:34 robert Exp $
+--- configure.ac.orig	Thu Aug 20 13:06:09 2015
++++ configure.ac	Thu Aug 20 13:06:43 2015
+@@ -91,11 +91,6 @@ AC_SUBST([ZPHPCXXFLAGS])
+ # disable write-strings: too much complains about "" being 'cast' to char* (since const char* is not in the declarations) on g++-4.2 and higher
+ ZCPPFLAGS="$BUILDOS -DHAVE_CONFIG_H"
+ ZCXXFLAGS="-Wall -Wmissing-declarations -Wno-write-strings"
+-if ! test "$want_release" = "yes"; then
+-# when using -pedantic, -Wno-long-long is required
+-# only add -pedantic in non-release mode, since a header in php5 contains a , too much in an enum, which triggers a compile error.
+-  ZCXXFLAGS="$ZCXXFLAGS -pedantic -Wno-long-long"
+-fi
+ 
+ # programs that use files >2gb need 64bit file support
+ LFS_CFLAGS=`getconf LFS_CFLAGS`
+@@ -590,16 +585,6 @@ iconv_t i; i = iconv_open("", "");
+ 		  AC_MSG_ERROR([required library libiconv missing or unusable]) ]) ])
+ AC_SUBST(ICONV_LIBS)
+ LIBS=$LIBS_system
+-
+-AC_MSG_CHECKING([for crypt])
+-AC_LINK_IFELSE([ AC_LANG_SOURCE([int main() {
+-  char crypt();  crypt();
+-}]) ],
+-	[ AC_MSG_RESULT([yes]) ],
+-	[ AC_MSG_RESULT([no])
+-	  AC_CHECK_LIB([crypt], [crypt], [CRYPT_LIBS="-lcrypt"], AC_MSG_ERROR([required library libcrypt missing or unusable])) ])
+-LIBS=$LIBS_system
+-AC_SUBST(CRYPT_LIBS)
+ 
+ # Only specific links with uuid and dl, clients only with crypto and ssl for ssl connections
+ SSL_LIBS=

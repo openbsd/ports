@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_gateway_cfg,v 1.14 2015/04/05 22:25:08 robert Exp $
---- installer/linux/gateway.cfg.orig	Thu Mar  5 16:52:42 2015
-+++ installer/linux/gateway.cfg	Sun Apr  5 23:30:25 2015
+$OpenBSD: patch-installer_linux_gateway_cfg,v 1.15 2015/11/02 11:06:34 robert Exp $
+--- installer/linux/gateway.cfg.orig	Thu Aug 20 12:57:44 2015
++++ installer/linux/gateway.cfg	Thu Aug 20 12:58:37 2015
 @@ -14,16 +14,16 @@ server_hostname = 
  server_hostname_greeting = no
  
@@ -35,12 +35,12 @@ $OpenBSD: patch-installer_linux_gateway_cfg,v 1.14 2015/04/05 22:25:08 robert Ex
  
  # Verify client certificate
  ssl_verify_client	=	no
-@@ -94,7 +94,7 @@ ssl_ciphers = ALL:!LOW:!SSLv2:!EXP:!aNULL
- ssl_prefer_server_ciphers = no
+@@ -95,7 +95,7 @@ ssl_prefer_server_ciphers = no
  
  # Process model, using pthreads (thread) or processes (fork)
+ # Processes are potentially safer from a security point of view.
 -process_model = fork
 +process_model = thread
  
- ##############################################################
- # GATEWAY LOG SETTINGS
+ # For temporary files.
+ # consider mounting a `tmpfs' underneath this path (wherever you

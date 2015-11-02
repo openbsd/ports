@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_search_cfg,v 1.4 2015/04/05 22:25:08 robert Exp $
---- installer/linux/search.cfg.orig	Thu Mar  5 16:52:42 2015
-+++ installer/linux/search.cfg	Mon Apr  6 00:19:28 2015
+$OpenBSD: patch-installer_linux_search_cfg,v 1.5 2015/11/02 11:06:34 robert Exp $
+--- installer/linux/search.cfg.orig	Fri Sep 11 10:46:36 2015
++++ installer/linux/search.cfg	Thu Sep 24 16:35:35 2015
 @@ -2,19 +2,19 @@
  # INDEXED SEARCH SERVICE SETTINGS
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-installer_linux_search_cfg,v 1.4 2015/04/05 22:25:08 robert Exp 
  
  # create memory coredumps upon crash in the running_path directory
  coredump_enabled = no
-@@ -31,7 +31,7 @@ limit_results		=	0
+@@ -31,7 +31,7 @@ limit_results		=	1000
  server_socket   =   file:///var/run/zarafa
  
  # Login to the Zarafa server using this SSL Key

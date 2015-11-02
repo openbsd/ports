@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2015/11/02 11:06:34 robert Exp $
+--- Makefile.in.orig	Thu Aug 20 14:32:45 2015
++++ Makefile.in	Thu Aug 20 14:32:59 2015
+@@ -876,7 +876,7 @@ uninstall-am:
+ 
+ .PHONY: source-moved-check
+ source-moved-check:
+-	@${top_srcdir}/pwdcheck.sh "${abs_top_builddir}"
++	@${top_srcdir}/pwdcheck.sh "${abs_top_builddir}" || true
+ 
+ common/ecversion.h: versionheader.sh
+ 	sh ${top_srcdir}/versionheader.sh > common/ecversion.h

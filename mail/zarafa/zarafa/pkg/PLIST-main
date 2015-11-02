@@ -1,31 +1,17 @@
-@comment $OpenBSD: PLIST-main,v 1.50 2015/09/28 19:05:24 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.51 2015/11/02 11:06:34 robert Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @comment chdir(2) to running_path which is set to /var/empty in the cfg files
 @extraunexec rm -rf /var/db/zarafa/{0,1,2,3,4,5,6,7,8,9}
 @extraunexec rm -rf /var/db/zarafa/attachments
-@extraunexec rm -rf /var/db/zarafa/autorespond
 @extraunexec rm -rf /var/db/zarafa/dagent/plugins/*
 @extraunexec rm -rf /var/db/zarafa/spooler/plugins/*
 @extraunexec rm -rf /var/db/zarafa/client/*
 @extraunexec rm -rf /var/db/zarafa/index/*
 @extraunexec rm -rf /var/log/zarafa/*.log
-@bin bin/zarafa-admin
-@bin bin/zarafa-archiver
-bin/zarafa-autorespond
-@bin bin/zarafa-dagent
 @bin bin/zarafa-fsck
-@bin bin/zarafa-gateway
-@bin bin/zarafa-ical
-bin/zarafa-mailbox-permissions
-@bin bin/zarafa-monitor
-bin/zarafa-mr-accept
 @bin bin/zarafa-passwd
-bin/zarafa-search
-bin/zarafa-search-xapian-compact.py
-@bin bin/zarafa-server
 bin/zarafa-set-oof
-@bin bin/zarafa-spooler
 @bin bin/zarafa-stats
 include/icalmapi/
 include/icalmapi/ICalToMAPI.h
@@ -151,8 +137,10 @@ include/zarafa/MAPIErrors.h
 include/zarafa/MAPINotifSink.h
 include/zarafa/RecurrenceState.h
 include/zarafa/SSLUtil.h
+include/zarafa/StatsClient.h
 include/zarafa/SymmetricCrypt.h
 include/zarafa/TimeUtil.h
+include/zarafa/TmpPath.h
 include/zarafa/Trace.h
 include/zarafa/UnixUtil.h
 include/zarafa/Util.h
@@ -202,17 +190,14 @@ include/zarafa/utf8/checked.h
 include/zarafa/utf8/core.h
 include/zarafa/utf8/unchecked.h
 @comment lib/libarchiver-core.la
-@lib lib/libarchiver-core.so.${LIBarchiver-core_VERSION}
 @comment lib/libarchiver.la
-@lib lib/libarchiver.so.${LIBarchiver_VERSION}
 @comment lib/libcommon_mapi.la
-@lib lib/libcommon_mapi.so.${LIBcommon_mapi_VERSION}
 @comment lib/libcommon_service.la
-@lib lib/libcommon_service.so.${LIBcommon_service_VERSION}
 @comment lib/libcommon_ssl.la
-@lib lib/libcommon_ssl.so.${LIBcommon_ssl_VERSION}
 @comment lib/libcommon_util.la
-@lib lib/libcommon_util.so.${LIBcommon_util_VERSION}
+@comment lib/libzarafaclient.la
+@comment lib/libzarafacontacts.la
+include/zarafa/zcdefs.h
 @comment lib/libfreebusy.la
 @lib lib/libfreebusy.so.${LIBfreebusy_VERSION}
 @comment lib/libicalmapi.la
@@ -221,12 +206,26 @@ include/zarafa/utf8/unchecked.h
 @lib lib/libinetmapi.so.${LIBinetmapi_VERSION}
 @comment lib/libmapi.la
 @lib lib/libmapi.so.${LIBmapi_VERSION}
-@comment lib/libzarafaclient.la
-lib/libzarafaclient.so
-@comment lib/libzarafacontacts.la
-@lib lib/libzarafacontacts.so.${LIBzarafacontacts_VERSION}
+lib/libzarafa-archiver-core.la
+@lib lib/libzarafa-archiver-core.so.${LIBzarafa-archiver-core_VERSION}
+lib/libzarafa-archiver.la
+@lib lib/libzarafa-archiver.so.${LIBzarafa-archiver_VERSION}
+lib/libzarafa_server.la
+@lib lib/libzarafa_server.so.${LIBzarafa_server_VERSION}
+lib/libzarafa_soapclient.la
+@lib lib/libzarafa_soapclient.so.${LIBzarafa_soapclient_VERSION}
+lib/libzarafa_soapserver.la
+@lib lib/libzarafa_soapserver.so.${LIBzarafa_soapserver_VERSION}
 @comment lib/libzarafasync.la
 @lib lib/libzarafasync.so.${LIBzarafasync_VERSION}
+lib/libzcp_common_mapi.la
+@lib lib/libzcp_common_mapi.so.${LIBzcp_common_mapi_VERSION}
+lib/libzcp_common_service.la
+@lib lib/libzcp_common_service.so.${LIBzcp_common_service_VERSION}
+lib/libzcp_common_ssl.la
+@lib lib/libzcp_common_ssl.so.${LIBzcp_common_ssl_VERSION}
+lib/libzcp_common_util.la
+@lib lib/libzcp_common_util.so.${LIBzcp_common_util_VERSION}
 lib/pkgconfig/zarafa.pc
 lib/python${MODPY_VERSION}/site-packages/MAPI/
 lib/python${MODPY_VERSION}/site-packages/MAPI-1.0-py${MODPY_VERSION}.egg-info
@@ -305,24 +304,20 @@ lib/zarafa/
 lib/zarafa/dbplugin.so
 @comment lib/zarafa/ldapplugin.la
 lib/zarafa/ldapplugin.so
-@man man/man1/za-aclset.1
-@man man/man1/za-restore.1
-@man man/man1/zarafa-admin.1
-@man man/man1/zarafa-archiver.1
-@man man/man1/zarafa-autorespond.1
-@man man/man1/zarafa-dagent.1
+lib/zarafa/libarchiver-core.so
+lib/zarafa/libarchiver.so
+lib/zarafa/libcommon_mapi.so
+lib/zarafa/libcommon_service.so
+lib/zarafa/libcommon_ssl.so
+lib/zarafa/libcommon_util.so
+lib/zarafa/libzarafaclient.la
+lib/zarafa/libzarafaclient.so
+lib/zarafa/libzarafacontacts.la
+@lib lib/zarafa/libzarafacontacts.so.${LIBzarafacontacts_VERSION}
 @man man/man1/zarafa-fsck.1
-@man man/man1/zarafa-gateway.1
-@man man/man1/zarafa-ical.1
-@man man/man1/zarafa-mailbox-permissions.1
-@man man/man1/zarafa-monitor.1
 @man man/man1/zarafa-passwd.1
-@man man/man1/zarafa-search.1
-@man man/man1/zarafa-server.1
 @man man/man1/zarafa-set-oof.1
-@man man/man1/zarafa-spooler.1
 @man man/man1/zarafa-stats.1
-@man man/man1/zarafa.1
 @man man/man5/zarafa-archiver.cfg.5
 @man man/man5/zarafa-dagent.cfg.5
 @man man/man5/zarafa-gateway.cfg.5
@@ -333,6 +328,36 @@ lib/zarafa/ldapplugin.so
 @man man/man5/zarafa-server.cfg.5
 @man man/man5/zarafa-spooler.cfg.5
 @man man/man5/zarafa-unix.cfg.5
+@man man/man7/zarafa.7
+@man man/man8/za-aclset.8
+@man man/man8/za-restore.8
+@man man/man8/zarafa-admin.8
+@man man/man8/zarafa-archiver.8
+@man man/man8/zarafa-autorespond.8
+@man man/man8/zarafa-dagent.8
+@man man/man8/zarafa-gateway.8
+@man man/man8/zarafa-ical.8
+@man man/man8/zarafa-mailbox-permissions.8
+@man man/man8/zarafa-monitor.8
+@man man/man8/zarafa-mr-accept.8
+@man man/man8/zarafa-mr-process.8
+@man man/man8/zarafa-search.8
+@man man/man8/zarafa-server.8
+@man man/man8/zarafa-spooler.8
+@bin sbin/zarafa-admin
+@bin sbin/zarafa-archiver
+sbin/zarafa-autorespond
+@bin sbin/zarafa-dagent
+@bin sbin/zarafa-gateway
+@bin sbin/zarafa-ical
+sbin/zarafa-mailbox-permissions
+@bin sbin/zarafa-monitor
+sbin/zarafa-mr-accept
+sbin/zarafa-mr-process
+sbin/zarafa-search
+sbin/zarafa-search-xapian-compact.py
+@bin sbin/zarafa-server
+@bin sbin/zarafa-spooler
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/zarafa/
 share/doc/zarafa/AGPL-3

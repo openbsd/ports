@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_platform_h,v 1.10 2015/04/05 22:25:08 robert Exp $
---- common/platform.h.orig	Thu Mar  5 16:54:04 2015
-+++ common/platform.h	Fri Apr  3 23:11:10 2015
-@@ -65,7 +65,12 @@
+$OpenBSD: patch-common_platform_h,v 1.11 2015/11/02 11:06:34 robert Exp $
+--- common/platform.h.orig	Wed Aug  5 17:30:48 2015
++++ common/platform.h	Thu Aug 20 12:36:50 2015
+@@ -64,7 +64,12 @@
  
    // We have to include this now in case select.h is included too soon.
    // Increase our maximum amount of file descriptors to 8192

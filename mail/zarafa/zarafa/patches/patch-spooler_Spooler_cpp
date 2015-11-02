@@ -1,7 +1,7 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.18 2015/04/06 09:01:45 robert Exp $
---- spooler/Spooler.cpp.orig	Thu Mar  5 16:54:04 2015
-+++ spooler/Spooler.cpp	Mon Apr  6 11:00:48 2015
-@@ -1145,8 +1145,8 @@ int main(int argc, char *argv[]) {
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.19 2015/11/02 11:06:34 robert Exp $
+--- spooler/Spooler.cpp.orig	Fri Sep 11 10:47:40 2015
++++ spooler/Spooler.cpp	Thu Sep 24 16:56:51 2015
+@@ -1143,8 +1143,8 @@ int main(int argc, char *argv[]) {
  		{ "archive_on_send", "no", CONFIGSETTING_RELOADABLE },
  		{ "enable_dsn", "yes", CONFIGSETTING_RELOADABLE },
          { "plugin_enabled", "yes" },
@@ -9,18 +9,18 @@ $OpenBSD: patch-spooler_Spooler_cpp,v 1.18 2015/04/06 09:01:45 robert Exp $
 -        { "plugin_manager_path", "/usr/share/zarafa-spooler/python" },
 +        { "plugin_path", "/var/db/zarafa/spooler/plugins" },
 +        { "plugin_manager_path", "/usr/local/share/zarafa-spooler/python" },
- 		{ NULL, NULL },
- 	};
-     // SIGSEGV backtrace support
-@@ -1259,6 +1259,7 @@ int main(int argc, char *argv[]) {
+ 		{ "z_statsd_stats", "/var/run/zarafa-zstatsd" },
+ 		{ "tmp_path", "/tmp" },
+ 		{ "tmp_path", "/tmp" },
+@@ -1262,6 +1262,7 @@ int main(int argc, char *argv[]) {
  
  	// detect linuxthreads, which is too broken to correctly run the spooler
  	if (!bForked) {
 +#if defined(__linux__)
- 		char buffer[256];
+ 		char buffer[256] = { 0 };
  		confstr(_CS_GNU_LIBPTHREAD_VERSION, buffer, sizeof(buffer));
- 		if (strncmp(buffer, "linuxthreads", strlen("linuxthreads")) == 0) {
-@@ -1267,6 +1268,10 @@ int main(int argc, char *argv[]) {
+ 
+@@ -1271,6 +1272,10 @@ int main(int argc, char *argv[]) {
  			g_lpLogger->Log(EC_LOGLEVEL_WARNING, "WARNING: your system is running with outdated linuxthreads.");
  			g_lpLogger->Log(EC_LOGLEVEL_WARNING, "WARNING: the zarafa-spooler will only be able to send one message at a time.");
  		}

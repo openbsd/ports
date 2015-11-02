@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_manual_xml,v 1.39 2015/04/05 22:25:08 robert Exp $
---- doc/manual.xml.orig	Thu Mar  5 16:52:33 2015
-+++ doc/manual.xml	Fri Apr  3 23:11:10 2015
+$OpenBSD: patch-doc_manual_xml,v 1.40 2015/11/02 11:06:34 robert Exp $
+--- doc/manual.xml.orig	Thu Aug 20 12:54:02 2015
++++ doc/manual.xml	Thu Aug 20 12:57:20 2015
 @@ -876,9 +876,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
@@ -12,10 +12,11 @@ $OpenBSD: patch-doc_manual_xml,v 1.39 2015/04/05 22:25:08 robert Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-dagent.pid</replaceable>
-@@ -1416,11 +1414,6 @@
+@@ -1510,12 +1508,6 @@
+ 		  <option>-c</option>
  		  <replaceable>/path/to/server.cfg</replaceable>
  		</para>
- 
+-
 -		<para>You may also use the init.d scripts:</para>
 -		<para><command>/etc/init.d/zarafa-server</command>
 -		[<replaceable>start</replaceable>|
@@ -24,17 +25,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.39 2015/04/05 22:25:08 robert Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -1529,6 +1522,9 @@
- 		located in /usr/share/zarafa, called ssl-certificate.sh. Enter
- 		the following commands to create a certificate for the Zarafa
- 		server.
-+
-+		!!! WARNING: THE OpenBSD PACKAGE DOES NOT PROVIDE THIS SCRIPT,
-+		PLEASE REFER TO openssl(1) FOR MANUALLY CREATING CA/CERTS !!!
- 		</para>
- 		<para>
- 		  <command>
-@@ -3713,9 +3709,7 @@
+@@ -3844,9 +3836,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -45,7 +36,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.39 2015/04/05 22:25:08 robert Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-server.pid</replaceable>
-@@ -6931,13 +6925,8 @@
+@@ -7084,13 +7074,8 @@
  		</para>
  
  		<para>The spooler process will keep running and watching the
@@ -61,7 +52,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.39 2015/04/05 22:25:08 robert Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -7118,9 +7107,7 @@
+@@ -7271,9 +7256,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -72,7 +63,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.39 2015/04/05 22:25:08 robert Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-spooler.pid</replaceable>
-@@ -7626,13 +7613,7 @@
+@@ -7781,13 +7764,8 @@
  
  		<para><command>zarafa-gateway</command></para>
  
@@ -83,11 +74,23 @@ $OpenBSD: patch-doc_manual_xml,v 1.39 2015/04/05 22:25:08 robert Exp $
 -		[<replaceable>start</replaceable>|
 -		<replaceable>stop</replaceable>|
 -		<replaceable>restart</replaceable>]</para>
-+		<para>The gateway process will keep running.</para>
++		<para>The gateway process will keep running.
++		</para>
  	  </refsection>
  
  	  <refsection>
-@@ -8342,14 +8323,8 @@
+@@ -8026,9 +8004,7 @@
+ 		  <varlistentry>
+ 			<term><option>pid_file</option></term>
+ 			<listitem>
+-			  <para>Write the process ID number to this file. This is
+-			  used by the init.d script to correctly stop/restart the
+-			  service.
++			  <para>Write the process ID number to this file.
+ 			  </para>
+ 			  <para>Default:
+ 			  <replaceable>/var/run/zarafa-gateway.pid</replaceable>
+@@ -8520,14 +8496,8 @@
  
  		<para>The monitor checks user mailbox sizes. The monitor sends
  		a quota email when the warning quota limit is reached. When
@@ -103,7 +106,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.39 2015/04/05 22:25:08 robert Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -8501,9 +8476,7 @@
+@@ -8679,9 +8649,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -114,7 +117,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.39 2015/04/05 22:25:08 robert Exp $
  			  </para>
  			  <para>Default value: /var/run/zarafa-monitor.pid
  			  </para>
-@@ -9810,13 +9783,7 @@
+@@ -9990,13 +9958,8 @@
  
  		<para><command>zarafa-ical</command></para>
  
@@ -125,11 +128,12 @@ $OpenBSD: patch-doc_manual_xml,v 1.39 2015/04/05 22:25:08 robert Exp $
 -		[<replaceable>start</replaceable>|
 -		<replaceable>stop</replaceable>|
 -		<replaceable>restart</replaceable>]</para>
-+		<para>The iCal/CalDAV gateway process will keep running.</para>
++		<para>The iCal/CalDAV gateway process will keep running.
++		</para>
  	  </refsection>
  
  	  <refsection>
-@@ -9999,9 +9966,7 @@
+@@ -10179,9 +10142,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -140,7 +144,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.39 2015/04/05 22:25:08 robert Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-ical.pid</replaceable>
-@@ -10350,13 +10315,7 @@
+@@ -10553,13 +10514,8 @@
  
  		<para><command>zarafa-licensed</command></para>
  
@@ -151,11 +155,12 @@ $OpenBSD: patch-doc_manual_xml,v 1.39 2015/04/05 22:25:08 robert Exp $
 -		[<replaceable>start</replaceable>|
 -		<replaceable>stop</replaceable>|
 -		<replaceable>restart</replaceable>]</para>
-+		<para>The zarafa-licensed process will keep running.</para>
++		<para>The zarafa-licensed process will keep running.
++		</para>
  	  </refsection>
  
  	  <refsection>
-@@ -10526,9 +10485,7 @@
+@@ -10729,9 +10685,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -166,8 +171,8 @@ $OpenBSD: patch-doc_manual_xml,v 1.39 2015/04/05 22:25:08 robert Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-licensed.pid</replaceable>
-@@ -11339,13 +11296,6 @@
- 		  <option>-c</option>
+@@ -11538,13 +11492,6 @@
+ 		  <option>-c</option>&nbsp;
  		  <replaceable>/path/to/search.cfg</replaceable>
  		</para>
 -
@@ -180,7 +185,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.39 2015/04/05 22:25:08 robert Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -11476,9 +11426,7 @@
+@@ -11674,9 +11621,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -191,3 +196,30 @@ $OpenBSD: patch-doc_manual_xml,v 1.39 2015/04/05 22:25:08 robert Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-search.pid</replaceable>
+@@ -13778,13 +13723,8 @@
+ 
+ 		<para><command>zarafa-ws</command></para>
+ 
+-		<para>The process will keep running. You may also use
+-		the init.d scripts:</para>
+-
+-		<para><command>/etc/init.d/zarafa-ws</command>
+-		[<replaceable>start</replaceable>|
+-		<replaceable>stop</replaceable>|
+-		<replaceable>restart</replaceable>]</para>
++		<para>The process will keep running.
++		</para>
+ 	  </refsection>
+ 
+ 	  <refsection>
+@@ -13993,9 +13933,7 @@
+ 		  <varlistentry>
+ 			<term><option>pid_file</option></term>
+ 			<listitem>
+-			  <para>Write the process ID number to this file. This is
+-			  used by the init.d script to correctly stop/restart the
+-			  service.
++			  <para>Write the process ID number to this file.
+ 			  </para>
+ 			  <para>Default:
+ 			  <replaceable>/var/run/zarafa-ws.pid</replaceable>

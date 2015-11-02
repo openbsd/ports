@@ -13,7 +13,7 @@ define(`LOCAL_MAILER_PATH',
 
 	ifdef(`ZARAFA_MAILER_PATH',
 		ZARAFA_MAILER_PATH,
-		`${TRUEPREFIX}/bin/zarafa-dagent'),
+		`${TRUEPREFIX}/sbin/zarafa-dagent'),
 	_ARG_))
 define(`LOCAL_MAILER_ARGS',
 	ifelse(len(X`'_ARG2_), `1', `zarafa-dagent $u', _ARG2_))

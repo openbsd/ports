@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_spooler_cfg,v 1.9 2015/04/05 22:25:08 robert Exp $
---- installer/linux/spooler.cfg.orig	Sun Apr  5 17:47:15 2015
-+++ installer/linux/spooler.cfg	Sun Apr  5 17:48:05 2015
+$OpenBSD: patch-installer_linux_spooler_cfg,v 1.10 2015/11/02 11:06:34 robert Exp $
+--- installer/linux/spooler.cfg.orig	Wed Aug  5 17:28:49 2015
++++ installer/linux/spooler.cfg	Thu Aug 20 12:36:50 2015
 @@ -11,16 +11,16 @@ smtp_port = 25
  server_socket	=	file:///var/run/zarafa
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-installer_linux_spooler_cfg,v 1.9 2015/04/05 22:25:08 robert Exp
  
  # create memory coredumps upon crash in the running_path directory
  coredump_enabled = no
-@@ -48,7 +48,7 @@ log_timestamp	=	1
+@@ -61,7 +61,7 @@ log_buffer_size  = 4096
  #       to use this type of login method
  
  # Login to the Zarafa server using this SSL Key
@@ -30,7 +30,7 @@ $OpenBSD: patch-installer_linux_spooler_cfg,v 1.9 2015/04/05 22:25:08 robert Exp
  
  # The password of the SSL Key
  #sslkey_pass = replace-with-server-cert-password
-@@ -143,7 +143,7 @@ archive_on_send = no
+@@ -156,7 +156,7 @@ archive_on_send = no
  plugin_enabled = yes
  
  # Path to the spooler plugin manager
@@ -39,7 +39,7 @@ $OpenBSD: patch-installer_linux_spooler_cfg,v 1.9 2015/04/05 22:25:08 robert Exp
  
  # Path to the activated spooler plugins.
  #   This folder contains symlinks to the zarafa plugins and custom scripts. The plugins are
-@@ -152,4 +152,4 @@ plugin_manager_path = /usr/share/zarafa-spooler/python
+@@ -165,4 +165,4 @@ plugin_manager_path = /usr/share/zarafa-spooler/python
  #
  # Example:
  #  $ ln -s /usr/share/zarafa-spooler/python/plugins/disclaimer.py /var/lib/zarafa/spooler/plugins/disclaimer.py

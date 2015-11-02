@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2015/09/28 19:05:24 robert Exp $
+# $OpenBSD: Makefile,v 1.188 2015/11/02 11:06:34 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -6,26 +6,24 @@ COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
-REVISION-web=	1
-REVISION-main=	3
 
 CATEGORIES=	mail www productivity
 
-SHARED_LIBS +=  common_util          2.0      # .0.0
-SHARED_LIBS +=  common_mapi          2.0      # .0.0
-SHARED_LIBS +=  common_ssl           2.0      # .0.0
-SHARED_LIBS +=  common_service       2.0      # .0.0
-SHARED_LIBS +=  freebusy             2.0      # .0.0
-SHARED_LIBS +=  mapi                 2.0      # .0.0
-SHARED_LIBS +=  zarafasync           2.0      # .0.0
-SHARED_LIBS +=  zarafaclient         2.0      # .0.0
-SHARED_LIBS +=  zarafacontacts       0.0      # .0.0
-SHARED_LIBS +=  icalmapi             2.0      # .1.0
-SHARED_LIBS +=  inetmapi             2.0      # .1.0
-SHARED_LIBS +=  archiver             1.0      # .0.0
-SHARED_LIBS +=  archiver-core        0.0      # .0.0
-SHARED_LIBS +=  mapicalendar         0.0      # .0.0
-SHARED_LIBS +=  mapitimezone         0.0      # .0.0
+SHARED_LIBS +=  freebusy             2.0 # .0.0
+SHARED_LIBS +=  mapi                 2.0 # .0.0
+SHARED_LIBS +=  zarafasync           2.0 # .0.0
+SHARED_LIBS +=  zarafacontacts       0.0 # .0.0
+SHARED_LIBS +=  icalmapi             2.0 # .1.0
+SHARED_LIBS +=  inetmapi             2.0 # .1.0
+SHARED_LIBS +=  zarafa-archiver-core 0.0 # 0.0
+SHARED_LIBS +=  zarafa-archiver      0.0 # 0.0
+SHARED_LIBS +=  zarafa_server        0.0 # 0.0
+SHARED_LIBS +=  zarafa_soapclient    0.0 # 0.0
+SHARED_LIBS +=  zarafa_soapserver    0.0 # 0.0
+SHARED_LIBS +=  zcp_common_mapi      0.0 # 0.0
+SHARED_LIBS +=  zcp_common_service   0.0 # 0.0
+SHARED_LIBS +=  zcp_common_ssl       0.0 # 0.0
+SHARED_LIBS +=  zcp_common_util      0.0 # 0.0
 
 MULTI_PACKAGES=	-main -web
 
@@ -46,18 +44,19 @@ BUILD_DEPENDS=\
 BUILD_DEPENDS += net/curl
 
 WANTLIB += ${MODGETTEXT_WANTLIB}
-WANTLIB += m pthread stdc++ z vmime execinfo icudata icui18n icuuc
+WANTLIB += m pthread z vmime execinfo icudata icui18n icuuc
 WANTLIB += boost_filesystem-mt boost_system-mt lzma
-WANTLIB += ffi gmp gnutls hogweed nettle p11-kit tasn1
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += c crypto ical icalss lber-2.4
 WANTLIB-main += mysqlclient ncurses sasl2 ssl util xml2
 WANTLIB-main += ldap_r-2.4 gsoapssl++
+WANTLIB-main += ffi gmp gnutls hogweed nettle p11-kit stdc++ tasn1
 
 RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
 		${MODPY_RUN_DEPENDS} \
 		databases/xapian-bindings,-python \
+		devel/libmagic \
 		lang/python/2.7,-bsddb \
 		textproc/catdoc
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
@@ -72,8 +71,10 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		textproc/libxml
 
 WANTLIB-web += ${WANTLIB}
-WANTLIB-web += common_util freebusy ical icalmapi icalss inetmapi mapi
-WANTLIB-web += common_mapi xml2
+WANTLIB-web += freebusy ical icalmapi icalss inetmapi mapi
+WANTLIB-web += xml2
+WANTLIB-web += ffi gmp gnutls hogweed nettle p11-kit stdc++ tasn1
+WANTLIB-web += zcp_common_mapi zcp_common_util
 
 LIB_DEPENDS-web= ${BASE_PKGPATH}>=${V}
 RUN_DEPENDS-web= ${MODPHP_RUN_DEPENDS} \
@@ -96,7 +97,9 @@ INSTDIR=	${PREFIX-web}/zarafa-webaccess
 
 SUBST_VARS=	INSTDIR PREFIX-web
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/zarafa" \
 		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo \
@@ -212,14 +215,14 @@ post-install:
 	# part of zarafa-licensed, Zarafa Enterprise / Hosted editions
 	# (i.e. commercial edition, linux bin only)
 	cd ${PREFIX} && rm \
-		man/man1/zarafa-licensed.1 \
+		man/man8/zarafa-licensed.8 \
 		man/man5/zarafa-licensed.cfg.5 \
-		man/man1/zarafa-restore.1 \
-		man/man1/zarafa-backup.1 \
-		man/man1/zarafa-msr-verify.1 \
-		man/man1/zarafa-report.1 \
-		man/man1/za-aclsync.1 \
-		man/man1/zarafa-msr.1 \
+		man/man8/zarafa-restore.8 \
+		man/man8/zarafa-backup.8 \
+		man/man8/zarafa-msr-verify.8 \
+		man/man8/zarafa-report.8 \
+		man/man8/za-aclsync.8 \
+		man/man8/zarafa-msr.8 \
 		man/man5/zarafa-ldapms.cfg.5 \
 		man/man5/zarafa-msr.cfg.5 \
 		man/man5/zarafa-backup.cfg.5
@@ -230,12 +233,11 @@ post-install:
 	rmdir ${WRKINST}/var/lib/
 
 	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' \
-		${PREFIX}/bin/zarafa-search \
-		${PREFIX}/bin/zarafa-search-xapian-compact.py \
+		${PREFIX}/sbin/zarafa-search \
+		${PREFIX}/sbin/zarafa-search-xapian-compact.py \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/zarafa_search/__init__.py \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/zarafa_search/plaintext.py \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/zarafa/daemon/version/version_info.py
-
 
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/zarafa-dagent/python \

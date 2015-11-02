@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: zarafa_gateway.rc,v 1.4 2010/12/27 14:50:23 ajacoutot Exp $
+# $OpenBSD: zarafa_gateway.rc,v 1.5 2015/11/02 11:06:34 robert Exp $
 
-daemon="${TRUEPREFIX}/bin/zarafa-gateway"
+daemon="${TRUEPREFIX}/sbin/zarafa-gateway"
 
 . /etc/rc.d/rc.subr
 

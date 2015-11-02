@@ -1,10 +1,7 @@
-$OpenBSD: patch-common_mapi_ptr_mapi_object_ptr_h,v 1.8 2015/04/05 22:25:08 robert Exp $
-
-On OpenBSD, _P and _U are defined in ctype.h.
-
---- common/mapi_ptr/mapi_object_ptr.h.orig	Thu Mar  5 16:54:04 2015
-+++ common/mapi_ptr/mapi_object_ptr.h	Fri Apr  3 23:11:10 2015
-@@ -129,13 +129,13 @@ class mapi_object_ptr (public)
+$OpenBSD: patch-m4lcommon_mapi_ptr_mapi_object_ptr_h,v 1.1 2015/11/02 11:06:34 robert Exp $
+--- m4lcommon/mapi_ptr/mapi_object_ptr.h.orig	Wed Aug  5 17:30:49 2015
++++ m4lcommon/mapi_ptr/mapi_object_ptr.h	Thu Aug 20 13:24:12 2015
+@@ -127,13 +127,13 @@ class mapi_object_ptr _final { (public)
  		std::swap(m_lpObject, other.m_lpObject);
  	}
  	
@@ -22,7 +19,7 @@ On OpenBSD, _P and _U are defined in ctype.h.
  			if (hr == hrSuccess)
  				refResult.reset(lpNewObject, false);
  
-@@ -157,7 +157,7 @@ class mapi_object_ptr (public)
+@@ -155,7 +155,7 @@ class mapi_object_ptr _final { (public)
  				if (HrGetOneProp(m_lpObject, PR_EC_OBJECT, &ptrPropValue) != hrSuccess)
  					goto exit;	// hr is still MAPI_E_INTERFACE_NOT_SUPPORTED
  
@@ -31,7 +28,7 @@ On OpenBSD, _P and _U are defined in ctype.h.
  				if (hr == hrSuccess)
  					refResult.reset(lpNewObject, false);
  			}
-@@ -183,9 +183,9 @@ class mapi_object_ptr (public)
+@@ -181,9 +181,9 @@ class mapi_object_ptr _final { (public)
  		return m_lpObject;
  	}
  

@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: zarafa_spooler.rc,v 1.6 2011/07/01 23:23:02 robert Exp $
+# $OpenBSD: zarafa_spooler.rc,v 1.7 2015/11/02 11:06:34 robert Exp $
 
-daemon="${TRUEPREFIX}/bin/zarafa-spooler"
+daemon="${TRUEPREFIX}/sbin/zarafa-spooler"
 
 . /etc/rc.d/rc.subr
 

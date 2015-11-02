@@ -1,0 +1,24 @@
+$OpenBSD: patch-common_platform_cpp,v 1.1 2015/11/02 11:06:34 robert Exp $
+--- common/platform.cpp.orig	Thu Aug 20 13:21:01 2015
++++ common/platform.cpp	Thu Aug 20 13:23:04 2015
+@@ -513,10 +513,12 @@ bool force_buffers_to_disk(const int fd)
+ 
+ void my_readahead(const int fd)
+ {
++#ifndef __OpenBSD__
+ 	struct stat st;
+ 
+ 	if (fstat(fd, &st) == 0)
+ 		(void)readahead(fd, 0, st.st_size);
++#endif
+ }
+ 
+ void give_filesize_hint(const int fd, const off_t len)
+@@ -525,5 +527,7 @@ void give_filesize_hint(const int fd, const off_t len)
+ 	// kernel can now look for the best disk allocation
+ 	// pattern as it knows how much date is going to be
+ 	// inserted
++#ifndef __OpenBSD__
+ 	posix_fallocate(fd, 0, len);
++#endif
+ }

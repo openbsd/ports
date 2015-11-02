@@ -1,12 +1,12 @@
-$OpenBSD: patch-provider_contacts_Makefile_in,v 1.9 2015/04/05 22:25:08 robert Exp $
---- provider/contacts/Makefile.in.orig	Thu Mar  5 16:52:52 2015
-+++ provider/contacts/Makefile.in	Fri Apr  3 23:11:10 2015
-@@ -375,7 +375,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} $(DEBUGFLAGS)	\
+$OpenBSD: patch-provider_contacts_Makefile_in,v 1.10 2015/11/02 11:06:34 robert Exp $
+--- provider/contacts/Makefile.in.orig	Wed Aug  5 17:29:57 2015
++++ provider/contacts/Makefile.in	Thu Aug 20 12:36:50 2015
+@@ -388,7 +388,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} $(DEBUGFLAGS)	\
  	-I${top_srcdir}/mapi4linux/include	\
- 	-I${top_srcdir}/common
+ 	-I${top_srcdir}/common -I${top_srcdir}/m4lcommon
  
 -libzarafacontacts_la_LDFLAGS = ${AM_LDFLAGS} -avoid-version -module
 +libzarafacontacts_la_LDFLAGS = ${AM_LDFLAGS} -module
  libzarafacontacts_la_LIBADD = \
- 	${top_builddir}/common/libcommon_util.la			\
- 	${top_builddir}/common/libcommon_mapi.la			\
+ 	${top_builddir}/common/libzcp_common_util.la \
+ 	${top_builddir}/common/libzcp_common_mapi.la \

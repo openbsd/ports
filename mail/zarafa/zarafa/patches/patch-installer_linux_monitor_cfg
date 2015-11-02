@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_monitor_cfg,v 1.6 2015/04/05 22:25:08 robert Exp $
---- installer/linux/monitor.cfg.orig	Sun Apr  5 17:42:38 2015
-+++ installer/linux/monitor.cfg	Sun Apr  5 17:43:45 2015
+$OpenBSD: patch-installer_linux_monitor_cfg,v 1.7 2015/11/02 11:06:34 robert Exp $
+--- installer/linux/monitor.cfg.orig	Wed Aug  5 17:28:49 2015
++++ installer/linux/monitor.cfg	Thu Aug 20 12:36:50 2015
 @@ -8,16 +8,16 @@ server_socket	=	file:///var/run/zarafa
  servers =
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-installer_linux_monitor_cfg,v 1.6 2015/04/05 22:25:08 robert Exp
  
  ##############################################################
  # ZARAFA MONITOR LOG SETTINGS
-@@ -41,7 +41,7 @@ log_timestamp	=	1
+@@ -49,7 +49,7 @@ log_buffer_size  = 4096
  #       to use this type of login method
  
  # Login to the Zarafa server using this SSL Key
@@ -30,7 +30,7 @@ $OpenBSD: patch-installer_linux_monitor_cfg,v 1.6 2015/04/05 22:25:08 robert Exp
  
  # The password of the SSL Key
  #sslkey_pass = replace-with-monitor-cert-password
-@@ -60,8 +60,8 @@ mailquota_resend_interval = 1
+@@ -68,8 +68,8 @@ mailquota_resend_interval = 1
  
  # Template to be used for quota emails which are send to the user
  # when the various user quota levels have been exceeded.

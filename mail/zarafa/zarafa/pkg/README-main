@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.23 2015/01/31 10:01:54 ajacoutot Exp $
+$OpenBSD: README-main,v 1.24 2015/11/02 11:06:34 robert Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -37,10 +37,10 @@ A MySQL datatabase access needs to be configured in
 After zarafa-server was started for the first time
 --------------------------------------------------
 Creating the public store.
-    # ${TRUEPREFIX}/bin/zarafa-admin -s
+    # ${TRUEPREFIX}/sbin/zarafa-admin -s
 
 Adding an admin user -- see zarafa-admin(1).
-    # ${TRUEPREFIX}/bin/zarafa-admin -c zadmin -p secret \
+    # ${TRUEPREFIX}/sbin/zarafa-admin -c zadmin -p secret \
         -e zarafa.admin@domain.tld -f "John Doe" -a 2
 
 Mail delivery agent configuration
@@ -51,7 +51,7 @@ See the following URL for other MTA integration:
 
 Alternatively add the following .forward file under the user(s) home
 directory that will use Zarafa:
-"|${TRUEPREFIX}/bin/zarafa-dagent <username>"
+"|${TRUEPREFIX}/sbin/zarafa-dagent <username>"
  
 You can automate this step by copying
     ${TRUEPREFIX}/share/examples/zarafa/createuser.dotforward

@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_ical_cfg,v 1.4 2015/04/05 22:25:08 robert Exp $
---- installer/linux/ical.cfg.orig	Thu Mar  5 16:52:42 2015
-+++ installer/linux/ical.cfg	Sun Apr  5 23:30:17 2015
+$OpenBSD: patch-installer_linux_ical_cfg,v 1.5 2015/11/02 11:06:34 robert Exp $
+--- installer/linux/ical.cfg.orig	Wed Aug  5 17:28:49 2015
++++ installer/linux/ical.cfg	Thu Aug 20 12:36:50 2015
 @@ -2,16 +2,16 @@
  # ICAL SETTINGS
  
@@ -31,7 +31,7 @@ $OpenBSD: patch-installer_linux_ical_cfg,v 1.4 2015/04/05 22:25:08 robert Exp $
  
  ##############################################################
  # ICAL LOG SETTINGS
-@@ -54,10 +54,10 @@ log_timestamp = 1
+@@ -62,10 +62,10 @@ log_buffer_size  = 4096
  # ICAL SSL SETTINGS FOR INCOMING CONNECTIONS
  
  # File with RSA key for SSL
