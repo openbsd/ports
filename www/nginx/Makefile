@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.83 2015/09/22 16:50:02 robert Exp $
+# $OpenBSD: Makefile,v 1.84 2015/11/02 08:19:36 robert Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
-VERSION=	1.9.5
+VERSION=	1.9.6
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -73,7 +73,7 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--without-mail_smtp_module
 
 DISTFILES+=		${DISTNAME}${EXTRACT_SUFX}
-PATCHFILES+=		nginx_chroot-20140823.patch:2
+PATCHFILES+=		nginx_chroot-20151002.patch:2
 PATCH_DIST_STRIP=	-p1
 
 LUAV=			0.9.12
