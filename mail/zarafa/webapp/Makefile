@@ -1,40 +1,31 @@
-# $OpenBSD: Makefile,v 1.17 2015/05/08 09:08:44 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2015/11/02 10:59:53 robert Exp $
 
 COMMENT=	next generation web interface for Zarafa
 
-WAPP_BUILD=	48619
-WAPP_VERSION=	2.0.2
+WAPP_BUILD=	51748
+WAPP_VERSION=	2.1.0
 EPOCH=		0
 
 PLUGINS_WITH_DEFCONF= \
 		browsercompatibility \
 		contactfax \
 		extbox \
-		facebook \
-		feedback \
 		gmaps \
 		pdfbox \
 		pimfolder \
-		spreed \
-		statslogging \
-		sugarcrm \
 		titlecounter \
 		webappmanual \
 		webodf \
-		xmpp \
-		zperformance
+		xmpp
 
 PLUGINS=	${PLUGINS_WITH_DEFCONF} \
 		clockwidget \
-		facebookwidget \
 		folderwidgets \
 		lang \
 		oauthlib \
-		quickitems \
-		shellgame \
-		twidget
+		quickitems
 
-RPMVER=		116.1
+RPMVER=		419.1
 PKGNAME=	zarafa-webapp-${WAPP_VERSION}
 
 EXTRACT_SUFX=	# empty
@@ -81,12 +72,14 @@ pre-configure:
 
 do-install:
 	cp -Rp ${WRKSRC}/usr/share/zarafa-webapp ${PREFIX}
+	rm ${INSTDIR}/config.php
 	${SUBST_CMD} -m 0644 -c ${FILESDIR}/zarafa-webapp.conf \
 		${INSTDIR}/zarafa-webapp.conf.dist
 	cat ${WRKSRC}/etc/zarafa/webapp/config.php > \
 		${INSTDIR}/config.php.dist
 
 .for _c in ${PLUGINS_WITH_DEFCONF}
+	rm ${INSTDIR}/plugins/${_c}/config.php
 	cat ${WRKSRC}/etc/zarafa/webapp/config-${_c}.php > \
 		${INSTDIR}/plugins/${_c}/config.php.dist
 .endfor
