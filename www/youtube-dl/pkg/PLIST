@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.87 2015/10/24 11:08:13 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.88 2015/11/02 12:01:03 pirofti Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -173,6 +173,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cloudy.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cloudy.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clubic.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clubic.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clyp.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clyp.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cmt.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cmt.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cnet.py
