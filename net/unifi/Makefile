@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2015/09/21 10:22:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2015/11/02 12:26:31 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (AP/routing/switching/voip)
 
+VERSION=	4.7.6-sp783omb
+
+V=		${VERSION:C/-.*//}
 DISTFILES=	unifi-$V{UniFi.unix}.zip unifi_sh_api-$V{unifi_sh_api}
 EXTRACT_ONLY=	unifi-$V.zip
-V=		4.7.4
 PKGNAME=	unifi-$V
 
 CATEGORIES=	net
@@ -18,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	http://www.ubnt.com/eula/
 PERMIT_PACKAGE_FTP=	http://www.ubnt.com/eula/
 PERMIT_DISTFILES_FTP=	http://www.ubnt.com/eula/
 
-MASTER_SITES=	http://dl.ubnt.com/unifi/$V-oi6hjfa3/
+MASTER_SITES=	http://dl.ubnt.com/unifi/${VERSION}/
 
 MODULES=	java
 MODJAVA_VER=	1.6+
@@ -32,11 +34,12 @@ NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}/UniFi
 INSTDIR=	${PREFIX}/share/unifi/
+USG=		4.2.11.4796630
+USW=		3.3.11.3850
+UAP1=		3.2.12.2920
+UAP2=		3.4.8.3291
 LIB_V=		lib/$V
-FWA=		3.3.10.3824
-FWB=		4.2.11.4796630
-FWC=		3.4.6.3248
-SUBST_VARS=	LIB_V FWA FWB FWC
+SUBST_VARS=	LIB_V USG USW UAP1 UAP2
 
 post-extract:
 	cp ${FULLDISTDIR}/unifi_sh_api-$V ${WRKSRC}/unifi_sh_api

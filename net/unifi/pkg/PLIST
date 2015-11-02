@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/09/21 10:22:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/11/02 12:26:31 sthen Exp $
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:/usr/local/share/unifi:/sbin/nologin
 bin/unifi
@@ -14,29 +14,29 @@ share/unifi/conf/
 share/unifi/dl/
 share/unifi/dl/firmware/
 share/unifi/dl/firmware/BZ2/
-share/unifi/dl/firmware/BZ2/${FWA}/
-share/unifi/dl/firmware/BZ2/${FWA}/firmware.bin
+share/unifi/dl/firmware/BZ2/${UAP1}/
+share/unifi/dl/firmware/BZ2/${UAP1}/firmware.bin
 share/unifi/dl/firmware/U2HSR/
-share/unifi/dl/firmware/U2HSR/${FWA}/
-share/unifi/dl/firmware/U2HSR/${FWA}/firmware.bin
+share/unifi/dl/firmware/U2HSR/${UAP1}/
+share/unifi/dl/firmware/U2HSR/${UAP1}/firmware.bin
 share/unifi/dl/firmware/U2IW/
-share/unifi/dl/firmware/U2IW/${FWA}/
-share/unifi/dl/firmware/U2IW/${FWA}/firmware.bin
+share/unifi/dl/firmware/U2IW/${USW}/
+share/unifi/dl/firmware/U2IW/${USW}/firmware.bin
 share/unifi/dl/firmware/U7E/
-share/unifi/dl/firmware/U7E/${FWA}/
-share/unifi/dl/firmware/U7E/${FWA}/firmware.bin
+share/unifi/dl/firmware/U7E/${UAP1}/
+share/unifi/dl/firmware/U7E/${UAP1}/firmware.bin
 share/unifi/dl/firmware/U7P/
-share/unifi/dl/firmware/U7P/${FWA}/
-share/unifi/dl/firmware/U7P/${FWA}/firmware.bin
+share/unifi/dl/firmware/U7P/${UAP1}/
+share/unifi/dl/firmware/U7P/${UAP1}/firmware.bin
 share/unifi/dl/firmware/U7PG2/
-share/unifi/dl/firmware/U7PG2/${FWC}/
-share/unifi/dl/firmware/U7PG2/${FWC}/firmware.bin
+share/unifi/dl/firmware/U7PG2/${UAP2}/
+share/unifi/dl/firmware/U7PG2/${UAP2}/firmware.bin
 share/unifi/dl/firmware/UGW3/
-share/unifi/dl/firmware/UGW3/${FWB}/
-share/unifi/dl/firmware/UGW3/${FWB}/upgrade.tar
+share/unifi/dl/firmware/UGW3/${USG}/
+share/unifi/dl/firmware/UGW3/${USG}/upgrade.tar
 share/unifi/dl/firmware/US24P250/
-share/unifi/dl/firmware/US24P250/${FWA}/
-share/unifi/dl/firmware/US24P250/${FWA}/firmware.bin
+share/unifi/dl/firmware/US24P250/${USW}/
+share/unifi/dl/firmware/US24P250/${USW}/firmware.bin
 share/unifi/dl/firmware/bundles.json
 @owner
 share/unifi/lib/
@@ -62,7 +62,6 @@ share/unifi/lib/log4j-1.2.17.jar
 share/unifi/lib/mail-1.4.7.jar
 share/unifi/lib/mongo-java-driver-2.10.1.jar
 share/unifi/lib/servo-core-0.9.4.jar
-share/unifi/lib/servo-graphite-0.7.3.jar
 share/unifi/lib/servo-graphite-0.9.4.jar
 share/unifi/lib/slf4j-api-1.7.6.jar
 share/unifi/lib/slf4j-log4j12-1.7.6.jar
@@ -72,17 +71,17 @@ share/unifi/lib/spring-context-3.2.8.RELEASE.jar
 share/unifi/lib/spring-core-3.2.8.RELEASE.jar
 share/unifi/lib/spring-expression-3.2.8.RELEASE.jar
 share/unifi/lib/sshj-0.9.0.jar
-share/unifi/lib/tomcat-embed-core-7.0.50.jar
-share/unifi/lib/tomcat-embed-jasper-7.0.50.jar
-share/unifi/lib/tomcat-embed-logging-juli-7.0.50.jar
-share/unifi/lib/tomcat-embed-logging-log4j-7.0.50.jar
-share/unifi/logs
+share/unifi/lib/tomcat-embed-core-7.0.64.jar
+share/unifi/lib/tomcat-embed-el-7.0.64.jar
+share/unifi/lib/tomcat-embed-jasper-7.0.64.jar
+share/unifi/lib/tomcat-embed-logging-juli-7.0.64.jar
+share/unifi/lib/tomcat-embed-logging-log4j-7.0.64.jar
 @owner _unifi
+share/unifi/logs
 @sample /var/log/unifi/
 @owner
 share/unifi/readme.txt
 share/unifi/unifi_sh_api
-@owner _unifi
 share/unifi/webapps/
 share/unifi/webapps/ROOT/
 share/unifi/webapps/ROOT/WEB-INF/
@@ -260,6 +259,9 @@ share/unifi/webapps/ROOT/${LIB_V}/images/devices/UGW8/connected-icon.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/UGW8/disconnected-icon.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/UGW8/icon-16.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/UGW8/icon.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/UP4/
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/UP4/icon.png
+share/unifi/webapps/ROOT/${LIB_V}/images/devices/UP4/icon@2x.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/UP5/
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/UP5/icon.png
 share/unifi/webapps/ROOT/${LIB_V}/images/devices/UP5/icon@2x.png
@@ -544,5 +546,4 @@ share/unifi/webapps/ROOT/waiting.html
 share/unifi/webapps/ROOT/wizard.html
 @extraunexec rm -rf %D/share/unifi/{dl,data,run,work,conf}
 @extraunexec rm -rf /var/log/unifi
-@owner
 @rcscript ${RCDIR}/unifi
