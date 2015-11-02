@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/09/22 08:11:24 semarie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/11/02 12:44:24 semarie Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -7,8 +7,8 @@ PKG_ARCH-doc =		*
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.3.0
-RUST_HASH =		198068b3
+V =			1.4.0
+RUST_HASH =		1bf6e69c
 DISTNAME =		rustc-${V}-src
 
 SUBST_VARS +=		RUST_HASH
@@ -20,7 +20,7 @@ PKGNAME-doc =		rust-doc-${V}
 MULTI_PACKAGES =	-main -doc
 
 # the snapshot version should be the version in src/snapshots.txt
-SNAPSHOT-amd64 =	rust-stage0-2015-07-26-a5c12f4-openbsd-x86_64-8b21d574a65c38e7c7b0bbbb8d675d8a44cec214.tar.bz2
+SNAPSHOT-amd64 =	rust-stage0-2015-08-11-1af31d4-openbsd-x86_64-9cae790c4ca19b1b29a048605ce249fe1c20a498.tar.bz2
 
 CATEGORIES =		lang
 
@@ -102,6 +102,7 @@ ALL_TARGET +=		rustc-stage3 \
 			docs
 TEST_TARGET =		check
 TEST_ENV +=		ALLOW_NONZERO_RLIMIT_CORE=1
+TEST_DEPENDS +=		devel/git
 
 # - check datasize limit before configuring (and building)
 pre-configure:
