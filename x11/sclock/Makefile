@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/26 12:50:35 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2015/11/02 08:37:50 ajacoutot Exp $
 
 COMMENT=	simple digital clock
 
 DISTNAME=	sclock-0.6
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11
-
-MAINTAINER=	Pierre-Yves Ritschard <pyr@spootnik.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

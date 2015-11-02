@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/11/01 11:19:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/11/02 08:37:50 ajacoutot Exp $
 
 COMMENT=		grep like tool, aimed at programmers
 
@@ -8,8 +8,8 @@ DISTNAME=		ack-${V}
 PKGNAME=		p5-${DISTNAME:S/_/./}
 CPAN_AUTHOR=		PETDANCE
 CATEGORIES=		textproc
+REVISION=		0
 
-MAINTAINER=		Pierre-Yves Ritschard <pyr@spootnik.org>
 HOMEPAGE =		http://beyondgrep.com/
 
 # perl
