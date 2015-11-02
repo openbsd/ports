@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/08/25 12:57:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/11/02 11:56:55 espie Exp $
 
 COMMENT =	visual programming environment and toolkit
 
@@ -41,7 +41,7 @@ post-extract:
 	gunzip -o ${WRKSRC}/src/man/scratch.1 ${WRKSRC}/src/man/scratch.1.gz
 
 do-build:
-	@${SUBST_CMD} -c ${FILESDIR}/scratch ${WRKBUILD}/scratch
+	@${SUBST_CMD} -m 555 -c ${FILESDIR}/scratch ${WRKBUILD}/scratch
 	@${SUBST_CMD} -c ${WRKSRC}/src/man/scratch.1 ${WRKBUILD}/scratch.1
 	cd ${WRKSRC}/src/plugins/unicode && ${CC} ${CFLAGS} *.c \
 		`pkg-config --cflags --libs pangocairo` \

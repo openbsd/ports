@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/09/16 10:47:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/11/02 11:56:55 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -28,7 +28,7 @@ QMAKE =			${LOCALBASE}/bin/qmake4
 SUBST_VARS +=		MODQT4_LIBDIR WRKINST
 
 do-configure:
-	${SUBST_CMD} -c ${FILESDIR}/conf.pri ${WRKSRC}/conf.pri
+	${SUBST_CMD} -m 444 -c ${FILESDIR}/conf.pri ${WRKSRC}/conf.pri
 	cd ${WRKSRC} && ${QMAKE} qca-ossl.pro
 
 .include <bsd.port.mk>

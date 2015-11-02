@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2015/07/16 01:25:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2015/11/02 11:56:55 espie Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -75,7 +75,7 @@ post-extract:
 	cp -Rp ${WRKSRC}/plugins/node.d.freebsd ${WRKSRC}/plugins/node.d.openbsd
 	cp -p ${WRKSRC}/plugins/node.d.netbsd/uptime.in ${WRKSRC}/plugins/node.d.openbsd
 	cp -p ${WRKSRC}/plugins/node.d.netbsd/memory.in ${WRKSRC}/plugins/node.d.openbsd
-	${SUBST_CMD} -c ${SUBST_LIST}
+	${SUBST_CMD} -m 444 -c ${SUBST_LIST}
 	chmod -R +x ${WRKSRC}/plugins/node.d.openbsd
 	rm ${WRKSRC}/plugins/node.d.openbsd/iostat.in # not yet ported
 	rm ${WRKSRC}/plugins/node.d.openbsd/swap.in # we have no in/out fields

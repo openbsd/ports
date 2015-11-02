@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/10/30 21:44:30 edd Exp $
+# $OpenBSD: Makefile,v 1.15 2015/11/02 11:56:54 espie Exp $
 
 COMMENT=	open-source electronics prototyping platform
 
@@ -33,15 +33,15 @@ WRKDIST=	${WRKDIR}/arduino-${V}
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/{,doc,examples}/arduino
-	@${SUBST_CMD} -c ${FILESDIR}/arduinoboot \
+	@${SUBST_CMD} -m ${BINMODE} -c ${FILESDIR}/arduinoboot \
                 ${PREFIX}/bin/arduinoboot
-	@${SUBST_CMD} -c ${FILESDIR}/arduinoproject \
+	@${SUBST_CMD} -m ${BINMODE} -c ${FILESDIR}/arduinoproject \
                 ${PREFIX}/bin/arduinoproject
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/*
 	@chmod ${BINMODE} ${PREFIX}/bin/*
-	@${SUBST_CMD} -c ${FILESDIR}/Makefile \
+	@${SUBST_CMD} -m 444 -c ${FILESDIR}/Makefile \
                 ${PREFIX}/share/examples/arduino/Makefile
-	@${SUBST_CMD} -c ${FILESDIR}/template.ino \
+	@${SUBST_CMD} -m 444 -c ${FILESDIR}/template.ino \
                 ${PREFIX}/share/examples/arduino/template.ino
 	@chmod	a+r ${PREFIX}/share/examples/arduino/*
 	@cp -r	${WRKSRC}/build/shared/examples/* \

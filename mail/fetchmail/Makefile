@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2015/10/08 21:19:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.148 2015/11/02 11:56:54 espie Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
@@ -41,7 +41,7 @@ post-extract:
 	rm ${WRKSRC}/rcfile_y.[ch]
 
 pre-patch:
-	${SUBST_CMD} -c ${FILESDIR}/fetchmailconf ${WRKDIR}/fetchmailconf
+	${SUBST_CMD} -m 555 -c ${FILESDIR}/fetchmailconf ${WRKDIR}/fetchmailconf
 	@tbl ${WRKSRC}/fetchmail.man > ${WRKSRC}/fetchmail.tbl && \
 		cp -f ${WRKSRC}/fetchmail.tbl ${WRKSRC}/fetchmail.man
 

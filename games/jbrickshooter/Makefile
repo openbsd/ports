@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/08/07 21:31:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2015/11/02 11:56:54 espie Exp $
 
 COMMENT =	brick shooter reflexion game
 
@@ -31,7 +31,7 @@ WRKDIST=	${WRKDIR}
 PKG_ARCH=	*
 
 do-install:
-	${SUBST_CMD} -c ${FILESDIR}/jbrickshooter \
+	${SUBST_CMD} -m 555 -c ${FILESDIR}/jbrickshooter \
 		${WRKSRC}/jbrickshooter
 	${INSTALL_DATA_DIR} ${PREFIX}/share/jbrickshooter
 	cp ${WRKSRC}/jbrickshooter.jar ${PREFIX}/share/jbrickshooter

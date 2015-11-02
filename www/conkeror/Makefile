@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/09/04 19:53:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/02 11:56:54 espie Exp $
 
 COMMENT =		keyboard-oriented Mozilla-based browser
 
@@ -39,7 +39,7 @@ snapshot-fetch:
 	ftp -o ${DISTFILES} 'http://repo.or.cz/w/conkeror.git?a=snapshot;h=${GITREV};sf=tgz'
 
 pre-configure:
-	@${SUBST_CMD} -c ${FILESDIR}/conkeror ${WRKSRC}/conkeror-wrapper.sh
+	@${SUBST_CMD} -c -m 555 ${FILESDIR}/conkeror ${WRKSRC}/conkeror-wrapper.sh
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \

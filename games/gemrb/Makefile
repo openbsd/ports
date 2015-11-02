@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/08/21 09:14:21 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/02 11:56:55 espie Exp $
 
 SHARED_ONLY = 		Yes
 
@@ -47,7 +47,7 @@ post-install:
 	 cd ${PREFIX}/share/gemrb/GUIScripts/ && find * -name \*.py \
 		-exec ${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/gemrb/GUIScripts/{} \;
-	 ${SUBST_CMD} -c ${FILESDIR}/baldurs_gate_1.cfg \
+	 ${SUBST_CMD} -m 444 -c ${FILESDIR}/baldurs_gate_1.cfg \
 		 ${PREFIX}/share/examples/gemrb/baldurs_gate_1.cfg
 	rm ${PREFIX}/share/gemrb/GUIScripts/bg1/GUIMOVIE.py.orig
 

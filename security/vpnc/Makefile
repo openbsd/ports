@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/04/17 14:57:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2015/11/02 11:56:54 espie Exp $
 
 COMMENT=		client for Cisco 3000 VPN concentrators
 
@@ -26,7 +26,7 @@ NO_TEST=		Yes
 do-configure:
 	@perl -pi -e "s,/etc,${SYSCONFDIR},g" ${WRKSRC}/{README,config.c}
 	@cp ${FILESDIR}/split.sh ${WRKBUILD}/split.sh
-	${SUBST_CMD} -c ${FILESDIR}/vpnc.sh ${WRKBUILD}/vpnc.sh
+	${SUBST_CMD} -m 555 -c ${FILESDIR}/vpnc.sh ${WRKBUILD}/vpnc.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/vpnc ${PREFIX}/sbin

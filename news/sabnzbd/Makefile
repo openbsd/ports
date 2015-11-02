@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/07/16 00:12:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/11/02 11:56:54 espie Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
 VERSION =			0.7.20
@@ -36,7 +36,7 @@ do-install:
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/sabnzbd
 	cp -Rp ${WRKSRC}/* \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/sabnzbd
-	${SUBST_CMD} -c ${FILESDIR}/sabnzbd ${WRKSRC}/sabnzbd/sabnzbd
+	${SUBST_CMD} -m 555 -c ${FILESDIR}/sabnzbd ${WRKSRC}/sabnzbd/sabnzbd
 	${INSTALL_SCRIPT} ${WRKSRC}/sabnzbd/sabnzbd ${PREFIX}/bin/sabnzbd
 	chown -R ${BINOWN}:${BINGRP} \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/sabnzbd

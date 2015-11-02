@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/09/09 10:17:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2015/11/02 11:56:54 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,7 +29,7 @@ post-patch:
 	ln -s ${LOCALBASE}/sbin/apxs ${WRKDIR}/bin/
 
 post-build:
-	@${SUBST_CMD} -c ${FILESDIR}/mod_speedycgi-enable \
+	@${SUBST_CMD} -m 555 -c ${FILESDIR}/mod_speedycgi-enable \
 	    ${WRKBUILD}/mod_speedycgi-enable
 
 post-install:

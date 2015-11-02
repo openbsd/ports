@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2015/08/27 07:30:25 zhuk Exp $
+# $OpenBSD: Makefile,v 1.71 2015/11/02 11:56:54 espie Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
@@ -168,7 +168,7 @@ post-extract:
 	cp ${FILESDIR}/${M}.cmake ${WRKSRC}/cmake/modules/${M}.cmake
 .endfor
 .for M in ${WRAP_CMAKE_MODULES}
-	${SUBST_CMD} -c ${FILESDIR}/${M}.cmake \
+	${SUBST_CMD} -m 444 -c ${FILESDIR}/${M}.cmake \
 	    ${WRKSRC}/cmake/modules/${M}.cmake
 .endfor
 	cp ${FILESDIR}/config-util.h.cmake ${WRKSRC}/kdecore/util/

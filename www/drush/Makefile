@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/05 06:00:22 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2015/11/02 11:56:55 espie Exp $
 
 COMMENT =	command line access to most of drupal
 CATEGORIES = 	www www/drupal6 devel
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM = Yes
 RUN_DEPENDS = 	www/drupal6/core>=6
 
 do-build:
-	${SUBST_CMD} -c ${FILESDIR}/drush ${WRKBUILD}/drush
+	${SUBST_CMD} -m 555 -c ${FILESDIR}/drush ${WRKBUILD}/drush
 	cp ${WRKDIR}/Console_Table-1.1.3/Table.php ${WRKBUILD}/includes/table.inc
 
 do-install:

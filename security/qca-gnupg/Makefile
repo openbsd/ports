@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/21 13:50:55 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/02 11:56:55 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -28,7 +28,7 @@ QMAKE =			${LOCALBASE}/bin/qmake4
 SUBST_VARS +=		MODQT4_LIBDIR WRKINST
 
 do-configure:
-	${SUBST_CMD} -c ${FILESDIR}/conf.pri ${WRKSRC}/conf.pri
+	${SUBST_CMD} -m 444 -c ${FILESDIR}/conf.pri ${WRKSRC}/conf.pri
 	cd ${WRKSRC} && ${QMAKE} qca-gnupg.pro
 
 .include <bsd.port.mk>

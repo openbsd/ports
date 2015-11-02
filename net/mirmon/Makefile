@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/09/02 19:39:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2015/11/02 11:56:55 espie Exp $
 
 COMMENT=	monitors the status of mirrors
 
@@ -26,7 +26,7 @@ do-build:
 	    ${WRKSRC}/[Mm]irmon* ${WRKSRC}/probe
 	perl -pi -e 's,/etc/mirmon.conf,${SYSCONFDIR}/mirmon.conf,' \
 	    ${WRKSRC}/[Mm]irmon*
-	${SUBST_CMD} -c ${FILESDIR}/mirmon.conf ${WRKSRC}/mirmon.conf
+	${SUBST_CMD} -m 444 -c ${FILESDIR}/mirmon.conf ${WRKSRC}/mirmon.conf
 	touch ${WRKSRC}/mirmon.db
 
 do-install:

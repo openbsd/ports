@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/10/08 21:19:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2015/11/02 11:56:54 espie Exp $
 
 COMMENT=	IEEE 802.1X supplicant
 
@@ -29,7 +29,7 @@ WRKSRC=		${WRKDIST}/wpa_supplicant
 EXAMPLEDIR=	${PREFIX}/share/examples/wpa_supplicant
 
 post-extract:
-	@${SUBST_CMD} -c ${FILESDIR}/config ${WRKSRC}/.config
+	@${SUBST_CMD} -m 444 -c ${FILESDIR}/config ${WRKSRC}/.config
 
 post-install:
 	@#${INSTALL_PROGRAM} ${WRKBUILD}/wpa_priv ${PREFIX}/sbin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:59 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/11/02 11:56:54 espie Exp $
 
 COMMENT =			search for TV serie nzb-files via web interface
 DISTNAME =			midgetspy-Sick-Beard-b3a7afe
@@ -30,7 +30,7 @@ do-install:
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/sickbeard
 	cp -Rp ${WRKSRC}/* \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/sickbeard
-	${SUBST_CMD} -c ${FILESDIR}/sickbeard ${WRKSRC}/sickbeard/sickbeard
+	${SUBST_CMD} -m 555 -c ${FILESDIR}/sickbeard ${WRKSRC}/sickbeard/sickbeard
 	${INSTALL_SCRIPT} ${WRKSRC}/sickbeard/sickbeard ${PREFIX}/bin/sickbeard
 	chown -R ${BINOWN}:${BINGRP} \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/sickbeard

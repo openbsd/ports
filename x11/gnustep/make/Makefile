@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2015/10/26 11:36:39 sebastia Exp $
+# $OpenBSD: Makefile,v 1.42 2015/11/02 11:56:54 espie Exp $
 
 # WARNING: this port does NOT use the x11/gnustep MODULE
 
@@ -46,7 +46,7 @@ CONFIGURE_ARGS +=	--enable-objc-nonfragile-abi
 .endif
 
 pre-configure:
-	${SUBST_CMD} -c ${FILESDIR}/openbsd \
+	${SUBST_CMD} -c -m 444 ${FILESDIR}/openbsd \
 		${WRKSRC}/FilesystemLayouts/openbsd
 
 post-install:

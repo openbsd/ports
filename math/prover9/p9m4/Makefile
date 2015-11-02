@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/25 07:54:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/11/02 11:56:55 espie Exp $
 
 COMMENT=		prover9/mace4 GUI
 
@@ -33,7 +33,7 @@ post-extract:
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/files.py
-	${SUBST_CMD} -c ${FILESDIR}/prover9-mace4.sh ${WRKSRC}/prover9-mace4
+	${SUBST_CMD} -m 555 -c ${FILESDIR}/prover9-mace4.sh ${WRKSRC}/prover9-mace4
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/prover9-mace4 ${PREFIX}/bin/

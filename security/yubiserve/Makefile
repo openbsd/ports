@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/08/25 12:24:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/11/02 11:56:54 espie Exp $
 
 COMMENT=	standalone Yubikey and OATH/HOTP validation server
 DISTNAME=	yubico-yubiserve-3.1
@@ -36,7 +36,7 @@ pre-patch:
 	echo >> ${WRKSRC}/yubiserve.py
 
 do-configure:
-	@cd ${WRKSRC}; ${SUBST_CMD} -c yubiserve.py yubiserve \
+	@cd ${WRKSRC}; ${SUBST_CMD} -m 555 -c yubiserve.py yubiserve \
 	    dbconf.py yubiserve-dbconf
 	cd ${WRKSRC}; sqlite3 yubikeys.sqlite3 < src/dump.sqlite
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/11 13:49:14 jsg Exp $
+# $OpenBSD: Makefile,v 1.3 2015/11/02 11:56:54 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -43,7 +43,7 @@ WANTLIB-main=		GL X11 SDL SDL_image SDL_mixer c enet m pthread stdc++ z
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sauer_client ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/sauer_server ${PREFIX}/libexec
-	${SUBST_CMD} -c ${FILESDIR}/sauerbraten.sh ${WRKSRC}/sauerbraten.sh
+	${SUBST_CMD} -m 555 -c ${FILESDIR}/sauerbraten.sh ${WRKSRC}/sauerbraten.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/sauerbraten.sh ${PREFIX}/bin/sauerbraten
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${N}
 	cp -R ${WRKDIR}/${N}/docs/* ${PREFIX}/share/doc/${N}/

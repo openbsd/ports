@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/07/16 23:57:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/11/02 11:56:54 espie Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		Simple DirectMedia Layer for Perl
@@ -39,7 +39,7 @@ EXAMPLE_DIR =		${PREFIX}/share/examples/p5-SDL
 EXAMPLE_LOC =		${WRKSRC}/test
 
 pre-configure:
-	${SUBST_CMD} -c ${FILESDIR}/Openbsd.pm \
+	${SUBST_CMD} -m 444 -c ${FILESDIR}/Openbsd.pm \
 		${WRKSRC}/make/lib/SDL/Build/Openbsd.pm
 
 post-install:

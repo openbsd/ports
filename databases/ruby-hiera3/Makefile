@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/11 20:15:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/11/02 11:56:54 espie Exp $
 
 COMMENT=		simple pluggable hierarchical database
 
@@ -36,7 +36,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-hiera
-	${SUBST_CMD} -c ${FILESDIR}/hiera.yaml \
+	${SUBST_CMD} -m 444 -c ${FILESDIR}/hiera.yaml \
 		${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-hiera/hiera.yaml
 
 .include <bsd.port.mk>

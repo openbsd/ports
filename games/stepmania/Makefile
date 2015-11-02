@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/07/07 14:43:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/11/02 11:56:55 espie Exp $
 
 BROKEN-alpha=	libtomcrypt/src/headers/tomcrypt_cfg.h:130:6: error: #error You must specify a word size as well as endianess in tomcrypt_cfg.h
 
@@ -54,7 +54,7 @@ SUBST_VARS = DATADIR
 # just so we can start the game directly to test.
 post-build:
 	cd ${WRKBUILD} && ln -sf src/stepmania && ln -sf src/GtkModule.so
-	${SUBST_CMD} -c ${FILESDIR}/stepmania ${WRKBUILD}/stepexe
+	${SUBST_CMD} -m 555 -c ${FILESDIR}/stepmania ${WRKBUILD}/stepexe
 
 # sigh, no install, so do things manually
 do-install:
