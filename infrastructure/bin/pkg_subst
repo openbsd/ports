@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_subst,v 1.4 2014/08/12 07:59:34 zhuk Exp $
+# $OpenBSD: pkg_subst,v 1.5 2015/11/02 11:57:40 espie Exp $
 #
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
@@ -25,6 +25,24 @@ use OpenBSD::Subst;
 use OpenBSD::State;
 use OpenBSD::IdCache;
 
+sub fatal
+{
+	print STDERR @_, "\n";
+	exit 1;
+}
+
+my @basedirs;
+
+sub ensure_basedir
+{
+	my $file = shift;
+	for my $b (@basedirs) {
+		return if $file =~ m/^\Q$b\E\//;
+	}
+	fatal("must use -m to copy $file which is outside ".
+	    join(" ", @basedirs));
+}
+	
 my $subst = OpenBSD::Subst->new;
 
 our ($opt_c, $opt_i);
@@ -32,10 +50,10 @@ my ($fuid, $fgid, $fmode);
 my ($uidc, $gidc);
 
 my $ui = OpenBSD::State->new('pkg_subst');
-$ui->usage_is( '[-ci] [-Dvar=value ...] [-g group] [-m mode] [-o owner] [file ...]');
+$ui->usage_is( '[-ci] [-Dvar=value ...] [-B basedir] [-g group] [-m mode] [-o owner] [file ...]');
 $ui->do_options(
     sub {
-	getopts('D:g:m:o:chi',
+	getopts('B:D:g:m:o:chi',
 	    {'D' =>
 		    sub {
 			    $subst->parse_option(shift);
@@ -45,20 +63,23 @@ $ui->do_options(
 
 			    $uidc //= OpenBSD::UidCache->new;
 			    $fuid = $uidc->lookup($owner, -1);
-			    die "$owner is not a valid user" if $fuid == -1;
+			    fatal("$owner is not a valid user") if $fuid == -1;
 		    },
 	     'g' => sub {
 			    my $group = shift;
 
 			    $gidc //= OpenBSD::GidCache->new;
 			    $fgid = $gidc->lookup($group, -1);
-			    die "$group is not a valid group" if $fgid == -1;
+			    fatal("$group is not a valid group") if $fgid == -1;
+		    },
+	     'B' => sub {
+			    push(@basedirs, shift);
 		    },
 	     'm' => sub {
 			    my $mode = shift;
 
 			    $fmode = oct($mode);
-			    die "$mode is not a valid mode" if $fmode == 0;
+			    fatal("$mode is not a valid mode") if $fmode == 0;
 		    },
 	     'h' => sub {	$ui->usage; },
 	    });
@@ -77,10 +98,13 @@ while (my $src = shift) {
 	my $dest;
 	if ($opt_c) {
 		$dest = shift or die "odd number of files";
+		if (@basedirs > 0 && !defined $fmode) {
+			ensure_basedir($src);
+		}
 	} else {
 		$dest = $src;
 		$src .= $bak;
-		rename($dest, $src) or die "Can't rename $dest: $!";
+		rename($dest, $src) or fatal("Can't rename $dest: $!");
 	}
 	my $fh = $subst->copy($src, $dest);
 	# copy rights, owner, group as well
@@ -92,10 +116,10 @@ while (my $src = shift) {
 	my $r2 = chmod $mode & 07777, $fh;
 	if (defined $fuid || defined $fgid || $< == 0) {
 		if ($r1 == 0 && !$opt_i) {
-			die "chown on $dest failed";
+			fatal("chown on $dest failed");
 		}
 		if ($r2 == 0) {
-			die "chmod on $dest failed";
+			fatal("chmod on $dest failed");
 		}
 	}
 }
