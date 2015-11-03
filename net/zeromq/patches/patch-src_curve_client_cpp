@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_curve_client_cpp,v 1.1 2015/11/03 19:14:13 sthen Exp $
+
+https://github.com/zeromq/libzmq/issues/1632
+
+--- src/curve_client.cpp.orig	Tue Nov  3 16:35:06 2015
++++ src/curve_client.cpp	Tue Nov  3 16:36:32 2015
+@@ -57,8 +57,8 @@ zmq::curve_client_t::curve_client_t (const options_t &
+     unsigned char tmpbytes[4];
+     randombytes(tmpbytes, 4);
+ #else
+-    // todo check return code
+-    sodium_init();
++    const int ret = sodium_init();
++    zmq_assert ((ret == 0) || (ret == 1));
+ #endif
+ 
+     //  Generate short-term key pair
