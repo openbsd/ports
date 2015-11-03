@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/07/26 14:43:49 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/11/03 13:29:27 benoit Exp $
 bin/hypatia-demo
 lib/python${MODPY_VERSION}/site-packages/hypatia/
 lib/python${MODPY_VERSION}/site-packages/hypatia/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hypatia/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/hypatia/actor.py
 lib/python${MODPY_VERSION}/site-packages/hypatia/actor.pyc
-lib/python${MODPY_VERSION}/site-packages/hypatia/animations.py
-lib/python${MODPY_VERSION}/site-packages/hypatia/animations.pyc
+lib/python${MODPY_VERSION}/site-packages/hypatia/animatedsprite.py
+lib/python${MODPY_VERSION}/site-packages/hypatia/animatedsprite.pyc
 lib/python${MODPY_VERSION}/site-packages/hypatia/constants.py
 lib/python${MODPY_VERSION}/site-packages/hypatia/constants.pyc
 lib/python${MODPY_VERSION}/site-packages/hypatia/controllers.py
@@ -21,17 +21,18 @@ lib/python${MODPY_VERSION}/site-packages/hypatia/player.py
 lib/python${MODPY_VERSION}/site-packages/hypatia/player.pyc
 lib/python${MODPY_VERSION}/site-packages/hypatia/render.py
 lib/python${MODPY_VERSION}/site-packages/hypatia/render.pyc
+lib/python${MODPY_VERSION}/site-packages/hypatia/resources.py
+lib/python${MODPY_VERSION}/site-packages/hypatia/resources.pyc
 lib/python${MODPY_VERSION}/site-packages/hypatia/sound.py
 lib/python${MODPY_VERSION}/site-packages/hypatia/sound.pyc
+lib/python${MODPY_VERSION}/site-packages/hypatia/sprites.py
+lib/python${MODPY_VERSION}/site-packages/hypatia/sprites.pyc
 lib/python${MODPY_VERSION}/site-packages/hypatia/tiles.py
 lib/python${MODPY_VERSION}/site-packages/hypatia/tiles.pyc
-lib/python${MODPY_VERSION}/site-packages/hypatia/util.py
-lib/python${MODPY_VERSION}/site-packages/hypatia/util.pyc
 lib/python${MODPY_VERSION}/site-packages/hypatia_engine-${GH_TAGNAME}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/hypatia_engine-${GH_TAGNAME}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/hypatia_engine-${GH_TAGNAME}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/hypatia_engine-${GH_TAGNAME}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/hypatia_engine-${GH_TAGNAME}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/hypatia_engine-${GH_TAGNAME}-py${MODPY_VERSION}.egg-info/top_level.txt
 share/examples/hypatia/
 share/examples/hypatia/game.py
@@ -44,8 +45,12 @@ share/examples/hypatia/resources/scenes/debug.tmx
 share/examples/hypatia/resources/scenes/debug.zip
 share/examples/hypatia/resources/scenes/tilesheet-for-tmx-example.png
 share/examples/hypatia/resources/tilesheets/
+share/examples/hypatia/resources/tilesheets/debug/
 share/examples/hypatia/resources/tilesheets/debug.zip
+share/examples/hypatia/resources/tilesheets/debug/tilesheet.ini
+share/examples/hypatia/resources/tilesheets/debug/tilesheet.png
 share/examples/hypatia/resources/walkabouts/
+share/examples/hypatia/resources/walkabouts/bow.zip
 share/examples/hypatia/resources/walkabouts/debug.zip
 share/examples/hypatia/resources/walkabouts/door.zip
-share/examples/hypatia/resources/walkabouts/hat.zip
+share/examples/hypatia/resources/walkabouts/slime.zip
