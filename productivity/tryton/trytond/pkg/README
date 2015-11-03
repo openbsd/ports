@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2015/07/08 12:54:51 sthen Exp $
+$OpenBSD: README,v 1.6 2015/11/03 06:46:07 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -50,7 +50,7 @@ to initialise your new DB.
 When the "Admin Password Confirmation" is requested, make sure to match
 the value of "admin_passwd" in ${SYSCONFDIR}/trytond.conf.
 
-The /var/log/trytond file can grow very marge with time, it is advised
+The /var/log/trytond file can grow very large with time, it is advised
 to use newsyslog(8) to rotate it.
 
 Modules installation
