@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_ifdhandler_c,v 1.1 2015/11/03 13:55:31 dcoppa Exp $
+
+commit 9a1932bed605fb3e38d9853449bb33b8791fa142
+Author: Ludovic Rousseau <ludovic.rousseau@free.fr>
+Date:   Mon Oct 26 16:02:50 2015 +0100
+
+CreateChannel(): cleanup in case of error
+
+If the initialisation fails after the OpenPortByName() (during the check
+and hack phases) then we need to correctly close the device.
+
+The problem occured on OS X with a Gemalto Pinpad reader.
+The ccid_open_hack_post() failed and the port was not closed.
+usbDevice[reader_index].dev_handle was not set to NULL and the next
+reader plug (any reader) failed because the index was already in use.
+
+--- src/ifdhandler.c.orig	Wed Oct 14 10:39:21 2015
++++ src/ifdhandler.c	Tue Nov  3 14:50:46 2015
+@@ -193,8 +193,7 @@ error:
+ 	if (return_value != IFD_SUCCESS)
+ 	{
+ 		/* release the allocated resources */
+-		free(CcidSlots[reader_index].readerName);
+-		ReleaseReaderIndex(reader_index);
++		IFDHCloseChannel(Lun);
+ 	}
+ 
+ 	return return_value;
