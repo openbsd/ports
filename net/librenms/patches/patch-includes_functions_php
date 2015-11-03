@@ -1,0 +1,12 @@
+$OpenBSD: patch-includes_functions_php,v 1.1 2015/11/03 13:08:00 sthen Exp $
+--- includes/functions.php.orig	Tue Nov  3 13:05:19 2015
++++ includes/functions.php	Tue Nov  3 13:05:42 2015
+@@ -228,7 +228,7 @@ function delete_device($id) {
+         }
+     }
+ 
+-    $ex = shell_exec("bash -c '( [ ! -d ".trim($config['rrd_dir'])."/".$host." ] || rm -vrf ".trim($config['rrd_dir'])."/".$host." 2>&1 ) && echo -n OK'");
++    $ex = shell_exec("sh -c '( [ ! -d ".trim($config['rrd_dir'])."/".$host." ] || rm -rf ".trim($config['rrd_dir'])."/".$host." 2>&1 ) && echo -n OK'");
+     $tmp = explode("\n",$ex);
+     if( $tmp[sizeof($tmp)-1] != "OK" ) {
+         $ret .= "Could not remove files:\n$ex\n";
