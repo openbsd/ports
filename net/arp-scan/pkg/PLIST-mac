@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mac,v 1.1 2015/11/03 15:51:24 sthen Exp $
+@comment $OpenBSD: PLIST-mac,v 1.2 2015/11/03 16:18:33 sthen Exp $
 @conflict arp-scan-<=1.9p10
 @conflict arpwatch-<=2.1a15p12
 share/arp-scan/
@@ -17,3 +17,4 @@ share/mac-vendor/iab.csv
 share/mac-vendor/ma-l.csv
 share/mac-vendor/ma-m.csv
 share/mac-vendor/ma-s.csv
+share/mac-vendor/unofficial.csv

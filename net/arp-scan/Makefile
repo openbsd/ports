@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/11/03 15:52:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2015/11/03 16:18:33 sthen Exp $
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 COMMENT-mac =	MAC address vendor list
@@ -9,6 +9,7 @@ CATEGORIES =	net
 
 M =		20151103
 PKGNAME-mac =	mac-vendor-$M
+REVISION-mac =	0
 
 HOMEPAGE =	http://www.nta-monitor.com/tools-resources/security-tools/arp-scan
 
@@ -45,7 +46,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ethercodes.dat \
 	    ${PREFIX}/share/examples/arpwatch/ethercodes.dat
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mac-vendor/
-	${INSTALL_DATA} ${WRKDIR}/oui-iab/*csv ${PREFIX}/share/mac-vendor/
+	${INSTALL_DATA} ${WRKDIR}/oui-iab/*csv ${FILESDIR}/unofficial.csv \
+	    ${PREFIX}/share/mac-vendor/
 
 # maintainer convenience target to update mac-vendor file from the databases
 # http://standards.ieee.org/develop/regauth/oui/
