@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2015/10/19 11:00:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2015/11/03 21:53:20 sthen Exp $
 
 COMMENT=	Python interface to the OpenSSL library
 
 MODPY_EGG_VERSION=	0.15.1
-REVISION=	0
+REVISION=	1
 DISTNAME=	pyOpenSSL-${MODPY_EGG_VERSION}
 PKGNAME=	py-openssl-${MODPY_EGG_VERSION}
 CATEGORIES=	security devel
@@ -15,11 +15,13 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # Apache 2
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS =	security/py-cryptography
-BUILD_DEPENDS =	${RUN_DEPENDS}
-
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += crypto pthread ssl
+
+FLAVORS=	python3
+
+RUN_DEPENDS =	security/py-cryptography${MODPY_FLAVOR}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 MODPY_PI =	Yes
 MODPY_SETUPTOOLS = Yes
@@ -28,7 +30,7 @@ MODULES=	lang/python
 
 TEST_DEPENDS=${FULLPKGNAME}:${BUILD_PKGPATH}
 
-EXAMPLESDIR=	${PREFIX}/share/examples/py-openssl
+EXAMPLESDIR=	${PREFIX}/share/examples/${MODPY_PY_PREFIX}openssl
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/simple
