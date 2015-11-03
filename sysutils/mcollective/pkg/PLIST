@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2015/08/19 07:22:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/11/03 07:20:03 sebastia Exp $
 bin/mco
 ${MODRUBY_SITEDIR}/mcollective/
 ${MODRUBY_SITEDIR}/mcollective.rb
@@ -202,6 +202,8 @@ ${MODRUBY_RELEXAMPLEDIR}-mcollective/facts.yaml
 @sample ${SYSCONFDIR}/mcollective/facts.yaml
 ${MODRUBY_RELEXAMPLEDIR}-mcollective/plugin.d/
 @sample ${SYSCONFDIR}/mcollective/plugin.d/
+${MODRUBY_RELEXAMPLEDIR}-mcollective/metadata-help.erb
+@sample ${SYSCONFDIR}/mcollective/metadata-help.erb
 ${MODRUBY_RELEXAMPLEDIR}-mcollective/rpc-help.erb
 @sample ${SYSCONFDIR}/mcollective/rpc-help.erb
 ${MODRUBY_RELEXAMPLEDIR}-mcollective/server.cfg
