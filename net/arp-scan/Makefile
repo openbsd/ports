@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/11/03 15:51:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2015/11/03 15:52:18 sthen Exp $
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 COMMENT-mac =	MAC address vendor list
@@ -29,6 +29,9 @@ RUN_DEPENDS-main =	${BASE_PKGPATH},-mac
 MULTI_PACKAGES =	-main -mac
 
 CONFIGURE_STYLE =	gnu
+
+# for local format-ma script
+BUILD_DEPENDS =		textproc/p5-Text-CSV
 
 pre-configure:
 	cd ${WRKSRC}; cat ${WRKDIR}/oui-iab/ma-{s,m,l}.csv \
