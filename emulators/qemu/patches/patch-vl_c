@@ -1,0 +1,62 @@
+$OpenBSD: patch-vl_c,v 1.24 2015/11/03 16:25:24 sthen Exp $
+
+trace: remove malloc tracing
+
+The malloc vtable is not supported anymore in glib, because it broke
+when constructors called g_malloc.  Remove tracing of g_malloc,
+g_realloc and g_free calls.
+
+Note that, for systemtap users, glib also provides tracepoints
+glib.mem_alloc, glib.mem_free, glib.mem_realloc, glib.slice_alloc
+and glib.slice_free.
+
+--- vl.c.orig	Sun Oct 25 21:38:01 2015
++++ vl.c	Sun Oct 25 21:38:28 2015
+@@ -2628,26 +2628,6 @@ static const QEMUOption *lookup_opt(int argc, char **a
+     return popt;
+ }
+ 
+-static gpointer malloc_and_trace(gsize n_bytes)
+-{
+-    void *ptr = malloc(n_bytes);
+-    trace_g_malloc(n_bytes, ptr);
+-    return ptr;
+-}
+-
+-static gpointer realloc_and_trace(gpointer mem, gsize n_bytes)
+-{
+-    void *ptr = realloc(mem, n_bytes);
+-    trace_g_realloc(mem, n_bytes, ptr);
+-    return ptr;
+-}
+-
+-static void free_and_trace(gpointer mem)
+-{
+-    trace_g_free(mem);
+-    free(mem);
+-}
+-
+ static int machine_set_property(const char *name, const char *value,
+                                 void *opaque)
+ {
+@@ -2763,11 +2743,6 @@ int main(int argc, char **argv, char **envp)
+     bool userconfig = true;
+     const char *log_mask = NULL;
+     const char *log_file = NULL;
+-    GMemVTable mem_trace = {
+-        .malloc = malloc_and_trace,
+-        .realloc = realloc_and_trace,
+-        .free = free_and_trace,
+-    };
+     const char *trace_events = NULL;
+     const char *trace_file = NULL;
+     const ram_addr_t default_ram_size = (ram_addr_t)DEFAULT_RAM_SIZE *
+@@ -2780,8 +2755,6 @@ int main(int argc, char **argv, char **envp)
+     atexit(qemu_run_exit_notifiers);
+     error_set_progname(argv[0]);
+     qemu_init_exec_dir(argv[0]);
+-
+-    g_mem_set_vtable(&mem_trace);
+ 
+     module_call_init(MODULE_INIT_QOM);
+ 
