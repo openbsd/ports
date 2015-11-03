@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST-mac,v 1.1 2015/11/03 15:51:24 sthen Exp $
+@conflict arp-scan-<=1.9p10
+@conflict arpwatch-<=2.1a15p12
+share/arp-scan/
+share/arp-scan/ieee-iab.txt
+share/arp-scan/ieee-oui.txt
+share/arp-scan/mac-vendor.txt.dist
+@sample share/arp-scan/mac-vendor.txt
+share/examples/arpwatch/
+share/examples/arpwatch/ethercodes.dat
+@sample /var/arpwatch/
+@mode 444
+@sample /var/arpwatch/ethercodes.dat
+@mode
+share/mac-vendor/
+share/mac-vendor/iab.csv
+share/mac-vendor/ma-l.csv
+share/mac-vendor/ma-m.csv
+share/mac-vendor/ma-s.csv

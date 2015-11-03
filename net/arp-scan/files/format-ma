@@ -1,0 +1,48 @@
+#!/usr/bin/perl
+
+use warnings;
+use strict;
+use Text::CSV;
+
+my ($errno, $lineno, $entry, $registry, $mac, $vendor, $address);
+
+my $csv = Text::CSV->new({
+	allow_loose_quotes => 1,
+	auto_diag => 1,
+	binary => 1,
+	eol => $/
+});
+
+open OUI, ">ieee-oui.txt" || die "Could not open ieee-oui.txt for writing";
+open IAB, ">ieee-iab.txt" || die "Could not open ieee-iab.txt for writing";
+open DAT, ">ethercodes.dat" || die "Could not open ethercodes.dat for writing";
+
+$csv->bind_columns (\$registry, \$mac, \$vendor, \$address);
+while ($csv->getline (*ARGV)) {
+	$lineno++;
+	next if ($mac eq 'Assignment');
+	$entry++;
+	if ($registry =~ /^MA-(S|M|L|0)$/) {
+		print OUI "$mac\t$vendor\n";
+	} elsif ($registry =~ /^IAB$/) {
+		print IAB "$mac\t$vendor\n";
+	} else {
+		print STDERR "Unknown registry on line $lineno\n";
+		$errno++;
+	}
+	# arpwatch only handles (24-bit vendors) and doesn't want a leading 0
+	next if (length($mac) ne 6);
+	$mac = lc($mac);
+	print DAT substr($mac,0,1) unless substr($mac,0,1) eq '0';
+	print DAT substr($mac,1,1), ':';
+	print DAT substr($mac,2,1) unless substr($mac,2,1) eq '0';
+	print DAT substr($mac,3,1), ':';
+	print DAT substr($mac,4,1) unless substr($mac,4,1) eq '0';
+	print DAT substr($mac,5,1);
+	print DAT "\t$vendor\n";
+}
+
+close OUI;
+close IAB;
+close DAT;
+print STDERR "$entry entries\n";

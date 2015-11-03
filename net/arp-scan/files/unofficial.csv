@@ -1,0 +1,8 @@
+Registry,Assignment,Organization Name,Organization Address
+MA-0,02BF,Microsoft WLBS (last four octets are IP address),http://www.microsoft.com/technet/prodtechnol/acs/reskit/acrkappb.mspx
+MA-0,525400,QEMU,
+MA-0,B0C420,Bochs,
+MA-0,FEE1BAD,OpenBSD randomly generated,ether_fakeaddr()
+MA-0,00005E0001,VRRP/CARP (last octet is VHID),
+MA-0,00000C07AC,HSRP (last octet is group number),
+MA-0,FFFFFFFFFFFF,Broadcast,

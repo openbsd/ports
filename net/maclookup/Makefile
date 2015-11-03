@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2014/03/18 11:57:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/11/03 15:51:25 sthen Exp $
 
 COMMENT=	simple filter to look up MAC address vendors
 
 DISTNAME=	maclookup-1.3
+REVISION=	0
 
 CATEGORIES=	net textproc
 
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://spacehopper.org/mirrors/
 
-RUN_DEPENDS=	net/arp-scan # lazy way to get the data files
+RUN_DEPENDS=	net/arp-scan,-mac
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
