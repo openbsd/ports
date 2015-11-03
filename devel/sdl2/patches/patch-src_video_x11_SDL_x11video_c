@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_video_x11_SDL_x11video_c,v 1.1 2015/11/03 10:22:46 sthen Exp $
+
+Avoid loading/unloading/reloading symbols, it crashes ld.so:
+https://marc.info/?l=openbsd-tech&m=144576799413459&w=2
+
+--- src/video/x11/SDL_x11video.c.orig	Mon Nov  2 11:52:57 2015
++++ src/video/x11/SDL_x11video.c	Mon Nov  2 11:56:27 2015
+@@ -311,7 +311,9 @@ X11_Available(void)
+         if (display != NULL) {
+             X11_XCloseDisplay(display);
+         }
++#ifndef __OpenBSD__
+         SDL_X11_UnloadSymbols();
++#endif
+     }
+     return (display != NULL);
+ }
+@@ -367,9 +369,11 @@ X11_CreateDevice(int devindex)
+     SDL_VideoData *data;
+     const char *display = NULL; /* Use the DISPLAY environment variable */
+ 
++#ifndef __OpenBSD__
+     if (!SDL_X11_LoadSymbols()) {
+         return NULL;
+     }
++#endif
+ 
+     /* Need for threading gl calls. This is also required for the proprietary
+         nVidia driver to be threaded. */

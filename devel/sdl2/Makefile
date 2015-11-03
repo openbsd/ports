@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/25 13:18:25 sthen Exp $
-
-BROKEN=		issue with ld.so
+# $OpenBSD: Makefile,v 1.8 2015/11/03 10:22:46 sthen Exp $
 
 COMMENT=	cross-platform multimedia library
 
-V=		2.0.2
+V=		2.0.3
 DISTNAME=	SDL2-${V}
-REVISION=	3
 PKGNAME=	sdl2-${V}
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
