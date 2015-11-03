@@ -1,0 +1,15 @@
+$OpenBSD:
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Upgrading from an earlier version
+=================================
+
+Some internally used settings keys have been renamed for consistency and
+upon upgrading from an older version the setup wizard dialog will pop
+up. Follow the prompts and select "Yes" when asked if you have used
+Tarsnap on this machine in the past and have a key. Select the previous
+key if available in the dropdown list or locate it manually and proceed.
+Your jobs and settings should remain unchanged.
