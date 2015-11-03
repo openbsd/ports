@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.255 2015/10/23 09:29:40 sthen Exp $
+$OpenBSD: user.list,v 1.256 2015/11/03 20:06:32 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -267,3 +267,4 @@ id  user		group		port options
 756 _rspamd		_rspamd		mail/rspamd
 757 _opendnssec		_opendnssec	security/opendnssec
 758 _mlvpn		_mlvpn		net/mlvpn
+759 _tinc		_tinc		net/tinc
