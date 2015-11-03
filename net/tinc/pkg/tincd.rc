@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: tincd.rc,v 1.1.1.1 2015/11/03 20:07:47 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/tincd"
+daemon_flags="-U _tinc --chroot --net=example"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

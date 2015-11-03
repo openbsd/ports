@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/03 20:07:47 sthen Exp $
+@newgroup _tinc:759
+@newuser _tinc:759:_tinc:daemon:tinc user:/var/empty:/sbin/nologin
+@info info/tinc.info
+@man man/man5/tinc.conf.5
+@man man/man8/tincd.8
+@bin sbin/tincd
+share/examples/tinc/
+share/examples/tinc/hosts/
+@owner root
+@group _tinc
+@mode 750
+@sample ${SYSCONFDIR}/tinc/
+@sample ${SYSCONFDIR}/tinc/example/
+@sample ${SYSCONFDIR}/tinc/example/hosts/
+@mode 600
+share/examples/tinc/hosts/alpha
+@sample ${SYSCONFDIR}/tinc/example/hosts/alpha
+share/examples/tinc/hosts/beta
+@sample ${SYSCONFDIR}/tinc/example/hosts/beta
+share/examples/tinc/rsa_key.priv
+@sample ${SYSCONFDIR}/tinc/example/rsa_key.priv
+@owner root
+@group _tinc
+@mode 750
+share/examples/tinc/tinc-down
+@sample ${SYSCONFDIR}/tinc/example/tinc-down
+share/examples/tinc/tinc-up
+@sample ${SYSCONFDIR}/tinc/example/tinc-up
+share/examples/tinc/tinc.conf
+@sample ${SYSCONFDIR}/tinc/example/tinc.conf
+@owner
+@group
+@mode
+@rcscript ${RCDIR}/tincd
