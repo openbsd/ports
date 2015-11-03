@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.931 2015/10/30 16:45:55 rpointel Exp $
+# $OpenBSD: Makefile,v 1.932 2015/11/03 20:08:32 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -620,6 +620,7 @@
      SUBDIR += telepathy
      SUBDIR += texapp
      SUBDIR += thcrut
+     SUBDIR += tinc
      SUBDIR += tintin++
      SUBDIR += tinyfugue
      SUBDIR += tircd
