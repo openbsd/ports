@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/04/05 12:15:08 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/11/03 09:49:38 kirby Exp $
 @conflict icinga-api-*
 @pkgpath net/icinga/core,-api
 app/
@@ -975,6 +975,7 @@ app/modules/Cronks/data/xml/grid/icinga-all-problems-template.xml
 app/modules/Cronks/data/xml/grid/icinga-all-service-problems.xml
 app/modules/Cronks/data/xml/grid/icinga-downtime-history-template.xml
 app/modules/Cronks/data/xml/grid/icinga-downtime-template.xml
+app/modules/Cronks/data/xml/grid/icinga-host-cv-template.xml
 app/modules/Cronks/data/xml/grid/icinga-host-history-template.xml
 app/modules/Cronks/data/xml/grid/icinga-host-template.xml
 app/modules/Cronks/data/xml/grid/icinga-hostgroup-summary-template.xml
@@ -1523,6 +1524,7 @@ doc/AUTHORS
 doc/CHANGELOG-1.10
 doc/CHANGELOG-1.11
 doc/CHANGELOG-1.12
+doc/CHANGELOG-1.13
 doc/CHANGELOG-1.6
 doc/CHANGELOG-1.7
 doc/CHANGELOG-1.8
@@ -1539,6 +1541,7 @@ doc/THANKS
 doc/TODO
 doc/VENDOR
 doc/VERSION
+doc/grids_and_customvars.md
 etc/
 etc/astyle-yacs.conf
 etc/build.properties
