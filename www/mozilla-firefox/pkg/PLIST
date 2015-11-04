@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.57 2015/08/11 21:14:53 landry Exp $
+@comment $OpenBSD: PLIST,v 1.58 2015/11/04 07:35:51 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -54,6 +54,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/0.1/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/0.1/clearkey.info
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/gmp-clearkey/0.1/libclearkey.so.${LIBclearkey_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/liblgpllibs.so.${LIBlgpllibs_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libxul.so.${LIBxul_VERSION}
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/omni.ja
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/platform.ini
