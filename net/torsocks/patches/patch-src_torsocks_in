@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_torsocks_in,v 1.1.1.1 2011/12/01 11:49:27 pascal Exp $
---- src/torsocks.in.orig	Tue Nov 29 11:58:05 2011
-+++ src/torsocks.in	Tue Nov 29 11:58:20 2011
+$OpenBSD: patch-src_torsocks_in,v 1.2 2015/11/04 16:05:51 giovanni Exp $
+--- src/torsocks.in.orig	Sun Oct 23 23:12:13 2011
++++ src/torsocks.in	Sun Nov  1 22:34:25 2015
 @@ -76,7 +76,7 @@ fi
  LIBDIR="@prefix@/lib/torsocks"
  LIB_NAME="libtorsocks"
@@ -10,3 +10,12 @@ $OpenBSD: patch-src_torsocks_in,v 1.1.1.1 2011/12/01 11:49:27 pascal Exp $
  
  # Ensure libtorsocks exists,
  if [ ! -f $SHLIB ]; then
+@@ -101,7 +101,7 @@ case "$1" in
+     #replace '/' with '\/' in @prefix@
+     # escprefix=`echo '@prefix@' |sed 's/\\//\\\\\//g'`
+     # export @LDPRELOAD@=`echo -n $@LDPRELOAD@ | sed "s/$escprefix\/lib\/torsocks\/libtorsocks.so \?//"`
+-    export @LDPRELOAD@=`echo -n $@LDPRELOAD@ | sed "s#@prefix@/lib/torsocks/libtorsocks\.@SHLIB_EXT@ *##"`
++    export @LDPRELOAD@=`echo -n $@LDPRELOAD@ | sed "s#@prefix@/lib/torsocks/libtorsocks\.@SHLIB_EXT@\.${LIBtorsocks_VERSION} *##"`
+     if [ -z "$@LDPRELOAD@" ]
+       then
+         unset @LDPRELOAD@

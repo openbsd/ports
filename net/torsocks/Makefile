@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/25 14:03:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/11/04 16:05:51 giovanni Exp $
 
 COMMENT =		socks proxy for use with tor
 
 DISTNAME =		torsocks-1.2
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS =		torsocks	0.0 # 1.0
 
