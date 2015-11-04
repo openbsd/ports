@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2015/09/24 20:22:06 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2015/11/04 07:34:19 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
-MOZILLA_VERSION =	38.3.0esr
+MOZILLA_VERSION =	38.4.0esr
 MOZILLA_BRANCH =	esr38
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
