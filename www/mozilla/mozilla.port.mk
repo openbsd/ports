@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.80 2015/10/31 15:12:38 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.81 2015/11/04 07:32:03 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc64
@@ -42,8 +42,8 @@ MODMOZ_BUILD_DEPENDS =	archivers/gtar \
 			archivers/zip>=2.3
 
 MODMOZ_LIB_DEPENDS =	textproc/hunspell \
-			devel/nspr>=4.10.8 \
-			security/nss>=3.19.2
+			devel/nspr>=4.10.10 \
+			security/nss>=3.20.1
 
 # bug #736961
 SEPARATE_BUILD =	Yes
@@ -131,8 +131,9 @@ PORTHOME =	${WRKSRC}
 # from browser/config/mozconfig
 CONFIGURE_ARGS +=--enable-application=${MOZILLA_CODENAME}
 
-.if ${MOZILLA_PROJECT} == "firefox" || \
-	${MOZILLA_PROJECT} == "xulrunner"
+.if ${PKGPATH} == "www/mozilla-firefox" || (${MOZILLA_PROJECT} == "thunderbird" && ${MOZILLA_BRANCH} == "beta")
+WRKDIST ?=	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}
+.elif ${MOZILLA_PROJECT} == "xulrunner" || ${PKGPATH} == "www/firefox-esr"
 WRKDIST ?=	${WRKDIR}/mozilla-${MOZILLA_BRANCH}
 .else
 WRKDIST ?=	${WRKDIR}/comm-${MOZILLA_BRANCH}
