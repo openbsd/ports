@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2015/07/18 23:11:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2015/11/04 17:51:18 jca Exp $
 
 COMMENT=		remote IMAP filtering utility
 
-V=			2.6.1
-REVISION=		0
+V=			2.6.3
 DISTNAME=		imapfilter-${V}
 
 GH_TAGNAME=		v${V}
