@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_image_image_pro,v 1.1.1.1 2015/11/04 21:11:16 sthen Exp $
+--- src/image/image.pro.orig	Fri Oct 23 22:05:02 2015
++++ src/image/image.pro	Fri Oct 23 22:06:26 2015
+@@ -24,8 +24,8 @@ DEPENDPATH += . ../shared
+ INCLUDEPATH += . ../shared
+ 
+ unix {
+-    man.path=$$INSTALLBASE/share/man/man1
+-    man.extra=LD_LIBRARY_PATH=../../bin/ ../../bin/wkhtmltoimage --manpage | gzip > $(INSTALL_ROOT)/share/man/man1/wkhtmltoimage.1.gz
++    man.path=$$INSTALLBASE/man/man1
++    man.extra=LD_LIBRARY_PATH=../../bin/ ../../bin/wkhtmltoimage --manpage > $(INSTALL_ROOT)/man/man1/wkhtmltoimage.1
+ 
+     QMAKE_EXTRA_TARGETS += man
+     INSTALLS += man
