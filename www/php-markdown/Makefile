@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2013/07/05 09:34:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/11/04 21:11:48 benoit Exp $
 
 COMMENT=		Markdown implementation for PHP
 
-DISTNAME=		php-markdown-1.0.1n
+DISTNAME =		php-markdown-lib-1.5.0
+PKGNAME =		${DISTNAME:S/-lib//}
 CATEGORIES=		www
 
-REVISION=		0
-
-HOMEPAGE=		http://michelf.com/projects/php-markdown/
+HOMEPAGE =		https://michelf.ca/projets/php-markdown/
 
 # modified BSD
 PERMIT_PACKAGE_CDROM=   Yes
 
-MASTER_SITES=		http://michelf.com/docs/projets/
+MASTER_SITES=		https://littoral.michelf.ca/code/php-markdown/
 EXTRACT_SUFX=		.zip
 
 NO_BUILD=       	Yes
@@ -26,11 +25,11 @@ PREFIX=		${VARBASE}/www
 INSTDIR=                ${PREFIX}/pear/lib/
 SUBST_VARS=             INSTDIR
 
-WRKSRC= 		${WRKDIR}/PHP\ Markdown\ 1.0.1n/
+WRKSRC= 		${WRKDIR}/PHP\ Markdown\ Lib\ 1.5.0/
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
-	${INSTALL_DATA} ${WRKSRC}/markdown.php ${INSTDIR}
+	${INSTALL_DATA} ${WRKSRC}/Michelf/*.php ${INSTDIR}
 
 
 .include <bsd.port.mk>

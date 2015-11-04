@@ -1,5 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/18 19:19:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/11/04 21:11:48 benoit Exp $
 @group daemon
 pear/
 pear/lib/
-pear/lib/markdown.php
+pear/lib/Markdown.inc.php
+pear/lib/Markdown.php
+pear/lib/MarkdownExtra.inc.php
+pear/lib/MarkdownExtra.php
+pear/lib/MarkdownInterface.inc.php
+pear/lib/MarkdownInterface.php
