@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/23 20:51:10 millert Exp $
+# $OpenBSD: Makefile,v 1.6 2015/11/04 01:52:24 millert Exp $
 
 COMMENT=	execute a command as another user
 
-DISTNAME=	sudo-1.8.14p3
-PKGNAME=	sudo-1.8.14.3
+DISTNAME=	sudo-1.8.15
 CATEGORIES=	security
 
 MAINTAINER=	Todd C. Miller <millert@openbsd.org>
@@ -18,7 +17,6 @@ HOMEPAGE=	http://www.sudo.ws/
 
 MASTER_SITES=	https://www.sudo.ws/dist/ \
 		ftp://plier.ucar.edu/pub/sudo/ \
-		ftp://obsd.isc.org/pub/sudo/ \
 		ftp://ftp.tux.org/pub/security/sudo/ \
 		ftp://sunsite.ualberta.ca/pub/Mirror/sudo/
 
