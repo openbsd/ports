@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.33 2015/10/13 06:31:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.34 2015/11/04 18:54:32 pascal Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT=	virtual machine designed for interpreted languages
 
-V=		7.2.0
+V=		7.9.0
 DISTNAME=	parrot-$V
 CATEGORIES=	lang perl6
-SHARED_LIBS=	parrot	9.0
+SHARED_LIBS=	parrot	10.0
 
 HOMEPAGE=	http://www.parrot.org/
 
@@ -63,6 +63,5 @@ pre-configure:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/blib/lib/libparrot.so.${LIBparrot_VERSION} \
 		${PREFIX}/lib
-	chmod a+r ${PREFIX}/share/doc/parrot/$V/pod/packfile-c.pod
 
 .include <bsd.port.mk>

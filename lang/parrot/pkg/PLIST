@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/04/09 18:27:19 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/11/04 18:54:32 pascal Exp $
 @bin bin/parrot
 @bin bin/parrot-nqp
 @bin bin/parrot-ops2c
@@ -1189,23 +1189,8 @@ share/doc/parrot/${V}/pod/index/tools.json
 share/doc/parrot/${V}/pod/intro.pod
 share/doc/parrot/${V}/pod/memory_internals.pod
 share/doc/parrot/${V}/pod/multidispatch.pod
-share/doc/parrot/${V}/pod/ops/
-share/doc/parrot/${V}/pod/ops/bit.pod
-share/doc/parrot/${V}/pod/ops/cmp.pod
-share/doc/parrot/${V}/pod/ops/core.pod
-share/doc/parrot/${V}/pod/ops/experimental.pod
-share/doc/parrot/${V}/pod/ops/index.pod
-share/doc/parrot/${V}/pod/ops/io.pod
-share/doc/parrot/${V}/pod/ops/math.pod
-share/doc/parrot/${V}/pod/ops/object.pod
-share/doc/parrot/${V}/pod/ops/pmc.pod
-share/doc/parrot/${V}/pod/ops/set.pod
-share/doc/parrot/${V}/pod/ops/string.pod
-share/doc/parrot/${V}/pod/ops/sys.pod
-share/doc/parrot/${V}/pod/ops/var.pod
 share/doc/parrot/${V}/pod/optable.pod
 share/doc/parrot/${V}/pod/overview.pod
-share/doc/parrot/${V}/pod/packfile-c.pod
 share/doc/parrot/${V}/pod/parrot.pod
 share/doc/parrot/${V}/pod/parrotbyte.pod
 share/doc/parrot/${V}/pod/parrothist.pod
