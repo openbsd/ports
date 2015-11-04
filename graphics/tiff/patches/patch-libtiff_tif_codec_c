@@ -1,0 +1,13 @@
+$OpenBSD: patch-libtiff_tif_codec_c,v 1.5 2015/11/04 20:51:36 naddy Exp $
+--- libtiff/tif_codec.c.orig	Sat Aug 29 00:16:22 2015
++++ libtiff/tif_codec.c	Wed Nov  4 17:37:49 2015
+@@ -108,7 +108,8 @@ _notConfigured(TIFF* tif)
+ 	const TIFFCodec* c = TIFFFindCODEC(tif->tif_dir.td_compression);
+         char compression_code[20];
+         
+-        sprintf(compression_code, "%d",tif->tif_dir.td_compression );
++        snprintf(compression_code, sizeof(compression_code), "%d",
++		 tif->tif_dir.td_compression );
+ 	TIFFErrorExt(tif->tif_clientdata, tif->tif_name,
+                      "%s compression support is not configured", 
+                      c ? c->name : compression_code );
