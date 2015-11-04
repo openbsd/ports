@@ -1,12 +1,12 @@
-$OpenBSD: patch-auto_def,v 1.4 2015/06/24 20:28:42 jturner Exp $
---- auto.def.orig	Sat May 23 07:11:31 2015
-+++ auto.def	Wed Jun 24 15:01:32 2015
-@@ -114,7 +114,7 @@ if {[opt-bool with-th1-hooks]} {
+$OpenBSD: patch-auto_def,v 1.5 2015/11/04 21:43:40 jturner Exp $
+--- auto.def.orig	Mon Nov  2 12:35:44 2015
++++ auto.def	Wed Nov  4 16:26:37 2015
+@@ -121,7 +121,7 @@ if {[opt-bool with-th1-hooks]} {
  
  if {[opt-bool static]} {
      # XXX: This will not work on all systems.
 -    define-append EXTRA_LDFLAGS -static
 +    define-append EXTRA_LDFLAGS ${STATIC}
      msg-result "Trying to link statically"
- }
- 
+ } else {
+     define-append EXTRA_CFLAGS -DFOSSIL_DYNAMIC_BUILD=1

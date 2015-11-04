@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2015/08/17 19:10:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2015/11/04 21:43:40 jturner Exp $
 
 COMMENT =		simple distributed software configuration management
 
-DISTNAME =		fossil-src-1.33
-PKGNAME =		fossil-1.33
+DISTNAME =		fossil-src-1.34
+PKGNAME =		fossil-1.34
 EPOCH =			0
-REVISION =		0
 CATEGORIES =		devel www
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -26,7 +25,7 @@ MODULES =		lang/tcl
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 
 CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	--disable-internal-sqlite --disable-lineedit
+CONFIGURE_ARGS =	--disable-internal-sqlite
 CONFLICT_MARKER =	fossil-*-!static
 
 .if ${FLAVOR} == "static"
