@@ -1,17 +1,33 @@
-$OpenBSD: patch-src_curve_server_cpp,v 1.1 2015/11/03 19:14:13 sthen Exp $
+$OpenBSD: patch-src_curve_server_cpp,v 1.2 2015/11/04 09:33:18 sthen Exp $
 
-https://github.com/zeromq/libzmq/issues/1632
+From 89d4e995ef92d5cb3d0f0373ec7d80c2ad7fa0d3 Mon Sep 17 00:00:00 2001
+From: Constantin Rack <constantin@rack.li>
+Date: Sat, 8 Nov 2014 10:50:17 +0100
+Subject: [PATCH] Problem: return code of sodium_init() is not checked.
 
---- src/curve_server.cpp.orig	Tue Nov  3 16:35:06 2015
-+++ src/curve_server.cpp	Tue Nov  3 16:36:49 2015
-@@ -60,8 +60,8 @@ zmq::curve_server_t::curve_server_t (session_base_t *s
+--- src/curve_server.cpp.orig	Mon Jun 15 10:43:08 2015
++++ src/curve_server.cpp	Wed Nov  4 09:27:59 2015
+@@ -52,6 +52,7 @@ zmq::curve_server_t::curve_server_t (session_base_t *s
+     cn_peer_nonce(1),
+     sync()
+ {
++    int rc;
+     //  Fetch our secret key from socket options
+     memcpy (secret_key, options_.curve_secret_key, crypto_box_SECRETKEYBYTES);
+     scoped_lock_t lock (sync);
+@@ -60,12 +61,12 @@ zmq::curve_server_t::curve_server_t (session_base_t *s
      unsigned char tmpbytes[4];
      randombytes(tmpbytes, 4);
  #else
 -    // todo check return code
 -    sodium_init();
-+    const int ret = sodium_init();
-+    zmq_assert ((ret == 0) || (ret == 1));
++    rc = sodium_init ();
++    zmq_assert (rc != -1);
  #endif
  
      //  Generate short-term key pair
+-    const int rc = crypto_box_keypair (cn_public, cn_secret);
++    rc = crypto_box_keypair (cn_public, cn_secret);
+     zmq_assert (rc == 0);
+ }
+ 
