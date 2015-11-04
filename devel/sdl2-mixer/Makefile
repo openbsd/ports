@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/08/25 13:18:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/11/04 12:37:25 sthen Exp $
 
 V =		2.0.0
 COMMENT =	SDL2 multi-channel audio mixer library
@@ -36,7 +36,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-music-ogg-shared \
 			--enable-music-mod-mikmod \
 			--disable-music-mod-mikmod-shared
-CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libmodplug" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GMAKE =	Yes
