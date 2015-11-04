@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2015/08/24 04:10:56 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2015/11/04 16:41:46 bentley Exp $
 
 COMMENT =		n64 emulator command-line ui plugin
-REVISION =		0
+REVISION =		1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB = 		SDL c pthread
-LIB_DEPENDS =		devel/sdl
+WANTLIB = 		SDL2 c pthread
+LIB_DEPENDS =		devel/sdl2
 
 MUPEN64PLUS_MOD = 	ui-console
 

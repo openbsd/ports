@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2015/08/24 04:10:56 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/04 16:41:45 bentley Exp $
 
 COMMENT =		n64 emulator sdl audio plugin
-REVISION =		0
+REVISION =		1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		SDL pthread samplerate speexdsp
+WANTLIB =		SDL2 pthread samplerate speexdsp
 LIB_DEPENDS =		audio/speex \
-			devel/sdl \
+			devel/sdl2 \
 			audio/libsamplerate
 
 MUPEN64PLUS_MOD = 	audio-sdl
