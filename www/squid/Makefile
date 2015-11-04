@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.173 2015/11/02 17:21:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.174 2015/11/04 15:39:55 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
 V=		3.5.11
+REVISION-main=	0
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
@@ -36,7 +37,8 @@ MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c c++
 
 SEPARATE_BUILD=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.69
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/cfgaux
 
 CONFIGURE_ARGS=	--disable-strict-error-checking \
