@@ -1,0 +1,5 @@
+RFC 3339 is a standard date format used on the internet. This Python
+module formats dates according to the RFC. Examples of this format:
+
+      2015-11-03T22:11:12Z
+      2015-11-03T15:11:12-07:00

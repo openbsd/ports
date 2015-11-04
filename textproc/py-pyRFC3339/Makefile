@@ -1,0 +1,24 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2015/11/04 09:49:42 sthen Exp $
+
+COMMENT=	format dates according to RFC3339
+
+MODPY_EGG_VERSION=	0.2
+DISTNAME=	pyRFC3339-${MODPY_EGG_VERSION}
+PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
+CATEGORIES=	textproc
+
+# ISC
+PERMIT_PACKAGE_CDROM=	Yes
+
+FLAVORS=	python3
+FLAVOR?=
+
+MODULES=	lang/python
+MODPY_SETUPTOOLS= Yes
+MODPY_PI=	Yes
+
+RUN_DEPENDS=	devel/py-tz${MODPY_FLAVOR}
+TEST_DEPENDS=	${RUN_DEPENDS} \
+		devel/py-nose${MODPY_FLAVOR}
+
+.include <bsd.port.mk>
