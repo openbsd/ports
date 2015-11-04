@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.468 2015/11/04 09:51:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.469 2015/11/04 21:12:25 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -434,6 +434,7 @@
      SUBDIR += vislcg3
      SUBDIR += wdg-sgml-lib
      SUBDIR += wdiff
+     SUBDIR += wkhtmltopdf
      SUBDIR += xalan-j
      SUBDIR += xerces
      SUBDIR += xerces-c
