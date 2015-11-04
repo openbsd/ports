@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.746 2015/10/30 18:16:29 giovanni Exp $
+# $OpenBSD: Makefile,v 1.747 2015/11/04 09:51:40 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -428,6 +428,8 @@
      SUBDIR += py-mechanize
      SUBDIR += py-meld3
      SUBDIR += py-meld3,python3
+     SUBDIR += py-ndg-httpsclient
+     SUBDIR += py-ndg-httpsclient,python3
      SUBDIR += py-nevow
      SUBDIR += py-paste
      SUBDIR += py-paste-deploy
