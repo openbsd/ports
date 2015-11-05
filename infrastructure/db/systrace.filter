@@ -21,6 +21,11 @@
 	native-chflags: filename match "${TMPDIR}" then permit
 	native-chflags: filename match "${WRKDIR}" then permit
 	native-chflags: filename match "/<non-existent filename>: *" then deny[enoent]
+	native-chflagsat: filename match "/tmp" then permit
+	native-chflagsat: filename match "/var/tmp" then permit
+	native-chflagsat: filename match "${TMPDIR}" then permit
+	native-chflagsat: filename match "${WRKDIR}" then permit
+	native-chflagsat: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-chmod: filename match "/tmp" then permit
 	native-chmod: filename match "/var/tmp" then permit
 	native-chmod: filename match "${TMPDIR}" then permit
