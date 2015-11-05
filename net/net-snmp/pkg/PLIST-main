@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2015/11/05 21:44:04 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2015/11/05 23:43:46 sthen Exp $
+@newgroup _netsnmp:760
+@newuser _netsnmp:760:_netsnmp:daemon:Net-SNMP user:/nonexistent:/sbin/nologin
 @conflict p5-SNMP-*
 @pkgpath net/net-snmp
 @pkgpath net/net-snmp,-perl

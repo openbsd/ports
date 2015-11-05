@@ -1,8 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: netsnmpd.rc,v 1.1 2011/07/07 20:02:02 sthen Exp $
+# $OpenBSD: netsnmpd.rc,v 1.2 2015/11/05 23:43:46 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/snmpd"
+
+# disable ipv6 mib which needs root; to override the default you may set
+# this in rc.conf.local: netsnmpd_flags=" "
+daemon_flags="-u _netsnmp -I -ipv6"
 
 . /etc/rc.d/rc.subr
 
