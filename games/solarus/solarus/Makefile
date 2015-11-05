@@ -1,33 +1,36 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/20 14:04:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/05 11:31:24 jasper Exp $
 
-PORTROACH=	limit:^1\.1
-PORTROACH_COMMENT=	solarus >= 1.2.0 requires SDL2
+SHARED_ONLY =	Yes
 
-V =		1.1.1
+V =		1.4.4
 COMMENT =	open-source Zelda-like 2D game engine
 DISTNAME =	solarus-${V}-src
 PKGNAME =	solarus-${V}
-REVISION =	1
 
 HOMEPAGE =	http://www.solarus-games.org/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += SDL SDL_image SDL_ttf c m modplug ogg openal physfs
-WANTLIB += pthread stdc++ vorbisfile ${MODLUA_WANTLIB}
+WANTLIB += SDL2 SDL2_image SDL2_ttf c luajit-5.1 m modplug ogg
+WANTLIB += openal physfs pthread vorbisfile
 
 MASTER_SITES =	http://www.solarus-games.org/downloads/solarus/
 
 MODULES +=	devel/cmake \
-		lang/lua
+		lang/lua \
+		gcc4
+
+MODGCC4_ARCHS=	*
+MODGCC4_LANGS=	c++
 
 LIB_DEPENDS =	audio/libmodplug \
 		audio/libvorbis \
 		audio/openal \
 		devel/physfs \
-		devel/sdl-image \
-		devel/sdl-ttf
+		devel/sdl2-image \
+		devel/sdl2-ttf \
+		lang/luajit
 
 WRKDIST =	${WRKDIR}/solarus-${V}
 
