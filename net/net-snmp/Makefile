@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2015/10/08 21:19:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2015/11/05 21:44:04 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.7.3
-REVISION-main=	2
+REVISION-main=	3
 
 DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -tkmib

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2014/12/09 15:20:06 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2015/11/05 21:44:04 sthen Exp $
 @conflict p5-SNMP-*
 @pkgpath net/net-snmp
 @pkgpath net/net-snmp,-perl
@@ -419,7 +419,9 @@ share/doc/net-snmp/README.snmpv3
 share/examples/net-snmp/
 @sample ${SYSCONFDIR}/snmp/
 share/examples/net-snmp/EXAMPLE.conf
+@mode 600
 @sample ${SYSCONFDIR}/snmp/snmpd.conf
+@mode
 share/snmp/
 share/snmp/mib2c-data/
 share/snmp/mib2c-data/default-mfd-top.m2c
