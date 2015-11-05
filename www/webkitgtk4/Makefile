@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/10/27 13:57:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2015/11/05 16:46:18 ajacoutot Exp $
 
 BROKEN-alpha =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
 BROKEN-hppa =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
@@ -112,6 +112,7 @@ post-extract:
 	ln -sf ${RUBY} ${WRKDIR}/bin/ruby
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Source/WebKit2/Shared/Plugins/unix/PluginSearchPath.cpp
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt \
+		${WRKSRC}/Source/WebKit2/Shared/Plugins/unix/PluginSearchPath.cpp
 
 .include <bsd.port.mk>
