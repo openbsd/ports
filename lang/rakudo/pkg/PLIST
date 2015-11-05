@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/04/09 17:35:55 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/11/05 11:52:32 pascal Exp $
 bin/perl6
 bin/perl6-debug-m
+bin/perl6-gdb-m
 bin/perl6-m
+bin/perl6-valgrind-m
 share/nqp/lib/Perl6/
 share/nqp/lib/Perl6/Actions.moarvm
 share/nqp/lib/Perl6/BOOTSTRAP.moarvm
@@ -15,8 +17,16 @@ share/nqp/lib/Perl6/Pod.moarvm
 share/nqp/lib/Perl6/World.moarvm
 share/perl6/
 share/perl6/lib/
+share/perl6/lib/NativeCall/
 share/perl6/lib/NativeCall.pm
 share/perl6/lib/NativeCall.pm.moarvm
+share/perl6/lib/NativeCall/Compiler/
+share/perl6/lib/NativeCall/Compiler/GNU.pm
+share/perl6/lib/NativeCall/Compiler/GNU.pm.moarvm
+share/perl6/lib/NativeCall/Compiler/MSVC.pm
+share/perl6/lib/NativeCall/Compiler/MSVC.pm.moarvm
+share/perl6/lib/NativeCall/Types.pm
+share/perl6/lib/NativeCall/Types.pm.moarvm
 share/perl6/lib/Pod/
 share/perl6/lib/Pod/To/
 share/perl6/lib/Pod/To/Text.pm
@@ -25,8 +35,6 @@ share/perl6/lib/Test.pm
 share/perl6/lib/Test.pm.moarvm
 share/perl6/lib/lib.pm6
 share/perl6/lib/lib.pm6.moarvm
-share/perl6/lib/nqp.pm6
-share/perl6/lib/nqp.pm6.moarvm
 share/perl6/runtime/
 share/perl6/runtime/CORE.setting.moarvm
 share/perl6/runtime/RESTRICTED.setting.moarvm
