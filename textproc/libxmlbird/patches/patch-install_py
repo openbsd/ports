@@ -1,4 +1,10 @@
-$OpenBSD: patch-install_py,v 1.1 2015/10/29 08:47:21 jasper Exp $
+$OpenBSD: patch-install_py,v 1.2 2015/11/05 08:24:51 jasper Exp $
+
+From becf50557f503d3f9e8983e3e06c0c32cf5ccebe Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Thu, 29 Oct 2015 09:34:51 +0100
+Subject: [PATCH] Handle OpenBSD too when installing the library
+
 --- install.py.orig	Thu Oct 29 09:17:58 2015
 +++ install.py	Thu Oct 29 09:21:36 2015
 @@ -89,8 +89,9 @@ if not options.libdir:	
