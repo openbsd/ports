@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/12/23 13:36:13 shadchin Exp $
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+@comment $OpenBSD: PLIST,v 1.16 2015/11/05 07:10:49 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pyparsing.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyparsing.py
 share/doc/${MODPY_PY_PREFIX}parsing/
 share/doc/${MODPY_PY_PREFIX}parsing/CHANGES

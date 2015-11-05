@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2014/12/23 13:36:13 shadchin Exp $
+# $OpenBSD: Makefile,v 1.25 2015/11/05 07:10:49 shadchin Exp $
 
 COMMENT =		Python parsing module
 
-MODPY_EGG_VERSION =	2.0.3
+MODPY_EGG_VERSION =	2.0.5
 DISTNAME =		pyparsing-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
@@ -25,6 +25,8 @@ NO_TEST =	Yes
 
 DOCSDIR =	${PREFIX}/share/doc/${MODPY_PY_PREFIX}parsing
 EXAMPLESDIR =	${PREFIX}/share/examples/${MODPY_PY_PREFIX}parsing
+
+MODPY_SETUPTOOLS = Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
