@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/07/12 20:34:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/11/05 12:43:20 pirofti Exp $
 include/ereadline/
 include/ereadline/readline/
 include/ereadline/readline/chardefs.h
@@ -18,11 +18,18 @@ lib/libereadline.a
 @lib lib/libereadline.so.${LIBereadline_VERSION}
 @man man/man3/ehistory.3
 @man man/man3/ereadline.3
+share/doc/readline/
+share/doc/readline/CHANGES
+share/doc/readline/INSTALL
+share/doc/readline/README
 share/readline/
 share/readline/excallback.c
 share/readline/fileman.c
+share/readline/hist_erasedups.c
+share/readline/hist_purgecmd.c
 share/readline/histexamp.c
 share/readline/manexamp.c
+share/readline/rl-callbacktest.c
 share/readline/rl-fgets.c
 share/readline/rl.c
 share/readline/rlcat.c

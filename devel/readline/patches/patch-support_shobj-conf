@@ -1,11 +1,11 @@
-$OpenBSD: patch-support_shobj-conf,v 1.1 2013/04/18 15:08:01 sthen Exp $
---- support/shobj-conf.orig	Thu Apr 18 12:16:39 2013
-+++ support/shobj-conf	Thu Apr 18 12:17:33 2013
-@@ -197,7 +197,16 @@ darwin*|macosx*)
+$OpenBSD: patch-support_shobj-conf,v 1.2 2015/11/05 12:43:20 pirofti Exp $
+--- support/shobj-conf.orig	Mon Feb 24 04:06:29 2014
++++ support/shobj-conf	Sat Oct 31 13:00:38 2015
+@@ -212,7 +212,16 @@ darwin*)
  	SHLIB_LIBS='-lncurses'	# see if -lcurses works on MacOS X 10.1 
  	;;
  
--openbsd*|netbsd*)
+-openbsd*|netbsd*|mirbsd*)
 +openbsd*)
 +	SHOBJ_CFLAGS=-fPIC
 +	SHOBJ_LD='${CC}'
@@ -15,7 +15,7 @@ $OpenBSD: patch-support_shobj-conf,v 1.1 2013/04/18 15:08:01 sthen Exp $
 +	SHLIB_LIBVERSION='$(SHLIB_LIBSUFF).$(RL_SHLIB_V)'
 +	;;
 +
-+netbsd*)
++netbsd*|mirbsd*)
  	SHOBJ_CFLAGS=-fPIC
  	SHOBJ_LD='${CC}'
  	SHOBJ_LDFLAGS='-shared'

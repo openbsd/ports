@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.12 2014/07/12 20:34:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/11/05 12:43:20 pirofti Exp $
 
 COMMENT =		library to edit command lines as they are typed in
 
-V =			6.2
+V =			6.3
 DISTNAME =		readline-${V}
-PKGNAME =		readline-${V}pl4
-PATCHFILES =		readline62-001:0 \
-			readline62-002:0 \
-			readline62-003:0 \
-			readline62-004:0
+PKGNAME =		readline-${V}
+PATCHFILES =		readline63-001:0 \
+			readline63-002:0 \
+			readline63-003:0 \
+			readline63-004:0 \
+			readline63-005:0 \
+			readline63-006:0 \
+			readline63-007:0 \
+			readline63-008:0
 
-LIBV =			0.1
+LIBV =			1.0
 SHARED_LIBS +=		ehistory ${LIBV}
 SHARED_LIBS +=		ereadline ${LIBV}
-REVISION =		2
 
 CATEGORIES =		devel
 
