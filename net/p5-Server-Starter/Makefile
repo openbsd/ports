@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/11/05 12:40:56 benoit Exp $
 
 COMMENT =		superdaemon for hot-deploying server programs
 
 MODULES =		cpan
-DISTNAME =		Server-Starter-0.09
-REVISION =		0
+DISTNAME =		Server-Starter-0.32
 CATEGORIES =		net
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
-BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/p5-List-MoreUtils \
-			devel/p5-Scope-Guard \
-			net/p5-Test-TCP>=0.11 \
-			sysutils/p5-Proc-Wait3
+TEST_DEPENDS =		net/p5-Test-TCP>=2.08 \
+			devel/p5-Test-Requires \
+			devel/p5-Test-SharedFork
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
+
+CONFIGURE_STYLE +=	modbuild
 
 .include <bsd.port.mk>

@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/05 14:12:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/11/05 12:40:56 benoit Exp $
 bin/start_server
 ${P5SITE}/Server/
+${P5SITE}/Server/Starter/
 ${P5SITE}/Server/Starter.pm
+${P5SITE}/Server/Starter/Guard.pm
 @man man/man1/start_server.1
 @man man/man3p/Server::Starter.3p
