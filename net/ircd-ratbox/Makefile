@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.20 2013/10/31 01:25:07 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2015/11/05 19:08:58 jca Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	advanced, stable and fast irc server
 
 DISTNAME =	ircd-ratbox-3.0.8
-REVISION =	0
+REVISION =	1
 CATEGORIES =	net
 MASTER_SITES =	${HOMEPAGE}download/
 EXTRACT_SUFX =	.tar.bz2
 
 HOMEPAGE =	http://www.ratbox.org/
-
-MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes

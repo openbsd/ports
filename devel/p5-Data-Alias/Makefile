@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/07/16 23:57:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/11/05 19:08:57 jca Exp $
 
 COMMENT =	comprehensive set of aliasing operations
 SHARED_ONLY =	Yes
@@ -6,9 +6,7 @@ SHARED_ONLY =	Yes
 MODULES =	cpan
 DISTNAME =	Data-Alias-1.18
 CATEGORIES =	devel
-REVISION =	1
-
-MAINTAINER =	Simon Bertrang <simon@openbsd.org>
+REVISION =	2
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

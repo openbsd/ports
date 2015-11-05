@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/11/05 19:08:58 jca Exp $
 
 COMMENT=	combine pipes to lead water from the house to the tank
 
 DISTNAME=	vodovod-1.10-src
 PKGNAME=	vodovod-1.10
-REVISION =	1
+REVISION =	2
 CATEGORIES=	games
 
 HOMEPAGE=	http://home.gna.org/vodovod/
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

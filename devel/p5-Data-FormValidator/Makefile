@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/21 14:27:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/11/05 19:08:57 jca Exp $
 
 COMMENT=        validate user input from a constraint object
 
 MODULES=	cpan
 DISTNAME=	Data-FormValidator-4.63
-REVISION=	0
+REVISION=	1
 CATEGORIES=     devel
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes

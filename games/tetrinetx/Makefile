@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/25 07:30:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/11/05 19:08:58 jca Exp $
 
 COMMENT=	tetrinet server
 
 DISTNAME=	tetrinetx-1.13.16+qirc-1.40c
 PKGNAME=	tetrinetx-1.13.16
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	games
 
 HOMEPAGE=	http://tetrinetx.sourceforge.net/
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tetrinetx/}
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

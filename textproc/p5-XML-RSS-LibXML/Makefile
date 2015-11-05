@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:41:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/05 19:08:59 jca Exp $
 
 COMMENT= 	XML::RSS with XML::LibXML
 
 MODULES=	cpan
 DISTNAME=	XML-RSS-LibXML-0.3002
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

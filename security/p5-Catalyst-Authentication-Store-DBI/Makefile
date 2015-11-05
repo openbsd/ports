@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/21 14:40:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/11/05 19:08:59 jca Exp $
 
 COMMENT = 	storage class for Catalyst Authentication using DBI
 
 MODULES =	cpan
 DISTNAME =	Catalyst-Authentication-Store-DBI-0.01
-REVISION =	0
+REVISION =	1
 CATEGORIES =	security
-
-MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

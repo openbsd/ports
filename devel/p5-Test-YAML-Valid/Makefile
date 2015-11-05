@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2013/05/26 15:28:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/11/05 19:08:58 jca Exp $
 
 COMMENT =	test for valid YAML
 
 MODULES =	cpan
 DISTNAME =	Test-YAML-Valid-0.04
 CATEGORIES =	devel
-
-MAINTAINER =	Simon Bertrang <simon@openbsd.org>
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

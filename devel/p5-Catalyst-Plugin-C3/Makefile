@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/21 14:27:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/11/05 19:08:56 jca Exp $
 
 COMMENT =	Catalyst plugin to subvert NEXT to use Class::C3
 
 MODULES =	cpan
 DISTNAME =	Catalyst-Plugin-C3-0.03
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel www
-
-MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

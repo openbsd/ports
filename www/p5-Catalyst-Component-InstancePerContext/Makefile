@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/21 14:42:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/11/05 19:09:00 jca Exp $
 
 COMMENT =	return a new component instance per request
 
 MODULES =	cpan
 DISTNAME =	Catalyst-Component-InstancePerContext-0.001001
-REVISION =	0
+REVISION =	1
 CATEGORIES =	www
-
-MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

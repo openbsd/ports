@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2014/03/23 14:24:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/05 19:08:56 jca Exp $
 
 COMMENT=	calculate windows/subsets/pages of arrays
 
 MODULES=	cpan
 DISTNAME=	Array-Window-1.02
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 23:49:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2015/11/05 19:08:58 jca Exp $
 
 COMMENT=	cute and addictive action-puzzle game
 
 DISTNAME= 	amoebax-0.2.1
+REVISION=       0
 
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
@@ -10,8 +11,6 @@ EXTRACT_SUFX=	.tar.bz2
 HOMEPAGE=	http://www.emma-soft.com/games/amoebax/
 
 MASTER_SITES=	${HOMEPAGE}download/
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # GPL/LAL
 PERMIT_PACKAGE_CDROM=	Yes

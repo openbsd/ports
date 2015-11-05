@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/21 14:05:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/11/05 19:08:56 jca Exp $
 
 COMMENT= 	DBI model class for Catalyst
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Model-DBI-0.20
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www databases
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

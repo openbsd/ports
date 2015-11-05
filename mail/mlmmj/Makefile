@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2014/04/21 18:57:18 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2015/11/05 19:08:58 jca Exp $
 
 COMMENT=	mailing list manager
 
 DISTNAME=	mlmmj-1.2.18.1
 CATEGORIES=    	mail
+REVISION=	0
 
 HOMEPAGE=	http://mlmmj.org/
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

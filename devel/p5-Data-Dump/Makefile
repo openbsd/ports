@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2015/01/21 14:27:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/11/05 19:08:57 jca Exp $
 
 COMMENT=        pretty printing of data structures
 
 MODULES=	cpan
 DISTNAME=	Data-Dump-1.22
 CATEGORIES=     devel
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
+REVISION=	0
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes

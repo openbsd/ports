@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:42:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/11/05 19:09:00 jca Exp $
 
 COMMENT =	formular fu for catalyst
 
 MODULES =	cpan
 DISTNAME =	Catalyst-Controller-HTML-FormFu-0.06001
 CATEGORIES =	www textproc
-
-MAINTAINER =	Simon Bertrang <simon@openbsd.org>
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

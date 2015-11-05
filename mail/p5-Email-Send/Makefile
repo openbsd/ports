@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/21 14:19:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/11/05 19:08:58 jca Exp $
 
 COMMENT= 	simply sending email
 
 MODULES=	cpan
 
 DISTNAME=	Email-Send-2.194
-REVISION=	0
+REVISION=	1
 CATEGORIES=	mail
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

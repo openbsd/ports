@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/16 23:57:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/11/05 19:08:59 jca Exp $
 
 COMMENT=	Perl interface to gpgme
 SHARED_ONLY=	Yes
 
 DISTNAME=	Crypt-GpgME-0.09
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel security
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

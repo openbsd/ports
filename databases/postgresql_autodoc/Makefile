@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2015/11/05 19:08:56 jca Exp $
 
 COMMENT =	documentation generator for postgresql databases
 
 DISTNAME =	postgresql_autodoc-1.40
 CATEGORIES =	databases
+REVISION =	0
 
 HOMEPAGE =	http://www.rbt.ca/autodoc/
 MASTER_SITES =	${HOMEPAGE}binaries/
-
-MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =		Yes

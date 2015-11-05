@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/21 14:42:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/11/05 19:09:00 jca Exp $
 
 COMMENT =	file cache extension for Catalyst (deprecated)
 
 MODULES =	cpan
 DISTNAME =	Catalyst-Plugin-Cache-FileCache-0.7
-REVISION =	1
+REVISION =	2
 CATEGORIES =	www
-
-MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

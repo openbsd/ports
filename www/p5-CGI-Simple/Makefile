@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2015/01/21 14:42:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2015/11/05 19:08:59 jca Exp $
 
 COMMENT=	drop-in object-oriented CGI.pm replacement
 
 MODULES=	cpan
 DISTNAME=	CGI-Simple-1.112
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

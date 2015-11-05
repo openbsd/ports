@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.12 2015/04/21 18:19:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/11/05 19:09:01 jca Exp $
 
 COMMENT=	apache HTTP server request library
 SHARED_ONLY=	Yes
 
 DISTNAME=	libapreq2-2.08
 PKGNAME=	p5-${DISTNAME}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	www
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/J/JO/JOESUF/}
 MODULES=	converters/libiconv
 SHARED_LIBS=	apreq2	9.0
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Artistic + GPL
 PERMIT_PACKAGE_CDROM=  Yes

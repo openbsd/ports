@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/17 23:58:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/11/05 19:08:59 jca Exp $
 
 COMMENT=	test wrapper with helpers for testing Apache
 
 MODULES=	cpan
 DISTNAME=	Apache-Test-1.30
-REVISION=	3
+REVISION=	4
 CATEGORIES=	www
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/21 14:40:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/11/05 19:08:59 jca Exp $
 
 COMMENT=	ACL support for Catalyst applications
 
 DISTNAME=	Catalyst-Plugin-Authorization-ACL-0.15
 CATEGORIES=	security
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

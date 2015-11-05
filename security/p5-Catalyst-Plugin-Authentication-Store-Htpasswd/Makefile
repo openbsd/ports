@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/21 14:40:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/11/05 19:08:59 jca Exp $
 
 COMMENT= 	catalyst authentication via .htpasswd
 
 DISTNAME=	Catalyst-Plugin-Authentication-Store-Htpasswd-0.02
-REVISION=	2
+REVISION=	3
 CATEGORIES=	security
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

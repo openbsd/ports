@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2015/01/21 14:42:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2015/11/05 19:08:59 jca Exp $
 
 COMMENT=	sensible default end action for catalyst
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Action-RenderView-0.16
 CATEGORIES=	www
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
+REVISION=	0
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

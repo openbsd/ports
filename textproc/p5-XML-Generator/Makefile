@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2013/05/13 06:55:26 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2015/11/05 19:08:59 jca Exp $
 
 COMMENT=	extension for generating XML
 
 MODULES=	cpan
 DISTNAME =	XML-Generator-1.04
 CATEGORIES=	textproc
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

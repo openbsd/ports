@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/25 07:54:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2015/11/05 19:08:59 jca Exp $
 
 COMMENT=	CDBI Authentication for Catalyst
 
 DISTNAME=	Catalyst-Plugin-Authentication-Store-DBIC-0.11
-REVISION=	2
+REVISION=	3
 CATEGORIES=	security
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

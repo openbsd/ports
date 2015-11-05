@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/11 23:51:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2015/11/05 19:09:00 jca Exp $
 
 COMMENT=	bare-bones HTML parser
 
 MODULES=	cpan
 DISTNAME=	HTML-SimpleParse-0.12
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

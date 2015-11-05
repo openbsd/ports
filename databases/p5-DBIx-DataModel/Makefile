@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:05:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/05 19:08:56 jca Exp $
 
 COMMENT=	classes and UML-style associations on top of DBI
 
 MODULES=	cpan
 DISTNAME=	DBIx-DataModel-1.09
-REVISION=	0
+REVISION=	1
 CATEGORIES=	databases
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

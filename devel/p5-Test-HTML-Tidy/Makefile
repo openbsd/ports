@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/11 23:49:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2015/11/05 19:08:58 jca Exp $
 
 COMMENT =	Test::More-style wrapper around HTML::Tidy
 
 MODULES =	cpan
 DISTNAME =	Test-HTML-Tidy-1.00
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
-
-MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

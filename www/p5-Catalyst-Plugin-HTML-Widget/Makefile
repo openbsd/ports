@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/21 14:42:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/11/05 19:09:00 jca Exp $
 
 COMMENT= 	HTML widget and validation framework for Catalyst
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Plugin-HTML-Widget-1.1
-REVISION=	2
+REVISION=	3
 CATEGORIES=	www
-
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
