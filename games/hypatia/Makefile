@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/11/03 13:29:27 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2015/11/05 16:04:49 benoit Exp $
 
 COMMENT =	2D action adventure game engine
 DISTNAME =	hypatia-${GH_TAGNAME}
@@ -7,7 +7,7 @@ SUBST_VARS +=	GH_TAGNAME
 
 GH_ACCOUNT =	hypatia-engine
 GH_PROJECT =	hypatia
-GH_TAGNAME =	0.3.1
+GH_TAGNAME =	0.3.3
 
 HOMEPAGE=	http://hypatia-engine.github.io/
 
