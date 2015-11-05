@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/05/13 14:53:45 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2015/11/05 09:54:41 benoit Exp $
 
 COMMENT =		fork test
 
 MODULES =		cpan
-DISTNAME =		Test-SharedFork-0.21
+DISTNAME =		Test-SharedFork-0.34
 CATEGORIES =		devel
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
