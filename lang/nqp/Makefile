@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/09 17:28:23 pascal Exp $
+# $OpenBSD: Makefile,v 1.16 2015/11/05 11:52:08 pascal Exp $
 
 COMMENT =		Not Quite Perl
 
-V =			2015.03
+V =			2015.10
 DISTNAME =		nqp-$V
+
+PATCHORIG =		.orig.port
 
 CATEGORIES =		lang
 
