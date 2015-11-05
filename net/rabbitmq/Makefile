@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.27 2015/07/10 17:10:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2015/11/05 10:49:03 jasper Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
-V =		3.4.2
-REVISION =	4
+V =		3.5.6
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.rabbitmq.com/
 
-MAINTAINER =	Piotr Sikora <piotr.sikora@frickle.com>
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MPL
 PERMIT_PACKAGE_CDROM = Yes
@@ -43,7 +42,8 @@ MODPY_ADJ_FILES +=	plugins-src/rabbitmq-management/bin/rabbitmqadmin
 NO_TEST =	Yes
 
 pre-build:
-	${SUBST_CMD} ${WRKSRC}/scripts/rabbitmqctl
+	${SUBST_CMD} ${WRKSRC}/scripts/rabbitmqctl \
+		${WRKSRC}/scripts/rabbitmq-defaults
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rabbitmq

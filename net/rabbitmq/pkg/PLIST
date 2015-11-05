@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/12/29 09:28:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/11/05 10:49:03 jasper Exp $
 @newgroup _rabbitmq:646
 @newuser _rabbitmq:646:_rabbitmq:daemon:RabbitMQ account:/var/rabbitmq:/sbin/nologin
 lib/rabbitmq/
@@ -10,6 +10,7 @@ lib/rabbitmq/ebin/delegate.beam
 lib/rabbitmq/ebin/delegate_sup.beam
 lib/rabbitmq/ebin/dtree.beam
 lib/rabbitmq/ebin/file_handle_cache.beam
+lib/rabbitmq/ebin/file_handle_cache_stats.beam
 lib/rabbitmq/ebin/gatherer.beam
 lib/rabbitmq/ebin/gen_server2.beam
 lib/rabbitmq/ebin/gm.beam
@@ -32,13 +33,14 @@ lib/rabbitmq/ebin/rabbit_amqqueue_process.beam
 lib/rabbitmq/ebin/rabbit_amqqueue_sup.beam
 lib/rabbitmq/ebin/rabbit_amqqueue_sup_sup.beam
 lib/rabbitmq/ebin/rabbit_app.in
-lib/rabbitmq/ebin/rabbit_auth_backend.beam
 lib/rabbitmq/ebin/rabbit_auth_backend_dummy.beam
 lib/rabbitmq/ebin/rabbit_auth_backend_internal.beam
 lib/rabbitmq/ebin/rabbit_auth_mechanism.beam
 lib/rabbitmq/ebin/rabbit_auth_mechanism_amqplain.beam
 lib/rabbitmq/ebin/rabbit_auth_mechanism_cr_demo.beam
 lib/rabbitmq/ebin/rabbit_auth_mechanism_plain.beam
+lib/rabbitmq/ebin/rabbit_authn_backend.beam
+lib/rabbitmq/ebin/rabbit_authz_backend.beam
 lib/rabbitmq/ebin/rabbit_autoheal.beam
 lib/rabbitmq/ebin/rabbit_backing_queue.beam
 lib/rabbitmq/ebin/rabbit_basic.beam
@@ -60,6 +62,7 @@ lib/rabbitmq/ebin/rabbit_dead_letter.beam
 lib/rabbitmq/ebin/rabbit_diagnostics.beam
 lib/rabbitmq/ebin/rabbit_direct.beam
 lib/rabbitmq/ebin/rabbit_disk_monitor.beam
+lib/rabbitmq/ebin/rabbit_epmd_monitor.beam
 lib/rabbitmq/ebin/rabbit_error_logger.beam
 lib/rabbitmq/ebin/rabbit_error_logger_file_h.beam
 lib/rabbitmq/ebin/rabbit_event.beam
@@ -91,6 +94,7 @@ lib/rabbitmq/ebin/rabbit_mirror_queue_slave.beam
 lib/rabbitmq/ebin/rabbit_mirror_queue_sync.beam
 lib/rabbitmq/ebin/rabbit_misc.beam
 lib/rabbitmq/ebin/rabbit_mnesia.beam
+lib/rabbitmq/ebin/rabbit_mnesia_rename.beam
 lib/rabbitmq/ebin/rabbit_msg_file.beam
 lib/rabbitmq/ebin/rabbit_msg_store.beam
 lib/rabbitmq/ebin/rabbit_msg_store_ets_index.beam
@@ -109,6 +113,7 @@ lib/rabbitmq/ebin/rabbit_policy.beam
 lib/rabbitmq/ebin/rabbit_policy_validator.beam
 lib/rabbitmq/ebin/rabbit_prelaunch.beam
 lib/rabbitmq/ebin/rabbit_prequeue.beam
+lib/rabbitmq/ebin/rabbit_priority_queue.beam
 lib/rabbitmq/ebin/rabbit_queue_collector.beam
 lib/rabbitmq/ebin/rabbit_queue_consumers.beam
 lib/rabbitmq/ebin/rabbit_queue_decorator.beam
@@ -133,12 +138,14 @@ lib/rabbitmq/ebin/rabbit_version.beam
 lib/rabbitmq/ebin/rabbit_vhost.beam
 lib/rabbitmq/ebin/rabbit_vm.beam
 lib/rabbitmq/ebin/rabbit_writer.beam
+lib/rabbitmq/ebin/ssl_compat.beam
 lib/rabbitmq/ebin/supervised_lifecycle.beam
 lib/rabbitmq/ebin/supervisor2.beam
 lib/rabbitmq/ebin/tcp_acceptor.beam
 lib/rabbitmq/ebin/tcp_acceptor_sup.beam
 lib/rabbitmq/ebin/tcp_listener.beam
 lib/rabbitmq/ebin/tcp_listener_sup.beam
+lib/rabbitmq/ebin/time_compat.beam
 lib/rabbitmq/ebin/truncate.beam
 lib/rabbitmq/ebin/vm_memory_monitor.beam
 lib/rabbitmq/ebin/worker_pool.beam

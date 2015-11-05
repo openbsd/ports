@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.8 2014/12/29 09:28:22 jasper Exp $
---- Makefile.orig	Wed Nov 26 13:20:50 2014
-+++ Makefile	Sun Dec 28 20:07:44 2014
-@@ -25,22 +25,11 @@ MANPAGES=$(patsubst %.xml, %.gz, $(wildcard $(DOCS_DIR
+$OpenBSD: patch-Makefile,v 1.9 2015/11/05 10:49:03 jasper Exp $
+--- Makefile.orig	Wed Oct  7 14:45:15 2015
++++ Makefile	Wed Oct 28 19:23:44 2015
+@@ -25,26 +25,11 @@ MANPAGES=$(patsubst %.xml, %.gz, $(wildcard $(DOCS_DIR
  WEB_MANPAGES=$(patsubst %.xml, %.man.xml, $(wildcard $(DOCS_DIR)/*.[0-9].xml) $(DOCS_DIR)/rabbitmq-service.xml $(DOCS_DIR)/rabbitmq-echopid.xml)
  USAGES_XML=$(DOCS_DIR)/rabbitmqctl.1.xml $(DOCS_DIR)/rabbitmq-plugins.1.xml
  USAGES_ERL=$(foreach XML, $(USAGES_XML), $(call usage_xml_to_erl, $(XML)))
@@ -12,6 +12,9 @@ $OpenBSD: patch-Makefile,v 1.8 2014/12/29 09:28:22 jasper Exp $
  
 -ifeq ($(shell python -c 'import simplejson' 2>/dev/null && echo yes),yes)
 -PYTHON=python
+-else
+-ifeq ($(shell python2.7 -c 'import json' 2>/dev/null && echo yes),yes)
+-PYTHON=python2.7
 -else
 -ifeq ($(shell python2.6 -c 'import simplejson' 2>/dev/null && echo yes),yes)
 -PYTHON=python2.6
@@ -24,11 +27,12 @@ $OpenBSD: patch-Makefile,v 1.8 2014/12/29 09:28:22 jasper Exp $
 -endif
 -endif
 -endif
+-endif
 -
  BASIC_PLT=basic.plt
  RABBIT_PLT=rabbit.plt
  
-@@ -81,6 +70,10 @@ ERL_CALL=erl_call -sname $(RABBITMQ_NODENAME) -e
+@@ -103,6 +88,10 @@ ERL_CALL=erl_call -sname $(RABBITMQ_NODENAME) -e
  
  ERL_EBIN=erl -noinput -pa $(EBIN_DIR)
  
@@ -39,7 +43,7 @@ $OpenBSD: patch-Makefile,v 1.8 2014/12/29 09:28:22 jasper Exp $
  define usage_xml_to_erl
    $(subst __,_,$(patsubst $(DOCS_DIR)/rabbitmq%.1.xml, $(SOURCE_DIR)/rabbit_%_usage.erl, $(subst -,_,$(1))))
  endef
-@@ -95,7 +88,7 @@ endef
+@@ -117,7 +106,7 @@ endef
  
  ifneq "$(SBIN_DIR)" ""
  ifneq "$(TARGET_DIR)" ""
@@ -48,7 +52,7 @@ $OpenBSD: patch-Makefile,v 1.8 2014/12/29 09:28:22 jasper Exp $
  endif
  endif
  
-@@ -188,7 +181,7 @@ clean:
+@@ -210,7 +199,7 @@ clean:
  	rm -f $(PLUGINS_DIR)/*.ez
  	[ -d "$(PLUGINS_SRC_DIR)" ] && PLUGINS_SRC_DIR="" PRESERVE_CLONE_DIR=1 make -C $(PLUGINS_SRC_DIR) clean || true
  	rm -f $(INCLUDE_DIR)/rabbit_framing.hrl $(SOURCE_DIR)/rabbit_framing_amqp_*.erl codegen.pyc
@@ -57,7 +61,7 @@ $OpenBSD: patch-Makefile,v 1.8 2014/12/29 09:28:22 jasper Exp $
  	rm -f $(RABBIT_PLT)
  	rm -f $(DEPS_FILE)
  
-@@ -239,6 +232,25 @@ run-qc: all
+@@ -261,6 +250,25 @@ run-qc: all
  	./quickcheck $(RABBITMQ_NODENAME) rabbit_backing_queue_qc 100 40
  	./quickcheck $(RABBITMQ_NODENAME) gm_qc 1000 200
  
@@ -83,7 +87,7 @@ $OpenBSD: patch-Makefile,v 1.8 2014/12/29 09:28:22 jasper Exp $
  start-background-node: all
  	-rm -f $(RABBITMQ_MNESIA_DIR).pid
  	mkdir -p $(RABBITMQ_MNESIA_DIR)
-@@ -317,8 +329,7 @@ distclean: clean
+@@ -348,8 +356,7 @@ distclean: clean
  %.gz: %.xml $(DOCS_DIR)/examples-to-end.xsl
  	xmlto --version | grep -E '^xmlto version 0\.0\.([0-9]|1[1-8])$$' >/dev/null || opt='--stringparam man.indent.verbatims=0' ; \
  	    xsltproc --novalid $(DOCS_DIR)/examples-to-end.xsl $< > $<.tmp && \
@@ -93,7 +97,7 @@ $OpenBSD: patch-Makefile,v 1.8 2014/12/29 09:28:22 jasper Exp $
  	rm -f $<.tmp
  
  # Use tmp files rather than a pipeline so that we get meaningful errors
-@@ -362,7 +373,7 @@ install_bin: all install_dirs
+@@ -393,7 +400,7 @@ install_bin: all install_dirs
  install_docs: docs_all install_dirs
  	for section in 1 5; do \
  		mkdir -p $(MAN_DIR)/man$$section; \
