@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/30 18:17:30 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/05 07:31:13 benoit Exp $
 
 COMMENT =	elasticsearch perl module
 
 MODULES =	cpan
-DISTNAME =	Search-Elasticsearch-1.99
+DISTNAME =	Search-Elasticsearch-2.00
 CATEGORIES =	devel
 
 # Perl

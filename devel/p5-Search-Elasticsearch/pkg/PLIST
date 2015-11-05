@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/30 18:17:30 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/11/05 07:31:13 benoit Exp $
 ${P5SITE}/Search/
 ${P5SITE}/Search/Elasticsearch/
 ${P5SITE}/Search/Elasticsearch.pm
@@ -25,7 +25,6 @@ ${P5SITE}/Search/Elasticsearch/Client/2_0/Direct/Cluster.pm
 ${P5SITE}/Search/Elasticsearch/Client/2_0/Direct/Indices.pm
 ${P5SITE}/Search/Elasticsearch/Client/2_0/Direct/Nodes.pm
 ${P5SITE}/Search/Elasticsearch/Client/2_0/Direct/Snapshot.pm
-${P5SITE}/Search/Elasticsearch/Client/Direct.pm
 ${P5SITE}/Search/Elasticsearch/Cxn/
 ${P5SITE}/Search/Elasticsearch/Cxn/Factory.pm
 ${P5SITE}/Search/Elasticsearch/Cxn/HTTPTiny.pm
@@ -97,7 +96,6 @@ ${P5SITE}/Search/Elasticsearch/Util/API/QS.pm
 @man man/man3p/Search::Elasticsearch::Client::2_0::Direct::Indices.3p
 @man man/man3p/Search::Elasticsearch::Client::2_0::Direct::Nodes.3p
 @man man/man3p/Search::Elasticsearch::Client::2_0::Direct::Snapshot.3p
-@man man/man3p/Search::Elasticsearch::Client::Direct.3p
 @man man/man3p/Search::Elasticsearch::Cxn::Factory.3p
 @man man/man3p/Search::Elasticsearch::Cxn::HTTPTiny.3p
 @man man/man3p/Search::Elasticsearch::Cxn::Hijk.3p
