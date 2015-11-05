@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2015/10/30 12:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2015/11/05 12:49:26 pirofti Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -7,7 +7,7 @@ NOT_FOR_ARCHS =	vax sparc
 COMMENT =	high-level language for numerical computations
 
 VERSION =	4.0.0
-REVISION =	1
+REVISION =	2
 DISTNAME =	octave-${VERSION}
 CATEGORIES =	math
 
@@ -27,7 +27,7 @@ WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE OSMesa QtGui
 WANTLIB += QtNetwork QtOpenGL SM X11 X11-xcb Xau Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender
 WANTLIB += Xt Xxf86vm amd arpack blas bz2 c camd ccolamd cholmod
-WANTLIB += colamd crypto curl cxsparse drm expat fftw3 fftw3_threads
+WANTLIB += colamd crypto curl cxsparse drm ereadline expat fftw3 fftw3_threads
 WANTLIB += fftw3f fftw3f_threads fltk fltk_gl fontconfig freetype
 WANTLIB += gl2ps glapi glpk glut gmp hdf5 idn lapack lcms2
 WANTLIB += ltdl lzma m ncurses nghttp2 ogg pcre png portaudio pthread
@@ -55,6 +55,7 @@ LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		audio/portaudio-svn \
 		devel/glpk \
 		devel/pcre \
+		devel/readline \
 		editors/qscintilla \
 		graphics/GraphicsMagick \
 		math/arpack \
@@ -73,9 +74,9 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 # --disable-readline: needs GNU readline
 CONFIGURE_ARGS	=	${CONFIGURE_SHARED} \
-			--disable-readline \
 			--disable-java
-CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+		-I${LOCALBASE}/include/ereadline" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LRELEASE="lrelease4" \
 		F77=${FC}
