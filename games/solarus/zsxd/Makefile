@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/21 10:10:29 jasper Exp $
-
-PORTROACH=	limit:^1\.7
-PORTROACH_COMMENT=newer versions require an updated solarus engine
+# $OpenBSD: Makefile,v 1.9 2015/11/05 11:31:58 jasper Exp $
 
 COMMENT =	fan made parody Zelda game for Solarus engine
 
 GH_ACCOUNT=	christopho
 GH_PROJECT=	zsxd
-GH_TAGNAME=	${GH_PROJECT}-1.7.1
+GH_TAGNAME=	${GH_PROJECT}-1.10.1
 DISTNAME=	${GH_TAGNAME}
-REVISION=	2
 
 HOMEPAGE =	http://www.solarus-games.org/games/zelda-mystery-of-solarus-xd/
 
@@ -21,6 +17,6 @@ MODULES =	devel/cmake
 
 BUILD_DEPENDS =	archivers/zip
 
-RUN_DEPENDS =	games/solarus/solarus
+RUN_DEPENDS =	games/solarus/solarus>=1.4.4
 
 .include <bsd.port.mk>
