@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2015/09/03 07:44:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/11/05 08:57:04 jasper Exp $
 @bin bin/virsh
 @bin bin/virt-host-validate
 bin/virt-pki-validate
@@ -155,6 +155,16 @@ share/doc/libvirt/html/migration-native.png
 share/doc/libvirt/html/migration-tunnel.png
 share/doc/libvirt/html/migration-unmanaged-direct.png
 share/doc/libvirt/html/migration.html
+share/doc/libvirt/html/news-2005.html
+share/doc/libvirt/html/news-2006.html
+share/doc/libvirt/html/news-2007.html
+share/doc/libvirt/html/news-2008.html
+share/doc/libvirt/html/news-2009.html
+share/doc/libvirt/html/news-2010.html
+share/doc/libvirt/html/news-2011.html
+share/doc/libvirt/html/news-2012.html
+share/doc/libvirt/html/news-2013.html
+share/doc/libvirt/html/news-2014.html
 share/doc/libvirt/html/news.html
 share/doc/libvirt/html/node.gif
 share/doc/libvirt/html/pending.html
