@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.747 2015/11/04 09:51:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.748 2015/11/05 16:19:24 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -93,6 +93,7 @@
      SUBDIR += links+
      SUBDIR += links+,no_x11
      SUBDIR += llgal
+     SUBDIR += logswan
      SUBDIR += luakit
      SUBDIR += lynx
      SUBDIR += man2web
