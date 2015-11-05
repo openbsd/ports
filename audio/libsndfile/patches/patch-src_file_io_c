@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_file_io_c,v 1.1 2015/11/05 12:49:00 jasper Exp $
+
+Security fix for CVE-2014-9756
+https://github.com/erikd/libsndfile/commit/725c7dbb95bfaf8b4bb7b04820e3a00cceea9ce6
+
+--- src/file_io.c.orig	Wed Jan 19 11:12:28 2011
++++ src/file_io.c	Thu Nov  5 13:39:26 2015
+@@ -358,6 +358,9 @@ psf_fwrite (const void *ptr, sf_count_t bytes, sf_coun
+ {	sf_count_t total = 0 ;
+ 	ssize_t	count ;
+ 
++	if (bytes == 0 || items == 0)
++		return 0 ;
++
+ 	if (psf->virtual_io)
+ 		return psf->vio.write (ptr, bytes*items, psf->vio_user_data) / bytes ;
+ 
