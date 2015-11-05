@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2015/11/01 15:28:07 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2015/11/05 06:33:30 bentley Exp $
 
 COMMENT-main =		Game Boy Advance emulator
 COMMENT-qt =		Game Boy Advance emulator with GUI
 
 V =			0.3.1
+REVISION =		0
 DISTNAME =		mgba-$V
 PKGNAME-main =		mgba-$V
 PKGNAME-qt =		mgba-qt-$V
@@ -23,10 +24,10 @@ MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
 # MPL 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-cWANTLIB =		GL GLU MagickCore MagickWand SDL avcodec avformat \
+cWANTLIB =		GL GLU MagickCore MagickWand SDL2 avcodec avformat \
 			avresample avutil c edit m png pthread swscale \
 			termcap z zip
-WANTLIB-main =		${cWANTLIB} pixman-1 pthread-stubs
+WANTLIB-main =		${cWANTLIB}
 WANTLIB-qt =		${cWANTLIB} Qt5Core Qt5Gui Qt5Multimedia \
 			Qt5Network Qt5OpenGL Qt5Widgets estdc++ mgba
 
@@ -41,7 +42,7 @@ MODGCC4_LANGS =		c c++
 LIB_DEPENDS-main =	archivers/libzip \
 			graphics/ImageMagick \
 			graphics/ffmpeg \
-			devel/sdl
+			devel/sdl2
 LIB_DEPENDS-qt =	${LIB_DEPENDS-main} \
 			${MODQT_LIB_DEPENDS} \
 			emulators/mgba,-main
