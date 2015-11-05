@@ -1,4 +1,4 @@
-# $OpenBSD: erlang.port.mk,v 1.21 2015/10/28 19:18:31 jasper Exp $
+# $OpenBSD: erlang.port.mk,v 1.22 2015/11/05 08:22:50 jasper Exp $
 #
 # Module for Erlang-based ports or modules
 
@@ -88,7 +88,8 @@ RUN_DEPENDS +=		${_MODERL_RDEPS} \
 TEST_DEPENDS +=		${_MODERL_TDEPS}
 
 # Root directory of all Erlang libraries.
-ERL_LIBROOT ?=		${PREFIX}/lib/erlang${MODERL_VERSION}/lib
+MODERL_BASEDIR ?=	${PREFIX}/lib/erlang${MODERL_VERSION}/
+ERL_LIBROOT ?=		${MODERL_BASEDIR}/lib
 MODERL_LIBROOT ?=	lib/erlang${MODERL_VERSION}/lib
 
 # Standard directory into which a module/library gets installed.
@@ -155,4 +156,4 @@ dialyzer:
 	cd ${WRKSRC} && ${REBAR_BIN} dialyzer
 .endif
 
-SUBST_VARS +=		MODERL_LIBROOT VERSION MODERL_VERSION
+SUBST_VARS +=		MODERL_BASEDIR MODERL_LIBROOT VERSION MODERL_VERSION
