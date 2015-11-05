@@ -1,0 +1,20 @@
+$OpenBSD: patch-xzlib_c,v 1.1 2015/11/05 14:24:12 jasper Exp $
+
+From f0709e3ca8f8947f2d91ed34e92e38a4c23eae63 Mon Sep 17 00:00:00 2001
+From: Daniel Veillard <veillard@redhat.com>
+Date: Tue, 3 Nov 2015 15:31:25 +0800
+Subject: CVE-2015-8035 Fix XZ compression support loop
+
+--- xzlib.c.orig	Fri Oct  3 11:00:56 2014
++++ xzlib.c	Thu Nov  5 15:16:28 2015
+@@ -581,6 +581,10 @@ xz_decomp(xz_statep state)
+             xz_error(state, LZMA_DATA_ERROR, "compressed data error");
+             return -1;
+         }
++        if (ret == LZMA_PROG_ERROR) {
++            xz_error(state, LZMA_PROG_ERROR, "compression error");
++            return -1;
++        }
+     } while (strm->avail_out && ret != LZMA_STREAM_END);
+ 
+     /* update available output and crc check value */

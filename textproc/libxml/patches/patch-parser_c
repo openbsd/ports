@@ -1,8 +1,9 @@
-$OpenBSD: patch-parser_c,v 1.13 2015/10/23 14:21:16 jasper Exp $
+$OpenBSD: patch-parser_c,v 1.14 2015/11/05 14:24:12 jasper Exp $
 
 Security fix for CVE-2015-7941, upstream git:
 a7dfab7411cbf545f359dd3157e5df1eb0e7ce31
 9b8512337d14c8ddf662fcb98b0135f225a1c489
+41ac9049a27f52e7a1f3b341f8714149fc88d450
 
 Security fix for CVE-2015-7942, upstream git:
 bd0526e66a56e75a18da8c15c4750db8f801c52d
@@ -12,61 +13,14 @@ From: Daniel Veillard <veillard@redhat.com>
 Date: Fri, 17 Oct 2014 17:13:41 +0800
 Subject: Revert "Missing initialization for the catalog module"
 
---- parser.c.orig	Thu Oct 16 07:57:40 2014
-+++ parser.c	Fri Oct 23 16:13:17 2015
-@@ -5658,6 +5658,7 @@ xmlParseEntityDecl(xmlParserCtxtPtr ctxt) {
- 	if (RAW != '>') {
- 	    xmlFatalErrMsgStr(ctxt, XML_ERR_ENTITY_NOT_FINISHED,
- 	            "xmlParseEntityDecl: entity %s not terminated\n", name);
-+		xmlStopParser(ctxt);
- 	} else {
- 	    if (input != ctxt->input) {
- 		xmlFatalErrMsg(ctxt, XML_ERR_ENTITY_BOUNDARY,
-@@ -6769,6 +6770,8 @@ xmlParseConditionalSections(xmlParserCtxtPtr ctxt) {
- 	SKIP_BLANKS;
- 	if (RAW != '[') {
- 	    xmlFatalErr(ctxt, XML_ERR_CONDSEC_INVALID, NULL);
-+	    xmlStopParser(ctxt);
-+	    return;
- 	} else {
- 	    if (ctxt->input->id != id) {
- 		xmlValidityError(ctxt, XML_ERR_ENTITY_BOUNDARY,
-@@ -6829,6 +6832,8 @@ xmlParseConditionalSections(xmlParserCtxtPtr ctxt) {
- 	SKIP_BLANKS;
- 	if (RAW != '[') {
- 	    xmlFatalErr(ctxt, XML_ERR_CONDSEC_INVALID, NULL);
-+	    xmlStopParser(ctxt);
-+	    return;
- 	} else {
- 	    if (ctxt->input->id != id) {
- 		xmlValidityError(ctxt, XML_ERR_ENTITY_BOUNDARY,
-@@ -6884,6 +6889,8 @@ xmlParseConditionalSections(xmlParserCtxtPtr ctxt) {
- 
-     } else {
- 	xmlFatalErr(ctxt, XML_ERR_CONDSEC_INVALID_KEYWORD, NULL);
-+	xmlStopParser(ctxt);
-+	return;
-     }
- 
-     if (RAW == 0)
-@@ -6897,7 +6904,9 @@ xmlParseConditionalSections(xmlParserCtxtPtr ctxt) {
- 	"All markup of the conditional section is not in the same entity\n",
+--- parser.c.orig	Thu Nov  5 15:14:01 2015
++++ parser.c	Thu Nov  5 15:15:22 2015
+@@ -6905,7 +6905,7 @@ xmlParseConditionalSections(xmlParserCtxtPtr ctxt) {
  				 NULL, NULL);
  	}
--        SKIP(3);
-+	if ((ctxt-> instate != XML_PARSER_EOF) &&
-+	    ((ctxt->input->cur + 3) < ctxt->input->end))
-+	SKIP(3);
+ 	if ((ctxt-> instate != XML_PARSER_EOF) &&
+-	    ((ctxt->input->cur + 3) < ctxt->input->end))
++	    ((ctxt->input->cur + 3) <= ctxt->input->end))
+ 	SKIP(3);
      }
  }
- 
-@@ -14829,9 +14838,6 @@ xmlInitParser(void) {
- #endif
- #ifdef LIBXML_XPATH_ENABLED
- 	xmlXPathInit();
--#endif
--#ifdef LIBXML_CATALOG_ENABLED
--        xmlInitializeCatalog();
- #endif
- 	xmlParserInitialized = 1;
- #ifdef LIBXML_THREAD_ENABLED
