@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/08/15 07:24:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2015/11/05 13:35:36 benoit Exp $
 
 COMMENT=	compile .cgi scripts to a code reference
 
 MODULES=	cpan
-DISTNAME =	CGI-Compile-0.19
+DISTNAME =	CGI-Compile-0.20
 CATEGORIES=	www
 
 # Perl
