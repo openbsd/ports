@@ -1,0 +1,57 @@
+$OpenBSD: patch-configure_ac,v 1.10 2015/11/06 20:37:21 sthen Exp $
+--- configure.ac.orig	Sat Oct 31 12:18:20 2015
++++ configure.ac	Fri Nov  6 16:01:48 2015
+@@ -1317,7 +1317,7 @@ fi
+ 
+ # Assume that delegate headers reside under same directory as ImageMagick
+ # installation prefix.
+-MAGICK_CPPFLAGS="-I$INCLUDE_DIR/${PACKAGE_NAME}-$MAGICK_MAJOR_VERSION $MAGICK_CPPFLAGS"
++MAGICK_CPPFLAGS="-I$INCLUDE_DIR/${PACKAGE_NAME} $MAGICK_CPPFLAGS"
+ 
+ #
+ # Find the X11 RGB database
+@@ -2741,7 +2741,7 @@ AC_SUBST([PERLMAINCC])
+ #
+ 
+ # Path to ImageMagick header files
+-INCLUDE_RELATIVE_PATH="${PACKAGE_NAME}-${MAGICK_MAJOR_VERSION}"
++INCLUDE_RELATIVE_PATH="${PACKAGE_NAME}"
+ INCLUDE_PATH="${INCLUDE_DIR}/${INCLUDE_RELATIVE_PATH}"
+ DEFINE_INCLUDE_PATH="${INCLUDE_DIR}/${INCLUDE_RELATIVE_PATH}/"
+ case "${build_os}" in
+@@ -2764,7 +2764,7 @@ AC_DEFINE_UNQUOTED(INCLUDEARCH_PATH,"$DEFINE_INCLUDE_P
+ AC_SUBST(INCLUDEARCH_PATH)
+ 
+ # Subdirectory under lib to place ImageMagick lib files
+-LIBRARY_RELATIVE_PATH="${PACKAGE_NAME}-${PACKAGE_VERSION}"
++LIBRARY_RELATIVE_PATH="${PACKAGE_NAME}"
+ AC_DEFINE_UNQUOTED(LIBRARY_RELATIVE_PATH,"$LIBRARY_RELATIVE_PATH",[Subdirectory of lib where ImageMagick architecture dependent files are installed])
+ 
+ # Path to ImageMagick bin directory
+@@ -2855,7 +2855,7 @@ AC_SUBST(FILTER_PATH)
+ 
+ #
+ # Path to ImageMagick documentation files
+-DOCUMENTATION_RELATIVE_PATH="${PACKAGE_NAME}-${MAGICK_MAJOR_VERSION}"
++DOCUMENTATION_RELATIVE_PATH="${PACKAGE_NAME}"
+ DOCUMENTATION_PATH="${DOC_DIR}/${DOCUMENTATION_RELATIVE_PATH}"
+ DEFINE_DOCUMENTATION_PATH="${DOC_DIR}/${DOCUMENTATION_RELATIVE_PATH}/"
+ case "${build_os}" in
+@@ -2875,7 +2875,7 @@ AC_ARG_ENABLE([docs],
+ AM_CONDITIONAL([INSTALL_DOC], [test "$wantdocs" = "yes"])
+ 
+ # Subdirectory to place architecture-dependent configuration files
+-CONFIGURE_RELATIVE_PATH="${PACKAGE_NAME}-${MAGICK_MAJOR_VERSION}"
++CONFIGURE_RELATIVE_PATH="${PACKAGE_NAME}"
+ AC_DEFINE_UNQUOTED(CONFIGURE_RELATIVE_PATH,"$CONFIGURE_RELATIVE_PATH",[Subdirectory of lib where architecture-dependent configuration files live.])
+ CONFIGURE_PATH="${SYSCONF_DIR}/${CONFIGURE_RELATIVE_PATH}/"
+ DEFINE_CONFIGURE_PATH="${SYSCONF_DIR}/${CONFIGURE_RELATIVE_PATH}/"
+@@ -2888,7 +2888,7 @@ AC_DEFINE_UNQUOTED(CONFIGURE_PATH,"$DEFINE_CONFIGURE_P
+ AC_SUBST(CONFIGURE_PATH)
+ 
+ # Subdirectory to place architecture-independent configuration files
+-SHARE_RELATIVE_PATH="${PACKAGE_NAME}-${MAGICK_MAJOR_VERSION}"
++SHARE_RELATIVE_PATH="${PACKAGE_NAME}"
+ AC_DEFINE_UNQUOTED(SHARE_RELATIVE_PATH,"$SHARE_RELATIVE_PATH",[Subdirectory of lib where architecture-independent configuration files live.])
+ SHARE_PATH="${DATA_DIR}/${SHARE_RELATIVE_PATH}"
+ DEFINE_SHARE_PATH="${DATA_DIR}/${SHARE_RELATIVE_PATH}/"
