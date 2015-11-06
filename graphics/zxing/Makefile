@@ -1,40 +1,24 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:10:56 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/11/06 15:45:17 sthen Exp $
 
-COMMENT =		barcode image processing library
+COMMENT =	barcode image processing library
 
-DISTNAME =		ZXing-2.0
-PKGNAME =		${DISTNAME:L}
-REVISION =		0
+GH_ACCOUNT =	glassechidna
+GH_PROJECT =	zxing-cpp
+GH_COMMIT =	5ce91bb1c23b6cfb6a9ac076f10a4b2037810a91
 
-CATEGORIES =		graphics
+DISTNAME =	zxing-20151004
 
-HOMEPAGE =		https://code.google.com/p/zxing/
+CATEGORIES =	graphics
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	Magick++ MagickCore MagickWand c m pthread stdc++
+WANTLIB += c m stdc++
 
-MASTER_SITES =		https://zxing.googlecode.com/files/
-EXTRACT_SUFX =		.zip
-
-MODULES =		converters/libiconv devel/scons
-BUILD_DEPENDS =		devel/cppunit
-LIB_DEPENDS =		graphics/ImageMagick
-
-WRKDIST =		${WRKDIR}/${DISTNAME:L}
-WRKSRC =		${WRKDIST}/cpp
-
-SUBST_VARS +=		WRKDIST WRKSRC CXX CXXFLAGS
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/SConscript ${WRKSRC}/blackboxtest.sh
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/build/zxing ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/build/libzxing.a ${PREFIX}/lib
+MODULES =	converters/libiconv devel/cmake
+BUILD_DEPENDS =	devel/cppunit
 
 do-test:
-	sh ${WRKSRC}/blackboxtest.sh
+	${WRKBUILD}/testrunner
 
 .include <bsd.port.mk>

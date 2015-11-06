@@ -1,17 +1,12 @@
-ZXing (pronounced "zebra crossing") is an open-source, multi-format
-1D/2D barcode image processing library. It currently supports these
-formats:
+ZXing (pronounced "zebra crossing") is an open-source, multi-format 1D/2D
+barcode image processing library and command-line tool. It supports:
 
- - UPC-A and UPC-E
- - EAN-8 and EAN-13
- - Data Matrix
- - Code 39
- - Code 93
- - Code 128
- - ITF
- - Codabar
- - RSS-14 (all variants)
- - QR Code
- - Data Matrix
- - Aztec
- - PDF 417
+	Aztec			EAN-8 and EAN-13
+	Codabar			ITF
+	Code 128		PDF 417
+	Code 39			QR Code
+	Code 93			RSS-14 (all variants)
+	Data Matrix		UPC-A and UPC-E
+
+The original ZXing project no longer provides the C++ code; this package
+is built from Glass Echidna's fork.

@@ -1,10 +1,0 @@
-$OpenBSD: patch-cpp_core_src_zxing_qrcode_detector_Detector_h,v 1.1.1.1 2012/04/04 03:38:45 bentley Exp $
---- cpp/core/src/zxing/qrcode/detector/Detector.h.orig	Sun Feb 26 15:23:55 2012
-+++ cpp/core/src/zxing/qrcode/detector/Detector.h	Sun Feb 26 15:24:06 2012
-@@ -63,4 +63,4 @@ class Detector : public Counted { (public)
- }
- }
- 
--#endif // __DETECTOR_H__
-\ No newline at end of file
-+#endif // __DETECTOR_H__
