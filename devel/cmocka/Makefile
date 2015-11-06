@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/22 11:31:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/11/06 20:58:48 rpointel Exp $
 
 COMMENT =		elegant unit testing framework for C
 
-DISTNAME =		cmocka-0.3.2
-REVISION =		3
+DISTNAME =		cmocka-1.0.1
 
 EXTRACT_SUFX =		.tar.xz
 
-SHARED_LIBS +=  	cmocka                    0.0 # 0.1
+SHARED_LIBS +=  	cmocka                    0.1 # 0.3
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://cmocka.org/
+HOMEPAGE =		https://cmocka.org/
 
 # Apache License v2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://open.cryptomilk.org/attachments/download/34/
+MASTER_SITES =		${HOMEPAGE}/files/1.0/
 
 MODULES =		devel/cmake
 
-NO_TEST =		Yes
+CONFIGURE_ARGS +=       -DUNIT_TESTING=ON
 
 .include <bsd.port.mk>
