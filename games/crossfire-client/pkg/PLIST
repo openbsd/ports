@@ -1,10 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/04/26 01:43:03 jakemsr Exp $
-@bin bin/cfclient
+@comment $OpenBSD: PLIST,v 1.7 2015/11/06 13:09:23 jasper Exp $
 @bin bin/cfsndserv
-@bin bin/gcfclient2
-@man man/man6/cfclient.6
-@man man/man6/gcfclient.6
+@bin bin/crossfire-client-gtk2
+@man man/man6/crossfire-client-gtk2.6
 share/crossfire-client/
 share/crossfire-client/bmaps.client
 share/crossfire-client/crossfire.base
 share/crossfire-client/crossfire.clsc
+share/crossfire-client/themes/
+share/crossfire-client/themes/Black
+share/crossfire-client/themes/Standard
+share/crossfire-client/ui/
+share/crossfire-client/ui/caelestis.ui
+share/crossfire-client/ui/chthonic.ui
+share/crossfire-client/ui/dialogs.ui
+share/crossfire-client/ui/eureka.ui
+share/crossfire-client/ui/gtk-v1.ui
+share/crossfire-client/ui/gtk-v2.ui
+share/crossfire-client/ui/lobotomy.ui
+share/crossfire-client/ui/meflin.ui
+share/crossfire-client/ui/oroboros.ui
+share/crossfire-client/ui/sixforty.ui
+share/crossfire-client/ui/un-deux.ui
+share/crossfire-client/ui/v1-redux.ui
