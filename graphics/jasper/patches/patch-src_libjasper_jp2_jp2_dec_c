@@ -1,9 +1,20 @@
-$OpenBSD: patch-src_libjasper_jp2_jp2_dec_c,v 1.2 2008/05/17 09:32:16 espie Exp $
---- src/libjasper/jp2/jp2_dec.c.orig	Fri Jan 19 22:43:05 2007
-+++ src/libjasper/jp2/jp2_dec.c	Fri May 16 21:27:34 2008
-@@ -293,7 +293,9 @@ jas_image_t *jp2_decode(jas_stream_t *in, char *optstr
+$OpenBSD: patch-src_libjasper_jp2_jp2_dec_c,v 1.3 2015/11/06 22:28:29 sthen Exp $
+
+Security fixes from Slackware:
+	CVE-2014-8137: double-free
+	CVE-2014-8138: heap-based buffer overflow
+
+--- src/libjasper/jp2/jp2_dec.c.orig	Fri Jan 19 13:43:05 2007
++++ src/libjasper/jp2/jp2_dec.c	Thu Oct 29 22:04:41 2015
+@@ -291,9 +291,14 @@ jas_image_t *jp2_decode(jas_stream_t *in, char *optstr
+ 	case JP2_COLR_ICC:
+ 		iccprof = jas_iccprof_createfrombuf(dec->colr->data.colr.iccp,
  		  dec->colr->data.colr.iccplen);
- 		assert(iccprof);
+-		assert(iccprof);
++		if (!iccprof) {
++			jas_eprintf("error: failed to parse ICC profile\n");
++			goto error;
++		}
  		jas_iccprof_gethdr(iccprof, &icchdr);
 -		jas_eprintf("ICC Profile CS %08x\n", icchdr.colorspc);
 +		if (jas_getdbglevel() >= 1) {
@@ -12,7 +23,7 @@ $OpenBSD: patch-src_libjasper_jp2_jp2_dec_c,v 1.2 2008/05/17 09:32:16 espie Exp 
  		jas_image_setclrspc(dec->image, fromiccpcs(icchdr.colorspc));
  		dec->image->cmprof_ = jas_cmprof_createfromiccprof(iccprof);
  		assert(dec->image->cmprof_);
-@@ -336,7 +338,7 @@ jas_image_t *jp2_decode(jas_stream_t *in, char *optstr
+@@ -336,7 +341,7 @@ jas_image_t *jp2_decode(jas_stream_t *in, char *optstr
  	}
  
  	/* Allocate space for the channel-number to component-number LUT. */
@@ -21,7 +32,7 @@ $OpenBSD: patch-src_libjasper_jp2_jp2_dec_c,v 1.2 2008/05/17 09:32:16 espie Exp 
  		jas_eprintf("error: no memory\n");
  		goto error;
  	}
-@@ -354,7 +356,7 @@ jas_image_t *jp2_decode(jas_stream_t *in, char *optstr
+@@ -354,7 +359,7 @@ jas_image_t *jp2_decode(jas_stream_t *in, char *optstr
  			if (cmapent->map == JP2_CMAP_DIRECT) {
  				dec->chantocmptlut[channo] = channo;
  			} else if (cmapent->map == JP2_CMAP_PALETTE) {
@@ -30,3 +41,15 @@ $OpenBSD: patch-src_libjasper_jp2_jp2_dec_c,v 1.2 2008/05/17 09:32:16 espie Exp 
  				for (i = 0; i < pclrd->numlutents; ++i) {
  					lutents[i] = pclrd->lutdata[cmapent->pcol + i * pclrd->numchans];
  				}
+@@ -386,6 +391,11 @@ jas_image_t *jp2_decode(jas_stream_t *in, char *optstr
+ 	/* Determine the type of each component. */
+ 	if (dec->cdef) {
+ 		for (i = 0; i < dec->numchans; ++i) {
++			/* Is the channel number reasonable? */
++			if (dec->cdef->data.cdef.ents[i].channo >= dec->numchans) {
++				jas_eprintf("error: invalid channel number in CDEF box\n");
++				goto error;
++			}
+ 			jas_image_setcmpttype(dec->image,
+ 			  dec->chantocmptlut[dec->cdef->data.cdef.ents[i].channo],
+ 			  jp2_getct(jas_image_clrspc(dec->image),

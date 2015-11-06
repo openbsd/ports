@@ -1,6 +1,11 @@
-$OpenBSD: patch-src_libjasper_jpc_jpc_dec_c,v 1.3 2008/05/17 09:32:16 espie Exp $
---- src/libjasper/jpc/jpc_dec.c.orig	Fri Jan 19 22:43:07 2007
-+++ src/libjasper/jpc/jpc_dec.c	Fri May 16 21:35:28 2008
+$OpenBSD: patch-src_libjasper_jpc_jpc_dec_c,v 1.4 2015/11/06 22:28:29 sthen Exp $
+
+Security fixes from Slackware:
+	CVE-2014-8157: off-by-one
+	CVE-2014-9029: multiple off-by-one
+
+--- src/libjasper/jpc/jpc_dec.c.orig	Fri Jan 19 13:43:07 2007
++++ src/libjasper/jpc/jpc_dec.c	Thu Oct 29 22:08:08 2015
 @@ -449,7 +449,7 @@ static int jpc_dec_process_sot(jpc_dec_t *dec, jpc_ms_
  
  	if (dec->state == JPC_MH) {
@@ -10,6 +15,15 @@ $OpenBSD: patch-src_libjasper_jpc_jpc_dec_c,v 1.3 2008/05/17 09:32:16 espie Exp 
  		assert(compinfos);
  		for (cmptno = 0, cmpt = dec->cmpts, compinfo = compinfos;
  		  cmptno < dec->numcomps; ++cmptno, ++cmpt, ++compinfo) {
+@@ -489,7 +489,7 @@ static int jpc_dec_process_sot(jpc_dec_t *dec, jpc_ms_
+ 		dec->curtileendoff = 0;
+ 	}
+ 
+-	if (JAS_CAST(int, sot->tileno) > dec->numtiles) {
++	if (JAS_CAST(int, sot->tileno) >= dec->numtiles) {
+ 		jas_eprintf("invalid tile number in SOT marker segment\n");
+ 		return -1;
+ 	}
 @@ -692,7 +692,7 @@ static int jpc_dec_tileinit(jpc_dec_t *dec, jpc_dec_ti
  			tile->realmode = 1;
  		}
@@ -73,6 +87,33 @@ $OpenBSD: patch-src_libjasper_jpc_jpc_dec_c,v 1.3 2008/05/17 09:32:16 espie Exp 
  		  sizeof(jpc_dec_tcomp_t)))) {
  			return -1;
  		}
+@@ -1280,7 +1280,7 @@ static int jpc_dec_process_coc(jpc_dec_t *dec, jpc_ms_
+ 	jpc_coc_t *coc = &ms->parms.coc;
+ 	jpc_dec_tile_t *tile;
+ 
+-	if (JAS_CAST(int, coc->compno) > dec->numcomps) {
++	if (JAS_CAST(int, coc->compno) >= dec->numcomps) {
+ 		jas_eprintf("invalid component number in COC marker segment\n");
+ 		return -1;
+ 	}
+@@ -1306,7 +1306,7 @@ static int jpc_dec_process_rgn(jpc_dec_t *dec, jpc_ms_
+ 	jpc_rgn_t *rgn = &ms->parms.rgn;
+ 	jpc_dec_tile_t *tile;
+ 
+-	if (JAS_CAST(int, rgn->compno) > dec->numcomps) {
++	if (JAS_CAST(int, rgn->compno) >= dec->numcomps) {
+ 		jas_eprintf("invalid component number in RGN marker segment\n");
+ 		return -1;
+ 	}
+@@ -1355,7 +1355,7 @@ static int jpc_dec_process_qcc(jpc_dec_t *dec, jpc_ms_
+ 	jpc_qcc_t *qcc = &ms->parms.qcc;
+ 	jpc_dec_tile_t *tile;
+ 
+-	if (JAS_CAST(int, qcc->compno) > dec->numcomps) {
++	if (JAS_CAST(int, qcc->compno) >= dec->numcomps) {
+ 		jas_eprintf("invalid component number in QCC marker segment\n");
+ 		return -1;
+ 	}
 @@ -1466,7 +1466,9 @@ static int jpc_dec_process_unk(jpc_dec_t *dec, jpc_ms_
  	dec = 0;
  
