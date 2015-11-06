@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2015/10/21 13:07:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/11/06 17:10:05 bentley Exp $
 
 COMMENT=	test network latency under load via netperf
 
 MODPY_EGG_VERSION= 0.9.1
 DISTNAME=	netperf-wrapper-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	benchmarks net
 
@@ -16,6 +17,7 @@ MODPY_PI =	Yes
 
 MODULES=	lang/python
 RUN_DEPENDS=	benchmarks/netperf \
+		devel/desktop-file-utils \
 		graphics/py-matplotlib>=1.2 \
 		net/fping>=2.4b2p7
 
