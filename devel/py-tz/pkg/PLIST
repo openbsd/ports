@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/11/28 21:02:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2015/11/06 19:56:44 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -134,6 +134,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Edmonton
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Eirunepe
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/El_Salvador
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Ensenada
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Fort_Nelson
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Fort_Wayne
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Fortaleza
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Glace_Bay
