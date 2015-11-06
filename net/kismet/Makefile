@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/09/11 16:27:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2015/11/06 20:37:34 sthen Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -10,7 +10,8 @@ NOT_FOR_ARCHS=	m88k vax
 
 V=		2008-05-R1
 DISTNAME=	kismet-${V}
-REVISION=	5
+REVISION-main=	5
+REVISION-gpsmap= 6
 PKGNAME-main=	kismet-${V:S,-,,g}
 PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}
 CATEGORIES=	net security
@@ -51,7 +52,7 @@ MULTI_PACKAGES=		-main -gpsmap
 
 WANTLIB-main=		c m ncurses panel pcap stdc++
 WANTLIB-gpsmap=		c expat m pthread stdc++ z \
-			MagickCore>=1 gmp>=6
+			MagickCore-6.Q16 gmp>=6
 LIB_DEPENDS-gpsmap=	graphics/ImageMagick \
 			devel/gmp
 

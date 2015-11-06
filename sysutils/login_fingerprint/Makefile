@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2014/12/09 15:54:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2015/11/06 20:37:34 sthen Exp $
 
 COMMENT=	provide fingerprint authentication
 
 DISTNAME=	login_fingerprint-1.2
-REVISION =	3
+REVISION =	4
 CATEGORIES=    	sysutils
 
 MASTER_SITES=	http://blade2k.humppa.hu/
@@ -13,8 +13,8 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c crypto freetype fprint>=1 MagickCore>=1 \
-			MagickWand>=1 usb-1.0 pthread
+WANTLIB=		c crypto freetype fprint>=1 MagickCore-6.Q16 \
+			MagickWand-6.Q16 usb-1.0 pthread
 
 LIB_DEPENDS=		security/libfprint>=0.4.0 \
 			graphics/ImageMagick

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2015/09/11 11:33:35 jca Exp $
+# $OpenBSD: Makefile,v 1.58 2015/11/06 20:37:34 sthen Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		24.5
-REVISION=		1
+REVISION=		2
 DISTNAME=		emacs-${VERSION}
 
 CATEGORIES=		editors
@@ -66,14 +66,14 @@ RUN_DEPENDS+=		devel/desktop-file-utils \
 . if ${FLAVOR} == "athena"
 CONFIGURE_ARGS+=	--with-x-toolkit=athena
 LIB_DEPENDS+=		x11/Xaw3d
-WANTLIB += ICE MagickCore MagickWand SM X11 Xaw3d Xext Xft Xinerama
+WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xaw3d Xext Xft Xinerama
 WANTLIB += Xmu Xpm Xrandr Xrender Xt cairo dbus-1 fontconfig freetype
 WANTLIB += gconf-2 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += jpeg png rsvg-2 tiff
 . elif ${FLAVOR} == "gtk2"
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk2
 LIB_DEPENDS+=		x11/gtk+2
-WANTLIB += ICE MagickCore MagickWand SM X11 Xcomposite Xcursor
+WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xft Xi Xinerama Xpm Xrandr Xrender
 WANTLIB += atk-1.0 cairo dbus-1 fontconfig freetype gconf-2 gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
@@ -82,7 +82,7 @@ WANTLIB += tiff
 . elif ${FLAVOR} == "gtk3"
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
 LIB_DEPENDS+=		x11/gtk+3
-WANTLIB += ICE MagickCore MagickWand SM X11 Xft Xinerama Xpm Xrandr
+WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xft Xinerama Xpm Xrandr
 WANTLIB += Xrender atk-1.0 cairo cairo-gobject dbus-1 fontconfig
 WANTLIB += freetype gconf-2 gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0

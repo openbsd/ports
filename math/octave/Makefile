@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2015/11/05 12:49:26 pirofti Exp $
+# $OpenBSD: Makefile,v 1.79 2015/11/06 20:37:34 sthen Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -7,7 +7,7 @@ NOT_FOR_ARCHS =	vax sparc
 COMMENT =	high-level language for numerical computations
 
 VERSION =	4.0.0
-REVISION =	2
+REVISION =	3
 DISTNAME =	octave-${VERSION}
 CATEGORIES =	math
 
@@ -22,8 +22,8 @@ MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${MODFORTRAN_WANTLIB}
-WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE OSMesa QtGui
+WANTLIB += ${MODFORTRAN_WANTLIB} FLAC GL GLU
+WANTLIB += GraphicsMagick-6.Q16 GraphicsMagick++-6.Q16 ICE OSMesa QtGui
 WANTLIB += QtNetwork QtOpenGL SM X11 X11-xcb Xau Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender
 WANTLIB += Xt Xxf86vm amd arpack blas bz2 c camd ccolamd cholmod

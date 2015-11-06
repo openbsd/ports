@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/10/29 21:30:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2015/11/06 20:37:34 sthen Exp $
 
 COMMENT=	PHP support for the ImageMagick library
 
@@ -8,10 +8,9 @@ CATEGORIES=	graphics
 # PHP
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE MagickCore MagickWand SM X11 Xext Xt bz2 djvulibre
-WANTLIB += expat fftw3 fontconfig freetype jasper jbig jpeg lcms2
-WANTLIB += ltdl lzma m png pthread tiff wmf-0.2 wmflite-0.2 xcb xml2 z
-WANTLIB += pthread-stubs webp
+WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xext Xt
+WANTLIB += bz2 expat fftw3 fontconfig freetype lcms2 ltdl lzma
+WANTLIB += m pthread pthread-stubs xcb z
 
 MODULES=	converters/libiconv \
 		lang/php/pecl

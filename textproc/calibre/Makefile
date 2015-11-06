@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/09/29 10:52:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2015/11/06 20:37:35 sthen Exp $
 
 COMMENT =		ebook management application
 
@@ -7,7 +7,7 @@ DISTNAME =		calibre-1.48.0
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 EXTRACT_SUFX =		.tar.xz
-REVISION =		6
+REVISION =		7
 
 HOMEPAGE =		http://calibre-ebook.com/
 
@@ -20,7 +20,7 @@ MODULES =		lang/python \
 			x11/qt4
 
 WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += ICE MagickCore MagickWand lib/qt4/QtDBus lib/qt4/QtGui
+WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml SM X11 Xext Xi Xinerama Xrender
 WANTLIB += chm fontconfig freetype icudata icui18n icuio icuuc m mtp
 WANTLIB += podofo pthread stdc++ usb-1.0 z
@@ -35,7 +35,6 @@ LIB_DEPENDS=		devel/chmlib \
 COMMON_DEPENDS =	databases/py-apsw \
 			devel/py-dateutil \
 			devel/xdg-utils \
-			graphics/ImageMagick \
 			graphics/libwmf \
 			graphics/py-Pillow \
 			net/py-dnspython \

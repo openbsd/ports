@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2015/09/24 10:38:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2015/11/06 20:37:34 sthen Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -7,7 +7,7 @@ COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.91
 CATEGORIES=	graphics
-REVISION=	3
+REVISION=	4
 
 MASTER_SITES =	https://inkscape.org/en/gallery/item/3854/
 HOMEPAGE=	http://www.inkscape.org/
@@ -15,8 +15,8 @@ HOMEPAGE=	http://www.inkscape.org/
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE Magick++ MagickCore MagickWand SM X11 Xcomposite
-WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += ICE Magick++-6.Q16 MagickCore-6.Q16 MagickWand-6.Q16 SM X11
+WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xt aspell atk-1.0 atkmm-1.6 bz2 c cairo cairomm-1.0
 WANTLIB += djvulibre enchant exif expat ffi fftw3 fontconfig freetype
 WANTLIB += gc gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0 giomm-2.4

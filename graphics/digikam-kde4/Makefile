@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/09/12 13:52:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.19 2015/11/06 20:37:34 sthen Exp $
 
 COMMENT-kipi =		KDE image plugins collection
 COMMENT-main =		KDE photo management utility
@@ -16,6 +16,7 @@ PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 
+REVISION-kipi =		0
 REVISION-mediawiki =	4
 
 EXTRACT_SUFX =		.tar.bz2
@@ -56,7 +57,7 @@ WANTLIB-kipi += opencv_core opencv_highgui opencv_imgproc opencv_objdetect
 WANTLIB-kipi += exslt gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpod
 WANTLIB-kipi += gthread-2.0 jpeg
 WANTLIB-kipi += qjson kgeomap kqoauth kvkontakte mediawiki png qca2 soprano
-WANTLIB-kipi += tiff xml2 xslt MagickCore
+WANTLIB-kipi += tiff xml2 xslt MagickCore-6.Q16
 WANTLIB-kipi += QtGLib-2.0 QtGStreamer-1.0 QtGStreamerUtils-1.0
 
 WANTLIB-main =  ${WANTLIB-common} ${MODPHONON_WANTLIB}

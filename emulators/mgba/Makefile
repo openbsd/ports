@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/11/05 06:33:30 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2015/11/06 20:37:34 sthen Exp $
 
 COMMENT-main =		Game Boy Advance emulator
 COMMENT-qt =		Game Boy Advance emulator with GUI
@@ -24,9 +24,9 @@ MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
 # MPL 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-cWANTLIB =		GL GLU MagickCore MagickWand SDL2 avcodec avformat \
-			avresample avutil c edit m png pthread swscale \
-			termcap z zip
+cWANTLIB =		GL GLU MagickCore-6.Q16 MagickWand-6.Q16 SDL2 \
+			avcodec avformat avresample avutil c edit m png \
+			pthread swscale termcap z zip
 WANTLIB-main =		${cWANTLIB}
 WANTLIB-qt =		${cWANTLIB} Qt5Core Qt5Gui Qt5Multimedia \
 			Qt5Network Qt5OpenGL Qt5Widgets estdc++ mgba
