@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2015/11/06 17:10:05 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2015/11/06 20:42:26 sthen Exp $
 
 COMMENT=	test network latency under load via netperf
 
 MODPY_EGG_VERSION= 0.9.1
+REVISION=	1
 DISTNAME=	netperf-wrapper-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	benchmarks net
 

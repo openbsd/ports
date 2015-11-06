@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1 2015/11/06 20:42:26 sthen Exp $
+--- setup.py.orig	Fri Nov  6 10:22:20 2015
++++ setup.py	Fri Nov  6 10:22:26 2015
+@@ -91,7 +91,7 @@ data_files = [('share/netperf-wrapper', ['matplotlibrc
+               ('share/doc/netperf-wrapper',
+                ['BUGS',
+                 'README.rst']+glob("*.example")),
+-              ('share/man/man1',
++              ('man/man1',
+                ['man/netperf-wrapper.1']),
+               ('share/doc/netperf-wrapper/misc',
+                glob("misc/*")),
