@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/16 16:33:28 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/06 18:57:06 jca Exp $
 
 COMMENT =		rc file (dotfile) management
 
-DISTNAME =		rcm-1.2.3
+DISTNAME =		rcm-1.3.0
 
 CATEGORIES =		sysutils
 
