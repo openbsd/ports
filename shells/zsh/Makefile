@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.74 2015/04/28 06:30:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.75 2015/11/06 14:17:03 pea Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
-V=		5.0.7
+V=		5.1.1
 DISTNAME=	zsh-$V
-REVISION=	0
 CATEGORIES=	shells
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
@@ -12,6 +11,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 HOMEPAGE=	http://www.zsh.org/
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=zsh/}
+MASTER_SITES+=	http://www.zsh.org/pub/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -49,11 +49,14 @@ EXTFILES=	Misc/checkmail Misc/run-help Misc/sticky-note Misc/zcalc Misc/zed Misc
 
 pre-configure:
 .for i in ${EXTFILES}
-	perl -pi -e "s,/bin/zsh,${TRUEPREFIX}/bin/zsh,g" ${WRKSRC}/Functions/${i}
+	sed -i -e "s,/bin/zsh,${TRUEPREFIX}/bin/zsh,g" ${WRKSRC}/Functions/${i}
 .endfor
 	@find ${WRKSRC} -name "*.orig" -exec rm -f {} \;
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/$V/scripts/
+
+pre-test:
+	rm -f ${WRKDIR}/bin/chgrp
 
 .include <bsd.port.mk>
