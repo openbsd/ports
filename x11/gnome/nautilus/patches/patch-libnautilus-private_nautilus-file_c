@@ -1,0 +1,21 @@
+$OpenBSD: patch-libnautilus-private_nautilus-file_c,v 1.1 2015/11/06 18:03:46 ajacoutot Exp $
+
+From 5b02e3cecf522f9780175557d691eaff09a09e71 Mon Sep 17 00:00:00 2001
+From: Iain Lane <iain@orangesquash.org.uk>
+Date: Mon, 19 Oct 2015 15:31:33 +0100
+Subject: nautilus_file_peek_display_name: Don't return NULL
+
+--- libnautilus-private/nautilus-file.c.orig	Thu Oct 15 19:12:25 2015
++++ libnautilus-private/nautilus-file.c	Fri Nov  6 18:58:59 2015
+@@ -3742,8 +3742,9 @@ nautilus_file_peek_display_name (NautilusFile *file)
+ 			g_free (escaped_name);
+ 		}
+ 	}
+-	
+-	return eel_ref_str_peek (file->details->display_name);
++
++	return file->details->display_name ?
++		eel_ref_str_peek (file->details->display_name) : "";
+ }
+ 
+ char *

@@ -1,0 +1,18 @@
+$OpenBSD: patch-libnautilus-private_nautilus-progress-info_c,v 1.1 2015/11/06 18:03:46 ajacoutot Exp $
+
+From 3244ae8658563a581dda192716a3ac534c7c9b8c Mon Sep 17 00:00:00 2001
+From: Debarshi Ray <debarshir@gnome.org>
+Date: Tue, 27 Oct 2015 15:26:41 +0100
+Subject: progress-info: Use the proper destroy method
+
+--- libnautilus-private/nautilus-progress-info.c.orig	Thu Oct 15 14:15:03 2015
++++ libnautilus-private/nautilus-progress-info.c	Fri Nov  6 18:59:27 2015
+@@ -92,7 +92,7 @@ nautilus_progress_info_finalize (GObject *object)
+ 
+ 	g_free (info->status);
+ 	g_free (info->details);
+-        g_clear_object (&info->progress_timer);
++        g_clear_pointer (&info->progress_timer, (GDestroyNotify) g_timer_destroy);
+         g_cancellable_disconnect (info->cancellable, info->cancellable_id);
+ 	g_object_unref (info->cancellable);
+         g_cancellable_cancel (info->details_in_thread_cancellable);
