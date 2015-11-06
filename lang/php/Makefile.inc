@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.67 2015/10/14 19:36:01 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.68 2015/11/06 18:31:45 sthen Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
@@ -147,7 +147,7 @@ MULTI_PACKAGES+=	-curl
 COMMENT-curl=		curl URL library extensions for php5
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 LIB_DEPENDS-curl=	net/curl
-WANTLIB-curl=		pthread crypto idn ssl z curl>=2
+WANTLIB-curl=		pthread crypto idn nghttp2 ssl z curl>=2
 
 # dba
 MULTI_PACKAGES+=	-dba
