@@ -1,0 +1,23 @@
+$OpenBSD: patch-remmina-plugins_rdp_rdp_plugin_c,v 1.1 2015/11/07 13:32:35 ajacoutot Exp $
+
+Build with freerdp >=1.2.
+
+--- remmina-plugins/rdp/rdp_plugin.c.orig	Fri Oct 10 14:25:23 2014
++++ remmina-plugins/rdp/rdp_plugin.c	Sat Nov  7 07:51:39 2015
+@@ -257,7 +257,7 @@ static BOOL remmina_rdp_pre_connect(freerdp* instance)
+ 		settings->LargePointerFlag = True;
+ 		settings->PerformanceFlags = PERF_FLAG_NONE;
+ 
+-		rfi->rfx_context = rfx_context_new();
++		rfi->rfx_context = rfx_context_new(FALSE);
+ 	}
+ 
+ 	freerdp_client_load_addins(instance->context->channels, instance->settings);
+@@ -1198,7 +1198,6 @@ G_MODULE_EXPORT gboolean remmina_plugin_entry(RemminaP
+ 
+ 	remmina_rdp_settings_init();
+ 	freerdp_handle_signals();
+-	freerdp_channels_global_init();
+ 
+ 	return TRUE;
+ }

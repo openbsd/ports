@@ -1,68 +1,52 @@
-# $OpenBSD: Makefile,v 1.17 2015/11/07 05:59:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2015/11/07 13:32:35 ajacoutot Exp $
 
-BROKEN=			needs an update
-
-### from upstream, removed at next update
-# +patch-remmina_src_remmina_protocol_widget_c
-DIST_SUBDIR=		remmina
-MASTER_SITES0=		https://github.com/FreeRDP/Remmina/commit/
-PATCH_DIST_STRIP=	-p1
-COMMIT_ID=		569d9bb7 f7d1038b 503a008e 13f20367 3ebdd6e7 \
-			97c2af8c 84327f81 c1ef3a16 6ee20289 b2277827 \
-			1901a1e9 1901a1e9 fe1b698e 348e01d2 1560d633
-.for i in ${COMMIT_ID}
-PATCHFILES +=		$i.patch:0
-.endfor
-###
-
-SHARED_ONLY?=		Yes
+SHARED_ONLY=		Yes
 
 COMMENT=		GTK+3 remote desktop client
 
-V=			1.0.0
-DISTNAME=		Remmina-${V}
-PKGNAME=		${DISTNAME:L}
-WRKDIST=		${WRKDIR}/FreeRDP-Remmina-356c033
+V=			1.1.1
+DISTNAME=		remmina-${V}
 
-REVISION=		10
+GH_TAGNAME=		v${V}
+GH_PROJECT=		Remmina
+GH_ACCOUNT=		FreeRDP
 
 CATEGORIES=		x11 net
 
-HOMEPAGE=		http://remmina.sourceforge.net/
+HOMEPAGE=		https://freerdp.github.io/Remmina/index.html
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xext atk-1.0 c cairo freerdp-channels freerdp-codec
-WANTLIB += freerdp-core freerdp-gdi freerdp-kbd freerdp-rail gcrypt
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
-WANTLIB += gnutls gobject-2.0 gthread-2.0 gtk-3 jpeg pango-1.0
-WANTLIB += pthread ssh telepathy-glib vte-2.91 xkbfile z
-
-MASTER_SITES=		https://github.com/downloads/FreeRDP/Remmina/
+WANTLIB += ICE SM X11 Xext atk-1.0 avahi-client avahi-common avahi-ui-gtk3
+WANTLIB += c cairo freerdp freerdp-client gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring gobject-2.0
+WANTLIB += gthread-2.0 gtk-3 pango-1.0 pthread ssh ssh_threads
+WANTLIB += telepathy-glib vncclient vte-2.91 xkbfile
 
 MODULES=		devel/cmake \
-			devel/gettext \
-			textproc/intltool
-
-BUILD_DEPENDS=		net/avahi,-gtk3,no_mono,no_qt3,no_qt4
+			devel/gettext
 
 LIB_DEPENDS=		devel/vte3 \
+			net/avahi,-gtk3,no_mono,no_qt3,no_qt4 \
+			net/libvncserver \
 			security/libssh \
-			security/gnutls \
-			x11/freerdp>=1.0 \
+			x11/freerdp \
 			net/telepathy/telepathy-glib \
 			x11/gnome/libgnome-keyring
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
+.if ${MACHINE_ARCH} == "amd64"
+CONFIGURE_ARGS=		-DWITH_SSE2=ON
+.else
+CONFIGURE_ARGS=		-DWITH_SSE2=OFF
+.endif
 
-# -lgnutls
-CONFIGURE_ARGS =+	-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
+CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
 
 # Only used by Ubuntu's Unity.
 CONFIGURE_ARGS+=	-DWITH_APPINDICATOR=OFF
