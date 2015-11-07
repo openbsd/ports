@@ -1,0 +1,2 @@
+LibVNCServer/LibVNCClient are cross-platform C libraries that allow you to
+easily implement VNC server or client functionality in your program.

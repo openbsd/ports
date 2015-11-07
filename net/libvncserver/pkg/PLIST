@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/07 09:23:17 ajacoutot Exp $
+bin/libvncserver-config
+include/rfb/
+include/rfb/keysym.h
+include/rfb/rfb.h
+include/rfb/rfbclient.h
+include/rfb/rfbconfig.h
+include/rfb/rfbint.h
+include/rfb/rfbproto.h
+include/rfb/rfbregion.h
+lib/libvncclient.a
+lib/libvncclient.la
+@lib lib/libvncclient.so.${LIBvncclient_VERSION}
+lib/libvncserver.a
+lib/libvncserver.la
+@lib lib/libvncserver.so.${LIBvncserver_VERSION}
+lib/pkgconfig/libvncclient.pc
+lib/pkgconfig/libvncserver.pc
