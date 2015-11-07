@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2015/10/14 17:10:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.45 2015/11/07 05:52:09 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -340,8 +340,8 @@ share/bash-completion/completions/gsettings
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/gdb/
 share/gdb/auto-load/
-share/gdb/auto-load/libglib-2.0.so.0.4600.1-gdb.py
-share/gdb/auto-load/libgobject-2.0.so.0.4600.1-gdb.py
+share/gdb/auto-load/libglib-2.0.so.0.4600.2-gdb.py
+share/gdb/auto-load/libgobject-2.0.so.0.4600.2-gdb.py
 share/glib-2.0/
 share/glib-2.0/codegen/
 share/glib-2.0/codegen/__init__.py
@@ -379,10 +379,6 @@ share/glib-2.0/schemas/gschema.dtd
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gio/
-share/gtk-doc/html/gio/ExampleAnimal.html
-share/gtk-doc/html/gio/ExampleCat.html
-share/gtk-doc/html/gio/ExampleObject.html
-share/gtk-doc/html/gio/ExampleObjectManagerClient.html
 share/gtk-doc/html/gio/GAction.html
 share/gtk-doc/html/gio/GActionGroup.html
 share/gtk-doc/html/gio/GActionMap.html
@@ -549,7 +545,6 @@ share/gtk-doc/html/gio/ch35.html
 share/gtk-doc/html/gio/ch35s02.html
 share/gtk-doc/html/gio/ch35s03.html
 share/gtk-doc/html/gio/ch35s04.html
-share/gtk-doc/html/gio/ch35s05.html
 share/gtk-doc/html/gio/conversion.html
 share/gtk-doc/html/gio/data-models.html
 share/gtk-doc/html/gio/extending-gio.html
@@ -560,9 +555,8 @@ share/gtk-doc/html/gio/file_ops.html
 share/gtk-doc/html/gio/gapplication-tool.html
 share/gtk-doc/html/gio/gdbus-codegen.html
 share/gtk-doc/html/gio/gdbus-convenience.html
+share/gtk-doc/html/gio/gdbus-example-gdbus-codegen.html
 share/gtk-doc/html/gio/gdbus-lowlevel.html
-share/gtk-doc/html/gio/gdbus-org.gtk.GDBus.Example.ObjectManager.Animal.html
-share/gtk-doc/html/gio/gdbus-org.gtk.GDBus.Example.ObjectManager.Cat.html
 share/gtk-doc/html/gio/gdbus.html
 share/gtk-doc/html/gio/gio-D-Bus-Addresses.html
 share/gtk-doc/html/gio/gio-D-Bus-Introspection-Data.html
