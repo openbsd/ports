@@ -1,11 +1,11 @@
-$OpenBSD: patch-external_librevenge_ExternalProject_librevenge_mk,v 1.1 2015/09/29 16:10:48 robert Exp $
---- external/librevenge/ExternalProject_librevenge.mk.orig.port	Mon Sep 28 08:11:35 2015
-+++ external/librevenge/ExternalProject_librevenge.mk	Mon Sep 28 08:01:57 2015
+$OpenBSD: patch-external_librevenge_ExternalProject_librevenge_mk,v 1.2 2015/11/07 09:22:54 robert Exp $
+--- external/librevenge/ExternalProject_librevenge.mk.orig.port	Fri Nov  6 16:57:21 2015
++++ external/librevenge/ExternalProject_librevenge.mk	Fri Nov  6 16:57:35 2015
 @@ -34,6 +34,7 @@ $(call gb_ExternalProject_get_state_target,librevenge,
  			--disable-generators \
  			--without-docs \
  			$(if $(VERBOSE)$(verbose),--disable-silent-rules,--enable-silent-rules) \
 +			CPPFLAGS="-fPIC -DPIC" LDFLAGS="-fPIC -DPIC" \
- 			CXXFLAGS="$(if $(SYSTEM_BOOST),$(BOOST_CPPFLAGS),-I$(call gb_UnpackedTarball_get_dir,boost))" \
+ 			CXXFLAGS="$(if $(SYSTEM_BOOST),$(BOOST_CPPFLAGS),-I$(call gb_UnpackedTarball_get_dir,boost)) \
+ 				-DBOOST_ERROR_CODE_HEADER_ONLY -DBOOST_SYSTEM_NO_DEPRECATED" \
  			$(if $(CROSS_COMPILING),--build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM)) \
- 			$(if $(filter MACOSX,$(OS)),--prefix=/@.__________________________________________________OOO) \
