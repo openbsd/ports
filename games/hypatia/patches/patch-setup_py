@@ -1,0 +1,27 @@
+$OpenBSD: patch-setup_py,v 1.1 2015/11/07 02:20:01 sthen Exp $
+
+Partially revert 8e2554260, it adds a build dependency (setuptools-markdown)
+that we don't have yet.
+
+--- setup.py.orig	Sat Nov  7 02:12:08 2015
++++ setup.py	Sat Nov  7 02:12:38 2015
+@@ -13,14 +13,17 @@ to clear your dist when finished.
+ 
+ from setuptools import setup
+ 
++try:
++    long_description = open('PKG-INFO').read()
++except IOError:
++    long_description = None
+ 
+ exec(open('hypatia/__init__.py').read())
+ setup(name='hypatia_engine',
+       packages=['hypatia'],
+       version=__version__,
+       description='2D action adventure game engine',
+-      setup_requires=['setuptools-markdown'],
+-      long_description_markdown_filename='README.md',
++      long_description=long_description,
+       author='Lillian Lemmer',
+       author_email='lillian.lynn.lemmer@gmail.com',
+       url='http://hypatia-engine.github.io/hypatia',
