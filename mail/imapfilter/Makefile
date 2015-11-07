@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.18 2015/11/04 17:51:18 jca Exp $
+# $OpenBSD: Makefile,v 1.19 2015/11/07 01:18:17 mmcc Exp $
 
 COMMENT=		remote IMAP filtering utility
 
 V=			2.6.3
 DISTNAME=		imapfilter-${V}
+REVISION=		0
 
 GH_TAGNAME=		v${V}
 GH_ACCOUNT=		lefcha
 GH_PROJECT=		imapfilter
 
 CATEGORIES=		mail
+
+MAINTAINER=		Michael McConville <mmcco@mykolab.com>
 
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
