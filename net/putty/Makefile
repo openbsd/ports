@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2015/09/12 20:22:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/11/07 17:46:06 sthen Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
 
-V=		0.65
+V=		0.66
 DISTNAME=	putty-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gui=	${DISTNAME:S/putty/putty-gui/}
@@ -20,7 +20,7 @@ WANTLIB-main = c pthread
 WANTLIB-gui += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-gui += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
 WANTLIB-gui += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB-gui += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-gui += gtk-x11-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gui += pthread z ${MODGETTEXT_WANTLIB}
 
 CONFIGURE_STYLE=	gnu
