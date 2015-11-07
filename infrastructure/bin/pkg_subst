@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_subst,v 1.5 2015/11/02 11:57:40 espie Exp $
+# $OpenBSD: pkg_subst,v 1.6 2015/11/07 09:52:24 espie Exp $
 #
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
@@ -36,13 +36,24 @@ my @basedirs;
 sub ensure_basedir
 {
 	my $file = shift;
+		
 	for my $b (@basedirs) {
 		return if $file =~ m/^\Q$b\E\//;
 	}
+
+	# try harder!
+	require File::Spec;
+
+	$file = File::Spec->canonpath(File::Spec->rel2abs($file));
+
+	for my $b (@basedirs) {
+		return if $file =~ m/^\Q$b\E\//;
+	}
+
 	fatal("must use -m to copy $file which is outside ".
 	    join(" ", @basedirs));
 }
-	
+
 my $subst = OpenBSD::Subst->new;
 
 our ($opt_c, $opt_i);
