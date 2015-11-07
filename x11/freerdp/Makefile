@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/11/07 05:55:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2015/11/07 07:28:18 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -43,7 +43,9 @@ CONFIGURE_ARGS +=	-DWITH_ALSA=OFF \
 			-DWITH_PCSC=ON \
 			-DWITH_PULSE=OFF \
 			-DWITH_WAYLAND=OFF \
-			-DWITH_SSE2=OFF
+
+# -msse3 requires a newer gcc
+CONFIGURE_ARGS +=	-DWITH_SSE2=OFF
 
 NO_TEST =		Yes
 
