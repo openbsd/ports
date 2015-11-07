@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1300 2015/10/18 14:05:05 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1301 2015/11/07 09:54:46 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1043,9 +1043,10 @@ PKG_ARGS${_S} += -DEPOCH=${EPOCH${_S}}
 .  endif
 
 SUBST_CMD${_S} = ${_PERLSCRIPT}/pkg_subst ${_substvars${_S}}
-.if ${FAKE_AS_ROOT:L} == "no"
+.  if ${FAKE_AS_ROOT:L} == "no"
 SUBST_CMD${_S} += -i
-.endif
+.  endif
+SUBST_CMD${_S} += -B ${WRKDIR}
 .endfor
 
 SUBST_CMD = ${_PERLSCRIPT}/pkg_subst
@@ -1055,6 +1056,8 @@ SUBST_CMD += -D${_v}=${${_v:S/^^//}:Q}
 .if ${FAKE_AS_ROOT:L} == "no"
 SUBST_CMD += -i
 .endif
+SUBST_CMD += -B ${WRKDIR}
+
 SUBST_PROGRAM = ${SUBST_CMD} -c ${_BINOWNGRP} -m ${BINMODE}
 SUBST_DATA = ${SUBST_CMD} -c ${_SHAREOWNGRP} -m ${SHAREMODE}
 SUBST_MAN = ${SUBST_CMD} -c ${_MANOWNGRP} -m ${MANMODE}
