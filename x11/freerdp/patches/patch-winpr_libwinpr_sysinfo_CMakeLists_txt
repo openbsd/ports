@@ -1,0 +1,12 @@
+$OpenBSD: patch-winpr_libwinpr_sysinfo_CMakeLists_txt,v 1.1 2015/11/07 05:55:08 ajacoutot Exp $
+--- winpr/libwinpr/sysinfo/CMakeLists.txt.orig	Thu Oct 29 08:01:02 2015
++++ winpr/libwinpr/sysinfo/CMakeLists.txt	Thu Oct 29 08:01:12 2015
+@@ -17,7 +17,7 @@
+ 
+ winpr_module_add(sysinfo.c)
+ 
+-if((NOT WIN32) AND (NOT APPLE) AND (NOT ANDROID))
++if((NOT WIN32) AND (NOT APPLE) AND (NOT ANDROID) AND NOT(OPENBSD))
+ 	winpr_library_add(rt)
+ endif()
+ 

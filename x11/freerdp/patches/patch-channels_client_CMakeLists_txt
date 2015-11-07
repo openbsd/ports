@@ -1,0 +1,13 @@
+$OpenBSD: patch-channels_client_CMakeLists_txt,v 1.1 2015/11/07 05:55:08 ajacoutot Exp $
+--- channels/client/CMakeLists.txt.orig	Thu Oct 29 07:42:20 2015
++++ channels/client/CMakeLists.txt	Thu Oct 29 07:42:34 2015
+@@ -24,7 +24,9 @@ set(${MODULE_PREFIX}_SRCS
+ 	${CMAKE_CURRENT_SOURCE_DIR}/addin.c
+ 	${CMAKE_CURRENT_SOURCE_DIR}/addin.h)
+ 
++if(CHANNEL_STATIC_CLIENT_ENTRIES)
+ list(REMOVE_DUPLICATES CHANNEL_STATIC_CLIENT_ENTRIES)
++endif()
+ 
+ foreach(STATIC_ENTRY ${CHANNEL_STATIC_CLIENT_ENTRIES})
+ 	foreach(STATIC_MODULE ${CHANNEL_STATIC_CLIENT_MODULES})

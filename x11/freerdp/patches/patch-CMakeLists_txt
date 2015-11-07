@@ -1,22 +1,54 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2014/07/10 13:20:46 giovanni Exp $
---- CMakeLists.txt.orig	Wed Jan  2 22:46:59 2013
-+++ CMakeLists.txt	Thu Jul 10 11:32:46 2014
-@@ -68,7 +68,6 @@ if(CMAKE_COMPILER_IS_GNUCC)
- 	endif()
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2015/11/07 05:55:08 ajacoutot Exp $
+--- CMakeLists.txt.orig	Fri Sep 12 00:46:32 2014
++++ CMakeLists.txt	Fri Nov  6 19:29:28 2015
+@@ -170,20 +170,9 @@ if(CMAKE_COMPILER_IS_GNUCC)
  	if(CMAKE_BUILD_TYPE STREQUAL "Release")
  		set(CMAKE_C_FLAGS_RELEASE "-DNDEBUG")
+ 		set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG")
 -		set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2")
+-		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
++		set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
++		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+ 
+-		CHECK_C_COMPILER_FLAG (-Wno-builtin-macro-redefined Wno-builtin-macro-redefined)
+-		if(Wno-builtin-macro-redefined)
+-			set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Wno-builtin-macro-redefined")
+-			set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -D__FILE__='\"$(subst ${CMAKE_BINARY_DIR}/,,$(subst ${CMAKE_SOURCE_DIR}/,,$(abspath $<)))\"'")
+-		endif()
+-
+-		CHECK_CXX_COMPILER_FLAG (-Wno-builtin-macro-redefined Wno-builtin-macro-redefinedCXX)
+-		if(Wno-builtin-macro-redefinedCXX)
+-			set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wno-builtin-macro-redefined")
+-			set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -D__FILE__='\"$(subst ${CMAKE_BINARY_DIR}/,,$(subst ${CMAKE_SOURCE_DIR}/,,$(abspath $<)))\"'")
+-		endif()
+ 	else()
+ 		set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
+ 		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+@@ -315,6 +304,14 @@ if(APPLE)
  	endif()
- 	if(WITH_SSE2_TARGET)
- 		set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -msse2")
-@@ -134,6 +133,10 @@ set(FREERDP_PLUGIN_PATH "${CMAKE_INSTALL_PREFIX}/${CMA
- # Include directories
- include_directories(${CMAKE_CURRENT_BINARY_DIR})
- include_directories(${CMAKE_SOURCE_DIR}/include)
+ endif(APPLE)
+ 
++# BSD
++if(${CMAKE_SYSTEM_NAME} MATCHES "BSD")
++	set(BSD TRUE)
++	if(${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++		set(OPENBSD TRUE)
++	endif()
++endif()
 +
-+# Done after dirs in freerdp tree to avoid failure when freerdp is installed
-+include_directories(/usr/local/include)
-+link_directories(/usr/local/lib)
+ # Android
+ if(ANDROID)
+   set(WITH_LIBRARY_VERSIONING "OFF")
+@@ -554,6 +551,12 @@ set(FREERDP_EXTENSION_PATH "${CMAKE_INSTALL_FULL_LIBDI
+ include_directories(${CMAKE_CURRENT_BINARY_DIR})
+ include_directories(${CMAKE_CURRENT_BINARY_DIR}/include)
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
++if(BSD)
++	if(IS_DIRECTORY /usr/local/include)
++		include_directories(/usr/local/include)
++		link_directories(/usr/local/lib)
++	endif()
++endif()
  
  # Configure files
- configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
+ add_definitions("-DHAVE_CONFIG_H")

@@ -1,0 +1,12 @@
+$OpenBSD: patch-winpr_libwinpr_sysinfo_sysinfo_c,v 1.1 2015/11/07 05:55:08 ajacoutot Exp $
+--- winpr/libwinpr/sysinfo/sysinfo.c.orig	Wed Nov 12 18:56:03 2014
++++ winpr/libwinpr/sysinfo/sysinfo.c	Thu Oct 29 09:34:59 2015
+@@ -105,7 +105,7 @@ static DWORD GetNumberOfProcessors()
+ 		int mib[4];
+ 		size_t length = sizeof(numCPUs);
+ 		mib[0] = CTL_HW;
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 		mib[1] = HW_NCPU;
+ #else
+ 		mib[1] = HW_AVAILCPU;

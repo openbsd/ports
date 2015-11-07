@@ -1,51 +1,53 @@
-# $OpenBSD: Makefile,v 1.19 2015/02/08 04:55:00 jsing Exp $
+# $OpenBSD: Makefile,v 1.20 2015/11/07 05:55:08 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
-V =			1.0.2
 COMMENT =		open source client for Windows Terminal Server
-DISTNAME =		freerdp-$V
-REVISION =		3
-DISTFILES =		${DISTNAME}{$V}.tar.gz
-WRKDIST =		${WRKDIR}/FreeRDP-$V
+DISTNAME =		freerdp-1.2.0beta1
 CATEGORIES =		x11 net
 
-SHARED_LIBS +=  freerdp-cache             0.0 # 1.0
-SHARED_LIBS +=  freerdp-channels          0.0 # 1.0
-SHARED_LIBS +=  freerdp-codec             0.0 # 1.0
-SHARED_LIBS +=  freerdp-core              0.0 # 1.0
-SHARED_LIBS +=  freerdp-gdi               0.0 # 1.0
-SHARED_LIBS +=  freerdp-kbd               0.0 # 1.0
-SHARED_LIBS +=  freerdp-rail              0.0 # 1.0
-SHARED_LIBS +=  freerdp-utils             0.0 # 1.0
+GH_ACCOUNT =		FreeRDP
+GH_PROJECT =		FreeRDP
+GH_COMMIT =		f5ff6e1bd819a347aa532c1ef1a9cf0c67387507
+
+SHARED_LIBS +=  freerdp-client            0.0 # 1.2
+SHARED_LIBS +=  freerdp                   0.0 # 1.2
+SHARED_LIBS +=  winpr                     0.0 # 1.1
+SHARED_LIBS +=  xfreerdp-client           0.0 # 1.2
 
 HOMEPAGE =		http://www.freerdp.com/
-
-MAINTAINER =		Michael Erdely <merdely@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xcursor Xext Xinerama Xv avcodec avutil c crypto cups pcsclite
-WANTLIB += pthread ssl xkbfile z
-
-MASTER_SITES =		https://github.com/FreeRDP/FreeRDP/archive/ \
-			http://spacehopper.org/mirrors/
+WANTLIB += X11 Xcursor Xext Xfixes Xi Xinerama Xrender Xv c crypto
+WANTLIB += execinfo m pthread ssl xkbfile z
 
 MODULES =		devel/cmake
 
-BUILD_DEPENDS =		textproc/docbook \
+CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
+
+BUILD_DEPENDS =		graphics/ffmpeg \
+			print/cups,-libs \
+			security/pcsc-lite \
 			textproc/xmlto
 
-LIB_DEPENDS =		graphics/ffmpeg \
-			print/cups,-libs \
-			security/pcsc-lite
+LIB_DEPENDS =		devel/libexecinfo
 
-CONFIGURE_ARGS +=	-DWITH_ALSA=Off \
-			-DWITH_PCSC=On
+CONFIGURE_ARGS +=	-DWITH_ALSA=OFF \
+			-DWITH_CUPS=ON \
+			-DWITH_DIRECTFB=OFF \
+			-DWITH_GSTREAMER_0_10=OFF \
+			-DWITH_GSTREAMER_1_0=OFF \
+			-DWITH_OPENSLES=OFF \
+			-DWITH_PCSC=ON \
+			-DWITH_PULSE=OFF \
+			-DWITH_WAYLAND=OFF \
+			-DWITH_SSE2=OFF
 
-post-patch:
-	perl -pi -e 's,/usr/local,${LOCALBASE},g; s,/usr/X11R6,${X11BASE},g;' \
-	    ${WRKSRC}/CMakeLists.txt
+NO_TEST =		Yes
+
+pre-configure:
+	sed -i "s,/usr/local,${LOCALBASE},g" ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

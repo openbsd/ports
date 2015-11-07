@@ -1,0 +1,12 @@
+$OpenBSD: patch-winpr_libwinpr_synch_CMakeLists_txt,v 1.1 2015/11/07 05:55:08 ajacoutot Exp $
+--- winpr/libwinpr/synch/CMakeLists.txt.orig	Thu Oct 29 08:00:39 2015
++++ winpr/libwinpr/synch/CMakeLists.txt	Thu Oct 29 08:00:54 2015
+@@ -30,7 +30,7 @@ winpr_module_add(
+ 	timer.c
+ 	wait.c)
+ 
+-if((NOT WIN32) AND (NOT APPLE) AND (NOT ANDROID))
++if((NOT WIN32) AND (NOT APPLE) AND (NOT ANDROID) AND (NOT OPENBSD))
+ 	winpr_library_add(rt)
+ endif()
+ 

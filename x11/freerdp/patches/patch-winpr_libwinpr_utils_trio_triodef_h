@@ -1,0 +1,12 @@
+$OpenBSD: patch-winpr_libwinpr_utils_trio_triodef_h,v 1.1 2015/11/07 05:55:08 ajacoutot Exp $
+--- winpr/libwinpr/utils/trio/triodef.h.orig	Thu Oct 29 07:05:37 2015
++++ winpr/libwinpr/utils/trio/triodef.h	Thu Oct 29 07:05:59 2015
+@@ -88,7 +88,7 @@
+ # endif
+ #endif
+ 
+-#if defined(__NetBSD__)
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ # define TRIO_PLATFORM_UNIX
+ #endif
+ 

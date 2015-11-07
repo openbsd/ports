@@ -1,0 +1,14 @@
+$OpenBSD: patch-winpr_libwinpr_utils_CMakeLists_txt,v 1.1 2015/11/07 05:55:08 ajacoutot Exp $
+--- winpr/libwinpr/utils/CMakeLists.txt.orig	Fri Sep 12 00:46:32 2014
++++ winpr/libwinpr/utils/CMakeLists.txt	Fri Nov  6 19:23:22 2015
+@@ -105,6 +105,10 @@ if(UNIX)
+ 	winpr_library_add(m)
+ endif()
+ 
++if(BSD)
++	winpr_library_add(execinfo)
++endif()
++
+ if(BUILD_TESTING)
+ 	add_subdirectory(test)
+ endif()

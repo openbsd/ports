@@ -1,0 +1,10 @@
+$OpenBSD: patch-winpr_pc_in,v 1.1 2015/11/07 05:55:08 ajacoutot Exp $
+--- winpr.pc.in.orig	Fri Sep 12 00:46:32 2014
++++ winpr.pc.in	Thu Oct 29 07:55:29 2015
+@@ -11,5 +11,5 @@ Version: @WINPR_VERSION_FULL@
+ Requires: 
+ Requires.private: zlib libssl
+ Libs: -L${libdir} ${libs}
+-Libs.private: -ldl -lrt -lm -lpthread
++Libs.private: -lm -lpthread
+ Cflags: -I${includedir}
