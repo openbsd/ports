@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2015/10/14 11:19:56 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2015/11/07 14:51:08 sthen Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -354,8 +354,6 @@ share/examples/freeradius/modules/detail.example.com
 @sample ${SYSCONFDIR}/raddb/modules/detail.example.com
 share/examples/freeradius/modules/detail.log
 @sample ${SYSCONFDIR}/raddb/modules/detail.log
-share/examples/freeradius/modules/dhcp_sqlippool
-@sample ${SYSCONFDIR}/raddb/modules/dhcp_sqlippool
 share/examples/freeradius/modules/digest
 @sample ${SYSCONFDIR}/raddb/modules/digest
 share/examples/freeradius/modules/dynamic_clients

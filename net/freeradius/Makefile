@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2015/11/03 22:54:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2015/11/07 14:51:08 sthen Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.2      # .0.0
@@ -11,7 +11,8 @@ COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-ldap=	freeradius ldap rlm addon
 
 V=		2.2.9
-REVISION-main=	0
+REVISION-main=	1
+REVISION-mysql=	0
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
