@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/11/07 02:20:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/11/07 19:15:04 sthen Exp $
 
 COMMENT =	2D action adventure game engine
 DISTNAME =	hypatia-${GH_TAGNAME}
@@ -8,6 +8,7 @@ SUBST_VARS +=	GH_TAGNAME
 GH_ACCOUNT =	hypatia-engine
 GH_PROJECT =	hypatia
 GH_TAGNAME =	0.3.3
+REVISION =	0
 
 HOMEPAGE=	http://hypatia-engine.github.io/
 
@@ -19,11 +20,9 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	devel/py-enum34 \
 		devel/pygame>=1.9.1 \
-		games/pyganim \
 		graphics/py-Pillow
 
-TEST_DEPENDS =	games/pyganim \
-		graphics/py-Pillow
+TEST_DEPENDS =	graphics/py-Pillow
 
 pre-patch:
 	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' setup.py
