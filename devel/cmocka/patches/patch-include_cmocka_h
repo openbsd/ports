@@ -1,9 +1,9 @@
-$OpenBSD: patch-include_cmocka_h,v 1.4 2015/11/07 20:03:47 sthen Exp $
+$OpenBSD: patch-include_cmocka_h,v 1.5 2015/11/07 20:04:47 sthen Exp $
 
 Avoid a conflicting typedef on 32-bit arch.
 
---- include/cmocka.h.orig	Sun Mar  1 02:31:52 2015
-+++ include/cmocka.h	Sat Nov  7 07:44:28 2015
+--- include/cmocka.h.orig	Sun Mar  1 09:31:52 2015
++++ include/cmocka.h	Sat Nov  7 20:04:06 2015
 @@ -56,7 +56,7 @@ int __stdcall IsDebuggerPresent();
  
  /* If __WORDSIZE is not set, try to figure it out and default to 32 bit. */
@@ -13,7 +13,7 @@ Avoid a conflicting typedef on 32-bit arch.
  #  define __WORDSIZE 64
  # else
  #  define __WORDSIZE 32
-@@ -96,8 +96,11 @@ typedef uintmax_t LargestIntegralType;
+@@ -96,6 +96,9 @@ typedef uintmax_t LargestIntegralType;
  #define cast_to_largest_integral_type(value) \
      ((LargestIntegralType)(value))
  
@@ -21,11 +21,8 @@ Avoid a conflicting typedef on 32-bit arch.
 +#include <sys/stdint.h>
 +#else
  /* Smallest integral type capable of holding a pointer. */
--#if !defined(_UINTPTR_T) && !defined(_UINTPTR_T_DEFINED)
-+#if !defined(_UINTPTR_T) && !defined(_UINTPTR_T_DEFINED) && !defined(_INTPTR_T_DEFINED)
+ #if !defined(_UINTPTR_T) && !defined(_UINTPTR_T_DEFINED)
  # if defined(_WIN32)
-     /* WIN32 is an ILP32 platform */
-     typedef unsigned int uintptr_t;
 @@ -124,6 +127,7 @@ typedef uintmax_t LargestIntegralType;
  # define _UINTPTR_T
  # define _UINTPTR_T_DEFINED
