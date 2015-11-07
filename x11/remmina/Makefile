@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2015/03/27 08:16:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2015/11/07 05:59:51 ajacoutot Exp $
+
+BROKEN=			needs an update
 
 ### from upstream, removed at next update
 # +patch-remmina_src_remmina_protocol_widget_c
