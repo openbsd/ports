@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/14 18:22:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/11/08 11:13:08 ajacoutot Exp $
 include/gspell-1/
 include/gspell-1/gspell/
 include/gspell-1/gspell/gspell-checker-dialog.h
@@ -45,16 +45,12 @@ share/gtk-doc/html/gspell1/right.png
 share/gtk-doc/html/gspell1/style.css
 share/gtk-doc/html/gspell1/up-insensitive.png
 share/gtk-doc/html/gspell1/up.png
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gspell-1.mo
 share/locale/cs/LC_MESSAGES/gspell-1.mo
 share/locale/da/LC_MESSAGES/gspell-1.mo
 share/locale/de/LC_MESSAGES/gspell-1.mo
 share/locale/el/LC_MESSAGES/gspell-1.mo
 share/locale/es/LC_MESSAGES/gspell-1.mo
-share/locale/fa/
-share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/gspell-1.mo
 share/locale/fi/LC_MESSAGES/gspell-1.mo
 share/locale/fr/LC_MESSAGES/gspell-1.mo
@@ -64,8 +60,6 @@ share/locale/hu/LC_MESSAGES/gspell-1.mo
 share/locale/it/LC_MESSAGES/gspell-1.mo
 share/locale/ja/LC_MESSAGES/gspell-1.mo
 share/locale/ko/LC_MESSAGES/gspell-1.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gspell-1.mo
 share/locale/lv/LC_MESSAGES/gspell-1.mo
 share/locale/nb/LC_MESSAGES/gspell-1.mo
@@ -76,8 +70,6 @@ share/locale/pt_BR/LC_MESSAGES/gspell-1.mo
 share/locale/ru/LC_MESSAGES/gspell-1.mo
 share/locale/sk/LC_MESSAGES/gspell-1.mo
 share/locale/sr/LC_MESSAGES/gspell-1.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/gspell-1.mo
 share/locale/sv/LC_MESSAGES/gspell-1.mo
 share/locale/tr/LC_MESSAGES/gspell-1.mo
