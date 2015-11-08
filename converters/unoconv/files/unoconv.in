@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# XXX workaround segfault:
+# LibreOffice is built with gcc49 and python with gcc42 from base
+
+LD_PRELOAD=libestdc++.so ${TRUEPREFIX}/bin/unoconv.py "$@"

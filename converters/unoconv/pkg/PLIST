@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/08 18:09:02 ajacoutot Exp $
+bin/doc2odt
+bin/doc2pdf
+bin/odp2pdf
+bin/odp2ppt
+bin/ods2pdf
+bin/odt2bib
+bin/odt2doc
+bin/odt2docbook
+bin/odt2html
+bin/odt2lt
+bin/odt2pdf
+bin/odt2rtf
+bin/odt2sdw
+bin/odt2sxw
+bin/odt2txt
+bin/odt2xhtml
+bin/odt2xml
+bin/ooxml2doc
+bin/ooxml2odt
+bin/ooxml2pdf
+bin/ppt2odp
+bin/sdw2odt
+bin/sxw2odt
+bin/unoconv
+bin/unoconv.py
+bin/xls2ods
+@man man/man1/unoconv.1
