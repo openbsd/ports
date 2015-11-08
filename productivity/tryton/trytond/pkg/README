@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2015/11/03 06:46:07 ajacoutot Exp $
+$OpenBSD: README,v 1.7 2015/11/08 18:12:43 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -68,6 +68,11 @@ Upgrades
 After upgrading to a new major version of trytond, the database needs to
 be updated.
     # trytond -u all -d tryton
+
+Office documents conversion
+===========================
+Optional report format conversion needs unoconv. It can be installed by running:
+    # pkg_add unoconv
 
 Documentation
 =============
