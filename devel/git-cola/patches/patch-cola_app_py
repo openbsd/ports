@@ -1,10 +1,10 @@
-$OpenBSD: patch-cola_app_py,v 1.1 2015/01/02 15:54:38 jca Exp $
+$OpenBSD: patch-cola_app_py,v 1.2 2015/11/08 19:33:06 jca Exp $
 
 Use ssh-askpass implementation from xenocara.
 
---- cola/app.py.orig	Mon Dec 15 22:14:30 2014
-+++ cola/app.py	Mon Dec 15 22:15:05 2014
-@@ -95,7 +95,7 @@ def setup_environment():
+--- cola/app.py.orig	Mon Oct 12 21:03:45 2015
++++ cola/app.py	Sun Nov  8 20:17:51 2015
+@@ -118,7 +118,7 @@ def setup_environment():
      elif sys.platform == 'darwin':
          askpass = resources.share('bin', 'ssh-askpass-darwin')
      else:

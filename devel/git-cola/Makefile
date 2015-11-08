@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2015/08/12 06:13:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/11/08 19:33:06 jca Exp $
 
 COMMENT =	python powered git gui
 
-MODPY_EGG_VERSION=	2.1.1
+MODPY_EGG_VERSION=	2.4
 DISTNAME =	${GH_PROJECT}-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =	git-cola
@@ -23,10 +23,10 @@ BUILD_DEPENDS =	devel/gettext-tools \
 		textproc/xxdiff \
 		x11/py-qt4
 
-RUN_DEPENDS =	devel/git \
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/git \
 		textproc/xxdiff \
-		x11/py-qt4 \
-		devel/desktop-file-utils
+		x11/py-qt4
 
 MODPY_ADJ_FILES= share/git-cola/bin/git-xbase
 
