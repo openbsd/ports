@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2015/11/02 11:06:34 robert Exp $
+# $OpenBSD: Makefile,v 1.189 2015/11/08 07:52:53 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -6,6 +6,9 @@ COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
+
+REVISION-main=	0
+REVISION-web=	0
 
 CATEGORIES=	mail www productivity
 
@@ -182,7 +185,7 @@ post-install:
 	mv ${WRKINST}${INSTDIR}/debug.php \
 		${WRKINST}${INSTDIR}/debug.php.disabled
 	${INSTALL_DATA} /dev/null ${WRKINST}${INSTDIR}/debug.txt
-	${SUBST_CMD} -c ${FILESDIR}/zarafa.conf \
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/zarafa.conf \
 		${WRKINST}/${INSTDIR}/zarafa.conf.dist
 	find ${PREFIX}/share/php -type f \
 		-exec perl -pi -e 's,\?php\?,\?php,' {} \;
@@ -191,8 +194,8 @@ post-install:
 		rm $$i/LC_MESSAGES/zarafa_webaccess.po ; \
 	done
 
-	${SUBST_CMD} -c ${FILESDIR}/zarafa.m4 ${PREFIX}/share/examples/zarafa/zarafa.m4
-	${SUBST_CMD} -c ${FILESDIR}/local_zarafa.m4 ${PREFIX}/share/examples/zarafa/local_zarafa.m4
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/zarafa.m4 ${PREFIX}/share/examples/zarafa/zarafa.m4
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/local_zarafa.m4 ${PREFIX}/share/examples/zarafa/local_zarafa.m4
 
 	# move files where we want them to be
 	mv ${PREFIX}/share/doc/zarafa-gateway/* \
