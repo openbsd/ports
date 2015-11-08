@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_conf_py,v 1.1.1.1 2015/11/08 17:17:37 edd Exp $
+
+Prevent build from calling out to the internet.
+
+--- doc/conf.py.orig	Sat Nov  7 15:14:03 2015
++++ doc/conf.py	Sat Nov  7 15:14:10 2015
+@@ -31,7 +31,6 @@ import os
+ # ones.
+ extensions = [
+     'sphinx.ext.autodoc',
+-    'sphinx.ext.intersphinx',
+ ]
+ 
+ # Add any paths that contain templates here, relative to this directory.
