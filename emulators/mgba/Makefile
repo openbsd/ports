@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2015/11/06 20:37:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/11/08 07:23:03 ajacoutot Exp $
 
 COMMENT-main =		Game Boy Advance emulator
 COMMENT-qt =		Game Boy Advance emulator with GUI
 
 V =			0.3.1
-REVISION =		0
+REVISION =		1
 DISTNAME =		mgba-$V
 PKGNAME-main =		mgba-$V
 PKGNAME-qt =		mgba-qt-$V
