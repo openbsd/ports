@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/08 18:09:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/08 18:30:57 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		UNiversal Office CONVerter
 
 DISTNAME=		unoconv-0.7
+REVISION=		0
 
 CATEGORIES=		converters textproc
 
@@ -16,6 +17,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		http://dag.wieers.com/home-made/unoconv/
 
 MODULES=		lang/python
+
+# see FILESDIR/unoconv.in
+# should really be the following, but using the module is easier
+# RUN_DEPENDS +=	STEM->=4.9,<4.10:lang/gcc/4.9,-libs
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
