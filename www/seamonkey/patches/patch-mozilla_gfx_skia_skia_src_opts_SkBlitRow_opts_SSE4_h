@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_gfx_skia_trunk_src_opts_SkBlitRow_opts_SSE4_h,v 1.1 2014/12/09 16:49:22 landry Exp $
---- mozilla/gfx/skia/trunk/src/opts/SkBlitRow_opts_SSE4.h.orig	Wed Dec  3 07:22:41 2014
-+++ mozilla/gfx/skia/trunk/src/opts/SkBlitRow_opts_SSE4.h	Tue Dec  9 07:13:56 2014
+$OpenBSD: patch-mozilla_gfx_skia_skia_src_opts_SkBlitRow_opts_SSE4_h,v 1.1 2015/11/09 13:54:30 landry Exp $
+--- mozilla/gfx/skia/skia/src/opts/SkBlitRow_opts_SSE4.h.orig	Wed Nov  4 02:55:27 2015
++++ mozilla/gfx/skia/skia/src/opts/SkBlitRow_opts_SSE4.h	Mon Nov  9 10:29:27 2015
 @@ -17,7 +17,8 @@
   */
  #if /* 1)*/ (defined(__clang__) || (defined(__GNUC__) && !defined(SK_BUILD_FOR_MAC))) \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lightning,v 1.26 2015/09/28 09:30:39 landry Exp $
+@comment $OpenBSD: PLIST-lightning,v 1.27 2015/11/09 13:54:30 landry Exp $
 @conflict lightning-seamonkey-<=1.0b1
 @pkgpath productivity/sunbird,-seamonkey
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/
@@ -301,10 +301,12 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/common/calendar-daypicker.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/common/calendar-event-dialog.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/common/calendar-management.css
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/common/calendar-occurrence-prompt.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/common/calendar-overlay.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/common/calendar-status.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/common/calendar-task-tree.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/common/calendar-task-view.css
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/common/calendar-toolbar.svg
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/common/calendar-unifinder.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/common/calendar-views.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/common/classification.png
@@ -348,14 +350,11 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/calendar-creation-wizard.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/calendar-daypicker.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/calendar-event-dialog-attendees.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/calendar-event-dialog-toolbar-small.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/calendar-event-dialog-toolbar.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/calendar-event-dialog.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/calendar-invitations-dialog-button-images.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/calendar-invitations-dialog-list-images.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/calendar-invitations-dialog.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/calendar-management.css
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/calendar-occurrence-prompt.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/calendar-occurrence-prompt.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/calendar-printing.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/calendar-properties-dialog.css
@@ -370,10 +369,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/datetimepickers/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/datetimepickers/datetimepickers.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/ok-cancel.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/tasks-actions.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/today-pane.css
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/toolbar-large.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/toolbar-small.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/widgets/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/widgets/calendar-widgets.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/linux/calendar/widgets/minimonth.css
@@ -395,14 +391,11 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/calendar-creation-wizard.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/calendar-daypicker.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/calendar-event-dialog-attendees.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/calendar-event-dialog-toolbar-small.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/calendar-event-dialog-toolbar.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/calendar-event-dialog.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/calendar-invitations-dialog-button-images.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/calendar-invitations-dialog-list-images.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/calendar-invitations-dialog.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/calendar-management.css
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/calendar-occurrence-prompt.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/calendar-occurrence-prompt.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/calendar-printing.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/calendar-properties-dialog.css
@@ -419,11 +412,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/datetimepickers/datetimepickers.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/ok-cancel.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/sidebar-item.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/tasks-actions.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/today-pane.css
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/toolbar-large.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/toolbar-small.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/toolbar.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/widgets/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/widgets/calendar-widgets.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/osx/calendar/widgets/minimonth.css
@@ -445,8 +434,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/calendar-creation-wizard.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/calendar-daypicker.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/calendar-event-dialog-attendees.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/calendar-event-dialog-toolbar-aero.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/calendar-event-dialog-toolbar-inverted.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/calendar-event-dialog-toolbar-small.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/calendar-event-dialog-toolbar.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/calendar-event-dialog.css
@@ -455,7 +442,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/calendar-invitations-dialog.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/calendar-management.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/calendar-occurrence-prompt-aero.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/calendar-occurrence-prompt.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/calendar-occurrence-prompt.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/calendar-printing.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/calendar-properties-dialog.css
@@ -470,29 +456,13 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/datetimepickers/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/datetimepickers/datetimepickers.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/ok-cancel.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/tasks-actions-aero.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/tasks-actions-inverted.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/tasks-actions.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/today-pane.css
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/toolbar-aero-inverted.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/toolbar-aero.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/toolbar-large-aero.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/toolbar-large.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/toolbar-small-aero.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/toolbar-small.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/widgets/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/widgets/calendar-widgets.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/widgets/minimonth.css
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/win-aero/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/win-aero/calendar-event-dialog.css
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/win-aero/calendar.css
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/win-aero/lightning-toolbar.css
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/win-aero/lightning.css
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/win-classic/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/win-classic/calendar-event-dialog.css
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/win-classic/calendar.css
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/win-classic/lightning-toolbar.css
-lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/calendar/win-classic/lightning.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/lightning/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/lightning/accountCentral.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/skin/windows/lightning/imip-aero.png
@@ -566,5 +536,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calViewUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calXMLUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/ical.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/ltnInvitationUtils.jsm
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/ltnUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/timezones/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/timezones/zones.json
