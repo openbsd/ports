@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/09/24 17:43:58 okan Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/11/09 12:44:20 jca Exp $
 @bin bin/mlmmj-bounce
 @bin bin/mlmmj-list
 @bin bin/mlmmj-maintd
@@ -25,6 +25,7 @@ share/doc/mlmmj/README
 share/doc/mlmmj/README.access
 share/doc/mlmmj/README.archives
 share/doc/mlmmj/README.exim4
+share/doc/mlmmj/README.footers
 share/doc/mlmmj/README.listtexts
 share/doc/mlmmj/README.postfix
 share/doc/mlmmj/README.qmail

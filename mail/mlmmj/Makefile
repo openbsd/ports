@@ -1,21 +1,26 @@
-# $OpenBSD: Makefile,v 1.16 2015/11/05 19:08:58 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2015/11/09 12:44:20 jca Exp $
 
 COMMENT=	mailing list manager
 
-DISTNAME=	mlmmj-1.2.18.1
+DISTNAME=	mlmmj-1.2.19.0
 CATEGORIES=    	mail
-REVISION=	0
 
 HOMEPAGE=	http://mlmmj.org/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c
+
+WANTLIB += c
 
 MASTER_SITES=	http://mlmmj.org/releases/
 
+MODULES=	converters/libiconv
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-receive-strip=yes
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
 DOCS=	README* TUNABLES
 
