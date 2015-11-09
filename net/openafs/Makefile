@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2015/06/19 11:27:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2015/11/09 22:45:07 sthen Exp $
 
 ONLY_FOR_ARCHS=		i386
 SHARED_ONLY=		Yes
@@ -7,7 +7,7 @@ COMMENT=		OpenAFS distributed filesystem
 
 VERSION=		1.4.7
 DISTNAME=		openafs-${VERSION}
-REVISION=		28
+REVISION=		29
 
 CATEGORIES=		net
 
@@ -54,11 +54,11 @@ pre-build:
 	@perl -pi -e s,dprintf,debugprintf, ${WRKSRC}/src/sgistuff/*.c
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openafs
-	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c ${FILESDIR}/krb5.conf \
-		${PREFIX}/share/examples/openafs/krb5.conf
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openafs
+	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${SHAREMODE} \
+	    -c ${FILESDIR}/krb5.conf ${PREFIX}/share/examples/openafs/krb5.conf
 	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
-		${FILESDIR}/openafs-setup ${PREFIX}/sbin/openafs-setup
+	    ${FILESDIR}/openafs-setup ${PREFIX}/sbin/openafs-setup
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=	--enable-debug
