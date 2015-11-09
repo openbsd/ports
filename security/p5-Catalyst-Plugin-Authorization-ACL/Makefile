@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/11/05 19:08:59 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2015/11/09 08:30:02 benoit Exp $
 
 COMMENT=	ACL support for Catalyst applications
 
-DISTNAME=	Catalyst-Plugin-Authorization-ACL-0.15
+DISTNAME =	Catalyst-Plugin-Authorization-ACL-0.16
 CATEGORIES=	security
-REVISION=	0
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +21,7 @@ RUN_DEPENDS=	www/p5-Catalyst-Runtime \
 		devel/p5-Tree-Simple \
 		devel/p5-Tree-Simple-VisitorFactory
 
-TEST_DEPENDS=devel/p5-Test-WWW-Mechanize-Catalyst \
+TEST_DEPENDS=	devel/p5-Test-WWW-Mechanize-Catalyst \
 		www/p5-Catalyst-Plugin-Session \
 		www/p5-Catalyst-Plugin-Session-State-Cookie
 
