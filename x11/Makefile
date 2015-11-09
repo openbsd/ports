@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.560 2015/10/29 00:40:44 jcs Exp $
+# $OpenBSD: Makefile,v 1.561 2015/11/09 00:49:39 sthen Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -202,7 +202,6 @@
      SUBDIR += p5-X11-Protocol
      SUBDIR += parcellite
      SUBDIR += partiwm
-     SUBDIR += pbrowser
      SUBDIR += pcmanfm
      SUBDIR += peksystray
      SUBDIR += pekwm
