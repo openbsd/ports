@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.81 2015/11/04 07:32:03 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.82 2015/11/09 13:55:22 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc64
@@ -131,7 +131,9 @@ PORTHOME =	${WRKSRC}
 # from browser/config/mozconfig
 CONFIGURE_ARGS +=--enable-application=${MOZILLA_CODENAME}
 
-.if ${PKGPATH} == "www/mozilla-firefox" || (${MOZILLA_PROJECT} == "thunderbird" && ${MOZILLA_BRANCH} == "beta")
+.if ${PKGPATH} == "www/mozilla-firefox" || \
+	${PKGPATH} == "www/seamonkey" || \
+	(${MOZILLA_PROJECT} == "thunderbird" && ${MOZILLA_BRANCH} == "beta")
 WRKDIST ?=	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}
 .elif ${MOZILLA_PROJECT} == "xulrunner" || ${PKGPATH} == "www/firefox-esr"
 WRKDIST ?=	${WRKDIR}/mozilla-${MOZILLA_BRANCH}
