@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2015/10/01 06:58:31 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.30 2015/11/09 12:50:17 benoit Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -122,6 +122,8 @@ share/manaplus/data/graphics/gui/equipmentbox.png
 share/manaplus/data/graphics/gui/incomplete_icon.xml
 share/manaplus/data/graphics/gui/info.xml
 share/manaplus/data/graphics/gui/inventory.xml
+share/manaplus/data/graphics/gui/inventory_cell.xml
+share/manaplus/data/graphics/gui/inventory_cell2.xml
 share/manaplus/data/graphics/gui/item_selection.xml
 share/manaplus/data/graphics/gui/item_shortcut_background.xml
 share/manaplus/data/graphics/gui/itemcontainer.xml
@@ -354,6 +356,7 @@ share/manaplus/data/themes/golden-delicious/help.xml
 share/manaplus/data/themes/golden-delicious/incomplete_icon.xml
 share/manaplus/data/themes/golden-delicious/info.xml
 share/manaplus/data/themes/golden-delicious/inventory.xml
+share/manaplus/data/themes/golden-delicious/inventory_cell2.xml
 share/manaplus/data/themes/golden-delicious/item_selection.xml
 share/manaplus/data/themes/golden-delicious/itemcontainer.xml
 share/manaplus/data/themes/golden-delicious/itempopup.xml
@@ -465,6 +468,7 @@ share/manaplus/data/themes/jewelry/help.xml
 share/manaplus/data/themes/jewelry/incomplete_icon.xml
 share/manaplus/data/themes/jewelry/info.xml
 share/manaplus/data/themes/jewelry/inventory.xml
+share/manaplus/data/themes/jewelry/inventory_cell2.xml
 share/manaplus/data/themes/jewelry/item_selection.xml
 share/manaplus/data/themes/jewelry/itemcontainer.xml
 share/manaplus/data/themes/jewelry/itempopup.xml
