@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/11/09 08:01:49 benoit Exp $
 
 COMMENT =	PSGI handler for HTTP::Server::Simple
 
-DISTNAME =	HTTP-Server-Simple-PSGI-0.14
+DISTNAME =	HTTP-Server-Simple-PSGI-0.16
 CATEGORIES =	www
 
 # Same as Perl
