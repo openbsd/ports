@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/05 19:08:58 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2015/11/09 09:49:05 benoit Exp $
 
 COMMENT= 	send emails with Catalyst
 
 MODULES=	cpan
 
-DISTNAME=	Catalyst-Plugin-Email-0.08
-REVISION=	3
+DISTNAME =	Catalyst-Plugin-Email-0.09
 CATEGORIES=	mail
 
 # Perl
