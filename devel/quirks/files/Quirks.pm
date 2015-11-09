@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.320 2015/11/03 22:29:30 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.321 2015/11/09 00:51:38 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -688,6 +688,7 @@ my $obsolete_reason = {
 	'gtk2hs-buildtools' => 5,
 	'coffeescript' => 7,
 	'grive' => 3,
+	'pb-browser' => 0,
 };
 
 # ->is_base_system($handle, $state):
