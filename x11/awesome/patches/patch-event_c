@@ -1,0 +1,286 @@
+$OpenBSD: patch-event_c,v 1.10 2015/11/09 14:36:12 dcoppa Exp $
+
+commit bbf88211b4fe86288d1e918d1758681130438589
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 10 17:41:05 2015 +0200
+
+Apply window gravity when a window moves itself
+
+This just makes us do what ICCCM requires us to do. Tested via metacity's
+test-gravity.c.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit cd5cd52c20f44d53d8a47060f3d91b7d6fec925f
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 10 17:42:25 2015 +0200
+
+Refactor code a little
+
+The previous commit added some variables and this commit makes the surrounding
+code use these new variables as well.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ac72f8e5a086f352da66525aa14174d2502b146b
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Sep 17 16:32:56 2015 +0200
+
+Fix enter/leave events on titlebars
+
+This adds a global variable that tracks the drawable that is currently under the
+mouse cursor. This new variable is then used so that we get consistent behavior
+for enter/leave signals. Such signals are now also generated when a MotionNotify
+event tells us that the pointer is now in a different titlebar.
+
+Before this, it was possible that we did not generate a leave event on a
+titlebar since the LeaveNotify contains the cursor position after the leave and
+we did not manage to figure out which titlebar was left.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit de8fd4ffd4998e51164e4bc734fe74d11d358a56
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Sep 17 17:03:36 2015 +0200
+
+Handle enter/leave events with detail=Inferior correctly
+
+There is a client window C. Around this window, awesome adds a frame window F.
+When the pointer is inside of C and then moves inside of F, we get a LeaveNotify
+with detail=Inferior, but from our point of view, the pointer is still inside of
+C, because F is contained in C.
+
+Similarly, if the pointer is in F and moves to C, we get an EnterNotify with
+detail=Inferior that we should ignore. However, for an EnterNotify the pointer
+can now be inside of a titlebar, so this case has to be handled now.
+
+The above explains the enter/leave behavior for clients. Let's now think about
+titlebars: When the pointer moves from C to F, it cannot be in any titlebar any
+more, so we must generate a leave event on that titlebar. Similar when the
+pointer moves from F to C, but in this case we also have to figure out which
+titlebar now contains the pointer.
+
+This patch makes the code handle these events with detail=Inferior correctly.
+
+Closes https://github.com/awesomeWM/awesome/pull/461.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ff799a0f5dba06beed9f13939237899e53ff8fd8
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 16 17:30:46 2015 +0200
+
+Grab client keys on the client window (#496)
+
+Before this, we grabbed the keys on the frame window. That meant we only got key
+events for things that nothing else grabbed directly on the key window.
+
+After this, we grab directly on the client window itself and so we "fight" with
+everything else which wants to grab keys. I don't actually know how the winner
+is decided... First come, first serve, the rest gets an error?
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- event.c.orig	Sat Jan 10 20:36:35 2015
++++ event.c	Mon Nov  9 13:54:50 2015
+@@ -296,27 +296,37 @@ event_handle_configurerequest(xcb_configure_request_ev
+     if((c = client_getbywin(ev->window)))
+     {
+         area_t geometry = c->geometry;
++        uint16_t bw = c->border_width;
++        uint16_t tb_left = c->titlebar[CLIENT_TITLEBAR_LEFT].size;
++        uint16_t tb_right = c->titlebar[CLIENT_TITLEBAR_RIGHT].size;
++        uint16_t tb_top = c->titlebar[CLIENT_TITLEBAR_TOP].size;
++        uint16_t tb_bottom = c->titlebar[CLIENT_TITLEBAR_BOTTOM].size;
++        uint16_t deco_left = bw + tb_left;
++        uint16_t deco_right = bw + tb_right;
++        uint16_t deco_top = bw + tb_top;
++        uint16_t deco_bottom = bw + tb_bottom;
+         int16_t diff_w = 0, diff_h = 0, diff_border = 0;
+ 
+         if(ev->value_mask & XCB_CONFIG_WINDOW_X)
+         {
++            int16_t diff = 0;
+             geometry.x = ev->x;
+-            /* The ConfigureRequest specifies the position of the outer corner of the client window, we want the frame */
+-            geometry.x -= c->border_width;
++            xwindow_translate_for_gravity(c->size_hints.win_gravity, deco_left, 0, deco_right, 0, &diff, NULL);
++            geometry.x += diff;
+         }
+         if(ev->value_mask & XCB_CONFIG_WINDOW_Y)
+         {
++            int16_t diff = 0;
+             geometry.y = ev->y;
+-            /* The ConfigureRequest specifies the position of the outer corner of the client window, we want the frame */
+-            geometry.y -= c->border_width;
++            xwindow_translate_for_gravity(c->size_hints.win_gravity, 0, deco_top, 0, deco_bottom, NULL, &diff);
++            geometry.y += diff;
+         }
+         if(ev->value_mask & XCB_CONFIG_WINDOW_WIDTH)
+         {
+             uint16_t old_w = geometry.width;
+             geometry.width = ev->width;
+             /* The ConfigureRequest specifies the size of the client window, we want the frame */
+-            geometry.width += c->titlebar[CLIENT_TITLEBAR_LEFT].size;
+-            geometry.width += c->titlebar[CLIENT_TITLEBAR_RIGHT].size;
++            geometry.width += tb_left + tb_right;
+             diff_w = geometry.width - old_w;
+         }
+         if(ev->value_mask & XCB_CONFIG_WINDOW_HEIGHT)
+@@ -324,13 +334,12 @@ event_handle_configurerequest(xcb_configure_request_ev
+             uint16_t old_h = geometry.height;
+             geometry.height = ev->height;
+             /* The ConfigureRequest specifies the size of the client window, we want the frame */
+-            geometry.height += c->titlebar[CLIENT_TITLEBAR_TOP].size;
+-            geometry.height += c->titlebar[CLIENT_TITLEBAR_BOTTOM].size;
++            geometry.height += tb_top + tb_bottom;
+             diff_h = geometry.height - old_h;
+         }
+         if(ev->value_mask & XCB_CONFIG_WINDOW_BORDER_WIDTH)
+         {
+-            diff_border = ev->border_width - c->border_width;
++            diff_border = ev->border_width - bw;
+             diff_h += diff_border;
+             diff_w += diff_border;
+ 
+@@ -392,6 +401,44 @@ event_handle_destroynotify(xcb_destroy_notify_event_t 
+             }
+ }
+ 
++/** Record that the given drawable contains the pointer.
++ */
++static void
++event_drawable_under_mouse(lua_State *L, int ud)
++{
++    void *d;
++
++    lua_pushvalue(L, ud);
++    d = luaA_object_ref(L, -1);
++
++    if (d == globalconf.drawable_under_mouse)
++    {
++        /* Nothing to do */
++        luaA_object_unref(L, d);
++        return;
++    }
++
++    if (globalconf.drawable_under_mouse != NULL)
++    {
++        /* Emit leave on previous drawable */
++        luaA_object_push(L, globalconf.drawable_under_mouse);
++        luaA_object_emit_signal(L, -1, "mouse::leave", 0);
++        lua_pop(L, 1);
++
++        /* Unref the previous drawable */
++        luaA_object_unref(L, globalconf.drawable_under_mouse);
++        globalconf.drawable_under_mouse = NULL;
++    }
++    if (d != NULL)
++    {
++        /* Reference the drawable for leave event later */
++        globalconf.drawable_under_mouse = d;
++
++        /* Emit enter */
++        luaA_object_emit_signal(L, ud, "mouse::enter", 0);
++    }
++}
++
+ /** The motion notify event handler.
+  * \param ev The event.
+  */
+@@ -419,6 +466,7 @@ event_handle_motionnotify(xcb_motion_notify_event_t *e
+         if (d)
+         {
+             luaA_object_push_item(globalconf.L, -1, d);
++            event_drawable_under_mouse(globalconf.L, -1);
+             lua_pushnumber(globalconf.L, x);
+             lua_pushnumber(globalconf.L, y);
+             luaA_object_emit_signal(globalconf.L, -3, "mouse::move", 2);
+@@ -431,6 +479,7 @@ event_handle_motionnotify(xcb_motion_notify_event_t *e
+     {
+         luaA_object_push(globalconf.L, w);
+         luaA_object_push_item(globalconf.L, -1, w->drawable);
++        event_drawable_under_mouse(globalconf.L, -1);
+         lua_pushnumber(globalconf.L, ev->event_x);
+         lua_pushnumber(globalconf.L, ev->event_y);
+         luaA_object_emit_signal(globalconf.L, -3, "mouse::move", 2);
+@@ -444,7 +493,6 @@ event_handle_motionnotify(xcb_motion_notify_event_t *e
+ static void
+ event_handle_leavenotify(xcb_leave_notify_event_t *ev)
+ {
+-    drawin_t *drawin;
+     client_t *c;
+ 
+     globalconf.timestamp = ev->time;
+@@ -452,27 +500,18 @@ event_handle_leavenotify(xcb_leave_notify_event_t *ev)
+     if(ev->mode != XCB_NOTIFY_MODE_NORMAL)
+         return;
+ 
+-    if((c = client_getbyframewin(ev->event)))
++    /* Ignore leave with detail inferior (we were left for a window contained in
++     * our window, so technically the pointer is still inside of this window).
++     */
++    if(ev->detail != XCB_NOTIFY_DETAIL_INFERIOR && (c = client_getbyframewin(ev->event)))
+     {
+         luaA_object_push(globalconf.L, c);
+         luaA_object_emit_signal(globalconf.L, -1, "mouse::leave", 0);
+-        drawable_t *d = client_get_drawable(c, ev->event_x, ev->event_y);
+-        if (d)
+-        {
+-            luaA_object_push_item(globalconf.L, -1, d);
+-            luaA_object_emit_signal(globalconf.L, -1, "mouse::leave", 0);
+-            lua_pop(globalconf.L, 1);
+-        }
+-        lua_pop(globalconf.L, 1);
+     }
+ 
+-    if((drawin = drawin_getbywin(ev->event)))
+-    {
+-        luaA_object_push(globalconf.L, drawin);
+-        luaA_object_push_item(globalconf.L, -1, drawin->drawable);
+-        luaA_object_emit_signal(globalconf.L, -1, "mouse::leave", 0);
+-        lua_pop(globalconf.L, 2);
+-    }
++    lua_pushnil(globalconf.L);
++    event_drawable_under_mouse(globalconf.L, -1);
++    lua_pop(globalconf.L, 1);
+ }
+ 
+ /** The enter notify event handler.
+@@ -493,19 +532,24 @@ event_handle_enternotify(xcb_enter_notify_event_t *ev)
+     {
+         luaA_object_push(globalconf.L, drawin);
+         luaA_object_push_item(globalconf.L, -1, drawin->drawable);
+-        luaA_object_emit_signal(globalconf.L, -1, "mouse::enter", 0);
++        event_drawable_under_mouse(globalconf.L, -1);
+         lua_pop(globalconf.L, 2);
+     }
+ 
+     if((c = client_getbyframewin(ev->event)))
+     {
+         luaA_object_push(globalconf.L, c);
+-        luaA_object_emit_signal(globalconf.L, -1, "mouse::enter", 0);
++        /* Ignore enter with detail inferior: The pointer was previously inside
++         * of a child window, so technically this isn't a 'real' enter.
++         */
++        if (ev->detail != XCB_NOTIFY_DETAIL_INFERIOR)
++            luaA_object_emit_signal(globalconf.L, -1, "mouse::enter", 0);
++
+         drawable_t *d = client_get_drawable(c, ev->event_x, ev->event_y);
+         if (d)
+         {
+             luaA_object_push_item(globalconf.L, -1, d);
+-            luaA_object_emit_signal(globalconf.L, -1, "mouse::enter", 0);
++            event_drawable_under_mouse(globalconf.L, -1);
+             lua_pop(globalconf.L, 1);
+         }
+         lua_pop(globalconf.L, 1);
+@@ -594,7 +638,7 @@ event_handle_key(xcb_key_press_event_t *ev)
+         /* get keysym ignoring all modifiers */
+         xcb_keysym_t keysym = keyresolv_get_keysym(ev->detail, 0);
+         client_t *c;
+-        if((c = client_getbyframewin(ev->event)))
++        if((c = client_getbywin(ev->event)))
+         {
+             luaA_object_push(globalconf.L, c);
+             event_key_callback(ev, &c->keys, -1, 1, &keysym);

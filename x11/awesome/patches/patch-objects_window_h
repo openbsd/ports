@@ -1,0 +1,26 @@
+$OpenBSD: patch-objects_window_h,v 1.1 2015/11/09 14:36:12 dcoppa Exp $
+
+commit facf51b8cbd614457e46efc8250707ba76d35bf6
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 10 17:45:24 2015 +0200
+
+Apply window gravity for border width changes
+
+Together with the previous changes, this also fixes the initial positions for
+metacity's test-gravity.c.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- objects/window.h.orig	Sat Jan 10 20:36:35 2015
++++ objects/window.h	Mon Nov  9 13:54:50 2015
+@@ -66,7 +66,9 @@ typedef enum
+     /** Border width */ \
+     uint16_t border_width; \
+     /** The window type */ \
+-    window_type_t type;
++    window_type_t type; \
++    /** The border width callback */ \
++    void (*border_width_callback)(void *, uint16_t old, uint16_t new);
+ 
+ /** Window structure */
+ typedef struct

@@ -1,4 +1,4 @@
-$OpenBSD: patch-awesome_c,v 1.13 2015/09/07 10:30:01 dcoppa Exp $
+$OpenBSD: patch-awesome_c,v 1.14 2015/11/09 14:36:12 dcoppa Exp $
 
 commit 0412acfdc02295973e3c216bda6ce4349dc86f80
 Author: Uli Schlachter <psychon@znc.in>
@@ -68,8 +68,36 @@ be available everywhere.
 
 Closes https://github.com/awesomeWM/awesome/pull/267
 
+commit 9b5ab994b024a42df38724a093509afe8eb89a8e
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Sep 23 20:48:56 2015 +0200
+
+Never explicitly focus the root window
+
+Whenever client.focus == nil, we set the input focus to the root window to
+express "nothing has the input focus". However, thanks to the way X11 input
+works, this means that whatever is under the mouse cursor gets keyboard input
+events. This can easily be reproduced with urxvt and some small addition to the
+config to unfocus things.
+
+This commit changes things. Instead of focusing the root window, we create a
+special "no focus" window that gets focused if we want nothing to have the
+focus.
+
+Closes https://github.com/awesomeWM/awesome/pull/470.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 821e3e7e2cf1f301f83b790d66452913f92324ef
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 10 22:25:56 2015 +0200
+
+Make awesome.quit() during startup work
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
 --- awesome.c.orig	Sat Jan 10 20:36:35 2015
-+++ awesome.c	Mon Sep  7 11:41:26 2015
++++ awesome.c	Mon Nov  9 13:54:50 2015
 @@ -72,6 +72,23 @@ awesome_atexit(bool restart)
      lua_pushboolean(globalconf.L, restart);
      signal_object_emit(globalconf.L, &global_signals, "exit", 1);
@@ -160,14 +188,64 @@ Closes https://github.com/awesomeWM/awesome/pull/267
  }
  
  static void
-@@ -323,6 +378,10 @@ main(int argc, char **argv)
-         { "no-argb", 0, NULL, 'a' },
+@@ -324,6 +379,10 @@ main(int argc, char **argv)
          { NULL,      0, NULL, 0 }
      };
-+
+ 
 +    /* Make stdout/stderr line buffered. */
 +    setvbuf(stdout, NULL, _IOLBF, 0);
 +    setvbuf(stderr, NULL, _IOLBF, 0);
- 
++
      /* clear the globalconf structure */
      p_clear(&globalconf, 1);
+     globalconf.keygrabber = LUA_REFNIL;
+@@ -499,23 +558,27 @@ main(int argc, char **argv)
+     spawn_init();
+ 
+     /* The default GC is just a newly created associated with a window with
+-     * depth globalconf.default_depth */
+-    xcb_window_t tmp_win = xcb_generate_id(globalconf.connection);
++     * depth globalconf.default_depth.
++     * The window_no_focus is used for "nothing has the input focus". */
++    globalconf.focus.window_no_focus = xcb_generate_id(globalconf.connection);
+     globalconf.gc = xcb_generate_id(globalconf.connection);
+     xcb_create_window(globalconf.connection, globalconf.default_depth,
+-                      tmp_win, globalconf.screen->root,
++                      globalconf.focus.window_no_focus, globalconf.screen->root,
+                       -1, -1, 1, 1, 0,
+                       XCB_COPY_FROM_PARENT, globalconf.visual->visual_id,
+-                      XCB_CW_BACK_PIXEL | XCB_CW_BORDER_PIXEL | XCB_CW_COLORMAP,
++                      XCB_CW_BACK_PIXEL | XCB_CW_BORDER_PIXEL |
++                      XCB_CW_OVERRIDE_REDIRECT | XCB_CW_COLORMAP,
+                       (const uint32_t [])
+                       {
+                           globalconf.screen->black_pixel,
+                           globalconf.screen->black_pixel,
++                          1,
+                           globalconf.default_cmap
+                       });
+-    xcb_create_gc(globalconf.connection, globalconf.gc, tmp_win, XCB_GC_FOREGROUND | XCB_GC_BACKGROUND,
++    xcb_map_window(globalconf.connection, globalconf.focus.window_no_focus);
++    xcb_create_gc(globalconf.connection, globalconf.gc, globalconf.focus.window_no_focus,
++                  XCB_GC_FOREGROUND | XCB_GC_BACKGROUND,
+                   (const uint32_t[]) { globalconf.screen->black_pixel, globalconf.screen->white_pixel });
+-    xcb_destroy_window(globalconf.connection, tmp_win);
+ 
+     /* Get the window tree associated to this screen */
+     tree_c = xcb_query_tree_unchecked(globalconf.connection,
+@@ -547,9 +610,12 @@ main(int argc, char **argv)
+     g_main_context_set_poll_func(g_main_context_default(), &a_glib_poll);
+     gettimeofday(&last_wakeup, NULL);
+ 
+-    /* main event loop */
+-    globalconf.loop = g_main_loop_new(NULL, FALSE);
+-    g_main_loop_run(globalconf.loop);
++    /* main event loop (if not NULL, awesome.quit() was already called) */
++    if (globalconf.loop == NULL)
++    {
++        globalconf.loop = g_main_loop_new(NULL, FALSE);
++        g_main_loop_run(globalconf.loop);
++    }
+     g_main_loop_unref(globalconf.loop);
+     globalconf.loop = NULL;
+ 

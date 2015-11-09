@@ -1,4 +1,41 @@
-$OpenBSD: patch-globalconf_h,v 1.8 2015/09/07 10:30:01 dcoppa Exp $
+$OpenBSD: patch-globalconf_h,v 1.9 2015/11/09 14:36:12 dcoppa Exp $
+
+commit ac72f8e5a086f352da66525aa14174d2502b146b
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Sep 17 16:32:56 2015 +0200
+
+Fix enter/leave events on titlebars
+
+This adds a global variable that tracks the drawable that is currently under the
+mouse cursor. This new variable is then used so that we get consistent behavior
+for enter/leave signals. Such signals are now also generated when a MotionNotify
+event tells us that the pointer is now in a different titlebar.
+
+Before this, it was possible that we did not generate a leave event on a
+titlebar since the LeaveNotify contains the cursor position after the leave and
+we did not manage to figure out which titlebar was left.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9b5ab994b024a42df38724a093509afe8eb89a8e
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Sep 23 20:48:56 2015 +0200
+
+Never explicitly focus the root window
+
+Whenever client.focus == nil, we set the input focus to the root window to
+express "nothing has the input focus". However, thanks to the way X11 input
+works, this means that whatever is under the mouse cursor gets keyboard input
+events. This can easily be reproduced with urxvt and some small addition to the
+config to unfocus things.
+
+This commit changes things. Instead of focusing the root window, we create a
+special "no focus" window that gets focused if we want nothing to have the
+focus.
+
+Closes https://github.com/awesomeWM/awesome/pull/470.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
 
 commit f320cc74d0ec4111ef04b3523a55970167d28f36
 Author: Uli Schlachter <psychon@znc.in>
@@ -15,8 +52,26 @@ Closes: https://github.com/awesomeWM/awesome/pull/402
 Signed-off-by: Uli Schlachter <psychon@znc.in>
 
 --- globalconf.h.orig	Sat Jan 10 20:36:35 2015
-+++ globalconf.h	Mon Sep  7 11:33:47 2015
-@@ -127,6 +127,8 @@ typedef struct
++++ globalconf.h	Mon Nov  9 13:54:50 2015
+@@ -103,6 +103,8 @@ typedef struct
+     int keygrabber;
+     /** The mouse pointer grabber function */
+     int mousegrabber;
++    /** The drawable that currently contains the pointer */
++    drawable_t *drawable_under_mouse;
+     /** Input focus information */
+     struct
+     {
+@@ -110,6 +112,8 @@ typedef struct
+         client_t *client;
+         /** Is there a focus change pending? */
+         bool need_update;
++        /** When nothing has the input focus, this window actually is focused */
++        xcb_window_t window_no_focus;
+     } focus;
+     /** Drawins */
+     drawin_array_t drawins;
+@@ -127,6 +131,8 @@ typedef struct
          bool registered;
          /** Systray window parent */
          drawin_t *parent;

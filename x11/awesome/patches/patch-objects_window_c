@@ -1,0 +1,33 @@
+$OpenBSD: patch-objects_window_c,v 1.1 2015/11/09 14:36:12 dcoppa Exp $
+
+commit facf51b8cbd614457e46efc8250707ba76d35bf6
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 10 17:45:24 2015 +0200
+
+Apply window gravity for border width changes
+
+Together with the previous changes, this also fixes the initial positions for
+metacity's test-gravity.c.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- objects/window.c.orig	Sat Jan 10 20:36:35 2015
++++ objects/window.c	Mon Nov  9 13:54:50 2015
+@@ -169,6 +169,7 @@ void
+ window_set_border_width(lua_State *L, int idx, int width)
+ {
+     window_t *window = luaA_checkudata(L, idx, &window_class);
++    uint16_t old_width = window->border_width;
+ 
+     if(width == window->border_width || width < 0)
+         return;
+@@ -179,6 +180,9 @@ window_set_border_width(lua_State *L, int idx, int wid
+                              (uint32_t[]) { width });
+ 
+     window->border_width = width;
++
++    if(window->border_width_callback)
++        (*window->border_width_callback)(window, old_width, width);
+ 
+     luaA_object_emit_signal(L, idx, "property::border_width", 0);
+ }

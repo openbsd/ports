@@ -1,0 +1,23 @@
+$OpenBSD: patch-common_util_h,v 1.1 2015/11/09 14:36:12 dcoppa Exp $
+
+commit abf7d1546cc4fcc2b61edd6fab2436beb61e0356
+Author: Kazunobu Kuriyama <kazunobu.kuriyama@gmail.com>
+Date:   Mon Sep 28 14:41:04 2015 +0900
+
+Fix the definition of A_STRNEQ_CASE
+
+Replace A_STRCASEEQ whose definition is not given anywhere with A_STREQ_CASE.
+
+Closes https://github.com/awesomeWM/awesome/pull/488.
+
+--- common/util.h.orig	Sat Jan 10 20:36:35 2015
++++ common/util.h	Mon Nov  9 13:54:50 2015
+@@ -237,7 +237,7 @@ static inline int a_strcasecmp(const char *a, const ch
+ }
+ 
+ #define  A_STREQ_CASE(a, b) (((a) == (b)) || a_strcasecmp(a, b) == 0)
+-#define A_STRNEQ_CASE(a, b) (!A_STRCASEEQ(a, b))
++#define A_STRNEQ_CASE(a, b) (!A_STREQ_CASE(a, b))
+ 
+ /** \brief \c NULL resistant strncmp.
+  * \param[in]  a     the first string.

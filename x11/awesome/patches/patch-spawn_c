@@ -1,0 +1,60 @@
+$OpenBSD: patch-spawn_c,v 1.3 2015/11/09 14:36:12 dcoppa Exp $
+
+commit 0bf4771e51f1a10f08ee242138941cdbbcc84291
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Nov 1 17:53:53 2015 +0100
+
+Spawn: Improve handling of startup notification
+
+The ID for startup notification is transmitted to the spawned process via the
+DESKTOP_STARTUP_ID environment variable. Before this commit, we set this
+variable in the main process. This meant that if we started something "without"
+a startup id, then it might get the ID that was used by the last spawn and which
+was still saved in our env. Fix this by setting the environment variable only
+after fork().
+
+Small anecdote: The above wasn't enough to make Daniel's test case succeed and
+at first I couldn't figure out why.
+
+Turns out that rxvt-unicode doesn't unset the DESKTOP_STARTUP_ID environment
+variable (I think it should, according to some spec), even though it supports
+startup notification. So awesome was already started with DESKTOP_STARTUP_ID set
+and thus all spawned processes used this ID.
+
+Fix this by explicitly unsetting DESKTOP_STARTUP_ID if we don't set any new
+value (even though this breaks encapsulation; we shouldn't have to care about
+this "implementation detail" of libstartup-notification).
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- spawn.c.orig	Sat Jan 10 20:36:35 2015
++++ spawn.c	Mon Nov  9 13:54:50 2015
+@@ -260,7 +260,14 @@ spawn_launchee_timeout(gpointer context)
+ static void
+ spawn_callback(gpointer user_data)
+ {
++    SnLauncherContext *context = (SnLauncherContext *) user_data;
+     setsid();
++
++    if (context)
++        sn_launcher_context_setup_child_process(context);
++    else
++        /* Unset in case awesome was already started with this variable set */
++        unsetenv("DESKTOP_STARTUP_ID");
+ }
+ 
+ /** Parse a command line.
+@@ -352,12 +359,11 @@ luaA_spawn(lua_State *L)
+         /* app will have AWESOME_SPAWN_TIMEOUT seconds to complete,
+          * or the timeout function will terminate the launch sequence anyway */
+         g_timeout_add_seconds(AWESOME_SPAWN_TIMEOUT, spawn_launchee_timeout, context);
+-        sn_launcher_context_setup_child_process(context);
+     }
+ 
+     GError *error = NULL;
+     retval = g_spawn_async(NULL, argv, NULL, G_SPAWN_SEARCH_PATH,
+-                           spawn_callback, NULL, &pid, &error);
++                           spawn_callback, context, &pid, &error);
+     g_strfreev(argv);
+     if(!retval)
+     {

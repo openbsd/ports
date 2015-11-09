@@ -1,0 +1,38 @@
+$OpenBSD: patch-common_luaclass_c,v 1.1 2015/11/09 14:36:12 dcoppa Exp $
+
+commit 4bc44ee1414f8155079f4904191ab65ecffc25cf
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Feb 15 12:16:03 2015 +0100
+
+objects: Add .valid property (Fixes #110)
+
+This property is especially useful for client objects which are unusable after
+unmanage. "Unusuable" here means that pretty much everything you do with the
+client object results in a lua error.
+
+Syntax is c.valid.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- common/luaclass.c.orig	Sat Jan 10 20:36:35 2015
++++ common/luaclass.c	Mon Nov  9 13:54:50 2015
+@@ -369,6 +369,19 @@ luaA_class_index(lua_State *L)
+ 
+     lua_class_t *class = luaA_class_get(L, 1);
+ 
++    /* Is this the special 'valid' property? This is the only property
++     * accessible for invalid objects and thus needs special handling. */
++    const char *attr = luaL_checkstring(L, 2);
++    if (A_STREQ(attr, "valid"))
++    {
++        void *p = luaA_toudata(L, 1, class);
++        if (class->checker)
++            lua_pushboolean(L, p != NULL && class->checker(p));
++        else
++            lua_pushboolean(L, p != NULL);
++        return 1;
++    }
++
+     lua_class_property_t *prop = luaA_class_property_get(L, class, 2);
+ 
+     /* Property does exist and has an index callback */

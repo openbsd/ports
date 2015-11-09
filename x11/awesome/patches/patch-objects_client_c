@@ -1,4 +1,50 @@
-$OpenBSD: patch-objects_client_c,v 1.11 2015/03/17 15:45:37 dcoppa Exp $
+$OpenBSD: patch-objects_client_c,v 1.12 2015/11/09 14:36:12 dcoppa Exp $
+
+commit facf51b8cbd614457e46efc8250707ba76d35bf6
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 10 17:45:24 2015 +0200
+
+Apply window gravity for border width changes
+
+Together with the previous changes, this also fixes the initial positions for
+metacity's test-gravity.c.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 9b5ab994b024a42df38724a093509afe8eb89a8e
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Sep 23 20:48:56 2015 +0200
+
+Never explicitly focus the root window
+
+Whenever client.focus == nil, we set the input focus to the root window to
+express "nothing has the input focus". However, thanks to the way X11 input
+works, this means that whatever is under the mouse cursor gets keyboard input
+events. This can easily be reproduced with urxvt and some small addition to the
+config to unfocus things.
+
+This commit changes things. Instead of focusing the root window, we create a
+special "no focus" window that gets focused if we want nothing to have the
+focus.
+
+Closes https://github.com/awesomeWM/awesome/pull/470.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit e7fbbf47e5ec30cba1ef55e0af6601c1b04e004f
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 10 21:13:40 2015 +0200
+
+Fix client_apply_size_hints()
+
+The bit that indicates that the base size is set is
+XCB_ICCCM_SIZE_HINT_BASE_SIZE. However, instead this code checked
+XCB_ICCCM_SIZE_HINT_P_SIZE which is set to indicate how the initial window
+position is chosen. So we were checking the complete wrong bit. Whoops...
+
+Fixes: https://github.com/awesomeWM/awesome/issues/456
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
 
 commit c03ee8ab362d9960d4742cb9c3baffa61db215c8
 Author: Uli Schlachter <psychon@znc.in>
@@ -24,9 +70,115 @@ This fixes a regression introduced in commit 3aeac3870ca4855 and fixes #92.
 
 Signed-off-by: Uli Schlachter <psychon@znc.in>
 
---- objects/client.c.orig	Sat Jan 10 13:36:35 2015
-+++ objects/client.c	Mon Mar  2 03:12:51 2015
-@@ -868,13 +868,18 @@ client_set_minimized(lua_State *L, int cidx, bool s)
+commit 9c7cc12e5f1628b8dff65f78b0d513ee894aa598
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Oct 10 17:44:11 2015 +0200
+
+Apply window gravity for titlebar resizes
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit ff799a0f5dba06beed9f13939237899e53ff8fd8
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 16 17:30:46 2015 +0200
+
+Grab client keys on the client window (#496)
+
+Before this, we grabbed the keys on the frame window. That meant we only got key
+events for things that nothing else grabbed directly on the key window.
+
+After this, we grab directly on the client window itself and so we "fight" with
+everything else which wants to grab keys. I don't actually know how the winner
+is decided... First come, first serve, the rest gets an error?
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- objects/client.c.orig	Sat Jan 10 20:36:35 2015
++++ objects/client.c	Mon Nov  9 13:54:50 2015
+@@ -36,6 +36,7 @@
+ 
+ static area_t titlebar_get_area(client_t *c, client_titlebar_t bar);
+ static drawable_t *titlebar_get_drawable(lua_State *L, client_t *c, int cl_idx, client_titlebar_t bar);
++static void client_resize_do(client_t *c, area_t geometry, bool force_notice, bool honor_hints);
+ 
+ /** Collect a client.
+  * \param L The Lua VM state.
+@@ -343,7 +344,7 @@ void
+ client_focus_refresh(void)
+ {
+     client_t *c = globalconf.focus.client;
+-    xcb_window_t win = globalconf.screen->root;
++    xcb_window_t win = globalconf.focus.window_no_focus;
+ 
+     if(!globalconf.focus.need_update)
+         return;
+@@ -357,10 +358,11 @@ client_focus_refresh(void)
+         if(!c->nofocus)
+             win = c->window;
+         else
+-            /* Focus the root window to make sure the previously focused client
+-             * doesn't get any input in case WM_TAKE_FOCUS gets ignored.
++            /* Move the focus away from whatever has it to make sure the
++             * previously focused client doesn't get any input in case
++             * WM_TAKE_FOCUS gets ignored.
+              */
+-            win = globalconf.screen->root;
++            win = globalconf.focus.window_no_focus;
+ 
+         if(client_hasproto(c, WM_TAKE_FOCUS))
+             xwindow_takefocus(c->window);
+@@ -376,6 +378,24 @@ client_focus_refresh(void)
+ }
+ 
+ static void
++border_width_callback(client_t *c, uint16_t old_width, uint16_t new_width)
++{
++    if(c->size_hints.flags & XCB_ICCCM_SIZE_HINT_P_WIN_GRAVITY)
++    {
++        area_t geometry = c->geometry;
++        int16_t diff = new_width - old_width;
++        int16_t diff_x = 0, diff_y = 0;
++        xwindow_translate_for_gravity(c->size_hints.win_gravity,
++                                      diff, diff, diff, diff,
++                                      &diff_x, &diff_y);
++        geometry.x += diff_x;
++        geometry.y += diff_y;
++        /* force_notice = true -> inform client about changes */
++        client_resize_do(c, geometry, true, false);
++    }
++}
++
++static void
+ client_update_properties(client_t *c)
+ {
+     /* get all hints */
+@@ -446,6 +466,7 @@ client_manage(xcb_window_t w, xcb_get_geometry_reply_t
+ 
+     client_t *c = client_new(globalconf.L);
+     xcb_screen_t *s = globalconf.screen;
++    c->border_width_callback = (void (*) (void *, uint16_t, uint16_t)) border_width_callback;
+ 
+     /* consider the window banned */
+     c->isbanned = true;
+@@ -623,7 +644,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
+     /* Size hints are applied to the window without any decoration */
+     client_remove_titlebar_geometry(c, &geometry);
+ 
+-    if(c->size_hints.flags & XCB_ICCCM_SIZE_HINT_P_SIZE)
++    if(c->size_hints.flags & XCB_ICCCM_SIZE_HINT_BASE_SIZE)
+     {
+         basew = c->size_hints.base_width;
+         baseh = c->size_hints.base_height;
+@@ -642,7 +663,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
+         minw = c->size_hints.min_width;
+         minh = c->size_hints.min_height;
+     }
+-    else if(c->size_hints.flags & XCB_ICCCM_SIZE_HINT_P_SIZE)
++    else if(c->size_hints.flags & XCB_ICCCM_SIZE_HINT_BASE_SIZE)
+     {
+         /* min size is substituted with base size if not specified */
+         minw = c->size_hints.base_width;
+@@ -868,13 +889,18 @@ client_set_minimized(lua_State *L, int cidx, bool s)
              xwindow_set_state(c->window, XCB_ICCCM_WM_STATE_ICONIC);
  
              uint32_t no_event[] = { 0 };
@@ -46,7 +198,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
                                           c->window,
                                           XCB_CW_EVENT_MASK,
                                           no_event);
-@@ -884,9 +889,13 @@ client_set_minimized(lua_State *L, int cidx, bool s)
+@@ -884,9 +910,13 @@ client_set_minimized(lua_State *L, int cidx, bool s)
                                           XCB_CW_EVENT_MASK,
                                           ROOT_WINDOW_EVENT_MASK);
              xcb_change_window_attributes(globalconf.connection,
@@ -61,3 +213,52 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
              xcb_ungrab_server(globalconf.connection);
          }
          else
+@@ -1689,19 +1719,39 @@ titlebar_resize(client_t *c, client_titlebar_t bar, in
+      * titlebars should keep its current size!) */
+     area_t geometry = c->geometry;
+     int change = size - c->titlebar[bar].size;
++    int16_t diff_top = 0, diff_bottom = 0, diff_right = 0, diff_left = 0;
+     switch (bar) {
+     case CLIENT_TITLEBAR_TOP:
++        geometry.height += change;
++        diff_top = change;
++        break;
+     case CLIENT_TITLEBAR_BOTTOM:
+         geometry.height += change;
++        diff_bottom = change;
+         break;
+     case CLIENT_TITLEBAR_RIGHT:
++        geometry.width += change;
++        diff_right = change;
++        break;
+     case CLIENT_TITLEBAR_LEFT:
+         geometry.width += change;
++        diff_left = change;
+         break;
+     default:
+         fatal("Unknown titlebar kind %d\n", (int) bar);
+     }
+ 
++    if(c->size_hints.flags & XCB_ICCCM_SIZE_HINT_P_WIN_GRAVITY)
++    {
++        int16_t diff_x = 0, diff_y = 0;
++        xwindow_translate_for_gravity(c->size_hints.win_gravity,
++                                      diff_left, diff_top,
++                                      diff_right, diff_bottom,
++                                      &diff_x, &diff_y);
++        geometry.x += diff_x;
++        geometry.y += diff_y;
++    }
++
+     c->titlebar[bar].size = size;
+     client_resize_do(c, geometry, true, false);
+ }
+@@ -2234,7 +2284,7 @@ luaA_client_keys(lua_State *L)
+         luaA_key_array_set(L, 1, 2, keys);
+         luaA_object_emit_signal(L, 1, "property::keys", 0);
+         xcb_ungrab_key(globalconf.connection, XCB_GRAB_ANY, c->frame_window, XCB_BUTTON_MASK_ANY);
+-        xwindow_grabkeys(c->frame_window, keys);
++        xwindow_grabkeys(c->window, keys);
+     }
+ 
+     return luaA_key_array_get(L, 1, keys);
