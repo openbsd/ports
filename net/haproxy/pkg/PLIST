@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/08/27 13:03:06 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/11/10 11:56:54 jca Exp $
 @newgroup _haproxy:${HAPROXYGID}
 @newuser _haproxy:${HAPROXYUID}:_haproxy:daemon:HAProxy Daemon:/var/haproxy:/sbin/nologin
 @man man/man1/haproxy.1
@@ -9,8 +9,6 @@ share/doc/haproxy/
 share/doc/haproxy/architecture.txt
 share/doc/haproxy/configuration.txt
 share/doc/haproxy/gpl.txt
-share/doc/haproxy/haproxy-en.txt
-share/doc/haproxy/haproxy-fr.txt
 share/doc/haproxy/lgpl.txt
 share/examples/haproxy/
 share/examples/haproxy/acl-content-sw.cfg
@@ -18,6 +16,4 @@ share/examples/haproxy/content-sw-sample.cfg
 share/examples/haproxy/haproxy.cfg
 @sample ${HAPROXYCONF}/haproxy.cfg
 share/examples/haproxy/option-http_proxy.cfg
-share/examples/haproxy/tarpit.cfg
-share/examples/haproxy/url-switching.cfg
 @rcscript ${RCDIR}/haproxy

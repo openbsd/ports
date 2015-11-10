@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2015/11/05 20:00:24 jca Exp $
+# $OpenBSD: Makefile,v 1.26 2015/11/10 11:56:54 jca Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
-DISTNAME =	haproxy-1.5.15
+DISTNAME =	haproxy-1.6.2
 CATEGORIES =	net www
 HOMEPAGE =	http://www.haproxy.org/
 MAINTAINER =	Daniel Jakots <obsd@chown.me>
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB =	c crypto pcre pcreposix ssl
 
-MASTER_SITES =	${HOMEPAGE}/download/1.5/src/
+MASTER_SITES =	${HOMEPAGE}/download/1.6/src/
 
 HAPROXYCONF =	${SYSCONFDIR}/haproxy
 HAPROXYSTATE =	/var/haproxy
@@ -35,16 +35,15 @@ MAKE_FLAGS +=	USE_PRIVATE_CACHE=1
 NO_TEST =	Yes
 LIB_DEPENDS =	devel/pcre
 
-DOCS =		architecture configuration gpl haproxy-en haproxy-fr lgpl
-EXAMPLES =	acl-content-sw content-sw-sample haproxy \
-			option-http_proxy tarpit url-switching
+DOCS =		architecture configuration gpl lgpl
+EXAMPLES =	acl-content-sw content-sw-sample option-http_proxy 
 
 DOCSDIR =	${PREFIX}/share/doc/haproxy
 EXAMPLESDIR =	${PREFIX}/share/examples/haproxy
 
 
 pre-install:
-	${SUBST_CMD} ${WRKSRC}/doc/haproxy.1 ${WRKSRC}/examples/haproxy.cfg
+	${SUBST_CMD} ${WRKSRC}/doc/haproxy.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin
@@ -57,6 +56,7 @@ do-install:
 .for file in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/examples/${file}.cfg ${EXAMPLESDIR}
 .endfor
+	${INSTALL_DATA} ${FILESDIR}/haproxy.cfg ${EXAMPLESDIR}
 
 
 .include <bsd.port.mk>

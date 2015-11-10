@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_ssl_sock_c,v 1.4 2015/11/10 11:56:54 jca Exp $
+
+Commited upstream http://git.haproxy.org/?p=haproxy-1.6.git;a=commit;h=96414cce6acd7617bcbfedfa0584ebecb5404a30
+
+--- src/ssl_sock.c.orig	Tue Nov  3 11:22:06 2015
++++ src/ssl_sock.c	Fri Nov  6 09:53:11 2015
+@@ -714,7 +714,7 @@ out:
+ 
+ #endif
+ 
+-#if (OPENSSL_VERSION_NUMBER >= 0x1000200fL && !defined OPENSSL_NO_TLSEXT && !defined OPENSSL_IS_BORINGSSL)
++#if (OPENSSL_VERSION_NUMBER >= 0x1000200fL && !defined OPENSSL_NO_TLSEXT && !defined OPENSSL_IS_BORINGSSL && !defined LIBRESSL_VERSION_NUMBER)
+ 
+ #define CT_EXTENSION_TYPE 18
+ 
+@@ -1736,7 +1736,7 @@ static int ssl_sock_load_cert_file(const char *path, s
+ 	}
+ #endif
+ 
+-#if (OPENSSL_VERSION_NUMBER >= 0x1000200fL && !defined OPENSSL_NO_TLSEXT && !defined OPENSSL_IS_BORINGSSL)
++#if (OPENSSL_VERSION_NUMBER >= 0x1000200fL && !defined OPENSSL_NO_TLSEXT && !defined OPENSSL_IS_BORINGSSL && !defined LIBRESSL_VERSION_NUMBER)
+ 	if (sctl_ex_index >= 0) {
+ 		ret = ssl_sock_load_sctl(ctx, path);
+ 		if (ret < 0) {
+@@ -5348,7 +5348,7 @@ struct xprt_ops ssl_sock = {
+ 	.init     = ssl_sock_init,
+ };
+ 
+-#if (OPENSSL_VERSION_NUMBER >= 0x1000200fL && !defined OPENSSL_NO_TLSEXT && !defined OPENSSL_IS_BORINGSSL)
++#if (OPENSSL_VERSION_NUMBER >= 0x1000200fL && !defined OPENSSL_NO_TLSEXT && !defined OPENSSL_IS_BORINGSSL && !defined LIBRESSL_VERSION_NUMBER)
+ 
+ static void ssl_sock_sctl_free_func(void *parent, void *ptr, CRYPTO_EX_DATA *ad, int idx, long argl, void *argp)
+ {
+@@ -5381,7 +5381,7 @@ static void __ssl_sock_init(void)
+ 	SSL_library_init();
+ 	cm = SSL_COMP_get_compression_methods();
+ 	sk_SSL_COMP_zero(cm);
+-#if (OPENSSL_VERSION_NUMBER >= 0x1000200fL && !defined OPENSSL_NO_TLSEXT && !defined OPENSSL_IS_BORINGSSL)
++#if (OPENSSL_VERSION_NUMBER >= 0x1000200fL && !defined OPENSSL_NO_TLSEXT && !defined OPENSSL_IS_BORINGSSL && !defined LIBRESSL_VERSION_NUMBER)
+ 	sctl_ex_index = SSL_CTX_get_ex_new_index(0, NULL, NULL, NULL, ssl_sock_sctl_free_func);
+ #endif
+ 	sample_register_fetches(&sample_fetch_keywords);

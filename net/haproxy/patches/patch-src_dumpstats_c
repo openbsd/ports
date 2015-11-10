@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_dumpstats_c,v 1.1 2015/11/10 11:56:54 jca Exp $
+
+Fix time_t printing.
+
+--- src/dumpstats.c.orig	Mon Nov  9 03:54:23 2015
++++ src/dumpstats.c	Mon Nov  9 03:55:37 2015
+@@ -2766,13 +2766,13 @@ static void dump_servers_state(struct proxy *backend, 
+ 		chunk_appendf(buf,
+ 				"%d %s "
+ 				"%d %s %s "
+-				"%d %d %d %d %ld "
++				"%d %d %d %d %lld "
+ 				"%d %d %d %d %d "
+ 				"%d %d"
+ 				"\n",
+ 				backend->uuid, backend->id,
+ 				srv->puid, srv->id, srv_addr,
+-				srv->state, srv->admin, srv->uweight, srv->iweight, srv_time_since_last_change,
++				srv->state, srv->admin, srv->uweight, srv->iweight, (long long)srv_time_since_last_change,
+ 				srv->check.status, srv->check.result, srv->check.health, srv->check.state, srv->agent.state,
+ 				bk_f_forced_id, srv_f_forced_id);
+ 
