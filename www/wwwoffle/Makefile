@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.18 2015/02/16 22:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2015/11/10 12:43:39 sthen Exp $
 
 COMMENT=		WWW OFFLine Explorer
 
 DISTNAME=		wwwoffle-2.5e
-REVISION=		2
+REVISION=		3
 CATEGORIES=		www
 
-HOMEPAGE=		http://www.gedanken.demon.co.uk/wwwoffle/
+HOMEPAGE=		http://www.gedanken.org.uk/software/wwwoffle/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c
 
-MASTER_SITES=		http://distfiles.nl/
+WANTLIB += c
+
+MASTER_SITES=		http://www.gedanken.org.uk/software/wwwoffle/download/
 EXTRACT_SUFX=		.tgz
 
 FLAVORS=		de fr es ru pl it
