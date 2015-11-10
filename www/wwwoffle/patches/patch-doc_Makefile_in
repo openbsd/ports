@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2015/11/10 13:56:01 sthen Exp $
+--- doc/Makefile.in.orig	Tue Nov 10 13:02:33 2015
++++ doc/Makefile.in	Tue Nov 10 13:02:36 2015
+@@ -23,7 +23,7 @@ SHELL=/bin/sh
+ prefix=@prefix@
+ datarootdir = @datarootdir@
+ mandir=$(DESTDIR)@mandir@
+-docdir=$(DESTDIR)${prefix}/doc/wwwoffle
++docdir=$(DESTDIR)${prefix}/share/doc/wwwoffle
+ 
+ SPOOLDIR=@SPOOLDIR@
+ CONFDIR=@CONFDIR@

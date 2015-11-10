@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: wwwoffled.rc,v 1.1 2015/11/10 13:56:01 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/wwwoffled"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

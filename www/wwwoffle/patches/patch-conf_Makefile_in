@@ -1,0 +1,14 @@
+$OpenBSD: patch-conf_Makefile_in,v 1.1 2015/11/10 13:56:01 sthen Exp $
+--- conf/Makefile.in.orig	Tue Nov 10 13:06:44 2015
++++ conf/Makefile.in	Tue Nov 10 13:08:50 2015
+@@ -22,8 +22,8 @@ SHELL=/bin/sh
+ 
+ prefix=@prefix@
+ 
+-SPOOLDIR=$(DESTDIR)@SPOOLDIR@
+-CONFDIR=$(DESTDIR)@CONFDIR@
++SPOOLDIR?=$(DESTDIR)@SPOOLDIR@
++CONFDIR?=$(DESTDIR)@CONFDIR@
+ 
+ REAL_SPOOLDIR=@SPOOLDIR@
+ REAL_CONFDIR=@CONFDIR@

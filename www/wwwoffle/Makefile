@@ -1,36 +1,28 @@
-# $OpenBSD: Makefile,v 1.19 2015/11/10 12:43:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/11/10 13:56:01 sthen Exp $
 
 COMMENT=		WWW OFFLine Explorer
 
-DISTNAME=		wwwoffle-2.5e
-REVISION=		3
+DISTNAME=		wwwoffle-2.9i
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.gedanken.org.uk/software/wwwoffle/
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB += c z
 
 MASTER_SITES=		http://www.gedanken.org.uk/software/wwwoffle/download/
 EXTRACT_SUFX=		.tgz
 
-FLAVORS=		de fr es ru pl it
-FLAVOR?=		
+CONFIGURE_STYLE=	gnu
 
-MAKE_ENV=		FLAVOR="${FLAVOR}"
 MAKE_FLAGS=		prefix="${PREFIX}"
+FAKE_FLAGS=		CONFDIR="${WRKINST}${PREFIX}/share/examples/wwwoffle"
 
 NO_TEST=		Yes
 
-# These index.htmls are symlinks and @sample doesn't like that.
 post-install:
-	@rm ${PREFIX}/share/wwwoffle/html/htdig/index.html
-	@${INSTALL_DATA} ${PREFIX}/share/wwwoffle/html/htdig/search.html \
-		${PREFIX}/share/wwwoffle/html/htdig/index.html	
-	@rm ${PREFIX}/share/wwwoffle/html/index.html
-	@${INSTALL_DATA} ${PREFIX}/share/wwwoffle/html/Welcome.html \
-		${PREFIX}/share/wwwoffle/html/index.html	
+	${INSTALL_DATA_DIR} ${WRKINST}${LOCALSTATEDIR}/spool/wwwoffle/monitor
 
 .include <bsd.port.mk>
