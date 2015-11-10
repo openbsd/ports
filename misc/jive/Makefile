@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/06/05 08:11:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.26 2015/11/10 12:35:10 sthen Exp $
 
 COMMENT=	convert English text to Jive
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_FTP=	no license
 WANTLIB=		c
 
 WRKDIST=	${WRKDIR}/jive
+MAKE_FLAGS=	CC="${CC}"
 
 NO_TEST=	Yes
 
