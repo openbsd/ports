@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2015/11/10 20:02:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2015/11/10 20:12:44 jasper Exp $
+
+PORTROACH=		site:https://github.com/elastic/elasticsearch
 
 COMMENT=		distributed RESTful search and analytics
 
