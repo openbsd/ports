@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/05/17 14:09:51 robert Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/11/10 16:59:33 robert Exp $
 @pkgpath misc/mc,no_x11
 @bin bin/mc
 bin/mcdiff
@@ -140,10 +140,10 @@ share/locale/fa/
 share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/mc.mo
 share/locale/fi/LC_MESSAGES/mc.mo
-share/locale/fi_FI/
-share/locale/fi_FI/LC_MESSAGES/
-share/locale/fi_FI/LC_MESSAGES/mc.mo
 share/locale/fr/LC_MESSAGES/mc.mo
+share/locale/fr_CA/
+share/locale/fr_CA/LC_MESSAGES/
+share/locale/fr_CA/LC_MESSAGES/mc.mo
 share/locale/gl/LC_MESSAGES/mc.mo
 share/locale/hr/LC_MESSAGES/mc.mo
 share/locale/hu/LC_MESSAGES/mc.mo
@@ -178,15 +178,15 @@ share/locale/sk/LC_MESSAGES/mc.mo
 share/locale/sl/LC_MESSAGES/mc.mo
 share/locale/sr/LC_MESSAGES/mc.mo
 share/locale/sv/LC_MESSAGES/mc.mo
-share/locale/sv_SE/
-share/locale/sv_SE/LC_MESSAGES/
-share/locale/sv_SE/LC_MESSAGES/mc.mo
 share/locale/szl/
 share/locale/szl/LC_MESSAGES/
 share/locale/szl/LC_MESSAGES/mc.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/mc.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/mc.mo
 share/locale/tr/LC_MESSAGES/mc.mo
 share/locale/uk/LC_MESSAGES/mc.mo
 share/locale/vi/LC_MESSAGES/mc.mo
@@ -215,6 +215,7 @@ share/mc/help/mc.hlp.ru
 share/mc/help/mc.hlp.sr
 share/mc/hints/
 share/mc/hints/mc.hint
+share/mc/hints/mc.hint.ar
 share/mc/hints/mc.hint.az
 share/mc/hints/mc.hint.be
 share/mc/hints/mc.hint.bg

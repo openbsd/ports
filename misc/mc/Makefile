@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2015/05/17 14:09:51 robert Exp $
+# $OpenBSD: Makefile,v 1.56 2015/11/10 16:59:33 robert Exp $
 
 COMMENT=		free Norton Commander clone with many useful features
 
-DISTNAME=		mc-4.8.14
+DISTNAME=		mc-4.8.15
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.midnight-commander.org/
@@ -32,7 +32,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-subshell \
 			--enable-vfs-sftp \
 			--enable-vfs-smb \
-			--enable-charset
+			--enable-charset \
+			--with-slang-includes=${LOCALBASE}/include \
 CONFIGURE_ENV=		LOCALBASE=${LOCALBASE} \
 			LIBS="-lm"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
