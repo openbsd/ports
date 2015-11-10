@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2015/11/05 10:49:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2015/11/10 15:41:47 sebastia Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
 V =		3.5.6
+REVISION =	0
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
@@ -18,6 +19,7 @@ MASTER_SITES =	http://www.rabbitmq.com/releases/rabbitmq-server/v${V}/
 
 MODULES =	lang/erlang \
 		lang/python
+MODERL_VERSION = 18
 MODPY_RUNDEP =	No
 
 USE_GMAKE =	Yes
