@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/03 10:22:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/10 15:02:33 bentley Exp $
 
 COMMENT=	cross-platform multimedia library
 
 V=		2.0.3
+REVISION=	0
 DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
 CATEGORIES=	devel
