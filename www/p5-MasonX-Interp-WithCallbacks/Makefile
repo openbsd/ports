@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2014/03/24 09:16:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2015/11/10 09:06:44 benoit Exp $
 
 COMMENT=	Mason callback support via Params::CallbackRequest
 
 MODULES=	cpan
-DISTNAME=	MasonX-Interp-WithCallbacks-1.13
-REVISION=	2
+DISTNAME =	MasonX-Interp-WithCallbacks-1.19
 CATEGORIES=	www
 
 # GPL/Artistic
@@ -17,6 +16,8 @@ TEST_DEPENDS=	www/apache-httpd-openbsd \
 		www/p5-Apache-Test
 
 CONFIGURE_STYLE=modbuild
+
+MAKE_ENV =	TEST_POD=Yes
 
 # for tests
 MAKE_ENV+=	APACHE_TEST_APXS=${LOCALBASE}/sbin/apxs \
