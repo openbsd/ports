@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.257 2015/11/05 23:41:18 sthen Exp $
+$OpenBSD: user.list,v 1.258 2015/11/10 13:52:59 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -269,3 +269,4 @@ id  user		group		port options
 758 _mlvpn		_mlvpn		net/mlvpn
 759 _tinc		_tinc		net/tinc
 760 _netsnmp		_netsnmp	net/net-snmp
+761 _wwwoffle		_wwwoffle	www/wwwoffle
