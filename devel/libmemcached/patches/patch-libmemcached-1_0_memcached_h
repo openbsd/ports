@@ -1,0 +1,15 @@
+$OpenBSD: patch-libmemcached-1_0_memcached_h,v 1.1 2015/11/10 08:43:36 sebastia Exp $
+
+our cinttypes is in tr1/cinttypes.
+
+--- libmemcached-1.0/memcached.h.orig	Sun Feb  9 12:52:42 2014
++++ libmemcached-1.0/memcached.h	Mon Nov  9 16:08:46 2015
+@@ -43,7 +43,7 @@
+ #endif
+ 
+ #ifdef __cplusplus
+-#  include <cinttypes>
++#  include <tr1/cinttypes>
+ #  include <cstddef>
+ #  include <cstdlib>
+ #else

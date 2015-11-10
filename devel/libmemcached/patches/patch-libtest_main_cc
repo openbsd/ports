@@ -1,0 +1,17 @@
+$OpenBSD: patch-libtest_main_cc,v 1.1 2015/11/10 08:43:36 sebastia Exp $
+
+Configure tests for sigignore, but it's used
+unconditionally.
+
+--- libtest/main.cc.orig	Sun Nov  8 22:05:06 2015
++++ libtest/main.cc	Sun Nov  8 22:05:53 2015
+@@ -288,7 +288,9 @@ int main(int argc, char *argv[])
+     do
+     {
+       exit_code= EXIT_SUCCESS;
++#if defined(HAVE_SIGIGNORE)
+       fatal_assert(sigignore(SIGPIPE) == 0);
++#endif
+ 
+       libtest::SignalThread signal;
+       if (signal.setup() == false)
