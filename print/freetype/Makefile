@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.47 2015/03/19 20:25:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2015/11/10 12:16:25 sthen Exp $
+
+# this is freetype1; freetype2 is in xenocara.
+PORTROACH=	limit:^1\.
 
 COMMENT-main=	free and portable TrueType font rendering engine
 COMMENT-doc=	documentation for FreeType
