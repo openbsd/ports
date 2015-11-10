@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/10/12 15:39:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/11/10 15:51:35 sthen Exp $
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:/var/www/librenms:/sbin/nologin
 librenms/
@@ -37,6 +37,7 @@ librenms/doc/API/API-Docs.md
 librenms/doc/Developing/
 librenms/doc/Developing/Code-Guidelines.md
 librenms/doc/Developing/Code-Structure.md
+librenms/doc/Developing/Dynamic-Config.md
 librenms/doc/Developing/Style-Guidelines.md
 librenms/doc/Developing/Using-Git.md
 librenms/doc/Extensions/
@@ -91,6 +92,9 @@ librenms/doc/Support/FAQ.md
 librenms/doc/Support/Install Validation.md
 librenms/doc/Support/Poller Support.md
 librenms/doc/Support/Support-New-OS.md
+librenms/doc/img/
+librenms/doc/img/librenms-distributed-diagram.png
+librenms/doc/img/varnish_block.png
 librenms/doc/index.md
 librenms/html/
 librenms/html/.htaccess
@@ -1659,6 +1663,7 @@ librenms/html/images/os/ricoh.png
 librenms/html/images/os/riverbed.png
 librenms/html/images/os/routeros.png
 librenms/html/images/os/ruckus.png
+librenms/html/images/os/saf.png
 librenms/html/images/os/screenos.png
 librenms/html/images/os/servertech.png
 librenms/html/images/os/siklu.png
@@ -1671,6 +1676,7 @@ librenms/html/images/os/supermicro.png
 librenms/html/images/os/suse.png
 librenms/html/images/os/symbol.png
 librenms/html/images/os/synology.png
+librenms/html/images/os/tplink.png
 librenms/html/images/os/tranzeo.png
 librenms/html/images/os/tripplite.png
 librenms/html/images/os/ubiquiti.png
@@ -1772,6 +1778,7 @@ librenms/html/includes/forms/delete-device-group.inc.php
 librenms/html/includes/forms/discovery-module-update.inc.php
 librenms/html/includes/forms/edit-dashboard.inc.php
 librenms/html/includes/forms/health-update.inc.php
+librenms/html/includes/forms/override-config.inc.php
 librenms/html/includes/forms/parse-alert-map.inc.php
 librenms/html/includes/forms/parse-alert-rule.inc.php
 librenms/html/includes/forms/parse-alert-template.inc.php
@@ -2229,6 +2236,7 @@ librenms/html/includes/print-accesspoint.inc.php
 librenms/html/includes/print-alert-rules.php
 librenms/html/includes/print-alert-templates.php
 librenms/html/includes/print-alerts.inc.php
+librenms/html/includes/print-date-selector.inc.php
 librenms/html/includes/print-debug.php
 librenms/html/includes/print-device-graph.php
 librenms/html/includes/print-event-short.inc.php
@@ -2340,6 +2348,7 @@ librenms/html/js/lazyload.js
 librenms/html/js/leaflet.awesome-markers.min.js
 librenms/html/js/leaflet.js
 librenms/html/js/leaflet.markercluster-src.js
+librenms/html/js/librenms.js
 librenms/html/js/makemini.pl
 librenms/html/js/mapael-maps
 librenms/html/js/maps
@@ -2701,6 +2710,7 @@ librenms/html/pages/device/edit/device.inc.php
 librenms/html/pages/device/edit/health.inc.php
 librenms/html/pages/device/edit/icon.inc.php
 librenms/html/pages/device/edit/ipmi.inc.php
+librenms/html/pages/device/edit/misc.inc.php
 librenms/html/pages/device/edit/modules.inc.php
 librenms/html/pages/device/edit/ports.inc.php
 librenms/html/pages/device/edit/services.inc.php
@@ -2891,6 +2901,7 @@ librenms/html/pages/services.inc.php
 librenms/html/pages/settings/
 librenms/html/pages/settings.inc.php
 librenms/html/pages/settings/alerting.inc.php
+librenms/html/pages/settings/external.inc.php
 librenms/html/pages/syslog.inc.php
 librenms/html/pages/templates.inc.php
 librenms/html/pdf.php
@@ -3134,6 +3145,7 @@ librenms/includes/discovery/os/ricoh.inc.php
 librenms/includes/discovery/os/riverbed.inc.php
 librenms/includes/discovery/os/routeros.inc.php
 librenms/includes/discovery/os/ruckuswireless.inc.php
+librenms/includes/discovery/os/saf.inc.php
 librenms/includes/discovery/os/sanos.inc.php
 librenms/includes/discovery/os/screenos.inc.php
 librenms/includes/discovery/os/sentry3.inc.php
@@ -3143,6 +3155,7 @@ librenms/includes/discovery/os/sonicwall.inc.php
 librenms/includes/discovery/os/speedtouch.inc.php
 librenms/includes/discovery/os/supermicro-switch.inc.php
 librenms/includes/discovery/os/symbol.inc.php
+librenms/includes/discovery/os/tplink.inc.php
 librenms/includes/discovery/os/tranzeo.inc.php
 librenms/includes/discovery/os/vmware.inc.php
 librenms/includes/discovery/os/vrp.inc.php
@@ -3448,6 +3461,7 @@ librenms/includes/polling/os/ricoh.inc.php
 librenms/includes/polling/os/riverbed.inc.php
 librenms/includes/polling/os/routeros.inc.php
 librenms/includes/polling/os/ruckuswireless.inc.php
+librenms/includes/polling/os/saf.inc.php
 librenms/includes/polling/os/screenos.inc.php
 librenms/includes/polling/os/sentry3.inc.php
 librenms/includes/polling/os/siklu.inc.php
@@ -3455,6 +3469,7 @@ librenms/includes/polling/os/snom.inc.php
 librenms/includes/polling/os/sonicwall.inc.php
 librenms/includes/polling/os/speedtouch.inc.php
 librenms/includes/polling/os/symbol.inc.php
+librenms/includes/polling/os/tplink.inc.php
 librenms/includes/polling/os/tranzeo.inc.php
 librenms/includes/polling/os/unifi.inc.php
 librenms/includes/polling/os/unix.inc.php
@@ -3554,6 +3569,7 @@ librenms/lib/Font-Awesome/.npmignore
 librenms/lib/Font-Awesome/CONTRIBUTING.md
 librenms/lib/Font-Awesome/Gemfile
 librenms/lib/Font-Awesome/Gemfile.lock
+librenms/lib/Font-Awesome/HELP-US-OUT.txt
 librenms/lib/Font-Awesome/README.md
 librenms/lib/Font-Awesome/_config.yml
 librenms/lib/Font-Awesome/bower.json
@@ -4493,6 +4509,7 @@ librenms/lib/Font-Awesome/src/_includes/icons/file-type.html
 librenms/lib/Font-Awesome/src/_includes/icons/filter.html
 librenms/lib/Font-Awesome/src/_includes/icons/form-control.html
 librenms/lib/Font-Awesome/src/_includes/icons/gender.html
+librenms/lib/Font-Awesome/src/_includes/icons/hand.html
 librenms/lib/Font-Awesome/src/_includes/icons/medical.html
 librenms/lib/Font-Awesome/src/_includes/icons/new.html
 librenms/lib/Font-Awesome/src/_includes/icons/payment.html
@@ -4503,6 +4520,8 @@ librenms/lib/Font-Awesome/src/_includes/icons/video-player.html
 librenms/lib/Font-Awesome/src/_includes/icons/web-application.html
 librenms/lib/Font-Awesome/src/_includes/jumbotron-carousel.html
 librenms/lib/Font-Awesome/src/_includes/jumbotron.html
+librenms/lib/Font-Awesome/src/_includes/modals/
+librenms/lib/Font-Awesome/src/_includes/modals/download.html
 librenms/lib/Font-Awesome/src/_includes/navbar.html
 librenms/lib/Font-Awesome/src/_includes/new-features.html
 librenms/lib/Font-Awesome/src/_includes/new-naming.html
@@ -4531,6 +4550,7 @@ librenms/lib/Font-Awesome/src/assets/css/
 librenms/lib/Font-Awesome/src/assets/css/prettify.css
 librenms/lib/Font-Awesome/src/assets/css/pygments.css
 librenms/lib/Font-Awesome/src/assets/font-awesome/
+librenms/lib/Font-Awesome/src/assets/font-awesome/HELP-US-OUT.txt
 librenms/lib/Font-Awesome/src/assets/font-awesome/fonts/
 librenms/lib/Font-Awesome/src/assets/font-awesome/fonts/FontAwesome.otf
 librenms/lib/Font-Awesome/src/assets/font-awesome/fonts/fontawesome-webfont.eot
@@ -4568,6 +4588,10 @@ librenms/lib/Font-Awesome/src/assets/font-awesome/scss/_variables.scss
 librenms/lib/Font-Awesome/src/assets/font-awesome/scss/font-awesome.scss
 librenms/lib/Font-Awesome/src/assets/ico/
 librenms/lib/Font-Awesome/src/assets/ico/favicon.ico
+librenms/lib/Font-Awesome/src/assets/img/
+librenms/lib/Font-Awesome/src/assets/img/algolia.png
+librenms/lib/Font-Awesome/src/assets/img/logo-themeisle.png
+librenms/lib/Font-Awesome/src/assets/img/logo-wpbeginner.png
 librenms/lib/Font-Awesome/src/assets/js/
 librenms/lib/Font-Awesome/src/assets/js/ZeroClipboard-1.1.7.min.js
 librenms/lib/Font-Awesome/src/assets/js/ZeroClipboard-1.1.7.swf
@@ -4582,6 +4606,7 @@ librenms/lib/Font-Awesome/src/assets/js/jquery-1.10.2.min.map
 librenms/lib/Font-Awesome/src/assets/js/jquery-1.7.1.min.js
 librenms/lib/Font-Awesome/src/assets/js/prettify.min.js
 librenms/lib/Font-Awesome/src/assets/js/respond.min.js
+librenms/lib/Font-Awesome/src/assets/js/search.js
 librenms/lib/Font-Awesome/src/assets/js/site.js
 librenms/lib/Font-Awesome/src/assets/js/tabcomplete.min.js
 librenms/lib/Font-Awesome/src/assets/js/underscore.min.js
@@ -4660,12 +4685,90 @@ librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.2.0/type.less
 librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.2.0/utilities.less
 librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.2.0/variables.less
 librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.2.0/wells.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/.csscomb.json
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/.csslintrc
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/alerts.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/badges.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/bootstrap.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/breadcrumbs.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/button-groups.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/buttons.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/carousel.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/close.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/code.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/component-animations.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/dropdowns.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/forms.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/glyphicons.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/grid.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/input-groups.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/jumbotron.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/labels.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/list-group.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/media.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/alerts.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/background-variant.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/border-radius.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/buttons.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/center-block.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/clearfix.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/forms.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/gradients.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/grid-framework.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/grid.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/hide-text.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/image.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/labels.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/list-group.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/nav-divider.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/nav-vertical-align.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/opacity.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/pagination.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/panels.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/progress-bar.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/reset-filter.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/reset-text.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/resize.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/responsive-visibility.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/size.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/tab-focus.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/table-row.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/text-emphasis.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/text-overflow.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/mixins/vendor-prefixes.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/modals.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/navbar.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/navs.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/normalize.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/pager.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/pagination.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/panels.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/popovers.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/print.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/progress-bars.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/responsive-embed.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/responsive-utilities.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/scaffolding.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/tables.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/theme.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/thumbnails.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/tooltip.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/type.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/utilities.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/variables.less
+librenms/lib/Font-Awesome/src/assets/less/bootstrap-3.3.5/wells.less
 librenms/lib/Font-Awesome/src/assets/less/site/
 librenms/lib/Font-Awesome/src/assets/less/site.less
+librenms/lib/Font-Awesome/src/assets/less/site/algolia.less
 librenms/lib/Font-Awesome/src/assets/less/site/banner-ad.less
 librenms/lib/Font-Awesome/src/assets/less/site/bootstrap/
+librenms/lib/Font-Awesome/src/assets/less/site/bootstrap/alerts.less
 librenms/lib/Font-Awesome/src/assets/less/site/bootstrap/buttons.less
 librenms/lib/Font-Awesome/src/assets/less/site/bootstrap/jumbotron.less
+librenms/lib/Font-Awesome/src/assets/less/site/bootstrap/modals.less
 librenms/lib/Font-Awesome/src/assets/less/site/bootstrap/navbar.less
 librenms/lib/Font-Awesome/src/assets/less/site/bootstrap/type.less
 librenms/lib/Font-Awesome/src/assets/less/site/bootstrap/variables.less
@@ -4701,6 +4804,7 @@ librenms/lib/Font-Awesome/src/index.html
 librenms/lib/Font-Awesome/src/license.html
 librenms/lib/Font-Awesome/src/test-2.3.2.html
 librenms/lib/Font-Awesome/src/test.html
+librenms/lib/Font-Awesome/src/thanks.html
 librenms/lib/Font-Awesome/src/whats-new.html
 librenms/lib/Leaflet.awesome-markers/
 librenms/lib/Leaflet.awesome-markers/.gitignore
@@ -8049,6 +8153,7 @@ librenms/sql-schema/070.sql
 librenms/sql-schema/071.sql
 librenms/sql-schema/072.sql
 librenms/sql-schema/073.sql
+librenms/sql-schema/074.sql
 librenms/syslog.php
 librenms/validate.php
 @cwd ${LOCALBASE}/share/doc/pkg-readmes

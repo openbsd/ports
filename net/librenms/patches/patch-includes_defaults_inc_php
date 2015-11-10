@@ -1,6 +1,6 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.8 2015/10/12 11:30:32 sthen Exp $
---- includes/defaults.inc.php.orig	Mon Oct 12 12:05:37 2015
-+++ includes/defaults.inc.php	Mon Oct 12 12:09:25 2015
+$OpenBSD: patch-includes_defaults_inc_php,v 1.9 2015/11/10 15:51:35 sthen Exp $
+--- includes/defaults.inc.php.orig	Wed Nov  4 14:18:27 2015
++++ includes/defaults.inc.php	Wed Nov  4 14:18:30 2015
 @@ -40,7 +40,7 @@ $config['project_name'] = 'LibreNMS';
  $config['project_id']   = strtolower($config['project_name']);
  
@@ -51,7 +51,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.8 2015/10/12 11:30:32 sthen Exp $
  
  // Memcached - Keep immediate statistics
  $config['memcached']['enable'] = false;
-@@ -412,17 +412,17 @@ $config['billing']['bill_autoadd'] = 0;
+@@ -450,17 +450,17 @@ $config['billing']['bill_autoadd'] = 0;
  $config['billing']['base'] = 1000;
  // Set the base to divider bytes to kB, MB, GB ,... (1000|1024)
  // External Integration
@@ -73,7 +73,7 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.8 2015/10/12 11:30:32 sthen Exp $
  // $config['nfsen_suffix']   = "_yourdomain_com";
  // Location Mapping
  // Use this feature to map ugly locations to pretty locations
-@@ -732,7 +732,7 @@ $config['api_demo'] = 0;
+@@ -770,7 +770,7 @@ $config['api_demo'] = 0;
  // Set this to 1 if you want to disable some untrusting features for the API
  // Distributed Poller-Settings
  $config['distributed_poller']                = false;
