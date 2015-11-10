@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.57 2015/09/29 17:34:48 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.58 2015/11/10 19:06:28 giovanni Exp $
 @unexec-delete rm -f /var/www/conf/modules/phpmyadmin.conf
 @group daemon
 phpMyAdmin/
@@ -876,6 +876,7 @@ phpMyAdmin/libraries/Theme_Manager.class.php
 phpMyAdmin/libraries/Tracker.class.php
 phpMyAdmin/libraries/Types.class.php
 phpMyAdmin/libraries/Util.class.php
+phpMyAdmin/libraries/VersionInformation.php
 phpMyAdmin/libraries/advisory_rules.txt
 phpMyAdmin/libraries/bfShapeFiles/
 phpMyAdmin/libraries/bfShapeFiles/ShapeFile.lib.php
