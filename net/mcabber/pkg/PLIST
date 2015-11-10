@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/05/30 12:01:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/11/10 20:38:19 tim Exp $
 @bin bin/mcabber
 include/mcabber/
 include/mcabber/api.h
@@ -55,6 +55,7 @@ share/mcabber/help/cs/hlp_alias.txt
 share/mcabber/help/cs/hlp_authorization.txt
 share/mcabber/help/cs/hlp_bind.txt
 share/mcabber/help/cs/hlp_buffer.txt
+share/mcabber/help/cs/hlp_carbons.txt
 share/mcabber/help/cs/hlp_chat_disable.txt
 share/mcabber/help/cs/hlp_clear.txt
 share/mcabber/help/cs/hlp_color.txt
@@ -94,6 +95,7 @@ share/mcabber/help/de/hlp_alias.txt
 share/mcabber/help/de/hlp_authorization.txt
 share/mcabber/help/de/hlp_bind.txt
 share/mcabber/help/de/hlp_buffer.txt
+share/mcabber/help/de/hlp_carbons.txt
 share/mcabber/help/de/hlp_chat_disable.txt
 share/mcabber/help/de/hlp_clear.txt
 share/mcabber/help/de/hlp_color.txt
@@ -133,6 +135,7 @@ share/mcabber/help/en/hlp_alias.txt
 share/mcabber/help/en/hlp_authorization.txt
 share/mcabber/help/en/hlp_bind.txt
 share/mcabber/help/en/hlp_buffer.txt
+share/mcabber/help/en/hlp_carbons.txt
 share/mcabber/help/en/hlp_chat_disable.txt
 share/mcabber/help/en/hlp_clear.txt
 share/mcabber/help/en/hlp_color.txt
@@ -172,6 +175,7 @@ share/mcabber/help/fr/hlp_alias.txt
 share/mcabber/help/fr/hlp_authorization.txt
 share/mcabber/help/fr/hlp_bind.txt
 share/mcabber/help/fr/hlp_buffer.txt
+share/mcabber/help/fr/hlp_carbons.txt
 share/mcabber/help/fr/hlp_chat_disable.txt
 share/mcabber/help/fr/hlp_clear.txt
 share/mcabber/help/fr/hlp_color.txt
@@ -211,6 +215,7 @@ share/mcabber/help/it/hlp_alias.txt
 share/mcabber/help/it/hlp_authorization.txt
 share/mcabber/help/it/hlp_bind.txt
 share/mcabber/help/it/hlp_buffer.txt
+share/mcabber/help/it/hlp_carbons.txt
 share/mcabber/help/it/hlp_chat_disable.txt
 share/mcabber/help/it/hlp_clear.txt
 share/mcabber/help/it/hlp_color.txt
@@ -250,6 +255,7 @@ share/mcabber/help/nl/hlp_alias.txt
 share/mcabber/help/nl/hlp_authorization.txt
 share/mcabber/help/nl/hlp_bind.txt
 share/mcabber/help/nl/hlp_buffer.txt
+share/mcabber/help/nl/hlp_carbons.txt
 share/mcabber/help/nl/hlp_chat_disable.txt
 share/mcabber/help/nl/hlp_clear.txt
 share/mcabber/help/nl/hlp_color.txt
@@ -289,6 +295,7 @@ share/mcabber/help/pl/hlp_alias.txt
 share/mcabber/help/pl/hlp_authorization.txt
 share/mcabber/help/pl/hlp_bind.txt
 share/mcabber/help/pl/hlp_buffer.txt
+share/mcabber/help/pl/hlp_carbons.txt
 share/mcabber/help/pl/hlp_chat_disable.txt
 share/mcabber/help/pl/hlp_clear.txt
 share/mcabber/help/pl/hlp_color.txt
@@ -328,6 +335,7 @@ share/mcabber/help/ru/hlp_alias.txt
 share/mcabber/help/ru/hlp_authorization.txt
 share/mcabber/help/ru/hlp_bind.txt
 share/mcabber/help/ru/hlp_buffer.txt
+share/mcabber/help/ru/hlp_carbons.txt
 share/mcabber/help/ru/hlp_chat_disable.txt
 share/mcabber/help/ru/hlp_clear.txt
 share/mcabber/help/ru/hlp_color.txt
@@ -367,6 +375,7 @@ share/mcabber/help/uk/hlp_alias.txt
 share/mcabber/help/uk/hlp_authorization.txt
 share/mcabber/help/uk/hlp_bind.txt
 share/mcabber/help/uk/hlp_buffer.txt
+share/mcabber/help/uk/hlp_carbons.txt
 share/mcabber/help/uk/hlp_chat_disable.txt
 share/mcabber/help/uk/hlp_clear.txt
 share/mcabber/help/uk/hlp_color.txt

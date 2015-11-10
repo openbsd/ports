@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2015/03/24 22:45:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2015/11/10 20:38:19 tim Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		console jabber client
-DISTNAME=		mcabber-0.10.3
+DISTNAME=		mcabber-1.0.0
 CATEGORIES=		net
 
 HOMEPAGE=		http://mcabber.com/
