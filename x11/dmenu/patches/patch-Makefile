@@ -1,24 +1,56 @@
-$OpenBSD: patch-Makefile,v 1.2 2012/05/01 04:40:03 gsoares Exp $
---- Makefile.orig	Tue Apr  3 12:17:59 2012
-+++ Makefile	Tue Apr  3 12:19:29 2012
-@@ -16,17 +16,17 @@ options:
+$OpenBSD: patch-Makefile,v 1.3 2015/11/11 09:23:20 jung Exp $
+--- Makefile.orig	Sun Nov  8 23:42:21 2015
++++ Makefile	Tue Nov 10 20:36:13 2015
+@@ -15,8 +15,7 @@ options:
+ 	@echo "CC       = ${CC}"
  
  .c.o:
- 	@echo CC -c $<
--	@${CC} -c $< ${CFLAGS}
-+	${CC} -c $< ${CFLAGS}
+-	@echo CC $<
+-	@${CC} -c ${CFLAGS} $<
++	${CC} -c ${CFLAGS} $<
  
- ${OBJ}: config.mk draw.h
+ config.h:
+ 	@echo creating $@ from config.def.h
+@@ -25,12 +24,10 @@ config.h:
+ ${OBJ}: arg.h config.h config.mk drw.h
  
- dmenu: dmenu.o draw.o
- 	@echo CC -o $@
--	@${CC} -o $@ dmenu.o draw.o ${LDFLAGS}
-+	${CC} -o $@ dmenu.o draw.o ${LDFLAGS}
+ dmenu: dmenu.o drw.o util.o
+-	@echo CC -o $@
+-	@${CC} -o $@ dmenu.o drw.o util.o ${LDFLAGS}
++	${CC} -o $@ dmenu.o drw.o util.o ${LDFLAGS}
  
  stest: stest.o
- 	@echo CC -o $@
+-	@echo CC -o $@
 -	@${CC} -o $@ stest.o ${LDFLAGS}
 +	${CC} -o $@ stest.o ${LDFLAGS}
  
  clean:
  	@echo cleaning
+@@ -47,19 +44,14 @@ dist: clean
+ 	@rm -rf dmenu-${VERSION}
+ 
+ install: all
+-	@echo installing executables to ${DESTDIR}${PREFIX}/bin
+-	@mkdir -p ${DESTDIR}${PREFIX}/bin
+-	@cp -f dmenu dmenu_path dmenu_run stest ${DESTDIR}${PREFIX}/bin
+-	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu
+-	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_path
+-	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_run
+-	@chmod 755 ${DESTDIR}${PREFIX}/bin/stest
+-	@echo installing manual pages to ${DESTDIR}${MANPREFIX}/man1
+-	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
+-	@sed "s/VERSION/${VERSION}/g" < dmenu.1 > ${DESTDIR}${MANPREFIX}/man1/dmenu.1
+-	@sed "s/VERSION/${VERSION}/g" < stest.1 > ${DESTDIR}${MANPREFIX}/man1/stest.1
+-	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/dmenu.1
+-	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/stest.1
++	${BSD_INSTALL_PROGRAM_DIR} ${DESTDIR}${PREFIX}/bin
++	${BSD_INSTALL_PROGRAM} dmenu dmenu_path dmenu_run stest ${DESTDIR}${PREFIX}/bin
++	${BSD_INSTALL_MAN_DIR} ${DESTDIR}${MANPREFIX}/man1
++	sed "s/VERSION/${VERSION}/g" < dmenu.1 > dmenu.1.tmp
++	sed "s/VERSION/${VERSION}/g" < stest.1 > stest.1.tmp
++	mv dmenu.1.tmp dmenu.1
++	mv stest.1.tmp stest.1
++	${BSD_INSTALL_MAN} dmenu.1 stest.1 ${DESTDIR}${MANPREFIX}/man1
+ 
+ uninstall:
+ 	@echo removing executables from ${DESTDIR}${PREFIX}/bin
