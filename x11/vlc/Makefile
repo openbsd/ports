@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.195 2015/10/28 08:44:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.196 2015/11/11 20:28:56 jca Exp $
+
+BROKEN-powerpc=	undefined reference to __builtin_parity
 
 SHARED_ONLY=	Yes
 
