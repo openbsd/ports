@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2015/06/14 07:45:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2015/11/11 10:43:59 benoit Exp $
 
 COMMENT =		library to manipulate units of physical quantities
 
-DISTNAME =		udunits-2.2.19
+DISTNAME =		udunits-2.2.20
 CATEGORIES =		math
 
 SHARED_LIBS =		udunits2 2.1
