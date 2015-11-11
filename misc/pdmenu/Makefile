@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2013/10/11 23:50:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2015/11/11 10:35:40 benoit Exp $
 
 COMMENT=		simple slang-based menu program
 
-VERSION=		1.3.2
+VERSION =		1.3.4
 DISTNAME=		pdmenu_${VERSION}
 PKGNAME=		pdmenu-${VERSION}
 CATEGORIES=     	misc
