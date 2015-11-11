@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_DoConfig,v 1.6 2015/07/03 08:21:23 benoit Exp $
---- src/DoConfig.orig	Sat May 23 16:44:51 2015
-+++ src/DoConfig	Wed Jun 24 08:33:28 2015
-@@ -29,23 +29,25 @@ sub BadPCLMUL {
+$OpenBSD: patch-src_DoConfig,v 1.7 2015/11/11 09:52:00 benoit Exp $
+--- src/DoConfig.orig	Tue Nov 10 13:12:04 2015
++++ src/DoConfig	Wed Nov 11 10:39:42 2015
+@@ -29,24 +29,26 @@
  
  %MakeVal = (
  
@@ -9,6 +9,7 @@ $OpenBSD: patch-src_DoConfig,v 1.6 2015/07/03 08:21:23 benoit Exp $
 -'CXXFLAGS'    => '-g -O2',
 +'CXX'	      => '${CXX}',
 +'CXXFLAGS'    => '$(CFLAGS)',
+ 'CXXAUTOFLAGS'=> '',
  'AR'	      => 'ar',
  'ARFLAGS'     => 'ruv',
  'RANLIB'      => 'ranlib',
