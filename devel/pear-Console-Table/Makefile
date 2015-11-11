@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/11 14:07:19 benoit Exp $
 
-COMMENT=	php class for building console-style tables
+COMMENT =	php class for building console-style tables
 
-DISTNAME=	Console_Table-1.1.4
-CATEGORIES=	devel
-
-REVISION=	0
-
-MODULES=	www/pear
+DISTNAME =	Console_Table-1.2.1
+CATEGORIES =	devel
 
 # PHP License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+
+MODULES =	www/pear
 
 .include <bsd.port.mk>
