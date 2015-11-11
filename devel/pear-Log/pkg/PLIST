@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/08/01 19:30:31 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/11/11 14:17:01 benoit Exp $
 @group daemon
 lib/
 lib/php/
@@ -51,7 +51,6 @@ pear/tests/Log/tests/composite.phpt
 pear/tests/Log/tests/console.phpt
 pear/tests/Log/tests/display.phpt
 pear/tests/Log/tests/error_log.phpt
-pear/tests/Log/tests/extract-zend1.phpt
 pear/tests/Log/tests/extract-zend2.0.phpt
 pear/tests/Log/tests/extract-zend2.2.phpt
 pear/tests/Log/tests/factory.phpt
@@ -65,5 +64,6 @@ pear/tests/Log/tests/priority.phpt
 pear/tests/Log/tests/singleton.phpt
 pear/tests/Log/tests/sql_ident.phpt
 pear/tests/Log/tests/sqlite.phpt
+pear/tests/Log/tests/syslog.phpt
 pear/tests/Log/tests/win-ob.phpt
 pear/tests/Log/tests/win.phpt

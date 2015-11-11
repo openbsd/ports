@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2015/11/11 14:17:01 benoit Exp $
 
 COMMENT =	logging utilities for PHP
 
-DISTNAME =	Log-1.11.5
+DISTNAME =	Log-1.12.9
 CATEGORIES =	devel
-REVISION = 	1
 
 HOMEPAGE =	http://pear.php.net/package/Log/
 
-MODULES =	www/pear
-
 # MIT license
 PERMIT_PACKAGE_CDROM =	Yes
+
+MODULES =	www/pear
 
 TEST_DEPENDS = ${PKGPATH}
 
