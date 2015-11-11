@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2015/10/07 05:50:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/11/11 00:13:48 ajacoutot Exp $
 
 COMMENT =	graphical mp3/ogg file splitter
 
 DISTNAME =	mp3splt-gtk-0.5.4
-REVISION =	13
+REVISION =	14
 
 CATEGORIES =	audio
 
@@ -26,7 +26,6 @@ LIB_DEPENDS =	audio/libmp3splt \
 		devel/glib2 \
 		devel/pango \
 		graphics/cairo \
-		graphics/png \
 		multimedia/gstreamer-0.10/core \
 		textproc/libxml \
 		x11/gtk+2
