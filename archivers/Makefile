@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2015/09/24 18:37:23 kili Exp $
+# $OpenBSD: Makefile,v 1.75 2015/11/11 18:06:45 jca Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -53,7 +53,6 @@
      SUBDIR += rzip
      SUBDIR += sltar
      SUBDIR += ucl
-     SUBDIR += unace
      SUBDIR += unarj
      SUBDIR += unrar
      SUBDIR += unshield
