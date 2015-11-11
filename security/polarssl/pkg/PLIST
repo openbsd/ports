@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/09/12 20:30:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/11/11 21:01:44 benoit Exp $
 @conflict polarssl-*
 include/mbedtls/
 include/mbedtls/aes.h
@@ -24,6 +24,7 @@ include/mbedtls/des.h
 include/mbedtls/dhm.h
 include/mbedtls/ecdh.h
 include/mbedtls/ecdsa.h
+include/mbedtls/ecjpake.h
 include/mbedtls/ecp.h
 include/mbedtls/entropy.h
 include/mbedtls/entropy_poll.h
