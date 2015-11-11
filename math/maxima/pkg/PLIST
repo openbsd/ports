@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/09/20 06:50:26 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/11/11 21:10:17 feinerer Exp $
 bin/maxima
 bin/rmaxima
 bin/xmaxima
@@ -1661,6 +1661,7 @@ share/maxima/${VERSION}/src/commac.lisp
 share/maxima/${VERSION}/src/command-line.lisp
 share/maxima/${VERSION}/src/compar.lisp
 share/maxima/${VERSION}/src/compat.lisp
+share/maxima/${VERSION}/src/configure-minimal.lisp
 share/maxima/${VERSION}/src/conjugate.lisp
 share/maxima/${VERSION}/src/cpoly.lisp
 share/maxima/${VERSION}/src/csimp.lisp
