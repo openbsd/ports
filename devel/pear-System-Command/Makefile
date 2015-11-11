@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/11/11 13:53:32 benoit Exp $
 
-COMMENT=	commandline execution interface
+COMMENT =	commandline execution interface
 
-DISTNAME=	System_Command-1.0.7
-REVISION=		0
-CATEGORIES=	devel
-
-MODULES=	www/pear
+DISTNAME =	System_Command-1.0.8
+CATEGORIES =	devel
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+
+MODULES =	www/pear
 
 .include <bsd.port.mk>
