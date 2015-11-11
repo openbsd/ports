@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/02 18:50:08 juanfra Exp $
+# $OpenBSD: Makefile,v 1.8 2015/11/11 18:30:25 juanfra Exp $
+
+# XXX Don't update until the upstream bugs 113 and 114 are resolved
+# https://bitbucket.org/jwilk/pdf2djvu/issues
 
 COMMENT =		creates DjVu files from PDF files
 
