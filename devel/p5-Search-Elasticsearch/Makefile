@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/05 07:31:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2015/11/11 19:43:20 jasper Exp $
 
 COMMENT =	elasticsearch perl module
 
 MODULES =	cpan
 DISTNAME =	Search-Elasticsearch-2.00
+REVISION =	0
 CATEGORIES =	devel
 
 # Perl
@@ -14,6 +15,7 @@ RUN_DEPENDS =	converters/p5-JSON-MaybeXS \
 		devel/p5-Moo \
 		devel/p5-namespace-clean \
 		www/p5-Any-URI-Escape \
+		www/p5-URI \
 		www/p5-Hijk
 
 TEST_DEPENDS =	devel/p5-Test-Deep \
