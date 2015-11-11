@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2015/11/10 20:12:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2015/11/11 21:21:04 jasper Exp $
 
 PORTROACH=		site:https://github.com/elastic/elasticsearch
 
 COMMENT=		distributed RESTful search and analytics
 
 V=			1.7.3
+REVISION=		0
 DISTNAME=		elasticsearch-$V
 CATEGORIES=		textproc
 
