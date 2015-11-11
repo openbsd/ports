@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/09/12 17:37:03 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/11/11 09:34:23 benoit Exp $
 @conflict koffice-*
 @bin bin/braindump
 @bin bin/calligra
@@ -6388,6 +6388,8 @@ share/apps/krita/pics/dark_ox16-action-object-order-raise-calligra.svg
 share/apps/krita/pics/dark_ox16-action-object-ungroup-calligra.svg
 share/apps/krita/pics/dark_paintop_settings_01.svg
 share/apps/krita/pics/dark_paintop_settings_02.svg
+share/apps/krita/pics/dark_passthrough-disabled.png
+share/apps/krita/pics/dark_passthrough-enabled.png
 share/apps/krita/pics/dark_pattern.png
 share/apps/krita/pics/dark_polyline.png
 share/apps/krita/pics/dark_preferences-desktop-color.svg
@@ -6575,6 +6577,8 @@ share/apps/krita/pics/light_ox16-action-object-order-raise-calligra.svg
 share/apps/krita/pics/light_ox16-action-object-ungroup-calligra.svg
 share/apps/krita/pics/light_paintop_settings_01.svg
 share/apps/krita/pics/light_paintop_settings_02.svg
+share/apps/krita/pics/light_passthrough-disabled.png
+share/apps/krita/pics/light_passthrough-enabled.png
 share/apps/krita/pics/light_pattern.png
 share/apps/krita/pics/light_polyline.png
 share/apps/krita/pics/light_preferences-desktop-color.svg
@@ -6650,8 +6654,6 @@ share/apps/krita/pics/offset_horizontal.png
 share/apps/krita/pics/offset_vertical.png
 share/apps/krita/pics/onionA.png
 share/apps/krita/pics/onionB.png
-share/apps/krita/pics/passthrough-disabled.png
-share/apps/krita/pics/passthrough-enabled.png
 share/apps/krita/pics/portrait.png
 share/apps/krita/pics/precise-pick-layer-icon.xpm
 share/apps/krita/pics/ratio_icon.png
