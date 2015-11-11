@@ -1,0 +1,21 @@
+$OpenBSD: patch-dwm_1,v 1.1 2015/11/11 09:27:13 jung Exp $
+--- dwm.1.orig	Wed Nov 11 09:50:32 2015
++++ dwm.1	Wed Nov 11 09:51:25 2015
+@@ -57,7 +57,7 @@ click on a tag label adds/removes that tag to/from the
+ .TP
+ .B Mod1\-Shift\-Return
+ Start
+-.BR st(1).
++.BR uxterm (1).
+ .TP
+ .B Mod1\-,
+ Focus previous screen, if any.
+@@ -151,7 +151,7 @@ dwm is customized by creating a custom config.h and (r
+ code. This keeps it fast, secure and simple.
+ .SH SEE ALSO
+ .BR dmenu (1),
+-.BR st (1)
++.BR uxterm (1)
+ .SH BUGS
+ Java applications which use the XToolkit/XAWT backend may draw grey windows
+ only. The XToolkit/XAWT backend breaks ICCCM-compliance in recent JDK 1.5 and early

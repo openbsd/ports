@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_mk,v 1.9 2012/07/09 16:33:40 zinke Exp $
---- config.mk.orig	Mon Dec 19 16:02:46 2011
-+++ config.mk	Sat Jul  7 22:28:18 2012
-@@ -4,30 +4,30 @@ VERSION = 6.0
+$OpenBSD: patch-config_mk,v 1.10 2015/11/11 09:27:13 jung Exp $
+--- config.mk.orig	Sun Nov  8 23:39:37 2015
++++ config.mk	Mon Nov  9 21:14:22 2015
+@@ -4,11 +4,11 @@ VERSION = 6.1
  # Customize below to fit your system
  
  # paths
@@ -15,25 +15,28 @@ $OpenBSD: patch-config_mk,v 1.9 2012/07/09 16:33:40 zinke Exp $
 +X11INC = ${X11BASE}/include
 +X11LIB = ${X11BASE}/lib
  
- # Xinerama
- XINERAMALIBS = -L${X11LIB} -lXinerama
- XINERAMAFLAGS = -DXINERAMA
+ # Xinerama, comment if you don't want it
+ XINERAMALIBS  = -lXinerama
+@@ -16,7 +16,7 @@ XINERAMAFLAGS = -DXINERAMA
  
- # includes and libs
--INCS = -I. -I/usr/include -I${X11INC}
--LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS}
-+INCS = -I${X11INC}
-+LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS}
+ # freetype
+ FREETYPELIBS = -lfontconfig -lXft
+-FREETYPEINC = /usr/include/freetype2
++#FREETYPEINC = /usr/include/freetype2
+ # OpenBSD (uncomment)
+ FREETYPEINC = ${X11INC}/freetype2
+ 
+@@ -25,14 +25,14 @@ INCS = -I${X11INC} -I${FREETYPEINC}
+ LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}
  
  # flags
--CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
-+CPPFLAGS += -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
- #CFLAGS = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
--CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
-+CFLAGS += -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
- #LDFLAGS = -g ${LIBS}
--LDFLAGS = -s ${LIBS}
-+LDFLAGS += ${LIBS}
+-CPPFLAGS = -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
++CPPFLAGS += -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
+ #CFLAGS   = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
+-CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os ${INCS} ${CPPFLAGS}
+-LDFLAGS  = -s ${LIBS}
++CFLAGS   += -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os ${INCS} ${CPPFLAGS}
++LDFLAGS  += -s ${LIBS}
  
  # Solaris
  #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"

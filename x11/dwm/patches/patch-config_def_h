@@ -1,18 +1,21 @@
-$OpenBSD: patch-config_def_h,v 1.10 2015/10/25 14:23:07 jung Exp $
---- config.def.h.orig	Mon Dec 19 16:02:46 2011
-+++ config.def.h	Thu Oct  8 20:58:14 2015
-@@ -1,13 +1,13 @@
- /* See LICENSE file for copyright and license details. */
+$OpenBSD: patch-config_def_h,v 1.11 2015/11/11 09:27:13 jung Exp $
+--- config.def.h.orig	Sun Nov  8 23:39:37 2015
++++ config.def.h	Wed Nov 11 09:50:09 2015
+@@ -2,15 +2,15 @@
  
  /* appearance */
--static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
+ static const char *fonts[] = {
+-	"monospace:size=10"
++	"terminus:size=8"
+ };
+-static const char dmenufont[]       = "monospace:size=10";
 -static const char normbordercolor[] = "#444444";
 -static const char normbgcolor[]     = "#222222";
 -static const char normfgcolor[]     = "#bbbbbb";
 -static const char selbordercolor[]  = "#005577";
 -static const char selbgcolor[]      = "#005577";
 -static const char selfgcolor[]      = "#eeeeee";
-+static const char font[]            = "-*-terminus-medium-*-*-*-*-*-*-*-*-*-*-*";
++static const char dmenufont[]       = "terminus:size=8";
 +static const char normbordercolor[] = "#404040";
 +static const char normbgcolor[]     = "#202020";
 +static const char normfgcolor[]     = "#c0c0c0";
@@ -21,13 +24,22 @@ $OpenBSD: patch-config_def_h,v 1.10 2015/10/25 14:23:07 jung Exp $
 +static const char selfgcolor[]      = "#f0f0f0";
  static const unsigned int borderpx  = 1;        /* border pixel of windows */
  static const unsigned int snap      = 32;       /* snap pixel */
- static const Bool showbar           = True;     /* False means no bar */
-@@ -20,6 +20,8 @@ static const Rule rules[] = {
+ static const int showbar            = 1;        /* 0 means no bar */
+@@ -27,6 +27,8 @@ static const Rule rules[] = {
  	/* class      instance    title       tags mask     isfloating   monitor */
- 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
- 	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
-+	{ "Xonix",    NULL,       NULL,       0,            True,        -1 },
-+	{ NULL,       NULL,       "glxgears", 0,            True,        -1 },
+ 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+ 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
++	{ "Xonix",    NULL,       NULL,       0,            1,           -1 },
++	{ NULL,       NULL,       "glxgears", 0,            1,           -1 },
  };
  
  /* layout(s) */
+@@ -55,7 +57,7 @@ static const Layout layouts[] = {
+ /* commands */
+ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+-static const char *termcmd[]  = { "st", NULL };
++static const char *termcmd[]  = { "uxterm", NULL };
+ 
+ static Key keys[] = {
+ 	/* modifier                     key        function        argument */
