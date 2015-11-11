@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/02 19:33:51 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/11 20:23:09 benoit Exp $
 
 COMMENT =	datetime sets and set math
 
 MODULES =	cpan
-DISTNAME =	DateTime-Set-0.3400
+DISTNAME =	DateTime-Set-0.3600
 CATEGORIES =	devel
 
 # Perl
