@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/10/11 15:05:50 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2015/11/11 09:15:04 rpointel Exp $
 
 COMMENT =	high-level Python web framework (LTS version)
 
-MODPY_EGG_VERSION =	1.8.5
+MODPY_EGG_VERSION =	1.8.6
 LNAME =			django-lts
 
 MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}

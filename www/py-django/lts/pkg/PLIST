@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/10/11 15:05:50 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/11/11 09:15:04 rpointel Exp $
 @comment bin/django-admin
 bin/${LNAME}-admin.py
 lib/python${MODPY_VERSION}/site-packages/Django-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -6071,6 +6071,7 @@ lib/python${MODPY_VERSION}/site-packages/django/utils/${MODPY_PYCACHE}html.${MOD
 lib/python${MODPY_VERSION}/site-packages/django/utils/${MODPY_PYCACHE}html_parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/django/utils/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/django/utils/${MODPY_PYCACHE}importlib.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/django/utils/${MODPY_PYCACHE}inspect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/django/utils/${MODPY_PYCACHE}ipv6.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/django/utils/${MODPY_PYCACHE}itercompat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/django/utils/${MODPY_PYCACHE}jslex.${MODPY_PYC_MAGIC_TAG}pyc
@@ -6118,6 +6119,7 @@ lib/python${MODPY_VERSION}/site-packages/django/utils/html.py
 lib/python${MODPY_VERSION}/site-packages/django/utils/html_parser.py
 lib/python${MODPY_VERSION}/site-packages/django/utils/http.py
 lib/python${MODPY_VERSION}/site-packages/django/utils/importlib.py
+lib/python${MODPY_VERSION}/site-packages/django/utils/inspect.py
 lib/python${MODPY_VERSION}/site-packages/django/utils/ipv6.py
 lib/python${MODPY_VERSION}/site-packages/django/utils/itercompat.py
 lib/python${MODPY_VERSION}/site-packages/django/utils/jslex.py
@@ -6555,6 +6557,7 @@ share/doc/${LNAME}/releases/1.8.2.txt
 share/doc/${LNAME}/releases/1.8.3.txt
 share/doc/${LNAME}/releases/1.8.4.txt
 share/doc/${LNAME}/releases/1.8.5.txt
+share/doc/${LNAME}/releases/1.8.6.txt
 share/doc/${LNAME}/releases/1.8.txt
 share/doc/${LNAME}/releases/index.txt
 share/doc/${LNAME}/releases/security.txt
