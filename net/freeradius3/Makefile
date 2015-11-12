@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/12 12:59:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/12 15:27:11 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -69,15 +69,15 @@ LIB_DEPENDS-main=	databases/gdbm \
 			devel/json-c \
 			devel/libexecinfo \
 			devel/libtalloc \
-			devel/libyubikey \
+			security/yubico/yubico-c \
+			security/yubico/yubico-c-client \
 			devel/pcre \
 			net/curl
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c crypto curl execinfo gdbm hiredis idn json-c m nghttp2
 WANTLIB-main += pcap pcre perl pthread readline sqlite3 ssl talloc termcap
-WANTLIB-main += util yubikey z
-#  rlm_yubikey - would like to have ykclient as well for yubicloud support
+WANTLIB-main += util ykclient yubikey z
 
 PSEUDO_FLAVORS=	no_python no_ldap no_iodbc no_mysql no_pgsql
 FLAVOR?=
@@ -150,6 +150,7 @@ FAKE_FLAGS=	VERBOSE=1 R=${WRKINST} \
 post-configure:
 	sed -i -e 's,/etc/raddb,${SYSCONFDIR}/raddb,g' ${WRKSRC}/man/*/*
 	sed -i -e 's,/usr/local,${TRUEPREFIX},g' ${WRKSRC}/doc/README
+	rm ${WRKSRC}/doc/README.orig
 
 # pre-create examples dir, otherwise build tries to create it twice and fails.
 pre-install:

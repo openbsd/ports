@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2015/11/12 12:59:38 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2015/11/12 15:27:11 sthen Exp $
 @conflict freeradius-*
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
@@ -504,6 +504,8 @@ share/examples/freeradius/mods-config/sql/cui/sqlite/queries.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/cui/sqlite/queries.conf
 share/examples/freeradius/mods-config/sql/cui/sqlite/schema.sql
 @sample ${FREERADIUS_ETC}/mods-config/sql/cui/sqlite/schema.sql
+share/examples/freeradius/mods-config/sql/ippool/
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/
 share/examples/freeradius/mods-config/sql/ippool-dhcp/
 @sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/
 share/examples/freeradius/mods-config/sql/ippool-dhcp/sqlite/
@@ -512,8 +514,6 @@ share/examples/freeradius/mods-config/sql/ippool-dhcp/sqlite/queries.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/sqlite/queries.conf
 share/examples/freeradius/mods-config/sql/ippool-dhcp/sqlite/schema.sql
 @sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/sqlite/schema.sql
-share/examples/freeradius/mods-config/sql/ippool/
-@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/
 share/examples/freeradius/mods-config/sql/ippool/sqlite/
 @sample ${FREERADIUS_ETC}/mods-config/sql/ippool/sqlite/
 share/examples/freeradius/mods-config/sql/ippool/sqlite/queries.conf
