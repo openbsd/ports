@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/12 15:18:47 sthen Exp $
+@bin bin/ykclient
+include/ykclient.h
+include/ykclient_errors.h
+include/ykclient_server_response.h
+include/ykclient_version.h
+lib/libykclient.a
+lib/libykclient.la
+@lib lib/libykclient.so.${LIBykclient_VERSION}
+@man man/man1/ykclient.1

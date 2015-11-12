@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/12 15:18:47 sthen Exp $
+@pkgpath devel/libyubikey
+@bin bin/modhex
+@bin bin/ykgenerate
+@bin bin/ykparse
+include/yubikey.h
+lib/libyubikey.a
+lib/libyubikey.la
+@lib lib/libyubikey.so.${LIByubikey_VERSION}
+@man man/man1/modhex.1
+@man man/man1/ykgenerate.1
+@man man/man1/ykparse.1

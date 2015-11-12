@@ -1,0 +1,2 @@
+YubiKey C Client Library (libykclient) is a C library used to validate
+an Yubikey OTP against Yubico's servers.

@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/12 15:18:47 sthen Exp $
+@pkgpath sysutils/ykpers
+@bin bin/ykchalresp
+@bin bin/ykinfo
+@bin bin/ykpersonalize
+include/ykpers-1/
+include/ykpers-1/ykcore.h
+include/ykpers-1/ykdef.h
+include/ykpers-1/ykpbkdf2.h
+include/ykpers-1/ykpers-version.h
+include/ykpers-1/ykpers.h
+include/ykpers-1/ykstatus.h
+lib/libykpers-1.a
+lib/libykpers-1.la
+@lib lib/libykpers-1.so.${LIBykpers-1_VERSION}
+lib/pkgconfig/ykpers-1.pc
+@man man/man1/ykchalresp.1
+@man man/man1/ykinfo.1
+@man man/man1/ykpersonalize.1
