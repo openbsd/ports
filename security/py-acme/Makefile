@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/04 09:53:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/12 21:53:56 sthen Exp $
 
 COMMENT=	ACME protocol implementation
 
-MODPY_EGG_VERSION=	0.0.0.dev20151030
+MODPY_EGG_VERSION=	0.0.0.dev20151108
 DISTNAME=	acme-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME:S/.dev/pre/}
 CATEGORIES=	security
