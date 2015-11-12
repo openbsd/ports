@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_WebKit2_Shared_Plugins_unix_PluginSearchPath_cpp,v 1.1 2015/09/23 06:06:11 ajacoutot Exp $
---- Source/WebKit2/Shared/Plugins/unix/PluginSearchPath.cpp.orig	Mon Sep 21 14:57:03 2015
-+++ Source/WebKit2/Shared/Plugins/unix/PluginSearchPath.cpp	Mon Sep 21 14:57:31 2015
-@@ -40,7 +40,7 @@ Vector<String> pluginsDirectories()
+$OpenBSD: patch-Source_WebKit2_Shared_Plugins_unix_PluginSearchPath_cpp,v 1.2 2015/11/12 10:25:52 ajacoutot Exp $
+--- Source/WebKit2/Shared/Plugins/unix/PluginSearchPath.cpp.orig	Wed Nov 11 09:55:43 2015
++++ Source/WebKit2/Shared/Plugins/unix/PluginSearchPath.cpp	Thu Nov 12 07:53:38 2015
+@@ -51,7 +51,7 @@ Vector<String> pluginsDirectories()
      result.append(homeDirectoryPath() + "/.mozilla/plugins");
      result.append(homeDirectoryPath() + "/.netscape/plugins");
      result.append("/usr/lib/browser/plugins");

@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.5 2015/09/23 06:06:11 ajacoutot Exp $
+$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.6 2015/11/12 10:25:52 ajacoutot Exp $
 
 https://bugs.webkit.org/show_bug.cgi?id=129963
 
---- Source/WTF/wtf/Platform.h.orig	Mon Sep 21 09:29:46 2015
-+++ Source/WTF/wtf/Platform.h	Mon Sep 21 15:02:30 2015
+--- Source/WTF/wtf/Platform.h.orig	Wed Nov 11 08:42:50 2015
++++ Source/WTF/wtf/Platform.h	Thu Nov 12 07:53:38 2015
 @@ -153,6 +153,12 @@
  #define WTF_CPU_BIG_ENDIAN 1
  #endif
@@ -26,7 +26,7 @@ https://bugs.webkit.org/show_bug.cgi?id=129963
  #define WTF_CPU_NEEDS_ALIGNED_ACCESS 1
  #endif
  
-@@ -688,7 +694,8 @@
+@@ -690,7 +696,8 @@
      || CPU(S390X) \
      || CPU(MIPS64) \
      || CPU(PPC64) \
@@ -36,7 +36,7 @@ https://bugs.webkit.org/show_bug.cgi?id=129963
  #define USE_JSVALUE64 1
  #else
  #define USE_JSVALUE32_64 1
-@@ -755,7 +762,7 @@
+@@ -757,7 +764,7 @@
  
  #if !defined(ENABLE_DFG_JIT) && ENABLE(JIT)
  /* Enable the DFG JIT on X86 and X86_64. */
