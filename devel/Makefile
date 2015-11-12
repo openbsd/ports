@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1406 2015/11/08 17:19:08 edd Exp $
+# $OpenBSD: Makefile,v 1.1407 2015/11/12 15:18:29 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -382,7 +382,6 @@
      SUBDIR += libxsvf
      SUBDIR += libyajl
      SUBDIR += libyaml
-     SUBDIR += libyubikey
      SUBDIR += llvm
      SUBDIR += log4c
      SUBDIR += log4cplus
