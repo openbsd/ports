@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.933 2015/11/07 09:23:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.934 2015/11/12 13:00:27 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -98,6 +98,7 @@
      SUBDIR += fpdns
      SUBDIR += fping
      SUBDIR += freeradius
+     SUBDIR += freeradius3
      SUBDIR += freetalk
      SUBDIR += ftpcopy
      SUBDIR += ftpsesame

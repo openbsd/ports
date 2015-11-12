@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.5 2014/07/17 00:20:51 sthen Exp $
+@comment $OpenBSD: PLIST-pgsql,v 1.6 2015/11/12 13:00:27 sthen Exp $
+@conflict freeradius-pgsql-*
 @conflict freeradius-<2.1.8
 lib/freeradius/rlm_sql_postgresql.so
 share/doc/freeradius/examples/postgresql_update_radacct_group_trigger.sql
