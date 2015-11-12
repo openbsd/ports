@@ -1,0 +1,11 @@
+$OpenBSD: patch-rc_sh_wmii,v 1.1 2015/11/12 09:59:41 sthen Exp $
+--- rc/sh.wmii.orig	Thu Nov 12 09:57:17 2015
++++ rc/sh.wmii	Thu Nov 12 09:57:33 2015
+@@ -17,6 +17,7 @@ LEFT=h
+ RIGHT=l
+ 
+ WMII_FONT=fixed
++DMENU_FONT='Fixed-10'
+ WMII_NORMCOLORS=('#222222' '#5FBF77' '#2A7F3F')
+ WMII_FOCUSCOLORS=('#ffffff' '#153F1F' '#2A7F3F')
+ WMII_BACKGROUND='#333333'

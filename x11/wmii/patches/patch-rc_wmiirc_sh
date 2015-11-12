@@ -1,0 +1,24 @@
+$OpenBSD: patch-rc_wmiirc_sh,v 1.3 2015/11/12 09:59:41 sthen Exp $
+--- rc/wmiirc.sh.orig	Thu Nov 12 09:57:42 2015
++++ rc/wmiirc.sh	Thu Nov 12 09:58:10 2015
+@@ -14,9 +14,10 @@ WMII_FOCUSCOLORS='#ffffff #285577 #4c7899'
+ 
+ WMII_BACKGROUND='#333333'
+ WMII_FONT='-*-fixed-medium-r-*-*-13-*-*-*-*-*-*-*'
++DMENU_FONT='Fixed-10'
+ 
+ set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
+-WMII_MENU="dmenu -b -fn '$WMII_FONT' -nf '$1' -nb '$2' -sf '$4' -sb '$5'"
++WMII_MENU="dmenu -b -fn '$DMENU_FONT' -nf '$1' -nb '$2' -sf '$4' -sb '$5'"
+ WMII_9MENU="wmii9menu -font '$WMII_FONT' -nf '$1' -nb '$2' -sf '$4' -sb '$5' -br '$6'"
+ WMII_TERM="xterm"
+ 
+@@ -168,7 +169,7 @@ grabmod $MODKEY
+ border 1
+ EOF
+ 
+-export WMII_MENU WMII_9MENU WMII_FONT WMII_TERM
++export WMII_MENU WMII_9MENU WMII_FONT DMENU_FONT WMII_TERM
+ export WMII_FOCUSCOLORS WMII_SELCOLORS WMII_NORMCOLORS
+ 
+ # Feed events to `wmiiloop' for processing
