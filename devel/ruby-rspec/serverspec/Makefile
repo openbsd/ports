@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2015/09/29 15:00:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2015/11/12 14:23:21 jasper Exp $
 
 PORTROACH=	limitw:1,even
 
 COMMENT=	RSpec tests for testing machine configuration/state
 
-DISTNAME=	serverspec-2.24.1
+DISTNAME=	serverspec-2.24.2
 
 HOMEPAGE=	http://serverspec.org/
 
