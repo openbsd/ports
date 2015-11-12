@@ -22,3 +22,6 @@ page into many tiles.
 
 The mudraw command line tool renders pages and outputs PGM/PPM/PAM/PNG
 image files.
+
+Flavors:
+	js - build with JavaScript support (using the MuJS interpreter)

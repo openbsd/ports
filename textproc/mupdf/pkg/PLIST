@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/04/25 23:04:54 sthen Exp $
-@bin bin/mudraw
+@comment $OpenBSD: PLIST,v 1.16 2015/11/12 17:26:54 sthen Exp $
 @bin bin/mujstest
 bin/mupdf
+@bin bin/mupdf-gl
 @bin bin/mupdf-x11
 @bin bin/mupdf-x11-curl
 @bin bin/mutool
@@ -38,6 +38,7 @@ include/mupdf/fitz/output-tga.h
 include/mupdf/fitz/output.h
 include/mupdf/fitz/path.h
 include/mupdf/fitz/pixmap.h
+include/mupdf/fitz/separation.h
 include/mupdf/fitz/shade.h
 include/mupdf/fitz/store.h
 include/mupdf/fitz/stream.h
@@ -47,7 +48,9 @@ include/mupdf/fitz/system.h
 include/mupdf/fitz/text.h
 include/mupdf/fitz/transition.h
 include/mupdf/fitz/tree.h
+include/mupdf/fitz/ucdn.h
 include/mupdf/fitz/unzip.h
+include/mupdf/fitz/util.h
 include/mupdf/fitz/version.h
 include/mupdf/fitz/write-document.h
 include/mupdf/fitz/xml.h
@@ -77,7 +80,6 @@ include/mupdf/pdf/widget.h
 include/mupdf/pdf/xref.h
 include/mupdf/xps.h
 @lib lib/libmupdf.so.${LIBmupdf_VERSION}
-@man man/man1/mudraw.1
 @man man/man1/mupdf.1
 @man man/man1/mutool.1
 share/applications/mupdf.desktop

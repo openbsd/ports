@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.58 2015/10/30 12:59:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2015/11/12 17:26:54 sthen Exp $
 
 SHARED_ONLY =	Yes
 SHARED_LIBS +=	mupdf 3.0
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-V =		1.7a
+V =		1.8
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
-REVISION =	1
 
 CATEGORIES =	textproc x11
 
@@ -21,8 +20,11 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 # droid font: Apache.
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xext c crypto curl freetype idn jbig2dec jpeg m
-WANTLIB += nghttp2 openjp2 pthread ssl z
+FLAVORS=	js
+FLAVOR?=
+
+WANTLIB += GL X11 Xcursor Xext Xinerama Xrandr c crypto curl freetype
+WANTLIB += idn jbig2dec jpeg m nghttp2 openjp2 pthread ssl z
 
 # http://git.ghostscript.com/?p=mupdf.git;a=summary
 MASTER_SITES =	http://mupdf.com/downloads/ \
@@ -59,8 +61,12 @@ MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 FAKE_FLAGS =	NOCURL= prefix=${PREFIX} mandir=${PREFIX}/man
 
 pre-configure:
-	cd ${WRKSRC}/; ${SUBST_CMD} Makerules
-	rm -rf ${WRKSRC}/thirdparty
+	cd ${WRKSRC}/; ${SUBST_CMD} Makerules Makethird
+	rm -rf ${WRKSRC}/thirdparty/{curl,freetype,jbig2dec,jpeg,openjpeg,zlib} # use from ports
+	#rm -rf ${WRKSRC}/thirdparty/glfw # not yet in ports, doesn't build here
+.if !${FLAVOR:Mjs}
+	rm -rf ${WRKSRC}/thirdparty/mujs # not building with javascript support
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{applications,pixmaps}
