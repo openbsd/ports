@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/12 14:08:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/11/12 14:10:55 sthen Exp $
 
-COMMENT=	library to encode and decode the YubiKey OTP format
+COMMENT=	low-level C software development kit for the Yubico YubiKey
 
 DISTNAME=	libyubikey-1.13
-REVISION=	0
+REVISION=	1
 SHARED_LIBS +=  yubikey              0.0      # 1.4
 CATEGORIES=	devel security
 
