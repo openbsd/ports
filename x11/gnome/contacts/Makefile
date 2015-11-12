@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2015/10/24 14:06:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2015/11/12 13:01:30 jasper Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
-GNOME_VERSION=		3.18.0
+GNOME_VERSION=		3.18.1
 
 CATEGORIES=		productivity
 
@@ -20,7 +20,7 @@ WANTLIB += freetype gbm gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3
 WANTLIB += gdk_pixbuf-2.0 gee-0.8 geocode-glib gio-2.0 glapi glib-2.0
 WANTLIB += gmodule-2.0 gnome-desktop-3 goa-1.0 gobject-2.0 gpg-error
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz icudata icui18n
-WANTLIB += icuuc json-glib-1.0 lzma m notify nspr4 nss3 nssutil3
+WANTLIB += icuuc json-glib-1.0 lzma m nspr4 nss3 nssutil3
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs secret-1
 WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl3 telepathy-glib
