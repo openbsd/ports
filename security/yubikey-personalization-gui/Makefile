@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2015/10/01 13:48:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/11/12 14:08:49 sthen Exp $
 
 COMMENT=	Qt GUI to configure YubiKeys
 
 DISTNAME=	yubikey-personalization-gui-3.1.23
+REVISION=	0
 
 CATEGORIES=	security x11
 
-HOMEPAGE=	http://yubico.github.io/yubikey-personalization-gui/
+HOMEPAGE=	https://developers.yubico.com/yubikey-personalization-gui/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender c fontconfig
 WANTLIB += freetype m pthread stdc++ ykpers-1 yubikey
 
-MASTER_SITES=	http://yubico.github.io/yubikey-personalization-gui/releases/
+MASTER_SITES=	https://developers.yubico.com/yubikey-personalization-gui/Releases/
 
 RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	devel/libyubikey>=1.8.0 \
