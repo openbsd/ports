@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.748 2015/11/05 16:19:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.749 2015/11/12 12:27:09 jca Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -82,6 +82,7 @@
      SUBDIR += kwebkitpart
      SUBDIR += larbin
      SUBDIR += libcroco
+     SUBDIR += libwebsockets
      SUBDIR += liferea
      SUBDIR += lightsquid
      SUBDIR += lighttpd
