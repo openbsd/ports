@@ -1,7 +1,7 @@
-$OpenBSD: patch-repmgr_h,v 1.1 2015/09/19 21:37:12 landry Exp $
---- repmgr.h.orig	Thu Apr 16 06:33:17 2015
-+++ repmgr.h	Sat Sep 19 23:19:20 2015
-@@ -38,7 +38,7 @@
+$OpenBSD: patch-repmgr_h,v 1.2 2015/11/12 15:06:37 ajacoutot Exp $
+--- repmgr.h.orig	Fri Oct  2 04:46:13 2015
++++ repmgr.h	Thu Nov 12 16:05:24 2015
+@@ -36,7 +36,7 @@
  #define MAXFILENAME		1024
  #define ERRBUFF_SIZE	512
  

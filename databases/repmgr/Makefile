@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/19 21:37:12 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2015/11/12 15:06:37 ajacoutot Exp $
 
 COMMENT =	HA and replication cluster management for PostgreSQL
 
-DISTNAME =	repmgr-3.0.1
+DISTNAME =	repmgr-3.0.2
 CATEGORIES =	databases
 HOMEPAGE =	http://www.repmgr.org/
 SHARED_ONLY =	Yes
@@ -20,9 +20,10 @@ MAKE_FLAGS =	USE_PGXS=1
 BUILD_DEPENDS =	databases/postgresql,-server
 LIB_DEPENDS =	databases/postgresql
 RUN_DEPENDS =	net/rsync
+
 NO_TEST =	Yes
 
-post-patch:
+pre-configure:
 	${SUBST_CMD} ${WRKSRC}/repmgr.h
 
 post-install:
