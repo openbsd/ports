@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2002/08/27 20:49:58 lebel Exp $
---- Makefile.in.orig	Sun Mar 15 16:28:46 1998
-+++ Makefile.in	Mon Aug 26 09:37:13 2002
-@@ -13,6 +13,7 @@ LIBS = @X_LIBS@ @X_PRE_LIBS@ -Llibami -l
+$OpenBSD: patch-Makefile_in,v 1.2 2015/11/12 10:13:24 sthen Exp $
+--- Makefile.in.orig	Sun Mar 15 21:28:46 1998
++++ Makefile.in	Thu Nov 12 10:12:20 2015
+@@ -13,6 +13,7 @@ LIBS = @X_LIBS@ @X_PRE_LIBS@ -Llibami -lami @XT_LIB_KL
  prefix = @prefix@
  exec_prefix = @exec_prefix@
  bindir = $(exec_prefix)/bin
@@ -18,7 +18,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2002/08/27 20:49:58 lebel Exp $
  
  OBJS  = main.o screen.o client.o frame.o icc.o \
  		icon.o menu.o diskobject.o gram.o lex.o rc.o \
-@@ -42,7 +43,7 @@ DISTFILES = README README.modules INSTAL
+@@ -42,7 +43,7 @@ DISTFILES = README README.modules INSTALL LICENSE amiw
  
  PACKAGENAME = amiwm
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2002/08/27 20:49:58 lebel Exp $
  	  fi \
  	done
  	$(INSTALL) -m 644 system.amiwmrc $(AMIWM_HOME)/system.amiwmrc
-@@ -102,11 +101,10 @@ install : $(PROGS) $(MODULES) Xsession X
+@@ -102,11 +101,10 @@ install : $(PROGS) $(MODULES) Xsession Xsession2 Xinit
  	$(INSTALL) -m 755 amiwm-init $(AMIWM_HOME)/amiwm-init
  	$(INSTALL) -s amiwm $(bindir)/amiwm
  	$(INSTALL) -s ppmtoinfo $(bindir)/ppmtoinfo
