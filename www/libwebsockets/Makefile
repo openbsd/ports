@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/12 12:25:51 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/12 12:28:11 jca Exp $
 
 COMMENT =		lightweight C library for fast bi-directional websockets
 
@@ -19,8 +19,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		http://git.libwebsockets.org/cgi-bin/cgit/libwebsockets/snapshot/
 
 WANTLIB += 		crypto m ssl z
-
-SEPARATE_BUILD =	Yes
 
 MODULES =		devel/cmake
 
