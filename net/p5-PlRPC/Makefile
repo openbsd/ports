@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.24 2015/01/21 06:23:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.25 2015/11/12 14:27:17 ajacoutot Exp $
 
 COMMENT=	module for writing rpc servers and clients
 
 MODULES=	cpan
-DISTNAME=	PlRPC-0.2018
-REVISION=	2
+DISTNAME=	PlRPC-0.2020
 CATEGORIES=	net
 
+# Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	net/p5-Net-Daemon>=0.13
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	net/p5-Net-Daemon
+BUILD_DEPENDS=	net/p5-Net-Daemon
 
-CPAN_AUTHOR=	JWIED
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=RPC/}
+WRKDIST=	${WRKDIR}/PlRPC
 
 .include <bsd.port.mk>
