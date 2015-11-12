@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.469 2015/11/04 21:12:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.470 2015/11/12 17:27:11 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -117,6 +117,7 @@
      SUBDIR += mozilla-dicts
      SUBDIR += multimarkdown
      SUBDIR += mupdf
+     SUBDIR += mupdf,js
      SUBDIR += mxml
      SUBDIR += namazu
      SUBDIR += naturaldocs
