@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/10/30 11:35:13 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/11/12 08:50:35 benoit Exp $
 include/NTL/
 include/NTL/BasicThreadPool.h
 include/NTL/FFT.h
@@ -105,6 +105,8 @@ include/NTL/xdouble.h
 lib/libntl.a
 @lib lib/libntl.so.${LIBntl_VERSION}
 share/doc/NTL/
+share/doc/NTL/BasicThreadPool.cpp.html
+share/doc/NTL/BasicThreadPool.txt
 share/doc/NTL/GF2.cpp.html
 share/doc/NTL/GF2.txt
 share/doc/NTL/GF2E.cpp.html
