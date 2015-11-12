@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2015/06/29 13:45:52 kirby Exp $
+# $OpenBSD: Makefile,v 1.63 2015/11/12 11:12:01 kirby Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -7,7 +7,7 @@ BROKEN-mips64el =	missing atomic ops
 BROKEN-hppa =		missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.12.4
+DISTNAME=	wesnoth-1.12.5
 
 CATEGORIES=	games x11
 
@@ -25,7 +25,7 @@ WANTLIB += ICE SDL SDL_image SDL_mixer SDL_net SDL_ttf SM X11
 WANTLIB += Xext boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_locale-mt boost_program_options-mt boost_regex-mt
 WANTLIB += boost_system-mt c cairo dbus-1 fontconfig freetype fribidi
-WANTLIB += glib-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += glib-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pthread stdc++ vorbisfile z
 
 MODULES=	devel/cmake \
