@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/12 12:25:51 jca Exp $
+include/libwebsockets.h
+include/lws_config.h
+lib/libwebsockets.a
+@lib lib/libwebsockets.so.${LIBwebsockets_VERSION}
+lib/pkgconfig/libwebsockets.pc
