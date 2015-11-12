@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2015/10/03 01:06:17 jturner Exp $
+# $OpenBSD: Makefile,v 1.13 2015/11/12 20:51:10 jturner Exp $
 
 COMMENT =		minimal CGI library for web applications
 
-DISTNAME =		kcgi-0.7.3
+DISTNAME =		kcgi-0.7.4
 CATEGORIES =		www
 
 MAINTAINER =		James Turner <james@calminferno.net>
