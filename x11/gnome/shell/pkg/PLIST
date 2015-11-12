@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2015/10/24 14:07:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/11/12 18:00:27 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -41,20 +41,9 @@ share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 share/gnome-shell/gnome-shell-theme.gresource
 share/gnome-shell/perf-background.xml
 share/gtk-doc/html/shell/
-share/gtk-doc/html/shell/ShellApp.html
-share/gtk-doc/html/shell/ShellAppSystem.html
-share/gtk-doc/html/shell/ShellAppUsage.html
 share/gtk-doc/html/shell/ShellEmbeddedWindow.html
-share/gtk-doc/html/shell/ShellGenericContainer.html
-share/gtk-doc/html/shell/ShellGlobal.html
 share/gtk-doc/html/shell/ShellGtkEmbed.html
-share/gtk-doc/html/shell/ShellMountOperation.html
-share/gtk-doc/html/shell/ShellStack.html
 share/gtk-doc/html/shell/ShellTpClient.html
-share/gtk-doc/html/shell/ShellTrayIcon.html
-share/gtk-doc/html/shell/ShellTrayManager.html
-share/gtk-doc/html/shell/ShellWM.html
-share/gtk-doc/html/shell/ShellWindowTracker.html
 share/gtk-doc/html/shell/annotation-glossary.html
 share/gtk-doc/html/shell/api-index-full.html
 share/gtk-doc/html/shell/ch01.html
@@ -74,9 +63,20 @@ share/gtk-doc/html/shell/object-tree.html
 share/gtk-doc/html/shell/right-insensitive.png
 share/gtk-doc/html/shell/right.png
 share/gtk-doc/html/shell/shell-shell-action-modes.html
+share/gtk-doc/html/shell/shell-shell-app-system.html
+share/gtk-doc/html/shell/shell-shell-app-usage.html
+share/gtk-doc/html/shell/shell-shell-app.html
+share/gtk-doc/html/shell/shell-shell-generic-container.html
+share/gtk-doc/html/shell/shell-shell-global.html
+share/gtk-doc/html/shell/shell-shell-mount-operation.html
 share/gtk-doc/html/shell/shell-shell-polkit-authentication-agent.html
 share/gtk-doc/html/shell/shell-shell-recorder.html
+share/gtk-doc/html/shell/shell-shell-stack.html
+share/gtk-doc/html/shell/shell-shell-tray-icon.html
+share/gtk-doc/html/shell/shell-shell-tray-manager.html
 share/gtk-doc/html/shell/shell-shell-util.html
+share/gtk-doc/html/shell/shell-shell-window-tracker.html
+share/gtk-doc/html/shell/shell-shell-wm.html
 share/gtk-doc/html/shell/shell.devhelp2
 share/gtk-doc/html/shell/style.css
 share/gtk-doc/html/shell/up-insensitive.png
