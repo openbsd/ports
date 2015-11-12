@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST-python,v 1.1.1.1 2015/11/12 12:59:38 sthen Exp $
+lib/freeradius/rlm_python.so
+share/doc/freeradius/modules/rlm_python
+@mode 640
+@group _freeradius
+share/examples/freeradius/mods-available/python
+@mode 750
+share/examples/freeradius/mods-config/python/
+@mode 640
+share/examples/freeradius/mods-config/python/example.py
+share/examples/freeradius/mods-config/python/radiusd.py

@@ -1,0 +1,98 @@
+$OpenBSD: patch-src_main_radsniff_c,v 1.1.1.1 2015/11/12 12:59:37 sthen Exp $
+
+XXX probably not enough to make it actually work.
+
+--- src/main/radsniff.c.orig	Wed Nov 11 12:39:49 2015
++++ src/main/radsniff.c	Wed Nov 11 12:44:57 2015
+@@ -1000,7 +1000,8 @@ static inline int rs_request_to_pcap(rs_event_t *event
+ #define RS_CLEANUP_NOW(_x, _s)\
+ 	{\
+ 		_x->silent_cleanup = _s;\
+-		_x->when = header->ts;\
++		_x->when.tv_sec = header->ts.tv_sec;\
++		_x->when.tv_usec = header->ts.tv_usec;\
+ 		rs_packet_cleanup(_x);\
+ 		_x = NULL;\
+ 	} while (0)
+@@ -1035,10 +1036,12 @@ static void rs_packet_process(uint64_t count, rs_event
+ 	memset(&search, 0, sizeof(search));
+ 
+ 	if (!start_pcap.tv_sec) {
+-		start_pcap = header->ts;
++		start_pcap.tv_sec = header->ts.tv_sec;
++		start_pcap.tv_usec = header->ts.tv_usec;
+ 	}
+ 
+ 	if (RIDEBUG_ENABLED()) {
++		/* XXX convert pcap timeval */
+ 		rs_time_print(timestr, sizeof(timestr), &header->ts);
+ 	}
+ 
+@@ -1122,11 +1125,13 @@ static void rs_packet_process(uint64_t count, rs_event
+ 	current = rad_alloc(conf, false);
+ 	if (!current) {
+ 		REDEBUG("Failed allocating memory to hold decoded packet");
++		/* XXX convert pcap timeval */
+ 		rs_tv_add_ms(&header->ts, conf->stats.timeout, &stats->quiet);
+ 		return;
+ 	}
+ 
+-	current->timestamp = header->ts;
++	current->timestamp.tv_sec = header->ts.tv_sec;
++	current->timestamp.tv_usec = header->ts.tv_usec;
+ 	current->data_len = header->caplen - (p - data);
+ 	memcpy(&current->data, &p, sizeof(current->data));
+ 
+@@ -1246,6 +1251,7 @@ static void rs_packet_process(uint64_t count, rs_event
+ 			 *	The delay is so we can detect retransmissions.
+ 			 */
+ 			original->linked = talloc_steal(original, current);
++			/* XXX convert pcap timeval */
+ 			rs_tv_add_ms(&header->ts, conf->stats.timeout, &original->when);
+ 			if (!fr_event_insert(event->list, _rs_event, original, &original->when,
+ 					     &original->event)) {
+@@ -1326,6 +1332,7 @@ static void rs_packet_process(uint64_t count, rs_event
+ 		search.expect = rad_alloc_reply(current, current);
+ 		if (!search.expect) {
+ 			REDEBUG("Failed allocating memory to hold expected reply");
++			/* XXX convert pcap timeval */
+ 			rs_tv_add_ms(&header->ts, conf->stats.timeout, &stats->quiet);
+ 			rad_free(&current);
+ 			return;
+@@ -1476,7 +1483,9 @@ static void rs_packet_process(uint64_t count, rs_event
+ 		/*
+ 		 *	Insert a callback to remove the request from the tree
+ 		 */
+-		original->packet->timestamp = header->ts;
++		original->packet->timestamp.tv_sec = header->ts.tv_sec;
++		original->packet->timestamp.tv_usec = header->ts.tv_usec;
++		/* XXX convert pcap timeval */
+ 		rs_tv_add_ms(&header->ts, conf->stats.timeout, &original->when);
+ 		if (!fr_event_insert(event->list, _rs_event, original,
+ 				     &original->when, &original->event)) {
+@@ -1497,6 +1506,7 @@ static void rs_packet_process(uint64_t count, rs_event
+ 		return;
+ 	}
+ 
++	/* XXX convert pcap timeval */
+ 	rs_tv_sub(&header->ts, &start_pcap, &elapsed);
+ 
+ 	/*
+@@ -1526,6 +1536,7 @@ static void rs_packet_process(uint64_t count, rs_event
+ 		 *	Were filtering on response, now print out the full data from the request
+ 		 */
+ 		if (conf->filter_response && RIDEBUG_ENABLED() && (conf->event_flags & RS_NORMAL)) {
++			/* XXX convert pcap timeval */
+ 			rs_time_print(timestr, sizeof(timestr), &original->packet->timestamp);
+ 			rs_tv_sub(&original->packet->timestamp, &start_pcap, &elapsed);
+ 			rs_packet_print(original, original->id, RS_NORMAL, original->in,
+@@ -1608,7 +1619,8 @@ static void rs_got_packet(fr_event_list_t *el, int fd,
+ 			}
+ 
+ 			do {
+-				now = header->ts;
++				now.tv_sec = header->ts.tv_sec;
++				now.tv_usec = header->ts.tv_usec;
+ 			} while (fr_event_run(el, &now) == 1);
+ 			count++;
+ 

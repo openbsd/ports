@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST-pgsql,v 1.1.1.1 2015/11/12 12:59:38 sthen Exp $
+@conflict freeradius-pgsql-*
+lib/freeradius/rlm_sql_postgresql.so
+@mode 750
+@group _freeradius
+share/examples/freeradius/mods-config/sql/counter/postgresql/
+@mode 640
+share/examples/freeradius/mods-config/sql/counter/postgresql/dailycounter.conf
+share/examples/freeradius/mods-config/sql/counter/postgresql/expire_on_login.conf
+share/examples/freeradius/mods-config/sql/counter/postgresql/monthlycounter.conf
+share/examples/freeradius/mods-config/sql/counter/postgresql/noresetcounter.conf
+@mode 750
+share/examples/freeradius/mods-config/sql/cui/postgresql/
+@mode 640
+share/examples/freeradius/mods-config/sql/cui/postgresql/queries.conf
+share/examples/freeradius/mods-config/sql/cui/postgresql/schema.sql
+@mode 750
+share/examples/freeradius/mods-config/sql/ippool/postgresql/
+@mode 640
+share/examples/freeradius/mods-config/sql/ippool/postgresql/queries.conf
+share/examples/freeradius/mods-config/sql/ippool/postgresql/schema.sql
+@mode 750
+share/examples/freeradius/mods-config/sql/main/postgresql/
+share/examples/freeradius/mods-config/sql/main/postgresql/extras/
+@mode 640
+share/examples/freeradius/mods-config/sql/main/postgresql/extras/cisco_h323_db_schema.sql
+share/examples/freeradius/mods-config/sql/main/postgresql/extras/update_radacct_group.sql
+share/examples/freeradius/mods-config/sql/main/postgresql/extras/voip-postpaid.conf
+share/examples/freeradius/mods-config/sql/main/postgresql/queries.conf
+share/examples/freeradius/mods-config/sql/main/postgresql/schema.sql
+share/examples/freeradius/mods-config/sql/main/postgresql/setup.sql

@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST-ldap,v 1.1.1.1 2015/11/12 12:59:38 sthen Exp $
+@conflict freeradius-ldap-*
+lib/freeradius/rlm_ldap.so
+share/doc/freeradius/schemas/ldap/
+share/doc/freeradius/schemas/ldap/edir/
+share/doc/freeradius/schemas/ldap/edir/freeradius-clients.ldif
+share/doc/freeradius/schemas/ldap/iplanet/
+share/doc/freeradius/schemas/ldap/iplanet/freeradius.ldif
+share/doc/freeradius/schemas/ldap/iplanet/freeradius.schema
+share/doc/freeradius/schemas/ldap/openldap/
+share/doc/freeradius/schemas/ldap/openldap/freeradius-clients.ldif
+share/doc/freeradius/schemas/ldap/openldap/freeradius-clients.schema
+share/doc/freeradius/schemas/ldap/openldap/freeradius.ldif
+share/doc/freeradius/schemas/ldap/openldap/freeradius.schema
+@mode 640
+@group _freeradius
+share/examples/freeradius/mods-available/ldap

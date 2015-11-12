@@ -1,0 +1,34 @@
+$OpenBSD: patch-raddb_radiusd_conf_in,v 1.1.1.1 2015/11/12 12:59:37 sthen Exp $
+--- raddb/radiusd.conf.in.orig	Wed Apr 22 18:21:34 2015
++++ raddb/radiusd.conf.in	Thu Jun 25 16:41:33 2015
+@@ -105,7 +105,7 @@ db_dir = ${raddbdir}
+ #	make
+ #	make install
+ #
+-libdir = @libdir@
++libdir = @libdir@/freeradius 
+ 
+ #  pidfile: Where to place the PID of the RADIUS server.
+ #
+@@ -436,8 +436,8 @@ security {
+ 	#  member.  This can allow for some finer-grained access
+ 	#  controls.
+ 	#
+-#	user = radius
+-#	group = radius
++	user = _freeradius
++	group = _freeradius
+ 
+ 	#  Core dumps are a bad thing.  This should only be set to
+ 	#  'yes' if you're debugging a problem with the server.
+@@ -518,8 +518,8 @@ security {
+ #
+ #  allowed values: {no, yes}
+ #
+-proxy_requests  = yes
+-$INCLUDE proxy.conf
++proxy_requests  = no 
++#$INCLUDE proxy.conf
+ 
+ 
+ # CLIENTS CONFIGURATION
