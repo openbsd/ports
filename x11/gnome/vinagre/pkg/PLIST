@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2015/04/03 18:41:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2015/11/12 11:02:25 ajacoutot Exp $
 @bin bin/vinagre
 @man man/man1/vinagre.1
 share/GConf/gsettings/org.gnome.Vinagre.convert
@@ -312,6 +312,7 @@ share/locale/he/LC_MESSAGES/vinagre.mo
 share/locale/hi/LC_MESSAGES/vinagre.mo
 share/locale/hu/LC_MESSAGES/vinagre.mo
 share/locale/id/LC_MESSAGES/vinagre.mo
+share/locale/is/LC_MESSAGES/vinagre.mo
 share/locale/it/LC_MESSAGES/vinagre.mo
 share/locale/ja/LC_MESSAGES/vinagre.mo
 share/locale/kk/LC_MESSAGES/vinagre.mo
