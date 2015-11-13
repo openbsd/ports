@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2015/11/13 12:54:23 ajacoutot Exp $
+--- configure.orig	Fri Nov 13 11:14:06 2015
++++ configure	Fri Nov 13 11:13:20 2015
+@@ -3435,6 +3435,10 @@ fi
+     powerpc-*-darwin*)
+         OPENCL_LIBS=""
+         ;;
++    *openbsd*)
++        ADD_RT_TRUE='#'
++        ADD_RT_FALSE=
++        ;;
+     *)
+         # default
+          if true; then

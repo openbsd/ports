@@ -1,0 +1,14 @@
+$OpenBSD: patch-dict_dawg_cpp,v 1.1 2015/11/13 12:54:23 ajacoutot Exp $
+--- dict/dawg.cpp.orig	Thu Jul 22 02:48:12 2010
++++ dict/dawg.cpp	Fri Jul  8 13:23:50 2011
+@@ -29,6 +29,10 @@
+ #ifdef _MSC_VER
+ #pragma warning(disable:4244)  // Conversion warnings
+ #pragma warning(disable:4800)  // int/bool warnings
++#else
++#ifdef __OpenBSD__
++#include <sys/types.h>
++#endif
+ #endif
+ #include "dawg.h"
+ 
