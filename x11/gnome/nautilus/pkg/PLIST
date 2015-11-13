@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2015/10/05 06:00:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.50 2015/11/13 19:22:04 ajacoutot Exp $
 %%SHARED%%
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
@@ -60,6 +60,7 @@ share/gtk-doc/html/libnautilus-extension/NautilusPropertyPageProvider.html
 share/gtk-doc/html/libnautilus-extension/ch01.html
 share/gtk-doc/html/libnautilus-extension/home.png
 share/gtk-doc/html/libnautilus-extension/index.html
+share/gtk-doc/html/libnautilus-extension/index.sgml
 share/gtk-doc/html/libnautilus-extension/ix01.html
 share/gtk-doc/html/libnautilus-extension/left-insensitive.png
 share/gtk-doc/html/libnautilus-extension/left.png
