@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-lit,v 1.1 2015/11/13 12:54:59 ajacoutot Exp $
+@pkgpath graphics/tesseract,-lit
+@pkgpath graphics/tesseract-langs/lit
+@conflict tesseract-<3.02.02
+share/tessdata/lit.traineddata

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-ell,v 1.1 2015/11/13 12:54:58 ajacoutot Exp $
+@pkgpath graphics/tesseract,-ell
+@pkgpath graphics/tesseract-langs/ell
+@conflict tesseract-<3.02.02
+share/tessdata/ell.traineddata

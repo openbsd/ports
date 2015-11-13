@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-slv,v 1.1 2015/11/13 12:54:59 ajacoutot Exp $
+@pkgpath graphics/tesseract,-slv
+@pkgpath graphics/tesseract-langs/slv
+@conflict tesseract-<3.02.02
+share/tessdata/slv.traineddata

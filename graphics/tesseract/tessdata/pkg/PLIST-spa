@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-spa,v 1.1 2015/11/13 12:54:59 ajacoutot Exp $
+@pkgpath graphics/tesseract,-spa
+@pkgpath graphics/tesseract-langs/spa
+@conflict tesseract-<3.02.02
+share/tessdata/spa.traineddata

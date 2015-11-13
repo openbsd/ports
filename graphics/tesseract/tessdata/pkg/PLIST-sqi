@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-sqi,v 1.1 2015/11/13 12:54:59 ajacoutot Exp $
+share/tessdata/sqi.traineddata

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-ces,v 1.1 2015/11/13 12:54:58 ajacoutot Exp $
+@pkgpath graphics/tesseract,-ces
+@pkgpath graphics/tesseract-langs/ces
+@conflict tesseract-<3.02.02
+share/tessdata/ces.traineddata

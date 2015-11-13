@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-equ,v 1.1 2015/11/13 12:54:58 ajacoutot Exp $
+share/tessdata/equ.traineddata

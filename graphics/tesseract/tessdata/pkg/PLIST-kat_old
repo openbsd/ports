@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-kat_old,v 1.1 2015/11/13 12:54:59 ajacoutot Exp $
+share/tessdata/kat_old.traineddata

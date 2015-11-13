@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-ukr,v 1.1 2015/11/13 12:54:59 ajacoutot Exp $
+@pkgpath graphics/tesseract,-ukr
+@pkgpath graphics/tesseract-langs/ukr
+@conflict tesseract-<3.02.02
+share/tessdata/ukr.traineddata

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-slk_frak,v 1.1 2015/11/13 12:54:59 ajacoutot Exp $
+@pkgpath graphics/tesseract,-slk_frak
+@pkgpath graphics/tesseract-langs/slk_frak
+@conflict tesseract-<3.02.02
+share/tessdata/slk_frak.traineddata

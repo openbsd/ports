@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-swe,v 1.1 2015/11/13 12:54:59 ajacoutot Exp $
+@pkgpath graphics/tesseract,-swe
+@pkgpath graphics/tesseract-langs/swe
+@conflict tesseract-<3.02.02
+share/tessdata/swe.traineddata
