@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_fate_aac_mak,v 1.2 2015/10/25 08:46:41 ajacoutot Exp $
+$OpenBSD: patch-tests_fate_aac_mak,v 1.3 2015/11/13 07:03:00 ajacoutot Exp $
 
 fate: adjust AAC encoder tests values
 
@@ -40,9 +40,15 @@ fate: use -profile:a aac_ltp instead of -aac_ltp 1 for LTP encode test
 
 aacenc_ltp: adjust and speed up autocorrelation calculations
 
+tests/fate/aac: Add bitexact flags to fate-aac-pns-encode
+
+tests/aac: Add bitexact flags to AAC LTP Encode test
+
+FATE: Slightly increase thresholds on prediction AAC encoding tests
+
 --- tests/fate/aac.mak.orig	Mon Sep  7 21:58:02 2015
-+++ tests/fate/aac.mak	Sun Oct 18 22:25:40 2015
-@@ -142,55 +142,83 @@ FATE_AAC += $(FATE_AAC_CT:%=fate-aac-ct-%)
++++ tests/fate/aac.mak	Sat Oct 31 01:55:52 2015
+@@ -142,56 +142,84 @@ FATE_AAC += $(FATE_AAC_CT:%=fate-aac-ct-%)
  
  FATE_AAC_ENCODE += fate-aac-aref-encode
  fate-aac-aref-encode: ./tests/data/asynth-44100-2.wav
@@ -78,7 +84,7 @@ aacenc_ltp: adjust and speed up autocorrelation calculations
 +
  FATE_AAC_ENCODE += fate-aac-pns-encode
 -fate-aac-pns-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -c:a aac -aac_pns 1 -aac_is 0 -b:a 128k
-+fate-aac-pns-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -c:a aac -aac_pns 1 -aac_is 0 -aac_ms 0 -aac_tns 0 -b:a 128k -cutoff 22050
++fate-aac-pns-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -c:a aac -aac_pns 1 -aac_is 0 -aac_ms 0 -aac_tns 0 -b:a 128k -cutoff 22050  -fflags +bitexact -flags +bitexact
  fate-aac-pns-encode: CMP = stddev
  fate-aac-pns-encode: REF = $(SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav
  fate-aac-pns-encode: CMP_SHIFT = -4096
@@ -122,13 +128,13 @@ aacenc_ltp: adjust and speed up autocorrelation calculations
 +fate-aac-ms-encode: FUZZ = 10
 +
 +FATE_AAC_ENCODE += fate-aac-ltp-encode
-+fate-aac-ltp-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -c:a aac -profile:a aac_ltp -aac_pns 0 -aac_is 0 -aac_ms 0 -aac_tns 0 -b:a 36k
++fate-aac-ltp-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -c:a aac -profile:a aac_ltp -aac_pns 0 -aac_is 0 -aac_ms 0 -aac_tns 0 -b:a 36k -fflags +bitexact -flags +bitexact
 +fate-aac-ltp-encode: CMP = stddev
 +fate-aac-ltp-encode: REF = $(SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav
 +fate-aac-ltp-encode: CMP_SHIFT = -4096
 +fate-aac-ltp-encode: CMP_TARGET = 1535
 +fate-aac-ltp-encode: SIZE_TOLERANCE = 3560
-+fate-aac-ltp-encode: FUZZ = 10
++fate-aac-ltp-encode: FUZZ = 17
 +
  FATE_AAC_ENCODE += fate-aac-pred-encode
 -fate-aac-pred-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -profile:a aac_main -c:a aac -aac_is 0 -aac_pns 0 -b:a 128k
@@ -137,7 +143,9 @@ aacenc_ltp: adjust and speed up autocorrelation calculations
  fate-aac-pred-encode: REF = $(SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav
  fate-aac-pred-encode: CMP_SHIFT = -4096
 -fate-aac-pred-encode: CMP_TARGET = 652.60
+-fate-aac-pred-encode: FUZZ = 10
 +fate-aac-pred-encode: CMP_TARGET = 790
- fate-aac-pred-encode: FUZZ = 10
++fate-aac-pred-encode: FUZZ = 12
  fate-aac-pred-encode: SIZE_TOLERANCE = 3560
  
+ FATE_AAC_LATM += fate-aac-latm_000000001180bc60
