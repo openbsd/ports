@@ -1,15 +1,15 @@
-$OpenBSD: patch-configure,v 1.10 2015/04/26 07:58:22 ajacoutot Exp $
---- configure.orig	Tue Mar 31 11:01:15 2015
-+++ configure	Tue Mar 31 11:08:39 2015
-@@ -118,6 +118,7 @@ all_platforms="${all_platforms} ppc32-linux-gcc"
- all_platforms="${all_platforms} ppc64-darwin8-gcc"
- all_platforms="${all_platforms} ppc64-darwin9-gcc"
- all_platforms="${all_platforms} ppc64-linux-gcc"
+$OpenBSD: patch-configure,v 1.11 2015/11/13 07:14:26 ajacoutot Exp $
+--- configure.orig	Mon Nov  9 17:12:38 2015
++++ configure	Thu Nov 12 01:25:23 2015
+@@ -111,6 +111,7 @@ all_platforms="${all_platforms} armv7-win32-vs14"
+ all_platforms="${all_platforms} armv7s-darwin-gcc"
+ all_platforms="${all_platforms} mips32-linux-gcc"
+ all_platforms="${all_platforms} mips64-linux-gcc"
 +all_platforms="${all_platforms} sparc-linux-gcc"
  all_platforms="${all_platforms} sparc-solaris-gcc"
  all_platforms="${all_platforms} x86-android-gcc"
  all_platforms="${all_platforms} x86-darwin8-gcc"
-@@ -187,19 +188,6 @@ if [ "`cd \"${source_path}\" && pwd`" != "`pwd`" ]; th
+@@ -176,19 +177,6 @@ if [ "`cd \"${source_path}\" && pwd`" != "`pwd`" ]; th
    fi
  fi
  
@@ -26,10 +26,10 @@ $OpenBSD: patch-configure,v 1.10 2015/04/26 07:58:22 ajacoutot Exp $
 -    [ $doxy_minor -eq 5 ] && [ $doxy_patch -ge 3 ] && enable_feature doxygen
 -fi
 -
- # install everything except the sources, by default. sources will have
- # to be enabled when doing dist builds, since that's no longer a common
- # case.
-@@ -543,18 +531,6 @@ EOF
+ # disable codecs when their source directory does not exist
+ [ -d "${source_path}/vp8" ] || disable_feature vp8
+ [ -d "${source_path}/vp9" ] || disable_feature vp9
+@@ -503,18 +491,6 @@ EOF
  }
  
  process_detect() {
@@ -37,11 +37,11 @@ $OpenBSD: patch-configure,v 1.10 2015/04/26 07:58:22 ajacoutot Exp $
 -        # Can only build shared libs on a subset of platforms. Doing this check
 -        # here rather than at option parse time because the target auto-detect
 -        # magic happens after the command line has been parsed.
--        if ! enabled linux; then
+-        if ! enabled linux && ! enabled os2; then
 -            if enabled gnu; then
 -                echo "--enable-shared is only supported on ELF; assuming this is OK"
 -            else
--                die "--enable-shared only supported on ELF for now"
+-                die "--enable-shared only supported on ELF and OS/2 for now"
 -            fi
 -        fi
 -    fi

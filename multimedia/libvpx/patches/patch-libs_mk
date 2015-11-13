@@ -1,29 +1,30 @@
-$OpenBSD: patch-libs_mk,v 1.9 2015/04/26 07:58:22 ajacoutot Exp $
---- libs.mk.orig	Tue Mar 31 11:01:15 2015
-+++ libs.mk	Tue Mar 31 11:15:46 2015
-@@ -239,18 +239,14 @@ EXPORT_FILE             := libvpx.syms
- LIBVPX_SO_SYMLINKS      := $(addprefix $(LIBSUBDIR)/, \
-                              libvpx.dylib  )
+$OpenBSD: patch-libs_mk,v 1.10 2015/11/13 07:14:26 ajacoutot Exp $
+--- libs.mk.orig	Mon Nov  9 17:12:38 2015
++++ libs.mk	Thu Nov 12 01:31:23 2015
+@@ -277,21 +277,16 @@ EXPORT_FILE             := libvpx.def
+ LIBVPX_SO_SYMLINKS      :=
+ LIBVPX_SO_IMPLIB        := libvpx_dll.a
  else
 -LIBVPX_SO               := libvpx.so.$(SO_VERSION_MAJOR).$(SO_VERSION_MINOR).$(SO_VERSION_PATCH)
-+
 +LIBVPX_SO               := libvpx.so.$(LIBVPX_VERSION)
+ SHARED_LIB_SUF          := .so
  EXPORT_FILE             := libvpx.ver
 -LIBVPX_SO_SYMLINKS      := $(addprefix $(LIBSUBDIR)/, \
 -                             libvpx.so libvpx.so.$(SO_VERSION_MAJOR) \
 -                             libvpx.so.$(SO_VERSION_MAJOR).$(SO_VERSION_MINOR))
  endif
+ endif
  
--LIBS-$(BUILD_LIBVPX_SO) += $(BUILD_PFX)$(LIBVPX_SO)\
--                           $(notdir $(LIBVPX_SO_SYMLINKS))
-+LIBS-$(BUILD_LIBVPX_SO) += $(BUILD_PFX)$(LIBVPX_SO)
+ LIBS-$(CONFIG_SHARED) += $(BUILD_PFX)$(LIBVPX_SO)\
+-                           $(notdir $(LIBVPX_SO_SYMLINKS)) \
+                            $(if $(LIBVPX_SO_IMPLIB), $(BUILD_PFX)$(LIBVPX_SO_IMPLIB))
  $(BUILD_PFX)$(LIBVPX_SO): $(LIBVPX_OBJS) $(EXPORT_FILE)
  $(BUILD_PFX)$(LIBVPX_SO): extralibs += -lm
 -$(BUILD_PFX)$(LIBVPX_SO): SONAME = libvpx.so.$(SO_VERSION_MAJOR)
  $(BUILD_PFX)$(LIBVPX_SO): EXPORTS_FILE = $(EXPORT_FILE)
  
  libvpx.ver: $(call enabled,CODEC_EXPORTS)
-@@ -272,15 +268,7 @@ $(1): $(2)
+@@ -326,15 +321,7 @@ $(1): $(2)
  	$(qexec)ln -sf $(2) $$@
  endef
  
@@ -35,7 +36,7 @@ $OpenBSD: patch-libs_mk,v 1.9 2015/04/26 07:58:22 ajacoutot Exp $
 -    $(LIBVPX_SO)))
  
 -
--INSTALL-LIBS-$(BUILD_LIBVPX_SO) += $(LIBVPX_SO_SYMLINKS)
- INSTALL-LIBS-$(BUILD_LIBVPX_SO) += $(LIBSUBDIR)/$(LIBVPX_SO)
- 
+-INSTALL-LIBS-$(CONFIG_SHARED) += $(LIBVPX_SO_SYMLINKS)
+ INSTALL-LIBS-$(CONFIG_SHARED) += $(LIBSUBDIR)/$(LIBVPX_SO)
+ INSTALL-LIBS-$(CONFIG_SHARED) += $(if $(LIBVPX_SO_IMPLIB),$(LIBSUBDIR)/$(LIBVPX_SO_IMPLIB))
  
