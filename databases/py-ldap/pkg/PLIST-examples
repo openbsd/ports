@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.9 2015/09/18 12:32:22 benoit Exp $
+@comment $OpenBSD: PLIST-examples,v 1.10 2015/11/13 08:44:53 ajacoutot Exp $
 @pkgpath databases/py-ldap,-examples[,python2.4][,python2.5][,python2.6][,python2.7]
 share/examples/${MODPY_PY_PREFIX}ldap/
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/
@@ -22,8 +22,8 @@ share/examples/${MODPY_PY_PREFIX}ldap/Demo/paged_search_ext_s.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/passwd_ext_op.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/pickle_ldapobject.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/pyasn1/
-share/examples/${MODPY_PY_PREFIX}ldap/Demo/pyasn1/README
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/pyasn1/dds.py
+share/examples/${MODPY_PY_PREFIX}ldap/Demo/pyasn1/derefcontrol.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/pyasn1/noopsearch.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/pyasn1/ppolicy.py
 share/examples/${MODPY_PY_PREFIX}ldap/Demo/pyasn1/psearch.py

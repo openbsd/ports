@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2015/06/04 05:12:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2015/11/13 08:44:53 ajacoutot Exp $
 @pkgpath databases/py-ldap
 @pkgpath databases/py-ldap,-main[,python2.4][,python2.5][,python2.6][,python2.7]
 lib/python${MODPY_VERSION}/site-packages/_ldap.so
@@ -19,6 +19,9 @@ lib/python${MODPY_VERSION}/site-packages/ldap/controls/
 lib/python${MODPY_VERSION}/site-packages/ldap/controls/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ldap/controls/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/controls/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/controls/deref.py
+lib/python${MODPY_VERSION}/site-packages/ldap/controls/deref.pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/controls/deref.pyo
 lib/python${MODPY_VERSION}/site-packages/ldap/controls/libldap.py
 lib/python${MODPY_VERSION}/site-packages/ldap/controls/libldap.pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/controls/libldap.pyo
