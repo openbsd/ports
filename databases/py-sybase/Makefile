@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2015/04/21 18:40:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2015/11/13 09:04:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python interface to the Sybase relational database system
 
-DISTNAME=	sybase-0.36
+DISTNAME=	sybase-0.37
 PKGNAME=	py-${DISTNAME}
-REVISION =	9
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.object-craft.com.au/projects/sybase/
@@ -16,17 +15,18 @@ MASTER_SITES=	${HOMEPAGE}download/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += ct>=1 pthread
+WANTLIB += ct pthread
 
 MODULES=	lang/python \
 		devel/gettext
 
 MODPY_DISTUTILS_BUILD=		build_ext
-MODPY_DISTUTILS_BUILDARGS=	-DHAVE_FREETDS=61
+MODPY_DISTUTILS_BUILDARGS=	-D HAVE_FREETDS=61
 
 LIB_DEPENDS =	databases/freetds
 
-MAKE_ENV+=	SYBASE="${LOCALBASE}"
+MAKE_ENV=	SYBASE="${LOCALBASE}"
+
 NO_TEST=	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-sybase
