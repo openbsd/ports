@@ -1,4 +1,8 @@
-$OpenBSD: patch-src_context_c,v 1.1 2015/07/18 21:57:43 jca Exp $
+$OpenBSD: patch-src_context_c,v 1.2 2015/11/13 02:48:29 gsoares Exp $
+
+merged upstream
+github.com/brunoos/luasec/commit/49ea6b8ba654f118fbb158da098e6ef288519126
+
 --- src/context.c.orig	Sat Jul 18 11:36:23 2015
 +++ src/context.c	Sat Jul 18 11:42:12 2015
 @@ -66,7 +66,9 @@ static int set_option_flag(const char *opt, unsigned l
