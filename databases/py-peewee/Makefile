@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/29 10:51:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/11/13 08:54:08 ajacoutot Exp $
 
 PKG_ARCH=		*
 COMMENT=		small expressive ORM
 
-MODPY_EGG_VERSION=	2.6.3
+MODPY_EGG_VERSION=	2.6.4
 DISTNAME=		peewee-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		databases
 
