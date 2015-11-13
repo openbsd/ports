@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/08/19 20:34:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2015/11/13 12:59:08 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -10,7 +10,7 @@ DISTNAME =		ogmrip-$V
 PKGNAME-main =		ogmrip-$V
 PKGNAME-dvdcpy =	dvdcpy-$V
 REVISION-dvdcpy =	0
-REVISION-main =		1
+REVISION-main =		2
 
 SHARED_LIBS +=  ogmdvd-gtk                0.0 # 1.0
 SHARED_LIBS +=  ogmdvd                    0.0 # 1.0
@@ -60,7 +60,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			graphics/gocr \
 			graphics/ocrad \
-			graphics/tesseract
+			graphics/tesseract/tesseract
 LIB_DEPENDS-dvdcpy =	devel/libdvdread
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			multimedia/libtheora \

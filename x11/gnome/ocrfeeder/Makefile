@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/03/26 12:12:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/11/13 12:59:08 ajacoutot Exp $
 
 COMMENT=		OCR and DAR program
 
 GNOME_PROJECT=		ocrfeeder
 GNOME_VERSION=		0.8.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics textproc
 
