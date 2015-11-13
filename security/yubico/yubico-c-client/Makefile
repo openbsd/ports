@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/12 15:18:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/13 12:37:18 sthen Exp $
 
 COMMENT=	C library to validate an Yubikey OTP against API servers
 
@@ -14,6 +14,7 @@ WANTLIB += c crypto curl idn nghttp2 ssl z
 MODULES=		devel/gettext
 CONFIGURE_STYLE=	gnu
 
+BUILD_DEPENDS=	devel/help2man
 LIB_DEPENDS=	net/curl
 
 .include <bsd.port.mk>
