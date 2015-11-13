@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/05/19 20:06:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/11/13 09:34:48 ajacoutot Exp $
 
 COMMENT=	test framework to run Perl::Critic
 
 MODULES=	cpan
-DISTNAME=	Test-Perl-Critic-1.02
-REVISION=	1
+DISTNAME=	Test-Perl-Critic-1.03
 CATEGORIES=	devel
 
 # perl
