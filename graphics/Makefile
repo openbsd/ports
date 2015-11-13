@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.396 2015/10/20 00:10:43 abieber Exp $
+# $OpenBSD: Makefile,v 1.397 2015/11/13 12:49:20 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -254,7 +254,6 @@
      SUBDIR += swfdec
      SUBDIR += sxiv
      SUBDIR += tesseract
-     SUBDIR += tesseract-langs
      SUBDIR += tgif
      SUBDIR += tiff
      SUBDIR += tiff2png
