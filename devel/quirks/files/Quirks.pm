@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.322 2015/11/11 18:04:43 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.323 2015/11/13 12:55:36 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -385,6 +385,7 @@ my $stem_extensions = {
 	'icinga2-mysql' => 'icinga2-ido-mysql',
 	'icinga2-pgsql' => 'icinga2-ido-pgsql',
 	'rcsparse' => 'py-rcsparse',
+	'tesseract-dan-frak' => 'tesseract-dan_frak',
 };
 
 # reasons for obsolete packages
