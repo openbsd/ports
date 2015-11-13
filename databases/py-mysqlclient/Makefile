@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/29 10:51:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/11/13 08:51:08 ajacoutot Exp $
 
 COMMENT =		Python interface to MySQL
 
-MODPY_EGG_VERSION =	1.3.6
-REVISION =		1
+MODPY_EGG_VERSION =	1.3.7
 DISTNAME =		mysqlclient-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -30,6 +29,10 @@ LIB_DEPENDS = 		databases/mariadb
 
 TEST_DEPENDS =		devel/py-nose,${FLAVOR} \
 			databases/mariadb
+
+.if !${FLAVOR:Mpython3}
+TEST_DEPENDS +=		devel/py-mock
+.endif
 
 # You must setup a default.cnf file config and
 # a MySQL server

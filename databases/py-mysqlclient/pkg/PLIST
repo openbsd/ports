@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/21 14:48:39 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/11/13 08:51:08 ajacoutot Exp $
 !%%python3%%
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/__init__.py
@@ -39,5 +39,4 @@ lib/python${MODPY_VERSION}/site-packages/mysqlclient-${MODPY_EGG_VERSION}-py${MO
 lib/python${MODPY_VERSION}/site-packages/mysqlclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/mysqlclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/mysqlclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/mysqlclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/mysqlclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
