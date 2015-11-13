@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1407 2015/11/12 15:18:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.1408 2015/11/13 13:06:54 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1199,6 +1199,8 @@
      SUBDIR += py-cheetah
      SUBDIR += py-clint
      SUBDIR += py-cloudpickle
+     SUBDIR += py-configargparse
+     SUBDIR += py-configargparse,python3
      SUBDIR += py-configobj
      SUBDIR += py-configparser
      SUBDIR += py-country
@@ -1265,6 +1267,8 @@
      SUBDIR += py-optik
      SUBDIR += py-path.py
      SUBDIR += py-pathlib
+     SUBDIR += py-parsedatetime
+     SUBDIR += py-parsedatetime,python3
      SUBDIR += py-parsing
      SUBDIR += py-parsing,python3
      SUBDIR += py-peak-rules
@@ -1280,6 +1284,7 @@
      SUBDIR += py-py,python3
      SUBDIR += py-pyprof2calltree
      SUBDIR += py-pyro
+     SUBDIR += py-python2-pythondialog
      SUBDIR += py-radix
      SUBDIR += py-rcsparse
      SUBDIR += py-rope
