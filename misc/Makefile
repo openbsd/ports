@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2015/07/16 21:30:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.174 2015/11/14 19:41:20 jung Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -89,6 +89,7 @@
      SUBDIR += rpm
      SUBDIR += screen
      SUBDIR += screen,shm
+     SUBDIR += sent
      SUBDIR += shared-desktop-ontologies
      SUBDIR += shared-mime-info
      SUBDIR += spdrs60
