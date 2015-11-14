@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2015/10/24 08:21:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2015/11/14 08:30:06 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -15,9 +15,8 @@
 
 COMMENT =		remote execution and configuration management system
 
-MODPY_EGG_VERSION =	2015.8.1
+MODPY_EGG_VERSION =	2015.8.2
 DISTNAME =		salt-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		sysutils net devel
 
@@ -76,7 +75,7 @@ TEST_DEPENDS =		databases/py-mysql \
 
 pre-configure:
 	perl -pi -e 's,share/man,man,g' ${WRKSRC}/setup.py
-	perl -pi -e 's,^#user: root,user: _salt,,' ${WRKSRC}/conf/master
+	perl -pi -e 's,^#user: root,user: _salt,,' ${WRKSRC}/conf/{master,proxy}
 	perl -pi -e 's,^REQUIRED_OPEN_FILES.*,REQUIRED_OPEN_FILES = 512,,' \
 		${WRKSRC}/tests/runtests.py
 

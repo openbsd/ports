@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: salt_master.rc,v 1.4 2015/11/14 08:30:07 ajacoutot Exp $
+# $OpenBSD: salt_proxy.rc,v 1.1 2015/11/14 08:30:07 ajacoutot Exp $
 
-daemon="${TRUEPREFIX}/bin/salt-master -d"
+daemon="${TRUEPREFIX}/bin/salt-proxy -d"
 
 . /etc/rc.d/rc.subr
 
