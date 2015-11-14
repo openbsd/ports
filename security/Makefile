@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.394 2015/11/12 15:18:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.395 2015/11/14 16:14:47 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -214,6 +214,7 @@
      SUBDIR += pear-Auth
      SUBDIR += pear-Auth-HTTP
      SUBDIR += pear-Auth-SASL
+     SUBDIR += pecl-libsodium
      SUBDIR += pgp
      SUBDIR += pgp5
      SUBDIR += pgpdump
