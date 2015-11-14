@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/06/23 13:44:40 giovanni Exp $
+# $OpenBSD: Makefile,v 1.25 2015/11/14 15:01:36 sthen Exp $
 
 COMMENT=	PHP interface to memcached
 
@@ -19,9 +19,7 @@ post-configure:
 # A running memcached server is needed
 TEST_IS_INTERACTIVE=	Yes
 
-do-test:
-	cd ${WRKSRC} && \
-	cp ${FILESDIR}/connect.inc . && \
-	env NO_INTERACTION=Yes TEST_PHP_EXECUTABLE=${MODPHP_BIN} ${MODPHP_BIN} ${WRKSRC}/run-tests.php -d extension=modules/memcache.so
+pre-test:
+	cp ${FILESDIR}/connect.inc ${WRKSRC}
 
 .include <bsd.port.mk>
