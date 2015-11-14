@@ -1,4 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2015/11/14 07:35:29 landry Exp $
+$OpenBSD: patch-setup_py,v 1.2 2015/11/14 08:38:08 landry Exp $
+
+https://github.com/landryb/psutil/commit/182ea11b1f3c91c38fe3d59b1dac1b41753a6d3b
+
 --- setup.py.orig	Fri Nov 13 15:47:46 2015
 +++ setup.py	Fri Nov 13 15:47:58 2015
 @@ -144,7 +144,7 @@ elif sys.platform.startswith("openbsd"):

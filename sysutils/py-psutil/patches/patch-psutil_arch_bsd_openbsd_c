@@ -1,4 +1,7 @@
-$OpenBSD: patch-psutil_arch_bsd_openbsd_c,v 1.1.1.1 2015/11/14 07:35:29 landry Exp $
+$OpenBSD: patch-psutil_arch_bsd_openbsd_c,v 1.2 2015/11/14 08:38:08 landry Exp $
+
+https://github.com/giampaolo/psutil/pull/713
+
 --- psutil/arch/bsd/openbsd.c.orig	Thu Nov 12 23:04:39 2015
 +++ psutil/arch/bsd/openbsd.c	Fri Nov 13 16:10:24 2015
 @@ -30,9 +30,12 @@
