@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2015/11/14 07:35:29 landry Exp $
+--- setup.py.orig	Fri Nov 13 15:47:46 2015
++++ setup.py	Fri Nov 13 15:47:58 2015
+@@ -144,7 +144,7 @@ elif sys.platform.startswith("openbsd"):
+     ext = Extension(
+         'psutil._psutil_bsd',
+         sources=[
+-            'psutil/_psutil_openbsd.c',
++            'psutil/_psutil_bsd.c',
+             'psutil/_psutil_common.c',
+             'psutil/arch/bsd/openbsd.c',
+         ],
