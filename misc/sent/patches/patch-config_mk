@@ -1,0 +1,36 @@
+$OpenBSD: patch-config_mk,v 1.1.1.1 2015/11/14 19:38:55 jung Exp $
+--- config.mk.orig	Wed Nov 11 23:46:24 2015
++++ config.mk	Fri Nov 13 22:00:42 2015
+@@ -4,22 +4,22 @@ VERSION = 0.1
+ # Customize below to fit your system
+ 
+ # paths
+-PREFIX = /usr/local
+-MANPREFIX = ${PREFIX}/share/man
++PREFIX ?= /usr/local
++MANPREFIX = ${PREFIX}/man
+ 
+-X11INC = /usr/X11R6/include
+-X11LIB = /usr/X11R6/lib
++X11INC = ${X11BASE}/include
++X11LIB = ${X11BASE}/lib
+ 
+ # includes and libs
+-INCS = -I. -I/usr/include -I/usr/include/freetype2 -I${X11INC}
+-LIBS = -L/usr/lib -lc -lm -L${X11LIB} -lXft -lfontconfig -lX11 -lpng
++INCS = -I${PREFIX}/include -I${X11INC}/freetype2 -I${X11INC}
++LIBS = -L${PREFIX}/lib -L${X11LIB} -lXft -lfontconfig -lX11 -lpng
+ 
+ # flags
+ CPPFLAGS = -DVERSION=\"${VERSION}\" -D_XOPEN_SOURCE=600
+-CFLAGS += -g -std=c99 -pedantic -Wall ${INCS} ${CPPFLAGS}
+-LDFLAGS += -g ${LIBS}
+-#CFLAGS += -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
+-#LDFLAGS += ${LIBS}
++#CFLAGS += -g -std=c99 -pedantic -Wall ${INCS} ${CPPFLAGS}
++#LDFLAGS += -g ${LIBS}
++CFLAGS += -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
++LDFLAGS += ${LIBS}
+ 
+ # compiler and linker
+ CC ?= cc

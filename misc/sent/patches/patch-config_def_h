@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_def_h,v 1.1.1.1 2015/11/14 19:38:55 jung Exp $
+--- config.def.h.orig	Fri Nov 13 21:41:45 2015
++++ config.def.h	Fri Nov 13 21:40:52 2015
+@@ -8,8 +8,8 @@ static char *fontfallbacks[] = {
+ #define NUMFONTSCALES 30
+ #define FONTSZ(x) ((int)(10.0 * powf(1.1288, (x)))) /* x in [0, NUMFONTSCALES-1] */
+ 
+-static const char *fgcol = "#000000";
+-static const char *bgcol = "#FFFFFF";
++static const char *fgcol = "#c0c0c0";
++static const char *bgcol = "#202020";
+ 
+ static const float linespacing = 1.4;
+ 
