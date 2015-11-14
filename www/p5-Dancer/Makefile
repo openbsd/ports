@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/08/21 14:47:10 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2015/11/14 15:04:24 benoit Exp $
 
 COMMENT =	simple perl web app framework
 
 MODULES =	cpan
-DISTNAME =	Dancer-1.3140
+DISTNAME =	Dancer-1.3202
 CATEGORIES =	www
 
 # perl
@@ -19,6 +19,7 @@ RUN_DEPENDS = 	devel/p5-Hash-Merge-Simple \
 TEST_DEPENDS +=	converters/p5-JSON \
 	 	devel/p5-Clone \
 		devel/p5-Test-Output \
+		devel/p5-Test-NoWarnings \
 		devel/p5-YAML \
 		net/p5-Test-TCP \
 		textproc/p5-Template \
