@@ -1,0 +1,3 @@
+pecl-libsodium is a wrapper for the Sodium cryptographic library. It
+provides a low-level interface; see https://paragonie.com/project/halite
+for a high-level interface using this extension.
