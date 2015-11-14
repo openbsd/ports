@@ -1,4 +1,4 @@
-# $OpenBSD: pecl.port.mk,v 1.4 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: pecl.port.mk,v 1.5 2015/11/14 14:55:47 sthen Exp $
 # PHP PECL module
 
 MODULES +=	lang/php
@@ -33,6 +33,7 @@ MODPHP_DO_PHPIZE ?= Yes
 .if !target(do-test) && ${NO_TEST:L:Mno}
 TEST_TARGET = test
 TEST_FLAGS =  NO_INTERACTION=1
+USE_GMAKE ?=  Yes
 .endif
 
 .if ${SHARED_ONLY:L} == "yes"
