@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.30 2015/11/14 08:30:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2015/11/14 08:41:17 ajacoutot Exp $
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @comment needs a homedir to store ssh keys for GitFS
 @newgroup _salt:722
-@newuser _salt:722:722:daemon:SaltStack Daemon:/var/salt:/sbin/nologin
-@extraunexec rm -rf ${SYSCONFDIR}/salt/{master.d,minion.d,minion_id,pki/*}
-@extraunexec rm -rf /var/cache/salt/*
-@extraunexec rm -rf /var/log/salt
+@newuser _salt:722:722:daemon:SaltStack Daemon:${LOCALSTATEDIR}/salt:/sbin/nologin
+@extraunexec rm -rf ${SYSCONFDIR}/salt/{master,minion}.d
+@extraunexec rm -f ${SYSCONFDIR}/salt/minion_id
+@extraunexec rm -rf ${SYSCONFDIR}/salt/pki
+@extraunexec rm -rf /var/cache/salt
+@extraunexec rm -rf /var/log/salt/*
 bin/salt
 bin/salt-api
 bin/salt-call
@@ -2123,10 +2125,10 @@ share/examples/salt/roster
 @mode 0700
 @owner _salt
 @group _salt
-@sample /var/salt/
+@sample ${LOCALSTATEDIR}/salt/
 @group
 @mode 0755
-@sample /var/log/salt
+@sample /var/log/salt/
 @mode
 @owner
 @rcscript ${RCDIR}/salt_master
