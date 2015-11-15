@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/14 12:03:02 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2015/11/15 09:41:08 benoit Exp $
 
 COMMENT =	non-blocking I/O as lambda calculus
 
-DISTNAME =	IO-Lambda-1.24
+DISTNAME =	IO-Lambda-1.25
 CATEGORIES =	devel
 
 # perl
