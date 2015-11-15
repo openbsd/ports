@@ -1,0 +1,5 @@
+rabbitmq-c is a C library that can be used to interface with AMQP
+brokers such as RabbitMQ. It also contains the commandline utilities
+`amqp-consume`, `amqp-declare-queue`, `amqp-delete-queue`, `amqp-get`
+and `amqp-publish`, which can be used in shell scripts to interface with
+AMQP brokers.

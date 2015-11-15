@@ -1,0 +1,11 @@
+--- tools/CMakeLists.txt.old	Mon Oct 12 16:36:27 2015
++++ tools/CMakeLists.txt	Mon Oct 12 16:36:35 2015
+@@ -63,7 +63,7 @@
+       string( REGEX REPLACE "^[.]" "" fileExt ${fileExt} )
+       install(
+         FILES ${file}
+-        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man${fileExt}
++        DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man${fileExt}
+         )
+     endforeach()
+ 

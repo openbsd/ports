@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/15 12:41:35 jca Exp $
+@bin bin/amqp-consume
+@bin bin/amqp-declare-queue
+@bin bin/amqp-delete-queue
+@bin bin/amqp-get
+@bin bin/amqp-publish
+include/amqp.h
+include/amqp_framing.h
+include/amqp_ssl_socket.h
+include/amqp_tcp_socket.h
+lib/librabbitmq.a
+@lib lib/librabbitmq.so.${LIBrabbitmq_VERSION}
+lib/pkgconfig/librabbitmq.pc
+@man man/man1/amqp-consume.1
+@man man/man1/amqp-declare-queue.1
+@man man/man1/amqp-delete-queue.1
+@man man/man1/amqp-get.1
+@man man/man1/amqp-publish.1
+@man man/man7/librabbitmq-tools.7

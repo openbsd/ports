@@ -1,0 +1,12 @@
+--- librabbitmq/amqp_tcp_socket.c.old	Sun Oct 11 23:13:38 2015
++++ librabbitmq/amqp_tcp_socket.c	Sun Oct 11 23:13:55 2015
+@@ -28,6 +28,9 @@
+ #include "amqp_private.h"
+ #include "amqp_tcp_socket.h"
+ 
++#include <sys/socket.h>
++#include <netinet/in.h>
++
+ #include <errno.h>
+ #ifndef _WIN32
+ # include <netinet/tcp.h>
