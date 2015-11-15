@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2015/09/29 10:53:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/11/15 08:40:42 rpointel Exp $
 
 COMMENT =		scalable, non-blocking web server
 
-MODPY_EGG_VERSION =	4.2.1
+MODPY_EGG_VERSION =	4.3
 DISTNAME =		tornado-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		www
 
@@ -17,7 +16,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODPY_PI =		Yes
 
 MODULES =		lang/python
-RUN_DEPENDS +=		devel/py-backports-ssl-match-hostname
+RUN_DEPENDS +=		devel/py-backports-ssl-match-hostname \
+			devel/py-singledispatch \
+			devel/py-backports-abc
 WANTLIB +=		pthread ${MODPY_WANTLIB}
 
 MODPY_SETUPTOOLS =	Yes

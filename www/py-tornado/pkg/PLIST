@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/09/08 15:24:58 edd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/11/15 08:40:42 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/tornado/
 lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,6 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tornado/__init__.py
 lib/python${MODPY_VERSION}/site-packages/tornado/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/tornado/_locale_data.py
+lib/python${MODPY_VERSION}/site-packages/tornado/_locale_data.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/auth.py
 lib/python${MODPY_VERSION}/site-packages/tornado/auth.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/autoreload.py
@@ -145,6 +147,9 @@ lib/python${MODPY_VERSION}/site-packages/tornado/test/static/
 lib/python${MODPY_VERSION}/site-packages/tornado/test/static/dir/
 lib/python${MODPY_VERSION}/site-packages/tornado/test/static/dir/index.html
 lib/python${MODPY_VERSION}/site-packages/tornado/test/static/robots.txt
+lib/python${MODPY_VERSION}/site-packages/tornado/test/static/sample.xml
+lib/python${MODPY_VERSION}/site-packages/tornado/test/static/sample.xml.bz2
+lib/python${MODPY_VERSION}/site-packages/tornado/test/static/sample.xml.gz
 lib/python${MODPY_VERSION}/site-packages/tornado/test/static_foo.txt
 lib/python${MODPY_VERSION}/site-packages/tornado/test/tcpclient_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/tcpclient_test.pyc
