@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_signature_y,v 1.1 2015/11/15 11:55:59 jca Exp $
+
+Bison 3 fixes.
+
+--- src/signature.y.orig	Sat Nov  7 16:02:12 2015
++++ src/signature.y	Sat Nov  7 16:02:41 2015
+@@ -56,7 +56,7 @@ static void yyprint (/*FILE *p_file, int p_type, YYSTY
+ 
+ %}
+ 
+-%pure_parser 
++%define api.pure
+ 
+ /* CONVENTIONS:  Reserved words are in ALL CAPS (plus markerSym)
+ 		Characters appearing in the grammar are reserved:

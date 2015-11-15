@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/22 12:38:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2015/11/15 11:55:59 jca Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		AACS support library for Blu-ray playback
 
 V =			0.8.1
+REVISION =		0
 DISTNAME =		libaacs-${V}
 
 CATEGORIES =		multimedia
@@ -25,7 +26,7 @@ WANTLIB +=		c gcrypt gpg-error
 MODULES =		devel/gettext
 
 LIB_DEPENDS =		security/libgcrypt
-BUILD_DEPENDS =		devel/bison>=2.3p2 \
+BUILD_DEPENDS =		devel/bison \
 			devel/flex
 
 SEPARATE_BUILD =	Yes

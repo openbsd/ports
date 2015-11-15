@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mtgrammar_y,v 1.1 2015/11/15 11:55:59 jca Exp $
+
+Bison 3 fixes.
+
+--- src/mtgrammar.y.orig	Sat Nov  7 16:02:08 2015
++++ src/mtgrammar.y	Sat Nov  7 16:02:55 2015
+@@ -57,7 +57,7 @@ static void yyprint (/*FILE *p_file, int p_type, YYSTY
+ 
+ %}
+ 
+-%pure_parser 
++%define api.pure
+ 
+ %union {
+   mttok tok; 

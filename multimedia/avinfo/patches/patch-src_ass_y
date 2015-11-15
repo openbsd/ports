@@ -1,6 +1,32 @@
-$OpenBSD: patch-src_ass_y,v 1.1.1.1 2010/09/01 10:26:04 kevlo Exp $
---- src/ass.y.orig	Tue Aug 31 17:33:31 2010
-+++ src/ass.y	Tue Aug 31 17:34:29 2010
+$OpenBSD: patch-src_ass_y,v 1.2 2015/11/15 11:55:59 jca Exp $
+
+- Bison 3 fixes.
+- logic fix for a==b==c case.
+
+--- src/ass.y.orig	Fri Apr 22 07:31:53 2005
++++ src/ass.y	Mon Nov  9 00:11:33 2015
+@@ -25,17 +25,17 @@
+ #include "ass.h"
+ #include "ass.tab.h"
+ 
+-#define 		YYLEX_PARAM 	lexer_ctl
+-#define 		YYPARSE_PARAM 	lexer_ctl
+ #define 		line 			(((lexerctl_t*)lexer_ctl)->line)
+ #define 		pos 			(((lexerctl_t*)lexer_ctl)->c)
+ 
+-int yyerror( const char *s );
++int yyerror( void *lexer_ctl, const char *s );
+ int yylex (YYSTYPE *lval, void* lexer_ctl);
+ 
+ %}
+ 
+-%pure_parser
++%define api.pure
++%parse-param { void *lexer_ctl }
++%lex-param { void *lexer_ctl }
+ 
+ %union{
+ 	int 	letter;
 @@ -224,7 +224,7 @@ var_t Op(var_t var1, var_t var2, int op_type){
  				break;
  		case '/':res.number=var2.number?var1.number/var2.number:1;
@@ -10,3 +36,21 @@ $OpenBSD: patch-src_ass_y,v 1.1.1.1 2010/09/01 10:26:04 kevlo Exp $
  					else res.number=(var1.number!=var2.number);
  				break;
  		case '=':if(var1.type==t_STRING && var2.type==t_STRING) res.number=!STRCMP(var1.string,var2.string);
+@@ -258,7 +258,7 @@ var_t Op(var_t var1, var_t var2, int op_type){
+ 	return res;
+ }
+ 
+-int yyerror (const char *s) /* вызывается yyparse в случае ошибки */
++int yyerror (void *lexer_ctl, const char *s) /* вызывается yyparse в случае ошибки */
+ {
+ 	printf ("\n(error in template)\n");
+ 	return 1;
+@@ -308,7 +308,7 @@ int iskeyword(char* string){
+ #define skip_digit(a,b) {while(isdigit(a[(b)])) (b)++;}
+ #define skip_alpha(a,b) {while(isalpha(a[(b)])) (b)++;}
+ 
+-int yylex (YYSTYPE *yylval, void* lexer_ctl){
++int yylex (YYSTYPE *yylval, void *lexer_ctl){
+ 	char *buffer=NULL;
+ 	char *string=NULL;
+ 	char *string_pointer;

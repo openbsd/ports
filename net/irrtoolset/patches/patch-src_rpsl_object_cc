@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_rpsl_object_cc,v 1.1 2015/11/15 11:55:59 jca Exp $
+
+Bison 3 fixes from
+  https://github.com/irrtoolset/irrtoolset/commit/dba1df96d6eaaff35de912b7d0df2812bcdb412a
+and
+  https://github.com/irrtoolset/irrtoolset/commit/26faa5b833ab1aceb568ee8e6c94577f0d994073
+
+--- src/rpsl/object.cc.orig	Sat Nov  7 19:14:13 2015
++++ src/rpsl/object.cc	Sat Nov  7 19:14:50 2015
+@@ -57,7 +57,7 @@
+ 
+ using namespace std;
+ 
+-extern int rpslparse(void *);
++extern int rpslparse(void);
+ extern void rpsl_scan_object(Object *);
+ 
+ Object::~Object() {
+@@ -128,7 +128,7 @@ bool Object::read(Buffer &buf, istream &in) {
+ 
+ void Object::parse() {
+    rpsl_scan_object(this);
+-   rpslparse(this);
++   rpslparse();
+    validate();
+ 
+    if (type) {

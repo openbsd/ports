@@ -1,0 +1,15 @@
+$OpenBSD: patch-gst_parse_grammar_y,v 1.1 2015/11/15 11:55:59 jca Exp $
+--- gst/parse/grammar.y.orig	Sat Nov  7 22:14:02 2015
++++ gst/parse/grammar.y	Sat Nov  7 22:17:53 2015
+@@ -648,9 +648,10 @@ static int yyerror (void *scanner, graph_t *graph, con
+ %right '.'
+ %left '!' '='
+ 
++%define api.pure
+ %parse-param { void *scanner }
+ %parse-param { graph_t *graph }
+-%pure-parser
++%lex-param { void *scanner }
+ 
+ %start graph
+ %%
