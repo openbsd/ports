@@ -1,15 +1,25 @@
-$OpenBSD: patch-gst_parse_grammar_y,v 1.1 2015/11/15 11:55:59 jca Exp $
---- gst/parse/grammar.y.orig	Sat Nov  7 22:14:02 2015
-+++ gst/parse/grammar.y	Sat Nov  7 22:17:53 2015
-@@ -648,9 +648,10 @@ static int yyerror (void *scanner, graph_t *graph, con
+$OpenBSD: patch-gst_parse_grammar_y,v 1.2 2015/11/15 12:14:27 ajacoutot Exp $
+
+From 60516f4798894f958fc53b470e1283318d0f8706 Mon Sep 17 00:00:00 2001
+From: Kerrick Staley <kerrick@kerrickstaley.com>
+Date: Tue, 20 Aug 2013 23:59:29 -0700
+Subject: parse: make grammar.y work with Bison 3
+
+--- gst/parse/grammar.y.orig	Fri Dec 30 02:14:35 2011
++++ gst/parse/grammar.y	Sun Nov 15 13:08:49 2015
+@@ -26,7 +26,6 @@
+  */
+ 
+ #define YYERROR_VERBOSE 1
+-#define YYLEX_PARAM scanner
+ 
+ #define YYENABLE_NLS 0
+ 
+@@ -648,6 +647,7 @@ static int yyerror (void *scanner, graph_t *graph, con
  %right '.'
  %left '!' '='
  
-+%define api.pure
++%lex-param { void *scanner }
  %parse-param { void *scanner }
  %parse-param { graph_t *graph }
--%pure-parser
-+%lex-param { void *scanner }
- 
- %start graph
- %%
+ %pure-parser
