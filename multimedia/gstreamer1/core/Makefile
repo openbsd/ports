@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2015/09/27 08:21:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2015/11/15 12:15:21 ajacoutot Exp $
 
 COMMENT=		framework for streaming media
 
 DISTNAME=		gstreamer-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-${V}
+REVISION=		0
 
 SHARED_LIBS +=  gstreamer-1.0        2.0      # 600.0
 SHARED_LIBS +=  gstbase-1.0          2.0      # 600.0
@@ -27,12 +28,5 @@ CONFIGURE_ENV +=	FLEX_PATH=${LOCALBASE}/bin/gflex
 # tests/check/gst (which is not built) but better safe than sorry
 CONFIGURE_ENV +=	ac_cv_lib_gmp___gmpz_init_set_d=no \
 			ac_cv_lib_gsl_gsl_rng_uniform_int=no
-
-# XXX our bison(1) is in fact a dinosaur
-# see also patch-gst_parse_Makefile_in
-post-extract:
-	perl -pi -e 's,bison_min_version=2.4,bison_min_version=2.3,,' \
-		${WRKSRC}/common/m4/gst-parser.m4
-	cp ${FILESDIR}/grammar.tab.{c,h} ${WRKSRC}/gst/parse
 
 .include <bsd.port.mk>
