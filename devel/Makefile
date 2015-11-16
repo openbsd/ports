@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1411 2015/11/16 10:30:16 edd Exp $
+# $OpenBSD: Makefile,v 1.1412 2015/11/16 20:57:17 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1317,6 +1317,7 @@
      SUBDIR += py-testtools
      SUBDIR += py-texscythe
      SUBDIR += py-tpg
+     SUBDIR += py-traitlets
      SUBDIR += py-turbocheetah
      SUBDIR += py-turbokid
      SUBDIR += py-twisted
