@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/04/16 13:03:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/11/16 13:39:57 ajacoutot Exp $
 
 COMMENT=	wrapper for LaTeX and friends
 
-MODPY_EGG_VERSION=	1.1
+MODPY_EGG_VERSION=	1.3
 DISTNAME=	rubber-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	textproc print
 
@@ -27,5 +26,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 do-install:
 	cd ${WRKSRC} && \
 		${MODPY_BIN} setup.py install --root ${WRKINST}
+
+do-test:
+	cd ${WRKSRC}/tests && /bin/sh ./run.sh
 
 .include <bsd.port.mk>
