@@ -1,0 +1,10 @@
+$OpenBSD: patch-etc_icinga2_constants_conf_cmake,v 1.1 2015/11/16 12:19:12 sthen Exp $
+--- etc/icinga2/constants.conf.cmake.orig	Mon Nov 16 11:46:58 2015
++++ etc/icinga2/constants.conf.cmake	Mon Nov 16 11:49:15 2015
+@@ -26,3 +26,6 @@ const ZoneName = NodeName
+ 
+ /* Secret key for remote node tickets */
+ const TicketSalt = ""
++
++/* Location for PID file and UNIX sockets for LiveStatus and the command listener */
++const RunDir = "/var/www/var/run"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/11/14 22:56:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2015/11/16 12:19:12 sthen Exp $
 
 BROKEN-hppa =	needs 64-bit atomic ops; __sync_add_and_fetch_4
 SHARED_ONLY =	Yes
@@ -9,7 +9,7 @@ COMMENT-pgsql =	PostgreSQL support for icinga2
 
 V =		2.3.11
 REVISION =	1
-REVISION-main =	4
+REVISION-main =	5
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
