@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: icinga2.rc,v 1.9 2015/11/16 12:51:42 sthen Exp $
+# $OpenBSD: icinga2.rc,v 1.10 2015/11/16 20:29:55 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/icinga2 daemon -d"
 daemon_user="_icinga"
 
 . /etc/rc.d/rc.subr
 
-pexp="${daemon}${daemon_flags:+ ${daemon_flags}}.*"
+pexp="${TRUEPREFIX}/lib/icinga2/sbin/icinga2 daemon.*"
 
 rc_pre() {
 	install -d -o ${daemon_user} -g _icingaweb2 /var/www/var/run/icinga2{,/cmd}

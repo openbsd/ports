@@ -1,13 +1,17 @@
-Icinga monitors network resources such as servers, routers, switches,
-applications and services and notifies administrators or responsible
-persons.
+Icinga 2 is an open source monitoring system which checks the
+availability of your network resources, notifies users of outages,
+and generates performance data for reporting.
 
-Icinga 2 is a parallel development branch to Icinga 1. Written from
-scratch, it builds on the success of Icinga 1 and deals with shortcomings
-inherited from Nagios as a fork.
+Scalable and extensible, Icinga 2 can monitor large, complex
+environments across multiple locations.
 
-* Easy to install with soft link activation of functions and packages
-* Multithreaded and very fast: Capable of thousands of checks per second
-* Intuitive to configure, using new object-based, template-driven format
-* Easy to extend with native support for Livestatus and Graphite
-* Cluster-enabled for distributed monitoring out of the box
+* object-based, rule-driven configuration format, offering user-friendly
+features such as "apply" rules for dynamic object generation.
+
+* native support for Graphite, transmitting performance data directly
+via TCP socket connection.
+
+* REST API allowing access to objects and attributes and creation of
+objects at runtime (without restart).
+
+* clustering support for high-availability and distributed monitoring.

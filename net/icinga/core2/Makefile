@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/11/16 12:51:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2015/11/16 20:29:55 sthen Exp $
 
 BROKEN-hppa =	needs 64-bit atomic ops; __sync_add_and_fetch_4
 SHARED_ONLY =	Yes
@@ -7,9 +7,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.3.11
-REVISION =	1
-REVISION-main =	6
+V =		2.4.0
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -43,7 +41,7 @@ BUILD_DEPENDS =		devel/bison \
 
 MULTI_PACKAGES =	-main -mysql -pgsql
 
-WANTLIB-main +=		${WANTLIB} c
+WANTLIB-main +=		${WANTLIB} c edit termcap
 LIB_DEPENDS-main =	devel/boost \
 			devel/libexecinfo \
 			devel/libyajl

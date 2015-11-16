@@ -1,11 +1,11 @@
-$OpenBSD: README-main,v 1.10 2015/07/07 14:44:59 sthen Exp $
+$OpenBSD: README-main,v 1.11 2015/11/16 20:29:55 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-Notes about Icinga2
-===================
+Upgrading from Icinga 1.x
+=========================
 
 Icinga2 is not a drop-in replacement for Icinga (or Nagios)!
 
@@ -14,14 +14,17 @@ Read the "Migration from Icinga 1.x" and the "Differences between Icinga
 
 A migration script exists (see the "icinga2-migration" package), but it
 has several limitations (see the Known Caveats section in the information
-at https://github.com/Icinga/icinga2-migration).
+at https://github.com/Icinga/icinga2-migration). In most cases it would
+be better to write a new configuration based on your existing one, rather
+than try to migrate via the script.
 
 
 Getting Started
 ===============
 
-The main documentation for Icinga2 is provided in markdown format.
-See ${LOCALBASE}/share/doc/icinga2/markdown or at
+The following sections only consider details relating to use of Icinga 2
+on OpenBSD. Consult the main documentation for Icinga2 which is available
+in ${LOCALBASE}/share/doc/icinga2/markdown or online at
 http://docs.icinga.org/icinga2/latest/doc.
 
 The included sample configuration carries out some simple checks
@@ -39,10 +42,15 @@ Enable icinga2 at boot and start it as usual:
    # rcctl enable icinga2
    # rcctl start icinga2
 
-Web User-Interfaces
-===================
+Web User Interface
+==================
 
-A new web-based user interface for Icinga2 is in beta, instructions will
-be added to this file in the future. Until its release you can use the
-classic or the API based user interfaces, please consult the upstream
-documentation and the README for icinga 1.x.
+The optional Icinga Web 2 user interface can be installed separately,
+
+   # pkg_add icingaweb2
+
+Consult the upstream documentation and the separate pkg-readme for
+Icinga Web 2.
+
+It is also possible to use Icinga 2 with the legacy CGI interface,
+or with Icinga Web 1, however this has not been tested by the maintainer.

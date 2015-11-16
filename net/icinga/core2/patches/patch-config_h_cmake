@@ -1,9 +1,21 @@
-$OpenBSD: patch-config_h_cmake,v 1.4 2015/05/12 09:37:03 sthen Exp $
---- config.h.cmake.orig	Mon Apr 20 10:44:20 2015
-+++ config.h.cmake	Mon Apr 20 16:11:52 2015
-@@ -2,18 +2,17 @@
+$OpenBSD: patch-config_h_cmake,v 1.5 2015/11/16 20:29:55 sthen Exp $
+
+- use cmake's "find_package(Backtrace)" from FindBacktrace.cmake.
+this covers the case of BSDs where the symbols are in libexecinfo.so
+not in libc.
+
+- compiled-in ICINGA_SYSCONFDIR needs to be the standard one (/etc),
+but cmake should install files to an examples directory in our staging
+dir (${PREFIX}/share/examples/icinga2), package tools copy them under
+/etc at install time.
+
+--- config.h.cmake.orig	Mon Nov 16 09:57:03 2015
++++ config.h.cmake	Mon Nov 16 17:04:21 2015
+@@ -1,12 +1,11 @@
+ #ifndef CONFIG_H
  #define CONFIG_H
  
++#cmakedefine01 Backtrace_FOUND
  #cmakedefine HAVE_COUNTER_MACRO
 -#cmakedefine HAVE_BACKTRACE_SYMBOLS
  #cmakedefine HAVE_PIPE2
@@ -12,8 +24,8 @@ $OpenBSD: patch-config_h_cmake,v 1.4 2015/05/12 09:37:03 sthen Exp $
 -#cmakedefine HAVE_LIBEXECINFO
  #cmakedefine HAVE_CXXABI_H
  #cmakedefine HAVE_NICE
-+#cmakedefine01 Backtrace_FOUND
- 
+ #cmakedefine HAVE_EDITLINE
+@@ -14,7 +13,7 @@
  #cmakedefine ICINGA2_UNITY_BUILD
  
  #define ICINGA_PREFIX "${CMAKE_INSTALL_PREFIX}"
