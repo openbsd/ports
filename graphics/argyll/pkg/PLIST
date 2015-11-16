@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/09/20 07:36:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/11/16 14:31:29 ajacoutot Exp $
 @conflict argyll-*
 @bin bin/applycal
 @bin bin/average
@@ -105,6 +105,8 @@ share/color/argyll/ref/SMPTE_RP145_NTSC.icm
 share/color/argyll/ref/SOtele.sp
 share/color/argyll/ref/SpyderChecker.cht
 share/color/argyll/ref/SpyderChecker.cie
+share/color/argyll/ref/SpyderChecker24.cht
+share/color/argyll/ref/SpyderChecker24.cie
 share/color/argyll/ref/Trulux.sp
 share/color/argyll/ref/TruluxPlus.sp
 share/color/argyll/ref/ccxx.ti1
@@ -218,6 +220,7 @@ share/doc/argyllcms/Spyder3_HP_LP2475w.ccmx
 share/doc/argyllcms/Spyder3_NEC2690WUXi2.ccmx
 share/doc/argyllcms/Spyder3_NEC_PA301W.ccmx
 share/doc/argyllcms/SpyderChecker.jpg
+share/doc/argyllcms/SpyderChecker24.jpg
 share/doc/argyllcms/VideoEOTFs.html
 share/doc/argyllcms/WideGamutColmters.html
 share/doc/argyllcms/YellowGreen.jpg
