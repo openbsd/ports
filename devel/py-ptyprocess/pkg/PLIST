@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/16 21:06:18 edd Exp $
+lib/python${MODPY_VERSION}/site-packages/ptyprocess/
+lib/python${MODPY_VERSION}/site-packages/ptyprocess-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/ptyprocess/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ptyprocess/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ptyprocess/_fork_pty.py
+lib/python${MODPY_VERSION}/site-packages/ptyprocess/_fork_pty.pyc
+lib/python${MODPY_VERSION}/site-packages/ptyprocess/ptyprocess.py
+lib/python${MODPY_VERSION}/site-packages/ptyprocess/ptyprocess.pyc
+lib/python${MODPY_VERSION}/site-packages/ptyprocess/util.py
+lib/python${MODPY_VERSION}/site-packages/ptyprocess/util.pyc
