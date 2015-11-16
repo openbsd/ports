@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/16 21:14:13 edd Exp $
+lib/python${MODPY_VERSION}/site-packages/terminado/
+lib/python${MODPY_VERSION}/site-packages/terminado-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/terminado/__init__.py
+lib/python${MODPY_VERSION}/site-packages/terminado/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/terminado/_static/
+lib/python${MODPY_VERSION}/site-packages/terminado/_static/terminado.js
+lib/python${MODPY_VERSION}/site-packages/terminado/management.py
+lib/python${MODPY_VERSION}/site-packages/terminado/management.pyc
+lib/python${MODPY_VERSION}/site-packages/terminado/tests/
+lib/python${MODPY_VERSION}/site-packages/terminado/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/terminado/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/terminado/tests/basic_test.py
+lib/python${MODPY_VERSION}/site-packages/terminado/tests/basic_test.pyc
+lib/python${MODPY_VERSION}/site-packages/terminado/uimod_embed.js
+lib/python${MODPY_VERSION}/site-packages/terminado/uimodule.py
+lib/python${MODPY_VERSION}/site-packages/terminado/uimodule.pyc
+lib/python${MODPY_VERSION}/site-packages/terminado/websocket.py
+lib/python${MODPY_VERSION}/site-packages/terminado/websocket.pyc
