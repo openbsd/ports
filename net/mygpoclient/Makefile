@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/11/16 13:52:08 ajacoutot Exp $
 
 COMMENT=		gpodder.net client library
 
-MODPY_EGG_VERSION=	1.6
+MODPY_EGG_VERSION=	1.7
 DISTNAME=		mygpoclient-${MODPY_EGG_VERSION}
 CATEGORIES=		net devel
 
