@@ -1,11 +1,12 @@
-$OpenBSD: patch-scripts_version_sh,v 1.1 2009/12/23 22:41:36 benoit Exp $
---- scripts/version.sh.orig	Sun Sep 20 12:06:00 2009
-+++ scripts/version.sh	Mon Dec 21 13:59:18 2009
-@@ -9,6 +9,6 @@
-     test "$svn_rev" != "exported" && echo "r$svn_rev"
- }
+$OpenBSD: patch-scripts_version_sh,v 1.2 2015/11/16 10:26:23 benoit Exp $
+--- scripts/version.sh.orig	Wed May 21 15:21:43 2014
++++ scripts/version.sh	Fri Sep  5 14:46:26 2014
+@@ -29,6 +29,8 @@
+     VERSION="$(git_version || date -u +"%Y-%m-%d" || echo "$VERSION-dev")"
+ fi
  
--version="$(svn_version || date -u +"%Y-%m-%d")"
-+version=${V}
- test -n "$version" && echo "$version" || echo "unknown"
- 
++VERSION=${V}
++
+ if [ "$VERSION" != "$(cat "$CACHE_FILE" 2> /dev/null)" ]; then
+     sed 's,0\.0\.0,'"$VERSION"',' < "$TEMPLATE_FILE" > "$HEADER_FILE"
+     echo "$VERSION" > "$CACHE_FILE" 2> /dev/null

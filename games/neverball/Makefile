@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2015/08/20 18:03:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2015/11/16 10:26:23 benoit Exp $
 
 COMMENT-main =	tilt the floor to roll a ball through an obstacle course
 COMMENT-data =	data for Neverball/Neverputt
 BROKEN-hppa =	SIGILL on data/ball/snowglobe/snowglobe-inner.so
 
-V =		1.5.4
+V =		1.6.0
 DISTNAME =	neverball-$V
 PKGNAME-main =	neverball-$V
 PKGNAME-data =	neverball-data-$V
 EPOCH =		0
-REVISION-main = 3
-REVISION-data =	0
 
 CATEGORIES =	games x11
 
@@ -23,8 +21,8 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	GL SDL X11 c m pthread ogg vorbis vorbisfile \
-		jpeg png SDL_ttf physfs
+WANTLIB-main =	GL SDL2 X11 c m pthread z ogg vorbis vorbisfile \
+		jpeg png SDL2_ttf physfs
 
 MASTER_SITES =	${HOMEPAGE}
 
@@ -33,7 +31,7 @@ LIB_DEPENDS-main =	${MODGETTEXT_LIB_DEPENDS} \
 			audio/libvorbis \
 			graphics/jpeg \
 			graphics/png \
-			devel/sdl-ttf \
+			devel/sdl2-ttf \
 			devel/physfs
 RUN_DEPENDS-data =
 LIB_DEPENDS-data =
@@ -46,7 +44,7 @@ MODULES =	devel/gettext
 USE_GMAKE =	Yes
 NO_TEST =	Yes
 
-MAKE_FLAGS =	CPPFLAGS="-I${X11BASE}/include" \
+MAKE_FLAGS =	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread -logg -lvorbis" \
 		INTL_LIBS="-lintl -liconv"
 
@@ -63,7 +61,7 @@ do-install:
 	cd ${WRKSRC}/data && find . -type f ! -perm 644 -exec chmod 644 {} \;
 	cd ${WRKSRC} && find data -type f | pax -rw ${PREFIX}/share/neverball 
 	cd ${WRKSRC} && find locale -type f | pax -rw ${PREFIX}/share
-	cd ${WRKSRC} && ${INSTALL_DATA} COPYING README doc/AUTHORS doc/MANUAL \
-		${PREFIX}/share/doc/neverball
+	cd ${WRKSRC} && ${INSTALL_DATA} LICENSE.md README.md doc/authors.txt \
+		doc/manual.txt ${PREFIX}/share/doc/neverball
 
 .include <bsd.port.mk>
