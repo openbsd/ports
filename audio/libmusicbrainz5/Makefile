@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2015/07/18 14:33:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/16 14:36:07 ajacoutot Exp $
+
+PORTROACH=		limit:^5
 
 COMMENT=		library for audio metadata lookup (v5)
 
