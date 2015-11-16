@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/04 09:51:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/16 18:02:22 sthen Exp $
 
 COMMENT=	enhanced HTTPS support for httplib and urllib2
 
 MODPY_EGG_VERSION=	0.4.0
-MODPY_PI_DIR=	n/ndg-httpsclient#	should python.port.mk handle s/-/_/?
+MODPY_PI_DIR=	n/ndg-httpsclient
 DISTNAME=	ndg_httpsclient-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}ndg-httpsclient-${MODPY_EGG_VERSION}
 
