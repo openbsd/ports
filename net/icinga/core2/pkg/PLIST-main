@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2015/10/21 09:34:03 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2015/11/16 12:51:42 sthen Exp $
 @newgroup _icinga:667
+@newgroup _icingaweb2:762
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/icinga2/etc*
 @extraunexec rm -rf ${LOCALSTATEDIR}/lib/icinga2/*
