@@ -1,0 +1,75 @@
+$OpenBSD: README,v 1.1 2015/11/16 20:30:34 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Web User Interface
+==================
+
+The main Icinga 2 program should be configured first. Several features
+are required for use with Icinga Web 2: either an "ido" database module
+or "livestatus", and also "command". Consult Icinga documentation
+about using "icinga2 feature enable" to do this, for configuration
+details, database schema, etc.
+
+The majority of Icinga Web 2 configuration is web-based and simple,
+but a few things will need to be setup first, in particular to cope
+with the use of a chroot jail for OpenBSD webservers and PHP.
+
+OpenBSD's PHP packages use the Suhosin extension. Permit zend.view://
+inclusions by adding the following to ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini:
+
+   suhosin.executor.include.whitelist = zend.view
+
+For users of php-fpm, you may add this to ${SYSCONFDIR}/php-fpm.conf:
+
+   [icingaweb2]
+   user = _icingaweb2
+   group = _icingaweb2
+   listen = ${PREFIX}/run/php-fpm-icingaweb2.sock
+   listen.owner = www
+   listen.group = www
+   listen.mode = 0660
+   pm = dynamic
+   pm.max_children = 20
+   pm.start_servers = 4
+   pm.min_spare_servers = 2
+   pm.max_spare_servers = 5
+   chroot = /var/www
+   env[TMP] = /icinga-web2/tmp
+   env[TMPDIR] = /icinga-web2/tmp
+
+(If instead of php-fpm you use Apache with mod_php, you will need to
+add the userid running PHP scripts to the _icingaweb2 group).
+
+Your webserver will need to be configured to pass requests across
+to icingaweb2's front controller. An example for nginx (remember to
+"rcctl reload nginx" after adding), using the above php-fpm section:
+
+   location ~ ^/icingaweb2/index\.php(.*)$ {
+       fastcgi_pass   unix:run/php-fpm-icingaweb2.sock;
+       fastcgi_index index.php;
+       include fastcgi_params;
+       fastcgi_param SCRIPT_FILENAME /icinga-web2/public/index.php;
+       fastcgi_param ICINGAWEB_CONFIGDIR /etc/icingaweb2;
+       fastcgi_param REMOTE_USER $remote_user;
+   }
+
+   location ~ ^/icingaweb2(.+)? {
+       alias /var/www/icinga-web2/public;
+       index index.php;
+       try_files $1 $uri $uri/ /icingaweb2/index.php$is_args$args;
+   }
+
+Create a helper symlink (/icinga-web2 -> ${PREFIX}/www/icinga-web2) so that
+icingacli can locate its modules from outside of the chroot jail, and use
+icingacli to create the config directory and a token to allow setup:
+
+   # ln -s /var/www/icinga-web2 /icinga-web2
+   # ${PREFIX}/icinga-web2/bin/icingacli setup config directory --group _icingaweb2;
+   # ${PREFIX}/icinga-web2/bin/icingacli setup token create
+
+Open the web interface http://localhost/icingaweb2/. Paste in the token
+that was displayed on-screen in the above step and proceed to the web-based
+part of the configuration.

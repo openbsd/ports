@@ -1,0 +1,16 @@
+$OpenBSD: patch-library_Icinga_Application_Modules_Manager_php,v 1.1 2015/11/16 20:30:34 sthen Exp $
+
+Don't canonicalize /var/www/icinga-web2 as it undoes the work of the local
+patch to ApplicationBootstrap.php to strip the chroot path where necessary.
+
+--- library/Icinga/Application/Modules/Manager.php.orig	Mon Nov 16 14:42:35 2015
++++ library/Icinga/Application/Modules/Manager.php	Mon Nov 16 18:46:08 2015
+@@ -551,7 +551,7 @@ class Manager
+     {
+         $modulePaths = $availableDirs !== null ? $availableDirs : $this->modulePaths;
+         foreach ($modulePaths as $basedir) {
+-            $canonical = realpath($basedir);
++            $canonical = $basedir;
+             if ($canonical === false) {
+                 Logger::warning('Module path "%s" does not exist', $basedir);
+                 continue;

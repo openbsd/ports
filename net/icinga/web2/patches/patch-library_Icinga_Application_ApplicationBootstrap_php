@@ -1,0 +1,43 @@
+$OpenBSD: patch-library_Icinga_Application_ApplicationBootstrap_php,v 1.1 2015/11/16 20:30:34 sthen Exp $
+
+Apologies for the butchery...
+
+By default PHP run by a webserver on OpenBSD is chrooted, but as icingacli
+runs outside the chroot, some adjustments are needed: strip off the standard
+chroot prefix and use a path relative to the base to find the etc directory.
+
+This places the etc directory in /var/www/etc/icingaweb2.
+
+It still relies on a helper symlink (/icinga-web2 -> /var/www/icinga-web2)
+for 'icingacli module' to work correctly (it needs to both locate the modules
+directory, and create symlinks that are accessible from inside the jail).
+
+--- library/Icinga/Application/ApplicationBootstrap.php.orig	Mon Nov 16 14:42:35 2015
++++ library/Icinga/Application/ApplicationBootstrap.php	Mon Nov 16 18:46:08 2015
+@@ -130,6 +130,10 @@ abstract class ApplicationBootstrap
+         if ($baseDir === null) {
+             $baseDir = dirname($this->getBootstrapDirectory());
+         }
++        $trimmedBase = preg_replace('|^/var/www|','',$baseDir);
++        if (realpath($trimmedBase) === realpath($baseDir)) {
++            $baseDir = $trimmedBase;
++        }
+         $this->baseDir = $baseDir;
+         $this->appDir = $baseDir . '/application';
+         $this->vendorDir = $baseDir . '/library/vendor';
+@@ -143,10 +147,14 @@ abstract class ApplicationBootstrap
+             } else {
+                 $configDir = Platform::isWindows()
+                     ? $baseDir . '/config'
+-                    : '/etc/icingaweb2';
++                    : dirname($baseDir) . '/etc/icingaweb2';
+             }
+         }
+         $canonical = realpath($configDir);
++        $trimmedCanonical = preg_replace('|^/var/www|','',$canonical);
++        if (realpath($trimmedCanonical) === realpath($canonical)) {
++            $canonical = $trimmedCanonical;
++        }
+         $this->configDir = $canonical ? $canonical : $configDir;
+ 
+         set_include_path(

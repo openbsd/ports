@@ -1,0 +1,32 @@
+$OpenBSD: patch-modules_setup_application_views_scripts_form_setup-welcome_phtml,v 1.1 2015/11/16 20:30:34 sthen Exp $
+
+Minimal patches to avoid showing confusing path to users in the welcome
+screen (PHP is normally run chroot'ed on OpenBSD), and use group "_icingaweb2"
+as per OpenBSD standard naming for groups from packages.
+
+--- modules/setup/application/views/scripts/form/setup-welcome.phtml.orig	Tue Nov 10 17:48:40 2015
++++ modules/setup/application/views/scripts/form/setup-welcome.phtml	Tue Nov 10 18:00:38 2015
+@@ -8,7 +8,7 @@ use Icinga\Web\Wizard;
+ $phpUser = Platform::getPhpUser();
+ $configDir = Icinga::app()->getConfigDir();
+ $setupTokenPath = rtrim($configDir, '/') . '/setup.token';
+-$cliPath = realpath(Icinga::app()->getApplicationDir() . '/../bin/icingacli');
++$cliPath = '/var/www/icinga-web2/bin/icingacli';
+ 
+ $groupadd = null;
+ $usermod = null;
+@@ -90,12 +90,12 @@ if (! (false === ($distro = Platform::getLinuxDistro(1
+       <?php } ?>
+       <p><?= $this->translate('If you\'ve got the IcingaCLI installed you can do the following:'); ?></p>
+       <div class="code">
+-        <span><?= $cliPath ? $cliPath : 'icingacli'; ?> setup config directory --group icingaweb2<?= $configDir !== '/etc/icingaweb2' ? ' --config ' . $configDir : ''; ?>;</span>
++        <span><?= $cliPath ? $cliPath : 'icingacli'; ?> setup config directory --group _icingaweb2<?= $configDir !== '/etc/icingaweb2' ? ' --config ' . $configDir : ''; ?>;</span>
+         <span><?= $cliPath ? $cliPath : 'icingacli'; ?> setup token create;</span>
+       </div>
+       <p><?= $this->translate('In case the IcingaCLI is missing you can create the token manually:'); ?></p>
+       <div class="code">
+-        <span>su <?= $phpUser ?: $this->translate('<your-webserver-user>'); ?> -c "mkdir -m 2770 <?= dirname($setupTokenPath); ?>; chgrp icingaweb2 <?= dirname($setupTokenPath); ?>; head -c 12 /dev/urandom | base64 | tee <?= $setupTokenPath; ?>; chmod 0660 <?= $setupTokenPath; ?>;";</span>
++        <span>su <?= $phpUser ?: $this->translate('<your-webserver-user>'); ?> -c "mkdir -m 2770 /var/www/etc/icingaweb2; chgrp _icingaweb2 /var/www/etc/icingaweb2; ?>; head -c 12 /dev/urandom | base64 | tee <?= $setupTokenPath; ?>; chmod 0660 <?= $setupTokenPath; ?>;";</span>
+       </div>
+       <p><?= sprintf(
+         $this->translate('Please see the %s for an extensive description on how to access and use this wizard.'),
