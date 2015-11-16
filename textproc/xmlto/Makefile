@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2015/10/09 12:48:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/11/16 13:24:22 ajacoutot Exp $
+
+BROKEN-sparc=	Bus Error
 
 COMMENT=	front-end for converting XML files to various formats
 
-DISTNAME=	xmlto-0.0.26
+DISTNAME=	xmlto-0.0.27
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	textproc
-REVISION=	0
-BROKEN-sparc=	Bus Error
 
 HOMEPAGE=	https://fedorahosted.org/xmlto/
 
