@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.50 2015/09/10 07:10:04 ajacoutot Exp $
---- configure.orig	Mon Sep  7 21:58:01 2015
-+++ configure	Wed Sep  9 03:08:46 2015
+$OpenBSD: patch-configure,v 1.51 2015/11/16 06:36:55 ajacoutot Exp $
+--- configure.orig	Thu Nov 12 02:08:28 2015
++++ configure	Sun Nov 15 22:08:43 2015
 @@ -4307,7 +4307,7 @@ case $target_os in
      openbsd|bitrig)
          disable symver
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.50 2015/09/10 07:10:04 ajacoutot Exp $
  
  enable_weak_pic() {
      disabled pic && return
-@@ -5556,7 +5556,9 @@ check_ldflags -Wl,--warn-common
+@@ -5557,7 +5557,9 @@ check_ldflags -Wl,--warn-common
  check_ldflags -Wl,-rpath-link=libpostproc:libswresample:libswscale:libavfilter:libavdevice:libavformat:libavcodec:libavutil:libavresample
  enabled rpath && add_ldexeflags -Wl,-rpath,$libdir
  enabled rpath && add_ldlibflags -Wl,-rpath,$libdir
@@ -30,7 +30,7 @@ $OpenBSD: patch-configure,v 1.50 2015/09/10 07:10:04 ajacoutot Exp $
  
  # add some strip flags
  # -wN '..@*' is more selective than -x, but not available everywhere.
-@@ -5784,6 +5786,11 @@ if test $target_os = "haiku"; then
+@@ -5785,6 +5787,11 @@ if test $target_os = "haiku"; then
      disable posix_memalign
  fi
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-configure,v 1.50 2015/09/10 07:10:04 ajacoutot Exp $
  enabled_all dxva2 dxva2api_cobj CoTaskMemFree &&
      prepend ffmpeg_libs $($ldflags_filter "-lole32" "-luser32") &&
      enable dxva2_lib
-@@ -6216,8 +6223,8 @@ pkgconfig_generate(){
+@@ -6217,8 +6224,8 @@ pkgconfig_generate(){
      comment=$2
      version=$3
      libs=$4
@@ -53,7 +53,7 @@ $OpenBSD: patch-configure,v 1.50 2015/09/10 07:10:04 ajacoutot Exp $
      enabled ${name#lib} || return 0
      mkdir -p $name
      cat <<EOF > $name/$name${build_suffix}.pc
-@@ -6232,7 +6239,7 @@ Version: $version
+@@ -6233,7 +6240,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -62,7 +62,7 @@ $OpenBSD: patch-configure,v 1.50 2015/09/10 07:10:04 ajacoutot Exp $
  Libs.private: $(enabled shared && echo $libs)
  Cflags: -I\${includedir}
  EOF
-@@ -6256,12 +6263,12 @@ Cflags: -I\${includedir}
+@@ -6257,12 +6264,12 @@ Cflags: -I\${includedir}
  EOF
  }
  
@@ -74,7 +74,7 @@ $OpenBSD: patch-configure,v 1.50 2015/09/10 07:10:04 ajacoutot Exp $
 -pkgconfig_generate libpostproc   "FFmpeg postprocessing library"        "$LIBPOSTPROC_VERSION"   ""
 -pkgconfig_generate libavresample "Libav audio resampling library"       "$LIBAVRESAMPLE_VERSION" "$LIBM"
 -pkgconfig_generate libswscale    "FFmpeg image rescaling library"       "$LIBSWSCALE_VERSION"    "$LIBM"
--pkgconfig_generate libswresample "FFmpeg audio resampling library"      "$LIBSWRESAMPLE_VERSION" "$LIBM"
+-pkgconfig_generate libswresample "FFmpeg audio resampling library"      "$LIBSWRESAMPLE_VERSION" "$LIBM $LIBSOXR"
 +pkgconfig_generate libavutil     "FFmpeg utility library"               "$LIBAVUTIL_VERSION"     "$LIBavutil_EXTRALIBS"     "$LIBavutil_REQUIRES"     "$LIBavutil_LINKFLAGS"
 +pkgconfig_generate libavcodec    "FFmpeg codec library"                 "$LIBAVCODEC_VERSION"    "$LIBavcodec_EXTRALIBS"    "$LIBavcodec_REQUIRES"    "$LIBavcodec_LINKFLAGS"
 +pkgconfig_generate libavformat   "FFmpeg container format library"      "$LIBAVFORMAT_VERSION"   "$LIBavformat_EXTRALIBS"   "$LIBavformat_REQUIRES"   "$LIBavformat_LINKFLAGS"
