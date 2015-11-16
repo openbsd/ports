@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/09/02 16:10:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/16 21:00:00 sthen Exp $
 
 COMMENT =	lastPass command line interface tool
 
 GH_ACCOUNT =	lastpass
 GH_PROJECT =	lastpass-cli
-GH_TAGNAME =	v0.6.0
+GH_TAGNAME =	v0.7.0
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME:S/v//}
 CATEGORIES =	security
 
@@ -21,6 +21,7 @@ LIB_DEPENDS =	net/curl \
 
 USE_GMAKE =	yes
 
+NO_TEST =	Yes
 ALL_TARGET =	all doc-man
 
 do-install:
