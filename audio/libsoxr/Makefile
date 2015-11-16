@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/22 11:31:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/11/16 14:38:09 ajacoutot Exp $
 
 COMMENT=	fast and high quality sample-rate conversion (SoX Resampler)
 
-DISTNAME=	soxr-0.1.1-Source
+DISTNAME=	soxr-0.1.2-Source
 PKGNAME=	lib${DISTNAME:S/-Source//}
-REVISION=	1
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS=	soxr 1.2 soxr-lsr 3.4
