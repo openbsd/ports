@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/04/18 06:10:06 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/11/16 11:29:05 giovanni Exp $
 lib/python${MODPY_VERSION}/site-packages/authres/
 lib/python${MODPY_VERSION}/site-packages/authres-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/authres/__init__.py
@@ -13,6 +13,10 @@ lib/python${MODPY_VERSION}/site-packages/authres/dkim_b.py
 lib/python${MODPY_VERSION}/site-packages/authres/dkim_b.pyc
 lib/python${MODPY_VERSION}/site-packages/authres/dmarc.py
 lib/python${MODPY_VERSION}/site-packages/authres/dmarc.pyc
+lib/python${MODPY_VERSION}/site-packages/authres/rrvs.py
+lib/python${MODPY_VERSION}/site-packages/authres/rrvs.pyc
+lib/python${MODPY_VERSION}/site-packages/authres/smime.py
+lib/python${MODPY_VERSION}/site-packages/authres/smime.pyc
 lib/python${MODPY_VERSION}/site-packages/authres/tests
 lib/python${MODPY_VERSION}/site-packages/authres/vbr.py
 lib/python${MODPY_VERSION}/site-packages/authres/vbr.pyc

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/04/02 14:21:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/11/16 11:29:05 giovanni Exp $
 
 COMMENT =	module for RFC 5451 Authentication-Results Headers
 
-MODPY_EGG_VERSION = 0.602
+MODPY_EGG_VERSION = 0.800
 DISTNAME =	authres-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	mail
