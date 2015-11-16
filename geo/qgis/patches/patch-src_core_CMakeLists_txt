@@ -1,17 +1,10 @@
-$OpenBSD: patch-src_core_CMakeLists_txt,v 1.10 2015/10/31 15:29:44 landry Exp $
-chunk 1/3: dont call bison to generate the parser, and build the pregenerated file instead
-chunk 2: workaround $area expansion issue with gmake expanding to $$$$area
+$OpenBSD: patch-src_core_CMakeLists_txt,v 1.11 2015/11/16 10:22:59 landry Exp $
+
+chunk 1: workaround $area expansion issue with gmake expanding to $$$$area
+
 --- src/core/CMakeLists.txt.orig	Fri Oct 23 14:10:38 2015
-+++ src/core/CMakeLists.txt	Fri Oct 30 16:47:52 2015
-@@ -100,6 +100,7 @@ SET(QGIS_CORE_SRCS
-   qgsdistancearea.cpp
-   qgserror.cpp
-   qgsexpression.cpp
-+  qgsexpressionparser.cpp
-   qgsexpressioncontext.cpp
-   qgsexpression_texts.cpp
-   qgsexpressionfieldbuffer.cpp
-@@ -327,7 +328,7 @@ SET(QGIS_CORE_SRCS
++++ src/core/CMakeLists.txt	Mon Nov 16 09:27:43 2015
+@@ -327,7 +327,7 @@ SET(QGIS_CORE_SRCS
    geometry/qgswkbtypes.cpp
  )
  
@@ -20,16 +13,7 @@ chunk 2: workaround $area expansion issue with gmake expanding to $$$$area
  STRING(REPLACE "$" "$$" JSON_HELP_FILES "${JSON_HELP_FILES}")
  STRING(REPLACE "\(" "\\(" JSON_HELP_FILES "${JSON_HELP_FILES}")
  STRING(REPLACE "\)" "\\)" JSON_HELP_FILES "${JSON_HELP_FILES}")
-@@ -392,7 +393,7 @@ ENDIF (QT_MOBILITY_LOCATION_FOUND OR Qt5Positioning_FO
- 
- ADD_FLEX_FILES(QGIS_CORE_SRCS qgsexpressionlexer.ll)
- 
--ADD_BISON_FILES(QGIS_CORE_SRCS qgsexpressionparser.yy)
-+#ADD_BISON_FILES(QGIS_CORE_SRCS qgsexpressionparser.yy)
- 
- SET(QGIS_CORE_MOC_HDRS
- 
-@@ -864,9 +865,9 @@ ENDIF (QT_MOBILITY_LOCATION_FOUND)
+@@ -864,9 +864,9 @@ ENDIF (QT_MOBILITY_LOCATION_FOUND)
  TARGET_LINK_LIBRARIES(qgis_core
    ${QT_QTMAIN_LIBRARY}
    ${QT_QTXML_LIBRARY}

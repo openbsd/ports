@@ -1,38 +1,18 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.11 2015/10/31 15:29:44 landry Exp $
-chunk 1: dont look for bison, since >2.4 is required..
-chunk 2: http://hub.qgis.org/issues/3999
+$OpenBSD: patch-CMakeLists_txt,v 1.12 2015/11/16 10:22:59 landry Exp $
+chunk 1: http://hub.qgis.org/issues/3999
 lots of undefined refs to syms in libc, we dont link shlibs with -lc
 --- CMakeLists.txt.orig	Fri Oct 23 14:10:38 2015
-+++ CMakeLists.txt	Fri Oct 30 15:44:07 2015
-@@ -162,13 +162,13 @@ IF (NOT FLEX_EXECUTABLE)
-   MESSAGE(FATAL_ERROR "Couldn't find Flex")
- ENDIF (NOT FLEX_EXECUTABLE)
- 
--INCLUDE(Bison)
-+#INCLUDE(Bison)
- 
--FIND_BISON()
-+#FIND_BISON()
- 
--IF (NOT BISON_EXECUTABLE)
--  MESSAGE(FATAL_ERROR "Couldn't find Bison")
--ENDIF (NOT BISON_EXECUTABLE)
-+#IF (NOT BISON_EXECUTABLE)
-+#  MESSAGE(FATAL_ERROR "Couldn't find Bison")
-+#ENDIF (NOT BISON_EXECUTABLE)
- 
- #############################################################
- # search for dependencies
-@@ -609,12 +609,6 @@ ELSE (WIN32)
-   ELSE()
++++ CMakeLists.txt	Mon Nov 16 09:27:43 2015
+@@ -610,12 +610,6 @@ ELSE (WIN32)
      SET(DLLEXPORT "")
    ENDIF()
--
+ 
 -  IF(PEDANTIC AND NOT APPLE)
 -    SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined")
 -    SET(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--no-undefined")
 -    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--no-undefined")
 -  ENDIF(PEDANTIC AND NOT APPLE)
- 
+-
  ENDIF(WIN32)
  
+ ADD_DEFINITIONS("-DCORE_EXPORT=${DLLIMPORT}")

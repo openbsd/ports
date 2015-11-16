@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2015/10/31 15:29:44 landry Exp $
+# $OpenBSD: Makefile,v 1.43 2015/11/16 10:22:59 landry Exp $
 
 COMMENT =	desktop geographical information system
 
 SHARED_ONLY =	Yes
 
 DISTNAME =	qgis-2.12.0
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
@@ -33,10 +34,9 @@ BUILD_DEPENDS =	x11/py-qt4>=4.8.4 \
 		security/qca-ossl \
 		devel/flex \
 		editors/py-qscintilla \
+		devel/bison>=2.4 \
 		geo/gdal,-python
 
-# need to update bison...
-#		devel/bison>=2.4
 
 RUN_DEPENDS =	x11/py-qt4>=4.8.4 \
 		security/qca-ossl \
@@ -74,12 +74,6 @@ pre-configure:
 		# otherwise takes precedence over systemwide file
 		rm -f ${WRKSRC}/cmake/FindIconv.cmake
 		${SUBST_CMD} ${WRKSRC}/cmake/Find{GDAL,GEOS,Postgres}.cmake
-		#install bison-2.6-generated files
-		#bison -o /tmp/qgsexpressionparser.cpp -dvt src/core/qgsexpressionparser.yy
-		cp ${FILESDIR}/qgsrastercalcparser.{c,h}pp ${WRKSRC}/src/analysis/raster/
-		cp ${FILESDIR}/qgsexpressionparser.{c,h}pp ${WRKSRC}/src/core/
-		touch ${WRKSRC}/src/analysis/raster/qgsrastercalcparser.{c,h}pp \
-			${WRKSRC}/src/core/qgsexpressionparser.{c,h}pp
 
 post-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/share/{pixmaps,applications}
