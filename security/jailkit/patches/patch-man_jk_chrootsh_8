@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_jk_chrootsh_8,v 1.1.1.1 2010/09/20 07:15:31 sebastia Exp $
---- man/jk_chrootsh.8.orig	Sun Feb  7 17:13:06 2010
-+++ man/jk_chrootsh.8	Tue Sep 14 19:08:21 2010
+$OpenBSD: patch-man_jk_chrootsh_8,v 1.2 2015/11/16 13:43:40 ajacoutot Exp $
+--- man/jk_chrootsh.8.orig	Wed Nov  4 22:14:40 2015
++++ man/jk_chrootsh.8	Mon Nov 16 14:41:41 2015
 @@ -11,13 +11,13 @@ jk_chrootsh \- a shell that will put the user inside a
  
  jk_chrootsh can be used as a shell for a user (e.g. in /etc/passwd or your ldap store). That user will be put into a changed root. The directory where to put the user in is read from the users home directory, the last occurring /./ sequence is used to mark the location of the changed root. An example line in /etc/passwd would look like
@@ -25,8 +25,8 @@ $OpenBSD: patch-man_jk_chrootsh_8,v 1.1.1.1 2010/09/20 07:15:31 sebastia Exp $
 +.I ${SYSCONFDIR}/jailkit/jk_chrootsh.ini
  the required environment variables can be listed. An example config file is shown below. In the example, user bill will get the DISPLAY variable, and all users in group jail will get the TERM and PATH variables.
  
- By default jk_chrootsh requires a home directory that has the same group as the primary group from the user, and requires the home directory to be non-writable for group and others. You can relax these requirements in the configfile as shown below. 
-@@ -60,7 +60,7 @@ injail_shell=/bin/bash
+ By default jk_chrootsh requires a home directory owned by the user with the same group as the primary group from the user, and requires the home directory to be non-writable for group and others. You can relax these requirements in the configfile as shown below. 
+@@ -64,7 +64,7 @@ injail_shell=/bin/bash
  .SH FILES
  
  .I /etc/passwd
