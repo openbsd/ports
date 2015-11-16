@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.256 2015/10/06 21:39:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.257 2015/11/16 06:37:35 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,9 +8,9 @@ ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 COMMENT=	movie player supporting many formats
 
 V=		20150910
-FFMPEG_V=	20150909
+FFMPEG_V=	20151112
 DISTNAME=	mplayer-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11 multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
