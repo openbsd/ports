@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2015/11/14 08:41:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2015/11/17 09:40:45 ajacoutot Exp $
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @comment needs a homedir to store ssh keys for GitFS
 @newgroup _salt:722
@@ -2131,6 +2131,7 @@ share/examples/salt/roster
 @sample /var/log/salt/
 @mode
 @owner
+@rcscript ${RCDIR}/salt_api
 @rcscript ${RCDIR}/salt_master
 @rcscript ${RCDIR}/salt_minion
 @rcscript ${RCDIR}/salt_proxy

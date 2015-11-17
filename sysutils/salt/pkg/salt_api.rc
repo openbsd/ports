@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: salt_api.rc,v 1.1 2015/11/17 09:40:45 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/bin/salt-api -d"
+daemon_user="_salt"
+
+. /etc/rc.d/rc.subr
+
+pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_reload=NO
+
+rc_cmd $1
