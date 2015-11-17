@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/04 09:53:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.1 2015/11/17 12:49:25 sthen Exp $
+@pkgpath security/py-acme${MODPY_FLAVOR}
 bin/jws${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/acme/
 lib/python${MODPY_VERSION}/site-packages/acme-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/11/17 12:36:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.1 2015/11/17 12:49:25 sthen Exp $
 
 COMMENT=	ACME protocol implementation
 
 MODPY_EGG_VERSION=	0.0.0.dev20151114
+REVISION=	0
 DISTNAME=	acme-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME:S/.dev/pre/}
 CATEGORIES=	security
@@ -31,6 +32,7 @@ RUN_DEPENDS=	devel/py-asn1${MODPY_FLAVOR} \
 		www/py-werkzeug${MODPY_FLAVOR}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
+SUBST_VARS=	MODPY_FLAVOR
 
 # weird hangs in network-listening tests.
 TEST_IS_INTERACTIVE=	Yes
