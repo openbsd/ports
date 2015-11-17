@@ -1,21 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/17 14:00:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/11/17 14:03:41 sthen Exp $
 
 COMMENT=	client for Let's Encrypt CA#'
 
 V=		20151114
-REVISION=	0
+REVISION=	1
 MODPY_EGG_VERSION= 0.0.0.dev$V
 DISTNAME=	letsencrypt-0.0.0.dev$V
 PKGNAME=	letsencrypt-0.0.0pre$V
 
-CATEGORIES=	security www
-
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/python
-MODPY_SETUPTOOLS= Yes
-MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-configargparse \
 		devel/py-configobj \

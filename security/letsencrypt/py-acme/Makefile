@@ -1,22 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/17 14:00:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/11/17 14:03:41 sthen Exp $
 
 COMMENT=	ACME protocol implementation
 
 MODPY_EGG_VERSION=	0.0.0.dev20151114
-REVISION=	1
+REVISION=	2
 DISTNAME=	acme-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME:S/.dev/pre/}
-CATEGORIES=	security
-
-# Apache 2
-PERMIT_PACKAGE_CDROM=	Yes
 
 FLAVORS=	python3
 FLAVOR?=
 
 MODULES=	lang/python
-MODPY_SETUPTOOLS= Yes
-MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-asn1${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
@@ -43,7 +37,7 @@ TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR}
 # py-funcsigs not imported yet
 #TEST_DEPENDS+=	devel/py-funcsigs${MODPY_FLAVOR}
-NO_TEST=Yes
+NO_TEST=	Yes
 .endif
 
 post-install:
