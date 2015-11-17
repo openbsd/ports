@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/09/27 08:08:37 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.4 2015/11/17 14:28:14 ajacoutot Exp $
 @bin bin/mozplugger-controller
 @bin bin/mozplugger-helper
 @bin bin/mozplugger-linker
+@bin bin/mozplugger-update
 lib/mozilla/
 lib/mozilla/plugins/
 lib/mozilla/plugins/mozplugger.so
 @man man/man7/mozplugger.7
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/mozplugger/
 share/examples/mozplugger/mozpluggerrc
 @sample ${SYSCONFDIR}/mozpluggerrc

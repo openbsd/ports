@@ -1,0 +1,20 @@
+$OpenBSD: README,v 1.1 2015/11/17 14:28:14 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+MozPlugger by itself isn't very useful. You might want to install some
+of the following packages:
+
+For pdf:
+* kdegraphics (kpdf), epdfview, evince, xpdf, gv
+
+For ps:
+ * kdegraphics (kpdf), evince, gv
+
+For dvi:
+ * kdegraphics (kdvi), texlive_base (xdvi)
+
+For wmv, asf, mp4, mov, mpeg, avi (blobs..):
+ * mplayer, vlc
