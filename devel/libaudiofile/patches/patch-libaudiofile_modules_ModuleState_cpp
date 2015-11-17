@@ -1,0 +1,16 @@
+$OpenBSD: patch-libaudiofile_modules_ModuleState_cpp,v 1.1 2015/11/17 16:08:46 jasper Exp $
+
+Security fix for CVE-2015-7747
+http://www.openwall.com/lists/oss-security/2015/10/08/1
+
+--- libaudiofile/modules/ModuleState.cpp.orig	Tue Nov 17 17:04:14 2015
++++ libaudiofile/modules/ModuleState.cpp	Tue Nov 17 17:04:44 2015
+@@ -402,7 +402,7 @@ status ModuleState::arrange(AFfilehandle file, Track *
+ 		addModule(new Transform(outfc, in.pcm, out.pcm));
+ 
+ 	if (in.channelCount != out.channelCount)
+-		addModule(new ApplyChannelMatrix(infc, isReading,
++		addModule(new ApplyChannelMatrix(outfc, isReading,
+ 			in.channelCount, out.channelCount,
+ 			in.pcm.minClip, in.pcm.maxClip,
+ 			track->channelMatrix));
