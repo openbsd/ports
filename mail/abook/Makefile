@@ -1,33 +1,37 @@
-# $OpenBSD: Makefile,v 1.31 2015/06/29 15:39:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2015/11/17 23:21:04 sthen Exp $
 
-COMMENT=	addressbook program with mutt support
+COMMENT=		addressbook program with mutt support
 
-DISTNAME=	abook-0.5.6
-REVISION=	2
-CATEGORIES=	mail
+DISTNAME=		abook-0.6.1
+CATEGORIES=		mail
 
-HOMEPAGE=	http://abook.sourceforge.net/
+HOMEPAGE=		http://abook.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ncursesw readline
+WANTLIB+=		c ncursesw readline
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=abook/}
+MASTER_SITES=		http://abook.sourceforge.net/devel/
 
-MODULES=	devel/gettext
+MODULES=		devel/gettext \
+			converters/libiconv
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=	automake
 
-EXAMPLESDIR=	${PREFIX}/share/examples/abook
-WHITELIST=README abook2whitelist.sh mutt.whitelist whitelist.rc
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+AUTOCONF_VERSION= 	2.69
+AUTOMAKE_VERSION= 	1.14
+
+EXAMPLEDIR=		${PREFIX}/share/examples/abook/
+
+pre-configure:
+	@cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -i
 
 post-install:
-	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/whitelist
-	${INSTALL_DATA} ${WRKSRC}/contrib/mail2abook.py ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/contrib/vcard2abook.pl ${EXAMPLESDIR}
-	cd ${WRKSRC}/contrib/whitelist && \
-		${INSTALL_DATA} ${WHITELIST} ${EXAMPLESDIR}/whitelist
-	${INSTALL_DATA} ${WRKSRC}/sample.abookrc ${EXAMPLESDIR}
+	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample.abookrc ${EXAMPLEDIR}
 
 .include <bsd.port.mk>
