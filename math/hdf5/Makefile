@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/18 19:03:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/11/17 17:46:00 feinerer Exp $
 
 COMMENT =		Hierarchical Data Format 5 Technology suite
 
-V =			1.8.15-patch1
+V =			1.8.16
 DISTNAME =		hdf5-${V}
-PKGNAME =		hdf5-${V:S/-patch/pl/}
-REVISION =		0
 
-SHARED_LIBS +=	hdf5		0.0 # 10.1
-SHARED_LIBS +=	hdf5_cpp	0.0 # 10.1
-SHARED_LIBS +=	hdf5_hl		0.0 # 10.1
-SHARED_LIBS +=	hdf5_hl_cpp	0.0 # 10.1
+SHARED_LIBS +=	hdf5		0.1 # 11.0
+SHARED_LIBS +=	hdf5_cpp	1.0 # 11.0
+SHARED_LIBS +=	hdf5_hl		0.0 # 10.2
+SHARED_LIBS +=	hdf5_hl_cpp	1.0 # 11.0
 
 CATEGORIES =		math
 
@@ -29,16 +27,6 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--enable-cxx
-
-# remove trailing whitespace from LT_VERS_REVISION
-pre-configure:
-	sed -i 's,LT_VERS_REVISION = 1 ,LT_VERS_REVISION = 1,' \
-		${WRKSRC}/fortran/src/Makefile.in \
-		${WRKSRC}/c++/src/Makefile.in \
-		${WRKSRC}/src/Makefile.in \
-		${WRKSRC}/hl/src/Makefile.in \
-		${WRKSRC}/hl/fortran/src/Makefile.in \
-		${WRKSRC}/hl/c++/src/Makefile.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hdf5
