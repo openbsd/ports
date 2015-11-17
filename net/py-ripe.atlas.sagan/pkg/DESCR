@@ -1,0 +1,7 @@
+A Python library to turn RIPE Atlas measurement results from JSON into
+Python objects.
+
+It supports all RIPE Atlas measurement results, including ping,
+traceroute, SSL and DNS.
+
+For more information about RIPE Atlas, see https://atlas.ripe.net/
