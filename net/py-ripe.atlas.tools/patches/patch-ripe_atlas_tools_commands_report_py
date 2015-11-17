@@ -1,0 +1,14 @@
+$OpenBSD: patch-ripe_atlas_tools_commands_report_py,v 1.1.1.1 2015/11/17 20:57:41 florian Exp $
+correct asn limits, cherry picked from upstream
+--- ripe/atlas/tools/commands/report.py.orig	Thu Nov 12 14:28:12 2015
++++ ripe/atlas/tools/commands/report.py	Tue Nov 17 19:26:37 2015
+@@ -65,7 +65,8 @@ class Command(BaseCommand):
+             "--probe-asns",
+             type=ArgumentType.comma_separated_integers(
+                 minimum=1,
+-                maximum=50000
++                # http://www.iana.org/assignments/as-numbers/as-numbers.xhtml
++                maximum=2 ** 32 - 2
+             ),
+             help="A comma-separated list of probe ASNs you want to see "
+                  "exclusively."

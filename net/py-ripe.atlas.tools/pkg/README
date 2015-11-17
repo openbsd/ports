@@ -1,0 +1,42 @@
+$OpenBSD: README,v 1.1.1.1 2015/11/17 20:57:41 florian Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Visualizing public measurements without a RIPE Atlas account
+============================================================
+
+An account is necessary to create measurements. For more information
+about RIPE Atlas, see: https://atlas.ripe.net/
+
+Built-in measurements
+---------------------
+For a list of build-in public measurements, see:
+https://atlas.ripe.net/docs/built-in/
+
+Searching for public measurements
+---------------------------------
+$ ripe-atlas measurements --search ping
+
+Examples
+========
+Report which instance of k.root-servers.net probes are reaching:
+----------------------------------------------------------------
+$ ripe-atlas report 10301
+
+Stream IPv4 ping results to k.root-servers.net:
+-----------------------------------------------
+$ ripe-atlas stream 1001
+
+Stream IPv6 ping results to k.root-servers.net:
+-----------------------------------------------
+$ ripe-atlas stream 2001
+
+IPv4 traceroute report towards k.root-servers.net from AS 3333:
+---------------------------------------------------------------
+$ ripe-atlas report --probe-asns 3333 5001
+
+IPv6 traceroute report towards k.root-servers.net from AS 3333:
+---------------------------------------------------------------
+$ ripe-atlas report --probe-asns 3333 6001

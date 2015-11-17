@@ -1,0 +1,14 @@
+$OpenBSD: patch-ripe_atlas_tools_commands_measure_base_py,v 1.1.1.1 2015/11/17 20:57:41 florian Exp $
+correct asn limits, cherry picked from upstream
+--- ripe/atlas/tools/commands/measure/base.py.orig	Wed Nov 11 14:05:50 2015
++++ ripe/atlas/tools/commands/measure/base.py	Tue Nov 17 19:25:11 2015
+@@ -142,7 +142,8 @@ class Command(BaseCommand):
+         )
+         origins.add_argument(
+             "--from-asn",
+-            type=ArgumentType.integer_range(1, 2**32),
++            # http://www.iana.org/assignments/as-numbers/as-numbers.xhtml
++            type=ArgumentType.integer_range(1, 2 ** 32 - 2),
+             metavar="ASN",
+             help="The ASN from which you'd like to select your probes. "
+                  "Example: --from-asn=3333"
