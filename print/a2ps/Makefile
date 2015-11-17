@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2015/04/06 21:05:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2015/11/17 08:38:52 ajacoutot Exp $
 
 COMMENT=	format files for printing on PostScript printers
 
 DISTNAME=	a2ps-4.14
-REVISION=	10
+REVISION=	11
 
 SHARED_LIBS +=  a2ps                 2.0      # 2.0
 

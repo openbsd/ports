@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_output_c,v 1.1 2015/11/17 08:38:52 ajacoutot Exp $
+
+Fix for CVE-2015-8107:
+http://www.openwall.com/lists/oss-security/2015/11/16/4
+
+--- lib/output.c.orig	Sat Dec 29 02:58:21 2007
++++ lib/output.c	Tue Nov 17 09:36:23 2015
+@@ -525,7 +525,7 @@ output_file (struct output * out, a2ps_job * job,
+ 		     expand_user_string (job, FIRST_FILE (job),
+ 					 (const uchar *) "Expand: requirement",
+ 					 (const uchar *) token));
+-	output (dest, expansion);
++	output (dest, "%s", expansion);
+ 	continue;
+       }
+ 
