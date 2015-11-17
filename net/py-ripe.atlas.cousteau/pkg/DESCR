@@ -1,0 +1,5 @@
+This library implements bindings for the RIPE Atlas API. It can create
+RIPE Atlas measurements, change the probes of an existing measurement,
+stop a measurement and fetch its results.
+
+For more information about RIPE Atlas, see https://atlas.ripe.net/

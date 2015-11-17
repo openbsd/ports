@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/17 20:54:15 florian Exp $
+lib/python${MODPY_VERSION}/site-packages/ripe/
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/exceptions.pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/measurement.py
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/measurement.pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/request.py
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/request.pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/source.py
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/source.pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/stream.py
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/stream.pyc
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/version.py
+lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/version.pyc
