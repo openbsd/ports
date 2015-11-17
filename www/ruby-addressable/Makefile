@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/06/19 14:02:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2015/11/17 10:22:18 jasper Exp $
 
 COMMENT =	replacement for Ruby's URI implementation
 
@@ -14,7 +14,7 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-MODRUBY_TEST =	rake rspec
+MODRUBY_TEST =	rake rspec3
 TEST_DEPENDS +=	devel/ruby-rspec/3/its,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>
