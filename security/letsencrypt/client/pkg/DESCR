@@ -1,0 +1,14 @@
+The Let's Encrypt Client is a tool to automatically receive and install
+X.509 certificates to enable TLS on servers. It will interoperate with the
+Let's Encrypt CA which will be issuing browser-trusted certificates free
+of charge. It will:
+
+- generate a private key and CSR (Certificate Signing Request)
+- connect to the CA's API
+- prove domain control to the CA
+  (via listening on port 80 or placing a file in the web root)
+- submit the CSR
+- if approved, install keys locally
+
+Tools to automate webserver configuration will be packaged separately in
+the future.
