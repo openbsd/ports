@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-session_c,v 1.5 2015/10/18 13:25:54 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session_c,v 1.6 2015/11/17 17:48:40 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 9be58c9ec9a3a411492a5182ac4b0d51fdc3a323 Mon Sep 17 00:00:00 2001
@@ -12,9 +12,9 @@ From: Ray Strode <rstrode@redhat.com>
 Date: Fri, 12 Jun 2015 14:33:40 -0400
 Subject: session: drop session-type property
 
---- daemon/gdm-session.c.orig	Sun Oct 18 14:26:49 2015
-+++ daemon/gdm-session.c	Sun Oct 18 14:23:39 2015
-@@ -3041,6 +3041,10 @@ gdm_session_get_display_mode (GdmSession *self)
+--- daemon/gdm-session.c.orig	Tue Nov 17 18:14:16 2015
++++ daemon/gdm-session.c	Tue Nov 17 18:39:14 2015
+@@ -3071,6 +3071,10 @@ gdm_session_get_display_mode (GdmSession *self)
                   self->priv->is_program_session? "yes" : "no",
                   self->priv->display_seat_id);
  
@@ -25,7 +25,7 @@ Subject: session: drop session-type property
  #ifdef ENABLE_WAYLAND_SUPPORT
          /* Wayland sessions are for now assumed to run in a
           * mutter-launch-like environment, so we allocate
-@@ -3079,6 +3083,27 @@ gdm_session_select_program (GdmSession *self,
+@@ -3109,6 +3113,27 @@ gdm_session_select_program (GdmSession *self,
          g_free (self->priv->selected_program);
  
          self->priv->selected_program = g_strdup (text);
