@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST-common,v 1.4 2015/04/17 04:18:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST-common,v 1.5 2015/11/17 08:57:45 ajacoutot Exp $
 @conflict hplip-libs-*
 @conflict hplip-<3.13.7p4
 @pkgpath print/hplip,-libs
 @newgroup _cups:541
 @extraunexec rm -rf /var/log/hp/tmp/*
 @extraunexec rm -f /var/log/hp/* 2>/dev/null || true
+lib/libhpdiscovery.a
+lib/libhpdiscovery.la
+@lib lib/libhpdiscovery.so.${LIBhpdiscovery_VERSION}
 lib/libhpip.a
 lib/libhpip.la
 @lib lib/libhpip.so.${LIBhpip_VERSION}

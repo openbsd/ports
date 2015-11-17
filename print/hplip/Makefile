@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2015/10/09 18:21:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2015/11/17 08:57:45 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -11,7 +11,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.15.9
+V=			3.15.11
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
@@ -22,8 +22,7 @@ PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
 
-REVISION-hpaio=		0
-
+SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
 SHARED_LIBS +=  hpmud                2.0      # 0.6
 SHARED_LIBS +=  hpipp                0.0      # 0.1
 SHARED_LIBS +=  hpip                 2.0      # 0.1
@@ -52,7 +51,7 @@ cWANTLIB += crypto m pthread
 WANTLIB-main += ${WANTLIB} ${cWANTLIB}
 WANTLIB-main += avahi-client avahi-common cups dbus-1 hpmud netsnmp
 WANTLIB-main += ffi gmp gnutls hogweed nettle p11-kit tasn1 usb-1.0 z
-WANTLIB-main += hpipp
+WANTLIB-main += hpdiscovery hpipp
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			print/cups,-libs \
@@ -82,7 +81,7 @@ RUN_DEPENDS-common=	#empty
 WANTLIB-hpaio += ${WANTLIB} ${cWANTLIB}
 WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 ffi gmp gnutls
 WANTLIB-hpaio += hogweed hpip hpipp hpmud jpeg netsnmp nettle p11-kit
-WANTLIB-hpaio += sane tasn1 tiff usb usb-1.0 z
+WANTLIB-hpaio += sane tasn1 tiff usb usb-1.0 z hpdiscovery
 
 LIB_DEPENDS-hpaio=	print/hplip,-common \
 			print/cups,-libs \
@@ -91,7 +90,7 @@ LIB_DEPENDS-hpaio=	print/hplip,-common \
 RUN_DEPENDS-hpaio=	${MODGETTEXT_RUN_DEPENDS}
 
 ### -hpcups
-WANTLIB-hpcups += ${WANTLIB} ${cWANTLIB} z netsnmp
+WANTLIB-hpcups += ${WANTLIB} ${cWANTLIB} z netsnmp hpdiscovery
 WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage dbus-1
 WANTLIB-hpcups += z usb-1.0 avahi-client avahi-common hpmud
 WANTLIB-hpcups += ffi gmp gnutls hogweed nettle p11-kit tasn1
@@ -104,7 +103,7 @@ LIB_DEPENDS-hpcups=	graphics/jpeg \
 RUN_DEPENDS-hpcups=	${MODGETTEXT_RUN_DEPENDS}
 
 ### -hpijs
-WANTLIB-hpijs += ${cWANTLIB} hpip usb-1.0
+WANTLIB-hpijs += ${cWANTLIB} hpip usb-1.0 hpdiscovery
 WANTLIB-hpijs += c jpeg netsnmp stdc++ dbus-1 hpmud
 
 LIB_DEPENDS-hpijs=	print/hplip,-common \
