@@ -1,0 +1,2 @@
+This Python module returns a tzinfo object with the local timezone
+information.
