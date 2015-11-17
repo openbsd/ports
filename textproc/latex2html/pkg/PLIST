@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/04/14 12:16:29 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/11/17 15:03:14 ajacoutot Exp $
 bin/latex2html
 bin/pstoimg
 bin/texexpand
@@ -209,6 +209,7 @@ share/latex2html/styles/
 share/latex2html/styles/CJK.perl
 share/latex2html/styles/SIunits.perl
 share/latex2html/styles/TEMPLATE.perl
+share/latex2html/styles/abnt.perl
 share/latex2html/styles/afrikaan.perl
 share/latex2html/styles/alltt.perl
 share/latex2html/styles/american.perl
@@ -242,6 +243,7 @@ share/latex2html/styles/epsbox.perl
 share/latex2html/styles/epsfig.perl
 share/latex2html/styles/esperant.perl
 share/latex2html/styles/estonian.perl
+share/latex2html/styles/eurosym.perl
 share/latex2html/styles/finnish.perl
 share/latex2html/styles/floatfig.perl
 share/latex2html/styles/floatflt.perl
@@ -307,6 +309,7 @@ share/latex2html/styles/wrapfig.perl
 share/latex2html/styles/xspace.perl
 share/latex2html/styles/xy.perl
 share/latex2html/texinputs/
+share/latex2html/texinputs/floatflt.ins
 share/latex2html/texinputs/frames.sty
 share/latex2html/texinputs/heqn.sty
 share/latex2html/texinputs/hthtml.sty
@@ -349,9 +352,11 @@ share/latex2html/versions/table.pl
 share/latex2html/versions/techexpl.pl
 share/latex2html/versions/unicode.pl
 share/latex2html/versions/utf8.pl
+share/texmf-local/
 share/texmf-local/tex/
 share/texmf-local/tex/latex/
 share/texmf-local/tex/latex/html/
+share/texmf-local/tex/latex/html/floatflt.ins
 share/texmf-local/tex/latex/html/frames.sty
 share/texmf-local/tex/latex/html/heqn.sty
 share/texmf-local/tex/latex/html/hthtml.sty
