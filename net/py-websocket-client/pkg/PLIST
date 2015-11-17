@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/17 19:53:38 florian Exp $
+bin/wsdump.py${MODPY_BIN_SUFFIX}
+lib/python${MODPY_VERSION}/site-packages/websocket/
+lib/python${MODPY_VERSION}/site-packages/websocket/__init__.py
+${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}_abnf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}_app.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}_core.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}_exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}_handshake.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}_http.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}_logging.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}_socket.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}_ssl_compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}_url.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/_abnf.py
+lib/python${MODPY_VERSION}/site-packages/websocket/_app.py
+lib/python${MODPY_VERSION}/site-packages/websocket/_core.py
+lib/python${MODPY_VERSION}/site-packages/websocket/_exceptions.py
+lib/python${MODPY_VERSION}/site-packages/websocket/_handshake.py
+lib/python${MODPY_VERSION}/site-packages/websocket/_http.py
+lib/python${MODPY_VERSION}/site-packages/websocket/_logging.py
+lib/python${MODPY_VERSION}/site-packages/websocket/_socket.py
+lib/python${MODPY_VERSION}/site-packages/websocket/_ssl_compat.py
+lib/python${MODPY_VERSION}/site-packages/websocket/_url.py
+lib/python${MODPY_VERSION}/site-packages/websocket/_utils.py
+lib/python${MODPY_VERSION}/site-packages/websocket/cacert.pem
+lib/python${MODPY_VERSION}/site-packages/websocket/tests/
+lib/python${MODPY_VERSION}/site-packages/websocket/tests/__init__.py
+${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}test_websocket.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/websocket/tests/data/
+lib/python${MODPY_VERSION}/site-packages/websocket/tests/data/header01.txt
+lib/python${MODPY_VERSION}/site-packages/websocket/tests/data/header02.txt
+lib/python${MODPY_VERSION}/site-packages/websocket/tests/test_websocket.py
+lib/python${MODPY_VERSION}/site-packages/websocket_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/websocket_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/websocket_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/websocket_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/websocket_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/websocket_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
