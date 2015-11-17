@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1415 2015/11/17 11:41:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.1416 2015/11/17 19:51:39 florian Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1326,6 +1326,8 @@
      SUBDIR += py-twisted
      SUBDIR += py-tz
      SUBDIR += py-tz,python3
+     SUBDIR += py-tzlocal
+     SUBDIR += py-tzlocal,python3
      SUBDIR += py-unit
      SUBDIR += py-unit,no_x11
      SUBDIR += py-unittest2
