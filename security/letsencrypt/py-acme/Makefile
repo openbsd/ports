@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.1 2015/11/17 12:49:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/17 14:00:32 sthen Exp $
 
 COMMENT=	ACME protocol implementation
 
 MODPY_EGG_VERSION=	0.0.0.dev20151114
-REVISION=	0
+REVISION=	1
 DISTNAME=	acme-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME:S/.dev/pre/}
 CATEGORIES=	security
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # Apache 2
 PERMIT_PACKAGE_CDROM=	Yes
