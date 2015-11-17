@@ -1,0 +1,7 @@
+The program will take image filenames from commandline arguments and output
+a PDF file with them embedded into it. If the input image is a JPEG or
+JPEG2000 file, it will be included as-is without any processing. If it is
+in any other format, the image will be included as zip-encoded RGB.
+As a result, this tool will be able to lossless wrap any image into a
+PDF container while performing better (in terms of quality/filesize ratio)
+than existing tools in case the input image is a JPEG or JPEG2000 file.
