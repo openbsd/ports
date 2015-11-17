@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/12 21:53:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/11/17 12:36:10 sthen Exp $
 
 COMMENT=	ACME protocol implementation
 
-MODPY_EGG_VERSION=	0.0.0.dev20151108
+MODPY_EGG_VERSION=	0.0.0.dev20151114
 DISTNAME=	acme-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME:S/.dev/pre/}
 CATEGORIES=	security
@@ -32,9 +32,18 @@ RUN_DEPENDS=	devel/py-asn1${MODPY_FLAVOR} \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR}
-.if ! ${FLAVOR:Mpython3}
-TEST_DEPENDS+=	devel/py-mock
+# weird hangs in network-listening tests.
+TEST_IS_INTERACTIVE=	Yes
+
+.if ${FLAVOR:Mpython3}
+# no devel/py-mock for py3 yet
+NO_TEST=	Yes
+.else
+TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR} \
+		devel/py-mock${MODPY_FLAVOR}
+# py-funcsigs not imported yet
+#TEST_DEPENDS+=	devel/py-funcsigs${MODPY_FLAVOR}
+NO_TEST=Yes
 .endif
 
 post-install:
