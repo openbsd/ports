@@ -1,14 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/13 13:33:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/11/17 10:23:47 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/Changelog.md
-${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.md
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/caller_filter.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/comparable_version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/differ.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/directory_maker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/encoded_string.rb
@@ -16,8 +17,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/fuzzy_matcher.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/hunk_generator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/matcher_definition.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/method_signature_verifier.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/mutex.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/object_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/recursive_const_methods.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/reentrant_mutex.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/ruby_features.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/support/spec.rb

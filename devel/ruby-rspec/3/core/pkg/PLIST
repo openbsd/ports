@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/13 13:33:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/11/17 10:23:47 jasper Exp $
 @option no-default-conflict
 @conflict ${MODRUBY_PREFIX}-rspec-core->=2,<4
 ${GEM_BIN}/rspec${GEM_BIN_SUFFIX}
@@ -7,7 +7,7 @@ ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.document
 ${GEM_LIB}/gems/${DISTNAME}/.yardopts
 ${GEM_LIB}/gems/${DISTNAME}/Changelog.md
-${GEM_LIB}/gems/${DISTNAME}/License.txt
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.md
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/exe/
 ${GEM_LIB}/gems/${DISTNAME}/exe/rspec
@@ -22,7 +22,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/bisect/coordinator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/bisect/example_minimizer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/bisect/runner.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/bisect/server.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/bisect/subset_enumerator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/configuration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/configuration_options.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/drb.rb
@@ -46,6 +45,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/fallback_message_formatter
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/helpers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/html_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/html_printer.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/html_snippet_extractor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/json_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/profile_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/progress_formatter.rb
@@ -62,7 +62,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/mocking_adapters/mocha.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/mocking_adapters/null.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/mocking_adapters/rr.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/mocking_adapters/rspec.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/mutex.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/notifications.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/option_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/ordering.rb
@@ -74,7 +73,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/project_initializer/.rspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/project_initializer/spec/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/project_initializer/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/rake_task.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/reentrant_mutex.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/reporter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/ruby_project.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/runner.rb
@@ -83,6 +81,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/set.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/shared_context.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/shared_example_group.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/shell_escape.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/source/
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/source.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/source/location.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/source/node.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/source/syntax_highlighter.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/source/token.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/test_unit_assertions_adapter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/warnings.rb

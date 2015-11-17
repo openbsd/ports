@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/13 13:33:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/11/17 10:23:47 jasper Exp $
 @option no-default-conflict
 @conflict ${MODRUBY_PREFIX}-rspec-expectations->=2,<4
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -6,7 +6,7 @@ ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.document
 ${GEM_LIB}/gems/${DISTNAME}/.yardopts
 ${GEM_LIB}/gems/${DISTNAME}/Changelog.md
-${GEM_LIB}/gems/${DISTNAME}/License.txt
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.md
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/
