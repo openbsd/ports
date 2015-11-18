@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/17 11:40:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/18 12:32:39 ajacoutot Exp $
 
 COMMENT =		Python Build Reasonableness
 
@@ -19,8 +19,12 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =	python3
 FLAVOR ?=
 
-TEST_DEPENDS =	devel/py-virtualenv${MODPY_FLAVOR} \
-		devel/py-testtools${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-virtualenv${MODPY_FLAVOR}
+
+.if ! ${FLAVOR:Mpython3}
+TEST_DEPENDS += devel/py-testtools
+.endif
+
 # also needs testscenarios
 NO_TEST =	Yes
 
