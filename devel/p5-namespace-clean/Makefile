@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/05 19:08:58 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2015/11/18 13:15:02 ajacoutot Exp $
 
 COMMENT =	keep imports and functions out of your namespace
 
 MODULES =	cpan
-DISTNAME =	namespace-clean-0.25
+DISTNAME =	namespace-clean-0.26
 CATEGORIES =	devel
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
 
-RUN_DEPENDS =	devel/p5-B-Hooks-EndOfScope>=0.13 \
+RUN_DEPENDS =	devel/p5-B-Hooks-EndOfScope \
 		devel/p5-Package-Stash \
-		devel/p5-Sub-Identify \
 		devel/p5-Sub-Name
-BUILD_DEPENDS =	${RUN_DEPENDS}
+
+BUILD_DEPENDS =	devel/p5-B-Hooks-EndOfScope \
+		devel/p5-Package-Stash
 
 .include <bsd.port.mk>
