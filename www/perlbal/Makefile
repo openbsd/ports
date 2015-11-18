@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:43:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/18 09:11:47 ajacoutot Exp $
 
 COMMENT=	Perl-based reverse proxy load balancer and web server
 
 MODULES=	cpan
-DISTNAME=	Perlbal-1.73
-REVISION=	0
+DISTNAME=	Perlbal-1.80
 CATEGORIES=	www
 
 CPAN_AUTHOR=    DORMANDO
@@ -12,11 +11,11 @@ CPAN_AUTHOR=    DORMANDO
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	net/p5-Danga-Socket \
+RUN_DEPENDS=	devel/p5-IO-AIO \
+		net/p5-Danga-Socket \
 		net/p5-Net-Netmask \
 		www/p5-libwww \
 		devel/p5-BSD-Resource
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	conf
@@ -28,8 +27,5 @@ post-install:
 	${MODCPAN_POST_INSTALL}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/p5-Perlbal
 	cd ${WRKSRC}/doc && pax -rw * ${PREFIX}/share/doc/p5-Perlbal
-
-# XXX IO::AIO not ported yet
-# TEST_DEPENDS=
 
 .include <bsd.port.mk>

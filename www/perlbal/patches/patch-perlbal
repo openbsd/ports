@@ -1,7 +1,7 @@
-$OpenBSD: patch-perlbal,v 1.1.1.1 2009/10/02 09:26:21 sthen Exp $
---- perlbal.orig	Thu Oct  1 14:12:29 2009
-+++ perlbal	Thu Oct  1 14:12:35 2009
-@@ -45,7 +45,7 @@ usage(1) unless
+$OpenBSD: patch-perlbal,v 1.2 2015/11/18 09:11:47 ajacoutot Exp $
+--- perlbal.orig	Mon Dec 20 02:24:35 2010
++++ perlbal	Wed Nov 18 09:40:53 2015
+@@ -47,7 +47,7 @@ usage(1) unless
                               'version'  => \$opt_version,
                 );
  
