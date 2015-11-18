@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.15 2015/10/29 18:25:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2015/11/18 21:56:27 jung Exp $
 
 COMMENT =		simple background setter
 
-VERSION =		0.7.1
+VERSION =		0.8
 DISTNAME =		${GH_PROJECT}-${VERSION}
 CATEGORIES =		x11 graphics
-REVISION =		0
+
+MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # MIT/X
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		X11 Xinerama c Imlib2 m
+WANTLIB =		X11 Xinerama c Imlib2 m Xext freetype z
 
 GH_ACCOUNT =		Gottox
 GH_PROJECT =		bgs
