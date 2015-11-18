@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1301 2015/11/07 09:54:46 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1302 2015/11/18 16:37:31 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3064,7 +3064,7 @@ _internal-clean:
 #
 # distribution-name|port-path|installation-prefix|comment| \
 #  description-file|maintainer|categories|lib-deps|build-deps|run-deps| \
-#  for-arch|package-cdrom|package-ftp|distfiles-cdrom|distfiles-ftp
+#  for-arch|package-cdrom|package-ftp|distfiles-ftp
 #
 describe:
 .for _S in ${MULTI_PACKAGES}
