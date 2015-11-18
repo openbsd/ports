@@ -1,29 +1,29 @@
-# $OpenBSD: Makefile,v 1.11 2014/08/30 21:54:07 jasper Exp $
-# Original from: Stephane Peter <megastep@megastep.org>
+# $OpenBSD: Makefile,v 1.12 2015/11/18 09:21:30 ajacoutot Exp $
 
-COMMENT=	script generating a self-extractible .tgz from a directory
+COMMENT=		script generating a self-extractible .tgz from a directory
 
-DISTNAME=		makeself
-PKGNAME=		makeself-1.5.5
-REVISION=		0
+V=			2.2.0
+DISTNAME=		makeself-${V}
+
+GH_PROJECT=		makeself
+GH_ACCOUNT=		megastep
+GH_TAGNAME=		release-${V}
+
 CATEGORIES=		archivers misc
 
 HOMEPAGE=		http://www.megastep.org/makeself/
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-
-EXTRACT_ONLY=
-EXTRACT_SUFX=		.gz.sh
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
-post-extract:
-	@cd ${WRKDIR} && /bin/sh ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} --nox11
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIST}/makeself.sh ${PREFIX}/bin/makeself.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/makeself.sh ${PREFIX}/bin/makeself.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/makeself-header.sh \
+		${PREFIX}/bin/makeself-header.sh
+	${INSTALL_MAN} ${WRKSRC}/makeself.1 ${PREFIX}/man/man1/makeself.1
 
 .include <bsd.port.mk>
