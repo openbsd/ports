@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2015/10/14 22:23:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/11/18 09:34:24 jasper Exp $
 
 COMMENT=		presenter console with multi-monitor support
 
 GH_ACCOUNT=		pdfpc
 GH_PROJECT=		pdfpc
-GH_TAGNAME=		v4.0.0
+GH_TAGNAME=		v4.0.1
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME=		${DISTNAME:S/v//}
-REVISION=		2
 
 CATEGORIES=		textproc
 
@@ -36,10 +35,5 @@ CONFIGURE_ARGS+=	-DMANDIR="${PREFIX}/man/man1" \
 			-DSYSCONFDIR="${PREFIX}/share/examples/pdfpc"
 
 NO_TEST=		Yes
-
-# XXX: Remove on upgrade
-post-extract:
-	mkdir -p ${WRKSRC}/cmake/vala/
-	cp ${FILESDIR}/*.cmake ${WRKSRC}/cmake/vala/
 
 .include <bsd.port.mk>
