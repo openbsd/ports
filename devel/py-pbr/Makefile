@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/11/18 16:41:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/11/18 20:38:27 sthen Exp $
 
 COMMENT =		Python Build Reasonableness
 
@@ -19,14 +19,11 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =	python3
 FLAVOR ?=
 
-.if ! ${FLAVOR:Mpython3}
-# No py3 versions yet:
-TEST_DEPENDS =	devel/py-virtualenv \
-		devel/py-testtools
+TEST_DEPENDS =	devel/py-testtools${MODPY_FLAVOR} \
+		devel/py-virtualenv${MODPY_FLAVOR}
+
 # also needs testscenarios
-.else
 NO_TEST =	Yes
-.endif
 
 post-install:
 	mv ${PREFIX}/bin/pbr ${PREFIX}/bin/pbr${MODPY_BIN_SUFFIX}
