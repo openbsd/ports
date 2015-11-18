@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1420 2015/11/18 20:25:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.1421 2015/11/18 20:38:55 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1341,6 +1341,7 @@
      SUBDIR += py-urwid,python3
      SUBDIR += py-vcversioner
      SUBDIR += py-virtualenv
+     SUBDIR += py-virtualenv,python3
      SUBDIR += py-wbem
      SUBDIR += py-wsgiutils
      SUBDIR += py-xdg

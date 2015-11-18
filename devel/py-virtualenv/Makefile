@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/09/29 10:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/11/18 20:38:55 sthen Exp $
 
 COMMENT =		virtual Python environment builder
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	13.0.3
 DISTNAME =		virtualenv-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://www.virtualenv.org/
 
@@ -20,6 +20,9 @@ BUILD_DEPENDS =		textproc/py-sphinx
 
 MODPY_SETUPTOOLS =	Yes
 
+FLAVORS =		python3
+FLAVOR ?=
+
 # the pypi archive does not contain the tests
 NO_TEST =		Yes
 
@@ -28,10 +31,11 @@ DOCSRC =	${WRKSRC}/docs
 post-build:
 	cd ${DOCSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
 
-DOCS =		${PREFIX}/share/doc/py-virtualenv
+DOCS =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}virtualenv
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCS}
 	cd ${DOCSRC}/_build/html && pax -rw * ${DOCS}
+	mv ${PREFIX}/bin/virtualenv{,${MODPY_BIN_SUFFIX}}
 
 .include <bsd.port.mk>

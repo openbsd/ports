@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/06/10 12:16:12 benoit Exp $
-bin/virtualenv
+@comment $OpenBSD: PLIST,v 1.8 2015/11/18 20:38:55 sthen Exp $
+bin/virtualenv${MODPY_BIN_SUFFIX}
 bin/virtualenv-${MODPY_VERSION}
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}virtualenv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -10,10 +11,10 @@ lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/virtualenv.py
-lib/python${MODPY_VERSION}/site-packages/virtualenv.pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv_support/
 lib/python${MODPY_VERSION}/site-packages/virtualenv_support/__init__.py
-lib/python${MODPY_VERSION}/site-packages/virtualenv_support/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/virtualenv_support/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/virtualenv_support/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/virtualenv_support/argparse-1.3.0-py2.py3-none-any.whl
 lib/python${MODPY_VERSION}/site-packages/virtualenv_support/pip-7.0.3-py2.py3-none-any.whl
 lib/python${MODPY_VERSION}/site-packages/virtualenv_support/setuptools-17.0-py2.py3-none-any.whl
