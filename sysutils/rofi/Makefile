@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2015/11/18 19:56:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/11/18 20:16:07 jasper Exp $
 
 COMMENT =		window switcher, run dialog and dmenu replacement
 
 GH_PROJECT =		rofi
 GH_TAGNAME =		0.15.11
+REVISION =		0
 GH_ACCOUNT =		DaveDavenPort
 DISTNAME =		${GH_PROJECT}-${GH_TAGNAME}
 
@@ -37,5 +38,10 @@ pre-configure:
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		autoreconf -i
+
+post-install:
+	sed -i 's,#!.*bash,#!/usr/local/bin/bash,g' ${WRKSRC}/Examples/*.sh
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rofi
+	${INSTALL_DATA} ${WRKSRC}/Examples/* ${PREFIX}/share/examples/rofi
 
 .include <bsd.port.mk>
