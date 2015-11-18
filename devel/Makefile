@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1417 2015/11/18 09:11:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1418 2015/11/18 20:00:17 sebastia Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1418,6 +1418,8 @@
      SUBDIR += ruby-polyglot
      SUBDIR += ruby-prof,ruby21
      SUBDIR += ruby-prof,ruby22
+     SUBDIR += ruby-puppet_forge,ruby21
+     SUBDIR += ruby-puppet_forge,ruby22
      SUBDIR += ruby-racc,ruby21
      SUBDIR += ruby-racc,ruby22
      SUBDIR += ruby-rake
