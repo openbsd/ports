@@ -1,0 +1,2 @@
+This module implements asynchronous I/O using whatever means your operating
+system supports. It is implemented as an interface to libeio.

@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/18 09:10:34 ajacoutot Exp $
+bin/treescan
+${P5ARCH}/
+${P5ARCH}/IO/
+${P5ARCH}/IO/AIO.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/IO/
+${P5ARCH}/auto/IO/AIO/
+${P5ARCH}/auto/IO/AIO/AIO.so
+@man man/man3p/IO::AIO.3p
