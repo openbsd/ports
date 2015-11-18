@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.66 2015/11/12 13:00:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2015/11/18 13:48:59 sthen Exp $
+
+PORTROACH=	limit:^2\.
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.2      # .0.0
