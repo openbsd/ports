@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/18 22:30:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/11/18 14:02:57 sthen Exp $
 
 COMMENT=	update /etc/relayd.conf to new syntax
 
-DISTNAME=	relayd-updateconf-5.6.1
+DISTNAME=	relayd-updateconf-5.7
 CATEGORIES=	sysutils
 
 MASTER_SITES=	http://bsd.plumbing/download/
