@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2015/10/07 05:50:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/11/18 11:05:46 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Qt4-based featureful music player
 
 V =		1.2.3
-PKGNAME =	clementine-${V}
+DISTNAME =	clementine-${V}
 CATEGORIES =	audio x11
 REVISION =	5
 
