@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.23 2015/07/16 23:57:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2015/11/18 13:23:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	interface to the system's process table
 
-DISTNAME =	Proc-ProcessTable-0.51
+DISTNAME =	Proc-ProcessTable-0.53
 CATEGORIES=	sysutils
-REVISION =	0
 
 MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c kvm
+WANTLIB += kvm
 
 MODULES=	cpan
 
