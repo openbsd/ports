@@ -1,8 +1,8 @@
-$OpenBSD: patch-source_rofi_c,v 1.1.1.1 2015/09/20 12:49:52 landry Exp $
---- source/rofi.c.orig	Sun Sep 20 10:31:20 2015
-+++ source/rofi.c	Sun Sep 20 10:32:03 2015
-@@ -1741,10 +1741,9 @@ static gpointer rofi_signal_handler_process ( gpointer
-     sigaddset ( &set, SIGCHLD );
+$OpenBSD: patch-source_rofi_c,v 1.2 2015/11/18 19:56:40 jasper Exp $
+--- source/rofi.c.orig	Sun Nov  8 10:43:52 2015
++++ source/rofi.c	Tue Nov 17 12:36:25 2015
+@@ -1981,10 +1981,9 @@ static gpointer rofi_signal_handler_process ( gpointer
+     sigaddset ( &set, SIGUSR1 );
      // loop forever.
      while ( 1 ) {
 -        siginfo_t info;

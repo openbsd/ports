@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/20 12:49:52 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/11/18 19:56:40 jasper Exp $
 @bin bin/rofi
 bin/rofi-sensible-terminal
+@man man/man1/rofi-sensible-terminal.1
 @man man/man1/rofi.1
