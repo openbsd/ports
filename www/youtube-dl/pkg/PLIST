@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.89 2015/11/18 17:55:27 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.90 2015/11/19 10:50:20 pirofti Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -233,6 +233,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dotsub.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dotsub.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/douyutv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/douyutv.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dplay.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dplay.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dramafever.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dramafever.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/drbonanza.py
