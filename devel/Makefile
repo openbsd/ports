@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1421 2015/11/18 20:38:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.1422 2015/11/19 21:02:37 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -385,6 +385,7 @@
      SUBDIR += llvm
      SUBDIR += log4c
      SUBDIR += log4cplus
+     SUBDIR += log4cpp
      SUBDIR += lpc21isp
      SUBDIR += lpeg
      SUBDIR += lpeg,lua52
