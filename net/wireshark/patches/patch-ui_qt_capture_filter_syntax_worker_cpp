@@ -1,0 +1,15 @@
+$OpenBSD: patch-ui_qt_capture_filter_syntax_worker_cpp,v 1.1 2015/11/19 21:33:36 sthen Exp $
+
+cope with old libpcap
+
+--- ui/qt/capture_filter_syntax_worker.cpp.orig	Wed Oct 14 16:40:08 2015
++++ ui/qt/capture_filter_syntax_worker.cpp	Wed Oct 14 16:41:47 2015
+@@ -92,7 +92,7 @@ void CaptureFilterSyntaxWorker::start() {
+ #ifdef PCAP_NETMASK_UNKNOWN
+             pc_err = pcap_compile(pd, &fcode, filter.toUtf8().constData(), 1 /* Do optimize */, PCAP_NETMASK_UNKNOWN);
+ #else
+-            pc_err = pcap_compile(pd, &fcode, filter.toUtf8().constData(), 1 /* Do optimize */, 0);
++            pc_err = pcap_compile(pd, &fcode, (char *)filter.toUtf8().constData(), 1 /* Do optimize */, 0);
+ #endif
+ 
+             if (pc_err) {

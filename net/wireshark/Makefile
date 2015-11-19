@@ -1,21 +1,23 @@
-# $OpenBSD: Makefile,v 1.25 2015/10/14 20:21:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2015/11/19 21:33:36 sthen Exp $
+
+# XXX should add pledge to dumpcap.
+# XXX the Qt UI (upstream default) is broken here; segfault at startup.
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 BROKEN-sparc64 = cc: Internal error: Illegal instruction (program cc1)
 COMMENT-main =	graphical network protocol analyzer
 COMMENT-text =	network protocol analyzer
 
-WVER =		1.12.8
+WVER =		2.0.0
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
 PKGNAME-text =	tshark-${WVER}
 SHARED_ONLY =	Yes
 
-SHARED_LIBS +=	wsutil               1.1      # 5.0
-SHARED_LIBS +=	wiretap              1.0      # 4.5
-SHARED_LIBS +=	filetap              0.0      # 0.5
-SHARED_LIBS +=	wireshark            1.2      # 5.5
+SHARED_LIBS +=	wsutil               2.0      # 5.0
+SHARED_LIBS +=	wiretap              2.0      # 4.5
+SHARED_LIBS +=	wireshark            2.0      # 5.5
 
 CATEGORIES =	net security x11
 
@@ -29,25 +31,27 @@ USE_GMAKE =	Yes
 # tools/pidl is GPLv3 or later. See COPYING.
 PERMIT_PACKAGE_CDROM =	Yes
 
+cWANTLIB +=	c glib-2.0 m pcap pthread z
+
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 MODLUA_VERSION = 5.2
-MODULES =	lang/lua lang/python
+MODULES =	lang/lua lang/python x11/qt5
 MODLUA_SA =	Yes
 MODLUA_RUNDEP =	No
 MODPY_RUNDEP =	No
 
-WANTLIB +=	c glib-2.0 m pcap pthread z
-
-WANTLIB-text +=	${WANTLIB} ${MODLUA_WANTLIB} GeoIP cares gcrypt gmodule-2.0
-WANTLIB-text +=	gnutls gpg-error smi
-
-WANTLIB-main +=	${WANTLIB} wireshark wiretap wsutil
-WANTLIB-main +=	cairo gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0
-WANTLIB-main +=	pango-1.0 pangocairo-1.0 portaudio
-WANTLIB-main +=	gdk-3 gtk-3
-
 MULTI_PACKAGES =	-text -main
+
+WANTLIB-text +=	${cWANTLIB} ${MODLUA_WANTLIB}
+WANTLIB-text +=	GeoIP cares gcrypt gmodule-2.0 gnutls gpg-error smi
+
+#WANTLIB-main +=	${cWANTLIB} ${WANTLIB}
+#WANTLIB-main +=	wireshark wiretap wsutil gmodule-2.0 stdc++
+#WANTLIB-main +=	Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
+WANTLIB-main +=	${cWANTLIB} wireshark wiretap wsutil
+WANTLIB-main +=	cairo gdk_pixbuf-2.0 gdk-3 gmodule-2.0 gobject-2.0 gtk-3
+WANTLIB-main +=	pango-1.0 pangocairo-1.0 portaudio 
 
 MASTER_SITES =		http://www.wireshark.org/download/src/all-versions/ \
 			http://www.wireshark.org/download/automated/src/
@@ -62,8 +66,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			misc/shared-mime-info \
 			x11/gtk+3,-guic
 
-LIB_DEPENDS-text =	${LIB_DEPENDS} \
-			${MODLUA_LIB_DEPENDS} \
+LIB_DEPENDS-text =	${MODLUA_LIB_DEPENDS} \
 			devel/glib2 \
 			net/libcares \
 			net/libsmi \
@@ -71,34 +74,34 @@ LIB_DEPENDS-text =	${LIB_DEPENDS} \
 			security/gnutls \
 			security/libgcrypt
 
-LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			tshark-${WVER}:${BUILD_PKGPATH:S/,$//},-text \
+LIB_DEPENDS-main =	tshark-${WVER}:${BUILD_PKGPATH:S/,$//},-text \
 			x11/gtk+3 \
 			audio/portaudio-svn
 
-LIBTOOL_FLAGS +=	--tag=disable-static
+MODULES +=		devel/cmake
+CONFIGURE_STYLE =	cmake
+CONFIGURE_ARGS =	-DDUMPCAP_INST_VALS=suid \
+			-DCMAKE_INSTALL_MANDIR=${TRUEPREFIX}/man \
+			-DCOMPILER_CAN_HANDLE_SSE4_2=false \
+			-DSSE4_2_FLAG=""
 
-CONFIGURE_STYLE =	gnu
-SEPARATE_BUILD =	Yes
-
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--with-dumpcap-group=_wireshark \
-			--enable-setuid-install \
-			--with-gtk3=yes \
-			--with-ssl
-
-CONFIGURE_ENV =	CPPFLAGS="-DGDK_VERSION_MIN_REQUIRED=GDK_VERSION_3_0 -I${LOCALBASE}/include/lua-${MODLUA_VERSION}"
+NO_TEST =	Yes
 
 .if ${MACHINE_ARCH:Mpowerpc}
 CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
 .endif
 
-NO_TEST =	Yes
-
-INSTALL_TARGET = install install_desktop_files
-
 post-install:
-	@find ${PREFIX}/lib/wireshark -name '*.la' -print0 | xargs -r0 rm
-	-mv ${WRKINST}/usr/share/{applications,icons,mime} ${PREFIX}/share/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/wireshark.desktop ${PREFIX}/share/applications/
+.for _s in 16 24 32 48 64 128 256
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${_s}x${_s}/{apps,mimetypes}
+	${INSTALL_DATA} ${WRKSRC}/image/wsicon${_s}.png ${PREFIX}/share/icons/hicolor/${_s}x${_s}/apps/wireshark.png
+	${INSTALL_DATA} ${WRKSRC}/image/WiresharkDoc-${_s}.png ${PREFIX}/share/icons/hicolor/${_s}x${_s}/mimetypes/application-wireshark-doc.png
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/image/wsicon.svg ${PREFIX}/share/icons/hicolor/scalable/apps/wireshark.svg
+	mv ${PREFIX}/bin/wireshark ${PREFIX}/bin/wireshark-qt
+	ln -s wireshark-gtk ${PREFIX}/bin/wireshark
 
 .include <bsd.port.mk>

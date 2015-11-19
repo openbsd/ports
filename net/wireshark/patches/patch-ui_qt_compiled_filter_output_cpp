@@ -1,0 +1,15 @@
+$OpenBSD: patch-ui_qt_compiled_filter_output_cpp,v 1.1 2015/11/19 21:33:36 sthen Exp $
+
+cope with old libpcap
+
+--- ui/qt/compiled_filter_output.cpp.orig	Wed Oct 14 16:42:56 2015
++++ ui/qt/compiled_filter_output.cpp	Wed Oct 14 16:43:20 2015
+@@ -85,7 +85,7 @@ void CompiledFilterOutput::compileFilter()
+             } else {
+                 pcap_t *pd = pcap_open_dead(device.active_dlt, WTAP_MAX_PACKET_SIZE);
+                 g_mutex_lock(pcap_compile_mtx);
+-                if (pcap_compile(pd, &fcode, compile_filter_.toUtf8().constData(), 1, 0) < 0) {
++                if (pcap_compile(pd, &fcode, (char *)compile_filter_.toUtf8().constData(), 1, 0) < 0) {
+                     compile_results.insert(interfaces, QString("%1").arg(g_strdup(pcap_geterr(pd))));
+                     g_mutex_unlock(pcap_compile_mtx);
+                     ui->interfaceList->addItem(new QListWidgetItem(QIcon(":expert/expert_error.png"),interfaces));

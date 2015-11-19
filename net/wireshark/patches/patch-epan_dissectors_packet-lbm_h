@@ -1,9 +1,9 @@
-$OpenBSD: patch-epan_dissectors_packet-lbm_h,v 1.1 2014/10/17 23:29:46 sthen Exp $
---- epan/dissectors/packet-lbm.h.orig	Sat Oct 18 00:07:34 2014
-+++ epan/dissectors/packet-lbm.h	Sat Oct 18 00:09:55 2014
-@@ -25,7 +25,7 @@
- #ifndef PACKET_LBM_H_INCLUDED
- #define PACKET_LBM_H_INCLUDED
+$OpenBSD: patch-epan_dissectors_packet-lbm_h,v 1.2 2015/11/19 21:33:36 sthen Exp $
+--- epan/dissectors/packet-lbm.h.orig	Wed Sep  2 17:31:38 2015
++++ epan/dissectors/packet-lbm.h	Wed Oct 14 14:07:25 2015
+@@ -88,7 +88,7 @@
+          actual payload of their messages.
+ */
  
 -#if defined(__FreeBSD__)
 +#if defined(__FreeBSD__) || defined(__OpenBSD__)
