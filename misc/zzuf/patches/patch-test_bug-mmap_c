@@ -1,0 +1,21 @@
+$OpenBSD: patch-test_bug-mmap_c,v 1.1 2015/11/19 00:55:23 mmcc Exp $
+--- test/bug-mmap.c.orig	Sat May 30 10:30:00 2015
++++ test/bug-mmap.c	Wed Nov 18 16:39:20 2015
+@@ -13,8 +13,6 @@
+ 
+ #include "config.h"
+ 
+-#define _BSD_SOURCE 1 /* for MAP_POPULATE */
+-
+ #if HAVE_SYS_MMAN_H
+ #   include <sys/mman.h>
+ #endif
+@@ -32,7 +30,7 @@
+ 
+ int main(void)
+ {
+-#if defined _SC_PAGE_SIZE
++#if defined _SC_PAGE_SIZE && defined MAP_POPULATE
+     int fd = open("/etc/hosts", O_RDONLY);
+     mmap(0, sysconf(_SC_PAGE_SIZE) * 2, PROT_READ,
+          MAP_PRIVATE | MAP_POPULATE, fd, 0);

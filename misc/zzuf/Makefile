@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/11/19 00:55:23 mmcc Exp $
 
 COMMENT=		transparent application input fuzzer
 
-DISTNAME=		zzuf-0.13
-REVISION=		2
-CATEGORIES=		misc
-MASTER_SITES=		http://libcaca.zoy.org/files/zzuf/
+VERSION=		0.14
+DISTNAME=		zzuf-${VERSION}
+CATEGORIES=		misc security
+
+MAINTAINER=		Michael McConville <mmcco@mykolab.com>
+
+MASTER_SITES=		https://github.com/samhocevar/zzuf/releases/download/v${VERSION}/
 
 # WTFPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,13 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m
 
 CONFIGURE_STYLE=	gnu
+# Necessary?
 USE_GROFF=		Yes
-
-pre-configure:
-	perl -pi -e 's/zzcat/zzufcat/g' ${WRKSRC}/doc/zzcat.1.in
-
-post-install:
-	cd ${PREFIX}/bin && mv zzcat zzufcat
-	cd ${PREFIX}/man/man1 && mv zzcat.1 zzufcat.1
 
 .include <bsd.port.mk>

@@ -1,0 +1,16 @@
+A simple missing semicolon. Fixed upstream by commit 9eb78c6:
+
+	https://github.com/samhocevar/zzuf/commit/9eb78c602c1ef292cb5d94e6dad5d3d2c4215786
+
+$OpenBSD: patch-src_libzzuf_lib-stream_c,v 1.1 2015/11/19 00:55:23 mmcc Exp $
+--- src/libzzuf/lib-stream.c.orig	Tue Nov 17 23:58:02 2015
++++ src/libzzuf/lib-stream.c	Tue Nov 17 23:58:29 2015
+@@ -1052,7 +1052,7 @@ char *NEW(fgetln)(FILE *stream, size_t *len)
+ 
+         fuzz->tmp[i] = (char)(unsigned char)chr;
+     }
+-    while (fuzz->tmp[i++] != '\n')
++    while (fuzz->tmp[i++] != '\n');
+ 
+     *len = i;
+     char *ret = fuzz->tmp;
