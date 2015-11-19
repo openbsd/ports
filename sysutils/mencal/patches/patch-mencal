@@ -1,7 +1,7 @@
-$OpenBSD: patch-mencal,v 1.3 2004/11/30 03:16:47 kevlo Exp $
---- mencal.orig	Tue Nov 30 02:26:43 2004
-+++ mencal	Tue Nov 30 02:33:10 2004
-@@ -276,14 +276,6 @@ package Main;
+$OpenBSD: patch-mencal,v 1.4 2015/11/19 19:00:07 jasper Exp $
+--- mencal.orig	Sun Oct 27 15:19:20 2013
++++ mencal	Thu Nov 19 19:58:00 2015
+@@ -331,14 +331,6 @@ package Main;
      }
    }
    
