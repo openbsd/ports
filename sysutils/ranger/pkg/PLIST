@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/07/12 01:25:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/11/19 19:13:35 jasper Exp $
 bin/ranger
 bin/rifle
 lib/python${MODPY_VERSION}/site-packages/ranger/
@@ -21,11 +21,15 @@ lib/python${MODPY_VERSION}/site-packages/ranger/colorschemes/jungle.py
 lib/python${MODPY_VERSION}/site-packages/ranger/colorschemes/jungle.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/colorschemes/snow.py
 lib/python${MODPY_VERSION}/site-packages/ranger/colorschemes/snow.pyc
+lib/python${MODPY_VERSION}/site-packages/ranger/colorschemes/solarized.py
+lib/python${MODPY_VERSION}/site-packages/ranger/colorschemes/solarized.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/config/
 lib/python${MODPY_VERSION}/site-packages/ranger/config/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ranger/config/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/config/commands.py
 lib/python${MODPY_VERSION}/site-packages/ranger/config/commands.pyc
+lib/python${MODPY_VERSION}/site-packages/ranger/config/commands_sample.py
+lib/python${MODPY_VERSION}/site-packages/ranger/config/commands_sample.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/config/rc.conf
 lib/python${MODPY_VERSION}/site-packages/ranger/config/rifle.conf
 lib/python${MODPY_VERSION}/site-packages/ranger/container/
@@ -50,14 +54,16 @@ lib/python${MODPY_VERSION}/site-packages/ranger/core/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ranger/core/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/core/actions.py
 lib/python${MODPY_VERSION}/site-packages/ranger/core/actions.pyc
-lib/python${MODPY_VERSION}/site-packages/ranger/core/environment.py
-lib/python${MODPY_VERSION}/site-packages/ranger/core/environment.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/core/fm.py
 lib/python${MODPY_VERSION}/site-packages/ranger/core/fm.pyc
+lib/python${MODPY_VERSION}/site-packages/ranger/core/linemode.py
+lib/python${MODPY_VERSION}/site-packages/ranger/core/linemode.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/core/loader.py
 lib/python${MODPY_VERSION}/site-packages/ranger/core/loader.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/core/main.py
 lib/python${MODPY_VERSION}/site-packages/ranger/core/main.pyc
+lib/python${MODPY_VERSION}/site-packages/ranger/core/metadata.py
+lib/python${MODPY_VERSION}/site-packages/ranger/core/metadata.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/core/runner.py
 lib/python${MODPY_VERSION}/site-packages/ranger/core/runner.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/core/shared.py
@@ -124,8 +130,6 @@ lib/python${MODPY_VERSION}/site-packages/ranger/ext/vcs/vcs.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/vcs/vcs.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/widestring.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/widestring.pyc
-lib/python${MODPY_VERSION}/site-packages/ranger/fsobject.py
-lib/python${MODPY_VERSION}/site-packages/ranger/fsobject.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/__init__.pyc
@@ -168,8 +172,8 @@ lib/python${MODPY_VERSION}/site-packages/ranger/gui/widgets/titlebar.pyc
 @man man/man1/rifle.1
 share/doc/ranger/
 share/doc/ranger/CHANGELOG
-share/doc/ranger/HACKING
-share/doc/ranger/README
+share/doc/ranger/HACKING.md
+share/doc/ranger/README.md
 share/doc/ranger/colorschemes.txt
 share/doc/ranger/config/
 share/doc/ranger/config/colorschemes/
@@ -181,6 +185,7 @@ share/doc/ranger/config/rc.conf
 share/doc/ranger/config/rifle.conf
 share/doc/ranger/config/scope.sh
 share/doc/ranger/tools/
+share/doc/ranger/tools/convert_papermode_to_metadata.py
 share/doc/ranger/tools/print_colors.py
 share/doc/ranger/tools/print_keys.py
 share/examples/ranger/
@@ -190,8 +195,11 @@ share/examples/ranger/bash_subshell_notice.sh
 share/examples/ranger/plugin_chmod_keybindings.py
 share/examples/ranger/plugin_file_filter.py
 share/examples/ranger/plugin_hello_world.py
+share/examples/ranger/plugin_ipc.py
+share/examples/ranger/plugin_linemode.py
 share/examples/ranger/plugin_new_macro.py
 share/examples/ranger/plugin_new_sorting_method.py
+share/examples/ranger/rc_emacs.conf
 share/examples/ranger/rifle_different_file_opener.conf
 share/examples/ranger/rifle_sxiv.sh
 share/examples/ranger/vim_file_chooser.vim

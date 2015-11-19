@@ -1,17 +1,17 @@
-$OpenBSD: patch-ranger_data_scope_sh,v 1.2 2014/07/12 01:25:55 sthen Exp $
+$OpenBSD: patch-ranger_data_scope_sh,v 1.3 2015/11/19 19:13:35 jasper Exp $
 
 Meant to use atool (not ported yet), but bsdtar copes with many of these
 archives directly so use that instead.
 
---- ranger/data/scope.sh.orig	Fri May 24 19:45:13 2013
-+++ ranger/data/scope.sh	Sat Jul 12 02:22:43 2014
+--- ranger/data/scope.sh.orig	Sun Oct  4 01:46:45 2015
++++ ranger/data/scope.sh	Thu Nov 19 20:09:03 2015
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env sh
 +#!/bin/ksh
  # ranger supports enhanced previews.  If the option "use_preview_script"
  # is set to True and this file exists, this script will be called and its
  # output is displayed in ranger.  ANSI color codes are supported.
-@@ -46,7 +46,7 @@ case "$extension" in
+@@ -48,7 +48,7 @@ case "$extension" in
      # Archive extensions:
      7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|\
      rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)

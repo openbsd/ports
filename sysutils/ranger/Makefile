@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2014/07/12 01:25:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/11/19 19:13:35 jasper Exp $
 
 COMMENT =	minimalistic console file manager
 
-MODPY_EGG_VERSION = 1.6.1
+MODPY_EGG_VERSION = 1.7.2
 DISTNAME =	ranger-${MODPY_EGG_VERSION}
 
 CATEGORIES =	sysutils misc
