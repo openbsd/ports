@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/17 17:12:11 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/11/19 20:15:15 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/guppy/
-lib/python${MODPY_VERSION}/site-packages/guppy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/gup${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/guppy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/guppy/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/guppy/doc/
@@ -8,8 +8,6 @@ lib/python${MODPY_VERSION}/site-packages/guppy/doc/ProfileBrowser.html
 lib/python${MODPY_VERSION}/site-packages/guppy/doc/__init__.py
 lib/python${MODPY_VERSION}/site-packages/guppy/doc/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/guppy/doc/docexample.html
-lib/python${MODPY_VERSION}/site-packages/guppy/doc/docexample.py
-lib/python${MODPY_VERSION}/site-packages/guppy/doc/docexample.pyc
 lib/python${MODPY_VERSION}/site-packages/guppy/doc/gsl.html
 lib/python${MODPY_VERSION}/site-packages/guppy/doc/gslexample.html
 lib/python${MODPY_VERSION}/site-packages/guppy/doc/guppy.html
@@ -21,12 +19,6 @@ lib/python${MODPY_VERSION}/site-packages/guppy/doc/heapyc.html
 lib/python${MODPY_VERSION}/site-packages/guppy/doc/index.html
 lib/python${MODPY_VERSION}/site-packages/guppy/doc/pbscreen.jpg
 lib/python${MODPY_VERSION}/site-packages/guppy/doc/sets.html
-lib/python${MODPY_VERSION}/site-packages/guppy/doc/test_guppy.py
-lib/python${MODPY_VERSION}/site-packages/guppy/doc/test_guppy.pyc
-lib/python${MODPY_VERSION}/site-packages/guppy/doc/test_heapy.py
-lib/python${MODPY_VERSION}/site-packages/guppy/doc/test_heapy.pyc
-lib/python${MODPY_VERSION}/site-packages/guppy/doc/test_heapyc.py
-lib/python${MODPY_VERSION}/site-packages/guppy/doc/test_heapyc.pyc
 lib/python${MODPY_VERSION}/site-packages/guppy/etc/
 lib/python${MODPY_VERSION}/site-packages/guppy/etc/Cat.py
 lib/python${MODPY_VERSION}/site-packages/guppy/etc/Cat.pyc
