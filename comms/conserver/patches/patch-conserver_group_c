@@ -1,0 +1,12 @@
+$OpenBSD: patch-conserver_group_c,v 1.7 2015/11/19 14:03:30 sthen Exp $
+--- conserver/group.c.orig	Thu Nov 19 13:55:52 2015
++++ conserver/group.c	Thu Nov 19 13:59:18 2015
+@@ -754,7 +754,7 @@ CheckPass(char *pcUser, char *pcWord, FLAG empty_check
+     struct spwd *spwd;
+ # endif
+ 
+-    if ((pwd = getpwnam(pcUser)) == (struct passwd *)0) {
++    if ((pwd = getpwnam_shadow(pcUser)) == (struct passwd *)0) {
+ 	CONDDEBUG((1, "CheckPass(): getpwnam(%s): %s", pcUser,
+ 		   strerror(errno)));
+ 	retval = AUTH_NOUSER;
