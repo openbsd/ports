@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2015/10/10 13:00:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/11/19 18:14:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	software G729A encoder and decoder library
 
-DISTNAME=	bcg729-1.0.0
+DISTNAME=	bcg729-1.0.1
 
 SHARED_LIBS +=	bcg729                    0.0 # unknown
 
@@ -18,7 +18,10 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	http://download-mirror.savannah.gnu.org/releases/linphone/plugins/sources/
 
+BUILD_DEPENDS=		net/ortp
+
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--disable-msplugin
 
 # Use bundled libtool for the tests only; otherwise they fail to link.
 TEST_FLAGS=	LIBTOOL="/bin/sh ../../libtool"
