@@ -1,0 +1,24 @@
+@comment $OpenBSD: PFRAG.no-qt5,v 1.1 2015/11/19 18:42:21 zhuk Exp $
+lib/cmake/phonon_s/
+lib/cmake/phonon_s/PhononConfig.cmake
+lib/cmake/phonon_s/PhononConfigVersion.cmake
+lib/cmake/phonon_s/PhononTargets${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/phonon_s/PhononTargets.cmake
+lib/kde4/
+${KDE4LIB}/
+@lib ${KDE4LIB}/libphonon_s.so.${LIBphonon_s_VERSION}
+@lib ${KDE4LIB}/libphonon_sexperimental.so.${LIBphonon_sexperimental_VERSION}
+@lib lib/libphonon_s.so.${LIBphonon_s_VERSION}
+@lib lib/libphonon_sexperimental.so.${LIBphonon_sexperimental_VERSION}
+lib/pkgconfig/phonon_s.pc
+lib/qt4/mkspecs/modules/qt_phonon_s.pri
+share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
+share/phonon_s/
+share/phonon_s/buildsystem/
+share/phonon_s/buildsystem/COPYING-CMAKE-SCRIPTS
+share/phonon_s/buildsystem/FindPhononInternal.cmake
+share/phonon_s/buildsystem/MacroEnsureVersion.cmake
+share/phonon_s/buildsystem/MacroLogFeature.cmake
+share/phonon_s/buildsystem/MacroOptionalFindPackage.cmake
+share/phonon_s/buildsystem/PhononMacros.cmake
+share/phonon_s/buildsystem/cmake_uninstall.cmake.in

@@ -1,0 +1,23 @@
+@comment $OpenBSD: PFRAG.qt5,v 1.1 2015/11/19 18:42:21 zhuk Exp $
+lib/cmake/phonon4qt5/
+lib/cmake/phonon4qt5/Phonon4Qt5Config.cmake
+lib/cmake/phonon4qt5/Phonon4Qt5ConfigVersion.cmake
+lib/cmake/phonon4qt5/PhononTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/phonon4qt5/PhononTargets.cmake
+@lib lib/libphonon4qt5.so.${LIBphonon4qt5_VERSION}
+@lib lib/libphonon4qt5experimental.so.${LIBphonon4qt5experimental_VERSION}
+lib/pkgconfig/phonon4qt5.pc
+lib/qt5/
+lib/qt5/mkspecs/
+lib/qt5/mkspecs/modules/
+lib/qt5/mkspecs/modules/qt_phonon4qt5.pri
+share/dbus-1/interfaces/org.kde.Phonon4Qt5.AudioOutput.xml
+share/phonon4qt5/
+share/phonon4qt5/buildsystem/
+share/phonon4qt5/buildsystem/COPYING-CMAKE-SCRIPTS
+share/phonon4qt5/buildsystem/FindPhononInternal.cmake
+share/phonon4qt5/buildsystem/MacroEnsureVersion.cmake
+share/phonon4qt5/buildsystem/MacroLogFeature.cmake
+share/phonon4qt5/buildsystem/MacroOptionalFindPackage.cmake
+share/phonon4qt5/buildsystem/PhononMacros.cmake
+share/phonon4qt5/buildsystem/cmake_uninstall.cmake.in
