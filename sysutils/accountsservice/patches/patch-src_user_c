@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_user_c,v 1.27 2014/03/30 12:50:52 ajacoutot Exp $
+$OpenBSD: patch-src_user_c,v 1.28 2015/11/19 10:07:45 ajacoutot Exp $
 --- src/user.c.orig	Thu Mar 20 19:16:44 2014
 +++ src/user.c	Sun Mar 30 14:47:24 2014
 @@ -123,7 +123,12 @@ account_type_from_pwent (struct passwd *pwent)
@@ -57,7 +57,7 @@ $OpenBSD: patch-src_user_c,v 1.27 2014/03/30 12:50:52 ajacoutot Exp $
  #endif
  
 +#ifdef __OpenBSD__
-+        pw = getpwnam (pwent->pw_name);
++        pw = getpwnam_shadow (pwent->pw_name);
 +        if (pw)
 +                passwd = pw->pw_passwd;
 +        if (g_strcmp0(passwd, "skey") == 0)
