@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_modules_rlm_unix_rlm_unix_c,v 1.1 2015/11/19 14:19:05 sthen Exp $
+--- src/modules/rlm_unix/rlm_unix.c.orig	Thu Nov 19 14:13:04 2015
++++ src/modules/rlm_unix/rlm_unix.c	Thu Nov 19 14:13:38 2015
+@@ -211,7 +211,7 @@ static int unix_getpw(UNUSED void *instance, REQUEST *
+ 		return RLM_MODULE_USERLOCK;
+ 	}
+ #else /* OSFC2 */
+-	if ((pwd = getpwnam(name)) == NULL) {
++	if ((pwd = getpwnam_shadow(name)) == NULL) {
+ 		return RLM_MODULE_NOTFOUND;
+ 	}
+ 	encrypted_pass = pwd->pw_passwd;

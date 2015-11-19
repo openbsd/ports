@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2015/11/18 13:48:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2015/11/19 14:19:05 sthen Exp $
 
 PORTROACH=	limit:^2\.
 
@@ -14,6 +14,7 @@ COMMENT-ldap=	freeradius ldap rlm addon
 
 V=		2.2.9
 REVISION=	2
+REVISION-main=	3
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
