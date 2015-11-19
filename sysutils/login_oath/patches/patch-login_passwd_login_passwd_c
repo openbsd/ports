@@ -1,0 +1,54 @@
+$OpenBSD: patch-login_passwd_login_passwd_c,v 1.1 2015/11/19 14:58:50 sthen Exp $
+--- login_passwd/login_passwd.c.orig	Thu Nov 19 14:35:15 2015
++++ login_passwd/login_passwd.c	Thu Nov 19 14:35:21 2015
+@@ -34,9 +34,9 @@ pwd_login(char *username, char *password, char *wheel,
+     char *class)
+ {
+ 	struct passwd *pwd;
+-	login_cap_t *lc;
+ 	size_t plen;
+-	char *salt, saltbuf[_PASSWORD_LEN + 1];
++	char *goodhash = NULL;
++	int passok = 0;
+ 
+ 	if (wheel != NULL && strcmp(wheel, "yes") != 0) {
+ 		fprintf(back, BI_VALUE " errormsg %s\n",
+@@ -47,32 +47,18 @@ pwd_login(char *username, char *password, char *wheel,
+ 	if (password == NULL)
+ 		return (AUTH_FAILED);
+ 
+-	pwd = getpwnam(username);
++	pwd = getpwnam_shadow(username);
+ 	if (pwd)
+-		salt = pwd->pw_passwd;
+-	else {
+-		/* no such user, get appropriate salt */
+-		if ((lc = login_getclass(NULL)) == NULL ||
+-		    pwd_gensalt(saltbuf, sizeof(saltbuf), lc, 'l') == 0)
+-			salt = "xx";
+-		else
+-			salt = saltbuf;
+-	}
++		goodhash = pwd->pw_passwd;
+ 
+ 	setpriority(PRIO_PROCESS, 0, -4);
+ 
+-	salt = crypt(password, salt);
++	if (crypt_checkpass(password, goodhash) == 0)
++		passok = 1;
+ 	plen = strlen(password);
+-	memset(password, 0, plen);
++	explicit_bzero(password, plen);
+ 
+-	/*
+-	 * Authentication fails if the user does not exist in the password
+-	 * database, the given password does not match the entry in the
+-	 * password database, or if the user's password field is empty
+-	 * and the given password is not the empty string.
+-	 */
+-	if (!pwd || strcmp(salt, pwd->pw_passwd) != 0 ||
+-	    (*pwd->pw_passwd == '\0' && plen > 0))
++	if (!passok)
+ 		return (AUTH_FAILED);
+ 
+ #ifndef OATH

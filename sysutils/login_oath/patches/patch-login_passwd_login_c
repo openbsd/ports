@@ -1,0 +1,33 @@
+$OpenBSD: patch-login_passwd_login_c,v 1.1 2015/11/19 14:58:50 sthen Exp $
+--- login_passwd/login.c.orig	Thu Nov 19 14:35:15 2015
++++ login_passwd/login.c	Thu Nov 19 14:35:21 2015
+@@ -46,7 +46,7 @@ main(int argc, char **argv)
+ 	char *username, *password = NULL, *otp = NULL;
+ 	char response[1024];
+ 	int arg_login = 0, arg_notickets = 0;
+-	char invokinguser[MAXLOGNAME];
++	char invokinguser[LOGIN_NAME_MAX];
+ 	char *wheel = NULL, *class = NULL;
+ 
+ 	invokinguser[0] = '\0';
+@@ -167,7 +167,7 @@ main(int argc, char **argv)
+ 	ret = AUTH_FAILED;
+ #ifdef KRB5
+ 	ret = krb5_login(username, invokinguser, password, arg_login,
+-			 !arg_notickets);
++			 !arg_notickets, class);
+ #endif
+ #ifdef PASSWD
+ 	if (ret != AUTH_OK)
+@@ -183,9 +183,9 @@ main(int argc, char **argv)
+ #endif
+ 
+ 	if (password != NULL)
+-		memset(password, 0, strlen(password));
++		explicit_bzero(password, strlen(password));
+ 	if (otp != NULL)
+-		memset(otp, 0, strlen(otp));
++		explicit_bzero(otp, strlen(otp));
+ 	if (ret != AUTH_OK)
+ 		fprintf(back, BI_REJECT "\n");
+ #ifdef OATH

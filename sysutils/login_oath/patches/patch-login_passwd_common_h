@@ -1,0 +1,27 @@
+$OpenBSD: patch-login_passwd_common_h,v 1.1 2015/11/19 14:58:50 sthen Exp $
+--- login_passwd/common.h.orig	Thu Nov 19 14:35:15 2015
++++ login_passwd/common.h	Thu Nov 19 14:35:21 2015
+@@ -30,7 +30,6 @@
+ 
+ #include <sys/types.h>
+ #include <sys/resource.h>
+-#include <sys/param.h>
+ 
+ #include <signal.h>
+ #include <syslog.h>
+@@ -43,6 +42,7 @@
+ #include <pwd.h>
+ #include <err.h>
+ #include <util.h>
++#include <limits.h>
+ 
+ 
+ #define MODE_LOGIN 0
+@@ -56,7 +56,6 @@ extern FILE *back;
+ 
+ #ifdef PASSWD
+ int pwd_login(char *, char *, char *, int, char *);
+-int pwd_gensalt(char *, int, login_cap_t *, char);
+ #endif
+ #ifdef OATH
+ int oath_login(char *, char *, char *);
