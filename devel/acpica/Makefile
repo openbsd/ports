@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/24 12:51:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2015/11/19 20:17:15 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -16,8 +16,7 @@ WANTLIB =		c pthread
 PERMIT_PACKAGE_CDROM =	Yes
 
 USE_GMAKE =		Yes
-BUILD_DEPENDS =		devel/bison \
-			devel/flex
+BUILD_DEPENDS =		devel/bison
 MAKE_FLAGS =		CC="${CC}" NOOPT=true
 FAKE_FLAGS =		DESTDIR=
 

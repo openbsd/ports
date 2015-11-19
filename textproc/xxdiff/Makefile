@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/11/15 11:55:59 jca Exp $
+# $OpenBSD: Makefile,v 1.37 2015/11/19 20:17:15 sthen Exp $
 
 COMMENT=	graphical file comparator and merge tool
 
@@ -19,8 +19,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python \
 		x11/qt4
-BUILD_DEPENDS=	devel/bison \
-		devel/flex
+BUILD_DEPENDS=	devel/bison
 
 USE_GMAKE=	Yes
 # Skip build step from python.port.mk
@@ -40,7 +39,6 @@ post-extract:
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 	    -f Makefile.bootstrap QMAKE="${LOCALBASE}/bin/qmake4"
-	cd ${WRKDIR}/bin && ln -s ${LOCALBASE}/bin/gflex flex
 
 do-install:
 	cd ${WRKSRC}/../bin; \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/11/16 20:29:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2015/11/19 20:17:15 sthen Exp $
 
 BROKEN-hppa =	needs 64-bit atomic ops; __sync_add_and_fetch_4
 SHARED_ONLY =	Yes
@@ -35,9 +35,7 @@ MODULES =		devel/cmake \
 MODGCC4_ARCHS =		sparc64
 MODGCC4_LANGS =		c++
 
-BUILD_DEPENDS =		devel/bison \
-			devel/flex
-# needs flex 2.5.31+
+BUILD_DEPENDS =		devel/bison
 
 MULTI_PACKAGES =	-main -mysql -pgsql
 
@@ -61,7 +59,6 @@ CONFIGURE_ARGS += \
 	-DCMAKE_INSTALL_SYSCONFDIR:String=${PREFIX}/share/examples \
 	-DCMAKE_INSTALL_FULL_SYSCONFDIR:String=${WRKINST}${SYSCONFDIR} \
 	-DCMAKE_INSTALL_LOCALSTATEDIR:String=${LOCALSTATEDIR} \
-	-DFLEX_EXECUTABLE=${LOCALBASE}/bin/gflex \
 	-DICINGA2_USER:String=_icinga \
 	-DICINGA2_GROUP:String=_icinga \
 	-DICINGA2_GIT_VERSION_INFO:Boolean=OFF \

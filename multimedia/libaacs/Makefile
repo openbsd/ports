@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/15 11:55:59 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2015/11/19 20:17:16 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -26,13 +26,11 @@ WANTLIB +=		c gcrypt gpg-error
 MODULES =		devel/gettext
 
 LIB_DEPENDS =		security/libgcrypt
-BUILD_DEPENDS =		devel/bison \
-			devel/flex
+BUILD_DEPENDS =		devel/bison
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 YACC =			${LOCALBASE}/bin/bison -y
 CONFIGURE_ARGS =	--disable-optimizations
-CONFIGURE_ENV =		ac_cv_prog_LEX="${LOCALBASE}/bin/gflex"
 
 .include <bsd.port.mk>

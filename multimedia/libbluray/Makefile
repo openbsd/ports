@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/22 12:38:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/11/19 20:17:16 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -27,8 +27,7 @@ SHARED_LIBS +=		bluray		2.0	# 9.0
 MODULES =		converters/libiconv
 
 LIB_DEPENDS =		textproc/libxml
-BUILD_DEPENDS =		devel/bison \
-			devel/flex
+BUILD_DEPENDS =		devel/bison
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
@@ -36,6 +35,5 @@ YACC =			${LOCALBASE}/bin/bison -y
 CONFIGURE_ARGS +=	--disable-bdjava \
 			--disable-doxygen-doc \
 			--disable-optimizations
-CONFIGURE_ENV =		ac_cv_prog_LEX="${LOCALBASE}/bin/gflex"
 
 .include <bsd.port.mk>
