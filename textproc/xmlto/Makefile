@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2015/11/16 13:24:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2015/11/19 18:34:40 jasper Exp $
 
 BROKEN-sparc=	Bus Error
 
 COMMENT=	front-end for converting XML files to various formats
 
-DISTNAME=	xmlto-0.0.27
+DISTNAME=	xmlto-0.0.28
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	textproc
 
