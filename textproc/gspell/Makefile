@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/11/08 11:13:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/11/19 11:10:02 ajacoutot Exp $
 
 COMMENT=		spell-checking library for GTK+
 
 GNOME_PROJECT=		gspell
-GNOME_VERSION=		0.1.1
+GNOME_VERSION=		0.1.2
 
 CATEGORIES=		textproc
 
