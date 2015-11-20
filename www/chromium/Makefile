@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.251 2015/11/14 22:47:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.252 2015/11/20 11:24:04 sthen Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -63,7 +63,6 @@ RUN_DEPENDS=	devel/xdg-utils \
 BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
 		devel/bison \
-		devel/flex \
 		devel/yasm \
 		shells/bash \
 		sysutils/flock \

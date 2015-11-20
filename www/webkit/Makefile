@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2015/11/15 12:45:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.143 2015/11/20 11:24:04 sthen Exp $
 
 PORTROACH =	limit:^2\.4
 
@@ -58,8 +58,7 @@ MODGNOME_TOOLS +=	gobject-introspection
 
 CONFIGURE_STYLE =	gnu
 # AR_FLAGS: cf http://trac.webkit.org/changeset/163954
-CONFIGURE_ENV =	ac_cv_path_FLEX=${LOCALBASE}/bin/gflex \
-		AR_FLAGS="cru" \
+CONFIGURE_ENV =	AR_FLAGS="cru" \
 		ac_cv_path_RUBY=${RUBY}
 CONFIGURE_ARGS= --disable-static \
 		--disable-webkit2 \
@@ -100,7 +99,6 @@ LIB_DEPENDS =	multimedia/gstreamer1/plugins-base \
 		x11/gnome/libsecret
 
 BUILD_DEPENDS =	devel/bison \
-		devel/flex \
 		devel/gperf \
 		geo/geoclue2
 
