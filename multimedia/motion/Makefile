@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/30 20:58:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/11/20 11:57:19 sthen Exp $
 
 COMMENT=	motion detection software for video
 
 GH_ACCOUNT=	Mr-Dave
 GH_PROJECT=	motion
-GH_COMMIT=	5c6f4be9e60a5115989b1cf34e14ea7c826bfa8e
-V=		3.2.12
-DISTNAME=	motion-$V.20150126
+GH_COMMIT=	9b4c16cae0ea77950cc156a9c82947ac51825f68
+V=		3.4.1
+DISTNAME=	motion-$V
 
 CATEGORIES=	multimedia
 
+# there are several different forks at the moment which will hopefully
+# be re-merged at some point; we are tracking the version from
+# https://github.com/Mr-Dave/motion
 HOMEPAGE=	http://www.lavrsen.dk/foswiki/bin/view/Motion/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
@@ -17,7 +20,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPL (according to source files, v2 only. website says v2+).
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += SDL avcodec avformat avutil c jpeg m pthread sqlite3 swscale z
+WANTLIB += SDL avcodec avformat avutil c jpeg m pthread sqlite3 swscale
 
 FLAVOR?=
 FLAVORS=		mysql pgsql
@@ -29,7 +32,9 @@ FAKE_FLAGS=		docdir=${PREFIX}/share/doc/motion \
 			examplesdir=${PREFIX}/share/examples/motion
 
 USE_GMAKE=		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
 CONFIGURE_ARGS=		--without-optimizecpu \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
@@ -53,6 +58,10 @@ NO_TEST=		Yes
 
 post-extract:
 	printf '#!/bin/sh\necho -n "$V-Git-${GH_COMMIT:C/[0-9a-f]{33}$//}"\n' > ${WRKSRC}/version.sh
+
+post-patch:
+	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fiv
 
 pre-configure:
 	perl -pi -e s,/usr/local/etc,${SYSCONFDIR},g \
