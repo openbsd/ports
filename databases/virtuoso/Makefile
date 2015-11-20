@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/06 20:37:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/11/20 17:17:50 sthen Exp $
 
 BROKEN-macppc =	make: don't know how to make all
 
@@ -21,7 +21,6 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=virtuoso/}
 
 MODULES =		converters/libiconv
 BUILD_DEPENDS =		devel/bison \
-			devel/flex \
 			devel/gperf \
 			lang/gawk
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2015/11/07 09:22:54 robert Exp $
+# $OpenBSD: Makefile,v 1.139 2015/11/20 17:17:50 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -138,7 +138,6 @@ BUILD_DEPENDS+=	archivers/zip \
 		databases/db/v4 \
 		devel/bison \
 		devel/cppunit \
-		devel/flex \
 		devel/gpatch \
 		devel/gperf \
 		devel/libexecinfo \
@@ -363,7 +362,6 @@ SUBST_VARS+=	BV OA
 
 pre-patch:
 	@ln -fs /bin/md5 ${WRKDIR}/bin/md5sum
-	@ln -fs /usr/local/bin/gflex ${WRKDIR}/bin/flex
 	@ln -fs /usr/local/bin/gfind ${WRKDIR}/bin/find
 	@ln -fs /usr/local/bin/gpatch ${WRKDIR}/bin/patch
 	@ln -fs /usr/local/bin/gcat ${WRKDIR}/bin/cat

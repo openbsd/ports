@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2015/09/01 07:30:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.51 2015/11/20 17:17:50 sthen Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -33,8 +33,7 @@ WANTLIB =
 RUN_DEPENDS =
 
 # bison needed if .y files are patched
-BUILD_DEPENDS =		devel/bison \
-			devel/flex
+BUILD_DEPENDS =		devel/bison
 
 commonLIB_DEPENDS =	x11/wxWidgets>=2.8.12 \
 			net/libupnp>=1.6.6
@@ -93,8 +92,7 @@ CONFIGURE_ARGS +=	--enable-debug
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LOCALDIR="${LOCALBASE}" \
-			X11R6DIR="${X11BASE}" \
-			ac_cv_prog_LEX="${LOCALBASE}/bin/gflex"
+			X11R6DIR="${X11BASE}"
 
 MAKE_FLAGS +=		CXXFLAGS="${CXXFLAGS} -Wno-deprecated \
 					-Wno-sign-compare -Wno-unused"

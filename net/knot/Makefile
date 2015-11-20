@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/10/05 19:20:20 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2015/11/20 17:17:50 sthen Exp $
 
 PORTROACH =		limit:^1\.
 PORTROACH_COMMENT =	knot-2.x uses __thread and lmdb
@@ -27,8 +27,7 @@ MASTER_SITES =		https://secure.nic.cz/files/knot-dns/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/gettext
-BUILD_DEPENDS =		devel/bison \
-			devel/flex
+BUILD_DEPENDS =		devel/bison
 LIB_DEPENDS =		devel/libidn \
 			devel/liburcu
 

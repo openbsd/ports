@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/11/06 20:37:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/11/20 17:17:50 sthen Exp $
 
 COMMENT-kipi =		KDE image plugins collection
 COMMENT-main =		KDE photo management utility
@@ -93,7 +93,6 @@ WANTLIB-mediawiki += ${KDE4LIB}/kio
 BUILD_DEPENDS =		devel/bison \
 			devel/boost \
 			devel/doxygen \
-			devel/flex \
 			math/eigen3 \
 			misc/shared-desktop-ontologies
 
