@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/10/29 08:58:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2015/11/20 15:44:03 ajacoutot Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
@@ -6,6 +6,7 @@ VERSION=		2.4.0
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
 CATEGORIES=		geo devel
+REVISION=		0
 
 SHARED_LIBS +=  geoclue-2                 0.0 # 0.0
 
@@ -28,6 +29,9 @@ MODULES=		devel/gettext \
 			textproc/intltool \
 			x11/gnome
 
+# XXX NEEDS FIXING see patches/patch-src_Makefile_in
+BUILD_DEPENDS +=	sysutils/coreutils
+
 LIB_DEPENDS=		devel/libsoup \
 			devel/json-glib \
 			net/avahi
@@ -40,6 +44,10 @@ LIB_DEPENDS=		devel/libsoup \
 RUN_DEPENDS +=		x11/dbus,-suid
 
 MODGNOME_TOOLS +=	desktop-file-utils
+
+# XXX
+# ERROR: can't resolve libraries to shared libraries: geoclue-2
+#MODGNOME_TOOLS +=	gobject-introspection
 
 USE_GMAKE=		Yes
 
