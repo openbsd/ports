@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1422 2015/11/19 21:02:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.1423 2015/11/20 17:18:32 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -111,7 +111,6 @@
      SUBDIR += flake8
      SUBDIR += flatzebra
      SUBDIR += flawfinder
-     SUBDIR += flex
      SUBDIR += fossil
      SUBDIR += fossil,static
      SUBDIR += fox
