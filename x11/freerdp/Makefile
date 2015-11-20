@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2015/11/07 07:28:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2015/11/20 19:48:34 jca Exp $
+
+# Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
+BROKEN-hppa =		undefined reference to `__sync_val_compare_and_swap_4'
 
 SHARED_ONLY =		Yes
 
