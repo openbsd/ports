@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/19 12:25:40 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/11/20 14:59:13 ajacoutot Exp $
 bin/cmpdump.py
 bin/crldump.py
 bin/crmfdump.py
 bin/ocspclient.py
 bin/ocspreqdump.py
 bin/ocsprspdump.py
-bin/ocspserver.py
 bin/pkcs10dump.py
 bin/pkcs1dump.py
 bin/pkcs7dump.py
@@ -24,8 +23,6 @@ lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/pem.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/pem.pyc
-lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/pkcs12.py
-lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/pkcs12.pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc1155.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc1155.pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/rfc1157.py
