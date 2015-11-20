@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/11/15 12:45:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2015/11/20 14:35:52 sthen Exp $
 
 BROKEN-alpha =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
 BROKEN-hppa =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
@@ -63,7 +63,6 @@ USE_GMAKE =		Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 
 BUILD_DEPENDS =		devel/bison \
-			devel/flex \
 			devel/gperf \
 			devel/libexecinfo \
 			geo/geoclue2
