@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.323 2015/11/13 12:55:36 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.324 2015/11/20 17:20:30 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -100,6 +100,7 @@ my $base_exceptions = {
 	'p5-IO-Socket-IP' => "$p5/IO/Socket/IP.pm",
 # 5.8
 	'libepoxy' => '/usr/X11R6/lib/libepoxy.so.1.0',
+	'flex' => '/usr/bin/flex',
 };
 
 my $stem_extensions = {
