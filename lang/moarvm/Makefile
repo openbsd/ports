@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/05 11:51:39 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/20 19:44:15 jca Exp $
 
 BROKEN-arm =		missing atomic ops (both AO_* and gcc builtin)
 BROKEN-sparc64 =	undefined reference to `AO_fetch_compare_and_swap_full'
+BROKEN-hppa =		dyncall_callvm.c:68:4: error: \#error unsupported platform
 
 COMMENT =		virtual machine for nqp/rakudo
 
