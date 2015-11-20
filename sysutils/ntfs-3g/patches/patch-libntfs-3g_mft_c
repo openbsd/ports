@@ -1,9 +1,9 @@
-$OpenBSD: patch-libntfs-3g_mft_c,v 1.1 2014/01/05 01:51:15 jca Exp $
+$OpenBSD: patch-libntfs-3g_mft_c,v 1.2 2015/11/20 05:32:02 pirofti Exp $
 - rip off mkntfs_get_page_size() from mkntfs.c, to avoid a build error
   on archs where PAGE_SIZE is unusable.
---- libntfs-3g/mft.c.orig	Wed Dec 25 02:12:11 2013
-+++ libntfs-3g/mft.c	Wed Dec 25 02:16:16 2013
-@@ -26,6 +26,9 @@
+--- libntfs-3g/mft.c.orig	Sat Mar 14 15:10:12 2015
++++ libntfs-3g/mft.c	Sun Jul 19 19:03:42 2015
+@@ -27,6 +27,9 @@
  #include "config.h"
  #endif
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-libntfs-3g_mft_c,v 1.1 2014/01/05 01:51:15 jca Exp $
  #ifdef HAVE_STDLIB_H
  #include <stdlib.h>
  #endif
-@@ -453,9 +456,28 @@ static int ntfs_is_mft(ntfs_inode *ni)
+@@ -454,9 +457,28 @@ static int ntfs_is_mft(ntfs_inode *ni)
  	return 0;
  }
  
@@ -44,7 +44,7 @@ $OpenBSD: patch-libntfs-3g_mft_c,v 1.1 2014/01/05 01:51:15 jca Exp $
  
  #define RESERVED_MFT_RECORDS   64
  
-@@ -481,6 +503,7 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
+@@ -482,6 +504,7 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
  	s64 pass_end, ll, data_pos, pass_start, ofs, bit;
  	ntfs_attr *mftbmp_na;
  	u8 *buf, *byte;
@@ -52,7 +52,7 @@ $OpenBSD: patch-libntfs-3g_mft_c,v 1.1 2014/01/05 01:51:15 jca Exp $
  	unsigned int size;
  	u8 pass, b;
  	int ret = -1;
-@@ -492,7 +515,8 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
+@@ -493,7 +516,8 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
  	 * Set the end of the pass making sure we do not overflow the mft
  	 * bitmap.
  	 */
@@ -62,7 +62,7 @@ $OpenBSD: patch-libntfs-3g_mft_c,v 1.1 2014/01/05 01:51:15 jca Exp $
  	pass_end = vol->mft_na->allocated_size >> vol->mft_record_size_bits;
  	ll = mftbmp_na->initialized_size << 3;
  	if (pass_end > ll)
-@@ -518,7 +542,7 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
+@@ -519,7 +543,7 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
  		pass = 2;
  	}
  	pass_start = data_pos;
@@ -71,7 +71,7 @@ $OpenBSD: patch-libntfs-3g_mft_c,v 1.1 2014/01/05 01:51:15 jca Exp $
  	if (!buf)
  		goto leave;
  	
-@@ -531,7 +555,7 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
+@@ -532,7 +556,7 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
  	b = 0;
  #endif
  	/* Loop until a free mft record is found. */

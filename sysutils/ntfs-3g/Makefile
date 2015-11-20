@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/22 11:31:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/11/20 05:32:02 pirofti Exp $
 
 COMMENT =	FUSE NTFS driver with read/write support
 
-V =		2014.2.15
+V =		2015.3.14
 DISTNAME =	ntfs-3g_ntfsprogs-${V}
 PKGNAME =	ntfs_3g-${V}
-SHARED_LIBS +=	ntfs-3g		0.0	# .84
+SHARED_LIBS +=	ntfs-3g		0.1	# .85
 CATEGORIES =	sysutils
-REVISION =	0
 
 HOMEPAGE =	http://www.tuxera.com/
 
@@ -29,8 +28,5 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-mtab \
 			--disable-ldconfig
-
-post-install:
-	rmdir ${WRKINST}/lib
 
 .include <bsd.port.mk>

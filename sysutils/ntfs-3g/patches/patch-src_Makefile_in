@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2014/04/30 23:07:25 pirofti Exp $
---- src/Makefile.in.orig	Sat Feb 15 16:08:01 2014
-+++ src/Makefile.in	Tue Apr 29 11:32:40 2014
-@@ -39,8 +39,7 @@ target_triplet = @target@
+$OpenBSD: patch-src_Makefile_in,v 1.4 2015/11/20 05:32:02 pirofti Exp $
+--- src/Makefile.in.orig	Sat Mar 14 15:10:28 2015
++++ src/Makefile.in	Sun Jul 19 19:03:42 2015
+@@ -83,8 +83,7 @@ target_triplet = @target@
  @ENABLE_NTFS_3G_TRUE@bin_PROGRAMS = ntfs-3g.probe$(EXEEXT) \
  @ENABLE_NTFS_3G_TRUE@	ntfs-3g.usermap$(EXEEXT) \
  @ENABLE_NTFS_3G_TRUE@	ntfs-3g.secaudit$(EXEEXT)
@@ -9,9 +9,9 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2014/04/30 23:07:25 pirofti Exp $
 -@ENABLE_NTFS_3G_TRUE@	lowntfs-3g$(EXEEXT)
 +@ENABLE_NTFS_3G_TRUE@rootbin_PROGRAMS = ntfs-3g$(EXEEXT)
  subdir = src
- DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
  	$(srcdir)/ntfs-3g.8.in $(srcdir)/ntfs-3g.probe.8.in \
-@@ -449,7 +448,7 @@ install-rootbinPROGRAMS: $(rootbin_PROGRAMS)
+@@ -563,7 +562,7 @@ install-rootbinPROGRAMS: $(rootbin_PROGRAMS)
  	    if test "$$dir" = .; then dir=; else dir=/$$dir; fi; \
  	    test -z "$$files" || { \
  	    echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL_PROGRAM) $$files '$(DESTDIR)$(rootbindir)$$dir'"; \
@@ -20,7 +20,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2014/04/30 23:07:25 pirofti Exp $
  	    } \
  	; done
  
-@@ -922,7 +921,7 @@ uninstall-man: uninstall-man8
+@@ -1041,7 +1040,7 @@ uninstall-man: uninstall-man8
  
  @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@install-exec-local:	install-rootbinPROGRAMS
  @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@	$(MKDIR_P) "$(DESTDIR)/sbin"
