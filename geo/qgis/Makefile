@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/11/16 10:22:59 landry Exp $
+# $OpenBSD: Makefile,v 1.44 2015/11/20 12:01:07 sthen Exp $
 
 COMMENT =	desktop geographical information system
 
@@ -32,7 +32,6 @@ MODULES =	devel/cmake \
 
 BUILD_DEPENDS =	x11/py-qt4>=4.8.4 \
 		security/qca-ossl \
-		devel/flex \
 		editors/py-qscintilla \
 		devel/bison>=2.4 \
 		geo/gdal,-python

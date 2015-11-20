@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/11/15 12:15:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2015/11/20 12:01:07 sthen Exp $
 
 COMMENT=		framework for streaming media
 
@@ -18,12 +18,10 @@ WANTLIB += pthread z
 MASTER_SITES=		${MASTER_SITE_GST:=gstreamer/}
 
 BUILD_DEPENDS=		devel/bison \
-			devel/flex \
 			devel/gobject-introspection
 
 LIB_DEPENDS=		devel/glib2
 
-CONFIGURE_ENV +=	FLEX_PATH=${LOCALBASE}/bin/gflex
 # do not pick-up gmp nor gdl: for now, it is only used by
 # tests/check/gst (which is not built) but better safe than sorry
 CONFIGURE_ENV +=	ac_cv_lib_gmp___gmpz_init_set_d=no \

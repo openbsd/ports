@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/11/15 12:14:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2015/11/20 12:01:07 sthen Exp $
 
 COMMENT=		framework for streaming media
 
@@ -18,12 +18,10 @@ WANTLIB += pcre pthread xml2 z
 
 MASTER_SITES=		${MASTER_SITE_GST:=gstreamer/}
 
-BUILD_DEPENDS=		devel/flex
 LIB_DEPENDS=		textproc/libxml \
 			devel/glib2
 
-CONFIGURE_ENV +=	FLEX_PATH=${LOCALBASE}/bin/gflex \
-			ac_cv_path_PYTHON=""
+CONFIGURE_ENV +=	ac_cv_path_PYTHON=""
 
 # do not pick-up gmp nor gdl: for now, it is only used by
 # tests/check/gst (which is not built) but better safe than sorry
