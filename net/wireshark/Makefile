@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/11/19 21:33:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2015/11/20 19:58:50 sthen Exp $
 
 # XXX should add pledge to dumpcap.
 # XXX the Qt UI (upstream default) is broken here; segfault at startup.
@@ -35,13 +35,15 @@ cWANTLIB +=	c glib-2.0 m pcap pthread z
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
+MULTI_PACKAGES =	-text -main
+
 MODLUA_VERSION = 5.2
-MODULES =	lang/lua lang/python x11/qt5
+MODULES =	lang/lua \
+		lang/python \
+		x11/qt5
 MODLUA_SA =	Yes
 MODLUA_RUNDEP =	No
 MODPY_RUNDEP =	No
-
-MULTI_PACKAGES =	-text -main
 
 WANTLIB-text +=	${cWANTLIB} ${MODLUA_WANTLIB}
 WANTLIB-text +=	GeoIP cares gcrypt gmodule-2.0 gnutls gpg-error smi
@@ -58,8 +60,12 @@ MASTER_SITES =		http://www.wireshark.org/download/src/all-versions/ \
 
 SUBST_VARS =		WVER
 
-BUILD_DEPENDS =		devel/xdg-utils \
-			devel/desktop-file-utils
+BUILD_DEPENDS =		devel/bison \
+			devel/desktop-file-utils \
+			devel/libxml \
+			devel/libxslt \
+			devel/xdg-utils \
+			textproc/asciidoc
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			devel/xdg-utils \
@@ -83,7 +89,7 @@ CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS =	-DDUMPCAP_INST_VALS=suid \
 			-DCMAKE_INSTALL_MANDIR=${TRUEPREFIX}/man \
 			-DCOMPILER_CAN_HANDLE_SSE4_2=false \
-			-DSSE4_2_FLAG=""
+			-DSH_EXECUTABLE=/bin/ksh
 
 NO_TEST =	Yes
 
