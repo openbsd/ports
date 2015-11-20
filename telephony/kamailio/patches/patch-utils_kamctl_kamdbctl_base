@@ -1,7 +1,7 @@
-$OpenBSD: patch-utils_kamctl_kamdbctl_base,v 1.2 2013/04/16 11:13:04 sthen Exp $
---- utils/kamctl/kamdbctl.base.orig	Mon Mar 11 17:27:18 2013
-+++ utils/kamctl/kamdbctl.base	Thu Mar 14 16:15:21 2013
-@@ -157,7 +157,7 @@ credentials()
+$OpenBSD: patch-utils_kamctl_kamdbctl_base,v 1.3 2015/11/20 10:09:52 sthen Exp $
+--- utils/kamctl/kamdbctl.base.orig	Fri Oct  2 15:35:18 2015
++++ utils/kamctl/kamdbctl.base	Mon Oct 19 14:00:40 2015
+@@ -154,7 +154,7 @@ credentials()
  mdbg() {
  	if [ "0$VERBOSE" -ne 0 ] ; then
  		if [ -t 1 -a -z "$NOHLPRINT" ] ; then
@@ -10,7 +10,7 @@ $OpenBSD: patch-utils_kamctl_kamdbctl_base,v 1.2 2013/04/16 11:13:04 sthen Exp $
  		else
  			echo "$1"
  		fi
-@@ -166,7 +166,7 @@ mdbg() {
+@@ -163,7 +163,7 @@ mdbg() {
  
  mwarn() {
  	if [ -t 1 -a -z "$NOHLPRINT" ] ; then
@@ -19,7 +19,7 @@ $OpenBSD: patch-utils_kamctl_kamdbctl_base,v 1.2 2013/04/16 11:13:04 sthen Exp $
  	else
  		echo "** WARNING: $1"
  	fi
-@@ -174,7 +174,7 @@ mwarn() {
+@@ -171,7 +171,7 @@ mwarn() {
  
  minfo() {
  	if [ -t 1 -a -z "$NOHLPRINT" ] ; then
@@ -28,7 +28,7 @@ $OpenBSD: patch-utils_kamctl_kamdbctl_base,v 1.2 2013/04/16 11:13:04 sthen Exp $
  	else
  		echo "** INFO: $1"
  	fi
-@@ -182,7 +182,7 @@ minfo() {
+@@ -179,7 +179,7 @@ minfo() {
  
  mecho() {
  	if [ -t 1 -a -z "$NOHLPRINT" ] ; then
@@ -37,7 +37,7 @@ $OpenBSD: patch-utils_kamctl_kamdbctl_base,v 1.2 2013/04/16 11:13:04 sthen Exp $
  	else
  		echo "$1"
  	fi
-@@ -190,7 +190,7 @@ mecho() {
+@@ -187,7 +187,7 @@ mecho() {
  
  merr() {
  	if [ -t 1 -a -z "$NOHLPRINT" ] ; then
@@ -46,7 +46,7 @@ $OpenBSD: patch-utils_kamctl_kamdbctl_base,v 1.2 2013/04/16 11:13:04 sthen Exp $
  	else
  		echo "** ERROR: $1"
  	fi
-@@ -216,8 +216,8 @@ get_answer ()
+@@ -213,8 +213,8 @@ get_answer ()
      else
          ANSWER=${value}
      fi

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_defs,v 1.5 2013/04/16 11:13:04 sthen Exp $
---- Makefile.defs.orig	Mon Mar 11 17:27:19 2013
-+++ Makefile.defs	Thu Mar 14 15:52:28 2013
-@@ -362,9 +362,9 @@ ppc_macros= __powerpc __powerpc__ __POWERPC__ __ppc__ 
+$OpenBSD: patch-Makefile_defs,v 1.6 2015/11/20 10:09:52 sthen Exp $
+--- Makefile.defs.orig	Fri Oct  2 15:35:19 2015
++++ Makefile.defs	Wed Oct 21 02:36:24 2015
+@@ -300,9 +300,9 @@ ppc_macros= __powerpc __powerpc__ __POWERPC__ __ppc__ 
  ppc64_macros= __ppc64__ _ARCH_PPC64
  
  mips_macros= __mips__ __mips _MIPS_ARCH_MIPS1
@@ -13,7 +13,7 @@ $OpenBSD: patch-Makefile_defs,v 1.5 2013/04/16 11:13:04 sthen Exp $
  
  alpha_macros= __alpha__ __alpha _M_ALPHA_
  
-@@ -435,7 +435,7 @@ endif
+@@ -373,7 +373,7 @@ endif
  endif
  
  # dirs
@@ -22,7 +22,7 @@ $OpenBSD: patch-Makefile_defs,v 1.5 2013/04/16 11:13:04 sthen Exp $
  bin_dir = sbin/
  share_dir = share/$(MAIN_NAME)/
  # lib/$(MAIN_NAME)/modules , lib/$(MAIN_NAME)/modules-s, lib/$(MAIN_NAME)/modules-k
-@@ -517,7 +517,7 @@ data_prefix = $(basedir)$(prefix)
+@@ -459,11 +459,11 @@ data_prefix = $(basedir)$(prefix)
  
  
  # target dirs for various stuff
@@ -31,16 +31,41 @@ $OpenBSD: patch-Makefile_defs,v 1.5 2013/04/16 11:13:04 sthen Exp $
  bin_target = $(prefix)/$(bin_dir)
  #modules_target = $(prefix)/$(modules_dir)
  lib_target = $(prefix)/$(lib_dir)
-@@ -976,7 +976,7 @@ ifeq	($(ARCH), x86_64)
+-run_target = $(run_prefix)/$(run_dir)
++run_target = $(VARBASE)/run/$(MAIN_NAME)/
+ doc_target = $(prefix)/$(doc_dir)
+ data_target = $(prefix)/$(data_dir)
+ 
+@@ -841,16 +841,12 @@ ifeq	($(ARCH), i386)
+ ifeq		($(CC_NAME), gcc) 
+ 				C_DEFS+=-DCC_GCC_LIKE_ASM
+ 				#common stuff
+-				CFLAGS=-g $(CC_OPT) -funroll-loops  -Wcast-align $(PROFILE)
++				CFLAGS=
+ 			#if gcc 5.0+, 4.5+ or 4.2+
+ ifeq (,$(strip $(filter-out 4.2+ 4.5+ 5.0+,$(CC_SHORTVER))))
+ $(call				set_if_empty,CPU,athlon64)
+-					CFLAGS+=-m32 -minline-all-stringops \
+-							-falign-loops \
+-							-ftree-vectorize \
+-							-fno-strict-overflow \
+-							-mtune=$(CPU)
+-					LDFLAGS+=-m32
++					CFLAGS+=
++					LDFLAGS+=
+ else
+ 			#if gcc 4.0+
+ ifeq			($(CC_SHORTVER), 4.x)
+@@ -923,7 +919,7 @@ ifeq	($(ARCH), x86_64)
  ifeq		($(CC_NAME), gcc)
  				C_DEFS+=-DCC_GCC_LIKE_ASM
  				#common stuff
--				CFLAGS=-g -O9 -funroll-loops  -Wcast-align $(PROFILE)
+-				CFLAGS=-g $(CC_OPT) -funroll-loops  -Wcast-align $(PROFILE)
 +				CFLAGS=
  			#if gcc 4.5+
  			# don't add '-mtune=$(CPU)' - gcc failure
- ifeq			($(CC_SHORTVER), 4.5+)
-@@ -990,12 +990,8 @@ else
+ ifeq			($(CC_SHORTVER),$(filter $(CC_SHORTVER),4.5+ 5.0+))
+@@ -937,12 +933,8 @@ else
  			#if gcc 4.2+
  ifeq			($(CC_SHORTVER), 4.2+)
  $(call				set_if_empty,CPU,opteron)
@@ -55,16 +80,7 @@ $OpenBSD: patch-Makefile_defs,v 1.5 2013/04/16 11:13:04 sthen Exp $
  else
  			#if gcc 4.0+
  ifeq			($(CC_SHORTVER), 4.x)
-@@ -1416,7 +1412,7 @@ ifeq		($(CC_NAME), gcc)
- 				CFLAGS= -mips64 -O9 -funroll-loops $(PROFILE)
- 			#if gcc 4.5+ or 4.2+
- ifeq (,$(strip $(filter-out 4.2+ 4.5+,$(CC_SHORTVER))))
--					CFLAGS+=-minline-all-stringops -ftree-vectorize \
-+					CFLAGS+=-ftree-vectorize \
- 							-fno-strict-overflow
- else
- 			#if gcc 4.0+
-@@ -1962,9 +1958,10 @@ endif
+@@ -1848,9 +1840,10 @@ endif
  
  ifeq ($(OS), openbsd)
  	C_DEFS+=-DHAVE_SOCKADDR_SA_LEN  -DHAVE_GETHOSTBYNAME2 \

@@ -6,6 +6,8 @@ daemon="${TRUEPREFIX}/sbin/kamailio"
 
 . /etc/rc.d/rc.subr
 
+pexp="${daemon}.*"
+
 rc_pre() {
 	install -d -o _kamailio /var/run/kamailio
 }

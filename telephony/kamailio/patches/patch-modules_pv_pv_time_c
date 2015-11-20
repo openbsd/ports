@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_pv_pv_time_c,v 1.1 2013/04/16 11:13:04 sthen Exp $
---- modules/pv/pv_time.c.orig	Sun Mar 31 14:53:52 2013
-+++ modules/pv/pv_time.c	Sun Mar 31 14:55:46 2013
-@@ -117,7 +117,7 @@ int pv_get_time(struct sip_msg *msg, pv_param_t *param
+$OpenBSD: patch-modules_pv_pv_time_c,v 1.2 2015/11/20 10:09:52 sthen Exp $
+--- modules/pv/pv_time.c.orig	Fri Oct  2 15:35:19 2015
++++ modules/pv/pv_time.c	Mon Oct 19 14:00:40 2015
+@@ -115,7 +115,7 @@ int pv_get_time(struct sip_msg *msg, pv_param_t *param
  	{
  		msg_set_time(msg);
  		msg_ctx_id_set(msg, &_cfgutils_msgid);
@@ -10,7 +10,7 @@ $OpenBSD: patch-modules_pv_pv_time_c,v 1.1 2013/04/16 11:13:04 sthen Exp $
  		{
  			LM_ERR("unable to break time to attributes\n");
  			return -1;
-@@ -168,7 +168,7 @@ int pv_get_strftime(struct sip_msg *msg, pv_param_t *p
+@@ -166,7 +166,7 @@ int pv_get_strftime(struct sip_msg *msg, pv_param_t *p
  	{
  		msg_set_time(msg);
  		msg_ctx_id_set(msg, &_cfgutils_msgid);
@@ -19,7 +19,7 @@ $OpenBSD: patch-modules_pv_pv_time_c,v 1.1 2013/04/16 11:13:04 sthen Exp $
  		{
  			LM_ERR("unable to break time to attributes\n");
  			return -1;
-@@ -225,7 +225,7 @@ int pv_get_timef(struct sip_msg *msg, pv_param_t *para
+@@ -223,7 +223,7 @@ int pv_get_timef(struct sip_msg *msg, pv_param_t *para
  
  	msg_set_time(msg);
  	

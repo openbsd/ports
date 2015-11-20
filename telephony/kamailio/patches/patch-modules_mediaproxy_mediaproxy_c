@@ -1,8 +1,8 @@
-$OpenBSD: patch-modules_mediaproxy_mediaproxy_c,v 1.1 2012/04/22 21:44:24 sthen Exp $
---- modules/mediaproxy/mediaproxy.c.orig	Sun Apr 22 22:26:56 2012
-+++ modules/mediaproxy/mediaproxy.c	Sun Apr 22 22:27:32 2012
+$OpenBSD: patch-modules_mediaproxy_mediaproxy_c,v 1.2 2015/11/20 10:09:52 sthen Exp $
+--- modules/mediaproxy/mediaproxy.c.orig	Fri Oct  2 15:35:18 2015
++++ modules/mediaproxy/mediaproxy.c	Mon Oct 19 14:00:40 2015
 @@ -19,6 +19,9 @@
-  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
   */
  
 +#include <sys/types.h>

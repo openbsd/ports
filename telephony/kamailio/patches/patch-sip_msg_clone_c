@@ -1,7 +1,7 @@
-$OpenBSD: patch-sip_msg_clone_c,v 1.1 2013/04/16 11:13:04 sthen Exp $
---- sip_msg_clone.c.orig	Sun Mar 31 13:50:02 2013
-+++ sip_msg_clone.c	Sun Mar 31 13:50:27 2013
-@@ -193,7 +193,7 @@ static inline struct via_body* via_body_cloner( char* 
+$OpenBSD: patch-sip_msg_clone_c,v 1.2 2015/11/20 10:09:52 sthen Exp $
+--- sip_msg_clone.c.orig	Fri Oct  2 15:35:18 2015
++++ sip_msg_clone.c	Mon Oct 19 14:00:40 2015
+@@ -183,7 +183,7 @@ static inline struct via_body* via_body_cloner( char* 
  
  		if ( org_via->param_lst )
  		{

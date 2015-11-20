@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_binrpc_binrpc_api_c,v 1.1 2012/09/15 12:16:18 sthen Exp $
---- lib/binrpc/binrpc_api.c.orig	Sun Jul 29 23:47:24 2012
-+++ lib/binrpc/binrpc_api.c	Sun Jul 29 23:49:21 2012
-@@ -149,10 +149,10 @@ static int connect_unix_sock(char* name, int type, str
+$OpenBSD: patch-lib_binrpc_binrpc_api_c,v 1.2 2015/11/20 10:09:52 sthen Exp $
+--- lib/binrpc/binrpc_api.c.orig	Fri Oct  2 15:35:17 2015
++++ lib/binrpc/binrpc_api.c	Mon Oct 19 14:00:40 2015
+@@ -138,10 +138,10 @@ static int connect_unix_sock(char* name, int type, str
  	s=-1;
  	memset(&ifsun, 0, sizeof (struct sockaddr_un));
  	len=strlen(name);
@@ -14,7 +14,7 @@ $OpenBSD: patch-lib_binrpc_binrpc_api_c,v 1.1 2012/09/15 12:16:18 sthen Exp $
  		goto error;
  	}
  	ifsun.sun_family=AF_UNIX;
-@@ -174,16 +174,16 @@ static int connect_unix_sock(char* name, int type, str
+@@ -163,16 +163,16 @@ static int connect_unix_sock(char* name, int type, str
  			if (sock_dir==0)
  				sock_dir="/tmp";
  retry:

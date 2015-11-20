@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2015/10/30 12:59:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2015/11/20 10:09:52 sthen Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
 SHARED_ONLY =		Yes
 
-VERSION =		4.0.0
-REVISION-main =		0
-REVISION-mysql =	2
+VERSION =		4.3.3
 DISTNAME =		kamailio-${VERSION}_src
 PKGNAME-main =		kamailio-${VERSION}
 PKGNAME-mysql =		kamailio-mysql-${VERSION}
@@ -26,18 +24,18 @@ HOMEPAGE =		http://www.kamailio.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-SHARED_LIBS =		kcore	2.0	# 1.0
-SHARED_LIBS +=		kmi	2.0	# 1.0
-SHARED_LIBS +=		srdb1	2.0	# 1.0
-SHARED_LIBS +=		srdb2	2.0	# 1.0
-SHARED_LIBS +=		trie	2.0	# 1.0
-SHARED_LIBS +=		binrpc	1.0	# 0.1
-SHARED_LIBS +=		srutils	1.0	# 1.0
-SHARED_LIBS +=		print	0.0	# 1.2
+SHARED_LIBS =		kcore	3.0	# 1.0
+SHARED_LIBS +=		kmi	3.0	# 1.0
+SHARED_LIBS +=		srdb1	3.0	# 1.0
+SHARED_LIBS +=		srdb2	3.0	# 1.0
+SHARED_LIBS +=		trie	3.0	# 1.0
+SHARED_LIBS +=		binrpc	2.0	# 0.1
+SHARED_LIBS +=		srutils	2.0	# 1.0
+SHARED_LIBS +=		print	1.0	# 1.2
 
 MAKE_ENV =		CC="${CC}" \
-			CC_EXTRA_OPTS="${CFLAGS} -DOPENSSL_NO_BUF_FREELISTS" \
-			LD_EXTRA_OPTS="${LDFLAGS} -pthread" \
+			CC_EXTRA_OPTS="${CFLAGS} -DOPENSSL_NO_BUF_FREELISTS -DHAVE_ARC4RANDOM -I${LOCALBASE}/include" \
+			LD_EXTRA_OPTS="${LDFLAGS} -pthread -L${LOCALBASE}/lib" \
 			QUIET=verbose
 
 MASTER_SITES =		http://www.kamailio.org/pub/kamailio/${VERSION}/src/
@@ -70,7 +68,8 @@ MAKE_FLAGS =	LIBDIR=lib \
 		BASEDIR=${WRKINST} \
 		cfg-prefix=${WRKINST} \
 		SYSCONFDIR=${SYSCONFDIR} \
-		C_INCLUDES="-I${LOCALBASE}/include" \
+		VARBASE=${VARBASE} \
+		SCTP=0 \
 		include_modules="${KAMAILIO_MODULES}" \
 		LIBkcore_VERSION=${LIBkcore_VERSION} \
 		LIBkmi_VERSION=${LIBkmi_VERSION} \
@@ -148,7 +147,6 @@ COMMENT-perl =		kamailio perl modules
 KAMAILIO_MODULES +=	app_perl db_perlvdb
 WANTLIB-perl =		c m perl pthread util lib/kamailio/kmi lib/kamailio/srdb1
 LIB_DEPENDS-perl =	telephony/kamailio,-main
-RUN_DEPENDS-perl =	databases/p5-ldap
 .endif
 
 # TODO

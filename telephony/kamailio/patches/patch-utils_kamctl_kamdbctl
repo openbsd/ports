@@ -1,7 +1,7 @@
-$OpenBSD: patch-utils_kamctl_kamdbctl,v 1.1 2012/04/22 21:44:24 sthen Exp $
---- utils/kamctl/kamdbctl.orig	Fri Feb  3 16:47:27 2012
-+++ utils/kamctl/kamdbctl	Fri Feb  3 16:47:46 2012
-@@ -51,7 +51,7 @@ fi
+$OpenBSD: patch-utils_kamctl_kamdbctl,v 1.2 2015/11/20 10:09:52 sthen Exp $
+--- utils/kamctl/kamdbctl.orig	Fri Oct  2 15:35:18 2015
++++ utils/kamctl/kamdbctl	Mon Oct 19 14:00:40 2015
+@@ -70,7 +70,7 @@ fi
  if [ -f "$MYLIBDIR/kamdbctl.base" ]; then
  	. "$MYLIBDIR/kamdbctl.base"
  else

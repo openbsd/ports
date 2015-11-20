@@ -1,30 +1,15 @@
-$OpenBSD: patch-timer_c,v 1.1 2012/04/22 21:44:24 sthen Exp $
---- timer.c.orig	Sun Feb  5 00:24:53 2012
-+++ timer.c	Sun Feb  5 00:33:11 2012
-@@ -337,7 +337,7 @@ again:
- 				strerror(errno), errno);
- 		goto error;
- 	}
--#ifdef __OS_darwin
-+#if defined(__OS_darwin) ||  defined(__OpenBSD__)
- 	/* workaround for darwin sigwait bug, see slow_timer_main() for more
- 	   info (or grep __OS_darwin) */
- 	/* keep in sync wih main.c: sig_usr() - signals we are interested in */
-@@ -1090,7 +1090,7 @@ ticks_t get_ticks()
-  *   -it  increments *s_idx (at the end it will be == *t_idx)
-  *   -all list operations are protected by the "slow" timer lock
-  */
--#ifdef __OS_darwin
-+#if defined(__OS_darwin) || defined(__OpenBSD__)
- extern void sig_usr(int signo);
- #endif
+$OpenBSD: patch-timer_c,v 1.2 2015/11/20 10:09:52 sthen Exp $
+--- timer.c.orig	Wed Oct 21 00:01:29 2015
++++ timer.c	Wed Oct 21 00:02:57 2015
+@@ -243,7 +243,11 @@ int init_timer()
  
-@@ -1120,7 +1120,7 @@ void slow_timer_main()
- 		}
- #ifdef USE_SIGWAIT
- 	if (sig!=SLOW_TIMER_SIG){
--#ifdef __OS_darwin
-+#if defined(__OS_darwin) || defined(__OpenBSD__)
- 		/* on darwin sigwait is buggy: it will cause extreme slow down
- 		   on signal delivery for the signals it doesn't wait on
- 		   (on darwin 8.8.0, g4 1.5Ghz I've measured a 36s delay!).
+ 	/* initial values */
+ 	memset(timer_lst, 0, sizeof(struct timer_lists));
++#ifdef HAVE_ARC4RANDOM
++	*ticks=arc4random();
++#else
+ 	*ticks=random(); /* random value for start, for debugging */
++#endif
+ 	prev_ticks=last_ticks=last_adj_check=*ticks;
+ 	*running_timer=0;
+ 	if (gettimeofday(&start_time, 0)<0){

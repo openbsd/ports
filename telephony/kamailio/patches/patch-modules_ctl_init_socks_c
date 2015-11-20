@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_ctl_init_socks_c,v 1.1 2012/09/15 12:16:18 sthen Exp $
---- modules/ctl/init_socks.c.orig	Sun Jul 29 23:51:54 2012
-+++ modules/ctl/init_socks.c	Sun Jul 29 23:52:30 2012
-@@ -96,9 +96,9 @@ int init_unix_sock(struct sockaddr_un* su, char* name,
+$OpenBSD: patch-modules_ctl_init_socks_c,v 1.2 2015/11/20 10:09:52 sthen Exp $
+--- modules/ctl/init_socks.c.orig	Fri Oct  2 15:35:17 2015
++++ modules/ctl/init_socks.c	Mon Oct 19 14:00:40 2015
+@@ -85,9 +85,9 @@ int init_unix_sock(struct sockaddr_un* su, char* name,
  	unlink(name);
  	memset(&ifsun, 0, sizeof (struct sockaddr_un));
  	len=strlen(name);

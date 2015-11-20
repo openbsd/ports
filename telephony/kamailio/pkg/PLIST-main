@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2013/04/16 11:13:04 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2015/11/20 10:09:52 sthen Exp $
 @newgroup _kamailio:628
 @newuser _kamailio:628:628:daemon:Kamailio:/nonexistent:/sbin/nologin
 lib/kamailio/
@@ -32,6 +32,7 @@ lib/kamailio/modules/async.so
 lib/kamailio/modules/auth.so
 lib/kamailio/modules/auth_db.so
 lib/kamailio/modules/auth_diameter.so
+lib/kamailio/modules/auth_xkeys.so
 lib/kamailio/modules/avp.so
 lib/kamailio/modules/avpops.so
 lib/kamailio/modules/benchmark.so
@@ -56,6 +57,7 @@ lib/kamailio/modules/dialplan.so
 lib/kamailio/modules/dispatcher.so
 lib/kamailio/modules/diversion.so
 lib/kamailio/modules/dmq.so
+lib/kamailio/modules/dmq_usrloc.so
 lib/kamailio/modules/domain.so
 lib/kamailio/modules/domainpolicy.so
 lib/kamailio/modules/drouting.so
@@ -65,6 +67,7 @@ lib/kamailio/modules/group.so
 lib/kamailio/modules/htable.so
 lib/kamailio/modules/imc.so
 lib/kamailio/modules/ipops.so
+lib/kamailio/modules/jsonrpc-s.so
 lib/kamailio/modules/kex.so
 lib/kamailio/modules/lcr.so
 lib/kamailio/modules/malloc_test.so
@@ -75,12 +78,14 @@ lib/kamailio/modules/mediaproxy.so
 lib/kamailio/modules/mi_datagram.so
 lib/kamailio/modules/mi_fifo.so
 lib/kamailio/modules/mi_rpc.so
+lib/kamailio/modules/mohqueue.so
 lib/kamailio/modules/mqueue.so
 lib/kamailio/modules/msilo.so
 lib/kamailio/modules/msrp.so
 lib/kamailio/modules/mtree.so
 lib/kamailio/modules/nat_traversal.so
 lib/kamailio/modules/nathelper.so
+lib/kamailio/modules/nosip.so
 lib/kamailio/modules/p_usrloc.so
 lib/kamailio/modules/path.so
 lib/kamailio/modules/pdb.so
@@ -111,12 +116,15 @@ lib/kamailio/modules/registrar.so
 lib/kamailio/modules/rls.so
 lib/kamailio/modules/rr.so
 lib/kamailio/modules/rtimer.so
+lib/kamailio/modules/rtjson.so
+lib/kamailio/modules/rtpengine.so
 lib/kamailio/modules/rtpproxy.so
 lib/kamailio/modules/sanity.so
 lib/kamailio/modules/sca.so
 lib/kamailio/modules/sdpops.so
 lib/kamailio/modules/seas.so
 lib/kamailio/modules/sipcapture.so
+lib/kamailio/modules/sipt.so
 lib/kamailio/modules/siptrace.so
 lib/kamailio/modules/siputils.so
 lib/kamailio/modules/sl.so
@@ -125,6 +133,9 @@ lib/kamailio/modules/speeddial.so
 lib/kamailio/modules/sqlops.so
 lib/kamailio/modules/sst.so
 lib/kamailio/modules/statistics.so
+lib/kamailio/modules/statsd.so
+lib/kamailio/modules/stun.so
+lib/kamailio/modules/tcpops.so
 lib/kamailio/modules/textops.so
 lib/kamailio/modules/textopsx.so
 lib/kamailio/modules/timer.so
@@ -133,6 +144,7 @@ lib/kamailio/modules/tm.so
 lib/kamailio/modules/tmrec.so
 lib/kamailio/modules/tmx.so
 lib/kamailio/modules/topoh.so
+lib/kamailio/modules/tsilo.so
 lib/kamailio/modules/uac.so
 lib/kamailio/modules/uac_redirect.so
 lib/kamailio/modules/uid_auth_db.so
@@ -175,6 +187,7 @@ share/doc/kamailio/modules/README.async
 share/doc/kamailio/modules/README.auth
 share/doc/kamailio/modules/README.auth_db
 share/doc/kamailio/modules/README.auth_diameter
+share/doc/kamailio/modules/README.auth_xkeys
 share/doc/kamailio/modules/README.avp
 share/doc/kamailio/modules/README.avpops
 share/doc/kamailio/modules/README.benchmark
@@ -199,6 +212,7 @@ share/doc/kamailio/modules/README.dialplan
 share/doc/kamailio/modules/README.dispatcher
 share/doc/kamailio/modules/README.diversion
 share/doc/kamailio/modules/README.dmq
+share/doc/kamailio/modules/README.dmq_usrloc
 share/doc/kamailio/modules/README.domain
 share/doc/kamailio/modules/README.domainpolicy
 share/doc/kamailio/modules/README.drouting
@@ -208,6 +222,7 @@ share/doc/kamailio/modules/README.group
 share/doc/kamailio/modules/README.htable
 share/doc/kamailio/modules/README.imc
 share/doc/kamailio/modules/README.ipops
+share/doc/kamailio/modules/README.jsonrpc-s
 share/doc/kamailio/modules/README.kex
 share/doc/kamailio/modules/README.lcr
 share/doc/kamailio/modules/README.malloc_test
@@ -218,12 +233,14 @@ share/doc/kamailio/modules/README.mediaproxy
 share/doc/kamailio/modules/README.mi_datagram
 share/doc/kamailio/modules/README.mi_fifo
 share/doc/kamailio/modules/README.mi_rpc
+share/doc/kamailio/modules/README.mohqueue
 share/doc/kamailio/modules/README.mqueue
 share/doc/kamailio/modules/README.msilo
 share/doc/kamailio/modules/README.msrp
 share/doc/kamailio/modules/README.mtree
 share/doc/kamailio/modules/README.nat_traversal
 share/doc/kamailio/modules/README.nathelper
+share/doc/kamailio/modules/README.nosip
 share/doc/kamailio/modules/README.p_usrloc
 share/doc/kamailio/modules/README.path
 share/doc/kamailio/modules/README.pdb
@@ -254,12 +271,15 @@ share/doc/kamailio/modules/README.registrar
 share/doc/kamailio/modules/README.rls
 share/doc/kamailio/modules/README.rr
 share/doc/kamailio/modules/README.rtimer
+share/doc/kamailio/modules/README.rtjson
+share/doc/kamailio/modules/README.rtpengine
 share/doc/kamailio/modules/README.rtpproxy
 share/doc/kamailio/modules/README.sanity
 share/doc/kamailio/modules/README.sca
 share/doc/kamailio/modules/README.sdpops
 share/doc/kamailio/modules/README.seas
 share/doc/kamailio/modules/README.sipcapture
+share/doc/kamailio/modules/README.sipt
 share/doc/kamailio/modules/README.siptrace
 share/doc/kamailio/modules/README.siputils
 share/doc/kamailio/modules/README.sl
@@ -268,6 +288,9 @@ share/doc/kamailio/modules/README.speeddial
 share/doc/kamailio/modules/README.sqlops
 share/doc/kamailio/modules/README.sst
 share/doc/kamailio/modules/README.statistics
+share/doc/kamailio/modules/README.statsd
+share/doc/kamailio/modules/README.stun
+share/doc/kamailio/modules/README.tcpops
 share/doc/kamailio/modules/README.textops
 share/doc/kamailio/modules/README.textopsx
 share/doc/kamailio/modules/README.timer
@@ -276,6 +299,7 @@ share/doc/kamailio/modules/README.tm
 share/doc/kamailio/modules/README.tmrec
 share/doc/kamailio/modules/README.tmx
 share/doc/kamailio/modules/README.topoh
+share/doc/kamailio/modules/README.tsilo
 share/doc/kamailio/modules/README.uac
 share/doc/kamailio/modules/README.uac_redirect
 share/doc/kamailio/modules/README.uid_auth_db
@@ -299,6 +323,7 @@ share/examples/kamailio/
 @sample ${SYSCONFDIR}/kamailio/
 @comment share/examples/kamailio/dictionary.kamailio
 share/examples/kamailio/kamailio-advanced.cfg
+share/examples/kamailio/kamailio-basic.cfg
 share/examples/kamailio/kamailio-selfsigned.key
 @sample ${SYSCONFDIR}/kamailio/kamailio-selfsigned.key
 share/examples/kamailio/kamailio-selfsigned.pem
@@ -314,6 +339,7 @@ share/kamailio/
 share/kamailio/db_berkeley/
 share/kamailio/db_berkeley/kamailio/
 share/kamailio/db_berkeley/kamailio/acc
+share/kamailio/db_berkeley/kamailio/acc_cdrs
 share/kamailio/db_berkeley/kamailio/active_watchers
 share/kamailio/db_berkeley/kamailio/address
 share/kamailio/db_berkeley/kamailio/aliases
@@ -346,6 +372,8 @@ share/kamailio/db_berkeley/kamailio/location
 share/kamailio/db_berkeley/kamailio/location_attrs
 share/kamailio/db_berkeley/kamailio/matrix
 share/kamailio/db_berkeley/kamailio/missed_calls
+share/kamailio/db_berkeley/kamailio/mohqcalls
+share/kamailio/db_berkeley/kamailio/mohqueues
 share/kamailio/db_berkeley/kamailio/mtree
 share/kamailio/db_berkeley/kamailio/mtrees
 share/kamailio/db_berkeley/kamailio/pdt
@@ -356,6 +384,7 @@ share/kamailio/db_berkeley/kamailio/purplemap
 share/kamailio/db_berkeley/kamailio/re_grp
 share/kamailio/db_berkeley/kamailio/rls_presentity
 share/kamailio/db_berkeley/kamailio/rls_watchers
+share/kamailio/db_berkeley/kamailio/rtpproxy
 share/kamailio/db_berkeley/kamailio/sca_subscriptions
 share/kamailio/db_berkeley/kamailio/silo
 share/kamailio/db_berkeley/kamailio/sip_trace
@@ -379,6 +408,7 @@ share/kamailio/db_berkeley/kamailio/xcap
 share/kamailio/dbtext/
 share/kamailio/dbtext/kamailio/
 share/kamailio/dbtext/kamailio/acc
+share/kamailio/dbtext/kamailio/acc_cdrs
 share/kamailio/dbtext/kamailio/active_watchers
 share/kamailio/dbtext/kamailio/address
 share/kamailio/dbtext/kamailio/aliases
@@ -411,6 +441,8 @@ share/kamailio/dbtext/kamailio/location
 share/kamailio/dbtext/kamailio/location_attrs
 share/kamailio/dbtext/kamailio/matrix
 share/kamailio/dbtext/kamailio/missed_calls
+share/kamailio/dbtext/kamailio/mohqcalls
+share/kamailio/dbtext/kamailio/mohqueues
 share/kamailio/dbtext/kamailio/mtree
 share/kamailio/dbtext/kamailio/mtrees
 share/kamailio/dbtext/kamailio/pdt
@@ -421,6 +453,7 @@ share/kamailio/dbtext/kamailio/purplemap
 share/kamailio/dbtext/kamailio/re_grp
 share/kamailio/dbtext/kamailio/rls_presentity
 share/kamailio/dbtext/kamailio/rls_watchers
+share/kamailio/dbtext/kamailio/rtpproxy
 share/kamailio/dbtext/kamailio/sca_subscriptions
 share/kamailio/dbtext/kamailio/silo
 share/kamailio/dbtext/kamailio/sip_trace
@@ -476,6 +509,8 @@ share/kamailio/xhttp_pi/lcr-mod
 share/kamailio/xhttp_pi/lcr-table
 share/kamailio/xhttp_pi/matrix-mod
 share/kamailio/xhttp_pi/matrix-table
+share/kamailio/xhttp_pi/mohqueue-mod
+share/kamailio/xhttp_pi/mohqueue-table
 share/kamailio/xhttp_pi/msilo-mod
 share/kamailio/xhttp_pi/msilo-table
 share/kamailio/xhttp_pi/mtree-mod
@@ -498,6 +533,8 @@ share/kamailio/xhttp_pi/registrar-mod
 share/kamailio/xhttp_pi/registrar-table
 share/kamailio/xhttp_pi/rls-mod
 share/kamailio/xhttp_pi/rls-table
+share/kamailio/xhttp_pi/rtpproxy-mod
+share/kamailio/xhttp_pi/rtpproxy-table
 share/kamailio/xhttp_pi/sca-mod
 share/kamailio/xhttp_pi/sca-table
 share/kamailio/xhttp_pi/siptrace-mod
