@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/11/20 15:44:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2015/11/20 17:57:22 ajacoutot Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
@@ -28,9 +28,6 @@ WANTLIB += avahi-client avahi-common avahi-glib dbus-1
 MODULES=		devel/gettext \
 			textproc/intltool \
 			x11/gnome
-
-# XXX NEEDS FIXING see patches/patch-src_Makefile_in
-BUILD_DEPENDS +=	sysutils/coreutils
 
 LIB_DEPENDS=		devel/libsoup \
 			devel/json-glib \
