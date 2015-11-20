@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2015/05/18 06:56:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2015/11/20 14:22:23 ajacoutot Exp $
 
 COMMENT =	color management library
 
-DISTNAME =	lcms-1.18a
-SHARED_LIBS =	lcms	2.0
+DISTNAME =	lcms-1.19
 CATEGORIES =	graphics
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=lcms/}
-REVISION =	0
+
+SHARED_LIBS +=  lcms                 2.0      # 1.19
 
 HOMEPAGE =	http://www.littlecms.com/
 
@@ -22,11 +22,7 @@ CONFIGURE_ARGS += 	${CONFIGURE_SHARED}
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-WRKDIST =		${WRKDIR}/lcms-1.18
-
-# Unconfuse update-patches
-post-extract:
-	rm ${WRKSRC}/src/cmsxform.c.orig
+#WRKDIST =		${WRKDIR}/lcms-1.18
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lcms
