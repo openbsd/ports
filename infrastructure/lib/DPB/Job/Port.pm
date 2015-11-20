@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.167 2015/08/16 08:35:39 espie Exp $
+# $OpenBSD: Port.pm,v 1.168 2015/11/20 13:49:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -590,6 +590,13 @@ sub setup
 		}
 	}
 	if (defined $core->job->{builder}->locker->find_tag($core->hostname)) {
+		$still_tainted = 1;
+	}
+	# XXX deal better with old nojunk stuff ?
+	# there are some decisions to take. For now, let's just make sure
+	# it's not broken
+	my $h = $core->job->{builder}->locker->find_dependencies($core->hostname);
+	if (!ref $h) {
 		$still_tainted = 1;
 	}
 	# we are going along with junk, BUT we may still be tainted
