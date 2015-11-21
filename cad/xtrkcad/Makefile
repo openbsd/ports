@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2015/10/28 09:37:57 sebastia Exp $
+# $OpenBSD: Makefile,v 1.13 2015/11/21 06:48:33 sebastia Exp $
 
 COMMENT=	CAD program for designing model railroad layouts
 
-VERSION=	4.2.1
+VERSION=	4.2.2
 DISTNAME=	xtrkcad-source-${VERSION}
 PKGNAME=	xtrkcad-${VERSION}
 CATEGORIES=	cad
