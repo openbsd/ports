@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/11/21 02:04:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2015/11/21 10:38:05 sthen Exp $
 
 # XXX should add pledge to dumpcap.
 # XXX the Qt UI (upstream default) is broken here; segfault at startup.
@@ -48,9 +48,14 @@ MODPY_RUNDEP =	No
 WANTLIB-text +=	${cWANTLIB} ${MODLUA_WANTLIB}
 WANTLIB-text +=	GeoIP cares gcrypt gmodule-2.0 gnutls gpg-error smi
 
+# when the qt version is repaired, it should go into -main
+#LIB_DEPENDS-main += ${LIB_DEPENDS}
 #WANTLIB-main +=	${cWANTLIB} ${WANTLIB}
 #WANTLIB-main +=	wireshark wiretap wsutil gmodule-2.0 stdc++
 #WANTLIB-main +=	Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
+# ...just use a bdep for now, to avoid dpb failures
+BUILD_DEPENDS =	x11/qt5
+
 WANTLIB-main +=	${cWANTLIB} wireshark wiretap wsutil
 WANTLIB-main +=	cairo gdk_pixbuf-2.0 gdk-3 gmodule-2.0 gobject-2.0 gtk-3
 WANTLIB-main +=	pango-1.0 pangocairo-1.0 portaudio 
