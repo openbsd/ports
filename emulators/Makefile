@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2015/08/20 07:51:15 bentley Exp $
+# $OpenBSD: Makefile,v 1.78 2015/11/21 00:00:51 bentley Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -11,6 +11,7 @@
     SUBDIR += dosbox
     SUBDIR += dynagen
     SUBDIR += dynamips
+    SUBDIR += emulationstation
     SUBDIR += fceux
     SUBDIR += fedora
     SUBDIR += frodo
