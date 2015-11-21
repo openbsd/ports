@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/05/22 11:31:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/11/21 15:33:56 jca Exp $
 @bin bin/exiv2
 include/exiv2/
-include/exiv2/asfvideo.hpp
 include/exiv2/basicio.hpp
 include/exiv2/bmpimage.hpp
+include/exiv2/config.h
 include/exiv2/convert.hpp
 include/exiv2/cr2image.hpp
 include/exiv2/crwimage.hpp
@@ -14,13 +14,14 @@ include/exiv2/error.hpp
 include/exiv2/exif.hpp
 include/exiv2/exiv2.hpp
 include/exiv2/exv_conf.h
+include/exiv2/exv_msvc.h
 include/exiv2/futils.hpp
 include/exiv2/gifimage.hpp
+include/exiv2/http.hpp
 include/exiv2/image.hpp
 include/exiv2/iptc.hpp
 include/exiv2/jp2image.hpp
 include/exiv2/jpgimage.hpp
-include/exiv2/matroskavideo.hpp
 include/exiv2/metadatum.hpp
 include/exiv2/mrwimage.hpp
 include/exiv2/orfimage.hpp
@@ -29,9 +30,7 @@ include/exiv2/pngimage.hpp
 include/exiv2/preview.hpp
 include/exiv2/properties.hpp
 include/exiv2/psdimage.hpp
-include/exiv2/quicktimevideo.hpp
 include/exiv2/rafimage.hpp
-include/exiv2/riffvideo.hpp
 include/exiv2/rw2image.hpp
 include/exiv2/tags.hpp
 include/exiv2/tgaimage.hpp
@@ -46,10 +45,24 @@ lib/libexiv2.la
 @lib lib/libexiv2.so.${LIBexiv2_VERSION}
 lib/pkgconfig/exiv2.pc
 @man man/man1/exiv2.1
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
+share/locale/bs/LC_MESSAGES/exiv2.mo
 share/locale/de/LC_MESSAGES/exiv2.mo
 share/locale/es/LC_MESSAGES/exiv2.mo
 share/locale/fi/LC_MESSAGES/exiv2.mo
 share/locale/fr/LC_MESSAGES/exiv2.mo
+share/locale/gl/LC_MESSAGES/exiv2.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/exiv2.mo
 share/locale/pl/LC_MESSAGES/exiv2.mo
+share/locale/pt/LC_MESSAGES/exiv2.mo
 share/locale/ru/LC_MESSAGES/exiv2.mo
 share/locale/sk/LC_MESSAGES/exiv2.mo
+share/locale/sv/LC_MESSAGES/exiv2.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/exiv2.mo
+share/locale/uk/LC_MESSAGES/exiv2.mo
+share/locale/vi/LC_MESSAGES/exiv2.mo

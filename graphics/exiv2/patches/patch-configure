@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.1 2014/03/18 12:02:22 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2015/11/21 15:33:56 jca Exp $
 
 Don't blindly add -ldl to LDFLAGS.
 
---- configure.orig	Tue Mar 18 12:40:19 2014
-+++ configure	Tue Mar 18 12:40:50 2014
-@@ -17069,6 +17069,8 @@ fi
+--- configure.orig	Thu Nov 19 19:50:47 2015
++++ configure	Thu Nov 19 19:52:12 2015
+@@ -17321,6 +17321,8 @@ fi
  case "$host_os" in
  *mingw* | *cygwin*)
-     LDFLAGS="$LDFLAGS -no-undefined -lpsapi" ;;
+     LDFLAGS="$LDFLAGS -no-undefined -lpsapi -lwldap32 -lws2_32" ;;
 +*openbsd*)
 +    LDFLAGS="$LDFLAGS" ;;
  *)
