@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2015/04/04 09:21:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2015/11/21 11:21:13 landry Exp $
 
 COMMENT=	Xfce4 command line panel plugin
 
-XFCE_VERSION=	1.0.1
+XFCE_VERSION=	1.1.0
 XFCE_PLUGIN=	verve
-REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

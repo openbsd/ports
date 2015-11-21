@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/01/26 20:23:14 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/11/21 11:21:13 landry Exp $
 @bin bin/verve-focus
 lib/xfce4/panel/plugins/libverve.so
 share/locale/ar/LC_MESSAGES/xfce4-verve-plugin.mo
@@ -17,6 +17,7 @@ share/locale/eu/LC_MESSAGES/xfce4-verve-plugin.mo
 share/locale/fi/LC_MESSAGES/xfce4-verve-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-verve-plugin.mo
 share/locale/gl/LC_MESSAGES/xfce4-verve-plugin.mo
+share/locale/he/LC_MESSAGES/xfce4-verve-plugin.mo
 share/locale/hr/LC_MESSAGES/xfce4-verve-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-verve-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-verve-plugin.mo
@@ -24,6 +25,7 @@ share/locale/is/LC_MESSAGES/xfce4-verve-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-verve-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-verve-plugin.mo
 share/locale/ko/LC_MESSAGES/xfce4-verve-plugin.mo
+share/locale/lt/LC_MESSAGES/xfce4-verve-plugin.mo
 share/locale/lv/LC_MESSAGES/xfce4-verve-plugin.mo
 share/locale/ms/LC_MESSAGES/xfce4-verve-plugin.mo
 share/locale/nb/LC_MESSAGES/xfce4-verve-plugin.mo
