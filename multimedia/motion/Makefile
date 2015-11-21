@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/20 11:57:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/21 13:10:55 sthen Exp $
 
 COMMENT=	motion detection software for video
 
@@ -33,6 +33,8 @@ FAKE_FLAGS=		docdir=${PREFIX}/share/doc/motion \
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf
+BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 CONFIGURE_ARGS=		--without-optimizecpu \
