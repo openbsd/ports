@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/11/20 19:58:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2015/11/21 02:04:48 sthen Exp $
 
 # XXX should add pledge to dumpcap.
 # XXX the Qt UI (upstream default) is broken here; segfault at startup.
@@ -62,8 +62,8 @@ SUBST_VARS =		WVER
 
 BUILD_DEPENDS =		devel/bison \
 			devel/desktop-file-utils \
-			devel/libxml \
-			devel/libxslt \
+			textproc/libxml \
+			textproc/libxslt \
 			devel/xdg-utils \
 			textproc/asciidoc
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
