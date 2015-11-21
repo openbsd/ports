@@ -1,0 +1,20 @@
+$OpenBSD: patch-channels_CMakeLists_txt,v 1.1 2015/11/21 10:04:31 ajacoutot Exp $
+
+From 1b663ceffe51008af7ae9749e5b7999b2f7d6698 Mon Sep 17 00:00:00 2001
+From: Bernhard Miklautz <bernhard.miklautz@shacknet.at>
+Date: Fri, 12 Dec 2014 18:26:45 +0100
+Subject: [PATCH] build: cmake 3.1 compatibility
+
+--- channels/CMakeLists.txt.orig	Fri Sep 12 00:46:32 2014
++++ channels/CMakeLists.txt	Sat Nov 21 10:50:04 2015
+@@ -202,8 +202,8 @@ set(FILENAME "ChannelOptions.cmake")
+ file(GLOB FILEPATHS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "*/${FILENAME}")
+ 
+ foreach(FILEPATH ${FILEPATHS})
+-	if(${FILEPATH} MATCHES "^([^/]*)//${FILENAME}")
+-		string(REGEX REPLACE "^([^/]*)//${FILENAME}" "\\1" DIR ${FILEPATH})
++	if(${FILEPATH} MATCHES "^([^/]*)/+${FILENAME}")
++		string(REGEX REPLACE "^([^/]*)/+${FILENAME}" "\\1" DIR ${FILEPATH})
+ 		set(CHANNEL_OPTION)
+ 		include(${FILEPATH})
+ 		if(${CHANNEL_OPTION})

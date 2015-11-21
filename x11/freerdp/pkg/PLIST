@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/11/07 05:55:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/11/21 10:04:32 ajacoutot Exp $
 @pkgpath x11/freerdp,no_cups
 @bin bin/xfreerdp
 include/freerdp/
@@ -221,6 +221,25 @@ lib/cmake/WinPR/WinPRConfig.cmake
 lib/cmake/WinPR/WinPRConfigVersion.cmake
 lib/cmake/WinPR/WinPRTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/WinPR/WinPRTargets.cmake
+lib/freerdp/
+lib/freerdp/audin-client.a
+lib/freerdp/cliprdr-client.a
+lib/freerdp/disp-client.a
+lib/freerdp/drdynvc-client.a
+lib/freerdp/echo-client.a
+lib/freerdp/encomsp-client.a
+lib/freerdp/parallel-client.a
+lib/freerdp/printer-client.a
+lib/freerdp/rail-client.a
+lib/freerdp/rdpdr-client.a
+lib/freerdp/rdpei-client.a
+lib/freerdp/rdpgfx-client.a
+lib/freerdp/rdpsnd-client.a
+lib/freerdp/remdesk-client.a
+lib/freerdp/serial-client.a
+lib/freerdp/smartcard-client.a
+lib/freerdp/tsmf-client-ffmpeg-decoder.a
+lib/freerdp/tsmf-client.a
 @lib lib/libfreerdp-client.so.${LIBfreerdp-client_VERSION}
 @lib lib/libfreerdp.so.${LIBfreerdp_VERSION}
 lib/libwinpr-makecert-tool.a

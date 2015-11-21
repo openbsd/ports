@@ -1,0 +1,25 @@
+$OpenBSD: patch-third-party_CMakeLists_txt,v 1.1 2015/11/21 10:04:32 ajacoutot Exp $
+
+From 1b663ceffe51008af7ae9749e5b7999b2f7d6698 Mon Sep 17 00:00:00 2001
+From: Bernhard Miklautz <bernhard.miklautz@shacknet.at>
+Date: Fri, 12 Dec 2014 18:26:45 +0100
+Subject: [PATCH] build: cmake 3.1 compatibility
+
+--- third-party/CMakeLists.txt.orig	Fri Sep 12 00:46:32 2014
++++ third-party/CMakeLists.txt	Sat Nov 21 10:50:15 2015
+@@ -22,11 +22,11 @@
+ file(GLOB all_valid_subdirs RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "*/CMakeLists.txt")
+ 
+ foreach(dir ${all_valid_subdirs})
+-	if(${dir} MATCHES "^([^/]*)//CMakeLists.txt")
+-		string(REGEX REPLACE "^([^/]*)//CMakeLists.txt" "\\1" dir_trimmed ${dir})
++	if(${dir} MATCHES "^([^/]*)/+CMakeLists.txt")
++		string(REGEX REPLACE "^([^/]*)/+CMakeLists.txt" "\\1" dir_trimmed ${dir})
+ 		message(STATUS "Adding third-party component ${dir_trimmed}")
+ 		add_subdirectory(${dir_trimmed})
+ 	endif()
+ endforeach(dir)
+ 
+-set(THIRD_PARTY_INCLUDES ${THIRD_PARTY_INCLUDES} PARENT_SCOPE)
+\ No newline at end of file
++set(THIRD_PARTY_INCLUDES ${THIRD_PARTY_INCLUDES} PARENT_SCOPE)
