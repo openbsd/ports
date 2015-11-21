@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.174 2015/11/14 19:41:20 jung Exp $
+# $OpenBSD: Makefile,v 1.175 2015/11/21 20:13:45 sthen Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -38,6 +38,7 @@
      SUBDIR += gutenpy
      SUBDIR += hfsplus
      SUBDIR += hwdata
+     SUBDIR += ietf-cli
      SUBDIR += impress
      SUBDIR += jive
      SUBDIR += ktimeclock
