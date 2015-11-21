@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/19 20:52:28 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/21 14:21:56 rpointel Exp $
 
 COMMENT =		disassembles SWF
 
 DISTNAME =		flasm16src
 PKGNAME =		flasm-1.62
+REVISION =		0
 
 CATEGORIES =		security devel
 
@@ -24,6 +25,7 @@ BUILD_DEPENDS =		devel/gperf \
 			devel/bison
 
 USE_GMAKE =		Yes
+MAKE_FLAGS =            CC="${CC}" CFLAGS="-Wall ${CFLAGS}"
 
 NO_TEST =		Yes
 
@@ -32,7 +34,8 @@ WRKDIST =		${WRKDIR}
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/flasm ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/flasm/
-	${INSTALL_DATA} ${WRKDIST}/LICENSE.TXT ${PREFIX}/share/doc/flasm/
-	${INSTALL_DATA} ${WRKDIST}/flasm.html ${PREFIX}/share/doc/flasm/
+.for i in LICENSE.TXT flasm.html flasm.ini
+	${INSTALL_DATA} ${WRKDIST}/${i} ${PREFIX}/share/doc/flasm/
+.endfor
 
 .include <bsd.port.mk>

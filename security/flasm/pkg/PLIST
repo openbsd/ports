@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/19 20:52:28 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/11/21 14:21:56 rpointel Exp $
 @bin bin/flasm
 share/doc/flasm/
 share/doc/flasm/LICENSE.TXT
 share/doc/flasm/flasm.html
+share/doc/flasm/flasm.ini
