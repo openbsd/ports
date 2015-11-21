@@ -1,4 +1,4 @@
-$OpenBSD: patch-ext_ffmpeg_gstffmpegdec_c,v 1.6 2013/03/27 11:41:11 brad Exp $
+$OpenBSD: patch-ext_ffmpeg_gstffmpegdec_c,v 1.7 2015/11/21 10:57:25 ajacoutot Exp $
 
 From upstream:
 - Don't flush buffers on DISCONT.
@@ -13,8 +13,10 @@ From: Wim Taymans <wim.taymans@collabora.co.uk>
 Date: Tue, 10 Jul 2012 14:10:14 +0000
 Subject: avdec: ignore AAC errors instead of erroring out
 
---- ext/ffmpeg/gstffmpegdec.c.orig	Wed Nov  2 09:04:05 2011
-+++ ext/ffmpeg/gstffmpegdec.c	Mon Mar 25 22:17:30 2013
+Set the mp3 decoder to a rank of PRIMARY.
+
+--- ext/ffmpeg/gstffmpegdec.c.orig	Wed Nov  2 14:04:05 2011
++++ ext/ffmpeg/gstffmpegdec.c	Sat Nov 21 11:32:54 2015
 @@ -477,36 +477,44 @@ static gboolean
  gst_ffmpegdec_query (GstPad * pad, GstQuery * query)
  {
@@ -163,10 +165,20 @@ Subject: avdec: ignore AAC errors instead of erroring out
      ffmpegdec->discont = TRUE;
      gst_ffmpegdec_reset_ts (ffmpegdec);
    }
-@@ -3043,14 +3049,6 @@ gst_ffmpegdec_register (GstPlugin * plugin)
-         rank = GST_RANK_SECONDARY;
+@@ -3030,6 +3036,7 @@ gst_ffmpegdec_register (GstPlugin * plugin)
+       case CODEC_ID_RV30:
+       case CODEC_ID_RV40:
+       case CODEC_ID_COOK:
++      case CODEC_ID_MP3:
+         rank = GST_RANK_PRIMARY;
          break;
-       case CODEC_ID_MP3:
+         /* DVVIDEO: we have a good dv decoder, fast on both ppc as well as x86.
+@@ -3041,17 +3048,6 @@ gst_ffmpegdec_register (GstPlugin * plugin)
+       case CODEC_ID_DVVIDEO:
+       case CODEC_ID_SIPR:
+         rank = GST_RANK_SECONDARY;
+-        break;
+-      case CODEC_ID_MP3:
 -        rank = GST_RANK_NONE;
 -        break;
 -        /* TEMPORARILY DISABLING AC3/EAC3/DTS for 0.10.12 release
@@ -175,6 +187,7 @@ Subject: avdec: ignore AAC errors instead of erroring out
 -      case CODEC_ID_EAC3:
 -      case CODEC_ID_AC3:
 -      case CODEC_ID_DTS:
-         rank = GST_RANK_NONE;
+-        rank = GST_RANK_NONE;
          break;
        default:
+         rank = GST_RANK_MARGINAL;
