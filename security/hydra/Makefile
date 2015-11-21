@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.54 2015/08/17 20:04:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2015/11/21 14:16:33 rpointel Exp $
 
-COMMENT-main=	parallelized login hacker
+COMMENT-main=	parallelized network logon cracker
 COMMENT-gui=	GTK frontend for hydra
 
-VERSION=	7.1
-DISTNAME=	hydra-${VERSION}-src
+VERSION=	8.1
+DISTNAME=	hydra-${VERSION}
 PKGNAME-main=	hydra-${VERSION}
 PKGNAME-gui=	hydra-gui-${VERSION}
 CATEGORIES=    	security
-REVISION-main=	4
 
 HOMEPAGE=	http://thc.org/thc-hydra/
 
-# GPLv3 + restrictions in LICENCE.HYDRA
-PERMIT_PACKAGE_CDROM=	no charge
-PERMIT_PACKAGE_FTP=	Yes
+#GNU AFFERO GENERAL PUBLIC LICENSE Version 3
+PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m
 
@@ -56,7 +54,7 @@ LIB_DEPENDS-main=	databases/mariadb,-main \
 			devel/pcre \
 			security/libssh
 RUN_DEPENDS-main=
-WANTLIB-main=	c crypto idn m mysqlclient pcre pq pthread ssh ssl
+WANTLIB-main=	${WANTLIB} crypto idn mysqlclient pcre pq pthread ssh ssl
 LIB_DEPENDS-gui=x11/gtk+2 \
 		${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-gui=hydra-${VERSION}:security/hydra,-main \

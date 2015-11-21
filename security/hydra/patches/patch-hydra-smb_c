@@ -1,7 +1,7 @@
-$OpenBSD: patch-hydra-smb_c,v 1.1 2014/04/15 11:25:42 naddy Exp $
---- hydra-smb.c.orig	Sun Oct  2 10:06:15 2011
-+++ hydra-smb.c	Mon Apr 14 22:35:34 2014
-@@ -139,19 +139,19 @@ MakeKey(unsigned char *key, unsigned char *des_key)
+$OpenBSD: patch-hydra-smb_c,v 1.2 2015/11/21 14:16:33 rpointel Exp $
+--- hydra-smb.c.orig	Sun Dec  7 15:50:24 2014
++++ hydra-smb.c	Wed Nov 18 17:38:00 2015
+@@ -176,17 +176,17 @@ static void MakeKey(unsigned char *key, unsigned char 
    des_key[6] = Get7Bits(key, 42);
    des_key[7] = Get7Bits(key, 49);
  
@@ -10,9 +10,7 @@ $OpenBSD: patch-hydra-smb_c,v 1.1 2014/04/15 11:25:42 naddy Exp $
  }
  
  /* Do the DesEncryption */
- void
- DesEncrypt(unsigned char *clear, unsigned char *key, unsigned char *cipher)
- {
+ void DesEncrypt(unsigned char *clear, unsigned char *key, unsigned char *cipher) {
 -  des_cblock des_key;
 -  des_key_schedule key_schedule;
 +  DES_cblock des_key;
