@@ -1,0 +1,23 @@
+This package contains command-line tools to work with a locally rsync'ed
+copy of Internet Drafts and RFCs. See the README and help text for more
+information, but here are some examples:
+
+ietf: starts a command-line shell with command history
+
+ietf mirror: create or update local mirror of IETF repositories
+  (approx 1GB, by default in ${LOCALSTATEDIR}/db/ietf-mirrors)
+
+ietf rfc 3456 4567: open RFC 3456 and RFC 4567 in $EDITOR
+
+ietf rfcextra 3456: open RFC 3456 and any RFCs that update or
+  obsolete it in $EDITOR, and any errata on any of those in a browser
+
+ietf (tools|tracker) 3456 4567: opens RFC 3456 and RFC 4567 in the
+  IETF Tools or IETF Datatracker web interface
+
+ietf draft crocker: open all active drafts with "crocker" in their
+  filename, and lists all matching drafts that are expired, replaced
+  by other drafts, or have become RFCs
+
+ietf draftstatus crocker, ietf rfcstatus 3456: lists information
+  from the IETF and RFC Editor databases

@@ -1,0 +1,22 @@
+$OpenBSD: patch-ietf_config,v 1.1.1.1 2015/11/21 20:13:04 sthen Exp $
+--- ietf.config.orig	Fri Nov 20 20:46:35 2015
++++ ietf.config	Fri Nov 20 21:09:49 2015
+@@ -30,7 +30,7 @@ __license__ = "http://en.wikipedia.org/wiki/WTFPL"
+ # DisplayTextCommand = "emacs "
+ # DisplayWebCommand = "somebrowser "
+ 
+-MirrorDir = "~/LocalMirror"
++MirrorDir = "${LOCALSTATEDIR}/db/ietf-mirrors"
+ IDDir = MirrorDir + "/id"
+ ShortIDDir = MirrorDir + "/short-id"
+ IANADir = MirrorDir + "/iana"
+@@ -40,7 +40,8 @@ CharterDir = MirrorDir + "/charter"
+ ConflictDir = MirrorDir + "/conflict-reviews"
+ StatusDir = MirrorDir + "/status-changes"
+ RFCDir = MirrorDir + "/in-notes"
+-DisplayTextCommand = "bbedit "
++#DisplayTextCommand = "mg " -- overrides $EDITOR
++DisplayTextCommand = ""
+ DisplayWebCommand = "open "
+ 
+ # Advanced users: if you want to change which directories are mirrored
