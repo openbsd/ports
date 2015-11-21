@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/05 22:04:56 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/11/21 17:19:32 jca Exp $
 ${P5SITE}/boolean.pm
+${P5SITE}/boolean.pod
 @man man/man3p/boolean.3p

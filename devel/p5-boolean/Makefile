@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2015/11/05 19:08:58 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2015/11/21 17:19:32 jca Exp $
 
 COMMENT =	boolean support for Perl
 
+HOMEPAGE =	https://github.com/ingydotnet/boolean-pm
+
 MODULES =	cpan
-DISTNAME =	boolean-0.27
+DISTNAME =	boolean-0.45
 CATEGORIES =	devel
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
