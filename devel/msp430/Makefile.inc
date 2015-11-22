@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.26 2015/01/22 19:58:57 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.27 2015/11/22 08:18:56 ajacoutot Exp $
 
 #
 # XXX: Don't forget to adjust meta/msp430 when updating to new LTS
@@ -57,6 +57,9 @@ PATCH_DIST_STRIP?=	-p1
 EXTRACT_SUFX?=		.tar.bz2
 
 DIST_SUBDIR?=		${TARGET}
+
+# XXX at least gmkdir gets picked up if present
+BUILD_DEPENDS +=	sysutils/coreutils
 
 CONFIGURE_STYLE?=	gnu
 CONFIGURE_ARGS+=	--target=msp430		\
