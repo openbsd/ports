@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_gtk,v 1.1 2014/12/06 23:05:11 landry Exp $
+$OpenBSD: patch-Makefile_gtk,v 1.2 2015/11/22 19:34:00 landry Exp $
 - only use gtk-2 through pkg-config
 - dont use -Werror/-O2
 - install binaries under bin as puzzle-$i
 - generate desktop files/install icons
---- Makefile.gtk.orig	Mon Dec  1 22:34:37 2014
-+++ Makefile.gtk	Mon Dec  1 22:48:38 2014
+--- Makefile.gtk.orig	Sun Nov 22 20:15:22 2015
++++ Makefile.gtk	Sun Nov 22 20:15:45 2015
 @@ -11,9 +11,9 @@ CC := $(TOOLPATH)$(CC)
  # building with GTK 1.2, or you can set it to `pkg-config gtk+-2.0'
  # if you want to enforce 2.0. The default is to try 2.0 and fall back
@@ -17,7 +17,7 @@ $OpenBSD: patch-Makefile_gtk,v 1.1 2014/12/06 23:05:11 landry Exp $
  		--cflags` $(CFLAGS)
  XLIBS = `$(GTK_CONFIG) --libs` -lm
  ULIBS = -lm#
-@@ -660,9 +660,19 @@ GAMES += unequal
+@@ -701,9 +701,19 @@ GAMES += unequal
  GAMES += unruly
  GAMES += untangle
  install:
