@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.325 2015/11/20 18:27:59 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.326 2015/11/22 00:01:36 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -693,6 +693,7 @@ my $obsolete_reason = {
 	'pb-browser' => 0,
 	'unace' => 0,
 	'edict' => 3,
+	'ADMsmb' => 6,
 };
 
 # ->is_base_system($handle, $state):
