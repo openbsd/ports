@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2015/10/02 07:34:14 bentley Exp $
+# $OpenBSD: Makefile,v 1.19 2015/11/22 18:33:04 czarkoff Exp $
 
 ONLY_FOR_ARCHS =	alpha amd64 i386 powerpc sparc64
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
-V =			0.11.0
-REVISION =		0
+V =			0.13.0
 DISTNAME =		mpv-${V}
 
 GH_ACCOUNT=		mpv-player
@@ -37,7 +36,7 @@ BUILD_DEPENDS =		audio/ladspa \
 
 LIB_DEPENDS =		audio/libcdio \
 			devel/libdvdread \
-			graphics/ffmpeg \
+			graphics/ffmpeg>=20151112 \
 			graphics/jpeg \
 			graphics/lcms2 \
 			multimedia/libass \

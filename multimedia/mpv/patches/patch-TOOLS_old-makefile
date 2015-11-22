@@ -1,0 +1,14 @@
+$OpenBSD: patch-TOOLS_old-makefile,v 1.1 2015/11/22 18:33:04 czarkoff Exp $
+
+Disable the use of SSE4 intrinsics
+
+--- TOOLS/old-makefile.orig	Tue Nov 10 13:14:14 2015
++++ TOOLS/old-makefile	Sun Nov 15 17:43:54 2015
+@@ -237,7 +237,6 @@ SOURCES = audio/audio.c \
+           ta/ta_talloc.c \
+           video/csputils.c \
+           video/fmt-conversion.c \
+-          video/gpu_memcpy.c \
+           video/image_writer.c \
+           video/img_format.c \
+           video/mp_image.c \

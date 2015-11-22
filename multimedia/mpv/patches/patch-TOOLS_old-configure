@@ -1,7 +1,12 @@
-$OpenBSD: patch-TOOLS_old-configure,v 1.2 2015/09/26 04:02:31 czarkoff Exp $
---- TOOLS/old-configure.orig	Tue Sep 22 19:13:22 2015
-+++ TOOLS/old-configure	Wed Sep 23 03:20:42 2015
-@@ -924,8 +924,8 @@ cat > $TMPC << EOF
+$OpenBSD: patch-TOOLS_old-configure,v 1.3 2015/11/22 18:33:04 czarkoff Exp $
+
+- Adjust for BSD fstatfs
+- Disable the use of SSE4 intrinsics
+- Disable the use of C11
+
+--- TOOLS/old-configure.orig	Tue Nov 10 13:14:14 2015
++++ TOOLS/old-configure	Sun Nov 15 17:43:54 2015
+@@ -942,8 +942,8 @@ cat > $TMPC << EOF
  
  /* we didn't bother to add actual config checks for this, or they are
     for platforms not supported by this configure script */
@@ -9,6 +14,17 @@ $OpenBSD: patch-TOOLS_old-configure,v 1.2 2015/09/26 04:02:31 czarkoff Exp $
 -#define HAVE_LINUX_FSTATFS 1
 +#define HAVE_BSD_FSTATFS 1
 +#define HAVE_LINUX_FSTATFS 0
- #define HAVE_VDA_AV_VDA_ALLOC_CONTEXT 0
- #define HAVE_VDA_HWACCEL 0
- #define HAVE_VDA_LIBAVCODEC_REFCOUNTING 0
+ #define HAVE_GL_COCOA 0
+ #define HAVE_COCOA 0
+ #define HAVE_COCOA_APPLICATION 0
+@@ -973,8 +973,8 @@ cat > $TMPC << EOF
+ #define HAVE_EGL_DRM 0
+ #define HAVE_VIDEOTOOLBOX_HWACCEL 0
+ #define HAVE_VIDEOTOOLBOX_GL 0
+-#define HAVE_SSE4_INTRINSICS 1
+-#define HAVE_C11_TLS 1
++#define HAVE_SSE4_INTRINSICS 0
++#define HAVE_C11_TLS 0
+ 
+ #ifdef __OpenBSD__
+ #define DEFAULT_CDROM_DEVICE "/dev/rcd0c"
