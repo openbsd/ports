@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.26 2015/07/18 21:11:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2015/11/22 19:51:28 rpointel Exp $
 
 COMMENT =	SQLite3 adapter for Python
 
-MODPY_EGG_VERSION =	2.6.0
+MODPY_EGG_VERSION =	2.8.1
 
 DISTNAME =	pysqlite-${MODPY_EGG_VERSION}
 PKGNAME =	py-sqlite2-${MODPY_EGG_VERSION}
-REVISION =	5
 CATEGORIES =	databases devel
 
 MAINTAINER =	Eric Faurot <eric@openbsd.org>
 
-HOMEPAGE =	https://code.google.com/p/pysqlite/
+HOMEPAGE =	https://github.com/ghaering/pysqlite/
 
-MASTER_SITES =	https://pysqlite.googlecode.com/files/
+MODPY_PI =	Yes
 
 # BSD-like
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,9 +23,6 @@ WANTLIB += pthread sqlite3>=8.6
 BUILD_DEPENDS =	textproc/py-sphinx
 
 MODULES =	lang/python
-
-pre-configure:
-	@sed -i 's|_LOCALBASE_|${LOCALBASE}|g' ${WRKSRC}/setup.cfg
 
 post-build:
 	cd ${WRKSRC} && \
