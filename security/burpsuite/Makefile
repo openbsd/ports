@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2015/10/21 05:22:17 rpointel Exp $
+# $OpenBSD: Makefile,v 1.6 2015/11/23 16:01:14 rpointel Exp $
 
 COMMENT =		tool for testing security of web applications
 
 VERSION =		1.6.30
 DISTNAME =		burpsuite_free_v${VERSION}
 PKGNAME =		burpsuite-${VERSION}
+REVISION =		0
 
 DISTFILES=${DISTNAME}${EXTRACT_SUFX}{DownloadUpdate.ashx?Product=Free}
 
@@ -16,7 +17,6 @@ PERMIT_PACKAGE_CDROM=   https://portswigger.net/burp/eula-free.html
 PERMIT_PACKAGE_FTP=     https://portswigger.net/burp/eula-free.html
 PERMIT_DISTFILES_FTP=   https://portswigger.net/burp/eula-free.html
 
-
 MASTER_SITES =		https://portswigger.net/
 
 EXTRACT_ONLY =		
@@ -25,6 +25,8 @@ EXTRACT_SUFX =		.jar
 MODULES =		java
 MODJAVA_VER = 		1.7
 MODJAVA_JRERUN =	yes
+
+RUN_DEPENDS =		java/javaPathHelper
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
