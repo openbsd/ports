@@ -1,29 +1,22 @@
-$OpenBSD: patch-doc_sample_config,v 1.7 2015/10/09 14:47:40 sthen Exp $
+$OpenBSD: patch-doc_sample_config,v 1.8 2015/11/23 15:10:57 sthen Exp $
 
-no freeradius-client in ports yet (also disabled in autoconf)
 no seccomp, gssapi
 
 --- doc/sample.config.orig	Sun Sep 27 07:32:39 2015
-+++ doc/sample.config	Fri Oct  9 15:45:23 2015
++++ doc/sample.config	Sat Nov 21 00:36:18 2015
 @@ -1,7 +1,7 @@
  # User authentication method. Could be set multiple times and in 
  # that case all should succeed. To enable multiple methods use
  # multiple auth directives. Available options: certificate, 
 -# plain, pam, radius, gssapi.
-+# plain, pam.
++# plain, pam, radius.
  #
  # Note that authentication methods cannot be changed with reload.
  
-@@ -20,47 +20,26 @@
- # to generate password entries. The 'otp' suboption allows to specify
- # an oath password file to be used for one time passwords; the format of
- # the file is described in https://code.google.com/p/mod-authn-otp/wiki/UsersFile
--#
--# radius[config=/etc/radiusclient/radiusclient.conf,groupconfig=true,nas-identifier=name,override-interim-updates=false]:
--#  The radius option requires specifying freeradius-client configuration
--# file. If the groupconfig option is set, then config-per-user will be overriden,
--# and all configuration will be read from radius. The 'override-interim-updates' if set to
--# true will ignore Acct-Interim-Interval from the server and 'stats-report-time' will be considered.
+@@ -26,15 +26,6 @@
+ # file. If the groupconfig option is set, then config-per-user will be overriden,
+ # and all configuration will be read from radius. The 'override-interim-updates' if set to
+ # true will ignore Acct-Interim-Interval from the server and 'stats-report-time' will be considered.
 -#
 -# gssapi[keytab=/etc/key.tab,require-local-user-map=true,tgt-freshness-time=900]
 -#  The gssapi option allows to use authentication methods supported by GSSAPI,
@@ -36,12 +29,7 @@ no seccomp, gssapi
  
  #auth = "pam"
  #auth = "pam[gid-min=1000]"
- #auth = "plain[passwd=./sample.passwd,otp=./sample.otp]"
- auth = "plain[passwd=./sample.passwd]"
- #auth = "certificate"
--#auth = "radius[config=/etc/radiusclient/radiusclient.conf,groupconfig=true]"
- 
- # Specify alternative authentication methods that are sufficient
+@@ -47,8 +38,6 @@ auth = "plain[passwd=./sample.passwd]"
  # for authentication. That is, if set, any of the methods enabled
  # will be sufficient to login.
  #enable-auth = "certificate"
@@ -49,21 +37,8 @@ no seccomp, gssapi
 -#enable-auth = "gssapi[keytab=/etc/key.tab,require-local-user-map=true,tgt-freshness-time=900]"
  
  # Accounting methods available:
--# radius: can be combined with any authentication method, it provides
--#      radius accounting to available users (see also stats-report-time).
--#
- # pam: can be combined with any authentication method, it provides
- #      a validation of the connecting user's name using PAM. It is
- #      superfluous to use this method when authentication is already
- #      PAM.
- #
- # Only one accounting method can be specified.
--#acct = "radius[config=/etc/radiusclient/radiusclient.conf]"
-+#acct = "pam"
- 
- # Use listen-host to limit to specific IPs or to the IPs of a provided 
- # hostname.
-@@ -83,8 +62,8 @@ udp-port = 443
+ # radius: can be combined with any authentication method, it provides
+@@ -83,8 +72,8 @@ udp-port = 443
  
  # The user the worker processes will be run as. It should be
  # unique (no other services run as this user).
@@ -74,7 +49,7 @@ no seccomp, gssapi
  
  # socket file used for IPC with occtl. You only need to set that,
  # if you use more than a single servers.
-@@ -93,7 +72,7 @@ run-as-group = daemon
+@@ -93,7 +82,7 @@ run-as-group = daemon
  # socket file used for server IPC (worker-main), will be appended with .PID
  # It must be accessible within the chroot environment (if any), so it is best
  # specified relatively to the chroot directory.
@@ -83,7 +58,7 @@ no seccomp, gssapi
  
  # The default server directory. Does not require any devices present.
  #chroot-dir = /path/to/chroot
-@@ -108,8 +87,8 @@ socket-file = /var/run/ocserv-socket
+@@ -108,8 +97,8 @@ socket-file = /var/run/ocserv-socket
  #
  # There may be multiple server-cert and server-key directives,
  # but each key should correspond to the preceding certificate.
@@ -94,7 +69,7 @@ no seccomp, gssapi
  
  # Diffie-Hellman parameters. Only needed if you require support
  # for the DHE ciphersuites (by default this server supports ECDHE).
-@@ -135,18 +114,12 @@ server-key = ../tests/server-key.pem
+@@ -135,18 +124,12 @@ server-key = ../tests/server-key.pem
  # The Certificate Authority that will be used to verify
  # client certificates (public keys) if certificate authentication
  # is set.
@@ -114,29 +89,19 @@ no seccomp, gssapi
  # A banner to be displayed on clients
  #banner = "Welcome"
  
-@@ -175,8 +148,7 @@ max-same-clients = 2
- 
- # Stats report time. The number of seconds after which each
- # worker process will report its usage statistics (number of
--# bytes transferred etc). This is useful when accounting like
--# radius is in use.
-+# bytes transferred etc).
- #stats-report-time = 360
- 
- # Keepalive in seconds
-@@ -276,9 +248,8 @@ min-reauth-time = 300
+@@ -276,9 +259,8 @@ min-reauth-time = 300
  # Banning clients in ocserv works with a point system. IP addresses
  # that get a score over that configured number are banned for
  # min-reauth-time seconds. By default a wrong password attempt is 10 points,
 -# a KKDCP POST is 1 point, and a connection is 1 point. Note that
 -# due to difference processes being involved the count of points
 -# will not be real-time precise.
-+# and a connection is 1 point. Note that due to difference processes
++# and a connection is 1 point. Note that due to different processes
 +# being involved the count of points will not be real-time precise.
  #
  # Score banning cannot be reliably used when receiving proxied connections
  # locally from an HTTP server (i.e., when listen-clear-file is used).
-@@ -292,7 +263,6 @@ ban-reset-time = 300
+@@ -292,7 +274,6 @@ ban-reset-time = 300
  # In case you'd like to change the default points.
  #ban-points-wrong-password = 10
  #ban-points-connection = 1
@@ -144,7 +109,7 @@ no seccomp, gssapi
  
  # Cookie timeout (in seconds)
  # Once a client is authenticated he's provided a cookie with
-@@ -354,7 +324,7 @@ rekey-method = ssl
+@@ -354,7 +335,7 @@ rekey-method = ssl
  use-occtl = true
  
  # PID file. It can be overriden in the command line.
@@ -153,16 +118,7 @@ no seccomp, gssapi
  
  # Set the protocol-defined priority (SO_PRIORITY) for packets to
  # be sent. That is a number from 0 to 6 with 0 being the lowest
-@@ -382,7 +352,7 @@ predictable-ips = true
- default-domain = example.com
- 
- # The pool of addresses that leases will be given from. If the leases
--# are given via Radius, or via the explicit-ip? per-user config option then 
-+# are given via the explicit-ip? per-user config option then 
- # these network values should contain a network with at least a single
- # address that will remain under the full control of ocserv (that is
- # to be able to assign the local part of the tun device address).
-@@ -498,20 +468,6 @@ no-route = 192.168.5.0/255.255.255.0
+@@ -498,20 +479,6 @@ no-route = 192.168.5.0/255.255.255.0
  # and '%{G}', if present will be replaced by the username and group name.
  #proxy-url = http://example.com/
  #proxy-url = http://example.com/%{U}/

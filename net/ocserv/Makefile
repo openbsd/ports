@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/10/09 14:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/11/23 15:10:57 sthen Exp $
 
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
 DISTNAME=	ocserv-0.10.9
+REVISION=	0
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	net
@@ -14,7 +15,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c gnutls lz4 ncurses oath pam protobuf-c pthread readline talloc
+WANTLIB += c gnutls lz4 ncurses oath pam protobuf-c pthread
+WANTLIB += radcli readline talloc
 
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
@@ -22,21 +24,20 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	archivers/lz4 \
 		devel/protobuf-c \
 		devel/libtalloc \
+		net/radcli \
 		security/gnutls \
 		security/oath-toolkit \
 		security/openpam
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
-#SEPARATE_BUILD= Yes # nearly; problem with ocserv-args.c
 USE_GMAKE=	Yes
 USE_GROFF=	Yes # missing flags
 # .NOP \f\*[B-Font]\-s\f[] \f\*[I-Font]file\f[], \f\*[B-Font]\-\-socket\-file\f[]=\f\*[I-Font]file\f[]
 # There's also "ERROR: skipping unknown macro: .an-trap" but this is probably unimportant
 CONFIGURE_ARGS=	--enable-local-libopts \
 		--without-http-parser \
-		--without-pcl-lib \
-		--without-radius
+		--without-pcl-lib
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
