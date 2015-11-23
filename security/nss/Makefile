@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.55 2015/10/30 07:59:39 landry Exp $
+# $OpenBSD: Makefile,v 1.56 2015/11/23 11:32:12 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.20.1
+VERSION=		3.21
 DISTNAME =		nss-${VERSION}
 
-SO_VERSION=		38.0
+SO_VERSION=		39.0
 .for _lib in freebl3 nss3 nssckbi nssdbm3 nssutil3 smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -29,6 +29,7 @@ WANTLIB += c pthread z nspr4 plc4 plds4 sqlite3>=22
 MAKE_ENV=		BUILD_OPT=1 \
 			LOCALBASE="${LOCALBASE}" \
 			NSS_ENABLE_ECC=1 \
+			NSS_DISABLE_GTESTS=1 \
 			NSS_USE_SYSTEM_SQLITE=1 \
 			SO_VERSION="${SO_VERSION}" \
 			XCFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
