@@ -1,6 +1,6 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.9 2015/11/10 15:51:35 sthen Exp $
---- includes/defaults.inc.php.orig	Wed Nov  4 14:18:27 2015
-+++ includes/defaults.inc.php	Wed Nov  4 14:18:30 2015
+$OpenBSD: patch-includes_defaults_inc_php,v 1.10 2015/11/23 11:48:53 sthen Exp $
+--- includes/defaults.inc.php.orig	Mon Nov 23 11:35:18 2015
++++ includes/defaults.inc.php	Mon Nov 23 11:36:33 2015
 @@ -40,7 +40,7 @@ $config['project_name'] = 'LibreNMS';
  $config['project_id']   = strtolower($config['project_name']);
  
@@ -15,10 +15,11 @@ $OpenBSD: patch-includes_defaults_inc_php,v 1.9 2015/11/10 15:51:35 sthen Exp $
  
  // Location of executables
 -$config['rrdtool']                  = '/usr/bin/rrdtool';
-+$config['rrdtool']                  = '/usr/local/bin/rrdtool';
- $config['rrdtool_version']          = 1.4; // Doesn't need to contain minor numbers.
+-$config['rrdtool_version']          = 1.4; // Doesn't need to contain minor numbers.
 -$config['fping']                    = '/usr/bin/fping';
 -$config['fping6']                   = 'fping6';
++$config['rrdtool']                  = '/usr/local/bin/rrdtool';
++$config['rrdtool_version']          = 1.5; // Doesn't need to contain minor numbers.
 +$config['fping']                    = '/usr/local/sbin/fping';
 +$config['fping6']                   = '/usr/local/sbin/fping6';
  $config['fping_options']['retries'] = 3;
