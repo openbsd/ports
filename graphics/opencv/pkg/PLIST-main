@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2015/01/24 10:56:43 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2015/11/23 20:34:08 zhuk Exp $
+@bin bin/opencv_annotation
 @bin bin/opencv_createsamples
 @bin bin/opencv_haartraining
 @bin bin/opencv_performance
@@ -17,6 +18,7 @@ include/opencv/highgui.h
 include/opencv/ml.h
 include/opencv2/
 include/opencv2/calib3d/
+include/opencv2/calib3d.hpp
 include/opencv2/calib3d/calib3d.hpp
 include/opencv2/contrib/
 include/opencv2/contrib/contrib.hpp
@@ -25,6 +27,7 @@ include/opencv2/contrib/hybridtracker.hpp
 include/opencv2/contrib/openfabmap.hpp
 include/opencv2/contrib/retina.hpp
 include/opencv2/core/
+include/opencv2/core.hpp
 include/opencv2/core/affine.hpp
 include/opencv2/core/core.hpp
 include/opencv2/core/core_c.h
@@ -41,8 +44,10 @@ include/opencv2/core/types_c.h
 include/opencv2/core/version.hpp
 include/opencv2/core/wimage.hpp
 include/opencv2/features2d/
+include/opencv2/features2d.hpp
 include/opencv2/features2d/features2d.hpp
 include/opencv2/flann/
+include/opencv2/flann.hpp
 include/opencv2/flann/all_indices.h
 include/opencv2/flann/allocator.h
 include/opencv2/flann/any.h
@@ -118,11 +123,13 @@ include/opencv2/gpu/gpu.hpp
 include/opencv2/gpu/gpumat.hpp
 include/opencv2/gpu/stream_accessor.hpp
 include/opencv2/highgui/
+include/opencv2/highgui.hpp
 include/opencv2/highgui/cap_ios.h
 include/opencv2/highgui/highgui.hpp
 include/opencv2/highgui/highgui_c.h
 include/opencv2/highgui/ios.h
 include/opencv2/imgproc/
+include/opencv2/imgproc.hpp
 include/opencv2/imgproc/imgproc.hpp
 include/opencv2/imgproc/imgproc_c.h
 include/opencv2/imgproc/types_c.h
@@ -132,6 +139,7 @@ include/opencv2/legacy/compat.hpp
 include/opencv2/legacy/legacy.hpp
 include/opencv2/legacy/streams.hpp
 include/opencv2/ml/
+include/opencv2/ml.hpp
 include/opencv2/ml/ml.hpp
 include/opencv2/nonfree/
 include/opencv2/nonfree/features2d.hpp
@@ -139,6 +147,7 @@ include/opencv2/nonfree/gpu.hpp
 include/opencv2/nonfree/nonfree.hpp
 include/opencv2/nonfree/ocl.hpp
 include/opencv2/objdetect/
+include/opencv2/objdetect.hpp
 include/opencv2/objdetect/objdetect.hpp
 include/opencv2/ocl/
 include/opencv2/ocl/matrix_operations.hpp
@@ -146,9 +155,11 @@ include/opencv2/ocl/ocl.hpp
 include/opencv2/opencv.hpp
 include/opencv2/opencv_modules.hpp
 include/opencv2/photo/
+include/opencv2/photo.hpp
 include/opencv2/photo/photo.hpp
 include/opencv2/photo/photo_c.h
 include/opencv2/stitching/
+include/opencv2/stitching.hpp
 include/opencv2/stitching/detail/
 include/opencv2/stitching/detail/autocalib.hpp
 include/opencv2/stitching/detail/blenders.hpp
@@ -164,19 +175,23 @@ include/opencv2/stitching/detail/warpers_inl.hpp
 include/opencv2/stitching/stitcher.hpp
 include/opencv2/stitching/warpers.hpp
 include/opencv2/superres/
+include/opencv2/superres.hpp
 include/opencv2/superres/optical_flow.hpp
 include/opencv2/superres/superres.hpp
 include/opencv2/ts/
+include/opencv2/ts.hpp
 include/opencv2/ts/gpu_perf.hpp
 include/opencv2/ts/gpu_test.hpp
 include/opencv2/ts/ts.hpp
 include/opencv2/ts/ts_gtest.h
 include/opencv2/ts/ts_perf.hpp
 include/opencv2/video/
+include/opencv2/video.hpp
 include/opencv2/video/background_segm.hpp
 include/opencv2/video/tracking.hpp
 include/opencv2/video/video.hpp
 include/opencv2/videostab/
+include/opencv2/videostab.hpp
 include/opencv2/videostab/deblurring.hpp
 include/opencv2/videostab/fast_marching.hpp
 include/opencv2/videostab/fast_marching_inl.hpp
@@ -219,12 +234,15 @@ share/OpenCV/OpenCVModules.cmake
 share/OpenCV/haarcascades/
 share/OpenCV/haarcascades/haarcascade_eye.xml
 share/OpenCV/haarcascades/haarcascade_eye_tree_eyeglasses.xml
+share/OpenCV/haarcascades/haarcascade_frontalcatface.xml
+share/OpenCV/haarcascades/haarcascade_frontalcatface_extended.xml
 share/OpenCV/haarcascades/haarcascade_frontalface_alt.xml
 share/OpenCV/haarcascades/haarcascade_frontalface_alt2.xml
 share/OpenCV/haarcascades/haarcascade_frontalface_alt_tree.xml
 share/OpenCV/haarcascades/haarcascade_frontalface_default.xml
 share/OpenCV/haarcascades/haarcascade_fullbody.xml
 share/OpenCV/haarcascades/haarcascade_lefteye_2splits.xml
+share/OpenCV/haarcascades/haarcascade_licence_plate_rus_16stages.xml
 share/OpenCV/haarcascades/haarcascade_lowerbody.xml
 share/OpenCV/haarcascades/haarcascade_mcs_eyepair_big.xml
 share/OpenCV/haarcascades/haarcascade_mcs_eyepair_small.xml
@@ -237,9 +255,11 @@ share/OpenCV/haarcascades/haarcascade_mcs_righteye.xml
 share/OpenCV/haarcascades/haarcascade_mcs_upperbody.xml
 share/OpenCV/haarcascades/haarcascade_profileface.xml
 share/OpenCV/haarcascades/haarcascade_righteye_2splits.xml
+share/OpenCV/haarcascades/haarcascade_russian_plate_number.xml
 share/OpenCV/haarcascades/haarcascade_smile.xml
 share/OpenCV/haarcascades/haarcascade_upperbody.xml
 share/OpenCV/lbpcascades/
+share/OpenCV/lbpcascades/lbpcascade_frontalcatface.xml
 share/OpenCV/lbpcascades/lbpcascade_frontalface.xml
 share/OpenCV/lbpcascades/lbpcascade_profileface.xml
 share/OpenCV/lbpcascades/lbpcascade_silverware.xml

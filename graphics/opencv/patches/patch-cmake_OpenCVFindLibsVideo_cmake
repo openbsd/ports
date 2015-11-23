@@ -1,7 +1,7 @@
-$OpenBSD: patch-cmake_OpenCVFindLibsVideo_cmake,v 1.3 2015/01/24 10:56:43 zhuk Exp $
---- cmake/OpenCVFindLibsVideo.cmake.orig	Wed Oct  1 09:33:36 2014
-+++ cmake/OpenCVFindLibsVideo.cmake	Sun Dec 21 20:16:55 2014
-@@ -162,7 +162,6 @@ if(WITH_V4L)
+$OpenBSD: patch-cmake_OpenCVFindLibsVideo_cmake,v 1.4 2015/11/23 20:34:07 zhuk Exp $
+--- cmake/OpenCVFindLibsVideo.cmake.orig	Mon Oct 26 08:56:34 2015
++++ cmake/OpenCVFindLibsVideo.cmake	Tue Nov  3 01:10:55 2015
+@@ -170,7 +170,6 @@ if(WITH_V4L)
      endif()
    endif()
    CHECK_INCLUDE_FILE(linux/videodev.h HAVE_CAMV4L)
