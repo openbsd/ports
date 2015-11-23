@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_util_h,v 1.1.1.1 2015/11/23 15:10:06 sthen Exp $
+--- lib/util.h.orig	Fri Nov 20 23:06:58 2015
++++ lib/util.h	Fri Nov 20 23:07:22 2015
+@@ -21,7 +21,9 @@ size_t rc_strlcpy(char *dst, char const *src, size_t s
+ #define SA_LEN(sa) \
+   (((sa)->sa_family == AF_INET) ? \
+     sizeof(struct sockaddr_in) : sizeof(struct sockaddr_in6))
++#endif
+ 
++#if !defined(SS_LEN)
+ #define SS_LEN(sa) \
+   (((sa)->ss_family == AF_INET) ? \
+     sizeof(struct sockaddr_in) : sizeof(struct sockaddr_in6))

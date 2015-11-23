@@ -1,0 +1,82 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/23 15:10:06 sthen Exp $
+include/radcli/
+include/radcli/radcli.h
+include/radcli/version.h
+lib/libradcli.a
+lib/libradcli.la
+@lib lib/libradcli.so.${LIBradcli_VERSION}
+lib/pkgconfig/radcli.pc
+@man man/man3/radcli.h.3
+@man man/man3/rc_aaa.3
+@man man/man3/rc_aaa_ctx.3
+@man man/man3/rc_aaa_ctx_free.3
+@man man/man3/rc_aaa_ctx_get_secret.3
+@man man/man3/rc_aaa_ctx_get_vector.3
+@man man/man3/rc_aaa_ctx_server.3
+@man man/man3/rc_acct.3
+@man man/man3/rc_acct_proxy.3
+@man man/man3/rc_add_config.3
+@man man/man3/rc_auth.3
+@man man/man3/rc_auth_proxy.3
+@man man/man3/rc_avpair_add.3
+@man man/man3/rc_avpair_assign.3
+@man man/man3/rc_avpair_copy.3
+@man man/man3/rc_avpair_free.3
+@man man/man3/rc_avpair_gen.3
+@man man/man3/rc_avpair_get.3
+@man man/man3/rc_avpair_get_attr.3
+@man man/man3/rc_avpair_get_in6.3
+@man man/man3/rc_avpair_get_raw.3
+@man man/man3/rc_avpair_get_uint32.3
+@man man/man3/rc_avpair_insert.3
+@man man/man3/rc_avpair_log.3
+@man man/man3/rc_avpair_new.3
+@man man/man3/rc_avpair_next.3
+@man man/man3/rc_avpair_parse.3
+@man man/man3/rc_avpair_tostr.3
+@man man/man3/rc_buildreq.3
+@man man/man3/rc_check.3
+@man man/man3/rc_check_tls.3
+@man man/man3/rc_conf_int.3
+@man man/man3/rc_conf_srv.3
+@man man/man3/rc_conf_str.3
+@man man/man3/rc_config_free.3
+@man man/man3/rc_config_init.3
+@man man/man3/rc_destroy.3
+@man man/man3/rc_dict_findattr.3
+@man man/man3/rc_dict_findval.3
+@man man/man3/rc_dict_findvend.3
+@man man/man3/rc_dict_free.3
+@man man/man3/rc_dict_getattr.3
+@man man/man3/rc_dict_getval.3
+@man man/man3/rc_dict_getvend.3
+@man man/man3/rc_find_server_addr.3
+@man man/man3/rc_get_socket_type.3
+@man man/man3/rc_get_srcaddr.3
+@man man/man3/rc_getport.3
+@man man/man3/rc_mksid.3
+@man man/man3/rc_new.3
+@man man/man3/rc_openlog.3
+@man man/man3/rc_own_hostname.3
+@man man/man3/rc_read_config.3
+@man man/man3/rc_read_dictionary.3
+@man man/man3/rc_send_server.3
+@man man/man3/rc_setdebug.3
+@man man/man3/rc_test_config.3
+@man man/man3/rc_tls_fd.3
+share/examples/radcli/
+@sample ${SYSCONFDIR}/radcli/
+share/examples/radcli/radiusclient-tls.conf
+@sample ${SYSCONFDIR}/radcli/radiusclient-tls.conf
+share/examples/radcli/radiusclient.conf
+@sample ${SYSCONFDIR}/radcli/radiusclient.conf
+@mode 400
+share/examples/radcli/servers
+@sample ${SYSCONFDIR}/radcli/servers
+share/examples/radcli/servers-tls
+@sample ${SYSCONFDIR}/radcli/servers-tls
+@mode
+share/radcli/
+share/radcli/dictionary
+share/radcli/dictionary.microsoft
+share/radcli/dictionary.roaringpenguin
