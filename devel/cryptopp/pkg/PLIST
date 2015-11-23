@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/24 09:19:49 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/11/23 13:19:40 dcoppa Exp $
 include/cryptopp/
 include/cryptopp/3way.h
 include/cryptopp/adler32.h
@@ -53,6 +53,7 @@ include/cryptopp/gfpcrypt.h
 include/cryptopp/gost.h
 include/cryptopp/gzip.h
 include/cryptopp/hex.h
+include/cryptopp/hkdf.h
 include/cryptopp/hmac.h
 include/cryptopp/hrtimer.h
 include/cryptopp/ida.h
@@ -66,6 +67,7 @@ include/cryptopp/md2.h
 include/cryptopp/md4.h
 include/cryptopp/md5.h
 include/cryptopp/mdc.h
+include/cryptopp/mersenne.h
 include/cryptopp/misc.h
 include/cryptopp/modarith.h
 include/cryptopp/modes.h
@@ -91,6 +93,7 @@ include/cryptopp/randpool.h
 include/cryptopp/rc2.h
 include/cryptopp/rc5.h
 include/cryptopp/rc6.h
+include/cryptopp/rdrand.h
 include/cryptopp/resource.h
 include/cryptopp/rijndael.h
 include/cryptopp/ripemd.h
