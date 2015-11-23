@@ -1,10 +1,11 @@
-$OpenBSD: patch-bindings_ruby_extconf_rb,v 1.3 2013/11/05 17:49:01 sthen Exp $
---- bindings/ruby/extconf.rb.orig	Thu May 23 08:55:07 2013
-+++ bindings/ruby/extconf.rb	Thu May 23 20:20:56 2013
-@@ -14,5 +14,5 @@ elsif /aix/ =~ RUBY_PLATFORM
+$OpenBSD: patch-bindings_ruby_extconf_rb,v 1.4 2015/11/23 11:41:02 sthen Exp $
+--- bindings/ruby/extconf.rb.orig	Thu Mar 26 12:34:34 2015
++++ bindings/ruby/extconf.rb	Mon Apr 20 09:37:21 2015
+@@ -14,5 +14,6 @@ elsif /aix/ =~ RUBY_PLATFORM
  end
  
- dir_config("rrd","../../src","../../src/.libs")
+ dir_config("rrd",['$(ABS_TOP_BUILDDIR)/src', '$(ABS_TOP_SRCDIR)/src'],'$(ABS_TOP_BUILDDIR)/src/.libs')
 -have_library("rrd", "rrd_create")
++# have_library("rrd", "rrd_create")
 +$LDFLAGS+= ' -lrrd'
  create_makefile("RRD")

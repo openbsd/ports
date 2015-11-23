@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2014/06/14 10:34:45 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2015/11/23 11:41:02 sthen Exp $
+@conflict p5-RRD-*
+@pkgpath net/rrdtool,-perl
 @newgroup _rrdcached:726
 @newuser _rrdcached:726:_rrdcached:daemon:rrdcached user:/nonexistent:/sbin/nologin
-@conflict p5-RRD-*
 @extraunexec rm -f /var/db/rrd/*.rrd /var/db/rrd/journal/*
-@pkgpath net/rrdtool,-perl
 @bin bin/rrdcached
 @bin bin/rrdcgi
 @bin bin/rrdtool
@@ -22,7 +22,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/RRDs.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs/
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs/RRDs.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs/RRDs.so
 @man man/man1/bin_dec_hex.1
 @man man/man1/cdeftutorial.1
@@ -55,10 +54,8 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs/RRDs.so
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/rrdtool/
 share/doc/rrdtool/CHANGES
-share/doc/rrdtool/CONTRIBUTORS
 share/doc/rrdtool/COPYRIGHT
 share/doc/rrdtool/NEWS
-share/doc/rrdtool/README
 share/examples/rrdtool/
 share/examples/rrdtool/4charts.pl
 share/examples/rrdtool/bigtops.pl
@@ -72,8 +69,8 @@ share/examples/rrdtool/rrdcached/rrdcached-size.pl
 share/examples/rrdtool/rrdtool-chroot
 share/examples/rrdtool/shared-demo.pl
 share/examples/rrdtool/stripes.pl
-@owner _rrdcached
 @mode 750
+@owner _rrdcached
 @sample /var/db/rrd/
 @sample /var/db/rrd/journal/
 @mode
