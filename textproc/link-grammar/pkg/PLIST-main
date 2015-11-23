@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2015/02/02 10:15:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2015/11/23 13:28:22 ajacoutot Exp $
 @bin bin/link-parser
 include/link-grammar/
 include/link-grammar/dict-api.h
@@ -11,14 +11,10 @@ lib/liblink-grammar.la
 lib/libminisat.a
 lib/libminisat.la
 @lib lib/libminisat.so.${LIBminisat_VERSION}
-lib/libsat-solver.a
-lib/libsat-solver.la
-@lib lib/libsat-solver.so.${LIBsat-solver_VERSION}
 lib/pkgconfig/link-grammar.pc
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.so.7.5
-@man man/man1/link-parser.1
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.so.8.1
 share/link-grammar/
 share/link-grammar/amy/
 share/link-grammar/amy/4.0.affix
@@ -61,27 +57,15 @@ share/link-grammar/ar/words/words.PV_C
 share/link-grammar/ar/words/words.PV_V
 share/link-grammar/ar/words/words.PV_intr
 share/link-grammar/ar/words/words.adj
-share/link-grammar/ar/words/words.adj.compound
 share/link-grammar/ar/words/words.adv
 share/link-grammar/ar/words/words.n
-share/link-grammar/ar/words/words.n.compound
 share/link-grammar/ar/words/words.noun
 share/link-grammar/ar/words/words.noun_prop
 share/link-grammar/ar/words/words.numbers
-share/link-grammar/ar/words/words.pp
-share/link-grammar/ar/words/words.pp.compound
 share/link-grammar/ar/words/words.prep
-share/link-grammar/ar/words/words.proper
-share/link-grammar/ar/words/words.v
-share/link-grammar/ar/words/words.v.compound
-share/link-grammar/ar/words/words.v.compound.sub
-share/link-grammar/ar/words/words.v.intransitive
-share/link-grammar/ar/words/words.v.m.infinitive
-share/link-grammar/ar/words/words.v.sub
 share/link-grammar/ar/words/words.years
 share/link-grammar/de/
 share/link-grammar/de/4.0.affix
-share/link-grammar/de/4.0.batch
 share/link-grammar/de/4.0.constituent-knowledge
 share/link-grammar/de/4.0.dict
 share/link-grammar/de/4.0.knowledge
@@ -90,6 +74,7 @@ share/link-grammar/en/
 share/link-grammar/en/4.0.affix
 share/link-grammar/en/4.0.constituent-knowledge
 share/link-grammar/en/4.0.dict
+share/link-grammar/en/4.0.dict.m4
 share/link-grammar/en/4.0.knowledge
 share/link-grammar/en/4.0.regex
 share/link-grammar/en/words/
@@ -174,6 +159,22 @@ share/link-grammar/fa/4.0.constituent-knowledge
 share/link-grammar/fa/4.0.dict
 share/link-grammar/fa/4.0.knowledge
 share/link-grammar/fa/4.0.regex
+share/link-grammar/fa/words/
+share/link-grammar/fa/words/words.adj
+share/link-grammar/fa/words/words.adj.compound
+share/link-grammar/fa/words/words.adv
+share/link-grammar/fa/words/words.n
+share/link-grammar/fa/words/words.n.compound
+share/link-grammar/fa/words/words.numbers
+share/link-grammar/fa/words/words.pp
+share/link-grammar/fa/words/words.pp.compound
+share/link-grammar/fa/words/words.proper
+share/link-grammar/fa/words/words.v
+share/link-grammar/fa/words/words.v.compound
+share/link-grammar/fa/words/words.v.compound.sub
+share/link-grammar/fa/words/words.v.intransitive
+share/link-grammar/fa/words/words.v.m.infinitive
+share/link-grammar/fa/words/words.v.sub
 share/link-grammar/he/
 share/link-grammar/he/4.0.affix
 share/link-grammar/he/4.0.constituent-knowledge
@@ -458,4 +459,3 @@ share/link-grammar/tr/4.0.constituent-knowledge
 share/link-grammar/tr/4.0.dict
 share/link-grammar/tr/4.0.knowledge
 share/link-grammar/tr/4.0.regex
-share/link-grammar/tr/suff-list

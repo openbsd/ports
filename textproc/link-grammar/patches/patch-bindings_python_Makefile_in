@@ -1,0 +1,12 @@
+$OpenBSD: patch-bindings_python_Makefile_in,v 1.1 2015/11/23 13:28:22 ajacoutot Exp $
+--- bindings/python/Makefile.in.orig	Mon Nov 23 14:16:06 2015
++++ bindings/python/Makefile.in	Mon Nov 23 14:16:26 2015
+@@ -411,7 +411,7 @@ _clinkgrammar_la_CPPFLAGS = \
+    -I$(top_srcdir)                \
+    -I$(top_builddir)
+ 
+-_clinkgrammar_la_LDFLAGS = -version-info @VERSION_INFO@ $(PYTHON_LDFLAGS) -module
++_clinkgrammar_la_LDFLAGS = -avoid-version $(PYTHON_LDFLAGS) -module
+ _clinkgrammar_la_LIBADD = $(top_builddir)/link-grammar/liblink-grammar.la
+ EXTRA_DIST = \
+    AUTHORS           \

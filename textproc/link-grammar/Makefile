@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.18 2015/10/09 12:48:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2015/11/23 13:28:22 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
+
 COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
-VERSION =		5.2.5
+COMMENT-python =	Python bindings for link-grammar
+
+VERSION =		5.3.1
 DISTNAME =		link-grammar-${VERSION}
+
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
-REVISION-java =		0
-REVISION-main =		0
+PKGNAME-python =	py-link-grammar-${VERSION}
 
-SHARED_LIBS +=  minisat              0.0      # 2.0
-SHARED_LIBS +=  sat-solver           1.0      # 4.0
-SHARED_LIBS +=  link-grammar         3.0      # 7.0
-SHARED_LIBS +=  link-grammar-java    3.0      # 7.0
+SHARED_LIBS +=  minisat              1.0      # 2.0
+SHARED_LIBS +=  link-grammar         4.0      # 8.1
+SHARED_LIBS +=  link-grammar-java    4.0      # 8.1
 
 CATEGORIES =		textproc
 
@@ -22,34 +24,44 @@ HOMEPAGE =		http://www.abisource.com/projects/link-grammar/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-cWANTLIB += ${MODGETTEXT_WANTLIB} aspell m pthread sqlite3
+cWANTLIB += hunspell-1.3 m sqlite3
+
 WANTLIB-main += ${cWANTLIB} ${MODGCC4_CPPWANTLIB} c
-WANTLIB-java += ${cWANTLIB} link-grammar minisat sat-solver
+
+WANTLIB-java += ${cWANTLIB} link-grammar minisat
+
+WANTLIB-python += ${cWANTLIB} ${MODGCC4_CPPWANTLIB} ${MODPY_WANTLIB}
+WANTLIB-python += link-grammar minisat pthread util
 
 MASTER_SITES =		http://www.abisource.com/downloads/link-grammar/${VERSION}/
 
-MODULES =		devel/gettext
+MODULES =		lang/python
 
-# -std=c++11
+MODPY_ADJ_FILES =	bindings/python-examples/tests.py
+
+# -std=c++03
 MODULES +=		gcc4
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c++
 
-MULTI_PACKAGES =	-main -java
+MULTI_PACKAGES =	-main -java -python
 PSEUDO_FLAVORS =	no_java
 
 .include <bsd.port.arch.mk>
 
-BUILD_DEPENDS =		textproc/aspell/core
-
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			textproc/aspell/core
+			textproc/hunspell
 
-LIB_DEPENDS-java =	${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-java =	${BUILD_PKGPATH},-main
+
+LIB_DEPENDS-python =	${MODPY_LIB_DEPENDS} \
 			${BUILD_PKGPATH},-main
 
-RUN_DEPENDS-main = 	${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-main =	# empty
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
+RUN_DEPENDS-python =	${MODPYTHON_RUN_DEPENDS}
+
+TEST_DEPENDS =		${BUILD_PKGPATH},-python
 
 SUBST_VARS =		VERSION
 
@@ -61,7 +73,9 @@ CONFIGURE_ENV =		CFLAGS="${CFLAGS} ${ADD_CFLAGS}" \
 			CPPFLAGS="${CPPFLAGS} ${ADD_CFLAGS}" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS =	${CONFIGURE_SHARED}
+CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
+			--enable-python-bindings \
+			--with-hunspell-dictdir=${LOCALBASE}/share/mozilla-dicts
 
 .if ${BUILD_PACKAGES:M-java}
 MODULES +=		java
@@ -76,5 +90,6 @@ pre-configure:
 
 post-install:
 	rm ${PREFIX}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.{a,la}
+	rm ${WRKINST}${MODPY_SITEPKG}/linkgrammar/_clinkgrammar.{a,la}
 
 .include <bsd.port.mk>
