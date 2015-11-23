@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/04/02 14:21:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/11/23 14:32:16 ajacoutot Exp $
 
 COMMENT =		Sphinx extension to support docstrings in Numpy format
 
-MODPY_EGG_VERSION =	0.4
+MODPY_EGG_VERSION =	0.5
 DISTNAME =		numpydoc-${MODPY_EGG_VERSION}
 PKGNAME =		py-numpydoc-${MODPY_EGG_VERSION}
 CATEGORIES =		textproc devel
@@ -15,8 +15,12 @@ MODPY_PI =		Yes
 
 MODULES =		lang/python
 
-TEST_DEPENDS =		devel/py-test \
+RUN_DEPENDS =		graphics/py-matplotlib \
 			textproc/py-sphinx
+
+TEST_DEPENDS =		${BASE_PKGPATH} \
+			devel/py-nose \
+			devel/py-test
 do-test:
 	cd ${WRKSRC} && py.test -v
 
