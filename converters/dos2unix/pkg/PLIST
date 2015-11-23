@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/10/21 13:01:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/11/23 19:26:49 jca Exp $
 @bin bin/dos2unix
 bin/mac2unix
 @bin bin/unix2dos
@@ -43,6 +43,12 @@ man/pt_BR/man1/
 @man man/pt_BR/man1/mac2unix.1
 @man man/pt_BR/man1/unix2dos.1
 @man man/pt_BR/man1/unix2mac.1
+man/sv/
+man/sv/man1/
+@man man/sv/man1/dos2unix.1
+@man man/sv/man1/mac2unix.1
+@man man/sv/man1/unix2dos.1
+@man man/sv/man1/unix2mac.1
 man/uk/
 man/uk/man1/
 @man man/uk/man1/dos2unix.1
@@ -83,6 +89,9 @@ share/doc/dos2unix/pl/dos2unix.txt
 share/doc/dos2unix/pt_BR/
 share/doc/dos2unix/pt_BR/dos2unix.htm
 share/doc/dos2unix/pt_BR/dos2unix.txt
+share/doc/dos2unix/sv/
+share/doc/dos2unix/sv/dos2unix.htm
+share/doc/dos2unix/sv/dos2unix.txt
 share/doc/dos2unix/uk/
 share/doc/dos2unix/uk/dos2unix.htm
 share/doc/dos2unix/uk/dos2unix.txt
@@ -102,6 +111,7 @@ share/locale/pl/LC_MESSAGES/dos2unix.mo
 share/locale/pt_BR/LC_MESSAGES/dos2unix.mo
 share/locale/ru/LC_MESSAGES/dos2unix.mo
 share/locale/sr/LC_MESSAGES/dos2unix.mo
+share/locale/sv/LC_MESSAGES/dos2unix.mo
 share/locale/uk/LC_MESSAGES/dos2unix.mo
 share/locale/vi/LC_MESSAGES/dos2unix.mo
 share/locale/zh_CN/LC_MESSAGES/dos2unix.mo
