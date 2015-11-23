@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/12/21 05:01:42 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/11/23 14:32:45 ajacoutot Exp $
 bin/ipcluster
 bin/ipcluster2
 bin/ipcontroller
@@ -2786,7 +2786,6 @@ share/doc/ipython/html/notebook/nbconvert.html
 share/doc/ipython/html/notebook/notebook.html
 share/doc/ipython/html/notebook/public_server.html
 share/doc/ipython/html/notebook/security.html
-share/doc/ipython/html/np-modindex.html
 share/doc/ipython/html/objects.inv
 share/doc/ipython/html/overview.html
 share/doc/ipython/html/parallel/

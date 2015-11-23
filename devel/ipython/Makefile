@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2015/07/23 12:46:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2015/11/23 14:32:45 ajacoutot Exp $
 
 COMMENT=		enhanced interactive Python shell
 
 MODPY_EGG_VERSION =	2.3.1
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://ipython.org/
@@ -41,6 +41,9 @@ BUILD_DEPENDS =		textproc/py-sphinx \
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODPY_PI =	Yes
+
+# /ipython-2.3.1_writes_to_HOME
+PORTHOME =	${WRKDIR}
 
 pre-patch:
 	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
