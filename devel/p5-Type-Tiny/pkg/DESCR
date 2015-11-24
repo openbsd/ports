@@ -1,0 +1,5 @@
+Type::Tiny is a small class for writing type constraints, inspired by
+Moose's type constraint API. It has only one non-core dependency (and
+even that is simply a module that was previously distributed as part of
+Type::Tiny but has since been spun off), and can be used with Moose,
+Mouse and Moo (or none of the above).

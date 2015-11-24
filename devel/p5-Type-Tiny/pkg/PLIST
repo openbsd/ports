@@ -1,0 +1,106 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/24 18:30:47 jasper Exp $
+${P5SITE}/Devel/
+${P5SITE}/Devel/TypeTiny/
+${P5SITE}/Devel/TypeTiny/Perl56Compat.pm
+${P5SITE}/Devel/TypeTiny/Perl58Compat.pm
+${P5SITE}/Error/
+${P5SITE}/Error/TypeTiny/
+${P5SITE}/Error/TypeTiny.pm
+${P5SITE}/Error/TypeTiny/Assertion.pm
+${P5SITE}/Error/TypeTiny/Compilation.pm
+${P5SITE}/Error/TypeTiny/WrongNumberOfParameters.pm
+${P5SITE}/Eval/
+${P5SITE}/Eval/TypeTiny.pm
+${P5SITE}/Reply/
+${P5SITE}/Reply/Plugin/
+${P5SITE}/Reply/Plugin/TypeTiny.pm
+${P5SITE}/Test/
+${P5SITE}/Test/TypeTiny.pm
+${P5SITE}/Type/
+${P5SITE}/Type/Coercion/
+${P5SITE}/Type/Coercion.pm
+${P5SITE}/Type/Coercion/FromMoose.pm
+${P5SITE}/Type/Coercion/Union.pm
+${P5SITE}/Type/Library.pm
+${P5SITE}/Type/Params.pm
+${P5SITE}/Type/Parser.pm
+${P5SITE}/Type/Registry.pm
+${P5SITE}/Type/Tiny/
+${P5SITE}/Type/Tiny.pm
+${P5SITE}/Type/Tiny/Class.pm
+${P5SITE}/Type/Tiny/Duck.pm
+${P5SITE}/Type/Tiny/Enum.pm
+${P5SITE}/Type/Tiny/Intersection.pm
+${P5SITE}/Type/Tiny/Manual/
+${P5SITE}/Type/Tiny/Manual.pod
+${P5SITE}/Type/Tiny/Manual/Coercions.pod
+${P5SITE}/Type/Tiny/Manual/Libraries.pod
+${P5SITE}/Type/Tiny/Manual/Optimization.pod
+${P5SITE}/Type/Tiny/Manual/Params.pod
+${P5SITE}/Type/Tiny/Manual/Policies.pod
+${P5SITE}/Type/Tiny/Manual/UsingWithMoo.pod
+${P5SITE}/Type/Tiny/Manual/UsingWithMoose.pod
+${P5SITE}/Type/Tiny/Manual/UsingWithMouse.pod
+${P5SITE}/Type/Tiny/Manual/UsingWithOther.pod
+${P5SITE}/Type/Tiny/Role.pm
+${P5SITE}/Type/Tiny/Union.pm
+${P5SITE}/Type/Tiny/_HalfOp.pm
+${P5SITE}/Type/Utils.pm
+${P5SITE}/Types/
+${P5SITE}/Types/Common/
+${P5SITE}/Types/Common/Numeric.pm
+${P5SITE}/Types/Common/String.pm
+${P5SITE}/Types/Standard/
+${P5SITE}/Types/Standard.pm
+${P5SITE}/Types/Standard/ArrayRef.pm
+${P5SITE}/Types/Standard/Dict.pm
+${P5SITE}/Types/Standard/HashRef.pm
+${P5SITE}/Types/Standard/Map.pm
+${P5SITE}/Types/Standard/ScalarRef.pm
+${P5SITE}/Types/Standard/Tuple.pm
+${P5SITE}/Types/TypeTiny.pm
+@man man/man3p/Devel::TypeTiny::Perl56Compat.3p
+@man man/man3p/Devel::TypeTiny::Perl58Compat.3p
+@man man/man3p/Error::TypeTiny.3p
+@man man/man3p/Error::TypeTiny::Assertion.3p
+@man man/man3p/Error::TypeTiny::Compilation.3p
+@man man/man3p/Error::TypeTiny::WrongNumberOfParameters.3p
+@man man/man3p/Eval::TypeTiny.3p
+@man man/man3p/Reply::Plugin::TypeTiny.3p
+@man man/man3p/Test::TypeTiny.3p
+@man man/man3p/Type::Coercion.3p
+@man man/man3p/Type::Coercion::FromMoose.3p
+@man man/man3p/Type::Coercion::Union.3p
+@man man/man3p/Type::Library.3p
+@man man/man3p/Type::Params.3p
+@man man/man3p/Type::Parser.3p
+@man man/man3p/Type::Registry.3p
+@man man/man3p/Type::Tiny.3p
+@man man/man3p/Type::Tiny::Class.3p
+@man man/man3p/Type::Tiny::Duck.3p
+@man man/man3p/Type::Tiny::Enum.3p
+@man man/man3p/Type::Tiny::Intersection.3p
+@man man/man3p/Type::Tiny::Manual.3p
+@man man/man3p/Type::Tiny::Manual::Coercions.3p
+@man man/man3p/Type::Tiny::Manual::Libraries.3p
+@man man/man3p/Type::Tiny::Manual::Optimization.3p
+@man man/man3p/Type::Tiny::Manual::Params.3p
+@man man/man3p/Type::Tiny::Manual::Policies.3p
+@man man/man3p/Type::Tiny::Manual::UsingWithMoo.3p
+@man man/man3p/Type::Tiny::Manual::UsingWithMoose.3p
+@man man/man3p/Type::Tiny::Manual::UsingWithMouse.3p
+@man man/man3p/Type::Tiny::Manual::UsingWithOther.3p
+@man man/man3p/Type::Tiny::Role.3p
+@man man/man3p/Type::Tiny::Union.3p
+@man man/man3p/Type::Tiny::_HalfOp.3p
+@man man/man3p/Type::Utils.3p
+@man man/man3p/Types::Common::Numeric.3p
+@man man/man3p/Types::Common::String.3p
+@man man/man3p/Types::Standard.3p
+@man man/man3p/Types::Standard::ArrayRef.3p
+@man man/man3p/Types::Standard::Dict.3p
+@man man/man3p/Types::Standard::HashRef.3p
+@man man/man3p/Types::Standard::Map.3p
+@man man/man3p/Types::Standard::ScalarRef.3p
+@man man/man3p/Types::Standard::Tuple.3p
+@man man/man3p/Types::TypeTiny.3p
