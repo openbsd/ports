@@ -1,36 +1,44 @@
-# $OpenBSD: Makefile,v 1.20 2014/11/04 22:01:53 abieber Exp $
+# $OpenBSD: Makefile,v 1.21 2015/11/24 15:02:23 abieber Exp $
 
 COMMENT=	interactive electronics designing software
 
-V=		0.9.0
-DISTNAME=	fritzing-$Vb.source
-PKGNAME=	fritzing-$V
+V=		0.9.2
+
+GH_ACCOUNT=	fritzing
+GH_PROJECT=	fritzing-app
+GH_TAGNAME=	${V}b
+
+DISTNAME=	fritzing-$Vb
 CATEGORIES=	cad
+
+DISTFILES=	${DISTNAME}.tar.gz \
+		fritzing-parts-${GH_TAGNAME}${EXTRACT_SUFX}:0
 
 HOMEPAGE=	http://fritzing.org/
 
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
+MASTER_SITES0= https://github.com/fritzing/fritzing-parts/archive/${GH_TAGNAME}/
+
 # Code: GPLv3+
 # Rest: CreativeCommons:BY-SA
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES=	${HOMEPAGE}download/$Vb/source-tarball/
-EXTRACT_SUFX=	.tar_1.bz2
-
-EXTRACT_CASES=	*.tar_1.bz2) tar -jxf ${FULLDISTDIR}/$$archive ;;
-
-WANTLIB += QtGui QtNetwork QtSql QtSvg QtXml c m pthread stdc++ z
-WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
-
 MODULES=        x11/qt4
 NO_TEST=	Yes
 
-BUILD_DEPENDS=	devel/boost
+BUILD_DEPENDS=	comms/qtserialport \
+		devel/boost
+
 RUN_DEPENDS=	devel/desktop-file-utils
 
 pre-configure:
+	cp -rp ${WRKDIR}/fritzing-parts-${GH_TAGNAME}/* ${WRKSRC}/parts
 	${SUBST_CMD} ${WRKSRC}/phoenix.pro ${WRKSRC}/src/fapplication.cpp
+
+WANTLIB += ICE QtGui QtNetwork QtSql QtSvg QtXml SM X11 Xext Xi
+WANTLIB += Xinerama Xrender c fontconfig freetype m pthread stdc++
+WANTLIB += z
 
 # -DLINUX_32 gets added to CFLAGS, though it's only used to figure out
 # if there is a newer version of the 32-bit Linux binary on the upstream

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_program_programtab_cpp,v 1.1 2015/11/24 15:02:24 abieber Exp $
+--- src/program/programtab.cpp.orig	Mon Nov 16 17:37:49 2015
++++ src/program/programtab.cpp	Mon Nov 16 17:38:09 2015
+@@ -751,7 +751,7 @@ void ProgramTab::sendProgram() {
+ 	m_programButton->setEnabled(false);
+     m_console->setPlainText("");
+     m_platform->upload(this,
+-                       m_portComboBox->currentData().toString(),
++                       m_portComboBox->currentText(),
+                        m_boardComboBox->currentText(),
+                        m_filename);
+ }
