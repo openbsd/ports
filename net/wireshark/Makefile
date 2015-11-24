@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/11/21 10:38:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2015/11/24 09:53:27 sthen Exp $
 
 # XXX should add pledge to dumpcap.
 # XXX the Qt UI (upstream default) is broken here; segfault at startup.
@@ -54,7 +54,7 @@ WANTLIB-text +=	GeoIP cares gcrypt gmodule-2.0 gnutls gpg-error smi
 #WANTLIB-main +=	wireshark wiretap wsutil gmodule-2.0 stdc++
 #WANTLIB-main +=	Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
 # ...just use a bdep for now, to avoid dpb failures
-BUILD_DEPENDS =	x11/qt5
+BUILD_DEPENDS +=	x11/qt5
 
 WANTLIB-main +=	${cWANTLIB} wireshark wiretap wsutil
 WANTLIB-main +=	cairo gdk_pixbuf-2.0 gdk-3 gmodule-2.0 gobject-2.0 gtk-3
@@ -65,7 +65,7 @@ MASTER_SITES =		http://www.wireshark.org/download/src/all-versions/ \
 
 SUBST_VARS =		WVER
 
-BUILD_DEPENDS =		devel/bison \
+BUILD_DEPENDS +=	devel/bison \
 			devel/desktop-file-utils \
 			textproc/libxml \
 			textproc/libxslt \
