@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/24 14:57:48 abieber Exp $
+include/X11/qt4/
+include/X11/qt4/QtSerialPort/
+include/X11/qt4/QtSerialPort/QSerialPort
+include/X11/qt4/QtSerialPort/QSerialPortInfo
+include/X11/qt4/QtSerialPort/qserialport.h
+include/X11/qt4/QtSerialPort/qserialportglobal.h
+include/X11/qt4/QtSerialPort/qserialportinfo.h
+lib/qt4/
+lib/qt4/libQtSerialPort.prl
+@lib lib/qt4/libQtSerialPort.so.${LIBQtSerialPort_VERSION}
+lib/qt4/mkspecs/
+lib/qt4/mkspecs/features/
+lib/qt4/mkspecs/features/serialport.prf
