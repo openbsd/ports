@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/09/22 18:47:52 pascal Exp $
+# $OpenBSD: Makefile,v 1.27 2015/11/24 09:11:05 jasper Exp $
 
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
@@ -17,7 +17,7 @@ WANTLIB += glade-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread stdc++ xml2 z
 
 MASTER_SITES=		http://releases.navi.cx/fyre/ \
-			http://distfiles.nl/
+			https://distfiles.nl/
 
 MODULES=		devel/gettext
 

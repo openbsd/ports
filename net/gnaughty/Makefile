@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2015/04/08 11:27:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2015/11/24 09:11:05 jasper Exp $
 
 COMMENT=		fast and easy porn downloader
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://gnaughty.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://distfiles.nl/ \
+MASTER_SITES=		https://distfiles.nl/ \
 			${MASTER_SITE_SOURCEFORGE:=gnaughty/}
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama

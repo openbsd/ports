@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/25 12:50:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/11/24 09:11:04 jasper Exp $
 
 PKG_ARCH=		*
 
@@ -18,7 +18,7 @@ HOMEPAGE=		http://www.ecofont.eu/ecofont_en.html
 PERMIT_PACKAGE_CDROM=	Yes
 
 # Untill upstream starts to version the font
-MASTER_SITES=		http://distfiles.nl/
+MASTER_SITES=		https://distfiles.nl/
 EXTRACT_SUFX=		.zip
 
 NO_BUILD=		Yes

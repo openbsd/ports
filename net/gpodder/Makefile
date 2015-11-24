@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/04/04 09:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/24 09:11:05 jasper Exp $
 
 COMMENT=		media aggregator and podcast client
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 # upstream's master site doesn't play nice with ftp/DISTNAME, so just
 # mirror the distfile instead.
-MASTER_SITES=		http://distfiles.nl/
+MASTER_SITES=		https://distfiles.nl/
 
 MODULES=		devel/gettext \
 			lang/python \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/03/19 13:48:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2015/11/24 09:11:05 jasper Exp $
 
 COMMENT =		No News is Good News (Fast CLI Point & Read Newsreader)
 DISTNAME =		nn-6.7.3
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 WANTLIB =		c termlib
 
 MASTER_SITES =		ftp://ftp.nndev.org/pub/nn-6.7/ \
-                        http://distfiles.nl/
+                        https://distfiles.nl/
 EXTRACT_SUFX =		.tar.Z
 
 USE_GROFF =		Yes

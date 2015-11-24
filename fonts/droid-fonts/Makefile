@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/31 09:45:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/11/24 09:11:04 jasper Exp $
 
 PKG_ARCH=	*
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.droidfonts.com
 # Apache 2 License
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	https://distfiles.nl/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

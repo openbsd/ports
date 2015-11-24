@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/10/11 23:48:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2015/11/24 09:11:03 jasper Exp $
 
 COMMENT=	X DX cluster watcher
 
@@ -17,7 +17,7 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb
 WANTLIB += xcb-render xcb-shm z
 
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	https://distfiles.nl/
 
 CONFIGURE_STYLE=gnu
 

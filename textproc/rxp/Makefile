@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/09/07 18:11:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2015/11/24 09:11:06 jasper Exp $
 
 COMMENT=	validating namespace-aware XML parser
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.cogsci.ed.ac.uk/~richard/rxp.html
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c 
 
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	https://distfiles.nl/
 
 NO_TEST=	Yes
 

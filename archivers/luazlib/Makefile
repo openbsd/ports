@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/08/07 21:57:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2015/11/24 09:11:02 jasper Exp $
 
 COMMENT=	lua binding of zlib
 SHARED_ONLY=	Yes
 DISTNAME=	luazlib-20100731
 REVISION=	2
 CATEGORIES=	archivers
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	https://distfiles.nl/
 
 HOMEPAGE=	https://github.com/brimworks/lua-zlib/
 

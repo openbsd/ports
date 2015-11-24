@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/06/21 11:23:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/11/24 09:11:03 jasper Exp $
 
 COMMENT=	tools for handling audio-file cue sheets and toc files
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c
 
 # XXX: When updating, MASTER_SITES= ${HOMEPAGE}/install/
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	https://distfiles.nl/
 
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes

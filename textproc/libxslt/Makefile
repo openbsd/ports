@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2015/10/29 15:24:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.83 2015/11/24 09:11:06 jasper Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
@@ -17,7 +17,7 @@ CATEGORIES=		textproc
 
 HOMEPAGE=		http://xmlsoft.org/XSLT/
 
-MASTER_SITES=		http://distfiles.nl/ \
+MASTER_SITES=		https://distfiles.nl/ \
 			ftp://xmlsoft.org/libxslt/
 
 # BSD-like

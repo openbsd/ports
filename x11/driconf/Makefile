@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/11/24 09:11:06 jasper Exp $
 
 COMMENT =		configuration utility for DRI drivers
 
@@ -8,7 +8,7 @@ REVISION=		5
 CATEGORIES =		x11
 
 HOMEPAGE =		http://dri.freedesktop.org/wiki/DriConf
-MASTER_SITES =		http://distfiles.nl/
+MASTER_SITES =		https://distfiles.nl/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

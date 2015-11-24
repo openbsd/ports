@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/10/26 14:02:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2015/11/24 09:11:05 jasper Exp $
 
 COMMENT=	lightweight scripting language with C-like syntax
 
@@ -12,7 +12,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m
 
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	https://distfiles.nl/
 
 CONFIGURE_STYLE=gnu
 

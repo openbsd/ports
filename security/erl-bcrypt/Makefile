@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/08/17 19:10:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/24 09:11:06 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,7 +15,7 @@ HOMEPAGE=	https://github.com/opscode/bcrypt
 # ISC/BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	https://distfiles.nl/
 
 WANTLIB=	c pthread
 

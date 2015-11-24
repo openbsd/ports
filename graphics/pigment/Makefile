@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2015/08/21 22:51:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/11/24 09:11:05 jasper Exp $
 
 COMMENT =	3D scene graph library for rich UI
 
 CATEGORIES =	graphics
 
 DISTNAME =	pigment-0.3.17
-MASTER_SITES =	http://distfiles.nl/
+MASTER_SITES =	https://distfiles.nl/
 
 REVISION =	7
 

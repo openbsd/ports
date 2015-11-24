@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/07/15 23:19:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2015/11/24 09:11:05 jasper Exp $
 
 COMMENT =	mailing list manager with web interface
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/distribution/ \
 			${HOMEPAGE}/distribution/old/ \
-			http://distfiles.nl/
+			https://distfiles.nl/
 
 MODULES =	perl
 USE_GMAKE =	Yes

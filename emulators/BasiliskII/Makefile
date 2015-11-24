@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/04/03 00:03:25 rfreeman Exp $
+# $OpenBSD: Makefile,v 1.33 2015/11/24 09:11:04 jasper Exp $
 
 COMMENT=		open source 68k Macintosh emulator
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		devel/gettext
 
-MASTER_SITES=		http://distfiles.nl/
+MASTER_SITES=		https://distfiles.nl/
 EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi

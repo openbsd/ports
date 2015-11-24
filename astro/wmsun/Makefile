@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/10 22:28:05 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2015/11/24 09:11:03 jasper Exp $
 
 COMMENT=		wm-dockapp; shows sunrise/sunset times
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		X11 Xext Xpm c m
 
-MASTER_SITES=		http://distfiles.nl/
+MASTER_SITES=		https://distfiles.nl/
 
 MAKE_ENV=		CC="${CC}"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/16 10:59:22 kettenis Exp $
+# $OpenBSD: Makefile,v 1.5 2015/11/24 09:11:05 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,7 +12,7 @@ CATEGORIES=	java
 
 HOMEPAGE=	http://wrapper.tanukisoftware.com/
 
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	https://distfiles.nl/
 
 # GPLv2
 # http://wrapper.tanukisoftware.com/doc/english/licenseCommunity.html

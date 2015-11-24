@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/05/30 16:50:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/11/24 09:11:04 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://github.com/antirez/lua-cmsgpack
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes
 
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	https://distfiles.nl/
 
 MODULES=	lang/lua
 

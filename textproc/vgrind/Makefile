@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2015/11/24 09:11:06 jasper Exp $
 
 COMMENT=		grind nice listings of programs
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB +=		c
 
-MASTER_SITES=		http://distfiles.nl/
+MASTER_SITES=		https://distfiles.nl/
 
 RUN_DEPENDS=		textproc/groff>=1.21
 

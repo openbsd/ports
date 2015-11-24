@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/03/16 18:07:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2015/11/24 09:11:04 jasper Exp $
 
 COMMENT=		low-level event loop management library
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://liboop.ofb.net/
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://distfiles.nl/
+MASTER_SITES=		https://distfiles.nl/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \

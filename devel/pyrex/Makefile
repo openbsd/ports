@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:27 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/11/24 09:11:04 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/
 # Free, check README.txt for details 
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://distfiles.nl/ \
+MASTER_SITES=	https://distfiles.nl/ \
 		${HOMEPAGE}
 
 MODULES=	lang/python

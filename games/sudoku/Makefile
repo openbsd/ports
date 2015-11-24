@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2015/11/24 09:11:04 jasper Exp $
 
 COMMENT=		console based sudoku
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.laurasia.com.au/sudoku/
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c curses
 
-MASTER_SITES=		http://distfiles.nl/ \
+MASTER_SITES=		https://distfiles.nl/ \
 			http://www.laurasia.com.au/downloads/
 EXTRACT_SUFX=		.tgz
 

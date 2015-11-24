@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/08/25 13:18:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2015/11/24 09:11:05 jasper Exp $
 
 COMMENT=		color ascii art library
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 WANTLIB=		c ncursesw m z
 
 MASTER_SITES=		http://caca.zoy.org/files/libcaca/ \
-			http://distfiles.nl/
+			https://distfiles.nl/
 
 FLAVORS=		no_x11
 FLAVOR?=

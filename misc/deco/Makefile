@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2015/11/24 09:11:05 jasper Exp $
 
 COMMENT=	Demos Commander, a free Norton Commander clone
 
@@ -6,7 +6,7 @@ DISTNAME=	deco383
 PKGNAME=	deco-3.8.3
 REVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	https://distfiles.nl/
 EXTRACT_SUFX=	.tgz
 
 # GPL

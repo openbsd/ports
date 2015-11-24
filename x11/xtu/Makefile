@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/02/20 17:56:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2015/11/24 09:11:07 jasper Exp $
 
 COMMENT=	configurable analog clock for X11
 DISTNAME=	xtu-1.3
@@ -8,7 +8,7 @@ CATEGORIES=	x11 sysutils
 # BSD license
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	https://distfiles.nl/
 
 WANTLIB=	X11 Xext Xpm c
 CONFIGURE_STYLE=imake

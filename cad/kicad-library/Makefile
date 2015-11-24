@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/10 23:04:45 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/11/24 09:11:03 jasper Exp $
 
 COMMENT=		library modules for Kicad EDA
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.kicadlib.org/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://distfiles.nl/
+MASTER_SITES=		https://distfiles.nl/
 DIST_SUBDIR=		kicad
 
 MODULES=		devel/cmake

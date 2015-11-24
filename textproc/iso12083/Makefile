@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2015/11/24 09:11:06 jasper Exp $
 
 COMMENT=	SGML DTDs from The Electronic Publishing SIG
 
@@ -6,7 +6,7 @@ DISTNAME=	iso12083-1993
 CATEGORIES=	textproc
 
 MASTER_SITES=	ftp://info.ex.ac.uk/pub/SGML/ISO-12083/ \
-		http://distfiles.nl/
+		https://distfiles.nl/
 DISTFILES=	article.dtd book.dtd maths.dtd serial.dtd
 
 # custom

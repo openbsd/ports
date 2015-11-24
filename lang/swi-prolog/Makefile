@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2015/06/17 20:03:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2015/11/24 09:11:05 jasper Exp $
 
 BROKEN-mips64 = 	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
@@ -26,7 +26,7 @@ WANTLIB += fontconfig freetype gmp jpeg m ncursesw pthread readline ssl
 WANTLIB += z
 
 MASTER_SITES =		${HOMEPAGE}/download/stable/src/ \
-			http://distfiles.nl/
+			https://distfiles.nl/
 
 CONFIGURE_STYLE =		gnu
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/src \

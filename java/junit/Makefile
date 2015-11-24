@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/05/07 15:42:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.29 2015/11/24 09:11:05 jasper Exp $
 
 COMMENT=	regression testing utility for use with the Java language
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 
 # github is bad for getting reliable distfiles from.
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	https://distfiles.nl/
 EXTRACT_SUFX=	.zip
 
 MODULES=	java

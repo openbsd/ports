@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/07/17 23:58:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2015/11/24 09:11:06 jasper Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache2
 
@@ -8,7 +8,7 @@ REVISION=	3
 CATEGORIES=	www net
 
 MODULES=	cpan converters/libiconv
-MASTER_SITES=	http://distfiles.nl/ \
+MASTER_SITES=	https://distfiles.nl/ \
 		${MASTER_SITE_APACHE:=perl/}
 
 # Apache Software License

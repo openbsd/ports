@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/02/17 19:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2015/11/24 09:11:05 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	crypto idn ssl z curl>=2.2
 
-MASTER_SITES =	http://distfiles.nl/
+MASTER_SITES =	https://distfiles.nl/
 MODULES =	lang/tcl devel/gettext
 LIB_DEPENDS =	net/curl
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/25 15:15:34 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2015/11/24 09:11:03 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		fftw3f m pthread
 
 MASTER_SITES =		${HOMEPAGE}/releases/0.4.15/ \
-			http://distfiles.nl/
+			https://distfiles.nl/
 
 BUILD_DEPENDS =		audio/ladspa \
 			devel/libtool

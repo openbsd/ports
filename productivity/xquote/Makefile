@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/11/24 09:11:06 jasper Exp $
 
 COMMENT= 		WWW quote retrieval tool
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m Xbae Xm
 
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	https://distfiles.nl/
 
 LIB_DEPENDS=	x11/xbae \
 		x11/openmotif

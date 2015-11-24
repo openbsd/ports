@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/06/12 18:01:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2015/11/24 09:11:06 jasper Exp $
 
 COMMENT=		MCollective agent to manage Services
 
@@ -7,7 +7,7 @@ DISTNAME=		mcollective-service-agent-0.0.1
 
 REVISION=		1
 
-MASTER_SITES=		http://distfiles.nl/
+MASTER_SITES=		https://distfiles.nl/
 
 MCO_SUBDIRS=		agent application data util validator
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/11/16 19:01:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2015/11/24 09:11:06 jasper Exp $
 
 PORTROACH=		site:https://github.com/elastic/elasticsearch
 
@@ -15,7 +15,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://distfiles.nl/ \
+MASTER_SITES=		https://distfiles.nl/ \
 			https://download.elasticsearch.org/elasticsearch/elasticsearch/
 
 MODULES=		java

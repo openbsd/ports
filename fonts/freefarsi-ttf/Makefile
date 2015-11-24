@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/31 09:45:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/11/24 09:11:04 jasper Exp $
 
 COMMENT=		free TrueType Persian fonts
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 # The original distfile contains .sfd files, the Debian package contains
 # .ttf files. These are the files we install.
-MASTER_SITES=		http://distfiles.nl/
+MASTER_SITES=		https://distfiles.nl/
 
 PKG_ARCH=		*
 NO_BUILD=		Yes

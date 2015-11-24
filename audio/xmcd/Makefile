@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2015/07/18 15:10:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2015/11/24 09:11:03 jasper Exp $
 
 COMMENT=	Motif CD player
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	ICE SM Xau Xdmcp X11 Xaw Xext Xmu Xpm Xt c curses \
 		m termlib Xm
 
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	https://distfiles.nl/
 
 LIB_DEPENDS+=	x11/openmotif
 

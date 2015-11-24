@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/09/12 14:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2015/11/24 09:11:03 jasper Exp $
 
 SHARED_ONLY=	Yes
 COMMENT= 	logic circuit simulator for KDE
@@ -7,7 +7,7 @@ DISTNAME=	klogic-1.6
 REVISION=	12
 CATEGORIES=	cad education x11 x11/kde
 
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	https://distfiles.nl/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

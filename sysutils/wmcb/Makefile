@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/24 09:11:06 jasper Exp $
 
 COMMENT=		dockapp; gives access to X11's cut buffers
 
@@ -12,7 +12,7 @@ CATEGORIES=		sysutils x11 x11/windowmaker
 PERMIT_PACKAGE_CDROM=   Yes
 WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
 
-MASTER_SITES=		http://distfiles.nl/
+MASTER_SITES=		https://distfiles.nl/
 EXTRACT_SUFX=		.tgz
 
 

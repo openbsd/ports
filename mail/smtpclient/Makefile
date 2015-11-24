@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/02/16 22:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2015/11/24 09:11:05 jasper Exp $
 
 COMMENT=		simple SMTP client
 
@@ -9,7 +9,7 @@ CATEGORIES=		mail
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		http://distfiles.nl/
+MASTER_SITES=		https://distfiles.nl/
 
 CONFIGURE_STYLE=	gnu dest
 
