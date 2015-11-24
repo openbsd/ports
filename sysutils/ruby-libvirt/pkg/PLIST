@@ -1,5 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/08/30 14:16:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/11/24 10:36:10 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/extensions/${MODRUBY_ARCH}/
+${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
+${GEM_EXTENSIONS_DIR}/
+${GEM_EXTENSIONS_DIR}/_libvirt.so
+@comment ${GEM_EXTENSIONS_DIR}/gem.build_complete
+${GEM_EXTENSIONS_DIR}/gem_make.out
+@comment ${GEM_EXTENSIONS_DIR}/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/NEWS
@@ -27,7 +34,6 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/interface.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/interface.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/interface.o
-@comment ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/network.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/network.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/network.o

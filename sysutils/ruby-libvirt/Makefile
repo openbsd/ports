@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/25 12:57:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/11/24 10:36:10 jasper Exp $
 
 COMMENT=	Ruby bindings for libvirt
 
-DISTNAME=	ruby-libvirt-0.5.2
-REVISION=	3
+DISTNAME=	ruby-libvirt-0.6.0
 PKGNAME=	${DISTNAME:S/ruby-//}
 CATEGORIES=	sysutils
 
