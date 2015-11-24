@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1423 2015/11/20 17:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.1424 2015/11/24 18:32:32 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1111,6 +1111,7 @@
      SUBDIR += p5-Tree-Simple-View
      SUBDIR += p5-Tree-Simple-VisitorFactory
      SUBDIR += p5-Try-Tiny
+     SUBDIR += p5-Type-Tiny
      SUBDIR += p5-UUID-Tiny
      SUBDIR += p5-Universal-can
      SUBDIR += p5-Universal-exports
