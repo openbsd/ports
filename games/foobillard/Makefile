@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/07/11 11:20:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/24 03:13:26 jsg Exp $
 
 COMMENT =		OpenGL billard game
 
@@ -20,6 +20,7 @@ LIB_DEPENDS =		graphics/png \
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--enable-nvidia=no
 CFLAGS = 		-DNO_NV_BUMPREF
 
 .include <bsd.port.mk>
