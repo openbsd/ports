@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2015/11/24 12:21:26 jasper Exp $
 
 SHARED_ONLY = 		Yes
 
-COMMENT-main =		manipulating with IPTC metadata
+COMMENT-main =		library for manipulating IPTC metadata
 COMMENT-python =	libiptcdata Python bindings
 
 DISTNAME =		libiptcdata-1.0.4
 PKGNAME-main =		${DISTNAME}
 PKGNAME-python =	py-${DISTNAME}
+
+REVISION-main =		0
 
 SHARED_LIBS =		iptcdata 	0.0 # 3.3
 
