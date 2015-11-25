@@ -1,28 +1,30 @@
-# $OpenBSD: Makefile,v 1.86 2015/07/20 19:55:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2015/11/25 21:04:07 pascal Exp $
 
 COMMENT=	anonymity service using onion routing
 
-DISTNAME=	tor-0.2.6.10
+DISTNAME=	tor-0.2.7.5
 CATEGORIES=	net
 HOMEPAGE=	https://www.torproject.org/
-REVISION=	1
 
 MAINTAINER=	Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto event m pthread ssl z
+WANTLIB += c crypto event_core event_extra m pthread ssl z
 
 MASTER_SITES=	https://www.torproject.org/dist/
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION = 2.69
 # PIE is already taken care of on a per-arch basis, and we have stack protection
 # anyway on FRAME_GROWS_DOWN archs.
 CONFIGURE_ARGS=	--with-ssl-dir=/usr \
+		--with-libevent-dir="${LOCALBASE}" \
 		--disable-gcc-hardening
 CONFIGURE_ENV+=ac_cv_member_struct_ssl_method_st_get_cipher_by_char=no
+
+LIB_DEPENDS=	devel/libevent2
 
 DB_DIR=		/var/tor
 SUBST_VARS+=	DB_DIR

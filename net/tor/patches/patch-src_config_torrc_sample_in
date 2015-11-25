@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_config_torrc_sample_in,v 1.14 2015/03/26 21:32:30 pascal Exp $
---- src/config/torrc.sample.in.orig	Tue Feb 24 16:33:30 2015
-+++ src/config/torrc.sample.in	Wed Mar 25 11:33:26 2015
-@@ -38,18 +38,18 @@
+$OpenBSD: patch-src_config_torrc_sample_in,v 1.15 2015/11/25 21:04:07 pascal Exp $
+--- src/config/torrc.sample.in.orig	Fri Nov 13 14:41:38 2015
++++ src/config/torrc.sample.in	Fri Nov 20 19:45:16 2015
+@@ -39,18 +39,18 @@
  ## Send every possible message to @LOCALSTATEDIR@/log/tor/debug.log
  #Log debug file @LOCALSTATEDIR@/log/tor/debug.log
  ## Use the system log instead of Tor's logfiles
@@ -23,12 +23,12 @@ $OpenBSD: patch-src_config_torrc_sample_in,v 1.14 2015/03/26 21:32:30 pascal Exp
  
  ## The port on which Tor will listen for local connections from Tor
  ## controller applications, as documented in control-spec.txt.
-@@ -173,6 +173,8 @@
- ## For security, by default Tor rejects connections to private (local)
- ## networks, including to your public IP address. See the man page entry
- ## for ExitPolicyRejectPrivate if you want to allow "exit enclaving".
+@@ -182,6 +182,8 @@
+ ## and any public IPv4 and IPv6 addresses on any interface on the relay.
+ ## See the man page entry for ExitPolicyRejectPrivate if you want to allow
+ ## "exit enclaving".
 +## Revoke privileges
 +User _tor
  ##
- #ExitPolicy accept *:6660-6667,reject *:* # allow irc ports but no more
- #ExitPolicy accept *:119 # accept nntp as well as default exit policy
+ #ExitPolicy accept *:6660-6667,reject *:* # allow irc ports on IPv4 and IPv6 but no more
+ #ExitPolicy accept *:119 # accept nntp ports on IPv4 and IPv6 as well as default exit policy
