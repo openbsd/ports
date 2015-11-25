@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/11/16 19:01:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/11/25 12:56:12 sebastia Exp $
 @ask-update elasticsearch-<2.0.0 Make sure your existing data is backed up
 @newgroup _elasticsearch:748
 @newuser _elasticsearch:748:_elasticsearch:daemon:Elasticsearch Account:/nonexistent:/sbin/nologin
@@ -7,7 +7,6 @@ elasticsearch/
 elasticsearch/bin/
 elasticsearch/bin/elasticsearch
 elasticsearch/bin/plugin
-elasticsearch/config/
 @owner _elasticsearch
 @sample ${SYSCONFDIR}/elasticsearch/scripts/
 @owner
@@ -24,33 +23,34 @@ elasticsearch/lib/elasticsearch-${V}.jar
 elasticsearch/lib/groovy-all-2.4.4-indy.jar
 elasticsearch/lib/guava-18.0.jar
 elasticsearch/lib/hppc-0.7.1.jar
-elasticsearch/lib/jackson-core-2.5.3.jar
-elasticsearch/lib/jackson-dataformat-cbor-2.5.3.jar
-elasticsearch/lib/jackson-dataformat-smile-2.5.3.jar
-elasticsearch/lib/jackson-dataformat-yaml-2.5.3.jar
+elasticsearch/lib/jackson-core-2.6.2.jar
+elasticsearch/lib/jackson-dataformat-cbor-2.6.2.jar
+elasticsearch/lib/jackson-dataformat-smile-2.6.2.jar
+elasticsearch/lib/jackson-dataformat-yaml-2.6.2.jar
 elasticsearch/lib/jna-4.1.0.jar
 elasticsearch/lib/joda-convert-1.2.jar
 elasticsearch/lib/joda-time-2.8.2.jar
 elasticsearch/lib/jsr166e-1.1.0.jar
 elasticsearch/lib/jts-1.13.jar
 elasticsearch/lib/log4j-1.2.17.jar
-elasticsearch/lib/lucene-analyzers-common-5.2.1.jar
-elasticsearch/lib/lucene-backward-codecs-5.2.1.jar
-elasticsearch/lib/lucene-core-5.2.1.jar
-elasticsearch/lib/lucene-expressions-5.2.1.jar
-elasticsearch/lib/lucene-grouping-5.2.1.jar
-elasticsearch/lib/lucene-highlighter-5.2.1.jar
-elasticsearch/lib/lucene-join-5.2.1.jar
-elasticsearch/lib/lucene-memory-5.2.1.jar
-elasticsearch/lib/lucene-misc-5.2.1.jar
-elasticsearch/lib/lucene-queries-5.2.1.jar
-elasticsearch/lib/lucene-queryparser-5.2.1.jar
-elasticsearch/lib/lucene-sandbox-5.2.1.jar
-elasticsearch/lib/lucene-spatial-5.2.1.jar
-elasticsearch/lib/lucene-suggest-5.2.1.jar
+elasticsearch/lib/lucene-analyzers-common-5.3.1.jar
+elasticsearch/lib/lucene-backward-codecs-5.3.1.jar
+elasticsearch/lib/lucene-core-5.3.1.jar
+elasticsearch/lib/lucene-expressions-5.3.1.jar
+elasticsearch/lib/lucene-grouping-5.3.1.jar
+elasticsearch/lib/lucene-highlighter-5.3.1.jar
+elasticsearch/lib/lucene-join-5.3.1.jar
+elasticsearch/lib/lucene-memory-5.3.1.jar
+elasticsearch/lib/lucene-misc-5.3.1.jar
+elasticsearch/lib/lucene-queries-5.3.1.jar
+elasticsearch/lib/lucene-queryparser-5.3.1.jar
+elasticsearch/lib/lucene-sandbox-5.3.1.jar
+elasticsearch/lib/lucene-spatial-5.3.1.jar
+elasticsearch/lib/lucene-spatial3d-5.3.1.jar
+elasticsearch/lib/lucene-suggest-5.3.1.jar
 elasticsearch/lib/netty-3.10.5.Final.jar
-elasticsearch/lib/snakeyaml-1.12.jar
-elasticsearch/lib/spatial4j-0.4.1.jar
+elasticsearch/lib/snakeyaml-1.15.jar
+elasticsearch/lib/spatial4j-0.5.jar
 elasticsearch/lib/t-digest-3.0.jar
 @owner _elasticsearch
 @sample elasticsearch/plugins/
