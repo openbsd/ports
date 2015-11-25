@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2015/11/25 09:37:00 robert Exp $
+# $OpenBSD: Makefile,v 1.59 2015/11/25 16:49:35 sthen Exp $
 
 COMMENT=	perl-compatible regular expression library
 
@@ -12,8 +12,8 @@ SHARED_LIBS +=  pcrecpp              3.3      # 0.0
 CATEGORIES=	devel
 DPB_PROPERTIES=	parallel
 
-MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/ \
-		${MASTER_SITE_SOURCEFORGE:=pcre/}
+MASTER_SITES=	http://ftp.csx.cam.ac.uk/pub/software/programming/pcre/ \
+		ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
 
 HOMEPAGE=	http://www.pcre.org/
 
