@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.57 2015/06/29 17:06:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2015/11/25 09:37:00 robert Exp $
 
 COMMENT=	perl-compatible regular expression library
 
-DISTNAME=	pcre-8.37
-
-REVISION=	1
+DISTNAME=	pcre-8.38
 
 SHARED_LIBS +=  pcre                 3.0      # 0.1
 SHARED_LIBS +=  pcre16               0.0      # 0.0
