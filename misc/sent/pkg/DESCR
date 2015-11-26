@@ -1,13 +1,9 @@
-Simple plaintext presentation tool.
+sent is a simple plaintext presentation tool.
 
 sent does not need latex, libreoffice or any other fancy file format, it uses
-plaintext files and png images. Currently every paragraph represents a slide in
-the presentation. Especially for presentations using the Takahashi method this
-is very nice and allows you to write down the presentation for a quick lightning
-talk within a few minutes.
+plaintext files and png images. Every paragraph represents a slide in the
+presentation.
 
-The presentation is displayed in a simple X11 window colored black on white for
-maximum contrast even if the sun shines directly onto the projected image. The
-content of each slide is automatically scaled to fit the window so you don't
-have to worry about alignment. Instead you can really concentrate on the
-content.
+The presentation is displayed in a simple X11 window. The content of each slide
+is automatically scaled to fit the window and centered so you also don't have to
+worry about alignment. Instead you can really concentrate on the content.
