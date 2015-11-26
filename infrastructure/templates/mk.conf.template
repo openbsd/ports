@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.19 2015/04/05 13:27:06 jasper Exp $
+# $OpenBSD: mk.conf.template,v 1.20 2015/11/26 01:59:48 gsoares Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -9,7 +9,7 @@
 # there are also some commented-out entries with additional settings
 # you might want to use.
 
-#SUDO=/usr/bin/sudo -E
+#SUDO=/usr/bin/doas
 #USE_SYSTRACE=Yes
 
 # Set additional warning flags when compiling:
