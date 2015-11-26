@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2015/09/11 02:09:49 jsg Exp $
+# $OpenBSD: Makefile,v 1.31 2015/11/26 04:18:50 jsg Exp $
 
 COMMENT =		C/C++ static checker
 
-DISTNAME =		cppcheck-1.70
+DISTNAME =		cppcheck-1.71
 
 CATEGORIES =		devel
 
@@ -28,7 +28,7 @@ TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 # -Ilib before PREFIX/include to avoid picking up header from devel/check
 MAKE_FLAGS =		BIN=${PREFIX}/bin SRCDIR=build CFGDIR=${PREFIX}/share/cppcheck/cfg \
-			CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+			CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -std=c++11" \
 			CPPFLAGS="-DHAVE_RULES -DTIXML_USE_STL -Ilib -I${PREFIX}/include" \
 			LDFLAGS="-L${PREFIX}/lib -lpcre -lexecinfo"
 
