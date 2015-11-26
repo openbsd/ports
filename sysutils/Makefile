@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.364 2015/11/21 21:45:19 jung Exp $
+# $OpenBSD: Makefile,v 1.365 2015/11/26 10:24:26 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -154,6 +154,8 @@
      SUBDIR += pscpug
      SUBDIR += pstree
      SUBDIR += pv
+     SUBDIR += py-augeas
+     SUBDIR += py-augeas,python3
      SUBDIR += py-cef
      SUBDIR += py-daemon
      SUBDIR += py-lockfile
