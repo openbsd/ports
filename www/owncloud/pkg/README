@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.39 2015/07/30 16:04:38 kirby Exp $
+$OpenBSD: README,v 1.40 2015/11/26 07:38:34 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -122,6 +122,15 @@ interface). The prefered way is to use a cron(8) job instead.
 (see http://<hostname>/owncloud/index.php/settings/admin#backgroundjobs)
 e.g.
 */15	*	*	*	*	/usr/bin/ftp -Vo - http://<hostname>/owncloud/cron.php >/dev/null
+
+Memory caching
+--------------
+ownCloud server performance can be significantly improved with memory caching,
+where frequently-requested objects are stored in memory for faster retrieval.
+Distributed caching and Transactional File Locking is provided by Redis, an
+in-memory data structure store.
+More information and configuration example are available at:
+    https://doc.owncloud.org/server/${VR}/admin_manual/configuration_server/caching_configuration.html#id4
 
 Authentication backends
 -----------------------

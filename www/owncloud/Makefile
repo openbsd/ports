@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.96 2015/11/18 08:30:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2015/11/26 07:38:34 ajacoutot Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
 V=			8.2.1
 DISTNAME=		owncloud-${V}
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -51,6 +52,9 @@ RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-intl
 
 # increase file encryption performance
 RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-mcrypt
+
+# distributed caching and Transactional File Locking
+RUN_DEPENDS +=		databases/pecl-redis
 
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
