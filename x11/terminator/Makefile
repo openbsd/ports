@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/10/26 18:31:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2015/11/26 22:04:04 jasper Exp $
 
 COMMENT =		GTK2 terminal emulator with split-window and tabs support
 
@@ -25,7 +25,8 @@ RUN_DEPENDS =		devel/vte,-python \
 NO_TEST =		Yes
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_SETUP =		setup.py --without-icon-cache
+MODPY_SETUP_ARGS =	--without-icon-cache
+
 # --single-version-externally-managed option used by MODPY doesn't exist
 MODPY_DISTUTILS_INSTALL = install --prefix=${LOCALBASE} --root=${DESTDIR}
 
