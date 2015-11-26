@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/11/17 14:19:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/11/26 09:09:19 sthen Exp $
 
 COMMENT=	client for Let's Encrypt CA#'
 
 DISTNAME=	letsencrypt-${MODPY_EGG_VERSION}
-REVISION=	1
 
 MODULES=	lang/python
 
