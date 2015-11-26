@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/09/29 10:52:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/11/26 21:50:54 jasper Exp $
 
 COMMENT =	toolkit for generation of output for the web
 
@@ -21,7 +21,7 @@ MASTER_SITES =	http://ftp.edgewall.com/pub/genshi/
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_SETUP =		setup.py --with-speedups
+MODPY_SETUP_ARGS =	--with-speedups
 
 TEST_DEPENDS =	${BUILD_DEPENDS}
 
