@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.254 2015/11/09 10:01:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.255 2015/11/26 09:57:34 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		3.18.2
+REVISION=		0
 
 CATEGORIES=		mail
 
@@ -79,7 +80,7 @@ CONFIGURE_ARGS=		--with-bogofilter=${LOCALBASE}/bin/bogofilter \
 			--with-openldap="${LOCALBASE}" \
 			--with-sa-learn=${LOCALBASE}/bin/sa-learn \
 			--with-spamassassin=${LOCALBASE}/bin/spamassassin \
-			--with-sub-version="OpenBSD Ports"
+			--with-sub-version=" (OpenBSD Ports)"
 
 # requires gnome-autoar
 CONFIGURE_ARGS +=	--disable-autoar
