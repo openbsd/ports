@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/14 07:35:29 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/26 07:53:30 landry Exp $
 
 COMMENT =	library to retrieve system information and utilisation
 
 MODPY_EGG_VERSION = 3.3.0
 GH_ACCOUNT =	giampaolo
 GH_PROJECT =	psutil
-GH_COMMIT =	fc1e59d08c968898c2ede425a621b62ccf44681c
+GH_TAGNAME =	release-${MODPY_EGG_VERSION}
 DISTNAME=	psutil-${MODPY_EGG_VERSION}
-PKGNAME=	py-psutil-${MODPY_EGG_VERSION}pre0
+PKGNAME=	py-psutil-${MODPY_EGG_VERSION}
 CATEGORIES=	sysutils
 
 HOMEPAGE=	https://github.com/giampaolo/psutil
