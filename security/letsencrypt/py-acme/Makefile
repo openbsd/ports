@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/11/17 14:19:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/11/26 09:07:05 sthen Exp $
 
 COMMENT=	ACME protocol implementation
 
@@ -32,11 +32,9 @@ TEST_IS_INTERACTIVE=	Yes
 # no devel/py-mock for py3 yet
 NO_TEST=	Yes
 .else
-TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR} \
+TEST_DEPENDS=	devel/py-funcsigs${MODPY_FLAVOR} \
+		devel/py-nose${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR}
-# py-funcsigs not imported yet
-#TEST_DEPENDS+=	devel/py-funcsigs${MODPY_FLAVOR}
-NO_TEST=	Yes
 .endif
 
 post-install:
