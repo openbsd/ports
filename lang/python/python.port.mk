@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.83 2015/10/09 09:22:48 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.84 2015/11/26 20:27:30 jasper Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -142,7 +142,8 @@ CONFIGURE_ENV += PYTHON="${MODPY_BIN}" \
 		ac_cv_path_PYTHON="${MODPY_BIN}"
 
 MODPY_CMD =	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-			${MODPY_BIN} ./${MODPY_SETUP}
+			${MODPY_BIN} ./${MODPY_SETUP} \
+			${MODPY_SETUP_ARGS}
 
 SUBST_VARS :=	MODPY_PYCACHE MODPY_COMMENT MODPY_PYC_MAGIC_TAG MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION MODPY_BIN_SUFFIX MODPY_PY_PREFIX ${SUBST_VARS}
 
