@@ -1,0 +1,31 @@
+$OpenBSD: patch-configure_py,v 1.1.1.1 2015/11/26 00:32:31 sthen Exp $
+--- configure.py.orig	Sun Oct 25 11:42:16 2015
++++ configure.py	Sun Nov 22 21:12:58 2015
+@@ -1953,7 +1953,18 @@ def run_command(cmd, verbose):
+     """ Run a command and display the output if requested.  cmd is the command
+     to run.  verbose is set if the output is to be displayed.
+     """
++    try:
++        localbase = os.environ["LOCALBASE"]
++    except KeyError:
++        localbase = "/usr/local"
++    try:
++        x11base = os.environ["X11BASE"]
++    except KeyError:
++        x11base = "/usr/X11R6"
+ 
++    cmd = cmd.replace("${LOCALBASE}", localbase).replace("$(LOCALBASE)", localbase)
++    cmd = cmd.replace("${X11BASE}", x11base).replace("$(X11BASE)", x11base)
++
+     if verbose:
+         sys.stdout.write(cmd + "\n")
+ 
+@@ -2652,7 +2663,7 @@ Type 'no' to decline the terms of the license.
+             sys.stdout.flush()
+ 
+             try:
+-                resp = sys.stdin.readline()
++                resp = "yes"
+             except KeyboardInterrupt:
+                 raise SystemExit
+             except:
