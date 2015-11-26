@@ -1,0 +1,2 @@
+The pecl-redis extension provides an API for communicating with the redis
+key-value store.
