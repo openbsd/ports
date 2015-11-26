@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/30 18:14:25 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/26 08:52:03 benoit Exp $
 
 COMMENT =	Fast & minimal low-level HTTP client
 
 MODULES =	cpan
-DISTNAME =	Hijk-0.24
+DISTNAME =	Hijk-0.26
 CATEGORIES =	www
 
 CPAN_AUTHOR =	AVAR
