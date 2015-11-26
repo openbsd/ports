@@ -1,0 +1,2 @@
+Python bindings for Augeas, allowing programmatic editing of configuration
+files in their native formats.
