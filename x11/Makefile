@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.561 2015/11/09 00:49:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.562 2015/11/26 00:32:50 sthen Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -218,6 +218,7 @@
      SUBDIR += py-osd
      SUBDIR += py-pyglet
      SUBDIR += py-qt4
+     SUBDIR += py-qt5
      SUBDIR += py-wxPython
      SUBDIR += pypanel
      SUBDIR += qinx
