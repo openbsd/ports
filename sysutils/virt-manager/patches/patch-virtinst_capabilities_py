@@ -1,7 +1,7 @@
-$OpenBSD: patch-virtinst_capabilities_py,v 1.1 2015/05/06 09:59:14 jasper Exp $
---- virtinst/capabilities.py.orig	Wed May  6 11:33:50 2015
-+++ virtinst/capabilities.py	Wed May  6 11:33:57 2015
-@@ -52,7 +52,7 @@ class _CPUMapFileValues(XMLBuilder):
+$OpenBSD: patch-virtinst_capabilities_py,v 1.2 2015/11/26 20:29:37 jasper Exp $
+--- virtinst/capabilities.py.orig	Wed Nov  4 22:09:32 2015
++++ virtinst/capabilities.py	Thu Nov 26 09:38:42 2015
+@@ -54,7 +54,7 @@ class _CPUMapFileValues(XMLBuilder):
      cpu_map.xml
      """
      # This is overwritten as part of the test suite
@@ -9,4 +9,4 @@ $OpenBSD: patch-virtinst_capabilities_py,v 1.1 2015/05/06 09:59:14 jasper Exp $
 +    _cpu_filename = "${LOCALBASE}/share/libvirt/cpu_map.xml"
  
      def __init__(self, conn):
-         xml = file(self._cpu_filename).read()
+         if os.path.exists(self._cpu_filename):
