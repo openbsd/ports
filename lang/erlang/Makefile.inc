@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2015/10/28 19:18:31 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2015/11/27 19:19:01 jasper Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
@@ -15,8 +15,7 @@ HOMEPAGE =	http://www.erlang.org/
 MASTER_SITES ?=	${HOMEPAGE}download/
 
 DISTFILES ?=	${DISTNAME}.tar.gz \
-	  	otp_doc_man_${V}.tar.gz \
-		otp_doc_html_${V}.tar.gz
+	  	otp_doc_man_${V}.tar.gz
 
 EXTRACT_ONLY ?=	${DISTNAME}.tar.gz
 
@@ -74,8 +73,5 @@ pre-configure:
 post-install:
 	ln -sf ../lib/erlang${MAJ_V}/lib/${EI}/bin/erl_call ${PREFIX}/bin/erl_call${MAJ_V}
 	tar zxf ${FULLDISTDIR}/otp_doc_man_${V}.tar.gz -C ${DOC_DIR}
-	tar zxf ${FULLDISTDIR}/otp_doc_html_${V}.tar.gz -C ${DOC_DIR}
-	rm -r ${DOC_DIR}/lib/${JINTERFACE}
-	rm -r ${DOC_DIR}/lib/${ODBC}
 	rm -r ${DOC_DIR}/man/man7/*MIB.7
 	rm -r ${DOC_DIR}/man/man7/*TM.7
