@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2015/11/27 12:16:06 sthen Exp $
+--- setup.py.orig	Tue Sep 22 12:39:24 2015
++++ setup.py	Wed Nov 25 14:43:56 2015
+@@ -276,6 +276,10 @@ if os_name == 'NetBSD':
+ 	files_definition= [
+ 		('share/exabgp',configuration('etc/exabgp')),
+ 	]
++elif os_name == 'OpenBSD':
++	files_definition= [
++		('share/examples/exabgp',configuration('etc/exabgp')),
++	]
+ else:
+ 	files_definition = [
+ 		('etc/exabgp',configuration('etc/exabgp')),
