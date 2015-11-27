@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/09 13:47:09 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2015/11/27 07:38:29 benoit Exp $
 
 COMMENT =	JSON view for your data
 
 MODULES =	cpan
-DISTNAME =	Catalyst-View-JSON-0.35
+DISTNAME =	Catalyst-View-JSON-0.36
 CATEGORIES =	converters www
 
 # Perl
