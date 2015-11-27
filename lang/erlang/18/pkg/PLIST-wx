@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-wx,v 1.1 2015/07/09 19:46:39 jasper Exp $
+@comment $OpenBSD: PLIST-wx,v 1.2 2015/11/27 14:24:05 jasper Exp $
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/doc/
 lib/erlang${SYSTEM_VSN}/lib/${OBSERVER}/doc/html/
@@ -148,6 +148,7 @@ lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxAuiManagerEvent.html
 lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxAuiNotebook.html
 lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxAuiNotebookEvent.html
 lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxAuiPaneInfo.html
+lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxAuiSimpleTabArt.html
 lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxAuiTabArt.html
 lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxBitmap.html
 lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxBitmapButton.html
@@ -270,6 +271,7 @@ lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxMessageDialog.html
 lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxMiniFrame.html
 lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxMirrorDC.html
 lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxMouseCaptureChangedEvent.html
+lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxMouseCaptureLostEvent.html
 lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxMouseEvent.html
 lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxMoveEvent.html
 lib/erlang${SYSTEM_VSN}/lib/${WX}/doc/html/wxMultiChoiceDialog.html
@@ -378,6 +380,7 @@ lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxAuiManagerEvent.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxAuiNotebook.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxAuiNotebookEvent.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxAuiPaneInfo.beam
+lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxAuiSimpleTabArt.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxAuiTabArt.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxBitmap.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxBitmapButton.beam
@@ -500,6 +503,7 @@ lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxMessageDialog.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxMiniFrame.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxMirrorDC.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxMouseCaptureChangedEvent.beam
+lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxMouseCaptureLostEvent.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxMouseEvent.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxMoveEvent.beam
 lib/erlang${SYSTEM_VSN}/lib/${WX}/ebin/wxMultiChoiceDialog.beam
@@ -730,6 +734,7 @@ lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxAuiManagerEvent.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxAuiNotebook.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxAuiNotebookEvent.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxAuiPaneInfo.erl
+lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxAuiSimpleTabArt.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxAuiTabArt.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxBitmap.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxBitmapButton.erl
@@ -852,6 +857,7 @@ lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxMessageDialog.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxMiniFrame.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxMirrorDC.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxMouseCaptureChangedEvent.erl
+lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxMouseCaptureLostEvent.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxMouseEvent.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxMoveEvent.erl
 lib/erlang${SYSTEM_VSN}/lib/${WX}/src/gen/wxMultiChoiceDialog.erl

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2015/07/09 19:46:39 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2015/11/27 14:24:05 jasper Exp $
 @option no-default-conflict
 @conflict erlang-<16b.03p4v0
 @pkgpath lang/erlang/18
@@ -132,7 +132,7 @@ lib/erlang${SYSTEM_VSN}/doc/oam/terminology.gif
 lib/erlang${SYSTEM_VSN}/doc/oam/users_guide.html
 lib/erlang${SYSTEM_VSN}/doc/otp_doc.css
 lib/erlang${SYSTEM_VSN}/doc/pdf/
-lib/erlang${SYSTEM_VSN}/doc/pdf/otp-system-documentation-7.0.pdf
+lib/erlang${SYSTEM_VSN}/doc/pdf/otp-system-documentation-7.1.pdf
 lib/erlang${SYSTEM_VSN}/doc/programming_examples/
 lib/erlang${SYSTEM_VSN}/doc/programming_examples/bit_syntax.html
 lib/erlang${SYSTEM_VSN}/doc/programming_examples/funs.html
@@ -3071,7 +3071,6 @@ lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/http_server.html
 lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/http_uri.html
 lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/httpc.html
 lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/httpd.html
-lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/httpd_conf.html
 lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/httpd_custom_api.html
 lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/httpd_socket.html
 lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/httpd_util.html
@@ -3079,6 +3078,7 @@ lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/index.html
 lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/inets.eix
 lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/inets.html
 lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/inets_services.html
+lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/introduction.html
 lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/mod_alias.html
 lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/mod_auth.html
 lib/erlang${SYSTEM_VSN}/lib/${INETS}/doc/html/mod_esi.html
@@ -5224,7 +5224,6 @@ lib/erlang${SYSTEM_VSN}/lib/${SSH}/ebin/ssh_daemon_channel.beam
 lib/erlang${SYSTEM_VSN}/lib/${SSH}/ebin/ssh_file.beam
 lib/erlang${SYSTEM_VSN}/lib/${SSH}/ebin/ssh_info.beam
 lib/erlang${SYSTEM_VSN}/lib/${SSH}/ebin/ssh_io.beam
-lib/erlang${SYSTEM_VSN}/lib/${SSH}/ebin/ssh_math.beam
 lib/erlang${SYSTEM_VSN}/lib/${SSH}/ebin/ssh_message.beam
 lib/erlang${SYSTEM_VSN}/lib/${SSH}/ebin/ssh_no_io.beam
 lib/erlang${SYSTEM_VSN}/lib/${SSH}/ebin/ssh_server_key_api.beam
@@ -5263,7 +5262,6 @@ lib/erlang${SYSTEM_VSN}/lib/${SSH}/src/ssh_daemon_channel.erl
 lib/erlang${SYSTEM_VSN}/lib/${SSH}/src/ssh_file.erl
 lib/erlang${SYSTEM_VSN}/lib/${SSH}/src/ssh_info.erl
 lib/erlang${SYSTEM_VSN}/lib/${SSH}/src/ssh_io.erl
-lib/erlang${SYSTEM_VSN}/lib/${SSH}/src/ssh_math.erl
 lib/erlang${SYSTEM_VSN}/lib/${SSH}/src/ssh_message.erl
 lib/erlang${SYSTEM_VSN}/lib/${SSH}/src/ssh_no_io.erl
 lib/erlang${SYSTEM_VSN}/lib/${SSH}/src/ssh_server_key_api.erl
@@ -6015,7 +6013,7 @@ lib/erlang${SYSTEM_VSN}/lib/${XMERL}/src/xmerl_xpath_scan.erl
 lib/erlang${SYSTEM_VSN}/lib/${XMERL}/src/xmerl_xs.erl
 lib/erlang${SYSTEM_VSN}/lib/${XMERL}/src/xmerl_xsd.erl
 lib/erlang${SYSTEM_VSN}/lib/${XMERL}/src/xmerl_xsd_type.erl
-@mandir lib/erlang${SYSTEM_VSN}/man/
+lib/erlang${SYSTEM_VSN}/man/
 lib/erlang${SYSTEM_VSN}/man/man1/
 @man lib/erlang${SYSTEM_VSN}/man/man1/cdv.1
 @man lib/erlang${SYSTEM_VSN}/man/man1/ct_run.1
@@ -6238,7 +6236,6 @@ lib/erlang${SYSTEM_VSN}/man/man3/
 @man lib/erlang${SYSTEM_VSN}/man/man3/http_uri.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/httpc.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/httpd.3
-@man lib/erlang${SYSTEM_VSN}/man/man3/httpd_conf.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/httpd_custom_api.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/httpd_socket.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/httpd_util.3
@@ -6406,6 +6403,7 @@ lib/erlang${SYSTEM_VSN}/man/man3/
 @man lib/erlang${SYSTEM_VSN}/man/man3/wxAuiNotebook.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/wxAuiNotebookEvent.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/wxAuiPaneInfo.3
+@man lib/erlang${SYSTEM_VSN}/man/man3/wxAuiSimpleTabArt.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/wxAuiTabArt.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/wxBitmap.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/wxBitmapButton.3
@@ -6528,6 +6526,7 @@ lib/erlang${SYSTEM_VSN}/man/man3/
 @man lib/erlang${SYSTEM_VSN}/man/man3/wxMiniFrame.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/wxMirrorDC.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/wxMouseCaptureChangedEvent.3
+@man lib/erlang${SYSTEM_VSN}/man/man3/wxMouseCaptureLostEvent.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/wxMouseEvent.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/wxMoveEvent.3
 @man lib/erlang${SYSTEM_VSN}/man/man3/wxMultiChoiceDialog.3
