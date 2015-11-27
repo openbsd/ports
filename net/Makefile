@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.941 2015/11/23 15:10:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.942 2015/11/27 12:16:33 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -86,6 +86,7 @@
      SUBDIR += etherape
      SUBDIR += ettercap
      SUBDIR += ettercap,no_x11
+     SUBDIR += exabgp
      SUBDIR += ezstream
      SUBDIR += farstream
      SUBDIR += filezilla
