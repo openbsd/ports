@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_modules_rlm_eap_types_rlm_eap_pwd_rlm_eap_pwd_c,v 1.1 2015/11/27 13:13:07 sthen Exp $
+
+From a8229d513e851bb3993c938e892b637f7f513521 Mon Sep 17 00:00:00 2001
+From: Arran Cudbard-Bell <a.cudbardb@freeradius.org>
+Date: Tue, 27 Oct 2015 22:54:31 -0400
+Subject: [PATCH] Closes #1320 create User-name from peer ID correctly
+
+--- src/modules/rlm_eap/types/rlm_eap_pwd/rlm_eap_pwd.c.orig	Mon Oct  5 19:22:28 2015
++++ src/modules/rlm_eap/types/rlm_eap_pwd/rlm_eap_pwd.c	Fri Nov 27 12:59:18 2015
+@@ -279,7 +279,6 @@ static int mod_process(void *arg, eap_handler_t *handl
+ 	uint8_t exch, *in, *ptr, msk[MSK_EMSK_LEN], emsk[MSK_EMSK_LEN];
+ 	uint8_t peer_confirm[SHA256_DIGEST_LENGTH];
+ 	BIGNUM *x = NULL, *y = NULL;
+-	char *p;
+ 
+ 	if (((eap_ds = handler->eap_ds) == NULL) || !inst) return 0;
+ 
+@@ -426,17 +425,13 @@ static int mod_process(void *arg, eap_handler_t *handl
+ 			RDEBUG("pwd unable to create fake request!");
+ 			return 0;
+ 		}
+-		fake->username = pair_make_request("User-Name", NULL, T_OP_EQ);
++		fake->username = fr_pair_afrom_num(fake, PW_USER_NAME, 0);
+ 		if (!fake->username) {
+-			RDEBUG("pwd unanable to create value pair for username!");
++			RDEBUG("Failed creating pair for peer id");
+ 			talloc_free(fake);
+ 			return 0;
+ 		}
+-		fake->username->vp_length = session->peer_id_len;
+-		fake->username->vp_strvalue = p = talloc_array(fake->username, char, fake->username->vp_length + 1);
+-		memcpy(p, session->peer_id, session->peer_id_len);
+-		p[fake->username->vp_length] = '\0';
+-
++		fr_pair_value_bstrncpy(fake->username, session->peer_id, session->peer_id_len);
+ 		fr_pair_add(&fake->packet->vps, fake->username);
+ 
+ 		if ((vp = fr_pair_find_by_num(request->config, PW_VIRTUAL_SERVER, 0, TAG_ANY)) != NULL) {
