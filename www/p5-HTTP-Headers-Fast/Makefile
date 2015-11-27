@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/12 04:17:09 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2015/11/27 21:45:25 benoit Exp $
 
 COMMENT =		faster implementation of HTTP::Headers
 
 MODULES =		cpan
-DISTNAME =		HTTP-Headers-Fast-0.19
+DISTNAME =		HTTP-Headers-Fast-0.20
 CATEGORIES =		www
 
 MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
