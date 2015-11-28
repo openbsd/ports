@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.56 2015/08/27 06:48:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2015/11/28 08:31:56 ajacoutot Exp $
+
+PORTROACH=	limitw:1,even
 
 COMMENT=	device color profile management daemon
 
