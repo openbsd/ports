@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/17 22:48:33 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/11/28 01:37:59 gsoares Exp $
 @unexec-delete rm -f ${TRUEPREFIX}/plan9/man/whatis.db
 bin/9
 plan9/
 plan9/CHANGES
+plan9/CONTRIBUTING.md
 plan9/CONTRIBUTORS
 plan9/INSTALL
-plan9/INSTALL.orig
 plan9/LICENSE
 plan9/Makefile
-plan9/README
+plan9/README.md
 plan9/TODO
 plan9/acid/
 plan9/acid/386
@@ -85,6 +85,7 @@ plan9/bin/bundle
 @bin plan9/bin/cmp
 plan9/bin/codereview
 plan9/bin/codereview.py
+@bin plan9/bin/col
 @bin plan9/bin/colors
 @bin plan9/bin/comm
 @bin plan9/bin/core
@@ -173,6 +174,7 @@ plan9/bin/lc
 plan9/bin/lookman
 plan9/bin/lpbin/
 @bin plan9/bin/ls
+plan9/bin/macedit
 plan9/bin/man
 @bin plan9/bin/mapd
 @bin plan9/bin/mc
@@ -218,6 +220,8 @@ plan9/bin/ps
 plan9/bin/psfonts
 plan9/bin/psu
 plan9/bin/psv
+plan9/bin/quote1
+plan9/bin/quote2
 @bin plan9/bin/ramfs
 @shell plan9/bin/rc
 @bin plan9/bin/read
@@ -4144,6 +4148,8 @@ plan9/lib/codereview/codereview.cfg
 plan9/lib/codereview/codereview.py
 plan9/lib/darwin-main.c
 plan9/lib/fortunes
+plan9/lib/git/
+plan9/lib/git/commit-msg.hook
 plan9/lib/grap.defines
 plan9/lib/gv.resource
 plan9/lib/gv.style
@@ -4294,6 +4300,7 @@ plan9/man/man1/INDEX
 @man plan9/man/man1/clog.1
 @man plan9/man/man1/cmp.1
 @man plan9/man/man1/codereview.1
+@man plan9/man/man1/col.1
 @man plan9/man/man1/colors.1
 @man plan9/man/man1/comm.1
 @man plan9/man/man1/core.1
@@ -4316,12 +4323,12 @@ plan9/man/man1/INDEX
 @man plan9/man/man1/fortune.1
 @man plan9/man/man1/freq.1
 @man plan9/man/man1/fsize.1
+@man plan9/man/man1/git.1
 @man plan9/man/man1/grap.1
 @man plan9/man/man1/graph.1
 @man plan9/man/man1/grep.1
 @man plan9/man/man1/gview.1
 @man plan9/man/man1/gzip.1
-@man plan9/man/man1/hg.1
 @man plan9/man/man1/hget.1
 @man plan9/man/man1/hist.1
 @man plan9/man/man1/hoc.1
@@ -5084,7 +5091,6 @@ plan9/postscript/troff/H
 plan9/postscript/troff/HB
 plan9/postscript/troff/HI
 plan9/postscript/troff/HL
-plan9/postscript/troff/HX
 plan9/postscript/troff/Helvetica-Narrow-BoldOblique
 plan9/postscript/troff/I
 plan9/postscript/troff/Jp
@@ -5251,6 +5257,7 @@ plan9/src/cmd/acme/exec.c
 plan9/src/cmd/acme/file.c
 plan9/src/cmd/acme/fns.h
 plan9/src/cmd/acme/fsys.c
+plan9/src/cmd/acme/logf.c
 plan9/src/cmd/acme/look.c
 plan9/src/cmd/acme/mail/
 plan9/src/cmd/acme/mail/dat.h
@@ -5456,6 +5463,7 @@ plan9/src/cmd/cb/cbtype.h
 plan9/src/cmd/cb/mkfile
 plan9/src/cmd/cleanname.c
 plan9/src/cmd/cmp.c
+plan9/src/cmd/col.c
 plan9/src/cmd/comm.c
 plan9/src/cmd/core.c
 plan9/src/cmd/date.c
@@ -6580,7 +6588,7 @@ plan9/src/cmd/upas/bayes/regcomp.c
 plan9/src/cmd/upas/bayes/regen.c
 plan9/src/cmd/upas/common/
 plan9/src/cmd/upas/common/appendfiletombox.c
-plan9/src/cmd/upas/common/aux.c
+plan9/src/cmd/upas/common/auxx.c
 plan9/src/cmd/upas/common/common.h
 plan9/src/cmd/upas/common/config.c
 plan9/src/cmd/upas/common/libsys.c
@@ -6946,6 +6954,8 @@ plan9/src/lib9/fork.c
 plan9/src/lib9/get9root.c
 plan9/src/lib9/getcallerpc-386.c
 plan9/src/lib9/getcallerpc-arm.c
+plan9/src/lib9/getcallerpc-arm64.c
+plan9/src/lib9/getcallerpc-mips.c
 plan9/src/lib9/getcallerpc-power.c
 plan9/src/lib9/getcallerpc-sun4u.s
 plan9/src/lib9/getcallerpc-x86_64.c
@@ -7496,6 +7506,10 @@ plan9/src/libmp/PowerMacintosh/
 plan9/src/libmp/PowerMacintosh/mkfile
 plan9/src/libmp/arm/
 plan9/src/libmp/arm/mkfile
+plan9/src/libmp/arm64/
+plan9/src/libmp/arm64/mkfile
+plan9/src/libmp/mips/
+plan9/src/libmp/mips/mkfile
 plan9/src/libmp/mkfile
 plan9/src/libmp/port/
 plan9/src/libmp/port/betomp.c
@@ -7606,6 +7620,10 @@ plan9/src/libsec/PowerMacintosh/
 plan9/src/libsec/PowerMacintosh/mkfile
 plan9/src/libsec/arm/
 plan9/src/libsec/arm/mkfile
+plan9/src/libsec/arm64/
+plan9/src/libsec/arm64/mkfile
+plan9/src/libsec/mips/
+plan9/src/libsec/mips/mkfile
 plan9/src/libsec/mkfile
 plan9/src/libsec/port/
 plan9/src/libsec/port/aes.c
@@ -7719,7 +7737,7 @@ plan9/src/libthread/Linux.c
 plan9/src/libthread/NetBSD-386-asm.s
 plan9/src/libthread/NetBSD-power-asm.s
 plan9/src/libthread/NetBSD.c
-plan9/src/libthread/OpenBSD-386-asm.S
+plan9/src/libthread/OpenBSD-386-asm.s
 plan9/src/libthread/OpenBSD-386.c
 plan9/src/libthread/OpenBSD-power-asm.S
 plan9/src/libthread/OpenBSD-power.c
@@ -7889,12 +7907,9 @@ plan9/troff/font/devutf/DejaVuSerifBoldOblique
 plan9/troff/font/devutf/DejaVuSerifOblique
 plan9/troff/font/devutf/GR
 plan9/troff/font/devutf/H
-plan9/troff/font/devutf/HB
-plan9/troff/font/devutf/HI
 plan9/troff/font/devutf/HK
 plan9/troff/font/devutf/HL
 plan9/troff/font/devutf/HM
-plan9/troff/font/devutf/HX
 plan9/troff/font/devutf/Helvetica-Narrow
 plan9/troff/font/devutf/Helvetica-Narrow-Bold
 plan9/troff/font/devutf/Helvetica-Narrow-BoldOblique
@@ -7958,11 +7973,9 @@ plan9/troff/font/devutf/charlib/F_i
 plan9/troff/font/devutf/charlib/F_l
 plan9/troff/font/devutf/charlib/L1
 plan9/troff/font/devutf/charlib/LA
-plan9/troff/font/devutf/charlib/LH
 plan9/troff/font/devutf/charlib/LH.example
 plan9/troff/font/devutf/charlib/LV
 plan9/troff/font/devutf/charlib/PC
-plan9/troff/font/devutf/charlib/RC
 plan9/troff/font/devutf/charlib/README
 plan9/troff/font/devutf/charlib/S_l
 plan9/troff/font/devutf/charlib/_b_x

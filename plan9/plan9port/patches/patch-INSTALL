@@ -1,24 +1,8 @@
-$OpenBSD: patch-INSTALL,v 1.4 2015/11/13 02:53:48 gsoares Exp $
+$OpenBSD: patch-INSTALL,v 1.5 2015/11/28 01:37:59 gsoares Exp $
 
-INSTALL: append /usr/X11R6/include and /usr/X11R6/include/freetype2 to
-X11 headers detection, so that enable fontsrv build on OpenBSD.
-
-merged upstream:
-https://github.com/9fans/plan9port/commit/8ee5da7cf764bf5685c137264cd4d6a03f12ba89
-
---- INSTALL.orig	Thu Mar  6 07:00:08 2014
-+++ INSTALL	Wed Jun 10 20:03:02 2015
-@@ -128,7 +128,8 @@ fi
- if [ `uname` != Darwin ]; then
- 	# Determine whether fontsrv X11 files are available.
- 	rm -f a.out
--	gcc -o a.out -c -Iinclude -I/usr/include -I/usr/local/include -I/usr/include/freetype2 -I/usr/local/include/freetype2 src/cmd/fontsrv/x11.c >/dev/null 2>&1
-+	${CC} -o a.out -c -Iinclude -I/usr/include -I${LOCALBASE}/include -I/usr/include/freetype2 -I${LOCALBASE}/include/freetype2 \
-+	    -I${X11BASE}/include -I${X11BASE}/include/freetype2 src/cmd/fontsrv/x11.c >/dev/null 2>&1
- 	if [ -f a.out ]; then
- 		echo "	fontsrv dependencies found."
- 		echo "FONTSRV=fontsrv" >>$PLAN9/config
-@@ -150,7 +151,7 @@ cd src
+--- INSTALL.orig	Wed Nov 11 12:09:34 2015
++++ INSTALL	Tue Nov 24 10:56:24 2015
+@@ -151,7 +151,7 @@ cd src
  if $dobuild; then
  	if [ ! -x ../bin/mk ]; then
  		echo "* Building mk..."
@@ -27,7 +11,7 @@ https://github.com/9fans/plan9port/commit/8ee5da7cf764bf5685c137264cd4d6a03f12ba
  	fi
  	if [ ! -x ../bin/mk ]; then
  		echo "* Error: mk failed to build."
-@@ -158,7 +159,6 @@ if $dobuild; then
+@@ -159,7 +159,6 @@ if $dobuild; then
  	fi
  	
  	echo "* Building everything (be patient)..."
@@ -35,7 +19,7 @@ https://github.com/9fans/plan9port/commit/8ee5da7cf764bf5685c137264cd4d6a03f12ba
  	mk libs-nuke
  	mk all || exit 1
  	if [ ! -x $PLAN9/src/cmd/o.cleanname -o ! -x $PLAN9/src/cmd/acme/o.acme ]; then
-@@ -213,5 +213,5 @@ if $doinstall; then
+@@ -218,5 +217,5 @@ if $doinstall; then
  	echo "	PLAN9=$PLAN9 export PLAN9"
  	echo '	PATH=$PATH:$PLAN9/bin export PATH'
  fi

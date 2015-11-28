@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_mkhdr,v 1.1.1.1 2012/06/26 15:07:17 pascal Exp $
---- src/mkhdr.orig	Mon Oct 24 06:00:05 2011
-+++ src/mkhdr	Wed Feb  1 17:37:09 2012
-@@ -28,8 +28,8 @@ LD=9l
+$OpenBSD: patch-src_mkhdr,v 1.2 2015/11/28 01:37:59 gsoares Exp $
+--- src/mkhdr.orig	Wed Nov 11 12:09:34 2015
++++ src/mkhdr	Tue Nov 24 10:56:24 2015
+@@ -30,8 +30,8 @@ LD=9l
  AS=9a
  AR=9ar
  INSTALL=install
