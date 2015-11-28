@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2014/10/24 17:24:01 nigel Exp $
+# $OpenBSD: Makefile,v 1.9 2015/11/28 13:18:26 benoit Exp $
 
 COMMENT=	pure Perl HTTP proxy
 
 MODULES=	cpan
-DISTNAME=	HTTP-Proxy-0.301
+DISTNAME =	HTTP-Proxy-0.304
 CATEGORIES=	www
 
 MAINTAINER=	Sam Smith <s@msmith.net>
