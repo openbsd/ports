@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/28 14:53:36 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/28 16:35:22 ajacoutot Exp $
 
 COMMENT =		penetration testing tool to detect/exploit SQL injection
 
 DISTNAME =		sqlmap-1.0
+REVISION =		0
 
 CATEGORIES =		security
 
@@ -23,11 +24,16 @@ MODPY_ADJ_FILES	= 	sqlmap.py
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
+PKG_ARCH =		*
 
 WRKDIST = 		${WRKDIR}/sqlmap-${GH_COMMIT}
+INSTDIR =		${PREFIX}/share/sqlmap
 
 do-install:
-	cp -r ${WRKDIST} ${PREFIX}/share/sqlmap
+	cp -r ${WRKDIST} ${INSTDIR}
+	rm ${INSTDIR}/{.{gitattributes,gitignore},{CONTRIBUTING,README}.md}
+	rm -rf ${INSTDIR}/doc
 	ln -s ${TRUEPREFIX}/share/sqlmap/sqlmap.py ${PREFIX}/bin/sqlmap
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${INSTDIR}
 
 .include <bsd.port.mk>
