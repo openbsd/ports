@@ -1,6 +1,6 @@
-$OpenBSD: patch-surf_1,v 1.1.1.1 2015/07/19 03:13:14 czarkoff Exp $
---- surf.1.orig	Fri Jul 17 23:15:41 2015
-+++ surf.1	Fri Jul 17 23:18:13 2015
+$OpenBSD: patch-surf_1,v 1.2 2015/11/28 20:18:46 czarkoff Exp $
+--- surf.1.orig	Tue Nov 24 23:18:06 2015
++++ surf.1	Sat Nov 28 01:12:37 2015
 @@ -1,8 +1,8 @@
 -.TH SURF 1 surf\-VERSION
 +.TH SURF 1 surf2\-VERSION
@@ -35,15 +35,19 @@ $OpenBSD: patch-surf_1,v 1.1.1.1 2015/07/19 03:13:14 czarkoff Exp $
  accept no third party cookies.
  .TP
  .B \-b
-@@ -51,7 +51,7 @@ Reparents to window specified by
+@@ -51,10 +51,10 @@ Reparents to window specified by
  .I xid.
  .TP
  .B \-f
--Run surf in fullscreen mode.
-+Run surf2 in fullscreen mode.
+-Start surf in windowed mode (not fullscreen).
++Start surf2 in windowed mode (not fullscreen).
  .TP
  .B \-F
- Disable to run in fullscreen by default.
+-Start surf in fullscreen mode.
++Start surf2 in fullscreen mode.
+ .TP
+ .B \-g
+ Disable giving the geolocation to websites.
 @@ -110,7 +110,7 @@ This does disable the site-specific styles.
  .B \-u useragent 
  Specify the

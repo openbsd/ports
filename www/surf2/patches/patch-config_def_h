@@ -1,15 +1,24 @@
-$OpenBSD: patch-config_def_h,v 1.1.1.1 2015/07/19 03:13:14 czarkoff Exp $
---- config.def.h.orig	Thu Jul  2 01:39:48 2015
-+++ config.def.h	Thu Jul  2 01:42:00 2015
-@@ -44,9 +44,9 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTION
+$OpenBSD: patch-config_def_h,v 1.2 2015/11/28 20:18:46 czarkoff Exp $
+--- config.def.h.orig	Tue Nov 24 23:18:06 2015
++++ config.def.h	Sat Nov 28 10:40:09 2015
+@@ -25,7 +25,7 @@ static const char *preferedlanguages[] = { NULL };
+ 
+ /* Webkit default features */
+ static int enablescrollbars      = 1;
+-static int enablecaretbrowsing   = 1;
++static int enablecaretbrowsing   = 0;
+ static int enablecache           = 1;
+ static int enableplugins         = 1;
+ static int enablescripts         = 1;
+@@ -53,9 +53,9 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTION
  /* DOWNLOAD(URI, referer) */
  #define DOWNLOAD(d, r) { \
- 	.v = (char *[]){ "/bin/sh", "-c", \
--		"st -e /bin/sh -c \"curl -L -J -O --user-agent '$1'" \
-+		"xterm -e /bin/sh -c \"echo '$0'; curl -L -J -O --user-agent '$1'" \
- 		" --referer '$2' -b $3 -c $3 '$0';" \
--		" sleep 5;\"", \
-+		" echo '\aPress ENTER to close this window'; read dismiss;\"", \
- 		d, useragent, r, cookiefile, NULL \
- 	} \
+         .v = (const char *[]){ "/bin/sh", "-c", \
+-             "st -e /bin/sh -c \"curl -L -J -O --user-agent '$1'" \
++             "xterm -e /bin/sh -c \"echo '$0'; curl -L -J -O --user-agent '$1'" \
+              " --referer '$2' -b $3 -c $3 '$0';" \
+-             " sleep 5;\"", \
++             " echo '\aPress ENTER to close this window'; read dismiss;\"", \
+              d, useragent, r, cookiefile, NULL \
+         } \
  }
