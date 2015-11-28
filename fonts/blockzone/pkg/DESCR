@@ -1,0 +1,9 @@
+BlockZone is a faithful, pixel-perfect recreation of the original DOS font.
+It contains each of the 256 characters, including those in the 128-255 range,
+referred to as extended ASCII. BlockZone is capabable of rendering ANSI and
+ASCII art, in fact that is the purpose it was created for. It supports a wide
+range of codepages, the legendary codepage 437 (MS-DOS Latin US) as well as
+Baltic, Cyrillic, French Canadian, Greek, Hebrew, Icelandic, Latin-1, Latin-2,
+Nordic, Portuguese, Turkish charsets, Windows codepage 1252 and even more. All
+characters are mapped to their Unicode equivalents. You get the best results
+when anti-aliasing (font smoothing) is disabled.
