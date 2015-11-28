@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.33 2014/06/03 11:35:12 rpointel Exp $
+# $OpenBSD: Makefile,v 1.34 2015/11/28 12:31:14 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		cryptographic tools for Python
 
 MODPY_EGG_VERSION =	2.6.1
+REVISION =		1
 DISTNAME =		pycrypto-${MODPY_EGG_VERSION}
 PKGNAME =		py-crypto-${MODPY_EGG_VERSION}
 CATEGORIES =		security devel
-
-REVISION = 0
 
 HOMEPAGE =		https://www.dlitz.net/software/pycrypto/
 
@@ -27,11 +26,9 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		devel/gmp
 WANTLIB =	${MODPY_WANTLIB} gmp pthread
 
-# XXX Don't set CONFIGURE_STYLE=simple otherwise python.port.mk will
-# not define do-build and do-install
-CONFIGURE_ARGS =	CFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-CFLAGS +=		-I${LOCALBASE}/include
+CONFIGURE_STYLE = gnu
+CONFIGURE_ENV =	CFLAGS="${CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 DOCSDIR =	${PREFIX}/share/doc/py-crypto
 
@@ -40,11 +37,11 @@ pre-configure:
 	rm ${WRKSRC}/lib/Crypto/SelfTest/Cipher/test_ARC2.py
 	rm ${WRKSRC}/lib/Crypto/SelfTest/Hash/test_MD2.py
 
-do-configure:
-	cd ${WRKCONF} && ${SETENV} \
-		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+do-build:
+	@${MODPY_BUILD_TARGET}
 
-post-install:
+do-install:
+	@${MODPY_INSTALL_TARGET}
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .if ${FLAVOR:Mpython3}

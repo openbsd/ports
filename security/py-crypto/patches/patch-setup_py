@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.9 2012/05/25 12:13:01 jasper Exp $
---- setup.py.orig	Fri May 25 09:13:48 2012
-+++ setup.py	Fri May 25 09:14:53 2012
-@@ -132,15 +132,14 @@ class PCTBuildExt (build_ext):
+$OpenBSD: patch-setup_py,v 1.10 2015/11/28 12:31:14 sthen Exp $
+--- setup.py.orig	Mon Oct 14 22:38:10 2013
++++ setup.py	Sat Nov 28 12:27:29 2015
+@@ -132,19 +132,20 @@ class PCTBuildExt (build_ext):
                  # the libtomcrypt code.
                  self.__add_compiler_option("-O")
              else:
@@ -20,7 +20,13 @@ $OpenBSD: patch-setup_py,v 1.9 2012/05/25 12:13:01 jasper Exp $
              if USE_GCOV:
                  self.__add_compiler_option("-fprofile-arcs")
                  self.__add_compiler_option("-ftest-coverage")
-@@ -375,9 +374,6 @@ kw = {'name':"pycrypto",
+                 self.compiler.libraries += ['gcov']
++            if sys.platform.lower().startswith('openbsd'):
++                self.__add_compiler_option("-I${LOCALBASE}/include")
+ 
+         # Call the superclass's build_extensions method
+         build_ext.build_extensions(self)
+@@ -375,9 +376,6 @@ kw = {'name':"pycrypto",
                        sources=["src/_fastmath.c"]),
  
              # Hash functions
@@ -30,7 +36,7 @@ $OpenBSD: patch-setup_py,v 1.9 2012/05/25 12:13:01 jasper Exp $
              Extension("Crypto.Hash._MD4",
                        include_dirs=['src/'],
                        sources=["src/MD4.c"]),
-@@ -402,9 +398,10 @@ kw = {'name':"pycrypto",
+@@ -402,9 +400,10 @@ kw = {'name':"pycrypto",
              Extension("Crypto.Cipher._AES",
                        include_dirs=['src/'],
                        sources=["src/AES.c"]),
