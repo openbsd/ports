@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2015/09/26 08:35:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2015/11/28 20:13:28 jung Exp $
 
      SUBDIR =
      SUBDIR += adobe-fonts
      SUBDIR += anonymous-pro
      SUBDIR += arabeyes-ttf
      SUBDIR += artwiz-aleczapka
+     SUBDIR += blockzone
      SUBDIR += cantarell-fonts
      SUBDIR += comic-neue
      SUBDIR += cosmic-sans-neue-mono
