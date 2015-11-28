@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.399 2015/11/22 00:01:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.400 2015/11/28 14:54:40 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -294,6 +294,7 @@
      SUBDIR += snort2pf
      SUBDIR += softhsm
      SUBDIR += spiped
+     SUBDIR += sqlmap
      SUBDIR += ssh-askpass-fullscreen
      SUBDIR += ssh-ldap-helper
      SUBDIR += sshguard
