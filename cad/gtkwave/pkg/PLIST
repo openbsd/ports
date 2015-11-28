@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/10/22 19:01:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/11/28 16:56:26 ajacoutot Exp $
 @bin bin/evcd2vcd
 @bin bin/fst2vcd
 @bin bin/fstminer
@@ -89,9 +89,6 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-lxt2.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-vcd.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-vzt.png
 share/icons/gnome/48x48/mimetypes/gtkwave.png
-share/icons/gtkwave_256x256x32.png
-share/icons/gtkwave_files_256x256x32.png
-share/icons/gtkwave_savefiles_256x256x32.png
 share/mime/packages/x-gtkwave-extension-ae2.xml
 share/mime/packages/x-gtkwave-extension-aet.xml
 share/mime/packages/x-gtkwave-extension-evcd.xml
@@ -103,6 +100,10 @@ share/mime/packages/x-gtkwave-extension-lxt.xml
 share/mime/packages/x-gtkwave-extension-lxt2.xml
 share/mime/packages/x-gtkwave-extension-vcd.xml
 share/mime/packages/x-gtkwave-extension-vzt.xml
+share/pixmaps/
+share/pixmaps/gtkwave_256x256x32.png
+share/pixmaps/gtkwave_files_256x256x32.png
+share/pixmaps/gtkwave_savefiles_256x256x32.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
