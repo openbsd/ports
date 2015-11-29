@@ -1,70 +1,7 @@
-ImageMagick is an X11 package for display and interactive manipulation
-of images.  The package includes tools for image conversion, annotation,
-compositing, animation, and creating montages.  ImageMagick can read and
-write many of the more popular image formats (e.g. JPEG, TIFF, PNM, XPM,
-Photo CD, etc.).
-
-With ImageMagick you can:
-
-     o load an image from a file
-     o display the next image
-     o display the former image
-     o display a sequence of images as a slide show
-     o write the image to a file
-     o print the image to a Postscript printer
-     o delete the image file
-     o create a Visual Image Directory
-     o select the image to display by its thumbnail rather than name
-     o undo last image transformation
-     o copy a region of the image
-     o paste a region to the image
-     o restore the image to its original size
-     o refresh the image
-     o half the image size
-     o double the image size
-     o resize the image
-     o crop the image
-     o cut the image
-     o flop image in the horizontal direction
-     o flip image in the vertical direction
-     o rotate the image 90 degrees clockwise
-     o rotate the image 90 degrees counter-clockwise
-     o rotate the image
-     o shear the image
-     o trim the image edges
-     o invert the colors of the image
-     o vary the color brightness
-     o vary the color saturation
-     o vary the image hue
-     o gamma correct the image
-     o sharpen the image contrast
-     o dull the image contrast
-     o perform histogram equalization on the image
-     o perform histogram normalization on the image
-     o negate the image colors
-     o toggle the colormap type: : Shared or Private
-     o reduce the speckles within an image
-     o eliminate peak noise from an image
-     o detect edges within the image
-     o emboss an image
-     o oil paint an image
-     o convert the image to grayscale
-     o set the maximum number of unique colors in the image
-     o segment the image by color
-     o apply image processing techniques to a region of interest
-     o annotate the image with text
-     o draw on the image
-     o edit an image pixel color
-     o edit the image matte information
-     o composite an image with another
-     o add a border to the image
-     o surround image with an ornamental border
-     o add an image comment
-     o display image centered on a backdrop
-     o display image to background of a window
-     o display information about the image
-     o display information about this program
-     o discard all images and exit program
-     o change the level of magnification
-     o display images specified by a World Wide Web (WWW) uniform resource
-       locator (URL) 
+ImageMagick is a software suite (library and primarily command-line
+tools) to create, edit, compose, or convert bitmap images. It can read
+and write images in a variety of formats including PNG, JPEG, JPEG-2000,
+GIF, TIFF, DPX, EXR, WebP, Postscript, PDF, and SVG. Use ImageMagick
+to resize, flip, mirror, rotate, distort, shear and transform images,
+adjust image colors, apply various special effects, or draw text, lines,
+polygons, ellipses and Bezier curves.

@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.139 2015/11/06 20:37:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.140 2015/11/29 10:44:58 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		image processing tools
 
 VER=			6.9.2
-DASHVER=		5
+DASHVER=		7
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=	MagickCore-6.Q16     0.0      # 2.0
-SHARED_LIBS +=	MagickWand-6.Q16     0.0      # 2.0
-SHARED_LIBS +=	Magick++-6.Q16       0.0      # 6.0
+SHARED_LIBS +=	MagickCore-6.Q16     1.0      # 2.0
+SHARED_LIBS +=	MagickWand-6.Q16     1.0      # 2.0
+SHARED_LIBS +=	Magick++-6.Q16       1.0      # 6.0
 
 CATEGORIES=		graphics
 
@@ -25,27 +25,23 @@ MASTER_SITES=		http://www.imagemagick.org/download/releases/ \
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xt bz2 c djvulibre expat
-WANTLIB += fftw3 fontconfig freetype jbig jpeg lcms2 ltdl lzma
-WANTLIB += m openjp2 perl png pthread pthread-stubs stdc++ tiff
-WANTLIB += webp wmflite-0.2 xcb xml2 z
+WANTLIB += fftw3 fontconfig freetype jbig jpeg lcms2 lzma m
+WANTLIB += openjp2 perl png pthread pthread-stubs stdc++ tiff
+WANTLIB += webp xcb xml2 z
 
 MODULES =		converters/libiconv
 
 LIB_DEPENDS =		archivers/bzip2 \
 			archivers/xz \
-			devel/libtool,-ltdl \
 			graphics/djvulibre \
 			graphics/jbigkit \
 			graphics/png \
 			graphics/tiff \
 			graphics/lcms2 \
 			graphics/libwebp \
-			graphics/libwmf \
 			graphics/openjp2 \
 			math/fftw3 \
 			textproc/libxml
-#	XXX		graphics/libwmf
-# ^^ doesn't detect properly in configure
 
 RUN_DEPENDS =		graphics/netpbm \
 			print/ghostscript/gnu \
@@ -58,14 +54,12 @@ CONFIGURE_STYLE=	autoconf
 LIBTOOL_FLAGS=		--tag=disable-static
 AUTOCONF_VERSION=	2.69
 USE_GMAKE=		Yes
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--without-gcc-arch \
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--without-gcc-arch \
 			--with-gs-font-dir=${LOCALBASE}/share/fonts/ghostscript \
-			--with-modules \
 			--with-perl \
 			--with-perl-options='MAKE=${MAKE_PROGRAM}' \
 			--with-quantum-depth=16 \
-			--with-wmf \
 			--without-dps \
 			--without-fpx \
 			--without-gvc \
@@ -73,6 +67,7 @@ CONFIGURE_ARGS+=	--without-gcc-arch \
 			--without-openexr \
 			--without-pango \
 			--without-rsvg \
+			--without-wmf \
 			--disable-openmp
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
