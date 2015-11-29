@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/28 16:35:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/11/29 14:33:40 ajacoutot Exp $
 
 COMMENT =		penetration testing tool to detect/exploit SQL injection
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://sqlmap.org/
 
 MAINTAINER =		sebastien dellac <shaxo@laposte.net>
 
-#GPLv2
+# GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
 GH_ACCOUNT =		sqlmapproject
@@ -21,6 +21,9 @@ GH_COMMIT =		5020269f507d027056312fb63a2a985622e45d59
 MODULES =		lang/python
 
 MODPY_ADJ_FILES	= 	sqlmap.py
+
+# NO_BUILD but needs ${MODPY_LIBDIR}/compileall.py
+BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS}
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
