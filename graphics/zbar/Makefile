@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.21 2015/11/06 20:37:34 sthen Exp $
+#	$OpenBSD: Makefile,v 1.22 2015/11/29 10:45:22 sthen Exp $
 
 COMMENT=	ZBar barcode reader
 DISTNAME=	zbar-0.10
-REVISION=	13
+REVISION=	14
 
 SHARED_LIBS=	zbar	0.0 \
 		zbargtk	0.0
@@ -20,12 +20,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xcomposite
 WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += Xt Xv atk-1.0 bz2 c cairo expat ffi fftw3 fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
-WANTLIB += harfbuzz lcms2 ltdl lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += Xt Xv atk-1.0 bz2 c cairo djvulibre expat ffi fftw3
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz jbig jpeg lcms2 lzma m openjp2
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs tiff webp xcb xcb-render
+WANTLIB += xcb-shm xml2 z
 
 MODULES=	devel/gettext \
 		lang/python

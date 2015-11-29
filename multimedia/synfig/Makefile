@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/06 20:37:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/11/29 10:45:22 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		2D animation software
-REVISION =		2
+REVISION =		3
 
 V=			1.0.1
 DISTNAME =		synfig-$V
@@ -19,16 +19,15 @@ HOMEPAGE =		http://www.synfig.org/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += Half ICE Iex IexMath IlmImf IlmThread Imath Magick++-6.Q16
-WANTLIB += MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xext Xrender Xt
-WANTLIB += boost_program_options-mt
-WANTLIB += bz2 c cairo djvulibre expat ffi fftw3 fontconfig freetype
-WANTLIB += glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 harfbuzz jasper jbig jpeg lcms2 ltdl lzma
-WANTLIB += m mng pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs sigc-2.0 tiff webp
-WANTLIB += wmf wmflite xcb xcb-render xcb-shm xml++-2.6 xml2 z
-WANTLIB += boost_chrono-mt boost_filesystem boost_system gio-2.0
-WANTLIB += giomm-2.4 mlt mlt++
+WANTLIB += MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xext Xrender
+WANTLIB += Xt boost_chrono-mt boost_filesystem boost_program_options-mt
+WANTLIB += boost_system bz2 c cairo djvulibre expat ffi fftw3
+WANTLIB += fontconfig freetype gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
+WANTLIB += jbig jpeg lcms2 ltdl lzma m mlt mlt++ mng openjp2 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs sigc-2.0 tiff webp xcb xcb-render xcb-shm
+WANTLIB += xml++-2.6 xml2 z
 
 MASTER_SITES=		http://download.tuxfamily.org/synfig/releases/${V}/
 
