@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/18 10:08:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/11/29 08:35:17 ajacoutot Exp $
 bin/core_server.py
 bin/sb_bnfilter.py
 bin/sb_bnserver.py
@@ -17,6 +17,7 @@ bin/sb_unheader.py
 bin/sb_upload.py
 bin/sb_xmlrpcserver.py
 lib/python${MODPY_VERSION}/site-packages/spambayes/
+lib/python${MODPY_VERSION}/site-packages/spambayes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/spambayes/CorePlugin.py
 lib/python${MODPY_VERSION}/site-packages/spambayes/CorePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/spambayes/CoreUI.py
@@ -124,11 +125,17 @@ lib/python${MODPY_VERSION}/site-packages/spambayes/oe_mailbox.py
 lib/python${MODPY_VERSION}/site-packages/spambayes/oe_mailbox.pyc
 lib/python${MODPY_VERSION}/site-packages/spambayes/optimize.py
 lib/python${MODPY_VERSION}/site-packages/spambayes/optimize.pyc
+lib/python${MODPY_VERSION}/site-packages/spambayes/port.py
+lib/python${MODPY_VERSION}/site-packages/spambayes/port.pyc
 lib/python${MODPY_VERSION}/site-packages/spambayes/postfixproxy.py
 lib/python${MODPY_VERSION}/site-packages/spambayes/postfixproxy.pyc
 lib/python${MODPY_VERSION}/site-packages/spambayes/resources/
+lib/python${MODPY_VERSION}/site-packages/spambayes/resources/README_txt.py
+lib/python${MODPY_VERSION}/site-packages/spambayes/resources/README_txt.pyc
 lib/python${MODPY_VERSION}/site-packages/spambayes/resources/__init__.py
 lib/python${MODPY_VERSION}/site-packages/spambayes/resources/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/spambayes/resources/_cvsignore.py
+lib/python${MODPY_VERSION}/site-packages/spambayes/resources/_cvsignore.pyc
 lib/python${MODPY_VERSION}/site-packages/spambayes/resources/classify_gif.py
 lib/python${MODPY_VERSION}/site-packages/spambayes/resources/classify_gif.pyc
 lib/python${MODPY_VERSION}/site-packages/spambayes/resources/config_gif.py
@@ -137,6 +144,8 @@ lib/python${MODPY_VERSION}/site-packages/spambayes/resources/helmet_gif.py
 lib/python${MODPY_VERSION}/site-packages/spambayes/resources/helmet_gif.pyc
 lib/python${MODPY_VERSION}/site-packages/spambayes/resources/help_gif.py
 lib/python${MODPY_VERSION}/site-packages/spambayes/resources/help_gif.pyc
+lib/python${MODPY_VERSION}/site-packages/spambayes/resources/junk.py
+lib/python${MODPY_VERSION}/site-packages/spambayes/resources/junk.pyc
 lib/python${MODPY_VERSION}/site-packages/spambayes/resources/message_gif.py
 lib/python${MODPY_VERSION}/site-packages/spambayes/resources/message_gif.pyc
 lib/python${MODPY_VERSION}/site-packages/spambayes/resources/query_gif.py
@@ -151,6 +160,8 @@ lib/python${MODPY_VERSION}/site-packages/spambayes/resources/ui_html.py
 lib/python${MODPY_VERSION}/site-packages/spambayes/resources/ui_html.pyc
 lib/python${MODPY_VERSION}/site-packages/spambayes/resources/ui_psp.py
 lib/python${MODPY_VERSION}/site-packages/spambayes/resources/ui_psp.pyc
+lib/python${MODPY_VERSION}/site-packages/spambayes/safepickle.py
+lib/python${MODPY_VERSION}/site-packages/spambayes/safepickle.pyc
 lib/python${MODPY_VERSION}/site-packages/spambayes/smtpproxy.py
 lib/python${MODPY_VERSION}/site-packages/spambayes/smtpproxy.pyc
 lib/python${MODPY_VERSION}/site-packages/spambayes/storage.py
