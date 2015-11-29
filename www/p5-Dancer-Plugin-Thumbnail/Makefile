@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/11/03 14:33:45 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2015/11/29 08:54:51 benoit Exp $
 
 COMMENT =	thumbnail plugin for p5-Dancer
 
 MODULES =	cpan
-DISTNAME =	Dancer-Plugin-Thumbnail-0.11
+DISTNAME =	Dancer-Plugin-Thumbnail-0.12
 CATEGORIES =	www
 
 # perl
