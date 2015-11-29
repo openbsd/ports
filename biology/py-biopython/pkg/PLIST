@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/07/18 22:24:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/11/29 08:22:11 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/Bio/
 lib/python${MODPY_VERSION}/site-packages/Bio/Affy/
 lib/python${MODPY_VERSION}/site-packages/Bio/Affy/CelFile.py
@@ -623,6 +623,10 @@ lib/python${MODPY_VERSION}/site-packages/Bio/PDB/PSEA.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/PSEA.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/Polypeptide.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/Polypeptide.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/
+lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/__init__.py
+lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/qcprotmodule.so
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/Residue.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/Residue.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/ResidueDepth.py
@@ -794,8 +798,6 @@ lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/Residues.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/Residues.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/three_to_one_dict.py
-lib/python${MODPY_VERSION}/site-packages/Bio/SCOP/three_to_one_dict.pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SVDSuperimposer/
 lib/python${MODPY_VERSION}/site-packages/Bio/SVDSuperimposer/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SVDSuperimposer/__init__.pyc
