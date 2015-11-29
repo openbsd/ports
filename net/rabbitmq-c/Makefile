@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/15 12:41:35 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2015/11/29 14:39:53 benoit Exp $
 
 COMMENT=	rabbitmq C library and commandline AMQP utilities
 
-V= 		0.7.0
+V= 		0.7.1
 GH_ACCOUNT=	alanxz
 GH_PROJECT=	rabbitmq-c
 GH_TAGNAME=	v${V}
