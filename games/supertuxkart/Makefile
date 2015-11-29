@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2015/08/03 16:37:45 pascal Exp $
+# $OpenBSD: Makefile,v 1.18 2015/11/29 07:46:29 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT =		kart racing game with OSS mascots
 
-V =			0.9
+V =			0.9.1
 BASENAME =		supertuxkart-${V}
 DISTNAME =		${BASENAME}-src
 PKGNAME =		${BASENAME}
-REVISION =		0
 
 CATEGORIES =		games
 
