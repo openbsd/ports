@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/06 20:59:46 kirby Exp $
+# $OpenBSD: Makefile,v 1.7 2015/11/29 07:38:56 kirby Exp $
 
 COMMENT =		framework for writing networked applications in C
 
 GH_PROJECT = 		ccnet
 
-SHARED_LIBS =		ccnet 1.0
+SHARED_LIBS =		ccnet 2.0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
