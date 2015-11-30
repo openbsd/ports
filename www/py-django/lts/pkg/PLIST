@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/11/11 09:15:04 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/11/30 12:26:20 rpointel Exp $
 @comment bin/django-admin
 bin/${LNAME}-admin.py
 lib/python${MODPY_VERSION}/site-packages/Django-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -4100,9 +4100,11 @@ lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/fields/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/fields/${MODPY_PYCACHE}array.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/fields/${MODPY_PYCACHE}hstore.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/fields/${MODPY_PYCACHE}ranges.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/fields/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/fields/array.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/fields/hstore.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/fields/ranges.py
+lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/fields/utils.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/forms/
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/forms/__init__.py
 lib/python${MODPY_VERSION}/site-packages/django/contrib/postgres/forms/${MODPY_PYCACHE}/
@@ -6543,6 +6545,7 @@ share/doc/${LNAME}/releases/1.6.9.txt
 share/doc/${LNAME}/releases/1.6.txt
 share/doc/${LNAME}/releases/1.7.1.txt
 share/doc/${LNAME}/releases/1.7.10.txt
+share/doc/${LNAME}/releases/1.7.11.txt
 share/doc/${LNAME}/releases/1.7.2.txt
 share/doc/${LNAME}/releases/1.7.3.txt
 share/doc/${LNAME}/releases/1.7.4.txt
@@ -6558,6 +6561,7 @@ share/doc/${LNAME}/releases/1.8.3.txt
 share/doc/${LNAME}/releases/1.8.4.txt
 share/doc/${LNAME}/releases/1.8.5.txt
 share/doc/${LNAME}/releases/1.8.6.txt
+share/doc/${LNAME}/releases/1.8.7.txt
 share/doc/${LNAME}/releases/1.8.txt
 share/doc/${LNAME}/releases/index.txt
 share/doc/${LNAME}/releases/security.txt
