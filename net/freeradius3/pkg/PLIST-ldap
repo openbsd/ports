@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ldap,v 1.1.1.1 2015/11/12 12:59:38 sthen Exp $
+@comment $OpenBSD: PLIST-ldap,v 1.2 2015/11/30 22:01:43 sthen Exp $
 @conflict freeradius-ldap-*
 lib/freeradius/rlm_ldap.so
 share/doc/freeradius/schemas/ldap/
@@ -15,3 +15,4 @@ share/doc/freeradius/schemas/ldap/openldap/freeradius.schema
 @mode 640
 @group _freeradius
 share/examples/freeradius/mods-available/ldap
+@sample ${FREERADIUS_ETC}/mods-available/ldap
