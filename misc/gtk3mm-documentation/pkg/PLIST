@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/04/14 11:22:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/11/30 12:43:12 ajacoutot Exp $
 share/doc/gtkmm-3.0/
 share/doc/gtkmm-3.0/tutorial/
 share/doc/gtkmm-3.0/tutorial/html/
@@ -163,6 +163,7 @@ share/doc/gtkmm-3.0/tutorial/html/sec-drawing-text.html
 share/doc/gtkmm-3.0/tutorial/html/sec-exceptions-in-signal-handlers.html
 share/doc/gtkmm-3.0/tutorial/html/sec-extending-print-dialog.html
 share/doc/gtkmm-3.0/tutorial/html/sec-font-chooser-dialog.html
+share/doc/gtkmm-3.0/tutorial/html/sec-gio-resource.html
 share/doc/gtkmm-3.0/tutorial/html/sec-gtkmm.html
 share/doc/gtkmm-3.0/tutorial/html/sec-headers-and-linking.html
 share/doc/gtkmm-3.0/tutorial/html/sec-helloworld.html
@@ -178,6 +179,7 @@ share/doc/gtkmm-3.0/tutorial/html/sec-intermediate-types.html
 share/doc/gtkmm-3.0/tutorial/html/sec-iterating-over-model-rows.html
 share/doc/gtkmm-3.0/tutorial/html/sec-keyboardevents-propagation.html
 share/doc/gtkmm-3.0/tutorial/html/sec-memory-shared-resources.html
+share/doc/gtkmm-3.0/tutorial/html/sec-menubar-and-toolbar.html
 share/doc/gtkmm-3.0/tutorial/html/sec-menus-examples.html
 share/doc/gtkmm-3.0/tutorial/html/sec-menus-popup.html
 share/doc/gtkmm-3.0/tutorial/html/sec-monitoring-io.html
@@ -213,7 +215,6 @@ share/doc/gtkmm-3.0/tutorial/html/sec-treeview-examples.html
 share/doc/gtkmm-3.0/tutorial/html/sec-treeview-selection.html
 share/doc/gtkmm-3.0/tutorial/html/sec-treeview-sort.html
 share/doc/gtkmm-3.0/tutorial/html/sec-treeview.html
-share/doc/gtkmm-3.0/tutorial/html/sec-uimanager.html
 share/doc/gtkmm-3.0/tutorial/html/sec-using-a-gtkmm-widget.html
 share/doc/gtkmm-3.0/tutorial/html/sec-using-glib-dispatcher.html
 share/doc/gtkmm-3.0/tutorial/html/sec-widgets-and-childanchors.html

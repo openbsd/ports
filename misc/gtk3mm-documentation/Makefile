@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2014/10/10 12:52:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/11/30 12:43:12 ajacoutot Exp $
 
 COMMENT=		documentation for gtk3mm
 
 GNOME_PROJECT=		gtkmm-documentation
-GNOME_VERSION=		3.12.0
-REVISION=		0
+GNOME_VERSION=		3.18.0
 
 PKGNAME=		gtk3mm-documentation-${GNOME_VERSION}
 
@@ -18,6 +17,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		x11/gnome
+
+# c++11
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
 
 PKG_ARCH=		*
 
