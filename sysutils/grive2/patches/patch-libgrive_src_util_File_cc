@@ -1,0 +1,11 @@
+$OpenBSD: patch-libgrive_src_util_File_cc,v 1.1.1.1 2015/11/30 11:56:15 sthen Exp $
+--- libgrive/src/util/File.cc.orig	Sun Oct 11 17:59:25 2015
++++ libgrive/src/util/File.cc	Wed Nov  4 09:30:36 2015
+@@ -32,6 +32,7 @@
+ #include <sys/stat.h>
+ #include <sys/types.h>
+ #include <fcntl.h>
++#include <unistd.h>
+ 
+ #ifdef WIN32
+ 	#include <io.h>

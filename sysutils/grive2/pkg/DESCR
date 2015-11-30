@@ -1,0 +1,3 @@
+grive2 is the fork of original "Grive" (https://github.com/Grive/grive)
+Google Drive client with the support for the new Drive REST API and
+partial sync.

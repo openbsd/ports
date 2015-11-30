@@ -1,0 +1,11 @@
+$OpenBSD: patch-libgrive_CMakeLists_txt,v 1.1.1.1 2015/11/30 11:56:15 sthen Exp $
+--- libgrive/CMakeLists.txt.orig	Sun Oct 11 17:59:25 2015
++++ libgrive/CMakeLists.txt	Wed Nov  4 09:30:32 2015
+@@ -7,7 +7,6 @@ find_package(CURL REQUIRED)
+ find_package(EXPAT REQUIRED)
+ find_package(Boost 1.40.0 COMPONENTS program_options filesystem unit_test_framework regex system REQUIRED)
+ find_package(BFD)
+-find_package(CppUnit)
+ find_package(Iberty)
+ find_package(ZLIB)
+ 

@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/30 11:56:15 sthen Exp $
+@bin bin/grive
+@man man/man1/grive.1
