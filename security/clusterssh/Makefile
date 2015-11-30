@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2015/07/25 08:00:05 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2015/11/30 17:14:32 steven Exp $
 
 COMMENT=	secure concurrent multi-server terminal control
 
-DISTNAME=	App-ClusterSSH-4.03_06
-PKGNAME=	clusterssh-4.03.06
+V=		4.05
+DISTNAME=	App-ClusterSSH-$V
+PKGNAME=	clusterssh-${V:S/_/./}
 
 CATEGORIES=	security
 
@@ -34,5 +35,9 @@ TEST_DEPENDS=devel/p5-Test-Trap \
 		devel/p5-File-Slurp
 
 MAKE_ENV=	TEST_POD=Yes
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion
+	mv ${PREFIX}/bin/clusterssh_bash_completion.dist ${PREFIX}/share/bash-completion/clusterssh
 
 .include <bsd.port.mk>
