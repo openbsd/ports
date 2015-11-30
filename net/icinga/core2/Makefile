@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2015/11/26 18:03:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2015/11/30 13:11:08 sthen Exp $
 
 BROKEN-hppa =	needs 64-bit atomic ops; __sync_add_and_fetch_4
 SHARED_ONLY =	Yes
@@ -34,6 +34,9 @@ MODULES =		devel/cmake \
 # c++: Internal error: Illegal instruction (program cc1plus)
 MODGCC4_ARCHS =		sparc64
 MODGCC4_LANGS =		c++
+
+PSEUDO_FLAVORS =	test
+FLAVOR ?=
 
 BUILD_DEPENDS =		devel/bison
 
@@ -75,10 +78,20 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/syntax/vim/$i/* ${PREFIX}/share/vim/vimfiles/$i
 .endfor
 
+.if ${FLAVOR:Mtest}
 pre-test:
 	@if pkg_info | grep libconfig- > /dev/null; then \
 	    printf "\n*** icinga2 tests do not work if libconfig is installed ***\n\n"; \
 	    exit 1; \
 	fi
+.else
+post-patch:
+	@printf "\n*** Disabling tests to avoid conflict if libconfig is present at build time.\n*** Use \"FLAVOR=test make\" to avoid this.\n\n"
+	sed -i 's,add_subdirectory(test),#add_subdirectory(test),' ${WRKSRC}/CMakeLists.txt
+
+pre-test:
+	@printf "\n*** Tests were disabled to avoid potential build conflict.\n*** Re-build with \"FLAVOR=test make\" to avoid this.\n\n"
+	@exit 1
+.endif
 
 .include <bsd.port.mk>
