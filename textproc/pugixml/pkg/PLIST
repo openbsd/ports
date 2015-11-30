@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/30 14:32:27 sthen Exp $
+include/pugiconfig.hpp
+include/pugixml.hpp
+lib/cmake/
+lib/cmake/pugixml/
+lib/cmake/pugixml/pugixml-config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/pugixml/pugixml-config.cmake
+@lib lib/libpugixml.so.${LIBpugixml_VERSION}

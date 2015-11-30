@@ -1,0 +1,23 @@
+$OpenBSD: patch-scripts_CMakeLists_txt,v 1.1.1.1 2015/11/30 14:32:27 sthen Exp $
+--- scripts/CMakeLists.txt.orig	Mon Nov 30 12:58:48 2015
++++ scripts/CMakeLists.txt	Mon Nov 30 12:58:53 2015
+@@ -26,9 +26,9 @@ else()
+ endif()
+ 
+ # Enable C++11 long long for compilers that are capable of it
+-if(NOT ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION} STRLESS 3.1)
+-	target_compile_features(pugixml PUBLIC cxx_long_long_type)
+-endif()
++#if(NOT ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION} STRLESS 3.1)
++#	target_compile_features(pugixml PUBLIC cxx_long_long_type)
++#endif()
+ 
+ set_target_properties(pugixml PROPERTIES VERSION 1.7 SOVERSION 1)
+ 
+@@ -49,4 +49,4 @@ if(BUILD_TESTS)
+ 	add_executable(check ${TEST_SOURCES})
+ 	target_link_libraries(check pugixml)
+ 	add_custom_command(TARGET check POST_BUILD COMMAND check WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/..)
+-endif()
+\ No newline at end of file
++endif()
