@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.56 2015/10/20 13:13:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2015/11/30 15:16:29 sthen Exp $
+
+PORTROACH =	skipv:552
 
 COMMENT =	extract, list & test files in a ZIP archive
 
