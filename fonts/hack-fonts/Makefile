@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/25 12:50:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/11/30 14:09:33 mmcc Exp $
 
 PKG_ARCH =		*
 
 COMMENT =		typeface designed for source code
 
-V =			2.010
-REVISION =		0
+V =			2.018
 DISTNAME =		Hack-v${V:S/./_/}-otf
 PKGNAME =		hack-fonts-$V
 CATEGORIES =		fonts
 HOMEPAGE =		http://sourcefoundry.org/hack/
+
+MAINTAINER =		Michael McConville <mmcco@mykolab.com>
 
 # SIL Open Font License v1.1
 PERMIT_PACKAGE_CDROM =	Yes
