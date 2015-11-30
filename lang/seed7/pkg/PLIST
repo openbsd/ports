@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/09/30 13:54:53 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/11/30 08:09:57 benoit Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -19,6 +19,7 @@ lib/seed7/lib/bigint.s7i
 lib/seed7/lib/bigrat.s7i
 lib/seed7/lib/bin32.s7i
 lib/seed7/lib/bin64.s7i
+lib/seed7/lib/bitdata.s7i
 lib/seed7/lib/bitmapfont.s7i
 lib/seed7/lib/bitset.s7i
 lib/seed7/lib/bitsetof.s7i
@@ -134,6 +135,7 @@ lib/seed7/lib/keydescr.s7i
 lib/seed7/lib/line.s7i
 lib/seed7/lib/listener.s7i
 lib/seed7/lib/lower.s7i
+lib/seed7/lib/lzw.s7i
 lib/seed7/lib/mahjng32.s7i
 lib/seed7/lib/make.s7i
 lib/seed7/lib/makedata.s7i
