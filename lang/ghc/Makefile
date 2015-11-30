@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2015/11/13 12:27:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.128 2015/11/30 22:22:24 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -225,7 +225,7 @@ bootstrap: patch
 	echo GhcLibWays=v >> ${WRKSRC}/mk/build.mk
 	echo GhcRTSWays= >> ${WRKSRC}/mk/build.mk
 	echo GhcWithInterpreter=NO >> ${WRKSRC}/mk/build.mk
-	echo INTEGER_LIBRARY=integer-gmp >> ${WRKSRC}/mk/build.mk
+	echo INTEGER_LIBRARY=integer-gmp2 >> ${WRKSRC}/mk/build.mk
 	echo SRC_CC_OPTS+=-g -O0 >> ${WRKSRC}/mk/build.mk
 	echo HADDOCK_DOCS=NO >> ${WRKSRC}/mk/build.mk
 	echo LATEX_DOCS=NO >> ${WRKSRC}/mk/build.mk
