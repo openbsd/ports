@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.174 2015/11/04 15:39:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.175 2015/11/30 10:26:16 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
-V=		3.5.11
-REVISION-main=	0
+V=		3.5.12
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
@@ -21,7 +20,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m nettle pthread
+WANTLIB += c m nettle pthread stdc++
 cWANTLIB = ${WANTLIB} ffi gmp gnutls hogweed p11-kit tasn1 z
 
 # bzr repository at https://code.launchpad.net/squid
@@ -33,7 +32,7 @@ LIB_DEPENDS+=	security/gnutls
 BUILD_DEPENDS+=	devel/cppunit
 USE_GROFF=	Yes
 
-MODGCC4_ARCHS=	*
+MODGCC4_ARCHS=	powerpc
 MODGCC4_LANGS=	c c++
 
 SEPARATE_BUILD=	Yes
