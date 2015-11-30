@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.326 2015/11/22 00:01:36 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.327 2015/11/30 11:57:55 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -387,6 +387,7 @@ my $stem_extensions = {
 	'icinga2-pgsql' => 'icinga2-ido-pgsql',
 	'rcsparse' => 'py-rcsparse',
 	'tesseract-dan-frak' => 'tesseract-dan_frak',
+	'grive' => 'grive2',
 };
 
 # reasons for obsolete packages
@@ -689,7 +690,6 @@ my $obsolete_reason = {
 	'node-syslog' => 7,
 	'gtk2hs-buildtools' => 5,
 	'coffeescript' => 7,
-	'grive' => 3,
 	'pb-browser' => 0,
 	'unace' => 0,
 	'edict' => 3,
