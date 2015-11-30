@@ -1,12 +1,12 @@
-$OpenBSD: patch-offlineimap_conf,v 1.3 2014/11/24 10:01:47 edd Exp $
---- offlineimap.conf.orig	Fri May 23 18:50:46 2014
-+++ offlineimap.conf	Wed Oct 22 21:43:18 2014
-@@ -385,7 +385,7 @@ ssl = yes
- # specified, the CA Cert(s) need to verify the Server cert AND
- # match the hostname (* wildcard allowed on the left hand side)
- # The certificate should be in PEM format.
--# sslcacertfile = /path/to/cacertfile.crt
+$OpenBSD: patch-offlineimap_conf,v 1.4 2015/11/30 22:27:13 edd Exp $
+--- offlineimap.conf.orig	Wed Nov 11 13:34:03 2015
++++ offlineimap.conf	Wed Nov 11 13:34:50 2015
+@@ -593,7 +593,7 @@ remotehost = examplehost
+ # You can also use fingerprint verification via cert_fingerprint.
+ # See below for more verbose explanation.
+ #
+-#sslcacertfile = /path/to/cacertfile.crt
 +sslcacertfile = /etc/ssl/cert.pem
  
- # If you connect via SSL/TLS (ssl=true) and you have no CA certificate
- # specified, offlineimap will refuse to sync as it connects to a server
+ 
+ # This option stands in the [Repository RemoteExample] section.
