@@ -1,6 +1,6 @@
-$OpenBSD: patch-radicale_config_py,v 1.8 2014/12/15 13:27:13 ian Exp $
---- radicale/config.py.orig	Wed Aug  6 13:23:29 2014
-+++ radicale/config.py	Sun Nov 16 18:58:10 2014
+$OpenBSD: patch-radicale_config_py,v 1.9 2015/11/30 20:17:53 jung Exp $
+--- radicale/config.py.orig	Wed Aug 19 15:06:33 2015
++++ radicale/config.py	Fri Nov 27 22:06:38 2015
 @@ -43,8 +43,8 @@ INITIAL_CONFIG = {
          "daemon": "False",
          "pid": "",
@@ -12,7 +12,7 @@ $OpenBSD: patch-radicale_config_py,v 1.8 2014/12/15 13:27:13 ian Exp $
          "protocol": "PROTOCOL_SSLv23",
          "ciphers": "",
          "dns_lookup": "True",
-@@ -57,7 +57,7 @@ INITIAL_CONFIG = {
+@@ -60,7 +60,7 @@ INITIAL_CONFIG = {
      "auth": {
          "type": "None",
          "custom_handler": "",
@@ -21,7 +21,7 @@ $OpenBSD: patch-radicale_config_py,v 1.8 2014/12/15 13:27:13 ian Exp $
          "htpasswd_encryption": "crypt",
          "imap_hostname": "localhost",
          "imap_port": "143",
-@@ -83,11 +83,10 @@ INITIAL_CONFIG = {
+@@ -86,11 +86,10 @@ INITIAL_CONFIG = {
      "storage": {
          "type": "filesystem",
          "custom_handler": "",
@@ -35,7 +35,7 @@ $OpenBSD: patch-radicale_config_py,v 1.8 2014/12/15 13:27:13 ian Exp $
          "debug": "False",
          "full_environment": "False"}}
  
-@@ -99,7 +98,7 @@ for section, values in INITIAL_CONFIG.items():
+@@ -102,7 +101,7 @@ for section, values in INITIAL_CONFIG.items():
      for key, value in values.items():
          _CONFIG_PARSER.set(section, key, value)
  

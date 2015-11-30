@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2015/04/02 14:21:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2015/11/30 20:17:53 jung Exp $
 
 COMMENT =	simple CalDAV calendar server
 
-MODPY_EGG_VERSION = 0.9
+MODPY_EGG_VERSION = 1.0.1
 DISTNAME =	Radicale-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	productivity net
@@ -14,11 +14,13 @@ MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
+MODPY_SETUPTOOLS =	Yes
+
 MODPY_PI =		Yes
 
 MODULES =		lang/python
 MODPY_ADJ_FILES =	radicale.py
-LIB_DEPENDS =		security/py-bcrypt
+LIB_DEPENDS =		security/py-passlib
 
 NO_TEST =		Yes
 
