@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.365 2015/11/26 10:24:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.366 2015/11/30 11:56:46 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -70,6 +70,7 @@
      SUBDIR += glastree
      SUBDIR += gource
      SUBDIR += gpioflicker
+     SUBDIR += grive2
      SUBDIR += grub
      SUBDIR += gsmartcontrol
      SUBDIR += hot-babe
