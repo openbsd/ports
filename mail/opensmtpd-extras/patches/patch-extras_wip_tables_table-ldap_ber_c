@@ -1,0 +1,15 @@
+$OpenBSD: patch-extras_wip_tables_table-ldap_ber_c,v 1.1 2015/11/30 19:47:32 jung Exp $
+
+already submitted and merged in upstream, can be removed with next version
+
+--- extras/wip/tables/table-ldap/ber.c.orig	Tue Nov 24 10:42:32 2015
++++ extras/wip/tables/table-ldap/ber.c	Tue Nov 24 10:24:25 2015
+@@ -27,7 +27,7 @@
+ #include <stdlib.h>
+ #include <err.h>	/* XXX for debug output */
+ #include <stdio.h>	/* XXX for debug output */
+-#include <strings.h>
++#include <string.h>
+ #include <unistd.h>
+ #include <stdarg.h>
+ 

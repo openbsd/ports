@@ -1,0 +1,44 @@
+$OpenBSD: patch-configure_ac,v 1.1 2015/11/30 19:47:32 jung Exp $
+
+already submitted as pull-request to upstream
+
+--- configure.ac.orig	Mon Nov 23 01:07:54 2015
++++ configure.ac	Thu Nov 26 15:15:27 2015
+@@ -1411,6 +1411,14 @@ AC_ARG_WITH([python],
+ 		fi
+ 	]
+ )
++AC_ARG_WITH([python-type],
++	[  --with-python-type=PATH  Specify the type of python used ],
++	[
++		if test "x$withval" != "xno" ; then
++			python_type="${withval}"
++		fi
++	]
++)
+ 
+ AC_ARG_WITH([perl],
+ 	[  --with-perl=PATH      Specify prefix of perl installation ],
+@@ -1446,16 +1454,19 @@ PYTHON_CPPFLAGS=
+ PYTHON_LDFLAGS=
+ if test x"${need_python}" = x"yes"; then
+    PYTHON_CONFIG=
++   if test x"${python_type}" = x""; then
++	python_type="python"
++   fi
+    for path in /usr/local/bin /usr/bin; do
+-	if test -f ${path}/python-config; then
+-		PYTHON_CONFIG=${path}/python-config
++	if test -f ${path}/${python_type}-config; then
++		PYTHON_CONFIG=${path}/${python_type}-config
+ 		break
+ 	fi
+    done
+ 
+    # if python provided --with-python, override
+    if test x"${with_python}" != x""; then
+-      PYTHON_CONFIG="${python_prefix}/bin/python-config"
++      PYTHON_CONFIG="${python_prefix}/bin/${python_type}-config"
+    fi
+ 
+    if ! test -f $PYTHON_CONFIG; then
