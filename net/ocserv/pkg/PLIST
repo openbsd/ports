@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/26 02:07:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/11/30 11:58:57 sthen Exp $
 @newgroup _ocserv:749
 @newuser _ocserv:749:_ocserv:daemon:ocserv user:/nonexistent:/sbin/nologin
 @bin bin/occtl
@@ -8,20 +8,21 @@
 @man man/man8/ocserv.8
 @bin sbin/ocserv
 share/examples/ocserv/
+share/examples/ocserv/ocserv-fw
 share/examples/ocserv/profile.xml
 share/examples/ocserv/sample.config
+@mode 750
 @owner root
 @group _ocserv
-@mode 750
 @sample ${SYSCONFDIR}/ocserv/
 @mode
-@group
 @owner
+@group
 @sample ${SYSCONFDIR}/ocserv/ocserv.conf
 share/examples/ocserv/sample.passwd
+@mode 640
 @owner root
 @group _ocserv
-@mode 640
 @sample ${SYSCONFDIR}/ocserv/ocpasswd
 @mode
 @group

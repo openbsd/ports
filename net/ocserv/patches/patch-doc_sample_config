@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_sample_config,v 1.8 2015/11/23 15:10:57 sthen Exp $
+$OpenBSD: patch-doc_sample_config,v 1.9 2015/11/30 11:58:57 sthen Exp $
 
 no seccomp, gssapi
 
---- doc/sample.config.orig	Sun Sep 27 07:32:39 2015
-+++ doc/sample.config	Sat Nov 21 00:36:18 2015
+--- doc/sample.config.orig	Mon Nov 30 11:45:14 2015
++++ doc/sample.config	Mon Nov 30 11:48:13 2015
 @@ -1,7 +1,7 @@
  # User authentication method. Could be set multiple times and in 
  # that case all should succeed. To enable multiple methods use
@@ -89,7 +89,7 @@ no seccomp, gssapi
  # A banner to be displayed on clients
  #banner = "Welcome"
  
-@@ -276,9 +259,8 @@ min-reauth-time = 300
+@@ -271,9 +254,8 @@ min-reauth-time = 300
  # Banning clients in ocserv works with a point system. IP addresses
  # that get a score over that configured number are banned for
  # min-reauth-time seconds. By default a wrong password attempt is 10 points,
@@ -101,7 +101,7 @@ no seccomp, gssapi
  #
  # Score banning cannot be reliably used when receiving proxied connections
  # locally from an HTTP server (i.e., when listen-clear-file is used).
-@@ -292,7 +274,6 @@ ban-reset-time = 300
+@@ -287,7 +269,6 @@ ban-reset-time = 300
  # In case you'd like to change the default points.
  #ban-points-wrong-password = 10
  #ban-points-connection = 1
@@ -109,7 +109,7 @@ no seccomp, gssapi
  
  # Cookie timeout (in seconds)
  # Once a client is authenticated he's provided a cookie with
-@@ -354,7 +335,7 @@ rekey-method = ssl
+@@ -362,7 +343,7 @@ rekey-method = ssl
  use-occtl = true
  
  # PID file. It can be overriden in the command line.
@@ -118,7 +118,15 @@ no seccomp, gssapi
  
  # Set the protocol-defined priority (SO_PRIORITY) for packets to
  # be sent. That is a number from 0 to 6 with 0 being the lowest
-@@ -498,20 +479,6 @@ no-route = 192.168.5.0/255.255.255.0
+@@ -471,6 +452,7 @@ no-route = 192.168.5.0/255.255.255.0
+ # any other routes. All the routes applied by ocserv can be reverted
+ # using /etc/ocserv/ocserv-fw --removeall. This option can be set globally
+ # or in the per-user configuration.
++# To use this with PF, you will need to supply your own ocserv-fw script.
+ #restrict-user-to-routes = true
+ 
+ # When set to true, all client's iroutes are made visible to all
+@@ -532,20 +514,6 @@ no-route = 192.168.5.0/255.255.255.0
  # and '%{G}', if present will be replaced by the username and group name.
  #proxy-url = http://example.com/
  #proxy-url = http://example.com/%{U}/

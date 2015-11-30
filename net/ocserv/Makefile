@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/11/23 15:10:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/11/30 11:58:57 sthen Exp $
 
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
-DISTNAME=	ocserv-0.10.9
-REVISION=	0
+DISTNAME=	ocserv-0.10.10
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	net
@@ -45,14 +44,20 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 # most tests are known to fail on OpenBSD anyway, but let's patch the
 # obvious issues.
 post-extract:
-	perl -pi -e s,/etc/ocserv,${SYSCONFDIR}/ocserv, ${WRKSRC}/src/ocpasswd.c
-	perl -pi -e s,/usr/local/bin/bash,${LOCALBASE}/bin/bash, ${WRKSRC}/tests/test-iroute
-	perl -pi -e s,/usr/local/sbin/openconnect,${LOCALBASE}/sbin/openconnect, ${WRKSRC}/tests/common.sh
+	sed -i 's,/usr/local/bin/bash,${LOCALBASE}/bin/bash,' \
+	    ${WRKSRC}/tests/test-iroute
+	sed -i 's,/usr/local/sbin/openconnect,${LOCALBASE}/sbin/openconnect,' \
+	    ${WRKSRC}/tests/common.sh
+	sed -i 's,/etc/ocserv,${SYSCONFDIR}/ocserv,' ${WRKSRC}/src/ocpasswd.c
+	cd ${WRKSRC}; \
+	    sed -i 's,/usr/bin/ocserv-fw,${SYSCONFDIR}/ocserv/ocserv-fw,g' \
+	    src/ocserv-args.def src/main-user.c doc/ocserv.8 doc/sample.config
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ocserv
 	cd ${WRKSRC}/doc; ${INSTALL_DATA} profile.xml sample.passwd \
 	    ${PREFIX}/share/examples/ocserv/
+	mv ${PREFIX}/bin/ocserv-fw ${PREFIX}/share/examples/ocserv/
 	${SUBST_CMD} -c -m ${SHAREMODE} -o ${SHAREOWN} -g ${SHAREGRP} \
 	    ${WRKSRC}/doc/sample.config \
 	    ${PREFIX}/share/examples/ocserv/sample.config
