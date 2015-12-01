@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2015/11/23 14:32:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2015/12/01 22:45:49 edd Exp $
 
 COMMENT=		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	2.3.1
+MODPY_EGG_VERSION =	4.0.0
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
-REVISION=		2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://ipython.org/
@@ -13,37 +12,27 @@ MAINTAINER=		Edd Barrett <edd@openbsd.org>
 
 MODULES=		lang/python
 
-# py-qt4 as a "soft" run dependency, i.e. ipython will run fine without
-# it, but the qtconsole functionality will not be available.
-# Sympy is also optional.
-# There are a bunch of other event loops which are used in rare cases.
-# These can be soft dependencies too.
-RUN_DEPENDS =		devel/desktop-file-utils \
-			net/py-zmq \
-			graphics/py-matplotlib>=1.2.0 \
-			textproc/py-pygments \
-			www/py-tornado>=3.2 \
-			www/py-jinja2
-# Oddly enough, Ipython installs the test suite, so we can run it right out
-# of ${LOCALBASE}. Note that if you have pdb++ installed, tests will fail.
+RUN_DEPENDS +=		devel/py-decorator \
+			databases/py-pickleshare \
+			devel/py-simplegeneric \
+			devel/py-traitlets \
+			devel/desktop-file-utils
+# Note that if you have pdb++ installed, tests will fail.
 TEST_DEPENDS =		${FULLPKGNAME}:devel/ipython \
 			devel/py-nose \
-			devel/py-mock
-BUILD_DEPENDS =		textproc/py-sphinx \
-			graphics/py-matplotlib>=1.2.0 \
-			net/py-zmq \
-			math/graphviz \
+			devel/py-mock \
+			www/py-requests \
+			devel/py-testpath
+BUILD_DEPENDS =		${RUN_DEPENDS} \
+			textproc/py-sphinx \
 			textproc/py-numpydoc \
-			www/py-tornado>=3.2 \
-			x11/py-qt4
+			devel/py-ipykernel \
+			graphics/py-matplotlib
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODPY_PI =	Yes
-
-# /ipython-2.3.1_writes_to_HOME
-PORTHOME =	${WRKDIR}
 
 pre-patch:
 	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
@@ -52,7 +41,6 @@ pre-patch:
 MAKE_ENV +=	PYTHONPATH=${WRKSRC}
 post-build:
 	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
-	${SUBST_CMD} ${WRKBUILD}/IPython/core/tests/test_interactiveshell.py
 
 # Despite the fact that setupbase.py defines paths for examples to
 # be installed into, we still have to do it manually for some reason.
@@ -76,14 +64,7 @@ pre-build:
 	${SUBST_CMD} ${WRKBUILD}/IPython/core/tests/test_interactiveshell.py
 
 do-test:
-	PYTHONIOENCODING='utf-8' ${LOCALBASE}/bin/iptest
-
-# A test failure, reported upstream:
-# https://github.com/ipython/ipython/issues/5217
-# To repro:
-# python2.7 /usr/local/lib/python2.7/site-packages/IPython/testing/iptest.py -vvs IPython.core
-
-# Note also that tests will fail if pdb++ is installed! Bug raised:
-# https://github.com/ipython/ipython/issues/6004
+	env LC_CTYPE='en_US.UTF-8' PYTHONIOENCODING='utf-8' \
+		${LOCALBASE}/bin/iptest
 
 .include <bsd.port.mk>
