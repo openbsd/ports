@@ -1,0 +1,12 @@
+$OpenBSD: patch-runtests_sh,v 1.1 2015/12/01 08:16:16 jasper Exp $
+
+https://github.com/MtnViewJohn/context-free/pull/5
+
+--- runtests.sh.orig	Wed Nov 25 09:55:19 2015
++++ runtests.sh	Wed Nov 25 09:55:24 2015
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ mkdir output
+ for file in input/tests/*.cfdg input/*.cfdg ; do echo -n "$file "; if ./cfdg -Pq "$file" output/test.png ; then echo '   pass' ; : ; else echo '          FAIL' ; break; fi ; done
