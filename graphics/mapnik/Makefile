@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2015/11/24 08:23:08 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2015/12/01 07:05:41 ajacoutot Exp $
+
+BROKEN =		undefined reference to `_ZN6icu_5613UnicodeStringC1EOS0_'
 
 # out of memory, renderer_common/process_group_symbolizer.cpp
 # powerpc &sparc64 OOM's on expression_grammar.cpp
