@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/11/30 19:47:32 jung Exp $
+# $OpenBSD: Makefile,v 1.6 2015/12/01 14:57:20 jung Exp $
 
 COMMENT-main=		extras for smtpd
 COMMENT-clamav=		extras with clamav support for smtpd
@@ -49,7 +49,8 @@ AUTOMAKE_VERSION=	1.15
 MODULES=		lang/lua \
 			lang/python
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
 LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS}
 LIB_DEPENDS-mysql=	databases/mariadb,-main
 LIB_DEPENDS-pgsql=	databases/postgresql,-main
