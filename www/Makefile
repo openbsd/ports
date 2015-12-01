@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.750 2015/11/16 21:15:28 edd Exp $
+# $OpenBSD: Makefile,v 1.751 2015/12/01 22:44:33 edd Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -78,6 +78,7 @@
      SUBDIR += japana
      SUBDIR += jesred
      SUBDIR += junkbuster
+     SUBDIR += jupyter-notebook
      SUBDIR += kcgi
      SUBDIR += kwebkitpart
      SUBDIR += larbin

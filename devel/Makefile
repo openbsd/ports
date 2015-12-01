@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1424 2015/11/24 18:32:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.1425 2015/12/01 22:44:32 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1250,11 +1250,14 @@
      SUBDIR += py-html5lib
      SUBDIR += py-iniparse
      SUBDIR += py-ioflo
+     SUBDIR += py-ipykernel
      SUBDIR += py-ipython_genutils
      SUBDIR += py-isodate
      SUBDIR += py-isodate,python3
      SUBDIR += py-jsonrpclib
      SUBDIR += py-jsonschema
+     SUBDIR += py-jupyter_client
+     SUBDIR += py-jupyter_core
      SUBDIR += py-kid
      SUBDIR += py-liblarch
      SUBDIR += py-libmagic
@@ -1268,6 +1271,8 @@
      SUBDIR += py-monthdelta
      SUBDIR += py-mox
      SUBDIR += py-mxDateTime
+     SUBDIR += py-nbconvert
+     SUBDIR += py-nbformat
      SUBDIR += py-nose
      SUBDIR += py-nose,python3
      SUBDIR += py-notify
