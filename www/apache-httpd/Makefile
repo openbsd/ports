@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.69 2015/10/27 18:18:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2015/12/01 16:45:30 sthen Exp $
 
 COMMENT-main=		apache HTTP server
 COMMENT-common=		shared files for Apache 1 and 2
 
 V=			2.4.17
+REVISION-main=		0
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
 
@@ -19,8 +20,8 @@ HOMEPAGE=		http://httpd.apache.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += apr-1 aprutil-1 c crypto db expat lzma m pcre pthread
-WANTLIB-main += ssl xml2 z
+WANTLIB-main += apr-1 aprutil-1 c crypto db expat lzma m nghttp2
+WANTLIB-main += pcre pthread ssl xml2 z
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=httpd/}
 
@@ -36,7 +37,8 @@ RUN_DEPENDS-main=	www/apache-httpd,-common
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archivers/xz \
 			devel/pcre \
-			textproc/libxml
+			textproc/libxml \
+			www/nghttp2
 
 WANTLIB-common=		#empty
 LIB_DEPENDS-common=	# empty
