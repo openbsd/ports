@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/06 20:37:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/12/01 23:14:31 sthen Exp $
 
 COMMENT =		2D animation software studio
 BROKEN-alpha =		[keyframe_lock_past_on_icon.png] Bus error (core dumped)
@@ -7,7 +7,7 @@ BROKEN-hppa =		Illegal instruction (core dumped)
 V =			1.0.1
 DISTNAME =		synfigstudio-$V
 API_V =			1.0
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  synfigapp                 1.0 # 0.0
 
@@ -18,18 +18,18 @@ HOMEPAGE =		http://www.synfig.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += Half ICE Iex IlmImf IlmThread Imath Magick++-6.Q16 MagickCore-6.Q16
-WANTLIB += MagickWand-6.Q16 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
-WANTLIB += atkmm-1.6 atspi bz2 c cairo cairo-gobject cairomm-1.0
-WANTLIB += db dbus-1 djvulibre epoxy expat ffi fftw3 fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4
-WANTLIB += glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 harfbuzz jack jasper jbig
-WANTLIB += jpeg lcms2 ltdl lzma m mlt mlt++ pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pangomm-1.4 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs sigc-2.0 IexMath synfig tiff webp wmf-0.2
-WANTLIB += wmflite-0.2 xcb xcb-render xcb-shm xml++-2.6 xml2 z
+WANTLIB += Half ICE Iex IexMath IlmImf IlmThread Imath Magick++-6.Q16
+WANTLIB += MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xcomposite
+WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += Xt atk-1.0 atk-bridge-2.0 atkmm-1.6 atspi bz2 c cairo
+WANTLIB += cairo-gobject cairomm-1.0 db dbus-1 djvulibre epoxy
+WANTLIB += expat ffi fftw3 fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 gtkmm-3.0 harfbuzz
+WANTLIB += jack jbig jpeg lcms2 ltdl lzma m mlt mlt++ openjp2
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs sigc-2.0 synfig
+WANTLIB += tiff webp xcb xcb-render xcb-shm xml++-2.6 xml2 z
 
 MASTER_SITES=		http://download.tuxfamily.org/synfig/releases/${V}/
 
