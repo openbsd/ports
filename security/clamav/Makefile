@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.101 2015/11/20 16:50:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2015/12/01 23:25:09 sthen Exp $
 
 COMMENT=		virus scanner
-DISTNAME=		clamav-0.98.7
-REVISION=		1
+DISTNAME=		clamav-0.99
 
 CATEGORIES=		security
 
-SHARED_LIBS +=	clamav               22.1     # 7.26
-SHARED_LIBS +=	clamunrar            3.0      # 7.26
+SHARED_LIBS +=	clamav               22.2     # 8.1
+SHARED_LIBS +=	clamunrar            3.0      # 8.1
 SHARED_LIBS +=	clamunrar_iface      3.0
 
 HOMEPAGE=		http://www.clamav.net/
@@ -18,13 +17,14 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += bz2 c crypto curl idn ltdl lzma m milter ncurses nghttp2
-WANTLIB += pthread ssl stdc++ xml2 z
+WANTLIB += pcre pthread ssl stdc++ xml2 z
 
 BUILD_DEPENDS=		devel/check \
 			devel/libexecinfo
 
 LIB_DEPENDS=		archivers/bzip2 \
 			devel/libtool,-ltdl \
+			devel/pcre \
 			mail/sendmail,-libmilter \
 			net/curl \
 			textproc/libxml
