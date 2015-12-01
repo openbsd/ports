@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/11 21:14:26 juanfra Exp $
+# $OpenBSD: Makefile,v 1.5 2015/12/01 18:26:50 juanfra Exp $
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.2.1
+V =			6.3
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -40,7 +40,7 @@ MASTER_SITES =		https://www.cs.utah.edu/plt/installers/${V}/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
-MODULES =		converters/libiconv
+MODULES +=		converters/libiconv
 
 LIB_DEPENDS =		devel/libffi>=3.0.9p2
 
@@ -60,13 +60,16 @@ CONFIGURE_ARGS +=	--enable-libffi \
 			--enable-gracket \
 			--enable-foreign \
 			--enable-lt=${LIBTOOL}
-# "backtrace" is expensive.
-# http://article.gmane.org/gmane.comp.lang.racket.devel/6700
-# disable "docs" to reduce the number of deps and the build time
-# "places" and "futures" require thread-local storage and atomic CAS
-# http://article.gmane.org/gmane.comp.lang.racket.user/16723
+# - "backtrace" is expensive.
+#   http://article.gmane.org/gmane.comp.lang.racket.devel/6700
+# - disable "docs" to reduce the number of deps and the build time
+# - "places" and "futures" require thread-local storage and atomic CAS
+#   http://article.gmane.org/gmane.comp.lang.racket.user/16723
+# - The installation of shared libraries is not recommended.
 CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-docs \
+			--disable-libs \
+			--disable-shared \
 			--disable-places \
 			--disable-futures
 
