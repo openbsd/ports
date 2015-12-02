@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/12/02 13:08:30 jasper Exp $
 
 COMMENT =	management tool for sensitive data
 
-DISTNAME =	keepassx-0.4.3
+V =		0.4.3
+DISTNAME =	keepassx-$V
 REVISION =	2
 CATEGORIES =	security
 
@@ -13,13 +14,13 @@ MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=keepassx/}
+MASTER_SITES =	https://www.keepassx.org/releases/$V/
 
 MODULES =	x11/qt4 devel/cmake
 
 WANTLIB += QtGui QtXml X11 Xtst c m pthread stdc++
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		misc/shared-mime-info 
+		misc/shared-mime-info
 
 .include <bsd.port.mk>
