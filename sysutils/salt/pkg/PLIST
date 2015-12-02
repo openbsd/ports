@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2015/11/17 09:40:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2015/12/02 09:29:55 ajacoutot Exp $
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @comment needs a homedir to store ssh keys for GitFS
 @newgroup _salt:722
@@ -361,6 +361,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/grains/mdadm.py
 lib/python${MODPY_VERSION}/site-packages/salt/grains/mdadm.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/grains/opts.py
 lib/python${MODPY_VERSION}/site-packages/salt/grains/opts.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/grains/philips_hue.py
+lib/python${MODPY_VERSION}/site-packages/salt/grains/philips_hue.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/grains/rest_sample.py
 lib/python${MODPY_VERSION}/site-packages/salt/grains/rest_sample.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/key.py
@@ -783,6 +785,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/parted.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/parted.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/pecl.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/pecl.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/modules/philips_hue.py
+lib/python${MODPY_VERSION}/site-packages/salt/modules/philips_hue.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/pillar.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/pillar.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/pip.py
@@ -1196,6 +1200,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/proxy/junos.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/junos.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/marathon.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/marathon.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/proxy/philips_hue.py
+lib/python${MODPY_VERSION}/site-packages/salt/proxy/philips_hue.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/rest_sample.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/rest_sample.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/ssh_sample.py
