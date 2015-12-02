@@ -1,0 +1,15 @@
+$OpenBSD: patch-Completion_Unix_Command__nm,v 1.1 2015/12/02 14:27:59 jasper Exp $
+
+Generate completions for OpenBSD's so versioned files (libfoo.so.0.0)
+
+--- Completion/Unix/Command/_nm.orig	Wed Dec  2 14:01:47 2015
++++ Completion/Unix/Command/_nm	Wed Dec  2 14:01:55 2015
+@@ -3,7 +3,7 @@
+ local args files variant
+ 
+ _nm_object_file() {
+-  [[ -x $REPLY || $REPLY = *.([ao]|so|elf) ]]
++  [[ -x $REPLY || $REPLY = *.([ao]|so|elf)(.([0-9]*.[0-9]*))? ]]
+ }
+ 
+ files="*:object file:_files -g '*(-.e:_nm_object_file:)'"
