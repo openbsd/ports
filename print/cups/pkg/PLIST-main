@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2015/09/01 16:23:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2015/12/02 12:37:37 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
@@ -681,8 +681,6 @@ share/examples/cups/empty.conf
 @mode 0644
 @sample ${SYSCONFDIR}/cups/subscriptions.conf
 @mode
-share/examples/cups/interfaces/
-@sample ${SYSCONFDIR}/cups/interfaces/
 share/examples/cups/ppd/
 @sample ${SYSCONFDIR}/cups/ppd/
 @mode 0640

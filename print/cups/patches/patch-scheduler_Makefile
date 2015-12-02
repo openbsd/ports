@@ -1,7 +1,7 @@
-$OpenBSD: patch-scheduler_Makefile,v 1.12 2015/09/01 16:23:51 ajacoutot Exp $
---- scheduler/Makefile.orig	Tue Feb 17 14:10:19 2015
-+++ scheduler/Makefile	Tue Sep  1 18:13:41 2015
-@@ -157,21 +157,6 @@ install-data:
+$OpenBSD: patch-scheduler_Makefile,v 1.13 2015/12/02 12:37:37 ajacoutot Exp $
+--- scheduler/Makefile.orig	Mon Oct 19 20:49:28 2015
++++ scheduler/Makefile	Wed Dec  2 13:28:37 2015
+@@ -155,21 +155,6 @@ install-data:
  		echo Creating $(SERVERROOT)/ssl...; \
  		$(INSTALL_DIR) -m 700 -g $(CUPS_GROUP) $(SERVERROOT)/ssl; \
  	fi
@@ -23,7 +23,7 @@ $OpenBSD: patch-scheduler_Makefile,v 1.12 2015/09/01 16:23:51 ajacoutot Exp $
  	if test "x$(INITDIR)" != x; then \
  		echo Installing init scripts...; \
  		$(INSTALL_DIR) -m 755 $(BUILDROOT)$(INITDIR)/init.d; \
-@@ -450,11 +435,9 @@ cups-lpd:	cups-lpd.o ../cups/$(LIBCUPS)
+@@ -448,11 +433,9 @@ cups-lpd:	cups-lpd.o ../cups/$(LIBCUPS)
  # libcupsmime.so.1
  #
  
