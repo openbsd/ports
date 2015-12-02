@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2015/09/11 07:26:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2015/12/02 09:44:25 ajacoutot Exp $
 
 # WARNING: mmap(2) is not fully POSIX on OpenBSD so cyrus needs to
 # map_refresh on every lock which will incure a performance penalty
@@ -9,7 +9,7 @@ SHARED_ONLY=	Yes
 
 COMMENT=	Cyrus IMAP server
 
-V=		2.5.6
+V=		2.5.7
 DISTNAME=	cyrus-imapd-${V}
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0
@@ -70,17 +70,17 @@ SIEVEREF=	lib/imapoptions man/imapd.conf.5 \
 
 pre-configure:
 .for i in lib/imapoptions man/imapd.conf.5
-	perl -pi -e "s,/usr/cyrus,${PREFIX}/cyrus,g;" \
+	sed -i -e "s,/usr/cyrus,${PREFIX}/cyrus,g;" \
 		-e "s,/usr/local/bin/gdb,/usr/bin/gdb,g" \
 		${WRKSRC}/${i}
 .endfor
 
 .for i in ${SENDMAILREF}
-	perl -pi -e "s,/usr/lib/sendmail,/usr/sbin/sendmail,g" ${WRKSRC}/${i}
+	sed -i "s,/usr/lib/sendmail,/usr/sbin/sendmail,g" ${WRKSRC}/${i}
 .endfor
 
 .for i in ${SIEVEREF}
-	perl -pi -e "s,/usr/sieve,/var/sieve,g" ${WRKSRC}/${i}
+	sed -i "s,/usr/sieve,/var/sieve,g" ${WRKSRC}/${i}
 .endfor
 
 post-install:
