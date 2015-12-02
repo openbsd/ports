@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.327 2015/11/30 11:57:55 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.328 2015/12/02 13:03:14 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -789,6 +789,8 @@ my $cve = {
 	'audio/flac' => 'flac-<1.3.0p1',
 	'www/drupal6/views' => 'drupal6-views-<2.18',
 	'graphics/tiff' => 'tiff-<4.0.4beta',
+	'net/lldpd' => 'lldpd-<0.7.18p0',
+	'devel/pcre' => 'pcre-<8.38',
 };
 
 # ->check_security($path)
