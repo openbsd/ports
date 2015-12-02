@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.197 2015/11/12 01:21:32 jca Exp $
+# $OpenBSD: Makefile,v 1.198 2015/12/02 12:46:15 jca Exp $
 
+BROKEN-alpha=	undefined reference to __builtin_parity
 BROKEN-powerpc=	undefined reference to __builtin_parity
 BROKEN-sparc64=	undefined reference to __builtin_parity
 
