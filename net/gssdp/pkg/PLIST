@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/08/10 11:06:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/12/02 07:39:45 jasper Exp $
 @conflict gupnp-vala-<=0.10.3p0
 @bin bin/gssdp-device-sniffer
 include/gssdp-1.0/
@@ -30,7 +30,6 @@ share/gtk-doc/html/gssdp/gssdp-Error-codes.html
 share/gtk-doc/html/gssdp/gssdp.devhelp2
 share/gtk-doc/html/gssdp/home.png
 share/gtk-doc/html/gssdp/index.html
-share/gtk-doc/html/gssdp/index.sgml
 share/gtk-doc/html/gssdp/left-insensitive.png
 share/gtk-doc/html/gssdp/left.png
 share/gtk-doc/html/gssdp/right-insensitive.png
