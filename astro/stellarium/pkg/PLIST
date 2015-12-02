@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/10/26 06:35:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/12/02 09:20:34 ajacoutot Exp $
 @bin bin/stellarium
 @man man/man1/stellarium.1
 share/appdata/
@@ -64,6 +64,7 @@ share/stellarium/landscapes/garching/garching-ground3.png
 share/stellarium/landscapes/garching/landscape.ini
 share/stellarium/landscapes/geneva/
 share/stellarium/landscapes/geneva/description.ar.utf8
+share/stellarium/landscapes/geneva/description.be.utf8
 share/stellarium/landscapes/geneva/description.de.utf8
 share/stellarium/landscapes/geneva/description.en.utf8
 share/stellarium/landscapes/geneva/description.fr.utf8
@@ -75,6 +76,7 @@ share/stellarium/landscapes/geneva/horizon_Geneve.txt
 share/stellarium/landscapes/geneva/landscape.ini
 share/stellarium/landscapes/grossmugl/
 share/stellarium/landscapes/grossmugl/description.ar.utf8
+share/stellarium/landscapes/grossmugl/description.be.utf8
 share/stellarium/landscapes/grossmugl/description.de.utf8
 share/stellarium/landscapes/grossmugl/description.en.utf8
 share/stellarium/landscapes/grossmugl/description.fr.utf8
@@ -253,6 +255,7 @@ share/stellarium/landscapes/uranus/landscape.ini
 share/stellarium/landscapes/uranus/uranus-256.png
 share/stellarium/landscapes/zero/
 share/stellarium/landscapes/zero/description.ar.utf8
+share/stellarium/landscapes/zero/description.be.utf8
 share/stellarium/landscapes/zero/description.de.utf8
 share/stellarium/landscapes/zero/description.en.utf8
 share/stellarium/landscapes/zero/description.fr.utf8
@@ -680,6 +683,7 @@ share/stellarium/skycultures/boorong/constellationsart.fab
 share/stellarium/skycultures/boorong/constellationship.fab
 share/stellarium/skycultures/boorong/cwar.png
 share/stellarium/skycultures/boorong/cwarepil.png
+share/stellarium/skycultures/boorong/description.be.utf8
 share/stellarium/skycultures/boorong/description.de.utf8
 share/stellarium/skycultures/boorong/description.en.utf8
 share/stellarium/skycultures/boorong/description.hu.utf8
@@ -983,6 +987,7 @@ share/stellarium/skycultures/romanian/corbul.png
 share/stellarium/skycultures/romanian/crapii.png
 share/stellarium/skycultures/romanian/crucea-mare.png
 share/stellarium/skycultures/romanian/crucea-mica.png
+share/stellarium/skycultures/romanian/description.be.utf8
 share/stellarium/skycultures/romanian/description.en.utf8
 share/stellarium/skycultures/romanian/description.pt_BR.utf8
 share/stellarium/skycultures/romanian/description.ro.utf8
@@ -1027,6 +1032,7 @@ share/stellarium/skycultures/siberian/
 share/stellarium/skycultures/siberian/constellation_names.eng.fab
 share/stellarium/skycultures/siberian/constellations_boundaries.dat
 share/stellarium/skycultures/siberian/constellationship.fab
+share/stellarium/skycultures/siberian/description.be.utf8
 share/stellarium/skycultures/siberian/description.en.utf8
 share/stellarium/skycultures/siberian/description.hu.utf8
 share/stellarium/skycultures/siberian/description.pt_BR.utf8
@@ -1057,6 +1063,7 @@ share/stellarium/skycultures/tukano/constellation_names.eng.fab
 share/stellarium/skycultures/tukano/constellations_boundaries.dat
 share/stellarium/skycultures/tukano/constellationsart.fab
 share/stellarium/skycultures/tukano/constellationship.fab
+share/stellarium/skycultures/tukano/description.be.utf8
 share/stellarium/skycultures/tukano/description.en.utf8
 share/stellarium/skycultures/tukano/description.uk.utf8
 share/stellarium/skycultures/tukano/info.ini
@@ -1184,6 +1191,7 @@ share/stellarium/skycultures/western_rey/
 share/stellarium/skycultures/western_rey/Rey_cover.png
 share/stellarium/skycultures/western_rey/constellation_names.eng.fab
 share/stellarium/skycultures/western_rey/constellationship.fab
+share/stellarium/skycultures/western_rey/description.be.utf8
 share/stellarium/skycultures/western_rey/description.de.utf8
 share/stellarium/skycultures/western_rey/description.en.utf8
 share/stellarium/skycultures/western_rey/description.ru.utf8
