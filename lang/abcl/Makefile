@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/11 20:12:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/12/02 07:09:44 benoit Exp $
 
 COMMENT =		Common Lisp dialect for the Java Virtual Machine
 
-V =			1.3.2
+V =			1.3.3
 DISTNAME =		abcl-src-${V}
 PKGNAME =		abcl-${V}
 PKG_ARCH =		*
