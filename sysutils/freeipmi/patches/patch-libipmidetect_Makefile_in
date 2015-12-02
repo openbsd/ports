@@ -1,7 +1,7 @@
-$OpenBSD: patch-libipmidetect_Makefile_in,v 1.1 2015/08/11 21:12:45 sthen Exp $
---- libipmidetect/Makefile.in.orig	Thu Jul 30 15:06:48 2015
-+++ libipmidetect/Makefile.in	Thu Jul 30 15:06:58 2015
-@@ -183,7 +183,7 @@ LIBIPMIMONITORING_VERSION_MAJOR = @LIBIPMIMONITORING_V
+$OpenBSD: patch-libipmidetect_Makefile_in,v 1.2 2015/12/02 14:33:06 sthen Exp $
+--- libipmidetect/Makefile.in.orig	Tue Dec  1 22:29:37 2015
++++ libipmidetect/Makefile.in	Wed Dec  2 14:17:20 2015
+@@ -189,7 +189,7 @@ LIBIPMIMONITORING_VERSION_MAJOR = @LIBIPMIMONITORING_V
  LIBIPMIMONITORING_VERSION_MINOR = @LIBIPMIMONITORING_VERSION_MINOR@
  LIBIPMIMONITORING_VERSION_PATCH = @LIBIPMIMONITORING_VERSION_PATCH@
  LIBOBJS = @LIBOBJS@
