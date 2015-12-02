@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/12/01 08:16:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/12/02 16:11:12 ajacoutot Exp $
 
 COMMENT =	Context Free Design Grammar
 
@@ -19,6 +19,8 @@ MASTER_SITES =	http://www.contextfreeart.org/download/
 EXTRACT_SUFX =	.tgz
 
 WANTLIB =	c m png z
+
+BUILD_DEPENDS =	devel/bison
 
 LIB_DEPENDS =	graphics/png
 
