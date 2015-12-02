@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2015/09/19 23:23:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2015/12/02 21:52:16 naddy Exp $
 
 COMMENT=	Internet Relay Chat client
 
-VERSION=	20150903
+VERSION=	20151120
 DISTNAME=	ircii-${VERSION}
 PKGNAME=	ircII-${VERSION}
 CATEGORIES=	net
@@ -27,6 +27,8 @@ MODULES =	converters/libiconv
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-liconv"
+
+SUBST_VARS=	VERSION
 
 NO_TEST=	Yes
 
