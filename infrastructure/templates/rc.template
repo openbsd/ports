@@ -5,10 +5,10 @@ See rc.subr(8) for more information.
 -----------------------------------8<-----------------------------------
 #!/bin/sh
 #
-# $OpenBSD: rc.template,v 1.8 2015/11/16 13:04:36 ajacoutot Exp $
+# $OpenBSD: rc.template,v 1.9 2015/12/02 10:29:09 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/foobar"
-#daemon_flags=""
+#daemon_flags=
 #daemon_timeout="30"
 #daemon_user="root"
 
