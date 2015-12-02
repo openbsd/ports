@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_fping_c,v 1.1 2015/10/22 13:48:40 sthen Exp $
---- src/fping.c.orig	Wed Oct 14 20:48:07 2015
-+++ src/fping.c	Wed Oct 21 11:06:05 2015
+$OpenBSD: patch-src_fping_c,v 1.2 2015/12/02 12:40:04 jca Exp $
+--- src/fping.c.orig	Wed Oct 21 21:02:56 2015
++++ src/fping.c	Wed Dec  2 08:22:39 2015
 @@ -369,6 +369,9 @@ int main( int argc, char **argv )
          setuid( getuid() );
      }
@@ -23,11 +23,10 @@ $OpenBSD: patch-src_fping_c,v 1.1 2015/10/22 13:48:40 sthen Exp $
      /* validate various option settings */
  
      if (ttl > 255) {
-@@ -775,6 +783,14 @@ int main( int argc, char **argv )
-     }
+@@ -776,6 +784,14 @@ int main( int argc, char **argv )
      else {
          usage(1);
-+    }
+     }
 +
 +    if (name_flag) { /* done with file, drop rpath */
 +        if (pledge("stdio inet dns", NULL) == -1)
@@ -35,6 +34,16 @@ $OpenBSD: patch-src_fping_c,v 1.1 2015/10/22 13:48:40 sthen Exp $
 +    } else { /* and drop dns unless we do reverse lookups */
 +        if (pledge("stdio inet", NULL) == -1)
 +            perror("pledge");
-     }
++    }
      
      if( !num_hosts )
+         exit(1);
+@@ -1493,7 +1509,7 @@ int wait_for_reply(long wait_time)
+     ip = ( struct ip* )buffer;
+ 
+ #ifndef IPV6
+-#if defined( __alpha__ ) && __STDC__ && !defined( __GLIBC__ )
++#if defined( __alpha__ ) && __STDC__ && !defined( __GLIBC__ ) && !defined(__OpenBSD__)
+     /* The alpha headers are decidedly broken.
+      * Using an ANSI compiler, it provides ip_vhl instead of ip_hl and
+      * ip_v.  So, to get ip_hl, we mask off the bottom four bits.
