@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2015/06/19 08:53:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/12/03 14:21:33 jasper Exp $
 
 COMMENT=	fetch, filter and deliver mail
 
-V=		1.8
+V=		1.9
 DISTNAME=	fdm-$V
 CATEGORIES=	mail
 
@@ -17,10 +17,7 @@ MASTER_SITES=	https://github.com/nicm/fdm/releases/download/$V/
 
 LIB_DEPENDS +=	databases/tdb>=1.2.7
 
-FAKE_FLAGS=	PREFIX=${PREFIX}
-
-do-configure:
-	cd ${WRKSRC} && ksh configure
+CONFIGURE_STYLE =	gnu
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fdm
