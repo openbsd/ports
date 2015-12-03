@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2015/11/19 00:55:23 mmcc Exp $
+# $OpenBSD: Makefile,v 1.13 2015/12/03 09:22:18 sthen Exp $
+
+BROKEN-hppa=		__sync_lock_test_and_set_4 in zzuf_mutex_lock
 
 COMMENT=		transparent application input fuzzer
 
