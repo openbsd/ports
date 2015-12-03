@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/01 22:37:10 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2015/12/03 16:52:56 edd Exp $
 
 COMMENT =		web-based notebook for interactive computing
 
 MODPY_EGG_VERSION =	4.0.6
 DISTNAME =		notebook-${MODPY_EGG_VERSION}
 PKGNAME =		jupyter-notebook-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		www devel
 
@@ -22,7 +23,7 @@ RUN_DEPENDS +=		www/py-jinja2 \
 			devel/py-nbformat \
 			devel/py-nbconvert \
 			devel/py-ipykernel \
-			devel/ipython \
+			devel/ipython>=4.0.0 \
 			www/py-terminado
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
