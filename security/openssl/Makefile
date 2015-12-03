@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/09/12 19:29:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/12/03 16:21:30 sthen Exp $
 
 COMMENT=	TLS/SSL library and tools
 
-V=		1.0.2d
+V=		1.0.2e
 DISTNAME=	openssl-$V
 PKGNAME=	openssl-$V
 
@@ -10,7 +10,7 @@ SHLIBVER=	3.0
 SHARED_LIBS=	crypto ${SHLIBVER} \
 		ssl ${SHLIBVER}
 
-CATEGORIES=	security net games
+CATEGORIES=	security net
 
 HOMEPAGE=	http://www.openssl.org/
 

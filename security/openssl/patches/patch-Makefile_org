@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_org,v 1.1 2015/12/03 16:21:30 sthen Exp $
+--- Makefile.org.orig	Thu Dec  3 16:15:27 2015
++++ Makefile.org	Thu Dec  3 16:15:35 2015
+@@ -638,7 +638,7 @@ install_docs:
+ 		$(INSTALL_PREFIX)$(MANDIR)/man3 \
+ 		$(INSTALL_PREFIX)$(MANDIR)/man5 \
+ 		$(INSTALL_PREFIX)$(MANDIR)/man7
+-	@pod2man="`cd ./util; ./pod2mantest $(PERL)`"; \
++	@pod2man=pod2man; \
+ 	here="`pwd`"; \
+ 	filecase=; \
+ 	case "$(PLATFORM)" in DJGPP|Cygwin*|mingw*|darwin*-*-cc) \

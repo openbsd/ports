@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/09/12 19:29:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/12/03 16:21:30 sthen Exp $
 @bin bin/eopenssl
 include/eopenssl/
 include/eopenssl/openssl/
@@ -407,7 +407,12 @@ lib/eopenssl/man/man3/
 @man lib/eopenssl/man/man3/BUF_MEM_free.3
 @man lib/eopenssl/man/man3/BUF_MEM_grow.3
 @man lib/eopenssl/man/man3/BUF_MEM_new.3
+@man lib/eopenssl/man/man3/BUF_MEM_new_ex.3
+@man lib/eopenssl/man/man3/BUF_memdup.3
 @man lib/eopenssl/man/man3/BUF_strdup.3
+@man lib/eopenssl/man/man3/BUF_strlcat.3
+@man lib/eopenssl/man/man3/BUF_strlcpy.3
+@man lib/eopenssl/man/man3/BUF_strndup.3
 @man lib/eopenssl/man/man3/CMS_ReceiptRequest_create0.3
 @man lib/eopenssl/man/man3/CMS_ReceiptRequest_get0_values.3
 @man lib/eopenssl/man/man3/CMS_RecipientInfo_decrypt.3
@@ -829,6 +834,7 @@ lib/eopenssl/man/man3/
 @man lib/eopenssl/man/man3/EVP_SealUpdate.3
 @man lib/eopenssl/man/man3/EVP_SignFinal.3
 @man lib/eopenssl/man/man3/EVP_SignInit.3
+@man lib/eopenssl/man/man3/EVP_SignInit_ex.3
 @man lib/eopenssl/man/man3/EVP_SignUpdate.3
 @man lib/eopenssl/man/man3/EVP_VerifyFinal.3
 @man lib/eopenssl/man/man3/EVP_VerifyInit.3
@@ -1137,6 +1143,7 @@ lib/eopenssl/man/man3/
 @man lib/eopenssl/man/man3/SSL_CTX_callback_ctrl.3
 @man lib/eopenssl/man/man3/SSL_CTX_check_private_key.3
 @man lib/eopenssl/man/man3/SSL_CTX_clear_chain_certs.3
+@man lib/eopenssl/man/man3/SSL_CTX_clear_extra_chain_certs.3
 @man lib/eopenssl/man/man3/SSL_CTX_clear_options.3
 @man lib/eopenssl/man/man3/SSL_CTX_ctrl.3
 @man lib/eopenssl/man/man3/SSL_CTX_flush_sessions.3
@@ -1262,6 +1269,7 @@ lib/eopenssl/man/man3/
 @man lib/eopenssl/man/man3/SSL_alert_type_string_long.3
 @man lib/eopenssl/man/man3/SSL_build_cert_chain.3
 @man lib/eopenssl/man/man3/SSL_callback_ctrl.3
+@man lib/eopenssl/man/man3/SSL_check_chain.3
 @man lib/eopenssl/man/man3/SSL_check_private_key.3
 @man lib/eopenssl/man/man3/SSL_clear.3
 @man lib/eopenssl/man/man3/SSL_clear_chain_certs.3
