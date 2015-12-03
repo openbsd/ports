@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/09/09 19:27:33 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/12/03 10:08:24 rpointel Exp $
 bin/thg
 lib/nautilus/
 lib/nautilus/extensions-3.0/
@@ -283,6 +283,7 @@ share/locale/pt_BR/LC_MESSAGES/tortoisehg.mo
 share/locale/ru/LC_MESSAGES/tortoisehg.mo
 share/locale/sr/LC_MESSAGES/tortoisehg.mo
 share/locale/sv/LC_MESSAGES/tortoisehg.mo
+share/locale/th/LC_MESSAGES/tortoisehg.mo
 share/locale/tr/LC_MESSAGES/tortoisehg.mo
 share/locale/uk/LC_MESSAGES/tortoisehg.mo
 share/locale/zh_CN/LC_MESSAGES/tortoisehg.mo
