@@ -1,0 +1,13 @@
+$OpenBSD: patch-libraries_source_spidermonkey_patch_sh,v 1.1 2015/12/03 22:03:18 pascal Exp $
+--- libraries/source/spidermonkey/patch.sh.orig.port	Fri Nov 27 18:41:05 2015
++++ libraries/source/spidermonkey/patch.sh	Fri Nov 27 18:41:18 2015
+@@ -23,3 +23,9 @@ patch -p1 -i ../FixBug1119228.diff
+ 
+ # Fix debug build failure on platforms with Ion disabled (eg AArch64)
+ patch -p1 -i ../FixBug1037470.diff
++
++# patch to fix compilation on systems with proper endian.h
++patch -p1 -i ../FixForEndian.diff
++
++# patch to fix SO_VERSION on OpenBSD
++patch -p1 -i ../FixSoVersionOpenBSD.diff

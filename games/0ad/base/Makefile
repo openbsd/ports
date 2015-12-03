@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/21 11:27:08 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2015/12/03 22:03:18 pascal Exp $
 
 COMMENT =		historical real-time strategy game
 
@@ -8,7 +8,7 @@ PKGNAME =		0ad-${V}
 SO_VERSION =	0.0
 SHARED_LIBS +=  mozjs31-ps-release        ${SO_VERSION}
 
-WANTLIB += GL SDL X11 Xcursor boost_filesystem boost_system c curl
+WANTLIB += GL SDL2 X11 Xcursor boost_filesystem boost_system c curl
 WANTLIB += enet execinfo gloox icui18n icuuc jpeg m miniupnpc
 WANTLIB += nspr4 ogg openal plc4 plds4 png pthread vorbis vorbisfile
 WANTLIB += xml2 z
@@ -20,7 +20,7 @@ LIB_DEPENDS =		audio/libvorbis \
 			devel/boost \
 			devel/libexecinfo \
 			devel/nspr \
-			devel/sdl \
+			devel/sdl2 \
 			graphics/jpeg \
 			graphics/png \
 			net/curl \

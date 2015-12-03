@@ -1,21 +1,7 @@
-$OpenBSD: patch-libraries_source_spidermonkey_build_sh,v 1.1 2015/09/21 11:27:08 pascal Exp $
---- libraries/source/spidermonkey/build.sh.orig.port	Sat Jan 24 15:46:52 2015
-+++ libraries/source/spidermonkey/build.sh	Mon Aug 31 10:52:29 2015
-@@ -84,6 +84,13 @@ patch -p1 -i ../FixTraceLoggerFlushing.diff
- # It makes quite a big difference for performance.
- # https://bugzilla.mozilla.org/show_bug.cgi?id=1046176
- patch -p1 -i ../FixForOfBailouts.diff
-+
-+# patch to fix compilation on systems with proper endian.h
-+patch -p1 -i ../FixForEndian.diff
-+
-+# patch to fix SO_VERSION on OpenBSD
-+patch -p1 -i ../FixSoVersionOpenBSD.diff
-+
- cd ..
- 
- # Clean up header files that may be left over by earlier versions of SpiderMonkey
-@@ -99,17 +106,17 @@ rm -rf build-release
+$OpenBSD: patch-libraries_source_spidermonkey_build_sh,v 1.2 2015/12/03 22:03:18 pascal Exp $
+--- libraries/source/spidermonkey/build.sh.orig.port	Wed Sep 30 22:28:13 2015
++++ libraries/source/spidermonkey/build.sh	Fri Nov 27 18:40:37 2015
+@@ -86,17 +86,17 @@ rm -rf build-release
  # the LIBRARY_NAME for each build.
  # (We use perl instead of sed so that it works with MozillaBuild on Windows,
  # which has an ancient sed.)
@@ -40,7 +26,7 @@ $OpenBSD: patch-libraries_source_spidermonkey_build_sh,v 1.1 2015/09/21 11:27:08
  ${MAKE} ${MAKE_OPTS}
  cd ..
  
-@@ -134,10 +141,10 @@ else
+@@ -121,10 +121,10 @@ else
    LIB_DST_SUFFIX=.so
    if [ "`uname -s`" = "OpenBSD" ]
    then
@@ -55,7 +41,7 @@ $OpenBSD: patch-libraries_source_spidermonkey_build_sh,v 1.1 2015/09/21 11:27:08
    fi
  fi
  
-@@ -147,12 +154,12 @@ fi
+@@ -134,12 +134,12 @@ fi
  mkdir -p ${INCLUDE_DIR_DEBUG}
  mkdir -p ${INCLUDE_DIR_RELEASE}
  cp -R -L mozjs31/js/src/build-release/dist/include/* ${INCLUDE_DIR_RELEASE}/
