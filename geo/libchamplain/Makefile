@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.31 2015/09/18 18:43:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2015/12/03 11:29:23 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	library to provide a GTK+ widget to display maps
 
 GNOME_PROJECT=	libchamplain
-GNOME_VERSION=	0.12.11
+GNOME_VERSION=	0.12.12
 API_VERSION=	0.12
 
-SHARED_LIBS +=  champlain-${API_VERSION}       1.2      # 4.3
-SHARED_LIBS +=  champlain-gtk-${API_VERSION}   1.1      # 4.3
+SHARED_LIBS +=  champlain-${API_VERSION}       1.3      # 7.4
+SHARED_LIBS +=  champlain-gtk-${API_VERSION}   1.1      # 7.4
 
 SUBST_VARS+=	API_VERSION
 

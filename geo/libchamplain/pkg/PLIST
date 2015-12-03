@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/09/18 05:48:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/12/03 11:29:23 jasper Exp $
 @pkgpath geo/libchamplain/libchamplain-gtk
 @pkgpath geo/libchamplain/core
 include/libchamplain-${API_VERSION}/
@@ -10,6 +10,7 @@ include/libchamplain-${API_VERSION}/champlain/champlain-custom-marker.h
 include/libchamplain-${API_VERSION}/champlain/champlain-defines.h
 include/libchamplain-${API_VERSION}/champlain/champlain-enum-types.h
 include/libchamplain-${API_VERSION}/champlain/champlain-error-tile-renderer.h
+include/libchamplain-${API_VERSION}/champlain/champlain-exportable.h
 include/libchamplain-${API_VERSION}/champlain/champlain-features.h
 include/libchamplain-${API_VERSION}/champlain/champlain-file-cache.h
 include/libchamplain-${API_VERSION}/champlain/champlain-file-tile-source.h
@@ -64,6 +65,7 @@ share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainBoundingBox.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainCoordinate.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainCustomMarker.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainErrorTileRenderer.html
+share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainExportable.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainFileCache.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainFileTileSource.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainImageRenderer.html
