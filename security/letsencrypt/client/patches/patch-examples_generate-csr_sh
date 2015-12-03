@@ -1,0 +1,25 @@
+$OpenBSD: patch-examples_generate-csr_sh,v 1.1 2015/12/03 20:49:58 sthen Exp $
+
+environment parsing was removed from LibreSSL's libraries.
+
+--- examples/generate-csr.sh.orig	Thu Dec  3 20:29:24 2015
++++ examples/generate-csr.sh	Thu Dec  3 20:29:26 2015
+@@ -17,7 +17,11 @@ do
+   domains="$domains,DNS:$x"
+ done
+ 
+-SAN="$domains" openssl req -config "${OPENSSL_CNF:-openssl.cnf}" \
++_config=${OPENSSL_CNF:-openssl.cnf}
++_conftemp=`mktemp /tmp/generate-csr.cnf.XXXXXXXX` || exit 1
++sed "s%\${ENV::SAN}%$domains%" < $_config > $_conftemp
++
++openssl req -config "$_conftemp" \
+   -new -nodes -subj '/' -reqexts san \
+   -out "${CSR_PATH:-csr.der}" \
+   -keyout "${KEY_PATH:-key.pem}" \
+@@ -25,4 +29,5 @@ SAN="$domains" openssl req -config "${OPENSSL_CNF:-ope
+   -outform DER
+ # 512 or 1024 too low for Boulder, 2048 is smallest for tests
+ 
++echo rm $_conftemp
+ echo "You can now run: letsencrypt auth --csr ${CSR_PATH:-csr.der}"

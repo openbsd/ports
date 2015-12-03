@@ -1,0 +1,16 @@
+$OpenBSD: patch-examples_cli_ini,v 1.1 2015/12/03 20:49:58 sthen Exp $
+--- examples/cli.ini.orig	Thu Dec  3 20:47:44 2015
++++ examples/cli.ini	Thu Dec  3 20:48:37 2015
+@@ -5,8 +5,10 @@
+ # Use a 4096 bit RSA key instead of 2048
+ rsa-key-size = 4096
+ 
+-# Always use the staging/testing server
+-server = https://acme-staging.api.letsencrypt.org/directory
++# Use the real server
++server = https://acme-v01.api.letsencrypt.org/directory
++# ... or use the staging/testing server
++#server = https://acme-staging.api.letsencrypt.org/directory
+ 
+ # Uncomment and update to register with the specified e-mail address
+ # email = foo@example.com
