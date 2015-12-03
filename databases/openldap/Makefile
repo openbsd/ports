@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.141 2015/10/08 21:19:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.142 2015/12/03 14:55:22 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
 
-DISTNAME =		openldap-2.4.42
-REVISION-server =	1
-REVISION-main =		0
+DISTNAME =		openldap-2.4.43
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
 
@@ -15,13 +13,13 @@ PKGNAME-server =	${DISTNAME:S/-/-server-/}
 FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}
 FULLPKGPATH-main =	databases/openldap,-main
 
-SHARED_LIBS +=	lber                 12.0     # 12.3
-SHARED_LIBS +=	ldap                 13.0     # 12.3
-SHARED_LIBS +=	ldap_r               13.0     # 12.3
-
+SHARED_LIBS +=	lber                 12.0     # 12.6
 SHARED_LIBS +=	lber-2.4             12.0
-SHARED_LIBS +=	ldap-2.4             13.0
-SHARED_LIBS +=	ldap_r-2.4           13.0
+
+SHARED_LIBS +=	ldap                 13.1     # 12.6
+SHARED_LIBS +=	ldap-2.4             13.1
+SHARED_LIBS +=	ldap_r               13.1
+SHARED_LIBS +=	ldap_r-2.4           13.1
 
 CATEGORIES =	databases net
 
