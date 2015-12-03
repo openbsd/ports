@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/09/11 11:44:03 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.4 2015/12/03 21:24:30 sthen Exp $
 
 COMMENT =		number theoretic multiple-precision integer library
 V =			0.42.0
@@ -10,7 +10,7 @@ HOMEPAGE =		http://libtom.net/
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 MASTER_SITES0 =		http://libtom.net/files/
-MASTER_SITES1 =		http://spacehopper.org/mirrors/
+MASTER_SITES1 =		https://spacehopper.org/mirrors/
 DISTFILES +=		ltm-$V.tar.bz2:0 ltm-manual-$V.pdf.gz:1
 
 # Public Domain

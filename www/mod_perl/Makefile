@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/11/19 01:39:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2015/12/03 21:24:32 sthen Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache
 
@@ -9,7 +9,7 @@ CATEGORIES=	www perl5
 # svn checkout; upstream is at http://perl.apache.org/dist/
 # or ${MASTER_SITE_PERL_CPAN:=Apache/} but is now mostly dead
 # for apache 1.x
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 
 HOMEPAGE=	http://perl.apache.org/
 

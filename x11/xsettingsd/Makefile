@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/08/07 21:33:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2015/12/03 21:24:32 sthen Exp $
 
 COMMENT=	lightweight XSETTINGS daemon
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xau Xdmcp c m pthread-stubs stdc++ xcb
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 
 MODULES=	devel/scons
 

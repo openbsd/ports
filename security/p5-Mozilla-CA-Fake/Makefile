@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/30 19:27:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/12/03 21:24:31 sthen Exp $
 
 COMMENT=	access system SSL certificate bundle from Perl
 
@@ -11,7 +11,7 @@ CATEGORIES=	security
 # PD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 
 NO_TEST=	Yes
 

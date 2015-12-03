@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/10/31 21:12:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2015/12/03 21:24:31 sthen Exp $
 
 COMMENT=	full screen visualization of network traffic
 
@@ -6,7 +6,7 @@ DISTNAME=	trafshow-3.1
 REVISION=	0
 CATEGORIES=	net
 
-MASTER_SITES=	http://spacehopper.org/mirrors/ \
+MASTER_SITES=	https://spacehopper.org/mirrors/ \
 		ftp://ftp.nsk.su/pub/RinetSoft/
 MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
 EXTRACT_SUFX=	.tgz

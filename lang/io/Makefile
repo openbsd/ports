@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/11/07 10:07:40 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2015/12/03 21:24:30 sthen Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS =i386 amd64
@@ -16,7 +16,7 @@ SHARED_LIBS =	iovmall			0.0 \
 		coroutine		0.0 \
 		garbagecollector	0.0
 
-MASTER_SITES =  http://spacehopper.org/mirrors/
+MASTER_SITES =  https://spacehopper.org/mirrors/
 
 HOMEPAGE =	http://iolanguage.org/
 

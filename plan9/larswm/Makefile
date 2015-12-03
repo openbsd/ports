@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/02/16 22:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2015/12/03 21:24:31 sthen Exp $
 
 COMMENT=	9wm with automatic window tiling and virtual desktops
 
@@ -8,7 +8,7 @@ CATEGORIES=	plan9
 
 HOMEPAGE =	http://larswm.sourceforge.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=larswm/} \
-		http://spacehopper.org/mirrors/
+		https://spacehopper.org/mirrors/
 
 MAINTAINER =	William Yodlowsky <william@openbsd.org>
 

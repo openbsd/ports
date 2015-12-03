@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/07/30 16:05:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2015/12/03 21:24:32 sthen Exp $
 
 COMMENT=	daemon to modify pf tables from userland
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz
 
 FAKE_FLAGS=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man

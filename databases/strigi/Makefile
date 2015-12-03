@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/04/04 09:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2015/12/03 21:24:29 sthen Exp $
 
 COMMENT =	document indexer
 CATEGORIES =	databases devel textproc sysutils
@@ -10,7 +10,7 @@ DISTNAME =	strigi-0.7.7pl1
 REVISION =	1
 SHARED_ONLY =	Yes
 
-MASTER_SITES =	http://spacehopper.org/mirrors/ \
+MASTER_SITES =	https://spacehopper.org/mirrors/ \
 		ftp://3ps.if.ua/pub/OpenBSD/distfiles/ \
 		http://www.ohvost.ru/dnl/kde/src/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/06/10 11:05:02 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2015/12/03 21:24:31 sthen Exp $
 
 COMMENT=		wireless auditing suite
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=           .tgz
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c crypto curses pcap
 
-MASTER_SITES=		http://spacehopper.org/mirrors/
+MASTER_SITES=		https://spacehopper.org/mirrors/
 
 WRKDIST=		${WRKDIR}/bsd-airtools
 

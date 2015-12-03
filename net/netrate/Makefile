@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/04 15:52:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/12/03 21:24:31 sthen Exp $
 
 COMMENT=		FreeBSD's tcp/udp traffic generator#'
 
@@ -10,7 +10,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c pthread
 
-MASTER_SITES=		http://spacehopper.org/mirrors/
+MASTER_SITES=		https://spacehopper.org/mirrors/
 
 MAKE_ENV=		BINDIR=${PREFIX}/bin NOMAN=Yes
 NO_TEST=		Yes

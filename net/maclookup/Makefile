@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/11/07 17:51:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/12/03 21:24:31 sthen Exp $
 
 COMMENT=	simple filter to look up MAC address vendors
 
@@ -11,7 +11,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # Public Domain
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 
 RUN_DEPENDS=	net/arp-scan,-mac \
 		textproc/p5-Text-CSV

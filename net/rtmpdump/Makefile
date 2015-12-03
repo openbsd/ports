@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/07/06 14:09:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2015/12/03 21:24:31 sthen Exp $
 
 SHARED_LIBS =		rtmp 1.0
 
@@ -21,7 +21,7 @@ WANTLIB =		c crypto m pthread ssl z
 # packaged from git://git.ffmpeg.org/rtmpdump : a107cef9
 # and patch from https://github.com/K-S-V/Scripts/releases/, see
 # http://stream-recorder.com/forum/customized-rtmpdump-binaries-patch-file-t16103.html
-MASTER_SITES =		http://spacehopper.org/mirrors/
+MASTER_SITES =		https://spacehopper.org/mirrors/
 
 MAKE_FLAGS =		CC="${CC}" XCFLAGS="${CFLAGS}" OPT= \
 			THREADLIB=-pthread SO_VERSION=${LIBrtmp_VERSION} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2015/06/05 08:11:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.64 2015/12/03 21:24:32 sthen Exp $
 
 COMMENT-main=		interactive spelling checker
 COMMENT-dutch=		ispell dictionary for Dutch
@@ -19,7 +19,7 @@ HOMEPAGE=	http://fmg-www.cs.ucla.edu/geoff/ispell.html
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
 		ftp://ftp.netsw.org/dict/tools/
 MASTER_SITES0=	http://distcache.freebsd.org/ports-distfiles/
-MASTER_SITES1=	http://spacehopper.org/mirrors/
+MASTER_SITES1=	https://spacehopper.org/mirrors/
 MASTER_SITES2=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
 MASTER_SITES3=	http://www.sslug.dk/locale/ispell/iswedish/
 MASTER_SITES4=	http://natura.di.uminho.pt/download/sources/Dictionaries/ispell/

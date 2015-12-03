@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/21 20:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/12/03 21:24:31 sthen Exp $
 
 COMMENT=	command-line tools to work with RFCs and Internet Drafts
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://trac.tools.ietf.org/tools/ietf-cli/
 PERMIT_PACKAGE_CDROM=	Yes
 
 # packaged from http://svn.tools.ietf.org/svn/tools/ietf-cli/ r32
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 
 MODULES=	lang/python
 MODPY_BUILDDEP=	No

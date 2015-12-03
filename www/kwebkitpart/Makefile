@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/28 10:17:25 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2015/12/03 21:24:32 sthen Exp $
 
 CATEGORIES =	www
 COMMENT =	Webkit-based KPart for KDE
@@ -8,7 +8,7 @@ REVISION =	6
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	ftp://3ps.if.ua/pub/OpenBSD/distfiles/ \
-		http://spacehopper.org/mirrors/ \
+		https://spacehopper.org/mirrors/ \
 		http://www.ohvost.ru/dnl/kde/src/
 
 # LGPLv2+

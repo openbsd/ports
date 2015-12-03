@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/25 11:04:38 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2015/12/03 21:24:32 sthen Exp $
 
 COMMENT=	mount SMB shares from userland via FUSE
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c fuse glib-2.0 smbclient pthread xml2
 
 # http://repo.or.cz/w/usmb.git/snapshot/aa94e132c12faf1a00f547ea4a96b5728612dea6.tar.gz
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	textproc/gsed

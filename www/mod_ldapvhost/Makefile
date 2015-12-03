@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/30 16:05:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2015/12/03 21:24:32 sthen Exp $
 
 COMMENT=		Apache LDAP based virtual hosts module
 
@@ -6,7 +6,7 @@ REVISION=		11
 DISTNAME=		mod_ldapvhost-1.0.2
 CATEGORIES=		www
 
-MASTER_SITES=		http://spacehopper.org/mirrors/
+MASTER_SITES=		https://spacehopper.org/mirrors/
 EXTRACT_SUFX=		.tgz
 
 MODULES+=		apache-module

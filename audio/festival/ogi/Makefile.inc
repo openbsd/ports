@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.8 2013/11/03 14:09:23 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2015/12/03 21:24:29 sthen Exp $
 
-MASTER_SITES?=	http://spacehopper.org/mirrors/festival/
+MASTER_SITES?=	https://spacehopper.org/mirrors/festival/
 DIST_SUBDIR?=	festival
 CATEGORIES?=	audio
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2015/05/18 21:37:19 edd Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2015/12/03 21:24:31 sthen Exp $
 
 CATEGORIES ?=	print
 HOMEPAGE ?=	http://tug.org/texlive/
@@ -15,5 +15,5 @@ V ?=		2014
 DIST_V ?=	${V}0525
 
 MASTER_SITES ?=	ftp://ftp.tug.org/texlive/historic/${V}/ \
-		http://spacehopper.org/mirrors/
+		https://spacehopper.org/mirrors/
 PATCHORIG ?=	.origy

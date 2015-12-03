@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/10/11 21:21:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2015/12/03 21:24:32 sthen Exp $
 
 COMMENT=	X11 fonts (.bdf files) editor
 
@@ -8,7 +8,7 @@ REVISION=	1
 CATEGORIES=	x11 fonts
 
 # original site no longer available.
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

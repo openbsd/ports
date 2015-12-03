@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/03/27 08:41:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2015/12/03 21:24:30 sthen Exp $
 
 COMMENT-main =		physics-based drawing puzzle game
 COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
@@ -18,7 +18,7 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE =	http://numptyphysics.garage.maemo.org/
 
-MASTER_SITES =	http://spacehopper.org/mirrors/
+MASTER_SITES =	https://spacehopper.org/mirrors/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		npcomplete-0.0.r20100124.tar.bz2

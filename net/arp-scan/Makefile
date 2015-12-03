@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/11/03 16:18:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2015/12/03 21:24:31 sthen Exp $
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 COMMENT-mac =	MAC address vendor list
@@ -16,7 +16,7 @@ HOMEPAGE =	http://www.nta-monitor.com/tools-resources/security-tools/arp-scan
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 MASTER_SITES =	http://www.nta-monitor.com/files/arp-scan/
-MASTER_SITES0 =	http://spacehopper.org/mirrors/
+MASTER_SITES0 =	https://spacehopper.org/mirrors/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		oui-iab-$M.tar.bz2:0

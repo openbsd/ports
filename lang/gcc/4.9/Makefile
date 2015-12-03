@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/09/24 22:29:58 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.24 2015/12/03 21:24:30 sthen Exp $
 
 BROKEN-arm = needs binutils-2.17
 
@@ -88,7 +88,7 @@ TEST_DEPENDS = 	devel/dejagnu \
 		${BUILD_PKGPATH},-libs>=4.9,<4.10
 
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-MASTER_SITES0 =	http://spacehopper.org/mirrors/ \
+MASTER_SITES0 =	https://spacehopper.org/mirrors/ \
 		http://distfiles.tmux.org/adastrap/ \
 		https://distfiles.bsdfrog.org/
 MASTER_SITES1 =	ftp://sources.redhat.com/pub/java/

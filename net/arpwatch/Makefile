@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2015/11/03 15:51:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2015/12/03 21:24:31 sthen Exp $
 
 COMMENT=	monitor arp & rarp requests
 
@@ -7,7 +7,7 @@ REVISION=	13
 CATEGORIES=	net
 
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
-MASTER_SITES0=	http://spacehopper.org/mirrors/
+MASTER_SITES0=	https://spacehopper.org/mirrors/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 

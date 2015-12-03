@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/10/30 12:59:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/12/03 21:24:32 sthen Exp $
 
 COMMENT =		light RDF manipulation with LADSPA plugin support
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += crypto curl idn lzma m nghttp2 pthread raptor2 ssl xml2 xslt yajl z
 
-MASTER_SITES =		http://spacehopper.org/mirrors/
+MASTER_SITES =		https://spacehopper.org/mirrors/
 MODULES =		devel/gettext
 
 BUILD_DEPENDS =		audio/ladspa \

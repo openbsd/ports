@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2015/12/03 21:24:31 sthen Exp $
 
 COMMENT=	gateway acl scanner (via static-source port traceroute)
 
@@ -7,7 +7,7 @@ REVISION=	2
 CATEGORIES=     net
 
 #MASTER_SITES=	http://www.packetfactory.net/firewalk/dist/
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 
 #HOMEPAGE=	http://www.packetfactory.net/projects/firewalk/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/05/25 07:54:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/12/03 21:24:30 sthen Exp $
 
 COMMENT=	multi-radix calculator for x11
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xaw Xext Xmu Xt c
 
-MASTER_SITES=	http://spacehopper.org/mirrors/ \
+MASTER_SITES=	https://spacehopper.org/mirrors/ \
 		ftp://aixpdslib.seas.ucla.edu/pub/hexcalc/RISC/3.2/src/
 
 NO_TEST=	Yes

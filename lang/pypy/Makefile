@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/10/30 16:27:06 edd Exp $
+# $OpenBSD: Makefile,v 1.18 2015/12/03 21:24:30 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -32,7 +32,7 @@ WANTLIB +=		bz2 c crypto curses expat ffi gdbm m ncurses panel
 WANTLIB +=		pthread sqlite3 ssl ${MODTCL_LIB} ${MODTK_LIB} util z
 
 MASTER_SITES =		https://bitbucket.org/pypy/pypy/downloads/
-MASTER_SITES0 =		http://spacehopper.org/mirrors/
+MASTER_SITES0 =		https://spacehopper.org/mirrors/
 EXTRACT_SUFX =		.tar.bz2
 
 PSEUDO_FLAVORS =	no_bootstrap

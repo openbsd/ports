@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/12/03 21:24:32 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =	c crypto pthread ssl
 
 # mirrored from git repository
-MASTER_SITES =	http://spacehopper.org/mirrors/
+MASTER_SITES =	https://spacehopper.org/mirrors/
 
 MAKE_ENV =	CFLAGS="${CFLAGS}"
 

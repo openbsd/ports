@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2015/10/17 19:28:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2015/12/03 21:24:31 sthen Exp $
 
 COMMENT=	find the country where IP address/hostname originates from
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c
 
 MASTER_SITES=	https://github.com/maxmind/geoip-api-c/releases/download/v$V/
-MASTER_SITES0=	http://spacehopper.org/mirrors/
+MASTER_SITES0=	https://spacehopper.org/mirrors/
 
 CONFIGURE_STYLE= gnu
 SEPARATE_BUILD=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2015/11/24 09:11:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.77 2015/12/03 21:24:29 sthen Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -37,7 +37,7 @@ MASTER_SITES=	http://download.java.net/openjdk/jdk7u40/promoted/b43/ \
 MASTER_SITES1=  http://www.intricatesoftware.com/distfiles/ \
 		http://openbsd.dead-parrot.de/distfiles/ \
 		https://distfiles.nl/
-MASTER_SITES2=	http://spacehopper.org/mirrors/ \
+MASTER_SITES2=	https://spacehopper.org/mirrors/ \
 		http://www.intricatesoftware.com/distfiles/
 MASTER_SITES3=	${MASTER_SITE_APACHE:=ant/binaries/} \
 		http://archive.apache.org/dist/ant/binaries/

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/29 10:53:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/12/03 21:24:32 sthen Exp $
 
-COMMENT=	customizable navigation bar for trac's wiki
+COMMENT=	customizable navigation bar for trac's wiki#'
 
 MODPY_EGG_VERSION= 4.1
 DISTNAME=	TracNav-${MODPY_EGG_VERSION}
@@ -14,7 +14,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 HOMEPAGE=	http://svn.ipd.uka.de/trac/javaparty/wiki/TracNav
 
 # from http://svn.ipd.uka.de/trac/javaparty/attachment/wiki/TracNav/Files/TracNav-4.1.zip?format=raw
-MASTER_SITES=		http://spacehopper.org/mirrors/
+MASTER_SITES=		https://spacehopper.org/mirrors/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes

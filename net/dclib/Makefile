@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/04/21 18:53:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/12/03 21:24:31 sthen Exp $
 
 COMMENT=	Library for direct-connect protocol
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += bz2 crypto lzma m pthread ssl stdc++ xml2 z
 
-MASTER_SITES=	http://spacehopper.org/mirrors/berlios/dcgui/
+MASTER_SITES=	https://spacehopper.org/mirrors/berlios/dcgui/
 
 MODULES=	converters/libiconv
 LIB_DEPENDS=	archivers/bzip2 \

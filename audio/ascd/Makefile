@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/05/18 11:29:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2015/12/03 21:24:29 sthen Exp $
 
 COMMENT=		cd player for Afterstep or Window Maker
 DISTNAME=		ascd-0.13.2
@@ -10,7 +10,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext Xpm c workman>=1
 
-MASTER_SITES=		http://spacehopper.org/mirrors/
+MASTER_SITES=		https://spacehopper.org/mirrors/
 DISTFILES=		${DISTNAME}-src.tgz ${DATAFILES}
 DATAFILES=		ascd-0.13pr6-themes.tgz
 

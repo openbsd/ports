@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/04/03 15:12:28 pascal Exp $
+# $OpenBSD: Makefile,v 1.15 2015/12/03 21:24:32 sthen Exp $
 
 COMMENT-main=	wrapper to run CGI applications via FastCGI
 COMMENT-static=	static-linked fcgi-cgi wrapper for chroot use
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c ev glib-2.0 m pthread
 
 MASTER_SITES=	http://cgit.lighttpd.net/fcgi-cgi.git/snapshot/ \
-		http://spacehopper.org/mirrors/
+		https://spacehopper.org/mirrors/
 
 SEPARATE_BUILD=	Yes
 MULTI_PACKAGES=	-main -static

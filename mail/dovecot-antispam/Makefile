@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2014/10/25 22:07:26 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2015/12/03 21:24:30 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ REVISION=	5
 CATEGORIES=	mail
 
 # http://hg.dovecot.org/dovecot-antispam-plugin/
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 HOMEPAGE=	http://wiki2.dovecot.org/Plugins/Antispam
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

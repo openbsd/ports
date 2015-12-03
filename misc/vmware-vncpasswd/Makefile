@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2015/12/03 21:24:31 sthen Exp $
 
 COMMENT=	obfuscate passwords for VMware RemoteDisplay.vnc.key
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	missing license
 
 WANTLIB=	c
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 #MASTER_SITES=	http://communities.vmware.com/servlet/JiveServlet/download/7535-4-13355/
 EXTRACT_SUFX=	.zip
 

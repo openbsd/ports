@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/02/15 21:02:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2015/12/03 21:24:32 sthen Exp $
 
 COMMENT=	distributed command execution
 
@@ -13,7 +13,7 @@ MODPY_EGG_VERSION = 2.2.1
 # BSD + LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 
 MODULES=	lang/python
 

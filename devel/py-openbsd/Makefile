@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/10/05 16:29:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2015/12/03 21:24:29 sthen Exp $
 
 COMMENT=	specific Python bindings for OpenBSD
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += kvm pcap pthread
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python

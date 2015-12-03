@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2015/07/30 16:05:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2015/12/03 21:24:30 sthen Exp $
 
 COMMENT=	sendmail milter to scan messages for viruses and spam
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m pthread milter
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	mail/sendmail,-libmilter

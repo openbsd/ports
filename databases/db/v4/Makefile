@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2015/06/13 08:35:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2015/12/03 21:24:29 sthen Exp $
 
 COMMENT-java=	Java bindings for Berkeley DB, revision ${REV}
 
@@ -28,7 +28,7 @@ SHARED_LIBS +=	db_tcl               6.0      # .0.0
 MASTER_SITES0=	${HOMEPAGE}db/update/${VERSION}/
 # patch 2 has converted DOS line-endings; no other change
 # patches 1,3,4 are just mirrored
-MASTER_SITES2=	http://spacehopper.org/mirrors/
+MASTER_SITES2=	https://spacehopper.org/mirrors/
 PATCHFILES=	patch.${VERSION}.1:2 \
 		patch.${VERSION}.2.fixed:2 \
 		patch.${VERSION}.3:2 \

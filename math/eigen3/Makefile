@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/07/21 02:38:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/12/03 21:24:30 sthen Exp $
 
 PKG_ARCH =	*
 COMMENT =	lightweight C++ template library for linear algebra
@@ -17,7 +17,7 @@ MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	http://bitbucket.org/eigen/eigen/get/ \
-		http://spacehopper.org/mirrors/eigen/
+		https://spacehopper.org/mirrors/eigen/
 
 # Many dependencies are only needed for tests
 PSEUDO_FLAVORS =	test

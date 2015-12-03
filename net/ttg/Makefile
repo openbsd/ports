@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/03/25 01:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/12/03 21:24:31 sthen Exp $
 
 COMMENT=	live CLI display of interface bandwidth, using SNMP
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c netsnmp
 
 # Mirrored from http://www.tenox.tc/out/ttg.c
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 
 LIB_DEPENDS=	net/net-snmp
 

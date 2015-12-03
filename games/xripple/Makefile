@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/01/30 22:12:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2015/12/03 21:24:30 sthen Exp $
 
 COMMENT=	screen bottom ripples like a pool of water
 
@@ -7,7 +7,7 @@ PKGNAME=	xripple-1.0
 REVISION =	1
 CATEGORIES=	games
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 
 MAINTAINER=	Michael Shalayeff <mickey@openbsd.org>
 

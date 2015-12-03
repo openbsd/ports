@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2015/10/22 13:06:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.105 2015/12/03 21:24:30 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
@@ -19,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=roundcubemail/}
 # a known/verifiable version instead.
 #MASTER_SITES0=	https://getcomposer.org/download/${COMPOSER_V}/
 # mirrored for now; upstream re-rolled
-MASTER_SITES0=	http://spacehopper.org/mirrors/
+MASTER_SITES0=	https://spacehopper.org/mirrors/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		composer-${COMPOSER_V}{composer}.phar:0
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

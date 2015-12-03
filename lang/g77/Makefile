@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/06/17 20:03:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2015/12/03 21:24:30 sthen Exp $
 
 V =			3.3.6
 PKGNAME =		g77-$V
@@ -20,7 +20,7 @@ PKG_ARGS += -DPIC=0
 
 COMMENT =		GNU fortran 77 compiler
 CATEGORIES =		lang math
-MASTER_SITES =		http://spacehopper.org/mirrors/
+MASTER_SITES =		https://spacehopper.org/mirrors/
 
 PERMIT_PACKAGE_CDROM =	Yes
 

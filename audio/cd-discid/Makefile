@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/10 22:55:01 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2015/12/03 21:24:29 sthen Exp $
 
 COMMENT=	retrieve CDDB ID from a disc
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 
 NO_TEST=	Yes
 

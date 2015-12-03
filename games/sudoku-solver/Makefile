@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/07/31 20:49:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2015/12/03 21:24:30 sthen Exp $
 
 COMMENT=	sudoku puzzle solver with cli, gui, and web ui
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		Xt c crypto m pthread z fcgi Xm
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz
 
 MODULES=	devel/gettext

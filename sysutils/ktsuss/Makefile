@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/04/06 19:02:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/12/03 21:24:32 sthen Exp $
 
 COMMENT =	graphical su wrapper
 DISTNAME =	ktsuss-1.4
@@ -9,7 +9,7 @@ CATEGORIES =	sysutils
 PERMIT_PACKAGE_CDROM=	Yes
 
 HOMEPAGE =	http://developer.berlios.de/projects/ktsuss
-MASTER_SITES =	http://spacehopper.org/mirrors/berlios/ktsuss/
+MASTER_SITES =	https://spacehopper.org/mirrors/berlios/ktsuss/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		LDFLAGS="-pthread"

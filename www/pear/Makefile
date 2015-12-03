@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/06/06 09:03:50 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2015/12/03 21:24:32 sthen Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
@@ -12,7 +12,7 @@ REVISION-main=	0
 REVISION-utils=	1
 
 HOMEPAGE=	http://pear.php.net/
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 

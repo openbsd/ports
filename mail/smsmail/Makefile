@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/07/30 16:05:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/12/03 21:24:30 sthen Exp $
 
 COMMENT=	LDAP enabled MDA to deliver mails as SMS
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c pthread ldap_r>=8 lber>=8
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	databases/openldap

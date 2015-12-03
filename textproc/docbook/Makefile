@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2015/12/03 21:24:32 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://www.oasis-open.org/docbook/
 
 MASTER_SITES=	${HOMEPAGE} http://www.docbook.org/
-MASTER_SITES0=	http://spacehopper.org/mirrors/
+MASTER_SITES0=	https://spacehopper.org/mirrors/
 
 DISTFILES=	sgml/2.4.1/docbk241.zip \
 		sgml/3.0/docbk30.zip \

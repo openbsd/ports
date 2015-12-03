@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/11/27 22:51:55 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2015/12/03 21:24:31 sthen Exp $
 # Original from: John Walker http://www.fourmilab.ch/random/
 
 CATEGORIES=		misc
@@ -9,7 +9,7 @@ REVISION=		0
 EXTRACT_SUFX=		.zip
 
 HOMEPAGE=		http://www.fourmilab.ch/random/
-MASTER_SITES=		http://spacehopper.org/mirrors/
+MASTER_SITES=		https://spacehopper.org/mirrors/
 
 WRKSRC=			${WRKDIR}
 ALL_TARGET=		ent
