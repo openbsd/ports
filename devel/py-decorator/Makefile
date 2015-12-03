@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2015/09/29 10:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/12/03 18:19:25 shadchin Exp $
 
 COMMENT =	simplify usage of decorators
 
-MODPY_EGG_VERSION = 3.3.2
+MODPY_EGG_VERSION = 4.0.4
 DISTNAME =	decorator-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	devel
 
@@ -19,7 +18,5 @@ MODPY_PI =	Yes
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS = Yes
-
-NO_TEST =	Yes
 
 .include <bsd.port.mk>
