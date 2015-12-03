@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2015/09/09 19:26:36 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2015/12/03 10:07:57 rpointel Exp $
 @pkgpath devel/mercurial
 bin/hg
 lib/python${MODPY_VERSION}/site-packages/hgext/
@@ -16,6 +16,8 @@ lib/python${MODPY_VERSION}/site-packages/hgext/children.py
 lib/python${MODPY_VERSION}/site-packages/hgext/children.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/churn.py
 lib/python${MODPY_VERSION}/site-packages/hgext/churn.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/clonebundles.py
+lib/python${MODPY_VERSION}/site-packages/hgext/clonebundles.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/color.py
 lib/python${MODPY_VERSION}/site-packages/hgext/color.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/convert/
@@ -180,6 +182,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/default.d/
 lib/python${MODPY_VERSION}/site-packages/mercurial/default.d/mergetools.rc
 lib/python${MODPY_VERSION}/site-packages/mercurial/demandimport.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/demandimport.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/destutil.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/destutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/diffhelpers.so
 lib/python${MODPY_VERSION}/site-packages/mercurial/dirstate.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/dirstate.pyc
@@ -392,6 +396,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/statichttprepo.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/statichttprepo.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/store.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/store.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/streamclone.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/streamclone.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/strutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/strutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/subrepo.py
@@ -568,7 +574,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/feed-icon-14
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/hgicon.png
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/hglogo.png
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/mercurial.js
-lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/style-coal.css
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/style-extra-coal.css
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/style-gitweb.css
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/style-monoblue.css
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/static/style-paper.css
