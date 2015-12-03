@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.328 2015/12/02 13:03:14 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.329 2015/12/03 12:31:45 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -391,17 +391,6 @@ my $stem_extensions = {
 };
 
 # reasons for obsolete packages
-my @msg = (
-	"ancient software that doesn't work", #0
-	"web application with no benefit being packaged", #1
-	"no longer maintained and full of security holes", #2
-	"no longer maintained upstream", #3
-	"superseded by base component", #4
-	"outdated and/or no longer required by other ports", #5
-	"no longer useful", #6
-	"removed in favor of using languages package manager", #7
-);
-
 my $obsolete_reason = {
 	'BitTorrent' => 0,
 	'BitTorrent-gui' => 0,
@@ -694,7 +683,19 @@ my $obsolete_reason = {
 	'unace' => 0,
 	'edict' => 3,
 	'ADMsmb' => 6,
+	'mrtd' => 3,
 };
+
+my @msg = (
+	"ancient software that doesn't work", #0
+	"web application with no benefit being packaged", #1
+	"no longer maintained and full of security holes", #2
+	"no longer maintained upstream", #3
+	"superseded by base component", #4
+	"outdated and/or no longer required by other ports", #5
+	"no longer useful", #6
+	"removed in favor of using languages package manager", #7
+);
 
 # ->is_base_system($handle, $state):
 #	checks whether an existing handle is now part of the base system
