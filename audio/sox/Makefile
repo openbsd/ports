@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2015/12/03 09:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2015/12/03 14:44:49 sthen Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
@@ -91,7 +91,7 @@ do-test:
 	@cd ${WRKSRC}/src && ./tests.sh && ./testall.sh
 
 # Attempt to avoid SIGILL in gcc.
-MODULES=	gcc4
+MODULES+=	gcc4
 MODGCC4_ARCHS=	hppa
 
 .include <bsd.port.mk>
