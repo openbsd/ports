@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.12 2015/11/25 02:37:52 gsoares Exp $
---- Makefile.in.orig	Mon Nov  2 13:32:06 2015
-+++ Makefile.in	Mon Nov  9 18:12:39 2015
+$OpenBSD: patch-Makefile_in,v 1.13 2015/12/04 01:38:56 gsoares Exp $
+--- Makefile.in.orig	Mon Nov 30 13:00:41 2015
++++ Makefile.in	Thu Dec  3 19:26:54 2015
 @@ -357,7 +357,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -8,5 +8,5 @@ $OpenBSD: patch-Makefile_in,v 1.12 2015/11/25 02:37:52 gsoares Exp $
 -SUBDIRS = src doc tools
 +SUBDIRS = src doc
  EXTRA_DIST = PORTS BUGS COPYRIGHT.GPL CREDITS INSTALL.W32 INSTALL.WCE \
- 	INSTALL.FIPS build-android.sh
+ 	INSTALL.FIPS build-android.sh .travis.yml
  doc_DATA = INSTALL README TODO COPYING AUTHORS ChangeLog PORTS BUGS \
