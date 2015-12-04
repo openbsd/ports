@@ -1,0 +1,7 @@
+Go is an open source programming language that makes it easy to build simple,
+reliable, and efficient software.
+
+This package contains a version of Go that builds natively on OpenBSD and can
+be used to bootstrap later versions of Go (1.5+) that require an existing Go
+compiler to build. It exists for bootstrapping lang/go and is not intended for
+general use or distribution.
