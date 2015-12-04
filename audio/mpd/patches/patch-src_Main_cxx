@@ -1,18 +1,19 @@
-$OpenBSD: patch-src_Main_cxx,v 1.1 2015/10/28 19:01:39 dcoppa Exp $
+$OpenBSD: patch-src_Main_cxx,v 1.2 2015/12/04 14:48:56 dcoppa Exp $
 
-Unbreak building mpd with option '--disable-inotify' after commit
-f066bb7716200a83e209d27f6b4f87f012033266 ("remove unused Domain
-variables")
+commit 315f9d98f6099c84ad38ecae9fd5e83101fb1b16
+Author: Michael Paquier <michael@otacoo.com>
+Date:   Tue Nov 10 08:38:53 2015 +0100
+
+Main: fix build failure on non-Linux systems
 
 --- src/Main.cxx.orig	Fri Oct 16 18:07:10 2015
-+++ src/Main.cxx	Wed Oct 28 19:47:53 2015
-@@ -629,9 +629,6 @@ static int mpd_main_after_fork(struct options options)
- 					 *instance->update,
++++ src/Main.cxx	Fri Dec  4 15:41:00 2015
+@@ -630,7 +630,7 @@ static int mpd_main_after_fork(struct options options)
  					 config_get_unsigned(CONF_AUTO_UPDATE_DEPTH,
  							     INT_MAX));
--#else
+ #else
 -		FormatWarning(main_domain,
--			      "inotify: auto_update was disabled. enable during compilation phase");
++		FormatWarning(config_domain,
+ 			      "inotify: auto_update was disabled. enable during compilation phase");
  #endif
  	}
- #endif
