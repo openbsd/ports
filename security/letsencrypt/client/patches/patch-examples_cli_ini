@@ -1,7 +1,7 @@
-$OpenBSD: patch-examples_cli_ini,v 1.1 2015/12/03 20:49:58 sthen Exp $
---- examples/cli.ini.orig	Thu Dec  3 20:47:44 2015
-+++ examples/cli.ini	Thu Dec  3 20:48:37 2015
-@@ -5,8 +5,10 @@
+$OpenBSD: patch-examples_cli_ini,v 1.2 2015/12/04 11:41:12 sthen Exp $
+--- examples/cli.ini.orig	Wed Dec  2 23:55:39 2015
++++ examples/cli.ini	Fri Dec  4 11:38:28 2015
+@@ -5,14 +5,16 @@
  # Use a 4096 bit RSA key instead of 2048
  rsa-key-size = 4096
  
@@ -14,3 +14,23 @@ $OpenBSD: patch-examples_cli_ini,v 1.1 2015/12/03 20:49:58 sthen Exp $
  
  # Uncomment and update to register with the specified e-mail address
  # email = foo@example.com
+ 
+-# Uncomment to use a text interface instead of ncurses
+-# text = True
++# Use text interface instead of ncurses/dialog(1)
++text = True
+ 
+ # Uncomment to use the standalone authenticator on port 443
+ # authenticator = standalone
+@@ -20,5 +22,10 @@ server = https://acme-staging.api.letsencrypt.org/dire
+ 
+ # Uncomment to use the webroot authenticator. Replace webroot-path with the
+ # path to the public_html / webroot folder being served by your web server.
++#
++# The user running letsencrypt needs write access to WEBROOT/.well-known
++# and this must be accessible via http. Watch out for webserver config rules
++# that deny access to dotfiles.
++#
+ # authenticator = webroot
+-# webroot-path = /usr/share/nginx/html
++# webroot-path = /var/www/htdocs
