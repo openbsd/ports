@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2015/10/24 07:47:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.182 2015/12/04 17:21:04 jsing Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -29,6 +29,7 @@
      SUBDIR += gfortran
      SUBDIR += ghc
      SUBDIR += go
+     SUBDIR += go-bootstrap
      SUBDIR += gprolog
      SUBDIR += guile
      SUBDIR += guile2
