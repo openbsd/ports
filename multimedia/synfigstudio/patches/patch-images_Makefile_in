@@ -1,0 +1,25 @@
+$OpenBSD: patch-images_Makefile_in,v 1.1 2015/12/04 13:58:42 sthen Exp $
+
+XXX  This fails with SIGABRT:
+
+synfig -q splash_screen-1.0.1.sif -o splash_screen.png --time 0
+synfig(1645) [06:33:36] info: Loading modules from /etc/synfig_modules.cfg
+/usr/local/bin/synfig: warning: Unable to find module "mod_libavcodec" (file not found)
+synfig(1645) [06:33:36] info: Loading file: splash_screen-1.0.1.sif
+synfig(1645) [06:33:36] info: Loading file: ./splash_screen-1.0.x.sif
+Makefile:1367: recipe for target 'splash_screen.png' failed
+
+So just use 1.0.x.sif for now, it misses out the version number on the splash
+screen, but avoids the failure.
+
+--- images/Makefile.in.orig	Fri Dec  4 06:48:01 2015
++++ images/Makefile.in	Fri Dec  4 06:52:53 2015
+@@ -1363,7 +1363,7 @@ action_doc_redo_icon.$(EXT): $(srcdir)/action_doc_icon
+ @DEVELOPMENT_SNAPSHOT_TRUE@	echo "  File \"images\\$@\"" >>./images.nsh
+ @DEVELOPMENT_SNAPSHOT_TRUE@	echo "  Delete \"\$$INSTDIR\\share\\pixmaps\\$@\"" >>./unimages.nsh
+ @DEVELOPMENT_SNAPSHOT_TRUE@.PHONY: splash_screen_development.sif
+-@DEVELOPMENT_SNAPSHOT_FALSE@splash_screen.$(EXT): $(srcdir)/splash_screen-$(PACKAGE_VERSION).sif
++@DEVELOPMENT_SNAPSHOT_FALSE@splash_screen.$(EXT): $(srcdir)/splash_screen-1.0.x.sif
+ @DEVELOPMENT_SNAPSHOT_FALSE@	$(SYNFIG) -q $< -o $@ --time 0
+ @DEVELOPMENT_SNAPSHOT_FALSE@	echo "  File \"images\\$@\"" >>./images.nsh
+ @DEVELOPMENT_SNAPSHOT_FALSE@	echo "  Delete \"\$$INSTDIR\\share\\pixmaps\\$@\"" >>./unimages.nsh

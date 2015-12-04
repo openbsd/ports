@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/12/01 23:14:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/12/04 13:58:42 sthen Exp $
 
 COMMENT =		2D animation software studio
 BROKEN-alpha =		[keyframe_lock_past_on_icon.png] Bus error (core dumped)
@@ -7,7 +7,7 @@ BROKEN-hppa =		Illegal instruction (core dumped)
 V =			1.0.1
 DISTNAME =		synfigstudio-$V
 API_V =			1.0
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  synfigapp                 1.0 # 0.0
 
