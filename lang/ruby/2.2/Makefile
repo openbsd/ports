@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/22 15:14:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2015/12/04 20:47:53 landry Exp $
 
 BROKEN-mips64 =		miniruby spins on rbconfig.rb
+BROKEN-hppa =		OOM when building ext/ripper/ripper.c
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby

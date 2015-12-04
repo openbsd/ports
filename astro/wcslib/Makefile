@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2015/09/12 14:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2015/12/04 20:47:52 landry Exp $
 
+BROKEN-hppa=	ICE on prj.c:4381
 COMMENT =	implementation of the FITS WCS standard
 CATEGORIES =	astro devel
 DISTNAME =	wcslib-4.17
