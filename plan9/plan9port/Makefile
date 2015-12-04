@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/28 01:37:59 gsoares Exp $
+# $OpenBSD: Makefile,v 1.10 2015/12/04 04:26:33 gsoares Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN-powerpc =	threading issues
@@ -6,6 +6,7 @@ BROKEN-powerpc =	threading issues
 COMMENT =		Plan 9 from user space
 
 DISTNAME =		plan9port-20151111
+REVISION =		0
 
 GH_ACCOUNT =		9fans
 GH_PROJECT =		plan9port
@@ -47,7 +48,8 @@ post-extract:
 post-patch:
 	cd ${WRKSRC}/src/libthread && cp Darwin-x86_64-swapcontext.c \
 		OpenBSD-x86_64.c && cp Darwin-x86_64-asm.s \
-		OpenBSD-x86_64-asm.S
+		OpenBSD-x86_64-asm.S && mv OpenBSD-386-asm.s \
+		OpenBSD-386-asm.S
 	find ${WRKSRC} -name .cvsignore -exec rm -f {} \;
 	cd ${WRKSRC} && rm -rf .hg .hgignore .hgtags .gitignore
 

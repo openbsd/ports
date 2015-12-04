@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/11/28 01:37:59 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/12/04 04:26:33 gsoares Exp $
 @unexec-delete rm -f ${TRUEPREFIX}/plan9/man/whatis.db
 bin/9
 plan9/
@@ -7737,7 +7737,7 @@ plan9/src/libthread/Linux.c
 plan9/src/libthread/NetBSD-386-asm.s
 plan9/src/libthread/NetBSD-power-asm.s
 plan9/src/libthread/NetBSD.c
-plan9/src/libthread/OpenBSD-386-asm.s
+plan9/src/libthread/OpenBSD-386-asm.S
 plan9/src/libthread/OpenBSD-386.c
 plan9/src/libthread/OpenBSD-power-asm.S
 plan9/src/libthread/OpenBSD-power.c
