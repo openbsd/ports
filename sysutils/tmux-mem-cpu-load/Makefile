@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/28 10:17:25 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2015/12/04 20:48:26 landry Exp $
 
 COMMENT =		CPU, RAM memory, and load monitor for use with tmux(1)
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		devel/cmake \
 			gcc4 \
 			lang/clang
-MODGCC4_ARCHS =		alpha powerpc sparc64
+MODGCC4_ARCHS =		alpha powerpc sparc64 hppa
 MODGCC4_LANGS =		c++
 MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c++
