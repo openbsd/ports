@@ -1,8 +1,8 @@
-$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.3 2015/10/14 16:42:07 robert Exp $
---- chromecast/browser/cast_content_browser_client.cc.orig.port	Tue Oct 13 21:04:32 2015
-+++ chromecast/browser/cast_content_browser_client.cc	Wed Oct 14 07:41:13 2015
-@@ -216,7 +216,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
-       command_line->AppendSwitch(switches::kEnableLegacyHolePunching);
+$OpenBSD: patch-chromecast_browser_cast_content_browser_client_cc,v 1.4 2015/12/05 16:13:32 robert Exp $
+--- chromecast/browser/cast_content_browser_client.cc.orig.port	Tue Nov 24 21:00:54 2015
++++ chromecast/browser/cast_content_browser_client.cc	Wed Dec  2 08:18:32 2015
+@@ -228,7 +228,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
+       command_line->AppendSwitch(switches::kAllowHiddenMediaPlayback);
    }
  
 -#if defined(OS_LINUX)

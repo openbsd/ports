@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.252 2015/11/20 11:24:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.253 2015/12/05 16:13:32 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			46.0.2490.86
+V=			47.0.2526.73
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
@@ -159,8 +159,9 @@ pre-configure:
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/libavutil \
 		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/libavutil
 .endfor
-	@mkdir -p ${WRKSRC}/media/audio/sndio
+	@mkdir -p ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
 	@cp ${FILESDIR}/sndio_output.{cc,h} ${WRKSRC}/media/audio/sndio
+	@cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${WRKSRC}/media/audio/openbsd
 	# XXX Create a missing html file to avoid a build failure (unused in the actual package)
 	@touch ${WRKSRC}/chrome/test/data/webui/i18n_process_css_test.html
 
@@ -174,12 +175,12 @@ do-configure:
 do-build:
 	# Build all the resources as the first step to avoid build failures
 	# due to internal dependency issues.
-	@cd ${WRKSRC}/out/${BUILDTYPE} && \
-	for _r in net_interfaces suggestions cacheinvalidation cacheinvalidation_proto_cpp gfx_vector_icons \
-	$$(ninja -t targets | grep 'resources: phony' | cut -d ':' -f1); do \
-		cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
-			-j ${MAKE_JOBS} -C out/${BUILDTYPE} $${_r}; \
-	done
+	#@cd ${WRKSRC}/out/${BUILDTYPE} && \
+	#for _r in net_interfaces suggestions cacheinvalidation cacheinvalidation_proto_cpp gfx_vector_icons \
+	#$$(ninja -t targets | grep 'resources: phony' | cut -d ':' -f1); do \
+	#	cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
+	#		-j ${MAKE_JOBS} -C out/${BUILDTYPE} $${_r}; \
+	#done
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
 

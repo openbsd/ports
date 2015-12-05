@@ -1,18 +1,25 @@
-$OpenBSD: patch-media_capture_video_video_capture_device_cc,v 1.1 2015/10/14 16:42:07 robert Exp $
---- media/capture/video/video_capture_device.cc.orig.port	Wed Oct 14 07:53:30 2015
-+++ media/capture/video/video_capture_device.cc	Wed Oct 14 07:53:49 2015
-@@ -9,6 +9,10 @@
- 
- namespace media {
- 
-+const std::string VideoCaptureDevice::Name::GetModel() const {
-+  return "";
-+}
-+
+$OpenBSD: patch-media_capture_video_video_capture_device_cc,v 1.2 2015/12/05 16:13:32 robert Exp $
+--- media/capture/video/video_capture_device.cc.orig.port	Wed Dec  2 13:48:28 2015
++++ media/capture/video/video_capture_device.cc	Thu Dec  3 08:22:15 2015
+@@ -14,16 +14,7 @@ namespace media {
+ // TODO(msu.koo): http://crbug.com/532272, remove checking the switch in favour
+ // of deferring GetModel() call to the actual VideoCaptureDevice object.
  const std::string VideoCaptureDevice::Name::GetNameAndModel() const {
-   const std::string model_id = GetModel();
-   if (model_id.empty())
-@@ -26,7 +30,7 @@ VideoCaptureDevice::Name::Name(const std::string& name
+-  const std::string model_id = GetModel();
+-  if (model_id.empty())
+-    return device_name_;
+-  const std::string suffix = " (" + model_id + ")";
+-  if (base::EndsWith(device_name_, suffix, base::CompareCase::SENSITIVE) ||
+-      base::CommandLine::ForCurrentProcess()->HasSwitch(
+-          switches::kUseFakeDeviceForMediaStream))
+-    // Ignore |model_id| if |kUseFakeDeviceForMediaStream| flag is present.
+-    return device_name_;
+-  return device_name_ + suffix;
++  return "";
+ }
+ 
+ VideoCaptureDevice::Name::Name() {
+@@ -33,7 +24,7 @@ VideoCaptureDevice::Name::Name(const std::string& name
      : device_name_(name), unique_id_(id) {
  }
  

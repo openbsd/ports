@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_webrtc_base_platform_thread_cc,v 1.1 2015/09/05 16:06:50 robert Exp $
---- third_party/webrtc/base/platform_thread.cc.orig.port	Wed Sep  2 20:14:49 2015
-+++ third_party/webrtc/base/platform_thread.cc	Wed Sep  2 21:09:32 2015
+$OpenBSD: patch-third_party_webrtc_base_platform_thread_cc,v 1.2 2015/12/05 16:13:32 robert Exp $
+--- third_party/webrtc/base/platform_thread.cc.orig.port	Wed Dec  2 13:54:12 2015
++++ third_party/webrtc/base/platform_thread.cc	Wed Dec  2 13:55:03 2015
 @@ -15,7 +15,9 @@
  #include "webrtc/base/checks.h"
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-third_party_webrtc_base_platform_thread_cc,v 1.1 2015/09/05 16:0
 @@ -59,6 +63,7 @@ bool IsThreadRefEqual(const PlatformThreadRef& a, cons
  
  void SetCurrentThreadName(const char* name) {
-   DCHECK(strlen(name) < 64);
+   RTC_DCHECK(strlen(name) < 64);
 +#if !defined(__OpenBSD__)
  #if defined(WEBRTC_WIN)
    struct {

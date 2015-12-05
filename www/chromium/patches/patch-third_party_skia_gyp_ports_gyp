@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_skia_gyp_ports_gyp,v 1.7 2015/10/14 16:42:07 robert Exp $
---- third_party/skia/gyp/ports.gyp.orig.port	Wed Oct 14 07:57:12 2015
-+++ third_party/skia/gyp/ports.gyp	Wed Oct 14 07:57:25 2015
-@@ -93,7 +93,6 @@
+$OpenBSD: patch-third_party_skia_gyp_ports_gyp,v 1.8 2015/12/05 16:13:32 robert Exp $
+--- third_party/skia/gyp/ports.gyp.orig.port	Tue Nov 24 21:01:10 2015
++++ third_party/skia/gyp/ports.gyp	Wed Dec  2 08:18:33 2015
+@@ -91,7 +91,6 @@
              }, {
                'link_settings': {
                  'libraries': [

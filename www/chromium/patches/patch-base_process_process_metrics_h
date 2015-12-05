@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_process_process_metrics_h,v 1.1 2015/12/05 16:13:32 robert Exp $
+--- base/process/process_metrics.h.orig.port	Thu Dec  3 08:24:09 2015
++++ base/process/process_metrics.h	Thu Dec  3 08:24:38 2015
+@@ -234,7 +234,7 @@ BASE_EXPORT void SetFdLimit(unsigned int max_descripto
+ #endif  // defined(OS_POSIX)
+ 
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+-    defined(OS_ANDROID)
++    defined(OS_ANDROID) || defined(OS_BSD)
+ // Data about system-wide memory consumption. Values are in KB. Available on
+ // Windows, Mac, Linux, Android and Chrome OS.
+ //

@@ -1,7 +1,7 @@
-$OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.1 2015/09/20 18:32:18 robert Exp $
---- v8/src/base/platform/platform-openbsd.cc.orig.port	Sat Sep 19 12:02:51 2015
-+++ v8/src/base/platform/platform-openbsd.cc	Sat Sep 19 12:18:39 2015
-@@ -2,18 +2,20 @@
+$OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.2 2015/12/05 16:13:32 robert Exp $
+--- v8/src/base/platform/platform-openbsd.cc.orig.port	Wed Dec  2 13:55:31 2015
++++ v8/src/base/platform/platform-openbsd.cc	Wed Dec  2 14:45:24 2015
+@@ -2,26 +2,41 @@
  // Use of this source code is governed by a BSD-style license that can be
  // found in the LICENSE file.
  
@@ -26,10 +26,20 @@ $OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.1 2015/09/20 18:32:
  #include <errno.h>
  #include <fcntl.h>      // open
  #include <stdarg.h>
-@@ -23,6 +25,10 @@
- #include <sys/types.h>  // mmap & munmap
+ #include <strings.h>    // index
+ #include <sys/mman.h>   // mmap & munmap
+ #include <sys/stat.h>   // open
++#include <sys/types.h>  // mmap & munmap
  #include <unistd.h>     // sysconf
  
++// GLibc on ARM defines mcontext_t has a typedef for 'struct sigcontext'.
++// Old versions of the C library <signal.h> didn't define the type.
++#if defined(__ANDROID__) && !defined(__BIONIC_HAVE_UCONTEXT_T) && \
++    (defined(__arm__) || defined(__aarch64__)) && \
++    !defined(__BIONIC_HAVE_STRUCT_SIGCONTEXT)
++#include <asm/sigcontext.h>  // NOLINT
++#endif
++
 +#if defined(LEAK_SANITIZER)
 +#include <sanitizer/lsan_interface.h>
 +#endif
@@ -37,7 +47,7 @@ $OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.1 2015/09/20 18:32:
  #include <cmath>
  
  #undef MAP_TYPE
-@@ -30,26 +36,44 @@
+@@ -29,26 +44,87 @@
  #include "src/base/macros.h"
  #include "src/base/platform/platform.h"
  
@@ -54,6 +64,49 @@ $OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.1 2015/09/20 18:32:
  namespace base {
  
  
++#ifdef __arm__
++
++bool OS::ArmUsingHardFloat() {
++  // GCC versions 4.6 and above define __ARM_PCS or __ARM_PCS_VFP to specify
++  // the Floating Point ABI used (PCS stands for Procedure Call Standard).
++  // We use these as well as a couple of other defines to statically determine
++  // what FP ABI used.
++  // GCC versions 4.4 and below don't support hard-fp.
++  // GCC versions 4.5 may support hard-fp without defining __ARM_PCS or
++  // __ARM_PCS_VFP.
++
++#define GCC_VERSION (__GNUC__ * 10000                                          \
++                     + __GNUC_MINOR__ * 100                                    \
++                     + __GNUC_PATCHLEVEL__)
++#if GCC_VERSION >= 40600
++#if defined(__ARM_PCS_VFP)
++  return true;
++#else
++  return false;
++#endif
++
++#elif GCC_VERSION < 40500
++  return false;
++
++#else
++#if defined(__ARM_PCS_VFP)
++  return true;
++#elif defined(__ARM_PCS) || defined(__SOFTFP__) || defined(__SOFTFP) || \
++      !defined(__VFP_FP__)
++  return false;
++#else
++#error "Your version of GCC does not report the FP ABI compiled for."          \
++       "Please report it on this issue"                                        \
++       "http://code.google.com/p/v8/issues/detail?id=2140"
++
++#endif
++#endif
++#undef GCC_VERSION
++}
++
++#endif  // def __arm__
++
++
  const char* OS::LocalTimezone(double time, TimezoneCache* cache) {
 +#if V8_OS_NACL
 +  // Missing support for tm_zone field.
@@ -61,7 +114,7 @@ $OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.1 2015/09/20 18:32:
 +#else
    if (std::isnan(time)) return "";
    time_t tv = static_cast<time_t>(std::floor(time/msPerSecond));
-   struct tm* t = localtime(&tv);
+   struct tm* t = localtime(&tv);  // NOLINT(runtime/threadsafe_fn)
 -  if (NULL == t) return "";
 +  if (!t || !t->tm_zone) return "";
    return t->tm_zone;
@@ -75,7 +128,7 @@ $OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.1 2015/09/20 18:32:
 +  return 0;
 +#else
    time_t tv = time(NULL);
-   struct tm* t = localtime(&tv);
+   struct tm* t = localtime(&tv);  // NOLINT(runtime/threadsafe_fn)
    // tm_gmtoff includes any daylight savings offset, so subtract it.
    return static_cast<double>(t->tm_gmtoff * msPerSecond -
                               (t->tm_isdst > 0 ? 3600 * msPerSecond : 0));
@@ -83,7 +136,7 @@ $OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.1 2015/09/20 18:32:
  }
  
  
-@@ -59,7 +83,7 @@ void* OS::Allocate(const size_t requested,
+@@ -58,7 +134,7 @@ void* OS::Allocate(const size_t requested,
    const size_t msize = RoundUp(requested, AllocateAlignment());
    int prot = PROT_READ | PROT_WRITE | (is_executable ? PROT_EXEC : 0);
    void* addr = OS::GetRandomMmapAddr();
@@ -92,7 +145,7 @@ $OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.1 2015/09/20 18:32:
    if (mbase == MAP_FAILED) return NULL;
    *allocated = msize;
    return mbase;
-@@ -92,19 +116,20 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
+@@ -91,19 +167,20 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
        // the beginning of the filename or the end of the line.
        do {
          c = getc(fp);
@@ -117,7 +170,7 @@ $OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.1 2015/09/20 18:32:
          lib_name[strlen(lib_name) - 1] = '\0';
        } else {
          // No library name found, just record the raw address range.
-@@ -136,21 +161,27 @@ void OS::SignalCodeMovingGC() {
+@@ -135,21 +212,27 @@ void OS::SignalCodeMovingGC() {
    // it. This injects a GC marker into the stream of events generated
    // by the kernel and allows us to synchronize V8 code log and the
    // kernel log.
@@ -150,7 +203,7 @@ $OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.1 2015/09/20 18:32:
  // Constants used for mmap.
  static const int kMmapFd = -1;
  static const int kMmapFdOffset = 0;
-@@ -171,7 +202,7 @@ VirtualMemory::VirtualMemory(size_t size, size_t align
+@@ -170,7 +253,7 @@ VirtualMemory::VirtualMemory(size_t size, size_t align
    void* reservation = mmap(OS::GetRandomMmapAddr(),
                             request_size,
                             PROT_NONE,
@@ -159,7 +212,7 @@ $OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.1 2015/09/20 18:32:
                             kMmapFd,
                             kMmapFdOffset);
    if (reservation == MAP_FAILED) return;
-@@ -200,6 +231,9 @@ VirtualMemory::VirtualMemory(size_t size, size_t align
+@@ -199,6 +282,9 @@ VirtualMemory::VirtualMemory(size_t size, size_t align
  
    address_ = static_cast<void*>(aligned_base);
    size_ = aligned_size;
@@ -169,7 +222,27 @@ $OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.1 2015/09/20 18:32:
  }
  
  
-@@ -243,26 +277,36 @@ void* VirtualMemory::ReserveRegion(size_t size) {
+@@ -223,16 +309,19 @@ void VirtualMemory::Reset() {
+ 
+ 
+ bool VirtualMemory::Commit(void* address, size_t size, bool is_executable) {
++  CHECK(InVM(address, size));
+   return CommitRegion(address, size, is_executable);
+ }
+ 
+ 
+ bool VirtualMemory::Uncommit(void* address, size_t size) {
++  CHECK(InVM(address, size));
+   return UncommitRegion(address, size);
+ }
+ 
+ 
+ bool VirtualMemory::Guard(void* address) {
++  CHECK(InVM(address, OS::CommitPageSize()));
+   OS::Guard(address, OS::CommitPageSize());
+   return true;
+ }
+@@ -242,26 +331,36 @@ void* VirtualMemory::ReserveRegion(size_t size) {
    void* result = mmap(OS::GetRandomMmapAddr(),
                        size,
                        PROT_NONE,
@@ -208,7 +281,7 @@ $OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.1 2015/09/20 18:32:
    return true;
  }
  
-@@ -271,20 +315,22 @@ bool VirtualMemory::UncommitRegion(void* base, size_t 
+@@ -270,20 +369,22 @@ bool VirtualMemory::UncommitRegion(void* base, size_t 
    return mmap(base,
                size,
                PROT_NONE,

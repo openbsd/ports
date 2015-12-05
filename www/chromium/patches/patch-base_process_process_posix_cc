@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.3 2015/09/05 16:06:50 robert Exp $
---- base/process/process_posix.cc.orig.port	Sat Aug 22 21:01:51 2015
-+++ base/process/process_posix.cc	Wed Sep  2 07:31:55 2015
+$OpenBSD: patch-base_process_process_posix_cc,v 1.4 2015/12/05 16:13:32 robert Exp $
+--- base/process/process_posix.cc.orig.port	Wed Dec  2 08:27:08 2015
++++ base/process/process_posix.cc	Wed Dec  2 08:29:16 2015
 @@ -16,9 +16,13 @@
  #if defined(OS_MACOSX)
  #include <sys/event.h>
@@ -15,40 +15,36 @@ $OpenBSD: patch-base_process_process_posix_cc,v 1.3 2015/09/05 16:06:50 robert E
  #if !defined(OS_NACL_NONSFI)
  
  bool WaitpidWithTimeout(base::ProcessHandle handle,
-@@ -255,13 +259,6 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
+@@ -255,12 +259,10 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
    return Process(handle);
  }
  
--#if !defined(OS_LINUX) && !defined(OS_MACOSX)
--// static
--bool Process::CanBackgroundProcesses() {
+-#if !defined(OS_LINUX)
+ // static
+ bool Process::CanBackgroundProcesses() {
 -  return false;
--}
--#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX)
--
++  return true;
+ }
+-#endif  // !defined(OS_LINUX)
+ 
  bool Process::IsValid() const {
    return process_ != kNullProcessHandle;
- }
-@@ -356,21 +353,26 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
+@@ -356,21 +358,23 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
    return WaitForExitWithTimeoutImpl(Handle(), exit_code, timeout);
  }
  
--#if !defined(OS_LINUX) && !defined(OS_MACOSX)
-+bool Process::CanBackgroundProcesses() {
-+    return true;
-+}
-+
+-#if !defined(OS_LINUX)
  bool Process::IsProcessBackgrounded() const {
--  // See SetProcessBackgrounded().
+   // See SetProcessBackgrounded().
    DCHECK(IsValid());
 -  return false;
 +  return GetPriority() == kBackgroundPriority;
  }
  
 -bool Process::SetProcessBackgrounded(bool value) {
--  // Not implemented for POSIX systems other than Mac and Linux. With POSIX, if
--  // we were to lower the process priority we wouldn't be able to raise it back
--  // to its initial priority.
+-  // Not implemented for POSIX systems other than Linux. With POSIX, if we were
+-  // to lower the process priority we wouldn't be able to raise it back to its
+-  // initial priority.
 -  NOTIMPLEMENTED();
 -  return false;
 +bool Process::SetProcessBackgrounded(bool background) {
@@ -62,7 +58,7 @@ $OpenBSD: patch-base_process_process_posix_cc,v 1.3 2015/09/05 16:06:50 robert E
 +  DPCHECK(result == 0);
 +  return result == 0;
  }
--#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX)
+-#endif  // !defined(OS_LINUX)
  
  int Process::GetPriority() const {
    DCHECK(IsValid());

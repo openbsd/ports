@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.52 2015/10/14 16:42:07 robert Exp $
+@comment $OpenBSD: PLIST,v 1.53 2015/12/05 16:13:32 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -123,14 +123,12 @@ chrome/resources/inspector/Images/responsiveDesign.png
 chrome/resources/inspector/Images/responsiveDesign_2x.png
 chrome/resources/inspector/Images/searchNext.png
 chrome/resources/inspector/Images/searchPrev.png
-chrome/resources/inspector/Images/securityStateInsecure.png
-chrome/resources/inspector/Images/securityStateInsecure_2x.png
-chrome/resources/inspector/Images/securityStateNeutral.png
-chrome/resources/inspector/Images/securityStateNeutral_2x.png
-chrome/resources/inspector/Images/securityStateSecure.png
-chrome/resources/inspector/Images/securityStateSecure_2x.png
-chrome/resources/inspector/Images/securityStateWarning.png
-chrome/resources/inspector/Images/securityStateWarning_2x.png
+chrome/resources/inspector/Images/securityPropertyInsecure.svg
+chrome/resources/inspector/Images/securityPropertySecure.svg
+chrome/resources/inspector/Images/securityPropertyWarning.svg
+chrome/resources/inspector/Images/securityStateInsecure.svg
+chrome/resources/inspector/Images/securityStateNeutral.svg
+chrome/resources/inspector/Images/securityStateSecure.svg
 chrome/resources/inspector/Images/serviceWorker.svg
 chrome/resources/inspector/Images/sessionStorage.png
 chrome/resources/inspector/Images/settingsListRemove.png
@@ -158,8 +156,10 @@ chrome/resources/inspector/audits_module.js
 chrome/resources/inspector/cm_modes_module.js
 chrome/resources/inspector/components_lazy_module.js
 chrome/resources/inspector/console_module.js
+chrome/resources/inspector/devices_module.js
 chrome/resources/inspector/devtools.js
 chrome/resources/inspector/devtools_extension_api.js
+chrome/resources/inspector/diff_module.js
 chrome/resources/inspector/elements_module.js
 chrome/resources/inspector/emulated_devices/
 chrome/resources/inspector/emulated_devices/google-nexus-5-horizontal-default-1x.png

@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_drag_controller_cc,v 1.7 2015/09/05 16:06:50 robert Exp $
---- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig.port	Sat Aug 22 21:01:52 2015
-+++ chrome/browser/ui/views/tabs/tab_drag_controller.cc	Wed Sep  2 07:31:55 2015
+$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_drag_controller_cc,v 1.8 2015/12/05 16:13:32 robert Exp $
+--- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig.port	Tue Nov 24 21:00:54 2015
++++ chrome/browser/ui/views/tabs/tab_drag_controller.cc	Wed Dec  2 08:18:32 2015
 @@ -272,7 +272,7 @@ void TabDragController::Init(
    //     synchronous on desktop Linux, so use that.
    // - Ash
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_ui_views_tabs_tab_drag_controller_cc,v 1.7 2015/0
      // EndMoveLoop is going to snap the window back to its original location.
      // Hide it so users don't see this. Hiding a window in Linux aura causes
      // it to lose capture so skip it.
-@@ -1804,7 +1804,7 @@ gfx::NativeWindow TabDragController::GetLocalProcessWi
+@@ -1803,7 +1803,7 @@ gfx::NativeWindow TabDragController::GetLocalProcessWi
      if (dragged_window)
        exclude.insert(dragged_window);
    }
