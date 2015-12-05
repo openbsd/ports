@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/12/05 13:01:35 bentley Exp $
+@bin bin/brumbrumrally
+share/applications/brumbrumrally.desktop
+share/brumbrumrally/
+share/brumbrumrally/COPYRIGHTS
+share/brumbrumrally/fonts/
+share/brumbrumrally/fonts/big.font
+share/brumbrumrally/fonts/big.png
+share/brumbrumrally/fonts/small.font
+share/brumbrumrally/fonts/small.png
+share/brumbrumrally/images/
+share/brumbrumrally/images/car_stat_background.png
+share/brumbrumrally/images/cars.png
+share/brumbrumrally/images/icon.png
+share/brumbrumrally/pointers/
+share/brumbrumrally/pointers/arrow.png
+share/brumbrumrally/pointers/cross.png
+share/brumbrumrally/pointers/crosshair.png
+share/brumbrumrally/pointers/dot.png
+share/brumbrumrally/pointers/hand.png
+share/brumbrumrally/pointers/standard.png
+share/brumbrumrally/tilesets/
+share/brumbrumrally/tilesets/cargo.png
+share/brumbrumrally/tilesets/city.png
+share/brumbrumrally/tilesets/forest.png
+share/brumbrumrally/tilesets/space.png
+share/pixmaps/
+share/pixmaps/brumbrumrally.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
