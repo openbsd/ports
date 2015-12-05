@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.316 2015/09/20 12:12:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.317 2015/12/05 13:02:46 bentley Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -30,6 +30,7 @@
      SUBDIR += bomberclone
      SUBDIR += boswars
      SUBDIR += braincurses
+     SUBDIR += brumbrumrally
      SUBDIR += burgerspace
      SUBDIR += bzflag
      SUBDIR += capitan-sevilla
