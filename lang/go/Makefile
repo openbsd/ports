@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.26 2015/08/19 06:57:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2015/12/05 05:01:24 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =		Go programming language
 
-VERSION =		1.4.2
-REVISION =		0
+VERSION =		1.5.2
 EXTRACT_SUFX =		.src.tar.gz
 DISTNAME = 		go${VERSION}
 PKGNAME = 		go-${VERSION}
 CATEGORIES =		lang
 
-HOMEPAGE =		http://golang.org/
+HOMEPAGE =		https://golang.org/
 
 MAINTAINER = 		Joel Sing <jsing@openbsd.org>
 
@@ -20,13 +19,13 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m pthread
 
-MASTER_SITES =		http://golang.org/dl/
+MASTER_SITES =		https://golang.org/dl/
 
-BUILD_DEPENDS =		shells/bash
+BUILD_DEPENDS =		lang/go-bootstrap shells/bash
 
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	None
-SUBST_VARS =		GOEXE GOCFG
+SUBST_VARS =		GOCFG
 
 WRKDIST =		${WRKDIR}/go
 WRKSRC =		${WRKDIST}/src
@@ -34,23 +33,15 @@ WRKSRC =		${WRKDIST}/src
 GOOS = 			openbsd
 GOARCH =		unknown
 GOROOT = 		${PREFIX}/go
+GOROOT_BOOTSTRAP =	${PREFIX}/go/bootstrap
 
 .if ${MACHINE_ARCH} == "amd64"
 GOARCH =		amd64
-EXEPREFIX =		6
-PKG_ARGS +=		-Damd64=1
-PKG_ARGS +=		-Di386=0
 .elif ${MACHINE_ARCH} == "i386"
 GOARCH =		386
-EXEPREFIX =		8
-PKG_ARGS +=		-Damd64=0
-PKG_ARGS +=		-Di386=1
-.else
-PKG_ARGS += 		-Damd64=0 -Di386=0
 .endif
 
 GOCFG =			/${GOOS}_${GOARCH}
-GOEXE =			${GOCFG}/${EXEPREFIX}
 
 do-configure:
 .	if ${GOARCH} == "unknown"
@@ -65,7 +56,8 @@ do-build:
 		CXX="${CXX}" \
 		GOROOT=${WRKDIST} \
 		GOBIN=${WRKDIST}/bin \
-		GOROOT_FINAL=${GOROOT} ./make.bash --no-banner
+		GOROOT_FINAL=${GOROOT} \
+		GOROOT_BOOTSTRAP=${GOROOT_BOOTSTRAP} ./make.bash --no-banner
 
 do-test:
 	@cd ${WRKSRC} && \
@@ -73,16 +65,22 @@ do-test:
 		PATH=${WRKDIST}/bin:${PATH} GOROOT=${WRKDIST} ./run.bash
 
 do-install:
-	${INSTALL_PROGRAM} -p ${WRKDIST}/bin/go{,fmt} ${PREFIX}/bin
-
 	${INSTALL_PROGRAM_DIR} ${GOROOT}
 
+	${INSTALL_PROGRAM_DIR} ${GOROOT}/bin
+	${INSTALL_PROGRAM} -p ${WRKDIST}/bin/go{,fmt} ${GOROOT}/bin
+
+	@cd ${PREFIX}/bin && \
+		ln -s ../go/bin/go go
+	@cd ${PREFIX}/bin && \
+		ln -s ../go/bin/gofmt gofmt
+
 	@cd ${WRKDIST} && \
-		find . ! -name .hg\* -type f -maxdepth 1 \
+		find . -type f -maxdepth 1 \
 			-exec ${INSTALL_DATA} -p {} \
 			${GOROOT} \;
 
-.	for dir in doc include lib misc src pkg
+.	for dir in doc lib misc src pkg
 		@cd ${WRKDIST} && \
 			find ${dir} -type d \
 				-exec ${INSTALL_DATA_DIR} \

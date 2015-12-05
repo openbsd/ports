@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.amd64,v 1.5 2014/12/23 12:21:37 jsing Exp $
-go/src/runtime/zasm_openbsd_amd64.h
-go/src/runtime/zgoarch_amd64.go
-go/src/runtime/zruntime_defs_openbsd_amd64.go
-go/src/runtime/zsys_openbsd_amd64.s
