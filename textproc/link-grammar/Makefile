@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/11/23 13:28:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/12/05 08:09:41 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 
@@ -6,7 +6,7 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.3.1
+VERSION =		5.3.2
 DISTNAME =		link-grammar-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
