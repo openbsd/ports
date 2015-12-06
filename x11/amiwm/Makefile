@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2015/02/16 22:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2015/12/06 20:12:42 jasper Exp $
 
 COMMENT=	Amiga Workbench lookalike window manager
 
-VERSION=	0.20pl48
+VERSION=	0.21pl2
 DISTNAME=	amiwm${VERSION}
-PKGNAME=	amiwm-0.20.48
+PKGNAME=	amiwm-${VERSION:S/pl/./}
 CATEGORIES=	x11
 
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/X11/wm/amiwm/

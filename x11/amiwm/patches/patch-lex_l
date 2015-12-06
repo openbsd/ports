@@ -1,9 +1,9 @@
-$OpenBSD: patch-lex_l,v 1.1 2015/11/12 10:14:09 sthen Exp $
+$OpenBSD: patch-lex_l,v 1.2 2015/12/06 20:12:42 jasper Exp $
 
 http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/wm/amiwm/patches/patch-ab?rev=1.1&content-type=text/x-cvsweb-markup
 
---- lex.l.orig	Thu Nov 12 10:12:23 2015
-+++ lex.l	Thu Nov 12 10:12:32 2015
+--- lex.l.orig	Sat Apr 10 00:15:15 2010
++++ lex.l	Sun Dec  6 21:03:56 2015
 @@ -6,7 +6,7 @@ extern int ParseError;
  extern FILE *rcfile;
  #undef yyin
@@ -12,4 +12,4 @@ http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/wm/amiwm/patches/patch-ab?rev=1.1&con
 +static int yywrap(void) { return 1; }
  extern int parse_keyword(char *);
  void fixup_string(char *, char *);
- %}
+ #define YY_SKIP_YYWRAP
