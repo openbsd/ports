@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2015/10/24 09:18:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2015/12/06 08:29:35 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -26,7 +26,7 @@ PKGNAME-qt3=		avahi-qt3-${V}
 PKGNAME-qt4=		avahi-qt4-${V}
 PKGNAME-ui=		avahi-ui-${V}
 
-REVISION-main=		22
+REVISION-main=		23
 REVISION-gtk=		6
 REVISION-gtk3=		7
 REVISION-gui=		10

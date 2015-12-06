@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2012/07/17 08:30:58 dcoppa Exp $
+$OpenBSD: README-main,v 1.2 2015/12/06 08:29:35 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,7 +6,7 @@ $OpenBSD: README-main,v 1.1 2012/07/17 08:30:58 dcoppa Exp $
 
 For proper functionality, multicast(4) needs to be enabled. To do so,
 add the following line to /etc/rc.conf.local(8):
-    multicast_host=YES
+    multicast=YES
 
 Otherwise, local LAN IP address must be specified on the upnpc command
 line, using the '-m' option. e.g.:

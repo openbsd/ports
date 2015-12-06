@@ -1,4 +1,4 @@
-$OpenBSD: README-minimal,v 1.7 2015/07/07 13:49:16 ajacoutot Exp $
+$OpenBSD: README-minimal,v 1.8 2015/12/06 08:29:35 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -79,5 +79,5 @@ mDNS/DNS-SD support
 The avahi-daemon(8) daemon provides Zeroconf support (aka. Bonjour /
 Rendezvous) in KDE.
 
-To make use of it, edit /etc/rc.conf.local to include "multicast_host=YES"
+To make use of it, edit /etc/rc.conf.local to include "multicast=YES"
 and add "avahi_daemon" to the "pkg_scripts" line _after_ "messagebus".

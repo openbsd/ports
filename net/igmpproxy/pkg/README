@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2015/02/16 22:53:55 sthen Exp $
+$OpenBSD: README,v 1.5 2015/12/06 08:29:35 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,11 +8,11 @@ To use igmpproxy on OpenBSD, you will need to configure it by
 editing ${SYSCONFDIR}/igmpproxy.conf, and configure the OS for
 multicast forwarding:
 
-# echo multicast_router=YES >> /etc/rc.conf.local
+# echo multicast=YES >> /etc/rc.conf.local
 # echo net.inet.ip.mforwarding=1 >> /etc/sysctl.conf
 
 and restart. Note that client machines using OpenBSD should
-be configured with multicast_host=YES.
+also be configured with multicast=YES.
 
 Start igmpproxy at boot time in the usual way:
 

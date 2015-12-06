@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2015/02/16 22:53:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/12/06 08:29:35 ajacoutot Exp $
 
 COMMENT =	multicast router utilizing IGMP forwarding
 
 VERSION =	0.1-beta2
 DISTNAME =	igmpproxy-src-${VERSION}
 PKGNAME =	igmpproxy-${VERSION:S/-beta/b/}
-REVISION =	6
+REVISION =	7
 CATEGORIES =	net
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=igmpproxy/}
 

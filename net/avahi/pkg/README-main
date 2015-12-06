@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.9 2015/10/24 09:18:13 ajacoutot Exp $
+$OpenBSD: README-main,v 1.10 2015/12/06 08:29:35 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,7 +6,7 @@ $OpenBSD: README-main,v 1.9 2015/10/24 09:18:13 ajacoutot Exp $
 
 For proper functionality, multicast(4) needs to be enabled. To do so,
 add the following line to /etc/rc.conf.local(8):
-    multicast_host=YES
+    multicast=YES
 
 Note that you MUST have a system-wide D-BUS daemon running BEFORE
 starting avahi, e.g.:

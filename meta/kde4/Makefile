@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/07/07 13:49:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2015/12/06 08:29:35 ajacoutot Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -26,7 +26,7 @@ PKGSPEC-network =	kdenetwork-${MODKDE4_SPEC}
 PKGSPEC-sdk =		kdesdk-${MODKDE4_SPEC}
 PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
-REVISION-minimal =	1
+REVISION-minimal =	2
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
