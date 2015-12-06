@@ -1,0 +1,347 @@
+$OpenBSD: patch-sysdeps_openbsd_netload_c,v 1.8 2015/12/06 15:19:49 mpi Exp $
+
+Rewrite of glibtop_get_netload_p() to use getifaddrs(3) instead of KVM.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=759064
+
+--- sysdeps/openbsd/netload.c.orig	Mon Apr 28 23:09:24 2014
++++ sysdeps/openbsd/netload.c	Sat Dec  5 16:27:56 2015
+@@ -1,48 +1,39 @@
+-/* Copyright (C) 1998-99 Martin Baulig
+-   This file is part of LibGTop 1.0.
++/*
++ * Copyright (c) 2015 Martin Pieuchot <mpi@openbsd.org>
++ *
++ * Permission to use, copy, modify, and distribute this software for any
++ * purpose with or without fee is hereby granted, provided that the above
++ * copyright notice and this permission notice appear in all copies.
++ *
++ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
++ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
++ * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
++ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
++ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
++ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
++ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
++ */
+ 
+-   Contributed by Martin Baulig <martin@home-of-linux.org>, October 1998.
++#include "config.h"
+ 
+-   LibGTop is free software; you can redistribute it and/or modify it
+-   under the terms of the GNU General Public License as published by
+-   the Free Software Foundation; either version 2 of the License,
+-   or (at your option) any later version.
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <sys/ioctl.h>
+ 
+-   LibGTop is distributed in the hope that it will be useful, but WITHOUT
+-   ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+-   FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+-   for more details.
+-
+-   You should have received a copy of the GNU General Public License
+-   along with LibGTop; see the file COPYING. If not, write to the
+-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+-   Boston, MA 02111-1307, USA.
+-*/
+-
+-#include <config.h>
+-#include <glibtop.h>
+-#include <glibtop/error.h>
+-#include <glibtop/netload.h>
+-
+-#include <glibtop_suid.h>
+-
+-#include <string.h>
+-
+ #include <net/if.h>
+ #include <net/if_dl.h>
+-#include <net/if_types.h>
+ 
+-#include <sys/ioctl.h>
+-
+-#include <net/if_var.h>
+-
+ #include <netinet/in.h>
+-#define _KERNEL
+ #include <netinet/in_var.h>
+-#undef _KERNEL
+ #include <netinet6/in6_var.h>
+ 
++#include <ifaddrs.h>
++
++#include "glibtop.h"
++#include "glibtop/netload.h"
++
+ static const unsigned long _glibtop_sysdeps_netload =
++(1L << GLIBTOP_NETLOAD_MTU) +
+ (1L << GLIBTOP_NETLOAD_IF_FLAGS) +
+ (1L << GLIBTOP_NETLOAD_PACKETS_IN) +
+ (1L << GLIBTOP_NETLOAD_PACKETS_OUT) +
+@@ -55,183 +46,115 @@ static const unsigned long _glibtop_sysdeps_netload =
+ (1L << GLIBTOP_NETLOAD_ERRORS_TOTAL) +
+ (1L << GLIBTOP_NETLOAD_COLLISIONS);
+ 
+-static const unsigned _glibtop_sysdeps_netload_data =
+-(1L << GLIBTOP_NETLOAD_ADDRESS) +
+-(1L << GLIBTOP_NETLOAD_SUBNET) +
+-(1L << GLIBTOP_NETLOAD_MTU);
+-
+-/* nlist structure for kernel access */
+-static struct nlist nlst [] = {
+-    { "_ifnet" },
+-    { 0 }
+-};
+-
+-/* Init function. */
+-
+ void
+ _glibtop_init_netload_p (glibtop *server)
+ {
+     server->sysdeps.netload = _glibtop_sysdeps_netload;
+-
+-    if (kvm_nlist (server->machine.kd, nlst) < 0)
+-	glibtop_error_io_r (server, "kvm_nlist");
+ }
+ 
+-/* Provides Network statistics. */
+-
+ void
+ glibtop_get_netload_p (glibtop *server, glibtop_netload *buf,
+ 		       const char *interface)
+ {
+-    struct ifnet ifnet;
+-    u_long ifnetaddr, ifnetfound;
+-    struct sockaddr *sa = NULL;
+-    char name [32];
++    struct ifaddrs *ifap, *ifa;
++    struct if_data *ifd = NULL;
+ 
+-    union {
+-	struct ifaddr ifa;
+-	struct in_ifaddr in;
+-    } ifaddr;
++    buf->flags = 0;
+ 
+-    glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_NETLOAD), 0);
++    if (getifaddrs(&ifap) != 0)
++        return;
+ 
+-    memset (buf, 0, sizeof (glibtop_netload));
++    for (ifa = ifap; ifa != NULL; ifa = ifa->ifa_next) {
++        if (strcmp (interface, ifa->ifa_name))
++            continue;
+ 
+-    if (kvm_read (server->machine.kd, nlst [0].n_value,
+-		  &ifnetaddr, sizeof (ifnetaddr)) != sizeof (ifnetaddr))
+-	glibtop_error_io_r (server, "kvm_read (ifnet)");
++        if (ifa->ifa_addr->sa_family == AF_LINK) {
++            struct sockaddr_dl *dl = (struct sockaddr_dl *)ifa->ifa_addr;
+ 
+-    while (ifnetaddr) {
+-	struct sockaddr_in *sin;
+-	register char *cp;
+-	u_long ifaddraddr;
++            ifd = ifa->ifa_data;
+ 
+-	{
+-	    ifnetfound = ifnetaddr;
++            memcpy (buf->hwaddress, LLADDR (dl), sizeof (buf->hwaddress));
++            buf->flags |= (1L << GLIBTOP_NETLOAD_HWADDRESS);
+ 
+-	    if (kvm_read (server->machine.kd, ifnetaddr, &ifnet,
+-			  sizeof (ifnet)) != sizeof (ifnet))
+-		    glibtop_error_io_r (server, "kvm_read (ifnetaddr)");
++            if (ifa->ifa_flags & IFF_UP)
++                buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_UP);
++            if (ifa->ifa_flags & IFF_BROADCAST)
++                buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_BROADCAST);
++            if (ifa->ifa_flags & IFF_DEBUG)
++                buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_DEBUG);
++            if (ifa->ifa_flags & IFF_LOOPBACK)
++                buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_LOOPBACK);
++            if (ifa->ifa_flags & IFF_POINTOPOINT)
++                buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_POINTOPOINT);
++            if (ifa->ifa_flags & IFF_RUNNING)
++                buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_RUNNING);
++            if (ifa->ifa_flags & IFF_NOARP)
++                buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_NOARP);
++            if (ifa->ifa_flags & IFF_PROMISC)
++                buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_PROMISC);
++            if (ifa->ifa_flags & IFF_ALLMULTI)
++                buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_ALLMULTI);
++            if (ifa->ifa_flags & IFF_OACTIVE)
++                buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_OACTIVE);
++            if (ifa->ifa_flags & IFF_SIMPLEX)
++                buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_SIMPLEX);
++            if (ifa->ifa_flags & IFF_LINK0)
++                buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_LINK0);
++            if (ifa->ifa_flags & IFF_LINK1)
++                buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_LINK1);
++            if (ifa->ifa_flags & IFF_LINK2)
++                buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_LINK2);
++            if (ifa->ifa_flags & IFF_MULTICAST)
++                buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_MULTICAST);
+ 
+-	    g_strlcpy (name, ifnet.if_xname, sizeof(name));
+-	    ifnetaddr = (u_long) ifnet.if_list.tqe_next;
++        } else if (ifa->ifa_addr->sa_family == AF_INET) {
++            struct sockaddr_in *sin = (struct sockaddr_in *)ifa->ifa_addr;
++            struct sockaddr_in *mask = (struct sockaddr_in *)ifa->ifa_netmask;
+ 
+-	    if (strcmp (name, interface) != 0)
+-		    continue;
++            buf->address = sin->sin_addr.s_addr;
++            buf->flags |= (1L << GLIBTOP_NETLOAD_ADDRESS);
+ 
+-	    ifaddraddr = (u_long) ifnet.if_addrlist.tqh_first;
+-	}
+-	if (ifnet.if_flags & IFF_UP)
+-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_UP);
+-	if (ifnet.if_flags & IFF_BROADCAST)
+-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_BROADCAST);
+-	if (ifnet.if_flags & IFF_DEBUG)
+-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_DEBUG);
+-	if (ifnet.if_flags & IFF_LOOPBACK)
+-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_LOOPBACK);
+-	if (ifnet.if_flags & IFF_POINTOPOINT)
+-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_POINTOPOINT);
+-#ifdef IFF_DRV_RUNNING
+-	if (ifnet.if_drv_flags & IFF_DRV_RUNNING)
+-#else
+-	if (ifnet.if_flags & IFF_RUNNING)
+-#endif
+-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_RUNNING);
+-	if (ifnet.if_flags & IFF_NOARP)
+-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_NOARP);
+-	if (ifnet.if_flags & IFF_PROMISC)
+-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_PROMISC);
+-	if (ifnet.if_flags & IFF_ALLMULTI)
+-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_ALLMULTI);
+-#ifdef IFF_DRV_OACTIVE
+-	if (ifnet.if_drv_flags & IFF_DRV_OACTIVE)
+-#else
+-	if (ifnet.if_flags & IFF_OACTIVE)
+-#endif
+-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_OACTIVE);
+-	if (ifnet.if_flags & IFF_SIMPLEX)
+-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_SIMPLEX);
+-	if (ifnet.if_flags & IFF_LINK0)
+-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_LINK0);
+-	if (ifnet.if_flags & IFF_LINK1)
+-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_LINK1);
+-	if (ifnet.if_flags & IFF_LINK2)
+-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_LINK2);
+-	if (ifnet.if_flags & IFF_MULTICAST)
+-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_MULTICAST);
++            buf->subnet = mask->sin_addr.s_addr;
++            buf->flags |= (1L << GLIBTOP_NETLOAD_SUBNET);
++        } else if (ifa->ifa_addr->sa_family == AF_INET6) {
++            struct sockaddr_in6 *sin6 = (struct sockaddr_in6 *)ifa->ifa_addr;
++            struct sockaddr_in6 *mask = (struct sockaddr_in6 *)ifa->ifa_netmask;
+ 
+-	buf->packets_in = ifnet.if_ipackets;
+-	buf->packets_out = ifnet.if_opackets;
+-	buf->packets_total = buf->packets_in + buf->packets_out;
++            memcpy (buf->address6, &sin6->sin6_addr, sizeof (buf->address6));
++            buf->flags |= (1L << GLIBTOP_NETLOAD_ADDRESS6);
+ 
+-	buf->bytes_in = ifnet.if_ibytes;
+-	buf->bytes_out = ifnet.if_obytes;
+-	buf->bytes_total = buf->bytes_in + buf->bytes_out;
++            if (IN6_IS_ADDR_LINKLOCAL(&sin6->sin6_addr)) {
++                sin6->sin6_scope_id = ntohs(
++                    *(uint16_t *)&sin6->sin6_addr.s6_addr[2]);
++                sin6->sin6_addr.s6_addr[2] = sin6->sin6_addr.s6_addr[3] = 0;
++            }
+ 
+-	buf->errors_in = ifnet.if_ierrors;
+-	buf->errors_out = ifnet.if_oerrors;
+-	buf->errors_total = buf->errors_in + buf->errors_out;
++            buf->scope6 = (guint8) sin6->sin6_scope_id;
++            buf->flags |= (1L << GLIBTOP_NETLOAD_SCOPE6);
+ 
+-	buf->collisions = ifnet.if_collisions;
+-	buf->flags = _glibtop_sysdeps_netload;
++	    memcpy (buf->prefix6, &mask->sin6_addr, sizeof (buf->prefix6));
++	    buf->flags |= (1L << GLIBTOP_NETLOAD_PREFIX6);
++        }
++    }
+ 
+-	while (ifaddraddr) {
+-	    if ((kvm_read (server->machine.kd, ifaddraddr, &ifaddr,
+-			   sizeof (ifaddr)) != sizeof (ifaddr)))
+-		glibtop_error_io_r (server, "kvm_read (ifaddraddr)");
++    if (ifd != NULL) {
++        buf->mtu = ifd->ifi_mtu;
+ 
+-#define CP(x) ((char *)(x))
+-	    cp = (CP(ifaddr.ifa.ifa_addr) - CP(ifaddraddr)) +
+-		CP(&ifaddr);
+-	    sa = (struct sockaddr *)cp;
++        buf->packets_in = ifd->ifi_ipackets;
++        buf->packets_out = ifd->ifi_opackets;
++        buf->packets_total = buf->packets_in + buf->packets_out;
+ 
+-	    if (sa->sa_family == AF_LINK) {
+-		struct sockaddr_dl *dl = (struct sockaddr_dl *) sa;
++        buf->bytes_in = ifd->ifi_ibytes;
++        buf->bytes_out = ifd->ifi_obytes;
++        buf->bytes_total = buf->bytes_in + buf->bytes_out;
+ 
+-		memcpy (buf->hwaddress, LLADDR (dl), sizeof (buf->hwaddress));
+-		buf->flags |= (1L << GLIBTOP_NETLOAD_HWADDRESS);
+-	    } else if (sa->sa_family == AF_INET) {
+-		sin = (struct sockaddr_in *)sa;
+-		buf->subnet = ifaddr.in.ia_netmask;
+-		buf->address = sin->sin_addr.s_addr;
+-		buf->mtu = ifnet.if_mtu;
++        buf->errors_in = ifd->ifi_ierrors;
++        buf->errors_out = ifd->ifi_oerrors;
++        buf->errors_total = buf->errors_in + buf->errors_out;
+ 
+-		buf->flags |= _glibtop_sysdeps_netload_data;
+-	    } else if (sa->sa_family == AF_INET6) {
+-		struct sockaddr_in6 *sin6 = (struct sockaddr_in6 *) sa;
+-		int in6fd;
+-
+-		memcpy (buf->address6, &sin6->sin6_addr,
+-		    sizeof (buf->address6));
+-		buf->flags |= (1L << GLIBTOP_NETLOAD_ADDRESS6);
+-
+-		if (IN6_IS_ADDR_LINKLOCAL(&sin6->sin6_addr)) {
+-			sin6->sin6_scope_id =
+-				ntohs(*(u_int16_t *)&sin6->sin6_addr.s6_addr[2]);
+-			sin6->sin6_addr.s6_addr[2] = sin6->sin6_addr.s6_addr[3] = 0;
+-		}
+-
+-		buf->scope6 = (guint8) sin6->sin6_scope_id;
+-		buf->flags |= (1L << GLIBTOP_NETLOAD_SCOPE6);
+-
+-		in6fd = socket (AF_INET6, SOCK_DGRAM, 0);
+-		if (in6fd >= 0) {
+-			struct in6_ifreq ifr;
+-
+-			memset (&ifr, 0, sizeof (ifr));
+-			ifr.ifr_addr = *sin6;
+-			g_strlcpy (ifr.ifr_name, interface,
+-			    sizeof (ifr.ifr_name));
+-			if (ioctl (in6fd, SIOCGIFNETMASK_IN6, (char *) &ifr) >= 0) {
+-				memcpy (buf->prefix6, &ifr.ifr_addr.sin6_addr,
+-				    sizeof (buf->prefix6));
+-				buf->flags |= (1L << GLIBTOP_NETLOAD_PREFIX6);
+-			}
+-			close (in6fd);
+-		}
+-	    }
+-	    ifaddraddr = (u_long) ifaddr.ifa.ifa_list.tqe_next;
+-	}
+-	return;
++        buf->collisions = ifd->ifi_collisions;
++        buf->flags |= _glibtop_sysdeps_netload;
+     }
++
++    freeifaddrs(ifap);
+ }
