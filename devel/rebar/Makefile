@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2015/07/10 17:10:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2015/12/06 15:47:05 jasper Exp $
 
 COMMENT=		Erlang build tool
 
-GH_TAGNAME=		2.6.0
-REVISION=		0
+GH_TAGNAME=		2.6.1
 GH_ACCOUNT=		rebar
 GH_PROJECT=		rebar
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
