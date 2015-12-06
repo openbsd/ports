@@ -1,12 +1,22 @@
-$OpenBSD: patch-libavcodec_psymodel_c,v 1.1 2015/10/13 05:44:18 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_psymodel_c,v 1.2 2015/12/06 08:51:46 ajacoutot Exp $
 
 AAC encoder: Extensive improvements
 
 AAC encoder: cosmetics from last commit
 
---- libavcodec/psymodel.c.orig	Mon Oct 12 21:58:16 2015
-+++ libavcodec/psymodel.c	Mon Oct 12 22:05:51 2015
-@@ -109,24 +109,20 @@ av_cold struct FFPsyPreprocessContext* ff_psy_preproce
+AAC encoder: improve SF range utilization
+
+--- libavcodec/psymodel.c.orig	Sat Dec  5 15:14:11 2015
++++ libavcodec/psymodel.c	Sat Dec  5 15:01:19 2015
+@@ -39,6 +39,7 @@ av_cold int ff_psy_init(FFPsyContext *ctx, AVCodecCont
+     ctx->group     = av_mallocz_array(sizeof(ctx->group[0]), num_groups);
+     ctx->bands     = av_malloc_array (sizeof(ctx->bands[0]),      num_lens);
+     ctx->num_bands = av_malloc_array (sizeof(ctx->num_bands[0]),  num_lens);
++    ctx->cutoff    = avctx->cutoff;
+ 
+     if (!ctx->ch || !ctx->group || !ctx->bands || !ctx->num_bands) {
+         ff_psy_end(ctx);
+@@ -109,24 +110,20 @@ av_cold struct FFPsyPreprocessContext* ff_psy_preproce
          return NULL;
      ctx->avctx = avctx;
  

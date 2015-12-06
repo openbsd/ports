@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_c,v 1.7 2015/10/25 08:46:41 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_c,v 1.8 2015/12/06 08:51:46 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -32,8 +32,20 @@ aacenc_tns: enable Temporal Noise Shaping by default
 
 avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed declarations and code"
 
---- libavcodec/aacenc.c.orig	Mon Sep  7 21:58:01 2015
-+++ libavcodec/aacenc.c	Sun Oct 18 22:28:49 2015
+AAC encoder: Fix application of M/S with PNS
+
+AAC encoder: improve SF range utilization
+
+aacenc: mark the "faac"-like coder for removal
+
+aacenc: mark coders other than twoloop as experimental
+
+aacenc: remove the experimental flag
+
+aacenc: fix aac_pred option triggering an error
+
+--- libavcodec/aacenc.c.orig	Sat Dec  5 15:13:08 2015
++++ libavcodec/aacenc.c	Sat Dec  5 15:11:04 2015
 @@ -54,11 +54,12 @@ static void put_audio_specific_config(AVCodecContext *
  {
      PutBitContext pb;
@@ -74,16 +86,22 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
                  for (i = 0; i < ics->swb_sizes[g]; i++) {
                      float sum = (cpe->ch[0].coeffs[start+i] + p*cpe->ch[1].coeffs[start+i])*scale;
                      cpe->ch[0].coeffs[start+i] = sum;
-@@ -279,7 +292,7 @@ static void apply_mid_side_stereo(ChannelElement *cpe)
+@@ -279,7 +292,13 @@ static void apply_mid_side_stereo(ChannelElement *cpe)
          for (w2 =  0; w2 < ics->group_len[w]; w2++) {
              int start = (w+w2) * 128;
              for (g = 0; g < ics->num_swb; g++) {
 -                if (!cpe->ms_mask[w*16 + g]) {
-+                if (!cpe->ms_mask[w*16 + g] && !cpe->is_mask[w*16 + g]) {
++                /* ms_mask can be used for other purposes in PNS and I/S,
++                 * so must not apply M/S if any band uses either, even if
++                 * ms_mask is set.
++                 */
++                if (!cpe->ms_mask[w*16 + g] || cpe->is_mask[w*16 + g]
++                    || cpe->ch[0].band_type[w*16 + g] == NOISE_BT
++                    || cpe->ch[1].band_type[w*16 + g] == NOISE_BT) {
                      start += ics->swb_sizes[g];
                      continue;
                  }
-@@ -424,6 +437,8 @@ static int encode_individual_channel(AVCodecContext *a
+@@ -424,6 +443,8 @@ static int encode_individual_channel(AVCodecContext *a
          put_ics_info(s, &sce->ics);
          if (s->coder->encode_main_pred)
              s->coder->encode_main_pred(s, sce);
@@ -92,7 +110,7 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
      }
      encode_band_info(s, sce);
      encode_scale_factors(avctx, s, sce);
-@@ -489,7 +504,9 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -489,7 +510,9 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
      float **samples = s->planar_samples, *samples2, *la, *overlap;
      ChannelElement *cpe;
      SingleChannelElement *sce;
@@ -103,7 +121,7 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
      int ms_mode = 0, is_mode = 0, tns_mode = 0, pred_mode = 0;
      int chan_el_counter[4];
      FFPsyWindowInfo windows[AAC_MAX_CHANNELS];
-@@ -517,10 +534,11 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -517,10 +540,11 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
          chans    = tag == TYPE_CPE ? 2 : 1;
          cpe      = &s->cpe[i];
          for (ch = 0; ch < chans; ch++) {
@@ -118,7 +136,7 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
              samples2 = overlap + 1024;
              la       = samples2 + (448+64);
              if (!frame)
-@@ -537,7 +555,7 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -537,7 +561,7 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                   */
                  ics->num_swb = s->samplerate_index >= 8 ? 1 : 3;
              } else {
@@ -127,7 +145,7 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
                                                ics->window_sequence[0]);
              }
              ics->window_sequence[1] = ics->window_sequence[0];
-@@ -570,25 +588,32 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -570,25 +594,32 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  ics->clip_avoidance_factor = 1.0f;
              }
  
@@ -164,7 +182,7 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
          memset(chan_el_counter, 0, sizeof(chan_el_counter));
          for (i = 0; i < s->chan_map[0]; i++) {
              FFPsyWindowInfo* wi = windows + start_ch;
-@@ -605,15 +630,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -605,15 +636,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  sce = &cpe->ch[ch];
                  coeffs[ch] = sce->coeffs;
                  sce->ics.predictor_present = 0;
@@ -194,7 +212,7 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
                  s->coder->search_for_quantizers(avctx, s, &cpe->ch[ch], s->lambda);
              }
              if (chans > 1
-@@ -655,8 +693,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -655,8 +699,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                          s->coder->search_for_pred(s, sce);
                      if (cpe->ch[ch].ics.predictor_present) pred_mode = 1;
                  }
@@ -205,7 +223,7 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
                  for (ch = 0; ch < chans; ch++) {
                      sce = &cpe->ch[ch];
                      s->cur_channel = start_ch + ch;
-@@ -665,22 +703,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -665,22 +709,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  }
                  s->cur_channel = start_ch;
              }
@@ -244,7 +262,7 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
                      encode_ms_info(&s->pb, cpe);
                      if (cpe->ms_mode) ms_mode = 1;
                  }
-@@ -692,36 +742,76 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -692,36 +748,76 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              start_ch += chans;
          }
  
@@ -303,7 +321,7 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
 +            s->lambda = FFMIN(s->lambda * ratio, 65536.f);
 +
 +            /* Keep iterating if we must reduce and lambda is in the sky */
-+            if ((s->lambda < 300.f || ratio > 0.9f) && (s->lambda > 10.f || ratio < 1.1f)) {
++            if (ratio > 0.9f && ratio < 1.1f) {
 +                break;
 +            } else {
 +                if (is_mode || ms_mode || tns_mode || pred_mode) {
@@ -341,7 +359,7 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
      if (!frame)
          s->last_frame++;
  
-@@ -737,6 +827,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
+@@ -737,6 +833,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
  {
      AACEncContext *s = avctx->priv_data;
  
@@ -350,7 +368,7 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
      ff_mdct_end(&s->mdct1024);
      ff_mdct_end(&s->mdct128);
      ff_psy_end(&s->psy);
-@@ -795,76 +887,101 @@ static av_cold int aac_encode_init(AVCodecContext *avc
+@@ -795,76 +893,105 @@ static av_cold int aac_encode_init(AVCodecContext *avc
      uint8_t grouping[AAC_MAX_CHANNELS];
      int lengths[2];
  
@@ -427,7 +445,7 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
 +        avctx->profile = FF_PROFILE_AAC_MAIN;
 +        WARN_IF(1,
 +                "Chainging profile to \"aac_main\"\n");
-+        ERROR_IF(s->options.pred,
++        ERROR_IF(s->options.ltp,
 +                 "LTP prediction unavailable in the \"aac_main\" profile\n");
      }
 +    s->profile = avctx->profile;
@@ -435,6 +453,10 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
  
 -    if (s->options.aac_coder != AAC_CODER_TWOLOOP) {
 +    if (s->options.coder != AAC_CODER_TWOLOOP) {
++        ERROR_IF(avctx->strict_std_compliance > FF_COMPLIANCE_EXPERIMENTAL,
++                 "Coders other than twoloop require -strict -2 and some may be removed in the future\n");
++        WARN_IF(s->options.coder == AAC_CODER_FAAC,
++                "The FAAC-like coder will be removed in the near future, please use twoloop!\n");
          s->options.intensity_stereo = 0;
          s->options.pns = 0;
      }
@@ -484,7 +506,7 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
      ff_af_queue_init(avctx, &s->afq);
  
      return 0;
-@@ -875,27 +992,17 @@ fail:
+@@ -875,27 +1002,17 @@ fail:
  
  #define AACENC_FLAGS AV_OPT_FLAG_ENCODING_PARAM | AV_OPT_FLAG_AUDIO_PARAM
  static const AVOption aacenc_options[] = {
@@ -523,3 +545,13 @@ avcodec/aacenc: Fix "libavcodec/aacenc.c:540:13: warning: ISO C90 forbids mixed 
      {NULL}
  };
  
+@@ -916,8 +1033,7 @@ AVCodec ff_aac_encoder = {
+     .encode2        = aac_encode_frame,
+     .close          = aac_encode_end,
+     .supported_samplerates = mpeg4audio_sample_rates,
+-    .capabilities   = AV_CODEC_CAP_SMALL_LAST_FRAME | AV_CODEC_CAP_DELAY |
+-                      AV_CODEC_CAP_EXPERIMENTAL,
++    .capabilities   = AV_CODEC_CAP_SMALL_LAST_FRAME | AV_CODEC_CAP_DELAY,
+     .sample_fmts    = (const enum AVSampleFormat[]){ AV_SAMPLE_FMT_FLTP,
+                                                      AV_SAMPLE_FMT_NONE },
+     .priv_class     = &aacenc_class,
