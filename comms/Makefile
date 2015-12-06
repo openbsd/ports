@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2015/11/24 17:50:19 abieber Exp $
+# $OpenBSD: Makefile,v 1.66 2015/12/06 13:05:38 jasper Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -27,8 +27,6 @@
      SUBDIR += mgetty+sendfax
      SUBDIR += minicom
      SUBDIR += minimodem
-     SUBDIR += obexftp
-     SUBDIR += openobex
      SUBDIR += owx
      SUBDIR += p5-Device-Gsm
      SUBDIR += p5-Device-Modem
