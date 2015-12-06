@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/19 12:55:14 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2015/12/06 17:13:42 landry Exp $
 
 COMMENT =	cli browser for keepassx databases
 
@@ -7,6 +7,7 @@ CATEGORIES =	security
 EXTRACT_SUFX =	.pl
 EXTRACT_ONLY =
 HOMEPAGE =	http://kpcli.sourceforge.net/
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
@@ -26,6 +27,7 @@ RUN_DEPENDS =	security/p5-Crypt-Rijndael \
 		x11/p5-Clipboard \
 		sysutils/p5-Capture-Tiny \
 		textproc/p5-Data-Password \
+		textproc/p5-XML-Parser \
 		textproc/p5-File-KeePass
 
 do-install:
