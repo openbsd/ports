@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_activemq,v 1.7 2015/08/19 07:22:55 jasper Exp $
---- bin/activemq.orig	Mon Aug 10 17:26:28 2015
-+++ bin/activemq	Sat Aug 15 10:06:24 2015
-@@ -152,10 +152,10 @@ fi
+$OpenBSD: patch-bin_activemq,v 1.8 2015/12/06 12:35:48 jasper Exp $
+--- bin/activemq.orig	Sun Dec  6 13:21:21 2015
++++ bin/activemq	Sun Dec  6 13:23:10 2015
+@@ -163,10 +163,10 @@ fi
  # For using instances
  if ( basename $0 | grep "activemq-instance-" > /dev/null);then
    INST="`basename $0|sed 's/^activemq-instance-//;s/\.sh$//'`"
@@ -14,7 +14,7 @@ $OpenBSD: patch-bin_activemq,v 1.7 2015/08/19 07:22:55 jasper Exp $
  fi
  
  # load activemq configuration
-@@ -539,7 +539,6 @@ invoke_stop(){
+@@ -550,7 +550,6 @@ invoke_stop(){
           echo
           echo "INFO: Regular shutdown not successful,  sending SIGKILL to process"
           invoke_kill
@@ -22,7 +22,7 @@ $OpenBSD: patch-bin_activemq,v 1.7 2015/08/19 07:22:55 jasper Exp $
         fi
      elif [ -f "$ACTIVEMQ_PIDFILE" ];then
         echo "ERROR: No or outdated process id in '$ACTIVEMQ_PIDFILE'"
-@@ -616,7 +615,7 @@ Configuration of this script:
+@@ -624,7 +623,7 @@ Configuration of this script:
      Modify $ACTIVEMQ_BASE/bin/env or create a copy of that file on a suitable location.
      To use additional configurations for running multiple instances on the same operating system
      rename or symlink script to a name matching to activemq-instance-<INSTANCENAME>.
@@ -31,19 +31,3 @@ $OpenBSD: patch-bin_activemq,v 1.7 2015/08/19 07:22:55 jasper Exp $
      \$HOME/.activemqrc-instance-<INSTANCENAME>.
  EOF
    exit 1
-@@ -649,7 +648,7 @@ case "$1" in
-     invoke_console
-     exit $?
-     ;;
--  stop)
-+esac
-     invoke_stop 
-     exit $?
-     ;;
-@@ -690,4 +689,4 @@ case "$1" in
-   *)
-     invoke_task checkforrunning
-     exit $?
--esac
-\ No newline at end of file
-+esac
