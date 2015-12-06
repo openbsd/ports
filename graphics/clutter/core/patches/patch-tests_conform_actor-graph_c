@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_conform_actor-graph_c,v 1.1 2015/12/06 15:46:01 nigel Exp $
+Bug 759085 - seg fault in actor-graph test
+https://bugzilla.gnome.org/show_bug.cgi?id=759085
+--- tests/conform/actor-graph.c.orig	Sat Jul 11 10:18:18 2015
++++ tests/conform/actor-graph.c	Fri Dec  4 02:11:10 2015
+@@ -350,7 +350,8 @@ actor_replace_child (void)
+   g_assert_cmpstr (clutter_actor_get_name (iter), ==, "qux");
+ 
+   clutter_actor_add_child (actor, g_object_new (CLUTTER_TYPE_ACTOR,
+-                                                "name", "foo"));
++                                                "name", "foo",
++						NULL));
+ 
+   clutter_actor_replace_child (actor, iter,
+                                g_object_new (CLUTTER_TYPE_ACTOR,
