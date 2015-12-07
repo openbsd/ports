@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.200 2015/06/26 20:48:59 naddy Exp $
+# $OpenBSD: network.conf.template,v 1.201 2015/12/07 18:24:32 jasper Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -182,7 +182,7 @@ MASTER_SITE_AFTERSTEP+=	\
 	http://ftp.kddilabs.jp/X11/AfterStep/
 
 MASTER_SITE_WINDOWMAKER+=	\
-	http://www.windowmaker.info/pub/
+	http://www.windowmaker.org/pub/
 
 MASTER_SITE_FREEBSD_LOCAL+=	\
 	http://distcache.FreeBSD.org/local-distfiles/
