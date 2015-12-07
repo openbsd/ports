@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.401 2015/12/07 06:32:50 rpointel Exp $
+# $OpenBSD: Makefile,v 1.402 2015/12/07 20:51:10 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -6,7 +6,6 @@
      SUBDIR += aide
      SUBDIR += aircrack-ng
      SUBDIR += amap
-     SUBDIR += antisniff
      SUBDIR += apg
      SUBDIR += arirang
      SUBDIR += assl
