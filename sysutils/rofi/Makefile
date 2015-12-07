@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/11/18 20:16:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/12/07 09:04:38 jasper Exp $
 
 COMMENT =		window switcher, run dialog and dmenu replacement
 
 GH_PROJECT =		rofi
 GH_TAGNAME =		0.15.11
-REVISION =		0
+REVISION =		1
 GH_ACCOUNT =		DaveDavenPort
 DISTNAME =		${GH_PROJECT}-${GH_TAGNAME}
 
@@ -29,7 +29,7 @@ BUILD_DEPENDS+=		${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CPPFLAGS=-I${LOCALBASE}/include
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 TEST_TARGET =		test
 

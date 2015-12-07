@@ -1,0 +1,45 @@
+$OpenBSD: patch-source_helper_c,v 1.1 2015/12/07 09:04:38 jasper Exp $
+
+From 2da1207b7df28bb0f9583debef75789e07c0777f Mon Sep 17 00:00:00 2001
+From: Dave Davenport <qball@gmpclient.org>
+Date: Fri, 27 Nov 2015 13:01:25 +0100
+Subject: [PATCH] Fix issue #271 expand path.
+
+--- source/helper.c.orig	Sun Nov  8 10:43:52 2015
++++ source/helper.c	Mon Dec  7 09:25:37 2015
+@@ -37,6 +37,7 @@
+ #include <sys/types.h>
+ #include <sys/file.h>
+ #include <sys/stat.h>
++#include <pwd.h>
+ #include <ctype.h>
+ #include "helper.h"
+ #include "x11-helper.h"
+@@ -628,4 +629,27 @@ int is_not_ascii ( const char * str )
+         return 1;
+     }
+     return 0;
++}
++
++char *rofi_expand_path ( const char *input )
++{
++    char **str = g_strsplit ( input, G_DIR_SEPARATOR_S, -1 );
++    for ( unsigned int i = 0; str && str[i]; i++ ) {
++        // Replace ~ with current user homedir.
++        if ( str[i][0] == '~' && str[i][1] == '\0' ) {
++            g_free ( str[i] );
++            str[i] = g_strdup ( g_get_home_dir () );
++        }
++        // If other user, ask getpwnam.
++        else if ( str[i][0] == '~' ) {
++            struct passwd *p = getpwnam ( &( str[i][1] ) );
++            if ( p != NULL ) {
++                g_free ( str[i] );
++                str[i] = g_strdup ( p->pw_dir );
++            }
++        }
++    }
++    char *retv = g_build_filenamev ( str );
++    g_strfreev ( str );
++    return retv;
+ }

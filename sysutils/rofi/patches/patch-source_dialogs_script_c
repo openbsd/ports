@@ -1,0 +1,18 @@
+$OpenBSD: patch-source_dialogs_script_c,v 1.1 2015/12/07 09:04:38 jasper Exp $
+
+From 2da1207b7df28bb0f9583debef75789e07c0777f Mon Sep 17 00:00:00 2001
+From: Dave Davenport <qball@gmpclient.org>
+Date: Fri, 27 Nov 2015 13:01:25 +0100
+Subject: [PATCH] Fix issue #271 expand path.
+
+--- source/dialogs/script.c.orig	Sun Nov  8 10:43:52 2015
++++ source/dialogs/script.c	Mon Dec  7 09:25:37 2015
+@@ -178,7 +178,7 @@ Switcher *script_switcher_parse_setup ( const char *st
+             g_strlcpy ( sw->name, token, 32 );
+         }
+         else if ( index == 1 ) {
+-            sw->ed = (void *) g_strdup ( token );
++            sw->ed = (void *) rofi_expand_path ( token );
+         }
+         index++;
+     }
