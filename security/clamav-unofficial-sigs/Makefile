@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/14 16:38:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/12/07 14:11:02 sthen Exp $
 
 COMMENT =	fetch and update unofficial signatures for ClamAV
 
-V =		4.1.0
+V =		4.9.2
 DISTNAME =	clamav-unofficial-sigs-$V
 DISTFILES =	${DISTNAME}{$V}.tar.gz
 
@@ -20,7 +20,8 @@ MASTER_SITES =	https://github.com/extremeshok/clamav-unofficial-sigs/archive/
 RUN_DEPENDS =	net/curl \
 		net/rsync \
 		security/clamav \
-		security/gnupg
+		security/gnupg \
+		shells/bash
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
@@ -29,9 +30,9 @@ PKG_ARCH =	*
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/clamav-unofficial-sigs.conf
-	perl -pi -e 's,/etc,${SYSCONFDIR},' ${WRKSRC}/clamav-unofficial-sigs.sh
-# simple perl re replace; if we used SUBST_CMD for this one we'd need to
-# patch a line next to a version number which makes updating a pain
+	sed -i -e 's,/etc,${SYSCONFDIR},' -e \
+	    's,/usr/local/bin,${LOCALBASE}/bin,' \
+	    ${WRKSRC}/clamav-unofficial-sigs.sh
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/clamav-unofficial-sigs
