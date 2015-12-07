@@ -1,13 +1,12 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/05/11 02:56:56 wilfried Exp $
+$OpenBSD: patch-configure,v 1.2 2015/12/07 14:58:54 jasper Exp $
 --- configure.orig	Sun Feb 23 10:08:00 2003
-+++ configure	Fri May  9 17:41:24 2003
-@@ -3052,6 +3052,10 @@ case $host_os in
++++ configure	Mon Dec  7 14:35:10 2015
+@@ -3052,6 +3052,9 @@ case $host_os in
  	OS=freebsd
  	LIBRARY_RPATH="$LIBRARY_RPATH:/usr/X11R6/lib"
  	;;
 +*openbsd*)
 +	OS=openbsd
-+	LIBS="$LIBS -lkvm"
 +	;;
  *)
  	echo ""

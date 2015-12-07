@@ -1,11 +1,125 @@
-$OpenBSD: patch-src_ifstat_openbsd_c,v 1.1 2013/11/25 22:06:40 sthen Exp $
---- src/ifstat_openbsd.c.orig	Mon Nov 25 15:05:36 2013
-+++ src/ifstat_openbsd.c	Mon Nov 25 15:06:02 2013
-@@ -27,6 +27,7 @@
+$OpenBSD: patch-src_ifstat_openbsd_c,v 1.2 2015/12/07 14:58:54 jasper Exp $
+
+use getifaddrs(3) instead of libkvm.
+
+--- src/ifstat_openbsd.c.orig	Tue Jan 29 09:09:18 2002
++++ src/ifstat_openbsd.c	Mon Dec  7 14:31:38 2015
+@@ -27,19 +27,14 @@
  #include <sys/types.h>
  #include <sys/socket.h>
  #include <net/if.h>
-+#include <net/if_var.h>
- #include <fcntl.h>
- #include <kvm.h>
- #include <limits.h>
+-#include <fcntl.h>
+-#include <kvm.h>
+-#include <limits.h>
+-#include <nlist.h>
++#include <ifaddrs.h>
+ #include <stdlib.h>
+-#include <string.h>
+ 
+ #include "ifstat.h"
+ #include "utils.h"
+ 
+ struct ifstatstate {
+-	void	*ifnet_head;
+-	kvm_t	*kd;
++	struct ifaddrs *ifap;
+ };
+ 
+ /*
+@@ -51,8 +46,6 @@ ifstatstate_t *
+ if_statinit(void)
+ {
+ 	ifstatstate_t	*statep;
+-	struct nlist	ifnet[] = { { "_ifnet" }, { NULL }};
+-	char		errbuf[_POSIX2_LINE_MAX];
+ 
+ 	statep = malloc(sizeof (ifstatstate_t));
+ 	if (statep == NULL) {
+@@ -60,35 +53,8 @@ if_statinit(void)
+ 		return (NULL);
+ 	}
+ 
+-	/*
+-	 * Just for the duration of kmem_openfiles(), get privileges
+-	 * needed to access kmem.
+-	 */
+-	chpriv(PRIV_GAIN);
+-	statep->kd = kvm_openfiles(NULL, NULL, NULL, O_RDONLY, errbuf);
+-	chpriv(PRIV_DROP);
+-	if (statep->kd == NULL) {
+-		warn("cannot access raw kernel memory: %s\n", errbuf);
+-		free(statep);
+-		return (NULL);
+-	}
+-
+-	if (kvm_nlist(statep->kd, ifnet) == -1) {
+-		warn("cannot populate kernel namelist: %s\n",
+-		    kvm_geterr(statep->kd));
+-		goto fail;
+-	}
+-
+-	if (kvm_read(statep->kd, ifnet->n_value, &statep->ifnet_head,
+-	    sizeof (ifnet->n_value)) != sizeof (ifnet->n_value)) {
+-		warn("cannot find ifnet list head: %s\n",
+-		    kvm_geterr(statep->kd));
+-		goto fail;
+-	}
+-
+ 	return (statep);
+ fail:
+-	(void) kvm_close(statep->kd);
+ 	free(statep);
+ 	return (NULL);
+ }
+@@ -100,22 +66,33 @@ fail:
+ int
+ if_stats(const char *ifname, ifstatstate_t *statep, ifstats_t *ifstatsp)
+ {
+-	void		*ifnet_addr = statep->ifnet_head;
+-	struct ifnet	ifnet;
++	struct ifaddrs *ifa;
+ 
+-	for (; ifnet_addr != NULL; ifnet_addr = TAILQ_NEXT(&ifnet, if_list)) {
++	if (getifaddrs(&statep->ifap) != 0) {
++		warn("failed to get interface addresses");
++		return (0);
++	}
+ 
+-		if (kvm_read(statep->kd, (unsigned long)ifnet_addr, &ifnet,
+-		    sizeof (struct ifnet)) != sizeof (struct ifnet))
+-			return (0);
++	for (ifa = statep->ifap; ifa != NULL; ifa = ifa->ifa_next) {
++		if (strcmp(ifname, ifa->ifa_name)) {
++			continue;
++		}
+ 
+-		if (strcmp(ifnet.if_xname, ifname) == 0) {
+-			ifstatsp->rxbytes = ifnet.if_ibytes;
+-			ifstatsp->txbytes = ifnet.if_obytes;
+-			return (1);
++		if (ifa->ifa_addr->sa_family == AF_LINK) {
++			struct sockaddr_dl *dl = (struct sockaddr_dl *)ifa->ifa_addr;
++		       	struct if_data *ifd = NULL;
++
++			ifd = ifa->ifa_data;
++
++			if (ifd != NULL) {
++				ifstatsp->rxbytes = ifd->ifi_ibytes;
++				ifstatsp->txbytes = ifd->ifi_obytes;
++				return 1;
++			}
+ 		}
+ 	}
+ 
++	freeifaddrs(statep->ifap);
+ 	return (0);
+ }
+ 
+@@ -125,6 +102,6 @@ if_stats(const char *ifname, ifstatstate_t *statep, if
+ void
+ if_statfini(ifstatstate_t *statep)
+ {
+-	(void) kvm_close(statep->kd);
++	freeifaddrs(statep->ifap);
+ 	free(statep);
+ }
