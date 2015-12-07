@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.330 2015/12/06 13:05:57 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.331 2015/12/07 18:42:53 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -686,6 +686,7 @@ my $obsolete_reason = {
 	'mrtd' => 3,
 	'openobex' => 6,
 	'obexftp' => 6,
+	'py-openbsd' => 3,
 };
 
 my @msg = (
