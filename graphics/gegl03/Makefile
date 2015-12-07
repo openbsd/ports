@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/22 10:27:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/12/07 06:56:42 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		graph based image processing framework (API version 0.3)
 
-V=			0.3.2
+V=			0.3.4
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl03-${V}
 EXTRACT_SUFX=		.tar.bz2
 
-SHARED_LIBS +=  gegl-0.3             0.0      # 302.0
+SHARED_LIBS +=  gegl-0.3             0.0      # 304.0
 
 API_VERSION=		0.3
 SUBST_VARS=		API_VERSION
