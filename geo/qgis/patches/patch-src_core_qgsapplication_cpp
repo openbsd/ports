@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_core_qgsapplication_cpp,v 1.6 2015/10/31 15:29:44 landry Exp $
+$OpenBSD: patch-src_core_qgsapplication_cpp,v 1.7 2015/12/07 13:11:41 landry Exp $
 Fix paths to various doc files, installed in share/doc/qgis
 per doc/CMakeLists.txt patch
 --- src/core/qgsapplication.cpp.orig	Fri Oct 23 14:10:38 2015
@@ -8,7 +8,7 @@ per doc/CMakeLists.txt patch
  QString QgsApplication::authorsFilePath()
  {
 -  return ABISYM( mPkgDataPath ) + QLatin1String( "/doc/AUTHORS" );
-+  return ABISYM( mPkgDataPath ) + QLatin1String( "../doc/qgis/AUTHORS" );
++  return ABISYM( mPkgDataPath ) + QLatin1String( "/../doc/qgis/AUTHORS" );
  }
  /*!
    Returns the path to the contributors file.
@@ -16,12 +16,12 @@ per doc/CMakeLists.txt patch
  QString QgsApplication::contributorsFilePath()
  {
 -  return ABISYM( mPkgDataPath ) + QLatin1String( "/doc/CONTRIBUTORS" );
-+  return ABISYM( mPkgDataPath ) + QLatin1String( "../doc/qgis/CONTRIBUTORS" );
++  return ABISYM( mPkgDataPath ) + QLatin1String( "/../doc/qgis/CONTRIBUTORS" );
  }
  QString QgsApplication::developersMapFilePath()
  {
 -  return ABISYM( mPkgDataPath ) + QLatin1String( "/doc/developersmap.html" );
-+  return ABISYM( mPkgDataPath ) + QLatin1String( "../doc/qgis/developersmap.html" );
++  return ABISYM( mPkgDataPath ) + QLatin1String( "/../doc/qgis/developersmap.html" );
  }
  
  /*!
@@ -30,7 +30,7 @@ per doc/CMakeLists.txt patch
  QString QgsApplication::sponsorsFilePath()
  {
 -  return ABISYM( mPkgDataPath ) + QLatin1String( "/doc/SPONSORS" );
-+  return ABISYM( mPkgDataPath ) + QLatin1String( "../doc/qgis/SPONSORS" );
++  return ABISYM( mPkgDataPath ) + QLatin1String( "/../doc/qgis/SPONSORS" );
  }
  
  /*!
@@ -39,21 +39,21 @@ per doc/CMakeLists.txt patch
  QString QgsApplication::donorsFilePath()
  {
 -  return ABISYM( mPkgDataPath ) + QLatin1String( "/doc/DONORS" );
-+  return ABISYM( mPkgDataPath ) + QLatin1String( "../doc/qgis/DONORS" );
++  return ABISYM( mPkgDataPath ) + QLatin1String( "/../doc/qgis/DONORS" );
  }
  
  /** Returns the path to the sponsors file. */
  QString QgsApplication::translatorsFilePath()
  {
 -  return ABISYM( mPkgDataPath ) + QLatin1String( "/doc/TRANSLATORS" );
-+  return ABISYM( mPkgDataPath ) + QLatin1String( "../doc/qgis/TRANSLATORS" );
++  return ABISYM( mPkgDataPath ) + QLatin1String( "/../doc/qgis/TRANSLATORS" );
  }
  
  /** Returns the path to the licence file. */
  QString QgsApplication::licenceFilePath()
  {
 -  return ABISYM( mPkgDataPath ) + QLatin1String( "/doc/LICENSE" );
-+  return ABISYM( mPkgDataPath ) + QLatin1String( "../doc/qgis/LICENSE" );
++  return ABISYM( mPkgDataPath ) + QLatin1String( "/../doc/qgis/LICENSE" );
  }
  
  /*!
