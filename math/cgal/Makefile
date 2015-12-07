@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/08/12 22:27:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2015/12/07 07:51:26 jasper Exp $
 
 # vax:	no fenv.h support
 NOT_FOR_ARCHS =		vax
@@ -10,17 +10,16 @@ COMMENT =		Computational Geometry Algorithms Library
 # when updating this port, don't just change the version number here.
 # MASTER_SITES needs to be adapted for every new tarball.
 # See https://gforge.inria.fr/frs/?group_id=52 for files index.
-DISTNAME =		CGAL-3.8
-MASTER_SITES =		https://gforge.inria.fr/frs/download.php/28500/
+DISTNAME =		CGAL-4.6.3
+MASTER_SITES =		https://gforge.inria.fr/frs/download.php/file/35139/
 PKGNAME =		${DISTNAME:L}
 EPOCH =			0
-REVISION =		0
 
 SHARED_ONLY =		Yes
-SHARED_LIBS =		CGAL		0.0 \
-			CGAL_Core	0.0 \
-			CGAL_ImageIO	0.0 \
-			CGAL_Qt4	0.0 
+SHARED_LIBS =		CGAL		1.0 \
+			CGAL_Core	1.0 \
+			CGAL_ImageIO	1.0 \
+			CGAL_Qt4	1.0
 
 CATEGORIES =		math
 
@@ -29,28 +28,30 @@ HOMEPAGE =		http://www.cgal.org/
 # mix of LGPLv2.1 and QPL; see http://www.cgal.org/license.html
 PERMIT_PACKAGE_CDROM =	Yes
 
-# m>=5.3 for fenv.h support
-WANTLIB += GL GLU boost_thread-mt gmp gmpxx
-WANTLIB += lib/qt4/QtGui lib/qt4/QtOpenGL m>=5.3 mpfr 
-WANTLIB += pthread stdc++ z
+EXTRACT_SUFX =		.tar.xz
+
+WANTLIB += GL GLU boost_system-mt boost_thread-mt gmp m mpfr pthread
+WANTLIB += stdc++ z lib/qt4/QtGui lib/qt4/QtOpenGL lib/qt4/QtSvg
 
 MODULES =		devel/cmake \
 			x11/qt4
+BIULD_DEPENDS =		math/eigen3
 LIB_DEPENDS =		devel/boost \
 			devel/gmp \
 			devel/mpfr
 
 CXXFLAGS +=		-I${X11BASE}/include
 
-CONFIGURE_ARGS +=	-DCGAL_INSTALL_MAN_DIR="man/man1"
+CONFIGURE_ARGS +=	-DCGAL_INSTALL_MAN_DIR="man/man1" \
+			-DCGAL_INSTALL_DOC_DIR="share/doc/cgal"
 CONFIGURE_ENV =		LDFLAGS="-L${X11BASE}/lib"
 
-post-patch:
+NO_TEST =		Yes
+
+post-extract:
 	rm ${WRKSRC}/cmake/modules/FindBLAS.cmake \
-	   ${WRKSRC}/cmake/modules/FindBoost.cmake \
 	   ${WRKSRC}/cmake/modules/FindLAPACK.cmake \
 	   ${WRKSRC}/cmake/modules/FindOpenGL.cmake \
-	   ${WRKSRC}/cmake/modules/FindPackageMessage.cmake \
 	   ${WRKSRC}/scripts/cgal_make_macosx_app
 
 .include <bsd.port.mk>
