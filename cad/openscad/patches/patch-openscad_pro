@@ -1,0 +1,35 @@
+$OpenBSD: patch-openscad_pro,v 1.1 2015/12/07 07:52:32 jasper Exp $
+
+- remove unsupported compiler flag (that is NOT ignored)
+- don't use bundled Liberation fonts, use RDEP on fonts/liberation-fonts instead
+- fix manpage installation dir
+
+--- openscad.pro.orig	Mon Nov 16 06:13:56 2015
++++ openscad.pro	Sun Dec  6 16:26:28 2015
+@@ -173,7 +173,6 @@ netbsd* {
+ # See Dec 2011 OpenSCAD mailing list, re: CGAL/GCC bugs.
+ *g++* {
+   QMAKE_CXXFLAGS *= -fno-strict-aliasing
+-  QMAKE_CXXFLAGS_WARN_ON += -Wno-unused-local-typedefs # ignored before 4.8
+ }
+ 
+ *clang* {
+@@ -561,10 +560,6 @@ libraries.path = "$$PREFIX/share/$${FULLNAME}/librarie
+ libraries.files = libraries/*
+ INSTALLS += libraries
+ 
+-fonts.path = "$$PREFIX/share/$${FULLNAME}/fonts/"
+-fonts.files = fonts/*
+-INSTALLS += fonts
+-
+ colorschemes.path = "$$PREFIX/share/$${FULLNAME}/color-schemes/"
+ colorschemes.files = color-schemes/*
+ INSTALLS += colorschemes
+@@ -585,6 +580,6 @@ icons.path = $$PREFIX/share/pixmaps
+ icons.extra = test -f icons/$${FULLNAME}.png && cp -f icons/$${FULLNAME}.png \"\$(INSTALL_ROOT)$${icons.path}/\" || cp -f icons/openscad.png \"\$(INSTALL_ROOT)$${icons.path}/$${FULLNAME}.png\"
+ INSTALLS += icons
+ 
+-man.path = $$PREFIX/share/man/man1
++man.path = $$PREFIX/man/man1
+ man.extra = cp -f doc/openscad.1 \"\$(INSTALL_ROOT)$${man.path}/$${FULLNAME}.1\"
+ INSTALLS += man
