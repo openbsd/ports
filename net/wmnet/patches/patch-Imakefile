@@ -1,8 +1,20 @@
-$OpenBSD: patch-Imakefile,v 1.1 2003/04/06 00:43:21 naddy Exp $
---- Imakefile.orig	Sat Mar 22 10:10:58 2003
-+++ Imakefile	Sat Mar 22 10:11:20 2003
-@@ -17,7 +17,7 @@ INSTPGMFLAGS = -s -g kmem -m 2755 
+$OpenBSD: patch-Imakefile,v 1.2 2015/12/07 18:00:42 jasper Exp $
+--- Imakefile.orig	Fri May  5 02:34:29 2000
++++ Imakefile	Mon Dec  7 18:54:24 2015
+@@ -10,14 +10,18 @@ DEFINES = -Dlinux_libc6
+ LOCAL_LIBRARIES = $(XLIB) -lm 
+ #endif
  
+-#if defined (FreeBSDArchitecture) || defined (OpenBSDArchitecture)
++#if defined (FreeBSDArchitecture)
+ LOCAL_LIBRARIES = $(XLIB) -lm -lkvm
+ INSTPGMFLAGS = -s -g kmem -m 2755 
+ #endif
+ 
++#if defined (OpenBSDArchitecture)
++LOCAL_LIBRARIES = $(XLIB) -lm
++#endif
++
  LINTLIBS = $(LINTXLIB)
  
 -#if defined (FreeBSDArchitecture) || defined (OpenBSDArchitecture)

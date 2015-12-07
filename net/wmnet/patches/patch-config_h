@@ -1,0 +1,16 @@
+$OpenBSD: patch-config_h,v 1.1 2015/12/07 18:00:42 jasper Exp $
+--- config.h.orig	Mon Dec  7 18:52:28 2015
++++ config.h	Mon Dec  7 18:52:47 2015
+@@ -1,4 +1,4 @@
+-#if defined (__FreeBSD__) || defined (__OpenBSD__)
++#if defined (__FreeBSD__)
+ 
+ /* Our only FreeBSD driver, this goes straight into kernel memory 
+  * and reads the raw structures from right underneath the kernel using the
+@@ -54,3 +54,6 @@
+ #define USE_2_1_DEV
+ #endif /* linux */
+ 
++#if defined(__OpenBSD__)
++#define USE_GETIFADDRS
++#endif

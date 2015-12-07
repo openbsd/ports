@@ -1,7 +1,7 @@
-$OpenBSD: patch-drivers_c,v 1.5 2013/11/22 15:38:30 sthen Exp $
---- drivers.c.orig	Thu May  4 18:34:29 2000
-+++ drivers.c	Fri Nov 22 08:34:50 2013
-@@ -9,35 +9,41 @@
+$OpenBSD: patch-drivers_c,v 1.6 2015/12/07 18:00:42 jasper Exp $
+--- drivers.c.orig	Fri May  5 02:34:29 2000
++++ drivers.c	Mon Dec  7 18:51:16 2015
+@@ -9,18 +9,21 @@
   *  great, but please send me the diff.  
   */
  
@@ -22,7 +22,6 @@ $OpenBSD: patch-drivers_c,v 1.5 2013/11/22 15:38:30 sthen Exp $
 +#include <X11/Xlib.h>
  
 +#include <err.h>
-+#include <fcntl.h>
 +#include <stdio.h>
 +#include <stdlib.h>
 +#include <string.h>
@@ -31,36 +30,10 @@ $OpenBSD: patch-drivers_c,v 1.5 2013/11/22 15:38:30 sthen Exp $
 +#include "config.h"
 +#include "wmnet.h"
 +
-+static char buffer[512];
-+
  /* For FreeBSD */
  #ifdef USE_KVM
--#include<net/if.h>
--#include<kvm.h>
--#include<nlist.h>
-+#include <net/if.h>
-+#include <net/if_var.h>
-+#include <kvm.h>
-+#include <nlist.h>
- 
- kvm_t *kvmfd;
- struct nlist symbols[] = {
-  { "_ifnet" },
-  { NULL }
- };
--unsigned long ifnet_savedaddr;
--int kvm_test(void);
--int kvm_updateStats(void);
-+static unsigned long ifnet_savedaddr = -1;
-+int kvm_test(struct if_data_t *);
-+int kvm_updateStats(struct if_data_t *);
- #endif /* USE_KVM */
- 
--
- #ifdef USE_LINUX_PPP
- #include<net/ppp_defs.h>
- 
-@@ -57,18 +63,6 @@ static struct ifpppstatsreq ppp_stats_req;
+ #include<net/if.h>
+@@ -57,18 +60,6 @@ static struct ifpppstatsreq ppp_stats_req;
  #define ACCOUNT_IN_FOUND        1
  #define ACCOUNT_OUT_FOUND       2
  
@@ -79,11 +52,18 @@ $OpenBSD: patch-drivers_c,v 1.5 2013/11/22 15:38:30 sthen Exp $
  #ifdef USE_IPFWADM
  int updateStats_ipfwadm(void);
  int ipfwadm_test(void);
-@@ -82,10 +76,8 @@ int updateStats_dev(void);
+@@ -81,11 +72,16 @@ int ipchains_test(void);
+ int updateStats_dev(void);
  int dev_test(void);
  #endif
++#ifdef USE_GETIFADDRS
++#include <ifaddrs.h>
++#include <net/if.h>
  
--
++int updateStats_bsd(struct if_data_t *);
++int bsd_test(struct if_data_t *);
++#endif
+ 
 -typedef int (*parser_func)(void);
  static struct drivers_struct {
 - char * name;
@@ -91,13 +71,13 @@ $OpenBSD: patch-drivers_c,v 1.5 2013/11/22 15:38:30 sthen Exp $
   parser_func function;
   parser_func test;
  } drivers[] = {
-@@ -102,12 +94,13 @@ static struct drivers_struct {
-  {"pppstats",updateStats_ppp, ppp_test},
- #endif
+@@ -104,10 +100,14 @@ static struct drivers_struct {
  #ifdef USE_KVM
-- {"kmem",kvm_updateStats, kvm_test},
-+ {"kmem", kvm_updateStats, kvm_test},
+  {"kmem",kvm_updateStats, kvm_test},
  #endif
++#ifdef USE_GETIFADDRS
++ {"bsd", updateStats_bsd, bsd_test},
++#endif
   {NULL, NULL}
  };
  
@@ -107,7 +87,7 @@ $OpenBSD: patch-drivers_c,v 1.5 2013/11/22 15:38:30 sthen Exp $
   int ind = 0;
   int len = 0;
   char *string, *ptr;
-@@ -127,14 +120,12 @@ char* available_drivers(void) {
+@@ -127,14 +127,12 @@ char* available_drivers(void) {
   *(--string) = '\0';
   return ptr; 
  } 
@@ -125,7 +105,7 @@ $OpenBSD: patch-drivers_c,v 1.5 2013/11/22 15:38:30 sthen Exp $
    }
    ind++;
   }
-@@ -143,12 +134,13 @@ parser_func find_driver(void) {
+@@ -143,12 +141,13 @@ parser_func find_driver(void) {
  }
  
  
@@ -142,7 +122,7 @@ $OpenBSD: patch-drivers_c,v 1.5 2013/11/22 15:38:30 sthen Exp $
      fprintf(stderr, "wmnet: driver %s not appropriate for this machine\n", parser_name);
      exit(18);
    }
-@@ -157,10 +149,7 @@ parser_func setup_driver(char * parser_name) {
+@@ -157,10 +156,7 @@ parser_func setup_driver(char * parser_name) {
   fprintf(stderr, "wmnet: no driver %s\n", parser_name);
   exit(18);
  }
@@ -153,102 +133,78 @@ $OpenBSD: patch-drivers_c,v 1.5 2013/11/22 15:38:30 sthen Exp $
  #ifdef linux
  /* All the data gathering is done in here. 
   * Return True if no change to tx/rx.
-@@ -441,48 +430,60 @@ int updateStats_ppp(void) {
- #endif /* linux */
- 
- #ifdef USE_KVM
--int kvm_test(void) {
-+int kvm_test(struct if_data_t *id) {
-   if (((kvmfd = kvm_open(NULL, NULL, NULL, O_RDONLY, buffer)) == NULL) ||
-       (kvm_nlist(kvmfd, symbols) < 0) ||
-       kvm_read(kvmfd, (unsigned long)symbols[0].n_value, &ifnet_savedaddr, sizeof(unsigned long)) == -1 ) return False;
--  if(device == NULL) device = "ec0";
--  fprintf(stderr, "wmnet: using kmem driver to monitor %s\n", device);
-+  if(id->device == NULL) id->device = "ec0";
-+  warnx("using kmem driver to monitor %s", id->device);
-   return True;
- }
- 
--int kvm_updateStats(void) {
-- struct ifnet * ifnet = (struct ifnet *)buffer;
-+int kvm_updateStats(struct if_data_t *id) {
-+ struct ifnet ifnetbuf, *ifnet;
-  unsigned long ifnet_addr = ifnet_savedaddr;
-  char devname[16];
-  int flag = 0;
-+ unsigned long tp_in, tp_out, tb_in, tb_out;
-+ static unsigned long lp_in, lp_out, lb_in, lb_out;
-+ id->rx = False;
-+ id->tx = False;
-+
-+ ifnet = &ifnetbuf;
-+
-  while (ifnet_addr && flag != (ACCOUNT_IN_FOUND|ACCOUNT_OUT_FOUND)) {
--  kvm_read(kvmfd, ifnet_addr, buffer, sizeof(struct ifnet));
-+  memset(ifnet, 0, sizeof(struct ifnet));
-+  if (kvm_read(kvmfd, ifnet_addr, ifnet, sizeof(struct ifnet)) == -1) {
-+	  warn("kvm_read() returned -1");
-+	  break;
-+  }
- #ifdef __OpenBSD__
-   snprintf(devname, 15, "%s", ifnet->if_xname);
- #else
-   kvm_read(kvmfd, (unsigned long)ifnet->if_name, devname, 15);
-   snprintf(devname, 15, "%s%d", devname, ifnet->if_unit);
- #endif
--  if(!strncmp(devname, device, strlen(device))) { /* we found our struct */
--        totalpackets_in =ifnet->if_ipackets;
--        if (totalpackets_in != lastpackets_in) {
--                totalbytes_in = ifnet->if_ibytes;
--                diffpackets_in += totalpackets_in - lastpackets_in;
--                diffbytes_in += totalbytes_in - lastbytes_in;
--                lastpackets_in = totalpackets_in;
--                lastbytes_in = totalbytes_in;
--                rx = True;
-+
-+   /* we found our struct */
-+  if(!strncmp(devname, id->device, strlen(id->device))) {
-+        tp_in =ifnet->if_ipackets;
-+        if (tp_in != lp_in) {
-+                tb_in = ifnet->if_ibytes;
-+                //dp_in += tp_in - lp_in;
-+                id->db_in += tb_in - lb_in;
-+                lp_in = tp_in;
-+                lb_in = tb_in;
-+                id->rx = True;
-         }
- 
--
--        totalpackets_out = ifnet->if_opackets;
--        if (totalpackets_out != lastpackets_out) {
--                totalbytes_out =ifnet->if_obytes;
--                diffpackets_out += totalpackets_out - lastpackets_out;
--                diffbytes_out += totalbytes_out - lastbytes_out;
--                lastpackets_out = totalpackets_out;
--                lastbytes_out = totalbytes_out;
--                tx = True;
-+        tp_out =ifnet->if_opackets;
-+        if (tp_out != lp_out) {
-+                tb_out = ifnet->if_obytes;
-+                //dp_out += tp_out - lp_out;
-+                id->db_out += tb_out - lb_out;
-+                lp_out = tp_out;
-+                lb_out = tb_out;
-+                id->tx = True;
-         }
-         flag = (ACCOUNT_IN_FOUND|ACCOUNT_OUT_FOUND);
- 
-@@ -498,12 +499,8 @@ int kvm_updateStats(void) {
- /* return True if no change to tx/rx
-  * return False if display will need to be updated
-  */	 
-- return((rx == current_rx) && (tx == current_tx));
-+ return((id->rx == id->current_rx) && (id->tx == id->current_tx));
- }
+@@ -503,7 +499,71 @@ int kvm_updateStats(void) {
  
  
  #endif
 -  
--
+ 
 -   
 -  
++
++#ifdef USE_GETIFADDRS
++int bsd_test(struct if_data_t *id) {
++	struct ifaddrs *ifa;
++
++	if (getifaddrs(&ifa) != 0) {
++		freeifaddrs(ifa);
++		return False;
++	}
++
++	warnx("using getifaddrs(3) to monitor %s", id->device);
++	return True;
++}
++
++int updateStats_bsd(struct if_data_t *id) {
++	struct ifaddrs *ifap, *ifa;
++
++	id->rx = False;
++	id->tx = False;
++
++	if (getifaddrs(&ifap) != 0) {
++		freeifaddrs(ifap);
++		return False;
++	}
++
++       for (ifa = ifap; ifa != NULL; ifa = ifa->ifa_next) {
++               if (strcmp(id->device, ifa->ifa_name)) {
++                       continue;
++               }
++
++               if (ifa->ifa_addr->sa_family == AF_LINK) {
++                       struct if_data *ifd = NULL;
++
++                       ifd = ifa->ifa_data;
++
++                       if (ifd != NULL) {
++			       totalpackets_in = ifd->ifi_ipackets;
++			       if (totalpackets_in != lastpackets_in) {
++				       totalbytes_in = ifd->ifi_ibytes;
++				       diffpackets_in += totalpackets_in - lastpackets_in;
++				       diffbytes_in += totalbytes_in - lastbytes_in;
++				       lastpackets_in = totalpackets_in;
++				       lastbytes_in = totalbytes_in;
++				       id->rx = True;
++			       }
++
++			       totalpackets_out = ifd->ifi_opackets;
++			       if (totalpackets_out != lastpackets_out) {
++				       totalbytes_out =ifd->ifi_ibytes;
++				       diffpackets_out += totalpackets_out - lastpackets_out;
++				       diffbytes_out += totalbytes_out - lastbytes_out;
++				       lastpackets_out = totalpackets_out;
++				       lastbytes_out = totalbytes_out;
++				       id->tx = True;
++			       }
++
++			       return 0;
++			}
++	       }
++	}
++
++	/* return True if no change to tx/rx
++	 * return False if display will need to be updated
++	*/
++	return ((id->rx == id->current_rx) && (id->tx == id->current_tx));
++}
++#endif
