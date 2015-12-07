@@ -1,31 +1,54 @@
-$OpenBSD: patch-daily_sh,v 1.4 2015/09/17 12:17:45 sthen Exp $
---- daily.sh.orig	Thu Sep 17 12:35:30 2015
-+++ daily.sh	Thu Sep 17 12:37:22 2015
-@@ -1,18 +1,18 @@
+$OpenBSD: patch-daily_sh,v 1.5 2015/12/07 23:42:03 sthen Exp $
+--- daily.sh.orig	Mon Dec  7 14:22:31 2015
++++ daily.sh	Mon Dec  7 14:25:08 2015
+@@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/ksh
+ # Copyright (C) 2015 Daniel Preussker, QuxLabs UG <preussker@quxlabs.com>
+ # This program is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License as published by
+@@ -31,7 +31,7 @@ status_run() {
+ }
  
- set -eu
- 
- cd "$(dirname "$0")"
- 
--up=$(php daily.php -f update >&2; echo $?)
-+up=$(%PHP% daily.php -f update >&2; echo $?)
- if [ "$up" -eq 1 ]; then
-     git pull --quiet
--    php includes/sql-schema/update.php
-+    %PHP% includes/sql-schema/update.php
+ if [ -z "$arg" ]; then
+-    up=$(php daily.php -f update >&2; echo $?)
++    up=$(%PHP% daily.php -f update >&2; echo $?)
+     if [ "$up" -eq 1 ]; then
+         # Update to Master-Branch
+         status_run 'Updating to latest codebase' 'git pull --quiet'
+@@ -50,19 +50,19 @@ else
+     case $arg in
+         post-pull)
+             # List all tasks to do after pull in the order of execution
+-            status_run 'Updating SQL-Schema' 'php includes/sql-schema/update.php'
++            status_run 'Updating SQL-Schema' '%PHP% includes/sql-schema/update.php'
+             status_run 'Updating submodules' "$0 submodules"
+             status_run 'Cleaning up DB' "$0 cleanup"
+             status_run 'Fetching notifications' "$0 notifications"
+         ;;
+         cleanup)
+             # DB-Cleanups
+-            php daily.php -f syslog
+-            php daily.php -f eventlog
+-            php daily.php -f authlog
+-            php daily.php -f perf_times
+-            php daily.php -f callback
+-            php daily.php -f device_perf
++            %PHP% daily.php -f syslog
++            %PHP% daily.php -f eventlog
++            %PHP% daily.php -f authlog
++            %PHP% daily.php -f perf_times
++            %PHP% daily.php -f callback
++            %PHP% daily.php -f device_perf
+         ;;
+         submodules)
+             # Init+Update our submodules
+@@ -71,7 +71,7 @@ else
+         ;;
+         notifications)
+             # Get notifications
+-            php daily.php -f notifications
++            %PHP% daily.php -f notifications
+         ;;
+     esac
  fi
- 
--php daily.php -f syslog
--php daily.php -f eventlog
--php daily.php -f authlog
--php daily.php -f perf_times
--php daily.php -f callback
--php daily.php -f device_perf
-+%PHP% daily.php -f syslog
-+%PHP% daily.php -f eventlog
-+%PHP% daily.php -f authlog
-+%PHP% daily.php -f perf_times
-+%PHP% daily.php -f callback
-+%PHP% daily.php -f device_perf

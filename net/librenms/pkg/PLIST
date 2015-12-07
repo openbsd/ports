@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/11/10 15:51:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/12/07 23:42:03 sthen Exp $
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:/var/www/librenms:/sbin/nologin
 librenms/
@@ -89,6 +89,7 @@ librenms/doc/Support/
 librenms/doc/Support/Configuration.md
 librenms/doc/Support/Discovery Support.md
 librenms/doc/Support/FAQ.md
+librenms/doc/Support/Features.md
 librenms/doc/Support/Install Validation.md
 librenms/doc/Support/Poller Support.md
 librenms/doc/Support/Support-New-OS.md
@@ -103,6 +104,7 @@ librenms/html/ajax_form.php
 librenms/html/ajax_listports.php
 librenms/html/ajax_rulesuggest.php
 librenms/html/ajax_search.php
+librenms/html/ajax_setresolution.php
 librenms/html/ajax_table.php
 librenms/html/api_v0.php
 librenms/html/bandwidth-graph.php
@@ -1656,6 +1658,7 @@ librenms/html/images/os/powercode.png
 librenms/html/images/os/procera.png
 librenms/html/images/os/proxim.png
 librenms/html/images/os/qnap.png
+librenms/html/images/os/quanta.png
 librenms/html/images/os/radlan.png
 librenms/html/images/os/raritan.png
 librenms/html/images/os/redhat.png
@@ -1732,6 +1735,7 @@ librenms/html/includes/application/
 librenms/html/includes/application/proxmox.inc.php
 librenms/html/includes/authenticate.inc.php
 librenms/html/includes/authentication/
+librenms/html/includes/authentication/active_directory.inc.php
 librenms/html/includes/authentication/http-auth.inc.php
 librenms/html/includes/authentication/ldap.inc.php
 librenms/html/includes/authentication/mysql.inc.php
@@ -1778,6 +1782,7 @@ librenms/html/includes/forms/delete-device-group.inc.php
 librenms/html/includes/forms/discovery-module-update.inc.php
 librenms/html/includes/forms/edit-dashboard.inc.php
 librenms/html/includes/forms/health-update.inc.php
+librenms/html/includes/forms/notifications.inc.php
 librenms/html/includes/forms/override-config.inc.php
 librenms/html/includes/forms/parse-alert-map.inc.php
 librenms/html/includes/forms/parse-alert-rule.inc.php
@@ -1788,6 +1793,7 @@ librenms/html/includes/forms/parse-template-rules.inc.php
 librenms/html/includes/forms/poller-group-remove.inc.php
 librenms/html/includes/forms/poller-groups.inc.php
 librenms/html/includes/forms/poller-module-update.inc.php
+librenms/html/includes/forms/query-ripenccapi.inc.php
 librenms/html/includes/forms/rediscover-device.inc.php
 librenms/html/includes/forms/schedule-maintenance.inc.php
 librenms/html/includes/forms/sensor-alert-reset.inc.php
@@ -1832,6 +1838,11 @@ librenms/html/includes/graphs/application/apache_hits.inc.php
 librenms/html/includes/graphs/application/apache_scoreboard.inc.php
 librenms/html/includes/graphs/application/auth.inc.php
 librenms/html/includes/graphs/application/bind_queries.inc.php
+librenms/html/includes/graphs/application/ceph_osd_performance.inc.php
+librenms/html/includes/graphs/application/ceph_pool_df.inc.php
+librenms/html/includes/graphs/application/ceph_pool_io.inc.php
+librenms/html/includes/graphs/application/ceph_pool_iops.inc.php
+librenms/html/includes/graphs/application/ceph_pool_objects.inc.php
 librenms/html/includes/graphs/application/drbd_disk_bits.inc.php
 librenms/html/includes/graphs/application/drbd_network_bits.inc.php
 librenms/html/includes/graphs/application/drbd_queue.inc.php
@@ -2277,6 +2288,7 @@ librenms/html/includes/table/inventory.inc.php
 librenms/html/includes/table/mempool.inc.php
 librenms/html/includes/table/poll-log.inc.php
 librenms/html/includes/table/processor.inc.php
+librenms/html/includes/table/sensors.inc.php
 librenms/html/includes/table/storage-edit.inc.php
 librenms/html/includes/table/storage.inc.php
 librenms/html/includes/table/syslog.inc.php
@@ -2689,6 +2701,7 @@ librenms/html/pages/device/apps/
 librenms/html/pages/device/apps.inc.php
 librenms/html/pages/device/apps/apache.inc.php
 librenms/html/pages/device/apps/bind.inc.php
+librenms/html/pages/device/apps/ceph.inc.php
 librenms/html/pages/device/apps/drbd.inc.php
 librenms/html/pages/device/apps/mailscanner.inc.php
 librenms/html/pages/device/apps/memcached.inc.php
@@ -2866,6 +2879,7 @@ librenms/html/pages/inventory.inc.php
 librenms/html/pages/locations.inc.php
 librenms/html/pages/logon.inc.php
 librenms/html/pages/map.inc.php
+librenms/html/pages/notifications.inc.php
 librenms/html/pages/packages.inc.php
 librenms/html/pages/plugin/
 librenms/html/pages/plugin.inc.php
@@ -2883,6 +2897,7 @@ librenms/html/pages/preferences.inc.php
 librenms/html/pages/pseudowires.inc.php
 librenms/html/pages/public.inc.php
 librenms/html/pages/purgeports.inc.php
+librenms/html/pages/ripenccapi.inc.php
 librenms/html/pages/routing/
 librenms/html/pages/routing.inc.php
 librenms/html/pages/routing/bgp.inc.php
@@ -2915,18 +2930,22 @@ librenms/includes/alerts/
 librenms/includes/alerts.inc.php
 librenms/includes/alerts/transport.api.php
 librenms/includes/alerts/transport.boxcar.php
+librenms/includes/alerts/transport.clickatell.php
 librenms/includes/alerts/transport.dummy.php
 librenms/includes/alerts/transport.hipchat.php
 librenms/includes/alerts/transport.irc.php
 librenms/includes/alerts/transport.mail.php
 librenms/includes/alerts/transport.nagios.php
 librenms/includes/alerts/transport.pagerduty.php
+librenms/includes/alerts/transport.playsms.php
 librenms/includes/alerts/transport.pushbullet.php
 librenms/includes/alerts/transport.pushover.php
 librenms/includes/alerts/transport.slack.php
+librenms/includes/alerts/transport.victorops.php
 librenms/includes/billing.php
 librenms/includes/caches/
 librenms/includes/caches/devices.inc.php
+librenms/includes/caches/notifications.inc.php
 librenms/includes/caches/ports.inc.php
 librenms/includes/caches/services.inc.php
 librenms/includes/cisco-entities.php
@@ -3021,6 +3040,7 @@ librenms/includes/discovery/mempools/fiberhome.inc.php
 librenms/includes/discovery/mempools/fortigate.inc.php
 librenms/includes/discovery/mempools/hp-procurve.inc.php
 librenms/includes/discovery/mempools/hrstorage.inc.php
+librenms/includes/discovery/mempools/infinity.inc.php
 librenms/includes/discovery/mempools/ironware-dyn.inc.php
 librenms/includes/discovery/mempools/junos.inc.php
 librenms/includes/discovery/mempools/netscaler.inc.php
@@ -3028,6 +3048,7 @@ librenms/includes/discovery/mempools/powerconnect-cpu.inc.php
 librenms/includes/discovery/mempools/pulse.inc.php
 librenms/includes/discovery/mempools/screenos.inc.php
 librenms/includes/discovery/mempools/sonicwall.inc.php
+librenms/includes/discovery/mempools/unifi.inc.php
 librenms/includes/discovery/mempools/vrp.inc.php
 librenms/includes/discovery/mempools/zywall.inc.php
 librenms/includes/discovery/os/
@@ -3089,6 +3110,7 @@ librenms/includes/discovery/os/huaweiups.inc.php
 librenms/includes/discovery/os/ibmnos.inc.php
 librenms/includes/discovery/os/ibmtl.inc.php
 librenms/includes/discovery/os/ies.inc.php
+librenms/includes/discovery/os/infinity.inc.php
 librenms/includes/discovery/os/ios.inc.php
 librenms/includes/discovery/os/ipoman.inc.php
 librenms/includes/discovery/os/ironware.inc.php
@@ -3138,6 +3160,7 @@ librenms/includes/discovery/os/prestige.inc.php
 librenms/includes/discovery/os/procurve.inc.php
 librenms/includes/discovery/os/proxim.inc.php
 librenms/includes/discovery/os/pulse.inc.php
+librenms/includes/discovery/os/quanta.inc.php
 librenms/includes/discovery/os/radlan.inc.php
 librenms/includes/discovery/os/raritan.inc.php
 librenms/includes/discovery/os/redback.inc.php
@@ -3190,6 +3213,7 @@ librenms/includes/discovery/processors/extreme.inc.php
 librenms/includes/discovery/processors/fiberhome.inc.php
 librenms/includes/discovery/processors/fortigate.inc.php
 librenms/includes/discovery/processors/hrdevice.inc.php
+librenms/includes/discovery/processors/infinity.inc.php
 librenms/includes/discovery/processors/ios.inc.php
 librenms/includes/discovery/processors/ironware.inc.php
 librenms/includes/discovery/processors/junos.inc.php
@@ -3201,6 +3225,7 @@ librenms/includes/discovery/processors/pulse.inc.php
 librenms/includes/discovery/processors/radlan.inc.php
 librenms/includes/discovery/processors/screenos.inc.php
 librenms/includes/discovery/processors/sonicwall.inc.php
+librenms/includes/discovery/processors/unifi.inc.php
 librenms/includes/discovery/processors/vrp.inc.php
 librenms/includes/discovery/processors/watchguard.inc.php
 librenms/includes/discovery/processors/zywall.inc.php
@@ -3300,6 +3325,7 @@ librenms/includes/polling/applications/
 librenms/includes/polling/applications.inc.php
 librenms/includes/polling/applications/apache.inc.php
 librenms/includes/polling/applications/bind.inc.php
+librenms/includes/polling/applications/ceph.inc.php
 librenms/includes/polling/applications/drbd.inc.php
 librenms/includes/polling/applications/mailscanner.inc.php
 librenms/includes/polling/applications/memcached.inc.php
@@ -3347,6 +3373,7 @@ librenms/includes/polling/mempools/fortigate.inc.php
 librenms/includes/polling/mempools/hpGlobal.inc.php
 librenms/includes/polling/mempools/hpLocal.inc.php
 librenms/includes/polling/mempools/hrstorage.inc.php
+librenms/includes/polling/mempools/infinity.inc.php
 librenms/includes/polling/mempools/ironware-dyn.inc.php
 librenms/includes/polling/mempools/junos.inc.php
 librenms/includes/polling/mempools/netscaler.inc.php
@@ -3354,6 +3381,7 @@ librenms/includes/polling/mempools/powerconnect-cpu.inc.php
 librenms/includes/polling/mempools/pulse-mem.inc.php
 librenms/includes/polling/mempools/screenos.inc.php
 librenms/includes/polling/mempools/sonicwall-mem.inc.php
+librenms/includes/polling/mempools/unifi.inc.php
 librenms/includes/polling/mempools/vrp.inc.php
 librenms/includes/polling/mib/
 librenms/includes/polling/mib.inc.php
@@ -3420,6 +3448,7 @@ librenms/includes/polling/os/hikvision.inc.php
 librenms/includes/polling/os/ibmnos.inc.php
 librenms/includes/polling/os/ibmtl.inc.php
 librenms/includes/polling/os/ies.inc.php
+librenms/includes/polling/os/infinity.inc.php
 librenms/includes/polling/os/ios.inc.php
 librenms/includes/polling/os/iosxr.inc.php
 librenms/includes/polling/os/ipoman.inc.php
@@ -3456,6 +3485,7 @@ librenms/includes/polling/os/powerware.inc.php
 librenms/includes/polling/os/procera.inc.php
 librenms/includes/polling/os/procurve.inc.php
 librenms/includes/polling/os/pulse.inc.php
+librenms/includes/polling/os/quanta.inc.php
 librenms/includes/polling/os/radlan.inc.php
 librenms/includes/polling/os/ricoh.inc.php
 librenms/includes/polling/os/riverbed.inc.php
@@ -4937,11 +4967,40 @@ librenms/lib/Leaflet.markercluster/src/copyright.js
 librenms/lib/gridster/
 librenms/lib/gridster/.bowerrc
 librenms/lib/gridster/.gitignore
+librenms/lib/gridster/.jshintrc
+librenms/lib/gridster/.npmignore
+librenms/lib/gridster/.travis.yml
 librenms/lib/gridster/CHANGELOG.md
 librenms/lib/gridster/CONTRIBUTING.md
 librenms/lib/gridster/Gruntfile.js
 librenms/lib/gridster/LICENSE
 librenms/lib/gridster/README.md
+librenms/lib/gridster/bower.json
+librenms/lib/gridster/demos/
+librenms/lib/gridster/demos/SwapDrop.html
+librenms/lib/gridster/demos/adding-widgets-dynamically.html
+librenms/lib/gridster/demos/assets/
+librenms/lib/gridster/demos/assets/img/
+librenms/lib/gridster/demos/assets/img/sprite.png
+librenms/lib/gridster/demos/assets/js/
+librenms/lib/gridster/demos/assets/js/plugins.js
+librenms/lib/gridster/demos/assets/less/
+librenms/lib/gridster/demos/assets/less/demo.less
+librenms/lib/gridster/demos/chaosWidget.html
+librenms/lib/gridster/demos/custom-drag-handle.html
+librenms/lib/gridster/demos/dynamic-grid-width.html
+librenms/lib/gridster/demos/expandable-widgets.html
+librenms/lib/gridster/demos/grid-from-serialize.html
+librenms/lib/gridster/demos/index.html
+librenms/lib/gridster/demos/jquery.gridster.demo2.html
+librenms/lib/gridster/demos/multiple-grids.html
+librenms/lib/gridster/demos/resize-limits.html
+librenms/lib/gridster/demos/resize.html
+librenms/lib/gridster/demos/responsive.html
+librenms/lib/gridster/demos/serialize.html
+librenms/lib/gridster/demos/sticky-postion.html
+librenms/lib/gridster/demos/using-drag-callbacks.html
+librenms/lib/gridster/demos/using-resize-callbacks.html
 librenms/lib/gridster/dist/
 librenms/lib/gridster/dist/jquery.gridster.css
 librenms/lib/gridster/dist/jquery.gridster.js
@@ -4949,18 +5008,30 @@ librenms/lib/gridster/dist/jquery.gridster.min.css
 librenms/lib/gridster/dist/jquery.gridster.min.js
 librenms/lib/gridster/dist/jquery.gridster.with-extras.js
 librenms/lib/gridster/dist/jquery.gridster.with-extras.min.js
+librenms/lib/gridster/gridster.js-rails.gemspec
+librenms/lib/gridster/lib/
+librenms/lib/gridster/lib/gridster.js-rails/
+librenms/lib/gridster/lib/gridster.js-rails.rb
+librenms/lib/gridster/lib/gridster.js-rails/engine.rb
+librenms/lib/gridster/lib/gridster.js-rails/version.rb
 librenms/lib/gridster/package.json
 librenms/lib/gridster/src/
 librenms/lib/gridster/src/jquery.collision.js
 librenms/lib/gridster/src/jquery.coords.js
 librenms/lib/gridster/src/jquery.draggable.js
-librenms/lib/gridster/src/jquery.gridster.css
 librenms/lib/gridster/src/jquery.gridster.extras.js
 librenms/lib/gridster/src/jquery.gridster.js
+librenms/lib/gridster/src/jquery.gridster.less
 librenms/lib/gridster/src/utils.js
 librenms/lib/gridster/test/
-librenms/lib/gridster/test/jquery.gridder.html
-librenms/lib/gridster/test/jquery.gridder_test.js
+librenms/lib/gridster/test/amd-main.js
+librenms/lib/gridster/test/jquery-private.js
+librenms/lib/gridster/test/jquery.gridster-amd.html
+librenms/lib/gridster/test/jquery.gridster.html
+librenms/lib/gridster/test/jquery.gridster_test.js
+librenms/lib/gridster/test/lib/
+librenms/lib/gridster/test/lib/test_utils.js
+librenms/lib/gridster/test/testsuite.js
 librenms/lib/jQuery-Mapael/
 librenms/lib/jQuery-Mapael/README.md
 librenms/lib/jQuery-Mapael/bower.json
@@ -6869,7 +6940,6 @@ librenms/mibs/NS-VSYS
 librenms/mibs/NS-ZONE
 librenms/mibs/NetWare-Host-Ext-MIB
 librenms/mibs/Nikola-MIB
-librenms/mibs/OBSERVIUM-MIB
 librenms/mibs/OLD-CISCO-CHASSIS-MIB-V1SMI
 librenms/mibs/OLD-CISCO-CPU-MIB
 librenms/mibs/OLD-CISCO-INTERFACES-MIB
@@ -8002,6 +8072,7 @@ librenms/mibs/vmware/VMWARE-VA-AGENTCAP-MIB
 librenms/mibs/vmware/VMWARE-VC-EVENT-MIB.mib
 librenms/mibs/vmware/VMWARE-VCOPS-EVENT-MIB
 librenms/mibs/vmware/VMWARE-VMINFO-MIB.mib
+librenms/notifications.php
 librenms/poll-billing.php
 librenms/poller-service.conf
 librenms/poller-service.init
@@ -8154,6 +8225,10 @@ librenms/sql-schema/071.sql
 librenms/sql-schema/072.sql
 librenms/sql-schema/073.sql
 librenms/sql-schema/074.sql
+librenms/sql-schema/075.sql
+librenms/sql-schema/076.sql
+librenms/sql-schema/077.sql
+librenms/sql-schema/078.sql
 librenms/syslog.php
 librenms/validate.php
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
