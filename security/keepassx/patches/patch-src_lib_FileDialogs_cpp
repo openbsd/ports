@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_lib_FileDialogs_cpp,v 1.1 2015/12/07 18:26:01 jasper Exp $
+
+Security fix for CVE-2015-8378
+http://anonscm.debian.org/cgit/collab-maint/keepassx.git/commit/?id=b3c9028db8ec3b8752ff47717ffc792d755c1294
+
+--- src/lib/FileDialogs.cpp.orig	Thu Oct  8 21:27:39 2009
++++ src/lib/FileDialogs.cpp	Mon Dec  7 14:50:29 2015
+@@ -118,6 +118,11 @@ QString QtStandardFileDialogs::saveFileDialog(QWidget*
+ 		SelectedFilter=Filters[SelectedFilterIndex];
+ 	QString filepath = QFileDialog::getSaveFileName(parent,title,dir,toSingleStringFilter(Filters),&SelectedFilter,
+ 	                                                ShowOverwriteWarning ? (QFileDialog::Option)0 : QFileDialog::DontConfirmOverwrite);
++
++        // Fixes CVE-2015-8378
++        if (filepath.isEmpty())
++            return filepath;
++
+ 	LastFilter=Filters.indexOf(SelectedFilter);
+ 		
+ 	//Check whether the file has an extension which fits to the selected filter

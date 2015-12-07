@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2015/12/02 13:08:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/12/07 18:26:01 jasper Exp $
 
 COMMENT =	management tool for sensitive data
 
 V =		0.4.3
 DISTNAME =	keepassx-$V
-REVISION =	2
+REVISION =	3
 CATEGORIES =	security
 
 HOMEPAGE =	http://www.keepassx.org/
