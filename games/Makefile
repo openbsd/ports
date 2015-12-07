@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.317 2015/12/05 13:02:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.318 2015/12/07 05:46:53 bentley Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -241,6 +241,7 @@
      SUBDIR += ufoai
      SUBDIR += uhexen2
      SUBDIR += uqm
+     SUBDIR += vacuum
      SUBDIR += valyriatear
      SUBDIR += vectoroids
      SUBDIR += vegastrike
