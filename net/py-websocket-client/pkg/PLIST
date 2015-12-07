@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/17 19:53:38 florian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/12/07 21:16:25 sthen Exp $
 bin/wsdump.py${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/websocket/
 lib/python${MODPY_VERSION}/site-packages/websocket/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}_abnf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}_app.${MODPY_PYC_MAGIC_TAG}pyc
@@ -29,7 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/websocket/_utils.py
 lib/python${MODPY_VERSION}/site-packages/websocket/cacert.pem
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}test_websocket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/data/

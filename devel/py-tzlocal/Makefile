@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/17 19:49:36 florian Exp $
+# $OpenBSD: Makefile,v 1.2 2015/12/07 21:16:25 sthen Exp $
 
 COMMENT =		python tzinfo object for the local timezone
 
 MODPY_EGG_VERSION =	1.2
+REVISION =		0
 DISTNAME =		tzlocal-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/17 19:49:36 florian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/12/07 21:16:25 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/tzlocal/
 lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/tzlocal/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/tzlocal/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tzlocal/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tzlocal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzlocal/${MODPY_PYCACHE}darwin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tzlocal/${MODPY_PYCACHE}tests.${MODPY_PYC_MAGIC_TAG}pyc

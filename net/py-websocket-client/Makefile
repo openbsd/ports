@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/17 19:53:38 florian Exp $
+# $OpenBSD: Makefile,v 1.2 2015/12/07 21:16:25 sthen Exp $
 
-COMMENT =		WebSocket client for python.
+COMMENT =		WebSocket client for Python
 
 MODPY_EGG_VERSION =	0.34.0
+REVISION =		0
 DISTNAME =		websocket_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-websocket-client-${MODPY_EGG_VERSION}
 
