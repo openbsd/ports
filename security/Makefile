@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.400 2015/11/28 14:54:40 rpointel Exp $
+# $OpenBSD: Makefile,v 1.401 2015/12/07 06:32:50 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -324,6 +324,7 @@
      SUBDIR += yara
      SUBDIR += yubico
      SUBDIR += yubiserve
+     SUBDIR += zaproxy
      SUBDIR += zebedee
      SUBDIR += zkt
 
