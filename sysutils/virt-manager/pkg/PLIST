@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/11/26 20:29:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/12/07 07:56:34 jasper Exp $
 bin/virt-clone
 bin/virt-convert
 bin/virt-install
@@ -158,7 +158,6 @@ share/virt-manager/virtManager/createinterface.py
 share/virt-manager/virtManager/createnet.py
 share/virt-manager/virtManager/createpool.py
 share/virt-manager/virtManager/createvol.py
-share/virt-manager/virtManager/dbusapi.py
 share/virt-manager/virtManager/delete.py
 share/virt-manager/virtManager/details.py
 share/virt-manager/virtManager/domain.py
