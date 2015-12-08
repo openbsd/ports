@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/07 06:56:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2015/12/08 13:30:29 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,6 +8,7 @@ V=			0.3.4
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl03-${V}
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 SHARED_LIBS +=  gegl-0.3             0.0      # 304.0
 
@@ -26,7 +27,8 @@ WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
 WANTLIB += jasper jpeg json-glib-1.0 lcms2 lzma m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += rsvg-2 xcb xcb-render xcb-shm xml2 z tiff
+WANTLIB += raw rsvg-2 stdc++ tiff webp xcb xcb-render xcb-shm
+WANTLIB += xml2 z
 
 MASTER_SITES=		http://download.gimp.org/pub/gegl/${API_VERSION}/
 
@@ -43,6 +45,8 @@ BUILD_DEPENDS=		graphics/exiv2
 LIB_DEPENDS=		devel/json-glib \
 			graphics/babl \
 			graphics/lcms2 \
+			graphics/libraw \
+			graphics/libwebp \
 			x11/gnome/librsvg
 
 CONFIGURE_STYLE=	gnu
@@ -64,8 +68,7 @@ CONFIGURE_ARGS=		--without-lensfun \
 			--without-libavformat \
 			--without-libv4l \
 			--without-libspiro \
-			--without-umfpack \
-			--without-webp
+			--without-umfpack
 
 # does fishy things (git(1), grabbing the X display...)
 CONFIGURE_ARGS +=	--disable-docs

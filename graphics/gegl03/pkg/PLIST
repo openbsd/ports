@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/11/22 10:27:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/12/08 13:30:29 ajacoutot Exp $
 include/gegl-${API_VERSION}/
 include/gegl-${API_VERSION}/gegl-apply.h
 include/gegl-${API_VERSION}/gegl-audio-fragment.h
@@ -215,6 +215,7 @@ lib/gegl-${API_VERSION}/posterize.so
 lib/gegl-${API_VERSION}/ppm-load.so
 lib/gegl-${API_VERSION}/ppm-save.so
 lib/gegl-${API_VERSION}/radial-gradient.so
+lib/gegl-${API_VERSION}/raw-load.so
 lib/gegl-${API_VERSION}/rectangle.so
 lib/gegl-${API_VERSION}/red-eye-removal.so
 lib/gegl-${API_VERSION}/reinhard05.so
@@ -267,6 +268,8 @@ lib/gegl-${API_VERSION}/video-degradation.so
 lib/gegl-${API_VERSION}/vignette.so
 lib/gegl-${API_VERSION}/warp.so
 lib/gegl-${API_VERSION}/waves.so
+lib/gegl-${API_VERSION}/webp-load.so
+lib/gegl-${API_VERSION}/webp-save.so
 lib/gegl-${API_VERSION}/weighted-blend.so
 lib/gegl-${API_VERSION}/whirl-pinch.so
 lib/gegl-${API_VERSION}/wind.so
