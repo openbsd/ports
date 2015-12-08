@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.17 2015/11/05 19:08:58 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2015/12/08 00:26:28 bentley Exp $
 
 COMMENT=	build molecules out of single atoms
 
 DISTNAME=	atomix-2.14.0
-REVISION=	9
+REVISION=	10
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
 
-MASTER_SITES=	http://ftp.gnome.org/pub/GNOME/sources/atomix/2.14/
+MASTER_SITES=	${MASTER_SITE_GNOME:=/sources/atomix/2.14/}
 
-# GPLv2
+HOMEPAGE =	https://wiki.gnome.org/Apps/Atomix
+
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GL ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext
