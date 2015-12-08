@@ -1,4 +1,11 @@
-$OpenBSD: patch-src_Csocket_cpp,v 1.4 2015/11/29 08:10:47 ajacoutot Exp $
+$OpenBSD: patch-src_Csocket_cpp,v 1.5 2015/12/08 06:56:46 ajacoutot Exp $
+
+https://github.com/jimloco/Csocket/commit/5494c125599fbe02e6d7839d1a8ebeffe3e77907
+
+https://github.com/znc/znc/issues/1198
+
+Ah, that fix was in wrong branch...
+
 --- src/Csocket.cpp.orig	Tue Aug  4 00:00:04 2015
 +++ src/Csocket.cpp	Fri Aug 28 23:38:42 2015
 @@ -47,6 +47,7 @@
