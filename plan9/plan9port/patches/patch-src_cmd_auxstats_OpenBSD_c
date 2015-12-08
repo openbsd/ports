@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_cmd_auxstats_OpenBSD_c,v 1.4 2015/12/08 13:05:29 gsoares Exp $
+$OpenBSD: patch-src_cmd_auxstats_OpenBSD_c,v 1.5 2015/12/08 13:41:01 gsoares Exp $
 
 replace kvm(3) with getifaddrs(3)
+
+patch already sent upstream
+https://plan9port-review.googlesource.com/1410
 
 --- src/cmd/auxstats/OpenBSD.c.orig	Wed Nov 11 12:09:34 2015
 +++ src/cmd/auxstats/OpenBSD.c	Mon Dec  7 02:20:58 2015

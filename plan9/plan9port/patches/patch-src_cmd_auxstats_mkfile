@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_cmd_auxstats_mkfile,v 1.1 2015/12/08 13:05:29 gsoares Exp $
+$OpenBSD: patch-src_cmd_auxstats_mkfile,v 1.2 2015/12/08 13:41:01 gsoares Exp $
 
 stop linking with kvm(3). OpenBSD's p9p/auxstats no longer uses libkvm.
+
+patch already sent upstream
+https://plan9port-review.googlesource.com/1410
 
 --- src/cmd/auxstats/mkfile.orig	Mon Dec  7 07:50:40 2015
 +++ src/cmd/auxstats/mkfile	Mon Dec  7 07:50:58 2015
