@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2015/09/18 09:18:56 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.134 2015/12/08 17:18:59 dcoppa Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -9,7 +9,7 @@ CFLAGS +=	-O1 -fno-stack-protector
 
 COMMENT =	portable build system
 
-VER =		3.3.2
+VER =		3.4.0
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
 

@@ -1,11 +1,11 @@
-$OpenBSD: patch-Tests_RunCMake_CMakeLists_txt,v 1.1 2015/09/18 09:18:56 dcoppa Exp $
---- Tests/RunCMake/CMakeLists.txt.orig	Fri Sep 18 10:37:12 2015
-+++ Tests/RunCMake/CMakeLists.txt	Fri Sep 18 10:37:42 2015
-@@ -65,7 +65,6 @@ add_RunCMake_test(CMP0054)
+$OpenBSD: patch-Tests_RunCMake_CMakeLists_txt,v 1.2 2015/12/08 17:18:59 dcoppa Exp $
+--- Tests/RunCMake/CMakeLists.txt.orig	Mon Nov 23 16:28:47 2015
++++ Tests/RunCMake/CMakeLists.txt	Mon Nov 23 16:28:56 2015
+@@ -102,7 +102,6 @@ add_RunCMake_test(CMP0054)
  add_RunCMake_test(CMP0055)
  add_RunCMake_test(CMP0057)
  add_RunCMake_test(CMP0059)
 -add_RunCMake_test(CMP0060)
- if(CMAKE_GENERATOR STREQUAL "Ninja")
-   add_RunCMake_test(Ninja)
- endif()
+ add_RunCMake_test(CMP0064)
+ 
+ # The test for Policy 65 requires the use of the

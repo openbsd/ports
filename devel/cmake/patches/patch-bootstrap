@@ -1,10 +1,10 @@
-$OpenBSD: patch-bootstrap,v 1.9 2015/09/03 07:09:25 dcoppa Exp $
+$OpenBSD: patch-bootstrap,v 1.10 2015/12/08 17:18:59 dcoppa Exp $
 
 Use Ninja to build CMake
 XXX: broken on arm and m88k
 
---- bootstrap.orig	Thu Aug 13 16:57:02 2015
-+++ bootstrap	Mon Aug 17 15:39:13 2015
+--- bootstrap.orig	Thu Nov 12 16:39:53 2015
++++ bootstrap	Mon Nov 23 16:54:15 2015
 @@ -158,7 +158,11 @@ if ${cmake_system_mingw}; then
    cmake_bootstrap_generator="MSYS Makefiles"
  else
@@ -18,3 +18,15 @@ XXX: broken on arm and m88k
  fi
  
  # Choose tools and extensions for this platform.
+@@ -322,6 +326,11 @@ CMAKE_CXX_SOURCES="\
+   cmExprLexer \
+   cmExprParser \
+   cmExprParserHelper \
++  cmGlobalNinjaGenerator \
++  cmLocalNinjaGenerator \
++  cmNinjaTargetGenerator \
++  cmNinjaNormalTargetGenerator \
++  cmNinjaUtilityTargetGenerator \
+ "
+ 
+ if ${cmake_system_mingw}; then

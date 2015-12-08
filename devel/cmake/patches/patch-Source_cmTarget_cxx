@@ -1,8 +1,8 @@
-$OpenBSD: patch-Source_cmTarget_cxx,v 1.26 2015/09/03 07:09:25 dcoppa Exp $
---- Source/cmTarget.cxx.orig	Thu Aug 13 16:57:00 2015
-+++ Source/cmTarget.cxx	Mon Aug 17 15:39:13 2015
-@@ -309,7 +309,7 @@ void cmTarget::SetMakefile(cmMakefile* mf)
-     this->SetPropertyDefault("ANDROID_API_MIN", 0);
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.27 2015/12/08 17:18:59 dcoppa Exp $
+--- Source/cmTarget.cxx.orig	Thu Nov 12 16:39:51 2015
++++ Source/cmTarget.cxx	Mon Nov 23 16:11:38 2015
+@@ -214,7 +214,7 @@ void cmTarget::SetMakefile(cmMakefile* mf)
+     this->SetPropertyDefault("ANDROID_ANT_ADDITIONAL_OPTIONS", 0);
      this->SetPropertyDefault("INSTALL_NAME_DIR", 0);
      this->SetPropertyDefault("INSTALL_RPATH", "");
 -    this->SetPropertyDefault("INSTALL_RPATH_USE_LINK_PATH", "OFF");
@@ -10,92 +10,7 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.26 2015/09/03 07:09:25 dcoppa Exp $
      this->SetPropertyDefault("SKIP_BUILD_RPATH", "OFF");
      this->SetPropertyDefault("BUILD_WITH_INSTALL_RPATH", "OFF");
      this->SetPropertyDefault("ARCHIVE_OUTPUT_DIRECTORY", 0);
-@@ -3597,12 +3597,16 @@ std::string cmTarget::GetCompilePDBPath(const std::str
- //----------------------------------------------------------------------------
- bool cmTarget::HasSOName(const std::string& config) const
- {
-+#if !defined(__OpenBSD__)
-   // soname is supported only for shared libraries and modules,
-   // and then only when the platform supports an soname flag.
-   return ((this->GetType() == cmTarget::SHARED_LIBRARY ||
-            this->GetType() == cmTarget::MODULE_LIBRARY) &&
-           !this->GetPropertyAsBool("NO_SONAME") &&
-           this->Makefile->GetSONameFlag(this->GetLinkerLanguage(config)));
-+#else
-+  return false;
-+#endif
- }
- 
- //----------------------------------------------------------------------------
-@@ -4068,9 +4072,14 @@ void cmTarget::GetLibraryNames(std::string& name,
-   // Check for library version properties.
-   const char* version = this->GetProperty("VERSION");
-   const char* soversion = this->GetProperty("SOVERSION");
-+#if defined(__OpenBSD__)
-+  if(this->GetType() != cmTarget::SHARED_LIBRARY &&
-+     this->GetType() != cmTarget::MODULE_LIBRARY)
-+#else
-   if(!this->HasSOName(config) ||
-      this->Makefile->IsOn("CMAKE_PLATFORM_NO_VERSIONED_SONAME") ||
-      this->IsFrameworkOnApple())
-+#endif
-     {
-     // Versioning is supported only for shared libraries and modules,
-     // and then only when the platform supports an soname flag.
-@@ -4098,6 +4107,36 @@ void cmTarget::GetLibraryNames(std::string& name,
-   // The library name.
-   name = prefix+base+suffix;
- 
-+#if defined(__OpenBSD__)
-+  // Override shared library version using LIBxxx_VERSION
-+  // environment variable. Needed for OpenBSD ports system.
-+  if(this->GetType() == cmTarget::SHARED_LIBRARY ||
-+     this->GetType() == cmTarget::MODULE_LIBRARY)
-+    {
-+    std::string env_name = "LIB" + base + "_VERSION";
-+    char *env_vers_cstr = getenv(env_name.c_str());
-+
-+    if (env_vers_cstr && strlen(env_vers_cstr) > 0) {
-+      // This means an override is present.
-+      std::string env_vers = std::string(env_vers_cstr);
-+
-+      size_t first = env_vers.find_first_of(".");
-+      size_t last = env_vers.find_first_of(".");
-+
-+      if ((first != last) || (first == std::string::npos)) {
-+        std::string msg = "Bad ";
-+        msg += env_name;
-+        msg += " specification: ";
-+        msg += env_vers;
-+        this->Makefile->IssueMessage(cmake::FATAL_ERROR,
-+                                     msg.c_str());
-+      } else {
-+        version = env_vers_cstr;
-+      }
-+    }
-+  }
-+#endif
-+
-   if(this->IsFrameworkOnApple())
-     {
-     realName = prefix;
-@@ -4109,9 +4148,15 @@ void cmTarget::GetLibraryNames(std::string& name,
-     }
-   else
-     {
-+#if !defined(__OpenBSD__)
-     // The library's soname.
-     this->ComputeVersionedName(soName, prefix, base, suffix,
-                                name, soversion);
-+#else
-+    // The library's soname.
-+    this->ComputeVersionedName(soName, prefix, base, suffix,
-+                               name, version);
-+#endif
-     // The library's real name on disk.
-     this->ComputeVersionedName(realName, prefix, base, suffix,
-                                name, version);
-@@ -4144,7 +4189,23 @@ void cmTarget::ComputeVersionedName(std::string& vName
+@@ -2736,7 +2736,23 @@ void cmTarget::ComputeVersionedName(std::string& vName
    if(version)
      {
      vName += ".";

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindBoost_cmake,v 1.8 2015/09/03 07:09:25 dcoppa Exp $
---- Modules/FindBoost.cmake.orig	Thu Aug 13 16:56:59 2015
-+++ Modules/FindBoost.cmake	Mon Aug 17 15:39:13 2015
+$OpenBSD: patch-Modules_FindBoost_cmake,v 1.9 2015/12/08 17:18:59 dcoppa Exp $
+--- Modules/FindBoost.cmake.orig	Thu Nov 12 16:39:50 2015
++++ Modules/FindBoost.cmake	Mon Nov 23 16:20:59 2015
 @@ -471,6 +471,22 @@ function(_Boost_GUESS_COMPILER_PREFIX _ret)
    set(${_ret} ${_boost_COMPILER} PARENT_SCOPE)
  endfunction()
@@ -24,7 +24,7 @@ $OpenBSD: patch-Modules_FindBoost_cmake,v 1.8 2015/09/03 07:09:25 dcoppa Exp $
  #
  # End functions/macros
  #
-@@ -1240,6 +1256,8 @@ if(Boost_FOUND)
+@@ -1242,6 +1258,8 @@ if(Boost_FOUND)
        list(APPEND Boost_LIBRARIES ${Boost_${UPPERCOMPONENT}_LIBRARY})
      endif()
    endforeach()

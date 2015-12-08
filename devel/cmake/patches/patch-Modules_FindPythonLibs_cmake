@@ -1,17 +1,17 @@
-$OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.11 2014/12/31 11:06:02 dcoppa Exp $
---- Modules/FindPythonLibs.cmake.orig	Mon Dec 15 14:07:43 2014
-+++ Modules/FindPythonLibs.cmake	Thu Dec 18 06:34:41 2014
-@@ -53,6 +53,9 @@ include(${CMAKE_CURRENT_LIST_DIR}/CMakeFindFrameworks.
- # Search for the python framework on Apple.
- CMAKE_FIND_FRAMEWORKS(Python)
+$OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.12 2015/12/08 17:18:59 dcoppa Exp $
+--- Modules/FindPythonLibs.cmake.orig	Thu Nov 12 16:39:50 2015
++++ Modules/FindPythonLibs.cmake	Fri Dec  4 08:31:06 2015
+@@ -81,6 +81,9 @@ endif()
+ # To avoid picking up the system Python.h pre-maturely.
+ set(CMAKE_FIND_FRAMEWORK LAST)
  
 +set(MODPY_VERSION $ENV{MODPY_VERSION})
 +set(MODPY_INCDIR $ENV{MODPY_INCDIR})
 +
  set(_PYTHON1_VERSIONS 1.6 1.5)
  set(_PYTHON2_VERSIONS 2.7 2.6 2.5 2.4 2.3 2.2 2.1 2.0)
- set(_PYTHON3_VERSIONS 3.4 3.3 3.2 3.1 3.0)
-@@ -87,11 +90,15 @@ endif()
+ set(_PYTHON3_VERSIONS 3.6 3.5 3.4 3.3 3.2 3.1 3.0)
+@@ -115,11 +118,15 @@ endif()
  # If FindPythonInterp has already found the major and minor version,
  # insert that version between the user supplied versions and the stock
  # version list.
@@ -32,38 +32,42 @@ $OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.11 2014/12/31 11:06:02 dcoppa E
  
  unset(_PYTHON_FIND_OTHER_VERSIONS)
  unset(_PYTHON1_VERSIONS)
-@@ -148,18 +155,22 @@ foreach(_CURRENT_VERSION ${_Python_VERSIONS})
-     endforeach()
+@@ -193,20 +200,24 @@ foreach(_CURRENT_VERSION ${_Python_VERSIONS})
+       endforeach()
+     endif()
+ 
+-    find_path(PYTHON_INCLUDE_DIR
+-      NAMES Python.h
+-      HINTS
+-        ${_Python_INCLUDE_PATH_HINT}
+-      PATHS
+-        ${PYTHON_FRAMEWORK_INCLUDES}
+-        [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}\\InstallPath]/include
+-        [HKEY_CURRENT_USER\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}\\InstallPath]/include
+-      PATH_SUFFIXES
+-        python${_CURRENT_VERSION}mu
+-        python${_CURRENT_VERSION}m
+-        python${_CURRENT_VERSION}u
+-        python${_CURRENT_VERSION}
+-    )
++    if(MODPY_VERSION AND MODPY_INCDIR)
++      set(PYTHON_INCLUDE_DIR "${MODPY_INCDIR}")
++    else(MODPY_VERSION AND MODPY_INCDIR)
++      find_path(PYTHON_INCLUDE_DIR
++        NAMES Python.h
++        HINTS
++          ${_Python_INCLUDE_PATH_HINT}
++        PATHS
++          ${PYTHON_FRAMEWORK_INCLUDES}
++          [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}\\InstallPath]/include
++          [HKEY_CURRENT_USER\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}\\InstallPath]/include
++        PATH_SUFFIXES
++          python${_CURRENT_VERSION}mu
++          python${_CURRENT_VERSION}m
++          python${_CURRENT_VERSION}u
++          python${_CURRENT_VERSION}
++      )
++    endif(MODPY_VERSION AND MODPY_INCDIR)
    endif()
  
--  find_path(PYTHON_INCLUDE_DIR
--    NAMES Python.h
--    PATHS
--      ${PYTHON_FRAMEWORK_INCLUDES}
--      [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}\\InstallPath]/include
--      [HKEY_CURRENT_USER\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}\\InstallPath]/include
--    PATH_SUFFIXES
--      python${_CURRENT_VERSION}mu
--      python${_CURRENT_VERSION}m
--      python${_CURRENT_VERSION}u
--      python${_CURRENT_VERSION}
--  )
-+  if(MODPY_VERSION AND MODPY_INCDIR)
-+    set(PYTHON_INCLUDE_DIR "${MODPY_INCDIR}")
-+  else(MODPY_VERSION AND MODPY_INCDIR)
-+    find_path(PYTHON_INCLUDE_DIR
-+      NAMES Python.h
-+      PATHS
-+        ${PYTHON_FRAMEWORK_INCLUDES}
-+        [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}\\InstallPath]/include
-+        [HKEY_CURRENT_USER\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}\\InstallPath]/include
-+      PATH_SUFFIXES
-+        python${_CURRENT_VERSION}mu
-+        python${_CURRENT_VERSION}m
-+        python${_CURRENT_VERSION}u
-+        python${_CURRENT_VERSION}
-+    )
-+  endif(MODPY_VERSION AND MODPY_INCDIR)
- 
    # For backward compatibility, set PYTHON_INCLUDE_PATH.
-   set(PYTHON_INCLUDE_PATH "${PYTHON_INCLUDE_DIR}")

@@ -1,0 +1,86 @@
+$OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.1 2015/12/08 17:18:59 dcoppa Exp $
+--- Source/cmGeneratorTarget.cxx.orig	Mon Nov 23 16:23:40 2015
++++ Source/cmGeneratorTarget.cxx	Mon Nov 23 16:17:49 2015
+@@ -856,11 +856,15 @@ cmGeneratorTarget::GetCompilePDBPath(const std::string
+ //----------------------------------------------------------------------------
+ bool cmGeneratorTarget::HasSOName(const std::string& config) const
+ {
++#if !defined(__OpenBSD__)
+   // soname is supported only for shared libraries and modules,
+   // and then only when the platform supports an soname flag.
+   return ((this->GetType() == cmTarget::SHARED_LIBRARY) &&
+           !this->GetPropertyAsBool("NO_SONAME") &&
+           this->Makefile->GetSONameFlag(this->GetLinkerLanguage(config)));
++#else
++  return false;
++#endif
+ }
+ 
+ //----------------------------------------------------------------------------
+@@ -2746,8 +2750,13 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+   // Check for library version properties.
+   const char* version = this->GetProperty("VERSION");
+   const char* soversion = this->GetProperty("SOVERSION");
++#if defined(__OpenBSD__)
++  if(this->GetType() != cmTarget::SHARED_LIBRARY &&
++     this->GetType() != cmTarget::MODULE_LIBRARY)
++#else
+   if(!this->HasSOName(config) ||
+      this->Target->IsFrameworkOnApple())
++#endif
+     {
+     // Versioning is supported only for shared libraries and modules,
+     // and then only when the platform supports an soname flag.
+@@ -2775,6 +2784,36 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+   // The library name.
+   name = prefix+base+suffix;
+ 
++#if defined(__OpenBSD__)
++  // Override shared library version using LIBxxx_VERSION
++  // environment variable. Needed for OpenBSD ports system.
++  if(this->GetType() == cmTarget::SHARED_LIBRARY ||
++     this->GetType() == cmTarget::MODULE_LIBRARY)
++    {
++    std::string env_name = "LIB" + base + "_VERSION";
++    char *env_vers_cstr = getenv(env_name.c_str());
++
++    if (env_vers_cstr && strlen(env_vers_cstr) > 0) {
++      // This means an override is present.
++      std::string env_vers = std::string(env_vers_cstr);
++
++      size_t first = env_vers.find_first_of(".");
++      size_t last = env_vers.find_first_of(".");
++
++      if ((first != last) || (first == std::string::npos)) {
++        std::string msg = "Bad ";
++        msg += env_name;
++        msg += " specification: ";
++        msg += env_vers;
++        this->Makefile->IssueMessage(cmake::FATAL_ERROR,
++                                     msg.c_str());
++      } else {
++        version = env_vers_cstr;
++      }
++    }
++  }
++#endif
++
+   if(this->Target->IsFrameworkOnApple())
+     {
+     realName = prefix;
+@@ -2789,9 +2828,15 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+     }
+   else
+   {
++#if !defined(__OpenBSD__)
+     // The library's soname.
+     this->Target->ComputeVersionedName(soName, prefix, base, suffix,
+                               name, soversion);
++#else
++    // The library's soname.
++    this->Target->ComputeVersionedName(soName, prefix, base, suffix,
++                              name, version);
++#endif
+ 
+     // The library's real name on disk.
+     this->Target->ComputeVersionedName(realName, prefix, base, suffix,

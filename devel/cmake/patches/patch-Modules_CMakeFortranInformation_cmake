@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_CMakeFortranInformation_cmake,v 1.1 2013/06/06 12:47:06 dcoppa Exp $
---- Modules/CMakeFortranInformation.cmake.orig	Mon Jun  3 10:06:48 2013
-+++ Modules/CMakeFortranInformation.cmake	Mon Jun  3 10:07:04 2013
-@@ -117,10 +117,6 @@ if(NOT DEFINED CMAKE_EXE_EXPORTS_Fortran_FLAG)
+$OpenBSD: patch-Modules_CMakeFortranInformation_cmake,v 1.2 2015/12/08 17:18:59 dcoppa Exp $
+--- Modules/CMakeFortranInformation.cmake.orig	Thu Nov 12 16:39:50 2015
++++ Modules/CMakeFortranInformation.cmake	Mon Nov 23 16:20:59 2015
+@@ -121,10 +121,6 @@ if(NOT DEFINED CMAKE_EXE_EXPORTS_Fortran_FLAG)
    set(CMAKE_EXE_EXPORTS_Fortran_FLAG ${CMAKE_EXE_EXPORTS_C_FLAG})
  endif()
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-Modules_CMakeFortranInformation_cmake,v 1.1 2013/06/06 12:47:06 
  # for most systems a module is the same as a shared library
  # so unless the variable CMAKE_MODULE_EXISTS is set just
  # copy the values from the LIBRARY variables
-@@ -183,7 +179,7 @@ include(CMakeCommonLanguageInclude)
+@@ -187,7 +183,7 @@ include(CMakeCommonLanguageInclude)
  # create a Fortran shared library
  if(NOT CMAKE_Fortran_CREATE_SHARED_LIBRARY)
    set(CMAKE_Fortran_CREATE_SHARED_LIBRARY
