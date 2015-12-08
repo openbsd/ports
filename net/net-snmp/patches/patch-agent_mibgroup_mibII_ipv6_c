@@ -1,7 +1,213 @@
-$OpenBSD: patch-agent_mibgroup_mibII_ipv6_c,v 1.1 2013/12/20 02:20:00 krw Exp $
---- agent/mibgroup/mibII/ipv6.c.orig	Tue Oct  9 18:28:58 2012
-+++ agent/mibgroup/mibII/ipv6.c	Sat Nov 30 08:25:29 2013
-@@ -1336,9 +1336,13 @@ var_udp6(register struct variable * vp,
+$OpenBSD: patch-agent_mibgroup_mibII_ipv6_c,v 1.2 2015/12/08 16:50:41 jca Exp $
+--- agent/mibgroup/mibII/ipv6.c.orig	Mon Dec  8 21:23:22 2014
++++ agent/mibgroup/mibII/ipv6.c	Mon Dec  7 09:11:14 2015
+@@ -81,6 +81,7 @@
+ # include <netinet/ip_var.h>
+ #endif
+ #if HAVE_NETINET6_IP6_VAR_H
++# include <sys/queue.h>
+ # include <netinet6/ip6_var.h>
+ #endif
+ #include <net/route.h>
+@@ -597,7 +598,44 @@ if_getindex(const char *name)
+ 
+ /*------------------------------------------------------------*/
+ #ifndef linux
++
++#ifdef __OpenBSD__
++
+ /*
++ * It is not possible to use struct ifnet anymore on OpenBSD, get
++ * interface flags and L2 address through getifaddrs(3).
++ */
++
++#include <ifaddrs.h>
++
++static int
++if_getifflags(int ifindex, int *ifflags)
++{
++	const char	*ifname;
++	struct ifaddrs	*ifa0, *ifa;
++	int		 ret = -1;
++
++	ifname = if_getname(ifindex);
++	if (ifname == NULL)
++		return ret;
++
++	if (getifaddrs(&ifa0) != -1) {
++		for (ifa = ifa0; ifa != NULL; ifa = ifa->ifa_next) {
++			if (strcmp(ifa->ifa_name, ifname) == 0) {
++				*ifflags = ifa->ifa_flags;
++				ret = 0;
++				break;
++			}
++		}
++		freeifaddrs(ifa0);
++	}
++
++	return ret;
++}
++
++#else
++
++/*
+  * KAME dependent part 
+  */
+ static int
+@@ -630,6 +668,8 @@ if_getifnet(int idx, struct ifnet *result)
+     return -1;
+ }
+ 
++#endif /* !__OpenBSD__ */
++
+ #if TRUST_IFLASTCHANGE         /*untrustable value returned... */
+ #ifdef HAVE_NET_IF_MIB_H
+ #if defined(HAVE_SYS_SYSCTL_H) && defined(CTL_NET)
+@@ -844,86 +884,34 @@ var_ifv6Entry(register struct variable * vp,
+ #endif
+     case IPV6IFPHYSADDRESS:
+         {
+-            struct ifnet    ifnet;
+-            struct ifaddr   ifaddr;
+-#if defined(__DragonFly__) && __DragonFly_version >= 197700
+-            struct ifaddr_container ifac;
+-            struct ifaddrhead head;
+-#endif
+             static struct sockaddr_dl sdl;
+-            caddr_t         ifa;
++            struct ifaddrs *ifa0, *ifa;
++            char ifnam[IF_NAMESIZE];
+ 
+-            if (if_getifnet(interface, &ifnet) < 0)
+-                break;
+-#if defined(freebsd3) || defined(darwin)
+-# if defined(__DragonFly__) && __DragonFly_version >= 197700
+-            /*
+-             * Locate ifaddr head on CPU0
+-             */
+-            if (!NETSNMP_KLOOKUP(ifnet.if_addrheads, (char *)&head, sizeof(head))) {
+-                DEBUGMSGTL(("mibII/ipv6:var_ipv6", "klookup head failed\n"));
+-                break;
++            if (if_indextoname(interface, ifnam) == NULL) {
++                *var_len = 0;
++                return NULL;
+             }
+-            if (TAILQ_FIRST(&head) != NULL) {
+-                 if (!NETSNMP_KLOOKUP(TAILQ_FIRST(&head), (char *) &ifac, sizeof(ifac))) {
+-                    DEBUGMSGTL(("mibII/ipv6:var_ipv6", "klookup ifac failed\n"));
+-                    break;
+-                }
+-                ifa = (caddr_t)ifac.ifa;
+-            } else {
+-                ifa = NULL;
+-            }
+-# else
+-            ifa = (caddr_t) TAILQ_FIRST(&ifnet.if_addrhead);
+-# endif
+-#else
+-# if defined(__NetBSD__) || defined(__OpenBSD__)
+-            ifa = (caddr_t) TAILQ_FIRST(&ifnet.if_addrlist);
+-# else
+-            ifa = (caddr_t) ifnet.if_addrlist;
+-# endif
+-#endif
+-            while (ifa) {
+-                if (!NETSNMP_KLOOKUP(ifa, (char *) &ifaddr, sizeof(ifaddr))) {
+-                    DEBUGMSGTL(("mibII/ipv6:var_ipv6", "klookup failed\n"));
+-                    break;
+-                }
+-                if (!NETSNMP_KLOOKUP(ifaddr.ifa_addr,
+-                                     (char *) &sdl, sizeof(sdl))) {
+-                    DEBUGMSGTL(("mibII/ipv6:var_ipv6", "klookup failed\n"));
+-                    break;
+-                }
+-                if (sdl.sdl_family == AF_LINK) {
+-                    if (sizeof(sdl.sdl_data) < sdl.sdl_nlen + sdl.sdl_alen) {
+-                        ERROR_MSG("sdl_alen too long for interface\n");
+-                        break;
+-                    }
++
++            if (getifaddrs(&ifa0) != -1) {
++                for (ifa = ifa0; ifa != NULL; ifa = ifa->ifa_next) {
++
++                    if (strcmp(ifnam, ifa->ifa_name) != 0)
++                    	continue;
++
++                    if (ifa->ifa_addr == NULL)
++                    	continue;
++
++                    memcpy(&sdl, ifa->ifa_addr, sizeof(sdl));
++                    if (sdl.sdl_family != AF_LINK)
++                    	continue;
++
++		    freeifaddrs(ifa0);
+                     *var_len = sdl.sdl_alen;
+                     return (u_char *) (sdl.sdl_data + sdl.sdl_nlen);
+-                }
+-#if defined(freebsd3) || defined(darwin)
+-# if defined(__DragonFly__) && __DragonFly_version >= 197700
+-                if (TAILQ_NEXT(&ifac, ifa_link) == NULL) {
+-                    ifa = NULL;
+-                } else {
+-                    if (!NETSNMP_KLOOKUP(TAILQ_NEXT(&ifac, ifa_link), (char *)&ifac, sizeof(ifac))) {
+-                        DEBUGMSGTL(("mibII/ipv6:var_ipv6", "klookup ifac next failed\n"));
+-                        break;
+-                    }
+-                    ifa = (caddr_t)ifac.ifa;
+-                }
+-# else
+-                ifa = (caddr_t) TAILQ_NEXT(&ifaddr, ifa_link);
+-# endif
+-#else
+-# if defined(__NetBSD__) || defined(__OpenBSD__)
+-                ifa = (caddr_t) TAILQ_NEXT(&ifaddr, ifa_list);
+-# else
+-                ifa = (caddr_t) ifaddr.ifa_next;
+-# endif
+-#endif
++            	}
++		freeifaddrs(ifa0);
+             }
+-
+             /*
+              * no physical address found 
+              */
+@@ -932,20 +920,34 @@ var_ifv6Entry(register struct variable * vp,
+         }
+     case IPV6IFADMSTATUS:
+         {
++#ifdef __OpenBSD__
++            int    if_flags;
++	    if (if_getifflags(interface, &if_flags) < 0)
++                break;
++            long_return = (if_flags & IFF_RUNNING) ? 1 : 2;
++#else
+             struct ifnet    ifnet;
+ 
+             if (if_getifnet(interface, &ifnet) < 0)
+                 break;
+             long_return = (ifnet.if_flags & IFF_RUNNING) ? 1 : 2;
++#endif
+             return (u_char *) & long_return;
+         }
+     case IPV6IFOPERSTATUS:
+         {
++#ifdef __OpenBSD__
++            int    if_flags;
++	    if (if_getifflags(interface, &if_flags) < 0)
++                break;
++            long_return = (if_flags & IFF_UP) ? 1 : 2;
++#else
+             struct ifnet    ifnet;
+ 
+             if (if_getifnet(interface, &ifnet) < 0)
+                 break;
+             long_return = (ifnet.if_flags & IFF_UP) ? 1 : 2;
++#endif
+             return (u_char *) & long_return;
+         }
+ #if TRUST_IFLASTCHANGE         /*untrustable value returned... */
+@@ -1336,9 +1338,13 @@ var_udp6(register struct variable * vp,
      DEBUGMSGOID(("mibII/ipv6", name, *length));
      DEBUGMSG(("mibII/ipv6", " %d\n", exact));
  
@@ -16,7 +222,7 @@ $OpenBSD: patch-agent_mibgroup_mibII_ipv6_c,v 1.1 2013/12/20 02:20:00 krw Exp $
      first = p = (caddr_t)udbtable.inpt_queue.cqh_first;
  #elif !defined(freebsd3) && !defined(darwin)
      if (!auto_nlist("udb6", (char *) &udb6, sizeof(udb6)))
-@@ -1471,8 +1475,8 @@ var_udp6(register struct variable * vp,
+@@ -1471,8 +1477,8 @@ var_udp6(register struct variable * vp,
  
        skip:
  #if defined(openbsd4)
@@ -27,7 +233,7 @@ $OpenBSD: patch-agent_mibgroup_mibII_ipv6_c,v 1.1 2013/12/20 02:20:00 krw Exp $
  #elif defined(__NetBSD__) && __NetBSD_Version__ >= 106250000	/*1.6Y*/
          p = (caddr_t)in6pcb.in6p_queue.cqe_next;
  	if (p == first) break;
-@@ -1780,9 +1784,13 @@ var_tcp6(register struct variable * vp,
+@@ -1780,9 +1786,13 @@ var_tcp6(register struct variable * vp,
      DEBUGMSGOID(("mibII/ipv6", name, *length));
      DEBUGMSG(("mibII/ipv6", " %d\n", exact));
  
@@ -42,7 +248,7 @@ $OpenBSD: patch-agent_mibgroup_mibII_ipv6_c,v 1.1 2013/12/20 02:20:00 krw Exp $
      first = p = (caddr_t)tcbtable.inpt_queue.cqh_first;
  #elif !defined(freebsd3) && !defined(darwin)
      if (!auto_nlist("tcb6", (char *) &tcb6, sizeof(tcb6)))
-@@ -1926,9 +1934,9 @@ var_tcp6(register struct variable * vp,
+@@ -1926,9 +1936,9 @@ var_tcp6(register struct variable * vp,
  
        skip:
  #if defined(openbsd4)

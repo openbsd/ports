@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2015/11/05 23:43:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2015/12/08 16:50:40 jca Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.7.3
-REVISION-main=	4
+REVISION-main=	5
 
 DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -tkmib
@@ -58,6 +58,7 @@ CONFIGURE_ARGS=   ${CONFIGURE_SHARED} \
 	--with-temp-file-pattern=/tmp/snmpdXXXXXXXXXXXX \
 	--with-logfile="/var/log/snmpd" \
 	--with-persistent-directory="/var/net-snmp"
+CONFIGURE_ENV=	ac_cv_IFNET_NEEDS_KERNEL=no
 TEST_TARGET=	test
 
 pre-configure:
