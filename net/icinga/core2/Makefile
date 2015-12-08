@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2015/11/30 13:11:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2015/12/08 13:49:36 sthen Exp $
 
 BROKEN-hppa =	needs 64-bit atomic ops; __sync_add_and_fetch_4
+BROKEN-sparc64 = gcc 4.2.1 fails "Illegal operands", gcc 4.9 hangs for 2h (icinga_unity.cpp)
+
 SHARED_ONLY =	Yes
 
 COMMENT-main =	network monitoring system
@@ -27,13 +29,6 @@ WANTLIB += boost_thread-mt crypto execinfo m pthread ssl stdc++ yajl
 
 MODULES =		devel/cmake \
 			gcc4
-
-# Try with gcc 4.9 on sparc64; with base gcc 4.2.1 build fails thusly:
-#
-# {standard input}:38466: Error: Illegal operands: %lo requires arguments in ()
-# c++: Internal error: Illegal instruction (program cc1plus)
-MODGCC4_ARCHS =		sparc64
-MODGCC4_LANGS =		c++
 
 PSEUDO_FLAVORS =	test
 FLAVOR ?=
