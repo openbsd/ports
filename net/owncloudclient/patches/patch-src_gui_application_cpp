@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_gui_application_cpp,v 1.4 2015/10/26 08:36:34 kirby Exp $
+$OpenBSD: patch-src_gui_application_cpp,v 1.5 2015/12/08 10:46:38 kirby Exp $
 
 Disable update check on startup.
 
---- src/gui/application.cpp.orig	Wed Oct 21 10:54:02 2015
-+++ src/gui/application.cpp	Fri Oct 23 12:05:53 2015
-@@ -175,13 +175,6 @@ Application::Application(int &argc, char **argv) :
-     // Also check immediatly
-     QTimer::singleShot( 0, this, SLOT( slotCheckConnection() ));
+--- src/gui/application.cpp.orig	Thu Dec  3 12:19:51 2015
++++ src/gui/application.cpp	Mon Dec  7 00:14:43 2015
+@@ -187,13 +187,6 @@ Application::Application(int &argc, char **argv) :
+     connect(&_networkConfigurationManager, SIGNAL(configurationChanged(QNetworkConfiguration)),
+                 this, SLOT(slotSystemOnlineConfigurationChanged(QNetworkConfiguration)));
  
 -    // Update checks
 -    UpdaterScheduler *updaterScheduler = new UpdaterScheduler(this);

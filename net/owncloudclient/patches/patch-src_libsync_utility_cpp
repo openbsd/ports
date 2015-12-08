@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_libsync_utility_cpp,v 1.3 2015/10/26 08:36:34 kirby Exp $
---- src/libsync/utility.cpp.orig	Wed Oct 21 10:54:02 2015
-+++ src/libsync/utility.cpp	Fri Oct 23 12:05:53 2015
-@@ -191,8 +191,8 @@ qint64 Utility::freeDiskSpace(const QString &path, boo
-     return (qint64) stat.f_bavail * stat.f_frsize;
+$OpenBSD: patch-src_libsync_utility_cpp,v 1.4 2015/12/08 10:46:38 kirby Exp $
+--- src/libsync/utility.cpp.orig	Thu Dec  3 12:19:51 2015
++++ src/libsync/utility.cpp	Mon Dec  7 00:17:14 2015
+@@ -192,8 +192,8 @@ qint64 Utility::freeDiskSpace(const QString &path)
+         return (qint64) stat.f_bavail * stat.f_frsize;
+     }
  #elif defined(Q_OS_UNIX)
-     Q_UNUSED(ok)
 -    struct statvfs64 stat;
--    statvfs64(path.toUtf8().data(), &stat);
+-    if (statvfs64(path.toLocal8Bit().data(), &stat) == 0) {
 +    struct statvfs stat;
-+    statvfs(path.toUtf8().data(), &stat);
-     return (qint64) stat.f_bavail * stat.f_frsize;
++    if (statvfs(path.toLocal8Bit().data(), &stat) == 0) {
+         return (qint64) stat.f_bavail * stat.f_frsize;
+     }
  #elif defined(Q_OS_WIN)
-     ULARGE_INTEGER freeBytes;

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/10/26 08:36:34 kirby Exp $
+# $OpenBSD: Makefile,v 1.7 2015/12/08 10:46:38 kirby Exp $
 
 COMMENT =		owncloud sync client
 
-DISTNAME =		owncloudclient-2.0.2
+DISTNAME =		owncloudclient-2.1.0
 
 SHARED_LIBS =		owncloudsync	2.0
 SHARED_LIBS +=		ocsync		2.0
@@ -17,7 +17,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += QtDBus QtGui QtNetwork QtSql QtWebKit QtXml c
-WANTLIB += crypto lib/inotify/inotify m neon pthread qtkeychain
+WANTLIB += crypto lib/inotify/inotify m pthread qtkeychain
 WANTLIB += sqlite3 ssl z
 
 MASTER_SITES =		https://download.owncloud.com/desktop/stable/
@@ -29,7 +29,6 @@ MODGCC4_LANGS += 	c++
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		devel/libinotify \
-			net/neon \
 			security/qtkeychain
 
 CONFIGURE_ARGS +=	-DBUILD_WITH_QT4=ON \
