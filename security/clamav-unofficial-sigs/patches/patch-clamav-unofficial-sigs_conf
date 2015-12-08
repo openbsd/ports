@@ -1,4 +1,4 @@
-$OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.10 2015/12/07 14:11:02 sthen Exp $
+$OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.11 2015/12/08 11:03:29 sthen Exp $
 --- clamav-unofficial-sigs.conf.orig	Wed Dec  2 10:56:35 2015
 +++ clamav-unofficial-sigs.conf	Mon Dec  7 14:04:52 2015
 @@ -24,12 +24,9 @@
@@ -83,13 +83,12 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.10 2015/12/07 14:11:02 sthen Exp
  
  # Set rsync connection and data transfer timeout limits in seconds.
  # The defaults settings here are reasonable, only change if you are
-@@ -369,7 +365,8 @@ keep_db_backup="no"
+@@ -369,7 +365,7 @@ keep_db_backup="no"
  # or the general script comments, change the following variables to
  # "yes".  If all variables are set to "yes", the script will output
  # nothing except error conditions.
 -silence_ssl="yes" # Default is "yes" ignore ssl errors and warnings
-+silence_ssl="yes" # Default is "yes" ignore ssl errors and warnings
-+# - as of 2015/12 this is needed for securiteinfo as their server config is broken
++silence_ssl="no"	# "yes" disables certificate verification
  curl_silence="no"      # Default is "no" to report curl statistics
  rsync_silence="no"     # Default is "no" to report rsync statistics
  gpg_silence="no"       # Default is "no" to report gpg signature status
