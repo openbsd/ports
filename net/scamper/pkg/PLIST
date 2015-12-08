@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/10/21 10:26:11 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/12/08 14:48:00 sthen Exp $
 @newgroup _scamper:677
 @newuser _scamper:677:_scamper:daemon:Scamper Account:/nonexistent:/sbin/nologin
 @bin bin/sc_ally
 @bin bin/sc_analysis_dump
 @bin bin/sc_attach
+@bin bin/sc_filterpolicy
 @bin bin/sc_ipiddump
 @bin bin/sc_speedtrap
 @bin bin/sc_tbitblind
@@ -44,6 +45,7 @@ lib/libscamperfile.la
 @man man/man1/sc_ally.1
 @man man/man1/sc_analysis_dump.1
 @man man/man1/sc_attach.1
+@man man/man1/sc_filterpolicy.1
 @man man/man1/sc_ipiddump.1
 @man man/man1/sc_speedtrap.1
 @man man/man1/sc_tbitblind.1
