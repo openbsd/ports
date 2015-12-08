@@ -1,0 +1,20 @@
+$OpenBSD: patch-3rdparty_libmimeapps_Index_h,v 1.1 2015/12/08 13:55:01 sthen Exp $
+--- 3rdparty/libmimeapps/Index.h.orig	Tue Dec  1 19:50:55 2015
++++ 3rdparty/libmimeapps/Index.h	Tue Dec  1 21:40:01 2015
+@@ -48,8 +48,6 @@ class Index
+ public:
+ 	Index();
+ 	explicit Index(const std::string &language);
+-	~Index();
+-
+ 	std::vector<DesktopEntry> appsForMime(const std::string &type) const;
+ 
+ protected:
+@@ -74,7 +72,6 @@ class Index
+ 	void addToType(const std::string &type, DesktopEntry *entry);
+ 	void removeApplication(const std::string &entryId);
+ 	void removeFromType(const std::string &type, const std::string &entryId);
+-	void removeUnused();
+ 	static std::list<std::string> resolveVariable(const std::string &name);
+ 	static std::vector<lookupDirectory> initDirectoryPatterns();
+ 
