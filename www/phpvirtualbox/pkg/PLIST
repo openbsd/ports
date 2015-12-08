@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/09/11 07:03:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/12/08 19:36:35 ajacoutot Exp $
 phpvirtualbox/
 phpvirtualbox/CHANGELOG.txt
 phpvirtualbox/GPLv3.txt
 phpvirtualbox/LICENSE.txt
-phpvirtualbox/README.txt
+phpvirtualbox/README.md
 @mode 0640
 @group www
 phpvirtualbox/config.php-example

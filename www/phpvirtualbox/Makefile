@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2015/09/11 07:03:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2015/12/08 19:36:35 ajacoutot Exp $
 
 COMMENT=		web-based VirtualBox front-end
 	
-V=			5.0-3
+V=			5.0-4
 DISTNAME=		phpvirtualbox-${V}
 PKGNAME=		phpvirtualbox-${V:S/-/./}
 EXTRACT_SUFX=		.zip
@@ -33,5 +33,6 @@ SUBST_VARS=		INSTDIR TINSTDIR
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
+	rm ${INSTDIR}/{Dockerfile,docker-compose.yml,.{docker,git}ignore}
 
 .include <bsd.port.mk>
