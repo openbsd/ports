@@ -1,0 +1,28 @@
+$OpenBSD: patch-storage_innobase_include_os0sync_h,v 1.1 2015/12/08 16:15:23 sthen Exp $
+
+Revert
+https://github.com/mysql/mysql-server/commit/f59d68eeae37338d7b25f2571407e763fa897e15
+to allow building on archs such as alpha, powerpc and sparc64.
+
+--- storage/innobase/include/os0sync.h.orig	Sat Nov 21 20:54:57 2015
++++ storage/innobase/include/os0sync.h	Sat Nov 21 20:55:57 2015
+@@ -487,7 +487,7 @@ os_atomic_clear(volatile lock_word_t* ptr)
+ 	__atomic_clear(ptr, __ATOMIC_RELEASE);
+ }
+ 
+-# elif defined(IB_STRONG_MEMORY_MODEL)
++# else
+ 
+ /** Do an atomic test and set.
+ @param[in,out]	ptr		Memory location to set to non-zero
+@@ -515,10 +515,6 @@ os_atomic_clear(volatile lock_word_t* ptr)
+ {
+ 	return(__sync_lock_test_and_set(ptr, 0));
+ }
+-
+-# else
+-
+-#  error "Unsupported platform"
+ 
+ # endif /* HAVE_IB_GCC_ATOMIC_TEST_AND_SET */
+ 
