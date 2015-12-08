@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/11/05 11:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2015/12/08 00:56:20 bentley Exp $
 
 COMMENT =	SDL port of the legendary 2D platform shooter
 
@@ -7,7 +7,7 @@ PKGNAME =	abuse-0.8
 EPOCH =		0
 ABUSE_SFX =	abuse-free-sounds-20120309
 CATEGORIES =	games x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://abuse.zoy.org/
 
@@ -30,7 +30,6 @@ MODULES =	converters/libiconv
 BUILD_DEPENDS =	devel/libtool \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-RUN_DEPENDS = 	audio/timidity
 LIB_DEPENDS =	devel/sdl-mixer \
 		devel/smpeg \
 		audio/flac \
