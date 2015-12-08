@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2015/06/24 06:53:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/12/08 19:41:37 ajacoutot Exp $
 
 COMMENT=	caching mechanism for freedesktop.org compliant menus
 
-DISTNAME=	menu-cache-1.0.0
+DISTNAME=	menu-cache-1.0.1
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.lxde.org/
 
-SHARED_LIBS +=  menu-cache           1.0      # 4.0
+SHARED_LIBS +=  menu-cache           1.0      # 4.1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
