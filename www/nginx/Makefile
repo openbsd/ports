@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.87 2015/12/02 10:21:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2015/12/09 16:46:01 robert Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
-VERSION=	1.9.7
+VERSION=	1.9.9
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
-REVISION=	0
 
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES0=	http://dropbox.eait.uq.edu.au/uqdgwynn/distfiles/
