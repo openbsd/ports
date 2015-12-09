@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.751 2015/12/01 22:44:33 edd Exp $
+# $OpenBSD: Makefile,v 1.752 2015/12/09 08:48:17 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -554,7 +554,6 @@
      SUBDIR += wApua
      SUBDIR += wbox
      SUBDIR += webalizer
-     SUBDIR += webgui
      SUBDIR += webkit
      SUBDIR += webkit,gtk3
      SUBDIR += webkitgtk4
