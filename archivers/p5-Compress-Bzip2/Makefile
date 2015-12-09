@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.14 2015/03/15 17:45:11 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2015/12/09 10:45:32 benoit Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY =	Yes
 
-COMMENT=	interface to bzip2 compression library
+COMMENT =	interface to bzip2 compression library
 
-DISTNAME =	Compress-Bzip2-2.22
-CATEGORIES=	archivers
+DISTNAME =	Compress-Bzip2-2.24
+CATEGORIES =	archivers
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES=	cpan
+MODULES =	cpan
 LIB_DEPENDS =	archivers/bzip2
 WANTLIB =	bz2>=10
 
