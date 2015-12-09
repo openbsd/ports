@@ -1,6 +1,6 @@
-$OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.1 2015/12/08 17:18:59 dcoppa Exp $
---- Source/cmGeneratorTarget.cxx.orig	Mon Nov 23 16:23:40 2015
-+++ Source/cmGeneratorTarget.cxx	Mon Nov 23 16:17:49 2015
+$OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.2 2015/12/09 11:34:50 dcoppa Exp $
+--- Source/cmGeneratorTarget.cxx.orig	Wed Dec  2 16:43:21 2015
++++ Source/cmGeneratorTarget.cxx	Wed Dec  9 09:58:25 2015
 @@ -856,11 +856,15 @@ cmGeneratorTarget::GetCompilePDBPath(const std::string
  //----------------------------------------------------------------------------
  bool cmGeneratorTarget::HasSOName(const std::string& config) const
@@ -17,7 +17,7 @@ $OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.1 2015/12/08 17:18:59 dcoppa Ex
  }
  
  //----------------------------------------------------------------------------
-@@ -2746,8 +2750,13 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+@@ -2746,9 +2750,14 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
    // Check for library version properties.
    const char* version = this->GetProperty("VERSION");
    const char* soversion = this->GetProperty("SOVERSION");
@@ -26,12 +26,13 @@ $OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.1 2015/12/08 17:18:59 dcoppa Ex
 +     this->GetType() != cmTarget::MODULE_LIBRARY)
 +#else
    if(!this->HasSOName(config) ||
+      this->Makefile->IsOn("CMAKE_PLATFORM_NO_VERSIONED_SONAME") ||
       this->Target->IsFrameworkOnApple())
 +#endif
      {
      // Versioning is supported only for shared libraries and modules,
      // and then only when the platform supports an soname flag.
-@@ -2775,6 +2784,36 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+@@ -2776,6 +2785,36 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
    // The library name.
    name = prefix+base+suffix;
  
@@ -68,7 +69,7 @@ $OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.1 2015/12/08 17:18:59 dcoppa Ex
    if(this->Target->IsFrameworkOnApple())
      {
      realName = prefix;
-@@ -2789,9 +2828,15 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+@@ -2790,9 +2829,15 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
      }
    else
    {
