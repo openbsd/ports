@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.26 2015/09/29 10:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2015/12/09 18:13:36 jca Exp $
 
 COMMENT=		cross-python path, ini-parsing, io, code, log facilities
 
-MODPY_EGG_VERSION =	1.4.23
+MODPY_EGG_VERSION =	1.4.30
 DISTNAME=		py-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://doc.pylib.org/en/latest/
+HOMEPAGE=		https://pylib.readthedocs.org/en/latest
 
 MAINTAINER=		Eric Faurot <eric@openbsd.org>
 
