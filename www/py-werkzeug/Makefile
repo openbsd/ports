@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/09/29 10:53:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/12/09 18:25:56 jca Exp $
 
 COMMENT =		WSGI utility collection
 
@@ -24,7 +24,8 @@ MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS =		textproc/py-sphinx
 
-TEST_DEPENDS =          devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
