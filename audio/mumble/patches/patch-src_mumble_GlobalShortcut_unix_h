@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_mumble_GlobalShortcut_unix_h,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+$OpenBSD: patch-src_mumble_GlobalShortcut_unix_h,v 1.2 2015/12/09 12:22:45 dcoppa Exp $
 
 'XKeycodeToKeysym' is deprecated
 
---- src/mumble/GlobalShortcut_unix.h.orig	Sat Jun  1 23:16:31 2013
-+++ src/mumble/GlobalShortcut_unix.h	Wed Aug 21 16:01:20 2013
+--- src/mumble/GlobalShortcut_unix.h.orig	Sun Dec  6 11:05:24 2015
++++ src/mumble/GlobalShortcut_unix.h	Wed Dec  9 12:53:17 2015
 @@ -34,6 +34,7 @@
  
  #include <QX11Info>
@@ -11,4 +11,4 @@ $OpenBSD: patch-src_mumble_GlobalShortcut_unix_h,v 1.1.1.1 2013/10/01 10:28:44 d
 +#include <X11/XKBlib.h>
  #include <X11/Xlib.h>
  #ifndef NO_XINPUT2
- #include <X11/extensions/XInput2.h>
+ #include <X11/extensions/XI2.h>
