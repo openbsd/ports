@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/05 17:00:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2015/12/10 08:05:43 jasper Exp $
 
 COMMENT=	gui for ogle
 CATEGORIES=	x11
@@ -28,9 +28,9 @@ CONFIGURE_ENV=LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} LP64_ARCHS="${LP64_ARCHS
 
 LIB_DEPENDS=	devel/fox \
 		x11/ogle
-	
-		
-MAKE_FLAGS=	-f ${WRKCONF}/conf.mk 
+
+
+MAKE_FLAGS=	-f ${WRKCONF}/conf.mk
 
 post-build:
 	@echo '#! /bin/sh' >${WRKDIST}/scripts/goggles
