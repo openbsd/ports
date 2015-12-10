@@ -1,6 +1,10 @@
-$OpenBSD: patch-src_main_radsniff_c,v 1.1.1.1 2015/11/12 12:59:37 sthen Exp $
+$OpenBSD: patch-src_main_radsniff_c,v 1.2 2015/12/10 09:56:45 sthen Exp $
 
-XXX probably not enough to make it actually work.
+OpenBSD libpcap uses nonstandard "bpf_timeval" variables which are a
+different size to timeval on some arch..
+
+This patch is enough to let it build but is incomplete and unlikely to
+allow radsniff to actually work.
 
 --- src/main/radsniff.c.orig	Wed Nov 11 12:39:49 2015
 +++ src/main/radsniff.c	Wed Nov 11 12:44:57 2015

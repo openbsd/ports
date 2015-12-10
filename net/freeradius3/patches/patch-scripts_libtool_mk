@@ -1,4 +1,7 @@
-$OpenBSD: patch-scripts_libtool_mk,v 1.1.1.1 2015/11/12 12:59:37 sthen Exp $
+$OpenBSD: patch-scripts_libtool_mk,v 1.2 2015/12/10 09:56:45 sthen Exp $
+
+Don't hide command lines.
+
 --- scripts/libtool.mk.orig	Wed Nov 11 15:50:54 2015
 +++ scripts/libtool.mk	Wed Nov 11 15:51:19 2015
 @@ -69,11 +69,11 @@ clean: .libs_clean

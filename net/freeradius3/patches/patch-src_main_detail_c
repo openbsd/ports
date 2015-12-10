@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_main_detail_c,v 1.1.1.1 2015/11/12 12:59:37 sthen Exp $
+$OpenBSD: patch-src_main_detail_c,v 1.2 2015/12/10 09:56:45 sthen Exp $
+
+Cope with 32-bit arch with 64-bit time variables.
+
 --- src/main/detail.c.orig	Wed Nov 11 12:39:27 2015
 +++ src/main/detail.c	Wed Nov 11 12:39:35 2015
 @@ -736,7 +736,7 @@ open_file:
