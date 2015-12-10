@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/03/16 18:07:36 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2015/12/10 10:00:30 sthen Exp $
 @bin bin/sndfile-cmp
 @bin bin/sndfile-concat
 @bin bin/sndfile-convert
@@ -25,6 +25,7 @@ lib/pkgconfig/sndfile.pc
 @man man/man1/sndfile-metadata-get.1
 @man man/man1/sndfile-metadata-set.1
 @man man/man1/sndfile-play.1
+@man man/man1/sndfile-salvage.1
 share/doc/libsndfile/
 share/doc/libsndfile/FAQ.html
 share/doc/libsndfile/api.html
@@ -38,7 +39,6 @@ share/doc/libsndfile/libsndfile.jpg
 share/doc/libsndfile/lists.html
 share/doc/libsndfile/new_file_type.HOWTO
 share/doc/libsndfile/octave.html
-share/doc/libsndfile/pkgconfig.html
 share/doc/libsndfile/sndfile_info.html
 share/doc/libsndfile/tutorial.html
 share/doc/libsndfile/win32.html
