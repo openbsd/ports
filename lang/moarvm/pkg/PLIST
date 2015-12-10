@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/11/05 11:51:39 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/12/10 17:50:45 pascal Exp $
 @bin bin/moar
 include/libtommath/
 include/libuv/
@@ -147,6 +147,7 @@ include/moar/platform/
 include/moar/platform/inttypes.h
 include/moar/platform/io.h
 include/moar/platform/mmap.h
+include/moar/platform/setjmp.h
 include/moar/platform/stdint.h
 include/moar/platform/sys.h
 include/moar/platform/threads.h
@@ -181,6 +182,7 @@ include/moar/strings/unicode.h
 include/moar/strings/unicode_gen.h
 include/moar/strings/utf16.h
 include/moar/strings/utf8.h
+include/moar/strings/utf8_c8.h
 include/moar/strings/windows1252.h
 include/moar/types.h
 include/moar/uthash.h
