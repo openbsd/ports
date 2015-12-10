@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2015/11/12 15:36:06 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.40 2015/12/10 11:26:27 dcoppa Exp $
 
 BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()
 BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'Binding'
 
 COMMENT =		ncurses mpd client inspired by ncmpc
 
-DISTNAME =		ncmpcpp-0.6.8
+DISTNAME =		ncmpcpp-0.7
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -47,7 +47,12 @@ CONFIGURE_ARGS =	--enable-clock \
 			--with-taglib \
 			--without-fftw
 
-CONFIGURE_ENV =		CPPFLAGS="-pthread"
+CONFIGURE_ENV =		BOOST_LIB_SUFFIX="-mt" \
+			CPPFLAGS="-DBOOST_RESULT_OF_USE_DECLTYPE \
+				  -D_XOPEN_SOURCE_EXTENDED \
+				  -pthread" \
+			ICU_CFLAGS="icu-is-not-really-needed" \
+			ICU_LIBS="icu-is-not-really-needed"
 
 NO_TEST =		Yes
 

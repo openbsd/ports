@@ -1,22 +1,31 @@
-$OpenBSD: patch-doc_ncmpcpp_1,v 1.5 2015/07/06 06:04:57 dcoppa Exp $
---- doc/ncmpcpp.1.orig	Sat May  2 21:16:11 2015
-+++ doc/ncmpcpp.1	Fri Jun 19 16:33:11 2015
+$OpenBSD: patch-doc_ncmpcpp_1,v 1.6 2015/12/10 11:26:27 dcoppa Exp $
+--- doc/ncmpcpp.1.orig	Sun Nov 22 18:30:58 2015
++++ doc/ncmpcpp.1	Thu Dec 10 09:40:35 2015
 @@ -1,4 +1,4 @@
 -.TH "ncmpcpp" "1"
 +.TH "NCMPCPP" "1"
  .SH "NAME"
  ncmpcpp \- An ncurses Music Player Daemon (MPD) client.
  .SH "SYNOPSIS"
-@@ -26,7 +26,6 @@ Display help.
+@@ -38,7 +38,6 @@ Display help.
  .TP
  .B \-v, \-\-version
  Display version information.
 -.TP
  .SH "CONFIGURATION"
- When ncmpcpp starts, it tries to read user's settings from the ~/.ncmpcpp/config file. If no user's configuration is found, ncmpcpp uses its default configuration. An example configuration file containing all default values is provided with ncmpcpp and can be usually found in /usr/share/doc/ncmpcpp (exact location may depend on used distribution or configure prefix).
+ When ncmpcpp starts, it tries to read user's settings from $HOME/.ncmpcpp/config and $XDG_CONFIG_HOME/ncmpcpp/config files. If no configuration is found, ncmpcpp uses its default configuration. An example configuration file containing all default values is provided with ncmpcpp and can be usually found in /usr/share/doc/ncmpcpp (exact location may depend on used distribution or configure prefix).
  
-@@ -371,7 +370,6 @@ Color of visualization.
- Border color of pop-up windows. If set to 'none', no border will be shown.
+@@ -268,7 +267,7 @@ Slave screen that has to be displayed at start (nothin
+ .TP
+ .B startup_slave_screen_focus = yes/no
+ If set to yes, slave screen will be the active one after startup. Otherwise master screen will be.
+-.TP 
++.TP
+ .B locked_screen_width_part = 20-80
+ If you want to lock a screen, ncmpcpp asks for % of locked screen's width to be reserved before that and provides a default value, which is the one you can set here.
+ .TP
+@@ -382,7 +381,6 @@ Border color of pop-up windows. If set to 'none', no b
+ .TP
  .B active_window_border = COLOR
  Color of active window's border.
 -.TP

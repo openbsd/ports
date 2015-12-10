@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_ncmpcpp_cpp,v 1.8 2015/05/06 08:43:04 dcoppa Exp $
+$OpenBSD: patch-src_ncmpcpp_cpp,v 1.9 2015/12/10 11:26:27 dcoppa Exp $
 
 OpenBSD lacks sigignore()
 
---- src/ncmpcpp.cpp.orig	Sat May  2 21:16:11 2015
-+++ src/ncmpcpp.cpp	Wed May  6 10:33:16 2015
-@@ -115,7 +115,7 @@ int main(int argc, char **argv)
+--- src/ncmpcpp.cpp.orig	Sun Nov 22 18:30:58 2015
++++ src/ncmpcpp.cpp	Thu Dec 10 09:38:14 2015
+@@ -108,7 +108,7 @@ int main(int argc, char **argv)
  	signal(SIGPIPE, sighandler);
  	signal(SIGWINCH, sighandler);
  	// ignore Ctrl-C
@@ -12,4 +12,4 @@ OpenBSD lacks sigignore()
 +	signal(SIGINT, SIG_IGN);
  #	endif // !WIN32
  
- 	NC::initScreen("ncmpcpp ver. " VERSION, Config.colors_enabled);
+ 	NC::initScreen(Config.colors_enabled, Config.mouse_support);
