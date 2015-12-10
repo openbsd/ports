@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_c,v 1.8 2015/12/06 08:51:46 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_c,v 1.9 2015/12/10 06:53:38 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -44,8 +44,12 @@ aacenc: remove the experimental flag
 
 aacenc: fix aac_pred option triggering an error
 
---- libavcodec/aacenc.c.orig	Sat Dec  5 15:13:08 2015
-+++ libavcodec/aacenc.c	Sat Dec  5 15:11:04 2015
+aacenc: move the TNS search and filtering before PNS
+
+aacenc: update max_sfb when num_swb changes
+
+--- libavcodec/aacenc.c.orig	Thu Nov 12 02:08:28 2015
++++ libavcodec/aacenc.c	Wed Dec  9 01:12:49 2015
 @@ -54,11 +54,12 @@ static void put_audio_specific_config(AVCodecContext *
  {
      PutBitContext pb;
@@ -145,7 +149,15 @@ aacenc: fix aac_pred option triggering an error
                                                ics->window_sequence[0]);
              }
              ics->window_sequence[1] = ics->window_sequence[0];
-@@ -570,25 +594,32 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -547,6 +571,7 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+             ics->num_windows        = wi[ch].num_windows;
+             ics->swb_sizes          = s->psy.bands    [ics->num_windows == 8];
+             ics->num_swb            = tag == TYPE_LFE ? ics->num_swb : s->psy.num_bands[ics->num_windows == 8];
++            ics->max_sfb            = FFMIN(ics->max_sfb, ics->num_swb);
+             ics->swb_offset         = wi[ch].window_type[0] == EIGHT_SHORT_SEQUENCE ?
+                                         ff_swb_offset_128 [s->samplerate_index]:
+                                         ff_swb_offset_1024[s->samplerate_index];
+@@ -570,25 +595,32 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  ics->clip_avoidance_factor = 1.0f;
              }
  
@@ -182,7 +194,7 @@ aacenc: fix aac_pred option triggering an error
          memset(chan_el_counter, 0, sizeof(chan_el_counter));
          for (i = 0; i < s->chan_map[0]; i++) {
              FFPsyWindowInfo* wi = windows + start_ch;
-@@ -605,15 +636,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -605,15 +637,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  sce = &cpe->ch[ch];
                  coeffs[ch] = sce->coeffs;
                  sce->ics.predictor_present = 0;
@@ -212,7 +224,24 @@ aacenc: fix aac_pred option triggering an error
                  s->coder->search_for_quantizers(avctx, s, &cpe->ch[ch], s->lambda);
              }
              if (chans > 1
-@@ -655,8 +699,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -631,14 +676,14 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+             for (ch = 0; ch < chans; ch++) { /* TNS and PNS */
+                 sce = &cpe->ch[ch];
+                 s->cur_channel = start_ch + ch;
+-                if (s->options.pns && s->coder->search_for_pns)
+-                    s->coder->search_for_pns(s, avctx, sce);
+                 if (s->options.tns && s->coder->search_for_tns)
+                     s->coder->search_for_tns(s, sce);
+                 if (s->options.tns && s->coder->apply_tns_filt)
+                     s->coder->apply_tns_filt(s, sce);
+                 if (sce->tns.present)
+                     tns_mode = 1;
++                if (s->options.pns && s->coder->search_for_pns)
++                    s->coder->search_for_pns(s, avctx, sce);
+             }
+             s->cur_channel = start_ch;
+             if (s->options.intensity_stereo) { /* Intensity Stereo */
+@@ -655,8 +700,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                          s->coder->search_for_pred(s, sce);
                      if (cpe->ch[ch].ics.predictor_present) pred_mode = 1;
                  }
@@ -223,7 +252,7 @@ aacenc: fix aac_pred option triggering an error
                  for (ch = 0; ch < chans; ch++) {
                      sce = &cpe->ch[ch];
                      s->cur_channel = start_ch + ch;
-@@ -665,22 +709,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -665,22 +710,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  }
                  s->cur_channel = start_ch;
              }
@@ -262,7 +291,7 @@ aacenc: fix aac_pred option triggering an error
                      encode_ms_info(&s->pb, cpe);
                      if (cpe->ms_mode) ms_mode = 1;
                  }
-@@ -692,36 +748,76 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -692,36 +749,76 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              start_ch += chans;
          }
  
@@ -359,7 +388,7 @@ aacenc: fix aac_pred option triggering an error
      if (!frame)
          s->last_frame++;
  
-@@ -737,6 +833,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
+@@ -737,6 +834,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
  {
      AACEncContext *s = avctx->priv_data;
  
@@ -368,7 +397,7 @@ aacenc: fix aac_pred option triggering an error
      ff_mdct_end(&s->mdct1024);
      ff_mdct_end(&s->mdct128);
      ff_psy_end(&s->psy);
-@@ -795,76 +893,105 @@ static av_cold int aac_encode_init(AVCodecContext *avc
+@@ -795,76 +894,105 @@ static av_cold int aac_encode_init(AVCodecContext *avc
      uint8_t grouping[AAC_MAX_CHANNELS];
      int lengths[2];
  
@@ -506,7 +535,7 @@ aacenc: fix aac_pred option triggering an error
      ff_af_queue_init(avctx, &s->afq);
  
      return 0;
-@@ -875,27 +1002,17 @@ fail:
+@@ -875,27 +1003,17 @@ fail:
  
  #define AACENC_FLAGS AV_OPT_FLAG_ENCODING_PARAM | AV_OPT_FLAG_AUDIO_PARAM
  static const AVOption aacenc_options[] = {
@@ -545,7 +574,7 @@ aacenc: fix aac_pred option triggering an error
      {NULL}
  };
  
-@@ -916,8 +1033,7 @@ AVCodec ff_aac_encoder = {
+@@ -916,8 +1034,7 @@ AVCodec ff_aac_encoder = {
      .encode2        = aac_encode_frame,
      .close          = aac_encode_end,
      .supported_samplerates = mpeg4audio_sample_rates,

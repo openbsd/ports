@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aaccoder_c,v 1.6 2015/12/06 08:51:46 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aaccoder_c,v 1.7 2015/12/10 06:53:38 ajacoutot Exp $
 
 aaccoder: use roundf() instead of ceilf()
 
@@ -32,8 +32,10 @@ aaccoder: prevent crash of anmr coder
 
 AAC encoder: ANMR, avoid empty search ranges
 
---- libavcodec/aaccoder.c.orig	Sat Dec  5 15:12:49 2015
-+++ libavcodec/aaccoder.c	Sat Dec  5 15:07:36 2015
+AAC encoder: fix OOB access in search_for_pns
+
+--- libavcodec/aaccoder.c.orig	Thu Nov 12 02:08:28 2015
++++ libavcodec/aaccoder.c	Wed Dec  9 19:16:49 2015
 @@ -33,7 +33,9 @@
  #include "libavutil/libm.h" // brought forward to work around cygwin header breakage
  
@@ -600,7 +602,7 @@ AAC encoder: ANMR, avoid empty search ranges
 +                /* Estimate rd on average as 5 bits for SF, 4 for the CB, plus spread energy * lambda/thr */
 +                dist2 += band->energy/(band->spread*band->spread)*lambda*dist_thresh/band->threshold;
 +            }
-+            if (g && sce->sf_idx[(w+w2)*16+g-1] == NOISE_BT) {
++            if (g && sce->band_type[w*16+g-1] == NOISE_BT) {
 +                dist2 += 5;
 +            } else {
 +                dist2 += 9;
