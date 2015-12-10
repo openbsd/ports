@@ -1,0 +1,12 @@
+$OpenBSD: patch-gnurobbo_Makefile,v 1.1.1.1 2015/12/10 06:56:06 bentley Exp $
+--- gnurobbo/Makefile.orig	Mon Dec  7 06:01:14 2015
++++ gnurobbo/Makefile	Mon Dec  7 06:01:15 2015
+@@ -61,7 +61,7 @@ SDL_CONFIG?=sdl-config
+ 
+ 
+ 
+-CFLAGS+=-d -Wall  `$(SDL_CONFIG) --cflags` -DPLATFORM_PC -DVERSION=\"$(VERSION)\" $(SMOOTH_SCRL) $(LIGHTNING)\
++CFLAGS+=-Wall  `$(SDL_CONFIG) --cflags` -DPLATFORM_PC -DVERSION=\"$(VERSION)\" $(SMOOTH_SCRL) $(LIGHTNING)\
+ 	-DPACKAGE_DATA_DIR=\"$(PACKAGE_DATA_DIR)\" $(FONT_USE_PIXMAP) $(MUSIC) $(DESIGNER)
+ LDFLAGS=
+ # Use these instead for debugging and/or profiling (mainly intended for GNU Robbo developers)
