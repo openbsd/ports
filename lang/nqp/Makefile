@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2015/11/05 11:52:08 pascal Exp $
+# $OpenBSD: Makefile,v 1.17 2015/12/10 17:51:50 pascal Exp $
 
 COMMENT =		Not Quite Perl
 
-V =			2015.10
+V =			2015.11
 DISTNAME =		nqp-$V
+
+MOAR_VERSION =		2015.11
 
 PATCHORIG =		.orig.port
 
@@ -21,8 +23,8 @@ GH_PROJECT =		nqp
 GH_TAGNAME =		$V
 MASTER_SITES =		${MASTER_SITES_GITHUB}
 
-BUILD_DEPENDS =		lang/moarvm
-RUN_DEPENDS =		lang/moarvm
+BUILD_DEPENDS =		lang/moarvm>=${MOAR_VERSION}
+RUN_DEPENDS =		lang/moarvm>=${MOAR_VERSION}
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	/usr/bin/perl Configure.pl
