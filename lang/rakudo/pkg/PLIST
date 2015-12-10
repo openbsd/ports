@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/11/05 11:52:32 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/12/10 18:01:06 pascal Exp $
 bin/perl6
 bin/perl6-debug-m
 bin/perl6-gdb-m
@@ -35,6 +35,8 @@ share/perl6/lib/Test.pm
 share/perl6/lib/Test.pm.moarvm
 share/perl6/lib/lib.pm6
 share/perl6/lib/lib.pm6.moarvm
+share/perl6/lib/newline.pm6
+share/perl6/lib/newline.pm6.moarvm
 share/perl6/runtime/
 share/perl6/runtime/CORE.setting.moarvm
 share/perl6/runtime/RESTRICTED.setting.moarvm
