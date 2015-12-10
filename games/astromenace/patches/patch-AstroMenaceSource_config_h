@@ -1,0 +1,12 @@
+$OpenBSD: patch-AstroMenaceSource_config_h,v 1.1.1.1 2015/12/10 01:33:11 bentley Exp $
+--- AstroMenaceSource/config.h.orig	Mon Dec  7 00:38:50 2015
++++ AstroMenaceSource/config.h	Mon Dec  7 00:38:51 2015
+@@ -31,6 +31,8 @@
+ #define GAME_VERSION	 	"1.3.2"
+ #define GAME_BUILD			130712
+ 
++#define __unix
++
+ 
+ // VBO OpenGL extention support switcher (if defined - game will detect and use VBO) Game could crash
+ // in FreeBSD under VirtualBox if vbo are used. Added just in case, if hardware capabilities detection fail.
