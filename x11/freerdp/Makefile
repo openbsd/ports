@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2015/11/21 10:04:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2015/12/10 08:43:29 landry Exp $
 
 # Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
 BROKEN-hppa =		undefined reference to `__sync_val_compare_and_swap_4'
+BROKEN-sparc64 =	cc1: error: unrecognized command line option "-mfpu=neon" "-mfloat-abi=softfp"
 
 SHARED_ONLY =		Yes
 
