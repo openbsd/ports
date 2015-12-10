@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/02 12:44:24 semarie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/12/10 17:53:57 semarie Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -7,8 +7,8 @@ PKG_ARCH-doc =		*
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.4.0
-RUST_HASH =		1bf6e69c
+V =			1.5.0
+RUST_HASH =		35c36e89
 DISTNAME =		rustc-${V}-src
 
 SUBST_VARS +=		RUST_HASH

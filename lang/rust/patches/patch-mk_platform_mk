@@ -1,0 +1,20 @@
+$OpenBSD: patch-mk_platform_mk,v 1.1 2015/12/10 17:53:57 semarie Exp $
+Remove possible conflict between system-llvm and rustc-llvm
+https://github.com/rust-lang/rust/pull/29794
+--- mk/platform.mk.orig	Fri Dec  4 21:18:59 2015
++++ mk/platform.mk	Wed Dec  9 10:06:55 2015
+@@ -211,9 +211,11 @@ define CFG_MAKE_TOOLCHAIN
+   # On OpenBSD, we need to pass the path of libstdc++.so to the linker
+   # (use path of libstdc++.a which is a known name for the same path)
+   ifeq ($(OSTYPE_$(1)),unknown-openbsd)
+-    RUSTC_FLAGS_$(1)=-L "$$(dir $$(shell $$(CC_$(1)) $$(CFG_GCCISH_CFLAGS_$(1)) \
+-        -print-file-name=lib$(CFG_STDCPP_NAME).a))" \
+-        $(RUSTC_FLAGS_$(1))
++    STDCPP_LIBDIR_RUSTFLAGS_$(1)= \
++        -L "$$(dir $$(shell $$(CC_$(1)) $$(CFG_GCCISH_CFLAGS_$(1)) \
++        -print-file-name=lib$(CFG_STDCPP_NAME).a))"
++  else
++    STDCPP_LIBDIR_RUSTFLAGS_$(1)=
+   endif
+ 
+   # On Bitrig, we need the relocation model to be PIC for everything

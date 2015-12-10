@@ -1,4 +1,4 @@
 SHA256 (rust/rust-stage0-2015-08-11-1af31d4-openbsd-x86_64-9cae790c4ca19b1b29a048605ce249fe1c20a498.tar.bz2) = SV8nV81ML4Z1aK3BSyfykjMtIcBS6I+4zX9HYKkbeTk=
-SHA256 (rust/rustc-1.4.0-src.tar.gz) = HA39zlyF2AmPzrua3xSThHq0DB36qMyZevCbLvCqghE=
+SHA256 (rust/rustc-1.5.0-src.tar.gz) = ZBA3r3t7bK0LIxzCBnH4oxT78vQPwJAdC4d8OfyNpaA=
 SIZE (rust/rust-stage0-2015-08-11-1af31d4-openbsd-x86_64-9cae790c4ca19b1b29a048605ce249fe1c20a498.tar.bz2) = 19863445
-SIZE (rust/rustc-1.4.0-src.tar.gz) = 24537507
+SIZE (rust/rustc-1.5.0-src.tar.gz) = 24586539
