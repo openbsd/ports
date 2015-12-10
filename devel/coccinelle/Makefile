@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2015/10/29 15:41:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2015/12/10 08:47:02 landry Exp $
 
 SHARED_ONLY =	Yes
+BROKEN-alpha =	yes_prepare_ocamlcocci.cmi does not exist
+BROKEN-powerpc = yes_prepare_ocamlcocci.cmi does not exist
+BROKEN-sparc64 = yes_prepare_ocamlcocci.cmi does not exist
 
 COMMENT =	program matching and transformation engine
 
