@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.56 2015/08/17 19:52:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2015/12/10 08:21:33 jasper Exp $
+
+PORTROACH=		limit:^2
 
 COMMENT=		text widget that extends GTK2's GtkTextView widget#'
 
