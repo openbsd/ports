@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/02 18:15:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/12/10 14:39:45 sthen Exp $
 
 COMMENT=	library for network communications and cryptography
 
-DISTNAME=	libsodium-1.0.6
+DISTNAME=	libsodium-1.0.7
 
-SHARED_LIBS +=	sodium         6.0            # .17.0
+SHARED_LIBS +=	sodium         7.0            # .18.0
 
 CATEGORIES=	security net
 
@@ -18,8 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	https://download.libsodium.org/libsodium/releases/
 
 SEPARATE_BUILD=	Yes
-# If built with OpenBSD libtool, self-tests and net/dnscrypt-proxy fail
-USE_LIBTOOL=	gnu
 
 CONFIGURE_STYLE=	gnu
 
