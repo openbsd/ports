@@ -1,0 +1,234 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/12/10 06:44:52 bentley Exp $
+@bin bin/tbftss
+share/tbftss/
+share/tbftss/data/
+share/tbftss/data/app/
+share/tbftss/data/app/config.json
+share/tbftss/data/battle/
+share/tbftss/data/battle/bullets.json
+share/tbftss/data/battle/items.json
+share/tbftss/data/fighters/
+share/tbftss/data/fighters/ataf.json
+share/tbftss/data/fighters/cannonDart.json
+share/tbftss/data/fighters/civilian.json
+share/tbftss/data/fighters/dart.json
+share/tbftss/data/fighters/firefly.json
+share/tbftss/data/fighters/hammerhead.json
+share/tbftss/data/fighters/hyenaA.json
+share/tbftss/data/fighters/hyenaB.json
+share/tbftss/data/fighters/jackal.json
+share/tbftss/data/fighters/khepri.json
+share/tbftss/data/fighters/kingfisher.json
+share/tbftss/data/fighters/leopard.json
+share/tbftss/data/fighters/list.json
+share/tbftss/data/fighters/mantis.json
+share/tbftss/data/fighters/missileDart.json
+share/tbftss/data/fighters/nymph.json
+share/tbftss/data/fighters/ray.json
+share/tbftss/data/fighters/rocketTurret.json
+share/tbftss/data/fighters/rook.json
+share/tbftss/data/fighters/scarab.json
+share/tbftss/data/fighters/shuttle.json
+share/tbftss/data/fighters/simpleDart.json
+share/tbftss/data/fighters/sphinx.json
+share/tbftss/data/fighters/staticDart.json
+share/tbftss/data/fighters/taf.json
+share/tbftss/data/fighters/thunderhead.json
+share/tbftss/data/fighters/tug.json
+share/tbftss/data/fighters/unarmedDart.json
+share/tbftss/data/fonts/
+share/tbftss/data/fonts/Roboto-Medium.ttf
+share/tbftss/data/galaxy/
+share/tbftss/data/galaxy/starSystems.json
+share/tbftss/data/missions/
+share/tbftss/data/missions/alba/
+share/tbftss/data/missions/alba/01 - patrol #1.json
+share/tbftss/data/missions/alba/02 - patrol #2.json
+share/tbftss/data/missions/clarke/
+share/tbftss/data/missions/clarke/01 - clarke defence #1.json
+share/tbftss/data/missions/coyote/
+share/tbftss/data/missions/coyote/01 - coyote assault #1.json
+share/tbftss/data/missions/coyote/02 - coyote assault #2.json
+share/tbftss/data/missions/coyote/03 - coyote assault #3.json
+share/tbftss/data/missions/granada/
+share/tbftss/data/missions/granada/01 - suspect packages #1.json
+share/tbftss/data/missions/granada/02 - suspect packages #2.json
+share/tbftss/data/missions/granada/03 - suspect packages #3.json
+share/tbftss/data/missions/granada/04 - pirate smash.json
+share/tbftss/data/missions/iliad/
+share/tbftss/data/missions/iliad/01 - iliad defence #1.json
+share/tbftss/data/missions/iliad/02 - iliad defence #2.json
+share/tbftss/data/missions/rothan/
+share/tbftss/data/missions/sol/
+share/tbftss/data/missions/sol/01 - free flight.json
+share/tbftss/data/missions/sol/02 - weapons.json
+share/tbftss/data/missions/sol/03 - moving target.json
+share/tbftss/data/missions/sol/04 - armed target.json
+share/tbftss/data/missions/sol/05 - ecm.json
+share/tbftss/data/missions/sol/06 - wingmates.json
+share/tbftss/data/missions/sol/07 - final.json
+share/tbftss/data/missions/temper/
+share/tbftss/data/missions/temper/01 - pirate uprising #1.json
+share/tbftss/data/missions/temper/02 - pirate uprising #2.json
+share/tbftss/data/missions/temper/03 - pirate uprising #3.json
+share/tbftss/data/missions/temper/04 - pirate uprising #4.json
+share/tbftss/data/missions/temper/05 - pirate uprising #5.json
+share/tbftss/data/missions/warro/
+share/tbftss/data/missions/warro/01 - evacuation #1.json
+share/tbftss/data/missions/warro/02 - evacuation #2.json
+share/tbftss/data/missions/warro/03 - evacuation #3.json
+share/tbftss/data/widgets/
+share/tbftss/data/widgets/battleLost.json
+share/tbftss/data/widgets/battleWon.json
+share/tbftss/data/widgets/galacticMap.json
+share/tbftss/data/widgets/inBattle.json
+share/tbftss/data/widgets/list.json
+share/tbftss/data/widgets/okCancel.json
+share/tbftss/data/widgets/options.json
+share/tbftss/data/widgets/starSystem.json
+share/tbftss/data/widgets/startBattle.json
+share/tbftss/data/widgets/stats.json
+share/tbftss/data/widgets/title.json
+share/tbftss/gfx/
+share/tbftss/gfx/backgrounds/
+share/tbftss/gfx/backgrounds/background01.jpg
+share/tbftss/gfx/backgrounds/background02.jpg
+share/tbftss/gfx/backgrounds/background03.jpg
+share/tbftss/gfx/backgrounds/background04.jpg
+share/tbftss/gfx/battle/
+share/tbftss/gfx/battle/missionComplete.png
+share/tbftss/gfx/battle/missionFailed.png
+share/tbftss/gfx/battle/missionInProgress.png
+share/tbftss/gfx/battle/missionStart.png
+share/tbftss/gfx/bullets/
+share/tbftss/gfx/bullets/laser.png
+share/tbftss/gfx/bullets/magBolt.png
+share/tbftss/gfx/bullets/missile.png
+share/tbftss/gfx/bullets/particleBolt.png
+share/tbftss/gfx/bullets/plasmaBolt.png
+share/tbftss/gfx/cannons/
+share/tbftss/gfx/cannons/acceleratorODP.png
+share/tbftss/gfx/cannons/plasmaODP.png
+share/tbftss/gfx/cannons/rocketTurret.png
+share/tbftss/gfx/craft/
+share/tbftss/gfx/craft/civilian01.png
+share/tbftss/gfx/craft/civilian02.png
+share/tbftss/gfx/craft/shuttle.png
+share/tbftss/gfx/craft/tug.png
+share/tbftss/gfx/effects/
+share/tbftss/gfx/effects/explosion.png
+share/tbftss/gfx/effects/halo.png
+share/tbftss/gfx/effects/shieldHit.png
+share/tbftss/gfx/entities/
+share/tbftss/gfx/entities/extractionPoint.png
+share/tbftss/gfx/entities/waypoint.png
+share/tbftss/gfx/fighters/
+share/tbftss/gfx/fighters/ataf.png
+share/tbftss/gfx/fighters/dart01.png
+share/tbftss/gfx/fighters/dart02.png
+share/tbftss/gfx/fighters/dart03.png
+share/tbftss/gfx/fighters/dart04.png
+share/tbftss/gfx/fighters/dart05.png
+share/tbftss/gfx/fighters/dart06.png
+share/tbftss/gfx/fighters/dart07.png
+share/tbftss/gfx/fighters/firefly.png
+share/tbftss/gfx/fighters/hammerhead.png
+share/tbftss/gfx/fighters/hyena.png
+share/tbftss/gfx/fighters/jackal.png
+share/tbftss/gfx/fighters/khepri.png
+share/tbftss/gfx/fighters/kingfisher.png
+share/tbftss/gfx/fighters/leopard.png
+share/tbftss/gfx/fighters/mantis.png
+share/tbftss/gfx/fighters/nymph.png
+share/tbftss/gfx/fighters/ray.png
+share/tbftss/gfx/fighters/rook.png
+share/tbftss/gfx/fighters/scarab.png
+share/tbftss/gfx/fighters/sphinx.png
+share/tbftss/gfx/fighters/taf.png
+share/tbftss/gfx/fighters/thunderhead.png
+share/tbftss/gfx/galaxy/
+share/tbftss/gfx/galaxy/arrow.png
+share/tbftss/gfx/galaxy/starSystem.png
+share/tbftss/gfx/hud/
+share/tbftss/gfx/hud/radar.png
+share/tbftss/gfx/hud/radarWarning.png
+share/tbftss/gfx/hud/smallFighter.png
+share/tbftss/gfx/hud/targetCircle.png
+share/tbftss/gfx/hud/targetPointer.png
+share/tbftss/gfx/input/
+share/tbftss/gfx/input/mousePointer.png
+share/tbftss/gfx/items/
+share/tbftss/gfx/items/crate.png
+share/tbftss/gfx/items/smallCrate.png
+share/tbftss/gfx/planets/
+share/tbftss/gfx/planets/adelaide.png
+share/tbftss/gfx/planets/al-Elfia.png
+share/tbftss/gfx/planets/arlos.png
+share/tbftss/gfx/planets/bluePlanet.png
+share/tbftss/gfx/planets/diso.png
+share/tbftss/gfx/planets/earth.png
+share/tbftss/gfx/planets/henninger.png
+share/tbftss/gfx/planets/hyanik.png
+share/tbftss/gfx/planets/kaiser.png
+share/tbftss/gfx/planets/kethlan.png
+share/tbftss/gfx/planets/mythos.png
+share/tbftss/gfx/planets/oracleIX.png
+share/tbftss/gfx/planets/peri.png
+share/tbftss/gfx/planets/sky.png
+share/tbftss/gfx/planets/spirit.png
+share/tbftss/gfx/planets/tigibel.png
+share/tbftss/gfx/planets/tilli.png
+share/tbftss/gfx/planets/torelli.png
+share/tbftss/gfx/planets/xalan.png
+share/tbftss/gfx/title/
+share/tbftss/gfx/title/logo.png
+share/tbftss/gfx/title/pandoran.png
+share/tbftss/gfx/widgets/
+share/tbftss/gfx/widgets/optionsLeft.png
+share/tbftss/gfx/widgets/optionsRight.png
+share/tbftss/manual/
+share/tbftss/manual/galaxy.png
+share/tbftss/manual/index.html
+share/tbftss/manual/jquery-2.1.3.min.js
+share/tbftss/manual/logo.png
+share/tbftss/manual/mission1.png
+share/tbftss/manual/mission2.png
+share/tbftss/manual/pandoran.png
+share/tbftss/manual/starSystem.png
+share/tbftss/manual/title.png
+share/tbftss/music/
+share/tbftss/music/Battle in the winter.mp3
+share/tbftss/music/InnerCore_Low.ogg
+share/tbftss/music/Pressure.ogg
+share/tbftss/music/Rise of spirit.ogg
+share/tbftss/music/Showdown.mp3
+share/tbftss/music/battleThemeA.mp3
+share/tbftss/music/determination.mp3
+share/tbftss/music/heroism.ogg
+share/tbftss/music/track-1.mp3
+share/tbftss/music/track-3.mp3
+share/tbftss/music/track-4.mp3
+share/tbftss/sound/
+share/tbftss/sound/146725__fins__laser.ogg
+share/tbftss/sound/162265__qubodup__explosive.ogg
+share/tbftss/sound/178064__jorickhoofd__slam-door-shut.ogg
+share/tbftss/sound/18380__inferno__hvrl.ogg
+share/tbftss/sound/18382__inferno__hvylas.ogg
+share/tbftss/sound/207322__animationisaac__short-explosion.ogg
+share/tbftss/sound/242856__plasterbrain__nuclear-alarm.ogg
+share/tbftss/sound/249300__suntemple__access-denied.ogg
+share/tbftss/sound/254071__tb0y298__firework-explosion.ogg
+share/tbftss/sound/257786__xtrgamr__mouse-click.ogg
+share/tbftss/sound/263621__jamesabdulrahman__permission-to-panic.ogg
+share/tbftss/sound/268344__julien-matthey__jm-noiz-laser-01.ogg
+share/tbftss/sound/275151__bird-man__gun-shot.ogg
+share/tbftss/sound/321104__nsstudios__blip2.ogg
+share/tbftss/sound/321906__bruce965__walkie-talkie-roger-beep.ogg
+share/tbftss/sound/322603__clippysounds__glass-break.ogg
+share/tbftss/sound/42106__marcuslee__laser-wrath-4.ogg
+share/tbftss/sound/47252__nthompson__bad-explosion.ogg
+share/tbftss/sound/49678__ejfortin__energy-short-sword-7.ogg
+share/tbftss/sound/56246__q-k__latch-04.ogg
+share/tbftss/sound/65787__iwilldstroyu__laserrocket.ogg
+share/tbftss/sound/77087__supraliminal__laser-short.ogg
+share/tbftss/sound/88275__s-dij__gbc-reload-06.ogg
