@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.43 2015/05/13 14:27:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.44 2015/12/11 06:17:40 ajacoutot Exp $
 @conflict gail-*
 @conflict gtk+2-docs-*
 @pkgpath x11/gtk+2
@@ -316,6 +316,7 @@ lib/pkgconfig/gdk-x11-2.0.pc
 lib/pkgconfig/gtk+-2.0.pc
 lib/pkgconfig/gtk+-unix-print-2.0.pc
 lib/pkgconfig/gtk+-x11-2.0.pc
+share/aclocal/
 share/aclocal/gtk-2.0.m4
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/gtk+2/
@@ -391,7 +392,6 @@ share/gtk-doc/html/gail-libgail-util/gail-libgail-util-GailTextUtil.html
 share/gtk-doc/html/gail-libgail-util/gail-libgail-util.devhelp2
 share/gtk-doc/html/gail-libgail-util/home.png
 share/gtk-doc/html/gail-libgail-util/index.html
-share/gtk-doc/html/gail-libgail-util/index.sgml
 share/gtk-doc/html/gail-libgail-util/left-insensitive.png
 share/gtk-doc/html/gail-libgail-util/left.png
 share/gtk-doc/html/gail-libgail-util/libgail-util-main.html
@@ -481,7 +481,6 @@ share/gtk-doc/html/gdk2/heart.png
 share/gtk-doc/html/gdk2/home.png
 share/gtk-doc/html/gdk2/icon.png
 share/gtk-doc/html/gdk2/index.html
-share/gtk-doc/html/gdk2/index.sgml
 share/gtk-doc/html/gdk2/iron_cross.png
 share/gtk-doc/html/gdk2/left-insensitive.png
 share/gtk-doc/html/gdk2/left.png
@@ -933,7 +932,6 @@ share/gtk-doc/html/gtk2/icon-view.png
 share/gtk-doc/html/gtk2/image-missing.png
 share/gtk-doc/html/gtk2/image.png
 share/gtk-doc/html/gtk2/index.html
-share/gtk-doc/html/gtk2/index.sgml
 share/gtk-doc/html/gtk2/label.png
 share/gtk-doc/html/gtk2/layout-btlr.png
 share/gtk-doc/html/gtk2/layout-btrl.png
