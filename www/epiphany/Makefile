@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.130 2015/11/24 10:36:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.131 2015/12/11 12:27:31 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.18.1
+GNOME_VERSION=	3.18.2
 MAJOR_V=	${GNOME_VERSION:R}
 SUBST_VARS=	MAJOR_V
 
@@ -17,8 +17,8 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL GL ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += EGL GL ICE SM X11 X11-xcb XRes Xcomposite Xcursor
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xt Xxf86vm atk-1.0 atk-bridge-2.0 atspi avahi-client
 WANTLIB += avahi-common avahi-glib avahi-gobject c cairo cairo-gobject
 WANTLIB += dbus-1 drm enchant estdc++ execinfo expat ffi fontconfig
