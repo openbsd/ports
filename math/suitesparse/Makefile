@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2015/12/04 20:47:53 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2015/12/11 06:34:38 pirofti Exp $
 
 BROKEN-hppa=	undefined refs to dtrsv/dgemv/dtrsm/dgemm/dger in libumfpack.a
 
 COMMENT=		suite of sparse matrix algorithms
 
-DISTNAME=		SuiteSparse-4.4.4
+DISTNAME=		SuiteSparse-4.4.6
 PKGNAME=		${DISTNAME:L}
 
 CATEGORIES=		math
@@ -13,7 +13,7 @@ HOMEPAGE=		http://faculty.cse.tamu.edu/davis/suitesparse.html
 
 MAINTAINER=		Paul Irofti <pirofti@openbsd.org>
 
-SO_VERSION=		2.0
+SO_VERSION=		2.1
 .for _lib in \
 amd btf camd ccolamd cholmod colamd csparse cxsparse klu ldl rbio spqr \
 suitesparseconfig umfpack
