@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ext_ed25519_donna_ed25519-donna-portable_h,v 1.1 2015/12/11 14:11:47 pascal Exp $
+--- src/ext/ed25519/donna/ed25519-donna-portable.h.orig	Fri Dec 11 14:53:44 2015
++++ src/ext/ed25519/donna/ed25519-donna-portable.h	Fri Dec 11 14:53:57 2015
+@@ -50,7 +50,7 @@
+ 		#if defined(__SIZEOF_INT128__)
+ 			#define HAVE_NATIVE_UINT128
+ 			typedef unsigned __int128 uint128_t;
+-		#elif (COMPILER_GCC >= 40400)
++		#elif (COMPILER_GCC >= 40200)
+ 			#define HAVE_NATIVE_UINT128
+ 			typedef unsigned uint128_t __attribute__((mode(TI)));
+ 		#elif defined(CPU_X86_64)
