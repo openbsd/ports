@@ -1,0 +1,9 @@
+$OpenBSD: patch-bin_eyeD3,v 1.1 2015/12/11 18:20:01 sthen Exp $
+--- bin/eyeD3.orig	Wed Oct 24 02:38:29 2012
++++ bin/eyeD3	Fri Dec 11 18:52:31 2015
+@@ -1,3 +1,3 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
+-python -m eyed3.main "$@"
++exec ${MODPY_BIN} -m eyed3.main "$@"
