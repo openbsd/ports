@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared-gssapi,v 1.1 2015/12/11 06:35:35 ajacoutot Exp $
+lib/sasl2/libgs2.la
+lib/sasl2/libgs2.so
+lib/sasl2/libgssapiv2.la
+lib/sasl2/libgssapiv2.so

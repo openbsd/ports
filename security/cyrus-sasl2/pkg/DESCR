@@ -9,5 +9,7 @@ inserted between the protocol and the connection.
 
 Available flavors:
 	db4 - use Berkeley DB v4 for SASLDB (instead of ndbm)
+	gssapi - enable Kerberos support with GSSAPI
 	ldap - enable LDAPDB auxprop plugin and LDAP enabled saslauthd
-	mysql pgsql sqlite3 - enable SQL auxprop plugin (choose one)
+	mysql - enable MySQL SQL auxprop plugin
+	pgsql - enable PostgreSQL SQL auxprop plugin

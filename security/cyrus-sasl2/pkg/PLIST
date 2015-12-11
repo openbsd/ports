@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.30 2015/05/22 11:31:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2015/12/11 06:35:35 ajacoutot Exp $
 @conflict cyrus-sasl-*
+@pkgpath security/cyrus-sasl2,sqlite3
 @extraunexec rm -rf /var/sasl2/*
 include/sasl/
 include/sasl/hmac-md5.h
@@ -107,8 +108,9 @@ share/doc/cyrus-sasl/testing.txt
 share/doc/cyrus-sasl/upgrading.html
 share/doc/cyrus-sasl/windows.html
 share/examples/cyrus-sasl/
+share/examples/cyrus-sasl/Sendmail.conf-sql
+%%gssapi%%
 %%ldap%%
-%%sql%%
 %%SHARED%%
 @sample /var/sasl2/
 @rcscript ${RCDIR}/saslauthd
