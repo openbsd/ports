@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.366 2015/11/30 11:56:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.367 2015/12/11 00:44:06 jturner Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -62,6 +62,7 @@
      SUBDIR += freedt
      SUBDIR += freeipmi
      SUBDIR += fsstress
+     SUBDIR += fwa
      SUBDIR += gamin
      SUBDIR += gdmap
      SUBDIR += ggrep
