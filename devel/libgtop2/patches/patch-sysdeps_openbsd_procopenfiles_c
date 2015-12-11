@@ -1,0 +1,14 @@
+$OpenBSD: patch-sysdeps_openbsd_procopenfiles_c,v 1.7 2015/12/11 14:07:30 jasper Exp $
+
+- Include missing headers for various defines and functions.
+
+--- sysdeps/openbsd/procopenfiles.c.orig	Fri Dec 11 14:26:37 2015
++++ sysdeps/openbsd/procopenfiles.c	Fri Dec 11 14:26:48 2015
+@@ -42,6 +42,7 @@
+ #include <arpa/inet.h>
+ #include <string.h>
+ #include <stdlib.h>
++#include <kvm.h>
+ 
+ #include "glibtop_private.h"
+ 

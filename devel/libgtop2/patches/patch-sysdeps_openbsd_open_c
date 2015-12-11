@@ -1,43 +1,14 @@
-$OpenBSD: patch-sysdeps_openbsd_open_c,v 1.7 2014/09/08 07:40:29 jasper Exp $
+$OpenBSD: patch-sysdeps_openbsd_open_c,v 1.8 2015/12/11 14:07:30 jasper Exp $
 
-From 7326f8816d025a31b9625e9b1776c1bf455f5793 Mon Sep 17 00:00:00 2001
-From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-Date: Mon, 1 Sep 2014 15:21:31 +0200
-Subject: Add SMP support for OpenBSD
+- Include missing headers for various defines and functions.
 
---- sysdeps/openbsd/open.c.orig	Mon Apr 28 23:09:24 2014
-+++ sysdeps/openbsd/open.c	Fri Jul 11 18:56:55 2014
-@@ -23,6 +23,8 @@
+--- sysdeps/openbsd/open.c.orig	Fri Dec 11 14:27:05 2015
++++ sysdeps/openbsd/open.c	Fri Dec 11 14:27:21 2015
+@@ -21,6 +21,7 @@
+ 
+ #include <config.h>
  #include <sys/types.h>
++#include <sys/sysctl.h>
  #include <glibtop.h>
  #include <glibtop/open.h>
-+#include <glibtop/cpu.h>
-+#include <glibtop/error.h>
- 
- #include <glibtop_private.h>
- 
-@@ -32,5 +34,24 @@ glibtop_open_s (glibtop *server, const char *program_n
- 		const unsigned long features,
- 		const unsigned flags)
- {
-+	int ncpus = 1;
-+	int mib[2] = { CTL_HW, HW_NCPU };
-+	size_t len;
-+
-+	len = sizeof(ncpus);
-+	if (sysctl(mib, 2, &ncpus, &len, NULL, 0) != 0)
-+		printf("Couldn't determine hw.ncpu.\n");
-+
-+	server->real_ncpu = ncpus - 1;
-+	server->ncpu = MIN(GLIBTOP_NCPU - 1, server->real_ncpu);
-+
- 	server->os_version_code = OpenBSD;
-+
-+	if (server->real_ncpu != server->ncpu) {
-+		glibtop_warn_r(server,
-+			"This machine has %d CPUs, "
-+			"%d are being monitored.",
-+			server->real_ncpu + 1,
-+			server->ncpu + 1);
-+	}
- }
+ #include <glibtop/cpu.h>

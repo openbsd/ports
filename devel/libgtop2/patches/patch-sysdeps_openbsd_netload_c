@@ -1,11 +1,11 @@
-$OpenBSD: patch-sysdeps_openbsd_netload_c,v 1.8 2015/12/06 15:19:49 mpi Exp $
+$OpenBSD: patch-sysdeps_openbsd_netload_c,v 1.9 2015/12/11 14:07:30 jasper Exp $
 
 Rewrite of glibtop_get_netload_p() to use getifaddrs(3) instead of KVM.
 
 https://bugzilla.gnome.org/show_bug.cgi?id=759064
 
---- sysdeps/openbsd/netload.c.orig	Mon Apr 28 23:09:24 2014
-+++ sysdeps/openbsd/netload.c	Sat Dec  5 16:27:56 2015
+--- sysdeps/openbsd/netload.c.orig	Mon Aug 17 20:59:37 2015
++++ sysdeps/openbsd/netload.c	Fri Dec 11 14:34:54 2015
 @@ -1,48 +1,39 @@
 -/* Copyright (C) 1998-99 Martin Baulig
 -   This file is part of LibGTop 1.0.
@@ -43,8 +43,8 @@ https://bugzilla.gnome.org/show_bug.cgi?id=759064
 -
 -   You should have received a copy of the GNU General Public License
 -   along with LibGTop; see the file COPYING. If not, write to the
--   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
--   Boston, MA 02111-1307, USA.
+-   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+-   Boston, MA 02110-1301, USA.
 -*/
 -
 -#include <config.h>
@@ -102,7 +102,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=759064
  {
      server->sysdeps.netload = _glibtop_sysdeps_netload;
 -
--    if (kvm_nlist (server->machine.kd, nlst) < 0)
+-    if (kvm_nlist (server->machine->kd, nlst) < 0)
 -	glibtop_error_io_r (server, "kvm_nlist");
  }
  
@@ -134,7 +134,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=759064
 +        if (strcmp (interface, ifa->ifa_name))
 +            continue;
  
--    if (kvm_read (server->machine.kd, nlst [0].n_value,
+-    if (kvm_read (server->machine->kd, nlst [0].n_value,
 -		  &ifnetaddr, sizeof (ifnetaddr)) != sizeof (ifnetaddr))
 -	glibtop_error_io_r (server, "kvm_read (ifnet)");
 +        if (ifa->ifa_addr->sa_family == AF_LINK) {
@@ -151,7 +151,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=759064
 +            memcpy (buf->hwaddress, LLADDR (dl), sizeof (buf->hwaddress));
 +            buf->flags |= (1L << GLIBTOP_NETLOAD_HWADDRESS);
  
--	    if (kvm_read (server->machine.kd, ifnetaddr, &ifnet,
+-	    if (kvm_read (server->machine->kd, ifnetaddr, &ifnet,
 -			  sizeof (ifnet)) != sizeof (ifnet))
 -		    glibtop_error_io_r (server, "kvm_read (ifnetaddr)");
 +            if (ifa->ifa_flags & IFF_UP)
@@ -271,7 +271,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=759064
 +    }
  
 -	while (ifaddraddr) {
--	    if ((kvm_read (server->machine.kd, ifaddraddr, &ifaddr,
+-	    if ((kvm_read (server->machine->kd, ifaddraddr, &ifaddr,
 -			   sizeof (ifaddr)) != sizeof (ifaddr)))
 -		glibtop_error_io_r (server, "kvm_read (ifaddraddr)");
 +    if (ifd != NULL) {

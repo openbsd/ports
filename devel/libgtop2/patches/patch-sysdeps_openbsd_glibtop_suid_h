@@ -1,0 +1,15 @@
+$OpenBSD: patch-sysdeps_openbsd_glibtop_suid_h,v 1.1 2015/12/11 14:07:30 jasper Exp $
+
+- Fix compilation because glibtop_machine definition has moved.
+
+--- sysdeps/openbsd/glibtop_suid.h.orig	Mon Aug 17 20:59:37 2015
++++ sysdeps/openbsd/glibtop_suid.h	Fri Dec 11 15:01:44 2015
+@@ -28,6 +28,8 @@ G_BEGIN_DECLS
+ #include <sys/param.h>
+ #endif
+ 
++#include <glibtop_machine.h>
++
+ #define KI_PROC(ki) (&(ki))->kp_proc)
+ #define KI_EPROC(ki) (&(ki))->kp_eproc)
+ 

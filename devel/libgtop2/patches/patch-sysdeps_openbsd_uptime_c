@@ -1,0 +1,15 @@
+$OpenBSD: patch-sysdeps_openbsd_uptime_c,v 1.4 2015/12/11 14:07:30 jasper Exp $
+
+- Include missing headers for various defines and functions.
+
+--- sysdeps/openbsd/uptime.c.orig	Fri Dec 11 14:26:09 2015
++++ sysdeps/openbsd/uptime.c	Fri Dec 11 14:25:46 2015
+@@ -26,6 +26,8 @@
+ 
+ #include <glibtop/cpu.h>
+ 
++#include <sys/sysctl.h>
++
+ static const unsigned long _glibtop_sysdeps_uptime =
+ (1L << GLIBTOP_UPTIME_UPTIME) + (1L << GLIBTOP_UPTIME_IDLETIME) +
+ (1UL << GLIBTOP_UPTIME_BOOT_TIME);

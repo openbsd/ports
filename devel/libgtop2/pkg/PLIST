@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2015/05/22 11:31:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2015/12/11 14:07:30 jasper Exp $
 @bin bin/libgtop_daemon2
 @mode 2555
 @group kmem
@@ -44,7 +44,6 @@ include/libgtop-2.0/glibtop/sysdeps.h
 include/libgtop-2.0/glibtop/sysinfo.h
 include/libgtop-2.0/glibtop/union.h
 include/libgtop-2.0/glibtop/uptime.h
-include/libgtop-2.0/glibtop/version.h
 include/libgtop-2.0/glibtop_machine.h
 include/libgtop-2.0/glibtop_private.h
 include/libgtop-2.0/glibtop_server.h
