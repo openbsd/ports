@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.100 2015/09/13 10:02:09 zhuk Exp $
+# $OpenBSD: portcheck,v 1.101 2015/12/11 22:12:25 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -988,6 +988,9 @@ check_plist() {
 
 	local wrong_man=false wrong_info=false
 
+	local regsh=false unregsh=false
+	local regsh_exec=false unregsh_exec=false
+
 	# Temporary ones
 	local app l theme varname py
 
@@ -1135,6 +1138,23 @@ check_plist() {
 			;;
 		"@depend x11/dbus,-suid"*)
 			dbus_suid_dep=true
+			;;
+
+		lib/ghc/*/register.sh)
+			regsh=true
+			;;
+		lib/ghc/*/unregister.sh)
+			unregsh=true
+			;;
+		"@exec /usr/bin/env HOME=/nonexistent "%D/lib/ghc/*/register.sh" -v0")
+			regsh_exec=true
+			;;
+		"@unexec /usr/bin/env HOME=/nonexistent "%D/lib/ghc/*/unregister.sh" -v0 --force")
+			unregsh_exec=true
+			if $unregsh; then
+				err "${portref}unregister.sh call placed before" \
+				    "script itself in PLIST${subpkg}"
+			fi
 			;;
 
 		# XXX KSH arrays are limited to 10239 items
@@ -1300,6 +1320,14 @@ check_plist() {
 			err "${portref}missing" \
 			    "RUN_DEPENDS${subpkg}+=x11/dbus,-suid"
 		fi
+	fi
+
+	# Haskell register/unregister
+	if $regsh && ! $regsh_exec; then
+		err "${portref}missing @exec of register.sh"
+	fi
+	if $unregsh && ! $unregsh_exec; then
+		err "${portref}missing @unexec of unregister.sh"
 	fi
 
 	# Python modules
