@@ -1,9 +1,13 @@
-$OpenBSD: patch-source_config_mh-bsd-gcc,v 1.4 2015/04/25 10:16:15 ajacoutot Exp $
---- source/config/mh-bsd-gcc.orig	Tue Mar 16 06:14:02 2010
-+++ source/config/mh-bsd-gcc	Sat Mar 20 11:16:31 2010
-@@ -21,7 +21,7 @@ LD_RPATH=	
+$OpenBSD: patch-source_config_mh-bsd-gcc,v 1.5 2015/12/11 13:07:12 zhuk Exp $
+--- source/config/mh-bsd-gcc.orig	Sat Mar 28 00:11:20 2015
++++ source/config/mh-bsd-gcc	Sun Dec  6 14:02:06 2015
+@@ -20,8 +20,11 @@ LIBCPPFLAGS =
+ LD_RPATH=	
  LD_RPATH_PRE=	-Wl,-rpath,
  
++## These are the library specific LDFLAGS
++LDFLAGSICUDT=-nodefaultlibs -nostdlib
++
  ## Compiler switch to embed a library name
 -LD_SONAME = -Wl,-soname -Wl,$(notdir $(MIDDLE_SO_TARGET))
 +LD_SONAME =
