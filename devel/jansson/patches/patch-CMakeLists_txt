@@ -1,6 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2015/03/20 13:28:23 kirby Exp $
---- CMakeLists.txt.orig	Thu Mar 19 15:35:52 2015
-+++ CMakeLists.txt	Thu Mar 19 15:37:45 2015
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2015/12/11 15:56:53 giovanni Exp $
+--- CMakeLists.txt.orig	Thu Oct  2 08:05:36 2014
++++ CMakeLists.txt	Fri Dec 11 09:07:57 2015
 @@ -605,7 +605,7 @@ file(RELATIVE_PATH 
  # so that the include dirs are given relative to where the 
  # config file is located.
@@ -10,3 +10,12 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2015/03/20 13:28:23 kirby Exp $
  configure_file(${PROJECT_SOURCE_DIR}/cmake/JanssonConfig.cmake.in
                  ${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/JanssonConfig.cmake 
                  @ONLY)
+@@ -624,7 +624,7 @@ set_target_properties(jansson PROPERTIES PUBLIC_HEADER
+ #  have to defined the same variables used there).
+ set(prefix      ${CMAKE_INSTALL_PREFIX})
+ set(exec_prefix ${CMAKE_INSTALL_PREFIX})
+-set(libdir      ${CMAKE_INSTALL_PREFIX}/${JANSSON_INSTALL_LIB_DIR})
++set(libdir      ${JANSSON_INSTALL_LIB_DIR})
+ set(VERSION     ${JANSSON_DISPLAY_VERSION})
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/jansson.pc.in
+                ${CMAKE_CURRENT_BINARY_DIR}/jansson.pc @ONLY)
