@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/12 20:24:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2015/12/12 20:29:09 jasper Exp $
 
 COMMENT=		display graphical dialogs from shell scripts or command line
 
@@ -27,13 +27,9 @@ RUN_DEPENDS=		x11/gtk+3,-guic
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-gtk=gtk3 \
-			--disable-html
+			--disable-html \
+			--with-rgb=${X11BASE}/share/X11/rgb.txt 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-# XXX --with-rgb=${X11BASE}/share/X11/rgb.txt is ignored
-pre-configure:
-	sed -i 's,/etc/X11/rgb.txt,${X11BASE}/share/X11/rgb.txt,g' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>
