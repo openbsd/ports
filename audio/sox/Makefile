@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.62 2015/12/03 14:44:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2015/12/12 08:17:34 landry Exp $
+
+BROKEN-hppa =	bend.c:155:12: internal compiler error: in expand_expr_addr_expr_1, at expr.c:7697
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
