@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/06/08 10:07:38 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2015/12/12 20:01:10 jasper Exp $
 
 COMMENT =		wraps git in order to extend it with extra features
 
-V =			2.2.1
+V =			2.2.2
 GH_ACCOUNT =		github
 GH_PROJECT =		hub
 GH_TAGNAME =		v$V
