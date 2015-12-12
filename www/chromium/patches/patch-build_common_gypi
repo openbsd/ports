@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_common_gypi,v 1.40 2015/12/12 20:20:01 robert Exp $
+$OpenBSD: patch-build_common_gypi,v 1.41 2015/12/12 22:55:23 sthen Exp $
 --- build/common.gypi.orig.port	Tue Dec  8 21:02:47 2015
 +++ build/common.gypi	Sat Dec 12 14:14:55 2015
 @@ -105,7 +105,7 @@
@@ -61,6 +61,15 @@ $OpenBSD: patch-build_common_gypi,v 1.40 2015/12/12 20:20:01 robert Exp $
              'enable_mdns%' : 1,
          }],
  
+@@ -1624,7 +1624,7 @@
+       ['OS=="win"', {
+         'windows_driver_kit_path%': '$(WDK_DIR)',
+       }],
+-      ['os_posix==1 and OS!="mac" and OS!="ios"', {
++      ['os_posix==1 and OS!="mac" and OS!="ios" and OS!="openbsd"', {
+         'conditions': [
+           ['target_arch=="mipsel" or target_arch=="mips64el"', {
+             'werror%': '',
 @@ -3641,6 +3641,13 @@
      },
    },
