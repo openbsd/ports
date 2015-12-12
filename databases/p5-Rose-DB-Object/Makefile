@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2015/01/21 14:05:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2015/12/12 19:57:41 jasper Exp $
 
 COMMENT=	object-oriented database mapper
 
 MODULES=	cpan
 
-DISTNAME=	Rose-DB-Object-0.784
-REVISION=	1
+DISTNAME=	Rose-DB-Object-0.815
 CATEGORIES=	databases
 
 # perl
@@ -16,8 +15,10 @@ RUN_DEPENDS=	databases/p5-Rose-DB>=0.737 \
 		devel/p5-Clone \
 		devel/p5-List-MoreUtils
 
-TEST_DEPENDS=textproc/p5-Lingua-EN-Inflect \
-		devel/p5-Test-Pod
+TEST_DEPENDS=	textproc/p5-Lingua-EN-Inflect
 
-TEST_FLAGS += AUTOMATED_TESTING=1
+MAKE_ENV +=	TEST_POD=1
+
+TEST_FLAGS +=	AUTOMATED_TESTING=1
+
 .include <bsd.port.mk>
