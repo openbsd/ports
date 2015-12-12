@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.255 2015/12/12 09:23:30 robert Exp $
+# $OpenBSD: Makefile,v 1.256 2015/12/12 20:20:01 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -8,6 +8,8 @@ COMMENT=		Chromium browser
 V=			47.0.2526.80
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
+
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -190,9 +192,8 @@ do-install:
 	${SUBST_PROGRAM} ${FILESDIR}/chrome ${PREFIX}/bin/chrome
 	${INSTALL_MAN} ${BUILDDIR}/chrome.1 ${PREFIX}/man/man1
 
-.for p in chrome_100_percent content_resources keyboard_resources resources
-	${INSTALL_DATA} ${BUILDDIR}/${p}.pak ${PREFIX}/chrome
-.endfor
+	${INSTALL_DATA} ${BUILDDIR}/*.pak ${PREFIX}/chrome
+
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/locales
 	${INSTALL_DATA} ${BUILDDIR}/locales/* ${PREFIX}/chrome/locales
 	${INSTALL_DATA} ${BUILDDIR}/*.png ${PREFIX}/chrome

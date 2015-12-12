@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_accessibility_browser_accessibility_manager_cc,v 1.1 2015/12/12 20:20:01 robert Exp $
+--- content/browser/accessibility/browser_accessibility_manager.cc.orig.port	Sat Dec 12 11:16:43 2015
++++ content/browser/accessibility/browser_accessibility_manager.cc	Sat Dec 12 12:46:48 2015
+@@ -90,7 +90,7 @@ BrowserAccessibilityFindInPageInfo::BrowserAccessibili
+ #if !defined(OS_WIN) && \
+     !defined(OS_MACOSX) && \
+     !defined(OS_ANDROID) && \
+-    !(defined(OS_LINUX) && !defined(OS_CHROMEOS) && defined(USE_X11))
++    !((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS) && defined(USE_X11))
+ // We have subclassess of BrowserAccessibility on some platforms.
+ // For other platforms, instantiate the base class.
+ // static

@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_renderer_host_render_widget_host_impl_cc,v 1.1 2015/12/12 20:20:01 robert Exp $
+--- content/browser/renderer_host/render_widget_host_impl.cc.orig.port	Sat Dec 12 11:16:43 2015
++++ content/browser/renderer_host/render_widget_host_impl.cc	Sat Dec 12 11:33:30 2015
+@@ -657,7 +657,7 @@ void RenderWidgetHostImpl::WasResized() {
+ }
+ 
+ void RenderWidgetHostImpl::DispatchColorProfile() {
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+   static bool image_profiles = base::CommandLine::ForCurrentProcess()->
+      HasSwitch(switches::kEnableImageColorProfiles);
+   if (!image_profiles)

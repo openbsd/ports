@@ -1,0 +1,40 @@
+$OpenBSD: patch-net_proxy_proxy_config_service_linux_cc,v 1.6 2015/12/12 20:20:01 robert Exp $
+--- net/proxy/proxy_config_service_linux.cc.orig.port	Sat Dec 12 13:37:06 2015
++++ net/proxy/proxy_config_service_linux.cc	Sat Dec 12 13:45:47 2015
+@@ -12,7 +12,9 @@
+ #include <limits.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#if !defined(OS_BSD)
+ #include <sys/inotify.h>
++#endif
+ #include <unistd.h>
+ 
+ #include <map>
+@@ -851,6 +853,7 @@ bool SettingGetterImplGSettings::LoadAndCheckVersion(
+ }
+ #endif  // defined(USE_GIO)
+ 
++#if !defined(OS_BSD)
+ // This is the KDE version that reads kioslaverc and simulates gconf.
+ // Doing this allows the main Delegate code, as well as the unit tests
+ // for it, to stay the same - and the settings map fairly well besides.
+@@ -1356,6 +1359,7 @@ class SettingGetterImplKDE : public ProxyConfigService
+ 
+   DISALLOW_COPY_AND_ASSIGN(SettingGetterImplKDE);
+ };
++#endif
+ 
+ }  // namespace
+ 
+@@ -1556,8 +1560,10 @@ ProxyConfigServiceLinux::Delegate::Delegate(base::Envi
+     case base::nix::DESKTOP_ENVIRONMENT_KDE3:
+     case base::nix::DESKTOP_ENVIRONMENT_KDE4:
+     case base::nix::DESKTOP_ENVIRONMENT_KDE5:
++#if !defined(OS_BSD)
+       setting_getter_.reset(new SettingGetterImplKDE(env_var_getter));
+       break;
++#endif
+     case base::nix::DESKTOP_ENVIRONMENT_XFCE:
+     case base::nix::DESKTOP_ENVIRONMENT_OTHER:
+       break;

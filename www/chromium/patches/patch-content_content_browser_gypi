@@ -1,6 +1,24 @@
-$OpenBSD: patch-content_content_browser_gypi,v 1.36 2015/12/05 16:13:32 robert Exp $
---- content/content_browser.gypi.orig.port	Tue Nov 24 21:00:55 2015
-+++ content/content_browser.gypi	Wed Dec  2 08:18:32 2015
+$OpenBSD: patch-content_content_browser_gypi,v 1.37 2015/12/12 20:20:01 robert Exp $
+--- content/content_browser.gypi.orig.port	Tue Dec  8 21:02:55 2015
++++ content/content_browser.gypi	Sat Dec 12 12:55:43 2015
+@@ -1982,7 +1982,7 @@
+         },
+       },
+     }],
+-    ['OS=="linux" and chromeos==0 and use_x11==1', {
++    ['(os_bsd==1 or OS=="linux") and chromeos==0 and use_x11==1', {
+       'dependencies': [
+         '../build/linux/system.gyp:atk',
+         '../build/linux/system.gyp:gconf',
+@@ -2011,7 +2011,7 @@
+         'browser/udev_linux.h',
+       ],
+     }],
+-    ['OS=="linux" and use_aura==1', {
++    ['(os_bsd==1 or OS=="linux") and use_aura==1', {
+       'dependencies': [
+         '../build/linux/system.gyp:fontconfig',
+       ],
 @@ -2103,9 +2103,26 @@
        ],
      }],
@@ -42,3 +60,12 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.36 2015/12/05 16:13:32 robert E
        'dependencies': [
          '../build/linux/system.gyp:dbus',
          '../dbus/dbus.gyp:dbus',
+@@ -2173,7 +2187,7 @@
+         'browser/media/media_web_contents_observer.h',
+       ],
+     }],
+-    ['OS == "linux"', {
++    ['(os_bsd==1 or OS == "linux")', {
+       'dependencies': [
+         '../third_party/boringssl/boringssl.gyp:boringssl',
+       ],

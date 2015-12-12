@@ -1,0 +1,12 @@
+$OpenBSD: patch-gpu_gles2_conform_support_gles2_conform_support_gyp,v 1.1 2015/12/12 20:20:01 robert Exp $
+--- gpu/gles2_conform_support/gles2_conform_support.gyp.orig.port	Sat Dec 12 13:56:36 2015
++++ gpu/gles2_conform_support/gles2_conform_support.gyp	Sat Dec 12 14:05:08 2015
+@@ -12,7 +12,7 @@
+       'native/main.cc',
+     ],
+    'conditions': [
+-     ['OS=="linux"', {
++     ['OS=="linux" or os_bsd==1', {
+        'bootstrap_sources_native': [
+          'native/egl_native.cc',
+          'native/egl_native_aura.cc',

@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_common_gypi,v 1.39 2015/12/05 16:13:32 robert Exp $
---- build/common.gypi.orig.port	Tue Nov 24 21:00:52 2015
-+++ build/common.gypi	Wed Dec  2 08:18:32 2015
+$OpenBSD: patch-build_common_gypi,v 1.40 2015/12/12 20:20:01 robert Exp $
+--- build/common.gypi.orig.port	Tue Dec  8 21:02:47 2015
++++ build/common.gypi	Sat Dec 12 14:14:55 2015
 @@ -105,7 +105,7 @@
  
            'conditions': [
@@ -10,6 +10,21 @@ $OpenBSD: patch-build_common_gypi,v 1.39 2015/12/05 16:13:32 robert Exp $
                'use_ash%': 1,
                'use_aura%': 1,
              }],
+@@ -229,12 +229,12 @@
+           }],
+ 
+           # Enable HiDPI on Mac OS, Windows and Linux (including Chrome OS).
+-          ['OS=="mac" or OS=="win" or OS=="linux"', {
++          ['OS=="mac" or OS=="win" or OS=="linux" or OS=="openbsd"', {
+             'enable_hidpi%': 1,
+           }],
+ 
+           # Enable Top Chrome Material Design on Chrome OS, Windows, and Linux.
+-          ['chromeos==1 or OS=="win" or OS=="linux"', {
++          ['chromeos==1 or OS=="win" or OS=="linux" or OS=="openbsd"', {
+             'enable_topchrome_md%': 1,
+           }],
+ 
 @@ -767,7 +767,7 @@
          }],
  
