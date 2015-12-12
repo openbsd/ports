@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/21 14:05:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2015/12/12 19:58:39 jasper Exp $
 
 COMMENT=	DBI wrapper and abstraction layer
 
 MODULES=	cpan
 
-DISTNAME=	Rose-DB-0.755
-REVISION=	0
+DISTNAME=	Rose-DB-0.777
 CATEGORIES=	databases
 
 # Same as Perl
@@ -23,4 +22,8 @@ RUN_DEPENDS=	math/p5-Bit-Vector \
 		devel/p5-YAML-Syck
 
 TEST_FLAGS +=	AUTOMATED_TESTING=1
+
+pre-configure:
+	find ${WRKSRC} -type f -name \*.orig -exec rm {} \;
+
 .include <bsd.port.mk>

@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_Rose_DB_pm,v 1.1 2015/12/12 19:58:39 jasper Exp $
+--- lib/Rose/DB.pm.orig	Sat Dec 12 20:42:54 2015
++++ lib/Rose/DB.pm	Sat Dec 12 20:43:09 2015
+@@ -4,7 +4,7 @@ use strict;
+ 
+ use DBI;
+ use Carp();
+-use Clone::PP();
++use Clone();
+ use Bit::Vector::Overload;
+ use SQL::ReservedWords();
+ 
+@@ -689,7 +689,7 @@ sub init_db_info
+ sub init_connect_options
+ {
+   my($class) = ref $_[0];
+-  return Clone::PP::clone(scalar $class->default_connect_options);
++  return Clone::clone(scalar $class->default_connect_options);
+ }
+ 
+ sub connect_option
