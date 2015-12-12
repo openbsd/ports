@@ -1,0 +1,17 @@
+$OpenBSD: README,v 1.1 2015/12/12 12:54:23 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To import your own signed SSL key/certificate:
+
+# rcctl stop unifi
+# cd /usr/local/share/unifi/data
+# openssl pkcs12 -export -in /etc/ssl/server.crt \
+   -inkey /etc/ssl/private/server.key \
+   -certfile /etc/ssl/intermediate.crt -out unifi.p12 \
+   -name unifi -password pass:aircontrolenterprise
+# $JAVAHOME/bin/keytool -importkeystore -srckeystore unifi.p12 \
+   -srcstoretype PKCS12 -srcstorepass aircontrolenterprise \
+   -destkeystore keystore.new -storepass aircontrolenterprise

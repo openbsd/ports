@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/11/02 12:26:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/12/12 12:54:23 sthen Exp $
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:/usr/local/share/unifi:/sbin/nologin
 bin/unifi
 bin/unifi-discover
+share/doc/pkg-readmes/${FULLPKGNAME}
 @owner _unifi
 share/unifi/
 @owner
