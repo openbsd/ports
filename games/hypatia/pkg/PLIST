@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/11/03 13:29:27 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/12/12 20:23:03 jasper Exp $
 bin/hypatia-demo
 lib/python${MODPY_VERSION}/site-packages/hypatia/
 lib/python${MODPY_VERSION}/site-packages/hypatia/__init__.py
@@ -33,6 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/hypatia_engine-${GH_TAGNAME}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/hypatia_engine-${GH_TAGNAME}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/hypatia_engine-${GH_TAGNAME}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/hypatia_engine-${GH_TAGNAME}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/hypatia_engine-${GH_TAGNAME}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/hypatia_engine-${GH_TAGNAME}-py${MODPY_VERSION}.egg-info/top_level.txt
 share/examples/hypatia/
 share/examples/hypatia/game.py
