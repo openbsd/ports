@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.49 2015/10/05 10:20:29 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.50 2015/12/12 16:43:09 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -141,7 +141,9 @@ include/dovecot/fts-filter.h
 include/dovecot/fts-icu.h
 include/dovecot/fts-indexer.h
 include/dovecot/fts-language.h
+include/dovecot/fts-library.h
 include/dovecot/fts-parser.h
+include/dovecot/fts-storage.h
 include/dovecot/fts-tokenizer-generic-private.h
 include/dovecot/fts-tokenizer-private.h
 include/dovecot/fts-tokenizer.h
@@ -294,6 +296,7 @@ include/dovecot/login-proxy-state.h
 include/dovecot/login-proxy.h
 include/dovecot/login-settings.h
 include/dovecot/macros.h
+include/dovecot/mail-autoexpunge.h
 include/dovecot/mail-cache-private.h
 include/dovecot/mail-cache.h
 include/dovecot/mail-copy.h
@@ -862,6 +865,7 @@ share/doc/dovecot/wiki/PostLoginScripting.txt
 share/doc/dovecot/wiki/PreAuth.txt
 share/doc/dovecot/wiki/QuickConfiguration.txt
 share/doc/dovecot/wiki/Quota.Configuration.txt
+share/doc/dovecot/wiki/Quota.Count.txt
 share/doc/dovecot/wiki/Quota.Dict.txt
 share/doc/dovecot/wiki/Quota.Dirsize.txt
 share/doc/dovecot/wiki/Quota.FS.txt
@@ -916,6 +920,8 @@ share/dovecot/stopwords/
 share/dovecot/stopwords/stopwords_en.txt
 share/dovecot/stopwords/stopwords_fi.txt
 share/dovecot/stopwords/stopwords_fr.txt
+share/dovecot/stopwords/stopwords_no.txt
+share/dovecot/stopwords/stopwords_sv.txt
 share/examples/dovecot/
 share/examples/dovecot/dovecot-openssl.cnf
 @sample /etc/ssl/dovecot-openssl.cnf
