@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/11/10 08:43:36 sebastia Exp $
+# $OpenBSD: Makefile,v 1.17 2015/12/13 21:23:08 sebastia Exp $
 
 COMMENT=		C C++ API for memcached
 
@@ -25,7 +25,7 @@ USE_GMAKE =	yes
 
 # XXX Build memslap (benchmark tool) only on systems with GCC atomic built-ins. 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || \
-    ${MACHINE_ARCH} == "sparc64"
+    ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "hppa"
 PKG_ARGS+=		-Datomic=1
 .else
 PKG_ARGS+=		-Datomic=0
