@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/08/15 07:04:48 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2015/12/14 06:44:55 benoit Exp $
 
 COMMENT=		virtual base class for WWW searches
 
-DISTNAME =		WWW-Search-2.514
+DISTNAME =		WWW-Search-2.515
 CATEGORIES=		www
 
 # perl
