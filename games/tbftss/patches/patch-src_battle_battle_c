@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_battle_battle_c,v 1.1 2015/12/14 10:12:52 bentley Exp $
+Fix occasional crash when starting levels.
+From upstream 25f2204d06f700fc83811fe4961de6938055402b.
+--- src/battle/battle.c.orig	Sun Dec  6 02:38:56 2015
++++ src/battle/battle.c	Mon Dec 14 00:24:20 2015
+@@ -52,6 +52,8 @@ void initBattle(void)
+ 	
+ 	initStars();
+ 	
++	initBullets();
++	
+ 	initBackground();
+ 	
+ 	initEffects();

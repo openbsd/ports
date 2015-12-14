@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_battle_bullets_c,v 1.1 2015/12/14 10:12:52 bentley Exp $
+Fix occasional crash when starting levels.
+From upstream 25f2204d06f700fc83811fe4961de6938055402b.
+--- src/battle/bullets.c.orig	Sun Dec  6 02:38:56 2015
++++ src/battle/bullets.c	Mon Dec 14 00:24:30 2015
+@@ -27,6 +27,13 @@ static Bullet bulletDef[BT_MAX];
+ static Bullet *bulletsToDraw[MAX_BULLETS_TO_DRAW];
+ static int incomingMissile;
+ 
++void initBullets(void)
++{
++	incomingMissile = 0;
++	
++	memset(bulletsToDraw, 0, sizeof(Bullet*) * MAX_BULLETS_TO_DRAW);
++}
++
+ void initBulletDefs(void)
+ {
+ 	cJSON *root, *node;
