@@ -1,0 +1,17 @@
+$OpenBSD: patch-IPy_py,v 1.1 2015/12/14 19:38:12 jca Exp $
+--- IPy.py.orig	Mon Dec 14 13:28:56 2015
++++ IPy.py	Mon Dec 14 13:44:43 2015
+@@ -558,6 +558,13 @@ class IPint(object):
+         """
+         return True
+ 
++    def __bool__(self):
++        """All IPy objects should evaluate to true in boolean context.
++        Ordinarily they do, but if handling a default route expressed as
++        0.0.0.0/0, the __len__() of the object becomes 0, which is used
++        as the boolean value of the object.
++        """
++        return True
+ 
+     def __len__(self):
+         """
