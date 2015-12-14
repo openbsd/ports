@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-gd,v 1.1.1.1 2015/12/14 17:58:46 robert Exp $
+@option no-default-conflict
+@conflict php-gd->=7.0,<7.1
+@conflict php5-gd->=5.2
+lib/php-${PV}/modules/gd.so
+share/examples/php-${PV}/gd.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/gd.ini

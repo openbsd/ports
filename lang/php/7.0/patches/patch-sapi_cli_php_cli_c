@@ -1,0 +1,11 @@
+$OpenBSD: patch-sapi_cli_php_cli_c,v 1.1.1.1 2015/12/14 17:58:46 robert Exp $
+--- sapi/cli/php_cli.c.orig.port	Tue Dec  1 14:36:28 2015
++++ sapi/cli/php_cli.c	Sun Dec  6 14:04:50 2015
+@@ -663,6 +663,7 @@ static int do_cli(int argc, char **argv) /* {{{ */
+ 	int lineno = 0;
+ 	const char *param_error=NULL;
+ 	int hide_argv = 0;
++	char *ini;
+ 
+ 	zend_try {
+ 

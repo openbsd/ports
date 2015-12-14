@@ -1,0 +1,20 @@
+$OpenBSD: patch-ext_mysqlnd_config9_m4,v 1.1.1.1 2015/12/14 17:58:45 robert Exp $
+--- ext/mysqlnd/config9.m4.orig.port	Tue Dec  1 14:36:42 2015
++++ ext/mysqlnd/config9.m4	Sun Dec  6 14:08:19 2015
+@@ -16,6 +16,7 @@ if test -z "$PHP_ZLIB_DIR"; then
+ fi
+ 
+ dnl If some extension uses mysqlnd it will get compiled in PHP core
++PHP_MYSQLND_ENABLED="yes"
+ if test "$PHP_MYSQLND" != "no" || test "$PHP_MYSQLND_ENABLED" = "yes"; then
+   mysqlnd_ps_sources="mysqlnd_ps.c mysqlnd_ps_codec.c"
+   mysqlnd_base_sources="mysqlnd.c mysqlnd_alloc.c mysqlnd_charset.c mysqlnd_wireprotocol.c \
+@@ -34,7 +35,7 @@ if test "$PHP_MYSQLND" != "no" || test "$PHP_MYSQLND_E
+   test -z "$PHP_OPENSSL" && PHP_OPENSSL=no
+ 
+   if test "$PHP_OPENSSL" != "no" || test "$PHP_OPENSSL_DIR" != "no"; then
+-    AC_CHECK_LIB(ssl, DSA_get_default_method, AC_DEFINE(HAVE_DSA_DEFAULT_METHOD, 1, [OpenSSL 0.9.7 or later]))
++    AC_CHECK_LIB(ssl, DSA_get_default_method, AC_DEFINE(HAVE_DSA_DEFAULT_METHOD, 1, [OpenSSL 0.9.7 or later]),, [-lcrypto])
+     AC_CHECK_LIB(crypto, X509_free, AC_DEFINE(HAVE_DSA_DEFAULT_METHOD, 1, [OpenSSL 0.9.7 or later]))
+ 
+     PHP_SETUP_OPENSSL(MYSQLND_SHARED_LIBADD, [AC_DEFINE(MYSQLND_HAVE_SSL,1,[Enable mysqlnd code that uses OpenSSL directly])])

@@ -1,0 +1,75 @@
+$OpenBSD: patch-ext_iconv_iconv_c,v 1.1.1.1 2015/12/14 17:58:45 robert Exp $
+--- ext/iconv/iconv.c.orig.port	Tue Dec  1 14:36:40 2015
++++ ext/iconv/iconv.c	Sun Dec  6 14:04:50 2015
+@@ -471,7 +471,7 @@ static php_iconv_err_t _php_iconv_appendl(smart_str *d
+ 
+ 			out_p = ZSTR_VAL((d)->s) + ZSTR_LEN((d)->s);
+ 
+-			if (iconv(cd, (char **)&in_p, &in_left, (char **) &out_p, &out_left) == (size_t)-1) {
++			if (iconv(cd, (const char **)&in_p, &in_left, (char **) &out_p, &out_left) == (size_t)-1) {
+ #if ICONV_SUPPORTS_ERRNO
+ 				switch (errno) {
+ 					case EINVAL:
+@@ -651,7 +651,7 @@ PHP_ICONV_API php_iconv_err_t php_iconv_string(const c
+ 	out_p = ZSTR_VAL(out_buf);
+ 
+ 	while (in_left > 0) {
+-		result = iconv(cd, (char **) &in_p, &in_left, (char **) &out_p, &out_left);
++		result = iconv(cd, (const char **) &in_p, &in_left, (char **) &out_p, &out_left);
+ 		out_size = bsz - out_left;
+ 		if (result == (size_t)(-1)) {
+ 			if (ignore_ilseq && errno == EILSEQ) {
+@@ -776,7 +776,7 @@ static php_iconv_err_t _php_iconv_strlen(size_t *pretv
+ 
+ 		prev_in_left = in_left;
+ 
+-		if (iconv(cd, (char **)&in_p, &in_left, (char **) &out_p, &out_left) == (size_t)-1) {
++		if (iconv(cd, (const char **)&in_p, &in_left, (char **) &out_p, &out_left) == (size_t)-1) {
+ 			if (prev_in_left == in_left) {
+ 				break;
+ 			}
+@@ -897,7 +897,7 @@ static php_iconv_err_t _php_iconv_substr(smart_str *pr
+ 
+ 		prev_in_left = in_left;
+ 
+-		if (iconv(cd1, (char **)&in_p, &in_left, (char **) &out_p, &out_left) == (size_t)-1) {
++		if (iconv(cd1, (const char **)&in_p, &in_left, (char **) &out_p, &out_left) == (size_t)-1) {
+ 			if (prev_in_left == in_left) {
+ 				break;
+ 			}
+@@ -1028,7 +1028,7 @@ static php_iconv_err_t _php_iconv_strpos(size_t *pretv
+ 
+ 		prev_in_left = in_left;
+ 
+-		if (iconv(cd, (char **)&in_p, &in_left, (char **) &out_p, &out_left) == (size_t)-1) {
++		if (iconv(cd, (const char **)&in_p, &in_left, (char **) &out_p, &out_left) == (size_t)-1) {
+ 			if (prev_in_left == in_left) {
+ #if ICONV_SUPPORTS_ERRNO
+ 				switch (errno) {
+@@ -1275,7 +1275,7 @@ static php_iconv_err_t _php_iconv_mime_encode(smart_st
+ 
+ 					out_left = out_size - out_reserved;
+ 
+-					if (iconv(cd, (char **)&in_p, &in_left, (char **) &out_p, &out_left) == (size_t)-1) {
++					if (iconv(cd, (const char **)&in_p, &in_left, (char **) &out_p, &out_left) == (size_t)-1) {
+ #if ICONV_SUPPORTS_ERRNO
+ 						switch (errno) {
+ 							case EINVAL:
+@@ -1376,7 +1376,7 @@ static php_iconv_err_t _php_iconv_mime_encode(smart_st
+ 					out_p = buf;
+ 					out_left = out_size;
+ 
+-					if (iconv(cd, (char **)&in_p, &in_left, (char **) &out_p, &out_left) == (size_t)-1) {
++					if (iconv(cd, (const char **)&in_p, &in_left, (char **) &out_p, &out_left) == (size_t)-1) {
+ #if ICONV_SUPPORTS_ERRNO
+ 						switch (errno) {
+ 							case EINVAL:
+@@ -2626,7 +2626,7 @@ static int php_iconv_stream_filter_append_bucket(
+ 		tcnt = self->stub_len;
+ 
+ 		while (tcnt > 0) {
+-			if (iconv(self->cd, &pt, &tcnt, &pd, &ocnt) == (size_t)-1) {
++			if (iconv(self->cd, (const char **)&pt, &tcnt, &pd, &ocnt) == (size_t)-1) {
+ #if ICONV_SUPPORTS_ERRNO
+ 				switch (errno) {
+ 					case EILSEQ:

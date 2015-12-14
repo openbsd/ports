@@ -1,0 +1,42 @@
+$OpenBSD: patch-php_ini-production,v 1.1.1.1 2015/12/14 17:58:46 robert Exp $
+--- php.ini-production.orig.port	Tue Dec  1 14:36:27 2015
++++ php.ini-production	Sun Dec  6 14:04:50 2015
+@@ -697,11 +697,8 @@ default_charset = "UTF-8"
+ ;;;;;;;;;;;;;;;;;;;;;;;;;
+ 
+ ; UNIX: "/path1:/path2"
+-;include_path = ".:/php/includes"
++include_path = ".:OPENBSD_INCLUDE_PATH"
+ ;
+-; Windows: "\path1;\path2"
+-;include_path = ".;c:\php\includes"
+-;
+ ; PHP's default setting for include_path is ".;/path/to/php/pear"
+ ; http://php.net/include-path
+ 
+@@ -723,6 +720,7 @@ user_dir =
+ ; extension_dir = "./"
+ ; On windows:
+ ; extension_dir = "ext"
++extension_dir = "MODULES_DIR"
+ 
+ ; Directory where the temporary files should be placed.
+ ; Defaults to the system default (see sys_get_temp_dir)
+@@ -807,7 +805,7 @@ max_file_uploads = 20
+ 
+ ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
+ ; http://php.net/allow-url-fopen
+-allow_url_fopen = On
++allow_url_fopen = Off
+ 
+ ; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
+ ; http://php.net/allow-url-include
+@@ -910,7 +908,7 @@ cli_server.color = On
+ [Date]
+ ; Defines the default timezone used by the date functions
+ ; http://php.net/date.timezone
+-;date.timezone =
++date.timezone = UTC
+ 
+ ; http://php.net/date.default-latitude
+ ;date.default_latitude = 31.7667

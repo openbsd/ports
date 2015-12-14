@@ -1,0 +1,12 @@
+$OpenBSD: patch-main_php_open_temporary_file_c,v 1.1.1.1 2015/12/14 17:58:46 robert Exp $
+--- main/php_open_temporary_file.c.orig.port	Tue Dec  1 14:36:43 2015
++++ main/php_open_temporary_file.c	Sun Dec 13 17:06:18 2015
+@@ -138,7 +138,7 @@ static int php_do_open_temporary_file(const char *path
+ 		trailing_slash = "/";
+ 	}
+ 
+-	if (snprintf(opened_path, MAXPATHLEN, "%s%s%sXXXXXX", new_state.cwd, trailing_slash, pfx) >= MAXPATHLEN) {
++    if (snprintf(opened_path, MAXPATHLEN, "%s%s%sXXXXXXXXXX", new_state.cwd, trailing_slash, pfx) >= MAXPATHLEN) {
+ 		efree(new_state.cwd);
+ 		return -1;
+ 	}
