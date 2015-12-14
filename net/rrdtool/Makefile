@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2015/11/23 11:41:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2015/12/14 18:01:41 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,6 +9,7 @@ COMMENT-ruby=	ruby interface to librrd
 
 MODPY_EGG_VERSION= 0.2.2
 VERSION=	1.5.5
+REVISION=	0
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}
@@ -70,7 +71,7 @@ MODPY_RUNDEP=   No
 # needs checking before enabling mmap; is it safe without UBC?
 CONFIGURE_ARGS+= --disable-mmap
 
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -DDEBUG" \
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 # autoconf insists on these, but the docs are pre-formatted in the distfile,
 # so they aren't needed.
