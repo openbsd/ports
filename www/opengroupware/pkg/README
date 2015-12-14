@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.5 2015/10/05 11:20:57 sthen Exp $
+# $OpenBSD: README,v 1.6 2015/12/14 07:01:04 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,15 +10,12 @@ The OpenGroupware system user
 The system user and group intended to run the OpenGroupware application server
 is called _opengroupware. The users home directory is ${VARBASE}/opengroupware.
 
-OpenGroupware with apache-httpd-openbsd
-=======================================
+OpenGroupware with apache-httpd
+===============================
 
-OpenGroupware requires the mod_ngobjweb module used with Apache. The one
-that comes with the OpenGroupware package is built against apache-httpd-openbsd
-package, which is based on Apache 1.3. Since the httpd 1.3 configuration is
-slightly different than the Apache 2 configuration explained in the OGo WIKI,
-here is an example. It's assumed that the httpd and OGo run on the same host.
-The httpd listens on port 80, and OGo is listening on its default port 20000.
+OpenGroupware requires the mod_ngobjweb module used with Apache2. The one
+that comes with the OpenGroupware package is built against apache-httpd
+package.
 
 Per default the web server runs in a chroot environment. Therefore you have to
 copy some files into the server's chroot environment:
@@ -27,14 +24,19 @@ copy some files into the server's chroot environment:
 # cp -R ${TRUEPREFIX}/share/opengroupware/www \
 	${VARBASE}/www/htdocs/OpenGroupware55.woa/WebServerResources
 
-The web server needs the ngobjweb Apache module loaded. Enable it
-by running:
+The web server needs the ngobjweb Apache module loaded. The following line
+need to be added to ${SYSCONFDIR}/apache2/httpd2.conf:
 
-# ${TRUEPREFIX}/sbin/mod_ngobjweb-enable
+LoadModule ngobjweb_module ${PREFIX}/lib/apache2/ngobjweb_module.so
 
 A sample configuration is installed as example
-# cp ${TRUEPREFIX}/share/examples/opengroupware/opengroupware.conf ${VARBASE}/www/conf/modules
-# rcctl restart apache
+# cp ${TRUEPREFIX}/share/examples/opengroupware/opengroupware.conf ${SYSCONFDIR}/etc/apache2/extra
+
+Enable the loading of that file in ${SYSCONFDIR}/apache2/httpd2.conf:
+Include ${SYSCONFDIR}/extra/opengroupware.conf
+
+Then restart apache to make the changes effective
+# rcctl restart apache2
 
 OpenGroupware configuration example
 ===================================

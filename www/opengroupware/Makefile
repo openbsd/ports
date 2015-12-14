@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/10/26 11:56:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2015/12/14 07:01:04 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
-VERSION =	5.5rc2
-REVISION=	7
+VERSION =	5.5rc3
 DISTNAME =	opengroupware-${VERSION}
 
 SHARED_LIBS +=  LSAddress                 0.0 # 5.5
@@ -43,14 +42,12 @@ WANTLIB += c DOM EOControl GDLAccess NGExtensions NGLdap NGMime
 WANTLIB += NGObjWeb NGStreams SaxObjC WEExtensions WOExtensions
 WANTLIB += XmlRpc ldap
 
-MODULES =		apache-module x11/gnustep converters/libiconv
+MODULES =		x11/gnustep converters/libiconv
 MODGNUSTEP_NEEDS_GUI =	No
-MODAPACHE_NAME =	ngobjweb
-MODAPACHE_LOCATION =	${WRKBUILD}/SOPE/mod_ngobjweb
-
+BUILD_DEPENDS +=	www/apache-httpd
 LIB_DEPENDS +=		www/sope
 RUN_DEPENDS +=		sope-postgres-*|sope-mysql-*:www/sope,-postgres \
-			archivers/zip archivers/unzip
+			archivers/zip archivers/unzip www/apache-httpd
 
 CONFIGURE_STYLE =	simple dest
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
@@ -80,15 +77,14 @@ MAKE_FLAGS +=	libLSAddress_INTERFACE_VERSION=${LIBLSAddress_VERSION} \
 		libZSProjects_INTERFACE_VERSION=${LIBZSProjects_VERSION} \
 		libZSTasks_INTERFACE_VERSION=${LIBZSTasks_VERSION} \
 		libOGoAsteriskCommands_INTERFACE_VERSION=${LIBOGoAsteriskCommands_VERSION} \
-		libSkyInvoice_INTERFACE_VERSION=${LIBSkyInvoice_VERSION}
+		libSkyInvoice_INTERFACE_VERSION=${LIBSkyInvoice_VERSION} \
+		APXS=${LOCALBASE}/sbin/apxs2 \
+		APR=${LOCALBASE}/bin/apr-1-config
 
 EXAMPLE_FILES =	opengroupware.conf NSGlobalDomain.plist ogo-webui.plist \
 		ogo-zidestore.plist ogo-xmlrpcd.plist
 
 SUBST_VARS +=	VARBASE
-
-post-build:
-	${MODAPACHE_CREATE_ENABLE_SCRIPT}
 
 post-install:
 	mkdir -p ${PREFIX}/share/examples/opengroupware
@@ -96,7 +92,8 @@ post-install:
 	${SUBST_DATA} \
 		${FILESDIR}/${F} ${PREFIX}/share/examples/opengroupware/${F}
 .endfor
-	${MODAPACHE_INSTALL}
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/apache2
+	mv ${PREFIX}/lib/mod_ngobjweb.so ${PREFIX}/lib/apache2
 	cp ${WRKSRC}/Database/PostgreSQL/pg-update-1.x-to-5.5.psql \
 		${PREFIX}/lib/opengroupware/commands/OGo.model/Resources/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/29 06:16:37 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/12/14 07:01:04 sebastia Exp $
 @newgroup _opengroupware:725
 @newuser _opengroupware:725:_opengroupware:daemon:OpenGroupware user:/var/opengroupware:/bin/sh
 @bin bin/load-LSModel
@@ -23,9 +23,9 @@
 @bin bin/ogo-vcard-get
 @bin bin/ogo-vcard-put
 @bin bin/ogo_install_sieve
+@bin bin/ogoaptnotify
 @bin bin/ogoasterisk
 @bin bin/sky_send_bulk_messages
-@bin bin/skyaptnotify
 include/LSFoundation/
 include/LSFoundation/EODatabaseChannel+LSAdditions.h
 include/LSFoundation/EOSQLQualifier+LS.h
@@ -282,6 +282,7 @@ lib/GNUstep/Bundles/AsteriskDialer.cti/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/AsteriskDialer.cti/Resources/bundle-info.plist
 lib/GNUstep/Bundles/AsteriskDialer.cti/bundle-info.plist
 lib/GNUstep/Bundles/AsteriskDialer.cti/stamp.make
+lib/apache2/mod_ngobjweb.so
 @lib lib/libLSAddress.so.${LIBLSAddress_VERSION}
 @lib lib/libLSFoundation.so.${LIBLSFoundation_VERSION}
 @lib lib/libLSSearch.so.${LIBLSSearch_VERSION}
@@ -306,7 +307,6 @@ lib/GNUstep/Bundles/AsteriskDialer.cti/stamp.make
 @lib lib/libZSFrontend.so.${LIBZSFrontend_VERSION}
 @lib lib/libZSProjects.so.${LIBZSProjects_VERSION}
 @lib lib/libZSTasks.so.${LIBZSTasks_VERSION}
-lib/${MODAPACHE_MODULE}
 lib/opengroupware/
 lib/opengroupware/commands/
 lib/opengroupware/commands/LSAccount.cmd/
@@ -852,7 +852,6 @@ lib/zidestore/zOGI.zsp/Resources/product.plist
 lib/zidestore/zOGI.zsp/bundle-info.plist
 lib/zidestore/zOGI.zsp/stamp.make
 @bin lib/zidestore/zOGI.zsp/zOGI
-sbin/${MODAPACHE_ENABLE}
 @bin sbin/ogo-webui
 @bin sbin/ogo-xmlrpcd
 @bin sbin/ogo-zidestore
