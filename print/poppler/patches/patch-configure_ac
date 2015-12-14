@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.14 2015/08/14 07:58:25 kili Exp $
+$OpenBSD: patch-configure_ac,v 1.15 2015/12/14 14:25:47 zhuk Exp $
 --- configure.ac.orig	Sun Aug  9 18:28:07 2015
 +++ configure.ac	Thu Aug 13 20:03:50 2015
 @@ -643,6 +643,24 @@ AC_SUBST(POPPLER_GLIB_DISABLE_SINGLE_INCLUDES)
@@ -26,16 +26,56 @@ $OpenBSD: patch-configure_ac,v 1.14 2015/08/14 07:58:25 kili Exp $
  dnl 
  dnl Try Qt4
  dnl
-@@ -675,7 +693,7 @@ AC_SUBST(POPPLER_QT4_LIBS)
- AC_SUBST(POPPLER_QT4_TEST_LIBS)
- 
- if test x$enable_poppler_qt4 = xyes; then
--  AC_CHECK_TOOL(MOCQT4, moc)
-+  AC_CHECK_TOOL(MOCQT4, moc4)
-   AC_MSG_CHECKING([for Qt4 moc])
-   mocversion=`$MOCQT4 -v 2>&1`
-   mocversiongrep=`echo $mocversion | grep "Qt 4"`
-@@ -960,6 +978,9 @@ glib/reference/Makefile
+@@ -682,31 +700,35 @@ if test x$enable_poppler_qt5 = xyes; then
+   AC_CHECK_TOOL(MOCQT5, moc)
+   AC_MSG_CHECKING([for Qt5 moc])
+   mocversion=`$MOCQT5 -v 2>&1`
+-  mocversiongrep=`echo $mocversion | grep "Qt 5\|moc 5"`
+-  if test x"$mocversiongrep" != x"$mocversion"; then
++  case $mocversion in
++  *Qt\ 5*|*moc\ 5*)
++    ;;
++  *)
+     AC_MSG_RESULT([no])
+     # moc was not the qt5 one, try with moc-qt5
+     AC_CHECK_TOOL(MOCQT52, moc-qt5)
+     AC_MSG_CHECKING([for Qt5 moc-qt5])
+     mocversion=`$MOCQT52 -v 2>&1`
+-    mocversiongrep=`echo $mocversion | grep "Qt 5\|moc-qt5 5\|moc 5"`
+-    if test x"$mocversiongrep" != x"$mocversion"; then
++    case $mocversion in
++    *Qt\ 5*|*moc\ 5*|*moc-qt5\ 5*)
++      MOCQT5=$MOCQT52
++      ;;
++    *)
+       AC_CHECK_TOOL(QTCHOOSER, qtchooser)
+       AC_MSG_CHECKING([for qtchooser])
+       qt5tooldir=`QT_SELECT=qt5 qtchooser -print-env | grep QTTOOLDIR | cut -d '=' -f 2 | cut -d \" -f 2`
+       mocversion=`$qt5tooldir/moc -v 2>&1`
+-      mocversiongrep=`echo $mocversion | grep "Qt 5\|moc 5"`
+-      if test x"$mocversiongrep" != x"$mocversion"; then
++      case $mocversion in
++      *Qt\ 5*|*moc\ 5*)
++        MOCQT5=$qt5tooldir/moc
++        ;;
++      *)
+         # no valid moc found
+         enable_poppler_qt5=no;
+         MOCQT5="not found"
+-      else
+-        MOCQT5=$qt5tooldir/moc
+-      fi
+-    else
+-      MOCQT5=$MOCQT52
+-    fi
+-  fi
++      esac
++    esac
++  esac
+   AC_SUBST(MOCQT5)
+   AC_MSG_RESULT([$MOCQT5])
+ fi
+@@ -907,6 +929,9 @@ glib/reference/Makefile
  glib/reference/version.xml
  glib/demo/Makefile
  test/Makefile

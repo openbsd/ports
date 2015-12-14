@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.99 2015/11/20 07:47:44 kili Exp $
+# $OpenBSD: Makefile,v 1.100 2015/12/14 14:25:47 zhuk Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
+COMMENT-qt5=	Qt5 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
 V=		0.38.0
@@ -12,12 +13,14 @@ PKGNAME-main=	poppler-$V
 PKGNAME-utils=	poppler-utils-$V
 PKGNAME-qt=	poppler-qt-$V
 PKGNAME-qt4=	poppler-qt4-$V
+PKGNAME-qt5=	poppler-qt5-$V
 OLDSHIT =	poppler-0.16.7
 
 SHARED_LIBS +=	poppler              33.0     # 57.0
 SHARED_LIBS +=	poppler-glib         14.0     # 15.0
 SHARED_LIBS +=	poppler-qt           12.0     # 3.0
 SHARED_LIBS +=	poppler-qt4          18.0     # 13.0
+SHARED_LIBS +=	poppler-qt5          0.0      # 7.0
 SHARED_LIBS +=	poppler-cpp          6.1      # 2.1
 
 DISTFILES = ${DISTNAME}.tar.xz ${OLDSHIT}.tar.gz
@@ -31,13 +34,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-PSEUDO_FLAVORS=no_qt no_qt4 bootstrap
+PSEUDO_FLAVORS=no_qt no_qt4 no_qt5 bootstrap
 # XXX not strictly a bootstrap loop, but on the critical path for libreoffice
-FLAVOR?=no_qt no_qt4 bootstrap
+FLAVOR?=no_qt no_qt4 no_qt5 bootstrap
 
 NOT_FOR_ARCHS-qt4 = arm
+NOT_FOR_ARCHS-qt5 = arm
 
-MULTI_PACKAGES=-main -qt -qt4 -utils
+MULTI_PACKAGES=-main -qt -qt4 -qt5 -utils
 
 .include <bsd.port.arch.mk>
 
@@ -55,8 +59,11 @@ MODULES+=	x11/qt4
 CONFIGURE_ARGS+=	--disable-poppler-qt4
 .endif
 
-# until Qt5 is enabled
+.if ${BUILD_PACKAGES:M-qt5}
+MODULES+=	x11/qt5
+.else
 CONFIGURE_ARGS+=	--disable-poppler-qt5
+.endif
 
 MODULES+=	devel/gettext
 
@@ -79,6 +86,9 @@ LIB_DEPENDS-qt=	${MODQT3_LIB_DEPENDS} \
 LIB_DEPENDS-qt4=${MODQT4_LIB_DEPENDS} \
 		print/poppler
 
+LIB_DEPENDS-qt5=${MODQT5_LIB_DEPENDS} \
+		print/poppler
+
 LIB_DEPENDS-utils= print/poppler
 
 WANTLIB-main=	${cWANTLIB} Xext ffi gio-2.0 glib-2.0 gmodule-2.0 \
@@ -91,6 +101,12 @@ WANTLIB-qt4=    ${cWANTLIB} ${MODQT4_WANTLIB} ICE QtCore QtGui QtXml \
 		SM X11 Xext Xi Xinerama Xrender ffi glib-2.0 \
 		gobject-2.0 gthread-2.0 iconv intl lcms2 openjpeg \
 		png poppler pcre pthread-stubs xcb
+WANTLIB-qt5=	${cWANTLIB} ${MODQT5_WANTLIB} ${MODGCC4_CPPWANTLIB} \
+		GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml X11 X11-xcb Xau \
+		Xdamage Xdmcp Xext Xfixes Xxf86vm drm execinfo ffi glapi \
+		glib-2.0 gobject-2.0 gthread-2.0 iconv icudata icui18n \
+		icuuc intl lcms2 openjpeg pcre pcre16 png poppler \
+		pthread-stubs xcb xcb-dri2 xcb-glx
 WANTLIB-utils=	X11 Xext Xrender c cairo fontconfig lcms2 m pixman-1 \
 		png pthread-stubs xcb xcb-render xcb-shm openjpeg \
 		poppler z ${cWANTLIB}
@@ -105,9 +121,18 @@ CONFIGURE_ARGS+=--enable-xpdf-headers \
 
 CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBJPEG_CFLAGS="-I${LOCALBASE}/include"
+		LIBJPEG_CFLAGS="-I${LOCALBASE}/include" \
+		ac_cv_prog_MOCQT4=${MODQT4_MOC} \
+		ac_cv_prog_MOCQT5=${MODQT5_MOC}
 
 USE_GMAKE=	Yes
+
+MAIN_CC=	/usr/bin/cc
+MAIN_CXX=	/usr/bin/c++
+.if "${USE_CCACHE:L}" == "yes"
+MAIN_CC:=	ccache ${MAIN_CC}
+MAIN_CXX:=	ccache ${MAIN_CXX}
+.endif
 
 post-extract:
 	cd ${WRKDIST} && \
@@ -117,5 +142,12 @@ post-extract:
 	    done; \
 	    ln -sf ../../${OLDSHIT}/m4/qt.m4 m4/qt.m4
 	cd ${WRKDIST} && cp -R ../${OLDSHIT}/qt qt
+
+post-configure:
+	find ${WRKBUILD} -name Makefile \! -path '*/qt5/*' -print0 | xargs -0 \
+		perl -pi -e     's,^CC = \S+,CC = ${MAIN_CC},;' \
+		         -e    's,^CPP = \S+,CPP = ${MAIN_CC},;' \
+		         -e    's,^CXX = \S+,CXX = ${MAIN_CXX},;' \
+		         -e 's,^CXXCPP = \S+,CXXCPP = ${MAIN_CXX},;'
 
 .include <bsd.port.mk>

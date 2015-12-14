@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST-qt5,v 1.1 2015/12/14 14:25:47 zhuk Exp $
+include/poppler/qt5/
+include/poppler/qt5/poppler-annotation.h
+include/poppler/qt5/poppler-export.h
+include/poppler/qt5/poppler-form.h
+include/poppler/qt5/poppler-link.h
+include/poppler/qt5/poppler-media.h
+include/poppler/qt5/poppler-optcontent.h
+include/poppler/qt5/poppler-page-transition.h
+include/poppler/qt5/poppler-qt5.h
+lib/libpoppler-qt5.a
+lib/libpoppler-qt5.la
+@lib lib/libpoppler-qt5.so.${LIBpoppler-qt5_VERSION}
+lib/pkgconfig/poppler-qt5.pc
