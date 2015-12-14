@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.255 2015/11/26 09:57:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.256 2015/12/14 14:11:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.18.2
-REVISION=		0
+GNOME_VERSION=		3.18.3
 
 CATEGORIES=		mail
 
@@ -45,6 +44,8 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pst pthread
 WANTLIB += pthread-stubs sasl2 secret-1 smime3 softokn3 soup-2.4
 WANTLIB += sqlite3 ssl ssl3 stdc++ vorbis vorbisfile webkitgtk-3.0
 WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z
+WANTLIB += X11-xcb Xxf86vm drm glapi xcb-dri2 xcb-glx xcb-shape
+WANTLIB += xcb-xfixes
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -97,7 +98,7 @@ REVERT_AVOID_VERSION=	addressbook/importers addressbook/util \
 
 pre-configure:
 .for i in ${REVERT_AVOID_VERSION}
-	perl -pi -e 's,-avoid-version,,' ${WRKSRC}/$i/Makefile.in
+	sed -i 's,-avoid-version,,' ${WRKSRC}/$i/Makefile.in
 .endfor
 
 post-install:
