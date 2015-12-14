@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2015/10/18 21:34:25 nigel Exp $
+# $OpenBSD: Makefile,v 1.42 2015/12/14 07:02:09 benoit Exp $
 
 COMMENT=	library for WWW access in Perl
 
 MODULES=	cpan
-DISTNAME=	libwww-perl-6.13
+DISTNAME=	libwww-perl-6.15
 PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	www
 
