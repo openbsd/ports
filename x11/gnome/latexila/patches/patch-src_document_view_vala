@@ -1,12 +1,42 @@
-$OpenBSD: patch-src_document_view_vala,v 1.1 2015/11/24 06:12:25 ajacoutot Exp $
+$OpenBSD: patch-src_document_view_vala,v 1.2 2015/12/14 20:22:35 ajacoutot Exp $
 
 From 7a4af7e94f1ccebe51c2aed73bc7740113eed45c Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Wilmet?= <swilmet@gnome.org>
 Date: Fri, 20 Nov 2015 18:40:37 +0100
 Subject: Adapt code for GspellLanguageChooserDialog change
 
---- src/document_view.vala.orig	Thu Oct 15 15:33:20 2015
-+++ src/document_view.vala	Tue Nov 24 07:10:08 2015
+From 92e6b33fe0731009268292e201dd009a3f28fbf0 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Wilmet?= <swilmet@gnome.org>
+Date: Fri, 27 Nov 2015 18:35:48 +0100
+Subject: Adapt code for GspellLanguage API changes
+
+From 7141859a103aa5b64a99fd27113ff0110fac2c04 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Wilmet?= <swilmet@gnome.org>
+Date: Sun, 13 Dec 2015 18:56:51 +0100
+Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
+
+--- src/document_view.vala.orig	Mon Dec 14 21:09:00 2015
++++ src/document_view.vala	Mon Dec 14 21:09:19 2015
+@@ -251,14 +251,14 @@ public class DocumentView : Gtk.SourceView
+     {
+         Document doc = get_buffer () as Document;
+ 
+-        string? lang_key = doc.get_metadata (METADATA_ATTRIBUTE_SPELL_LANGUAGE);
+-        if (lang_key == null)
+-            lang_key = _editor_settings.get_string ("spell-checking-language");
++        string? lang_code = doc.get_metadata (METADATA_ATTRIBUTE_SPELL_LANGUAGE);
++        if (lang_code == null)
++            lang_code = _editor_settings.get_string ("spell-checking-language");
+ 
+-        if (lang_key[0] == '\0')
++        if (lang_code[0] == '\0')
+             return null;
+ 
+-        return Gspell.Language.from_key (lang_key);
++        return Gspell.Language.lookup (lang_code);
+     }
+ 
+     public void setup_inline_spell_checker ()
 @@ -299,7 +299,10 @@ public class DocumentView : Gtk.SourceView
  
          Gspell.LanguageChooserDialog dialog =
@@ -18,4 +48,23 @@ Subject: Adapt code for GspellLanguageChooserDialog change
 +                DialogFlags.USE_HEADER_BAR);
  
          dialog.run ();
+ 
+@@ -317,7 +320,7 @@ public class DocumentView : Gtk.SourceView
+ 
+         unowned Gspell.Language? lang = _spell_checker.get_language ();
+         if (lang != null)
+-            doc.set_metadata (METADATA_ATTRIBUTE_SPELL_LANGUAGE, lang.to_key ());
++            doc.set_metadata (METADATA_ATTRIBUTE_SPELL_LANGUAGE, lang.get_code ());
+         else
+             doc.set_metadata (METADATA_ATTRIBUTE_SPELL_LANGUAGE, null);
+     }
+@@ -347,8 +350,7 @@ public class DocumentView : Gtk.SourceView
+             if (_inline_spell_checker == null)
+             {
+                 _inline_spell_checker =
+-                    new Gspell.InlineCheckerGtv (this.buffer as Gtk.SourceBuffer,
+-                        _spell_checker);
++                    new Gspell.InlineCheckerGtv (this.buffer, _spell_checker);
+ 
+                 _inline_spell_checker.attach_view (this);
  

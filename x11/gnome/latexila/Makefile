@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2015/11/24 06:12:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2015/12/14 20:22:35 ajacoutot Exp $
 
 COMMENT=		integrated LaTeX environment for GNOME
 
 GNOME_PROJECT=		latexila
 GNOME_VERSION=		3.18.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		editors print
 
@@ -32,7 +32,8 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/xdg-utils # xdg-open(1)
 
 LIB_DEPENDS=		devel/libgee \
-			textproc/gspell
+			textproc/gspell \
+			x11/gtksourceview3
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache vala yelp
