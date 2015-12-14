@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2015/01/18 16:56:02 benoit Exp $
+# $OpenBSD: Makefile,v 1.25 2015/12/14 07:13:55 benoit Exp $
 
 COMMENT=	trivial perl API for reading/writing XML
 
 MODULES=	cpan
-DISTNAME =	XML-Simple-2.20
+DISTNAME =	XML-Simple-2.22
 CATEGORIES=	textproc
 
 RUN_DEPENDS=	textproc/p5-XML-Parser>=2 \
