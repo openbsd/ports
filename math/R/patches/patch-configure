@@ -1,65 +1,29 @@
-$OpenBSD: patch-configure,v 1.26 2015/09/28 07:32:19 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.27 2015/12/14 16:49:02 feinerer Exp $
 
 Unbreak build on powerpc (relocation truncated to fit: R_PPC_GOT16...)
 
-Fix linking with external libintl
-(https://marc.info/?l=openbsd-ports&m=143526271406832&w=2)
-
---- configure.orig	Thu Aug 13 11:21:16 2015
-+++ configure	Thu Sep 24 15:12:30 2015
-@@ -26258,7 +26258,7 @@ if test "${GCC}" = yes; then
- ## has 32k and so can use -fpic.
- ## However, although the gcc docs do not mention it, it seems s390/s390x
- ## also supports and needs -fPIC
--    sparc*|ppc64|powerpc64|s390*)
-+    sparc*|ppc64|powerpc*|s390*)
-       cpicflags="-fPIC"
-       ;;
-     *)
-@@ -26269,7 +26269,7 @@ if test "${GCC}" = yes; then
- fi
- if test "${G77}" = yes; then
-   case "${host_cpu}" in
--    sparc*|ppc64|powerpc64|s390*)
-+    sparc*|ppc64|powerpc*|s390*)
-       fpicflags="-fPIC"
-       ;;
-     *)
-@@ -26279,7 +26279,7 @@ if test "${G77}" = yes; then
- fi
- if test "${GXX}" = yes; then
-   case "${host_cpu}" in
--    sparc*|ppc64|powerpc64|s390*)
-+    sparc*|ppc64|powerpc*|s390*)
-       cxxpicflags="-fPIC"
-       ;;
-     *)
-@@ -38836,7 +38836,7 @@ fi
- ## use this to pick out gfortran (even though it is unreliable).
- if test "${ac_cv_fc_compiler_gnu}" = yes; then
-   case "${host_cpu}" in
--    sparc*|ppc64|powerpc64|s390*)
-+    sparc*|ppc64|powerpc*|s390*)
-       fcpicflags="-fPIC"
-       ;;
-     *)
-@@ -42590,7 +42590,7 @@ else
-   gt_save_CPPFLAGS="$CPPFLAGS"
-             CPPFLAGS="$CPPFLAGS $INCINTL"
-             gt_save_LIBS="$LIBS"
--            LIBS="$LIBS $LIBINTL"
-+            LIBS="$LIBS $LTLIBINTL"
-                         cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- #include <libintl.h>
-@@ -42747,8 +42747,8 @@ $as_echo "$gt_source" >&6; }
-       if { eval "gt_val=\$$gt_func_gnugettext_libintl"; test "$gt_val" = "yes"; }; then
-         { $as_echo "$as_me:${as_lineno-$LINENO}: checking how to link with libintl" >&5
- $as_echo_n "checking how to link with libintl... " >&6; }
--        { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LIBINTL" >&5
--$as_echo "$LIBINTL" >&6; }
-+        { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LTLIBINTL" >&5
-+$as_echo "$LTLIBINTL" >&6; }
- 
-   for element in $INCINTL; do
-     haveit=
+--- configure.orig	Thu Dec 10 15:45:13 2015
++++ configure	Thu Dec 10 15:47:05 2015
+@@ -26576,6 +26576,22 @@ $as_echo "$as_me: WARNING: Use of flat namespace is re
+       main_ldflags="${wl}-export-dynamic"
+       shlib_ldflags="-shared -fPIC"
+     fi
++    case "${host_cpu}" in
++      powerpc*)
++	## GCC -fpic limits to 2**16 on OpenBSD powerpc.
++	## Error message without -fPIC:
++	##   relocation truncated to fit: R_PPC_GOT16...
++        if test "${GCC}" = yes; then
++          cpicflags="-fPIC"
++        fi
++        if test "${G77}" = yes; then
++          fpicflags="-fPIC"
++        fi
++        if test "${GXX}" = yes; then
++          cxxpicflags="-fPIC"
++        fi
++        ;;
++    esac
+     ;;
+   osf*)
+     cpicflags=

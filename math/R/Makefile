@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.76 2015/10/30 12:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2015/12/14 16:49:02 feinerer Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-3.2.2
-REVISION=	1
+DISTNAME=	R-3.2.3
 
-SHARED_LIBS=	R	3.1
-SHARED_LIBS+=	Rlapack	31.2 	# 31.2
-SHARED_LIBS+=	Rblas	31.2 	# 31.2
+SO_VERSION=	31.2
+.for _lib in R Rblas Rlapack
+SHARED_LIBS +=	${_lib} ${SO_VERSION}
+.endfor
 
 CATEGORIES=	math
-HOMEPAGE=	http://www.r-project.org/
+HOMEPAGE=	https://www.r-project.org/
 
 MAINTAINER=	Ingo Feinerer <feinerer@logic.at>
 
@@ -19,13 +19,13 @@ MAINTAINER=	Ingo Feinerer <feinerer@logic.at>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	ICE SM X11 Xext Xmu Xss Xt bz2 c crypto curl \
-		cairo readline fontconfig freetype glib-2.0 \
+		cairo readline glib-2.0 \
 		gobject-2.0 icui18n icuuc idn jpeg lzma m \
 		ncurses nghttp2 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre png pthread ssl tiff z \
+		pcre png pthread ssl tiff z \
 		${MODTK_WANTLIB}
 
-MASTER_SITES=	http://cran.r-project.org/src/base/R-3/ \
+MASTER_SITES=	https://cran.r-project.org/src/base/R-3/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-3/ \
 		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/R-3/ \
 		http://cran.at.r-project.org/src/base/R-3/ \
@@ -36,7 +36,6 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-3/ \
 		http://cran.stat.ucla.edu/src/base/R-3/ \
 		http://cran.uk.r-project.org/src/base/R-3/ \
 		http://cran.us.r-project.org/src/base/R-3/ \
-		http://lib.stat.cmu.edu/R/CRAN/src/base/R-3/ \
 		http://probability.ca/cran/src/base/R-3/
 
 MODULES=	gcc4 \
@@ -79,6 +78,7 @@ CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/tools
 
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
+		--disable-java \
 		--enable-BLAS-shlib \
 		--enable-R-shlib \
 		--with-tcl-config=${MODTCL_CONFIG} \
@@ -89,12 +89,9 @@ CONFIGURE_ENV=	FFLAGS="${FFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -Wl,-R${LOCALBASE}/lib/R/lib" \
 		LIBnn=lib \
 		MAKEINFO="${LOCALBASE}/bin/gtexi2any" \
+		R_DYLIB_VERSION=${SO_VERSION} \
 		TEXI2DVI="${LOCALBASE}/bin/gtexi2dvi" \
 		rdocdir="${PREFIX}/share/doc/R"
-
-MAKE_FLAGS=	DYLIB_EXT=".so.${LIBR_VERSION}" \
-		Rblas_la="libRblas.so.${LIBRblas_VERSION}" \
-		Rlapack_la="libRlapack.so.$(LIBRlapack_VERSION)"
 
 SEPARATE_BUILD=	Yes
 
