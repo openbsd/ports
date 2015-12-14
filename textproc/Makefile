@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.472 2015/12/07 10:08:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.473 2015/12/14 19:47:24 jca Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -361,6 +361,7 @@
      SUBDIR += py-xml
      SUBDIR += py-xmldiff
      SUBDIR += py-yaml
+     SUBDIR += py-yaml,python3
      SUBDIR += raptor
      SUBDIR += rarian
      SUBDIR += rasqal
