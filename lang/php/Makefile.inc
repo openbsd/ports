@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.69 2015/12/14 17:59:28 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.70 2015/12/15 23:02:49 ajacoutot Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
@@ -358,6 +358,7 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 MODULES=		converters/libiconv devel/gettext
 
 WANTLIB-main+=		c crypto lzma m pthread ssl xml2>=8 z ${MODGETTEXT_WANTLIB}
+WANTLIB-main+=		ncurses readline stdc++
 
 # php 5.4/5.5 : WANTLIB-main += stdc++
 WANTLIB-fastcgi=	${WANTLIB-main}
