@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_dns_opensslrsa_link_c,v 1.1 2015/09/16 15:28:16 sthen Exp $
---- lib/dns/opensslrsa_link.c.orig	Wed Sep 16 14:01:23 2015
-+++ lib/dns/opensslrsa_link.c	Wed Sep 16 14:02:31 2015
-@@ -771,7 +771,7 @@ opensslrsa_generate(dst_key_t *key, int exp, void (*ca
+$OpenBSD: patch-lib_dns_opensslrsa_link_c,v 1.2 2015/12/15 22:43:37 sthen Exp $
+--- lib/dns/opensslrsa_link.c.orig	Sun Dec  6 12:37:44 2015
++++ lib/dns/opensslrsa_link.c	Tue Dec 15 22:18:11 2015
+@@ -773,7 +773,7 @@ opensslrsa_generate(dst_key_t *key, int exp, void (*ca
  	} u;
  	RSA *rsa = RSA_new();
  	BIGNUM *e = BN_new();
