@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_extensions_py,v 1.8 2014/07/08 09:55:16 sthen Exp $
+$OpenBSD: patch-setup_extensions_py,v 1.9 2015/12/15 22:03:59 sthen Exp $
 
 - fix various header search paths
 - don't override compiler optimizer levels
@@ -9,21 +9,21 @@ if updating patches, watch out for X11BASE -> /usr/X11R6 in last chunk,
 and don't allow an updated patch to change the python shebang line,
 it's correct with "env" here (handled in infrastructure).
 
---- setup/extensions.py.orig	Fri Jul  4 05:05:26 2014
-+++ setup/extensions.py	Tue Jul  8 10:36:28 2014
-@@ -12,7 +12,7 @@ from multiprocessing import cpu_count
+--- setup/extensions.py.orig	Fri Dec 11 02:52:47 2015
++++ setup/extensions.py	Tue Dec 15 21:19:57 2015
+@@ -9,7 +9,7 @@ __docformat__ = 'restructuredtext en'
+ import textwrap, os, shlex, subprocess, glob, shutil, re, sys
+ from distutils import sysconfig
  
- from PyQt4.pyqtconfig import QtGuiModuleMakefile
- 
--from setup import Command, islinux, isbsd, isosx, SRC, iswindows
-+from setup import Command, islinux, isbsd, isosx, SRC, iswindows, isopenbsd
- from setup.build_environment import (chmlib_inc_dirs,
-         podofo_inc, podofo_lib, podofo_error, pyqt, OSX_SDK, NMAKE, QMAKE,
-         msvc, MT, win_inc, win_lib, win_ddk, magick_inc_dirs, magick_lib_dirs,
-@@ -46,13 +46,6 @@ class Extension(object):
+-from setup import Command, islinux, isbsd, isosx, SRC, iswindows, __version__
++from setup import Command, islinux, isbsd, isosx, SRC, iswindows, isopenbsd, __version__
+ from setup.build_environment import (
+     chmlib_inc_dirs, podofo_inc, podofo_lib, podofo_error, pyqt, NMAKE, QMAKE,
+     msvc, win_inc, win_lib, magick_inc_dirs, magick_lib_dirs, magick_libs,
+@@ -45,13 +45,6 @@ class Extension(object):
+         self.cflags = kwargs.get('cflags', [])
          self.ldflags = kwargs.get('ldflags', [])
          self.optional = kwargs.get('optional', False)
-         self.needs_ddk = kwargs.get('needs_ddk', False)
 -        of = kwargs.get('optimize_level', None)
 -        if of is None:
 -            of = '/Ox' if iswindows else '-O3'
@@ -31,10 +31,10 @@ it's correct with "env" here (handled in infrastructure).
 -            flag = '/O%d' if iswindows else '-O%d'
 -            of = flag % of
 -        self.cflags.insert(0, of)
+         self.qt_private_headers = kwargs.get('qt_private', [])
  
      def preflight(self, obj_dir, compiler, linker, builder, cflags, ldflags):
-         pass
-@@ -289,9 +282,10 @@ if isosx:
+@@ -306,9 +299,10 @@ if isosx:
                  ldflags=['-framework', 'CoreServices', '-framework', 'IOKit'])
              )
  
@@ -46,7 +46,7 @@ it's correct with "env" here (handled in infrastructure).
          libraries=['usb-1.0']
      ))
  
-@@ -305,6 +299,7 @@ if islinux or isosx:
+@@ -322,6 +316,7 @@ if islinux or isosx:
          'calibre/devices/mtp/unix/upstream/music-players.h',
          'calibre/devices/mtp/unix/upstream/device-flags.h',
          ],
@@ -54,23 +54,13 @@ it's correct with "env" here (handled in infrastructure).
          libraries=['mtp']
      ))
  
-@@ -332,9 +327,9 @@ if isbsd:
+@@ -349,8 +344,8 @@ if isbsd:
      cflags.append('-pthread')
      ldflags.append('-shared')
      cflags.append('-I'+sysconfig.get_python_inc())
 +    ldflags.append('-L'+os.path.join(sysconfig.PREFIX))
      ldflags.append('-lpython'+sysconfig.get_python_version())
- 
 -
- if isosx:
-     x, p = ('i386', 'x86_64')
-     archs = ['-arch', x, '-arch', p, '-isysroot',
-@@ -541,7 +536,7 @@ class Build(Command):
-         DESTDIR = .
-         TARGET = calibre
-         QT *= svg
--        INCLUDEPATH *= {conf} {inc}
-+        INCLUDEPATH *= "${X11BASE}/include" {conf} {inc}
-         win32-msvc*:DEFINES *= _CRT_SECURE_NO_WARNINGS
  
-         # Force C++ language
+ if isosx:
+     cflags.append('-D_OSX')

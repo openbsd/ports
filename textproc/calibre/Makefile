@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2015/11/06 20:37:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2015/12/15 22:03:58 sthen Exp $
 
 COMMENT =		ebook management application
 
-# 2.x versions use qt5
-DISTNAME =		calibre-1.48.0
+V =			2.46.0
+DISTNAME =		calibre-$V
 CATEGORIES =		textproc
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 EXTRACT_SUFX =		.tar.xz
-REVISION =		7
 
 HOMEPAGE =		http://calibre-ebook.com/
 
@@ -16,14 +14,17 @@ MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		lang/python \
-			x11/qt4
-
 WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 lib/qt4/QtDBus lib/qt4/QtGui
-WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml SM X11 Xext Xi Xinerama Xrender
-WANTLIB += chm fontconfig freetype icudata icui18n icuio icuuc m mtp
-WANTLIB += podofo pthread stdc++ usb-1.0 z
+WANTLIB += EGL GL MagickCore-6.Q16 MagickWand-6.Q16 Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Widgets X11 Xext Xrender chm crypto fontconfig
+WANTLIB += freetype glib-2.0 gthread-2.0 icudata icui18n icuio
+WANTLIB += icuuc m mtp podofo pthread usb-1.0 z
+
+MASTER_SITES =		https://github.com/kovidgoyal/calibre/releases/download/v$V/
+
+MODULES =		devel/gettext \
+			lang/python \
+			x11/qt5
 
 LIB_DEPENDS=		devel/chmlib \
 			devel/libmtp \
@@ -40,7 +41,7 @@ COMMON_DEPENDS =	databases/py-apsw \
 			net/py-dnspython \
 			graphics/png \
 			print/poppler, \
-			print/poppler,,-qt4 \
+			print/poppler,,-qt5 \
 			textproc/py-cssselect \
 			textproc/py-cssutils>=0.9.9 \
 			textproc/py-lxml>=2.2.8 \
@@ -48,17 +49,13 @@ COMMON_DEPENDS =	databases/py-apsw \
 			www/py-beautifulsoup \
 			www/py-CherryPy \
 			www/py-mechanize \
-			x11/py-qt4>=4.8.2p1 \
+			x11/py-qt5 \
 			www/py-mechanize
 
 BUILD_DEPENDS =		${COMMON_DEPENDS}
 
-# This is a disgusting workaround for calibre depending on private Qt4
-# interfaces that are not intended for external use. Upstream is fairly
-# hostile towards packagers and would prefer people directly run a file
-# from his website as root without any verification.
-BUILD_DEPENDS +=	x11/qt4:patch
-UPSTREAM_CLUE_LEVEL =	0 # https://bugs.launchpad.net/calibre/+bug/1094719
+# aaaargh
+#BUILD_DEPENDS +=	x11/qt5:patch
 
 SUBST_VARS =		WRKDIR
 
@@ -69,7 +66,7 @@ RUN_DEPENDS =		${COMMON_DEPENDS} \
 			x11/gtk+3,-guic
 
 LDFLAGS +=		-L${LOCALBASE}/lib
-MAKE_ENV +=		QMAKE="${LOCALBASE}/bin/qmake4"
+MAKE_ENV +=		QMAKE="${LOCALBASE}/bin/qmake-qt5"
 MAKE_ENV +=		LDFLAGS="${LDFLAGS}"
 MAKE_ENV +=		FT_LIB_DIR="${X11BASE}/lib"
 MAKE_ENV +=		XDG_DATA_DIRS="${PREFIX}/share"
@@ -79,7 +76,6 @@ MAKE_ENV +=		PODOFO_LIB_DIR="${LOCALBASE}/lib"
 # Requires /sys filesystem for HW detection
 MAKE_ENV +=		WITH_USB=no
 
-WRKDIST =		${WRKDIR}/calibre
 PORTHOME =		${WRKDIR}
 NO_TEST =		Yes
 MODPY_SETUPTOOLS =	Yes
@@ -89,13 +85,12 @@ MODPY_DISTUTILS_BUILD =		build
 MODPY_DISTUTILS_INSTALL =	install --prefix=${LOCALBASE} \
 				--root=${PREFIX}
 
-# There are 901 files that hard-code the python bin name
+# There are ERANGE files that hard-code the python bin name
 # Remove bundled cherrypy so it uses the system version
 pre-configure:
 	cd ${WRKSRC} && (rm -rf src/cherrypy ; \
 		find . -name '*.py' -print0 | xargs -0 perl -pi -e \
 		's,#!/usr/bin/env python(2)?,#!${MODPY_BIN},' )
-	cd ${WRKDIR}; ln -fs x11/qt4/qt-everywhere-opensource-src-*/include
 	cd ${WRKSRC}/setup && ${SUBST_CMD} extensions.py build_environment.py
 	cp ${FILESDIR}/fake-xdg ${WRKDIR}/bin; chmod +x ${WRKDIR}/bin/fake-xdg
 .for i in xdg-icon-resource xdg-desktop-menu xdg-mime
