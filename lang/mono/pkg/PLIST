@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2015/10/03 11:53:44 robert Exp $
+@comment $OpenBSD: PLIST,v 1.21 2015/12/15 15:32:04 robert Exp $
 bin/al
 bin/al2
 bin/caspol
@@ -50,6 +50,7 @@ bin/mono-service
 bin/mono-service2
 bin/mono-sgen-gdb.py
 bin/mono-shlib-cop
+bin/mono-symbolicate
 bin/mono-test-install
 bin/mono-xmltool
 @bin bin/monodis
@@ -136,9 +137,6 @@ lib/libmono-2.0.la
 lib/libmono-profiler-aot.a
 lib/libmono-profiler-aot.la
 @lib lib/libmono-profiler-aot.so.${LIBmono-profiler-aot_VERSION}
-lib/libmono-profiler-cov.a
-lib/libmono-profiler-cov.la
-@lib lib/libmono-profiler-cov.so.${LIBmono-profiler-cov_VERSION}
 lib/libmono-profiler-iomap.a
 lib/libmono-profiler-iomap.la
 @lib lib/libmono-profiler-iomap.so.${LIBmono-profiler-iomap_VERSION}
@@ -446,6 +444,7 @@ lib/mono/4.5/PEAPI.dll
 lib/mono/4.5/RabbitMQ.Client.Apigen.exe
 lib/mono/4.5/RabbitMQ.Client.Apigen.exe.mdb
 lib/mono/4.5/RabbitMQ.Client.dll
+lib/mono/4.5/SMDiagnostics.dll
 lib/mono/4.5/System.ComponentModel.Composition.dll
 lib/mono/4.5/System.ComponentModel.DataAnnotations.dll
 lib/mono/4.5/System.Configuration.Install.dll
@@ -497,6 +496,7 @@ lib/mono/4.5/System.Runtime.Serialization.dll
 lib/mono/4.5/System.Security.dll
 lib/mono/4.5/System.ServiceModel.Activation.dll
 lib/mono/4.5/System.ServiceModel.Discovery.dll
+lib/mono/4.5/System.ServiceModel.Internals.dll
 lib/mono/4.5/System.ServiceModel.Routing.dll
 lib/mono/4.5/System.ServiceModel.Web.dll
 lib/mono/4.5/System.ServiceModel.dll
@@ -602,6 +602,8 @@ lib/mono/4.5/mono-service.exe.mdb
 lib/mono/4.5/mono-shlib-cop.exe
 lib/mono/4.5/mono-shlib-cop.exe.config
 lib/mono/4.5/mono-shlib-cop.exe.mdb
+lib/mono/4.5/mono-symbolicate.exe
+lib/mono/4.5/mono-symbolicate.exe.mdb
 lib/mono/4.5/mono-xmltool.exe
 lib/mono/4.5/mono-xmltool.exe.mdb
 lib/mono/4.5/monolinker.exe
@@ -648,8 +650,6 @@ lib/mono/4.5/sqlsharp.exe
 lib/mono/4.5/sqlsharp.exe.mdb
 lib/mono/4.5/svcutil.exe
 lib/mono/4.5/svcutil.exe.mdb
-lib/mono/4.5/symbolicate.exe
-lib/mono/4.5/symbolicate.exe.mdb
 lib/mono/4.5/wsdl.exe
 lib/mono/4.5/wsdl.exe.mdb
 lib/mono/4.5/xbuild.exe
@@ -871,6 +871,10 @@ lib/mono/gac/RabbitMQ.Client/
 lib/mono/gac/RabbitMQ.Client/4.0.0.0__b03f5f7f11d50a3a/
 lib/mono/gac/RabbitMQ.Client/4.0.0.0__b03f5f7f11d50a3a/RabbitMQ.Client.dll
 lib/mono/gac/RabbitMQ.Client/4.0.0.0__b03f5f7f11d50a3a/RabbitMQ.Client.dll.mdb
+lib/mono/gac/SMDiagnostics/
+lib/mono/gac/SMDiagnostics/0.0.0.0__b77a5c561934e089/
+lib/mono/gac/SMDiagnostics/0.0.0.0__b77a5c561934e089/SMDiagnostics.dll
+lib/mono/gac/SMDiagnostics/0.0.0.0__b77a5c561934e089/SMDiagnostics.dll.mdb
 lib/mono/gac/System/
 lib/mono/gac/System.ComponentModel.Composition/
 lib/mono/gac/System.ComponentModel.Composition/4.0.0.0__b77a5c561934e089/
@@ -1077,6 +1081,10 @@ lib/mono/gac/System.ServiceModel.Discovery/
 lib/mono/gac/System.ServiceModel.Discovery/4.0.0.0__31bf3856ad364e35/
 lib/mono/gac/System.ServiceModel.Discovery/4.0.0.0__31bf3856ad364e35/System.ServiceModel.Discovery.dll
 lib/mono/gac/System.ServiceModel.Discovery/4.0.0.0__31bf3856ad364e35/System.ServiceModel.Discovery.dll.mdb
+lib/mono/gac/System.ServiceModel.Internals/
+lib/mono/gac/System.ServiceModel.Internals/0.0.0.0__b77a5c561934e089/
+lib/mono/gac/System.ServiceModel.Internals/0.0.0.0__b77a5c561934e089/System.ServiceModel.Internals.dll
+lib/mono/gac/System.ServiceModel.Internals/0.0.0.0__b77a5c561934e089/System.ServiceModel.Internals.dll.mdb
 lib/mono/gac/System.ServiceModel.Routing/
 lib/mono/gac/System.ServiceModel.Routing/4.0.0.0__31bf3856ad364e35/
 lib/mono/gac/System.ServiceModel.Routing/4.0.0.0__31bf3856ad364e35/System.ServiceModel.Routing.dll
@@ -1422,6 +1430,7 @@ lib/pkgconfig/xbuild12.pc
 @man man/man1/mono-configuration-crypto.1
 @man man/man1/mono-service.1
 @man man/man1/mono-shlib-cop.1
+@man man/man1/mono-symbolicate.1
 @man man/man1/mono-xmltool.1
 @man man/man1/mono.1
 @man man/man1/monodis.1
@@ -1540,3 +1549,5 @@ share/mono-2.0/
 share/mono-2.0/mono/
 share/mono-2.0/mono/cil/
 share/mono-2.0/mono/cil/cil-opcodes.xml
+share/mono-2.0/mono/profiler/
+share/mono-2.0/mono/profiler/mono-profiler-log.suppression

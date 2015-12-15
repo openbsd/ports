@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_dis_Makefile_in,v 1.1 2015/10/03 11:53:44 robert Exp $
---- mono/dis/Makefile.in.orig	Sat Sep 26 19:06:57 2015
-+++ mono/dis/Makefile.in	Sat Sep 26 19:07:02 2015
-@@ -428,7 +428,7 @@ top_build_prefix = @top_build_prefix@
+$OpenBSD: patch-mono_dis_Makefile_in,v 1.2 2015/12/15 15:32:04 robert Exp $
+--- mono/dis/Makefile.in.orig	Thu Nov 12 10:00:45 2015
++++ mono/dis/Makefile.in	Sun Dec 13 18:11:25 2015
+@@ -427,7 +427,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AM_CPPFLAGS = $(GLIB_CFLAGS) -I$(top_srcdir)
@@ -9,4 +9,4 @@ $OpenBSD: patch-mono_dis_Makefile_in,v 1.1 2015/10/03 11:53:44 robert Exp $
 +@SUPPORT_SGEN_FALSE@metadata_lib = $(top_builddir)/mono/metadata/libmonoruntime-static.la
  @SUPPORT_SGEN_TRUE@metadata_lib = $(top_builddir)/mono/metadata/libmonoruntimesgen-static.la
  @SUPPORT_SGEN_FALSE@gc_lib = $(LIBGC_STATIC_LIBS)
- runtime_lib = \
+ @SUPPORT_SGEN_TRUE@gc_lib = $(top_builddir)/mono/sgen/libmonosgen-static.la
