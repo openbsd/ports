@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/05/15 20:59:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/12/15 11:42:32 sthen Exp $
 @conflict dovecot-sieve-<=0.1.18p0v0
 @pkgpath mail/dovecot,-sieve
 @pkgpath mail/dovecot,-sieve,bdb
@@ -38,6 +38,7 @@ include/dovecot/sieve/sieve-error.h
 include/dovecot/sieve/sieve-ext-copy.h
 include/dovecot/sieve/sieve-ext-enotify.h
 include/dovecot/sieve/sieve-ext-environment.h
+include/dovecot/sieve/sieve-ext-imap4flags.h
 include/dovecot/sieve/sieve-ext-mailbox.h
 include/dovecot/sieve/sieve-ext-variables.h
 include/dovecot/sieve/sieve-extensions.h
@@ -82,6 +83,7 @@ lib/dovecot/sieve/lib90_sieve_extprograms_plugin.so
 @man man/man1/sievec.1
 @man man/man1/sieved.1
 @man man/man7/pigeonhole.7
+share/aclocal/dovecot-pigeonhole.m4
 share/doc/dovecot/example-config/
 share/doc/dovecot/example-config/conf.d/
 share/doc/dovecot/example-config/conf.d/20-managesieve.conf
