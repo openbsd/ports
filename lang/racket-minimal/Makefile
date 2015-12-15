@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/12/01 18:26:50 juanfra Exp $
+# $OpenBSD: Makefile,v 1.6 2015/12/15 23:56:15 juanfra Exp $
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
@@ -10,11 +10,12 @@ SHARED_ONLY =		Yes
 # is buggy and the devs can't fix the problems because they have not access
 # to these architectures. In addition, the C code is extremely slow compared
 # with the JIT.
-ONLY_FOR_ARCHS =	i386 amd64
+ONLY_FOR_ARCHS =	i386 amd64 sparc64
 
 COMMENT =		multi-paradigm programming language
 
 V =			6.3
+REVISION =		0
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
