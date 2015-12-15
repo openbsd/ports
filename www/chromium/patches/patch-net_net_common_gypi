@@ -1,0 +1,11 @@
+$OpenBSD: patch-net_net_common_gypi,v 1.1 2015/12/15 10:59:50 robert Exp $
+--- net/net_common.gypi.orig.port	Tue Dec 15 11:50:08 2015
++++ net/net_common.gypi	Tue Dec 15 11:50:29 2015
+@@ -219,7 +219,6 @@
+             'sources!': [
+               'base/network_change_notifier_linux.cc',
+               'base/network_change_notifier_netlink_linux.cc',
+-              'proxy/proxy_config_service_linux.cc',
+             ],
+           },{
+             'dependencies': [
