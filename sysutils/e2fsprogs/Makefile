@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2014/11/10 20:38:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2015/12/15 10:52:02 ajacoutot Exp $
 
 COMMENT=	utilities to manipulate ext2 filesystems
 
 DISTNAME=	e2fsprogs-1.42.12
-REVISION=	0
+REVISION=	1
 CATEGORIES=	sysutils devel
 SHARED_LIBS=	blkid		0.0 \
 		com_err		21.0 \
@@ -29,7 +29,8 @@ AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS+= --disable-tls \
 		--disable-uuidd \
 		--enable-elf-shlibs
-CONFIGURE_ENV=	CPPFLAGS="-D_EXT2_USE_C_VERSIONS_"
+CONFIGURE_ENV=	CPPFLAGS="-D_EXT2_USE_C_VERSIONS_" \
+		ac_cv_header_execinfo_h=no
 USE_GMAKE=	Yes
 
 MAKE_FLAGS=	V=1 \
