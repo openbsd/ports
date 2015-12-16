@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2015/11/05 19:08:58 jca Exp $
+# $OpenBSD: Makefile,v 1.22 2015/12/16 06:42:57 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	advanced, stable and fast irc server
 
-DISTNAME =	ircd-ratbox-3.0.8
-REVISION =	1
+DISTNAME =	ircd-ratbox-3.0.9
 CATEGORIES =	net
 MASTER_SITES =	${HOMEPAGE}download/
 EXTRACT_SUFX =	.tar.bz2
@@ -25,8 +24,7 @@ LOGDIR =		/var/log/ircd-ratbox
 SUBST_VARS +=		CONFDIR LOGDIR
 
 LIBTOOL_FLAGS =		--tag=disable-static
-CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.68
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-openssl=/usr \
 			--with-confdir=${CONFDIR} \
 			--with-logdir=${LOGDIR} \

@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_example_conf,v 1.3 2011/11/27 10:57:24 fgsch Exp $
---- doc/example.conf.orig	Thu Oct 13 01:09:59 2011
-+++ doc/example.conf	Wed Nov 16 20:52:44 2011
+$OpenBSD: patch-doc_example_conf,v 1.4 2015/12/16 06:42:57 ajacoutot Exp $
+--- doc/example.conf.orig	Tue Sep 29 11:09:55 2015
++++ doc/example.conf	Wed Dec 16 00:29:53 2015
 @@ -98,13 +98,13 @@ serverinfo {
  	default_max_clients = 10000;
  
@@ -65,7 +65,7 @@ $OpenBSD: patch-doc_example_conf,v 1.3 2011/11/27 10:57:24 fgsch Exp $
  
  	/* umodes: the specific umodes this oper gets when they oper.
  	 * If this is specified an oper will not be given oper_umodes
-@@ -1022,8 +1022,8 @@ modules {
+@@ -1017,8 +1017,8 @@ modules {
  	/* module path: paths to search for modules specified below and 
  	 * in /modload.
  	 */
