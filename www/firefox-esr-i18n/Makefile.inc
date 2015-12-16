@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.22 2015/11/04 07:34:19 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.23 2015/12/16 10:08:53 landry Exp $
 
 # keep in sync with working archs.. sigh
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 PKG_ARCH =	*
 
-FV =		38.4.0
+FV =		38.5.0
 V =		${FV:C/b.$//}
 NAME =		firefox-esr-i18n
 
