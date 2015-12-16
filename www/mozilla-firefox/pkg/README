@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.12 2015/04/24 20:42:08 sthen Exp $
+$OpenBSD: README,v 1.13 2015/12/16 10:12:14 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,8 +13,6 @@ firefox -ProfileManager, and click "Create Profile".
 
 If Firefox doesn't start at all, try starting it with -safe-mode
 switch, which disables extensions and themes for your session.
-
-To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
 
 Using mailto: links
 ===================
