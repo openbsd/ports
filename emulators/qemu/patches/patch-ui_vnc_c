@@ -1,9 +1,51 @@
-$OpenBSD: patch-ui_vnc_c,v 1.1 2015/09/04 14:20:29 ajacoutot Exp $
+$OpenBSD: patch-ui_vnc_c,v 1.2 2015/12/16 06:41:06 ajacoutot Exp $
 
 vnc: fix memory corruption (CVE-2015-5225)
 
---- ui/vnc.c.orig	Fri Sep  4 07:13:42 2015
-+++ ui/vnc.c	Fri Sep  4 07:20:28 2015
+The _cmp_bytes variable added by commit "bea60dd ui/vnc: fix potential
+memory corruption issues" can become negative.  Result is (possibly
+exploitable) memory corruption.  Reason for that is it uses the stride
+instead of bytes per scanline to apply limits.
+
+For the server surface is is actually fine.  vnc creates that itself,
+there is never any padding and thus scanline length always equals stride.
+
+For the guest surface scanline length and stride are typically identical
+too, but it doesn't has to be that way.  So add and use a new variable
+(guest_ll) for the guest scanline length.  Also rename min_stride to
+line_bytes to make more clear what it actually is.  Finally sprinkle
+in an assert() to make sure we never use a negative _cmp_bytes again.
+
+ui: vnc: avoid floating point exception
+
+While sending 'SetPixelFormat' messages to a VNC server,
+the client could set the 'red-max', 'green-max' and 'blue-max'
+values to be zero. This leads to a floating point exception in
+write_png_palette while doing frame buffer updates.
+
+CVE-2015-8504
+
+--- ui/vnc.c.orig	Tue Mar 10 13:38:32 2015
++++ ui/vnc.c	Tue Dec 15 20:31:59 2015
+@@ -2036,15 +2036,15 @@ static void set_pixel_format(VncState *vs,
+         return;
+     }
+ 
+-    vs->client_pf.rmax = red_max;
++    vs->client_pf.rmax = red_max ? red_max : 0xFF;
+     vs->client_pf.rbits = hweight_long(red_max);
+     vs->client_pf.rshift = red_shift;
+     vs->client_pf.rmask = red_max << red_shift;
+-    vs->client_pf.gmax = green_max;
++    vs->client_pf.gmax = green_max ? green_max : 0xFF;
+     vs->client_pf.gbits = hweight_long(green_max);
+     vs->client_pf.gshift = green_shift;
+     vs->client_pf.gmask = green_max << green_shift;
+-    vs->client_pf.bmax = blue_max;
++    vs->client_pf.bmax = blue_max ? blue_max : 0xFF;
+     vs->client_pf.bbits = hweight_long(blue_max);
+     vs->client_pf.bshift = blue_shift;
+     vs->client_pf.bmask = blue_max << blue_shift;
 @@ -2689,7 +2689,7 @@ static int vnc_refresh_server_surface(VncDisplay *vd)
                      pixman_image_get_width(vd->server));
      int height = MIN(pixman_image_get_height(vd->guest.fb),

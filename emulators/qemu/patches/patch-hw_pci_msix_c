@@ -1,0 +1,29 @@
+$OpenBSD: patch-hw_pci_msix_c,v 1.1 2015/12/16 06:41:06 ajacoutot Exp $
+
+msix: implement pba write (but read-only)
+
+qpci_msix_pending() writes on pba region, causing qemu to SEGV
+
+(without this patch, this can be reproduced with the ivshmem qtest)
+
+Implement an empty mmio write to avoid the crash.
+
+CVE-2015-7549
+
+--- hw/pci/msix.c.orig	Tue Dec 15 20:03:17 2015
++++ hw/pci/msix.c	Tue Dec 15 20:04:53 2015
+@@ -200,8 +200,14 @@ static uint64_t msix_pba_mmio_read(void *opaque, hwadd
+     return pci_get_long(dev->msix_pba + addr);
+ }
+ 
++static void msix_pba_mmio_write(void *opaque, hwaddr addr,
++                                uint64_t val, unsigned size)
++{
++}
++
+ static const MemoryRegionOps msix_pba_mmio_ops = {
+     .read = msix_pba_mmio_read,
++    .write = msix_pba_mmio_write,
+     .endianness = DEVICE_LITTLE_ENDIAN,
+     .valid = {
+         .min_access_size = 4,

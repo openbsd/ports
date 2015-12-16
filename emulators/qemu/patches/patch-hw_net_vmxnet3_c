@@ -1,0 +1,80 @@
+$OpenBSD: patch-hw_net_vmxnet3_c,v 1.1 2015/12/16 06:41:06 ajacoutot Exp $
+
+net: vmxnet3: avoid memory leakage in activate_device
+
+Vmxnet3 device emulator does not check if the device is active
+before activating it, also it did not free the transmit & receive
+buffers while deactivating the device, thus resulting in memory
+leakage on the host. This patch fixes both these issues to avoid
+host memory leakage.
+
+CVE-2015-8567 and CVE-2015-8568
+
+--- hw/net/vmxnet3.c.orig	Tue Mar 10 13:38:27 2015
++++ hw/net/vmxnet3.c	Tue Dec 15 20:42:02 2015
+@@ -1135,8 +1135,13 @@ static void vmxnet3_reset_mac(VMXNET3State *s)
+ 
+ static void vmxnet3_deactivate_device(VMXNET3State *s)
+ {
+-    VMW_CBPRN("Deactivating vmxnet3...");
+-    s->device_active = false;
++    if (s->device_active) {
++        VMW_CBPRN("Deactivating vmxnet3...");
++        vmxnet_tx_pkt_reset(s->tx_pkt);
++        vmxnet_tx_pkt_uninit(s->tx_pkt);
++        vmxnet_rx_pkt_uninit(s->rx_pkt);
++        s->device_active = false;
++    }
+ }
+ 
+ static void vmxnet3_reset(VMXNET3State *s)
+@@ -1145,7 +1150,6 @@ static void vmxnet3_reset(VMXNET3State *s)
+ 
+     vmxnet3_deactivate_device(s);
+     vmxnet3_reset_interrupt_states(s);
+-    vmxnet_tx_pkt_reset(s->tx_pkt);
+     s->drv_shmem = 0;
+     s->tx_sop = true;
+     s->skip_current_tx_pkt = false;
+@@ -1368,6 +1372,12 @@ static void vmxnet3_activate_device(VMXNET3State *s)
+         return;
+     }
+ 
++    /* Verify if device is active */
++    if (s->device_active) {
++        VMW_CFPRN("Vmxnet3 device is active");
++        return;
++    }
++
+     vmxnet3_adjust_by_guest_type(s);
+     vmxnet3_update_features(s);
+     vmxnet3_update_pm_state(s);
+@@ -1564,7 +1574,7 @@ static void vmxnet3_handle_command(VMXNET3State *s, ui
+         break;
+ 
+     case VMXNET3_CMD_QUIESCE_DEV:
+-        VMW_CBPRN("Set: VMXNET3_CMD_QUIESCE_DEV - pause the device");
++        VMW_CBPRN("Set: VMXNET3_CMD_QUIESCE_DEV - deactivate the device");
+         vmxnet3_deactivate_device(s);
+         break;
+ 
+@@ -1669,7 +1679,7 @@ vmxnet3_io_bar1_write(void *opaque,
+          * shared address only after we get the high part
+          */
+         if (val == 0) {
+-            s->device_active = false;
++            vmxnet3_deactivate_device(s);
+         }
+         s->temp_shared_guest_driver_memory = val;
+         s->drv_shmem = 0;
+@@ -1956,9 +1966,7 @@ static bool vmxnet3_peer_has_vnet_hdr(VMXNET3State *s)
+ static void vmxnet3_net_uninit(VMXNET3State *s)
+ {
+     g_free(s->mcast_list);
+-    vmxnet_tx_pkt_reset(s->tx_pkt);
+-    vmxnet_tx_pkt_uninit(s->tx_pkt);
+-    vmxnet_rx_pkt_uninit(s->rx_pkt);
++    vmxnet3_deactivate_device(s);
+     qemu_del_nic(s->nic);
+ }
+ 

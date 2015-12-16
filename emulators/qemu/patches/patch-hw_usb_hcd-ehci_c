@@ -1,0 +1,34 @@
+$OpenBSD: patch-hw_usb_hcd-ehci_c,v 1.1 2015/12/16 06:41:06 ajacoutot Exp $
+
+ehci: make idt processing more robust
+
+Make ehci_process_itd return an error in case we didn't do any actual
+iso transfer because we've found no active transaction.  That'll avoid
+ehci happily run in circles forever if the guest builds a loop out of
+idts.
+
+This is CVE-2015-8558.
+
+--- hw/usb/hcd-ehci.c.orig	Tue Dec 15 20:12:17 2015
++++ hw/usb/hcd-ehci.c	Tue Dec 15 20:13:31 2015
+@@ -1395,7 +1395,7 @@ static int ehci_process_itd(EHCIState *ehci,
+ {
+     USBDevice *dev;
+     USBEndpoint *ep;
+-    uint32_t i, len, pid, dir, devaddr, endp;
++    uint32_t i, len, pid, dir, devaddr, endp, xfers = 0;
+     uint32_t pg, off, ptr1, ptr2, max, mult;
+ 
+     ehci->periodic_sched_active = PERIODIC_ACTIVE;
+@@ -1485,9 +1485,10 @@ static int ehci_process_itd(EHCIState *ehci,
+                 ehci_raise_irq(ehci, USBSTS_INT);
+             }
+             itd->transact[i] &= ~ITD_XACT_ACTIVE;
++            xfers++;
+         }
+     }
+-    return 0;
++    return xfers ? 0 : -1;
+ }
+ 
+ 
