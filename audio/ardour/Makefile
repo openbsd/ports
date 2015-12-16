@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/10/01 20:09:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/12/16 08:52:22 ajacoutot Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -9,7 +9,7 @@ SHARED_ONLY =		Yes
 COMMENT =		digital audio workstation
 
 DISTNAME =		ardour-2.8.16
-REVISION =		0
+REVISION =		1
 CATEGORIES =		audio
 HOMEPAGE =		http://ardour.org
 
@@ -60,8 +60,10 @@ MODSCONS_ENV=	CC="${CC}" \
 		FREEDESKTOP=1 \
 		SYSLIBS=1
 
+BUILD_DEPENDS=		audio/vamp-plugin-sdk
+
 # the fd.or utilities are needed at build time (FREEDESKTOP=1)
-BUILD_DEPENDS =		devel/desktop-file-utils \
+BUILD_DEPENDS +=	devel/desktop-file-utils \
 			x11/gtk+3,-guic \
 			misc/shared-mime-info
 
@@ -85,6 +87,8 @@ pre-configure:
 	sed -i -e "s,!!CFLAGS!!,${CFLAGS},g" \
 		-e "s,!!CXXFLAGS!!,${CXXFLAGS},g" \
 		${WRKSRC}/SConstruct
+	sed -i "s,/usr/local,${LOCALBASE},g" \
+		${WRKSRC}/libs/vamp-sdk/src/vamp-hostsdk/PluginHostAdapter.cpp
 
 post-install:
 	mv ${WRKINST}/etc/ardour2 ${PREFIX}/share/examples/
