@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/07/02 21:31:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2015/12/16 09:37:21 ajacoutot Exp $
 
 COMMENT=		MTP device filesystem
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c fuse m mtp pthread usb-1.0
 
-# C++11
+# c++11
 MODULES +=		gcc4
 MODGCC4_LANGS=		c++
 MODGCC4_ARCHS=		*
