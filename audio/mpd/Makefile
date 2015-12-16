@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.83 2015/12/16 07:58:56 landry Exp $
+# $OpenBSD: Makefile,v 1.84 2015/12/16 08:48:09 dcoppa Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
-DISTNAME =		mpd-0.19.11
-REVISION =		0
+DISTNAME =		mpd-0.19.12
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -109,6 +108,7 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 .if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ENV +=	ax_cv_check_ldflags___Wl___gc_sections=no
 .endif
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mpd
 	${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example \
