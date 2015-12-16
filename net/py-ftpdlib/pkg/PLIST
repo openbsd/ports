@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/06/17 01:53:06 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/12/16 00:00:35 juanfra Exp $
+bin/ftpbench
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -14,19 +15,8 @@ lib/python${MODPY_VERSION}/site-packages/pyftpdlib/_compat.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/authorizers.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/authorizers.pyc
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/__init__.py
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/authorizers.py
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/authorizers.pyc
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/filesystems.py
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/filesystems.pyc
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/handlers.py
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib/contrib/handlers.pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/filesystems.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/filesystems.pyc
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib/ftpserver.py
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib/ftpserver.pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/handlers.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/handlers.pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/ioloop.py
@@ -35,3 +25,24 @@ lib/python${MODPY_VERSION}/site-packages/pyftpdlib/log.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/log.pyc
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/servers.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/servers.pyc
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/splice.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/splice.pyc
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/README
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/keycert.pem
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/runner.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/runner.pyc
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_authorizers.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_authorizers.pyc
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_filesystems.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_filesystems.pyc
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_functional.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_functional.pyc
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_functional_ssl.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_functional_ssl.pyc
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_ioloop.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_ioloop.pyc
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_servers.py
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib/test/test_servers.pyc
