@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/12/10 11:26:27 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.41 2015/12/16 13:05:50 dcoppa Exp $
 
 BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()
 BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'Binding'
@@ -6,6 +6,8 @@ BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'B
 COMMENT =		ncurses mpd client inspired by ncmpc
 
 DISTNAME =		ncmpcpp-0.7
+
+REVISION =		0
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -23,12 +25,13 @@ MASTER_SITES =		${HOMEPAGE}stable/
 WANTLIB =		boost_filesystem-mt boost_locale-mt \
 			boost_program_options-mt boost_regex-mt \
 			boost_system-mt boost_thread-mt c crypto \
-			curl idn m mpdclient ncursesw nghttp2 pthread \
-			readline ssl stdc++ tag termcap z
+			curl ereadline idn m mpdclient ncursesw \
+			nghttp2 pthread ssl stdc++ tag termcap z
 
 LIB_DEPENDS =		audio/libmpdclient>=2.4 \
 			audio/taglib \
 			devel/boost \
+			devel/readline \
 			net/curl
 
 MODULES =		devel/gettext gcc4
@@ -50,9 +53,14 @@ CONFIGURE_ARGS =	--enable-clock \
 CONFIGURE_ENV =		BOOST_LIB_SUFFIX="-mt" \
 			CPPFLAGS="-DBOOST_RESULT_OF_USE_DECLTYPE \
 				  -D_XOPEN_SOURCE_EXTENDED \
+				  -I${LOCALBASE}/include/ereadline \
 				  -pthread" \
 			ICU_CFLAGS="icu-is-not-really-needed" \
-			ICU_LIBS="icu-is-not-really-needed"
+			ICU_LIBS="icu-is-not-really-needed" \
+			ax_cv_lib_readline="-L${LOCALBASE}/lib -lereadline -ltermcap"
+
+# filthy workaround for a mysterious "Abort trap" error :(
+CXXFLAGS +=		-O1
 
 NO_TEST =		Yes
 
