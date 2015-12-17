@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2015/11/22 08:12:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2015/12/17 09:45:33 ajacoutot Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-8.5.2
+DISTNAME=	mkvtoolnix-8.6.1
 CATEGORIES=	multimedia x11
 MASTER_SITES=	${HOMEPAGE}/sources/
 EXTRACT_SUFX=	.tar.xz
