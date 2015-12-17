@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1426 2015/12/07 18:42:53 jca Exp $
+# $OpenBSD: Makefile,v 1.1427 2015/12/17 19:35:09 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1216,6 +1216,7 @@
      SUBDIR += py-dateutil
      SUBDIR += py-dateutil,python3
      SUBDIR += py-decorator
+     SUBDIR += py-decorator,python3
      SUBDIR += py-decoratortools
      SUBDIR += py-distutils-extra
      SUBDIR += py-distutils-extra,python3
