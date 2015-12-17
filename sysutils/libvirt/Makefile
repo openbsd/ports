@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.42 2015/11/05 08:57:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2015/12/17 19:12:04 jasper Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-1.2.21
+DISTNAME=		libvirt-1.3.0
 CATEGORIES=		sysutils devel
 
-SHARED_LIBS +=  virt-qemu                 0.3 # 1002.19
-SHARED_LIBS +=  virt                      0.7 # 1002.19
-SHARED_LIBS +=	virt-lxc		  0.0 # 1002.19
-SHARED_LIBS +=	virt-admin                0.0 # 1002.19
+SHARED_LIBS +=	virt-qemu                 0.4 # 1003.0
+SHARED_LIBS +=	virt                      0.8 # 1003.0
+SHARED_LIBS +=	virt-lxc		  0.0 # 1003.0
+SHARED_LIBS +=	virt-admin                0.0 # 1003.0
 
 HOMEPAGE=		https://libvirt.org/
 
@@ -25,9 +25,9 @@ MODULES=		devel/gettext \
 
 MODPY_RUNDEP=		No
 
-WANTLIB += avahi-client avahi-common c crypto curl dbus-1
-WANTLIB += gnutls hogweed idn m ncurses nettle nghttp2 p11-kit lzma
-WANTLIB += pthread readline ssh2 ssl tasn1 util xml2 z ffi gmp
+WANTLIB += avahi-client avahi-common c crypto curl dbus-1 ffi
+WANTLIB += gmp gnutls hogweed idn lzma m ncurses nettle nghttp2
+WANTLIB += p11-kit pthread readline ssh2 ssl tasn1 util xml2 z
 
 BUILD_DEPENDS=		textproc/docbook \
 			textproc/docbook2x

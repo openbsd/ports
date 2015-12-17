@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_admin_admin_protocol_c,v 1.1 2015/12/17 19:12:04 jasper Exp $
+
+Fix undefined reference to xdr_uint64_t
+
+--- src/admin/admin_protocol.c.orig	Thu Dec 17 19:46:06 2015
++++ src/admin/admin_protocol.c	Thu Dec 17 19:46:45 2015
+@@ -6,6 +6,22 @@
+ 
+ #include "admin_protocol.h"
+ 
++#ifdef HAVE_XDR_U_INT64_T
++# define xdr_uint64_t xdr_u_int64_t
++#endif
++#ifndef IXDR_PUT_INT32
++# define IXDR_PUT_INT32 IXDR_PUT_LONG
++#endif
++#ifndef IXDR_GET_INT32
++# define IXDR_GET_INT32 IXDR_GET_LONG
++#endif
++#ifndef IXDR_PUT_U_INT32
++# define IXDR_PUT_U_INT32 IXDR_PUT_U_LONG
++#endif
++#ifndef IXDR_GET_U_INT32
++# define IXDR_GET_U_INT32 IXDR_GET_U_LONG
++#endif
++
+ bool_t
+ xdr_admin_nonnull_string (XDR *xdrs, admin_nonnull_string *objp)
+ {

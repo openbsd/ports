@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_logging_log_protocol_c,v 1.1 2015/12/17 19:12:04 jasper Exp $
+
+Fix undefined reference to xdr_uint64_t
+
+--- src/logging/log_protocol.c.orig	Thu Dec 17 19:47:09 2015
++++ src/logging/log_protocol.c	Thu Dec 17 19:47:15 2015
+@@ -7,6 +7,22 @@
+ #include "log_protocol.h"
+ #include "internal.h"
+ 
++#ifdef HAVE_XDR_U_INT64_T
++# define xdr_uint64_t xdr_u_int64_t
++#endif
++#ifndef IXDR_PUT_INT32
++# define IXDR_PUT_INT32 IXDR_PUT_LONG
++#endif
++#ifndef IXDR_GET_INT32
++# define IXDR_GET_INT32 IXDR_GET_LONG
++#endif
++#ifndef IXDR_PUT_U_INT32
++# define IXDR_PUT_U_INT32 IXDR_PUT_U_LONG
++#endif
++#ifndef IXDR_GET_U_INT32
++# define IXDR_GET_U_INT32 IXDR_GET_U_LONG
++#endif
++
+ bool_t
+ xdr_virLogManagerProtocolUUID (XDR *xdrs, virLogManagerProtocolUUID objp)
+ {
