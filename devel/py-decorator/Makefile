@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2015/12/03 18:19:25 shadchin Exp $
+# $OpenBSD: Makefile,v 1.14 2015/12/17 19:28:14 shadchin Exp $
 
 COMMENT =	simplify usage of decorators
 
-MODPY_EGG_VERSION = 4.0.4
+MODPY_EGG_VERSION = 4.0.6
 DISTNAME =	decorator-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
 CATEGORIES =	devel
 
-HOMEPAGE =	http://pypi.python.org/pypi/decorator
+HOMEPAGE =	https://pythonhosted.org/decorator/
+
+MAINTAINER =	Alexandr Shadchin <shadchin@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,5 +20,8 @@ MODPY_PI =	Yes
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS = Yes
+
+FLAVORS =	python3
+FLAVOR ?=
 
 .include <bsd.port.mk>
