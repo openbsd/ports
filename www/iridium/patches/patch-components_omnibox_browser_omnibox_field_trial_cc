@@ -1,7 +1,7 @@
-$OpenBSD: patch-components_omnibox_browser_omnibox_field_trial_cc,v 1.1 2015/10/24 18:22:21 robert Exp $
---- components/omnibox/browser/omnibox_field_trial.cc.orig.port	Wed Oct 14 07:47:49 2015
-+++ components/omnibox/browser/omnibox_field_trial.cc	Wed Oct 14 07:48:02 2015
-@@ -154,7 +154,7 @@ bool OmniboxFieldTrial::InZeroSuggestFieldTrial() {
+$OpenBSD: patch-components_omnibox_browser_omnibox_field_trial_cc,v 1.2 2015/12/17 07:02:48 robert Exp $
+--- components/omnibox/browser/omnibox_field_trial.cc.orig.port	Tue Nov 24 21:00:54 2015
++++ components/omnibox/browser/omnibox_field_trial.cc	Wed Dec  2 08:18:32 2015
+@@ -170,7 +170,7 @@ bool OmniboxFieldTrial::InZeroSuggestFieldTrial() {
    if (variations::GetVariationParamValue(
            kBundledExperimentFieldTrialName, kZeroSuggestRule) == "false")
      return false;

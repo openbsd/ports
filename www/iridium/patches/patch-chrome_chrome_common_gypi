@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_common_gypi,v 1.3 2015/10/24 18:22:21 robert Exp $
---- chrome/chrome_common.gypi.orig.port	Tue Oct 13 21:04:32 2015
-+++ chrome/chrome_common.gypi	Wed Oct 14 10:33:10 2015
-@@ -401,6 +401,11 @@
+$OpenBSD: patch-chrome_chrome_common_gypi,v 1.4 2015/12/17 07:02:48 robert Exp $
+--- chrome/chrome_common.gypi.orig.port	Tue Nov 24 21:00:54 2015
++++ chrome/chrome_common.gypi	Wed Dec  2 08:18:32 2015
+@@ -387,6 +387,11 @@
            'sources': [ '<@(chrome_common_mac_sources)' ],
            'dependencies': [ 'app_mode_app_support' ],
          }],
@@ -13,7 +13,7 @@ $OpenBSD: patch-chrome_chrome_common_gypi,v 1.3 2015/10/24 18:22:21 robert Exp $
          ['OS != "ios"', {
            'dependencies': [
              'common_mojo_bindings',
-@@ -545,6 +550,7 @@
+@@ -533,6 +538,7 @@
          }],
          ['safe_browsing==1', {
            'sources': [ '<@(chrome_common_full_safe_browsing_sources)', ],

@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_views_exclusive_access_bubble_views_cc,v 1.1 2015/12/17 07:02:48 robert Exp $
+--- chrome/browser/ui/views/exclusive_access_bubble_views.cc.orig.port	Sat Dec 12 11:16:43 2015
++++ chrome/browser/ui/views/exclusive_access_bubble_views.cc	Sat Dec 12 11:24:57 2015
+@@ -133,7 +133,7 @@ ExclusiveAccessBubbleViews::ExclusiveAccessView::Exclu
+       button_view_(nullptr),
+       browser_fullscreen_exit_accelerator_(accelerator) {
+   views::BubbleBorder::Shadow shadow_type = views::BubbleBorder::BIG_SHADOW;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Use a smaller shadow on Linux (including ChromeOS) as the shadow assets can
+   // overlap each other in a fullscreen notification bubble.
+   // See http://crbug.com/462983.

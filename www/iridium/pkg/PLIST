@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/10/24 18:22:22 robert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/12/17 07:02:48 robert Exp $
 bin/iridium
 iridium/
 iridium/chrome_100_percent.pak
+iridium/chrome_200_percent.pak
+iridium/chrome_material_100_percent.pak
+iridium/chrome_material_200_percent.pak
 iridium/content_resources.pak
 iridium/icudtl.dat
 @bin iridium/iridium
@@ -122,14 +125,12 @@ iridium/resources/inspector/Images/responsiveDesign.png
 iridium/resources/inspector/Images/responsiveDesign_2x.png
 iridium/resources/inspector/Images/searchNext.png
 iridium/resources/inspector/Images/searchPrev.png
-iridium/resources/inspector/Images/securityStateInsecure.png
-iridium/resources/inspector/Images/securityStateInsecure_2x.png
-iridium/resources/inspector/Images/securityStateNeutral.png
-iridium/resources/inspector/Images/securityStateNeutral_2x.png
-iridium/resources/inspector/Images/securityStateSecure.png
-iridium/resources/inspector/Images/securityStateSecure_2x.png
-iridium/resources/inspector/Images/securityStateWarning.png
-iridium/resources/inspector/Images/securityStateWarning_2x.png
+iridium/resources/inspector/Images/securityPropertyInsecure.svg
+iridium/resources/inspector/Images/securityPropertySecure.svg
+iridium/resources/inspector/Images/securityPropertyWarning.svg
+iridium/resources/inspector/Images/securityStateInsecure.svg
+iridium/resources/inspector/Images/securityStateNeutral.svg
+iridium/resources/inspector/Images/securityStateSecure.svg
 iridium/resources/inspector/Images/serviceWorker.svg
 iridium/resources/inspector/Images/sessionStorage.png
 iridium/resources/inspector/Images/settingsListRemove.png
@@ -157,8 +158,10 @@ iridium/resources/inspector/audits_module.js
 iridium/resources/inspector/cm_modes_module.js
 iridium/resources/inspector/components_lazy_module.js
 iridium/resources/inspector/console_module.js
+iridium/resources/inspector/devices_module.js
 iridium/resources/inspector/devtools.js
 iridium/resources/inspector/devtools_extension_api.js
+iridium/resources/inspector/diff_module.js
 iridium/resources/inspector/elements_module.js
 iridium/resources/inspector/emulated_devices/
 iridium/resources/inspector/emulated_devices/google-nexus-5-horizontal-default-1x.png
@@ -196,6 +199,7 @@ iridium/resources/inspector/toolbox.css
 iridium/resources/inspector/toolbox.html
 iridium/resources/inspector/toolbox.js
 iridium/resources/inspector/ui_lazy_module.js
+iridium/shell_resources.pak
 @man man/man1/iridium.1
 share/applications/iridium-browser.desktop
 share/icons/hicolor/128x128/apps/iridium.png

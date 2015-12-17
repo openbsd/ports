@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_pdfium_pdfium_gyp,v 1.1 2015/05/06 14:27:24 robert Exp $
---- third_party/pdfium/pdfium.gyp.orig.port	Sun Apr 26 11:00:43 2015
-+++ third_party/pdfium/pdfium.gyp	Sun Apr 26 11:00:54 2015
+$OpenBSD: patch-third_party_pdfium_pdfium_gyp,v 1.2 2015/12/17 07:02:48 robert Exp $
+--- third_party/pdfium/pdfium.gyp.orig.port	Thu Nov  5 00:01:04 2015
++++ third_party/pdfium/pdfium.gyp	Wed Dec 16 18:33:40 2015
 @@ -2,7 +2,7 @@
    'variables': {
      'pdf_use_skia%': 0,

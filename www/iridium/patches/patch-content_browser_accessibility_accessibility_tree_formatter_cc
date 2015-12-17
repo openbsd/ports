@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_accessibility_accessibility_tree_formatter_cc,v 1.1 2015/12/17 07:02:48 robert Exp $
+--- content/browser/accessibility/accessibility_tree_formatter.cc.orig.port	Sat Dec 12 11:16:43 2015
++++ content/browser/accessibility/accessibility_tree_formatter.cc	Sat Dec 12 12:46:55 2015
+@@ -101,7 +101,7 @@ void AccessibilityTreeFormatter::RecursiveFormatAccess
+ #if !defined(OS_WIN) && \
+     !defined(OS_MACOSX) && \
+     !defined(OS_ANDROID) && \
+-    !(defined(OS_LINUX) && !defined(OS_CHROMEOS) && defined(USE_X11))
++    !((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS) && defined(USE_X11))
+ void AccessibilityTreeFormatter::AddProperties(const BrowserAccessibility& node,
+                                                base::DictionaryValue* dict) {
+   dict->SetInteger("id", node.GetId());

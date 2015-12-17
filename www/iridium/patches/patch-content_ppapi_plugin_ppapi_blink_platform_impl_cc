@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc,v 1.4 2015/10/24 18:22:21 robert Exp $
---- content/ppapi_plugin/ppapi_blink_platform_impl.cc.orig.port	Wed Oct 14 07:48:07 2015
-+++ content/ppapi_plugin/ppapi_blink_platform_impl.cc	Wed Oct 14 07:49:13 2015
+$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc,v 1.5 2015/12/17 07:02:48 robert Exp $
+--- content/ppapi_plugin/ppapi_blink_platform_impl.cc.orig.port	Fri Nov 13 12:04:17 2015
++++ content/ppapi_plugin/ppapi_blink_platform_impl.cc	Wed Dec  2 08:18:32 2015
 @@ -19,7 +19,7 @@
  
  #if defined(OS_MACOSX)
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc,v 1.4 2015/10/
  
  class PpapiBlinkPlatformImpl::SandboxSupport : public WebSandboxSupport {
   public:
-@@ -117,7 +117,7 @@ void PpapiBlinkPlatformImpl::SandboxSupport::getRender
+@@ -116,7 +116,7 @@ void PpapiBlinkPlatformImpl::SandboxSupport::getRender
  
  PpapiBlinkPlatformImpl::PpapiBlinkPlatformImpl()
      : main_thread_(new scheduler::WebThreadImplForPPAPI()) {
@@ -28,7 +28,7 @@ $OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc,v 1.4 2015/10/
    sandbox_support_.reset(new PpapiBlinkPlatformImpl::SandboxSupport);
  #endif
  }
-@@ -126,7 +126,7 @@ PpapiBlinkPlatformImpl::~PpapiBlinkPlatformImpl() {
+@@ -125,7 +125,7 @@ PpapiBlinkPlatformImpl::~PpapiBlinkPlatformImpl() {
  }
  
  void PpapiBlinkPlatformImpl::Shutdown() {
@@ -37,7 +37,7 @@ $OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc,v 1.4 2015/10/
    // SandboxSupport contains a map of WebFontFamily objects, which hold
    // WebCStrings, which become invalidated when blink is shut down. Hence, we
    // need to clear that map now, just before blink::shutdown() is called.
-@@ -156,7 +156,7 @@ blink::WebFileUtilities* PpapiBlinkPlatformImpl::fileU
+@@ -155,7 +155,7 @@ blink::WebFileUtilities* PpapiBlinkPlatformImpl::fileU
  }
  
  blink::WebSandboxSupport* PpapiBlinkPlatformImpl::sandboxSupport() {

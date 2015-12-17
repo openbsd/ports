@@ -1,0 +1,13 @@
+$OpenBSD: patch-third_party_WebKit_Source_wtf_MathExtras_h,v 1.1 2015/12/17 07:02:48 robert Exp $
+--- third_party/WebKit/Source/wtf/MathExtras.h.orig.port	Wed Dec  2 20:00:51 2015
++++ third_party/WebKit/Source/wtf/MathExtras.h	Wed Dec  2 20:00:58 2015
+@@ -36,8 +36,8 @@
+ #endif
+ 
+ #if OS(OPENBSD)
+-#include <machine/ieee.h>
+ #include <sys/types.h>
++#include <machine/ieee.h>
+ #endif
+ 
+ const double piDouble = M_PI;

@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.28 2015/11/20 11:24:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2015/12/17 07:02:48 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
 
-V=			46.0
+V=			47.0rc1
 DISTNAME=		iridium-browser-${V}
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=		iridium-browser-47.0~test1${EXTRACT_SUFX}
 PKGNAME=		iridium-${V}
+
+WRKDIST=		${WRKDIR}/${DISTNAME:S/rc1//}
 
 # The update from 43.4 to 43.5 is released as a patch
 # this time due to the size of the tarball.
@@ -162,8 +164,9 @@ pre-configure:
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/libavutil \
 		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/libavutil
 .endfor
-	@mkdir -p ${WRKSRC}/media/audio/sndio
+	@mkdir -p ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
 	@cp ${FILESDIR}/sndio_output.{cc,h} ${WRKSRC}/media/audio/sndio
+	@cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${WRKSRC}/media/audio/openbsd
 	# XXX Create a missing html file to avoid a build failure (unused in the actual package)
 	@touch ${WRKSRC}/chrome/test/data/webui/i18n_process_css_test.html
 
@@ -192,9 +195,8 @@ do-install:
 	${SUBST_PROGRAM} ${FILESDIR}/iridium ${PREFIX}/bin/iridium
 	${INSTALL_MAN} ${BUILDDIR}/chrome.1 ${PREFIX}/man/man1/iridium.1
 
-.for p in chrome_100_percent content_resources keyboard_resources resources
-	${INSTALL_DATA} ${BUILDDIR}/${p}.pak ${PREFIX}/iridium
-.endfor
+	${INSTALL_DATA} ${BUILDDIR}/*.pak ${PREFIX}/iridium
+
 	${INSTALL_DATA_DIR} ${PREFIX}/iridium/locales
 	${INSTALL_DATA} ${BUILDDIR}/locales/* ${PREFIX}/iridium/locales
 	${INSTALL_DATA} ${BUILDDIR}/*.png ${PREFIX}/iridium

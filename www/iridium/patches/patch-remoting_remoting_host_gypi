@@ -1,6 +1,6 @@
-$OpenBSD: patch-remoting_remoting_host_gypi,v 1.4 2015/10/24 18:22:21 robert Exp $
---- remoting/remoting_host.gypi.orig.port	Tue Oct 13 21:04:33 2015
-+++ remoting/remoting_host.gypi	Wed Oct 14 07:41:13 2015
+$OpenBSD: patch-remoting_remoting_host_gypi,v 1.5 2015/12/17 07:02:48 robert Exp $
+--- remoting/remoting_host.gypi.orig.port	Tue Nov 24 21:00:55 2015
++++ remoting/remoting_host.gypi	Wed Dec  2 08:18:32 2015
 @@ -18,7 +18,7 @@
          'remoting_host_win.gypi',
        ],
@@ -27,4 +27,4 @@ $OpenBSD: patch-remoting_remoting_host_gypi,v 1.4 2015/10/24 18:22:21 robert Exp
 +                ['(os_bsd==1 or OS=="linux") and chromeos==0 and use_ozone==0', {
                    'dependencies': [
                      # Always use GTK on Linux, even for Aura builds.
-                     '../build/linux/system.gyp:gtk',
+                     '../build/linux/system.gyp:gtk2',

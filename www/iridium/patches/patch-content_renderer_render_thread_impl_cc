@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.5 2015/10/24 18:22:21 robert Exp $
---- content/renderer/render_thread_impl.cc.orig.port	Tue Oct 13 21:04:32 2015
-+++ content/renderer/render_thread_impl.cc	Wed Oct 14 07:41:13 2015
-@@ -737,7 +737,7 @@ void RenderThreadImpl::Init() {
-   is_gather_pixel_refs_enabled_ = num_raster_threads > 1;
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.6 2015/12/17 07:02:48 robert Exp $
+--- content/renderer/render_thread_impl.cc.orig.port	Tue Nov 24 21:00:55 2015
++++ content/renderer/render_thread_impl.cc	Wed Dec  2 08:18:32 2015
+@@ -735,7 +735,7 @@ void RenderThreadImpl::Init() {
+   are_image_decode_tasks_enabled_ = num_raster_threads > 1;
  
    base::SimpleThread::Options thread_options;
 -#if defined(OS_ANDROID) || defined(OS_LINUX)

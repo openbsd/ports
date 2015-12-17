@@ -1,11 +1,11 @@
-$OpenBSD: patch-remoting_remoting_all_gyp,v 1.1 2015/10/24 18:22:21 robert Exp $
---- remoting/remoting_all.gyp.orig.port	Wed Oct 14 08:15:32 2015
-+++ remoting/remoting_all.gyp	Wed Oct 14 08:15:37 2015
-@@ -19,7 +19,6 @@
-         '../remoting/remoting.gyp:remoting_breakpad',
-         '../remoting/remoting.gyp:remoting_browser_test_resources',
-         '../remoting/remoting.gyp:remoting_client',
--        '../remoting/remoting.gyp:remoting_perftests',
-         '../remoting/remoting.gyp:remoting_protocol',
-         '../remoting/remoting.gyp:remoting_resources',
-         '../remoting/remoting.gyp:remoting_test_support',
+$OpenBSD: patch-remoting_remoting_all_gyp,v 1.2 2015/12/17 07:02:48 robert Exp $
+--- remoting/remoting_all.gyp.orig.port	Wed Dec  2 13:51:41 2015
++++ remoting/remoting_all.gyp	Wed Dec  2 13:51:46 2015
+@@ -60,7 +60,6 @@
+             '../remoting/remoting.gyp:remoting_host_setup_base',
+             '../remoting/remoting.gyp:remoting_native_messaging_base',
+             '../remoting/remoting.gyp:remoting_native_messaging_manifests',
+-            '../remoting/remoting.gyp:remoting_perftests',
+             '../remoting/remoting.gyp:remoting_start_host',
+           ],
+         }],

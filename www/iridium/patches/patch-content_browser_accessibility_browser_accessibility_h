@@ -1,0 +1,21 @@
+$OpenBSD: patch-content_browser_accessibility_browser_accessibility_h,v 1.1 2015/12/17 07:02:48 robert Exp $
+--- content/browser/accessibility/browser_accessibility.h.orig.port	Sat Dec 12 11:16:43 2015
++++ content/browser/accessibility/browser_accessibility.h	Sat Dec 12 11:31:21 2015
+@@ -27,7 +27,7 @@ namespace content {
+ class BrowserAccessibilityManager;
+ #if defined(OS_WIN)
+ class BrowserAccessibilityWin;
+-#elif defined(OS_LINUX) && !defined(OS_CHROMEOS) && defined(USE_X11)
++#elif (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS) && defined(USE_X11)
+ class BrowserAccessibilityAuraLinux;
+ #endif
+ 
+@@ -187,7 +187,7 @@ class CONTENT_EXPORT BrowserAccessibility {
+   BrowserAccessibilityCocoa* ToBrowserAccessibilityCocoa();
+ #elif defined(OS_WIN)
+   BrowserAccessibilityWin* ToBrowserAccessibilityWin();
+-#elif defined(OS_LINUX) && !defined(OS_CHROMEOS) && defined(USE_X11)
++#elif (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS) && defined(USE_X11)
+   BrowserAccessibilityAuraLinux* ToBrowserAccessibilityAuraLinux();
+ #endif
+ 

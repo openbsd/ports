@@ -1,6 +1,6 @@
-$OpenBSD: patch-v8_src_log-utils_h,v 1.1 2015/10/24 18:22:22 robert Exp $
---- v8/src/log-utils.h.orig.port	Wed Oct 14 09:28:24 2015
-+++ v8/src/log-utils.h	Wed Oct 14 09:29:07 2015
+$OpenBSD: patch-v8_src_log-utils_h,v 1.2 2015/12/17 07:02:48 robert Exp $
+--- v8/src/log-utils.h.orig.port	Thu Nov  5 00:01:07 2015
++++ v8/src/log-utils.h	Wed Dec 16 18:33:40 2015
 @@ -9,6 +9,8 @@
  #include "src/base/platform/mutex.h"
  #include "src/flags.h"

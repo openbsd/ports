@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.5 2015/10/24 18:22:21 robert Exp $
---- content/renderer/renderer_blink_platform_impl.cc.orig.port	Tue Oct 13 21:04:32 2015
-+++ content/renderer/renderer_blink_platform_impl.cc	Wed Oct 14 07:41:13 2015
-@@ -102,7 +102,7 @@
+$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.6 2015/12/17 07:02:48 robert Exp $
+--- content/renderer/renderer_blink_platform_impl.cc.orig.port	Tue Nov 24 21:00:55 2015
++++ content/renderer/renderer_blink_platform_impl.cc	Thu Dec  3 08:21:23 2015
+@@ -104,7 +104,7 @@
  
  #if defined(OS_POSIX)
  #include "base/file_descriptor_posix.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.5 2015/10/2
  #include <map>
  #include <string>
  
-@@ -192,7 +192,7 @@ class RendererBlinkPlatformImpl::FileUtilities : publi
+@@ -195,7 +195,7 @@ class RendererBlinkPlatformImpl::FileUtilities : publi
    scoped_refptr<ThreadSafeSender> thread_safe_sender_;
  };
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.5 2015/10/2
  class RendererBlinkPlatformImpl::SandboxSupport
      : public blink::WebSandboxSupport {
   public:
-@@ -235,7 +235,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -238,7 +238,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
        plugin_refresh_allowed_(true),
        default_task_runner_(renderer_scheduler->DefaultTaskRunner()),
        web_scrollbar_behavior_(new WebScrollbarBehaviorImpl) {
@@ -28,7 +28,16 @@ $OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.5 2015/10/2
    if (g_sandbox_enabled && sandboxEnabled()) {
      sandbox_support_.reset(new RendererBlinkPlatformImpl::SandboxSupport);
    } else {
-@@ -288,7 +288,7 @@ blink::WebFileUtilities* RendererBlinkPlatformImpl::fi
+@@ -263,7 +263,7 @@ RendererBlinkPlatformImpl::~RendererBlinkPlatformImpl(
+ }
+ 
+ void RendererBlinkPlatformImpl::Shutdown() {
+-#if !defined(OS_ANDROID) && !defined(OS_WIN)
++#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_BSD)
+   // SandboxSupport contains a map of WebFontFamily objects, which hold
+   // WebCStrings, which become invalidated when blink is shut down. Hence, we
+   // need to clear that map now, just before blink::shutdown() is called.
+@@ -300,7 +300,7 @@ blink::WebFileUtilities* RendererBlinkPlatformImpl::fi
  }
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::sandboxSupport() {
@@ -37,7 +46,7 @@ $OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.5 2015/10/2
    // These platforms do not require sandbox support.
    return NULL;
  #else
-@@ -557,7 +557,7 @@ bool RendererBlinkPlatformImpl::SandboxSupport::loadFo
+@@ -570,7 +570,7 @@ bool RendererBlinkPlatformImpl::SandboxSupport::loadFo
    return FontLoader::CGFontRefFromBuffer(font_data, font_data_size, out);
  }
  

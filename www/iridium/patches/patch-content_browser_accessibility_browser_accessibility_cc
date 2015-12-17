@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_accessibility_browser_accessibility_cc,v 1.1 2015/12/17 07:02:48 robert Exp $
+--- content/browser/accessibility/browser_accessibility.cc.orig.port	Sat Dec 12 11:16:43 2015
++++ content/browser/accessibility/browser_accessibility.cc	Sat Dec 12 12:46:29 2015
+@@ -19,7 +19,7 @@ namespace content {
+ #if !defined(OS_WIN) && \
+     !defined(OS_MACOSX) && \
+     !defined(OS_ANDROID) && \
+-    !(defined(OS_LINUX) && !defined(OS_CHROMEOS) && defined(USE_X11))
++    !((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS) && defined(USE_X11))
+ // We have subclassess of BrowserAccessibility on some platforms.
+ // On other platforms, instantiate the base class.
+ // static

@@ -1,20 +1,20 @@
-$OpenBSD: patch-net_net_gypi,v 1.5 2015/10/24 18:22:21 robert Exp $
---- net/net.gypi.orig.port	Tue Oct 13 21:04:33 2015
-+++ net/net.gypi	Wed Oct 14 07:41:13 2015
-@@ -409,8 +409,6 @@
-       'android/network_change_notifier_factory_android.h',
-       'android/network_library.cc',
+$OpenBSD: patch-net_net_gypi,v 1.6 2015/12/17 07:02:48 robert Exp $
+--- net/net.gypi.orig.port	Wed Dec  2 13:49:15 2015
++++ net/net.gypi	Wed Dec  2 13:49:36 2015
+@@ -392,8 +392,6 @@
        'android/network_library.h',
+       'android/traffic_stats.cc',
+       'android/traffic_stats.h',
 -      'base/address_tracker_linux.cc',
 -      'base/address_tracker_linux.h',
        'base/backoff_entry.cc',
        'base/backoff_entry.h',
        'base/backoff_entry_serializer.cc',
-@@ -483,7 +481,6 @@
-       'base/network_change_notifier_win.h',
-       'base/network_config_watcher_mac.cc',
-       'base/network_config_watcher_mac.h',
+@@ -468,7 +466,6 @@
+       'base/network_delegate.h',
+       'base/network_delegate_impl.cc',
+       'base/network_delegate_impl.h',
 -      'base/network_interfaces_linux.cc',
        'base/network_interfaces_mac.cc',
        'base/network_interfaces_win.cc',
-       'base/network_delegate.cc',
+       'base/network_quality_estimator.cc',
