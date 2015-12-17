@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2015/10/26 12:09:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2015/12/17 18:31:46 jasper Exp $
 @bin bin/rygel
 @bin bin/rygel-preferences
 include/rygel-${API_V}/
@@ -235,6 +235,8 @@ share/gtk-doc/html/librygel-server/up.png
 share/icons/hicolor/128x128/apps/rygel.png
 share/icons/hicolor/32x32/apps/rygel.png
 share/icons/hicolor/48x48/apps/rygel.png
+share/icons/hicolor/scalable/apps/rygel-full.svg
+share/icons/hicolor/scalable/apps/rygel.svg
 share/locale/af/LC_MESSAGES/rygel.mo
 share/locale/ar/LC_MESSAGES/rygel.mo
 share/locale/as/LC_MESSAGES/rygel.mo
