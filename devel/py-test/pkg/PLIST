@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/12/09 18:17:58 jca Exp $
-@comment bin/py.test-${MODPY_VERSION}
+@comment $OpenBSD: PLIST,v 1.5 2015/12/17 18:38:20 shadchin Exp $
 bin/py.test${MODPY_BIN_SUFFIX}
-bin/py.test-${MODPY_VERSION}
+@comment bin/py.test-${MODPY_VERSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pytest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/
 lib/python${MODPY_VERSION}/site-packages/_pytest/__init__.py
@@ -75,7 +74,7 @@ lib/python${MODPY_VERSION}/site-packages/_pytest/tmpdir.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/unittest.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/vendored_packages/
 lib/python${MODPY_VERSION}/site-packages/_pytest/vendored_packages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/_pytest/vendored_package/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/_pytest/vendored_packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/_pytest/vendored_packages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/vendored_packages/${MODPY_PYCACHE}pluggy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/vendored_packages/pluggy.py
