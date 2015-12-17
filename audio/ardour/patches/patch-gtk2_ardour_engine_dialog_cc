@@ -1,6 +1,6 @@
-$OpenBSD: patch-gtk2_ardour_engine_dialog_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
---- gtk2_ardour/engine_dialog.cc.orig	Thu Apr 19 16:35:13 2012
-+++ gtk2_ardour/engine_dialog.cc	Sat Aug 11 15:12:45 2012
+$OpenBSD: patch-gtk2_ardour_engine_dialog_cc,v 1.2 2015/12/17 23:14:52 ajacoutot Exp $
+--- gtk2_ardour/engine_dialog.cc.orig	Fri Dec 18 00:14:23 2015
++++ gtk2_ardour/engine_dialog.cc	Fri Dec 18 00:14:23 2015
 @@ -14,7 +14,7 @@
  #include <CoreFoundation/CFString.h>
  #include <sys/param.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-gtk2_ardour_engine_dialog_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp 
  #include <alsa/asoundlib.h>
  #endif
  
-@@ -116,6 +116,8 @@ EngineControl::EngineControl ()
+@@ -115,6 +115,8 @@ EngineControl::EngineControl ()
  	strings.clear ();
  #ifdef __APPLE__
  	strings.push_back (X_("CoreAudio"));
@@ -19,7 +19,7 @@ $OpenBSD: patch-gtk2_ardour_engine_dialog_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp 
  #else
  	strings.push_back (X_("ALSA"));
  	strings.push_back (X_("OSS"));
-@@ -131,7 +133,9 @@ EngineControl::EngineControl ()
+@@ -130,7 +132,9 @@ EngineControl::EngineControl ()
  
  	strings.clear ();
  	strings.push_back (_("Playback/Recording on 1 Device"));
@@ -29,7 +29,7 @@ $OpenBSD: patch-gtk2_ardour_engine_dialog_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp 
  	strings.push_back (_("Playback only"));
  	strings.push_back (_("Recording only"));
  	set_popdown_strings (audio_mode_combo, strings);
-@@ -162,7 +166,7 @@ EngineControl::EngineControl ()
+@@ -161,7 +165,7 @@ EngineControl::EngineControl ()
  	basic_packer.attach (period_size_combo, 1, 2, row, row + 1, FILL|EXPAND, (AttachOptions) 0);
  	row++;
  
@@ -38,7 +38,7 @@ $OpenBSD: patch-gtk2_ardour_engine_dialog_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp 
  	label = manage (new Label (_("Number of buffers")));
  	basic_packer.attach (*label, 0, 1, row, row + 1, FILL|EXPAND, (AttachOptions) 0);
  	basic_packer.attach (periods_spinner, 1, 2, row, row + 1, FILL|EXPAND, (AttachOptions) 0);
-@@ -183,7 +187,7 @@ EngineControl::EngineControl ()
+@@ -182,7 +186,7 @@ EngineControl::EngineControl ()
  	row++;
  	/* no audio mode with CoreAudio, its duplex or nuthin' */
  
@@ -47,7 +47,7 @@ $OpenBSD: patch-gtk2_ardour_engine_dialog_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp 
  	label = manage (new Label (_("Audio Mode")));
  	basic_packer.attach (*label, 0, 1, row, row + 1, FILL|EXPAND, (AttachOptions) 0);
  	basic_packer.attach (audio_mode_combo, 1, 2, row, row + 1, FILL|EXPAND, (AttachOptions) 0);
-@@ -223,7 +227,7 @@ EngineControl::EngineControl ()
+@@ -222,7 +226,7 @@ EngineControl::EngineControl ()
  	realtime_button.signal_toggled().connect (mem_fun (*this, &EngineControl::realtime_changed));
  	realtime_changed ();
  
@@ -56,7 +56,7 @@ $OpenBSD: patch-gtk2_ardour_engine_dialog_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp 
  	label = manage (new Label (_("Realtime Priority")));
  	label->set_alignment (1.0, 0.5);
  	options_packer.attach (*label, 0, 1, row, row + 1, FILL|EXPAND, (AttachOptions) 0);
-@@ -273,7 +277,7 @@ EngineControl::EngineControl ()
+@@ -272,7 +276,7 @@ EngineControl::EngineControl ()
  	options_packer.attach (*label, 0, 1, row, row + 1, FILL|EXPAND, (AttachOptions) 0);
  	++row;
  
@@ -65,7 +65,7 @@ $OpenBSD: patch-gtk2_ardour_engine_dialog_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp 
  	label = manage (new Label (_("Dither")));	
  	label->set_alignment (1.0, 0.5);
  	options_packer.attach (dither_mode_combo, 1, 2, row, row + 1, FILL|EXPAND, AttachOptions(0));
-@@ -289,7 +293,7 @@ EngineControl::EngineControl ()
+@@ -288,7 +292,7 @@ EngineControl::EngineControl ()
  	device_packer.set_spacings (6);
  	row = 0;
  
@@ -74,7 +74,7 @@ $OpenBSD: patch-gtk2_ardour_engine_dialog_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp 
  	label = manage (new Label (_("Input device")));
  	label->set_alignment (1.0, 0.5);
  	device_packer.attach (*label, 0, 1, row, row+1, FILL|EXPAND, (AttachOptions) 0);
-@@ -433,6 +437,8 @@ EngineControl::build_command_line (vector<string>& cmd
+@@ -432,6 +436,8 @@ EngineControl::build_command_line (vector<string>& cmd
  	} else if (driver == X_("CoreAudio")) {
  		using_coreaudio = true;
  		cmd.push_back ("coreaudio");
@@ -83,7 +83,7 @@ $OpenBSD: patch-gtk2_ardour_engine_dialog_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp 
  	} else if (driver == X_("NetJACK")) {
  		using_netjack = true;
  		cmd.push_back ("netjack");
-@@ -613,7 +619,7 @@ EngineControl::setup_engine ()
+@@ -612,7 +618,7 @@ EngineControl::setup_engine ()
  void
  EngineControl::realtime_changed ()
  {
@@ -92,7 +92,7 @@ $OpenBSD: patch-gtk2_ardour_engine_dialog_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp 
  	priority_spinner.set_sensitive (realtime_button.get_active());
  #endif
  }
-@@ -628,7 +634,12 @@ EngineControl::enumerate_devices (const string& driver
+@@ -627,7 +633,12 @@ EngineControl::enumerate_devices (const string& driver
  		devices[driver] = enumerate_coreaudio_devices ();
  #endif
  
@@ -106,7 +106,7 @@ $OpenBSD: patch-gtk2_ardour_engine_dialog_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp 
  	} else if (driver == "ALSA") {
  		devices[driver] = enumerate_alsa_devices ();
  	} else if (driver == "FFADO") {
-@@ -753,6 +764,17 @@ Ardour and choose the relevant device then."
+@@ -752,6 +763,17 @@ Ardour and choose the relevant device then."
  		exit (1);
  	}
  

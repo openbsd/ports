@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk2_ardour_new_session_dialog_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
---- gtk2_ardour/new_session_dialog.cc.orig	Mon Jul  2 02:19:40 2012
-+++ gtk2_ardour/new_session_dialog.cc	Sat Aug 11 15:12:45 2012
-@@ -589,7 +589,7 @@ NewSessionDialog::set_session_folder(const std::string
+$OpenBSD: patch-gtk2_ardour_new_session_dialog_cc,v 1.2 2015/12/17 23:14:52 ajacoutot Exp $
+--- gtk2_ardour/new_session_dialog.cc.orig	Fri Dec 18 00:14:23 2015
++++ gtk2_ardour/new_session_dialog.cc	Fri Dec 18 00:14:23 2015
+@@ -582,7 +582,7 @@ NewSessionDialog::set_session_folder(const std::string
  	*/
  
  
