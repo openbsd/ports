@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/05/28 06:50:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/12/17 10:30:01 ajacoutot Exp $
 @conflict bnc-*
 @conflict irc-*
 @conflict ircd-ratbox-*
@@ -6,7 +6,6 @@
 @newuser _ircd-hybrid:616:616:daemon:IRC Daemon:/var/empty:/sbin/nologin
 @bin bin/ircd
 @bin bin/mkpasswd
-@bin bin/respond
 lib/ircd-hybrid/
 lib/ircd-hybrid/modules/
 lib/ircd-hybrid/modules/autoload/
@@ -22,8 +21,6 @@ lib/ircd-hybrid/modules/autoload/m_capab.la
 lib/ircd-hybrid/modules/autoload/m_capab.so
 lib/ircd-hybrid/modules/autoload/m_certfp.la
 lib/ircd-hybrid/modules/autoload/m_certfp.so
-lib/ircd-hybrid/modules/autoload/m_challenge.la
-lib/ircd-hybrid/modules/autoload/m_challenge.so
 lib/ircd-hybrid/modules/autoload/m_close.la
 lib/ircd-hybrid/modules/autoload/m_close.so
 lib/ircd-hybrid/modules/autoload/m_connect.la
@@ -176,7 +173,7 @@ share/examples/ircd-hybrid/
 @mode 700
 @owner _ircd-hybrid
 @group _ircd-hybrid
-@sample ${SYSCONFDIR}/ircd-hybrid/
+@sample ${CONFDIR}/
 @mode
 @owner
 @group
@@ -184,7 +181,7 @@ share/examples/ircd-hybrid/reference.conf
 @mode 600
 @owner _ircd-hybrid
 @group _ircd-hybrid
-@sample ${SYSCONFDIR}/ircd-hybrid/ircd.conf
+@sample ${CONFDIR}/ircd.conf
 @mode
 @owner
 @group
@@ -193,7 +190,6 @@ share/ircd-hybrid/help/
 share/ircd-hybrid/help/accept
 share/ircd-hybrid/help/admin
 share/ircd-hybrid/help/away
-share/ircd-hybrid/help/challenge
 share/ircd-hybrid/help/close
 share/ircd-hybrid/help/cmode
 share/ircd-hybrid/help/connect
@@ -253,7 +249,8 @@ share/ircd-hybrid/help/whois
 share/ircd-hybrid/help/whowas
 share/ircd-hybrid/help/xline
 @rcscript ${RCDIR}/ircd_hybrid
-@mode 700
 @owner _ircd-hybrid
 @group _ircd-hybrid
-@sample /var/log/ircd-hybrid/
+@sample ${LOCALSTATEDIR}/db/ircd-hybrid/
+@mode 700
+@sample ${LOGDIR}/

@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_defaults_h,v 1.7 2014/05/08 14:36:49 brad Exp $
---- include/defaults.h.orig	Sun Apr 20 11:06:23 2014
-+++ include/defaults.h	Tue Apr 22 22:15:23 2014
-@@ -48,15 +48,20 @@
+$OpenBSD: patch-include_defaults_h,v 1.8 2015/12/17 10:30:00 ajacoutot Exp $
+--- include/defaults.h.orig	Thu Nov 19 14:34:34 2015
++++ include/defaults.h	Wed Dec 16 20:05:14 2015
+@@ -48,16 +48,21 @@
   * AUTOMODPATH = directory for autoloaded modules
   */
  
@@ -17,9 +17,11 @@ $OpenBSD: patch-include_defaults_h,v 1.7 2014/05/08 14:36:49 brad Exp $
  #define HPATH        DATADIR "/" PACKAGE "/help"
  #define AUTOMODPATH  MODPATH "/autoload/"
 -#define ETCPATH      SYSCONFDIR
+-#define LIBPATH      LOCALSTATEDIR "/lib"
 -#define LOGPATH      LOCALSTATEDIR "/log"
 -#define RUNPATH      LOCALSTATEDIR "/run"
-+#define ETCPATH      SYSCONFDIR "/ircd-hybrid/"
++#define ETCPATH      SYSCONFDIR "/ircd-hybrid"
++#define LIBPATH      LOCALSTATEDIR "/db/ircd-hybrid"
 +#define LOGPATH      LOCALSTATEDIR "/log/ircd-hybrid"
 +#define RUNPATH      LOCALSTATEDIR "/run/ircd-hybrid"
  

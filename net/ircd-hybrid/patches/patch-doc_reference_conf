@@ -1,52 +1,119 @@
-$OpenBSD: patch-doc_reference_conf,v 1.6 2015/05/15 06:46:03 ajacoutot Exp $
---- doc/reference.conf.orig	Sun May 10 17:44:40 2015
-+++ doc/reference.conf	Thu May 14 22:49:49 2015
-@@ -111,7 +111,7 @@ serverinfo {
- 	 *	chown <ircd-user>.<ircd.group> rsa.key
- 	 *	chmod 0600 rsa.key
+$OpenBSD: patch-doc_reference_conf,v 1.7 2015/12/17 10:30:00 ajacoutot Exp $
+--- doc/reference.conf.orig	Thu Nov 19 14:34:36 2015
++++ doc/reference.conf	Wed Dec 16 20:25:50 2015
+@@ -115,7 +115,7 @@ serverinfo {
+ 	 *    chown <ircd-user>.<ircd.group> rsa.key
+ 	 *    chmod 0600 rsa.key
  	 */
 -#	rsa_private_key_file = "etc/rsa.key";
-+#	rsa_private_key_file = "${SYSCONFDIR}/ircd-hybrid/rsa.key";
++#	rsa_private_key_file = "${CONFDIR}/rsa.key";
  
  	/*
  	 * ssl_certificate_file: the path to the file containing our
-@@ -133,7 +133,7 @@ serverinfo {
- 	 *	Common Name: irc.someirc.net
- 	 *	E-mail: you@domain.com
+@@ -135,7 +135,7 @@ serverinfo {
+ 	 *    Common Name: irc.example.net
+ 	 *    E-mail: email@example.net
  	 */
 -#	ssl_certificate_file = "etc/cert.pem";
-+#	ssl_certificate_file = "${SYSCONFDIR}/ircd-hybrid/cert.pem";
++#	ssl_certificate_file = "${CONFDIR}/cert.pem";
  
  	/*
  	 * ssl_dh_param_file: path to the PEM encoded Diffie-Hellman
-@@ -148,7 +148,7 @@ serverinfo {
+@@ -150,7 +150,7 @@ serverinfo {
  	 * regarding specific OpenSSL dhparam command-line options
  	 * can be found in the OpenSSL manual.
  	 */
 -#	ssl_dh_param_file = "etc/dhparam.pem";
-+#	ssl_dh_param_file = "${SYSCONFDIR}/ircd-hybrid/dhparam.pem";
++#	ssl_dh_param_file = "${CONFDIR}/dhparam.pem";
  
  	/*
  	 * ssl_dh_elliptic_curve: defines the curve to use for the
-@@ -473,7 +473,7 @@ operator {
- 	 * A password should not be defined when this is used; see
- 	 * doc/challenge.txt for more information.
+@@ -322,7 +322,7 @@ motd {
+ 	/*
+ 	 * file: path to the actual motd file.
  	 */
--#	rsa_public_key_file = "etc/oper.pub";
-+#	rsa_public_key_file = "${SYSCONFDIR}/ircd-hybrid/oper.pub";
+-	file = "etc/german.motd";
++	file = "${CONFDIR}/german.motd";
+ };
+ 
+ /*
+@@ -987,7 +987,7 @@ serverhide {
+ 	/*
+ 	 * flatten_links_file: path to the flatten links cache file.
+ 	 */
+-	flatten_links_file = "var/lib/links.txt";
++	flatten_links_file = "${LOCALSTATEDIR}/db/ircd-hybrid/links.txt";
  
  	/*
- 	 * ssl_certificate_fingerprint: enhances security by additionally checking
-@@ -1333,9 +1333,9 @@ modules {
+ 	 * hidden: hide this server from a /links output on servers that
+@@ -1311,9 +1311,9 @@ modules {
  	 * path: other paths to search for modules specified below
  	 * and in "/module load".
  	 */
 -	path = "lib/ircd-hybrid/modules";
 -#	path = "lib/ircd-hybrid/modules/extra";
 -	path = "lib/ircd-hybrid/modules/autoload";
-+	path = "${TRUEPREFIX}/lib/ircd-hybrid/modules";
-+#	path = "${TRUEPREFIX}/lib/ircd-hybrid/modules/extra";
-+	path = "${TRUEPREFIX}/lib/ircd-hybrid/modules/autoload";
++	path = "${PREFIX}/lib/ircd-hybrid/modules";
++#	path = "${PREFIX}/lib/ircd-hybrid/modules/extra";
++	path = "${PREFIX}/lib/ircd-hybrid/modules/autoload";
  
  	/* module: the name of a module to load on startup/rehash. */
  #	module = "some_module.la";
+@@ -1328,49 +1328,49 @@ log {
+ 
+ 	file {
+ 		type = oper;
+-		name = "var/log/oper.log";
++		name = "${LOGDIR}/oper.log";
+ 		size = unlimited;
+ 	};
+ 
+ 	file {
+ 		type = user;
+-		name = "var/log/user.log";
++		name = "${LOGDIR}/user.log";
+ 		size = 50 megabytes;
+ 	};
+ 
+ 	file {
+ 		type = kill;
+-		name = "var/log/kill.log";
++		name = "${LOGDIR}/kill.log";
+ 		size = 50 megabytes;
+ 	};
+ 
+ 	file {
+ 		type = kline;
+-		name = "var/log/kline.log";
++		name = "${LOGDIR}/kline.log";
+ 		size = 50 megabytes;
+ 	};
+ 
+ 	file {
+ 		type = dline;
+-		name = "var/log/dline.log";
++		name = "${LOGDIR}/dline.log";
+ 		size = 50 megabytes;
+ 	};
+ 
+ 	file {
+ 		type = xline;
+-		name = "var/log/xline.log";
++		name = "${LOGDIR}/xline.log";
+ 		size = 50 megabytes;
+ 	};
+ 
+ 	file {
+ 		type = resv;
+-		name = "var/log/resv.log";
++		name = "${LOGDIR}/resv.log";
+ 		size = 50 megabytes;
+ 	};
+ 
+ 	file {
+ 		type = debug;
+-		name = "var/log/debug.log";
++		name = "${LOGDIR}/debug.log";
+ 		size = 50 megabytes;
+ 	};
+ };

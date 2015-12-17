@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.37 2015/05/28 06:50:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2015/12/17 10:30:00 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Internet Relay Chat server
 
-DISTNAME =	ircd-hybrid-8.2.8
+DISTNAME =	ircd-hybrid-8.2.11
 CATEGORIES =	net
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ircd-hybrid/}
 EXTRACT_SUFX =	.tgz
-REVISION =	0
 
 HOMEPAGE =	http://ircd-hybrid.com/
 
@@ -18,6 +17,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =	c crypto ltdl ssl
 
 LIB_DEPENDS =	devel/libtool,-ltdl
+
+CONFDIR =	${SYSCONFDIR}/ircd-hybrid
+LOGDIR =	${LOCALSTATEDIR}/log/ircd-hybrid
+
+SUBST_VARS +=	CONFDIR LOGDIR
 
 LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_STYLE = gnu
