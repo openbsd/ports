@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.50 2015/10/30 12:47:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2015/12/17 19:03:37 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Google Data API based Glib client library
 
 GNOME_PROJECT=		libgdata
-GNOME_VERSION=		0.17.3
-REVISION=		0
+GNOME_VERSION=		0.17.4
 
-SHARED_LIBS +=  gdata                19.0     # 23.1
+SHARED_LIBS +=  gdata                20.0     # 23.2
 
 CATEGORIES=		devel net
 
