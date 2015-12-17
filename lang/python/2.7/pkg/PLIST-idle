@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.5 2015/05/31 07:56:10 rpointel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.6 2015/12/17 19:16:51 rpointel Exp $
 @option no-default-conflict
 @conflict python-idle->=2.7,<2.8
 @comment bin/idle
@@ -180,6 +180,10 @@ lib/python2.7/idlelib/dynOptionMenuWidget.py
 lib/python2.7/idlelib/dynOptionMenuWidget.pyc
 lib/python2.7/idlelib/dynOptionMenuWidget.pyo
 lib/python2.7/idlelib/extend.txt
+lib/python2.7/idlelib/help.html
+lib/python2.7/idlelib/help.py
+lib/python2.7/idlelib/help.pyc
+lib/python2.7/idlelib/help.pyo
 lib/python2.7/idlelib/help.txt
 @comment lib/python2.7/idlelib/idle.bat
 lib/python2.7/idlelib/idle.py
