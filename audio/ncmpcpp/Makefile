@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/12/16 14:46:47 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.43 2015/12/17 10:10:20 dcoppa Exp $
 
 BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()
 BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'Binding'
@@ -7,7 +7,7 @@ COMMENT =		ncurses mpd client inspired by ncmpc
 
 DISTNAME =		ncmpcpp-0.7
 
-REVISION =		1
+REVISION =		2
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -53,7 +53,7 @@ CONFIGURE_ARGS =	--enable-clock \
 CONFIGURE_ENV =		BOOST_LIB_SUFFIX="-mt" \
 			CPPFLAGS="-DBOOST_RESULT_OF_USE_DECLTYPE \
 				  -D_XOPEN_SOURCE_EXTENDED \
-				  -I${LOCALBASE}/include/ereadline \
+				  -isystem ${LOCALBASE}/include/ereadline \
 				  -pthread" \
 			ICU_CFLAGS="icu-is-not-really-needed" \
 			ICU_LIBS="icu-is-not-really-needed" \

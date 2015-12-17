@@ -1,34 +1,34 @@
-$OpenBSD: patch-src_ncmpcpp_cpp,v 1.10 2015/12/16 14:46:47 dcoppa Exp $
+$OpenBSD: patch-src_ncmpcpp_cpp,v 1.11 2015/12/17 10:10:20 dcoppa Exp $
 
-OpenBSD lacks sigignore()
+OpenBSD lacks sigignore(), use the one from NetBSD
 
 --- src/ncmpcpp.cpp.orig	Sun Nov 22 18:30:58 2015
 +++ src/ncmpcpp.cpp	Thu Dec 10 09:38:14 2015
-@@ -79,6 +79,18 @@ namespace
+@@ -68,6 +68,18 @@ namespace
+ #		endif // __sun && __SVR4
  	}
- }
  
-+int l_sigignore(int sig)
-+{
-+	struct sigaction sa;
++	int n_sigignore(int sig)
++	{
++		struct sigaction sa;
 +
-+	sa.sa_handler = SIG_IGN;
-+	if (sigemptyset(&sa.sa_mask) != 0)
-+		return (-1);
-+	sa.sa_flags = 0;
++		sa.sa_handler = SIG_IGN;
++		if (sigemptyset(&sa.sa_mask) != 0)
++			return (-1);
++		sa.sa_flags = 0;
 +
-+	return (sigaction(sig, &sa, NULL));
-+}
++		return (sigaction(sig, &sa, NULL));
++	}
 +
- int main(int argc, char **argv)
- {
- 	using Global::myScreen;
+ 	void do_at_exit()
+ 	{
+ 		// restore old cerr buffer
 @@ -108,7 +120,7 @@ int main(int argc, char **argv)
  	signal(SIGPIPE, sighandler);
  	signal(SIGWINCH, sighandler);
  	// ignore Ctrl-C
 -	sigignore(SIGINT);
-+	l_sigignore(SIGINT);
++	n_sigignore(SIGINT);
  #	endif // !WIN32
  
  	NC::initScreen(Config.colors_enabled, Config.mouse_support);
