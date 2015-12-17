@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/12/16 08:52:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2015/12/17 23:14:16 ajacoutot Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -9,7 +9,7 @@ SHARED_ONLY =		Yes
 COMMENT =		digital audio workstation
 
 DISTNAME =		ardour-2.8.16
-REVISION =		1
+REVISION =		2
 CATEGORIES =		audio
 HOMEPAGE =		http://ardour.org
 
@@ -79,14 +79,14 @@ LIB_DEPENDS =		audio/aubio \
 			textproc/liblrdf \
 			x11/gnome/libgnomecanvasmm
 
+SUBST_VARS =		CFLAGS CXXFLAGS
+
 post-extract:
 	cp ${FILESDIR}/sndio_midiport.h ${WRKSRC}/libs/midi++2/midi++/
 	cp ${FILESDIR}/sndio_midiport.cc ${WRKSRC}/libs/midi++2/
 
 pre-configure:
-	sed -i -e "s,!!CFLAGS!!,${CFLAGS},g" \
-		-e "s,!!CXXFLAGS!!,${CXXFLAGS},g" \
-		${WRKSRC}/SConstruct
+	${SUBST_CMD} ${WRKSRC}/SConstruct
 	sed -i "s,/usr/local,${LOCALBASE},g" \
 		${WRKSRC}/libs/vamp-sdk/src/vamp-hostsdk/PluginHostAdapter.cpp
 
