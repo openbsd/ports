@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2015/10/12 07:20:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.28 2015/12/17 19:07:53 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -418,7 +418,11 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/host_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/localhost_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/mail_alias.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/package_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/base/process_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/base/user_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/cumulus/
+${GEM_LIB}/gems/${DISTNAME}/spec/command/cumulus/ppa_cumuluslinux_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/cumulus/ppa_cumulusnetworks_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/darwin/host_spec.rb
