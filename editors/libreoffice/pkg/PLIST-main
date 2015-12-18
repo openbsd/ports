@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.38 2015/09/29 16:10:49 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.39 2015/12/18 13:31:57 robert Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -305,6 +305,7 @@ lib/libreoffice/program/libucpfile1.so
 lib/libreoffice/program/libucpftp1.so
 lib/libreoffice/program/libucpgio1lo.so
 lib/libreoffice/program/libucphier1.so
+lib/libreoffice/program/libucpimagelo.so
 lib/libreoffice/program/libucppkg1.so
 lib/libreoffice/program/libucptdoc1lo.so
 @bin lib/libreoffice/program/libuno_cppu.so.3
