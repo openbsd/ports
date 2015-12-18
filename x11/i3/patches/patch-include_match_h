@@ -1,0 +1,16 @@
+$OpenBSD: patch-include_match_h,v 1.1 2015/12/18 15:53:09 dcoppa Exp $
+
+Refactor parsing of matches to avoid code duplication.
+
+--- include/match.h.orig	Wed Sep 30 08:55:10 2015
++++ include/match.h	Fri Dec 18 13:58:58 2015
+@@ -45,3 +45,9 @@ bool match_matches_window(Match *match, i3Window *wind
+  *
+  */
+ void match_free(Match *match);
++
++/**
++ * Interprets a ctype=cvalue pair and adds it to the given match specification.
++ *
++ */
++void match_parse_property(Match *match, const char *ctype, const char *cvalue);

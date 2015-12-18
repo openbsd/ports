@@ -1,9 +1,11 @@
-$OpenBSD: patch-src_ipc_c,v 1.14 2015/03/17 15:39:48 dcoppa Exp $
+$OpenBSD: patch-src_ipc_c,v 1.15 2015/12/18 15:53:09 dcoppa Exp $
 
 Add missing header
 
---- src/ipc.c.orig	Sun Jun 15 19:12:43 2014
-+++ src/ipc.c	Fri Jul 11 16:39:36 2014
+fix a memory leak in handle_get_bar_config
+
+--- src/ipc.c.orig	Wed Sep 30 08:55:10 2015
++++ src/ipc.c	Fri Dec 18 13:58:58 2015
 @@ -12,6 +12,7 @@
  #include "all.h"
  #include "yajl_utils.h"
@@ -12,3 +14,22 @@ Add missing header
  #include <sys/socket.h>
  #include <sys/un.h>
  #include <fcntl.h>
+@@ -894,8 +895,8 @@ IPC_HANDLER(get_bar_config) {
+ 
+     /* To get a properly terminated buffer, we copy
+      * message_size bytes out of the buffer */
+-    char *bar_id = scalloc(message_size + 1, 1);
+-    strncpy(bar_id, (const char *)message, message_size);
++    char *bar_id = NULL;
++    sasprintf(&bar_id, "%.*s", message_size, message);
+     LOG("IPC: looking for config for bar ID \"%s\"\n", bar_id);
+     Barconfig *current, *config = NULL;
+     TAILQ_FOREACH(current, &barconfigs, configs) {
+@@ -905,6 +906,7 @@ IPC_HANDLER(get_bar_config) {
+         config = current;
+         break;
+     }
++    free(bar_id);
+ 
+     if (!config) {
+         /* If we did not find a config for the given ID, the reply will contain

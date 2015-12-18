@@ -1,9 +1,11 @@
-$OpenBSD: patch-src_startup_c,v 1.5 2014/07/11 15:49:58 dcoppa Exp $
+$OpenBSD: patch-src_startup_c,v 1.6 2015/12/18 15:53:09 dcoppa Exp $
 
 On OpenBSD, time_t is long long.
 
---- src/startup.c.orig	Sun Jun 15 19:12:43 2014 
-+++ src/startup.c	Wed Jul  2 20:42:22 2014 
+Turn "char *" into "const char *" for all command parser functions.
+
+--- src/startup.c.orig	Wed Sep 30 08:55:10 2015
++++ src/startup.c	Fri Dec 18 13:58:58 2015
 @@ -103,8 +103,8 @@ static int _prune_startup_sequences(void) {
   */
  void startup_sequence_delete(struct Startup_Sequence *sequence) {
@@ -26,3 +28,12 @@ On OpenBSD, time_t is long long.
  
              if (_prune_startup_sequences() == 0) {
                  DLOG("No more startup sequences running, changing root window cursor to default pointer.\n");
+@@ -261,7 +261,7 @@ void startup_monitor_event(SnMonitorEvent *event, void
+  * Renames workspaces that are mentioned in the startup sequences.
+  *
+  */
+-void startup_sequence_rename_workspace(char *old_name, char *new_name) {
++void startup_sequence_rename_workspace(const char *old_name, const char *new_name) {
+     struct Startup_Sequence *current;
+     TAILQ_FOREACH(current, &startup_sequences, sequences) {
+         if (strcmp(current->workspace, old_name) != 0)

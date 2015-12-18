@@ -1,0 +1,19 @@
+$OpenBSD: patch-include_con_h,v 1.4 2015/12/18 15:53:09 dcoppa Exp $
+
+Fix crash when trying to split and float a dock container.
+
+--- include/con.h.orig	Wed Sep 30 08:55:10 2015
++++ include/con.h	Fri Dec 18 13:58:58 2015
+@@ -113,6 +113,12 @@ bool con_is_internal(Con *con);
+ bool con_is_floating(Con *con);
+ 
+ /**
++ * Returns true if the container is a docked container.
++ *
++ */
++bool con_is_docked(Con *con);
++
++/**
+  * Checks if the given container is either floating or inside some floating
+  * container. It returns the FLOATING_CON container.
+  *

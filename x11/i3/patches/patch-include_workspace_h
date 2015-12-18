@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_workspace_h,v 1.1 2015/12/18 15:53:09 dcoppa Exp $
+
+Turn "char *" into "const char *" for all command parser functions.
+
+--- include/workspace.h.orig	Wed Sep 30 08:55:10 2015
++++ include/workspace.h	Fri Dec 18 13:58:58 2015
+@@ -194,4 +194,4 @@ Con *workspace_encapsulate(Con *ws);
+  * This returns true if and only if moving the workspace was successful.
+  *
+  */
+-bool workspace_move_to_output(Con *ws, char *output);
++bool workspace_move_to_output(Con *ws, const char *output);

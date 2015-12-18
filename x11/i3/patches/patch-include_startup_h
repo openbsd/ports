@@ -1,0 +1,15 @@
+$OpenBSD: patch-include_startup_h,v 1.1 2015/12/18 15:53:09 dcoppa Exp $
+
+Turn "char *" into "const char *" for all command parser functions.
+
+--- include/startup.h.orig	Wed Sep 30 08:55:10 2015
++++ include/startup.h	Fri Dec 18 13:58:58 2015
+@@ -48,7 +48,7 @@ void startup_monitor_event(SnMonitorEvent *event, void
+  * Renames workspaces that are mentioned in the startup sequences.
+  *
+  */
+-void startup_sequence_rename_workspace(char *old_name, char *new_name);
++void startup_sequence_rename_workspace(const char *old_name, const char *new_name);
+ 
+ /**
+  * Gets the stored startup sequence for the _NET_STARTUP_ID of a given window.
