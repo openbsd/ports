@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/12/18 11:08:46 sthen Exp $
+
+# note, this isn't really maintained upstream any more
+# see e2guardian.org for a maintained fork
 
 COMMENT =	content scanning web filter
 DISTNAME =	dansguardian-2.12.0.3
