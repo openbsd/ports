@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.28 2015/12/12 19:40:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2015/12/18 10:26:57 benoit Exp $
 
-COMMENT=	perl interface to ZIP files
+COMMENT =	perl interface to ZIP files
 
-MODULES=	cpan
+MODULES =	cpan
 
-DISTNAME=	Archive-Zip-1.55
+DISTNAME =	Archive-Zip-1.56
 
-CATEGORIES=	archivers
+CATEGORIES =	archivers
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 TEST_DEPENDS =	archivers/zip \
 		devel/p5-Test-MockModule \
