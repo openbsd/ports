@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2015/10/17 10:29:04 ajacoutot Exp $
-
-BROKEN =		need to be adapted to current pflow(4)
+# $OpenBSD: Makefile,v 1.19 2015/12/18 13:17:41 sthen Exp $
 
 COMMENT =		network switch style shell
 
-DISTNAME =		nsh-1.0.20150914
-REVISION =		0
+DISTNAME =		nsh-1.0.20151213
 
 GH_ACCOUNT =		yellowman
 GH_PROJECT =		nsh
-GH_COMMIT =		d152f0631ad4e9cd40f093f548e771cf7d019286
-WRKDIST =		${WRKDIR}/nsh-${GH_COMMIT}
+GH_COMMIT =		d20e09e1dab907067eaad228432af8b0117cb741
+#WRKDIST =		${WRKDIR}/nsh-${GH_COMMIT}
 
 CATEGORIES =		shells net
 HOMEPAGE =		http://www.nmedia.net/nsh/
