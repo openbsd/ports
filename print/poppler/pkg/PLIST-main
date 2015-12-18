@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2015/07/12 22:37:12 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2015/12/18 22:40:57 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 include/poppler/
@@ -200,11 +200,11 @@ share/gtk-doc/html/poppler/index.html
 share/gtk-doc/html/poppler/index.sgml
 share/gtk-doc/html/poppler/left-insensitive.png
 share/gtk-doc/html/poppler/left.png
+share/gtk-doc/html/poppler/poppler-Error-handling.html
 share/gtk-doc/html/poppler/poppler-PDF-Utility-functions.html
 share/gtk-doc/html/poppler/poppler-PopplerAction.html
 share/gtk-doc/html/poppler/poppler-PopplerColor.html
 share/gtk-doc/html/poppler/poppler-Version-and-Features-Information.html
-share/gtk-doc/html/poppler/poppler-poppler.html
 share/gtk-doc/html/poppler/poppler.devhelp2
 share/gtk-doc/html/poppler/right-insensitive.png
 share/gtk-doc/html/poppler/right.png
