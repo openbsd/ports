@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.945 2015/12/14 19:39:45 jca Exp $
+# $OpenBSD: Makefile,v 1.946 2015/12/18 13:19:07 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -673,6 +673,7 @@
      SUBDIR += vsftpd
      SUBDIR += walker
      SUBDIR += websocketd
+     SUBDIR += websockify
      SUBDIR += weechat
      SUBDIR += weex
      SUBDIR += wget
