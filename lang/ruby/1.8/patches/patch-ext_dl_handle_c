@@ -1,0 +1,29 @@
+$OpenBSD: patch-ext_dl_handle_c,v 1.1 2015/12/18 17:36:31 jeremy Exp $
+
+Backport fix for CVE-2009-5147 and CVE-2015-7551 from r23405.
+
+--- ext/dl/handle.c.orig	Wed Dec 16 09:07:34 2015
++++ ext/dl/handle.c	Wed Dec 16 09:11:33 2015
+@@ -5,6 +5,8 @@
+ #include <ruby.h>
+ #include "dl.h"
+ 
++#define SafeStringValuePtr(v) (rb_string_value(&v), rb_check_safe_obj(v), RSTRING_PTR(v))
++
+ VALUE rb_cDLHandle;
+ 
+ void
+@@ -52,11 +54,11 @@ rb_dlhandle_initialize(int argc, VALUE argv[], VALUE s
+ 
+   switch (rb_scan_args(argc, argv, "11", &lib, &flag)) {
+   case 1:
+-    clib = NIL_P(lib) ? NULL : StringValuePtr(lib);
++    clib = NIL_P(lib) ? NULL : SafeStringValuePtr(lib);
+     cflag = RTLD_LAZY | RTLD_GLOBAL;
+     break;
+   case 2:
+-    clib = NIL_P(lib) ? NULL : StringValuePtr(lib);
++    clib = NIL_P(lib) ? NULL : SafeStringValuePtr(lib);
+     cflag = NUM2INT(flag);
+     break;
+   default:
