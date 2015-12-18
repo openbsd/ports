@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/10/26 16:42:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2015/12/18 10:07:04 ajacoutot Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
@@ -51,6 +51,6 @@ MAKE_ENV=		V=1
 CPPFLAGS +=		-I${WRKBUILD}/gst-libs/ext/libav
 
 pre-configure:
-	perl -pi -e 's,-O3,,g' ${WRKSRC}/gst-libs/ext/libav/configure
+	sed -i 's,-O3,,g' ${WRKSRC}/gst-libs/ext/libav/configure
 
 .include <bsd.port.mk>
