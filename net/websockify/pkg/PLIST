@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/12/18 13:18:39 sthen Exp $
+bin/websockify
+lib/python${MODPY_VERSION}/site-packages/websockify/
+lib/python${MODPY_VERSION}/site-packages/websockify-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/websockify-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/websockify-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/websockify-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/websockify-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/websockify-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/websockify-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/websockify-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/websockify/__init__.py
+lib/python${MODPY_VERSION}/site-packages/websockify/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/websockify/auth_plugins.py
+lib/python${MODPY_VERSION}/site-packages/websockify/auth_plugins.pyc
+lib/python${MODPY_VERSION}/site-packages/websockify/token_plugins.py
+lib/python${MODPY_VERSION}/site-packages/websockify/token_plugins.pyc
+lib/python${MODPY_VERSION}/site-packages/websockify/websocket.py
+lib/python${MODPY_VERSION}/site-packages/websockify/websocket.pyc
+lib/python${MODPY_VERSION}/site-packages/websockify/websocketproxy.py
+lib/python${MODPY_VERSION}/site-packages/websockify/websocketproxy.pyc
+@man man/man1/websockify.1
+share/websockify/
+share/websockify/include/
+share/websockify/include/base64.js
+share/websockify/include/util.js
+share/websockify/include/web-socket-js/
+share/websockify/include/web-socket-js/WebSocketMain.swf
+share/websockify/include/web-socket-js/swfobject.js
+share/websockify/include/web-socket-js/web_socket.js
+share/websockify/include/websock.js

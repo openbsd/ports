@@ -1,0 +1,19 @@
+$OpenBSD: patch-websockify_websocket_py,v 1.1.1.1 2015/12/18 13:18:39 sthen Exp $
+--- websockify/websocket.py.orig	Fri Dec 18 12:31:42 2015
++++ websockify/websocket.py	Fri Dec 18 12:34:27 2015
+@@ -711,15 +711,6 @@ class WebSocketServer(object):
+ 
+             if  tcp_keepalive:
+                 sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
+-                if tcp_keepcnt:
+-                    sock.setsockopt(socket.SOL_TCP, socket.TCP_KEEPCNT,
+-                                    tcp_keepcnt)
+-                if tcp_keepidle:
+-                    sock.setsockopt(socket.SOL_TCP, socket.TCP_KEEPIDLE,
+-                                    tcp_keepidle)
+-                if tcp_keepintvl:
+-                    sock.setsockopt(socket.SOL_TCP, socket.TCP_KEEPINTVL,
+-                                    tcp_keepintvl)
+ 
+             if connect:
+                 sock.connect(addrs[0][4])

@@ -1,0 +1,4 @@
+Websockify (formerly named wsproxy) translates WebSockets traffic to
+normal socket traffic. It accepts the WebSockets handshake, parses it,
+and then begins forwarding traffic between the client and the target
+in both directions.
