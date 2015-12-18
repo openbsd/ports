@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.51 2015/12/17 19:03:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2015/12/18 10:15:04 jasper Exp $
+
+# XXX: PORTROACH is set at the end of this file to override gnome.port.mk
 
 SHARED_ONLY=		Yes
 
@@ -45,3 +47,6 @@ CONFIGURE_STYLE=	gnu
 PORTHOME=		${WRKDIR}
 
 .include <bsd.port.mk>
+
+# Clear portroach annotation for we track an odd-numbered development branch
+PORTROACH=
