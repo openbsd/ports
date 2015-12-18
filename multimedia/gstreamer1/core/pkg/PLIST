@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/09/27 08:21:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/12/18 10:05:42 ajacoutot Exp $
 @bin bin/gst-inspect-${API}
 @bin bin/gst-launch-${API}
 @bin bin/gst-typefind-${API}
@@ -146,7 +146,9 @@ lib/pkgconfig/gstreamer-controller-${API}.pc
 lib/pkgconfig/gstreamer-net-${API}.pc
 libexec/gstreamer-${API}/
 @bin libexec/gstreamer-${API}/gst-plugin-scanner
+@mode 4555
 @bin libexec/gstreamer-${API}/gst-ptp-helper
+@mode
 @man man/man1/gst-inspect-${API}.1
 @man man/man1/gst-launch-${API}.1
 @man man/man1/gst-typefind-${API}.1
