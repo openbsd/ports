@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.41 2015/10/30 20:29:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2015/12/18 10:06:24 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
 
-SHARED_LIBS +=  gstphotography-1.0   2.0      # 600.0
-SHARED_LIBS +=  gstbasecamerabinsrc-1.0 2.0      # 600.0
-SHARED_LIBS +=  gstcodecparsers-1.0  2.0      # 600.0
-SHARED_LIBS +=  gstinsertbin-1.0     1.0      # 600.0
-SHARED_LIBS +=  gsturidownloader-1.0 1.0      # 600.0
-SHARED_LIBS +=  gstmpegts-1.0        1.0      # 600.0
-SHARED_LIBS +=  gstbadbase-1.0       1.0      # 600.0
-SHARED_LIBS +=  gstgl-1.0            1.0      # 600.0
-SHARED_LIBS +=  gstadaptivedemux-1.0 0.0      # 600.0
-SHARED_LIBS +=  gstbadvideo-1.0      1.0      # 600.0
+SHARED_LIBS +=  gstphotography-1.0   2.0      # 602.0
+SHARED_LIBS +=  gstbasecamerabinsrc-1.0 2.0      # 602.0
+SHARED_LIBS +=  gstcodecparsers-1.0  2.0      # 602.0
+SHARED_LIBS +=  gstinsertbin-1.0     1.0      # 602.0
+SHARED_LIBS +=  gsturidownloader-1.0 1.0      # 602.0
+SHARED_LIBS +=  gstmpegts-1.0        1.0      # 602.0
+SHARED_LIBS +=  gstbadbase-1.0       1.0      # 602.0
+SHARED_LIBS +=  gstgl-1.0            1.0      # 602.0
+SHARED_LIBS +=  gstadaptivedemux-1.0 0.0      # 602.0
+SHARED_LIBS +=  gstbadvideo-1.0      1.0      # 602.0
 
-WANTLIB += EGL GL GLESv2 SoundTouch X11 X11-xcb Xau Xdamage Xdmcp
+WANTLIB += EGL GL GLESv2 SoundTouch X11 X11-xcb Xdamage
 WANTLIB += Xext Xfixes Xrender Xxf86vm ass bz2 cairo croco-0.6
 WANTLIB += drm expat ffi fontconfig freetype fribidi gbm
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0
