@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/18 16:34:46 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2015/12/18 10:43:47 benoit Exp $
 
 COMMENT=		interface to URL shortening sites
 
-DISTNAME =		WWW-Shorten-3.06
+DISTNAME =		WWW-Shorten-3.08
 CATEGORIES=		www
 
 # Artistic 2.0
