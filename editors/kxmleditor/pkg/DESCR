@@ -1,3 +1,0 @@
-KXML editor is a program that displays contents of XML file. Left side
-contain tree with XML document structure, right side contain list of 
-attributes for selected XML element and its contents. 

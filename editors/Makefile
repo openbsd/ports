@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2015/06/23 04:45:18 bentley Exp $
+# $OpenBSD: Makefile,v 1.113 2015/12/19 19:15:52 jasper Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -33,7 +33,6 @@
      SUBDIR += jove
      SUBDIR += kile
      SUBDIR += kile-kde4
-     SUBDIR += kxmleditor
      SUBDIR += ldapvi
      SUBDIR += le
      SUBDIR += leafpad
