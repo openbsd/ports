@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2015/12/19 20:47:02 bentley Exp $
 
 COMMENT=	book about Python for experienced programmers
 
 VERSION=	5.4
 PKGNAME=	diveintopython-${VERSION}
-REVISION=	0
+REVISION=	1
 DISTNAME=	diveintopython-html-${VERSION}
 DISTNAMEPRINT=	diveintopython-pdf-${VERSION}
 CATEGORIES=	books
 
 HOMEPAGE=	http://diveintopython.org/
 
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+MAINTAINER=	Aleksander Piotrowski <pelotasplus@gmail.com>
 
 # FDL
 PERMIT_PACKAGE_CDROM=	Yes

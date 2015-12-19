@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2015/08/19 20:13:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2015/12/19 20:47:03 bentley Exp $
 
 COMMENT=	PDF-generating toolkit for Python
 
 VERSION=	2.1
 DISTNAME=	ReportLab_${VERSION:S/./_/}
 PKGNAME=	py-reportlab-${VERSION}
-REVISION =	12
+REVISION =	13
 EPOCH=		0
 CATEGORIES=	print graphics
 
@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 HOMEPAGE=	http://www.reportlab.org/rl_toolkit.html
 
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+MAINTAINER=	Aleksander Piotrowski <pelotasplus@gmail.com>
 
 # BSD, LGPLv2, MPL1.0, MIT
 PERMIT_PACKAGE_CDROM=	Yes
