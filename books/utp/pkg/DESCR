@@ -1,0 +1,13 @@
+Originally published in 1987, Unix Text Processing (UTP) (written by Dale
+Dougherty and Tim O'Reilly) provides one of the few comprehensive looks at
+all the tools involved in a typical troff-based writing workflow. It covers:
+
+ - UNIX and troff basics
+ - text editors (vi, ex, and sed)
+ - the ms and mm macro packages
+ - scripting with sh, awk, and sed
+ - the tbl, eqn and pic preprocessors
+ - macro writing 
+
+The appendices provide a collection of reference material and other useful
+pointers.
