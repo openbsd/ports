@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/01/08 15:43:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/12/19 23:09:28 bentley Exp $
 
 COMMENT =		PC-9801 emulator
 
-DISTNAME =		xnp2-20130726
-REVISION =		1
+DISTNAME =		xnp2-20140607
 
 CATEGORIES =		emulators
 
