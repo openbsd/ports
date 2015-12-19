@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/11/08 11:22:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2015/12/19 19:56:12 ajacoutot Exp $
 @bin bin/latexila
 @man man/man1/latexila.1
 share/appdata/
@@ -24,6 +24,7 @@ share/gtk-doc/html/latexila/annotation-glossary.html
 share/gtk-doc/html/latexila/ch01.html
 share/gtk-doc/html/latexila/home.png
 share/gtk-doc/html/latexila/index.html
+share/gtk-doc/html/latexila/index.sgml
 share/gtk-doc/html/latexila/ix01.html
 share/gtk-doc/html/latexila/latexila-LatexilaTemplatesDialogs.html
 share/gtk-doc/html/latexila/latexila-LatexilaUtils.html
