@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/16 21:36:11 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/12/19 19:14:20 jasper Exp $
 ${GEM_BIN}/racc${GEM_BIN_SUFFIX}
 ${GEM_BIN}/racc2y${GEM_BIN_SUFFIX}
 ${GEM_BIN}/y2racc${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
-${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/.gemtest
+{GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog
 ${GEM_LIB}/gems/${DISTNAME}/DEPENDS
@@ -17,6 +16,20 @@ ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/racc
 ${GEM_LIB}/gems/${DISTNAME}/bin/racc2y
 ${GEM_LIB}/gems/${DISTNAME}/bin/y2racc
+${GEM_LIB}/gems/${DISTNAME}/ext/
+${GEM_LIB}/gems/${DISTNAME}/ext/racc/
+${GEM_LIB}/gems/${DISTNAME}/ext/racc/.RUBYARCHDIR.-.racc.time
+${GEM_LIB}/gems/${DISTNAME}/ext/racc/MANIFEST
+${GEM_LIB}/gems/${DISTNAME}/ext/racc/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/racc/com/
+${GEM_LIB}/gems/${DISTNAME}/ext/racc/com/headius/
+${GEM_LIB}/gems/${DISTNAME}/ext/racc/com/headius/racc/
+${GEM_LIB}/gems/${DISTNAME}/ext/racc/com/headius/racc/Cparse.java
+${GEM_LIB}/gems/${DISTNAME}/ext/racc/cparse.c
+${GEM_LIB}/gems/${DISTNAME}/ext/racc/cparse.o
+${GEM_LIB}/gems/${DISTNAME}/ext/racc/cparse.so
+${GEM_LIB}/gems/${DISTNAME}/ext/racc/depend
+${GEM_LIB}/gems/${DISTNAME}/ext/racc/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/fastcache/
 ${GEM_LIB}/gems/${DISTNAME}/fastcache/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/fastcache/fastcache.c
@@ -76,6 +89,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/assets/conf.y
 ${GEM_LIB}/gems/${DISTNAME}/test/assets/digraph.y
 ${GEM_LIB}/gems/${DISTNAME}/test/assets/echk.y
 ${GEM_LIB}/gems/${DISTNAME}/test/assets/err.y
+${GEM_LIB}/gems/${DISTNAME}/test/assets/error_recovery.y
 ${GEM_LIB}/gems/${DISTNAME}/test/assets/expect.y
 ${GEM_LIB}/gems/${DISTNAME}/test/assets/firstline.y
 ${GEM_LIB}/gems/${DISTNAME}/test/assets/ichk.y
