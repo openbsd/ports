@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: slim.rc,v 1.5 2014/01/30 16:58:58 ajacoutot Exp $
+# $OpenBSD: slim.rc,v 1.6 2015/12/19 14:13:45 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/slim -d"
 
@@ -8,8 +8,10 @@ daemon="${TRUEPREFIX}/bin/slim -d"
 
 rc_reload=NO
 
-# on boot: wait for ttys to be initialized
+# on boot: wait for ttys to be initialized and make sure we don't hang in
+# "_rc_wait start" by hacking pexp
 if [ -n "${INRC}" ]; then
+	pexp="/sbin/init"
 rc_start() {
 	( local i=0
 	while ! pgrep -qf "^/usr/libexec/getty "; do

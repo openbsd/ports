@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.239 2015/11/17 17:48:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.240 2015/12/19 14:13:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.18.2
+REVISION=		0
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
