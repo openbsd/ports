@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/11/11 09:34:23 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/12/19 15:46:01 benoit Exp $
 @conflict koffice-*
 @bin bin/braindump
 @bin bin/calligra
@@ -6748,10 +6748,12 @@ share/apps/krita/templates/comics/.source/BD-EuroTemplate.kra
 share/apps/krita/templates/comics/.source/Comics-USTemplate.kra
 share/apps/krita/templates/comics/.source/Manga-JpTemplate.kra
 share/apps/krita/templates/comics/.source/a4_waffle_grid.kra
+share/apps/krita/templates/comics/.source/storyboard.kra
 share/apps/krita/templates/comics/BD-EuroTemplate.desktop
 share/apps/krita/templates/comics/Comics-USTemplate.desktop
 share/apps/krita/templates/comics/Manga-JpTemplate.desktop
 share/apps/krita/templates/comics/a4_waffle_grid.desktop
+share/apps/krita/templates/comics/storyboard.desktop
 share/apps/krita/templates/design/
 share/apps/krita/templates/design/.directory
 share/apps/krita/templates/design/.source/
