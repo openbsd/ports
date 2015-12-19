@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2015/12/19 00:13:35 bentley Exp $
 
 COMMENT =		compare pcap dump files
 
 MODPY_EGG_VERSION =	0.1
 DISTNAME =		pcapdiff-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		net security
 
-HOMEPAGE =		http://www.eff.org/testyourisp/pcapdiff/
+HOMEPAGE =		https://www.eff.org/pages/pcapdiff
 
 # GPLv2/GPLv3 (only)
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://www.eff.org/files/
+MASTER_SITES =		https://www.eff.org/files/
 
 MODULES =		lang/python
 RUN_DEPENDS =		net/py-pcapy
