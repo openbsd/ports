@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/20 18:29:20 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2015/12/20 11:26:13 kili Exp $
 
 COMMENT =		configuration management library
 
 DISTNAME =		configurator-0.2.0.2
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 # BSD3
@@ -13,7 +13,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	1BJok1JDmd935VIyLAltGi
+MODGHC_PACKAGE_KEY =	7wuFKPg2CtjDMH1jaQr0jT
 
 RUN_DEPENDS +=		devel/hs-hashable \
 			devel/hs-text>=0.11.1.0 \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2015/09/21 18:21:51 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2015/12/20 11:26:13 kili Exp $
 
 COMMENT =		library to convert between different types
 
 DISTNAME =		convertible-1.1.1.0
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -15,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	AzVx3SPyNPw9bmsCKaVBQA
+MODGHC_PACKAGE_KEY =	3UmehTCvaiX3TqgHXz9C7K
 
 RUN_DEPENDS +=		devel/hs-mtl \
 			devel/hs-old-locale \
