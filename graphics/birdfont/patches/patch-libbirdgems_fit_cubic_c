@@ -1,6 +1,9 @@
-$OpenBSD: patch-libbirdgems_fit_cubic_c,v 1.1 2015/12/20 08:29:06 jasper Exp $
+$OpenBSD: patch-libbirdgems_fit_cubic_c,v 1.2 2015/12/20 09:09:29 jasper Exp $
 
-malloc(3) lives in stdlib.h
+From 51a688beb46211a6d3ce04d09e851723c8f4c504 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Sun, 20 Dec 2015 09:29:24 +0100
+Subject: [PATCH] Use the right header to get malloc(3)
 
 --- libbirdgems/fit_cubic.c.orig	Sun Dec 20 09:09:02 2015
 +++ libbirdgems/fit_cubic.c	Sun Dec 20 09:17:26 2015
