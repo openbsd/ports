@@ -1,8 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/09/19 07:51:55 kili Exp $
-@comment bin/basic-tests
-@comment bin/extended-tests
-@comment bin/optimize-1-tests
-@comment bin/terminal-tests
+@comment $OpenBSD: PLIST,v 1.11 2015/12/20 11:05:17 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Test/
@@ -45,7 +41,7 @@ share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
 share/doc/hs-${DISTNAME}/html/synopsis.png
 share/hs-${DISTNAME}/
-share/hs-${DISTNAME}/README
+share/hs-${DISTNAME}/README.md
 share/hs-${DISTNAME}/doc/
 share/hs-${DISTNAME}/doc/Guide.html
 share/hs-${DISTNAME}/examples/
