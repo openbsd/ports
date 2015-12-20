@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/09/20 15:09:36 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2015/12/20 11:29:39 kili Exp $
 
 COMMENT =		strict data types and String IO
 
 DISTNAME =		strict-0.3.2
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -17,6 +17,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	DKYjecaDdpb08wIbtxfizS
+MODGHC_PACKAGE_KEY =	6HUCru1exevKAPYldnu96l
 
 .include <bsd.port.mk>

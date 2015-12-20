@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/09/20 16:23:20 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2015/12/20 11:29:39 kili Exp $
 
 COMMENT=		provides newtype wrappers for phantom types
 
 DISTNAME=		tagged-0.7.3
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 
 # BSD3
@@ -13,6 +13,6 @@ MODULES=		lang/ghc
 
 MODGHC_BUILD =          cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	GP3LFHwHxuBJt1SFkvd9MU
+MODGHC_PACKAGE_KEY =	7t9jJXOqGhg8nK8301dF4G
 
 .include <bsd.port.mk>
