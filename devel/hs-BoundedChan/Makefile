@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/09/20 15:09:35 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2015/12/20 11:27:22 kili Exp $
 
 COMMENT =		library for bounded channels
 
 DISTNAME =		BoundedChan-1.0.1.0
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 # BSD3
@@ -13,6 +13,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	LXwVX0bxWYX1bY5P6rLtn4
+MODGHC_PACKAGE_KEY =	DKVSeXasoRCIeKYLCEKzue
 
 .include <bsd.port.mk>
