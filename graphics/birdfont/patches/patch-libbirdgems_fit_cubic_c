@@ -1,0 +1,20 @@
+$OpenBSD: patch-libbirdgems_fit_cubic_c,v 1.1 2015/12/20 08:29:06 jasper Exp $
+
+malloc(3) lives in stdlib.h
+
+--- libbirdgems/fit_cubic.c.orig	Sun Dec 20 09:09:02 2015
++++ libbirdgems/fit_cubic.c	Sun Dec 20 09:17:26 2015
+@@ -22,10 +22,10 @@ Adapted to BirdFont by Johan Mattsson 2015
+ 
+ #include "GraphicsGems.h"
+ 
+-#ifdef MAC
+-#include <malloc/malloc.h>
+-#else
++#ifdef __linux__
+ #include <malloc.h>
++#else
++#include <stdlib.h>
+ #endif
+ 
+ #include <math.h>
