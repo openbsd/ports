@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/09/21 11:53:57 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2015/12/20 11:26:53 kili Exp $
 
 COMMENT =		Haskell Object Observation Debugger
 
 DISTNAME =		hood-0.2.1
+REVISION =		0
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.ittc.ku.edu/csdl/fpg/Hood
@@ -16,6 +17,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	HkoEaJpvlsx6IcKZNBBgM4
+MODGHC_PACKAGE_KEY =	8WGjut3s4GA3nPtTb0oFHU
 
 .include <bsd.port.mk>
