@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/09/19 21:59:14 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2015/12/20 11:34:51 kili Exp $
 
 COMMENT =		efficient conversion of values to readable byte strings
 
 DISTNAME =		bytestring-show-0.3.5.6
-REVISION =		0
+REVISION =		1
 CATEGORIES =		textproc
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>
@@ -15,6 +15,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	6xTCNuz61yLDHIOshKOtJK
+MODGHC_PACKAGE_KEY =	HXX9WX1PZTLJ7lJlVpm9p8
 
 .include <bsd.port.mk>

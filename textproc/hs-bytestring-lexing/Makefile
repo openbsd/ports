@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/20 20:55:07 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2015/12/20 11:34:51 kili Exp $
 
 COMMENT =		parse literals from strict or lazy bytestrings
 
 DISTNAME =		bytestring-lexing-0.5.0.2
-REVISION =		0
+REVISION =		1
 CATEGORIES =		textproc
 HOMEPAGE =		http://code.haskell.org/~wren/
 
@@ -14,7 +14,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	Hm8Fla8UZt23vysiKhLxNd
+MODGHC_PACKAGE_KEY =	GJndVD1gnJDKnVWgkxSiAA
 
 BUILD_DEPENDS =		devel/alex>=2.3
 
