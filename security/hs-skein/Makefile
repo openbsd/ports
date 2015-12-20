@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/20 18:29:21 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2015/12/20 11:33:36 kili Exp $
 
 COMMENT =		a family of cryptographic hash functions
 
 DISTNAME =		skein-1.0.9.2
-REVISION =		0
+REVISION =		1
 CATEGORIES =		security
 
 # BSD3
@@ -13,7 +13,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	94qfMQ6UChnKuGjBUFxVaW
+MODGHC_PACKAGE_KEY =	4cmcSdqE4k4IDFpNaHNXzg
 
 RUN_DEPENDS =		devel/hs-cereal>=0.3,<0.5 \
 			devel/hs-tagged>=0.2,<0.8 \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/20 18:29:21 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2015/12/20 11:33:36 kili Exp $
 
 COMMENT =		secure password storage
 
 DISTNAME =		pwstore-fast-2.3
-REVISION =		3
+REVISION =		4
 CATEGORIES =		security
 
 # BSD3
@@ -13,7 +13,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	8KhhzYrZK5a6sN6CGbVfkE
+MODGHC_PACKAGE_KEY =	3peYt4P2kbS9pg7aKlNglE
 
 RUN_DEPENDS =		devel/hs-base64-bytestring>=0.1 \
 			devel/hs-random>=1 \
