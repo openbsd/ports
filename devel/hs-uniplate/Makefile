@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2015/09/20 18:29:21 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2015/12/20 11:30:35 kili Exp $
 
 BROKEN-i386=	duplicate definition for symbol __i686.get_pc_thunk.bx
 
 COMMENT=	help writing simple, concise and fast operations
 
 DISTNAME=	uniplate-1.6.12
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 # 3-clause BSD
@@ -15,7 +15,7 @@ MODULES=		lang/ghc
 
 MODGHC_BUILD=		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY=	0m0JouqFn660nh2ECQRzqu
+MODGHC_PACKAGE_KEY=	DgRHum07M0vBMdvTsdo5gV
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/hs-hashable>=1.1.2.3,<1.3 \

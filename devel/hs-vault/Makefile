@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/20 18:29:21 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2015/12/20 11:30:35 kili Exp $
 
 COMMENT =		persistent store for values of arbitrary types
 
 DISTNAME =		vault-0.2.0.4
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -15,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	GsJGwCe2ji94mvRPKCYxuh
+MODGHC_PACKAGE_KEY =	4zpVg7Ki8hB6eIN84UKChe
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
