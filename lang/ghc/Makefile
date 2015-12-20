@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2015/12/10 19:50:01 kili Exp $
+# $OpenBSD: Makefile,v 1.130 2015/12/20 11:04:27 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -14,7 +14,6 @@ NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
-REVISION-main =		1
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
@@ -55,14 +54,7 @@ DIST_SUBDIR =		ghc
 
 BINDISTFILE =		${BINDISTFILE-${MACHINE_ARCH}}
 
-#####################################################################
-###								    #
-### NOTE FOR 7.10.3: SRC DISTFILE IS ghc-7.10.3a-src.tar.bz2, NOT   #
-### ghc-7.10.3-src.tar.bz2!					    #
-###								    #
-#####################################################################
-
-DISTFILES =		ghc-${MODGHC_VER}-src.tar.bz2 \
+DISTFILES =		ghc-${MODGHC_VER}a-src.tar.bz2 \
 			ghc-${MODGHC_VER}-testsuite.tar.bz2 \
 			${BINDISTFILE}
 
@@ -78,30 +70,30 @@ SUPDISTFILES +=		${BINDISTFILE-$m}
 # get smaller PLIST diffs for future updates.
 
 GHC_ITEMS = \
-	CABAL			1.22.4.0	96aI7pZyaxU3dsgngOxbdK \
-	ARRAY			0.5.1.0		E0sTtauuKsGDLZoT7lTbgZ \
-	BASE			4.8.1.0		GDytRqRVSUX7zckgKqJjgw \
-	BINARY			0.7.5.0		IvYoLp9H6Xy3zEH13MmZwd \
-	BIN_PACKAGE_DB		0.0.0.0		HeqFuAPxbeUAPK6hSBHejU \
-	BYTESTRING		0.10.6.0	6elQVSg5cWdFrvRnfxTUrH \
-	CONTAINERS		0.5.6.2		LKCPrTJwOTOLk4OU37YmeN \
-	DEEPSEQ			1.4.1.1		LbCWUlehDDeLxurARKDH5o \
-	DIRECTORY		1.2.2.0		KowvXytSqazBcvN7MGpFtg \
-	FILEPATH		1.4.0.0		KsGE6pHE5eZHSN90ZVax6A \
-	GHC			7.10.2		JzwEp1oQ8kA7NFNTGk1ho5 \
+	CABAL			1.22.5.0	3ux67khMI118y6VpwrFnXN \
+	ARRAY			0.5.1.0		67iodizgJQIIxYVTp4emlA \
+	BASE			4.8.2.0		HQfYBxpPvuw8OunzQu6JGM \
+	BINARY			0.7.5.0		3uXFWMoAGBg0xKP9MHKRwi \
+	BIN_PACKAGE_DB		0.0.0.0		JPOxOw4FLalDxRNtBqZ2ji \
+	BYTESTRING		0.10.6.0	6VWy06pWzJq9evDvK2d4w6 \
+	CONTAINERS		0.5.6.2		2C3ZI8RgPO2LBMidXKTvIU \
+	DEEPSEQ			1.4.1.1		6vMKxt5sPFR0XsbRWvvq59 \
+	DIRECTORY		1.2.2.0		0hFG6ZxK1nk4zsyOqbNHfm \
+	FILEPATH		1.4.0.0		Ey7a1in9roBAE8bUFJ5R9m \
+	GHC			7.10.3		0AG9TOjDEtx4Ji3wSwHOBe \
 	GHC_PRIM		0.4.0.0		8TmvWUcS1U1IKHT0levwg3 \
-	HASKELINE		0.7.2.1		1dVCRhdIH7hAQWJrKwByYv \
-	HOOPL			3.10.0.2	DoMsb793VEWGUzPylcUNJi \
-	HPC			0.6.0.2		EoBo26ZW1TCDX9aShnDKTF \
+	HASKELINE		0.7.2.1		GGvi737nHHfG6zm2y7Rimi \
+	HOOPL			3.10.0.2	FCWMV1gJiCi02IwN4CnRgk \
+	HPC			0.6.0.2		FUjQx3d1H3dEEtLFWv7hFw \
 	INTEGER_GMP		1.0.0.0		2aU3IZNMF9a7mQ0OzsZ0dS \
-	PRETTY			1.1.2.0		7UQTOB05U7lIYPkFOVraeR \
-	PROCESS			1.2.3.0		FLTz0SLwyG6LJUpZ52HjkU \
-	TEMPLATE_HASKELL	2.10.0.0	1ejK907jvoTHoZ6iZtHeyN \
-	TERMINFO		0.4.0.1		KvtqTNXWuWjKicEYaZ7qsx \
-	TIME			1.5.0.1		AXTdBF9VRQoBOqJT6qtmVH \
-	TRANSFORMERS		0.4.2.0		3eG64VdP2vzGjP6wJiCp5X \
-	UNIX			2.7.1.0		A3WgcI5QiHK4PDo4jSYdwQ \
-	XHTML			3000.2.1	FxPylgBilld3tRCpn3X21N
+	PRETTY			1.1.2.0		JItwetRppk1H5Uq3xbjDGC \
+	PROCESS			1.2.3.0		52AgREEfSrnJLlkGV9YZZJ \
+	TEMPLATE_HASKELL	2.10.0.0	GJPvtLC64aA4c1Jl10o2qt \
+	TERMINFO		0.4.0.1		6iVf4EBnOgfIaaOCLRs8jl \
+	TIME			1.5.0.1		FTheb6LSxyX1UABIbBXRfn \
+	TRANSFORMERS		0.4.2.0		GZTjP9K5WFq01xC9BAGQpF \
+	UNIX			2.7.1.0		KZL8h98IqDM57kQSPo1mKx \
+	XHTML			3000.2.1	0ACfOp3hebWD9jGWE4v4Gh
 
 .for _i _v _s in ${GHC_ITEMS}
 ${_i}_VER =	${_v}
@@ -163,6 +155,10 @@ FAKE_FLAGS +=		CREATE_SCRIPT="${INSTALL_SCRIPT} /dev/null " \
 PORTHOME =		${WRKDIR}
 
 TEST_DEPENDS =	print/ghostscript/gnu
+
+# There are some junk .orig files in 7.10.3.
+post-extract:
+	cd ${WRKSRC} && find . -name '*.orig' | xargs rm
 
 post-patch:
 # - Install a precompiled binary.
