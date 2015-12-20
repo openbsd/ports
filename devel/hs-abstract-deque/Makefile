@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/20 18:29:20 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2015/12/20 11:24:56 kili Exp $
 
 COMMENT =		abstract, parameterized interface to mutable deques
 
 DISTNAME =		abstract-deque-0.1.6
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 # BSD3
@@ -13,7 +13,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	1aeWXJU6YzZ2n3bfoYdHlX
+MODGHC_PACKAGE_KEY =	AnofRaZbe9c6SG5DS1OZJN
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-HUnit

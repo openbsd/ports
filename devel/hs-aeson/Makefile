@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/09/22 06:33:41 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2015/12/20 11:24:56 kili Exp $
 
 COMMENT =		fast JSON parsing and encoding
 
 DISTNAME =		aeson-0.9.0.1
+REVISION =		0
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/bos/aeson
@@ -14,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	LaL6FxPyYWTJ65H4cVDuqR
+MODGHC_PACKAGE_KEY =	I1ARfXrEZCoHWD1GBzA5BX
 
 RUN_DEPENDS =		devel/hs-dlist>=0.2 \
 			devel/hs-hashable>=1.1.2.0 \
