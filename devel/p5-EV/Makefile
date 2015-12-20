@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/16 14:36:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2015/12/20 10:30:53 benoit Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	perl interface to libev
 
 MODULES =	cpan
-DISTNAME =	EV-4.21
+DISTNAME =	EV-4.22
 CATEGORIES =	devel
 CPAN_AUTHOR =	MLEHMANN
 
