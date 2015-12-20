@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2015/09/19 08:19:06 kili Exp $
+# $OpenBSD: Makefile,v 1.27 2015/12/20 11:32:39 kili Exp $
 
 COMMENT =		library for client-side HTTP
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
 DISTNAME =		HTTP-4000.2.20
+REVISION =		0
 CATEGORIES =		net devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -16,7 +17,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	I3KwBZTyYzDKWfJ8oWET6e
+MODGHC_PACKAGE_KEY =	ALmDkzntV1f2dHTcPW5ASO
 
 MODGHC_SETUP_CONF_ARGS =-fnetwork23
 
