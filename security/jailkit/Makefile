@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/16 13:43:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/12/20 15:43:46 ajacoutot Exp $
 
 COMMENT=		utilities for jailing a user or process
 
-DISTNAME=		jailkit-2.18
+DISTNAME=		jailkit-2.19
 CATEGORIES=		security sysutils
 
 HOMEPAGE=		http://olivier.sessink.nl/jailkit/
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		http://olivier.sessink.nl/jailkit/
 
 # BSD - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
