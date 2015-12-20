@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2015/09/19 08:23:58 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2015/12/20 11:12:17 kili Exp $
 
 COMMENT =	Haskell platform meta-package
 
-PKGNAME =	haskell-platform-7.10.2
+PKGNAME =	haskell-platform-7.10.3
 EPOCH =		0
 
 HOMEPAGE =	http://hackage.haskell.org/platform/
@@ -11,15 +11,15 @@ MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 
 # Upstream resources: git://github.com/haskell/haskell-platform
 # The version numbers are taken from hptool/src/Releases2015.hs, Release
-# hp_7_10_2_a.
+# hp_7_10_3.
 #
 # Version numbers of libraries and tools below are hard-wired by
 # intention (to let people know if they update some port which shouldn't
 # updated yet).
 
-# ghc-7.10.2 and the following libraries provided by the
-# ghc package: array-0.5.1.0, base-4.8.1.0, bytestring-0.10.6.0,
-# Cabal-1.22.4.0, containers-0.5.6.2, deepseq-1.4.1.1, directory-1.2.2.0,
+# ghc-7.10.3 and the following libraries provided by the
+# ghc package: array-0.5.1.0, base-4.8.2.0, bytestring-0.10.6.0,
+# Cabal-1.22.5.0, containers-0.5.6.2, deepseq-1.4.1.1, directory-1.2.2.0,
 # filepath-1.4.0.0, hpc-0.6.0.2, pretty-1.1.2.0, process-1.2.3.0,
 # template-haskell-2.10.0.0, time-1.5.0.1, transformers-0.4.2.0,
 # xhtml-3000.2.1.
@@ -29,29 +29,29 @@ MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 # ghc-prim-0.4.0.0, haskeline-0.7.2.1, hoopl-3.10.0.2, integer-gmp-1.0.0.0,
 # terminfo-0.4.0.1, unix-2.7.1.0.
 
-RUN_DEPENDS +=	lang/ghc=7.10.2 \
-		lang/ghc,-doc=7.10.2
+RUN_DEPENDS +=	lang/ghc=7.10.3 \
+		lang/ghc,-doc=7.10.3
 
 # Additional libraries required for haskell platform:
 RUN_DEPENDS +=	devel/hs-async=2.0.2 \
 		textproc/hs-attoparsec=0.13.0.1 \
-		devel/hs-case-insensitive=1.2.0.4 \
+		devel/hs-case-insensitive=1.2.0.5 \
 		www/hs-cgi=3001.2.2.2 \
-		devel/hs-fgl=5.5.2.1 \
-		graphics/hs-GLUT=2.7.0.1 \
-		graphics/hs-GLURaw=1.5.0.1 \
+		devel/hs-fgl=5.5.2.3 \
+		graphics/hs-GLUT=2.7.0.3 \
+		graphics/hs-GLURaw=1.5.0.2 \
 		lang/hs-haskell-src=1.0.2.0 \
 		devel/hs-hashable=1.2.3.3 \
 		www/hs-html=1.0.1.2 \
 		net/hs-HTTP=4000.2.20 \
-		devel/hs-HUnit=1.2.5.2 \
+		devel/hs-HUnit=1.3.0.0 \
 		devel/hs-mtl=2.2.1 \
 		devel/hs-network=2.6.2.1 \
-		graphics/hs-OpenGL=2.12.0.1 \
-		graphics/hs-OpenGLRaw=2.5.1.0 \
+		graphics/hs-OpenGL=2.13.1.0 \
+		graphics/hs-OpenGLRaw=2.6.0.0 \
 		devel/hs-parallel=3.2.0.6 \
 		devel/hs-parsec=3.1.9 \
-		devel/hs-primitive=0.6 \
+		devel/hs-primitive=0.6.1.0 \
 		devel/hs-QuickCheck=2.8.1 \
 		devel/hs-random=1.1 \
 		devel/hs-regex-base=0.93.2 \
@@ -59,7 +59,7 @@ RUN_DEPENDS +=	devel/hs-async=2.0.2 \
 		devel/hs-regex-posix=0.95.2 \
 		devel/hs-split=0.2.2 \
 		devel/hs-stm=2.4.4 \
-		devel/hs-syb=0.5.1 \
+		devel/hs-syb=0.6 \
 		devel/hs-text=1.2.1.3 \
 		devel/hs-unordered-containers=0.2.5.1 \
 		devel/hs-vector=0.11.0.0 \
@@ -86,7 +86,8 @@ RUN_DEPENDS +=	devel/hs-scientific=0.3.3.8
 
 # Needed by OpenGL:
 RUN_DEPENDS +=	devel/hs-ObjectName=1.1.0.0 \
-		devel/hs-StateVar=1.1.0.0
+		devel/hs-StateVar=1.1.0.1 \
+		math/hs-half=0.2.2.1
 
 # Tools (haddock-2.16.1 is now contained in the ghc package):
 RUN_DEPENDS +=	devel/cabal-install=1.22.6.0 \
