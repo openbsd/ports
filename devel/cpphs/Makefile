@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/09/21 20:07:16 kili Exp $
+# $OpenBSD: Makefile,v 1.38 2015/12/20 11:24:12 kili Exp $
 
 COMMENT-main =	liberalised reimplementation of cpp in Haskell
 COMMENT-lib =	cpphs library
@@ -8,6 +8,7 @@ ONLY_FOR_ARCHS-lib =	i386 amd64
 DISTNAME =	cpphs-1.19.3
 PKGNAME-main =	${DISTNAME}
 PKGNAME-lib =	hs-${DISTNAME}
+REVISION-lib =	0
 CATEGORIES =	devel
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 
@@ -24,7 +25,7 @@ SUBST_VARS +=		DISTNAME
 WANTLIB-main +=		util
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		hackage cabal haddock register
-MODGHC_PACKAGE_KEY =	HTebNkKFYOCAqQG2KzButo
+MODGHC_PACKAGE_KEY =	I02A1RR7RCZ6w2Apsnbhlq
 LIB_DEPENDS-main =	${LIB_DEPENDS}
 RUN_DEPENDS-main =
 LIB_DEPENDS-lib =	devel/hs-old-locale \
