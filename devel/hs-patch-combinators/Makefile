@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/20 16:23:20 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2015/12/20 11:28:07 kili Exp $
 
 COMMENT =		library for patching functions and data structures
 
 DISTNAME =		patch-combinators-0.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 # BSD3
@@ -13,6 +13,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	LZJHEZT0lcD04IBKiytGGl
+MODGHC_PACKAGE_KEY =	7Zrg3GvcJ3JJHNpmuF9gai
 
 .include <bsd.port.mk>

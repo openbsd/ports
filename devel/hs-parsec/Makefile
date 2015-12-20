@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2015/09/19 07:59:19 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2015/12/20 11:28:07 kili Exp $
 
 COMMENT =		Monadic parser combinators
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
 DISTNAME =		parsec-3.1.9
+REVISION =		0
 CATEGORIES =		devel
 HOMEPAGE =		http://www.cs.uu.nl/~daan/parsec.html
 
@@ -17,7 +18,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	8fSmqig53hOL2SEu1k9Tv0
+MODGHC_PACKAGE_KEY =	8bOz3HeEMD67ZDdQubQs32
 
 RUN_DEPENDS =		devel/hs-mtl \
 			devel/hs-text>=0.2,<1.3
