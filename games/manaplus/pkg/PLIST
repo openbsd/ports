@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2015/11/26 14:51:59 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.32 2015/12/20 13:19:26 benoit Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -189,6 +189,8 @@ share/manaplus/data/graphics/images/
 share/manaplus/data/graphics/images/error.png
 share/manaplus/data/graphics/images/login_wallpaper.png
 share/manaplus/data/graphics/shaders/
+share/manaplus/data/graphics/shaders/gles2_frag.glsl
+share/manaplus/data/graphics/shaders/gles2_vertex.glsl
 share/manaplus/data/graphics/shaders/simple_frag.glsl
 share/manaplus/data/graphics/shaders/simple_vertex.glsl
 share/manaplus/data/graphics/sprites/
