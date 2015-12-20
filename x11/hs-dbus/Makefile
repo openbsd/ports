@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2015/09/24 20:10:29 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2015/12/20 11:37:45 kili Exp $
 
 COMMENT =		Haskell implementation of the D-Bus protocol
 
 DISTNAME =		dbus-0.10.10
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel x11
 
 HOMEPAGE =		https://john-millikin.com/software/haskell-dbus/
@@ -17,7 +17,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	1wWNLITcHmO4TX9aVNucev
+MODGHC_PACKAGE_KEY =	24pJzOj0UdIAGtcrigCSOp
 
 RUN_DEPENDS =		devel/hs-cereal>=0.3.4,<0.5 \
 			devel/hs-network>=2.2.3 \

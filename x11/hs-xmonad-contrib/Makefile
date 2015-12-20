@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2015/10/02 20:46:41 kili Exp $
+# $OpenBSD: Makefile,v 1.30 2015/12/20 11:37:45 kili Exp $
 
 COMMENT =		third party xmonad extensions
 
 DISTNAME =		xmonad-contrib-0.11.4
+REVISION =		0
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage register haddock
 
-MODGHC_PACKAGE_KEY =	72MfOW2h7Gf6PeQm3wduZc
+MODGHC_PACKAGE_KEY =	FFHmk283BMS0kJJgjKCaEH
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-extensible-exceptions \

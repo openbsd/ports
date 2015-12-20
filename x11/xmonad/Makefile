@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2015/09/21 21:13:23 kili Exp $
+# $OpenBSD: Makefile,v 1.48 2015/12/20 11:37:45 kili Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
@@ -6,6 +6,7 @@ COMMENT-lib =		libraries for runtime configuration
 DISTNAME =		xmonad-0.11.1
 PKGNAME-main =		${DISTNAME}
 PKGNAME-lib =		${DISTNAME:S,-,-lib-,}
+REVISION-lib =		0
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 
@@ -21,7 +22,7 @@ WANTLIB-lib =
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage haddock register nort
 
-MODGHC_PACKAGE_KEY =	JSzH3sHpnqI0a3aHB5qhOR
+MODGHC_PACKAGE_KEY =	69emmTIdOBCCVIsKs9lHOh
 
 # Required because of the nort tag in MODGHC_BUILD
 SUBST_VARS +=		MODGHC_PACKAGE_KEY
