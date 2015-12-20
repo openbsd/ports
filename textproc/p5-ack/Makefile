@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2015/11/02 10:47:41 nigel Exp $
+# $OpenBSD: Makefile,v 1.21 2015/12/20 09:47:13 benoit Exp $
 
 COMMENT=		grep like tool, aimed at programmers
 
 MODULES=		cpan
-V=			2.15_01
+V =			2.15_02
 DISTNAME=		ack-${V}
 PKGNAME=		p5-${DISTNAME:S/_/./}
 CPAN_AUTHOR=		PETDANCE
 CATEGORIES=		textproc
-REVISION=		0
 
 HOMEPAGE =		http://beyondgrep.com/
 
