@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2015/10/06 11:37:06 jca Exp $
+# $OpenBSD: Makefile,v 1.45 2015/12/20 15:40:17 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
@@ -36,7 +36,8 @@ CONFIGURE_ARGS=		--fsstnd=openbsd \
 			--srcdir=${WRKSRC} ${WRKBUILD} \
 			--without-dynamic-modules
 
-CONFIGURE_ENV =		ac_cv_prog_DVIPDF=''
+CONFIGURE_ENV =		ac_cv_prog_DVIPDF='' \
+			ac_cv_prog_PS2PDF=''
 
 .if ${MACHINE_ARCH} == "sparc64"
 CFLAGS +=		-DSAFETY=2 -DNO_ASM -mcmodel=medany
