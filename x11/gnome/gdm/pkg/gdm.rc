@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: gdm.rc,v 1.34 2015/12/19 14:13:45 ajacoutot Exp $
+# $OpenBSD: gdm.rc,v 1.35 2015/12/20 09:38:14 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 
@@ -17,9 +17,9 @@ rc_pre() {
 # on boot: wait for ttys to be initialized and make sure we don't hang in
 # "_rc_wait start" by hacking pexp
 if [ -n "${INRC}" ]; then
+rc_start() {
 	pexp="/sbin/init"
 	unset rc_bg
-rc_start() {
 	( local i=0
 	while ! pgrep -qf "^/usr/libexec/getty "; do
 		sleep 1
