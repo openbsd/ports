@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/20 18:29:21 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2015/12/20 11:28:46 kili Exp $
 
 COMMENT =		safe wrappers for some base functions
 
 DISTNAME =		safe-0.3.3
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 HOMEPAGE =		http://community.haskell.org/~ndm/safe/
 
@@ -16,6 +16,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	JRryiuNkY1vLSlr2H7bSjh
+MODGHC_PACKAGE_KEY =	7aaOes1ypNP7xf88puSy1U
 
 .include <bsd.port.mk>
