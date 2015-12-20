@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/09/19 08:16:55 kili Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/12/20 11:10:38 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/Rendering/
@@ -270,6 +270,7 @@ share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-Framebuffer.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-FramebufferObjects-Attachments.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-FramebufferObjects-FramebufferObjects.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-FramebufferObjects-Queries.html
+share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-FramebufferObjects-RenderbufferObjects.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-FramebufferObjects.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-Hints.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL-GL-LineSegments.html
@@ -378,6 +379,7 @@ share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-Framebuffer.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-FramebufferObjects-Attachments.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-FramebufferObjects-FramebufferObjects.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-FramebufferObjects-Queries.html
+share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-FramebufferObjects-RenderbufferObjects.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-FramebufferObjects.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-Hints.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-LineSegments.html
