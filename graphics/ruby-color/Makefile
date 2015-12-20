@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2014/09/19 20:47:21 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2015/12/20 09:27:03 jasper Exp $
 
 COMMENT =	color value conversion and modification
 
-DISTNAME =	color-1.4.2
+DISTNAME =	color-1.8
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://github.com/halostatue/color
@@ -14,8 +14,6 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-# Tests require minitest 5, not in ports
-#MODRUBY_TEST =		testrb
-#MODRUBY_TEST_TARGET =	-I lib test/test_*.rb
+MODRUBY_TEST =		rake
 
 .include <bsd.port.mk>
