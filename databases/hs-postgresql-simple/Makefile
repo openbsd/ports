@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2015/10/21 19:08:13 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2015/12/20 11:20:08 kili Exp $
 
 BROKEN-i386 =		needs a fixed rts/Linker.c in ghc
 
 COMMENT =		mid-level PostgreSQL client library
 
 DISTNAME =		postgresql-simple-0.4.9.0
-REVISION =		0
+REVISION =		1
 CATEGORIES =		databases
 
 HOMEPAGE =		https://github.com/lpsmith/postgresql-simple
@@ -19,7 +19,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	BQZpJFGK5S98sVdgR11b1k
+MODGHC_PACKAGE_KEY =	F1Px6S9jdogLIGPkK2BQCV
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		databases/hs-postgresql-libpq>=0.9 \
