@@ -1,0 +1,12 @@
+$OpenBSD: patch-myhdl_test_core_test_Cosimulation_py,v 1.1 2015/12/20 09:34:16 jasper Exp $
+--- myhdl/test/core/test_Cosimulation.py.orig	Sun Dec 20 10:31:28 2015
++++ myhdl/test/core/test_Cosimulation.py	Sun Dec 20 10:31:38 2015
+@@ -35,7 +35,7 @@ random.seed(1)  # random, but deterministic
+ MAXLINE = 4096
+ 
+ 
+-exe = "python {0} ".format(os.path.abspath(__file__))
++exe = "${MODPY_BIN} {0} ".format(os.path.abspath(__file__))
+ 
+ fromSignames = ['a', 'bb', 'ccc']
+ fromSizes = [1, 11, 63]

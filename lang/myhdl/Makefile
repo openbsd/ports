@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2014/09/27 17:41:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/12/20 09:34:16 jasper Exp $
 
 COMMENT=	Python as a hardware description and verification language
 
-MODPY_EGG_VERSION=0.8.1
+MODPY_EGG_VERSION=0.9.0
 DISTNAME=	myhdl-${MODPY_EGG_VERSION}
 CATEGORIES=	lang
 
@@ -11,9 +11,14 @@ HOMEPAGE=	http://www.myhdl.org/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=myhdl/}
+MODULES =		lang/python
+MODPY_PI =		Yes
 
-MODULES+=	lang/python
+MODPY_SETUPTOOLS =	Yes
+TEST_DEPENDS =		devel/py-test
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/myhdl/test/core/test_Cosimulation.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/myhdl/
@@ -23,5 +28,5 @@ post-install:
 do-test: fake
 	cd ${WRKSRC}/myhdl/test/core && \
 		env PYTHONPATH="${WRKINST}${MODPY_LIBDIR}/site-packages/" \
-			${MODPY_BIN} test_all.py
+			${MAKE_PROGRAM}
 .include <bsd.port.mk>
