@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/09/23 06:06:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/12/20 09:35:18 ajacoutot Exp $
 @bin bin/jsc
 include/webkitgtk-${API}/
 include/webkitgtk-${API}/JavaScriptCore/
@@ -293,7 +293,6 @@ libexec/webkit2gtk-${API}/
 @bin libexec/webkit2gtk-${API}/WebKitDatabaseProcess
 @bin libexec/webkit2gtk-${API}/WebKitNetworkProcess
 @bin libexec/webkit2gtk-${API}/WebKitPluginProcess
-@bin libexec/webkit2gtk-${API}/WebKitPluginProcess2
 @bin libexec/webkit2gtk-${API}/WebKitWebProcess
 share/gir-1.0/JavaScriptCore-${API}.gir
 share/gir-1.0/WebKit2-${API}.gir

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/11/20 14:35:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2015/12/20 09:35:18 ajacoutot Exp $
 
 BROKEN-alpha =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
 BROKEN-hppa =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
@@ -16,7 +16,7 @@ EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  javascriptcoregtk-${API}     1.0 # 18.0
 SHARED_LIBS +=  webkit2gtk-${API}            1.1 # 37.2
@@ -31,15 +31,14 @@ MAINTAINER =		Landry Breuil <landry@openbsd.org> \
 # LGPLv2 and BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += EGL GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender Xt atk-1.0 c cairo cairo-gobject
-WANTLIB += enchant fontconfig freetype gdk-3 gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gstapp-1.0
-WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gtk-3 gtk-x11-2.0
-WANTLIB += harfbuzz harfbuzz-icu hyphen icui18n icuuc jpeg m notify
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread secret-1
-WANTLIB += soup-2.4 sqlite3 webp xml2 xslt z
+WANTLIB += EGL GL X11 Xcomposite Xdamage Xrender Xt atk-1.0 c
+WANTLIB += cairo cairo-gobject enchant fontconfig freetype gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gtk-3 harfbuzz
+WANTLIB += harfbuzz-icu hyphen icui18n icuuc jpeg m notify pango-1.0
+WANTLIB += pangocairo-1.0 png pthread secret-1 soup-2.4 sqlite3
+WANTLIB += webp xml2 xslt z
 
 MASTER_SITES =		http://webkitgtk.org/releases/
 
@@ -78,7 +77,6 @@ LIB_DEPENDS =		devel/harfbuzz,-icu \
 			textproc/hyphen \
 			textproc/libxslt \
 			x11/gnome/libsecret \
-			x11/gtk+2 \
 			x11/gtk+3
 
 CFLAGS +=		-I${X11BASE}/include
@@ -87,6 +85,9 @@ LDFLAGS =		-L${X11BASE}/lib
 CONFIGURE_ARGS =	-DPORT=GTK \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
 			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}"
+
+# old gtk+2 plugins (flash, java, ...) - mostly usefull on Linux
+CONFIGURE_ARGS +=	-DENABLE_PLUGIN_PROCESS_GTK2=OFF
 
 # sync with Source/JavaScriptCore/assembler/MacroAssembler.h
 .if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "arm" && \
