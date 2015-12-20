@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/20 15:09:35 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2015/12/20 11:25:33 kili Exp $
 
 COMMENT=		bidirectional mapping between two key types
 
 DISTNAME=		bimap-0.2.4
-REVISION=		5
+REVISION=		6
 CATEGORIES=		devel
 
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
@@ -15,6 +15,6 @@ MODULES=		lang/ghc
 
 MODGHC_BUILD=		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY=	IFMyikNePbtKyDFMm2y5jn
+MODGHC_PACKAGE_KEY=	Iqg9DPENZVI4APk2nU9eqb
 
 .include <bsd.port.mk>

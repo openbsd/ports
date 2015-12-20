@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/21 09:48:28 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2015/12/20 11:25:33 kili Exp $
 
 COMMENT =		command line parsing and online help
 
 DISTNAME =		cmdlib-0.3.6
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -14,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	FHxduetwK3RKKnRsznINp8
+MODGHC_PACKAGE_KEY =	J4Usz9eUAn8DIm1qF1PzT6
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 RUN_DEPENDS +=		devel/hs-mtl>=2 \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/20 18:29:20 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2015/12/20 11:25:33 kili Exp $
 
 COMMENT =		command line parser library
 
 DISTNAME =		cmdargs-0.10.12
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 HOMEPAGE =		http://community.haskell.org/~ndm/cmdargs/
 
@@ -17,6 +17,6 @@ MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 MODGHC_SETUP_CONF_ARGS =	-f -testprog
 
-MODGHC_PACKAGE_KEY =	9lqlZ5T6W1J9RS7MO2uZX2
+MODGHC_PACKAGE_KEY =	ItMd0xInfF4GSLXJQq7Wxz
 
 .include <bsd.port.mk>
