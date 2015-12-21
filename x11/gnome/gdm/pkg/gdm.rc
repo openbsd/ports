@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: gdm.rc,v 1.35 2015/12/20 09:38:14 ajacoutot Exp $
+# $OpenBSD: gdm.rc,v 1.36 2015/12/21 09:32:01 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 
@@ -18,7 +18,6 @@ rc_pre() {
 # "_rc_wait start" by hacking pexp
 if [ -n "${INRC}" ]; then
 rc_start() {
-	pexp="/sbin/init"
 	unset rc_bg
 	( local i=0
 	while ! pgrep -qf "^/usr/libexec/getty "; do
