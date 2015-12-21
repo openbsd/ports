@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.21 2015/09/08 19:40:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/12/21 08:07:08 jasper Exp $
 lib/grilo-${API}/grl-dleyna.xml
 lib/grilo-${API}/grl-filesystem.xml
 lib/grilo-${API}/grl-flickr.xml
 lib/grilo-${API}/grl-freebox.xml
 lib/grilo-${API}/grl-gravatar.xml
 lib/grilo-${API}/grl-jamendo.xml
-lib/grilo-${API}/grl-lastfm-albumart.xml
 lib/grilo-${API}/grl-local-metadata.xml
 lib/grilo-${API}/grl-magnatune.xml
 lib/grilo-${API}/grl-metadata-store.xml
@@ -24,7 +23,6 @@ lib/grilo-${API}/libgrlflickr.so
 lib/grilo-${API}/libgrlfreebox.so
 lib/grilo-${API}/libgrlgravatar.so
 lib/grilo-${API}/libgrljamendo.so
-lib/grilo-${API}/libgrllastfm-albumart.so
 lib/grilo-${API}/libgrllocalmetadata.so
 lib/grilo-${API}/libgrlmagnatune.so
 lib/grilo-${API}/libgrlmetadatastore.so
