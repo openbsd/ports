@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2015/11/18 20:24:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.78 2015/12/21 20:58:57 naddy Exp $
 
 COMMENT=	Pico editor clone with enhancements
 
@@ -18,7 +18,8 @@ MODULES=	devel/gettext
 WANTLIB=	c ncursesw
 
 SEPARATE_BUILD=	Yes
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.69
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS=	--disable-libmagic
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
