@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/19 02:10:31 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2015/12/21 18:35:03 jasper Exp $
 
 COMMENT=		pragmatic application deployment automation
 
-DISTNAME=		vlad-2.6.4
-REVISION=		0
+DISTNAME=		vlad-2.6.5
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://rubyhitsquad.com/Vlad_the_Deployer.html
