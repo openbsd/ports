@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_run_sh,v 1.1 2015/12/21 18:32:26 jasper Exp $
+
+Drop gnu-ism and use the closest equivalent.
+
+--- tests/run.sh.orig	Fri Dec 11 22:59:25 2015
++++ tests/run.sh	Mon Dec 21 19:28:07 2015
+@@ -36,7 +36,7 @@ echo "When a test fails, please remove the $tmpdir dir
+ # will attempt to write precompiled *.pyc sources.  For efficiency,
+ # we share these temporary files among tests.
+ mkdir $tmpdir
+-cp -a "$SOURCE_DIR/src" $tmpdir/rubber
++cp -R "$SOURCE_DIR/src" $tmpdir/rubber
+ sed "s%@version@%unreleased%;s%@moddir@%$SOURCE_DIR/data%" \
+     $tmpdir/rubber/version.py.in > $tmpdir/rubber/version.py
+ for exe in rubber rubber-info rubber-pipe; do

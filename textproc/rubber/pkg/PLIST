@@ -1,18 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/11/16 13:39:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2015/12/21 18:32:26 jasper Exp $
 bin/rubber
 bin/rubber-info
 bin/rubber-pipe
-@info info/rubber.info
+info/rubber.info
 lib/python${MODPY_VERSION}/site-packages/rubber/
 lib/python${MODPY_VERSION}/site-packages/rubber-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/rubber/__init__.py
 lib/python${MODPY_VERSION}/site-packages/rubber/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/biblio.py
 lib/python${MODPY_VERSION}/site-packages/rubber/biblio.pyc
-lib/python${MODPY_VERSION}/site-packages/rubber/cmd_info.py
-lib/python${MODPY_VERSION}/site-packages/rubber/cmd_info.pyc
-lib/python${MODPY_VERSION}/site-packages/rubber/cmd_pipe.py
-lib/python${MODPY_VERSION}/site-packages/rubber/cmd_pipe.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/cmdline.py
 lib/python${MODPY_VERSION}/site-packages/rubber/cmdline.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/convert.py
@@ -36,6 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/rubber/converters/shell.py
 lib/python${MODPY_VERSION}/site-packages/rubber/converters/shell.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/depend.py
 lib/python${MODPY_VERSION}/site-packages/rubber/depend.pyc
+lib/python${MODPY_VERSION}/site-packages/rubber/dvip_tool.py
+lib/python${MODPY_VERSION}/site-packages/rubber/dvip_tool.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/environment.py
 lib/python${MODPY_VERSION}/site-packages/rubber/environment.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/index.py
@@ -43,8 +41,12 @@ lib/python${MODPY_VERSION}/site-packages/rubber/index.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/__init__.py
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/aleph.rub
+lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/article.rub
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/asymptote.py
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/asymptote.pyc
+lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/backref.rub
+lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/beamer.rub
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/biblatex.py
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/biblatex.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/bibtex.py
@@ -59,10 +61,13 @@ lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/dvips.py
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/dvips.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/epsfig.py
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/epsfig.pyc
+lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/glossaries.rub
+lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/gnuplottex.rub
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/graphics.py
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/graphics.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/graphicx.py
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/graphicx.pyc
+lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/hyperref.rub
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/index.py
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/index.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/listings.py
@@ -71,6 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/ltxtable.py
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/ltxtable.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/makeidx.py
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/makeidx.pyc
+lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/minitoc-hyper.rub
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/minitoc.py
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/minitoc.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/moreverb.py
@@ -79,6 +85,8 @@ lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/multibib.py
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/multibib.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/nomencl.py
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/nomencl.pyc
+lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/ntheorem.rub
+lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/omega.rub
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/pdftex.py
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/pdftex.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/ps2pdf.py
@@ -95,17 +103,6 @@ lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/xr.py
 lib/python${MODPY_VERSION}/site-packages/rubber/latex_modules/xr.pyc
 lib/python${MODPY_VERSION}/site-packages/rubber/module_interface.py
 lib/python${MODPY_VERSION}/site-packages/rubber/module_interface.pyc
-lib/python${MODPY_VERSION}/site-packages/rubber/modules/
-lib/python${MODPY_VERSION}/site-packages/rubber/modules/aleph.rub
-lib/python${MODPY_VERSION}/site-packages/rubber/modules/article.rub
-lib/python${MODPY_VERSION}/site-packages/rubber/modules/backref.rub
-lib/python${MODPY_VERSION}/site-packages/rubber/modules/beamer.rub
-lib/python${MODPY_VERSION}/site-packages/rubber/modules/glossaries.rub
-lib/python${MODPY_VERSION}/site-packages/rubber/modules/gnuplottex.rub
-lib/python${MODPY_VERSION}/site-packages/rubber/modules/hyperref.rub
-lib/python${MODPY_VERSION}/site-packages/rubber/modules/minitoc-hyper.rub
-lib/python${MODPY_VERSION}/site-packages/rubber/modules/ntheorem.rub
-lib/python${MODPY_VERSION}/site-packages/rubber/modules/omega.rub
 lib/python${MODPY_VERSION}/site-packages/rubber/rules.ini
 lib/python${MODPY_VERSION}/site-packages/rubber/tex.py
 lib/python${MODPY_VERSION}/site-packages/rubber/tex.pyc
@@ -121,3 +118,6 @@ man/fr/man1/
 @man man/man1/rubber-info.1
 @man man/man1/rubber-pipe.1
 @man man/man1/rubber.1
+share/doc/rubber/
+share/doc/rubber/rubber.html
+share/doc/rubber/rubber.pdf

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/11/16 13:39:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/12/21 18:32:26 jasper Exp $
 
 COMMENT=	wrapper for LaTeX and friends
 
-MODPY_EGG_VERSION=	1.3
+MODPY_EGG_VERSION=	1.4
 DISTNAME=	rubber-${MODPY_EGG_VERSION}
 
 CATEGORIES=	textproc print
@@ -16,16 +16,13 @@ MASTER_SITES=	${HOMEPAGE}/trunk/${MODPY_EGG_VERSION}/+download/
 
 MODULES=	lang/python
 
+BUILD_DEPENDS=	print/texinfo
 RUN_DEPENDS=	print/texlive/base
 
-CONFIGURE_STYLE=simple
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--python=${MODPY_BIN} \
-		--datadir=${MODPY_SITEPKG}
-
-do-install:
-	cd ${WRKSRC} && \
-		${MODPY_BIN} setup.py install --root ${WRKINST}
+# makeinfo: unknown option -- info
+pre-configure:
+	sed -i -e 's,makeinfo,gmakeinfo,g;' \
+		-e 's,texi2dvi,gtexi2dvi,g;' ${WRKSRC}/setup.py
 
 do-test:
 	cd ${WRKSRC}/tests && /bin/sh ./run.sh
