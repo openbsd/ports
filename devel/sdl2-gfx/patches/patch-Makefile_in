@@ -1,15 +1,15 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2013/11/07 16:27:38 bcallah Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2015/12/21 13:38:01 ajacoutot Exp $
 
 We don't need a version number in the library name itself, on top of the SO
 number.
 
---- Makefile.in.orig	Thu Nov  7 01:04:42 2013
-+++ Makefile.in	Thu Nov  7 01:04:49 2013
-@@ -304,7 +304,6 @@ EXTRA_DIST = \
+--- Makefile.in.orig	Mon Jun  9 17:51:08 2014
++++ Makefile.in	Mon Dec 21 14:35:19 2015
+@@ -306,7 +306,6 @@ EXTRA_DIST = \
  
  libSDL2_gfx_la_LDFLAGS = \
  	-no-undefined		\
 -	-release $(LT_RELEASE)	\
  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  
- 
+ pkgconfigdir = $(libdir)/pkgconfig
