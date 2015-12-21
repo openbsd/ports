@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2015/12/17 18:31:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.43 2015/12/21 19:13:17 jasper Exp $
 @pkgpath shells/zsh,-main
 @shell bin/zsh
 %%SHARED%%
@@ -477,6 +477,7 @@ share/zsh/${V}/functions/_npm
 share/zsh/${V}/functions/_nslookup
 share/zsh/${V}/functions/_objdump
 share/zsh/${V}/functions/_object_classes
+share/zsh/${V}/functions/_object_files
 share/zsh/${V}/functions/_od
 share/zsh/${V}/functions/_okular
 share/zsh/${V}/functions/_oldlist
