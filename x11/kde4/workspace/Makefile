@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2015/12/21 09:32:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2015/12/21 10:17:32 ajacoutot Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-4.11.21
-REVISION =	5
+REVISION =	6
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/15.04.3/src/}
 

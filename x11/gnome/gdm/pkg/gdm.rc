@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: gdm.rc,v 1.36 2015/12/21 09:32:01 ajacoutot Exp $
+# $OpenBSD: gdm.rc,v 1.37 2015/12/21 10:17:32 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 
@@ -14,9 +14,12 @@ rc_pre() {
 	rm -rf /var/db/gdm/.cache/gnome-shell/runtime-state-*
 }
 
-# on boot: wait for ttys to be initialized and make sure we don't hang in
-# "_rc_wait start" by hacking pexp
 if [ -n "${INRC}" ]; then
+# on boot: make sure we don't hang in _rc_wait
+_rc_wait() {
+	return 0
+}
+# on boot: wait for ttys to be initialized
 rc_start() {
 	unset rc_bg
 	( local i=0

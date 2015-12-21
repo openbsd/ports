@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: kdm.rc,v 1.7 2015/12/21 09:32:01 ajacoutot Exp $
+# $OpenBSD: kdm.rc,v 1.8 2015/12/21 10:17:32 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/kdm"
 
@@ -8,9 +8,12 @@ daemon="${TRUEPREFIX}/bin/kdm"
 
 rc_reload=NO
 
-# on boot: wait for ttys to be initialized and make sure we don't hang in
-# "_rc_wait start" by hacking pexp
 if [ -n "${INRC}" ]; then
+# on boot: make sure we don't hang in _rc_wait
+_rc_wait() {
+	return 0
+}
+# on boot: wait for ttys to be initialized
 rc_start() {
 	( local i=0
 	while ! pgrep -qf "^/usr/libexec/getty "; do
