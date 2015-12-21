@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/09/16 08:46:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/12/21 21:53:15 sthen Exp $
 
 COMMENT=	minimalistic C client for Redis
 
-V=		0.13.2
+V=		0.13.3
 DISTNAME=	hiredis-$V
 PKGNAME=	lib${DISTNAME}
 DISTFILES=	${DISTNAME}{v$V}.tar.gz
@@ -27,7 +27,9 @@ MAKE_FLAGS=	OPTIMIZATION= DEBUG= ${LIBV}
 FAKE_FLAGS=	INSTALL="cp -r" PREFIX="${TRUEPREFIX}" ${LIBV}
 
 USE_GMAKE=	Yes
-#NO_TEST=	Yes
+
+# needs redis to be running for some tests
+TEST_IS_INTERACTIVE= Yes
 
 post-install:
 	rm -f ${PREFIX}/lib/libhiredis.so
