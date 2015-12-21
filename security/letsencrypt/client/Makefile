@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/16 14:10:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/12/21 09:37:57 sthen Exp $
 
 COMMENT=	client for Let's Encrypt CA#'
 
 DISTNAME=	letsencrypt-${MODPY_EGG_VERSION}
-
-MODULES=	lang/python
 
 RUN_DEPENDS=	devel/py-configargparse \
 		devel/py-configobj \

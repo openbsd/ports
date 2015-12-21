@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/11/26 09:09:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/12/21 09:37:57 sthen Exp $
 
 COMMENT=	ACME protocol implementation
 
@@ -7,8 +7,6 @@ PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME:S/.dev/pre/}
 
 FLAVORS=	python3
 FLAVOR?=
-
-MODULES=	lang/python
 
 RUN_DEPENDS=	devel/py-asn1${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
