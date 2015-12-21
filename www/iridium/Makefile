@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2015/12/17 07:02:48 robert Exp $
+# $OpenBSD: Makefile,v 1.30 2015/12/21 13:30:00 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
 
-V=			47.0rc1
+V=			47.0
 DISTNAME=		iridium-browser-${V}
-DISTFILES=		iridium-browser-47.0~test1${EXTRACT_SUFX}
+DISTFILES=		${DISTNAME}-stripped${EXTRACT_SUFX}
 PKGNAME=		iridium-${V}
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/rc1//}
@@ -33,7 +33,8 @@ FLAVOR?=
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP =	Yes
 
-MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
+MASTER_SITES=	https://downloads.iridiumbrowser.de/source/ \
+		http://nerd.hu/distfiles/
 
 MODULES=	lang/clang lang/python gcc4
 

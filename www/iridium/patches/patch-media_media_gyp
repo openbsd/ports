@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_media_gyp,v 1.6 2015/12/17 07:02:48 robert Exp $
---- media/media.gyp.orig.port	Thu Nov  5 00:00:51 2015
-+++ media/media.gyp	Wed Dec 16 18:33:39 2015
+$OpenBSD: patch-media_media_gyp,v 1.7 2015/12/21 13:30:00 robert Exp $
+--- media/media.gyp.orig.port	Tue Dec 15 21:05:13 2015
++++ media/media.gyp	Sun Dec 20 18:52:07 2015
 @@ -13,7 +13,7 @@
      'linux_link_pulseaudio%': 0,
      'conditions': [
@@ -39,7 +39,7 @@ $OpenBSD: patch-media_media_gyp,v 1.6 2015/12/17 07:02:48 robert Exp $
          'audio/sample_rates.cc',
          'audio/sample_rates.h',
          'audio/scoped_task_runner_observer.cc',
-@@ -765,6 +773,24 @@
+@@ -767,6 +775,24 @@
              'filters/h264_bitstream_buffer.h',
            ],
          }],
@@ -64,7 +64,7 @@ $OpenBSD: patch-media_media_gyp,v 1.6 2015/12/17 07:02:48 robert Exp $
          ['use_alsa==1', {
            'link_settings': {
              'libraries': [
-@@ -782,11 +808,21 @@
+@@ -784,11 +810,21 @@
          }],
          ['OS=="openbsd"', {
            'sources!': [
@@ -87,7 +87,7 @@ $OpenBSD: patch-media_media_gyp,v 1.6 2015/12/17 07:02:48 robert Exp $
            'conditions': [
              ['use_x11==1', {
                'dependencies': [
-@@ -880,7 +916,7 @@
+@@ -882,7 +918,7 @@
              'ozone/media_ozone_platform.h',
            ]
          }],
@@ -96,7 +96,7 @@ $OpenBSD: patch-media_media_gyp,v 1.6 2015/12/17 07:02:48 robert Exp $
            'sources!': [
              'audio/cras/audio_manager_cras.cc',
              'audio/cras/audio_manager_cras.h',
-@@ -1122,7 +1158,7 @@
+@@ -1124,7 +1160,7 @@
              'base/simd/filter_yuv_sse2.cc',
            ],
          }],
@@ -105,7 +105,7 @@ $OpenBSD: patch-media_media_gyp,v 1.6 2015/12/17 07:02:48 robert Exp $
            'sources!': [
              'base/keyboard_event_counter.cc',
              'base/keyboard_event_counter.h',
-@@ -1949,7 +1985,7 @@
+@@ -1951,7 +1987,7 @@
              'test/pipeline_integration_test_base.cc',
            ],
            'conditions': [
