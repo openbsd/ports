@@ -1,6 +1,14 @@
-$OpenBSD: patch-i3-nagbar_main_c,v 1.7 2015/10/04 08:48:12 dcoppa Exp $
+$OpenBSD: patch-i3-nagbar_main_c,v 1.8 2015/12/21 10:16:03 tb Exp $
+
+surprisingly wide pledge for this program
+
+"wpath cpath" for writing a script
+"rpath getpw" for checking access permissions
+"proc exec" for executing the script
+"unix" for talking to the i3 socket
+
 --- i3-nagbar/main.c.orig	Wed Sep 30 08:55:10 2015
-+++ i3-nagbar/main.c	Fri Oct  2 16:58:54 2015
++++ i3-nagbar/main.c	Sun Dec 20 15:00:22 2015
 @@ -170,7 +170,7 @@ static void handle_button_release(xcb_connection_t *co
      }
  
@@ -9,4 +17,16 @@ $OpenBSD: patch-i3-nagbar_main_c,v 1.7 2015/10/04 08:48:12 dcoppa Exp $
 +    sasprintf(&terminal_cmd, "${X11BASE}/bin/xterm -e %s", link_path);
      printf("argv0 = %s\n", argv0);
      printf("terminal_cmd = %s\n", terminal_cmd);
+ 
+@@ -464,6 +464,11 @@ int main(int argc, char *argv[]) {
+ 
+     font = load_font(pattern, true);
+     set_font(&font);
++
++#if defined(__OpenBSD__)
++    if (pledge("stdio rpath wpath cpath getpw proc exec unix", NULL) == -1)
++        err(EXIT_FAILURE, "pledge");
++#endif
+ 
+     xcb_rectangle_t win_pos = get_window_position();
  

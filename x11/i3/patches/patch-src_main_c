@@ -1,9 +1,15 @@
-$OpenBSD: patch-src_main_c,v 1.14 2015/12/18 15:53:09 dcoppa Exp $
+$OpenBSD: patch-src_main_c,v 1.15 2015/12/21 10:16:03 tb Exp $
 
 Bugfix: add keymap fall back (_XKB_RULES_NAMES, then defaults)
 
+add pledge:
+
+"stdio rpath unix" for talking to the i3 socket in /tmp
+"wpath cpath" are needed for the restart-in-place functionality
+"proc exec" for executing programs
+
 --- src/main.c.orig	Wed Sep 30 08:55:10 2015
-+++ src/main.c	Fri Dec 18 13:58:58 2015
++++ src/main.c	Sun Dec 20 14:58:54 2015
 @@ -87,6 +87,7 @@ struct ws_assignments_head ws_assignments = TAILQ_HEAD
  
  /* We hope that those are supported and set them to true */
@@ -20,3 +26,17 @@ Bugfix: add keymap fall back (_XKB_RULES_NAMES, then defaults)
      if (!extreply->present) {
          DLOG("xkb is not present on this server\n");
      } else {
+@@ -784,6 +786,13 @@ int main(int argc, char *argv[]) {
+         xcb_free_gc(conn, gc);
+         xcb_free_pixmap(conn, pixmap);
+     }
++
++#if defined(__OpenBSD__)
++    /* can't use pledge if shm* calls are used */
++    if (shmlog_size == 0)
++        if (pledge("stdio rpath wpath cpath proc exec unix", NULL) == -1)
++            err(EXIT_FAILURE, "pledge");
++#endif
+ 
+     struct sigaction action;
+ 
