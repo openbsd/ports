@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.71 2015/12/02 11:00:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2015/12/21 08:39:59 ajacoutot Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
 COMMENT=		API for accessing scanners, backends
 
 DISTNAME=		sane-backends-1.0.25
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  sane                 2.0      # unknown
 
@@ -44,6 +44,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-docdir=${PREFIX}/share/doc/sane-backends \
 			--without-gphoto2 \
 			--with-group=553 \
+			--enable-pthread \
 			--disable-latex
 
 # XXX doesn't work
@@ -61,9 +62,6 @@ CONFIGURE_ARGS +=	--without-snmp
 CFLAGS +=		-DHAVE_SYS_SOCKET_H
 
 FAKE_FLAGS=		configdir=${PREFIX}/share/examples/sane-backends/sane.d
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure
 
 post-install:
 	# removing the microtek2 backend which needs a Linux kernel module

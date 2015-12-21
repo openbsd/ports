@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.15 2015/10/09 07:06:52 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.16 2015/12/21 08:40:00 ajacoutot Exp $
 lib/sane/libsane-abaton.so
 lib/sane/libsane-agfafocus.so
 lib/sane/libsane-apple.so
@@ -40,6 +40,7 @@ lib/sane/libsane-kodak.so
 lib/sane/libsane-kodakaio.so
 lib/sane/libsane-kvs1025.so
 lib/sane/libsane-kvs20xx.so
+lib/sane/libsane-kvs40xx.so
 lib/sane/libsane-leo.so
 lib/sane/libsane-lexmark.so
 lib/sane/libsane-ma1509.so
@@ -48,6 +49,7 @@ lib/sane/libsane-matsushita.so
 lib/sane/libsane-microtek.so
 lib/sane/libsane-mustek.so
 lib/sane/libsane-mustek_usb.so
+lib/sane/libsane-mustek_usb2.so
 lib/sane/libsane-nec.so
 lib/sane/libsane-net.so
 lib/sane/libsane-niash.so

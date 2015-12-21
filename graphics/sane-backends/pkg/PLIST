@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/10/09 07:06:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2015/12/21 08:40:00 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/spool/lock/sane/*
@@ -61,6 +61,7 @@ lib/sane/
 @man man/man5/sane-kodakaio.5
 @man man/man5/sane-kvs1025.5
 @man man/man5/sane-kvs20xx.5
+@man man/man5/sane-kvs40xx.5
 @man man/man5/sane-leo.5
 @man man/man5/sane-lexmark.5
 @man man/man5/sane-ma1509.5
@@ -69,6 +70,7 @@ lib/sane/
 @man man/man5/sane-microtek.5
 @man man/man5/sane-mustek.5
 @man man/man5/sane-mustek_usb.5
+@man man/man5/sane-mustek_usb2.5
 @man man/man5/sane-nec.5
 @man man/man5/sane-net.5
 @man man/man5/sane-niash.5
@@ -402,7 +404,9 @@ share/sane/artec_eplus48u/
 share/sane/epjitsu/
 share/sane/gt68xx/
 share/sane/snapscan/
-@rcscript ${RCDIR}/saned
 @mode 775
 @group _saned
 @sample /var/spool/lock/sane/
+@mode
+@group
+@rcscript ${RCDIR}/saned
