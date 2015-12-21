@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2015/09/29 10:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2015/12/21 22:16:10 czarkoff Exp $
 
 COMMENT =		mercurial extension to work with git repositories
 
-MODPY_EGG_VERSION =	0.8.2
+MODPY_EGG_VERSION =	0.8.3
 DISTNAME =		py-hg-git-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -21,7 +20,7 @@ DISTFILES =		${DISTNAME}{${MODPY_EGG_VERSION}}${EXTRACT_SUFX}
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-WRKDIST =		${WRKDIR}/durin42-hg-git-e183fdc198f0
+WRKDIST =		${WRKDIR}/durin42-hg-git-d7ad67f850b2
 
 RUN_DEPENDS =		devel/py-dulwich>=0.10.1 \
 			devel/mercurial
