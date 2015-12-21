@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/11/23 19:44:44 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/12/21 22:12:23 czarkoff Exp $
 bin/dul-receive-pack
 bin/dul-upload-pack
 bin/dulwich
@@ -7,7 +7,6 @@ lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dulwich/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/__init__.pyc
@@ -19,6 +18,8 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/_objects.c
 lib/python${MODPY_VERSION}/site-packages/dulwich/_objects.so
 lib/python${MODPY_VERSION}/site-packages/dulwich/_pack.c
 lib/python${MODPY_VERSION}/site-packages/dulwich/_pack.so
+lib/python${MODPY_VERSION}/site-packages/dulwich/archive.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/archive.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/client.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/client.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/config.py
@@ -66,6 +67,8 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/porcelain.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/porcelain.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/protocol.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/protocol.pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/reflog.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/reflog.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/refs.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/refs.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/repo.py
@@ -257,6 +260,8 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/tags/71/033db03a03c6
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/trees/
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/trees/70/
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/trees/70/c190eb48fa8bbb50ddc692a17b44cb781af7f6
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_archive.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_archive.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_blackbox.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_blackbox.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_client.py
@@ -295,6 +300,8 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_porcelain.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_porcelain.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_protocol.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_protocol.pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_reflog.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_reflog.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_refs.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_refs.pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_repository.py
@@ -320,6 +327,7 @@ share/doc/dulwich/tutorial/file-format.txt
 share/doc/dulwich/tutorial/index.txt
 share/doc/dulwich/tutorial/introduction.txt
 share/doc/dulwich/tutorial/object-store.txt
+share/doc/dulwich/tutorial/porcelain.txt
 share/doc/dulwich/tutorial/remote.txt
 share/doc/dulwich/tutorial/repo.txt
 share/doc/dulwich/tutorial/tag.txt

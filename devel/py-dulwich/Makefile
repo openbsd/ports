@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2015/11/23 19:44:44 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.22 2015/12/21 22:12:23 czarkoff Exp $
 
 COMMENT =		pure Python implementation of Git file formats and protocols
 
-MODPY_EGG_VERSION =	0.11.2
+MODPY_EGG_VERSION =	0.12.0
 DISTNAME =		dulwich-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -20,7 +20,6 @@ WANTLIB += pthread ${MODPY_WANTLIB}
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS =		devel/py-gevent \
 			net/py-geventhttpclient
