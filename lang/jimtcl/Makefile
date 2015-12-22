@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2015/04/10 14:35:36 stu Exp $
+# $OpenBSD: Makefile,v 1.12 2015/12/22 16:36:23 stu Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		small footprint implementation of Tcl
 
-DISTNAME =		jimtcl-0.76pl0
-SHARED_LIBS =		jim 2.1
+DISTNAME =		jimtcl-0.76pl1
+SHARED_LIBS =		jim 2.2
 CATEGORIES =		lang devel
 HOMEPAGE =		http://jim.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -17,7 +17,7 @@ WANTLIB =		c m sqlite3
 
 GH_ACCOUNT =		msteveb
 GH_PROJECT =		jimtcl
-GH_COMMIT =		af59339f008ae4eff13b0fea0eeff21a9d1e8b6c
+GH_COMMIT =		20fb65ac241531c216aff64cd158cd8797128d49
 
 MODULES =		lang/tcl
 
@@ -38,7 +38,8 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${MODTCL_BIN} ${WRKSRC}/autosetup/autosetup
 
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--includedir=${PREFIX}/include/jim \
+			--includedir='$${prefix}/include/jim' \
+			--docdir='$${prefix}/share/doc/jim' \
 			--full \
 			--with-mod=sqlite3 \
 			CCACHE=none

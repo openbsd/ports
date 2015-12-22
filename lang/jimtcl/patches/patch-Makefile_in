@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2015/04/10 14:35:36 stu Exp $
+$OpenBSD: patch-Makefile_in,v 1.7 2015/12/22 16:36:23 stu Exp $
 
 Don't use soname when linking.
 
---- Makefile.in.orig	Sun Apr  5 20:13:49 2015
-+++ Makefile.in	Mon Apr  6 01:20:58 2015
+--- Makefile.in.orig	Mon Oct  5 21:40:31 2015
++++ Makefile.in	Tue Dec 22 09:42:51 2015
 @@ -10,7 +10,6 @@ STRIP = @STRIP@
  SH_CFLAGS ?= @SH_CFLAGS@
  SH_LDFLAGS ?= @SH_LDFLAGS@
@@ -12,7 +12,7 @@ Don't use soname when linking.
  @endif
  SHOBJ_CFLAGS ?= @SHOBJ_CFLAGS@
  @if JIM_STATICLIB
-@@ -59,6 +58,7 @@ JIMSH := jimsh@EXEEXT@
+@@ -60,6 +59,7 @@ JIMSH := jimsh@EXEEXT@
  INSTALL_DATA_DIR ?= mkdir -p
  INSTALL_DATA ?= cp
  INSTALL_PROGRAM ?= cp
@@ -20,19 +20,16 @@ Don't use soname when linking.
  @endif
  
  all: $(JIMSH) @C_EXT_SHOBJS@
-@@ -73,8 +73,9 @@ docs: Tcl.html
- 
- @if JIM_DOCS
+@@ -76,6 +76,8 @@ docs: Tcl.html
  install-docs: docs
--	$(INSTALL_DATA_DIR) $(DESTDIR)$(prefix)/doc/jim
--	$(INSTALL_DATA) Tcl.html $(DESTDIR)$(prefix)/doc/jim
-+	$(INSTALL_DATA_DIR) $(DESTDIR)@datadir@/doc/jim
-+	$(INSTALL_DATA) @srcdir@/LICENSE @srcdir@/README Tcl.html $(DESTDIR)@datadir@/doc/jim
-+	$(INSTALL_DATA) @srcdir@/README.{extensions,namespaces,oo,sqlite,utf-8} $(DESTDIR)@datadir@/doc/jim
+ 	$(INSTALL_DATA_DIR) $(DESTDIR)$(docdir)
+ 	$(INSTALL_DATA) Tcl.html $(DESTDIR)$(docdir)
++	$(INSTALL_DATA) @srcdir@/LICENSE @srcdir@/README $(DESTDIR)$(docdir)
++	$(INSTALL_DATA) @srcdir@/README.{extensions,namespaces,oo,sqlite,utf-8} $(DESTDIR)$(docdir)
  @else
  install-docs:
  @endif
-@@ -83,17 +84,22 @@ $(JIMSH): $(LIBJIM) jimsh.o initjimsh.o
+@@ -84,17 +86,22 @@ $(JIMSH): $(LIBJIM) jimsh.o initjimsh.o
  	$(JIMSH_CC) @SH_LINKFLAGS@ $(LDFLAGS) -o $@ jimsh.o initjimsh.o $(LIBJIM) $(LDLIBS) $(LIBS)
  
  @if JIM_INSTALL
