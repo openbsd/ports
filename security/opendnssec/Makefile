@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/13 17:03:55 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2015/12/22 07:02:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	open-source turn-key solution for DNSSEC
 
 DISTNAME=	opendnssec-1.4.8.2
+REVISION=	0
 
 CATEGORIES=	security
 

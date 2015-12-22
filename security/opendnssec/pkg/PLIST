@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/13 17:03:55 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/12/22 07:02:24 ajacoutot Exp $
 @newgroup _opendnssec:757
 @newuser _opendnssec:757:_opendnssec:daemon:OpenDNSSEC Account:/nonexistent:/sbin/nologin
 @bin bin/ods-getconf
@@ -24,7 +24,7 @@ sbin/ods-control
 @bin sbin/ods-signerd
 @mode 0750
 @group _opendnssec
-@sample /etc/opendnssec/
+@sample ${SYSCONFDIR}/opendnssec/
 @mode
 @group
 share/doc/opendnssec/
