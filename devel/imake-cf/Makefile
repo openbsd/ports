@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/22 20:15:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2015/12/22 12:25:12 ajacoutot Exp $
 
 PKG_ARCH = 	*
 COMMENT =  	config files for imake
 CATEGORIES =	devel x11
-V =		1.0.5
+V =		1.0.6
 DISTNAME = 	xorg-cf-files-${V}
 PKGNAME = 	imake-cf-${V}
 MASTER_SITES = 	${MASTER_SITE_XORG:=util/}
