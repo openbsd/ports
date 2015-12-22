@@ -1,0 +1,23 @@
+$OpenBSD: patch-storage_xtradb_include_os0sync_h,v 1.1 2015/12/22 12:21:14 sthen Exp $
+--- storage/xtradb/include/os0sync.h.orig	Tue Dec 22 12:17:00 2015
++++ storage/xtradb/include/os0sync.h	Tue Dec 22 12:17:17 2015
+@@ -488,7 +488,7 @@ os_atomic_clear(volatile lock_word_t* ptr)
+ 	__atomic_clear(ptr, __ATOMIC_RELEASE);
+ }
+ 
+-# elif defined(IB_STRONG_MEMORY_MODEL)
++# else
+ 
+ /** Do an atomic test and set.
+ @param[in,out]	ptr		Memory location to set to non-zero
+@@ -516,10 +516,6 @@ os_atomic_clear(volatile lock_word_t* ptr)
+ {
+ 	return(__sync_lock_test_and_set(ptr, 0));
+ }
+-
+-# else
+-
+-#  error "Unsupported platform"
+ 
+ # endif /* HAVE_IB_GCC_ATOMIC_TEST_AND_SET */
+ 
