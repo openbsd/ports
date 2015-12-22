@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.12 2015/10/19 08:52:43 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.13 2015/12/22 08:33:11 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -227,6 +227,7 @@ webapps/docs/api/org/apache/catalina/filters/CorsFilter.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.CsrfResponseWrapper.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.LruCache.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.html
+webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilterBase.html
 webapps/docs/api/org/apache/catalina/filters/ExpiresFilter.Duration.html
 webapps/docs/api/org/apache/catalina/filters/ExpiresFilter.DurationUnit.html
 webapps/docs/api/org/apache/catalina/filters/ExpiresFilter.ExpiresConfiguration.html
@@ -241,10 +242,10 @@ webapps/docs/api/org/apache/catalina/filters/HttpHeaderSecurityFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteAddrFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteHostFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteIpFilter.XForwardedRequest.html
-webapps/docs/api/org/apache/catalina/filters/RemoteIpFilter.XForwardedResponse.html
 webapps/docs/api/org/apache/catalina/filters/RemoteIpFilter.html
 webapps/docs/api/org/apache/catalina/filters/RequestDumperFilter.html
 webapps/docs/api/org/apache/catalina/filters/RequestFilter.html
+webapps/docs/api/org/apache/catalina/filters/RestCsrfPreventionFilter.html
 webapps/docs/api/org/apache/catalina/filters/SetCharacterEncodingFilter.html
 webapps/docs/api/org/apache/catalina/filters/WebdavFixFilter.html
 webapps/docs/api/org/apache/catalina/filters/package-frame.html
@@ -356,7 +357,6 @@ webapps/docs/api/org/apache/catalina/manager/package-summary.html
 webapps/docs/api/org/apache/catalina/manager/package-tree.html
 webapps/docs/api/org/apache/catalina/manager/util/
 webapps/docs/api/org/apache/catalina/manager/util/BaseSessionComparator.html
-webapps/docs/api/org/apache/catalina/manager/util/ReverseComparator.html
 webapps/docs/api/org/apache/catalina/manager/util/SessionUtils.html
 webapps/docs/api/org/apache/catalina/manager/util/package-frame.html
 webapps/docs/api/org/apache/catalina/manager/util/package-summary.html
@@ -917,6 +917,7 @@ webapps/docs/api/org/apache/coyote/Request.html
 webapps/docs/api/org/apache/coyote/RequestGroupInfo.html
 webapps/docs/api/org/apache/coyote/RequestInfo.html
 webapps/docs/api/org/apache/coyote/Response.html
+webapps/docs/api/org/apache/coyote/UpgradeToken.html
 webapps/docs/api/org/apache/coyote/ajp/
 webapps/docs/api/org/apache/coyote/ajp/AbstractAjpProcessor.SocketInputBuffer.html
 webapps/docs/api/org/apache/coyote/ajp/AbstractAjpProcessor.SocketOutputBuffer.html
@@ -1349,6 +1350,7 @@ webapps/docs/api/org/apache/naming/package-frame.html
 webapps/docs/api/org/apache/naming/package-summary.html
 webapps/docs/api/org/apache/naming/package-tree.html
 webapps/docs/api/org/apache/tomcat/
+webapps/docs/api/org/apache/tomcat/ContextBind.html
 webapps/docs/api/org/apache/tomcat/InstanceManager.html
 webapps/docs/api/org/apache/tomcat/InstrumentableClassLoader.html
 webapps/docs/api/org/apache/tomcat/JarScanFilter.html
