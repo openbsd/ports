@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/19 21:50:14 juanfra Exp $
+# $OpenBSD: Makefile,v 1.2 2015/12/22 19:40:48 jturner Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -6,11 +6,10 @@ COMMENT =		statically typed, imperative programming language
 
 VERSION =		0.11.2
 DISTNAME =		nim-${VERSION}
+REVISION =		0
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		lang
-
-MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		http://nim-lang.org/
 MASTER_SITES =		http://nim-lang.org/download/
