@@ -1,0 +1,13 @@
+$OpenBSD: patch-gambatte_qt_src_framework_src_SDL_Joystick_src_SDL_joystick_c,v 1.1 2015/12/22 04:20:22 bentley Exp $
+https://github.com/sinamas/gambatte/pull/7
+--- gambatte_qt/src/framework/src/SDL_Joystick/src/SDL_joystick.c.orig	Sun Dec 20 05:16:46 2015
++++ gambatte_qt/src/framework/src/SDL_Joystick/src/SDL_joystick.c	Sun Dec 20 05:16:51 2015
+@@ -376,7 +376,7 @@ void SDL_JoystickClose(SDL_Joystick *joystick)
+ 	/* Remove joystick from list */
+ 	for ( i=0; SDL_joysticks[i]; ++i ) {
+ 		if ( joystick == SDL_joysticks[i] ) {
+-			SDL_memcpy(&SDL_joysticks[i], &SDL_joysticks[i+1],
++			SDL_memmove(&SDL_joysticks[i], &SDL_joysticks[i+1],
+ 			       (SDL_numjoysticks-i)*sizeof(joystick));
+ 			break;
+ 		}

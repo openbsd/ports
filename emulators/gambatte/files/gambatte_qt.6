@@ -1,0 +1,65 @@
+.\"	$OpenBSD: gambatte_qt.6,v 1.1 2015/12/22 04:20:22 bentley Exp $
+.\"
+.\" Copyright (c) 2015 Anthony J. Bentley <anthony@anjbe.name>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.Dd $Mdocdate: December 22 2015 $
+.Dt GAMBATTE_QT 6
+.Os
+.Sh NAME
+.Nm gambatte_qt
+.Nd highly accurate Game Boy Color emulator with GUI
+.Sh SYNOPSIS
+.Nm gambatte_qt
+.Op Fl Fl gba-cgb-mode
+.Op Fl Fl force-dmg-mode
+.Op Fl Fl full-screen
+.Ar romfile
+.Sh DESCRIPTION
+.Nm
+is a highly accurate Game Boy (DMG) and Game Boy Color (CGB) emulator with a
+graphical interface.
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl Fl gba-cgb-mode Ns Op =0
+When emulating Game Boy Color games, identify as a Game Boy Advance,
+unlocking special features in certain games.
+This permanently enables the setting in the configuration file;
+it can be reset by passing 0.
+.It Fl Fl force-dmg-mode Ns Op =0
+When emulating Game Boy Color\(encapable games, disable color support.
+This permanently enables the setting in the configuration file;
+it can be reset by passing 0.
+.It Fl Fl full-screen Ns Op =0
+Start the emulator in full screen mode.
+.El
+.Sh ENVIRONMENT
+.Bl -tag -width Ds
+.It Ev XDG_CONFIG_HOME
+Where
+.Nm
+looks for the configuration file.
+Defaults to
+.Pa ~/.config
+if unset.
+.El
+.Sh FILES
+.Bl -tag -width Ds
+.It Pa $XDG_CONFIG_HOME/gambatte/gambatte_qt.conf
+The
+.Nm
+configuration file.
+.El
+.Sh AUTHORS
+.An Sindre Aam\(oas Aq Mt aamas@stud.ntnu.no

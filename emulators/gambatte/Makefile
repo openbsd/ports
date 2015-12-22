@@ -1,10 +1,18 @@
-# $OpenBSD: Makefile,v 1.10 2014/11/19 10:32:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2015/12/22 04:20:21 bentley Exp $
 
-COMMENT =		highly accurate Game Boy Color emulator
+COMMENT-main =		highly accurate Game Boy Color emulator
+COMMENT-qt =		highly accurate Game Boy Color emulator with GUI
 
 REV =			571
+V =			0.5.0.${REV}
 DISTNAME =		gambatte_src-r${REV}
-PKGNAME =		gambatte-0.5.0.${REV}
+PKGNAME =		gambatte-$V
+PKGNAME-qt =		gambatte-qt-$V
+REVISION-main =		0
+
+MULTI_PACKAGES =	-main -qt
+
+.include <bsd.port.arch.mk>
 
 CATEGORIES =		emulators
 
@@ -12,37 +20,51 @@ HOMEPAGE =		http://gambatte.sourceforge.net/
 
 MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
 
-# GPLv2
+# GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c m pthread stdc++ z SDL
+cWANTLIB =	c m pthread stdc++ z
+WANTLIB-main =	${cWANTLIB} SDL
+WANTLIB-qt =	${cWANTLIB} GL QtCore QtGui QtOpenGL X11 Xext Xrandr Xv ossaudio usbhid
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gambatte/}
 
-MODULES =		devel/scons \
-			lang/python
-LIB_DEPENDS =		devel/sdl
+MODULES =		lang/python
+.if ${BUILD_PACKAGES:M-qt}
+MODULES +=		x11/qt4
+.endif
+LIB_DEPENDS-main =	devel/sdl
 
-TEST_DEPENDS =	graphics/png
+TEST_DEPENDS =		graphics/png
 
-pre-configure:
-	${SUBST_CMD} ${WRKDIST}/test/SConstruct
+MAKE_FILE =		${FILESDIR}/Makefile
+CONFIGURE_ARGS =	CC="${CC}" \
+			CXX="${CXX}" \
+			LINK="${CXX}" \
+			CFLAGS="${CFLAGS} -DHAVE_USBHID_H -DUSBHID_UCR_DATA -DUSBHID_NEW" \
+			CXXFLAGS="${CXXFLAGS} -DHAVE_STDINT_H" \
+			PYTHON="${MODPY_BIN}"
+
+MAKE_FLAGS =		CC="${CC}" \
+			CXX="${CXX}" \
+			LINK="${CXX}" \
+			CFLAGS="${CFLAGS} -DHAVE_USBHID_H -DUSBHID_UCR_DATA -DUSBHID_NEW" \
+			CXXFLAGS="${CXXFLAGS} -DHAVE_STDINT_H" \
+			PYTHON="${MODPY_BIN}"
+
+do-configure:
+	cd ${WRKSRC}/gambatte_qt && qmake4 ${CONFIGURE_ARGS}
 
 do-build:
-	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKDIST}/libgambatte \
-		${MODSCONS_ENV} ${MODSCONS_FLAGS} ${ALL_TARGET}
-	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKDIST}/gambatte_sdl \
-		${MODSCONS_ENV} ${MODSCONS_FLAGS} ${ALL_TARGET}
+	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} -C ${WRKDIST} ${MAKE_FLAGS} \
+		-f ${MAKE_FILE} ${ALL_TARGET}
+	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} -C ${WRKDIST}/gambatte_qt \
+		${MAKE_FLAGS} -f Makefile ${ALL_TARGET}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIST}/gambatte_sdl/gambatte_sdl ${PREFIX}/bin
-	${INSTALL_DATA} ${FILESDIR}/gambatte_sdl.6 ${PREFIX}/man/man6
-
-do-test:
-	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKDIST}/test \
-		${MODSCONS_ENV} ${MODSCONS_FLAGS} ${ALL_TARGET}
-	cd ${WRKDIST}/test && \
-	${MODPY_BIN} qdgbas.py hwtests/*.asm hwtests/*/*.asm \
-		hwtests/*/*/*.asm hwtests/*/*/*/*.asm && ./run_tests.sh
+	${INSTALL_DATA} ${FILESDIR}/gambatte_sdl.6 \
+		${FILESDIR}/gambatte_qt.6 ${PREFIX}/man/man6
+	${INSTALL_PROGRAM} ${WRKDIST}/gambatte_sdl/gambatte_sdl \
+		${WRKDIST}/gambatte_qt/bin/gambatte_qt ${PREFIX}/bin
 
 .include <bsd.port.mk>
