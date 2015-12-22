@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/12/21 18:32:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/12/22 23:57:13 nigel Exp $
 
 COMMENT=	wrapper for LaTeX and friends
 
@@ -16,7 +16,8 @@ MASTER_SITES=	${HOMEPAGE}/trunk/${MODPY_EGG_VERSION}/+download/
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	print/texinfo
+BUILD_DEPENDS=	print/texinfo \
+		print/texlive/base
 RUN_DEPENDS=	print/texlive/base
 
 # makeinfo: unknown option -- info
