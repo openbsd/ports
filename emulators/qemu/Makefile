@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.137 2015/12/16 06:41:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.138 2015/12/22 06:43:05 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
 DISTNAME=	qemu-2.2.1
-REVISION=	13
+REVISION=	14
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -62,7 +62,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--sysconfdir=${SYSCONFDIR} \
 		--mandir=${PREFIX}/man \
 		--python=${MODPY_BIN} \
-		--smbd=${LOCALBASE}/libexec/smbd \
+		--smbd=${LOCALBASE}/sbin/smbd \
 		--cc="${CC}" \
 		--cxx="${CXX}" \
 		--host-cc="${CC}" \

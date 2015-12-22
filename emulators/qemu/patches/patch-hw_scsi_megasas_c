@@ -1,0 +1,21 @@
+$OpenBSD: patch-hw_scsi_megasas_c,v 1.1 2015/12/22 06:43:05 ajacoutot Exp $
+
+scsi: initialise info object with appropriate size
+
+While processing controller 'CTRL_GET_INFO' command, the routine
+'megasas_ctrl_get_info' overflows the '&info' object size. Use its
+appropriate size to null initialise it.
+
+CVE-2015-8613
+
+--- hw/scsi/megasas.c.orig	Mon Dec 21 20:22:57 2015
++++ hw/scsi/megasas.c	Mon Dec 21 20:23:52 2015
+@@ -721,7 +721,7 @@ static int megasas_ctrl_get_info(MegasasState *s, Mega
+     BusChild *kid;
+     int num_pd_disks = 0;
+ 
+-    memset(&info, 0x0, cmd->iov_size);
++    memset(&info, 0x0, dcmd_size);
+     if (cmd->iov_size < dcmd_size) {
+         trace_megasas_dcmd_invalid_xfer_len(cmd->index, cmd->iov_size,
+                                             dcmd_size);
