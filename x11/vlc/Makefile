@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2015/12/02 12:46:15 jca Exp $
-
-BROKEN-alpha=	undefined reference to __builtin_parity
-BROKEN-powerpc=	undefined reference to __builtin_parity
-BROKEN-sparc64=	undefined reference to __builtin_parity
+# $OpenBSD: Makefile,v 1.199 2015/12/22 06:46:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +9,7 @@ V=		2.2.1
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	3
+REVISION-main=	4
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
