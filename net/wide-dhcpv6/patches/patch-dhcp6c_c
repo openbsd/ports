@@ -1,6 +1,11 @@
-$OpenBSD: patch-dhcp6c_c,v 1.1 2011/10/30 16:47:08 stsp Exp $
---- dhcp6c.c.orig	Sun Feb 20 13:29:11 2011
-+++ dhcp6c.c	Sun Feb 20 13:29:49 2011
+$OpenBSD: patch-dhcp6c_c,v 1.2 2015/12/22 12:56:27 sthen Exp $
+
+Update ifid on interface restart
+
+Interface ID may have changed between a stop and start.
+
+--- dhcp6c.c.orig	Sun Jun 15 03:48:41 2008
++++ dhcp6c.c	Sat Dec 19 01:44:20 2015
 @@ -88,7 +88,6 @@ static sig_atomic_t sig_flags = 0;
  const dhcp6_mode_t dhcp6_mode = DHCP6_MODE_CLIENT;
  
@@ -9,17 +14,33 @@ $OpenBSD: patch-dhcp6c_c,v 1.1 2011/10/30 16:47:08 stsp Exp $
  int ctlsock = -1;		/* control TCP port */
  char *ctladdr = DEFAULT_CLIENT_CONTROL_ADDR;
  char *ctlport = DEFAULT_CLIENT_CONTROL_PORT;
-@@ -336,13 +335,6 @@ client6_init()
- 		exit(1);
+@@ -337,13 +336,6 @@ client6_init()
  	}
  	freeaddrinfo(res);
--
+ 
 -	/* open a routing socket to watch the routing table */
 -	if ((rtsock = socket(PF_ROUTE, SOCK_RAW, 0)) < 0) {
 -		dprintf(LOG_ERR, FNAME, "open a routing socket: %s",
 -		    strerror(errno));
 -		exit(1);
 -	}
- 
+-
  	memset(&hints, 0, sizeof(hints));
  	hints.ai_family = PF_INET6;
+ 	hints.ai_socktype = SOCK_DGRAM;
+@@ -763,6 +755,15 @@ client6_ifctl(ifname, command)
+ 
+ 	switch(command) {
+ 	case DHCP6CTL_COMMAND_START:
++		/*
++		 * The ifid might have changed, so reset it before releasing the
++		 * lease.
++		 */
++		if (ifreset(ifp)) {
++			dprintf(LOG_NOTICE, FNAME, "failed to reset %s",
++			    ifname);
++			return (-1);
++		}
+ 		free_resources(ifp);
+ 		if (client6_start(ifp)) {
+ 			dprintf(LOG_NOTICE, FNAME, "failed to restart %s",

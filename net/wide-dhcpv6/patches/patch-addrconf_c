@@ -1,0 +1,15 @@
+$OpenBSD: patch-addrconf_c,v 1.1 2015/12/22 12:56:27 sthen Exp $
+
+Fix renewal of IA NA
+
+--- addrconf.c.orig	Sat Dec 19 01:37:32 2015
++++ addrconf.c	Sat Dec 19 01:40:53 2015
+@@ -173,7 +173,7 @@ update_address(ia, addr, dhcpifp, ctlp, callback)
+ 	    sacreate ? "create" : "update",
+ 	    in6addr2str(&addr->addr, 0), addr->pltime, addr->vltime);
+ 
+-	if (sa->addr.vltime != 0)
++	if ((sa->addr.vltime != 0) && sacreate)
+ 		if (na_ifaddrconf(IFADDRCONF_ADD, sa) < 0)
+ 			return (-1);
+ 
