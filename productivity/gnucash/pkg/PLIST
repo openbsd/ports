@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2015/10/07 20:51:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2015/12/22 06:59:10 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -652,6 +652,9 @@ share/gnome/help/gnucash-guide/de/figures/bus_ar_invoicenew.png
 share/gnome/help/gnucash-guide/de/figures/bus_ar_invoicepost.png
 share/gnome/help/gnucash-guide/de/figures/bus_ar_invoiceprint.png
 share/gnome/help/gnucash-guide/de/figures/bus_ar_payment.png
+share/gnome/help/gnucash-guide/de/figures/capgain_app2main.png
+share/gnome/help/gnucash-guide/de/figures/capgain_app3main.png
+share/gnome/help/gnucash-guide/de/figures/capgain_appmain.png
 share/gnome/help/gnucash-guide/de/figures/cbook_CashFlow.png
 share/gnome/help/gnucash-guide/de/figures/cbook_TransactionRptAssets.png
 share/gnome/help/gnucash-guide/de/figures/cbook_TransactionRptExpenses.png
@@ -680,15 +683,34 @@ share/gnome/help/gnucash-guide/de/figures/cc_refund.png
 share/gnome/help/gnucash-guide/de/figures/gnc_welcome.png
 share/gnome/help/gnucash-guide/de/figures/invest_AccountsPredef.png
 share/gnome/help/gnucash-guide/de/figures/invest_SetupPortfolio2.png
+share/gnome/help/gnucash-guide/de/figures/invest_dividendcash.png
+share/gnome/help/gnucash-guide/de/figures/invest_dividendreinvest1.png
 share/gnome/help/gnucash-guide/de/figures/invest_int1.png
 share/gnome/help/gnucash-guide/de/figures/invest_int2-1.png
 share/gnome/help/gnucash-guide/de/figures/invest_int2.png
 share/gnome/help/gnucash-guide/de/figures/invest_int3.png
+share/gnome/help/gnucash-guide/de/figures/invest_merge2.png
+share/gnome/help/gnucash-guide/de/figures/invest_merge3.png
 share/gnome/help/gnucash-guide/de/figures/invest_newaccount.png
 share/gnome/help/gnucash-guide/de/figures/invest_newsecurity.png
+share/gnome/help/gnucash-guide/de/figures/invest_peditor.png
+share/gnome/help/gnucash-guide/de/figures/invest_peditor2.png
 share/gnome/help/gnucash-guide/de/figures/invest_selectsecurity.png
+share/gnome/help/gnucash-guide/de/figures/invest_sellstock.png
+share/gnome/help/gnucash-guide/de/figures/invest_sellstock2.png
+share/gnome/help/gnucash-guide/de/figures/invest_sellstockLoss.png
+share/gnome/help/gnucash-guide/de/figures/invest_sellstockLoss2.png
 share/gnome/help/gnucash-guide/de/figures/invest_setup_current.png
 share/gnome/help/gnucash-guide/de/figures/invest_setup_portfolio1.png
+share/gnome/help/gnucash-guide/de/figures/invest_simplesplit1.png
+share/gnome/help/gnucash-guide/de/figures/invest_split1.png
+share/gnome/help/gnucash-guide/de/figures/invest_split2.png
+share/gnome/help/gnucash-guide/de/figures/invest_split3.png
+share/gnome/help/gnucash-guide/de/figures/invest_split4.png
+share/gnome/help/gnucash-guide/de/figures/invest_stockmerge1.png
+share/gnome/help/gnucash-guide/de/figures/invest_stockvalue.png
+share/gnome/help/gnucash-guide/de/figures/invest_stockvalue_report.png
+share/gnome/help/gnucash-guide/de/figures/invest_stockvalue_report_options.png
 share/gnome/help/gnucash-guide/de/figures/kontenbaum.png
 share/gnome/help/gnucash-guide/de/figures/kontenblatt.png
 share/gnome/help/gnucash-guide/de/figures/loans_PrivateLoanCalculation.png
@@ -732,7 +754,6 @@ share/gnome/help/gnucash-guide/de/figures/txns_sxn_ledger3.png
 share/gnome/help/gnucash-guide/de/figures/txns_sxn_ledger4.png
 share/gnome/help/gnucash-guide/de/glossary.xml
 share/gnome/help/gnucash-guide/de/gnucash-guide.xml
-share/gnome/help/gnucash-guide/de/index.xml
 share/gnome/help/gnucash-guide/it/
 share/gnome/help/gnucash-guide/it/figures/
 share/gnome/help/gnucash-guide/it/figures/accts_CreateAssetsAccount.png
@@ -1145,6 +1166,7 @@ share/gnome/help/gnucash-help/C/figures/Help_Pref_Reports.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_Sched.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_Windows.png
 share/gnome/help/gnucash-help/C/figures/Help_Report_Screen.png
+share/gnome/help/gnucash-help/C/figures/Help_TxRptOpt_Screen.png
 share/gnome/help/gnucash-help/C/figures/Main-window-callouts.png
 share/gnome/help/gnucash-help/C/figures/Report_Screen.png
 share/gnome/help/gnucash-help/C/figures/home.png
@@ -1473,6 +1495,7 @@ share/gnucash/accounts/nb/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/nl/
 share/gnucash/accounts/nl/acctchrt_checkbook.gnucash-xea
 share/gnucash/accounts/nl/acctchrt_full.gnucash-xea
+share/gnucash/accounts/nl/acctchrt_rgs_1.1.gnucash-xea
 share/gnucash/accounts/pl/
 share/gnucash/accounts/pl/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/pl/acctchrt_business.gnucash-xea
@@ -1967,6 +1990,9 @@ share/locale/nl/LC_MESSAGES/gnucash.mo
 share/locale/pl/LC_MESSAGES/gnucash.mo
 share/locale/pt/LC_MESSAGES/gnucash.mo
 share/locale/pt_BR/LC_MESSAGES/gnucash.mo
+share/locale/pt_PT/
+share/locale/pt_PT/LC_MESSAGES/
+share/locale/pt_PT/LC_MESSAGES/gnucash.mo
 share/locale/ro/LC_MESSAGES/gnucash.mo
 share/locale/ru/LC_MESSAGES/gnucash.mo
 share/locale/rw/LC_MESSAGES/gnucash.mo
