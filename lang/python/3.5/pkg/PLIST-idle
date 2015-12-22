@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.1.1.1 2015/09/23 19:23:55 rpointel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.2 2015/12/22 18:00:31 rpointel Exp $
 @option no-default-conflict
 @conflict python-idle->=3.5,<3.6
 @pkgpath lang/python3/3.5,-idle
@@ -225,6 +225,9 @@ lib/python3.5/idlelib/__pycache__/configSectionNameDialog.cpython-35.pyc
 lib/python3.5/idlelib/__pycache__/dynOptionMenuWidget.cpython-35.opt-1.pyc
 lib/python3.5/idlelib/__pycache__/dynOptionMenuWidget.cpython-35.opt-2.pyc
 lib/python3.5/idlelib/__pycache__/dynOptionMenuWidget.cpython-35.pyc
+lib/python3.5/idlelib/__pycache__/help.cpython-35.opt-1.pyc
+lib/python3.5/idlelib/__pycache__/help.cpython-35.opt-2.pyc
+lib/python3.5/idlelib/__pycache__/help.cpython-35.pyc
 lib/python3.5/idlelib/__pycache__/idle.cpython-35.opt-1.pyc
 lib/python3.5/idlelib/__pycache__/idle.cpython-35.opt-2.pyc
 lib/python3.5/idlelib/__pycache__/idle.cpython-35.pyc
@@ -260,6 +263,8 @@ lib/python3.5/idlelib/configHelpSourceEdit.py
 lib/python3.5/idlelib/configSectionNameDialog.py
 lib/python3.5/idlelib/dynOptionMenuWidget.py
 lib/python3.5/idlelib/extend.txt
+lib/python3.5/idlelib/help.html
+lib/python3.5/idlelib/help.py
 lib/python3.5/idlelib/help.txt
 lib/python3.5/idlelib/idle.bat
 lib/python3.5/idlelib/idle.py
