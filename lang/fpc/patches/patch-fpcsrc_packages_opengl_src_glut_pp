@@ -1,7 +1,7 @@
-$OpenBSD: patch-fpcsrc_packages_opengl_src_glut_pp,v 1.1 2015/04/05 17:10:07 pascal Exp $
---- fpcsrc/packages/opengl/src/glut.pp.orig	Sun Apr  5 18:49:33 2015
-+++ fpcsrc/packages/opengl/src/glut.pp	Sun Apr  5 18:49:58 2015
-@@ -765,13 +765,7 @@ initialization
+$OpenBSD: patch-fpcsrc_packages_opengl_src_glut_pp,v 1.2 2015/12/22 14:43:55 pascal Exp $
+--- fpcsrc/packages/opengl/src/glut.pp.orig	Sun Feb 12 02:42:26 2012
++++ fpcsrc/packages/opengl/src/glut.pp	Thu Nov 26 15:15:18 2015
+@@ -768,13 +768,7 @@ initialization
    {$ifdef darwin}
    LoadGlut('/System/Library/Frameworks/GLUT.framework/GLUT');
    {$else}
@@ -13,5 +13,5 @@ $OpenBSD: patch-fpcsrc_packages_opengl_src_glut_pp,v 1.1 2015/04/05 17:10:07 pas
 -  {$ENDIF}
 -  {$ENDIF}
    {$endif}
+   {$ENDIF OS2}
    {$ENDIF}
- 

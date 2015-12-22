@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2015/08/17 19:10:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/12/22 14:43:55 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open source compiler for Pascal/Object Pascal
 
-V =			2.6.4
+V =			3.0.0
 DISTNAME =		fpcbuild-${V}
 PKGNAME =		fpc-${V}
-REVISION =		1
 BOOT_GEN =		0
 
 CATEGORIES =		lang
@@ -43,7 +42,7 @@ PKG_ARGS +=		-Damd64=0
 
 SUBST_VARS +=		V CONFIG
 
-TEST_DEPENDS =	devel/nasm
+TEST_DEPENDS =		devel/nasm
 
 MAKE_FLAGS =		NOGDB=1
 MAKE_ENV =		MKDIRPROG=/bin/mkdir ECHO=/bin/echo \
@@ -64,18 +63,14 @@ post-patch:
 	${SUBST_CMD} ${WRKSRC}/fpcsrc/compiler/systems/t_bsd.pas
 
 post-install:
+	cd ${PREFIX}/bin && ln -s ../lib/fpc/${V}/${COMPNAME} .
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/fpc/lexyacc
 	chmod ${DIRMODE} ${PREFIX}/lib/fpc/lexyacc/
 	chmod ${SHAREMODE} ${PREFIX}/lib/fpc/lexyacc/*
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/fpc-${V}/fpc
 	chmod ${DIRMODE} ${PREFIX}/share/doc/fpc-${V}/fpc/
 	chmod ${SHAREMODE} ${PREFIX}/share/doc/fpc-${V}/fpc/*
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/fpc-$V
-	find ${PREFIX}/share/examples/fpc-$V -type d -exec \
-		chmod ${DIRMODE} {} \+
-	find ${PREFIX}/share/examples/fpc-$V -type f -exec \
-		chmod ${SHAREMODE} {} \+
-	cd ${PREFIX}/bin && ln -s ../lib/fpc/${V}/${COMPNAME} .
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fpc-$V
 	# generate sample config file
 	${PREFIX}/bin/fpcmkcfg -d "basepath=${TRUEPREFIX}/lib/fpc/$V" \
 		-o ${PREFIX}/share/examples/fpc-$V/fpc.cfg.sample
