@@ -1,0 +1,11 @@
+$OpenBSD: patch-rebind_c,v 1.1 2015/12/22 14:41:52 sthen Exp $
+--- rebind.c.orig	Tue Dec 22 14:35:28 2015
++++ rebind.c	Tue Dec 22 14:35:37 2015
+@@ -26,6 +26,7 @@
+ #include <dlfcn.h>
+ 
+ #include <string.h>
++#include <sys/socket.h>
+ #include <netinet/in.h>
+ 
+ 

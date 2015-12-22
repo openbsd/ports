@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/12/18 13:18:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/12/22 14:41:52 sthen Exp $
 bin/websockify
 lib/python${MODPY_VERSION}/site-packages/websockify/
 lib/python${MODPY_VERSION}/site-packages/websockify-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -19,6 +19,8 @@ lib/python${MODPY_VERSION}/site-packages/websockify/websocket.py
 lib/python${MODPY_VERSION}/site-packages/websockify/websocket.pyc
 lib/python${MODPY_VERSION}/site-packages/websockify/websocketproxy.py
 lib/python${MODPY_VERSION}/site-packages/websockify/websocketproxy.pyc
+lib/websockify/
+lib/websockify/rebind.so
 @man man/man1/websockify.1
 share/websockify/
 share/websockify/include/
