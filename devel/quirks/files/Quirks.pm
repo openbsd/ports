@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.335 2015/12/19 19:16:47 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.336 2015/12/23 20:17:25 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -691,6 +691,8 @@ my $obsolete_reason = {
 	'WebGUI' => 2,
 	'tinyca2' => 3,
 	'kxmleditor' => 3,
+	'hs-hashed-storage' => 5,
+	'hs-dataenc' => 5,
 };
 
 my @msg = (
