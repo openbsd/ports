@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.15 2014/01/24 14:58:56 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2015/12/23 07:58:56 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python bindings for wxWidgets C++ class library
 
 V=		2.8.12.0
-REVISION=	2
+REVISION=	3
 DISTNAME=	wxPython-src-$V
 PKGNAME=	py-wxPython-$V
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://www.wxpython.org/
 
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+MAINTAINER=	Aleksander Piotrowski <pelotasplus@gmail.com>
 
 # modified LGPL
 PERMIT_PACKAGE_CDROM=	Yes
