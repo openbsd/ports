@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_makefile,v 1.13 2015/03/16 08:25:05 benoit Exp $
---- src/makefile.orig	Thu Feb 19 20:49:03 2015
-+++ src/makefile	Mon Mar 16 08:48:34 2015
+$OpenBSD: patch-src_makefile,v 1.14 2015/12/23 10:56:48 benoit Exp $
+--- src/makefile.orig	Mon Dec 21 19:31:57 2015
++++ src/makefile	Wed Dec 23 11:24:06 2015
 @@ -12,12 +12,12 @@
  
  # See src/gui-qt/highlight.pro for the Qt GUI compilation options
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_makefile,v 1.13 2015/03/16 08:25:05 benoit Exp $
 +#CXX=c++
  
  # Added -qt4 because of Arch Linux Qt5 migration
- QMAKE=qmake-qt4
+ QMAKE=qmake-qt5
  
 -CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG
 +#CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG
@@ -29,7 +29,7 @@ $OpenBSD: patch-src_makefile,v 1.13 2015/03/16 08:25:05 benoit Exp $
  
  # luajit lib
  # LUA_LIBS=$(shell pkg-config --libs luajit)
-@@ -51,10 +51,10 @@
+@@ -51,13 +51,13 @@
  DILU_DIR=${CORE_DIR}Diluculum/
  
  ifndef HL_CONFIG_DIR
@@ -40,5 +40,9 @@ $OpenBSD: patch-src_makefile,v 1.13 2015/03/16 08:25:05 benoit Exp $
 -	HL_DATA_DIR = /usr/share/highlight/
 +	HL_DATA_DIR = ${PREFIX}/share/highlight/
  endif
+ ifndef HL_DOC_DIR
+-	HL_DOC_DIR = /usr/share/doc/highlight/
++	HL_DOC_DIR = ${PREFIX}/share/doc/highlight/
+ endif
+ 
  ifdef PIC
- 	CFLAGS+=-fPIC
