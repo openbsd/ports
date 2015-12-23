@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2015/12/01 16:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2015/12/23 14:51:55 ajacoutot Exp $
 
 COMMENT-main=		apache HTTP server
 COMMENT-common=		shared files for Apache 1 and 2
 
-V=			2.4.17
-REVISION-main=		0
+V=			2.4.18
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
 
@@ -99,10 +98,10 @@ A2MAN1=			dbmmanage apxs htdigest htpasswd logresolve
 A2MAN8=			apachectl httpd rotatelogs suexec
 
 pre-configure:
-	perl -pi -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/config.layout
-	perl -pi -e 's,%%CONFDIR%%,${CONFDIR},' ${WRKSRC}/config.layout \
+	sed -i 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/config.layout
+	sed -i 's,%%CONFDIR%%,${CONFDIR},' ${WRKSRC}/config.layout \
 		${WRKSRC}/configure
-	perl -pi -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/support/apxs.in
+	sed -i 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/support/apxs.in
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
