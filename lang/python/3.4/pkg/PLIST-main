@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2015/03/15 07:42:11 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2015/12/23 07:18:12 rpointel Exp $
 @option no-default-conflict
 @conflict python->=3.4,<3.5
 @pkgpath lang/python3/3.4,-main
@@ -477,6 +477,8 @@ lib/python3.4/asyncio/__pycache__/base_events.cpython-34.pyc
 lib/python3.4/asyncio/__pycache__/base_events.cpython-34.pyo
 lib/python3.4/asyncio/__pycache__/base_subprocess.cpython-34.pyc
 lib/python3.4/asyncio/__pycache__/base_subprocess.cpython-34.pyo
+lib/python3.4/asyncio/__pycache__/compat.cpython-34.pyc
+lib/python3.4/asyncio/__pycache__/compat.cpython-34.pyo
 lib/python3.4/asyncio/__pycache__/constants.cpython-34.pyc
 lib/python3.4/asyncio/__pycache__/constants.cpython-34.pyo
 lib/python3.4/asyncio/__pycache__/coroutines.cpython-34.pyc
@@ -517,6 +519,7 @@ lib/python3.4/asyncio/__pycache__/windows_utils.cpython-34.pyc
 lib/python3.4/asyncio/__pycache__/windows_utils.cpython-34.pyo
 lib/python3.4/asyncio/base_events.py
 lib/python3.4/asyncio/base_subprocess.py
+lib/python3.4/asyncio/compat.py
 lib/python3.4/asyncio/constants.py
 lib/python3.4/asyncio/coroutines.py
 lib/python3.4/asyncio/events.py
@@ -1597,8 +1600,8 @@ lib/python3.4/ensurepip/__pycache__/__main__.cpython-34.pyo
 lib/python3.4/ensurepip/__pycache__/_uninstall.cpython-34.pyc
 lib/python3.4/ensurepip/__pycache__/_uninstall.cpython-34.pyo
 lib/python3.4/ensurepip/_bundled/
-lib/python3.4/ensurepip/_bundled/pip-6.0.8-py2.py3-none-any.whl
-lib/python3.4/ensurepip/_bundled/setuptools-12.0.5-py2.py3-none-any.whl
+lib/python3.4/ensurepip/_bundled/pip-7.1.2-py2.py3-none-any.whl
+lib/python3.4/ensurepip/_bundled/setuptools-18.2-py2.py3-none-any.whl
 lib/python3.4/ensurepip/_uninstall.py
 lib/python3.4/enum.py
 lib/python3.4/filecmp.py
@@ -1749,9 +1752,9 @@ lib/python3.4/lib-dynload/xxlimited.so
 lib/python3.4/lib-dynload/zlib.so
 lib/python3.4/lib2to3/
 lib/python3.4/lib2to3/Grammar.txt
-lib/python3.4/lib2to3/Grammar3.4.3.final.0.pickle
+lib/python3.4/lib2to3/Grammar3.4.4.final.0.pickle
 lib/python3.4/lib2to3/PatternGrammar.txt
-lib/python3.4/lib2to3/PatternGrammar3.4.3.final.0.pickle
+lib/python3.4/lib2to3/PatternGrammar3.4.4.final.0.pickle
 lib/python3.4/lib2to3/__init__.py
 lib/python3.4/lib2to3/__main__.py
 lib/python3.4/lib2to3/__pycache__/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.5 2015/03/15 07:42:11 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.6 2015/12/23 07:18:12 rpointel Exp $
 @option no-default-conflict
 @conflict python-tests->=3.4,<3.5
 @pkgpath lang/python3/3.4,-tests
@@ -532,6 +532,8 @@ lib/python3.4/test/__pycache__/test_operator.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_operator.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_optparse.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_optparse.cpython-34.pyo
+lib/python3.4/test/__pycache__/test_ordered_dict.cpython-34.pyc
+lib/python3.4/test/__pycache__/test_ordered_dict.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_os.cpython-34.pyc
 lib/python3.4/test/__pycache__/test_os.cpython-34.pyo
 lib/python3.4/test/__pycache__/test_ossaudiodev.cpython-34.pyc
@@ -1116,7 +1118,7 @@ lib/python3.4/test/decimaltestdata/testall.decTest
 lib/python3.4/test/decimaltestdata/tointegral.decTest
 lib/python3.4/test/decimaltestdata/tointegralx.decTest
 lib/python3.4/test/decimaltestdata/xor.decTest
-lib/python3.4/test/dh512.pem
+lib/python3.4/test/dh1024.pem
 lib/python3.4/test/dis_module.py
 lib/python3.4/test/doctest_aliases.py
 lib/python3.4/test/double_const.py
@@ -1905,6 +1907,7 @@ lib/python3.4/test/test_opcodes.py
 lib/python3.4/test/test_openpty.py
 lib/python3.4/test/test_operator.py
 lib/python3.4/test/test_optparse.py
+lib/python3.4/test/test_ordered_dict.py
 lib/python3.4/test/test_os.py
 lib/python3.4/test/test_ossaudiodev.py
 lib/python3.4/test/test_osx_env.py
