@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/04/29 16:00:45 kspillner Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/12/23 16:05:22 kspillner Exp $
 @bin bin/task
 @man man/man1/task.1
 @man man/man5/task-color.5
@@ -38,6 +38,8 @@ share/taskwarrior/rc/holidays.en-HK.rc
 share/taskwarrior/rc/holidays.en-NZ.rc
 share/taskwarrior/rc/holidays.en-US.rc
 share/taskwarrior/rc/holidays.en-ZA.rc
+share/taskwarrior/rc/holidays.es-CO.rc
+share/taskwarrior/rc/holidays.es-EC.rc
 share/taskwarrior/rc/holidays.es-ES.rc
 share/taskwarrior/rc/holidays.es-MX.rc
 share/taskwarrior/rc/holidays.es-US.rc
@@ -71,24 +73,9 @@ share/taskwarrior/rc/solarized-dark-256.theme
 share/taskwarrior/rc/solarized-light-256.theme
 share/taskwarrior/scripts/
 share/taskwarrior/scripts/add-ons/
-share/taskwarrior/scripts/add-ons/export-csv.pl
-share/taskwarrior/scripts/add-ons/export-html.pl
-share/taskwarrior/scripts/add-ons/export-ical.pl
-share/taskwarrior/scripts/add-ons/export-sql.py
-share/taskwarrior/scripts/add-ons/export-sql.pyc
-share/taskwarrior/scripts/add-ons/export-tsv.pl
-share/taskwarrior/scripts/add-ons/export-xml.pl
-share/taskwarrior/scripts/add-ons/export-xml.py
-share/taskwarrior/scripts/add-ons/export-xml.pyc
-share/taskwarrior/scripts/add-ons/export-xml.rb
-share/taskwarrior/scripts/add-ons/export-yad.pl
-share/taskwarrior/scripts/add-ons/export-yaml.pl
-share/taskwarrior/scripts/add-ons/import-todo.sh.pl
-share/taskwarrior/scripts/add-ons/import-yaml.pl
+share/taskwarrior/scripts/add-ons/README
 share/taskwarrior/scripts/add-ons/update-holidays.pl
 share/taskwarrior/scripts/bash/
-share/taskwarrior/scripts/bash/context
-share/taskwarrior/scripts/bash/focus
 share/taskwarrior/scripts/bash/task.sh
 share/taskwarrior/scripts/bash/task_functions.sh
 share/taskwarrior/scripts/fish/
