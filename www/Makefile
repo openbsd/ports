@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.752 2015/12/09 08:48:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.753 2015/12/23 22:53:48 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -426,6 +426,7 @@
      SUBDIR += py-jinja2,python3
      SUBDIR += py-jonpy
      SUBDIR += py-jwt
+     SUBDIR += py-jwt,python3
      SUBDIR += py-mako
      SUBDIR += py-mako,python3
      SUBDIR += py-mechanize
