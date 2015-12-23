@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.212 2015/11/29 15:50:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.213 2015/12/23 12:37:21 jca Exp $
 
 SHARED_ONLY =		Yes
-VERSION =		4.1.21
+VERSION =		4.1.22
 DISTNAME =		samba-${VERSION}
 DOCSVERSION =		v3-5-test-4c5a1b6b
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
@@ -19,9 +19,8 @@ PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${VERSION}
 PKGNAME-docs =		samba-docs-${VERSION}
 
-REVISION-ldb =		5
-REVISION-tevent =	3
-REVISION-main =		0
+REVISION-ldb =		6
+REVISION-tevent =	4
 
 PKG_ARCH-docs =		*
 
@@ -58,7 +57,7 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			samba-credentials	0.0 \
 			samba-hostconfig	0.0 \
 			samba-policy		0.0 \
-			samba-util		0.0 \
+			samba-util		1.0 \
 			samdb			0.0 \
 			smbclient		4.0 \
 			smbclient-raw		0.0 \
@@ -81,7 +80,7 @@ CATEGORIES =		net sysutils security
 
 HOMEPAGE =		https://www.samba.org/
 
-MAINTAINER =		Ian McWilliam <kaosagnt@tpg.com.au>, \
+MAINTAINER =		Ian McWilliam <kaosagnt@gmail.com>, \
 			Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv3, LGPLv3

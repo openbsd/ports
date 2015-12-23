@@ -1,20 +1,20 @@
-$OpenBSD: patch-lib_ldb_wscript,v 1.2 2015/09/30 18:14:07 jca Exp $
+$OpenBSD: patch-lib_ldb_wscript,v 1.3 2015/12/23 12:37:21 jca Exp $
 
 1. Force building standalone library (e.g., put headers in appropriate place).
 
 2. Use -Wl,no-undefined as on other platforms.
 
---- lib/ldb/wscript.orig	Tue Sep 29 23:55:21 2015
-+++ lib/ldb/wscript	Tue Sep 29 23:55:56 2015
-@@ -44,6 +44,7 @@ def configure(conf):
+--- lib/ldb/wscript.orig	Fri Dec 18 19:20:42 2015
++++ lib/ldb/wscript	Mon Dec 21 09:09:46 2015
+@@ -45,6 +45,7 @@ def configure(conf):
      conf.CONFIG_PATH('LDB_MODULESDIR', conf.SUBST_ENV_VAR('MODULESDIR') + '/ldb')
  
      conf.env.standalone_ldb = conf.IN_LAUNCH_DIR()
 +    conf.env.standalone_ldb = True
  
      if not conf.env.standalone_ldb:
-         if conf.CHECK_BUNDLED_SYSTEM_PKG('ldb', minversion=VERSION,
-@@ -64,8 +65,7 @@ def configure(conf):
+         if conf.CHECK_BUNDLED_SYSTEM_PKG('ldb', minversion=SYSTEM_VERSION,
+@@ -65,8 +66,7 @@ def configure(conf):
  
          # we don't want any libraries or modules to rely on runtime
          # resolution of symbols
