@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.71 2015/11/02 11:56:54 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2015/12/23 10:31:43 zhuk Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
 COMMENT-langlist =	list of languages supported by KDE
 CATEGORIES =		devel
 V =			4.14.10
-REVISION-main =		1
+REVISION-main =		2
 DISTNAME =		kdelibs-$V
 PKGNAME-main =		${DISTNAME}
 PKGNAME-en_US =		kde4-locale-en_US-$V

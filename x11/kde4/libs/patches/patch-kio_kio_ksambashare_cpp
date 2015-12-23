@@ -1,4 +1,4 @@
-$OpenBSD: patch-kio_kio_ksambashare_cpp,v 1.1 2014/01/26 07:02:18 zhuk Exp $
+$OpenBSD: patch-kio_kio_ksambashare_cpp,v 1.2 2015/12/23 10:31:43 zhuk Exp $
 Allow to detect Samba presence. Should fine better way before
 sending the patch upstream.
 --- kio/kio/ksambashare.cpp.orig	Sun Jan 26 06:51:21 2014
@@ -7,7 +7,7 @@ sending the patch upstream.
  bool KSambaSharePrivate::isSambaInstalled()
  {
      if (QFile::exists("/usr/sbin/smbd")
-+        || QFile::exists("${LOCALBASE}/libexec/smbd")
++        || QFile::exists("${LOCALBASE}/sbin/smbd")
          || QFile::exists("/usr/local/sbin/smbd")) {
          return true;
      }
