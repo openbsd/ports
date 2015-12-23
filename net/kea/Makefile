@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/12/23 15:43:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2015/12/23 15:58:55 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ VERSION=	0.9.2-P1
 
 DISTNAME=	kea-${VERSION}
 PKGNAME=	${DISTNAME:S/-P/pl/}
+REVISION=	0
 
 SHARED_LIBS +=  kea-asiodns               0.0 # 0.0
 SHARED_LIBS +=  kea-asiolink              0.0 # 2.0
