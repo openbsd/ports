@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/07/19 01:15:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/12/23 19:43:17 jca Exp $
 lib/python${MODPY_VERSION}/site-packages/Werkzeug-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Werkzeug-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Werkzeug-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -14,6 +14,7 @@ lib/python${MODPY_VERSION}/site-packages/werkzeug/${MODPY_PYCACHE}_internal.${MO
 lib/python${MODPY_VERSION}/site-packages/werkzeug/${MODPY_PYCACHE}_reloader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/werkzeug/${MODPY_PYCACHE}datastructures.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/werkzeug/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/werkzeug/${MODPY_PYCACHE}filesystem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/werkzeug/${MODPY_PYCACHE}formparser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/werkzeug/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/werkzeug/${MODPY_PYCACHE}local.${MODPY_PYC_MAGIC_TAG}pyc
@@ -82,6 +83,7 @@ lib/python${MODPY_VERSION}/site-packages/werkzeug/debug/shared/style.css
 lib/python${MODPY_VERSION}/site-packages/werkzeug/debug/shared/ubuntu.ttf
 lib/python${MODPY_VERSION}/site-packages/werkzeug/debug/tbtools.py
 lib/python${MODPY_VERSION}/site-packages/werkzeug/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/werkzeug/filesystem.py
 lib/python${MODPY_VERSION}/site-packages/werkzeug/formparser.py
 lib/python${MODPY_VERSION}/site-packages/werkzeug/http.py
 lib/python${MODPY_VERSION}/site-packages/werkzeug/local.py
@@ -123,6 +125,7 @@ share/doc/${MODPY_PY_PREFIX}werkzeug/_sources/deployment/index.txt
 share/doc/${MODPY_PY_PREFIX}werkzeug/_sources/deployment/mod_wsgi.txt
 share/doc/${MODPY_PY_PREFIX}werkzeug/_sources/deployment/proxying.txt
 share/doc/${MODPY_PY_PREFIX}werkzeug/_sources/exceptions.txt
+share/doc/${MODPY_PY_PREFIX}werkzeug/_sources/filesystem.txt
 share/doc/${MODPY_PY_PREFIX}werkzeug/_sources/http.txt
 share/doc/${MODPY_PY_PREFIX}werkzeug/_sources/index.txt
 share/doc/${MODPY_PY_PREFIX}werkzeug/_sources/installation.txt
@@ -198,6 +201,7 @@ share/doc/${MODPY_PY_PREFIX}werkzeug/deployment/index.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/deployment/mod_wsgi.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/deployment/proxying.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/exceptions.html
+share/doc/${MODPY_PY_PREFIX}werkzeug/filesystem.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/genindex.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/http.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/index.html

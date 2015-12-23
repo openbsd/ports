@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_conf_py,v 1.1 2015/12/23 19:43:17 jca Exp $
+--- docs/conf.py.orig	Thu Nov 12 10:23:01 2015
++++ docs/conf.py	Wed Dec 23 20:32:59 2015
+@@ -27,7 +27,7 @@ sys.path.append(os.path.abspath('_themes'))
+ 
+ # Add any Sphinx extension module names here, as strings. They can be extensions
+ # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
+-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx',
++extensions = ['sphinx.ext.autodoc',
+               'sphinx.ext.doctest', 'werkzeugext']
+ 
+ # Add any paths that contain templates here, relative to this directory.
