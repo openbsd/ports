@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $OpenBSD: kea.rc,v 1.1.1.1 2015/12/23 13:40:53 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/keactrl"
+
+. /etc/rc.d/rc.subr
+
+pexp="${TRUEPREFIX}/sbin/kea-dhcp(4|6|-ddns)"
+
+rc_pre() {
+	if ! [ -d ${LOCALSTATEDIR}/run/kea ]; then
+		install -d -o root -g _kea -m 775 ${LOCALSTATEDIR}/run/kea
+	fi
+}
+
+rc_start() {
+	${rcexec} "${daemon} start"
+}
+
+rc_reload() {
+	${daemon} reload
+}
+
+rc_check() {
+	pgrep -q -f "${pexp}"
+}
+
+rc_stop() {
+	${daemon} stop
+}
+
+rc_cmd $1

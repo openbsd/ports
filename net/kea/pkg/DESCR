@@ -1,0 +1,7 @@
+Kea is a new open source DHCPv4/DHCPv6 server being developed by Internet
+Systems Consortium. The objective of this project is to provide a very
+high-performance, extensible DHCP server engine for use by enterprises and
+service providers, either as is or with extensions and modifications.
+
+Kea provides DHCPv4 and DHCPv6 servers, a dynamic DNS update module, a portable
+DHCP library, libdhcp++, and a DHCP benchmarking tool, perfdhcp.
