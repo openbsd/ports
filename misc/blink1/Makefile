@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2015/10/08 21:19:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/12/23 10:53:53 bluhm Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		software tools for blink(1) LED notification light
 
-V =			1.97
+V =			1.98
 DISTNAME =		${GH_PROJECT}-${V}
-REVISION =		0
 
-SO_V =			0.0
+SO_V =			0.1
 SHARED_LIBS =		blink1	${SO_V}
 
 CATEGORIES =		misc

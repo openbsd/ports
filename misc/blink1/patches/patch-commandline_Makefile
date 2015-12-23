@@ -1,10 +1,10 @@
-$OpenBSD: patch-commandline_Makefile,v 1.1.1.1 2015/04/05 18:47:13 jung Exp $
+$OpenBSD: patch-commandline_Makefile,v 1.2 2015/12/23 10:53:53 bluhm Exp $
 
 todo: submit to upstream
 
---- commandline/Makefile.orig	Sat Jan 31 00:45:10 2015
-+++ commandline/Makefile	Sat Mar 28 14:19:54 2015
-@@ -111,9 +111,13 @@ ifeq "$(UNAME)" "FreeBSD"
+--- commandline/Makefile.orig	Wed Sep  9 03:06:56 2015
++++ commandline/Makefile	Wed Dec 23 11:33:08 2015
+@@ -113,9 +113,13 @@ ifeq "$(UNAME)" "FreeBSD"
  	OS=freebsd
  endif
  
@@ -19,7 +19,7 @@ todo: submit to upstream
  # deal with case of no git or no git tags, check for presence of "v" (i.e. "v1.93")
  ifneq ($(findstring v,$(GIT_TAG)), v)
    GIT_TAG:="v0"
-@@ -275,6 +279,37 @@ INCLOCATION ?= $(PREFIX)/include
+@@ -278,6 +282,37 @@ INCLOCATION ?= $(PREFIX)/include
  
  endif
  
@@ -57,7 +57,7 @@ todo: submit to upstream
  #################  WRT Linux  ################################################
  ifeq "$(OS)" "wrtlinux"
  LIBTARGET = libblink1.so
-@@ -364,7 +399,7 @@ endif
+@@ -371,7 +406,7 @@ endif
  
  #CFLAGS += -O -Wall -std=gnu99 -I ../hardware/firmware 
  CFLAGS += -std=gnu99 
@@ -66,7 +66,7 @@ todo: submit to upstream
  CFLAGS += -DBLINK1_VERSION=\"$(BLINK1_VERSION)\"
  
  OBJS +=  blink1-lib.o 
-@@ -382,6 +417,7 @@ help:
+@@ -389,6 +424,7 @@ help:
  	@echo "make OS=windows ... build Windows  blink1-lib and blink1-tool" 
  	@echo "make OS=linux   ... build Linux    blink1-lib and blink1-tool" 
  	@echo "make OS=freebsd ... build FreeBSD    blink1-lib and blink1-tool" 
@@ -74,7 +74,7 @@ todo: submit to upstream
  	@echo "make OS=macosx  ... build Mac OS X blink1-lib and blink1-tool" 
  	@echo "make OS=wrt     ... build OpenWrt blink1-lib and blink1-tool"
  	@echo "make OS=wrtcross... build for OpenWrt using cross-compiler"
-@@ -402,7 +438,7 @@ $(OBJS): %.o: %.c
+@@ -409,7 +445,7 @@ $(OBJS): %.o: %.c
  
  blink1-tool: $(OBJS) blink1-tool.o
  	$(CC) $(CFLAGS) -c blink1-tool.c -o blink1-tool.o
@@ -83,7 +83,7 @@ todo: submit to upstream
  
  # FIXME: verify we don't need MONGOOSE_LIBS and pthread & dl are avilable everywhere
  blink1-tiny-server: $(OBJS) server/blink1-tiny-server.c
-@@ -421,9 +457,9 @@ package: lib blink1-tool
+@@ -428,9 +464,9 @@ package: lib blink1-tool
  	@#mkdir -f builds && cp blink1-tool-$(PKGOKS).zip builds
  
  install: all
