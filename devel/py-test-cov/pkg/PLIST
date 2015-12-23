@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/26 07:34:01 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/12/23 15:46:46 shadchin Exp $
+lib/python${MODPY_VERSION}/site-packages/pytest-cov.pth
+lib/python${MODPY_VERSION}/site-packages/pytest_cov/
 lib/python${MODPY_VERSION}/site-packages/pytest_cov-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytest_cov-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/pytest_cov-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -7,5 +9,12 @@ lib/python${MODPY_VERSION}/site-packages/pytest_cov-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/pytest_cov-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/pytest_cov-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pytest_cov-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/pytest_cov.py
-lib/python${MODPY_VERSION}/site-packages/pytest_cov.pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_cov/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_cov/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pytest_cov/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_cov/${MODPY_PYCACHE}embed.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_cov/${MODPY_PYCACHE}engine.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_cov/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_cov/embed.py
+lib/python${MODPY_VERSION}/site-packages/pytest_cov/engine.py
+lib/python${MODPY_VERSION}/site-packages/pytest_cov/plugin.py
