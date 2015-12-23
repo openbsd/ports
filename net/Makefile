@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.946 2015/12/18 13:19:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.947 2015/12/23 13:41:10 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -182,6 +182,7 @@
      SUBDIR += jabberd,mysql,ldap
      SUBDIR += jftpgw
      SUBDIR += jnettop
+     SUBDIR += kea
      SUBDIR += kismet
      SUBDIR += kissd
      SUBDIR += knot
