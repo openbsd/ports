@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2015/02/10 11:50:09 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2015/12/23 14:46:06 dcoppa Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.1.5
-REVISION =	1
+REVISION =	2
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
@@ -55,6 +55,9 @@ FAKE_FLAGS =	OCAML_NATIVE=no
 NO_TEST =	Yes
 
 .include <bsd.port.arch.mk>
+pre-patch:
+	@cd ${WRKSRC}; perl -i -pe 's/\r$$//' `find . -type f`
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mldonkey
 	cp -R ${WRKDIST}/distrib ${PREFIX}/share/mldonkey/
