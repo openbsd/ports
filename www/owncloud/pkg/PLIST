@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2015/11/18 08:30:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.52 2015/12/23 06:19:02 ajacoutot Exp $
 @extra owncloud/config/config.php
 conf/modules.sample/httpd-owncloud.conf.dist
 @sample conf/modules.sample/httpd-owncloud.conf
@@ -5453,6 +5453,7 @@ owncloud/apps/files_external/tests/js/mountsfilelistSpec.js
 owncloud/apps/files_external/tests/js/settingsSpec.js
 owncloud/apps/files_external/tests/legacydependencycheckpolyfilltest.php
 owncloud/apps/files_external/tests/owncloudfunctions.php
+owncloud/apps/files_external/tests/personalmounttest.php
 owncloud/apps/files_external/tests/service/
 owncloud/apps/files_external/tests/service/backendservicetest.php
 owncloud/apps/files_external/tests/service/globalstoragesservicetest.php
@@ -5471,6 +5472,7 @@ owncloud/apps/files_pdfviewer/controller/
 owncloud/apps/files_pdfviewer/controller/displaycontroller.php
 owncloud/apps/files_pdfviewer/css/
 owncloud/apps/files_pdfviewer/css/style.css
+owncloud/apps/files_pdfviewer/css/viewer.css
 owncloud/apps/files_pdfviewer/img/
 owncloud/apps/files_pdfviewer/img/app.png
 owncloud/apps/files_pdfviewer/img/app.svg
@@ -6247,6 +6249,7 @@ owncloud/apps/files_sharing/tests/external/cache.php
 owncloud/apps/files_sharing/tests/external/managertest.php
 owncloud/apps/files_sharing/tests/external/scannertest.php
 owncloud/apps/files_sharing/tests/externalstorage.php
+owncloud/apps/files_sharing/tests/groupetagpropagation.php
 owncloud/apps/files_sharing/tests/grouppropagationmanager.php
 owncloud/apps/files_sharing/tests/helper.php
 owncloud/apps/files_sharing/tests/js/
@@ -6260,6 +6263,7 @@ owncloud/apps/files_sharing/tests/middleware/
 owncloud/apps/files_sharing/tests/middleware/sharingcheckmiddleware.php
 owncloud/apps/files_sharing/tests/migrationtest.php
 owncloud/apps/files_sharing/tests/permissions.php
+owncloud/apps/files_sharing/tests/propagationtestcase.php
 owncloud/apps/files_sharing/tests/server2server.php
 owncloud/apps/files_sharing/tests/share.php
 owncloud/apps/files_sharing/tests/sharedmount.php
@@ -8084,8 +8088,7 @@ owncloud/apps/updater/img/app.svg
 owncloud/apps/updater/js/
 owncloud/apps/updater/js/3rdparty/
 owncloud/apps/updater/js/3rdparty/angular.js
-owncloud/apps/updater/js/app.js
-owncloud/apps/updater/js/controllers.js
+owncloud/apps/updater/js/updater.js
 owncloud/apps/updater/l10n/
 owncloud/apps/updater/l10n/ar.php
 owncloud/apps/updater/l10n/ast.php
@@ -8767,6 +8770,7 @@ owncloud/core/css/tooltip.css
 owncloud/core/doc/
 owncloud/core/doc/admin/
 owncloud/core/doc/admin/_images/
+owncloud/core/doc/admin/_images/2-updates.png
 owncloud/core/doc/admin/_images/add_storage.png
 owncloud/core/doc/admin/_images/amazons3.png
 owncloud/core/doc/admin/_images/android_custom_1.png
@@ -8794,6 +8798,7 @@ owncloud/core/doc/admin/_images/android_custom_9.png
 owncloud/core/doc/admin/_images/antivirus-app.png
 owncloud/core/doc/admin/_images/antivirus-config.png
 owncloud/core/doc/admin/_images/antivirus-daemon-socket.png
+owncloud/core/doc/admin/_images/antivirus-daemon.png
 owncloud/core/doc/admin/_images/antivirus-executable.png
 owncloud/core/doc/admin/_images/antivirus-logging.png
 owncloud/core/doc/admin/_images/app-sharepoint-enable.png
@@ -8893,18 +8898,20 @@ owncloud/core/doc/admin/_images/files-drop-4.png
 owncloud/core/doc/admin/_images/files-drop-5.png
 owncloud/core/doc/admin/_images/files-drop-6.png
 owncloud/core/doc/admin/_images/files-drop-7.png
-owncloud/core/doc/admin/_images/files_locking_app.png
 owncloud/core/doc/admin/_images/ftp.png
 owncloud/core/doc/admin/_images/google-drive.png
 owncloud/core/doc/admin/_images/google-drive1.png
 owncloud/core/doc/admin/_images/google-drive10.png
 owncloud/core/doc/admin/_images/google-drive11.png
+owncloud/core/doc/admin/_images/google-drive12.png
+owncloud/core/doc/admin/_images/google-drive13.png
 owncloud/core/doc/admin/_images/google-drive2.png
 owncloud/core/doc/admin/_images/google-drive3.png
 owncloud/core/doc/admin/_images/google-drive4.png
 owncloud/core/doc/admin/_images/google-drive5.png
 owncloud/core/doc/admin/_images/google-drive6.png
 owncloud/core/doc/admin/_images/google-drive8.png
+owncloud/core/doc/admin/_images/google-drive9.png
 owncloud/core/doc/admin/_images/install-wizard-a.png
 owncloud/core/doc/admin/_images/install-wizard-a1.png
 owncloud/core/doc/admin/_images/install-wizard-a2.png
@@ -9008,6 +9015,7 @@ owncloud/core/doc/admin/_images/sharing-files-1.png
 owncloud/core/doc/admin/_images/shib-gui1.png
 owncloud/core/doc/admin/_images/shib-gui4.png
 owncloud/core/doc/admin/_images/shib-gui5.png
+owncloud/core/doc/admin/_images/shib-gui6.png
 owncloud/core/doc/admin/_images/shibboleth-personal.png
 owncloud/core/doc/admin/_images/skeleton-files.png
 owncloud/core/doc/admin/_images/skeleton-files1.png
@@ -9015,8 +9023,6 @@ owncloud/core/doc/admin/_images/smb.png
 owncloud/core/doc/admin/_images/smtp-config-php-sendmail.png
 owncloud/core/doc/admin/_images/smtp-config-smtp.png
 owncloud/core/doc/admin/_images/smtp-config-wizard.png
-owncloud/core/doc/admin/_images/ucs-app-center-install.png
-owncloud/core/doc/admin/_images/ucs-app-center-module.png
 owncloud/core/doc/admin/_images/ucsint.png
 owncloud/core/doc/admin/_images/ucsint1.png
 owncloud/core/doc/admin/_images/ucsint2.png
@@ -9030,6 +9036,8 @@ owncloud/core/doc/admin/_images/updater-8.png
 owncloud/core/doc/admin/_images/updater-9.png
 owncloud/core/doc/admin/_images/upgrade-1.png
 owncloud/core/doc/admin/_images/upgrade-2.png
+owncloud/core/doc/admin/_images/upgrade-3.png
+owncloud/core/doc/admin/_images/upgrade-notifier.png
 owncloud/core/doc/admin/_images/user_mounts.png
 owncloud/core/doc/admin/_images/users-config-1.png
 owncloud/core/doc/admin/_images/users-config-2.png
@@ -9040,6 +9048,7 @@ owncloud/core/doc/admin/_images/webbrander-1.png
 owncloud/core/doc/admin/_images/webdav.png
 owncloud/core/doc/admin/_images/wnd-1.png
 owncloud/core/doc/admin/_images/wnd-2.png
+owncloud/core/doc/admin/_images/wnd-3.jpg
 owncloud/core/doc/admin/_sources/
 owncloud/core/doc/admin/_sources/configuration_database/
 owncloud/core/doc/admin/_sources/configuration_database/db_conversion.txt
@@ -9067,7 +9076,6 @@ owncloud/core/doc/admin/_sources/configuration_files/external_storage_configurat
 owncloud/core/doc/admin/_sources/configuration_files/external_storage_configuration_gui.txt
 owncloud/core/doc/admin/_sources/configuration_files/federated_cloud_sharing_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_files/file_sharing_configuration.txt
-owncloud/core/doc/admin/_sources/configuration_files/files_locking_enabling.txt
 owncloud/core/doc/admin/_sources/configuration_files/files_locking_transactional.txt
 owncloud/core/doc/admin/_sources/configuration_files/index.txt
 owncloud/core/doc/admin/_sources/configuration_files/previews_configuration.txt
@@ -9082,6 +9090,7 @@ owncloud/core/doc/admin/_sources/configuration_server/automatic_configuration.tx
 owncloud/core/doc/admin/_sources/configuration_server/background_jobs_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_server/caching_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_server/config_sample_php_parameters.txt
+owncloud/core/doc/admin/_sources/configuration_server/custom_client_repos.txt
 owncloud/core/doc/admin/_sources/configuration_server/email_configuration.txt
 owncloud/core/doc/admin/_sources/configuration_server/external_sites.txt
 owncloud/core/doc/admin/_sources/configuration_server/harden_server.txt
@@ -9159,6 +9168,7 @@ owncloud/core/doc/admin/_sources/installation/linux_installation.txt
 owncloud/core/doc/admin/_sources/installation/macos_installation.txt
 owncloud/core/doc/admin/_sources/installation/nginx_configuration.txt
 owncloud/core/doc/admin/_sources/installation/php_54_installation.txt
+owncloud/core/doc/admin/_sources/installation/php_55_installation.txt
 owncloud/core/doc/admin/_sources/installation/selinux_configuration.txt
 owncloud/core/doc/admin/_sources/installation/source_installation.txt
 owncloud/core/doc/admin/_sources/installation/system_requirements.txt
@@ -9170,7 +9180,9 @@ owncloud/core/doc/admin/_sources/maintenance/
 owncloud/core/doc/admin/_sources/maintenance/backup.txt
 owncloud/core/doc/admin/_sources/maintenance/enable_maintenance.txt
 owncloud/core/doc/admin/_sources/maintenance/index.txt
+owncloud/core/doc/admin/_sources/maintenance/manual_upgrade.txt
 owncloud/core/doc/admin/_sources/maintenance/migrating.txt
+owncloud/core/doc/admin/_sources/maintenance/package_upgrade.txt
 owncloud/core/doc/admin/_sources/maintenance/restore.txt
 owncloud/core/doc/admin/_sources/maintenance/update.txt
 owncloud/core/doc/admin/_sources/maintenance/upgrade.txt
@@ -9244,7 +9256,6 @@ owncloud/core/doc/admin/configuration_files/external_storage_configuration.html
 owncloud/core/doc/admin/configuration_files/external_storage_configuration_gui.html
 owncloud/core/doc/admin/configuration_files/federated_cloud_sharing_configuration.html
 owncloud/core/doc/admin/configuration_files/file_sharing_configuration.html
-owncloud/core/doc/admin/configuration_files/files_locking_enabling.html
 owncloud/core/doc/admin/configuration_files/files_locking_transactional.html
 owncloud/core/doc/admin/configuration_files/index.html
 owncloud/core/doc/admin/configuration_files/previews_configuration.html
@@ -9259,6 +9270,7 @@ owncloud/core/doc/admin/configuration_server/automatic_configuration.html
 owncloud/core/doc/admin/configuration_server/background_jobs_configuration.html
 owncloud/core/doc/admin/configuration_server/caching_configuration.html
 owncloud/core/doc/admin/configuration_server/config_sample_php_parameters.html
+owncloud/core/doc/admin/configuration_server/custom_client_repos.html
 owncloud/core/doc/admin/configuration_server/email_configuration.html
 owncloud/core/doc/admin/configuration_server/external_sites.html
 owncloud/core/doc/admin/configuration_server/harden_server.html
@@ -9337,6 +9349,7 @@ owncloud/core/doc/admin/installation/linux_installation.html
 owncloud/core/doc/admin/installation/macos_installation.html
 owncloud/core/doc/admin/installation/nginx_configuration.html
 owncloud/core/doc/admin/installation/php_54_installation.html
+owncloud/core/doc/admin/installation/php_55_installation.html
 owncloud/core/doc/admin/installation/selinux_configuration.html
 owncloud/core/doc/admin/installation/source_installation.html
 owncloud/core/doc/admin/installation/system_requirements.html
@@ -9348,7 +9361,9 @@ owncloud/core/doc/admin/maintenance/
 owncloud/core/doc/admin/maintenance/backup.html
 owncloud/core/doc/admin/maintenance/enable_maintenance.html
 owncloud/core/doc/admin/maintenance/index.html
+owncloud/core/doc/admin/maintenance/manual_upgrade.html
 owncloud/core/doc/admin/maintenance/migrating.html
+owncloud/core/doc/admin/maintenance/package_upgrade.html
 owncloud/core/doc/admin/maintenance/restore.html
 owncloud/core/doc/admin/maintenance/update.html
 owncloud/core/doc/admin/maintenance/upgrade.html
@@ -10076,6 +10091,7 @@ owncloud/core/skeleton/Photos/
 owncloud/core/skeleton/Photos/Paris.jpg
 owncloud/core/skeleton/Photos/San Francisco.jpg
 owncloud/core/skeleton/Photos/Squirrel.jpg
+owncloud/core/skeleton/ownCloud_User_Manual.pdf
 owncloud/core/strings.php
 owncloud/core/tags/
 owncloud/core/tags/controller.php
@@ -10504,6 +10520,7 @@ owncloud/lib/private/connector/sabre/exception/filelocked.php
 owncloud/lib/private/connector/sabre/exception/invalidpath.php
 owncloud/lib/private/connector/sabre/exception/unsupportedmediatype.php
 owncloud/lib/private/connector/sabre/exceptionloggerplugin.php
+owncloud/lib/private/connector/sabre/fakelockerplugin.php
 owncloud/lib/private/connector/sabre/file.php
 owncloud/lib/private/connector/sabre/filesplugin.php
 owncloud/lib/private/connector/sabre/listenerplugin.php
@@ -10998,6 +11015,7 @@ owncloud/lib/public/il10n.php
 owncloud/lib/public/ilogger.php
 owncloud/lib/public/image.php
 owncloud/lib/public/imemcache.php
+owncloud/lib/public/imemcachettl.php
 owncloud/lib/public/inavigationmanager.php
 owncloud/lib/public/ipreview.php
 owncloud/lib/public/irequest.php
