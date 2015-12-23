@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/23 13:40:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2015/12/23 15:43:36 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,7 +32,7 @@ HOMEPAGE=	http://kea.isc.org/
 
 MAINTAINER=	Patrik Lundin <patrik@sigterm.se>
 
-# ISC (XXX Kea 1.0 changes to Apache license)
+# ISC (XXX Kea 1.0 changes to MPL)
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto log4cplus m pthread stdc++
