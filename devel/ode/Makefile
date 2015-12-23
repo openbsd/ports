@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/12/23 08:53:57 kirby Exp $
+# $OpenBSD: Makefile,v 1.11 2015/12/23 10:58:54 ajacoutot Exp $
 
 COMMENT =	high performance library for simulating rigid body dynamics
 SHARED_LIBS += 	ode	3.0	# 6.0
@@ -20,7 +20,8 @@ WANTLIB += c drm expat glapi m pthread stdc++ xcb xcb-dri2
 WANTLIB += xcb-glx
 
 BUILD_DEPENDS = 	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
 
 SEPARATE_BUILD = 	Yes
 CONFIGURE_STYLE =	gnu
