@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/07/11 12:59:55 landry Exp $
+@comment $OpenBSD: PLIST,v 1.22 2015/12/23 16:52:23 jasper Exp $
 @pkgpath devel/geany,vte
 @bin bin/geany
 include/geany/
+include/geany/app.h
 include/geany/build.h
+include/geany/dialogs.h
 include/geany/document.h
 include/geany/editor.h
 include/geany/encodings.h
@@ -13,27 +15,29 @@ include/geany/geanyplugin.h
 include/geany/gtkcompat.h
 include/geany/highlighting.h
 include/geany/keybindings.h
+include/geany/main.h
 include/geany/msgwindow.h
+include/geany/navqueue.h
 include/geany/plugindata.h
+include/geany/pluginutils.h
 include/geany/prefs.h
 include/geany/project.h
 include/geany/scintilla/
 include/geany/scintilla/SciLexer.h
+include/geany/scintilla/Sci_Position.h
 include/geany/scintilla/Scintilla.h
 include/geany/scintilla/Scintilla.iface
 include/geany/scintilla/ScintillaWidget.h
+include/geany/sciwrappers.h
 include/geany/search.h
+include/geany/spawn.h
 include/geany/stash.h
 include/geany/support.h
+include/geany/symbols.h
 include/geany/tagmanager/
-include/geany/tagmanager/tm_file_entry.h
-include/geany/tagmanager/tm_parser.h
-include/geany/tagmanager/tm_project.h
 include/geany/tagmanager/tm_source_file.h
-include/geany/tagmanager/tm_symbol.h
 include/geany/tagmanager/tm_tag.h
 include/geany/tagmanager/tm_tagmanager.h
-include/geany/tagmanager/tm_work_object.h
 include/geany/tagmanager/tm_workspace.h
 include/geany/templates.h
 include/geany/toolbar.h
@@ -46,6 +50,8 @@ lib/geany/filebrowser.so
 lib/geany/htmlchars.so
 lib/geany/saveactions.so
 lib/geany/splitwindow.so
+lib/libgeany.la
+@lib lib/libgeany.so.${LIBgeany_VERSION}
 lib/pkgconfig/geany.pc
 @man man/man1/geany.1
 share/applications/geany.desktop
@@ -87,8 +93,8 @@ share/geany/filetypes.CUDA.conf
 share/geany/filetypes.Clojure.conf
 share/geany/filetypes.Cython.conf
 share/geany/filetypes.Genie.conf
-share/geany/filetypes.Go.conf
 share/geany/filetypes.Graphviz.conf
+share/geany/filetypes.JSON.conf
 share/geany/filetypes.Scala.conf
 share/geany/filetypes.abaqus
 share/geany/filetypes.abc
@@ -101,6 +107,7 @@ share/geany/filetypes.c
 share/geany/filetypes.caml
 share/geany/filetypes.cmake
 share/geany/filetypes.cobol
+share/geany/filetypes.coffeescript
 share/geany/filetypes.common
 share/geany/filetypes.conf
 share/geany/filetypes.cpp
@@ -116,6 +123,7 @@ share/geany/filetypes.forth
 share/geany/filetypes.fortran
 share/geany/filetypes.freebasic
 share/geany/filetypes.glsl
+share/geany/filetypes.go
 share/geany/filetypes.haskell
 share/geany/filetypes.haxe
 share/geany/filetypes.html
@@ -148,7 +156,7 @@ share/geany/filetypes.verilog
 share/geany/filetypes.vhdl
 share/geany/filetypes.xml
 share/geany/filetypes.yaml
-share/geany/geany.css
+share/geany/filetypes.zephir
 share/geany/geany.glade
 share/geany/geany.gtkrc
 share/geany/html_entities.tags
@@ -165,6 +173,7 @@ share/geany/templates/files/file.html
 share/geany/templates/files/file.php
 share/geany/templates/files/file.rb
 share/geany/templates/files/file.tex
+share/geany/templates/files/file_html5.html
 share/geany/templates/files/main.c
 share/geany/templates/files/main.cxx
 share/geany/templates/files/main.d
@@ -210,6 +219,7 @@ share/icons/hicolor/24x24/actions/geany-save-all.png
 share/icons/hicolor/32x32/actions/geany-build.png
 share/icons/hicolor/32x32/actions/geany-close-all.png
 share/icons/hicolor/32x32/actions/geany-save-all.png
+share/icons/hicolor/32x32/apps/geany.png
 share/icons/hicolor/48x48/actions/geany-build.png
 share/icons/hicolor/48x48/actions/geany-close-all.png
 share/icons/hicolor/48x48/actions/geany-save-all.png

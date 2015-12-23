@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2015/03/27 08:46:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2015/12/23 16:52:23 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	small and lightweight IDE
 
-DISTNAME =	geany-1.24.1
-REVISION =	0
+DISTNAME =	geany-1.26
+SHARED_LIBS +=  geany                     0.0 # 0.0
 
 CATEGORIES=	devel
 
@@ -37,11 +37,18 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/vte \
 		x11/gtk+3,-guic
 
+FAKE_FLAGS=	doc_DATA="${WRKSRC}/README"
 LIBTOOL_FLAGS =	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
+# Don't rebuild html/pdf docs, use whatever is included in the tarball
+CONFIGURE_ARGS+=--enable-html-docs=no \
+		--enable-pdf-docs=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# XXX: Upstream omitted include test/ctags/runner.sh in the tarball
+NO_TEST=	Yes
 
 post-install:
 	rm -f ${PREFIX}/lib/geany/*.la
