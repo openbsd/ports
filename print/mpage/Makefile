@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.33 2015/06/23 15:29:57 bentley Exp $
+# $OpenBSD: Makefile,v 1.34 2015/12/23 12:33:51 jca Exp $
 
 COMMENT=	print multiple pages per sheet on PostScript printer
 
 DISTNAME=	mpage-2.5.6
 EXTRACT_SUFX=	.tgz
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	print
 
-MAINTAINER=	Ian McWilliam <kaosagnt@tpg.com.au>
+MAINTAINER=	Ian McWilliam <kaosagnt@gmail.com>
 
 PERMIT_PACKAGE_CDROM=	incomplete license
 PERMIT_PACKAGE_FTP=	incomplete license
