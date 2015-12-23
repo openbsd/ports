@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2015/11/04 13:49:34 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.48 2015/12/23 09:19:57 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	color terminal emulator with unicode support
-DISTNAME=	mlterm-3.6.0
+DISTNAME=	mlterm-3.6.1
 
 SHARED_LIBS+=	kik	12.0 # 16.0
 SHARED_LIBS+=	mkf	14.1 # 16.1
@@ -36,7 +36,15 @@ FAKE_FLAGS=	INSTALL_DATA="${INSTALL_DATA}" \
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.65
-CONFIGURE_ARGS=	--enable-utmp \
+CONFIGURE_ARGS=	--disable-canna \
+		--disable-fcitx \
+		--disable-ibus \
+		--disable-ind \
+		--disable-m17nlib \
+		--disable-scim \
+		--disable-ssh2 \
+		--disable-uim \
+		--disable-wnn \
 		--with-gtk=2.0 \
 		--with-gui=xlib,fb \
 		--with-imagelib=gdk-pixbuf2 \
