@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2015/10/30 12:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2015/12/23 23:12:23 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,9 +10,8 @@ COMMENT-htmlviewer=	fancy htmlviewer plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 COMMENT-gdata=		gdata plugin
 
-V=			3.13.0
+V=			3.13.1
 DISTNAME=		claws-mail-${V}
-REVISION=		0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
@@ -154,7 +153,6 @@ TOOLS=		OOo2claws-mail.pl \
 		eud2gc.py \
 		filter_conv.pl filter_conv_new.pl \
 		fix_date.sh \
-		freshmeat_search.pl \
 		gif2xface.pl \
 		google_msgid.pl google_search.pl \
 		kmail-mailbox2claws-mail.pl \
