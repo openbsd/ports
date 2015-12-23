@@ -1,18 +1,20 @@
-$OpenBSD: patch-config_mk,v 1.6 2015/07/19 05:58:59 czarkoff Exp $
+$OpenBSD: patch-config_mk,v 1.7 2015/12/23 20:40:03 jung Exp $
 use TRUEPREFIX instead of patching Makefile to remove DESTDIR
---- config.mk.orig	Sun Mar 10 22:59:36 2013
-+++ config.mk	Sun Mar 10 23:01:27 2013
-@@ -4,22 +4,22 @@ VERSION = 0.6
+--- config.mk.orig	Sat Dec 19 15:59:30 2015
++++ config.mk	Sat Dec 19 20:58:35 2015
+@@ -4,27 +4,27 @@ VERSION = 0.7
  # Customize below to fit your system
  
  # paths
 -PREFIX = /usr/local
 -MANPREFIX = ${PREFIX}/share/man
-+PREFIX = ${TRUEPREFIX}
-+MANPREFIX = ${TRUEPREFIX}/man
++PREFIX ?= /usr/local 
++MANPREFIX = ${PREFIX}/man
  
- X11INC = /usr/X11R6/include
- X11LIB = /usr/X11R6/lib
+-X11INC = /usr/X11R6/include
+-X11LIB = /usr/X11R6/lib
++X11INC = ${X11BASE}/include
++X11LIB = ${X11BASE}/lib
  
 -GTKINC = `pkg-config --cflags gtk+-2.0 webkit-1.0`
 -GTKLIB = `pkg-config --libs gtk+-2.0 webkit-1.0`
@@ -22,17 +24,19 @@ use TRUEPREFIX instead of patching Makefile to remove DESTDIR
  # includes and libs
 -INCS = -I. -I/usr/include -I${X11INC} ${GTKINC}
 -LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${GTKLIB} -lgthread-2.0
-+INCS = ${GTKINC}
-+LIBS = ${GTKLIB}
++INCS = -I${X11INC} ${GTKINC}
++LIBS = -L${X11LIB} -lX11 ${GTKLIB}
  
  # flags
- CPPFLAGS = -DVERSION=\"${VERSION}\" -D_BSD_SOURCE
+-CPPFLAGS = -DVERSION=\"${VERSION}\" -D_DEFAULT_SOURCE
 -CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
-+CFLAGS += -std=c99 ${INCS} ${CPPFLAGS}
- LDFLAGS = -g ${LIBS}
+-LDFLAGS = -g ${LIBS}
++CPPFLAGS += -DVERSION=\"${VERSION}\" -D_DEFAULT_SOURCE
++CFLAGS += -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
++LDFLAGS += ${LIBS}
  
  # Solaris
-@@ -27,4 +27,4 @@ LDFLAGS = -g ${LIBS}
+ #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
  #LDFLAGS = ${LIBS}
  
  # compiler and linker

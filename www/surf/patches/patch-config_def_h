@@ -1,27 +1,43 @@
-$OpenBSD: patch-config_def_h,v 1.3 2013/03/11 17:08:51 bcallah Exp $
---- config.def.h.orig	Sun Mar 10 22:54:36 2013
-+++ config.def.h	Sun Mar 10 22:59:08 2013
-@@ -12,7 +12,7 @@ static char *stylefile      = "~/.surf/style.css";
- static char *scriptfile     = "~/.surf/script.js";
+$OpenBSD: patch-config_def_h,v 1.4 2015/12/23 20:40:03 jung Exp $
+--- config.def.h.orig	Sat Dec 19 15:59:30 2015
++++ config.def.h	Sat Dec 19 20:45:50 2015
+@@ -16,9 +16,9 @@ static gfloat zoomlevel = 1.0;       /* Default zoom l
+ 
+ /* Soup default features */
  static char *cookiefile     = "~/.surf/cookies.txt";
- static time_t sessiontime   = 3600;
+-static char *cookiepolicies = "Aa@"; /* A: accept all; a: accept nothing,
++static char *cookiepolicies = "@Aa"; /* A: accept all; a: accept nothing,
+                                       * @: accept all except third party */
 -static char *cafile         = "/etc/ssl/certs/ca-certificates.crt";
 +static char *cafile         = "/etc/ssl/cert.pem";
- static char *strictssl      = FALSE; /* Refuse untrusted SSL connections */
- static int   indicator_thickness = 2;
+ static Bool strictssl       = FALSE; /* Refuse untrusted SSL connections */
+ static time_t sessiontime   = 3600;
  
-@@ -35,11 +35,9 @@ static Bool hidebackground  = FALSE;
+@@ -29,11 +29,11 @@ static Bool enablediskcache       = TRUE;
+ static int diskcachebytes         = 5 * 1024 * 1024;
+ static Bool enableplugins         = TRUE;
+ static Bool enablescripts         = TRUE;
+-static Bool enableinspector       = TRUE;
++static Bool enableinspector       = FALSE;
+ static Bool enablestyle           = TRUE;
+ static Bool loadimages            = TRUE;
+ static Bool hidebackground        = FALSE;
+-static Bool allowgeolocation      = TRUE;
++static Bool allowgeolocation      = FALSE;
+ 
+ #define SETPROP(p, q) { \
+ 	.v = (char *[]){ "/bin/sh", "-c", \
+@@ -48,10 +48,9 @@ static Bool allowgeolocation      = TRUE;
  /* DOWNLOAD(URI, referer) */
  #define DOWNLOAD(d, r) { \
  	.v = (char *[]){ "/bin/sh", "-c", \
--		"st -e /bin/sh -c \"curl -J -O --user-agent '$1'" \
--		" --referer '$2'" \
--		" -b ~/.surf/cookies.txt -c ~/.surf/cookies.txt '$0';" \
--		" sleep 5;\"", \
--		d, useragent, r, NULL \
-+		"xterm -e \"ftp '$0' \
-+		-c ~/.surf/cookies.txt \
-+		; sleep 5\"", d, NULL \
+-	     "st -e /bin/sh -c \"curl -L -J -O --user-agent '$1'" \
+-	     " --referer '$2' -b $3 -c $3 '$0';" \
+-	     " sleep 5;\"", \
+-	     d, useragent, r, cookiefile, NULL \
++	     "xterm -e \"ftp -c '$2' -U '$1' '$0';" \
++	     "sleep 5;\"", \
++	     d, useragent, cookiefile, NULL \
  	} \
  }
  
