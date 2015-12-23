@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2015/09/10 08:25:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/12/23 14:15:01 ajacoutot Exp $
 
 COMMENT=		hotplugd(8) automounter (Toad Opens All Devices)
 
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
-REVISION=		1
 
 GH_ACCOUNT=		ajacoutot
 GH_PROJECT=		toad
-GH_TAGNAME=		1.3
+GH_TAGNAME=		1.4
 
 CATEGORIES=		sysutils
 
@@ -18,8 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c util
 
-RUN_DEPENDS=		devel/xdg-utils \
-			net/p5-Net-DBus \
+RUN_DEPENDS=		net/p5-Net-DBus \
 			sysutils/consolekit
 
 MAKE_FLAGS=		PREFIX=${TRUEPREFIX} \
