@@ -1,0 +1,11 @@
+$OpenBSD: patch-ode_demo_Makefile_am,v 1.1 2015/12/23 08:53:57 kirby Exp $
+--- ode/demo/Makefile.am.orig	Sun Dec 20 14:09:10 2015
++++ ode/demo/Makefile.am	Sun Dec 20 14:09:20 2015
+@@ -1,6 +1,6 @@
+ AM_CPPFLAGS = -I$(top_srcdir)/include \
+         -I$(top_builddir)/include \
+-        -DDRAWSTUFF_TEXTURE_PATH="\"$(abs_top_srcdir)/drawstuff/textures\""
++        -DDRAWSTUFF_TEXTURE_PATH="\"$(prefix)/share/examples/ode/textures\""
+ 
+ if X11
+ AM_LDFLAGS = $(X_PRE_LIBS) $(X_LIBS) $(X_EXTRA_LIBS)
