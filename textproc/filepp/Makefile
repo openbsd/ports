@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2015/10/09 12:38:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/12/23 09:12:39 bentley Exp $
 
 COMMENT =	cpp-like generic file pre-processor
 
 DISTNAME =	filepp-1.8.0
-REVISION =	0
+REVISION =	1
 CATEGORIES =	textproc devel
-MASTER_SITES =	${HOMEPAGE}
+MASTER_SITES =	http://www-users.york.ac.uk/~dm26/filepp/
 
-HOMEPAGE =	http://www.cabaret.demon.co.uk/filepp/
+HOMEPAGE =	http://www-users.york.ac.uk/~dm26/filepp/
 MAINTAINER =	William Yodlowsky <william@openbsd.org>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 CONFIGURE_STYLE =	gnu dest
