@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2015/10/19 21:21:02 kili Exp $
+# $OpenBSD: Makefile,v 1.60 2015/12/23 20:06:28 kili Exp $
 
 BROKEN =		needs an update
 
@@ -18,38 +18,41 @@ LIB_DEPENDS =		net/curl
 
 # Yes, build dependencies, because GHC libs are still static and we
 # don't want to pull in all of ghc.
-BUILD_DEPENDS =		archivers/hs-zlib>=0.5.1.0,<0.6.0.0 \
-			devel/hs-extensible-exceptions>=0.1,<0.2 \
-			devel/hs-hashed-storage>=0.5.6,<0.6 \
-			devel/hs-mmap>=0.5,<0.6 \
-			devel/hs-mtl>=1.0,<2.3 \
-			devel/hs-network>=2.2,<2.5 \
-			devel/hs-parsec>=2.0,<3.2 \
-			devel/hs-random>=1.0,<1.1 \
-			devel/hs-regex-compat>=0.95.1 \
-			devel/hs-tar>=0.3,<0.5 \
-			devel/hs-text>=0.11.0.6,<1.2 \
-			devel/hs-utf8-string>=0.3.6,<0.4 \
-			devel/hs-vector>=0.7 \
-			www/hs-html>=1.0,<1.1 \
-			print/texlive/base \
- 			textproc/latex2html \
-			${RUN_DEPENDS}
+#
+# Commented out because I want to mop up a little bit before the update.
+#
+# BUILD_DEPENDS =		archivers/hs-zlib>=0.5.1.0,<0.6.0.0 \
+# 			devel/hs-extensible-exceptions>=0.1,<0.2 \
+# 			devel/hs-hashed-storage>=0.5.6,<0.6 \
+# 			devel/hs-mmap>=0.5,<0.6 \
+# 			devel/hs-mtl>=1.0,<2.3 \
+# 			devel/hs-network>=2.2,<2.5 \
+# 			devel/hs-parsec>=2.0,<3.2 \
+# 			devel/hs-random>=1.0,<1.1 \
+# 			devel/hs-regex-compat>=0.95.1 \
+# 			devel/hs-tar>=0.3,<0.5 \
+# 			devel/hs-text>=0.11.0.6,<1.2 \
+# 			devel/hs-utf8-string>=0.3.6,<0.4 \
+# 			devel/hs-vector>=0.7 \
+# 			www/hs-html>=1.0,<1.1 \
+# 			print/texlive/base \
+#  			textproc/latex2html \
+# 			${RUN_DEPENDS}
 
 # Used for building the test suite (which is done during normal
 # build time, not during regress time).
-BUILD_DEPENDS +=	devel/hs-FindBin>=0.0,<0.1 \
-			devel/hs-QuickCheck>=2.3 \
-			devel/hs-HUnit>=1.0 \
-			devel/hs-cmdlib>=0.2.1,<0.4 \
-			devel/hs-shellish>=0.1.3,<0.2 \
-			devel/hs-test-framework>=0.4.0 \
-			devel/hs-test-framework-hunit>=0.2.2 \
-			devel/hs-test-framework-quickcheck2>=0.2.8
+# BUILD_DEPENDS +=	devel/hs-FindBin>=0.0,<0.1 \
+# 			devel/hs-QuickCheck>=2.3 \
+# 			devel/hs-HUnit>=1.0 \
+# 			devel/hs-cmdlib>=0.2.1,<0.4 \
+# 			devel/hs-shellish>=0.1.3,<0.2 \
+# 			devel/hs-test-framework>=0.4.0 \
+# 			devel/hs-test-framework-hunit>=0.2.2 \
+# 			devel/hs-test-framework-quickcheck2>=0.2.8
 
-TEST_DEPENDS =	devel/hs-hlint \
-			shells/bash \
-			sysutils/coreutils
+# TEST_DEPENDS =	devel/hs-hlint \
+# 			shells/bash \
+# 			sysutils/coreutils
 
 # For the documentation
 USE_GMAKE =		Yes
