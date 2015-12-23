@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2015/09/29 10:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2015/12/23 10:10:36 shadchin Exp $
 
 COMMENT =		Python easy_install replacement
 
-MODPY_EGG_VERSION =	7.1.0
+MODPY_EGG_VERSION =	7.1.2
 DISTNAME =		pip-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
 
-HOMEPAGE =		http://www.pip-installer.org/
+HOMEPAGE =		https://pip.pypa.io/en/stable/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
