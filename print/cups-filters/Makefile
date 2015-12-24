@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2015/12/18 08:42:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2015/12/24 08:24:12 jasper Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
@@ -64,7 +64,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-gs-path=${LOCALBASE}/bin/gs \
 		--with-test-font-path=${X11BASE}/lib/X11/fonts/TTF/DejaVuSans.ttf \
 		--with-shell=/bin/ksh \
-		--without-php
+		--without-php \
+		--disable-braille
 
 # prefer pdftops over gs -- see README under ${WRKSRC}
 CONFIGURE_ARGS +=	--with-pdftops=pdftops
