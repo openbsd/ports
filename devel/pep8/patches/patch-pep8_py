@@ -1,0 +1,46 @@
+$OpenBSD: patch-pep8_py,v 1.1 2015/12/24 20:22:37 shadchin Exp $
+Reverted a change which had unintended repercussions in flake8.
+Refs:
+ - https://mail.python.org/pipermail/code-quality/2015-March/000515.html
+ - https://github.com/PyCQA/pep8/commit/435d1cbf995a659a82d1d4b42d25e3459556ef21
+--- pep8.py.orig	Thu Dec 24 05:59:45 2015
++++ pep8.py	Thu Dec 24 06:01:15 2015
+@@ -1984,24 +1984,24 @@ def read_config(options, args, arglist, parser):
+ 
+     local_dir = os.curdir
+ 
++    if USER_CONFIG and os.path.isfile(USER_CONFIG):
++        if options.verbose:
++            print('user configuration: %s' % USER_CONFIG)
++        config.read(USER_CONFIG)
++
++    parent = tail = args and os.path.abspath(os.path.commonprefix(args))
++    while tail:
++        if config.read(os.path.join(parent, fn) for fn in PROJECT_CONFIG):
++            local_dir = parent
++            if options.verbose:
++                print('local configuration: in %s' % parent)
++            break
++        (parent, tail) = os.path.split(parent)
++
+     if cli_conf and os.path.isfile(cli_conf):
+         if options.verbose:
+             print('cli configuration: %s' % cli_conf)
+         config.read(cli_conf)
+-    else:
+-        if USER_CONFIG and os.path.isfile(USER_CONFIG):
+-            if options.verbose:
+-                print('user configuration: %s' % USER_CONFIG)
+-            config.read(USER_CONFIG)
+-
+-        parent = tail = args and os.path.abspath(os.path.commonprefix(args))
+-        while tail:
+-            if config.read(os.path.join(parent, fn) for fn in PROJECT_CONFIG):
+-                local_dir = parent
+-                if options.verbose:
+-                    print('local configuration: in %s' % parent)
+-                break
+-            (parent, tail) = os.path.split(parent)
+ 
+     pep8_section = parser.prog
+     if config.has_section(pep8_section):
