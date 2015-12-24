@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/23 21:08:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2015/12/24 08:09:07 ajacoutot Exp $
 
 COMMENT=		fast and simple image viewer
 
@@ -42,8 +42,7 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool \
-			x11/gnome/common
+			devel/libtool
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -54,6 +53,6 @@ pre-configure:
 	cd ${WRKSRC} && \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		./autogen.sh
+		autoreconf -fi
 
 .include <bsd.port.mk>
