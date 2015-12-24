@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1302 2015/11/18 16:37:31 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1303 2015/12/24 18:29:35 jasper Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2558,7 +2558,6 @@ ${_WRKDIR_COOKIE}:
 .endif
 	@install -d ${WRKOBJDIR_MODE} `dirname ${WRKDIR}`
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin ${DEPDIR}
-#	@ln -s ${LOCALBASE}/bin/pkg-config ${WRKDIR}/bin
 .if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
 	@${ECHO_MSG} "===>  Enabling ccache for ${FULLPKGNAME}${_MASTER}"
 	@ln -sf ${LOCALBASE}/bin/ccache ${WRKDIR}/bin/gcc
