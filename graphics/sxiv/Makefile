@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/23 16:34:40 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.8 2015/12/24 21:54:09 mmcc Exp $
 
 COMMENT =	simple (or small or suckless) X Image Viewer
 
 GH_PROJECT=	sxiv
 GH_ACCOUNT=	muennich
-GH_TAGNAME=	v1.3.1
+GH_TAGNAME=	v1.3.2
 DISTNAME=	${GH_PROJECT}-${GH_TAGNAME:S/v//}
 
 CATEGORIES =	graphics x11
