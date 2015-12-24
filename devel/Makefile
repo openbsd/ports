@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1429 2015/12/23 20:12:32 kili Exp $
+# $OpenBSD: Makefile,v 1.1430 2015/12/24 08:14:36 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -26,6 +26,7 @@
      SUBDIR += atk2mm
      SUBDIR += atlas
      SUBDIR += autoconf
+     SUBDIR += autoconf-archive
      SUBDIR += autogen
      SUBDIR += automake
      SUBDIR += automoc
