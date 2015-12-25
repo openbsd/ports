@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/21 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2015/12/25 21:31:45 landry Exp $
 
 COMMENT=		text mode progress bar
 
 MODULES=		cpan
-DISTNAME=		Term-ProgressBar-2.09
-REVISION=		0
+DISTNAME=		Term-ProgressBar-2.17
 CATEGORIES=		devel
 
 MAINTAINER=		Girish Venkatachalam <girish1729@gmail.com>
