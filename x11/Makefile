@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.562 2015/11/26 00:32:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.563 2015/12/25 14:05:08 zhuk Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -39,6 +39,7 @@
      SUBDIR += dbus-python,python3
      SUBDIR += dbus-tcl
      SUBDIR += dbusmenu-qt
+     SUBDIR += dbusmenu-qt,qt5
      SUBDIR += dclock
      SUBDIR += dmenu
      SUBDIR += driconf
