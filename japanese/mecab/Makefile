@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/31 16:42:08 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2015/12/25 08:39:46 ajacoutot Exp $
 
 # .libs/libmecab.so.0.0: undefined reference to `__sync_val_compare_and_swap_4'
 # .libs/libmecab.so.0.0: undefined reference to `__sync_add_and_fetch_4'
 BROKEN-arm =	undefined refs to __sync operations
 BROKEN-hppa =	undefined refs to __sync operations
-BROKEN-mips64 =	undefined refs to __sync operations
 
 COMMENT-main =	japanese morphological analyzer engine
 COMMENT-ipadic = IPA japanese dictionary for mecab

@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.54 2015/12/19 07:58:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2015/12/25 08:39:45 ajacoutot Exp $
 
 BROKEN-hppa=	libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
-BROKEN-mips64=	libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
 SHARED_ONLY=	Yes
 

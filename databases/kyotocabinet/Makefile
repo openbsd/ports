@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2015/04/17 07:59:56 phessler Exp $
+# $OpenBSD: Makefile,v 1.11 2015/12/25 08:39:46 ajacoutot Exp $
 
 BROKEN-hppa=	undefined reference to `__sync_fetch_and_add_8'
-BROKEN-mips64=	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-powerpc=	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-sparc=	undefined reference to `__sync_fetch_and_add_8'
 

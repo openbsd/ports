@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.61 2015/12/20 00:16:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2015/12/25 08:39:46 ajacoutot Exp $
 
-BROKEN-mips64 = 	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
 BROKEN-sparc64 =	infinite loop or aborts during build
 
