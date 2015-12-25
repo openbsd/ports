@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/12/24 08:16:07 jasper Exp $
-bin/gnome-autogen.sh
-share/aclocal/gnome-code-coverage.m4
-share/aclocal/gnome-common.m4
-share/aclocal/gnome-compiler-flags.m4
