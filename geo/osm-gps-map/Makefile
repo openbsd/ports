@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/12/20 09:23:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2015/12/25 10:02:45 ajacoutot Exp $
 
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
@@ -45,14 +45,14 @@ AUTOCONF_VERSION=	2.69
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool \
-			textproc/gtk-doc \
-			x11/gnome/common
+			textproc/gtk-doc
 
 post-patch:
+	cp ${LOCALBASE}/share/gtk-doc/data/gtk-doc.make ${WRKSRC} 
 	cd ${WRKSRC} && \
 		env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		NOCONFIGURE=yes ./autogen.sh
+		autoreconf -fi
 ###
 
 .include <bsd.port.mk>
