@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2015/10/31 18:44:31 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2015/12/25 21:05:18 landry Exp $
 
 COMMENT=		OpenStreetMap map editor
 
-SVN_REV=		8969
+SVN_REV=		9060
 DISTNAME=		josm-snapshot-${SVN_REV}
 EXTRACT_SUFX =		.jar
 EXTRACT_CASES+=		*.jar) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIST};;
