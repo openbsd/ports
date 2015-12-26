@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2015/05/22 11:31:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2015/12/26 09:45:51 ajacoutot Exp $
 
 BROKEN-hppa =	undefined reference to __sync atomic ops
-BROKEN-mips64 =	undefined reference to __sync atomic ops
-BROKEN-mips64el =	undefined reference to __sync atomic ops
 
 COMMENT =	cross-platform 3D audio API
 

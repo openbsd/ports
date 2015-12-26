@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2015/09/11 09:15:40 pascal Exp $
+# $OpenBSD: Makefile,v 1.44 2015/12/26 09:45:51 ajacoutot Exp $
 
 COMMENT=		BitTorrent library written in C++
 
 BROKEN-hppa =		undefined references to __sync atomic ops
-BROKEN-mips64 =		undefined references to __sync atomic ops
 BROKEN-sh =		undefined references to __sync atomic ops
 
 # requires C++ tr1 headers
