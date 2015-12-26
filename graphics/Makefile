@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.398 2015/11/17 17:55:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.399 2015/12/26 03:02:55 jsg Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -265,6 +265,7 @@
      SUBDIR += vid
      SUBDIR += videod
      SUBDIR += viewnior
+     SUBDIR += waffle
      SUBDIR += wmgrabimage
      SUBDIR += wmicons
      SUBDIR += wmphoto
