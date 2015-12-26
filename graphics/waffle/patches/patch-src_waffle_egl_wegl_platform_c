@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_waffle_egl_wegl_platform_c,v 1.1.1.1 2015/12/26 03:00:13 jsg Exp $
+--- src/waffle/egl/wegl_platform.c.orig	Sun Dec 20 16:16:17 2015
++++ src/waffle/egl/wegl_platform.c	Sun Dec 20 16:16:51 2015
+@@ -29,7 +29,7 @@
+ #include "wegl_platform.h"
+ 
+ 
+-#ifdef WAFFLE_HAS_ANDROID
++#if defined(WAFFLE_HAS_ANDROID) || defined(__OpenBSD__)
+ static const char *libEGL_filename = "libEGL.so";
+ #else
+ static const char *libEGL_filename = "libEGL.so.1";

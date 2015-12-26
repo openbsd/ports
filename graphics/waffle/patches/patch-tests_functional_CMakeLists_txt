@@ -1,0 +1,18 @@
+$OpenBSD: patch-tests_functional_CMakeLists_txt,v 1.1.1.1 2015/12/26 03:00:13 jsg Exp $
+--- tests/functional/CMakeLists.txt.orig	Sun Dec 20 16:14:12 2015
++++ tests/functional/CMakeLists.txt	Sun Dec 20 16:14:28 2015
+@@ -8,14 +8,6 @@ if(waffle_on_mac)
+         )
+ endif()
+ 
+-if(NOT MSVC)
+-    set_source_files_properties(
+-        ${gl_basic_test_sources}
+-        PROPERTIES
+-            COMPILE_FLAGS "-Wno-initializer-overrides"
+-    )
+-endif()
+-
+ # CMake will pass to the C compiler only C sources. CMake does not recognize the
+ # .m extension and ignores any such files in the source lists. To coerce CMake
+ # to pass .m files to the compiler, we must lie and claim that they are

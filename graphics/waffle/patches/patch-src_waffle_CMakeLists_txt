@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_waffle_CMakeLists_txt,v 1.1.1.1 2015/12/26 03:00:13 jsg Exp $
+--- src/waffle/CMakeLists.txt.orig	Wed Aug 26 07:05:10 2015
++++ src/waffle/CMakeLists.txt	Sat Dec 26 13:41:14 2015
+@@ -120,7 +120,7 @@ if(waffle_on_linux)
+         linux/linux_platform.c
+         )
+     list(APPEND waffle_libdeps
+-        dl
++        ${CMAKE_DL_LIBS}
+         pthread
+         )
+ endif()

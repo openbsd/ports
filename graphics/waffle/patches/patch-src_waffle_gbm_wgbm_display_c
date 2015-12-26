@@ -1,0 +1,45 @@
+$OpenBSD: patch-src_waffle_gbm_wgbm_display_c,v 1.1.1.1 2015/12/26 03:00:13 jsg Exp $
+--- src/waffle/gbm/wgbm_display.c.orig	Wed Aug 26 07:05:10 2015
++++ src/waffle/gbm/wgbm_display.c	Mon Dec 21 16:57:09 2015
+@@ -29,11 +29,13 @@
+ #include <stdlib.h>
+ #include <unistd.h>
+ 
+-#include <libudev.h>
+ #include <fcntl.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#ifdef __linux__
++#include <libudev.h>
+ #include <linux/input.h>
++#endif
+ 
+ #include "wcore_error.h"
+ 
+@@ -68,6 +70,9 @@ wgbm_display_destroy(struct wcore_display *wc_self)
+ static int
+ wgbm_get_default_fd_for_pattern(const char *pattern)
+ {
++#ifdef __OpenBSD__
++    return open("/dev/drm0", O_RDWR, 0);
++#else
+     struct udev *ud;
+     struct udev_enumerate *en;
+     struct udev_list_entry *devices, *entry;
+@@ -97,6 +102,7 @@ wgbm_get_default_fd_for_pattern(const char *pattern)
+ 
+     udev_enumerate_unref(en);
+     udev_unref(ud);
++#endif
+     return -1;
+ }
+ 
+@@ -147,7 +153,7 @@ wgbm_display_connect(struct wcore_platform *wc_plat,
+         }
+     }
+ 
+-    dlopen("libglapi.so.0", RTLD_LAZY | RTLD_GLOBAL);
++    dlopen("libglapi.so", RTLD_LAZY | RTLD_GLOBAL);
+     self->gbm_device = plat->gbm_create_device(fd);
+     if (!self->gbm_device) {
+         wcore_errorf(WAFFLE_ERROR_UNKNOWN, "gbm_create_device failed");

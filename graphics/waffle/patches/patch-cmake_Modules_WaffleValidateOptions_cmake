@@ -1,0 +1,15 @@
+$OpenBSD: patch-cmake_Modules_WaffleValidateOptions_cmake,v 1.1.1.1 2015/12/26 03:00:13 jsg Exp $
+--- cmake/Modules/WaffleValidateOptions.cmake.orig	Sun Dec 20 16:26:53 2015
++++ cmake/Modules/WaffleValidateOptions.cmake	Sun Dec 20 16:27:07 2015
+@@ -58,11 +58,6 @@ if(waffle_on_linux)
+                 "${gbm_missing_deps} gbm"
+                 )
+         endif()
+-        if(NOT libudev_FOUND)
+-            set(gbm_missing_deps
+-                "${gbm_missing_deps} libudev"
+-                )
+-        endif()
+         if(NOT egl_FOUND)
+             set(gbm_missing_deps
+                 "${gbm_missing_deps} egl"

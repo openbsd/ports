@@ -1,0 +1,12 @@
+$OpenBSD: patch-cmake_Modules_WaffleDefineOS_cmake,v 1.1.1.1 2015/12/26 03:00:13 jsg Exp $
+--- cmake/Modules/WaffleDefineOS.cmake.orig	Sun Dec 20 16:07:17 2015
++++ cmake/Modules/WaffleDefineOS.cmake	Sun Dec 20 16:10:07 2015
+@@ -25,6 +25,8 @@
+ 
+ if("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux")
+     set(waffle_on_linux true)
++elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "OpenBSD")
++    set(waffle_on_linux true)
+ elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
+     set(waffle_on_mac true)
+ elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")

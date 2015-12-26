@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_waffle_linux_linux_dl_c,v 1.1.1.1 2015/12/26 03:00:13 jsg Exp $
+--- src/waffle/linux/linux_dl.c.orig	Sun Dec 20 16:18:31 2015
++++ src/waffle/linux/linux_dl.c	Sun Dec 20 16:19:46 2015
+@@ -48,9 +48,13 @@ linux_dl_get_name(int32_t waffle_dl)
+ {
+     switch (waffle_dl) {
+         case WAFFLE_DL_OPENGL:
++#ifdef __OpenBSD__
++            return "libGL.so";
++#else
+             return "libGL.so.1";
++#endif
+         case WAFFLE_DL_OPENGL_ES1:
+-#ifdef WAFFLE_HAS_ANDROID
++#if defined(WAFFLE_HAS_ANDROID) || defined(__OpenBSD__)
+             return "libGLESv1_CM.so";
+ #else
+             return "libGLESv1_CM.so.1";
+@@ -63,7 +67,7 @@ linux_dl_get_name(int32_t waffle_dl)
+             // Mesa did not change the library's soname when it added the ES3
+             // symbols. The soname was and is libGLESv2.so.2 before and after
+             // ES3.
+-#ifdef WAFFLE_HAS_ANDROID
++#if defined(WAFFLE_HAS_ANDROID) || defined(__OpenBSD__)
+             return "libGLESv2.so";
+ #else
+             return "libGLESv2.so.2";
