@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/16 13:18:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2015/12/26 09:47:36 ajacoutot Exp $
 
 COMMENT =	lightweight graphical download manager
 DISTNAME =	uget-2.0.3
+REVISION =	0
 CATEGORIES =	www net x11
 
 HOMEPAGE =	http://ugetdm.com/
@@ -25,12 +26,8 @@ LIB_DEPENDS =	devel/libnotify \
 		x11/gtk+3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+3,-guic
-
-# You should be using aria2 if the arch has it.
-.if ${MACHINE_ARCH} != "mips64el" && ${MACHINE_ARCH} != "mips64"
-RUN_DEPENDS +=	www/aria2
-.endif
+		x11/gtk+3,-guic \
+		www/aria2
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
