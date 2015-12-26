@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2015/07/08 22:54:49 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2015/12/26 22:39:20 zhuk Exp $
 
 .if !defined(CATEGORIES)
 ERRORS +=		"Fatal: missing CATEGORIES"
 .endif
 CATEGORIES +=		x11/kde-applications
 
-VERSION ?=		15.04.3
+VERSION ?=		15.08.3
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 
 # usual KDE rules:

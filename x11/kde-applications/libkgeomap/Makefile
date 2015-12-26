@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2015/07/12 10:06:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2015/12/26 22:39:21 zhuk Exp $
 
-COMMENT =		library for mapping photos on maps for KDE4
+COMMENT =		library for mapping photos on maps for KDE
 DISTNAME =		libkgeomap-${VERSION}
-REVISION =		0
 
 SHARED_LIBS =		kgeomap		0.1
 
