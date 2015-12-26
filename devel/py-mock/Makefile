@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/29 10:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/12/26 20:48:11 shadchin Exp $
 
 COMMENT=		python mocking and patching library for testing
 
-MODPY_EGG_VERSION=	1.0.1
+MODPY_EGG_VERSION=	1.3.0
 DISTNAME=		mock-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION=		0
 
 HOMEPAGE=		http://www.voidspace.org.uk/python/mock/
 
@@ -16,11 +15,23 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODPY_PI =		Yes
 
 MODULES=		lang/python
+BUILD_DEPENDS=		devel/py-pbr${MODPY_FLAVOR}
+RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR} \
+			devel/py-pbr${MODPY_FLAVOR}
+
+FLAVORS =		python3
+FLAVOR ?=
 
 MODPY_SETUPTOOLS=	Yes
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-mock
-	cd ${WRKSRC}/html/ && pax -rw * ${PREFIX}/share/doc/py-mock/
+.if !${FLAVOR:Mpython3}
+RUN_DEPENDS +=		devel/py-funcsigs
+.endif
+
+post-patch:
+	cd ${WRKSRC}/mock/tests && perl -i -pe 's/unittest2/unittest/g' *.py
+
+do-test:
+	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover
 
 .include <bsd.port.mk>
