@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2015/12/09 18:13:36 jca Exp $
+# $OpenBSD: Makefile,v 1.28 2015/12/26 07:36:24 shadchin Exp $
 
 COMMENT=		cross-python path, ini-parsing, io, code, log facilities
 
-MODPY_EGG_VERSION =	1.4.30
+MODPY_EGG_VERSION =	1.4.31
 DISTNAME=		py-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -27,6 +27,6 @@ FLAVOR?=
 TEST_DEPENDS +=		devel/py-test${MODPY_FLAVOR}
 
 do-test:
-	cd ${WRKBUILD} && ${LOCALBASE}/bin/py.test testing
+	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>
