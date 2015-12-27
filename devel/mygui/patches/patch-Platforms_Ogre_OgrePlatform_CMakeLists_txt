@@ -1,0 +1,13 @@
+$OpenBSD: patch-Platforms_Ogre_OgrePlatform_CMakeLists_txt,v 1.1.1.1 2015/12/27 21:13:16 kirby Exp $
+--- Platforms/Ogre/OgrePlatform/CMakeLists.txt.orig	Thu Aug 13 18:48:01 2015
++++ Platforms/Ogre/OgrePlatform/CMakeLists.txt	Thu Aug 13 18:49:22 2015
+@@ -8,7 +8,8 @@ include_directories(
+ 
+ include(${PROJECTNAME}.list)
+ 
+-add_library(${PROJECTNAME} ${HEADER_FILES} ${SOURCE_FILES})
++add_library(${PROJECTNAME} ${MYGUI_LIB_TYPE} ${HEADER_FILES} ${SOURCE_FILES})
++set_target_properties(${PROJECTNAME} PROPERTIES VERSION ${MYGUI_VERSION} SOVERSION ${MYGUI_VERSION_MAJOR})
+ 
+ add_dependencies(${PROJECTNAME} MyGUIEngine)
+ 

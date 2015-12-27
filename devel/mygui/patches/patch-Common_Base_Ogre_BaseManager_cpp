@@ -1,0 +1,30 @@
+$OpenBSD: patch-Common_Base_Ogre_BaseManager_cpp,v 1.1.1.1 2015/12/27 21:13:16 kirby Exp $
+--- Common/Base/Ogre/BaseManager.cpp.orig	Wed Feb 29 01:46:38 2012
++++ Common/Base/Ogre/BaseManager.cpp	Thu Jul 18 11:43:31 2013
+@@ -54,7 +54,7 @@ namespace base
+ 		#if MYGUI_PLATFORM == MYGUI_PLATFORM_APPLE
+ 			mResourcePath = macBundlePath() + "/Contents/Resources/";
+ 		#else
+-			mResourcePath = "";
++			mResourcePath = "${SYSCONFDIR}/MYGUI/";
+ 		#endif
+ 	}
+ 
+@@ -65,12 +65,16 @@ namespace base
+ 	bool BaseManager::create()
+ 	{
+ 		Ogre::String pluginsPath;
++		char *homedir;
++		homedir = getenv("HOME");
++		std::string homePath;
++		homePath = homedir;	
+ 
+ 		#ifndef OGRE_STATIC_LIB
+ 			pluginsPath = mResourcePath + mPluginCfgName;
+ 		#endif
+ 
+-		mRoot = new Ogre::Root(pluginsPath, mResourcePath + "ogre.cfg", mResourcePath + "Ogre.log");
++		mRoot = new Ogre::Root(pluginsPath, homePath + "/mygui-ogre.cfg", homePath + "/mygui-Ogre.log");
+ 
+ 		setupResources();
+ 
