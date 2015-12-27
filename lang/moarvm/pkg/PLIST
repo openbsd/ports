@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/12/10 17:50:45 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/12/27 20:35:41 pascal Exp $
 @bin bin/moar
 include/libtommath/
 include/libuv/
@@ -118,6 +118,7 @@ include/moar/instrument/
 include/moar/instrument/crossthreadwrite.h
 include/moar/io/
 include/moar/io/asyncsocket.h
+include/moar/io/asyncsocketudp.h
 include/moar/io/dirops.h
 include/moar/io/eventloop.h
 include/moar/io/fileops.h
