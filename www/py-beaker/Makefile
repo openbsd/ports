@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/09/29 10:52:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2015/12/27 08:26:51 ajacoutot Exp $
 
 COMMENT =	session and caching library with wsgi middleware
 
@@ -31,7 +31,7 @@ NO_TEST =	Yes
 # https://pypi.python.org/simple/waitress/ is needed
 TEST_DEPENDS =	databases/py-sqlalchemy \
 		devel/py-coverage${MODPY_FLAVOR} \
-		devel/py-mock \
+		devel/py-mock${MODPY_FLAVOR} \
 		devel/py-nose${MODPY_FLAVOR} \
 		misc/py-memcached${MODPY_FLAVOR} \
 		www/py-webtest \

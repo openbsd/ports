@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/12/17 18:38:20 shadchin Exp $
+# $OpenBSD: Makefile,v 1.14 2015/12/27 08:26:50 ajacoutot Exp $
 
 COMMENT=		cross-project testing tool for Python
 
@@ -27,10 +27,10 @@ FLAVOR?=
 
 RUN_DEPENDS=		devel/py-py${MODPY_FLAVOR}>=1.4.30
 TEST_DEPENDS=		${RUN_DEPENDS} \
+			devel/py-mock${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR}
 .if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=		devel/py-mock \
-			devel/py-twisted/core
+TEST_DEPENDS +=		devel/py-twisted/core
 .endif
 
 .if ${FLAVOR:Mpython3}

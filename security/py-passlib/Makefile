@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/29 10:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/12/27 08:26:51 ajacoutot Exp $
 
 COMMENT =		Python module providing a password hashing framework
 
@@ -21,8 +21,8 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-TEST_DEPENDS =		devel/py-nose \
-			devel/py-mock
+TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
+			devel/py-mock${MODPY_FLAVOR}
 
 do-test:
 	cd ${WRKSRC} && \

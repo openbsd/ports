@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/12/21 09:37:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2015/12/27 08:26:50 ajacoutot Exp $
 
 COMMENT=	ACME protocol implementation
 
@@ -25,14 +25,9 @@ SUBST_VARS=	MODPY_FLAVOR
 # weird hangs in network-listening tests.
 TEST_IS_INTERACTIVE=	Yes
 
-.if ${FLAVOR:Mpython3}
-# no devel/py-mock for py3 yet
-NO_TEST=	Yes
-.else
 TEST_DEPENDS=	devel/py-funcsigs${MODPY_FLAVOR} \
 		devel/py-nose${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR}
-.endif
 
 post-install:
 	mv ${PREFIX}/bin/jws ${PREFIX}/bin/jws${MODPY_BIN_SUFFIX}
