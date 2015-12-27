@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2015/07/16 02:50:33 sthen Exp $
+$OpenBSD: README,v 1.6 2015/12/27 23:28:40 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -61,7 +61,8 @@ server {
   location ~ \.php {
     fastcgi_pass	unix:run/php-fpm.sock;
     fastcgi_index	index.php;
-    fastcgi_param	SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_param	DOCUMENT_ROOT /var/www$document_root;
+    fastcgi_param	SCRIPT_FILENAME /var/www$document_root$fastcgi_script_name;
     fastcgi_split_path_info ^(.+\.php)(/.+)$;
     include		fastcgi_params;
   }
