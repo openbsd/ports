@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_testpcsc_c,v 1.1 2015/09/11 10:18:36 dcoppa Exp $
---- src/testpcsc.c.orig	Fri Sep 11 11:44:10 2015
-+++ src/testpcsc.c	Fri Sep 11 11:44:29 2015
-@@ -471,8 +471,6 @@ wait_for_card_again:
+$OpenBSD: patch-src_testpcsc_c,v 1.2 2015/12/27 18:05:49 dcoppa Exp $
+--- src/testpcsc.c.orig	Fri Nov  6 09:39:51 2015
++++ src/testpcsc.c	Sun Dec 27 18:52:28 2015
+@@ -469,8 +469,6 @@ wait_for_card_again:
  		(void)SCardReleaseContext(hContext);
  	}
  
