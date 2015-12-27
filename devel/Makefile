@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1431 2015/12/26 20:50:44 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1432 2015/12/27 15:34:35 pascal Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -205,6 +205,7 @@
      SUBDIR += hs-convertible
      SUBDIR += hs-data-default
      SUBDIR += hs-data-hash
+     SUBDIR += hs-dataenc
      SUBDIR += hs-directory-tree
      SUBDIR += hs-dlist
      SUBDIR += hs-enumerator
