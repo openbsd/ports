@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.261 2015/12/24 14:12:04 jasper Exp $
+$OpenBSD: user.list,v 1.262 2015/12/27 21:35:19 pascal Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -273,3 +273,4 @@ id  user		group		port options
 762 _icingaweb2		_icingaweb2	net/icinga/web2
 763 _kea		_kea		net/kea
 764 _distcc		_distcc		devel/distcc
+765 _hedgewars		_hedgewars	games/hedgewars
