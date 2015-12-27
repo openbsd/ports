@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.322 2015/12/27 21:42:57 pascal Exp $
+# $OpenBSD: Makefile,v 1.323 2015/12/27 21:56:09 pascal Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -169,6 +169,7 @@
      SUBDIR += omega
      SUBDIR += oolite
      SUBDIR += openarena
+     SUBDIR += openmw
      SUBDIR += opensonic
      SUBDIR += openttd
      SUBDIR += opentyrian
