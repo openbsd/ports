@@ -1,0 +1,18 @@
+$OpenBSD: README,v 1.1.1.1 2015/12/27 21:55:24 pascal Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+You must legally own and install Morrowind before you can use OpenMW as
+it is intended - to play Morrowind. OpenMW is a reimplementation of the
+technical aspects of the game only. It does not come with any "content"
+- namely the art, game data, and other copyrighted material that you
+need to play the game as designed by Bethesda Softworks. You have to
+provide this content yourself by installing Morrowind and then
+configuring OpenMW to use the existing installation.
+
+Mount the original CD if you have it or, if you have an ISO image, read
+vnconfig(8) for instructions to mount it.  After you have mounted either
+disk or its image you need to run openmw-wizard and point it to the
+correct path.

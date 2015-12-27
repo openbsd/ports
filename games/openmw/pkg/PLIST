@@ -1,0 +1,129 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/12/27 21:55:24 pascal Exp $
+@bin bin/bsatool
+@bin bin/esmtool
+@bin bin/openmw
+@bin bin/openmw-cs
+@bin bin/openmw-essimporter
+@bin bin/openmw-iniimporter
+@bin bin/openmw-launcher
+@bin bin/openmw-wizard
+share/appdata/
+share/appdata/openmw.appdata.xml
+share/applications/openmw-cs.desktop
+share/applications/openmw.desktop
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/openmw/
+@sample ${SYSCONFDIR}/openmw/
+share/examples/openmw/gamecontrollerdb.txt
+@sample ${SYSCONFDIR}/openmw/gamecontrollerdb.txt
+share/examples/openmw/opencs.ini
+@sample ${SYSCONFDIR}/openmw/opencs.ini
+share/examples/openmw/openmw.cfg
+@sample ${SYSCONFDIR}/openmw/openmw.cfg
+share/examples/openmw/settings-default.cfg
+@sample ${SYSCONFDIR}/openmw/settings-default.cfg
+share/examples/openmw/version
+@sample ${SYSCONFDIR}/openmw/version
+share/licenses/
+share/licenses/openmw/
+share/licenses/openmw/DejaVu Font License.txt
+share/openmw/
+share/openmw/data/
+share/openmw/resources/
+share/openmw/resources/defaultfilters
+share/openmw/resources/mygui/
+share/openmw/resources/mygui/DejaVuLGCSansMono.ttf
+share/openmw/resources/mygui/OpenMWResourcePlugin.xml
+share/openmw/resources/mygui/core.skin
+share/openmw/resources/mygui/core.xml
+share/openmw/resources/mygui/core_layouteditor.xml
+share/openmw/resources/mygui/openmw.png
+share/openmw/resources/mygui/openmw_alchemy_window.layout
+share/openmw/resources/mygui/openmw_book.layout
+share/openmw/resources/mygui/openmw_box.skin.xml
+share/openmw/resources/mygui/openmw_button.skin.xml
+share/openmw/resources/mygui/openmw_chargen_birth.layout
+share/openmw/resources/mygui/openmw_chargen_class.layout
+share/openmw/resources/mygui/openmw_chargen_class_description.layout
+share/openmw/resources/mygui/openmw_chargen_create_class.layout
+share/openmw/resources/mygui/openmw_chargen_generate_class_result.layout
+share/openmw/resources/mygui/openmw_chargen_race.layout
+share/openmw/resources/mygui/openmw_chargen_review.layout
+share/openmw/resources/mygui/openmw_chargen_select_attribute.layout
+share/openmw/resources/mygui/openmw_chargen_select_skill.layout
+share/openmw/resources/mygui/openmw_chargen_select_specialization.layout
+share/openmw/resources/mygui/openmw_companion_window.layout
+share/openmw/resources/mygui/openmw_confirmation_dialog.layout
+share/openmw/resources/mygui/openmw_console.layout
+share/openmw/resources/mygui/openmw_console.skin.xml
+share/openmw/resources/mygui/openmw_container_window.layout
+share/openmw/resources/mygui/openmw_count_window.layout
+share/openmw/resources/mygui/openmw_debug_window.layout
+share/openmw/resources/mygui/openmw_debug_window.skin.xml
+share/openmw/resources/mygui/openmw_dialogue_window.layout
+share/openmw/resources/mygui/openmw_dialogue_window.skin.xml
+share/openmw/resources/mygui/openmw_edit.skin.xml
+share/openmw/resources/mygui/openmw_edit_effect.layout
+share/openmw/resources/mygui/openmw_edit_note.layout
+share/openmw/resources/mygui/openmw_enchanting_dialog.layout
+share/openmw/resources/mygui/openmw_font.xml
+share/openmw/resources/mygui/openmw_hud.layout
+share/openmw/resources/mygui/openmw_hud_box.skin.xml
+share/openmw/resources/mygui/openmw_hud_energybar.skin.xml
+share/openmw/resources/mygui/openmw_infobox.layout
+share/openmw/resources/mygui/openmw_interactive_messagebox.layout
+share/openmw/resources/mygui/openmw_inventory_window.layout
+share/openmw/resources/mygui/openmw_itemselection_dialog.layout
+share/openmw/resources/mygui/openmw_jail_screen.layout
+share/openmw/resources/mygui/openmw_journal.layout
+share/openmw/resources/mygui/openmw_journal.skin.xml
+share/openmw/resources/mygui/openmw_layers.xml
+share/openmw/resources/mygui/openmw_levelup_dialog.layout
+share/openmw/resources/mygui/openmw_list.skin.xml
+share/openmw/resources/mygui/openmw_loading_screen.layout
+share/openmw/resources/mygui/openmw_magicselection_dialog.layout
+share/openmw/resources/mygui/openmw_mainmenu.layout
+share/openmw/resources/mygui/openmw_mainmenu.skin.xml
+share/openmw/resources/mygui/openmw_map_window.layout
+share/openmw/resources/mygui/openmw_map_window.skin.xml
+share/openmw/resources/mygui/openmw_merchantrepair.layout
+share/openmw/resources/mygui/openmw_messagebox.layout
+share/openmw/resources/mygui/openmw_persuasion_dialog.layout
+share/openmw/resources/mygui/openmw_pointer.xml
+share/openmw/resources/mygui/openmw_progress.skin.xml
+share/openmw/resources/mygui/openmw_quickkeys_menu.layout
+share/openmw/resources/mygui/openmw_quickkeys_menu_assign.layout
+share/openmw/resources/mygui/openmw_recharge_dialog.layout
+share/openmw/resources/mygui/openmw_repair.layout
+share/openmw/resources/mygui/openmw_resources.xml
+share/openmw/resources/mygui/openmw_savegame_dialog.layout
+share/openmw/resources/mygui/openmw_screen_fader.layout
+share/openmw/resources/mygui/openmw_screen_fader_hit.layout
+share/openmw/resources/mygui/openmw_scroll.layout
+share/openmw/resources/mygui/openmw_scroll.skin.xml
+share/openmw/resources/mygui/openmw_settings.xml
+share/openmw/resources/mygui/openmw_settings_window.layout
+share/openmw/resources/mygui/openmw_spell_buying_window.layout
+share/openmw/resources/mygui/openmw_spell_window.layout
+share/openmw/resources/mygui/openmw_spellcreation_dialog.layout
+share/openmw/resources/mygui/openmw_stats_window.layout
+share/openmw/resources/mygui/openmw_text.skin.xml
+share/openmw/resources/mygui/openmw_text_input.layout
+share/openmw/resources/mygui/openmw_tooltips.layout
+share/openmw/resources/mygui/openmw_trade_window.layout
+share/openmw/resources/mygui/openmw_trainingwindow.layout
+share/openmw/resources/mygui/openmw_travel_window.layout
+share/openmw/resources/mygui/openmw_wait_dialog.layout
+share/openmw/resources/mygui/openmw_wait_dialog_progressbar.layout
+share/openmw/resources/mygui/openmw_windows.skin.xml
+share/openmw/resources/mygui/skins.xml
+share/openmw/resources/shaders/
+share/openmw/resources/shaders/water_fragment.glsl
+share/openmw/resources/shaders/water_nm.png
+share/openmw/resources/shaders/water_vertex.glsl
+share/openmw/resources/version
+share/pixmaps/
+share/pixmaps/openmw-cs.png
+share/pixmaps/openmw.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
