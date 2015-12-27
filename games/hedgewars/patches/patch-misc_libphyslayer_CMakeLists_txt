@@ -1,0 +1,13 @@
+$OpenBSD: patch-misc_libphyslayer_CMakeLists_txt,v 1.1.1.1 2015/12/27 21:40:57 pascal Exp $
+--- misc/libphyslayer/CMakeLists.txt.orig	Mon Feb  3 13:12:47 2014
++++ misc/libphyslayer/CMakeLists.txt	Mon Feb  3 13:13:16 2014
+@@ -15,6 +15,9 @@ set(PHYSLAYER_SRCS
+ #compiles and links actual library
+ add_library (physlayer ${PHYSLAYER_SRCS})
+ #TODO: find good VERSION and SOVERSION values
++set_target_properties(physlayer PROPERTIES
++                          VERSION 0.0
++                          SOVERSION 0.0)
+ target_link_libraries(physlayer ${SDL_LIBRARY} lua physfs)
+ install(TARGETS physlayer RUNTIME DESTINATION ${target_binary_install_dir}
+                           LIBRARY DESTINATION ${target_library_install_dir}

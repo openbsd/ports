@@ -1,0 +1,13 @@
+$OpenBSD: patch-hedgewars_SDLh_pas,v 1.1.1.1 2015/12/27 21:40:57 pascal Exp $
+--- hedgewars/SDLh.pas.orig	Tue Jul 30 13:15:03 2013
++++ hedgewars/SDLh.pas	Tue Jul 30 13:15:27 2013
+@@ -27,6 +27,9 @@ interface
+ {$IFDEF FREEBSD}
+     {$DEFINE UNIX}
+ {$ENDIF}
++{$IFDEF OPENBSD}
++    {$DEFINE UNIX}
++{$ENDIF}
+ {$IFDEF DARWIN}
+     {$DEFINE UNIX}
+ {$ENDIF}
