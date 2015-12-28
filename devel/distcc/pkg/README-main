@@ -1,0 +1,41 @@
+$OpenBSD: README-main,v 1.1.1.1 2015/12/28 08:15:31 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+distcc
+======
+To spawn compilation jobs on remote hosts, a minimal configuration
+such as the following can be used as `~/.distcc/hosts`:
+
+    localhost 192.168.178.13
+
+or `/etc/distcc/hosts` for a system-wide configuration.
+For SSH connections prefix hosts with `@` in the host specification.
+distcc will run the jobs as the user invoking distcc.
+
+Then set `$CC` to `distcc` to distribute compilation jobs across the
+configured nodes.
+
+#ifdef notyet
+USE_DISTCC
+==========
+To allow building ports with distcc, set `USE_DISTCC=Yes` either in the
+environment or in `/etc/mk.conf`. When using `USE_DISTCC` the the `DISTCC_DIR`
+is set to ${WRKOBJDIR}/.distcc.
+
+Note that it's currently not (yet) possible to enable both `USE_DISTCC` and
+`USE_CCACHE`. Also pumping mode is not setup/enabled at this moment.
+
+To monitor a build be sure to point DISTCC_DIR to the correct directory.
+#endif
+
+References
+==========
+For more information on using distcc and setting up a build cluster, please
+refer to the Gentoo and Arch Linux wikis. While containing information
+specific to their build systems, they do provide good general information:
+
+  - https://wiki.gentoo.org/wiki/Distcc
+  - https://wiki.archlinux.org/index.php/Distcc

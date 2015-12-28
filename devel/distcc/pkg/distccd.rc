@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: distccd.rc,v 1.1.1.1 2015/12/28 08:15:31 jasper Exp $
+
+daemon="${PREFIX}/bin/distccd"
+daemon_user="_distcc"
+daemon_flags="-a 127.0.0.1"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

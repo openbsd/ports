@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-server,v 1.1.1.1 2015/12/28 08:15:31 jasper Exp $
+@newgroup _distcc:764
+@newuser _distcc:764:_distcc:daemon:distcc user:/nonexistent:/sbin/nologin
+@bin bin/distccd
+@man man/man1/distccd.1
+share/doc/pkg-readmes/${FULLPKGNAME}
+@rcscript ${RCDIR}/distccd

@@ -1,0 +1,15 @@
+$OpenBSD: patch-man_distccd_1,v 1.1.1.1 2015/12/28 08:15:31 jasper Exp $
+
+Use _distcc and don't advocate misusing the 'nobody' account.
+
+--- man/distccd.1.orig	Thu Dec 24 13:49:03 2015
++++ man/distccd.1	Thu Dec 24 13:49:16 2015
+@@ -33,7 +33,7 @@ distcc may be started either by root or any other user
+ root, it gives away privileges and changes to the user specified by
+ the 
+ .B --user
+-option, or the user called "distcc", or the user called "nobody".
++option, or the user called "_distcc".
+ .PP
+ distccd does not have a configuration file; it's behaviour is
+ controlled only by command-line options and requests from

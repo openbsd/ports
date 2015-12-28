@@ -1,0 +1,2 @@
+distccd is the server for the distcc(1) distributed compiler. It
+accepts and runs compilation jobs for network clients.

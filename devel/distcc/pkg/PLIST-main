@@ -1,0 +1,95 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2015/12/28 08:15:31 jasper Exp $
+@bin bin/distcc
+@bin bin/distccmon-text
+@bin bin/lsdistcc
+bin/pump
+lib/python${MODPY_VERSION}/site-packages/include_server/
+lib/python${MODPY_VERSION}/site-packages/include_server-3.2rc1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/include_server/__init__.py
+lib/python${MODPY_VERSION}/site-packages/include_server/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/basics.py
+lib/python${MODPY_VERSION}/site-packages/include_server/basics.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/basics_test.py
+lib/python${MODPY_VERSION}/site-packages/include_server/basics_test.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/c_extensions_test.py
+lib/python${MODPY_VERSION}/site-packages/include_server/c_extensions_test.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/cache_basics.py
+lib/python${MODPY_VERSION}/site-packages/include_server/cache_basics.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/compiler_defaults.py
+lib/python${MODPY_VERSION}/site-packages/include_server/compiler_defaults.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/compress_files.py
+lib/python${MODPY_VERSION}/site-packages/include_server/compress_files.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/distcc_pump_c_extensions.so
+lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer.py
+lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_memoizing_node.py
+lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_memoizing_node.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_memoizing_node_test.py
+lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_memoizing_node_test.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_test.py
+lib/python${MODPY_VERSION}/site-packages/include_server/include_analyzer_test.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/include_server.py
+lib/python${MODPY_VERSION}/site-packages/include_server/include_server.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/include_server_test.py
+lib/python${MODPY_VERSION}/site-packages/include_server/include_server_test.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/macro_eval.py
+lib/python${MODPY_VERSION}/site-packages/include_server/macro_eval.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/macro_eval_test.py
+lib/python${MODPY_VERSION}/site-packages/include_server/macro_eval_test.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/mirror_path.py
+lib/python${MODPY_VERSION}/site-packages/include_server/mirror_path.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/mirror_path_test.py
+lib/python${MODPY_VERSION}/site-packages/include_server/mirror_path_test.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/parse_command.py
+lib/python${MODPY_VERSION}/site-packages/include_server/parse_command.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/parse_command_test.py
+lib/python${MODPY_VERSION}/site-packages/include_server/parse_command_test.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/parse_file.py
+lib/python${MODPY_VERSION}/site-packages/include_server/parse_file.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/parse_file_test.py
+lib/python${MODPY_VERSION}/site-packages/include_server/parse_file_test.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/run.py
+lib/python${MODPY_VERSION}/site-packages/include_server/run.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/setup.py
+lib/python${MODPY_VERSION}/site-packages/include_server/setup.pyc
+lib/python${MODPY_VERSION}/site-packages/include_server/statistics.py
+lib/python${MODPY_VERSION}/site-packages/include_server/statistics.pyc
+@man man/man1/distcc.1
+@man man/man1/distccmon-text.1
+@man man/man1/include_server.1
+@man man/man1/lsdistcc.1
+@man man/man1/pump.1
+share/doc/distcc/
+share/doc/distcc/AUTHORS
+share/doc/distcc/COPYING
+share/doc/distcc/INSTALL
+share/doc/distcc/NEWS
+share/doc/distcc/README
+share/doc/distcc/README.pump
+share/doc/distcc/TODO
+share/doc/distcc/example/
+share/doc/distcc/example/README
+share/doc/distcc/example/default
+share/doc/distcc/example/hosts.allow
+share/doc/distcc/example/init
+share/doc/distcc/example/init-suse
+share/doc/distcc/example/logrotate
+share/doc/distcc/example/services
+share/doc/distcc/example/xinetd
+share/doc/distcc/protocol-1.txt
+share/doc/distcc/protocol-2.txt
+share/doc/distcc/protocol-3-impl.txt
+share/doc/distcc/protocol-3.txt
+share/doc/distcc/protocol-gssapi.txt
+share/doc/distcc/reporting-bugs.txt
+share/doc/distcc/status-1.txt
+share/doc/distcc/survey.txt
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/distcc/
+@sample ${SYSCONFDIR}/distcc/
+share/examples/distcc/clients.allow
+@sample ${SYSCONFDIR}/distcc/clients.allow
+share/examples/distcc/commands.allow.sh
+@sample ${SYSCONFDIR}/distcc/commands.allow.sh
+share/examples/distcc/hosts
+@sample ${SYSCONFDIR}/distcc/hosts

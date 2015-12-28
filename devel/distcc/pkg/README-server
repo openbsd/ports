@@ -1,0 +1,13 @@
+$OpenBSD: README-server,v 1.1.1.1 2015/12/28 08:15:31 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+distccd
+=======
+distcc can run over TCP or SSH. For TCP connections the `distccd`
+daemon has to be running on the remote hosts. Jobs will run by default
+as the unprivileged `_distcc` user. In order to allow incoming
+connections to a "worker", one has to modify `distccd_flags` to
+reflect the address/subnet of originating connections.
