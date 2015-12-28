@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/28 18:17:45 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2015/12/28 18:56:33 jasper Exp $
 
 COMMENT =	software version control visualization tool
 
 DISTNAME =	gource-0.43
-REVISION =	0
+REVISION =	1
 CATEGORIES =	sysutils graphics
-HOMEPAGE =	https://gource.googlecode.com/
+HOMEPAGE =	http://gource.io/
 
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 
@@ -20,14 +20,14 @@ MODULES =		gcc4
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c c++
 
-WANTLIB += GL GLEW GLU SDL SDL_image boost_filesystem boost_system
+WANTLIB += GL GLEW GLU SDL2 SDL2_image boost_filesystem boost_system
 WANTLIB += c freetype m pcre png pthread z
 
+BUILD_DEPENDS =		graphics/glm
 LIB_DEPENDS =           devel/boost \
 			devel/pcre \
-			devel/sdl-image \
+			devel/sdl2-image \
 			graphics/glew \
-			graphics/glm \
                         print/freetype
 
 post-install:
