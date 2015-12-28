@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/28 19:00:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2015/12/28 19:02:16 jasper Exp $
+
+PORTROACH=	limit:^v
 
 COMMENT=	Erlang library for building lightweight HTTP servers
 
