@@ -1,32 +1,21 @@
-$OpenBSD: patch-config_mk,v 1.7 2010/11/24 13:09:11 jasper Exp $
---- config.mk.orig	Fri Oct  8 18:06:05 2010
-+++ config.mk	Wed Nov 24 09:28:42 2010
-@@ -3,15 +3,15 @@ VERSION = 0.6
+$OpenBSD: patch-config_mk,v 1.8 2015/12/28 16:18:53 jasper Exp $
+--- config.mk.orig	Thu Feb 19 17:51:23 2015
++++ config.mk	Mon Dec 28 16:58:31 2015
+@@ -3,15 +3,14 @@ VERSION = 0.14
  
  # Customize below to fit your system
  
--PREFIX = /usr/local
+-PREFIX ?= /usr/local
 -MANPREFIX = ${PREFIX}/share/man
-+#PREFIX = /usr/local
-+MANPREFIX = ${PREFIX}/man
++#PREFIX ?= /usr/local
++#MANPREFIX = ${PREFIX}/share/man
+ # specify your systems terminfo directory
+ # leave empty to install into your home folder
+ TERMINFO := ${DESTDIR}${PREFIX}/share/terminfo
  
--INCS = -I. -I/usr/include -I/usr/local/include 
--LIBS = -lc -lutil -lncursesw
--#LIBS = -lc -lutil -lncurses
-+INCS = -I. -I/usr/include
-+#LIBS = -lc -lutil -lncursesw
-+LIBS = -lc -lutil -lncurses
+ INCS = -I.
+ LIBS = -lc -lutil -lncursesw
+-CPPFLAGS = -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -D_XOPEN_SOURCE_EXTENDED
+ CFLAGS += -std=c99 ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG ${CPPFLAGS}
+ LDFLAGS += ${LIBS}
  
--CFLAGS += -std=c99 -Os ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG
--LDFLAGS += -L/usr/lib -L/usr/local/lib ${LIBS}
-+CFLAGS += -std=c99 ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG
-+LDFLAGS += -L/usr/lib ${LIBS}
- 
- # Mouse handling
- CFLAGS += -DCONFIG_MOUSE
-@@ -20,4 +20,4 @@ CFLAGS += -DCONFIG_STATUSBAR
- 
- DEBUG_CFLAGS = ${CFLAGS} -UNDEBUG -O0 -g -ggdb -Wall
- 
--CC = cc
-+CC ?= cc

@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/09 11:20:43 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/12/28 16:18:53 jasper Exp $
 @bin bin/dvtm
 bin/dvtm-status
 @man man/man1/dvtm.1
+share/terminfo/
+share/terminfo/d/
+share/terminfo/d/dvtm
+share/terminfo/d/dvtm-256color

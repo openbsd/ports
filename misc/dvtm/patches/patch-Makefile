@@ -1,11 +1,10 @@
-$OpenBSD: patch-Makefile,v 1.1 2010/11/24 13:09:11 jasper Exp $
+$OpenBSD: patch-Makefile,v 1.2 2015/12/28 16:18:53 jasper Exp $
 
 - Don't hide the compile commands.
-- Don't unconditionally strip the binary.
 
---- Makefile.orig	Wed Nov 24 09:29:08 2010
-+++ Makefile	Wed Nov 24 09:29:35 2010
-@@ -13,13 +13,13 @@ options:
+--- Makefile.orig	Thu Feb 19 17:51:23 2015
++++ Makefile	Mon Dec 28 17:10:19 2015
+@@ -16,13 +16,13 @@ config.h:
  
  .c.o:
  	@echo CC $<
@@ -21,12 +20,3 @@ $OpenBSD: patch-Makefile,v 1.1 2010/11/24 13:09:11 jasper Exp $
  
  debug: clean
  	@make CFLAGS='${DEBUG_CFLAGS}'
-@@ -40,8 +40,6 @@ dist: clean
- 	@rm -rf dvtm-${VERSION}
- 
- install: dvtm
--	@echo stripping executable
--	@strip -s dvtm
- 	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
- 	@mkdir -p ${DESTDIR}${PREFIX}/bin
- 	@cp -f dvtm ${DESTDIR}${PREFIX}/bin
