@@ -1,16 +1,14 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/03/28 21:20:47 sthen Exp $
---- CMakeLists.txt.orig	Thu Mar 28 21:19:02 2013
-+++ CMakeLists.txt	Thu Mar 28 21:19:59 2013
-@@ -55,9 +55,9 @@ elseif(NOT GLM_TEST_ENABLE_SIMD)
- 	
- 	add_definitions(-DGLM_FORCE_PURE)
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2015/12/28 18:57:29 jasper Exp $
+--- CMakeLists.txt.orig	Sun Sep  6 22:30:17 2015
++++ CMakeLists.txt	Mon Dec 28 19:21:26 2015
+@@ -75,10 +73,6 @@ option(GLM_TEST_FORCE_PURE "Force 'pure' instructions"
  
+ if(GLM_TEST_FORCE_PURE)
+ 	add_definitions(-DGLM_FORCE_PURE)
+-
 -	if(CMAKE_COMPILER_IS_GNUCXX)
 -		add_definitions(-mfpmath=387)
 -	endif()
-+#	if(CMAKE_COMPILER_IS_GNUCXX)
-+#		add_definitions(-mfpmath=387)
-+#	endif()
- endif()
- 
- option(GLM_TEST_ENABLE_FAST_MATH "Enable fast math optimizations" OFF)
+ elseif(GLM_TEST_ENABLE_SIMD_AVX2)
+ 	if(CMAKE_COMPILER_IS_GNUCXX)
+ 		add_definitions(-mavx2)
