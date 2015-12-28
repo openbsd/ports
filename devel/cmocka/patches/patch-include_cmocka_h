@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_cmocka_h,v 1.5 2015/11/07 20:04:47 sthen Exp $
+$OpenBSD: patch-include_cmocka_h,v 1.6 2015/12/28 00:34:39 jca Exp $
 
 Avoid a conflicting typedef on 32-bit arch.
 
@@ -18,7 +18,7 @@ Avoid a conflicting typedef on 32-bit arch.
      ((LargestIntegralType)(value))
  
 +#if defined(__OpenBSD__)
-+#include <sys/stdint.h>
++#include <stdint.h>
 +#else
  /* Smallest integral type capable of holding a pointer. */
  #if !defined(_UINTPTR_T) && !defined(_UINTPTR_T_DEFINED)
