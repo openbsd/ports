@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2015/12/01 22:45:49 edd Exp $
+# $OpenBSD: Makefile,v 1.37 2015/12/28 17:41:54 edd Exp $
 
 COMMENT=		enhanced interactive Python shell
 
 MODPY_EGG_VERSION =	4.0.0
+REVISION =		0
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
@@ -16,7 +17,8 @@ RUN_DEPENDS +=		devel/py-decorator \
 			databases/py-pickleshare \
 			devel/py-simplegeneric \
 			devel/py-traitlets \
-			devel/desktop-file-utils
+			devel/desktop-file-utils \
+			devel/py-pexpect
 # Note that if you have pdb++ installed, tests will fail.
 TEST_DEPENDS =		${FULLPKGNAME}:devel/ipython \
 			devel/py-nose \
