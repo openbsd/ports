@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.338 2015/12/27 15:34:35 pascal Exp $
+# $OpenBSD: Quirks.pm,v 1.339 2015/12/28 08:43:45 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -693,6 +693,7 @@ my $obsolete_reason = {
 	'kxmleditor' => 3,
 	'hs-hashed-storage' => 5,
 	'gnome-common' => 3,
+	'emacs-haskell' => 7,
 };
 
 my @msg = (
