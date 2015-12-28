@@ -1,0 +1,24 @@
+$OpenBSD: patch-third_party_cmocka_include_cmocka_h,v 1.1 2015/12/28 17:20:18 jca Exp $
+
+Avoid a conflicting typedef on 32-bit arch.
+
+--- third_party/cmocka/include/cmocka.h.orig	Tue Aug 25 23:05:10 2015
++++ third_party/cmocka/include/cmocka.h	Mon Dec 28 18:15:45 2015
+@@ -81,6 +81,9 @@ int __stdcall IsDebuggerPresent();
+ #define cast_to_largest_integral_type(value) \
+     ((LargestIntegralType)((size_t)(value)))
+ 
++#if defined(__OpenBSD__)
++#include <stdint.h>
++#else
+ /* Smallest integral type capable of holding a pointer. */
+ #if !defined(_UINTPTR_T) && !defined(_UINTPTR_T_DEFINED)
+ # if defined(_WIN32)
+@@ -109,6 +112,7 @@ int __stdcall IsDebuggerPresent();
+ # define _UINTPTR_T
+ # define _UINTPTR_T_DEFINED
+ #endif /* !defined(_UINTPTR_T) || !defined(_UINTPTR_T_DEFINED) */
++#endif /* !defined(__OpenBSD__) */
+ 
+ /* Perform an unsigned cast to uintptr_t. */
+ #define cast_to_pointer_integral_type(value) \
