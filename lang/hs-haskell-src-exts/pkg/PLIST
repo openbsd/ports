@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/12/15 20:02:57 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/12/28 18:55:57 kili Exp $
 lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/Language/
 lib/ghc/${DISTNAME}/Language/Haskell/
 lib/ghc/${DISTNAME}/Language/Haskell/Exts/
@@ -10,10 +11,14 @@ lib/ghc/${DISTNAME}/Language/Haskell/Exts/Annotated.hi
 lib/ghc/${DISTNAME}/Language/Haskell/Exts/Annotated.p_hi
 lib/ghc/${DISTNAME}/Language/Haskell/Exts/Annotated/Build.hi
 lib/ghc/${DISTNAME}/Language/Haskell/Exts/Annotated/Build.p_hi
+lib/ghc/${DISTNAME}/Language/Haskell/Exts/Annotated/Comments.hi
+lib/ghc/${DISTNAME}/Language/Haskell/Exts/Annotated/Comments.p_hi
 lib/ghc/${DISTNAME}/Language/Haskell/Exts/Annotated/ExactPrint.hi
 lib/ghc/${DISTNAME}/Language/Haskell/Exts/Annotated/ExactPrint.p_hi
 lib/ghc/${DISTNAME}/Language/Haskell/Exts/Annotated/Fixity.hi
 lib/ghc/${DISTNAME}/Language/Haskell/Exts/Annotated/Fixity.p_hi
+lib/ghc/${DISTNAME}/Language/Haskell/Exts/Annotated/Parser.hi
+lib/ghc/${DISTNAME}/Language/Haskell/Exts/Annotated/Parser.p_hi
 lib/ghc/${DISTNAME}/Language/Haskell/Exts/Annotated/Simplify.hi
 lib/ghc/${DISTNAME}/Language/Haskell/Exts/Annotated/Simplify.p_hi
 lib/ghc/${DISTNAME}/Language/Haskell/Exts/Annotated/Syntax.hi
@@ -48,15 +53,17 @@ lib/ghc/${DISTNAME}/Language/Haskell/Exts/SrcLoc.hi
 lib/ghc/${DISTNAME}/Language/Haskell/Exts/SrcLoc.p_hi
 lib/ghc/${DISTNAME}/Language/Haskell/Exts/Syntax.hi
 lib/ghc/${DISTNAME}/Language/Haskell/Exts/Syntax.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Language-Haskell-Exts-Annotated-Build.html
+share/doc/hs-${DISTNAME}/html/Language-Haskell-Exts-Annotated-Comments.html
 share/doc/hs-${DISTNAME}/html/Language-Haskell-Exts-Annotated-ExactPrint.html
 share/doc/hs-${DISTNAME}/html/Language-Haskell-Exts-Annotated-Fixity.html
+share/doc/hs-${DISTNAME}/html/Language-Haskell-Exts-Annotated-Parser.html
 share/doc/hs-${DISTNAME}/html/Language-Haskell-Exts-Annotated-Simplify.html
 share/doc/hs-${DISTNAME}/html/Language-Haskell-Exts-Annotated-Syntax.html
 share/doc/hs-${DISTNAME}/html/Language-Haskell-Exts-Annotated.html
@@ -107,8 +114,10 @@ share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Haskell-Exts-Annotated-Build.html
+share/doc/hs-${DISTNAME}/html/mini_Language-Haskell-Exts-Annotated-Comments.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Haskell-Exts-Annotated-ExactPrint.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Haskell-Exts-Annotated-Fixity.html
+share/doc/hs-${DISTNAME}/html/mini_Language-Haskell-Exts-Annotated-Parser.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Haskell-Exts-Annotated-Simplify.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Haskell-Exts-Annotated-Syntax.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Haskell-Exts-Annotated.html
