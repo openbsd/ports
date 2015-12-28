@@ -1,7 +1,5 @@
-# $OpenBSD: Makefile,v 1.18 2015/08/19 20:34:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2015/12/28 08:28:55 jasper Exp $
 
-BROKEN-mips64 =		missing atomic ops
-BROKEN-mips64el =	missing atomic ops
 BROKEN-hppa =		missing atomic ops
 BROKEN-alpha =		missing atomic ops
 BROKEN-sparc64 =	missing atomic ops
