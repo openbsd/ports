@@ -1,23 +1,21 @@
-$OpenBSD: patch-storage_xtradb_include_os0sync_h,v 1.1 2015/12/22 12:21:14 sthen Exp $
---- storage/xtradb/include/os0sync.h.orig	Tue Dec 22 12:17:00 2015
-+++ storage/xtradb/include/os0sync.h	Tue Dec 22 12:17:17 2015
+$OpenBSD: patch-storage_xtradb_include_os0sync_h,v 1.2 2015/12/28 08:49:25 ajacoutot Exp $
+
+MDEV-9128 - Compiling on IBM System Z fails
+Provided IBM System Z have outdated compiler version, which supports gcc sync
+builtins but not gcc atomic builtins. It also has weak memory model.
+
+InnoDB attempted to verify if __sync_lock_test_and_set() is available by
+checking IB_STRONG_MEMORY_MODEL. This macro has nothing to do with availability
+of __sync_lock_test_and_set(), the right one is HAVE_ATOMIC_BUILTINS.
+
+--- storage/xtradb/include/os0sync.h.orig	Wed Dec 16 11:05:46 2015
++++ storage/xtradb/include/os0sync.h	Sat Dec 26 20:15:32 2015
 @@ -488,7 +488,7 @@ os_atomic_clear(volatile lock_word_t* ptr)
  	__atomic_clear(ptr, __ATOMIC_RELEASE);
  }
  
 -# elif defined(IB_STRONG_MEMORY_MODEL)
-+# else
++# elif defined(HAVE_ATOMIC_BUILTINS)
  
  /** Do an atomic test and set.
  @param[in,out]	ptr		Memory location to set to non-zero
-@@ -516,10 +516,6 @@ os_atomic_clear(volatile lock_word_t* ptr)
- {
- 	return(__sync_lock_test_and_set(ptr, 0));
- }
--
--# else
--
--#  error "Unsupported platform"
- 
- # endif /* HAVE_IB_GCC_ATOMIC_TEST_AND_SET */
- 

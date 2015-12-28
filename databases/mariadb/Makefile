@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2015/12/21 01:09:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2015/12/28 08:49:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 # archs with atomic ops
-ONLY_FOR_ARCHS-server=	alpha amd64 i386 powerpc sparc64
+ONLY_FOR_ARCHS-server=	alpha amd64 i386 mips64 mips64el powerpc sparc64
 ONLY_FOR_ARCHS-tests=	${ONLY_FOR_ARCHS-server}
 BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite
 
