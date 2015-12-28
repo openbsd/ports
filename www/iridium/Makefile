@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/12/21 13:30:00 robert Exp $
+# $OpenBSD: Makefile,v 1.31 2015/12/28 09:53:27 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -183,7 +183,7 @@ do-build:
 	# due to internal dependency issues.
 	@cd ${WRKSRC}/out/${BUILDTYPE} && \
 	for _r in net_interfaces suggestions cacheinvalidation cacheinvalidation_proto_cpp gfx_vector_icons \
-	$$(ninja -t targets | grep 'resources: phony' | cut -d ':' -f1); do \
+	$$(ninja -t targets | grep -E '(mojo_bindings|resources): phony' | grep -v test | cut -d ':' -f1); do \
 		cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 			-j ${MAKE_JOBS} -C out/${BUILDTYPE} $${_r}; \
 	done
