@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1434 2015/12/28 08:24:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.1435 2015/12/28 08:43:28 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -106,7 +106,6 @@
      SUBDIR += dtc
      SUBDIR += eclipse
      SUBDIR += ectags
-     SUBDIR += emacs-haskell
      SUBDIR += etl
      SUBDIR += fasm
      SUBDIR += ffcall
