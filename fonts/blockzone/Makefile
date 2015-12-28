@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/28 20:11:06 jung Exp $
+# $OpenBSD: Makefile,v 1.2 2015/12/28 20:01:47 jasper Exp $
 
 COMMENT =	faithful, pixel-perfect recreation of the original DOS font
 
-DISTNAME =	blockzone-${GH_TAGNAME}
+DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 
 CATEGORIES =	fonts
 
