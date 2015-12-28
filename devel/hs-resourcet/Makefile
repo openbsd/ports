@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/12/14 11:16:12 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2015/12/28 12:54:50 kili Exp $
 
 COMMENT =		deterministic allocation and freeing of scarce resources
 
-DISTNAME =		resourcet-0.4.7.2
+DISTNAME =		resourcet-1.1.7
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -14,12 +14,15 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
+MODGHC_PACKAGE_KEY =	COzBOgbFeDT9zgRvfEGBTZ
+
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
-RUN_DEPENDS =		devel/hs-lifted-base>=0.1 \
+RUN_DEPENDS =		devel/hs-exceptions>=0.5 \
+			devel/hs-lifted-base>=0.1 \
 			devel/hs-mmorph \
-			devel/hs-monad-control>=0.3.1,<0.4 \
-			devel/hs-mtl>=2.0,<2.2 \
-			devel/hs-transformers-base>=0.4.1,<0.5
+			devel/hs-monad-control>=0.3.1,<1.1 \
+			devel/hs-mtl>=2.0,<2.3 \
+			devel/hs-transformers-base>=0.4.4,<0.5
 
 .include <bsd.port.mk>
