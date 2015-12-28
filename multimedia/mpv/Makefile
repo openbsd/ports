@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2015/11/22 18:33:04 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.20 2015/12/28 08:25:52 ajacoutot Exp $
 
-ONLY_FOR_ARCHS =	alpha amd64 i386 powerpc sparc64
+# archs with atomic ops
+ONLY_FOR_ARCHS =	alpha amd64 i386 mips64 mips64el powerpc sparc64
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
