@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1.1.1 2015/12/28 08:15:31 jasper Exp $
+$OpenBSD: README-main,v 1.2 2015/12/28 08:16:44 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -17,19 +17,6 @@ distcc will run the jobs as the user invoking distcc.
 
 Then set `$CC` to `distcc` to distribute compilation jobs across the
 configured nodes.
-
-#ifdef notyet
-USE_DISTCC
-==========
-To allow building ports with distcc, set `USE_DISTCC=Yes` either in the
-environment or in `/etc/mk.conf`. When using `USE_DISTCC` the the `DISTCC_DIR`
-is set to ${WRKOBJDIR}/.distcc.
-
-Note that it's currently not (yet) possible to enable both `USE_DISTCC` and
-`USE_CCACHE`. Also pumping mode is not setup/enabled at this moment.
-
-To monitor a build be sure to point DISTCC_DIR to the correct directory.
-#endif
 
 References
 ==========
