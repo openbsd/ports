@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_compile_c,v 1.1.1.1 2015/12/28 08:15:31 jasper Exp $
+$OpenBSD: patch-src_compile_c,v 1.2 2015/12/28 15:15:36 jasper Exp $
 
-warning: format '%ld' expects type 'long int', but argument N has type 'time_t'
+https://github.com/distcc/distcc/pull/167
 
 --- src/compile.c.orig	Mon Aug 24 17:08:43 2015
 +++ src/compile.c	Mon Dec 28 09:08:18 2015
