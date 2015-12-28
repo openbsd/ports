@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/12/02 20:46:28 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/12/28 12:53:39 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Concurrent/
@@ -10,6 +10,12 @@ lib/ghc/${DISTNAME}/Control/Concurrent/Lifted.p_hi
 lib/ghc/${DISTNAME}/Control/Concurrent/MVar/
 lib/ghc/${DISTNAME}/Control/Concurrent/MVar/Lifted.hi
 lib/ghc/${DISTNAME}/Control/Concurrent/MVar/Lifted.p_hi
+lib/ghc/${DISTNAME}/Control/Concurrent/QSem/
+lib/ghc/${DISTNAME}/Control/Concurrent/QSem/Lifted.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/QSem/Lifted.p_hi
+lib/ghc/${DISTNAME}/Control/Concurrent/QSemN/
+lib/ghc/${DISTNAME}/Control/Concurrent/QSemN/Lifted.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/QSemN/Lifted.p_hi
 lib/ghc/${DISTNAME}/Control/Exception/
 lib/ghc/${DISTNAME}/Control/Exception/Lifted.hi
 lib/ghc/${DISTNAME}/Control/Exception/Lifted.p_hi
@@ -17,12 +23,18 @@ lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/IORef/
 lib/ghc/${DISTNAME}/Data/IORef/Lifted.hi
 lib/ghc/${DISTNAME}/Data/IORef/Lifted.p_hi
+lib/ghc/${DISTNAME}/Foreign/
+lib/ghc/${DISTNAME}/Foreign/Marshal/
+lib/ghc/${DISTNAME}/Foreign/Marshal/Utils/
+lib/ghc/${DISTNAME}/Foreign/Marshal/Utils/Lifted.hi
+lib/ghc/${DISTNAME}/Foreign/Marshal/Utils/Lifted.p_hi
+lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/System/
 lib/ghc/${DISTNAME}/System/Timeout/
 lib/ghc/${DISTNAME}/System/Timeout/Lifted.hi
 lib/ghc/${DISTNAME}/System/Timeout/Lifted.p_hi
-lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
-lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
 lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
@@ -30,8 +42,11 @@ share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Control-Concurrent-Chan-Lifted.html
 share/doc/hs-${DISTNAME}/html/Control-Concurrent-Lifted.html
 share/doc/hs-${DISTNAME}/html/Control-Concurrent-MVar-Lifted.html
+share/doc/hs-${DISTNAME}/html/Control-Concurrent-QSem-Lifted.html
+share/doc/hs-${DISTNAME}/html/Control-Concurrent-QSemN-Lifted.html
 share/doc/hs-${DISTNAME}/html/Control-Exception-Lifted.html
 share/doc/hs-${DISTNAME}/html/Data-IORef-Lifted.html
+share/doc/hs-${DISTNAME}/html/Foreign-Marshal-Utils-Lifted.html
 share/doc/hs-${DISTNAME}/html/System-Timeout-Lifted.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
@@ -43,8 +58,11 @@ share/doc/hs-${DISTNAME}/html/lifted-base.haddock
 share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-Chan-Lifted.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-Lifted.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-MVar-Lifted.html
+share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-QSem-Lifted.html
+share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-QSemN-Lifted.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Exception-Lifted.html
 share/doc/hs-${DISTNAME}/html/mini_Data-IORef-Lifted.html
+share/doc/hs-${DISTNAME}/html/mini_Foreign-Marshal-Utils-Lifted.html
 share/doc/hs-${DISTNAME}/html/mini_System-Timeout-Lifted.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
