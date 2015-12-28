@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2015/12/20 11:04:27 kili Exp $
+# $OpenBSD: Makefile,v 1.131 2015/12/28 19:18:52 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -15,6 +15,7 @@ NO_CCACHE =		Yes
 DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
+REVISION-doc =		0
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
@@ -54,8 +55,8 @@ DIST_SUBDIR =		ghc
 
 BINDISTFILE =		${BINDISTFILE-${MACHINE_ARCH}}
 
-DISTFILES =		ghc-${MODGHC_VER}a-src.tar.bz2 \
-			ghc-${MODGHC_VER}-testsuite.tar.bz2 \
+DISTFILES =		ghc-${MODGHC_VER}b-src.tar.bz2 \
+			ghc-${MODGHC_VER}b-testsuite.tar.bz2 \
 			${BINDISTFILE}
 
 .for m in amd64 i386
@@ -155,10 +156,6 @@ FAKE_FLAGS +=		CREATE_SCRIPT="${INSTALL_SCRIPT} /dev/null " \
 PORTHOME =		${WRKDIR}
 
 TEST_DEPENDS =	print/ghostscript/gnu
-
-# There are some junk .orig files in 7.10.3.
-post-extract:
-	cd ${WRKSRC} && find . -name '*.orig' | xargs rm
 
 post-patch:
 # - Install a precompiled binary.
