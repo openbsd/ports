@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_core_icb-nicklist_h,v 1.1 2011/06/14 10:22:16 sthen Exp $
---- src/core/icb-nicklist.h.orig	Tue Jun 14 10:29:41 2011
-+++ src/core/icb-nicklist.h	Tue Jun 14 10:29:41 2011
+$OpenBSD: patch-src_core_icb-nicklist_h,v 1.2 2015/12/29 22:45:05 sthen Exp $
+
+pkgsrc patch-an, r1.2
+
+--- src/core/icb-nicklist.h.orig	Tue Dec 29 18:53:26 2015
++++ src/core/icb-nicklist.h	Tue Dec 29 18:53:26 2015
 @@ -0,0 +1,33 @@
 +/*
 + icb-nicklist.h : irssi
