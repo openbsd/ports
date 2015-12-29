@@ -1,10 +1,10 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2015/10/28 09:57:35 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2015/12/29 20:50:30 sthen Exp $
 
 don't pick up libevent2 from ports, otherwise rspamd links against
 both libevent from base *and* libevent2
 
---- CMakeLists.txt.orig	Tue Oct 27 07:19:47 2015
-+++ CMakeLists.txt	Wed Oct 28 01:43:41 2015
+--- CMakeLists.txt.orig	Mon Dec 21 13:21:40 2015
++++ CMakeLists.txt	Wed Dec 23 19:16:19 2015
 @@ -492,6 +492,11 @@ IF(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
  	SET(TAR "gtar")
  ENDIF(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
@@ -26,10 +26,3 @@ both libevent from base *and* libevent2
  ProcessPackage(SQLITE3 LIBRARY sqlite3 INCLUDE sqlite3.h INCLUDE_SUFFIXES include/sqlite3 include/sqlite 
  	ROOT ${SQLITE3_ROOT_DIR} MODULES sqlite3 sqlite)
  ProcessPackage(ICONV LIBRARY iconv libiconv libiconv-2 c INCLUDE iconv.h INCLUDE_SUFFIXES include/libiconv
-@@ -1121,4 +1126,4 @@ ADD_CUSTOM_TARGET(dist ${CMAKE_SOURCE_DIR}/dist.sh
- IF(NOT DEBIAN_BUILD)
- 	ADD_CUSTOM_TARGET(check DEPENDS rspamd-test)
- 	ADD_CUSTOM_TARGET(run-test DEPENDS check COMMAND test/rspamd-test)
--ENDIF(NOT DEBIAN_BUILD)
-\ No newline at end of file
-+ENDIF(NOT DEBIAN_BUILD)
