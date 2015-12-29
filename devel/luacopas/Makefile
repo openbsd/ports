@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2013/08/07 21:57:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2015/12/29 20:06:52 jasper Exp $
 
 PKG_ARCH =      *
 
 COMMENT=	coroutine oriented portable asynchronous services for lua
 DISTNAME=	copas-1.1.6
 PKGNAME=	lua${DISTNAME}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/downloads/keplerproject/copas/
 
-HOMEPAGE=	http://www.keplerproject.org/copas/
+HOMEPAGE=	http://keplerproject.github.io/copas/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

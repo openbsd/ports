@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2015/04/05 13:31:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2015/12/29 20:06:52 jasper Exp $
 SHARED_ONLY =	Yes
 
 COMMENT =	file system library for the lua language
 V =		1_6_3
+REVISION =	0
 
 DISTNAME =	${GH_PROJECT}-v_${V}
 PKGNAME =	luafs-${V:S/_/./g}
@@ -10,7 +11,7 @@ WRKDIST =	${WRKDIR}/${DISTNAME}
 
 CATEGORIES =	devel
 
-HOMEPAGE =	http://www.keplerproject.org/luafilesystem/
+HOMEPAGE =	http://keplerproject.github.io/luafilesystem/
 
 MAINTAINER =	Florian Stinglmayr <florian@n0la.org>
 
