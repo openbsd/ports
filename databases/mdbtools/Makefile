@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/12/29 12:54:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2015/12/29 19:49:39 jasper Exp $
 
 COMMENT-main =		read microsoft Access MDB
 COMMENT-gmdb =		graphical interface to MDB tools
@@ -7,7 +7,6 @@ GH_ACCOUNT =		brianb
 GH_PROJECT =		mdbtools
 GH_TAGNAME =		0.7.1
 
-DISTNAME =		${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME-main =		${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME-gmdb =		gmdb-${GH_TAGNAME}
 REVISION-main =		1

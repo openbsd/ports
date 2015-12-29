@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/04/21 18:19:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/12/29 19:49:41 jasper Exp $
 
 COMMENT =	console based password storing application
 
@@ -6,7 +6,6 @@ GH_ACCOUNT =	levaidaniel
 GH_PROJECT =	kc
 GH_TAGNAME =	2.3.2
 REVISION =	1
-DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 
 CATEGORIES =	security
 

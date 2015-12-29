@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/08/30 16:05:11 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2015/12/29 19:49:40 jasper Exp $
 
 COMMENT =	abstract engine for text edition
 CATEGORIES =	devel
@@ -6,7 +6,6 @@ CATEGORIES =	devel
 GH_ACCOUNT =	diml
 GH_PROJECT =	zed
 GH_TAGNAME =	1.4
-DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME =	ocaml-${DISTNAME}
 
 HOMEPAGE =	https://github.com/diml/zed/

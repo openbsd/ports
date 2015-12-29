@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/12/29 12:54:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2015/12/29 19:49:40 jasper Exp $
 
 PORTROACH =	limit:^[0-9].*
 
@@ -9,7 +9,6 @@ GH_PROJECT =	nyancat
 GH_TAGNAME =	1.5.0
 EPOCH =		0
 
-DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 
 CATEGORIES =	misc
 

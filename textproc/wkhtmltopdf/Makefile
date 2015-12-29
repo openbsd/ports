@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/12/29 12:54:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/12/29 19:49:41 jasper Exp $
 
 COMMENT =		convert HTML to PDF using Webkit
 
@@ -6,7 +6,6 @@ GH_ACCOUNT =		wkhtmltopdf
 GH_PROJECT =		wkhtmltopdf
 GH_TAGNAME =		0.12.2.4
 
-DISTNAME =		${GH_PROJECT}-${GH_TAGNAME}
 
 SHARED_LIBS =		wkhtmltox 0.0 # 0.12
 

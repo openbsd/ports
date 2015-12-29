@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/23 16:34:40 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.6 2015/12/29 19:49:40 jasper Exp $
 
 COMMENT =	quick access to files in a POSIX shell
 
@@ -7,7 +7,6 @@ PKG_ARCH =	*
 GH_ACCOUNT =	clvv
 GH_PROJECT =	fasd
 GH_TAGNAME =	1.0.1
-DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 
 CATEGORIES =	misc
 

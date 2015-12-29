@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/29 12:45:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2015/12/29 19:49:40 jasper Exp $
 
 COMMENT =	free J-RPG game
-DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES =	games x11
 REVISION =	1
 

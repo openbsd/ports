@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2015/12/29 12:54:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2015/12/29 19:49:41 jasper Exp $
 
 COMMENT =	web log analyzer using probabilistic data structures
-DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.logswan.org

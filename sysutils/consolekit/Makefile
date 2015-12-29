@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.53 2015/12/29 12:54:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2015/12/29 19:49:41 jasper Exp $
 
 COMMENT=		framework for defining and tracking users, sessions & seats
 
-DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME=		${DISTNAME:L}
 REVISION=		1
 

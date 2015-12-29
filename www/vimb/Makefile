@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2015/12/29 12:54:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2015/12/29 19:49:41 jasper Exp $
 
 COMMENT =	modal webkit-based browser inspired by vim
-DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES =	www x11
 REVISION =	0
 

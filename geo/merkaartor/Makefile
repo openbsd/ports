@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2015/07/21 08:36:40 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2015/12/29 19:49:40 jasper Exp $
 
 COMMENT =	OpenStreetMap editor
 
 GH_ACCOUNT =	openstreetmap
 GH_PROJECT =	merkaartor
 GH_TAGNAME =	0.18.2
-DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 SHARED_ONLY =	Yes
 
 CATEGORIES =	geo x11

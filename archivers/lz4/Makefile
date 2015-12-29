@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/12/29 12:54:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/12/29 19:49:39 jasper Exp $
 
 SHARED_LIBS +=	lz4                       0.2 # 0.0
 
@@ -7,7 +7,6 @@ COMMENT=	fast BSD-licensed data compression
 GH_ACCOUNT=	Cyan4973
 GH_PROJECT=	lz4
 GH_TAGNAME=	r131
-DISTNAME=	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME=	lz4-0.${GH_TAGNAME:S/r//}
 REVISION=	0
 WRKDIST=	${WRKDIR}/lz4-${GH_TAGNAME}

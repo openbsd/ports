@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/12/29 12:54:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/12/29 19:49:40 jasper Exp $
 
 BROKEN=		unreliable build, frequently hangs in dpb
 
@@ -8,7 +8,6 @@ GH_ACCOUNT=	fsharp
 GH_PROJECT=	fsharp
 GH_TAGNAME=	3.1.1.32
 
-DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 
 CATEGORIES=	lang devel
 
