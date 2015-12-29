@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/05 19:08:58 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2015/12/29 20:30:43 jasper Exp $
 
 COMMENT=	simple calculations with RGB colors
 
 MODULES=	cpan
-DISTNAME=	Color-Calc-1.05
-REVISION=	1
+DISTNAME=	Color-Calc-1.074
 CATEGORIES=	graphics
 
 # Perl
