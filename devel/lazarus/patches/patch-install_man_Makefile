@@ -1,0 +1,21 @@
+$OpenBSD: patch-install_man_Makefile,v 1.1.1.1 2015/12/29 17:43:31 pascal Exp $
+--- install/man/Makefile.orig	Sun Dec 27 10:21:49 2015
++++ install/man/Makefile	Sun Dec 27 10:22:28 2015
+@@ -5,7 +5,7 @@
+ PREFIX=/usr
+ GINSTALL=/usr/bin/install
+ 
+-INSTALL_MANDIR=$(PREFIX)/share/man/man1
++INSTALL_MANDIR=$(PREFIX)/man/man1
+ 
+ SRC_FILES=$(wildcard man1/*.1)
+ COMPRESSED_FILES=$(SRC_FILES:.1=.1.gz)
+@@ -16,6 +16,5 @@ $(INSTALL_MANDIR):
+ %.1.gz: %.1
+ 	cat $< | gzip > $@
+ 
+-install: $(COMPRESSED_FILES) $(INSTALL_MANDIR)
+-	$(GINSTALL) -m 644 $(COMPRESSED_FILES) $(INSTALL_MANDIR)
+-	$(RM) $(COMPRESSED_FILES)
++install: $(INSTALL_MANDIR)
++	$(GINSTALL) -m 644 $(SRC_FILES) $(INSTALL_MANDIR)

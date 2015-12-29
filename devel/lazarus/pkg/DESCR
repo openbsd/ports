@@ -1,0 +1,6 @@
+Lazarus is a Rapid Application Development Tool for Free Pascal.
+It comes with the LCL - Lazarus component library, which contains
+platform independent visual components like buttons, windows,
+checkbox, treeview and many, many more. The LCL is platform
+independent, so you can write an application once and then compile
+for various platforms without changing code.
