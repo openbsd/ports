@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.16 2013/08/07 21:57:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2015/12/29 19:59:02 jasper Exp $
 
 COMMENT =	multiple states library for the lua language
 SHARED_ONLY =	Yes
 
-DISTNAME =	rings-1.2.3
-PKGNAME =	lua${DISTNAME}
-REVISION =	2
+GH_TAGNAME =	v_1_3_0
+GH_PROJECT =	rings
+GH_ACCOUNT =	keplerproject
+PKGNAME =	lua${DISTNAME:C/v_//:S/_/./g}
 CATEGORIES =	devel
 
-HOMEPAGE =	http://www.keplerproject.org/rings/
+HOMEPAGE =	http://keplerproject.github.io/rings/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-
-MASTER_SITES =	https://github.com/downloads/keplerproject/rings/
 
 MODULES =	lang/lua
 
@@ -22,6 +21,8 @@ COMPILE =	${CC} ${CFLAGS} -fPIC ${CFLAGS} -c
 LINK =		${CC} ${CFLAGS} -fPIC -shared -L${LOCALBASE}/lib -o
 
 REGRESS_FILES =	sample sample_state test
+
+WRKDIST =	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
 
 do-build:
 	cd ${WRKDIST}/src && ${COMPILE} rings.c
