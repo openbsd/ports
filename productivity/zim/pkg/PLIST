@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/05/04 19:28:16 benno Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/12/29 14:53:35 benno Exp $
 bin/zim
 lib/python${MODPY_VERSION}/site-packages/zim/
 lib/python${MODPY_VERSION}/site-packages/zim-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -81,6 +81,8 @@ lib/python${MODPY_VERSION}/site-packages/zim/gui/exportdialog.py
 lib/python${MODPY_VERSION}/site-packages/zim/gui/exportdialog.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/gui/notebookdialog.py
 lib/python${MODPY_VERSION}/site-packages/zim/gui/notebookdialog.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/gui/objectmanager.py
+lib/python${MODPY_VERSION}/site-packages/zim/gui/objectmanager.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/gui/pageindex.py
 lib/python${MODPY_VERSION}/site-packages/zim/gui/pageindex.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/gui/pageview.py
@@ -129,8 +131,13 @@ lib/python${MODPY_VERSION}/site-packages/zim/plugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/arithmetic.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/arithmetic.pyc
-lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser.py
-lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser/
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser/__init__.py
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser/filebrowser.py
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser/filebrowser.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser/thumbnailer.py
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser/thumbnailer.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/backlinkpane.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/backlinkpane.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/base/
@@ -138,6 +145,8 @@ lib/python${MODPY_VERSION}/site-packages/zim/plugins/base/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/base/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/base/imagegenerator.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/base/imagegenerator.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/bookmarksbar.py
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/bookmarksbar.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/calendar.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/calendar.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/diagrameditor.py
@@ -174,6 +183,8 @@ lib/python${MODPY_VERSION}/site-packages/zim/plugins/sourceview.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/sourceview.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/spell.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/spell.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/tableeditor.py
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/tableeditor.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/tableofcontents.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/tableofcontents.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/tags.py
@@ -187,6 +198,8 @@ lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/bzr.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/bzr.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/fossil.py
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/fossil.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/git.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/git.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/hg.py
@@ -330,6 +343,7 @@ share/zim/manual/Plugins.txt
 share/zim/manual/Plugins/Arithmetic.txt
 share/zim/manual/Plugins/Attachment_Browser.txt
 share/zim/manual/Plugins/BackLinks_Pane.txt
+share/zim/manual/Plugins/BookmarksBar.txt
 share/zim/manual/Plugins/Diagram_Editor/
 share/zim/manual/Plugins/Diagram_Editor.txt
 share/zim/manual/Plugins/Diagram_Editor/diagram.png
@@ -375,6 +389,22 @@ share/zim/manual/Plugins/Sequence_Diagram_Editor.txt
 share/zim/manual/Plugins/Sequence_Diagram_Editor/diagram.png
 share/zim/manual/Plugins/Source_View.txt
 share/zim/manual/Plugins/Spell_Checker.txt
+share/zim/manual/Plugins/Table_Editor/
+share/zim/manual/Plugins/Table_Editor.txt
+share/zim/manual/Plugins/Table_Editor/Basic_Table_Operations/
+share/zim/manual/Plugins/Table_Editor/Basic_Table_Operations.txt
+share/zim/manual/Plugins/Table_Editor/Basic_Table_Operations/insert-table.png
+share/zim/manual/Plugins/Table_Editor/Basic_Table_Operations/table_popup.png
+share/zim/manual/Plugins/Table_Editor/Basic_Table_Operations/table_settings_dialog.png
+share/zim/manual/Plugins/Table_Editor/Superior_Table_Operations/
+share/zim/manual/Plugins/Table_Editor/Superior_Table_Operations.txt
+share/zim/manual/Plugins/Table_Editor/Superior_Table_Operations/cell_after_text_formatting.png
+share/zim/manual/Plugins/Table_Editor/Superior_Table_Operations/cell_editing_with_text_formatting.png
+share/zim/manual/Plugins/Table_Editor/table_demo.png
+share/zim/manual/Plugins/Table_Editor/table_footer.png
+share/zim/manual/Plugins/Table_Editor/table_toolbar.png
+share/zim/manual/Plugins/Table_Editor/with_borders.png
+share/zim/manual/Plugins/Table_Editor/without_borders.png
 share/zim/manual/Plugins/Table_Of_Contents.txt
 share/zim/manual/Plugins/Tags.txt
 share/zim/manual/Plugins/Task_List.txt
@@ -396,10 +426,12 @@ share/zim/menubar-maemo4.xml
 share/zim/menubar-maemo5.xml
 share/zim/menubar.xml
 share/zim/pixmaps/
+share/zim/pixmaps/add-bookmark.png
 share/zim/pixmaps/attachment.png
 share/zim/pixmaps/calendar.png
 share/zim/pixmaps/checked-box.png
 share/zim/pixmaps/favicon.ico
+share/zim/pixmaps/insert-table.png
 share/zim/pixmaps/link.png
 share/zim/pixmaps/linkmap.png
 share/zim/pixmaps/linkmap.svg
