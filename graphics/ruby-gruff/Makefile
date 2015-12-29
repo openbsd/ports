@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/12/29 20:21:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/12/29 20:27:23 jasper Exp $
 
 COMMENT=		library for making beautiful graphs
 
@@ -17,7 +17,6 @@ CONFIGURE_STYLE=	ruby gem
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		graphics/ruby-rmagick,${MODRUBY_FLAVOR}
 
-MODRUBY_TEST=		testrb
-MODRUBY_TEST_TARGET=	-I lib test/test_*.rb
+MODRUBY_TEST=		rake
 
 .include <bsd.port.mk>
