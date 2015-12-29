@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/22 16:05:02 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2015/12/29 20:31:55 jasper Exp $
+${P5SITE}/Graphics/ColorNames/CSS.pm
 ${P5SITE}/Graphics/ColorNames/IE.pm
 ${P5SITE}/Graphics/ColorNames/SVG.pm
 ${P5SITE}/Graphics/ColorNames/WWW.pm
+@man man/man3p/Graphics::ColorNames::CSS.3p
 @man man/man3p/Graphics::ColorNames::IE.3p
 @man man/man3p/Graphics::ColorNames::SVG.3p
 @man man/man3p/Graphics::ColorNames::WWW.3p

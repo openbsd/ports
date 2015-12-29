@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/05 19:08:58 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2015/12/29 20:31:55 jasper Exp $
 
 COMMENT=	WWW color names and equivalent RGB values
 
 MODULES=	cpan
-DISTNAME=	Graphics-ColorNames-WWW-1.00
-REVISION=	1
+DISTNAME=	Graphics-ColorNames-WWW-1.13
 CATEGORIES=	graphics www
 
 # Perl
