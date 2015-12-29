@@ -1,7 +1,7 @@
-$OpenBSD: patch-docs_irssi_1,v 1.4 2009/10/11 15:23:51 okan Exp $
---- docs/irssi.1.orig	Sat Oct  6 11:38:21 2007
-+++ docs/irssi.1	Wed Dec  3 22:58:13 2008
-@@ -65,10 +65,10 @@ display brief usage message.
+$OpenBSD: patch-docs_irssi_1,v 1.5 2015/12/29 22:44:37 sthen Exp $
+--- docs/irssi.1.orig	Sat Oct 11 09:42:36 2014
++++ docs/irssi.1	Tue Dec 29 16:47:56 2015
+@@ -62,10 +62,10 @@ show a help message.
  .SH SEE ALSO
  .B Irssi
  has been supplied with a huge amount of documentation. Check /help or look
@@ -14,7 +14,7 @@ $OpenBSD: patch-docs_irssi_1,v 1.4 2009/10/11 15:23:51 okan Exp $
  Global configuration file
  .TP
  .I ~/.irssi/config
-@@ -83,13 +83,18 @@ Default irssi theme
+@@ -80,13 +80,18 @@ Default irssi theme
  .I ~/.irssi/away.log
  Logged messages in away status
  .TP

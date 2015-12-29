@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.20 2014/06/14 10:34:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2015/12/29 22:44:37 sthen Exp $
 @bin bin/irssi
 include/irssi/
+include/irssi/irssi-config
 include/irssi/irssi-config.h
 include/irssi/irssi-version.h
 include/irssi/src/
@@ -140,15 +141,11 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/UI.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irc/
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irc/Irc.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irc/Irc.so
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
 @man man/man1/irssi.1
 share/doc/irssi/
@@ -238,8 +235,6 @@ share/irssi/help/hilight
 share/irssi/help/ignore
 share/irssi/help/info
 share/irssi/help/invite
-share/irssi/help/invitelist
-share/irssi/help/ircnet
 share/irssi/help/ison
 share/irssi/help/join
 share/irssi/help/kick
@@ -266,7 +261,6 @@ share/irssi/help/nctcp
 share/irssi/help/netsplit
 share/irssi/help/network
 share/irssi/help/nick
-share/irssi/help/note
 share/irssi/help/notice
 share/irssi/help/notify
 share/irssi/help/op
@@ -284,17 +278,13 @@ share/irssi/help/reload
 share/irssi/help/restart
 share/irssi/help/rmreconns
 share/irssi/help/rmrejoins
-share/irssi/help/rping
 share/irssi/help/save
-share/irssi/help/say
 share/irssi/help/sconnect
 share/irssi/help/script
 share/irssi/help/scrollback
 share/irssi/help/server
-share/irssi/help/servlist
 share/irssi/help/set
 share/irssi/help/silence
-share/irssi/help/squery
 share/irssi/help/squit
 share/irssi/help/stats
 share/irssi/help/statusbar
@@ -311,7 +301,7 @@ share/irssi/help/unnotify
 share/irssi/help/unquery
 share/irssi/help/unsilence
 share/irssi/help/upgrade
-share/irssi/help/uping
+share/irssi/help/uptime
 share/irssi/help/userhost
 share/irssi/help/ver
 share/irssi/help/version
@@ -319,10 +309,7 @@ share/irssi/help/voice
 share/irssi/help/wait
 share/irssi/help/wall
 share/irssi/help/wallops
-share/irssi/help/watch
 share/irssi/help/who
 share/irssi/help/whois
 share/irssi/help/whowas
 share/irssi/help/window
-share/irssi/help/wjoin
-share/irssi/help/wquery

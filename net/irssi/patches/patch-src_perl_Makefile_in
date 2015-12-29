@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_perl_Makefile_in,v 1.6 2014/06/02 16:50:42 sthen Exp $
---- src/perl/Makefile.in.orig	Wed May 28 21:16:03 2014
-+++ src/perl/Makefile.in	Sun Jun  1 15:02:26 2014
-@@ -378,7 +378,7 @@ INCLUDES = \
+$OpenBSD: patch-src_perl_Makefile_in,v 1.7 2015/12/29 22:44:37 sthen Exp $
+--- src/perl/Makefile.in.orig	Sat Oct 11 09:58:14 2014
++++ src/perl/Makefile.in	Tue Dec 29 16:47:56 2015
+@@ -378,7 +378,7 @@ AM_CPPFLAGS = \
  	-I$(top_srcdir)/src/core \
  	-I$(top_srcdir)/src/fe-common/core \
  	$(GLIB_CFLAGS) \
