@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1435 2015/12/28 08:43:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.1436 2015/12/29 12:52:12 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -205,6 +205,7 @@
      SUBDIR += hs-convertible
      SUBDIR += hs-data-default
      SUBDIR += hs-data-hash
+     SUBDIR += hs-data-ordlist
      SUBDIR += hs-dataenc
      SUBDIR += hs-directory-tree
      SUBDIR += hs-dlist
@@ -242,11 +243,15 @@
      SUBDIR += hs-primitive
      SUBDIR += hs-random
      SUBDIR += hs-readline
+     SUBDIR += hs-regex-applicative
      SUBDIR += hs-regex-base
      SUBDIR += hs-regex-compat
+     SUBDIR += hs-regex-compat-tdfa
      SUBDIR += hs-regex-posix
+     SUBDIR += hs-regex-tdfa
      SUBDIR += hs-resourcet
      SUBDIR += hs-safe
+     SUBDIR += hs-sandi
      SUBDIR += hs-scientific
      SUBDIR += hs-semigroups
      SUBDIR += hs-sendfile

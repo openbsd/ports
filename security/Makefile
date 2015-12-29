@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.405 2015/12/27 16:14:04 pascal Exp $
+# $OpenBSD: Makefile,v 1.406 2015/12/29 12:52:12 kili Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -63,6 +63,7 @@
      SUBDIR += hs-crypto-api
      SUBDIR += hs-cryptocipher
      SUBDIR += hs-cryptohash
+     SUBDIR += hs-digest
      SUBDIR += hs-entropy
      SUBDIR += hs-mwc-random
      SUBDIR += hs-pwstore-fast

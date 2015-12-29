@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2015/11/11 18:06:45 jca Exp $
+# $OpenBSD: Makefile,v 1.76 2015/12/29 12:52:12 kili Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -14,6 +14,7 @@
      SUBDIR += gtar
      SUBDIR += gtar,static
      SUBDIR += ha
+     SUBDIR += hs-zip-archive
      SUBDIR += hs-zlib
      SUBDIR += hs-zlib-bindings
      SUBDIR += innoextract
