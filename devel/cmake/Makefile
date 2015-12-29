@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.136 2015/12/18 17:20:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.137 2015/12/29 14:44:34 jsg Exp $
 
 DPB_PROPERTIES =parallel
 
 # avoid segfaults from binaries compiled and then used during the build
 .if ${MACHINE_ARCH} == "arm"
 CFLAGS +=	-O1 -fno-stack-protector
+CXXFLAGS +=	-O1 -fno-stack-protector
 .endif
 
 COMMENT =	portable build system
