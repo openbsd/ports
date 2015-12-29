@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2015/01/22 15:18:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2015/12/29 22:45:48 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	SILC plugin for irssi
 
 DISTNAME=	irssi-silc-1.1.8
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	net
 
