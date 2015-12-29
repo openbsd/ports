@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1436 2015/12/29 12:52:12 kili Exp $
+# $OpenBSD: Makefile,v 1.1437 2015/12/29 17:44:19 pascal Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -308,6 +308,7 @@
      SUBDIR += kyua-cli
      SUBDIR += kyua-testers
      SUBDIR += lam
+     SUBDIR += lazarus
      SUBDIR += legit
      SUBDIR += libIDL
      SUBDIR += libJudy
