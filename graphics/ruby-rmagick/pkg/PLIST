@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/06/24 07:24:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/12/29 20:21:07 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/extensions/${MODRUBY_ARCH}/
 ${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
@@ -8,6 +8,7 @@ ${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
 @comment ${GEM_EXTENSIONS_DIR}/gem_make.out
 @comment ${GEM_EXTENSIONS_DIR}/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.editorconfig
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.hound.yml
 ${GEM_LIB}/gems/${DISTNAME}/.rspec
@@ -405,6 +406,14 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/rmagick/
 ${GEM_LIB}/gems/${DISTNAME}/spec/rmagick/ImageList1_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rmagick/draw_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/rmagick/image/
+${GEM_LIB}/gems/${DISTNAME}/spec/rmagick/image/blue_shift_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/rmagick/image/composite_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/rmagick/image/constitute_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/rmagick/image/dispatch_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/rmagick/image/from_blob_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/rmagick/image/ping_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/rmagick/image/properties_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/Image1.rb
