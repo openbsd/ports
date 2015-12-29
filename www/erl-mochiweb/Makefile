@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/12/28 19:02:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2015/12/29 19:37:21 nigel Exp $
 
 PORTROACH=	limit:^v
 
@@ -9,7 +9,7 @@ GH_ACCOUNT=	mochi
 GH_PROJECT=	mochiweb
 GH_TAGNAME=	v$V
 DISTNAME=	${GH_PROJECT}-${GH_TAGNAME}
-PKGNAME=	erl-${DISTNAME}
+PKGNAME=	erl-${GH_PROJECT}-$V
 CATEGORIES=	www
 
 # Apache2
