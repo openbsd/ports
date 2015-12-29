@@ -1,21 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/05/08 06:52:40 simon Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/12/29 20:15:51 jasper Exp $
+bin/imgsize
 ${P5SITE}/Image/
 ${P5SITE}/Image/Size.pm
-${P5SITE}/auto/
-${P5SITE}/auto/Image/
-${P5SITE}/auto/Image/Size/
-${P5SITE}/auto/Image/Size/autosplit.ix
-${P5SITE}/auto/Image/Size/bmpsize.al
-${P5SITE}/auto/Image/Size/gifsize.al
-${P5SITE}/auto/Image/Size/jpegsize.al
-${P5SITE}/auto/Image/Size/mngsize.al
-${P5SITE}/auto/Image/Size/pcdsize.al
-${P5SITE}/auto/Image/Size/pngsize.al
-${P5SITE}/auto/Image/Size/ppmsize.al
-${P5SITE}/auto/Image/Size/psdsize.al
-${P5SITE}/auto/Image/Size/swfmxsize.al
-${P5SITE}/auto/Image/Size/swfsize.al
-${P5SITE}/auto/Image/Size/tiffsize.al
-${P5SITE}/auto/Image/Size/xbmsize.al
-${P5SITE}/auto/Image/Size/xpmsize.al
+@man man/man1/imgsize.1
 @man man/man3p/Image::Size.3p
