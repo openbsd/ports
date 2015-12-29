@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2015/10/07 05:50:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2015/12/29 08:24:12 jasper Exp $
 
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
-GH_TAGNAME =	1.1.1
+GH_TAGNAME =	1.1.2
 
 COMMENT =	Pandora client for GNOME
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 CATEGORIES =	audio x11
 SUBST_VARS +=	GH_TAGNAME
-REVISION =	2
 
 HOMEPAGE =	http://pithos.github.io/
 
@@ -17,8 +16,8 @@ HOMEPAGE =	http://pithos.github.io/
 # pithos/pandora/blowfish.py: AGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+MODULES =		lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	audio/py-last${MODPY_FLAVOR}>=0.5.11 \
