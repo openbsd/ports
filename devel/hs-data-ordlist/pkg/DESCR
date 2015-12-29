@@ -1,0 +1,5 @@
+This module implements bag and set operations on ordered lists. For
+the purposes of this module, a "bag" (or "multiset") is a non-decreasing
+list, whereas a "set" is a strictly ascending list. Bags are sorted
+lists that may contain duplicates, whereas sets are sorted lists
+that do not contain duplicates.
