@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/10/18 10:40:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/12/29 19:37:55 sthen Exp $
 bin/beet
 lib/python${MODPY_VERSION}/site-packages/beets/
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -95,8 +95,12 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/duplicates.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/duplicates.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/echonest.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/echonest.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/edit.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/edit.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/embedart.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/embedart.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/embyupdate.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/embyupdate.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fetchart.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fetchart.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/filefilter.py
@@ -134,6 +138,8 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/lyrics.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/lyrics.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/mbcollection.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/mbcollection.pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/mbsubmit.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/mbsubmit.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/mbsync.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/mbsync.pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/metasync/
