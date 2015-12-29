@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2015/04/05 13:31:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2015/12/29 12:54:10 jasper Exp $
 
 COMMENT =	LuaDoc-compatible documentation generation system
 
 GH_ACCOUNT =	stevedonovan
 GH_PROJECT =	LDoc
 GH_TAGNAME =	1.4.3
-DISTNAME =	LDoc-${GH_TAGNAME}
+DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME =	lualdoc-${GH_TAGNAME}
 CATEGORIES =	devel
 
