@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1303 2015/12/24 18:29:35 jasper Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1304 2015/12/29 19:48:08 jasper Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -782,6 +782,10 @@ WRKDIST ?= ${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:C/^v//}
 WRKDIST ?= ${WRKDIR}/${GH_PROJECT}-${GH_COMMIT}
 .else
 WRKDIST ?= ${WRKDIR}/${DISTNAME}
+.endif
+
+.if !empty(GH_PROJECT) && !empty(GH_TAGNAME)
+DISTNAME ?=	${GH_PROJECT}-${GH_TAGNAME}
 .endif
 
 WRKSRC ?= ${WRKDIST}
