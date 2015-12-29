@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Darcs_Util_Encoding_IConv_hsc,v 1.1 2015/12/29 12:54:38 kili Exp $
+
+nl_items (from nl_types.h) appears to be an int on Linux (and mapped
+to Int32) but a long on OpenBSD.
+
+--- src/Darcs/Util/Encoding/IConv.hsc.orig	Mon Nov  9 14:53:00 2015
++++ src/Darcs/Util/Encoding/IConv.hsc	Wed Dec 23 19:22:59 2015
+@@ -37,7 +37,7 @@ import Foreign
+     , with, maybeWith
+     , ForeignPtr, withForeignPtr, newForeignPtr
+     , FunPtr
+-    , Int32, Word8
++    , Int64, Word8
+     )
+ import Control.Exception ( bracket )
+ import Data.ByteString ( ByteString, useAsCStringLen, append )

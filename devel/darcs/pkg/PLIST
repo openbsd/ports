@@ -1,32 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/05/09 21:00:20 kili Exp $
+@comment $OpenBSD: PLIST,v 1.15 2015/12/29 12:54:38 kili Exp $
 @bin bin/darcs
-@comment bin/darcs-test
 @man man/man1/darcs.1
-share/doc/darcs/
-@comment share/doc/${DISTNAME}/
-@comment share/doc/${DISTNAME}/COPYING
-share/doc/darcs/About_this.html
-share/doc/darcs/Best_practices.html
-share/doc/darcs/Building_darcs.html
-share/doc/darcs/Configuring_darcs.html
-share/doc/darcs/Contents.html
-share/doc/darcs/Darcs_commands.html
-share/doc/darcs/Getting_started.html
-share/doc/darcs/Introduction.html
-share/doc/darcs/License.html
-@comment share/doc/darcs/WARNINGS
-share/doc/darcs/darcs.css
-share/doc/darcs/darcs.html
-@comment share/doc/darcs/darcs.tex
-share/doc/darcs/footnode.html
-@comment share/doc/darcs/images.aux
-@comment share/doc/darcs/images.log
-@comment share/doc/darcs/images.out
-@comment share/doc/darcs/images.pl
-@comment share/doc/darcs/images.tex
-share/doc/darcs/img1.png
-share/doc/darcs/img2.png
-share/doc/darcs/img3.png
-share/doc/darcs/index.html
-@comment share/doc/darcs/internals.pl
-@comment share/doc/darcs/labels.pl
