@@ -1,0 +1,2 @@
+regex-applicative is aimed to be an efficient and easy to use parsing
+combinator library for Haskell based on regular expressions.
