@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2015/11/28 12:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2015/12/29 23:19:33 rpe Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		cryptographic tools for Python
 
 MODPY_EGG_VERSION =	2.6.1
-REVISION =		1
+REVISION =		2
 DISTNAME =		pycrypto-${MODPY_EGG_VERSION}
 PKGNAME =		py-crypto-${MODPY_EGG_VERSION}
 CATEGORIES =		security devel
@@ -27,7 +27,7 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 WANTLIB =	${MODPY_WANTLIB} gmp pthread
 
 CONFIGURE_STYLE = gnu
-CONFIGURE_ENV =	CFLAGS="${CFLAGS}" \
+CONFIGURE_ENV =	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 DOCSDIR =	${PREFIX}/share/doc/py-crypto
