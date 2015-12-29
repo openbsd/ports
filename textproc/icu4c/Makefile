@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2015/12/26 09:43:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2015/12/29 12:38:27 jsg Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
@@ -51,6 +51,7 @@ MAKE_FLAGS=		SO_TARGET_VERSION=${SO_VERSION} \
 # icupkg segfaults during the build
 .if ${MACHINE_ARCH} == "arm"
 CFLAGS +=		-O1 -fno-stack-protector
+CXXFLAGS +=		-O1 -fno-stack-protector
 .endif
 
 .include <bsd.port.arch.mk>
