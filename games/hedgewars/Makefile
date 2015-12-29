@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/27 21:40:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2015/12/29 07:23:02 pascal Exp $
 
 SHARED_ONLY =		Yes
 
@@ -68,6 +68,7 @@ BUILD_DEPENDS +=	devel/hs-vector \
 			devel/hs-random \
 			devel/hs-hslogger \
 			devel/hs-dataenc \
+			devel/hs-utf8-string \
 			security/hs-SHA \
 			security/hs-entropy \
 			textproc/hs-bytestring-show \
