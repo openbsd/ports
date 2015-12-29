@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/11/13 09:07:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/12/29 08:54:05 jasper Exp $
 
 COMMENT=		fixed size round-robin style database
 
-MODPY_EGG_VERSION=	0.9.14
+MODPY_EGG_VERSION=	0.9.15
 
 DISTNAME=		whisper-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
