@@ -1,17 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/09/19 20:36:01 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/12/29 20:21:50 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/.rvmrc
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
-${GEM_LIB}/gems/${DISTNAME}/Gemfile.lock
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
-${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
-${GEM_LIB}/gems/${DISTNAME}/README.txt
+${GEM_LIB}/gems/${DISTNAME}/RELEASE.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/assets/
 ${GEM_LIB}/gems/${DISTNAME}/assets/bubble.png
@@ -59,6 +56,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/area.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/bar.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/bar_conversion.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/gruff/bezier.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/bullet.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/deprecated.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/dot.rb
@@ -79,6 +77,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/spider.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/stacked_area.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/stacked_bar.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/stacked_mixin.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/gruff/themes.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/rails_generators/
 ${GEM_LIB}/gems/${DISTNAME}/rails_generators/gruff/
@@ -88,12 +87,15 @@ ${GEM_LIB}/gems/${DISTNAME}/rails_generators/gruff/templates/controller.rb
 ${GEM_LIB}/gems/${DISTNAME}/rails_generators/gruff/templates/functional_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/gruff_test_case.rb
+${GEM_LIB}/gems/${DISTNAME}/test/image_compare.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_accumulator_bar.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_area.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_bar.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_base.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_bezier.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_bullet.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_dot.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_labels_for_null_data.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_legend.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_line.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_mini_bar.rb
