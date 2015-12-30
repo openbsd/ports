@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2015/06/18 09:03:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2015/12/30 13:02:24 ajacoutot Exp $
 bin/copy_files_verbose.py
 bin/devede
 bin/devede_ng.py
@@ -11,6 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}about.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}add_files.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}ask.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}ask_subtitles.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}avbase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}avconv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}avprobe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}brasero.${MODPY_PYC_MAGIC_TAG}pyc
@@ -28,6 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}ffprobe.${MODP
 lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}file_copy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}file_movie.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}genisoimage.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}help.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}interface_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}k3b.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}pyc
@@ -49,6 +51,7 @@ lib/python${MODPY_VERSION}/site-packages/devedeng/about.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/add_files.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/ask.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/ask_subtitles.py
+lib/python${MODPY_VERSION}/site-packages/devedeng/avbase.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/avconv.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/avprobe.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/brasero.py
@@ -66,6 +69,7 @@ lib/python${MODPY_VERSION}/site-packages/devedeng/ffprobe.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/file_copy.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/file_movie.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/genisoimage.py
+lib/python${MODPY_VERSION}/site-packages/devedeng/help.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/interface_manager.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/k3b.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/message.py
@@ -83,6 +87,7 @@ lib/python${MODPY_VERSION}/site-packages/devedeng/subtitles_mux.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/title.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/vcdimager_converter.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/vlc.py
+@man man/man1/devede.1
 share/applications/devede_ng.desktop
 share/devede_ng/
 share/devede_ng/background.png
@@ -131,6 +136,37 @@ share/devede_ng/wsave_project.ui
 share/devede_ng/wselect_disk.ui
 share/devede_ng/wsettings.ui
 share/devede_ng/wtitle_properties.ui
+share/doc/devede_ng/
+share/doc/devede_ng/html/
+share/doc/devede_ng/html/basic.html
+share/doc/devede_ng/html/contact.html
+share/doc/devede_ng/html/converting.png
+share/doc/devede_ng/html/create.png
+share/doc/devede_ng/html/devede.css
+share/doc/devede_ng/html/disc_type_window.png
+share/doc/devede_ng/html/disk.html
+share/doc/devede_ng/html/done.png
+share/doc/devede_ng/html/error.png
+share/doc/devede_ng/html/faq.html
+share/doc/devede_ng/html/file.html
+share/doc/devede_ng/html/gpl.html
+share/doc/devede_ng/html/index.html
+share/doc/devede_ng/html/main.html
+share/doc/devede_ng/html/main.png
+share/doc/devede_ng/html/menu.html
+share/doc/devede_ng/html/menu.png
+share/doc/devede_ng/html/movie1.png
+share/doc/devede_ng/html/movie1b.png
+share/doc/devede_ng/html/movie2.png
+share/doc/devede_ng/html/movie2b.png
+share/doc/devede_ng/html/movie3.png
+share/doc/devede_ng/html/movie4.png
+share/doc/devede_ng/html/movie5.png
+share/doc/devede_ng/html/movie6.png
+share/doc/devede_ng/html/movie7.png
+share/doc/devede_ng/html/preferences.html
+share/doc/devede_ng/html/preferences.png
+share/doc/devede_ng/html/select.html
 share/locale/ca/LC_MESSAGES/devede_ng.mo
 share/locale/cs_CZ/
 share/locale/cs_CZ/LC_MESSAGES/

@@ -1,7 +1,7 @@
- $OpenBSD: patch-src_devedeng_configuration_data_py,v 1.1 2015/06/18 09:03:33 ajacoutot Exp $
---- src/devedeng/configuration_data.py.orig	Sun Apr 26 00:41:09 2015
-+++ src/devedeng/configuration_data.py	Thu Jun 18 10:47:14 2015
-@@ -42,10 +42,8 @@ class configuration(GObject.GObject):
+ $OpenBSD: patch-src_devedeng_configuration_data_py,v 1.2 2015/12/30 13:02:24 ajacoutot Exp $
+--- src/devedeng/configuration_data.py.orig	Sat Nov 21 00:09:29 2015
++++ src/devedeng/configuration_data.py	Wed Dec 30 12:12:10 2015
+@@ -42,11 +42,8 @@ class configuration(GObject.GObject):
      def fill_config(self):
  
          self.cores = 0
@@ -9,12 +9,13 @@
 -        for line in proc_file:
 -            if (line.startswith("processor")):
 -                self.cores += 1
+-        proc_file.close()
 +        if (os.name == "posix"):
 +            self.cores = os.cpu_count()
  
          is_local = None
          self.log = ""
-@@ -69,7 +67,7 @@ class configuration(GObject.GObject):
+@@ -71,7 +68,7 @@ class configuration(GObject.GObject):
          else:
              if (is_local):
                  # locales must be always at /usr/share/locale because Gtk.Builder always search there

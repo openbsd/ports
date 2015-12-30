@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2015/07/26 12:32:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2015/12/30 13:02:24 ajacoutot Exp $
 
 COMMENT=		video DVDs and CDs creation tool
 
 MODPY_EGG_VERSION=	${GH_TAGNAME}
 DISTNAME=		devede-${MODPY_EGG_VERSION}
 
-GH_TAGNAME=		4.0
+GH_TAGNAME=		4.4.0
 GH_ACCOUNT=		rastersoft
 GH_PROJECT=		devedeng
 
@@ -41,8 +41,6 @@ pre-configure:
 		${WRKSRC}/src/devedeng/configuration_data.py
 
 post-install:
-	rmdir ${PREFIX}/share/doc/devede_ng/html
-	rmdir ${PREFIX}/share/doc/devede_ng
 	cd ${PREFIX}/bin && ln -s devede_ng.py devede
 
 .include <bsd.port.mk>
