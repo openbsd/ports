@@ -1,32 +1,11 @@
-$OpenBSD: patch-setup_py,v 1.5 2004/01/01 09:07:59 sturm Exp $
---- setup.py.orig	2003-11-18 04:50:14.000000000 +0100
-+++ setup.py	2003-12-28 16:28:06.000000000 +0100
-@@ -10,7 +10,7 @@ Contributed by:  Nicolas Chauvat
- 
- import sys
- import os
--import tempfile
-+#import tempfile
- 
- from distutils.core import setup
- from distutils import sysconfig
-@@ -56,8 +56,8 @@ fairly infrequent."""
-         script_str = '%s %s %s\n' % (py_exe, checker_py, arg_str)
-         script_suffix = '.bat'
- 
--    LOCAL_SCRIPT = 'pychecker' + script_suffix
--    LOCAL_SCRIPT = os.path.join(tempfile.gettempdir(), LOCAL_SCRIPT)
-+    LOCAL_SCRIPT = 'pyChecker' + script_suffix
-+    LOCAL_SCRIPT = os.path.join('./', LOCAL_SCRIPT)
-     remove_file(LOCAL_SCRIPT)
- 
-     try :
-@@ -78,7 +78,7 @@ fairly infrequent."""
-           author_email          = "pychecker@metaslash.com",
-           url                   = "http://pychecker.sourceforge.net/",
-           packages              = [ 'pychecker' ],
--          data_files            = [ (install_dir, DOC_FILES) ],
-+#          data_files            = [ (install_dir, DOC_FILES) ],
-           scripts               = [ LOCAL_SCRIPT, ],
-           # classifiers was added in Python 2.3, but needed for PyPI
-           #classifiers           = CLASSIFIERS,
+$OpenBSD: patch-setup_py,v 1.6 2015/12/30 22:58:52 jasper Exp $
+--- setup.py.orig	Wed Dec 30 20:33:58 2015
++++ setup.py	Wed Dec 30 20:34:24 2015
+@@ -260,7 +260,6 @@ kw =  { 'name'             : "pychecker",
+         'url'              : "http://pychecker.sourceforge.net/",
+         'packages'         : [ 'pychecker', ],
+         'scripts'          : [ "pychecker" ],   # note: will be replaced by customized action
+-        'data_files'       : [ ( "pychecker", DATA_FILES, ) ], 
+         'long_description' : LONG_DESCRIPTION,
+         'cmdclass'         : CUSTOMIZED_ACTIONS, 
+       }

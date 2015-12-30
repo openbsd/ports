@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 10:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2015/12/30 22:58:52 jasper Exp $
 
 COMMENT=	Python codes checker
 
-VERSION=	0.8.13
-DISTNAME=	pychecker-${VERSION}
-PKGNAME=	py-Checker-${VERSION}
-REVISION =	5
+MODPY_EGG_VERSION=0.8.19
+DISTNAME=	pychecker-${MODPY_EGG_VERSION}
+PKGNAME=	py-Checker-${MODPY_EGG_VERSION}
 CATEGORIES=    	devel
 
 HOMEPAGE=	http://pychecker.sourceforge.net/
@@ -16,26 +15,16 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pychecker/}
 
 MODULES=	lang/python
-
 MODPY_DISTUTILS_INSTALLARGS=	-O1
 
-DOC_DIR=	${PREFIX}/share/doc/py-Checker/
-DOC_FILE=	CHANGELOG KNOWN_BUGS TODO MAINTAINERS README
-EXAMPLESDIR=	${PREFIX}/share/examples/py-Checker/
-
-post-build:
-	@perl -pi -e 's,%%PYTHON%%,${LOCALBASE}/bin/python${MODPY_VERSION},g' \
-		${WRKSRC}/test_check.sh
+EXAMPLESDIR=	${PREFIX}/share/examples/${MODPY_PY_PREFIX}Checker/
 
 post-install:
-	${INSTALL_DATA_DIR} ${DOC_DIR}
-.for i in ${DOC_FILE}
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOC_DIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}Checker/
+.for i in ChangeLog README
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/py-Checker/
 .endfor
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/pycheckrc ${EXAMPLESDIR}
-
-do-test:
-	@cd ${WRKSRC} && sh ./test_check.sh
 
 .include <bsd.port.mk>
