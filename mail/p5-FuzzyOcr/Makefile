@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/13 12:59:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/12/30 14:30:29 giovanni Exp $
 
 COMMENT=		detect image spam with SpamAssassin
 
@@ -10,7 +10,7 @@ PKG_ARCH=		*
 CATEGORIES=		mail perl5
 
 HOMEPAGE=		http://fuzzyocr.own-hero.net/
-MASTER_SITES=		http://bigio.snb.it/openbsd/distfiles/
+MASTER_SITES=		https://www.paclan.it/distfiles/
 
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
