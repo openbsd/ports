@@ -1,4 +1,4 @@
-$OpenBSD: patch-docs_conf_httpd_conf_in,v 1.6 2015/12/23 14:51:55 ajacoutot Exp $
+$OpenBSD: patch-docs_conf_httpd_conf_in,v 1.7 2015/12/30 09:59:31 ajacoutot Exp $
 --- docs/conf/httpd.conf.in.orig	Tue Nov  3 12:58:58 2015
 +++ docs/conf/httpd.conf.in	Mon Dec 21 13:59:16 2015
 @@ -74,8 +74,8 @@ Listen @@Port@@
@@ -17,4 +17,4 @@ $OpenBSD: patch-docs_conf_httpd_conf_in,v 1.6 2015/12/23 14:51:55 ajacoutot Exp 
  </IfModule>
  
 +# Include extra module configuration files
-+Include @rel_sysconfdir@/modules/*.conf
++IncludeOptional /var/www/conf/modules/*.conf

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2015/12/01 16:45:30 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2015/12/30 09:59:31 ajacoutot Exp $
 @pkgpath www/apache-httpd${FLAVOR_COMMA}
 @bin bin/ab
 bin/dbmmanage2
@@ -1358,8 +1358,7 @@ share/examples/apache2/conf/magic
 @sample ${CONFDIR}/magic
 share/examples/apache2/conf/mime.types
 @sample ${CONFDIR}/mime.types
-@sample ${CONFDIR}/modules/
-@sample ${CONFDIR}/modules.sample/
+@sample /var/www/conf/modules/
 share/examples/apache2/conf/original/
 share/examples/apache2/conf/original/extra/
 share/examples/apache2/conf/original/extra/httpd-autoindex.conf
