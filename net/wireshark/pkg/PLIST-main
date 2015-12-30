@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2015/11/19 21:33:36 sthen Exp $
-bin/wireshark
-@bin bin/wireshark-gtk
-@comment @bin bin/wireshark-qt
+@comment $OpenBSD: PLIST-main,v 1.6 2015/12/30 15:42:24 sthen Exp $
+@bin bin/wireshark
 @man man/man1/wireshark.1
 share/applications/wireshark.desktop
 share/icons/hicolor/128x128/apps/wireshark.png

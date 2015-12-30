@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.30 2015/11/24 09:53:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2015/12/30 15:42:24 sthen Exp $
 
 # XXX should add pledge to dumpcap.
-# XXX the Qt UI (upstream default) is broken here; segfault at startup.
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 BROKEN-sparc64 = cc: Internal error: Illegal instruction (program cc1)
-COMMENT-main =	graphical network protocol analyzer
+COMMENT-main =	graphical network protocol analyzer, Qt user-interface
+COMMENT-gtk =	graphical network protocol analyzer, Gtk+3 user-interface
 COMMENT-text =	network protocol analyzer
 
-WVER =		2.0.0
+WVER =		2.0.1
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
+PKGNAME-gtk =	wireshark-gtk-${WVER}
 PKGNAME-text =	tshark-${WVER}
 SHARED_ONLY =	Yes
 
@@ -35,7 +36,7 @@ cWANTLIB +=	c glib-2.0 m pcap pthread z
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
-MULTI_PACKAGES =	-text -main
+MULTI_PACKAGES = -text -main -gtk
 
 MODLUA_VERSION = 5.2
 MODULES =	lang/lua \
@@ -45,20 +46,16 @@ MODLUA_SA =	Yes
 MODLUA_RUNDEP =	No
 MODPY_RUNDEP =	No
 
-WANTLIB-text +=	${cWANTLIB} ${MODLUA_WANTLIB}
+WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB}
 WANTLIB-text +=	GeoIP cares gcrypt gmodule-2.0 gnutls gpg-error smi
 
-# when the qt version is repaired, it should go into -main
-#LIB_DEPENDS-main += ${LIB_DEPENDS}
-#WANTLIB-main +=	${cWANTLIB} ${WANTLIB}
-#WANTLIB-main +=	wireshark wiretap wsutil gmodule-2.0 stdc++
-#WANTLIB-main +=	Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
-# ...just use a bdep for now, to avoid dpb failures
-BUILD_DEPENDS +=	x11/qt5
+WANTLIB-main =	${cWANTLIB} ${WANTLIB}
+WANTLIB-main +=	wireshark wiretap wsutil gmodule-2.0
+WANTLIB-main +=	Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
 
-WANTLIB-main +=	${cWANTLIB} wireshark wiretap wsutil
-WANTLIB-main +=	cairo gdk_pixbuf-2.0 gdk-3 gmodule-2.0 gobject-2.0 gtk-3
-WANTLIB-main +=	pango-1.0 pangocairo-1.0 portaudio 
+WANTLIB-gtk =	${cWANTLIB} wireshark wiretap wsutil
+WANTLIB-gtk +=	cairo gdk_pixbuf-2.0 gdk-3 gmodule-2.0 gobject-2.0 gtk-3
+WANTLIB-gtk +=	pango-1.0 pangocairo-1.0 portaudio 
 
 MASTER_SITES =		http://www.wireshark.org/download/src/all-versions/ \
 			http://www.wireshark.org/download/automated/src/
@@ -85,7 +82,10 @@ LIB_DEPENDS-text =	${MODLUA_LIB_DEPENDS} \
 			security/gnutls \
 			security/libgcrypt
 
-LIB_DEPENDS-main =	tshark-${WVER}:${BUILD_PKGPATH:S/,$//},-text \
+LIB_DEPENDS-main +=	${LIB_DEPENDS} \
+			tshark-${WVER}:${BUILD_PKGPATH:S/,$//},-text
+
+LIB_DEPENDS-gtk +=	tshark-${WVER}:${BUILD_PKGPATH:S/,$//},-text \
 			x11/gtk+3 \
 			audio/portaudio-svn
 
@@ -112,7 +112,5 @@ post-install:
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_DATA} ${WRKSRC}/image/wsicon.svg ${PREFIX}/share/icons/hicolor/scalable/apps/wireshark.svg
-	mv ${PREFIX}/bin/wireshark ${PREFIX}/bin/wireshark-qt
-	ln -s wireshark-gtk ${PREFIX}/bin/wireshark
 
 .include <bsd.port.mk>

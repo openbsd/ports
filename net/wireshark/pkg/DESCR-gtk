@@ -1,0 +1,4 @@
+Wireshark is a network capture tool and protocol analyzer, including
+decoders for very many common and less-common protocols.
+
+This package contains the legacy Gtk+3 graphical user interface.
