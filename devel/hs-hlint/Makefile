@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2014/12/15 21:28:34 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2015/12/30 21:24:31 kili Exp $
+
+BROKEN=			needs a new dependency (refact)
 
 COMMENT=		source code suggestions for Haskell
-
-# XXX versions after 1.9.10 need a new dependency 'extra'.
-# XXX versions after 1.8.57 need a newer cpphs (>= 1.18.1).
 
 DISTNAME=		hlint-1.8.57
 CATEGORIES=		devel
