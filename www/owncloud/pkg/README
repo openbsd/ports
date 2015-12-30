@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.40 2015/11/26 07:38:34 ajacoutot Exp $
+$OpenBSD: README,v 1.41 2015/12/30 06:37:02 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -131,6 +131,16 @@ Distributed caching and Transactional File Locking is provided by Redis, an
 in-memory data structure store.
 More information and configuration example are available at:
     https://doc.owncloud.org/server/${VR}/admin_manual/configuration_server/caching_configuration.html#id4
+
+TL;DR
+Adapt and append the following to: ${INSTDIR}/config/config.php
+
+'memcache.local' => '\OC\Memcache\Redis',
+'redis' => array(
+     'host' => '<redis_server_host>',
+     'port' => 6379,
+     'timeout' => 0.0,
+      ),
 
 Authentication backends
 -----------------------
