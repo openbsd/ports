@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2015/09/29 10:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2015/12/30 19:20:28 jasper Exp $
+
+PORTROACH =		limit:^0\.1
+PORTROACH_COMMENT =	devel/bpython requires curtsies < 0.2.0
 
 COMMENT =		curses-like terminal wrapper
 
