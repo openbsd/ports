@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.41 2015/12/30 06:37:02 ajacoutot Exp $
+$OpenBSD: README,v 1.42 2015/12/30 06:44:34 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,6 +12,9 @@ Official documentation is available at:
 
 Post-installation instructions
 ==============================
+
+*** It is highly recommended to use SSL on the webserver so that access is done
+*** over https instead of http!
 
 chroot(2)
 ---------
@@ -135,12 +138,12 @@ More information and configuration example are available at:
 TL;DR
 Adapt and append the following to: ${INSTDIR}/config/config.php
 
-'memcache.local' => '\OC\Memcache\Redis',
-'redis' => array(
-     'host' => '<redis_server_host>',
-     'port' => 6379,
-     'timeout' => 0.0,
-      ),
+  'memcache.local' => '\OC\Memcache\Redis',
+  'redis' => array(
+    'host' => 'localhost',
+    'port' => 6379,
+    'timeout' => 0.0,
+  ),
 
 Authentication backends
 -----------------------
@@ -170,9 +173,6 @@ The personal WebDAV share can be accessed using the following URL (e.g.
 with Nautilus, Thunar or Doplhin) and the corresponding user and
 password for the share:
     http://<hostname>/owncloud/remote.php/webdav/
-
-NOTE that it is highly recommended to use SSL on the webserver so that
-access is done over https instead of http.
 
 Synchronization
 ===============
