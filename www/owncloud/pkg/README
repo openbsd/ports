@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.42 2015/12/30 06:44:34 ajacoutot Exp $
+$OpenBSD: README,v 1.43 2015/12/30 08:53:07 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -82,8 +82,9 @@ Apache2
 Apache2 configuration for ownCloud is stored under:
     ${PREFIX}/conf/modules.sample/httpd-owncloud.conf
 
-It needs to be included by adding the following to ${SYSCONFDIR}/apache2/httpd2.conf:
-    Include ${PREFIX}/conf/modules.sample/httpd-owncloud.conf
+It needs to be enabled by running the following command:
+# ln -s ../modules.sample/httpd-owncloud.conf /var/www/conf/modules
+# rcctl restart apache2
 
 PHP
 ---
