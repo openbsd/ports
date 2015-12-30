@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2014/10/18 14:27:11 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.37 2015/12/30 10:59:32 giovanni Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 bin/gimp
 @bin bin/gimp-2.8
@@ -1929,6 +1929,12 @@ share/icons/hicolor/256x256/apps/gimp.png
 share/icons/hicolor/32x32/apps/gimp.png
 share/icons/hicolor/48x48/apps/gimp.png
 share/locale/am/LC_MESSAGES/gimp20.mo
+share/locale/an/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/an/LC_MESSAGES/gimp20-python.mo
+share/locale/an/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/an/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/an/LC_MESSAGES/gimp20-tips.mo
+share/locale/an/LC_MESSAGES/gimp20.mo
 share/locale/ar/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ar/LC_MESSAGES/gimp20-python.mo
 share/locale/ar/LC_MESSAGES/gimp20-script-fu.mo
@@ -1958,6 +1964,12 @@ share/locale/br/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/br/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/br/LC_MESSAGES/gimp20-tips.mo
 share/locale/br/LC_MESSAGES/gimp20.mo
+share/locale/bs/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/bs/LC_MESSAGES/gimp20-python.mo
+share/locale/bs/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/bs/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/bs/LC_MESSAGES/gimp20-tips.mo
+share/locale/bs/LC_MESSAGES/gimp20.mo
 share/locale/ca/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ca/LC_MESSAGES/gimp20-python.mo
 share/locale/ca/LC_MESSAGES/gimp20-script-fu.mo
@@ -2195,6 +2207,7 @@ share/locale/oc/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/oc/LC_MESSAGES/gimp20-python.mo
 share/locale/oc/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/oc/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/oc/LC_MESSAGES/gimp20-tips.mo
 share/locale/oc/LC_MESSAGES/gimp20.mo
 share/locale/pa/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/pa/LC_MESSAGES/gimp20-python.mo
