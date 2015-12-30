@@ -1,0 +1,21 @@
+$OpenBSD: patch-iridium_trknotify_cpp,v 1.1 2015/12/30 19:13:33 robert Exp $
+--- iridium/trknotify.cpp.orig.port	Wed Dec 30 15:41:59 2015
++++ iridium/trknotify.cpp	Wed Dec 30 15:42:11 2015
+@@ -5,7 +5,7 @@
+  * found in the LICENSE file.
+  */
+ #include <cstdio>
+-#ifdef __linux__
++#ifdef __OpenBSD__
+ #	include <unistd.h>
+ #endif
+ #include "chrome/browser/infobars/infobar_service.h"
+@@ -21,7 +21,7 @@ namespace iridium {
+ 
+ void log_url_request(const std::string &caller, const GURL &url)
+ {
+-#ifdef __linux__
++#ifdef __OpenBSD__
+ 	bool tty = isatty(fileno(stderr));
+ #else
+ 	bool tty = false;
