@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/12/30 09:57:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/12/30 10:22:33 ajacoutot Exp $
 %%SHARED%%
 bin/dbmmanage
 @bin bin/htdigest
@@ -250,7 +250,6 @@ share/doc/apache-httpd-openbsd/vhosts/vhosts-in-depth.html
 share/doc/apache-httpd-openbsd/vhosts/virtual-host.html
 @rcscript ${RCDIR}/apache
 @cwd /var/www
-conf/
 conf/httpd.conf.default
 @sample conf/httpd.conf
 conf/magic.default
