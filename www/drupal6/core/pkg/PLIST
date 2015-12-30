@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2015/07/09 13:28:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2015/12/30 10:01:25 ajacoutot Exp $
 @option no-default-conflict
 @conflict drupal->=6,<7
 @owner ${DRUPAL_OWNER}
@@ -67,6 +67,7 @@ ${DRUPAL_ROOT}/misc/blog.png
 ${DRUPAL_ROOT}/misc/collapse.js
 ${DRUPAL_ROOT}/misc/draggable.png
 ${DRUPAL_ROOT}/misc/drupal.conf
+@sample /var/www/conf/modules.sample/
 @sample /var/www/conf/modules.sample/drupal6.conf
 ${DRUPAL_ROOT}/misc/drupal.js
 ${DRUPAL_ROOT}/misc/druplicon.png

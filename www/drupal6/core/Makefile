@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2015/11/02 11:56:55 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2015/12/30 10:01:25 ajacoutot Exp $
 
 COMMENT =	powerful content management system
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 DISTNAME =	drupal-6.36
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+REVISION =	0
 
 MODULES=	lang/php
 RUN_DEPENDS=	php-mysql-${MODPHP_VSPEC}|php-mysqli-${MODPHP_VSPEC}|php-pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-mysql \

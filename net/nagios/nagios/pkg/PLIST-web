@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.9 2015/02/05 22:58:24 sthen Exp $
+@comment $OpenBSD: PLIST-web,v 1.10 2015/12/30 10:01:26 ajacoutot Exp $
 cgi-bin/nagios/
 @bin cgi-bin/nagios/archivejson.cgi
 @bin cgi-bin/nagios/avail.cgi
@@ -20,6 +20,7 @@ cgi-bin/nagios/
 @bin cgi-bin/nagios/tac.cgi
 @bin cgi-bin/nagios/trends.cgi
 conf/modules.sample/nagios.conf.dist
+@sample /var/www/conf/modules.sample/
 @sample /var/www/conf/modules.sample/nagios.conf
 nagios/config.inc.php
 nagios/contexthelp/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/06/05 06:00:22 robert Exp $
+# $OpenBSD: Makefile,v 1.16 2015/12/30 10:01:25 ajacoutot Exp $
 
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
@@ -7,7 +7,7 @@ GITLAB_ACCOUNT = davical-project
 GITLAB_TAG =	r1.1.3.1
 DISTNAME =	${GITLAB_PROJECT}-${GITLAB_TAG:S/r//}
 CATEGORIES =	productivity net
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.davical.org/
 

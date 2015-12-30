@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2015/06/05 06:00:22 robert Exp $
+# $OpenBSD: Makefile,v 1.18 2015/12/30 10:01:25 ajacoutot Exp $
 
 COMMENT=	web-based MySQL management
 
 V=		1.2
 DISTNAME=	chive_$V
 PKGNAME=	${DISTNAME:S/_/-/}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	www databases
 

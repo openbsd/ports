@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2015/12/27 21:58:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.44 2015/12/30 10:01:26 ajacoutot Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -2263,6 +2263,7 @@ roundcubemail/program/steps/utils/spell_html.inc
 roundcubemail/program/steps/utils/text2html.inc
 roundcubemail/robots.txt
 roundcubemail/roundcubemail.conf.dist
+@sample /var/www/conf/modules.sample/
 @sample /var/www/conf/modules.sample/roundcubemail.conf
 roundcubemail/skins/
 roundcubemail/skins/classic/

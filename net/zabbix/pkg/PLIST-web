@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-web,v 1.26 2015/04/05 10:18:42 robert Exp $
+@comment $OpenBSD: PLIST-web,v 1.27 2015/12/30 10:01:26 ajacoutot Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
+@sample conf/modules.sample/
 conf/modules.sample/zabbix.conf
 zabbix/
 zabbix/acknow.php

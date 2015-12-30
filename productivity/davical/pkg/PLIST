@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/11/23 08:48:27 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2015/12/30 10:01:25 ajacoutot Exp $
 davical/
 davical/INSTALL
 davical/README
@@ -12,6 +12,7 @@ davical/config/example-config.php
 davical/config/imap_pam_conf_php.txt
 davical/config/other-config.php
 davical/davical.conf
+@sample /var/www/conf/modules.sample/
 @sample /var/www/conf/modules.sample/davical.conf
 davical/dba/
 davical/dba/appuser_permissions.txt

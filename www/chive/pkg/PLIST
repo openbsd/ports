@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/06/28 16:31:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/12/30 10:01:25 ajacoutot Exp $
 @extraunexec rm -rf /var/www/chive/*
 chive/
 @mode 775
@@ -8,6 +8,7 @@ chive/assets/
 @group
 chive/chive.conf.default
 @mode
+@sample /var/www/conf/modules.sample/
 @sample /var/www/conf/modules.sample/chive.conf
 chive/css/
 chive/css/bg.gif

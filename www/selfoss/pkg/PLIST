@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/05/16 08:26:14 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.9 2015/12/30 10:01:26 ajacoutot Exp $
 @extraunexec rm -rf %D/selfoss/data/*/*
 selfoss/
 @comment selfoss/.gitignore
@@ -1279,6 +1279,7 @@ selfoss/public/win8-70-icon.png
 selfoss/public/win8-71-icon.png
 selfoss/run.php
 selfoss/selfoss.conf.dist
+@sample /var/www/conf/modules.sample/
 @sample /var/www/conf/modules.sample/selfoss.conf
 selfoss/spouts/
 selfoss/spouts/deviantart/

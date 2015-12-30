@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.58 2015/11/10 19:06:28 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.59 2015/12/30 10:01:26 ajacoutot Exp $
 @unexec-delete rm -f /var/www/conf/modules/phpmyadmin.conf
 @group daemon
 phpMyAdmin/
@@ -140,6 +140,7 @@ phpMyAdmin/examples/
 phpMyAdmin/examples/config.manyhosts.inc.php
 phpMyAdmin/examples/openid.php
 phpMyAdmin/examples/phpMyAdmin-httpd.conf
+@sample /var/www/conf/modules.sample/
 @sample /var/www/conf/modules.sample/phpmyadmin.conf
 phpMyAdmin/examples/signon-script.php
 phpMyAdmin/examples/signon.php

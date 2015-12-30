@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2015/11/02 10:59:53 robert Exp $
+# $OpenBSD: Makefile,v 1.19 2015/12/30 10:01:26 ajacoutot Exp $
 
 COMMENT=	next generation web interface for Zarafa
 
 WAPP_BUILD=	51748
 WAPP_VERSION=	2.1.0
 EPOCH=		0
+REVISION=	0
 
 PLUGINS_WITH_DEFCONF= \
 		browsercompatibility \

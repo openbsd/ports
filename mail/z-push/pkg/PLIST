@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/10/15 18:42:08 robert Exp $
+@comment $OpenBSD: PLIST,v 1.17 2015/12/30 10:01:26 ajacoutot Exp $
 @extraunexec rm -rf /var/www/var/db/z-push/*
 @extraunexec rm -rf /var/www/var/log/z-push/*
 @unexec-delete rm -f /var/www/conf/modules/z-push.conf
@@ -196,6 +196,7 @@ z-push/version.php
 z-push/z-push-admin.php
 z-push/z-push-top.php
 z-push/z-push.conf.dist
+@sample /var/www/conf/modules.sample/
 @sample /var/www/conf/modules.sample/z-push.conf
 @sample /var/www/var/
 @sample /var/www/var/db/
