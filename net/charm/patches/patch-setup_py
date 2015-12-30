@@ -1,8 +1,8 @@
-$OpenBSD: patch-setup_py,v 1.1 2005/07/01 06:55:49 xsa Exp $
---- setup.py.orig	Mon Jun 13 23:20:22 2005
-+++ setup.py	Fri Jul  1 08:50:53 2005
+$OpenBSD: patch-setup_py,v 1.2 2015/12/30 16:50:38 jasper Exp $
+--- setup.py.orig	Thu Mar 28 04:14:46 2013
++++ setup.py	Wed Dec 30 17:50:20 2015
 @@ -8,6 +8,7 @@ setup(name = "charm",
-       url = "http://ljcharm.sourceforge.net",
+       url = "http://ljcharm.sourceforge.net/",
        py_modules = ["ljcharm"],
        scripts = ["charm"],
 -      data_files = [ ("share/doc/charm", ["charm.html", "sample.charmrc"]),

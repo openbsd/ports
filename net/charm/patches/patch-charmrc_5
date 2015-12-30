@@ -1,7 +1,7 @@
-$OpenBSD: patch-charmrc_5,v 1.2 2015/09/18 19:24:09 jasper Exp $
---- charmrc.5.orig	Mon Jun 13 23:20:22 2005
-+++ charmrc.5	Fri Jul  1 08:44:03 2005
-@@ -190,11 +190,11 @@ journal, or put all archived posts under
+$OpenBSD: patch-charmrc_5,v 1.3 2015/12/30 16:50:38 jasper Exp $
+--- charmrc.5.orig	Thu Mar 28 04:14:29 2013
++++ charmrc.5	Wed Dec 30 17:50:20 2015
+@@ -227,11 +227,11 @@ journal, or put all archived posts under a single dire
  
  .SH EXAMPLES
  There is an example charmrc file. It can usually be found in
