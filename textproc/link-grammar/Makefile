@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/12/05 08:09:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2015/12/30 10:59:05 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 
@@ -6,7 +6,7 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.3.2
+VERSION =		5.3.3
 DISTNAME =		link-grammar-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
@@ -14,8 +14,8 @@ PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py-link-grammar-${VERSION}
 
 SHARED_LIBS +=  minisat              1.0      # 2.0
-SHARED_LIBS +=  link-grammar         4.0      # 8.1
-SHARED_LIBS +=  link-grammar-java    4.0      # 8.1
+SHARED_LIBS +=  link-grammar         4.0      # 8.3
+SHARED_LIBS +=  link-grammar-java    4.0      # 8.3
 
 CATEGORIES =		textproc
 
@@ -74,6 +74,7 @@ CONFIGURE_ENV =		CFLAGS="${CFLAGS} ${ADD_CFLAGS}" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
+			--enable-perl-bindings \
 			--enable-python-bindings \
 			--with-hunspell-dictdir=${LOCALBASE}/share/mozilla-dicts
 

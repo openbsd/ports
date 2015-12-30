@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2015/12/05 08:09:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2015/12/30 10:59:05 ajacoutot Exp $
 @bin bin/link-parser
 include/link-grammar/
 include/link-grammar/dict-api.h
@@ -14,7 +14,7 @@ lib/libminisat.la
 lib/pkgconfig/link-grammar.pc
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.so.8.2
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.so.8.3
 share/link-grammar/
 share/link-grammar/amy/
 share/link-grammar/amy/4.0.affix
@@ -83,6 +83,8 @@ share/link-grammar/en/words/currency.p
 share/link-grammar/en/words/entities.given-bisex.sing
 share/link-grammar/en/words/entities.given-female.sing
 share/link-grammar/en/words/entities.given-male.sing
+share/link-grammar/en/words/entities.goddesses
+share/link-grammar/en/words/entities.gods
 share/link-grammar/en/words/entities.locations.sing
 share/link-grammar/en/words/entities.national.sing
 share/link-grammar/en/words/entities.organizations.sing
@@ -459,3 +461,9 @@ share/link-grammar/tr/4.0.constituent-knowledge
 share/link-grammar/tr/4.0.dict
 share/link-grammar/tr/4.0.knowledge
 share/link-grammar/tr/4.0.regex
+share/link-grammar/vn/
+share/link-grammar/vn/4.0.affix
+share/link-grammar/vn/4.0.constituent-knowledge
+share/link-grammar/vn/4.0.dict
+share/link-grammar/vn/4.0.knowledge
+share/link-grammar/vn/4.0.regex
