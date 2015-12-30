@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.30 2015/12/03 21:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2015/12/30 14:10:50 sthen Exp $
 
-SHARED_LIBS =		rtmp 1.0
+SHARED_LIBS =		rtmp 1.1
 
 COMMENT =		dump RTMP media streams
 
-DISTNAME =		rtmpdump-2.4pl8
-PATCHFILES =		rtmpdump-KSV-20150505.patch.gz
-WRKDIST =		${WRKDIR}/rtmpdump
+# also see VERSION in MAKE_FLAGS below
+DISTNAME =		rtmpdump-2.4.20151223
+PATCHFILES =		rtmpdump-KSV-20151215.patch.gz
 
 CATEGORIES =		net
 
@@ -18,14 +18,14 @@ PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB =		c crypto m pthread ssl z
 
-# packaged from git://git.ffmpeg.org/rtmpdump : a107cef9
+# packaged from git://git.ffmpeg.org/rtmpdump : fa8646da
 # and patch from https://github.com/K-S-V/Scripts/releases/, see
 # http://stream-recorder.com/forum/customized-rtmpdump-binaries-patch-file-t16103.html
 MASTER_SITES =		https://spacehopper.org/mirrors/
 
 MAKE_FLAGS =		CC="${CC}" XCFLAGS="${CFLAGS}" OPT= \
 			THREADLIB=-pthread SO_VERSION=${LIBrtmp_VERSION} \
-			VERSION="v2.4-git-a107cef9\ KSV-2015-05-05"
+			VERSION="v2.4-git-fa8646da\ KSV-2015-12-15"
 
 NO_TEST =		Yes
 
