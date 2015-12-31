@@ -1,0 +1,3 @@
+This is a tiny (less than 200 lines) auditable script that can handle
+issue and renew of Let's Encrypt certificates, using calls to openssl(1)
+to handle key operations.
