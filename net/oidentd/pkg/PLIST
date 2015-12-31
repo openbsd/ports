@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/12/05 03:09:45 alek Exp $
+@comment $OpenBSD: PLIST,v 1.6 2015/12/31 08:21:36 jasper Exp $
 @man man/man5/oidentd.conf.5
 @man man/man5/oidentd_masq.conf.5
 @man man/man8/oidentd.8
-sbin/oidentd
+@bin sbin/oidentd
 @extra ${SYSCONFDIR}/oidentd.conf
 @extra ${SYSCONFDIR}/oidentd_masq.conf
