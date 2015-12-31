@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/03/18 12:17:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2015/12/31 14:11:28 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
-${GEM_LIB}/gems/${DISTNAME}/README
-${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Releases
-${GEM_LIB}/gems/${DISTNAME}/TODO
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/call/
 ${GEM_LIB}/gems/${DISTNAME}/examples/call/call.rb
@@ -14,11 +12,14 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/daemonize/
 ${GEM_LIB}/gems/${DISTNAME}/examples/daemonize/daemonize.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_crash.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_custom_logfiles.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_exec.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_exit.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_hanging.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_keep_pid_files.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_monitor.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_monitor_multiple.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_monitor_nocrash.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_multiple.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_normal.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/run/ctrl_ontop.rb
@@ -48,5 +49,5 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/monitor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/pid.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/pidfile.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/pidmem.rb
-${GEM_LIB}/gems/${DISTNAME}/setup.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/daemons/version.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
