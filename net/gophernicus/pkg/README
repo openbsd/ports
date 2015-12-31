@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2014/07/10 13:09:06 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2015/12/31 07:49:28 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,7 +10,7 @@ Setting up a gopher site
 After installing the gophernicus package, edit /etc/inetd.conf and add
 the following, all on one line:
 
-gopher stream tcp nowait _gophernicus ${TRUEPREFIX}/sbin/in.gophernicus	in.gophernicus -h "hostname"
+gopher stream tcp nowait _gophernicus ${TRUEPREFIX}/libexec/in.gophernicus	in.gophernicus -h "hostname"
 
 Replace "hostname" with the system's hostname, this should be valid
 and resolvable as it is used to construct links.
