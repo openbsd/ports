@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/05/11 07:19:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2015/12/31 11:24:35 jasper Exp $
 bin/gupnp-binding-tool
 include/gupnp-1.0/
 include/gupnp-1.0/libgupnp/
@@ -60,7 +60,6 @@ share/gtk-doc/html/gupnp/gupnp-gupnp-service-introspection.html
 share/gtk-doc/html/gupnp/gupnp.devhelp2
 share/gtk-doc/html/gupnp/home.png
 share/gtk-doc/html/gupnp/index.html
-share/gtk-doc/html/gupnp/index.sgml
 share/gtk-doc/html/gupnp/ix01.html
 share/gtk-doc/html/gupnp/left-insensitive.png
 share/gtk-doc/html/gupnp/left.png
