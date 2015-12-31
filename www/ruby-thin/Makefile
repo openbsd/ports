@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2015/06/05 02:46:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.22 2015/12/31 14:10:11 jasper Exp $
 
 COMMENT =	fast and very simple Ruby web server
 
-DISTNAME =	thin-1.6.3
+DISTNAME =	thin-1.6.4
 CATEGORIES =	www
 
 HOMEPAGE =	http://code.macournoyer.com/thin/
@@ -18,9 +18,7 @@ RUN_DEPENDS =	www/ruby-rack,${MODRUBY_FLAVOR}>=1.0,<2.0 \
 		devel/ruby-daemons,${MODRUBY_FLAVOR}>=1.0.9,<2.0 \
 		net/ruby-eventmachine,${MODRUBY_FLAVOR}>=1.0,<2.0
 
-MODRUBY_TEST =	rspec
-TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
-MODRUBY_TEST_ENV =	RUBYLIB=$$(dirname `${GEM} which thin`) RUBYOPT='-I. -rubygems -rthin'
-MODRUBY_TEST_TARGET = spec/*_spec.rb
+# thin.gemspec not bundled
+#MODRUBY_TEST =	rake
 
 .include <bsd.port.mk>
