@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2015/11/04 21:11:48 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2015/12/31 08:15:25 jasper Exp $
 
 COMMENT=		Markdown implementation for PHP
 
-DISTNAME =		php-markdown-lib-1.5.0
+V =			1.6.0
+DISTNAME =		php-markdown-lib-$V
 PKGNAME =		${DISTNAME:S/-lib//}
 CATEGORIES=		www
 
@@ -15,17 +16,17 @@ MASTER_SITES=		https://littoral.michelf.ca/code/php-markdown/
 EXTRACT_SUFX=		.zip
 
 NO_BUILD=       	Yes
-NO_TEST=     	Yes
+NO_TEST=     		Yes
 PKG_ARCH=       	*
 
 # Although this library is not PEAR, installing it into
 # ${PREFIX}/pear/lib will make sure it's picked up by PHP
 # without the need to adjust the include path in php.ini
-PREFIX=		${VARBASE}/www
+PREFIX=			${VARBASE}/www
 INSTDIR=                ${PREFIX}/pear/lib/
 SUBST_VARS=             INSTDIR
 
-WRKSRC= 		${WRKDIR}/PHP\ Markdown\ Lib\ 1.5.0/
+WRKSRC= 		${WRKDIR}/PHP\ Markdown\ Lib\ ${V}/
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
