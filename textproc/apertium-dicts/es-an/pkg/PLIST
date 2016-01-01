@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+share/apertium/apertium-es-an/
+share/apertium/apertium-es-an/an-es.autobil.bin
+share/apertium/apertium-es-an/an-es.autogen.bin
+share/apertium/apertium-es-an/an-es.automorf.bin
+share/apertium/apertium-es-an/an-es.autopgen.bin
+share/apertium/apertium-es-an/an-es.prob
+share/apertium/apertium-es-an/an-es.t1x.bin
+share/apertium/apertium-es-an/apertium-es-an.an-es.t1x
+share/apertium/apertium-es-an/apertium-es-an.es-an.t1x
+share/apertium/apertium-es-an/es-an.autobil.bin
+share/apertium/apertium-es-an/es-an.autogen.bin
+share/apertium/apertium-es-an/es-an.automorf.bin
+share/apertium/apertium-es-an/es-an.autopgen.bin
+share/apertium/apertium-es-an/es-an.prob
+share/apertium/apertium-es-an/es-an.t1x.bin
+share/apertium/modes/an-es.mode
+share/apertium/modes/es-an.mode

@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+share/apertium/apertium-es-ro/
+share/apertium/apertium-es-ro/apertium-es-ro.es-ro.t1x
+share/apertium/apertium-es-ro/apertium-es-ro.es-ro.t2x
+share/apertium/apertium-es-ro/apertium-es-ro.es-ro.t3x
+share/apertium/apertium-es-ro/apertium-es-ro.ro-es.t1x
+share/apertium/apertium-es-ro/es-ro.autobil.bin
+share/apertium/apertium-es-ro/es-ro.autogen.bin
+share/apertium/apertium-es-ro/es-ro.automorf.bin
+share/apertium/apertium-es-ro/es-ro.autopgen.bin
+share/apertium/apertium-es-ro/es-ro.prob
+share/apertium/apertium-es-ro/es-ro.t1x.bin
+share/apertium/apertium-es-ro/es-ro.t2x.bin
+share/apertium/apertium-es-ro/es-ro.t3x.bin
+share/apertium/apertium-es-ro/modes.xml
+share/apertium/apertium-es-ro/ro-es.autobil.bin
+share/apertium/apertium-es-ro/ro-es.autogen.bin
+share/apertium/apertium-es-ro/ro-es.automorf.bin
+share/apertium/apertium-es-ro/ro-es.autopgen.bin
+share/apertium/apertium-es-ro/ro-es.prob
+share/apertium/apertium-es-ro/ro-es.t1x.bin
+share/apertium/modes/ro-es.mode

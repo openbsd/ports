@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+share/apertium/apertium-sv-da/
+share/apertium/apertium-sv-da/apertium-sv-da.da-sv.t1x
+share/apertium/apertium-sv-da/apertium-sv-da.sv-da.t1x
+share/apertium/apertium-sv-da/da-sv.autobil.bin
+share/apertium/apertium-sv-da/da-sv.autogen.bin
+share/apertium/apertium-sv-da/da-sv.automorf.bin
+share/apertium/apertium-sv-da/da-sv.autopgen.bin
+share/apertium/apertium-sv-da/da-sv.mode
+share/apertium/apertium-sv-da/da-sv.prob
+share/apertium/apertium-sv-da/da-sv.t1x.bin
+share/apertium/apertium-sv-da/sv-da.autobil.bin
+share/apertium/apertium-sv-da/sv-da.autogen.bin
+share/apertium/apertium-sv-da/sv-da.automorf.bin
+share/apertium/apertium-sv-da/sv-da.autopgen.bin
+share/apertium/apertium-sv-da/sv-da.mode
+share/apertium/apertium-sv-da/sv-da.prob
+share/apertium/apertium-sv-da/sv-da.t1x.bin
+share/apertium/modes/da-sv.mode
+share/apertium/modes/sv-da.mode

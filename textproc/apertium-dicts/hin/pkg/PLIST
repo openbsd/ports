@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+share/apertium/apertium-hin/
+share/apertium/apertium-hin/apertium-hin.hin.dix
+share/apertium/apertium-hin/apertium-hin.hin.rlx
+share/apertium/apertium-hin/hin.autogen.att.gz
+share/apertium/apertium-hin/hin.autogen.bin
+share/apertium/apertium-hin/hin.automorf.att.gz
+share/apertium/apertium-hin/hin.automorf.bin
+share/apertium/apertium-hin/hin.rlx.bin
+share/pkgconfig/apertium-hin.pc

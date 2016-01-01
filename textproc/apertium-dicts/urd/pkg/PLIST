@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+share/apertium/apertium-urd/
+share/apertium/apertium-urd/apertium-urd.urd.dix
+share/apertium/apertium-urd/apertium-urd.urd.rlx
+share/apertium/apertium-urd/urd.autogen.att.gz
+share/apertium/apertium-urd/urd.autogen.bin
+share/apertium/apertium-urd/urd.automorf.att.gz
+share/apertium/apertium-urd/urd.automorf.bin
+share/apertium/apertium-urd/urd.rlx.bin
+share/pkgconfig/apertium-urd.pc

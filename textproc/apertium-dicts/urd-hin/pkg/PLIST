@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+share/apertium/apertium-urd-hin/
+share/apertium/apertium-urd-hin/apertium-urd-hin.hin-urd.t1x
+share/apertium/apertium-urd-hin/apertium-urd-hin.urd-hin.t1x
+share/apertium/apertium-urd-hin/hin-urd.autobil.bin
+share/apertium/apertium-urd-hin/hin-urd.autogen.bin
+share/apertium/apertium-urd-hin/hin-urd.autolex.bin
+share/apertium/apertium-urd-hin/hin-urd.automorf.bin
+share/apertium/apertium-urd-hin/hin-urd.prob
+share/apertium/apertium-urd-hin/hin-urd.rlx.bin
+share/apertium/apertium-urd-hin/hin-urd.t1x.bin
+share/apertium/apertium-urd-hin/urd-hin.autobil.bin
+share/apertium/apertium-urd-hin/urd-hin.autogen.bin
+share/apertium/apertium-urd-hin/urd-hin.autolex.bin
+share/apertium/apertium-urd-hin/urd-hin.automorf.bin
+share/apertium/apertium-urd-hin/urd-hin.prob
+share/apertium/apertium-urd-hin/urd-hin.rlx.bin
+share/apertium/apertium-urd-hin/urd-hin.t1x.bin
+share/apertium/modes/hin-urd.mode
+share/apertium/modes/urd-hin.mode

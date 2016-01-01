@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+share/apertium/apertium-es-eo/
+share/apertium/apertium-es-eo/apertium-eo-es.es-eo.t1x
+share/apertium/apertium-es-eo/apertium-eo-es.es-eo.t1x.translit
+share/apertium/apertium-es-eo/apertium-eo-es.es-eo.t2x
+share/apertium/apertium-es-eo/apertium-eo-es.es-eo.t2x.translit
+share/apertium/apertium-es-eo/apertium-eo-es.es-eo.t3x
+share/apertium/apertium-es-eo/apertium-eo-es.es-eo.t3x.translit
+share/apertium/apertium-es-eo/es-eo-translit.autobil.bin
+share/apertium/apertium-es-eo/es-eo-translit.autogen.bin
+share/apertium/apertium-es-eo/es-eo-translit.autopgen.bin
+share/apertium/apertium-es-eo/es-eo-translit.mode
+share/apertium/apertium-es-eo/es-eo-translit.t1x.bin
+share/apertium/apertium-es-eo/es-eo-translit.t2x.bin
+share/apertium/apertium-es-eo/es-eo-translit.t3x.bin
+share/apertium/apertium-es-eo/es-eo.autobil.bin
+share/apertium/apertium-es-eo/es-eo.autogen.bin
+share/apertium/apertium-es-eo/es-eo.automorf.bin
+share/apertium/apertium-es-eo/es-eo.autopgen.bin
+share/apertium/apertium-es-eo/es-eo.mode
+share/apertium/apertium-es-eo/es-eo.prob
+share/apertium/apertium-es-eo/es-eo.t1x.bin
+share/apertium/apertium-es-eo/es-eo.t2x.bin
+share/apertium/apertium-es-eo/es-eo.t3x.bin
+share/apertium/modes/es-eo-translit.mode
+share/apertium/modes/es-eo.mode
