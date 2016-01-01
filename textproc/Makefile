@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.474 2015/12/30 11:06:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.475 2016/01/01 11:56:16 bentley Exp $
 
      SUBDIR =
      SUBDIR += TclXML
      SUBDIR += agrep
      SUBDIR += antiword
+     SUBDIR += apertium
+     SUBDIR += apertium-dicts
+     SUBDIR += apertium-lex-tools
      SUBDIR += arabica
      SUBDIR += asciidoc
      SUBDIR += aspell
@@ -107,6 +110,7 @@
      SUBDIR += link-grammar
      SUBDIR += linuxdoc
      SUBDIR += lq-sp
+     SUBDIR += lttoolbox
      SUBDIR += luaexpat
      SUBDIR += luasoldout
      SUBDIR += luasoldout,lua52
