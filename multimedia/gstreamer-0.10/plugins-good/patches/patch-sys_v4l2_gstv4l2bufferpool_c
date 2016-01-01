@@ -1,6 +1,10 @@
-$OpenBSD: patch-sys_v4l2_gstv4l2bufferpool_c,v 1.1 2009/11/29 09:17:38 ajacoutot Exp $
---- sys/v4l2/gstv4l2bufferpool.c.orig	Mon Nov 23 19:54:48 2009
-+++ sys/v4l2/gstv4l2bufferpool.c	Mon Nov 23 19:58:04 2009
+$OpenBSD: patch-sys_v4l2_gstv4l2bufferpool_c,v 1.2 2016/01/01 14:50:14 feinerer Exp $
+
+v4l2_buffer input field was removed from videoio.h:
+http://cgit.freedesktop.org/gstreamer/gst-plugins-good/commit/?id=9f2aa8d47f835ea155aaf635f618c0fc1ca87012
+
+--- sys/v4l2/gstv4l2bufferpool.c.orig	Fri Dec 30 14:59:13 2011
++++ sys/v4l2/gstv4l2bufferpool.c	Tue Dec 15 16:50:36 2015
 @@ -26,6 +26,10 @@
  #  include <config.h>
  #endif
@@ -12,3 +16,11 @@ $OpenBSD: patch-sys_v4l2_gstv4l2bufferpool_c,v 1.1 2009/11/29 09:17:38 ajacoutot
  #include <sys/mman.h>
  #include <string.h>
  #include <unistd.h>
+@@ -181,7 +185,6 @@ gst_v4l2_buffer_new (GstV4l2BufferPool * pool, guint i
+     GST_LOG_OBJECT (pool->v4l2elem, "  MMAP offset:  %u",
+         ret->vbuffer.m.offset);
+   GST_LOG_OBJECT (pool->v4l2elem, "  length:    %u", ret->vbuffer.length);
+-  GST_LOG_OBJECT (pool->v4l2elem, "  input:     %u", ret->vbuffer.input);
+ 
+   data = (guint8 *) v4l2_mmap (0, ret->vbuffer.length,
+       PROT_READ | PROT_WRITE, MAP_SHARED, pool->video_fd,

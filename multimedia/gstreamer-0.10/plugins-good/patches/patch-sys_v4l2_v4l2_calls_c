@@ -1,0 +1,31 @@
+$OpenBSD: patch-sys_v4l2_v4l2_calls_c,v 1.1 2016/01/01 14:50:14 feinerer Exp $
+
+Avoid V4L2_CID_[HV]CENTER_DEPRECATED
+http://cgit.freedesktop.org/gstreamer/gst-plugins-good/commit/sys/v4l2/v4l2_calls.c?id=418a4940a8c41411cef33a0054879cbd4c9bd181
+
+--- sys/v4l2/v4l2_calls.c.orig	Tue Dec 15 16:55:05 2015
++++ sys/v4l2/v4l2_calls.c	Tue Dec 15 16:55:45 2015
+@@ -53,14 +53,6 @@
+ 
+ #include "gst/gst-i18n-plugin.h"
+ 
+-/* Those are ioctl calls */
+-#ifndef V4L2_CID_HCENTER
+-#define V4L2_CID_HCENTER V4L2_CID_HCENTER_DEPRECATED
+-#endif
+-#ifndef V4L2_CID_VCENTER
+-#define V4L2_CID_VCENTER V4L2_CID_VCENTER_DEPRECATED
+-#endif
+-
+ GST_DEBUG_CATEGORY_EXTERN (v4l2_debug);
+ #define GST_CAT_DEFAULT v4l2_debug
+ 
+@@ -294,8 +286,6 @@ gst_v4l2_fill_lists (GstV4l2Object * v4l2object)
+         break;
+       case V4L2_CID_HFLIP:
+       case V4L2_CID_VFLIP:
+-      case V4L2_CID_HCENTER:
+-      case V4L2_CID_VCENTER:
+ #ifdef V4L2_CID_PAN_RESET
+       case V4L2_CID_PAN_RESET:
+ #endif
