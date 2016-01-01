@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/01 00:43:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/01 19:10:34 sthen Exp $
 
 COMMENT=	small 3rd-party letsencrypt client
 
 DISTNAME=	acme-tiny-20151215
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/diafygi/acme-tiny
 
