@@ -1,0 +1,3 @@
+apertium-lex-tools provides a module for compiling lexical selection rules
+and processing them in the pipeline. Rules can be manually written, or
+learnt from monolingual or parallel corpora.
