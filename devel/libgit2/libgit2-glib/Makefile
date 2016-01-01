@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/12/12 11:47:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2016/01/01 12:00:15 ajacoutot Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
@@ -19,6 +19,7 @@ MODGNOME_TOOLS=		gobject-introspection vala
 MODPY_VERSION=          ${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+# MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 LIB_DEPENDS=		devel/gobject-introspection \
 			devel/libgit2/libgit2>=0.23.0

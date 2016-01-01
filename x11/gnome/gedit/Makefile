@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.138 2015/11/12 13:01:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.139 2016/01/01 12:00:15 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		3.18.2
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -35,8 +36,10 @@ LIB_DEPENDS=		devel/libpeas>=1.8.0 \
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
-			devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gnome/gvfs #--enable-gvfs-metadata
+
+# MODPY_LIBDIR/gi/overrides/
+RUN_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 

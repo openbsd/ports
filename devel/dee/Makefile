@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/07/09 17:43:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/01 12:00:15 ajacoutot Exp $
 
 COMMENT=		library for Model-View-Controller type across DBus
 
@@ -29,7 +29,7 @@ USE_GMAKE=	Yes
 LIB_DEPENDS=	devel/glib2 \
 		textproc/icu4c
 
-# site-packages/gi/overrides/Dee.pyc
+# MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS=	devel/py-gobject3
 
 CONFIGURE_STYLE=gnu

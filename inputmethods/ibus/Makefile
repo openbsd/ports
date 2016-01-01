@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2015/05/05 17:00:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2016/01/01 12:00:15 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	intelligent input bus framework
 
 DISTNAME =	ibus-1.5.5
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	ibus-1.0	4.0 # 5.504
 
@@ -40,8 +40,10 @@ BUILD_DEPENDS =	devel/iso-codes \
 		lang/vala
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/iso-codes \
-		devel/py-gobject3 \
 		x11/gtk+3,-guic
+
+# MODPY_LIBDIR/gi/overrides/
+RUN_DEPENDS +=	devel/py-gobject3
 
 LIB_DEPENDS =	devel/libnotify \
 		x11/gtk+2 \

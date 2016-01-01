@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/09/24 16:19:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/01 12:00:15 ajacoutot Exp $
 
 COMMENT=		accounts management library for GLib applications
 
@@ -28,6 +28,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		devel/py-gobject3
+# MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS=		devel/py-gobject3
 LIB_DEPENDS=		textproc/libxml
 

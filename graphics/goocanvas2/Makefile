@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/01/01 11:08:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2016/01/01 12:00:15 ajacoutot Exp $
 
 COMMENT=		canvas widget for GTK+ based on Cairo
 
@@ -28,6 +28,7 @@ MODULES=	devel/gettext \
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
+# MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
 LIB_DEPENDS=	x11/gtk+3
 
