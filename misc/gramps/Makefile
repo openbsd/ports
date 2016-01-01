@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2016/01/01 08:29:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2016/01/01 11:32:15 ajacoutot Exp $
 
 COMMENT=		Genealogical Research Analysis Management Programming System
 
 MODPY_EGG_VERSION=	4.2.1
 DISTNAME=		gramps-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		misc x11
 
@@ -23,15 +24,14 @@ RUN_DEPENDS=		databases/py-bsddb3${MODPY_FLAVOR} \
 			devel/desktop-file-utils \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			devel/xdg-utils \
+			fonts/freefont-ttf \
 			geo/osm-gps-map \
-			graphics/goocanvas \
 			graphics/libgexiv2 \
 			graphics/py-Pillow${MODPY_FLAVOR} \
 			math/graphviz \
 			misc/shared-mime-info \
 			textproc/gtkspell3 \
 			textproc/py-ICU${MODPY_FLAVOR} \
-			www/webkit,gtk3 \
 			x11/gtk+3,-guic
 
 MODPY_DISTUTILS_BUILD=	build
