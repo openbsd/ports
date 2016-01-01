@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/01 21:01:38 jasper Exp $
 
 COMMENT=	flock(2) manager for shell scripts
 
 V=		20110525
 
-PKGNAME=	flock-${V}
+DISTNAME=	flock-${V}
 CATEGORIES=	sysutils
 
 DISTFILES=	flock-${V}.c
