@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.1 2013/06/22 09:31:48 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2016/01/01 21:25:39 jasper Exp $
+
+# All distfiles are unversioned, and no upstream master site available
+PORTROACH =	ignore
 
 PKG_ARCH =	*
 REVISION =	0
