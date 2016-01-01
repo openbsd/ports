@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/04/27 09:45:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/01/01 17:30:33 ajacoutot Exp $
 @conflict pwlib-*
 @pkgpath devel/pwlib
 @pkgpath devel/pwlib,ldap
@@ -188,6 +188,7 @@ lib/ptlib-${V}/devices/sound/
 lib/ptlib-${V}/devices/sound/sndio_pwplugin.so
 lib/ptlib-${V}/devices/videoinput/
 lib/ptlib-${V}/devices/videoinput/bsdvideo_pwplugin.so
+lib/ptlib-${V}/devices/videoinput/v4l2_pwplugin.so
 share/ptlib/
 share/ptlib/make/
 share/ptlib/make/common.mak

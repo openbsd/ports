@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.1 2014/04/25 11:17:26 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.2 2016/01/01 17:30:33 ajacoutot Exp $
 
 Cannot use autoconf: http://sourceforge.net/p/opalvoip/feature-requests/18/
 
 --- configure.orig	Mon Feb 17 03:14:21 2014
-+++ configure	Sat Apr 19 20:07:46 2014
++++ configure	Fri Jan  1 17:33:02 2016
 @@ -640,6 +640,7 @@ HAS_V4L
  HAS_AUDIOSHM
  HAS_SUNAUDIO
@@ -88,6 +88,15 @@ Cannot use autoconf: http://sourceforge.net/p/opalvoip/feature-requests/18/
        # Check whether --enable-pulse was given.
  if test "${enable_pulse+set}" = set; then :
    enableval=$enable_pulse;
+@@ -12590,7 +12621,7 @@ $as_echo "$as_me: V4L2 video disabled by user" >&6;}
+       else
+          case "$target_os" in
+             solaris* | sunos* ) V4L2_HEADER="sys/videodev2.h"   ; ;;
+-            netbsd* )           V4L2_HEADER="sys/videoio.h"     ; ;;
++            netbsd* | OpenBSD* )           V4L2_HEADER="sys/videoio.h"     ; ;;
+             * )	        V4L2_HEADER="linux/videodev2.h" ; ;;
+          esac
+ 
 @@ -14345,6 +14376,7 @@ echo "                            Audio :  ${PTLIB_AUD
  echo "                             ALSA :  ${PTLIB_ALSA}"
  echo "                              ESD :  ${PTLIB_ESD}"

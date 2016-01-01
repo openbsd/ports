@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/10/08 21:19:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2016/01/01 17:30:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ V=		2.12.9
 DISTNAME=	ptlib-${V}
 EXTRACT_SUFX=	.tar.bz2
 SUBST_VARS=	V
-REVISION=	7
+REVISION=	8
 
 SHARED_LIBS=	pt	7.0
 
@@ -46,10 +46,6 @@ CONFIGURE_ARGS=	--enable-plugins \
 		--disable-oss \
 		--disable-pulse \
 		--disable-v8
-
-
-# XXX error: 'struct v4l2_frmsizeenum' has no member named 'discrete'
-CONFIGURE_ARGS+=--disable-v4l2
 
 # XXX needs /proc/net/if_inet6
 CONFIGURE_ARGS+=--disable-ipv6
