@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.112 2015/10/30 00:26:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.113 2016/01/01 22:17:05 naddy Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
-DISTNAME=	curl-7.45.0
-REVISION=	0
-SHARED_LIBS=	curl                 25.1     # 8.0
+VERSION=	7.46.0
+DISTNAME=	curl-${VERSION}
+SHARED_LIBS=	curl                 25.2     # 8.0
 CATEGORIES=	net
 HOMEPAGE=	http://curl.haxx.se/
 
@@ -13,10 +13,9 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://curl.haxx.se/download/ \
-		http://dl.uxnr.de/mirror/curl/ \
-		http://www.execve.net/curl/ \
-		http://curl.askapache.com/download/
+MASTER_SITES=	\
+    https://github.com/bagder/curl/releases/download/curl-${VERSION:S/./_/g}/ \
+    http://curl.haxx.se/download/
 EXTRACT_SUFX=	.tar.lzma
 
 MODULES=	devel/gettext
@@ -33,10 +32,11 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=	ac_cv_path_NROFF="/usr/bin/mandoc -Tascii"
 
 # speed up some time-consuming configure tests
-CONFIGURE_ENV+=curl_cv_func_select_args="int,fd_set *,struct timeval *,int"
-CONFIGURE_ENV+=curl_cv_func_recv_args="int,void *,size_t,int,ssize_t"
-CONFIGURE_ENV+=curl_cv_func_send_args="int,const void *,size_t,int,ssize_t"
-CONFIGURE_ENV+=curl_cv_func_getnameinfo_args="const struct sockaddr *,socklen_t,size_t,int"
+CONFIGURE_ENV+= \
+    curl_cv_func_select_args="int,fd_set *,struct timeval *,int" \
+    curl_cv_func_recv_args="int,void *,size_t,int,ssize_t" \
+    curl_cv_func_send_args="int,const void *,size_t,int,ssize_t" \
+    curl_cv_func_getnameinfo_args="const struct sockaddr *,socklen_t,size_t,int"
 
 # Note:
 # use ulimit -p 256 for test
