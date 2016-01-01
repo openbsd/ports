@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/12/31 10:02:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2016/01/01 11:41:26 ajacoutot Exp $
 
 COMMENT=	fast and simple mbox folder reader
 
@@ -12,12 +12,14 @@ MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 BUILD_DEPENDS=	devel/p5-Benchmark-Timer \
-		devel/p5-FileHandle-Unget
+		devel/p5-File-Slurp \
+		devel/p5-FileHandle-Unget \
+		www/p5-URI
+
 RUN_DEPENDS=	devel/p5-FileHandle-Unget \
 		archivers/bzip2
 
-TEST_DEPENDS=	devel/p5-File-Slurp \
-		textproc/p5-Text-Diff
+TEST_DEPENDS=	textproc/p5-Text-Diff
 
 CONFIGURE_ARGS=	BZIP2=${LOCALBASE}/bin/bzip2
 
