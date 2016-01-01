@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1437 2015/12/29 17:44:19 pascal Exp $
+# $OpenBSD: Makefile,v 1.1438 2016/01/01 20:25:21 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1256,6 +1256,7 @@
      SUBDIR += py-hgtools
      SUBDIR += py-hgtools,python3
      SUBDIR += py-html5lib
+     SUBDIR += py-html5lib,python3
      SUBDIR += py-iniparse
      SUBDIR += py-ioflo
      SUBDIR += py-ipykernel
