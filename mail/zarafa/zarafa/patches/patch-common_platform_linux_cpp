@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_platform_linux_cpp,v 1.7 2015/11/02 11:06:34 robert Exp $
---- common/platform.linux.cpp.orig	Wed Aug  5 17:30:48 2015
-+++ common/platform.linux.cpp	Thu Aug 20 13:23:31 2015
+$OpenBSD: patch-common_platform_linux_cpp,v 1.8 2016/01/02 13:57:12 robert Exp $
+--- common/platform.linux.cpp.orig	Sat Oct 31 00:03:13 2015
++++ common/platform.linux.cpp	Sat Jan  2 14:29:02 2016
 @@ -59,6 +59,8 @@
  #include <cerrno>
  #include <climits>
@@ -42,3 +42,53 @@ $OpenBSD: patch-common_platform_linux_cpp,v 1.7 2015/11/02 11:06:34 robert Exp $
  #else
  	uuid_t g;
  	uuid_generate(g);
+@@ -168,18 +158,33 @@ void Sleep(unsigned int msec) {
+ 
+ static void rand_fail(void)
+ {
++#ifdef HAVE_GETENTROPY
++	fprintf(stderr, "getentropy() failed, this is fatal (%s)\n", strerror(errno));
++#else
+ 	fprintf(stderr, "Cannot access/use /dev/urandom, this is fatal (%s)\n", strerror(errno));
++#endif
+ 	kill(0, SIGTERM);
+ 	exit(1);
+ }
+-	
++
+ void rand_get(char *p, int n)
+ {
++#ifdef HAVE_GETENTROPY
++	while (n > 0) {
++		size_t len = n < 256 ? n : 256;
++		int rc = getentropy(p, n);
++		if (rc < 0)
++			rand_fail();
++
++		p += len;
++		n -= len;
++	}
++#else
+ 	int fd = open("/dev/urandom", O_RDONLY);
+ 
+ 	if (fd == -1)
+ 		rand_fail();
+-	
++
+ 	// handle EINTR
+ 	while(n > 0)
+ 	{
+@@ -199,10 +204,10 @@ void rand_get(char *p, int n)
+ 		p += rc;
+ 		n -= rc;
+ 	}
++	close(fd);
++#endif
++}
+ 
+-		close(fd);
+-	}
+-	
+ void rand_init() {
+ 	unsigned int seed = 0;
+ 	rand_get((char *)&seed, sizeof(seed));
