@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/12/03 21:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2016/01/02 22:42:23 sthen Exp $
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 COMMENT-mac =	MAC address vendor list
@@ -7,9 +7,8 @@ REVISION-main =	11
 PKGNAME-main =	${DISTNAME}
 CATEGORIES =	net
 
-M =		20151103
+M =		20160102
 PKGNAME-mac =	mac-vendor-$M
-REVISION-mac =	0
 
 HOMEPAGE =	http://www.nta-monitor.com/tools-resources/security-tools/arp-scan
 
@@ -55,13 +54,13 @@ post-install:
 #
 # XXX should use mktemp, but the fetches are too flaky at the moment
 listing:
-	base='https://services13.ieee.org/RST/standards-ra-web/rest/assignments/download/'; \
+	base='http://standards-oui.ieee.org'; \
 	f=oui-iab-`date +%Y%m%d`; t=/tmp/$$f/oui-iab; \
 	mkdir -p $$t; cd $$t; \
-	[ -r iab.csv ] || ftp -o iab.csv $$base?registry=IAB; \
-	[ -r ma-l.csv ] || ftp -o ma-l.csv $$base?registry=MA-L; \
-	[ -r ma-m.csv ] || ftp -o ma-m.csv $$base?registry=MA-M; \
-	[ -r ma-s.csv ] || ftp -o ma-s.csv $$base?registry=MA-S; \
+	[ -r iab.csv ] || ftp -o iab.csv $$base/iab/iab.csv; \
+	[ -r ma-l.csv ] || ftp -o ma-l.csv $$base/oui/oui.csv; \
+	[ -r ma-m.csv ] || ftp -o ma-m.csv $$base/oui28/mam.csv; \
+	[ -r ma-s.csv ] || ftp -o ma-s.csv $$base/oui36/oui36.csv; \
 	cd ..; tar cjf $$f.tar.bz2 oui-iab; scp $$f.tar.bz2 naiad:mirrors/
 
 .include <bsd.port.mk>
