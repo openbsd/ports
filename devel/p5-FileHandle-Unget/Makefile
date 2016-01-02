@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/12/31 10:01:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/02 12:36:52 ajacoutot Exp $
 
 COMMENT=	filehandle which supports ungetting of multiple bytes
 
@@ -11,6 +11,8 @@ MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-TEST_DEPENDS=	devel/p5-File-Slurp
+BUILD_DEPENDS=	www/p5-URI
+TEST_DEPENDS=	devel/p5-File-Slurp \
+		devel/p5-Test-Po
 
 .include <bsd.port.mk>
