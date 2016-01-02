@@ -1,11 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2016/01/02 13:42:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/02 21:06:45 sthen Exp $
 COMMENT =		browser aiming to recreate classic Opera (12.x) UI using Qt5
 
 GH_ACCOUNT =		OtterBrowser
 GH_PROJECT =		otter-browser
-V =			0.9.09
-GH_TAGNAME =		v$V
-
+V =			0.9.09pl0
+# GH_TAGNAME =		v$V
+# We grab a GH_COMMIT because upstream released hotfixes
+# that we were asked to incorporate:
+# - fixed checkboxes in content blocking manager
+# - fixed saving dialog sizes
+# - added extra fallback when looking for address field associated with tab
+GH_COMMIT =		d1a1b0bbc8d80d0d7ed7a1fbbf83975a5ddea69e
 DISTNAME =		${GH_PROJECT}-$V
 
 CATEGORIES =		www
