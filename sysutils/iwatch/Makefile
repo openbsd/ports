@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1 2015/01/12 06:37:07 yasuoka Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/02 14:59:06 jasper Exp $
 
 COMMENT =		watch the command output with interval timer
 
-V = 			1.0.2
+V = 			1.0.3
 GH_ACCOUNT =		iij
 GH_PROJECT =		iwatch
 GH_TAGNAME =		v${V}
