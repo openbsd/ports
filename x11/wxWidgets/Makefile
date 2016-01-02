@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2016/01/02 21:27:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2016/01/02 21:30:52 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -38,7 +38,8 @@ SHARED_LIBS =	wx_base			3.0	\
 
 HOMEPAGE =	http://www.wxwidgets.org/
 
-# modified LGPL
+# wxWindows (modified LGPL)
+# http://www.wxwidgets.org/about/licence/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MULTI_PACKAGES = -main -media
