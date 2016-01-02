@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2014/09/19 16:08:26 rpe Exp $
+$OpenBSD: README,v 1.4 2016/01/02 19:05:34 rpe Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,11 +13,12 @@ It can be accessed by pointing you browser to:
 
 Post-installation instructions
 ==============================
-For nginx configuration examples see:
+To use selfoss with nginx you have to install the php-fpm package. For
+configuration examples see:
 	https://github.com/SSilence/selfoss/wiki/nginx-configuration
 
-With Apache, AllowOverride settings on the ${INSTDIR} directory,
-the headers_module and the rewrite_module are required.
+With Apache, AllowOverride settings on the ${INSTDIR} directory and
+the rewrite_module are required.
 
 You can configure this as follows:
     # ln -sf ${PREFIX}/conf/modules.sample/selfoss.conf \
@@ -28,7 +29,7 @@ following methods:
     1. ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini
     allow_url_fopen = On
 
-    2. /var/www/conf/httpd.conf (main server or VirtualHost)
+    2. ${PREFIX}/conf/httpd.conf (main server or VirtualHost)
     php_admin_value allow_url_fopen 1
 
     3. ${PREFIX}/conf/modules.sample/selfoss.conf
@@ -59,8 +60,5 @@ Update feeds
 You need to choose an update method for the feeds as explained in
 the installation part of the documentation on http://selfoss.aditu.de/.
 
-You can run the update process from a cronjob:
-*/5	*	*	*	*	ftp -Vo /dev/null http://<hostname>/selfoss/update
-
-If you use authentication, you might set "allow_public_update_access=1"
-and limit access to that url to localhost in your webserver config.
+You can run the update process from a cronjob as user www:
+*/5	*	*	*	*	${LOCALBASE}/bin/php-${MODPHP_VERSION} ${PREFIX}/selfoss/cliupdate.php

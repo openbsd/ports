@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2015/12/30 10:01:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2016/01/02 19:05:34 rpe Exp $
 
 COMMENT=		rss reader, live stream, mashup, aggregation webapp
 
-V=			2.13
-DISTNAME=		selfoss-$V
+GH_TAGNAME=		2.14
+GH_ACCOUNT=		SSilence
+GH_PROJECT=		selfoss
+
 CATEGORIES=		www
-REVISION=		1
 
 HOMEPAGE=		http://selfoss.aditu.de/
 
@@ -13,9 +14,6 @@ MAINTAINER=		Robert Peichaer <rpe@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=		https://github.com/SSilence/selfoss/releases/download/$V/
-EXTRACT_SUFX=		.zip
 
 MODULES=		lang/php
 
@@ -30,15 +28,8 @@ INSTDIR=		${PREFIX}/selfoss
 TINSTDIR=		${TRUEPREFIX}/selfoss
 SUBST_VARS=		INSTDIR MODPHP_VERSION TINSTDIR
 
-do-extract:
-	mkdir -p ${WRKDIST}
-	unzip -oq -d ${WRKDIST} ${FULLDISTDIR}/${EXTRACT_ONLY}
-	find ${WRKDIST} -type f | \
-		egrep '\.(css|htaccess|ini|js|md|php|phtml|txt)' | \
-		xargs perl -i -pe 's/\r$$//'
-
 do-install:
-	perl -i -pe 's,^#(RewriteBase /selfoss.*),\1,' ${WRKDIST}/.htaccess
+	sed -i 's,^#\(RewriteBase /selfoss.*\),\1,' ${WRKDIST}/.htaccess
 	cp -Rp ${WRKDIST} ${INSTDIR}
 	${SUBST_CMD} -m 0644 -c ${FILESDIR}/selfoss.conf ${INSTDIR}/selfoss.conf.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
