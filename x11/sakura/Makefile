@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2015/10/13 11:03:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/01/02 08:45:57 jasper Exp $
 
-V =		3.3.0
+V =		3.3.3
 COMMENT =	GTK and VTE based terminal emulator
 DISTNAME =	sakura-${V}
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	x11
-REVISION =	1
 
 HOMEPAGE =	http://www.pleyades.net/david/projects/sakura/
 
