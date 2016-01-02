@@ -1,13 +1,13 @@
-$OpenBSD: patch-common_osdep_h,v 1.4 2015/12/25 07:51:37 ajacoutot Exp $
+$OpenBSD: patch-common_osdep_h,v 1.5 2016/01/02 07:49:19 ajacoutot Exp $
 --- common/osdep.h.orig	Tue Jul 28 16:45:03 2015
-+++ common/osdep.h	Wed Dec 23 21:39:40 2015
++++ common/osdep.h	Fri Dec 25 03:30:17 2015
 @@ -234,7 +234,8 @@ int x264_threading_init( void );
  static ALWAYS_INLINE int x264_pthread_fetch_and_add( int *val, int add, x264_pthread_mutex_t *mutex )
  {
  #if HAVE_THREAD
 -#if defined(__GNUC__) && (__GNUC__ > 4 || __GNUC__ == 4 && __GNUC_MINOR__ > 0) && ARCH_X86
 +#if defined(__GNUC__) && (__GNUC__ > 4 || __GNUC__ == 4 && __GNUC_MINOR__ > 0) &&\
-+      (ARCH_ALPHA || ARCH_MIPS || ARCH_PPC || ARCH_SPARC || ARCH_X86 || ARCH_X86_64)
++      (ARCH_ALPHA || ARCH_MIPS || ARCH_PPC || ARCH_SPARC64 || ARCH_X86 || ARCH_X86_64)
      return __sync_fetch_and_add( val, add );
  #else
      x264_pthread_mutex_lock( mutex );
