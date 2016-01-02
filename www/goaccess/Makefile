@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/01 10:13:33 kirby Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/02 13:03:17 kirby Exp $
 
 PORTROACH = 		skipv:0.11,0.12
 
 COMMENT =		realtime console web log analyzer
 
-DISTNAME =		goaccess-0.9.6
+DISTNAME =		goaccess-0.9.7
 
 CATEGORIES =		www
 HOMEPAGE =		http://goaccess.io/
