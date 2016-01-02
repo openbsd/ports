@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2012/09/04 17:17:08 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2016/01/02 21:27:56 jasper Exp $
 @conflict wxWidgets-headers-*
 @conflict wxWidgets-gtkheaders-*
 @conflict wxWidgets-x11univ-*
@@ -373,7 +373,6 @@ include/wx/longlong.h
 include/wx/math.h
 include/wx/matrix.h
 include/wx/mdi.h
-include/wx/mediactrl.h
 include/wx/memconf.h
 include/wx/memory.h
 include/wx/memtext.h

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2015/07/05 15:17:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2016/01/02 21:27:56 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -9,8 +9,8 @@ V =		2.8.12
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk2-${V}
 PKGNAME-media =	wxWidgets-media-${V}
-REVISION-main =	10
-REVISION-media =5
+REVISION-main =	11
+REVISION-media =6
 CATEGORIES =	x11
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=wxwindows/}
 
