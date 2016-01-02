@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.37 2015/12/03 21:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2016/01/02 22:23:46 sthen Exp $
 
 COMMENT=	find the country where IP address/hostname originates from
 
 V=		1.6.5
-REVISION=	1
+REVISION=	2
 DISTNAME=	GeoIP-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		geolite-data-20151017.tar.bz2:0
+		geolite-data-20160102.tar.bz2:0
 
 SHARED_LIBS +=	GeoIP                9.0      # 7.3
 
