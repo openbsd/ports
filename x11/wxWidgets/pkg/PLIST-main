@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2016/01/02 21:27:56 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2016/01/02 22:19:06 jasper Exp $
 @conflict wxWidgets-headers-*
 @conflict wxWidgets-gtkheaders-*
 @conflict wxWidgets-x11univ-*
@@ -6,7 +6,7 @@
 @conflict wxWidgets-lesstif-*
 @conflict wxWidgets-gtk-*
 @conflict wxWidgets-gtk2-*
-@conflict wxWidgets-media-<2.8.12p0
+@conflict wxWidgets-media-<2.8.12p6
 @pkgpath x11/wxWidgets/x11univ
 @pkgpath x11/wxWidgets/motif
 @pkgpath x11/wxWidgets/lesstif
