@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2015/07/19 23:46:08 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/02 22:00:49 naddy Exp $
 bin/autopoint
 bin/gettextize
 @bin bin/msgattrib
@@ -1852,6 +1852,15 @@ share/gettext/intl/version.c
 share/gettext/intl/wprintf-parse.h
 share/gettext/intl/xsize.c
 share/gettext/intl/xsize.h
+share/gettext/its/
+share/gettext/its/appdata.its
+share/gettext/its/appdata.loc
+share/gettext/its/glade.loc
+share/gettext/its/glade1.its
+share/gettext/its/glade2.its
+share/gettext/its/gsettings.its
+share/gettext/its/gsettings.loc
+share/gettext/its/gtkbuilder.its
 share/gettext/javaversion.class
 share/gettext/msgunfmt.tcl
 share/gettext/po/

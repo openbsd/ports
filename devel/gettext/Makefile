@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.77 2015/09/14 19:48:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.78 2016/01/02 22:00:49 naddy Exp $
 
 COMMENT=	GNU gettext runtime libraries and programs
 
-DISTNAME=	gettext-0.19.6
+DISTNAME=	gettext-0.19.7
 SHARED_LIBS +=  intl                 6.0      # 9.4
 SHARED_LIBS +=  asprintf             1.1      # unknown
 

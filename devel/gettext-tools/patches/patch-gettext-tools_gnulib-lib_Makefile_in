@@ -1,22 +1,22 @@
-$OpenBSD: patch-gettext-tools_gnulib-lib_Makefile_in,v 1.2 2015/09/14 19:48:45 naddy Exp $
+$OpenBSD: patch-gettext-tools_gnulib-lib_Makefile_in,v 1.3 2016/01/02 22:00:49 naddy Exp $
 
 Use standard shared library versioning.
 
 Do not remove static library after building.
 This was also a race if MAKE_JOBS > 1.
 
---- gettext-tools/gnulib-lib/Makefile.in.orig	Fri Sep 11 05:05:09 2015
-+++ gettext-tools/gnulib-lib/Makefile.in	Mon Sep 14 16:53:57 2015
-@@ -2181,7 +2181,7 @@ EXTRA_libgettextlib_la_SOURCES = acl_entries.c atexit.
- #libgettextlib_la_LDFLAGS += $(LTLIBUNISTRING) @LTLIBINTL@ @LTLIBICONV@ @LIB_ACL@
- libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(LIB_ACL) \
- 	$(LTLIBICONV) $(LTLIBINTL) $(LTLIBTHREAD) $(LTLIBUNISTRING) \
--	$(OPENMP_CFLAGS) @INTL_MACOSX_LIBS@ -release @VERSION@ \
-+	$(OPENMP_CFLAGS) @INTL_MACOSX_LIBS@ \
- 	$(am__append_3) $(am__append_12)
+--- gettext-tools/gnulib-lib/Makefile.in.orig	Mon Dec 28 00:09:40 2015
++++ gettext-tools/gnulib-lib/Makefile.in	Sat Jan  2 21:42:01 2016
+@@ -2473,7 +2473,7 @@ libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined
+ 	$(ISNAND_LIBM) $(ISNANF_LIBM) $(ISNANL_LIBM) $(LIB_ACL) \
+ 	$(LOG10_LIBM) $(LTLIBICONV) $(LTLIBINTL) $(LTLIBTHREAD) \
+ 	$(LTLIBUNISTRING) $(OPENMP_CFLAGS) $(POW_LIBM) \
+-	@INTL_MACOSX_LIBS@ -release @VERSION@ $(am__append_3) \
++	@INTL_MACOSX_LIBS@ $(am__append_3) \
+ 	$(am__append_12)
  
  # Use this preprocessor expression to decide whether #include_next works.
-@@ -3400,7 +3400,7 @@ getopt.h: getopt.in.h $(top_builddir)/config.status $(
+@@ -3708,7 +3708,7 @@ getopt.h: getopt.in.h $(top_builddir)/config.status $(
  	mv -f $@-t $@
  
  # No need to install libgettextlib.a, except on AIX.

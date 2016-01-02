@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/14 19:48:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/02 22:00:49 naddy Exp $
 
 COMMENT=	GNU gettext development and translation tools
 
-VERSION=	0.19.6
+VERSION=	0.19.7
 DISTNAME=	gettext-${VERSION}
 PKGNAME=	gettext-tools-${VERSION}
-SHARED_LIBS +=  gettextlib           6.0      # unknown
-SHARED_LIBS +=  gettextsrc           5.1      # unknown
-SHARED_LIBS +=  gettextpo            7.1      # 5.3
+SHARED_LIBS +=  gettextlib           7.0      # unknown
+SHARED_LIBS +=  gettextsrc           6.0      # unknown
+SHARED_LIBS +=  gettextpo            8.0      # 5.3
 
 CATEGORIES=	devel
 # DPB: parallel-safe, not worth it. Too much time in configure
@@ -25,7 +25,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	devel/gettext
 MODGETTEXT_TOOLS=No
 
-WANTLIB=	c expat m ncurses
+WANTLIB=	c m ncurses
 
 # required by the autopoint tool
 RUN_DEPENDS=	archivers/xz
