@@ -1,4 +1,4 @@
-$OpenBSD: patch-common_platform_linux_cpp,v 1.8 2016/01/02 13:57:12 robert Exp $
+$OpenBSD: patch-common_platform_linux_cpp,v 1.9 2016/01/02 15:29:12 robert Exp $
 --- common/platform.linux.cpp.orig	Sat Oct 31 00:03:13 2015
 +++ common/platform.linux.cpp	Sat Jan  2 14:29:02 2016
 @@ -59,6 +59,8 @@
@@ -61,7 +61,7 @@ $OpenBSD: patch-common_platform_linux_cpp,v 1.8 2016/01/02 13:57:12 robert Exp $
 +#ifdef HAVE_GETENTROPY
 +	while (n > 0) {
 +		size_t len = n < 256 ? n : 256;
-+		int rc = getentropy(p, n);
++		int rc = getentropy(p, len);
 +		if (rc < 0)
 +			rand_fail();
 +
