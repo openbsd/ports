@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2015/04/04 09:21:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2016/01/03 09:06:49 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.10.11
+VERSION=	2.10.12
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
@@ -18,10 +18,6 @@ FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
-
-REVISION-main=		2
-REVISION-libpurple=	2
-REVISION-finch=	1
 
 SHARED_LIBS=	jabber		0.0 \
 		oscar		0.0 \
@@ -70,7 +66,7 @@ LIB_DEPENDS-libpurple=	${LIB_DEPENDS} \
 			devel/libidn \
 			devel/silc-toolkit \
 			net/meanwhile \
-			net/libgadu>=1.12.0
+			net/libgadu>=1.12.1
 
 MODGCONF2_SCHEMAS_DIR=	pidgin
 MODGCONF2_LIBDEP=	No

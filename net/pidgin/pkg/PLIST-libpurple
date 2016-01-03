@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libpurple,v 1.22 2014/10/28 01:14:23 brad Exp $
+@comment $OpenBSD: PLIST-libpurple,v 1.23 2016/01/03 09:06:49 ajacoutot Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
 @pkgpath net/pidgin,-libpurple,gtkspell
@@ -129,6 +129,8 @@ share/purple/ca-certs/America_Online_Root_Certification_Authority_1.pem
 share/purple/ca-certs/Baltimore_CyberTrust_Root.pem
 share/purple/ca-certs/CAcert_Class3.pem
 share/purple/ca-certs/CAcert_Root.pem
+share/purple/ca-certs/Certum_Root_CA.pem
+share/purple/ca-certs/Certum_Trusted_Network_CA.pem
 share/purple/ca-certs/Deutsche_Telekom_Root_CA_2.pem
 share/purple/ca-certs/DigiCertHighAssuranceCA-3.pem
 share/purple/ca-certs/DigiCertHighAssuranceEVRootCA.pem

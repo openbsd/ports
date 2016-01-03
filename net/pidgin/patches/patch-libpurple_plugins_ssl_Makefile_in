@@ -1,6 +1,6 @@
-$OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.31 2015/01/05 08:29:37 brad Exp $
---- libpurple/plugins/ssl/Makefile.in.orig	Sun Nov 23 11:41:58 2014
-+++ libpurple/plugins/ssl/Makefile.in	Wed Nov 26 23:35:38 2014
+$OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.32 2016/01/03 09:06:49 ajacoutot Exp $
+--- libpurple/plugins/ssl/Makefile.in.orig	Thu Dec 31 18:19:51 2015
++++ libpurple/plugins/ssl/Makefile.in	Sat Jan  2 19:53:32 2016
 @@ -120,6 +120,20 @@ am__uninstall_files_from_dir = { \
  am__installdirs = "$(DESTDIR)$(plugindir)"
  LTLIBRARIES = $(plugin_LTLIBRARIES)
@@ -32,7 +32,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.31 2015/01/05 08:29:37 bra
  am__can_run_installinfo = \
    case $$AM_UPDATE_INFO_DIR in \
      n|no|NO) false;; \
-@@ -376,6 +391,8 @@ NSS_CFLAGS = @NSS_CFLAGS@
+@@ -381,6 +396,8 @@ NSS_CFLAGS = @NSS_CFLAGS@
  NSS_LIBS = @NSS_LIBS@
  OBJDUMP = @OBJDUMP@
  OBJEXT = @OBJEXT@
@@ -41,7 +41,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.31 2015/01/05 08:29:37 bra
  OTOOL = @OTOOL@
  OTOOL64 = @OTOOL64@
  PACKAGE = @PACKAGE@
-@@ -508,6 +525,7 @@ EXTRA_DIST = \
+@@ -513,6 +530,7 @@ EXTRA_DIST = \
  
  plugindir = $(libdir)/purple-$(PURPLE_MAJOR_VERSION)
  ssl_la_LDFLAGS = -module -avoid-version
@@ -49,7 +49,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.31 2015/01/05 08:29:37 bra
  ssl_gnutls_la_LDFLAGS = -module -avoid-version
  ssl_nss_la_LDFLAGS = -module -avoid-version
  nss_prefs_la_LDFLAGS = -module -avoid-version
-@@ -523,12 +541,16 @@ nss_prefs_la_LDFLAGS = -module -avoid-version
+@@ -528,12 +546,16 @@ nss_prefs_la_LDFLAGS = -module -avoid-version
  @PLUGINS_TRUE@@USE_GNUTLS_TRUE@@USE_NSS_FALSE@	ssl.la           \
  @PLUGINS_TRUE@@USE_GNUTLS_TRUE@@USE_NSS_FALSE@	ssl-gnutls.la
  
@@ -66,7 +66,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.31 2015/01/05 08:29:37 bra
  @PLUGINS_TRUE@@USE_GNUTLS_TRUE@@USE_NSS_TRUE@	ssl-gnutls.la    \
  @PLUGINS_TRUE@@USE_GNUTLS_TRUE@@USE_NSS_TRUE@	ssl-nss.la		\
  @PLUGINS_TRUE@@USE_GNUTLS_TRUE@@USE_NSS_TRUE@	nss-prefs.la
-@@ -538,6 +560,7 @@ nss_prefs_la_LDFLAGS = -module -avoid-version
+@@ -543,6 +565,7 @@ nss_prefs_la_LDFLAGS = -module -avoid-version
  @PLUGINS_TRUE@ssl_nss_la_SOURCES = ssl-nss.c
  @PLUGINS_TRUE@nss_prefs_la_SOURCES = nss-prefs.c
  @PLUGINS_TRUE@ssl_la_LIBADD = $(GLIB_LIBS)
@@ -74,7 +74,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.31 2015/01/05 08:29:37 bra
  @PLUGINS_TRUE@ssl_gnutls_la_LIBADD = $(GLIB_LIBS) $(GNUTLS_LIBS)
  @PLUGINS_TRUE@ssl_nss_la_LIBADD = $(GLIB_LIBS) $(NSS_LIBS)
  @PLUGINS_TRUE@nss_prefs_la_LIBADD = $(GLIB_LIBS) $(NSS_LIBS)
-@@ -550,6 +573,7 @@ AM_CPPFLAGS = \
+@@ -555,6 +578,7 @@ AM_CPPFLAGS = \
  	$(GLIB_CFLAGS) \
  	$(PLUGIN_CFLAGS)
  
@@ -82,7 +82,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.31 2015/01/05 08:29:37 bra
  ssl_gnutls_la_CFLAGS = $(AM_CPPFLAGS) $(GNUTLS_CFLAGS)
  ssl_nss_la_CFLAGS = $(AM_CPPFLAGS) $(NSS_CFLAGS)
  nss_prefs_la_CFLAGS = $(AM_CPPFLAGS) $(NSS_CFLAGS)
-@@ -626,6 +650,9 @@ clean-pluginLTLIBRARIES:
+@@ -631,6 +655,9 @@ clean-pluginLTLIBRARIES:
  nss-prefs.la: $(nss_prefs_la_OBJECTS) $(nss_prefs_la_DEPENDENCIES) $(EXTRA_nss_prefs_la_DEPENDENCIES) 
  	$(AM_V_CCLD)$(nss_prefs_la_LINK) $(am_nss_prefs_la_rpath) $(nss_prefs_la_OBJECTS) $(nss_prefs_la_LIBADD) $(LIBS)
  
@@ -92,7 +92,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.31 2015/01/05 08:29:37 bra
  ssl-gnutls.la: $(ssl_gnutls_la_OBJECTS) $(ssl_gnutls_la_DEPENDENCIES) $(EXTRA_ssl_gnutls_la_DEPENDENCIES) 
  	$(AM_V_CCLD)$(ssl_gnutls_la_LINK) $(am_ssl_gnutls_la_rpath) $(ssl_gnutls_la_OBJECTS) $(ssl_gnutls_la_LIBADD) $(LIBS)
  
-@@ -643,6 +670,7 @@ distclean-compile:
+@@ -648,6 +675,7 @@ distclean-compile:
  
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nss_prefs_la-nss-prefs.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ssl.Plo@am__quote@
@@ -100,7 +100,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.31 2015/01/05 08:29:37 bra
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ssl_gnutls_la-ssl-gnutls.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ssl_nss_la-ssl-nss.Plo@am__quote@
  
-@@ -666,6 +694,13 @@ distclean-compile:
+@@ -671,6 +699,13 @@ distclean-compile:
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
