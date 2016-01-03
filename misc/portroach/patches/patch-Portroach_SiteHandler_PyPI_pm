@@ -1,0 +1,29 @@
+$OpenBSD: patch-Portroach_SiteHandler_PyPI_pm,v 1.1 2016/01/03 20:35:45 jasper Exp $
+
+From e93b8331f6e5f850bbb5faca866efcbf73de756c Mon Sep 17 00:00:00 2001
+From: Alexander Shadchin <alexandr.shadchin@gmail.com>
+Date: Fri, 18 Dec 2015 03:29:57 +0500
+Subject: [PATCH] Fix PyPI
+
+--- Portroach/SiteHandler/PyPI.pm.orig	Fri Jan  1 21:46:36 2016
++++ Portroach/SiteHandler/PyPI.pm	Sun Jan  3 21:34:31 2016
+@@ -109,14 +109,13 @@ sub GetFiles
+ 	$ua->agent(USER_AGENT);
+ 	$resp = $ua->request(HTTP::Request->new(GET => $query));
+ 	if ($resp->is_success) {
+-	    my ($json, $info, $version);
++	    my ($json, $urls);
+ 
+     	    $json = decode_json($resp->decoded_content);
+-	    $info = $json->{info};
+-	    $version = $info->{version};
+-	    next unless $version;
+-
+-	    push(@$files, $json->{releases}{$version}[0]{filename});
++	    $urls = $json->{urls};
++	    foreach my $url (@$urls) {
++		push(@$files, $url->{filename});
++	    }
+ 	} else {
+ 	    _debug("GET failed: " . $resp->code);
+ 	    return 0;
