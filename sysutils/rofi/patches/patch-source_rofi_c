@@ -1,13 +1,13 @@
-$OpenBSD: patch-source_rofi_c,v 1.4 2016/01/03 20:00:10 jasper Exp $
+$OpenBSD: patch-source_rofi_c,v 1.5 2016/01/03 20:15:00 jasper Exp $
 
 From 043a67d0624d4ff349e3146434677e837aa427e8 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Sun, 3 Jan 2016 20:49:13 +0100
 Subject: [PATCH] Workaround lack of sigwaitinfo() on OpenBSD.
 
---- source/rofi.c.orig	Sun Nov  8 10:43:52 2015
-+++ source/rofi.c	Sun Jan  3 20:51:42 2016
-@@ -1981,11 +1981,18 @@ static gpointer rofi_signal_handler_process ( gpointer
+--- source/rofi.c.orig	Sun Dec 27 19:45:50 2015
++++ source/rofi.c	Sun Jan  3 20:54:15 2016
+@@ -2217,11 +2217,18 @@ static gpointer rofi_signal_handler_process ( gpointer
      sigaddset ( &set, SIGUSR1 );
      // loop forever.
      while ( 1 ) {
