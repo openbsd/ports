@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/03 16:42:15 zhuk Exp $
+!%%qt5%%
+include/${PKGSTEM}1/
+include/${PKGSTEM}1/PolkitQt1/
+include/${PKGSTEM}1/PolkitQt1/ActionDescription
+include/${PKGSTEM}1/PolkitQt1/Agent/
+include/${PKGSTEM}1/PolkitQt1/Agent/Listener
+include/${PKGSTEM}1/PolkitQt1/Agent/Session
+include/${PKGSTEM}1/PolkitQt1/Authority
+include/${PKGSTEM}1/PolkitQt1/Details
+include/${PKGSTEM}1/PolkitQt1/Gui/
+include/${PKGSTEM}1/PolkitQt1/Gui/Action
+include/${PKGSTEM}1/PolkitQt1/Gui/ActionButton
+include/${PKGSTEM}1/PolkitQt1/Gui/ActionButtons
+include/${PKGSTEM}1/PolkitQt1/Identity
+include/${PKGSTEM}1/PolkitQt1/Subject
+include/${PKGSTEM}1/PolkitQt1/TemporaryAuthorization
+include/${PKGSTEM}1/polkitqt1-actiondescription.h
+include/${PKGSTEM}1/polkitqt1-agent-listener.h
+include/${PKGSTEM}1/polkitqt1-agent-session.h
+include/${PKGSTEM}1/polkitqt1-authority.h
+include/${PKGSTEM}1/polkitqt1-details.h
+include/${PKGSTEM}1/polkitqt1-export.h
+include/${PKGSTEM}1/polkitqt1-gui-action.h
+include/${PKGSTEM}1/polkitqt1-gui-actionbutton.h
+include/${PKGSTEM}1/polkitqt1-gui-actionbuttons.h
+include/${PKGSTEM}1/polkitqt1-identity.h
+include/${PKGSTEM}1/polkitqt1-subject.h
+include/${PKGSTEM}1/polkitqt1-temporaryauthorization.h
+include/${PKGSTEM}1/polkitqt1-version.h
+lib/cmake/${CMAKESTEM}/
+lib/cmake/${CMAKESTEM}/${CMAKESTEM}Config.cmake
+lib/cmake/${CMAKESTEM}/${CMAKESTEM}ConfigVersion.cmake
+lib/cmake/${CMAKESTEM}/${CMAKESTEM}Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/${CMAKESTEM}/${CMAKESTEM}Targets.cmake
+@lib lib/lib${PKGSTEM}agent-1.so.${LIB${PKGSTEM}agent-1_VERSION}
+@lib lib/lib${PKGSTEM}core-1.so.${LIB${PKGSTEM}core-1_VERSION}
+@lib lib/lib${PKGSTEM}gui-1.so.${LIB${PKGSTEM}gui-1_VERSION}
+lib/pkgconfig/${PKGSTEM}1.pc
+lib/pkgconfig/${PKGSTEM}agent-1.pc
+lib/pkgconfig/${PKGSTEM}core-1.pc
+lib/pkgconfig/${PKGSTEM}gui-1.pc
