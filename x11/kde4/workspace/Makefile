@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2015/12/21 10:17:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2016/01/03 16:53:34 zhuk Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-4.11.21
-REVISION =	6
+REVISION =	7
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/applications/15.04.3/src/}
 
@@ -96,7 +96,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-desktop-ontologies \
 		sysutils/lsof \
 		x11/gtk+3,-guic \
-		x11/polkit-qt4 \
+		x11/polkit-qt, \
 		${MODKDE4_DEP_DIR}/base-artwork>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/py-kde>=${MODKDE4_DEP_VERSION}
 
