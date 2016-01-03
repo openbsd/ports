@@ -1,4 +1,6 @@
-$OpenBSD: patch-source_rofi_c,v 1.5 2016/01/03 20:15:00 jasper Exp $
+$OpenBSD: patch-source_rofi_c,v 1.6 2016/01/03 20:19:52 jasper Exp $
+
+Fix a backwards memcpy()
 
 From 043a67d0624d4ff349e3146434677e837aa427e8 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -6,7 +8,16 @@ Date: Sun, 3 Jan 2016 20:49:13 +0100
 Subject: [PATCH] Workaround lack of sigwaitinfo() on OpenBSD.
 
 --- source/rofi.c.orig	Sun Dec 27 19:45:50 2015
-+++ source/rofi.c	Sun Jan  3 20:54:15 2016
++++ source/rofi.c	Sun Jan  3 21:19:08 2016
+@@ -917,7 +917,7 @@ static void menu_refilter ( MenuState *state )
+         g_mutex_clear ( &mutex );
+         for ( unsigned int i = 0; i < nt; i++ ) {
+             if ( j != states[i].start ) {
+-                memcpy ( &( state->line_map[j] ), &( state->line_map[states[i].start] ), sizeof ( unsigned int ) * ( states[i].count ) );
++                memmove ( &( state->line_map[j] ), &( state->line_map[states[i].start] ), sizeof ( unsigned int ) * ( states[i].count ) );
+             }
+             j += states[i].count;
+         }
 @@ -2217,11 +2217,18 @@ static gpointer rofi_signal_handler_process ( gpointer
      sigaddset ( &set, SIGUSR1 );
      // loop forever.
