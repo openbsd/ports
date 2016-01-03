@@ -1,18 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/01/11 22:51:03 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/01/03 16:43:13 jeremy Exp $
 ${GEM_BIN}/unicorn${GEM_BIN_SUFFIX}
 ${GEM_BIN}/unicorn_rails${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.CHANGELOG.old
 ${GEM_LIB}/gems/${DISTNAME}/.document
+${GEM_LIB}/gems/${DISTNAME}/.gitattributes
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.mailmap
 ${GEM_LIB}/gems/${DISTNAME}/.manifest
-${GEM_LIB}/gems/${DISTNAME}/.wrongdoc.yml
+${GEM_LIB}/gems/${DISTNAME}/.olddoc.yml
 ${GEM_LIB}/gems/${DISTNAME}/Application_Timeouts
 ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTORS
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
-${GEM_LIB}/gems/${DISTNAME}/ChangeLog
 ${GEM_LIB}/gems/${DISTNAME}/DESIGN
 ${GEM_LIB}/gems/${DISTNAME}/Documentation/
 ${GEM_LIB}/gems/${DISTNAME}/Documentation/.gitignore
@@ -37,25 +37,27 @@ ${GEM_LIB}/gems/${DISTNAME}/SIGNALS
 ${GEM_LIB}/gems/${DISTNAME}/Sandbox
 ${GEM_LIB}/gems/${DISTNAME}/TODO
 ${GEM_LIB}/gems/${DISTNAME}/TUNING
+${GEM_LIB}/gems/${DISTNAME}/archive/
+${GEM_LIB}/gems/${DISTNAME}/archive/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/archive/slrnpull.conf
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/unicorn
 ${GEM_LIB}/gems/${DISTNAME}/bin/unicorn_rails
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/big_app_gc.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/echo.ru
-${GEM_LIB}/gems/${DISTNAME}/examples/git.ru
 ${GEM_LIB}/gems/${DISTNAME}/examples/init.sh
 ${GEM_LIB}/gems/${DISTNAME}/examples/logger_mp_safe.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/logrotate.conf
 ${GEM_LIB}/gems/${DISTNAME}/examples/nginx.conf
 ${GEM_LIB}/gems/${DISTNAME}/examples/unicorn.conf.minimal.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/unicorn.conf.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/unicorn.socket
+${GEM_LIB}/gems/${DISTNAME}/examples/unicorn@.service
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/app/
-${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/app/exec_cgi.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/app/inetd.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/app/old_rails/
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/app/old_rails.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/app/old_rails/static.rb
@@ -69,9 +71,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/launcher.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/oob_gc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/preread_input.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/socket_helper.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/ssl_client.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/ssl_configurator.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/ssl_server.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/stream_input.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/tee_input.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/tmpio.rb
@@ -79,9 +78,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/util.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/worker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn_http.so
-${GEM_LIB}/gems/${DISTNAME}/local.mk.sample
-${GEM_LIB}/gems/${DISTNAME}/script/
-${GEM_LIB}/gems/${DISTNAME}/script/isolate_for_tests
 ${GEM_LIB}/gems/${DISTNAME}/setup.rb
 ${GEM_LIB}/gems/${DISTNAME}/t/
 ${GEM_LIB}/gems/${DISTNAME}/t/.gitignore
@@ -104,7 +100,6 @@ ${GEM_LIB}/gems/${DISTNAME}/t/oob_gc_path.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/pid.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/preread_input.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/rack-input-tests.ru
-${GEM_LIB}/gems/${DISTNAME}/t/sslgen.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0000-http-basic.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0001-reload-bad-config.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0002-config-conflict.sh
@@ -127,8 +122,6 @@ ${GEM_LIB}/gems/${DISTNAME}/t/t0013.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/t0014-rewindable-input-true.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0014.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/t0015-configurator-internals.sh
-${GEM_LIB}/gems/${DISTNAME}/t/t0016-trust-x-forwarded-false.sh
-${GEM_LIB}/gems/${DISTNAME}/t/t0017-trust-x-forwarded-true.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0018-write-on-close.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0019-max_header_len.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0020-at_exit-handler.sh
@@ -139,7 +132,6 @@ ${GEM_LIB}/gems/${DISTNAME}/t/t0116-client_body_buffer_size.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0116.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/t0200-rack-hijack.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0300-no-default-middleware.sh
-${GEM_LIB}/gems/${DISTNAME}/t/t0600-https-server-basic.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t9000-preread-input.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t9001-oob_gc.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t9002-oob_gc-path.sh
@@ -160,18 +152,18 @@ ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_configurator.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_droplet.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_http_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_http_parser_ng.rb
-${GEM_LIB}/gems/${DISTNAME}/test/unit/test_http_parser_xftrust.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_request.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_response.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_server.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_signals.rb
-${GEM_LIB}/gems/${DISTNAME}/test/unit/test_sni_hostnames.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_socket_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_stream_input.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_tee_input.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_upload.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_util.rb
 ${GEM_LIB}/gems/${DISTNAME}/unicorn.gemspec
+${GEM_LIB}/gems/${DISTNAME}/unicorn_1
+${GEM_LIB}/gems/${DISTNAME}/unicorn_rails_1
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
 @man man/man1/unicorn${GEM_MAN_SUFFIX}.1
 @man man/man1/unicorn_rails${GEM_MAN_SUFFIX}.1
