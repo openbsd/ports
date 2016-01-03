@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/03 18:20:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/03 18:22:23 sthen Exp $
 
 COMMENT =	next-generation web UI for icinga
 
@@ -14,7 +14,6 @@ MODULES=	lang/php
 RUN_DEPENDS =	graphics/pecl-imagick \
 		lang/php/${MODPHP_VERSION},-intl \
 		php-pdo_mysql-${MODPHP_VSPEC}|php-pdo_pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-pdo_mysql
-# Optional php extension: ldap
 
 NO_TEST =	Yes
 NO_BUILD =	Yes
