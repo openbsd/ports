@@ -1,0 +1,35 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2016/01/03 09:11:09 ajacoutot Exp $
+
+- Allow libbluray to be able to find mount points using the getfsstat() API.
+- Remove setting _POSIX_C_SOURCE as that breaks building some of the BSD headers
+  due to BSD types.
+
+--- Makefile.in.orig	Tue Dec  1 07:31:40 2015
++++ Makefile.in	Sun Dec 27 22:21:25 2015
+@@ -152,7 +152,7 @@ host_triplet = @host@
+ @HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/dirs_xdg.c \
+ @HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/dl_posix.c \
+ @HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/file_posix.c \
+-@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/mount.c
++@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/mount_darwin.c
+ 
+ @ENABLE_UDF_TRUE@am__append_4 = \
+ @ENABLE_UDF_TRUE@	src/libbluray/disc/udf_fs.h \
+@@ -358,7 +358,7 @@ am__dirstamp = $(am__leading_dot)dirstamp
+ @HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/dirs_xdg.lo \
+ @HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/dl_posix.lo \
+ @HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/file_posix.lo \
+-@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/mount.lo
++@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@	src/file/mount_darwin.lo
+ @ENABLE_UDF_TRUE@am__objects_4 = src/libbluray/disc/udf_fs.lo \
+ @ENABLE_UDF_TRUE@	contrib/libudfread/src/default_blockinput.lo \
+ @ENABLE_UDF_TRUE@	contrib/libudfread/src/ecma167.lo \
+@@ -769,7 +769,7 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-bdjava --enable-u
+ MOSTLYCLEANFILES = $(DX_CLEANFILES)
+ @ENABLE_UDF_FALSE@POSIX_C_SOURCE = 200112L
+ @ENABLE_UDF_TRUE@POSIX_C_SOURCE = 200809L
+-SET_FEATURES = -D_ISOC99_SOURCE -D_POSIX_C_SOURCE=$(POSIX_C_SOURCE) -D_REENTRANT
++SET_FEATURES = -D_ISOC99_SOURCE -D_REENTRANT
+ SET_INCLUDES = -I$(top_srcdir)/src -I$(top_srcdir)/src/libbluray -I$(top_builddir)/src/libbluray $(BDJAVA_CFLAGS)
+ AM_CFLAGS = -std=c99 $(SET_FEATURES) $(SET_INCLUDES) $(LIBXML2_CFLAGS) \
+ 	$(FT2_CFLAGS) $(FONTCONFIG_CFLAGS) $(UDF_CFLAGS) \
