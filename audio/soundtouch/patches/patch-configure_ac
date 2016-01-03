@@ -1,6 +1,6 @@
---- configure.ac.orig	Mon May 18 11:57:14 2015
-+++ configure.ac	Sun Jun 28 08:03:14 2015
-@@ -24,7 +24,7 @@ AC_CONFIG_AUX_DIR(config)
+--- configure.ac.orig	Sun Sep 20 00:40:59 2015
++++ configure.ac	Sun Dec 27 03:53:30 2015
+@@ -28,7 +28,7 @@ AC_CONFIG_AUX_DIR(config)
  AC_CONFIG_MACRO_DIR([config/m4])
  AM_CONFIG_HEADER([config.h include/soundtouch_config.h])
  AM_INIT_AUTOMAKE
