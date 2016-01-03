@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/12/07 21:34:37 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/01/03 16:41:11 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.document
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.manifest
-${GEM_LIB}/gems/${DISTNAME}/.wrongdoc.yml
+${GEM_LIB}/gems/${DISTNAME}/.olddoc.yml
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
-${GEM_LIB}/gems/${DISTNAME}/ChangeLog
 ${GEM_LIB}/gems/${DISTNAME}/GIT-VERSION-FILE
 ${GEM_LIB}/gems/${DISTNAME}/GIT-VERSION-GEN
 ${GEM_LIB}/gems/${DISTNAME}/GNUmakefile
@@ -16,8 +15,10 @@ ${GEM_LIB}/gems/${DISTNAME}/LATEST
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/NEWS
 ${GEM_LIB}/gems/${DISTNAME}/README
-${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/TODO
+${GEM_LIB}/gems/${DISTNAME}/archive/
+${GEM_LIB}/gems/${DISTNAME}/archive/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/archive/slrnpull.conf
 ${GEM_LIB}/gems/${DISTNAME}/kgio.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/kgio.rb
