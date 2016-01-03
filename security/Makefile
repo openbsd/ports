@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.406 2015/12/29 12:52:12 kili Exp $
+# $OpenBSD: Makefile,v 1.407 2016/01/03 17:22:42 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -242,6 +242,7 @@
      SUBDIR += py-cryptography_vectors
      SUBDIR += py-cryptography_vectors,python3
      SUBDIR += py-ecdsa
+     SUBDIR += py-ecdsa,python3
      SUBDIR += py-gnupg
      SUBDIR += py-keyczar
      SUBDIR += py-keyring
