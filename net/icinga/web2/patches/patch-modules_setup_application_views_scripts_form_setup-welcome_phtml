@@ -1,11 +1,11 @@
-$OpenBSD: patch-modules_setup_application_views_scripts_form_setup-welcome_phtml,v 1.1 2015/11/16 20:30:34 sthen Exp $
+$OpenBSD: patch-modules_setup_application_views_scripts_form_setup-welcome_phtml,v 1.2 2016/01/03 18:20:48 sthen Exp $
 
 Minimal patches to avoid showing confusing path to users in the welcome
 screen (PHP is normally run chroot'ed on OpenBSD), and use group "_icingaweb2"
 as per OpenBSD standard naming for groups from packages.
 
---- modules/setup/application/views/scripts/form/setup-welcome.phtml.orig	Tue Nov 10 17:48:40 2015
-+++ modules/setup/application/views/scripts/form/setup-welcome.phtml	Tue Nov 10 18:00:38 2015
+--- modules/setup/application/views/scripts/form/setup-welcome.phtml.orig	Tue Dec 22 13:59:48 2015
++++ modules/setup/application/views/scripts/form/setup-welcome.phtml	Thu Dec 24 12:56:13 2015
 @@ -8,7 +8,7 @@ use Icinga\Web\Wizard;
  $phpUser = Platform::getPhpUser();
  $configDir = Icinga::app()->getConfigDir();
@@ -14,8 +14,8 @@ as per OpenBSD standard naming for groups from packages.
 +$cliPath = '/var/www/icinga-web2/bin/icingacli';
  
  $groupadd = null;
- $usermod = null;
-@@ -90,12 +90,12 @@ if (! (false === ($distro = Platform::getLinuxDistro(1
+ if (! (false === ($distro = Platform::getLinuxDistro(1)) || $distro === 'linux')) {
+@@ -96,12 +96,12 @@ if (! (false === ($distro = Platform::getLinuxDistro(1
        <?php } ?>
        <p><?= $this->translate('If you\'ve got the IcingaCLI installed you can do the following:'); ?></p>
        <div class="code">

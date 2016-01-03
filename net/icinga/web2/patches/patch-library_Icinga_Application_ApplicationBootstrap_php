@@ -1,4 +1,4 @@
-$OpenBSD: patch-library_Icinga_Application_ApplicationBootstrap_php,v 1.1 2015/11/16 20:30:34 sthen Exp $
+$OpenBSD: patch-library_Icinga_Application_ApplicationBootstrap_php,v 1.2 2016/01/03 18:20:48 sthen Exp $
 
 Apologies for the butchery...
 
@@ -12,8 +12,8 @@ It still relies on a helper symlink (/icinga-web2 -> /var/www/icinga-web2)
 for 'icingacli module' to work correctly (it needs to both locate the modules
 directory, and create symlinks that are accessible from inside the jail).
 
---- library/Icinga/Application/ApplicationBootstrap.php.orig	Mon Nov 16 14:42:35 2015
-+++ library/Icinga/Application/ApplicationBootstrap.php	Mon Nov 16 18:46:08 2015
+--- library/Icinga/Application/ApplicationBootstrap.php.orig	Tue Dec 22 13:59:48 2015
++++ library/Icinga/Application/ApplicationBootstrap.php	Thu Dec 24 12:56:13 2015
 @@ -130,6 +130,10 @@ abstract class ApplicationBootstrap
          if ($baseDir === null) {
              $baseDir = dirname($this->getBootstrapDirectory());
@@ -25,8 +25,8 @@ directory, and create symlinks that are accessible from inside the jail).
          $this->baseDir = $baseDir;
          $this->appDir = $baseDir . '/application';
          $this->vendorDir = $baseDir . '/library/vendor';
-@@ -143,10 +147,14 @@ abstract class ApplicationBootstrap
-             } else {
+@@ -142,10 +146,14 @@ abstract class ApplicationBootstrap
+             if ($configDir === false) {
                  $configDir = Platform::isWindows()
                      ? $baseDir . '/config'
 -                    : '/etc/icingaweb2';
