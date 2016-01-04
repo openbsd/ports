@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2015/09/19 12:46:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.107 2016/01/04 19:11:00 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,7 +20,7 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -48,11 +48,16 @@ WANTLIB += gthread-2.0 xml2 gcrypt secret-1 gpg-error ffi pthread
 PORTHOME=		${WRKDIST}
 
 MODULES=		devel/gettext \
+			lang/python \
 			x11/gnome
 
 MODGNOME_LDFLAGS=	-lm
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache vala yelp
+
+MODPY_BUILDDEP=		No
+MODPY_ADJ_FILES=	libgda-report/RML/trml2html/trml2html.py \
+			libgda-report/RML/trml2pdf/trml2pdf.py
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
