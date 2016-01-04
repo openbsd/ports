@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1438 2016/01/01 20:25:21 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1439 2016/01/04 12:15:31 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1305,6 +1305,7 @@
      SUBDIR += py-progressbar
      SUBDIR += py-protocols
      SUBDIR += py-ptyprocess
+     SUBDIR += py-ptyprocess,python3
      SUBDIR += py-py
      SUBDIR += py-py,python3
      SUBDIR += py-pyprof2calltree
