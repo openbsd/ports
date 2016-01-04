@@ -1,0 +1,23 @@
+$OpenBSD: patch-dhcp6relay_c,v 1.1 2016/01/04 03:30:39 sthen Exp $
+
+Close inherited file descriptors
+
+wide-dhcpv6 binaries should close inherited fds.
+
+--- dhcp6relay.c.orig	Sun Jun 15 03:48:41 2008
++++ dhcp6relay.c	Sat Jan  2 20:48:25 2016
+@@ -207,8 +207,14 @@ main(argc, argv)
+ 	}
+ 
+ 	if (foreground == 0) {
++		int fd;
++
+ 		if (daemon(0, 0) < 0)
+ 			err(1, "daemon");
++
++		for (fd = 3; fd < 1024; fd++)
++			close(fd);
++
+ 		openlog(progname, LOG_NDELAY|LOG_PID, LOG_DAEMON);
+ 	}
+ 	setloglevel(debug);

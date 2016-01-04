@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/12/22 12:56:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/01/04 03:30:39 sthen Exp $
 
 COMMENT=	client and servers for the WIDE DHCPv6 protocol
 
 DISTNAME=	wide-dhcpv6-20080615
-REVISION=	4
+REVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wide-dhcpv6/}
 

@@ -1,11 +1,15 @@
-$OpenBSD: patch-dhcp6c_c,v 1.2 2015/12/22 12:56:27 sthen Exp $
+$OpenBSD: patch-dhcp6c_c,v 1.3 2016/01/04 03:30:39 sthen Exp $
 
-Update ifid on interface restart
+- Close inherited file descriptors
+
+wide-dhcpv6 binaries should close inherited fds.
+
+- Update ifid on interface restart
 
 Interface ID may have changed between a stop and start.
 
---- dhcp6c.c.orig	Sun Jun 15 03:48:41 2008
-+++ dhcp6c.c	Sat Dec 19 01:44:20 2015
+--- dhcp6c.c.orig	Sat Jan  2 20:48:18 2016
++++ dhcp6c.c	Sat Jan  2 20:48:25 2016
 @@ -88,7 +88,6 @@ static sig_atomic_t sig_flags = 0;
  const dhcp6_mode_t dhcp6_mode = DHCP6_MODE_CLIENT;
  
@@ -14,7 +18,29 @@ Interface ID may have changed between a stop and start.
  int ctlsock = -1;		/* control TCP port */
  char *ctladdr = DEFAULT_CLIENT_CONTROL_ADDR;
  char *ctlport = DEFAULT_CLIENT_CONTROL_PORT;
-@@ -337,13 +336,6 @@ client6_init()
+@@ -159,6 +158,7 @@ main(argc, argv)
+ 	char *progname;
+ 	FILE *pidfp;
+ 	struct dhcp6_if *ifp;
++	int fd;
+ 
+ #ifndef HAVE_ARC4RANDOM
+ 	srandom(time(NULL) & getpid());
+@@ -205,8 +205,12 @@ main(argc, argv)
+ 		exit(0);
+ 	}
+ 
+-	if (foreground == 0)
++	if (foreground == 0) {
++		for (fd = 3; fd < 1024; fd++)
++			close(fd);
++
+ 		openlog(progname, LOG_NDELAY|LOG_PID, LOG_DAEMON);
++	}
+ 
+ 	setloglevel(debug);
+ 
+@@ -337,13 +341,6 @@ client6_init()
  	}
  	freeaddrinfo(res);
  
@@ -28,7 +54,7 @@ Interface ID may have changed between a stop and start.
  	memset(&hints, 0, sizeof(hints));
  	hints.ai_family = PF_INET6;
  	hints.ai_socktype = SOCK_DGRAM;
-@@ -763,6 +755,15 @@ client6_ifctl(ifname, command)
+@@ -763,6 +760,15 @@ client6_ifctl(ifname, command)
  
  	switch(command) {
  	case DHCP6CTL_COMMAND_START:

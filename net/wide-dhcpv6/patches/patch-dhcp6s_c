@@ -1,0 +1,22 @@
+$OpenBSD: patch-dhcp6s_c,v 1.1 2016/01/04 03:30:40 sthen Exp $
+
+Close inherited file descriptors
+
+wide-dhcpv6 binaries should close inherited fds.
+
+--- dhcp6s.c.orig	Sun Jun 15 03:51:57 2008
++++ dhcp6s.c	Sat Jan  2 20:48:25 2016
+@@ -316,8 +316,13 @@ main(argc, argv)
+ 	}
+ 
+ 	if (foreground == 0) {
++		int fd;
++
+ 		if (daemon(0, 0) < 0)
+ 			err(1, "daemon");
++
++		for (fd = 3; fd < 1024; fd++)
++			close(fd);
+ 	}
+ 
+ 	/* dump current PID */
