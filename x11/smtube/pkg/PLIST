@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/08/24 14:17:40 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/01/04 15:46:09 gonzalo Exp $
 @bin bin/smtube
 share/applications/smtube.desktop
 share/doc/smtube/
@@ -24,6 +24,7 @@ share/smtube/translations/smtube_es.qm
 share/smtube/translations/smtube_eu.qm
 share/smtube/translations/smtube_fr.qm
 share/smtube/translations/smtube_gl.qm
+share/smtube/translations/smtube_he_IL.qm
 share/smtube/translations/smtube_hr.qm
 share/smtube/translations/smtube_hu.qm
 share/smtube/translations/smtube_it.qm
