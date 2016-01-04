@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/25 13:18:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/04 08:26:53 jasper Exp $
 
 COMMENT =	scientific plotting and graphing package
 MODPY_EGG_VERSION =	1.23.1
@@ -23,9 +23,8 @@ BUILD_DEPENDS =	math/py-numpy \
 
 RUN_DEPENDS =	math/py-numpy \
 		x11/py-qt4
+TEST_DEPENDS =	${BASE_PKGPATH}
 
-# Veusz must be installed for the tests to work!
-# Otherwise, complains that veusz.compat cannot be found and exits.
 do-test:
 	cd ${WRKSRC}/tests && ${MODPY_BIN} runselftest.py
 
