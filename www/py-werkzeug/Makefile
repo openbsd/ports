@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2015/12/23 19:43:17 jca Exp $
+# $OpenBSD: Makefile,v 1.22 2016/01/04 12:21:41 shadchin Exp $
 
 COMMENT =		WSGI utility collection
 
-MODPY_EGG_VERSION =	0.11.2
+MODPY_EGG_VERSION =	0.11.3
 DISTNAME =		Werkzeug-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 
@@ -28,6 +28,9 @@ TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 
 FLAVORS =		python3
 FLAVOR ?=
+
+pre-build:
+	${SUBST_CMD} ${WRKSRC}/tests/test_serving.py
 
 post-build:
 	@cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
