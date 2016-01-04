@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.476 2016/01/04 08:23:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.477 2016/01/04 12:20:02 shadchin Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -329,6 +329,7 @@
      SUBDIR += py-MarkupSafe
      SUBDIR += py-MarkupSafe,python3
      SUBDIR += py-chardet
+     SUBDIR += py-chardet,python3
      SUBDIR += py-cssselect
      SUBDIR += py-cssselect,python3
      SUBDIR += py-cssutils
