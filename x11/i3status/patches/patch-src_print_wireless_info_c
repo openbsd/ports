@@ -1,22 +1,11 @@
-$OpenBSD: patch-src_print_wireless_info_c,v 1.8 2015/04/04 16:07:16 jasper Exp $
-
-From e91891729e799e45561c707768269bb755ca34e9 Mon Sep 17 00:00:00 2001
-From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-Date: Sat, 4 Apr 2015 10:56:58 +0200
-Subject: [PATCH] Use the maximum rssi, not the scaled percentage for the signal level.
-
---- src/print_wireless_info.c.orig	Sat Apr  4 10:51:30 2015
-+++ src/print_wireless_info.c	Sat Apr  4 10:52:18 2015
-@@ -308,10 +308,9 @@ static int get_wireless_info(const char *interface, wi
-             strlcpy(nr.nr_ifname, interface, sizeof(nr.nr_ifname));
+$OpenBSD: patch-src_print_wireless_info_c,v 1.9 2016/01/04 22:31:17 jasper Exp $
+--- src/print_wireless_info.c.orig	Sun Jan  3 12:55:52 2016
++++ src/print_wireless_info.c	Sun Jan  3 12:58:06 2016
+@@ -50,6 +50,7 @@
+ #include <netinet/if_ether.h>
+ #include <net80211/ieee80211.h>
+ #include <net80211/ieee80211_ioctl.h>
++#define IW_ESSID_MAX_SIZE IEEE80211_NWID_LEN
+ #endif
  
-             if (ioctl(s, SIOCG80211NODE, &nr) == 0 && nr.nr_rssi) {
-+                info->signal_level = nr.nr_rssi;
-                 if (nr.nr_max_rssi)
--                    info->signal_level_max = IEEE80211_NODEREQ_RSSI(&nr);
--                else
--                    info->signal_level = nr.nr_rssi;
-+                    info->signal_level_max = nr.nr_max_rssi;
- 
-                 info->flags |= WIRELESS_INFO_FLAG_HAS_SIGNAL;
-             }
+ #include "i3status.h"
