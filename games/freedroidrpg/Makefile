@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/01/04 12:21:12 bentley Exp $
+# $OpenBSD: Makefile,v 1.26 2016/01/04 19:35:28 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -21,10 +21,13 @@ MASTER_SITES =	ftp://ftp.osuosl.org/pub/freedroid/${DISTNAME}/
 WRKDIST =	${WRKDIR}/${DISTNAME:L}
 
 MODULES =	devel/gettext \
-		lang/lua
-MODLUA_SA =	Yes
+		lang/lua \
+		lang/python
 
-MODLUA_VERSION =	5.3
+MODLUA_SA =	Yes
+MODLUA_VERSION =5.3
+
+MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =	lang/gawk
 LIB_DEPENDS=	devel/libexecinfo \
@@ -35,12 +38,14 @@ LIB_DEPENDS=	devel/libexecinfo \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-USE_GMAKE =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LUA_CFLAGS="$$(pkg-config --cflags ${MODLUA_DEP})" \
-		LUA_LIBS="$$(pkg-config --libs ${MODLUA_DEP})"
+		LUA_LIBS="$$(pkg-config --libs ${MODLUA_DEP})" \
+		ac_cv_path_LUADOX=
+
+USE_GMAKE =	Yes
 MAKE_FLAGS =	AWK=gawk
 
 post-install:
