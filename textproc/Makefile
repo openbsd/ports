@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.475 2016/01/01 11:56:16 bentley Exp $
+# $OpenBSD: Makefile,v 1.476 2016/01/04 08:23:43 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -336,6 +336,7 @@
      SUBDIR += py-docutils
      SUBDIR += py-elementtidy
      SUBDIR += py-enchant
+     SUBDIR += py-enchant,python3
      SUBDIR += py-epydoc
      SUBDIR += py-feedparser
      SUBDIR += py-iso8601
