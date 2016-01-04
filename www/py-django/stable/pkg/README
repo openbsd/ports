@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2015/07/27 20:01:02 rpointel Exp $
+$OpenBSD: README,v 1.2 2016/01/04 19:38:30 rpointel Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -41,7 +41,5 @@ or configure your application server to pass this setting.
 
 Python 3
 ========
-Django 1.5 is the first Django release with support for 
-Python 3 (specifically, Python 3.2 and newer). Python 3 
-support is still considered experimental so please use at 
-your own risk. 
+If you really want to use Python 3 with Django, use
+py3-django-lts.
