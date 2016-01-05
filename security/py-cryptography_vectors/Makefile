@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/11/03 21:14:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/05 10:23:04 sthen Exp $
 
 COMMENT=	test vectors for py-cryptography
 
-MODPY_EGG_VERSION=	1.1
+MODPY_EGG_VERSION=	1.1.2
 DISTNAME=	cryptography_vectors-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	security

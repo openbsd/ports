@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2015/11/03 21:14:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/05 10:23:03 sthen Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_EGG_VERSION=	1.1
+MODPY_EGG_VERSION=	1.1.2
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	security devel
@@ -35,7 +35,10 @@ RUN_DEPENDS+=	devel/py-enum34 \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-TEST_DEPENDS=	devel/py-pretend${MODPY_FLAVOR} \
+# XXX fetches hypothesis (not ported) at test time
+# XXX needs *loads* of RAM
+TEST_DEPENDS=	devel/py-asn1-modules${MODPY_FLAVOR} \
+		devel/py-pretend${MODPY_FLAVOR} \
 		devel/py-test${MODPY_FLAVOR} \
 		security/py-cryptography_vectors${MODPY_FLAVOR}=${MODPY_EGG_VERSION} \
 		textproc/py-iso8601${MODPY_FLAVOR}

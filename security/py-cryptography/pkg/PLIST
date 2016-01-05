@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/11/03 21:14:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/01/05 10:23:03 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cryptography/
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -95,6 +95,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}constant_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}hashes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}hmac.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}keywrap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}padding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}serialization.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/
@@ -138,6 +139,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MO
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}concatkdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}hkdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}pbkdf2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}x963kdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/concatkdf.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/hkdf.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/pbkdf2.py
