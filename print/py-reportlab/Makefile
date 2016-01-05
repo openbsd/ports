@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/05 15:26:09 nigel Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/05 22:12:02 ajacoutot Exp $
 
 COMMENT=		PDF-generating toolkit for Python
 
@@ -36,6 +36,7 @@ MODPY_SETUPTOOLS=	Yes
 LIB_DEPENDS=		graphics/libart
 
 RUN_DEPENDS=		graphics/py-Pillow${MODPY_FLAVOR}
+BUILD_DEPENDS=		${RUN_DEPENDS}
 TEST_DEPENDS=		${RUN_DEPENDS}
 
 # requires network access
