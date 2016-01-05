@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/13 12:59:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/05 10:01:48 ajacoutot Exp $
 
 COMMENT=		OCR and DAR program
 
@@ -23,9 +23,6 @@ BUILD_DEPENDS=		devel/py-gobject3 \
 			print/py-reportlab/reportlab \
 			textproc/py-enchant \
 			x11/gtk+3
-
-# XXX ?
-BUILD_DEPENDS +=	devel/py-gobject
 
 RUN_DEPENDS=		devel/iso-codes \
 			devel/py-gobject3 \

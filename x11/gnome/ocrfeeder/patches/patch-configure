@@ -1,0 +1,39 @@
+$OpenBSD: patch-configure,v 1.3 2016/01/05 10:01:48 ajacoutot Exp $
+
+Does not use the gobject python bindings but GOI.
+
+--- configure.orig	Mon Jan  4 10:57:03 2016
++++ configure	Mon Jan  4 10:57:49 2016
+@@ -3283,32 +3283,6 @@ $as_echo "no" >&6; }
+ 	fi
+ 
+ 
+-    if test -z $PYTHON;
+-    then
+-        PYTHON="python"
+-    fi
+-    PYTHON_NAME=`basename $PYTHON`
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking $PYTHON_NAME module: gobject" >&5
+-$as_echo_n "checking $PYTHON_NAME module: gobject... " >&6; }
+-	$PYTHON -c "import imp; imp.find_module(\"gobject\")" 2>/dev/null
+-	if test $? -eq 0;
+-	then
+-		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-		eval HAVE_PYMOD_GOBJECT=yes
+-	else
+-		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-		eval HAVE_PYMOD_GOBJECT=no
+-		#
+-		if test -n "needed"
+-		then
+-			as_fn_error $? "failed to find required module gobject" "$LINENO" 5
+-			exit 1
+-		fi
+-	fi
+-
+-
+ 
+ PYTHON_GI_MODULES="Gtk GooCanvas"
+ 
