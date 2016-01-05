@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2015/08/20 18:39:41 feinerer Exp $
+# $OpenBSD: Makefile,v 1.118 2016/01/05 13:26:39 ajacoutot Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -55,6 +55,7 @@
     SUBDIR += py-poppler
     SUBDIR += py-relatorio
     SUBDIR += py-reportlab
+    SUBDIR += py-reportlab,python3
     SUBDIR += qpdf
     SUBDIR += scribus
     SUBDIR += splix
