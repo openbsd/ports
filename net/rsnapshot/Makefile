@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/01/05 13:14:45 jung Exp $
+# $OpenBSD: Makefile,v 1.17 2016/01/05 17:14:01 ajacoutot Exp $
 
 COMMENT=		remote filesystem snapshot utility
 
@@ -33,12 +33,12 @@ SAMPLES_DIR=		${PREFIX}/share/examples/rsnapshot
 FAKE_FLAGS=		sysconfdir=${SAMPLES_DIR}
 
 pre-configure:
-			cd ${WRKSRC} && \
-			    env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autogen.sh
+	cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 pre-build:
-	perl -pi -e 's,/etc/rsnapshot.conf,${SYSCONFDIR}/rsnapshot.conf,g' \
+	sed -i "s,/etc/rsnapshot.conf,${SYSCONFDIR}/rsnapshot.conf,g" \
 		${WRKSRC}/{README.md,rsnapshot-program.pl} \
 		${WRKSRC}/rsnapshot{,-diff} \
 		${WRKSRC}/utils/rsnapshotdb/rsnapshotDB.pl
