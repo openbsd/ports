@@ -1,0 +1,18 @@
+$OpenBSD: patch-bin_Makefile_am,v 1.3 2016/01/05 23:50:56 sthen Exp $
+
+XXX Attempt to avoid an intermittent crash in ld.so when running vlc-cache-gen.
+See https://marc.info/?t=145123666100001&r=1&w=2
+
+The LD_PRELOAD alone seems to help i386 quite a lot, but doesn't do much
+on amd64. But adding the LD_DEBUG=1 seems to improve things a lot there....
+
+--- bin/Makefile.am.orig	Sat Jun 14 16:14:12 2014
++++ bin/Makefile.am	Tue Jan  5 23:30:42 2016
+@@ -83,6 +83,7 @@ MOSTLYCLEANFILES = $(noinst_DATA)
+ ../modules/plugins.dat: vlc-cache-gen$(EXEEXT)
+ 	$(AM_V_at)rm -f ../modules/plugins.dat
+ 	$(AM_V_GEN)if test "$(build)" = "$(host)"; then \
++		LD_DEBUG=1 LD_PRELOAD=${LOCALBASE}/lib/libgobject-2.0.so:${LOCALBASE}/lib/libnotify.so:${LOCALBASE}/lib/libgmodule-2.0.so \
+ 		./vlc-cache-gen$(EXEEXT) ../modules ; \
+ 	else \
+ 		echo "Cross-compilation: cache generation skipped!" ; \
