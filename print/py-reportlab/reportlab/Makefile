@@ -1,45 +1,61 @@
-# $OpenBSD: Makefile,v 1.27 2015/12/19 20:47:03 bentley Exp $
+# $OpenBSD: Makefile,v 1.28 2016/01/05 13:19:36 ajacoutot Exp $
 
-COMMENT=	PDF-generating toolkit for Python
+COMMENT=		PDF-generating toolkit for Python
 
-VERSION=	2.1
-DISTNAME=	ReportLab_${VERSION:S/./_/}
-PKGNAME=	py-reportlab-${VERSION}
-REVISION =	13
-EPOCH=		0
-CATEGORIES=	print graphics
+MODPY_EGG_VERSION=	3.2.0
+DISTNAME=		reportlab-${MODPY_EGG_VERSION}
+PKGNAME=		py-${DISTNAME}
+EPOCH=			0
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		rl_accel-0.61-daily-unix${EXTRACT_SUFX}:0
+# see patches/patch-setup_py
+# grep 'archive =' reportlab-3.2.0/setup.py
+PFBFER=			pfbfer-20070710.zip
+SUBST_VARS=		FULLDISTDIR PFBFER WRKINST MODPY_SITEPKG
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
+			${PFBFER}
 
-HOMEPAGE=	http://www.reportlab.org/rl_toolkit.html
+CATEGORIES=		print graphics
 
-MAINTAINER=	Aleksander Piotrowski <pelotasplus@gmail.com>
+HOMEPAGE=		http://www.reportlab.com
 
 # BSD, LGPLv2, MPL1.0, MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${MODPY_WANTLIB} pthread
+WANTLIB += ${MODPY_WANTLIB} art_lgpl_2 freetype pthread
 
-MASTER_SITES=	http://www.reportlab.org/ftp/
-MASTER_SITES0=	https://distfiles.bsdfrog.org/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES0=		http://www.reportlab.com/ftp/
 
-MODULES=	lang/python
+MODULES=		lang/python
 
-RUN_DEPENDS=	graphics/py-Pillow
+MODPY_PI=		Yes
+MODPY_PI_DIR=		r/reportlab
+MODPY_SETUPTOOLS=	Yes
 
-WRKDIST=	${WRKDIR}/reportlab_${VERSION:S/./_/}
-WRKSRC=		${WRKDIST}/reportlab
+LIB_DEPENDS=		graphics/libart
 
-TEST_DEPENDS=${RUN_DEPENDS} \
-		print/py-reportlab/plugins/renderPM 
+RUN_DEPENDS=		graphics/py-Pillow${MODPY_FLAVOR}
+TEST_DEPENDS=		${RUN_DEPENDS}
 
-post-extract:
-	@mv ${WRKDIR}/rl_accel-*/rl_accel ${WRKSRC}/rl_accel
+# requires network access
+TEST_IS_INTERACTIVE=	Yes
+
+FLAVORS=		python3
+FLAVOR?=
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/setup.py \
+		${WRKSRC}/docs/genAll.py \
+		${WRKSRC}/docs/userguide/genuserguide.py
+
+post-install:
+	cd ${WRKSRC}/docs && ${MODPY_BIN} genAll.py
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-reportlab
+	${INSTALL_DATA} ${WRKBUILD}/docs/reportlab-userguide.pdf \
+		${PREFIX}/share/doc/py-reportlab
 
 do-test: fake
-	@cd ${WRKSRC}/test && \
+	cd ${WRKSRC}/tests && \
 		${MAKE_ENV} PYTHONPATH=${WRKDIST}:${WRKINST}${MODPY_SITEPKG} \
 		${MODPY_BIN} ./runAll.py
 

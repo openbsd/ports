@@ -1,0 +1,16 @@
+$OpenBSD: patch-docs_userguide_genuserguide_py,v 1.1 2016/01/05 13:19:36 ajacoutot Exp $
+
+Needs itself to renerate de PDF documentation.
+
+--- docs/userguide/genuserguide.py.orig	Wed Mar 26 21:17:14 2014
++++ docs/userguide/genuserguide.py	Mon Jan  4 13:20:01 2016
+@@ -8,7 +8,8 @@ This module contains the script for building the user 
+ """
+ 
+ def run(pagesize=None, verbose=0, outDir=None):
+-    import sys,os
++    import sys,os,site
++    site.addsitedir("${WRKINST}${MODPY_SITEPKG}")
+     from reportlab.lib.utils import open_and_read, asUnicode
+     cwd = os.getcwd()
+     docsDir=os.path.dirname(os.path.dirname(sys.argv[0]) or cwd)
