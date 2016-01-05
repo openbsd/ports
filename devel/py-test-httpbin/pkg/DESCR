@@ -1,0 +1,5 @@
+httpbin is an amazing web service for testing HTTP libraries. It has
+several great endpoints that can test pretty much everything you need
+in a HTTP library. The only problem is: maybe you don't want to wait for
+your tests to travel across the Internet and back to make assertions
+against a remote web service.
