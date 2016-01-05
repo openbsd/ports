@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2016/01/04 19:11:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2016/01/05 17:18:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,7 +20,7 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -56,6 +56,7 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache vala yelp
 
 MODPY_BUILDDEP=		No
+MODPY_RUNDEP=		No
 MODPY_ADJ_FILES=	libgda-report/RML/trml2html/trml2html.py \
 			libgda-report/RML/trml2pdf/trml2pdf.py
 
@@ -93,7 +94,8 @@ WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c gcrypt gpg-error ncurses sqlite3 gee-0.8
 WANTLIB-main += readline soup-2.4 crypto gdk_pixbuf-2.0 png xslt
 
-RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
+			${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			devel/libgee \
 			devel/libsoup \
