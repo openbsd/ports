@@ -1,0 +1,9 @@
+$OpenBSD: patch-configure_ac,v 1.1 2016/01/05 13:14:45 jung Exp $
+--- configure.ac.orig	Tue Jan  5 11:06:20 2016
++++ configure.ac	Tue Jan  5 11:07:07 2016
+@@ -1,4 +1,4 @@
+-AC_INIT([rsnapshot],[m4_esyscmd_s([git describe --tags --always --dirty])],[rsnapshot-discuss@lists.sourceforge.net])
++AC_INIT([rsnapshot],[1.4.2],[rsnapshot-discuss@lists.sourceforge.net])
+ AM_INIT_AUTOMAKE([foreign])
+ AC_PROG_MAKE_SET
+ AC_CONFIG_FILES(Makefile)
