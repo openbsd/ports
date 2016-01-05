@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1440 2016/01/05 10:17:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.1441 2016/01/05 13:25:35 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1337,8 +1337,12 @@
      SUBDIR += py-symboltype
      SUBDIR += py-test
      SUBDIR += py-test,python3
+     SUBDIR += py-test-capturelog
+     SUBDIR += py-test-capturelog,python3
      SUBDIR += py-test-cov
      SUBDIR += py-test-cov,python3
+     SUBDIR += py-test-httpbin
+     SUBDIR += py-test-httpbin,python3
      SUBDIR += py-testpath
      SUBDIR += py-testtools
      SUBDIR += py-testtools,python3
