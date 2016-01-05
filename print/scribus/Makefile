@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2015/10/14 22:07:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2016/01/05 11:24:05 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	DTP program
-DISTNAME=	scribus-1.4.2
-REVISION=	4
+DISTNAME=	scribus-1.4.5
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.scribus.net/
@@ -12,13 +11,13 @@ HOMEPAGE=	http://www.scribus.net/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=	QtGui QtNetwork QtXml aspell c cairo cups execinfo
+WANTLIB +=	QtGui QtNetwork QtXml c cairo cups execinfo
 WANTLIB +=	fontconfig freetype hyphen jpeg lcms2 m podofo pthread
 WANTLIB +=	stdc++ tiff util xml2 z ${MODPY_WANTLIB}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scribus/}
 
-EXTRACT_SUFX=	.tar.xz
+EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	x11/qt4 \
 		devel/cmake \
@@ -37,7 +36,6 @@ LIB_DEPENDS= 	devel/libexecinfo \
 		graphics/lcms2 \
 		graphics/tiff \
 		print/cups,-libs \
-		textproc/aspell/core \
 		textproc/hyphen \
 		textproc/libxml \
 		textproc/podofo \
