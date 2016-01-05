@@ -1,4 +1,4 @@
-$OpenBSD: patch-docs_genAll_py,v 1.1 2016/01/05 13:19:36 ajacoutot Exp $
+$OpenBSD: patch-docs_genAll_py,v 1.1 2016/01/05 13:21:49 ajacoutot Exp $
 
 Needs itself to renerate de PDF documentation.
 

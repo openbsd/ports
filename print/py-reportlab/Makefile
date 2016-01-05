@@ -1,6 +1,63 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/05 13:19:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/05 13:21:49 ajacoutot Exp $
 
-     SUBDIR =
-     SUBDIR += reportlab
+COMMENT=		PDF-generating toolkit for Python
 
-.include <bsd.port.subdir.mk>
+MODPY_EGG_VERSION=	3.2.0
+DISTNAME=		reportlab-${MODPY_EGG_VERSION}
+PKGNAME=		py-${DISTNAME}
+EPOCH=			0
+REVISION=		0
+
+# see patches/patch-setup_py
+# grep 'archive =' reportlab-3.2.0/setup.py
+PFBFER=			pfbfer-20070710.zip
+SUBST_VARS=		FULLDISTDIR PFBFER WRKINST MODPY_SITEPKG
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
+			${PFBFER}
+
+CATEGORIES=		print graphics
+
+HOMEPAGE=		http://www.reportlab.com
+
+# BSD, LGPLv2, MPL1.0, MIT
+PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB += ${MODPY_WANTLIB} art_lgpl_2 freetype pthread
+
+MASTER_SITES0=		http://www.reportlab.com/ftp/
+
+MODULES=		lang/python
+
+MODPY_PI=		Yes
+MODPY_PI_DIR=		r/reportlab
+MODPY_SETUPTOOLS=	Yes
+
+LIB_DEPENDS=		graphics/libart
+
+RUN_DEPENDS=		graphics/py-Pillow${MODPY_FLAVOR}
+TEST_DEPENDS=		${RUN_DEPENDS}
+
+# requires network access
+TEST_IS_INTERACTIVE=	Yes
+
+FLAVORS=		python3
+FLAVOR?=
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/setup.py \
+		${WRKSRC}/docs/genAll.py \
+		${WRKSRC}/docs/userguide/genuserguide.py
+
+post-install:
+	cd ${WRKSRC}/docs && ${MODPY_BIN} genAll.py
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-reportlab
+	${INSTALL_DATA} ${WRKBUILD}/docs/reportlab-userguide.pdf \
+		${PREFIX}/share/doc/py-reportlab
+
+do-test: fake
+	cd ${WRKSRC}/tests && \
+		${MAKE_ENV} PYTHONPATH=${WRKDIST}:${WRKINST}${MODPY_SITEPKG} \
+		${MODPY_BIN} ./runAll.py
+
+.include <bsd.port.mk>

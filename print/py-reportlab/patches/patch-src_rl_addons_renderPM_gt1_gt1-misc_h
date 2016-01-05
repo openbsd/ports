@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_rl_addons_renderPM_gt1_gt1-misc_h,v 1.1 2016/01/05 13:19:36 ajacoutot Exp $
+$OpenBSD: patch-src_rl_addons_renderPM_gt1_gt1-misc_h,v 1.1 2016/01/05 13:21:49 ajacoutot Exp $
 --- src/rl_addons/renderPM/gt1/gt1-misc.h.orig	Mon Jan  4 11:00:31 2016
 +++ src/rl_addons/renderPM/gt1/gt1-misc.h	Mon Jan  4 11:00:48 2016
 @@ -4,7 +4,7 @@
