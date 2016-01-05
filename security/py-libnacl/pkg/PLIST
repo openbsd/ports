@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/23 19:25:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/05 06:42:09 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/libnacl/
-lib/python${MODPY_VERSION}/site-packages/libnacl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/libnacl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/libnacl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/libnacl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/libnacl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/libnacl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/libnacl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/libnacl/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/libnacl/base.py
