@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2015/08/27 09:33:16 giovanni Exp $
+# $OpenBSD: Makefile,v 1.103 2016/01/05 10:51:37 giovanni Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -6,6 +6,7 @@ COMMENT-pop3=		pop3 server for maildir format mailboxes
 V=			4.16.2
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
+REVISION=		0
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
 
@@ -61,7 +62,7 @@ CONFIGURE_ARGS=		--sbindir=${PREFIX}/sbin \
 			--with-locking-method=fcntl \
 			--with-mailuser=_courier \
 			--with-piddir=${BASELOCALSTATEDIR}/run/courier \
-			--with-makedatprog \
+			--with-makedatprog=${TRUEPREFIX}/libexec/makedat \
 			--with-db=gdbm \
 			--with-certsdir=/etc/ssl \
 			--cache-file=${WRKDIR}/courier-imap.cache
