@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2015/06/08 09:02:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/05 22:04:02 sthen Exp $
 
 COMMENT =	miscellaneous unix tools
 
-DISTNAME =	moreutils_0.56
-PKGNAME =	${DISTNAME:S/_/-/}
-T =		7be6572532be02c03653f33dbf87c03b01e2bb26
-DISTFILES=	${DISTNAME}{$T}.tar.gz
-WRKDIST =	${WRKDIR}/moreutils
+V =		0.57
+DISTNAME =	moreutils_$V
+EXTRACT_SUFX =	.orig.tar.gz
+PKGNAME =	moreutils-$V
+WRKDIST =	${WRKDIR}/${PKGNAME}
 
 CATEGORIES =	sysutils
 
@@ -19,8 +19,7 @@ PERMIT_PACKAGE_CDROM =	 Yes
 
 WANTLIB += c
 
-#MASTER_SITES =		${MASTER_SITE_DEBIAN:=main/m/moreutils/}
-MASTER_SITES =		http://repo.or.cz/w/moreutils.git/snapshot/
+MASTER_SITES =		${MASTER_SITE_DEBIAN:=main/m/moreutils/}
 
 BUILD_DEPENDS =		textproc/docbook-xsl
 RUN_DEPENDS =		devel/p5-IPC-Run \
@@ -32,7 +31,6 @@ USE_GMAKE =		Yes
 NO_TEST =		Yes
 
 pre-patch:
-	mv ${WRKDIR}/moreutils-* ${WRKDIST}
-	perl -pi -e 's,/usr/share/xml/docbook/stylesheet/docbook-xsl/manpages,${LOCALBASE}/share/xsl/docbook/manpages,' ${WRKSRC}/Makefile
+	sed -i 's,/usr/share/xml/docbook/stylesheet/docbook-xsl/manpages,${LOCALBASE}/share/xsl/docbook/manpages,' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
