@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/05 13:21:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/05 15:26:09 nigel Exp $
 
 COMMENT=		PDF-generating toolkit for Python
 
@@ -14,7 +14,7 @@ PFBFER=			pfbfer-20070710.zip
 SUBST_VARS=		FULLDISTDIR PFBFER WRKINST MODPY_SITEPKG
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
-			${PFBFER}
+			${PFBFER}:0
 
 CATEGORIES=		print graphics
 
