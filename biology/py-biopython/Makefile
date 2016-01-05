@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/11/29 08:22:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2016/01/05 13:24:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 COMMENT=		Python tools for computational molecular biology
@@ -6,6 +6,7 @@ COMMENT=		Python tools for computational molecular biology
 MODPY_EGG_VERSION=	1.66
 DISTNAME=		biopython-${MODPY_EGG_VERSION}
 CATEGORIES=		biology
+REVISION=		0
 
 HOMEPAGE=		http://www.biopython.org/
 
@@ -23,7 +24,7 @@ WANTLIB+=	${MODPY_WANTLIB} pthread
 BUILD_DEPENDS=	devel/swig \
 		math/py-numpy
 RUN_DEPENDS=	math/py-numpy \
-		print/py-reportlab/reportlab
+		print/py-reportlab
 TEST_DEPENDS=	${RUN_DEPENDS}
 
 CFLAGS+=	-fPIC
