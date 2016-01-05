@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.341 2016/01/01 11:49:52 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.342 2016/01/05 13:25:08 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -388,6 +388,7 @@ my $stem_extensions = {
 	'rcsparse' => 'py-rcsparse',
 	'tesseract-dan-frak' => 'tesseract-dan_frak',
 	'grive' => 'grive2',
+	'py-reportlab-renderPM' => 'py-reportlab',
 };
 
 # reasons for obsolete packages
