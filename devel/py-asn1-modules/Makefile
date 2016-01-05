@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/11/20 14:59:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/05 10:17:06 sthen Exp $
 
 COMMENT =		collection of ASN.1 data structures for py-asn1
 
 MODPY_EGG_VERSION =	0.0.8
+REVISION =		0
 DISTNAME =		pyasn1-modules-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
@@ -17,6 +18,9 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pyasn1/}
 
 MODULES =		lang/python
 
+FLAVORS =		python3
+FLAVOR?=
+
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		devel/py-asn1
@@ -25,7 +29,8 @@ TEST_DEPENDS =		${BUILD_PKGPATH}
 MODPY_ADJ_FILES =	tools/*.py
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/* ${PREFIX}/bin
+	cd ${WRKSRC}/tools; for i in *; do \
+		${INSTALL_SCRIPT} $$i ${PREFIX}/bin/$$i${MODPY_BIN_SUFFIX}; done
 
 do-test:
 	for f in ${WRKSRC}/test/*.sh; do \
