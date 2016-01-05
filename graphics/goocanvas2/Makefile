@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.22 2016/01/01 12:00:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2016/01/05 09:59:35 ajacoutot Exp $
 
-COMMENT=		canvas widget for GTK+ based on Cairo
+COMMENT=			canvas widget for GTK+ based on Cairo
 
-GNOME_PROJECT=		goocanvas
-GNOME_VERSION=		2.0.2
-PKGNAME=		goocanvas2-${GNOME_VERSION}
-REVISION=		2
+GNOME_PROJECT=			goocanvas
+GNOME_VERSION=			2.0.2
+PKGNAME=			goocanvas2-${GNOME_VERSION}
+REVISION=			3
 
 SHARED_LIBS +=  goocanvas-2.0             0.0 # 11.0
-CATEGORIES=		graphics
+
+CATEGORIES=			graphics
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,19 +22,18 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
 
-MODULES=	devel/gettext \
-		lang/python \
-		x11/gnome
+MODULES=		devel/gettext \
+			lang/python \
+			x11/gnome
 
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
+MODGNOME_TOOLS=		gobject-introspection
 
-BUILD_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/py-gobject3
+LIB_DEPENDS=		x11/gtk+3
+
 # MODPY_LIBDIR/gi/overrides/
-RUN_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
-LIB_DEPENDS=	x11/gtk+3
+RUN_DEPENDS=		devel/py-gobject3
 
-CONFIGURE_STYLE=gnu
-
-MODGNOME_TOOLS=	gobject-introspection
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
