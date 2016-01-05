@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/29 10:52:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/05 06:57:50 benoit Exp $
 
 COMMENT =	Python library for OAuth
 
-MODPY_EGG_VERSION = 1.5.211
+MODPY_EGG_VERSION = 1.9.0.post1
 DISTNAME =	oauth2-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 CATEGORIES =	net
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
 
