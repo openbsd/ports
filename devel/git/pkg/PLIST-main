@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.65 2015/09/29 11:42:59 benoit Exp $
+@comment $OpenBSD: PLIST-main,v 1.66 2016/01/05 08:31:59 benoit Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -157,6 +157,7 @@ libexec/git/git-stash
 @bin libexec/git/git-status
 @bin libexec/git/git-stripspace
 libexec/git/git-submodule
+@bin libexec/git/git-submodule--helper
 @bin libexec/git/git-symbolic-ref
 @bin libexec/git/git-tag
 @bin libexec/git/git-unpack-file
