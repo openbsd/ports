@@ -1,4 +1,4 @@
-$OpenBSD: patch-hw_net_ne2000_c,v 1.1 2015/09/16 09:18:13 ajacoutot Exp $
+$OpenBSD: patch-hw_net_ne2000_c,v 1.2 2016/01/05 06:56:12 ajacoutot Exp $
 
 net: add checks to validate ring buffer pointers(CVE-2015-5279)
 
@@ -16,8 +16,16 @@ via ne2000_receive() routine, a local 'index' variable
 could exceed the ring buffer size, leading to an infinite
 loop situation.
 
---- hw/net/ne2000.c.orig	Wed Sep 16 03:30:14 2015
-+++ hw/net/ne2000.c	Wed Sep 16 03:35:01 2015
+net: ne2000: fix bounds check in ioport	operations
+
+While doing ioport r/w operations, ne2000 device emulation suffers
+from OOB r/w errors. Update respective array bounds check to avoid
+OOB access.
+
+CVE-2015-8743
+
+--- hw/net/ne2000.c.orig	Tue Mar 10 13:38:27 2015
++++ hw/net/ne2000.c	Mon Jan  4 20:22:52 2016
 @@ -230,6 +230,9 @@ ssize_t ne2000_receive(NetClientState *nc, const uint8
      }
  
@@ -71,3 +79,27 @@ loop situation.
              break;
          case EN1_MULT ... EN1_MULT + 7:
              s->mult[offset - EN1_MULT] = val;
+@@ -465,8 +476,9 @@ static inline void ne2000_mem_writel(NE2000State *s, u
+                                      uint32_t val)
+ {
+     addr &= ~1; /* XXX: check exact behaviour if not even */
+-    if (addr < 32 ||
+-        (addr >= NE2000_PMEM_START && addr < NE2000_MEM_SIZE)) {
++    if (addr < 32
++        || (addr >= NE2000_PMEM_START
++            && addr + sizeof(uint32_t) <= NE2000_MEM_SIZE)) {
+         stl_le_p(s->mem + addr, val);
+     }
+ }
+@@ -495,8 +507,9 @@ static inline uint32_t ne2000_mem_readw(NE2000State *s
+ static inline uint32_t ne2000_mem_readl(NE2000State *s, uint32_t addr)
+ {
+     addr &= ~1; /* XXX: check exact behaviour if not even */
+-    if (addr < 32 ||
+-        (addr >= NE2000_PMEM_START && addr < NE2000_MEM_SIZE)) {
++    if (addr < 32
++        || (addr >= NE2000_PMEM_START
++            && addr + sizeof(uint32_t) <= NE2000_MEM_SIZE)) {
+         return ldl_le_p(s->mem + addr);
+     } else {
+         return 0xffffffff;

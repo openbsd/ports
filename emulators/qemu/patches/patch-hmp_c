@@ -1,0 +1,24 @@
+$OpenBSD: patch-hmp_c,v 1.1 2016/01/05 06:56:12 ajacoutot Exp $
+
+hmp: avoid redundant null termination of buffer
+
+When processing 'sendkey' command, hmp_sendkey routine null
+terminates the 'keyname_buf' array. This results in an OOB write
+issue, if 'keyname_len' was to fall outside of 'keyname_buf' array.
+Removed the redundant null termination, as pstrcpy routine already
+null terminates the target buffer.
+
+CVE-2015-8619
+
+--- hmp.c.orig	Tue Dec 22 23:04:58 2015
++++ hmp.c	Tue Dec 22 23:06:34 2015
+@@ -1490,9 +1490,7 @@ void hmp_send_key(Monitor *mon, const QDict *qdict)
+         /* Be compatible with old interface, convert user inputted "<" */
+         if (!strncmp(keyname_buf, "<", 1) && keyname_len == 1) {
+             pstrcpy(keyname_buf, sizeof(keyname_buf), "less");
+-            keyname_len = 4;
+         }
+-        keyname_buf[keyname_len] = 0;
+ 
+         keylist = g_malloc0(sizeof(*keylist));
+         keylist->value = g_malloc0(sizeof(*keylist->value));
