@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.408 2016/01/04 12:27:13 shadchin Exp $
+# $OpenBSD: Makefile,v 1.409 2016/01/06 15:50:20 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -258,6 +258,8 @@
      SUBDIR += py-pbkdf2
      SUBDIR += py-pbkdf2,python3
      SUBDIR += py-pefile
+     SUBDIR += py-rsa
+     SUBDIR += py-rsa,python3
      SUBDIR += py-secretstorage
      SUBDIR += py-secretstorage,python3
      SUBDIR += qca
