@@ -1,0 +1,12 @@
+$OpenBSD: patch-device_battery_battery_gyp,v 1.1 2016/01/06 21:46:44 robert Exp $
+--- device/battery/battery.gyp.orig.port	Mon Jan  4 19:37:57 2016
++++ device/battery/battery.gyp	Mon Jan  4 19:38:13 2016
+@@ -123,7 +123,7 @@
+                 'battery_status_manager_linux.cc',
+               ],
+             }],
+-            ['OS == "linux" and use_dbus==1', {
++            ['(os_bsd==1 or OS == "linux") and use_dbus==1', {
+               'sources!': [
+                 'battery_status_manager_default.cc',
+               ],
