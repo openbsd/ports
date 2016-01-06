@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1443 2016/01/06 15:49:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1444 2016/01/06 16:24:19 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1215,6 +1215,7 @@
      SUBDIR += py-configargparse
      SUBDIR += py-configargparse,python3
      SUBDIR += py-configobj
+     SUBDIR += py-configobj,python3
      SUBDIR += py-configparser
      SUBDIR += py-country
      SUBDIR += py-coverage
