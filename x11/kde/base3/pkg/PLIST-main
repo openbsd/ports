@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2014/01/10 08:06:11 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2016/01/06 09:48:59 jasper Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 @pkgpath x11/kde/base3
@@ -2773,6 +2773,7 @@ share/doc/HTML.kde3/en/kxkb/switching.png
 share/doc/HTML.kde3/en/kxkb/xkb.png
 share/doc/kdm/
 share/doc/kdm/README
+share/doc/pkg-readmes/${FULLPKGNAME}
 @fontdir share/fonts/
 @fontdir share/fonts/override/
 @comment share/fonts/override/fonts.dir
