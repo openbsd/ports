@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_pdf_pdf_pro,v 1.1.1.1 2015/11/04 21:11:16 sthen Exp $
---- src/pdf/pdf.pro.orig	Fri Oct 23 22:05:22 2015
-+++ src/pdf/pdf.pro	Fri Oct 23 22:06:01 2015
+$OpenBSD: patch-src_pdf_pdf_pro,v 1.2 2016/01/06 16:50:35 sthen Exp $
+--- src/pdf/pdf.pro.orig	Sun Jul 12 07:34:52 2015
++++ src/pdf/pdf.pro	Sun Dec 27 11:11:26 2015
 @@ -24,8 +24,8 @@ DEPENDPATH += . ../shared
  INCLUDEPATH += . ../shared
  
@@ -12,3 +12,12 @@ $OpenBSD: patch-src_pdf_pdf_pro,v 1.1.1.1 2015/11/04 21:11:16 sthen Exp $
  
      QMAKE_EXTRA_TARGETS += man
      INSTALLS += man
+@@ -45,6 +45,8 @@ CONFIG(shared, shared|static) {
+ } else {
+   include(../lib/lib.pri)
+ }
++
++QMAKE_LFLAGS = -L${WRKBUILD}/qt/lib
+ 
+ #Application part
+ SOURCES += wkhtmltopdf.cc pdfarguments.cc pdfcommandlineparser.cc \

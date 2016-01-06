@@ -1,0 +1,12 @@
+$OpenBSD: patch-qt_src_3rdparty_webkit_Source_JavaScriptCore_jit_JITStubs_cpp,v 1.1 2016/01/06 16:50:35 sthen Exp $
+--- qt/src/3rdparty/webkit/Source/JavaScriptCore/jit/JITStubs.cpp.orig	Wed Dec  9 21:34:01 2015
++++ qt/src/3rdparty/webkit/Source/JavaScriptCore/jit/JITStubs.cpp	Wed Dec  9 21:34:22 2015
+@@ -79,7 +79,7 @@ namespace JSC {
+ #define THUMB_FUNC_PARAM(name)
+ #endif
+ 
+-#if (OS(LINUX) || OS(FREEBSD)) && CPU(X86_64)
++#if (OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)) && CPU(X86_64)
+ #define SYMBOL_STRING_RELOCATION(name) #name "@plt"
+ #elif OS(DARWIN) || (CPU(X86_64) && COMPILER(MINGW) && !GCC_VERSION_AT_LEAST(4, 5, 0))
+ #define SYMBOL_STRING_RELOCATION(name) "_" #name

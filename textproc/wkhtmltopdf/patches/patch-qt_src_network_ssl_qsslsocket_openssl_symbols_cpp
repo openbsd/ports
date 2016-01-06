@@ -1,0 +1,39 @@
+$OpenBSD: patch-qt_src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.1 2016/01/06 16:50:35 sthen Exp $
+--- qt/src/network/ssl/qsslsocket_openssl_symbols.cpp.orig	Thu Jul  2 13:46:37 2015
++++ qt/src/network/ssl/qsslsocket_openssl_symbols.cpp	Tue Jan  5 22:55:36 2016
+@@ -228,13 +228,17 @@ DEFINEFUNC(int, SSL_shutdown, SSL *a, a, return -1, re
+ #ifndef OPENSSL_NO_SSL2
+ DEFINEFUNC(const SSL_METHOD *, SSLv2_client_method, DUMMYARG, DUMMYARG, return 0, return)
+ #endif
++#ifndef OPENSSL_NO_SSL3
+ DEFINEFUNC(const SSL_METHOD *, SSLv3_client_method, DUMMYARG, DUMMYARG, return 0, return)
++#endif
+ DEFINEFUNC(const SSL_METHOD *, SSLv23_client_method, DUMMYARG, DUMMYARG, return 0, return)
+ DEFINEFUNC(const SSL_METHOD *, TLSv1_client_method, DUMMYARG, DUMMYARG, return 0, return)
+ #ifndef OPENSSL_NO_SSL2
+ DEFINEFUNC(const SSL_METHOD *, SSLv2_server_method, DUMMYARG, DUMMYARG, return 0, return)
+ #endif
++#ifndef OPENSSL_NO_SSL3
+ DEFINEFUNC(const SSL_METHOD *, SSLv3_server_method, DUMMYARG, DUMMYARG, return 0, return)
++#endif
+ DEFINEFUNC(const SSL_METHOD *, SSLv23_server_method, DUMMYARG, DUMMYARG, return 0, return)
+ DEFINEFUNC(const SSL_METHOD *, TLSv1_server_method, DUMMYARG, DUMMYARG, return 0, return)
+ #else
+@@ -822,13 +826,17 @@ bool q_resolveOpenSslSymbols()
+ #ifndef OPENSSL_NO_SSL2
+     RESOLVEFUNC(SSLv2_client_method)
+ #endif
++#ifndef OPENSSL_NO_SSL3
+     RESOLVEFUNC(SSLv3_client_method)
++#endif
+     RESOLVEFUNC(SSLv23_client_method)
+     RESOLVEFUNC(TLSv1_client_method)
+ #ifndef OPENSSL_NO_SSL2
+     RESOLVEFUNC(SSLv2_server_method)
+ #endif
++#ifndef OPENSSL_NO_SSL3
+     RESOLVEFUNC(SSLv3_server_method)
++#endif
+     RESOLVEFUNC(SSLv23_server_method)
+     RESOLVEFUNC(TLSv1_server_method)
+     RESOLVEFUNC(X509_NAME_entry_count)
