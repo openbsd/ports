@@ -1,0 +1,25 @@
+$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.1 2016/01/06 09:16:08 robert Exp $
+--- chrome/app/chrome_main.cc.orig.port	Wed Jan  6 09:37:18 2016
++++ chrome/app/chrome_main.cc	Wed Jan  6 10:05:06 2016
+@@ -6,6 +6,8 @@
+ 
+ #include "content/public/app/content_main.h"
+ #if !defined(CHROME_MULTIPLE_DLL_CHILD)
++#       include "base/command_line.h"
++#       include "chrome/common/chrome_switches.h"
+ #	include "net/url_request/url_request.h"
+ #	include "iridium/trknotify.h"
+ #endif
+@@ -32,7 +34,11 @@ int ChromeMain(int argc, const char** argv);
+ #if !defined(CHROME_MULTIPLE_DLL_CHILD)
+ static void trace_url_request(const std::string &caller, const GURL &url)
+ {
+-	iridium::log_url_request(caller, url);
++	base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
++	if (!command_line->HasSwitch(switches::kTrk))
++		return;
++
++  	iridium::log_url_request(caller, url);
+ 	if (url.scheme() != url::kTraceScheme)
+ 		/* Do not show infobar for non-trk URLs */
+ 		return;

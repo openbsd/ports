@@ -1,7 +1,15 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.6 2015/12/17 07:02:48 robert Exp $
---- content/public/common/content_switches.h.orig.port	Tue Nov 24 21:00:55 2015
-+++ content/public/common/content_switches.h	Wed Dec  2 08:18:32 2015
-@@ -272,7 +272,7 @@ CONTENT_EXPORT extern const char kDisablePanelFitting[
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.7 2016/01/06 09:16:08 robert Exp $
+--- content/public/common/content_switches.h.orig.port	Tue Dec 15 21:05:11 2015
++++ content/public/common/content_switches.h	Wed Jan  6 09:45:01 2016
+@@ -180,6 +180,7 @@ extern const char kMemoryMetrics[];
+ CONTENT_EXPORT extern const char kMuteAudio[];
+ CONTENT_EXPORT extern const char kNoReferrers[];
+ CONTENT_EXPORT extern const char kNoSandbox[];
++CONTENT_EXPORT extern const char kTrk[];
+ CONTENT_EXPORT extern const char kEnableAppContainer[];
+ CONTENT_EXPORT extern const char kNumRasterThreads[];
+ CONTENT_EXPORT extern const char kOverridePluginPowerSaverForTesting[];
+@@ -272,7 +273,7 @@ CONTENT_EXPORT extern const char kDisablePanelFitting[
  CONTENT_EXPORT extern const char kDisableVaapiAcceleratedVideoEncode[];
  #endif
  
