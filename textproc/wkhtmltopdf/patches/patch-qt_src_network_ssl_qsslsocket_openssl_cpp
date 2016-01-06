@@ -1,7 +1,7 @@
-$OpenBSD: patch-qt_src_network_ssl_qsslsocket_openssl_cpp,v 1.1 2016/01/06 16:50:35 sthen Exp $
---- qt/src/network/ssl/qsslsocket_openssl.cpp.orig	Thu Jul  2 13:46:37 2015
-+++ qt/src/network/ssl/qsslsocket_openssl.cpp	Tue Jan  5 22:55:31 2016
-@@ -267,15 +267,19 @@ init_context:
+$OpenBSD: patch-qt_src_network_ssl_qsslsocket_openssl_cpp,v 1.2 2016/01/06 17:13:48 sthen Exp $
+--- qt/src/network/ssl/qsslsocket_openssl.cpp.orig	Thu Jul  2 12:46:37 2015
++++ qt/src/network/ssl/qsslsocket_openssl.cpp	Wed Jan  6 17:06:15 2016
+@@ -267,7 +267,11 @@ init_context:
  #endif
          break;
      case QSsl::SslV3:
@@ -11,16 +11,5 @@ $OpenBSD: patch-qt_src_network_ssl_qsslsocket_openssl_cpp,v 1.1 2016/01/06 16:50
 +        ctx = 0; // SSL 3 not supported by the system, but chosen deliberately -> error
 +#endif
          break;
--    case QSsl::SecureProtocols: // SslV2 will be disabled below
--    case QSsl::TlsV1SslV3: // SslV2 will be disabled below
-     case QSsl::AnyProtocol:
--    default:
-         ctx = q_SSL_CTX_new(client ? q_SSLv23_client_method() : q_SSLv23_server_method());
-         break;
-     case QSsl::TlsV1:
-+    case QSsl::SecureProtocols:
-+    case QSsl::TlsV1SslV3:
-+    default:
-         ctx = q_SSL_CTX_new(client ? q_TLSv1_client_method() : q_TLSv1_server_method());
-         break;
-     }
+     case QSsl::SecureProtocols: // SslV2 will be disabled below
+     case QSsl::TlsV1SslV3: // SslV2 will be disabled below
