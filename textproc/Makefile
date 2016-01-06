@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.478 2016/01/06 13:42:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.479 2016/01/06 18:01:05 feinerer Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -38,6 +38,7 @@
      SUBDIR += elasticsearch
      SUBDIR += enchant
      SUBDIR += exempi
+     SUBDIR += extract_url
      SUBDIR += fcbanner
      SUBDIR += filepp
      SUBDIR += gdiff
