@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2015/12/28 08:28:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2016/01/06 06:39:14 ajacoutot Exp $
 
 BROKEN-hppa =		missing atomic ops
 BROKEN-alpha =		missing atomic ops
-BROKEN-sparc64 =	missing atomic ops
 
 SHARED_ONLY =		Yes
 
