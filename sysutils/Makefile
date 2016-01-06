@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.367 2015/12/11 00:44:06 jturner Exp $
+# $OpenBSD: Makefile,v 1.368 2016/01/06 15:54:00 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -8,7 +8,7 @@
      SUBDIR += apcd
      SUBDIR += apcupsd
      SUBDIR += augeas
-     SUBDIR += autossh
+     SUBDIR += awscli
      SUBDIR += backuppc
      SUBDIR += bacula
      SUBDIR += bchunk
