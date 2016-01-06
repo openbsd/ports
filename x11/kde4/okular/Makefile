@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2015/06/26 09:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2016/01/06 11:05:34 zhuk Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	okularcore		51.0	# 1.7
 
@@ -32,7 +32,7 @@ LIB_DEPENDS = 	devel/chmlib \
 		print/poppler,,-qt4 \
 		security/qca2 \
 		textproc/ebook-tools \
-		x11/libkscreen \
+		x11/libkscreen<5 \
 		${MODKDE4_DEP_DIR}/graphics-mobipocket>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/kactivities>=${MIN_ACTIVITIES_VERSION} \
 		${MODKDE4_DEP_DIR}/libkexiv2>=${MODKDE4_DEP_VERSION}
