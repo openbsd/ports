@@ -1,16 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/03/13 15:33:19 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/01/06 16:23:47 ajacoutot Exp $
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}configobj.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}validate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/_version.py
 lib/python${MODPY_VERSION}/site-packages/configobj-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/configobj.py
-lib/python${MODPY_VERSION}/site-packages/configobj.pyc
 lib/python${MODPY_VERSION}/site-packages/validate.py
-lib/python${MODPY_VERSION}/site-packages/validate.pyc
-share/doc/${MODPY_PY_PREFIX}configobj/
-share/doc/${MODPY_PY_PREFIX}configobj/configobj.html
-share/doc/${MODPY_PY_PREFIX}configobj/configobj.txt
-share/doc/${MODPY_PY_PREFIX}configobj/default.css
-share/doc/${MODPY_PY_PREFIX}configobj/docutils.conf
-share/doc/${MODPY_PY_PREFIX}configobj/docutils.css
-share/doc/${MODPY_PY_PREFIX}configobj/pygments.css
-share/doc/${MODPY_PY_PREFIX}configobj/template.tmp
-share/doc/${MODPY_PY_PREFIX}configobj/validate.html
-share/doc/${MODPY_PY_PREFIX}configobj/validate.txt
