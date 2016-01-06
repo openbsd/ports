@@ -1,11 +1,11 @@
-$OpenBSD: patch-includes_definitions_inc_php,v 1.11 2015/12/07 23:42:03 sthen Exp $
+$OpenBSD: patch-includes_definitions_inc_php,v 1.12 2016/01/06 13:11:47 sthen Exp $
 
 Minimal handling for running inside chroot. Not really recommended and some
 functionality will be lost, but it might be enough for some users.
 
---- includes/definitions.inc.php.orig	Mon Dec  7 14:22:31 2015
-+++ includes/definitions.inc.php	Mon Dec  7 14:22:34 2015
-@@ -1759,6 +1759,8 @@ $config['device_types'][$i]['text'] = 'Appliance';
+--- includes/definitions.inc.php.orig	Wed Jan  6 11:51:00 2016
++++ includes/definitions.inc.php	Wed Jan  6 11:54:47 2016
+@@ -1786,10 +1786,12 @@ $config['device_types'][$i]['text'] = 'Appliance';
  $config['device_types'][$i]['type'] = 'appliance';
  $config['device_types'][$i]['icon'] = 'appliance.png';
  
@@ -14,3 +14,8 @@ functionality will be lost, but it might be enough for some users.
  //
  // No changes below this line #
  //
+-$config['version']              = '2015.master';
++$config['version']              = '%LNMS_VERSION%';
+ $config['project_name_version'] = $config['project_name'].' '.$config['version'];
+ 
+ if (isset($config['rrdgraph_def_text'])) {

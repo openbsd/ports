@@ -1,0 +1,12 @@
+$OpenBSD: patch-html_pages_about_inc_php,v 1.1 2016/01/06 13:11:47 sthen Exp $
+--- html/pages/about.inc.php.orig	Wed Jan  6 11:52:31 2016
++++ html/pages/about.inc.php	Wed Jan  6 11:53:35 2016
+@@ -159,7 +159,7 @@ $version         = `git rev-parse --short HEAD`;
+ echo "
+ <div class='table-responsive'>
+     <table class='table table-condensed' border='0'>
+-      <tr><td><b>Version</b></td><td><a href='http://www.librenms.org/changelog.html'>$version</a></td></tr>
++      <tr><td><b>Version</b></td><td><a href='http://www.librenms.org/changelog.html'>$project_version</a></td></tr>
+       <tr><td><b>DB Schema</b></td><td>#$schema_version</td></tr>
+       <tr><td><b>Apache</b></td><td>$apache_version</td></tr>
+       <tr><td><b>PHP</b></td><td>$php_version</td></tr>

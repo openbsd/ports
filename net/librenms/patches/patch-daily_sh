@@ -1,13 +1,19 @@
-$OpenBSD: patch-daily_sh,v 1.5 2015/12/07 23:42:03 sthen Exp $
---- daily.sh.orig	Mon Dec  7 14:22:31 2015
-+++ daily.sh	Mon Dec  7 14:25:08 2015
+$OpenBSD: patch-daily_sh,v 1.6 2016/01/06 13:11:47 sthen Exp $
+
+- use ksh
+- patch php binary name
+- avoid ${cnf,,} bashism (converts to lowercase); actually the
+result was being ignored anyway
+
+--- daily.sh.orig	Wed Jan  6 11:06:01 2016
++++ daily.sh	Wed Jan  6 11:44:21 2016
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/ksh
  # Copyright (C) 2015 Daniel Preussker, QuxLabs UG <preussker@quxlabs.com>
  # This program is free software: you can redistribute it and/or modify
  # it under the terms of the GNU General Public License as published by
-@@ -31,7 +31,7 @@ status_run() {
+@@ -32,7 +32,7 @@ status_run() {
  }
  
  if [ -z "$arg" ]; then
@@ -16,7 +22,17 @@ $OpenBSD: patch-daily_sh,v 1.5 2015/12/07 23:42:03 sthen Exp $
      if [ "$up" -eq 1 ]; then
          # Update to Master-Branch
          status_run 'Updating to latest codebase' 'git pull --quiet'
-@@ -50,19 +50,19 @@ else
+@@ -41,8 +41,7 @@ if [ -z "$arg" ]; then
+         status_run 'Updating to latest release' 'git fetch --tags && git checkout $(git describe --tags $(git rev-list --tags --max-count=1))'
+     fi
+ 
+-    cnf=$(echo $(grep '\[.distributed_poller.\]' config.php | egrep -v -e '^//' -e '^#' | cut -d = -f 2 | sed 's/;//g'))
+-    cnd=${cnf,,}
++    cnf=$(awk '/^\$config\[.distributed_poller.\]/ {gsub(" ", ""); FS="[=;]"; print tolower($2)}' config.php)
+     if [ -z "$cnf" ] || [ "$cnf" == "0" ] || [ "$cnf" == "false" ]; then
+         # Call ourself again in case above pull changed or added something to daily.sh
+         $0 post-pull
+@@ -51,20 +50,20 @@ else
      case $arg in
          post-pull)
              # List all tasks to do after pull in the order of execution
@@ -34,16 +50,18 @@ $OpenBSD: patch-daily_sh,v 1.5 2015/12/07 23:42:03 sthen Exp $
 -            php daily.php -f perf_times
 -            php daily.php -f callback
 -            php daily.php -f device_perf
+-            php daily.php -f purgeusers
 +            %PHP% daily.php -f syslog
 +            %PHP% daily.php -f eventlog
 +            %PHP% daily.php -f authlog
 +            %PHP% daily.php -f perf_times
 +            %PHP% daily.php -f callback
 +            %PHP% daily.php -f device_perf
++            %PHP% daily.php -f purgeusers
          ;;
          submodules)
              # Init+Update our submodules
-@@ -71,7 +71,7 @@ else
+@@ -73,7 +72,7 @@ else
          ;;
          notifications)
              # Get notifications

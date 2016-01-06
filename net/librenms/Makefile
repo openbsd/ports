@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2015/12/27 23:28:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2016/01/06 13:11:47 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
-V =		201512
-REVISION =	0
+V =		201601
 DISTNAME =	librenms-$V
 DISTFILES =	librenms-$V{$V}.tar.gz
 
@@ -62,8 +61,8 @@ do-install:
 	cd ${WRKSRC}; pax -rw . ${INSTDIR}
 	find ${INSTDIR} -name '*.orig' -print0 | xargs -r0 rm
 	mkdir -p ${INSTDIR}/{rrd,logs}
-	cd ${INSTDIR}; perl -pi -e 's,%PHP%,${MODPHP_BIN},' \
-	    daily.sh poller-wrapper.py validate.php
+	cd ${INSTDIR}; sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh poller-wrapper.py validate.php; \
+	    sed -i 's,%LNMS_VERSION%,$V,' includes/definitions.inc.php
 	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
 
 .include <bsd.port.mk>
