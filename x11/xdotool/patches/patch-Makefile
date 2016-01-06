@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.4 2011/09/23 07:24:04 dcoppa Exp $
---- Makefile.orig	Mon May 30 09:29:58 2011
-+++ Makefile	Fri Sep 23 09:18:31 2011
-@@ -11,29 +11,28 @@ DINSTALLLIB=$(DESTDIR)$(INSTALLLIB)
+$OpenBSD: patch-Makefile,v 1.5 2016/01/06 09:49:43 jasper Exp $
+--- Makefile.orig	Mon May  4 04:54:46 2015
++++ Makefile	Tue Jan  5 21:25:42 2016
+@@ -11,30 +11,29 @@ DINSTALLLIB=$(DESTDIR)$(INSTALLLIB)
  DINSTALLMAN=$(DESTDIR)$(INSTALLMAN)
  DINSTALLINCLUDE=$(DESTDIR)$(INSTALLINCLUDE)
  
@@ -11,37 +11,36 @@ $OpenBSD: patch-Makefile,v 1.4 2011/09/23 07:24:04 dcoppa Exp $
  VERSION=$(shell sh version.sh)
 +LIBVER?=$(MAJOR).$(MINOR)
  
--WARNFLAGS+=-pedantic -Wall -W -Wundef \
-+WARNFLAGS+=-pedantic -W -Wundef \
+ WARNFLAGS+=-pedantic -Wall -W -Wundef \
             -Wendif-labels -Wshadow -Wpointer-arith -Wbad-function-cast \
             -Wcast-align -Wwrite-strings -Wstrict-prototypes \
             -Wmissing-prototypes -Wnested-externs -Winline \
--           -Wdisabled-optimization -Wno-missing-field-initializers
+            -Wdisabled-optimization -Wno-missing-field-initializers
 -LIBSUFFIX=$(shell sh platform.sh libsuffix)
 -VERLIBSUFFIX=$(shell sh platform.sh libsuffix $(MAJOR))
-+           -Wdisabled-optimization
 +LIBSUFFIX=$(shell sh platform.sh libsuffix $(LIBVER))
  DYNLIBFLAG=$(shell sh platform.sh dynlibflag)
 -LIBNAMEFLAG=$(shell sh platform.sh libnameflag $(MAJOR) $(INSTALLLIB))
- LIBS=$(shell sh platform.sh extralibs)
-  
--CFLAGS?=-pipe -O2 $(WARNFLAGS)
+ 
+ CFLAGS?=-pipe -O2 $(WARNFLAGS)
 -CFLAGS+=-g # TODO(sissel): Comment before release
-+CFLAGS?=-pipe -O2 -Wall
+ CFLAGS+=$(CPPFLAGS)
  
 -DEFAULT_LIBS=-L/usr/X11R6/lib -L/usr/local/lib -lX11 -lXtst -lXinerama
 -DEFAULT_INC=-I/usr/X11R6/include -I/usr/local/include
-+DEFAULT_LIBS=-L{X11BASE}/lib -lX11 -lXtst -lXinerama
-+DEFAULT_INC=-I${X11BASE}/include
++DEFAULT_LIBS=-L${X11BASE}/lib -L${PREFIX}/lib -lX11 -lXtst -lXinerama
++DEFAULT_INC=-I${X11BASE}/include -I${PREFIX}/include
  
- LIBS+=$(shell pkg-config --libs x11 xtst xinerama 2> /dev/null || echo "$(DEFAULT_LIBS)")
- INC=$(shell pkg-config --cflags x11 xtst xinerama 2> /dev/null || echo "$(DEFAULT_INC)")
+ XDOTOOL_LIBS=$(shell pkg-config --libs x11 2> /dev/null || echo "$(DEFAULT_LIBS)")  $(shell sh platform.sh extralibs)
+ LIBXDO_LIBS=$(shell pkg-config --libs xtst xinerama xkbcommon 2> /dev/null || echo "$(DEFAULT_LIBS)")
+-INC=$(shell pkg-config --cflags x11 xtst xinerama 2> /dev/null || echo "$(DEFAULT_INC)")
 -CFLAGS+=-std=c99 $(INC)
++INC=$(shell pkg-config --cflags x11 xtst xinerama xkbcommon 2> /dev/null || echo "$(DEFAULT_INC)")
 +CFLAGS+=-std=c99 $(WARNFLAGS) $(INC)
  
  CMDOBJS= cmd_click.o cmd_mousemove.o cmd_mousemove_relative.o cmd_mousedown.o \
           cmd_mouseup.o cmd_getmouselocation.o cmd_type.o cmd_key.o \
-@@ -51,7 +50,7 @@ CMDOBJS= cmd_click.o cmd_mousemove.o cmd_mousemove_rel
+@@ -52,7 +51,7 @@ CMDOBJS= cmd_click.o cmd_mousemove.o cmd_mousemove_rel
           cmd_sleep.o cmd_get_display_geometry.o
  
  .PHONY: all
@@ -50,7 +49,7 @@ $OpenBSD: patch-Makefile,v 1.4 2011/09/23 07:24:04 dcoppa Exp $
  
  .PHONY: static
  static: xdotool.static
-@@ -83,23 +82,22 @@ post-install:
+@@ -84,23 +83,22 @@ post-install:
  .PHONY: installprog
  installprog: xdotool
  	install -d $(DINSTALLBIN)
@@ -78,42 +77,21 @@ $OpenBSD: patch-Makefile,v 1.4 2011/09/23 07:24:04 dcoppa Exp $
  
  .PHONY: deinstall
  deinstall: uninstall
-@@ -109,12 +107,11 @@ uninstall: 
- 	rm -f $(DINSTALLBIN)/xdotool
- 	rm -f $(DINSTALLMAN)/xdotool.1
- 	rm -f $(DINSTALLLIB)/libxdo.$(LIBSUFFIX)
--	rm -f $(DINSTALLLIB)/libxdo.$(VERLIBSUFFIX)
- 
- .PHONY: clean
- clean:
- 	rm -f *.o xdotool xdotool.static xdotool.1 xdotool.html \
--	      libxdo.$(LIBSUFFIX) libxdo.$(VERLIBSUFFIX) libxdo.a || true
-+	      libxdo.$(LIBSUFFIX) libxdo.a || true
- 
- xdo.o: xdo.c xdo_version.h
- 	$(CC) $(CFLAGS) -fPIC -c xdo.c
-@@ -130,14 +127,11 @@ xdo.c: xdo.h
+@@ -131,7 +129,7 @@ xdo.c: xdo.h
  xdotool.c: xdo.h
  
  libxdo.$(LIBSUFFIX): xdo.o xdo_search.o
--	$(CC) $(LDFLAGS) $(DYNLIBFLAG) $(LIBNAMEFLAG) xdo.o xdo_search.o -o $@ $(LIBS)
-+	$(CC) $(LDFLAGS) $(DYNLIBFLAG) xdo.o xdo_search.o -o $@ $(LIBS)
+-	$(CC) $(LDFLAGS) $(DYNLIBFLAG) $(LIBNAMEFLAG) xdo.o xdo_search.o -o $@ $(LIBXDO_LIBS)
++	$(CC) $(LDFLAGS) $(DYNLIBFLAG) xdo.o xdo_search.o -o $@ $(LIBXDO_LIBS)
  
  libxdo.a: xdo.o xdo_search.o
  	ar qv $@ xdo.o xdo_search.o
- 
--libxdo.$(VERLIBSUFFIX): libxdo.$(LIBSUFFIX)
--	ln -s $< $@
--
- # xdotool the binary requires libX11 now for XSelectInput and friends.
- # This requirement will go away once more things are refactored into
- # libxdo.
-@@ -165,7 +159,7 @@ package: test-package-build create-package create-pack
- package-deb: test-package-build create-package-deb
+@@ -172,7 +170,7 @@ package-deb: test-package-build create-package-deb
  
  .PHONY: test
+ test: WITH_SHELL=/bin/bash
 -test: xdotool libxdo.$(VERLIBSUFFIX)
 +test: xdotool libxdo.$(LIBSUFFIX)
- 	$(MAKE) -C t
- 
- xdo_version.h:
+ 	echo $(WITH_SHELL)
+ 	if [ "$(WITH_SHELL)" = "/bin/sh" ] ; then \
+ 		echo "Shell '$(WITH_SHELL)' fails on some Linux distros because it could"; \

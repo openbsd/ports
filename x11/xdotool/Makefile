@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2013/08/07 21:33:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/06 09:49:42 jasper Exp $
 
 COMMENT=	fake keyboard and mouse input
 
-DISTNAME=	xdotool-2.20110530.1
+GH_TAGNAME=	v3.20150503.1
+GH_PROJECT=	xdotool
+GH_ACCOUNT=	jordansissel
+DISTNAME=	${GH_PROJECT}-${GH_TAGNAME:S/^v//}
 EPOCH=		0
 
 SHARED_ONLY=	Yes
 
-SHARED_LIBS=	xdo 0.0	# 2.1
+SHARED_LIBS=	xdo 0.1	# 1.1
 
 CATEGORIES=	x11
 
@@ -16,12 +19,11 @@ HOMEPAGE=	http://www.semicomplete.com/projects/xdotool/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://semicomplete.googlecode.com/files/
-
 USE_GMAKE=	Yes
 
-WANTLIB=	X11 Xau Xdmcp Xext Xinerama \
-		Xtst c m pthread-stubs xcb
+WANTLIB += X11 Xinerama Xtst c m xkbcommon
+
+LIB_DEPENDS=	x11/xkbcommon
 
 MAKE_FLAGS=	LIBVER=${LIBxdo_VERSION}
 
