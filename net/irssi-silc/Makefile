@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.33 2015/12/29 22:45:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2016/01/06 17:01:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	SILC plugin for irssi
 
 DISTNAME=	irssi-silc-1.1.8
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	net
 
 HOMEPAGE=	http://penguin-breeder.org/silc/
-
-MAINTAINER=	Martynas Venckus <martynas@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

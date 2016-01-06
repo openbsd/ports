@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2015/09/29 10:51:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/06 17:01:54 ajacoutot Exp $
 
 COMMENT =		python bytecode assembler
 
 MODPY_EGG_VERSION =	0.6
 DISTNAME =		BytecodeAssembler-${MODPY_EGG_VERSION}
 PKGNAME =		py-bytecodeassembler-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://peak.telecommunity.com/DevCenter/BytecodeAssembler
-
-MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 
 # PSF
 PERMIT_PACKAGE_CDROM =	Yes

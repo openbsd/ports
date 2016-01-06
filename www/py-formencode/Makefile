@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2015/09/29 10:52:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2016/01/06 17:01:55 ajacoutot Exp $
 
 COMMENT =		HTML form validation, generation, and conversion
 
 MODPY_EGG_VERSION =	1.2.4
 DISTNAME =		FormEncode-${MODPY_EGG_VERSION}
 PKGNAME =		py-formencode-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
 HOMEPAGE =		http://www.formencode.org/
-
-MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 
 # PSF
 PERMIT_PACKAGE_CDROM =	Yes

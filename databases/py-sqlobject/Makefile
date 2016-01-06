@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2015/09/29 10:51:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2016/01/06 17:01:54 ajacoutot Exp $
 
 COMMENT =		Object Relational Manager
 
 MODPY_EGG_VERSION =	0.10.4
 DISTNAME =		SQLObject-${MODPY_EGG_VERSION}
 PKGNAME =		py-sqlobject-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		databases
 
 HOMEPAGE =		http://www.sqlobject.org/
-
-MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes

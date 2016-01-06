@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2015/09/29 10:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/01/06 17:01:54 ajacoutot Exp $
 
 COMMENT=		template plugin that supports Kid templates
 
 VERSION=		1.0.4
 DISTNAME=		TurboKid-${VERSION}
 PKGNAME=		py-turbokid-${VERSION}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.turbogears.org/
-
-MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

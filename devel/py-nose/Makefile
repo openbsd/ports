@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/09/29 10:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2016/01/06 17:01:54 ajacoutot Exp $
 
 COMMENT=		discovery-based unittest extension
 
@@ -6,11 +6,9 @@ MODPY_EGG_VERSION=	1.3.7
 DISTNAME=		nose-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://readthedocs.org/docs/nose/en/latest/
-
-MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

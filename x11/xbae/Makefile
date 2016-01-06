@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/05 17:00:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2016/01/06 17:01:55 ajacoutot Exp $
 
 COMMENT=	Motif-based table widget
 
 DISTNAME=	xbae-4.60.4
-REVISION=	12
+REVISION=	13
 
 SHARED_LIBS=	Xbae 4.60
 
 CATEGORIES=	x11 math
 
 HOMEPAGE=	http://xbae.sourceforge.net/
-
-MAINTAINER=	Martynas Venckus <martynas@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

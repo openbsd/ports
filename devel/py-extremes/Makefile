@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/29 10:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/06 17:01:54 ajacoutot Exp $
 
 COMMENT =		mix and max objects
 
 MODPY_EGG_VERSION =	1.1.1
 DISTNAME =		Extremes-${MODPY_EGG_VERSION}
 PKGNAME =		py-extremes-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://pypi.python.org/pypi/Extremes
-
-MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 
 # PSF
 PERMIT_PACKAGE_CDROM =	Yes

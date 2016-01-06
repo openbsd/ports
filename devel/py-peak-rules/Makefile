@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/09/29 10:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/06 17:01:54 ajacoutot Exp $
 
 COMMENT =		generic functions support systems
 
@@ -6,14 +6,12 @@ MODPY_EGG_VERSION =	0.5
 REV = 			2582
 DISTNAME =		PEAK-Rules-${MODPY_EGG_VERSION}a1.dev-r${REV}
 PKGNAME =		py-peak-rules-${MODPY_EGG_VERSION}r${REV}
-REVISION=		1
+REVISION=		2
 EPOCH =			0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://pypi.python.org/pypi/PEAK-Rules/
-
-MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 
 # PSF
 PERMIT_PACKAGE_CDROM =	Yes

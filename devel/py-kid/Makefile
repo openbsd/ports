@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2015/09/29 10:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/06 17:01:54 ajacoutot Exp $
 
 COMMENT=		template language for XML based vocabularies
 
 VERSION=		0.9.6
 DISTNAME=		kid-${VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.kid-templating.org/
-
-MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

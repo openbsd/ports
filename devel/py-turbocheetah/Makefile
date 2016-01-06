@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2015/09/29 10:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/01/06 17:01:54 ajacoutot Exp $
 
 COMMENT=		plugin to support use of Cheetah templates
 
 MODPY_EGG_VERSION=	1.0
 DISTNAME=		TurboCheetah-${MODPY_EGG_VERSION}
 PKGNAME=		py-turbocheetah-${MODPY_EGG_VERSION}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.turbogears.org/
-
-MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

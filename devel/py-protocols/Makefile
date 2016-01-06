@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2015/09/29 10:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2016/01/06 17:01:54 ajacoutot Exp $
 
 COMMENT=		protocol definition, declaration and adaptation
 
 MODPY_EGG_VERSION =	1.0a0dev_r0
 DISTNAME=		PyProtocols-1.0a0dev_r2306
 PKGNAME=		py-protocols-1.0r2306
-REVISION=		3
+REVISION=		4
 EPOCH=			0
 
 WRKSRC =		${WRKDIR}/PyProtocols
@@ -13,8 +13,6 @@ WRKSRC =		${WRKDIR}/PyProtocols
 CATEGORIES=		devel
 
 HOMEPAGE=		http://peak.telecommunity.com/PyProtocols.html
-
-MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 
 # PSF/ZPL
 PERMIT_PACKAGE_CDROM=	Yes
