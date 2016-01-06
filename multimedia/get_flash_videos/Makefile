@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2015/10/16 21:00:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2016/01/06 10:57:46 sthen Exp $
 
 COMMENT=	download flash video files from various sites
 
-V=		20151008
-DISTNAME=	App-get_flash_videos-1.24.$V
-PKGNAME=	get_flash_videos-1.24.$V
-#WRKDIST=	${WRKDIR}/monsieurvideo-get-flash-videos-c52cdf6
+V=		1.25.91
+DISTNAME=	get_flash_videos-$V
+PKGNAME=	${DISTNAME}
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://get-flash-videos.googlecode.com/
@@ -19,7 +18,7 @@ MODULES=	cpan
 
 GH_ACCOUNT=	monsieurvideo
 GH_PROJECT=	get-flash-videos
-GH_COMMIT=	e927a6cc9a62744a814cad691ab74855de4cc673
+GH_TAGNAME=	$V
 MASTER_SITES=	${MASTER_SITES_GITHUB}
 
 BUILD_DEPENDS=	devel/p5-Tie-IxHash
