@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1442 2016/01/06 15:47:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1443 2016/01/06 15:49:37 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1210,6 +1210,8 @@
      SUBDIR += py-cheetah
      SUBDIR += py-clint
      SUBDIR += py-cloudpickle
+     SUBDIR += py-colorama
+     SUBDIR += py-colorama,python3
      SUBDIR += py-configargparse
      SUBDIR += py-configargparse,python3
      SUBDIR += py-configobj
