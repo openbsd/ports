@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/04 09:49:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/06 20:21:37 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/pyRFC3339-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyRFC3339-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/pyRFC3339-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -14,10 +14,4 @@ lib/python${MODPY_VERSION}/site-packages/pyrfc3339/${MODPY_PYCACHE}parser.${MODP
 lib/python${MODPY_VERSION}/site-packages/pyrfc3339/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyrfc3339/generator.py
 lib/python${MODPY_VERSION}/site-packages/pyrfc3339/parser.py
-lib/python${MODPY_VERSION}/site-packages/pyrfc3339/tests/
-lib/python${MODPY_VERSION}/site-packages/pyrfc3339/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyrfc3339/tests/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/pyrfc3339/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pyrfc3339/tests/${MODPY_PYCACHE}tests.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pyrfc3339/tests/tests.py
 lib/python${MODPY_VERSION}/site-packages/pyrfc3339/utils.py
