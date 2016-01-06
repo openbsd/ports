@@ -1,0 +1,15 @@
+This is a Perl script that extracts URLs from correctly-encoded MIME email
+messages. This can be used either as a pre-parser for urlview, or to replace
+urlview entirely.
+
+Urlview is a great program, but has some deficiencies. In particular, it isn't
+particularly configurable, and cannot handle URLs that have been broken over
+several lines in format=flowed delsp=yes email messages. Nor can it handle
+quoted-printable email messages. Also, urlview doesn't eliminate duplicate
+URLs. This Perl script handles all of that. It also sanitizes URLs so that
+they can't break out of the command shell.
+
+This is designed primarily for use with the mutt emailer. The idea is that if
+you want to access a URL in an email, you pipe the email to a URL extractor
+(like this one) which then lets you select a URL to view in some third program
+(such as Firefox).
