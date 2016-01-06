@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2015/06/17 17:12:27 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2016/01/06 09:48:44 jasper Exp $
 @option no-default-conflict
 @conflict jdk->=1.8v0,<1.9v0
 @pkgpath devel/jdk/1.7,-jdk
@@ -789,3 +789,4 @@ ${JDKHOME}/sample/try-with-resources/src/CustomAutoCloseableSample.java
 ${JDKHOME}/sample/try-with-resources/src/Unzip.java
 ${JDKHOME}/sample/try-with-resources/src/ZipCat.java
 ${JDKHOME}/src.zip
+share/doc/pkg-readmes/${FULLPKGNAME}

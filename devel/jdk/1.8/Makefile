@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/06/29 10:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/06 09:48:44 jasper Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -12,7 +12,7 @@ PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 
 DIST_SUBDIR=	jdk
 DISTNAME=	openjdk-8u45b14-bsd-port-20150618
