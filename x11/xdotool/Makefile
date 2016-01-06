@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/06 09:49:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2016/01/06 19:52:12 jasper Exp $
 
 COMMENT=	fake keyboard and mouse input
 
 GH_TAGNAME=	v3.20150503.1
 GH_PROJECT=	xdotool
 GH_ACCOUNT=	jordansissel
-DISTNAME=	${GH_PROJECT}-${GH_TAGNAME:S/^v//}
 EPOCH=		0
 
 SHARED_ONLY=	Yes
