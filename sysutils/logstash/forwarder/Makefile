@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/11/15 21:32:24 sebastia Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/06 20:02:19 jasper Exp $
 
 COMMENT=	collect logs locally in preparation for processing elsewhere
 
 GH_ACCOUNT=	elastic
 GH_PROJECT=	logstash-forwarder
 GH_TAGNAME=	v0.4.0
-DISTNAME=	${GH_PROJECT}-${GH_TAGNAME:S/v//}
 REVISION=	1
 
 MODULES=	lang/go

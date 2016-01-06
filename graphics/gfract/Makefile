@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2015/10/08 11:28:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2016/01/06 20:02:19 jasper Exp $
 
 COMMENT=		fractal program with GTK interface
 GH_ACCOUNT=		oskusalerma
 GH_PROJECT=		gfract
 GH_TAGNAME=		v0.33
-DISTNAME=		${GH_PROJECT}-${GH_TAGNAME:S/v//}
 REVISION=		13
 DISTFILES=		${DISTNAME}.tar.gz \
 			gfract-palettes-0.1.tar.gz:0

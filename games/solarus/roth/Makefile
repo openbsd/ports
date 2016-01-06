@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/05 18:49:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/06 20:02:19 jasper Exp $
 
 COMMENT =	fan made Zelda game for Solarus engine
 
 GH_ACCOUNT=	christopho
 GH_PROJECT=	zelda_roth_se
 GH_TAGNAME=	v1.0.6
-DISTNAME=	${GH_PROJECT}-${GH_TAGNAME:S/v//}
 REVISION =	0
 
 HOMEPAGE =	http://www.solarus-games.org/games/zelda-return-of-the-hylian-se/

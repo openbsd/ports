@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/06/17 09:10:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/06 20:02:19 jasper Exp $
 
 PORTROACH=		limit:^v1
 PORTROACH_COMMENT=	gdnsd >= 2.0.0 requires __thread support
@@ -12,7 +12,6 @@ GH_PROJECT=		gdnsd
 GH_TAGNAME=		v1.11.5
 REVISION=		1
 
-DISTNAME=		${GH_PROJECT}-${GH_TAGNAME:S/v//g}
 CATEGORIES=		net
 
 HOMEPAGE=		http://gdnsd.org/

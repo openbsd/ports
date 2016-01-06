@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/07/15 19:14:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2016/01/06 20:02:19 jasper Exp $
 
 COMMENT =	SSL/SSH multiplexer
 
@@ -6,7 +6,6 @@ GH_ACCOUNT =	yrutschle
 GH_PROJECT =	sslh
 V =		1.17
 GH_TAGNAME =	v$V
-DISTNAME =	${GH_PROJECT}-${GH_TAGNAME:S/v//}
 CATEGORIES =	security net
 REVISION =	0
 
