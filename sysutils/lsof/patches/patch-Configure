@@ -1,7 +1,7 @@
-$OpenBSD: patch-Configure,v 1.36 2015/03/24 21:26:09 sthen Exp $
---- Configure.orig	Mon Oct 13 23:31:13 2014
-+++ Configure	Tue Mar 24 21:23:04 2015
-@@ -3923,9 +3923,10 @@ return(0); }
+$OpenBSD: patch-Configure,v 1.37 2016/01/06 10:15:12 sthen Exp $
+--- Configure.orig	Tue Jul  7 21:17:04 2015
++++ Configure	Wed Jan  6 10:12:38 2016
+@@ -3970,9 +3970,10 @@ return(0); }
  	echo "!!!WARNING!!!  Configuring for OpenBSD 3.9"
  	;;
        *)
@@ -14,7 +14,7 @@ $OpenBSD: patch-Configure,v 1.36 2015/03/24 21:26:09 sthen Exp $
  	;;
        esac	# }
      fi	# }
-@@ -3933,7 +3934,7 @@ return(0); }
+@@ -3980,7 +3981,7 @@ return(0); }
      # Test for legal OpenBSD version.
  
      case $LSOF_VERS in	# {
@@ -23,7 +23,7 @@ $OpenBSD: patch-Configure,v 1.36 2015/03/24 21:26:09 sthen Exp $
        ;;
      *)
        echo "Unknown OpenBSD version: $LSOF_VERS"
-@@ -3995,11 +3996,6 @@ return(0); }
+@@ -4042,11 +4043,6 @@ return(0); }
  	LSOF_TMP1=1
        fi	# }
      fi	# }
@@ -35,7 +35,7 @@ $OpenBSD: patch-Configure,v 1.36 2015/03/24 21:26:09 sthen Exp $
      if test -d ${OPENBSD_SYS}/isofs/cd9660	# {
      then
        LSOF_CFGF="$LSOF_CFGF -DHAS9660FS=1"
-@@ -4173,6 +4169,18 @@ return(0); }
+@@ -4220,6 +4216,18 @@ return(0); }
      if test -r ${LSOF_INCLUDE}/sys/pipe.h	# {
      then
        LSOF_CFGF="$LSOF_CFGF -DHAS_SYS_PIPEH"
