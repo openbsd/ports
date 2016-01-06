@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/06 15:53:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/06 17:20:21 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME\-}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME\-}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME\-}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME\-}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME\-}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME\-}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/awscli-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/awscli-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/awscli-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/awscli-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/awscli-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/awscli-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/awscli/__init__.py
 lib/python${MODPY_VERSION}/site-packages/awscli/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/argparser.py
