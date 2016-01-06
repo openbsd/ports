@@ -1,18 +1,27 @@
-$OpenBSD: patch-daily_sh,v 1.6 2016/01/06 13:11:47 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.7 2016/01/06 20:03:56 sthen Exp $
 
 - use ksh
 - patch php binary name
 - avoid ${cnf,,} bashism (converts to lowercase); actually the
 result was being ignored anyway
 
---- daily.sh.orig	Wed Jan  6 11:06:01 2016
-+++ daily.sh	Wed Jan  6 11:44:21 2016
+--- daily.sh.orig	Wed Jan  6 19:56:28 2016
++++ daily.sh	Wed Jan  6 20:03:25 2016
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/ksh
  # Copyright (C) 2015 Daniel Preussker, QuxLabs UG <preussker@quxlabs.com>
  # This program is free software: you can redistribute it and/or modify
  # it under the terms of the GNU General Public License as published by
+@@ -23,7 +23,7 @@ arg="$1"
+ status_run() {
+     printf "%-50s" "$1"
+     echo "$1" >> logs/daily.log
+-    tmp=$(bash -c "$2" 2>&1)
++    tmp=$(sh -c "$2" 2>&1)
+     ex=$?
+     echo "$tmp" >> logs/daily.log
+     echo "Returned: $ex" >> logs/daily.log
 @@ -32,7 +32,7 @@ status_run() {
  }
  
