@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/12/29 19:59:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2016/01/06 22:07:54 sthen Exp $
 
 COMMENT =	multiple states library for the lua language
 SHARED_ONLY =	Yes
@@ -6,7 +6,7 @@ SHARED_ONLY =	Yes
 GH_TAGNAME =	v_1_3_0
 GH_PROJECT =	rings
 GH_ACCOUNT =	keplerproject
-PKGNAME =	lua${DISTNAME:C/v_//:S/_/./g}
+PKGNAME =	luarings-${GH_TAGNAME:S/v_//:S/_/./g}
 CATEGORIES =	devel
 
 HOMEPAGE =	http://keplerproject.github.io/rings/
