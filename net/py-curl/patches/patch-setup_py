@@ -1,30 +1,12 @@
-$OpenBSD: patch-setup_py,v 1.5 2009/02/01 19:49:59 wcmaier Exp $
---- setup.py.orig	Tue Sep  9 19:40:34 2008
-+++ setup.py	Sat Jan  3 01:13:32 2009
-@@ -151,20 +151,20 @@ def get_data_files():
+$OpenBSD: patch-setup_py,v 1.6 2016/01/06 10:49:28 sthen Exp $
+--- setup.py.orig	Tue Jan  5 07:03:44 2016
++++ setup.py	Wed Jan  6 10:25:54 2016
+@@ -521,6 +521,8 @@ def get_data_files():
+     data_files = []
      if sys.platform == "win32":
          datadir = os.path.join("doc", PACKAGE)
++    elif sys.platform.startswith("openbsd"):
++        datadir = os.path.join("share", "doc", "${MODPY_PY_PREFIX}curl")
      else:
--        datadir = os.path.join("share", "doc", PACKAGE)
-+        datadir = os.path.join("share")
+         datadir = os.path.join("share", "doc", PACKAGE)
      #
--    files = ["ChangeLog", "COPYING", "COPYING2", "INSTALL", "README", "TODO",]
-+    files = []
-     if files:
--        data_files.append((os.path.join(datadir), files))
-+        data_files.append((os.path.join(datadir, "doc", "py-curl"), files))
-     files = glob.glob(os.path.join("doc", "*.html"))
-     if files:
--        data_files.append((os.path.join(datadir, "html"), files))
-+        data_files.append((os.path.join(datadir, "doc", "py-curl"), files))
-     files = glob.glob(os.path.join("examples", "*.py"))
-     if files:
--        data_files.append((os.path.join(datadir, "examples"), files))
-+        data_files.append((os.path.join(datadir, "examples", "py-curl"), files))
-     files = glob.glob(os.path.join("tests", "*.py"))
-     if files:
--        data_files.append((os.path.join(datadir, "tests"), files))
-+        data_files.append((os.path.join(datadir, "examples", "py-curl", "tests"), files))
-     #
-     assert data_files
-     for install_dir, files in data_files:

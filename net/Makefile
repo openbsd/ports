@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.947 2015/12/23 13:41:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.948 2016/01/06 10:49:28 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -513,6 +513,7 @@
      SUBDIR += py-ripe.atlas.tools
      SUBDIR += py-boto
      SUBDIR += py-curl
+     SUBDIR += py-curl,python3
      SUBDIR += py-czmq
      SUBDIR += py-dns
      SUBDIR += py-dnslib
