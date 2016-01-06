@@ -1,10 +1,10 @@
-$OpenBSD: patch-pgcluu,v 1.1 2015/06/17 12:10:42 jasper Exp $
+$OpenBSD: patch-pgcluu,v 1.2 2016/01/06 09:48:28 jasper Exp $
 
 - Set $sysinfo{"KERNEL"} and $sysinfo{"CPU"} (minus cache) values
 
---- pgcluu.orig	Wed Jun 17 13:18:10 2015
-+++ pgcluu	Wed Jun 17 13:49:47 2015
-@@ -6854,13 +6854,13 @@ sub read_sysinfo
+--- pgcluu.orig	Sat Jul 25 12:33:53 2015
++++ pgcluu	Tue Jan  5 20:19:31 2016
+@@ -8500,13 +8500,13 @@ sub read_sysinfo
  			next;
  		}
  		if ($section eq 'CPU') {
@@ -25,7 +25,7 @@ $OpenBSD: patch-pgcluu,v 1.1 2015/06/17 12:10:42 jasper Exp $
  			} else {
  				$sysinfo{$section}{$key} = $val;
  			}
-@@ -6868,8 +6868,8 @@ sub read_sysinfo
+@@ -8514,8 +8514,8 @@ sub read_sysinfo
  		if ($section eq 'KERNEL') {
  			my @kinf = split(/\s+/, $l);
  			$sysinfo{$section}{'hostname'} = $kinf[1];
