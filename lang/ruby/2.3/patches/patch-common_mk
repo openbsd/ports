@@ -1,0 +1,24 @@
+$OpenBSD: patch-common_mk,v 1.1.1.1 2016/01/07 00:52:46 jeremy Exp $
+
+Don't regenerate rdoc documentation during install.
+
+--- common.mk.orig	Wed Dec 23 23:21:30 2015
++++ common.mk	Sat Dec 26 13:11:04 2015
+@@ -200,7 +200,7 @@ $(EXTS_MK): $(MKFILES) all-incs $(PREP) $(RBCONFIG) $(
+ configure-ext: $(EXTS_MK)
+ 
+ build-ext: $(EXTS_MK)
+-	$(Q)$(MAKE) -f $(EXTS_MK) $(MFLAGS) libdir="$(libdir)" LIBRUBY_EXTS=$(LIBRUBY_EXTS) \
++	$(Q)$(MAKE) -f $(EXTS_MK) V=1 $(MFLAGS) libdir="$(libdir)" LIBRUBY_EXTS=$(LIBRUBY_EXTS) \
+ 	    ENCOBJS="$(ENCOBJS)" UPDATE_LIBRARIES=no $(EXTSTATIC)
+ 
+ prog: program wprogram
+@@ -423,7 +423,7 @@ dont-install-man: $(PREP)
+ post-no-install-man::
+ 	@$(NULLCMD)
+ 
+-install-doc: rdoc pre-install-doc do-install-doc post-install-doc
++install-doc: pre-install-doc do-install-doc post-install-doc
+ pre-install-doc:: install-prereq
+ do-install-doc: $(PROGRAM) pre-install-doc
+ 	$(INSTRUBY) --make="$(MAKE)" $(INSTRUBY_ARGS) --install=rdoc --rdoc-output="$(RDOCOUT)"
