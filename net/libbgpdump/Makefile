@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/07/19 01:46:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/07 23:09:19 sthen Exp $
 
 COMMENT=	library to analyze MRT-format BGP dump files
 
-DISTNAME=	libbgpdump-1.4.99.14
+DISTNAME=	libbgpdump-1.4.99.15
 EXTRACT_SUFX=	.tgz
 
 SHARED_LIBS=	bgpdump 0.0
@@ -24,7 +24,7 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 MAKE_FLAGS+=	LIBbgpdump_VERSION=${LIBbgpdump_VERSION}
 
 pre-configure:
-	perl -pi -e s,libbgpdump\.so,libbgpdump.so.${LIBbgpdump_VERSION},g \
+	sed -i -e s,libbgpdump\.so,libbgpdump.so.${LIBbgpdump_VERSION},g \
 	    ${WRKSRC}/Makefile.in
 
 do-install:
