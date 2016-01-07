@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/12/03 21:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2016/01/07 21:29:31 sthen Exp $
 
 COMMENT=	monitor arp & rarp requests
 
@@ -19,6 +19,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--quiet
 MAKE_FLAGS+=		ARPDIR=/var/arpwatch
 
+# this provides an up-to-date pregenerated ethercodes.dat file
 RUN_DEPENDS=	net/arp-scan,-mac
 
 USE_GROFF=	Yes
