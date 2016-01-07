@@ -1,0 +1,31 @@
+$OpenBSD: patch-lib_libv4lconvert_libv4lsyscall-priv_h,v 1.1.1.1 2016/01/07 17:12:21 feinerer Exp $
+--- lib/libv4lconvert/libv4lsyscall-priv.h.orig	Sun Sep 27 17:48:48 2015
++++ lib/libv4lconvert/libv4lsyscall-priv.h	Sun Sep 27 17:51:20 2015
+@@ -62,6 +62,15 @@
+ typedef off_t __off_t;
+ #endif
+ 
++#if defined(__OpenBSD__)
++#include <sys/syscall.h>
++#include <sys/types.h>
++#include <sys/ioctl.h>
++#define	_IOC_NR(cmd) ((cmd) & 0xFF)
++#define	_IOC_TYPE(cmd) IOCGROUP(cmd)
++#define	MMAP2_PAGE_SHIFT 0
++#endif
++
+ #if defined(ANDROID)
+ typedef off_t __off_t;
+ #endif
+@@ -100,6 +109,11 @@ typedef off_t __off_t;
+ #define SYS_MMAP(addr, len, prot, flags, fd, off) \
+ 	syscall(SYS_mmap, (void *)(addr), (size_t)(len), \
+ 			(int)(prot), (int)(flags), (int)(fd), (__off_t)(off))
++#elif defined(__OpenBSD__)
++register_t __syscall(quad_t, ...);
++#define SYS_MMAP(addr, len, prot, flags, fd, offset) \
++	__syscall((quad_t)SYS_mmap, (void *)(addr), (size_t)(len), \
++			(int)(prot), (int)(flags), (int)(fd), 0, (off_t)(offset))
+ #else
+ #define SYS_MMAP(addr, len, prot, flags, fd, off) \
+ 	syscall(SYS_mmap2, (void *)(addr), (size_t)(len), \

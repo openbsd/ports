@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_libv4l2_v4l2convert_c,v 1.1.1.1 2016/01/07 17:12:21 feinerer Exp $
+--- lib/libv4l2/v4l2convert.c.orig	Sun Nov 22 11:13:59 2015
++++ lib/libv4l2/v4l2convert.c	Sun Nov 22 11:14:30 2015
+@@ -37,7 +37,11 @@
+ #include <sys/ioctl.h>
+ #include <sys/mman.h>
+ #include "../libv4lconvert/libv4lsyscall-priv.h"
++#if defined(__OpenBSD__)
++#include <sys/videoio.h>
++#else
+ #include <linux/videodev2.h>
++#endif
+ #include <libv4l2.h>
+ 
+ /* Check that open/read/mmap is not a define */

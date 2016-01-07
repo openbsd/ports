@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/07 17:12:21 feinerer Exp $
+include/libv4l-plugin.h
+include/libv4l1-videodev.h
+include/libv4l1.h
+include/libv4l2.h
+include/libv4l2rds.h
+include/libv4lconvert.h
+lib/libv4l/
+@bin lib/libv4l/ov511-decomp
+@bin lib/libv4l/ov518-decomp
+lib/libv4l/plugins/
+@comment lib/libv4l/plugins/libv4l-mplane.la
+lib/libv4l/plugins/libv4l-mplane.so
+@comment lib/libv4l/v4l1compat.la
+lib/libv4l/v4l1compat.so
+@comment lib/libv4l/v4l2convert.la
+lib/libv4l/v4l2convert.so
+@comment lib/libv4l1.la
+@lib lib/libv4l1.so.${LIBv4l1_VERSION}
+@comment lib/libv4l2.la
+@lib lib/libv4l2.so.${LIBv4l2_VERSION}
+@comment lib/libv4l2rds.la
+@lib lib/libv4l2rds.so.${LIBv4l2rds_VERSION}
+@comment lib/libv4lconvert.la
+@lib lib/libv4lconvert.so.${LIBv4lconvert_VERSION}
+lib/pkgconfig/libv4l1.pc
+lib/pkgconfig/libv4l2.pc
+lib/pkgconfig/libv4l2rds.pc
+lib/pkgconfig/libv4lconvert.pc
+lib/v4l1compat.so
+lib/v4l2convert.so
+@comment share/locale/
+@comment share/locale/pt_BR/
+@comment share/locale/pt_BR/LC_MESSAGES/
+@comment share/locale/pt_BR/LC_MESSAGES/libdvbv5.mo
+@comment share/locale/pt_BR/LC_MESSAGES/v4l-utils.mo
