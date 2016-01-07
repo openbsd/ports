@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1444 2016/01/06 16:24:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1445 2016/01/07 01:03:28 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1403,6 +1403,7 @@
      SUBDIR += ruby-arrayfields
      SUBDIR += ruby-atomic,ruby21
      SUBDIR += ruby-atomic,ruby22
+     SUBDIR += ruby-atomic,ruby23
      SUBDIR += ruby-bacon
      SUBDIR += ruby-bundler
      SUBDIR += ruby-cicphash
@@ -1435,6 +1436,7 @@
      SUBDIR += ruby-json_pure
      SUBDIR += ruby-kgio,ruby21
      SUBDIR += ruby-kgio,ruby22
+     SUBDIR += ruby-kgio,ruby23
      SUBDIR += ruby-locale
      SUBDIR += ruby-log4r
      SUBDIR += ruby-metaclass
@@ -1443,23 +1445,29 @@
      SUBDIR += ruby-mspec
      SUBDIR += ruby-narray,ruby21
      SUBDIR += ruby-narray,ruby22
+     SUBDIR += ruby-narray,ruby23
      SUBDIR += ruby-ncurses,ruby21
      SUBDIR += ruby-ncurses,ruby22
+     SUBDIR += ruby-ncurses,ruby23
      SUBDIR += ruby-needle
      SUBDIR += ruby-ole
      SUBDIR += ruby-open4
      SUBDIR += ruby-polyglot
      SUBDIR += ruby-prof,ruby21
      SUBDIR += ruby-prof,ruby22
+     SUBDIR += ruby-prof,ruby23
      SUBDIR += ruby-puppet_forge,ruby21
      SUBDIR += ruby-puppet_forge,ruby22
+     SUBDIR += ruby-puppet_forge,ruby23
      SUBDIR += ruby-racc,ruby21
      SUBDIR += ruby-racc,ruby22
+     SUBDIR += ruby-racc,ruby23
      SUBDIR += ruby-rake
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
      SUBDIR += ruby-rb-gsl,ruby21
      SUBDIR += ruby-rb-gsl,ruby22
+     SUBDIR += ruby-rb-gsl,ruby23
      SUBDIR += ruby-ref
      SUBDIR += ruby-rgen
      SUBDIR += ruby-rr
@@ -1473,9 +1481,11 @@
      SUBDIR += ruby-stringex
      SUBDIR += ruby-subset_sum,ruby21
      SUBDIR += ruby-subset_sum,ruby22
+     SUBDIR += ruby-subset_sum,ruby23
      SUBDIR += ruby-systemu
      SUBDIR += ruby-therubyracer,ruby21
      SUBDIR += ruby-therubyracer,ruby22
+     SUBDIR += ruby-therubyracer,ruby23
      SUBDIR += ruby-thor
      SUBDIR += ruby-tilt
      SUBDIR += ruby-transaction-simple
@@ -1484,6 +1494,7 @@
      SUBDIR += ruby-uuidtools
      SUBDIR += ruby-yajl,ruby21
      SUBDIR += ruby-yajl,ruby22
+     SUBDIR += ruby-yajl,ruby23
      SUBDIR += ruby-zentest
      SUBDIR += scons
      SUBDIR += sdcc

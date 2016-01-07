@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.400 2016/01/01 11:48:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.401 2016/01/07 01:03:28 jeremy Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -240,6 +240,7 @@
      SUBDIR += ruby-gruff
      SUBDIR += ruby-rmagick,ruby21
      SUBDIR += ruby-rmagick,ruby22
+     SUBDIR += ruby-rmagick,ruby23
      SUBDIR += s10sh
      SUBDIR += sane-backends
      SUBDIR += sane-backends,snmp

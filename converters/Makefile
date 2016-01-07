@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2015/11/08 18:09:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2016/01/07 01:03:28 jeremy Exp $
 
     SUBDIR =
     SUBDIR += base64
@@ -66,6 +66,7 @@
     SUBDIR += rpm2cpio
     SUBDIR += ruby-json,ruby21
     SUBDIR += ruby-json,ruby22
+    SUBDIR += ruby-json,ruby23
     SUBDIR += ruby-multi_json
     SUBDIR += trans
     SUBDIR += unoconv
