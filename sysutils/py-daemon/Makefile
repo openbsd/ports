@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/29 10:52:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/07 21:37:49 jasper Exp $
 
 COMMENT=		library to implement a Unix daemon process
 
@@ -9,7 +9,6 @@ REVISION=		2
 
 CATEGORIES=		sysutils
 
-HOMEPAGE=		http://pypi.python.org/pypi/python-daemon/
 
 # PSF-2+
 PERMIT_PACKAGE_CDROM =	Yes

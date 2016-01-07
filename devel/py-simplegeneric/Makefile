@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/29 10:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/07 21:37:48 jasper Exp $
 
 COMMENT =		simple generic functions
 
@@ -10,7 +10,6 @@ REVISION =		0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://pypi.python.org/pypi/simplegeneric
 
 # ZPL 2.1
 # If we patch anything, we must include:

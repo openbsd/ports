@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/12/30 11:06:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/07 21:37:49 jasper Exp $
 
 COMMENT=		Python extension wrapping the ICU C++ API
 
@@ -9,7 +9,6 @@ REVISION=		1
 
 CATEGORIES=		textproc
 
-HOMEPAGE=		https://pypi.python.org/pypi/PyICU
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

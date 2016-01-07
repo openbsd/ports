@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/29 10:52:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/07 21:37:50 jasper Exp $
 
 COMMENT =		standalone version of Django's feedgenerator
 
@@ -9,7 +9,6 @@ REVISION =		0
 
 CATEGORIES =		www textproc
 
-HOMEPAGE =		http://pypi.python.org/pypi/feedgenerator
 
 MAINTAINER =		Vladimir Seleznev <vseleznv@cs.msu.ru>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/10/18 14:49:04 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/07 21:37:48 jasper Exp $
 
 COMMENT =	lightweight in-process concurrent programming
 # see slp_platformselect.h
@@ -10,7 +10,6 @@ PKGNAME =	py-${DISTNAME}
 EXTRACT_SUFX =	.zip
 
 CATEGORIES =	devel
-HOMEPAGE =	http://pypi.python.org/pypi/greenlet
 
 # BSD-like
 PERMIT_PACKAGE_CDROM =	Yes

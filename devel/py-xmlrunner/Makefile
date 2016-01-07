@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/09/29 10:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/07 21:37:49 jasper Exp $
 
 COMMENT =		test runner with JUnit like XML reporting
 
@@ -9,7 +9,6 @@ REVISION =		0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://pypi.python.org/pypi/unittest-xml-reporting
 
 # LGPL2.1
 PERMIT_PACKAGE_CDROM =		Yes

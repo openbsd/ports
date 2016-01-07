@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/29 10:51:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/07 21:37:48 jasper Exp $
 
 COMMENT=		library to write SQL queries
 
@@ -10,7 +10,6 @@ REVISION=		0
 CATEGORIES=		databases
 
 MODPY_PI =		Yes
-HOMEPAGE=		https://pypi.python.org/pypi/python-sql/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/06 15:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/07 21:37:49 jasper Exp $
 
 COMMENT=		Python RSA implementation
 
@@ -8,7 +8,6 @@ PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		security
 
-HOMEPAGE=		https://pypi.python.org/pypi/rsa
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes

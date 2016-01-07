@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/29 10:52:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/07 21:37:49 jasper Exp $
 
 COMMENT =	library for mozilla services metrics logging
 
@@ -8,7 +8,6 @@ PKGNAME =	py-metlog-${MODPY_EGG_VERSION}
 REVISION =	0
 
 CATEGORIES =	sysutils
-HOMEPAGE =	http://pypi.python.org/pypi/metlog-py
 
 # BSD-derived
 PERMIT_PACKAGE_CDROM =	Yes

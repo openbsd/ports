@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/01/06 17:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/07 21:37:48 jasper Exp $
 
 COMMENT =		mix and max objects
 
@@ -9,7 +9,6 @@ REVISION =		4
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://pypi.python.org/pypi/Extremes
 
 # PSF
 PERMIT_PACKAGE_CDROM =	Yes

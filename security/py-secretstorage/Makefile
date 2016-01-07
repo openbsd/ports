@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/30 10:45:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/07 21:37:49 jasper Exp $
 
 COMMENT=		secure storing of passwords using the SecretService DBus API
 
@@ -8,7 +8,6 @@ PKGNAME=		py-${DISTNAME:L}
 
 CATEGORIES=   		security
 
-HOMEPAGE=		https://pypi.python.org/pypi/SecretStorage
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

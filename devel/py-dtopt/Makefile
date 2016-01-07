@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/09/29 10:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/07 21:37:48 jasper Exp $
 
 COMMENT =	add options to doctest examples while they are running
 
@@ -9,7 +9,6 @@ REVISION =	4
 
 CATEGORIES =	devel
 
-HOMEPAGE =	http://pypi.python.org/pypi/dtopt/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

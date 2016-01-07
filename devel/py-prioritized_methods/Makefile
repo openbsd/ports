@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/06 17:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/07 21:37:48 jasper Exp $
 
 COMMENT =		extension to PEAK-Rules to prioritize methods
 
@@ -9,7 +9,6 @@ REVISION =		4
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://pypi.python.org/pypi/prioritized_methods
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

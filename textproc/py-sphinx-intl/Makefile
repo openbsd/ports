@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.3 2015/09/29 10:52:53 sthen Exp $
+#	$OpenBSD: Makefile,v 1.4 2016/01/07 21:37:49 jasper Exp $
 
 COMMENT =		internationalization helper for Sphinx
 
@@ -9,7 +9,6 @@ REVISION =		0
 
 CATEGORIES =		textproc
 
-HOMEPAGE = 		https://pypi.python.org/pypi/sphinx-intl
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

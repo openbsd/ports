@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/07 11:12:51 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/07 21:37:50 jasper Exp $
 
 COMMENT=	HTTP library for Python
 
@@ -8,7 +8,6 @@ PKGNAME=	py-urllib3-${MODPY_EGG_VERSION}
 
 CATEGORIES=	www
 
-HOMEPAGE=	https://pypi.python.org/pypi/urllib3
 
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 

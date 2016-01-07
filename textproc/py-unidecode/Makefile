@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/09/29 10:52:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/07 21:37:49 jasper Exp $
 
 COMMENT =		US-ASCII transliterations of Unicode text
 
@@ -9,7 +9,6 @@ PKGNAME = 		py-unidecode-0.04.18
 
 CATEGORIES =		textproc
 
-HOMEPAGE =		https://pypi.python.org/pypi/Unidecode
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

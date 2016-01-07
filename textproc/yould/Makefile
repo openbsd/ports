@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/09/29 10:52:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/07 21:37:49 jasper Exp $
 
 COMMENT=		generator for pronounceable random words
 
@@ -7,7 +7,6 @@ DISTNAME=		yould-${MODPY_EGG_VERSION}
 REVISION=		4
 CATEGORIES=		textproc
 
-HOMEPAGE=		https://pypi.python.org/pypi/yould/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

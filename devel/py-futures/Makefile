@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/12/29 15:50:58 shadchin Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/07 21:37:48 jasper Exp $
 
 COMMENT=	futures implementation for Python
 
@@ -7,7 +7,6 @@ DISTNAME=	futures-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
 
-HOMEPAGE =		https://pypi.python.org/pypi/futures
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

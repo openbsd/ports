@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/09/29 10:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/07 21:37:48 jasper Exp $
 
 PKG_ARCH =		*
 
@@ -11,7 +11,6 @@ REVISION =		0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://pypi.python.org/pypi/isodate/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

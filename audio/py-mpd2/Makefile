@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/29 10:51:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/07 21:37:48 jasper Exp $
 
 COMMENT =		Python client interface for MPD
 
@@ -9,7 +9,6 @@ REVISION =		1
 
 CATEGORIES =		audio
 
-HOMEPAGE =		https://pypi.python.org/pypi/python-mpd2
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes

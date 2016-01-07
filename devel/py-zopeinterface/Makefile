@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/11/13 14:24:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2016/01/07 21:37:49 jasper Exp $
 
 COMMENT=	object interface infrastructure from Zope
 
@@ -8,7 +8,6 @@ DISTNAME=	zope.interface-${MODPY_EGG_VERSION}
 PKGNAME=	py-zopeinterface-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
 
-HOMEPAGE=	http://pypi.python.org/pypi/zope.interface
 
 MAINTAINER=	Eric Faurot <eric@openbsd.org>
 

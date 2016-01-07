@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/29 10:52:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/07 21:37:50 jasper Exp $
 
 COMMENT =	identification and authentication framework for WSGI
 
@@ -8,7 +8,6 @@ PKGNAME =	py-${DISTNAME:S/./-/}
 REVISION =	0
 
 CATEGORIES =	www devel
-HOMEPAGE =	http://pypi.python.org/pypi/repoze.who
 
 # BSD-derived
 PERMIT_PACKAGE_CDROM =	Yes

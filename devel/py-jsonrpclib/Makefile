@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/02 14:21:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/07 21:37:48 jasper Exp $
 
 COMMENT =		json-rpc over http
 
@@ -8,7 +8,6 @@ PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://pypi.python.org/pypi/jsonrpclib/
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes

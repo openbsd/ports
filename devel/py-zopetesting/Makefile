@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/09/29 10:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/07 21:37:49 jasper Exp $
 
 COMMENT=	testing frameworks from Zope 3
 
@@ -9,7 +9,6 @@ PKGNAME=	py-zopetesting-${MODPY_EGG_VERSION}
 REVISION =	3
 CATEGORIES=	devel
 
-HOMEPAGE=	http://pypi.python.org/pypi/zope.testing
 
 MAINTAINER=	Eric Faurot <eric@openbsd.org>
 

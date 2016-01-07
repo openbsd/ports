@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/29 10:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/07 21:37:48 jasper Exp $
 
 COMMENT=		the simplest possible mock library, for Python
 
@@ -9,7 +9,6 @@ REVISION=		0
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://pypi.python.org/pypi/MiniMock
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
