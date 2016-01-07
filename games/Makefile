@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.323 2015/12/27 21:56:09 pascal Exp $
+# $OpenBSD: Makefile,v 1.324 2016/01/07 10:35:26 pascal Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -61,6 +61,7 @@
      SUBDIR += dangerdeep
      SUBDIR += dd2
      SUBDIR += defendguin
+     SUBDIR += dhewm3
      SUBDIR += doomdata
      SUBDIR += dopewars
      SUBDIR += dopewars,no_x11
