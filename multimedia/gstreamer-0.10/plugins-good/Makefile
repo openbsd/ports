@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2016/01/01 14:50:14 feinerer Exp $
+# $OpenBSD: Makefile,v 1.100 2016/01/07 17:35:09 feinerer Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # audio/pulseaudio and x11/xfce4/xfce4-mixer
@@ -18,7 +18,7 @@ PKGNAME-dv=		gstreamer-dv-${V}
 PKGNAME-caca=		gstreamer-libcaca-${V}
 EPOCH-main=		0
 
-REVISION-main=		15
+REVISION-main=		16
 REVISION-aalib=		7
 REVISION-dv=		7
 REVISION-caca=		7
@@ -43,7 +43,8 @@ WANTLIB-main += gstfft-0.10 gstinterfaces-0.10 gstnetbuffer-0.10 gstpbutils-0.10
 WANTLIB-main += gstriff-0.10 gstrtp-0.10 gstrtsp-0.10 gstsdp-0.10 gsttag-0.10
 WANTLIB-main += gstvideo-0.10 jpeg ogg orc-0.4 ossaudio pixman-1 png
 WANTLIB-main += pthread-stubs shout sndio soup-2.4 soup-gnome-2.4 speex
-WANTLIB-main += sqlite3 stdc++ tag theora vorbis wavpack xcb xcb-render
+WANTLIB-main += sqlite3 stdc++ tag theora v4l2 v4lconvert vorbis wavpack
+WANTLIB-main += xcb xcb-render
 
 WANTLIB-aalib += ${WANTLIB}
 WANTLIB-aalib += X11 aa ncurses xcb
@@ -72,6 +73,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/orc \
 			graphics/gdk-pixbuf2 \
 			graphics/jpeg \
+			multimedia/libv4l \
 			net/libshout
 RUN_DEPENDS-main=	${MODGCONF2_RUN_DEPENDS} \
 			${MODGETTEXT_RUN_DEPENDS}
