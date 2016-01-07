@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1449 2016/01/07 19:23:07 kili Exp $
+# $OpenBSD: Makefile,v 1.1450 2016/01/07 21:05:42 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -231,7 +231,6 @@
      SUBDIR += hs-murmur-hash
      SUBDIR += hs-nats
      SUBDIR += hs-network
-     SUBDIR += hs-network-conduit
      SUBDIR += hs-network-uri
      SUBDIR += hs-newtype
      SUBDIR += hs-old-locale
