@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/01/07 19:17:55 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/07 21:04:48 kili Exp $
 
 # XXX smallest version buildable with ghc-7.10 (3.0.4) needs new
 # dependencies 'auto-update', ''http-date', 'streaming-commons'.
@@ -27,7 +27,6 @@ RUN_DEPENDS =		devel/hs-blaze-builder>=0.2.1.4,<0.4 \
 			devel/hs-case-insensitive>=0.2 \
 			devel/hs-conduit>=0.5,<1.1 \
 			devel/hs-lifted-base>=0.1 \
-			devel/hs-network-conduit>=0.5,<1.1 \
 			devel/hs-network>=2.3 \
 			devel/hs-simple-sendfile>=0.2.7,<0.3 \
 			devel/hs-unix-compat>=0.2 \
