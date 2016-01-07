@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/07/25 23:28:23 jeremy Exp $
+# $OpenBSD: Makefile,v 1.24 2016/01/07 01:00:19 jeremy Exp $
 
 COMMENT=		HTML, XML, SAX and Reader parser
 
@@ -18,7 +18,8 @@ LIB_DEPENDS=		textproc/libxslt
 MODULES=		lang/ruby converters/libiconv
 
 CONFIGURE_STYLE=	ruby gem ext
-CONFIGURE_ARGS=		--use-system-libraries
+CONFIGURE_ARGS=		--use-system-libraries \
+			--with-xml2-include=${LOCALBASE}/include/libxml2/
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 MODRUBY_TEST=		ruby
