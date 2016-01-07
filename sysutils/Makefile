@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.371 2016/01/07 11:58:53 sebastia Exp $
+# $OpenBSD: Makefile,v 1.372 2016/01/07 14:56:19 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -51,6 +51,7 @@
      SUBDIR += dvd+rw-tools
      SUBDIR += dwdiff
      SUBDIR += e2fsprogs
+     SUBDIR += ec2-api-tools
      SUBDIR += entr
      SUBDIR += eventlog
      SUBDIR += facter
