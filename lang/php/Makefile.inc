@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.70 2015/12/15 23:02:49 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.71 2016/01/07 18:06:45 sthen Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
@@ -113,23 +113,15 @@ CONFIGURE_ARGS+= 	--with-openssl \
 			--enable-mbstring \
 			--enable-exif \
 			--enable-zend-multibyte \
-			--enable-fastcgi
+			--enable-fastcgi \
+			--enable-fpm \
+			--with-fpm-user=www \
+			--with-fpm-group=www
 
 TEST_TARGET=		test
 TEST_FLAGS=		NO_INTERACTION=1
 
-MULTI_PACKAGES+=	-main -fastcgi -fpm
-
-# fpm
-PKGNAME-fpm?=		php-fpm-${V}
-COMMENT-fpm=		stand-alone FPM version of PHP
-CONFIGURE_ARGS+=	--enable-fpm \
-			--with-fpm-user=www \
-			--with-fpm-group=www
-LIB_DEPENDS-fpm=	${LIB_DEPENDS-main}
-WANTLIB-fpm=		${WANTLIB-main}
-RUN_DEPENDS-fpm=	${RUN_DEPENDS-main} \
-			php-${V}:lang/php/${PV}
+MULTI_PACKAGES+=	-main -fastcgi
 
 #
 # Loadable php extensions by name that are included in all versions

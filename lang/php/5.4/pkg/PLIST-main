@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2014/07/14 08:02:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2016/01/07 18:06:45 sthen Exp $
 @option no-default-conflict
 @conflict php->=5.4,<5.5
+@conflict php-fpm->=5.4,<5.5
+@conflict php-pdo_sqlite->=5.4,<5.5
 @conflict php5-core->=5.2
 @conflict php5-core-fastcgi->=5.2
-@conflict php-pdo_sqlite->=5.4,<5.5
 @conflict php5-pdo_sqlite->=5.2
 @conflict pecl-phar-*
 @pkgpath lang/php/5.2
@@ -14,6 +15,7 @@
 @pkgpath lang/php/5.2,-sqlite
 @pkgpath lang/php/5.4
 @pkgpath lang/php/5.4,-pdo_sqlite
+@pkgpath lang/php/5.4,-fpm
 @pkgpath sysutils/pecl-fileinfo
 @pkgpath www/pecl-phar
 @extraunexec rm -f ${SYSCONFDIR}/php-${PV}/php-${PV}.sample/*
@@ -33,6 +35,8 @@ lib/php-${PV}/modules/
 @man man/man1/php-${PV}.1
 @man man/man1/php-config-${PV}.1
 @man man/man1/phpize-${PV}.1
+@man man/man8/php-fpm-${PV}.8
+@bin sbin/php-fpm-${PV}
 share/examples/php-${PV}/
 @sample /var/www/conf/modules.sample/
 share/examples/php-${PV}/php.conf
@@ -40,6 +44,8 @@ share/examples/php-${PV}/php.conf
 share/examples/php-${PV}/php.ini-development
 share/examples/php-${PV}/php.ini-production
 @sample ${SYSCONFDIR}/php-${PV}.ini
+share/examples/php-${PV}/php-fpm.conf
+@sample ${SYSCONFDIR}/php-fpm.conf
 share/php-${PV}/
 share/php-${PV}/build/
 share/php-${PV}/build/Makefile.global
@@ -382,3 +388,4 @@ share/php-${PV}/include/sapi/cli/
 share/php-${PV}/include/sapi/cli/cli.h
 @sample ${SYSCONFDIR}/php-${PV}/
 @sample ${SYSCONFDIR}/php-${PV}.sample/
+@rcscript ${RCDIR}/php${SV}_fpm

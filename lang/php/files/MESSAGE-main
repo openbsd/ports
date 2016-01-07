@@ -1,8 +1,12 @@
-To enable the php-${PV} module please create a symbolic link from
+For Apache, enable the php-${PV} by creating a symbolic link from
 ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf to
 ${MODPHP_CONFIG_PATH}/modules/php.conf. As root:
 
     ln -sf ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf ${MODPHP_CONFIG_PATH}/modules/php.conf
+
+For httpd(8), nginx(8) and some other web servers, use php-fpm:
+
+    rcctl enable php${SV}_fpm; rcctl start php${SV}_fpm
 
 The recommended php configuration has been installed to:
     ${SYSCONFDIR}/php-${PV}.ini.

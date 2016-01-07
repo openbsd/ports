@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2015/12/14 17:58:46 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2016/01/07 18:06:45 sthen Exp $
 @option no-default-conflict
 @conflict php->=7.0,<7.1
+@conflict php-fpm->=7.0,<7.1
 @conflict php5-core->=5.2
 @conflict php5-core-fastcgi->=5.2
-@conflict php-pdo_sqlite->=7.0,<7.1
 @conflict php5-pdo_sqlite->=5.2
 @pkgpath lang/php/5.4
 @pkgpath lang/php/5.4,-pdo_sqlite
+@pkgpath lang/php/7.0,-fpm
 @extraunexec rm -f ${SYSCONFDIR}/php-${PV}/php-${PV}.sample/*
 @mode 1700
 @owner www
@@ -25,6 +26,8 @@ lib/php-${PV}/modules/opcache.so
 @man man/man1/php-${PV}.1
 @man man/man1/php-config-${PV}.1
 @man man/man1/phpize-${PV}.1
+@man man/man8/php-fpm-${PV}.8
+@bin sbin/php-fpm-${PV}
 share/examples/php-${PV}/
 @sample /var/www/conf/modules.sample/
 @sample ${SYSCONFDIR}/php-${PV}.sample/
@@ -35,6 +38,8 @@ share/examples/php-${PV}/php.conf
 share/examples/php-${PV}/php.ini-development
 share/examples/php-${PV}/php.ini-production
 @sample ${SYSCONFDIR}/php-${PV}.ini
+share/examples/php-${PV}/php-fpm.conf
+@sample ${SYSCONFDIR}/php-fpm.conf
 share/php-${PV}/
 share/php-${PV}/build/
 share/php-${PV}/build/Makefile.global
@@ -382,3 +387,4 @@ share/php-${PV}/include/sapi/
 share/php-${PV}/include/sapi/cli/
 share/php-${PV}/include/sapi/cli/cli.h
 @sample ${SYSCONFDIR}/php-${PV}/
+@rcscript ${RCDIR}/php${SV}_fpm
