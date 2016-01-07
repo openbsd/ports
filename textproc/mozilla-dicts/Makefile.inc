@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.3 2016/01/06 17:01:55 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2016/01/07 08:51:04 jasper Exp $
 
 # All distfiles are unversioned, and no upstream master site available
-PORTROACH =	ignore
+PORTROACH =	ignore:1
 
 PKG_ARCH =	*
 REVISION =	1
