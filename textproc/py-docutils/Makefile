@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/01/06 13:41:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2016/01/07 08:26:19 ajacoutot Exp $
 
 COMMENT =	process plaintext documentation into other formats
 
@@ -34,11 +34,7 @@ post-install:
 	done
 .endif
 
-do-test: fake
-.if ${FLAVOR:Mpython3}
-	cd ${WRKSRC}/test3 && ${MODPY_BIN} ./alltests.py
-.else
-	cd ${WRKSRC}/test && ${MODPY_BIN} ./alltests.py
-.endif
+do-test:
+	cd ${WRKSRC}/test${MODPY_BIN_SUFFIX:S/-//} && ${MODPY_BIN} ./alltests.py
 
 .include <bsd.port.mk>
