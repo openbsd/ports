@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.84 2015/08/27 14:36:14 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.85 2016/01/07 00:55:23 jeremy Exp $
 
 # ruby module
 
@@ -24,7 +24,7 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
 # for each ruby interpreter
 .    if !defined(FLAVORS)
-FLAVORS=		ruby18 ruby19 ruby20 ruby21 ruby22 rbx
+FLAVORS=		ruby18 ruby20 ruby21 ruby22 ruby23
 .      if !${CONFIGURE_STYLE:L:Mext} && !${CONFIGURE_STYLE:L:Mextconf}
 FLAVORS+=		jruby
 .      endif
@@ -53,13 +53,13 @@ FLAVOR =		ruby22
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    for i in ruby18 ruby19 ruby20 ruby21 ruby22 jruby rbx
+.    for i in ruby18 ruby20 ruby21 ruby22 ruby23 jruby
 .      if ${FLAVOR:M$i}
 MODRUBY_REV = ${i:C/ruby([0-9])/\1./}
-.        if ${FLAVOR:N$i:Mruby18} || ${FLAVOR:N$i:Mruby19} || \
+.        if ${FLAVOR:N$i:Mruby18} || \
             ${FLAVOR:N$i:Mruby20} || ${FLAVOR:N$i:Mruby21} || \
-            ${FLAVOR:N$i:Mruby22} || \
-	    ${FLAVOR:N$i:Mjruby} || ${FLAVOR:N$i:Mrbx}
+            ${FLAVOR:N$i:Mruby22} || ${FLAVOR:N$i:Mruby23} || \ 
+	    ${FLAVOR:N$i:Mjruby}
 ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
 .        endif
 .      endif
@@ -92,11 +92,6 @@ MODRUBY_BINREV =	18
 MODRUBY_PKG_PREFIX =	ruby
 MODRUBY_FLAVOR =	ruby18
 GEM_BIN_SUFFIX =	18
-.elif ${MODRUBY_REV} == 1.9
-MODRUBY_LIBREV =	1.9.1
-MODRUBY_BINREV =	19
-MODRUBY_FLAVOR =	ruby19
-GEM_BIN_SUFFIX =	19
 .elif ${MODRUBY_REV} == 2.0
 MODRUBY_LIBREV =	2.0
 MODRUBY_BINREV =	20
@@ -112,6 +107,11 @@ MODRUBY_LIBREV =	2.2
 MODRUBY_BINREV =	22
 MODRUBY_FLAVOR =	ruby22
 GEM_BIN_SUFFIX =	22
+.elif ${MODRUBY_REV} == 2.3
+MODRUBY_LIBREV =	2.3
+MODRUBY_BINREV =	23
+MODRUBY_FLAVOR =	ruby23
+GEM_BIN_SUFFIX =	23
 .elif ${MODRUBY_REV} == jruby
 MODRUBY_LIBREV =	2.2.0
 
@@ -124,12 +124,6 @@ MODRUBY_LIBREV =	2.2.0
 
 MODRUBY_FLAVOR =	jruby
 GEM_MAN_SUFFIX =	-${MODRUBY_FLAVOR}
-.elif ${MODRUBY_REV} == rbx
-MODRUBY_LIBREV =	2.1
-#.poison MODRUBY_BINREV
-#.poison MODRUBY_WANTLIB
-MODRUBY_FLAVOR =	rbx
-GEM_MAN_SUFFIX =	-${MODRUBY_FLAVOR}
 .endif
 
 MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec/1,${MODRUBY_FLAVOR}<2.0
@@ -140,12 +134,6 @@ MODRUBY_RSPEC3_DEPENDS = devel/ruby-rspec/3/rspec,${MODRUBY_FLAVOR}>=3.0
 # targets.
 .if ${MODRUBY_REV} == jruby
 RUBY=			${LOCALBASE}/jruby/bin/jruby
-RAKE=			${RUBY} -S rake
-RSPEC=			${RUBY} -S spec
-MODRUBY_BIN_RSPEC =	${RUBY} -S rspec
-MODRUBY_BIN_TESTRB =	${RUBY} -S testrb
-.elif ${MODRUBY_REV} == rbx
-RUBY=			${LOCALBASE}/bin/rbx
 RAKE=			${RUBY} -S rake
 RSPEC=			${RUBY} -S spec
 MODRUBY_BIN_RSPEC =	${RUBY} -S rspec
@@ -187,8 +175,6 @@ ERRORS += "Fatal: Ruby C extensions are unsupported on JRuby"
 .  else
 MODRUBY_RUN_DEPENDS=	lang/jruby
 .  endif
-.elif ${MODRUBY_REV} == rbx
-MODRUBY_RUN_DEPENDS=	lang/rubinius
 .else
 MODRUBY_WANTLIB=	ruby${MODRUBY_BINREV}
 MODRUBY_RUN_DEPENDS=	lang/ruby/${MODRUBY_REV}
@@ -200,8 +186,6 @@ MODRUBY_BUILD_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 # location of ruby libraries
 .if ${MODRUBY_REV} == jruby
 MODRUBY_LIBDIR=		${LOCALBASE}/jruby/lib/ruby
-.elif ${MODRUBY_REV} == rbx
-MODRUBY_LIBDIR=		${LOCALBASE}/lib/rubinius
 .else
 MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
 .endif
@@ -218,10 +202,6 @@ SUBST_VARS +=		^MODRUBY_RELDOCDIR ^MODRUBY_RELEXAMPLEDIR
 MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-java
 MODRUBY_SITEDIR =	jruby/lib/ruby/site_ruby/${MODRUBY_LIBREV}
 MODRUBY_SITEARCHDIR =	${MODRUBY_SITEDIR}/java
-.elif ${MODRUBY_REV} == rbx
-MODRUBY_ARCH=		${MACHINE_ARCH}-openbsd
-MODRUBY_SITEDIR =	lib/rubinius/site/
-MODRUBY_SITEARCHDIR =	${MODRUBY_SITEDIR}/${MODRUBY_ARCH}
 .else
 MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd
 MODRUBY_SITEDIR =	lib/ruby/site_ruby/${MODRUBY_LIBREV}
@@ -267,7 +247,7 @@ MODRUBY_WANTLIB+=	c m
 .if ${MODRUBY_REV} != 1.8
 MODRUBY_WANTLIB+=	pthread
 .endif
-.if ${MODRUBY_REV} == 2.1 || ${MODRUBY_REV} == 2.2
+.if ${MODRUBY_REV} == 2.1 || ${MODRUBY_REV} == 2.2 || ${MODRUBY_REV} == 2.3
 MODRUBY_WANTLIB+=	gmp
 .endif
 
@@ -298,12 +278,8 @@ EXTRACT_SUFX=	.gem
 .  if ${MODRUBY_REV} == 1.8
 BUILD_DEPENDS+=	devel/ruby-gems>=1.8.23p3
 RUN_DEPENDS+=	devel/ruby-gems>=1.3.7p0
-.  elif ${MODRUBY_REV} == 1.9
-BUILD_DEPENDS+=	lang/ruby/1.9>=1.9.3.0
 .  elif ${MODRUBY_REV} == jruby
 BUILD_DEPENDS+=	lang/jruby>=1.6.5
-.  elif ${MODRUBY_REV} == rbx
-BUILD_DEPENDS+=	lang/rubinius>=2.1.1
 .  elif ${MODRUBY_REV} == 2.1
 # Require version that fixes extensions directory path
 BUILD_DEPENDS+=	lang/ruby/2.1>=2.1.0p0
@@ -318,7 +294,7 @@ ERRORS+=	"Fatal: Pure ruby gems without ext CONFIGURE_STYLE should not \
 		have SHARED_ONLY=Yes"
 .    endif
 PKG_ARCH=	*
-.  elif ${MODRUBY_REV} == 2.1 || ${MODRUBY_REV} == 2.2
+.  elif ${MODRUBY_REV} == 2.1 || ${MODRUBY_REV} == 2.2 || ${MODRUBY_REV} == 2.3
 # Add build complete file to package so rubygems doesn't complain
 # or build extensions at runtime
 GEM_EXTENSIONS_DIR ?= ${GEM_LIB}/extensions/${MODRUBY_ARCH:S/i386/x86/}/${MODRUBY_REV}/${DISTNAME}
@@ -335,11 +311,6 @@ GEM=		${RUBY} -S gem
 GEM_BIN =	jruby/bin
 GEM_LIB =	jruby/lib/ruby/gems/1.8
 GEM_BASE_LIB=	${GEM_BASE}/jruby/${MODRUBY_LIBREV}
-.  elif ${MODRUBY_REV} == rbx
-GEM=		${RUBY} -S gem
-GEM_BASE_LIB=	${GEM_BASE}/rbx/${MODRUBY_LIBREV}
-GEM_BIN =	lib/rubinius/gems/bin
-GEM_LIB =	lib/rubinius/gems
 .  else
 GEM=		${LOCALBASE}/bin/gem${MODRUBY_BINREV}
 GEM_BIN =	bin
@@ -358,13 +329,7 @@ GEM_FLAGS+=	--local --no-rdoc --no-ri --no-force --verbose --backtrace \
 _GEM_CONTENT=	${WRKDIR}/gem-content
 _GEM_DATAFILE=	${_GEM_CONTENT}/data.tar.gz
 _GEM_PATCHED=	${DISTNAME}${EXTRACT_SUFX}
-
-.if ${MODRUBY_REV} == rbx
-# V=1 for rbx results in gems not building
-_GEM_MAKE=	"make"
-.else
 _GEM_MAKE=	"make V=1"
-.endif
 
 # Unpack the gem into WRKDIST so it can be patched.  Include the gem metadata
 # under WRKDIST so it can be patched easily to remove or change dependencies.
