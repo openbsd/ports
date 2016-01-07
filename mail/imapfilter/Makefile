@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2015/11/07 01:18:17 mmcc Exp $
+# $OpenBSD: Makefile,v 1.20 2016/01/07 17:33:38 mmcc Exp $
 
 COMMENT=		remote IMAP filtering utility
 
-V=			2.6.3
+V=			2.6.4
 DISTNAME=		imapfilter-${V}
-REVISION=		0
 
 GH_TAGNAME=		v${V}
 GH_ACCOUNT=		lefcha
@@ -26,6 +25,7 @@ LIB_DEPENDS=		devel/pcre \
 			${MODLUA_LIB_DEPENDS}
 
 MAKE_FLAGS=		CC="${CC}" \
+			PREFIX="${TRUEPREFIX}" \
 			LIBLUA="${MODLUA_LIB}" \
 			MYCFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${MODLUA_INCL_DIR}" \
 			MYLDFLAGS="-L${LOCALBASE}/lib"
