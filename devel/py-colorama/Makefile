@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/06 17:15:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/07 09:34:01 ajacoutot Exp $
 
 # !!! do not update blindly: sysutils/awscli requires a specific version
+PORTROACH=		ignore:1
 
 COMMENT=		print colored terminal text from Python apps
 

@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/07 08:15:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/07 09:34:01 ajacoutot Exp $
 
 # !!! do not update blindly: sysutils/aws-shell requires a specific version
+PORTROACH=		ignore:1
 
 COMMENT=		python library for building powerful interactive CLI
 
