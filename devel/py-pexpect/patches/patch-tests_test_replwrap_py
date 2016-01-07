@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_test_replwrap_py,v 1.1 2016/01/07 17:16:21 shadchin Exp $
+--- tests/test_replwrap.py.orig	Wed Dec 30 00:44:47 2015
++++ tests/test_replwrap.py	Wed Dec 30 00:45:06 2015
+@@ -92,7 +92,7 @@ class REPLWrapTestCase(unittest.TestCase):
+         if platform.python_implementation() == 'PyPy':
+             raise unittest.SkipTest(skip_pypy)
+ 
+-        child = pexpect.spawn('python', echo=False, timeout=5, encoding='utf-8')
++        child = pexpect.spawn('${MODPY_BIN}', echo=False, timeout=5, encoding='utf-8')
+         # prompt_change=None should mean no prompt change
+         py = replwrap.REPLWrapper(child, u">>> ", prompt_change=None,
+                                   continuation_prompt=u"... ")
