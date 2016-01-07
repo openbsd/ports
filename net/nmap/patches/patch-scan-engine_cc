@@ -1,13 +1,13 @@
-$OpenBSD: patch-scan-engine_cc,v 1.7 2014/05/16 15:08:54 sthen Exp $
+$OpenBSD: patch-scan-engine_cc,v 1.8 2016/01/07 13:23:47 giovanni Exp $
 
 pcap_filter changes: to deal with base libpcap which doesn't support sctp
 (not currently needed as using internal libpcap)
 
 Format changes for 64-bit time_t, should go upstream
 
---- scan_engine.cc.orig	Thu Apr 17 23:58:39 2014
-+++ scan_engine.cc	Wed Apr 30 19:56:54 2014
-@@ -2977,7 +2977,7 @@ static void ultrascan_host_probe_update(UltraScanInfo 
+--- scan_engine.cc.orig	Wed Jun  3 15:01:29 2015
++++ scan_engine.cc	Tue Dec 29 10:47:48 2015
+@@ -2011,7 +2011,7 @@ void ultrascan_host_probe_update(UltraScanInfo *USI, H
      struct timeval tv;
  
      gettimeofday(&tv, NULL);
@@ -16,19 +16,3 @@ Format changes for 64-bit time_t, should go upstream
    }
  
    ultrascan_host_pspec_update(USI, hss, probe->pspec(), newstate);
-@@ -5590,13 +5590,13 @@ static void begin_sniffer(UltraScanInfo *USI, std::vec
-     if (doIndividual) {
-       pcap_filter = "dst host ";
-       pcap_filter += inet_ntop_ez(&source, sizeof(source));
--      pcap_filter += " and (icmp or icmp6 or ((tcp or udp or sctp) and (";
-+      pcap_filter += " and (icmp or icmp6 or ((tcp or udp) and (";
-       pcap_filter += dst_hosts;
-       pcap_filter += ")))";
-     } else {
-       pcap_filter = "dst host ";
-       pcap_filter += inet_ntop_ez(&source, sizeof(source));
--      pcap_filter += " and (icmp or icmp6 or tcp or udp or sctp)";
-+      pcap_filter += " and (icmp or icmp6 or tcp or udp)";
-     }
-   } else {
-     assert(0);

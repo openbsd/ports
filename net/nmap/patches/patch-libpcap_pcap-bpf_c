@@ -1,8 +1,8 @@
-$OpenBSD: patch-libpcap_pcap-bpf_c,v 1.1 2015/09/11 15:57:42 sthen Exp $
---- libpcap/pcap-bpf.c.orig	Fri Sep 11 09:54:04 2015
-+++ libpcap/pcap-bpf.c	Fri Sep 11 09:54:42 2015
-@@ -2265,7 +2265,7 @@ monitor_mode(pcap_t *p, int set)
- {
+$OpenBSD: patch-libpcap_pcap-bpf_c,v 1.2 2016/01/07 13:23:47 giovanni Exp $
+--- libpcap/pcap-bpf.c.orig	Fri May  1 22:24:47 2015
++++ libpcap/pcap-bpf.c	Tue Dec 29 10:47:48 2015
+@@ -2319,7 +2319,7 @@ monitor_mode(pcap_t *p, int set)
+ 	struct pcap_bpf *pb = p->priv;
  	int sock;
  	struct ifmediareq req;
 -	int *media_list;
@@ -10,7 +10,7 @@ $OpenBSD: patch-libpcap_pcap-bpf_c,v 1.1 2015/09/11 15:57:42 sthen Exp $
  	int i;
  	int can_do;
  	struct ifreq ifr;
-@@ -2322,7 +2322,7 @@ monitor_mode(pcap_t *p, int set)
+@@ -2376,7 +2376,7 @@ monitor_mode(pcap_t *p, int set)
  	 * Allocate a buffer to hold all the media types, and
  	 * get the media types.
  	 */

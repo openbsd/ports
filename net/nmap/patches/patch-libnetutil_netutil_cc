@@ -1,4 +1,4 @@
-$OpenBSD: patch-libnetutil_netutil_cc,v 1.6 2014/06/16 10:22:15 sthen Exp $
+$OpenBSD: patch-libnetutil_netutil_cc,v 1.7 2016/01/07 13:23:47 giovanni Exp $
 
 first chunk:
 http://marc.info/?l=openbsd-ports&m=140284432321370&w=2
@@ -8,9 +8,9 @@ http://marc.info/?l=nmap-dev&m=140179174718457&w=2
 
 chunks dealing with iovec: ???
 
---- libnetutil/netutil.cc.orig	Thu Nov  7 19:32:33 2013
-+++ libnetutil/netutil.cc	Sun Jun 15 20:36:36 2014
-@@ -916,7 +916,7 @@ void set_ttl(int sd, int ttl) {
+--- libnetutil/netutil.cc.orig	Wed Oct 28 04:21:15 2015
++++ libnetutil/netutil.cc	Tue Dec 29 10:47:48 2015
+@@ -915,7 +915,7 @@ void set_ttl(int sd, int ttl) {
  /* Other than WIN32, what these systems have in common is that they use BPF for
     packet capture. (Solaris 10 and earlier used DLPI and had valid selectable
     fds.) */
@@ -19,7 +19,7 @@ chunks dealing with iovec: ???
  /* Returns whether the system supports pcap_get_selectable_fd() properly */
  int pcap_selectable_fd_valid() {
    return 0;
-@@ -3140,7 +3140,6 @@ static int route_dst_netlink(const struct sockaddr_sto
+@@ -3139,7 +3139,6 @@ static int route_dst_netlink(const struct sockaddr_sto
                               const struct sockaddr_storage *spoofss) {
    struct sockaddr_nl snl;
    struct msghdr msg;
@@ -27,7 +27,7 @@ chunks dealing with iovec: ???
    struct nlmsghdr *nlmsg;
    struct rtmsg *rtmsg;
    struct rtattr *rtattr;
-@@ -3192,22 +3191,14 @@ static int route_dst_netlink(const struct sockaddr_sto
+@@ -3191,22 +3190,14 @@ static int route_dst_netlink(const struct sockaddr_sto
      add_rtattr_addr(nlmsg, &rtattr, &len, RTA_SRC, spoofss, intf_index);
    }
  
@@ -50,7 +50,7 @@ chunks dealing with iovec: ???
    len = recvmsg(fd, &msg, 0);
    if (len <= 0)
      netutil_fatal("%s: cannot recvmsg: %s", __func__, strerror(errno));
-@@ -3838,7 +3829,6 @@ static const unsigned char *add_exthdr_ancillary(struc
+@@ -3837,7 +3828,6 @@ static const unsigned char *add_exthdr_ancillary(struc
  static int send_ipv6_ip(const struct sockaddr_in6 *dst,
    const unsigned char *packet, size_t packetlen) {
    struct msghdr msg;
@@ -58,7 +58,7 @@ chunks dealing with iovec: ???
  
    const unsigned char *end;
    struct ip6_hdr *hdr;
-@@ -3854,8 +3844,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
+@@ -3853,8 +3843,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
    /* Set up sendmsg data structure. iov is filled in below. */
    msg.msg_name = (void *) dst;
    msg.msg_namelen = sizeof(*dst);
@@ -67,7 +67,7 @@ chunks dealing with iovec: ???
    msg.msg_control = NULL;
    msg.msg_controllen = 0;
    msg.msg_flags = 0;
-@@ -3914,8 +3902,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
+@@ -3913,8 +3901,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
    }
  
    assert(packet <= end);
@@ -76,7 +76,7 @@ chunks dealing with iovec: ???
  
    n = sendmsg(sd, &msg, 0);
    if (n == -1)
-@@ -4084,9 +4070,6 @@ int datalink_offset(int datalink)
+@@ -4117,9 +4103,6 @@ int datalink_offset(int datalink)
  {
    if (datalink == DLT_EN10MB)
      return ETH_HDR_LEN;
@@ -86,7 +86,7 @@ chunks dealing with iovec: ???
    else
      return -1;
  }
-@@ -4123,7 +4106,7 @@ static int read_reply_pcap(pcap_t *pd, long to_usec,
+@@ -4156,7 +4139,7 @@ static int read_reply_pcap(pcap_t *pd, long to_usec,
      netutil_fatal("Cannot obtain datalink information: %s", pcap_geterr(pd));
    ioffset = datalink_offset(*datalink);
    if (ioffset < 0)
@@ -95,7 +95,7 @@ chunks dealing with iovec: ???
    *offset = (unsigned int) ioffset;
  
    if (to_usec > 0) {
-@@ -4223,10 +4206,6 @@ static bool accept_arp(const unsigned char *p, const s
+@@ -4256,10 +4239,6 @@ static bool accept_arp(const unsigned char *p, const s
  
    if (datalink == DLT_EN10MB) {
      return ntohs(*((u16 *) (p + 12))) == ETH_TYPE_ARP;

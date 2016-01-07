@@ -1,18 +1,20 @@
-$OpenBSD: patch-timing_cc,v 1.4 2015/09/11 15:56:43 sthen Exp $
+$OpenBSD: patch-timing_cc,v 1.5 2016/01/07 13:23:47 giovanni Exp $
 
 Avoid float-related assertion triggered on i386, not triggered on
 macppc/amd64/sparc64.
 
---- timing.cc.orig	Sat Aug 16 04:45:47 2014
-+++ timing.cc	Fri Sep 11 17:55:26 2015
-@@ -128,4 +128,6 @@
+--- timing.cc.orig	Tue Jun 23 02:09:01 2015
++++ timing.cc	Tue Dec 29 10:47:48 2015
+@@ -125,6 +125,8 @@
+ 
+ /* $Id: patch-timing_cc,v 1.5 2016/01/07 13:23:47 giovanni Exp $ */
  
 +#include <limits>
 +
  #include "timing.h"
  #include "NmapOps.h"
  #include "utils.h"
-@@ -436,7 +438,7 @@ void RateMeter::update(double amount, const struct tim
+@@ -437,7 +439,7 @@ void RateMeter::update(double amount, const struct tim
      interval = MAX(current_rate_history, diff);
    else
      interval = TIMEVAL_SUBTRACT(*now, start_tv) / 1000000.0;
