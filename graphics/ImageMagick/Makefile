@@ -1,22 +1,24 @@
-# $OpenBSD: Makefile,v 1.140 2015/11/29 10:44:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.141 2016/01/07 23:44:09 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		image processing tools
 
-VER=			6.9.2
-DASHVER=		7
+VER=			6.9.3
+DASHVER=		0
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=	MagickCore-6.Q16     1.0      # 2.0
-SHARED_LIBS +=	MagickWand-6.Q16     1.0      # 2.0
-SHARED_LIBS +=	Magick++-6.Q16       1.0      # 6.0
+SHARED_LIBS +=	MagickCore-6.Q16     2.0      # 2.0
+SHARED_LIBS +=	MagickWand-6.Q16     1.1      # 2.0
+SHARED_LIBS +=	Magick++-6.Q16       2.0      # 6.0
 
 CATEGORIES=		graphics
 
-HOMEPAGE=		http://www.imagemagick.org
+HOMEPAGE=		http://www.imagemagick.org/
+
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 MASTER_SITES=		http://www.imagemagick.org/download/releases/ \
 			ftp://sunsite.icm.edu.pl/packages/ImageMagick/
@@ -42,11 +44,7 @@ LIB_DEPENDS =		archivers/bzip2 \
 			graphics/openjp2 \
 			math/fftw3 \
 			textproc/libxml
-
-RUN_DEPENDS =		graphics/netpbm \
-			print/ghostscript/gnu \
-			print/transfig
-BUILD_DEPENDS =		${RUN_DEPENDS}
+BUILD_DEPENDS =		print/ghostscript/gnu
 
 ALL_TARGET=		all perl-build
 
