@@ -1,0 +1,10 @@
+$OpenBSD: README,v 1.1.1.1 2016/01/07 14:55:47 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Running the EC2 API tools requires the following to be set in the environment:
+    export EC2_HOME=${TRUEPREFIX}/ec2-api-tools
+    export JAVA_HOME=$(javaPathHelper -h ec2-api-tools)
+    export PATH=${PATH}:${EC2_HOME}/bin
