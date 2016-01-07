@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/09/27 08:22:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2016/01/07 17:32:07 feinerer Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -7,6 +7,7 @@ COMMENT-main=		good elements for GStreamer
 COMMENT-pulse=		pulseaudio(1) element for GStreamer
 
 DISTNAME=		gst-plugins-good-${V}
+REVISION=		0
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 
 PKGNAME-main=		${PKGNAME}
@@ -25,6 +26,7 @@ WANTLIB-main += gstfft-1.0 gstnet-1.0 gstriff-1.0 gstrtp-1.0 gstrtsp-1.0 xcb-ren
 WANTLIB-main += gstallocators-1.0 gstsdp-1.0 jpeg ogg ossaudio png shout soup-2.4
 WANTLIB-main += speex sqlite3 stdc++ tag theora vorbis vpx>=5 wavpack xcb-shm
 WANTLIB-main += Xrender cairo cairo-gobject expat fontconfig freetype pixman-1
+WANTLIB-main += v4l2 v4lconvert
 
 WANTLIB-pulse += ${WANTLIB}
 WANTLIB-pulse += execinfo gdbm pulse sndfile X11-xcb Xi Xtst ICE
@@ -42,6 +44,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			audio/wavpack \
 			devel/libsoup \
 			graphics/gdk-pixbuf2 \
+			multimedia/libv4l \
 			multimedia/libvpx \
 			net/libshout
 
