@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/05/02 18:37:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/07 08:24:20 benoit Exp $
 
 COMMENT =		turn-based empire game
 
-DISTNAME =		vms-empire-1.13
+DISTNAME =		vms-empire-1.14
 
 CATEGORIES =		games
 
