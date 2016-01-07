@@ -1,0 +1,8 @@
+This API is mainly for Terminal Emulator implementors, or those writing programs
+that expect to interpreted by a terminal emulator and wish to determine the
+printable width of a string on a Terminal.
+
+Usually, the length of the string is equivalent to the number of cells it
+occupies except that there are are also some categories of characters which
+occupy 2 or even 0 cells. POSIX-conforming systems provide wcwidth(3) and
+wcswidth(3) of which this module's interface mirrors precisely.
