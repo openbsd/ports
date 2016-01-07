@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/19 20:13:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/07 21:35:28 jasper Exp $
 
 COMMENT=		Git object database
 
 MODPY_EGG_VERSION=	0.5.4
-REVISION=		0
+REVISION=		1
 DISTNAME=		gitdb-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel

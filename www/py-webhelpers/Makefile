@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2015/09/29 10:53:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/07 21:35:29 jasper Exp $
 
 COMMENT =	helper functions focused on web applications
 
 MODPY_EGG_VERSION = 1.3
 DISTNAME =	WebHelpers-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	0
+REVISION =	2
 
 CATEGORIES =	www devel
 

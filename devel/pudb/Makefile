@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/10/21 16:23:50 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/07 21:35:27 jasper Exp $
 
 COMMENT =		console-based visual debugger for Python
 
 MODPY_EGG_VERSION =	2015.4.1
 DISTNAME =		pudb-${MODPY_EGG_VERSION}
 PKGNAME =		py-pudb-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

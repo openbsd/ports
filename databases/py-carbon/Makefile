@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/12/29 08:58:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/07 21:35:27 jasper Exp $
 
 COMMENT=		backend data caching and persistence daemon for Graphite
 
@@ -7,6 +7,7 @@ MODPY_EGG_VERSION=	0.9.15
 DISTNAME=		carbon-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		databases
+REVISION=		0
 
 # Apache
 PERMIT_PACKAGE_CDROM=	Yes

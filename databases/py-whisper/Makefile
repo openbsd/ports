@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/12/29 08:54:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/07 21:35:27 jasper Exp $
 
 COMMENT=		fixed size round-robin style database
 
@@ -7,6 +7,7 @@ MODPY_EGG_VERSION=	0.9.15
 DISTNAME=		whisper-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		databases
+REVISION=		0
 
 # Apache
 PERMIT_PACKAGE_CDROM=	Yes
