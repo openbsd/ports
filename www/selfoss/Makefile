@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2016/01/02 19:05:34 rpe Exp $
+# $OpenBSD: Makefile,v 1.18 2016/01/07 21:44:20 ajacoutot Exp $
 
 COMMENT=		rss reader, live stream, mashup, aggregation webapp
 
 GH_TAGNAME=		2.14
 GH_ACCOUNT=		SSilence
 GH_PROJECT=		selfoss
+REVISION=		0
 
 CATEGORIES=		www
 

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2016/01/02 19:05:34 rpe Exp $
+$OpenBSD: README,v 1.5 2016/01/07 21:44:20 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,8 +13,7 @@ It can be accessed by pointing you browser to:
 
 Post-installation instructions
 ==============================
-To use selfoss with nginx you have to install the php-fpm package. For
-configuration examples see:
+To use selfoss with nginx, see configuration examples at:
 	https://github.com/SSilence/selfoss/wiki/nginx-configuration
 
 With Apache, AllowOverride settings on the ${INSTDIR} directory and
