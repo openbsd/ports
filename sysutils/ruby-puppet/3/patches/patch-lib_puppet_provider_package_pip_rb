@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_puppet_provider_package_pip_rb,v 1.1 2016/01/07 10:39:06 sebastia Exp $
+
+Allow the pip package provider to work, at least for the
+default python version.
+
+--- lib/puppet/provider/package/pip.rb.orig	Mon Dec 28 22:16:19 2015
++++ lib/puppet/provider/package/pip.rb	Mon Dec 28 22:27:44 2015
+@@ -38,6 +38,8 @@ Puppet::Type.type(:package).provide :pip,
+   def self.cmd
+     if Facter.value(:osfamily) == "RedHat" and Facter.value(:operatingsystemmajrelease).to_i < 7
+       "pip-python"
++    elsif Facter.value(:osfamily) == "OpenBSD"
++      "pip${MODPY_VERSION}"
+     else
+       "pip"
+     end
