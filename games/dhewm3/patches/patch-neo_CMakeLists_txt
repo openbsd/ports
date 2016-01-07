@@ -1,0 +1,12 @@
+$OpenBSD: patch-neo_CMakeLists_txt,v 1.1.1.1 2016/01/07 10:34:24 pascal Exp $
+--- neo/CMakeLists.txt.orig	Fri Oct  9 16:06:49 2015
++++ neo/CMakeLists.txt	Tue Dec 29 22:39:32 2015
+@@ -150,8 +150,6 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID STRE
+ 	set(CMAKE_C_FLAGS_DEBUG "-g -D_DEBUG -O1")
+ 	set(CMAKE_C_FLAGS_DEBUGALL "-g -ggdb -D_DEBUG")
+ 	set(CMAKE_C_FLAGS_PROFILE "-g -ggdb -D_DEBUG -O1 -fno-omit-frame-pointer")
+-	set(CMAKE_C_FLAGS_RELEASE "-O3 -ffast-math -fno-unsafe-math-optimizations -fomit-frame-pointer")
+-	set(CMAKE_C_FLAGS_RELWITHDEBINFO "-g -O3 -ffast-math -fno-unsafe-math-optimizations -fomit-frame-pointer")
+ 	set(CMAKE_C_FLAGS_MINSIZEREL "-Os -ffast-math -fno-unsafe-math-optimizations -fomit-frame-pointer")
+ 
+ 	set(CMAKE_CXX_FLAGS_DEBUGALL ${CMAKE_C_FLAGS_DEBUGALL})

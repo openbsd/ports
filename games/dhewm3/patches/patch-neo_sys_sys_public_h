@@ -1,0 +1,12 @@
+$OpenBSD: patch-neo_sys_sys_public_h,v 1.1.1.1 2016/01/07 10:34:24 pascal Exp $
+--- neo/sys/sys_public.h.orig	Tue Nov 13 23:58:50 2012
++++ neo/sys/sys_public.h	Sun Jan 13 17:14:09 2013
+@@ -41,7 +41,7 @@ typedef enum {
+ 	CPUID_SSE2							= 0x00080,	// Streaming SIMD Extensions 2
+ 	CPUID_SSE3							= 0x00100,	// Streaming SIMD Extentions 3 aka Prescott's New Instructions
+ 	CPUID_ALTIVEC						= 0x00200,	// AltiVec
+-} cpuid_t;
++} xcpuid_t;
+ 
+ typedef enum {
+ 	AXIS_SIDE,
