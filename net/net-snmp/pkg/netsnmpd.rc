@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: netsnmpd.rc,v 1.2 2015/11/05 23:43:46 sthen Exp $
+# $OpenBSD: netsnmpd.rc,v 1.3 2016/01/07 12:35:53 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/snmpd"
 
@@ -9,5 +9,7 @@ daemon="${TRUEPREFIX}/sbin/snmpd"
 daemon_flags="-u _netsnmp -I -ipv6"
 
 . /etc/rc.d/rc.subr
+
+pexp="${daemon}.*"
 
 rc_cmd $1
