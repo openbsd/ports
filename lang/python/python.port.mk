@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.84 2015/11/26 20:27:30 jasper Exp $
+# $OpenBSD: python.port.mk,v 1.85 2016/01/07 21:14:06 jasper Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -108,8 +108,10 @@ _MODPY_USERBASE =	${WRKDIR}
 .endif
 
 .if defined(MODPY_PI) && ${MODPY_PI:L} == "yes"
-MODPY_PI_DIR ?=		${DISTNAME:C/^([a-zA-Z0-9]).*/\1/}/${DISTNAME:S/-${MODPY_EGG_VERSION}//}
+_MODPY_EGG_NAME =	${DISTNAME:S/-${MODPY_EGG_VERSION}//}
+MODPY_PI_DIR ?=		${DISTNAME:C/^([a-zA-Z0-9]).*/\1/}/${_MODPY_EGG_NAME}
 MASTER_SITES =		${MASTER_SITE_PYPI:=${MODPY_PI_DIR}/}
+HOMEPAGE ?=		https://pypi.python.org/pypi/${_MODPY_EGG_NAME}
 .endif
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:L} != "yes"
