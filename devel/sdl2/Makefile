@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/10 15:02:33 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/07 04:49:37 jsg Exp $
 
 COMMENT=	cross-platform multimedia library
 
-V=		2.0.3
-REVISION=	0
+V=		2.0.4
 DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 
-SHARED_LIBS=	SDL2	0.1
+SHARED_LIBS=	SDL2	0.2
 
 HOMEPAGE=	http://www.libsdl.org/
 
