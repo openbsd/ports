@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/10/21 13:23:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/08 02:08:10 sthen Exp $
 
 COMMENT=	SSL port scanner
 
-V=		1.11.0
+V=		1.11.1
 DISTNAME=	sslscan-$V
 DISTFILES=	${DISTNAME}{$V-rbsec}.tar.gz
 WRKDIST=	${WRKDIR}/${DISTNAME}-rbsec
