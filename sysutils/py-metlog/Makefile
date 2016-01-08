@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/07 21:37:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/08 13:17:15 jasper Exp $
 
 COMMENT =	library for mozilla services metrics logging
 
 MODPY_EGG_VERSION = 0.10.0
 DISTNAME =	metlog-py-${MODPY_EGG_VERSION}
 PKGNAME =	py-metlog-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/07 21:37:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/08 13:17:15 jasper Exp $
 
 COMMENT =	lightweight in-process concurrent programming
 # see slp_platformselect.h
@@ -7,6 +7,7 @@ ONLY_FOR_ARCHS =	amd64 arm i386 powerpc sparc sparc64
 MODPY_EGG_VERSION = 0.4.9
 DISTNAME =	greenlet-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 EXTRACT_SUFX =	.zip
 
 CATEGORIES =	devel

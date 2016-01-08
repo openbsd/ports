@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/07 21:37:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/08 13:17:15 jasper Exp $
 
 COMMENT=	extensions to the Python unit testing framework
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION= 1.8.1
 DISTNAME=	testtools-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-
+REVISION=	0
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

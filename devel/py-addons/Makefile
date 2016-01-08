@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2016/01/07 21:37:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/08 13:17:15 jasper Exp $
 
 COMMENT =		extend python objects with addons
 
 MODPY_EGG_VERSION =	0.7
 DISTNAME =		AddOns-${MODPY_EGG_VERSION}
 PKGNAME =		py-addons-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

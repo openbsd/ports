@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/07 21:37:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2016/01/08 13:17:15 jasper Exp $
 
 COMMENT=	testing frameworks from Zope 3
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	3.7.4
 
 DISTNAME=	zope.testing-${MODPY_EGG_VERSION}
 PKGNAME=	py-zopetesting-${MODPY_EGG_VERSION}
-REVISION =	3
+REVISION =	4
 CATEGORIES=	devel
 
 
