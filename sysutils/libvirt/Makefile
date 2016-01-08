@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2015/12/17 19:12:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2016/01/08 18:49:12 jasper Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
@@ -40,7 +40,8 @@ LIB_DEPENDS=		net/avahi \
 
 USE_GMAKE=		Yes
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-avahi \
 			--with-ssh2 \
