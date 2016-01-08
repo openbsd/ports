@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/30 11:06:59 phessler Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/08 10:37:34 jasper Exp $
+
+PORTROACH =		skipv:initial
 
 COMMENT = bgp filtering automation for Cisco and Juniper routers
 

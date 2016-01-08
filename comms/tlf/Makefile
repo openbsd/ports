@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2014/11/04 10:58:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/01/08 10:37:34 jasper Exp $
+
+PORTROACH=	skipv:bm_start
 
 COMMENT=	radio contest logger
 
