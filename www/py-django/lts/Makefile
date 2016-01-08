@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/04 19:38:30 rpointel Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/08 21:32:42 jasper Exp $
+
+PORTROACH =	limit:^1\.8
 
 COMMENT =	high-level Python web framework (LTS version)
 
