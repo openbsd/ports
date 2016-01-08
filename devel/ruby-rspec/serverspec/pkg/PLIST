@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/11/12 14:23:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/01/08 19:24:13 jasper Exp $
 ${GEM_BIN}/serverspec-init${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -61,6 +61,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/docker_image.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/fstab.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/group.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/hadoop_config.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/host.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/iis_app_pool.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/type/iis_website.rb
