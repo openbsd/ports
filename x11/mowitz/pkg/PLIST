@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:59 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/01/08 21:31:32 jasper Exp $
 bin/mowitz-config
 include/Mowitz/
 include/Mowitz/Mowitz.h
@@ -90,6 +90,8 @@ include/Mowitz/MwTraverse.h
 include/Mowitz/MwUtils.h
 include/Mowitz/MwVSlider.h
 include/Mowitz/MwVSliderP.h
+include/Mowitz/MwXCC.h
+include/Mowitz/MwXCCP.h
 include/Mowitz/MwXFormat.h
 include/Mowitz/MwXutils.h
 lib/libMowitz.a
