@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_common_sandbox_init_openbsd_cc,v 1.1 2016/01/06 21:46:44 robert Exp $
+$OpenBSD: patch-content_common_sandbox_init_openbsd_cc,v 1.2 2016/01/08 15:18:09 robert Exp $
 --- content/common/sandbox_init_openbsd.cc.orig.port	Sun Jan  3 21:05:02 2016
-+++ content/common/sandbox_init_openbsd.cc	Wed Jan  6 20:57:58 2016
++++ content/common/sandbox_init_openbsd.cc	Fri Jan  8 08:41:07 2016
 @@ -0,0 +1,74 @@
 +/*
 + * Copyright (c) 2016 Robert Nagy <robert@openbsd.org>
@@ -48,7 +48,7 @@ $OpenBSD: patch-content_common_sandbox_init_openbsd_cc,v 1.1 2016/01/06 21:46:44
 +      _exit(1);
 +    }
 +  } else if (process_type == switches::kGpuProcess) {
-+    if (pledge("stdio rpath drm prot_exec sendfd", NULL) == -1) {
++    if (pledge("stdio drm prot_exec sendfd", NULL) == -1) {
 +      LOG(ERROR) << "pledge() failed, errno: " << errno;
 +      _exit(1);
 +    }
