@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/07 21:37:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2016/01/08 13:07:35 jasper Exp $
 
 COMMENT=		generator for pronounceable random words
 
 MODPY_EGG_VERSION=	0.3.7
 DISTNAME=		yould-${MODPY_EGG_VERSION}
-REVISION=		4
+REVISION=		5
 CATEGORIES=		textproc
-
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
