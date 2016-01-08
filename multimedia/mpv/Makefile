@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/12/28 08:25:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2016/01/08 18:47:01 feinerer Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS =	alpha amd64 i386 mips64 mips64el powerpc sparc64
@@ -7,6 +7,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 
 V =			0.13.0
 DISTNAME =		mpv-${V}
+REVISION =		0
 
 GH_ACCOUNT=		mpv-player
 GH_PROJECT=		mpv
@@ -25,7 +26,7 @@ PERMIT_PACKAGE_FTP =	Yes
 WANTLIB += EGL GL X11 Xext Xinerama Xrandr Xss Xv ass avcodec
 WANTLIB += avdevice avfilter avformat avutil bluray c cdio cdio_cdda
 WANTLIB += cdio_paranoia dvdnav dvdread jpeg lcms2 m pthread
-WANTLIB += smbclient sndio swresample swscale z ${MODLUA_WANTLIB}
+WANTLIB += smbclient sndio swresample swscale v4l2 z ${MODLUA_WANTLIB}
 
 MODULES =		converters/libiconv \
 			lang/lua \
@@ -43,6 +44,7 @@ LIB_DEPENDS =		audio/libcdio \
 			multimedia/libass \
 			multimedia/libbluray>=0.8.0 \
 			multimedia/libdvdnav \
+			multimedia/libv4l \
 			net/samba
 
 # zsh.pl needs to find the binary that was just built
