@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/08 09:10:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/08 16:12:16 ajacoutot Exp $
 
 PORTROACH=		skipv:reinvent-demo
 
@@ -8,6 +8,7 @@ MODPY_EGG_VERSION=	0.1.0
 GH_ACCOUNT=		awslabs
 GH_PROJECT=		aws-shell
 GH_TAGNAME=		${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -20,7 +21,8 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-RUN_DEPENDS=		net/py-boto3 \
+RUN_DEPENDS=		devel/py-configobj \
+			net/py-boto3 \
 			sysutils/awscli
 
 # !!! check setup.py for exact dependencies version
