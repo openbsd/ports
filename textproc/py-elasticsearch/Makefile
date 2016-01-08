@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/07 11:46:29 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/08 10:45:23 jasper Exp $
 
 COMMENT=	Python client for Elasticsearch
 
@@ -14,6 +14,9 @@ MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache 2
 PERMIT_PACKAGE_CDROM=	Yes
+
+# prevent fetching a file with the same DISTNAME as textproc/elasticsearch
+DIST_SUBDIR=	py-elasticsearch
 
 MODPY_PI =	Yes
 
