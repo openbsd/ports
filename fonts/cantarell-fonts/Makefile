@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2016/01/04 17:51:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2016/01/08 08:32:19 ajacoutot Exp $
 
 COMMENT=		humanist sans-serif font family
 
-GNOME_VERSION=		0.0.20
+GNOME_VERSION=		0.0.20.1
 GNOME_PROJECT=		cantarell-fonts
 
 CATEGORIES=		fonts x11
