@@ -1,6 +1,6 @@
-$OpenBSD: patch-config,v 1.9 2015/11/30 20:17:53 jung Exp $
---- config.orig	Wed Aug 19 15:06:33 2015
-+++ config	Fri Nov 27 22:12:29 2015
+$OpenBSD: patch-config,v 1.10 2016/01/08 22:37:52 sthen Exp $
+--- config.orig	Thu Nov  5 18:01:41 2015
++++ config	Tue Jan  5 10:25:26 2016
 @@ -28,10 +28,10 @@
  #ssl = False
  
@@ -22,9 +22,8 @@ $OpenBSD: patch-config,v 1.9 2015/11/30 20:17:53 jung Exp $
 +htpasswd_filename = ${SYSCONFDIR}/radicale/users
  
  # Htpasswd encryption method
--# Value: plain | sha1 | ssha | crypt
+ # Value: plain | sha1 | ssha | crypt | bcrypt | md5
 -#htpasswd_encryption = crypt
-+# Value: plain | sha1 | ssha | crypt | bcrypt
 +htpasswd_encryption = bcrypt
  
  # LDAP server URL, with protocol and port
