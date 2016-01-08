@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/07 08:20:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/08 09:10:29 ajacoutot Exp $
+
+PORTROACH=		skipv:reinvent-demo
 
 COMMENT=		integrated shell for working with the AWS CLI
 
