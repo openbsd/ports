@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/12/15 23:56:15 juanfra Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/08 20:12:01 juanfra Exp $
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
@@ -10,12 +10,12 @@ SHARED_ONLY =		Yes
 # is buggy and the devs can't fix the problems because they have not access
 # to these architectures. In addition, the C code is extremely slow compared
 # with the JIT.
-ONLY_FOR_ARCHS =	i386 amd64 sparc64
+ONLY_FOR_ARCHS =	i386 amd64 sparc64 powerpc
 
 COMMENT =		multi-paradigm programming language
 
 V =			6.3
-REVISION =		0
+REVISION =		1
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -77,12 +77,18 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
-FLAVORS =		debug
+FLAVORS =		debug no_jit
 FLAVOR ?=
+
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=	--disable-strip \
 			--enable-noopt
 CFLAGS += -ggdb3
+.endif
+
+.if ${FLAVOR:Mno_jit}
+ONLY_FOR_ARCHS =	i386 amd64 powerpc
+CONFIGURE_ARGS +=	--disable-jit
 .endif
 
 post-install:
@@ -97,8 +103,7 @@ post-install:
 # The GNU Lightning minimum requirement is SSE2.
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -msse -msse2 -mfpmath=sse"
-CONFIGURE_ARGS +=	--enable-extflonum \
-			--enable-jit
+CONFIGURE_ARGS +=	--enable-extflonum
 .endif
 
 .include <bsd.port.mk>
