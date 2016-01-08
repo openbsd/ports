@@ -1,7 +1,7 @@
-$OpenBSD: patch-nsdejavu_Makefile_in,v 1.1 2015/05/12 16:11:54 shadchin Exp $
---- nsdejavu/Makefile.in.orig	Fri Apr 17 02:55:25 2015
-+++ nsdejavu/Makefile.in	Sat May  9 22:43:23 2015
-@@ -144,7 +144,7 @@ am__v_lt_0 = --silent
+$OpenBSD: patch-nsdejavu_Makefile_in,v 1.2 2016/01/08 09:43:38 shadchin Exp $
+--- nsdejavu/Makefile.in.orig	Thu Jan  7 17:28:37 2016
++++ nsdejavu/Makefile.in	Thu Jan  7 22:08:24 2016
+@@ -135,7 +135,7 @@ am__v_lt_0 = --silent
  am__v_lt_1 = 
  nsdejavu_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(nsdejavu_la_CFLAGS) \
@@ -10,7 +10,7 @@ $OpenBSD: patch-nsdejavu_Makefile_in,v 1.1 2015/05/12 16:11:54 shadchin Exp $
  AM_V_P = $(am__v_P_@AM_V@)
  am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
  am__v_P_0 = false
-@@ -495,7 +495,7 @@ distclean-compile:
+@@ -484,7 +484,7 @@ distclean-compile:
  @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
  
  nsdejavu_la-nsdejavu.lo: nsdejavu.c
