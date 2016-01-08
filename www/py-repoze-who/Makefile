@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/07 21:37:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/08 13:08:22 ajacoutot Exp $
 
 COMMENT =	identification and authentication framework for WSGI
 
 MODPY_EGG_VERSION = 2.2
 DISTNAME =	repoze.who-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/./-/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www devel
 
