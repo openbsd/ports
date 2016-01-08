@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/22 07:35:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/08 22:57:47 sthen Exp $
 
 COMMENT =	browse LDAP server with a shell-like CLI
 
 DISTNAME =	shelldap-1.3.1
+REVISION =	0
 HG_COMMIT =	377bd38ab38c
 EPOCH =	0
 CATEGORIES =	sysutils
@@ -27,5 +28,6 @@ RUN_DEPENDS =	databases/p5-ldap \
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/shelldap ${PREFIX}/bin
+	pod2man ${WRKSRC}/shelldap > ${PREFIX}/man/man1/shelldap.1
 
 .include <bsd.port.mk>
