@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/07 17:12:21 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/08 10:01:28 ajacoutot Exp $
 include/libv4l-plugin.h
 include/libv4l1-videodev.h
 include/libv4l1.h
@@ -15,13 +15,13 @@ lib/libv4l/plugins/libv4l-mplane.so
 lib/libv4l/v4l1compat.so
 @comment lib/libv4l/v4l2convert.la
 lib/libv4l/v4l2convert.so
-@comment lib/libv4l1.la
+lib/libv4l1.la
 @lib lib/libv4l1.so.${LIBv4l1_VERSION}
-@comment lib/libv4l2.la
+lib/libv4l2.la
 @lib lib/libv4l2.so.${LIBv4l2_VERSION}
-@comment lib/libv4l2rds.la
+lib/libv4l2rds.la
 @lib lib/libv4l2rds.so.${LIBv4l2rds_VERSION}
-@comment lib/libv4lconvert.la
+lib/libv4lconvert.la
 @lib lib/libv4lconvert.so.${LIBv4lconvert_VERSION}
 lib/pkgconfig/libv4l1.pc
 lib/pkgconfig/libv4l2.pc
