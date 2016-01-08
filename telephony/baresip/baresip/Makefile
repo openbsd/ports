@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/10/02 19:37:40 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/08 18:48:49 feinerer Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,6 +7,7 @@ COMMENT-gtk2 =		GTK+2-based modules for baresip
 
 V =			0.4.15
 DISTNAME =		baresip-$V
+REVISION =		0
 PKGNAME-main =		baresip-$V
 PKGNAME-gtk2 =		baresip-gtk2-$V
 
@@ -14,7 +15,7 @@ WANTLIB += X11 Xext re z
 
 WANTLIB-main += ${WANTLIB} avcodec avdevice avformat avutil c crypto
 WANTLIB-main += daalabase daaladec daalaenc gsm m opus pthread rem
-WANTLIB-main += sndfile sndio spandsp speex speexdsp ssl swscale vpx
+WANTLIB-main += sndfile sndio spandsp speex speexdsp ssl swscale v4l2 vpx
 WANTLIB-main += x264 x265
 
 WANTLIB-gtk2 += ${WANTLIB} Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
@@ -30,6 +31,7 @@ LIB_DEPENDS-main =	audio/gsm \
 			audio/speex \
 			graphics/ffmpeg \
 			multimedia/daala \
+			multimedia/libv4l \
 			multimedia/libvpx \
 			telephony/baresip/rem \
 			telephony/spandsp
@@ -39,8 +41,9 @@ LIB_DEPENDS-gtk2 =	multimedia/gstreamer1/plugins-base \
 RUN_DEPENDS-gtk2 =	telephony/baresip/baresip,-main \
 
 MAKE_FLAGS +=		MOD_AUTODETECT= EXTRA_MODULES="daala h265 sndio zrtp" \
-			HAVE_SPEEXDSP=yes LIBRE_INC=${LOCAL_BASE}/include \
-			LIBRE_SO=${LOCAL_BASE}/lib LIBS="-lm -lrem" \
+			HAVE_LIBV4L2=yes HAVE_SPEEXDSP=yes \
+			LIBRE_INC=${LOCAL_BASE}/include \
+			LIBRE_SO=${LOCAL_BASE}/lib LIBS="-lm -lrem"
 
 MAKE_FLAGS +=		USE_AMR=yes USE_AVCODEC=yes USE_AVFORMAT=yes \
 			USE_CONS=yes USE_DTLS=yes USE_DTLS_SRTP=yes \
