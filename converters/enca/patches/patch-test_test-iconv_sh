@@ -1,7 +1,7 @@
-$OpenBSD: patch-test_test-iconv_sh,v 1.1 2015/03/31 15:45:25 juanfra Exp $
---- test/test-iconv.sh.orig	Tue Mar 31 16:09:27 2015
-+++ test/test-iconv.sh	Tue Mar 31 16:10:02 2015
-@@ -24,7 +24,7 @@ if $ENCA --list converters | grep '^iconv$' >/dev/null
+$OpenBSD: patch-test_test-iconv_sh,v 1.2 2016/01/08 21:18:41 jasper Exp $
+--- test/test-iconv.sh.orig	Mon Jan  4 19:12:05 2016
++++ test/test-iconv.sh	Fri Jan  8 22:17:39 2016
+@@ -23,7 +23,7 @@ if $ENCA --list converters | grep '^iconv$' >/dev/null
    diff $TEST_TEXT $TESTNAME.actual || DIE=1
    # One copy doesn't contain enough characters to overweight the noise
    cat $TESTNAME.tmp $TESTNAME.tmp $TESTNAME.tmp >$TESTNAME.actual
