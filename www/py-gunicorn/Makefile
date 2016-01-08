@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2015/09/29 10:52:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/08 21:55:49 jasper Exp $
 
 COMMENT =		Python WSGI HTTP server
 
-MODPY_EGG_VERSION =	19.0.0
+MODPY_EGG_VERSION =	19.4.5
 DISTNAME =		gunicorn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
-REVISION =		0
 
 HOMEPAGE =		http://gunicorn.org/
 
@@ -18,6 +17,6 @@ MODPY_PI =		Yes
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-TEST_DEPENDS =		devel/py-test
+TEST_DEPENDS =		devel/py-test-cov
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/06/17 10:14:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/01/08 21:55:50 jasper Exp $
 bin/gunicorn
 bin/gunicorn_django
 bin/gunicorn_paster
@@ -12,6 +12,8 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/gunicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/gunicorn/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gunicorn/_compat.py
+lib/python${MODPY_VERSION}/site-packages/gunicorn/_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/app/
 lib/python${MODPY_VERSION}/site-packages/gunicorn/app/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/app/__init__.pyc
@@ -54,6 +56,11 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn/http/unreader.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/unreader.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/wsgi.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/http/wsgi.pyc
+lib/python${MODPY_VERSION}/site-packages/gunicorn/instrument/
+lib/python${MODPY_VERSION}/site-packages/gunicorn/instrument/__init__.py
+lib/python${MODPY_VERSION}/site-packages/gunicorn/instrument/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gunicorn/instrument/statsd.py
+lib/python${MODPY_VERSION}/site-packages/gunicorn/instrument/statsd.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/management/
 lib/python${MODPY_VERSION}/site-packages/gunicorn/management/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/management/__init__.pyc
@@ -66,6 +73,8 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn/pidfile.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/pidfile.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/reloader.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/reloader.pyc
+lib/python${MODPY_VERSION}/site-packages/gunicorn/selectors.py
+lib/python${MODPY_VERSION}/site-packages/gunicorn/selectors.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/six.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/six.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/sock.py
@@ -75,11 +84,13 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn/util.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/_gaiohttp.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/async.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/async.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/base.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/base.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/gaiohttp.py
+lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/gaiohttp.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/geventlet.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/geventlet.pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/ggevent.py

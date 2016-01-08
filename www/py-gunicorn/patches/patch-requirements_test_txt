@@ -1,0 +1,11 @@
+$OpenBSD: patch-requirements_test_txt,v 1.1 2016/01/08 21:55:50 jasper Exp $
+
+Relax overly strict requirements
+
+--- requirements_test.txt.orig	Fri Jan  8 22:40:51 2016
++++ requirements_test.txt	Fri Jan  8 22:40:57 2016
+@@ -1,2 +1,2 @@
+-pytest==2.8.3
+-pytest-cov==1.7.0
++pytest
++pytest-cov
