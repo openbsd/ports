@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/01/01 17:30:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2016/01/08 10:06:48 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ V=		2.12.9
 DISTNAME=	ptlib-${V}
 EXTRACT_SUFX=	.tar.bz2
 SUBST_VARS=	V
-REVISION=	8
+REVISION=	9
 
 SHARED_LIBS=	pt	7.0
 
@@ -22,14 +22,15 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += SDL c crypto expat lber ldap ldap_r m pthread sasl2
-WANTLIB += sndio ssl stdc++
+WANTLIB += sndio ssl stdc++ v4l2
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 
 BUILD_DEPENDS=	devel/bison
 
 LIB_DEPENDS=	databases/openldap \
-		devel/sdl
+		devel/sdl \
+		multimedia/libv4l
 
 ALL_TARGET=	default #${WRKSRC}/Makefile
 USE_GMAKE=	Yes
