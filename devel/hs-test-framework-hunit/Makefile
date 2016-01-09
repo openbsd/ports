@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/10/12 21:44:18 kili Exp $
-
-BROKEN =		will be removed soon
+# $OpenBSD: Makefile,v 1.8 2016/01/09 20:23:23 kili Exp $
 
 COMMENT =		HUnit support for hs-test-framework
 
-DISTNAME =		test-framework-hunit-0.3.0.1
+DISTNAME =		test-framework-hunit-0.3.0.2
 CATEGORIES =		devel
 
 HOMEPAGE =		http://batterseapower.github.com/test-framework/
@@ -18,9 +16,11 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
+MODGHC_PACKAGE_KEY =	4EjIrlWvf9GGTAk5k1l4VY
+
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-extensible-exceptions>=0.1.1,<0.2.0 \
 			devel/hs-test-framework>=0.2.0 \
-			devel/hs-HUnit>=1.2,<2
+			devel/hs-HUnit>=1.2,<1.4
 
 .include <bsd.port.mk>
