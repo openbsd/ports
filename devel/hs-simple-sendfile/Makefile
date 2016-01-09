@@ -1,4 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/12/03 21:56:44 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/09 19:10:22 kili Exp $
+
+# XXX newer versions buildable with ghc-7.10 need a new dependency
+# 'conduit-extra'.
+
+BROKEN =		needs new dependencies
 
 COMMENT =		cross platform library for the sendfile system call
 
