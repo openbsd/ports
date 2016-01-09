@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.15 2015/10/09 07:06:52 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.16 2016/01/09 09:52:03 ajacoutot Exp $
 --- configure.orig	Sun Oct  4 15:18:39 2015
-+++ configure	Thu Oct  8 07:59:29 2015
++++ configure	Sat Jan  9 10:38:47 2016
 @@ -7494,18 +7494,6 @@ if test "${with_group+set}" = set; then :
  
  fi
@@ -37,3 +37,13 @@ $OpenBSD: patch-configure,v 1.15 2015/10/09 07:06:52 ajacoutot Exp $
  #include <sys/socket.h>
  
  int
+@@ -18182,8 +18171,7 @@ for be in ${BACKENDS}; do
+     ;;
+ 
+     v4l)
+-    if test "${have_linux_ioctl_defines}" != "yes" \
+-      || test "${have_libv4l1}" != "yes"; then
++    if test "${have_libv4l1}" != "yes"; then
+       echo "*** $be backend requires v4l libraries - $DISABLE_MSG"
+       backend_supported="no"
+     fi

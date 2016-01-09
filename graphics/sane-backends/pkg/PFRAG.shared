@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.16 2015/12/21 08:40:00 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.17 2016/01/09 09:52:03 ajacoutot Exp $
 lib/sane/libsane-abaton.so
 lib/sane/libsane-agfafocus.so
 lib/sane/libsane-apple.so
@@ -80,4 +80,5 @@ lib/sane/libsane-u12.so
 lib/sane/libsane-umax.so
 lib/sane/libsane-umax1220u.so
 lib/sane/libsane-umax_pp.so
+lib/sane/libsane-v4l.so
 lib/sane/libsane-xerox_mfp.so

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2015/12/21 08:40:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2016/01/09 09:52:03 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/spool/lock/sane/*
@@ -103,6 +103,7 @@ lib/sane/
 @man man/man5/sane-umax1220u.5
 @man man/man5/sane-umax_pp.5
 @man man/man5/sane-usb.5
+@man man/man5/sane-v4l.5
 @man man/man5/sane-xerox_mfp.5
 @man man/man7/sane.7
 @man man/man8/saned.8
@@ -336,6 +337,7 @@ share/examples/sane-backends/sane.d/umax1220u.conf
 @sample ${SYSCONFDIR}/sane.d/umax1220u.conf
 share/examples/sane-backends/sane.d/umax_pp.conf
 @sample ${SYSCONFDIR}/sane.d/umax_pp.conf
+share/examples/sane-backends/sane.d/v4l.conf
 share/examples/sane-backends/sane.d/xerox_mfp.conf
 @sample ${SYSCONFDIR}/sane.d/xerox_mfp.conf
 share/locale/

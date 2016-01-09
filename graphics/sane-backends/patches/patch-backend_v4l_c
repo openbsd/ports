@@ -1,0 +1,14 @@
+$OpenBSD: patch-backend_v4l_c,v 1.1 2016/01/09 09:52:03 ajacoutot Exp $
+--- backend/v4l.c.orig	Sat Jan  9 10:44:36 2016
++++ backend/v4l.c	Sat Jan  9 10:45:34 2016
+@@ -72,7 +72,10 @@
+ #include "../include/sane/saneopts.h"
+ 
+ #include <sys/ioctl.h>
++
++#ifdef HAVE_ASM_TYPES_H
+ #include <asm/types.h>		/* XXX glibc */
++#endif
+ 
+ #define BACKEND_NAME v4l
+ #include "../include/sane/sanei_backend.h"

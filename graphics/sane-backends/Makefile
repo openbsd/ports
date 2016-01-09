@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.72 2015/12/21 08:39:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2016/01/09 09:52:03 ajacoutot Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
 COMMENT=		API for accessing scanners, backends
 
 DISTNAME=		sane-backends-1.0.25
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  sane                 2.0      # unknown
 
@@ -18,7 +18,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c jpeg m png pthread tiff usb usb-1.0 z
+WANTLIB += c jpeg m png pthread tiff usb usb-1.0 v4l1 v4l2 v4lconvert
+WANTLIB += z
 
 MASTER_SITES=		http://fossies.org/linux/misc/ \
 			https://alioth.debian.org/frs/download.php/file/4146/
@@ -27,7 +28,8 @@ BUILD_DEPENDS=		devel/gettext-tools
 
 LIB_DEPENDS=		devel/libusb-compat \
 			graphics/png \
-			graphics/tiff
+			graphics/tiff \
+			multimedia/libv4l
 
 FLAVORS=		snmp
 FLAVOR?=
