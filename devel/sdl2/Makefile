@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/07 04:49:37 jsg Exp $
+# $OpenBSD: Makefile,v 1.11 2016/01/09 03:04:13 jsg Exp $
 
 COMMENT=	cross-platform multimedia library
 
 V=		2.0.4
+REVISION=	0
 DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
 CATEGORIES=	devel
@@ -27,7 +28,9 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-arts \
 		 --disable-esd \
 		 --disable-oss \
-		 --disable-pulseaudio
+		 --disable-pulseaudio \
+		 --disable-dbus \
+		 --disable-ibus
 # in case devel/usb is installed, don't pick it up.
 CONFIGURE_ENV+= ac_cv_lib_usb_hid_init=no \
 		ac_cv_header_usb_h=no
