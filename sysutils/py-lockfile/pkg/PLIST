@@ -1,6 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/12 14:51:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/09 16:54:21 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/lockfile/
-lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/lockfile/__init__.py
 lib/python${MODPY_VERSION}/site-packages/lockfile/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/lockfile/linklockfile.py
@@ -11,7 +17,5 @@ lib/python${MODPY_VERSION}/site-packages/lockfile/pidlockfile.py
 lib/python${MODPY_VERSION}/site-packages/lockfile/pidlockfile.pyc
 lib/python${MODPY_VERSION}/site-packages/lockfile/sqlitelockfile.py
 lib/python${MODPY_VERSION}/site-packages/lockfile/sqlitelockfile.pyc
-share/doc/py-lockfile/
-share/doc/py-lockfile/LICENSE
-share/doc/py-lockfile/README
-share/doc/py-lockfile/lockfile.rst
+lib/python${MODPY_VERSION}/site-packages/lockfile/symlinklockfile.py
+lib/python${MODPY_VERSION}/site-packages/lockfile/symlinklockfile.pyc
