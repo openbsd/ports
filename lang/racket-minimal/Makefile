@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/08 20:12:01 juanfra Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/09 03:41:47 juanfra Exp $
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
@@ -10,12 +10,12 @@ SHARED_ONLY =		Yes
 # is buggy and the devs can't fix the problems because they have not access
 # to these architectures. In addition, the C code is extremely slow compared
 # with the JIT.
-ONLY_FOR_ARCHS =	i386 amd64 sparc64 powerpc
+ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
 V =			6.3
-REVISION =		1
+REVISION =		2
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -87,7 +87,7 @@ CFLAGS += -ggdb3
 .endif
 
 .if ${FLAVOR:Mno_jit}
-ONLY_FOR_ARCHS =	i386 amd64 powerpc
+ONLY_FOR_ARCHS =	amd64 i386 powerpc
 CONFIGURE_ARGS +=	--disable-jit
 .endif
 
@@ -100,8 +100,10 @@ post-install:
 # MZ_TRY_EXTFLONUMS enabled, MZ_LONG_DOUBLE (extflonum) is turned on. Also
 # C_COMPILER_USES_SSE turn on MZ_USE_JIT_SSE.
 # "-msse -mfpmath=sse" required by extflonum on i386.
-# The GNU Lightning minimum requirement is SSE2.
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+# The GNU Lightning minimum requirement for i386 is SSE2.
+.if ${FLAVOR:Mno_jit} && ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS +=	--disable-extflonum
+.elif ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -msse -msse2 -mfpmath=sse"
 CONFIGURE_ARGS +=	--enable-extflonum
 .endif
