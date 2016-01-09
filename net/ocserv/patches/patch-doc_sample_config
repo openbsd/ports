@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_sample_config,v 1.9 2015/11/30 11:58:57 sthen Exp $
+$OpenBSD: patch-doc_sample_config,v 1.10 2016/01/09 16:01:42 sthen Exp $
 
 no seccomp, gssapi
 
---- doc/sample.config.orig	Mon Nov 30 11:45:14 2015
-+++ doc/sample.config	Mon Nov 30 11:48:13 2015
+--- doc/sample.config.orig	Fri Jan  8 15:37:21 2016
++++ doc/sample.config	Fri Jan  8 15:38:54 2016
 @@ -1,7 +1,7 @@
  # User authentication method. Could be set multiple times and in 
  # that case all should succeed. To enable multiple methods use
@@ -118,15 +118,19 @@ no seccomp, gssapi
  
  # Set the protocol-defined priority (SO_PRIORITY) for packets to
  # be sent. That is a number from 0 to 6 with 0 being the lowest
-@@ -471,6 +452,7 @@ no-route = 192.168.5.0/255.255.255.0
- # any other routes. All the routes applied by ocserv can be reverted
- # using /etc/ocserv/ocserv-fw --removeall. This option can be set globally
- # or in the per-user configuration.
-+# To use this with PF, you will need to supply your own ocserv-fw script.
+@@ -471,6 +452,11 @@ no-route = 192.168.5.0/255.255.255.0
+ # any other routes. In case of defaultroute, the no-routes are restricted.
+ # All the routes applied by ocserv can be reverted using /etc/ocserv/ocserv-fw
+ # --removeall. This option can be set globally or in the per-user configuration.
++#
++# OpenBSD package notes:
++# to use this with PF, you will need to supply your own ocserv-fw script,
++# probably the best approach would be to add via a table or an anchor.
++#
  #restrict-user-to-routes = true
  
  # When set to true, all client's iroutes are made visible to all
-@@ -532,20 +514,6 @@ no-route = 192.168.5.0/255.255.255.0
+@@ -532,20 +518,6 @@ no-route = 192.168.5.0/255.255.255.0
  # and '%{G}', if present will be replaced by the username and group name.
  #proxy-url = http://example.com/
  #proxy-url = http://example.com/%{U}/
