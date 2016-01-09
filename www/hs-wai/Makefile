@@ -1,4 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/12/03 21:56:45 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/09 19:15:35 kili Exp $
+
+# XXX newer versions buildable with ghc-7.10 need a new dependency
+# 'bytestring-builder'.
+
+BROKEN =		needs new dependencies
 
 COMMENT =		web application interface
 
