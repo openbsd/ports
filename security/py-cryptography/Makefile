@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/05 10:23:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/09 16:23:38 sthen Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_EGG_VERSION=	1.1.2
+MODPY_EGG_VERSION=	1.2.1
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	security devel
@@ -24,7 +24,7 @@ FLAVORS=	python3
 FLAVOR?=
 
 RUN_DEPENDS=	devel/py-asn1${MODPY_FLAVOR} \
-		devel/py-cffi${MODPY_FLAVOR}>=1.2.1 \
+		devel/py-cffi${MODPY_FLAVOR}>=1.4.2 \
 		devel/py-six${MODPY_FLAVOR} \
 		net/py-idna${MODPY_FLAVOR}
 
