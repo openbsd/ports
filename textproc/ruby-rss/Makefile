@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2014/09/27 17:05:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/10 20:32:44 jasper Exp $
 
 COMMENT=	improved ruby RSS and Atom parser
 
-DISTNAME=	rss-0.2.4
+DISTNAME=	rss-0.2.6
 PKGNAME=	${MODRUBY_PKG_PREFIX}-${DISTNAME}
 CATEGORIES=	textproc devel
 
