@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/18 13:01:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/10 17:27:16 jasper Exp $
 
 COMMENT =	HTML to markdown-formatted text converter
 
-MODPY_EGG_VERSION =	2015.11.4
+MODPY_EGG_VERSION =	2016.1.8
 DISTNAME =	html2text-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
