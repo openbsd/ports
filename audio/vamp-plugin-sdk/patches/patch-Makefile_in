@@ -1,29 +1,29 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2012/09/28 01:47:02 brad Exp $
---- Makefile.in.orig	Mon Dec  1 06:48:41 2008
-+++ Makefile.in	Wed Aug 22 18:50:43 2012
-@@ -75,15 +75,15 @@ INSTALL_SDK_LIBS	  := $(INSTALL_PREFIX)/lib
- INSTALL_PLUGINS		  := $(INSTALL_PREFIX)/lib/vamp
- INSTALL_BINARIES	  := $(INSTALL_PREFIX)/bin 
+$OpenBSD: patch-Makefile_in,v 1.3 2016/01/10 17:28:55 jasper Exp $
+--- Makefile.in.orig	Tue Apr  5 14:30:52 2011
++++ Makefile.in	Sun Jan 10 17:02:16 2016
+@@ -75,15 +75,15 @@ INSTALL_SDK_LIBS	  = $(INSTALL_PREFIX)/lib
+ INSTALL_PLUGINS		  = $(INSTALL_PREFIX)/lib/vamp
+ INSTALL_BINARIES	  = $(INSTALL_PREFIX)/bin 
  
--INSTALL_SDK_LIBNAME	  := libvamp-sdk.so.2.0.0
--INSTALL_SDK_LINK_ABI	  := libvamp-sdk.so.2
--INSTALL_SDK_LINK_DEV	  := libvamp-sdk.so
-+INSTALL_SDK_LIBNAME	  := libvamp-sdk.so.${LIBvamp-sdk_VERSION}
-+INSTALL_SDK_LINK_ABI	  := ${INSTALL_SDK_LIBNAME}
-+INSTALL_SDK_LINK_DEV	  := ${INSTALL_SDK_LIBNAME}
- INSTALL_SDK_STATIC        := libvamp-sdk.a
- INSTALL_SDK_LA            := libvamp-sdk.la
+-INSTALL_SDK_LIBNAME	  = libvamp-sdk.so.2.2.0
+-INSTALL_SDK_LINK_ABI	  = libvamp-sdk.so.2
+-INSTALL_SDK_LINK_DEV	  = libvamp-sdk.so
++INSTALL_SDK_LIBNAME	  = libvamp-sdk.so.${LIBvamp-sdk_VERSION}
++INSTALL_SDK_LINK_ABI	  = ${INSTALL_SDK_LIBNAME}
++INSTALL_SDK_LINK_DEV	  = ${INSTALL_SDK_LIBNAME}
+ INSTALL_SDK_STATIC        = libvamp-sdk.a
+ INSTALL_SDK_LA            = libvamp-sdk.la
  
--INSTALL_HOSTSDK_LIBNAME   := libvamp-hostsdk.so.3.0.0
--INSTALL_HOSTSDK_LINK_ABI  := libvamp-hostsdk.so.3
--INSTALL_HOSTSDK_LINK_DEV  := libvamp-hostsdk.so
-+INSTALL_HOSTSDK_LIBNAME   := libvamp-hostsdk.so.${LIBvamp-hostsdk_VERSION}
-+INSTALL_HOSTSDK_LINK_ABI  := ${INSTALL_HOSTSDK_LIBNAME}
-+INSTALL_HOSTSDK_LINK_DEV  := ${INSTALL_HOSTSDK_LIBNAME}
- INSTALL_HOSTSDK_STATIC    := libvamp-hostsdk.a
- INSTALL_HOSTSDK_LA        := libvamp-hostsdk.la
+-INSTALL_HOSTSDK_LIBNAME   = libvamp-hostsdk.so.3.2.0
+-INSTALL_HOSTSDK_LINK_ABI  = libvamp-hostsdk.so.3
+-INSTALL_HOSTSDK_LINK_DEV  = libvamp-hostsdk.so
++INSTALL_HOSTSDK_LIBNAME   = libvamp-hostsdk.so.${LIBvamp-hostsdk_VERSION} 
++INSTALL_HOSTSDK_LINK_ABI  = ${INSTALL_HOSTSDK_LIBNAME}
++INSTALL_HOSTSDK_LINK_DEV  = ${INSTALL_HOSTSDK_LIBNAME}
+ INSTALL_HOSTSDK_STATIC    = libvamp-hostsdk.a
+ INSTALL_HOSTSDK_LA        = libvamp-hostsdk.la
  
-@@ -91,9 +91,9 @@ INSTALL_PKGCONFIG	  := $(INSTALL_PREFIX)/lib/pkgconfig
+@@ -91,9 +91,9 @@ INSTALL_PKGCONFIG	  = $(INSTALL_PREFIX)/lib/pkgconfig
  
  # Flags required to tell the compiler to create a dynamically loadable object
  #
@@ -37,19 +37,19 @@ $OpenBSD: patch-Makefile_in,v 1.2 2012/09/28 01:47:02 brad Exp $
  # Additional flags for making a plugin.  This version script tells the
  # GNU linker to make all symbols in the library hidden except for the
 @@ -157,10 +157,10 @@ HOSTSDK_STATIC	= \
- 		$(SRCDIR)/libvamp-hostsdk.a
+ 		./libvamp-hostsdk.a
  
  SDK_DYNAMIC	= \
--		$(SRCDIR)/libvamp-sdk$(PLUGIN_EXT)
-+		$(SRCDIR)/$(INSTALL_SDK_LIBNAME)
+-		./libvamp-sdk$(PLUGIN_EXT)
++		./$(INSTALL_SDK_LIBNAME)
  
  HOSTSDK_DYNAMIC	= \
--		$(SRCDIR)/libvamp-hostsdk$(PLUGIN_EXT)
-+		$(SRCDIR)/$(INSTALL_HOSTSDK_LIBNAME)
+-		./libvamp-hostsdk$(PLUGIN_EXT)
++		./$(INSTALL_HOSTSDK_LIBNAME)
  
  SDK_LA		= \
  		$(LADIR)/libvamp-sdk.la
-@@ -218,7 +218,7 @@ host:		$(HOST_TARGET)
+@@ -221,7 +221,7 @@ host:		$(HOST_TARGET)
  
  rdfgen:		$(RDFGEN_TARGET)
  
@@ -58,7 +58,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2012/09/28 01:47:02 brad Exp $
  
  $(SDK_STATIC):	$(SDK_OBJECTS) $(API_HEADERS) $(SDK_HEADERS)
  		$(AR) r $@ $(SDK_OBJECTS)
-@@ -242,7 +242,7 @@ $(RDFGEN_TARGET):	$(RDFGEN_OBJECTS) $(HOSTSDK_STATIC) 
+@@ -245,7 +245,7 @@ $(RDFGEN_TARGET):	$(RDFGEN_OBJECTS) $(HOSTSDK_STATIC) 
  		$(CXX) $(LDFLAGS) $(RDFGEN_LDFLAGS) -o $@ $(RDFGEN_OBJECTS) $(RDFGEN_LIBS)
  
  test:		plugins host
@@ -67,9 +67,9 @@ $OpenBSD: patch-Makefile_in,v 1.2 2012/09/28 01:47:02 brad Exp $
  
  clean:		
  		rm -f $(SDK_OBJECTS) $(HOSTSDK_OBJECTS) $(PLUGIN_OBJECTS) $(HOST_OBJECTS) $(RDFGEN_OBJECTS)
-@@ -250,15 +250,15 @@ clean:		
- distclean:	clean
+@@ -254,15 +254,15 @@ distclean:	clean
  		rm -f $(SDK_STATIC) $(SDK_DYNAMIC) $(HOSTSDK_STATIC) $(HOSTSDK_DYNAMIC) $(PLUGIN_TARGET) $(HOST_TARGET) $(RDFGEN_TARGET) *~ */*~
+ 		rm -f config.log config.status Makefile
  
 -install:	$(SDK_STATIC) $(SDK_DYNAMIC) $(HOSTSDK_STATIC) $(HOSTSDK_DYNAMIC) $(PLUGIN_TARGET) $(HOST_TARGET) $(RDFGEN_TARGET)
 +install:	$(SDK_STATIC) $(SDK_DYNAMIC) $(HOSTSDK_STATIC) $(HOSTSDK_DYNAMIC) $(PLUGIN_TARGET) $(RDFGEN_TARGET)
@@ -85,7 +85,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2012/09/28 01:47:02 brad Exp $
  		cp $(RDFGEN_TARGET) $(DESTDIR)$(INSTALL_BINARIES)
  		cp $(PLUGIN_TARGET) $(DESTDIR)$(INSTALL_PLUGINS)
  		cp $(PLUGIN_CAT) $(DESTDIR)$(INSTALL_PLUGINS)
-@@ -268,15 +268,8 @@ install:	$(SDK_STATIC) $(SDK_DYNAMIC) $(HOSTSDK_STATIC
+@@ -273,15 +273,8 @@ install:	$(SDK_STATIC) $(SDK_DYNAMIC) $(HOSTSDK_STATIC
  		cp $(SDK_STATIC) $(DESTDIR)$(INSTALL_SDK_LIBS)
  		cp $(HOSTSDK_STATIC) $(DESTDIR)$(INSTALL_SDK_LIBS)
  		cp $(SDK_DYNAMIC) $(DESTDIR)$(INSTALL_SDK_LIBS)/$(INSTALL_SDK_LIBNAME)

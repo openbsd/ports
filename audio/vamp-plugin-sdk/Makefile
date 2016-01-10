@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/22 11:31:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/10 17:28:55 jasper Exp $
 
 COMMENT =		audio plugin API
 
-DISTNAME =		vamp-plugin-sdk-2.0
-REVISION =		2
+VERSION =		2.2.1
+DISTNAME =		vamp-plugin-sdk-${VERSION}
 CATEGORIES =		audio
 
 SHARED_LIBS +=		vamp-sdk	1.0
@@ -32,5 +32,7 @@ CONFIGURE_ENV =		SNDFILE_CFLAGS="-I${LOCALBASE}/include" \
 
 TEST_TARGET =		test
 TEST_DEPENDS =		audio/libsndfile
+
+WRKDIST =		${WRKDIR}/vamp-plugin-sdk-v${VERSION}
 
 .include <bsd.port.mk>
