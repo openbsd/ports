@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/01/10 12:49:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/10 22:49:37 bluhm Exp $
 
 COMMENT =		high-performance preforking PSGI/Plack web server
 
 MODULES =		cpan
-DISTNAME =		Starman-0.4011
+DISTNAME =		Starman-0.4014
 CATEGORIES =		www
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
@@ -26,6 +26,7 @@ RUN_DEPENDS =		devel/p5-Data-Dump \
 
 TEST_DEPENDS =		www/p5-HTTP-Message \
 			devel/p5-Net-Server>=2.007 \
+			www/p5-LWP-Protocol-https>=6 \
 			www/p5-Plack>=0.9971 \
 			devel/p5-Test-Requires \
 			net/p5-Test-TCP \
