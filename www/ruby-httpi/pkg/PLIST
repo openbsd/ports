@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/18 09:23:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/10 20:39:03 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -19,6 +19,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/httpi/adapter/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/httpi/adapter/curb.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/httpi/adapter/em_http.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/httpi/adapter/excon.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/httpi/adapter/http.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/httpi/adapter/httpclient.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/httpi/adapter/net_http.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/httpi/adapter/net_http_persistent.rb
@@ -29,6 +30,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/httpi/auth/ssl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/httpi/cookie.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/httpi/cookie_store.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/httpi/dime.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/httpi/logger.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/httpi/query_builder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/httpi/request.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/httpi/response.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/httpi/version.rb
@@ -47,6 +50,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/httpi/adapter/base_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/httpi/adapter/curb_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/httpi/adapter/em_http_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/httpi/adapter/excon_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/httpi/adapter/http_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/httpi/adapter/httpclient_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/httpi/adapter/net_http_persistent_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/httpi/adapter/net_http_spec.rb
