@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/18 09:30:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/10 19:47:32 jasper Exp $
 ${GEM_BIN}/thor${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -29,6 +29,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/thor/core_ext/ordered_hash.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thor/error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thor/group.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thor/invocation.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/thor/line_editor/
+${GEM_LIB}/gems/${DISTNAME}/lib/thor/line_editor.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/thor/line_editor/basic.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/thor/line_editor/readline.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thor/parser/
 ${GEM_LIB}/gems/${DISTNAME}/lib/thor/parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thor/parser/argument.rb
@@ -87,14 +91,44 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/subcommand.thor
 ${GEM_LIB}/gems/${DISTNAME}/spec/group_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/invocation_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/line_editor/
+${GEM_LIB}/gems/${DISTNAME}/spec/line_editor/basic_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/line_editor/readline_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/line_editor_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/parser/
 ${GEM_LIB}/gems/${DISTNAME}/spec/parser/argument_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/parser/arguments_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/parser/option_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/parser/options_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/quality_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rake_compat_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/register_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/runner_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/application.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/app{1}/
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/app{1}/README
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/bundle/
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/bundle/execute.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/bundle/main.thor
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/command.thor
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/doc/
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/doc/%file_name%.rb.tt
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/doc/COMMENTER
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/doc/README
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/doc/block_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/doc/config.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/doc/config.yaml.tt
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/doc/excluding/
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/doc/excluding/%file_name%.rb.tt
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/enum.thor
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/group.thor
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/invoke.thor
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/path with spaces
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/preserve/
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/preserve/script.sh
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/script.thor
+${GEM_LIB}/gems/${DISTNAME}/spec/sandbox/subcommand.thor
 ${GEM_LIB}/gems/${DISTNAME}/spec/shell/
 ${GEM_LIB}/gems/${DISTNAME}/spec/shell/basic_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/shell/color_spec.rb
