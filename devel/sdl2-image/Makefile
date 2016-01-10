@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/25 13:18:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/10 08:10:16 ajacoutot Exp $
 
-V =		2.0.0
+V =		2.0.1
 COMMENT =	SDL2 image library
 DISTNAME =	SDL2_image-${V}
 PKGNAME =	sdl2-image-${V}
-REVISION =	2
 CATEGORIES =	devel graphics
 
 SHARED_LIBS +=	SDL2_image		0.0 # 0.0
