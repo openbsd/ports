@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 2015/10/23 11:52:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/10 07:41:51 shadchin Exp $
 
 COMMENT =		object-oriented filesystem paths
 
 MODPY_EGG_VERSION =	1.0.1
 DISTNAME =		pathlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://pathlib.readthedocs.org/
+
+MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,7 +21,10 @@ MODULES =		lang/python
 BUILD_DEPENDS =		textproc/py-sphinx
 TEST_DEPENDS =		lang/python/${MODPY_VERSION},-tests
 
-DOCDIR = ${PREFIX}/share/doc/py-pathlib
+FLAVORS =		python3
+FLAVOR ?=
+
+DOCDIR = ${PREFIX}/share/doc/${MODPY_PY_PREFIX}pathlib
 
 post-build:
 	cd ${WRKBUILD}/docs && ${MAKE} html

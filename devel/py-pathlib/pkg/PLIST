@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/22 19:41:43 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/10 07:41:51 shadchin Exp $
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pathlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pathlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pathlib.py
-lib/python${MODPY_VERSION}/site-packages/pathlib.pyc
 share/doc/${MODPY_PY_PREFIX}pathlib/
 share/doc/${MODPY_PY_PREFIX}pathlib/_images/
 share/doc/${MODPY_PY_PREFIX}pathlib/_images/pathlib-inheritance.png
@@ -31,6 +32,6 @@ share/doc/${MODPY_PY_PREFIX}pathlib/_static/websupport.js
 share/doc/${MODPY_PY_PREFIX}pathlib/genindex.html
 share/doc/${MODPY_PY_PREFIX}pathlib/index.html
 share/doc/${MODPY_PY_PREFIX}pathlib/objects.inv
-share/doc/${MODPY_PY_PREFIX}pathlib/${MODPY_PY_PREFIX}modindex.html
+share/doc/${MODPY_PY_PREFIX}pathlib/py-modindex.html
 share/doc/${MODPY_PY_PREFIX}pathlib/search.html
 share/doc/${MODPY_PY_PREFIX}pathlib/searchindex.js
