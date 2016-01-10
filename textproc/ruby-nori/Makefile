@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/18 09:27:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/10 20:38:05 jasper Exp $
 
 COMMENT =		XML to Hash translator
 
-DISTNAME =		nori-2.3.0
+DISTNAME =		nori-2.6.0
 
 HOMEPAGE =		https://github.com/savonrb/nori
 
