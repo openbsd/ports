@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2016/01/07 21:37:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/10 15:55:50 jasper Exp $
 
 COMMENT =		Python client interface for MPD
 
-MODPY_EGG_VERSION =	0.5.3
+MODPY_EGG_VERSION =	0.5.4
 DISTNAME =		python-mpd2-${MODPY_EGG_VERSION}
 PKGNAME =		py-mpd2-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =		audio
-
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -21,5 +19,8 @@ MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
 FLAVOR ?=
+
+# too many missing dependencies
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
