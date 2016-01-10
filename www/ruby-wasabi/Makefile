@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/18 09:23:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/10 20:40:09 jasper Exp $
 
 COMMENT =		simple WSDL parser
 
-DISTNAME =		wasabi-3.2.3
+DISTNAME =		wasabi-3.5.0
 
 HOMEPAGE =		https://github.com/savonrb/wasabi
 

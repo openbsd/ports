@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/18 09:23:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/10 20:40:09 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -30,6 +30,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/juniper.wsdl
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/lower_camel.wsdl
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/marketo.wsdl
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/multiple_namespaces.wsdl
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/multiple_parts_in_message.wsdl
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/multiple_types.wsdl
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/namespaced_actions.wsdl
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/no_message_parts.wsdl
@@ -41,6 +42,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/tradetracker.wsdl
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/two_bindings.wsdl
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/
+${GEM_LIB}/gems/${DISTNAME}/spec/support/adapter.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/fixture.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/profiling.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/wasabi/
@@ -65,6 +67,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/wasabi/parser/import_port_types_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/wasabi/parser/juniper_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/wasabi/parser/marketo_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/wasabi/parser/multiple_namespaces_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/wasabi/parser/multiple_parts_in_message_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/wasabi/parser/no_message_parts_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/wasabi/parser/no_namespace_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/wasabi/parser/no_target_namespace_spec.rb
