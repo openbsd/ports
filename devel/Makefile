@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1453 2016/01/10 15:43:57 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1454 2016/01/10 16:22:42 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1184,6 +1184,8 @@
      SUBDIR += py-addons
      SUBDIR += py-algorithm-munkres
      SUBDIR += py-altgraph
+     SUBDIR += py-appdirs
+     SUBDIR += py-appdirs,python3
      SUBDIR += py-argcomplete
      SUBDIR += py-argh
      SUBDIR += py-asn1
@@ -1292,6 +1294,7 @@
      SUBDIR += py-notify
      SUBDIR += py-optik
      SUBDIR += py-path.py
+     SUBDIR += py-path.py,python3
      SUBDIR += py-pathlib
      SUBDIR += py-pathlib,python3
      SUBDIR += py-parsedatetime
@@ -1350,6 +1353,8 @@
      SUBDIR += py-test-capturelog,python3
      SUBDIR += py-test-cov
      SUBDIR += py-test-cov,python3
+     SUBDIR += py-test-runner
+     SUBDIR += py-test-runner,python3
      SUBDIR += py-test-httpbin
      SUBDIR += py-test-httpbin,python3
      SUBDIR += py-testpath
