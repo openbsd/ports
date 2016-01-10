@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/01/09 03:04:13 jsg Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/10 08:04:43 ajacoutot Exp $
 
 COMMENT=	cross-platform multimedia library
 
@@ -26,11 +26,13 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-alsa \
 		 --disable-arts \
-		 --disable-esd \
-		 --disable-oss \
-		 --disable-pulseaudio \
 		 --disable-dbus \
-		 --disable-ibus
+		 --disable-esd \
+		 --disable-ibus \
+		 --disable-libudev \
+		 --disable-nas \
+		 --disable-oss \
+		 --disable-pulseaudio
 # in case devel/usb is installed, don't pick it up.
 CONFIGURE_ENV+= ac_cv_lib_usb_hid_init=no \
 		ac_cv_header_usb_h=no
