@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/18 09:22:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/10 20:39:37 jasper Exp $
 
 COMMENT =		heavy meatl SOAP client
 
-DISTNAME =		savon-2.3.3
+DISTNAME =		savon-2.11.1
 
 HOMEPAGE =		http://savonrb.com/
 
@@ -16,9 +16,9 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		security/ruby-akami,${MODRUBY_FLAVOR}<1.3 \
+RUN_DEPENDS =		security/ruby-akami,${MODRUBY_FLAVOR}>=1.3 \
 			textproc/ruby-builder,${MODRUBY_FLAVOR} \
-			textproc/ruby-nori,${MODRUBY_FLAVOR} \
-			www/ruby-wasabi,${MODRUBY_FLAVOR}
+			textproc/ruby-nori,${MODRUBY_FLAVOR}>=2.4 \
+			www/ruby-wasabi,${MODRUBY_FLAVOR}>=3.5
 
 .include <bsd.port.mk>

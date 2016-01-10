@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/18 09:22:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/10 20:39:37 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -44,11 +44,13 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/gzip/message.gz
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/response/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/response/another_soap_fault.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/response/authentication.xml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/response/f5.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/response/header.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/response/list.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/response/multi_ref.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/response/soap_fault.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/response/soap_fault12.xml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/response/soap_fault_funky.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/response/taxcloud.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/ssl/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/ssl/client_cert.pem
@@ -63,11 +65,13 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/wsdl/interhome.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/wsdl/lower_camel.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/wsdl/multiple_namespaces.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/wsdl/multiple_types.xml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/wsdl/no_message_tag.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/wsdl/taxcloud.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/wsdl/team_software.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/wsdl/vies.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/wsdl/wasmuth.xml
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/
+${GEM_LIB}/gems/${DISTNAME}/spec/integration/centra_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/email_example_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/random_quote_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/ratp_example_spec.rb
@@ -92,15 +96,16 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/savon/model_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/savon/observers_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/savon/operation_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/savon/options_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/savon/qualified_message_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/savon/request_logger_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/savon/request_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/savon/response_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/savon/soap_fault_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/
+${GEM_LIB}/gems/${DISTNAME}/spec/support/adapters.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/endpoint.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/fixture.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/integration.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/stdout.rb
-${GEM_LIB}/gems/${DISTNAME}/tmp/
-${GEM_LIB}/gems/${DISTNAME}/tmp/test.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
