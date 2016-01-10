@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2014/10/11 19:54:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/01/10 19:41:38 jasper Exp $
 
 COMMENT =	library to access web resources via HTTP
 
-DISTNAME =	httpclient-2.3.4.1
-REVISION =	0
+DISTNAME =	httpclient-2.7.1
 CATEGORIES =	www
 
 HOMEPAGE =	https://github.com/nahi/httpclient
