@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.202 2015/12/13 07:51:58 ajacoutot Exp $
+# $OpenBSD: network.conf.template,v 1.203 2016/01/10 22:31:40 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -133,8 +133,9 @@ MASTER_SITE_GNOME+=	\
 	http://mirrors.ustc.edu.cn/gnome \
 	http://mirror.nbtelecom.com.br/gnome/
 
-# mirror survey: http://www.cs.uu.nl/stats/mirmon/cpan.html
+# mirmon: http://mirrors.cpan.org/
 MASTER_SITE_PERL_CPAN+=	\
+	http://www.cpan.org/CPAN/modules/by-module/ \
 	http://mirror.sov.uk.goscomb.net/CPAN/modules/by-module/ \
 	http://ftp.cpan.org/pub/CPAN/modules/by-module/ \
 	http://backpan.perl.org/modules/by-module/ \
