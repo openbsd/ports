@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.372 2016/01/07 14:56:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.373 2016/01/10 13:40:56 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -164,6 +164,7 @@
      SUBDIR += py-daemon
      SUBDIR += py-elasticsearch-curator
      SUBDIR += py-lockfile
+     SUBDIR += py-lockfile,python3
      SUBDIR += py-metlog
      SUBDIR += py-psutil
      SUBDIR += py-statgrab
