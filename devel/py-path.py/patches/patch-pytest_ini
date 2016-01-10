@@ -1,0 +1,7 @@
+$OpenBSD: patch-pytest_ini,v 1.1 2016/01/10 16:18:35 shadchin Exp $
+--- pytest.ini.orig	Sun Jan 10 15:35:27 2016
++++ pytest.ini	Sun Jan 10 15:34:28 2016
+@@ -1,2 +1,2 @@
+ [pytest]
+-addopts=--doctest-modules --ignore=build
++addopts=--doctest-modules --ignore=lib

@@ -1,18 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/29 10:52:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/10 16:18:35 shadchin Exp $
 
 COMMENT =		os.path wrapper for Python
 
-MODPY_EGG_VERSION =	7.6
+MODPY_EGG_VERSION =	8.1.2
 DISTNAME =		path.py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/jaraco/path.py
-
-TEST_DEPENDS +=		devel/py-test \
-			${FULLPKGNAME}:${FULLPKGPATH}
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -21,10 +17,13 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/setup.py
+BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-appdirs${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-test${MODPY_FLAVOR} \
+			devel/py-test-runner${MODPY_FLAVOR}
 
-do-test:
-	${LOCALBASE}/bin/py.test ${MODPY_LIBDIR}/site-packages/test_path.py
+FLAVORS =		python3
+FLAVOR ?=
 
 .include <bsd.port.mk>
