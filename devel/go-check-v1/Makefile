@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/06/19 08:42:54 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/10 16:04:24 sthen Exp $
+
+BROKEN = needs adapting to changes in Go 1.5
 
 COMMENT =		testing library for the Go language
 DISTNAME =		go-check-v1-20150611

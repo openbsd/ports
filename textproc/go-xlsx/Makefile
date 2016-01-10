@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2015/10/18 14:58:55 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/10 16:04:24 sthen Exp $
+
+BROKEN = needs adapting to changes in Go 1.5
 
 PORTROACH =		ignore
 

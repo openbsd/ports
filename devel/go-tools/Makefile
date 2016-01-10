@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/11 20:15:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/10 16:04:24 sthen Exp $
+
+BROKEN = needs adapting to changes in Go 1.5
 
 COMMENT =		various tools for the Go programming language
 GH_ACCOUNT =		golang

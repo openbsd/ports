@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2015/07/27 21:06:22 kspillner Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/10 16:04:24 sthen Exp $
+
+BROKEN = needs adapting to changes in Go 1.5
 
 COMMENT =		golang websocket package
 
