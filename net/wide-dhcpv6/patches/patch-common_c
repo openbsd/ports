@@ -1,0 +1,35 @@
+$OpenBSD: patch-common_c,v 1.1 2016/01/10 16:23:17 sthen Exp $
+
+- Close file descriptors on exec
+
+Avoid FD leakage to children.
+
+--- common.c.orig	Sun Jan 10 00:44:14 2016
++++ common.c	Sun Jan 10 00:46:53 2016
+@@ -1115,7 +1115,7 @@ getifhwaddr(const char *ifname, char *buf, u_int16_t *
+ 		(void) snprintf(fname, sizeof (fname), "/dev/%s", ifname);
+ 	getctl.maxlen = sizeof (getbuf);
+ 	getctl.buf = (char *)getbuf;
+-	if ((fd = open(fname, O_RDWR)) == -1) {
++	if ((fd = open(fname, O_RDWR | O_CLOEXEC)) == -1) {
+ 		dl_attach_req_t dlar;
+ 
+ 		cp = fname + strlen(fname) - 1;
+@@ -1131,7 +1131,7 @@ getifhwaddr(const char *ifname, char *buf, u_int16_t *
+ 		cp++;
+ 		dlar.dl_ppa = atoi(cp);
+ 		*cp = '\0';
+-		if ((fd = open(fname, O_RDWR)) == -1)
++		if ((fd = open(fname, O_RDWR | O_CLOEXEC)) == -1)
+ 			return (-1);
+ 		dlar.dl_primitive = DL_ATTACH_REQ;
+ 		putctl.len = sizeof (dlar);
+@@ -3292,7 +3292,7 @@ ifaddrconf(cmd, ifname, addr, plen, pltime, vltime)
+ 		return (-1);
+ 	}
+ 
+-	if ((s = socket(PF_INET6, SOCK_DGRAM, IPPROTO_UDP)) < 0) {
++	if ((s = socket(PF_INET6, SOCK_DGRAM | SOCK_CLOEXEC, IPPROTO_UDP)) < 0) {
+ 		dprintf(LOG_ERR, FNAME, "can't open a temporary socket: %s",
+ 		    strerror(errno));
+ 		return (-1);

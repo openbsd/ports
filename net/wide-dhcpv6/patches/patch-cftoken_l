@@ -1,0 +1,26 @@
+$OpenBSD: patch-cftoken_l,v 1.1 2016/01/10 16:23:17 sthen Exp $
+
+- Close file descriptors on exec
+
+Avoid FD leakage to children.
+
+--- cftoken.l.orig	Sun Jan 10 00:43:41 2016
++++ cftoken.l	Sun Jan 10 00:44:07 2016
+@@ -404,7 +404,7 @@ cfswitch_buffer(incl)
+ 	incstack[incstackp].state = YY_CURRENT_BUFFER;
+ 	incstack[incstackp].lineno = lineno;
+ 
+-	fp = fopen(path, "r");
++	fp = fopen(path, "re");
+ 	if (fp == NULL) {
+ 		dprintf(LOG_ERR, FNAME, "cfparse: fopen(%s): %s",
+ 			path, strerror(errno));
+@@ -427,7 +427,7 @@ cfparse(conf)
+ 	char *conf;
+ {
+ 	configfilename = conf;
+-	if ((yyin = fopen(configfilename, "r")) == NULL) {
++	if ((yyin = fopen(configfilename, "re")) == NULL) {
+ 		dprintf(LOG_ERR, FNAME, "cfparse: fopen(%s): %s",
+ 			configfilename, strerror(errno));
+ 		if (errno == ENOENT)

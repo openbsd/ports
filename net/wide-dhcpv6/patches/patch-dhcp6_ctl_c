@@ -1,0 +1,16 @@
+$OpenBSD: patch-dhcp6_ctl_c,v 1.1 2016/01/10 16:23:17 sthen Exp $
+
+Close file descriptors on exec
+
+Avoid FD leakage to children.
+
+--- dhcp6_ctl.c.orig	Sun Jan 10 00:47:08 2016
++++ dhcp6_ctl.c	Sun Jan 10 00:47:47 2016
+@@ -97,6 +97,7 @@ dhcp6_ctl_init(addr, port, max, sockp)
+ 		    gai_strerror(error));
+ 		return (-1);
+ 	}
++	res->ai_socktype |= SOCK_CLOEXEC;
+ 	ctlsock = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
+ 	if (ctlsock < 0) {
+ 		dprintf(LOG_ERR, FNAME, "socket(control sock): %s",

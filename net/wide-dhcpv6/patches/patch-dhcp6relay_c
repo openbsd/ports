@@ -1,11 +1,15 @@
-$OpenBSD: patch-dhcp6relay_c,v 1.1 2016/01/04 03:30:39 sthen Exp $
+$OpenBSD: patch-dhcp6relay_c,v 1.2 2016/01/10 16:23:17 sthen Exp $
 
-Close inherited file descriptors
+- Close inherited file descriptors
 
 wide-dhcpv6 binaries should close inherited fds.
 
+- Close file descriptors on exec
+
+Avoid FD leakage to children.
+
 --- dhcp6relay.c.orig	Sun Jun 15 03:48:41 2008
-+++ dhcp6relay.c	Sat Jan  2 20:48:25 2016
++++ dhcp6relay.c	Sun Jan 10 00:50:57 2016
 @@ -207,8 +207,14 @@ main(argc, argv)
  	}
  
@@ -21,3 +25,19 @@ wide-dhcpv6 binaries should close inherited fds.
  		openlog(progname, LOG_NDELAY|LOG_PID, LOG_DAEMON);
  	}
  	setloglevel(debug);
+@@ -353,6 +359,7 @@ relay6_init(int ifnum, char *iflist[])
+ 		    gai_strerror(error));
+ 		goto failexit;
+ 	}
++	res->ai_socktype |= SOCK_CLOEXEC;
+ 	csock = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
+ 	if (csock < 0) {
+ 		dprintf(LOG_ERR, FNAME, "socket(csock): %s", strerror(errno));
+@@ -459,6 +466,7 @@ relay6_init(int ifnum, char *iflist[])
+ 		goto failexit;
+ 	}
+ 	memcpy(&sa6_client, res->ai_addr, sizeof (sa6_client));
++	res->ai_socktype |= SOCK_CLOEXEC;
+ 	ssock = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
+ 	if (ssock < 0) {
+ 		dprintf(LOG_ERR, FNAME, "socket(outsock): %s",
