@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/15 10:43:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/11 14:11:08 ajacoutot Exp $
 
 COMMENT =	aquarium animation in ASCII art
 
 DISTNAME =	asciiquarium_1.1
 PKGNAME = 	${DISTNAME:S/_/-/}
+REVISION =	0
 
 CATEGORIES =	games
 
 HOMEPAGE =	http://www.robobunny.com/projects/asciiquarium/html/
 
-MAINTAINER =	Frederic Cambus <fcambus@users.sourceforge.net>
+MAINTAINER =	Frederic Cambus <fred@statdns.com>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM = Yes
