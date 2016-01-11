@@ -1,0 +1,55 @@
+$OpenBSD: patch-lib_File_KeePass_pm,v 1.1 2016/01/11 10:04:51 ajacoutot Exp $
+
+https://rt.cpan.org/Public/Bug/Display.html?id=97055
+
+--- lib/File/KeePass.pm.orig	Sun Sep 16 00:09:42 2012
++++ lib/File/KeePass.pm	Sat Jan  9 18:56:04 2016
+@@ -16,7 +16,7 @@ use constant DB_SIG_1         => 0x9AA2D903;
+ use constant DB_SIG_2_v1      => 0xB54BFB65;
+ use constant DB_SIG_2_v2      => 0xB54BFB67;
+ use constant DB_VER_DW_V1     => 0x00030002;
+-use constant DB_VER_DW_V2     => 0x00030000; # recent KeePass is 0x0030001
++use constant DB_VER_DW_V2     => 0x00030000; # recent KeePass is 0x00030001
+ use constant DB_FLAG_RIJNDAEL => 2;
+ use constant DB_FLAG_TWOFISH  => 8;
+ 
+@@ -148,7 +148,7 @@ sub _parse_v2_header {
+     my ($self, $buffer) = @_;
+     my %h = (version => 2, enc_type => 'rijndael');
+     @h{qw(sig1 sig2 ver)} = unpack 'L3', $buffer;
+-    die "Unsupported file version2 ($h{'ver'}).\n" if $h{'ver'} & 0xFFFF0000 > 0x00020000 & 0xFFFF0000;
++    die "Unsupported file version2 ($h{'ver'}).\n" if ($h{'ver'} & 0xFFFF0000) > (DB_VER_DW_V2 & 0xFFFF0000);
+     my $pos = 12;
+ 
+     while (1) {
+@@ -602,16 +602,17 @@ sub _master_key {
+         if (length($file) == 64) {
+             $file = join '', map {chr hex} ($file =~ /\G([a-f0-9A-F]{2})/g);
+         } elsif (length($file) != 32) {
+-            $file = sha256($file);
++            $file = eval{ $self->decode_base64( $self->parse_xml($file)->{Key}{Data} ) }
++                 // sha256($file);
+         }
+     }
+     my $key = (!$pass && !$file) ? die "One or both of password or key file must be passed\n"
+-            : ($head->{'version'} && $head->{'version'} eq '2') ? sha256(grep {$_} $pass, $file)
++            : ($head->{'version'} && $head->{'version'} > 1) ? sha256(grep {$_} $pass, $file)
+             : ($pass && $file) ? sha256($pass, $file) : $pass ? $pass : $file;
+     $head->{'enc_iv'}     ||= join '', map {chr rand 256} 1..16;
+-    $head->{'seed_rand'}  ||= join '', map {chr rand 256} 1..($head->{'version'} && $head->{'version'} eq '2' ? 32 : 16);
++    $head->{'seed_rand'}  ||= join '', map {chr rand 256} 1..($head->{'version'} && $head->{'version'} > 1 ? 32 : 16);
+     $head->{'seed_key'}   ||= sha256(time.rand(2**32-1).$$);
+-    $head->{'rounds'} ||= $self->{'rounds'} || ($head->{'version'} && $head->{'version'} eq '2' ? 6_000 : 50_000);
++    $head->{'rounds'} ||= $self->{'rounds'} || ($head->{'version'} && $head->{'version'} > 1 ? 6_000 : 50_000);
+ 
+     my $cipher = Crypt::Rijndael->new($head->{'seed_key'}, Crypt::Rijndael::MODE_ECB());
+     $key = $cipher->encrypt($key) for 1 .. $head->{'rounds'};
+@@ -643,7 +644,7 @@ sub gen_db {
+     die "Please unlock before calling gen_db\n" if $self->is_locked($groups);
+ 
+     srand(rand(time() ^ $$)) if ! $self->{'no_srand'};
+-    if ($v eq '2') {
++    if ($v > 1) {
+         return $self->_gen_v2_db($pass, $head, $groups);
+     } else {
+         return $self->_gen_v1_db($pass, $head, $groups);
