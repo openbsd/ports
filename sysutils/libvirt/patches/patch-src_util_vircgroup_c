@@ -1,16 +1,22 @@
-$OpenBSD: patch-src_util_vircgroup_c,v 1.2 2016/01/08 18:49:12 jasper Exp $
+$OpenBSD: patch-src_util_vircgroup_c,v 1.3 2016/01/11 17:47:33 jasper Exp $
 
-/usr/include/sys/ucred.h:46: error: 'NGROUPS' undeclared here (not in a function)
+From 1b60f1b401f83d8e223c948a8b68f7f20dfee2ec Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@openbsd.org>
+Date: Thu, 7 Jan 2016 21:41:52 +0300
+Subject: [PATCH] cgroup: don't include sys/mount.h if not needed
 
---- src/util/vircgroup.c.orig	Mon May 20 20:13:08 2013
-+++ src/util/vircgroup.c	Mon May 20 20:17:16 2013
-@@ -27,7 +27,8 @@
- #if defined HAVE_MNTENT_H && defined HAVE_GETMNTENT_R
+--- src/util/vircgroup.c.orig	Mon Sep 28 02:07:36 2015
++++ src/util/vircgroup.c	Mon Jan 11 18:40:13 2016
+@@ -24,10 +24,9 @@
+ #include <config.h>
+ 
+ #include <stdio.h>
+-#if defined HAVE_MNTENT_H && defined HAVE_GETMNTENT_R
++#if defined HAVE_MNTENT_H && defined HAVE_SYS_MOUNT_H \
++    && defined HAVE_GETMNTENT_R
  # include <mntent.h>
- #endif
+-#endif
 -#if defined HAVE_SYS_MOUNT_H
-+#if defined HAVE_SYS_PARAM_H && defined HAVE_SYS_MOUNT_T
-+# include <sys/param.h>
  # include <sys/mount.h>
  #endif
  #include <fcntl.h>

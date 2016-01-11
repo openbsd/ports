@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_rpc_virnetsocket_c,v 1.15 2016/01/08 18:49:12 jasper Exp $
+$OpenBSD: patch-src_rpc_virnetsocket_c,v 1.16 2016/01/11 17:47:33 jasper Exp $
 
-Use sockpeercred on OpenBSD.
+From 91b423beb72892d9d680060001244f588ef20691 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@openbsd.org>
+Date: Fri, 8 Jan 2016 00:31:17 +0300
+Subject: [PATCH] Use struct sockpeercred when available
 
 --- src/rpc/virnetsocket.c.orig	Wed Nov  4 15:38:35 2015
 +++ src/rpc/virnetsocket.c	Fri Jan  8 19:34:06 2016
