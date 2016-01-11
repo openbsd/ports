@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/11 10:14:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/11 10:34:21 sthen Exp $
 
 COMMENT=	regular expressions for handling British postcodes
 
@@ -13,7 +13,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 BUILD_DEPENDS=	devel/p5-File-ShareDir-Install \
 		devel/p5-Module-Build-Tiny
-TEST_DEPENDS=	devel/p5-Test-Exception
+TEST_DEPENDS=	devel/p5-Test-Exception \
+		devel/p5-Clone
 
 CONFIGURE_STYLE= modbuild
 
