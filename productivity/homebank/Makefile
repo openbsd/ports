@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2015/06/01 08:21:19 pea Exp $
+# $OpenBSD: Makefile,v 1.26 2016/01/11 12:22:14 jasper Exp $
 
 COMMENT =	personal accounting application
 
-DISTNAME =	homebank-5.0.2
+DISTNAME =	homebank-5.0.6
 
 CATEGORIES =	productivity x11
 
@@ -19,13 +19,12 @@ MASTER_SITES =	${HOMEPAGE}/public/ \
 MODULES =	devel/gettext \
 		textproc/intltool
 
-WANTLIB = 	c fontconfig freetype pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 atk-1.0 glib-2.0 gobject-2.0 cairo \
-		m z gio-2.0 osp pthread gdk_pixbuf-2.0 ofx \
-		cairo-gobject gdk-3 gtk-3
+WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 m ofx osp pango-1.0
+WANTLIB += pangocairo-1.0 pthread
 
 LIB_DEPENDS =	x11/gtk+3 \
-		devel/libofx 
+		devel/libofx
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
