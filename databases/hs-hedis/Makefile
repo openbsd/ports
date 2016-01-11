@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/09 21:04:42 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/11 11:47:49 dcoppa Exp $
 
 COMMENT =		client library for the Redis datastore
 
-DISTNAME =		hedis-0.6.9
-REVISION =		0
+DISTNAME =		hedis-0.6.10
 CATEGORIES =		databases
 HOMEPAGE =		https://github.com/informatikr/hedis
 
@@ -16,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-MODGHC_PACKAGE_KEY =	C6ZU1oAuddrEFizmiiy5cJ
+MODGHC_PACKAGE_KEY =	6HbwglZVs6oAzh3h5ygLrB
 
 MODGHC_SETUP_CONF_ARGS =--enable-tests
 
