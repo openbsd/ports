@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2015/12/29 19:49:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/11 08:31:27 jasper Exp $
 
-COMMENT =	web log analyzer using probabilistic data structures
+COMMENT =	fast web log analyzer using probabilistic data structures
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.logswan.org
 
-MAINTAINER =	Frederic Cambus <fcambus@users.sourceforge.net>
+MAINTAINER =	Frederic Cambus <fred@statdns.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
 GH_ACCOUNT =	fcambus
 GH_PROJECT =	logswan
-GH_TAGNAME =	1.02
+GH_TAGNAME =	1.04
 
 WANTLIB =	c m jansson GeoIP
 
@@ -22,9 +22,7 @@ NO_TEST =	Yes
 LIB_DEPENDS =	devel/jansson \
 		net/GeoIP
 
-pre-configure:
-	sed -i s,/var/db/GeoIP,${LOCALSTATEDIR}/db/GeoIP, \
-	    ${WRKSRC}/src/logswan.c
+CONFIGURE_ARGS = -DGEOIPDIR=${LOCALSTATEDIR}/db/GeoIP
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/logswan
