@@ -1,6 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/11 08:31:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/11 13:56:28 jasper Exp $
 
 COMMENT =	fast web log analyzer using probabilistic data structures
+
+GH_ACCOUNT =	fcambus
+GH_PROJECT =	logswan
+GH_TAGNAME =	1.04
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.logswan.org
@@ -9,10 +13,6 @@ MAINTAINER =	Frederic Cambus <fred@statdns.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-
-GH_ACCOUNT =	fcambus
-GH_PROJECT =	logswan
-GH_TAGNAME =	1.04
 
 WANTLIB =	c m jansson GeoIP
 
