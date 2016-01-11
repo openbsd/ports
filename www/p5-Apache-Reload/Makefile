@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/12/08 14:26:02 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/01/11 12:49:28 jasper Exp $
 
-COMMENT =	Reload changed modules for mod_perl
+COMMENT =	reload changed modules for mod_perl
 
-DISTNAME =	Apache-Reload-0.12
+DISTNAME =	Apache-Reload-0.13
 CATEGORIES =	www perl5
-
-REVISION =	0
 
 MODULES =	cpan
 
