@@ -1,0 +1,12 @@
+$OpenBSD: patch-commands_c,v 1.1 2016/01/11 17:05:46 sthen Exp $
+--- commands.c.orig	Mon Jan 11 17:03:48 2016
++++ commands.c	Mon Jan 11 17:04:02 2016
+@@ -215,7 +215,7 @@ void ci_command_schedule_on(const char *name, void *da
+     sch.when = time;
+     sch.data = data;
+     if (ci_list_search(COMMANDS_QUEUE, &sch)) {
+-        ci_debug_printf(7, "command %s already scheduled for execution on %ld, ignore\n", name, time);
++        ci_debug_printf(7, "command %s already scheduled for execution on %llu, ignore\n", name, (uint64_t)time);
+         return;
+     }
+     ci_thread_mutex_lock(&COMMANDS_MTX);
