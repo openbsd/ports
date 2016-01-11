@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2014/01/09 22:48:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/11 12:38:05 jasper Exp $
 
 FW_DRIVER=	bwi
 FW_VER=		1.4
 DISTNAME=	bwi-firmware-${FW_VER}
-REVISION=	3
+REVISION=	4
 
-MAINTAINER=	Marcus Glocker <mglocker@openbsd.org>
+MAINTAINER=	Marcus Glocker <marcus@nazgul.ch>
 
 HOMEPAGE=	http://www.nazgul.ch/bwi/
 
