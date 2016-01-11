@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.342 2016/01/05 13:25:08 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.343 2016/01/11 15:51:18 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -697,6 +697,10 @@ my $obsolete_reason = {
 	'emacs-haskell' => 7,
 	'statusnet' => 1,
 	'p5-Goo-Canvas' => 6,
+	'hs-blaze-builder-conduit' => 3,
+	'hs-network-conduit' => 3,
+	'hs-http-attoparsec' => 5,
+	'hs-shellish' => 5,
 };
 
 my @msg = (
