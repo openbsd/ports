@@ -1,28 +1,30 @@
-# $OpenBSD: Makefile,v 1.22 2016/01/06 17:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2016/01/11 11:54:28 shadchin Exp $
 
 COMMENT =		JSON encoder/decoder
 
-MODPY_EGG_VERSION =	2.5.0
+MODPY_EGG_VERSION =	3.8.1
 DISTNAME =		simplejson-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://undefined.org/python/\#simplejson
+MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
-# MIT
+# MIT/AFLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += pthread
+WANTLIB += ${MODPY_WANTLIB} pthread
 
 MODPY_PI =		Yes
 
 MODULES =		lang/python
-TEST_DEPENDS =	devel/py-nose
 
-do-test:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests
+MODPY_SETUPTOOLS =	Yes
+
+FLAVORS =		python3
+FLAVOR ?=
+
+pre-test: fake
+	cp ${WRKINST}${MODPY_SITEPKG}/simplejson/_speedups.so ${WRKSRC}/simplejson/
 
 .include <bsd.port.mk>
