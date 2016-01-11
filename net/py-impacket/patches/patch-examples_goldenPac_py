@@ -1,0 +1,35 @@
+$OpenBSD: patch-examples_goldenPac_py,v 1.1 2016/01/11 09:28:16 dcoppa Exp $
+--- examples/goldenPac.py.orig	Mon Jan 11 09:53:27 2016
++++ examples/goldenPac.py	Mon Jan 11 09:55:11 2016
+@@ -20,10 +20,10 @@
+ #   5) Use WMIEXEC approach instead
+ #
+ #   E.G:
+-#       python goldenPac domain.net/normaluser@domain-host
++#       ${MODPY_BIN} goldenPac domain.net/normaluser@domain-host
+ #       the password will be asked, or
+ #
+-#       python goldenPac.py domain.net/normaluser:mypwd@domain-host
++#       ${MODPY_BIN} goldenPac.py domain.net/normaluser:mypwd@domain-host
+ #
+ #       if domain.net and/or domain-host do not resolve, add them
+ #       to the hosts file or use the -dc-ip and -target-ip parameters
+@@ -1262,14 +1262,14 @@ if __name__ == '__main__':
+     if len(sys.argv)==1:
+         parser.print_help()
+         print "\nExamples: "
+-        print "\tpython goldenPac domain.net/normaluser@domain-host\n"
++        print "\t${MODPY_BIN} goldenPac domain.net/normaluser@domain-host\n"
+         print "\tthe password will be asked, or\n"
+-        print "\tpython goldenPac.py domain.net/normaluser:mypwd@domain-host\n"
++        print "\t${MODPY_BIN} goldenPac.py domain.net/normaluser:mypwd@domain-host\n"
+         print "\tif domain.net and/or domain-machine do not resolve, add them"
+         print "\tto the hosts file or explicity specify the domain IP (e.g. 1.1.1.1) and target IP:\n"
+-        print "\tpython goldenPac.py -dc-ip 1.1.1.1 -target-ip 2.2.2.2 domain.net/normaluser:mypwd@domain-host\n"
++        print "\t${MODPY_BIN} goldenPac.py -dc-ip 1.1.1.1 -target-ip 2.2.2.2 domain.net/normaluser:mypwd@domain-host\n"
+         print "\tThis will upload the xxx.exe file and execute it as: xxx.exe param1 param2 paramn"
+-        print "\tpython goldenPac.py -c xxx.exe domain.net/normaluser:mypwd@domain-host param1 param2 paramn\n"
++        print "\t${MODPY_BIN} goldenPac.py -c xxx.exe domain.net/normaluser:mypwd@domain-host param1 param2 paramn\n"
+         sys.exit(1)
+  
+     options = parser.parse_args()
