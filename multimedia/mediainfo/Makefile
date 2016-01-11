@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/19 17:40:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/11 16:22:12 naddy Exp $
 
 COMMENT=	display technical and tag data for video and audio files
 
-VERSION=	0.7.76
+VERSION=	0.7.81
 PKGNAME=	mediainfo-${VERSION}
 CATEGORIES=	multimedia
-HOMEPAGE=	http://mediainfo.sourceforge.net/
+HOMEPAGE=	https://mediaarea.net/en/MediaInfo
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m pthread stdc++ z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mediainfo/}
-DISTFILES=	MediaInfo_CLI_${VERSION}_GNU_FromSource.tar.bz2
+MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${VERSION}/
+DISTFILES=	MediaInfo_CLI_${VERSION}_GNU_FromSource.tar.xz
 
 WRKDIST=	${WRKDIR}/MediaInfo_CLI_GNU_FromSource
 
