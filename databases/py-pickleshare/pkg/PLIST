@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/16 19:37:17 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/11 14:20:06 shadchin Exp $
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pickleshare.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pickleshare-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pickleshare-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/pickleshare-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -6,4 +7,3 @@ lib/python${MODPY_VERSION}/site-packages/pickleshare-${MODPY_EGG_VERSION}-py${MO
 lib/python${MODPY_VERSION}/site-packages/pickleshare-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pickleshare-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pickleshare.py
-lib/python${MODPY_VERSION}/site-packages/pickleshare.pyc
