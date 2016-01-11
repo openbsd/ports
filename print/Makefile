@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2016/01/05 13:26:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2016/01/11 10:27:54 sthen Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -42,6 +42,7 @@
     SUBDIR += lyx
     SUBDIR += mpage
     SUBDIR += openclipart
+    SUBDIR += p5-Poppler
     SUBDIR += p5-PostScript-MailLabels
     SUBDIR += pdflib
     SUBDIR += pdfshuffler

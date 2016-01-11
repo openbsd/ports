@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1455 2016/01/10 21:38:24 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1456 2016/01/11 10:27:54 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -760,6 +760,7 @@
      SUBDIR += p5-Getopt-Long-Descriptive
      SUBDIR += p5-Getopt-Simple
      SUBDIR += p5-Git-Repository
+     SUBDIR += p5-Glib-Object-Introspection
      SUBDIR += p5-Glib2
      SUBDIR += p5-Graph
      SUBDIR += p5-Guard
