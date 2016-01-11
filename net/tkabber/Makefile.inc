@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.4 2015/05/12 16:12:20 czarkoff Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2016/01/11 11:04:21 czarkoff Exp $
 
 CATEGORIES =		net/tkabber x11
 
 HOMEPAGE =		http://tkabber.jabber.ru/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

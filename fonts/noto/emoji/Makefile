@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/22 10:02:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/11 11:04:21 czarkoff Exp $
 
 COMMENT =		emoji fonts for the noto font family
 
 NOTO_PROJECT =		emoji
+
+REVISION =		0
 
 GH_TAGNAME =		v$V-license-apache
 

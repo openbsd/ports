@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/29 19:49:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/11 11:04:21 czarkoff Exp $
 
 COMMENT-main =		read microsoft Access MDB
 COMMENT-gmdb =		graphical interface to MDB tools
@@ -9,14 +9,14 @@ GH_TAGNAME =		0.7.1
 
 PKGNAME-main =		${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME-gmdb =		gmdb-${GH_TAGNAME}
-REVISION-main =		1
-REVISION-gmdb =		1
+REVISION-main =		2
+REVISION-gmdb =		2
 EPOCH =			0
 
 CATEGORIES =		databases converters
 HOMEPAGE =		http://mdbtools.sourceforge.net/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 MULTI_PACKAGES = 	-main -gmdb
 PSEUDO_FLAVORS =	no_x11

@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.20 2015/12/21 22:16:10 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.21 2016/01/11 11:04:21 czarkoff Exp $
 
 COMMENT =		mercurial extension to work with git repositories
 
 MODPY_EGG_VERSION =	0.8.3
 DISTNAME =		py-hg-git-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://hg-git.github.io/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

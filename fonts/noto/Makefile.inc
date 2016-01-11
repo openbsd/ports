@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2015/12/22 10:02:45 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2016/01/11 11:04:21 czarkoff Exp $
 
 # N.B. cjk is independently versioned
 V ?=			2015-09-29
@@ -8,7 +8,7 @@ CATEGORIES ?=		fonts
 
 HOMEPAGE ?=		https://www.google.com/get/noto/
 
-MAINTAINER ?=		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER ?=		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # cjk: SIL OFL 1.1
 # fonts, emoji: Apache 2.0 (XXX post-2015-09-29 these are relicensed OFL)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/10 16:04:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/11 11:04:21 czarkoff Exp $
 
 BROKEN = needs adapting to changes in Go 1.5
 
@@ -7,11 +7,11 @@ GH_ACCOUNT =		golang
 GH_PROJECT =		tools
 GH_COMMIT =		27e692e6ec36d8f48be794f32553e1400c70dbf2
 DISTNAME =		go-tools-1.4.20150206
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 HOMEPAGE =		http://golang.org/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # 3-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
