@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/04 16:41:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/11 09:35:45 ajacoutot Exp $
 
 COMMENT =		n64 emulator sdl audio plugin
-REVISION =		1
+REVISION =		2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

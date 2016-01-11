@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/12/19 00:12:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/11 09:35:44 ajacoutot Exp $
 
 COMMENT-main =		Game Boy Advance emulator
 COMMENT-qt =		Game Boy Advance emulator with GUI
@@ -7,6 +7,8 @@ V =			0.3.2
 DISTNAME =		mgba-$V
 PKGNAME-main =		mgba-$V
 PKGNAME-qt =		mgba-qt-$V
+REVISION-main =		0
+REVISION-qt =		0
 
 MULTI_PACKAGES =	-main -qt
 
@@ -18,7 +20,7 @@ CATEGORIES =		emulators
 
 HOMEPAGE =		https://endrift.com/mgba/
 
-MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
+MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # MPL 2.0
 PERMIT_PACKAGE_CDROM =	Yes

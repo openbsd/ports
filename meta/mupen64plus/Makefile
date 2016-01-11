@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/24 04:53:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/11 09:35:45 ajacoutot Exp $
 
 COMMENT-main=	n64 emulator (default plugins)
 COMMENT-extra=	n64 emulator (all plugins)
 
 V=		2.5
 PKGNAME=	mupen64plus-$V
-REVISION=	0
+REVISION=	1
 
 PKGNAME-main=	mupen64plus-$V
 PKGNAME-extra=	mupen64plus-extra-$V
 
 HOMEPAGE=	http://mupen64plus.org/
 
-MAINTAINER=	Anthony J. Bentley <anthony@cathet.us>
+MAINTAINER=	Anthony J. Bentley <anthony@anjbe.name>
 
 MULTI_PACKAGES=	-main -extra
 

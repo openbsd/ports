@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2015/05/20 11:43:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/11 09:35:45 ajacoutot Exp $
 
 COMMENT =		convert POD data to mdoc input
 
 DISTNAME =		pod2mdoc-0.2
+REVISION =		0
 
 CATEGORIES =		textproc
 
 HOMEPAGE =		http://mdocml.bsd.lv/pod2mdoc/
 
-MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
+MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes

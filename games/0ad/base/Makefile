@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2015/12/03 22:03:18 pascal Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/11 09:35:45 ajacoutot Exp $
 
 COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
+REVISION =		0
 
 SO_VERSION =	0.0
 SHARED_LIBS +=  mozjs31-ps-release        ${SO_VERSION}

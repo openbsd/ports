@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2015/08/25 05:31:29 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2016/01/11 09:35:44 ajacoutot Exp $
 
 COMMENT=	ex/vi text editor with wide character support
 
 V =		2.1.3
 DISTNAME =	nvi-$V
 CATEGORIES=	editors
+REVISION =	0
 
-MAINTAINER =	Anthony J. Bentley <anthony@cathet.us>
+MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

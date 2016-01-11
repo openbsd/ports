@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2014/05/01 04:02:15 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/11 09:35:45 ajacoutot Exp $
 
 COMMENT =		convert DocBook refentry to mdoc
 
 DISTNAME =		docbook2mdoc-0.0.9
+REVISION =		0
 
 CATEGORIES =		textproc
 
 HOMEPAGE =		http://mdocml.bsd.lv/docbook2mdoc/
 
-MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
+MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes

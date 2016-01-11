@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/22 04:20:21 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/11 09:35:44 ajacoutot Exp $
 
 COMMENT-main =		highly accurate Game Boy Color emulator
 COMMENT-qt =		highly accurate Game Boy Color emulator with GUI
@@ -8,7 +8,8 @@ V =			0.5.0.${REV}
 DISTNAME =		gambatte_src-r${REV}
 PKGNAME =		gambatte-$V
 PKGNAME-qt =		gambatte-qt-$V
-REVISION-main =		0
+REVISION-main =		1
+REVISION-qt =		0
 
 MULTI_PACKAGES =	-main -qt
 
@@ -18,7 +19,7 @@ CATEGORIES =		emulators
 
 HOMEPAGE =		http://gambatte.sourceforge.net/
 
-MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
+MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
