@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2016/01/07 18:06:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2016/01/11 16:52:18 robert Exp $
 
 PV=		5.6
-V=		${PV}.16
-
-REVISION-main=	0
+V=		${PV}.17
 
 WANTLIB-main+=		stdc++ ncurses readline
 
