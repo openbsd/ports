@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/23 15:28:58 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/11 10:22:05 landry Exp $
 
 COMMENT =		multi-threaded HTTP benchmark and regression tester
 
-DISTNAME =		siege-2.70
-REVISION =		1
+DISTNAME =		siege-3.1.3
 
 CATEGORIES =		benchmarks www
 
@@ -19,7 +18,6 @@ MASTER_SITES =		http://download.joedog.org/siege/
 MAKE_FLAGS =		localstatedir=${LOCALSTATEDIR}
 
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/log/siege
-SYSCONFDIR=		${BASESYSCONFDIR}/siege
 
 CONFIGURE_STYLE =	gnu
 
