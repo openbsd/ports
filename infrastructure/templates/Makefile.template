@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile.template,v 1.72 2015/04/08 17:53:19 sthen Exp $
-# $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
-# Original from: credit the original author here
+# $OpenBSD: Makefile.template,v 1.73 2016/01/11 09:17:22 sthen Exp $
 #
 # Replace ??? with appropriate values
-# Remove extraneous comments before commit.
+# Remove extraneous comments before commit
+# Use /usr/ports/infrastructure/bin/portcheck
 
 # Reasons why the port/package shouldn't be built
 #
@@ -15,33 +14,43 @@
 
 #
 # Very short description of the package, 60 chars max
-#
-COMMENT =		???
-# COMMENT-foo =		???	for multi packages
+#		|----------------------------------------------------------|
+COMMENT =	???
+# COMMENT-foo =	???	for multi packages
 
 #
 # What port/package will be created
 #
-DISTNAME =		???
-#PKGNAME =		???
-#PKGNAME-foo =		???	for multi packages
+DISTNAME =	???
+#PKGNAME =	???
+#PKGNAME-foo =	???	for multi packages
+
+#
+# For github: traditional tarballs in /releases/download are normally
+# preferred if available; use them with DISTNAME/MASTER_SITES lines as
+# normal. For projects using auto-generated tarballs, set GH_ACCOUNT,
+# GH_PROJECT, and *one* of GH_TAGNAME or GH_COMMIT. For GH_COMMIT, also
+# set DISTNAME. For GH_TAGNAME, set DISTNAME if the default is no good.
+#
+#GH_ACCOUNT =	username
+#GH_PROJECT =	project
+#GH_TAGNAME =	1.0
+#GH_COMMIT =	abab123456789abacafeabab123123b1e4ble4bl
 
 # for any port that creates shared libraries.
-# both libtool and cmake handle this automatically.
-# for libtool-based ports, have a look at WRKBUILD/shared_libs.log
-#SHARED_LIBS =		???
+# both libtool and cmake automatically set filenames based on this variable.
+# for libtool- or cmake-based ports, have a look at WRKBUILD/shared_libs.log
+#SHARED_LIBS =	???
 
 # the category used in the directory name, /usr/ports/<category>/portname,
 # must be included and listed first.
-CATEGORIES =		???
+CATEGORIES =	???
 
-#HOMEPAGE =		???	URL
+#HOMEPAGE =	???	URL
 
-# where to send bitches about this port
-# Put a complete email address with a real name, e.g.,
-# MAINTAINER =	John Doe <doe57@machine.somewhere.org>
-# if you maintain several ports, try to use the same line each time.
-# MAINTAINER implies some amount of responsibility.
+# person who is responsible for the port. Use a complete email address with
+# a real name, e.g., "MAINTAINER = John Doe <doe57@machine.somewhere.org>".
+# If you maintain several ports, use the same line each time.
 # If you no longer use the port, or are unwilling/unable to handle issues
 # in a timely manner, *leave the field blank*.
 # Default value is ports@openbsd.org, no need to fill in
@@ -57,8 +66,8 @@ CATEGORIES =		???
 # Put a comment there to state what's going on.
 # Can be as brief as `BSD' or `GPLv2+', but it'd better be easy to check,
 # if someone wants to double-check licensing.
-# For GPL, all applicable versions must be included (e.g. v2+, v2 only, v3+).
-# Setting PERMIT_PACKAGE_CDROM=Yes defaults other PERMIT_* variables to Yes.
+# For GPL, the applicable versions must be included (e.g. v2+, v2 only, v3+).
+# If all PERMIT_* are Yes, just setting 'PERMIT_PACKAGE_CDROM=Yes' is enough.
 #PERMIT_PACKAGE_CDROM =	Yes | Reason if No
 #PERMIT_PACKAGE_FTP =	Yes | Reason if No
 #PERMIT_DISTFILES_FTP =	Yes | Reason if No
@@ -71,14 +80,6 @@ CATEGORIES =		???
 MASTER_SITES =		???
 #MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=subdir/}
 #MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
-
-# for github, use these instead of MASTER_SITES (and specify a
-# reasonable DISTNAME which will be used as the "save" filename).
-# specify either the COMMIT or the TAG, not both.
-#GH_ACCOUNT =		username
-#GH_PROJECT =		project
-#GH_TAGNAME =		1.0
-#GH_COMMIT =		abab123456789abacafeabab123123b1e4ble4bl
 
 # if more master sites are needed...
 #MASTER_SITES0 =
@@ -113,7 +114,9 @@ MASTER_SITES =		???
 #USE_GMAKE =		Yes
 #USE_GROFF =		Yes
 # Programs that require GNU libtool to build instead of the OpenBSD one
-# should use this option.
+# should use this option. Add a comment explaining why. Don't use this if
+# a port requires libtool's .m4 files but otherwise can use OpenBSD libtool,
+# in that case use "BUILD_DEPENDS=devel/libtool" instead.
 #USE_LIBTOOL=		gnu
 # Set CONFIGURE_STYLE to value corresponding to some standard configuration
 # 	  perl [modbuild]: perl's MakeMaker Makefile.PL (modbuild: perl's
