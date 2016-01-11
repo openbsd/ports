@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/07 21:37:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/11 14:22:59 shadchin Exp $
 
 COMMENT =		simple generic functions
 
@@ -6,10 +6,9 @@ MODPY_EGG_VERSION =	0.8.1
 DISTNAME =		simplegeneric-${MODPY_EGG_VERSION}
 EXTRACT_SUFX =		.zip
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
-
 
 # ZPL 2.1
 # If we patch anything, we must include:
@@ -21,6 +20,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-NO_TEST =		Yes
+FLAVORS =		python3
+FLAVOR ?=
 
 .include <bsd.port.mk>
