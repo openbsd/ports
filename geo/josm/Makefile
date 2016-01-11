@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2015/12/25 21:05:18 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2016/01/11 22:18:33 landry Exp $
 
 COMMENT=		OpenStreetMap map editor
 
-SVN_REV=		9060
+SVN_REV=		9329
 DISTNAME=		josm-snapshot-${SVN_REV}
 EXTRACT_SUFX =		.jar
 EXTRACT_CASES+=		*.jar) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIST};;
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		java \
 			textproc/intltool
-MODJAVA_VER=		1.6+
+MODJAVA_VER=		1.7+
 BUILD_DEPENDS =		archivers/unzip
 RUN_DEPENDS=		java/javaPathHelper \
 			devel/desktop-file-utils
