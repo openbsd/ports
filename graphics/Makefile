@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.401 2016/01/07 01:03:28 jeremy Exp $
+# $OpenBSD: Makefile,v 1.402 2016/01/11 09:37:08 kirby Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -9,6 +9,7 @@
      SUBDIR += allegropng
      SUBDIR += amide
      SUBDIR += animorph
+     SUBDIR += ansilove
      SUBDIR += aqsis
      SUBDIR += argyll
      SUBDIR += asymptote
