@@ -1,0 +1,3 @@
+Parse UK postcodes with regular expressions. Handles partial postcodes
+(just the outcode or sector), and can test against valid characters and
+currently valid outcodes, and determine posttown(s) from a postcode.

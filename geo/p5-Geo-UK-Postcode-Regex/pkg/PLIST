@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/11 10:14:43 sthen Exp $
+${P5SITE}/Geo/
+${P5SITE}/Geo/UK/
+${P5SITE}/Geo/UK/Postcode/
+${P5SITE}/Geo/UK/Postcode/Regex/
+${P5SITE}/Geo/UK/Postcode/Regex.pm
+${P5SITE}/Geo/UK/Postcode/Regex/Hash.pm
+${P5SITE}/Geo/UK/Postcode/Regex/Simple.pm
+${P5SITE}/auto/
+${P5SITE}/auto/share/
+${P5SITE}/auto/share/dist/
+${P5SITE}/auto/share/dist/Geo-UK-Postcode-Regex/
+${P5SITE}/auto/share/dist/Geo-UK-Postcode-Regex/get_pc_districts.pl
+@man man/man3p/Geo::UK::Postcode::Regex.3p
+@man man/man3p/Geo::UK::Postcode::Regex::Hash.3p
+@man man/man3p/Geo::UK::Postcode::Regex::Simple.3p
