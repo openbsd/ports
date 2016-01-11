@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Poppler_pm,v 1.1.1.1 2016/01/11 10:22:48 sthen Exp $
+--- lib/Poppler.pm.orig	Sun Jan 10 22:46:07 2016
++++ lib/Poppler.pm	Sun Jan 10 22:49:09 2016
+@@ -202,7 +202,7 @@ my @_POPPLER_HANDLE_SENTINEL_BOOLEAN_FOR = qw/
+ sub import {
+ 
+   Glib::Object::Introspection->setup (
+-    search_path => File::ShareDir::dist_dir('Poppler'),
++    search_path => '${LOCALBASE}/lib/girepository-1.0',
+     basename    => $_POPPLER_BASENAME,
+     version     => $_POPPLER_VERSION,
+     package     => $_POPPLER_PACKAGE,

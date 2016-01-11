@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/11 10:22:48 sthen Exp $
+${P5SITE}/Poppler/
+${P5SITE}/Poppler.pm
+${P5SITE}/Poppler/Page/
+${P5SITE}/Poppler/Page/Dimension.pm
+${P5SITE}/auto/
+${P5SITE}/auto/share/
+${P5SITE}/auto/share/dist/
+${P5SITE}/auto/share/dist/Poppler/
+${P5SITE}/auto/share/dist/Poppler/Poppler-0.18.typelib
+@man man/man3p/Poppler.3p
