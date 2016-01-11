@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2012/11/20 15:25:18 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2016/01/11 06:59:48 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -26,3 +26,6 @@ Comment out the invocation of these jobs in root's crontab.
 
 If your machine is left running for more than 24h at a time, you
 might also want to invoke anacron from an early morning cron job.
+
+To run anacron(8) at boot time, add the following to root's crontab(5):
+@reboot	${PREFIX}/sbin/anacron -ds
