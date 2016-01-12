@@ -1,7 +1,15 @@
-$OpenBSD: patch-lib_Poppler_pm,v 1.1.1.1 2016/01/11 10:22:48 sthen Exp $
---- lib/Poppler.pm.orig	Sun Jan 10 22:46:07 2016
-+++ lib/Poppler.pm	Sun Jan 10 22:49:09 2016
-@@ -202,7 +202,7 @@ my @_POPPLER_HANDLE_SENTINEL_BOOLEAN_FOR = qw/
+$OpenBSD: patch-lib_Poppler_pm,v 1.2 2016/01/12 16:34:12 sthen Exp $
+--- lib/Poppler.pm.orig	Thu Jan  7 15:15:21 2016
++++ lib/Poppler.pm	Tue Jan 12 16:17:40 2016
+@@ -101,7 +101,6 @@ use warnings;
+ use Carp qw/croak/;
+ use Cwd qw/abs_path/;
+ use Exporter;
+-use File::ShareDir;
+ use Glib::Object::Introspection;
+ use URI::file;
+ use FindBin;
+@@ -202,7 +201,7 @@ my @_POPPLER_HANDLE_SENTINEL_BOOLEAN_FOR = qw/
  sub import {
  
    Glib::Object::Introspection->setup (
