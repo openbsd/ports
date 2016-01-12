@@ -1,0 +1,14 @@
+$OpenBSD: patch-modules_sndio_sndio_c,v 1.1 2016/01/12 09:22:07 czarkoff Exp $
+--- modules/sndio/sndio.c.orig	Tue Dec  1 13:09:48 2015
++++ modules/sndio/sndio.c	Thu Jan  7 19:49:39 2016
+@@ -268,7 +268,9 @@ static int play_alloc(struct auplay_st **stp, const st
+ 		st->run = false;
+ 
+  out:
+-	mem_deref(par);
++	if (par)
++		mem_deref(par);
++
+ 	if (err)
+ 		mem_deref(st);
+ 	else

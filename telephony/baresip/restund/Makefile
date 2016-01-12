@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/10/06 22:47:29 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/12 09:22:08 czarkoff Exp $
 
 SHARED_ONLY =		Yes
 
@@ -11,7 +11,7 @@ WANTLIB =		c crypto mysqlclient pthread re ssl z
 LIB_DEPENDS =		telephony/baresip/re \
 			databases/mariadb,-main
 
-MAKE_FLAGS +=		USE_MYSQL=1 LIBS+="-lc -lre"
+MAKE_FLAGS +=		USE_MYSQL=1 LIBS="-lc -lre"
 
 NO_TEST =		Yes
 

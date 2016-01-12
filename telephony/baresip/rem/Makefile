@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.2 2015/10/02 19:24:23 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/12 09:22:08 czarkoff Exp $
 
 COMMENT =		library for real-time audio and video processing
 
-V =			0.4.6
+V =			0.4.7
 DISTNAME =		rem-${V}
-REVISION =		0
-SHARED_LIBS =		rem	0.0
+SHARED_LIBS =		rem	0.1
 CATEGORIES +=		multimedia devel
 
-WANTLIB = crypto m pthread re ssl z
+WANTLIB += m re
 
 LIB_DEPENDS =		telephony/baresip/re
 
 MAKE_FLAGS =		LIB_SUFFIX=.so.${LIBrem_VERSION}
-MAKE_FLAGS +=		LIBS="-lm -lre"
+MAKE_ENV +=		LIBS="-lm -lre"
 
 ALL_TARGET =		librem.a
 

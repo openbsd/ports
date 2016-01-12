@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/12 09:22:08 czarkoff Exp $
 include/re/
 include/re/re.h
 include/re/re_aes.h
@@ -16,6 +16,7 @@ include/re/re_http.h
 include/re/re_httpauth.h
 include/re/re_ice.h
 include/re/re_jbuf.h
+include/re/re_json.h
 include/re/re_list.h
 include/re/re_lock.h
 include/re/re_main.h
@@ -27,6 +28,7 @@ include/re/re_mqueue.h
 include/re/re_msg.h
 include/re/re_natbd.h
 include/re/re_net.h
+include/re/re_odict.h
 include/re/re_rtp.h
 include/re/re_sa.h
 include/re/re_sdp.h

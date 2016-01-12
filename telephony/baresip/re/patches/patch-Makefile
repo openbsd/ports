@@ -1,7 +1,18 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
---- Makefile.orig	Thu Sep 25 10:50:19 2014
-+++ Makefile	Thu Sep 25 10:50:45 2014
-@@ -61,20 +61,17 @@ all: $(SHARED) $(STATIC)
+$OpenBSD: patch-Makefile,v 1.2 2016/01/12 09:22:08 czarkoff Exp $
+--- Makefile.orig	Mon Oct 26 08:17:26 2015
++++ Makefile	Thu Jan  7 17:22:16 2016
+@@ -12,10 +12,6 @@ VER_PATCH := 14
+ PROJECT   := re
+ VERSION   := 0.4.14
+ 
+-MK	:= mk/re.mk
+-
+-include $(MK)
+-
+ # List of modules
+ MODULES += sip sipevent sipreg sipsess
+ MODULES += uri http httpauth msg websock
+@@ -63,13 +59,11 @@ all: $(SHARED) $(STATIC)
  
  
  $(SHARED): $(OBJS)
@@ -15,23 +26,40 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2014/09/25 19:32:37 sthen Exp $
 -	@$(AR) $(AFLAGS) $@ $^
 +	$(AR) $(AFLAGS) $@ $^
  ifneq ($(RANLIB),)
--	@$(RANLIB) $@
-+	$(RANLIB) $@
+ 	@$(RANLIB) $@
  endif
+@@ -87,12 +81,11 @@ libre.pc:
+ 	@echo 'Libs: -L$${libdir} -lre' >> libre.pc
+ 	@echo 'Cflags: -I$${includedir}' >> libre.pc
  
- $(BUILD)/%.o: src/%.c $(BUILD) Makefile $(MK) $(MODMKS)
+-$(BUILD)/%.o: src/%.c $(BUILD) Makefile $(MK) $(MODMKS)
 -	@echo "  CC      $@"
 -	@$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
++$(BUILD)/%.o: src/%.c $(BUILD) Makefile $(MODMKS)
 +	$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
  
  
- $(BUILD): Makefile $(MK) $(MODMKS)
-@@ -104,12 +101,10 @@ uninstall:
+-$(BUILD): Makefile $(MK) $(MODMKS)
++$(BUILD): Makefile $(MODMKS)
+ 	@mkdir -p $(patsubst %,$(BUILD)/%,$(sort $(dir $(SRCS))))
+ 	@touch $@
+ 
+@@ -110,7 +103,6 @@ install: $(SHARED) $(STATIC) libre.pc
+ 	$(INSTALL) -m 0755 $(SHARED) $(DESTDIR)$(LIBDIR)
+ 	$(INSTALL) -m 0755 $(STATIC) $(DESTDIR)$(LIBDIR)
+ 	$(INSTALL) -m 0644 libre.pc $(DESTDIR)$(LIBDIR)/pkgconfig
+-	$(INSTALL) -m 0644 $(MK) $(DESTDIR)$(MKDIR)
+ 
+ uninstall:
+ 	@rm -rf $(DESTDIR)$(INCDIR)
+@@ -121,13 +113,11 @@ uninstall:
+ 
  -include test.d
  
- test.o:	test.c Makefile $(MK)
+-test.o:	test.c Makefile $(MK)
 -	@echo "  CC      $@"
 -	@$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
++test.o:	test.c Makefile
 +	$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
  
  test$(BIN_SUFFIX): test.o $(SHARED) $(STATIC)
