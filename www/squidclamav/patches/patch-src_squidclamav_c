@@ -1,8 +1,13 @@
-$OpenBSD: patch-src_squidclamav_c,v 1.3 2016/01/11 17:53:05 sthen Exp $
+$OpenBSD: patch-src_squidclamav_c,v 1.4 2016/01/12 13:13:43 sthen Exp $
 
 All the other buffers rx'ing data from clamav in this file use LBUFSIZ (32K).
 Suspect this use of BUFSIZ from stdio.h (1K) is a typo. Trips the "backwards
 memcpy" check but obviously isn't.
+
+From b1b82e85c32435299446f7cf16c93318b815d32e Mon Sep 17 00:00:00 2001
+From: Darold Gilles <gilles@darold.net>
+Date: Mon, 11 Jan 2016 19:34:51 +0100
+Subject: [PATCH] Fix buffer overflow in squidclamav_safebrowsing(). 
 
 --- src/squidclamav.c.orig	Sat Oct 17 10:35:42 2015
 +++ src/squidclamav.c	Mon Jan 11 17:46:03 2016
