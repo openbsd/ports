@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.28 2015/09/29 10:51:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2016/01/12 13:19:37 ajacoutot Exp $
 
 COMMENT =		database toolkit for Python
 
 MODPY_EGG_VERSION =	0.7.1
 DISTNAME =		SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME =		py-sqlalchemy-${MODPY_EGG_VERSION:S/p/./}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		databases
 
 HOMEPAGE =		http://www.sqlalchemy.org/
 
-MAINTAINER =		Will Maier <wcmaier@openbsd.org>
+MAINTAINER =		Will Maier <willmaier@ml1.net>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

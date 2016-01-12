@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2016/01/12 13:19:37 ajacoutot Exp $
 
 COMMENT=		Jabber client for text terminals
 
 MODPY_EGG_VERSION=	1.2.1
 DISTNAME=		cjc-${MODPY_EGG_VERSION}
 CATEGORIES=		net
+REVISION=		0
 
 HOMEPAGE=		http://cjc.jajcus.net/
 
-MAINTAINER=		Will Maier <wcmaier@openbsd.org>
+MAINTAINER=		Will Maier <willmaier@ml1.net>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
