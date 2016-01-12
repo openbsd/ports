@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.361 2016/01/07 01:03:28 jeremy Exp $
+# $OpenBSD: Makefile,v 1.362 2016/01/12 20:45:01 landry Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -17,6 +17,7 @@
      SUBDIR += beets
      SUBDIR += bladeenc
      SUBDIR += calf
+     SUBDIR += cantata
      SUBDIR += caps-plugins
      SUBDIR += cd-discid
      SUBDIR += cdparanoia
