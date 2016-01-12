@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/11 10:22:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/12 15:10:43 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,8 @@ MODULES=	cpan
 CPAN_AUTHOR=	VOLKENING
 CONFIGURE_STYLE= modbuild
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		devel/p5-ExtUtils-PkgConfig
 RUN_DEPENDS=	devel/p5-Glib-Object-Introspection \
 		graphics/p5-Cairo \
 		www/p5-URI
