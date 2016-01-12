@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2016/01/10 18:45:10 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.25 2016/01/12 17:29:58 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -96,9 +96,12 @@ ${SOGOLIBDIR}/Headers/SOGoContentObject.h
 ${SOGOLIBDIR}/Headers/SOGoCredentialsFile.h
 ${SOGOLIBDIR}/Headers/SOGoDAVAuthenticator.h
 ${SOGOLIBDIR}/Headers/SOGoDateFormatter.h
+${SOGOLIBDIR}/Headers/SOGoDefaultsSource.h
+${SOGOLIBDIR}/Headers/SOGoDomainDefaults.h
 ${SOGOLIBDIR}/Headers/SOGoFolder.h
 ${SOGOLIBDIR}/Headers/SOGoGCSFolder.h
 ${SOGOLIBDIR}/Headers/SOGoGroup.h
+${SOGOLIBDIR}/Headers/SOGoLDAPDefaults.h
 ${SOGOLIBDIR}/Headers/SOGoMailer.h
 ${SOGOLIBDIR}/Headers/SOGoObject.h
 ${SOGOLIBDIR}/Headers/SOGoParentFolder.h
@@ -107,9 +110,12 @@ ${SOGOLIBDIR}/Headers/SOGoProductLoader.h
 ${SOGOLIBDIR}/Headers/SOGoProxyAuthenticator.h
 ${SOGOLIBDIR}/Headers/SOGoSession.h
 ${SOGOLIBDIR}/Headers/SOGoSieveManager.h
+${SOGOLIBDIR}/Headers/SOGoSource.h
 ${SOGOLIBDIR}/Headers/SOGoStartupLogger.h
 ${SOGOLIBDIR}/Headers/SOGoStaticAuthenticator.h
+${SOGOLIBDIR}/Headers/SOGoSystemDefaults.h
 ${SOGOLIBDIR}/Headers/SOGoUser.h
+${SOGOLIBDIR}/Headers/SOGoUserDefaults.h
 ${SOGOLIBDIR}/Headers/SOGoUserFolder.h
 ${SOGOLIBDIR}/Headers/SOGoUserManager.h
 ${SOGOLIBDIR}/Headers/SOGoUserProfile.h
