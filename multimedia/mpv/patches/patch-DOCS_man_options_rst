@@ -1,7 +1,7 @@
-$OpenBSD: patch-DOCS_man_options_rst,v 1.5 2015/11/22 18:33:04 czarkoff Exp $
---- DOCS/man/options.rst.orig	Tue Nov 10 13:14:14 2015
-+++ DOCS/man/options.rst	Sun Nov 15 17:43:54 2015
-@@ -2020,10 +2020,10 @@ Disc Devices
+$OpenBSD: patch-DOCS_man_options_rst,v 1.6 2016/01/12 09:09:57 czarkoff Exp $
+--- DOCS/man/options.rst.orig	Fri Dec 11 13:20:29 2015
++++ DOCS/man/options.rst	Tue Dec 15 00:16:05 2015
+@@ -2044,10 +2044,10 @@ Disc Devices
  ------------
  
  ``--cdrom-device=<path>``

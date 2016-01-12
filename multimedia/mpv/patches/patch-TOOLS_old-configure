@@ -1,21 +1,45 @@
-$OpenBSD: patch-TOOLS_old-configure,v 1.4 2016/01/08 18:47:01 feinerer Exp $
+$OpenBSD: patch-TOOLS_old-configure,v 1.5 2016/01/12 09:09:57 czarkoff Exp $
 
 - Adjust for BSD fstatfs
 - Disable the use of SSE4 intrinsics
 - Disable the use of C11
+- Disable extra compiler flags
 
---- TOOLS/old-configure.orig	Tue Nov 10 19:14:14 2015
-+++ TOOLS/old-configure	Mon Nov 23 17:41:01 2015
-@@ -829,7 +829,7 @@ check_pkg_config "libavdevice" $_libavdevice LIBAVDEVI
+--- TOOLS/old-configure.orig	Fri Dec 11 19:20:29 2015
++++ TOOLS/old-configure	Sat Jan  9 20:35:38 2016
+@@ -379,16 +379,8 @@ cflag_check -pipe -I. && _pipe="-pipe" && echores "yes
+ 
+ addcflags() { cflag_check "$@" && OURCFLAGS="$OURCFLAGS $@" ; }
+ 
+-OURCFLAGS="-std=c99 -Wall $_opt"
++OURCFLAGS="-std=c99 $_opt"
+ 
+-addcflags -g -g3 -ggdb
+-addcflags -Wundef -Wmissing-prototypes -Wshadow -Wno-switch -Wparentheses -Wpointer-arith -Wno-redundant-decls -Wno-pointer-sign -Werror=implicit-function-declaration -Wno-error=deprecated-declarations -Wno-error=unused-function
+-# clang
+-addcflags -Wno-logical-op-parentheses -fcolor-diagnostics -Wno-tautological-compare -Wno-tautological-constant-out-of-range-compare
+-# extra
+-addcflags -Wno-format-zero-length -Wempty-body -Wdisabled-optimization -Wstrict-prototypes
+-
+-cflag_check -MD -MP && DEPFLAGS="-MD -MP"
+ cflag_check -lm && _ld_lm="-lm"
+ 
+ extra_ldflags="$extra_ldflags $LDFLAGS"
+@@ -827,8 +819,12 @@ check_pkg_config "libavdevice" $_libavdevice LIBAVDEVI
+ 
  check_trivial "TV interface" $_tv TV
  
++_v4l2_header=linux/videodev2.h
++if test $(uname -s) = OpenBSD ; then
++    _v4l2_header=sys/videoio.h
++fi
  check_statement_libs "Video 4 Linux 2 TV interface" $_tv_v4l2 TV_V4L2 \
 -    "sys/time.h linux/videodev2.h"
-+    "sys/time.h sys/videoio.h"
++    "sys/time.h ${_v4l2_header}"
  _tv_v4l2=$(defretval)
  check_trivial "TV audio input" $_tv_v4l2 AUDIO_INPUT
  
-@@ -942,8 +942,8 @@ cat > $TMPC << EOF
+@@ -938,8 +934,8 @@ cat > $TMPC << EOF
  
  /* we didn't bother to add actual config checks for this, or they are
     for platforms not supported by this configure script */
@@ -26,7 +50,7 @@ $OpenBSD: patch-TOOLS_old-configure,v 1.4 2016/01/08 18:47:01 feinerer Exp $
  #define HAVE_GL_COCOA 0
  #define HAVE_COCOA 0
  #define HAVE_COCOA_APPLICATION 0
-@@ -973,8 +973,8 @@ cat > $TMPC << EOF
+@@ -969,10 +965,10 @@ cat > $TMPC << EOF
  #define HAVE_EGL_DRM 0
  #define HAVE_VIDEOTOOLBOX_HWACCEL 0
  #define HAVE_VIDEOTOOLBOX_GL 0
@@ -34,6 +58,9 @@ $OpenBSD: patch-TOOLS_old-configure,v 1.4 2016/01/08 18:47:01 feinerer Exp $
 -#define HAVE_C11_TLS 1
 +#define HAVE_SSE4_INTRINSICS 0
 +#define HAVE_C11_TLS 0
+ #define HAVE_EGL_ANGLE 0
+-#define HAVE_GPL3 1
++#define HAVE_GPL3 0
+ #define HAVE_WIN32 0
  
  #ifdef __OpenBSD__
- #define DEFAULT_CDROM_DEVICE "/dev/rcd0c"

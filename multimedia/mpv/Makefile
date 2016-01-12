@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2016/01/08 18:47:01 feinerer Exp $
+# $OpenBSD: Makefile,v 1.22 2016/01/12 09:09:57 czarkoff Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS =	alpha amd64 i386 mips64 mips64el powerpc sparc64
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
-V =			0.13.0
-DISTNAME =		mpv-${V}
-REVISION =		0
-
 GH_ACCOUNT=		mpv-player
 GH_PROJECT=		mpv
-GH_TAGNAME=		v${V}
+GH_TAGNAME=		v0.14.0
 
 CATEGORIES =		multimedia x11
 
@@ -23,10 +19,10 @@ MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 PERMIT_PACKAGE_CDROM =	patents
 PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB += EGL GL X11 Xext Xinerama Xrandr Xss Xv ass avcodec
+WANTLIB += EGL GL SDL2 X11 Xext Xinerama Xrandr Xss Xv ass avcodec
 WANTLIB += avdevice avfilter avformat avutil bluray c cdio cdio_cdda
-WANTLIB += cdio_paranoia dvdnav dvdread jpeg lcms2 m pthread
-WANTLIB += smbclient sndio swresample swscale v4l2 z ${MODLUA_WANTLIB}
+WANTLIB += cdio_paranoia dvdnav dvdread jpeg lcms2 m pthread smbclient
+WANTLIB += sndio swresample swscale v4l2 z ${MODLUA_WANTLIB}
 
 MODULES =		converters/libiconv \
 			lang/lua \
@@ -38,6 +34,7 @@ BUILD_DEPENDS =		audio/ladspa \
 
 LIB_DEPENDS =		audio/libcdio \
 			devel/libdvdread \
+			devel/sdl2 \
 			graphics/ffmpeg>=20151112 \
 			graphics/jpeg \
 			graphics/lcms2 \
@@ -54,13 +51,15 @@ PORTPATH =		\
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-CFLAGS +=		-I. -I.. -I${LOCALBASE}/include `pkg-config --cflags smbclient`
+CFLAGS +=		-I. -I.. -I${LOCALBASE}/include
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	TOOLS/old-configure
 CONFIGURE_ARGS +=	--confdir=${SYSCONFDIR}/mpv \
 			--mandir=${LOCALBASE}/man \
-			--extra-ldflags="-L${LOCALBASE}/lib" \
+			--extra-ldflags="`pkg-config --libs sdl2`" \
+			--extra-cflags="`pkg-config --cflags sdl2`" \
+			--enable-sdl2 \
 			--disable-alsa \
 			--disable-caca \
 			--disable-enca \
@@ -74,10 +73,6 @@ CONFIGURE_ARGS +=	--confdir=${SYSCONFDIR}/mpv \
 			--disable-rsound \
 			--disable-uchardet
 CONFIGURE_ENV +=	TMPDIR=${WRKBUILD}
-
-# pkg-config says smbclient's version is 0
-CONFIGURE_ARGS +=	--enable-smb \
-			--extra-libs="-lsmbclient"
 
 USE_GMAKE =		Yes
 MAKE_FLAGS =		V=1
