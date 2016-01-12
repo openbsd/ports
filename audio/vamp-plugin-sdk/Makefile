@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/10 17:28:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2016/01/12 13:09:35 jasper Exp $
 
 COMMENT =		audio plugin API
 
 VERSION =		2.2.1
 DISTNAME =		vamp-plugin-sdk-${VERSION}
+REVISION =		0
 CATEGORIES =		audio
 
 SHARED_LIBS +=		vamp-sdk	1.0
