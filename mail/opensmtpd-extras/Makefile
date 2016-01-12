@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/07 22:50:19 jung Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/12 21:37:39 jung Exp $
 
 COMMENT-main=		extras for smtpd
 COMMENT-clamav=		extras with clamav support for smtpd
@@ -9,7 +9,7 @@ COMMENT-python=		extras with python bindings for smtpd
 COMMENT-redis=		redis based smtpd table support
 COMMENT-spamassassin=	extras with spamassassin support for smtpd
 
-V=			201601072302
+V=			201601122027
 DISTNAME=		opensmtpd-extras-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-clamav=		opensmtpd-extras-clamav-${V}
