@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/11 09:28:16 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2016/01/12 10:22:32 dcoppa Exp $
 
 COMMENT =		Python classes providing access to network packets
 
-MODPY_EGG_VERSION =	0.9.14
+MODPY_EGG_VERSION =	0.9.13
 DISTNAME =		impacket-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-
+EPOCH =			0
 CATEGORIES =   		net security
 
 HOMEPAGE =		http://corelabs.coresecurity.com/index.php?module=Wiki&action=view&type=tool&name=Impacket
@@ -32,8 +32,7 @@ NO_TEST =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/examples/goldenPac.py \
-		${WRKSRC}/examples/nmapAnswerMachine.py \
-		${WRKSRC}/examples/raiseChild.py
+		${WRKSRC}/examples/nmapAnswerMachine.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-impacket

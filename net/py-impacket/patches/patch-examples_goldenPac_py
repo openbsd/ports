@@ -1,4 +1,4 @@
-$OpenBSD: patch-examples_goldenPac_py,v 1.1 2016/01/11 09:28:16 dcoppa Exp $
+$OpenBSD: patch-examples_goldenPac_py,v 1.2 2016/01/12 10:22:32 dcoppa Exp $
 --- examples/goldenPac.py.orig	Mon Jan 11 09:53:27 2016
 +++ examples/goldenPac.py	Mon Jan 11 09:55:11 2016
 @@ -20,10 +20,10 @@
@@ -14,7 +14,7 @@ $OpenBSD: patch-examples_goldenPac_py,v 1.1 2016/01/11 09:28:16 dcoppa Exp $
  #
  #       if domain.net and/or domain-host do not resolve, add them
  #       to the hosts file or use the -dc-ip and -target-ip parameters
-@@ -1262,14 +1262,14 @@ if __name__ == '__main__':
+@@ -1126,14 +1126,14 @@ if __name__ == '__main__':
      if len(sys.argv)==1:
          parser.print_help()
          print "\nExamples: "
