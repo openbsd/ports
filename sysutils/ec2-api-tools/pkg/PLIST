@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/07 14:55:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/12 07:08:25 ajacoutot Exp $
 ec2-api-tools/
 ec2-api-tools/bin/
 ec2-api-tools/bin/ec2-accept-vpc-peering-connection
@@ -378,7 +378,7 @@ ec2-api-tools/lib/commons-discovery.jar
 ec2-api-tools/lib/commons-httpclient-3.1.jar
 ec2-api-tools/lib/commons-logging-adapters-1.1.1.jar
 ec2-api-tools/lib/commons-logging-api-1.1.1.jar
-ec2-api-tools/lib/${FULLPKGNAME}.jar
+ec2-api-tools/lib/ec2-api-tools-1.7.5.1.jar
 ec2-api-tools/lib/httpclient-4.2.3.jar
 ec2-api-tools/lib/httpcore-4.2.jar
 ec2-api-tools/lib/j2ee_mail.jar
