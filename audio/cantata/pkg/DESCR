@@ -1,0 +1,12 @@
+Cantata is a graphical client for MPD. It contains the following features:
+
+* Multiple MPD collections.
+* Highly customisable layout.
+* Songs grouped by album in play queue.
+* Context view to show artist, album, and song information of current track.
+* Simple tag editor.
+* File organizer - use tags to organize files and folders.
+* USB-Mass-Storage and MTP device support.
+* MPRISv2 DBUS interface.
+* Basic support for touch-style interface (views are made 'flickable')
+* Scrobbling.
