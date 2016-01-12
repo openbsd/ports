@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2016/01/12 16:05:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.21 2016/01/12 16:46:29 dcoppa Exp $
 
 V =		2.8.9
 PL =		8
 COMMENT =	console Internet browser
 DISTNAME =	lynx${V}dev.${PL}
 PKGNAME =	lynx-${V}pl${PL}
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	www net
 
-HOMEPAGE =	http://lynx.invisible-island.net
+HOMEPAGE =	http://lynx.invisible-island.net/
 
 MAINTAINER =	Frederic Cambus <fred@statdns.com>
 
