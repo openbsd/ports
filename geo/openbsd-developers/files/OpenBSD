@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.125 2015/11/02 18:36:14 vgross Exp $
+# $OpenBSD: OpenBSD,v 1.126 2016/01/12 13:52:56 tsg Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -18,6 +18,7 @@
 30.448		-97.684		"marco"		# Marco Peereboom
 34.710962	-82.872323	"okan"		# Okan Demirmen
 35.083		-106.625	"bentley"	# Anthony J. Bentley
+35.338735	25.144213	"tsg"		# Giannis Tsaraias
 35.5635277	-97.5437221	"todd"		# Todd T. Fries
 35.66834	139.719186	"itojun"	# Jun-ichiro Itojun
 35.698		139.713		"mcbride"	# Ryan Thomas McBride
