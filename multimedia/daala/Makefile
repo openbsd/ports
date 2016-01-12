@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/10/02 16:55:54 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/12 09:15:42 czarkoff Exp $
 
 COMMENT =		free video codec
-DISTNAME =		daala-0.0.20150926
+DISTNAME =		daala-0.0.20160106
 CATEGORIES =		multimedia graphics
 HOMEPAGE =		https://xiph.org/daala/
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
@@ -9,15 +9,18 @@ MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-SHARED_LIBS +=  daalabase                 0.0 # 0.1
-SHARED_LIBS +=  daaladec                  0.0 # 0.1
-SHARED_LIBS +=  daalaenc                  0.0 # 0.1
+SHARED_LIBS +=  daalabase                 1.0
+SHARED_LIBS +=  daaladec                  1.0
+SHARED_LIBS +=  daalaenc                  1.0
 
 WANTLIB += m
 
 GH_ACCOUNT =		xiph
 GH_PROJECT =		daala
-GH_COMMIT =		af3bb325915599fab53b506d93183ccac48cae2d
+GH_COMMIT =		a1f5eac2b50747700644f20488a6be6b007476eb
+
+MODULES =		lang/clang
+MODCLANG_ARCHS =	i386 amd64
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
@@ -31,9 +34,10 @@ USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+			--enable-check-asm \
+			--disable-docs \
 			--disable-player \
-			--disable-tools \
-			--disable-docs
+			--disable-tools
 
 CONFIGURE_ENV =		LDFLAGS="${LDFLAGS}"
 
@@ -44,8 +48,10 @@ CFLAGS +=		-I${LOCALBASE}/include
 LDFLAGS +=		-L${LOCALBASE}/lib
 
 post-patch:
-	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+	@echo AUTO_UPDATE=no > ${WRKSRC}/package_version
+	@echo PACKAGE_VERSION=\"0.0-1415-g15a1968\" >> ${WRKSRC}/package_version
+	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	                 AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 				./autogen.sh
 
 .include <bsd.port.mk>
