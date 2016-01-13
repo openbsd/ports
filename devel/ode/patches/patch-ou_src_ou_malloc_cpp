@@ -1,0 +1,16 @@
+$OpenBSD: patch-ou_src_ou_malloc_cpp,v 1.1 2016/01/13 22:14:25 jasper Exp $
+
+Stop using malloc.h in favor of stdlib.h; should actually introduce _OU_TARGET_OS_OPENBSD
+
+--- ou/src/ou/malloc.cpp.orig	Wed Jan 13 23:09:57 2016
++++ ou/src/ou/malloc.cpp	Wed Jan 13 23:11:34 2016
+@@ -29,7 +29,8 @@
+ #include <ou/customization.h>
+ #include <ou/macros.h>
+ 
+-#if _OU_TARGET_OS == _OU_TARGET_OS_MAC || _OU_TARGET_OS == _OU_TARGET_OS_IOS
++#if _OU_TARGET_OS == _OU_TARGET_OS_MAC || _OU_TARGET_OS == _OU_TARGET_OS_IOS \
++	|| defined(__OpenBSD__)
+ 
+ #include <stdlib.h>
+ 
