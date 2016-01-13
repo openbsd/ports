@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_lib_lib_pro,v 1.1 2016/01/13 22:31:38 sthen Exp $
+--- src/lib/lib.pro.orig	Wed Jan 13 20:36:58 2016
++++ src/lib/lib.pro	Wed Jan 13 20:37:15 2016
+@@ -41,5 +41,7 @@ TARGET=wkhtmltox
+ INSTALLS += target
+ wkhtmltox.path=$$INSTALLBASE/lib
+ 
++QMAKE_LFLAGS = -L${WRKBUILD}/qt/lib
++
+ DESTDIR = ../../bin
+ target.path=$$INSTALLBASE/lib
