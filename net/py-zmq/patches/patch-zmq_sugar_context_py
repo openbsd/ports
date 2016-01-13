@@ -1,0 +1,11 @@
+$OpenBSD: patch-zmq_sugar_context_py,v 1.1 2016/01/13 07:23:03 shadchin Exp $
+--- zmq/sugar/context.py.orig	Mon Jan 11 23:27:41 2016
++++ zmq/sugar/context.py	Mon Jan 11 23:28:00 2016
+@@ -81,6 +81,7 @@ class Context(ContextBase, AttributeSetter):
+         .. versionadded:: 14.1
+         """
+         from pyczmq import zctx
++        from zmq.utils.interop import cast_int_addr
+         
+         underlying = zctx.underlying(ctx)
+         address = cast_int_addr(underlying)
