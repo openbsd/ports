@@ -1,4 +1,4 @@
-$OpenBSD: patch-event_c,v 1.10 2015/11/09 14:36:12 dcoppa Exp $
+$OpenBSD: patch-event_c,v 1.11 2016/01/13 08:47:44 dcoppa Exp $
 
 commit bbf88211b4fe86288d1e918d1758681130438589
 Author: Uli Schlachter <psychon@znc.in>
@@ -38,6 +38,18 @@ titlebar since the LeaveNotify contains the cursor position after the leave and
 we did not manage to figure out which titlebar was left.
 
 Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+commit 1c27a69131428e9e733374c2a3676ca4ecee45d2
+Author: Kimball Thurston <kdt3rd@gmail.com>
+Date:   Tue Dec 22 21:46:17 2015 -0800
+
+Fix focus handling with multiple awesome instances
+
+When there are multiple X11 screens (i.e. :0.0 and :0.1) for zaphod mode
+style X setups, this triggers a refresh of focus when the instance
+running on a particular root receives the mouse
+
+Fixes https://github.com/awesomeWM/awesome/issues/599.
 
 commit de8fd4ffd4998e51164e4bc734fe74d11d358a56
 Author: Uli Schlachter <psychon@znc.in>
@@ -82,7 +94,7 @@ is decided... First come, first serve, the rest gets an error?
 Signed-off-by: Uli Schlachter <psychon@znc.in>
 
 --- event.c.orig	Sat Jan 10 20:36:35 2015
-+++ event.c	Mon Nov  9 13:54:50 2015
++++ event.c	Wed Jan 13 09:36:25 2016
 @@ -296,27 +296,37 @@ event_handle_configurerequest(xcb_configure_request_ev
      if((c = client_getbywin(ev->window)))
      {
@@ -247,7 +259,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
  }
  
  /** The enter notify event handler.
-@@ -493,19 +532,24 @@ event_handle_enternotify(xcb_enter_notify_event_t *ev)
+@@ -493,23 +532,34 @@ event_handle_enternotify(xcb_enter_notify_event_t *ev)
      {
          luaA_object_push(globalconf.L, drawin);
          luaA_object_push_item(globalconf.L, -1, drawin->drawable);
@@ -275,7 +287,17 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
              lua_pop(globalconf.L, 1);
          }
          lua_pop(globalconf.L, 1);
-@@ -594,7 +638,7 @@ event_handle_key(xcb_key_press_event_t *ev)
+     }
++    else if (ev->event == globalconf.screen->root) {
++        /* When there are multiple X screens with awesome running separate
++         * instances, reset focus.
++         */
++        globalconf.focus.need_update = true;
++    }
+ }
+ 
+ /** The focus in event handler.
+@@ -594,7 +644,7 @@ event_handle_key(xcb_key_press_event_t *ev)
          /* get keysym ignoring all modifiers */
          xcb_keysym_t keysym = keyresolv_get_keysym(ev->detail, 0);
          client_t *c;
