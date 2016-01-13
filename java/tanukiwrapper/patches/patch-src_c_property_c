@@ -1,6 +1,15 @@
-$OpenBSD: patch-src_c_property_c,v 1.1.1.1 2013/07/10 14:40:29 jasper Exp $
---- src/c/property.c.orig	Tue Jul  2 14:23:25 2013
-+++ src/c/property.c	Tue Jul  2 14:24:15 2013
+$OpenBSD: patch-src_c_property_c,v 1.2 2016/01/13 22:09:32 jasper Exp $
+--- src/c/property.c.orig	Wed Apr 17 07:48:52 2013
++++ src/c/property.c	Wed Jan 13 23:08:34 2016
+@@ -27,7 +27,7 @@
+  * included in all copies or substantial portions of the Software.
+  */
+ 
+-#if defined(MACOSX) || defined(FREEBSD)
++#if defined(MACOSX) || defined(FREEBSD) || defined(OPENBSD)
+ #else
+ #include <malloc.h>
+ #endif
 @@ -453,7 +453,7 @@ int getEncodingByName(char* encodingMB, int *encoding)
  int getEncodingByName(char* encodingMB, char** encoding) {
  #endif
