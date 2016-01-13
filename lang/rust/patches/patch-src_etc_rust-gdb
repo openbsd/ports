@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_etc_rust-gdb,v 1.1 2016/01/13 07:39:08 semarie Exp $
+only compatible with egdb (gdb from ports)
+--- src/etc/rust-gdb.orig	Sat Dec 12 07:12:56 2015
++++ src/etc/rust-gdb	Sat Dec 12 07:13:44 2015
+@@ -17,7 +17,7 @@ RUSTC_SYSROOT=`rustc --print=sysroot`
+ GDB_PYTHON_MODULE_DIRECTORY="$RUSTC_SYSROOT/lib/rustlib/etc"
+ 
+ # Run GDB with the additional arguments that load the pretty printers
+-PYTHONPATH="$PYTHONPATH:$GDB_PYTHON_MODULE_DIRECTORY" gdb \
++PYTHONPATH="$PYTHONPATH:$GDB_PYTHON_MODULE_DIRECTORY" egdb \
+   -d "$GDB_PYTHON_MODULE_DIRECTORY" \
+   -iex "add-auto-load-safe-path $GDB_PYTHON_MODULE_DIRECTORY" \
+   "$@"

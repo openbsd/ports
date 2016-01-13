@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/12/10 17:53:57 semarie Exp $
+# $OpenBSD: Makefile,v 1.13 2016/01/13 07:39:07 semarie Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -10,6 +10,7 @@ COMMENT-doc =		html documentation for rustc
 V =			1.5.0
 RUST_HASH =		35c36e89
 DISTNAME =		rustc-${V}-src
+REVISION =		0
 
 SUBST_VARS +=		RUST_HASH
 
@@ -68,12 +69,9 @@ LIBESTDC_VERSION =	17.0
 # 	RUSTFLAGS extra flags passed to rust
 # 		-L modgcc-libs : disambiguate libestdc++.so
 # 		-Z print-link-args : unhide link call
-#       RUSTFLAGS_STAGE0 extra flags passed to stage0
-#       	--sysroot force sysroot (due to limitation of us bootstrapper)
 #       RUST_LOG helper
 MAKE_ENV =		VERBOSE=1 \
 			RUSTFLAGS="-L ${WRKDIR}/modgcc-libs -Z print-link-args" \
-			RUSTFLAGS_STAGE0="--sysroot ${WRKBUILD}/${TRIPLE_ARCH}/stage0" \
 			RUST_LOG="${RUST_LOG}"
 
 
@@ -97,9 +95,7 @@ USE_LIBTOOL =		gnu
 CONFIGURE_ARGS +=	--llvm-root="${LOCAL_LLVM_FOR_RUST}"
 .endif
 
-ALL_TARGET +=		rustc-stage3 \
-			${TRIPLE_ARCH}/stage3/bin/rustdoc \
-			docs
+ALL_TARGET +=		rustc-stage2 docs
 TEST_TARGET =		check
 TEST_ENV +=		ALLOW_NONZERO_RLIMIT_CORE=1
 TEST_DEPENDS +=		devel/git
@@ -129,34 +125,14 @@ post-configure:
 	cp ${WRKDIR}/rust-stage0/lib/lib*.so* \
 		${WRKBUILD}/${TRIPLE_ARCH}/stage0/lib
 
-
-# do-install: don't use the default install target
-do-install:
-	# host binary
-	${INSTALL_PROGRAM_DIR} ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/${TRIPLE_ARCH}/stage3/bin/rustc \
+post-install:
+	# cleanup
+	rm ${PREFIX}/lib/rustlib/{install.log,uninstall.sh,rust-installer-version}
+	# host binary wrapper
+	${INSTALL_PROGRAM_DIR} \
 		${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/bin
+	mv ${PREFIX}/bin/rustc ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/bin
 	${SUBST_PROGRAM} -c \
 		files/rustc ${PREFIX}/bin/rustc
-	${INSTALL_PROGRAM} ${WRKBUILD}/${TRIPLE_ARCH}/stage3/bin/rustdoc \
-		${PREFIX}/bin/rustdoc
 	
-	# data
-	${INSTALL_DATA} \
-		${WRKSRC}/man/{rustc,rustdoc}.1 \
-		${PREFIX}/man/man1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rust
-	${INSTALL_DATA} ${WRKSRC}/{COPYRIGHT,LICENSE-APACHE,LICENSE-MIT,README.md} \
-		${PREFIX}/share/doc/rust
-	
-	# target libraries
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/lib
-	${INSTALL_DATA} \
-		${WRKBUILD}/${TRIPLE_ARCH}/stage3/lib/rustlib/${TRIPLE_ARCH}/lib/lib* \
-		${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/lib
-	
-	# html documentation
-	cp -R ${WRKBUILD}/doc ${PREFIX}/share/doc/rust/html
-	chmod -R a+rX ${PREFIX}/share/doc/rust/html
-
 .include <bsd.port.mk>
