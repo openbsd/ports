@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/08 18:21:48 pascal Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/13 11:36:54 pascal Exp $
 
 COMMENT =		Sixth Edition UNIX Shell
 
-V =			20150115
+V =			20160108
 DISTNAME =		osh-$V
 
 SUBST_VARS +=		V
