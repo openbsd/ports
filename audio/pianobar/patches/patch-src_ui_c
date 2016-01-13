@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_ui_c,v 1.17 2016/01/13 08:21:18 dcoppa Exp $
+--- src/ui.c.orig	Sun Nov 22 13:31:27 2015
++++ src/ui.c	Tue Jan 12 11:34:42 2016
+@@ -201,6 +201,7 @@ static CURLcode BarPianoHttpRequest (CURL * const http
+ 	setAndCheck (CURLOPT_PROGRESSDATA, &lint);
+ 	setAndCheck (CURLOPT_NOPROGRESS, 0);
+ 	setAndCheck (CURLOPT_POST, 1);
++	setAndCheck (CURLOPT_CAINFO, "${TRUEPREFIX}/share/pianobar/cert.pem");
+ 	if (settings->caBundle != NULL) {
+ 		setAndCheck (CURLOPT_CAINFO, settings->caBundle);
+ 	}
