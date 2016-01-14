@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.4 2015/08/11 20:16:21 jasper Exp $
+# $OpenBSD: go.port.mk,v 1.5 2016/01/14 15:03:08 jsing Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -11,16 +11,17 @@ MODGO_BUILD_DEPENDS =	lang/go
 BUILD_DEPENDS +=	${MODGO_BUILD_DEPENDS}
 .endif
 
-MODGO_PACKAGES =	go/pkg/openbsd_${MACHINE_ARCH:S/i386/386/}
-MODGO_SOURCES =		go/src
-MODGO_TOOLS =		go/pkg/tool/openbsd_${MACHINE_ARCH:S/i386/386/}
+MODGO_PACKAGE_PATH =	${PREFIX}/go-pkg
+MODGO_PACKAGES =	go-pkg/pkg/openbsd_${MACHINE_ARCH:S/i386/386/}
+MODGO_SOURCES =		go-pkg/src
+MODGO_TOOLS =		go-pkg/tool/openbsd_${MACHINE_ARCH:S/i386/386/}
 
 SUBST_VARS +=		MODGO_TOOLS MODGO_PACKAGES MODGO_SOURCES
 
 MODGO_SUBDIR ?=		${WRKDIST}
 MODGO_TYPE ?=		bin
 MODGO_WORKSPACE ?=	${WRKDIR}/go
-MODGO_CMD ?=		unset GOPATH; export GOPATH="${MODGO_WORKSPACE}"; go
+MODGO_CMD ?=		unset GOPATH; export GOPATH="${MODGO_WORKSPACE}:${MODGO_PACKAGE_PATH}"; go
 MODGO_BUILD_CMD =	${MODGO_CMD} install ${MODGO_FLAGS}
 MODGO_TEST_CMD =	${MODGO_CMD} test ${MODGO_FLAGS}
 
@@ -36,29 +37,20 @@ MODGO_SETUP_WORKSPACE =	mkdir -p ${WRKSRC:H}; mv ${MODGO_SUBDIR} ${WRKSRC};
 
 CATEGORIES +=		lang/go
 
-# Go tends to ignore environment and place some files to system-wide
-# directories.  To prevent such behavior, this modules fixes paths in
-# auto-generated build instructions, and then feeds fixed script to shell
-# The "operation not permitted" filter is needed because Go outputs permission
-# error if USE_SYSTRACE=Yes option is set.
-MODGO_BUILD_TARGET =	${MODGO_BUILD_CMD} ${ALL_TARGET} 2>&1 | sed -E \
-				-e 's, ${LOCALBASE}/go, ${MODGO_WORKSPACE},' \
-				-e '/operation not permitted/d' \
-				-e 's,\$$WORK,${WRKBUILD},g' | sh -v
+MODGO_BUILD_TARGET =	${MODGO_BUILD_CMD} ${ALL_TARGET}
+MODGO_FLAGS ?=		-x
 
 .if ${MODGO_TYPE:L:Mbin}
-MODGO_FLAGS ?=		-x -work
-MODGO_INSTALL_TARGET += cp ${MODGO_WORKSPACE}/bin/* ${PREFIX}/bin
+MODGO_INSTALL_TARGET =	cp ${MODGO_WORKSPACE}/bin/* ${PREFIX}/bin
 .endif
 
 # Go source files serve the purpose of libraries, so sources should be included
 # with library ports.
 .if ${MODGO_TYPE:L:Mlib}
-MODGO_FLAGS ?=		-a -x -work
-MODGO_INSTALL_TARGET =	${INSTALL_DATA_DIR} ${PREFIX}/go; \
+MODGO_INSTALL_TARGET =	${INSTALL_DATA_DIR} ${MODGO_PACKAGE_PATH}; \
 			cp -R ${MODGO_WORKSPACE}/pkg \
-			      ${MODGO_WORKSPACE}/src \
-					${PREFIX}/go;
+			    ${MODGO_WORKSPACE}/src \
+			    ${MODGO_PACKAGE_PATH};
 .endif
 
 MODGO_TEST_TARGET =	${MODGO_TEST_CMD} ${TEST_TARGET}
