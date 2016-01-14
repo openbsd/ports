@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/11 11:04:21 czarkoff Exp $
-
-BROKEN = needs adapting to changes in Go 1.5
+# $OpenBSD: Makefile,v 1.6 2016/01/14 16:11:17 jsing Exp $
 
 COMMENT =		various tools for the Go programming language
 GH_ACCOUNT =		golang
 GH_PROJECT =		tools
-GH_COMMIT =		27e692e6ec36d8f48be794f32553e1400c70dbf2
-DISTNAME =		go-tools-1.4.20150206
-REVISION =		2
+GH_COMMIT = 		99c318c742339e824d89d23ba3b3bff4f4ab27a8
+DISTNAME =		go-tools-1.5.20151226
 CATEGORIES =		devel
 HOMEPAGE =		http://golang.org/
 
@@ -16,19 +13,19 @@ MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 # 3-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c pthread
+WANTLIB +=		c pthread
 
 MODULES =		lang/go
 
 RUN_DEPENDS =		${MODGO_RUN_DEPENDS}
 
+GODOC_TARGET = 		golang.org/x/tools/cmd/godoc
+
 ALL_TARGET =		golang.org/x/tools/cmd/benchcmp \
 			golang.org/x/tools/cmd/callgraph \
-			golang.org/x/tools/cmd/cover \
 			golang.org/x/tools/cmd/digraph \
 			golang.org/x/tools/cmd/eg \
 			golang.org/x/tools/cmd/fiximports \
-			golang.org/x/tools/cmd/godoc \
 			golang.org/x/tools/cmd/godex \
 			golang.org/x/tools/cmd/goimports \
 			golang.org/x/tools/cmd/gomvpkg \
@@ -38,22 +35,21 @@ ALL_TARGET =		golang.org/x/tools/cmd/benchcmp \
 			golang.org/x/tools/cmd/ssadump \
 			golang.org/x/tools/cmd/stress \
 			golang.org/x/tools/cmd/stringer \
-			golang.org/x/tools/cmd/vet
 #			golang.org/x/tools/cmd/html2article \
 #			golang.org/x/tools/cmd/present \
 
-MODGO_TYPE =		bin tool
-MODGO_FLAGS =		-n
+MODGO_TYPE =		bin
 
 post-patch:
 	mkdir -p ${MODGO_WORKSPACE}/src/golang.org/x
 	mv ${WRKDIST} ${MODGO_WORKSPACE}/src/golang.org/x/tools
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/${MODGO_TOOLS}
-.for tool in vet cover
-	${INSTALL_PROGRAM} ${WRKDIR}/${MODGO_TOOLS}/${tool} \
-					${PREFIX}/${MODGO_TOOLS}/${tool}
-.endfor
+# godoc needs special handling - prior to Go 1.2, godoc was part of the base
+# distribution and there is a remaining mapping that causes 'go install' to
+# install godoc in $GOROOT/bin instead of $GOPATH/bin (golang.org/issue/6654).
+do-build:
+	mkdir -p ${MODGO_WORKSPACE}/bin
+	${MODGO_CMD} build ${MODGO_FLAGS} -o ${MODGO_WORKSPACE}/bin/godoc ${GODOC_TARGET}
+	${MODGO_BUILD_TARGET}
 
 .include <bsd.port.mk>

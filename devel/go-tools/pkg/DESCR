@@ -18,5 +18,3 @@ programming language:
  * ssadump	displays and interprets the SSA form of Go programs
  * stress	runs a given process in parallel in a loop and collects failures
  * stringer	creats of methods that satisfy the fmt.Stringer interface
- * cover	analyzes the coverage profiles
- * vet		examines Go source code and reports suspicious constructs
