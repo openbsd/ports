@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/19 08:48:00 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/14 15:55:20 jsing Exp $
+go-pkg/
+go-pkg/pkg/
 ${MODGO_PACKAGES}/
 ${MODGO_PACKAGES}/github.com/
 ${MODGO_PACKAGES}/github.com/tealeg/
@@ -21,6 +23,7 @@ ${MODGO_SOURCES}/github.com/tealeg/xlsx/date_test.go
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/doc.go
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/file.go
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/file_test.go
+${MODGO_SOURCES}/github.com/tealeg/xlsx/fuzzy_test.go
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/hsl.go
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/lib.go
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/lib_test.go
@@ -34,11 +37,14 @@ ${MODGO_SOURCES}/github.com/tealeg/xlsx/style.go
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/style_test.go
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/templates.go
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/testdocs/
+${MODGO_SOURCES}/github.com/tealeg/xlsx/testdocs/badfile_noWorkbookRels.xlsx
+${MODGO_SOURCES}/github.com/tealeg/xlsx/testdocs/badfile_noWorksheets.xlsx
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/testdocs/empty_rows.xlsx
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/testdocs/googleDocsTest.xlsx
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/testdocs/macExcelTest.xlsx
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/testdocs/macNumbersTest.xlsx
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/testdocs/noStylesAndSharedStringsTest.xlsx
+${MODGO_SOURCES}/github.com/tealeg/xlsx/testdocs/original.xlsx
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/testdocs/testcelltypes.xlsx
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/testdocs/testchartsheet.xlsx
 ${MODGO_SOURCES}/github.com/tealeg/xlsx/testdocs/testfile.xlsx

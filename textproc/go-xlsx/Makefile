@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/10 16:04:24 sthen Exp $
-
-BROKEN = needs adapting to changes in Go 1.5
+# $OpenBSD: Makefile,v 1.5 2016/01/14 15:55:20 jsing Exp $
 
 PORTROACH =		ignore
 
+REVISION =		0
 COMMENT =		library for reading and writing XLSX files
 DISTNAME =		go-xlsx-20151010
 CATEGORIES =		textproc converters
