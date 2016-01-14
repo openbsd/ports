@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_angelscript_source_as_memory_cpp,v 1.1 2016/01/14 07:29:59 jasper Exp $
+
+Stop using malloc.h
+
+--- lib/angelscript/source/as_memory.cpp.orig	Wed Jan 13 23:47:28 2016
++++ lib/angelscript/source/as_memory.cpp	Wed Jan 13 23:47:45 2016
+@@ -38,7 +38,8 @@
+ 
+ #include <stdlib.h>
+ 
+-#if !defined(__APPLE__) && !defined( __SNC__ ) && !defined( __ghs__ ) && !defined(__FreeBSD__)
++#if !defined(__APPLE__) && !defined( __SNC__ ) && !defined( __ghs__ ) && \
++	!defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #include <malloc.h>
+ #endif
+ 
