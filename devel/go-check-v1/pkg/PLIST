@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/19 08:42:54 czarkoff Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/14 15:59:06 jsing Exp $
+go-pkg/
+go-pkg/pkg/
 ${MODGO_PACKAGES}/
 ${MODGO_PACKAGES}/gopkg.in/
 ${MODGO_PACKAGES}/gopkg.in/check.v1.a
