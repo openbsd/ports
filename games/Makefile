@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.324 2016/01/07 10:35:26 pascal Exp $
+# $OpenBSD: Makefile,v 1.325 2016/01/14 00:13:22 abieber Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -124,6 +124,7 @@
      SUBDIR += hypatia
      SUBDIR += icebreaker
      SUBDIR += instead
+     SUBDIR += ioquake3
      SUBDIR += irrlamb
      SUBDIR += jag
      SUBDIR += jbrickshooter
