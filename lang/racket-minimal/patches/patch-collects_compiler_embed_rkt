@@ -1,13 +1,37 @@
-$OpenBSD: patch-collects_compiler_embed_rkt,v 1.1 2016/01/13 02:05:21 juanfra Exp $
+$OpenBSD: patch-collects_compiler_embed_rkt,v 1.2 2016/01/14 21:21:01 juanfra Exp $
 
-"raco distribute" only works correctly when "raco exe" generates
-files with the write permission enabled.
+http://bugs.racket-lang.org/query/?cmd=view&pr=15214
 
---- collects/compiler/embed.rkt.orig	Tue Jan 12 03:24:07 2016
-+++ collects/compiler/embed.rkt	Tue Jan 12 03:47:11 2016
-@@ -1820,4 +1820,4 @@
- ;; Restores old permissions (if not #f)
- (define (done-writable dest-exe old-perms)
-   (when old-perms
+https://github.com/racket/racket/commit/9498bdd
+
+--- collects/compiler/embed.rkt.orig	Fri Oct 16 23:00:55 2015
++++ collects/compiler/embed.rkt	Thu Jan 14 21:41:32 2016
+@@ -21,6 +21,7 @@
+          "private/pe-rsrc.rkt"
+          "private/collects-path.rkt"
+          "private/configdir.rkt"
++         "private/write-perm.rkt"
+          "find-exe.rkt")
+ 
+ 
+@@ -1782,20 +1783,3 @@
+     [(list? p) (map mac-mred-collects-path-adjust p)]
+     [(relative-path? p) (build-path 'up 'up 'up p)]
+     [else p]))
+-
+-;; Returns #f (no change needed) or old permissions
+-(define (ensure-writable dest-exe)
+-  (cond
+-   [(member 'write (file-or-directory-permissions dest-exe))
+-    ;; No change needed
+-    #f]
+-   [else
+-    (define old-perms
+-      (file-or-directory-permissions dest-exe 'bits))
+-    (file-or-directory-permissions dest-exe (bitwise-ior old-perms #o200))
+-    old-perms]))
+-
+-;; Restores old permissions (if not #f)
+-(define (done-writable dest-exe old-perms)
+-  (when old-perms
 -    (file-or-directory-permissions dest-exe old-perms)))
-+    (file-or-directory-permissions dest-exe #o755)))
