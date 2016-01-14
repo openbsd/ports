@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/05/27 23:33:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/01/14 09:53:31 sthen Exp $
 bin/get_iplayer
 @man man/man1/get_iplayer.1
 share/get_iplayer/
@@ -6,6 +6,3 @@ share/get_iplayer/options.sample
 @sample ${SYSCONFDIR}/get_iplayer/
 @sample ${SYSCONFDIR}/get_iplayer/options
 share/get_iplayer/plugins/
-share/get_iplayer/plugins/localfiles.plugin
-share/get_iplayer/plugins/plugin.template
-share/get_iplayer/plugins/podcast.plugin

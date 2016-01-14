@@ -1,13 +1,13 @@
-$OpenBSD: patch-get_iplayer,v 1.72 2015/06/03 15:22:07 sthen Exp $
---- get_iplayer.orig	Wed Jun  3 10:34:22 2015
-+++ get_iplayer	Wed Jun  3 16:21:28 2015
+$OpenBSD: patch-get_iplayer,v 1.73 2016/01/14 09:53:31 sthen Exp $
+--- get_iplayer.orig	Thu Jan 14 02:34:19 2016
++++ get_iplayer	Thu Jan 14 09:34:37 2016
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env perl
 +#!/usr/bin/perl
  #
- # get_iplayer - Lists, Records and Streams BBC iPlayer TV and Radio programmes + other Programmes via 3rd-party plugins
+ # get_iplayer - Lists, Records and Streams BBC iPlayer TV and Radio programmes and BBC podcasts
  #
-@@ -390,6 +390,7 @@ if ( $opt->{encodinglocale} =~ /UTF-?8/i ) {
+@@ -393,6 +393,7 @@ if ( $opt->{encodinglocale} =~ /UTF-?8/i ) {
  }
  
  # Copy a few options over to opt so that logger works
@@ -15,34 +15,25 @@ $OpenBSD: patch-get_iplayer,v 1.72 2015/06/03 15:22:07 sthen Exp $
  $opt->{debug} = $opt->{verbose} = 1 if $opt_pre->{debug};
  $opt->{verbose} = 1 if $opt_pre->{verbose};
  $opt->{silent} = $opt->{quiet} = 1 if $opt_pre->{silent};
-@@ -442,7 +443,7 @@ my $plugin_dir_system;
+@@ -453,7 +454,7 @@ my $plugin_dir_system;
  if ( defined $ENV{ALLUSERSPROFILE} && $^O eq "MSWin32" ) {
-     $plugin_dir_system = $ENV{ALLUSERSPROFILE}.'/get_iplayer/plugins';
+ 	$plugin_dir_system = $ENV{ALLUSERSPROFILE}.'/get_iplayer/plugins';
  } else {
--    $plugin_dir_system = '/usr/share/get_iplayer/plugins';
-+    $plugin_dir_system = '${TRUEPREFIX}/share/get_iplayer/plugins';
+-	$plugin_dir_system = '/usr/share/get_iplayer/plugins';
++	$plugin_dir_system = '${TRUEPREFIX}/share/get_iplayer/plugins';
  }
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
-@@ -924,7 +925,7 @@ sub init_search {
- 	delete $binopts->{vlc};
- 	push @{ $binopts->{vlc} }, '-vv' if $opt->{debug};
+@@ -916,7 +917,7 @@ sub init_search {
+ 	}
+ 
  
 -	$bin->{id3v2}		= $opt->{id3v2} || 'id3v2';
 +	$bin->{id3v2}		= $opt->{id3v2} || 'id3tag';
  	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
  
- 	$bin->{tee}		= 'tee';
-@@ -2737,7 +2738,7 @@ sub request_url_retry {
- 	}
- 
- 	# Malformed URL check
--	if ( $url !~ m{^\s*http\:\/\/}i ) {
-+	if ( $url !~ m{^\s*(http|https)\:\/\/}i ) {
- 		logger "ERROR: Malformed URL: '$url'\n";
- 		return '';
- 	}
-@@ -12403,7 +12404,7 @@ sub tag_file_id3 {
+ 	$bin->{rtmpdump}	= $opt->{rtmpdump} || 'rtmpdump';
+@@ -12210,7 +12211,7 @@ sub tag_file_id3 {
  # add basic ID3 tag with id3v2
  sub tag_file_id3_basic {
  	my ($self, $meta, $tags) = @_;
