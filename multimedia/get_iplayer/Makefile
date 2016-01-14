@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.94 2016/01/14 09:53:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2016/01/14 12:05:01 sthen Exp $
 
 COMMENT=		download/stream programmes from BBC iPlayer
 
-DISTNAME=		get_iplayer-2.95pre20160114
+DISTNAME=		get_iplayer-2.95pre20160114a
 GH_ACCOUNT=		get-iplayer
 GH_PROJECT=		get_iplayer
-GH_COMMIT=		e7bfcf55c1ac15f2fe780156e07d3ae30e21e9a7
+GH_COMMIT=		480f4b531fca4412abf63ffb3e1d34fe40dac17a
 
 CATEGORIES=		multimedia
 
