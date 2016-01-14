@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_c,v 1.9 2015/12/10 06:53:38 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_c,v 1.10 2016/01/14 06:09:43 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -36,6 +36,8 @@ AAC encoder: Fix application of M/S with PNS
 
 AAC encoder: improve SF range utilization
 
+aac: Provide more information on the failure message
+
 aacenc: mark the "faac"-like coder for removal
 
 aacenc: mark coders other than twoloop as experimental
@@ -46,10 +48,18 @@ aacenc: fix aac_pred option triggering an error
 
 aacenc: move the TNS search and filtering before PNS
 
-aacenc: update max_sfb when num_swb changes
+aacenc: switch to using the RNG from libavutil
 
---- libavcodec/aacenc.c.orig	Thu Nov 12 02:08:28 2015
-+++ libavcodec/aacenc.c	Wed Dec  9 01:12:49 2015
+AAC encoder: don't apply MS on special bands
+
+acenc: remove deprecated avctx->frame_bits use
+
+avcodec/aacenc: Fix NAN check
+
+avcodec/aacenc: mark output as const as its not written to
+
+--- libavcodec/aacenc.c.orig	Wed Jan 13 15:27:48 2016
++++ libavcodec/aacenc.c	Wed Jan 13 17:25:05 2016
 @@ -54,11 +54,12 @@ static void put_audio_specific_config(AVCodecContext *
  {
      PutBitContext pb;
@@ -81,6 +91,15 @@ aacenc: update max_sfb when num_swb changes
  #define WINDOW_FUNC(type) \
  static void apply_ ##type ##_window(AVFloatDSPContext *fdsp, \
                                      SingleChannelElement *sce, \
+@@ -140,7 +151,7 @@ static void apply_window_and_mdct(AACEncContext *s, Si
+                                   float *audio)
+ {
+     int i;
+-    float *output = sce->ret_buf;
++    const float *output = sce->ret_buf;
+ 
+     apply_window[sce->ics.window_sequence[0]](s->fdsp, sce, audio);
+ 
 @@ -258,6 +269,8 @@ static void apply_intensity_stereo(ChannelElement *cpe
                      start += ics->swb_sizes[g];
                      continue;
@@ -100,8 +119,8 @@ aacenc: update max_sfb when num_swb changes
 +                 * ms_mask is set.
 +                 */
 +                if (!cpe->ms_mask[w*16 + g] || cpe->is_mask[w*16 + g]
-+                    || cpe->ch[0].band_type[w*16 + g] == NOISE_BT
-+                    || cpe->ch[1].band_type[w*16 + g] == NOISE_BT) {
++                    || cpe->ch[0].band_type[w*16 + g] >= NOISE_BT
++                    || cpe->ch[1].band_type[w*16 + g] >= NOISE_BT) {
                      start += ics->swb_sizes[g];
                      continue;
                  }
@@ -149,19 +168,12 @@ aacenc: update max_sfb when num_swb changes
                                                ics->window_sequence[0]);
              }
              ics->window_sequence[1] = ics->window_sequence[0];
-@@ -547,6 +571,7 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
-             ics->num_windows        = wi[ch].num_windows;
-             ics->swb_sizes          = s->psy.bands    [ics->num_windows == 8];
-             ics->num_swb            = tag == TYPE_LFE ? ics->num_swb : s->psy.num_bands[ics->num_windows == 8];
-+            ics->max_sfb            = FFMIN(ics->max_sfb, ics->num_swb);
-             ics->swb_offset         = wi[ch].window_type[0] == EIGHT_SHORT_SEQUENCE ?
-                                         ff_swb_offset_128 [s->samplerate_index]:
-                                         ff_swb_offset_1024[s->samplerate_index];
-@@ -570,25 +595,32 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -571,25 +595,40 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  ics->clip_avoidance_factor = 1.0f;
              }
  
 -            apply_window_and_mdct(s, &cpe->ch[ch], overlap);
+-            if (isnan(cpe->ch->coeffs[0])) {
 +            apply_window_and_mdct(s, sce, overlap);
 +
 +            if (s->options.ltp && s->coder->update_ltp) {
@@ -170,7 +182,15 @@ aacenc: update max_sfb when num_swb changes
 +                s->mdct1024.mdct_calc(&s->mdct1024, sce->lcoeffs, sce->ret_buf);
 +            }
 +
-             if (isnan(cpe->ch->coeffs[0])) {
++            if (isnan(cpe->ch->coeffs[0]) ||
++                isnan(cpe->ch->coeffs[  128]) ||
++                isnan(cpe->ch->coeffs[2*128]) ||
++                isnan(cpe->ch->coeffs[3*128]) ||
++                isnan(cpe->ch->coeffs[4*128]) ||
++                isnan(cpe->ch->coeffs[5*128]) ||
++                isnan(cpe->ch->coeffs[6*128]) ||
++                isnan(cpe->ch->coeffs[7*128])
++            ) {
                  av_log(avctx, AV_LOG_ERROR, "Input contains NaN\n");
                  return AVERROR(EINVAL);
              }
@@ -194,7 +214,7 @@ aacenc: update max_sfb when num_swb changes
          memset(chan_el_counter, 0, sizeof(chan_el_counter));
          for (i = 0; i < s->chan_map[0]; i++) {
              FFPsyWindowInfo* wi = windows + start_ch;
-@@ -605,15 +637,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -606,15 +645,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  sce = &cpe->ch[ch];
                  coeffs[ch] = sce->coeffs;
                  sce->ics.predictor_present = 0;
@@ -208,7 +228,7 @@ aacenc: update max_sfb when num_swb changes
                          sce->band_type[w] = 0;
              }
 +            s->psy.bitres.alloc = -1;
-+            s->psy.bitres.bits = avctx->frame_bits / s->channels;
++            s->psy.bitres.bits = s->last_frame_pb_count / s->channels;
              s->psy.model->analyze(&s->psy, start_ch, coeffs, wi);
 +            if (s->psy.bitres.alloc > 0) {
 +                /* Lambda unused here on purpose, we need to take psy's unscaled allocation */
@@ -224,7 +244,7 @@ aacenc: update max_sfb when num_swb changes
                  s->coder->search_for_quantizers(avctx, s, &cpe->ch[ch], s->lambda);
              }
              if (chans > 1
-@@ -631,14 +676,14 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -632,14 +684,14 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              for (ch = 0; ch < chans; ch++) { /* TNS and PNS */
                  sce = &cpe->ch[ch];
                  s->cur_channel = start_ch + ch;
@@ -241,7 +261,7 @@ aacenc: update max_sfb when num_swb changes
              }
              s->cur_channel = start_ch;
              if (s->options.intensity_stereo) { /* Intensity Stereo */
-@@ -655,8 +700,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -656,8 +708,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                          s->coder->search_for_pred(s, sce);
                      if (cpe->ch[ch].ics.predictor_present) pred_mode = 1;
                  }
@@ -252,7 +272,7 @@ aacenc: update max_sfb when num_swb changes
                  for (ch = 0; ch < chans; ch++) {
                      sce = &cpe->ch[ch];
                      s->cur_channel = start_ch + ch;
-@@ -665,22 +710,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -666,22 +718,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  }
                  s->cur_channel = start_ch;
              }
@@ -291,7 +311,7 @@ aacenc: update max_sfb when num_swb changes
                      encode_ms_info(&s->pb, cpe);
                      if (cpe->ms_mode) ms_mode = 1;
                  }
-@@ -692,36 +749,76 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -693,36 +757,78 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              start_ch += chans;
          }
  
@@ -374,9 +394,7 @@ aacenc: update max_sfb when num_swb changes
 +
      put_bits(&s->pb, 3, TYPE_END);
      flush_put_bits(&s->pb);
-     avctx->frame_bits = put_bits_count(&s->pb);
-+    s->lambda_sum += s->lambda;
-+    s->lambda_count++;
+-    avctx->frame_bits = put_bits_count(&s->pb);
  
 -    // rate control stuff
 -    if (!(avctx->flags & AV_CODEC_FLAG_QSCALE)) {
@@ -384,11 +402,15 @@ aacenc: update max_sfb when num_swb changes
 -        s->lambda *= ratio;
 -        s->lambda = FFMIN(s->lambda, 65536.f);
 -    }
--
++    s->last_frame_pb_count = put_bits_count(&s->pb);
+ 
++    s->lambda_sum += s->lambda;
++    s->lambda_count++;
++
      if (!frame)
          s->last_frame++;
  
-@@ -737,6 +834,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
+@@ -738,6 +844,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
  {
      AACEncContext *s = avctx->priv_data;
  
@@ -397,14 +419,14 @@ aacenc: update max_sfb when num_swb changes
      ff_mdct_end(&s->mdct1024);
      ff_mdct_end(&s->mdct128);
      ff_psy_end(&s->psy);
-@@ -795,76 +894,105 @@ static av_cold int aac_encode_init(AVCodecContext *avc
+@@ -796,76 +904,108 @@ static av_cold int aac_encode_init(AVCodecContext *avc
      uint8_t grouping[AAC_MAX_CHANNELS];
      int lengths[2];
  
 +    s->channels = avctx->channels;
 +    s->chan_map = aac_chan_configs[s->channels-1];
-+    s->random_state = 0x1f2e3d4c;
 +    s->lambda = avctx->global_quality > 0 ? avctx->global_quality : 120;
++    s->last_frame_pb_count = 0;
 +    avctx->extradata_size = 5;
      avctx->frame_size = 1024;
 +    avctx->initial_padding = 1024;
@@ -430,8 +452,11 @@ aacenc: update max_sfb when num_swb changes
 +    ERROR_IF(s->channels > AAC_MAX_CHANNELS || s->channels == 7,
               "Unsupported number of channels: %d\n", s->channels);
      WARN_IF(1024.0 * avctx->bit_rate / avctx->sample_rate > 6144 * s->channels,
-              "Too many bits per frame requested, clamping to max\n");
+-             "Too many bits per frame requested, clamping to max\n");
 -    if (avctx->profile == FF_PROFILE_AAC_MAIN) {
++             "Too many bits %f > %d per frame requested, clamping to max\n",
++             1024.0 * avctx->bit_rate / avctx->sample_rate,
++             6144 * s->channels);
 +
 +    for (i = 0; i < FF_ARRAY_ELEMS(aacenc_profiles); i++)
 +        if (avctx->profile == aacenc_profiles[i])
@@ -523,6 +548,7 @@ aacenc: update max_sfb when num_swb changes
      s->psypp = ff_psy_preprocess_init(avctx);
 -    s->coder = &ff_aac_coders[s->options.aac_coder];
      ff_lpc_init(&s->lpc, 2*avctx->frame_size, TNS_MAX_ORDER, FF_LPC_TYPE_LEVINSON);
++    av_lfg_init(&s->lfg, 0x72adca55);
  
      if (HAVE_MIPSDSPR1)
          ff_aac_coder_init_mips(s);
@@ -535,7 +561,7 @@ aacenc: update max_sfb when num_swb changes
      ff_af_queue_init(avctx, &s->afq);
  
      return 0;
-@@ -875,27 +1003,17 @@ fail:
+@@ -876,27 +1016,17 @@ fail:
  
  #define AACENC_FLAGS AV_OPT_FLAG_ENCODING_PARAM | AV_OPT_FLAG_AUDIO_PARAM
  static const AVOption aacenc_options[] = {
@@ -574,7 +600,7 @@ aacenc: update max_sfb when num_swb changes
      {NULL}
  };
  
-@@ -916,8 +1034,7 @@ AVCodec ff_aac_encoder = {
+@@ -917,8 +1047,7 @@ AVCodec ff_aac_encoder = {
      .encode2        = aac_encode_frame,
      .close          = aac_encode_end,
      .supported_samplerates = mpeg4audio_sample_rates,

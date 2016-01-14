@@ -1,9 +1,9 @@
-$OpenBSD: patch-libavcodec_aacsbr_template_c,v 1.1 2015/11/13 07:03:00 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacsbr_template_c,v 1.2 2016/01/14 06:09:43 ajacoutot Exp $
 
 avcodec/aacsbr_template: replace qsort with AV_QSORT
 
---- libavcodec/aacsbr_template.c.orig	Thu Nov  5 02:07:03 2015
-+++ libavcodec/aacsbr_template.c	Thu Nov  5 02:07:14 2015
+--- libavcodec/aacsbr_template.c.orig	Fri Dec 25 03:00:18 2015
++++ libavcodec/aacsbr_template.c	Fri Dec 25 21:02:42 2015
 @@ -32,6 +32,8 @@
   * @author Zoran Basaric ( zoran.basaric@imgtec.com )
   */
@@ -13,7 +13,7 @@ avcodec/aacsbr_template: replace qsort with AV_QSORT
  av_cold void AAC_RENAME(ff_aac_sbr_init)(void)
  {
      static const struct {
-@@ -138,8 +140,8 @@ static void sbr_make_f_tablelim(SpectralBandReplicatio
+@@ -139,8 +141,8 @@ static void sbr_make_f_tablelim(SpectralBandReplicatio
              memcpy(sbr->f_tablelim + sbr->n[0] + 1, patch_borders + 1,
                     (sbr->num_patches - 1) * sizeof(patch_borders[0]));
  
@@ -24,7 +24,7 @@ avcodec/aacsbr_template: replace qsort with AV_QSORT
                qsort_comparison_function_int16);
  
          sbr->n_lim = sbr->n[0] + sbr->num_patches - 1;
-@@ -296,7 +298,7 @@ static int sbr_make_f_master(AACContext *ac, SpectralB
+@@ -298,7 +300,7 @@ static int sbr_make_f_master(AACContext *ac, SpectralB
      if (spectrum->bs_stop_freq < 14) {
          sbr->k[2] = stop_min;
          make_bands(stop_dk, stop_min, 64, 13);
@@ -33,7 +33,7 @@ avcodec/aacsbr_template: replace qsort with AV_QSORT
          for (k = 0; k < spectrum->bs_stop_freq; k++)
              sbr->k[2] += stop_dk[k];
      } else if (spectrum->bs_stop_freq == 14) {
-@@ -389,7 +391,7 @@ static int sbr_make_f_master(AACContext *ac, SpectralB
+@@ -391,7 +393,7 @@ static int sbr_make_f_master(AACContext *ac, SpectralB
  
          make_bands(vk0+1, sbr->k[0], sbr->k[1], num_bands_0);
  
@@ -42,7 +42,7 @@ avcodec/aacsbr_template: replace qsort with AV_QSORT
          vdk0_max = vk0[num_bands_0];
  
          vk0[0] = sbr->k[0];
-@@ -430,13 +432,13 @@ static int sbr_make_f_master(AACContext *ac, SpectralB
+@@ -432,13 +434,13 @@ static int sbr_make_f_master(AACContext *ac, SpectralB
  
              if (vdk1_min < vdk0_max) {
                  int change;

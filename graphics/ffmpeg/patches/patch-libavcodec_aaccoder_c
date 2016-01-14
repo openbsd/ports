@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aaccoder_c,v 1.7 2015/12/10 06:53:38 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aaccoder_c,v 1.8 2016/01/14 06:09:43 ajacoutot Exp $
 
 aaccoder: use roundf() instead of ceilf()
 
@@ -28,14 +28,20 @@ avcodec/aac_tablegen: get rid of hardcoded tables entirely
 
 AAC encoder: improve SF range utilization
 
-aaccoder: prevent crash of anmr coder
-
 AAC encoder: ANMR, avoid empty search ranges
 
 AAC encoder: fix OOB access in search_for_pns
 
---- libavcodec/aaccoder.c.orig	Thu Nov 12 02:08:28 2015
-+++ libavcodec/aaccoder.c	Wed Dec  9 19:16:49 2015
+aacenc: switch to using the RNG from libavutil
+
+AAC encoder: fix possible assertion failure in PNS
+
+AAC encoder: avoid assertion failure on PNS
+
+AAC encoder: various fixes in M/S coding
+
+--- libavcodec/aaccoder.c.orig	Fri Dec 25 03:00:18 2015
++++ libavcodec/aaccoder.c	Wed Jan 13 15:13:08 2016
 @@ -33,7 +33,9 @@
  #include "libavutil/libm.h" // brought forward to work around cygwin header breakage
  
@@ -288,15 +294,6 @@ AAC encoder: fix OOB access in search_for_pns
                      }
                      minrd = FFMIN(minrd, dist);
  
-@@ -499,7 +380,7 @@ static void search_for_quantizers_anmr(AVCodecContext 
-     }
-     while (idx) {
-         sce->sf_idx[bandaddr[idx]] = minq + q0;
--        minq = paths[idx][minq].prev;
-+        minq = FFMAX(paths[idx][minq].prev, 0);
-         idx--;
-     }
-     //set the same quantizers inside window groups
 @@ -509,156 +390,7 @@ static void search_for_quantizers_anmr(AVCodecContext 
                  sce->sf_idx[(w+w2)*16+g] = sce->sf_idx[w*16+g];
  }
@@ -463,7 +460,7 @@ AAC encoder: fix OOB access in search_for_pns
                                                 0);
                      dist -= b;
                  }
-@@ -863,93 +595,343 @@ static void search_for_quantizers_fast(AVCodecContext 
+@@ -863,93 +595,354 @@ static void search_for_quantizers_fast(AVCodecContext 
  
  static void search_for_pns(AACEncContext *s, AVCodecContext *avctx, SingleChannelElement *sce)
  {
@@ -527,8 +524,11 @@ AAC encoder: fix OOB access in search_for_pns
 +            const int start = wstart+sce->ics.swb_offset[g];
 +            const float freq = (start-wstart)*freq_mult;
 +            const float freq_boost = FFMAX(0.88f*freq/NOISE_LOW_LIMIT, 1.0f);
-+            if (freq < NOISE_LOW_LIMIT || (start-wstart) >= cutoff)
++            if (freq < NOISE_LOW_LIMIT || (start-wstart) >= cutoff) {
++                if (!sce->zeroes[w*16+g])
++                    prev_sf = sce->sf_idx[w*16+g];
 +                continue;
++            }
 +            for (w2 = 0; w2 < sce->ics.group_len[w]; w2++) {
 +                band = &s->psy.ch[s->cur_channel].psy_bands[(w+w2)*16+g];
 +                sfb_energy += band->energy;
@@ -584,8 +584,12 @@ AAC encoder: fix OOB access in search_for_pns
 +                float band_energy, scale, pns_senergy;
 +                const int start_c = (w+w2)*128+sce->ics.swb_offset[g];
 +                band = &s->psy.ch[s->cur_channel].psy_bands[(w+w2)*16+g];
-+                for (i = 0; i < sce->ics.swb_sizes[g]; i++)
-+                    PNS[i] = s->random_state = lcg_random(s->random_state);
++                for (i = 0; i < sce->ics.swb_sizes[g]; i+=2) {
++                    double rnd[2];
++                    av_bmg_get(&s->lfg, rnd);
++                    PNS[i+0] = (float)rnd[0];
++                    PNS[i+1] = (float)rnd[1];
++                }
 +                band_energy = s->fdsp->scalarproduct_float(PNS, PNS, sce->ics.swb_sizes[g]);
 +                scale = noise_amp/sqrtf(band_energy);
 +                s->fdsp->vector_fmul_scalar(PNS, PNS, scale, sce->ics.swb_sizes[g]);
@@ -613,9 +617,10 @@ AAC encoder: fix OOB access in search_for_pns
 +                sce->band_type[w*16+g] = NOISE_BT;
 +                sce->zeroes[w*16+g] = 0;
 +                prev = noise_sfi;
++            } else {
++                if (!sce->zeroes[w*16+g])
++                    prev_sf = sce->sf_idx[w*16+g];
 +            }
-+            if (!sce->zeroes[w*16+g])
-+                prev_sf = sce->sf_idx[w*16+g];
          }
      }
  }
@@ -717,8 +722,9 @@ AAC encoder: fix OOB access in search_for_pns
 -            if (!cpe->ch[0].zeroes[w*16+g] && !cpe->ch[1].zeroes[w*16+g]) {
 -                float dist1 = 0.0f, dist2 = 0.0f;
 +            float bmax = bval2bmax(g * 17.0f / sce0->ics.num_swb) / 0.0045f;
-+            cpe->ms_mask[w*16+g] = 0;
-+            if (!sce0->zeroes[w*16+g] && !sce1->zeroes[w*16+g]) {
++            if (!cpe->is_mask[w*16+g])
++                cpe->ms_mask[w*16+g] = 0;
++            if (!sce0->zeroes[w*16+g] && !sce1->zeroes[w*16+g] && !cpe->is_mask[w*16+g]) {
 +                float Mmax = 0.0f, Smax = 0.0f;
 +
 +                /* Must compute mid/side SF and book for the whole window group */
@@ -780,7 +786,7 @@ AAC encoder: fix OOB access in search_for_pns
 +                    minidx = FFMIN(sce0->sf_idx[w*16+g], sce1->sf_idx[w*16+g]);
 +                    mididx = av_clip(minidx, 0, SCALE_MAX_POS - SCALE_DIV_512);
 +                    sididx = av_clip(minidx - sid_sf_boost * 3, 0, SCALE_MAX_POS - SCALE_DIV_512);
-+                    if (!cpe->is_mask[w*16+g] && sce0->band_type[w*16+g] != NOISE_BT && sce1->band_type[w*16+g] != NOISE_BT
++                    if (sce0->band_type[w*16+g] != NOISE_BT && sce1->band_type[w*16+g] != NOISE_BT
 +                        && (   !ff_sfdelta_can_replace(sce0, nextband0, prev_mid, mididx, w*16+g)
 +                            || !ff_sfdelta_can_replace(sce1, nextband1, prev_side, sididx, w*16+g))) {
 +                        /* scalefactor range violation, bad stuff, will decrease quality unacceptably */
@@ -813,40 +819,42 @@ AAC encoder: fix OOB access in search_for_pns
 +                        dist1 += quantize_band_cost(s, &sce0->coeffs[start + (w+w2)*128],
 +                                                    L34,
 +                                                    sce0->ics.swb_sizes[g],
-+                                                    sce0->sf_idx[(w+w2)*16+g],
-+                                                    sce0->band_type[(w+w2)*16+g],
++                                                    sce0->sf_idx[w*16+g],
++                                                    sce0->band_type[w*16+g],
 +                                                    lambda / band0->threshold, INFINITY, &b1, NULL, 0);
 +                        dist1 += quantize_band_cost(s, &sce1->coeffs[start + (w+w2)*128],
 +                                                    R34,
 +                                                    sce1->ics.swb_sizes[g],
-+                                                    sce1->sf_idx[(w+w2)*16+g],
-+                                                    sce1->band_type[(w+w2)*16+g],
++                                                    sce1->sf_idx[w*16+g],
++                                                    sce1->band_type[w*16+g],
 +                                                    lambda / band1->threshold, INFINITY, &b2, NULL, 0);
 +                        dist2 += quantize_band_cost(s, M,
 +                                                    M34,
 +                                                    sce0->ics.swb_sizes[g],
-+                                                    sce0->sf_idx[(w+w2)*16+g],
-+                                                    sce0->band_type[(w+w2)*16+g],
++                                                    mididx,
++                                                    midcb,
 +                                                    lambda / minthr, INFINITY, &b3, NULL, 0);
 +                        dist2 += quantize_band_cost(s, S,
 +                                                    S34,
 +                                                    sce1->ics.swb_sizes[g],
-+                                                    sce1->sf_idx[(w+w2)*16+g],
-+                                                    sce1->band_type[(w+w2)*16+g],
++                                                    sididx,
++                                                    sidcb,
 +                                                    mslambda / (minthr * bmax), INFINITY, &b4, NULL, 0);
 +                        B0 += b1+b2;
 +                        B1 += b3+b4;
-+                        dist1 -= B0;
-+                        dist2 -= B1;
++                        dist1 -= b1+b2;
++                        dist2 -= b3+b4;
 +                    }
 +                    cpe->ms_mask[w*16+g] = dist2 <= dist1 && B1 < B0;
 +                    if (cpe->ms_mask[w*16+g]) {
-+                        /* Setting the M/S mask is useful with I/S or PNS, but only the flag */
-+                        if (!cpe->is_mask[w*16+g] && sce0->band_type[w*16+g] != NOISE_BT && sce1->band_type[w*16+g] != NOISE_BT) {
++                        if (sce0->band_type[w*16+g] != NOISE_BT && sce1->band_type[w*16+g] != NOISE_BT) {
 +                            sce0->sf_idx[w*16+g] = mididx;
 +                            sce1->sf_idx[w*16+g] = sididx;
 +                            sce0->band_type[w*16+g] = midcb;
 +                            sce1->band_type[w*16+g] = sidcb;
++                        } else if ((sce0->band_type[w*16+g] != NOISE_BT) ^ (sce1->band_type[w*16+g] != NOISE_BT)) {
++                            /* ms_mask unneeded, and it confuses some decoders */
++                            cpe->ms_mask[w*16+g] = 0;
 +                        }
 +                        break;
 +                    } else if (B1 > B0) {
@@ -862,7 +870,7 @@ AAC encoder: fix OOB access in search_for_pns
              start += sce0->ics.swb_sizes[g];
          }
      }
-@@ -961,13 +943,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+@@ -961,13 +954,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
          encode_window_bands_info,
          quantize_and_encode_band,
          ff_aac_encode_tns_info,
@@ -883,7 +891,7 @@ AAC encoder: fix OOB access in search_for_pns
          search_for_ms,
          ff_aac_search_for_is,
          ff_aac_search_for_pred,
-@@ -977,13 +965,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+@@ -977,13 +976,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
          encode_window_bands_info,
          quantize_and_encode_band,
          ff_aac_encode_tns_info,
@@ -904,7 +912,7 @@ AAC encoder: fix OOB access in search_for_pns
          search_for_ms,
          ff_aac_search_for_is,
          ff_aac_search_for_pred,
-@@ -993,13 +987,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+@@ -993,13 +998,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
          codebook_trellis_rate,
          quantize_and_encode_band,
          ff_aac_encode_tns_info,
@@ -925,7 +933,7 @@ AAC encoder: fix OOB access in search_for_pns
          search_for_ms,
          ff_aac_search_for_is,
          ff_aac_search_for_pred,
-@@ -1009,13 +1009,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+@@ -1009,13 +1020,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
          encode_window_bands_info,
          quantize_and_encode_band,
          ff_aac_encode_tns_info,

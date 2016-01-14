@@ -1,7 +1,18 @@
-$OpenBSD: patch-configure,v 1.52 2015/12/17 09:54:33 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.53 2016/01/14 06:09:43 ajacoutot Exp $
+
+lavu/random_seed: use arc4random() when available
+
 --- configure.orig	Thu Nov 12 02:08:28 2015
-+++ configure	Wed Dec 16 19:10:47 2015
-@@ -4307,7 +4307,7 @@ case $target_os in
++++ configure	Thu Dec 17 20:55:14 2015
+@@ -1755,6 +1755,7 @@ MATH_FUNCS="
+ SYSTEM_FUNCS="
+     access
+     aligned_malloc
++    arc4random
+     clock_gettime
+     closesocket
+     CommandLineToArgvW
+@@ -4307,7 +4308,7 @@ case $target_os in
      openbsd|bitrig)
          disable symver
          SHFLAGS='-shared'
@@ -10,7 +21,7 @@ $OpenBSD: patch-configure,v 1.52 2015/12/17 09:54:33 ajacoutot Exp $
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -4671,7 +4671,7 @@ die_license_disabled version3 libvo_amrwbenc
+@@ -4671,7 +4672,7 @@ die_license_disabled version3 libvo_amrwbenc
  
  enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
  
@@ -19,7 +30,15 @@ $OpenBSD: patch-configure,v 1.52 2015/12/17 09:54:33 ajacoutot Exp $
  
  enable_weak_pic() {
      disabled pic && return
-@@ -5785,6 +5785,11 @@ if test $target_os = "haiku"; then
+@@ -5066,6 +5067,7 @@ check_func  ${malloc_prefix}memalign            && ena
+ check_func  ${malloc_prefix}posix_memalign      && enable posix_memalign
+ 
+ check_func  access
++check_func  arc4random
+ check_func_headers time.h clock_gettime || { check_func_headers time.h clock_gettime -lrt && add_extralibs -lrt && LIBRT="-lrt"; }
+ check_func  fcntl
+ check_func  fork
+@@ -5785,6 +5787,11 @@ if test $target_os = "haiku"; then
      disable posix_memalign
  fi
  
@@ -31,7 +50,7 @@ $OpenBSD: patch-configure,v 1.52 2015/12/17 09:54:33 ajacoutot Exp $
  enabled_all dxva2 dxva2api_cobj CoTaskMemFree &&
      prepend ffmpeg_libs $($ldflags_filter "-lole32" "-luser32") &&
      enable dxva2_lib
-@@ -6217,8 +6222,8 @@ pkgconfig_generate(){
+@@ -6217,8 +6224,8 @@ pkgconfig_generate(){
      comment=$2
      version=$3
      libs=$4
@@ -42,7 +61,7 @@ $OpenBSD: patch-configure,v 1.52 2015/12/17 09:54:33 ajacoutot Exp $
      enabled ${name#lib} || return 0
      mkdir -p $name
      cat <<EOF > $name/$name${build_suffix}.pc
-@@ -6233,7 +6238,7 @@ Version: $version
+@@ -6233,7 +6240,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -51,7 +70,7 @@ $OpenBSD: patch-configure,v 1.52 2015/12/17 09:54:33 ajacoutot Exp $
  Libs.private: $(enabled shared && echo $libs)
  Cflags: -I\${includedir}
  EOF
-@@ -6257,12 +6262,12 @@ Cflags: -I\${includedir}
+@@ -6257,12 +6264,12 @@ Cflags: -I\${includedir}
  EOF
  }
  

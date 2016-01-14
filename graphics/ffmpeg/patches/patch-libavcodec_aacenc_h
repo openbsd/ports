@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_h,v 1.4 2015/10/17 06:49:22 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_h,v 1.5 2016/01/14 06:09:43 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -16,9 +16,21 @@ aacenc: shorten name of ff_aac_adjust_common_prediction
 
 aacenc: add support for encoding files using Long Term Prediction
 
---- libavcodec/aacenc.h.orig	Mon Sep  7 21:58:01 2015
-+++ libavcodec/aacenc.h	Fri Oct 16 23:46:05 2015
-@@ -42,11 +42,12 @@ typedef enum AACCoder {
+aacenc: switch to using the RNG from libavutil
+
+acenc: remove deprecated avctx->frame_bits use
+
+--- libavcodec/aacenc.h.orig	Wed Jan 13 15:27:48 2016
++++ libavcodec/aacenc.h	Wed Jan 13 17:11:38 2016
+@@ -23,6 +23,7 @@
+ #define AVCODEC_AACENC_H
+ 
+ #include "libavutil/float_dsp.h"
++#include "libavutil/lfg.h"
+ #include "avcodec.h"
+ #include "put_bits.h"
+ 
+@@ -42,11 +43,12 @@ typedef enum AACCoder {
  }AACCoder;
  
  typedef struct AACEncOptions {
@@ -33,7 +45,7 @@ aacenc: add support for encoding files using Long Term Prediction
      int intensity_stereo;
  } AACEncOptions;
  
-@@ -60,13 +61,19 @@ typedef struct AACCoefficientsEncoder {
+@@ -60,13 +62,19 @@ typedef struct AACCoefficientsEncoder {
      void (*quantize_and_encode_band)(struct AACEncContext *s, PutBitContext *pb, const float *in, float *out, int size,
                                       int scale_idx, int cb, const float lambda, int rtz);
      void (*encode_tns_info)(struct AACEncContext *s, SingleChannelElement *sce);
@@ -54,7 +66,7 @@ aacenc: add support for encoding files using Long Term Prediction
      void (*search_for_ms)(struct AACEncContext *s, ChannelElement *cpe);
      void (*search_for_is)(struct AACEncContext *s, AVCodecContext *avctx, ChannelElement *cpe);
      void (*search_for_pred)(struct AACEncContext *s, SingleChannelElement *sce);
-@@ -74,6 +81,15 @@ typedef struct AACCoefficientsEncoder {
+@@ -74,6 +82,15 @@ typedef struct AACCoefficientsEncoder {
  
  extern AACCoefficientsEncoder ff_aac_coders[];
  
@@ -70,16 +82,17 @@ aacenc: add support for encoding files using Long Term Prediction
  /**
   * AAC encoder context
   */
-@@ -84,7 +100,7 @@ typedef struct AACEncContext {
+@@ -84,7 +101,8 @@ typedef struct AACEncContext {
      FFTContext mdct1024;                         ///< long (1024 samples) frame transform context
      FFTContext mdct128;                          ///< short (128 samples) frame transform context
      AVFloatDSPContext *fdsp;
 -    float *planar_samples[6];                    ///< saved preprocessed input
++    AVLFG lfg;                                   ///< PRNG needed for PNS
 +    float *planar_samples[8];                    ///< saved preprocessed input
  
      int profile;                                 ///< copied from avctx
      LPCContext lpc;                              ///< used by TNS
-@@ -96,18 +112,27 @@ typedef struct AACEncContext {
+@@ -96,18 +114,28 @@ typedef struct AACEncContext {
      FFPsyContext psy;
      struct FFPsyPreprocessContext* psypp;
      AACCoefficientsEncoder *coder;
@@ -88,6 +101,7 @@ aacenc: add support for encoding files using Long Term Prediction
      int last_frame;
 +    int random_state;
      float lambda;
++    int last_frame_pb_count;                     ///< number of bits for the previous frame
 +    float lambda_sum;                            ///< sum(lambda), for Qvg reporting
 +    int lambda_count;                            ///< count(lambda), for Qvg reporting
 +    enum RawDataBlockType cur_type;              ///< channel group type cur_channel belongs to

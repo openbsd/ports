@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_encoders_texi,v 1.1 2015/12/06 08:51:46 ajacoutot Exp $
+$OpenBSD: patch-doc_encoders_texi,v 1.2 2016/01/14 06:09:43 ajacoutot Exp $
 
 doc/encoders.texi: update documentation for the native AAC encoder
 
@@ -8,8 +8,10 @@ doc/encoders.texi: use words intead of numbers to describe option states
 
 doc/encoders.texi: fix typo and clarify mpeg2_aac_low
 
---- doc/encoders.texi.orig	Thu Nov 12 02:08:28 2015
-+++ doc/encoders.texi	Sat Dec  5 18:49:35 2015
+doc/encoders: fix typo in AAC encoder documentation
+
+--- doc/encoders.texi.orig	Fri Dec 25 03:00:18 2015
++++ doc/encoders.texi	Sat Jan  9 13:16:06 2016
 @@ -30,82 +30,120 @@ follows.
  
  Advanced Audio Coding (AAC) encoder.
@@ -164,7 +166,7 @@ doc/encoders.texi: fix typo and clarify mpeg2_aac_low
 +Long term prediction profile, is enabled by and will enable the aac_ltp option.
 +Introduced in MPEG4.
 +
-+@item aac_pred
++@item aac_main
 +Main-type prediction profile, is enabled by and will enable the aac_pred option.
 +Introduced in MPEG2.
 +

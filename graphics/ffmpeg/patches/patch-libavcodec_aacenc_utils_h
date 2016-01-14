@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_utils_h,v 1.5 2015/12/06 08:51:46 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_utils_h,v 1.6 2016/01/14 06:09:43 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -18,8 +18,10 @@ avcodec/aac_tablegen: get rid of hardcoded tables entirely
 
 AAC encoder: improve SF range utilization
 
---- libavcodec/aacenc_utils.h.orig	Sat Dec  5 15:13:51 2015
-+++ libavcodec/aacenc_utils.h	Sat Dec  5 15:01:19 2015
+aacenc: switch to using the RNG from libavutil
+
+--- libavcodec/aacenc_utils.h.orig	Thu Nov 12 02:08:28 2015
++++ libavcodec/aacenc_utils.h	Thu Dec 17 21:02:03 2015
 @@ -29,8 +29,8 @@
  #define AVCODEC_AACENC_UTILS_H
  
@@ -100,7 +102,7 @@ AAC encoder: improve SF range utilization
  /** Return the minimum scalefactor where the quantized coef does not clip. */
  static inline uint8_t coef2minsf(float coef)
  {
-@@ -128,6 +174,86 @@ static inline int quant_array_idx(const float val, con
+@@ -128,6 +174,76 @@ static inline int quant_array_idx(const float val, con
      return index;
  }
  
@@ -111,16 +113,6 @@ AAC encoder: improve SF range utilization
 +{
 +    return 0.001f + 0.0035f * (b*b*b) / (15.5f*15.5f*15.5f);
 +}
-+
-+/*
-+ * linear congruential pseudorandom number generator, copied from the decoder
-+ */
-+static inline int lcg_random(unsigned previous_val)
-+{
-+    union { unsigned u; int s; } v = { previous_val * 1664525u + 1013904223 };
-+    return v.s;
-+}
-+
 +
 +/*
 + * Compute a nextband map to be used with SF delta constraint utilities.
@@ -187,7 +179,7 @@ AAC encoder: improve SF range utilization
  #define ERROR_IF(cond, ...) \
      if (cond) { \
          av_log(avctx, AV_LOG_ERROR, __VA_ARGS__); \
-@@ -138,6 +264,5 @@ static inline int quant_array_idx(const float val, con
+@@ -138,6 +254,5 @@ static inline int quant_array_idx(const float val, con
      if (cond) { \
          av_log(avctx, AV_LOG_WARNING, __VA_ARGS__); \
      }
