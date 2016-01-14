@@ -1,0 +1,12 @@
+$OpenBSD: README,v 1.1.1.1 2016/01/14 00:11:40 abieber Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To play ioquake3 on OpenBSD, you need the original game CD key and
+*.pk3 files.
+
+Copy the game data (pak0-8.pk3) to ~/.q3a/baseq3/ then start up ioquake3
+and add your CD key under Setup -> CD Key.
+
