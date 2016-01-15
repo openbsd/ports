@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2015/12/30 09:59:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2016/01/15 23:40:02 sthen Exp $
 
 COMMENT-main=		apache HTTP server
 COMMENT-common=		shared files for Apache 1 and 2
@@ -10,7 +10,7 @@ PKGNAME=		apache-httpd-${V}
 PKGNAME-main=		${PKGNAME}
 FULLPKGNAME-common=	apache-httpd-common-${V}
 FULLPKGPATH-common=	www/apache-httpd,-common
-REVISION-main=		0
+REVISION-main=		1
 
 CATEGORIES=		www net
 
@@ -20,7 +20,7 @@ HOMEPAGE=		http://httpd.apache.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += apr-1 aprutil-1 c crypto db expat lzma m nghttp2
+WANTLIB-main += apr-1 aprutil-1 c crypto db expat lzma m
 WANTLIB-main += pcre pthread ssl xml2 z
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=httpd/}
@@ -38,7 +38,6 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archivers/xz \
 			devel/pcre \
 			textproc/libxml \
-			www/nghttp2
 
 WANTLIB-common=		#empty
 LIB_DEPENDS-common=	# empty
@@ -71,6 +70,8 @@ CONFIGURE_ARGS=		--enable-layout=OpenBSD \
 			--with-suexec-bin=${TRUEPREFIX}/sbin/suexec2 \
 			--with-suexec-logfile=${LOCALSTATEDIR}/log/suexec2_log \
 			--with-pcre=${LOCALBASE}
+# doesn't work correctly on OpenBSD yet
+CONFIGURE_ARGS+=	--disable-http2
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2015/12/30 09:59:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2016/01/15 23:40:03 sthen Exp $
 @pkgpath www/apache-httpd${FLAVOR_COMMA}
 @bin bin/ab
 bin/dbmmanage2
@@ -119,7 +119,6 @@ lib/apache2/mod_filter.so
 lib/apache2/mod_headers.so
 lib/apache2/mod_heartbeat.so
 lib/apache2/mod_heartmonitor.so
-lib/apache2/mod_http2.so
 lib/apache2/mod_include.so
 lib/apache2/mod_info.so
 lib/apache2/mod_lbmethod_bybusyness.so
