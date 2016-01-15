@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/14 00:11:40 abieber Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2016/01/15 21:53:18 abieber Exp $
 @bin bin/ioq3ded
 @bin bin/ioquake3
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/ioquake3/
 share/ioquake3/baseq3/
 share/ioquake3/baseq3/cgame/
@@ -76,6 +76,7 @@ share/ioquake3/baseq3/cgame/cg_view.o
 share/ioquake3/baseq3/cgame/cg_weapons.asm
 share/ioquake3/baseq3/cgame/cg_weapons.d
 share/ioquake3/baseq3/cgame/cg_weapons.o
+share/ioquake3/baseq3/cgame${QUAKE_ARCH}.so
 share/ioquake3/baseq3/game/
 share/ioquake3/baseq3/game/ai_chat.asm
 share/ioquake3/baseq3/game/ai_chat.d
@@ -172,6 +173,7 @@ share/ioquake3/baseq3/game/g_utils.o
 share/ioquake3/baseq3/game/g_weapon.asm
 share/ioquake3/baseq3/game/g_weapon.d
 share/ioquake3/baseq3/game/g_weapon.o
+share/ioquake3/baseq3/qagame${QUAKE_ARCH}.so
 share/ioquake3/baseq3/qcommon/
 share/ioquake3/baseq3/qcommon/q_math.asm
 share/ioquake3/baseq3/qcommon/q_math.d
@@ -303,6 +305,7 @@ share/ioquake3/baseq3/ui/ui_teamorders.o
 share/ioquake3/baseq3/ui/ui_video.asm
 share/ioquake3/baseq3/ui/ui_video.d
 share/ioquake3/baseq3/ui/ui_video.o
+share/ioquake3/baseq3/ui${QUAKE_ARCH}.so
 share/ioquake3/baseq3/vm/
 share/ioquake3/baseq3/vm/cgame.qvm
 share/ioquake3/baseq3/vm/qagame.qvm
@@ -1017,6 +1020,7 @@ share/ioquake3/missionpack/cgame/cg_view.o
 share/ioquake3/missionpack/cgame/cg_weapons.asm
 share/ioquake3/missionpack/cgame/cg_weapons.d
 share/ioquake3/missionpack/cgame/cg_weapons.o
+share/ioquake3/missionpack/cgame${QUAKE_ARCH}.so
 share/ioquake3/missionpack/game/
 share/ioquake3/missionpack/game/ai_chat.asm
 share/ioquake3/missionpack/game/ai_chat.d
@@ -1113,6 +1117,7 @@ share/ioquake3/missionpack/game/g_utils.o
 share/ioquake3/missionpack/game/g_weapon.asm
 share/ioquake3/missionpack/game/g_weapon.d
 share/ioquake3/missionpack/game/g_weapon.o
+share/ioquake3/missionpack/qagame${QUAKE_ARCH}.so
 share/ioquake3/missionpack/qcommon/
 share/ioquake3/missionpack/qcommon/q_math.asm
 share/ioquake3/missionpack/qcommon/q_math.d
@@ -1144,10 +1149,13 @@ share/ioquake3/missionpack/ui/ui_shared.d
 share/ioquake3/missionpack/ui/ui_shared.o
 share/ioquake3/missionpack/ui/ui_syscalls.d
 share/ioquake3/missionpack/ui/ui_syscalls.o
+share/ioquake3/missionpack/ui${QUAKE_ARCH}.so
 share/ioquake3/missionpack/vm/
 share/ioquake3/missionpack/vm/cgame.qvm
 share/ioquake3/missionpack/vm/qagame.qvm
 share/ioquake3/missionpack/vm/ui.qvm
+share/ioquake3/renderer_opengl1_${QUAKE_ARCH}.so
+share/ioquake3/renderer_opengl2_${QUAKE_ARCH}.so
 share/ioquake3/renderergl1/
 share/ioquake3/renderergl1/jaricom.d
 share/ioquake3/renderergl1/jaricom.o
@@ -1483,7 +1491,6 @@ share/ioquake3/tools/lburg/lburg.o
 @bin share/ioquake3/tools/q3cpp
 @bin share/ioquake3/tools/q3lcc
 @bin share/ioquake3/tools/q3rcc
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/ioquake3/tools/rcc/
 share/ioquake3/tools/rcc/alloc.d
 share/ioquake3/tools/rcc/alloc.o

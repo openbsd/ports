@@ -1,9 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2016/01/14 00:11:40 abieber Exp $
-share/ioquake3/baseq3/cgame${QUAKE_ARCH}.so
-share/ioquake3/baseq3/qagame${QUAKE_ARCH}.so
-share/ioquake3/baseq3/ui${QUAKE_ARCH}.so
-share/ioquake3/missionpack/cgame${QUAKE_ARCH}.so
-share/ioquake3/missionpack/qagame${QUAKE_ARCH}.so
-share/ioquake3/missionpack/ui${QUAKE_ARCH}.so
-share/ioquake3/renderer_opengl1_${QUAKE_ARCH}.so
-share/ioquake3/renderer_opengl2_${QUAKE_ARCH}.so

@@ -1,37 +1,42 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/14 00:11:40 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/15 21:53:18 abieber Exp $
 
-ONLY_FOR_ARCHS= 	amd64 i386
+ONLY_FOR_ARCHS= amd64 i386
 
-COMMENT=		clone of the original Quake III Arena
+SHARED_ONLY=	Yes
 
-GH_ACCOUNT=		ioquake
-GH_PROJECT=		ioq3
-GH_COMMIT=		42dee17663cfc841fe6d0933f5c1dc10463e2dbd
+COMMENT=	clone of the original Quake III Arena
 
-DISTNAME=		ioquake3-2016.01.09
-CATEGORIES=		games
+DISTNAME=	ioquake3-2016.01.15
 
-HOMEPAGE=		http://ioquake3.org/
-MAINTAINER=		Aaron Bieber <abieber@openbsd.org>
+GH_ACCOUNT=	ioquake
+GH_PROJECT=	ioq3
+GH_COMMIT=	3089df0398b8d0be9d6234e1620468aa2b068897
 
-QUAKE_ARCH=		${ARCH:S/amd64/x86_64/:S/i386/x86/}
+CATEGORIES=	games
+
+HOMEPAGE=	http://ioquake3.org/
+
+MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-LIB_DEPENDS=		devel/sdl2 \
-			net/curl
+# openal is statically linked
+WANTLIB += GL SDL2 c curl m openal pthread
 
-USE_GMAKE=		Yes
-NO_TEST=		Yes
+LIB_DEPENDS=	audio/openal \
+		devel/sdl2 \
+		net/curl
 
-MAKE_ENV=		"V=1"
+MAKE_ENV=	"V=1"
+ALL_TARGET=	"release"
+USE_GMAKE=	Yes
+NO_TEST=	Yes
 
-CFLAGS+=                -pthread -g
+CFLAGS+=	-pthread -g
 
-WANTLIB += GL SDL2 c curl m pthread
-
-SUBST_VARS+=		QUAKE_ARCH
+QUAKE_ARCH=	${ARCH:S/amd64/x86_64/:S/i386/x86/}
+SUBST_VARS+=	QUAKE_ARCH
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ioquake3/
