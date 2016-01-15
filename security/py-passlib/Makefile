@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.6 2015/12/27 08:26:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/15 12:46:36 sthen Exp $
 
 COMMENT =		Python module providing a password hashing framework
 
-MODPY_EGG_VERSION =	1.6.2
-REVISION =		3
+MODPY_EGG_VERSION =	1.6.5
 DISTNAME =		passlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-passlib-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
 
-HOMEPAGE =		https://code.google.com/p/passlib/
+MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
+
+HOMEPAGE =		https://pythonhosted.org/passlib/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://passlib.googlecode.com/files/
-
 MODULES =		lang/python
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+
 FLAVORS =		python3
 FLAVOR ?=
 
