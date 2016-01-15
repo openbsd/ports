@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2015/12/21 09:48:10 tb Exp $
+# $OpenBSD: Makefile,v 1.101 2016/01/15 19:57:24 sthen Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
@@ -14,6 +14,7 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =   Yes
 
+# uses pledge()
 WANTLIB =	c cairo ev glib-2.0 gobject-2.0 m pango-1.0 \
 		pangocairo-1.0 pcre pthread \
 		startup-notification-1 xcb xcb-cursor xcb-util \

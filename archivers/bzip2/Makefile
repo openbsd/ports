@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2015/10/15 20:14:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2016/01/15 19:57:23 sthen Exp $
 
 COMMENT=	block-sorting file compressor, unencumbered
 
@@ -14,6 +14,7 @@ HOMEPAGE=	http://www.bzip.org/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
+# uses pledge()
 WANTLIB += c
 
 BZ2_CFLAGS=	-Wall -Winline -fomit-frame-pointer -fno-strength-reduce

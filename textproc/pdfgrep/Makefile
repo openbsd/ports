@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/15 19:42:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/15 19:57:24 sthen Exp $
 
 COMMENT =		tool to search text in PDF files
 
@@ -17,6 +17,7 @@ MODULES =		gcc4
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c++
 
+# uses pledge()
 WANTLIB +=		c m pthread poppler-cpp pcre
 
 MASTER_SITES =		https://pdfgrep.org/download/

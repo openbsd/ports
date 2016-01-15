@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2016/01/08 15:18:09 robert Exp $
+# $OpenBSD: Makefile,v 1.36 2016/01/15 19:57:24 sthen Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -46,6 +46,7 @@ MODPY_RUNDEP=	No
 
 PATCHORIG=	.orig.port
 
+# uses pledge()
 WANTLIB += X11 Xext Xfixes Xrender Xss c cairo cups dbus-1 event
 WANTLIB += execinfo expat fontconfig freetype gconf-2 gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0

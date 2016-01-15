@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/10/22 13:48:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2016/01/15 19:57:24 sthen Exp $
 
 COMMENT=	quickly ping N hosts w/o flooding the network
 
@@ -13,6 +13,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
+# uses pledge()
 WANTLIB += c
 
 MASTER_SITES=	http://fping.org/dist/
