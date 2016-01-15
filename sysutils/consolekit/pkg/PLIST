@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/08/27 06:48:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/01/15 14:20:02 ajacoutot Exp $
 @conflict consolekit-*
 @extra /var/log/ConsoleKit/history
 @bin bin/ck-history
@@ -31,6 +31,7 @@ lib/pkgconfig/ck-connector.pc
 @bin sbin/ck-log-system-start
 @bin sbin/ck-log-system-stop
 @bin sbin/console-kit-daemon
+share/dbus-1/
 share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Manager.xml
 share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Seat.xml
