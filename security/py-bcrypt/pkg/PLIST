@@ -1,11 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/03/19 11:15:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/01/15 12:34:14 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/bcrypt/
+lib/python${MODPY_VERSION}/site-packages/bcrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/bcrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/bcrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/bcrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/bcrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/bcrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
+lib/python${MODPY_VERSION}/site-packages/bcrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/bcrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/bcrypt/__about__.py
 lib/python${MODPY_VERSION}/site-packages/bcrypt/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bcrypt/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bcrypt/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bcrypt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bcrypt/_bcrypt.so
-lib/python${MODPY_VERSION}/site-packages/py_bcrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/py_bcrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/py_bcrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/py_bcrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/py_bcrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
