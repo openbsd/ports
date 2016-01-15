@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2015/10/25 15:23:03 rpe Exp $
+# $OpenBSD: Makefile,v 1.47 2016/01/15 18:34:34 rpe Exp $
 
 COMMENT =		ssh based config management framework
 
-MODPY_EGG_VERSION =	1.9.4
+MODPY_EGG_VERSION =	2.0.0.1
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -22,6 +22,7 @@ MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		security/py-crypto \
 			security/py-keyczar \
 			security/py-paramiko \
+			security/py-passlib \
 			textproc/py-yaml \
 			www/py-httplib2 \
 			www/py-jinja2
