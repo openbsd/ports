@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2015/11/04 09:33:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2016/01/15 14:12:37 shadchin Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		open source message queue optimised for performance
 
-DISTNAME =		zeromq-4.1.3
-REVISION =		0
+DISTNAME =		zeromq-4.1.4
 
-SHARED_LIBS +=  zmq                  4.1      # 4.0
+SHARED_LIBS +=  zmq                  4.1      # 5.0
 
 CATEGORIES =		net
 HOMEPAGE =		http://zeromq.org/
