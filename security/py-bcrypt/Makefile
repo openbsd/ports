@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/15 12:34:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/15 19:58:25 sthen Exp $
 
 COMMENT=	bcrypt blowfish password hashing for Python
 
@@ -24,6 +24,7 @@ FLAVOR?=
 
 RUN_DEPENDS=	devel/py-cffi${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # there's some test scaffolding in setup.py (using py-test), but I don't
 # see any actual tests anywhere. trying to use it gives "collected 0 items".
