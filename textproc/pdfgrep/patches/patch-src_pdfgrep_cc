@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_pdfgrep_cc,v 1.1 2016/01/15 19:42:40 sthen Exp $
+--- src/pdfgrep.cc.orig	Wed Sep 16 21:06:49 2015
++++ src/pdfgrep.cc	Fri Jan 15 11:39:19 2016
+@@ -569,6 +569,11 @@ void handle_poppler_errors(const std::string &msg, voi
+ 
+ int main(int argc, char** argv)
+ {
++	if (pledge("stdio rpath tty", NULL) == -1) {
++		fprintf (stderr, "pdfgrep: pledge\n");
++		exit (1);
++	}
++
+ 	init_colors();
+ 
+ 	enum re_engine_type {
+@@ -773,6 +778,11 @@ int main(int argc, char** argv)
+ 	} else if (context == -2) {
+ 		// on non-terminals, always print the whole line
+ 		context = -1;
++	}
++
++	if (pledge("stdio rpath", NULL) == -1) {
++		fprintf (stderr, "pdfgrep: pledge\n");
++		exit (1);
+ 	}
+ 
+ 	if (excludes_empty(includes))
