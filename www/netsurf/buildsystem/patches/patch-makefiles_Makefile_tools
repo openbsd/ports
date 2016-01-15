@@ -1,0 +1,14 @@
+$OpenBSD: patch-makefiles_Makefile_tools,v 1.1 2016/01/15 08:56:26 bentley Exp $
+Backport INCLUDEDIR from cdde8cbaed88f06c373f6d5add7273fd97e77d21.
+--- makefiles/Makefile.tools.orig	Fri Jan 15 01:41:18 2016
++++ makefiles/Makefile.tools	Fri Jan 15 01:41:57 2016
+@@ -241,6 +241,9 @@ PREFIX ?= /usr/local
+ # Default libdir
+ LIBDIR ?= lib
+ 
++# Default includedir
++INCLUDEDIR ?= include
++
+ ###############################################################################
+ # Tool defaults
+ ###############################################################################
