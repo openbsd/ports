@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2015/11/17 12:49:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/15 21:40:28 sthen Exp $
 @pkgpath security/py-acme${MODPY_FLAVOR}
 bin/jws${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/acme/
@@ -90,10 +90,14 @@ lib/python${MODPY_VERSION}/site-packages/acme/standalone_test.py
 lib/python${MODPY_VERSION}/site-packages/acme/test_util.py
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/README
+lib/python${MODPY_VERSION}/site-packages/acme/testdata/cert-100sans.pem
+lib/python${MODPY_VERSION}/site-packages/acme/testdata/cert-idnsans.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/cert-san.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/cert.der
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/cert.pem
+lib/python${MODPY_VERSION}/site-packages/acme/testdata/csr-100sans.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/csr-6sans.pem
+lib/python${MODPY_VERSION}/site-packages/acme/testdata/csr-idnsans.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/csr-nosans.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/csr-san.pem
 lib/python${MODPY_VERSION}/site-packages/acme/testdata/csr.der
