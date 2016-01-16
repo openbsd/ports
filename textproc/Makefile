@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.481 2016/01/07 11:53:04 sebastia Exp $
+# $OpenBSD: Makefile,v 1.482 2016/01/16 23:11:57 kili Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -73,7 +73,6 @@
      SUBDIR += hs-tagsoup
      SUBDIR += hs-xml
      SUBDIR += hs-xml-types
-     SUBDIR += hs-xmlhtml
      SUBDIR += html
      SUBDIR += html-xml-utils
      SUBDIR += hunspell
