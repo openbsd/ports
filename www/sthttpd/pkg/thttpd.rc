@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# $OpenBSD: thttpd.rc,v 1.1 2016/01/16 20:05:35 mmcc Exp $
+
+daemon="${TRUEPREFIX}/sbin/thttpd"
+
+. /etc/rc.d/rc.subr
+
+# The /var/www root directory will be overridden by any -d flag the user
+# supplies. This addresses the awkward fact that thttpd defaults to the
+# current working directory.
+rc_start() {
+	${rcexec} "cd /var/www; ${daemon} ${daemon_flags}"
+}
+
+# SIGUSR1 allows all existing connections to terminate before exiting.
+rc_stop() {
+	pkill -USR1 -xf "^${pexp}"
+}
+
+rc_cmd $1
