@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.482 2016/01/16 23:11:57 kili Exp $
+# $OpenBSD: Makefile,v 1.483 2016/01/16 23:18:41 kili Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -62,8 +62,6 @@
      SUBDIR += highlight
      SUBDIR += hs-HaXml
      SUBDIR += hs-attoparsec
-     SUBDIR += hs-blaze-html
-     SUBDIR += hs-blaze-markup
      SUBDIR += hs-bytestring-lexing
      SUBDIR += hs-bytestring-nums
      SUBDIR += hs-bytestring-show
