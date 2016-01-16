@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2015/04/04 09:21:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2016/01/16 08:41:30 ajacoutot Exp $
 
 COMMENT=		glib bindings for dbus message system
 
-DISTNAME=		dbus-glib-0.104
+DISTNAME=		dbus-glib-0.106
 EPOCH=			0
-REVISION=		0
 
-SHARED_LIBS +=  dbus-glib-1          4.4      # 4.2
+SHARED_LIBS +=  dbus-glib-1          4.4      # 5.3
 
 CATEGORIES=		x11
 
