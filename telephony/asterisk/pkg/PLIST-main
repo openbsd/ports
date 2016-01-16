@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.58 2015/10/12 22:07:29 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.59 2016/01/16 14:21:53 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -363,6 +363,7 @@ lib/asterisk/modules/func_frame_trace.so
 lib/asterisk/modules/func_global.so
 lib/asterisk/modules/func_groupcount.so
 lib/asterisk/modules/func_hangupcause.so
+lib/asterisk/modules/func_holdintercept.so
 lib/asterisk/modules/func_iconv.so
 lib/asterisk/modules/func_jitterbuffer.so
 lib/asterisk/modules/func_lock.so
@@ -426,6 +427,7 @@ lib/asterisk/modules/res_format_attr_h263.so
 lib/asterisk/modules/res_format_attr_h264.so
 lib/asterisk/modules/res_format_attr_opus.so
 lib/asterisk/modules/res_format_attr_silk.so
+lib/asterisk/modules/res_format_attr_vp8.so
 lib/asterisk/modules/res_hep.so
 lib/asterisk/modules/res_hep_pjsip.so
 lib/asterisk/modules/res_hep_rtcp.so

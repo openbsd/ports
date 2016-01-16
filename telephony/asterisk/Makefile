@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.224 2015/10/31 11:28:57 espie Exp $
+# $OpenBSD: Makefile,v 1.225 2016/01/16 14:21:53 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			13.6.0
-REVISION-main=		0
-REVISION-tds=		0
+VER=			13.7.0
 PORTROACH=		limitw:0,odd
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
@@ -72,7 +70,7 @@ USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.10
+AUTOMAKE_VERSION=	1.15
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool,-ltdl # bogus dependencies in menuselect
