@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2016/01/05 13:21:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/16 19:49:34 ajacoutot Exp $
 @conflict py-reportlab-barcode-*
 @conflict py-reportlab-renderPM-*
 @pkgpath print/py-reportlab/plugins/renderPM
@@ -359,5 +359,3 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/tables.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/xpreformatted.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/rl_config.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/rl_settings.py
-share/doc/py-reportlab/
-share/doc/py-reportlab/reportlab-userguide.pdf

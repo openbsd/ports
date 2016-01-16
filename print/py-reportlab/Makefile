@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/05 22:12:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/16 19:49:34 ajacoutot Exp $
 
 COMMENT=		PDF-generating toolkit for Python
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	3.2.0
 DISTNAME=		reportlab-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EPOCH=			0
-REVISION=		0
+REVISION=		1
 
 # see patches/patch-setup_py
 # grep 'archive =' reportlab-3.2.0/setup.py
@@ -50,13 +50,14 @@ pre-configure:
 		${WRKSRC}/docs/genAll.py \
 		${WRKSRC}/docs/userguide/genuserguide.py
 
-post-install:
-	cd ${WRKSRC}/docs && ${MODPY_BIN} genAll.py
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-reportlab
-	${INSTALL_DATA} ${WRKBUILD}/docs/reportlab-userguide.pdf \
-		${PREFIX}/share/doc/py-reportlab
+# XXX FLAVOR conflict
+#post-install:
+#	cd ${WRKSRC}/docs && ${MODPY_BIN} genAll.py
+#	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-reportlab
+#	${INSTALL_DATA} ${WRKBUILD}/docs/reportlab-userguide.pdf \
+#		${PREFIX}/share/doc/py-reportlab
 
-do-test: fake
+do-test:
 	cd ${WRKSRC}/tests && \
 		${MAKE_ENV} PYTHONPATH=${WRKDIST}:${WRKINST}${MODPY_SITEPKG} \
 		${MODPY_BIN} ./runAll.py
