@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2015/11/25 12:56:11 sebastia Exp $
+# $OpenBSD: Makefile,v 1.23 2016/01/16 14:32:38 jasper Exp $
 
 PORTROACH=		site:https://github.com/elastic/elasticsearch
 
 COMMENT=		distributed RESTful search and analytics
 
-V=			2.1.0
+V=			2.1.1
 DISTNAME=		elasticsearch-$V
 CATEGORIES=		textproc
 
