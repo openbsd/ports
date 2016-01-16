@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2015/05/28 20:45:29 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2016/01/16 20:48:10 sthen Exp $
 
 MODULES +=	telephony/asterisk-sounds
 MODAS_NAME =	asterisk-core-sounds
@@ -6,7 +6,7 @@ MODAS_TAG =	asterisk-core
 MODAS_DESC =	core ${MODAS_LANGNAME} sound files for Asterisk (${MODAS_CODEC})
 MODAS_LANGS =	en en_AU en_GB es fr it ja ru sv
 MODAS_VER =	1.4.27
-REVISION =	0
+REVISION =	1
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # CC-BY-SA
@@ -21,5 +21,6 @@ post-install:
 	    CHANGES-asterisk-core-${MODAS_LANG}-${MODAS_VER} \
 	    CREDITS-asterisk-core-${MODAS_LANG}-${MODAS_VER} \
 	    LICENSE-asterisk-core-${MODAS_LANG}-${MODAS_VER} \
-	    core-sounds-${MODAS_LANG}.txt; \
+	    core-sounds-${MODAS_LANG}.txt \
+	    core-sounds-${MODAS_LANG}; \
 	do mv $$i $$i-${MODAS_CODEC}; done
