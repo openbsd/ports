@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/14 22:58:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/16 10:39:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	event-driven spam filtering system in C/Lua
 
 DISTNAME=	rspamd-1.0.11
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	mail
 
