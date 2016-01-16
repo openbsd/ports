@@ -1,23 +1,26 @@
-# $OpenBSD: Makefile,v 1.8 2016/01/06 17:01:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/16 13:39:27 sthen Exp $
 
-COMMENT =		keep X clipboard and cutbuffer in sync
+COMMENT=	keep X clipboard and cutbuffer in sync
 
-DISTNAME =		autocutsel-0.9.0
-REVISION =		2
+V=		0.10.0
+DISTNAME=	autocutsel-$V
 
-CATEGORIES =		x11
+CATEGORIES=	x11
 
-HOMEPAGE =		http://www.nongnu.org/autocutsel/
+HOMEPAGE=	http://www.nongnu.org/autocutsel/
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xt c \
-			pthread-stubs xcb Xpm
+WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c pthread-stubs
+WANTLIB += xcb
 
-MASTER_SITES =		${MASTER_SITE_SAVANNAH:=autocutsel/}
+MASTER_SITES=	https://github.com/sigmike/autocutsel/releases/download/$V/
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	 CPPFLAGS="-I${X11BASE}/include"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/autocutsel
