@@ -1,20 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/01/13 07:23:03 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/01/17 07:11:03 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/pyzmq-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/zmq/
 lib/python${MODPY_VERSION}/site-packages/zmq/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/zmq/${MODPY_PYCACHE}asyncio.${MODPY_PYC_MAGIC_TAG}pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/${MODPY_PYCACHE}asyncio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/asyncio.py
 lib/python${MODPY_VERSION}/site-packages/zmq/auth/
 lib/python${MODPY_VERSION}/site-packages/zmq/auth/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/auth/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zmq/auth/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/auth/${MODPY_PYCACHE}asyncio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/auth/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/auth/${MODPY_PYCACHE}certs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/auth/${MODPY_PYCACHE}ioloop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/auth/${MODPY_PYCACHE}thread.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zmq/auth/asyncio.py
 lib/python${MODPY_VERSION}/site-packages/zmq/auth/base.py
 lib/python${MODPY_VERSION}/site-packages/zmq/auth/certs.py
 lib/python${MODPY_VERSION}/site-packages/zmq/auth/ioloop.py
