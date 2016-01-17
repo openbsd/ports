@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2015/10/18 19:45:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2016/01/17 20:28:36 naddy Exp $
 
 COMMENT=	LZMA compression and decompression tools
 
 DISTNAME=	xz-5.2.2
+REVISION=	0
 SHARED_LIBS=	lzma                 2.1      # .7.2
 CATEGORIES=	archivers
 DPB_PROPERTIES=	parallel
@@ -16,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
+# uses pledge()
 WANTLIB=	c pthread
 
 SEPARATE_BUILD=	Yes
