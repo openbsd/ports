@@ -1,0 +1,7 @@
+Yamagi Quake II is an enhanced client for id Software's Quake II. The
+main focus is an unchanged single player experience like back in 1997,
+thus the gameplay and the graphics are unaltered. Over 1000 bugs were
+fixed and an extensive code audit done, making Yamagi Quake II one of
+the most solid Quake II implementations available. Other than most ports
+Yamagi Quake II is full 64 bit clean, so it works perfectly on modern 64
+bit processors and operating systems.
