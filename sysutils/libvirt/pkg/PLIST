@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.20 2016/01/17 09:19:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2016/01/17 14:25:12 jasper Exp $
 @bin bin/virsh
 @bin bin/virt-admin
 @bin bin/virt-host-validate
-@bin bin/virt-login-shell
 bin/virt-pki-validate
 bin/virt-xml-validate
 include/libvirt/
@@ -42,7 +41,6 @@ libexec/libvirt-guests.sh
 @man man/man1/virsh.1
 @man man/man1/virt-admin.1
 @man man/man1/virt-host-validate.1
-@man man/man1/virt-login-shell.1
 @man man/man1/virt-pki-validate.1
 @man man/man1/virt-xml-validate.1
 share/augeas/
@@ -193,8 +191,6 @@ share/examples/libvirt/
 share/examples/libvirt/libvirt-admin.conf
 share/examples/libvirt/libvirt.conf
 @sample ${SYSCONFDIR}/libvirt/libvirt.conf
-share/examples/libvirt/virt-login-shell.conf
-@sample ${SYSCONFDIR}/libvirt/virt-login-shell.conf
 share/gtk-doc/html/libvirt/
 share/gtk-doc/html/libvirt/general.html
 share/gtk-doc/html/libvirt/home.png

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2016/01/17 09:19:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2016/01/17 14:25:12 jasper Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
 DISTNAME=		libvirt-1.3.1
+REVISION=		0
 CATEGORIES=		sysutils devel
 
 SHARED_LIBS +=	virt-qemu                 0.4 # 1003.0
@@ -46,7 +47,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-ssh2 \
 			--without-yajl \
 			--without-netcf \
-			--without-network
+			--without-network \
+			--without-login-shell \
 # OpenBSD can't act as a virtualization host, so no need for libvirtd.
 # If support is added, subtitute /var/lib/{xen,virt,libvirt,...} with /var/db
 CONFIGURE_ARGS+=	--without-libvirtd
