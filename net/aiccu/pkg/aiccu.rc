@@ -1,16 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: aiccu.rc,v 1.1 2011/07/13 15:27:44 dcoppa Exp $
+# $OpenBSD: aiccu.rc,v 1.2 2016/01/17 01:54:50 naddy Exp $
 
 daemon="${TRUEPREFIX}/sbin/aiccu"
+daemon_flags="start"
 
 . /etc/rc.d/rc.subr
 
 rc_reload=NO
-
-rc_start() {
-	${rcexec} "${daemon} start"
-}
 
 rc_stop() {
 	${daemon} stop
