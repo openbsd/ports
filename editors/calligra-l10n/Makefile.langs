@@ -1,0 +1,11 @@
+# $OpenBSD: Makefile.langs,v 1.1.1.1 2016/01/17 19:05:53 zhuk Exp $
+
+ALL_LANGS =
+
+# List of language packs not being built currently due to missing distfiles.
+# Should be reviewed at least on each Calligra version update.
+#ALL_LANGS +=
+
+# List of language packs having distfiles.
+ALL_LANGS +=	bs ca ca@valencia cs da de el en_GB es et fi fr gl hu it
+ALL_LANGS +=	ja kk nb nl pl pt pt_BR ru sk sv tr uk zh_CN zh_TW
