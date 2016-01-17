@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.85 2016/01/07 00:55:23 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.86 2016/01/17 19:39:05 jasper Exp $
 
 # ruby module
 
@@ -421,7 +421,11 @@ MODRUBY_TEST_BIN ?=	${RSPEC}
 .    elif ${MODRUBY_TEST:L:Mrspec3}
 MODRUBY_TEST_BIN ?=	${MODRUBY_BIN_RSPEC}
 .    elif ${MODRUBY_TEST:L:Mtestrb}
+.        if ${MODRUBY_REV} == "1.8" || ${MODRUBY_REV} == "2.0" || ${MODRUBY_REV} == "2.1"
 MODRUBY_TEST_BIN ?=	${MODRUBY_BIN_TESTRB}
+.        else
+MODRUBY_TEST_BIN ?=	${RUBY} ${PORTSDIR}/lang/ruby/files/testrb.rb
+.        endif
 .    elif ${MODRUBY_TEST:L:Mruby}
 MODRUBY_TEST_BIN ?=	${RUBY}
 .    endif
