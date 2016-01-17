@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2015/07/07 13:44:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/01/17 23:02:25 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	routines for accessing the OpenSSL prng
 
 MODULES=	cpan
-DISTNAME=	Crypt-OpenSSL-Random-0.10
+DISTNAME=	Crypt-OpenSSL-Random-0.11
 CATEGORIES=	security
 
 # perl
