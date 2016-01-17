@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/11/24 05:44:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/01/17 18:04:11 ajacoutot Exp $
 include/gspell-1/
 include/gspell-1/gspell/
 include/gspell-1/gspell/gspell-checker-dialog.h
 include/gspell-1/gspell/gspell-checker.h
-include/gspell-1/gspell/gspell-inline-checker-gtv.h
+include/gspell-1/gspell/gspell-inline-checker-text.h
 include/gspell-1/gspell/gspell-language-chooser-button.h
 include/gspell-1/gspell/gspell-language-chooser-dialog.h
 include/gspell-1/gspell/gspell-language-chooser.h
 include/gspell-1/gspell/gspell-language.h
-include/gspell-1/gspell/gspell-navigator-gtv.h
+include/gspell-1/gspell/gspell-navigator-text.h
 include/gspell-1/gspell/gspell-navigator.h
+include/gspell-1/gspell/gspell-text-buffer.h
 include/gspell-1/gspell/gspell.h
 lib/girepository-1.0/
 lib/girepository-1.0/Gspell-1.typelib
@@ -24,19 +25,21 @@ share/gtk-doc/html/
 share/gtk-doc/html/gspell-1.0/
 share/gtk-doc/html/gspell-1.0/GspellChecker.html
 share/gtk-doc/html/gspell-1.0/GspellCheckerDialog.html
-share/gtk-doc/html/gspell-1.0/GspellInlineCheckerGtv.html
+share/gtk-doc/html/gspell-1.0/GspellInlineCheckerText.html
 share/gtk-doc/html/gspell-1.0/GspellLanguage.html
 share/gtk-doc/html/gspell-1.0/GspellLanguageChooser.html
 share/gtk-doc/html/gspell-1.0/GspellLanguageChooserButton.html
 share/gtk-doc/html/gspell-1.0/GspellLanguageChooserDialog.html
 share/gtk-doc/html/gspell-1.0/GspellNavigator.html
-share/gtk-doc/html/gspell-1.0/GspellNavigatorGtv.html
+share/gtk-doc/html/gspell-1.0/GspellNavigatorText.html
 share/gtk-doc/html/gspell-1.0/annotation-glossary.html
 share/gtk-doc/html/gspell-1.0/api-index-full.html
 share/gtk-doc/html/gspell-1.0/ch01.html
 share/gtk-doc/html/gspell-1.0/ch02.html
 share/gtk-doc/html/gspell-1.0/ch03.html
 share/gtk-doc/html/gspell-1.0/ch04.html
+share/gtk-doc/html/gspell-1.0/ch05.html
+share/gtk-doc/html/gspell-1.0/gspell-1.0-GtkTextBuffer-support.html
 share/gtk-doc/html/gspell-1.0/gspell-1.0.devhelp2
 share/gtk-doc/html/gspell-1.0/home.png
 share/gtk-doc/html/gspell-1.0/index.html
