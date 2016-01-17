@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.34 2015/09/29 10:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2016/01/17 05:30:31 shadchin Exp $
+
+# optional dependencies
+# py-pyrax
 
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.6.26
+MODPY_EGG_VERSION = 0.7.06
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -22,19 +24,18 @@ WANTLIB +=	pthread rsync ${MODPY_WANTLIB}
 LIB_DEPENDS +=	net/librsync \
 		${MODPY_LIB_DEPENDS}
 
-RUN_DEPENDS +=	net/py-boto \
+RUN_DEPENDS +=	devel/py-pexpect \
 		net/ncftp \
+		net/py-boto \
+		gnupg-<2:security/gnupg \
 		sysutils/py-lockfile
 
 MAKE_ENV +=	LIBRSYNC_DIR=${LOCALBASE}
 
+MODPY_ADJ_FILES = bin/duplicity bin/rdiffdir
+
 # Some regression tests are hanging
 # TEST_DEPENDS =	devel/py-mock
 NO_TEST =	Yes
-
-# XXX 600 mode prevents from reading the man page;
-# check if still required at next update
-post-extract:
-	chmod 644 ${WRKSRC}/bin/*.1
 
 .include <bsd.port.mk>
