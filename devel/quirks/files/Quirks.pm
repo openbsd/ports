@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.345 2016/01/17 01:16:38 juanfra Exp $
+# $OpenBSD: Quirks.pm,v 1.346 2016/01/17 15:58:40 bmercer Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -391,6 +391,7 @@ my $stem_extensions = {
 	'py-reportlab-renderPM' => 'py-reportlab',
 	'cmus-flac' => 'cmus',
 	'cmus-wavpack' => 'cmus',
+	'quake2' => 'yquake2',
 };
 
 # reasons for obsolete packages
