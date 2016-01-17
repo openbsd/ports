@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/12 12:28:11 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/17 11:31:55 sthen Exp $
 
 COMMENT =		lightweight C library for fast bi-directional websockets
 
-DISTNAME =		libwebsockets-1.5-chrome47-firefox41
-PKGNAME =		libwebsockets-1.5
+DISTNAME =		libwebsockets-1.6.0-chrome48-firefox42
+PKGNAME =		libwebsockets-1.6
 
-SHARED_LIBS =		websockets 0.0 # 5
+SHARED_LIBS =		websockets 1.0 # 6
 
 CATEGORIES =		www
 
