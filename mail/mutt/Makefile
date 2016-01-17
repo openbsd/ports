@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2015/12/29 21:44:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2016/01/17 14:13:41 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
 DISTNAME=	mutt-1.5.24
-REVISION=	3
+REVISION=	4
 EPOCH=		0
 
 CATEGORIES=	mail
@@ -14,6 +14,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
+# uses pledge()
 WANTLIB+=	c crypto idn qdbm ssl z
 
 MASTER_SITES=	http://ftp.mutt.org/pub/mutt/ \

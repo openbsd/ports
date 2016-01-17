@@ -1,0 +1,26 @@
+$OpenBSD: patch-main_c,v 1.1 2016/01/17 14:13:41 sthen Exp $
+--- main.c.orig	Sun Aug 30 19:06:38 2015
++++ main.c	Sun Jan 17 07:54:28 2016
+@@ -734,6 +734,22 @@ int main (int argc, char **argv)
+       }
+   }
+ 
++#ifdef USE_SASL
++  {
++    int ret;
++    if ((ret = mutt_sasl_start()) != SASL_OK) {
++      fprintf(stderr, "%s: mutt_sasl_start: %d\n", argv[0], ret);
++      exit(1);
++    }
++  }
++#endif
++
++  if (pledge("stdio rpath wpath cpath flock fattr getpw tty inet dns "
++	    "proc exec", NULL) == -1) {
++    fprintf(stderr, "%s: pledge: %s\n", argv[0], strerror(errno));
++    exit(1);
++  }
++
+   /* collapse remaining argv */
+   while (optind < argc)
+     argv[nargc++] = argv[optind++];
