@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2015/08/25 13:18:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2016/01/17 17:29:10 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		simple GTK desktop news aggregator
 DISTNAME=		liferea-${V}
 CATEGORIES=		www x11
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://lzone.de/liferea/
 
@@ -27,6 +27,8 @@ WANTLIB += orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
 WANTLIB += peas-gtk-1.0 pixman-1 png pthread pthread-stubs secret-1
 WANTLIB += soup-2.4 sqlite3 stdc++ webkitgtk-3.0 webp xcb xcb-render
 WANTLIB += xcb-shm xml2 xslt z
+WANTLIB += X11-xcb Xxf86vm drm glapi xcb-dri2 xcb-glx xcb-shape
+WANTLIB += xcb-xfixes
 
 MASTER_SITES=		https://github.com/lwindolf/liferea/releases/download/v${V}/
 

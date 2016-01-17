@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2015/09/22 18:47:52 pascal Exp $
+# $OpenBSD: Makefile,v 1.18 2016/01/17 17:29:09 sthen Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
 DISTNAME=		DevIL-1.7.8
-REVISION=		10
+REVISION=		11
 SHARED_LIBS+=		IL	0.0 # 2.0
 SHARED_LIBS+=		ILU	0.0 # 2.0
 SHARED_LIBS+=		ILUT	0.0 # 2.0
@@ -19,10 +19,10 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openil/}
 EXTRACT_SUFX=		.zip
 
 WANTLIB += GL GLU Half ICE Iex IexMath IlmImf IlmThread Imath
-WANTLIB += SDL SM X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB += SDL SM X11 X11-xcb Xdamage Xext Xfixes Xi
 WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm c drm glapi glut jasper
-WANTLIB += jpeg lcms m mng png pthread pthread-stubs sndio stdc++
-WANTLIB += tiff usbhid xcb xcb-dri2 xcb-glx z
+WANTLIB += jpeg lcms m mng png pthread sndio stdc++
+WANTLIB += tiff usbhid xcb xcb-dri2 xcb-glx z expat
 
 MODULES=		converters/libiconv
 LIB_DEPENDS=		devel/sdl \

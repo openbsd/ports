@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2015/04/21 18:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2016/01/17 17:29:11 sthen Exp $
 
 COMMENT = 		web development tool
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdewebdev-${VERSION}
-REVISION =		14
+REVISION =		15
 MODKDE_VERSION =	3.5.8
 PKGSPEC =		kdewebdev->=3,<4
 
@@ -38,6 +38,7 @@ WANTLIB += lib/kde3/kparts lib/kde3/kresources lib/kde3/kspell
 WANTLIB += lib/kde3/ktexteditor lib/kde3/kutils lib/kde3/kwalletclient
 WANTLIB += lib/kde3/vcard lzma m pcre pcreposix png pthread
 WANTLIB += pthread-stubs stdc++ util xcb xml2 xslt z
+WANTLIB += X11-xcb Xdamage Xxf86vm drm glapi xcb-dri2 xcb-glx
 
 # don't pick up gtar
 CONFIGURE_ENV=		TAR=tar

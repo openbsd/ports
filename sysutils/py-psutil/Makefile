@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/26 07:53:30 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/17 17:29:10 sthen Exp $
 
 COMMENT =	library to retrieve system information and utilisation
 
 MODPY_EGG_VERSION = 3.3.0
+REVISION =	0
 GH_ACCOUNT =	giampaolo
 GH_PROJECT =	psutil
 GH_TAGNAME =	release-${MODPY_EGG_VERSION}
@@ -14,6 +15,8 @@ HOMEPAGE=	https://github.com/giampaolo/psutil
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB += kvm pthread ${MODPY_WANTLIB}
 
 MODULES =	lang/python
 TEST_DEPENDS =	${BUILD_PKGPATH} \

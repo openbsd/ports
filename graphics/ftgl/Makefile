@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2015/10/08 12:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2016/01/17 17:29:09 sthen Exp $
 
 COMMENT =		font rendering library for OpenGL applications
 
 V =			2.1.3
 DISTNAME =		ftgl-$V-rc5
 PKGNAME =		ftgl-$Vrc5
-REVISION =		4
+REVISION =		5
 EPOCH =			0
 SHARED_LIBS =		ftgl	0.0	# 2.1
 CATEGORIES =		graphics
@@ -17,8 +17,8 @@ MAINTAINER =		Peter Hessler <phessler@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU ICE SM X11 Xdamage Xext Xfixes Xmu Xt Xxf86vm drm
-WANTLIB += freetype m stdc++ xcb xcb-glx z
-WANTLIB += X11-xcb Xau Xdmcp glapi pthread pthread-stubs xcb-dri2   
+WANTLIB += freetype m stdc++ xcb xcb-glx z expat
+WANTLIB += X11-xcb glapi pthread xcb-dri2   
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-rc/~rc/}
 

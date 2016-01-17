@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/28 10:17:26 pascal Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/17 17:29:11 sthen Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${MODKDE4_VERSION}
-REVISION =	3
+REVISION =	4
 
 # Bogus message about "backend /usr/local/bin/latex" at startup when no
 # backend is choosen on the command line.
@@ -19,7 +19,7 @@ WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kpty ${KDE4LIB}/ktexteditor
 WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 WANTLIB += cln glib-2.0 qalculate soprano spectre xml2
-WANTLIB += luajit-${MODLUA_DEFAULT_VERSION}
+WANTLIB += luajit-${MODLUA_DEFAULT_VERSION} gfortran
 
 MODULES =	devel/gettext lang/lua lang/python
 MODGCC4_LANGS +=fortran

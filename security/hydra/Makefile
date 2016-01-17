@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2015/11/21 14:16:33 rpointel Exp $
+# $OpenBSD: Makefile,v 1.56 2016/01/17 17:29:10 sthen Exp $
 
 COMMENT-main=	parallelized network logon cracker
 COMMENT-gui=	GTK frontend for hydra
 
 VERSION=	8.1
+REVISION-main=	0
 DISTNAME=	hydra-${VERSION}
 PKGNAME-main=	hydra-${VERSION}
 PKGNAME-gui=	hydra-gui-${VERSION}
@@ -54,7 +55,7 @@ LIB_DEPENDS-main=	databases/mariadb,-main \
 			devel/pcre \
 			security/libssh
 RUN_DEPENDS-main=
-WANTLIB-main=	${WANTLIB} crypto idn mysqlclient pcre pq pthread ssh ssl
+WANTLIB-main=	${WANTLIB} curses crypto idn mysqlclient pcre pq pthread ssh ssl
 LIB_DEPENDS-gui=x11/gtk+2 \
 		${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-gui=hydra-${VERSION}:security/hydra,-main \

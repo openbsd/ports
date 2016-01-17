@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2015/12/23 12:37:21 jca Exp $
+# $OpenBSD: Makefile,v 1.214 2016/01/17 17:29:10 sthen Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.1.22
@@ -19,8 +19,10 @@ PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${VERSION}
 PKGNAME-docs =		samba-docs-${VERSION}
 
+REVISION-main =		0
 REVISION-ldb =		6
 REVISION-tevent =	4
+REVISION-util =		0
 
 PKG_ARCH-docs =		*
 
@@ -92,17 +94,17 @@ UTIL_LIBS +=		util_setid
 # not "plugins" or such.
 UTIL_WANTLIB =		${UTIL_LIBS:S@^@lib/samba/@}
 
-WANTLIB-common =	m pthread util ${MODPY_WANTLIB}
+WANTLIB-common =	c m pthread util ${MODPY_WANTLIB}
 
 WANTLIB-main =		${WANTLIB-common} ${MODGETTEXT_WANTLIB}
-WANTLIB-main +=		c com_err ncurses z
+WANTLIB-main +=		com_err ncurses z
 WANTLIB-main +=		avahi-client avahi-common cups execinfo fam iniparser
 WANTLIB-main +=		lber ldap pam popt sasl2 gcrypt gnutls
 WANTLIB-main +=		ldb pyldb-util pytalloc-util tdb talloc tevent
 WANTLIB-main +=		${UTIL_WANTLIB}
 
 WANTLIB-ldb =		${WANTLIB-common}
-WANTLIB-ldb +=		c popt tdb talloc tevent
+WANTLIB-ldb +=		popt tdb talloc tevent
 WANTLIB-ldb +=		${UTIL_WANTLIB}
 
 WANTLIB-tevent =	${WANTLIB-common}

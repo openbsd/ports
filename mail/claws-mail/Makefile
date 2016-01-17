@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2015/12/23 23:12:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2016/01/17 17:29:09 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,6 +11,7 @@ COMMENT-pdfviewer=	pdfviewer plugin
 COMMENT-gdata=		gdata plugin
 
 V=			3.13.1
+REVISION-htmlviewer=	0
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
@@ -70,6 +71,8 @@ WANTLIB-htmlviewer += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 harfbuzz-icu
 WANTLIB-htmlviewer += icudata icui18n icuuc javascriptcoregtk-1.0
 WANTLIB-htmlviewer += jpeg secret-1 soup-2.4 soup-gnome-2.4 sqlite3
 WANTLIB-htmlviewer += stdc++ webkitgtk-1.0 webp xml2 xslt
+WANTLIB-htmlviewer += X11-xcb Xxf86vm drm glapi xcb-dri2 xcb-glx xcb-shape
+WANTLIB-htmlviewer += xcb-xfixes
 
 WANTLIB-pdfviewer =  ${WANTLIB}
 WANTLIB-pdfviewer += jpeg lcms2 openjpeg poppler poppler-glib tiff

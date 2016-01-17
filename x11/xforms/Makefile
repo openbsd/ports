@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2015/06/26 12:29:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2016/01/17 17:29:12 sthen Exp $
 
 COMMENT=		GUI toolkit for X11
 
 DISTNAME=		xforms-1.2.4
+REVISION=		0
 CATEGORIES=		x11
 
 SHARED_LIBS +=  forms                2.0      # 3.3
@@ -16,9 +17,9 @@ MASTER_SITES=		${MASTER_SITE_SAVANNAH:=xforms/}
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xpm Xxf86vm c drm glapi jpeg m pthread pthread-stubs
-WANTLIB += stdc++ xcb xcb-dri2 xcb-glx
+WANTLIB += GL ICE SM X11 X11-xcb Xdamage Xext Xfixes
+WANTLIB += Xpm Xxf86vm c drm glapi jpeg m pthread
+WANTLIB += xcb xcb-dri2 xcb-glx expat
 
 LIB_DEPENDS=		graphics/jpeg
 

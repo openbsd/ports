@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2015/10/08 12:02:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2016/01/17 17:29:09 sthen Exp $
 
 COMMENT=	parametrical modeling of 3D humanoid characters
 
 DISTNAME=	makehuman-0.9.1-rc1a
 PKGNAME=	makehuman-0.9.1rc1
 CATEGORIES=	graphics
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.dedalo-3d.com/
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GL GLU ICE SM X11 Xdamage Xext Xfixes Xi Xmu Xt Xxf86vm
 WANTLIB += animorph c drm glut m mhgui png stdc++ xcb z
-WANTLIB += X11-xcb Xau Xdmcp Xrandr Xrender glapi pthread pthread-stubs
-WANTLIB += usbhid xcb-dri2 xcb-glx
+WANTLIB += X11-xcb Xrandr Xrender glapi pthread
+WANTLIB += usbhid xcb-dri2 xcb-glx expat
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makehuman/}
 

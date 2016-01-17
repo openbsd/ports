@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2015/03/27 08:16:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2016/01/17 17:29:11 sthen Exp $
 
 BROKEN-hppa =	kstars/kstars/tools/scriptbuilder.cpp:103: internal compiler error: Segmentation fault
 COMMENT =		K Desktop Environment, edutainment
@@ -6,7 +6,7 @@ CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeedu-${VERSION}
 MODKDE_VERSION =	3.5.8
-REVISION =		14
+REVISION =		15
 
 SHARED_LIBS +=	kdeeducore           4.0      # .3.0
 SHARED_LIBS +=	kdeeduui             4.0      # .3.5
@@ -28,6 +28,7 @@ WANTLIB += ${KDE}/qtmcop ${KDE}/soundserver_idl ${KDE}/vcard
 WANTLIB += FLAC art_lgpl_2 audiofile fam glib-2.0 gmodule-2.0
 WANTLIB += gthread-2.0 idn jpeg mad ogg pcre pcreposix png vorbis
 WANTLIB += vorbisenc vorbisfile
+WANTLIB += X11-xcb Xdamage Xxf86vm drm glapi xcb-dri2 xcb-glx
 
 MODULES =	x11/kde devel/gettext
 

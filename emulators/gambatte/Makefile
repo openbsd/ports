@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/11 09:35:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2016/01/17 17:29:08 sthen Exp $
 
 COMMENT-main =		highly accurate Game Boy Color emulator
 COMMENT-qt =		highly accurate Game Boy Color emulator with GUI
@@ -9,7 +9,7 @@ DISTNAME =		gambatte_src-r${REV}
 PKGNAME =		gambatte-$V
 PKGNAME-qt =		gambatte-qt-$V
 REVISION-main =		1
-REVISION-qt =		0
+REVISION-qt =		1
 
 MULTI_PACKAGES =	-main -qt
 
@@ -26,7 +26,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 cWANTLIB =	c m pthread stdc++ z
 WANTLIB-main =	${cWANTLIB} SDL
-WANTLIB-qt =	${cWANTLIB} GL QtCore QtGui QtOpenGL X11 Xext Xrandr Xv ossaudio usbhid
+WANTLIB-qt =	${cWANTLIB} GL QtCore QtGui QtOpenGL X11 Xext Xrandr Xv ossaudio usbhid Xi
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gambatte/}
 

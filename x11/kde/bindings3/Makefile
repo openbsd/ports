@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.90 2015/07/16 23:57:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2016/01/17 17:29:11 sthen Exp $
 
 COMMENT = 		K Desktop Environment bindings for scripting languages
 CATEGORIES =		x11 x11/kde devel
 VERSION =		3.5.10
 DISTNAME =		kdebindings-${VERSION}
 MODKDE_VERSION =	3.5.8
-REVISION =		27
+REVISION =		28
 
 SHARED_LIBS +=	kjsembed             2.0      # .1.0
 SHARED_LIBS +=	smokeqt              4.0      # .3.2
@@ -34,6 +34,7 @@ WANTLIB = GL GLU ICE SM X11 Xext Xrender Xfixes Xt art_lgpl_2 c expat fam \
 	lib/kde3/kutils lib/kde3/kwalletclient m pcre pcreposix png pthread \
 	pthread-stubs qui-mt stdc++ util xcb z ${MODRUBY_WANTLIB}
 WANTLIB += Xmu kabc kabc_file kresources qui
+WANTLIB += X11-xcb Xdamage Xxf86vm drm glapi xcb-dri2 xcb-glx
 
 CONFIGURE_ENV =		DO_NOT_COMPILE=qtsharp
 

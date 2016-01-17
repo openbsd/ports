@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2015/03/27 08:41:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2016/01/17 17:29:08 sthen Exp $
 
 COMMENT= 		billiard game
 CATEGORIES=		x11 x11/kde games
 DISTNAME=		kbilliards-0.8.7b
-REVISION =		12
+REVISION =		13
 
 HOMEPAGE=		http://www.hostnotfound.it/kbilliards.php
 MASTER_SITES=		http://www.hostnotfound.it/kbilliards/
@@ -12,16 +12,17 @@ EXTRACT_SUFX=		.tar.bz2
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =	FLAC ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2
-WANTLIB +=	audiofile bz2 c expat fam fontconfig freetype glib-2.0
-WANTLIB +=	gmodule-2.0 gthread-2.0 idn m mad ogg pcre png 
-WANTLIB +=	pthread pthread-stubs sndio stdc++ util vorbis
-WANTLIB +=	vorbisenc vorbisfile xcb z
-WANTLIB +=	${KDE}/DCOP ${KDE}/artsflow ${KDE}/artsflow_idl
-WANTLIB +=	${KDE}/artskde ${KDE}/kdecore>=6 ${KDE}/kdefx
-WANTLIB +=	${KDE}/kdeprint ${KDE}/kdesu ${KDE}/kdeui ${KDE}/kio
-WANTLIB +=	${KDE}/kmedia2_idl ${KDE}/kparts ${KDE}/kwalletclient
-WANTLIB +=	${KDE}/mcop ${KDE}/qtmcop ${KDE}/soundserver_idl 
+WANTLIB += FLAC ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2
+WANTLIB += audiofile bz2 c expat fam fontconfig freetype glib-2.0
+WANTLIB += gmodule-2.0 gthread-2.0 idn m mad ogg pcre png 
+WANTLIB += pthread pthread-stubs sndio stdc++ util vorbis
+WANTLIB += vorbisenc vorbisfile xcb z
+WANTLIB += X11-xcb Xdamage Xxf86vm drm glapi xcb-dri2 xcb-glx
+WANTLIB += ${KDE}/DCOP ${KDE}/artsflow ${KDE}/artsflow_idl
+WANTLIB += ${KDE}/artskde ${KDE}/kdecore>=6 ${KDE}/kdefx
+WANTLIB += ${KDE}/kdeprint ${KDE}/kdesu ${KDE}/kdeui ${KDE}/kio
+WANTLIB += ${KDE}/kmedia2_idl ${KDE}/kparts ${KDE}/kwalletclient
+WANTLIB += ${KDE}/mcop ${KDE}/qtmcop ${KDE}/soundserver_idl 
 
 MODULES=		x11/kde	devel/gettext
 

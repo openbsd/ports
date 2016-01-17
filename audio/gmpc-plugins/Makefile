@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/05/04 10:08:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2016/01/17 17:29:07 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -10,7 +10,7 @@ DISTNAME =	gmpc-plugins-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}
 REVISION-main =		6
-REVISION-wikipedia =	8
+REVISION-wikipedia =	9
 
 CATEGORIES =	audio
 
@@ -48,7 +48,9 @@ WANTLIB-wikipedia =	${WANTLIB} \
 			jpeg soup-2.4 webkitgtk-1.0 xslt javascriptcoregtk-1.0 \
 			gstaudio-1.0 gstfft-1.0 pthread GL \
 			gbm gcrypt gpg-error gsttag-1.0 harfbuzz-icu \
-			icudata icuuc secret-1 webp EGL
+			icudata icuuc secret-1 webp EGL \
+			X11-xcb Xxf86vm drm glapi xcb-dri2 xcb-glx xcb-shape \
+			xcb-xfixes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo

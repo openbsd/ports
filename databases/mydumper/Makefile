@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/10/27 10:51:32 giovanni Exp $$
+# $OpenBSD: Makefile,v 1.8 2016/01/17 17:29:08 sthen Exp $$
 
 COMMENT =	utility for quick MySQL dumping
 
 V =		0.6.2
+REVISION =	0
 DISTNAME =	mydumper-${V}
 CATEGORIES =	databases
 
@@ -11,7 +12,7 @@ MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	c crypto glib-2.0 gthread-2.0 m mysqlclient
+WANTLIB +=	c crypto glib-2.0 gthread-2.0 m mysqlclient_r
 WANTLIB +=	pcre pthread ssl z
 
 MASTER_SITES =	https://launchpad.net/mydumper/${V:R}/${V}/+download/

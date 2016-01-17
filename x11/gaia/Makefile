@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2016/01/17 17:29:11 sthen Exp $
 
 COMMENT=	3D earth viewer with GPS support
 
 DISTNAME=	gaia-0.1.2
-REVISION=	8
+REVISION=	9
 CATEGORIES=	x11 geo
 
 EXTRACT_SUFX=	.tar.bz2
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaia-clean/}
 
 WANTLIB +=	GL GLU c crypto idn m pthread ssl stdc++ z
-WANTLIB +=	SDL>=6 gps>=19 curl>=4 png>=5 jpeg>=62
+WANTLIB +=	SDL gps curl nghttp2 png jpeg
 
 MODULES=	devel/scons
 MODSCONS_FLAGS=	prefix=${PREFIX} \

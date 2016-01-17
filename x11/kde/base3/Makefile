@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2016/01/06 09:48:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.136 2016/01/17 17:29:11 sthen Exp $
 
 COMMENT-main =		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -13,8 +13,8 @@ PKGNAME-en_US =		kde3-locale-en_US-${VERSION}
 PKGNAME-locale =	kde3-locale-${VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-locale =	*
-REVISION-main =		41
-REVISION-samba =	16
+REVISION-main =		42
+REVISION-samba =	17
 REVISION-en_US =	2
 REVISION-locale =	2
 
@@ -62,7 +62,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/glib2
 LIB_DEPENDS-samba =	${LIB_DEPENDS} \
 			x11/kde/libs3 \
-			net/samba
+			net/samba,-main
 
 WANTLIB =  crypto expat m pthread pthread-stubs ssl stdc++ util z
 WANTLIB += ICE SM X11 Xext Xfixes Xrender Xt freetype fontconfig xcb
@@ -70,7 +70,7 @@ WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
 WANTLIB += art_lgpl_2 fam idn lber-2.4 ldap-2.4 png sasl2
 
-WANTLIB-main =  ${WANTLIB} c sndio
+WANTLIB-main =  ${WANTLIB} c sndio Iexmath
 WANTLIB-main += GL GLU Half Iex IlmImf IlmThread Imath Xau Xcomposite
 WANTLIB-main += Xcursor Xdamage Xdmcp Xfixes Xft Xi Xinerama Xmu
 WANTLIB-main += Xrandr Xss Xtst Xxf86misc Xxf86vm X11-xcb drm
@@ -92,6 +92,14 @@ WANTLIB-samba =  ${WANTLIB}
 WANTLIB-samba += execinfo ndr ndr-standard nss_wrapper replace samba-hostconfig
 WANTLIB-samba += samba-util smbclient smbconf socket_wrapper talloc tdb tevent
 WANTLIB-samba += tevent-util uid_wrapper util_setid
+WANTLIB-samba += X11-xcb Xdamage Xxf86vm com_err dcerpc-binding drm
+WANTLIB-samba += ffi gcrypt gensec glapi gmp gnutls gpg-error hogweed
+WANTLIB-samba += ldb ndr-krb5pac ndr-nbt nettle ntdb p11-kit samba-credentials
+WANTLIB-samba += samdb tasn1 wbclient xcb-dri2 xcb-glx
+WANTLIB-samba += lib/samba/asn1-samba4 lib/samba/gssapi-samba4
+WANTLIB-samba += lib/samba/hcrypto-samba4 lib/samba/heimbase-samba4
+WANTLIB-samba += lib/samba/hx509-samba4 lib/samba/krb5-samba4
+WANTLIB-samba += lib/samba/roken-samba4 lib/samba/wind-samba4
 
 WANTLIB-en_US =
 WANTLIB-locale =

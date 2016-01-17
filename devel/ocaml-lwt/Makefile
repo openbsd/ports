@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/12/29 19:49:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2016/01/17 17:29:08 sthen Exp $
 
 COMMENT =	cooperative lightweight thread library
 CATEGORIES =	devel
@@ -6,6 +6,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	ocsigen
 GH_PROJECT =	lwt
 GH_TAGNAME =	2.4.8
+REVISION =	0
 # This is not the latest upstream version, but the last one that is most
 # compatible due to an API change. Be careful about upgrading to lwt-2.5.0
 # without checking that no in-tree ports break due to new buffer APIs.
@@ -13,9 +14,10 @@ PKGNAME =	ocaml-${DISTNAME}
 
 HOMEPAGE =	http://ocsigen.org/lwt/
 
-
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =		Yes
+
+WANTLIB += c glib-2.0 ev m pthread
 
 MODULES =	lang/ocaml \
 		devel/gettext
@@ -27,7 +29,6 @@ MYDEPENDS =	devel/ocaml-react \
 BUILD_DEPENDS =	${MYDEPENDS} sysutils/findlib lang/ocaml-camlp4
 RUN_DEPENDS =	${MYDEPENDS}
 LIB_DEPENDS =	devel/glib2 devel/libev
-WANTLIB =	glib-2.0 ev pthread
 
 CONFIGURE_STYLE =	oasis
 CONFIGURE_ARGS =	--enable-tests --enable-react --enable-glib \

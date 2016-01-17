@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2015/07/10 16:38:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2016/01/17 17:29:12 sthen Exp $
 
 PORTROACH=	limit:^2\.8
 
 COMMENT=	yet another kuake KDE terminal emulator
 
 DISTNAME=	yakuake-2.8.1
-REVISION=	13
+REVISION=	14
 CATEGORIES=	x11 x11/kde
 EPOCH=		0
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
+WANTLIB += X11-xcb Xdamage Xxf86vm drm glapi xcb-dri2 xcb-glx
 WANTLIB += ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c expat fam
 WANTLIB += fontconfig freetype idn m png pthread pthread-stubs stdc++
 WANTLIB += util xcb z

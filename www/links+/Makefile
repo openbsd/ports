@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.57 2015/10/06 22:43:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2016/01/17 17:29:10 sthen Exp $
 
 COMMENT=	graphics and text browser
 VER=		2.12
+REVISION=	0
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 CATEGORIES=	www
@@ -11,7 +12,7 @@ HOMEPAGE=	http://links.twibright.com/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	bz2 c crypto lzma pthread ssl z
+WANTLIB=	bz2 c crypto event lzma pthread ssl z
 
 MASTER_SITES=	http://links.twibright.com/download/
 

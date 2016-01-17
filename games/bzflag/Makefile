@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2015/10/30 12:47:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2016/01/17 17:29:08 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ DISTNAME=	bzflag-2.4.2
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bzflag/}
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://www.bzflag.org/
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 WANTLIB += GL GLEW GLU ICE SDL SM X11 Xdamage Xext Xfixes Xi Xmu
 WANTLIB += Xt Xxf86vm c cares crypto curl drm idn m ncurses nghttp2 pthread
 WANTLIB += sndio ssl stdc++ usbhid xcb z
-WANTLIB += X11-xcb Xau Xdmcp glapi pthread-stubs xcb-dri2 xcb-glx
+WANTLIB += X11-xcb glapi xcb-dri2 xcb-glx expat
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	devel/sdl \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.76 2015/06/10 21:42:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2016/01/17 17:29:11 sthen Exp $
 
 COMMENT-main =		K Desktop Environment, developer extensions
 COMMENT-svn =		K Desktop Environment, svn extensions
 CATEGORIES =		x11 x11/kde devel
 VERSION =		3.5.10
 REVISION-main =		22
-REVISION-svn =		22
+REVISION-svn =		23
 DISTNAME =		kdesdk-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
@@ -60,6 +60,7 @@ WANTLIB-svn += apr-1 aprutil-1 db sasl2 serf-1 sqlite3 svn_client-1
 WANTLIB-svn += svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1
 WANTLIB-svn += svn_fs_util-1 svn_ra-1 svn_ra_local-1 svn_ra_serf-1
 WANTLIB-svn += svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
+WANTLIB-svn += X11-xcb Xdamage Xxf86vm drm glapi xcb-dri2 xcb-glx
 
 post-patch:
 	find "${WRKSRC}"/scripts -type f | while read F; do \

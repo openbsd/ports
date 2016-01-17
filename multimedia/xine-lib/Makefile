@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.121 2015/09/18 05:45:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2016/01/17 17:29:10 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.6
-REVISION=	3
+REVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -26,6 +26,7 @@ WANTLIB += fontconfig freetype iso9660 jpeg lzma m mad mng modplug
 WANTLIB += mpcdec ogg postproc pthread pthread-stubs sndio speex theora
 WANTLIB += usbhid vcdinfo vorbis vpx>=5 wavpack xcb xcb-shape xcb-shm
 WANTLIB += xcb-xv xdg-basedir xml2 z
+WANTLIB += X11-xcb Xdamage Xfixes Xxf86vm drm glapi xcb-dri2 xcb-glx
 
 XINEAPI_REV=	2.5
 SUBST_VARS+=	XINEAPI_REV

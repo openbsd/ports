@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/12/11 14:08:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2016/01/17 17:29:11 sthen Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -8,7 +8,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.18.2
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -33,6 +33,7 @@ WANTLIB += pulse pulse-mainloop-glib pwquality rest-0.7 secret-1
 WANTLIB += smbclient sndfile soup-2.4 soup-gnome-2.4 sqlite3 stdc++
 WANTLIB += tasn1 telepathy-glib upower-glib vorbis vorbisenc vorbisfile
 WANTLIB += webkit2gtk-4.0 xcb xcb-render xcb-shm xml2 z lber-2.4 sasl2 ssl
+WANTLIB += Xxf86vm drm gbm glapi xcb-dri2 xcb-glx xcb-shape xcb-xfixes
 WANTLIB += heimdal/lib/heimsqlite
 
 MODULES=		devel/gettext \

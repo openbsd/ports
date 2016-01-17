@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/12/29 07:23:02 pascal Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/17 17:29:08 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -10,6 +10,7 @@ MULTI_PACKAGES =	-main -server
 SHARED_LIBS +=  physlayer                 0.0 # 0.0
 
 R =			0.9.22
+REVISION =		0
 V =			$R
 DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V
@@ -25,7 +26,7 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB-main += QtGui QtNetwork SDL SDL_image SDL_mixer SDL_net SDL_ttf
-WANTLIB-main += c m physfs png pthread stdc++ z
+WANTLIB-main += c m physfs png pthread stdc++ util z
 WANTLIB-main += ${MODLUA_WANTLIB} ${MODQT4_WANTLIB}
 
 # dlopen()ed; do not remove.

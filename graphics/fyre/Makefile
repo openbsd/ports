@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2015/11/24 09:11:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2016/01/17 17:29:09 sthen Exp $
 
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
-REVISION=		16
+REVISION=		17
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://fyre.navi.cx/
@@ -15,6 +15,7 @@ WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += atk-1.0 c cairo fontconfig freetype gdk-x11-2.0 gio-2.0
 WANTLIB += glade-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread stdc++ xml2 z
+WANTLIB += gdk_pixbuf-2.0
 
 MASTER_SITES=		http://releases.navi.cx/fyre/ \
 			https://distfiles.nl/

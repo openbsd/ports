@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2015/12/22 06:46:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.200 2016/01/17 17:29:12 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ V=		2.2.1
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	4
+REVISION-main=	5
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -39,7 +39,8 @@ WANTLIB-main=	EGL GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 \
 		speex speexdsp stdc++ swscale tag tar tasn1 tiff usbhid \
 		vorbis vorbisenc webp x264 x265 xcb-composite xcb-keysyms \
 		xcb-randr xcb-render xcb-shape xcb-shm xcb-xfixes xcb-xv \
-		xcb xml2 z ${WANTLIB-common}
+		xcb xml2 z X11-xcb Xxf86vm drm gbm glapi xcb-dri2 xcb-glx \
+		${WANTLIB-common}
 WANTLIB-jack=	db jack vlccore ${WANTLIB-common}
 
 AUTOCONF_VERSION= 2.69

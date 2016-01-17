@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.174 2015/10/23 15:34:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.175 2016/01/17 17:29:11 sthen Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.12.11
+REVISION=		0
 
 SUBST_VARS=		GNOME_VERSION
 
@@ -12,8 +13,8 @@ CATEGORIES=		net
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL FLAC GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += EGL FLAC GL ICE SM X11 X11-xcb Xcomposite Xcursor
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xt Xtst atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
 WANTLIB += canberra canberra-gtk3 champlain-0.12 champlain-gtk-0.12
 WANTLIB += clutter-1.0 clutter-gst-3.0 clutter-gtk-1.0 cogl cogl-pango
@@ -34,6 +35,7 @@ WANTLIB += sqlite3 stdc++ tasn1 telepathy-farstream telepathy-glib
 WANTLIB += telepathy-logger vorbis vorbisenc vorbisfile webkitgtk-3.0
 WANTLIB += webp xcb xcb-dri2 xcb-render xcb-shape xcb-shm xcb-xfixes
 WANTLIB += xml2 xslt z zeitgeist-2.0
+WANTLIB += Xxf86vm xcb-glx
 
 MODULES=		devel/dconf \
 			devel/gettext \

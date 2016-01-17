@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1 2015/11/13 12:54:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/17 17:29:09 sthen Exp $
 
-COMMENT=		OCR Engine developed at HP Labs
+COMMENT=	OCR Engine developed at HP Labs
 
-GH_PROJECT=		tesseract
+GH_PROJECT=	tesseract
+REVISION=	0
 
 SHARED_LIBS +=  tesseract            3.2      # 3.2
 
@@ -10,7 +11,7 @@ WANTLIB += X11 Xext Xrender c cairo expat ffi fontconfig freetype
 WANTLIB += gif glib-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
 WANTLIB += icudata icui18n icuuc jpeg lept m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += stdc++ tiff webp xcb xcb-render xcb-shm z
+WANTLIB += stdc++ tiff webp xcb xcb-render xcb-shm z openjp2
 
 MODULES=		devel/gettext
 

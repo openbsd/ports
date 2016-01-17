@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2015/11/16 10:26:23 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2016/01/17 17:29:08 sthen Exp $
 
 COMMENT-main =	tilt the floor to roll a ball through an obstacle course
 COMMENT-data =	data for Neverball/Neverputt
 BROKEN-hppa =	SIGILL on data/ball/snowglobe/snowglobe-inner.so
 
 V =		1.6.0
+REVISION-main =	0
 DISTNAME =	neverball-$V
 PKGNAME-main =	neverball-$V
 PKGNAME-data =	neverball-data-$V
@@ -21,7 +22,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main =	GL SDL2 X11 c m pthread z ogg vorbis vorbisfile \
+WANTLIB-main =	${WANTLIB} GL SDL2 X11 c m pthread z ogg vorbis vorbisfile \
 		jpeg png SDL2_ttf physfs
 
 MASTER_SITES =	${HOMEPAGE}

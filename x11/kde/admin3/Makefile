@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2015/03/27 08:16:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2016/01/17 17:29:11 sthen Exp $
 
 COMMENT = 		K Desktop Environment, admin tools
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
+REVISION =		0
 DISTNAME =		kdeadmin-${VERSION}
 MODKDE_VERSION =	3.5.8
 PKGSPEC =		kdeadmin>=3,<4
@@ -24,6 +25,7 @@ WANTLIB += ${KDE}/kdeprint ${KDE}/kdesu ${KDE}/kdeui ${KDE}/kio
 WANTLIB += ${KDE}/kntlm ${KDE}/kparts ${KDE}/kresources
 WANTLIB += ${KDE}/kwalletclient ${KDE}/vcard
 WANTLIB += art_lgpl_2 fam idn png
+WANTLIB += X11-xcb Xdamage Xxf86vm drm glapi xcb-dri2 xcb-glx
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2015/11/24 15:02:23 abieber Exp $
+# $OpenBSD: Makefile,v 1.22 2016/01/17 17:29:08 sthen Exp $
 
 COMMENT=	interactive electronics designing software
 
 V=		0.9.2
+REVISION=	0
 
 GH_ACCOUNT=	fritzing
 GH_PROJECT=	fritzing-app
@@ -38,7 +39,7 @@ pre-configure:
 
 WANTLIB += ICE QtGui QtNetwork QtSql QtSvg QtXml SM X11 Xext Xi
 WANTLIB += Xinerama Xrender c fontconfig freetype m pthread stdc++
-WANTLIB += z
+WANTLIB += z QtSerialPort
 
 # -DLINUX_32 gets added to CFLAGS, though it's only used to figure out
 # if there is a newer version of the 32-bit Linux binary on the upstream

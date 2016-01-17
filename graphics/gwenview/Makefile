@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2015/03/27 08:11:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2016/01/17 17:29:09 sthen Exp $
 
 COMMENT=	image viewer for KDE
 
 DISTNAME=	gwenview-1.4.2
 PKGSPEC=	gwenview-<4
-REVISION =	18
+REVISION=	19
 
 SHARED_LIBS +=	gwenviewcore         5.0      # .1.0
 CATEGORIES=	graphics x11 x11/kde
@@ -16,10 +16,11 @@ HOMEPAGE=	http://gwenview.sourceforge.net/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
-WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm expat exiv2
-WANTLIB += fam fontconfig freetype idn jpeg lcms m mng png pthread
+WANTLIB =  ICE SM X11 Xcursor Xdamage Xext Xfixes
+WANTLIB += Xrender Xt Xxf86vm art_lgpl_2 c drm expat exiv2
+WANTLIB += fam fontconfig freetype idn jpeg m mng png pthread
 WANTLIB += pthread-stubs stdc++ util xcb z
+WANTLIB += X11-xcb glapi xcb-dri2 xcb-glx
 WANTLIB += ${KDE}/kdecore>=6 ${KDE}/DCOP ${KDE}/kdefx ${KDE}/kdeprint
 WANTLIB += ${KDE}/kdesu ${KDE}/kparts ${KDE}/kdeui ${KDE}/kio
 WANTLIB += ${KDE}/kmediaplayer ${KDE}/kutils ${KDE}/kwalletclient

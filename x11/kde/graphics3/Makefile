@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2015/10/11 14:52:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2016/01/17 17:29:11 sthen Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -9,10 +9,10 @@ VERSION =		3.5.10
 DISTNAME =		kdegraphics-${VERSION}
 MODKDE_VERSION =	3.5.8
 
-REVISION-main =		24
-REVISION-kamera =	14
+REVISION-main =		25
+REVISION-kamera =	15
 REVISION-kpov =		13
-REVISION-sane =		18
+REVISION-sane =		19
 
 SEPARATE_BUILD =	flavored
 MULTI_PACKAGES =	-main -kpov -kamera -sane
@@ -67,11 +67,14 @@ RUN_DEPENDS-sane =	${RUN_DEPENDS} \
 LIB_DEPENDS-sane =	${LIB_DEPENDS} \
 			graphics/sane-backends
 
-WANTLIB-main = 		${WANTLIB}
+WANTLIB-main = 		${WANTLIB} IexMath
 WANTLIB-kpov =		${WANTLIB} X11-xcb Xau Xdmcp fam glapi pthread-stubs \
 			xcb-dri2 xcb-glx
 WANTLIB-kamera =	${WANTLIB} fam pthread-stubs
+WANTLIB-kamera += X11-xcb Xdamage Xxf86vm drm glapi xcb-dri2 xcb-glx
 WANTLIB-sane =		${WANTLIB} fam pthread-stubs
+WANTLIB-sane += X11-xcb Xdamage Xxf86vm drm glapi v4l1 v4l2 v4lconvert
+WANTLIB-sane += xcb-dri2 xcb-glx
 
 WANTLIB-main +=	 GL Half ICE Iex IlmImf IlmThread Imath Imlib SM \
 	Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt \

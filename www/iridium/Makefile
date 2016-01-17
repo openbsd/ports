@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/01/15 19:57:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2016/01/17 17:29:12 sthen Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -6,6 +6,7 @@ DPB_PROPERTIES=		parallel
 COMMENT=		Iridium browser
 
 V=			47.0
+REVISION=		0
 DISTNAME=		iridium-browser-${V}
 DISTFILES=		${DISTNAME}-stripped${EXTRACT_SUFX}
 PKGNAME=		iridium-${V}
@@ -55,7 +56,7 @@ WANTLIB += png pthread
 WANTLIB += xml2 xslt
 WANTLIB += sndio
 WANTLIB += Xcomposite
-WANTLIB += estdc++>=17
+WANTLIB += stdc++ estdc++>=17
 WANTLIB += Xi Xtst
 WANTLIB += Xdamage
 WANTLIB += Xcursor Xrandr gio-2.0
