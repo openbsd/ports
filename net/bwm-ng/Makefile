@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2015/10/08 21:19:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/17 22:51:33 sthen Exp $
 
 COMMENT=		realtime bandwidth monitoring of interfaces
 
-DISTNAME=		bwm-ng-0.6
-REVISION=		2
+DISTNAME=		bwm-ng-0.6.1
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bwmng/}
 HOMEPAGE=		http://www.gropp.org/
 
-MAINTAINER=		Genadijus Paleckis <rwx@openbsd.lt>
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
