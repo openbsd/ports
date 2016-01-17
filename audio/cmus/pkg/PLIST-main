@@ -1,13 +1,19 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2012/12/27 12:02:33 gonzalo Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2016/01/17 01:16:38 juanfra Exp $
+@conflict cmus-<2.7.1
+@pkgpath audio/cmus,-flac
+@pkgpath audio/cmus,-wavpack
 @bin bin/cmus
 @bin bin/cmus-remote
 lib/cmus/
 lib/cmus/ip/
 lib/cmus/ip/cdio.so
 lib/cmus/ip/cue.so
+lib/cmus/ip/flac.so
 lib/cmus/ip/mad.so
+lib/cmus/ip/opus.so
 lib/cmus/ip/vorbis.so
 lib/cmus/ip/wav.so
+lib/cmus/ip/wavpack.so
 lib/cmus/op/
 lib/cmus/op/sndio.so
 @man man/man1/cmus-remote.1
@@ -19,7 +25,10 @@ share/cmus/default.theme
 share/cmus/gray-88.theme
 share/cmus/green-mono-88.theme
 share/cmus/green.theme
+share/cmus/night.theme
 share/cmus/rc
+share/cmus/solarized-dark.theme
+share/cmus/solarized-light.theme
 share/cmus/xterm-white.theme
 share/cmus/zenburn.theme
 share/examples/cmus/

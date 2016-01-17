@@ -1,80 +1,87 @@
-# $OpenBSD: Makefile,v 1.9 2015/07/18 14:33:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/17 01:16:38 juanfra Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT-main=		ncurses-based music player
-COMMENT-flac=		FLAC input plugin for cmus
-COMMENT-wavpack=	Wavpack input plugin for cmus
+COMMENT-ffmpeg=		ffmpeg input plugin for cmus (.aac, .mp4...)
 
-V=			2.5.0
-DISTNAME=		cmus-v$(V)
-PKGNAME-main=		cmus-$(V)
-PKGNAME-flac=		cmus-flac-$(V)
-PKGNAME-wavpack=	cmus-wavpack-$(V)
+V=			2.7.1
+DISTNAME=		cmus-${V}
+PKGNAME-main=		${PKGNAME}
+PKGNAME-ffmpeg=		cmus-ffmpeg-${V}
+
+GH_ACCOUNT=		cmus
+GH_PROJECT=		cmus
+GH_TAGNAME=		v${V}
 
 CATEGORIES=		audio
-
 HOMEPAGE=		http://cmus.sourceforge.net/
+
 MAINTAINER=		Donovan Watteau <tsoomi@gmail.com>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cmus/}
-
-SHARED_ONLY=		Yes
-MULTI_PACKAGES=		-main -flac -wavpack
+MULTI_PACKAGES=		-main -ffmpeg
 
 MODULES=		converters/libiconv
 
-WANTLIB-main=		c cdio cdio_cdda cue m mad>=2 ncursesw pthread sndio
-WANTLIB-main+=		${MODLIBICONV_WANTLIB}
+WANTLIB-main+=		c cdio cdio_cdda cue discid FLAC>=5 m mad>=2 ncursesw
+WANTLIB-main+=		ogg opusfile pthread sndio wavpack ${MODLIBICONV_WANTLIB}
 
-LIB_DEPENDS=		audio/libcdio audio/libcue audio/libmad
+LIB_DEPENDS-main=	audio/flac \
+			audio/libcdio \
+			audio/libcue \
+			audio/libdiscid \
+			audio/libmad \
+			audio/libogg \
+			audio/opusfile \
+			audio/wavpack
 
-LIB_DEPENDS-flac=	audio/flac audio/libogg
-RUN_DEPENDS-flac=	audio/cmus
-WANTLIB-flac=		FLAC>=5 ogg m
-LIB_DEPENDS-wavpack=	audio/wavpack ${MODLIBICONV_LIB_DEPENDS}
-RUN_DEPENDS-wavpack=	audio/cmus
-WANTLIB-wavpack=	wavpack m ${MODLIBICONV_WANTLIB}
+WANTLIB-ffmpeg=		avformat swresample
+LIB_DEPENDS-ffmpeg=	graphics/ffmpeg
+RUN_DEPENDS-ffmpeg=	audio/cmus
 
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV=		HOSTCC="${CC}" HOSTLD="${CC}" HOST_CFLAGS="${CFLAGS}"
+CFLAGS+=		-Wno-system-headers
 # Note: We're explicitly disabling CONFIG_CDDB as it gets undef'd in cdio.c
 CONFIGURE_ARGS=		prefix=${PREFIX} \
 			exampledir=${PREFIX}/share/examples/cmus \
 			mandir=${PREFIX}/man \
 			CONFIG_AAC=n \
-			CONFIG_FFMPEG=n \
+			CONFIG_ALSA=n \
+			CONFIG_AO=n \
+			CONFIG_ARTS=n \
+			CONFIG_CDDB=n \
+			CONFIG_DISCID=y \
+			CONFIG_FFMPEG=y \
+			CONFIG_JACK=n \
 			CONFIG_MODPLUG=n \
 			CONFIG_MP4=n \
 			CONFIG_MPC=n \
 			CONFIG_OSS=n \
-			CONFIG_SUN=n \
-			CONFIG_AO=n \
-			CONFIG_ARTS=n \
 			CONFIG_PULSE=n \
-			CONFIG_ALSA=n \
 			CONFIG_ROAR=n \
+			CONFIG_SAMPLERATE=n \
 			CONFIG_SNDIO=y \
-			CONFIG_DISCID=n \
-			CONFIG_CDDB=n
+			CONFIG_SUN=n \
+			CONFIG_VTX=n
 
 .if ${MACHINE_ARCH} == "arm"
 CONFIGURE_ARGS+=	CONFIG_TREMOR=y
-LIB_DEPENDS+=		audio/tremor
+LIB_DEPENDS-main+=	audio/tremor
 WANTLIB-main+=		vorbisidec>=1
 .else
-LIB_DEPENDS+=		audio/libvorbis
-WANTLIB-main+=		ogg vorbis>=0 vorbisfile>=1
+LIB_DEPENDS-main+=	audio/libvorbis
+WANTLIB-main+=		vorbis>=0 vorbisfile>=1
 .endif
 
 NO_TEST=		Yes
 
-post-patch:
-	@cp ${FILESDIR}/sndio.c ${WRKSRC}
+pre-configure:
 	sed -i s,/usr,${LOCALBASE}, ${WRKSRC}/Doc/cmus.txt
 	sed -i s,doc/cmus/examples,examples/cmus, ${WRKSRC}/Doc/cmus.txt
 
