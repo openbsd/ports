@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 09:11:58 espie Exp $
-bin/calc
+@comment $OpenBSD: PLIST,v 1.8 2016/01/17 22:35:56 sthen Exp $
+@bin bin/calc
 bin/cscript/
 bin/cscript/4dsphere
 bin/cscript/fproduct
@@ -21,8 +21,8 @@ include/calc/calcerr.h
 include/calc/cmath.h
 include/calc/conf.h
 include/calc/config.h
-include/calc/custom/
 include/calc/custom.h
+include/calc/decl.h
 include/calc/endian_calc.h
 include/calc/file.h
 include/calc/fposval.h
@@ -35,7 +35,6 @@ include/calc/have_getpgid.h
 include/calc/have_getprid.h
 include/calc/have_getsid.h
 include/calc/have_gettime.h
-include/calc/have_malloc.h
 include/calc/have_memmv.h
 include/calc/have_newstr.h
 include/calc/have_offscl.h
@@ -47,35 +46,34 @@ include/calc/have_string.h
 include/calc/have_times.h
 include/calc/have_uid_t.h
 include/calc/have_unistd.h
+include/calc/have_unused.h
 include/calc/have_urandom.h
 include/calc/have_ustat.h
 include/calc/hist.h
 include/calc/jump.h
 include/calc/label.h
+include/calc/lib_calc.h
 include/calc/lib_util.h
 include/calc/longbits.h
-include/calc/longlong.h
-include/calc/math_error.h
-include/calc/md5.h
 include/calc/nametype.h
 include/calc/opcodes.h
 include/calc/prime.h
 include/calc/qmath.h
-include/calc/shs.h
-include/calc/shs1.h
-include/calc/string.h
+include/calc/sha1.h
+include/calc/str.h
 include/calc/symbol.h
 include/calc/terminal.h
 include/calc/token.h
 include/calc/value.h
-include/calc/win32dll.h
 include/calc/zmath.h
 include/calc/zrand.h
 include/calc/zrandom.h
 lib/libcalc.a
+lib/libcustcalc.a
 @man man/man1/calc.1
 share/calc/
 share/calc/README
+share/calc/alg_config.cal
 share/calc/beer.cal
 share/calc/bernoulli.cal
 share/calc/bigprime.cal
@@ -86,14 +84,18 @@ share/calc/custhelp/
 share/calc/custhelp/argv
 share/calc/custhelp/devnull
 share/calc/custhelp/help
+share/calc/custhelp/pmodm127
 share/calc/custhelp/pzasusb8
+share/calc/custhelp/register
 share/calc/custhelp/sysinfo
 share/calc/custom/
 share/calc/custom/argv.cal
 share/calc/custom/halflen.cal
-share/calc/custom/libcustcalc.a
+share/calc/custom/pmodm127.cal
 share/calc/custom/pzasusb8.cal
+share/calc/custom/register.cal
 share/calc/deg.cal
+share/calc/dotest.cal
 share/calc/ellip.cal
 share/calc/hello.cal
 share/calc/help/
@@ -142,6 +144,7 @@ share/calc/help/bugs
 share/calc/help/builtin
 share/calc/help/calc_tty
 share/calc/help/calclevel
+share/calc/help/calcpath
 share/calc/help/catalan
 share/calc/help/ceil
 share/calc/help/cfappr
@@ -176,6 +179,7 @@ share/calc/help/dereference
 share/calc/help/det
 share/calc/help/digit
 share/calc/help/digits
+share/calc/help/display
 share/calc/help/dp
 share/calc/help/environment
 share/calc/help/epsilon
@@ -185,6 +189,7 @@ share/calc/help/errno
 share/calc/help/error
 share/calc/help/errorcode
 share/calc/help/errorcodes
+share/calc/help/estr
 share/calc/help/euler
 share/calc/help/eval
 share/calc/help/exp
@@ -198,6 +203,7 @@ share/calc/help/ferror
 share/calc/help/fflush
 share/calc/help/fgetc
 share/calc/help/fgetfield
+share/calc/help/fgetfile
 share/calc/help/fgetline
 share/calc/help/fgets
 share/calc/help/fgetstr
@@ -207,6 +213,7 @@ share/calc/help/files
 share/calc/help/floor
 share/calc/help/fopen
 share/calc/help/forall
+share/calc/help/fpathopen
 share/calc/help/fprintf
 share/calc/help/fputc
 share/calc/help/fputs
@@ -288,6 +295,7 @@ share/calc/help/lfactor
 share/calc/help/libcalc
 share/calc/help/list
 share/calc/help/ln
+share/calc/help/log
 share/calc/help/lowbit
 share/calc/help/ltol
 share/calc/help/makelist
@@ -300,7 +308,6 @@ share/calc/help/matsum
 share/calc/help/mattrace
 share/calc/help/mattrans
 share/calc/help/max
-share/calc/help/md5
 share/calc/help/memsize
 share/calc/help/meq
 share/calc/help/min
@@ -334,6 +341,7 @@ share/calc/help/polar
 share/calc/help/poly
 share/calc/help/pop
 share/calc/help/popcnt
+share/calc/help/pound
 share/calc/help/power
 share/calc/help/prevcand
 share/calc/help/prevprime
@@ -377,7 +385,6 @@ share/calc/help/seed
 share/calc/help/segment
 share/calc/help/select
 share/calc/help/sgn
-share/calc/help/sha
 share/calc/help/sha1
 share/calc/help/sin
 share/calc/help/sinh
@@ -390,10 +397,15 @@ share/calc/help/srand
 share/calc/help/srandom
 share/calc/help/ssq
 share/calc/help/statement
+share/calc/help/stoponerror
 share/calc/help/str
 share/calc/help/strcat
+share/calc/help/strcmp
+share/calc/help/strcpy
 share/calc/help/strerror
 share/calc/help/strlen
+share/calc/help/strncmp
+share/calc/help/strncpy
 share/calc/help/strpos
 share/calc/help/strprintf
 share/calc/help/strscan
@@ -402,6 +414,7 @@ share/calc/help/substr
 share/calc/help/sum
 share/calc/help/swap
 share/calc/help/system
+share/calc/help/systime
 share/calc/help/tail
 share/calc/help/tan
 share/calc/help/tanh
@@ -413,11 +426,13 @@ share/calc/help/type
 share/calc/help/types
 share/calc/help/unexpected
 share/calc/help/usage
+share/calc/help/usertime
 share/calc/help/variable
 share/calc/help/version
 share/calc/help/wishlist
 share/calc/help/xor
 share/calc/intfile.cal
+share/calc/linear.cal
 share/calc/lucas.cal
 share/calc/lucas_chk.cal
 share/calc/lucas_tbl.cal
@@ -441,9 +456,13 @@ share/calc/randomrun.cal
 share/calc/randrun.cal
 share/calc/regress.cal
 share/calc/repeat.cal
+share/calc/screen.cal
 share/calc/seedrandom.cal
+share/calc/set8700.cal
+share/calc/set8700.line
 share/calc/solve.cal
 share/calc/sumsq.cal
+share/calc/sumtimes.cal
 share/calc/surd.cal
 share/calc/test1700.cal
 share/calc/test2300.cal
