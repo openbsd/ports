@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2015/12/14 14:11:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2016/01/18 18:09:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
-GNOME_VERSION=		3.18.3
+GNOME_VERSION=		3.18.4
 
 CATEGORIES=		mail
 
