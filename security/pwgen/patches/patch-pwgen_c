@@ -1,0 +1,26 @@
+$OpenBSD: patch-pwgen_c,v 1.1 2016/01/18 13:29:04 jasper Exp $
+--- pwgen.c.orig	Mon Jan 18 08:32:18 2016
++++ pwgen.c	Mon Jan 18 08:33:06 2016
+@@ -94,6 +94,10 @@ int main(int argc, char **argv)
+ 	char	*buf, *tmp;
+ 	void	(*pwgen)(char *inbuf, int size, int pw_flags);
+ 
++	if (pledge("stdio rpath", NULL) == -1) {
++		fprintf(stderr, "pledge\n");
++		exit(1);
++	}
+ 	pwgen = pw_phonemes;
+ 	pw_number = pw_random_number;
+ 	if (isatty(1))
+@@ -161,6 +165,11 @@ int main(int argc, char **argv)
+ 			usage();
+ 			break;
+ 		}
++	}
++	/* Done with SHA1 seed file, drop rpath */
++	if (pledge("stdio", NULL) == -1) {
++		fprintf(stderr, "pledge");
++		exit (1);
+ 	}
+ 	if (optind < argc) {
+ 		pw_length = strtol(argv[optind], &tmp, 0);
