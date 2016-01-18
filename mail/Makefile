@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.332 2015/10/14 17:40:19 robert Exp $
+# $OpenBSD: Makefile,v 1.333 2016/01/18 17:55:09 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -191,6 +191,7 @@
      SUBDIR += razor-agents
      SUBDIR += rcube-contextmenu
      SUBDIR += rcube-dkimstatus
+     SUBDIR += rcube-dovecot_ident
      SUBDIR += rcube-ldapAliasSync
      SUBDIR += rcube-markasjunk2
      SUBDIR += rcube-sieverules
