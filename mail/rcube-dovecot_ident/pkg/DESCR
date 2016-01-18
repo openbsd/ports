@@ -1,0 +1,5 @@
+This plugin adds support to Roundcube to send the user's original IP (from
+REMOTE_ADDR) to the mail server using the IMAP ID extension. Some mail servers
+can log this instead of the web server's address. To use with Dovecot, just
+enable the plugin in Roundcube's config.inc.php and add the web server's
+address to "login_trusted_networks" in ${SYSCONFDIR}/dovecot/dovecot.conf.
