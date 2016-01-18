@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/01/18 16:35:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/01/18 16:49:38 sthen Exp $
 
 COMMENT=	interactive electronics designing software
 
@@ -28,9 +28,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES=        x11/qt4
 NO_TEST=	Yes
 
-BUILD_DEPENDS=	comms/qtserialport \
-		devel/boost
-
+LIB_DEPENDS=	comms/qtserialport
+BUILD_DEPENDS=	devel/boost
 RUN_DEPENDS=	devel/desktop-file-utils
 
 pre-configure:
