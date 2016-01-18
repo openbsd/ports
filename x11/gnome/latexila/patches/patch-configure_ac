@@ -1,4 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2015/11/24 06:12:25 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2016/01/18 12:50:52 ajacoutot Exp $
+
+From b5653da21aee532d60f92c1f79e6f5d4b5d55609 Mon Sep 17 00:00:00 2001
+From: Sebastien Wilmet <swilmet@gnome.org>
+Date: Tue, 29 Dec 2015 14:31:50 +0100
+Subject: spell: use GtkTextBuffer support of gspell
 
 From 7a4af7e94f1ccebe51c2aed73bc7740113eed45c Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Wilmet?= <swilmet@gnome.org>
@@ -12,7 +17,7 @@ Subject: Adapt code for GspellLanguageChooserDialog change
  GTK_REQUIRED_VERSION="3.14"
  GTKSOURCEVIEW_REQUIRED_VERSION="3.18"
 -GSPELL_REQUIRED_VERSION="0.1"
-+GSPELL_REQUIRED_VERSION="0.2"
++GSPELL_REQUIRED_VERSION="0.2.3"
  VALA_REQUIRED_VERSION="0.26"
  GEE_REQUIRED_VERSION="0.10"
  
