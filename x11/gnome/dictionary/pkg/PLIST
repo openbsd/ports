@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/10/05 06:00:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/01/18 22:00:10 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-dictionary
 include/gdict-1.0/
 include/gdict-1.0/gdict/
 include/gdict-1.0/gdict/gdict-client-context.h
 include/gdict-1.0/gdict/gdict-context.h
+include/gdict-1.0/gdict/gdict-database-chooser-button.h
 include/gdict-1.0/gdict/gdict-database-chooser.h
 include/gdict-1.0/gdict/gdict-defbox.h
 include/gdict-1.0/gdict/gdict-enum-types.h
