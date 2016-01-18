@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2016/01/17 17:29:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.137 2016/01/18 23:42:53 sthen Exp $
 
 COMMENT-main =		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -70,7 +70,7 @@ WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
 WANTLIB += art_lgpl_2 fam idn lber-2.4 ldap-2.4 png sasl2
 
-WANTLIB-main =  ${WANTLIB} c sndio Iexmath
+WANTLIB-main =  ${WANTLIB} c sndio IexMath
 WANTLIB-main += GL GLU Half Iex IlmImf IlmThread Imath Xau Xcomposite
 WANTLIB-main += Xcursor Xdamage Xdmcp Xfixes Xft Xi Xinerama Xmu
 WANTLIB-main += Xrandr Xss Xtst Xxf86misc Xxf86vm X11-xcb drm
