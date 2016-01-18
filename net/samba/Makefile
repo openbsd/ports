@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2016/01/17 17:29:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.215 2016/01/18 12:10:51 sthen Exp $
 
 SHARED_ONLY =		Yes
 VERSION =		4.1.22
@@ -21,7 +21,7 @@ PKGNAME-docs =		samba-docs-${VERSION}
 
 REVISION-main =		0
 REVISION-ldb =		6
-REVISION-tevent =	4
+REVISION-tevent =	5
 REVISION-util =		0
 
 PKG_ARCH-docs =		*
