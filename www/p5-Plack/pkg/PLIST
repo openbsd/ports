@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/01/18 13:13:37 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/01/18 22:48:06 nigel Exp $
 bin/plackup
+${P5SITE}/HTTP/
 ${P5SITE}/HTTP/Message/
 ${P5SITE}/HTTP/Message/PSGI.pm
 ${P5SITE}/HTTP/Server/
@@ -86,6 +87,9 @@ ${P5SITE}/Plack/Test/Suite.pm
 ${P5SITE}/Plack/Util/
 ${P5SITE}/Plack/Util.pm
 ${P5SITE}/Plack/Util/Accessor.pm
+${P5SITE}/auto/
+${P5SITE}/auto/share/
+${P5SITE}/auto/share/dist/
 ${P5SITE}/auto/share/dist/Plack/
 ${P5SITE}/auto/share/dist/Plack/#foo
 ${P5SITE}/auto/share/dist/Plack/baybridge.jpg
