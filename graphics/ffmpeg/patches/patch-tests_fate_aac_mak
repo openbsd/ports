@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_fate_aac_mak,v 1.6 2016/01/14 06:09:43 ajacoutot Exp $
+$OpenBSD: patch-tests_fate_aac_mak,v 1.7 2016/01/18 15:34:45 ajacoutot Exp $
 
 fate: adjust AAC encoder tests values
 
@@ -64,8 +64,10 @@ AAC encoder: various fixes in M/S coding
 
 AAC encoder: fix I/S relative error evaluation
 
---- tests/fate/aac.mak.orig	Fri Dec 25 03:00:21 2015
-+++ tests/fate/aac.mak	Wed Jan 13 15:19:51 2016
+AAC encoder: use signed coeffs when measuring IS energy
+
+--- tests/fate/aac.mak.orig	Wed Jan 13 15:27:50 2016
++++ tests/fate/aac.mak	Sun Jan 17 21:04:16 2016
 @@ -142,56 +142,84 @@ FATE_AAC += $(FATE_AAC_CT:%=fate-aac-ct-%)
  
  FATE_AAC_ENCODE += fate-aac-aref-encode
@@ -132,7 +134,7 @@ AAC encoder: fix I/S relative error evaluation
  fate-aac-is-encode: REF = $(SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav
  fate-aac-is-encode: CMP_SHIFT = -4096
 -fate-aac-is-encode: CMP_TARGET = 613.26
-+fate-aac-is-encode: CMP_TARGET = 597
++fate-aac-is-encode: CMP_TARGET = 615
  fate-aac-is-encode: SIZE_TOLERANCE = 3560
 -fate-aac-is-encode: FUZZ = 35
 +fate-aac-is-encode: FUZZ = 10

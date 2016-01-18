@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_utils_h,v 1.6 2016/01/14 06:09:43 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_utils_h,v 1.7 2016/01/18 15:34:45 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -20,8 +20,10 @@ AAC encoder: improve SF range utilization
 
 aacenc: switch to using the RNG from libavutil
 
---- libavcodec/aacenc_utils.h.orig	Thu Nov 12 02:08:28 2015
-+++ libavcodec/aacenc_utils.h	Thu Dec 17 21:02:03 2015
+avcodec/aacenc_is: replace pow(x, 0.75) by x/sqrtf(sqrtf(x))
+
+--- libavcodec/aacenc_utils.h.orig	Wed Jan 13 15:27:48 2016
++++ libavcodec/aacenc_utils.h	Thu Jan 14 20:12:52 2016
 @@ -29,8 +29,8 @@
  #define AVCODEC_AACENC_UTILS_H
  
@@ -32,7 +34,19 @@ aacenc: switch to using the RNG from libavutil
  
  #define ROUND_STANDARD 0.4054f
  #define ROUND_TO_ZERO 0.1054f
-@@ -89,16 +89,62 @@ static inline int find_min_book(float maxval, int sf)
+@@ -45,6 +45,11 @@ static inline void abs_pow34_v(float *out, const float
+     }
+ }
+ 
++static inline float pos_pow34(float a)
++{
++    return sqrtf(a * sqrtf(a));
++}
++
+ /**
+  * Quantize one coefficient.
+  * @return absolute value of the quantized coefficient
+@@ -89,16 +94,62 @@ static inline int find_min_book(float maxval, int sf)
      float Q34 = sqrtf(Q * sqrtf(Q));
      int qmaxval, cb;
      qmaxval = maxval * Q34 + C_QUANT;
@@ -102,7 +116,7 @@ aacenc: switch to using the RNG from libavutil
  /** Return the minimum scalefactor where the quantized coef does not clip. */
  static inline uint8_t coef2minsf(float coef)
  {
-@@ -128,6 +174,76 @@ static inline int quant_array_idx(const float val, con
+@@ -128,6 +179,76 @@ static inline int quant_array_idx(const float val, con
      return index;
  }
  
@@ -179,7 +193,7 @@ aacenc: switch to using the RNG from libavutil
  #define ERROR_IF(cond, ...) \
      if (cond) { \
          av_log(avctx, AV_LOG_ERROR, __VA_ARGS__); \
-@@ -138,6 +254,5 @@ static inline int quant_array_idx(const float val, con
+@@ -138,6 +259,5 @@ static inline int quant_array_idx(const float val, con
      if (cond) { \
          av_log(avctx, AV_LOG_WARNING, __VA_ARGS__); \
      }

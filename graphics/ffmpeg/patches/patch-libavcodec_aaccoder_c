@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aaccoder_c,v 1.8 2016/01/14 06:09:43 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aaccoder_c,v 1.9 2016/01/18 15:34:45 ajacoutot Exp $
 
 aaccoder: use roundf() instead of ceilf()
 
@@ -40,8 +40,10 @@ AAC encoder: avoid assertion failure on PNS
 
 AAC encoder: various fixes in M/S coding
 
---- libavcodec/aaccoder.c.orig	Fri Dec 25 03:00:18 2015
-+++ libavcodec/aaccoder.c	Wed Jan 13 15:13:08 2016
+AAC encoder: enforce SF delta in PNS and IS SFs
+
+--- libavcodec/aaccoder.c.orig	Wed Jan 13 15:27:47 2016
++++ libavcodec/aaccoder.c	Sun Jan 17 21:02:47 2016
 @@ -33,7 +33,9 @@
  #include "libavutil/libm.h" // brought forward to work around cygwin header breakage
  
@@ -235,21 +237,54 @@ AAC encoder: various fixes in M/S coding
  typedef struct TrellisPath {
      float cost;
      int prev;
-@@ -332,11 +203,11 @@ static void set_special_band_scalefactors(AACEncContex
-         start = 0;
+@@ -324,23 +195,23 @@ typedef struct TrellisPath {
+ 
+ static void set_special_band_scalefactors(AACEncContext *s, SingleChannelElement *sce)
+ {
+-    int w, g, start = 0;
+-    int minscaler_n = sce->sf_idx[0], minscaler_i = sce->sf_idx[0];
++    int w, g;
++    int prevscaler_n = -255, prevscaler_i = 0;
+     int bands = 0;
+ 
+     for (w = 0; w < sce->ics.num_windows; w += sce->ics.group_len[w]) {
+-        start = 0;
          for (g = 0;  g < sce->ics.num_swb; g++) {
++            if (sce->zeroes[w*16+g])
++                continue;
              if (sce->band_type[w*16+g] == INTENSITY_BT || sce->band_type[w*16+g] == INTENSITY_BT2) {
 -                sce->sf_idx[w*16+g] = av_clip(ceilf(log2f(sce->is_ener[w*16+g])*2), -155, 100);
+-                minscaler_i = FFMIN(minscaler_i, sce->sf_idx[w*16+g]);
 +                sce->sf_idx[w*16+g] = av_clip(roundf(log2f(sce->is_ener[w*16+g])*2), -155, 100);
-                 minscaler_i = FFMIN(minscaler_i, sce->sf_idx[w*16+g]);
                  bands++;
              } else if (sce->band_type[w*16+g] == NOISE_BT) {
 -                sce->sf_idx[w*16+g] = av_clip(4+log2f(sce->pns_ener[w*16+g])*2, -100, 155);
+-                minscaler_n = FFMIN(minscaler_n, sce->sf_idx[w*16+g]);
 +                sce->sf_idx[w*16+g] = av_clip(3+ceilf(log2f(sce->pns_ener[w*16+g])*2), -100, 155);
-                 minscaler_n = FFMIN(minscaler_n, sce->sf_idx[w*16+g]);
++                if (prevscaler_n == -255)
++                    prevscaler_n = sce->sf_idx[w*16+g];
                  bands++;
              }
-@@ -390,9 +261,9 @@ static void search_for_quantizers_anmr(AVCodecContext 
+-            start += sce->ics.swb_sizes[g];
+         }
+     }
+ 
+@@ -350,10 +221,12 @@ static void set_special_band_scalefactors(AACEncContex
+     /* Clip the scalefactor indices */
+     for (w = 0; w < sce->ics.num_windows; w += sce->ics.group_len[w]) {
+         for (g = 0;  g < sce->ics.num_swb; g++) {
++            if (sce->zeroes[w*16+g])
++                continue;
+             if (sce->band_type[w*16+g] == INTENSITY_BT || sce->band_type[w*16+g] == INTENSITY_BT2) {
+-                sce->sf_idx[w*16+g] = av_clip(sce->sf_idx[w*16+g], minscaler_i, minscaler_i + SCALE_MAX_DIFF);
++                sce->sf_idx[w*16+g] = prevscaler_i = av_clip(sce->sf_idx[w*16+g], prevscaler_i - SCALE_MAX_DIFF, prevscaler_i + SCALE_MAX_DIFF);
+             } else if (sce->band_type[w*16+g] == NOISE_BT) {
+-                sce->sf_idx[w*16+g] = av_clip(sce->sf_idx[w*16+g], minscaler_n, minscaler_n + SCALE_MAX_DIFF);
++                sce->sf_idx[w*16+g] = prevscaler_n = av_clip(sce->sf_idx[w*16+g], prevscaler_n - SCALE_MAX_DIFF, prevscaler_n + SCALE_MAX_DIFF);
+             }
+         }
+     }
+@@ -390,9 +263,9 @@ static void search_for_quantizers_anmr(AVCodecContext 
      }
  
      //minimum scalefactor index is when minimum nonzero coefficient after quantizing is not clipped
@@ -261,7 +296,7 @@ AAC encoder: various fixes in M/S coding
      if (q1 - q0 > 60) {
          int q0low  = q0;
          int q1high = q1;
-@@ -408,6 +279,12 @@ static void search_for_quantizers_anmr(AVCodecContext 
+@@ -408,6 +281,12 @@ static void search_for_quantizers_anmr(AVCodecContext 
              q1  = q1high;
          }
      }
@@ -274,7 +309,7 @@ AAC encoder: various fixes in M/S coding
  
      for (i = 0; i < TRELLIS_STATES; i++) {
          paths[0][i].cost    = 0.0f;
-@@ -456,6 +333,10 @@ static void search_for_quantizers_anmr(AVCodecContext 
+@@ -456,6 +335,10 @@ static void search_for_quantizers_anmr(AVCodecContext 
                  maxscale = coef2maxsf(qmax);
                  minscale = av_clip(minscale - q0, 0, TRELLIS_STATES - 1);
                  maxscale = av_clip(maxscale - q0, 0, TRELLIS_STATES);
@@ -285,7 +320,7 @@ AAC encoder: various fixes in M/S coding
                  maxval = find_max_val(sce->ics.group_len[w], sce->ics.swb_sizes[g], s->scoefs+start);
                  for (q = minscale; q < maxscale; q++) {
                      float dist = 0;
-@@ -463,7 +344,7 @@ static void search_for_quantizers_anmr(AVCodecContext 
+@@ -463,7 +346,7 @@ static void search_for_quantizers_anmr(AVCodecContext 
                      for (w2 = 0; w2 < sce->ics.group_len[w]; w2++) {
                          FFPsyBand *band = &s->psy.ch[s->cur_channel].psy_bands[(w+w2)*16+g];
                          dist += quantize_band_cost(s, coefs + w2*128, s->scoefs + start + w2*128, sce->ics.swb_sizes[g],
@@ -294,7 +329,7 @@ AAC encoder: various fixes in M/S coding
                      }
                      minrd = FFMIN(minrd, dist);
  
-@@ -509,156 +390,7 @@ static void search_for_quantizers_anmr(AVCodecContext 
+@@ -509,156 +392,7 @@ static void search_for_quantizers_anmr(AVCodecContext 
                  sce->sf_idx[(w+w2)*16+g] = sce->sf_idx[w*16+g];
  }
  
@@ -451,7 +486,7 @@ AAC encoder: various fixes in M/S coding
  static void search_for_quantizers_faac(AVCodecContext *avctx, AACEncContext *s,
                                         SingleChannelElement *sce,
                                         const float lambda)
-@@ -776,7 +508,7 @@ static void search_for_quantizers_faac(AVCodecContext 
+@@ -776,7 +510,7 @@ static void search_for_quantizers_faac(AVCodecContext 
                                                 ESC_BT,
                                                 lambda,
                                                 INFINITY,
@@ -460,7 +495,7 @@ AAC encoder: various fixes in M/S coding
                                                 0);
                      dist -= b;
                  }
-@@ -863,93 +595,354 @@ static void search_for_quantizers_fast(AVCodecContext 
+@@ -863,93 +597,354 @@ static void search_for_quantizers_fast(AVCodecContext 
  
  static void search_for_pns(AACEncContext *s, AVCodecContext *avctx, SingleChannelElement *sce)
  {
@@ -870,7 +905,7 @@ AAC encoder: various fixes in M/S coding
              start += sce0->ics.swb_sizes[g];
          }
      }
-@@ -961,13 +954,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+@@ -961,13 +956,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
          encode_window_bands_info,
          quantize_and_encode_band,
          ff_aac_encode_tns_info,
@@ -891,7 +926,7 @@ AAC encoder: various fixes in M/S coding
          search_for_ms,
          ff_aac_search_for_is,
          ff_aac_search_for_pred,
-@@ -977,13 +976,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+@@ -977,13 +978,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
          encode_window_bands_info,
          quantize_and_encode_band,
          ff_aac_encode_tns_info,
@@ -912,7 +947,7 @@ AAC encoder: various fixes in M/S coding
          search_for_ms,
          ff_aac_search_for_is,
          ff_aac_search_for_pred,
-@@ -993,13 +998,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+@@ -993,13 +1000,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
          codebook_trellis_rate,
          quantize_and_encode_band,
          ff_aac_encode_tns_info,
@@ -933,7 +968,7 @@ AAC encoder: various fixes in M/S coding
          search_for_ms,
          ff_aac_search_for_is,
          ff_aac_search_for_pred,
-@@ -1009,13 +1020,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
+@@ -1009,13 +1022,19 @@ AACCoefficientsEncoder ff_aac_coders[AAC_CODER_NB] = {
          encode_window_bands_info,
          quantize_and_encode_band,
          ff_aac_encode_tns_info,

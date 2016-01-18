@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_is_c,v 1.4 2016/01/14 06:09:43 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_is_c,v 1.5 2016/01/18 15:34:45 ajacoutot Exp $
 
 aacenc_is: ignore PNS band types
 
@@ -14,9 +14,13 @@ AAC encoder: fix I/S relative error evaluation
 
 AAC encoder: encode out-of-phase I/S efficiently
 
---- libavcodec/aacenc_is.c.orig	Fri Dec 25 03:00:18 2015
-+++ libavcodec/aacenc_is.c	Wed Jan 13 15:11:52 2016
-@@ -45,10 +45,15 @@ struct AACISError ff_aac_is_encoding_err(AACEncContext
+avcodec/aacenc_is: replace pow(x, 0.75) by x/sqrtf(sqrtf(x))
+
+AAC encoder: use signed coeffs when measuring IS energy
+
+--- libavcodec/aacenc_is.c.orig	Wed Jan 13 15:27:48 2016
++++ libavcodec/aacenc_is.c	Sun Jan 17 21:03:19 2016
+@@ -45,11 +45,16 @@ struct AACISError ff_aac_is_encoding_err(AACEncContext
      float dist1 = 0.0f, dist2 = 0.0f;
      struct AACISError is_error = {0};
  
@@ -29,10 +33,12 @@ AAC encoder: encode out-of-phase I/S efficiently
          FFPsyBand *band0 = &s->psy.ch[s->cur_channel+0].psy_bands[(w+w2)*16+g];
          FFPsyBand *band1 = &s->psy.ch[s->cur_channel+1].psy_bands[(w+w2)*16+g];
 -        int is_band_type, is_sf_idx = FFMAX(1, sce0->sf_idx[(w+w2)*16+g]-4);
+-        float e01_34 = phase*pow(ener1/ener0, 3.0/4.0);
 +        int is_band_type, is_sf_idx = FFMAX(1, sce0->sf_idx[w*16+g]-4);
-         float e01_34 = phase*pow(ener1/ener0, 3.0/4.0);
++        float e01_34 = phase*pos_pow34(ener1/ener0);
          float maxval, dist_spec_err = 0.0f;
          float minthr = FFMIN(band0->threshold, band1->threshold);
+         for (i = 0; i < sce0->ics.swb_sizes[g]; i++)
 @@ -61,17 +66,17 @@ struct AACISError ff_aac_is_encoding_err(AACEncContext
          is_band_type = find_min_book(maxval, is_sf_idx);
          dist1 += quantize_band_cost(s, &L[start + (w+w2)*128], L34,
@@ -101,8 +107,8 @@ AAC encoder: encode out-of-phase I/S efficiently
                      for (i = 0; i < sce0->ics.swb_sizes[g]; i++) {
 -                        float coef0 = sce0->pcoeffs[start+(w+w2)*128+i];
 -                        float coef1 = sce1->pcoeffs[start+(w+w2)*128+i];
-+                        float coef0 = fabsf(sce0->coeffs[start+(w+w2)*128+i]);
-+                        float coef1 = fabsf(sce1->coeffs[start+(w+w2)*128+i]);
++                        float coef0 = sce0->coeffs[start+(w+w2)*128+i];
++                        float coef1 = sce1->coeffs[start+(w+w2)*128+i];
                          ener0  += coef0*coef0;
                          ener1  += coef1*coef1;
                          ener01 += (coef0 + coef1)*(coef0 + coef1);

@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_c,v 1.10 2016/01/14 06:09:43 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_c,v 1.11 2016/01/18 15:34:45 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -58,9 +58,23 @@ avcodec/aacenc: Fix NAN check
 
 avcodec/aacenc: mark output as const as its not written to
 
+avcodec/aacenc: Check for +-Inf too
+
+lavc/aacenc: use isfinite to simplify isnan/isinf logic
+
+avcodec/aacenc: Check both channels for finiteness
+
 --- libavcodec/aacenc.c.orig	Wed Jan 13 15:27:48 2016
-+++ libavcodec/aacenc.c	Wed Jan 13 17:25:05 2016
-@@ -54,11 +54,12 @@ static void put_audio_specific_config(AVCodecContext *
++++ libavcodec/aacenc.c	Sat Jan 16 18:41:08 2016
+@@ -29,6 +29,7 @@
+  * add sane pulse detection
+  ***********************************/
+ 
++#include "libavutil/libm.h"
+ #include "libavutil/float_dsp.h"
+ #include "libavutil/opt.h"
+ #include "avcodec.h"
+@@ -54,11 +55,12 @@ static void put_audio_specific_config(AVCodecContext *
  {
      PutBitContext pb;
      AACEncContext *s = avctx->priv_data;
@@ -74,7 +88,7 @@ avcodec/aacenc: mark output as const as its not written to
      //GASpecificConfig
      put_bits(&pb, 1, 0); //frame length - 1024 samples
      put_bits(&pb, 1, 0); //does not depend on core coder
-@@ -71,6 +72,16 @@ static void put_audio_specific_config(AVCodecContext *
+@@ -71,6 +73,16 @@ static void put_audio_specific_config(AVCodecContext *
      flush_put_bits(&pb);
  }
  
@@ -91,7 +105,7 @@ avcodec/aacenc: mark output as const as its not written to
  #define WINDOW_FUNC(type) \
  static void apply_ ##type ##_window(AVFloatDSPContext *fdsp, \
                                      SingleChannelElement *sce, \
-@@ -140,7 +151,7 @@ static void apply_window_and_mdct(AACEncContext *s, Si
+@@ -140,7 +152,7 @@ static void apply_window_and_mdct(AACEncContext *s, Si
                                    float *audio)
  {
      int i;
@@ -100,7 +114,7 @@ avcodec/aacenc: mark output as const as its not written to
  
      apply_window[sce->ics.window_sequence[0]](s->fdsp, sce, audio);
  
-@@ -258,6 +269,8 @@ static void apply_intensity_stereo(ChannelElement *cpe
+@@ -258,6 +270,8 @@ static void apply_intensity_stereo(ChannelElement *cpe
                      start += ics->swb_sizes[g];
                      continue;
                  }
@@ -109,7 +123,7 @@ avcodec/aacenc: mark output as const as its not written to
                  for (i = 0; i < ics->swb_sizes[g]; i++) {
                      float sum = (cpe->ch[0].coeffs[start+i] + p*cpe->ch[1].coeffs[start+i])*scale;
                      cpe->ch[0].coeffs[start+i] = sum;
-@@ -279,7 +292,13 @@ static void apply_mid_side_stereo(ChannelElement *cpe)
+@@ -279,7 +293,13 @@ static void apply_mid_side_stereo(ChannelElement *cpe)
          for (w2 =  0; w2 < ics->group_len[w]; w2++) {
              int start = (w+w2) * 128;
              for (g = 0; g < ics->num_swb; g++) {
@@ -124,7 +138,7 @@ avcodec/aacenc: mark output as const as its not written to
                      start += ics->swb_sizes[g];
                      continue;
                  }
-@@ -424,6 +443,8 @@ static int encode_individual_channel(AVCodecContext *a
+@@ -424,6 +444,8 @@ static int encode_individual_channel(AVCodecContext *a
          put_ics_info(s, &sce->ics);
          if (s->coder->encode_main_pred)
              s->coder->encode_main_pred(s, sce);
@@ -133,7 +147,7 @@ avcodec/aacenc: mark output as const as its not written to
      }
      encode_band_info(s, sce);
      encode_scale_factors(avctx, s, sce);
-@@ -489,7 +510,9 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -489,7 +511,9 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
      float **samples = s->planar_samples, *samples2, *la, *overlap;
      ChannelElement *cpe;
      SingleChannelElement *sce;
@@ -144,7 +158,7 @@ avcodec/aacenc: mark output as const as its not written to
      int ms_mode = 0, is_mode = 0, tns_mode = 0, pred_mode = 0;
      int chan_el_counter[4];
      FFPsyWindowInfo windows[AAC_MAX_CHANNELS];
-@@ -517,10 +540,11 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -517,10 +541,11 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
          chans    = tag == TYPE_CPE ? 2 : 1;
          cpe      = &s->cpe[i];
          for (ch = 0; ch < chans; ch++) {
@@ -159,7 +173,7 @@ avcodec/aacenc: mark output as const as its not written to
              samples2 = overlap + 1024;
              la       = samples2 + (448+64);
              if (!frame)
-@@ -537,7 +561,7 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -537,7 +562,7 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                   */
                  ics->num_swb = s->samplerate_index >= 8 ? 1 : 3;
              } else {
@@ -168,12 +182,13 @@ avcodec/aacenc: mark output as const as its not written to
                                                ics->window_sequence[0]);
              }
              ics->window_sequence[1] = ics->window_sequence[0];
-@@ -571,25 +595,40 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -571,25 +596,40 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  ics->clip_avoidance_factor = 1.0f;
              }
  
 -            apply_window_and_mdct(s, &cpe->ch[ch], overlap);
 -            if (isnan(cpe->ch->coeffs[0])) {
+-                av_log(avctx, AV_LOG_ERROR, "Input contains NaN\n");
 +            apply_window_and_mdct(s, sce, overlap);
 +
 +            if (s->options.ltp && s->coder->update_ltp) {
@@ -182,16 +197,16 @@ avcodec/aacenc: mark output as const as its not written to
 +                s->mdct1024.mdct_calc(&s->mdct1024, sce->lcoeffs, sce->ret_buf);
 +            }
 +
-+            if (isnan(cpe->ch->coeffs[0]) ||
-+                isnan(cpe->ch->coeffs[  128]) ||
-+                isnan(cpe->ch->coeffs[2*128]) ||
-+                isnan(cpe->ch->coeffs[3*128]) ||
-+                isnan(cpe->ch->coeffs[4*128]) ||
-+                isnan(cpe->ch->coeffs[5*128]) ||
-+                isnan(cpe->ch->coeffs[6*128]) ||
-+                isnan(cpe->ch->coeffs[7*128])
++            if (!(isfinite(cpe->ch[ch].coeffs[    0]) &&
++                  isfinite(cpe->ch[ch].coeffs[  128]) &&
++                  isfinite(cpe->ch[ch].coeffs[2*128]) &&
++                  isfinite(cpe->ch[ch].coeffs[3*128]) &&
++                  isfinite(cpe->ch[ch].coeffs[4*128]) &&
++                  isfinite(cpe->ch[ch].coeffs[5*128]) &&
++                  isfinite(cpe->ch[ch].coeffs[6*128]) &&
++                  isfinite(cpe->ch[ch].coeffs[7*128]))
 +            ) {
-                 av_log(avctx, AV_LOG_ERROR, "Input contains NaN\n");
++                av_log(avctx, AV_LOG_ERROR, "Input contains NaN/+-Inf\n");
                  return AVERROR(EINVAL);
              }
 -            avoid_clipping(s, &cpe->ch[ch]);
@@ -214,7 +229,7 @@ avcodec/aacenc: mark output as const as its not written to
          memset(chan_el_counter, 0, sizeof(chan_el_counter));
          for (i = 0; i < s->chan_map[0]; i++) {
              FFPsyWindowInfo* wi = windows + start_ch;
-@@ -606,15 +645,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -606,15 +646,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  sce = &cpe->ch[ch];
                  coeffs[ch] = sce->coeffs;
                  sce->ics.predictor_present = 0;
@@ -244,7 +259,7 @@ avcodec/aacenc: mark output as const as its not written to
                  s->coder->search_for_quantizers(avctx, s, &cpe->ch[ch], s->lambda);
              }
              if (chans > 1
-@@ -632,14 +684,14 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -632,14 +685,14 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              for (ch = 0; ch < chans; ch++) { /* TNS and PNS */
                  sce = &cpe->ch[ch];
                  s->cur_channel = start_ch + ch;
@@ -261,7 +276,7 @@ avcodec/aacenc: mark output as const as its not written to
              }
              s->cur_channel = start_ch;
              if (s->options.intensity_stereo) { /* Intensity Stereo */
-@@ -656,8 +708,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -656,8 +709,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                          s->coder->search_for_pred(s, sce);
                      if (cpe->ch[ch].ics.predictor_present) pred_mode = 1;
                  }
@@ -272,7 +287,7 @@ avcodec/aacenc: mark output as const as its not written to
                  for (ch = 0; ch < chans; ch++) {
                      sce = &cpe->ch[ch];
                      s->cur_channel = start_ch + ch;
-@@ -666,22 +718,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -666,22 +719,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  }
                  s->cur_channel = start_ch;
              }
@@ -311,7 +326,7 @@ avcodec/aacenc: mark output as const as its not written to
                      encode_ms_info(&s->pb, cpe);
                      if (cpe->ms_mode) ms_mode = 1;
                  }
-@@ -693,36 +757,78 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -693,36 +758,78 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              start_ch += chans;
          }
  
@@ -410,7 +425,7 @@ avcodec/aacenc: mark output as const as its not written to
      if (!frame)
          s->last_frame++;
  
-@@ -738,6 +844,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
+@@ -738,6 +845,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
  {
      AACEncContext *s = avctx->priv_data;
  
@@ -419,7 +434,7 @@ avcodec/aacenc: mark output as const as its not written to
      ff_mdct_end(&s->mdct1024);
      ff_mdct_end(&s->mdct128);
      ff_psy_end(&s->psy);
-@@ -796,76 +904,108 @@ static av_cold int aac_encode_init(AVCodecContext *avc
+@@ -796,76 +905,108 @@ static av_cold int aac_encode_init(AVCodecContext *avc
      uint8_t grouping[AAC_MAX_CHANNELS];
      int lengths[2];
  
@@ -561,7 +576,7 @@ avcodec/aacenc: mark output as const as its not written to
      ff_af_queue_init(avctx, &s->afq);
  
      return 0;
-@@ -876,27 +1016,17 @@ fail:
+@@ -876,27 +1017,17 @@ fail:
  
  #define AACENC_FLAGS AV_OPT_FLAG_ENCODING_PARAM | AV_OPT_FLAG_AUDIO_PARAM
  static const AVOption aacenc_options[] = {
@@ -600,7 +615,7 @@ avcodec/aacenc: mark output as const as its not written to
      {NULL}
  };
  
-@@ -917,8 +1047,7 @@ AVCodec ff_aac_encoder = {
+@@ -917,8 +1048,7 @@ AVCodec ff_aac_encoder = {
      .encode2        = aac_encode_frame,
      .close          = aac_encode_end,
      .supported_samplerates = mpeg4audio_sample_rates,
