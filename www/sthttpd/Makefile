@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/16 20:05:35 mmcc Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/18 17:03:39 mmcc Exp $
 
 COMMENT=	tiny/turbo/throttling HTTP server
 
 DISTNAME=	sthttpd-2.26.4
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://opensource.dyc.edu/pub/sthttpd/
 
 HOMEPAGE=	http://opensource.dyc.edu/sthttpd/
+
+MAINTAINER=	Michael McConville <mmcco@mykolab.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
