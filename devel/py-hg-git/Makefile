@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2016/01/11 11:04:21 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.22 2016/01/18 21:58:51 czarkoff Exp $
 
 COMMENT =		mercurial extension to work with git repositories
 
-MODPY_EGG_VERSION =	0.8.3
+MODPY_EGG_VERSION =	0.8.4
 DISTNAME =		py-hg-git-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://hg-git.github.io/
+HOMEPAGE =		https://bitbucket.org/durin42/hg-git
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
@@ -21,8 +20,6 @@ DISTFILES =		${DISTNAME}{${MODPY_EGG_VERSION}}${EXTRACT_SUFX}
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-WRKDIST =		${WRKDIR}/durin42-hg-git-d7ad67f850b2
-
 RUN_DEPENDS =		devel/py-dulwich>=0.10.1 \
 			devel/mercurial
 TEST_DEPENDS =		${RUN_DEPENDS} \
@@ -30,6 +27,10 @@ TEST_DEPENDS =		${RUN_DEPENDS} \
 			archivers/unzip \
 			devel/py-nose \
 			devel/git,-main
+
+# Instead of updating WRKDIST manually on every update, just move the directory
+post-extract:
+	@mv ${WRKDIR}/durin42-hg-git-???????????? ${WRKDIST}
 
 pre-test:
 	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
