@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.483 2016/01/16 23:18:41 kili Exp $
+# $OpenBSD: Makefile,v 1.484 2016/01/19 14:04:22 dcoppa Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -202,6 +202,7 @@
      SUBDIR += p5-SWISH-API
      SUBDIR += p5-Search-QueryParser
      SUBDIR += p5-Sort-Versions
+     SUBDIR += p5-Sourcecode-Spellchecker
      SUBDIR += p5-String-Approx
      SUBDIR += p5-String-CamelCase
      SUBDIR += p5-String-Koremutake
