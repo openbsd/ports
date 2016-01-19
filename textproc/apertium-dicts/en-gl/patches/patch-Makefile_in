@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
---- Makefile.in.orig	Wed Nov 19 00:57:40 2008
-+++ Makefile.in	Sun Dec 20 00:32:11 2015
-@@ -559,11 +559,12 @@ modes: modes.xml
+$OpenBSD: patch-Makefile_in,v 1.2 2016/01/19 03:41:18 bentley Exp $
+--- Makefile.in.orig	Mon Jan 18 20:10:18 2016
++++ Makefile.in	Mon Jan 18 20:10:14 2016
+@@ -662,11 +662,12 @@ modes: modes.xml
  
  install-data-local:
  	apertium-gen-modes modes.xml apertium-$(PREFIX1)
@@ -16,6 +16,6 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
 +	$(INSTALL_DATA) $(BASENAME).$(PREFIX1).t1x $(BASENAME).$(PREFIX1).t2x $(DESTDIR)$(apertium_en_gldir)
 +	$(INSTALL_DATA) $(BASENAME).$(PREFIX1).t3x $(BASENAME).$(PREFIX2).t1x $(DESTDIR)$(apertium_en_gldir)
 +	$(INSTALL_DATA) $(BASENAME).$(PREFIX2).t2x $(BASENAME).$(PREFIX2).t3x $(DESTDIR)$(apertium_en_gldir)
+ 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
