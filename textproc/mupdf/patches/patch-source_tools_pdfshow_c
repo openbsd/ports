@@ -1,0 +1,35 @@
+$OpenBSD: patch-source_tools_pdfshow_c,v 1.1 2016/01/19 05:20:51 semarie Exp $
+
+add pledge(2) to "mutool show":
+  - rpath : dropped after opening
+  - no need of wpath cpath for -o, as the open is already done at this place
+
+--- source/tools/pdfshow.c.orig	Sun Jan 17 09:08:52 2016
++++ source/tools/pdfshow.c	Sun Jan 17 09:15:05 2016
+@@ -247,6 +247,12 @@ int pdfshow_main(int argc, char **argv)
+ 		}
+ 	}
+ 
++	if (pledge("stdio rpath", NULL) == -1)
++	{
++		fprintf(stderr, "pledge: %s\n", strerror(errno));
++		exit(1);
++	}
++
+ 	ctx = fz_new_context(NULL, NULL, FZ_STORE_UNLIMITED);
+ 	if (!ctx)
+ 	{
+@@ -258,6 +264,13 @@ int pdfshow_main(int argc, char **argv)
+ 	fz_try(ctx)
+ 	{
+ 		doc = pdf_open_document(ctx, filename);
++		
++		if (pledge("stdio", NULL) == -1)
++		{
++			fprintf(stderr, "pledge: %s\n", strerror(errno));
++			exit(1);
++		}
++
+ 		if (pdf_needs_password(ctx, doc))
+ 			if (!pdf_authenticate_password(ctx, doc, password))
+ 				fz_warn(ctx, "cannot authenticate password: %s", filename);

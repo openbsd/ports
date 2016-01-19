@@ -1,0 +1,31 @@
+$OpenBSD: patch-source_tools_mudraw_c,v 1.1 2016/01/19 05:20:51 semarie Exp $
+
+add pledge(2) to "mutool draw":
+  - wpath cpath : only if output is specified
+
+--- source/tools/mudraw.c.orig	Tue Nov 10 17:19:51 2015
++++ source/tools/mudraw.c	Sun Jan 17 10:21:04 2016
+@@ -909,6 +909,23 @@ int mudraw_main(int argc, char **argv)
+ 	if (fz_optind == argc)
+ 		usage();
+ 
++	if (output && output[0] != '-' && *output != 0)
++	{
++		if (pledge("stdio rpath wpath cpath", NULL) == -1)
++		{
++			fprintf(stderr, "pledge: %s\n", strerror(errno));
++			exit(1);
++		}
++	}
++	else
++	{
++		if (pledge("stdio rpath", NULL) == -1)
++		{
++			fprintf(stderr, "pledge: %s\n", strerror(errno));
++			exit(1);
++		}
++	}
++
+ 	ctx = fz_new_context((showmemory == 0 ? NULL : &alloc_ctx), NULL, FZ_STORE_DEFAULT);
+ 	if (!ctx)
+ 	{

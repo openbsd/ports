@@ -1,0 +1,47 @@
+$OpenBSD: patch-platform_x11_x11_main_c,v 1.1 2016/01/19 05:20:51 semarie Exp $
+
+add pledge(2) to mupdf-x11 and mupdf-x11-curl:
+  - inet dns : with HAVE_CURL only
+  - proc exec : opening an external browser on uri link
+
+--- platform/x11/x11_main.c.orig	Tue Nov 10 17:19:51 2015
++++ platform/x11/x11_main.c	Mon Jan 18 15:20:56 2016
+@@ -698,7 +698,6 @@ void onselreq(Window requestor, Atom selection, Atom t
+ void winreloadpage(pdfapp_t *app)
+ {
+ 	XEvent xev;
+-	Display *dpy = XOpenDisplay(NULL);
+ 
+ 	xev.xclient.type = ClientMessage;
+ 	xev.xclient.serial = 0;
+@@ -709,8 +708,7 @@ void winreloadpage(pdfapp_t *app)
+ 	xev.xclient.data.l[0] = 0;
+ 	xev.xclient.data.l[1] = 0;
+ 	xev.xclient.data.l[2] = 0;
+-	XSendEvent(dpy, xwin, 0, 0, &xev);
+-	XCloseDisplay(dpy);
++	XSendEvent(xdpy, xwin, 0, 0, &xev);
+ }
+ 
+ void winopenuri(pdfapp_t *app, char *buf)
+@@ -884,6 +882,20 @@ int main(int argc, char **argv)
+ 	tmo_at.tv_sec = 0;
+ 	tmo_at.tv_usec = 0;
+ 	timeout = NULL;
++
++#ifdef HAVE_CURL
++	if (pledge("stdio rpath inet dns proc exec", NULL) == -1)
++	{
++		fprintf(stderr, "pledge: %s\n", strerror(errno));
++		exit(1);
++	}
++#else
++	if (pledge("stdio rpath proc exec", NULL) == -1)
++	{
++		fprintf(stderr, "pledge: %s\n", strerror(errno));
++		exit(1);
++	}
++#endif
+ 
+ 	pdfapp_open(&gapp, filename, 0);
+ 

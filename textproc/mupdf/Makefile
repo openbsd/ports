@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2015/11/12 17:26:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2016/01/19 05:20:51 semarie Exp $
 
 SHARED_ONLY =	Yes
 SHARED_LIBS +=	mupdf 3.0
@@ -8,6 +8,7 @@ COMMENT =	graphic library, pdf parser, viewer and utilities
 V =		1.8
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
+REVISION =	0
 
 CATEGORIES =	textproc x11
 
@@ -23,6 +24,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 FLAVORS=	js
 FLAVOR?=
 
+# uses pledge(2)
 WANTLIB += GL X11 Xcursor Xext Xinerama Xrandr c crypto curl freetype
 WANTLIB += idn jbig2dec jpeg m nghttp2 openjp2 pthread ssl z
 
