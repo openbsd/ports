@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2016/01/17 19:05:53 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2016/01/19 17:28:20 zhuk Exp $
 
 CATEGORIES =		editors editors/calligra-l10n
 COMMENT =		Calligra localization pack
@@ -18,6 +18,7 @@ SUPDISTFILES +=	calligra-l10n-${L}-${VERSION}${EXTRACT_SUFX}
 
 RUN_DEPENDS +=	x11/gtk+3,-guic
 
+DIST_SUBDIR =	kde
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra-${VERSION}/calligra-l10n/}
 
 LANG_STR =	${L10N_LANG} language
