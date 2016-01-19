@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/19 01:59:13 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/19 02:47:14 bentley Exp $
 
      SUBDIR += af-nl
      SUBDIR += arg
      SUBDIR += arg-cat
      SUBDIR += br-fr
      SUBDIR += ca-it
+     SUBDIR += cat
      SUBDIR += cy-en
      SUBDIR += dan
      SUBDIR += dan-nor
