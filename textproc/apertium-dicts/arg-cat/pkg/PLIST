@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/19 01:53:04 bentley Exp $
+share/apertium/apertium-arg-cat/
+share/apertium/apertium-arg-cat/apertium-arg-cat.arg-cat.t1x
+share/apertium/apertium-arg-cat/apertium-arg-cat.cat-arg.t1x
+share/apertium/apertium-arg-cat/arg-cat.autobil.bin
+share/apertium/apertium-arg-cat/arg-cat.autogen.bin
+share/apertium/apertium-arg-cat/arg-cat.autolex.bin
+share/apertium/apertium-arg-cat/arg-cat.automorf.bin
+share/apertium/apertium-arg-cat/arg-cat.autopgen.bin
+share/apertium/apertium-arg-cat/arg-cat.prob
+share/apertium/apertium-arg-cat/arg-cat.rlx.bin
+share/apertium/apertium-arg-cat/arg-cat.t1x.bin
+share/apertium/apertium-arg-cat/cat-arg.autobil.bin
+share/apertium/apertium-arg-cat/cat-arg.autogen.bin
+share/apertium/apertium-arg-cat/cat-arg.autolex.bin
+share/apertium/apertium-arg-cat/cat-arg.automorf.bin
+share/apertium/apertium-arg-cat/cat-arg.autopgen.bin
+share/apertium/apertium-arg-cat/cat-arg.prob
+share/apertium/apertium-arg-cat/cat-arg.rlx.bin
+share/apertium/apertium-arg-cat/cat-arg.t1x.bin
+share/apertium/modes/arg-cat.mode
+share/apertium/modes/cat-arg.mode
