@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.410 2016/01/07 01:03:28 jeremy Exp $
+# $OpenBSD: Makefile,v 1.411 2016/01/19 20:57:38 mmcc Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -73,7 +73,6 @@
      SUBDIR += integrit
      SUBDIR += ipguard
      SUBDIR += isic
-     SUBDIR += its4
      SUBDIR += jailkit
      SUBDIR += john
      SUBDIR += john-jumbo
