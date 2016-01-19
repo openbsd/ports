@@ -1,12 +1,14 @@
-$OpenBSD: patch-src_client_CMakeLists_txt,v 1.1.1.1 2015/10/09 16:09:17 sthen Exp $
---- src/client/CMakeLists.txt.orig	Sat Aug 29 21:45:33 2015
-+++ src/client/CMakeLists.txt	Sat Aug 29 21:45:40 2015
-@@ -9,7 +9,7 @@ SET_TARGET_PROPERTIES(rspamc PROPERTIES COMPILE_FLAGS 
+$OpenBSD: patch-src_client_CMakeLists_txt,v 1.2 2016/01/19 01:14:51 sthen Exp $
+--- src/client/CMakeLists.txt.orig	Thu Mar 12 13:04:45 2015
++++ src/client/CMakeLists.txt	Mon Jan 18 18:31:19 2016
+@@ -9,8 +9,8 @@ SET_TARGET_PROPERTIES(rspamc PROPERTIES COMPILE_FLAGS 
  TARGET_LINK_LIBRARIES(rspamc rspamd-server)
  TARGET_LINK_LIBRARIES(rspamc ${RSPAMD_REQUIRED_LIBRARIES})
  
 -IF(NOT DEBIAN_BUILD)
 +IF(NOT DEBIAN_BUILD AND NOT OPENBSD_BUILD)
  	SET_TARGET_PROPERTIES(rspamc PROPERTIES VERSION ${RSPAMD_VERSION})
- ENDIF(NOT DEBIAN_BUILD)
+-ENDIF(NOT DEBIAN_BUILD)
++ENDIF(NOT DEBIAN_BUILD AND NOT OPENBSD_BUILD)
  
+ INSTALL(TARGETS rspamc RUNTIME DESTINATION bin)

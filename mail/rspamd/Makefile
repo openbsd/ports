@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2016/01/16 10:39:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/19 01:14:51 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
-DISTNAME=	rspamd-1.0.11
+DISTNAME=	rspamd-1.1.0
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
 
 CATEGORIES=	mail
 
@@ -16,13 +15,13 @@ HOMEPAGE=	https://rspamd.com/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto event gio-2.0 glib-2.0 gmime-2.6 gobject-2.0
-WANTLIB += hiredis luajit-5.1 m pcre pthread sqlite3 ssl
+WANTLIB += luajit-5.1 m magic pcre pthread sqlite3 ssl
 
 MASTER_SITES=	https://rspamd.com/downloads/
 
 MODULES=	devel/cmake \
 		devel/gettext
-LIB_DEPENDS=	databases/libhiredis \
+LIB_DEPENDS=	devel/libmagic \
 		devel/glib2 \
 		devel/pcre \
 		lang/luajit \
