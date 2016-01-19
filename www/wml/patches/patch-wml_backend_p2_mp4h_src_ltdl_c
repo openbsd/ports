@@ -1,0 +1,25 @@
+$OpenBSD: patch-wml_backend_p2_mp4h_src_ltdl_c,v 1.1 2016/01/19 11:58:19 naddy Exp $
+
+Use libc realloc() because rpl_realloc() is broken: It tries to copy
+new size number of bytes.
+
+--- wml_backend/p2_mp4h/src/ltdl.c.orig	Thu Dec  1 18:50:13 2005
++++ wml_backend/p2_mp4h/src/ltdl.c	Mon Jan 18 22:47:05 2016
+@@ -164,7 +164,7 @@ static lt_ptr rpl_realloc	LT_PARAMS((lt_ptr ptr, size_
+ LT_GLOBAL_DATA lt_ptr (*lt_dlmalloc)	LT_PARAMS((size_t size))
+  			= (lt_ptr (*) LT_PARAMS((size_t))) malloc;
+ LT_GLOBAL_DATA lt_ptr (*lt_dlrealloc)	LT_PARAMS((lt_ptr ptr, size_t size))
+- 			= (lt_ptr (*) LT_PARAMS((lt_ptr, size_t))) rpl_realloc;
++ 			= (lt_ptr (*) LT_PARAMS((lt_ptr, size_t))) realloc;
+ LT_GLOBAL_DATA void   (*lt_dlfree)	LT_PARAMS((lt_ptr ptr))
+  			= (void (*) LT_PARAMS((lt_ptr))) free;
+ 
+@@ -183,7 +183,7 @@ LT_GLOBAL_DATA void   (*lt_dlfree)	LT_PARAMS((lt_ptr p
+ #else
+ 
+ #define LT_DLMALLOC(tp, n)	((tp *) lt_dlmalloc ((n) * sizeof(tp)))
+-#define LT_DLREALLOC(tp, p, n)	((tp *) rpl_realloc ((p), (n) * sizeof(tp)))
++#define LT_DLREALLOC(tp, p, n)	((tp *) lt_dlrealloc ((p), (n) * sizeof(tp)))
+ #define LT_DLFREE(p)						\
+ 	LT_STMT_START { if (p) (p) = (lt_dlfree (p), (lt_ptr) 0); } LT_STMT_END
+ 
