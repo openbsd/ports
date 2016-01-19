@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.349 2016/01/19 21:13:02 mmcc Exp $
+# $OpenBSD: Quirks.pm,v 1.350 2016/01/19 23:19:12 mmcc Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -394,6 +394,7 @@ my $stem_extensions = {
 	'quake2' => 'yquake2',
 	'apertium-es-an' => 'apertium-spa-arg',
 	'apertium-nn-nb' => 'apertium-nno-nob',
+	'weblint' => 'p5-HTML-Lint',
 };
 
 # reasons for obsolete packages

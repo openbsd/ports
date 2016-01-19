@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/03/28 15:22:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/01/19 23:19:12 mmcc Exp $
 @conflict weblint-*
+@pkgpath www/weblint
 bin/weblint
 ${P5SITE}/HTML/Lint/
 ${P5SITE}/HTML/Lint.pm
