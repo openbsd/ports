@@ -1,0 +1,3 @@
+Sourcecode::Spellchecker is a Perl module that scans a source file
+for common misspellings - including in comments, string literals,
+and identifier names - and suggests corrections.
