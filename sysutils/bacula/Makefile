@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2015/11/29 15:50:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.94 2016/01/19 22:51:09 sthen Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -12,7 +12,7 @@ COMMENT-mysql=		Bacula libbaccats support for MySQL
 COMMENT-pgsql=		Bacula libbaccats support for PostgreSQL
 COMMENT-sqlite3=	Bacula libbaccats support for SQLite3
 
-V=			7.2.0
+V=			7.4.0
 DISTNAME=		bacula-$V
 PKGNAME-main=		bacula-client-$V
 PKGNAME-server=		bacula-server-$V
@@ -21,13 +21,11 @@ PKGNAME-mysql=		bacula-mysql-$V
 PKGNAME-pgsql=		bacula-pgsql-$V
 PKGNAME-sqlite3=	bacula-sqlite3-$V
 
-REVISION=		1
-
 CATEGORIES=		sysutils
 
-SHARED_LIBS +=  bac                  5.0
-SHARED_LIBS +=  baccfg               5.0
-SHARED_LIBS +=  bacfind              5.0
+SHARED_LIBS +=  bac                  6.0
+SHARED_LIBS +=  baccfg               6.0
+SHARED_LIBS +=  bacfind              5.1
 SHARED_LIBS +=  bacsql               5.0
 
 BACCATS_LIBV =	3.0
@@ -36,7 +34,8 @@ SHARED_LIBS +=  baccats-mysql        ${BACCATS_LIBV}
 SHARED_LIBS +=  baccats-postgresql   ${BACCATS_LIBV}
 SHARED_LIBS +=  baccats-sqlite3      ${BACCATS_LIBV}
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
+MASTER_SITES=		http://www.bacula.org/downloads/Bacula-$V/ \
+			${MASTER_SITE_SOURCEFORGE:=bacula/}
 HOMEPAGE=		http://www.bacula.org/
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
