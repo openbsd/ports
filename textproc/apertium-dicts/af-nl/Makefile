@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/19 03:03:18 bentley Exp $
 
 L =	af-nl
 LANG =	Afrikaans/Dutch
 V =	0.2.0
+REVISION =	0
 
 pre-install:
 	mkdir -p ${PREFIX}/share/apertium/modes/

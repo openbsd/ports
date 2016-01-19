@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/02 19:03:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/19 03:03:20 bentley Exp $
 
 L =	hbs-eng
 LANG =	Serbo-Croatian/English
 V =	0.5.0
+REVISION =	0
 
 USE_GMAKE =		Yes
 

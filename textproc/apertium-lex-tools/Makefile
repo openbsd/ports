@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/01 11:51:49 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/19 03:03:18 bentley Exp $
 
 COMMENT =		module for compiling and processing lexical rules
 
 DISTNAME =		apertium-lex-tools-0.1.0
+REVISION =		0
 
 CATEGORIES =		textproc
 
 HOMEPAGE =		http://wiki.apertium.org/wiki/Constraint-based_lexical_selection_module
+
+MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

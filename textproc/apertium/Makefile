@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/01 11:50:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/19 03:03:18 bentley Exp $
 
 COMMENT =		rule-based machine translation platform
 
 V =			3.4
 DISTNAME =		apertium-3.4.0
+REVISION =		0
 
 SHARED_LIBS +=  apertium3-$V              0.0 # 0.0
 SHARED_LIBS +=  apertium3                 0.0 # 0.0
@@ -11,6 +12,8 @@ SHARED_LIBS +=  apertium3                 0.0 # 0.0
 CATEGORIES =		textproc
 
 HOMEPAGE =		https://www.apertium.org/
+
+MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
