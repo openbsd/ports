@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/10/07 05:50:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2016/01/19 14:51:19 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		music management and playback application for GNOME
 
 GNOME_VERSION=		2.6.2
 GNOME_PROJECT=		banshee
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		audio multimedia
 
@@ -16,6 +16,7 @@ HOMEPAGE=		http://banshee.fm/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += X11-xcb drm glapi xcb-dri2 xcb-glx xcb-shape xcb-xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0 cairo
 WANTLIB += enchant expat ffi fontconfig freetype gbm gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
