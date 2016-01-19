@@ -1,21 +1,19 @@
-$OpenBSD: patch-bindings_perl_src_CMakeLists_txt,v 1.3 2013/05/08 16:14:34 ajacoutot Exp $
---- bindings/perl/src/CMakeLists.txt.orig	Wed Nov 24 21:50:12 2010
-+++ bindings/perl/src/CMakeLists.txt	Wed May  8 18:10:13 2013
-@@ -4,7 +4,7 @@ include_directories( ${PERL_INCLUDE_PATH} ${CMAKE_SOUR
- add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/Libproxy.c
-                    COMMAND ${PERL_EXECUTABLE} ARGS ${CMAKE_CURRENT_SOURCE_DIR}/doxsubpp.pl
-                            ${PERL_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/Libproxy.xs ${CMAKE_CURRENT_BINARY_DIR}/Libproxy.c
--                   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/Libproxy.xs libproxy
-+                   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/Libproxy.xs proxy
-                    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
- 
- set(Libproxy_LIB_SRCS Libproxy.c)
+$OpenBSD: patch-bindings_perl_src_CMakeLists_txt,v 1.4 2016/01/19 16:16:38 ajacoutot Exp $
+
+From FreeBSD:
+* Explicitly against libperl.so.x.y.
+  This is being discussed in https://github.com/libproxy/libproxy/pull/7.
+  We need this for `make stage-qa' to pass, as the Libproxy.so binding uses
+  libperl symbols and thus should link against it.
+
+--- bindings/perl/src/CMakeLists.txt.orig	Tue Jan 12 17:41:07 2016
++++ bindings/perl/src/CMakeLists.txt	Tue Jan 19 16:45:52 2016
 @@ -12,7 +12,7 @@ set(Libproxy_LIB_SRCS Libproxy.c)
  set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/perl/blib/arch/auto/Net)
  add_library(PLlibproxy SHARED ${Libproxy_LIB_SRCS})
  
--target_link_libraries(PLlibproxy ${PERL_LIBRARY} libproxy)
-+target_link_libraries(PLlibproxy ${PERL_LIBRARY} proxy pthread)
+-target_link_libraries(PLlibproxy libproxy pthread)
++target_link_libraries(PLlibproxy perl libproxy pthread)
  set_target_properties(PLlibproxy PROPERTIES OUTPUT_NAME "Libproxy")
  set_target_properties(PLlibproxy PROPERTIES PREFIX "")
  

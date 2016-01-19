@@ -1,10 +1,9 @@
-$OpenBSD: patch-libproxy_url_cpp,v 1.3 2013/06/09 09:40:19 ajacoutot Exp $
+$OpenBSD: patch-libproxy_url_cpp,v 1.4 2016/01/19 16:16:38 ajacoutot Exp $
 
-https://code.google.com/p/libproxy/source/detail?r=870
 https://code.google.com/p/libproxy/issues/detail?id=196&thanks=196&ts=1370457244
 
---- libproxy/url.cpp.orig	Tue Oct 16 13:52:03 2012
-+++ libproxy/url.cpp	Wed Jun  5 17:57:46 2013
+--- libproxy/url.cpp.orig	Tue Jan 12 17:41:07 2016
++++ libproxy/url.cpp	Tue Jan 19 16:12:18 2016
 @@ -46,6 +46,10 @@
  using namespace libproxy;
  using namespace std;
@@ -42,19 +41,3 @@ https://code.google.com/p/libproxy/issues/detail?id=196&thanks=196&ts=1370457244
  }
  
  template <class T>
-@@ -403,6 +415,7 @@ char* url::get_pac() {
- 				buffer = NULL;
- 			}
- 		}
-+		close(sock);
- 		return buffer;
- 	}
- 
-@@ -496,6 +509,7 @@ char* url::get_pac() {
- 
- 	// Clean up
- 	shutdown(sock, SHUT_RDWR);
-+	close(sock);
- 	return buffer;
- }
- 
