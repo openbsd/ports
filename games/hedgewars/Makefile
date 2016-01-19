@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/17 17:29:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/19 15:16:39 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -10,7 +10,7 @@ MULTI_PACKAGES =	-main -server
 SHARED_LIBS +=  physlayer                 0.0 # 0.0
 
 R =			0.9.22
-REVISION =		0
+REVISION =		1
 V =			$R
 DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V
@@ -32,7 +32,7 @@ WANTLIB-main += ${MODLUA_WANTLIB} ${MODQT4_WANTLIB}
 # dlopen()ed; do not remove.
 WANTLIB-main += GL GLU glut
 
-WANTLIB-server = c m pthread ${MODLIBICONV_WANTLIB}
+WANTLIB-server = c m pthread util ${MODLIBICONV_WANTLIB}
 
 MASTER_SITES =		http://download.gna.org/hedgewars/
 EXTRACT_SUFX =		.tar.bz2
