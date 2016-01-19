@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/19 01:51:59 bentley Exp $
+share/apertium/apertium-spa/
+share/apertium/apertium-spa/apertium-spa.spa.dix
+share/apertium/apertium-spa/apertium-spa.spa.rlx
+share/apertium/apertium-spa/spa.autogen.att.gz
+share/apertium/apertium-spa/spa.autogen.bin
+share/apertium/apertium-spa/spa.automorf.att.gz
+share/apertium/apertium-spa/spa.automorf.bin
+share/apertium/apertium-spa/spa.autopgen.bin
+share/apertium/apertium-spa/spa.prob
+share/apertium/apertium-spa/spa.rlx.bin
+share/pkgconfig/apertium-spa.pc
