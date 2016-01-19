@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/04/04 12:19:26 kirby Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/19 22:59:12 kirby Exp $
 
 COMMENT =		2D space trading and combat game
 
 DISTNAME =		naev-${VERSION}
+REVISION = 		0
 
 EXTRACT_SUFX = 		.tar.bz2
 
@@ -22,7 +23,8 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-shave \
 			--enable-debug=no \
 			--enable-lua=shared \
-			--without-openal
+			--without-openal \
+			--without-sdl2
 
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread"
