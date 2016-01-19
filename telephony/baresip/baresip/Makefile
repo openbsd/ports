@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.8 2016/01/12 09:22:07 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/19 23:00:40 czarkoff Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT-main =		modular SIP User-Agent with audio and video support
 COMMENT-gtk2 =		GTK+2-based modules for baresip
 
-V =			0.4.16
+V =			0.4.17
 DISTNAME =		baresip-$V
 PKGNAME-main =		baresip-$V
 PKGNAME-gtk2 =		baresip-gtk2-$V
 
 WANTLIB-main += X11 Xext avcodec avdevice avformat avutil c daalabase
 WANTLIB-main += daaladec daalaenc gsm m opus png pthread re rem sndfile
-WANTLIB-main += sndio spandsp speex swscale v4l2 vpx x264 x265
+WANTLIB-main += sndio spandsp speex speexdsp swscale v4l2 vpx x264 x265
 
 WANTLIB-gtk2 += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-gtk2 += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
 WANTLIB-gtk2 += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0
-WANTLIB-gtk2 += gstbase-1.0 gstreamer-1.0 gtk-x11-2.0 intl notify pango-1.0
+WANTLIB-gtk2 += gstbase-1.0 gstreamer-1.0 gtk-x11-2.0 intl pango-1.0
 WANTLIB-gtk2 += pangocairo-1.0 pangoft2-1.0 re z
 
 BUILD_DEPENDS =		telephony/libzrtp
@@ -42,7 +42,7 @@ MAKE_ENV +=		LIBRE_INC=${LOCALBASE}/include/re \
 			LIBRE_SO=${LOCALBASE}/lib LIBS="-lm -lrem" \
 
 MAKE_FLAGS +=		MOD_AUTODETECT= \
-			EXTRA_MODULES="daala h265 snapshot sndio zrtp" \
+			EXTRA_MODULES="echo daala h265 snapshot sndio zrtp" \
 			USE_AMR=yes USE_AVCODEC=yes USE_AVFORMAT=yes \
 			USE_CONS=yes USE_DTLS=yes USE_DTLS_SRTP=yes \
 			USE_FFMPEG=yes USE_G711=yes USE_G722=yes USE_G726=yes \
@@ -50,7 +50,8 @@ MAKE_FLAGS +=		MOD_AUTODETECT= \
 			USE_SNDFILE=yes USE_SNDIO=yes USE_SPEEX=yes \
 			USE_SPEEX_AEC=yes USE_SPEEX_PP=yes USE_SRTP=yes \
 			USE_STDIO=yes USE_SYSLOG=yes USE_UUID=yes USE_V4L2=yes \
-			HAVE_LIBV4L2=yes USE_VPX=yes USE_X11=yes
+			USE_VPX=yes USE_X11=yes \
+			HAVE_LIBV4L2=yes HAVE_SPEEXDSP=yes
 
 MULTI_PACKAGES = -main -gtk2
 PSEUDO_FLAVORS = no_gtk2
@@ -64,7 +65,6 @@ BUILD_PACKAGES :=	${BUILD_PACKAGES:N-gtk2}
 
 .if ${BUILD_PACKAGES:M-gtk2}
 MAKE_FLAGS +=		USE_GST1=yes USE_GST_VIDEO1=yes USE_GTK=yes
-MAKE_FLAGS +=		USE_LIBNOTIFY=yes
 .endif
 
 

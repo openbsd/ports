@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_config_c,v 1.4 2016/01/12 09:22:07 czarkoff Exp $
---- src/config.c.orig	Tue Dec  1 13:09:48 2015
-+++ src/config.c	Thu Jan  7 21:34:41 2016
-@@ -552,21 +552,17 @@ int config_write_template(const char *file, const stru
+$OpenBSD: patch-src_config_c,v 1.5 2016/01/19 23:00:40 czarkoff Exp $
+--- src/config.c.orig	Sun Jan 17 13:17:04 2016
++++ src/config.c	Sun Jan 17 19:04:50 2016
+@@ -552,27 +552,23 @@ int config_write_template(const char *file, const stru
  	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "stdio" MOD_EXT "\n");
  #endif
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "cons" MOD_EXT "\n");
@@ -30,20 +30,31 @@ $OpenBSD: patch-src_config_c,v 1.4 2016/01/12 09:22:07 czarkoff Exp $
  
  	(void)re_fprintf(f, "\n# Audio filter Modules (in encoding order)\n");
  	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "vumeter" MOD_EXT "\n");
-@@ -591,7 +587,6 @@ int config_write_template(const char *file, const stru
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "sndfile" MOD_EXT "\n");
+-	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "speex_aec" MOD_EXT "\n");
+-	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "speex_pp" MOD_EXT "\n");
++	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "speex_aec" MOD_EXT "\n");
++	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "speex_pp" MOD_EXT "\n");
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "plc" MOD_EXT "\n");
+ 
+ 	(void)re_fprintf(f, "\n# Audio driver Modules\n");
+@@ -590,8 +586,8 @@ int config_write_template(const char *file, const stru
  #else
  	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "alsa" MOD_EXT "\n");
  #endif
 -	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "portaudio" MOD_EXT "\n");
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "aubridge" MOD_EXT "\n");
++	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "aufile" MOD_EXT "\n");
  
  #ifdef USE_VIDEO
  
-@@ -601,10 +596,12 @@ int config_write_template(const char *file, const stru
+@@ -601,10 +597,13 @@ int config_write_template(const char *file, const stru
  #else
  	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "avcodec" MOD_EXT "\n");
  #endif
 -	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "vpx" MOD_EXT "\n");
 +	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "daala" MOD_EXT "\n");
++	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "h265" MOD_EXT "\n");
 +	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "vpx" MOD_EXT "\n");
  
  	(void)re_fprintf(f, "\n# Video filter Modules (in encoding order)\n");
@@ -53,7 +64,7 @@ $OpenBSD: patch-src_config_c,v 1.4 2016/01/12 09:22:07 czarkoff Exp $
  
  	(void)re_fprintf(f, "\n# Video source modules\n");
  #if defined (DARWIN)
-@@ -616,38 +613,30 @@ int config_write_template(const char *file, const stru
+@@ -616,38 +615,33 @@ int config_write_template(const char *file, const stru
  #endif
  
  #else
@@ -68,6 +79,7 @@ $OpenBSD: patch-src_config_c,v 1.4 2016/01/12 09:22:07 czarkoff Exp $
 -	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "x11grab" MOD_EXT "\n");
 -	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "cairo" MOD_EXT "\n");
 +	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "x11grab" MOD_EXT "\n");
++	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "vidbridge" MOD_EXT "\n");
  
  	(void)re_fprintf(f, "\n# Video display modules\n");
  #ifdef DARWIN
@@ -76,6 +88,7 @@ $OpenBSD: patch-src_config_c,v 1.4 2016/01/12 09:22:07 czarkoff Exp $
 -	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "x11" MOD_EXT "\n");
 -	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "sdl2" MOD_EXT "\n");
 +	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "x11" MOD_EXT "\n");
++	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "fakevideo" MOD_EXT "\n");
  
  #endif /* USE_VIDEO */
  
@@ -96,10 +109,15 @@ $OpenBSD: patch-src_config_c,v 1.4 2016/01/12 09:22:07 czarkoff Exp $
 -	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "dtls_srtp" MOD_EXT "\n");
 +	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "srtp" MOD_EXT "\n");
 +	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "dtls_srtp" MOD_EXT "\n");
++	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "zrtp" MOD_EXT "\n");
  	(void)re_fprintf(f, "\n");
  
  	(void)re_fprintf(f, "\n#------------------------------------"
-@@ -667,11 +656,17 @@ int config_write_template(const char *file, const stru
+@@ -664,14 +658,22 @@ int config_write_template(const char *file, const stru
+ 	(void)re_fprintf(f, "\n");
+ 	(void)re_fprintf(f, "module_app\t\t" MOD_PRE "auloop"MOD_EXT"\n");
+ 	(void)re_fprintf(f, "module_app\t\t"  MOD_PRE "contact"MOD_EXT"\n");
++	(void)re_fprintf(f, "#module_app\t\t"  MOD_PRE "echo"MOD_EXT"\n");
  	(void)re_fprintf(f, "module_app\t\t"  MOD_PRE "menu"MOD_EXT"\n");
  	(void)re_fprintf(f, "#module_app\t\t"  MOD_PRE "mwi"MOD_EXT"\n");
  	(void)re_fprintf(f, "#module_app\t\t" MOD_PRE "natbd"MOD_EXT"\n");
@@ -110,15 +128,16 @@ $OpenBSD: patch-src_config_c,v 1.4 2016/01/12 09:22:07 czarkoff Exp $
  	(void)re_fprintf(f, "module_app\t\t" MOD_PRE "vidloop"MOD_EXT"\n");
  #endif
 +
-+	(void)re_fprintf(f,
-+			"\n# These modules are in baresip-gtk2 package:\n"
-+			"#module\t\tgst1.so\n"
-+			"#module\t\tgst1_video.so\n"
-+			"#module_app\t\tgtk.so\n");
++	(void)re_fprintf(f, "\n#------------------------------------"
++			 "------------------------------------------\n");
++	(void)re_fprintf(f, "# These modules are in baresip-gtk2 package:\n");
++	(void)re_fprintf(f, "#module\t\t" MOD_PRE "gst1" MOD_EXT"\n");
++	(void)re_fprintf(f, "#module\t\t" MOD_PRE "gst_video1" MOD_EXT"\n");
++	(void)re_fprintf(f, "#module_app\t" MOD_PRE "gtk" MOD_EXT"\n");
  	(void)re_fprintf(f, "\n");
  
  	(void)re_fprintf(f, "\n#------------------------------------"
-@@ -684,9 +679,6 @@ int config_write_template(const char *file, const stru
+@@ -684,9 +686,6 @@ int config_write_template(const char *file, const stru
  
  	(void)re_fprintf(f, "\n");
  	(void)re_fprintf(f, "http_listen\t\t0.0.0.0:8000\n");
