@@ -1,6 +1,6 @@
-$OpenBSD: patch-get_iplayer,v 1.73 2016/01/14 09:53:31 sthen Exp $
---- get_iplayer.orig	Thu Jan 14 02:34:19 2016
-+++ get_iplayer	Thu Jan 14 09:34:37 2016
+$OpenBSD: patch-get_iplayer,v 1.74 2016/01/19 00:20:59 sthen Exp $
+--- get_iplayer.orig	Sun Jan 17 19:44:34 2016
++++ get_iplayer	Tue Jan 19 00:18:54 2016
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env perl
 +#!/usr/bin/perl
@@ -33,7 +33,7 @@ $OpenBSD: patch-get_iplayer,v 1.73 2016/01/14 09:53:31 sthen Exp $
  	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
  
  	$bin->{rtmpdump}	= $opt->{rtmpdump} || 'rtmpdump';
-@@ -12210,7 +12211,7 @@ sub tag_file_id3 {
+@@ -12208,7 +12209,7 @@ sub tag_file_id3 {
  # add basic ID3 tag with id3v2
  sub tag_file_id3_basic {
  	my ($self, $meta, $tags) = @_;
