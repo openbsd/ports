@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/17 11:31:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/19 15:17:15 sthen Exp $
 
 COMMENT =		lightweight C library for fast bi-directional websockets
 
 DISTNAME =		libwebsockets-1.6.0-chrome48-firefox42
 PKGNAME =		libwebsockets-1.6
+REVISION =		0
 
 SHARED_LIBS =		websockets 1.0 # 6
 
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://git.libwebsockets.org/cgi-bin/cgit/libwebsockets/snapshot/
 
-WANTLIB += 		crypto m ssl z
+WANTLIB += 		crypto m pthread ssl z
 
 MODULES =		devel/cmake
 
