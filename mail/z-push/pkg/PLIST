@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2015/12/30 10:01:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2016/01/19 16:04:07 robert Exp $
 @extraunexec rm -rf /var/www/var/db/z-push/*
 @extraunexec rm -rf /var/www/var/log/z-push/*
 @unexec-delete rm -f /var/www/conf/modules/z-push.conf
@@ -72,7 +72,6 @@ z-push/lib/core/devicemanager.php
 z-push/lib/core/hierarchycache.php
 z-push/lib/core/interprocessdata.php
 z-push/lib/core/loopdetection.php
-z-push/lib/core/paddingfilter.php
 z-push/lib/core/pingtracking.php
 z-push/lib/core/statemanager.php
 z-push/lib/core/stateobject.php
@@ -180,6 +179,7 @@ z-push/lib/utils/timezoneutil.php
 z-push/lib/utils/utils.php
 z-push/lib/utils/zpushadmin.php
 z-push/lib/wbxml/
+z-push/lib/wbxml/replacenullcharfilter.php
 z-push/lib/wbxml/wbxmldecoder.php
 z-push/lib/wbxml/wbxmldefs.php
 z-push/lib/wbxml/wbxmlencoder.php
