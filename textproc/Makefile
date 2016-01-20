@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.484 2016/01/19 14:04:22 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.485 2016/01/20 05:17:05 shadchin Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -327,6 +327,8 @@
      SUBDIR += py-ICU,python3
      SUBDIR += py-MarkupSafe
      SUBDIR += py-MarkupSafe,python3
+     SUBDIR += py-alabaster
+     SUBDIR += py-alabaster,python3
      SUBDIR += py-chardet
      SUBDIR += py-chardet,python3
      SUBDIR += py-cssselect
@@ -361,8 +363,14 @@
      SUBDIR += py-rdflib
      SUBDIR += py-rdflib,python3
      SUBDIR += py-rtf
+     SUBDIR += py-snowballstemmer
+     SUBDIR += py-snowballstemmer,python3
      SUBDIR += py-sphinx
      SUBDIR += py-sphinx-intl
+     SUBDIR += py-sphinx_rtd_theme
+     SUBDIR += py-sphinx_rtd_theme,python3
+     SUBDIR += py-stemmer
+     SUBDIR += py-stemmer,python3
      SUBDIR += py-unidecode
      SUBDIR += py-vatnumber
      SUBDIR += py-vobject
