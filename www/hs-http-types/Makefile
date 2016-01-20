@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/12/20 11:35:47 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2016/01/20 16:26:20 kili Exp $
 
 COMMENT =		generic HTTP types for Haskell
 
 DISTNAME =		http-types-0.8.5
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel www
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

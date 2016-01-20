@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/12/20 11:33:36 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/20 16:26:19 kili Exp $
 
 COMMENT =		platform independent entropy source
 
 DISTNAME =		entropy-0.2.1
-REVISION =		4
+REVISION =		5
 CATEGORIES =		security
 
 # BSD3

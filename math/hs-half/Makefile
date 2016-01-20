@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/19 23:00:00 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/20 16:26:19 kili Exp $
 
 COMMENT =		half precision floating point
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
 DISTNAME =		half-0.2.2.1
+REVISION =		0
 CATEGORIES =		devel math
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

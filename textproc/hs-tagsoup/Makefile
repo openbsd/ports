@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/20 11:34:52 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/20 16:26:20 kili Exp $
 
 COMMENT =		HTML/XML parsing library
 
 DISTNAME =		tagsoup-0.13.3
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel textproc
 HOMEPAGE =		http://community.haskell.org/~ndm/tagsoup/
 

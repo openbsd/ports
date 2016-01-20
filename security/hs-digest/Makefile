@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/29 12:45:55 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/20 16:26:19 kili Exp $
 
 COMMENT =		cryptographic hashes for bytestrings
 
 DISTNAME =		digest-0.0.1.2
+REVISION =		0
 CATEGORIES =		devel security
 
 # BSD3

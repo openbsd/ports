@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2015/12/20 11:34:51 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2016/01/20 16:26:20 kili Exp $
 
 COMMENT =		utilities for manipulating XML documents
 
 DISTNAME =		HaXml-1.25.3
-REVISION =		1
+REVISION =		2
 CATEGORIES =		textproc
 HOMEPAGE =		http://projects.haskell.org/HaXml/
 

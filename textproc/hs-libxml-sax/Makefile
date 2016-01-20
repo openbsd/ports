@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/20 11:34:52 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/20 16:26:20 kili Exp $
 
 COMMENT =		Haskell bindings to the libXML2 SAX interface
 
 DISTNAME =		libxml-sax-0.7.5
-REVISION =		2
+REVISION =		3
 CATEGORIES =		textproc
 
 HOMEPAGE =		https://john-millikin.com/software/haskell-libxml/

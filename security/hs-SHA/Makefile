@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/27 16:12:49 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/20 16:26:19 kili Exp $
 
 COMMENT =		SHA message digests
 
 DISTNAME =		SHA-1.6.4.2
+REVISION =		0
 
 CATEGORIES =		security
 

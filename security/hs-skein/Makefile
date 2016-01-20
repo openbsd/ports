@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/20 11:33:36 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/20 16:26:20 kili Exp $
 
 COMMENT =		a family of cryptographic hash functions
 
 DISTNAME =		skein-1.0.9.2
-REVISION =		1
+REVISION =		2
 CATEGORIES =		security
 
 # BSD3

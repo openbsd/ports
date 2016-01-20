@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2015/12/20 11:35:47 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2016/01/20 16:26:20 kili Exp $
 
 COMMENT =		CGI library for Haskell
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
 DISTNAME =		cgi-3001.2.2.2
-REVISION =		0
+REVISION =		1
 CATEGORIES =		www devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

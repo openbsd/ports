@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/20 11:33:36 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/20 16:26:19 kili Exp $
 
 COMMENT=		fast, high quality pseudo random number generation
 
 DISTNAME=		mwc-random-0.13.3.2
-REVISION=		0
+REVISION=		1
 CATEGORIES=		math security
 
 # BSD3

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/12/20 11:34:51 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2016/01/20 16:26:20 kili Exp $
 
 COMMENT =		parse numeric literals from bytestrings
 
 DISTNAME =		bytestring-nums-0.3.5
-REVISION =		5
+REVISION =		6
 CATEGORIES =		textproc
 HOMEPAGE =		https://github.com/solidsnack/bytestring-nums
 
