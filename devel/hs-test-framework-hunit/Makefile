@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2016/01/09 20:23:23 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/20 16:22:28 kili Exp $
 
 COMMENT =		HUnit support for hs-test-framework
 
 DISTNAME =		test-framework-hunit-0.3.0.2
+REVISION =		0
 CATEGORIES =		devel
 
 HOMEPAGE =		http://batterseapower.github.com/test-framework/

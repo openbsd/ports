@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/12/20 11:28:07 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/20 16:22:26 kili Exp $
 
 COMMENT =		Haskell 98 natural numbers
 
 DISTNAME =		nats-0.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

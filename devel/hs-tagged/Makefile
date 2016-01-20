@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/12/20 11:29:39 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2016/01/20 16:22:28 kili Exp $
 
 COMMENT=		provides newtype wrappers for phantom types
 
 DISTNAME=		tagged-0.7.3
-REVISION=		1
+REVISION=		2
 CATEGORIES=		devel
 
 # BSD3

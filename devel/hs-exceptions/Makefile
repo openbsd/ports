@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2015/12/20 11:30:36 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/20 16:22:25 kili Exp $
 
 COMMENT =		extensible optionally-pure exceptions
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
 DISTNAME =		exceptions-0.8.0.2
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/20 11:30:36 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/20 16:22:29 kili Exp $
 
 COMMENT =		a Haskell 98 logically uninhabited data type
 
 DISTNAME =		void-0.6.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

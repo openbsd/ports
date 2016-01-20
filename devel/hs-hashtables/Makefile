@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/12/20 11:26:53 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/20 16:22:26 kili Exp $
 
 COMMENT =		mutable hash tables in the ST monad
 
 DISTNAME =		hashtables-1.2.0.1
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 # BSD3

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2015/12/20 11:08:24 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2016/01/20 16:22:28 kili Exp $
 
 COMMENT =		Scrap Your Boilerplate library for generic programming
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
 DISTNAME =		syb-0.6
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

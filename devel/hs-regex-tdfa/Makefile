@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/29 12:48:38 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/20 16:22:28 kili Exp $
 
 COMMENT =		tagged DFA regex engine
 
 DISTNAME =		regex-tdfa-1.2.1
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD

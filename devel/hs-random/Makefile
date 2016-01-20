@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/20 11:28:45 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/20 16:22:27 kili Exp $
 
 COMMENT =		random number library
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
 DISTNAME =		random-1.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

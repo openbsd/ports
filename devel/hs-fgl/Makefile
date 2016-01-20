@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/12/20 11:07:14 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2016/01/20 16:22:25 kili Exp $
 
 BROKEN-i386 =		needs a fixed rts/Linker.c in ghc
 
@@ -7,6 +7,7 @@ COMMENT =		functional graph library
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
 DISTNAME =		fgl-5.5.2.3
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/12/20 11:28:07 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/20 16:22:27 kili Exp $
 
 COMMENT =		typeclass and functions for working with newtypes
 
 DISTNAME=		newtype-0.2
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 # BSD3

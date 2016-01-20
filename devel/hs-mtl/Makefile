@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2015/12/20 11:28:07 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2016/01/20 16:22:26 kili Exp $
 
 COMMENT =		monad classes using functional dependencies
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
 DISTNAME =		mtl-2.2.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

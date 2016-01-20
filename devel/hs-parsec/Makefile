@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2015/12/20 11:28:07 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2016/01/20 16:22:27 kili Exp $
 
 COMMENT =		Monadic parser combinators
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
 DISTNAME =		parsec-3.1.9
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 HOMEPAGE =		http://www.cs.uu.nl/~daan/parsec.html
 

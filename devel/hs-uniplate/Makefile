@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2015/12/20 11:30:35 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2016/01/20 16:22:29 kili Exp $
 
 BROKEN-i386=	duplicate definition for symbol __i686.get_pc_thunk.bx
 
 COMMENT=	help writing simple, concise and fast operations
 
 DISTNAME=	uniplate-1.6.12
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 # 3-clause BSD

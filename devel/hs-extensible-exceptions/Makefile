@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/12/20 11:26:53 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/20 16:22:25 kili Exp $
 
 COMMENT =		extensible exceptions for Haskell
 
 DISTNAME =		extensible-exceptions-0.1.1.4
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

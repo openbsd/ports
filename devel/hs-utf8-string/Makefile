@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/12/20 11:30:36 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/20 16:22:29 kili Exp $
 
 COMMENT =		support for reading and writing UTF8 strings
 
 DISTNAME =		utf8-string-1.0.1.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 # BSD3

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2015/12/20 11:30:36 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/20 16:22:28 kili Exp $
 
 COMMENT =		high-quality splittable PRNG
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
 DISTNAME =		tf-random-0.5
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

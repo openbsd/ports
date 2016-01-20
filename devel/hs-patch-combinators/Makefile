@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/12/20 11:28:07 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/20 16:22:27 kili Exp $
 
 COMMENT =		library for patching functions and data structures
 
 DISTNAME =		patch-combinators-0.1
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 # BSD3

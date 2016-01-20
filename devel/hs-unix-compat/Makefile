@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/12/20 11:30:35 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2016/01/20 16:22:29 kili Exp $
 
 COMMENT =		portable POSIX-compatibility layer
 
 DISTNAME =		unix-compat-0.4.1.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>

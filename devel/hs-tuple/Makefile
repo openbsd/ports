@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/12/20 11:29:39 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/20 16:22:29 kili Exp $
 
 COMMENT =		various functions on tuples
 
 DISTNAME =		tuple-0.2.0.1
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 # BSD3

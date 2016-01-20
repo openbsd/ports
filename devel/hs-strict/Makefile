@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2015/12/20 11:29:39 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/20 16:22:28 kili Exp $
 
 COMMENT =		strict data types and String IO
 
 DISTNAME =		strict-0.3.2
-REVISION =		4
+REVISION =		5
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
