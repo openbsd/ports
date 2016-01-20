@@ -1,0 +1,2 @@
+This is a pure Python stemming library. If PyStemmer is available, this
+module uses it to accelerate.
