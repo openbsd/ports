@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.762 2016/01/19 23:19:12 mmcc Exp $
+# $OpenBSD: Makefile,v 1.763 2016/01/20 12:19:21 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -12,7 +12,6 @@
      SUBDIR += aria2
      SUBDIR += arora
      SUBDIR += asql
-     SUBDIR += august
      SUBDIR += awl
      SUBDIR += awstats
      SUBDIR += blogsum
