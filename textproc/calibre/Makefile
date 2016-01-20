@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2016/01/20 17:17:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2016/01/20 23:08:21 sthen Exp $
 
 COMMENT =		ebook management application
 
 V =			2.49.0
+REVISION =		0
 DISTNAME =		calibre-$V
 CATEGORIES =		textproc
 EXTRACT_SUFX =		.tar.xz
@@ -54,9 +55,6 @@ COMMON_DEPENDS =	databases/py-apsw \
 
 BUILD_DEPENDS =		${COMMON_DEPENDS}
 
-# aaaargh
-#BUILD_DEPENDS +=	x11/qt5:patch
-
 SUBST_VARS =		WRKDIR
 
 RUN_DEPENDS =		${COMMON_DEPENDS} \
@@ -72,9 +70,6 @@ MAKE_ENV +=		FT_LIB_DIR="${X11BASE}/lib"
 MAKE_ENV +=		XDG_DATA_DIRS="${PREFIX}/share"
 MAKE_ENV +=		PODOFO_INC_DIR="${LOCALBASE}/include/podofo"
 MAKE_ENV +=		PODOFO_LIB_DIR="${LOCALBASE}/lib"
-
-# Requires /sys filesystem for HW detection
-MAKE_ENV +=		WITH_USB=no
 
 PORTHOME =		${WRKDIR}
 NO_TEST =		Yes
