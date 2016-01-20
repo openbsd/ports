@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/20 11:06:23 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/20 16:20:44 kili Exp $
 
 COMMENT =		case insensitive string comparison
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
 DISTNAME =		case-insensitive-1.2.0.5
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3

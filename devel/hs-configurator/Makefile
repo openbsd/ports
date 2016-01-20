@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/12/20 11:26:13 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/20 16:20:44 kili Exp $
 
 COMMENT =		configuration management library
 
 DISTNAME =		configurator-0.2.0.2
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 # BSD3

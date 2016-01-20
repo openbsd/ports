@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/12/20 11:24:56 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/20 16:20:43 kili Exp $
 
 COMMENT =		type classes generalizing monad-par
 
 DISTNAME =		abstract-par-0.3.1
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 # BSD3

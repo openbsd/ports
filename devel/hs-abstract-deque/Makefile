@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2015/12/20 11:24:56 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2016/01/20 16:20:43 kili Exp $
 
 COMMENT =		abstract, parameterized interface to mutable deques
 
 DISTNAME =		abstract-deque-0.1.6
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 # BSD3

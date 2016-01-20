@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2015/12/20 11:26:13 kili Exp $
+# $OpenBSD: Makefile,v 1.27 2016/01/20 16:20:44 kili Exp $
 
 COMMENT =		library to convert between different types
 
 DISTNAME =		convertible-1.1.1.0
-REVISION =		2
+REVISION =		4
 CATEGORIES =		devel
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>

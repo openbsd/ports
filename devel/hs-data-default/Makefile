@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2015/12/20 11:26:13 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2016/01/20 16:20:44 kili Exp $
 
 COMMENT=		class for types with a default value
 
 DISTNAME=		data-default-0.5.1
 CATEGORIES=		devel
-REVISION=		4
+REVISION=		5
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes

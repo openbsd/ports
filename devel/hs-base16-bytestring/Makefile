@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/20 11:24:57 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/20 16:20:43 kili Exp $
 
 COMMENT=		fast base16 (hex) encoding and decoding for ByteStrings
 
 DISTNAME=		base16-bytestring-0.1.1.5
-REVISION=		2
+REVISION=		3
 CATEGORIES=		devel
 
 # BSD3

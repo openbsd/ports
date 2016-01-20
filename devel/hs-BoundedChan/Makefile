@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/12/20 11:27:22 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/20 16:20:43 kili Exp $
 
 COMMENT =		library for bounded channels
 
 DISTNAME =		BoundedChan-1.0.1.0
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 # BSD3

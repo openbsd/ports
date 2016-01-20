@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2015/12/20 11:05:16 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2016/01/20 16:20:43 kili Exp $
 
 COMMENT =		unit testing framework for Haskell
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
 DISTNAME =		HUnit-1.3.0.0
+REVISION =		0
 CATEGORIES =		devel
 HOMEPAGE =		http://hunit.sourceforge.net/
 

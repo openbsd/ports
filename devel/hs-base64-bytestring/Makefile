@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/12/20 11:24:57 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2016/01/20 16:20:44 kili Exp $
 
 COMMENT=		fast base64 encodings and decoding for ByteStrings
 
 DISTNAME=		base64-bytestring-1.0.0.0
-REVISION=		5
+REVISION=		6
 CATEGORIES=		devel
 
 # 3-clause BSD

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/20 11:24:56 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/20 16:20:43 kili Exp $
 
 COMMENT =		fast JSON parsing and encoding
 
 DISTNAME =		aeson-0.9.0.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/bos/aeson
