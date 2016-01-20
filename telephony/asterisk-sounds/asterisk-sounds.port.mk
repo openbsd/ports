@@ -1,4 +1,4 @@
-# $OpenBSD: asterisk-sounds.port.mk,v 1.9 2014/05/19 08:06:30 sthen Exp $
+# $OpenBSD: asterisk-sounds.port.mk,v 1.10 2016/01/20 16:19:24 sthen Exp $
 
 # sync with asterisk-sounds/Makefile and asterisk-sounds/*sounds/Makefile
 MODAS_CODECS ?=	gsm alaw ulaw g722 g729 wav # sln16 siren7 siren14
@@ -34,11 +34,9 @@ MODAS_CODEC =	${FLAVOR}
 FLAVORS ?=	${MODAS_CODECS}
 FLAVOR ?=	gsm
 
-.if defined(MODAS_LANGS)
+.if defined(MODAS_LANG)
 .  for c in ${MODAS_CODECS}
-.    for l in ${MODAS_LANGS}
-SUPDISTFILES += ${MODAS_NAME}-$l-$c-${MODAS_VER}${EXTRACT_SUFX}
-.    endfor
+SUPDISTFILES += ${MODAS_NAME}-${MODAS_LANG}-$c-${MODAS_VER}${EXTRACT_SUFX}
 .  endfor
 .else
 .  for c in ${MODAS_CODECS}

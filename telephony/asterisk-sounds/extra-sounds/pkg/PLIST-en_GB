@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-en_GB,v 1.3 2015/06/08 13:44:28 espie Exp $
+@comment $OpenBSD: PLIST-en_GB,v 1.4 2016/01/20 16:19:25 sthen Exp $
 @option no-default-conflict
 @conflict asterisk-extra-sounds-en_GB-${MODAS_CODEC}-*
 share/asterisk/
@@ -45,9 +45,7 @@ ${MODAS_INST}/account-balance-is.${MODAS_CODEC}
 ${MODAS_INST}/accounting.${MODAS_CODEC}
 ${MODAS_INST}/accounts-payable.${MODAS_CODEC}
 ${MODAS_INST}/accounts-receivable.${MODAS_CODEC}
-${MODAS_INST}/activated.${MODAS_CODEC}
 ${MODAS_INST}/added-to.${MODAS_CODEC}
-${MODAS_INST}/added.${MODAS_CODEC}
 ${MODAS_INST}/address.${MODAS_CODEC}
 ${MODAS_INST}/administration.${MODAS_CODEC}
 ${MODAS_INST}/advised-to-seek-shelter.${MODAS_CODEC}
@@ -60,7 +58,6 @@ ${MODAS_INST}/alarm.${MODAS_CODEC}
 ${MODAS_INST}/alaska.${MODAS_CODEC}
 ${MODAS_INST}/albuquerque.${MODAS_CODEC}
 ${MODAS_INST}/alert.${MODAS_CODEC}
-${MODAS_INST}/all-circuits-busy-now.${MODAS_CODEC}
 ${MODAS_INST}/all-outgoing-lines-unavailable.${MODAS_CODEC}
 ${MODAS_INST}/all-reps-busy.${MODAS_CODEC}
 ${MODAS_INST}/all-your-base.${MODAS_CODEC}
@@ -87,9 +84,8 @@ ${MODAS_INST}/astcc-account-number-invalid.${MODAS_CODEC}
 ${MODAS_INST}/astcc-balance-of-account-is.${MODAS_CODEC}
 ${MODAS_INST}/astcc-card-number-invalid.${MODAS_CODEC}
 ${MODAS_INST}/astcc-digit-account-number.${MODAS_CODEC}
-${MODAS_INST}/astcc-followed-by-pound.${MODAS_CODEC}
 ${MODAS_INST}/astcc-followed-by-the-hash-key.${MODAS_CODEC}
-${MODAS_INST}/astcc-followed-by-the-pound-key.${MODAS_CODEC}
+@comment ${MODAS_INST}/astcc-followed-by-the-pound-key.${MODAS_CODEC}
 ${MODAS_INST}/astcc-login12pound.${MODAS_CODEC}
 ${MODAS_INST}/astcc-please-enter-your.${MODAS_CODEC}
 ${MODAS_INST}/astcc-skipping-any-punctuation.${MODAS_CODEC}
@@ -98,7 +94,6 @@ ${MODAS_INST}/at-any-time.${MODAS_CODEC}
 ${MODAS_INST}/at-customers-request.${MODAS_CODEC}
 ${MODAS_INST}/at-following-number.${MODAS_CODEC}
 ${MODAS_INST}/at-sign.${MODAS_CODEC}
-${MODAS_INST}/at-tone-time-exactly.${MODAS_CODEC}
 ${MODAS_INST}/athletics.${MODAS_CODEC}
 ${MODAS_INST}/atlanta.${MODAS_CODEC}
 ${MODAS_INST}/atlantic.${MODAS_CODEC}
@@ -148,26 +143,18 @@ ${MODAS_INST}/bytes.${MODAS_CODEC}
 ${MODAS_INST}/cafeteria.${MODAS_CODEC}
 ${MODAS_INST}/california.${MODAS_CODEC}
 ${MODAS_INST}/call-forward.${MODAS_CODEC}
-${MODAS_INST}/call-forwarding.${MODAS_CODEC}
 ${MODAS_INST}/call-fwd-cancelled.${MODAS_CODEC}
-${MODAS_INST}/call-fwd-no-ans.${MODAS_CODEC}
-${MODAS_INST}/call-fwd-on-busy.${MODAS_CODEC}
 ${MODAS_INST}/call-fwd-parallel.${MODAS_CODEC}
-${MODAS_INST}/call-fwd-unconditional.${MODAS_CODEC}
 ${MODAS_INST}/call-preempted.${MODAS_CODEC}
 ${MODAS_INST}/call-quality-menu.${MODAS_CODEC}
 ${MODAS_INST}/call-requres.${MODAS_CODEC}
 ${MODAS_INST}/call-terminated.${MODAS_CODEC}
-${MODAS_INST}/call-waiting.${MODAS_CODEC}
 ${MODAS_INST}/call.${MODAS_CODEC}
 ${MODAS_INST}/callerid.${MODAS_CODEC}
-${MODAS_INST}/calling.${MODAS_CODEC}
 ${MODAS_INST}/calls-taken-by.${MODAS_CODEC}
 ${MODAS_INST}/calls-waiting-for-rep.${MODAS_CODEC}
 ${MODAS_INST}/calls.${MODAS_CODEC}
 ${MODAS_INST}/campground-office.${MODAS_CODEC}
-${MODAS_INST}/cancelled.${MODAS_CODEC}
-${MODAS_INST}/cannot-complete-as-dialed.${MODAS_CODEC}
 ${MODAS_INST}/cannot-complete-network-error.${MODAS_CODEC}
 ${MODAS_INST}/cannot-complete-otherend-error.${MODAS_CODEC}
 ${MODAS_INST}/cannot-complete-temp-error.${MODAS_CODEC}
@@ -195,7 +182,6 @@ ${MODAS_INST}/channel-secure.${MODAS_CODEC}
 ${MODAS_INST}/channel.${MODAS_CODEC}
 ${MODAS_INST}/charlotte.${MODAS_CODEC}
 ${MODAS_INST}/chat-room.${MODAS_CODEC}
-${MODAS_INST}/check-number-dial-again.${MODAS_CODEC}
 ${MODAS_INST}/chemistry.${MODAS_CODEC}
 ${MODAS_INST}/chicago.${MODAS_CODEC}
 ${MODAS_INST}/chris.${MODAS_CODEC}
@@ -222,7 +208,6 @@ ${MODAS_INST}/computer-friend1.${MODAS_CODEC}
 ${MODAS_INST}/computer-friend2.${MODAS_CODEC}
 ${MODAS_INST}/conditions.${MODAS_CODEC}
 ${MODAS_INST}/conf-banned.${MODAS_CODEC}
-${MODAS_INST}/conf-full.${MODAS_CODEC}
 ${MODAS_INST}/conf-hasentered.${MODAS_CODEC}
 ${MODAS_INST}/conf-onlypersonleft.${MODAS_CODEC}
 ${MODAS_INST}/conf-peopleinconf.${MODAS_CODEC}
@@ -260,7 +245,6 @@ ${MODAS_INST}/day.${MODAS_CODEC}
 ${MODAS_INST}/daylight.${MODAS_CODEC}
 ${MODAS_INST}/days.${MODAS_CODEC}
 ${MODAS_INST}/dc.${MODAS_CODEC}
-${MODAS_INST}/de-activated.${MODAS_CODEC}
 ${MODAS_INST}/deadbeat.${MODAS_CODEC}
 ${MODAS_INST}/decibel.${MODAS_CODEC}
 ${MODAS_INST}/decibels.${MODAS_CODEC}
@@ -287,14 +271,12 @@ ${MODAS_INST}/dim.${MODAS_CODEC}
 ${MODAS_INST}/dining-room.${MODAS_CODEC}
 ${MODAS_INST}/directory-assistance.${MODAS_CODEC}
 ${MODAS_INST}/directory.${MODAS_CODEC}
-${MODAS_INST}/disabled.${MODAS_CODEC}
 ${MODAS_INST}/discon-or-out-of-service.${MODAS_CODEC}
 ${MODAS_INST}/disconnected.${MODAS_CODEC}
 ${MODAS_INST}/disk.${MODAS_CODEC}
 ${MODAS_INST}/distribution.${MODAS_CODEC}
 ${MODAS_INST}/divided-by.${MODAS_CODEC}
 ${MODAS_INST}/dns.${MODAS_CODEC}
-${MODAS_INST}/do-not-disturb.${MODAS_CODEC}
 ${MODAS_INST}/doing-enum-lookup.${MODAS_CODEC}
 ${MODAS_INST}/dont-know-who-sent.${MODAS_CODEC}
 ${MODAS_INST}/door.${MODAS_CODEC}
@@ -319,7 +301,6 @@ ${MODAS_INST}/el-paso.${MODAS_CODEC}
 ${MODAS_INST}/eleventh.${MODAS_CODEC}
 ${MODAS_INST}/email.${MODAS_CODEC}
 ${MODAS_INST}/emergency.${MODAS_CODEC}
-${MODAS_INST}/enabled.${MODAS_CODEC}
 ${MODAS_INST}/encode.${MODAS_CODEC}
 ${MODAS_INST}/engineering.${MODAS_CODEC}
 ${MODAS_INST}/ent-target-attendant.${MODAS_CODEC}
@@ -327,11 +308,9 @@ ${MODAS_INST}/enter-a-time.${MODAS_CODEC}
 ${MODAS_INST}/enter-conf-call-number.${MODAS_CODEC}
 ${MODAS_INST}/enter-conf-pin-number.${MODAS_CODEC}
 ${MODAS_INST}/enter-ext-of-person.${MODAS_CODEC}
-${MODAS_INST}/enter-num-blacklist.${MODAS_CODEC}
 ${MODAS_INST}/enter-password.${MODAS_CODEC}
 ${MODAS_INST}/enter-phone-number10.${MODAS_CODEC}
 ${MODAS_INST}/entering-conf-number.${MODAS_CODEC}
-${MODAS_INST}/entr-num-rmv-blklist.${MODAS_CODEC}
 ${MODAS_INST}/enum-lookup-failed.${MODAS_CODEC}
 ${MODAS_INST}/enum-lookup-successful.${MODAS_CODEC}
 ${MODAS_INST}/error-number.${MODAS_CODEC}
@@ -342,7 +321,6 @@ ${MODAS_INST}/euros.${MODAS_CODEC}
 ${MODAS_INST}/evening.${MODAS_CODEC}
 ${MODAS_INST}/explanation.${MODAS_CODEC}
 ${MODAS_INST}/ext-or-zero.${MODAS_CODEC}
-${MODAS_INST}/extension.${MODAS_CODEC}
 ${MODAS_INST}/extensions.${MODAS_CODEC}
 ${MODAS_INST}/extra-sounds-en_GB.txt-${MODAS_CODEC}
 ${MODAS_INST}/facilities.${MODAS_CODEC}
@@ -352,7 +330,6 @@ ${MODAS_INST}/fan.${MODAS_CODEC}
 ${MODAS_INST}/farad.${MODAS_CODEC}
 ${MODAS_INST}/farads.${MODAS_CODEC}
 ${MODAS_INST}/fast.${MODAS_CODEC}
-${MODAS_INST}/feature-not-avail-line.${MODAS_CODEC}
 ${MODAS_INST}/feet.${MODAS_CODEC}
 ${MODAS_INST}/female.${MODAS_CODEC}
 ${MODAS_INST}/fifteenth.${MODAS_CODEC}
@@ -394,7 +371,6 @@ ${MODAS_INST}/for-the-weather.${MODAS_CODEC}
 ${MODAS_INST}/for-wakeup-call.${MODAS_CODEC}
 ${MODAS_INST}/for-wx-report.${MODAS_CODEC}
 ${MODAS_INST}/for-yes-press.${MODAS_CODEC}
-${MODAS_INST}/for.${MODAS_CODEC}
 ${MODAS_INST}/fort-worth.${MODAS_CODEC}
 ${MODAS_INST}/fortieth.${MODAS_CODEC}
 ${MODAS_INST}/fountain.${MODAS_CODEC}
@@ -405,7 +381,6 @@ ${MODAS_INST}/freeze.${MODAS_CODEC}
 ${MODAS_INST}/freezing.${MODAS_CODEC}
 ${MODAS_INST}/frequency.${MODAS_CODEC}
 ${MODAS_INST}/fresno.${MODAS_CODEC}
-${MODAS_INST}/from-unknown-caller.${MODAS_CODEC}
 ${MODAS_INST}/from.${MODAS_CODEC}
 ${MODAS_INST}/front.${MODAS_CODEC}
 ${MODAS_INST}/ftp.${MODAS_CODEC}
@@ -426,7 +401,6 @@ ${MODAS_INST}/good-afternoon.${MODAS_CODEC}
 ${MODAS_INST}/good-evening.${MODAS_CODEC}
 ${MODAS_INST}/good-morning.${MODAS_CODEC}
 ${MODAS_INST}/good.${MODAS_CODEC}
-${MODAS_INST}/goodbye.${MODAS_CODEC}
 ${MODAS_INST}/great-room.${MODAS_CODEC}
 ${MODAS_INST}/greater-than.${MODAS_CODEC}
 ${MODAS_INST}/groovy.${MODAS_CODEC}
@@ -464,7 +438,6 @@ ${MODAS_INST}/heat-pump.${MODAS_CODEC}
 ${MODAS_INST}/heat.${MODAS_CODEC}
 ${MODAS_INST}/heating.${MODAS_CODEC}
 ${MODAS_INST}/hectopascal.${MODAS_CODEC}
-${MODAS_INST}/hello.${MODAS_CODEC}
 ${MODAS_INST}/helpdesk.${MODAS_CODEC}
 ${MODAS_INST}/hertz.${MODAS_CODEC}
 ${MODAS_INST}/high.${MODAS_CODEC}
@@ -493,7 +466,6 @@ ${MODAS_INST}/ice.${MODAS_CODEC}
 ${MODAS_INST}/icmp.${MODAS_CODEC}
 ${MODAS_INST}/icy.${MODAS_CODEC}
 ${MODAS_INST}/idaho.${MODAS_CODEC}
-${MODAS_INST}/if-correct-press.${MODAS_CODEC}
 ${MODAS_INST}/if-grtg-played-indefinately.${MODAS_CODEC}
 ${MODAS_INST}/if-grtg-should-expire-at.${MODAS_CODEC}
 ${MODAS_INST}/if-maint-contract-or-emergency.${MODAS_CODEC}
@@ -508,7 +480,6 @@ ${MODAS_INST}/if-you-need-help.${MODAS_CODEC}
 ${MODAS_INST}/if-youd-like-to-make-a-call.${MODAS_CODEC}
 ${MODAS_INST}/illinois.${MODAS_CODEC}
 ${MODAS_INST}/im-sorry-unable-to-connect-to-eng.${MODAS_CODEC}
-${MODAS_INST}/im-sorry.${MODAS_CODEC}
 ${MODAS_INST}/imap.${MODAS_CODEC}
 ${MODAS_INST}/in-service.${MODAS_CODEC}
 ${MODAS_INST}/in-the-line.${MODAS_CODEC}
@@ -522,7 +493,6 @@ ${MODAS_INST}/inches.${MODAS_CODEC}
 ${MODAS_INST}/indiana.${MODAS_CODEC}
 ${MODAS_INST}/indianapolis.${MODAS_CODEC}
 ${MODAS_INST}/indicated.${MODAS_CODEC}
-${MODAS_INST}/info-about-last-call.${MODAS_CODEC}
 ${MODAS_INST}/information-technology.${MODAS_CODEC}
 ${MODAS_INST}/information.${MODAS_CODEC}
 ${MODAS_INST}/infuriate-tech-staff.${MODAS_CODEC}
@@ -541,12 +511,9 @@ ${MODAS_INST}/is-at.${MODAS_CODEC}
 ${MODAS_INST}/is-curntly-busy.${MODAS_CODEC}
 ${MODAS_INST}/is-curntly-unavail.${MODAS_CODEC}
 ${MODAS_INST}/is-currently.${MODAS_CODEC}
-${MODAS_INST}/is-in-use.${MODAS_CODEC}
 ${MODAS_INST}/is-not-in-the.${MODAS_CODEC}
 ${MODAS_INST}/is-not-set.${MODAS_CODEC}
 ${MODAS_INST}/is-now-being-recorded.${MODAS_CODEC}
-${MODAS_INST}/is-set-to.${MODAS_CODEC}
-${MODAS_INST}/is.${MODAS_CODEC}
 ${MODAS_INST}/it-now.${MODAS_CODEC}
 ${MODAS_INST}/it-services.${MODAS_CODEC}
 ${MODAS_INST}/jacksonville.${MODAS_CODEC}
@@ -595,7 +562,6 @@ ${MODAS_INST}/list.${MODAS_CODEC}
 ${MODAS_INST}/living-room.${MODAS_CODEC}
 ${MODAS_INST}/load-average.${MODAS_CODEC}
 ${MODAS_INST}/local-authorities.${MODAS_CODEC}
-${MODAS_INST}/location.${MODAS_CODEC}
 ${MODAS_INST}/locked.${MODAS_CODEC}
 ${MODAS_INST}/locking.${MODAS_CODEC}
 ${MODAS_INST}/login-fail.${MODAS_CODEC}
@@ -716,9 +682,6 @@ ${MODAS_INST}/nothing-recorded.${MODAS_CODEC}
 ${MODAS_INST}/now.${MODAS_CODEC}
 ${MODAS_INST}/num-not-in-db.${MODAS_CODEC}
 ${MODAS_INST}/num-outside-area.${MODAS_CODEC}
-${MODAS_INST}/num-was-successfully.${MODAS_CODEC}
-${MODAS_INST}/number-not-answering.${MODAS_CODEC}
-${MODAS_INST}/number.${MODAS_CODEC}
 ${MODAS_INST}/oakland.${MODAS_CODEC}
 ${MODAS_INST}/octothorpe.${MODAS_CODEC}
 ${MODAS_INST}/off-duty.${MODAS_CODEC}
@@ -736,7 +699,6 @@ ${MODAS_INST}/on-busy.${MODAS_CODEC}
 ${MODAS_INST}/on-monthly-tel-stment.${MODAS_CODEC}
 ${MODAS_INST}/on-no-answer.${MODAS_CODEC}
 ${MODAS_INST}/on.${MODAS_CODEC}
-${MODAS_INST}/one-moment-please.${MODAS_CODEC}
 ${MODAS_INST}/one-small-step.${MODAS_CODEC}
 ${MODAS_INST}/one-small-step2.${MODAS_CODEC}
 ${MODAS_INST}/oops1.${MODAS_CODEC}
@@ -797,7 +759,6 @@ ${MODAS_INST}/please-enter-your.${MODAS_CODEC}
 ${MODAS_INST}/please-hang-up-and-dial-operator.${MODAS_CODEC}
 ${MODAS_INST}/please-hang-up-and-try-again.${MODAS_CODEC}
 ${MODAS_INST}/please-try-again-later.${MODAS_CODEC}
-${MODAS_INST}/please-try-again.${MODAS_CODEC}
 ${MODAS_INST}/please-try.${MODAS_CODEC}
 ${MODAS_INST}/please-wait-connect-oncall-eng.${MODAS_CODEC}
 ${MODAS_INST}/pls-ent-num-transfer.${MODAS_CODEC}
@@ -807,18 +768,15 @@ ${MODAS_INST}/pls-enter-vm-password.${MODAS_CODEC}
 ${MODAS_INST}/pls-entr-num-uwish2-call.${MODAS_CODEC}
 ${MODAS_INST}/pls-hold-process-tx.${MODAS_CODEC}
 ${MODAS_INST}/pls-hold-silent30.${MODAS_CODEC}
-${MODAS_INST}/pls-hold-while-try.${MODAS_CODEC}
 ${MODAS_INST}/pls-lv-msg-will-contact.${MODAS_CODEC}
 ${MODAS_INST}/pls-rcrd-name-at-tone.${MODAS_CODEC}
 ${MODAS_INST}/pls-stay-on-line.${MODAS_CODEC}
 ${MODAS_INST}/pls-try-again.${MODAS_CODEC}
 ${MODAS_INST}/pls-try-area-code.${MODAS_CODEC}
-${MODAS_INST}/pls-try-call-later.${MODAS_CODEC}
 ${MODAS_INST}/pls-try-manually.${MODAS_CODEC}
 ${MODAS_INST}/pls-wait-connect-call.${MODAS_CODEC}
 ${MODAS_INST}/plugh.${MODAS_CODEC}
 ${MODAS_INST}/pm-announcement-number.${MODAS_CODEC}
-${MODAS_INST}/pm-invalid-option.${MODAS_CODEC}
 ${MODAS_INST}/pm-phrase-management.${MODAS_CODEC}
 ${MODAS_INST}/pm-prompt-number.${MODAS_CODEC}
 ${MODAS_INST}/pm-to-record-phrase.${MODAS_CODEC}
@@ -876,7 +834,6 @@ ${MODAS_INST}/privacy-screening-unidentified-calls.${MODAS_CODEC}
 ${MODAS_INST}/privacy-stop-calling-not-welcome.${MODAS_CODEC}
 ${MODAS_INST}/privacy-stop-calling-not-welcome2.${MODAS_CODEC}
 ${MODAS_INST}/privacy-this-number-is.${MODAS_CODEC}
-${MODAS_INST}/privacy-to-blacklist-last-caller.${MODAS_CODEC}
 ${MODAS_INST}/privacy-to-blacklist-this-number.${MODAS_CODEC}
 ${MODAS_INST}/privacy-to-hear-our-contact-details.${MODAS_CODEC}
 ${MODAS_INST}/privacy-to-whitelist-last-caller.${MODAS_CODEC}
@@ -916,7 +873,6 @@ ${MODAS_INST}/registrar.${MODAS_CODEC}
 ${MODAS_INST}/remote-already-in-this-mode-2.${MODAS_CODEC}
 ${MODAS_INST}/remote-already-in-this-mode.${MODAS_CODEC}
 ${MODAS_INST}/remote-base.${MODAS_CODEC}
-${MODAS_INST}/removed.${MODAS_CODEC}
 ${MODAS_INST}/repair.${MODAS_CODEC}
 ${MODAS_INST}/repeat-only.${MODAS_CODEC}
 ${MODAS_INST}/repeater.${MODAS_CODEC}
@@ -974,7 +930,6 @@ ${MODAS_INST}/show-office.${MODAS_CODEC}
 ${MODAS_INST}/side.${MODAS_CODEC}
 ${MODAS_INST}/sighted.${MODAS_CODEC}
 ${MODAS_INST}/simplex.${MODAS_CODEC}
-${MODAS_INST}/simul-call-limit-reached.${MODAS_CODEC}
 ${MODAS_INST}/sixteenth.${MODAS_CODEC}
 ${MODAS_INST}/sixth.${MODAS_CODEC}
 ${MODAS_INST}/sixtieth.${MODAS_CODEC}
@@ -990,13 +945,10 @@ ${MODAS_INST}/solar.${MODAS_CODEC}
 ${MODAS_INST}/someone-you-trust1.${MODAS_CODEC}
 ${MODAS_INST}/someone-you-trust2.${MODAS_CODEC}
 ${MODAS_INST}/someone-you-trust3.${MODAS_CODEC}
-${MODAS_INST}/something-terribly-wrong.${MODAS_CODEC}
 ${MODAS_INST}/sorry-cant-let-you-do-that.${MODAS_CODEC}
 ${MODAS_INST}/sorry-cant-let-you-do-that2.${MODAS_CODEC}
 ${MODAS_INST}/sorry-cant-let-you-do-that3.${MODAS_CODEC}
 ${MODAS_INST}/sorry-mailbox-full.${MODAS_CODEC}
-${MODAS_INST}/sorry-youre-having-problems.${MODAS_CODEC}
-${MODAS_INST}/sorry.${MODAS_CODEC}
 ${MODAS_INST}/sorry2.${MODAS_CODEC}
 ${MODAS_INST}/south-carolina.${MODAS_CODEC}
 ${MODAS_INST}/south-dakota.${MODAS_CODEC}
@@ -1009,8 +961,6 @@ ${MODAS_INST}/spam2.${MODAS_CODEC}
 ${MODAS_INST}/speak-louder-into-phone.${MODAS_CODEC}
 ${MODAS_INST}/speak-louder.${MODAS_CODEC}
 ${MODAS_INST}/speak-to-the-operator.${MODAS_CODEC}
-${MODAS_INST}/speed-dial-empty.${MODAS_CODEC}
-${MODAS_INST}/speed-dial.${MODAS_CODEC}
 ${MODAS_INST}/speed.${MODAS_CODEC}
 ${MODAS_INST}/splat.${MODAS_CODEC}
 ${MODAS_INST}/sprinklers.${MODAS_CODEC}
@@ -1045,7 +995,6 @@ ${MODAS_INST}/tcp.${MODAS_CODEC}
 ${MODAS_INST}/technical-support.${MODAS_CODEC}
 ${MODAS_INST}/telephone-in-your-pocket.${MODAS_CODEC}
 ${MODAS_INST}/telephone-in-your-pocket2.${MODAS_CODEC}
-${MODAS_INST}/telephone-number.${MODAS_CODEC}
 ${MODAS_INST}/telesales.${MODAS_CODEC}
 ${MODAS_INST}/teletubbie-murder.${MODAS_CODEC}
 ${MODAS_INST}/telnet.${MODAS_CODEC}
@@ -1095,7 +1044,6 @@ ${MODAS_INST}/thousandth.${MODAS_CODEC}
 ${MODAS_INST}/through.${MODAS_CODEC}
 ${MODAS_INST}/thunderstorm.${MODAS_CODEC}
 ${MODAS_INST}/tide.${MODAS_CODEC}
-${MODAS_INST}/time.${MODAS_CODEC}
 ${MODAS_INST}/times.${MODAS_CODEC}
 ${MODAS_INST}/to-accept-recording.${MODAS_CODEC}
 ${MODAS_INST}/to-be-called-back.${MODAS_CODEC}
@@ -1103,7 +1051,6 @@ ${MODAS_INST}/to-blklist-last-caller.${MODAS_CODEC}
 ${MODAS_INST}/to-blklist-last-num.${MODAS_CODEC}
 ${MODAS_INST}/to-call-num-press.${MODAS_CODEC}
 ${MODAS_INST}/to-call-prson-w-sent-msg.${MODAS_CODEC}
-${MODAS_INST}/to-call-this-number.${MODAS_CODEC}
 ${MODAS_INST}/to-cancel-this-msg.${MODAS_CODEC}
 ${MODAS_INST}/to-cancel-wakeup.${MODAS_CODEC}
 ${MODAS_INST}/to-change-exp-date.${MODAS_CODEC}
@@ -1118,7 +1065,6 @@ ${MODAS_INST}/to-dial-by-name.${MODAS_CODEC}
 ${MODAS_INST}/to-enter-a-diff-number.${MODAS_CODEC}
 ${MODAS_INST}/to-enter-a-number.${MODAS_CODEC}
 ${MODAS_INST}/to-erase-yr-temp-grtg.${MODAS_CODEC}
-${MODAS_INST}/to-extension.${MODAS_CODEC}
 ${MODAS_INST}/to-hang-up-2.${MODAS_CODEC}
 ${MODAS_INST}/to-hang-up.${MODAS_CODEC}
 ${MODAS_INST}/to-hear-callerid.${MODAS_CODEC}
@@ -1130,7 +1076,6 @@ ${MODAS_INST}/to-hear-weather-status.${MODAS_CODEC}
 ${MODAS_INST}/to-hear-your-account-balance.${MODAS_CODEC}
 ${MODAS_INST}/to-join-a-meeting.${MODAS_CODEC}
 ${MODAS_INST}/to-leave-message-for.${MODAS_CODEC}
-${MODAS_INST}/to-listen-to-it.${MODAS_CODEC}
 ${MODAS_INST}/to-log-in-to-voice-mail.${MODAS_CODEC}
 ${MODAS_INST}/to-place-outgoing-call.${MODAS_CODEC}
 ${MODAS_INST}/to-reach-first-rep.${MODAS_CODEC}
@@ -1141,7 +1086,6 @@ ${MODAS_INST}/to-redial-the-last-number-you-called.${MODAS_CODEC}
 ${MODAS_INST}/to-report-emergency.${MODAS_CODEC}
 ${MODAS_INST}/to-report-system-network-down.${MODAS_CODEC}
 ${MODAS_INST}/to-rerecord-announce.${MODAS_CODEC}
-${MODAS_INST}/to-rerecord-it.${MODAS_CODEC}
 ${MODAS_INST}/to-rerecord-yr-message.${MODAS_CODEC}
 ${MODAS_INST}/to-rmv-num-blklist.${MODAS_CODEC}
 ${MODAS_INST}/to-rqst-wakeup-call.${MODAS_CODEC}
@@ -1183,7 +1127,6 @@ ${MODAS_INST}/uh-oh2.${MODAS_CODEC}
 ${MODAS_INST}/uk.${MODAS_CODEC}
 ${MODAS_INST}/unavailable.${MODAS_CODEC}
 ${MODAS_INST}/unconditional.${MODAS_CODEC}
-${MODAS_INST}/unidentified-no-callback.${MODAS_CODEC}
 ${MODAS_INST}/units.${MODAS_CODEC}
 ${MODAS_INST}/unix.${MODAS_CODEC}
 ${MODAS_INST}/unlocked.${MODAS_CODEC}
@@ -1253,7 +1196,6 @@ ${MODAS_INST}/winds.${MODAS_CODEC}
 ${MODAS_INST}/windy.${MODAS_CODEC}
 ${MODAS_INST}/wisconsin.${MODAS_CODEC}
 ${MODAS_INST}/wish-to-continue.${MODAS_CODEC}
-${MODAS_INST}/with.${MODAS_CODEC}
 ${MODAS_INST}/within.${MODAS_CODEC}
 ${MODAS_INST}/work.${MODAS_CODEC}
 ${MODAS_INST}/wrong-try-again-smarty.${MODAS_CODEC}
@@ -1272,7 +1214,6 @@ ${MODAS_INST}/you-are-caller-num.${MODAS_CODEC}
 ${MODAS_INST}/you-are-curr-call-num.${MODAS_CODEC}
 ${MODAS_INST}/you-can-press.${MODAS_CODEC}
 ${MODAS_INST}/you-dialed-wrong-number.${MODAS_CODEC}
-${MODAS_INST}/you-entered.${MODAS_CODEC}
 ${MODAS_INST}/you-have-dialed.${MODAS_CODEC}
 ${MODAS_INST}/you-have-reached-a-test-number.${MODAS_CODEC}
 ${MODAS_INST}/you-have-these-options.${MODAS_CODEC}
@@ -1286,5 +1227,4 @@ ${MODAS_INST}/your-msg-is-too-short.${MODAS_CODEC}
 ${MODAS_INST}/your-notifications.${MODAS_CODEC}
 ${MODAS_INST}/your-req-notification.${MODAS_CODEC}
 ${MODAS_INST}/your-temp-greeting.${MODAS_CODEC}
-${MODAS_INST}/your.${MODAS_CODEC}
 ${MODAS_INST}/zip-code.${MODAS_CODEC}
