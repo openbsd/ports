@@ -1,0 +1,12 @@
+$OpenBSD: patch-libraries_unix_unix_cabal,v 1.3 2016/01/20 16:02:06 kili Exp $
+--- libraries/unix/unix.cabal.orig	Sun Jan  4 23:56:26 2015
++++ libraries/unix/unix.cabal	Tue Jan 19 00:42:33 2016
+@@ -109,6 +109,8 @@ library
+         System.Posix.Terminal
+         System.Posix.Terminal.ByteString
+ 
++        System.OpenBSD.Process
++
+     other-modules:
+         System.Posix.Directory.Common
+         System.Posix.DynamicLinker.Common

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2015/12/28 19:18:52 kili Exp $
+# $OpenBSD: Makefile,v 1.132 2016/01/20 16:02:06 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -156,6 +156,11 @@ FAKE_FLAGS +=		CREATE_SCRIPT="${INSTALL_SCRIPT} /dev/null " \
 PORTHOME =		${WRKDIR}
 
 TEST_DEPENDS =	print/ghostscript/gnu
+
+post-extract:
+	cd ${WRKSRC}/libraries/unix && \
+	mkdir -p System/OpenBSD && \
+	install -m 644 ${FILESDIR}/Process.hsc System/OpenBSD
 
 post-patch:
 # - Install a precompiled binary.

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2015/11/02 21:31:26 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2016/01/20 16:02:06 kili Exp $
 @conflict hs-xhtml-*
 @conflict hs-deepseq-<=1.1.0.2p0
 @conflict hs-binary-*
@@ -2228,6 +2228,9 @@ lib/ghc/trans_${TRANSFORMERS_KEY}/libHStransformers-${TRANSFORMERS_VER}-${TRANSF
 lib/ghc/unix_${UNIX_KEY}/
 lib/ghc/unix_${UNIX_KEY}/HSunix-${UNIX_VER}-${UNIX_KEY}.o
 lib/ghc/unix_${UNIX_KEY}/System/
+lib/ghc/unix_${UNIX_KEY}/System/OpenBSD/
+lib/ghc/unix_${UNIX_KEY}/System/OpenBSD/Process.hi
+lib/ghc/unix_${UNIX_KEY}/System/OpenBSD/Process.p_hi
 lib/ghc/unix_${UNIX_KEY}/System/Posix/
 lib/ghc/unix_${UNIX_KEY}/System/Posix.hi
 lib/ghc/unix_${UNIX_KEY}/System/Posix.p_hi
