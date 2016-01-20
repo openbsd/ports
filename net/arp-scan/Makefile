@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.29 2016/01/02 22:42:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2016/01/20 15:29:30 sthen Exp $
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 COMMENT-mac =	MAC address vendor list
-DISTNAME =	arp-scan-1.9
-REVISION-main =	11
+
+V =		1.9
+DISTNAME =	arp-scan-$V
+REVISION-main =	12
 PKGNAME-main =	${DISTNAME}
 CATEGORIES =	net
 
 M =		20160102
 PKGNAME-mac =	mac-vendor-$M
 
-HOMEPAGE =	http://www.nta-monitor.com/tools-resources/security-tools/arp-scan
+HOMEPAGE =	https://github.com/royhills/arp-scan
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
-MASTER_SITES =	http://www.nta-monitor.com/files/arp-scan/
+MASTER_SITES =	https://github.com/royhills/arp-scan/releases/download/$V/
 MASTER_SITES0 =	https://spacehopper.org/mirrors/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
