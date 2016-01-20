@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/17 20:55:50 florian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/20 09:25:03 florian Exp $
 bin/parse_abuf
 lib/python${MODPY_VERSION}/site-packages/ripe/
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
@@ -7,6 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}-p
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/
