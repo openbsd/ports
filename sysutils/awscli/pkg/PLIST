@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/01/06 17:20:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/01/20 06:41:46 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -543,7 +543,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-instances.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-internet-gateways.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-key-pairs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-moving-addresses.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-nat-gateway.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-nat-gateways.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-acls.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-interface-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-network-interfaces.rst
@@ -569,6 +569,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-volume-att
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-volume-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-volumes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-attribute.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-classic-link-dns-support.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-classic-link.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-endpoint-services.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-endpoints.rst
@@ -582,10 +583,12 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/detach-network-inte
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/detach-volume.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/detach-vpn-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-vgw-route-propagation.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-vpc-classic-link-dns-support.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-vpc-classic-link.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-address.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-route-table.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vgw-route-propagation.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vpc-classic-link-dns-support.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vpc-classic-link.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-console-output.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-password-data.rst
