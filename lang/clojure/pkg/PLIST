@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/07/18 00:50:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/01/20 08:01:13 jasper Exp $
 bin/clojure
 clojure/
 clojure/clj_completions
@@ -13,6 +13,7 @@ clojure/src/clj/clojure/core/
 clojure/src/clj/clojure/core.clj
 clojure/src/clj/clojure/core/protocols.clj
 clojure/src/clj/clojure/core/reducers.clj
+clojure/src/clj/clojure/core/server.clj
 clojure/src/clj/clojure/core_deftype.clj
 clojure/src/clj/clojure/core_print.clj
 clojure/src/clj/clojure/core_proxy.clj
@@ -140,6 +141,7 @@ clojure/src/jvm/clojure/lang/IEditableCollection.java
 clojure/src/jvm/clojure/lang/IExceptionInfo.java
 clojure/src/jvm/clojure/lang/IFn.java
 clojure/src/jvm/clojure/lang/IHashEq.java
+clojure/src/jvm/clojure/lang/IKVReduce.java
 clojure/src/jvm/clojure/lang/IKeywordLookup.java
 clojure/src/jvm/clojure/lang/ILookup.java
 clojure/src/jvm/clojure/lang/ILookupSite.java
@@ -224,6 +226,7 @@ clojure/src/jvm/clojure/lang/Symbol.java
 clojure/src/jvm/clojure/lang/TaggedLiteral.java
 clojure/src/jvm/clojure/lang/TransactionalHashMap.java
 clojure/src/jvm/clojure/lang/TransformerIterator.java
+clojure/src/jvm/clojure/lang/Tuple.java
 clojure/src/jvm/clojure/lang/Util.java
 clojure/src/jvm/clojure/lang/Var.java
 clojure/src/jvm/clojure/lang/Volatile.java

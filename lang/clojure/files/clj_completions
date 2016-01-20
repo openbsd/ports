@@ -28,6 +28,7 @@
 *print-meta*
 *print-readably*
 *read-eval*
+*session*
 *source-path*
 *suppress-read*
 *unchecked-math*
@@ -233,6 +234,7 @@ drop-while
 eduction
 empty
 empty?
+ends-with?
 ensure
 ensure-reduced
 enumeration-seq
@@ -309,6 +311,8 @@ import
 in-ns
 inc
 inc'
+includes?
+index-of
 init-proxy
 input-stream
 instance?
@@ -336,6 +340,7 @@ keyword
 keyword?
 kv-reduce
 last
+last-index-of
 lazy-cat
 lazy-seq
 let
@@ -367,6 +372,7 @@ make-parents
 make-reader
 make-writer
 map
+map-entry?
 map-indexed
 map?
 mapcat
@@ -475,10 +481,12 @@ re-pattern
 re-quote-replacement
 re-seq
 read
+read
 read-instant-calendar
 read-instant-date
 read-instant-timestamp
 read-line
+read-string
 read-string
 reader
 reader-conditional
@@ -508,9 +516,12 @@ remove-watch
 repeat
 repeatedly
 repl
+repl
 repl-caught
 repl-exception
+repl-init
 repl-prompt
+repl-read
 repl-read
 repl-requires
 replace
@@ -577,6 +588,11 @@ split-at
 split-lines
 split-with
 stack-element-str
+start-server
+start-servers
+starts-with?
+stop-server
+stop-servers
 str
 string?
 struct
