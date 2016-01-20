@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.132 2016/01/20 16:02:06 kili Exp $
+# $OpenBSD: Makefile,v 1.133 2016/01/20 16:08:29 kili Exp $
 
-COMMENT-main =		compiler for the functional language Haskell
-COMMENT-doc =		documentation for GHC
+COMMENT =		compiler for the functional language Haskell
 
 # Note: please never ever set DPB_PROPERTIES=parallel (or some other
 # magic that enables parallel builds) for this port! Not even if it
@@ -13,9 +12,7 @@ COMMENT-doc =		documentation for GHC
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-PKGNAME-main =		ghc-${MODGHC_VER}
-PKGNAME-doc =		ghc-doc-${MODGHC_VER}
-REVISION-doc =		0
+REVISION =		0
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
@@ -26,26 +23,16 @@ BIN_VER =		7.8.4.20151026
 # in ghc.port.mk. lang/python needed for regression tests.
 MODULES =		lang/ghc lang/python converters/libiconv
 
-PSEUDO_FLAVORS =	no_doc
-FLAVOR ?=
-MULTI_PACKAGES =	-main -doc
-
 # BSD w/o advertising clause + LGPLv3 (from libgmp).
 # Distfile is bundled with other stuff like libffi, mingw
 # binaries, with BSD, GPLv2 and Perl artistic license.
 PERMIT_PACKAGE_CDROM =		Yes
 
-PKG_ARCH-doc =		*
 BUILD_DEPENDS =		archivers/gtar \
 			textproc/docbook-xsl
-LIB_DEPENDS-doc =
-LIB_DEPENDS-main =	${LIB_DEPENDS}
-RUN_DEPENDS-doc =
-RUN_DEPENDS-main =
+RUN_DEPENDS =
 
-WANTLIB-main =		${WANTLIB} c m ncursesw pthread util
-
-WANTLIB-doc =
+WANTLIB +=		c m ncursesw pthread util
 
 MASTER_SITES =		${HOMEPAGE}dist/${MODGHC_VER}/ \
 			${HOMEPAGE}dist/stable/dist/
@@ -130,12 +117,6 @@ MAKE_FLAGS +=		StripLibraries=YES \
 			HSCOLOUR_SRCS=NO \
 			BUILD_DOCBOOK_PDF=NO \
 			BUILD_DOCBOOK_PS=NO
-
-.if ${FLAVOR:Mno_doc}
-MAKE_FLAGS +=		HADDOCK_DOCS=NO \
-			LATEX_DOCS=NO \
-			BUILD_DOCBOOK_HTML=NO
-.endif
 
 # Thank god that they're only building compilers and no nuclear
 # power plants. Note that we do not override CREATE_DATA, because
