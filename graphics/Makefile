@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.402 2016/01/11 09:37:08 kirby Exp $
+# $OpenBSD: Makefile,v 1.403 2016/01/20 00:07:19 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -245,6 +245,7 @@
      SUBDIR += s10sh
      SUBDIR += sane-backends
      SUBDIR += sane-backends,snmp
+     SUBDIR += scour
      SUBDIR += scratch
      SUBDIR += scrot
      SUBDIR += shared-color-targets
