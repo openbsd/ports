@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.18 2015/12/03 21:24:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2016/01/20 14:05:12 edd Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		fast implementation of the Python language
 
 # To update PyPy to a new version:
-#   * Bump ${V} but set ${BOOTSTRAP_V} to the old ${V}
+#   * Bump ${V} but set ${BOOTSTRAP_V} to the old ${V} (keeping
+#     any bootstrap version suffix intact, e.g. "-1")
 #   * FLAVOR=no_bootstrap make makesum
 #   * FLAVOR=no_bootstrap make plist (fix anything along the way)
 #   * FLAVOR=no_bootstrap make package
 #   * Set BOOTSTRAP_V back to ${V} in the port Makefile
 #   * make bootstrap && make makesum (note, FLAVOR no longer set)
 #   * Try the build using the bootstrap
-V =			2.6.0
-BOOTSTRAP_V =		${V}-1
+V =			4.0.1
+BOOTSTRAP_V =		${V}
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
-REVISION =		0
 
 CATEGORIES =		lang
 
