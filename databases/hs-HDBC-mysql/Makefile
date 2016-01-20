@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2015/12/20 11:20:08 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2016/01/20 16:15:45 kili Exp $
 
 COMMENT=		mysql driver for HDBC
 
 DISTNAME=		HDBC-mysql-0.6.6.1
-REVISION=		7
+REVISION=		8
 CATEGORIES=		databases
 
 HOMEPAGE=		https://github.com/bos/hdbc-mysql

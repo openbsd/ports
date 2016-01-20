@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/12/29 18:14:39 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/20 16:15:45 kili Exp $
 
 COMMENT =		high-performance striped resource pooling implementation
 
 DISTNAME =		resource-pool-0.2.1.1
-REVISION =		1
+REVISION =		2
 CATEGORIES =		databases devel
 HOMEPAGE =		https://github.com/bos/pool
 

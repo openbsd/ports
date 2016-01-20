@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2015/12/20 11:20:08 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2016/01/20 16:15:45 kili Exp $
 
 BROKEN-i386 =		needs a fixed rts/Linker.c in ghc
 
 COMMENT =		mid-level PostgreSQL client library
 
 DISTNAME =		postgresql-simple-0.4.9.0
-REVISION =		1
+REVISION =		2
 CATEGORIES =		databases
 
 HOMEPAGE =		https://github.com/lpsmith/postgresql-simple

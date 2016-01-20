@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2015/12/20 11:20:08 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2016/01/20 16:15:45 kili Exp $
 
 COMMENT =		low-level binding to libpq
 
 DISTNAME =		postgresql-libpq-0.9.0.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		databases
 
 HOMEPAGE =		https://github.com/lpsmith/postgresql-libpq
