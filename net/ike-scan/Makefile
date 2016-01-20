@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.16 2015/06/17 06:16:51 bentley Exp $
+# $OpenBSD: Makefile,v 1.17 2016/01/20 15:33:56 sthen Exp $
 
 COMMENT=	VPN scanner and identifier
-DISTNAME=	ike-scan-1.9
-REVISION=	1
+V=		1.9
+DISTNAME=	ike-scan-$V
+REVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	${HOMEPAGE}download/
 
-HOMEPAGE=	http://www.nta-monitor.com/ike-scan/
+HOMEPAGE=	https://github.com/royhills/ike-scan
 
-# GPL
+# GPLv2+ w/openssl exemption
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c crypto
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--with-openssl
+MASTER_SITES=	https://github.com/royhills/ike-scan/releases/download/$V/
+
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= --with-openssl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ike-scan
