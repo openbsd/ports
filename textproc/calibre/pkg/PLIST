@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/12/15 22:03:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.20 2016/01/20 17:17:19 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -1685,6 +1685,8 @@ lib/calibre/calibre/gui2/dialogs/edit_authors_dialog.py
 lib/calibre/calibre/gui2/dialogs/edit_authors_dialog.pyc
 lib/calibre/calibre/gui2/dialogs/edit_authors_dialog_ui.py
 lib/calibre/calibre/gui2/dialogs/edit_authors_dialog_ui.pyc
+lib/calibre/calibre/gui2/dialogs/exim.py
+lib/calibre/calibre/gui2/dialogs/exim.pyc
 lib/calibre/calibre/gui2/dialogs/job_view_ui.py
 lib/calibre/calibre/gui2/dialogs/job_view_ui.pyc
 lib/calibre/calibre/gui2/dialogs/jobs_ui.py
@@ -2012,6 +2014,8 @@ lib/calibre/calibre/gui2/store/search_result.pyc
 lib/calibre/calibre/gui2/store/stores/
 lib/calibre/calibre/gui2/store/stores/__init__.py
 lib/calibre/calibre/gui2/store/stores/__init__.pyc
+lib/calibre/calibre/gui2/store/stores/amazon_au_plugin.py
+lib/calibre/calibre/gui2/store/stores/amazon_au_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/amazon_ca_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_ca_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/amazon_de_plugin.py
@@ -2020,6 +2024,8 @@ lib/calibre/calibre/gui2/store/stores/amazon_es_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_es_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/amazon_fr_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_fr_plugin.pyc
+lib/calibre/calibre/gui2/store/stores/amazon_in_plugin.py
+lib/calibre/calibre/gui2/store/stores/amazon_in_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/amazon_it_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_it_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/amazon_plugin.py
@@ -2575,6 +2581,8 @@ lib/calibre/calibre/utils/date.py
 lib/calibre/calibre/utils/date.pyc
 lib/calibre/calibre/utils/dbus_service.py
 lib/calibre/calibre/utils/dbus_service.pyc
+lib/calibre/calibre/utils/exim.py
+lib/calibre/calibre/utils/exim.pyc
 lib/calibre/calibre/utils/file_associations.py
 lib/calibre/calibre/utils/file_associations.pyc
 lib/calibre/calibre/utils/file_type_icons.py
@@ -2650,6 +2658,8 @@ lib/calibre/calibre/utils/imghdr.py
 lib/calibre/calibre/utils/imghdr.pyc
 lib/calibre/calibre/utils/inotify.py
 lib/calibre/calibre/utils/inotify.pyc
+lib/calibre/calibre/utils/ip_routing.py
+lib/calibre/calibre/utils/ip_routing.pyc
 lib/calibre/calibre/utils/ipc/
 lib/calibre/calibre/utils/ipc/__init__.py
 lib/calibre/calibre/utils/ipc/__init__.pyc
@@ -2667,6 +2677,8 @@ lib/calibre/calibre/utils/ipc/simple_worker.py
 lib/calibre/calibre/utils/ipc/simple_worker.pyc
 lib/calibre/calibre/utils/ipc/worker.py
 lib/calibre/calibre/utils/ipc/worker.pyc
+lib/calibre/calibre/utils/iphlpapi.py
+lib/calibre/calibre/utils/iphlpapi.pyc
 lib/calibre/calibre/utils/ipython.py
 lib/calibre/calibre/utils/ipython.pyc
 lib/calibre/calibre/utils/linux_trash.py
@@ -3993,7 +4005,6 @@ share/calibre/recipes/diario_el_pueblo.recipe
 share/calibre/recipes/diario_extra.recipe
 share/calibre/recipes/diario_ibiza.recipe
 share/calibre/recipes/diario_la_republica.recipe
-share/calibre/recipes/diario_salto.recipe
 share/calibre/recipes/diario_sport.recipe
 share/calibre/recipes/diariovasco.png
 share/calibre/recipes/diariovasco.recipe
@@ -4663,7 +4674,6 @@ share/calibre/recipes/l_espresso.recipe
 share/calibre/recipes/l_vivs_ghazieta.recipe
 share/calibre/recipes/la_cuarta.png
 share/calibre/recipes/la_cuarta.recipe
-share/calibre/recipes/la_diaria.recipe
 share/calibre/recipes/la_gazetta_del_mezzogiorno.recipe
 share/calibre/recipes/la_gazzeta_dello_sport.recipe
 share/calibre/recipes/la_jornada.png
@@ -4775,6 +4785,7 @@ share/calibre/recipes/los_tiempos_bo.recipe
 share/calibre/recipes/losandes.png
 share/calibre/recipes/losandes.recipe
 share/calibre/recipes/losservatoreromano_it.recipe
+share/calibre/recipes/lr21.recipe
 share/calibre/recipes/lrb.png
 share/calibre/recipes/lrb.recipe
 share/calibre/recipes/lrb_payed.png
@@ -4936,6 +4947,7 @@ share/calibre/recipes/netzpolitik.recipe
 share/calibre/recipes/neu_osnabrucker_zeitung.recipe
 share/calibre/recipes/neviditelny_pes.recipe
 share/calibre/recipes/new_london_day.recipe
+share/calibre/recipes/new_scientist.png
 share/calibre/recipes/new_scientist.recipe
 share/calibre/recipes/new_statesman.recipe
 share/calibre/recipes/new_york_review_of_books.recipe
@@ -5639,7 +5651,6 @@ share/calibre/recipes/unica.recipe
 share/calibre/recipes/uninohimitu.recipe
 share/calibre/recipes/united_daily.recipe
 share/calibre/recipes/universe_today.recipe
-share/calibre/recipes/unoticias.recipe
 share/calibre/recipes/unperiodico.recipe
 share/calibre/recipes/upi.recipe
 share/calibre/recipes/usatoday.recipe
@@ -5806,11 +5817,22 @@ share/calibre/viewer/jquery_scrollTo.js
 share/calibre/viewer/mathjax/
 share/calibre/viewer/mathjax/MathJax.js
 share/calibre/viewer/mathjax/extensions/
+share/calibre/viewer/mathjax/extensions/AssistiveMML.js
+share/calibre/viewer/mathjax/extensions/CHTML-preview.js
 share/calibre/viewer/mathjax/extensions/FontWarnings.js
+share/calibre/viewer/mathjax/extensions/HTML-CSS/
+share/calibre/viewer/mathjax/extensions/HTML-CSS/handle-floats.js
+share/calibre/viewer/mathjax/extensions/HelpDialog.js
+share/calibre/viewer/mathjax/extensions/MatchWebFonts.js
 share/calibre/viewer/mathjax/extensions/MathEvents.js
+share/calibre/viewer/mathjax/extensions/MathML/
+share/calibre/viewer/mathjax/extensions/MathML/content-mathml.js
+share/calibre/viewer/mathjax/extensions/MathML/mml3.js
 share/calibre/viewer/mathjax/extensions/MathMenu.js
 share/calibre/viewer/mathjax/extensions/MathZoom.js
+share/calibre/viewer/mathjax/extensions/Safe.js
 share/calibre/viewer/mathjax/extensions/TeX/
+share/calibre/viewer/mathjax/extensions/TeX/AMScd.js
 share/calibre/viewer/mathjax/extensions/TeX/AMSmath.js
 share/calibre/viewer/mathjax/extensions/TeX/AMSsymbols.js
 share/calibre/viewer/mathjax/extensions/TeX/HTML.js
@@ -5825,6 +5847,7 @@ share/calibre/viewer/mathjax/extensions/TeX/color.js
 share/calibre/viewer/mathjax/extensions/TeX/enclose.js
 share/calibre/viewer/mathjax/extensions/TeX/extpfeil.js
 share/calibre/viewer/mathjax/extensions/TeX/mathchoice.js
+share/calibre/viewer/mathjax/extensions/TeX/mediawiki-texvc.js
 share/calibre/viewer/mathjax/extensions/TeX/mhchem.js
 share/calibre/viewer/mathjax/extensions/TeX/newcommand.js
 share/calibre/viewer/mathjax/extensions/TeX/noErrors.js
@@ -5832,6 +5855,7 @@ share/calibre/viewer/mathjax/extensions/TeX/noUndefined.js
 share/calibre/viewer/mathjax/extensions/TeX/unicode.js
 share/calibre/viewer/mathjax/extensions/TeX/verb.js
 share/calibre/viewer/mathjax/extensions/asciimath2jax.js
+share/calibre/viewer/mathjax/extensions/fast-preview.js
 share/calibre/viewer/mathjax/extensions/jsMath2jax.js
 share/calibre/viewer/mathjax/extensions/mml2jax.js
 share/calibre/viewer/mathjax/extensions/tex2jax.js

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2015/12/15 22:03:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2016/01/20 17:17:19 sthen Exp $
 
 COMMENT =		ebook management application
 
-V =			2.46.0
+V =			2.49.0
 DISTNAME =		calibre-$V
 CATEGORIES =		textproc
 EXTRACT_SUFX =		.tar.xz
@@ -20,7 +20,7 @@ WANTLIB += Qt5Gui Qt5Widgets X11 Xext Xrender chm crypto fontconfig
 WANTLIB += freetype glib-2.0 gthread-2.0 icudata icui18n icuio
 WANTLIB += icuuc m mtp podofo pthread usb-1.0 z
 
-MASTER_SITES =		https://github.com/kovidgoyal/calibre/releases/download/v$V/
+MASTER_SITES =	https://github.com/kovidgoyal/calibre/releases/download/v$V/
 
 MODULES =		devel/gettext \
 			lang/python \
