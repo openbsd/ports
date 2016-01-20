@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/01/19 16:16:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2016/01/20 11:29:05 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,6 +8,7 @@ COMMENT-webkit=		pacrunner libproxy plugin for webkit-based browsers
 GH_ACCOUNT=		libproxy
 GH_PROJECT=		libproxy
 GH_TAGNAME=		0.4.12
+REVISION=		0
 SUBST_VARS=		GH_TAGNAME
 
 PKGNAME-main=		${DISTNAME}
@@ -15,7 +16,7 @@ PKGNAME-webkit=		${GH_PROJECT}-webkit-${GH_TAGNAME}
 
 CATEGORIES=		net
 
-SHARED_LIBS +=  proxy          1.0 # 0.0
+SHARED_LIBS +=  proxy          1.1 # 0.0
 
 HOMEPAGE=		https://libproxy.googlecode.com/
 
@@ -51,6 +52,9 @@ WANTLIB-main += c gio-2.0 glib-2.0 gobject-2.0 perl pthread
 
 WANTLIB-webkit += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 WANTLIB-webkit += glib-2.0 javascriptcoregtk-4.0 proxy pthread
+
+CONFIGURE_ENV=	LIBlibproxy_VERSION=${LIBproxy_VERSION}
+MAKE_ENV=	LIBlibproxy_VERSION=${LIBproxy_VERSION}
 
 CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS}" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
