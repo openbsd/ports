@@ -1,0 +1,16 @@
+$OpenBSD: patch-mozilla_media_libav_config_unix_h,v 1.1 2016/01/20 08:39:57 jasper Exp $
+
+Stop using malloc.h on OpenBSD.
+
+--- mozilla/media/libav/config_unix.h.orig	Thu Jan 14 19:35:51 2016
++++ mozilla/media/libav/config_unix.h	Thu Jan 14 19:36:05 2016
+@@ -144,7 +144,9 @@
+ #define HAVE_MACH_MACH_TIME_H 0
+ #define HAVE_MACHINE_IOCTL_BT848_H 0
+ #define HAVE_MACHINE_IOCTL_METEOR_H 0
++#ifndef __OpenBSD__
+ #define HAVE_MALLOC_H 1
++#endif
+ #define HAVE_POLL_H 1
+ #define HAVE_SNDIO_H 0
+ #define HAVE_SOUNDCARD_H 0
