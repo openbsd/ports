@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.126 2016/01/12 13:52:56 tsg Exp $
+# $OpenBSD: OpenBSD,v 1.127 2016/01/20 15:09:14 tb Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -74,6 +74,7 @@
 47.29		19.3		"robert"	# Robert Nagy
 47.3154		7.3526		"mglocker"	# Marcus Glocker
 47.369024	8.538033	"stephan"	# Stephan A. Rickauer
+47.404841	8.562961	"tb"		# Theo Buehler
 47.50		7.60		"dhartmei"	# Daniel Hartmeier
 47.532		7.648		"winiger"	# Marc Winiger
 47.581		7.589		"mbalmer"	# Marc Balmer
