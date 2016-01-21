@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2015/04/11 12:09:25 benoit Exp $
+# $OpenBSD: Makefile,v 1.19 2016/01/21 14:34:42 mestre Exp $
 
 COMMENT =		code browsing program
 
 DISTNAME =		cscope-15.8b
+REVISION =		0
 CATEGORIES =     	devel
 
 HOMEPAGE =		http://cscope.sourceforge.net/
@@ -12,6 +13,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
+# uses pledge()
 WANTLIB =		c ncurses
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cscope/}

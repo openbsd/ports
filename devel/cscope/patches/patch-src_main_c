@@ -1,0 +1,46 @@
+$OpenBSD: patch-src_main_c,v 1.1 2016/01/21 14:34:42 mestre Exp $
+
+# uses pledge()
+
+--- src/main.c.orig	Thu Nov 20 21:12:54 2014
++++ src/main.c	Tue Jan 19 10:27:48 2016
+@@ -56,6 +56,7 @@
+ #ifdef HAVE_GETOPT_LONG 
+ #include <getopt.h>
+ #endif
++#include <errno.h>
+ 
+ /* defaults for unset environment variables */
+ #define	EDITOR	"vi"
+@@ -481,6 +482,16 @@ cscope: reffile too long, cannot be > %d characters\n"
+ 
+  lastarg:
+ #endif
++
++#if defined(__OPENBSD__)
++	if (linemode == YES) {
++		if (pledge("stdio rpath wpath cpath proc exec", NULL) == -1) {
++			fprintf(stderr, "cscope: pledge: %s\n", strerror(errno));
++			myexit(1);
++		}
++	}
++#endif
++
+     /* read the environment */
+     editor = mygetenv("EDITOR", EDITOR);
+     editor = mygetenv("VIEWER", editor); /* use viewer if set */
+@@ -573,6 +584,14 @@ cscope: Could not create private temp dir %s\n",
+ 	/* initialize the curses display package */
+ 	initscr();	/* initialize the screen */
+ 	entercurses();
++
++#if defined(__OpenBSD__)
++	if (pledge("stdio rpath wpath cpath tty proc exec", NULL) == -1) {
++		fprintf(stderr, "cscope: pledge: %s\n", strerror(errno));
++		myexit(1);
++	}
++#endif
++
+ #if TERMINFO
+ 	keypad(stdscr, TRUE);	/* enable the keypad */
+ # ifdef HAVE_FIXKEYPAD
