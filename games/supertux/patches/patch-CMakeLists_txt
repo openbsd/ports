@@ -1,0 +1,23 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2016/01/21 16:04:47 pascal Exp $
+--- CMakeLists.txt.orig	Sun Dec 20 15:50:39 2015
++++ CMakeLists.txt	Tue Dec 22 20:05:43 2015
+@@ -54,7 +54,7 @@ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CUR
+ INCLUDE(ConfigureFiles)
+ 
+ ## For autopackage
+-SET(APPDATADIR "${CMAKE_INSTALL_PREFIX}/share/games/supertux2")
++SET(APPDATADIR "${CMAKE_INSTALL_PREFIX}/share/supertux2")
+ 
+ ## Check endianess
+ 
+@@ -564,8 +564,8 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND DISABLE_C
+ 
+ ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND DISABLE_CPACK_BUNDLING)
+ 
+-  SET(INSTALL_SUBDIR_BIN "games" CACHE STRING "Installation subdir for binaries")
+-  SET(INSTALL_SUBDIR_SHARE "share/games/supertux2" CACHE STRING "Installation subdir for data")
++  SET(INSTALL_SUBDIR_BIN "bin" CACHE STRING "Installation subdir for binaries")
++  SET(INSTALL_SUBDIR_SHARE "share/supertux2" CACHE STRING "Installation subdir for data")
+   SET(INSTALL_SUBDIR_DOC "share/doc/supertux2" CACHE STRING "Installation subdir for docs")
+ 
+   INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/supertux2.desktop DESTINATION "share/applications")

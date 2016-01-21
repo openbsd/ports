@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/06/21 11:54:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/21 16:04:47 pascal Exp $
 
 COMMENT =		jump 'n' run game
 
-DISTNAME =		supertux-0.1.3
+V =			0.4.0
+DISTNAME =		supertux-$V
 
 CATEGORIES =		games
 
@@ -13,19 +14,33 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL SDL SDL_image SDL_mixer X11 c m pthread stdc++ z
+WANTLIB += GL GLEW GLU SDL2 SDL2_image c curl m ogg openal physfs
+WANTLIB += pthread vorbis vorbisfile
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=supertux.berlios/}
+MASTER_SITES =		https://github.com/SuperTux/supertux/releases/download/v${V}/
 EXTRACT_SUFX =		.tar.bz2
 
+MODULES +=		converters/libiconv devel/cmake gcc4
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS =		c c++
 RUN_DEPENDS =		devel/desktop-file-utils
-LIB_DEPENDS =		devel/sdl-image \
-			devel/sdl-mixer
+LIB_DEPENDS =		devel/sdl2-image \
+			devel/physfs \
+			graphics/glew \
+			net/curl \
+			audio/openal \
+			audio/libvorbis
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS +=	-DINSTALL_SUBDIR_BIN="${LOCALBASE}/bin" \
+			-DBUILD_SHARED_LIBS=OFF
 
 USE_GMAKE =		Yes
 
 NO_TEST =		Yes
+# XXX compiler bug
+CXXFLAGS +=		-O1
+
+post-extract:
+	perl -i -pe 's/\r$$//' ${WRKDIST}/external/squirrel/CMakeLists.txt
 
 .include <bsd.port.mk>
