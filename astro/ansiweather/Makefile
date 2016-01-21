@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/11 14:11:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/21 10:05:02 czarkoff Exp $
 
 COMMENT =	weather in terminal, with ANSI colors and Unicode symbols
 
 GH_ACCOUNT =	fcambus
 GH_PROJECT =	ansiweather
-GH_TAGNAME =	1.06
-REVISION =	0
+GH_TAGNAME =	1.07
 
 CATEGORIES =	astro
 
@@ -26,5 +25,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ansiweather
 	${INSTALL_DATA} ${WRKSRC}/ansiweatherrc.example \
 		${PREFIX}/share/examples/ansiweather
+	${INSTALL_DATA} ${WRKSRC}/ansiweather.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

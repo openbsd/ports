@@ -1,7 +1,7 @@
-$OpenBSD: patch-ansiweather,v 1.3 2015/10/30 16:40:18 sthen Exp $
---- ansiweather.orig	Fri Oct 30 05:38:36 2015
-+++ ansiweather	Fri Oct 30 05:40:15 2015
-@@ -36,7 +36,7 @@ get_config() {
+$OpenBSD: patch-ansiweather,v 1.4 2016/01/21 10:05:02 czarkoff Exp $
+--- ansiweather.orig	Tue Jan 19 23:01:25 2016
++++ ansiweather	Wed Jan 20 19:51:27 2016
+@@ -37,7 +37,7 @@ get_config() {
  	fi
  }
  

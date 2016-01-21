@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/19 08:49:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/21 10:05:02 czarkoff Exp $
 bin/ansiweather
+@man man/man1/ansiweather.1
 share/doc/ansiweather/
 share/doc/ansiweather/README.md
 share/examples/ansiweather/
