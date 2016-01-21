@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/14 15:55:20 jsing Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/21 22:20:08 czarkoff Exp $
 
-PORTROACH =		ignore
+PORTROACH =		ignore:1
 
 REVISION =		0
 COMMENT =		library for reading and writing XLSX files
