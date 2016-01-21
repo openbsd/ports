@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2016/01/15 14:20:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2016/01/21 06:43:37 ajacoutot Exp $
 
 COMMENT=		framework for defining and tracking users, sessions & seats
 
@@ -7,6 +7,7 @@ PKGNAME=		${DISTNAME:L}
 GH_TAGNAME=		1.0.1
 GH_ACCOUNT=		ConsoleKit2
 GH_PROJECT=		ConsoleKit2
+REVISION=		0
 
 CATEGORIES=		sysutils	
 
@@ -49,7 +50,7 @@ pre-configure:
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		NOCONFIGURE=1 \
-		/bin/sh ./autogen.sh
+		/bin/sh ./autogen.sh ${CONFIGURE_ARGS}
 
 post-install:
 	rmdir ${WRKINST}/var/run/ConsoleKit

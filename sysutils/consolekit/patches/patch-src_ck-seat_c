@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_ck-seat_c,v 1.1 2016/01/21 06:43:37 ajacoutot Exp $
+
+From 718fccdcb00479da5f243af16a2cd0c1a563129f Mon Sep 17 00:00:00 2001
+From: Michal Sekletar <msekleta@redhat.com>
+Date: Fri, 15 Jan 2016 15:29:46 +0100
+Subject: [PATCH] When assigning session to active VT prefer graphical sessions
+
+--- src/ck-seat.c.orig	Wed Jan 13 10:12:10 2016
++++ src/ck-seat.c	Thu Jan 21 07:38:29 2016
+@@ -536,9 +536,9 @@ find_session_for_display_device (CkSeat     *seat,
+         GList     *sessions;
+         CkSession *session;
+ 
+-        sessions = find_sessions_for_display_device (seat, device);
++        sessions = find_sessions_for_x11_display_device (seat, device);
+         if (sessions == NULL) {
+-                sessions = find_sessions_for_x11_display_device (seat, device);
++                sessions = find_sessions_for_display_device (seat, device);
+         }
+ 
+         if (sessions == NULL) {
