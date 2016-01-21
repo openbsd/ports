@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2016/01/20 23:08:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2016/01/21 09:12:11 sthen Exp $
 
 COMMENT =		ebook management application
 
 V =			2.49.0
-REVISION =		0
+REVISION =		1
 DISTNAME =		calibre-$V
 CATEGORIES =		textproc
 EXTRACT_SUFX =		.tar.xz
@@ -60,6 +60,7 @@ SUBST_VARS =		WRKDIR
 RUN_DEPENDS =		${COMMON_DEPENDS} \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
+			net/py-netifaces \
 			print/poppler,-utils \
 			x11/gtk+3,-guic
 
