@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.411 2016/01/19 20:57:38 mmcc Exp $
+# $OpenBSD: Makefile,v 1.412 2016/01/21 10:54:23 bentley Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -209,6 +209,7 @@
      SUBDIR += p5-Tie-EncryptedHash
      SUBDIR += passwdqc
      SUBDIR += password-gorilla
+     SUBDIR += password-store
      SUBDIR += pcsc-lite
      SUBDIR += pcsc-tools
      SUBDIR += pdfcrack
