@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.102 2016/01/18 10:04:28 tb Exp $
+# $OpenBSD: Makefile,v 1.103 2016/01/21 13:22:58 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-4.11
-REVISION =	2
+REVISION =	3
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -60,8 +60,7 @@ post-configure:
 		${WRKSRC}/i3.config \
 		${WRKSRC}/i3.config.keycodes \
 		${WRKSRC}/libi3/get_config_path.c \
-		${WRKSRC}/libi3/get_exe_path.c \
-		${WRKSRC}/src/commands.c
+		${WRKSRC}/libi3/get_exe_path.c
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/man/*.1 ${PREFIX}/man/man1/
