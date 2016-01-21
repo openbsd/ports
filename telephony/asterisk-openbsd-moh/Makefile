@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/01/01 21:10:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2016/01/21 22:28:23 ajacoutot Exp $
 
 # strictly speaking not, as they are just sound files, but packaging
 # these on arch which don't build asterisk is a waste of cycles on build
@@ -6,7 +6,7 @@
 BUILD_DEPENDS =	telephony/asterisk
 
 # No distfiles here that can get outdated, skip it.
-PORTROACH=		ignore
+PORTROACH=		ignore:1
 
 COMMENT =		add OpenBSD songs to Asterisk music-on-hold
 
