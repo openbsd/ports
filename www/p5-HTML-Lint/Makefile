@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2015/11/23 14:07:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2016/01/21 09:40:28 sthen Exp $
 
 COMMENT=		check for HTML errors in a string or file
 
 MODULES=		cpan
 DISTNAME=		HTML-Lint-2.22
+REVISION=		0
 CATEGORIES=		www
 
 # perl
