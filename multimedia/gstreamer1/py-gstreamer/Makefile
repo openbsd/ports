@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/01 12:00:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/21 07:24:59 ajacoutot Exp $
+
+V=			1.6.2
 
 COMMENT=		overrides for the gobject-introspection-based pygst bindings
 
@@ -20,7 +22,9 @@ BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 # MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 
-LIB_DEPENDS=		${P}/core=${V} \
+#LIB_DEPENDS=		${P}/core=${V} \
+#			${MODPY_LIB_DEPENDS}
+LIB_DEPENDS=		${P}/core>=${V} \
 			${MODPY_LIB_DEPENDS}
 
 post-install:
