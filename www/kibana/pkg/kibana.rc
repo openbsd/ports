@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $OpenBSD: kibana.rc,v 1.1.1.1 2016/01/21 13:48:25 giovanni Exp $
+
+daemon="${TRUEPREFIX}/kibana/bin/kibana"
+daemon_user="_kibana"
+
+. /etc/rc.d/rc.subr
+
+pexp="${TRUEPREFIX}/bin/node ${TRUEPREFIX}/kibana/bin/../src/cli"
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

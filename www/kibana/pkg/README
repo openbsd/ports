@@ -1,0 +1,21 @@
+$OpenBSD: README,v 1.1.1.1 2016/01/21 13:48:25 giovanni Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+On OpenBSD Kibana is installed in ${TRUEPREFIX}/kibana and runs as dedicated
+user _kibana.
+
+Kibana log file is located at /var/log/kibana. Kibana currently does not
+support log rotation, please consider using newsyslog(8) for this purpose.
+
+Kibana Plugins Management
+================================
+Kibana plugins management tasks must be run as _kibana user, please use
+doas(1), sudo(1) or su(1), e.g.
+
+    $ doas -u _kibana ${TRUEPREFIX}/kibana/bin/kibana plugin --install \
+	<plugin>
+    $ doas -u _kibana ${TRUEPREFIX}/kibana/bin/kibana plugin --remove \
+	<plugin>
