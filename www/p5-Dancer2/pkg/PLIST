@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/09/11 21:02:51 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/01/22 08:55:34 landry Exp $
 bin/dancer2
 ${P5SITE}/Dancer2/
 ${P5SITE}/Dancer2.pm
@@ -82,8 +82,12 @@ ${P5SITE}/Dancer2/Template/TemplateToolkit.pm
 ${P5SITE}/Dancer2/Template/Tiny.pm
 ${P5SITE}/Dancer2/Test.pm
 ${P5SITE}/Dancer2/Tutorial.pod
+${P5SITE}/auto/
+${P5SITE}/auto/share/
+${P5SITE}/auto/share/dist/
 ${P5SITE}/auto/share/dist/Dancer2/
 ${P5SITE}/auto/share/dist/Dancer2/skel/
+${P5SITE}/auto/share/dist/Dancer2/skel/.dancer
 ${P5SITE}/auto/share/dist/Dancer2/skel/MANIFEST.SKIP
 ${P5SITE}/auto/share/dist/Dancer2/skel/Makefile.PL
 ${P5SITE}/auto/share/dist/Dancer2/skel/bin/
