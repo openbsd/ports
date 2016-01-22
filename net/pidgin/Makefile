@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2016/01/03 09:06:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2016/01/22 19:04:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,6 +18,9 @@ FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
+REVISION-finch=	0
+REVISION-libpurple=0
+REVISION-main=	0
 
 SHARED_LIBS=	jabber		0.0 \
 		oscar		0.0 \
@@ -100,9 +103,8 @@ FLAVOR?=
 MULTI_PACKAGES= -main -finch -libpurple
 
 .if ${FLAVOR:Maudio}
-LIB_DEPENDS+=		multimedia/gstreamer-0.10/core>=0.10,<=0.11 \
-			multimedia/gstreamer-0.10/plugins-base
-WANTLIB+=		gstreamer-0.10 gstinterfaces-0.10
+LIB_DEPENDS+=		multimedia/gstreamer1/plugins-base
+WANTLIB+=		gstbase-1.0 gstreamer-1.0 gstvideo-1.0 orc-0.4
 LIB_DEPENDS-main+=	libpurple-${VERSION}-audio:${BUILD_PKGPATH},-libpurple
 LIB_DEPENDS-finch+=	libpurple-${VERSION}-audio:${BUILD_PKGPATH},-libpurple
 .else
