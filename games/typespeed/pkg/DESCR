@@ -1,0 +1,5 @@
+Typespeed's idea is ripped from ztspeed (a DOS game made by Zorlim). The Idea
+behind the game is rather easy: type words that are flying by from left to
+right as fast as you can. If you miss 10 or more words, game is over.
+You can play typespeed for your own or with a friend using TCP/IPv4. These
+options are called Single player and Multiplayer respectively.

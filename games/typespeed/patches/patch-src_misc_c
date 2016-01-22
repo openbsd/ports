@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_misc_c,v 1.1.1.1 2016/01/22 15:24:30 landry Exp $
+
+use arc4random()
+
+--- src/misc.c.orig	Fri Jan 22 14:58:04 2016
++++ src/misc.c	Fri Jan 22 14:58:24 2016
+@@ -224,7 +224,7 @@ r(int range)
+ #ifdef WIN32
+ 	return (int)(rand() % range);
+ #else
+-	return (int)(random() % range);
++	return (int)(arc4random() % range);
+ #endif /* WIN32 */
+ }
+ 

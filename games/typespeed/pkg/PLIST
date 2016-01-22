@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/22 15:24:30 landry Exp $
+@bin bin/typespeed
+@man man/man6/typespeed.6
+share/doc/typespeed/
+share/doc/typespeed/README
+share/locale/de_DE/
+share/locale/de_DE/LC_MESSAGES/
+share/locale/de_DE/LC_MESSAGES/typespeed.mo
+share/locale/fr_FR/
+share/locale/fr_FR/LC_MESSAGES/
+share/locale/fr_FR/LC_MESSAGES/typespeed.mo
+share/locale/it/LC_MESSAGES/typespeed.mo
+share/typespeed/
+share/typespeed/rules/
+share/typespeed/rules/rule.classic
+share/typespeed/rules/rule.training
+share/typespeed/rules/template
+share/typespeed/words/
+share/typespeed/words/words.csharp
+share/typespeed/words/words.csharp_with_operators
+share/typespeed/words/words.dos
+share/typespeed/words/words.dut
+share/typespeed/words/words.eng
+share/typespeed/words/words.esp
+share/typespeed/words/words.fin
+share/typespeed/words/words.fra
+share/typespeed/words/words.ger
+share/typespeed/words/words.ita
+share/typespeed/words/words.por
+share/typespeed/words/words.prog
+share/typespeed/words/words.tha
+share/typespeed/words/words.unix
+share/examples/typespeed/
+share/examples/typespeed/typespeedrc
+@sample ${SYSCONFDIR}/typespeedrc

@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_file_c,v 1.1.1.1 2016/01/22 15:24:30 landry Exp $
+
+Don't check if the userconf exists, inconditionally create
+the userdir in ~/.typespeed and the user scorefile.
+
+--- src/file.c.orig	Wed Aug 13 17:08:09 2008
++++ src/file.c	Fri Jan 22 15:21:45 2016
+@@ -1125,7 +1125,7 @@ void
+ readconfig(void)
+ {
+ 	char *envhome;
+-	char userhigh[MAXPATHLEN], userconf[MAXPATHLEN];
++	char userhigh[MAXPATHLEN], userconf[MAXPATHLEN], userdir[MAXPATHLEN];
+ 	struct stat sb;
+ 
+ 	if (xsnprintf(ruledir, sizeof(ruledir), "%s", RULEDIR)) {
+@@ -1146,8 +1146,10 @@ readconfig(void)
+ 	    envhome))
+ 		return;
+ 
++#if 0
+ 	if (stat(userconf, &sb) || (sb.st_mode & S_IFMT) != S_IFREG)
+ 		return;
++#endif
+ 
+ 	if (xsnprintf(userhigh, sizeof(userhigh), "%s/.typespeed/score",
+ 	    envhome))
+@@ -1159,9 +1161,19 @@ readconfig(void)
+ 	 * file. Protect system-wide high score file with group
+ 	 * write permissions: privileged gid already dropped.
+ 	 */
++#if 0
+ 	if (close(hfd) == -1)
+ 		xerr(1, "readconfig: close");
+-	if ((hfd = open(userhigh, O_RDWR, 0)) == -1)
++#endif
++
++	if (xsnprintf(userdir, sizeof(userdir), "%s/.typespeed/",
++	    envhome))
++		return;
++
++	if (mkdir(userdir,S_IRWXU|S_IRGRP|S_IXGRP|S_IROTH|S_IXOTH) == -1 && errno != EEXIST)
++		xerr(1, "readconfig: mkdir: %s, error: %s"
++		    , userdir, strerror(errno));
++	if ((hfd = open(userhigh, O_RDWR|O_CREAT, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH)) == -1)
+ 		xerr(1, "readconfig: open: %s", userhigh);
+ 
+ 	readfile(userconf, 1);
