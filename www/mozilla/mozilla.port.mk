@@ -1,7 +1,9 @@
-# $OpenBSD: mozilla.port.mk,v 1.82 2015/11/09 13:55:22 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.83 2016/01/22 10:28:58 landry Exp $
 
 SHARED_ONLY =	Yes
-ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc64
+ONLY_FOR_ARCHS ?=	amd64 i386
+# ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
+# ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
 # gcc does ICE on alpha at some particular spots:
 # thunderbird-24.0/comm-esr24/mozilla/js/src/vm/Debugger.cpp:3246
 # firefox-24.0/mozilla-release/js/src/frontend/BytecodeEmitter.cpp:1488
