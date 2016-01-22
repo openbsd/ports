@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/15 10:13:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/01/22 07:36:13 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -33,10 +33,15 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/fail_warning.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/future_syntax.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/pass.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/pass_storeconfigs.pp
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/manifests/tag_notice.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/templates/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/templates/fail_error.epp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/templates/fail_error.erb
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/templates/fail_error_also.epp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/templates/fail_warning.erb
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/templates/pass.epp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/templates/pass.erb
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/templates/pass_also.epp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/templates/pass_unbound_var.erb
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test_module/templates/typeerror_shouldwin.erb
 ${GEM_LIB}/gems/${DISTNAME}/spec/puppet-syntax/
