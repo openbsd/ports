@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.141 2016/01/18 15:34:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.142 2016/01/22 07:05:01 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		20160113
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz

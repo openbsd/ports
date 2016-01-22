@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_fate_aac_mak,v 1.7 2016/01/18 15:34:45 ajacoutot Exp $
+$OpenBSD: patch-tests_fate_aac_mak,v 1.8 2016/01/22 07:05:01 ajacoutot Exp $
 
 fate: adjust AAC encoder tests values
 
@@ -66,14 +66,16 @@ AAC encoder: fix I/S relative error evaluation
 
 AAC encoder: use signed coeffs when measuring IS energy
 
+tests/fate/aac: remove unneeded strict arguments from the encoder tests
+
 --- tests/fate/aac.mak.orig	Wed Jan 13 15:27:50 2016
-+++ tests/fate/aac.mak	Sun Jan 17 21:04:16 2016
++++ tests/fate/aac.mak	Wed Jan 20 21:36:21 2016
 @@ -142,56 +142,84 @@ FATE_AAC += $(FATE_AAC_CT:%=fate-aac-ct-%)
  
  FATE_AAC_ENCODE += fate-aac-aref-encode
  fate-aac-aref-encode: ./tests/data/asynth-44100-2.wav
 -fate-aac-aref-encode: CMD = enc_dec_pcm adts wav s16le $(REF) -strict -2 -c:a aac -aac_is 0 -aac_pns 0 -b:a 512k
-+fate-aac-aref-encode: CMD = enc_dec_pcm adts wav s16le $(REF) -strict -2 -c:a aac -aac_is 0 -aac_pns 0 -aac_ms 0 -aac_tns 0 -b:a 512k
++fate-aac-aref-encode: CMD = enc_dec_pcm adts wav s16le $(REF) -c:a aac -aac_is 0 -aac_pns 0 -aac_ms 0 -aac_tns 0 -b:a 512k
  fate-aac-aref-encode: CMP = stddev
  fate-aac-aref-encode: REF = ./tests/data/asynth-44100-2.wav
  fate-aac-aref-encode: CMP_SHIFT = -4096
@@ -85,7 +87,7 @@ AAC encoder: use signed coeffs when measuring IS energy
  
  FATE_AAC_ENCODE += fate-aac-ln-encode
 -fate-aac-ln-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -c:a aac -aac_is 0 -aac_pns 0 -b:a 512k
-+fate-aac-ln-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -c:a aac -aac_is 0 -aac_pns 0 -aac_ms 0 -aac_tns 0 -b:a 512k
++fate-aac-ln-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -c:a aac -aac_is 0 -aac_pns 0 -aac_ms 0 -aac_tns 0 -b:a 512k
  fate-aac-ln-encode: CMP = stddev
  fate-aac-ln-encode: REF = $(SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav
  fate-aac-ln-encode: CMP_SHIFT = -4096
@@ -95,7 +97,7 @@ AAC encoder: use signed coeffs when measuring IS energy
 +fate-aac-ln-encode: FUZZ = 30
  
 +FATE_AAC_ENCODE += fate-aac-ln-encode-128k
-+fate-aac-ln-encode-128k: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -c:a aac -aac_is 0 -aac_pns 0 -aac_ms 0 -aac_tns 0 -b:a 128k -cutoff 22050
++fate-aac-ln-encode-128k: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -c:a aac -aac_is 0 -aac_pns 0 -aac_ms 0 -aac_tns 0 -b:a 128k -cutoff 22050
 +fate-aac-ln-encode-128k: CMP = stddev
 +fate-aac-ln-encode-128k: REF = $(SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav
 +fate-aac-ln-encode-128k: CMP_SHIFT = -4096
@@ -105,7 +107,7 @@ AAC encoder: use signed coeffs when measuring IS energy
 +
  FATE_AAC_ENCODE += fate-aac-pns-encode
 -fate-aac-pns-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -c:a aac -aac_pns 1 -aac_is 0 -b:a 128k
-+fate-aac-pns-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -c:a aac -aac_pns 1 -aac_is 0 -aac_ms 0 -aac_tns 0 -b:a 128k -cutoff 22050  -fflags +bitexact -flags +bitexact
++fate-aac-pns-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -c:a aac -aac_pns 1 -aac_is 0 -aac_ms 0 -aac_tns 0 -b:a 128k -cutoff 22050  -fflags +bitexact -flags +bitexact
  fate-aac-pns-encode: CMP = stddev
  fate-aac-pns-encode: REF = $(SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav
  fate-aac-pns-encode: CMP_SHIFT = -4096
@@ -117,7 +119,7 @@ AAC encoder: use signed coeffs when measuring IS energy
  
  FATE_AAC_ENCODE += fate-aac-tns-encode
 -fate-aac-tns-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -c:a aac -aac_tns 1 -aac_is 0 -aac_pns 0 -b:a 128k
-+fate-aac-tns-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -c:a aac -aac_tns 1 -aac_is 0 -aac_pns 0 -aac_ms 0 -b:a 128k -cutoff 22050
++fate-aac-tns-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -c:a aac -aac_tns 1 -aac_is 0 -aac_pns 0 -aac_ms 0 -b:a 128k -cutoff 22050
  fate-aac-tns-encode: CMP = stddev
  fate-aac-tns-encode: REF = $(SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav
  fate-aac-tns-encode: CMP_SHIFT = -4096
@@ -129,7 +131,7 @@ AAC encoder: use signed coeffs when measuring IS energy
  
  FATE_AAC_ENCODE += fate-aac-is-encode
 -fate-aac-is-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -c:a aac -aac_pns 0 -aac_is 1 -b:a 128k
-+fate-aac-is-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -c:a aac -aac_pns 0 -aac_is 1 -aac_ms 0 -b:a 128k -aac_tns 0 -cutoff 22050
++fate-aac-is-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -c:a aac -aac_pns 0 -aac_is 1 -aac_ms 0 -b:a 128k -aac_tns 0 -cutoff 22050
  fate-aac-is-encode: CMP = stddev
  fate-aac-is-encode: REF = $(SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav
  fate-aac-is-encode: CMP_SHIFT = -4096
@@ -140,7 +142,7 @@ AAC encoder: use signed coeffs when measuring IS energy
 +fate-aac-is-encode: FUZZ = 10
  
 +FATE_AAC_ENCODE += fate-aac-ms-encode
-+fate-aac-ms-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -c:a aac -aac_pns 0 -aac_is 0 -aac_ms 1 -aac_tns 0 -b:a 128k -cutoff 22050
++fate-aac-ms-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -c:a aac -aac_pns 0 -aac_is 0 -aac_ms 1 -aac_tns 0 -b:a 128k -cutoff 22050
 +fate-aac-ms-encode: CMP = stddev
 +fate-aac-ms-encode: REF = $(SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav
 +fate-aac-ms-encode: CMP_SHIFT = -4096
@@ -159,7 +161,7 @@ AAC encoder: use signed coeffs when measuring IS energy
 +
  FATE_AAC_ENCODE += fate-aac-pred-encode
 -fate-aac-pred-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -profile:a aac_main -c:a aac -aac_is 0 -aac_pns 0 -b:a 128k
-+fate-aac-pred-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -strict -2 -profile:a aac_main -c:a aac -aac_is 0 -aac_pns 0 -aac_ms 0 -aac_tns 0 -b:a 128k -cutoff 22050
++fate-aac-pred-encode: CMD = enc_dec_pcm adts wav s16le $(TARGET_SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav -profile:a aac_main -c:a aac -aac_is 0 -aac_pns 0 -aac_ms 0 -aac_tns 0 -b:a 128k -cutoff 22050
  fate-aac-pred-encode: CMP = stddev
  fate-aac-pred-encode: REF = $(SAMPLES)/audio-reference/luckynight_2ch_44kHz_s16.wav
  fate-aac-pred-encode: CMP_SHIFT = -4096

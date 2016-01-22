@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_tns_c,v 1.6 2016/01/18 15:34:45 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_tns_c,v 1.7 2016/01/22 07:05:01 ajacoutot Exp $
 
 aacenc_tns: redo coefficient quantization and decision making
 
@@ -22,11 +22,20 @@ aacenc_tns: use 4 bits for short windows
 
 AAC encoder: TNS fixes on short windows
 
-ibavcodec/aacenc_tnc.c: remove unused variable w2
+libavcodec/aacenc_tnc.c: remove unused variable w2
+
+AAC encoder: check for NaNs/inf in TNS gain
 
 --- libavcodec/aacenc_tns.c.orig	Wed Jan 13 15:27:48 2016
-+++ libavcodec/aacenc_tns.c	Sun Jan 17 21:03:31 2016
-@@ -31,56 +31,72 @@
++++ libavcodec/aacenc_tns.c	Thu Jan 21 05:58:54 2016
+@@ -25,62 +25,79 @@
+  * @author Rostislav Pehlivanov ( atomnuker gmail com )
+  */
+ 
++#include "libavutil/libm.h"
+ #include "aacenc.h"
+ #include "aacenc_tns.h"
+ #include "aactab.h"
  #include "aacenc_utils.h"
  #include "aacenc_quantization.h"
  
@@ -133,7 +142,7 @@ ibavcodec/aacenc_tnc.c: remove unused variable w2
  /* Apply TNS filter */
  void ff_aac_apply_tns(AACEncContext *s, SingleChannelElement *sce)
  {
-@@ -114,81 +130,83 @@ void ff_aac_apply_tns(AACEncContext *s, SingleChannelE
+@@ -114,81 +131,85 @@ void ff_aac_apply_tns(AACEncContext *s, SingleChannelE
              }
              start += w * 128;
  
@@ -181,18 +190,24 @@ ibavcodec/aacenc_tnc.c: remove unused variable w2
      const int order = is8 ? 7 : s->profile == FF_PROFILE_AAC_LOW ? 12 : TNS_MAX_ORDER;
 +    const int slant = sce->ics.window_sequence[0] == LONG_STOP_SEQUENCE  ? 1 :
 +                      sce->ics.window_sequence[0] == LONG_START_SEQUENCE ? 0 : 2;
++    const int sfb_len = sfb_end - sfb_start;
++    const int coef_len = sce->ics.swb_offset[sfb_end] - sce->ics.swb_offset[sfb_start];
  
 -    int sfb_start = av_clip(tns_min_sfb[is8][s->samplerate_index], 0, mmm);
 -    int sfb_end   = av_clip(sce->ics.num_swb, 0, mmm);
--
++    if (coef_len <= 0 || sfb_len <= 0) {
++        sce->tns.present = 0;
++        return;
++    }
+ 
      for (w = 0; w < sce->ics.num_windows; w++) {
 -        float e_ratio = 0.0f, threshold = 0.0f, spread = 0.0f, en[2] = {0.0, 0.0f};
 -        double gain = 0.0f, coefs[MAX_LPC_ORDER] = {0};
+-        int coef_start = w*sce->ics.num_swb + sce->ics.swb_offset[sfb_start];
+-        int coef_len = sce->ics.swb_offset[sfb_end] - sce->ics.swb_offset[sfb_start];
 +        float en[2] = {0.0f, 0.0f};
 +        int oc_start = 0, os_start = 0;
-         int coef_start = w*sce->ics.num_swb + sce->ics.swb_offset[sfb_start];
-         int coef_len = sce->ics.swb_offset[sfb_end] - sce->ics.swb_offset[sfb_start];
-+        const int sfb_len = sfb_end - sfb_start;
++        int coef_start = sce->ics.swb_offset[sfb_start];
  
 -        for (g = 0;  g < sce->ics.num_swb; g++) {
 -            if (w*16+g < sfb_start || w*16+g > sfb_end)
@@ -215,11 +230,10 @@ ibavcodec/aacenc_tnc.c: remove unused variable w2
          }
  
 -        if (coef_len <= 0 || (sfb_end - sfb_start) <= 0)
-+        if (coef_len <= 0 || sfb_len <= 0)
-             continue;
+-            continue;
 -        else
 -            e_ratio = en[0]/en[1];
- 
+-
          /* LPC */
 -        gain = ff_lpc_calc_ref_coefs_f(&s->lpc, &sce->coeffs[coef_start],
 +        gain = ff_lpc_calc_ref_coefs_f(&s->lpc, &sce->coeffs[w*128 + coef_start],
@@ -250,7 +264,7 @@ ibavcodec/aacenc_tnc.c: remove unused variable w2
 -                }
 -            }
 -            count++;
-+        if (!order || gain < TNS_GAIN_THRESHOLD_LOW || gain > TNS_GAIN_THRESHOLD_HIGH)
++        if (!order || !isfinite(gain) || gain < TNS_GAIN_THRESHOLD_LOW || gain > TNS_GAIN_THRESHOLD_HIGH)
 +            continue;
 +
 +        tns->n_filt[w] = is8 ? 1 : order != TNS_MAX_ORDER ? 2 : 3;
