@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/01/22 13:38:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2016/01/22 13:39:08 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,6 +22,7 @@ PERMIT_PACKAGE_CDROM-rar=	no fee
 PERMIT_PACKAGE_CDROM=		Yes
 PERMIT_PACKAGE_FTP=		Yes
 
+# uses pledge()
 WANTLIB=	m pthread stdc++
 WANTLIB-main=	${WANTLIB} c
 WANTLIB-rar=	${WANTLIB}
