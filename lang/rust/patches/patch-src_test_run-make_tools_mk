@@ -1,5 +1,5 @@
-$OpenBSD: patch-src_test_run-make_tools_mk,v 1.1 2016/01/13 07:39:08 semarie Exp $
-https://github.com/rust-lang/rust/pull/29794
+$OpenBSD: patch-src_test_run-make_tools_mk,v 1.2 2016/01/22 09:03:15 semarie Exp $
+https://github.com/rust-lang/rust/pull/30493
 --- src/test/run-make/tools.mk.orig	Sat Jan  9 09:02:08 2016
 +++ src/test/run-make/tools.mk	Sat Jan  9 09:02:26 2016
 @@ -85,11 +85,7 @@ ifeq ($(UNAME),Bitrig)
