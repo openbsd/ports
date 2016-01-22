@@ -1,0 +1,14 @@
+$OpenBSD: patch-libutils_string_lib_c,v 1.1 2016/01/22 11:38:23 sthen Exp $
+--- libutils/string_lib.c.orig	Wed Jan 20 01:38:43 2016
++++ libutils/string_lib.c	Wed Jan 20 01:40:04 2016
+@@ -1023,8 +1023,8 @@ bool StringAppendAbbreviatedPromise(char *dst, const c
+             last_line += tail - max_fragment;
+         }
+         memcpy(abbr, src, head);
+-        strcpy(abbr + head, sep);
+-        strcat(abbr, last_line);
++        strlcpy(abbr + head, sep, sizeof(abbr)-head );
++        strlcat(abbr, last_line, sizeof(abbr) );
+         return StringAppendPromise(dst, abbr, n);
+     }
+ }

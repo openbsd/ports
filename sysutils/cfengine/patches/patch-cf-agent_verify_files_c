@@ -1,0 +1,18 @@
+$OpenBSD: patch-cf-agent_verify_files_c,v 1.1 2016/01/22 11:38:23 sthen Exp $
+--- cf-agent/verify_files.c.orig	Wed Jan 20 00:29:13 2016
++++ cf-agent/verify_files.c	Wed Jan 20 00:32:12 2016
+@@ -680,12 +680,12 @@ PromiseResult ScheduleEditOperation(EvalContext *ctx, 
+         if ((vp = PromiseGetConstraintAsRval(pp, "edit_line", RVAL_TYPE_FNCALL)))
+         {
+             fp = (FnCall *) vp;
+-            strcpy(edit_bundle_name, fp->name);
++            strlcpy(edit_bundle_name, fp->name, CF_BUFSIZE);
+             args = fp->args;
+         }
+         else if ((vp = PromiseGetConstraintAsRval(pp, "edit_line", RVAL_TYPE_SCALAR)))
+         {
+-            strcpy(edit_bundle_name, (char *) vp);
++            strlcpy(edit_bundle_name, (char *) vp, CF_BUFSIZE);
+             args = NULL;
+         }             
+         else

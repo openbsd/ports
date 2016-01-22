@@ -1,0 +1,12 @@
+$OpenBSD: patch-cf-upgrade_log_c,v 1.1 2016/01/22 11:38:23 sthen Exp $
+--- cf-upgrade/log.c.orig	Wed Jan 20 00:13:36 2016
++++ cf-upgrade/log.c	Wed Jan 20 00:14:34 2016
+@@ -54,7 +54,7 @@ static char *prepare_message(char *format, va_list arg
+     strftime(timestamp, timestamp_size, "%Y/%m/%d %H:%M:%S", now_tm);
+     /* '[' + ']' + ' ' + '\0' */
+     message = xmalloc(message_size + timestamp_size + 4);
+-    sprintf(message, "[%s] %s", timestamp, buffer);
++    snprintf(message, message_size, "[%s] %s", timestamp, buffer);
+     return message;
+ }
+ 

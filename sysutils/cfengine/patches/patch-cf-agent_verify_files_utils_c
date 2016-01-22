@@ -1,0 +1,12 @@
+$OpenBSD: patch-cf-agent_verify_files_utils_c,v 1.1 2016/01/22 11:38:23 sthen Exp $
+--- cf-agent/verify_files_utils.c.orig	Wed Jan 20 00:37:39 2016
++++ cf-agent/verify_files_utils.c	Wed Jan 20 00:37:57 2016
+@@ -1384,7 +1384,7 @@ bool CopyRegularFile(EvalContext *ctx, const char *sou
+         if (attr.copy.backup == BACKUP_OPTION_TIMESTAMP)
+         {
+             stampnow = time((time_t *) NULL);
+-            snprintf(stamp, CF_BUFSIZE - 1, "_%lu_%s", CFSTARTTIME, CanonifyName(ctime(&stampnow)));
++            snprintf(stamp, CF_BUFSIZE - 1, "_%lld_%s", CFSTARTTIME, CanonifyName(ctime(&stampnow)));
+ 
+             if (!JoinSuffix(backup, stamp))
+             {
