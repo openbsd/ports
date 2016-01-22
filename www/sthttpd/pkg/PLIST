@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/05/06 09:00:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/01/22 17:07:41 mmcc Exp $
 @conflict thttpd-*
 @pkgpath www/thttpd
 libexec/sthttpd/
@@ -12,3 +12,4 @@ libexec/sthttpd/
 sbin/syslogtocern
 @bin sbin/th_htpasswd
 @bin sbin/thttpd
+@rcscript ${RCDIR}/thttpd
