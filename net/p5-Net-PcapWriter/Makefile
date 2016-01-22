@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/09 15:47:44 bluhm Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/22 10:44:30 bluhm Exp $
 
 COMMENT =		simple creation of pcap files from code
 
-DISTNAME =		Net-PcapWriter-0.721
+DISTNAME =		Net-PcapWriter-0.722
 
 CATEGORIES =		net
 
