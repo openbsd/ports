@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.326 2016/01/17 15:23:46 bmercer Exp $
+# $OpenBSD: Makefile,v 1.327 2016/01/22 15:25:09 landry Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -246,6 +246,7 @@
      SUBDIR += tuxpaint
      SUBDIR += tuxpaint-config
      SUBDIR += tuxpaint-stamps
+     SUBDIR += typespeed
      SUBDIR += ufoai
      SUBDIR += uhexen2
      SUBDIR += uqm
