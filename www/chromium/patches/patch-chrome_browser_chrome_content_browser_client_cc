@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.23 2015/12/05 16:13:32 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Tue Nov 24 21:00:53 2015
-+++ chrome/browser/chrome_content_browser_client.cc	Wed Dec  2 08:18:32 2015
-@@ -186,7 +186,7 @@
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.24 2016/01/23 18:49:31 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Jan 20 21:01:19 2016
++++ chrome/browser/chrome_content_browser_client.cc	Fri Jan 22 19:58:58 2016
+@@ -193,7 +193,7 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.23 2015/12/0
  #include "base/debug/leak_annotations.h"
  #include "components/crash/content/app/breakpad_linux.h"
  #include "components/crash/content/browser/crash_handler_host_linux.h"
-@@ -460,7 +460,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
+@@ -464,7 +464,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
    return false;
  }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.23 2015/12/0
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -1336,7 +1336,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -1371,7 +1371,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
      command_line->AppendSwitchASCII(switches::kMetricsClientID,
                                      client_info->client_id);
    }
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.23 2015/12/0
    if (breakpad::IsCrashReporterEnabled()) {
      scoped_ptr<metrics::ClientInfo> client_info =
          GoogleUpdateSettings::LoadMetricsClientInfo();
-@@ -2450,7 +2450,7 @@ void ChromeContentBrowserClient::GetAdditionalMappedFi
+@@ -2498,7 +2498,7 @@ void ChromeContentBrowserClient::GetAdditionalMappedFi
    PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
    DCHECK(!app_data_path.empty());
  }

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_sync_profile_sync_components_factory_impl_cc,v 1.16 2015/12/05 16:13:32 robert Exp $
---- chrome/browser/sync/profile_sync_components_factory_impl.cc.orig.port	Tue Nov 24 21:00:54 2015
-+++ chrome/browser/sync/profile_sync_components_factory_impl.cc	Wed Dec  2 08:18:32 2015
-@@ -357,7 +357,7 @@ void ProfileSyncComponentsFactoryImpl::RegisterDesktop
+$OpenBSD: patch-chrome_browser_sync_profile_sync_components_factory_impl_cc,v 1.17 2016/01/23 18:49:31 robert Exp $
+--- chrome/browser/sync/profile_sync_components_factory_impl.cc.orig.port	Wed Jan 20 21:01:19 2016
++++ chrome/browser/sync/profile_sync_components_factory_impl.cc	Fri Jan 22 19:58:58 2016
+@@ -360,7 +360,7 @@ void ProfileSyncComponentsFactoryImpl::RegisterDesktop
    }
  #endif
  

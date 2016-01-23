@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_resources_plugin_metadata_plugins_linux_json,v 1.4 2015/12/05 16:13:32 robert Exp $
---- chrome/browser/resources/plugin_metadata/plugins_linux.json.orig.port	Wed Dec  2 08:33:32 2015
-+++ chrome/browser/resources/plugin_metadata/plugins_linux.json	Wed Dec  2 08:33:43 2015
+$OpenBSD: patch-chrome_browser_resources_plugin_metadata_plugins_linux_json,v 1.5 2016/01/23 18:49:31 robert Exp $
+--- chrome/browser/resources/plugin_metadata/plugins_linux.json.orig.port	Fri Jan 22 22:02:41 2016
++++ chrome/browser/resources/plugin_metadata/plugins_linux.json	Fri Jan 22 22:02:59 2016
 @@ -70,28 +70,6 @@
      "displayurl": true,
      "group_name_matcher": "Java*"
@@ -15,9 +15,9 @@ $OpenBSD: patch-chrome_browser_resources_plugin_metadata_plugins_linux_json,v 1.
 -    ],
 -    "versions": [
 -      {
--        "version": "19.0.0.245",
+-        "version": "20.0.0.267",
 -        "status": "up_to_date",
--        "reference": "https://helpx.adobe.com/security/products/flash-player/apsb15-28.html"
+-        "reference": "https://helpx.adobe.com/security/products/flash-player/apsb16-01.html"
 -      }
 -    ],
 -    "lang": "en-US",

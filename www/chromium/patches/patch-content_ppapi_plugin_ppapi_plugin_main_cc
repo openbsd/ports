@@ -1,0 +1,23 @@
+$OpenBSD: patch-content_ppapi_plugin_ppapi_plugin_main_cc,v 1.1 2016/01/23 18:49:31 robert Exp $
+--- content/ppapi_plugin/ppapi_plugin_main.cc.orig.port	Sat Jan 23 15:05:28 2016
++++ content/ppapi_plugin/ppapi_plugin_main.cc	Sat Jan 23 17:28:47 2016
+@@ -42,6 +42,10 @@
+ #include "content/public/common/sandbox_init.h"
+ #endif
+ 
++#if defined(OS_OPENBSD)
++#include "content/common/sandbox_init_openbsd.h"
++#endif
++
+ #if defined(OS_POSIX) && !defined(OS_ANDROID)
+ #include <stdlib.h>
+ #endif
+@@ -127,6 +131,8 @@ int PpapiPluginMain(const MainFunctionParams& paramete
+ 
+ #if defined(OS_LINUX)
+   LinuxSandbox::InitializeSandbox();
++#elif defined(OS_BSD)
++  InitializeSandbox();
+ #endif
+ 
+   ChildProcess ppapi_process;

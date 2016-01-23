@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.21 2015/04/27 16:38:25 robert Exp $
---- tools/gyp/pylib/gyp/generator/make.py.orig.port	Wed Apr 15 00:32:04 2015
-+++ tools/gyp/pylib/gyp/generator/make.py	Wed Apr 15 08:32:50 2015
+$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.22 2016/01/23 18:49:31 robert Exp $
+--- tools/gyp/pylib/gyp/generator/make.py.orig.port	Fri Jan 22 22:14:59 2016
++++ tools/gyp/pylib/gyp/generator/make.py	Fri Jan 22 22:15:51 2016
 @@ -136,7 +136,7 @@ quiet_cmd_alink = AR($(TOOLSET)) $@
  cmd_alink = rm -f $@ && $(AR.$(TOOLSET)) crs $@ $(filter %.o,$^)
  
@@ -23,11 +23,11 @@ $OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.21 2015/04/27 16:38:25
  # TODO(evan): move all cross-compilation logic to gyp-time so we don't need
  # to replicate this environment fallback in make as well.
  CC.host ?= %(CC.host)s
--CFLAGS.host ?=
-+CFLAGS.host ?= $(CFLAGS)
+-CFLAGS.host ?= $(CPPFLAGS_host) $(CFLAGS_host)
++CFLAGS.host ?= $(CPPFLAGS) $(CFLAGS)
  CXX.host ?= %(CXX.host)s
--CXXFLAGS.host ?=
-+CXXFLAGS.host ?= $(CXXFLAGS)
+-CXXFLAGS.host ?= $(CPPFLAGS_host) $(CXXFLAGS_host)
++CXXFLAGS.host ?= $(CPPFLAGS) $(CXXFLAGS)
  LINK.host ?= %(LINK.host)s
 -LDFLAGS.host ?=
 +LDFLAGS.host ?= $(LDFLAGS)

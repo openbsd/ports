@@ -1,0 +1,12 @@
+$OpenBSD: patch-components_cookie_config_cookie_store_util_cc,v 1.1 2016/01/23 18:49:31 robert Exp $
+--- components/cookie_config/cookie_store_util.cc.orig.port	Fri Jan 22 22:02:29 2016
++++ components/cookie_config/cookie_store_util.cc	Fri Jan 22 22:02:35 2016
+@@ -10,7 +10,7 @@
+ 
+ namespace cookie_config {
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ namespace {
+ 
+ // Use the operating system's mechanisms to encrypt cookies before writing

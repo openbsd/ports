@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_views_views_delegate_cc,v 1.5 2015/12/05 16:13:32 robert Exp $
---- ui/views/views_delegate.cc.orig.port	Tue Nov 24 21:01:01 2015
-+++ ui/views/views_delegate.cc	Wed Dec  2 08:18:33 2015
-@@ -68,7 +68,7 @@ HICON ViewsDelegate::GetDefaultWindowIcon() const {
+$OpenBSD: patch-ui_views_views_delegate_cc,v 1.6 2016/01/23 18:49:31 robert Exp $
+--- ui/views/views_delegate.cc.orig.port	Wed Jan 20 21:01:26 2016
++++ ui/views/views_delegate.cc	Fri Jan 22 19:58:59 2016
+@@ -69,7 +69,7 @@ HICON ViewsDelegate::GetDefaultWindowIcon() const {
  bool ViewsDelegate::IsWindowInMetro(gfx::NativeWindow window) const {
    return false;
  }

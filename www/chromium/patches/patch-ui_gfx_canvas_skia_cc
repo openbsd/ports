@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_gfx_canvas_skia_cc,v 1.6 2015/09/05 16:06:50 robert Exp $
---- ui/gfx/canvas_skia.cc.orig.port	Sat Aug 22 21:01:59 2015
-+++ ui/gfx/canvas_skia.cc	Wed Sep  2 07:31:55 2015
-@@ -238,7 +238,7 @@ void Canvas::DrawStringRectWithShadows(const base::str
+$OpenBSD: patch-ui_gfx_canvas_skia_cc,v 1.7 2016/01/23 18:49:31 robert Exp $
+--- ui/gfx/canvas_skia.cc.orig.port	Wed Jan 20 21:01:26 2016
++++ ui/gfx/canvas_skia.cc	Fri Jan 22 19:58:59 2016
+@@ -240,7 +240,7 @@ void Canvas::DrawStringRectWithShadows(const base::str
      Range range = StripAcceleratorChars(flags, &adjusted_text);
      bool elide_text = ((flags & NO_ELLIPSIS) == 0);
  

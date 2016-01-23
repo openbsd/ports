@@ -1,6 +1,6 @@
-$OpenBSD: patch-net_proxy_proxy_service_cc,v 1.7 2015/12/12 20:20:01 robert Exp $
---- net/proxy/proxy_service.cc.orig.port	Sat Dec 12 11:16:43 2015
-+++ net/proxy/proxy_service.cc	Sat Dec 12 11:37:25 2015
+$OpenBSD: patch-net_proxy_proxy_service_cc,v 1.8 2016/01/23 18:49:31 robert Exp $
+--- net/proxy/proxy_service.cc.orig.port	Wed Jan 20 21:01:22 2016
++++ net/proxy/proxy_service.cc	Fri Jan 22 19:58:58 2016
 @@ -43,7 +43,7 @@
  #elif defined(OS_MACOSX)
  #include "net/proxy/proxy_config_service_mac.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-net_proxy_proxy_service_cc,v 1.7 2015/12/12 20:20:01 robert Exp 
  #include "net/proxy/proxy_config_service_linux.h"
  #elif defined(OS_ANDROID)
  #include "net/proxy/proxy_config_service_android.h"
-@@ -1507,7 +1507,7 @@ scoped_ptr<ProxyConfigService> ProxyService::CreateSys
+@@ -1511,7 +1511,7 @@ scoped_ptr<ProxyConfigService> ProxyService::CreateSys
               << "profile_io_data.cc::CreateProxyConfigService and this should "
               << "be used only for examples.";
    return make_scoped_ptr(new UnsetProxyConfigService);

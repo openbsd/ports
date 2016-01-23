@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_toolbar_app_menu_model_cc,v 1.1 2016/01/23 18:49:31 robert Exp $
+--- chrome/browser/ui/toolbar/app_menu_model.cc.orig.port	Fri Jan 22 22:04:59 2016
++++ chrome/browser/ui/toolbar/app_menu_model.cc	Fri Jan 22 22:05:17 2016
+@@ -779,7 +779,7 @@ bool AppMenuModel::IsCommandIdVisible(int command_id) 
+     case IDC_UPGRADE_DIALOG:
+       return browser_defaults::kShowUpgradeMenuItem &&
+           UpgradeDetector::GetInstance()->notify_upgrade();
+-#if !defined(OS_LINUX) || defined(USE_AURA)
++#if (!defined(OS_BSD) && !defined(OS_LINUX)) || defined(USE_AURA)
+     case IDC_BOOKMARK_PAGE:
+       return !chrome::ShouldRemoveBookmarkThisPageUI(browser_->profile());
+     case IDC_BOOKMARK_ALL_TABS:

@@ -1,0 +1,21 @@
+$OpenBSD: patch-components_html_viewer_blink_settings_impl_cc,v 1.1 2016/01/23 18:49:31 robert Exp $
+--- components/html_viewer/blink_settings_impl.cc.orig.port	Fri Jan 22 22:21:05 2016
++++ components/html_viewer/blink_settings_impl.cc	Fri Jan 22 22:21:13 2016
+@@ -21,7 +21,7 @@
+ #include "url/gurl.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "third_party/WebKit/public/web/linux/WebFontRendering.h"
+ #endif
+ 
+@@ -384,7 +384,7 @@ void BlinkSettingsImpl::ApplySettings(blink::WebView* 
+ #endif
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ // TODO(rjkroege): Some of this information needs to be plumbed out of
+ // mus into the html_viewer. Most of this information needs to be
+ // dynamically adjustable (e.g. if I move a mandoline PlatformWindow from

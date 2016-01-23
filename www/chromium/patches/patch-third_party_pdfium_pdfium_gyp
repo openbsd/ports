@@ -1,18 +1,18 @@
-$OpenBSD: patch-third_party_pdfium_pdfium_gyp,v 1.4 2015/12/05 16:13:32 robert Exp $
---- third_party/pdfium/pdfium.gyp.orig.port	Tue Nov 24 21:01:10 2015
-+++ third_party/pdfium/pdfium.gyp	Wed Dec  2 08:18:33 2015
-@@ -2,7 +2,7 @@
-   'variables': {
+$OpenBSD: patch-third_party_pdfium_pdfium_gyp,v 1.5 2016/01/23 18:49:31 robert Exp $
+--- third_party/pdfium/pdfium.gyp.orig.port	Wed Jan 20 21:02:27 2016
++++ third_party/pdfium/pdfium.gyp	Fri Jan 22 19:58:59 2016
+@@ -9,7 +9,7 @@
      'pdf_use_skia%': 0,
+     'pdf_enable_v8%': 1,
      'conditions': [
 -      ['OS=="linux"', {
 +      ['OS=="linux" or os_bsd==1', {
          'bundle_freetype%': 0,
        }, {  # On Android there's no system FreeType. On Windows and Mac, only a
              # few methods are used from it.
-@@ -24,7 +24,7 @@
-       ['pdf_use_skia==1', {
-         'defines': ['_SKIA_SUPPORT_'],
+@@ -37,7 +37,7 @@
+       ['pdf_enable_v8==1', {
+         'defines': ['PDF_ENABLE_V8'],
        }],
 -      ['OS=="linux"', {
 +      ['OS=="linux" or os_bsd==1', {

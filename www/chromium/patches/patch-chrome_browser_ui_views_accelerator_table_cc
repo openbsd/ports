@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_ui_views_accelerator_table_cc,v 1.4 2015/12/05 16:13:32 robert Exp $
---- chrome/browser/ui/views/accelerator_table.cc.orig.port	Wed Dec  2 08:36:30 2015
-+++ chrome/browser/ui/views/accelerator_table.cc	Wed Dec  2 08:36:55 2015
+$OpenBSD: patch-chrome_browser_ui_views_accelerator_table_cc,v 1.5 2016/01/23 18:49:31 robert Exp $
+--- chrome/browser/ui/views/accelerator_table.cc.orig.port	Wed Jan 20 21:01:20 2016
++++ chrome/browser/ui/views/accelerator_table.cc	Fri Jan 22 19:58:58 2016
 @@ -68,7 +68,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
    { ui::VKEY_S, ui::EF_CONTROL_DOWN, IDC_SAVE_PAGE },
    { ui::VKEY_9, kPlatformModifier, IDC_SELECT_LAST_TAB },
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_ui_views_accelerator_table_cc,v 1.4 2015/12/05 16
    { ui::VKEY_1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0 },
    { ui::VKEY_NUMPAD1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0 },
    { ui::VKEY_2, ui::EF_ALT_DOWN, IDC_SELECT_TAB_1 },
-@@ -147,7 +147,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
+@@ -145,7 +145,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
    { ui::VKEY_F11, ui::EF_NONE, IDC_FULLSCREEN },
  
    // Platform-specific key maps.

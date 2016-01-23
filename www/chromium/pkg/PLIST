@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.54 2015/12/12 20:20:01 robert Exp $
+@comment $OpenBSD: PLIST,v 1.55 2016/01/23 18:49:31 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 chrome/
@@ -126,8 +126,10 @@ chrome/resources/inspector/Images/responsiveDesign.png
 chrome/resources/inspector/Images/responsiveDesign_2x.png
 chrome/resources/inspector/Images/searchNext.png
 chrome/resources/inspector/Images/searchPrev.png
+chrome/resources/inspector/Images/securityPropertyInfo.svg
 chrome/resources/inspector/Images/securityPropertyInsecure.svg
 chrome/resources/inspector/Images/securityPropertySecure.svg
+chrome/resources/inspector/Images/securityPropertyUnknown.svg
 chrome/resources/inspector/Images/securityPropertyWarning.svg
 chrome/resources/inspector/Images/securityStateInsecure.svg
 chrome/resources/inspector/Images/securityStateNeutral.svg
@@ -201,6 +203,7 @@ chrome/resources/inspector/toolbox.html
 chrome/resources/inspector/toolbox.js
 chrome/resources/inspector/ui_lazy_module.js
 chrome/shell_resources.pak
+@comment chrome/st6TSZvl
 @man man/man1/chrome.1
 share/applications/chromium-browser.desktop
 share/icons/hicolor/128x128/apps/chrome.png

@@ -1,13 +1,12 @@
-$OpenBSD: patch-content_app_content_main_runner_cc,v 1.27 2015/12/05 16:13:32 robert Exp $
---- content/app/content_main_runner.cc.orig.port	Tue Nov 24 21:00:54 2015
-+++ content/app/content_main_runner.cc	Wed Dec  2 08:18:32 2015
-@@ -97,11 +97,11 @@
+$OpenBSD: patch-content_app_content_main_runner_cc,v 1.28 2016/01/23 18:49:31 robert Exp $
+--- content/app/content_main_runner.cc.orig.port	Fri Jan 22 22:08:21 2016
++++ content/app/content_main_runner.cc	Fri Jan 22 22:09:10 2016
+@@ -98,10 +98,10 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
 -#if !defined(OS_MACOSX)
 +#if !defined(OS_MACOSX) && !defined(OS_BSD)
- #include "content/public/common/content_descriptors.h"
  #include "content/public/common/zygote_fork_delegate_linux.h"
  #endif
 -#if !defined(OS_MACOSX) && !defined(OS_ANDROID)
@@ -33,7 +32,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.27 2015/12/05 16:13:32 ro
    // Zygote startup is special -- see RunZygote comments above
    // for why we don't use ZygoteMain directly.
    if (process_type == switches::kZygoteProcess)
-@@ -504,10 +504,10 @@ class ContentMainRunnerImpl : public ContentMainRunner
+@@ -509,10 +509,10 @@ class ContentMainRunnerImpl : public ContentMainRunner
                 kPrimaryIPCChannel + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID && !OS_IOS
  
