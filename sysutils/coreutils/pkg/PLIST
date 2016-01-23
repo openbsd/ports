@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/07/08 16:04:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/01/23 18:56:29 ajacoutot Exp $
 @conflict fileutils-*
 @conflict sh-utils-*
 @conflict textutils-*
@@ -9,6 +9,7 @@
 @pkgpath textproc/textutils
 %%SHARED%%
 @bin bin/g[
+@bin bin/gbase32
 @bin bin/gbase64
 @bin bin/gbasename
 @bin bin/gcat
@@ -113,6 +114,7 @@
 @info info/coreutils.info
 @comment lib/charset.alias
 libexec/coreutils/
+@man man/man1/gbase32.1
 @man man/man1/gbase64.1
 @man man/man1/gbasename.1
 @man man/man1/gcat.1

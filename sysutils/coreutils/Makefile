@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/07/08 16:04:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/23 18:56:28 ajacoutot Exp $
 
 COMMENT =		file, shell and text manipulation utilities
 
-DISTNAME =		coreutils-8.24
+DISTNAME =		coreutils-8.25
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://www.gnu.org/software/coreutils/coreutils.html
