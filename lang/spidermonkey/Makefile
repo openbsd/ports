@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.27 2016/01/06 17:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2016/01/23 18:07:13 ajacoutot Exp $
+
+# old version that does not get updates; should be rm'd at some point
+PORTROACH=	ignore:1
 
 SHARED_ONLY=	Yes
 
