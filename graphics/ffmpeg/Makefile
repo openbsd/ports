@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.142 2016/01/22 07:05:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.143 2016/01/23 14:12:28 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		20160113
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -29,8 +29,9 @@ PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	SDL X11 Xext Xv ass bz2 c crypto fontconfig freetype fribidi \
-		gsm m mp3lame opus pthread sndio speex ssl vorbis vorbisenc \
-		vpx>=5 x264 x265>=2 xcb xcb-shape xcb-shm xcb-xfixes xvidcore z
+		gsm m mp3lame opus pthread sndio speex ssl v4l2 vorbis \
+		vorbisenc vpx>=5 x264 x265>=2 xcb xcb-shape xcb-shm xcb-xfixes \
+		xvidcore z
 
 MODULES=	lang/clang
 
@@ -48,6 +49,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		audio/gsm \
 		devel/sdl \
 		multimedia/libass \
+		multimedia/libv4l \
 		multimedia/libvpx>=1.3.0 \
 		multimedia/x264 \
 		multimedia/x265>=1.5 \
@@ -55,7 +57,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 
 # inter-library dependencies for the current configuration
 LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lgsm -lmp3lame -lopus -lspeex -lvorbis -lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lz -pthread
-LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lXv -lxcb-render -lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio
+LIBavdevice_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext -lXv -lxcb-render -lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio -lv4l2
 LIBavfilter_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lass -lfontconfig -lfreetype -lfribidi
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lssl -lcrypto -pthread
 LIBavresample_EXTRALIBS=
@@ -111,6 +113,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-libmp3lame \
 		--enable-libopus \
 		--enable-libspeex \
+		--enable-libv4l2 \
 		--enable-libvorbis \
 		--enable-libvpx \
 		--enable-libx264 \
