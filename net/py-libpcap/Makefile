@@ -1,30 +1,31 @@
-# $OpenBSD: Makefile,v 1.29 2015/04/17 16:15:59 bluhm Exp $
+# $OpenBSD: Makefile,v 1.30 2016/01/23 18:28:34 ajacoutot Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY=		Yes
 
-COMMENT=	libpcap bindings for Python
+COMMENT=		libpcap bindings for Python
 
-DISTNAME=	pylibpcap-0.6.2
-PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	5
-CATEGORIES=	net
+MODPY_EGG_VERSION=	0.6.4
+DISTNAME=		pylibpcap-${MODPY_EGG_VERSION}
+PKGNAME=		${DISTNAME:S/py/py-/}
+CATEGORIES=		net
 
-HOMEPAGE=	http://pylibpcap.sourceforge.net/
+HOMEPAGE=		http://pylibpcap.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		${MODPY_WANTLIB} m pcap pthread util
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pylibpcap/}
+WANTLIB += ${MODPY_WANTLIB} pcap pthread
 
-MODULES=	lang/python
-MODPY_ADJ_FILES=examples/*.py
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pylibpcap/}
 
-BUILD_DEPENDS=	devel/swig
+MODULES=		lang/python
+MODPY_ADJ_FILES=	examples/*.py
 
-NO_TEST=	Yes
+BUILD_DEPENDS=		devel/swig
 
-EXAMPLESDIR=	${PREFIX}/share/examples/py-libpcap
+NO_TEST=		Yes
+
+EXAMPLESDIR=		${PREFIX}/share/examples/py-libpcap
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
