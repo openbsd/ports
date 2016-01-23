@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/23 16:04:48 landry Exp $
+@bin bin/inotifywait
+@bin bin/inotifywatch
+include/inotifytools/
+include/inotifytools/inotify-nosys.h
+include/inotifytools/inotify.h
+include/inotifytools/inotifytools.h
+lib/libinotifytools.a
+lib/libinotifytools.la
+@lib lib/libinotifytools.so.${LIBinotifytools_VERSION}
+@man man/man1/inotifywait.1
+@man man/man1/inotifywatch.1
