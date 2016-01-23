@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1461 2016/01/21 00:04:55 kili Exp $
+# $OpenBSD: Makefile,v 1.1462 2016/01/23 18:39:53 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -436,7 +436,6 @@
      SUBDIR += mono-addins
      SUBDIR += mono-gdata
      SUBDIR += mono-notify
-     SUBDIR += monodevelop
      SUBDIR += monotone
      SUBDIR += mowgli
      SUBDIR += mozjs17
