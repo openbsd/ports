@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.353 2016/01/21 00:05:41 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.354 2016/01/23 18:41:01 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -714,6 +714,7 @@ my $obsolete_reason = {
 	'its4' => 3,
 	'august' => 3,
 	'hs-hlint' => 7,
+	'monodevelop' => 5,
 };
 
 my @msg = (
