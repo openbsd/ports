@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2016/01/17 17:29:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.201 2016/01/23 08:09:50 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ V=		2.2.1
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	5
+REVISION-main=	6
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -26,6 +26,7 @@ PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB-common=	c dbus-1 idn m pthread ${MODGETTEXT_WANTLIB}
+# v4l2 is dlopen'd
 WANTLIB-main=	EGL GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 \
 		Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xpm \
 		Xrender Xrandr ass atk-1.0 avcodec avformat avutil bluray \
@@ -37,7 +38,7 @@ WANTLIB-main=	EGL GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 \
 		ogg p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
 		pixman-1 png postproc pthread-stubs rsvg-2 samplerate sndio \
 		speex speexdsp stdc++ swscale tag tar tasn1 tiff usbhid \
-		vorbis vorbisenc webp x264 x265 xcb-composite xcb-keysyms \
+		v4l2 vorbis vorbisenc webp x264 x265 xcb-composite xcb-keysyms \
 		xcb-randr xcb-render xcb-shape xcb-shm xcb-xfixes xcb-xv \
 		xcb xml2 z X11-xcb Xxf86vm drm gbm glapi xcb-dri2 xcb-glx \
 		${WANTLIB-common}
@@ -74,6 +75,7 @@ LIB_DEPENDS-main= ${MODQT4_LIB_DEPENDS} \
 		multimedia/libbluray>=0.8.0 \
 		multimedia/libdvdnav \
 		multimedia/libmatroska \
+		multimedia/libv4l \
 		multimedia/x264 \
 		multimedia/x265 \
 		security/gnutls \
@@ -147,7 +149,6 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-twolame \
 		--disable-udev \
 		--disable-upnp \
-		--disable-v4l2 \
 		--disable-vdpau \
 		--disable-vnc \
 		--disable-vpx \

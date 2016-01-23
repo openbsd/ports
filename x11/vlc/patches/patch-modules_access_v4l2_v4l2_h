@@ -1,0 +1,19 @@
+$OpenBSD: patch-modules_access_v4l2_v4l2_h,v 1.1 2016/01/23 08:09:50 ajacoutot Exp $
+
+Use OpenBSD's videoio.h header.
+
+--- modules/access/v4l2/v4l2.h.orig	Sat Jan  9 21:39:10 2016
++++ modules/access/v4l2/v4l2.h	Sat Jan  9 21:51:49 2016
+@@ -18,7 +18,12 @@
+  * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
+  *****************************************************************************/
+ 
++#ifdef HAVE_SYS_VIDEOIO_H
++#include <sys/ioccom.h>
++#include <sys/videoio.h>
++#else
+ #include <linux/videodev2.h>
++#endif
+ 
+ /* libv4l2 functions */
+ extern int v4l2_fd_open (int, int);
