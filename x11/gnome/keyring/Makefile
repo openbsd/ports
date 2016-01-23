@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2015/10/27 06:14:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.121 2016/01/23 09:09:40 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
 GNOME_VERSION=		3.18.3
+REVISION=		0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,6 +33,11 @@ RUN_DEPENDS +=		security/pinentry,-gnome3,
 
 CONFIGURE_ARGS=		--disable-pam \
 			--disable-valgrind
+
+# https://bugzilla.gnome.org/show_bug.cgi?id=641082
+# (does not support ed25519 keys)
+# see x11/gnome/gdm/patches/patch-data_Xsession_in
+CONFIGURE_ARGS +=	--disable-ssh-agent
 
 FAKE_FLAGS=		configdir=${PREFIX}/share/examples/gnome-keyring/pkcs11/modules
 
