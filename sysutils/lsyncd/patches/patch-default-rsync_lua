@@ -1,0 +1,12 @@
+$OpenBSD: patch-default-rsync_lua,v 1.1.1.1 2016/01/23 19:15:13 landry Exp $
+--- default-rsync.lua.orig	Thu Oct 15 08:29:47 2015
++++ default-rsync.lua	Sat Jan 23 19:41:49 2016
+@@ -551,7 +551,7 @@ rsync.exitcodes  = default.rsyncExitCodes
+ rsync.rsync =
+ {
+ 	-- The rsync binary to be called.
+-	binary        = '/usr/bin/rsync',
++	binary        = '${LOCALBASE}/bin/rsync',
+ 	links         = true,
+ 	times         = true,
+ 	protect_args  = true

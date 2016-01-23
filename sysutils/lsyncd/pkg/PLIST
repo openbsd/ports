@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/23 19:15:13 landry Exp $
+@bin bin/lsyncd
+@man man/man1/lsyncd.1
+share/examples/lsyncd/
+share/examples/lsyncd/lalarm.lua
+share/examples/lsyncd/lbash.lua
+share/examples/lsyncd/lecho.lua
+share/examples/lsyncd/lftp.lua
+share/examples/lsyncd/lgforce.lua
+share/examples/lsyncd/limagemagic.lua
+share/examples/lsyncd/lpostcmd.lua
+share/examples/lsyncd/lrsync.lua
+share/examples/lsyncd/lrsyncssh.lua
+share/examples/lsyncd/lsayirc.lua
