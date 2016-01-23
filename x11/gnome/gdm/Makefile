@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.243 2015/12/21 10:17:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.244 2016/01/23 13:55:30 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.18.2
-REVISION=		3
+REVISION=		4
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -65,7 +65,6 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--disable-systemd-journal \
-			--enable-gdm-xsession \
 			--without-systemd \
 			--without-plymouth \
 			--with-lang-file=${SYSCONFDIR}/gdm/locale.conf \
@@ -120,6 +119,8 @@ post-install:
 		${PREFIX}/share/examples/gdm/var/db/gdm/.pulse
 	${INSTALL_DATA} ${FILESDIR}/locale.conf \
 		${PREFIX}/share/examples/gdm/etc/gdm/locale.conf
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/gdm/*
+	${SUBST_CMD} -m 0555 -c -o ${BINOWN} -g ${BINGRP} \
+		${FILESDIR}/Xsession \
+		${PREFIX}/share/examples/gdm/etc/gdm/Xsession
 
 .include <bsd.port.mk>
