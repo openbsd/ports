@@ -1,0 +1,14 @@
+$OpenBSD: patch-m4_input_m4,v 1.1 2016/01/23 08:31:50 ajacoutot Exp $
+
+Enable libv4l on OpenBSD.
+
+--- m4/input.m4.orig	Fri Jan 22 23:59:25 2016
++++ m4/input.m4	Sat Jan 23 00:01:19 2016
+@@ -36,6 +36,7 @@ AC_DEFUN([XINE_INPUT_PLUGINS], [
+             ;;
+         netbsd* | openbsd*)
+             default_enable_v4l2=yes
++            default_enable_libv4l=yes
+             ;;
+         linux*)
+             default_enable_dvb=yes

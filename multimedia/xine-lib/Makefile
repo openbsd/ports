@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.122 2016/01/17 17:29:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.123 2016/01/23 08:31:50 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.6
-REVISION=	4
+REVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -20,13 +20,14 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += FLAC GL GLU ICE SDL SM X11 Xext Xinerama Xv XvMCW a52 avcodec
-WANTLIB += avformat avutil bluray c cdio dca dvdnav dvdread expat faad
-WANTLIB += fontconfig freetype iso9660 jpeg lzma m mad mng modplug
-WANTLIB += mpcdec ogg postproc pthread pthread-stubs sndio speex theora
-WANTLIB += usbhid vcdinfo vorbis vpx>=5 wavpack xcb xcb-shape xcb-shm
-WANTLIB += xcb-xv xdg-basedir xml2 z
-WANTLIB += X11-xcb Xdamage Xfixes Xxf86vm drm glapi xcb-dri2 xcb-glx
+WANTLIB += FLAC GL GLU ICE SDL SM X11 X11-xcb Xdamage Xext Xfixes
+WANTLIB += Xinerama Xv XvMCW Xxf86vm a52 avcodec avformat avutil
+WANTLIB += bluray c cdio dca drm dvdnav dvdread expat faad fontconfig
+WANTLIB += freetype glapi iso9660 jpeg lzma m mad mng modplug
+WANTLIB += mpcdec ogg postproc pthread pthread-stubs sndio speex
+WANTLIB += theora usbhid v4l2 v4lconvert vcdinfo vorbis vpx wavpack
+WANTLIB += xcb xcb-dri2 xcb-glx xcb-shape xcb-shm xcb-xv xdg-basedir
+WANTLIB += xml2 z
 
 XINEAPI_REV=	2.5
 SUBST_VARS+=	XINEAPI_REV
@@ -57,6 +58,7 @@ LIB_DEPENDS=	audio/faad \
 		multimedia/libbluray>=0.8.0 \
 		multimedia/libdvdnav \
 		multimedia/libtheora \
+		multimedia/libv4l \
 		multimedia/libvpx>=1.3.0 \
 		x11/libxdg-basedir
 
