@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/21 16:04:47 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/23 13:30:10 pascal Exp $
 
 COMMENT =		jump 'n' run game
 
@@ -23,6 +23,7 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES +=		converters/libiconv devel/cmake gcc4
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c c++
+BUILD_DEPENDS =		devel/boost
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		devel/sdl2-image \
 			devel/physfs \
