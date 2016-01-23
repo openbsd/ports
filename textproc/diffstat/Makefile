@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2015/07/16 23:16:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2016/01/23 21:07:57 ajacoutot Exp $
 
 COMMENT=		accumulates and displays statistics from a diff file
 
-DISTNAME=		diffstat-1.60
+DISTNAME=		diffstat-1.61
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://invisible-island.net/diffstat/
 EXTRACT_SUFX=		.tgz
