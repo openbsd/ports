@@ -1,0 +1,16 @@
+$OpenBSD: patch-config_c,v 1.1 2016/01/23 18:01:07 ajacoutot Exp $
+--- config.c.orig	Sat Jan 23 18:59:43 2016
++++ config.c	Sat Jan 23 18:59:34 2016
+@@ -128,10 +128,10 @@ load_config(const char *config_file, bool verbose, t_c
+ 		/* 2. "/etc/repmgr.conf" */
+ 		if (verbose == true)
+ 		{
+-			log_notice(_("looking for configuration file in /etc\n"));
++			log_notice(_("looking for configuration file in ${SYSCONFDIR}\n"));
+ 		}
+ 
+-		snprintf(config_file_path, MAXPGPATH, "/etc/%s", CONFIG_FILE_NAME);
++		snprintf(config_file_path, MAXPGPATH, "${SYSCONFDIR}/%s", CONFIG_FILE_NAME);
+ 		if (stat(config_file_path, &stat_config) == 0)
+ 		{
+ 			config_file_found = true;
