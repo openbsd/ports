@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/23 19:15:13 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/23 19:30:38 ajacoutot Exp $
 
 COMMENT =	synchronizes directories with remote targets upon changes
 GH_PROJECT =	lsyncd
@@ -21,7 +21,7 @@ RUN_DEPENDS =	net/rsync
 LIB_DEPENDS =	${MODLUA_LIB_DEPENDS} \
 		devel/libinotify
 
-TEST_DEPENDS =	${_MODLUA_RUN_DEPENDS} \
+TEST_DEPENDS =	${RUN_DEPENDS} \
 		devel/luaposix
 
 TESTS =	churn-direct churn-rsyncssh exclude-rsyncssh schedule \
