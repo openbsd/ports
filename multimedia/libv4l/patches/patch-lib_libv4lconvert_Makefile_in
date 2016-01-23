@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_libv4lconvert_Makefile_in,v 1.1 2016/01/23 14:03:11 feinerer Exp $
+
+OpenBSD does not have an rt library.
+
+--- lib/libv4lconvert/Makefile.in.orig	Sat Jan 23 04:46:21 2016
++++ lib/libv4lconvert/Makefile.in	Sat Jan 23 04:46:27 2016
+@@ -491,7 +491,7 @@ libv4lconvert_la_SOURCES = libv4lconvert.c tinyjpeg.c 
+ 	libv4lconvert-priv.h libv4lsyscall-priv.h tinyjpeg.h \
+ 	tinyjpeg-internal.h $(am__append_1)
+ libv4lconvert_la_CPPFLAGS = $(CFLAG_VISIBILITY) $(ENFORCE_LIBV4L_STATIC)
+-libv4lconvert_la_LDFLAGS = $(LIBV4LCONVERT_VERSION) -lrt -lm $(JPEG_LIBS) $(ENFORCE_LIBV4L_STATIC)
++libv4lconvert_la_LDFLAGS = $(LIBV4LCONVERT_VERSION) -lm $(JPEG_LIBS) $(ENFORCE_LIBV4L_STATIC)
+ ov511_decomp_SOURCES = ov511-decomp.c
+ ov518_decomp_SOURCES = ov518-decomp.c
+ EXTRA_DIST = Android.mk

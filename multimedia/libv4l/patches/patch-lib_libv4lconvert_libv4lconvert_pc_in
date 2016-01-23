@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_libv4lconvert_libv4lconvert_pc_in,v 1.1 2016/01/23 14:03:11 feinerer Exp $
+
+OpenBSD does not have an rt library.
+
+--- lib/libv4lconvert/libv4lconvert.pc.in.orig	Sat Jan 23 04:40:50 2016
++++ lib/libv4lconvert/libv4lconvert.pc.in	Sat Jan 23 04:40:58 2016
+@@ -7,5 +7,5 @@ Name: libv4lconvert
+ Description: v4l format conversion library
+ Version: @PACKAGE_VERSION@
+ Libs: -L${libdir} -lv4lconvert
+-Libs.private: -lrt -lm @JPEG_LIBS@
++Libs.private: -lm @JPEG_LIBS@
+ Cflags: -I${includedir}

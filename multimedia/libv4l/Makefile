@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/08 10:01:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/23 14:03:11 feinerer Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT =		libv4l userspace library
 VERSION =		1.8.1
 DISTNAME =		v4l-utils-${VERSION}
 PKGNAME =		libv4l-${VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=	v4l1		0.0 # 0.0
 SHARED_LIBS +=	v4l2		0.0 # 0.0
