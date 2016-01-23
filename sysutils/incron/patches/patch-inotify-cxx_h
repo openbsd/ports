@@ -1,0 +1,15 @@
+$OpenBSD: patch-inotify-cxx_h,v 1.1.1.1 2016/01/23 16:06:05 landry Exp $
+--- inotify-cxx.h.orig	Sat Apr  7 00:19:27 2012
++++ inotify-cxx.h	Wed Nov 26 21:44:51 2014
+@@ -35,11 +35,6 @@
+ #include <sys/syscall.h>
+ #include <sys/inotify.h>
+ 
+-// Use this if syscalls not defined
+-#ifndef __NR_inotify_init
+-#include <sys/inotify-syscalls.h>
+-#endif // __NR_inotify_init
+-
+ /// Event struct size
+ #define INOTIFY_EVENT_SIZE (sizeof(struct inotify_event))
+ 

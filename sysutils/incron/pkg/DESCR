@@ -1,0 +1,13 @@
+This program is the "inotify cron" system. It consist of a daemon and
+a table manipulator. You can use it a similar way as the regular cron.
+The difference is that the inotify cron handles filesystem events
+rather than time periods.
+
+The incron daemon (incrond) must be run under root (typically from
+runlevel script etc.). It loads the current user tables and hooks
+them for later changes.
+
+The incron table manipulator may be run under any regular user
+since it SUIDs. For manipulation with the tables use basically
+the same syntax as for the crontab program. You can import a table,
+remove and edit the current table.

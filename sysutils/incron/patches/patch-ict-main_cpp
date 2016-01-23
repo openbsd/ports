@@ -1,0 +1,12 @@
+$OpenBSD: patch-ict-main_cpp,v 1.1.1.1 2016/01/23 16:06:05 landry Exp $
+--- ict-main.cpp.orig	Wed Nov 26 21:51:36 2014
++++ ict-main.cpp	Wed Nov 26 21:52:12 2014
+@@ -493,7 +493,7 @@ int main(int argc, char** argv)
+       if (uid != 0) {
+         fprintf(stderr, "insufficient privileges to use custom configuration (will use default)\n");
+       }
+-      else if (euidaccess(cfg.c_str(), R_OK) != 0) {
++      else if (access(cfg.c_str(), R_OK) != 0) {
+         perror("cannot read configuration file (will use default)");
+       }
+     }

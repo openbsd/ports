@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/23 16:06:05 landry Exp $
+@extraunexec rm -rf /var/spool/incron/
+@mode 2555
+@group crontab
+@bin bin/incrontab
+@mode
+@group
+@man man/man1/incrontab.1
+@man man/man5/incron.conf.5
+@man man/man5/incrontab.5
+@man man/man8/incrond.8
+@bin sbin/incrond
+share/examples/incron/
+@sample ${SYSCONFDIR}/incron.d/
+share/examples/incron/incron.conf.example
+@sample ${SYSCONFDIR}/incron.conf
+@mode 1730
+@owner root
+@group crontab
+@sample /var/spool/incron/
+@owner
+@group
+@rcscript ${RCDIR}/incrond

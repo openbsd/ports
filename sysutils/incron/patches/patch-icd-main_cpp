@@ -1,0 +1,12 @@
+$OpenBSD: patch-icd-main_cpp,v 1.1.1.1 2016/01/23 16:06:05 landry Exp $
+--- icd-main.cpp.orig	Sat Apr  7 00:19:27 2012
++++ icd-main.cpp	Sat Jan 23 15:57:59 2016
+@@ -18,7 +18,7 @@
+ 
+ #include <map>
+ #include <signal.h>
+-#include <wait.h>
++#include <sys/wait.h>
+ #include <fcntl.h>
+ #include <pwd.h>
+ #include <dirent.h>

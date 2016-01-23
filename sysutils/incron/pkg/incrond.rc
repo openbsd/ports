@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $OpenBSD: incrond.rc,v 1.1.1.1 2016/01/23 16:06:05 landry Exp $
+
+daemon="${TRUEPREFIX}/sbin/incrond"
+
+. /etc/rc.d/rc.subr
+
+rc_stop=NO
+
+# sending SIGTERM is not enough, incrond is stuck on poll()
+# waiting for an event - and only exits after it
+#rc_stop() {
+#	${daemon} -k
+#}
+
+rc_cmd $1
