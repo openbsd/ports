@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/12/27 15:33:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/01/24 20:13:59 jasper Exp $
 bin/gitolite
 libexec/gitolite/
 libexec/gitolite/VERSION
@@ -16,6 +16,7 @@ libexec/gitolite/VREF/refex-expr
 libexec/gitolite/commands/
 libexec/gitolite/commands/D
 libexec/gitolite/commands/access
+libexec/gitolite/commands/config
 libexec/gitolite/commands/create
 libexec/gitolite/commands/creator
 libexec/gitolite/commands/desc
@@ -29,6 +30,7 @@ libexec/gitolite/commands/list-dangling-repos
 libexec/gitolite/commands/lock
 libexec/gitolite/commands/mirror
 libexec/gitolite/commands/motd
+libexec/gitolite/commands/option
 libexec/gitolite/commands/owns
 libexec/gitolite/commands/perms
 libexec/gitolite/commands/print-default-rc
@@ -74,6 +76,7 @@ libexec/gitolite/lib/Gitolite/Triggers/Motd.pm
 libexec/gitolite/lib/Gitolite/Triggers/RefexExpr.pm
 libexec/gitolite/lib/Gitolite/Triggers/RepoUmask.pm
 libexec/gitolite/lib/Gitolite/Triggers/Shell.pm
+libexec/gitolite/lib/Gitolite/Triggers/TProxy.pm
 libexec/gitolite/lib/Gitolite/Triggers/Writable.pm
 libexec/gitolite/syntactic-sugar/
 libexec/gitolite/syntactic-sugar/continuation-lines

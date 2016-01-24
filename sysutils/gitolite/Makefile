@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/01/11 08:36:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2016/01/24 20:13:59 jasper Exp $
 
 PKG_ARCH=		*
 
@@ -6,8 +6,7 @@ COMMENT=		secure hosting of Git repositories
 
 GH_ACCOUNT=		sitaramc
 GH_PROJECT=		gitolite
-GH_TAGNAME=		v3.6.2
-REVISION=		1
+GH_TAGNAME=		v3.6.4
 CATEGORIES=		sysutils devel
 
 HOMEPAGE=		https://github.com/sitaramc/gitolite/
