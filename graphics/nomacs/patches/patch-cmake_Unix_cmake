@@ -1,0 +1,12 @@
+$OpenBSD: patch-cmake_Unix_cmake,v 1.1.1.1 2016/01/24 10:06:15 landry Exp $
+Avoid forced linkage with libstdc++.
+--- cmake/Unix.cmake.orig	Mon Jul 20 08:52:44 2015
++++ cmake/Unix.cmake	Mon Jul 20 08:56:45 2015
+@@ -71,6 +71,7 @@ if(ENABLE_RAW)
+ 	if(NOT LIBRAW_FOUND)
+ 		message(FATAL_ERROR "libraw not found. It's mandatory when used with ENABLE_RAW enabled") 
+ 	else()
++		list(REMOVE_ITEM LIBRAW_LIBRARIES stdc++)
+ 		add_definitions(-DWITH_LIBRAW)
+ 	endif()
+ endif(ENABLE_RAW)
