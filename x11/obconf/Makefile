@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.33 2015/04/21 18:13:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2016/01/24 20:09:43 jasper Exp $
 
 COMMENT=	configuration utility for openbox
 
-# git clone of b7f1c6ac679bbda61bc4ca13267f03022cbfde74
-# which will become 2.0.4 when upstream releases a new version.
 DISTNAME=	obconf-2.0.4
 CATEGORIES=	x11
 REVISION=	0
@@ -21,8 +19,6 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 pthread rsvg-2
 WANTLIB += startup-notification-1 xml2 z
 
 MASTER_SITES=	http://openbox.org/dist/obconf/
-#http://icculus.org/openbox/obconf/
-
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	x11/gtk+2 \
