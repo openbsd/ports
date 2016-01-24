@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/22 08:55:34 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/24 10:51:58 benoit Exp $
 
 COMMENT =		lightweight yet powerful web application framework
 
 MODULES =		cpan
-DISTNAME =		Dancer2-0.166000
+DISTNAME =		Dancer2-0.166001
 CATEGORIES =		www
 
 MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
