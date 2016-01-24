@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2015/03/29 12:35:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.47 2016/01/24 10:50:26 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -36,6 +36,7 @@ include/rhythmbox/rhythmdb/rb-refstring.h
 include/rhythmbox/rhythmdb/rhythmdb-entry-type.h
 include/rhythmbox/rhythmdb/rhythmdb-entry.h
 include/rhythmbox/rhythmdb/rhythmdb-import-job.h
+include/rhythmbox/rhythmdb/rhythmdb-metadata-cache.h
 include/rhythmbox/rhythmdb/rhythmdb-property-model.h
 include/rhythmbox/rhythmdb/rhythmdb-query-model.h
 include/rhythmbox/rhythmdb/rhythmdb-query-result-list.h
@@ -75,6 +76,7 @@ include/rhythmbox/widgets/rb-button-bar.h
 include/rhythmbox/widgets/rb-cell-renderer-pixbuf.h
 include/rhythmbox/widgets/rb-cell-renderer-rating.h
 include/rhythmbox/widgets/rb-dialog.h
+include/rhythmbox/widgets/rb-encoding-settings.h
 include/rhythmbox/widgets/rb-entry-view.h
 include/rhythmbox/widgets/rb-fading-image.h
 include/rhythmbox/widgets/rb-import-dialog.h
@@ -883,6 +885,7 @@ share/rhythmbox/browser-popup.ui
 share/rhythmbox/create-playlist.ui
 share/rhythmbox/display-page-add-menu.ui
 share/rhythmbox/edit-menu.ui
+share/rhythmbox/encoding-settings.ui
 share/rhythmbox/general-prefs.ui
 share/rhythmbox/icons/
 share/rhythmbox/icons/hicolor/

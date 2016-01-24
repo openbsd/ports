@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.149 2016/01/17 17:29:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.150 2016/01/24 10:50:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		3.2.1
-REVISION=		1
+GNOME_VERSION=		3.3
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -88,7 +87,7 @@ CONFIGURE_ARGS=		--without-brasero \
 # XXX requires libdmapsharing
 CONFIGURE_ARGS +=	--disable-daap
 
-# XXX requires hal|udev
+# XXX requires hal|udev|gvfs-mtp
 CONFIGURE_ARGS +=	--without-mtp
 
 # XXX requires libmx
