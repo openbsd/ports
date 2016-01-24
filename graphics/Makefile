@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.403 2016/01/20 00:07:19 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.404 2016/01/24 10:07:00 landry Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -166,6 +166,7 @@
      SUBDIR += mplex
      SUBDIR += mscgen
      SUBDIR += netpbm
+     SUBDIR += nomacs
      SUBDIR += ocaml-camlimages
      SUBDIR += ocrad
      SUBDIR += opencolorio
