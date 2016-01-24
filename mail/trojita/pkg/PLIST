@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/03/14 20:53:36 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/01/24 02:35:36 jturner Exp $
 @bin bin/be.contacts
 @bin bin/trojita
 @lib lib/libtrojita_plugins.so.${LIBtrojita_plugins_VERSION}
@@ -10,8 +10,10 @@ share/icons/hicolor/scalable/apps/trojita.svg
 share/trojita/
 share/trojita/locale/
 share/trojita/locale/trojita_common_ar.qm
+share/trojita/locale/trojita_common_ast.qm
 share/trojita/locale/trojita_common_bs.qm
 share/trojita/locale/trojita_common_ca.qm
+share/trojita/locale/trojita_common_ca@valencia.qm
 share/trojita/locale/trojita_common_cs.qm
 share/trojita/locale/trojita_common_da.qm
 share/trojita/locale/trojita_common_de.qm
