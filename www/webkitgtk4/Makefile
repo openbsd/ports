@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/12/20 09:35:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2016/01/24 08:33:30 ajacoutot Exp $
 
 BROKEN-alpha =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
 BROKEN-hppa =		error: Compiler GCC >= 4.7 or Clang >= 3.3 is required for C compilation
@@ -9,14 +9,13 @@ SHARED_ONLY =		Yes
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.10.4
+V =			2.10.5
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
-REVISION =		1
 
 SHARED_LIBS +=  javascriptcoregtk-${API}     1.0 # 18.0
 SHARED_LIBS +=  webkit2gtk-${API}            1.1 # 37.2
