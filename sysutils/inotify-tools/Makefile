@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/23 16:04:48 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/24 10:56:36 ajacoutot Exp $
 
 COMMENT =	programs providing a simple interface to inotify
 DISTNAME =	inotify-tools-3.14pl0
@@ -19,7 +19,9 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include/inotify/" \
 			LDFLAGS="-L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath ${LOCALBASE}/lib/inotify"
 CONFIGURE_ARGS =	--disable-doxygen
 LIB_DEPENDS =		devel/libinotify
-BUILD_DEPENDS +=	devel/libtool
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
 WANTLIB +=		lib/inotify/inotify c pthread
 
 pre-configure:
