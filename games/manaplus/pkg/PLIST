@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2015/12/20 13:19:26 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.33 2016/01/24 10:31:35 benoit Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -282,6 +282,8 @@ share/manaplus/data/sfx/system/reminder.ogg
 share/manaplus/data/sfx/system/send.ogg
 share/manaplus/data/sfx/system/start.ogg
 share/manaplus/data/sfx/system/watcher.ogg
+share/manaplus/data/test/
+share/manaplus/data/test/palette.gpl
 share/manaplus/data/themes/
 share/manaplus/data/themes/blacknblack/
 share/manaplus/data/themes/blacknblack/bubble.png
@@ -641,6 +643,8 @@ share/manaplus/data/translations/help/pl.po
 share/manaplus/data/translations/help/pt_BR.po
 share/manaplus/data/translations/help/ru.po
 share/manaplus/data/translations/help/zh_CN.po
+share/manaplus/data/translations/test/
+share/manaplus/data/translations/test/test1.po
 share/pixmaps/
 share/pixmaps/manaplus.png
 @exec %D/bin/update-desktop-database
