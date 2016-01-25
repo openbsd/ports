@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/09/14 05:58:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/25 15:52:36 jasper Exp $
 
 COMMENT=	local CVE checker tool
 
 DISTNAME=	cvechecker-3.5
-REVISION=	1
+REVISION=	2
 CATEGORIES=	security sysutils
 
 HOMEPAGE=	http://cvechecker.sourceforge.net/
@@ -25,7 +25,7 @@ RUN_DEPENDS=	net/wget \
 		sysutils/coreutils \
 		textproc/libxslt
 
-# XXX non functionnal yet
+# XXX non functional yet
 #FLAVORS=	mysql
 FLAVOR?=
 
@@ -40,13 +40,13 @@ CONFIGURE_ARGS=	--enable-sqlite3
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/cvechecker
 
 .if ${FLAVOR:Mmysql}
-WANTLIB += crypto m mysqlclient ssl z
+WANTLIB +=	crypto m mysqlclient ssl z
 LIB_DEPENDS +=	databases/mariadb
 CONFIGURE_ARGS += --enable-mysql
 .endif
 
 pre-configure:
-	perl -pi -e 's,seq ,gseq ,g' ${WRKSRC}/scripts/pullcves
+	sed -i 's,seq ,gseq ,g' ${WRKSRC}/scripts/pullcves
 
 post-install:
 	rmdir ${WRKINST}/var/db/cvechecker/*
