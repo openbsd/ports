@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-memcached,v 1.1 2016/01/25 20:32:15 sthen Exp $
+lib/freeradius/rlm_cache_memcached.so

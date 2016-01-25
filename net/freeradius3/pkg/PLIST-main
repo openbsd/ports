@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2015/11/12 15:27:11 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2016/01/25 20:32:15 sthen Exp $
 @conflict freeradius-*
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
@@ -31,6 +31,7 @@ include/freeradius/conffile.h
 include/freeradius/detail.h
 include/freeradius/event.h
 include/freeradius/features.h
+include/freeradius/freeradius.h
 include/freeradius/hash.h
 include/freeradius/heap.h
 include/freeradius/libradius.h
@@ -47,11 +48,44 @@ include/freeradius/radiusd.h
 include/freeradius/radpaths.h
 include/freeradius/radutmp.h
 include/freeradius/realms.h
+include/freeradius/rfc2865.h
+include/freeradius/rfc2866.h
+include/freeradius/rfc2867.h
+include/freeradius/rfc2868.h
+include/freeradius/rfc2869.h
+include/freeradius/rfc3162.h
+include/freeradius/rfc3576.h
+include/freeradius/rfc3580.h
+include/freeradius/rfc4072.h
+include/freeradius/rfc4372.h
+include/freeradius/rfc4603.h
+include/freeradius/rfc4675.h
+include/freeradius/rfc4679.h
+include/freeradius/rfc4818.h
+include/freeradius/rfc4849.h
+include/freeradius/rfc5090.h
+include/freeradius/rfc5176.h
+include/freeradius/rfc5447.h
+include/freeradius/rfc5580.h
+include/freeradius/rfc5607.h
+include/freeradius/rfc5904.h
+include/freeradius/rfc6519.h
+include/freeradius/rfc6572.h
+include/freeradius/rfc6677.h
+include/freeradius/rfc6911.h
+include/freeradius/rfc6929.h
+include/freeradius/rfc6930.h
+include/freeradius/rfc7055.h
+include/freeradius/rfc7155.h
+include/freeradius/rfc7268.h
+include/freeradius/rfc7499.h
 include/freeradius/sha1.h
 include/freeradius/stats.h
 include/freeradius/sysutmp.h
+include/freeradius/tls.h
 include/freeradius/token.h
 include/freeradius/udpfromto.h
+include/freeradius/vqp.h
 lib/freeradius/
 lib/freeradius/libfreeradius-dhcp.so
 lib/freeradius/libfreeradius-eap.so
@@ -107,7 +141,6 @@ lib/freeradius/rlm_sql.so
 lib/freeradius/rlm_sql_null.so
 lib/freeradius/rlm_sql_sqlite.so
 lib/freeradius/rlm_sqlcounter.so
-lib/freeradius/rlm_sqlhpwippool.so
 lib/freeradius/rlm_sqlippool.so
 lib/freeradius/rlm_test.so
 lib/freeradius/rlm_unix.so
@@ -284,8 +317,11 @@ share/doc/freeradius/rfc/rfc7599.txt
 share/doc/freeradius/schemas/
 share/doc/freeradius/schemas/logstash/
 share/doc/freeradius/schemas/logstash/README
+share/doc/freeradius/schemas/logstash/kibana3-dashboard.json
+share/doc/freeradius/schemas/logstash/kibana4-dashboard.json
+share/doc/freeradius/schemas/logstash/log-courier.conf
+share/doc/freeradius/schemas/logstash/logstash-radius.conf
 share/doc/freeradius/schemas/logstash/radius-mapping.sh
-share/doc/freeradius/schemas/logstash/radius.conf
 share/doc/freeradius/schemas/sql
 share/doc/freeradius/vendor/
 share/doc/freeradius/vendor/ascend
@@ -326,8 +362,6 @@ share/examples/freeradius/hints
 share/examples/freeradius/huntgroups
 share/examples/freeradius/mods-available/
 @sample ${FREERADIUS_ETC}/mods-available/
-@comment share/examples/freeradius/mods-available/pam
-@comment share/examples/freeradius/mods-available/unbound
 share/examples/freeradius/mods-available/README.rst
 @sample ${FREERADIUS_ETC}/mods-available/README.rst
 share/examples/freeradius/mods-available/abfab_psk_sql
@@ -402,6 +436,7 @@ share/examples/freeradius/mods-available/opendirectory
 @sample ${FREERADIUS_ETC}/mods-available/opendirectory
 share/examples/freeradius/mods-available/otp
 @sample ${FREERADIUS_ETC}/mods-available/otp
+@comment share/examples/freeradius/mods-available/pam
 share/examples/freeradius/mods-available/pap
 @sample ${FREERADIUS_ETC}/mods-available/pap
 share/examples/freeradius/mods-available/passwd
@@ -438,6 +473,7 @@ share/examples/freeradius/mods-available/sqlippool
 @sample ${FREERADIUS_ETC}/mods-available/sqlippool
 share/examples/freeradius/mods-available/sradutmp
 @sample ${FREERADIUS_ETC}/mods-available/sradutmp
+@comment share/examples/freeradius/mods-available/unbound
 share/examples/freeradius/mods-available/unix
 @sample ${FREERADIUS_ETC}/mods-available/unix
 share/examples/freeradius/mods-available/unpack
@@ -731,6 +767,7 @@ share/freeradius/dictionary.gandalf
 share/freeradius/dictionary.garderos
 share/freeradius/dictionary.gemtek
 share/freeradius/dictionary.h3c
+share/freeradius/dictionary.hillstone
 share/freeradius/dictionary.hp
 share/freeradius/dictionary.huawei
 share/freeradius/dictionary.iana
@@ -744,11 +781,13 @@ share/freeradius/dictionary.juniper
 share/freeradius/dictionary.karlnet
 share/freeradius/dictionary.kineto
 share/freeradius/dictionary.lancom
+share/freeradius/dictionary.lantronix
 share/freeradius/dictionary.livingston
 share/freeradius/dictionary.localweb
 share/freeradius/dictionary.lucent
 share/freeradius/dictionary.manzara
 share/freeradius/dictionary.meinberg
+share/freeradius/dictionary.meraki
 share/freeradius/dictionary.merit
 share/freeradius/dictionary.meru
 share/freeradius/dictionary.microsoft

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/12/10 09:56:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/01/25 20:32:15 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -6,19 +6,19 @@ SHARED_ONLY=	Yes
 
 COMMENT-main=	RADIUS server implementation
 COMMENT-iodbc=	freeradius iodbc rlm addon
+COMMENT-memcached= freeradius memcached rlm addon
 COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-ldap=	freeradius ldap rlm addon
 COMMENT-python=	freeradius python rlm addon
 
-V=		3.0.10
-REVISION=	0
-REVISION-main=	3
+V=		3.0.11
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
 PKGNAME-main=	freeradius-$V
 PKGNAME-iodbc=	freeradius-iodbc-$V
+PKGNAME-memcached= freeradius-memcached-$V
 PKGNAME-mysql=	freeradius-mysql-$V
 PKGNAME-pgsql=	freeradius-pgsql-$V
 PKGNAME-python=	freeradius-python-$V
@@ -56,7 +56,7 @@ TEST_IS_INTERACTIVE=Yes # doesn't exit properly
 
 MODULES=	lang/python
 
-MULTI_PACKAGES=	-main -python -ldap -iodbc -mysql -pgsql
+MULTI_PACKAGES=	-main -python -ldap -iodbc -memcached -mysql -pgsql
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	no#...has its own _special_ libtool.
@@ -81,7 +81,7 @@ WANTLIB-main += c crypto curl execinfo gdbm hiredis idn json-c m nghttp2
 WANTLIB-main += pcap pcre perl pthread readline sqlite3 ssl talloc termcap
 WANTLIB-main += util ykclient yubikey z
 
-PSEUDO_FLAVORS=	no_python no_ldap no_iodbc no_mysql no_pgsql
+PSEUDO_FLAVORS=	no_python no_ldap no_iodbc no_memcached no_mysql no_pgsql
 FLAVOR?=
 
 .include <bsd.port.arch.mk>
@@ -115,6 +115,14 @@ CONFIGURE_ARGS+=	--without-rlm_sql_iodbc
 LIB_DEPENDS-iodbc=	databases/iodbc
 WANTLIB-iodbc=		iodbc>=2
 RUN_DEPENDS-iodbc=	#empty
+
+# rlm_sql_memcached
+.if ! ${BUILD_PACKAGES:M-memcached}
+CONFIGURE_ARGS+=	--without-rlm_sql_memcached
+.endif
+LIB_DEPENDS-memcached=	devel/libmemcached
+WANTLIB-memcached=	memcached pthread
+RUN_DEPENDS-memcached=	#empty
 
 # rlm_sql_mysql
 .if ${BUILD_PACKAGES:M-mysql}

@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2015/11/12 12:59:37 sthen Exp $
+$OpenBSD: patch-configure,v 1.2 2016/01/25 20:32:15 sthen Exp $
 
 Don't pick up collectd if installed at build time.
 
---- configure.orig	Wed Nov 11 17:16:18 2015
-+++ configure	Wed Nov 11 17:19:35 2015
-@@ -7005,7 +7005,7 @@ if test "x$smart_lib" != "x"; then
+--- configure.orig	Mon Jan 25 18:27:03 2016
++++ configure	Mon Jan 25 20:09:38 2016
+@@ -7002,7 +7002,7 @@ if test "x$smart_lib" != "x"; then
    SMART_LIBS="$smart_ldflags $smart_lib $SMART_LIBS"
  fi
  
