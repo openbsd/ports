@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2014/09/14 05:58:07 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2016/01/25 20:05:19 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -31,7 +31,7 @@ At last, the CVE data needs to be put into the database:
     $ pullcves pull
 Note that the first time this command is run, it will take a long time.
 Subsequent calls to pullcves(1) will only update the current year and
-will be must faster. It is advised to run this command regularly to make
+will be much faster. It is advised to run this command regularly to make
 sure the local CVE database is up to date with upstream.
 
 Getting started with cvechecker
