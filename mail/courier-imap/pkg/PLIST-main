@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2015/08/27 09:33:17 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2016/01/25 14:35:46 giovanni Exp $
 @conflict imap-uw-*
 @conflict courier-utils-*
 @pkgpath ${BASE_PKGPATH}
@@ -11,7 +11,7 @@
 @bin bin/maildiracl
 @bin bin/maildirkw
 @bin bin/maildirmake
-bin/makedat
+@comment bin/makedat
 bin/makeimapaccess
 @bin libexec/couriertcpd
 libexec/imapd-ssl.rc
