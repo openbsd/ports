@@ -1,4 +1,4 @@
-# $OpenBSD: options.sample,v 1.5 2015/07/06 13:49:49 sthen Exp $
+# $OpenBSD: options.sample,v 1.6 2016/01/25 17:05:49 sthen Exp $
 
 # don't ask about removing old files
 #nopurge 1
@@ -10,4 +10,4 @@
 #output /share/iplayer
 
 #tvmode hlsbest,best
-#radiomode hlsbest,best
+radiomode dashhigh,best

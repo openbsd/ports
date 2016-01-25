@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.96 2016/01/19 00:20:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.97 2016/01/25 17:05:49 sthen Exp $
 
 COMMENT=		download/stream programmes from BBC iPlayer
 
 DISTNAME=		get_iplayer-2.95pre20160117a
+REVISION=		0
 GH_ACCOUNT=		get-iplayer
 GH_PROJECT=		get_iplayer
 GH_COMMIT=		1b25ba25fb8c7b28c2c71082c75408a8cd3531f0
@@ -16,8 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
-RUN_DEPENDS=		audio/id3lib \
-			audio/p5-MP3-Tag \
+RUN_DEPENDS=		audio/p5-MP3-Tag \
 			graphics/ffmpeg \
 			multimedia/atomicparsley \
 			net/rtmpdump>=2.4 \

@@ -1,4 +1,4 @@
-$OpenBSD: patch-get_iplayer,v 1.74 2016/01/19 00:20:59 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.75 2016/01/25 17:05:49 sthen Exp $
 --- get_iplayer.orig	Sun Jan 17 19:44:34 2016
 +++ get_iplayer	Tue Jan 19 00:18:54 2016
 @@ -1,4 +1,4 @@
@@ -24,21 +24,3 @@ $OpenBSD: patch-get_iplayer,v 1.74 2016/01/19 00:20:59 sthen Exp $
  }
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
-@@ -916,7 +917,7 @@ sub init_search {
- 	}
- 
- 
--	$bin->{id3v2}		= $opt->{id3v2} || 'id3v2';
-+	$bin->{id3v2}		= $opt->{id3v2} || 'id3tag';
- 	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
- 
- 	$bin->{rtmpdump}	= $opt->{rtmpdump} || 'rtmpdump';
-@@ -12208,7 +12209,7 @@ sub tag_file_id3 {
- # add basic ID3 tag with id3v2
- sub tag_file_id3_basic {
- 	my ($self, $meta, $tags) = @_;
--	if ( main::exists_in_path('id3v2') ) {
-+	if ( main::exists_in_path('id3tag') ) {
- 		main::logger "INFO: ID3 BASIC tagging \U$meta->{ext}\E file\n";
- 		# notify about limitations of basic tagging
- 		if ( $opt->{verbose} ) {
