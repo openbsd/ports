@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/01/22 09:03:14 semarie Exp $
+# $OpenBSD: Makefile,v 1.15 2016/01/25 05:36:05 semarie Exp $
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS =	amd64
@@ -10,6 +10,7 @@ COMMENT-doc =		html documentation for rustc
 V =			1.6.0
 RUST_HASH =		ca9f0d77
 DISTNAME =		rustc-${V}-src
+REVISION =		0
 
 SUBST_VARS +=		RUST_HASH
 
@@ -56,6 +57,7 @@ SUBST_VARS +=		TRIPLE_ARCH
 
 MODULES +=		gcc4 \
 			lang/python
+MODPY_RUNDEP =		No
 
 # rustllvm need c++11
 MODGCC4_LANGS =		c++
