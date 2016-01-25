@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1463 2016/01/25 21:03:44 kili Exp $
+# $OpenBSD: Makefile,v 1.1464 2016/01/25 21:33:42 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -44,7 +44,6 @@
      SUBDIR += bullet
      SUBDIR += bzr
      SUBDIR += bzr-svn
-     SUBDIR += c2hs
      SUBDIR += cabal-install
      SUBDIR += capstone
      SUBDIR += catalyst
@@ -216,7 +215,6 @@
      SUBDIR += hs-hashtables
      SUBDIR += hs-hood
      SUBDIR += hs-hslogger
-     SUBDIR += hs-language-c
      SUBDIR += hs-largeword
      SUBDIR += hs-lifted-base
      SUBDIR += hs-logict
