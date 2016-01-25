@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/12 16:34:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/25 15:32:12 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PDF manipulation library
 
-DISTNAME=	Poppler-1.01
-REVISION=	0
+DISTNAME=	Poppler-1.0101
 
 CATEGORIES=	print
 
