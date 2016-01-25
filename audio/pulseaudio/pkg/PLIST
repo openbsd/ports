@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2015/09/25 06:57:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2016/01/25 06:56:07 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -61,9 +61,6 @@ lib/libpulse-simple.la
 lib/libpulse.a
 lib/libpulse.la
 @lib lib/libpulse.so.${LIBpulse_VERSION}
-lib/libpulsecore-${VERSION}.a
-lib/libpulsecore-${VERSION}.la
-lib/libpulsecore-${VERSION}.so
 lib/pkgconfig/libpulse-mainloop-glib.pc
 lib/pkgconfig/libpulse-simple.pc
 lib/pkgconfig/libpulse.pc
@@ -141,6 +138,9 @@ lib/pulseaudio/
 lib/pulseaudio/libpulsecommon-${VERSION}.a
 lib/pulseaudio/libpulsecommon-${VERSION}.la
 lib/pulseaudio/libpulsecommon-${VERSION}.so
+lib/pulseaudio/libpulsecore-${VERSION}.a
+lib/pulseaudio/libpulsecore-${VERSION}.la
+lib/pulseaudio/libpulsecore-${VERSION}.so
 @man man/man1/esdcompat.1
 @man man/man1/pacat.1
 @man man/man1/pacmd.1
