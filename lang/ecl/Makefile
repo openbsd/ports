@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/08/29 14:48:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2016/01/25 19:09:51 jasper Exp $
 
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
@@ -32,7 +32,7 @@ CONFIGURE_ARGS +=	--enable-boehm=system \
 			--with-system-gmp \
 			--with-gmp-prefix=${LOCALBASE}
 
-# etags gets picked up if it's install, and dumps core while
+# etags gets picked up if it's installed, and dumps core while
 # generating the tags. so override it for now untill etags is fixed.
 CONFIGURE_ENV +=	ETAGS=/usr/bin/true
 
