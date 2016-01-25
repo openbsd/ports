@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.485 2016/01/20 05:17:05 shadchin Exp $
+# $OpenBSD: Makefile,v 1.486 2016/01/25 21:03:44 kili Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -68,7 +68,6 @@
      SUBDIR += hs-hexpat
      SUBDIR += hs-libxml-sax
      SUBDIR += hs-polyparse
-     SUBDIR += hs-tagsoup
      SUBDIR += hs-xml
      SUBDIR += hs-xml-types
      SUBDIR += html

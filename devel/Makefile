@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1462 2016/01/23 18:39:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1463 2016/01/25 21:03:44 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -195,11 +195,9 @@
      SUBDIR += hs-bytestring-mmap
      SUBDIR += hs-case-insensitive
      SUBDIR += hs-cereal
-     SUBDIR += hs-cmdargs
      SUBDIR += hs-cmdlib
      SUBDIR += hs-concurrent-extra
      SUBDIR += hs-conduit
-     SUBDIR += hs-configurator
      SUBDIR += hs-constraints
      SUBDIR += hs-convertible
      SUBDIR += hs-data-default
@@ -217,7 +215,6 @@
      SUBDIR += hs-hashable
      SUBDIR += hs-hashtables
      SUBDIR += hs-hood
-     SUBDIR += hs-hoogle
      SUBDIR += hs-hslogger
      SUBDIR += hs-language-c
      SUBDIR += hs-largeword
@@ -247,7 +244,6 @@
      SUBDIR += hs-regex-posix
      SUBDIR += hs-regex-tdfa
      SUBDIR += hs-resourcet
-     SUBDIR += hs-safe
      SUBDIR += hs-sandi
      SUBDIR += hs-scientific
      SUBDIR += hs-semigroups
@@ -268,12 +264,10 @@
      SUBDIR += hs-transformers-compat
      SUBDIR += hs-tuple
      SUBDIR += hs-unbounded-delays
-     SUBDIR += hs-uniplate
      SUBDIR += hs-unix-compat
      SUBDIR += hs-unordered-containers
      SUBDIR += hs-utf8-string
      SUBDIR += hs-uuid
-     SUBDIR += hs-vault
      SUBDIR += hs-vector
      SUBDIR += hs-void
      SUBDIR += hscolour
