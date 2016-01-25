@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/05/15 10:48:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/01/25 15:19:09 sthen Exp $
 @newgroup _openfire:632
 @newuser _openfire:632:_openfire:daemon:openfire user:/var/empty:/bin/sh
 @extraunexec rm -rf %D/openfire/conf/*
@@ -15,13 +15,8 @@ openfire/lib/
 openfire/lib/bcpg-jdk15on.jar
 openfire/lib/bcpkix-jdk15on.jar
 openfire/lib/bcprov-jdk15on.jar
-openfire/lib/commons-el.jar
 openfire/lib/hsqldb.jar
-openfire/lib/jasper-compiler.jar
-openfire/lib/jasper-runtime.jar
 openfire/lib/javax.websocket-api.jar
-openfire/lib/jdic.jar
-openfire/lib/jetty-schemas.jar
 openfire/lib/jtds.jar
 openfire/lib/log4j.xml
 openfire/lib/mail.jar
@@ -29,10 +24,8 @@ openfire/lib/mysql.jar
 openfire/lib/npn-boot.jar
 openfire/lib/openfire.jar
 openfire/lib/postgres.jar
-openfire/lib/servlet-api.jar
 openfire/lib/slf4j-log4j12.jar
 openfire/lib/startup.jar
-openfire/lib/tray.dll
 @mode 770
 @owner root
 @group _openfire
@@ -46,6 +39,8 @@ openfire/plugins/admin/plugin.xml
 openfire/plugins/admin/webapp/
 openfire/plugins/admin/webapp/WEB-INF/
 openfire/plugins/admin/webapp/WEB-INF/admin.tld
+openfire/plugins/admin/webapp/WEB-INF/classes/
+openfire/plugins/admin/webapp/WEB-INF/classes/openfire_init.xml
 openfire/plugins/admin/webapp/WEB-INF/decorators.xml
 openfire/plugins/admin/webapp/WEB-INF/dwr.xml
 openfire/plugins/admin/webapp/WEB-INF/lib/
@@ -53,7 +48,13 @@ openfire/plugins/admin/webapp/WEB-INF/lib/admin-jsp.jar
 openfire/plugins/admin/webapp/WEB-INF/lib/commons-fileupload.jar
 openfire/plugins/admin/webapp/WEB-INF/lib/commons-io.jar
 openfire/plugins/admin/webapp/WEB-INF/lib/dwr.jar
+openfire/plugins/admin/webapp/WEB-INF/lib/readme.txt
+openfire/plugins/admin/webapp/WEB-INF/lib/versions.txt
 openfire/plugins/admin/webapp/WEB-INF/sitemesh.xml
+openfire/plugins/admin/webapp/WEB-INF/tags/
+openfire/plugins/admin/webapp/WEB-INF/tags/admin/
+openfire/plugins/admin/webapp/WEB-INF/tags/admin/contentBox.tagx
+openfire/plugins/admin/webapp/WEB-INF/tags/admin/infoBox.tagx
 openfire/plugins/admin/webapp/WEB-INF/web.xml
 openfire/plugins/admin/webapp/favicon.ico
 openfire/plugins/admin/webapp/images/
@@ -119,6 +120,7 @@ openfire/plugins/admin/webapp/images/jive-tertnav-arrow.gif
 openfire/plugins/admin/webapp/images/jive-tertnav-top.gif
 openfire/plugins/admin/webapp/images/language_zh_CN.gif
 openfire/plugins/admin/webapp/images/lock.gif
+openfire/plugins/admin/webapp/images/lock_both.gif
 openfire/plugins/admin/webapp/images/login_background.png
 openfire/plugins/admin/webapp/images/login_boxbg.gif
 openfire/plugins/admin/webapp/images/login_header.gif
@@ -332,6 +334,14 @@ openfire/resources/database/upgrade/21/openfire_oracle.sql
 openfire/resources/database/upgrade/21/openfire_postgresql.sql
 openfire/resources/database/upgrade/21/openfire_sqlserver.sql
 openfire/resources/database/upgrade/21/openfire_sybase.sql
+openfire/resources/database/upgrade/22/
+openfire/resources/database/upgrade/22/openfire_db2.sql
+openfire/resources/database/upgrade/22/openfire_hsqldb.sql
+openfire/resources/database/upgrade/22/openfire_mysql.sql
+openfire/resources/database/upgrade/22/openfire_oracle.sql
+openfire/resources/database/upgrade/22/openfire_postgresql.sql
+openfire/resources/database/upgrade/22/openfire_sqlserver.sql
+openfire/resources/database/upgrade/22/openfire_sybase.sql
 openfire/resources/database/upgrade/4/
 openfire/resources/database/upgrade/4/openfire_db2.sql
 openfire/resources/database/upgrade/4/openfire_hsqldb.sql
