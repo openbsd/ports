@@ -1,9 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/05/17 11:13:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/01/26 13:40:51 sthen Exp $
 @bin bin/iscsi-target
-lib/libiscsi.a
-lib/libiscsi.la
-@lib lib/libiscsi.so.${LIBiscsi_VERSION}
-@man man/man3/libiscsi.3
 @man man/man5/targets.5
 @man man/man8/iscsi-target.8
 share/doc/netbsd-iscsi-target/

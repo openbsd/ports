@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2015/02/18 12:51:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/26 13:40:50 sthen Exp $
 
 COMMENT=	iSCSI (RFC 3720) target from NetBSD
 
 DISTNAME=	netbsd-iscsi-20111006
 PKGNAME=	${DISTNAME:S/-iscsi/-iscsi-target/}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	net sysutils
 
@@ -12,8 +12,6 @@ CATEGORIES=	net sysutils
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c pthread
-
-SHARED_LIBS +=	iscsi                0.0      # 0.2
 
 MASTER_SITES=	http://ftp.netbsd.org/pub/pkgsrc/distfiles/ \
 		ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/
@@ -32,5 +30,6 @@ post-install:
 	cd ../src; \
 	${INSTALL_DATA} etc/auths etc/targets examples/* \
 	    ${PREFIX}/share/examples/netbsd-iscsi-target
+	rm ${PREFIX}/lib/lib* ${PREFIX}/man/man3/libiscsi.3
 
 .include <bsd.port.mk>

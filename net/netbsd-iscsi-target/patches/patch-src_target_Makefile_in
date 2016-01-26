@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_target_Makefile_in,v 1.1 2016/01/26 13:40:50 sthen Exp $
+--- src/target/Makefile.in.orig	Mon May 10 15:48:22 2010
++++ src/target/Makefile.in	Thu Oct 22 11:52:03 2015
+@@ -210,7 +210,7 @@ top_srcdir = @top_srcdir@
+ AM_CFLAGS = $(WARNCFLAGS) -pthread
+ iscsi_target_SOURCES = iscsi-target.c
+ iscsi_target_CPPFLAGS = -I$(top_srcdir)/include
+-iscsi_target_LDADD = ../lib/libiscsi.la -lpthread
++iscsi_target_LDADD = -static ../lib/libiscsi.la -lpthread
+ man8_MANS = iscsi-target.8
+ man5_MANS = targets.5
+ dist_man_MANS = iscsi-target.8 targets.5
