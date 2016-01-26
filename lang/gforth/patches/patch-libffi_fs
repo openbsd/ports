@@ -1,0 +1,13 @@
+$OpenBSD: patch-libffi_fs,v 1.1 2016/01/26 22:24:58 jasper Exp $
+--- libffi.fs.orig	Tue Jan 26 09:39:02 2016
++++ libffi.fs	Tue Jan 26 09:39:26 2016
+@@ -25,7 +25,9 @@ c-library libffi
+ s" ffi" add-lib
+ 
+ \ The ffi.h of XCode needs the following line, and it should not hurt elsewhere
++\c #ifdef __apple__
+ \c #define MACOSX
++\c #endif
+ include-ffi.h-string save-c-prefix-line \ #include <ffi.h>
+ \c #include <stdio.h>
+ \c static void **gforth_clist;

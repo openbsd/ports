@@ -1,0 +1,15 @@
+$OpenBSD: patch-envos_fs_in,v 1.1 2016/01/26 22:24:58 jasper Exp $
+
+Make sure to find headers and libraries outside of base too.
+
+--- envos.fs.in.orig	Tue Jan 26 09:47:55 2016
++++ envos.fs.in	Tue Jan 26 09:48:42 2016
+@@ -32,7 +32,7 @@ set-current
+ 
+ : libtool-cc ( -- c-addr u ) \ gforth
+ \G invocation string of the C compiler used for libtool
+-    s" @CC@" ;
++    s" @CC@ -I${LOCALBASE}/include -L${LOCALBASE}/lib" ;
+ 
+ : libtool-flags ( -- c-addr u ) \ gforth
+ \G force no undefined for cygwin

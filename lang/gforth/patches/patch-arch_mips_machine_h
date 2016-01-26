@@ -1,10 +1,10 @@
-$OpenBSD: patch-arch_mips_machine_h,v 1.1 2012/10/14 20:18:56 landry Exp $
+$OpenBSD: patch-arch_mips_machine_h,v 1.2 2016/01/26 22:24:58 jasper Exp $
 
 Let the MIPS backend build on OpenBSD.
 
---- arch/mips/machine.h.orig	Sun Mar  9 16:06:31 2003
-+++ arch/mips/machine.h	Wed Oct  3 20:28:31 2012
-@@ -31,8 +31,10 @@
+--- arch/mips/machine.h.orig	Fri Oct 11 23:31:28 2013
++++ arch/mips/machine.h	Tue Jan 26 09:04:42 2016
+@@ -26,8 +26,10 @@
  #endif
  
  /* cache flush stuff */

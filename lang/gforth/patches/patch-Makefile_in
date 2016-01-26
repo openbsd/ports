@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2016/01/26 08:26:43 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2016/01/26 22:24:58 jasper Exp $
 --- Makefile.in.orig	Mon Aug 25 09:57:49 2003
 +++ Makefile.in	Tue Jan 26 09:22:00 2016
 @@ -51,7 +51,7 @@ osclass = @OSCLASS@
@@ -10,22 +10,3 @@ $OpenBSD: patch-Makefile_in,v 1.2 2016/01/26 08:26:43 jasper Exp $
  RMTREE	= rm -rf
  CP	= cp -p
  MV	= mv
-@@ -60,6 +60,7 @@ INSTALL	= @INSTALL@
- INSTALL_PROGRAM = @INSTALL_PROGRAM@
- INSTALL_DATA = @INSTALL_DATA@
- INSTALL_INFO = @INSTALL_INFO@
-+INSTALL_SCRIPT = @INSTALL_SCRIPT@
- LN_S	= @LN_S@
- GCC	= @CC@
- CC	= $(GCC)
-@@ -110,8 +111,8 @@ LDLIBS	= @LIBS@
- # ------------	Install Directorys
- 
- VPATH = @srcdir@
--prefix = @prefix@
--exec_prefix = @exec_prefix@
-+prefix = ${DESTDIR}@prefix@
-+exec_prefix =${DESTDIR}@prefix@
- srcdir = @srcdir@
- bindir = $(exec_prefix)/bin
- #read-only architecture-independent files
