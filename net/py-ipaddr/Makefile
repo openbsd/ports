@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/26 13:05:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/26 13:29:11 sthen Exp $
 
 COMMENT =	Python IP address manipulation library
 
@@ -13,9 +13,8 @@ HOMEPAGE =	https://github.com/google/ipaddr-py
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://ipaddr-py.googlecode.com/files/
-
 MODULES	=	lang/python
+MODPY_PI =	Yes
 
 do-test:
 	${MODPY_BIN} ${WRKSRC}/ipaddr_test.py

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/01/26 13:05:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2016/01/26 13:29:11 sthen Exp $
 
 COMMENT =	Python client library for Google data APIs
 
@@ -14,9 +14,8 @@ MAINTAINER =	frantisek holop <minusf@obiit.org>
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	https://gdata-python-client.googlecode.com/files/
-
 MODULES =	lang/python
+MODPY_PI =	Yes
 
 TEST_IS_INTERACTIVE = Yes
 

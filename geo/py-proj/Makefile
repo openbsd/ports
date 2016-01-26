@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/01/26 13:05:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2016/01/26 13:29:11 sthen Exp $
 
 COMMENT =		Pyrex generated python interface to PROJ.4 library
 
@@ -18,9 +18,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 
-MASTER_SITES =		https://pyproj.googlecode.com/files/
-
 MODULES =		lang/python
+MODPY_PI =		Yes
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 RUN_DEPENDS +=		devel/proj \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/26 13:05:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/26 13:29:11 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -11,9 +11,9 @@ EXTRACT_SUFX =	.zip
 PKGNAME =	py-apsw-${MODPY_EGG_VERSION}
 CATEGORIES =	databases
 
-HOMEPAGE=	https://github.com/rogerbinns/apsw
-
-MASTER_SITES =	https://apsw.googlecode.com/files/
+HOMEPAGE=	https://rogerbinns.github.io/apsw/
+MASTER_SITES=	https://apsw.googlecode.com/files/
+PORTROACH=	site:https://github.com/rogerbinns/apsw/releases
 
 # zlib
 PERMIT_PACKAGE_CDROM=	Yes
