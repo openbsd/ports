@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2015/01/30 15:26:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2016/01/26 21:52:17 sthen Exp $
 
 COMMENT=	web proxy with advanced filtering capabilities
 
-V=		3.0.23
+V=		3.0.24
 DISTNAME=	privoxy-${V}-stable
 PKGNAME=	privoxy-${V}
 CATEGORIES=	www
@@ -23,7 +23,8 @@ MAKE_FILE=	GNUmakefile
 
 LIB_DEPENDS=	devel/pcre
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.69
 CONFIGURE_ENV=	CPPFLAGS="-Dunix -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
