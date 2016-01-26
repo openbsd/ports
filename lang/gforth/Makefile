@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2015/02/16 22:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2016/01/26 08:26:43 jasper Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc sparc64
 
 COMMENT =		ANS Standard Forth interpreter and compiler
 
-DISTNAME =		gforth-0.6.2
-REVISION =		4
+V =			0.6.2
+DISTNAME =		gforth-${V}
+REVISION =		5
 CATEGORIES =		lang
 
 HOMEPAGE =		http://bernd-paysan.de/gforth.html
@@ -23,7 +24,7 @@ CFLAGS +=		-Dunix
 FAKE_FLAGS+=		DESTDIR="${WRKINST}"
 
 KERNEL = 		kernl${WORDSIZE}${ENDIAN}.fi
-SUBST_VARS +=		KERNEL
+SUBST_VARS +=		KERNEL V
 
 .include <bsd.port.arch.mk>
 
