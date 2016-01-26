@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/26 01:31:49 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/26 14:50:06 ajacoutot Exp $
 
 COMMENT =		inotify lib for haskell
 
@@ -17,6 +17,7 @@ MODGHC_PACKAGE_KEY =	Dw3UcxQVCOX92NDmla2yam
 MODGHC_SETUP_CONF_ARGS +=	--extra-include-dirs=${LOCALBASE}/include/inotify/ \
 				--extra-lib-dirs=${LOCALBASE}/lib/inotify/
 
+BUILD_DEPENDS = devel/libinotify
 RUN_DEPENDS = devel/libinotify
 
 NO_TEST = Yes
