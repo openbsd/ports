@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2015/09/03 07:20:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/01/26 13:05:26 sthen Exp $
 
 COMMENT =		library for getting/setting process names
 
 MODPY_EGG_VERSION =	1.1.9
+REVISION =		0
 DISTNAME =		setproctitle-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://code.google.com/p/py-setproctitle/
+HOMEPAGE =		https://github.com/dvarrazzo/py-setproctitle
 
 # BSD 3-clause
 PERMIT_PACKAGE_CDROM =	Yes

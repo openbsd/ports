@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2015/03/16 18:07:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2016/01/26 13:05:26 sthen Exp $
 
 COMMENT =	C++ unit test framework
 
 DISTNAME =	gtest-1.4.0
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=	gtest		0.0   # .0.0
 SHARED_LIBS +=	gtest_main	0.0   # .0.0
 
 CATEGORIES =	devel
 
-HOMEPAGE =	https://code.google.com/p/googletest/
+HOMEPAGE =	https://github.com/google/googletest
 
 MAINTAINER =	Vincent Auclair <auclair.vincent@gmail.com>
 

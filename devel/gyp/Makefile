@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/29 10:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/26 13:05:26 sthen Exp $
 
 COMMENT= generate SCons/Makefiles from platform-independent input
 
 DISTNAME=	gyp-r1812
-PKGNAME= ${DISTNAME:S/r/0./g}
-REVISION=0
+REVISION=	1
+PKGNAME=	${DISTNAME:S/r/0./g}
 
 CATEGORIES=	devel
 
-HOMEPAGE=	https://code.google.com/p/gyp/
+HOMEPAGE=	https://bugs.chromium.org/p/gyp/
 
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2015/09/14 07:02:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2016/01/26 13:05:27 sthen Exp $
 
 COMMENT=		XML parser designed for Jabber applications
 DISTNAME=		iksemel-1.4
-REVISION=		5
+REVISION=		6
 
 SHARED_LIBS=		iksemel		0.1	# .4.0
 
 CATEGORIES=		textproc net
 
-HOMEPAGE=		https://code.google.com/p/iksemel/
+HOMEPAGE=		https://github.com/meduketto/iksemel
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 

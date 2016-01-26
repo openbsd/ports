@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/29 10:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/26 13:05:27 sthen Exp $
 
 COMMENT =		Python module to read and work with PE files
 
 MODPY_EGG_VERSION =	1.2.10.post139
-REVISION =		1
+REVISION =		2
 DISTNAME =		pefile-1.2.10-139
 PKGNAME =		py-pefile-1.2.10.139
 
 CATEGORIES =		security
 
-HOMEPAGE =		https://code.google.com/p/pefile/
+HOMEPAGE =		https://github.com/erocarrera/pefile
 
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 

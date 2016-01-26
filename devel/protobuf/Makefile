@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2015/03/16 18:07:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2016/01/26 13:05:26 sthen Exp $
 
 COMMENT =		c++ protocol buffers
 
 DISTNAME =		protobuf-2.4.1
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		protobuf	1.0   # 7.0
 SHARED_LIBS +=		protoc		1.0   # 7.0
@@ -11,7 +11,7 @@ SHARED_LIBS +=		protobuf-lite	1.0   # 7.0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://code.google.com/p/protobuf/
+HOMEPAGE =		https://github.com/google/protobuf
 
 MAINTAINER =		Vincent Auclair <auclair.vincent@gmail.com>
 

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/07 21:32:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/26 13:05:26 sthen Exp $
 
 COMMENT =		LDAP authentication plugin for OpenVPN 2.x
 
 VERSION =		2.0.3
+REVISION =		1
 DISTNAME =		auth-ldap-${VERSION}
 PKGNAME =		openvpn-${DISTNAME}
-REVISION =		0
 CATEGORIES =		net security
 
-HOMEPAGE =		https://code.google.com/p/openvpn-auth-ldap/
+HOMEPAGE =		https://github.com/threerings/openvpn-auth-ldap
 
 MAINTAINER =		Joel Sing <jsing@openbsd.org>
 

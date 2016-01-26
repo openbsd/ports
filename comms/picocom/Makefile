@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/23 03:22:02 lteo Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/26 13:05:26 sthen Exp $
 
 COMMENT =		minimal dumb-terminal emulation program
 
 DISTNAME =		picocom-1.7
+REVISION =		0
 CATEGORIES =		comms
 
-HOMEPAGE =		https://code.google.com/p/picocom/
+HOMEPAGE =		https://github.com/npat-efault/picocom
 MAINTAINER =		Kyle Isom <kyle@tyrfingr.is>
 
 # GPLv2+

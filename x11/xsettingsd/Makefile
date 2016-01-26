@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2015/12/03 21:24:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/26 13:05:27 sthen Exp $
 
 COMMENT=	lightweight XSETTINGS daemon
 
 DISTNAME=	derat-xsettingsd-486be8b
 PKGNAME=	xsettingsd-0.20120312
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 
-HOMEPAGE=	https://code.google.com/p/xsettingsd/
+HOMEPAGE=	https://github.com/derat/xsettingsd
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
