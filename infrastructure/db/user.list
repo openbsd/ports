@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.262 2015/12/27 21:35:19 pascal Exp $
+$OpenBSD: user.list,v 1.263 2016/01/26 19:39:36 jasper Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -274,3 +274,4 @@ id  user		group		port options
 763 _kea		_kea		net/kea
 764 _distcc		_distcc		devel/distcc
 765 _hedgewars		_hedgewars	games/hedgewars
+766 _kibana		_kibana		www/kibana
