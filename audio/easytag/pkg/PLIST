@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2015/08/31 06:15:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2016/01/26 06:39:21 ajacoutot Exp $
 @bin bin/easytag
 @man man/man1/easytag.1
 share/appdata/
@@ -192,6 +192,29 @@ share/help/hu/easytag/starting.page
 share/help/hu/easytag/tag-capitalization.page
 share/help/hu/easytag/tag-field.page
 share/help/hu/easytag/tag.page
+share/help/sv/
+share/help/sv/easytag/
+share/help/sv/easytag/cddb-search.page
+share/help/sv/easytag/file-rename.page
+share/help/sv/easytag/file-select.page
+share/help/sv/easytag/format-specifier.page
+share/help/sv/easytag/image-delete.page
+share/help/sv/easytag/image-export.page
+share/help/sv/easytag/image.page
+share/help/sv/easytag/index.page
+share/help/sv/easytag/introduction.page
+share/help/sv/easytag/keyboard-shortcuts.page
+share/help/sv/easytag/legal.xml
+share/help/sv/easytag/media/
+share/help/sv/easytag/media/icon.png
+share/help/sv/easytag/playlist-generate.page
+share/help/sv/easytag/problems-id3.page
+share/help/sv/easytag/problems-ogg-split.page
+share/help/sv/easytag/scanner.page
+share/help/sv/easytag/starting.page
+share/help/sv/easytag/tag-capitalization.page
+share/help/sv/easytag/tag-field.page
+share/help/sv/easytag/tag.page
 share/icons/hicolor/128x128/apps/easytag.png
 share/icons/hicolor/16x16/apps/easytag.png
 share/icons/hicolor/22x22/apps/easytag.png
