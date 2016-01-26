@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_dwood3rc,v 1.1.1.1 2012/03/21 16:17:58 sthen Exp $
---- doc/dwood3rc.orig	Wed Feb 29 07:59:53 2012
-+++ doc/dwood3rc	Tue Mar 20 22:28:45 2012
+$OpenBSD: patch-doc_dwood3rc,v 1.2 2016/01/26 21:47:55 sthen Exp $
+--- doc/dwood3rc.orig	Wed Aug 19 05:09:43 2015
++++ doc/dwood3rc	Tue Jan 26 21:45:55 2016
 @@ -6,7 +6,7 @@ bind_address="127.0.0.1" # IP we bind to
  # The following line is disabled by being commented out
  #bind_address="::1" # We have optional IPv6 support
@@ -11,7 +11,7 @@ $OpenBSD: patch-doc_dwood3rc,v 1.1.1.1 2012/03/21 16:17:58 sthen Exp $
  # The following upstream DNS servers are Google's newly-announced (as of
  # December, 2009) public DNS servers.  For more information, see
 @@ -44,8 +44,8 @@ recursive_acl = "127.0.0.1/16" # Who is allowed to use
- maxprocs = 8 # Maximum number of pending requests
+ maxprocs = 2048 # Maximum number of pending requests
  handle_overload = 1 # Send SERVER FAIL when overloaded
  
 -maradns_uid = 99 # UID Deadwood runs as
