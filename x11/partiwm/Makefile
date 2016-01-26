@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.15 2015/08/25 11:41:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/01/26 13:10:41 sthen Exp $
 
 COMMENT=	tiling window manager
 
 DISTNAME=	parti-all-0.0.6
 PKGNAME=	${DISTNAME:S/-all//}
-REVISION=	8
+REVISION=	9
 CATEGORIES=	x11
 
-HOMEPAGE=	https://partiwm.googlecode.com/
+HOMEPAGE=	https://github.com/njsmith/partiwm
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/files/
+MASTER_SITES=	https://partiwm.googlecode.com/files/
 
 MODULES=	devel/gettext \
 		lang/python
