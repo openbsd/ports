@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/10/30 12:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/26 17:55:04 ajacoutot Exp $
 
 COMMENT =		command line client application for Mega
 
@@ -28,5 +28,7 @@ USE_GMAKE =		Yes
 # DocBook-generated bulleted lists
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
+
+CONFIGURE_ARGS =	--disable-introspection
 
 .include <bsd.port.mk>
