@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_commands_c,v 1.16 2016/01/21 13:22:58 dcoppa Exp $
+$OpenBSD: patch-src_commands_c,v 1.17 2016/01/26 09:42:35 dcoppa Exp $
 
-Fix duplicated marks on append_layout
+Fix duplicated marks on append_layout.
 
 Correctly handle command criteria for "move window to output".
 
@@ -14,8 +14,10 @@ Fix crash when trying to split and float a dock container.
 
 Refactor parsing of matches to avoid code duplication.
 
+Remove commented-out code.
+
 --- src/commands.c.orig	Wed Sep 30 08:55:10 2015
-+++ src/commands.c	Thu Jan 21 14:14:34 2016
++++ src/commands.c	Tue Jan 26 10:20:25 2016
 @@ -83,7 +83,7 @@ static Output *get_output_of_con(Con *con) {
   * and return true, signaling that no further workspace switching should occur in the calling function.
   *
@@ -25,20 +27,110 @@ Refactor parsing of matches to avoid code duplication.
      Con *ws = con_get_workspace(focused);
  
      /* If we switched to a different workspace, do nothing */
-@@ -182,9 +182,11 @@ void cmd_MIGRATION_start_nagbar(void) {
-     /* child */
-     if (migration_pid == 0) {
-         char *pageraction;
+@@ -121,102 +121,6 @@ static Con *maybe_auto_back_and_forth_workspace(Con *w
+     return workspace;
+ }
+ 
+-// This code is commented out because we might recycle it for popping up error
+-// messages on parser errors.
+-#if 0
+-static pid_t migration_pid = -1;
+-
+-/*
+- * Handler which will be called when we get a SIGCHLD for the nagbar, meaning
+- * it exited (or could not be started, depending on the exit code).
+- *
+- */
+-static void nagbar_exited(EV_P_ ev_child *watcher, int revents) {
+-    ev_child_stop(EV_A_ watcher);
+-    if (!WIFEXITED(watcher->rstatus)) {
+-        fprintf(stderr, "ERROR: i3-nagbar did not exit normally.\n");
+-        return;
+-    }
+-
+-    int exitcode = WEXITSTATUS(watcher->rstatus);
+-    printf("i3-nagbar process exited with status %d\n", exitcode);
+-    if (exitcode == 2) {
+-        fprintf(stderr, "ERROR: i3-nagbar could not be found. Is it correctly installed on your system?\n");
+-    }
+-
+-    migration_pid = -1;
+-}
+-
+-/* We need ev >= 4 for the following code. Since it is not *that* important (it
+- * only makes sure that there are no i3-nagbar instances left behind) we still
+- * support old systems with libev 3. */
+-#if EV_VERSION_MAJOR >= 4
+-/*
+- * Cleanup handler. Will be called when i3 exits. Kills i3-nagbar with signal
+- * SIGKILL (9) to make sure there are no left-over i3-nagbar processes.
+- *
+- */
+-static void nagbar_cleanup(EV_P_ ev_cleanup *watcher, int revent) {
+-    if (migration_pid != -1) {
+-        LOG("Sending SIGKILL (9) to i3-nagbar with PID %d\n", migration_pid);
+-        kill(migration_pid, SIGKILL);
+-    }
+-}
+-#endif
+-
+-void cmd_MIGRATION_start_nagbar(void) {
+-    if (migration_pid != -1) {
+-        fprintf(stderr, "i3-nagbar already running.\n");
+-        return;
+-    }
+-    fprintf(stderr, "Starting i3-nagbar, command parsing differs from expected output.\n");
+-    ELOG("Please report this on IRC or in the bugtracker. Make sure to include the full debug level logfile:\n");
+-    ELOG("i3-dump-log | gzip -9c > /tmp/i3.log.gz\n");
+-    ELOG("FYI: Your i3 version is " I3_VERSION "\n");
+-    migration_pid = fork();
+-    if (migration_pid == -1) {
+-        warn("Could not fork()");
+-        return;
+-    }
+-
+-    /* child */
+-    if (migration_pid == 0) {
+-        char *pageraction;
 -        sasprintf(&pageraction, "i3-sensible-terminal -e i3-sensible-pager \"%s\"", errorfilename);
-+        sasprintf(&pageraction, "/usr/bin/less \"%s\"\n", errorfilename);
-         char *argv[] = {
-             NULL, /* will be replaced by the executable path */
-+            "-f",
-+            config.font.pattern,
-             "-t",
-             "error",
-             "-m",
-@@ -315,108 +317,8 @@ void cmd_criteria_match_windows(I3_CMD) {
+-        char *argv[] = {
+-            NULL, /* will be replaced by the executable path */
+-            "-t",
+-            "error",
+-            "-m",
+-            "You found a parsing error. Please, please, please, report it!",
+-            "-b",
+-            "show errors",
+-            pageraction,
+-            NULL
+-        };
+-        exec_i3_utility("i3-nagbar", argv);
+-    }
+-
+-    /* parent */
+-    /* install a child watcher */
+-    ev_child *child = smalloc(sizeof(ev_child));
+-    ev_child_init(child, &nagbar_exited, migration_pid, 0);
+-    ev_child_start(main_loop, child);
+-
+-/* We need ev >= 4 for the following code. Since it is not *that* important (it
+- * only makes sure that there are no i3-nagbar instances left behind) we still
+- * support old systems with libev 3. */
+-#if EV_VERSION_MAJOR >= 4
+-    /* install a cleanup watcher (will be called when i3 exits and i3-nagbar is
+-     * still running) */
+-    ev_cleanup *cleanup = smalloc(sizeof(ev_cleanup));
+-    ev_cleanup_init(cleanup, nagbar_cleanup);
+-    ev_cleanup_start(main_loop, cleanup);
+-#endif
+-}
+-
+-#endif
+-
+ /*******************************************************************************
+  * Criteria functions.
+  ******************************************************************************/
+@@ -315,108 +219,8 @@ void cmd_criteria_match_windows(I3_CMD) {
   * specification.
   *
   */
@@ -149,7 +241,7 @@ Refactor parsing of matches to avoid code duplication.
  }
  
  /*
-@@ -424,7 +326,7 @@ void cmd_criteria_add(I3_CMD, char *ctype, char *cvalu
+@@ -424,7 +228,7 @@ void cmd_criteria_add(I3_CMD, char *ctype, char *cvalu
   * next|prev|next_on_output|prev_on_output|current'.
   *
   */
@@ -158,7 +250,7 @@ Refactor parsing of matches to avoid code duplication.
      owindow *current;
  
      DLOG("which=%s\n", which);
-@@ -500,7 +402,7 @@ void cmd_move_con_to_workspace_back_and_forth(I3_CMD) 
+@@ -500,7 +304,7 @@ void cmd_move_con_to_workspace_back_and_forth(I3_CMD) 
   * Implementation of 'move [window|container] [to] workspace <name>'.
   *
   */
@@ -167,7 +259,7 @@ Refactor parsing of matches to avoid code duplication.
      if (strncasecmp(name, "__", strlen("__")) == 0) {
          LOG("You cannot move containers to i3-internal workspaces (\"%s\").\n", name);
          ysuccess(false);
-@@ -544,7 +446,7 @@ void cmd_move_con_to_workspace_name(I3_CMD, char *name
+@@ -544,7 +348,7 @@ void cmd_move_con_to_workspace_name(I3_CMD, char *name
   * Implementation of 'move [window|container] [to] workspace number <name>'.
   *
   */
@@ -176,7 +268,7 @@ Refactor parsing of matches to avoid code duplication.
      owindow *current;
  
      /* We have nothing to move:
-@@ -591,7 +493,7 @@ void cmd_move_con_to_workspace_number(I3_CMD, char *wh
+@@ -591,7 +395,7 @@ void cmd_move_con_to_workspace_number(I3_CMD, char *wh
      ysuccess(true);
  }
  
@@ -185,7 +277,7 @@ Refactor parsing of matches to avoid code duplication.
      LOG("floating resize\n");
      Rect old_rect = floating_con->rect;
      Con *focused_con = con_descend_focused(floating_con);
-@@ -643,7 +545,7 @@ static void cmd_resize_floating(I3_CMD, char *way, cha
+@@ -643,7 +447,7 @@ static void cmd_resize_floating(I3_CMD, char *way, cha
          floating_con->scratchpad_state = SCRATCHPAD_CHANGED;
  }
  
@@ -194,7 +286,7 @@ Refactor parsing of matches to avoid code duplication.
      LOG("tiling resize\n");
      Con *second = NULL;
      Con *first = current;
-@@ -696,7 +598,7 @@ static bool cmd_resize_tiling_direction(I3_CMD, Con *c
+@@ -696,7 +500,7 @@ static bool cmd_resize_tiling_direction(I3_CMD, Con *c
      return true;
  }
  
@@ -203,7 +295,7 @@ Refactor parsing of matches to avoid code duplication.
      LOG("width/height resize\n");
      /* get the appropriate current container (skip stacked/tabbed cons) */
      while (current->parent->layout == L_STACKED ||
-@@ -782,15 +684,11 @@ static bool cmd_resize_tiling_width_height(I3_CMD, Con
+@@ -782,15 +586,11 @@ static bool cmd_resize_tiling_width_height(I3_CMD, Con
   * Implementation of 'resize grow|shrink <direction> [<px> px] [or <ppt> ppt]'.
   *
   */
@@ -223,7 +315,7 @@ Refactor parsing of matches to avoid code duplication.
      }
  
      HANDLE_EMPTY_MATCH;
-@@ -805,14 +703,16 @@ void cmd_resize(I3_CMD, char *way, char *direction, ch
+@@ -805,14 +605,16 @@ void cmd_resize(I3_CMD, char *way, char *direction, ch
  
          Con *floating_con;
          if ((floating_con = con_inside_floating(current->con))) {
@@ -243,7 +335,7 @@ Refactor parsing of matches to avoid code duplication.
                      return;
              }
          }
-@@ -827,13 +727,10 @@ void cmd_resize(I3_CMD, char *way, char *direction, ch
+@@ -827,13 +629,10 @@ void cmd_resize(I3_CMD, char *way, char *direction, ch
   * Implementation of 'resize set <px> [px] <px> [px]'.
   *
   */
@@ -261,7 +353,7 @@ Refactor parsing of matches to avoid code duplication.
          return;
      }
  
-@@ -843,7 +740,7 @@ void cmd_size(I3_CMD, char *cwidth, char *cheight) {
+@@ -843,7 +642,7 @@ void cmd_size(I3_CMD, char *cwidth, char *cheight) {
      TAILQ_FOREACH(current, &owindows, owindows) {
          Con *floating_con;
          if ((floating_con = con_inside_floating(current->con))) {
@@ -270,7 +362,7 @@ Refactor parsing of matches to avoid code duplication.
          } else {
              ELOG("Resize failed: %p not a floating container\n", current->con);
          }
-@@ -858,7 +755,7 @@ void cmd_size(I3_CMD, char *cwidth, char *cheight) {
+@@ -858,7 +657,7 @@ void cmd_size(I3_CMD, char *cwidth, char *cheight) {
   * Implementation of 'border normal|pixel [<n>]', 'border none|1pixel|toggle'.
   *
   */
@@ -279,7 +371,7 @@ Refactor parsing of matches to avoid code duplication.
      DLOG("border style should be changed to %s with border width %s\n", border_style_str, border_width);
      owindow *current;
  
-@@ -911,7 +808,7 @@ void cmd_border(I3_CMD, char *border_style_str, char *
+@@ -911,7 +710,7 @@ void cmd_border(I3_CMD, char *border_style_str, char *
   * Implementation of 'nop <comment>'.
   *
   */
@@ -288,7 +380,7 @@ Refactor parsing of matches to avoid code duplication.
      LOG("-------------------------------------------------\n");
      LOG("  NOP: %s\n", comment);
      LOG("-------------------------------------------------\n");
-@@ -921,7 +818,8 @@ void cmd_nop(I3_CMD, char *comment) {
+@@ -921,7 +720,8 @@ void cmd_nop(I3_CMD, char *comment) {
   * Implementation of 'append_layout <path>'.
   *
   */
@@ -298,7 +390,7 @@ Refactor parsing of matches to avoid code duplication.
      LOG("Appending layout \"%s\"\n", path);
  
      /* Make sure we allow paths like '~/.i3/layout.json' */
-@@ -982,7 +880,7 @@ void cmd_append_layout(I3_CMD, char *path) {
+@@ -982,7 +782,7 @@ void cmd_append_layout(I3_CMD, char *path) {
   * Implementation of 'workspace next|prev|next_on_output|prev_on_output'.
   *
   */
@@ -307,7 +399,7 @@ Refactor parsing of matches to avoid code duplication.
      Con *ws;
  
      DLOG("which=%s\n", which);
-@@ -1018,7 +916,7 @@ void cmd_workspace(I3_CMD, char *which) {
+@@ -1018,7 +818,7 @@ void cmd_workspace(I3_CMD, char *which) {
   * Implementation of 'workspace number <name>'
   *
   */
@@ -316,7 +408,7 @@ Refactor parsing of matches to avoid code duplication.
      Con *output, *workspace = NULL;
  
      if (con_get_fullscreen_con(croot, CF_GLOBAL)) {
-@@ -1077,7 +975,7 @@ void cmd_workspace_back_and_forth(I3_CMD) {
+@@ -1077,7 +877,7 @@ void cmd_workspace_back_and_forth(I3_CMD) {
   * Implementation of 'workspace <name>'
   *
   */
@@ -325,7 +417,7 @@ Refactor parsing of matches to avoid code duplication.
      if (strncasecmp(name, "__", strlen("__")) == 0) {
          LOG("You cannot switch to the i3-internal workspaces (\"%s\").\n", name);
          ysuccess(false);
-@@ -1104,7 +1002,7 @@ void cmd_workspace_name(I3_CMD, char *name) {
+@@ -1104,7 +904,7 @@ void cmd_workspace_name(I3_CMD, char *name) {
   * Implementation of 'mark [--toggle] <mark>'
   *
   */
@@ -334,7 +426,7 @@ Refactor parsing of matches to avoid code duplication.
      HANDLE_EMPTY_MATCH;
  
      owindow *current = TAILQ_FIRST(&owindows);
-@@ -1135,7 +1033,7 @@ void cmd_mark(I3_CMD, char *mark, char *toggle) {
+@@ -1135,7 +935,7 @@ void cmd_mark(I3_CMD, char *mark, char *toggle) {
   * Implementation of 'unmark [mark]'
   *
   */
@@ -343,7 +435,7 @@ Refactor parsing of matches to avoid code duplication.
      con_unmark(mark);
  
      cmd_output->needs_tree_render = true;
-@@ -1147,7 +1045,7 @@ void cmd_unmark(I3_CMD, char *mark) {
+@@ -1147,7 +947,7 @@ void cmd_unmark(I3_CMD, char *mark) {
   * Implementation of 'mode <string>'.
   *
   */
@@ -352,7 +444,7 @@ Refactor parsing of matches to avoid code duplication.
      DLOG("mode=%s\n", mode);
      switch_mode(mode);
  
-@@ -1159,7 +1057,7 @@ void cmd_mode(I3_CMD, char *mode) {
+@@ -1159,7 +959,7 @@ void cmd_mode(I3_CMD, char *mode) {
   * Implementation of 'move [window|container] [to] output <str>'.
   *
   */
@@ -361,7 +453,7 @@ Refactor parsing of matches to avoid code duplication.
      DLOG("Should move window to output \"%s\".\n", name);
      HANDLE_EMPTY_MATCH;
  
-@@ -1197,7 +1095,7 @@ void cmd_move_con_to_output(I3_CMD, char *name) {
+@@ -1197,7 +997,7 @@ void cmd_move_con_to_output(I3_CMD, char *name) {
   * Implementation of 'move [container|window] [to] mark <str>'.
   *
   */
@@ -370,7 +462,7 @@ Refactor parsing of matches to avoid code duplication.
      DLOG("moving window to mark \"%s\"\n", mark);
  
      HANDLE_EMPTY_MATCH;
-@@ -1217,7 +1115,7 @@ void cmd_move_con_to_mark(I3_CMD, char *mark) {
+@@ -1217,7 +1017,7 @@ void cmd_move_con_to_mark(I3_CMD, char *mark) {
   * Implementation of 'floating enable|disable|toggle'
   *
   */
@@ -379,7 +471,7 @@ Refactor parsing of matches to avoid code duplication.
      owindow *current;
  
      DLOG("floating_mode=%s\n", floating_mode);
-@@ -1248,7 +1146,7 @@ void cmd_floating(I3_CMD, char *floating_mode) {
+@@ -1248,7 +1048,7 @@ void cmd_floating(I3_CMD, char *floating_mode) {
   * Implementation of 'move workspace to [output] <str>'.
   *
   */
@@ -388,7 +480,7 @@ Refactor parsing of matches to avoid code duplication.
      DLOG("should move workspace to output %s\n", name);
  
      HANDLE_EMPTY_MATCH;
-@@ -1273,17 +1171,19 @@ void cmd_move_workspace_to_output(I3_CMD, char *name) 
+@@ -1273,17 +1073,19 @@ void cmd_move_workspace_to_output(I3_CMD, char *name) 
   * Implementation of 'split v|h|vertical|horizontal'.
   *
   */
@@ -416,7 +508,7 @@ Refactor parsing of matches to avoid code duplication.
      }
  
      cmd_output->needs_tree_render = true;
-@@ -1295,7 +1195,7 @@ void cmd_split(I3_CMD, char *direction) {
+@@ -1295,7 +1097,7 @@ void cmd_split(I3_CMD, char *direction) {
   * Implementation of 'kill [window|client]'.
   *
   */
@@ -425,7 +517,7 @@ Refactor parsing of matches to avoid code duplication.
      if (kill_mode_str == NULL)
          kill_mode_str = "window";
      owindow *current;
-@@ -1332,7 +1232,7 @@ void cmd_kill(I3_CMD, char *kill_mode_str) {
+@@ -1332,7 +1134,7 @@ void cmd_kill(I3_CMD, char *kill_mode_str) {
   * Implementation of 'exec [--no-startup-id] <command>'.
   *
   */
@@ -434,7 +526,7 @@ Refactor parsing of matches to avoid code duplication.
      bool no_startup_id = (nosn != NULL);
  
      DLOG("should execute %s, no_startup_id = %d\n", command, no_startup_id);
-@@ -1346,7 +1246,7 @@ void cmd_exec(I3_CMD, char *nosn, char *command) {
+@@ -1346,7 +1148,7 @@ void cmd_exec(I3_CMD, char *nosn, char *command) {
   * Implementation of 'focus left|right|up|down'.
   *
   */
@@ -443,7 +535,7 @@ Refactor parsing of matches to avoid code duplication.
      DLOG("direction = *%s*\n", direction);
  
      if (strcmp(direction, "left") == 0)
-@@ -1372,7 +1272,7 @@ void cmd_focus_direction(I3_CMD, char *direction) {
+@@ -1372,7 +1174,7 @@ void cmd_focus_direction(I3_CMD, char *direction) {
   * Implementation of 'focus tiling|floating|mode_toggle'.
   *
   */
@@ -452,7 +544,7 @@ Refactor parsing of matches to avoid code duplication.
      DLOG("window_mode = %s\n", window_mode);
  
      Con *ws = con_get_workspace(focused);
-@@ -1403,7 +1303,7 @@ void cmd_focus_window_mode(I3_CMD, char *window_mode) 
+@@ -1403,7 +1205,7 @@ void cmd_focus_window_mode(I3_CMD, char *window_mode) 
   * Implementation of 'focus parent|child'.
   *
   */
@@ -461,7 +553,7 @@ Refactor parsing of matches to avoid code duplication.
      DLOG("level = %s\n", level);
      bool success = false;
  
-@@ -1507,7 +1407,7 @@ void cmd_focus(I3_CMD) {
+@@ -1507,7 +1309,7 @@ void cmd_focus(I3_CMD) {
   *                   'fullscreen disable'
   *
   */
@@ -470,7 +562,7 @@ Refactor parsing of matches to avoid code duplication.
      fullscreen_mode_t mode = strcmp(fullscreen_mode, "global") == 0 ? CF_GLOBAL : CF_OUTPUT;
      DLOG("%s fullscreen, mode = %s\n", action, fullscreen_mode);
      owindow *current;
-@@ -1534,7 +1434,7 @@ void cmd_fullscreen(I3_CMD, char *action, char *fullsc
+@@ -1534,7 +1336,7 @@ void cmd_fullscreen(I3_CMD, char *action, char *fullsc
   * Implementation of 'sticky enable|disable|toggle'.
   *
   */
@@ -479,7 +571,7 @@ Refactor parsing of matches to avoid code duplication.
      DLOG("%s sticky on window\n", action);
      HANDLE_EMPTY_MATCH;
  
-@@ -1570,28 +1470,25 @@ void cmd_sticky(I3_CMD, char *action) {
+@@ -1570,28 +1372,25 @@ void cmd_sticky(I3_CMD, char *action) {
   * Implementation of 'move <direction> [<pixels> [px]]'.
   *
   */
@@ -515,7 +607,7 @@ Refactor parsing of matches to avoid code duplication.
              }
              floating_reposition(current->con->parent, newrect);
          } else {
-@@ -1612,10 +1509,11 @@ void cmd_move_direction(I3_CMD, char *direction, char 
+@@ -1612,10 +1411,11 @@ void cmd_move_direction(I3_CMD, char *direction, char 
   * Implementation of 'layout default|stacked|stacking|tabbed|splitv|splith'.
   *
   */
@@ -529,7 +621,7 @@ Refactor parsing of matches to avoid code duplication.
      layout_t layout;
      /* default is a special case which will be handled in con_set_layout(). */
      if (strcmp(layout_str, "default") == 0)
-@@ -1635,14 +1533,15 @@ void cmd_layout(I3_CMD, char *layout_str) {
+@@ -1635,14 +1435,15 @@ void cmd_layout(I3_CMD, char *layout_str) {
  
      DLOG("changing layout to %s (%d)\n", layout_str, layout);
  
@@ -552,7 +644,7 @@ Refactor parsing of matches to avoid code duplication.
      }
  
      cmd_output->needs_tree_render = true;
-@@ -1654,7 +1553,7 @@ void cmd_layout(I3_CMD, char *layout_str) {
+@@ -1654,7 +1455,7 @@ void cmd_layout(I3_CMD, char *layout_str) {
   * Implementation of 'layout toggle [all|split]'.
   *
   */
@@ -561,7 +653,7 @@ Refactor parsing of matches to avoid code duplication.
      owindow *current;
  
      if (toggle_mode == NULL)
-@@ -1751,7 +1650,7 @@ void cmd_open(I3_CMD) {
+@@ -1751,7 +1552,7 @@ void cmd_open(I3_CMD) {
   * Implementation of 'focus output <output>'.
   *
   */
@@ -570,7 +662,7 @@ Refactor parsing of matches to avoid code duplication.
      owindow *current;
  
      DLOG("name = %s\n", name);
-@@ -1793,9 +1692,7 @@ void cmd_focus_output(I3_CMD, char *name) {
+@@ -1793,9 +1594,7 @@ void cmd_focus_output(I3_CMD, char *name) {
   * Implementation of 'move [window|container] [to] [absolute] position <px> [px] <px> [px]
   *
   */
@@ -581,7 +673,7 @@ Refactor parsing of matches to avoid code duplication.
      bool has_error = false;
  
      owindow *current;
-@@ -1817,7 +1714,7 @@ void cmd_move_window_to_position(I3_CMD, char *method,
+@@ -1817,7 +1616,7 @@ void cmd_move_window_to_position(I3_CMD, char *method,
              current->con->parent->rect.x = x;
              current->con->parent->rect.y = y;
  
@@ -590,7 +682,7 @@ Refactor parsing of matches to avoid code duplication.
              floating_maybe_reassign_ws(current->con->parent);
              cmd_output->needs_tree_render = true;
          }
-@@ -1825,7 +1722,7 @@ void cmd_move_window_to_position(I3_CMD, char *method,
+@@ -1825,7 +1624,7 @@ void cmd_move_window_to_position(I3_CMD, char *method,
          if (strcmp(method, "position") == 0) {
              Rect newrect = current->con->parent->rect;
  
@@ -599,7 +691,7 @@ Refactor parsing of matches to avoid code duplication.
              newrect.x = x;
              newrect.y = y;
  
-@@ -1842,7 +1739,7 @@ void cmd_move_window_to_position(I3_CMD, char *method,
+@@ -1842,7 +1641,7 @@ void cmd_move_window_to_position(I3_CMD, char *method,
   * Implementation of 'move [window|container] [to] [absolute] position center
   *
   */
@@ -608,7 +700,7 @@ Refactor parsing of matches to avoid code duplication.
      if (!con_is_floating(focused)) {
          ELOG("Cannot change position. The window/container is not floating\n");
          yerror("Cannot change position. The window/container is not floating.");
-@@ -1938,7 +1835,7 @@ void cmd_scratchpad_show(I3_CMD) {
+@@ -1938,7 +1737,7 @@ void cmd_scratchpad_show(I3_CMD) {
   * Implementation of 'title_format <format>'
   *
   */
@@ -617,7 +709,7 @@ Refactor parsing of matches to avoid code duplication.
      DLOG("setting title_format to \"%s\"\n", format);
      HANDLE_EMPTY_MATCH;
  
-@@ -1975,7 +1872,7 @@ void cmd_title_format(I3_CMD, char *format) {
+@@ -1975,7 +1774,7 @@ void cmd_title_format(I3_CMD, char *format) {
   * Implementation of 'rename workspace [<name>] to <name>'
   *
   */
@@ -626,7 +718,7 @@ Refactor parsing of matches to avoid code duplication.
      if (strncasecmp(new_name, "__", strlen("__")) == 0) {
          LOG("Cannot rename workspace to \"%s\": names starting with __ are i3-internal.\n", new_name);
          ysuccess(false);
-@@ -2060,7 +1957,7 @@ void cmd_rename_workspace(I3_CMD, char *old_name, char
+@@ -2060,7 +1859,7 @@ void cmd_rename_workspace(I3_CMD, char *old_name, char
   * Implementation of 'bar mode dock|hide|invisible|toggle [<bar_id>]'
   *
   */
@@ -635,7 +727,7 @@ Refactor parsing of matches to avoid code duplication.
      int mode = M_DOCK;
      bool toggle = false;
      if (strcmp(bar_mode, "dock") == 0)
-@@ -2105,7 +2002,7 @@ bool cmd_bar_mode(char *bar_mode, char *bar_id) {
+@@ -2105,7 +1904,7 @@ bool cmd_bar_mode(char *bar_mode, char *bar_id) {
   * Implementation of 'bar hidden_state hide|show|toggle [<bar_id>]'
   *
   */
@@ -644,7 +736,7 @@ Refactor parsing of matches to avoid code duplication.
      int hidden_state = S_SHOW;
      bool toggle = false;
      if (strcmp(bar_hidden_state, "hide") == 0)
-@@ -2148,7 +2045,7 @@ bool cmd_bar_hidden_state(char *bar_hidden_state, char
+@@ -2148,7 +1947,7 @@ bool cmd_bar_hidden_state(char *bar_hidden_state, char
   * Implementation of 'bar (hidden_state hide|show|toggle)|(mode dock|hide|invisible|toggle) [<bar_id>]'
   *
   */
@@ -653,7 +745,7 @@ Refactor parsing of matches to avoid code duplication.
      bool ret;
      if (strcmp(bar_type, "mode") == 0)
          ret = cmd_bar_mode(bar_value, bar_id);
-@@ -2170,7 +2067,7 @@ void cmd_bar(I3_CMD, char *bar_type, char *bar_value, 
+@@ -2170,7 +1969,7 @@ void cmd_bar(I3_CMD, char *bar_type, char *bar_value, 
   * Implementation of 'shmlog <size>|toggle|on|off'
   *
   */
@@ -662,7 +754,7 @@ Refactor parsing of matches to avoid code duplication.
      if (!strcmp(argument, "toggle"))
          /* Toggle shm log, if size is not 0. If it is 0, set it to default. */
          shmlog_size = shmlog_size ? -shmlog_size : default_shmlog_size;
-@@ -2201,7 +2098,7 @@ void cmd_shmlog(I3_CMD, char *argument) {
+@@ -2201,7 +2000,7 @@ void cmd_shmlog(I3_CMD, char *argument) {
   * Implementation of 'debuglog toggle|on|off'
   *
   */

@@ -1,10 +1,26 @@
-$OpenBSD: patch-i3-nagbar_main_c,v 1.8 2015/12/21 10:16:03 tb Exp $
+$OpenBSD: patch-i3-nagbar_main_c,v 1.9 2016/01/26 09:42:35 dcoppa Exp $
 
-surprisingly wide pledge for this program
+commit a1d1f456a1fbf44bfa5c6a9d041023ac498b0c46
+Author: Theo Buehler <theo@math.ethz.ch>
+Date:   Thu Jan 14 10:06:34 2016 +0100
 
-"wpath cpath" for writing a script
-"rpath getpw" for checking access permissions
-"proc exec" for executing the script
+Add pledge(2) support for OpenBSD
+
+pledges for i3:
+"stdio rpath unix" for talking to the i3 socket usually in /tmp
+"proc exec" for executing programs
+"wpath cpath" are needed for the restart-in-place functionality
+
+To make this work, @semarie pointed out that it is sufficient to ensure
+that we get physical_mem_bytes only once, namely in init_logging().
+
+pledges for i3-msg:
+"stdio rpath unix" are needed for talking to the i3-socket
+
+pledges for i3-nagbar
+"rpath getpw" to find the home directory
+"wpath cpath" to write the script
+"proc exec" to execute the script
 "unix" for talking to the i3 socket
 
 --- i3-nagbar/main.c.orig	Wed Sep 30 08:55:10 2015
