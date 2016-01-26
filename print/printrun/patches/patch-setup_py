@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2016/01/26 23:10:08 abieber Exp $
+--- setup.py.orig	Wed Jan 20 18:48:11 2016
++++ setup.py	Wed Jan 20 18:48:26 2016
+@@ -162,7 +162,7 @@ setup(name = "Printrun",
+       license = "GPLv3",
+       data_files = data_files,
+       packages = ["printrun", "printrun.gl", "printrun.gl.libtatlin", "printrun.gui", "printrun.power"],
+-      scripts = ["pronsole.py", "pronterface.py", "plater.py", "printcore.py"],
++      scripts = ["pronsole", "pronterface", "plater", "printcore"],
+       cmdclass = cmdclass,
+       ext_modules = extensions,
+       )

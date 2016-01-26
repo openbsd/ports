@@ -1,0 +1,14 @@
+$OpenBSD: patch-plater_desktop,v 1.1.1.1 2016/01/26 23:10:08 abieber Exp $
+--- plater.desktop.orig	Wed Jan 20 18:37:37 2016
++++ plater.desktop	Wed Jan 20 18:38:22 2016
+@@ -3,8 +3,8 @@ Type=Application
+ Name=Plater
+ GenericName=Plate building tool
+ Comment=Prepares plates for 3D printing
+-Icon=/usr/share/pixmaps/plater.png
+-Exec=/usr/bin/plater.py
++Icon=${LOCALBASE}/share/pixmaps/plater.png
++Exec=${LOCALBASE}/bin/plater.py
+ StartupNotify=true
+ Terminal=false
+ Categories=GNOME;GTK;Utility;Graphics;3DGraphics;
