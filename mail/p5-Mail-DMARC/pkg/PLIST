@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/23 19:17:28 henning Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/26 22:10:48 sthen Exp $
 bin/dmarc_http_client
 bin/dmarc_httpd
 bin/dmarc_lookup
 bin/dmarc_receive
 bin/dmarc_send_reports
+bin/dmarc_update_public_suffix_list
 bin/dmarc_view_reports
 @comment bin/install_deps.pl
-${P5SITE}/Mail/
 ${P5SITE}/Mail/DMARC/
 ${P5SITE}/Mail/DMARC.pm
 ${P5SITE}/Mail/DMARC/Base.pm
@@ -18,7 +18,16 @@ ${P5SITE}/Mail/DMARC/Report.pm
 ${P5SITE}/Mail/DMARC/Report/Aggregate/
 ${P5SITE}/Mail/DMARC/Report/Aggregate.pm
 ${P5SITE}/Mail/DMARC/Report/Aggregate/Metadata.pm
+${P5SITE}/Mail/DMARC/Report/Aggregate/Record/
 ${P5SITE}/Mail/DMARC/Report/Aggregate/Record.pm
+${P5SITE}/Mail/DMARC/Report/Aggregate/Record/Auth_Results/
+${P5SITE}/Mail/DMARC/Report/Aggregate/Record/Auth_Results.pm
+${P5SITE}/Mail/DMARC/Report/Aggregate/Record/Auth_Results/DKIM.pm
+${P5SITE}/Mail/DMARC/Report/Aggregate/Record/Auth_Results/SPF.pm
+${P5SITE}/Mail/DMARC/Report/Aggregate/Record/Identifiers.pm
+${P5SITE}/Mail/DMARC/Report/Aggregate/Record/Row/
+${P5SITE}/Mail/DMARC/Report/Aggregate/Record/Row.pm
+${P5SITE}/Mail/DMARC/Report/Aggregate/Record/Row/Policy_Evaluated.pm
 ${P5SITE}/Mail/DMARC/Report/Receive.pm
 ${P5SITE}/Mail/DMARC/Report/Send/
 ${P5SITE}/Mail/DMARC/Report/Send.pm
@@ -28,9 +37,10 @@ ${P5SITE}/Mail/DMARC/Report/Store/
 ${P5SITE}/Mail/DMARC/Report/Store.pm
 ${P5SITE}/Mail/DMARC/Report/Store/SQL.pm
 ${P5SITE}/Mail/DMARC/Report/URI.pm
+${P5SITE}/Mail/DMARC/Result/
 ${P5SITE}/Mail/DMARC/Result.pm
+${P5SITE}/Mail/DMARC/Result/Reason.pm
 ${P5SITE}/auto/share/dist/Mail-DMARC/
-${P5SITE}/auto/share/dist/Mail-DMARC/dmarc-report-2013-draft.xsd
 ${P5SITE}/auto/share/dist/Mail-DMARC/dmarc_whitelist
 ${P5SITE}/auto/share/dist/Mail-DMARC/html/
 ${P5SITE}/auto/share/dist/Mail-DMARC/html/css/
@@ -94,14 +104,18 @@ ${P5SITE}/auto/share/dist/Mail-DMARC/html/plugins/jquery.tablednd.js.gz
 ${P5SITE}/auto/share/dist/Mail-DMARC/html/plugins/searchFilter.css
 ${P5SITE}/auto/share/dist/Mail-DMARC/html/plugins/ui.multiselect.css
 ${P5SITE}/auto/share/dist/Mail-DMARC/html/plugins/ui.multiselect.js.gz
+${P5SITE}/auto/share/dist/Mail-DMARC/mail-dmarc.cron
+${P5SITE}/auto/share/dist/Mail-DMARC/mail-dmarc.ini
 ${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_schema.mysql
 ${P5SITE}/auto/share/dist/Mail-DMARC/mail_dmarc_schema.sqlite
 ${P5SITE}/auto/share/dist/Mail-DMARC/public_suffix_list
+${P5SITE}/auto/share/dist/Mail-DMARC/rua-schema.xsd
 @man man/man1/dmarc_http_client.1
 @man man/man1/dmarc_httpd.1
 @man man/man1/dmarc_lookup.1
 @man man/man1/dmarc_receive.1
 @man man/man1/dmarc_send_reports.1
+@man man/man1/dmarc_update_public_suffix_list.1
 @man man/man1/dmarc_view_reports.1
 @comment @man man/man1/install_deps.pl.1
 @man man/man3p/Mail::DMARC.3p
@@ -113,6 +127,12 @@ ${P5SITE}/auto/share/dist/Mail-DMARC/public_suffix_list
 @man man/man3p/Mail::DMARC::Report::Aggregate.3p
 @man man/man3p/Mail::DMARC::Report::Aggregate::Metadata.3p
 @man man/man3p/Mail::DMARC::Report::Aggregate::Record.3p
+@man man/man3p/Mail::DMARC::Report::Aggregate::Record::Auth_Results.3p
+@man man/man3p/Mail::DMARC::Report::Aggregate::Record::Auth_Results::DKIM.3p
+@man man/man3p/Mail::DMARC::Report::Aggregate::Record::Auth_Results::SPF.3p
+@man man/man3p/Mail::DMARC::Report::Aggregate::Record::Identifiers.3p
+@man man/man3p/Mail::DMARC::Report::Aggregate::Record::Row.3p
+@man man/man3p/Mail::DMARC::Report::Aggregate::Record::Row::Policy_Evaluated.3p
 @man man/man3p/Mail::DMARC::Report::Receive.3p
 @man man/man3p/Mail::DMARC::Report::Send.3p
 @man man/man3p/Mail::DMARC::Report::Send::HTTP.3p
@@ -121,3 +141,4 @@ ${P5SITE}/auto/share/dist/Mail-DMARC/public_suffix_list
 @man man/man3p/Mail::DMARC::Report::Store::SQL.3p
 @man man/man3p/Mail::DMARC::Report::URI.3p
 @man man/man3p/Mail::DMARC::Result.3p
+@man man/man3p/Mail::DMARC::Result::Reason.3p
