@@ -1,7 +1,10 @@
-$OpenBSD: patch-engine_engine_c,v 1.1 2009/11/17 01:04:43 kurt Exp $
---- engine/engine.c.orig	Fri Nov 13 17:29:14 2009
-+++ engine/engine.c	Fri Nov 13 17:29:33 2009
-@@ -304,8 +304,8 @@ Label *engine(Xt *ip0, Cell *sp0, Cell *rp0, Float *fp
+$OpenBSD: patch-engine_engine_c,v 1.2 2016/01/26 08:10:28 jasper Exp $
+
+Fix use of uninitalized memory. Found by malloc option J.
+
+--- engine/engine.c.orig	Tue Mar 25 15:02:25 2014
++++ engine/engine.c	Tue Jan 26 09:03:34 2016
+@@ -404,8 +404,8 @@ Label *gforth_engine(Xt *ip0, Cell *sp0, Cell *rp0, Fl
      Cell code_offset = offset_image? CODE_OFFSET : 0;
      Cell xt_offset = offset_image? XT_OFFSET : 0;
  
