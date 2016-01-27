@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2016/01/26 13:29:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/01/27 09:45:07 benoit Exp $
 
 COMMENT =		Pyrex generated python interface to PROJ.4 library
 
-MODPY_EGG_VERSION =	1.9.3
-REVISION =		1
+MODPY_EGG_VERSION =	1.9.5.1
 DISTNAME =		pyproj-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 
@@ -20,6 +19,8 @@ WANTLIB += ${MODPY_WANTLIB} pthread
 
 MODULES =		lang/python
 MODPY_PI =		Yes
+
+MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 RUN_DEPENDS +=		devel/proj \
