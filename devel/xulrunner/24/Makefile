@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/01/23 18:22:39 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2016/01/27 18:04:42 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64 alpha
 # XXX remember to bump www/conkeror because it has a symlink pointing to lib/xulrunner-${MOZILLA_VER}
@@ -8,7 +8,7 @@ MOZILLA_PROJECT =	xulrunner
 MOZILLA_DIST =		firefox
 PKGSPEC-devel =		xulrunner-devel->=24.0,<31.0
 PKGSPEC-main =		xulrunner->=24.0,<31.0
-REVISION-main =		8
+REVISION-main =		9
 REVISION-devel =	7
 
 SO_VERSION =		0.0
