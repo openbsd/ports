@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1465 2016/01/26 01:45:36 abieber Exp $
+# $OpenBSD: Makefile,v 1.1466 2016/01/27 11:54:29 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -247,7 +247,6 @@
      SUBDIR += hs-scientific
      SUBDIR += hs-semigroups
      SUBDIR += hs-sendfile
-     SUBDIR += hs-simple-sendfile
      SUBDIR += hs-split
      SUBDIR += hs-stm
      SUBDIR += hs-strict
