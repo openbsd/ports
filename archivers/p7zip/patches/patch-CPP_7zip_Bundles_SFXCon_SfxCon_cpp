@@ -1,0 +1,48 @@
+$OpenBSD: patch-CPP_7zip_Bundles_SFXCon_SfxCon_cpp,v 1.1 2016/01/27 10:36:00 jasper Exp $
+
+Pledge self-extracting archives
+
+--- CPP/7zip/Bundles/SFXCon/SfxCon.cpp.orig	Sat Sep  5 16:22:56 2015
++++ CPP/7zip/Bundles/SFXCon/SfxCon.cpp	Sun Jan 24 15:59:24 2016
+@@ -250,6 +250,21 @@ int Main2(
+   #endif
+ )
+ {
++
++#ifndef EXTERNAL_CODECS
++
++#ifdef PLEDGE_DEBUG
++  printf("pledge: 7za 7zr SFX\n");
++#endif //PLEDGE_DEBUG
++
++  if (pledge("stdio rpath wpath cpath fattr", NULL) == -1) {
++    perror("pledge");
++    exit(2);
++  }
++
++#endif
++
++
+   #if defined(_WIN32) && !defined(UNDER_CE)
+   SetFileApisToOEM();
+   #endif
+@@ -371,6 +386,19 @@ int Main2(
+     HRESULT result = codecs->Load();
+     if (result != S_OK)
+       throw CSystemException(result);
++
++#ifdef EXTERNAL_CODECS
++
++#ifdef PLEDGE_DEBUG
++  printf("pledge: 7z SFX\n");
++#endif //PLEDGE_DEBUG
++
++  if (pledge("stdio rpath wpath cpath fattr", NULL) == -1) {
++    perror("pledge");
++    exit(2);
++  }
++
++#endif
+ 
+     if (command.CommandType != NCommandType::kList)
+     {
