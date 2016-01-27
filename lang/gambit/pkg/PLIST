@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/09/06 22:32:17 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/01/27 18:47:02 juanfra Exp $
 @conflict scheme48-*
-bin/gambc-cc
-bin/gambc-doc
+bin/gambcomp-C
+bin/gambdoc
 @bin bin/gsc
 bin/gsc-script
 @bin bin/gsi
@@ -15,17 +15,17 @@ bin/six-script
 include/gambit/
 include/gambit/gambit-not${API_V}.h
 include/gambit/gambit.h
-@info info/gambit-c.info
+@info info/gambit.info
 lib/gambit/
 lib/gambit/_asm#.scm
 lib/gambit/_assert#.scm
 lib/gambit/_codegen#.scm
 lib/gambit/_define-syntax.scm
 lib/gambit/_eval#.scm
-lib/gambit/_gambc.c
-lib/gambit/_gambcgsc.c
-lib/gambit/_gambcgsi.c
 lib/gambit/_gambit#.scm
+lib/gambit/_gambit.c
+lib/gambit/_gambitgsc.c
+lib/gambit/_gambitgsi.c
 lib/gambit/_io#.scm
 lib/gambit/_kernel#.scm
 lib/gambit/_nonstd#.scm
@@ -49,20 +49,17 @@ lib/gambit/_x86#.scm
 lib/gambit/digest#.scm
 lib/gambit/digest.scm
 lib/gambit/gambit#.scm
-lib/gambit/libgambc.so
-lib/gambit/libgambcgsc.so
-lib/gambit/libgambcgsi.so
+lib/gambit/libgambit.a
+lib/gambit/libgambitgsc.a
+lib/gambit/libgambitgsi.a
 lib/gambit/r4rs#.scm
 lib/gambit/r5rs#.scm
 lib/gambit/syntax-case.scm
-lib/libgambc.so
-lib/libgambcgsc.so
-lib/libgambcgsi.so
 @man man/man1/gsi.1
 share/doc/gambit/
-share/doc/gambit/gambit-c.html
-share/doc/gambit/gambit-c.pdf
-share/doc/gambit/gambit-c.txt
+share/doc/gambit/gambit.html
+share/doc/gambit/gambit.pdf
+share/doc/gambit/gambit.txt
 share/emacs/
 share/emacs/site-lisp/
 share/emacs/site-lisp/gambit.el

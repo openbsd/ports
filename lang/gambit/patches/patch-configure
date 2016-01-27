@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.4 2015/08/24 11:47:05 jasper Exp $
+$OpenBSD: patch-configure,v 1.5 2016/01/27 18:47:02 juanfra Exp $
 
 - https://github.com/feeley/gambit/pull/163
 - https://github.com/feeley/gambit/issues/124
 
---- configure.orig	Wed Jul 15 03:07:26 2015
-+++ configure	Mon Aug 24 13:42:43 2015
-@@ -8533,7 +8533,7 @@ done
+--- configure.orig	Sat Jan 16 00:50:43 2016
++++ configure	Fri Jan 22 22:22:18 2016
+@@ -8559,7 +8559,7 @@ done
  
  
    case "$target_os" in
@@ -14,43 +14,43 @@ $OpenBSD: patch-configure,v 1.4 2015/08/24 11:47:05 jasper Exp $
        # OpenBSD/mips64(el) does have get_fpc_csr(), but lacks union fpc_csr.
        ;;
      *)
-@@ -13592,32 +13592,32 @@ if test "$datadir" = "\${datarootdir}"; then
+@@ -13619,32 +13619,32 @@ if test "$datadir" = "\${datarootdir}"; then
    datadir="\${prefix}/share"
  fi
  
--GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR=\"\\\"`echo \"$prefix\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
-+GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR=\"\\\"$prefix\\\"\""
+-GAMBITLIB_DEFS="$GAMBITLIB_DEFS -D___GAMBITDIR=\"\\\"`echo \"$prefix\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
++GAMBITLIB_DEFS="$GAMBITLIB_DEFS -D___GAMBITDIR=\"\\\"$prefix\\\"\""
  
  if test "$ENABLE_SYMLINKS" != yes; then
  
    if test "$bindir" != "\${prefix}/bin"; then
--    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_BIN=\"\\\"`echo \"$bindir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
-+    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_BIN=\"\\\"$bindir\\\"\""
+-    GAMBITLIB_DEFS="$GAMBITLIB_DEFS -D___GAMBITDIR_BIN=\"\\\"`echo \"$bindir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
++    GAMBITLIB_DEFS="$GAMBITLIB_DEFS -D___GAMBITDIR_BIN=\"\\\"$bindir\\\"\""
    fi
  
    if test "$includedir" != "\${prefix}/include"; then
--    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_INCLUDE=\"\\\"`echo \"$includedir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
-+    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_INCLUDE=\"\\\"$includedir\\\"\""
+-    GAMBITLIB_DEFS="$GAMBITLIB_DEFS -D___GAMBITDIR_INCLUDE=\"\\\"`echo \"$includedir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
++    GAMBITLIB_DEFS="$GAMBITLIB_DEFS -D___GAMBITDIR_INCLUDE=\"\\\"$includedir\\\"\""
    fi
  
    if test "$libdir" != "\${prefix}/lib"; then
--    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_LIB=\"\\\"`echo \"$libdir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
-+    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_LIB=\"\\\"$libdir\\\"\""
+-    GAMBITLIB_DEFS="$GAMBITLIB_DEFS -D___GAMBITDIR_LIB=\"\\\"`echo \"$libdir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
++    GAMBITLIB_DEFS="$GAMBITLIB_DEFS -D___GAMBITDIR_LIB=\"\\\"$libdir\\\"\""
    fi
  
    if test "$docdir" != "\${prefix}/doc"; then
--    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_DOC=\"\\\"`echo \"$docdir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
-+    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_DOC=\"\\\"$docdir\\\"\""
+-    GAMBITLIB_DEFS="$GAMBITLIB_DEFS -D___GAMBITDIR_DOC=\"\\\"`echo \"$docdir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
++    GAMBITLIB_DEFS="$GAMBITLIB_DEFS -D___GAMBITDIR_DOC=\"\\\"$docdir\\\"\""
    fi
  
    if test "$infodir" != "\${prefix}/info"; then
--    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_INFO=\"\\\"`echo \"$infodir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
-+    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_INFO=\"\\\"$infodir\\\"\""
+-    GAMBITLIB_DEFS="$GAMBITLIB_DEFS -D___GAMBITDIR_INFO=\"\\\"`echo \"$infodir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
++    GAMBITLIB_DEFS="$GAMBITLIB_DEFS -D___GAMBITDIR_INFO=\"\\\"$infodir\\\"\""
    fi
  
    if test "$datadir" != "\${prefix}/share"; then
--    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_SHARE=\"\\\"`echo \"$datadir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
-+    GAMBCLIB_DEFS="$GAMBCLIB_DEFS -D___GAMBCDIR_SHARE=\"\\\"$datadir\\\"\""
+-    GAMBITLIB_DEFS="$GAMBITLIB_DEFS -D___GAMBITDIR_SHARE=\"\\\"`echo \"$datadir\" | sed -e \"s|/|$PATH_SEP|g\"`\\\"\""
++    GAMBITLIB_DEFS="$GAMBITLIB_DEFS -D___GAMBITDIR_SHARE=\"\\\"$datadir\\\"\""
    fi
  
  fi
