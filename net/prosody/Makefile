@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2016/01/27 21:06:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2016/01/27 21:10:19 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
-DISTNAME =	prosody-0.9.9
+DISTNAME=	prosody-0.9.9
 CATEGORIES=	net
 MASTER_SITES=	http://prosody.im/downloads/source/
 
@@ -43,8 +43,8 @@ FAKE_FLAGS+=	CONFIG=${DESTDIR}${PREFIX}/share/examples/prosody
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/certs/Makefile
-	cd ${WRKSRC}; sed -i 's,^#!/usr/bin/env lua,#!${MODLUA_BIN},' \
-		prosody prosodyctl tests/run_tests.sh
+	cd ${WRKSRC}; sed -i -e 's,^#!/usr/bin/env lua,#!${MODLUA_BIN},' -e \
+		's,^lua ,${MODLUA_BIN} ,' prosody prosodyctl tests/run_tests.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/prosody
