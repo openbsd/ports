@@ -1,9 +1,0 @@
-$OpenBSD: patch-tests_run_tests_sh,v 1.1 2015/04/04 11:42:17 edd Exp $
---- tests/run_tests.sh.orig	Tue Mar 24 19:18:04 2015
-+++ tests/run_tests.sh	Fri Apr  3 18:17:52 2015
-@@ -1,3 +1,3 @@
- #!/bin/sh
--rm reports/*.report
--lua test.lua $*
-+rm -f reports/*.report
-+${MODLUA_BIN} test.lua $*

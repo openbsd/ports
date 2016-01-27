@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/01/11 12:11:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2016/01/27 21:06:05 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,9 +42,9 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 FAKE_FLAGS+=	CONFIG=${DESTDIR}${PREFIX}/share/examples/prosody
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/prosody ${WRKSRC}/prosodyctl \
-		${WRKSRC}/certs/Makefile \
-		${WRKSRC}/tests/run_tests.sh
+	${SUBST_CMD} ${WRKSRC}/certs/Makefile
+	cd ${WRKSRC}; sed -i 's,^#!/usr/bin/env lua,#!${MODLUA_BIN},' \
+		prosody prosodyctl tests/run_tests.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/prosody

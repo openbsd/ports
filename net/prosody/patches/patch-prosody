@@ -1,9 +1,0 @@
-$OpenBSD: patch-prosody,v 1.4 2012/08/06 09:50:50 sthen Exp $
---- prosody.orig	Sun Nov  6 13:34:13 2011
-+++ prosody	Sun Nov  6 13:37:36 2011
-@@ -1,4 +1,4 @@
--#!/usr/bin/env lua
-+#!${MODLUA_BIN}
- -- Prosody IM
- -- Copyright (C) 2008-2010 Matthew Wild
- -- Copyright (C) 2008-2010 Waqas Hussain
