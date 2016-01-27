@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/07 11:12:51 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/27 09:13:11 sebastia Exp $
 lib/python${MODPY_VERSION}/site-packages/urllib3/
 lib/python${MODPY_VERSION}/site-packages/urllib3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/urllib3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -24,6 +24,8 @@ lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/ntlmpool.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/ntlmpool.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/pyopenssl.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/pyopenssl.pyc
+lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/socks.py
+lib/python${MODPY_VERSION}/site-packages/urllib3/contrib/socks.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/exceptions.pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/fields.py
