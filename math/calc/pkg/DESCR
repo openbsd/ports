@@ -1,11 +1,10 @@
-Calc is arbitrary precision arithmetic system that uses a C-like
-language. Calc is useful as a calculator, an algorithm prototyper and
-as a mathematical research tool. More importantly, calc provides one
-with a machine independent means of computation. Calc comes with a
-rich set of builtin mathematical and programmatic functions. A
-partial list of calc builtin functions is available.
+Calc is an interactive calculator which provides for easy large numeric
+calculations, but which also can be easily programmed for difficult or long
+calculations using a C-like language featuring variable declarations,
+expressions, tests, labels, loops, file operations, and function calls,
+and with a rich set of builtin mathematical and programmatic functions.
 
-The calc language is a C-like language. The language includes
-commands such as variable declarations, expressions, tests, labels,
-loops, file operations, function calls. These commands are very
-similar to their counterparts in C.
+It can accept a command line argument, in which case it executes that single
+command and exits. Otherwise, it enters interactive mode. In this mode, it
+accepts commands one at a time, processes them, and displays the answers. In
+the simplest case, commands are simply expressions which are evaluated.

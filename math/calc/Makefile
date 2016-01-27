@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2016/01/17 22:35:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2016/01/27 14:22:02 sthen Exp $
 
 COMMENT=	C-style arbitrary precision calculator
 
-DISTNAME=	calc-2.12.2
+DISTNAME=	calc-2.12.5.0
+EXTRACT_SUFX=	.tar.bz2
+
 CATEGORIES=	math
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 HOMEPAGE=	http://www.isthe.com/chongo/tech/comp/calc
 
@@ -12,7 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c curses readline
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=calc/}
+MASTER_SITES=	http://www.isthe.com/chongo/src/calc/ \
+		${MASTER_SITE_SOURCEFORGE:=calc/}
 
 MAKE_FLAGS=\
 	BINDIR='$${DESTDIR}${PREFIX}/bin' \
