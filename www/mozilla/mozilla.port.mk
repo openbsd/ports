@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.83 2016/01/22 10:28:58 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.84 2016/01/27 18:04:09 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS ?=	amd64 i386
@@ -44,8 +44,25 @@ MODMOZ_BUILD_DEPENDS =	archivers/gtar \
 			archivers/zip>=2.3
 
 MODMOZ_LIB_DEPENDS =	textproc/hunspell \
-			devel/nspr>=4.10.10 \
-			security/nss>=3.20.1
+			devel/nspr>=4.10.10
+
+.if !defined(MOZILLA_USE_BUNDLED_NSS)
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.20.1
+MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
+CONFIGURE_ARGS +=	--with-system-nss
+.endif
+
+.if !defined(MOZILLA_USE_BUNDLED_LIBEVENT)
+MODMOZ_WANTLIB +=	event
+CONFIGURE_ARGS +=	--with-system-libevent=/usr/
+.endif
+
+.if !defined(MOZILLA_USE_BUNDLED_SQLITE)
+MODMOZ_WANTLIB +=	sqlite3>=32
+CONFIGURE_ARGS +=	--enable-system-sqlite
+# hack to build against systemwide sqlite3 (# 546162)
+CONFIGURE_ENV +=	ac_cv_sqlite_secure_delete=yes
+.endif
 
 # bug #736961
 SEPARATE_BUILD =	Yes
@@ -58,12 +75,8 @@ MODMOZ_BUILD_DEPENDS +=	devel/yasm
 MODMOZ_WANTLIB +=	X11 Xext Xrender Xt atk-1.0 c cairo \
 		fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gobject-2.0 gthread-2.0 m \
-		nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		plc4 plds4 pthread event kvm sqlite3>=31 \
-		smime3 sndio nssutil3 ssl3 stdc++ z hunspell-1.3
-
-# hack to build against systemwide sqlite3 (# 546162)
-CONFIGURE_ENV +=	ac_cv_sqlite_secure_delete=yes
+		nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		plc4 plds4 pthread sndio stdc++ z hunspell-1.3
 
 # --no-keep-memory avoids OOM when linking libxul
 # --relax avoids relocation overflow on ppc, needed since sm 2.7b, tb 10.0b, fx 15.0b
@@ -87,12 +100,9 @@ USE_GMAKE ?=	Yes
 
 AUTOCONF_VERSION =	2.13
 CONFIGURE_ARGS +=	--with-system-zlib=/usr	\
-		--with-system-libevent=/usr/	\
 		--with-system-bz2=${LOCALBASE}	\
 		--with-system-nspr		\
-		--with-system-nss		\
 		--enable-system-hunspell	\
-		--enable-system-sqlite		\
 		--enable-official-branding	\
 		--enable-gio			\
 		--disable-gconf			\
@@ -109,9 +119,7 @@ FLAVORS += gtk3
 FLAVOR ?=
 
 .if ${FLAVOR:Mdebug}
-CONFIGURE_ARGS +=	--enable-debug \
-			--enable-profiling \
-			--enable-debug-symbols=yes \
+CONFIGURE_ARGS +=	--enable-debug-symbols=yes \
 			--disable-install-strip
 INSTALL_STRIP =
 .endif
@@ -133,15 +141,13 @@ PORTHOME =	${WRKSRC}
 # from browser/config/mozconfig
 CONFIGURE_ARGS +=--enable-application=${MOZILLA_CODENAME}
 
-.if ${PKGPATH} == "www/mozilla-firefox" || \
-	${PKGPATH} == "www/seamonkey" || \
-	(${MOZILLA_PROJECT} == "thunderbird" && ${MOZILLA_BRANCH} == "beta")
-WRKDIST ?=	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}
+# starting with esr45, only xulrunner will be special
+.if ${MOZILLA_PROJECT} == "thunderbird"
+WRKDIST ?=	${WRKDIR}/comm-${MOZILLA_BRANCH}
 .elif ${MOZILLA_PROJECT} == "xulrunner" || ${PKGPATH} == "www/firefox-esr"
 WRKDIST ?=	${WRKDIR}/mozilla-${MOZILLA_BRANCH}
 .else
-WRKDIST ?=	${WRKDIR}/comm-${MOZILLA_BRANCH}
-_MOZDIR =	mozilla
+WRKDIST ?=	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}
 .endif
 
 # needed for PLIST
