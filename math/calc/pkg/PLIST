@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/01/27 14:22:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/01/27 14:39:14 sthen Exp $
 @bin bin/calc
 bin/cscript/
 bin/cscript/4dsphere
@@ -69,8 +69,8 @@ include/calc/value.h
 include/calc/zmath.h
 include/calc/zrand.h
 include/calc/zrandom.h
-lib/libcalc.a
-lib/libcustcalc.a
+@lib lib/libcalc.so.${LIBcalc_VERSION}
+@lib lib/libcustcalc.so.${LIBcustcalc_VERSION}
 @man man/man1/calc.1
 share/calc/
 share/calc/README

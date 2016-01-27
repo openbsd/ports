@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.23 2016/01/27 14:22:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/01/27 14:39:13 sthen Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	C-style arbitrary precision calculator
 
 DISTNAME=	calc-2.12.5.0
+REVISION=	0
 EXTRACT_SUFX=	.tar.bz2
+
+SHARED_LIBS=	calc 0.0 \
+		custcalc 0.0
 
 CATEGORIES=	math
 
@@ -25,15 +31,16 @@ MAKE_FLAGS=\
 	INCDIR='$${DESTDIR}${PREFIX}/include' \
 	MANDIR='$${DESTDIR}${PREFIX}/man/man1' \
 	CALC_SHAREDIR='$${DESTDIR}${PREFIX}/share/calc' \
+	LIB_EXT_VERSION=".so.${LIBcalc_VERSION}" \
 	USE_READLINE='-DUSE_READLINE' \
 	READLINE_LIB='-lreadline -lcurses' \
-	LCC=${CC} \
-	CFLAGS='${CFLAGS} -DCALC_SRC $${CCWARN}'
+	LCC="${CC}" \
+	CCOPT="${CFLAGS}"
 
-MAKE_FILE=	Makefile.simple
+USE_GMAKE=	Yes
 TEST_TARGET=	check
 
 post-install:
-	rm ${PREFIX}/lib/lib*calc*.so* ${PREFIX}/bin/calc-static
+	rm ${PREFIX}/lib/lib{cust,}calc.so
 
 .include <bsd.port.mk>
