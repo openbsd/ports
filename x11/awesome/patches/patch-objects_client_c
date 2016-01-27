@@ -1,0 +1,28 @@
+$OpenBSD: patch-objects_client_c,v 1.14 2016/01/27 15:18:05 dcoppa Exp $
+
+commit f128b313130ad10dfa6a8e1bdf8e360038aee378
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Jan 23 13:14:30 2016 +0100
+
+Fix window key grabbing
+
+Commit ff799a0f5dba06b is incomplete. It changed the window on which we grab
+keys, but only in some places. When the keyboard layout changes, we have to
+re-grab these keys, but the code does so on the wrong window.
+
+This patch fixes that oversight.
+
+Fixes: https://github.com/awesomeWM/awesome/issues/639
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- objects/client.c.orig	Fri Jan 15 16:51:19 2016
++++ objects/client.c	Wed Jan 27 16:10:03 2016
+@@ -2283,7 +2283,7 @@ luaA_client_keys(lua_State *L)
+     {
+         luaA_key_array_set(L, 1, 2, keys);
+         luaA_object_emit_signal(L, 1, "property::keys", 0);
+-        xcb_ungrab_key(globalconf.connection, XCB_GRAB_ANY, c->frame_window, XCB_BUTTON_MASK_ANY);
++        xcb_ungrab_key(globalconf.connection, XCB_GRAB_ANY, c->window, XCB_BUTTON_MASK_ANY);
+         xwindow_grabkeys(c->window, keys);
+     }
+ 
