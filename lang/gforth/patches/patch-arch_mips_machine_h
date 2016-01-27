@@ -1,6 +1,6 @@
-$OpenBSD: patch-arch_mips_machine_h,v 1.2 2016/01/26 22:24:58 jasper Exp $
+$OpenBSD: patch-arch_mips_machine_h,v 1.3 2016/01/27 08:13:08 jasper Exp $
 
-Let the MIPS backend build on OpenBSD.
+https://savannah.gnu.org/bugs/index.php?46987
 
 --- arch/mips/machine.h.orig	Fri Oct 11 23:31:28 2013
 +++ arch/mips/machine.h	Tue Jan 26 09:04:42 2016

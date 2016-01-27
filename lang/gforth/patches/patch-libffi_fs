@@ -1,4 +1,7 @@
-$OpenBSD: patch-libffi_fs,v 1.1 2016/01/26 22:24:58 jasper Exp $
+$OpenBSD: patch-libffi_fs,v 1.2 2016/01/27 08:13:08 jasper Exp $
+
+https://savannah.gnu.org/bugs/index.php?46989
+
 --- libffi.fs.orig	Tue Jan 26 09:39:02 2016
 +++ libffi.fs	Tue Jan 26 09:39:26 2016
 @@ -25,7 +25,9 @@ c-library libffi

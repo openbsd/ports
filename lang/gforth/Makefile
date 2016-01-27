@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/01/26 22:24:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2016/01/27 08:13:08 jasper Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc sparc64
 
@@ -6,9 +6,12 @@ COMMENT =		ANSI/200x Forth interpreter and compiler
 
 V =			0.7.3
 DISTNAME =		gforth-${V}
+REVISION =		0
 CATEGORIES =		lang
 
 HOMEPAGE =		http://www.gnu.org/software/gforth/
+
+MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
