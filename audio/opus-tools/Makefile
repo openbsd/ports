@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/09/10 21:09:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/27 15:59:03 naddy Exp $
 
 COMMENT=	encode, inspect, and decode Opus files
 
 DISTNAME=	opus-tools-0.1.9
-REVISION=	0
+REVISION=	1
 CATEGORIES=	audio
 
 HOMEPAGE=	http://opus-codec.org/
@@ -22,5 +22,8 @@ WANTLIB=	FLAC c m ogg opus sndio
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-maintainer-mode
+
+# OpenBSD uses PIE by default anyway on archs where it actually works
+CONFIGURE_ARGS+=--disable-pie
 
 .include <bsd.port.mk>
