@@ -1,0 +1,11 @@
+$OpenBSD: README,v 1.1 2016/01/27 15:02:01 kirby Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+You may need to increase the default maximum number of available memory
+in /etc/login.conf for your class (staff in most cases) to be able to
+process big images and for batch processing:
+
+        :datasize-cur=3072M: \

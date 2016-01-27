@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/07/10 08:27:49 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/01/27 15:02:01 kirby Exp $
 @bin bin/rawtherapee
 @man man/man1/rawtherapee.1
+share/appdata/
+share/appdata/rawtherapee.appdata.xml
 share/applications/rawtherapee.desktop
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/rawtherapee/
 share/doc/rawtherapee/AUTHORS.txt
 share/doc/rawtherapee/AboutThisBuild.txt
@@ -110,6 +113,7 @@ share/rawtherapee/images/Chanmixer-B.png
 share/rawtherapee/images/Chanmixer-BB.png
 share/rawtherapee/images/Chanmixer-BG.png
 share/rawtherapee/images/Chanmixer-BR.png
+share/rawtherapee/images/Chanmixer-BY.png
 share/rawtherapee/images/Chanmixer-C.png
 share/rawtherapee/images/Chanmixer-G.png
 share/rawtherapee/images/Chanmixer-GB.png
