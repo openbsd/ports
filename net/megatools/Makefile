@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/26 17:55:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/27 02:57:00 bentley Exp $
 
 COMMENT =		command line client application for Mega
 
-DISTNAME =		megatools-1.9.95
-REVISION =		1
+DISTNAME =		megatools-1.9.96
 
 SHARED_LIBS +=  mega                      0.0 # 0.0
 
 CATEGORIES =		net
 
 HOMEPAGE =		http://megatools.megous.com/
+
+MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -20,6 +21,7 @@ WANTLIB += gobject-2.0 idn nghttp2 pcre pthread ssl z
 MASTER_SITES =		http://megatools.megous.com/builds/
 
 MODULES =		devel/gettext
+BUILD_DEPENDS =		devel/gobject-introspection
 LIB_DEPENDS =		devel/glib2 \
 			net/curl
 RUN_DEPENDS =		net/glib2-networking
