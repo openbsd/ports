@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/26 23:10:08 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2016/01/27 06:56:02 ajacoutot Exp $
 
 COMMENT=	3D printing host suite
 DISTNAME=	printrun-20150310
@@ -29,8 +29,8 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/py-pyglet \
 		x11/py-wxPython \
 
-BUILD_DEPENDS=	lang/cython \
-		${RUN_DEPENDS}
+BUILD_DEPENDS=	devel/py-serial \
+		lang/cython
 
 SUBST_VARS+=	LOCALBASE
 
