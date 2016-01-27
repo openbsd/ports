@@ -1,13 +1,11 @@
-$OpenBSD: patch-browser_installer_Makefile_in,v 1.16 2015/11/04 07:35:51 landry Exp $
---- browser/installer/Makefile.in.orig	Tue Sep 22 00:23:05 2015
-+++ browser/installer/Makefile.in	Fri Sep 25 09:05:12 2015
-@@ -103,10 +103,6 @@ MOZ_PKG_MAC_ICON=branding/disk.icns
+$OpenBSD: patch-browser_installer_Makefile_in,v 1.17 2016/01/27 18:12:43 landry Exp $
+--- browser/installer/Makefile.in.orig	Thu Dec 17 14:42:50 2015
++++ browser/installer/Makefile.in	Thu Dec 17 14:43:17 2015
+@@ -95,8 +95,6 @@ MOZ_PKG_MAC_ICON=branding/disk.icns
  MOZ_PKG_MAC_EXTRA=--symlink '/Applications:/ '
  endif
  
--ifndef LIBXUL_SDK
 -INSTALL_SDK = 1
--endif
 -
  include $(topsrcdir)/toolkit/mozapps/installer/signing.mk
  include $(topsrcdir)/toolkit/mozapps/installer/packager.mk

@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.286 2016/01/07 09:24:20 landry Exp $
+# $OpenBSD: Makefile,v 1.287 2016/01/27 18:12:43 landry Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	43.0.4
+MOZILLA_VERSION =	44.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 BROKEN-sparc64 =	xpcshell SIGBUS during fake
 EXTRACT_SUFX =		.tar.xz
 
-SO_VERSION =	61.0
+SO_VERSION =	62.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps mozgnome xul clearkey lgpllibs
@@ -33,10 +33,13 @@ MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c c++
 
+# firefox >= 44 doesnt build with base libevent
+MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
+
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
 
-CONFIGURE_STYLE =	autoconf no-autoheader
+CONFIGURE_STYLE =	gnu
 
 # to be able to link when building with clang on i386 or gcc on ppc
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
@@ -57,8 +60,6 @@ CONFIGURE_ARGS +=	--enable-gstreamer=1.0
 CONFIGURE_ARGS +=	--enable-pie
 
 BUILD_DEPENDS +=	multimedia/gstreamer1/plugins-base
-
-MOZILLA_AUTOCONF_DIRS +=	js/src
 
 post-install:
 	${SUBST_MAN} ${FILESDIR}/mozilla-firefox.1 \
