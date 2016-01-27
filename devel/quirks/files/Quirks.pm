@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.356 2016/01/25 21:38:24 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.357 2016/01/27 11:55:24 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -729,6 +729,7 @@ my $obsolete_reason = {
 	'hs-hackage-db' => 5,
 	'c2hs' => 5,
 	'hs-language-c' => 5,
+	'hs-simple-sendfile' => 5,
 };
 
 my @msg = (
