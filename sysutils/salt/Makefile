@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2016/01/28 06:56:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2016/01/28 16:33:35 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -75,8 +75,8 @@ TEST_DEPENDS =		databases/py-mysql \
 
 pre-configure:
 	sed -i 's,share/man,man,g' ${WRKSRC}/setup.py
-	sed -i 's,^#user: root,user: _salt,,' ${WRKSRC}/conf/{master,proxy}
-	sed -i 's,^REQUIRED_OPEN_FILES.*,REQUIRED_OPEN_FILES = 512,,' \
+	sed -i 's,^#user: root,user: _salt,' ${WRKSRC}/conf/{master,proxy}
+	sed -i 's,^REQUIRED_OPEN_FILES.*,REQUIRED_OPEN_FILES = 512,' \
 		${WRKSRC}/tests/runtests.py
 
 post-install:
