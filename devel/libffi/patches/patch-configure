@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure,v 1.7 2016/01/28 08:40:47 jasper Exp $
+
+- Always link with -pthread for libffi
+
+--- configure.orig	Tue Jan 26 18:55:54 2016
++++ configure	Tue Jan 26 18:56:20 2016
+@@ -18522,6 +18522,12 @@ $as_echo "#define SYMBOL_UNDERSCORE 1" >>confdefs.h
+ 
+ fi
+ 
++case "$target" in
++    *-*-openbsd*)
++      LDFLAGS="-lpthread $LDFLAGS"
++    ;;
++esac
++
+ FFI_EXEC_TRAMPOLINE_TABLE=0
+ case "$target" in
+      *arm*-apple-darwin*)
