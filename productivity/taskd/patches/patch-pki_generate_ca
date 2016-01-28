@@ -1,41 +1,16 @@
-$OpenBSD: patch-pki_generate_ca,v 1.1.1.1 2014/07/12 22:08:35 landry Exp $
---- pki/generate.ca.orig	Fri Jun 20 22:26:36 2014
-+++ pki/generate.ca	Fri Jun 20 21:59:50 2014
-@@ -1,27 +1,30 @@
--#!/bin/bash
-+#!/bin/sh
- 
- # Take the correct binary to create the certificates
--CERTTOOL=$(which gnutls-certtool || which certtool)
-+CERTTOOL=$(which certtool)
- if [[ -z "${CERTTOOL}" ]]
- then
-   echo "ERROR: No certtool found" >&2
-   exit 1
- fi
- 
-+. ./vars
-+
- # Create a CA key.
- ${CERTTOOL} \
-   --generate-privkey \
-+  --bits=$bits \
-   --outfile ca.key.pem
- 
- chmod 600 ca.key.pem
- 
- # Sign a CA cert.
- cat <<EOF >ca.info
--organization = Göteborg Bit Factory
--cn = Göteborg Bit Factory
--country = SE
--state = Västra Götaland
--locality = Göteborg
-+organization = $organization
-+cn = $cn
-+country = $country
-+state = $state
-+locality = $locality
+$OpenBSD: patch-pki_generate_ca,v 1.2 2016/01/28 17:15:03 kspillner Exp $
+
+Fix CA certificate generation for GNUTLS v3.3.20 and later.
+When this option was present clients failed to validate the
+server's certificate when trust=strict with "certificate
+violates signer's constraints" errors.
+--- pki/generate.ca.orig	Wed Jan 20 09:43:57 2016
++++ pki/generate.ca	Wed Jan 20 09:44:09 2016
+@@ -26,7 +26,6 @@ country = $COUNTRY
+ state = $STATE
+ locality = $LOCALITY
  ca
- cert_signing_key
+-cert_signing_key
  EOF
+ 
+ $CERTTOOL \

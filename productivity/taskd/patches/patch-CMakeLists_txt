@@ -1,0 +1,25 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2016/01/28 17:15:03 kspillner Exp $
+--- CMakeLists.txt.orig	Tue Nov 10 15:44:28 2015
++++ CMakeLists.txt	Tue Nov 10 15:44:54 2015
+@@ -115,10 +115,10 @@ if (GNUTLS_FOUND)
+ endif (GNUTLS_FOUND)
+ 
+ message ("-- Looking for libuuid")
+-if (DARWIN OR FREEBSD)
++if (DARWIN OR FREEBSD OR OPENBSD)
+   # Apple and FreeBSD include the uuid functions in their libc, rather than libuuid
+   check_function_exists (uuid_unparse_lower HAVE_UUID_UNPARSE_LOWER)
+-else (DARWIN OR FREEBSD)
++else (DARWIN OR FREEBSD OR OPENBSD)
+   find_path    (UUID_INCLUDE_DIR   uuid/uuid.h)
+   find_library (UUID_LIBRARY NAMES uuid)
+   if (UUID_INCLUDE_DIR AND UUID_LIBRARY)
+@@ -131,7 +131,7 @@ else (DARWIN OR FREEBSD)
+   else (UUID_INCLUDE_DIR AND UUID_LIBRARY)
+     message (FATAL_ERROR "-- libuuid not found.")
+   endif (UUID_INCLUDE_DIR AND UUID_LIBRARY)
+-endif (DARWIN OR FREEBSD)
++endif (DARWIN OR FREEBSD OR OPENBSD)
+ 
+ if (HAVE_UUID_UNPARSE_LOWER)
+   message ("-- Found libuuid")

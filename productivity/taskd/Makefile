@@ -1,24 +1,28 @@
-# $OpenBSD: Makefile,v 1.4 2015/08/25 07:30:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2016/01/28 17:15:00 kspillner Exp $
 
 COMMENT =	lightweight server providing access to task data
 
-DISTNAME =	taskd-1.0.0
+DISTNAME =	taskd-1.1.0
 CATEGORIES =	productivity net
-REVISION =	1
 
 HOMEPAGE =	http://www.taskwarrior.org/
+
+MAINTAINER =	Kent R. Spillner <kspillner@openbsd.org>
 
 MASTER_SITES =	${HOMEPAGE}/download/
 
 # MIT
 PERMIT_PACKAGE_CDROM =		Yes
 
-MODULES =		devel/cmake
+MODULES =		gcc4 \
+			devel/cmake
 
-WANTLIB += c gnutls m pthread stdc++ uuid
+MODGCC4_LANGS =		c++
+MODGCC4_ARCHS =		*
 
-LIB_DEPENDS =	security/gnutls \
-		sysutils/e2fsprogs>=1.42.7
+WANTLIB += c gnutls m pthread
+
+LIB_DEPENDS =	security/gnutls
 
 CONFIGURE_STYLE =	cmake
 
@@ -33,10 +37,11 @@ NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/taskd/pki/
-	${INSTALL_SCRIPT} ${WRKSRC}/pki/!(*.orig) \
+	${INSTALL_SCRIPT} ${WRKSRC}/pki/generate!(*.orig) \
+		${PREFIX}/share/examples/taskd/pki/
+	${INSTALL_DATA} ${WRKSRC}/pki/README \
 		${PREFIX}/share/examples/taskd/pki/
 	${SUBST_DATA} ${FILESDIR}/config \
 		${PREFIX}/share/examples/taskd/config
-	${INSTALL_DATA} ${FILESDIR}/vars.dist ${PREFIX}/share/examples/taskd/pki/
 
 .include <bsd.port.mk>

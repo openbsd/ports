@@ -1,9 +1,0 @@
-#dnsnames="example.com example.net"
-#ipaddrs="10.11.12.13 10.20.30.40"
-bits=4096
-expiration_days=365
-organization="Göteborg Bit Factory"
-cn="Göteborg Bit Factory"
-country=SE
-state="Västra Götaland"
-locality="Göteborg"

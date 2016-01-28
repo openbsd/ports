@@ -1,32 +1,36 @@
-$OpenBSD: README,v 1.2 2015/07/18 21:13:41 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2016/01/28 17:15:05 kspillner Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
+NOTE:
+=====
+When running the taskd commands below you must either append the command
+line argument '--data /var/taskd' to every taskd command, or else export
+the TASKDDATA environment variable:
+
+  # export TASKDDATA=/var/taskd
+
+
 Generate certificates
 =====================
 Before starting taskd you need to generate certificates for it to use.
-The procedure is described at
-http://taskwarrior.org/docs/server_configure.html but has been somewhat
-simplified on OpenBSD:
+This procedure is described at:
+
+http://taskwarrior.org/docs/taskserver/configure.html
 
 Generate certificate files
 --------------------------
-In ${PREFIX}/share/examples/taskd/pki/ is a set of scripts that can be
-used to generate necessary files. Copy that directory somewhere safe and
-adjust vars to your liking.
-generate.server will automatically generate certificate with the
-hostname and IPs of machine it is ran on, adjust the vars file to
-override this.
-Once you're satisfied with settings, run:
+Copy everything under ${PREFIX}/share/examples/taskd/pki to a directory
+where you have write permission, edit the contents of the var file to
+match your needs, and then run the generate script:
 
   $ ./generate
 
-
 Copy certificates in place
 --------------------------
-Copy resulting certificates into taskd's directory:
+Copy the following certificate files and keys to /var/taskd:
 
   # cp {client,server}.{cert,key}.pem server.crl.pem ca.cert.pem \
       /var/taskd
@@ -35,96 +39,110 @@ Copy resulting certificates into taskd's directory:
 
 Running taskd
 =============
-taskd by default listens on all interfaces on port 53589. You can change
-this with a command like:
+taskd by default listens on 127.0.0.1 port 53589. You can change this
+by editing /var/taskd/config, or with a command like:
 
   # su -m _taskd -c \
 	"taskd config --force server localhost:12345 --data /var/taskd"
 
-To enable automatic startup on boot for taskd, add it to pkg_scripts
-in ${BASESYSCONFDIR}/rc.conf.local, for example:
+taskd comes with an rc.d script that can be used to start it manually,
+or enable it to start automatically on boot.
 
-   pkg_scripts="${pkg_scripts} taskd"
-
-To start taskd, reboot or start it manually:
-
-   # rcctl restart taskd
+  # rcctl start taskd
+  # rcctl enable taskd
 
 
 Adding users
 ============
-As described at http://taskwarrior.org/docs/server_user.html
+Before you can sync with the server you must create at least one user
+and organization.  This procedure is described at:
 
-For most operations here you'll either have to
-  # export TASKDDATA=/var/taskd
+http://taskwarrior.org/docs/taskserver/user.html
 
-or run taskd with '--data /var/taskd' appended to it's options.
-
-Create organization and user
-----------------------------
-First you need to create an organization to put user(s) into:
+Create organization
+-------------------
+First, you must create an organization (in this example it is named
+Public):
 
   # su -m _taskd -c "taskd add org Public --data /var/taskd"
 
-  Created organization 'Public'
+Create user
+-----------
+Next, create a user as part of that organization:
 
+  # su -m _taskd -c \
+	"taskd add user Public 'First Last' --data /var/taskd"
 
-Then you can proceed with creating a user:
-
-  # su -m _taskd -c "taskd add user 'Public' 'First Last' --data /var/taskd"
-  New user key: cf31f287-ee9e-43a8-843e-e8bbd5de4294
-  Created user 'First Last' for organization 'Public'
-
+Be sure to remember the user key mentioned in the output of that
+command.  It is required by the client configuration later in order
+to authenticate with the server.
 
 Create user certificate
 -----------------------
-Go again to the directory where you copied the pki scripts, and run:
+Finally, you must generate a certificate for that user.  Go back to the
+directory where you copied everything from
+${PREFIX}/share/examples/taskd/pki and run (replacing first_last with
+the filename you want for this user's certificate and key):
 
   $ ./generate.client first_last
-
-This will generate a new key and cert, named first_last.cert.pem and
-first_last.key.pem. It is not important that 'first_last' was used here,
-just that it is something unique, and valid for use in a file name.
 
 
 Configure taskwarrior
 =====================
-As described at http://taskwarrior.org/docs/server_taskwarrior.html
+Now taskwarrior must be configured to connect to this taskd server and
+authenticate as this user.  This procedure is described at:
 
-You will need following information from above processes:
-  CA ca.cert.pem
-  Client certificate: first_last.cert.pem
-  Client key: first_last.key.pem
-  User key (yours will be different): cf31f287-ee9e-43a8-843e-e8bbd5de4294
-  Organization: Public
-  Account name: First Last
-  Server:port host.domain:53589
+http://taskwarrior.org/docs/taskserver/taskwarrior.html
+
+Copy the ca.cert.pem file and user certificate and key files
+(first_last.cert.pem and first_last.key.pem in the example above) that
+you just generated to the users' local task directory, ~./task:
 
   $ cp first_last.cert.pem ~/.task
   $ cp first_last.key.pem  ~/.task
   $ cp ca.cert.pem         ~/.task
+
+Configure taskwarrior to use these certificates and connect to this
+server by either editing ~/.taskrc, or with commands like:
+
   $ task config taskd.certificate ~/.task/first_last.cert.pem
   $ task config taskd.key         ~/.task/first_last.key.pem
   $ task config taskd.ca          ~/.task/ca.cert.pem
   $ task config taskd.server      host.domain:53589
-  $ task config taskd.credentials 'Public/First Last/cf31f287-ee9e-43a8-843e-e8bbd5de4294'
+
+Finally, configure taskwarrior to authenticate as the user created
+above, replacing "Public" with the name of the organization you created,
+"First Last" with the name of the user, and "cf31f287-..." with the
+value of the user key that you remembered from the output of the "taskd
+add user" command:
+
+  $ task config taskd.credentials \
+	'Public/First Last/cf31f287-ee9e-43a8-843e-e8bbd5de4294'
 
 
 Syncing Taskwarrior
 ===================
-As described at http://taskwarrior.org/docs/server_sync.html
+You should now be able to sync with this taskd server.  This procedure
+is described at: http://taskwarrior.org/docs/taskserver/sync.html
 
-First time sync is special, and needs to be done only once:
+Very first sync
+---------------
+The very first sync is special, but only needs to be done once:
 
   $ task sync init
-  Please confirm that you wish to upload all your pending tasks to the
-  Task Server (yes/no) yes
-  Syncing with host.domain:53589
-  Sync successful.  2 changes uploaded.
 
+This will prompt you to confirm that you want to sync your existing
+tasks with this server.
 
-Afterwards you simply run:
+Subsequent syncs
+----------------
+After the very first sync you can sync again at any time by simply
+running:
 
   $ task sync
-  Syncing with :
-  Sync successful.  1 changes uploaded.
+
+Troubleshooting
+---------------
+If you encounter any problems syncing with this taskd server you
+should check if your problem is already described at
+http://taskwarrior.org/docs/taskserver/troubleshooting-sync.html

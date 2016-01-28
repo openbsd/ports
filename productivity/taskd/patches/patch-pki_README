@@ -1,6 +1,6 @@
-$OpenBSD: patch-pki_README,v 1.1.1.1 2014/07/12 22:08:35 landry Exp $
---- pki/README.orig	Fri Jun 20 22:26:36 2014
-+++ pki/README	Fri Jun 20 22:27:24 2014
+$OpenBSD: patch-pki_README,v 1.2 2016/01/28 17:15:03 kspillner Exp $
+--- pki/README.orig	Sun May 10 16:35:22 2015
++++ pki/README	Tue Nov 10 15:35:03 2015
 @@ -21,7 +21,7 @@ and cert will not be trusted by anyone, for good reaso
  
  Note, you can inspect any cert with the command:
@@ -10,3 +10,10 @@ $OpenBSD: patch-pki_README,v 1.1.1.1 2014/07/12 22:08:35 landry Exp $
  
  There is a 'generate' script here that will perform the above steps.  Take a
  look at it to see the individual steps it takes to generate the proper set of
+@@ -32,5 +32,5 @@ chosen parameters.
+ 
+ VAlidate a certificate with:
+ 
+-  $ gnutls-certtool --verify --infile client.cert.pem --load-ca-certificate ca.cert.pem
++  $ certtool --verify --infile client.cert.pem --load-ca-certificate ca.cert.pem
+ 

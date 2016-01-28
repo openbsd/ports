@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/08/25 07:30:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/01/28 17:15:05 kspillner Exp $
 @newgroup _taskd:734
 @newuser _taskd:732:734:daemon:Taskwarrior Sync Server:/var/taskd:/sbin/nologin
 @extraunexec rm -rf /var/taskd
@@ -16,6 +16,7 @@
 @bin bin/taskd
 bin/taskdctl
 @man man/man1/taskd.1
+@man man/man1/taskdctl.1
 @man man/man5/taskdrc.5
 share/examples/taskd/
 share/examples/taskd/config
@@ -34,7 +35,6 @@ share/examples/taskd/pki/generate.ca
 share/examples/taskd/pki/generate.client
 share/examples/taskd/pki/generate.crl
 share/examples/taskd/pki/generate.server
-share/examples/taskd/pki/vars.dist
 @sample share/examples/taskd/pki/vars
 share/taskd/
 share/taskd/AUTHORS
