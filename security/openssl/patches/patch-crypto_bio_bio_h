@@ -1,0 +1,21 @@
+$OpenBSD: patch-crypto_bio_bio_h,v 1.1 2016/01/28 22:50:59 sthen Exp $
+
+From da7947e8c6915d86616425ecbc4906f079ef122f Mon Sep 17 00:00:00 2001
+From: Richard Levitte <levitte@openssl.org>
+Date: Thu, 28 Jan 2016 17:55:11 +0100
+Subject: [PATCH] Correct number of arguments in BIO_get_conn_int_port macro
+
+Reviewed-by: Rich Salz <rsalz@openssl.org>
+(cherry picked from commit 41a28cb2944a4e1c9d13889757a3bd9f72abeca1)
+
+--- crypto/bio/bio.h.orig	Thu Jan 28 22:47:31 2016
++++ crypto/bio/bio.h	Thu Jan 28 22:47:39 2016
+@@ -479,7 +479,7 @@ struct bio_dgram_sctp_prinfo {
+ # define BIO_get_conn_hostname(b)  BIO_ptr_ctrl(b,BIO_C_GET_CONNECT,0)
+ # define BIO_get_conn_port(b)      BIO_ptr_ctrl(b,BIO_C_GET_CONNECT,1)
+ # define BIO_get_conn_ip(b)               BIO_ptr_ctrl(b,BIO_C_GET_CONNECT,2)
+-# define BIO_get_conn_int_port(b) BIO_ctrl(b,BIO_C_GET_CONNECT,3,0,NULL)
++# define BIO_get_conn_int_port(b) BIO_ctrl(b,BIO_C_GET_CONNECT,3,NULL)
+ 
+ # define BIO_set_nbio(b,n)       BIO_ctrl(b,BIO_C_SET_NBIO,(n),NULL)
+ 
