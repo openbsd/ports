@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/01/28 08:41:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2016/01/28 18:34:08 jasper Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc sparc64
 
@@ -51,7 +51,8 @@ ENDIAN =	l
 .endif
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/envos.fs.in
+	sed -i "s,@CC@,& -I${LOCALBASE}/include -L${LOCALBASE}/lib," \
+		${WRKSRC}/envos.fs.in
 
 # Remove a bunch of unused and unneeded directories
 post-install:
