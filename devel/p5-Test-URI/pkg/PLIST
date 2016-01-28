@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/26 18:20:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/01/28 09:58:29 benoit Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/URI.pm
-@man man/man3p/Test::URI.3
+@man man/man3p/Test::URI.3p
