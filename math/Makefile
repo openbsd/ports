@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2015/12/29 15:59:26 shadchin Exp $
+# $OpenBSD: Makefile,v 1.127 2016/01/28 10:31:40 sthen Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -31,6 +31,7 @@
      SUBDIR += grace
      SUBDIR += graphviz
      SUBDIR += grpn
+     SUBDIR += gunits
      SUBDIR += hc
      SUBDIR += hdf5
      SUBDIR += hexcalc
