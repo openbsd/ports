@@ -1,6 +1,7 @@
-The keychain shell script makes handling RSA and DSA keys both
-convenient and secure. It acts as a front-end to ssh-agent, allowing
-you to easily have one long-running ssh-agent process per system,
-rather than per login session. This dramatically reduces the number
-of times you need to enter your passphrase from once per new login
-session to once every time your local machine is rebooted.
+Keychain helps you to manage SSH and GPG keys in a convenient and secure
+manner. It acts as a frontend to ssh-agent and ssh-add, but allows you
+to easily have one long running ssh-agent process per system, rather
+than the norm of one ssh-agent per login session. Keychain also makes
+it easy for remote cron jobs to securely "hook in" to a long-running
+ssh-agent process, allowing your scripts to take advantage of key-based
+logins.
