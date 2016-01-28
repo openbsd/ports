@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/01/27 18:04:42 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2016/01/28 18:28:30 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64 alpha
 # XXX remember to bump www/conkeror because it has a symlink pointing to lib/xulrunner-${MOZILLA_VER}
@@ -8,8 +8,8 @@ MOZILLA_PROJECT =	xulrunner
 MOZILLA_DIST =		firefox
 PKGSPEC-devel =		xulrunner-devel->=24.0,<31.0
 PKGSPEC-main =		xulrunner->=24.0,<31.0
-REVISION-main =		9
-REVISION-devel =	7
+REVISION-main =		10
+REVISION-devel =	8
 
 SO_VERSION =		0.0
 MOZILLA_LIBS =		mozgnome mozalloc xul
@@ -26,6 +26,7 @@ MODCLANG_LANGS =	c c++
 CONFIGURE_ARGS +=	--disable-debug-symbols
 .endif
 
+WANTLIB +=		kvm
 RUN_DEPENDS-devel =	${PKGNAME-main}:${BASE_PKGPATH},-main
 
 CONFIGURE_ENV +=	MOZ_OFFICIAL_BRANDING_DIRECTORY=browser/branding
