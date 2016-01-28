@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_FmBitmaps_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
---- src/FmBitmaps.c.orig	Wed Oct 29 07:02:05 1997
-+++ src/FmBitmaps.c	Sun Jan  3 01:03:08 2010
-@@ -489,7 +489,7 @@
+$OpenBSD: patch-src_FmBitmaps_c,v 1.3 2016/01/28 13:30:02 sthen Exp $
+--- src/FmBitmaps.c.orig	Wed Oct 29 12:02:05 1997
++++ src/FmBitmaps.c	Thu Jan 28 13:29:42 2016
+@@ -489,7 +489,7 @@ Widget	     top,wtmp;
   top=wid;
   while(wtmp=XtParent(top)) top=wtmp;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_FmBitmaps_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
   
   if (0==(new=XCopyColormapAndFree(di,old))) {
     XtAppWarning(app,"switchColormap failed: cannot allocate new colormap");
-@@ -497,7 +497,7 @@
+@@ -497,7 +497,7 @@ Widget	     top,wtmp;
   }
  
   has_private_cm=True;
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_FmBitmaps_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
   XtSetWMColormapWindows(top,&top,1);
  
   XtAppWarning(app,"switching to private colormap...");
-@@ -515,7 +515,7 @@
+@@ -515,7 +515,7 @@ rval=(from_file? XpmReadFileToPixmap(dpy,win,(String)d
  
  if (rval==XpmColorFailed && switchColormap(top)) {
      /* get the new colormap */

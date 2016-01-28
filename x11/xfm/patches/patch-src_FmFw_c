@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_FmFw_c,v 1.3 2010/01/03 22:53:32 jasper Exp $
---- src/FmFw.c.orig	Thu Aug 23 08:45:26 2001
-+++ src/FmFw.c	Sun Jan  3 01:03:08 2010
-@@ -754,9 +754,9 @@
+$OpenBSD: patch-src_FmFw_c,v 1.4 2016/01/28 13:30:02 sthen Exp $
+--- src/FmFw.c.orig	Thu Aug 23 13:45:26 2001
++++ src/FmFw.c	Thu Jan 28 13:29:42 2016
+@@ -754,9 +754,9 @@ static int devAction(int d, char *action)
        fprintf(stderr, "%s\n", action);
      freopen("/dev/null", "r", stdin);
      if (user.arg0flag)
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_FmFw_c,v 1.3 2010/01/03 22:53:32 jasper Exp $
      perror("Exec failed");
      exit(1);
    } else if (waitpid(pid, &status, 0) == -1 || !WIFEXITED(status) ||
-@@ -797,7 +797,7 @@
+@@ -797,7 +797,7 @@ static void createFileIcons(FileWindowRec *fw)
  
   XtAddCallback(fw->icon_box,XtNcallback,fileListCb,(XtPointer)fw);
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_FmFw_c,v 1.3 2010/01/03 22:53:32 jasper Exp $
   XtVaSetValues(fw->viewport, XtNallowHoriz, nhoriz!=0 , NULL);
  }
  
-@@ -1030,10 +1030,10 @@
+@@ -1030,10 +1030,10 @@ static void createTreeDisplay(FileWindowRec *fw)
    }
  #ifdef VIEWPORT_HACK
    XawFormDoLayout(fw->icon_box,False);
@@ -35,7 +35,7 @@ $OpenBSD: patch-src_FmFw_c,v 1.3 2010/01/03 22:53:32 jasper Exp $
  #endif
  }
  
-@@ -1349,7 +1349,7 @@
+@@ -1349,7 +1349,7 @@ void updateFileDisplay(FileWindowRec *fw)
    x=y=0;
    if (fw->icon_box) {
      if (keep_position)

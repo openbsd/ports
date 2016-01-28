@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_Apps,v 1.1 2002/12/30 09:11:47 pvalchev Exp $
---- lib/Apps.orig	Fri Apr  7 03:51:34 1995
-+++ lib/Apps	Mon Dec 30 00:57:29 2002
+$OpenBSD: patch-lib_Apps,v 1.2 2016/01/28 13:30:02 sthen Exp $
+--- lib/Apps.orig	Fri Apr  7 10:51:34 1995
++++ lib/Apps	Thu Jan 28 13:29:42 2016
 @@ -1,6 +1,7 @@
  #XFM
  Xterm:::terminal.xpm:exec xterm:
@@ -9,7 +9,7 @@ $OpenBSD: patch-lib_Apps,v 1.1 2002/12/30 09:11:47 pvalchev Exp $
  Textedit:::edit.xpm:exec textedit:exec textedit $*
  Mail:::mailtool.xpm:exec xmailtool:
  Calculator:::calc.xpm:exec xcalc:
-@@ -11,9 +12,9 @@ Graphics:~/.xfm:Graphics:drawing.xpm:LOA
+@@ -11,9 +12,9 @@ Graphics:~/.xfm:Graphics:drawing.xpm:LOAD:
  Mosaic:::xmosaic.xpm:exec mosaic:
  News:::news.xpm:exec xrn:
  Hosts:~/.xfm:Hosts:rlogin.xpm:LOAD:

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_FmLog_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
---- src/FmLog.c.orig	Thu Aug 23 08:45:26 2001
-+++ src/FmLog.c	Sun Jan  3 01:03:08 2010
-@@ -42,7 +42,7 @@
+$OpenBSD: patch-src_FmLog_c,v 1.3 2016/01/28 13:30:02 sthen Exp $
+--- src/FmLog.c.orig	Thu Aug 23 13:45:26 2001
++++ src/FmLog.c	Thu Jan 28 13:29:42 2016
+@@ -42,7 +42,7 @@ static void get_pipe_input(XtPointer cld,int *fid, XtI
  	fprintf(orig_stderr,"\nread error %i in 'get_pipe_input()'\n",errno);
  
   if (nbytes>0) {
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_FmLog_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
     block.format=FMT8BIT;
     block.length=nbytes;
     block.ptr=buf;
-@@ -56,9 +56,9 @@
+@@ -56,9 +56,9 @@ static void get_pipe_input(XtPointer cld,int *fid, XtI
     XtVaSetValues(ldp->text,
  		XtNeditType,XawtextRead,
  		XtNinsertPosition,pos,
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_FmLog_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
     if (auto_popup)
       popupByCursor(ldp->shell,XtGrabNone);
   }
-@@ -69,8 +69,8 @@
+@@ -69,8 +69,8 @@ static void update_tick_cb(Widget w, XtPointer cld, Xt
  {
  Boolean flag;
  Pixel   bg=(Pixel)cld,fg;
@@ -33,7 +33,7 @@ $OpenBSD: patch-src_FmLog_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
  }
  
  static void hide_log_cb(Widget w, XtPointer cld, XtPointer cad)
-@@ -84,11 +84,11 @@
+@@ -84,11 +84,11 @@ static void clear_log_cb(Widget w, XtPointer cld, XtPo
   Widget text=(Widget)cld;
   XawTextBlock           block;
  
@@ -47,7 +47,7 @@ $OpenBSD: patch-src_FmLog_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
   pos=0;
  }
  
-@@ -149,7 +149,7 @@
+@@ -149,7 +149,7 @@ Widget FmCreateLog(Widget parent,XFontStruct *font)
  	  "form", formWidgetClass, ldp->shell, 
  	  NULL);
  
@@ -56,7 +56,7 @@ $OpenBSD: patch-src_FmLog_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
  
  
    button_args[FONT].value=(XtArgVal)font;
-@@ -184,7 +184,7 @@
+@@ -184,7 +184,7 @@ Widget FmCreateLog(Widget parent,XFontStruct *font)
  	  button_args,N_BUTTON_ARGS);
    XtAddCallback(cmd,XtNcallback,clear_log_cb,(XtPointer)ldp->text);
  
@@ -65,7 +65,7 @@ $OpenBSD: patch-src_FmLog_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
  
    button_args[FROM_HORIZ].value=(XtArgVal)cmd;
    cmd =XtVaCreateManagedWidget("Auto Popup", labelWidgetClass, form,
-@@ -197,7 +197,7 @@
+@@ -197,7 +197,7 @@ Widget FmCreateLog(Widget parent,XFontStruct *font)
  	  XtNbottom,XtChainTop,
  	  XtNfont,font,
  	  XtNheight,h1+2*bw,
@@ -74,7 +74,7 @@ $OpenBSD: patch-src_FmLog_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
  
    button_args[FROM_HORIZ].value=(XtArgVal)cmd;
    ldp->auto_flag =XtCreateManagedWidget(
-@@ -208,7 +208,7 @@
+@@ -208,7 +208,7 @@ Widget FmCreateLog(Widget parent,XFontStruct *font)
    XtVaGetValues(ldp->auto_flag,
  	XtNforeground,&fg,XtNbackground,&bg,XtNstate,&flag,
  	XtNheight,&h2,
@@ -83,7 +83,7 @@ $OpenBSD: patch-src_FmLog_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
  
    vdist+=(h1-h2)/2;
  
-@@ -216,7 +216,7 @@
+@@ -216,7 +216,7 @@ Widget FmCreateLog(Widget parent,XFontStruct *font)
  	XtNvertDistance,vdist,
  	XtNforeground,bg,
  	XtNbackground,(flag?fg:bg),
