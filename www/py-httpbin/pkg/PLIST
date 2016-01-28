@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/05 12:39:47 shadchin Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@comment $OpenBSD: PLIST,v 1.2 2016/01/28 04:14:36 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/httpbin/
 lib/python${MODPY_VERSION}/site-packages/httpbin-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/httpbin-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
