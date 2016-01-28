@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2015/12/02 09:29:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2016/01/28 06:56:56 ajacoutot Exp $
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
 @comment needs a homedir to store ssh keys for GitFS
 @newgroup _salt:722
@@ -347,6 +347,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/grains/core.py
 lib/python${MODPY_VERSION}/site-packages/salt/grains/core.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/grains/disks.py
 lib/python${MODPY_VERSION}/site-packages/salt/grains/disks.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/grains/esxi.py
+lib/python${MODPY_VERSION}/site-packages/salt/grains/esxi.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/grains/external_ip.py
 lib/python${MODPY_VERSION}/site-packages/salt/grains/external_ip.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/grains/extra.py
@@ -554,6 +556,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/environ.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/environ.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/eselect.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/eselect.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/modules/esxi.py
+lib/python${MODPY_VERSION}/site-packages/salt/modules/esxi.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/etcd_mod.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/etcd_mod.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/event.py
@@ -893,6 +897,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/shadow.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/shadow.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/slack_notify.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/slack_notify.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/modules/slsutil.py
+lib/python${MODPY_VERSION}/site-packages/salt/modules/slsutil.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/smartos_imgadm.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/smartos_imgadm.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/smartos_virt.py
@@ -997,6 +1003,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/modules/virt.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/virt.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/virtualenv_mod.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/virtualenv_mod.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/modules/vsphere.py
+lib/python${MODPY_VERSION}/site-packages/salt/modules/vsphere.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/win_autoruns.py
 lib/python${MODPY_VERSION}/site-packages/salt/modules/win_autoruns.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/modules/win_dacl.py
@@ -1194,6 +1202,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/proxy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/chronos.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/chronos.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/proxy/esxi.py
+lib/python${MODPY_VERSION}/site-packages/salt/proxy/esxi.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/fx2.py
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/fx2.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/proxy/junos.py
@@ -1324,6 +1334,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/roster/clustershell.py
 lib/python${MODPY_VERSION}/site-packages/salt/roster/clustershell.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/roster/flat.py
 lib/python${MODPY_VERSION}/site-packages/salt/roster/flat.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/roster/range.py
+lib/python${MODPY_VERSION}/site-packages/salt/roster/range.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/roster/scan.py
 lib/python${MODPY_VERSION}/site-packages/salt/roster/scan.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/runner.py
@@ -1540,6 +1552,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/states/environ.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/environ.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/eselect.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/eselect.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/states/esxi.py
+lib/python${MODPY_VERSION}/site-packages/salt/states/esxi.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/etcd_mod.py
 lib/python${MODPY_VERSION}/site-packages/salt/states/etcd_mod.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/states/event.py
