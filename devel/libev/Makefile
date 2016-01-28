@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/12/21 09:21:21 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2016/01/28 08:32:46 dcoppa Exp $
 
 COMMENT =	high-performance event loop library
 
@@ -19,5 +19,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		m
 
 CONFIGURE_STYLE =	gnu
+
+.if ${MACHINE_ARCH} == "arm"
+CFLAGS +=	-DEV_NO_SMP
+.endif
 
 .include <bsd.port.mk>
