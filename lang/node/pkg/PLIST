@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2016/01/01 04:47:06 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.24 2016/01/29 20:12:04 abieber Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -17,87 +17,6 @@ include/node/node_buffer.h
 include/node/node_internals.h
 include/node/node_object_wrap.h
 include/node/node_version.h
-include/node/openssl/
-include/node/openssl/aes.h
-include/node/openssl/archs/
-include/node/openssl/archs/BSD-x86/
-include/node/openssl/archs/BSD-x86/opensslconf.h
-include/node/openssl/archs/BSD-x86_64/
-include/node/openssl/archs/BSD-x86_64/opensslconf.h
-include/node/openssl/asn1.h
-include/node/openssl/asn1_mac.h
-include/node/openssl/asn1t.h
-include/node/openssl/bio.h
-include/node/openssl/blowfish.h
-include/node/openssl/bn.h
-include/node/openssl/buffer.h
-include/node/openssl/camellia.h
-include/node/openssl/cast.h
-include/node/openssl/cmac.h
-include/node/openssl/cms.h
-include/node/openssl/comp.h
-include/node/openssl/conf.h
-include/node/openssl/conf_api.h
-include/node/openssl/crypto.h
-include/node/openssl/des.h
-include/node/openssl/des_old.h
-include/node/openssl/dh.h
-include/node/openssl/dsa.h
-include/node/openssl/dso.h
-include/node/openssl/dtls1.h
-include/node/openssl/e_os2.h
-include/node/openssl/ebcdic.h
-include/node/openssl/ec.h
-include/node/openssl/ecdh.h
-include/node/openssl/ecdsa.h
-include/node/openssl/engine.h
-include/node/openssl/err.h
-include/node/openssl/evp.h
-include/node/openssl/hmac.h
-include/node/openssl/idea.h
-include/node/openssl/krb5_asn.h
-include/node/openssl/kssl.h
-include/node/openssl/lhash.h
-include/node/openssl/md4.h
-include/node/openssl/md5.h
-include/node/openssl/mdc2.h
-include/node/openssl/modes.h
-include/node/openssl/obj_mac.h
-include/node/openssl/objects.h
-include/node/openssl/ocsp.h
-include/node/openssl/opensslconf.h
-include/node/openssl/opensslv.h
-include/node/openssl/ossl_typ.h
-include/node/openssl/pem.h
-include/node/openssl/pem2.h
-include/node/openssl/pkcs12.h
-include/node/openssl/pkcs7.h
-include/node/openssl/pqueue.h
-include/node/openssl/rand.h
-include/node/openssl/rc2.h
-include/node/openssl/rc4.h
-include/node/openssl/ripemd.h
-include/node/openssl/rsa.h
-include/node/openssl/safestack.h
-include/node/openssl/seed.h
-include/node/openssl/sha.h
-include/node/openssl/srp.h
-include/node/openssl/srtp.h
-include/node/openssl/ssl.h
-include/node/openssl/ssl2.h
-include/node/openssl/ssl23.h
-include/node/openssl/ssl3.h
-include/node/openssl/stack.h
-include/node/openssl/symhacks.h
-include/node/openssl/tls1.h
-include/node/openssl/ts.h
-include/node/openssl/txt_db.h
-include/node/openssl/ui.h
-include/node/openssl/ui_compat.h
-include/node/openssl/whrlpool.h
-include/node/openssl/x509.h
-include/node/openssl/x509_vfy.h
-include/node/openssl/x509v3.h
 include/node/pthread-fixes.h
 include/node/stdint-msvc2008.h
 include/node/tree.h
@@ -120,8 +39,6 @@ include/node/v8-util.h
 include/node/v8-version.h
 include/node/v8.h
 include/node/v8config.h
-lib/node/
-lib/node/${DISTFILES}
 lib/node_modules/
 lib/node_modules/abbrev/
 lib/node_modules/abbrev/.npmignore
@@ -532,9 +449,11 @@ lib/node_modules/node-gyp/gyp/DEPS
 lib/node_modules/node-gyp/gyp/LICENSE
 lib/node_modules/node-gyp/gyp/OWNERS
 lib/node_modules/node-gyp/gyp/PRESUBMIT.py
+lib/node_modules/node-gyp/gyp/PRESUBMIT.pyc
 lib/node_modules/node-gyp/gyp/buildbot/
 lib/node_modules/node-gyp/gyp/buildbot/aosp_manifest.xml
 lib/node_modules/node-gyp/gyp/buildbot/buildbot_run.py
+lib/node_modules/node-gyp/gyp/buildbot/buildbot_run.pyc
 lib/node_modules/node-gyp/gyp/buildbot/commit_queue/
 lib/node_modules/node-gyp/gyp/buildbot/commit_queue/OWNERS
 lib/node_modules/node-gyp/gyp/buildbot/commit_queue/README
@@ -546,57 +465,101 @@ lib/node_modules/node-gyp/gyp/data/win/large-pdb-shim.cc
 lib/node_modules/node-gyp/gyp/gyp
 lib/node_modules/node-gyp/gyp/gyp.bat
 lib/node_modules/node-gyp/gyp/gyp_main.py
+lib/node_modules/node-gyp/gyp/gyp_main.pyc
 lib/node_modules/node-gyp/gyp/gyptest.py
+lib/node_modules/node-gyp/gyp/gyptest.pyc
 lib/node_modules/node-gyp/gyp/pylib/
 lib/node_modules/node-gyp/gyp/pylib/gyp/
 lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSNew.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSNew.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSProject.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSProject.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSSettings.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSSettings.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSSettings_test.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSSettings_test.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSToolFile.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSToolFile.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSUserFile.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSUserFile.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSUtil.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSUtil.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSVersion.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/MSVSVersion.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/__init__.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/__init__.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/common.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/common.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/common_test.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/common_test.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/easy_xml.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/easy_xml.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/easy_xml_test.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/easy_xml_test.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/flock_tool.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/flock_tool.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/__init__.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/__init__.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/analyzer.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/analyzer.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/android.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/android.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/cmake.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/cmake.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/dump_dependency_json.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/dump_dependency_json.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/eclipse.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/eclipse.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/gypd.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/gypd.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/gypsh.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/gypsh.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/make.py
 @comment lib/node_modules/node-gyp/gyp/pylib/gyp/generator/make.py.orig
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/make.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/msvs.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/msvs.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/msvs_test.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/msvs_test.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/ninja.py
 @comment lib/node_modules/node-gyp/gyp/pylib/gyp/generator/ninja.py.orig
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/ninja.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/ninja_test.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/ninja_test.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/xcode.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/xcode.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/generator/xcode_test.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/generator/xcode_test.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/input.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/input.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/input_test.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/input_test.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/mac_tool.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/mac_tool.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/msvs_emulation.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/ninja_syntax.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/ninja_syntax.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/ordered_dict.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/ordered_dict.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/simple_copy.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/simple_copy.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/win_tool.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/win_tool.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/xcode_ninja.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/xcode_ninja.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/xcodeproj_file.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/xcodeproj_file.pyc
 lib/node_modules/node-gyp/gyp/pylib/gyp/xml_fix.py
+lib/node_modules/node-gyp/gyp/pylib/gyp/xml_fix.pyc
 lib/node_modules/node-gyp/gyp/samples/
 lib/node_modules/node-gyp/gyp/samples/samples
 lib/node_modules/node-gyp/gyp/samples/samples.bat
 lib/node_modules/node-gyp/gyp/setup.py
+lib/node_modules/node-gyp/gyp/setup.pyc
 lib/node_modules/node-gyp/gyp/tools/
 lib/node_modules/node-gyp/gyp/tools/README
 lib/node_modules/node-gyp/gyp/tools/Xcode/
@@ -613,9 +576,13 @@ lib/node_modules/node-gyp/gyp/tools/emacs/testdata/
 lib/node_modules/node-gyp/gyp/tools/emacs/testdata/media.gyp
 lib/node_modules/node-gyp/gyp/tools/emacs/testdata/media.gyp.fontified
 lib/node_modules/node-gyp/gyp/tools/graphviz.py
+lib/node_modules/node-gyp/gyp/tools/graphviz.pyc
 lib/node_modules/node-gyp/gyp/tools/pretty_gyp.py
+lib/node_modules/node-gyp/gyp/tools/pretty_gyp.pyc
 lib/node_modules/node-gyp/gyp/tools/pretty_sln.py
+lib/node_modules/node-gyp/gyp/tools/pretty_sln.pyc
 lib/node_modules/node-gyp/gyp/tools/pretty_vcproj.py
+lib/node_modules/node-gyp/gyp/tools/pretty_vcproj.pyc
 lib/node_modules/node-gyp/lib/
 lib/node_modules/node-gyp/lib/build.js
 @comment lib/node_modules/node-gyp/lib/build.js.orig
@@ -848,6 +815,23 @@ lib/node_modules/node-gyp/node_modules/tar/tar.js
 lib/node_modules/node-gyp/package.json
 lib/node_modules/node-gyp/src/
 lib/node_modules/node-gyp/src/win_delay_load_hook.c
+lib/node_modules/node-pledge/
+lib/node_modules/node-pledge/.gitignore
+lib/node_modules/node-pledge/LICENSE
+lib/node_modules/node-pledge/README.md
+lib/node_modules/node-pledge/binding.gyp
+lib/node_modules/node-pledge/build/
+lib/node_modules/node-pledge/build/Release/
+@bin lib/node_modules/node-pledge/build/Release/pledge.node
+lib/node_modules/node-pledge/build/binding.Makefile
+lib/node_modules/node-pledge/build/config.gypi
+lib/node_modules/node-pledge/build/pledge.target.mk
+lib/node_modules/node-pledge/index.js
+lib/node_modules/node-pledge/package.json
+lib/node_modules/node-pledge/pledge.cc
+lib/node_modules/node-pledge/pledge_10x.cc
+lib/node_modules/node-pledge/test.js
+lib/node_modules/node-pledge/version.js
 lib/node_modules/nopt/
 lib/node_modules/nopt/.npmignore
 lib/node_modules/nopt/.travis.yml
@@ -1102,7 +1086,9 @@ lib/node_modules/npm/README.md
 lib/node_modules/npm/bin/
 lib/node_modules/npm/bin/node-gyp-bin/
 lib/node_modules/npm/bin/node-gyp-bin/node-gyp
+lib/node_modules/npm/bin/node-gyp-bin/node-gyp.beforesubst
 lib/node_modules/npm/bin/node-gyp-bin/node-gyp.cmd
+@comment lib/node_modules/npm/bin/node-gyp-bin/node-gyp.orig
 lib/node_modules/npm/bin/npm
 lib/node_modules/npm/bin/npm-cli.js
 lib/node_modules/npm/bin/npm.cmd
@@ -1595,6 +1581,14 @@ lib/node_modules/npm/node_modules/lru-cache
 lib/node_modules/npm/node_modules/minimatch
 lib/node_modules/npm/node_modules/mkdirp
 lib/node_modules/npm/node_modules/node-gyp
+@comment lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/generator/make.py.orig
+@comment lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/generator/ninja.py.orig
+@comment lib/node_modules/npm/node_modules/node-gyp/lib/build.js.orig
+@comment lib/node_modules/npm/node_modules/node-gyp/lib/configure.js.beforesubst
+@comment lib/node_modules/npm/node_modules/node-gyp/lib/configure.js.orig
+@comment lib/node_modules/npm/node_modules/node-gyp/lib/install.js.beforesubst
+@comment lib/node_modules/npm/node_modules/node-gyp/lib/install.js.orig
+lib/node_modules/npm/node_modules/node-pledge
 lib/node_modules/npm/node_modules/nopt
 lib/node_modules/npm/node_modules/normalize-git-url
 lib/node_modules/npm/node_modules/normalize-package-data
@@ -1614,6 +1608,9 @@ lib/node_modules/npm/node_modules/read-package-json
 lib/node_modules/npm/node_modules/readable-stream
 lib/node_modules/npm/node_modules/realize-package-specifier
 lib/node_modules/npm/node_modules/request
+@comment lib/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/ctype/man/
+@comment lib/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/ctype/man/man3ctype/
+@comment lib/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/ctype/man/man3ctype/ctio.3ctype
 lib/node_modules/npm/node_modules/retry
 lib/node_modules/npm/node_modules/rimraf
 lib/node_modules/npm/node_modules/semver
@@ -2270,7 +2267,8 @@ lib/node_modules/request/node_modules/http-signature/node_modules/ctype/ctf.js
 lib/node_modules/request/node_modules/http-signature/node_modules/ctype/ctio.js
 lib/node_modules/request/node_modules/http-signature/node_modules/ctype/ctype.js
 lib/node_modules/request/node_modules/http-signature/node_modules/ctype/man/
-lib/node_modules/request/node_modules/http-signature/node_modules/ctype/man/man3ctype/
+@comment lib/node_modules/request/node_modules/http-signature/node_modules/ctype/man/man3ctype/
+@comment lib/node_modules/request/node_modules/http-signature/node_modules/ctype/man/man3ctype/ctio.3ctype
 lib/node_modules/request/node_modules/http-signature/node_modules/ctype/package.json
 lib/node_modules/request/node_modules/http-signature/node_modules/ctype/tools/
 lib/node_modules/request/node_modules/http-signature/node_modules/ctype/tools/jsl.conf
@@ -2617,6 +2615,8 @@ lib/node_modules/write-file-atomic/package.json
 @man man/man1/node.1
 share/doc/node/
 share/doc/node/gdbinit
+share/node/
+share/node/${DISTNAME}${EXTRACT_SUFX}
 share/systemtap/
 share/systemtap/tapset/
 share/systemtap/tapset/node.stp
