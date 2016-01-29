@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.73 2016/01/03 16:53:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.74 2016/01/29 22:24:30 zhuk Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
 COMMENT-langlist =	list of languages supported by KDE
 CATEGORIES =		devel
 V =			4.14.10
-REVISION-main =		3
+REVISION-main =		4
 DISTNAME =		kdelibs-$V
 PKGNAME-main =		${DISTNAME}
 PKGNAME-en_US =		kde4-locale-en_US-$V
@@ -78,7 +78,7 @@ WANTLIB-main += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB-main += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB-main += lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB-main += aspell attica bz2 dbusmenu-qt enchant exslt fam
-WANTLIB-main += gif lib/inotify/inotify jasper jpeg lzma pcre pcreposix
+WANTLIB-main += gif lib/inotify/inotify jasper jpeg lzma
 WANTLIB-main += png polkit-qt-core-1 qca2 soprano sopranoclient
 WANTLIB-main += streamanalyzer streams xml2 xslt
 
@@ -118,7 +118,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			databases/soprano>=${MIN_SOPRANO_VERSION} \
 			databases/strigi \
 			devel/libinotify \
-			devel/pcre \
 			graphics/giflib \
 			graphics/jasper \
 			graphics/openexr \
@@ -130,6 +129,10 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			productivity/attica \
 			x11/dbusmenu-qt \
 			x11/polkit-qt,
+
+# pcreposix clashes with regex stuff from base
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_PCRE=TRUE \
+			-DKJS_FORCE_DISABLE_PCRE=TRUE
 
 # and do not have this stuff at all
 CONFIGURE_ARGS +=	-DWITH_ACL:Bool=FALSE \
