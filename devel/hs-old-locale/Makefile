@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/20 16:22:27 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/29 20:28:08 kili Exp $
 
 COMMENT =		old locale library
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =		old-locale-1.0.0.7
 REVISION =		1
 CATEGORIES =		devel

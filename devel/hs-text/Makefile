@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2016/01/20 16:22:28 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2016/01/29 20:28:08 kili Exp $
 
 COMMENT =		efficient packed Unicode text type
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =		text-1.2.1.3
 REVISION =		1
 CATEGORIES =		devel

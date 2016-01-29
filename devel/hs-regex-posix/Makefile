@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2016/01/20 16:22:27 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2016/01/29 20:28:08 kili Exp $
 
 COMMENT =		posix regex backend for regex-base
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =		regex-posix-0.95.2
 REVISION =		4
 CATEGORIES =		devel

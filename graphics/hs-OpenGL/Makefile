@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2016/01/20 16:26:19 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2016/01/29 20:28:09 kili Exp $
 
 COMMENT =		Haskell binding for the OpenGL graphics system
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =		OpenGL-2.13.1.0
 REVISION =		0
 CATEGORIES =		graphics devel

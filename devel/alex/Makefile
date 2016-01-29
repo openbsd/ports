@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2015/09/19 07:49:29 kili Exp $
+# $OpenBSD: Makefile,v 1.33 2016/01/29 20:28:07 kili Exp $
 
 COMMENT =	lexical analyser generator for Haskell
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =	alex-3.1.4
 CATEGORIES =	devel
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2016/01/20 16:22:29 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2016/01/29 20:28:08 kili Exp $
 
 COMMENT =		Int-indexed arrays
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =		vector-0.11.0.0
 REVISION =		1
 CATEGORIES =		devel

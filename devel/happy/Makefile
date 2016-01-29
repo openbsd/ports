@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2015/09/19 07:50:58 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2016/01/29 20:28:07 kili Exp $
 
 COMMENT=		parser generator for Haskell
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME=		happy-1.19.5
 CATEGORIES=		devel
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/20 16:22:29 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/29 20:28:08 kili Exp $
 
 COMMENT =		compat lib exposing transformers 0.3 and 0.4 types
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =		transformers-compat-0.4.0.4
 REVISION =		1
 CATEGORIES =		devel

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2016/01/20 16:26:19 kili Exp $
+# $OpenBSD: Makefile,v 1.29 2016/01/29 20:28:09 kili Exp $
 
 COMMENT =		library for client-side HTTP
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =		HTTP-4000.2.20
 REVISION =		1
 CATEGORIES =		net devel

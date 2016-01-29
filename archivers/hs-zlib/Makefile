@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2016/01/20 16:15:45 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2016/01/29 20:28:07 kili Exp $
 
 COMMENT =		zlib bindings for Haskell
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =		zlib-0.5.4.2
 REVISION =		1
 CATEGORIES =		archivers devel

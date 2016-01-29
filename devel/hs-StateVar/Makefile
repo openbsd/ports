@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/20 16:20:43 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/29 20:28:07 kili Exp $
 
 COMMENT =		State variables
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =		StateVar-1.1.0.1
 REVISION =		0
 CATEGORIES =		devel

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/20 16:26:19 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/29 20:28:09 kili Exp $
 
 COMMENT =		half precision floating point
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =		half-0.2.2.1
 REVISION =		0
 CATEGORIES =		devel math

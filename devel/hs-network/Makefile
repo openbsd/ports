@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2016/01/29 20:15:05 kili Exp $
+# $OpenBSD: Makefile,v 1.29 2016/01/29 20:28:08 kili Exp $
 
 COMMENT =		Haskell networking library
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =		network-2.6.2.1
 REVISION =		1
 CATEGORIES =		devel net

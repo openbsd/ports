@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2016/01/20 16:22:27 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2016/01/29 20:28:08 kili Exp $
 
 COMMENT =		primitive memory-related operations
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =		primitive-0.6.1.0
 REVISION =		1
 CATEGORIES =		devel

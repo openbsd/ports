@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2016/01/20 16:20:43 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2016/01/29 20:28:07 kili Exp $
 
 COMMENT =		automatic testing of Haskell programs
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =		QuickCheck-2.8.1
 REVISION =		1
 CATEGORIES =		devel

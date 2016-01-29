@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2015/09/19 07:50:06 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2016/01/29 20:28:07 kili Exp $
 
 COMMENT =	command-line interface for Cabal and Hackage
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =	cabal-install-1.22.6.0
 CATEGORIES =	devel
 

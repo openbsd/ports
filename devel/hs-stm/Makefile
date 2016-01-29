@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2016/01/20 16:22:28 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2016/01/29 20:28:08 kili Exp $
 
 COMMENT =		Software Transactional Memory
 
 # Dependency of meta/haskell-platform.
 # Please do *not* update without thinking.
+PORTROACH =		ignore:1
+
 DISTNAME =		stm-2.4.4
 REVISION =		1
 CATEGORIES =		devel
