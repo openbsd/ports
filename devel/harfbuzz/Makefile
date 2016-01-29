@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/01/12 07:05:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2016/01/29 11:46:52 dcoppa Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -57,6 +57,10 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-introspection \
 			--with-graphite2 \
 			--with-gobject
+
+.if ${MACHINE_ARCH} == "arm"
+CXXFLAGS +=		-DHB_NO_MT
+.endif
 
 pre-configure:
 	sed -i 's,for suffix in so,for suffix in so.${LIBharfbuzz_VERSION},' \
