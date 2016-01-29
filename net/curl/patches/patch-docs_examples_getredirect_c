@@ -1,0 +1,15 @@
+$OpenBSD: patch-docs_examples_getredirect_c,v 1.1 2016/01/29 23:52:24 naddy Exp $
+
+Fix regression test: upstream commit e400a89b184d31da3ac0c5a47dce795e222c33eb
+
+--- docs/examples/getredirect.c.orig	Thu Jan 14 16:37:49 2016
++++ docs/examples/getredirect.c	Fri Jan 29 22:27:41 2016
+@@ -48,7 +48,7 @@ int main(void)
+     else {
+       res = curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_code);
+       if((res == CURLE_OK) &&
+-         ((code / 100) != 3)) {
++         ((response_code / 100) != 3)) {
+         /* a redirect implies a 3xx response code */
+         fprintf(stderr, "Not a redirect.\n");
+       }
