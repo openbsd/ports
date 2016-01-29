@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.953 2016/01/21 08:54:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.954 2016/01/29 23:51:50 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -284,6 +284,7 @@
      SUBDIR += nload
      SUBDIR += nmap
      SUBDIR += no-ip
+     SUBDIR += noVNC
      SUBDIR += ns
      SUBDIR += nslint
      SUBDIR += nslint,static
