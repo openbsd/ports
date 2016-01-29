@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.327 2016/01/22 15:25:09 landry Exp $
+# $OpenBSD: Makefile,v 1.328 2016/01/29 21:52:19 kili Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -154,7 +154,6 @@
      SUBDIR += minetest
      SUBDIR += mirrormagic
      SUBDIR += mnemosyne
-     SUBDIR += monadius
      SUBDIR += moon-buggy
      SUBDIR += moonlander
      SUBDIR += moonlander,no_sound
