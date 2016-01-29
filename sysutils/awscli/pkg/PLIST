@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/01/20 06:41:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/01/29 07:39:34 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -268,6 +268,13 @@ lib/python${MODPY_VERSION}/site-packages/awscli/data/cli.json
 lib/python${MODPY_VERSION}/site-packages/awscli/errorhandler.py
 lib/python${MODPY_VERSION}/site-packages/awscli/errorhandler.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/delete-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/describe-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/get-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/list-certificates.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/request-certificate.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/resend-validation-email.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/attach-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/attach-load-balancers.rst
@@ -377,6 +384,31 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/list-pipel
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/poll-for-jobs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/start-pipeline-execution.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/update-pipeline.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/delete-config-rule.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/delete-delivery-channel.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/deliver-config-snapshot.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/describe-compliance-by-config-rule.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/describe-compliance-by-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/describe-config-rule-evaluation-status.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/describe-config-rules.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/describe-configuration-recorder-status.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/describe-configuration-recorders.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/describe-delivery-channel-status.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/describe-delivery-channels.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/get-compliance-details-by-config-rule.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/get-compliance-details-by-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/get-compliance-summary-by-config-rule.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/get-compliance-summary-by-resource-type.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/get-resource-config-history.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/get-status.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/list-discovered-resources.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/put-config-rule.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/put-configuration-recorder.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/put-delivery-channel.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/start-configuration-recorder.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/stop-configuration-recorder.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/configservice/subscribe.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/configure/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/configure/_description.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/configure/get/
@@ -535,6 +567,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-dhcp-optio
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-export-tasks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-flow-logs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-hosts.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-id-format.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-image-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-images.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-instance-attribute.rst
@@ -594,6 +627,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-console-output.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-password-data.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-hosts.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-id-format.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-image-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-placement.rst
