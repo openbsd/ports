@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2015/11/05 19:08:58 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2016/01/29 14:31:02 sthen Exp $
 
 COMMENT= 	simply sending email
 
 MODULES=	cpan
 
-DISTNAME=	Email-Send-2.194
-REVISION=	1
+DISTNAME=	Email-Send-2.201
 CATEGORIES=	mail
 
 # Perl
