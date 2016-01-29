@@ -1,0 +1,6 @@
+noVNC is a VNC client using HTML5 (Web Sockets, Canvas) with
+encryption (wss://) support.
+
+This package is for the "bmc-support" branch of kelleyk's fork
+which has experimental support for various IPMI KVMs, including
+some Dell iDRAC and SuperMicro devices.
