@@ -1,0 +1,30 @@
+$OpenBSD: patch-media_audio_audio_manager_cc,v 1.1 2016/01/29 16:56:10 robert Exp $
+--- media/audio/audio_manager.cc.orig.port	Fri Jan 29 17:33:20 2016
++++ media/audio/audio_manager.cc	Fri Jan 29 17:33:42 2016
+@@ -157,7 +157,7 @@ class AudioManagerHelper : public base::PowerObserver 
+   }
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   void set_app_name(const std::string& app_name) {
+     app_name_ = app_name;
+   }
+@@ -184,7 +184,7 @@ class AudioManagerHelper : public base::PowerObserver 
+   scoped_ptr<base::win::ScopedCOMInitializer> com_initializer_for_testing_;
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   std::string app_name_;
+ #endif
+ 
+@@ -267,7 +267,7 @@ void AudioManager::EnableHangMonitor() {
+ #endif
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ // static
+ void AudioManager::SetGlobalAppName(const std::string& app_name) {
+   g_helper.Pointer()->set_app_name(app_name);

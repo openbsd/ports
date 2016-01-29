@@ -1,0 +1,12 @@
+$OpenBSD: patch-media_audio_audio_manager_h,v 1.1 2016/01/29 16:56:10 robert Exp $
+--- media/audio/audio_manager.h.orig.port	Fri Jan 29 17:33:59 2016
++++ media/audio/audio_manager.h	Fri Jan 29 17:34:14 2016
+@@ -61,7 +61,7 @@ class MEDIA_EXPORT AudioManager {
+   // called previously to start the hang monitor.  Does nothing on OSX.
+   static void EnableHangMonitor();
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Sets the name of the audio source as seen by external apps. Only actually
+   // used with PulseAudio as of this writing.
+   static void SetGlobalAppName(const std::string& app_name);
