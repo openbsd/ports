@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/11 09:35:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/29 11:23:27 bentley Exp $
 
 COMMENT =		simple utilities for manipulating HTML and XML files
 
-DISTNAME =		html-xml-utils-6.7
-REVISION =		1
+DISTNAME =		html-xml-utils-6.9
 
 CATEGORIES =		textproc
 
@@ -22,10 +21,5 @@ MODULES =		converters/libiconv
 LIB_DEPENDS =		net/curl
 
 CONFIGURE_STYLE =	gnu
-
-post-install:
-# W3C license requires a copy of the license to be distributed
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/html-xml-utils
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/html-xml-utils
 
 .include <bsd.port.mk>
