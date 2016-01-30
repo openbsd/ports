@@ -1,0 +1,20 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2016/01/30 01:14:54 bentley Exp $
+--- Makefile.orig	Thu Mar 24 01:37:15 2011
++++ Makefile	Wed Oct 30 01:12:54 2013
+@@ -2,7 +2,6 @@ PROG = ems-flasher
+ OBJS = ems.o main.o
+ 
+ CFLAGS  = -g -Wall -Werror
+-CFLAGS += `pkg-config --cflags libusb-1.0`
+ 
+ all: $(PROG)
+ 
+@@ -11,3 +10,8 @@ $(PROG): $(OBJS)
+ 
+ clean:
+ 	rm -f $(PROG) $(OBJS)
++
++.c.o:
++	$(CC) $(CFLAGS) `pkg-config --cflags libusb-1.0` -c $<
++
++.SUFFIXES: .c .o

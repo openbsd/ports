@@ -1,0 +1,83 @@
+.\" $OpenBSD: ems-flasher.1,v 1.1.1.1 2016/01/30 01:14:54 bentley Exp $
+.Dd October 18, 2013
+.Dt EMS-FLASHER 1
+.Os
+.Sh NAME
+.Nm ems-flasher
+.Nd utility to flash EMS 64 Mbit USB Game Boy cartridge
+.Sh SYNOPSIS
+.Nm
+.Fl -read\ \&
+.Op Fl -bank Ar num
+.Op Fl -blocksize Ar size
+.Op Fl -rom
+.Op Fl -save
+.Op Fl -verbose
+.Ar romfile
+.Nm
+.Fl -write
+.Op Fl -bank Ar num
+.Op Fl -blocksize Ar size
+.Op Fl -rom
+.Op Fl -save
+.Op Fl -verbose
+.Ar romfile
+.Nm
+.Fl -title
+.Sh DESCRIPTION
+The
+.Nm
+utility reads data from or writes data to a EMS 64 Mbit USB Game Boy cartridge.
+One of the following flags is required:
+.Bl -tag -width x
+.It Fl -read
+read ROM/SRAM from cart
+.It Fl -write
+write ROM/SRAM to cart
+.It Fl -header
+print header of ROMs on cart to standard output
+.El
+.Pp
+When in write or read mode,
+.Nm
+will automatically choose ROM versus SRAM based on the filename:
+if the filename ends in
+.Dq \&.sav ,
+SRAM is assumed.
+.Pp
+In read or write mode, the available options are as follows:
+.Bl -tag -width Ds
+.It Fl -bank
+Select cart bank (1 or 2).
+.It Fl -blocksize Ar size
+Specify the blocksize in bytes.
+The default is 4096 for read, 32 for write.
+.It Fl -rom
+Force read/write of Flash ROM.
+.It Fl -save
+Force read/write of SRAM.
+.It Fl -verbose
+Display more information.
+.El
+.Sh EXIT STATUS
+.Ex -std ems-flasher
+.Sh EXAMPLES
+Write the ROM to the cart:
+.Dl $ ems-flasher --write totally_legit_rom.gb
+.Pp
+Save the contents of bank 2 into a file; print some extra info:
+.Dl $ ems-flasher --verbose --bank 2 --read not_warez.gb
+.Pp
+Read the SRAM from bank 1:
+.Dl $ ems-flasher --read my_pokeymans.sav
+.Pp
+Print out the headers:
+.Dl $ ems-flasher --title
+.Sh AUTHORS
+.Nm
+was written by
+.An "Mike Ryan" Aq Mt web@lacklustre.net
+and others.
+.Sh HOMEPAGE
+.Lk https://lacklustre.net/projects/ems-flasher/
+.Lk https://github.com/mikeryan/ems-flasher

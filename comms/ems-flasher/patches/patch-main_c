@@ -1,0 +1,12 @@
+$OpenBSD: patch-main_c,v 1.1.1.1 2016/01/30 01:14:54 bentley Exp $
+--- main.c.orig	Fri Oct 18 22:49:10 2013
++++ main.c	Fri Oct 18 22:49:07 2013
+@@ -322,7 +322,7 @@ int main(int argc, char **argv) {
+ 
+     // read the ROM header
+     else if (opts.mode == MODE_TITLE) {
+-        char buf[512];
++        unsigned char buf[512];
+         int i;
+ 
+         r = ems_read(FROM_ROM, 0, (unsigned char *)buf, 512);
