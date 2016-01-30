@@ -1,20 +1,22 @@
-$OpenBSD: patch-configure,v 1.4 2014/09/11 14:02:55 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.5 2016/01/30 11:20:01 ajacoutot Exp $
 
 undefined reference to `free'
 
---- configure.orig	Thu Sep 11 10:49:28 2014
-+++ configure	Thu Sep 11 10:49:40 2014
-@@ -11932,13 +11932,11 @@ fi
-     if test "x$enable_debug" = "xyes"; then
-         CFLAGS="-g -DDEBUG -DCB_AUTOCONF $CFLAGS"
-         CXXFLAGS="-g -DDEBUG -DCB_AUTOCONF $CXXFLAGS"
--        LDFLAGS="-Wl,--no-undefined"
-         { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
- $as_echo "yes" >&6; }
-     else
-         CFLAGS="-O2 -ffast-math -DCB_AUTOCONF $CFLAGS"
-         CXXFLAGS="-O2 -ffast-math -DCB_AUTOCONF $CXXFLAGS"
--        LDFLAGS="-Wl,--no-undefined"
-         { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
- $as_echo "no" >&6; }
-     fi
+--- configure.orig	Sat Jan 23 11:48:18 2016
++++ configure	Fri Jan 29 00:21:58 2016
+@@ -16670,7 +16670,6 @@ if ${ax_cv_check_ldflags___Wl___no_undefined+:} false;
+ else
+ 
+   ax_check_save_flags=$LDFLAGS
+-  LDFLAGS="$LDFLAGS  -Wl,--no-undefined"
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -16694,7 +16693,6 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ax_cv_check_ldflags___Wl___no_undefined" >&5
+ $as_echo "$ax_cv_check_ldflags___Wl___no_undefined" >&6; }
+ if test "x$ax_cv_check_ldflags___Wl___no_undefined" = xyes; then :
+-  LDFLAGS="-Wl,--no-undefined $LDFLAGS"
+ else
+   :
+ fi

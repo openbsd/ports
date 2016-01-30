@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_plugins_compilergcc_compilergcc_cpp,v 1.3 2014/09/11 14:02:55 ajacoutot Exp $
+$OpenBSD: patch-src_plugins_compilergcc_compilergcc_cpp,v 1.4 2016/01/30 11:20:01 ajacoutot Exp $
 
 Always use cb_console_runner from installed PREFIX.
 
---- src/plugins/compilergcc/compilergcc.cpp.orig	Sun Dec  8 16:00:22 2013
-+++ src/plugins/compilergcc/compilergcc.cpp	Thu Sep 11 10:28:18 2014
+--- src/plugins/compilergcc/compilergcc.cpp.orig	Sat Jan 23 11:43:05 2016
++++ src/plugins/compilergcc/compilergcc.cpp	Fri Jan 29 00:27:33 2016
 @@ -159,7 +159,7 @@ namespace
  {
      PluginRegistrant<CompilerGCC> reg(_T("Compiler"));
@@ -13,26 +13,26 @@ Always use cb_console_runner from installed PREFIX.
      static const wxString strSLASH(_T("/"));
      static const wxString strSPACE(_T(" "));
      static const wxString strQUOTE(platform::windows ? _T("\"") : _T("'"));
-@@ -1720,8 +1720,7 @@ int CompilerGCC::RunSingleFile(const wxString& filenam
-     }
+@@ -1723,8 +1723,7 @@ int CompilerGCC::RunSingleFile(const wxString& filenam
+ 
      wxString baseDir = ConfigManager::GetExecutableFolder();
+     wxString crunnStr = strQUOTE + baseDir + strSLASH + strCONSOLE_RUNNER + strQUOTE;
+-    if ( wxFileExists(baseDir + strSLASH + strCONSOLE_RUNNER) )
+-        command << crunnStr << strSPACE;
++        command << strCONSOLE_RUNNER << strSPACE;
  
--    if (wxFileExists(baseDir + strSLASH + strCONSOLE_RUNNER))
--        cmd << baseDir << strSLASH << strCONSOLE_RUNNER << strSPACE;
-+    cmd << strCONSOLE_RUNNER << strSPACE;
- 
-     if (!cmd.Replace(_T("$SCRIPT"), exe_filename))
-         // if they didn't specify $SCRIPT, append:
-@@ -1836,7 +1835,7 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
-                         : EscapeSpaces(m_CdRun);
+     if (!command.Replace(_T("$SCRIPT"), exe_filename))
+         command << strQUOTE << exe_filename << strQUOTE; // if they didn't specify $SCRIPT, append:
+@@ -1838,7 +1837,7 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+                     : EscapeSpaces(m_CdRun);
      wxString crunnStr = platform::windows
-                         ? strQUOTE + baseDir + strSLASH + strCONSOLE_RUNNER + strQUOTE
--                        : EscapeSpaces(baseDir + strSLASH + strCONSOLE_RUNNER);
-+                        : EscapeSpaces(strCONSOLE_RUNNER);
+                       ? strQUOTE + baseDir + strSLASH + strCONSOLE_RUNNER + strQUOTE
+-                      : EscapeSpaces(baseDir + strSLASH + strCONSOLE_RUNNER);
++                      : EscapeSpaces(strCONSOLE_RUNNER);
      wxString hostapStr = platform::windows
-                         ? strQUOTE + target->GetHostApplication() + strQUOTE
-                         : EscapeSpaces(target->GetHostApplication());
-@@ -1874,8 +1873,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+                        ? strQUOTE + target->GetHostApplication() + strQUOTE
+                        : EscapeSpaces(target->GetHostApplication());
+@@ -1876,8 +1875,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
  
          if (target->GetUseConsoleRunner())
          {
@@ -41,7 +41,7 @@ Always use cb_console_runner from installed PREFIX.
                  command << crunnStr << strSPACE;
  
                  if (!platform::windows)
-@@ -1887,7 +1884,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+@@ -1889,7 +1886,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
                      QuoteStringIfNeeded(strLinkerPath);
                      command << strLinkerPath << strSPACE;
                  }

@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_base_tinyxml_Makefile_in,v 1.2 2014/09/11 14:02:55 ajacoutot Exp $
+$OpenBSD: patch-src_base_tinyxml_Makefile_in,v 1.3 2016/01/30 11:20:01 ajacoutot Exp $
 
 Fix build when tinyxml is installed.
 (tinyxml is bundled within codeblocks, so prefer the bundled includes)
 
---- src/base/tinyxml/Makefile.in.orig	Wed Dec 25 22:56:12 2013
-+++ src/base/tinyxml/Makefile.in	Thu Sep 11 10:33:25 2014
-@@ -309,10 +309,10 @@ target_vendor = @target_vendor@
+--- src/base/tinyxml/Makefile.in.orig	Sat Jan 23 11:47:57 2016
++++ src/base/tinyxml/Makefile.in	Fri Jan 29 00:21:58 2016
+@@ -388,10 +388,10 @@ target_vendor = @target_vendor@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@

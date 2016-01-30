@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2015/05/28 10:17:23 pascal Exp $
+# $OpenBSD: Makefile,v 1.30 2016/01/30 11:20:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 COMMENT=	Code::Blocks C/C++ IDE
 
-V=		13.12
-P=		1
-DISTNAME=	codeblocks_${V}-${P}
+V=		16.01
+DISTNAME=	codeblocks_${V}
 PKGNAME=	codeblocks-${V}
-REVISION=	2
 
-WRKDIST=	${WRKDIR}/codeblocks-${V}
+WRKDIST=	${WRKDIR}/codeblocks-${V}.release
 
 SHARED_LIBS +=  codeblocks           0.1      # 0.1
 SHARED_LIBS +=  wxchartctrl          0.1      # 0.1
@@ -22,9 +20,12 @@ SHARED_LIBS +=  wxkwic               0.1      # 0.1
 SHARED_LIBS +=  wxtreelist           0.1      # 0.1
 SHARED_LIBS +=  wxled                0.1      # 0.1
 SHARED_LIBS +=  wxsmithlib           0.1      # 0.1
+SHARED_LIBS +=  wxmathplot           0.1      # 0.1
 
 CATEGORIES=	devel x11
+DPB_PROPERTIES= parallel
 
+MAINTAINER=	Josh Grosse <josh@jggimi.homeip.net>
 HOMEPAGE=	http://www.codeblocks.org/
 
 # GPLv3
@@ -63,11 +64,23 @@ MODULES +=	gcc4
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c++
 
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-contrib-plugins=all
+pre-patch: 
+	cd ${WRKSRC}; \
+	env \
+	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	${WRKSRC}/bootstrap
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/plugins/compilergcc/compilergcc.cpp
