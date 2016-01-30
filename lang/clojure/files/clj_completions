@@ -481,12 +481,10 @@ re-pattern
 re-quote-replacement
 re-seq
 read
-read
 read-instant-calendar
 read-instant-date
 read-instant-timestamp
 read-line
-read-string
 read-string
 reader
 reader-conditional
@@ -516,15 +514,12 @@ remove-watch
 repeat
 repeatedly
 repl
-repl
 repl-caught
 repl-exception
 repl-init
 repl-prompt
 repl-read
-repl-read
 repl-requires
-replace
 replace
 replace-first
 replicate
@@ -536,7 +531,6 @@ resource
 rest
 restart-agent
 resultset-seq
-reverse
 reverse
 reversible?
 root-cause
@@ -679,7 +673,6 @@ when-let
 when-not
 when-some
 while
-with-bindings
 with-bindings
 with-bindings*
 with-in-str
