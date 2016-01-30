@@ -1,15 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/03/22 22:48:04 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/01/30 10:46:57 benoit Exp $
 @group daemon
-lib/
-lib/php/
 pear/data/Services_Weather/
 pear/data/Services_Weather/buildMetarDB.php
 pear/data/Services_Weather/images/
 pear/data/Services_Weather/images/sunrise.gif
 pear/data/Services_Weather/images/sunset.gif
-@group
-pear/doc/
-@group daemon
 pear/doc/Services_Weather/
 pear/doc/Services_Weather/examples/
 pear/doc/Services_Weather/examples/ejse-basic.php
