@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/07 21:35:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2016/01/30 09:26:43 jasper Exp $
+
+PORTROACH_COMMENT=	newer versions (>= 0.1.0) require puppetdb 4
+PORTROACH=		limit:^0
 
 COMMENT=		web interface to PuppetDB
 
