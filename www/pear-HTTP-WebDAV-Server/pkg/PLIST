@@ -1,9 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/07/29 09:18:26 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/01/30 09:58:38 benoit Exp $
 @group daemon
 @comment lib/
 @comment lib/php/
+pear/data/HTTP_WebDAV_Server/
+pear/data/HTTP_WebDAV_Server/AUTHORS
+pear/data/HTTP_WebDAV_Server/COPYING
+pear/data/HTTP_WebDAV_Server/EXPERIMENTAL
+pear/data/HTTP_WebDAV_Server/TODO
 pear/doc/
 pear/doc/HTTP_WebDAV_Server/
+pear/doc/HTTP_WebDAV_Server/LICENSE
 pear/doc/HTTP_WebDAV_Server/README
 pear/doc/HTTP_WebDAV_Server/dav.txt
 pear/doc/HTTP_WebDAV_Server/db/
@@ -18,3 +24,8 @@ pear/lib/HTTP/WebDAV/Tools/
 pear/lib/HTTP/WebDAV/Tools/_parse_lockinfo.php
 pear/lib/HTTP/WebDAV/Tools/_parse_propfind.php
 pear/lib/HTTP/WebDAV/Tools/_parse_proppatch.php
+pear/lib/HTTP/WebDAV/file.php
+pear/tests/HTTP_WebDAV_Server/
+pear/tests/HTTP_WebDAV_Server/tests/
+pear/tests/HTTP_WebDAV_Server/tests/split_log.php
+pear/tests/HTTP_WebDAV_Server/tests/test.sh
