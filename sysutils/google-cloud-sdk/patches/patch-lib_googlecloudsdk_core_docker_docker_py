@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_googlecloudsdk_core_docker_docker_py,v 1.1.1.1 2016/01/30 18:07:46 ajacoutot Exp $
+--- lib/googlecloudsdk/core/docker/docker.py.orig	Sat Jan 30 18:53:46 2016
++++ lib/googlecloudsdk/core/docker/docker.py	Sat Jan 30 18:54:31 2016
+@@ -198,7 +198,7 @@ def EnsureDocker(func):
+       return func(*args, **kwargs)
+     except OSError as e:
+       if e.errno == errno.ENOENT:
+-        raise exceptions.Error('Docker is not installed.')
++        raise exceptions.Error('Docker is not available on OpenBSD.')
+       else:
+         raise
+   return DockerFunc

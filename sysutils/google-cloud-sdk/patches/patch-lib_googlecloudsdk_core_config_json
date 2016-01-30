@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_googlecloudsdk_core_config_json,v 1.1.1.1 2016/01/30 18:07:46 ajacoutot Exp $
+--- lib/googlecloudsdk/core/config.json.orig	Sat Jan 30 18:40:25 2016
++++ lib/googlecloudsdk/core/config.json	Sat Jan 30 18:40:50 2016
+@@ -1,6 +1,6 @@
+ {
+   "config_suffix": "", 
+-  "disable_updater": false, 
++  "disable_updater": true, 
+   "disable_usage_reporting": false, 
+   "documentation_url": "https://developers.google.com/cloud/sdk/", 
+   "release_channel": "rapid", 

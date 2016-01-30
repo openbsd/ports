@@ -1,0 +1,17 @@
+$OpenBSD: patch-bin_gcloud,v 1.1.1.1 2016/01/30 18:07:46 ajacoutot Exp $
+--- bin/gcloud.orig	Thu Dec 17 00:36:48 2015
++++ bin/gcloud	Wed Jan 27 19:19:45 2016
+@@ -70,12 +70,7 @@ case $CLOUDSDK_PYTHON in
+ esac
+ # if CLOUDSDK_PYTHON is empty
+ if [ -z "$CLOUDSDK_PYTHON" ]; then
+-  # if python2 exists then plain python may point to a version != 2
+-  if which python2 >/dev/null; then
+-    CLOUDSDK_PYTHON=python2
+-  else
+-    CLOUDSDK_PYTHON=python
+-  fi
++  CLOUDSDK_PYTHON=${MODPY_BIN}
+ fi
+ 
+ # if CLOUDSDK_PYTHON_SITEPACKAGES and VIRTUAL_ENV are empty
