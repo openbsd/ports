@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.376 2016/01/28 21:09:47 juanfra Exp $
+# $OpenBSD: Makefile,v 1.377 2016/01/30 01:13:47 juanfra Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -54,6 +54,7 @@
      SUBDIR += ec2-api-tools
      SUBDIR += entr
      SUBDIR += eventlog
+     SUBDIR += fabric
      SUBDIR += facter
      SUBDIR += faubackup
      SUBDIR += fdupes
@@ -166,7 +167,6 @@
      SUBDIR += py-cef
      SUBDIR += py-daemon
      SUBDIR += py-elasticsearch-curator
-     SUBDIR += py-fabric
      SUBDIR += py-lockfile
      SUBDIR += py-lockfile,python3
      SUBDIR += py-metlog
