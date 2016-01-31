@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2016/01/20 17:17:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2016/01/31 20:27:45 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -329,6 +329,8 @@ lib/calibre/calibre/devices/user_defined/driver.py
 lib/calibre/calibre/devices/user_defined/driver.pyc
 lib/calibre/calibre/devices/utils.py
 lib/calibre/calibre/devices/utils.pyc
+lib/calibre/calibre/devices/winusb.py
+lib/calibre/calibre/devices/winusb.pyc
 lib/calibre/calibre/ebooks/
 lib/calibre/calibre/ebooks/BeautifulSoup.py
 lib/calibre/calibre/ebooks/BeautifulSoup.pyc
@@ -4439,7 +4441,6 @@ share/calibre/recipes/heritage_foundation.recipe
 share/calibre/recipes/high_country_news.recipe
 share/calibre/recipes/hindu.recipe
 share/calibre/recipes/hindu_business_line.recipe
-share/calibre/recipes/hindustan_times.recipe
 share/calibre/recipes/hira.recipe
 share/calibre/recipes/histmag.png
 share/calibre/recipes/histmag.recipe
