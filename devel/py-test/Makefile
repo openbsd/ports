@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2015/12/27 08:26:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2016/01/31 11:41:53 shadchin Exp $
 
 COMMENT=		cross-project testing tool for Python
 
-MODPY_EGG_VERSION=	2.8.5
+MODPY_EGG_VERSION=	2.8.7
 DISTNAME=		pytest-${MODPY_EGG_VERSION}
 PKGNAME=		py-test-${MODPY_EGG_VERSION}
 
@@ -15,11 +15,9 @@ MAINTAINER=		Alexandr Shadchin <shadchin@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODPY_PI =		Yes
-EXTRACT_SUFX=		.zip
-
 MODULES=		lang/python
 
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS=	Yes
 
 FLAVORS=		python3
@@ -28,7 +26,8 @@ FLAVOR?=
 RUN_DEPENDS=		devel/py-py${MODPY_FLAVOR}>=1.4.30
 TEST_DEPENDS=		${RUN_DEPENDS} \
 			devel/py-mock${MODPY_FLAVOR} \
-			devel/py-nose${MODPY_FLAVOR}
+			devel/py-nose${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
 .if !${FLAVOR:Mpython3}
 TEST_DEPENDS +=		devel/py-twisted/core
 .endif
