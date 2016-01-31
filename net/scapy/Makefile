@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2015/02/16 22:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2016/01/31 23:21:37 sthen Exp $
 
 COMMENT=	powerful interactive packet manipulation in python
 
-MODPY_EGG_VERSION=	2.1.0
+MODPY_EGG_VERSION=	2.3.2
 DISTNAME=		scapy-${MODPY_EGG_VERSION}
-REVISION=		2
+
+GH_ACCOUNT=		secdev
+GH_PROJECT=		scapy
+GH_TAGNAME=		v${MODPY_EGG_VERSION}
 
 CATEGORIES=		net
 
@@ -15,8 +18,8 @@ MAINTAINER=	Jonathan Armani <armani@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/files/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ethertypes
+MASTER_SITES0=	https://spacehopper.org/mirrors/
+DISTFILES=	${DISTNAME}.tar.gz ethertypes-20120703:0
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MODULES=	lang/python
@@ -32,12 +35,12 @@ post-extract:
 	gunzip ${WRKSRC}/doc/scapy.1.gz
 
 pre-configure:
-	perl -p -i -e "s,/etc/ethertypes,${SYSCONFDIR}/ethertypes,g" \
+	sed -i "s,/etc/ethertypes,${SYSCONFDIR}/ethertypes,g" \
 		${WRKSRC}/scapy/data.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/scapy
-	${INSTALL_DATA} ${DISTDIR}/ethertypes ${PREFIX}/share/examples/scapy
+	${INSTALL_DATA} ${DISTDIR}/ethertypes-20120703 ${PREFIX}/share/examples/scapy/ethertypes
 
 # some tests require root.
 do-test:

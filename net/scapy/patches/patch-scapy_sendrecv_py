@@ -1,7 +1,7 @@
-$OpenBSD: patch-scapy_sendrecv_py,v 1.1 2010/10/05 09:18:05 armani Exp $
---- scapy/sendrecv.py.orig	Mon Oct  4 07:33:19 2010
-+++ scapy/sendrecv.py	Mon Oct  4 07:35:09 2010
-@@ -117,7 +117,7 @@ def sndrcv(pks, pkt, timeout = None, inter = 0, verbos
+$OpenBSD: patch-scapy_sendrecv_py,v 1.2 2016/01/31 23:21:37 sthen Exp $
+--- scapy/sendrecv.py.orig	Tue Dec 30 21:25:32 2014
++++ scapy/sendrecv.py	Sun Jan 17 20:19:17 2016
+@@ -121,7 +121,7 @@ def sndrcv(pks, pkt, timeout = None, inter = 0, verbos
                                  if remaintime <= 0:
                                      break
                              r = None
