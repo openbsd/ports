@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2016/01/24 10:31:35 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.34 2016/01/31 10:37:55 benoit Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -215,13 +215,25 @@ share/manaplus/data/help/commands.txt
 share/manaplus/data/help/download.txt
 share/manaplus/data/help/footer.txt
 share/manaplus/data/help/header.txt
+share/manaplus/data/help/idx/
+share/manaplus/data/help/idx/about-tmw.idx
+share/manaplus/data/help/idx/about.idx
+share/manaplus/data/help/idx/chatcommands.idx
+share/manaplus/data/help/idx/chatguild.idx
+share/manaplus/data/help/idx/chatparty.idx
+share/manaplus/data/help/idx/download.idx
+share/manaplus/data/help/idx/index.idx
+share/manaplus/data/help/idx/otherteam.idx
+share/manaplus/data/help/idx/skills.idx
+share/manaplus/data/help/idx/support.idx
+share/manaplus/data/help/idx/tags.idx
+share/manaplus/data/help/idx/team.idx
 share/manaplus/data/help/index.txt
 share/manaplus/data/help/otherteam.txt
 share/manaplus/data/help/searchmany.txt
 share/manaplus/data/help/searchnotfound.txt
 share/manaplus/data/help/skills.txt
 share/manaplus/data/help/support.txt
-share/manaplus/data/help/tags.idx
 share/manaplus/data/help/team.txt
 share/manaplus/data/help/tips/
 share/manaplus/data/help/tips/1-1.jpg
