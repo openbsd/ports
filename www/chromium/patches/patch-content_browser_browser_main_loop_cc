@@ -1,7 +1,18 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.33 2016/01/23 20:43:27 robert Exp $
---- content/browser/browser_main_loop.cc.orig.port	Wed Jan 20 21:01:21 2016
-+++ content/browser/browser_main_loop.cc	Sat Jan 23 20:14:21 2016
-@@ -178,7 +178,7 @@
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.34 2016/01/31 20:45:29 robert Exp $
+--- content/browser/browser_main_loop.cc.orig.port	Wed Jan 27 18:00:48 2016
++++ content/browser/browser_main_loop.cc	Sun Jan 31 21:39:34 2016
+@@ -170,6 +170,10 @@
+ #include "crypto/nss_util.h"
+ #endif
+ 
++#if defined(OS_BSD)
++#include "content/common/child_process_sandbox_support_impl_linux.h"
++#endif
++
+ // One of the linux specific headers defines this as a macro.
+ #ifdef DestroyAll
+ #undef DestroyAll
+@@ -178,7 +182,7 @@
  namespace content {
  namespace {
  
@@ -10,7 +21,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.33 2016/01/23 20:43:27 
  void SetupSandbox(const base::CommandLine& parsed_command_line) {
    TRACE_EVENT0("startup", "SetupSandbox");
    base::FilePath sandbox_binary;
-@@ -429,10 +429,12 @@ void BrowserMainLoop::EarlyInitialization() {
+@@ -429,10 +433,15 @@ void BrowserMainLoop::EarlyInitialization() {
    TRACE_EVENT0("startup", "BrowserMainLoop::EarlyInitialization");
    TRACK_SCOPED_REGION("Startup", "BrowserMainLoop::EarlyInitialization");
  
@@ -21,10 +32,13 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.33 2016/01/23 20:43:27 
    SetupSandbox(parsed_command_line_);
 +#elif defined(OS_BSD)
 +  RenderSandboxHostLinux::GetInstance()->Init();
++  base::FileHandleMappingVector fds_to_map;
++  const int sfd = RenderSandboxHostLinux::GetInstance()->GetRendererSocket();
++    fds_to_map.push_back(std::make_pair(sfd, GetSandboxFD()));
  #endif
  
  #if defined(USE_X11)
-@@ -1022,7 +1024,7 @@ void BrowserMainLoop::ShutdownThreadsAndCleanUp() {
+@@ -1022,7 +1031,7 @@ void BrowserMainLoop::ShutdownThreadsAndCleanUp() {
    }
  #endif
  
