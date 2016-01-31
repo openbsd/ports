@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2016/01/18 13:29:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2016/01/31 13:35:28 jasper Exp $
 
 COMMENT=	simple password generator
 
 DISTNAME=	pwgen-2.07
-REVISION=	1
+REVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>

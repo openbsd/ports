@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.5 2015/02/09 18:56:11 jasper Exp $
+$OpenBSD: patch-configure_in,v 1.6 2016/01/31 13:35:28 jasper Exp $
 --- configure.in.orig	Tue Oct 28 04:39:37 2014
-+++ configure.in	Mon Feb  9 19:22:56 2015
++++ configure.in	Mon Jan 18 14:30:48 2016
 @@ -1,11 +1,12 @@
  AC_INIT(pwgen.c)
  AC_PREREQ(2.50)
@@ -12,6 +12,6 @@ $OpenBSD: patch-configure_in,v 1.5 2015/02/09 18:56:11 jasper Exp $
  AC_PATH_PROG(SED, sed, sed)
  AC_PATH_PROG(PERL, perl, perl)
 -AC_CHECK_FUNCS(getopt_long)
-+AC_CHECK_FUNCS(arc4random arc4random_uniform getopt_long)
++AC_CHECK_FUNCS(arc4random arc4random_uniform getopt_long pledge)
  AC_CHECK_HEADERS(getopt.h)
  AC_OUTPUT(Makefile)

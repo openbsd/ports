@@ -1,26 +1,39 @@
-$OpenBSD: patch-pwgen_c,v 1.1 2016/01/18 13:29:04 jasper Exp $
---- pwgen.c.orig	Mon Jan 18 08:32:18 2016
-+++ pwgen.c	Mon Jan 18 08:33:06 2016
-@@ -94,6 +94,10 @@ int main(int argc, char **argv)
+$OpenBSD: patch-pwgen_c,v 1.2 2016/01/31 13:35:28 jasper Exp $
+--- pwgen.c.orig	Tue Oct 28 02:00:39 2014
++++ pwgen.c	Mon Jan 18 14:38:37 2016
+@@ -7,6 +7,8 @@
+  * License.
+  */
+ 
++#include "config.h"
++
+ #include <stdio.h>
+ #include <unistd.h>
+ #include <stdlib.h>
+@@ -94,6 +96,12 @@ int main(int argc, char **argv)
  	char	*buf, *tmp;
  	void	(*pwgen)(char *inbuf, int size, int pw_flags);
  
++#ifdef HAVE_PLEDGE
 +	if (pledge("stdio rpath", NULL) == -1) {
 +		fprintf(stderr, "pledge\n");
 +		exit(1);
 +	}
++#endif
  	pwgen = pw_phonemes;
  	pw_number = pw_random_number;
  	if (isatty(1))
-@@ -161,6 +165,11 @@ int main(int argc, char **argv)
- 			usage();
+@@ -162,6 +170,13 @@ int main(int argc, char **argv)
  			break;
  		}
-+	}
+ 	}
++#ifdef HAVE_PLEDGE
 +	/* Done with SHA1 seed file, drop rpath */
 +	if (pledge("stdio", NULL) == -1) {
 +		fprintf(stderr, "pledge");
 +		exit (1);
- 	}
++	}
++#endif
  	if (optind < argc) {
  		pw_length = strtol(argv[optind], &tmp, 0);
+ 		if (pw_length < 5)
