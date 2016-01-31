@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_libv4lconvert_libv4lsyscall-priv_h,v 1.1.1.1 2016/01/07 17:12:21 feinerer Exp $
---- lib/libv4lconvert/libv4lsyscall-priv.h.orig	Sun Sep 27 17:48:48 2015
-+++ lib/libv4lconvert/libv4lsyscall-priv.h	Sun Sep 27 17:51:20 2015
-@@ -62,6 +62,15 @@
- typedef off_t __off_t;
+$OpenBSD: patch-lib_libv4lconvert_libv4lsyscall-priv_h,v 1.2 2016/01/31 07:12:25 feinerer Exp $
+--- lib/libv4lconvert/libv4lsyscall-priv.h.orig	Sat Jan 30 11:56:05 2016
++++ lib/libv4lconvert/libv4lsyscall-priv.h	Sat Jan 30 12:00:34 2016
+@@ -63,6 +63,15 @@
+ #define	MMAP2_PAGE_SHIFT 0
  #endif
  
 +#if defined(__OpenBSD__)
@@ -14,13 +14,13 @@ $OpenBSD: patch-lib_libv4lconvert_libv4lsyscall-priv_h,v 1.1.1.1 2016/01/07 17:1
 +#define	MMAP2_PAGE_SHIFT 0
 +#endif
 +
- #if defined(ANDROID)
- typedef off_t __off_t;
- #endif
-@@ -100,6 +109,11 @@ typedef off_t __off_t;
+ #undef SYS_OPEN
+ #undef SYS_CLOSE
+ #undef SYS_IOCTL
+@@ -97,6 +106,11 @@
  #define SYS_MMAP(addr, len, prot, flags, fd, off) \
  	syscall(SYS_mmap, (void *)(addr), (size_t)(len), \
- 			(int)(prot), (int)(flags), (int)(fd), (__off_t)(off))
+ 			(int)(prot), (int)(flags), (int)(fd), (off_t)(off))
 +#elif defined(__OpenBSD__)
 +register_t __syscall(quad_t, ...);
 +#define SYS_MMAP(addr, len, prot, flags, fd, offset) \
