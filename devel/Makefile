@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1466 2016/01/27 11:54:29 kili Exp $
+# $OpenBSD: Makefile,v 1.1467 2016/01/31 08:33:06 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -188,7 +188,6 @@
      SUBDIR += hs-base-unicode-symbols
      SUBDIR += hs-base16-bytestring
      SUBDIR += hs-base64-bytestring
-     SUBDIR += hs-bimap
      SUBDIR += hs-blaze-builder
      SUBDIR += hs-blaze-textual
      SUBDIR += hs-bytestring-mmap
