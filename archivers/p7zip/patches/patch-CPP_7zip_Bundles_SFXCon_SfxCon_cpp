@@ -1,4 +1,4 @@
-$OpenBSD: patch-CPP_7zip_Bundles_SFXCon_SfxCon_cpp,v 1.1 2016/01/27 10:36:00 jasper Exp $
+$OpenBSD: patch-CPP_7zip_Bundles_SFXCon_SfxCon_cpp,v 1.2 2016/01/31 22:29:37 sthen Exp $
 
 Pledge self-extracting archives
 
@@ -15,7 +15,7 @@ Pledge self-extracting archives
 +  printf("pledge: 7za 7zr SFX\n");
 +#endif //PLEDGE_DEBUG
 +
-+  if (pledge("stdio rpath wpath cpath fattr", NULL) == -1) {
++  if (pledge("stdio rpath wpath cpath fattr tty", NULL) == -1) {
 +    perror("pledge");
 +    exit(2);
 +  }
@@ -37,7 +37,7 @@ Pledge self-extracting archives
 +  printf("pledge: 7z SFX\n");
 +#endif //PLEDGE_DEBUG
 +
-+  if (pledge("stdio rpath wpath cpath fattr", NULL) == -1) {
++  if (pledge("stdio rpath wpath cpath fattr tty", NULL) == -1) {
 +    perror("pledge");
 +    exit(2);
 +  }
