@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/03 18:22:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/01/31 09:29:03 sebastia Exp $
 
 COMMENT =	next-generation web UI for icinga
 
-V =		2.1.1
+V =		2.1.2
 DISTNAME =	icinga-web2-$V
 DISTFILES =	${DISTNAME}{v$V}.tar.gz
 WRKDIST =	${WRKDIR}/icingaweb2-$V
