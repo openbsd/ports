@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/11 14:07:19 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/31 10:14:52 benoit Exp $
 
 COMMENT =	php class for building console-style tables
 
-DISTNAME =	Console_Table-1.2.1
+DISTNAME =	Console_Table-1.3.0
 CATEGORIES =	devel
 
 # PHP License
