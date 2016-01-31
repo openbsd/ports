@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.359 2016/01/30 01:13:47 juanfra Exp $
+# $OpenBSD: Quirks.pm,v 1.360 2016/01/31 08:34:55 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -732,6 +732,7 @@ my $obsolete_reason = {
 	'hs-language-c' => 5,
 	'hs-simple-sendfile' => 5,
 	'monadius' => 3,
+	'hs-bimap' => 5,
 };
 
 my @msg = (
