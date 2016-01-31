@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/11 14:11:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/01/31 19:59:37 jung Exp $
 
-COMMENT =	faithful, pixel-perfect recreation of the original DOS font
+COMMENT =	pixel-perfect recreation of the original IBM VGA font
 
 GH_ACCOUNT =	ansilove
 GH_PROJECT =	BlockZone
 GH_TAGNAME =	1.004
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	fonts
 

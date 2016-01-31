@@ -1,4 +1,4 @@
-BlockZone is a faithful, pixel-perfect recreation of the original DOS font.
+BlockZone is a faithful, pixel-perfect recreation of the original IBM VGA font.
 It contains each of the 256 characters, including those in the 128-255 range,
 referred to as extended ASCII. BlockZone is capabable of rendering ANSI and
 ASCII art, in fact that is the purpose it was created for. It supports a wide
