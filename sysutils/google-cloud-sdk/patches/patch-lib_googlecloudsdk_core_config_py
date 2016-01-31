@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_googlecloudsdk_core_config_py,v 1.1.1.1 2016/01/30 18:07:46 ajacoutot Exp $
---- lib/googlecloudsdk/core/config.py.orig	Wed Jan 27 19:54:17 2016
-+++ lib/googlecloudsdk/core/config.py	Wed Jan 27 19:54:56 2016
-@@ -90,12 +90,7 @@ case $CLOUDSDK_PYTHON in
+$OpenBSD: patch-lib_googlecloudsdk_core_config_py,v 1.2 2016/01/31 07:09:35 ajacoutot Exp $
+--- lib/googlecloudsdk/core/config.py.orig	Tue Jan  1 09:00:00 1980
++++ lib/googlecloudsdk/core/config.py	Sun Jan 31 08:04:52 2016
+@@ -103,12 +103,7 @@ case $CLOUDSDK_PYTHON in
  esac
  # if CLOUDSDK_PYTHON is empty
  if [ -z "$CLOUDSDK_PYTHON" ]; then
