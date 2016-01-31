@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2015/03/15 10:14:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/31 09:29:46 benoit Exp $
 
 COMMENT=		simple and small webserver intended for ad-hoc usage
 
-DISTNAME=		darkhttpd-1.11
+DISTNAME =		darkhttpd-1.12
 CATEGORIES=		www
 
 HOMEPAGE=		http://unix4lyfe.org/darkhttpd/
