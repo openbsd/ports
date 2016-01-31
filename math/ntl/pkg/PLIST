@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/01/27 09:26:35 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/01/31 09:03:50 benoit Exp $
 include/NTL/
 include/NTL/BasicThreadPool.h
 include/NTL/FFT.h
@@ -10,6 +10,10 @@ include/NTL/GF2EXFactoring.h
 include/NTL/GF2X.h
 include/NTL/GF2XFactoring.h
 include/NTL/GF2XVec.h
+include/NTL/HAVE_AVX.h
+include/NTL/HAVE_BUILTIN_CLZL.h
+include/NTL/HAVE_FMA.h
+include/NTL/HAVE_LL_TYPE.h
 include/NTL/HNF.h
 include/NTL/LLL.h
 include/NTL/Lazy.h
@@ -35,18 +39,6 @@ include/NTL/def_config.h
 include/NTL/fileio.h
 include/NTL/g_lip.h
 include/NTL/gmp_aux.h
-include/NTL/have_LL.h
-include/NTL/have_LL_no.h
-include/NTL/have_LL_yes.h
-include/NTL/have_avx.h
-include/NTL/have_avx_no.h
-include/NTL/have_avx_yes.h
-include/NTL/have_builtin_clzl.h
-include/NTL/have_builtin_clzl_no.h
-include/NTL/have_builtin_clzl_yes.h
-include/NTL/have_fma.h
-include/NTL/have_fma_no.h
-include/NTL/have_fma_yes.h
 include/NTL/lip.h
 include/NTL/lzz_p.h
 include/NTL/lzz_pE.h

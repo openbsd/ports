@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_DoConfig,v 1.8 2016/01/27 09:26:35 benoit Exp $
---- src/DoConfig.orig	Wed Jan 27 01:52:19 2016
-+++ src/DoConfig	Wed Jan 27 08:21:43 2016
-@@ -34,24 +34,26 @@ sub BadNative {
+$OpenBSD: patch-src_DoConfig,v 1.9 2016/01/31 09:03:50 benoit Exp $
+--- src/DoConfig.orig	Sat Jan 30 22:15:16 2016
++++ src/DoConfig	Sun Jan 31 08:40:55 2016
+@@ -14,24 +14,26 @@
  
  %MakeVal = (
  
