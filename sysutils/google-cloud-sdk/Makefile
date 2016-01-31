@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/31 07:09:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/31 10:02:57 ajacoutot Exp $
 
 COMMENT=		manage resources on Google's Cloud Platform
 
@@ -22,11 +22,13 @@ MODULES=		lang/python
 
 RUN_DEPENDS=		devel/git
 
-NO_BUILD=		Yes
 NO_TEST=		Yes
 
-# wildcard, cannot use MODPY_ADJ_FILES
+do-build:
+# cannot set NO_BUILD=Yes because it would remove the dependency on python
+
 pre-configure:
+# wildcard, cannot use MODPY_ADJ_FILES
 	find ${WRKSRC}/bin{,/bootstrapping}/* -type f -exec \
 		${MODPY_BIN_ADJ} '{}' \+
 	${SUBST_CMD} ${WRKSRC}/lib/googlecloudsdk/core/config.py \
