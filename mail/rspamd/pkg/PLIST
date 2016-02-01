@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/01/19 01:14:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/02/01 14:45:41 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @bin bin/rspamadm
@@ -23,6 +23,8 @@ share/examples/rspamd/logging.inc
 @sample ${SYSCONFDIR}/rspamd/logging.inc
 share/examples/rspamd/metrics.conf
 @sample ${SYSCONFDIR}/rspamd/metrics.conf
+share/examples/rspamd/mime_types.inc
+@sample ${SYSCONFDIR}/rspamd/mime_types.inc
 share/examples/rspamd/modules.conf
 @sample ${SYSCONFDIR}/rspamd/modules.conf
 share/examples/rspamd/modules.d/
@@ -45,6 +47,8 @@ share/examples/rspamd/modules.d/ip_score.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/ip_score.conf
 share/examples/rspamd/modules.d/maillist.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/maillist.conf
+share/examples/rspamd/modules.d/mime_types.conf
+@sample ${SYSCONFDIR}/rspamd/modules.d/mime_types.conf
 share/examples/rspamd/modules.d/multimap.conf
 @sample ${SYSCONFDIR}/rspamd/modules.d/multimap.conf
 share/examples/rspamd/modules.d/once_received.conf
@@ -90,6 +94,7 @@ share/rspamd/lua/fun.lua
 share/rspamd/lua/hfilter.lua
 share/rspamd/lua/ip_score.lua
 share/rspamd/lua/maillist.lua
+share/rspamd/lua/mime_types.lua
 share/rspamd/lua/multimap.lua
 share/rspamd/lua/once_received.lua
 share/rspamd/lua/phishing.lua

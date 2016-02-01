@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/22 13:32:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/02/01 14:45:41 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
-DISTNAME=	rspamd-1.1.1
+DISTNAME=	rspamd-1.1.2
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	mail
@@ -48,5 +48,6 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rspamd
 	mv ${WRKINST}${SYSCONFDIR}/rspamd/* ${PREFIX}/share/examples/rspamd
+	rm ${PREFIX}/share/rspamd/www/README.md.{beforesubst,orig}
 
 .include <bsd.port.mk>
