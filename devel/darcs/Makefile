@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2016/01/31 17:47:49 kili Exp $
+# $OpenBSD: Makefile,v 1.63 2016/02/01 20:06:50 kili Exp $
 
 # Needs template Haskell in Setup.lhs, which doesn't work on i386.
 NOT_FOR_ARCHS =		i386
@@ -13,7 +13,7 @@ HOMEPAGE =		http://www.darcs.net/
 WANTLIB =		c curl>=2 m ncursesw pthread util z
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage nort
-MODGHC_SETUP_CONF_ARGS =-f 'curl -http -library use-time-1point5 -test'
+MODGHC_SETUP_CONF_ARGS =-f 'curl -http -library' --enable-tests
 LIB_DEPENDS =		net/curl
 
 # Yes, build dependencies, because GHC libs are still static and we
@@ -32,7 +32,7 @@ BUILD_DEPENDS =		archivers/hs-zip-archive>=0.2.3,<0.3 \
 			devel/hs-regex-compat-tdfa>=0.95.1,<0.96 \
 			devel/hs-sandi>=0.2,<0.4 \
 			devel/hs-tar>=0.4,<0.6 \
-			devel/hs-text>=0.11.2.0,<1.3 \
+			devel/hs-text>=1.2.1.3,<1.3 \
 			devel/hs-transformers-compat>=0.4,<0.6 \
 			devel/hs-unix-compat>=0.1.2,<0.5 \
 			devel/hs-utf8-string>=0.3.6,<1.1 \
@@ -42,8 +42,19 @@ BUILD_DEPENDS =		archivers/hs-zip-archive>=0.2.3,<0.3 \
 			www/hs-html>=1.0.1.1 \
 			${RUN_DEPENDS}
 
-# Tests Disabled for now, because of additional dependencies.
-NO_TEST =		Yes
+# Used for building the test suite (which is done during normal
+# build time, not during regress time).
+BUILD_DEPENDS +=	devel/hs-cmdargs>=0.10,<0.11 \
+			devel/hs-shelly>=1.6.2,<1.7 \
+			devel/hs-split>=0.1.4.1,<0.3 \
+			devel/hs-FindBin>=0.0,<0.1 \
+			devel/hs-QuickCheck>=2.3,<2.9 \
+			devel/hs-HUnit>=1.0,<1.4 \
+			devel/hs-test-framework>=0.4.0,<0.9 \
+			devel/hs-test-framework-hunit>=0.2.2,<0.4 \
+			devel/hs-test-framework-quickcheck2>=0.3,<0.4
+
+TEST_DEPENDS =		shells/bash
 
 post-install:
 	# Wrong directory, and wrong permissions (600):
