@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1467 2016/01/31 08:33:06 kili Exp $
+# $OpenBSD: Makefile,v 1.1468 2016/02/01 14:24:43 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -193,6 +193,7 @@
      SUBDIR += hs-bytestring-mmap
      SUBDIR += hs-case-insensitive
      SUBDIR += hs-cereal
+     SUBDIR += hs-cmdargs
      SUBDIR += hs-cmdlib
      SUBDIR += hs-concurrent-extra
      SUBDIR += hs-conduit
@@ -204,6 +205,7 @@
      SUBDIR += hs-dataenc
      SUBDIR += hs-directory-tree
      SUBDIR += hs-dlist
+     SUBDIR += hs-enclosed-exceptions
      SUBDIR += hs-enumerator
      SUBDIR += hs-exceptions
      SUBDIR += hs-extensible-exceptions
@@ -216,6 +218,7 @@
      SUBDIR += hs-hood
      SUBDIR += hs-hslogger
      SUBDIR += hs-largeword
+     SUBDIR += hs-lifted-async
      SUBDIR += hs-lifted-base
      SUBDIR += hs-logict
      SUBDIR += hs-mmap
@@ -246,10 +249,13 @@
      SUBDIR += hs-scientific
      SUBDIR += hs-semigroups
      SUBDIR += hs-sendfile
+     SUBDIR += hs-shelly
      SUBDIR += hs-split
      SUBDIR += hs-stm
      SUBDIR += hs-strict
      SUBDIR += hs-syb
+     SUBDIR += hs-system-fileio
+     SUBDIR += hs-system-filepath
      SUBDIR += hs-tagged
      SUBDIR += hs-tar
      SUBDIR += hs-test-framework
