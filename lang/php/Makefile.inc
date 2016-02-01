@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.71 2016/01/07 18:06:45 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.72 2016/02/01 21:53:06 sthen Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
@@ -390,8 +390,6 @@ MULTI_PACKAGES :=       ${MULTI_PACKAGES:N-fpm:N-fastcgi}
 .for i in ${MULTI_PACKAGES:N-main:N-fastcgi:N-fpm:S/-//g}
 MODULE_NAME-${i}=	${i}
 DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
-MESSAGE-${i}=		${.CURDIR}/../files/MESSAGE-ext
-UNMESSAGE-${i}=		${.CURDIR}/../files/UNMESSAGE-ext
 PKGNAME-${i}=		php-${i}-${V}
 # don't build separate plugins for -ap2
 FULLPKGNAME-${i}=	php-${i}-${V}${FLAVOR_EXT:S/-ap2//}
@@ -410,10 +408,10 @@ RUN_DEPENDS-${i}+=	php-${V}:lang/php/${PV}
 
 DESCR-main=		${.CURDIR}/../files/DESCR-main
 DESCR-fastcgi=		${.CURDIR}/../files/DESCR-fastcgi
-MESSAGE-main=		${.CURDIR}/../files/MESSAGE-main
-UNMESSAGE-main=		${.CURDIR}/../files/UNMESSAGE-main
 
 post-install:
+	${SUBST_DATA} ${.CURDIR}/../files/README-main \
+		${PREFIX}/share/doc/pkg-readmes/${FULLPKGNAME-main}
 	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp${PV:C/\.[0-9]$//}.so \
 		${PREFIX}/${APACHE_MODULE_SUBDIR}/
 	${INSTALL_DATA_DIR} ${WRKINST}/${CHROOT_DIR}/conf/php-${PV}.sample

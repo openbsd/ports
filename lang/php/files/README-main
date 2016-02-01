@@ -1,0 +1,114 @@
+$OpenBSD: README-main,v 1.1 2016/02/01 21:53:06 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Connecting your web server software to php
+==========================================
+Web server programs such as httpd(8), nginx and Apache listen for
+network requests and decide whether to respond themselves (as is the
+case with simple "static" files) or pass the request on to other
+software for handling. The web server must be configured to handle
+this - different methods are used depending on the server software.
+
+httpd(8), nginx, lighttpd, etc: FastCGI
+---------------------------------------
+Most modern web servers support FastCGI which is a simple method of
+interfacing to many kinds of application server. This is usually the
+preferred method of passing requests to php, and is the only method
+possible for many servers such as httpd(8), nginx and lighttpd.
+
+The OpenBSD php packages include php-fpm, FastCGI Process Manager.
+This manages pools of FastCGI processes: starts/restarts them and
+maintains a minimum and maximum number of spare processes as
+configured. You can use rcctl(8) to enable php-fpm at boot,
+and start it at runtime:
+
+    rcctl enable php${SV}_fpm
+    rcctl start php${SV}_fpm
+
+Consult your web server documentation and sample configuration
+for further advice. In particular:
+
+    httpd(8)  /etc/examples/httpd.conf
+    nginx     ${LOCALBASE}/share/nginx/nginx.conf
+
+php-fpm has its own configuration file, ${SYSCONFDIR}/php-fpm.conf.
+This controls how the php processes are started. The default settings
+are suitable for many standard cases, but can be changed to provide
+greater control for sites handling high loads or to provide
+separation between different php applications by running them
+under different uids or in individual chroot(2) jails.
+
+Apache module
+-------------
+The most common option for use with Apache is the mod_php Apache module.
+This is loaded directly as part of the web server process. Configuration
+is fairly simple, but in this case the operating system can't provide
+memory protection between the two; therefore bugs in php can potentially
+do more damage this way.
+
+If using Apache 2.x, another option is to use FastCGI as described
+in the previous section; you can use mod_proxy_fcgi to interface
+it with Apache.
+
+If you wish to use the Apache module, enable it by creating a
+symbolic link from ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf
+to ${MODPHP_CONFIG_PATH}/modules/php.conf. As root:
+
+    ln -sf ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf \
+	${MODPHP_CONFIG_PATH}/modules/php.conf
+
+To disable:
+
+    rm -f ${MODPHP_CONFIG_PATH}/modules/php.conf
+
+After making either of these changes, restart Apache.
+
+php configuration
+=================
+The recommended php configuration has been installed to:
+    ${SYSCONFDIR}/php-${PV}.ini.
+
+Modify this as required for your use.
+
+Extension modules
+=================
+Many language features in php are provided by extensions, which come
+in several classes.
+
+- some extensions are included in the main PHP package and are always
+enabled; they don't need to be installed or enabled separately. This
+includes the Suhosin security extension; see https://suhosin.org/
+for more information.
+
+- for PHP 5.6+, opcache is in the main package but must be configured.
+
+- some 'core' extensions with extra dependencies are packaged separately
+(e.g. php-pdo_mysql, php-ldap, php-soap, and others) and can be installed
+with pkg_add(1).
+
+- various useful third-party extensions from the PECL repository have
+also been packaged. Examples include pecl-memcache (for use with
+sysutils/memcached), pecl-imagick (image manipulation using ImageMagick),
+pecl-libsodium (a wrapper for the libsodium cryptographic library), etc.
+
+For all extensions packaged separately (and for opcache), you will find a
+file named ${SYSCONFDIR}/php-${PV}.sample/(MODULE_NAME).ini. To enable it,
+add a symlink into ${SYSCONFDIR}/php-${PV} and restart:
+
+    ln -sf ../php-${PV}.sample/MODULE_NAME.ini ${SYSCONFDIR}/php-${PV}/
+
+To disable, remove the symlink from ${SYSCONFDIR}/php-${PV} and restart:
+
+    rm ${SYSCONFDIR}/php-${PV}/MODULE_NAME.ini
+
+If you have installed a number of extensions and wish to enable them all,
+you can use these shell commands:
+
+    # cd ${SYSCONFDIR}/php-${PV}.sample
+    # for i in *; do ln -sf ../php-${PV}.sample/$i ../php-${PV}/; done
+
+After enabling or disabling extensions (or otherwise modifying php's
+configuration), use rcctl(8) to restart php${SV}_fpm or Apache.

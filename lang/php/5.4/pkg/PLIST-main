@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2016/01/07 18:06:45 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2016/02/01 21:53:06 sthen Exp $
 @option no-default-conflict
 @conflict php->=5.4,<5.5
 @conflict php-fpm->=5.4,<5.5
@@ -37,6 +37,7 @@ lib/php-${PV}/modules/
 @man man/man1/phpize-${PV}.1
 @man man/man8/php-fpm-${PV}.8
 @bin sbin/php-fpm-${PV}
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/php-${PV}/
 @sample /var/www/conf/modules.sample/
 share/examples/php-${PV}/php.conf
