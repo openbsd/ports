@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/14 15:19:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/02/01 21:55:38 sthen Exp $
 
 COMMENT=	extended HTTP support
 
 _PECLMOD=	http
 V=		2.5.3
-REVISION=	1
+REVISION=	2
 PKGNAME=	pecl-${_PECLMOD}-${V}
 DISTNAME=	pecl_${_PECLMOD}-${V}
 

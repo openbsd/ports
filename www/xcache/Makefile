@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/06/05 06:00:23 robert Exp $
+# $OpenBSD: Makefile,v 1.29 2016/02/01 21:55:39 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ VERSION=	3.2.0
 DISTNAME=	xcache-${VERSION}
 CATEGORIES=	www
 MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${VERSION}/
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://xcache.lighttpd.net/
 
