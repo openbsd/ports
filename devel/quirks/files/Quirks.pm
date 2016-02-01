@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.360 2016/01/31 08:34:55 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.361 2016/02/01 14:20:11 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -717,7 +717,6 @@ my $obsolete_reason = {
 	'hs-hlint' => 7,
 	'monodevelop' => 5,
 	'hs-hoogle' => 7,
-	'hs-cmdargs' => 5,
 	'hs-configurator' => 5,
 	'hs-safe' => 5,
 	'hs-uniplate' => 5,
