@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2015/12/12 13:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2016/02/01 14:44:23 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (AP/routing/switching/voip)
 
-VERSION=	4.7.6
-REVISION=	1
+VERSION=	4.8.12
 
 V=		${VERSION:C/-.*//}
 DISTFILES=	unifi-$V{UniFi.unix}.zip unifi_sh_api-$V{unifi_sh_api}
@@ -35,12 +34,8 @@ NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}/UniFi
 INSTDIR=	${PREFIX}/share/unifi/
-USG=		4.2.11.4796630
-USW=		3.3.11.3850
-UAP1=		3.2.12.2920
-UAP2=		3.4.8.3291
-LIB_V=		lib/$V
-SUBST_VARS=	LIB_V USG USW UAP1 UAP2
+LIB_V=		lib/$V.7387
+SUBST_VARS=	LIB_V
 
 post-extract:
 	cp ${FULLDISTDIR}/unifi_sh_api-$V ${WRKSRC}/unifi_sh_api
@@ -57,5 +52,6 @@ do-install:
 		${FILESDIR}/unifi.sh ${PREFIX}/bin/unifi
 	ln -s unifi ${PREFIX}/bin/unifi-discover
 	rm -f ${INSTDIR}/unifi_sh_api.orig
+	rm -rf ${INSTDIR}/lib/native
 
 .include <bsd.port.mk>
