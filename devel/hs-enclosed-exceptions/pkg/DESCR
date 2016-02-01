@@ -1,0 +1,2 @@
+Catching all exceptions raised within an enclosed computation, while
+remaining responsive to (external) asynchronous exceptions.
