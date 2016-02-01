@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.98 2016/01/31 21:27:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.99 2016/02/01 19:53:13 sthen Exp $
 
 COMMENT=		download/stream programmes from BBC iPlayer
 
-DISTNAME=		get_iplayer-2.95pre20160130a
+DISTNAME=		get_iplayer-2.95pre20160201a
 GH_ACCOUNT=		get-iplayer
 GH_PROJECT=		get_iplayer
-GH_COMMIT=		77dc3ce4e1af99f131902285a7c1d007afbdeb07
+GH_COMMIT=		b4bc3d68e3de67615235cabaaf695be090abf0f3
 
 CATEGORIES=		multimedia
 
@@ -41,6 +41,8 @@ do-install:
 	${SUBST_DATA} -m 644 \
 	   ${FILESDIR}/options.sample ${PREFIX}/share/get_iplayer/options.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/get_iplayer ${PREFIX}/bin
+	sed -i 's,2.95-dev,2.95-dev-${GH_COMMIT:C/(.{9}).*/\1/},' \
+		${PREFIX}/bin/get_iplayer
 	${INSTALL_MAN} ${WRKSRC}/get_iplayer.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
