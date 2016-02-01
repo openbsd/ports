@@ -1,7 +1,18 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.6 2015/12/17 07:02:48 robert Exp $
---- content/browser/browser_main_loop.cc.orig.port	Tue Nov 24 21:00:54 2015
-+++ content/browser/browser_main_loop.cc	Wed Dec  2 08:18:32 2015
-@@ -175,7 +175,7 @@
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.7 2016/02/01 15:09:01 robert Exp $
+--- content/browser/browser_main_loop.cc.orig.port	Tue Dec 15 21:05:10 2015
++++ content/browser/browser_main_loop.cc	Mon Feb  1 08:33:13 2016
+@@ -167,6 +167,10 @@
+ #include "crypto/nss_util.h"
+ #endif
+ 
++#if defined(OS_BSD)
++#include "content/common/child_process_sandbox_support_impl_linux.h"
++#endif
++
+ // One of the linux specific headers defines this as a macro.
+ #ifdef DestroyAll
+ #undef DestroyAll
+@@ -175,7 +179,7 @@
  namespace content {
  namespace {
  
@@ -10,7 +21,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.6 2015/12/17 07:02:48 r
  void SetupSandbox(const base::CommandLine& parsed_command_line) {
    TRACE_EVENT0("startup", "SetupSandbox");
    base::FilePath sandbox_binary;
-@@ -431,7 +431,7 @@ void BrowserMainLoop::EarlyInitialization() {
+@@ -431,12 +435,18 @@ void BrowserMainLoop::EarlyInitialization() {
    TRACE_EVENT0("startup", "BrowserMainLoop::EarlyInitialization");
    TRACK_SCOPED_REGION("Startup", "BrowserMainLoop::EarlyInitialization");
  
@@ -19,7 +30,18 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.6 2015/12/17 07:02:48 r
    // No thread should be created before this call, as SetupSandbox()
    // will end-up using fork().
    SetupSandbox(parsed_command_line_);
-@@ -983,7 +983,7 @@ void BrowserMainLoop::ShutdownThreadsAndCleanUp() {
++#elif defined(OS_BSD)
++  RenderSandboxHostLinux::GetInstance()->Init();
++  base::FileHandleMappingVector fds_to_map;
++  const int sfd = RenderSandboxHostLinux::GetInstance()->GetRendererSocket();
++    fds_to_map.push_back(std::make_pair(sfd, GetSandboxFD()));
+ #endif
+ 
++
+ #if defined(USE_X11)
+   if (UsingInProcessGpu()) {
+     if (!gfx::InitializeThreadedX11()) {
+@@ -983,7 +993,7 @@ void BrowserMainLoop::ShutdownThreadsAndCleanUp() {
    }
  #endif
  

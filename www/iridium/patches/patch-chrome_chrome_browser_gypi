@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.7 2015/12/21 13:30:00 robert Exp $
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.8 2016/02/01 15:09:01 robert Exp $
 --- chrome/chrome_browser.gypi.orig.port	Tue Dec 15 21:05:08 2015
-+++ chrome/chrome_browser.gypi	Sun Dec 20 18:52:07 2015
++++ chrome/chrome_browser.gypi	Mon Feb  1 08:26:52 2016
 @@ -3522,7 +3522,7 @@
              '../device/media_transfer_protocol/media_transfer_protocol.gyp:device_media_transfer_protocol',
            ],
@@ -19,14 +19,12 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.7 2015/12/21 13:30:00 robert Exp 
            'sources': [
              'app/chrome_crash_reporter_client.cc',
              'app/chrome_crash_reporter_client.h',
-@@ -3697,6 +3697,14 @@
+@@ -3697,6 +3697,12 @@
              }],
            ],
          }],
 +        ['os_bsd==1', {
 +          'sources/': [
-+            ['exclude', '^browser/chrome_browser_main_linux.cc'],
-+            ['exclude', '^browser/chrome_browser_main_linux.h'],
 +            ['exclude', '^browser/media_galleries/linux/'],
 +            ['exclude', '^browser/memory/system_memory_stats_recorder_linux.cc'],
 +          ],
@@ -34,7 +32,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.7 2015/12/21 13:30:00 robert Exp 
          ['OS=="mac"', {
            'dependencies': [
              '../third_party/google_toolbox_for_mac/google_toolbox_for_mac.gyp:google_toolbox_for_mac',
-@@ -3817,7 +3825,7 @@
+@@ -3817,7 +3823,7 @@
              }],
            ],
          }],

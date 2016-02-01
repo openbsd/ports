@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/01/28 12:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2016/02/01 15:09:01 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -9,7 +9,7 @@ V=			47.0
 DISTNAME=		iridium-browser-${V}
 DISTFILES=		${DISTNAME}-stripped${EXTRACT_SUFX}
 PKGNAME=		iridium-${V}
-REVISION=		4
+REVISION=		5
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/rc1//}
 
@@ -55,11 +55,11 @@ WANTLIB += png pthread
 WANTLIB += xml2 xslt
 WANTLIB += sndio
 WANTLIB += Xcomposite
-WANTLIB += stdc++ estdc++>=17
+WANTLIB += estdc++>=17
 WANTLIB += Xi Xtst
 WANTLIB += Xdamage
 WANTLIB += Xcursor Xrandr gio-2.0
-WANTLIB += jpeg nspr4 nss3 nssutil3 smime3
+WANTLIB += nspr4 nss3 nssutil3 smime3
 WANTLIB += atk-1.0 gmodule-2.0
 
 RUN_DEPENDS=	devel/xdg-utils \
@@ -108,7 +108,7 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 
 GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_libevent=1 \
-		-Duse_system_libjpeg=1 \
+		-Duse_system_libjpeg=0 \
 		-Duse_system_libpng=1 \
 		-Duse_system_libusb=0 \
 		-Duse_system_libvpx=0 \
@@ -184,7 +184,8 @@ do-build:
 	# Build all the resources as the first step to avoid build failures
 	# due to internal dependency issues.
 	@cd ${WRKSRC}/out/${BUILDTYPE} && \
-	for _r in net_interfaces suggestions cacheinvalidation cacheinvalidation_proto_cpp gfx_vector_icons \
+	for _r in generate_version_info cloud_policy_proto net_interfaces suggestions \
+	cacheinvalidation cacheinvalidation_proto_cpp gfx_vector_icons \
 	data_reduction_proxy_proto \
 	$$(ninja -t targets | grep -E '(mojo_bindings|resources): phony' | grep -v test | cut -d ':' -f1); do \
 		cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \

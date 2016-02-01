@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_content_browser_gypi,v 1.6 2015/12/17 07:02:48 robert Exp $
---- content/content_browser.gypi.orig.port	Tue Dec  8 21:02:55 2015
-+++ content/content_browser.gypi	Sat Dec 12 12:55:43 2015
+$OpenBSD: patch-content_content_browser_gypi,v 1.7 2016/02/01 15:09:01 robert Exp $
+--- content/content_browser.gypi.orig.port	Tue Dec 15 21:05:11 2015
++++ content/content_browser.gypi	Mon Feb  1 08:24:01 2016
 @@ -1982,7 +1982,7 @@
          },
        },
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.6 2015/12/17 07:02:48 robert Ex
        'dependencies': [
          '../build/linux/system.gyp:fontconfig',
        ],
-@@ -2103,9 +2103,26 @@
+@@ -2103,9 +2103,22 @@
        ],
      }],
      ['os_bsd==1', {
@@ -37,10 +37,6 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.6 2015/12/17 07:02:48 robert Ex
 +        'browser/gamepad/gamepad_platform_data_fetcher_linux.cc',
 +        'browser/geolocation/wifi_data_provider_linux.cc',
 +        'browser/udev_linux.cc',
-+        'browser/renderer_host/sandbox_ipc_linux.cc',
-+        'browser/renderer_host/sandbox_ipc_linux.h',
-+        'browser/renderer_host/render_sandbox_host_linux.cc',
-+        'browser/renderer_host/render_sandbox_host_linux.h',
        ],
 +      'dependencies': [
 +        '../build/linux/system.gyp:dbus',
@@ -48,7 +44,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.6 2015/12/17 07:02:48 robert Ex
      }],
      ['use_aura==1', {
        'dependencies': [
-@@ -2151,10 +2168,7 @@
+@@ -2151,10 +2164,7 @@
          'browser/geolocation/empty_wifi_data_provider.cc',
        ],
      }],
@@ -60,7 +56,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.6 2015/12/17 07:02:48 robert Ex
        'dependencies': [
          '../build/linux/system.gyp:dbus',
          '../dbus/dbus.gyp:dbus',
-@@ -2173,7 +2187,7 @@
+@@ -2173,7 +2183,7 @@
          'browser/media/media_web_contents_observer.h',
        ],
      }],

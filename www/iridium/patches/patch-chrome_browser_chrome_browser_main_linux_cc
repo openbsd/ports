@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_chrome_browser_main_linux_cc,v 1.1 2016/02/01 15:09:01 robert Exp $
+--- chrome/browser/chrome_browser_main_linux.cc.orig.port	Mon Feb  1 08:28:01 2016
++++ chrome/browser/chrome_browser_main_linux.cc	Mon Feb  1 08:28:25 2016
+@@ -59,6 +59,8 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
+ void ChromeBrowserMainPartsLinux::PostProfileInit() {
+   ChromeBrowserMainPartsPosix::PostProfileInit();
+ 
++#if !defined(OS_BSD)
+   g_browser_process->metrics_service()->RecordBreakpadRegistration(
+       breakpad::IsCrashReporterEnabled());
++#endif
+ }

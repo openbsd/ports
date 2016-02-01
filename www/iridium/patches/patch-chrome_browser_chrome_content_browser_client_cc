@@ -1,6 +1,15 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.6 2015/12/17 07:02:48 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Tue Nov 24 21:00:53 2015
-+++ chrome/browser/chrome_content_browser_client.cc	Wed Dec  2 08:18:32 2015
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.7 2016/02/01 15:09:01 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Sun Dec 20 10:58:32 2015
++++ chrome/browser/chrome_content_browser_client.cc	Mon Feb  1 08:26:32 2016
+@@ -171,7 +171,7 @@
+ #include "chrome/browser/chromeos/system/input_device_settings.h"
+ #include "chromeos/chromeos_switches.h"
+ #include "components/user_manager/user_manager.h"
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+ #include "chrome/browser/chrome_browser_main_linux.h"
+ #elif defined(OS_ANDROID)
+ #include "chrome/browser/android/new_tab_page_url_handler.h"
 @@ -186,7 +186,7 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
  #endif
@@ -19,6 +28,15 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.6 2015/12/17
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
+@@ -698,7 +698,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+   main_parts = new ChromeBrowserMainPartsMac(parameters);
+ #elif defined(OS_CHROMEOS)
+   main_parts = new chromeos::ChromeBrowserMainPartsChromeos(parameters);
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   main_parts = new ChromeBrowserMainPartsLinux(parameters);
+ #elif defined(OS_ANDROID)
+   main_parts = new ChromeBrowserMainPartsAndroid(parameters);
 @@ -1336,7 +1336,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
      command_line->AppendSwitchASCII(switches::kMetricsClientID,
                                      client_info->client_id);
