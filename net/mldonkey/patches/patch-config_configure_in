@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_configure_in,v 1.1 2014/10/31 08:19:39 dcoppa Exp $
---- config/configure.in.orig	Mon Mar 10 18:06:15 2014
-+++ config/configure.in	Thu Mar 13 16:32:27 2014
+$OpenBSD: patch-config_configure_in,v 1.2 2016/02/01 10:54:33 dcoppa Exp $
+--- config/configure.in.orig	Mon Feb  1 11:30:06 2016
++++ config/configure.in	Mon Feb  1 11:31:11 2016
 @@ -1011,7 +1011,7 @@ if test "$GD" != "no"; then
        PNG_LDFLAGS=`$PNGLIBCONFIG --ldflags`
        LDFLAGS="$LDFLAGS $PNG_LDFLAGS"
@@ -24,7 +24,16 @@ $OpenBSD: patch-config_configure_in,v 1.1 2014/10/31 08:19:39 dcoppa Exp $
    AC_MSG_CHECKING(GToolbox.popup_menu args)
    GTOOLBOX="$OCAMLLIB/$LABLGTK_NAME/gToolbox.mli"
 -  grep popup $GTOOLBOX | grep -i button 2> /dev/null && GTOOLBOX_ARGS=new
-+  grep popup $GTOOLBOX | grep -i button >/dev/null 2>&1 && GTOOLBOX_ARGS=new
++  grep popup $GTOOLBOX | grep -q -i button && GTOOLBOX_ARGS=new
    if test "$GTOOLBOX_ARGS" = "new"; then
      GTOOLBOX_POPUPMENU=' ~button: button ~time: time '
      AC_MSG_RESULT(new)
+@@ -1627,7 +1627,7 @@ cd ..
+ 
+ echo ""
+ echo "Building dependencies (if it blocks, try '$GNU_MAKE depend' to see the problem)"
+-$GNU_MAKE depend 2> /dev/null > /dev/null || echo "Building dependencies fails: try: '$GNU_MAKE depend'"
++$GNU_MAKE depend || echo "Building dependencies fails: try: '$GNU_MAKE depend'"
+ 
+ echo ""
+ printf "Configuring MLDonkey %s" "$MLDONKEY_VERSION"
