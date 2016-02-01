@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2016/02/01 08:00:42 benoit Exp $
 
-COMMENT=	interface to oEmbed
+COMMENT =	interface to oEmbed
 
-DISTNAME=	Services_oEmbed-0.1.0
-REVISION=		0
-CATEGORIES=	net
+DISTNAME =	Services_oEmbed-0.2.1
+CATEGORIES =	net
 
-MODULES=	www/pear
+MODULES =	www/pear
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=		devel/pear-Validate \
+RUN_DEPENDS =		devel/pear-Validate \
 			net/pear-Net-URL2 \
 			net/pear-HTTP-Request
 
