@@ -1,0 +1,20 @@
+$OpenBSD: patch-include_driver_Debug_h,v 1.1.1.1 2016/02/01 18:57:59 feinerer Exp $
+--- include/driver/Debug.h.orig	Wed Dec 30 15:07:05 2015
++++ include/driver/Debug.h	Wed Dec 30 15:07:39 2015
+@@ -42,14 +42,14 @@ class CJECA32_PRIVATE_CLASS CDebug (public)
+ public:
+ 	~CDebug(void);
+ 
+-#if defined(OS_LINUX) || defined(OS_DARWIN)
++#if defined(OS_LINUX) || defined(OS_DARWIN) || defined(OS_OPENBSD)
+ 	void setLevelMask(unsigned int nLevelMask);
+ 	void setLogFileName(const char *fname);
+ #endif
+ 	
+ private:
+    unsigned int m_nLevelMask;
+-#if defined(OS_LINUX) || defined(OS_DARWIN)
++#if defined(OS_LINUX) || defined(OS_DARWIN) || defined(OS_OPENBSD)
+        char *m_logFileName;
+ #endif
+ };

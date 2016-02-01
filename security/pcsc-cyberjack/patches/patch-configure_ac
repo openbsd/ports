@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2016/02/01 18:57:59 feinerer Exp $
+--- configure.ac.orig	Sat Jan 30 10:15:44 2016
++++ configure.ac	Sat Jan 30 10:16:08 2016
+@@ -219,6 +219,7 @@ fi
+ AM_CONDITIONAL(IS_WINDOWS, [test "$OS_TYPE" = "windows"])
+ AM_CONDITIONAL(IS_OSX, [test "$OSYSTEM" = "osx"])
+ AM_CONDITIONAL(IS_LINUX, [test "$OSYSTEM" = "linux"])
++AM_CONDITIONAL(IS_OPENBSD, [test "$OSYSTEM" = "openbsd"])
+ 
+ AC_SUBST(cyberjack_sys_is_windows)
+ AC_SUBST(cyberjack_config_file)

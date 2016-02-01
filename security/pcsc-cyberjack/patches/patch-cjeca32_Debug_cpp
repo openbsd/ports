@@ -1,0 +1,12 @@
+$OpenBSD: patch-cjeca32_Debug_cpp,v 1.1.1.1 2016/02/01 18:57:59 feinerer Exp $
+--- cjeca32/Debug.cpp.orig	Sun Jan 31 09:23:12 2016
++++ cjeca32/Debug.cpp	Sun Jan 31 09:23:32 2016
+@@ -139,7 +139,7 @@ CDebug Debug(0xffffffff);
+ 
+ 
+ 
+-#elif defined(OS_LINUX) || defined(OS_DARWIN)
++#elif defined(OS_LINUX) || defined(OS_DARWIN) || defined(OS_OPENBSD)
+ 
+ #if defined(OS_DARWIN)
+ # define DEBUG_DEFAULT_LOGFILE "/Library/Logs/cj.log"

@@ -1,0 +1,15 @@
+$OpenBSD: patch-ifd_Makefile_am,v 1.1.1.1 2016/02/01 18:57:59 feinerer Exp $
+--- ifd/Makefile.am.orig	Sat Jan 30 10:09:03 2016
++++ ifd/Makefile.am	Sat Jan 30 10:09:40 2016
+@@ -23,6 +23,11 @@ bundleosxdir=$(usbdropdir)/libifd-cyberjack.bundle/Con
+ bundleosx_LTLIBRARIES=libifd-cyberjack.la
+ endif
+ 
++if IS_OPENBSD
++bundlelinuxdir=$(usbdropdir)/libifd-cyberjack.bundle/Contents/OpenBSD
++bundlelinux_LTLIBRARIES=libifd-cyberjack.la
++endif
++
+ libifd_cyberjack_la_SOURCES=ifd.cpp
+ libifd_cyberjack_la_LDFLAGS=-version-info @CYBERJACK_SO_CURRENT@:@CYBERJACK_SO_REVISION@:@CYBERJACK_SO_AGE@ -no-undefined
+ #libifd_cyberjack_la_LIBADD=$(top_builddir)/cjeca32/libeca.la $(top_builddir)/cjeca32/ausb/libausb.la

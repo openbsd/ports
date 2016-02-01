@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_driver_Platform_unix_h,v 1.1.1.1 2016/02/01 18:57:59 feinerer Exp $
+--- include/driver/Platform_unix.h.orig	Wed Dec 30 14:56:29 2015
++++ include/driver/Platform_unix.h	Wed Dec 30 14:57:47 2015
+@@ -39,7 +39,7 @@
+ #include <ctype.h>
+ #include <string.h>
+ 
+-#ifndef OS_DARWIN
++#if !defined(OS_DARWIN) && !defined(OS_OPENBSD)
+ # include <malloc.h>
+ #endif
+ 
