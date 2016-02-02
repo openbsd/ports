@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/02/02 09:31:47 bentley Exp $
 share/apertium/apertium-dan-nor/
 share/apertium/apertium-dan-nor/apertium-dan-nor.dan-nno.t1x
 share/apertium/apertium-dan-nor/apertium-dan-nor.dan-nno.t2x
@@ -36,5 +36,6 @@ share/apertium/apertium-dan-nor/nor-dan.autobil.bin
 share/apertium/apertium-dan-nor/nor-dan.autogen.bin
 share/apertium/apertium-dan-nor/nor-dan.t1x.bin
 share/apertium/modes/dan-nno.mode
+share/apertium/modes/dan-nob.mode
 share/apertium/modes/nno-dan.mode
 share/apertium/modes/nob-dan.mode
