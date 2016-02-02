@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.378 2016/01/30 18:08:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.379 2016/02/02 23:59:16 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -255,6 +255,7 @@
      SUBDIR += usbutils
      SUBDIR += usmb
      SUBDIR += virt-manager
+     SUBDIR += vmdktool
      SUBDIR += vmwh
      SUBDIR += whowatch
      SUBDIR += wmapm
