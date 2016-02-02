@@ -1,0 +1,2 @@
+The vmdktool utility converts raw filesystems to the VMDK format and vice versa.
+It can also produce information for a given VMDK file.
