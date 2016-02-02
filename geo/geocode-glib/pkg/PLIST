@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/10/05 13:07:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/02/02 09:24:46 jasper Exp $
 include/geocode-glib-1.0/
 include/geocode-glib-1.0/geocode-glib/
 include/geocode-glib-1.0/geocode-glib/geocode-bounding-box.h
@@ -33,7 +33,6 @@ share/gtk-doc/html/geocode-glib-1.0/geocode-glib-geocode-enum-types.html
 share/gtk-doc/html/geocode-glib-1.0/geocode-glib-geocode-error.html
 share/gtk-doc/html/geocode-glib-1.0/home.png
 share/gtk-doc/html/geocode-glib-1.0/index.html
-share/gtk-doc/html/geocode-glib-1.0/index.sgml
 share/gtk-doc/html/geocode-glib-1.0/left-insensitive.png
 share/gtk-doc/html/geocode-glib-1.0/left.png
 share/gtk-doc/html/geocode-glib-1.0/right-insensitive.png
