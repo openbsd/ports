@@ -1,0 +1,27 @@
+$OpenBSD: patch-libImaging_PcdDecode_c,v 1.1 2016/02/02 23:08:40 sthen Exp $
+
+From ae453aa18b66af54e7ff716f4ccb33adca60afd4 Mon Sep 17 00:00:00 2001
+From: wiredfool <eric-github@soroos.net>
+Date: Tue, 2 Feb 2016 05:46:26 -0800
+Subject: [PATCH] PCD decoder overruns the shuffle buffer, Fixes #568
+
+--- libImaging/PcdDecode.c.orig	Tue Feb  2 23:05:01 2016
++++ libImaging/PcdDecode.c	Tue Feb  2 23:05:20 2016
+@@ -47,7 +47,7 @@ ImagingPcdDecode(Imaging im, ImagingCodecState state, 
+ 	    out[0] = ptr[x];
+ 	    out[1] = ptr[(x+4*state->xsize)/2];
+ 	    out[2] = ptr[(x+5*state->xsize)/2];
+-	    out += 4;
++	    out += 3;
+ 	}
+ 
+ 	state->shuffle((UINT8*) im->image[state->y],
+@@ -62,7 +62,7 @@ ImagingPcdDecode(Imaging im, ImagingCodecState state, 
+ 	    out[0] = ptr[x+state->xsize];
+ 	    out[1] = ptr[(x+4*state->xsize)/2];
+ 	    out[2] = ptr[(x+5*state->xsize)/2];
+-	    out += 4;
++	    out += 3;
+ 	}
+ 
+ 	state->shuffle((UINT8*) im->image[state->y],
