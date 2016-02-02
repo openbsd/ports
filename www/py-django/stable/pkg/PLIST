@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/01/04 19:38:30 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/02/02 20:23:10 rpointel Exp $
 @pkgpath www/py-django
 @comment bin/${LNAME}-admin
 bin/${LNAME}-admin.py
@@ -29,19 +29,14 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/__init__.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/__init__.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/admin.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/admin.pyc
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/apps.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/__init__.${MODPY_PY_PREFIX}tpl
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/admin.${MODPY_PY_PREFIX}tpl
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/apps.${MODPY_PY_PREFIX}tpl
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/migrations/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/migrations/__init__.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/migrations/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/models.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/tests.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/tests.pyc
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/views.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/views.pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/migrations/__init__.${MODPY_PY_PREFIX}tpl
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/models.${MODPY_PY_PREFIX}tpl
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/tests.${MODPY_PY_PREFIX}tpl
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/app_template/views.${MODPY_PY_PREFIX}tpl
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/global_settings.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/global_settings.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/
@@ -671,17 +666,12 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/zh_Hant/__init__.p
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/zh_Hant/formats.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/zh_Hant/formats.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/manage.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/manage.pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/manage.${MODPY_PY_PREFIX}tpl
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/__init__.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/settings.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/settings.pyc
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/urls.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/urls.pyc
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/wsgi.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/wsgi.pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/__init__.${MODPY_PY_PREFIX}tpl
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/settings.${MODPY_PY_PREFIX}tpl
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/urls.${MODPY_PY_PREFIX}tpl
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/wsgi.${MODPY_PY_PREFIX}tpl
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/urls/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/urls/__init__.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/urls/__init__.pyc
@@ -6537,8 +6527,10 @@ share/doc/${LNAME}/releases/1.8.5.txt
 share/doc/${LNAME}/releases/1.8.6.txt
 share/doc/${LNAME}/releases/1.8.7.txt
 share/doc/${LNAME}/releases/1.8.8.txt
+share/doc/${LNAME}/releases/1.8.9.txt
 share/doc/${LNAME}/releases/1.8.txt
 share/doc/${LNAME}/releases/1.9.1.txt
+share/doc/${LNAME}/releases/1.9.2.txt
 share/doc/${LNAME}/releases/1.9.txt
 share/doc/${LNAME}/releases/index.txt
 share/doc/${LNAME}/releases/security.txt
