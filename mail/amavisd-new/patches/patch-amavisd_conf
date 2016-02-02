@@ -1,6 +1,6 @@
-$OpenBSD: patch-amavisd_conf,v 1.8 2014/06/19 22:17:32 sthen Exp $
---- amavisd.conf.orig	Thu Aug 30 16:00:16 2012
-+++ amavisd.conf	Thu Jun 19 22:33:41 2014
+$OpenBSD: patch-amavisd_conf,v 1.9 2016/02/02 21:58:32 sthen Exp $
+--- amavisd.conf.orig	Sun Oct 26 00:05:54 2014
++++ amavisd.conf	Tue Feb  2 21:57:58 2016
 @@ -14,12 +14,12 @@ use strict;
  # $bypass_decode_parts = 1;         # controls running of decoders&dearchivers
  
@@ -17,7 +17,7 @@ $OpenBSD: patch-amavisd_conf,v 1.8 2014/06/19 22:17:32 sthen Exp $
  $TEMPBASE = "$MYHOME/tmp";   # working directory, needs to exist, -T
  $ENV{TMPDIR} = $TEMPBASE;    # environment variable TMPDIR, used by SA, etc.
  $QUARANTINEDIR = '/var/virusmails';  # -Q
-@@ -229,7 +229,7 @@ $banned_filename_re = new_RE(
+@@ -232,7 +232,7 @@ $banned_filename_re = new_RE(
  
    qr'.\.(exe|vbs|pif|scr|cpl)$'i,             # banned extension - basic
  # qr'.\.(exe|vbs|pif|scr|cpl|bat|cmd|com)$'i, # banned extension - basic+cmd
@@ -26,7 +26,7 @@ $OpenBSD: patch-amavisd_conf,v 1.8 2014/06/19 22:17:32 sthen Exp $
  #        inf|ini|ins|isp|js|jse|lib|lnk|mda|mdb|mde|mdt|mdw|mdz|msc|msi|
  #        msp|mst|ocx|ops|pcd|pif|prg|reg|scr|sct|shb|shs|sys|vb|vbe|vbs|vxd|
  #        wmf|wsc|wsf|wsh)$'ix,                # banned extensions - long
-@@ -313,7 +313,7 @@ $banned_filename_re = new_RE(
+@@ -316,7 +316,7 @@ $banned_filename_re = new_RE(
  @decoders = (
    ['mail', \&do_mime_decode],
  # [[qw(asc uue hqx ync)], \&do_ascii],  # not safe
@@ -35,7 +35,7 @@ $OpenBSD: patch-amavisd_conf,v 1.8 2014/06/19 22:17:32 sthen Exp $
    ['Z',    \&do_uncompress, ['uncompress', 'gzip -d', 'zcat'] ],
    ['gz',   \&do_uncompress, 'gzip -d'],
    ['gz',   \&do_gunzip],
-@@ -331,8 +331,8 @@ $banned_filename_re = new_RE(
+@@ -335,8 +335,8 @@ $banned_filename_re = new_RE(
             # ['/usr/local/heirloom/usr/5bin/pax', 'pax', 'gcpio', 'cpio']
    ['deb',  \&do_ar, 'ar'],
  # ['a',    \&do_ar, 'ar'],  # unpacking .a seems an overkill

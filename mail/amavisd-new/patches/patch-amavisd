@@ -1,7 +1,7 @@
-$OpenBSD: patch-amavisd,v 1.11 2014/06/19 22:17:32 sthen Exp $
---- amavisd.orig	Fri Jun 28 20:04:02 2013
-+++ amavisd	Thu Jun 19 22:31:13 2014
-@@ -27307,7 +27307,7 @@ sub new_SpamAssassin_instance {
+$OpenBSD: patch-amavisd,v 1.12 2016/02/02 21:58:32 sthen Exp $
+--- amavisd.orig	Sun Oct 26 00:06:00 2014
++++ amavisd	Tue Feb  2 21:57:58 2016
+@@ -29847,7 +29847,7 @@ sub new_SpamAssassin_instance {
  #   PREFIX            => '/usr/local',
  #   DEF_RULES_DIR     => '/usr/local/share/spamassassin',
  #   LOCAL_RULES_DIR   => '/etc/mail/spamassassin',
