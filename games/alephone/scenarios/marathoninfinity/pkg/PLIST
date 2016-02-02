@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/04/17 06:58:47 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/02/02 10:17:44 bentley Exp $
 @conflict marathoninfinity-*
 @conflict marathoninfinity-hires-*
 @pkgpath games/alephone/scenarios/marathoninfinity
@@ -7,7 +7,6 @@
 bin/marathoninfinity
 share/alephone/
 share/alephone/Infinity/
-share/alephone/Infinity/Fonts.fntA
 share/alephone/Infinity/Images.imgA
 share/alephone/Infinity/Map.sceA
 share/alephone/Infinity/Marathon Infinity Preferences
@@ -467,6 +466,9 @@ share/alephone/Infinity/Plugins/HD Weapons/XBLA Projectiles.ShPa
 share/alephone/Infinity/Plugins/HD Weapons/XBLA Projectiles.mml
 share/alephone/Infinity/Plugins/HD Weapons/XBLA Weapons in Hand.ShPa
 share/alephone/Infinity/Plugins/HD Weapons/XBLA Weapons in Hand.mml
+share/alephone/Infinity/Plugins/Marathon Infinity Stats/
+share/alephone/Infinity/Plugins/Marathon Infinity Stats/Plugin.xml
+share/alephone/Infinity/Plugins/Marathon Infinity Stats/stats.lua
 share/alephone/Infinity/Plugins/Marathon Infinity Theme/
 share/alephone/Infinity/Plugins/Marathon Infinity Theme/Plugin.xml
 share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/

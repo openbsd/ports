@@ -1,12 +1,12 @@
-#	$OpenBSD: Makefile,v 1.11 2014/04/17 06:58:47 bentley Exp $
+#	$OpenBSD: Makefile,v 1.12 2016/02/02 10:17:44 bentley Exp $
 PKG_ARCH =	*
 
 COMMENT =	marathon one data files
-V =		20140104
+V =		20150620
 DISTNAME =	marathon-0.0.${V}
-HOMEPAGE =	http://source.bungie.org/get/
+HOMEPAGE =	https://alephone.lhowon.org/games/marathon.html
 
-DISTFILES =	Marathon-${V}-Data.zip:5
+DISTFILES =	Marathon-${V}-Data.zip:6
 DISTFILES +=	Marathon_Manual.pdf:4
 
 # http://trilogyrelease.bungie.org/faq.html

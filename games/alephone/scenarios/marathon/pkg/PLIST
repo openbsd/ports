@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/04/17 06:58:47 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/02/02 10:17:44 bentley Exp $
 bin/marathon
 share/alephone/
 share/alephone/Marathon/
-share/alephone/Marathon/Fonts.fntA
 share/alephone/Marathon/Map.scen
 share/alephone/Marathon/Marathon Preferences
 share/alephone/Marathon/Marathon.appl
@@ -88,6 +87,9 @@ share/alephone/Marathon/Plugins/Enhanced HUD/squarishsans/
 share/alephone/Marathon/Plugins/Enhanced HUD/squarishsans/Squarish Sans CT Regular SC.ttf
 share/alephone/Marathon/Plugins/Enhanced HUD/squarishsans/Squarish Sans CT Regular.ttf
 share/alephone/Marathon/Plugins/Enhanced HUD/squarishsans/SquarishSansCT.README
+share/alephone/Marathon/Plugins/Marathon Stats/
+share/alephone/Marathon/Plugins/Marathon Stats/Plugin.xml
+share/alephone/Marathon/Plugins/Marathon Stats/stats.lua
 share/alephone/Marathon/Plugins/Marathon Theme/
 share/alephone/Marathon/Plugins/Marathon Theme/Plugin.xml
 share/alephone/Marathon/Plugins/Marathon Theme/resources/

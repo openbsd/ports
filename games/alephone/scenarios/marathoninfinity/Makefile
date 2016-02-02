@@ -1,13 +1,13 @@
-#	$OpenBSD: Makefile,v 1.10 2014/04/17 06:58:47 bentley Exp $
+#	$OpenBSD: Makefile,v 1.11 2016/02/02 10:17:44 bentley Exp $
 PKG_ARCH =		*
 
 COMMENT =		marathon infinity data files
-V =			20140104
+V =			20150620
 DISTNAME =		marathoninfinity-0.0.${V}
 PKGNAME =		marathoninfinity-0.0.${V}
-HOMEPAGE =		http://source.bungie.org/get/
+HOMEPAGE =		https://alephone.lhowon.org/games/infinity.html
 
-DISTFILES =		MarathonInfinity-${V}-Data.zip:5
+DISTFILES =		MarathonInfinity-${V}-Data.zip:6
 DISTFILES +=		Trilogy_Manual.pdf:4
 
 # http://trilogyrelease.bungie.org/faq.html
