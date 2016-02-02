@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2015/12/23 16:52:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2016/02/02 03:47:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,7 +43,8 @@ LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_STYLE=gnu
 # Don't rebuild html/pdf docs, use whatever is included in the tarball
 CONFIGURE_ARGS+=--enable-html-docs=no \
-		--enable-pdf-docs=no
+		--enable-pdf-docs=no \
+		--enable-api-docs=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
