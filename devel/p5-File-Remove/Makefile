@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:17 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2016/02/02 10:06:47 benoit Exp $
 
 COMMENT=	remove files and directories with perl
 
 MODULES=	cpan
 
-DISTNAME=	File-Remove-1.52
+DISTNAME =	File-Remove-1.55
 CATEGORIES=	devel
 
 # perl
