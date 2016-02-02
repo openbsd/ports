@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2015/07/16 23:57:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2016/02/02 10:22:30 benoit Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	perl interface to the Pango libraries
 
-DISTNAME=	Pango-1.226
+DISTNAME =	Pango-1.227
 CATEGORIES=	x11 devel
 CPAN_AUTHOR=	XAOC
-REVISION=	1
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
