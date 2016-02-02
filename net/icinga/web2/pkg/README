@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2015/11/16 20:30:34 sthen Exp $
+$OpenBSD: README,v 1.2 2016/02/02 01:29:05 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -14,15 +14,31 @@ about using "icinga2 feature enable" to do this, for configuration
 details, database schema, etc.
 
 The majority of Icinga Web 2 configuration is web-based and simple,
-but a few things will need to be setup first, in particular to cope
+but a few things will need to be setup FIRST, in particular to cope
 with the use of a chroot jail for OpenBSD webservers and PHP.
 
-OpenBSD's PHP packages use the Suhosin extension. Permit zend.view://
-inclusions by adding the following to ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini:
+- OpenBSD's PHP packages use the Suhosin extension. Add the following
+to ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini:
 
    suhosin.executor.include.whitelist = zend.view
 
-For users of php-fpm, you may add this to ${SYSCONFDIR}/php-fpm.conf:
+This is needed otherwise Suhosin will block "zend.view://" pseudo-URLs
+from being used with PHP's "include" function.
+
+- To cope with the chroot jail normally used with OpenBSD's PHP/web
+servers, create a symlink:
+
+   # mkdir -p /var/www/var
+   # ln -s .. /var/www/var/www 
+   # ls -l /var/www/var/www 
+   lrwxr-xr-x  1 root  daemon  2 Feb  2 01:01 /var/www/var/www -> ..
+
+(Icinga-web2 has CLI scripts which are run outside the chroot jail,
+and PHP webpages which are run inside the jail; this allows paths like
+"/var/www/icinga-web2" to work in both cases).
+
+- If using php-fpm, configure it to run scripts as the _icingaweb2
+user, and set the /tmp directory. You may add this to ${SYSCONFDIR}/php-fpm.conf:
 
    [icingaweb2]
    user = _icingaweb2
@@ -43,9 +59,9 @@ For users of php-fpm, you may add this to ${SYSCONFDIR}/php-fpm.conf:
 (If instead of php-fpm you use Apache with mod_php, you will need to
 add the userid running PHP scripts to the _icingaweb2 group).
 
-Your webserver will need to be configured to pass requests across
-to icingaweb2's front controller. An example for nginx (remember to
-"rcctl reload nginx" after adding), using the above php-fpm section:
+- Configure your webserver to pass requests to icingaweb2's front
+controller. An example for nginx (remember to "rcctl reload nginx"
+after adding), using the above php-fpm section:
 
    location ~ ^/icingaweb2/index\.php(.*)$ {
        fastcgi_pass   unix:run/php-fpm-icingaweb2.sock;
@@ -62,12 +78,9 @@ to icingaweb2's front controller. An example for nginx (remember to
        try_files $1 $uri $uri/ /icingaweb2/index.php$is_args$args;
    }
 
-Create a helper symlink (/icinga-web2 -> ${PREFIX}/www/icinga-web2) so that
-icingacli can locate its modules from outside of the chroot jail, and use
-icingacli to create the config directory and a token to allow setup:
+Using icingacli, create the config directory and a token to allow setup:
 
-   # ln -s /var/www/icinga-web2 /icinga-web2
-   # ${PREFIX}/icinga-web2/bin/icingacli setup config directory --group _icingaweb2;
+   # ${PREFIX}/icinga-web2/bin/icingacli setup config directory --group _icingaweb2
    # ${PREFIX}/icinga-web2/bin/icingacli setup token create
 
 Open the web interface http://localhost/icingaweb2/. Paste in the token

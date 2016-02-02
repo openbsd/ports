@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/01/03 18:20:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/02/02 01:29:05 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:/var/www/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
+@extraunexec rm -rf %D/icinga-web2/tmp/*
 icinga-web2/
 icinga-web2/.mailmap
 icinga-web2/AUTHORS

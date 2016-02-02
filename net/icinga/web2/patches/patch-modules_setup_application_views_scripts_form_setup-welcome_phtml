@@ -1,11 +1,11 @@
-$OpenBSD: patch-modules_setup_application_views_scripts_form_setup-welcome_phtml,v 1.2 2016/01/03 18:20:48 sthen Exp $
+$OpenBSD: patch-modules_setup_application_views_scripts_form_setup-welcome_phtml,v 1.3 2016/02/02 01:29:05 sthen Exp $
 
 Minimal patches to avoid showing confusing path to users in the welcome
 screen (PHP is normally run chroot'ed on OpenBSD), and use group "_icingaweb2"
 as per OpenBSD standard naming for groups from packages.
 
---- modules/setup/application/views/scripts/form/setup-welcome.phtml.orig	Tue Dec 22 13:59:48 2015
-+++ modules/setup/application/views/scripts/form/setup-welcome.phtml	Thu Dec 24 12:56:13 2015
+--- modules/setup/application/views/scripts/form/setup-welcome.phtml.orig	Wed Dec 23 13:24:06 2015
++++ modules/setup/application/views/scripts/form/setup-welcome.phtml	Tue Feb  2 01:19:39 2016
 @@ -8,7 +8,7 @@ use Icinga\Web\Wizard;
  $phpUser = Platform::getPhpUser();
  $configDir = Icinga::app()->getConfigDir();
@@ -15,6 +15,21 @@ as per OpenBSD standard naming for groups from packages.
  
  $groupadd = null;
  if (! (false === ($distro = Platform::getLinuxDistro(1)) || $distro === 'linux')) {
+@@ -81,11 +81,11 @@ if (! (false === ($distro = Platform::getLinuxDistro(1
+       ); ?></p>
+       <p><?= $this->translate('In any case, make sure that all of the following applies to your environment:'); ?></p>
+       <ul>
+-        <li><?= $this->translate('A system group called "icingaweb2" exists'); ?></li>
++        <li><?= $this->translate('A system group called "_icingaweb2" exists'); ?></li>
+         <?php if ($phpUser): ?>
+-        <li><?= sprintf($this->translate('The user "%s" is a member of the system group "icingaweb2"'), $phpUser); ?></li>
++        <li><?= sprintf($this->translate('The user "%s" is a member of the system group "_icingaweb2"'), $phpUser); ?></li>
+         <?php else: ?>
+-        <li><?= $this->translate('Your webserver\'s user is a member of the system group "icingaweb2"'); ?></li>
++        <li><?= $this->translate('Your webserver\'s user is a member of the system group "_icingaweb2"'); ?></li>
+         <?php endif ?>
+       </ul>
+       <?php if (! ($groupadd === null || $usermod === null)) { ?>
 @@ -96,12 +96,12 @@ if (! (false === ($distro = Platform::getLinuxDistro(1
        <?php } ?>
        <p><?= $this->translate('If you\'ve got the IcingaCLI installed you can do the following:'); ?></p>

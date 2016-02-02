@@ -1,31 +1,10 @@
-$OpenBSD: patch-library_Icinga_Application_ApplicationBootstrap_php,v 1.2 2016/01/03 18:20:48 sthen Exp $
+$OpenBSD: patch-library_Icinga_Application_ApplicationBootstrap_php,v 1.3 2016/02/02 01:29:05 sthen Exp $
 
-Apologies for the butchery...
+Use /var/www/etc/icingaweb2.
 
-By default PHP run by a webserver on OpenBSD is chrooted, but as icingacli
-runs outside the chroot, some adjustments are needed: strip off the standard
-chroot prefix and use a path relative to the base to find the etc directory.
-
-This places the etc directory in /var/www/etc/icingaweb2.
-
-It still relies on a helper symlink (/icinga-web2 -> /var/www/icinga-web2)
-for 'icingacli module' to work correctly (it needs to both locate the modules
-directory, and create symlinks that are accessible from inside the jail).
-
---- library/Icinga/Application/ApplicationBootstrap.php.orig	Tue Dec 22 13:59:48 2015
-+++ library/Icinga/Application/ApplicationBootstrap.php	Thu Dec 24 12:56:13 2015
-@@ -130,6 +130,10 @@ abstract class ApplicationBootstrap
-         if ($baseDir === null) {
-             $baseDir = dirname($this->getBootstrapDirectory());
-         }
-+        $trimmedBase = preg_replace('|^/var/www|','',$baseDir);
-+        if (realpath($trimmedBase) === realpath($baseDir)) {
-+            $baseDir = $trimmedBase;
-+        }
-         $this->baseDir = $baseDir;
-         $this->appDir = $baseDir . '/application';
-         $this->vendorDir = $baseDir . '/library/vendor';
-@@ -142,10 +146,14 @@ abstract class ApplicationBootstrap
+--- library/Icinga/Application/ApplicationBootstrap.php.orig	Wed Dec 23 13:24:06 2015
++++ library/Icinga/Application/ApplicationBootstrap.php	Tue Feb  2 01:10:26 2016
+@@ -142,7 +142,7 @@ abstract class ApplicationBootstrap
              if ($configDir === false) {
                  $configDir = Platform::isWindows()
                      ? $baseDir . '/config'
@@ -34,10 +13,3 @@ directory, and create symlinks that are accessible from inside the jail).
              }
          }
          $canonical = realpath($configDir);
-+        $trimmedCanonical = preg_replace('|^/var/www|','',$canonical);
-+        if (realpath($trimmedCanonical) === realpath($canonical)) {
-+            $canonical = $trimmedCanonical;
-+        }
-         $this->configDir = $canonical ? $canonical : $configDir;
- 
-         set_include_path(
