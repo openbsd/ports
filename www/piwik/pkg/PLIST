@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.59 2015/09/16 16:53:35 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.60 2016/02/03 18:49:10 giovanni Exp $
 @group daemon
 piwik/
-piwik/.phpstorm.meta.php
 piwik/CHANGELOG.md
 piwik/CONTRIBUTING.md
 piwik/LEGALNOTICE
@@ -45,7 +44,9 @@ piwik/core/Application/Kernel/GlobalSettingsProvider.php
 piwik/core/Application/Kernel/PluginList.php
 piwik/core/Archive/
 piwik/core/Archive.php
+piwik/core/Archive/ArchiveInvalidator/
 piwik/core/Archive/ArchiveInvalidator.php
+piwik/core/Archive/ArchiveInvalidator/InvalidationResult.php
 piwik/core/Archive/ArchivePurger.php
 piwik/core/Archive/Chunk.php
 piwik/core/Archive/DataCollection.php
@@ -117,6 +118,7 @@ piwik/core/DataAccess/
 piwik/core/DataAccess/Actions.php
 piwik/core/DataAccess/ArchiveSelector.php
 piwik/core/DataAccess/ArchiveTableCreator.php
+piwik/core/DataAccess/ArchiveTableDao.php
 piwik/core/DataAccess/ArchiveWriter.php
 piwik/core/DataAccess/LogAggregator.php
 piwik/core/DataAccess/LogQueryBuilder.php
@@ -272,6 +274,7 @@ piwik/core/Nonce.php
 piwik/core/Notification/
 piwik/core/Notification.php
 piwik/core/Notification/Manager.php
+piwik/core/NumberFormatter.php
 piwik/core/Option.php
 piwik/core/Period/
 piwik/core/Period.php
@@ -304,6 +307,7 @@ piwik/core/Plugin/MetadataLoader.php
 piwik/core/Plugin/Metric.php
 piwik/core/Plugin/PluginException.php
 piwik/core/Plugin/ProcessedMetric.php
+piwik/core/Plugin/ReleaseChannels.php
 piwik/core/Plugin/Report.php
 piwik/core/Plugin/Segment.php
 piwik/core/Plugin/Settings.php
@@ -382,22 +386,27 @@ piwik/core/Tracker/IgnoreCookie.php
 piwik/core/Tracker/Model.php
 piwik/core/Tracker/PageUrl.php
 piwik/core/Tracker/Request.php
+piwik/core/Tracker/RequestProcessor.php
 piwik/core/Tracker/RequestSet.php
 piwik/core/Tracker/Response.php
 piwik/core/Tracker/ScheduledTasksRunner.php
 piwik/core/Tracker/Settings.php
 piwik/core/Tracker/SettingsStorage.php
+piwik/core/Tracker/TableLogAction/
 piwik/core/Tracker/TableLogAction.php
+piwik/core/Tracker/TableLogAction/Cache.php
 piwik/core/Tracker/TrackerCodeGenerator.php
 piwik/core/Tracker/TrackerConfig.php
 piwik/core/Tracker/Visit/
 piwik/core/Tracker/Visit.php
 piwik/core/Tracker/Visit/Factory.php
 piwik/core/Tracker/Visit/ReferrerSpamFilter.php
+piwik/core/Tracker/Visit/VisitProperties.php
 piwik/core/Tracker/VisitExcluded.php
 piwik/core/Tracker/VisitInterface.php
 piwik/core/Tracker/Visitor.php
 piwik/core/Tracker/VisitorNotFoundInDb.php
+piwik/core/Tracker/VisitorRecognizer.php
 piwik/core/Translate.php
 piwik/core/Translation/
 piwik/core/Translation/Loader/
@@ -410,7 +419,9 @@ piwik/core/Translation/Transifex/API.php
 piwik/core/Translation/Translator.php
 piwik/core/Twig.php
 piwik/core/Unzip.php
+piwik/core/UpdateCheck/
 piwik/core/UpdateCheck.php
+piwik/core/UpdateCheck/ReleaseChannel.php
 piwik/core/Updater/
 piwik/core/Updater.php
 piwik/core/Updater/UpdateObserver.php
@@ -500,6 +511,13 @@ piwik/core/Updates/2.13.1.php
 piwik/core/Updates/2.14.0-b1.php
 piwik/core/Updates/2.14.0-b2.php
 piwik/core/Updates/2.14.2.php
+piwik/core/Updates/2.15.0-b12.php
+piwik/core/Updates/2.15.0-b16.php
+piwik/core/Updates/2.15.0-b17.php
+piwik/core/Updates/2.15.0-b20.php
+piwik/core/Updates/2.15.0-b3.php
+piwik/core/Updates/2.15.0-b4.php
+piwik/core/Updates/2.15.0.php
 piwik/core/Updates/2.2.0-b15.php
 piwik/core/Updates/2.2.3-b6.php
 piwik/core/Updates/2.3.0-rc2.php
@@ -1647,6 +1665,7 @@ piwik/misc/internal-docs/
 piwik/misc/internal-docs/content-tracking.md
 piwik/misc/log-analytics/
 piwik/misc/log-analytics/.gitignore
+piwik/misc/log-analytics/.travis.yml
 piwik/misc/log-analytics/CONTRIBUTING.md
 piwik/misc/log-analytics/README.md
 piwik/misc/log-analytics/import_logs.py
@@ -1680,6 +1699,7 @@ piwik/plugins/API/API.php
 piwik/plugins/API/Controller.php
 piwik/plugins/API/DataTable/
 piwik/plugins/API/DataTable/MergeDataTables.php
+piwik/plugins/API/Glossary.php
 piwik/plugins/API/Menu.php
 piwik/plugins/API/ProcessedReport.php
 piwik/plugins/API/Renderer/
@@ -1752,6 +1772,7 @@ piwik/plugins/API/lang/zh-tw.json
 piwik/plugins/API/stylesheets/
 piwik/plugins/API/stylesheets/listAllAPI.less
 piwik/plugins/API/templates/
+piwik/plugins/API/templates/glossary.twig
 piwik/plugins/API/templates/listAllAPI.twig
 piwik/plugins/Actions/
 piwik/plugins/Actions/API.php
@@ -1810,6 +1831,10 @@ piwik/plugins/Actions/Reports/GetSiteSearchKeywords.php
 piwik/plugins/Actions/Reports/GetSiteSearchNoResultKeywords.php
 piwik/plugins/Actions/Reports/SiteSearchBase.php
 piwik/plugins/Actions/Segment.php
+piwik/plugins/Actions/Tracker/
+piwik/plugins/Actions/Tracker/ActionsRequestProcessor.php
+piwik/plugins/Actions/config/
+piwik/plugins/Actions/config/config.php
 piwik/plugins/Actions/javascripts/
 piwik/plugins/Actions/javascripts/actionsDataTable.js
 piwik/plugins/Actions/lang/
@@ -1830,6 +1855,7 @@ piwik/plugins/Actions/lang/eu.json
 piwik/plugins/Actions/lang/fa.json
 piwik/plugins/Actions/lang/fi.json
 piwik/plugins/Actions/lang/fr.json
+piwik/plugins/Actions/lang/gl.json
 piwik/plugins/Actions/lang/he.json
 piwik/plugins/Actions/lang/hi.json
 piwik/plugins/Actions/lang/hr.json
@@ -1890,6 +1916,7 @@ piwik/plugins/Annotations/lang/et.json
 piwik/plugins/Annotations/lang/fa.json
 piwik/plugins/Annotations/lang/fi.json
 piwik/plugins/Annotations/lang/fr.json
+piwik/plugins/Annotations/lang/gl.json
 piwik/plugins/Annotations/lang/he.json
 piwik/plugins/Annotations/lang/hi.json
 piwik/plugins/Annotations/lang/hr.json
@@ -1986,8 +2013,10 @@ piwik/plugins/Contents/lang/sl.json
 piwik/plugins/Contents/lang/sq.json
 piwik/plugins/Contents/lang/sr.json
 piwik/plugins/Contents/lang/sv.json
+piwik/plugins/Contents/lang/ta.json
 piwik/plugins/Contents/lang/tl.json
 piwik/plugins/Contents/lang/tr.json
+piwik/plugins/Contents/lang/vi.json
 piwik/plugins/Contents/screenshots/
 piwik/plugins/Contents/screenshots/.gitkeep
 piwik/plugins/Contents/stylesheets/
@@ -1997,6 +2026,8 @@ piwik/plugins/CoreAdminHome/API.php
 piwik/plugins/CoreAdminHome/Commands/
 piwik/plugins/CoreAdminHome/Commands/DeleteLogsData.php
 piwik/plugins/CoreAdminHome/Commands/FixDuplicateLogActions.php
+piwik/plugins/CoreAdminHome/Commands/InvalidateReportData.php
+piwik/plugins/CoreAdminHome/Commands/OptimizeArchiveTables.php
 piwik/plugins/CoreAdminHome/Commands/PurgeOldArchiveData.php
 piwik/plugins/CoreAdminHome/Commands/RunScheduledTasks.php
 piwik/plugins/CoreAdminHome/Controller.php
@@ -2066,9 +2097,7 @@ piwik/plugins/CoreAdminHome/lang/zh-tw.json
 piwik/plugins/CoreAdminHome/stylesheets/
 piwik/plugins/CoreAdminHome/stylesheets/generalSettings.less
 piwik/plugins/CoreAdminHome/stylesheets/jsTrackingGenerator.css
-piwik/plugins/CoreAdminHome/stylesheets/menu.less
 piwik/plugins/CoreAdminHome/templates/
-piwik/plugins/CoreAdminHome/templates/_menu.twig
 piwik/plugins/CoreAdminHome/templates/generalSettings.twig
 piwik/plugins/CoreAdminHome/templates/optOut.twig
 piwik/plugins/CoreAdminHome/templates/pluginSettings.twig
@@ -2117,10 +2146,13 @@ piwik/plugins/CoreHome/Columns/UserId.php
 piwik/plugins/CoreHome/Columns/VisitFirstActionTime.php
 piwik/plugins/CoreHome/Columns/VisitGoalBuyer.php
 piwik/plugins/CoreHome/Columns/VisitGoalConverted.php
+piwik/plugins/CoreHome/Columns/VisitId.php
+piwik/plugins/CoreHome/Columns/VisitIp.php
 piwik/plugins/CoreHome/Columns/VisitLastActionTime.php
 piwik/plugins/CoreHome/Columns/VisitTotalTime.php
 piwik/plugins/CoreHome/Columns/VisitorDaysSinceFirst.php
 piwik/plugins/CoreHome/Columns/VisitorDaysSinceOrder.php
+piwik/plugins/CoreHome/Columns/VisitorId.php
 piwik/plugins/CoreHome/Columns/VisitorReturning.php
 piwik/plugins/CoreHome/Columns/VisitsCount.php
 piwik/plugins/CoreHome/Controller.php
@@ -2130,6 +2162,8 @@ piwik/plugins/CoreHome/DataTableRowAction/MultiRowEvolution.php
 piwik/plugins/CoreHome/DataTableRowAction/RowEvolution.php
 piwik/plugins/CoreHome/Menu.php
 piwik/plugins/CoreHome/Segment.php
+piwik/plugins/CoreHome/Tracker/
+piwik/plugins/CoreHome/Tracker/VisitRequestProcessor.php
 piwik/plugins/CoreHome/Visitor.php
 piwik/plugins/CoreHome/Widgets.php
 piwik/plugins/CoreHome/angularjs/
@@ -2140,7 +2174,6 @@ piwik/plugins/CoreHome/angularjs/anchorLinkFix.js
 piwik/plugins/CoreHome/angularjs/common/
 piwik/plugins/CoreHome/angularjs/common/directives/
 piwik/plugins/CoreHome/angularjs/common/directives/autocomplete-matched.js
-piwik/plugins/CoreHome/angularjs/common/directives/autocomplete-matched.spec.js
 piwik/plugins/CoreHome/angularjs/common/directives/dialog.js
 piwik/plugins/CoreHome/angularjs/common/directives/directive.module.js
 piwik/plugins/CoreHome/angularjs/common/directives/focus-anywhere-but-here.js
@@ -2187,12 +2220,22 @@ piwik/plugins/CoreHome/angularjs/notification/notification.directive.js
 piwik/plugins/CoreHome/angularjs/notification/notification.directive.less
 piwik/plugins/CoreHome/angularjs/piwikApp.config.js
 piwik/plugins/CoreHome/angularjs/piwikApp.js
+piwik/plugins/CoreHome/angularjs/quick-access/
+piwik/plugins/CoreHome/angularjs/quick-access/quick-access.controller.js
+piwik/plugins/CoreHome/angularjs/quick-access/quick-access.directive.html
+piwik/plugins/CoreHome/angularjs/quick-access/quick-access.directive.js
+piwik/plugins/CoreHome/angularjs/quick-access/quick-access.directive.less
+piwik/plugins/CoreHome/angularjs/selector/
+piwik/plugins/CoreHome/angularjs/selector/selector.directive.js
+piwik/plugins/CoreHome/angularjs/selector/selector.directive.less
 piwik/plugins/CoreHome/angularjs/siteselector/
 piwik/plugins/CoreHome/angularjs/siteselector/siteselector-model.service.js
 piwik/plugins/CoreHome/angularjs/siteselector/siteselector.controller.js
 piwik/plugins/CoreHome/angularjs/siteselector/siteselector.directive.html
 piwik/plugins/CoreHome/angularjs/siteselector/siteselector.directive.js
 piwik/plugins/CoreHome/angularjs/siteselector/siteselector.directive.less
+piwik/plugins/CoreHome/config/
+piwik/plugins/CoreHome/config/config.php
 piwik/plugins/CoreHome/images/
 piwik/plugins/CoreHome/images/bg_header.jpg
 piwik/plugins/CoreHome/images/bullet1.gif
@@ -2219,6 +2262,7 @@ piwik/plugins/CoreHome/javascripts/menu.js
 piwik/plugins/CoreHome/javascripts/menu_init.js
 piwik/plugins/CoreHome/javascripts/notification.js
 piwik/plugins/CoreHome/javascripts/notification_parser.js
+piwik/plugins/CoreHome/javascripts/numberFormatter.js
 piwik/plugins/CoreHome/javascripts/popover.js
 piwik/plugins/CoreHome/javascripts/require.js
 piwik/plugins/CoreHome/javascripts/sparkline.js
@@ -2292,7 +2336,7 @@ piwik/plugins/CoreHome/stylesheets/dataTable/_subDataTable.less
 piwik/plugins/CoreHome/stylesheets/dataTable/_tableConfiguration.less
 piwik/plugins/CoreHome/stylesheets/jqplotColors.less
 piwik/plugins/CoreHome/stylesheets/jquery.ui.autocomplete.css
-piwik/plugins/CoreHome/stylesheets/menu.less
+piwik/plugins/CoreHome/stylesheets/layout.less
 piwik/plugins/CoreHome/stylesheets/notification.less
 piwik/plugins/CoreHome/stylesheets/promo.less
 piwik/plugins/CoreHome/stylesheets/sparklineColors.less
@@ -2304,6 +2348,7 @@ piwik/plugins/CoreHome/templates/ReportRenderer/_htmlReportFooter.twig
 piwik/plugins/CoreHome/templates/ReportRenderer/_htmlReportHeader.twig
 piwik/plugins/CoreHome/templates/ReportsByDimension/
 piwik/plugins/CoreHome/templates/ReportsByDimension/_reportsByDimension.twig
+piwik/plugins/CoreHome/templates/_adblockDetect.twig
 piwik/plugins/CoreHome/templates/_dataTable.twig
 piwik/plugins/CoreHome/templates/_dataTableCell.twig
 piwik/plugins/CoreHome/templates/_dataTableFooter.twig
@@ -2312,7 +2357,6 @@ piwik/plugins/CoreHome/templates/_dataTableJS.twig
 piwik/plugins/CoreHome/templates/_donate.twig
 piwik/plugins/CoreHome/templates/_favicon.twig
 piwik/plugins/CoreHome/templates/_headerMessage.twig
-piwik/plugins/CoreHome/templates/_indexContent.twig
 piwik/plugins/CoreHome/templates/_javaScriptDisabled.twig
 piwik/plugins/CoreHome/templates/_logo.twig
 piwik/plugins/CoreHome/templates/_menu.twig
@@ -2321,10 +2365,8 @@ piwik/plugins/CoreHome/templates/_periodSelect.twig
 piwik/plugins/CoreHome/templates/_singleReport.twig
 piwik/plugins/CoreHome/templates/_siteSelectHeader.twig
 piwik/plugins/CoreHome/templates/_topBar.twig
-piwik/plugins/CoreHome/templates/_topBarTopMenu.twig
 piwik/plugins/CoreHome/templates/_topScreen.twig
 piwik/plugins/CoreHome/templates/_uiControl.twig
-piwik/plugins/CoreHome/templates/_userMenu.twig
 piwik/plugins/CoreHome/templates/_warningInvalidHost.twig
 piwik/plugins/CoreHome/templates/checkForUpdates.twig
 piwik/plugins/CoreHome/templates/getDefaultIndexView.twig
@@ -2332,7 +2374,6 @@ piwik/plugins/CoreHome/templates/getDonateForm.twig
 piwik/plugins/CoreHome/templates/getMultiRowEvolutionPopover.twig
 piwik/plugins/CoreHome/templates/getPromoVideo.twig
 piwik/plugins/CoreHome/templates/getRowEvolutionPopover.twig
-piwik/plugins/CoreHome/templates/macros.twig
 piwik/plugins/CorePluginsAdmin/
 piwik/plugins/CorePluginsAdmin/Commands/
 piwik/plugins/CorePluginsAdmin/Commands/ActivatePlugin.php
@@ -2349,6 +2390,8 @@ piwik/plugins/CorePluginsAdmin/PluginInstallerException.php
 piwik/plugins/CorePluginsAdmin/Tasks.php
 piwik/plugins/CorePluginsAdmin/UpdateCommunication.php
 piwik/plugins/CorePluginsAdmin/images/
+piwik/plugins/CorePluginsAdmin/images/flattr.png
+piwik/plugins/CorePluginsAdmin/images/paypal_donate.jpg
 piwik/plugins/CorePluginsAdmin/images/plugins.png
 piwik/plugins/CorePluginsAdmin/images/rating_important.png
 piwik/plugins/CorePluginsAdmin/images/themes.png
@@ -2439,6 +2482,12 @@ piwik/plugins/CoreUpdater/Diagnostic/
 piwik/plugins/CoreUpdater/Diagnostic/HttpsUpdateCheck.php
 piwik/plugins/CoreUpdater/Model.php
 piwik/plugins/CoreUpdater/NoUpdatesFoundException.php
+piwik/plugins/CoreUpdater/ReleaseChannel/
+piwik/plugins/CoreUpdater/ReleaseChannel.php
+piwik/plugins/CoreUpdater/ReleaseChannel/Latest2XBeta.php
+piwik/plugins/CoreUpdater/ReleaseChannel/Latest2XStable.php
+piwik/plugins/CoreUpdater/ReleaseChannel/LatestBeta.php
+piwik/plugins/CoreUpdater/ReleaseChannel/LatestStable.php
 piwik/plugins/CoreUpdater/Tasks.php
 piwik/plugins/CoreUpdater/Test/
 piwik/plugins/CoreUpdater/Test/Fixtures/
@@ -2447,6 +2496,7 @@ piwik/plugins/CoreUpdater/Test/Fixtures/FailUpdateHttpsFixture.php
 piwik/plugins/CoreUpdater/Test/Integration/
 piwik/plugins/CoreUpdater/Test/Integration/Commands/
 piwik/plugins/CoreUpdater/Test/Integration/Commands/UpdateTest.php
+piwik/plugins/CoreUpdater/Test/Integration/ReleaseChannelTest.php
 piwik/plugins/CoreUpdater/Test/Integration/UpdateCommunicationTest.php
 piwik/plugins/CoreUpdater/Test/Mock/
 piwik/plugins/CoreUpdater/Test/Mock/UpdaterMock.php
@@ -2477,6 +2527,7 @@ piwik/plugins/CoreUpdater/lang/eu.json
 piwik/plugins/CoreUpdater/lang/fa.json
 piwik/plugins/CoreUpdater/lang/fi.json
 piwik/plugins/CoreUpdater/lang/fr.json
+piwik/plugins/CoreUpdater/lang/gl.json
 piwik/plugins/CoreUpdater/lang/he.json
 piwik/plugins/CoreUpdater/lang/hi.json
 piwik/plugins/CoreUpdater/lang/hu.json
@@ -2568,6 +2619,7 @@ piwik/plugins/CustomVariables/.gitignore
 piwik/plugins/CustomVariables/API.php
 piwik/plugins/CustomVariables/Archiver.php
 piwik/plugins/CustomVariables/Columns/
+piwik/plugins/CustomVariables/Columns/Base.php
 piwik/plugins/CustomVariables/Columns/CustomVariableName.php
 piwik/plugins/CustomVariables/Columns/CustomVariableValue.php
 piwik/plugins/CustomVariables/Commands/
@@ -2583,6 +2635,10 @@ piwik/plugins/CustomVariables/Reports/
 piwik/plugins/CustomVariables/Reports/Base.php
 piwik/plugins/CustomVariables/Reports/GetCustomVariables.php
 piwik/plugins/CustomVariables/Reports/GetCustomVariablesValuesFromNameId.php
+piwik/plugins/CustomVariables/Tracker/
+piwik/plugins/CustomVariables/Tracker/CustomVariablesRequestProcessor.php
+piwik/plugins/CustomVariables/config/
+piwik/plugins/CustomVariables/config/config.php
 piwik/plugins/CustomVariables/lang/
 piwik/plugins/CustomVariables/lang/ar.json
 piwik/plugins/CustomVariables/lang/be.json
@@ -2920,6 +2976,7 @@ piwik/plugins/DevicesDetection/images/brand/Coolpad.ico
 piwik/plugins/DevicesDetection/images/brand/CreNova.ico
 piwik/plugins/DevicesDetection/images/brand/Cricket.ico
 piwik/plugins/DevicesDetection/images/brand/Crius_Mea.ico
+piwik/plugins/DevicesDetection/images/brand/Crosscall.ico
 piwik/plugins/DevicesDetection/images/brand/DMM.ico
 piwik/plugins/DevicesDetection/images/brand/Danew.ico
 piwik/plugins/DevicesDetection/images/brand/Dell.ico
@@ -2994,6 +3051,7 @@ piwik/plugins/DevicesDetection/images/brand/Samsung.ico
 piwik/plugins/DevicesDetection/images/brand/Sanyo.ico
 piwik/plugins/DevicesDetection/images/brand/Sega.ico
 piwik/plugins/DevicesDetection/images/brand/Selevision.ico
+piwik/plugins/DevicesDetection/images/brand/Sencor.ico
 piwik/plugins/DevicesDetection/images/brand/Sharp.ico
 piwik/plugins/DevicesDetection/images/brand/Siemens.ico
 piwik/plugins/DevicesDetection/images/brand/Smart.ico
@@ -3065,6 +3123,7 @@ piwik/plugins/DevicesDetection/images/browsers/CP.gif
 piwik/plugins/DevicesDetection/images/browsers/CR.gif
 piwik/plugins/DevicesDetection/images/browsers/CS.gif
 piwik/plugins/DevicesDetection/images/browsers/CX.gif
+piwik/plugins/DevicesDetection/images/browsers/DE.gif
 piwik/plugins/DevicesDetection/images/browsers/DF.gif
 piwik/plugins/DevicesDetection/images/browsers/DI.gif
 piwik/plugins/DevicesDetection/images/browsers/EL.gif
@@ -3111,6 +3170,7 @@ piwik/plugins/DevicesDetection/images/browsers/NL.gif
 piwik/plugins/DevicesDetection/images/browsers/NP.gif
 piwik/plugins/DevicesDetection/images/browsers/NS.gif
 piwik/plugins/DevicesDetection/images/browsers/OB.gif
+piwik/plugins/DevicesDetection/images/browsers/OE.gif
 piwik/plugins/DevicesDetection/images/browsers/OF.gif
 piwik/plugins/DevicesDetection/images/browsers/OI.gif
 piwik/plugins/DevicesDetection/images/browsers/ON.gif
@@ -3124,6 +3184,7 @@ piwik/plugins/DevicesDetection/images/browsers/PO.gif
 piwik/plugins/DevicesDetection/images/browsers/PU.gif
 piwik/plugins/DevicesDetection/images/browsers/PW.gif
 piwik/plugins/DevicesDetection/images/browsers/PX.gif
+piwik/plugins/DevicesDetection/images/browsers/QQ.gif
 piwik/plugins/DevicesDetection/images/browsers/RK.gif
 piwik/plugins/DevicesDetection/images/browsers/SA.gif
 piwik/plugins/DevicesDetection/images/browsers/SE.gif
@@ -3198,6 +3259,7 @@ piwik/plugins/DevicesDetection/images/os/SSE.gif
 piwik/plugins/DevicesDetection/images/os/SYL.gif
 piwik/plugins/DevicesDetection/images/os/SYM.gif
 piwik/plugins/DevicesDetection/images/os/T64.gif
+piwik/plugins/DevicesDetection/images/os/TDX.gif
 piwik/plugins/DevicesDetection/images/os/TIZ.gif
 piwik/plugins/DevicesDetection/images/os/UBT.gif
 piwik/plugins/DevicesDetection/images/os/UNK.gif
@@ -3286,6 +3348,7 @@ piwik/plugins/DevicesDetection/templates/list.twig
 piwik/plugins/DevicesDetection/templates/software.twig
 piwik/plugins/Diagnostics/
 piwik/plugins/Diagnostics/Commands/
+piwik/plugins/Diagnostics/Commands/AnalyzeArchiveTable.php
 piwik/plugins/Diagnostics/Commands/Run.php
 piwik/plugins/Diagnostics/Diagnostic/
 piwik/plugins/Diagnostics/Diagnostic/CronArchivingCheck.php
@@ -3313,6 +3376,9 @@ piwik/plugins/Diagnostics/DiagnosticReport.php
 piwik/plugins/Diagnostics/DiagnosticService.php
 piwik/plugins/Diagnostics/Diagnostics.php
 piwik/plugins/Diagnostics/Test/
+piwik/plugins/Diagnostics/Test/Integration/
+piwik/plugins/Diagnostics/Test/Integration/Commands/
+piwik/plugins/Diagnostics/Test/Integration/Commands/AnalyzeArchiveTableTest.php
 piwik/plugins/Diagnostics/Test/Mock/
 piwik/plugins/Diagnostics/Test/Mock/DiagnosticWithError.php
 piwik/plugins/Diagnostics/Test/Mock/DiagnosticWithSuccess.php
@@ -3350,7 +3416,11 @@ piwik/plugins/Ecommerce/Reports/GetItemsName.php
 piwik/plugins/Ecommerce/Reports/GetItemsSku.php
 piwik/plugins/Ecommerce/Reports/GetVisitsUntilConversionAbandonedCart.php
 piwik/plugins/Ecommerce/Reports/GetVisitsUntilConversionEcommerceOrder.php
+piwik/plugins/Ecommerce/Tracker/
+piwik/plugins/Ecommerce/Tracker/EcommerceRequestProcessor.php
 piwik/plugins/Ecommerce/Widgets.php
+piwik/plugins/Ecommerce/config/
+piwik/plugins/Ecommerce/config/config.php
 piwik/plugins/Ecommerce/lang/
 piwik/plugins/Ecommerce/lang/bg.json
 piwik/plugins/Ecommerce/lang/cs.json
@@ -3365,11 +3435,13 @@ piwik/plugins/Ecommerce/lang/it.json
 piwik/plugins/Ecommerce/lang/ja.json
 piwik/plugins/Ecommerce/lang/nb.json
 piwik/plugins/Ecommerce/lang/nl.json
+piwik/plugins/Ecommerce/lang/pt-br.json
 piwik/plugins/Ecommerce/lang/pt.json
 piwik/plugins/Ecommerce/lang/ru.json
 piwik/plugins/Ecommerce/lang/sk.json
 piwik/plugins/Ecommerce/lang/sr.json
 piwik/plugins/Ecommerce/lang/sv.json
+piwik/plugins/Ecommerce/lang/ta.json
 piwik/plugins/Ecommerce/plugin.json
 piwik/plugins/Ecommerce/templates/
 piwik/plugins/Ecommerce/templates/ecommerceLog.twig
@@ -3421,6 +3493,7 @@ piwik/plugins/Events/lang/fr.json
 piwik/plugins/Events/lang/hi.json
 piwik/plugins/Events/lang/it.json
 piwik/plugins/Events/lang/ja.json
+piwik/plugins/Events/lang/lt.json
 piwik/plugins/Events/lang/nb.json
 piwik/plugins/Events/lang/nl.json
 piwik/plugins/Events/lang/pl.json
@@ -3576,6 +3649,7 @@ piwik/plugins/Feedback/lang/et.json
 piwik/plugins/Feedback/lang/fa.json
 piwik/plugins/Feedback/lang/fi.json
 piwik/plugins/Feedback/lang/fr.json
+piwik/plugins/Feedback/lang/gl.json
 piwik/plugins/Feedback/lang/hi.json
 piwik/plugins/Feedback/lang/hu.json
 piwik/plugins/Feedback/lang/id.json
@@ -3644,10 +3718,14 @@ piwik/plugins/Goals/Reports/Get.php
 piwik/plugins/Goals/Reports/GetDaysToConversion.php
 piwik/plugins/Goals/Reports/GetMetrics.php
 piwik/plugins/Goals/Reports/GetVisitsUntilConversion.php
+piwik/plugins/Goals/Tracker/
+piwik/plugins/Goals/Tracker/GoalsRequestProcessor.php
 piwik/plugins/Goals/TranslationHelper.php
 piwik/plugins/Goals/Visualizations/
 piwik/plugins/Goals/Visualizations/Goals.php
 piwik/plugins/Goals/Widgets.php
+piwik/plugins/Goals/config/
+piwik/plugins/Goals/config/config.php
 piwik/plugins/Goals/javascripts/
 piwik/plugins/Goals/javascripts/goalsForm.js
 piwik/plugins/Goals/lang/
@@ -3668,6 +3746,7 @@ piwik/plugins/Goals/lang/eu.json
 piwik/plugins/Goals/lang/fa.json
 piwik/plugins/Goals/lang/fi.json
 piwik/plugins/Goals/lang/fr.json
+piwik/plugins/Goals/lang/gl.json
 piwik/plugins/Goals/lang/he.json
 piwik/plugins/Goals/lang/hi.json
 piwik/plugins/Goals/lang/hu.json
@@ -3713,6 +3792,13 @@ piwik/plugins/Goals/templates/editGoals.twig
 piwik/plugins/Goals/templates/getGoalReportView.twig
 piwik/plugins/Goals/templates/getOverviewView.twig
 piwik/plugins/Goals/templates/manageGoals.twig
+piwik/plugins/Heartbeat/
+piwik/plugins/Heartbeat/Heartbeat.php
+piwik/plugins/Heartbeat/Tracker/
+piwik/plugins/Heartbeat/Tracker/PingRequestProcessor.php
+piwik/plugins/Heartbeat/config/
+piwik/plugins/Heartbeat/config/config.php
+piwik/plugins/Heartbeat/plugin.json
 piwik/plugins/ImageGraph/
 piwik/plugins/ImageGraph/API.php
 piwik/plugins/ImageGraph/Controller.php
@@ -3796,6 +3882,7 @@ piwik/plugins/Insights/lang/et.json
 piwik/plugins/Insights/lang/fa.json
 piwik/plugins/Insights/lang/fi.json
 piwik/plugins/Insights/lang/fr.json
+piwik/plugins/Insights/lang/gl.json
 piwik/plugins/Insights/lang/hi.json
 piwik/plugins/Insights/lang/it.json
 piwik/plugins/Insights/lang/ja.json
@@ -3809,6 +3896,7 @@ piwik/plugins/Insights/lang/ru.json
 piwik/plugins/Insights/lang/sq.json
 piwik/plugins/Insights/lang/sr.json
 piwik/plugins/Insights/lang/sv.json
+piwik/plugins/Insights/lang/ta.json
 piwik/plugins/Insights/lang/tl.json
 piwik/plugins/Insights/lang/tr.json
 piwik/plugins/Insights/lang/vi.json
@@ -3825,6 +3913,7 @@ piwik/plugins/Insights/templates/overviewWidget.twig
 piwik/plugins/Insights/templates/table_header.twig
 piwik/plugins/Insights/templates/table_row.twig
 piwik/plugins/Installation/
+piwik/plugins/Installation/.gitignore
 piwik/plugins/Installation/Controller.php
 piwik/plugins/Installation/Exception/
 piwik/plugins/Installation/Exception/DatabaseConnectionFailedException.php
@@ -4068,35 +4157,6 @@ piwik/plugins/LanguagesManager/lang/zh-tw.json
 piwik/plugins/LanguagesManager/templates/
 piwik/plugins/LanguagesManager/templates/getLanguagesSelector.twig
 piwik/plugins/LanguagesManager/templates/searchTranslation.twig
-piwik/plugins/LeftMenu/
-piwik/plugins/LeftMenu/API.php
-piwik/plugins/LeftMenu/LeftMenu.php
-piwik/plugins/LeftMenu/Settings.php
-piwik/plugins/LeftMenu/lang/
-piwik/plugins/LeftMenu/lang/bg.json
-piwik/plugins/LeftMenu/lang/cs.json
-piwik/plugins/LeftMenu/lang/da.json
-piwik/plugins/LeftMenu/lang/de.json
-piwik/plugins/LeftMenu/lang/el.json
-piwik/plugins/LeftMenu/lang/en.json
-piwik/plugins/LeftMenu/lang/es.json
-piwik/plugins/LeftMenu/lang/fi.json
-piwik/plugins/LeftMenu/lang/fr.json
-piwik/plugins/LeftMenu/lang/hi.json
-piwik/plugins/LeftMenu/lang/it.json
-piwik/plugins/LeftMenu/lang/ja.json
-piwik/plugins/LeftMenu/lang/nl.json
-piwik/plugins/LeftMenu/lang/pl.json
-piwik/plugins/LeftMenu/lang/pt-br.json
-piwik/plugins/LeftMenu/lang/ro.json
-piwik/plugins/LeftMenu/lang/ru.json
-piwik/plugins/LeftMenu/lang/sr.json
-piwik/plugins/LeftMenu/lang/sv.json
-piwik/plugins/LeftMenu/lang/tl.json
-piwik/plugins/LeftMenu/lang/tr.json
-piwik/plugins/LeftMenu/lang/zh-cn.json
-piwik/plugins/LeftMenu/stylesheets/
-piwik/plugins/LeftMenu/stylesheets/theme.less
 piwik/plugins/Live/
 piwik/plugins/Live/API.php
 piwik/plugins/Live/Controller.php
@@ -4110,10 +4170,11 @@ piwik/plugins/Live/Reports/GetSimpleLastVisitCount.php
 piwik/plugins/Live/Visitor.php
 piwik/plugins/Live/VisitorFactory.php
 piwik/plugins/Live/VisitorInterface.php
-piwik/plugins/Live/VisitorLog/
-piwik/plugins/Live/VisitorLog.php
-piwik/plugins/Live/VisitorLog/Config.php
 piwik/plugins/Live/VisitorProfile.php
+piwik/plugins/Live/Visualizations/
+piwik/plugins/Live/Visualizations/VisitorLog/
+piwik/plugins/Live/Visualizations/VisitorLog.php
+piwik/plugins/Live/Visualizations/VisitorLog/Config.php
 piwik/plugins/Live/Widgets.php
 piwik/plugins/Live/images/
 piwik/plugins/Live/images/avatar_frame.png
@@ -4283,6 +4344,7 @@ piwik/plugins/MobileAppMeasurable/Type.php
 piwik/plugins/MobileAppMeasurable/config/
 piwik/plugins/MobileAppMeasurable/config/test.php
 piwik/plugins/MobileAppMeasurable/lang/
+piwik/plugins/MobileAppMeasurable/lang/cs.json
 piwik/plugins/MobileAppMeasurable/lang/de.json
 piwik/plugins/MobileAppMeasurable/lang/el.json
 piwik/plugins/MobileAppMeasurable/lang/en.json
@@ -4290,8 +4352,11 @@ piwik/plugins/MobileAppMeasurable/lang/es.json
 piwik/plugins/MobileAppMeasurable/lang/fr.json
 piwik/plugins/MobileAppMeasurable/lang/hi.json
 piwik/plugins/MobileAppMeasurable/lang/it.json
+piwik/plugins/MobileAppMeasurable/lang/ja.json
 piwik/plugins/MobileAppMeasurable/lang/nl.json
+piwik/plugins/MobileAppMeasurable/lang/pt-br.json
 piwik/plugins/MobileAppMeasurable/lang/sk.json
+piwik/plugins/MobileAppMeasurable/lang/sr.json
 piwik/plugins/MobileAppMeasurable/lang/sv.json
 piwik/plugins/MobileAppMeasurable/plugin.json
 piwik/plugins/MobileMessaging/
@@ -4308,6 +4373,7 @@ piwik/plugins/MobileMessaging/ReportRenderer/Sms.php
 piwik/plugins/MobileMessaging/SMSProvider/
 piwik/plugins/MobileMessaging/SMSProvider.php
 piwik/plugins/MobileMessaging/SMSProvider/Clockwork.php
+piwik/plugins/MobileMessaging/SMSProvider/Development.php
 piwik/plugins/MobileMessaging/SMSProvider/StubbedProvider.php
 piwik/plugins/MobileMessaging/images/
 piwik/plugins/MobileMessaging/images/Clockwork.png
@@ -4356,10 +4422,12 @@ piwik/plugins/MobileMessaging/templates/macros.twig
 piwik/plugins/MobileMessaging/templates/reportParametersScheduledReports.twig
 piwik/plugins/MobileMessaging/templates/userSettings.twig
 piwik/plugins/Monolog/
+piwik/plugins/Monolog/.gitignore
 piwik/plugins/Monolog/Formatter/
 piwik/plugins/Monolog/Formatter/LineMessageFormatter.php
 piwik/plugins/Monolog/Handler/
 piwik/plugins/Monolog/Handler/DatabaseHandler.php
+piwik/plugins/Monolog/Handler/EchoHandler.php
 piwik/plugins/Monolog/Handler/FileHandler.php
 piwik/plugins/Monolog/Handler/WebNotificationHandler.php
 piwik/plugins/Monolog/Monolog.php
@@ -4369,20 +4437,6 @@ piwik/plugins/Monolog/Processor/ExceptionToTextProcessor.php
 piwik/plugins/Monolog/Processor/RequestIdProcessor.php
 piwik/plugins/Monolog/Processor/SprintfProcessor.php
 piwik/plugins/Monolog/Processor/TokenProcessor.php
-piwik/plugins/Monolog/Test/
-piwik/plugins/Monolog/Test/Integration/
-piwik/plugins/Monolog/Test/Integration/Fixture/
-piwik/plugins/Monolog/Test/Integration/Fixture/LoggerWrapper.php
-piwik/plugins/Monolog/Test/Integration/LogTest.php
-piwik/plugins/Monolog/Test/Unit/
-piwik/plugins/Monolog/Test/Unit/Formatter/
-piwik/plugins/Monolog/Test/Unit/Formatter/LineMessageFormatterTest.php
-piwik/plugins/Monolog/Test/Unit/Processor/
-piwik/plugins/Monolog/Test/Unit/Processor/ClassNameProcessorTest.php
-piwik/plugins/Monolog/Test/Unit/Processor/ExceptionToTextProcessorTest.php
-piwik/plugins/Monolog/Test/Unit/Processor/RequestIdProcessorTest.php
-piwik/plugins/Monolog/Test/Unit/Processor/SprintfProcessorTest.php
-piwik/plugins/Monolog/Test/Unit/Processor/TokenProcessorTest.php
 piwik/plugins/Monolog/config/
 piwik/plugins/Monolog/config/cli.php
 piwik/plugins/Monolog/config/config.php
@@ -4391,6 +4445,9 @@ piwik/plugins/Monolog/plugin.json
 piwik/plugins/Morpheus/
 piwik/plugins/Morpheus/Controller.php
 piwik/plugins/Morpheus/Menu.php
+piwik/plugins/Morpheus/fonts/
+piwik/plugins/Morpheus/fonts/piwik.eot
+piwik/plugins/Morpheus/fonts/piwik.ttf
 piwik/plugins/Morpheus/images/
 piwik/plugins/Morpheus/images/add.png
 piwik/plugins/Morpheus/images/affix-arrow.png
@@ -4459,6 +4516,7 @@ piwik/plugins/Morpheus/images/search_bg.png
 piwik/plugins/Morpheus/images/search_ico.png
 piwik/plugins/Morpheus/images/segment-users.png
 piwik/plugins/Morpheus/images/select_arrow.png
+piwik/plugins/Morpheus/images/signout.png
 piwik/plugins/Morpheus/images/sites_selection.png
 piwik/plugins/Morpheus/images/smileyprog_0.png
 piwik/plugins/Morpheus/images/smileyprog_1.png
@@ -4497,6 +4555,7 @@ piwik/plugins/Morpheus/stylesheets/base/
 piwik/plugins/Morpheus/stylesheets/base.less
 piwik/plugins/Morpheus/stylesheets/base/bootstrap.css
 piwik/plugins/Morpheus/stylesheets/base/colors.less
+piwik/plugins/Morpheus/stylesheets/base/icons.css
 piwik/plugins/Morpheus/stylesheets/base/mixins.less
 piwik/plugins/Morpheus/stylesheets/general/
 piwik/plugins/Morpheus/stylesheets/general/_admin.less
@@ -4538,7 +4597,6 @@ piwik/plugins/Morpheus/templates/
 piwik/plugins/Morpheus/templates/_iframeBuster.twig
 piwik/plugins/Morpheus/templates/_jsCssIncludes.twig
 piwik/plugins/Morpheus/templates/_jsGlobalVariables.twig
-piwik/plugins/Morpheus/templates/_piwikTag.twig
 piwik/plugins/Morpheus/templates/_sparklineFooter.twig
 piwik/plugins/Morpheus/templates/admin.twig
 piwik/plugins/Morpheus/templates/ajaxMacros.twig
@@ -4832,6 +4890,7 @@ piwik/plugins/Provider/lang/sl.json
 piwik/plugins/Provider/lang/sq.json
 piwik/plugins/Provider/lang/sr.json
 piwik/plugins/Provider/lang/sv.json
+piwik/plugins/Provider/lang/ta.json
 piwik/plugins/Provider/lang/th.json
 piwik/plugins/Provider/lang/tl.json
 piwik/plugins/Provider/lang/tr.json
@@ -4844,6 +4903,7 @@ piwik/plugins/Proxy/Controller.php
 piwik/plugins/Proxy/Proxy.php
 piwik/plugins/Proxy/plugin.json
 piwik/plugins/Referrers/
+piwik/plugins/Referrers/.gitignore
 piwik/plugins/Referrers/API.php
 piwik/plugins/Referrers/Archiver.php
 piwik/plugins/Referrers/Columns/
@@ -4864,6 +4924,7 @@ piwik/plugins/Referrers/DataTable/Filter/
 piwik/plugins/Referrers/DataTable/Filter/KeywordNotDefined.php
 piwik/plugins/Referrers/DataTable/Filter/KeywordsFromSearchEngineId.php
 piwik/plugins/Referrers/DataTable/Filter/SearchEnginesFromKeywordId.php
+piwik/plugins/Referrers/DataTable/Filter/SetGetReferrerTypeSubtables.php
 piwik/plugins/Referrers/DataTable/Filter/UrlsForSocial.php
 piwik/plugins/Referrers/DataTable/Filter/UrlsFromWebsiteId.php
 piwik/plugins/Referrers/Menu.php
@@ -4940,6 +5001,7 @@ piwik/plugins/Referrers/images/searchEngines/junglekey.com.png
 piwik/plugins/Referrers/images/searchEngines/jyxo.1188.cz.png
 piwik/plugins/Referrers/images/searchEngines/k9safesearch.com.png
 piwik/plugins/Referrers/images/searchEngines/ko.search.need2find.com.png
+piwik/plugins/Referrers/images/searchEngines/kwzf.net.png
 piwik/plugins/Referrers/images/searchEngines/lo.st.png
 piwik/plugins/Referrers/images/searchEngines/m.sm.cn.png
 piwik/plugins/Referrers/images/searchEngines/maps.google.com.png
@@ -4974,6 +5036,7 @@ piwik/plugins/Referrers/images/searchEngines/search.conduit.com.png
 piwik/plugins/Referrers/images/searchEngines/search.daum.net.png
 piwik/plugins/Referrers/images/searchEngines/search.earthlink.net.png
 piwik/plugins/Referrers/images/searchEngines/search.excite.it.png
+piwik/plugins/Referrers/images/searchEngines/search.fooooo.com.png
 piwik/plugins/Referrers/images/searchEngines/search.free.fr.png
 piwik/plugins/Referrers/images/searchEngines/search.freecause.com.png
 piwik/plugins/Referrers/images/searchEngines/search.genieo.com.png
@@ -5067,6 +5130,7 @@ piwik/plugins/Referrers/images/searchEngines/www.icq.com.png
 piwik/plugins/Referrers/images/searchEngines/www.ilse.nl.png
 piwik/plugins/Referrers/images/searchEngines/www.jungle-spider.de.png
 piwik/plugins/Referrers/images/searchEngines/www.kataweb.it.png
+piwik/plugins/Referrers/images/searchEngines/www.kensaq.com.png
 piwik/plugins/Referrers/images/searchEngines/www.kvasir.no.png
 piwik/plugins/Referrers/images/searchEngines/www.latne.lv.png
 piwik/plugins/Referrers/images/searchEngines/www.lookany.com.png
@@ -5143,6 +5207,7 @@ piwik/plugins/Referrers/images/socials/blackplanet.com.png
 piwik/plugins/Referrers/images/socials/buzznet.com.png
 piwik/plugins/Referrers/images/socials/classmates.com.png
 piwik/plugins/Referrers/images/socials/douban.com.png
+piwik/plugins/Referrers/images/socials/dribbble.com.png
 piwik/plugins/Referrers/images/socials/facebook.com.png
 piwik/plugins/Referrers/images/socials/flickr.com.png
 piwik/plugins/Referrers/images/socials/flixster.com.png
@@ -5340,7 +5405,6 @@ piwik/plugins/SEO/Metric/Bing.php
 piwik/plugins/SEO/Metric/Dmoz.php
 piwik/plugins/SEO/Metric/DomainAge.php
 piwik/plugins/SEO/Metric/Google.php
-piwik/plugins/SEO/Metric/Majestic.php
 piwik/plugins/SEO/Metric/Metric.php
 piwik/plugins/SEO/Metric/MetricsProvider.php
 piwik/plugins/SEO/Metric/ProviderCache.php
@@ -5467,7 +5531,12 @@ piwik/plugins/SegmentEditor/
 piwik/plugins/SegmentEditor/API.php
 piwik/plugins/SegmentEditor/Model.php
 piwik/plugins/SegmentEditor/SegmentEditor.php
+piwik/plugins/SegmentEditor/SegmentQueryDecorator.php
 piwik/plugins/SegmentEditor/SegmentSelectorControl.php
+piwik/plugins/SegmentEditor/Services/
+piwik/plugins/SegmentEditor/Services/StoredSegmentService.php
+piwik/plugins/SegmentEditor/config/
+piwik/plugins/SegmentEditor/config/config.php
 piwik/plugins/SegmentEditor/images/
 piwik/plugins/SegmentEditor/images/ajax-loader.gif
 piwik/plugins/SegmentEditor/images/bg-inverted-corners.png
@@ -5526,6 +5595,8 @@ piwik/plugins/SitesManager/Menu.php
 piwik/plugins/SitesManager/Model.php
 piwik/plugins/SitesManager/SiteUrls.php
 piwik/plugins/SitesManager/SitesManager.php
+piwik/plugins/SitesManager/Tracker/
+piwik/plugins/SitesManager/Tracker/SitesManagerRequestProcessor.php
 piwik/plugins/SitesManager/angularjs/
 piwik/plugins/SitesManager/angularjs/sites-manager/
 piwik/plugins/SitesManager/angularjs/sites-manager/api-core.service.js
@@ -5538,6 +5609,8 @@ piwik/plugins/SitesManager/angularjs/sites-manager/sites-manager-admin-sites-mod
 piwik/plugins/SitesManager/angularjs/sites-manager/sites-manager-site.controller.js
 piwik/plugins/SitesManager/angularjs/sites-manager/sites-manager-type-model.js
 piwik/plugins/SitesManager/angularjs/sites-manager/sites-manager.controller.js
+piwik/plugins/SitesManager/config/
+piwik/plugins/SitesManager/config/config.php
 piwik/plugins/SitesManager/lang/
 piwik/plugins/SitesManager/lang/am.json
 piwik/plugins/SitesManager/lang/ar.json
@@ -6711,6 +6784,7 @@ piwik/plugins/WebsiteMeasurable/Type.php
 piwik/plugins/WebsiteMeasurable/WebsiteMeasurable.php
 piwik/plugins/WebsiteMeasurable/lang/
 piwik/plugins/WebsiteMeasurable/lang/ar.json
+piwik/plugins/WebsiteMeasurable/lang/cs.json
 piwik/plugins/WebsiteMeasurable/lang/de.json
 piwik/plugins/WebsiteMeasurable/lang/el.json
 piwik/plugins/WebsiteMeasurable/lang/en.json
@@ -6718,9 +6792,14 @@ piwik/plugins/WebsiteMeasurable/lang/es.json
 piwik/plugins/WebsiteMeasurable/lang/fr.json
 piwik/plugins/WebsiteMeasurable/lang/hi.json
 piwik/plugins/WebsiteMeasurable/lang/it.json
+piwik/plugins/WebsiteMeasurable/lang/ja.json
 piwik/plugins/WebsiteMeasurable/lang/nb.json
 piwik/plugins/WebsiteMeasurable/lang/nl.json
+piwik/plugins/WebsiteMeasurable/lang/pt-br.json
 piwik/plugins/WebsiteMeasurable/lang/sk.json
+piwik/plugins/WebsiteMeasurable/lang/sq.json
+piwik/plugins/WebsiteMeasurable/lang/sr.json
+piwik/plugins/WebsiteMeasurable/lang/sv.json
 piwik/plugins/WebsiteMeasurable/lang/zh-tw.json
 piwik/plugins/WebsiteMeasurable/plugin.json
 piwik/plugins/Widgetize/
@@ -6786,39 +6865,6 @@ piwik/plugins/Widgetize/templates/
 piwik/plugins/Widgetize/templates/iframe.twig
 piwik/plugins/Widgetize/templates/iframe_empty.twig
 piwik/plugins/Widgetize/templates/index.twig
-piwik/plugins/ZenMode/
-piwik/plugins/ZenMode/ZenMode.php
-piwik/plugins/ZenMode/angularjs/
-piwik/plugins/ZenMode/angularjs/quick-access/
-piwik/plugins/ZenMode/angularjs/quick-access/quick-access.directive.html
-piwik/plugins/ZenMode/angularjs/quick-access/quick-access.directive.js
-piwik/plugins/ZenMode/angularjs/quick-access/quick-access.directive.less
-piwik/plugins/ZenMode/angularjs/zen-mode/
-piwik/plugins/ZenMode/angularjs/zen-mode/zen-mode-switcher.directive.js
-piwik/plugins/ZenMode/angularjs/zen-mode/zen-mode.less
-piwik/plugins/ZenMode/javascripts/
-piwik/plugins/ZenMode/javascripts/zen-mode.js
-piwik/plugins/ZenMode/lang/
-piwik/plugins/ZenMode/lang/cs.json
-piwik/plugins/ZenMode/lang/da.json
-piwik/plugins/ZenMode/lang/de.json
-piwik/plugins/ZenMode/lang/el.json
-piwik/plugins/ZenMode/lang/en.json
-piwik/plugins/ZenMode/lang/es.json
-piwik/plugins/ZenMode/lang/fa.json
-piwik/plugins/ZenMode/lang/fr.json
-piwik/plugins/ZenMode/lang/hi.json
-piwik/plugins/ZenMode/lang/it.json
-piwik/plugins/ZenMode/lang/ja.json
-piwik/plugins/ZenMode/lang/nb.json
-piwik/plugins/ZenMode/lang/nl.json
-piwik/plugins/ZenMode/lang/pl.json
-piwik/plugins/ZenMode/lang/ro.json
-piwik/plugins/ZenMode/lang/ru.json
-piwik/plugins/ZenMode/lang/sr.json
-piwik/plugins/ZenMode/lang/sv.json
-piwik/plugins/ZenMode/lang/ta.json
-piwik/plugins/ZenMode/lang/tl.json
 piwik/tests/
 piwik/tests/README.md
 piwik/tmp/
@@ -6827,6 +6873,7 @@ piwik/vendor/autoload.php
 @comment piwik/vendor/bin/phpunit
 piwik/vendor/composer/
 piwik/vendor/composer/ClassLoader.php
+piwik/vendor/composer/LICENSE
 piwik/vendor/composer/autoload_classmap.php
 piwik/vendor/composer/autoload_files.php
 piwik/vendor/composer/autoload_namespaces.php
@@ -7021,6 +7068,7 @@ piwik/vendor/monolog/monolog/src/Monolog/Handler/GelfHandler.php
 piwik/vendor/monolog/monolog/src/Monolog/Handler/GroupHandler.php
 piwik/vendor/monolog/monolog/src/Monolog/Handler/HandlerInterface.php
 piwik/vendor/monolog/monolog/src/Monolog/Handler/HipChatHandler.php
+piwik/vendor/monolog/monolog/src/Monolog/Handler/IFTTTHandler.php
 piwik/vendor/monolog/monolog/src/Monolog/Handler/LogEntriesHandler.php
 piwik/vendor/monolog/monolog/src/Monolog/Handler/LogglyHandler.php
 piwik/vendor/monolog/monolog/src/Monolog/Handler/MailHandler.php
@@ -7274,8 +7322,9 @@ piwik/vendor/piwik/decompress/README.md
 piwik/vendor/piwik/decompress/composer.json
 piwik/vendor/piwik/decompress/libs/
 piwik/vendor/piwik/decompress/libs/PclZip/
-piwik/vendor/piwik/decompress/libs/PclZip/lgpl-2.1.txt
+piwik/vendor/piwik/decompress/libs/PclZip/gnu-lgpl.txt
 piwik/vendor/piwik/decompress/libs/PclZip/pclzip.lib.php
+piwik/vendor/piwik/decompress/libs/PclZip/readme.txt
 piwik/vendor/piwik/decompress/libs/README.md
 piwik/vendor/piwik/decompress/phpunit.xml
 piwik/vendor/piwik/decompress/src/
@@ -7517,6 +7566,7 @@ piwik/vendor/symfony/monolog-bridge/Symfony/Bridge/Monolog/composer.json
 piwik/vendor/symfony/monolog-bridge/Symfony/Bridge/Monolog/phpunit.xml.dist
 piwik/vendor/tecnick.com/
 piwik/vendor/tecnick.com/tcpdf/
+piwik/vendor/tecnick.com/tcpdf/CHANGELOG.TXT
 piwik/vendor/tecnick.com/tcpdf/LICENSE.TXT
 piwik/vendor/tecnick.com/tcpdf/README.TXT
 piwik/vendor/tecnick.com/tcpdf/composer.json
@@ -7599,6 +7649,7 @@ piwik/vendor/twig/twig/ext/twig/twig.c
 piwik/vendor/twig/twig/lib/
 piwik/vendor/twig/twig/lib/Twig/
 piwik/vendor/twig/twig/lib/Twig/Autoloader.php
+piwik/vendor/twig/twig/lib/Twig/BaseNodeVisitor.php
 piwik/vendor/twig/twig/lib/Twig/Compiler.php
 piwik/vendor/twig/twig/lib/Twig/CompilerInterface.php
 piwik/vendor/twig/twig/lib/Twig/Environment.php
@@ -7794,6 +7845,9 @@ piwik/vendor/twig/twig/lib/Twig/TokenParserBroker.php
 piwik/vendor/twig/twig/lib/Twig/TokenParserBrokerInterface.php
 piwik/vendor/twig/twig/lib/Twig/TokenParserInterface.php
 piwik/vendor/twig/twig/lib/Twig/TokenStream.php
+piwik/vendor/twig/twig/lib/Twig/Util/
+piwik/vendor/twig/twig/lib/Twig/Util/DeprecationCollector.php
+piwik/vendor/twig/twig/lib/Twig/Util/TemplateDirIterator.php
 piwik/vendor/twig/twig/phpunit.xml.dist
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${FULLPKGNAME}
