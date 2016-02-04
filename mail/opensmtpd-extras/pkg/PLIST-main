@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2016/01/12 21:37:39 jung Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2016/02/04 22:27:38 jung Exp $
 @bin bin/tool-stats
 libexec/smtpd/
 @bin libexec/smtpd/filter-dkim-signer
@@ -21,6 +21,7 @@ libexec/smtpd/
 @bin libexec/smtpd/table-sqlite
 @bin libexec/smtpd/table-stub
 @man man/man3/filter_api.3
+@man man/man5/filter-monkey.conf.5
 @man man/man5/filter-regex.conf.5
 @man man/man5/table-passwd.5
 @man man/man5/table-socketmap.5
@@ -35,5 +36,7 @@ libexec/smtpd/
 @man man/man8/filter-void.8
 @man man/man8/tool-stats.8
 share/examples/opensmtpd-extras/
+share/examples/opensmtpd-extras/filter-monkey.conf
+@sample ${SYSCONFDIR}/mail/filter-monkey.conf
 share/examples/opensmtpd-extras/filter-regex.conf
 @sample ${SYSCONFDIR}/mail/filter-regex.conf
