@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2015/09/18 18:26:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/02/04 00:20:09 sthen Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
 
-V=			1.6.0
+V=			1.6.1
 
 DISTNAME=		dnscrypt-proxy-${V}
 CATEGORIES=		net
@@ -50,7 +50,7 @@ USE_GMAKE=		yes
 
 DOCS=			README-PLUGINS.markdown \
 			README.markdown \
-			TECHNOTES
+			DNSCRYPT-V2-PROTOCOL.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dnscrypt-proxy
