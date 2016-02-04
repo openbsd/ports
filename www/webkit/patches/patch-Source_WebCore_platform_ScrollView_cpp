@@ -1,0 +1,11 @@
+$OpenBSD: patch-Source_WebCore_platform_ScrollView_cpp,v 1.2 2016/02/04 13:34:20 ajacoutot Exp $
+--- Source/WebCore/platform/ScrollView.cpp.orig	Thu Feb  4 14:30:30 2016
++++ Source/WebCore/platform/ScrollView.cpp	Thu Feb  4 14:31:02 2016
+@@ -1177,6 +1177,7 @@ void ScrollView::paint(GraphicsContext* context, const
+         scrollViewDirtyRect.intersect(visibleAreaWithScrollbars);
+         context->translate(x(), y());
+         scrollViewDirtyRect.moveBy(-location());
++        context->clip(IntRect(IntPoint(), visibleAreaWithScrollbars.size()));
+ 
+         paintScrollbars(context, scrollViewDirtyRect);
+     }
