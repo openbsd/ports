@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/08/15 11:13:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2016/02/04 06:55:48 ajacoutot Exp $
 
 COMMENT=	fine-grained privileges PolicyKit helper for CUPS
 
-DISTNAME=	cups-pk-helper-0.2.5
+DISTNAME=	cups-pk-helper-0.2.6
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
 
 CATEGORIES=	print sysutils
 
