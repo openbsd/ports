@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.361 2016/02/01 14:20:11 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.362 2016/02/04 12:34:48 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -77,7 +77,6 @@ my $base_exceptions = {
 	'p5-Module-CoreList' => "$p5/Module/CoreList.pm",
 	'p5-Module-Load' => "$p5/Module/Load.pm",
 	'p5-Module-Loaded' => "$p5/Module/Loaded.pm",
-	'p5-Module-Pluggable' => "$p5/Module/Pluggable.pm",
 	'p5-Time-Piece' => "$p5a/Time/Piece.pm",
 	'p5-Digest-SHA' => "$p5a/Digest/SHA.pm",
 	'p5-Pod-Escapes' => "$p5/Escapes.pm",
