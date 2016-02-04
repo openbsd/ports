@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/02/02 06:58:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/02/04 06:54:48 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/bin/
 google-cloud-sdk/bin/bootstrapping/
@@ -89,6 +89,33 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/lib/comm.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/runtime.yaml
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/testing.md
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/CONTRIBUTING.md
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/LICENSE
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/README.md
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/bin/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/bin/detect
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/bin/generate_configs
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/data/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/data/Dockerfile.install_app
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/data/Dockerfile.preamble
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/data/Dockerfile.requirements_txt
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/data/Dockerfile.virtualenv.template
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/data/app.yaml.template
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/data/dockerignore
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/lib/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/lib/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/lib/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/lib/comm.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/lib/comm.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/runtime.yaml
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/test/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/test/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/test/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/test/runtime_test.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/test/runtime_test.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/xrt-import
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/flags.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/flags.pyc
@@ -6518,6 +6545,11 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_compute_networks_delete.1
 @man man/man1/gcloud_compute_networks_describe.1
 @man man/man1/gcloud_compute_networks_list.1
+@man man/man1/gcloud_compute_networks_subnets.1
+@man man/man1/gcloud_compute_networks_subnets_create.1
+@man man/man1/gcloud_compute_networks_subnets_delete.1
+@man man/man1/gcloud_compute_networks_subnets_describe.1
+@man man/man1/gcloud_compute_networks_subnets_list.1
 @man man/man1/gcloud_compute_operations.1
 @man man/man1/gcloud_compute_operations_describe.1
 @man man/man1/gcloud_compute_operations_list.1
