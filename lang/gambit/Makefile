@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/01/27 18:47:02 juanfra Exp $
+# $OpenBSD: Makefile,v 1.23 2016/02/04 22:16:19 juanfra Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,8 +42,9 @@ do-test:
 	cd ${WRKSRC}/tests && ${SETENV} ${TEST_ENV} ${MAKE_PROGRAM} \
 		${TEST_FLAGS} -f makefile ${TEST_TARGET}
 
+# XXX alpha: "cc1: out of memory allocating 1608 bytes" (workaround not tested)
 # hppa: "virtual memory exhausted: Cannot allocate memory" (in a system with 2GB RAM)
-.if ${MACHINE_ARCH} == "hppa"
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa"
 CFLAGS += -O0
 .endif
 
