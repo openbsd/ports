@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.32 2015/10/28 18:10:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2016/02/04 09:38:03 ajacoutot Exp $
+
+PORTROACH=		limit:^2
 
 COMMENT=		C++ wrapper for the libxml XML parser library
 
