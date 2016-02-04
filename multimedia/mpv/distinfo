@@ -1,2 +1,4 @@
-SHA256 (mpv-0.14.0.tar.gz) = BCk39INgPww9HewR6PAEXown8Z7uRupk2Bo83wHlEjM=
-SIZE (mpv-0.14.0.tar.gz) = 2872619
+SHA256 (mpv-0.15.0.tar.gz) = fTEhe6hXLzZPzqKVVzP4ITdK5tjG2PIvi8Y8RMBAC9w=
+SHA256 (waf-1.8.19) = LtVHGgjfJY+FV4dXYarWfoCy3IRkgtwRE1o1x3yRtLM=
+SIZE (mpv-0.15.0.tar.gz) = 2849513
+SIZE (waf-1.8.19) = 100743
