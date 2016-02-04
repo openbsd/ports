@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/25 14:23:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2016/02/04 18:08:17 juanfra Exp $
 
 V =		0.1.2
 COMMENT =	comic book plugin for zathura
 DISTNAME =	zathura-cb-${V}
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://pwmt.org/projects/zathura/plugins/zathura-cb/
 

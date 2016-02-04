@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2015/09/20 07:33:44 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2016/02/04 18:08:17 juanfra Exp $
 
 V =			0.3.3
-COMMENT =		PDF viewer with vi-like keybindings
+REVISION =		0
+COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
 
