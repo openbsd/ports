@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_PL,v 1.1 2006/08/03 15:18:40 steven Exp $
---- Makefile.PL.orig	Thu Aug  3 17:11:22 2006
-+++ Makefile.PL	Thu Aug  3 17:11:36 2006
-@@ -57,7 +57,7 @@ MAN5PODS = docs/razor-agent.conf.pod \
+$OpenBSD: patch-Makefile_PL,v 1.2 2016/02/05 14:59:27 sthen Exp $
+--- Makefile.PL.orig	Tue May  8 23:47:53 2007
++++ Makefile.PL	Fri Feb  5 11:39:03 2016
+@@ -58,7 +58,7 @@ MAN5PODS = docs/razor-agent.conf.pod \
  	   docs/razor-whitelist.pod  \
  	   docs/razor-agents.pod
  INST_MAN5DIR = blib/man5

@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_Razor2_Client_Agent_pm,v 1.4 2016/02/05 14:59:27 sthen Exp $
+
+Don't look in $PWD/lib, it breaks startup if $PWD is inaccessible by the
+current user.  Note: hand-edited patch to avoid RCS ID.
+
+--- lib/Razor2/Client/Agent.pm.orig	Fri Feb  5 11:46:43 2016
++++ lib/Razor2/Client/Agent.pm	Fri Feb  5 11:46:55 2016
+@@ -10,7 +10,6 @@
+ 
+ package Razor2::Client::Agent;
+ 
+-use lib qw(lib);
+ use strict;
+ use Getopt::Long;
+ use IO::File;
