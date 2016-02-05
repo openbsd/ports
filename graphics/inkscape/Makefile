@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2015/11/29 10:45:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2016/02/05 22:27:25 sthen Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -7,7 +7,7 @@ COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.91
 CATEGORIES=	graphics
-REVISION=	5
+REVISION=	6
 
 MASTER_SITES =	https://inkscape.org/en/gallery/item/3854/
 HOMEPAGE=	http://www.inkscape.org/

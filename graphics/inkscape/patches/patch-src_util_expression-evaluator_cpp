@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_util_expression-evaluator_cpp,v 1.1 2016/02/05 22:27:25 sthen Exp $
+
+Fix g_utf8_validate call. get_text() from GtkSpinButton returns an
+string with a wrong encoding.
+
+--- src/util/expression-evaluator.cpp.orig	Sun Nov 30 19:45:32 2014
++++ src/util/expression-evaluator.cpp	Thu Feb  4 20:46:25 2016
+@@ -28,6 +28,8 @@
+ #include "util/expression-evaluator.h"
+ #include "util/units.h"
+ 
++#include <glib/gconvert.h>
++
+ #include <math.h>
+ #include <string.h>
+ 
+@@ -49,7 +51,7 @@ EvaluatorToken::EvaluatorToken()
+ }
+ 
+ ExpressionEvaluator::ExpressionEvaluator(const char *string, Unit const *unit) :
+-    string(string),
++    string(g_locale_to_utf8(string,-1,0,0,0)),
+     unit(unit)
+ {
+     current_token.type  = TOKEN_END;
