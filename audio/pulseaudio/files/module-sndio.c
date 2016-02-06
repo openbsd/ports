@@ -1,4 +1,4 @@
-/* $OpenBSD: module-sndio.c,v 1.8 2015/03/15 08:45:10 ajacoutot Exp $ */
+/* $OpenBSD: module-sndio.c,v 1.9 2016/02/06 07:48:37 ajacoutot Exp $ */
 /*
  * Copyright (c) 2012 Eric Faurot <eric@openbsd.org>
  *
@@ -100,7 +100,9 @@ struct userdata {
 
 	pa_rtpoll_item	*rtpoll_item_mio;
 	struct mio_hdl	*mio;
-	int		 master;
+	int		 set_master;		/* master we're writing */
+	int		 last_master;		/* last master we wrote */
+	int		 feedback_master;	/* actual master */
 	int		 mst;
 	int		 midx;
 	int		 mlen;
@@ -119,8 +121,8 @@ sndio_midi_message(struct userdata *u, const char *msg, size_t len)
 	    x->type == SYSEX_TYPE_RT &&
 	    x->id0 == SYSEX_CONTROL &&
 	    x->id1 == SYSEX_MASTER) {
-		u->master = x->u.master.coarse;
-		pa_log_debug("MIDI master level is %i", u->master);
+		u->feedback_master = x->u.master.coarse;
+		pa_log_debug("MIDI master level is %i", u->feedback_master);
 		return;
 	}
 
@@ -222,7 +224,7 @@ sndio_midi_setup(struct userdata *u)
 		}
 		sndio_midi_input(u, buf, s);
 	}
-
+	u->set_master = u->last_master = u->feedback_master;
 	return (0);
 }
 
@@ -241,7 +243,7 @@ sndio_get_volume(pa_sink *s)
 	int		 i;
 	uint32_t	 v;
 
-	if (u->master >= SIO_MAXVOL)
+	if (u->feedback_master >= SIO_MAXVOL)
 		v = PA_VOLUME_NORM;
 	else
 		v = PA_CLAMP_VOLUME((u->volume * PA_VOLUME_NORM) / SIO_MAXVOL);
@@ -254,28 +256,11 @@ static void
 sndio_set_volume(pa_sink *s)
 {
 	struct userdata *u = s->userdata;
-	struct sysex	 msg;
-	unsigned int	 vol;
 
 	if (s->real_volume.values[0] >= PA_VOLUME_NORM)
-		vol = SIO_MAXVOL;
+		u->set_master = SIO_MAXVOL;
 	else
-		vol = (s->real_volume.values[0] * SIO_MAXVOL) / PA_VOLUME_NORM;
-
-/*
-	sio_setvol(u->hdl, vol);
-*/
-
-	msg.start = SYSEX_START;
-	msg.type = SYSEX_TYPE_RT;
-	msg.id0 = SYSEX_CONTROL;
-	msg.id1 = SYSEX_MASTER;
-	msg.u.master.fine = 0;
-	msg.u.master.coarse = vol;
-	msg.u.master.end = SYSEX_END;
-	/* XXX do better */
-	if (mio_write(u->mio, &msg, SYSEX_SIZE(master)) != SYSEX_SIZE(master))
-		pa_log("set_volume: couldn't write message");
+		u->set_master = (s->real_volume.values[0] * SIO_MAXVOL) / PA_VOLUME_NORM;
 }
 
 static int
@@ -393,6 +378,7 @@ sndio_thread(void *arg)
 	char		*p;
 	char		 buf[256];
 	struct pa_memchunk memchunk;
+	struct sysex	 msg;
 
 	pa_log_debug("sndio thread starting up");
 
@@ -455,6 +441,13 @@ sndio_thread(void *arg)
 		if (u->sink &&
 		    PA_SINK_IS_OPENED(u->sink->thread_info.state))
 			events |= POLLOUT;
+
+		/*
+		 * XXX: {sio,mio}_pollfd() return the number
+		 * of descriptors to poll(). It's not correct
+		 * to assume only 1 descriptor is used
+		 */
+
 		sio_pollfd(u->hdl, fds_sio, events);
 
 		mio_pollfd(u->mio, fds_mio, POLLIN);
@@ -477,6 +470,19 @@ sndio_thread(void *arg)
 			}
 			if (r)
 				sndio_midi_input(u, buf, r);
+		}
+		if (u->set_master != u->last_master) {
+			u->last_master = u->set_master;
+			msg.start = SYSEX_START;
+			msg.type = SYSEX_TYPE_RT;
+			msg.id0 = SYSEX_CONTROL;
+			msg.id1 = SYSEX_MASTER;
+			msg.u.master.fine = 0;
+			msg.u.master.coarse = u->set_master;
+			msg.u.master.end = SYSEX_END;
+			if (mio_write(u->mio, &msg, SYSEX_SIZE(master)) !=
+			    SYSEX_SIZE(master))
+				pa_log("set master: couldn't write message");
 		}
 
 		revents = sio_revents(u->hdl, fds_sio);
