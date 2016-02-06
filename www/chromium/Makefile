@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.270 2016/01/31 20:45:29 robert Exp $
+# $OpenBSD: Makefile,v 1.271 2016/02/06 18:02:18 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			48.0.2564.97
-REVISION=		1
+V=			48.0.2564.103
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
@@ -180,7 +179,7 @@ do-build:
 	@cd ${WRKSRC}/out/${BUILDTYPE} && \
 	for _r in generate_version_info cloud_policy_proto net_interfaces suggestions \
 	cacheinvalidation cacheinvalidation_proto_cpp gfx_vector_icons \
-	data_reduction_proxy_proto \
+	data_reduction_proxy_proto cloud_policy_code_generate \
 	$$(ninja -t targets | grep -E '(mojo_bindings|resources): phony' | grep -v test | cut -d ':' -f1); do \
 		cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 			-j ${MAKE_JOBS} -C out/${BUILDTYPE} $${_r}; \
