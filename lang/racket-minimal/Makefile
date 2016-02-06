@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/01/27 21:30:41 juanfra Exp $
+# $OpenBSD: Makefile,v 1.12 2016/02/06 20:41:01 juanfra Exp $
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 COMMENT =		multi-paradigm programming language
 
 V =			6.3
-REVISION =		5
+REVISION =		6
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -87,7 +87,7 @@ CFLAGS += -ggdb3
 .endif
 
 .if ${FLAVOR:Mno_jit}
-ONLY_FOR_ARCHS =	amd64 i386 powerpc
+ONLY_FOR_ARCHS =	amd64 i386
 CONFIGURE_ARGS +=	--disable-jit
 .endif
 
@@ -106,6 +106,11 @@ CONFIGURE_ARGS +=	--disable-extflonum
 .elif ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -msse -msse2 -mfpmath=sse"
 CONFIGURE_ARGS +=	--enable-extflonum
+.endif
+
+# Disable temporally the JIT. raco crashes during the installation of the main-distribution.
+.if ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ARGS +=	--disable-jit
 .endif
 
 .include <bsd.port.mk>
