@@ -1,21 +1,18 @@
-# $OpenBSD: Makefile,v 1.42 2015/10/30 12:47:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2016/02/07 12:28:28 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
-V =		2.0.1
+V =		2.0.2
 DISTNAME =	gdal-${V}
 SHARED_ONLY =	Yes
 
 PKGNAME-main =	${DISTNAME}
 PKGNAME-python =py-${DISTNAME}
 PKGNAME-perl =	p5-Geo-GDAL-${V}
-REVISION-main =	0
-REVISION-perl =	0
-REVISION-python =	0
 
-SHARED_LIBS =	gdal 23.0 #20.0
+SHARED_LIBS =	gdal 24.0 #20.2
 CATEGORIES =	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -110,5 +107,8 @@ CONFIGURE_ARGS =${CONFIGURE_SHARED} \
 post-build:
 	# fix manpages doubled .TH lines/sections, http://trac.osgeo.org/gdal/ticket/6048
 	sed -i -e '2,5d' ${WRKSRC}/man/man1/*.1
+
+post-install:
+	rm ${PREFIX}/man/man1/_home_rouault_dist_wrk_gdal_apps_.1
 
 .include <bsd.port.mk>
