@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/02/04 09:23:20 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.24 2016/02/07 21:30:00 czarkoff Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS =	alpha amd64 i386 mips64 mips64el powerpc sparc64
@@ -100,6 +100,10 @@ MAKE_FLAGS =		-o "${WRKBUILD}" -t "${WRKSRC}" --destdir="${DESTDIR}"
 
 USE_GROFF =		Yes
 NO_TEST =		Yes
+
+.if ${MACHINE_ARCH} == "i386"
+CFLAGS +=		-march=i586
+.endif
 
 do-configure:
 	cp ${DISTDIR}/${WAF:T} ${WAF}
