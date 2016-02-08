@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2015/12/24 12:57:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2016/02/08 19:07:43 sthen Exp $
 
 BROKEN-hppa =	needs 64-bit atomic ops; __sync_add_and_fetch_4
 BROKEN-sparc64 = gcc 4.2.1 fails "Illegal operands", gcc 4.9 hangs for 2h (icinga_unity.cpp)
+BROKEN-powerpc = link fails, .gnu.linkonce.t.foo referenced in section .gnu.linkonce.r.foo [..] defined in discarded section
 
 SHARED_ONLY =	Yes
 
