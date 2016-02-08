@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2016/01/17 14:25:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2016/02/08 08:12:47 jasper Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
@@ -49,6 +49,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--without-netcf \
 			--without-network \
 			--without-login-shell \
+			--without-wireshark-dissector
 # OpenBSD can't act as a virtualization host, so no need for libvirtd.
 # If support is added, subtitute /var/lib/{xen,virt,libvirt,...} with /var/db
 CONFIGURE_ARGS+=	--without-libvirtd
