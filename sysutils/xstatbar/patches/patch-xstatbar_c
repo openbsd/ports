@@ -1,0 +1,18 @@
+--- xstatbar.c.orig	Tue Feb  9 11:18:02 2016
++++ xstatbar.c	Tue Feb  9 11:19:05 2016
+@@ -297,6 +297,7 @@
+ void
+ draw()
+ {
++   XEvent dummy;
+    static int spacing = 10;
+    int x, y;
+    int cpu;
+@@ -323,6 +324,7 @@
+    /* copy the buffer to the window and flush */
+    XCopyArea(XINFO.disp, XINFO.buf, XINFO.win, XINFO.gc,
+       0, 0, XINFO.width, XINFO.height, 0, 0);
++   XNextEvent(XINFO.disp, &dummy);
+    XFlush(XINFO.disp);
+ }
+ 
