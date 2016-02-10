@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/02/06 20:41:01 juanfra Exp $
+# $OpenBSD: Makefile,v 1.13 2016/02/10 01:59:03 juanfra Exp $
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 COMMENT =		multi-paradigm programming language
 
 V =			6.3
-REVISION =		6
+REVISION =		7
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -93,6 +93,7 @@ CONFIGURE_ARGS +=	--disable-jit
 
 post-install:
 	@perl -i -pe 's/installation-name . "snapshot"/installation-name . "$V"/g' ${WRKINST}/etc/racket/config.rktd
+	@perl -i -pe 's/"http:\/\/download.racket-lang.org\/releases\/6.3\/catalog\/"/"http:\/\/download.racket-lang.org\/patches\/web-server-1\/" "http:\/\/download.racket-lang.org\/releases\/6.3\/catalog\/"/g' ${WRKINST}/etc/racket/config.rktd
 	@mv ${WRKINST}/etc/racket ${PREFIX}/share/examples
 	@cp ${WRKDIR}/racket-openbsd/racket-user-bin-paths ${PREFIX}/bin
 
