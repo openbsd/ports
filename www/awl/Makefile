@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/05 06:00:22 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2016/02/12 10:54:04 sthen Exp $
 
 COMMENT =	Andrews web libraries for PHP
 
@@ -16,8 +16,9 @@ HOMEPAGE =	https://gitlab.com/${GITLAB_ACCOUNT}/${GITLAB_PROJECT}
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=${GITLAB_TAG}}
-MASTER_SITES =	https://gitlab.com/${GITLAB_ACCOUNT}/${GITLAB_PROJECT}/repository/
+#DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=${GITLAB_TAG}}
+#MASTER_SITES =	https://gitlab.com/${GITLAB_ACCOUNT}/${GITLAB_PROJECT}/repository/
+MASTER_SITES =	https://spacehopper.org/mirrors/
 
 PREFIX =	${VARBASE}/www
 WRKDIST =	${WRKDIR}/${GITLAB_PROJECT}.git
