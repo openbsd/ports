@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.40 2015/10/08 21:19:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2016/02/12 17:09:00 sthen Exp $
 
 COMMENT-main=	BIRD internet routing daemon
 COMMENT-doc=	BIRD internet routing daemon (documentation)
 
 V=		1.5.0
+REVISION-main=	2
 DISTNAME=	bird-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME:S/-/-doc-/}${EXTRACT_SUFX}
-
-REVISION-main=	1
 
 CATEGORIES=	net
 
