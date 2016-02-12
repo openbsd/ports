@@ -1,0 +1,13 @@
+$OpenBSD: patch-support-files_my-medium_cnf_sh,v 1.1 2016/02/12 13:30:38 sthen Exp $
+--- support-files/my-medium.cnf.sh.orig	Thu Feb 11 20:15:36 2016
++++ support-files/my-medium.cnf.sh	Thu Feb 11 22:46:35 2016
+@@ -28,6 +28,9 @@ socket		= @MYSQL_UNIX_ADDR@
+ [mysqld]
+ port		= @MYSQL_TCP_PORT@
+ socket		= @MYSQL_UNIX_ADDR@
++# Default is to listen on :: (IPv6 only).
++# To listen to all IPv4 network addresses, use "bind-address = 0.0.0.0".
++bind-address	= 127.0.0.1
+ skip-external-locking
+ key_buffer_size = 16M
+ max_allowed_packet = 1M
