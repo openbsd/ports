@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_include_storage_s_lock_h,v 1.2 2015/01/16 20:43:48 landry Exp $
---- src/include/storage/s_lock.h.orig	Mon Dec 15 18:07:34 2014
-+++ src/include/storage/s_lock.h	Fri Jan 16 06:16:48 2015
-@@ -745,6 +745,29 @@ typedef unsigned char slock_t;
+$OpenBSD: patch-src_include_storage_s_lock_h,v 1.3 2016/02/13 21:54:28 sthen Exp $
+--- src/include/storage/s_lock.h.orig	Mon Feb  8 21:15:19 2016
++++ src/include/storage/s_lock.h	Fri Feb 12 17:18:09 2016
+@@ -749,6 +749,29 @@ typedef unsigned char slock_t;
  #endif
  
  

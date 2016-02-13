@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2015/05/22 11:31:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2016/02/13 21:54:28 sthen Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -84,6 +84,7 @@ lib/postgresql/
 lib/postgresql/pgxs/
 lib/postgresql/pgxs/config/
 lib/postgresql/pgxs/config/install-sh
+lib/postgresql/pgxs/config/missing
 lib/postgresql/pgxs/src/
 lib/postgresql/pgxs/src/Makefile.global
 lib/postgresql/pgxs/src/Makefile.port
