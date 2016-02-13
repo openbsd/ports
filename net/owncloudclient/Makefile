@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2015/12/08 10:46:38 kirby Exp $
+# $OpenBSD: Makefile,v 1.8 2016/02/13 13:43:19 kirby Exp $
 
 COMMENT =		owncloud sync client
 
-DISTNAME =		owncloudclient-2.1.0
+DISTNAME =		owncloudclient-2.1.1
 
 SHARED_LIBS =		owncloudsync	2.0
 SHARED_LIBS +=		ocsync		2.0

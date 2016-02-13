@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_gui_application_cpp,v 1.5 2015/12/08 10:46:38 kirby Exp $
+$OpenBSD: patch-src_gui_application_cpp,v 1.6 2016/02/13 13:43:19 kirby Exp $
 
 Disable update check on startup.
 
---- src/gui/application.cpp.orig	Thu Dec  3 12:19:51 2015
-+++ src/gui/application.cpp	Mon Dec  7 00:14:43 2015
-@@ -187,13 +187,6 @@ Application::Application(int &argc, char **argv) :
+--- src/gui/application.cpp.orig	Tue Feb  9 18:07:08 2016
++++ src/gui/application.cpp	Sat Feb 13 15:53:51 2016
+@@ -191,13 +191,6 @@ Application::Application(int &argc, char **argv) :
      connect(&_networkConfigurationManager, SIGNAL(configurationChanged(QNetworkConfiguration)),
                  this, SLOT(slotSystemOnlineConfigurationChanged(QNetworkConfiguration)));
  
