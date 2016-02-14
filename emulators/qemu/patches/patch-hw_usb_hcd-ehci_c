@@ -1,4 +1,4 @@
-$OpenBSD: patch-hw_usb_hcd-ehci_c,v 1.1 2015/12/16 06:41:06 ajacoutot Exp $
+$OpenBSD: patch-hw_usb_hcd-ehci_c,v 1.2 2016/02/14 11:27:32 sthen Exp $
 
 ehci: make idt processing more robust
 
@@ -9,9 +9,31 @@ idts.
 
 This is CVE-2015-8558.
 
---- hw/usb/hcd-ehci.c.orig	Tue Dec 15 20:12:17 2015
-+++ hw/usb/hcd-ehci.c	Tue Dec 15 20:13:31 2015
-@@ -1395,7 +1395,7 @@ static int ehci_process_itd(EHCIState *ehci,
+usb: ehci: add capability mmio write function
+
+USB Ehci emulation supports host controller capability registers.
+But its mmio '.write' function was missing, which lead to a null
+pointer dereference issue. Add a do nothing 'ehci_caps_write'
+definition to avoid it; Do nothing because capability registers
+are Read Only(RO).
+
+CVE-2016-2198
+
+--- hw/usb/hcd-ehci.c.orig	Tue Mar 10 13:38:27 2015
++++ hw/usb/hcd-ehci.c	Sat Jan 30 01:31:43 2016
+@@ -899,6 +899,11 @@ static uint64_t ehci_caps_read(void *ptr, hwaddr addr,
+     return s->caps[addr];
+ }
+ 
++static void ehci_caps_write(void *ptr, hwaddr addr,
++                            uint64_t val, unsigned size)
++{
++}
++
+ static uint64_t ehci_opreg_read(void *ptr, hwaddr addr,
+                                 unsigned size)
+ {
+@@ -1395,7 +1400,7 @@ static int ehci_process_itd(EHCIState *ehci,
  {
      USBDevice *dev;
      USBEndpoint *ep;
@@ -20,7 +42,7 @@ This is CVE-2015-8558.
      uint32_t pg, off, ptr1, ptr2, max, mult;
  
      ehci->periodic_sched_active = PERIODIC_ACTIVE;
-@@ -1485,9 +1485,10 @@ static int ehci_process_itd(EHCIState *ehci,
+@@ -1485,9 +1490,10 @@ static int ehci_process_itd(EHCIState *ehci,
                  ehci_raise_irq(ehci, USBSTS_INT);
              }
              itd->transact[i] &= ~ITD_XACT_ACTIVE;
@@ -32,3 +54,11 @@ This is CVE-2015-8558.
  }
  
  
+@@ -2316,6 +2322,7 @@ static void ehci_frame_timer(void *opaque)
+ 
+ static const MemoryRegionOps ehci_mmio_caps_ops = {
+     .read = ehci_caps_read,
++    .write = ehci_caps_write,
+     .valid.min_access_size = 1,
+     .valid.max_access_size = 4,
+     .impl.min_access_size = 1,
