@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/28 17:15:00 kspillner Exp $
+# $OpenBSD: Makefile,v 1.6 2016/02/14 11:31:25 sthen Exp $
 
 COMMENT =	lightweight server providing access to task data
 
 DISTNAME =	taskd-1.1.0
 CATEGORIES =	productivity net
+REVISION =	0
 
 HOMEPAGE =	http://www.taskwarrior.org/
 
@@ -41,6 +42,8 @@ post-install:
 		${PREFIX}/share/examples/taskd/pki/
 	${INSTALL_DATA} ${WRKSRC}/pki/README \
 		${PREFIX}/share/examples/taskd/pki/
+	${INSTALL_DATA} ${WRKSRC}/pki/vars \
+		${PREFIX}/share/examples/taskd/pki/vars.dist
 	${SUBST_DATA} ${FILESDIR}/config \
 		${PREFIX}/share/examples/taskd/config
 
