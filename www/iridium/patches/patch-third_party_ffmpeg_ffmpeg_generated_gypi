@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:48 robert Exp $
---- third_party/ffmpeg/ffmpeg_generated.gypi.orig.port	Wed Dec  2 13:51:52 2015
-+++ third_party/ffmpeg/ffmpeg_generated.gypi	Wed Dec  2 13:53:22 2015
+$OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.3 2016/02/15 18:07:53 robert Exp $
+--- third_party/ffmpeg/ffmpeg_generated.gypi.orig.port	Wed Jan 20 21:02:05 2016
++++ third_party/ffmpeg/ffmpeg_generated.gypi	Fri Jan 22 19:58:59 2016
 @@ -8,7 +8,7 @@
  {
    'variables': {
@@ -32,8 +32,8 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/x86/blockdsp_init.c',
            'libavcodec/x86/fdct.c',
-@@ -56,26 +56,26 @@
-           'libavcodec/x86/qpeldsp.asm',
+@@ -57,26 +57,26 @@
+           'libavcodec/x86/simple_idct10.asm',
            'libavcodec/x86/xvididct.asm',
          ],
 -      }],  # (OS == "linux" and target_arch == "ia32" and ffmpeg_branding == "ChromeOS") or (OS == "linux" and target_arch == "x64" and ffmpeg_branding == "ChromeOS")
@@ -65,7 +65,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/arm/blockdsp_init_arm.c',
            'libavcodec/arm/idctdsp_init_arm.c',
-@@ -97,8 +97,8 @@
+@@ -98,8 +98,8 @@
            'libavcodec/arm/simple_idct_armv5te.S',
            'libavcodec/arm/simple_idct_armv6.S',
          ],
@@ -76,7 +76,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/aarch64/h264chroma_init_aarch64.c',
            'libavcodec/aarch64/h264dsp_init_aarch64.c',
-@@ -110,8 +110,8 @@
+@@ -111,8 +111,8 @@
            'libavcodec/aarch64/autorename_libavcodec_aarch64_h264idct_neon.S',
            'libavcodec/aarch64/autorename_libavcodec_aarch64_h264qpel_neon.S',
          ],
@@ -87,7 +87,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/aarch64/imdct15_init.c',
            'libavcodec/aarch64/mpegaudiodsp_init.c',
-@@ -120,42 +120,42 @@
+@@ -121,42 +121,42 @@
            'libavcodec/aarch64/imdct15_neon.S',
            'libavcodec/aarch64/mpegaudiodsp_neon.S',
          ],
@@ -140,7 +140,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/x86/h264_qpel.c',
            'libavcodec/x86/h264chroma_init.c',
-@@ -174,8 +174,8 @@
+@@ -175,8 +175,8 @@
            'libavcodec/x86/h264_weight_10bit.asm',
            'libavcodec/x86/qpel.asm',
          ],
@@ -151,7 +151,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/arm/hpeldsp_init_neon.c',
            'libavcodec/arm/vp8dsp_init_neon.c',
-@@ -186,8 +186,8 @@
+@@ -187,8 +187,8 @@
            'libavcodec/arm/vp3dsp_neon.S',
            'libavcodec/arm/vp8dsp_neon.S',
          ],
@@ -162,7 +162,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/arm/h264chroma_init_arm.c',
            'libavcodec/arm/h264dsp_init_arm.c',
-@@ -196,16 +196,16 @@
+@@ -197,16 +197,16 @@
          'asm_sources': [
            'libavcodec/arm/startcode_armv6.S',
          ],
@@ -183,7 +183,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/aarch64/h264pred_init.c',
            'libavcodec/aarch64/hpeldsp_init_aarch64.c',
-@@ -216,8 +216,8 @@
+@@ -217,8 +217,8 @@
            'libavcodec/aarch64/autorename_libavcodec_aarch64_hpeldsp_neon.S',
            'libavcodec/aarch64/videodsp.S',
          ],
@@ -194,7 +194,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/aarch64/fft_init_aarch64.c',
            'libavcodec/aarch64/vorbisdsp_init.c',
-@@ -230,20 +230,20 @@
+@@ -231,20 +231,20 @@
            'libavcodec/aarch64/vorbisdsp_neon.S',
            'libavutil/aarch64/float_dsp_neon.S',
          ],
@@ -221,7 +221,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/acelp_filters.c',
            'libavcodec/acelp_pitch_delay.c',
-@@ -296,8 +296,8 @@
+@@ -297,8 +297,8 @@
            'libavformat/avidec.c',
            'libavformat/gsmdec.c',
          ],
@@ -232,7 +232,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/arm/aacpsdsp_init_arm.c',
            'libavcodec/arm/mpegaudiodsp_init_arm.c',
-@@ -306,8 +306,8 @@
+@@ -307,8 +307,8 @@
          'asm_sources': [
            'libavcodec/arm/mpegaudiodsp_fixed_armv6.S',
          ],
@@ -243,7 +243,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavutil/arm/float_dsp_init_neon.c',
          ],
-@@ -320,8 +320,8 @@
+@@ -321,8 +321,8 @@
            'libavcodec/arm/rdft_neon.S',
            'libavutil/arm/autorename_libavutil_arm_float_dsp_neon.S',
          ],
@@ -254,7 +254,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/x86/aacpsdsp_init.c',
            'libavcodec/x86/dct_init.c',
-@@ -334,8 +334,8 @@
+@@ -335,8 +335,8 @@
            'libavcodec/x86/imdct36.asm',
            'libavcodec/x86/sbrdsp.asm',
          ],
@@ -265,7 +265,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/x86/autorename_libavcodec_x86_videodsp_init.c',
            'libavcodec/x86/h264_intrapred_init.c',
-@@ -353,8 +353,8 @@
+@@ -354,8 +354,8 @@
            'libavcodec/x86/vp8dsp.asm',
            'libavcodec/x86/vp8dsp_loopfilter.asm',
          ],
@@ -276,7 +276,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/arm/h264pred_init_arm.c',
            'libavcodec/arm/hpeldsp_init_arm.c',
-@@ -372,8 +372,8 @@
+@@ -373,8 +373,8 @@
            'libavcodec/arm/vp8_armv6.S',
            'libavcodec/arm/vp8dsp_armv6.S',
          ],
@@ -287,7 +287,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/flac.c',
            'libavcodec/flac_parser.c',
-@@ -382,8 +382,8 @@
+@@ -383,8 +383,8 @@
            'libavcodec/flacdsp.c',
            'libavformat/autorename_libavformat_flacdec.c',
          ],
@@ -298,7 +298,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/arm/fft_fixed_init_arm.c',
            'libavcodec/arm/fft_init_arm.c',
-@@ -397,13 +397,13 @@
+@@ -398,13 +398,13 @@
            'libavcodec/arm/mdct_vfp.S',
            'libavutil/arm/float_dsp_vfp.S',
          ],
@@ -314,7 +314,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/cabac.c',
            'libavcodec/h264.c',
-@@ -424,8 +424,8 @@
+@@ -425,8 +425,8 @@
            'libavcodec/h264qpel.c',
            'libavcodec/startcode.c',
          ],
@@ -325,7 +325,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/x86/autorename_libavcodec_x86_vorbisdsp_init.c',
            'libavcodec/x86/constants.c',
-@@ -441,8 +441,8 @@
+@@ -442,8 +442,8 @@
            'libavutil/x86/float_dsp.asm',
            'libavutil/x86/lls.asm',
          ],
@@ -336,7 +336,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/aac_ac3_parser.c',
            'libavcodec/aac_parser.c',
-@@ -476,13 +476,13 @@
+@@ -477,13 +477,13 @@
            'libavformat/mov_chan.c',
            'libavformat/mp3dec.c',
          ],
@@ -354,7 +354,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/h264pred.c',
            'libavcodec/hpeldsp.c',
-@@ -495,8 +495,8 @@
+@@ -496,8 +496,8 @@
            'libavcodec/vp8_parser.c',
            'libavcodec/vp8dsp.c',
          ],
@@ -365,7 +365,7 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_generated_gypi,v 1.2 2015/12/17 07:02:
          'c_sources': [
            'libavcodec/allcodecs.c',
            'libavcodec/autorename_libavcodec_utils.c',
-@@ -620,7 +620,7 @@
+@@ -623,7 +623,7 @@
            'libavutil/twofish.c',
            'libavutil/utils.c',
          ],

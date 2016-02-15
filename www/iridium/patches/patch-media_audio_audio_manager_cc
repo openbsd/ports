@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_audio_audio_manager_cc,v 1.1 2016/02/01 15:09:01 robert Exp $
---- media/audio/audio_manager.cc.orig.port	Mon Feb  1 08:27:17 2016
-+++ media/audio/audio_manager.cc	Mon Feb  1 08:27:33 2016
+$OpenBSD: patch-media_audio_audio_manager_cc,v 1.2 2016/02/15 18:07:53 robert Exp $
+--- media/audio/audio_manager.cc.orig.port	Fri Jan 29 17:33:20 2016
++++ media/audio/audio_manager.cc	Fri Jan 29 17:33:42 2016
 @@ -157,7 +157,7 @@ class AudioManagerHelper : public base::PowerObserver 
    }
  #endif

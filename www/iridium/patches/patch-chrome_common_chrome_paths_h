@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_common_chrome_paths_h,v 1.6 2015/12/17 07:02:48 robert Exp $
---- chrome/common/chrome_paths.h.orig.port	Wed Dec  2 08:42:17 2015
-+++ chrome/common/chrome_paths.h	Thu Dec  3 09:50:07 2015
+$OpenBSD: patch-chrome_common_chrome_paths_h,v 1.7 2016/02/15 18:07:53 robert Exp $
+--- chrome/common/chrome_paths.h.orig.port	Thu Jan 14 02:49:22 2016
++++ chrome/common/chrome_paths.h	Fri Jan 22 19:58:58 2016
 @@ -51,7 +51,7 @@ enum {
    DIR_USER_LIBRARY,             // ~/Library
  #endif
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_common_chrome_paths_h,v 1.6 2015/12/17 07:02:48 robert Ex
    DIR_NATIVE_MESSAGING,         // System directory where native messaging host
                                  // manifest files are stored.
    DIR_USER_NATIVE_MESSAGING,    // Directory with Native Messaging Hosts
-@@ -136,7 +136,7 @@ enum {
+@@ -132,7 +132,7 @@ enum {
    DIR_GEN_TEST_DATA,            // Directory where generated test data resides.
    DIR_TEST_DATA,                // Directory where unit test data resides.
    DIR_TEST_TOOLS,               // Directory where unit test tools reside.

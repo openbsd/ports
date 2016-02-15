@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.6 2015/12/17 07:02:48 robert Exp $
---- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig.port	Tue Nov 24 21:00:54 2015
-+++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc	Wed Dec  2 08:18:32 2015
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.7 2016/02/15 18:07:53 robert Exp $
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig.port	Fri Jan 22 22:05:32 2016
++++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc	Fri Jan 22 22:05:50 2016
 @@ -55,7 +55,7 @@
  #include "chrome/browser/ui/views/profiles/supervised_user_avatar_label.h"
  #endif
@@ -10,16 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.6
  #include "ui/views/controls/menu/menu_runner.h"
  #endif
  
-@@ -82,7 +82,7 @@ const int kContentEdgeShadowThickness = 2;
- const int kIconMinimumSize = 16;
- #endif
- 
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(OS_BSD) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
- // The number of pixels to move the frame background image upwards when using
- // the GTK+ theme and the titlebar is condensed.
- const int kGTKThemeCondensedFrameTopInset = 15;
-@@ -342,7 +342,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
+@@ -336,7 +336,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
  
  void OpaqueBrowserFrameView::OnMenuButtonClicked(views::View* source,
                                                   const gfx::Point& point) {
@@ -28,12 +19,3 @@ $OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.6
    views::MenuRunner menu_runner(frame()->GetSystemMenuModel(),
                                  views::MenuRunner::HAS_MNEMONICS);
    ignore_result(menu_runner.RunMenuAt(browser_view()->GetWidget(),
-@@ -630,7 +630,7 @@ void OpaqueBrowserFrameView::PaintMaximizedFrameBorder
-   frame_background_->set_theme_image(GetFrameImage());
-   frame_background_->set_theme_overlay_image(GetFrameOverlayImage());
-   frame_background_->set_top_area_height(GetTopAreaHeight());
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(OS_BSD) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-   // The window manager typically shows a gradient in the native title bar (when
-   // the system title bar pref is set, or when maximized on Ubuntu). Hide the
-   // gradient in the tab strip (by shifting it up vertically) to avoid a

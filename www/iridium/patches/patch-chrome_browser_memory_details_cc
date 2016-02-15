@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.4 2015/10/24 18:22:21 robert Exp $
---- chrome/browser/memory_details.cc.orig.port	Sat Aug 22 21:01:52 2015
-+++ chrome/browser/memory_details.cc	Wed Sep  2 07:31:55 2015
-@@ -30,7 +30,7 @@
+$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.5 2016/02/15 18:07:53 robert Exp $
+--- chrome/browser/memory_details.cc.orig.port	Wed Jan 20 21:01:19 2016
++++ chrome/browser/memory_details.cc	Fri Jan 22 19:58:58 2016
+@@ -31,7 +31,7 @@
  #include "content/public/common/content_constants.h"
  #include "ui/base/l10n/l10n_util.h"
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_memory_details_cc,v 1.4 2015/10/24 18:22:21 rober
  #include "content/public/browser/zygote_host_linux.h"
  #endif
  
-@@ -210,7 +210,7 @@ void MemoryDetails::CollectChildInfoOnIOThread(Collect
+@@ -211,7 +211,7 @@ void MemoryDetails::CollectChildInfoOnIOThread(Collect
  void MemoryDetails::CollectChildInfoOnUIThread() {
    DCHECK(BrowserThread::CurrentlyOn(BrowserThread::UI));
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_memory_details_cc,v 1.4 2015/10/24 18:22:21 rober
    const pid_t zygote_pid = content::ZygoteHost::GetInstance()->GetPid();
  #endif
  
-@@ -354,7 +354,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+@@ -365,7 +365,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
        }
      }
  

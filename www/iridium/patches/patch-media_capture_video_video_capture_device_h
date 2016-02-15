@@ -1,7 +1,7 @@
-$OpenBSD: patch-media_capture_video_video_capture_device_h,v 1.1 2015/10/24 18:22:21 robert Exp $
---- media/capture/video/video_capture_device.h.orig.port	Wed Oct 14 07:54:27 2015
-+++ media/capture/video/video_capture_device.h	Wed Oct 14 07:54:53 2015
-@@ -43,7 +43,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
+$OpenBSD: patch-media_capture_video_video_capture_device_h,v 1.2 2016/02/15 18:07:53 robert Exp $
+--- media/capture/video/video_capture_device.h.orig.port	Wed Jan 20 21:01:22 2016
++++ media/capture/video/video_capture_device.h	Fri Jan 22 19:58:58 2016
+@@ -47,7 +47,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
      Name();
      Name(const std::string& name, const std::string& id);
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-media_capture_video_video_capture_device_h,v 1.1 2015/10/24 18:2
      // Linux/CrOS targets Capture Api type: it can only be set on construction.
      enum CaptureApiType {
        V4L2_SINGLE_PLANE,
-@@ -75,7 +75,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
+@@ -79,7 +79,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -19,7 +19,7 @@ $OpenBSD: patch-media_capture_video_video_capture_device_h,v 1.1 2015/10/24 18:2
      Name(const std::string& name,
           const std::string& id,
           const CaptureApiType api_type);
-@@ -112,7 +112,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
+@@ -116,7 +116,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
      bool operator<(const Name& other) const { return unique_id_ < other.id(); }
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
@@ -28,7 +28,7 @@ $OpenBSD: patch-media_capture_video_video_capture_device_h,v 1.1 2015/10/24 18:2
      CaptureApiType capture_api_type() const {
        return capture_api_class_.capture_api_type();
      }
-@@ -136,7 +136,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
+@@ -140,7 +140,7 @@ class MEDIA_EXPORT VideoCaptureDevice {
      std::string device_name_;
      std::string unique_id_;
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \

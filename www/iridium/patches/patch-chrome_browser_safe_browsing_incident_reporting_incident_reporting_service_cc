@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_safe_browsing_incident_reporting_incident_reporting_service_cc,v 1.2 2015/12/17 07:02:48 robert Exp $
---- chrome/browser/safe_browsing/incident_reporting/incident_reporting_service.cc.orig.port	Thu Nov 12 21:27:01 2015
-+++ chrome/browser/safe_browsing/incident_reporting/incident_reporting_service.cc	Wed Dec 16 18:33:39 2015
-@@ -695,7 +695,7 @@ void IncidentReportingService::OnEnvironmentDataCollec
+$OpenBSD: patch-chrome_browser_safe_browsing_incident_reporting_incident_reporting_service_cc,v 1.3 2016/02/15 18:07:53 robert Exp $
+--- chrome/browser/safe_browsing/incident_reporting/incident_reporting_service.cc.orig.port	Sun Dec 20 19:33:33 2015
++++ chrome/browser/safe_browsing/incident_reporting/incident_reporting_service.cc	Tue Feb  9 21:21:19 2016
+@@ -733,7 +733,7 @@ void IncidentReportingService::OnEnvironmentDataCollec
    environment_collection_pending_ = false;
  
  // CurrentProcessInfo::CreationTime() is missing on some platforms.

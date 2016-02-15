@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_content_browser_gypi,v 1.7 2016/02/01 15:09:01 robert Exp $
---- content/content_browser.gypi.orig.port	Tue Dec 15 21:05:11 2015
-+++ content/content_browser.gypi	Mon Feb  1 08:24:01 2016
-@@ -1982,7 +1982,7 @@
+$OpenBSD: patch-content_content_browser_gypi,v 1.8 2016/02/15 18:07:53 robert Exp $
+--- content/content_browser.gypi.orig.port	Wed Jan 20 21:01:21 2016
++++ content/content_browser.gypi	Sat Jan 23 20:16:30 2016
+@@ -1963,7 +1963,7 @@
          },
        },
      }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.7 2016/02/01 15:09:01 robert Ex
        'dependencies': [
          '../build/linux/system.gyp:atk',
          '../build/linux/system.gyp:gconf',
-@@ -2011,7 +2011,7 @@
+@@ -1992,7 +1992,7 @@
          'browser/udev_linux.h',
        ],
      }],
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.7 2016/02/01 15:09:01 robert Ex
        'dependencies': [
          '../build/linux/system.gyp:fontconfig',
        ],
-@@ -2103,9 +2103,22 @@
+@@ -2090,9 +2090,22 @@
        ],
      }],
      ['os_bsd==1', {
@@ -44,7 +44,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.7 2016/02/01 15:09:01 robert Ex
      }],
      ['use_aura==1', {
        'dependencies': [
-@@ -2151,10 +2164,7 @@
+@@ -2140,10 +2153,7 @@
          'browser/geolocation/empty_wifi_data_provider.cc',
        ],
      }],
@@ -56,7 +56,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.7 2016/02/01 15:09:01 robert Ex
        'dependencies': [
          '../build/linux/system.gyp:dbus',
          '../dbus/dbus.gyp:dbus',
-@@ -2173,7 +2183,7 @@
+@@ -2162,7 +2172,7 @@
          'browser/media/media_web_contents_observer.h',
        ],
      }],

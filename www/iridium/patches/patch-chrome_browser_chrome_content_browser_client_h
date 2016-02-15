@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.5 2015/10/24 18:22:21 robert Exp $
---- chrome/browser/chrome_content_browser_client.h.orig.port	Tue Oct 13 21:04:31 2015
-+++ chrome/browser/chrome_content_browser_client.h	Wed Oct 14 07:41:13 2015
-@@ -260,7 +260,7 @@ class ChromeContentBrowserClient : public content::Con
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.6 2016/02/15 18:07:52 robert Exp $
+--- chrome/browser/chrome_content_browser_client.h.orig.port	Wed Jan 20 21:01:19 2016
++++ chrome/browser/chrome_content_browser_client.h	Fri Jan 22 19:58:58 2016
+@@ -264,7 +264,7 @@ class ChromeContentBrowserClient : public content::Con
        int child_process_id,
        content::FileDescriptorInfo* mappings,
        std::map<int, base::MemoryMappedFile::Region>* regions) override;

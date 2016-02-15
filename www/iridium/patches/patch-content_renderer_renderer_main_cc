@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_renderer_renderer_main_cc,v 1.2 2016/02/01 15:09:01 robert Exp $
---- content/renderer/renderer_main.cc.orig.port	Tue Dec 15 21:05:11 2015
-+++ content/renderer/renderer_main.cc	Mon Feb  1 08:34:12 2016
+$OpenBSD: patch-content_renderer_renderer_main_cc,v 1.3 2016/02/15 18:07:53 robert Exp $
+--- content/renderer/renderer_main.cc.orig.port	Wed Jan 27 18:00:49 2016
++++ content/renderer/renderer_main.cc	Sun Jan 31 21:40:09 2016
 @@ -28,6 +28,7 @@
  #include "content/renderer/render_thread_impl.h"
  #include "content/renderer/renderer_main_platform_delegate.h"
@@ -21,7 +21,7 @@ $OpenBSD: patch-content_renderer_renderer_main_cc,v 1.2 2016/02/01 15:09:01 robe
  namespace content {
  namespace {
  // This function provides some ways to test crash and assertion handling
-@@ -180,9 +186,13 @@ int RendererMain(const MainFunctionParams& parameters)
+@@ -183,9 +189,13 @@ int RendererMain(const MainFunctionParams& parameters)
    // is OK.
    InitializeWebRtcModule();
  #endif
@@ -36,7 +36,7 @@ $OpenBSD: patch-content_renderer_renderer_main_cc,v 1.2 2016/02/01 15:09:01 robe
      // TODO(markus): Check if it is OK to unconditionally move this
      // instruction down.
      RenderProcessImpl render_process;
-@@ -192,7 +202,7 @@ int RendererMain(const MainFunctionParams& parameters)
+@@ -195,7 +205,7 @@ int RendererMain(const MainFunctionParams& parameters)
      bool run_loop = true;
      if (!no_sandbox)
        run_loop = platform.EnableSandbox();

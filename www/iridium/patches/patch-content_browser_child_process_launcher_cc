@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.7 2016/02/01 15:09:01 robert Exp $
---- content/browser/child_process_launcher.cc.orig.port	Tue Dec 15 21:05:10 2015
-+++ content/browser/child_process_launcher.cc	Mon Feb  1 08:23:43 2016
+$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.8 2016/02/15 18:07:53 robert Exp $
+--- content/browser/child_process_launcher.cc.orig.port	Wed Jan 20 21:01:21 2016
++++ content/browser/child_process_launcher.cc	Sat Jan 23 20:10:57 2016
 @@ -114,7 +114,11 @@ void LaunchOnLauncherThread(const NotifyCallback& call
    base::EnvironmentMap env = delegate->GetEnvironment();
    base::ScopedFD ipcfd = delegate->TakeIpcFd();

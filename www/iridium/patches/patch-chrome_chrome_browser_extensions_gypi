@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.6 2015/12/17 07:02:48 robert Exp $
---- chrome/chrome_browser_extensions.gypi.orig.port	Tue Nov 24 21:00:54 2015
-+++ chrome/chrome_browser_extensions.gypi	Wed Dec  2 08:18:32 2015
-@@ -1012,6 +1012,11 @@
+$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.7 2016/02/15 18:07:53 robert Exp $
+--- chrome/chrome_browser_extensions.gypi.orig.port	Wed Jan 20 21:01:20 2016
++++ chrome/chrome_browser_extensions.gypi	Fri Jan 22 19:58:58 2016
+@@ -1016,6 +1016,11 @@
          '<@(chrome_browser_extensions_enabled_sources)',
        ],
        'conditions': [
@@ -13,7 +13,7 @@ $OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.6 2015/12/17 07:02:48 
          ['chromeos==1', {
            'dependencies': [
              '../build/linux/system.gyp:dbus',
-@@ -1049,7 +1054,7 @@
+@@ -1054,7 +1059,7 @@
              '../ui/views/views.gyp:views',
            ],
          }],

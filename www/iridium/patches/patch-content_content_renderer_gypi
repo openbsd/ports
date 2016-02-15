@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_content_renderer_gypi,v 1.4 2015/10/24 18:22:21 robert Exp $
---- content/content_renderer.gypi.orig.port	Tue Oct 13 21:04:32 2015
-+++ content/content_renderer.gypi	Wed Oct 14 07:41:13 2015
-@@ -32,6 +32,7 @@
-     '../third_party/icu/icu.gyp:icuuc',
+$OpenBSD: patch-content_content_renderer_gypi,v 1.5 2016/02/15 18:07:53 robert Exp $
+--- content/content_renderer.gypi.orig.port	Wed Jan 20 21:01:21 2016
++++ content/content_renderer.gypi	Fri Jan 22 19:58:58 2016
+@@ -34,6 +34,7 @@
      '../third_party/libjingle/libjingle.gyp:libjingle',
+     '../third_party/libyuv/libyuv.gyp:libyuv',
      '../third_party/mojo/mojo_edk.gyp:mojo_js_lib',
 +    '../third_party/libyuv/libyuv.gyp:libyuv',
      '../third_party/npapi/npapi.gyp:npapi',
