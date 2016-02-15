@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.95 2015/08/14 15:29:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.96 2016/02/15 12:20:33 tobiasu Exp $
+
+BROKEN-sparc=	Segmentation fault on any non-trivial script
 
 COMMENT=	GNU Bourne Again Shell
 
