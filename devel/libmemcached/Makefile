@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2015/12/13 21:23:08 sebastia Exp $
+# $OpenBSD: Makefile,v 1.18 2016/02/17 12:42:21 sthen Exp $
 
 COMMENT=		C C++ API for memcached
 
 VERSION=		1.0.18
+REVISION=		0
 DISTNAME=		libmemcached-${VERSION}
 CATEGORIES=		devel misc
 
@@ -19,19 +20,10 @@ SHARED_LIBS +=  memcachedutil             1.0 # 1.0
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB += c stdc++ m pthread sasl2
-LIB_DEPENDS= 		security/cyrus-sasl2
-TEST_DEPENDS=	misc/memcached
-USE_GMAKE =	yes
 
-# XXX Build memslap (benchmark tool) only on systems with GCC atomic built-ins. 
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || \
-    ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "hppa"
-PKG_ARGS+=		-Datomic=1
-.else
-PKG_ARGS+=		-Datomic=0
-pre-configure:
-	@perl -pi -e 's|am__EXEEXT_1 |#am__EXEEXT_1 |g' ${WRKSRC}/Makefile.in
-.endif
+LIB_DEPENDS= 	security/cyrus-sasl2
+TEST_DEPENDS=	misc/memcached
+USE_GMAKE=	yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV += 	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
