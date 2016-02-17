@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/02/15 18:07:53 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/02/17 07:23:26 robert Exp $
 bin/iridium
 iridium/
 iridium/chrome_100_percent.pak
@@ -201,6 +201,7 @@ iridium/resources/inspector/toolbox.css
 iridium/resources/inspector/toolbox.html
 iridium/resources/inspector/toolbox.js
 iridium/resources/inspector/ui_lazy_module.js
+iridium/shell_resources.pak
 @man man/man1/iridium.1
 share/applications/iridium-browser.desktop
 share/icons/hicolor/128x128/apps/iridium.png
