@@ -1,0 +1,12 @@
+$OpenBSD: patch-easyrsa,v 1.1 2016/02/18 13:50:00 sthen Exp $
+--- easyrsa.orig	Thu Feb 18 11:41:22 2016
++++ easyrsa	Thu Feb 18 11:41:37 2016
+@@ -1003,7 +1003,7 @@ Note: using Easy-RSA configuration from: $vars"
+ 	
+ 	# Set defaults, preferring existing env-vars if present
+ 	set_var EASYRSA		"$PWD"
+-	set_var EASYRSA_OPENSSL	openssl
++	set_var EASYRSA_OPENSSL	"/usr/local/bin/eopenssl"
+ 	set_var EASYRSA_PKI	"$EASYRSA/pki"
+ 	set_var EASYRSA_DN	cn_only
+ 	set_var EASYRSA_REQ_COUNTRY	"US"
