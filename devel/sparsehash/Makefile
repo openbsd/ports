@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2016/01/26 13:10:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2016/02/18 01:25:58 tobiasu Exp $
+
+BROKEN-sparc =		cc1plus: out of memory
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
