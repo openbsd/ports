@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2016/01/28 11:28:02 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.142 2016/02/19 01:19:51 jsg Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -6,7 +6,7 @@ COMMENT =	portable build system
 
 VER =		3.4.3
 DISTNAME =	cmake-${VER}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.cmake.org/
@@ -19,12 +19,6 @@ MASTER_SITES =	${HOMEPAGE}files/v${VER:R}/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += archive c curl expat form jsoncpp m ncurses pthread stdc++ z
-
-# XXX: On arm libstdc++ from base (and especially iostream) seems
-# to be broken, so use g++ from ports.
-MODULES =		gcc4
-MODGCC4_ARCHS =		arm
-MODGCC4_LANGS =		c++
 
 # XXX: Ninja is broken on m88k
 .if ${MACHINE_ARCH} != "m88k"
@@ -49,6 +43,10 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--sphinx-man \
 			--system-libs \
 			--verbose
+
+.if ${MACHINE_ARCH} == "arm"
+CXXFLAGS+=-fno-stack-protector
+.endif
 
 CONFIGURE_ENV +=	MAKE=${MAKE_PROGRAM}
 
