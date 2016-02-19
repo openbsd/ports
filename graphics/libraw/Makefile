@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2015/12/25 08:39:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2016/02/19 09:07:38 tobiasu Exp $
 
 COMMENT =		library for reading RAW files
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
+BROKEN-sparc =		undefined reference to __sync_fetch_and_add_4
 
 V =			0.16.0
 DISTNAME =		LibRaw-${V}
