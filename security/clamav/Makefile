@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2016/02/09 02:31:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.105 2016/02/20 15:23:43 tobiasu Exp $
 
 COMMENT=		virus scanner
 DISTNAME=		clamav-0.99
@@ -58,7 +58,8 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/clamav
 
 .include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mllvm} && ! ${MACHINE_ARCH:Msparc64} && ! ${MACHINE_ARCH:Mmips64}
+.if ${PROPERTIES:Mllvm} && ! ${MACHINE_ARCH:Msparc} && \
+	! ${MACHINE_ARCH:Msparc64} && ! ${MACHINE_ARCH:Mmips64}
 CONFIGURE_ARGS+=	--enable-llvm
 # At present (20140228 snapshot of LLVM, which is pre-3.5 but advertising a
 # 3.5 version number), system LLVM does not work with ClamAV. To attempt
