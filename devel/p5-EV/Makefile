@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/29 08:09:58 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2016/02/20 12:25:58 tobiasu Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	perl interface to libev
@@ -18,7 +18,7 @@ RUN_DEPENDS =		devel/libev \
 			devel/p5-common-sense \
 			devel/p5-Canary-Stability
 
-.if ${MACHINE_ARCH} == "arm"
+.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "sparc"
 CONFIGURE_ENV +=	EV_EXTRA_DEFS="-DEV_NO_SMP"
 .endif
 
