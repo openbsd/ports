@@ -1,0 +1,23 @@
+$OpenBSD: patch-hw_usb_dev-network_c,v 1.1 2016/02/20 22:46:46 ajacoutot Exp $
+
+usb: check USB configuration descriptor object
+
+When processing remote NDIS control message packets, the USB Net
+device emulator checks to see if the USB configuration descriptor
+object is of RNDIS type(2). But it does not check if it is null,
+which leads to a null dereference error. Add check to avoid it.
+
+CVE-2016-2393
+
+--- hw/usb/dev-network.c.orig	Thu Feb 18 19:21:12 2016
++++ hw/usb/dev-network.c	Thu Feb 18 19:21:37 2016
+@@ -650,7 +650,8 @@ typedef struct USBNetState {
+ 
+ static int is_rndis(USBNetState *s)
+ {
+-    return s->dev.config->bConfigurationValue == DEV_RNDIS_CONFIG_VALUE;
++    return s->dev.config ?
++            s->dev.config->bConfigurationValue == DEV_RNDIS_CONFIG_VALUE : 0;
+ }
+ 
+ static int ndis_query(USBNetState *s, uint32_t oid,
