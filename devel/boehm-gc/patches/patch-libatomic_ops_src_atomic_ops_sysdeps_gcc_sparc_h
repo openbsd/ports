@@ -1,0 +1,28 @@
+$OpenBSD: patch-libatomic_ops_src_atomic_ops_sysdeps_gcc_sparc_h,v 1.1 2016/02/21 22:01:57 tobiasu Exp $
+
+No easy way to set AO_NO_SPARC_V9 permanently on sparc32. It must be defined
+in every libatomic_ops user on sparc.
+This is meant to help operating systems that support sparcv9 in 32bit mode,
+multilib, etc.
+We don't have to worry about these setups and can just do the obvious fix.
+
+--- libatomic_ops/src/atomic_ops/sysdeps/gcc/sparc.h.orig	Sat Feb 20 01:05:41 2016
++++ libatomic_ops/src/atomic_ops/sysdeps/gcc/sparc.h	Sat Feb 20 01:06:25 2016
+@@ -37,7 +37,7 @@ AO_test_and_set_full(volatile AO_TS_t *addr) {
+ }
+ #define AO_HAVE_test_and_set_full
+ 
+-#ifndef AO_NO_SPARC_V9
++#ifdef __sparc64__
+ /* Returns nonzero if the comparison succeeded. */
+ AO_INLINE int
+ AO_compare_and_swap_full(volatile AO_t *addr, AO_t old, AO_t new_val) {
+@@ -62,7 +62,7 @@ AO_compare_and_swap_full(volatile AO_t *addr, AO_t old
+ #define AO_HAVE_compare_and_swap_full
+ 
+ /* TODO: implement AO_fetch_compare_and_swap.   */
+-#endif /* !AO_NO_SPARC_V9 */
++#endif /* __sparc64__ */
+ 
+ /* TODO: Extend this for SPARC v8 and v9 (V8 also has swap, V9 has CAS, */
+ /* there are barriers like membar #LoadStore, CASA (32-bit) and         */
