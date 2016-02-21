@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/07 23:12:13 juanfra Exp $
+# $OpenBSD: Makefile,v 1.3 2016/02/21 16:17:25 jsg Exp $
 
+BROKEN-arm =		undefined reference to __sync atomic ops
 BROKEN-hppa =		undefined reference to __sync atomic ops
 
 COMMENT =		user-level RCU implementation

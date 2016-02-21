@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2016/02/19 09:07:38 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.16 2016/02/21 16:17:25 jsg Exp $
 
 COMMENT =		library for reading RAW files
+BROKEN-arm =		undefined reference to __sync_fetch_and_add_4
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 BROKEN-sparc =		undefined reference to __sync_fetch_and_add_4
 

@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2016/02/20 22:08:08 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.25 2016/02/21 16:17:25 jsg Exp $
 
+BROKEN-arm =		no atomic ops
 BROKEN-hppa =		no atomic ops
 BROKEN-sparc =		no atomic ops
 COMMENT=		the Git library, take 2

@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.62 2015/12/25 08:39:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2016/02/21 16:17:26 jsg Exp $
 
+BROKEN-arm =		undefined reference to `__sync_fetch_and_add_4'
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
 BROKEN-sparc64 =	infinite loop or aborts during build
 

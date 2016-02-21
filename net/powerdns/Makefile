@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.41 2015/11/06 17:35:10 florian Exp $
+# $OpenBSD: Makefile,v 1.42 2016/02/21 16:17:26 jsg Exp $
 
-BROKEN-hppa =		"undefined reference to `__sync_fetch_and_add_4'"
+BROKEN-arm =		undefined reference to `__sync_fetch_and_add_4'
+BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
 
 SHARED_ONLY=		Yes
 

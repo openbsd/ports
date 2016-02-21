@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.84 2015/12/16 08:48:09 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.85 2016/02/21 16:17:26 jsg Exp $
 
+BROKEN-arm =		no atomic ops
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.19.12

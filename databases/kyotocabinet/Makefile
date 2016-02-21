@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/25 08:39:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2016/02/21 16:17:25 jsg Exp $
 
+BROKEN-arm=	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-hppa=	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-powerpc=	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-sparc=	undefined reference to `__sync_fetch_and_add_8'

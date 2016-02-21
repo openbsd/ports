@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2016/02/15 12:00:29 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.34 2016/02/21 16:17:25 jsg Exp $
 
+BROKEN-arm =	undefined reference to __sync atomic ops
 BROKEN-hppa =	undefined reference to __sync atomic ops
 BROKEN-sparc =	undefined reference to __sync atomic ops
 
