@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/28 08:46:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2016/02/21 11:45:25 jsg Exp $
 
 COMMENT =	STUN server implementing RFCs 5389, 5769, and 5780
-NOT_FOR_ARCHS = hppa sparc64 # atomic ops
+NOT_FOR_ARCHS = hppa # atomic ops
 
 VERSION =	1.2.7
 DISTNAME =	stunserver-${VERSION}
