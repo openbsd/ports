@@ -1,10 +1,10 @@
-$OpenBSD: patch-nss_lib_util_secasn1d_c,v 1.1 2016/02/22 20:01:05 landry Exp $
+$OpenBSD: patch-nss_lib_util_secasn1d_c,v 1.2 2016/02/22 20:10:37 landry Exp $
 
 c++-style comments.
 
 --- nss/lib/util/secasn1d.c.orig	Mon Feb 22 20:58:24 2016
-+++ nss/lib/util/secasn1d.c	Mon Feb 22 20:58:44 2016
-@@ -1608,7 +1608,7 @@ sec_asn1d_parse_leaf (sec_asn1d_state *state,
++++ nss/lib/util/secasn1d.c	Mon Feb 22 21:09:12 2016
+@@ -1608,25 +1608,25 @@ sec_asn1d_parse_leaf (sec_asn1d_state *state,
  	}
          offset = item->len;
          if (state->underlying_kind == SEC_ASN1_BIT_STRING) {
@@ -13,7 +13,11 @@ c++-style comments.
              if (item->len & 0x7) {
                  PORT_SetError (SEC_ERROR_BAD_DER);
                  state->top->status = decodeError;
-@@ -1619,14 +1619,14 @@ sec_asn1d_parse_leaf (sec_asn1d_state *state,
+                 return 0;
+             }
+-            // If this is a bit string, the length is bits, not bytes.
++            /* If this is a bit string, the length is bits, not bytes. */
+             offset = item->len >> 3;
          }
          if (state->underlying_kind == SEC_ASN1_BIT_STRING) {
              unsigned long len_in_bits;
