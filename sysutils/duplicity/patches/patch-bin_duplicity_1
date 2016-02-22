@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_duplicity_1,v 1.3 2016/01/17 05:30:31 shadchin Exp $
+$OpenBSD: patch-bin_duplicity_1,v 1.4 2016/02/22 18:45:53 jca Exp $
 Document the ssh backend change from paramiko to pexpect.
 --- bin/duplicity.1.orig	Mon Dec  7 12:03:39 2015
 +++ bin/duplicity.1	Thu Dec 24 19:56:18 2015
@@ -19,18 +19,6 @@ Document the ssh backend change from paramiko to pexpect.
  
  .TP
  .BI "--ssl-cacert-file " file
-@@ -1151,9 +1150,9 @@ scp://.. or
- .br
- sftp://user[:password]@other.host[:port]/[relative|/absolute]_path
- .PP
--.BR "defaults" " are paramiko+scp:// and paramiko+sftp://"
-+.BR "defaults" " are pexpect+scp://, pexpect+sftp://, lftp+sftp://"
- .br
--.BR "alternatively" " try pexpect+scp://, pexpect+sftp://, lftp+sftp://"
-+.BR "alternatively" " try paramiko+scp:// and paramiko+sftp://"
- .br
- See also
- .BR --ssh-askpass ,
 @@ -1471,7 +1470,7 @@ which aren't followed by 'foo'.  However, it wouldn't 
  if /home/ben/1234567 existed.
  
@@ -40,39 +28,3 @@ Document the ssh backend change from paramiko to pexpect.
  installed on the system.
  See
  .B REQUIREMENTS
-@@ -1764,7 +1763,7 @@ about the requirements for a server to support
- .I scp/ssh
- access.
- To make it even more confusing the user can choose between several ssh backends via a scheme prefix:
--paramiko+ (default), pexpect+, lftp+... .
-+paramiko+, pexpect+ (default), lftp+... .
- .br
- paramiko & pexpect support
- .BR --use-scp ,
-@@ -1776,7 +1775,7 @@ backend allows to define
- .BR --scp-command " and"
- .BR --sftp-command .
- .PP
--.BR "SSH paramiko backend " "(default)"
-+.BR "SSH paramiko backend"
- is a complete reimplementation of ssh protocols natively in python. Advantages
- are speed and maintainability. Minor disadvantage is that extra packages are
- needed as listed in
-@@ -1789,7 +1788,7 @@ mode (
- .I --use-scp
- ) though scp access is used for put/get operations but listing is done via ssh remote shell.
- .PP
--.B SSH pexpect backend
-+.BR "SSH pexpect backend" " (selected by default on OpenBSD)"
- is the legacy ssh backend using the command line ssh binaries via pexpect.
- Older versions used
- .I scp
-@@ -2050,7 +2049,7 @@ see pydrive backend
- (Python Cryptography Toolkit)
- - http://www.dlitz.net/software/pycrypto/
- .TP
--.B ssh pexpect backend
-+.BR "ssh pexpect backend" " (default on OpenBSD)"
- .B sftp/scp client binaries
- OpenSSH - http://www.openssh.com/
- .br
