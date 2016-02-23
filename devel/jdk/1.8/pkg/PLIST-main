@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2016/01/06 09:48:44 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2016/02/23 20:54:51 kurt Exp $
 @option no-default-conflict
 @conflict jdk->=1.8v0,<1.9v0
 @pkgpath devel/jdk/1.7,-jdk
@@ -486,6 +486,7 @@ ${JDKHOME}/jre/lib/currency.data
 ${JDKHOME}/jre/lib/ext/
 ${JDKHOME}/jre/lib/ext/cldrdata.jar
 ${JDKHOME}/jre/lib/ext/dnsns.jar
+${JDKHOME}/jre/lib/ext/jaccess.jar
 ${JDKHOME}/jre/lib/ext/localedata.jar
 ${JDKHOME}/jre/lib/ext/meta-index
 ${JDKHOME}/jre/lib/ext/nashorn.jar
