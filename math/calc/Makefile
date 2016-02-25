@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2016/01/27 14:39:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2016/02/25 00:43:51 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	C-style arbitrary precision calculator
 
-DISTNAME=	calc-2.12.5.0
-REVISION=	0
+DISTNAME=	calc-2.12.5.4
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	calc 0.0 \
