@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.12 2015/05/14 09:21:01 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.13 2016/02/25 10:03:58 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -775,6 +775,7 @@ webapps/docs/api/org/apache/coyote/ajp/package-frame.html
 webapps/docs/api/org/apache/coyote/ajp/package-summary.html
 webapps/docs/api/org/apache/coyote/ajp/package-tree.html
 webapps/docs/api/org/apache/coyote/http11/
+webapps/docs/api/org/apache/coyote/http11/AbstractInputBuffer.html
 webapps/docs/api/org/apache/coyote/http11/Constants.html
 webapps/docs/api/org/apache/coyote/http11/Http11AprProcessor.html
 webapps/docs/api/org/apache/coyote/http11/Http11AprProtocol.html
@@ -1192,6 +1193,7 @@ webapps/docs/api/org/apache/naming/resources/Constants.html
 webapps/docs/api/org/apache/naming/resources/DirContextURLConnection.html
 webapps/docs/api/org/apache/naming/resources/DirContextURLStreamHandler.html
 webapps/docs/api/org/apache/naming/resources/DirContextURLStreamHandlerFactory.html
+webapps/docs/api/org/apache/naming/resources/EmptyDirContext.html
 webapps/docs/api/org/apache/naming/resources/FileDirContext.FileResource.html
 webapps/docs/api/org/apache/naming/resources/FileDirContext.FileResourceAttributes.html
 webapps/docs/api/org/apache/naming/resources/FileDirContext.html
@@ -1226,12 +1228,14 @@ webapps/docs/api/org/apache/tomcat/buildutil/package-tree.html
 webapps/docs/api/org/apache/tomcat/jni/
 webapps/docs/api/org/apache/tomcat/jni/Address.html
 webapps/docs/api/org/apache/tomcat/jni/BIOCallback.html
+webapps/docs/api/org/apache/tomcat/jni/Buffer.html
 webapps/docs/api/org/apache/tomcat/jni/Directory.html
 webapps/docs/api/org/apache/tomcat/jni/Error.html
 webapps/docs/api/org/apache/tomcat/jni/File.html
 webapps/docs/api/org/apache/tomcat/jni/FileInfo.html
 webapps/docs/api/org/apache/tomcat/jni/Global.html
 webapps/docs/api/org/apache/tomcat/jni/Library.html
+webapps/docs/api/org/apache/tomcat/jni/LibraryNotFoundError.html
 webapps/docs/api/org/apache/tomcat/jni/Local.html
 webapps/docs/api/org/apache/tomcat/jni/Lock.html
 webapps/docs/api/org/apache/tomcat/jni/Mmap.html
@@ -1253,6 +1257,7 @@ webapps/docs/api/org/apache/tomcat/jni/Sockaddr.html
 webapps/docs/api/org/apache/tomcat/jni/Socket.html
 webapps/docs/api/org/apache/tomcat/jni/Status.html
 webapps/docs/api/org/apache/tomcat/jni/Stdlib.html
+webapps/docs/api/org/apache/tomcat/jni/Thread.html
 webapps/docs/api/org/apache/tomcat/jni/Time.html
 webapps/docs/api/org/apache/tomcat/jni/User.html
 webapps/docs/api/org/apache/tomcat/jni/package-frame.html
@@ -1354,6 +1359,7 @@ webapps/docs/api/org/apache/tomcat/util/http/FastHttpDateFormat.html
 webapps/docs/api/org/apache/tomcat/util/http/HttpMessages.html
 webapps/docs/api/org/apache/tomcat/util/http/MimeHeaders.html
 webapps/docs/api/org/apache/tomcat/util/http/MimeMap.html
+webapps/docs/api/org/apache/tomcat/util/http/Parameters.FailReason.html
 webapps/docs/api/org/apache/tomcat/util/http/Parameters.html
 webapps/docs/api/org/apache/tomcat/util/http/ServerCookie.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/

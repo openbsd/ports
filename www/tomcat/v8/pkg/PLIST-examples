@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.13 2015/12/22 08:33:11 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.14 2016/02/25 10:03:58 dcoppa Exp $
 @owner _tomcat
 @group _tomcat
 webapps/ROOT/
@@ -60,6 +60,7 @@ webapps/docs/api/org/apache/catalina/Host.html
 webapps/docs/api/org/apache/catalina/InstanceEvent.html
 webapps/docs/api/org/apache/catalina/InstanceListener.html
 webapps/docs/api/org/apache/catalina/JmxEnabled.html
+webapps/docs/api/org/apache/catalina/Lifecycle.SingleUse.html
 webapps/docs/api/org/apache/catalina/Lifecycle.html
 webapps/docs/api/org/apache/catalina/LifecycleEvent.html
 webapps/docs/api/org/apache/catalina/LifecycleException.html
@@ -777,6 +778,7 @@ webapps/docs/api/org/apache/catalina/util/Strftime.html
 webapps/docs/api/org/apache/catalina/util/StringParser.html
 webapps/docs/api/org/apache/catalina/util/TomcatCSS.html
 webapps/docs/api/org/apache/catalina/util/URLEncoder.html
+webapps/docs/api/org/apache/catalina/util/UriUtil.html
 webapps/docs/api/org/apache/catalina/util/XMLWriter.html
 webapps/docs/api/org/apache/catalina/util/package-frame.html
 webapps/docs/api/org/apache/catalina/util/package-summary.html

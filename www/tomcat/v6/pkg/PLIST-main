@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2014/10/06 08:02:30 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2016/02/25 10:03:58 dcoppa Exp $
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${CATALINA_BASE}/logs/* ${CATALINA_BASE}/work/*
@@ -121,6 +121,7 @@ tomcat/webapps/host-manager/images/fix.gif
 tomcat/webapps/host-manager/images/tomcat.gif
 tomcat/webapps/host-manager/images/update.gif
 tomcat/webapps/host-manager/images/void.gif
+tomcat/webapps/host-manager/index.jsp
 tomcat/webapps/host-manager/manager.xml
 tomcat/webapps/manager/
 tomcat/webapps/manager/META-INF/
@@ -142,6 +143,7 @@ tomcat/webapps/manager/images/fix.gif
 tomcat/webapps/manager/images/tomcat.gif
 tomcat/webapps/manager/images/update.gif
 tomcat/webapps/manager/images/void.gif
+tomcat/webapps/manager/index.jsp
 tomcat/webapps/manager/status.xsd
 tomcat/webapps/manager/xform.xsl
 @rcscript ${RCDIR}/tomcat
