@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2015/05/11 07:21:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2016/02/25 08:05:29 jasper Exp $
 
 COMMENT=		helpers for building A/V applications using GUPnP
 
 GNOME_PROJECT=		gupnp-av
-GNOME_VERSION=		0.12.7
-REVISION=		1
+GNOME_VERSION=		0.12.8
 
 SHARED_LIBS +=  gupnp-av-1.0         0.1      # 2.0
 
