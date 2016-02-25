@@ -1,8 +1,8 @@
-$OpenBSD: patch-tests_common_sh,v 1.1.1.1 2015/03/26 02:07:59 sthen Exp $
---- tests/common.sh.orig	Thu Mar 26 01:58:49 2015
-+++ tests/common.sh	Thu Mar 26 01:58:52 2015
-@@ -27,7 +27,7 @@ if [ $? != 0 ];then
- 	exit 77
+$OpenBSD: patch-tests_common_sh,v 1.2 2016/02/25 10:22:01 sthen Exp $
+--- tests/common.sh.orig	Thu Feb 25 10:17:04 2016
++++ tests/common.sh	Thu Feb 25 10:17:04 2016
+@@ -39,7 +39,7 @@ else
+ 	OPENCONNECT="eval LD_PRELOAD=libsocket_wrapper.so /usr/sbin/openconnect"
  fi
  
 -if ! test -x /usr/sbin/openconnect;then
