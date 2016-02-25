@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2016/01/02 07:36:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2016/02/25 13:01:04 ajacoutot Exp $
 
 COMMENT=		hotplugd(8) automounter (Toad Opens All Devices)
 
 GH_ACCOUNT=		ajacoutot
 GH_PROJECT=		toad
-GH_TAGNAME=		1.4
+GH_TAGNAME=		1.6
 
 CATEGORIES=		sysutils
 
