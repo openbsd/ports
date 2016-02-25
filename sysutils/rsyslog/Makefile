@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2015/12/26 09:45:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2016/02/25 02:19:14 jsg Exp $
 
+BROKEN-arm =		lack of atomic ops
 BROKEN-hppa =		lack of atomic ops
 
 SHARED_ONLY =		Yes
