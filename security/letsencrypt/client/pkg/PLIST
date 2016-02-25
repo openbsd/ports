@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/01/15 21:40:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/02/25 00:46:09 sthen Exp $
 @extraunexec rm -rf /var/log/letsencrypt/*
 bin/letsencrypt
-bin/letsencrypt-renewer
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/
 lib/python${MODPY_VERSION}/site-packages/letsencrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/letsencrypt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -86,8 +85,6 @@ lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/webroot_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/plugins/webroot_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/proof_of_possession.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/proof_of_possession.pyc
-lib/python${MODPY_VERSION}/site-packages/letsencrypt/renewer.py
-lib/python${MODPY_VERSION}/site-packages/letsencrypt/renewer.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/reporter.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/reporter.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/reverter.py
@@ -136,15 +133,21 @@ lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/notify_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/notify_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/proof_of_possession_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/proof_of_possession_test.pyc
-lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/renewer_test.py
-lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/renewer_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/reporter_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/reporter_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/reverter_test.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/reverter_test.pyc
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/storage_test.py
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/storage_test.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/test_util.py
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/test_util.pyc
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/archive/
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/archive/sample-renewal/
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/archive/sample-renewal/cert1.pem
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/archive/sample-renewal/chain1.pem
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/archive/sample-renewal/fullchain1.pem
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/archive/sample-renewal/privkey1.pem
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/cert-san.pem
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/cert.b64jose
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/cert.der
@@ -158,10 +161,18 @@ lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/csr.der
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/csr.pem
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/dsa512_key.pem
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/dsa_cert.pem
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/live/
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/live/sample-renewal/
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/live/sample-renewal/cert.pem
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/live/sample-renewal/chain.pem
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/live/sample-renewal/fullchain.pem
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/live/sample-renewal/privkey.pem
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/matching_cert.pem
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/rsa256_key.pem
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/rsa512_key.pem
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/rsa512_key_2.pem
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/sample-renewal.conf
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/webrootconftest.ini
 share/examples/letsencrypt/
 @mode 750
 @sample ${SYSCONFDIR}/letsencrypt/
