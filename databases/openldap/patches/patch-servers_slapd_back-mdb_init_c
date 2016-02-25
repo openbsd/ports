@@ -1,7 +1,11 @@
-$OpenBSD: patch-servers_slapd_back-mdb_init_c,v 1.1 2014/10/03 23:19:44 sthen Exp $
---- servers/slapd/back-mdb/init.c.orig	Fri Mar 22 10:47:17 2013
-+++ servers/slapd/back-mdb/init.c	Fri Mar 22 10:47:36 2013
-@@ -158,6 +158,32 @@ mdb_db_open( BackendDB *be, ConfigReply *cr )
+$OpenBSD: patch-servers_slapd_back-mdb_init_c,v 1.2 2016/02/25 00:45:43 sthen Exp $
+
+XXX maintaining the patch here, but MDB is disabled because last time
+    it was enabled there were still problems even with this.
+
+--- servers/slapd/back-mdb/init.c.orig	Fri Feb  5 23:57:45 2016
++++ servers/slapd/back-mdb/init.c	Fri Feb 12 13:38:28 2016
+@@ -159,6 +159,32 @@ mdb_db_open( BackendDB *be, ConfigReply *cr )
  	dbhome = mdb->mi_dbenv_home;
  #endif
  
