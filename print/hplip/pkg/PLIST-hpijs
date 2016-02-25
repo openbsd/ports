@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.44 2015/11/17 08:57:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.45 2016/02/25 03:50:37 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -272,8 +272,6 @@ share/foomatic/db/source/PPD/HP/hp-deskjet_4620_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_4640_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_4670_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_4720_series-hpijs.ppd.gz
-share/foomatic/db/source/PPD/HP/hp-deskjet_5570_series-hpijs.ppd.gz
-share/foomatic/db/source/PPD/HP/hp-deskjet_5640_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_500-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_500c-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_505j-hpijs.ppd.gz
@@ -287,7 +285,9 @@ share/foomatic/db/source/PPD/HP/hp-deskjet_5520_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_5550-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_5551-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_5552-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-deskjet_5570_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_5600-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-deskjet_5640_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_5650-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_5652-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_5700-hpijs.ppd.gz
@@ -716,6 +716,7 @@ share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m126a-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m126nw-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m127fn-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m127fp-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m127fs-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m127fw-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m128fn-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m128fp-hpijs.ppd.gz
@@ -1038,4 +1039,3 @@ share/foomatic/db/source/PPD/HP/hp-psc_920-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-psc_950-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-psc_950vr-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-psc_950xi-hpijs.ppd.gz
-share/foomatic/db/source/PPD/HP/hp-scanjet_pro_3500_f1-hpijs.ppd.gz
