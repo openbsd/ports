@@ -1,12 +1,12 @@
-$OpenBSD: patch-daily_sh,v 1.7 2016/01/06 20:03:56 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.8 2016/02/25 00:46:35 sthen Exp $
 
 - use ksh
 - patch php binary name
 - avoid ${cnf,,} bashism (converts to lowercase); actually the
 result was being ignored anyway
 
---- daily.sh.orig	Wed Jan  6 19:56:28 2016
-+++ daily.sh	Wed Jan  6 20:03:25 2016
+--- daily.sh.orig	Sun Feb 14 14:40:25 2016
++++ daily.sh	Sun Feb 14 14:41:37 2016
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/ksh
@@ -31,17 +31,20 @@ result was being ignored anyway
      if [ "$up" -eq 1 ]; then
          # Update to Master-Branch
          status_run 'Updating to latest codebase' 'git pull --quiet'
-@@ -41,8 +41,7 @@ if [ -z "$arg" ]; then
+@@ -40,9 +40,9 @@ if [ -z "$arg" ]; then
+         # Update to last Tag
          status_run 'Updating to latest release' 'git fetch --tags && git checkout $(git describe --tags $(git rev-list --tags --max-count=1))'
      fi
- 
+-
 -    cnf=$(echo $(grep '\[.distributed_poller.\]' config.php | egrep -v -e '^//' -e '^#' | cut -d = -f 2 | sed 's/;//g'))
--    cnd=${cnf,,}
+-    cnf=${cnf,,}
++ 
++     
 +    cnf=$(awk '/^\$config\[.distributed_poller.\]/ {gsub(" ", ""); FS="[=;]"; print tolower($2)}' config.php)
      if [ -z "$cnf" ] || [ "$cnf" == "0" ] || [ "$cnf" == "false" ]; then
          # Call ourself again in case above pull changed or added something to daily.sh
          $0 post-pull
-@@ -51,20 +50,20 @@ else
+@@ -51,20 +51,20 @@ else
      case $arg in
          post-pull)
              # List all tasks to do after pull in the order of execution
@@ -70,7 +73,7 @@ result was being ignored anyway
          ;;
          submodules)
              # Init+Update our submodules
-@@ -73,7 +72,7 @@ else
+@@ -73,7 +73,7 @@ else
          ;;
          notifications)
              # Get notifications

@@ -1,7 +1,7 @@
-$OpenBSD: patch-validate_php,v 1.4 2015/09/17 12:17:45 sthen Exp $
---- validate.php.orig	Thu Sep 17 12:35:33 2015
-+++ validate.php	Thu Sep 17 12:35:34 2015
-@@ -32,7 +32,7 @@ if (isset($options['h'])) {
+$OpenBSD: patch-validate_php,v 1.5 2016/02/25 00:46:35 sthen Exp $
+--- validate.php.orig	Sun Feb 14 14:40:29 2016
++++ validate.php	Sun Feb 14 14:40:29 2016
+@@ -33,7 +33,7 @@ if (isset($options['h'])) {
      exit;
  }
  
