@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.65 2015/10/15 05:37:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2016/02/25 01:48:48 jsg Exp $
+
+BROKEN-arm =		output-selector-test: local symbol `environ' in /usr/lib/crt0.o is referenced by DSO
 
 COMMENT=		base elements for GStreamer
 
