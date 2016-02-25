@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/12/03 08:39:35 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2016/02/25 15:18:33 benoit Exp $
 
 COMMENT = 	Perl interface to Git repositories
 
 MODULES =	cpan
-DISTNAME =	Git-Repository-1.316
+DISTNAME =	Git-Repository-1.317
 CATEGORIES =	devel
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
