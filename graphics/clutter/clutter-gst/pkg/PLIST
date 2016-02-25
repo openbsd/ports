@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/04/03 16:32:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2016/02/25 07:43:35 jasper Exp $
 include/clutter-gst-${API_VERSION}/
 include/clutter-gst-${API_VERSION}/clutter-gst/
 include/clutter-gst-${API_VERSION}/clutter-gst/clutter-gst-aspectratio.h
@@ -30,12 +30,18 @@ share/gtk-doc/html/clutter-gst-${API_VERSION}/ClutterGstContent.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/ClutterGstCrop.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/ClutterGstPlayback.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/ClutterGstPlayer.html
+share/gtk-doc/html/clutter-gst-${API_VERSION}/annotation-glossary.html
+share/gtk-doc/html/clutter-gst-${API_VERSION}/api-index-1-4.html
+share/gtk-doc/html/clutter-gst-${API_VERSION}/api-index-1-6.html
+share/gtk-doc/html/clutter-gst-${API_VERSION}/api-index-3-0.html
+share/gtk-doc/html/clutter-gst-${API_VERSION}/api-index-all.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/ch01.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/ch02.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/ch03.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/ch04.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/ch05.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/clutter-gst-${API_VERSION}.devhelp2
+share/gtk-doc/html/clutter-gst-${API_VERSION}/clutter-gst-Types.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/clutter-gst-Utilities.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/clutter-gst-Versioning-Macros.html
 share/gtk-doc/html/clutter-gst-${API_VERSION}/clutter-gst-Video-Sink.html
