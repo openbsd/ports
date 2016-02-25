@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2015/10/27 18:32:05 rpointel Exp $
+# $OpenBSD: Makefile,v 1.6 2016/02/25 20:44:59 rpointel Exp $
 
 COMMENT =		tool for reverse engineering Android apk files
 
-DISTNAME =		apktool_2.0.2
+DISTNAME =		apktool_2.0.3
 PKGNAME =		${DISTNAME:S/_/-/}
 
 CATEGORIES =		devel security java
