@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.177 2016/02/16 13:21:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.178 2016/02/25 00:47:20 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
-V=		3.5.14
+V=		3.5.15
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
