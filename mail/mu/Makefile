@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/06 20:02:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/02/25 01:38:17 abieber Exp $
 
 COMMENT=	maildir indexer and searcher with emacs frontend
 
-GH_TAGNAME=	v0.9.13
+GH_TAGNAME=	v0.9.16
 GH_ACCOUNT=	djcb
 GH_PROJECT=	mu
 
