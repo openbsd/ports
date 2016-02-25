@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.127 2016/01/20 15:09:14 tb Exp $
+# $OpenBSD: OpenBSD,v 1.128 2016/02/25 19:16:15 natano Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -86,6 +86,7 @@
 48.1248		11.5972		"mickey"	# Michael Shalayeff
 48.13254	11.76704	"bluhm"		# Alexander Bluhm
 48.137970	11.542279	"markus"	# Markus Friedl
+48.1771347	16.3269816	"natano"	# Martin Natano
 48.191418	16.340723	"rpe"		# Robert Peichaer
 48.2		16.367		"martin"	# Martin Reindl
 48.35		7.46		"couderc"	# Damien Couderc
