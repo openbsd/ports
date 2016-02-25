@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.21 2016/01/26 06:39:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2016/02/25 07:52:34 ajacoutot Exp $
 @bin bin/easytag
 @man man/man1/easytag.1
 share/appdata/
-share/appdata/easytag-nautilus.metainfo.xml
 share/appdata/easytag.appdata.xml
 share/applications/easytag.desktop
 share/glib-2.0/schemas/org.gnome.EasyTAG.enums.xml
