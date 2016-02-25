@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.123 2016/01/22 13:56:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.124 2016/02/25 07:34:29 jasper Exp $
 
 PORTROACH=	limit:^3
 
-VERSION=	3.8.5
+VERSION=	3.8.6
 
 MODULES +=		lang/python
 MODPY_BUILDDEP = 	No
