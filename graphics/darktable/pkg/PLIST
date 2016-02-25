@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/12/24 14:20:20 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/02/25 00:43:26 sthen Exp $
 @bin bin/darktable
 @bin bin/darktable-cli
 @bin bin/darktable-cltest
@@ -288,6 +288,8 @@ share/darktable/pixmaps/plugins/darkroom/rawdenoise.png
 share/darktable/pixmaps/plugins/darkroom/rawdenoise.svg
 share/darktable/pixmaps/plugins/darkroom/rawimport.png
 share/darktable/pixmaps/plugins/darkroom/rawimport.svg
+share/darktable/pixmaps/plugins/darkroom/rawprepare.png
+share/darktable/pixmaps/plugins/darkroom/rawprepare.svg
 share/darktable/pixmaps/plugins/darkroom/relight.png
 share/darktable/pixmaps/plugins/darkroom/relight.svg
 share/darktable/pixmaps/plugins/darkroom/shadhi.png
@@ -362,6 +364,7 @@ share/locale/de/LC_MESSAGES/darktable.mo
 share/locale/el/LC_MESSAGES/darktable.mo
 share/locale/es/LC_MESSAGES/darktable.mo
 share/locale/fr/LC_MESSAGES/darktable.mo
+share/locale/hu/LC_MESSAGES/darktable.mo
 share/locale/it/LC_MESSAGES/darktable.mo
 share/locale/ja/LC_MESSAGES/darktable.mo
 share/locale/nl/LC_MESSAGES/darktable.mo
