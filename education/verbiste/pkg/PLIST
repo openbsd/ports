@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/05/22 11:31:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/02/25 21:38:31 naddy Exp $
 @bin bin/french-conjugator
 @bin bin/french-deconjugator
 @bin bin/verbiste-gtk
@@ -27,8 +27,6 @@ share/icons/hicolor/16x16/apps/verbiste.png
 share/icons/hicolor/256x256/apps/verbiste.png
 share/icons/hicolor/32x32/apps/verbiste.png
 share/icons/hicolor/48x48/apps/verbiste.png
-share/icons/hicolor/512x512/
-share/icons/hicolor/512x512/apps/
 share/icons/hicolor/512x512/apps/verbiste.png
 share/icons/hicolor/64x64/apps/verbiste.png
 share/icons/hicolor/scalable/apps/verbiste.svg
