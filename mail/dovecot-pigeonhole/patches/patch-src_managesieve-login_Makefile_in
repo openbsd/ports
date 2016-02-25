@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_managesieve-login_Makefile_in,v 1.7 2016/01/10 16:16:24 sthen Exp $
---- src/managesieve-login/Makefile.in.orig	Fri Jan  8 12:39:33 2016
-+++ src/managesieve-login/Makefile.in	Sat Jan  9 14:16:40 2016
-@@ -384,7 +384,7 @@ libmanagesieve_login_settings_la_CFLAGS = \
+$OpenBSD: patch-src_managesieve-login_Makefile_in,v 1.8 2016/02/25 09:20:33 sthen Exp $
+--- src/managesieve-login/Makefile.in.orig	Tue Jan 26 22:31:54 2016
++++ src/managesieve-login/Makefile.in	Wed Jan 27 01:50:28 2016
+@@ -398,7 +398,7 @@ libmanagesieve_login_settings_la_CFLAGS = \
  libs = \
  	$(top_builddir)/src/lib-managesieve/libmanagesieve.a
  
