@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/12/06 12:35:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/02/25 07:35:31 jasper Exp $
 @newgroup _activemq:714
 @newuser _activemq:714:714:daemon:Apache ActiveMQ:/var/db/activemq:/sbin/nologin
 @comment needs a RW homedir to prevent java.io.IOException
@@ -363,9 +363,9 @@ activemq/lib/activemq-spring-${V}.jar
 activemq/lib/activemq-web-${V}.jar
 activemq/lib/camel/
 activemq/lib/camel/activemq-camel-${V}.jar
-activemq/lib/camel/camel-core-2.16.1.jar
-activemq/lib/camel/camel-jms-2.16.1.jar
-activemq/lib/camel/camel-spring-2.16.1.jar
+activemq/lib/camel/camel-core-2.16.2.jar
+activemq/lib/camel/camel-jms-2.16.2.jar
+activemq/lib/camel/camel-spring-2.16.2.jar
 activemq/lib/extra/
 activemq/lib/extra/mqtt-client-1.12.jar
 activemq/lib/geronimo-j2ee-management_1.1_spec-1.0.1.jar
@@ -420,21 +420,21 @@ activemq/lib/optional/log4j-1.2.17.jar
 activemq/lib/optional/org.apache.servicemix.bundles.josql-1.5_5.jar
 activemq/lib/optional/org.linkedin.util-core-1.4.0.jar
 activemq/lib/optional/org.linkedin.zookeeper-impl-1.4.0.jar
-activemq/lib/optional/proton-j-0.11.0.jar
+activemq/lib/optional/proton-j-0.11.1.jar
 activemq/lib/optional/scala-library-2.11.0.jar
 activemq/lib/optional/shiro-core-1.2.4.jar
 activemq/lib/optional/shiro-spring-1.2.4.jar
 activemq/lib/optional/slf4j-log4j12-1.7.13.jar
 activemq/lib/optional/snappy-0.2.jar
 activemq/lib/optional/snappy-java-1.1.2.jar
-activemq/lib/optional/spring-aop-4.1.8.RELEASE.jar
-activemq/lib/optional/spring-beans-4.1.8.RELEASE.jar
-activemq/lib/optional/spring-context-4.1.8.RELEASE.jar
-activemq/lib/optional/spring-core-4.1.8.RELEASE.jar
-activemq/lib/optional/spring-expression-4.1.8.RELEASE.jar
-activemq/lib/optional/spring-jms-4.1.8.RELEASE.jar
-activemq/lib/optional/spring-oxm-4.1.8.RELEASE.jar
-activemq/lib/optional/spring-tx-4.1.8.RELEASE.jar
+activemq/lib/optional/spring-aop-4.1.9.RELEASE.jar
+activemq/lib/optional/spring-beans-4.1.9.RELEASE.jar
+activemq/lib/optional/spring-context-4.1.9.RELEASE.jar
+activemq/lib/optional/spring-core-4.1.9.RELEASE.jar
+activemq/lib/optional/spring-expression-4.1.9.RELEASE.jar
+activemq/lib/optional/spring-jms-4.1.9.RELEASE.jar
+activemq/lib/optional/spring-oxm-4.1.9.RELEASE.jar
+activemq/lib/optional/spring-tx-4.1.9.RELEASE.jar
 activemq/lib/optional/velocity-1.7.jar
 activemq/lib/optional/xbean-spring-3.18.jar
 activemq/lib/optional/xpp3-1.1.4c.jar
@@ -454,10 +454,10 @@ activemq/lib/web/jolokia-core-1.3.2.jar
 activemq/lib/web/json-simple-1.1.1.jar
 activemq/lib/web/org.eclipse.jdt.core-3.8.2.v20130121.jar
 activemq/lib/web/rome-1.0.jar
-activemq/lib/web/spring-web-4.1.8.RELEASE.jar
-activemq/lib/web/spring-webmvc-4.1.8.RELEASE.jar
-activemq/lib/web/taglibs-standard-impl-1.2.1.jar
-activemq/lib/web/taglibs-standard-spec-1.2.1.jar
+activemq/lib/web/spring-web-4.1.9.RELEASE.jar
+activemq/lib/web/spring-webmvc-4.1.9.RELEASE.jar
+activemq/lib/web/taglibs-standard-impl-1.2.3.jar
+activemq/lib/web/taglibs-standard-spec-1.2.3.jar
 activemq/lib/web/tomcat-servlet-api-8.0.24.jar
 activemq/lib/web/tomcat-websocket-api-8.0.24.jar
 activemq/tmp
@@ -692,6 +692,8 @@ activemq/webapps/admin/xml/subscribers.jsp
 activemq/webapps/admin/xml/topics.jsp
 activemq/webapps/api/
 activemq/webapps/api/WEB-INF/
+activemq/webapps/api/WEB-INF/classes/
+activemq/webapps/api/WEB-INF/classes/jolokia-access.xml
 activemq/webapps/api/WEB-INF/web.xml
 activemq/webapps/favicon.ico
 activemq/webapps/fileserver/
