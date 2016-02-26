@@ -1,4 +1,4 @@
-$OpenBSD: patch-libev_ev_c,v 1.7 2016/01/29 11:56:31 dcoppa Exp $
+$OpenBSD: patch-libev_ev_c,v 1.8 2016/02/26 13:20:32 dcoppa Exp $
 
 Unbreak build on arm
 
@@ -9,7 +9,7 @@ Unbreak build on arm
  # define ECB_NO_THREADS 1
  #endif
 -#if EV_NO_SMP
-+#if defined(EV_NO_SMP) || defined(__arm__)
++#if defined(EV_NO_SMP) || defined(__arm__) || defined (__sparc__)
  # undef EV_NO_SMP
  # define ECB_NO_SMP 1
  #endif
