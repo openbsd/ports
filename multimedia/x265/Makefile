@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2015/12/25 07:51:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2016/02/26 16:27:55 ajacoutot Exp $
 
 COMMENT=	free H.265/HEVC encoder
 
-DISTNAME=	x265_1.8+93
-PKGNAME=	x265-1.8.93
-REVISION=	0
+VER=		1.9
+DISTNAME=	x265_${VER}
+PKGNAME=	x265-${VER}
 CATEGORIES=	multimedia
-MASTER_SITES=	http://comstyle.com/source/
+MASTER_SITES=	https://ftp.videolan.org/pub/videolan/x265/
 
-SHARED_LIBS=	x265	5.0
+SHARED_LIBS=	x265	6.0
 
 HOMEPAGE=	http://x265.org/
 
@@ -21,7 +21,6 @@ PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=	c m pthread stdc++
 
 WRKSRC=		${WRKDIST}/source
-WRKDIST=	${WRKDIR}/x265_1.8
 
 MODULES=	devel/cmake \
 		lang/clang
