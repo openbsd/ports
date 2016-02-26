@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.128 2016/02/25 19:16:15 natano Exp $
+# $OpenBSD: OpenBSD,v 1.129 2016/02/26 22:42:30 awolk Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -104,6 +104,7 @@
 49.22		-123.10		"hugh"		# Hugh Graham
 49.313446	-123.063975	"mjc"		# Michael Coulter
 49.48		8.42		"naddy"		# Christian Weisgerber
+49.5557300	22.2056000	"awolk"		# Adam Wolk
 50.342651	7.584064	"pascal"	# Pascal Stumpf
 50.752		-3.276		"sthen"		# Stuart Henderson
 50.76859	6.10157		"mpi"		# Martin Pieuchot
