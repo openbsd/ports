@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2016/01/20 16:08:29 kili Exp $
+# $OpenBSD: Makefile,v 1.134 2016/02/26 07:50:52 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,12 +12,12 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		7.8.4.20151026
+BIN_VER =		7.10.2.20160222
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
@@ -112,6 +112,11 @@ CONFIGURE_ENV +=	CONF_CC_OPTS_STAGE0="-fno-pie -nopie" \
 # Do not pick up gpatch
 CONFIGURE_ENV +=	ac_cv_path_PatchCmd=/usr/bin/patch
 
+# Since ghc-7.10, ghc does not run without HOME defined and pointing to
+# a writable directory, which would cause configure to fail (because it
+# still builds ghc-pwd). Set HOME to let a 7.10-bootstrapper work.
+CONFIGURE_ENV +=	HOME=${PORTHOME}
+
 MAKE_FLAGS +=		StripLibraries=YES \
 			INSTALL_BIN_OPTS=-s \
 			HSCOLOUR_SRCS=NO \
@@ -189,7 +194,7 @@ do-test:
 # It doesn't matter wether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20151026
+BOOTSTRAP_DATE =	20160222
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
