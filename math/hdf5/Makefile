@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/11/17 17:46:00 feinerer Exp $
+# $OpenBSD: Makefile,v 1.6 2016/02/27 22:43:18 juanfra Exp $
 
 COMMENT =		Hierarchical Data Format 5 Technology suite
 
@@ -21,7 +21,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m stdc++ z
 
-MASTER_SITES =		http://www.hdfgroup.org/ftp/HDF5/current/src/
+MASTER_SITES =		https://www.hdfgroup.org/ftp/HDF5/current/src/ \
+			https://www.hdfgroup.org/ftp/HDF5/releases/hdf5-${V}/src/
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
