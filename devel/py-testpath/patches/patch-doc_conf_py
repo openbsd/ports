@@ -1,10 +1,10 @@
-$OpenBSD: patch-doc_conf_py,v 1.1.1.1 2015/11/08 17:17:37 edd Exp $
+$OpenBSD: patch-doc_conf_py,v 1.2 2016/02/27 20:23:04 shadchin Exp $
 
 Prevent build from calling out to the internet.
 
---- doc/conf.py.orig	Sat Nov  7 15:14:03 2015
-+++ doc/conf.py	Sat Nov  7 15:14:10 2015
-@@ -31,7 +31,6 @@ import os
+--- doc/conf.py.orig	Thu Feb  4 22:26:15 2016
++++ doc/conf.py	Sun Feb 28 01:03:47 2016
+@@ -31,7 +31,6 @@ sys.path.insert(0, os.path.abspath('..'))
  # ones.
  extensions = [
      'sphinx.ext.autodoc',

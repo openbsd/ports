@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/01/11 11:50:58 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/02/27 20:23:04 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/testpath/
 lib/python${MODPY_VERSION}/site-packages/testpath/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/testpath/${MODPY_PYCACHE}/
@@ -8,6 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/testpath/${MODPY_PYCACHE}commands.${MOD
 lib/python${MODPY_VERSION}/site-packages/testpath/${MODPY_PYCACHE}env.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/testpath/${MODPY_PYCACHE}tempdir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/testpath/asserts.py
+@comment lib/python${MODPY_VERSION}/site-packages/testpath/cli-32.exe
+@comment lib/python${MODPY_VERSION}/site-packages/testpath/cli-64.exe
 lib/python${MODPY_VERSION}/site-packages/testpath/commands.py
 lib/python${MODPY_VERSION}/site-packages/testpath/env.py
 lib/python${MODPY_VERSION}/site-packages/testpath/tempdir.py
