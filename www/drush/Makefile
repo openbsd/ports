@@ -1,32 +1,35 @@
-# $OpenBSD: Makefile,v 1.10 2015/11/02 11:56:55 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2016/02/27 17:15:24 sthen Exp $
 
-COMMENT =	command line access to most of drupal
-CATEGORIES = 	www www/drupal6 devel
-MASTER_SITES =	ftp://ftp.drupal.org/pub/drupal/files/projects/
-MASTER_SITES0 =	http://download.pear.php.net/package/
-HOMEPAGE =	http://drupal.org/
-PKG_ARCH =	*
-DISTNAME =	drush-7.x-5.9
-WRKDIST =	${WRKDIR}/drush
-PKGNAME =	drush-5.9
-DISTFILES =	${DISTNAME}.tar.gz Console_Table-1.1.3.tgz:0
-MODULES =	lang/php
-MODPHP_BUILDDEP ?=	No
-REVISION =	1
+COMMENT =	command line access to most of Drupal
 
-PERMIT_PACKAGE_CDROM = Yes
+CATEGORIES =	www devel
 
-RUN_DEPENDS = 	www/drupal6/core>=6
+V=		8.0.3
+DISTNAME=	drush-$V
+EXTRACT_SUFX=	-deps.tar.xz
 
-do-build:
-	${SUBST_CMD} -m 555 -c ${FILESDIR}/drush ${WRKBUILD}/drush
-	cp ${WRKDIR}/Console_Table-1.1.3/Table.php ${WRKBUILD}/includes/table.inc
+HOMEPAGE=	http://www.drush.org/
+
+# packaged from github/drush-ops/drush tag 8.0.3 plus dependencies
+# fetched using "composer install" as of 20160227
+MASTER_SITES=	https://spacehopper.org/mirrors/
+
+MODULES=	lang/php
+
+PERMIT_PACKAGE_CDROM= Yes
+
+NO_BUILD=	Yes
+RUN_DEPENDS=	archivers/gtar
+SUBST_VARS=	MODPHP_BIN
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/drush
 	cp -R ${WRKDIST}/* ${PREFIX}/libexec/drush
-	-rm ${PREFIX}/libexec/drush/drush
-	-rm ${PREFIX}/libexec/drush/drush.bat
-	${INSTALL_PROGRAM} ${WRKBUILD}/drush ${PREFIX}/bin
+	rm ${PREFIX}/libexec/drush/drush
+	rm ${PREFIX}/libexec/drush/drush.bat
+	rm -r ${PREFIX}/libexec/drush/tests
+	${SUBST_CMD} -m 555 -c ${FILESDIR}/drush ${PREFIX}/bin/drush
+	find ${PREFIX}/libexec/drush -name '*.orig' -exec rm {} +
+	find ${PREFIX}/libexec/drush -name '.git' -type d -exec rm -rf {} +
 
 .include <bsd.port.mk>

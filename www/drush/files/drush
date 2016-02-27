@@ -1,2 +1,3 @@
 #! /bin/sh
-exec php-${MODPHP_VERSION} ${PREFIX}/libexec/drush/drush.php "$@"
+export SHARE_PREFIX=${TRUEPREFIX}
+exec ${MODPHP_BIN} ${TRUEPREFIX}/libexec/drush/drush.php "$@"
