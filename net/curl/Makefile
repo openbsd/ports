@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.114 2016/01/29 23:52:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.115 2016/02/27 21:55:51 naddy Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
 VERSION=	7.47.0
 DISTNAME=	curl-${VERSION}
+REVISION=	0
 SHARED_LIBS=	curl                 25.3     # 8.0
 CATEGORIES=	net
-HOMEPAGE=	http://curl.haxx.se/
+HOMEPAGE=	https://curl.haxx.se/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	\
-    https://github.com/bagder/curl/releases/download/curl-${VERSION:S/./_/g}/ \
-    http://curl.haxx.se/download/
+MASTER_SITES=	https://curl.haxx.se/download/ \
+		https://dl.uxnr.de/mirror/curl/
 EXTRACT_SUFX=	.tar.lzma
 
 MODULES=	devel/gettext
