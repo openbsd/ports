@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.32 2016/01/03 14:59:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2016/02/27 18:01:42 sthen Exp $
 
 # XXX should add pledge to dumpcap.
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 BROKEN-sparc64 = cc: Internal error: Illegal instruction (program cc1)
+
 COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-gtk =	graphical network protocol analyzer, Gtk+3 user-interface
 COMMENT-text =	network protocol analyzer
 
-WVER =		2.0.1
-REVISION-main =	0
+WVER =		2.0.2
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-${WVER}
 PKGNAME-main =	wireshark-${WVER}
