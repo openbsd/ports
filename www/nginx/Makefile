@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.90 2016/02/25 02:19:14 jsg Exp $
+# $OpenBSD: Makefile,v 1.91 2016/02/27 12:47:32 robert Exp $
 
 BROKEN-arm=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
-VERSION=	1.9.10
+VERSION=	1.9.12
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -13,6 +13,7 @@ MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES0=	http://dropbox.eait.uq.edu.au/uqdgwynn/distfiles/
 MASTER_SITES1=	https://github.com/nbs-system/naxsi/archive/
 MASTER_SITES2=	http://nerd.hu/distfiles/
+MASTER_SITES3=	https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/
 
 HOMEPAGE=	http://nginx.org/
 
@@ -76,14 +77,14 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--without-mail_smtp_module
 
 DISTFILES+=		${DISTNAME}${EXTRACT_SUFX}
-PATCHFILES+=		nginx_chroot-20151002.patch:2
+PATCHFILES+=		nginx-${VERSION}-chroot.patch:3
 PATCH_DIST_STRIP=	-p1
 
-LUAV=			0.9.12
+LUAV=			0.9.20
 LUADISTFILES+=		ngx_devel_kit-0.2.19.tar.gz:0
 LUADISTFILES+=		lua-nginx-module-${LUAV}.tar.gz:2
 SUBSTFILES=		conf/nginx.conf
-NAXSIDISTFILES+=	naxsi-0.53-1.tar.gz{0.53-1.tar.gz}:1
+NAXSIDISTFILES+=	naxsi-0.53-2.tar.gz{0.53-2.tar.gz}:1
 
 .if ${FLAVOR:Mpassenger}
 MODULES+=		lang/ruby
