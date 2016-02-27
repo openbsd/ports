@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/01/15 18:34:34 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.18 2016/02/27 15:37:50 jasper Exp $
 bin/ansible
 bin/ansible-doc
 bin/ansible-galaxy
@@ -145,6 +145,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/ios.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/ios.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/iosxr.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/iosxr.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/ismount.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/ismount.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/known_hosts.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/known_hosts.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/mysql.py
@@ -580,10 +582,10 @@ lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/__init__
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/helper/
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/helper/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/helper/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/helper/_fireball.py
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/helper/_fireball.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/helper/accelerate.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/helper/accelerate.pyc
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/helper/fireball.py
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/helper/fireball.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/logic/
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/logic/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/core/utilities/logic/__init__.pyc
@@ -687,6 +689,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/cloud/amazon/ec2
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/cloud/amazon/ec2_remote_facts.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/cloud/amazon/ec2_vpc_igw.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/cloud/amazon/ec2_vpc_igw.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/cloud/amazon/ec2_vpc_net_facts.py
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/cloud/amazon/ec2_vpc_net_facts.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/cloud/amazon/ec2_vpc_route_table.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/cloud/amazon/ec2_vpc_route_table.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/extras/cloud/amazon/ec2_vpc_route_table_facts.py
