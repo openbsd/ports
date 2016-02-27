@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/01/14 10:45:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.23 2016/02/27 22:46:10 juanfra Exp $
 
 V =		2.8.9
 PL =		8
@@ -18,7 +18,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c crypto ncurses ssl z
 
-MASTER_SITES =	http://invisible-mirror.net/archives/lynx/tarballs/
+MASTER_SITES =	http://lynx.invisible-island.net/current/ \
+		http://invisible-mirror.net/archives/lynx/tarballs/ \
+		http://invisible-mirror.net/archives/lynx/patches/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--datarootdir="${PREFIX}/share/doc/lynx" \
