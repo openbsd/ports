@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/04/04 17:32:17 jca Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/02/27 12:34:22 jasper Exp $
 @bin bin/lxrandr
 @man man/man1/lxrandr.1
 share/applications/lxrandr.desktop
@@ -28,9 +28,6 @@ share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/lxrandr.mo
 share/locale/es/LC_MESSAGES/lxrandr.mo
-share/locale/es_VE/
-share/locale/es_VE/LC_MESSAGES/
-share/locale/es_VE/LC_MESSAGES/lxrandr.mo
 share/locale/et/LC_MESSAGES/lxrandr.mo
 share/locale/eu/LC_MESSAGES/lxrandr.mo
 share/locale/fa/
@@ -52,7 +49,6 @@ share/locale/id/LC_MESSAGES/lxrandr.mo
 share/locale/is/
 share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/lxrandr.mo
-share/locale/it/LC_MESSAGES/lxrandr.mo
 share/locale/ja/LC_MESSAGES/lxrandr.mo
 share/locale/kk/
 share/locale/kk/LC_MESSAGES/
