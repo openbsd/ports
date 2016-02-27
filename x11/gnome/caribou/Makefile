@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.37 2015/10/13 18:38:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2016/02/27 09:05:36 ajacoutot Exp $
 
 COMMENT=		input assistive technology
 
 GNOME_PROJECT=		caribou
-GNOME_VERSION=		0.4.19
+GNOME_VERSION=		0.4.20
 
 SHARED_LIBS +=  caribou                   0.0 # 0.0
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0
-WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject clutter-1.0
-WANTLIB += cogl cogl-pango cogl-path dbus-1 drm epoxy expat ffi
-WANTLIB += fontconfig freetype gbm gdk-3 gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gee-0.8 gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 gtk-x11-2.0 harfbuzz json-glib-1.0
-WANTLIB += lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs xcb xcb-dri2 xcb-render xcb-shape
-WANTLIB += xcb-shm xcb-xfixes xkbfile xklavier xml2 z
+WANTLIB += EGL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0
+WANTLIB += atspi c cairo cairo-gobject clutter-1.0 cogl cogl-pango
+WANTLIB += cogl-path dbus-1 drm epoxy expat ffi fontconfig freetype
+WANTLIB += gbm gdk-3 gdk-x11-2.0 gdk_pixbuf-2.0 gee-0.8 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-3 gtk-x11-2.0 harfbuzz json-glib-1.0 lzma m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs xcb xcb-dri2 xcb-render xcb-shape xcb-shm
+WANTLIB += xcb-xfixes xkbfile xklavier xml2 z
 
 MODULES=		devel/gettext \
 			devel/dconf \
