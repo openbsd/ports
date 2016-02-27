@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/20 18:36:53 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/02/27 09:49:04 feinerer Exp $
 @bin bin/ginfo
 @bin bin/ginstall-info
 bin/gmakeinfo
@@ -9,12 +9,13 @@ bin/gtexi2dvi
 bin/gtexi2pdf
 bin/gtexindex
 info/ginfo-stnd.info
-info/ginfo.info
 info/gtexinfo.info
 info/gtexinfo.info-1
 info/gtexinfo.info-2
 info/gtexinfo.info-3
-@comment lib/charset.alias
+lib/texinfo/
+@comment lib/texinfo/XSParagraph.la
+lib/texinfo/XSParagraph.so
 @man man/man1/ginfo.1
 @man man/man1/ginstall-info.1
 @man man/man1/gmakeinfo.1
@@ -101,6 +102,7 @@ share/texinfo/Texinfo/Convert/Info.pm
 share/texinfo/Texinfo/Convert/Line.pm
 share/texinfo/Texinfo/Convert/NodeNameNormalization.pm
 share/texinfo/Texinfo/Convert/Paragraph.pm
+share/texinfo/Texinfo/Convert/ParagraphNonXS.pm
 share/texinfo/Texinfo/Convert/PlainTexinfo.pm
 share/texinfo/Texinfo/Convert/Plaintext.pm
 share/texinfo/Texinfo/Convert/Texinfo.pm
@@ -110,8 +112,11 @@ share/texinfo/Texinfo/Convert/Text.pm
 share/texinfo/Texinfo/Convert/TextContent.pm
 share/texinfo/Texinfo/Convert/UnFilled.pm
 share/texinfo/Texinfo/Convert/Unicode.pm
+share/texinfo/Texinfo/Convert/XSParagraph/
+share/texinfo/Texinfo/Convert/XSParagraph/TestXS.pm
 share/texinfo/Texinfo/Documentlanguages.pm
 share/texinfo/Texinfo/Encoding.pm
+share/texinfo/Texinfo/ModulePath.pm
 share/texinfo/Texinfo/Parser.pm
 share/texinfo/Texinfo/Report.pm
 share/texinfo/Texinfo/Structuring.pm
