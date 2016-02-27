@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/10/30 22:41:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/02/27 12:41:25 ajacoutot Exp $
 @pkgpath x11/lumina
 @bin bin/Lumina-DE
 @bin bin/lumina-config
@@ -20,6 +20,7 @@ share/Lumina-DE/
 share/Lumina-DE/Login.ogg
 share/Lumina-DE/Logout.ogg
 share/Lumina-DE/colors/
+share/Lumina-DE/colors/Black.qss.colors
 share/Lumina-DE/colors/Blue-Light.qss.colors
 share/Lumina-DE/colors/Grey-Dark.qss.colors
 share/Lumina-DE/colors/Lumina-Glass.qss.colors
@@ -43,6 +44,7 @@ share/applications/lumina-fm.desktop
 share/applications/lumina-info.desktop
 share/applications/lumina-screenshot.desktop
 share/applications/lumina-search.desktop
+share/applications/lumina-support.desktop
 share/examples/lumina/
 share/examples/lumina/luminaDesktop.conf.dist
 @sample ${SYSCONFDIR}/luminaDesktop.conf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/10/30 22:41:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/02/27 12:41:25 ajacoutot Exp $
 
 COMMENT=	Lumina Desktop Environment
 
@@ -7,9 +7,9 @@ GH_PROJECT=	lumina
 SHARED_LIBS +=  LuminaUtils               1.0 # 1.0
 
 WANTLIB += GL Qt5Concurrent Qt5Core Qt5Gui Qt5Multimedia Qt5MultimediaWidgets
-WANTLIB += Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Widgets
-WANTLIB += Qt5X11Extras Xdamage c m pthread xcb xcb-composite
-WANTLIB += xcb-damage xcb-ewmh xcb-icccm xcb-image xcb-util
+WANTLIB += Qt5Network Qt5Svg Qt5Widgets Qt5X11Extras Xdamage c
+WANTLIB += m pthread xcb xcb-composite xcb-damage xcb-ewmh xcb-icccm
+WANTLIB += xcb-image xcb-util
 
 MODULES=	x11/qt5
 
