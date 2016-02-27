@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/12/29 19:49:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/02/27 22:50:39 mmcc Exp $
 
 COMMENT =	tools for authors of OCaml ppx rewriters
 CATEGORIES =	devel
@@ -8,8 +8,6 @@ GH_ACCOUNT =	alainfrisch
 GH_PROJECT =	ppx_tools
 GH_TAGNAME =	ppx_tools_${V}
 PKGNAME =	ocaml-ppx-tools-${V}
-
-HOMEPAGE =	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 ALL_TARGET =    byte
 .include <bsd.port.arch.mk>

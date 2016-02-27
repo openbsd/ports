@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/08/30 16:03:42 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2016/02/27 22:50:39 mmcc Exp $
 
 COMMENT =	regular expression library for OCaml
 CATEGORIES =	devel
@@ -8,8 +8,6 @@ GH_ACCOUNT =	ocaml
 GH_PROJECT =	ocaml-re
 GH_TAGNAME =	${GH_PROJECT}-${V}
 DISTNAME =	${GH_PROJECT}-${V}
-
-HOMEPAGE =	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/12 13:15:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/02/27 22:50:39 mmcc Exp $
 
 COMMENT =		watch the command output with interval timer
 
@@ -10,8 +10,6 @@ DISTNAME =      	${GH_PROJECT}-${V}
 REVISION =		0
 
 CATEGORIES =		sysutils
-
-HOMEPAGE =		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 MAINTAINER =		YASUOKA Masahiko <yasuoka@yasuoka.net>
 

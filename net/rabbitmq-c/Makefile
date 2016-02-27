@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/29 14:39:53 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2016/02/27 22:50:39 mmcc Exp $
 
 COMMENT=	rabbitmq C library and commandline AMQP utilities
 
@@ -11,8 +11,6 @@ DISTNAME=	${GH_PROJECT}-${V}
 SHARED_LIBS =	rabbitmq 0.0 # 4.1
 
 CATEGORIES=	net
-
-HOMEPAGE=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 MAINTAINER=	Gregor Best <gbe@unobtanium.de>
 
