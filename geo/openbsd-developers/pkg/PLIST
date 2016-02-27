@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/01 16:46:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/02/27 16:33:56 landry Exp $
 share/markers/
 share/markers/OpenBSD
+share/markers/OpenBSD.geojson
