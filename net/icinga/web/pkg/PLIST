@@ -1,6 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.20 2015/12/30 10:01:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2016/02/28 12:02:16 kirby Exp $
 @conflict icinga-api-*
 @pkgpath net/icinga/core,-api
+@extra app/modules/Cronks/data/xml/extensions/pnp-host-extension.xml
+@extra app/modules/Cronks/data/xml/extensions/pnp-service-extension.xml
+@extraunexec rm -rf %D/log/*
+@extraunexec rm -rf %D/app/cache/*
+@extraunexec rm -rf %D/app/data/tmp/*
 app/
 @mode 775
 @group www
@@ -968,6 +973,8 @@ app/modules/Cronks/data/xml/extensions/
 @mode
 @group
 app/modules/Cronks/data/xml/extensions/.keep
+app/modules/Cronks/data/xml/extensions/pnp-host-extension.xml.dist
+app/modules/Cronks/data/xml/extensions/pnp-service-extension.xml.dist
 app/modules/Cronks/data/xml/grid/
 app/modules/Cronks/data/xml/grid/example-host-template.xml
 app/modules/Cronks/data/xml/grid/icinga-all-host-problems.xml

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2015/12/30 10:01:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2016/02/28 12:02:16 kirby Exp $
 
 COMMENT =	web UI for icinga
 
 V =		1.13.1
 DISTNAME =	icinga-web-$V
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	https://github.com/Icinga/icinga-web/releases/download/v$V/
 
@@ -67,5 +67,8 @@ post-install:
 	find ${WRKINST} -name '*.orig' -print0 | xargs -0r rm
 	cd ${WRKSRC}/etc/schema; pax -rw ./ ${PREFIX}/etc/schema/
 	for i in ${PREFIX}/etc/conf.d/*xml; do mv $$i $$i.dist; done
+	for i in pnp-host-extension.xml pnp-service-extension.xml; do \
+	${INSTALL_DATA} ${WRKSRC}/contrib/PNP_Integration/templateExtensions/$$i \
+	${PREFIX}/app/modules/Cronks/data/xml/extensions/$$i.dist; done
 
 .include <bsd.port.mk>
