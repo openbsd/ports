@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zh_TW,v 1.1.1.1 2016/01/17 19:05:54 zhuk Exp $
+@comment $OpenBSD: PLIST-zh_TW,v 1.2 2016/02/28 10:08:05 zhuk Exp $
 share/locale/zh_TW/LC_MESSAGES/KarbonTools.mo
 share/locale/zh_TW/LC_MESSAGES/braindump.mo
 share/locale/zh_TW/LC_MESSAGES/calligra-defaulttools.mo
@@ -24,7 +24,7 @@ share/locale/zh_TW/LC_MESSAGES/calligra_textediting_spellcheck.mo
 share/locale/zh_TW/LC_MESSAGES/calligra_textediting_thesaurus.mo
 share/locale/zh_TW/LC_MESSAGES/calligra_textinlineobject_variables.mo
 share/locale/zh_TW/LC_MESSAGES/calligrafilters.mo
-share/locale/zh_TW/LC_MESSAGES/desktop_calligra.mo
+share/locale/zh_TW/LC_MESSAGES/desktop_calligra_calligra.mo
 share/locale/zh_TW/LC_MESSAGES/flow.mo
 share/locale/zh_TW/LC_MESSAGES/karbon.mo
 share/locale/zh_TW/LC_MESSAGES/kexi.mo

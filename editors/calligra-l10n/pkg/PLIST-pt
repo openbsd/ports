@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pt,v 1.1.1.1 2016/01/17 19:05:54 zhuk Exp $
+@comment $OpenBSD: PLIST-pt,v 1.2 2016/02/28 10:08:05 zhuk Exp $
 share/doc/HTML/
 share/doc/HTML/pt/
 share/doc/HTML/pt/calligra/
@@ -61,7 +61,7 @@ share/locale/pt/LC_MESSAGES/calligra_textinlineobject_variables.mo
 share/locale/pt/LC_MESSAGES/calligraactive.mo
 share/locale/pt/LC_MESSAGES/calligrafilters.mo
 share/locale/pt/LC_MESSAGES/crashhandler.mo
-share/locale/pt/LC_MESSAGES/desktop_calligra.mo
+share/locale/pt/LC_MESSAGES/desktop_calligra_calligra.mo
 share/locale/pt/LC_MESSAGES/flow.appdata.mo
 share/locale/pt/LC_MESSAGES/flow.mo
 share/locale/pt/LC_MESSAGES/karbon.appdata.mo

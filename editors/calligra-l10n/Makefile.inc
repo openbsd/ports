@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.2 2016/01/19 17:28:20 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2016/02/28 10:08:05 zhuk Exp $
 
 CATEGORIES =		editors editors/calligra-l10n
 COMMENT =		Calligra localization pack
-VERSION =		2.9.10
+VERSION =		2.9.11
 DISTNAME =		calligra-l10n-${L10N_LANG}-${VERSION}
 
 PERMIT_PACKAGE_CDROM =	Yes

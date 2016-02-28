@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ca@valencia,v 1.1.1.1 2016/01/17 19:05:54 zhuk Exp $
+@comment $OpenBSD: PLIST-ca@valencia,v 1.2 2016/02/28 10:08:05 zhuk Exp $
 share/locale/ca@valencia/LC_MESSAGES/KarbonTools.mo
 share/locale/ca@valencia/LC_MESSAGES/braindump.appdata.mo
 share/locale/ca@valencia/LC_MESSAGES/braindump.mo
@@ -31,7 +31,7 @@ share/locale/ca@valencia/LC_MESSAGES/calligra_textinlineobject_variables.mo
 share/locale/ca@valencia/LC_MESSAGES/calligraactive.mo
 share/locale/ca@valencia/LC_MESSAGES/calligrafilters.mo
 share/locale/ca@valencia/LC_MESSAGES/crashhandler.mo
-share/locale/ca@valencia/LC_MESSAGES/desktop_calligra.mo
+share/locale/ca@valencia/LC_MESSAGES/desktop_calligra_calligra.mo
 share/locale/ca@valencia/LC_MESSAGES/flow.appdata.mo
 share/locale/ca@valencia/LC_MESSAGES/flow.mo
 share/locale/ca@valencia/LC_MESSAGES/karbon.appdata.mo
