@@ -1,26 +1,29 @@
-# $OpenBSD: Makefile,v 1.30 2015/06/23 07:50:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.31 2016/02/28 14:59:14 czarkoff Exp $
 
 COMMENT=		strip TeX/LaTeX codes from a file
 
-DISTNAME=		detex-2.8
-REVISION=		2
+DISTNAME=		opendetex-2.8.1
+PKGNAME=		detex-2.8.1
 CATEGORIES=		print
 
-HOMEPAGE=		https://www.cs.purdue.edu/homes/trinkle/detex/
+HOMEPAGE=		https://code.google.com/archive/p/opendetex/
+MASTER_SITES=		https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/opendetex/
 
-MASTER_SITES=		https://www.cs.purdue.edu/homes/trinkle/detex/ \
-			ftp://ftp.cs.purdue.edu/pub/trinkle/
-EXTRACT_SUFX=		.tar
+EXTRACT_SUFX=		.tar.bz2
 
 # NCSA/University of Illinois Open Source License
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
-NO_TEST=		Yes
-MAKE_FLAGS=		CFLAGS="${CFLAGS} -DNO_MALLOC_DECL"
+MAKE_FLAGS=		DESTDIR="${LOCALBASE}/bin" CFLAGS="${CFLAGS}"
+
+WRKDIST=		${WRKDIR}/opendetex
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/detex ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/detex.1l ${PREFIX}/man/man1/detex.1
+
+do-test:
+	cd ${WRKBUILD} && perl ${WRKSRC}/test.pl
 
 .include <bsd.port.mk>
