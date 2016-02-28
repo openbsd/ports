@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2016/01/31 20:27:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.22 2016/02/28 22:26:53 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -1414,6 +1414,8 @@ lib/calibre/calibre/gui2/actions/view.py
 lib/calibre/calibre/gui2/actions/view.pyc
 lib/calibre/calibre/gui2/add.py
 lib/calibre/calibre/gui2/add.pyc
+lib/calibre/calibre/gui2/add_filters.py
+lib/calibre/calibre/gui2/add_filters.pyc
 lib/calibre/calibre/gui2/auto_add.py
 lib/calibre/calibre/gui2/auto_add.pyc
 lib/calibre/calibre/gui2/bars.py
@@ -2497,10 +2499,14 @@ lib/calibre/calibre/srv/http_request.py
 lib/calibre/calibre/srv/http_request.pyc
 lib/calibre/calibre/srv/http_response.py
 lib/calibre/calibre/srv/http_response.pyc
+lib/calibre/calibre/srv/legacy.py
+lib/calibre/calibre/srv/legacy.pyc
 lib/calibre/calibre/srv/loop.py
 lib/calibre/calibre/srv/loop.pyc
 lib/calibre/calibre/srv/metadata.py
 lib/calibre/calibre/srv/metadata.pyc
+lib/calibre/calibre/srv/opds.py
+lib/calibre/calibre/srv/opds.pyc
 lib/calibre/calibre/srv/opts.py
 lib/calibre/calibre/srv/opts.pyc
 lib/calibre/calibre/srv/pool.py
@@ -3199,6 +3205,7 @@ share/calibre/coffee-script.js
 share/calibre/compiled_coffeescript.zip
 share/calibre/content-server/
 share/calibre/content-server/autoreload.js
+share/calibre/content-server/calibre.png
 share/calibre/content-server/empty.html
 share/calibre/content-server/font-awesome/
 share/calibre/content-server/font-awesome/FontAwesome.otf
@@ -3210,6 +3217,7 @@ share/calibre/content-server/font-awesome/fontawesome-webfont.woff
 share/calibre/content-server/font-awesome/fontawesome-webfont.woff2
 share/calibre/content-server/index.html
 share/calibre/content-server/main.js
+share/calibre/content-server/mobile.css
 share/calibre/content-server/reset.css
 share/calibre/content_server/
 share/calibre/content_server/av.jpg
@@ -3545,6 +3553,7 @@ share/calibre/localization/pykakasi/kanwadict2.pickle
 share/calibre/localization/stats.pickle
 share/calibre/metadata_sqlite.sql
 share/calibre/mime.types
+share/calibre/mozilla-ca-certs.pem
 share/calibre/quick_start/
 share/calibre/quick_start/deu.epub
 share/calibre/quick_start/eng.epub
@@ -3613,7 +3622,7 @@ share/calibre/recipes/akter_dnevnik.recipe
 share/calibre/recipes/aktualne.cz.recipe
 share/calibre/recipes/al_ahram.recipe
 share/calibre/recipes/al_jazeera.recipe
-share/calibre/recipes/al_masry_al_youm.recipe
+share/calibre/recipes/al_masry_alyoum_arabic.recipe
 share/calibre/recipes/al_monitor.recipe
 share/calibre/recipes/albert_mohler.recipe
 share/calibre/recipes/alejakomiksu_com.png
@@ -3885,7 +3894,6 @@ share/calibre/recipes/columbusdispatch.png
 share/calibre/recipes/columbusdispatch.recipe
 share/calibre/recipes/common_dreams.recipe
 share/calibre/recipes/computer_active.recipe
-share/calibre/recipes/computer_woche.recipe
 share/calibre/recipes/computerworld_pl.png
 share/calibre/recipes/computerworld_pl.recipe
 share/calibre/recipes/conowego_pl.png
@@ -4777,7 +4785,6 @@ share/calibre/recipes/list_apart.recipe
 share/calibre/recipes/livemint.png
 share/calibre/recipes/livemint.recipe
 share/calibre/recipes/living_stones.recipe
-share/calibre/recipes/loksatta.recipe
 share/calibre/recipes/lomza.png
 share/calibre/recipes/lomza.recipe
 share/calibre/recipes/london_free_press.recipe
