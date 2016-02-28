@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2016/01/17 14:55:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.16 2016/02/28 10:07:40 zhuk Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra-suite.org/
-DISTNAME =	calligra-2.9.10
-REVISION = 	0
+DISTNAME =	calligra-2.9.11
 CATEGORIES =	editors
 
 DIST_SUBDIR =	kde
@@ -171,6 +170,8 @@ CONFIGURE_ARGS +=	-DWITH_Pstoedit:BOOL=Off
 
 # XXX Silently ignore non-existent dependencies
 CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0046=OLD
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0054=OLD
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0064=OLD
 # XXX Don't treat ``DEFINITIONS`` as a built-in directory property
 CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0059=OLD
 
