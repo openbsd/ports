@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/10/05 09:29:48 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2016/02/28 00:33:45 espie Exp $
 
 V = 0.9.4
 COMMENT-client = race for the galaxy card game
@@ -13,7 +13,7 @@ MASTER_SITES = ${HOMEPAGE}
 MULTI_PACKAGES = -client #-server
 SUBPACKAGE ?= -client
 
-#REVISION-client =	
+REVISION-client = 0
 #REVISION-server =
 
 # Licence: GPL
