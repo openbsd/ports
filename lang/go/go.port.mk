@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.5 2016/01/14 15:03:08 jsing Exp $
+# $OpenBSD: go.port.mk,v 1.6 2016/02/28 13:24:16 czarkoff Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -48,9 +48,9 @@ MODGO_INSTALL_TARGET =	cp ${MODGO_WORKSPACE}/bin/* ${PREFIX}/bin
 # with library ports.
 .if ${MODGO_TYPE:L:Mlib}
 MODGO_INSTALL_TARGET =	${INSTALL_DATA_DIR} ${MODGO_PACKAGE_PATH}; \
-			cp -R ${MODGO_WORKSPACE}/pkg \
-			    ${MODGO_WORKSPACE}/src \
-			    ${MODGO_PACKAGE_PATH};
+			cp -pR ${MODGO_WORKSPACE}/src \
+			       ${MODGO_WORKSPACE}/pkg \
+				${MODGO_PACKAGE_PATH};
 .endif
 
 MODGO_TEST_TARGET =	${MODGO_TEST_CMD} ${TEST_TARGET}
