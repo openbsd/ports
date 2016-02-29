@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.16 2016/02/21 16:17:25 jsg Exp $
+# $OpenBSD: Makefile,v 1.17 2016/02/29 23:50:13 sthen Exp $
 
 COMMENT =		library for reading RAW files
 BROKEN-arm =		undefined reference to __sync_fetch_and_add_4
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 BROKEN-sparc =		undefined reference to __sync_fetch_and_add_4
 
-V =			0.16.0
+V =			0.17.1
 DISTNAME =		LibRaw-${V}
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		graphics
-REVISION =		1
 
-SHARED_LIBS +=  raw                  0.0      # 10.0
-SHARED_LIBS +=  raw_r                0.0      # 10.0
+SHARED_LIBS +=  raw                  1.0      # 15.0
+SHARED_LIBS +=  raw_r                1.0      # 15.0
 
 HOMEPAGE =		http://www.libraw.org/
 
