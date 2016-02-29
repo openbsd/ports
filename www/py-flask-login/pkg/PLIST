@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/01 20:36:00 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/02/29 14:36:36 abieber Exp $
 lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -6,5 +6,6 @@ lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_EGG_VERSION}-py${MO
 lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/version_info.json
 lib/python${MODPY_VERSION}/site-packages/flask_login.py
 lib/python${MODPY_VERSION}/site-packages/flask_login.pyc
