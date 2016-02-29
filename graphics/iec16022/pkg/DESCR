@@ -1,1 +1,7 @@
-iec16022 can produce 2D barcodes often also referenced as DataMatrix.
+A Data Matrix code (ISO/IEC 16022) is a two-dimensional matrix barcode 
+arranged in a square or rectangular format and of various sizes. It can
+encode text or numeric data (with punctuation marks in some variants),
+and supports various error-correction codes.
+
+iec16022 is a library and tool to produce these barcodes. It can output
+in various formats including ASCII, UTF-8, EPS and PNG.

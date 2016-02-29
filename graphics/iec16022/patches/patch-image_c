@@ -1,9 +1,9 @@
-$OpenBSD: patch-image_c,v 1.1 2014/11/30 05:41:34 brad Exp $
+$OpenBSD: patch-image_c,v 1.2 2016/02/29 23:43:49 sthen Exp $
 
 Replace the malloc.h header with stdlib.h.
 
---- image.c.orig	Wed Nov 19 23:08:29 2014
-+++ image.c	Wed Nov 19 23:08:48 2014
+--- image.c.orig	Thu Jun 25 21:42:24 2015
++++ image.c	Thu Feb 11 11:39:25 2016
 @@ -19,7 +19,7 @@
   */
  
@@ -12,4 +12,4 @@ Replace the malloc.h header with stdlib.h.
 +#include <stdlib.h>
  #include <string.h>
  #include <ctype.h>
- #include "image.h"
+ #ifdef _WIN32
