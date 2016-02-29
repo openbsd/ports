@@ -1,0 +1,19 @@
+Composer is a tool for dependency management in PHP. It allows you
+to declare the libraries your project depends on and it will manage
+(install/update) them for you.
+
+Composer is not a package manager in the traditional sense. It does deal
+with "packages" or libraries, but it manages them on a per-project basis,
+installing them in a directory (e.g. vendor) inside your project.
+
+Suppose:
+
+a) You have a project that depends on a number of libraries.
+b) Some of those libraries depend on other libraries.
+
+Composer:
+
+c) Enables you to declare the libraries you depend on.
+d) Finds out which versions of which packages can and need to be
+installed, and installs them (meaning it downloads them into your
+project).
