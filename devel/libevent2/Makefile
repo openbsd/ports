@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/06 21:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/02/29 13:57:10 kirby Exp $
 
 COMMENT=	event notification library
 
 V=		2.0.22
 DISTNAME=	libevent-$V-stable
 PKGNAME=	libevent-$V
+REVISION=	0
 CATEGORIES=	devel
-HOMEPAGE=	http://monkey.org/~provos/libevent/
+HOMEPAGE=	http://libevent.org/
 
 SHARED_LIBS+=	event_core      1.1	# 6.9
 SHARED_LIBS+=	event_extra     0.1	# 6.9
