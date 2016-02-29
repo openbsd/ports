@@ -1,0 +1,28 @@
+$OpenBSD: patch-lib_ipmi_ime_c,v 1.1 2016/02/29 23:45:32 sthen Exp $
+--- lib/ipmi_ime.c.orig	Thu Feb 25 21:04:12 2016
++++ lib/ipmi_ime.c	Thu Feb 25 21:05:29 2016
+@@ -435,7 +435,7 @@ static int ImeUpgrade(struct ipmi_intf *intf, char* im
+             printf("Percent: %02i,  ", shownPercent);
+             time(&current);
+             timeElapsedSecond = (current-start) + ((current-start)%60);
+-            printf("Elapsed time %02ld:%02ld\r",((current-start)/60), ((current-start)%60));
++            printf("Elapsed time %02lld:%02lld\r",(long long)((current-start)/60), (long long)((current-start)%60));
+             fflush(stdout);
+ 
+          }
+@@ -484,13 +484,13 @@ static int ImeUpgrade(struct ipmi_intf *intf, char* im
+      )
+    {
+       time(&end);
+-      printf("Update Completed in %02ld:%02ld\n",(end-start)/60, (end-start)%60);
++      printf("Update Completed in %02lld:%02lld\n",(long long)(end-start)/60, (long long)(end-start)%60);
+    }
+    else
+    {
+       time(&end);
+       printf("Update Error\n");
+-      printf("\nTime Taken %02ld:%02ld\n",(end-start)/60, (end-start)%60);
++      printf("\nTime Taken %02lld:%02lld\n",(long long)(end-start)/60, (long long)(end-start)%60);
+    }
+ 
+    return rc;

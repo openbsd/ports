@@ -1,0 +1,15 @@
+$OpenBSD: patch-include_ipmitool_ipmi_intf_h,v 1.1 2016/02/29 23:45:32 sthen Exp $
+--- include/ipmitool/ipmi_intf.h.orig	Fri Feb 19 21:01:38 2016
++++ include/ipmitool/ipmi_intf.h	Thu Feb 25 21:20:15 2016
+@@ -225,6 +225,11 @@ void ipmi_intf_session_set_retry(struct ipmi_intf * in
+ void ipmi_intf_session_cleanup(struct ipmi_intf *intf);
+ void ipmi_cleanup(struct ipmi_intf * intf);
+ 
++void ipmi_intf_set_max_request_data_size(struct ipmi_intf *, uint16_t);
++void ipmi_intf_set_max_response_data_size(struct ipmi_intf *, uint16_t);
++uint16_t ipmi_intf_get_max_request_data_size(struct ipmi_intf *);
++uint16_t ipmi_intf_get_max_response_data_size(struct ipmi_intf *);
++
+ #if defined(IPMI_INTF_LAN) || defined (IPMI_INTF_LANPLUS)
+ int  ipmi_intf_socket_connect(struct ipmi_intf * intf);
+ #endif

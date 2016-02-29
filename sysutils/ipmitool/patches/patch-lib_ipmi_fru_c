@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_ipmi_fru_c,v 1.1 2016/02/29 23:45:32 sthen Exp $
+--- lib/ipmi_fru.c.orig	Thu Feb 25 21:39:40 2016
++++ lib/ipmi_fru.c	Thu Feb 25 21:40:06 2016
+@@ -2791,7 +2791,7 @@ static void ipmi_fru_picmg_ext_print(uint8_t * fru_dat
+ 							(feature > 1) & 1,
+ 							(feature&1)?"Source":"Receiver");
+ 					printf("            Family:  0x%02x  - AccLVL: 0x%02x\n", family, accuracy);
+-					printf("            FRQ: %-9ld - min: %-9ld - max: %-9ld\n",
++					printf("            FRQ: %-9u - min: %-9u - max: %-9u\n",
+ 							freq, min_freq, max_freq);
+ 				}
+ 				printf("\n");

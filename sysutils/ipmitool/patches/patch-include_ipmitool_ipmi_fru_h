@@ -1,0 +1,10 @@
+$OpenBSD: patch-include_ipmitool_ipmi_fru_h,v 1.1 2016/02/29 23:45:32 sthen Exp $
+--- include/ipmitool/ipmi_fru.h.orig	Thu Feb 25 21:26:55 2016
++++ include/ipmitool/ipmi_fru.h	Thu Feb 25 21:27:10 2016
+@@ -619,5 +619,6 @@ static const char *section_id[4] = {
+ 
+ int ipmi_fru_main(struct ipmi_intf *intf, int argc, char **argv);
+ int ipmi_fru_print(struct ipmi_intf *intf, struct sdr_record_fru_locator *fru);
++int ipmi_spd_print_fru(struct ipmi_intf *, uint8_t);
+ 
+ #endif /* IPMI_FRU_H */

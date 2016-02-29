@@ -1,12 +1,11 @@
-$OpenBSD: patch-src_plugins_lanplus_lanplus_c,v 1.1 2015/04/30 14:27:54 sthen Exp $
---- src/plugins/lanplus/lanplus.c.orig	Thu Apr 30 15:23:08 2015
-+++ src/plugins/lanplus/lanplus.c	Thu Apr 30 15:24:19 2015
-@@ -760,7 +760,7 @@ ipmi_lan_poll_recv(struct ipmi_intf * intf)
- 
- 					if (rsp->data_len &&
- 					    rsp->payload.ipmi_response.cmd == 0x34) {
--						memcpy(rsp->data, &rsp->data[offset],
-+						memmove(rsp->data, &rsp->data[offset],
- 							(rsp->data_len-offset));
- 						if (verbose > 2)
- 							printbuf( &rsp->data[offset],
+$OpenBSD: patch-src_plugins_lanplus_lanplus_c,v 1.2 2016/02/29 23:45:32 sthen Exp $
+--- src/plugins/lanplus/lanplus.c.orig	Thu Feb 25 21:28:20 2016
++++ src/plugins/lanplus/lanplus.c	Thu Feb 25 21:28:36 2016
+@@ -57,6 +57,7 @@
+ #include <ipmitool/ipmi_lanp.h>
+ #include <ipmitool/ipmi_channel.h>
+ #include <ipmitool/ipmi_intf.h>
++#include <ipmitool/ipmi_sel.h>
+ #include <ipmitool/ipmi_strings.h>
+ #include <ipmitool/hpm2.h>
+ #include <ipmitool/bswap.h>

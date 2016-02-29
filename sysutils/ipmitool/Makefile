@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2016/02/25 22:40:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2016/02/29 23:45:32 sthen Exp $
 
 COMMENT=		manage and configure devices that support IPMI
 
-DISTNAME=		ipmitool-1.8.15
-REVISION=		4
+DISTNAME=		ipmitool-1.8.16
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://ipmitool.sourceforge.net/
@@ -20,9 +19,19 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ipmitool/}
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
-CONFIGURE_ARGS+=	--disable-intf-free \
-			--disable-intf-imb
-.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
+CONFIGURE_ARGS+=	--enable-intf-lan \
+			--disable-intf-usb \
+			--enable-intf-lanplus \
+			--enable-intf-serial \
+			--disable-intf-free \
+			--disable-intf-imb \
+			--disable-intf-lipmi \
+			--disable-intf-bmc \
+			--disable-intf-dummy
+
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS+=	--enable-intf-open
+.else
 CONFIGURE_ARGS+=	--disable-intf-open
 .endif
 

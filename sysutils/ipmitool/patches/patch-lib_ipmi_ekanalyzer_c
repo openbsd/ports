@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_ipmi_ekanalyzer_c,v 1.1 2016/02/29 23:45:32 sthen Exp $
+--- lib/ipmi_ekanalyzer.c.orig	Thu Feb 25 21:03:42 2016
++++ lib/ipmi_ekanalyzer.c	Thu Feb 25 21:04:09 2016
+@@ -2534,7 +2534,7 @@ ipmi_ek_display_fru_header_detail(char *filename)
+ 				+ (mfg_date[0]));
+ 		tval = tval * 60;
+ 		tval = tval + secs_from_1970_1996;
+-		printf("Board Mfg Date: %ld, %s", tval,
++		printf("Board Mfg Date: %lld, %s", (long long)tval,
+ 				asctime(localtime(&tval)));
+ 		board_length -= SIZE_MFG_DATE;
+ 		/* Board Mfg */

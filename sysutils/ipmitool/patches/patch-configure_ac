@@ -1,7 +1,23 @@
-$OpenBSD: patch-configure_ac,v 1.1 2015/05/25 07:52:40 yasuoka Exp $
---- configure.ac.orig	Mon Nov 24 23:00:07 2014
-+++ configure.ac	Mon May 25 11:53:33 2015
-@@ -528,7 +528,7 @@ AC_SUBST(IPMITOOL_INTF_LIB)
+$OpenBSD: patch-configure_ac,v 1.2 2016/02/29 23:45:32 sthen Exp $
+
+Disable the noisy warnings, it makes it hard to see the more important basic
+problems (missing prototypes for internal functions, etc - lots of sloppiness)
+in amongst the chaff.
+
+Prefer libedit over libreadline.
+
+--- configure.ac.orig	Fri Feb 19 21:05:13 2016
++++ configure.ac	Thu Feb 25 20:57:13 2016
+@@ -32,7 +32,7 @@ AC_CHECK_FUNCS([alarm gethostbyname getaddrinfo getifa
+ AC_CHECK_FUNCS([memmove memset strchr strdup strerror])
+ AC_CHECK_FUNCS([getpassphrase])
+ 
+-CFLAGS="$CFLAGS -Wall -Wextra -std=c99 -pedantic -Wformat -Wformat-nonliteral"
++CFLAGS="$CFLAGS -std=c99 -Wformat"
+ 
+ AM_PROG_LIBTOOL
+ LIBTOOL="$LIBTOOL --silent"
+@@ -562,7 +562,7 @@ AC_SUBST(IPMITOOL_INTF_LIB)
  if test "x$xenable_ipmishell" = "xyes"; then
  	AC_SEARCH_LIBS([tgetent], [tinfo ncurses curses readline termcap])
  	AC_SEARCH_LIBS([initscr], [ncurses curses], [have_curses=yes])
