@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/01/20 10:06:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/02/29 23:42:49 sthen Exp $
 @extraunexec rm -rf /var/www/racktables/plugins/*
 htdocs/racktables/
 htdocs/racktables/index.php
@@ -6,7 +6,7 @@ racktables/
 racktables/COPYING
 racktables/ChangeLog
 racktables/LICENSE
-racktables/README
+racktables/README.md
 racktables/gateways/
 racktables/gateways/netcat
 racktables/gateways/ssh
@@ -37,7 +37,10 @@ racktables/wwwroot/inc/functions.php
 racktables/wwwroot/inc/inc/
 racktables/wwwroot/inc/init.php
 racktables/wwwroot/inc/install.php
+racktables/wwwroot/inc/interface-cables.php
+racktables/wwwroot/inc/interface-config.php
 racktables/wwwroot/inc/interface-lib.php
+racktables/wwwroot/inc/interface-reports.php
 racktables/wwwroot/inc/interface.php
 racktables/wwwroot/inc/navigation.php
 racktables/wwwroot/inc/ophandlers.php
@@ -161,6 +164,7 @@ racktables/wwwroot/pix/tango-edit-copy-32x32.png
 racktables/wwwroot/pix/tango-edit-cut-16x16.png
 racktables/wwwroot/pix/tango-edit-cut-22x22-gray.png
 racktables/wwwroot/pix/tango-edit-cut-22x22.png
+racktables/wwwroot/pix/tango-edit-cut-32x32-gray.png
 racktables/wwwroot/pix/tango-edit-cut-32x32.png
 racktables/wwwroot/pix/tango-emblem-favorite.png
 racktables/wwwroot/pix/tango-emblem-important-32x32.png
