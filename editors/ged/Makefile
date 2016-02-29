@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/10 16:48:33 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2016/02/29 16:19:57 pascal Exp $
 
 COMMENT =		GNU version of standard text editor
 
-V =			1.12
+V =			1.13
 DISTNAME =		ed-${V}
 PKGNAME =		ged-${V}
 
