@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.766 2016/01/25 21:03:44 kili Exp $
+# $OpenBSD: Makefile,v 1.767 2016/02/29 23:52:42 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -29,6 +29,7 @@
      SUBDIR += chromium
      SUBDIR += clearsilver
      SUBDIR += cntlm
+     SUBDIR += composer
      SUBDIR += conkeror
      SUBDIR += cronolog
      SUBDIR += dansguardian
