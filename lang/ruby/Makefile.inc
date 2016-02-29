@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2016/01/07 00:51:28 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2016/02/29 20:46:53 jeremy Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -31,8 +31,3 @@ FILESDIR ?=		${.CURDIR}/../files
 FIX_RBCONFIG ?=		sed 's/INSTALL_ARGS/-c -o ${BINOWN} -g ${BINGRP}/' < \
 				${FILESDIR}/rbconfig_fix.rb >> \
 				${PREFIX}/lib/ruby/${RUBYLIBREV}/${SUB}/rbconfig.rb
-
-.if !target(post-install)
-post-install:
-	${FIX_RBCONFIG}
-.endif

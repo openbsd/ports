@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/12/18 17:38:11 jeremy Exp $
+# $OpenBSD: Makefile,v 1.25 2016/02/29 20:46:53 jeremy Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
@@ -45,24 +45,24 @@ WANTLIB-main =		c crypto ffi m ncurses ncursesw pthread readline ssl \
 LIB_DEPENDS-main =	devel/libyaml \
 			devel/libffi
 
-PSEUDO_FLAVORS=		no_x11 no_ri_docs
+PSEUDO_FLAVORS=		no_tk no_ri_docs bootstrap
 # Do not build the RI docs on slow arches
 .if ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Msparc} || ${MACHINE_ARCH:Mvax} || \
 	${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Mhppa}
-FLAVOR?=		no_ri_docs
+FLAVOR?=		no_ri_docs bootstrap
 .else
 FLAVOR?=
 .endif
 
-MULTI_PACKAGES =	-main -gdbm
+MULTI_PACKAGES =	-main -gdbm -tk -ri_docs
+.include <bsd.port.arch.mk>
 
 WANTLIB-gdbm =		c m gdbm pthread ruby20
 LIB_DEPENDS-gdbm =	databases/gdbm \
 			lang/ruby/${REV},-main>=${VERSION}.${PATCHLEVEL},<2.1
 RUN_DEPENDS-gdbm =
 
-.if !${FLAVOR:Mno_x11}
-MULTI_PACKAGES+=	-tk
+.if ${BUILD_PACKAGES:M-tk}
 CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.5 \
 			--with-tk-include=${PREFIX}/include/tk8.5 \
 			--with-tcllib=tcl85 \
@@ -74,8 +74,7 @@ LIB_DEPENDS-tk =	tk->=8.5,<8.6:x11/tk/8.5 \
 RUN_DEPENDS-tk =
 .endif
 
-.if !${FLAVOR:Mno_ri_docs}
-MULTI_PACKAGES +=	-ri_docs
+.if ${BUILD_PACKAGES:M-ri_docs}
 ALL_TARGET +=		rdoc
 INSTALL_TARGET +=	install-doc
 .endif
@@ -87,6 +86,9 @@ TEST_DEPENDS =		${FULLPKGNAME-main}:${BUILD_PKGPATH}
 pre-install:
 	find ${WRKSRC} -name '*.orig' -print0 | xargs -0r rm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby
+
+post-install:
+	${FIX_RBCONFIG}
 
 do-test:
 	-cd ${WRKSRC} && make test-sample

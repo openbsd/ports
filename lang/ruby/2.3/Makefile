@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/02/15 12:09:03 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.3 2016/02/29 20:46:54 jeremy Exp $
 
 BROKEN-hppa =		OOM when building ext/ripper/ripper.c
 BROKEN-mips64 =		miniruby spins on rbconfig.rb
@@ -50,15 +50,16 @@ LIB_DEPENDS-main =	devel/gmp \
 			devel/libyaml \
 			devel/libffi
 
-PSEUDO_FLAVORS=		no_x11 no_ri_docs
+PSEUDO_FLAVORS=		no_tk no_ri_docs bootstrap
 # Do not build the RI docs on slow arches
 .if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Mhppa} || ${MACHINE_ARCH:Msparc} || ${MACHINE_ARCH:Mvax}
-FLAVOR?=		no_ri_docs
+FLAVOR?=		no_ri_docs bootstrap
 .else
 FLAVOR?=
 .endif
 
-MULTI_PACKAGES =	-main -gdbm
+MULTI_PACKAGES =	-main -gdbm -tk -ri_docs
+.include <bsd.port.arch.mk>
 
 WANTLIB-gdbm =		c m gdbm gmp pthread ruby23
 LIB_DEPENDS-gdbm =	databases/gdbm \
@@ -66,8 +67,7 @@ LIB_DEPENDS-gdbm =	databases/gdbm \
 			lang/ruby/${REV},-main>=${VERSION},<${NEXTVER}
 RUN_DEPENDS-gdbm =
 
-.if !${FLAVOR:Mno_x11}
-MULTI_PACKAGES+=	-tk
+.if ${BUILD_PACKAGES:M-tk}
 CONFIGURE_ARGS+=	--with-tcl-include=${LOCALBASE}/include/tcl8.5 \
 			--with-tk-include=${LOCALBASE}/include/tk8.5 \
 			--with-tcllib=tcl85 \
@@ -80,8 +80,7 @@ LIB_DEPENDS-tk =	tk->=8.5,<8.6:x11/tk/8.5 \
 RUN_DEPENDS-tk =
 .endif
 
-.if !${FLAVOR:Mno_ri_docs}
-MULTI_PACKAGES +=	-ri_docs
+.if ${BUILD_PACKAGES:M-ri_docs}
 ALL_TARGET +=		rdoc
 INSTALL_TARGET +=	install-doc
 .endif

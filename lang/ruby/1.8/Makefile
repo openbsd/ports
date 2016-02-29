@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/12/18 17:36:31 jeremy Exp $
+# $OpenBSD: Makefile,v 1.38 2016/02/29 20:46:53 jeremy Exp $
 
 COMMENT-main=		object oriented script language with threads
 COMMENT-iconv=		libiconv interface for ruby
@@ -37,15 +37,16 @@ WANTLIB-main= 		c m readline termcap util crypto ncurses ssl z
 LIB_DEPENDS-main=
 RUN_DEPENDS-main=
 
-PSEUDO_FLAVORS= 	no_x11 no_ri_docs
+PSEUDO_FLAVORS= 	no_tk no_ri_docs bootstrap
 # Do not build the RI docs on slow arches
 .if ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Msparc} || ${MACHINE_ARCH:Mvax}
-FLAVOR?=		no_ri_docs
+FLAVOR?=		no_ri_docs bootstrap
 .else
 FLAVOR?=
 .endif
 
-MULTI_PACKAGES=		-main -iconv -gdbm
+MULTI_PACKAGES=		-main -iconv -gdbm -tk -ri_docs
+.include <bsd.port.arch.mk>
 
 WANTLIB-iconv =		${MODLIBICONV_WANTLIB} c m ruby18
 LIB_DEPENDS-iconv =	${MODLIBICONV_LIB_DEPENDS} \
@@ -57,8 +58,7 @@ LIB_DEPENDS-gdbm =	databases/gdbm \
 			lang/ruby/${REV},-main
 RUN_DEPENDS-gdbm =       
 
-.if !${FLAVOR:Mno_x11}
-MULTI_PACKAGES+=	-tk
+.if ${BUILD_PACKAGES:M-tk}
 CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.5 \
 			--with-tk-include=${PREFIX}/include/tk8.5 \
 			--with-X11-dir=${X11BASE}
@@ -68,11 +68,13 @@ LIB_DEPENDS-tk =		tk->=8.5,<8.6:x11/tk/8.5 \
 RUN_DEPENDS-tk =		
 .endif
 
-.if !${FLAVOR:Mno_ri_docs}
-MULTI_PACKAGES +=	-ri_docs
+.if ${BUILD_PACKAGES:M-ri_docs}
 ALL_TARGET =		all rdoc
 INSTALL_TARGET =	install install-doc
 .endif
+
+post-install:
+	${FIX_RBCONFIG}
 
 # Known regression failures in OpenSSL extension on sparc64
 # Known regression failure in IO.readpartial on all arch
