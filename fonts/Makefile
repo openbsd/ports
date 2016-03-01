@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/01/30 01:13:15 bentley Exp $
+# $OpenBSD: Makefile,v 1.28 2016/03/01 10:15:20 jasper Exp $
 
      SUBDIR =
      SUBDIR += adobe-fonts
@@ -45,6 +45,7 @@
      SUBDIR += overpass
      SUBDIR += pkfonts
      SUBDIR += powerline-fonts
+     SUBDIR += profont
      SUBDIR += roboto-fonts
      SUBDIR += ru-pscyr
      SUBDIR += ru-ptsans
