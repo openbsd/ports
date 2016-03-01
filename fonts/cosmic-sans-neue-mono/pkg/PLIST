@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:09 ajacoutot Exp $
-share/doc/cosmic-sans-neue-mono/
-share/doc/cosmic-sans-neue-mono/README.md
-share/fonts/
-@fontdir share/fonts/CosmicSansNeueMono/
-share/fonts/CosmicSansNeueMono/CosmicSansNeueMono.otf
-share/fonts/CosmicSansNeueMono/CosmicSansNeueMonoBold.otf
