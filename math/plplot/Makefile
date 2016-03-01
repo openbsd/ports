@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2015/09/18 19:03:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2016/03/01 12:24:54 kirby Exp $
 
 SHARED_ONLY =	Yes
 
@@ -44,8 +44,6 @@ myRUN_DEPENDS =	print/ghostscript/gnu-fonts
 
 MODULES +=	devel/cmake
 
-CONFIGURE_STYLE =	cmake
-
 # Until such time as the cmake ninja generator supports fortran
 USE_NINJA =		No
 
@@ -64,8 +62,6 @@ CONFIGURE_ARGS =	-D ENABLE_java=OFF \
 			-D PLD_wxwidgets=OFF
 
 DOCSRC =		${WRKSRC}/doc/docbook/src
-
-FLAVOR ?=
 
 MULTI_PACKAGES =	-main -c++ -f77
 
