@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2015/12/18 10:06:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2016/03/01 20:09:58 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
+REVISION=		0
 
 SHARED_LIBS +=  gstphotography-1.0   2.0      # 602.0
 SHARED_LIBS +=  gstbasecamerabinsrc-1.0 2.0      # 602.0
@@ -16,17 +17,19 @@ SHARED_LIBS +=  gstgl-1.0            1.0      # 602.0
 SHARED_LIBS +=  gstadaptivedemux-1.0 0.0      # 602.0
 SHARED_LIBS +=  gstbadvideo-1.0      1.0      # 602.0
 
-WANTLIB += EGL GL GLESv2 SoundTouch X11 X11-xcb Xdamage
-WANTLIB += Xext Xfixes Xrender Xxf86vm ass bz2 cairo croco-0.6
-WANTLIB += drm expat ffi fontconfig freetype fribidi gbm
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstfft-1.0 gstnet-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB += gstrtp-1.0 gstsdp-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0
-WANTLIB += harfbuzz jpeg lzma m mms nettle opus orc-0.4 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs rsvg-2 stdc++ xcb xcb-dri2 xcb-glx
-WANTLIB += xcb-render xcb-shape xcb-shm xcb-xfixes xml2 z
+WANTLIB += EGL GL GLESv2 ICE SM SoundTouch X11 X11-xcb Xcomposite
+WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += Xxf86vm ass atk-1.0 atk-bridge-2.0 atspi bz2 cairo
+WANTLIB += cairo-gobject croco-0.6 dbus-1 drm epoxy expat ffi
+WANTLIB += fontconfig freetype fribidi gbm gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstnet-1.0
+WANTLIB += gstpbutils-1.0 gstreamer-1.0 gstrtp-1.0 gstsdp-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += jpeg lzma m mms nettle opus orc-0.4 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += rsvg-2 stdc++ xcb xcb-dri2 xcb-glx xcb-render xcb-shape
+WANTLIB += xcb-shm xcb-xfixes xml2 z
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}
 
@@ -41,8 +44,11 @@ LIB_DEPENDS=		${P}/plugins-base=${V} \
 			multimedia/libass \
 			multimedia/libmms
 
+CONFIGURE_ARGS=		--with-gtk=3.0
+
 # each plugin that has an external dependency is disabled unless proved useful
-CONFIGURE_ARGS=		--disable-acm \
+# gtksink is needed by the corebird package
+CONFIGURE_ARGS +=	--disable-acm \
 			--disable-android_media \
 			--disable-apexsink \
 			--disable-apple_media \
@@ -67,7 +73,6 @@ CONFIGURE_ARGS=		--disable-acm \
 			--disable-fluidsynth \
 			--disable-gme \
 			--disable-gsm \
-			--disable-gtk3 \
 			--disable-kate \
 			--disable-ladspa \
 			--disable-libde265 \
