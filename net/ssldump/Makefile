@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2013/04/25 15:21:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/01 18:14:26 mmcc Exp $
 
 COMMENT=	SSLv3/TLS network protocol analyzer
 
 DISTNAME=	ssldump-0.9b3
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 
-HOMEPAGE=	http://www.rtfm.com/ssldump/
+HOMEPAGE=	https://github.com/adulau/ssldump
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
