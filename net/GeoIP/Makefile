@@ -1,12 +1,20 @@
-# $OpenBSD: Makefile,v 1.38 2016/01/02 22:23:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2016/03/01 00:06:57 sthen Exp $
 
-COMMENT=	find the country where IP address/hostname originates from
+COMMENT-main=	find the country where IP address/hostname originates from
+COMMENT-db=	GeoIP GeoLite database: IPv4/v6 address to country
+COMMENT-city=	GeoIP GeoLite database: IPv4/v6 address to city
+COMMENT-asn=	GeoIP GeoLite database: IPv4/v6 address to AS number
 
 V=		1.6.5
-REVISION=	2
+D=		20160229
+REVISION-main=	3
 DISTNAME=	GeoIP-$V
+PKGNAME-main=	GeoIP-$V
+PKGNAME-db=	geolite-country-$D
+PKGNAME-city=	geolite-city-$D
+PKGNAME-asn=	geolite-asn-$D
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		geolite-data-20160102.tar.bz2:0
+		geolite-data-$D.tar.xz:0
 
 SHARED_LIBS +=	GeoIP                9.0      # 7.3
 
@@ -19,10 +27,13 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c
+WANTLIB-main += c
 
 MASTER_SITES=	https://github.com/maxmind/geoip-api-c/releases/download/v$V/
 MASTER_SITES0=	https://spacehopper.org/mirrors/
+
+MULTI_PACKAGES=	-main -db -city -asn
+RUN_DEPENDS-main= net/GeoIP,-db
 
 CONFIGURE_STYLE= gnu
 SEPARATE_BUILD=	Yes
@@ -42,7 +53,7 @@ geolite:
 	set -x; \
 	t=`mktemp -d /tmp/geoip.XXXXXXXXXX`; \
 	d=`date +%Y%m%d`; \
-	f=geolite-data-$${d}.tar.bz2; \
+	f=geolite-data-$${d}.tar.xz; \
 	cd $$t; \
 	mkdir data; \
 	cd data; \
@@ -50,10 +61,10 @@ geolite:
 	echo "see http://www.maxmind.com and http://dev.maxmind.com/geoip/legacy/geolite/." >> readme.txt; \
 	echo "Distributed under Creative Commons Attribution-ShareAlike 3.0 Unported License." >> readme.txt; \
 	echo "Created at `date -z UTC` and intended for OS packaging purposes." >> readme.txt; \
-	ftp http://geolite.maxmind.com/download/geoip/database/{GeoIPv6.dat.gz,GeoLiteCountry/GeoIP.dat.gz}; \
+	ftp http://geolite.maxmind.com/download/geoip/database/{GeoIPv6,GeoLiteCity,GeoLiteCityv6-beta/GeoLiteCityv6,GeoLiteCountry/GeoIP}.dat.gz http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNum{,v6}.dat.gz; \
 	gunzip *gz; \
 	cd ..; \
-	tar cjf $$f data; \
+	tar cf - data | xz -T 0 > $$f; \
 	scp $$f naiad:mirrors/
 
 .include <bsd.port.mk>
