@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/12/23 14:46:06 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/01 09:05:33 dcoppa Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.1.5
@@ -22,17 +22,16 @@ WANTLIB += stdc++ tiff vpx z
 
 EXTRACT_SUFX =		.tar.bz2
 
-CONFIGURE_STYLE =	autoconf no-autoheader
-AUTOCONF_DIR =		${WRKSRC}/config
-AUTOCONF_VERSION =	2.69
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
-
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-gui=newgui2 \
 			--enable-upnp-natpmp
 CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/include -I${X11BASE}/include' \
 			LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib' \
 			ac_cv_prog_RPMBUILD="" \
 			ac_cv_prog_WGET=""
+
+MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/config
+WRKCONF =			${WRKSRC}/config
 
 USE_GMAKE =	Yes
 MODULES =	lang/ocaml devel/gettext
