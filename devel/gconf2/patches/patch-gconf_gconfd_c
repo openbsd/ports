@@ -1,0 +1,20 @@
+$OpenBSD: patch-gconf_gconfd_c,v 1.9 2016/03/01 09:24:20 ajacoutot Exp $
+
+From 0780809731c8ab1c364202b1900d3df106b28626 Mon Sep 17 00:00:00 2001
+From: Robert Ancell <robert.ancell@canonical.com>
+Date: Wed, 14 Oct 2015 10:09:49 +0100
+Subject: Fix some compiler warnings
+
+--- gconf/gconfd.c.orig	Thu Apr 26 03:12:49 2012
++++ gconf/gconfd.c	Mon Feb 29 10:02:10 2016
+@@ -682,10 +682,6 @@ system_bus_message_handler (DBusConnection *connection
+ 			    DBusMessage    *message,
+ 			    void           *user_data)
+ {
+-  DBusMessage *reply;
+-
+-  reply = NULL;
+-
+   if (dbus_message_is_signal (message,
+ 			      "org.gnome.GConf.Defaults",
+                               "SystemSet"))

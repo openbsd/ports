@@ -1,4 +1,14 @@
-$OpenBSD: patch-gsettings_gsettings-data-convert_c,v 1.1 2013/02/06 14:29:50 ajacoutot Exp $
+$OpenBSD: patch-gsettings_gsettings-data-convert_c,v 1.2 2016/03/01 09:24:20 ajacoutot Exp $
+
+From 0780809731c8ab1c364202b1900d3df106b28626 Mon Sep 17 00:00:00 2001
+From: Robert Ancell <robert.ancell@canonical.com>
+Date: Wed, 14 Oct 2015 10:09:49 +0100
+Subject: Fix some compiler warnings
+
+From 405f865c07261a95c8c9a09a84ab679c6dd0a330 Mon Sep 17 00:00:00 2001
+From: Colin Walters <walters@verbum.org>
+Date: Thu, 24 Oct 2013 16:27:24 -0400
+Subject: gsettings-data-convert: Warn (and fix) invalid schema paths
 
 From 98ff7acca7595f508b094506195aeffaf2e8b74c Mon Sep 17 00:00:00 2001
 From: Stefan Sauer <ensonic@users.sf.net>
@@ -6,7 +16,7 @@ Date: Wed, 23 Jan 2013 07:11:18 +0000
 Subject: mconvert: enable recursive scheme lookup and fix a crasher
 
 --- gsettings/gsettings-data-convert.c.orig	Tue Apr 10 01:58:44 2012
-+++ gsettings/gsettings-data-convert.c	Wed Feb  6 15:26:40 2013
++++ gsettings/gsettings-data-convert.c	Mon Feb 29 10:02:15 2016
 @@ -22,6 +22,7 @@
  #include <string.h>
  #include <sys/types.h>
@@ -35,3 +45,37 @@ Subject: mconvert: enable recursive scheme lookup and fix a crasher
        if (schema == NULL)
          {
            if (verbose)
+@@ -177,7 +182,23 @@ handle_file (const gchar *filename)
+         }
+ 
+       if (schema_path[1] != NULL)
+-        settings = g_settings_new_with_path (schema_path[0], schema_path[1]);
++	{
++	  char *compat_path_alloced = NULL; 
++	  char *compat_path;
++	  /* Work around broken .convert files:
++	     https://bugzilla.gnome.org/show_bug.cgi?id=704802
++	  */
++	  if (!g_str_has_suffix (schema_path[1], "/"))
++	    {
++	      g_warning ("Schema file '%s' has missing trailing / in '%s'",
++			 filename, schema_path[1]);
++	      compat_path = compat_path_alloced = g_strconcat (schema_path[1], "/", NULL);
++	    }
++	  else
++	    compat_path = schema_path[1];
++	  settings = g_settings_new_with_path (schema_path[0], compat_path);
++	  g_free (compat_path_alloced);
++	}
+       else
+         settings = g_settings_new (schema_path[0]);
+ 
+@@ -616,8 +637,6 @@ main (int argc, char *argv[])
+     { "file", 0, 0, G_OPTION_ARG_STRING, &extra_file, "perform conversions from an extra file", NULL },
+     { NULL }
+   };
+-
+-  g_type_init();
+ 
+   context = g_option_context_new ("");
+ 

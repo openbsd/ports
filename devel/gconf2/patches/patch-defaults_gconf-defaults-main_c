@@ -1,0 +1,34 @@
+$OpenBSD: patch-defaults_gconf-defaults-main_c,v 1.1 2016/03/01 09:24:20 ajacoutot Exp $
+
+From 0780809731c8ab1c364202b1900d3df106b28626 Mon Sep 17 00:00:00 2001
+From: Robert Ancell <robert.ancell@canonical.com>
+Date: Wed, 14 Oct 2015 10:09:49 +0100
+Subject: Fix some compiler warnings
+
+--- defaults/gconf-defaults-main.c.orig	Tue Aug 16 04:59:31 2011
++++ defaults/gconf-defaults-main.c	Mon Feb 29 10:02:03 2016
+@@ -107,7 +107,6 @@ get_system_bus (void)
+ {
+         GError          *error;
+         DBusGConnection *bus;
+-        DBusConnection  *connection;
+ 
+         error = NULL;
+         bus = dbus_g_bus_get (DBUS_BUS_SYSTEM, &error);
+@@ -117,7 +116,7 @@ get_system_bus (void)
+                 goto out;
+         }
+ 
+-        connection = dbus_g_connection_get_connection (bus);
++        dbus_g_connection_get_connection (bus);
+  out:
+         return bus;
+ }
+@@ -162,7 +161,6 @@ main (int argc, char **argv)
+                 g_thread_init (NULL);
+         }
+         dbus_g_thread_init ();
+-        g_type_init ();
+ 
+ 	options = g_option_context_new (NULL);
+ 	g_option_context_add_main_entries (options, entries, NULL);

@@ -1,0 +1,41 @@
+$OpenBSD: patch-backends_xml-entry_c,v 1.1 2016/03/01 09:24:20 ajacoutot Exp $
+
+From 0780809731c8ab1c364202b1900d3df106b28626 Mon Sep 17 00:00:00 2001
+From: Robert Ancell <robert.ancell@canonical.com>
+Date: Wed, 14 Oct 2015 10:09:49 +0100
+Subject: Fix some compiler warnings
+
+--- backends/xml-entry.c.orig	Tue Aug 16 04:59:31 2011
++++ backends/xml-entry.c	Mon Feb 29 10:02:03 2016
+@@ -498,10 +498,8 @@ node_set_schema_value(xmlNodePtr node,
+   
+   if (gconf_schema_get_long_desc (sc))
+     {
+-      xmlNodePtr ld_node;
+-      
+-      ld_node = xmlNewChild(found, NULL, (xmlChar *)"longdesc", 
+-                            (xmlChar *)gconf_schema_get_long_desc (sc));
++      xmlNewChild(found, NULL, (xmlChar *)"longdesc",
++                  (xmlChar *)gconf_schema_get_long_desc (sc));
+     }
+ }
+ 
+@@ -536,7 +534,6 @@ node_set_value(xmlNodePtr node, GConfValue* value)
+       break;
+     case GCONF_VALUE_STRING:
+       {
+-        xmlNodePtr child;
+         xmlChar* encoded;
+         
+         free_childs(node);
+@@ -544,8 +541,8 @@ node_set_value(xmlNodePtr node, GConfValue* value)
+         encoded = xmlEncodeEntitiesReentrant(node->doc,
+                                              (xmlChar *)gconf_value_get_string(value));
+         
+-        child = xmlNewChild(node, NULL, (xmlChar *)"stringvalue",
+-                            encoded);
++        xmlNewChild(node, NULL, (xmlChar *)"stringvalue",
++                    encoded);
+         xmlFree(encoded);
+       }
+       break;      

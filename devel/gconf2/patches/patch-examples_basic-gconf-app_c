@@ -1,0 +1,50 @@
+$OpenBSD: patch-examples_basic-gconf-app_c,v 1.1 2016/03/01 09:24:20 ajacoutot Exp $
+
+From 0780809731c8ab1c364202b1900d3df106b28626 Mon Sep 17 00:00:00 2001
+From: Robert Ancell <robert.ancell@canonical.com>
+Date: Wed, 14 Oct 2015 10:09:49 +0100
+Subject: Fix some compiler warnings
+
+--- examples/basic-gconf-app.c.orig	Tue Aug 16 04:59:31 2011
++++ examples/basic-gconf-app.c	Mon Feb 29 10:02:03 2016
+@@ -289,7 +289,7 @@ create_main_window (GConfClient *client)
+ 
+   gtk_window_set_title (GTK_WINDOW (w), "basic-gconf-app Main Window");
+   
+-  vbox = gtk_vbox_new (FALSE, 5);
++  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
+ 
+   gtk_container_add (GTK_CONTAINER (w), vbox);
+ 
+@@ -375,7 +375,7 @@ create_config_entry (GtkWidget   *prefs_dialog,
+   GtkWidget *label;
+   char *str;
+ 
+-  hbox = gtk_hbox_new (FALSE, 5);
++  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
+ 
+   label = gtk_label_new (config_key);
+   
+@@ -437,7 +437,7 @@ create_prefs_dialog (GtkWidget   *parent,
+   dialog = gtk_dialog_new_with_buttons ("basic-gconf-app Preferences",
+                                         GTK_WINDOW (parent),
+                                         0,
+-                                        GTK_STOCK_CLOSE,
++                                        "_Close",
+                                         GTK_RESPONSE_ACCEPT,
+                                         NULL);
+ 
+@@ -451,11 +451,11 @@ create_prefs_dialog (GtkWidget   *parent,
+   /* resizing doesn't grow the entries anyhow */
+   gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
+   
+-  vbox = gtk_vbox_new (FALSE, 5);
++  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
+ 
+   gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
+   
+-  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area(dialog)),
++  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area(GTK_DIALOG(dialog))),
+                       vbox, TRUE, TRUE, 0);
+ 
+   entry = create_config_entry (dialog, client, "/apps/basic-gconf-app/foo",
