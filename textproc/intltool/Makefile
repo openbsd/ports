@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2015/07/20 15:33:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/01 09:08:26 ajacoutot Exp $
 
 COMMENT=		internationalization tools
 
 V=			0.51.0
 DISTNAME=		intltool-${V}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		textproc
 
 HOMEPAGE=		https://edge.launchpad.net/intltool
