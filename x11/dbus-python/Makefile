@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.32 2015/04/04 09:21:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2016/03/01 09:11:27 ajacoutot Exp $
+
+PORTROACH=		limitw:2,even
 
 COMMENT-main =		dbus bindings for Python
 COMMENT-common =	common files for py-dbus
 
-V =			1.2.0
+V =			1.2.2
 DISTNAME =		dbus-python-${V}
 
 PKGNAME-main =		py-dbus-${V}
 FULLPKGNAME-common =	py-dbus-common-${V}
 FULLPKGPATH-common =	x11/dbus-python,-common
-
-REVISION-main =		3
-REVISION-common =	1
 
 CATEGORIES =		x11
 
@@ -38,6 +37,8 @@ MODULES =		lang/python \
 FLAVORS =		python3
 FLAVOR ?=
 
+USE_GMAKE=		Yes
+
 .if ${FLAVOR:Mpython3}
 FULLPKGNAME-main=	${PKGNAME-main:S/^py-/py3-/}
 FULLPKGPATH-main=	x11/dbus-python,-main${MODPY_FLAVOR}
@@ -58,6 +59,10 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 
 TEST_FLAGS =		LDFLAGS="-L${LOCALBASE}/lib"
 TEST_DEPENDS =		devel/py-gobject3${MODPY_FLAVOR}
+
+pre-configure:
+	sed -i "s,/bin/bash,/bin/sh,g" \
+		${WRKSRC}/test/{TestSuitePythonService.service.in,run-test.sh}
 
 post-install:
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{a,la}
