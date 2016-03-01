@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.956 2016/03/01 09:04:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.957 2016/03/01 18:15:00 mmcc Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -280,7 +280,6 @@
      SUBDIR += nfsen
      SUBDIR += ngircd
      SUBDIR += ngrep
-     SUBDIR += nicotine
      SUBDIR += nload
      SUBDIR += nmap
      SUBDIR += no-ip
