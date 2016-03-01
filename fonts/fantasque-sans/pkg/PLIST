@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/03/01 15:19:10 jasper Exp $
+@pkgpath fonts/cosmic-sans-neue-mono
+share/fonts/
+@fontdir share/fonts/fantasque-sans/
+share/fonts/fantasque-sans/FantasqueSans.ttf
+share/fonts/fantasque-sans/FantasqueSansMono-Bold.ttf
+share/fonts/fantasque-sans/FantasqueSansMono-BoldItalic.ttf
+share/fonts/fantasque-sans/FantasqueSansMono-Italic.ttf
+share/fonts/fantasque-sans/FantasqueSansMono-Regular.ttf
