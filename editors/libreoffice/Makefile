@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2015/12/18 13:31:56 robert Exp $
+# $OpenBSD: Makefile,v 1.141 2016/03/01 21:39:58 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,8 +6,8 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
-BV=		5.0
-VERSION=	${BV}.4.2
+BV=		5.1
+VERSION=	${BV}.0.3
 DISTNAME=	libreoffice-${VERSION}
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
@@ -46,7 +46,7 @@ EDISTFILES+=	libreoffice-${_dfile}-${VERSION}.tar.xz
 EXTRACT_ONLY=	${EDISTFILES:C/:[0-9]$//}
 
 DISTFILES+=	${EDISTFILES} \
-		d6eef4b4cacb2183f2bf265a5a03a354-boost_1_55_0.tar.bz2:0 \
+		boost_1_59_0.tar.bz2:0 \
 		0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz:0 \
 		0279a21fab6f245e85a6f85fea54f511-source-code-font-1.009.tar.gz:0 \
 		048751f3271906db5126ab76870444c4-commons-codec-1.9-src.zip:0 \
@@ -71,9 +71,11 @@ DISTFILES+=	${EDISTFILES} \
 		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:0 \
 		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:0 \
 		5ade6ae2a99bc1e9e57031ca88d36dad-hyphen-2.8.8.tar.gz:0 \
-		a4e565e220b5de082c23995e256e3c12-dejavu-fonts-ttf-2.34.zip:0 \
+		d8b5214d35bcd2bfcb2cffa7795b351d-dejavu-fonts-ttf-2.35.zip:0 \
 		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0 \
 		mdds_0.12.1.tar.bz2:0 \
+		aa899eff126216dafe721149fbdb511b-liblangtag-0.5.8.tar.bz2:0 \
+		language-subtag-registry-2015-08-04.tar.bz2:0 \
 		cb4207cb913c7a5a8bfa5b91234618ee-mdds_0.11.2.tar.bz2:0 \
 		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0 \
 		10d61fbaa6a06348823651b1bd7940fe-libexttextcat-3.4.4.tar.bz2:0 \
@@ -90,22 +92,23 @@ DISTFILES+=	${EDISTFILES} \
 		edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1.065R-it.tar.gz:0 \
 		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0 \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
-		graphite2-1.2.4.tgz:0 \
+		5c0c9ac0996fbb4a0e17780ff5441959-graphite2-minimal-1.3.4.tgz:0 \
 		libabw-0.1.1.tar.bz2:0 \
-		libcdr-0.1.1.tar.bz2:0 \
+		libcdr-0.1.2.tar.bz2:0 \
 		libe-book-0.1.2.tar.bz2:0 \
-		libetonyek-0.1.3.tar.bz2:0 \
+		libetonyek-0.1.6.tar.bz2:0 \
 		libfreehand-0.1.1.tar.bz2:0 \
 		libgltf-0.0.2.tar.bz2:1 \
 		libmspub-0.1.2.tar.bz2:0 \
-		libmwaw-0.3.5.tar.bz2:0 \
-		libodfgen-0.1.4.tar.bz2:0 \
+		libmwaw-0.3.7.tar.bz2:0 \
+		libodfgen-0.1.6.tar.bz2:0 \
 		libpagemaker-0.0.2.tar.bz2:0 \
-		librevenge-0.0.2.tar.bz2:0 \
-		libvisio-0.1.1.tar.bz2:0 \
+		librevenge-0.0.4.tar.bz2:0 \
+		libvisio-0.1.5.tar.bz2:0 \
 		libwpd-0.10.0.tar.bz2:0 \
-		libwpg-0.3.0.tar.bz2:0 \
-		libwps-0.4.0.tar.bz2:0
+		libwpd-0.10.1.tar.bz2:0 \
+		libwpg-0.3.1.tar.bz2:0 \
+		libwps-0.4.2.tar.bz2:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -205,7 +208,8 @@ WANTLIB-main+=	lber ldap
 WANTLIB-main+=	poppler
 WANTLIB-main+=	GLEW
 WANTLIB-main+=	GL GLU harfbuzz harfbuzz-icu
-WANTLIB-main+= lzma
+WANTLIB-main+=	lzma
+WANTLIB-main+=	cairo-gobject gmodule-2.0
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \
@@ -215,19 +219,15 @@ RUN_DEPENDS-main=	devel/desktop-file-utils \
 			textproc/clucene \
 			x11/gtk+3,-guic
 
-MODULES+=		x11/qt3
+MODULES+=		x11/qt4
 RUN_DEPENDS-kde=	editors/libreoffice
-LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
-			${MODGCC4_CPPLIBDEP} \
-			x11/kde/libs3
-WANTLIB-kde=		${MODQT_WANTLIB} \
-			X11 c estdc++ m pthread \
-			lib/kde3/kdecore \
-			lib/kde3/kdeui lib/kde3/kio \
-			lib/kde3/kabc
+LIB_DEPENDS-kde=	x11/kde4/libs \
+			${MODQT_LIB_DEPENDS} \
+			${MODGCC4_CPPLIBDEP}
 WANTLIB-kde+=		ICE SM Xext icuuc
-WANTLIB-kde+=		Xrender
 WANTLIB-kde+=		GL GLEW GLU
+WANTLIB-kde+=		X11 estdc++ glib-2.0 intl m pthread
+WANTLIB-kde+=		QtCore QtGui QtNetwork kdecore kdeui kfile kio
 
 .include <bsd.port.arch.mk>
 
@@ -255,8 +255,9 @@ AUTOMAKE_VERSION=	1.12
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		QTINC="${MODQT_INCDIR}" QTDIR="${MODQT_LIBDIR}" \
-		KDEDIR="${LOCALBASE}"
+		KDE4INC="${LOCALBASE}/include/kde4" KDE4LIB="${LOCALBASE}/lib/kde4/libs"\
+		QT4DIR="${LOCALBASE}/lib/qt4" QT4LIB="${LOCALBASE}/qt4" \
+		QT4INC="${LOCALBASE}/include/X11/qt4"
 
 CONFIGURE_ARGS+=\
 		--disable-coinmp \
@@ -267,19 +268,17 @@ CONFIGURE_ARGS+=\
 		--disable-fetch-external \
 		--disable-gconf \
 		--disable-gnome-vfs \
-		--disable-kde4 \
 		--disable-lockdown \
 		--disable-odk \
 		--disable-randr-link \
 		--disable-firebird-sdbc \
-		--disable-liblangtag \
 		--disable-mergelibs \
 		--disable-packagekit \
 		--disable-dependency-tracking \
 		--disable-online-update \
 		--disable-orcus \
 		--enable-gio \
-		--enable-kde \
+		--enable-kde4 \
 		--enable-systray \
 		--enable-release-build \
 		--enable-cairo-canvas \

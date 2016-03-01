@@ -1,0 +1,12 @@
+$OpenBSD: patch-rsc_Executable_rsc_mk,v 1.1 2016/03/01 21:39:58 robert Exp $
+--- rsc/Executable_rsc.mk.orig.port	Fri Feb 26 18:57:13 2016
++++ rsc/Executable_rsc.mk	Sat Feb 27 11:01:00 2016
+@@ -79,4 +79,8 @@ $(eval $(call gb_Executable_add_defs,rsc,\
+ ))
+ endif
+ 
++$(eval $(call gb_Executable_use_externals,rsc,\
++	liblangtag \
++))
++
+ # vim: set noet sw=4 ts=4:

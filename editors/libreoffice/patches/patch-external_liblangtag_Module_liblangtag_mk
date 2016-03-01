@@ -1,0 +1,20 @@
+$OpenBSD: patch-external_liblangtag_Module_liblangtag_mk,v 1.1 2016/03/01 21:39:58 robert Exp $
+--- external/liblangtag/Module_liblangtag.mk.orig.port	Fri Feb 26 19:24:09 2016
++++ external/liblangtag/Module_liblangtag.mk	Fri Feb 26 19:24:35 2016
+@@ -11,8 +11,15 @@ $(eval $(call gb_Module_Module,liblangtag))
+ 
+ $(eval $(call gb_Module_add_targets,liblangtag,\
+ 	UnpackedTarball_langtag \
+-	ExternalProject_langtag \
+ 	ExternalPackage_liblangtag_data \
++	ExternalProject_langtag \
+ ))
++
++
++ifneq ($(COM),MSC)
++$(eval $(call gb_Module_add_targets,liblangtag,\
++	ExternalPackage_liblangtag \
++))
++endif
+ 
+ # vim: set noet sw=4 ts=4:

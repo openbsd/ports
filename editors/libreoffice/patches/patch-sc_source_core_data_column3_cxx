@@ -1,9 +1,9 @@
-$OpenBSD: patch-sc_source_core_data_column3_cxx,v 1.4 2014/10/10 17:13:10 robert Exp $
---- sc/source/core/data/column3.cxx.orig.port	Fri Aug 22 16:22:41 2014
-+++ sc/source/core/data/column3.cxx	Mon Sep  1 23:26:02 2014
+$OpenBSD: patch-sc_source_core_data_column3_cxx,v 1.5 2016/03/01 21:39:58 robert Exp $
+--- sc/source/core/data/column3.cxx.orig.port	Wed Jan 27 01:58:25 2016
++++ sc/source/core/data/column3.cxx	Wed Feb 10 14:23:02 2016
 @@ -52,6 +52,8 @@
  
- #include <boost/scoped_ptr.hpp>
+ #include <memory>
  
 +typedef long ptrdiff_t;
 +

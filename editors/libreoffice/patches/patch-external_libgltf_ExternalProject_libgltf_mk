@@ -1,7 +1,7 @@
-$OpenBSD: patch-external_libgltf_ExternalProject_libgltf_mk,v 1.1 2015/05/26 08:44:58 robert Exp $
---- external/libgltf/ExternalProject_libgltf.mk.orig.port	Mon May 25 10:27:31 2015
-+++ external/libgltf/ExternalProject_libgltf.mk	Mon May 25 10:27:34 2015
-@@ -57,6 +57,7 @@ ifneq (,$(gb_ENABLE_DBGUTIL))
+$OpenBSD: patch-external_libgltf_ExternalProject_libgltf_mk,v 1.2 2016/03/01 21:39:58 robert Exp $
+--- external/libgltf/ExternalProject_libgltf.mk.orig.port	Wed Jan 27 01:58:25 2016
++++ external/libgltf/ExternalProject_libgltf.mk	Wed Feb 10 14:23:02 2016
+@@ -56,6 +56,7 @@ ifneq (,$(gb_ENABLE_DBGUTIL))
  libgltf_CPPFLAGS+=-D_GLIBCXX_DEBUG
  endif
  endif

@@ -1,12 +1,34 @@
-$OpenBSD: patch-external_liblangtag_ExternalProject_langtag_mk,v 1.2 2015/09/29 16:10:48 robert Exp $
---- external/liblangtag/ExternalProject_langtag.mk.orig.port	Sun Sep 27 12:20:51 2015
-+++ external/liblangtag/ExternalProject_langtag.mk	Sun Sep 27 12:20:57 2015
-@@ -28,7 +28,7 @@ $(call gb_ExternalProject_get_state_target,langtag,bui
+$OpenBSD: patch-external_liblangtag_ExternalProject_langtag_mk,v 1.3 2016/03/01 21:39:58 robert Exp $
+--- external/liblangtag/ExternalProject_langtag.mk.orig.port	Sat Feb 27 10:57:04 2016
++++ external/liblangtag/ExternalProject_langtag.mk	Sat Feb 27 11:06:55 2016
+@@ -22,14 +22,18 @@ $(eval $(call gb_ExternalProject_register_targets,lang
+ # Results in "cl : Command line error D8003 : missing source filename"
+ $(call gb_ExternalProject_get_state_target,langtag,build):
+ 	$(call gb_ExternalProject_run,build,\
+-		MAKE=$(MAKE) ./configure --disable-modules --disable-test --disable-introspection --disable-shared --enable-static --with-pic \
++		MAKE=$(MAKE) ./configure --disable-modules --disable-test --disable-introspection --with-pic \
++		$(if $(or $(DISABLE_DYNLOADING),$(filter MSC,$(COM))), \
++			--disable-shared --enable-static, \
++			--enable-shared --disable-static) \
+ 		$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
+ 		$(if $(filter TRUE,$(HAVE_GCC_BUILTIN_ATOMIC)),"lt_cv_has_atomic=yes","lt_cv_has_atomic=no") \
+ 		$(if $(CROSS_COMPILING),--build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM) "ac_cv_va_copy=no") \
  		LIBXML2_CFLAGS="$(LIBXML_CFLAGS)" \
  		LIBXML2_LIBS="$(if $(filter WNTMSC,$(OS)$(COM)),-L$(call gb_UnpackedTarball_get_dir,xml2)/win32/bin.msvc -llibxml2,$(LIBXML_LIBS))" \
++		CPPFLAGS="-fPIC -DPIC" \
  		$(if $(filter MACOSX,$(OS)),--prefix=/@.__________________________________________________OOO) \
 -		$(if $(filter-out LINUX FREEBSD,$(OS)),,LDFLAGS="-Wl$(COMMA)-z$(COMMA)origin -Wl$(COMMA)-rpath,\\"\$$\$$ORIGIN) \
-+		$(if $(filter-out OPENBSD LINUX FREEBSD,$(OS)),,LDFLAGS="-Wl$(COMMA)-z$(COMMA)origin -Wl$(COMMA)-rpath,\\"\$$\$$ORIGIN) \
++		$(if $(filter-out OPENBSD LINUX FREEBSD,$(OS)),,LDFLAGS="-fPIC -DPIC -Wl$(COMMA)-z$(COMMA)origin -Wl$(COMMA)-rpath,\\"\$$\$$ORIGIN) \
  		$(if $(filter-out SOLARIS,$(OS)),,LDFLAGS="-Wl$(COMMA)-z$(COMMA)origin -Wl$(COMMA)-R$(COMMA)\\"\$$\$$ORIGIN) \
  		$(if $(filter-out WNTGCC,$(OS)$(COM)),,LDFLAGS="-Wl$(COMMA)--enable-runtime-pseudo-reloc-v2") \
  		&& $(if $(filter WNTMSC,$(OS)$(COM)),\
+@@ -38,5 +42,9 @@ $(call gb_ExternalProject_get_state_target,langtag,bui
+ 		   $(if $(verbose),V=1) \
+ 		   $(gb_Helper_set_ld_path) \
+ 		   $(MAKE) \
++		$(if $(filter MACOSX,$(OS)),\
++			&& $(PERL) $(SRCDIR)/solenv/bin/macosx-change-install-names.pl shl OOO \
++				$(EXTERNAL_WORKDIR)/liblangtag/.libs/liblangtag.1.dylib \
++		) \
+ 	)
+ # vim: set noet sw=4 ts=4:

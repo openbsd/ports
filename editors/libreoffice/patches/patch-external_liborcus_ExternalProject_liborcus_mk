@@ -1,6 +1,6 @@
-$OpenBSD: patch-external_liborcus_ExternalProject_liborcus_mk,v 1.2 2015/09/29 16:10:48 robert Exp $
---- external/liborcus/ExternalProject_liborcus.mk.orig.port	Thu Sep 17 15:33:12 2015
-+++ external/liborcus/ExternalProject_liborcus.mk	Sun Sep 27 18:59:01 2015
+$OpenBSD: patch-external_liborcus_ExternalProject_liborcus_mk,v 1.3 2016/03/01 21:39:58 robert Exp $
+--- external/liborcus/ExternalProject_liborcus.mk.orig.port	Wed Jan 27 01:58:25 2016
++++ external/liborcus/ExternalProject_liborcus.mk	Wed Feb 10 14:23:02 2016
 @@ -38,7 +38,8 @@ ifneq ($(SYSTEM_ZLIB),)
  liborcus_LIBS+=-lz
  endif
@@ -19,5 +19,5 @@ $OpenBSD: patch-external_liborcus_ExternalProject_liborcus_mk,v 1.2 2015/09/29 1
 +liborcus_CPPFLAGS += -fPIC -DPIC
 +liborcus_LDFLAGS += -fPIC -DPIC
  
- $(call gb_ExternalProject_get_state_target,liborcus,build) :
- 	$(call gb_ExternalProject_run,build,\
+ ifeq ($(OS),LINUX)
+ liborcus_LDFLAGS+=-Wl,-z,origin -Wl,-rpath,\$$$$ORIGIN

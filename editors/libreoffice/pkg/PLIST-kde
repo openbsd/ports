@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST-kde,v 1.8 2015/03/20 22:47:41 naddy Exp $
-lib/libreoffice/program/kde-open-url
-@bin lib/libreoffice/program/kdefilepicker
-lib/libreoffice/program/libkab1lo.so
-lib/libreoffice/program/libkabdrv1lo.so
-lib/libreoffice/program/libkdebe1lo.so
-lib/libreoffice/program/libvclplug_kdelo.so
+@comment $OpenBSD: PLIST-kde,v 1.9 2016/03/01 21:39:58 robert Exp $
+lib/libreoffice/program/kde4-open-url
+lib/libreoffice/program/libkde4be1lo.so
+lib/libreoffice/program/libvclplug_kde4lo.so

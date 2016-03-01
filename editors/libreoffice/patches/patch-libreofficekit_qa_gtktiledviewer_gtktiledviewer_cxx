@@ -1,11 +1,11 @@
-$OpenBSD: patch-libreofficekit_qa_gtktiledviewer_gtktiledviewer_cxx,v 1.2 2015/09/29 16:10:48 robert Exp $
---- libreofficekit/qa/gtktiledviewer/gtktiledviewer.cxx.orig.port	Thu Sep 17 15:33:12 2015
-+++ libreofficekit/qa/gtktiledviewer/gtktiledviewer.cxx	Sun Sep 27 12:18:17 2015
+$OpenBSD: patch-libreofficekit_qa_gtktiledviewer_gtktiledviewer_cxx,v 1.3 2016/03/01 21:39:58 robert Exp $
+--- libreofficekit/qa/gtktiledviewer/gtktiledviewer.cxx.orig.port	Wed Jan 27 01:58:25 2016
++++ libreofficekit/qa/gtktiledviewer/gtktiledviewer.cxx	Wed Feb 10 14:23:02 2016
 @@ -9,6 +9,7 @@
  
  #include <assert.h>
  #include <stdio.h>
 +#include <stdlib.h>
  #include <string.h>
+ #include <pwd.h>
  #include <string>
- #include <map>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.17 2015/09/29 16:10:49 robert Exp $
+@comment $OpenBSD: PLIST-java,v 1.18 2016/03/01 21:39:58 robert Exp $
 lib/libreoffice/program/JREProperties.class
 lib/libreoffice/program/classes/
 lib/libreoffice/program/classes/ScriptFramework.jar
@@ -111,10 +111,6 @@ lib/libreoffice/share/extensions/wiki-publisher/WikiEditor/dialog.xlb
 lib/libreoffice/share/extensions/wiki-publisher/WikiEditor/script.xlb
 lib/libreoffice/share/extensions/wiki-publisher/WikiExtension.xcs
 lib/libreoffice/share/extensions/wiki-publisher/WikiExtension.xcu
-lib/libreoffice/share/extensions/wiki-publisher/commons-codec-1.9.jar
-lib/libreoffice/share/extensions/wiki-publisher/commons-httpclient${MODPY_BIN_SUFFIX}.1.jar
-lib/libreoffice/share/extensions/wiki-publisher/commons-lang3${MODPY_BIN_SUFFIX}.3.1.jar
-lib/libreoffice/share/extensions/wiki-publisher/commons-logging-1.2.jar
 lib/libreoffice/share/extensions/wiki-publisher/components.rdb
 lib/libreoffice/share/extensions/wiki-publisher/description-en-US.txt
 lib/libreoffice/share/extensions/wiki-publisher/description.xml
