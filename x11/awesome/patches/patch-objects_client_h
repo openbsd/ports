@@ -1,0 +1,34 @@
+$OpenBSD: patch-objects_client_h,v 1.7 2016/03/01 11:42:24 dcoppa Exp $
+
+commit e54d911a94697eb5fd5b7d5ac2a72e4d3be6194b
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sun Feb 28 13:29:25 2016 +0100
+
+Make client key bindings for e.g. xeyes work again
+
+Instead of focusing the root window, we now create a "focus window" inside of
+our frame window. This window is placed so that it is not visible, but we can
+grab key bindings on it to simulate the window having the input focus.
+
+Fixes: https://github.com/awesomeWM/awesome/issues/699
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- objects/client.h.orig	Sat Jan 30 14:55:18 2016
++++ objects/client.h	Tue Mar  1 11:24:18 2016
+@@ -56,6 +56,8 @@ typedef enum {
+ struct client_t
+ {
+     WINDOW_OBJECT_HEADER
++    /** Window we use for input focus and no-input clients */
++    xcb_window_t nofocus_window;
+     /** Client logical screen */
+     screen_t *screen;
+     /** Client name */
+@@ -137,6 +139,7 @@ LUA_OBJECT_FUNCS(client_class, client_t, client)
+ 
+ bool client_maybevisible(client_t *);
+ client_t * client_getbywin(xcb_window_t);
++client_t * client_getbynofocuswin(xcb_window_t);
+ client_t * client_getbyframewin(xcb_window_t);
+ 
+ void client_ban(client_t *);

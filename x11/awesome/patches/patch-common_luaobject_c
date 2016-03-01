@@ -1,0 +1,33 @@
+$OpenBSD: patch-common_luaobject_c,v 1.1 2016/03/01 11:42:24 dcoppa Exp $
+
+commit 89a29b540426feefc8546cd47fc60a7d9e49f3f0
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Feb 17 19:07:06 2016 +0100
+
+Fix arguments to luaL_checkstack()
+
+The argument to luaL_checkstack() is the amount of new stack to make available,
+not the new size of the stack. Thus, remove the addition of lua_gettop(L) here.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- common/luaobject.c.orig	Sat Jan 30 14:55:18 2016
++++ common/luaobject.c	Tue Mar  1 11:24:18 2016
+@@ -218,7 +218,7 @@ signal_object_emit(lua_State *L, signal_array_t *arr, 
+     if(sigfound)
+     {
+         int nbfunc = sigfound->sigfuncs.len;
+-        luaL_checkstack(L, lua_gettop(L) + nbfunc + nargs + 1, "too much signal");
++        luaL_checkstack(L, nbfunc + nargs + 1, "too much signal");
+         /* Push all functions and then execute, because this list can change
+          * while executing funcs. */
+         foreach(func, sigfound->sigfuncs)
+@@ -263,7 +263,7 @@ luaA_object_emit_signal(lua_State *L, int oud,
+     if(sigfound)
+     {
+         int nbfunc = sigfound->sigfuncs.len;
+-        luaL_checkstack(L, lua_gettop(L) + nbfunc + nargs + 2, "too much signal");
++        luaL_checkstack(L, nbfunc + nargs + 2, "too much signal");
+         /* Push all functions and then execute, because this list can change
+          * while executing funcs. */
+         foreach(func, sigfound->sigfuncs)

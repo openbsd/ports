@@ -1,4 +1,4 @@
-$OpenBSD: patch-awesome_c,v 1.15 2016/01/18 09:50:09 dcoppa Exp $
+$OpenBSD: patch-awesome_c,v 1.16 2016/03/01 11:42:24 dcoppa Exp $
 
 commit 635223b5fe599d94de4ab44d27500041f121e081
 Author: Uli Schlachter <psychon@znc.in>
@@ -12,8 +12,24 @@ Hopefully, this fixes floating clients moving around across a restart.
 
 Signed-off-by: Uli Schlachter <psychon@znc.in>
 
---- awesome.c.orig	Fri Jan 15 16:51:19 2016
-+++ awesome.c	Mon Jan 18 09:47:55 2016
+commit bf73f78eea61d4a0e93e5da5e6d89e1bdca2e816
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Wed Feb 17 18:40:01 2016 +0100
+
+Check that the Lua stack is empty in the main loop
+
+The Lua stack is a finite resource and everything that pushes something there
+should also clean up. This is not a problem for functions that are called by
+Lua, because their "stack frame" is freed when they return. However, in global
+context, Lua does not and cannot automatically clean up for us. Thus, it makes
+sense to print a warning in this case.
+
+(Additionally, this cleans up the stack if something is left)
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- awesome.c.orig	Sat Jan 30 14:55:18 2016
++++ awesome.c	Tue Mar  1 11:24:18 2016
 @@ -89,6 +89,13 @@ awesome_atexit(bool restart)
                          globalconf.screen->root,
                          AWESOME_CLIENT_ORDER, XCB_ATOM_WINDOW, 32, n, wins);
@@ -28,3 +44,17 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      a_dbus_cleanup();
  
      systray_cleanup();
+@@ -284,6 +291,13 @@ a_glib_poll(GPollFD *ufds, guint nfsd, gint timeout)
+ 
+     /* Do all deferred work now */
+     awesome_refresh();
++
++    /* Check if the Lua stack is the way it should be */
++    if (lua_gettop(globalconf.L) != 0) {
++        warn("Something was left on the Lua stack, this is a bug!");
++        luaA_dumpstack(globalconf.L);
++        lua_settop(globalconf.L, 0);
++    }
+ 
+     /* Check how long this main loop iteration took */
+     gettimeofday(&now, NULL);
