@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2016/01/25 10:26:10 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.35 2016/03/01 10:13:57 dcoppa Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
 DISTNAME =	rxvt-unicode-9.22
+REVISION =	0
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -38,5 +39,9 @@ CONFIGURE_ARGS =	--enable-256-color \
 			--enable-wtmp
 CONFIGURE_ENV +=	CPPFLAGS="-I${X11BASE}/include" \
 			pt_cv_tty_group=yes
+
+.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "sparc"
+CXXFLAGS +=	-DEV_NO_SMP
+.endif
 
 .include <bsd.port.mk>
