@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.955 2016/03/01 09:03:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.956 2016/03/01 09:04:31 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -548,6 +548,7 @@
      SUBDIR += py-pcapy
      SUBDIR += py-raet
      SUBDIR += py-s3transfer
+     SUBDIR += py-s3transfer,python3
      SUBDIR += py-snmp
      SUBDIR += py-socketio-client
      SUBDIR += py-socketio-client,python3
