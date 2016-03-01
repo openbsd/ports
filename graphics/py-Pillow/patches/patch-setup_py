@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.5 2015/06/05 14:26:22 sthen Exp $
---- setup.py.orig	Thu Apr  2 11:05:22 2015
-+++ setup.py	Fri Jun  5 11:54:21 2015
-@@ -312,6 +312,13 @@ class pil_build_ext(build_ext):
+$OpenBSD: patch-setup_py,v 1.6 2016/03/01 01:02:30 sthen Exp $
+--- setup.py.orig	Thu Feb  4 08:30:14 2016
++++ setup.py	Sun Feb 28 21:18:38 2016
+@@ -320,6 +320,13 @@ class pil_build_ext(build_ext):
  
          if _tkinter:
              TCL_VERSION = _tkinter.TCL_VERSION[:3]
@@ -15,32 +15,15 @@ $OpenBSD: patch-setup_py,v 1.5 2015/06/05 14:26:22 sthen Exp $
  
          if _tkinter and not TCL_ROOT:
              # we have Tkinter but the TCL_ROOT variable was not set;
-@@ -352,6 +359,11 @@ class pil_build_ext(build_ext):
+@@ -359,6 +366,11 @@ class pil_build_ext(build_ext):
+ 
          _add_directory(library_dirs, "/usr/lib")
          _add_directory(include_dirs, "/usr/include")
- 
++
 +        _add_directory(library_dirs, os.path.join(os.getenv("LOCALBASE"), "lib"))
 +        _add_directory(include_dirs, os.path.join(os.getenv("LOCALBASE"), "include"))
 +        _add_directory(library_dirs, os.path.join(os.getenv("X11BASE"), "lib"))
 +        _add_directory(include_dirs, os.path.join(os.getenv("X11BASE"), "include"))
-+
+ 
          # on Windows, look for the OpenJPEG libraries in the location that
          # the official installer puts them
-         if sys.platform == "win32":
-@@ -547,7 +559,7 @@ class pil_build_ext(build_ext):
-             if feature.freetype_version == 20:
-                 defs.append(("USE_FREETYPE_2_0", None))
-             exts.append(Extension(
--                "PIL._imagingft", ["_imagingft.c"], libraries=["freetype"],
-+                "PIL._imagingft", ["_imagingft.c"], libraries=["freetype", "z"],
-                 define_macros=defs))
- 
-         if os.path.isfile("_imagingtiff.c") and feature.tiff:
-@@ -753,7 +765,6 @@ setup(
-     ext_modules=[Extension("PIL._imaging", ["_imaging.c"])],
-     include_package_data=True,
-     packages=find_packages(),
--    scripts=glob.glob("Scripts/pil*.py"),
-     test_suite='nose.collector',
-     keywords=["Imaging", ],
-     license='Standard PIL License',

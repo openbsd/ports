@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2016/02/02 23:08:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/01 01:02:30 sthen Exp $
 
 COMMENT=		Python Imaging Library (fork)
 
-MODPY_EGG_VERSION=	2.8.1
+MODPY_EGG_VERSION=	3.1.1
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
-REVISION=		1
 
-HOMEPAGE=		http://python-pillow.github.io/
+HOMEPAGE=		http://python-pillow.org/
 
 # PIL Software License
 # Permission to use, copy, modify and distribute freely.
@@ -46,9 +45,6 @@ SUBST_VARS+=		INCL_DIR MODPY_FLAVOR
 INCL_DIR=		${MODPY_INCDIR:S/${LOCALBASE}\///}
 
 post-install:
-	for s in ${WRKSRC}/Scripts/*.py; do \
-		${INSTALL_SCRIPT} $$s ${PREFIX}/bin/`basename $$s .py`; \
-	done
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_INCDIR}
 	${INSTALL_DATA} ${WRKSRC}/libImaging/{ImPlatform,Imaging}.h ${WRKINST}${MODPY_INCDIR}
 .if ${FLAVOR:Mpython3}
