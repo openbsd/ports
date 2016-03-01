@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/01/29 07:39:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/03/01 09:03:46 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -95,6 +95,16 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/__init_
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/addmodel.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/addmodel.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/configure.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/configure.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/get.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/get.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/list.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/list.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/set.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/set.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/writer.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/configure/writer.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/__init__.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/datapipeline/__init__.pyc
@@ -179,6 +189,13 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emr/terminateclus
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/emr/terminateclusters.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/flatten.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/flatten.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/__init__.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/getlog.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/getlog.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/uploadbuild.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/gamelift/uploadbuild.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/generatecliskeleton.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/generatecliskeleton.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/globalargs.py
@@ -587,6 +604,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-reserved-i
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-reserved-instances-offerings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-reserved-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-route-tables.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-scheduled-instance-availability.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-scheduled-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-security-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-snapshot-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-snapshots.rst
@@ -642,6 +661,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/monitor-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/move-address-to-vpc.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-reserved-instances-offering.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-scheduled-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reboot-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/register-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reject-vpc-peering-connection.rst
@@ -661,6 +681,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/restore-address-to-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/revoke-security-group-egress.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/revoke-security-group-ingress.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/run-instances.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/run-scheduled-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/start-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/stop-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/terminate-instances.rst
