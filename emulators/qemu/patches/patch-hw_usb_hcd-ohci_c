@@ -1,11 +1,11 @@
-$OpenBSD: patch-hw_usb_hcd-ohci_c,v 1.1 2016/02/20 22:46:46 ajacoutot Exp $
+$OpenBSD: patch-hw_usb_hcd-ohci_c,v 1.2 2016/03/01 10:18:25 ajacoutot Exp $
 
-usb: ohci avoid multiple eof timers
+ohci: allocate timer only once.
 
-When transitioning an OHCI controller to the OHCI_USB_OPERATIONAL
-state, it creates an eof timer object in 'ohci_bus_start'.
-It does not check if one already exists. This results in memory
-leakage and null dereference issue. Add a check to avoid it.
+Allocate timer once, at init time, instead of allocating/freeing
+it all the time when starting/stopping the bus.  Simplifies the
+code, also fixes bugs (memory leak) due to missing checks whenever
+the time is already allocated or not.
 
 CVE-2016-2391
 
