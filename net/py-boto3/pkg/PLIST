@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/07 08:17:56 ajacoutot Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@comment $OpenBSD: PLIST,v 1.2 2016/03/01 09:01:59 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/boto3/
 lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -98,7 +96,9 @@ lib/python${MODPY_VERSION}/site-packages/boto3/ec2/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}createtags.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}deletetags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/createtags.py
+lib/python${MODPY_VERSION}/site-packages/boto3/ec2/deletetags.py
 lib/python${MODPY_VERSION}/site-packages/boto3/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/__init__.py
