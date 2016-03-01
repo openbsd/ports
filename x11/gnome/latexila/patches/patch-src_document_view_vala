@@ -1,4 +1,14 @@
-$OpenBSD: patch-src_document_view_vala,v 1.3 2016/01/18 12:50:52 ajacoutot Exp $
+$OpenBSD: patch-src_document_view_vala,v 1.4 2016/03/01 09:06:43 ajacoutot Exp $
+
+From 17fa1977ff45e48ba9495ed775d83c3d16f3d76b Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Wilmet?= <swilmet@gnome.org>
+Date: Mon, 1 Feb 2016 14:54:10 +0100
+Subject: spell: gspell update for InlineCheckerText -> InlineCheckerTextView
+
+From d8ae45d5ea29b0766b5db21739300e3d272c6848 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Wilmet?= <swilmet@gnome.org>
+Date: Mon, 1 Feb 2016 14:10:39 +0100
+Subject: spell: gspell update for NavigatorText -> NavigatorTextView rename
 
 From ecfa30f370d0f770095d7b0f1543fc1a305b689e Mon Sep 17 00:00:00 2001
 From: Sebastien Wilmet <swilmet@gnome.org>
@@ -41,7 +51,7 @@ Date: Sun, 13 Dec 2015 18:56:51 +0100
 Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
 
 --- src/document_view.vala.orig	Sat Dec 19 17:37:05 2015
-+++ src/document_view.vala	Mon Jan 18 13:43:48 2016
++++ src/document_view.vala	Thu Feb 25 11:56:36 2016
 @@ -1,7 +1,7 @@
  /*
   * This file is part of LaTeXila.
@@ -96,7 +106,7 @@ Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
 +
          setup_inline_spell_checker ();
  
-+        Gspell.InlineCheckerText inline_checker =
++        Gspell.InlineCheckerTextView inline_checker =
 +            Gspell.text_view_get_inline_checker (this as TextView);
 +        inline_checker.notify["enabled"].connect (inline_checker_enabled_notify_cb);
 +
@@ -154,7 +164,7 @@ Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
 -            activate_inline_spell_checker ();
 -        else
 -            deactivate_inline_spell_checker ();
-+        Gspell.InlineCheckerText inline_checker =
++        Gspell.InlineCheckerTextView inline_checker =
 +            Gspell.text_view_get_inline_checker (this as TextView);
 +        inline_checker.enabled = enabled;
      }
@@ -162,7 +172,7 @@ Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
      public void launch_spell_checker_dialog ()
      {
 -        return_if_fail (_spell_checker != null);
-+        Gspell.Navigator navigator = Gspell.NavigatorText.new (this as TextView);
++        Gspell.Navigator navigator = Gspell.NavigatorTextView.new (this as TextView);
  
 -        Gspell.Navigator navigator = Gspell.NavigatorGtv.new (this as TextView,
 -            _spell_checker);
@@ -219,7 +229,7 @@ Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
          Document doc = get_buffer () as Document;
  
 -        if (this.highlight_misspelled_words)
-+        Gspell.InlineCheckerText inline_checker =
++        Gspell.InlineCheckerTextView inline_checker =
 +            Gspell.text_view_get_inline_checker (this as TextView);
 +
 +        if (inline_checker.enabled)
@@ -240,7 +250,7 @@ Subject: spell: update parameter type of gspell_inline_checker_gtv_new()
 +    private void inline_checker_enabled_notify_cb ()
      {
 -        return_if_fail (_spell_checker != null);
-+        Gspell.InlineCheckerText inline_checker =
++        Gspell.InlineCheckerTextView inline_checker =
 +            Gspell.text_view_get_inline_checker (this as TextView);
 +        if (! inline_checker.enabled)
 +            return;

@@ -1,4 +1,9 @@
-$OpenBSD: patch-src_main_window_tools_vala,v 1.1 2016/01/18 12:50:52 ajacoutot Exp $
+$OpenBSD: patch-src_main_window_tools_vala,v 1.2 2016/03/01 09:06:43 ajacoutot Exp $
+
+From d8ae45d5ea29b0766b5db21739300e3d272c6848 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Wilmet?= <swilmet@gnome.org>
+Date: Mon, 1 Feb 2016 14:10:39 +0100
+Subject: spell: gspell update for NavigatorText -> NavigatorTextView rename
 
 From 6c0c5f4f3616236cc9e1ee1cb8546635558331e4 Mon Sep 17 00:00:00 2001
 From: Sebastien Wilmet <swilmet@gnome.org>
@@ -11,7 +16,7 @@ Date: Thu, 7 Jan 2016 14:12:38 +0100
 Subject: spell: use GspellInlineCheckerText
 
 --- src/main_window_tools.vala.orig	Fri Nov 27 18:31:52 2015
-+++ src/main_window_tools.vala	Mon Jan 18 13:43:32 2016
++++ src/main_window_tools.vala	Thu Feb 25 11:56:36 2016
 @@ -64,7 +64,6 @@ public class MainWindowTools
  
          _editor_settings.changed["highlight-misspelled-words"].connect (() =>
@@ -26,7 +31,7 @@ Subject: spell: use GspellInlineCheckerText
  
 -        spell_checking_action.active =
 -            _main_window.active_view.highlight_misspelled_words;
-+        Gspell.InlineCheckerText inline_checker =
++        Gspell.InlineCheckerTextView inline_checker =
 +            Gspell.text_view_get_inline_checker (_main_window.active_view as TextView);
 +        spell_checking_action.active = inline_checker.enabled;
      }
@@ -54,7 +59,7 @@ Subject: spell: use GspellInlineCheckerText
  
          bool activate = (action as ToggleAction).active;
  
-+        Gspell.InlineCheckerText inline_checker =
++        Gspell.InlineCheckerTextView inline_checker =
 +            Gspell.text_view_get_inline_checker (view as TextView);
 +
          // Save metadata only if property changes, because this function is
