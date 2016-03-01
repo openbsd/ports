@@ -1,0 +1,23 @@
+$OpenBSD: patch-testsuite_test-inline-checker-text-buffer_c,v 1.1 2016/03/01 09:05:53 ajacoutot Exp $
+
+XXX needs gtk+3 >= 3.19
+
+--- testsuite/test-inline-checker-text-buffer.c.orig	Thu Feb 25 11:41:27 2016
++++ testsuite/test-inline-checker-text-buffer.c	Thu Feb 25 11:41:38 2016
+@@ -74,14 +74,14 @@ check_highlighted_words (GtkTextBuffer                
+ 		gint expected_end_offset;
+ 
+ 		start = iter;
+-		if (!gtk_text_iter_starts_tag (&start, tag))
++		if (!gtk_text_iter_begins_tag (&start, tag))
+ 		{
+ 			if (!gtk_text_iter_forward_to_tag_toggle (&start, tag))
+ 			{
+ 				break;
+ 			}
+ 
+-			g_assert (gtk_text_iter_starts_tag (&start, tag));
++			g_assert (gtk_text_iter_begins_tag (&start, tag));
+ 		}
+ 
+ 		end = start;
