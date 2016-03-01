@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/07 10:05:29 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/01 20:36:40 jca Exp $
 
 SHARED_ONLY =	Yes
 CATEGORIES =	devel
 COMMENT=	Qt-based library that maps JSON data to QVariant objects
 DISTNAME =	qjson-0.8.1
-REVISION =	0
+REVISION =	1
 HOMEPAGE =	http://qjson.sourceforge.net/
 
 SHARED_LIBS =	qjson	0.0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/07/01 09:22:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/03/01 20:36:40 jca Exp $
 @bin bin/mtp-albumart
 @bin bin/mtp-albums
 @bin bin/mtp-connect
@@ -29,6 +29,8 @@ share/doc/libmtp/
 share/doc/libmtp/html/
 share/doc/libmtp/html/__stdint_8h_source.html
 share/doc/libmtp/html/annotated.html
+share/doc/libmtp/html/arrowdown.png
+share/doc/libmtp/html/arrowright.png
 share/doc/libmtp/html/bc_s.png
 share/doc/libmtp/html/bdwn.png
 share/doc/libmtp/html/chdk__live__view_8h_source.html
@@ -40,6 +42,7 @@ share/doc/libmtp/html/detect_8c-example.html
 share/doc/libmtp/html/device-flags_8h.html
 share/doc/libmtp/html/device-flags_8h_source.html
 share/doc/libmtp/html/dir_68267d1309a1af8e8297ef4c3efbcdba.html
+share/doc/libmtp/html/doc.png
 share/doc/libmtp/html/doxygen.css
 share/doc/libmtp/html/doxygen.png
 share/doc/libmtp/html/dynsections.js
@@ -47,46 +50,32 @@ share/doc/libmtp/html/examples.html
 share/doc/libmtp/html/examples_8h_source.html
 share/doc/libmtp/html/files.html
 share/doc/libmtp/html/files_8c-example.html
+share/doc/libmtp/html/folderclosed.png
+share/doc/libmtp/html/folderopen.png
 share/doc/libmtp/html/folders_8c-example.html
-share/doc/libmtp/html/ftv2blank.png
-share/doc/libmtp/html/ftv2cl.png
-share/doc/libmtp/html/ftv2doc.png
-share/doc/libmtp/html/ftv2folderclosed.png
-share/doc/libmtp/html/ftv2folderopen.png
-share/doc/libmtp/html/ftv2lastnode.png
-share/doc/libmtp/html/ftv2link.png
-share/doc/libmtp/html/ftv2mlastnode.png
-share/doc/libmtp/html/ftv2mnode.png
-share/doc/libmtp/html/ftv2mo.png
-share/doc/libmtp/html/ftv2node.png
-share/doc/libmtp/html/ftv2ns.png
-share/doc/libmtp/html/ftv2plastnode.png
-share/doc/libmtp/html/ftv2pnode.png
-share/doc/libmtp/html/ftv2splitbar.png
-share/doc/libmtp/html/ftv2vertline.png
 share/doc/libmtp/html/functions.html
 share/doc/libmtp/html/functions_vars.html
 share/doc/libmtp/html/getfile_8c-example.html
 share/doc/libmtp/html/getplaylist_8c-example.html
 share/doc/libmtp/html/globals.html
-share/doc/libmtp/html/globals_0x64.html
-share/doc/libmtp/html/globals_0x67.html
-share/doc/libmtp/html/globals_0x6c.html
-share/doc/libmtp/html/globals_0x6d.html
-share/doc/libmtp/html/globals_0x70.html
-share/doc/libmtp/html/globals_0x73.html
-share/doc/libmtp/html/globals_0x75.html
+share/doc/libmtp/html/globals_d.html
 share/doc/libmtp/html/globals_defs.html
 share/doc/libmtp/html/globals_enum.html
 share/doc/libmtp/html/globals_eval.html
 share/doc/libmtp/html/globals_func.html
-share/doc/libmtp/html/globals_func_0x64.html
-share/doc/libmtp/html/globals_func_0x67.html
-share/doc/libmtp/html/globals_func_0x6c.html
-share/doc/libmtp/html/globals_func_0x70.html
-share/doc/libmtp/html/globals_func_0x73.html
-share/doc/libmtp/html/globals_func_0x75.html
+share/doc/libmtp/html/globals_func_d.html
+share/doc/libmtp/html/globals_func_g.html
+share/doc/libmtp/html/globals_func_l.html
+share/doc/libmtp/html/globals_func_p.html
+share/doc/libmtp/html/globals_func_s.html
+share/doc/libmtp/html/globals_func_u.html
+share/doc/libmtp/html/globals_g.html
+share/doc/libmtp/html/globals_l.html
+share/doc/libmtp/html/globals_m.html
+share/doc/libmtp/html/globals_p.html
+share/doc/libmtp/html/globals_s.html
 share/doc/libmtp/html/globals_type.html
+share/doc/libmtp/html/globals_u.html
 share/doc/libmtp/html/globals_vars.html
 share/doc/libmtp/html/gphoto2-endian_8h_source.html
 share/doc/libmtp/html/group__albums.html
@@ -125,6 +114,7 @@ share/doc/libmtp/html/ptp_8h_source.html
 share/doc/libmtp/html/refactortest_8c-example.html
 share/doc/libmtp/html/sendfile_8c-example.html
 share/doc/libmtp/html/sendtr_8c-example.html
+share/doc/libmtp/html/splitbar.png
 share/doc/libmtp/html/structLIBMTP__album__struct.html
 share/doc/libmtp/html/structLIBMTP__allowed__values__struct.html
 share/doc/libmtp/html/structLIBMTP__device__entry__struct.html

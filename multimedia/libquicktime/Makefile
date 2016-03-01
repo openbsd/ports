@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2015/08/19 18:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2016/03/01 20:36:40 jca Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	library for reading and writing QuickTime files
 
 DISTNAME=	libquicktime-1.2.4
-REVISION=	4
+REVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 

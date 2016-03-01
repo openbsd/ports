@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/03/24 20:59:47 miod Exp $
+# $OpenBSD: Makefile,v 1.33 2016/03/01 20:36:40 jca Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -8,14 +8,12 @@ BROKEN-alpha=	.got subsegment exceeds 64K
 COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen
 
-VERSION=	1.8.2
+VERSION=	1.8.11
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME-main=	doxygen-${VERSION}
 FULLPKGNAME-gui=doxygen-gui-${VERSION}
-CATEGORIES=	devel textproc
 
-REVISION-main=	0
-REVISION-gui=	0
+CATEGORIES=	devel textproc
 
 HOMEPAGE=	http://www.doxygen.org/
 
@@ -25,47 +23,37 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
 		ftp://ftp.stack.nl/pub/users/dimitri/
 
+MULTI_PACKAGES=	-main -gui
 PSEUDO_FLAVORS=	no_gui bootstrap
 
-USE_GMAKE=	Yes
-MODULES=	converters/libiconv
+WANTLIB-main += c m pthread stdc++
+WANTLIB-gui += QtCore QtGui QtXml ${WANTLIB-main}
 
-CONFIGURE_STYLE=simple
-CONFIGURE_ARGS=	--prefix ${WRKINST}${LOCALBASE} \
-		--install /usr/bin/install \
-		--dot ${LOCALBASE}/bin/dot
+COMMON_LIB_DEPENDS= ${MODLIBICONV_LIB_DEPENDS}
+LIB_DEPENDS-main= ${COMMON_LIB_DEPENDS}
+LIB_DEPENDS-gui= ${COMMON_LIB_DEPENDS} ${MODQT_LIB_DEPENDS}
+RUN_DEPENDS-gui= doxygen-${VERSION}:${BUILD_PKGPATH}
 
-MULTI_PACKAGES=	-main -gui
+MODULES =	devel/cmake \
+		converters/libiconv
 
 .include <bsd.port.arch.mk>
 .if ${BUILD_PACKAGES:M-gui}
-CONFIGURE_ARGS+=--with-doxywizard
-CONFIGURE_ENV=	QTDIR=${LOCALBASE}
-
+CONFIGURE_ARGS+=-Dbuild_wizard:Bool=ON
 MODULES+=	x11/qt4
 .endif
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 # ld(1) fails
-CONFIGURE_ARGS+= --english-only
+CONFIGURE_ARGS+=-Denglish_only:Bool=ON
 .endif
 
-BUILD_DEPENDS +=	devel/bison
-COMMON_WANTLIB =	c m pthread stdc++ ${MODLIBICONV_WANTLIB}
-COMMON_LIB_DEPENDS =	${MODLIBICONV_LIB_DEPENDS}
+BUILD_DEPENDS+=	devel/bison
 
-WANTLIB-main = ${COMMON_WANTLIB} z
-LIB_DEPENDS-main = ${COMMON_LIB_DEPENDS}
+RUN_DEPENDS+=	print/ghostscript/gnu \
+		math/graphviz
 
-WANTLIB-gui=	${COMMON_WANTLIB} ${MODQT_WANTLIB} QtGui QtXml \
-		ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
-LIB_DEPENDS-gui=${COMMON_LIB_DEPENDS} ${MODQT_LIB_DEPENDS}
-RUN_DEPENDS-gui=doxygen-${VERSION}:${BUILD_PKGPATH}
+CONFIGURE_ARGS+=-Dbuild_doc:Bool=ON
 
-
-MAKE_FLAGS+=	CXX=${CXX} CC=${CC} \
-		_CFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-FAKE_FLAGS+=	DESTDIR=
 WRKDIST=	${WRKDIR}/doxygen-${VERSION}
 
 NO_TEST=	Yes

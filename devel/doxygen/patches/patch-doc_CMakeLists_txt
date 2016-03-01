@@ -1,0 +1,41 @@
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.1 2016/03/01 20:36:40 jca Exp $
+
+-only manual pages
+
+--- doc/CMakeLists.txt.orig	Tue Sep  1 14:42:06 2015
++++ doc/CMakeLists.txt	Sat Jan 16 22:00:23 2016
+@@ -153,13 +153,8 @@ add_custom_target(doxygen_pdf
+         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/latex
+ )
+ add_custom_target(docs
+-        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/doc/doxygen_logo.gif      ${PROJECT_BINARY_DIR}/html/
+-        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/doc/doxygen_logo_low.gif  ${PROJECT_BINARY_DIR}/html/
+         DEPENDS ${PROJECT_BINARY_DIR}/man/doxygen.1
+                 ${PROJECT_BINARY_DIR}/man/doxywizard.1
+-                ${PROJECT_BINARY_DIR}/man/doxysearch.1
+-                ${PROJECT_BINARY_DIR}/man/doxyindexer.1
+-                doxygen_pdf
+         VERBATIM
+         )
+ 
+@@ -167,19 +162,7 @@ add_custom_target(docs
+ install(FILES
+         "${PROJECT_BINARY_DIR}/man/doxygen.1"
+         "${PROJECT_BINARY_DIR}/man/doxywizard.1"
+-        "${PROJECT_BINARY_DIR}/man/doxysearch.1"
+-        "${PROJECT_BINARY_DIR}/man/doxyindexer.1"
+-        DESTINATION share/man/man1
+-)
+-
+-install(FILES
+-        "${PROJECT_BINARY_DIR}/latex/doxygen_manual.pdf"
+-        DESTINATION "${CMAKE_INSTALL_PREFIX}/${DOC_INSTALL_DIR}"
+-)
+-
+-install(DIRECTORY
+-        "${PROJECT_BINARY_DIR}/html"
+-        DESTINATION "${CMAKE_INSTALL_PREFIX}/${DOC_INSTALL_DIR}"
++        DESTINATION man/man1
+ )
+ 
+ endif(build_doc)

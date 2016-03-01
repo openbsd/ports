@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/04/24 13:10:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/03/01 20:36:40 jca Exp $
 @bin bin/libquicktime_config
 @bin bin/lqt_transcode
 @bin bin/lqtplay
@@ -38,39 +38,28 @@ lib/pkgconfig/libquicktime.pc
 share/doc/libquicktime/
 share/doc/libquicktime/apiref/
 share/doc/libquicktime/apiref/annotated.html
+share/doc/libquicktime/apiref/arrowdown.png
+share/doc/libquicktime/apiref/arrowright.png
 share/doc/libquicktime/apiref/bc_s.png
 share/doc/libquicktime/apiref/bdwn.png
 share/doc/libquicktime/apiref/classes.html
 share/doc/libquicktime/apiref/closed.png
 share/doc/libquicktime/apiref/colormodels_8h_source.html
+share/doc/libquicktime/apiref/doc.png
 share/doc/libquicktime/apiref/doxygen.css
 share/doc/libquicktime/apiref/doxygen.png
 share/doc/libquicktime/apiref/dynsections.js
 share/doc/libquicktime/apiref/files.html
-share/doc/libquicktime/apiref/ftv2blank.png
-share/doc/libquicktime/apiref/ftv2cl.png
-share/doc/libquicktime/apiref/ftv2doc.png
-share/doc/libquicktime/apiref/ftv2folderclosed.png
-share/doc/libquicktime/apiref/ftv2folderopen.png
-share/doc/libquicktime/apiref/ftv2lastnode.png
-share/doc/libquicktime/apiref/ftv2link.png
-share/doc/libquicktime/apiref/ftv2mlastnode.png
-share/doc/libquicktime/apiref/ftv2mnode.png
-share/doc/libquicktime/apiref/ftv2mo.png
-share/doc/libquicktime/apiref/ftv2node.png
-share/doc/libquicktime/apiref/ftv2ns.png
-share/doc/libquicktime/apiref/ftv2plastnode.png
-share/doc/libquicktime/apiref/ftv2pnode.png
-share/doc/libquicktime/apiref/ftv2splitbar.png
-share/doc/libquicktime/apiref/ftv2vertline.png
+share/doc/libquicktime/apiref/folderclosed.png
+share/doc/libquicktime/apiref/folderopen.png
 share/doc/libquicktime/apiref/functions.html
 share/doc/libquicktime/apiref/functions_vars.html
 share/doc/libquicktime/apiref/globals.html
-share/doc/libquicktime/apiref/globals_0x71.html
 share/doc/libquicktime/apiref/globals_defs.html
 share/doc/libquicktime/apiref/globals_enum.html
 share/doc/libquicktime/apiref/globals_eval.html
 share/doc/libquicktime/apiref/globals_func.html
+share/doc/libquicktime/apiref/globals_q.html
 share/doc/libquicktime/apiref/globals_type.html
 share/doc/libquicktime/apiref/group__atoms.html
 share/doc/libquicktime/apiref/group__audio.html
@@ -105,6 +94,7 @@ share/doc/libquicktime/apiref/nav_h.png
 share/doc/libquicktime/apiref/open.png
 share/doc/libquicktime/apiref/quicktime_8h.html
 share/doc/libquicktime/apiref/quicktime_8h_source.html
+share/doc/libquicktime/apiref/splitbar.png
 share/doc/libquicktime/apiref/structlqt__codec__info__s.html
 share/doc/libquicktime/apiref/structlqt__image__size__t.html
 share/doc/libquicktime/apiref/structlqt__parameter__info__t.html

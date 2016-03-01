@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/07/05 12:03:34 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/03/01 20:36:40 jca Exp $
 @bin bin/tmod
 @bin bin/trwxml
 include/auxfun/
@@ -18,6 +18,8 @@ share/doc/lensfun/manual/
 share/doc/lensfun/manual/addcamera.html
 share/doc/lensfun/manual/addlens.html
 share/doc/lensfun/manual/annotated.html
+share/doc/lensfun/manual/arrowdown.png
+share/doc/lensfun/manual/arrowright.png
 share/doc/lensfun/manual/basearch.html
 share/doc/lensfun/manual/bc_s.png
 share/doc/lensfun/manual/bdwn.png
@@ -28,6 +30,7 @@ share/doc/lensfun/manual/credits.html
 share/doc/lensfun/manual/database.html
 share/doc/lensfun/manual/dbformat.html
 share/doc/lensfun/manual/dbsearch.html
+share/doc/lensfun/manual/doc.png
 share/doc/lensfun/manual/doxygen.css
 share/doc/lensfun/manual/doxygen.png
 share/doc/lensfun/manual/dynsections.js
@@ -39,22 +42,8 @@ share/doc/lensfun/manual/example_8c-example.html
 share/doc/lensfun/manual/examples.html
 share/doc/lensfun/manual/files.html
 share/doc/lensfun/manual/filldb.html
-share/doc/lensfun/manual/ftv2blank.png
-share/doc/lensfun/manual/ftv2cl.png
-share/doc/lensfun/manual/ftv2doc.png
-share/doc/lensfun/manual/ftv2folderclosed.png
-share/doc/lensfun/manual/ftv2folderopen.png
-share/doc/lensfun/manual/ftv2lastnode.png
-share/doc/lensfun/manual/ftv2link.png
-share/doc/lensfun/manual/ftv2mlastnode.png
-share/doc/lensfun/manual/ftv2mnode.png
-share/doc/lensfun/manual/ftv2mo.png
-share/doc/lensfun/manual/ftv2node.png
-share/doc/lensfun/manual/ftv2ns.png
-share/doc/lensfun/manual/ftv2plastnode.png
-share/doc/lensfun/manual/ftv2pnode.png
-share/doc/lensfun/manual/ftv2splitbar.png
-share/doc/lensfun/manual/ftv2vertline.png
+share/doc/lensfun/manual/folderclosed.png
+share/doc/lensfun/manual/folderopen.png
 share/doc/lensfun/manual/functions.html
 share/doc/lensfun/manual/functions_func.html
 share/doc/lensfun/manual/functions_vars.html
@@ -85,6 +74,7 @@ share/doc/lensfun/manual/open.png
 share/doc/lensfun/manual/pages.html
 share/doc/lensfun/manual/programming.html
 share/doc/lensfun/manual/samplecode.html
+share/doc/lensfun/manual/splitbar.png
 share/doc/lensfun/manual/structlfCamera-members.html
 share/doc/lensfun/manual/structlfCamera.html
 share/doc/lensfun/manual/structlfDatabase-members.html
