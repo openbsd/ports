@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/04/05 23:12:00 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/03/01 22:09:13 robert Exp $
 ${P5ARCH}/DBD/SQLite/
 ${P5ARCH}/DBD/SQLite.pm
+${P5ARCH}/DBD/SQLite/Constants.pm
 ${P5ARCH}/DBD/SQLite/Cookbook.pod
 ${P5ARCH}/DBD/SQLite/Fulltext_search.pod
 ${P5ARCH}/DBD/SQLite/VirtualTable/
@@ -11,6 +12,7 @@ ${P5ARCH}/auto/DBD/
 ${P5ARCH}/auto/DBD/SQLite/
 ${P5ARCH}/auto/DBD/SQLite/SQLite.so
 @man man/man3p/DBD::SQLite.3p
+@man man/man3p/DBD::SQLite::Constants.3p
 @man man/man3p/DBD::SQLite::Cookbook.3p
 @man man/man3p/DBD::SQLite::Fulltext_search.3p
 @man man/man3p/DBD::SQLite::VirtualTable.3p
