@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.74 2016/01/13 08:21:18 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.75 2016/03/01 12:44:58 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	command-line client for Pandora Internet Radio
 
 DISTNAME =	pianobar-2015.11.22
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
-HOMEPAGE =	http://6xq.net/projects/pianobar/
+HOMEPAGE =	https://6xq.net/pianobar/
 
 MASTER_SITES =	${HOMEPAGE}
 
