@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/01/21 16:37:41 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/03/01 07:29:32 kirby Exp $
 @bin bin/warzone2100
+@man man/man6/warzone2100.6
 share/applications/warzone2100.desktop
 share/doc/warzone2100/
 @comment share/doc/warzone2100/AUTHORS
@@ -56,6 +57,7 @@ share/doc/warzone2100/images/transport.jpg
 share/doc/warzone2100/images/unitordersmenu.jpg
 share/doc/warzone2100/images/wss.png
 share/doc/warzone2100/images/www.png
+share/doc/warzone2100/quickstartguide.html
 share/icons/
 share/icons/warzone2100.png
 share/locale/ca_ES/
