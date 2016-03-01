@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.486 2016/01/25 21:03:44 kili Exp $
+# $OpenBSD: Makefile,v 1.487 2016/03/01 08:24:35 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -101,6 +101,7 @@
      SUBDIR += libwpd
      SUBDIR += libxml
      SUBDIR += libxml++
+     SUBDIR += libxml++3
      SUBDIR += libxmlbird
      SUBDIR += libxmlsd
      SUBDIR += libxslt
