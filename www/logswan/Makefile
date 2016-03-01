@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/11 14:11:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/01 00:07:17 sthen Exp $
 
 COMMENT =	fast web log analyzer using probabilistic data structures
 
 GH_ACCOUNT =	fcambus
 GH_PROJECT =	logswan
 GH_TAGNAME =	1.04
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www
 

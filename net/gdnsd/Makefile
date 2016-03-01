@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/02/06 07:45:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/01 00:07:17 sthen Exp $
 
 PORTROACH=		limit:^v1
 PORTROACH_COMMENT=	gdnsd >= 2.0.0 requires __thread support
@@ -10,7 +10,7 @@ COMMENT=		geographically-aware, authoritative-only DNS server
 GH_ACCOUNT=		blblack
 GH_PROJECT=		gdnsd
 GH_TAGNAME=		v1.11.5
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		net
 
