@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/03/01 10:12:19 jasper Exp $
+@bin bin/ttfautohint
