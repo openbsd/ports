@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2016/02/28 08:41:18 kirby Exp $
+# $OpenBSD: Makefile,v 1.105 2016/03/01 08:41:58 kirby Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
@@ -9,6 +9,8 @@ DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
 PKGNAME-client=	freeciv-client-${VERSION}
 PKGNAME-share=	freeciv-share-${VERSION}
+REVISION-main=	0
+REVISION-client=0
 
 CATEGORIES=	games
 
@@ -25,11 +27,14 @@ cWANTLIB += ${MODLUA_WANTLIB} ${MODGETTEXT_WANTLIB}
 
 WANTLIB-main += ncurses readline ${cWANTLIB}
 
-WANTLIB-client += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB-client += atk-1.0 cairo expat ffi fontconfig freetype gdk_pixbuf-2.0
-WANTLIB-client += gdk-x11-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB-client += gtk-x11-2.0 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB-client += pixman-1 png pthread-stubs xcb xcb-render xcb-shm ${cWANTLIB}
+WANTLIB-client += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB-client += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB-client += cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
+WANTLIB-client += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB-client += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB-client += harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB-client += pixman-1 png pthread-stubs xcb xcb-render xcb-shm
+WANTLIB-client += ${cWANTLIB}
 
 WANTLIB-share=
 
@@ -38,7 +43,7 @@ MODLUA_VERSION = 5.2
 
 LIB_DEPENDS=	archivers/xz \
 		net/curl \
-		x11/gtk+2
+		x11/gtk+3
 
 LIB_DEPENDS-share=
 
@@ -73,8 +78,8 @@ FLAVOR?=
 
 .if !${FLAVOR:Mno_x11}
 MULTI_PACKAGES+= -client
-CONFIGURE_ARGS+= --enable-client=gtk2 \
-		 --enable-fcmp=gtk2 \
+CONFIGURE_ARGS+= --enable-client=gtk3 \
+		 --enable-fcmp=gtk3 \
 		 --disable-sdl-mixer
 .else
 CONFIGURE_ARGS+= --enable-client=no
