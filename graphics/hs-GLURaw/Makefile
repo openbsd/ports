@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/29 20:28:09 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/01 22:01:18 kili Exp $
 
 COMMENT =		raw Haskell binding for the OpenGL utility library
 
@@ -7,9 +7,9 @@ COMMENT =		raw Haskell binding for the OpenGL utility library
 PORTROACH =		ignore:1
 
 DISTNAME =		GLURaw-1.5.0.2
-REVISION =		0
+REVISION =		1
 CATEGORIES =		graphics devel
-HOMEPAGE =		http://www.haskell.org/haskellwiki/Opengl
+HOMEPAGE =		https://wiki.haskell.org/Opengl
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
