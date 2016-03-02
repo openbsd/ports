@@ -1,8 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:57 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/03/02 02:53:44 bentley Exp $
 @bin bin/cg-comp
 @bin bin/cg-conv
 @bin bin/cg-proc
 bin/cg3-autobin.pl
 @bin bin/vislcg3
+include/cg3.h
 lib/libcg3.a
 @lib lib/libcg3.so.${LIBcg3_VERSION}
+lib/pkgconfig/cg3.pc
+@man man/man1/cg-comp.1
+@man man/man1/cg-conv.1
+@man man/man1/cg-proc.1
+@man man/man1/cg3-autobin.pl.1
+@man man/man1/vislcg3.1
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/cg.el
