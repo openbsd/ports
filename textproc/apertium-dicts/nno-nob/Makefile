@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/02/02 09:31:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/02 06:08:13 bentley Exp $
 
 L =	nno-nob
 LANG =	Norwegian Nynorsk/Bokmal
-V =	1.0.1
-REVISION =	0
+V =	1.1.0
 
 USE_GMAKE =	Yes
 
