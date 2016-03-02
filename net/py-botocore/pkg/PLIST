@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/03/01 09:01:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/03/02 07:21:14 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -41,7 +41,6 @@ lib/python${MODPY_VERSION}/site-packages/botocore/compat.py
 lib/python${MODPY_VERSION}/site-packages/botocore/config.py
 lib/python${MODPY_VERSION}/site-packages/botocore/credentials.py
 lib/python${MODPY_VERSION}/site-packages/botocore/data/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/_endpoints.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/_retry.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/
@@ -207,6 +206,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/emr/2009-03-31/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/emr/2009-03-31/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/emr/2009-03-31/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/emr/2009-03-31/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/endpoints.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/es/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/es/2015-01-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/es/2015-01-01/service-2.json
@@ -271,6 +271,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplacecommerceanalyt
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rds/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rds/2014-09-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rds/2014-09-01/paginators-1.json
