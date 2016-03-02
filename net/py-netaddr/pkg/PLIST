@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/01 20:46:24 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/03/02 15:10:54 abieber Exp $
 bin/netaddr
 lib/python${MODPY_VERSION}/site-packages/netaddr/
 lib/python${MODPY_VERSION}/site-packages/netaddr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -28,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/netaddr/ip/iana.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/ip/iana.pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/ip/ipv4-address-space.xml
 lib/python${MODPY_VERSION}/site-packages/netaddr/ip/ipv6-address-space.xml
+lib/python${MODPY_VERSION}/site-packages/netaddr/ip/ipv6-unicast-address-assignments.xml
 lib/python${MODPY_VERSION}/site-packages/netaddr/ip/multicast-addresses.xml
 lib/python${MODPY_VERSION}/site-packages/netaddr/ip/nmap.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/ip/nmap.pyc
@@ -46,6 +47,3 @@ lib/python${MODPY_VERSION}/site-packages/netaddr/strategy/ipv4.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/strategy/ipv4.pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/strategy/ipv6.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/strategy/ipv6.pyc
-lib/python${MODPY_VERSION}/site-packages/netaddr/tests/
-lib/python${MODPY_VERSION}/site-packages/netaddr/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/netaddr/tests/__init__.pyc
