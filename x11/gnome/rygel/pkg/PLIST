@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2015/12/17 18:31:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.25 2016/03/02 09:15:56 jasper Exp $
 @bin bin/rygel
 @bin bin/rygel-preferences
 include/rygel-${API_V}/
@@ -134,30 +134,7 @@ share/gtk-doc/html/librygel-renderer-gst/right.png
 share/gtk-doc/html/librygel-renderer-gst/style.css
 share/gtk-doc/html/librygel-renderer-gst/up-insensitive.png
 share/gtk-doc/html/librygel-renderer-gst/up.png
-share/gtk-doc/html/librygel-renderer/RygelMediaPlayer.html
-share/gtk-doc/html/librygel-renderer/RygelMediaRenderer.html
-share/gtk-doc/html/librygel-renderer/RygelMediaRendererPlugin.html
-share/gtk-doc/html/librygel-renderer/RygelPlayerController.html
-share/gtk-doc/html/librygel-renderer/annotation-glossary.html
-share/gtk-doc/html/librygel-renderer/api-index-full.html
-share/gtk-doc/html/librygel-renderer/api-main-list.html
-share/gtk-doc/html/librygel-renderer/deprecated-api-index.html
-share/gtk-doc/html/librygel-renderer/home.png
-share/gtk-doc/html/librygel-renderer/implementing-renderer-plugins-simple-example.html
-share/gtk-doc/html/librygel-renderer/implementing-renderer-plugins.html
-share/gtk-doc/html/librygel-renderer/implementing-renderers-full-example.html
-share/gtk-doc/html/librygel-renderer/implementing-renderers.html
-share/gtk-doc/html/librygel-renderer/index.html
-share/gtk-doc/html/librygel-renderer/left-insensitive.png
-share/gtk-doc/html/librygel-renderer/left.png
-share/gtk-doc/html/librygel-renderer/librygel-renderer.devhelp2
-share/gtk-doc/html/librygel-renderer/object-tree.html
-share/gtk-doc/html/librygel-renderer/overview.html
-share/gtk-doc/html/librygel-renderer/right-insensitive.png
-share/gtk-doc/html/librygel-renderer/right.png
-share/gtk-doc/html/librygel-renderer/style.css
-share/gtk-doc/html/librygel-renderer/up-insensitive.png
-share/gtk-doc/html/librygel-renderer/up.png
+share/gtk-doc/html/librygel-renderer/profile.txt
 share/gtk-doc/html/librygel-server/
 share/gtk-doc/html/librygel-server/RygelAudioItem.html
 share/gtk-doc/html/librygel-server/RygelContentDirectory.html
