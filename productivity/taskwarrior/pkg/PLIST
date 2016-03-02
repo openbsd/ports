@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/12/23 16:05:22 kspillner Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/03/02 17:19:51 kspillner Exp $
 @bin bin/task
 @man man/man1/task.1
 @man man/man5/task-color.5
@@ -10,6 +10,7 @@ share/taskwarrior/AUTHORS
 @comment share/taskwarrior/COPYING
 @comment share/taskwarrior/ChangeLog
 @comment share/taskwarrior/INSTALL
+@comment share/taskwarrior/LICENSE
 @comment share/taskwarrior/NEWS
 share/taskwarrior/README.md
 share/taskwarrior/rc/
@@ -35,6 +36,7 @@ share/taskwarrior/rc/holidays.en-CA.rc
 share/taskwarrior/rc/holidays.en-GB.rc
 share/taskwarrior/rc/holidays.en-GL.rc
 share/taskwarrior/rc/holidays.en-HK.rc
+share/taskwarrior/rc/holidays.en-IN.rc
 share/taskwarrior/rc/holidays.en-NZ.rc
 share/taskwarrior/rc/holidays.en-US.rc
 share/taskwarrior/rc/holidays.en-ZA.rc
