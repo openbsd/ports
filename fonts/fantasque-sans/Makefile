@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/03/01 15:19:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/02 07:36:06 jasper Exp $
 
 COMMENT =			programming font designed with functionality in mind
 
 GH_ACCOUNT =			belluzj
 GH_PROJECT =			fantasque-sans
 GH_TAGNAME =			v1.7.0
+REVISION =			0
 
 CATEGORIES =			fonts
 
-MAINTAINER =			Jasper Lievisse Adriaanses <jasper@openbsd.org>
+MAINTAINER =			Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # SIL Open Font License
 PERMIT_PACKAGE_CDROM =		Yes
