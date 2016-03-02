@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.93 2015/12/15 15:32:04 robert Exp $
+# $OpenBSD: Makefile,v 1.94 2016/03/02 07:17:34 robert Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
-V=		4.2.1
-DISTNAME=	mono-${V}.102
+V=		4.2.2
+DISTNAME=	mono-${V}.30
 
 CATEGORIES=	lang devel
 

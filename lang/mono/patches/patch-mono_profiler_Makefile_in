@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_profiler_Makefile_in,v 1.10 2015/12/15 15:32:04 robert Exp $
---- mono/profiler/Makefile.in.orig	Sun Dec 13 18:14:54 2015
-+++ mono/profiler/Makefile.in	Sun Dec 13 20:39:31 2015
-@@ -488,14 +488,14 @@ AM_CPPFLAGS = \
+$OpenBSD: patch-mono_profiler_Makefile_in,v 1.11 2016/03/02 07:17:34 robert Exp $
+--- mono/profiler/Makefile.in.orig	Tue Mar  1 23:13:23 2016
++++ mono/profiler/Makefile.in	Tue Mar  1 23:13:49 2016
+@@ -500,14 +500,14 @@ AM_CPPFLAGS = \
  @DISABLE_EXECUTABLES_FALSE@@SHARED_MONO_FALSE@@SUPPORT_BOEHM_TRUE@	$(LIBGC_STATIC_LIBS)
  
  libmono_profiler_aot_la_SOURCES = mono-profiler-aot.c
@@ -17,6 +17,6 @@ $OpenBSD: patch-mono_profiler_Makefile_in,v 1.10 2015/12/15 15:32:04 robert Exp 
  @HAVE_VTUNE_TRUE@libmono_profiler_vtune_la_CFLAGS = $(VTUNE_CFLAGS)
 -@HAVE_VTUNE_TRUE@libmono_profiler_vtune_la_LIBADD = $(VTUNE_LIBS) $(LIBMONO) $(GLIB_LIBS) $(LIBICONV)
 +@HAVE_VTUNE_TRUE@libmono_profiler_vtune_la_LIBADD = $(VTUNE_LIBS) $(LIBMONO) $(LIBICONV)
- mprof_report_SOURCES = decode.c
- mprof_report_LDADD = $(Z_LIBS) $(GLIB_LIBS) $(LIBICONV)
- PLOG_TESTS_SRC = test-alloc.cs test-busy.cs test-monitor.cs test-excleave.cs \
+ 
+ # The log profile uses eglib functions, so it needs to be linked against
+ # libeglib in shared mode, but not in static mode, since that would

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2015/12/15 15:32:04 robert Exp $
+@comment $OpenBSD: PLIST,v 1.22 2016/03/02 07:17:34 robert Exp $
 bin/al
 bin/al2
 bin/caspol
@@ -140,6 +140,8 @@ lib/libmono-profiler-aot.la
 lib/libmono-profiler-iomap.a
 lib/libmono-profiler-iomap.la
 @lib lib/libmono-profiler-iomap.so.${LIBmono-profiler-iomap_VERSION}
+lib/libmono-profiler-log-static.a
+lib/libmono-profiler-log-static.la
 lib/libmono-profiler-log.a
 lib/libmono-profiler-log.la
 @lib lib/libmono-profiler-log.so.${LIBmono-profiler-log_VERSION}
