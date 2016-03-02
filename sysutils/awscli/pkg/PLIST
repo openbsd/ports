@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/03/01 09:03:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/03/02 07:21:52 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -292,6 +292,27 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/get-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/list-certificates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/request-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/resend-validation-email.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-account.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-api-keys.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-authorizers.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-base-path-mappings.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-client-certificates.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-deployments.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-domain-names.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-export.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-integration-response.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-integration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-method-response.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-method.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-model-template.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-model.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-models.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-resources.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-rest-apis.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-sdk.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/get-stages.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-integration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/attach-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/attach-load-balancers.rst
@@ -718,6 +739,10 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/register-task-defin
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/run-task.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/update-container-agent.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/update-service.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/create-replication-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/modify-cache-parameter-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/modify-replication-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticbeanstalk/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticbeanstalk/abort-environment-update.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticbeanstalk/check-dns-availability.rst
