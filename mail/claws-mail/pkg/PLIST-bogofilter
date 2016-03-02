@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-bogofilter,v 1.5 2012/10/09 16:41:29 sthen Exp $
+@comment $OpenBSD: PLIST-bogofilter,v 1.6 2016/03/02 12:38:03 sthen Exp $
 @pkgpath mail/sylpheed-claws,-bogofilter[,compface][,pgpmime][,jpilot][,ldap]
+@pkgpath mail/claws-mail,-bogofilter,compface${FLAVOR_STRING}
 lib/claws-mail/plugins/bogofilter.la
 lib/claws-mail/plugins/bogofilter.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2016/01/19 18:19:22 landry Exp $
+# $OpenBSD: Makefile,v 1.87 2016/03/02 12:38:03 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,6 +11,7 @@ COMMENT-pdfviewer=	pdfviewer plugin
 COMMENT-gdata=		gdata plugin
 
 V=			3.13.2
+REVISION=		0
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
@@ -32,7 +33,7 @@ MASTER_SITES=		http://www.claws-mail.org/releases/
 DIST_SUBDIR=		claws
 
 MULTI_PACKAGES=		-main -bogofilter -spamassassin -htmlviewer -pdfviewer -gdata
-FLAVORS=		jpilot compface ldap
+FLAVORS=		jpilot ldap
 FLAVOR?=
 
 FLAVOR_STRING=		${FLAVOR_EXT:S/-/,/g}
@@ -108,10 +109,10 @@ LIB_DEPENDS-gdata=	${LIB_DEPENDS} \
 #geolocation looks for champlain <= 0.10
 #python tries to dlopen libpython2.7.so
 CONFIGURE_ARGS+=	--disable-acpi_notifier-plugin \
+			--disable-compface \
 			--disable-geolocation-plugin \
 			--disable-python-plugin \
 			--enable-new-addrbook
-
 
 MODULES=		devel/gettext
 USE_GMAKE=		Yes
@@ -128,15 +129,6 @@ WANTLIB-main +=		pisock
 RUN_DEPENDS-main+=	comms/jpilot
 .else
 CONFIGURE_ARGS+=	--disable-jpilot
-.endif
-
-.if ${FLAVOR:Mcompface}
-PERMIT_PACKAGE_CDROM=	No Fee
-PERMIT_PACKAGE_FTP=	Yes
-LIB_DEPENDS-main+=	mail/faces
-WANTLIB-main +=		compface>=1
-.else
-CONFIGURE_ARGS+=	--disable-compface
 .endif
 
 .if ${FLAVOR:Mldap}

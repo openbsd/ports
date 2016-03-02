@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.33 2015/12/23 23:12:23 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.34 2016/03/02 12:38:03 sthen Exp $
 @conflict claws-mail-attremover-*
 @conflict claws-mail-notification-*
 @conflict claws-mail-rssyl-*
@@ -7,6 +7,7 @@
 @pkgpath mail/claws-mail-notification
 @pkgpath mail/claws-mail-rssyl
 @pkgpath mail/claws-mail-vcalendar
+@pkgpath mail/claws-mail,-main,compface${FLAVOR_STRING}
 @pkgpath mail/sylpheed-claws,-main[,compface][,pgpmime][,jpilot][,ldap]
 @pkgpath mail/sylpheed-claws[,compface][,pgpmime][,jpilot][,ldap]
 @bin bin/claws-mail

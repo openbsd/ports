@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-spamassassin,v 1.5 2012/10/09 16:41:29 sthen Exp $
+@comment $OpenBSD: PLIST-spamassassin,v 1.6 2016/03/02 12:38:03 sthen Exp $
 @pkgpath mail/sylpheed-claws,-spamassassin[,compface][,pgpmime][,jpilot][,ldap]
+@pkgpath mail/claws-mail,-spamassassin,compface${FLAVOR_STRING}
 lib/claws-mail/plugins/spamassassin.la
 lib/claws-mail/plugins/spamassassin.so

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-htmlviewer,v 1.1 2013/09/25 08:03:17 landry Exp $
+@comment $OpenBSD: PLIST-htmlviewer,v 1.2 2016/03/02 12:38:03 sthen Exp $
 @conflict claws-mail-htmlviewer-*
 @pkgpath mail/claws-mail-htmlviewer
+@pkgpath mail/claws-mail,-htmlviewer,compface${FLAVOR_STRING}
 lib/claws-mail/plugins/fancy.la
 lib/claws-mail/plugins/fancy.so

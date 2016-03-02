@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST-gdata,v 1.1 2013/10/11 22:14:19 landry Exp $
+@comment $OpenBSD: PLIST-gdata,v 1.2 2016/03/02 12:38:03 sthen Exp $
+@pkgpath mail/claws-mail,-gdata,compface${FLAVOR_STRING}
 lib/claws-mail/plugins/gdata.la
 lib/claws-mail/plugins/gdata.so
