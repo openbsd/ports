@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/01 15:11:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/02 22:45:44 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (AP/routing/switching/voip)
 
 VERSION=	4.8.14
+REVISION=	0
 
 V=		${VERSION:C/-.*//}
 DISTFILES=	unifi-$V{UniFi.unix}.zip unifi_sh_api-$V{unifi_sh_api}
@@ -23,7 +24,7 @@ PERMIT_DISTFILES_FTP=	http://www.ubnt.com/eula/
 MASTER_SITES=	http://dl.ubnt.com/unifi/${VERSION}/
 
 MODULES=	java
-MODJAVA_VER=	1.6+
+MODJAVA_VER=	1.8+
 MODJAVA_JRERUN=	yes
 
 RUN_DEPENDS=	databases/mongodb \

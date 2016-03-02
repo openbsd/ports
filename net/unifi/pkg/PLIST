@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/03/01 15:11:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/03/02 22:45:44 sthen Exp $
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:/usr/local/share/unifi:/sbin/nologin
 bin/unifi
@@ -11,7 +11,9 @@ share/unifi/bin/
 share/unifi/bin/mongod
 @extraunexec rm -rf %D/share/unifi/conf/*
 @owner _unifi
+share/unifi/backup/
 share/unifi/conf/
+share/unifi/data/
 share/unifi/dl/
 share/unifi/dl/firmware/
 share/unifi/dl/firmware/BZ2/
@@ -85,6 +87,9 @@ share/unifi/logs
 @sample /var/log/unifi/
 @owner
 share/unifi/readme.txt
+@owner _unifi
+share/unifi/run/
+@owner
 share/unifi/unifi_sh_api
 share/unifi/webapps/
 share/unifi/webapps/ROOT/
@@ -634,6 +639,9 @@ share/unifi/webapps/ROOT/upnp.html
 share/unifi/webapps/ROOT/verify.html
 share/unifi/webapps/ROOT/waiting.html
 share/unifi/webapps/ROOT/wizard.html
-@extraunexec rm -rf %D/share/unifi/{dl,data,run,work,conf}
+@owner _unifi
+share/unifi/work/
+@owner
+@extraunexec rm -rf %D/share/unifi/{backup,dl,data,run,work,conf}
 @extraunexec rm -rf /var/log/unifi
 @rcscript ${RCDIR}/unifi
