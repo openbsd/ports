@@ -1,0 +1,13 @@
+$OpenBSD: patch-ripole_c,v 1.1 2016/03/02 13:34:32 sthen Exp $
+--- ripole.c.orig	Mon Dec  5 08:45:17 2011
++++ ripole.c	Wed Mar  2 13:14:35 2016
+@@ -256,7 +256,8 @@ Changes:
+ int ROLE_done(struct ripOLE_object *role)
+ {
+ 	if (role->inputfile != NULL) free(role->inputfile);
+-	if (role->outputdir != NULL) free(role->outputdir);
++	if ((role->outputdir != NULL) && (role->outputdir != defaultdir))
++		free(role->outputdir);
+ 
+ 	return 0;
+ }
