@@ -1,6 +1,6 @@
-$OpenBSD: patch-cmake_FindPostgres_cmake,v 1.6 2015/10/31 15:29:44 landry Exp $
---- cmake/FindPostgres.cmake.orig	Fri Oct 23 14:10:38 2015
-+++ cmake/FindPostgres.cmake	Fri Oct 30 16:42:16 2015
+$OpenBSD: patch-cmake_FindPostgres_cmake,v 1.7 2016/03/02 14:39:10 landry Exp $
+--- cmake/FindPostgres.cmake.orig	Fri Feb 26 13:23:48 2016
++++ cmake/FindPostgres.cmake	Tue Mar  1 13:53:24 2016
 @@ -96,7 +96,7 @@ ELSE(WIN32)
          ENDFOREACH(_LIBNAME ${_LIBS})
  
