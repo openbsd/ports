@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/02 07:36:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/02 20:31:00 kili Exp $
 
 COMMENT =			programming font designed with functionality in mind
 
@@ -15,7 +15,8 @@ MAINTAINER =			Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE_CDROM =		Yes
 
 BUILD_DEPENDS =			graphics/ttfautohint \
-				print/fontforge
+				print/fontforge \
+				shells/bash
 
 USE_GMAKE =			Yes
 NO_TEST =			Yes
