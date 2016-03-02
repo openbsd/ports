@@ -1,6 +1,6 @@
-$OpenBSD: patch-runtime_filetype_vim,v 1.9 2015/10/30 13:00:37 sthen Exp $
---- runtime/filetype.vim.orig	Sun Oct 25 21:42:00 2015
-+++ runtime/filetype.vim	Fri Oct 30 12:01:29 2015
+$OpenBSD: patch-runtime_filetype_vim,v 1.10 2016/03/02 11:54:29 sthen Exp $
+--- runtime/filetype.vim.orig	Mon Feb 29 22:12:49 2016
++++ runtime/filetype.vim	Tue Mar  1 18:27:49 2016
 @@ -71,6 +71,14 @@ func! s:Check_inp()
    endif
  endfunc
@@ -34,7 +34,7 @@ $OpenBSD: patch-runtime_filetype_vim,v 1.9 2015/10/30 13:00:37 sthen Exp $
  
  " MakeIndex
  au BufNewFile,BufRead *.ist,*.mst		setf ist
-@@ -2322,12 +2330,14 @@ au BufNewFile,BufRead *.vim,*.vba,.exrc,_exrc	setf vim
+@@ -2323,12 +2331,14 @@ au BufNewFile,BufRead *.vim,*.vba,.exrc,_exrc	setf vim
  au BufNewFile,BufRead .viminfo,_viminfo		setf viminfo
  
  " Virata Config Script File or Drupal module

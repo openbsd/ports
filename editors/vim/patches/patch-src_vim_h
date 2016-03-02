@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_vim_h,v 1.5 2015/04/10 12:25:46 sthen Exp $
---- src/vim.h.orig	Thu Apr  9 21:08:22 2015
-+++ src/vim.h	Thu Apr  9 23:41:51 2015
+$OpenBSD: patch-src_vim_h,v 1.6 2016/03/02 11:54:29 sthen Exp $
+--- src/vim.h.orig	Mon Feb 29 22:12:49 2016
++++ src/vim.h	Tue Mar  1 18:27:49 2016
 @@ -276,6 +276,7 @@
- # include "os_beos.h"
- # define __ARGS(x)  x
+   && !defined(MACOS_X) /* MACOS_X doesn't yet support osdef.h */
+ # include "auto/osdef.h"	/* bring missing declarations in */
  #endif
 +#define UNUSED __attribute__((unused))
  
- #if (defined(UNIX) || defined(__EMX__) || defined(VMS)) \
- 	&& (!defined(MACOS_X) || defined(HAVE_CONFIG_H))
+ #ifdef __EMX__
+ # define    getcwd  _getcwd2

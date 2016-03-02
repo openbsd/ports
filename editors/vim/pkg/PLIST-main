@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2015/10/30 13:00:37 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2016/03/02 11:54:29 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -149,6 +149,7 @@ share/vim/${P}/doc/
 share/vim/${P}/doc/arabic.txt
 share/vim/${P}/doc/autocmd.txt
 share/vim/${P}/doc/change.txt
+share/vim/${P}/doc/channel.txt
 share/vim/${P}/doc/cmdline.txt
 share/vim/${P}/doc/debug.txt
 share/vim/${P}/doc/debugger.txt
@@ -163,7 +164,6 @@ share/vim/${P}/doc/fold.txt
 share/vim/${P}/doc/ft_ada.txt
 share/vim/${P}/doc/ft_sql.txt
 share/vim/${P}/doc/gui.txt
-share/vim/${P}/doc/gui_w16.txt
 share/vim/${P}/doc/gui_w32.txt
 share/vim/${P}/doc/gui_x11.txt
 share/vim/${P}/doc/hangulin.txt
@@ -332,6 +332,7 @@ share/vim/${P}/ftplugin/dosbatch.vim
 share/vim/${P}/ftplugin/dosini.vim
 share/vim/${P}/ftplugin/dtd.vim
 share/vim/${P}/ftplugin/dtrace.vim
+share/vim/${P}/ftplugin/eiffel.vim
 share/vim/${P}/ftplugin/elinks.vim
 share/vim/${P}/ftplugin/erlang.vim
 share/vim/${P}/ftplugin/eruby.vim
@@ -356,6 +357,8 @@ share/vim/${P}/ftplugin/haml.vim
 share/vim/${P}/ftplugin/hamster.vim
 share/vim/${P}/ftplugin/haskell.vim
 share/vim/${P}/ftplugin/help.vim
+share/vim/${P}/ftplugin/hgcommit.vim
+share/vim/${P}/ftplugin/hog.vim
 share/vim/${P}/ftplugin/hostconf.vim
 share/vim/${P}/ftplugin/hostsaccess.vim
 share/vim/${P}/ftplugin/html.vim
@@ -532,6 +535,7 @@ share/vim/${P}/indent/gitolite.vim
 share/vim/${P}/indent/go.vim
 share/vim/${P}/indent/haml.vim
 share/vim/${P}/indent/hamster.vim
+share/vim/${P}/indent/hog.vim
 share/vim/${P}/indent/html.vim
 share/vim/${P}/indent/htmldjango.vim
 share/vim/${P}/indent/idlang.vim
@@ -1369,6 +1373,7 @@ share/vim/${P}/tools/blink.c
 share/vim/${P}/tools/ccfilter.1
 share/vim/${P}/tools/ccfilter.c
 share/vim/${P}/tools/ccfilter_README.txt
+share/vim/${P}/tools/demoserver.py
 share/vim/${P}/tools/efm_filter.pl
 share/vim/${P}/tools/efm_filter.txt
 share/vim/${P}/tools/efm_perl.pl

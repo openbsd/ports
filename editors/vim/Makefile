@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.144 2015/10/30 13:00:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.145 2016/03/02 11:54:28 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-V=		7.4.900
+V=		7.4.1467
 DISTNAME=	vim-$V
 DISTFILES=	vim-$V{v$V}.tar.gz
 PKGNAME-main=	vim-$V
@@ -151,6 +151,7 @@ MODULES+=		devel/gettext
 WRKSRC=		${WRKDIST}/src
 SUBST_VARS=	P
 
+# CONFIGURE_STYLE=autoconf doesn't work
 post-patch:
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
 
