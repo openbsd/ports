@@ -1,0 +1,7 @@
+Corebird is a native Gtk+ Twitter client
+
+Offers native support for multiple accounts, handles media (including
+uploads) and doesn't rescroll your timeline on new tweets.
+
+Filter, search, manage lists, direct messages, favourites & mentions
+directly from your desktop.
