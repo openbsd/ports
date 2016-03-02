@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/07/15 19:26:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2016/03/02 14:30:50 sthen Exp $
 
 COMMENT-main=		interface between mailer MTA and content checkers
 COMMENT-utils=		utilities to monitor amavisd-new server
@@ -9,7 +9,7 @@ PKGNAME-main=		${DISTNAME}
 PKGNAME-utils=		amavisd-new-utils-${V}
 CATEGORIES=		mail security
 
-REVISION-main=		2
+REVISION-main=		3
 REVISION-utils=		2
 
 HOMEPAGE=		http://www.amavis.org/
@@ -42,7 +42,6 @@ RUN_DEPENDS=		archivers/arc \
 			mail/p5-Mail-SpamAssassin \
 			mail/p5-Mail-DKIM>=0.31 \
 			mail/p5-MIME-tools \
-			misc/p5-File-LibMagic \
 			net/net-snmp \
 			net/p5-IO-Socket-INET6 \
 			net/p5-Net-LibIDN \
