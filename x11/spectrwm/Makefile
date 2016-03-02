@@ -1,14 +1,18 @@
-# $OpenBSD: Makefile,v 1.19 2015/05/29 16:53:57 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/02 15:56:43 gonzalo Exp $
 
 COMMENT=		small tiling window manager
 
 SHARED_LIBS=		swmhack 1.0
 
-DISTNAME=		spectrwm-2.7.2
-EXTRACT_SUFX=		.tgz
+V=			2.7.2
+REVISION=		0
+GH_TAGNAME=		SPECTRWM_${V:S/./_/g}
+GH_ACCOUNT=		conformal
+GH_PROJECT=		spectrwm
+DISTNAME=		${GH_PROJECT}-${V}
 CATEGORIES=		x11
 
-HOMEPAGE=		https://opensource.conformal.com/wiki/spectrwm
+HOMEPAGE=		https://github.com/conformal/spectrwm/
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
 # BSD
@@ -16,8 +20,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 X11-xcb Xcursor Xft c util xcb xcb-util xcb-icccm
 WANTLIB += xcb-keysyms xcb-randr xcb-xtest
-
-MASTER_SITES=	http://opensource.conformal.com/snapshots/spectrwm/
 
 NO_TEST=	Yes
 
