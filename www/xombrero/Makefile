@@ -1,11 +1,16 @@
-# $OpenBSD: Makefile,v 1.14 2015/04/06 14:33:59 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/02 15:57:39 gonzalo Exp $
 
 COMMENT=		vi-like minimalists web browser
-DISTNAME=		xombrero-1.6.4
+V=			1.6.4
+GH_TAGNAME=		XOMBRERO_${V:S/./_/g}
+GH_ACCOUNT=		conformal
+GH_PROJECT=		xombrero
+DISTNAME=		${GH_PROJECT}-${V}
 CATEGORIES=		www
 EPOCH=			1
+REVISION=		0
 
-HOMEPAGE=		http://opensource.conformal.com/wiki/xombrero
+HOMEPAGE=		https://github.com/conformal/xombrero
 
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
@@ -20,15 +25,11 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gnutls gobject-2.0
 WANTLIB += gtk-3 javascriptcoregtk-3.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pthread soup-2.4 util webkitgtk-3.0 z
 
-MASTER_SITES=		http://opensource.conformal.com/snapshots/xombrero/
-
 LIB_DEPENDS=		www/webkit,gtk3
 RUN_DEPENDS=		devel/desktop-file-utils
 
 # webkit browsing
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav
-
-EXTRACT_SUFX=		.tgz
 
 NO_TEST=		Yes
 
