@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/07 16:25:32 abieber Exp $
-
-BROKEN-i386=	/usr/bin/ld: cannot find -ljawt
+# $OpenBSD: Makefile,v 1.4 2016/03/02 14:42:08 abieber Exp $
 
 COMMENT=	lightweight game library for java
 
-V=		2.9.1
-REVISION=	0
+V=		2.9.3
 GH_ACCOUNT=	LWJGL
 GH_PROJECT=	lwjgl
 GH_TAGNAME=	${GH_PROJECT}${V}
@@ -60,8 +57,9 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${LWJGL_HOME}
-	${INSTALL_DATA} ${WRKSRC}/libs/lwjgl.jar ${LWJGL_HOME}/
-	${INSTALL_DATA} ${WRKSRC}/libs/lwjgl_util.jar ${LWJGL_HOME}/
+	for x in ${WRKSRC}/libs/*.jar; do \
+		${INSTALL_DATA} $$x ${LWJGL_HOME}/; \
+	done
 	${INSTALL_DATA} ${WRKSRC}/libs/openbsd/liblwjgl${M_ARCH}.so ${LWJGL_HOME}/
 
 .include <bsd.port.mk>

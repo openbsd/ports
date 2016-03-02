@@ -1,5 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/30 17:44:48 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/03/02 14:42:08 abieber Exp $
 share/lwjgl/
+share/lwjgl/AppleJavaExtensions.jar
+share/lwjgl/asm-debug-all.jar
+share/lwjgl/jinput.jar
 share/lwjgl/liblwjgl${M_ARCH}.so
 share/lwjgl/lwjgl.jar
+share/lwjgl/lwjgl_test.jar
 share/lwjgl/lwjgl_util.jar
+share/lwjgl/lwjgl_util_applet.jar
+share/lwjgl/lzma.jar
