@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/08/13 19:52:04 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2016/03/02 20:22:19 jca Exp $
 include/ortp/
 include/ortp/b64.h
 include/ortp/event.h
@@ -25,6 +25,8 @@ share/doc/ortp/ChangeLog
 share/doc/ortp/README
 share/doc/ortp/html/
 share/doc/ortp/html/annotated.html
+share/doc/ortp/html/arrowdown.png
+share/doc/ortp/html/arrowright.png
 share/doc/ortp/html/b64_8c.html
 share/doc/ortp/html/b64_8h_source.html
 share/doc/ortp/html/bc_s.png
@@ -35,27 +37,14 @@ share/doc/ortp/html/dir_1237c0c4ac8a40c5981d204c92d68506.html
 share/doc/ortp/html/dir_36adbd774c1c6f000b1297d70be35b2a.html
 share/doc/ortp/html/dir_6bf604f68eb5164e4b2a9bb0b07c3bf3.html
 share/doc/ortp/html/dir_82e548d772bf9edbe5ac623da58159b2.html
+share/doc/ortp/html/doc.png
 share/doc/ortp/html/doxygen.css
 share/doc/ortp/html/doxygen.png
 share/doc/ortp/html/dynsections.js
 share/doc/ortp/html/event_8h_source.html
 share/doc/ortp/html/files.html
-share/doc/ortp/html/ftv2blank.png
-share/doc/ortp/html/ftv2cl.png
-share/doc/ortp/html/ftv2doc.png
-share/doc/ortp/html/ftv2folderclosed.png
-share/doc/ortp/html/ftv2folderopen.png
-share/doc/ortp/html/ftv2lastnode.png
-share/doc/ortp/html/ftv2link.png
-share/doc/ortp/html/ftv2mlastnode.png
-share/doc/ortp/html/ftv2mnode.png
-share/doc/ortp/html/ftv2mo.png
-share/doc/ortp/html/ftv2node.png
-share/doc/ortp/html/ftv2ns.png
-share/doc/ortp/html/ftv2plastnode.png
-share/doc/ortp/html/ftv2pnode.png
-share/doc/ortp/html/ftv2splitbar.png
-share/doc/ortp/html/ftv2vertline.png
+share/doc/ortp/html/folderclosed.png
+share/doc/ortp/html/folderopen.png
 share/doc/ortp/html/functions.html
 share/doc/ortp/html/functions_vars.html
 share/doc/ortp/html/globals.html
@@ -90,6 +79,7 @@ share/doc/ortp/html/rtptimer_8h_source.html
 share/doc/ortp/html/scheduler_8h_source.html
 share/doc/ortp/html/sessionset_8h.html
 share/doc/ortp/html/sessionset_8h_source.html
+share/doc/ortp/html/splitbar.png
 share/doc/ortp/html/str__utils_8h_source.html
 share/doc/ortp/html/structOrtpEvQueue.html
 share/doc/ortp/html/structOrtpLossRateEstimator.html
