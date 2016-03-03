@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/02/25 07:44:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/03/03 11:46:40 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/bin/
 google-cloud-sdk/bin/bootstrapping/
@@ -67,60 +67,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/fingerprinting.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/loader.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/loader.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/README.md
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/.gitignore
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/CONTRIBUTING.md
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/LICENSE
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/README.md
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/bin/
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/bin/detect
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/bin/generate_configs
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/data/
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/data/Dockerfile
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/data/app.yaml
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/data/dockerignore
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/data/install-node-version
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/data/package-json-install
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/lib/
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/lib/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/lib/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/lib/comm.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/lib/comm.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/runtime.yaml
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/testing.md
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/CONTRIBUTING.md
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/LICENSE
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/README.md
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/bin/
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/bin/detect
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/bin/generate_configs
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/data/
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/data/Dockerfile.install_app
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/data/Dockerfile.preamble
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/data/Dockerfile.requirements_txt
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/data/Dockerfile.virtualenv.template
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/data/app.yaml.template
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/data/dockerignore
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/lib/
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/lib/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/lib/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/lib/comm.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/lib/comm.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/runtime.yaml
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/test/
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/test/__init__.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/test/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/test/runtime_test.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/python/test/runtime_test.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/xrt-import
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/flags.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/images/
@@ -344,6 +292,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/dns/util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/emulators/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/emulators/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/emulators/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/emulators/broker.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/emulators/broker.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/emulators/datastore_util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/emulators/datastore_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/emulators/pubsub_util.py
@@ -706,8 +656,6 @@ google-cloud-sdk/lib/googlecloudsdk/core/util/urlopen_with_cacerts.py
 google-cloud-sdk/lib/googlecloudsdk/core/util/urlopen_with_cacerts.pyc
 google-cloud-sdk/lib/googlecloudsdk/core/util/version.py
 google-cloud-sdk/lib/googlecloudsdk/core/util/version.pyc
-google-cloud-sdk/lib/googlecloudsdk/core/workspaces.py
-google-cloud-sdk/lib/googlecloudsdk/core/workspaces.pyc
 google-cloud-sdk/lib/googlecloudsdk/gcloud_main.py
 google-cloud-sdk/lib/googlecloudsdk/gcloud_main.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/
@@ -2582,6 +2530,8 @@ google-cloud-sdk/lib/surface/preview/__init__.pyc
 google-cloud-sdk/lib/surface/preview/app/
 google-cloud-sdk/lib/surface/preview/app/__init__.py
 google-cloud-sdk/lib/surface/preview/app/__init__.pyc
+google-cloud-sdk/lib/surface/preview/app/browse.py
+google-cloud-sdk/lib/surface/preview/app/browse.pyc
 google-cloud-sdk/lib/surface/preview/app/deploy.py
 google-cloud-sdk/lib/surface/preview/app/deploy.pyc
 google-cloud-sdk/lib/surface/preview/app/gen_config.py
@@ -2906,6 +2856,20 @@ google-cloud-sdk/lib/third_party/argparse/__init__.py
 google-cloud-sdk/lib/third_party/argparse/__init__.pyc
 google-cloud-sdk/lib/third_party/dateutil/
 google-cloud-sdk/lib/third_party/dateutil/LICENSE
+google-cloud-sdk/lib/third_party/dateutil/__init__.py
+google-cloud-sdk/lib/third_party/dateutil/__init__.pyc
+google-cloud-sdk/lib/third_party/dateutil/easter.py
+google-cloud-sdk/lib/third_party/dateutil/easter.pyc
+google-cloud-sdk/lib/third_party/dateutil/parser.py
+google-cloud-sdk/lib/third_party/dateutil/parser.pyc
+google-cloud-sdk/lib/third_party/dateutil/relativedelta.py
+google-cloud-sdk/lib/third_party/dateutil/relativedelta.pyc
+google-cloud-sdk/lib/third_party/dateutil/rrule.py
+google-cloud-sdk/lib/third_party/dateutil/rrule.pyc
+google-cloud-sdk/lib/third_party/dateutil/tz.py
+google-cloud-sdk/lib/third_party/dateutil/tz.pyc
+google-cloud-sdk/lib/third_party/dateutil/tzwin.py
+google-cloud-sdk/lib/third_party/dateutil/tzwin.pyc
 google-cloud-sdk/lib/third_party/dns/
 google-cloud-sdk/lib/third_party/dns/LICENSE
 google-cloud-sdk/lib/third_party/dns/__init__.py
@@ -3309,6 +3273,8 @@ google-cloud-sdk/lib/third_party/oauth2client/
 google-cloud-sdk/lib/third_party/oauth2client/LICENSE
 google-cloud-sdk/lib/third_party/oauth2client/__init__.py
 google-cloud-sdk/lib/third_party/oauth2client/__init__.pyc
+google-cloud-sdk/lib/third_party/oauth2client/_helpers.py
+google-cloud-sdk/lib/third_party/oauth2client/_helpers.pyc
 google-cloud-sdk/lib/third_party/oauth2client/appengine.py
 google-cloud-sdk/lib/third_party/oauth2client/appengine.pyc
 google-cloud-sdk/lib/third_party/oauth2client/client.py
@@ -3934,6 +3900,38 @@ google-cloud-sdk/platform/bq/third_party/yaml/serializer.py
 google-cloud-sdk/platform/bq/third_party/yaml/serializer.pyc
 google-cloud-sdk/platform/bq/third_party/yaml/tokens.py
 google-cloud-sdk/platform/bq/third_party/yaml/tokens.pyc
+google-cloud-sdk/platform/ext-runtime/
+google-cloud-sdk/platform/ext-runtime/nodejs/
+google-cloud-sdk/platform/ext-runtime/nodejs/.gitignore
+google-cloud-sdk/platform/ext-runtime/nodejs/CONTRIBUTING.md
+google-cloud-sdk/platform/ext-runtime/nodejs/LICENSE
+google-cloud-sdk/platform/ext-runtime/nodejs/README.md
+google-cloud-sdk/platform/ext-runtime/nodejs/bin/
+google-cloud-sdk/platform/ext-runtime/nodejs/bin/detect
+google-cloud-sdk/platform/ext-runtime/nodejs/bin/generate_configs
+google-cloud-sdk/platform/ext-runtime/nodejs/data/
+google-cloud-sdk/platform/ext-runtime/nodejs/data/Dockerfile
+google-cloud-sdk/platform/ext-runtime/nodejs/data/app.yaml
+google-cloud-sdk/platform/ext-runtime/nodejs/data/dockerignore
+google-cloud-sdk/platform/ext-runtime/nodejs/data/install-node-version
+google-cloud-sdk/platform/ext-runtime/nodejs/data/package-json-install
+google-cloud-sdk/platform/ext-runtime/nodejs/lib/
+google-cloud-sdk/platform/ext-runtime/nodejs/lib/comm.py
+google-cloud-sdk/platform/ext-runtime/nodejs/lib/comm.pyc
+google-cloud-sdk/platform/ext-runtime/nodejs/runtime.yaml
+google-cloud-sdk/platform/ext-runtime/nodejs/setenv
+google-cloud-sdk/platform/ext-runtime/nodejs/setup.py
+google-cloud-sdk/platform/ext-runtime/nodejs/setup.pyc
+google-cloud-sdk/platform/ext-runtime/nodejs/test/
+google-cloud-sdk/platform/ext-runtime/nodejs/test/runtime_test.py
+google-cloud-sdk/platform/ext-runtime/nodejs/test/runtime_test.pyc
+google-cloud-sdk/platform/ext-runtime/nodejs/testdata/
+google-cloud-sdk/platform/ext-runtime/nodejs/testdata/minimal/
+google-cloud-sdk/platform/ext-runtime/nodejs/testdata/minimal/.dockerignore
+google-cloud-sdk/platform/ext-runtime/nodejs/testdata/minimal/Dockerfile
+google-cloud-sdk/platform/ext-runtime/nodejs/testdata/minimal/app.yaml
+google-cloud-sdk/platform/ext-runtime/nodejs/testdata/minimal/server.js
+google-cloud-sdk/platform/ext-runtime/nodejs/testing.md
 google-cloud-sdk/platform/gsutil/
 google-cloud-sdk/platform/gsutil/CHANGES.md
 google-cloud-sdk/platform/gsutil/CHECKSUM
@@ -7078,6 +7076,7 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_init.1
 @man man/man1/gcloud_preview.1
 @man man/man1/gcloud_preview_app.1
+@man man/man1/gcloud_preview_app_browse.1
 @man man/man1/gcloud_preview_app_deploy.1
 @man man/man1/gcloud_preview_app_gen-config.1
 @man man/man1/gcloud_preview_app_modules.1
@@ -7092,8 +7091,15 @@ google-cloud-sdk/properties
 @man man/man1/gcloud_preview_datastore_cleanup-indexes.1
 @man man/man1/gcloud_preview_datastore_create-indexes.1
 @man man/man1/gcloud_projects.1
+@man man/man1/gcloud_projects_add-iam-policy-binding.1
+@man man/man1/gcloud_projects_delete.1
 @man man/man1/gcloud_projects_describe.1
+@man man/man1/gcloud_projects_get-iam-policy.1
 @man man/man1/gcloud_projects_list.1
+@man man/man1/gcloud_projects_remove-iam-policy-binding.1
+@man man/man1/gcloud_projects_set-iam-policy.1
+@man man/man1/gcloud_projects_undelete.1
+@man man/man1/gcloud_projects_update.1
 @man man/man1/gcloud_source.1
 @man man/man1/gcloud_source_repos.1
 @man man/man1/gcloud_source_repos_clone.1
