@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/12/03 10:32:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/03/03 09:20:16 jasper Exp $
 ${GEM_BIN}/catstomp${GEM_BIN_SUFFIX}
 ${GEM_BIN}/stompcat${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -11,6 +11,7 @@ ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/catstomp
 ${GEM_LIB}/gems/${DISTNAME}/bin/stompcat
 ${GEM_LIB}/gems/${DISTNAME}/examples/
+${GEM_LIB}/gems/${DISTNAME}/examples/amqdurasub.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/client11_ex1.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/client11_putget1.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/conn11_ex1.rb
