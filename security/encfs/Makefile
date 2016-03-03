@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2015/12/04 20:47:53 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/03 18:02:43 landry Exp $
 
 BROKEN-hppa =	configure: error: Could not link against boost_serialization-boost_serialization
+BROKEN-sparc64 =	configure: error: Could not link against boost_serialization-boost_serialization
 COMMENT =		fuse-based cryptographic filesystem
 DISTNAME =		encfs-1.7.4
 REVISION =		1
