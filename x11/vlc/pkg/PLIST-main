@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.39 2016/01/23 08:09:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.40 2016/03/03 12:01:18 ajacoutot Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -516,10 +516,14 @@ share/locale/kk/LC_MESSAGES/vlc.mo
 share/locale/km/LC_MESSAGES/vlc.mo
 share/locale/kn/LC_MESSAGES/vlc.mo
 share/locale/ko/LC_MESSAGES/vlc.mo
+share/locale/ks_IN/
+share/locale/ks_IN/LC_MESSAGES/
+share/locale/ks_IN/LC_MESSAGES/vlc.mo
 share/locale/ky/LC_MESSAGES/vlc.mo
 share/locale/lg/LC_MESSAGES/vlc.mo
 share/locale/lt/LC_MESSAGES/vlc.mo
 share/locale/lv/LC_MESSAGES/vlc.mo
+share/locale/mai/LC_MESSAGES/vlc.mo
 share/locale/mk/LC_MESSAGES/vlc.mo
 share/locale/ml/LC_MESSAGES/vlc.mo
 share/locale/mn/LC_MESSAGES/vlc.mo
