@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/02/13 13:43:19 kirby Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/03 07:28:05 kirby Exp $
 
 COMMENT =		owncloud sync client
 
@@ -16,22 +16,19 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += QtDBus QtGui QtNetwork QtSql QtWebKit QtXml c
-WANTLIB += crypto lib/inotify/inotify m pthread qtkeychain
-WANTLIB += sqlite3 ssl z
+WANTLIB += c crypto lib/inotify/inotify m pthread sqlite3 ssl z
 
 MASTER_SITES =		https://download.owncloud.com/desktop/stable/
 EXTRACT_SUFX =		.tar.xz
 
-MODULES =		converters/libiconv devel/cmake x11/qt4 gcc4
+MODULES =		converters/libiconv devel/cmake gcc4
 MODGCC4_ARCHS = 	*
 MODGCC4_LANGS += 	c++
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
-LIB_DEPENDS =		devel/libinotify \
-			security/qtkeychain
+LIB_DEPENDS =		devel/libinotify
 
-CONFIGURE_ARGS +=	-DBUILD_WITH_QT4=ON \
+CONFIGURE_ARGS +=	-Wno-dev \
 			-DSYSCONF_INSTALL_DIR=${SYSCONFDIR} \
 			-DCMAKE_C_FLAGS="${CFLAGS} \
 				-I${LOCALBASE}/include/inotify" \
@@ -39,6 +36,22 @@ CONFIGURE_ARGS +=	-DBUILD_WITH_QT4=ON \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} \
 				-L${LOCALBASE}/lib/inotify -linotify \
 				-Wl,-rpath=${LOCALBASE}/lib/inotify"
+
+FLAVORS = 		qt5
+FLAVOR ?=
+
+.if ${FLAVOR:Mqt5}
+MODULES += 		x11/qt5
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql
+WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml qt5keychain
+LIB_DEPENDS += 		security/qtkeychain,qt5
+CONFIGURE_ARGS += 	-DBUILD_WITH_QT4=OFF
+.else
+MODULES += 		x11/qt4
+WANTLIB += QtDBus QtGui QtNetwork QtSql QtWebKit QtXml qtkeychain
+LIB_DEPENDS += 		security/qtkeychain
+CONFIGURE_ARGS += 	-DBUILD_WITH_QT4=ON
+.endif
 
 # see post-extract
 CFLAGS += 		 -DHAVE_ICONV -DHAVE_ICONV_H
