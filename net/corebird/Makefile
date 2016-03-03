@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/03/02 16:52:57 awolk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/03 14:21:07 kili Exp $
 
 COMMENT =		native Gtk+ Twitter client
 
@@ -31,6 +31,7 @@ AUTOMAKE_VERSION =	1.14
 
 MODULES =		devel/dconf \
 			devel/gettext \
+			textproc/intltool \
 			x11/gnome
 
 MODGNOME_TOOLS =	desktop-file-utils \
@@ -55,6 +56,7 @@ RUN_DEPENDS =		multimedia/gstreamer1/plugins-bad \
 
 CONFIGURE_STYLE =	gnu
 USE_GMAKE =		Yes
+USE_LIBTOOL =		gnu
 
 pre-configure:
 	cd ${WRKSRC} && \
