@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/27 02:57:00 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/03 03:46:32 bentley Exp $
 
 COMMENT =		command line client application for Mega
 
-DISTNAME =		megatools-1.9.96
+DISTNAME =		megatools-1.9.97
 
-SHARED_LIBS +=  mega                      0.0 # 0.0
+SHARED_LIBS +=  mega                      1.0 # 0.0
 
 CATEGORIES =		net
 
