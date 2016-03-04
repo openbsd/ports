@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_Mail_SpamAssassin_Plugin_SPF_pm,v 1.1 2016/03/04 00:05:35 sthen Exp $
+--- lib/Mail/SpamAssassin/Plugin/SPF.pm.orig	Tue Apr 28 20:56:47 2015
++++ lib/Mail/SpamAssassin/Plugin/SPF.pm	Thu Mar  3 23:59:55 2016
+@@ -232,7 +232,7 @@ working downwards until results are successfully parse
+ =item has_check_for_spf_errors
+ 
+ Adds capability check for "if can()" for check_for_spf_permerror, check_for_spf_temperror, check_for_spf_helo_permerror and check_for_spf_helo_permerror
+-  
++
+ =cut 
+ 
+ sub has_check_for_spf_errors { 1 }
+@@ -506,9 +506,9 @@ sub _check_spf {
+       $self->{spf_server} = Mail::SPF::Server->new(
+ 				hostname     => $scanner->get_tag('HOSTNAME'),
+ 				dns_resolver => $self->{main}->{resolver},
+-				max_dns_interactive_terms => 15);
++				max_dns_interactive_terms => 20);
+       # Bug 7112: max_dns_interactive_terms defaults to 10, but even 14 is
+-      # not enough for ebay.com, setting it to 15
++      # not enough for ebay.com, setting it to 15 NOTE: raising to 20 per bug 7182
+       1;
+     } or do {
+       $eval_stat = $@ ne '' ? $@ : "errno=$!";  chomp $eval_stat;

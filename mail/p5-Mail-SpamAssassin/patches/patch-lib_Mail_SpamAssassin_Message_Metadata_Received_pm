@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_Mail_SpamAssassin_Message_Metadata_Received_pm,v 1.1 2016/03/04 00:05:35 sthen Exp $
+--- lib/Mail/SpamAssassin/Message/Metadata/Received.pm.orig	Tue Apr 28 20:56:48 2015
++++ lib/Mail/SpamAssassin/Message/Metadata/Received.pm	Thu Mar  3 23:59:55 2016
+@@ -434,7 +434,8 @@ sub parse_received_line {
+     $auth = 'Postfix';
+   }
+   # Communigate Pro - Bug 6495 adds HTTP as possible transmission method
+-  elsif (/CommuniGate Pro (HTTP|SMTP)/ && / \(account /) {
++  # 	Bug 7277: XIMSS used by Pronto and other custom apps, IMAP supports XMIT extension
++  elsif (/CommuniGate Pro (HTTP|SMTP|XIMSS|IMAP)/ && / \(account /) {
+     $auth = 'Communigate';
+   }
+   # Microsoft Exchange (complete with syntax error)
+@@ -714,6 +715,11 @@ sub parse_received_line {
+     # Received: from sc8-sf-sshgate.sourceforge.net (HELO sc8-sf-netmisc.sourceforge.net) (66.35.250.220) by la.mx.develooper.com (qpsmtpd/0.27-dev) with ESMTP; Fri, 02 Jan 2004 14:44:41 -0800
+     # Received: from mx10.topofferz.net (HELO ) (69.6.60.10) by blazing.arsecandle.org with SMTP; 3 Mar 2004 20:34:38 -0000
+     if (/^(\S+) \((?:HELO|EHLO) (\S*)\) \((${IP_ADDRESS})\) by (\S+) \(qpsmtpd\/\S+\) with (?:ESMTP|SMTP)/) {
++      $rdns = $1; $helo = $2; $ip = $3; $by = $4; goto enough;
++    }
++
++    # Received: from mail-backend.DDDD.com (LHLO mail-backend.DDDD.com) (10.2.2.20) by mail-backend.DDDD.com with LMTP; Thu, 18 Jun 2015 16:50:56 -0700 (PDT)
++    if (/^(\S+) \(LHLO (\S*)\) \((${IP_ADDRESS})\) by (\S+) with LMTP/) {
+       $rdns = $1; $helo = $2; $ip = $3; $by = $4; goto enough;
+     }
+ 
