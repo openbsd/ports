@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/09/24 16:19:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/03/04 22:25:28 giovanni Exp $
 bin/pwhois
 ${P5SITE}/Net/Whois/
 ${P5SITE}/Net/Whois/Raw/
@@ -7,3 +7,5 @@ ${P5SITE}/Net/Whois/Raw/Common.pm
 ${P5SITE}/Net/Whois/Raw/Data.pm
 @man man/man1/pwhois.1
 @man man/man3p/Net::Whois::Raw.3p
+@man man/man3p/Net::Whois::Raw::Common.3p
+@man man/man3p/Net::Whois::Raw::Data.3p
