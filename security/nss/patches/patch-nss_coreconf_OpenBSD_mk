@@ -1,14 +1,18 @@
-$OpenBSD: patch-nss_coreconf_OpenBSD_mk,v 1.1 2013/06/23 18:40:01 landry Exp $
---- nss/coreconf/OpenBSD.mk.orig	Tue May 28 23:43:24 2013
-+++ nss/coreconf/OpenBSD.mk	Wed Jun 12 22:01:11 2013
-@@ -24,7 +24,7 @@ OS_LIBS			+= -pthread
+$OpenBSD: patch-nss_coreconf_OpenBSD_mk,v 1.2 2016/03/04 16:29:24 landry Exp $
+Remove -ansi: https://bugzilla.mozilla.org/show_bug.cgi?id=1250891
+--- nss/coreconf/OpenBSD.mk.orig	Fri Feb 26 21:51:11 2016
++++ nss/coreconf/OpenBSD.mk	Thu Mar  3 11:15:41 2016
+@@ -24,9 +24,9 @@ OS_LIBS			+= -pthread
  DSO_LDOPTS		+= -pthread
  endif
  
 -DLL_SUFFIX		= so.1.0
 +DLL_SUFFIX		= so.${SO_VERSION}
  
- OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -Wno-switch -pipe -DOPENBSD
+-OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -Wno-switch -pipe -DOPENBSD
++OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -Wall -Wno-switch -pipe -DOPENBSD
+ 
+ OS_LIBS			= 
  
 @@ -35,7 +35,7 @@ ARCH			= openbsd
  DSO_CFLAGS		= -fPIC -DPIC
