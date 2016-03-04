@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/02/25 00:46:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/03/04 14:26:35 sthen Exp $
 @extraunexec rm -rf /var/log/letsencrypt/*
 bin/letsencrypt
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/
@@ -171,6 +171,7 @@ lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/matching_cer
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/rsa256_key.pem
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/rsa512_key.pem
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/rsa512_key_2.pem
+lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/sample-renewal-ancient.conf
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/sample-renewal.conf
 lib/python${MODPY_VERSION}/site-packages/letsencrypt/tests/testdata/webrootconftest.ini
 share/examples/letsencrypt/
