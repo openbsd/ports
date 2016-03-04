@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/04 10:11:22 kirby Exp $
+# $OpenBSD: Makefile,v 1.25 2016/03/04 17:16:00 ajacoutot Exp $
 
 COMMENT =	XMPP transport/gateway
 
@@ -17,7 +17,7 @@ WANTLIB += c m pthread stdc++ gloox purple glib-2.0 gthread-2.0 ev
 WANTLIB += PocoData PocoFoundation PocoDataMySQL PocoDataODBC PocoDataSQLite
 WANTLIB += Magick++-6.Q16
 
-MODULES =	lang/python devel/cmake
+MODULES =	devel/cmake lang/python
 
 BUILD_DEPENDS =	devel/gettext-tools
 
