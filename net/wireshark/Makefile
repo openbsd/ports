@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/03/01 00:07:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2016/03/04 10:11:22 kirby Exp $
 
 # XXX should add pledge to dumpcap.
 
@@ -92,7 +92,6 @@ LIB_DEPENDS-gtk +=	tshark-${WVER}:${BUILD_PKGPATH:S/,$//},-text \
 			audio/portaudio-svn
 
 MODULES +=		devel/cmake
-CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS =	-DDUMPCAP_INST_VALS=suid \
 			-DCMAKE_INSTALL_MANDIR=${TRUEPREFIX}/man \
 			-DCOMPILER_CAN_HANDLE_SSE4_2=false \

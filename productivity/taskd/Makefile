@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/02/14 11:31:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/04 10:11:22 kirby Exp $
 
 COMMENT =	lightweight server providing access to task data
 
@@ -24,8 +24,6 @@ MODGCC4_ARCHS =		*
 WANTLIB += c gnutls m pthread
 
 LIB_DEPENDS =	security/gnutls
-
-CONFIGURE_STYLE =	cmake
 
 CONFIGURE_ARGS +=	-DTASKD_DOCDIR=share/taskd \
 			-DTASKD_MAN1DIR=man/man1 \

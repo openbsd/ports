@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/22 11:31:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/04 10:11:21 kirby Exp $
 
 COMMENT=	software to turn RTL2832U into an SDR
 
@@ -23,8 +23,6 @@ MASTER_SITES=	http://spacehopper.org/mirrors/
 
 MODULES=	devel/cmake
 LIB_DEPENDS=	devel/libusb1
-
-CONFIGURE_STYLE= cmake
 
 NO_TEST=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 23:50:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/04 10:11:22 kirby Exp $
 
 COMMENT =		audit network device configuration
 
@@ -20,7 +20,6 @@ WANTLIB =		c m stdc++ nipper
 
 LIB_DEPENDS=		security/libnipper
 
-CONFIGURE_STYLE =	cmake
 MODULES +=		devel/cmake
 
 NO_TEST =		Yes

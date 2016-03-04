@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/12/03 21:24:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/04 10:11:22 kirby Exp $
 
 PKG_ARCH =	*
 COMMENT =	lightweight C++ template library for linear algebra
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM =	 Yes
 
 
 MODULES =		devel/cmake
-CONFIGURE_STYLE =	cmake
 NO_TEST=		Yes
 # CONFIGURE_ARGS =	-DEIGEN_BUILD_TESTS:BOOL=ON \
 #			-DEIGEN_BUILD_EXAMPLES:BOOL=ON

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/11/06 20:37:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/04 10:11:22 kirby Exp $
 
 COMMENT =	XMPP transport/gateway
 
@@ -29,8 +29,6 @@ LIB_DEPENDS =	devel/libev \
 RUN_DEPENDS =	net/py-xmpppy
 
 SPVARDIR =	/var/spectrum
-
-CONFIGURE_STYLE = cmake
 
 CONFIGURE_ENV += LDFLAGS=-pthread
 USE_GROFF =	Yes

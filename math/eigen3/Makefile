@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/12/03 21:24:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/04 10:11:22 kirby Exp $
 
 PKG_ARCH =	*
 COMMENT =	lightweight C++ template library for linear algebra
@@ -33,7 +33,6 @@ RUN_DEPENDS =		devel/sparsehash \
 			math/suitesparse
 
 MODULES =		devel/cmake x11/qt4
-CONFIGURE_STYLE =	cmake
 
 # Needs Fortran support
 USE_NINJA =		No

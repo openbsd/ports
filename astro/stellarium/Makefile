@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2016/01/09 08:34:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2016/03/04 10:11:21 kirby Exp $
 
 COMMENT=	free open source planetarium
 
@@ -26,7 +26,6 @@ RUN_DEPENDS=	net/curl \
 		devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-CONFIGURE_STYLE=cmake
 CONFIGURE_ENV=	HOME=${WRKDIR}
 CONFIGURE_ARGS=	-Wno-dev \
 		-DCMAKE_C_FLAGS="${CFLAGS} -I${X11BASE}/include" \
