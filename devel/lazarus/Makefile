@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/29 17:43:25 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/04 18:30:48 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		Delphi compatible IDE
 
-V =			1.4.4
+V =			1.6.0
 DISTNAME =		lazarus-${V}-0
 PKGNAME =		lazarus-${V}
 
