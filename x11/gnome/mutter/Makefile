@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2015/11/12 18:00:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2016/03/04 10:21:21 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.18.2
+GNOME_VERSION=		3.18.3
 
 SHARED_LIBS +=  mutter                    1.0 # 0.0
 
@@ -15,7 +15,7 @@ WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject canberra
 WANTLIB += canberra-gtk3 clutter-1.0 cogl cogl-pango cogl-path
 WANTLIB += dbus-1 drm expat ffi fontconfig freetype gbm gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 girepository-1.0 glapi glib-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 girepository-1.0 glib-2.0
 WANTLIB += gmodule-2.0 gnome-desktop-3 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 harfbuzz json-glib-1.0 ltdl m ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
