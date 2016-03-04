@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2015/01/21 14:19:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2016/03/04 22:10:48 giovanni Exp $
 
 COMMENT=		modules for parsing (and creating) MIME entities
 
-DISTNAME=		MIME-tools-5.505
+DISTNAME=		MIME-tools-5.507
 CATEGORIES=		mail
 
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
