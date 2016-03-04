@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2016/01/08 19:24:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.30 2016/03/04 10:14:34 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -478,6 +478,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command/ubuntu/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/ubuntu/ppa_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/windows/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command/windows/registry_key_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/command/windows/service_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/configuration_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/
 ${GEM_LIB}/gems/${DISTNAME}/spec/helper/detect_os/
