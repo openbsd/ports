@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/11 09:35:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/04 04:25:59 bentley Exp $
+
+PORTROACH_COMMENT =	0.13a is newer than 0.13
+PORTROACH =		skipv:0.13
 
 COMMENT =		fast-paced sidescrolling shoot-em-up
 
