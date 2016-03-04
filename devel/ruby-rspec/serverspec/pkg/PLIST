@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/01/08 19:24:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2016/03/04 10:14:47 jasper Exp $
 ${GEM_BIN}/serverspec-init${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -29,6 +29,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/matcher/be_enforcing.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/matcher/be_executable.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/matcher/be_installed.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/matcher/be_listening.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/matcher/be_monitored_by.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/matcher/be_mounted.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/matcher/be_permissive.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/serverspec/matcher/be_reachable.rb
