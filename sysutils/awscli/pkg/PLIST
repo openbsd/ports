@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/03/02 07:21:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2016/03/04 14:22:57 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1253,6 +1253,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/topics/
 lib/python${MODPY_VERSION}/site-packages/awscli/topics/config-vars.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/topics/return-codes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/topics/s3-config.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/topics/s3-faq.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/topics/topic-tags.json
 lib/python${MODPY_VERSION}/site-packages/awscli/topictags.py
 lib/python${MODPY_VERSION}/site-packages/awscli/topictags.pyc
