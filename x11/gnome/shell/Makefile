@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.125 2015/11/18 10:19:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.126 2016/03/04 10:21:40 jasper Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.18.3
+GNOME_VERSION=		3.18.4
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,7 +26,7 @@ WANTLIB += pulse pulse-mainloop-glib readline secret-1 smime3
 WANTLIB += sndfile softokn3 soup-2.4 sqlite3 ssl3 startup-notification-1
 WANTLIB += telepathy-glib upower-glib vorbis vorbisenc
 WANTLIB += vorbisfile xcb xcb-util xcb-render xcb-shm xml2 z epoxy
-WANTLIB += EGL Xau Xdmcp drm gbm glapi xcb-dri2 xcb-randr xcb-shape
+WANTLIB += EGL drm gbm xcb-dri2 xcb-randr xcb-shape
 WANTLIB += xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11 xkbfile lzma
 
 MODULES=		devel/dconf \
