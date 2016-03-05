@@ -1,0 +1,4 @@
+This class is used to generate data for Data Matrix (IEC16022) 2d barcodes.
+It is primarily useful as a data source for modules that do rendering, such
+as Barcode::DataMatrix::PNG or HTML::Barcode::DataMatrix. You can easily
+make a version that renders an image, PDF, or anything else.
