@@ -1,0 +1,5 @@
+This class, which extends Barcode::DataMatrix, is used to create
+graphical representations of Data Matrix (IEC16022) barcodes in PNG
+format. Potential applications include graphically oriented documents
+such as PDF, printable web documents, invoices, packing lists,
+shipping labels, etc.
