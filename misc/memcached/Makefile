@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2015/05/05 15:43:03 giovanni Exp $
+# $OpenBSD: Makefile,v 1.30 2016/03/05 21:30:16 giovanni Exp $
 
 COMMENT=	distributed memory object caching system
 
-DISTNAME=	memcached-1.4.24
+DISTNAME=	memcached-1.4.25
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.memcached.org/
@@ -39,5 +39,7 @@ CONFIGURE_ARGS+=	--disable-sasl
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/memcached
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/memcached
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/memcached-tool ${PREFIX}/bin/memcached-tool
+	${INSTALL_DATA} ${WRKSRC}/scripts/memcached-tool.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
