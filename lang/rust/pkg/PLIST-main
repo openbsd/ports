@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2016/01/22 09:03:15 semarie Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2016/03/05 15:05:33 semarie Exp $
 bin/rust-gdb
 bin/rustc
 @bin bin/rustdoc
@@ -19,6 +19,7 @@ lib/librustc_lint-${RUST_HASH}.so
 lib/librustc_llvm-${RUST_HASH}.so
 lib/librustc_metadata-${RUST_HASH}.so
 lib/librustc_mir-${RUST_HASH}.so
+lib/librustc_passes-${RUST_HASH}.so
 lib/librustc_platform_intrinsics-${RUST_HASH}.so
 lib/librustc_plugin-${RUST_HASH}.so
 lib/librustc_privacy-${RUST_HASH}.so
@@ -29,6 +30,7 @@ lib/librustdoc-${RUST_HASH}.so
 lib/libserialize-${RUST_HASH}.so
 lib/libstd-${RUST_HASH}.so
 lib/libsyntax-${RUST_HASH}.so
+lib/libsyntax_ext-${RUST_HASH}.so
 lib/libterm-${RUST_HASH}.so
 lib/libtest-${RUST_HASH}.so
 lib/rustlib/
@@ -75,6 +77,7 @@ lib/rustlib/${TRIPLE_ARCH}/lib/librustc_lint-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_llvm-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_metadata-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_mir-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_passes-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_platform_intrinsics-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_plugin-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_privacy-${RUST_HASH}.so
@@ -88,6 +91,7 @@ lib/rustlib/${TRIPLE_ARCH}/lib/libserialize-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/libsyntax-${RUST_HASH}.so
+lib/rustlib/${TRIPLE_ARCH}/lib/libsyntax_ext-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/libterm-${RUST_HASH}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libterm-${RUST_HASH}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${RUST_HASH}.rlib

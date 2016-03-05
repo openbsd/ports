@@ -1,9 +1,0 @@
-$OpenBSD: patch-mk_cfg_x86_64-unknown-openbsd_mk,v 1.1 2016/01/13 07:39:08 semarie Exp $
-https://github.com/rust-lang/rust/pull/29794
---- mk/cfg/x86_64-unknown-openbsd.mk.orig	Sat Jan  9 08:59:36 2016
-+++ mk/cfg/x86_64-unknown-openbsd.mk	Sat Jan  9 09:00:04 2016
-@@ -20,3 +20,4 @@ CFG_LDPATH_x86_64-unknown-openbsd :=
- CFG_RUN_x86_64-unknown-openbsd=$(2)
- CFG_RUN_TARG_x86_64-unknown-openbsd=$(call CFG_RUN_x86_64-unknown-openbsd,,$(2))
- CFG_GNU_TRIPLE_x86_64-unknown-openbsd := x86_64-unknown-openbsd
-+RUSTC_FLAGS_x86_64-unknown-openbsd=-C linker=$(call FIND_COMPILER,$(CC))

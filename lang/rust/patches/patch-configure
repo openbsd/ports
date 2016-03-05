@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.6 2016/01/22 09:03:15 semarie Exp $
+$OpenBSD: patch-configure,v 1.7 2016/03/05 15:05:33 semarie Exp $
 Remove requirement for curl or wget.
 The snapshot isn't downloaded but copied by post-configure.
---- configure.orig	Wed Jan 20 04:37:51 2016
-+++ configure	Wed Jan 20 19:36:15 2016
-@@ -717,7 +717,7 @@ putvar CFG_BOOTSTRAP_KEY
+--- configure.orig	Tue Mar  1 20:18:54 2016
++++ configure	Wed Mar  2 09:18:22 2016
+@@ -727,7 +727,7 @@ putvar CFG_BOOTSTRAP_KEY
  
  step_msg "looking for build programs"
  
