@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/05 22:04:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/05 15:07:17 sthen Exp $
 
 COMMENT =	miscellaneous unix tools
 
-V =		0.57
+V =		0.58
 DISTNAME =	moreutils_$V
 EXTRACT_SUFX =	.orig.tar.gz
 PKGNAME =	moreutils-$V
