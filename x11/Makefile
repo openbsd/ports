@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.564 2016/01/03 16:53:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.565 2016/03/05 17:40:00 sthen Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -358,7 +358,6 @@
      SUBDIR += xfe
      SUBDIR += xfed
      SUBDIR += xfishtank
-     SUBDIR += xfm
      SUBDIR += xforms
      SUBDIR += xglobe
      SUBDIR += xglobe,no_map
