@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/03/16 18:07:58 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/03/05 17:40:39 sthen Exp $
 include/X11/Xaw3d/
 include/X11/Xaw3d/AllWidgets.h
 include/X11/Xaw3d/AsciiSink.h
@@ -55,9 +55,6 @@ include/X11/Xaw3d/SmeThreeD.h
 include/X11/Xaw3d/SmeThreeDP.h
 include/X11/Xaw3d/StripCharP.h
 include/X11/Xaw3d/StripChart.h
-include/X11/Xaw3d/Template.c
-include/X11/Xaw3d/Template.h
-include/X11/Xaw3d/TemplateP.h
 include/X11/Xaw3d/Text.h
 include/X11/Xaw3d/TextP.h
 include/X11/Xaw3d/TextSink.h
@@ -66,6 +63,8 @@ include/X11/Xaw3d/TextSrc.h
 include/X11/Xaw3d/TextSrcP.h
 include/X11/Xaw3d/ThreeD.h
 include/X11/Xaw3d/ThreeDP.h
+include/X11/Xaw3d/Tip.h
+include/X11/Xaw3d/TipP.h
 include/X11/Xaw3d/Toggle.h
 include/X11/Xaw3d/ToggleP.h
 include/X11/Xaw3d/Tree.h
@@ -73,9 +72,12 @@ include/X11/Xaw3d/TreeP.h
 include/X11/Xaw3d/VendorEP.h
 include/X11/Xaw3d/Viewport.h
 include/X11/Xaw3d/ViewportP.h
+include/X11/Xaw3d/Xaw3dP.h
 include/X11/Xaw3d/XawImP.h
 include/X11/Xaw3d/XawInit.h
 lib/libXaw3d.a
+lib/libXaw3d.la
 @lib lib/libXaw3d.so.${LIBXaw3d_VERSION}
-share/doc/Xaw3d/
-share/doc/Xaw3d/README.XAW3D
+lib/pkgconfig/xaw3d.pc
+share/doc/libXaw3d/
+share/doc/libXaw3d/README.XAW3D
