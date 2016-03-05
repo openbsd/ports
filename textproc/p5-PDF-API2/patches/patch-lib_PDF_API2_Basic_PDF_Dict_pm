@@ -1,0 +1,32 @@
+$OpenBSD: patch-lib_PDF_API2_Basic_PDF_Dict_pm,v 1.1 2016/03/05 11:04:22 sthen Exp $
+
+XXX Use larger chunks when reading streams. Compressed streams
+are getting corrupted if larger than this; I ran into this with
+cross-reference streams in large files.
+
+https://rt.cpan.org/Ticket/Display.html?id=112456
+
+--- lib/PDF/API2/Basic/PDF/Dict.pm.orig	Sat Mar  5 10:52:49 2016
++++ lib/PDF/API2/Basic/PDF/Dict.pm	Sat Mar  5 10:53:58 2016
+@@ -207,7 +207,7 @@ sub outobjdeep {
+         $fh->print(" stream\n");
+         $loc = $fh->tell();
+         my $stream;
+-        while (read(DICTFH, $stream, 4096)) {
++        while (read(DICTFH, $stream, 32768)) {
+             unless ($self->{' nofilt'}) {
+                 foreach my $filter (reverse @filters) {
+                     $stream = $filter->outfilt($stream, 0);
+@@ -285,9 +285,9 @@ sub read_stream {
+     }
+     seek $fh, $self->{' streamloc'}, 0;
+     my ($i, $data);
+-    for ($i = 0; $i < $len; $i += 4096) {
+-        unless ($i + 4096 > $len) {
+-            read $fh, $data, 4096;
++    for ($i = 0; $i < $len; $i += 32768) {
++        unless ($i + 32768 > $len) {
++            read $fh, $data, 32768;
+         }
+         else {
+             $last = 1;
