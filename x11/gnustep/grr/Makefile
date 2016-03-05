@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2015/10/26 11:53:15 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/05 16:04:08 pascal Exp $
 
 COMMENT =	Guenthers RSS reader
 
-REVISION =	5
+REVISION =	6
 DISTNAME =	Grr-1.0
 
 HOMEPAGE =	http://gap.nongnu.org/grr/

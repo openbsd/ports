@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2015/11/24 09:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/05 16:04:08 pascal Exp $
 
 COMMENT=	GNUstep image viewer
 
-REVISION =	8
+REVISION =	9
 DISTNAME=	ImageViewer-0.6.3
 CATEGORIES=	graphics
 

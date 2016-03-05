@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/11/02 11:56:54 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2016/03/05 16:04:09 pascal Exp $
 
 # WARNING: this port does NOT use the x11/gnustep MODULE
 
@@ -6,7 +6,7 @@ PKG_ARCH=	*
 
 COMMENT=	GNUstep makefile package
 
-REVISION =	0
+REVISION =	1
 DISTNAME =	gnustep-make-2.6.7
 CATEGORIES=	devel x11/gnustep
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/10/26 11:53:15 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/05 16:04:09 pascal Exp $
 
 COMMENT =	asynchronous networking framework for GNUstep
 
 VERSION =	1.1.0
-REVISION =	0
+REVISION =	1
 EPOCH =		0
 DISTNAME =	netclasses-${VERSION}
 PKGNAME =	gnustep-netclasses-${VERSION}

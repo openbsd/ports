@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/10/26 11:53:14 sebastia Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/05 16:04:07 pascal Exp $
 
 COMMENT =	GNUstep sticky notes
 
 DISTNAME =	Affiche-0.6.0
-REVISION =	6
+REVISION =	7
 
 HOMEPAGE =	http://www.collaboration-world.com/affiche/
 MASTER_SITES =	http://www.collaboration-world.com/affiche.data/releases/Stable/

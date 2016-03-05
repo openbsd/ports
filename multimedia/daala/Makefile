@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/12 09:15:42 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/05 16:04:06 pascal Exp $
 
 COMMENT =		free video codec
 DISTNAME =		daala-0.0.20160106
 CATEGORIES =		multimedia graphics
 HOMEPAGE =		https://xiph.org/daala/
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
+REVISION =		0
 
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes

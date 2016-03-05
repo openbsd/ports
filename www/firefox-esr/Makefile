@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/02/13 07:40:42 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2016/03/05 16:04:06 pascal Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
@@ -11,6 +11,7 @@ BROKEN-sparc64 =	xpcshell SIGBUS during fake
 PKGNAME =	${MOZILLA_PROJECT}-esr-${MOZILLA_VERSION:S/esr//}
 SO_VERSION =	2.0
 MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul clearkey
+REVISION =	0
 
 CATEGORIES =	www
 

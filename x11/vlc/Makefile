@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2016/03/03 12:01:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.203 2016/03/05 16:04:10 pascal Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,6 +12,7 @@ PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
+REVISION-main=	0
 
 SHARED_LIBS=	vlc	3.0 \
 		vlccore	3.0

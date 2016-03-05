@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/10/26 11:53:15 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/05 16:04:09 pascal Exp $
 
 COMMENT =	precision raster image convolution engine
 
-REVISION =	0
+REVISION =	1
 DISTNAME =	PRICE-1.3.0
 CATEGORIES =	graphics
 
