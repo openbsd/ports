@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/05 15:35:40 sthen Exp $
 
 COMMENT=		parse, analyze and manipulate Perl
 
 MODULES=		cpan
-DISTNAME=		PPI-1.215
+DISTNAME=		PPI-1.220
 CATEGORIES=		textproc
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-
-CPAN_AUTHOR=		ADAMK
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/p5-Clone>=0.30 \
