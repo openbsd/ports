@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/10/11 20:39:35 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2016/03/05 17:41:43 sthen Exp $
 @bin bin/xfig
 lib/X11/app-defaults/Fig
 lib/X11/xfig/CompKeyDB
@@ -76,6 +76,7 @@ lib/X11/xfig/Libraries/Computers/Scenic-Pro_Desktop.fig
 lib/X11/xfig/Libraries/Computers/cd_disk.fig
 lib/X11/xfig/Libraries/Computers/dat-drive.fig
 lib/X11/xfig/Libraries/Computers/dat-drive2.fig
+lib/X11/xfig/Libraries/Computers/datacard.fig
 lib/X11/xfig/Libraries/Computers/desktop1.fig
 lib/X11/xfig/Libraries/Computers/desktop2.fig
 lib/X11/xfig/Libraries/Computers/desktop3.fig
@@ -98,6 +99,7 @@ lib/X11/xfig/Libraries/Computers/printer3.fig
 lib/X11/xfig/Libraries/Computers/qic-drive.fig
 lib/X11/xfig/Libraries/Computers/r320.fig
 lib/X11/xfig/Libraries/Computers/scanner.fig
+lib/X11/xfig/Libraries/Computers/screen.fig
 lib/X11/xfig/Libraries/Computers/server.fig
 lib/X11/xfig/Libraries/Computers/sparc5.fig
 lib/X11/xfig/Libraries/Computers/sun_d1000.fig
@@ -112,6 +114,7 @@ lib/X11/xfig/Libraries/Computers/tower2.fig
 lib/X11/xfig/Libraries/Computers/tower3.fig
 lib/X11/xfig/Libraries/Computers/ultra2.fig
 lib/X11/xfig/Libraries/Computers/ultra30.fig
+lib/X11/xfig/Libraries/Computers/usbpen.fig
 lib/X11/xfig/Libraries/Computers/va-jbot.fig
 lib/X11/xfig/Libraries/Computers/va-server-11xx.fig
 lib/X11/xfig/Libraries/Computers/va-server-1hd.fig
@@ -123,6 +126,7 @@ lib/X11/xfig/Libraries/Computers/va-server-4450.fig
 lib/X11/xfig/Libraries/Computers/va-server-4hd.fig
 lib/X11/xfig/Libraries/Computers/va-server-5df.fig
 lib/X11/xfig/Libraries/Computers/va-server-nhs.fig
+lib/X11/xfig/Libraries/Computers/xbox.fig
 lib/X11/xfig/Libraries/Computers/xterminal.fig
 lib/X11/xfig/Libraries/DSP/
 lib/X11/xfig/Libraries/DSP/1toN.fig
@@ -189,6 +193,7 @@ lib/X11/xfig/Libraries/Electronic/
 lib/X11/xfig/Libraries/Electronic/Physical/
 lib/X11/xfig/Libraries/Electronic/Physical/README
 lib/X11/xfig/Libraries/Electronic/Physical/bal_mike.fig
+lib/X11/xfig/Libraries/Electronic/Physical/bnc.fig
 lib/X11/xfig/Libraries/Electronic/Physical/conn_db15.fig
 lib/X11/xfig/Libraries/Electronic/Physical/conn_db25.fig
 lib/X11/xfig/Libraries/Electronic/Physical/conn_db37.fig
@@ -1227,7 +1232,6 @@ lib/X11/xfig/Libraries/Electronic/Schematic/plug_socket.fig
 lib/X11/xfig/Libraries/Electronic/Schematic/pnp.fig
 lib/X11/xfig/Libraries/Electronic/Schematic/pushbutton_nc.fig
 lib/X11/xfig/Libraries/Electronic/Schematic/pushbutton_no.fig
-lib/X11/xfig/Libraries/Electronic/Schematic/relay.fig
 lib/X11/xfig/Libraries/Electronic/Schematic/relay_dpdt.fig
 lib/X11/xfig/Libraries/Electronic/Schematic/relay_spdt.fig
 lib/X11/xfig/Libraries/Electronic/Schematic/resistor.fig
@@ -1313,6 +1317,7 @@ lib/X11/xfig/Libraries/Examples/tsr2-side.fig
 lib/X11/xfig/Libraries/Examples/uno_hand.fig
 lib/X11/xfig/Libraries/Examples/watch.fig
 lib/X11/xfig/Libraries/Examples/window.fig
+lib/X11/xfig/Libraries/Examples/xfig.exe.stackdump
 lib/X11/xfig/Libraries/Fasteners/
 lib/X11/xfig/Libraries/Fasteners/Bolts/
 lib/X11/xfig/Libraries/Fasteners/Bolts/Hexhead_Shld_bolt.fig
@@ -1326,7 +1331,7 @@ lib/X11/xfig/Libraries/Fasteners/Bolts/Roundhead_Shld_Slotted_bolt.fig
 lib/X11/xfig/Libraries/Fasteners/Bolts/Roundhead_Shld_bolt.fig
 lib/X11/xfig/Libraries/Fasteners/Bolts/Roundhead_Slotted_bolt.fig
 lib/X11/xfig/Libraries/Fasteners/Bolts/Roundhead_bolt.fig
-lib/X11/xfig/Libraries/Fasteners/Fasteners.tar.gz
+lib/X11/xfig/Libraries/Fasteners/Fasteners.tar
 lib/X11/xfig/Libraries/Fasteners/Machinescrews/
 lib/X11/xfig/Libraries/Fasteners/Machinescrews/Hexhead_Shld_screw.fig
 lib/X11/xfig/Libraries/Fasteners/Machinescrews/Hexhead_screw.fig
@@ -2250,9 +2255,11 @@ lib/X11/xfig/Libraries/Networks/ATM/synoptics_latticell.fig
 lib/X11/xfig/Libraries/Networks/Devices/
 lib/X11/xfig/Libraries/Networks/Devices/bridge.fig
 lib/X11/xfig/Libraries/Networks/Devices/dsu-csu.fig
+lib/X11/xfig/Libraries/Networks/Devices/firewall-pair.fig
 lib/X11/xfig/Libraries/Networks/Devices/firewall.fig
 lib/X11/xfig/Libraries/Networks/Devices/generic_hw.fig
 lib/X11/xfig/Libraries/Networks/Devices/imux.fig
+lib/X11/xfig/Libraries/Networks/Devices/internet.fig
 lib/X11/xfig/Libraries/Networks/Devices/microwave1.fig
 lib/X11/xfig/Libraries/Networks/Devices/microwave2.fig
 lib/X11/xfig/Libraries/Networks/Devices/netcloud.fig
@@ -2279,13 +2286,16 @@ lib/X11/xfig/Libraries/Networks/Hubs/hub2.fig
 lib/X11/xfig/Libraries/Networks/Hubs/hub3.fig
 lib/X11/xfig/Libraries/Networks/Hubs/hub4.fig
 lib/X11/xfig/Libraries/Networks/Hubs/netgearhub.fig
+lib/X11/xfig/Libraries/Networks/NodeB.fig
 lib/X11/xfig/Libraries/Networks/README
 lib/X11/xfig/Libraries/Networks/Routers/
 lib/X11/xfig/Libraries/Networks/Routers/cisco_7010.fig
 lib/X11/xfig/Libraries/Networks/Routers/cisco_7513.fig
+lib/X11/xfig/Libraries/Networks/Routers/router-pair.fig
 lib/X11/xfig/Libraries/Networks/Routers/router.fig
 lib/X11/xfig/Libraries/Networks/Routers/router2.fig
 lib/X11/xfig/Libraries/Networks/Routers/router3.fig
+lib/X11/xfig/Libraries/Networks/Routers/router4.fig
 lib/X11/xfig/Libraries/Networks/Switches/
 lib/X11/xfig/Libraries/Networks/Switches/ExtremeSummit.fig
 lib/X11/xfig/Libraries/Networks/Switches/cisco_catalyst.fig
@@ -2295,7 +2305,9 @@ lib/X11/xfig/Libraries/Networks/Switches/ether_switch.fig
 lib/X11/xfig/Libraries/Networks/Switches/ether_switch2.fig
 lib/X11/xfig/Libraries/Networks/Switches/extreme_blk_dmnd.fig
 lib/X11/xfig/Libraries/Networks/Switches/extreme_summit.fig
+lib/X11/xfig/Libraries/Networks/Switches/switch-pair.fig
 lib/X11/xfig/Libraries/Networks/Switches/switch.fig
+lib/X11/xfig/Libraries/Networks/Switches/switch2.fig
 lib/X11/xfig/Libraries/Networks/Switches/switching_hub.fig
 lib/X11/xfig/Libraries/Networks/TestEquip/
 lib/X11/xfig/Libraries/Networks/TestEquip/smartbit.fig
@@ -2306,6 +2318,9 @@ lib/X11/xfig/Libraries/Networks/VideoPlayers/at+t_emmi.fig
 lib/X11/xfig/Libraries/Networks/VideoPlayers/minervavnp.fig
 lib/X11/xfig/Libraries/Networks/VideoPlayers/minervavnp_panel.fig
 lib/X11/xfig/Libraries/Networks/VideoPlayers/mmedia_explorer.fig
+lib/X11/xfig/Libraries/Networks/cloud.fig
+lib/X11/xfig/Libraries/Networks/router.fig
+lib/X11/xfig/Libraries/Networks/wlan.fig
 lib/X11/xfig/Libraries/OfficeEquip/
 lib/X11/xfig/Libraries/OfficeEquip/filecabinet.fig
 lib/X11/xfig/Libraries/OfficeEquip/overhead.fig
@@ -2631,7 +2646,6 @@ share/doc/xfig/html/accelerators.html
 share/doc/xfig/html/animate.js
 share/doc/xfig/html/attributes.html
 share/doc/xfig/html/authors.html
-@comment share/doc/xfig/html/authors.html.orig
 share/doc/xfig/html/bugs_fixed.html
 share/doc/xfig/html/but_frm_accelerators.html
 share/doc/xfig/html/but_frm_attributes.html
@@ -2652,12 +2666,9 @@ share/doc/xfig/html/but_frm_options.html
 share/doc/xfig/html/but_frm_panning.html
 share/doc/xfig/html/but_frm_printing.html
 share/doc/xfig/html/contents.html
-@comment share/doc/xfig/html/contents.html.orig
 share/doc/xfig/html/drawing.html
 share/doc/xfig/html/editing.html
-@comment share/doc/xfig/html/editing.html.orig
 share/doc/xfig/html/faq.html
-@comment share/doc/xfig/html/faq.html.orig
 share/doc/xfig/html/fig-format.html
 share/doc/xfig/html/frm_accelerators.html
 share/doc/xfig/html/frm_attributes.html
@@ -2795,7 +2806,6 @@ share/doc/xfig/html/images/export-panel-jpeg.png
 share/doc/xfig/html/images/export-panel-postscript.png
 share/doc/xfig/html/images/export-panel.png
 share/doc/xfig/html/images/file-accel.png
-@comment share/doc/xfig/html/images/file-accel.png.orig
 share/doc/xfig/html/images/file-menu-button.png
 share/doc/xfig/html/images/file-panel.png
 share/doc/xfig/html/images/fill-color-button.png
@@ -2870,6 +2880,7 @@ share/doc/xfig/html/images/polyline-example.png
 share/doc/xfig/html/images/power-supply.png
 share/doc/xfig/html/images/power-supply_sm.png
 share/doc/xfig/html/images/print-panel.png
+share/doc/xfig/html/images/pspbrwse.jbf
 share/doc/xfig/html/images/redball.png
 share/doc/xfig/html/images/redballdot.png
 share/doc/xfig/html/images/regular-polygon-button.png
@@ -2894,7 +2905,6 @@ share/doc/xfig/html/images/smart-link-slide.png
 share/doc/xfig/html/images/snap-accel.png
 share/doc/xfig/html/images/spell-check-panel.png
 share/doc/xfig/html/images/spinner.png
-share/doc/xfig/html/images/splash-screen.png
 share/doc/xfig/html/images/spline-curves.png
 share/doc/xfig/html/images/spline-examples.png
 share/doc/xfig/html/images/spline-line-button.png
@@ -2933,7 +2943,6 @@ share/doc/xfig/html/images/vertical-align-edge-even.png
 share/doc/xfig/html/images/vertical-align-none.png
 share/doc/xfig/html/images/vertical-align-top.png
 share/doc/xfig/html/images/view-accel.png
-@comment share/doc/xfig/html/images/view-accel.png.orig
 share/doc/xfig/html/images/view-menu-button.png
 share/doc/xfig/html/images/watch.png
 share/doc/xfig/html/images/watch_sm.png
@@ -2949,19 +2958,14 @@ share/doc/xfig/html/images/zoom-panel.png
 share/doc/xfig/html/index.html
 share/doc/xfig/html/installation.html
 share/doc/xfig/html/introduction.html
-share/doc/xfig/html/introduction.html.save
 share/doc/xfig/html/latex_and_xfig.html
 share/doc/xfig/html/layers.html
 share/doc/xfig/html/main_menus.html
-@comment share/doc/xfig/html/main_menus.html.orig
 share/doc/xfig/html/miscellaneous.html
-@comment share/doc/xfig/html/miscellaneous.html.orig
 share/doc/xfig/html/new_features.html
-@comment share/doc/xfig/html/new_features.html.orig
 share/doc/xfig/html/options.html
 share/doc/xfig/html/panning.html
 share/doc/xfig/html/printing.html
 share/doc/xfig/html/screen_image_map.html
 share/doc/xfig/xfig-howto.pdf
-share/doc/xfig/xfig_man.html
 share/doc/xfig/xfig_ref_en.pdf

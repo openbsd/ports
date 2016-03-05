@@ -1,0 +1,16 @@
+$OpenBSD: patch-u_error_c,v 1.1 2016/03/05 17:41:43 sthen Exp $
+
+Avoids null deref->segfault->core seen if you exit by closing the window.
+
+--- u_error.c.pat.orig	Thu Jan 28 13:21:16 2016
++++ u_error.c	Thu Jan 28 13:23:12 2016
+@@ -67,6 +67,9 @@ int X_error_handler(Display *d, XErrorEvent *err_ev)
+     /* uninstall error handlers so we don't recurse if another error happens! */
+     XSetErrorHandler(NULL);
+     XSetIOErrorHandler((XIOErrorHandler) NULL);
++    if (!err_ev) {
++    	return 0;
++    }
+     XGetErrorText(tool_d, (int) (err_ev->error_code), err_msg, MAXERRMSGLEN - 1);
+     (void) fprintf(stderr,
+ 	   "xfig%s.%s: X error trapped - error message follows:\n%s\n", 

@@ -1,13 +1,12 @@
-$OpenBSD: patch-fig_h,v 1.2 2009/06/09 13:19:44 jasper Exp $
---- fig.h.pat.orig	Tue Jun  9 14:59:04 2009
-+++ fig.h	Tue Jun  9 14:59:24 2009
-@@ -374,7 +374,8 @@ extern	double		drand48();
+$OpenBSD: patch-fig_h,v 1.3 2016/03/05 17:41:43 sthen Exp $
+--- fig.h.pat.orig	Fri Feb 18 19:43:48 2011
++++ fig.h	Thu Jan 28 12:52:39 2016
+@@ -375,7 +375,7 @@ extern	double		drand48();
  extern	long		random();
  extern	void		srandom(unsigned int);
  
 -#elif !defined(__osf__) && !defined(__CYGWIN__) && !defined(linux) && !defined(__FreeBSD__) && !defined(__GLIBC__)
-+#elif !defined(__osf__) && !defined(__CYGWIN__) && !defined(linux) && \
-+	!defined(__FreeBSD__) && !defined(__GLIBC__) && !defined(__OpenBSD__)
++#elif !defined(__osf__) && !defined(__CYGWIN__) && !defined(linux) && !defined(__FreeBSD__) && !defined(__GLIBC__) && !defined(__OpenBSD__)
  extern	void		srandom(int);
  
  #endif
