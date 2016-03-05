@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2016/02/29 20:46:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/05 10:42:13 landry Exp $
 
 BROKEN-hppa =		OOM when building ext/ripper/ripper.c
+BROKEN-powerpc =		OOM when building ext/ripper/ripper.c
 BROKEN-mips64 =		miniruby spins on rbconfig.rb
 BROKEN-sparc=		exceeds MAXDSIZ
 
