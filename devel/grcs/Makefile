@@ -1,29 +1,48 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/05 14:30:47 rpe Exp $
 
 COMMENT=	GNU versions of the rcs utilities
-DISTNAME=	rcs-5.7
+
+DISTNAME=	rcs-5.9.4
 PKGNAME=	g${DISTNAME}
-REVISION =	0
-EXTRACT_SUFX=	.tar.Z
+
 CATEGORIES=	devel
-MASTER_SITES=	${HOMEPAGE}
 
-HOMEPAGE=	http://www.cs.purdue.edu/homes/trinkle/RCS/
+HOMEPAGE=	https://www.gnu.org/software/rcs/
 
-# GPL
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c
 
-USE_GROFF =	Yes
-NO_TEST=	Yes
+MASTER_SITES=	${MASTER_SITE_GNU:=rcs/}
+EXTRACT_SUFX=	.tar.xz
 
-CONFIGURE_STYLE=simple
+RUN_DEPENDS=	textproc/gdiff
+BUILD_DEPENDS=	textproc/gdiff
 
-do-install:
+USE_GROFF=	Yes
+USE_GMAKE=	Yes
+
+MODULES=	devel/gettext
+
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.69
+CONFIGURE_ARGS= --program-prefix=g
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		DIFF="${LOCALBASE}/bin/gdiff" \
+		DIFF3="${LOCALBASE}/bin/gdiff3"
+
+pre-install:
+.for f in ci co rcsclean rcsdiff rcsmerge rlog
+	sed -i 's/d"rcs/d"grcs/' ${WRKSRC}/src/${f}
+.endfor
+
+# handle --program-prefix: The tests use the commands in ${WRKSRC}/src without
+# prefix but the wrapper scripts like gci call the command with the prefix.
+pre-test:
 .for f in ci co ident merge rcs rcsclean rcsdiff rcsmerge rlog
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${f} ${PREFIX}/bin/g${f}
-	${INSTALL_MAN} ${WRKSRC}/man/${f}.1 ${PREFIX}/man/man1/g${f}.1
+	ln -fs ${WRKSRC}/src/$f ${WRKSRC}/src/g$f
 .endfor
 
 .include <bsd.port.mk>

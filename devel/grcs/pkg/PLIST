@@ -1,13 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/28 07:03:39 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/03/05 14:30:47 rpe Exp $
 bin/gci
 bin/gco
-bin/gident
-bin/gmerge
-bin/grcs
+@bin bin/gident
+@bin bin/gmerge
+@bin bin/grcs
 bin/grcsclean
 bin/grcsdiff
 bin/grcsmerge
 bin/grlog
+@info info/rcs.info
 @man man/man1/gci.1
 @man man/man1/gco.1
 @man man/man1/gident.1
@@ -17,3 +18,4 @@ bin/grlog
 @man man/man1/grcsdiff.1
 @man man/man1/grcsmerge.1
 @man man/man1/grlog.1
+@man man/man5/grcsfile.5
