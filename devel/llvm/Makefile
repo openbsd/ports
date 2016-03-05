@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2015/08/24 07:45:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.109 2016/03/05 15:31:40 pascal Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -8,14 +8,17 @@ DPB_PROPERTIES = parallel
 
 COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 
-LLVM_V =	3.5
-DISTNAME =	llvm-${LLVM_V}.20140228
-REVISION =	35
+LLVM_V =	3.7.1
+DISTNAME =	llvm-${LLVM_V}.src
+PKGNAME =	llvm-${LLVM_V}
 CATEGORIES =	devel
-MASTER_SITES =	http://comstyle.com/source/
+DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
+		cfe-${LLVM_V}.src${EXTRACT_SUFX}
+MASTER_SITES =	http://www.llvm.org/releases/${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
 
-SHARED_LIBS =	clang		1.0
+SHARED_LIBS =	clang		2.0 \
+		LTO		0.0
 
 # packager notes in http://llvm.org/docs/Packaging.html
 HOMEPAGE =	http://www.llvm.org/
@@ -25,15 +28,21 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c m pthread stdc++ z
+WANTLIB =	c m pthread z
 
 MODULES =	devel/cmake \
-		lang/python
+		lang/python \
+		gcc4
 
-TEST_DEPENDS =	devel/dejagnu \
-		shells/bash
+MODGCC4_LANGS = c c++
+MODGCC4_ARCHS = *
+
+TEST_DEPENDS =		devel/dejagnu \
+			shells/bash \
+			lang/gcc/${MODGCC4_VERSION},-c++
 BUILD_DEPENDS +=	textproc/py-sphinx
-RUN_DEPENDS +=		devel/gtest
+RUN_DEPENDS +=		devel/gtest \
+			lang/gcc/${MODGCC4_VERSION},-c++
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
@@ -47,22 +56,34 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 # introduced when PIE was enabled
 .if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="-Wl,--relax -nopie"
+CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="-Wl,--relax -nopie"
 .endif
 
 TEST_TARGET =		check
 
+# XXX sync
+GCC_VER =		4.9.3
+.if ${MACHINE_ARCH} == "amd64"
+GCC_CONFIG =		x86_64-unknown-openbsd${OSREV}
+.else
+GCC_CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
+.endif
 CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V}/include
-SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V
+SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V GCC_VER GCC_CONFIG
+
+post-extract:
+	mv ${WRKDIR}/cfe-${LLVM_V}.src ${WRKSRC}/tools/clang
 
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/tools/clang/tools/scan-build/scan-build
+	@${SUBST_CMD} ${WRKSRC}/tools/clang/tools/scan-build/scan-build \
+		${WRKSRC}/tools/clang/lib/Driver/ToolChains.cpp
+	@${SUBST_CMD} ${WRKSRC}/tools/clang/tools/scan-build/scan-build \
+		${WRKSRC}/tools/clang/lib/Driver/Tools.cpp
 	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 post-build:
 	cd ${WRKSRC}/docs && make -f Makefile.sphinx man
-	pod2man --release=CVS --center="LLVM" \
-	    ${WRKSRC}/tools/clang/docs/tools/clang.pod \
-	    ${WRKSRC}/docs/_build/man/clang.1
+	cd ${WRKSRC}/tools/clang/docs && make -f Makefile.sphinx man
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
@@ -75,7 +96,10 @@ post-install:
 	    ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scan-build.1 \
 	    ${PREFIX}/man/man1
-	# lit is not installed anymore
+	${INSTALL_DATA} ${WRKSRC}/tools/clang/docs/_build/man/clang.1 \
+	    ${PREFIX}/man/man1
+	# lit and FileCheck are not installed
 	@rm ${PREFIX}/man/man1/lit.1
+	@rm ${PREFIX}/man/man1/FileCheck.1
 
 .include <bsd.port.mk>

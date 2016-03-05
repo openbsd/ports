@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_clang_tools_scan-build_scan-build,v 1.6 2014/04/18 09:30:48 brad Exp $
---- tools/clang/tools/scan-build/scan-build.orig	Mon Feb 24 21:55:37 2014
-+++ tools/clang/tools/scan-build/scan-build	Mon Feb 24 22:03:55 2014
-@@ -419,7 +419,7 @@ sub CopyFiles {
+$OpenBSD: patch-tools_clang_tools_scan-build_scan-build,v 1.7 2016/03/05 15:31:41 pascal Exp $
+--- tools/clang/tools/scan-build/scan-build.orig	Thu Jul  2 00:35:29 2015
++++ tools/clang/tools/scan-build/scan-build	Tue Sep  8 21:55:38 2015
+@@ -437,7 +437,7 @@ sub CopyFiles {
  
    my $Dir = shift;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-tools_clang_tools_scan-build_scan-build,v 1.6 2014/04/18 09:30:4
  
    DieDiag("Cannot find 'sorttable.js'.\n")
      if (! -r $JS);
-@@ -429,7 +429,7 @@ sub CopyFiles {
+@@ -447,7 +447,7 @@ sub CopyFiles {
    DieDiag("Could not copy 'sorttable.js' to '$Dir'.\n")
      if (! -r "$Dir/sorttable.js");
  

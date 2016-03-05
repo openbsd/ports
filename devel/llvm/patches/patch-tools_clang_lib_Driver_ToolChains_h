@@ -1,44 +1,17 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.11 2015/02/11 00:29:05 brad Exp $
-
-r209432
-Use stack protector strong by default on OpenBSD
-
-r225958
-Use the integrated assembler by default on 32-bit PowerPC and SPARC.
-
---- tools/clang/lib/Driver/ToolChains.h.orig	Sun Mar  2 22:03:41 2014
-+++ tools/clang/lib/Driver/ToolChains.h	Mon Feb  2 11:05:30 2015
-@@ -538,7 +538,7 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
-   virtual bool isPIEDefault() const { return true; }
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.12 2016/03/05 15:31:41 pascal Exp $
+--- tools/clang/lib/Driver/ToolChains.h.orig	Mon Jul 27 22:42:22 2015
++++ tools/clang/lib/Driver/ToolChains.h	Fri Sep 11 12:53:22 2015
+@@ -569,6 +569,13 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
+   bool IsObjCNonFragileABIDefault() const override { return true; }
+   bool isPIEDefault() const override { return true; }
  
-   virtual unsigned GetDefaultStackProtectorLevel(bool KernelOrKext) const {
--    return 1;
-+    return 2;
++  CXXStdlibType GetCXXStdlibType(const llvm::opt::ArgList &Args) const override;
++  void AddClangCXXStdlibIncludeArgs(
++      const llvm::opt::ArgList &DriverArgs,
++      llvm::opt::ArgStringList &CC1Args) const override;
++  void AddCXXStdlibLibArgs(const llvm::opt::ArgList &Args,
++                           llvm::opt::ArgStringList &CmdArgs) const override;
++
+   unsigned GetDefaultStackProtectorLevel(bool KernelOrKext) const override {
+     return 2;
    }
- 
- protected:
-@@ -582,12 +582,6 @@ class LLVM_LIBRARY_VISIBILITY FreeBSD : public Generic
-   virtual void
-   AddClangCXXStdlibIncludeArgs(const llvm::opt::ArgList &DriverArgs,
-                                llvm::opt::ArgStringList &CC1Args) const;
--  virtual bool IsIntegratedAssemblerDefault() const {
--    if (getTriple().getArch() == llvm::Triple::ppc ||
--        getTriple().getArch() == llvm::Triple::ppc64)
--      return true;
--    return Generic_ELF::IsIntegratedAssemblerDefault();
--  }
- 
-   virtual bool UseSjLjExceptions() const;
-   virtual bool isPIEDefault() const;
-@@ -611,11 +605,6 @@ class LLVM_LIBRARY_VISIBILITY NetBSD : public Generic_
-                                llvm::opt::ArgStringList &CC1Args) const;
-   virtual bool IsUnwindTablesDefault() const {
-     return true;
--  }
--  virtual bool IsIntegratedAssemblerDefault() const {
--    if (getTriple().getArch() == llvm::Triple::ppc)
--      return true;
--    return Generic_ELF::IsIntegratedAssemblerDefault();
-   }
- 
- protected:

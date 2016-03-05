@@ -1,39 +1,15 @@
-$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.4 2015/04/09 22:25:02 sthen Exp $
+$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.5 2016/03/05 15:31:41 pascal Exp $
 
 Alias the command line parameter -p to -pg.
 
-r211785
-Implement the -fuse-ld= option.
-
-This commit implements the -fuse-ld= option, so that the user
-can specify -fuse-ld=bfd to use ld.bfd.
-
---- tools/clang/include/clang/Driver/Options.td.orig	Sun Mar  2 22:03:58 2014
-+++ tools/clang/include/clang/Driver/Options.td	Thu Feb 26 07:03:04 2015
-@@ -253,7 +253,7 @@ def Qn : Flag<["-"], "Qn">;
- def Qunused_arguments : Flag<["-"], "Qunused-arguments">, Flags<[DriverOption, CoreOption]>,
-   HelpText<"Don't emit warning for unused driver arguments">;
- def Q : Flag<["-"], "Q">;
--def R : Flag<["-"], "R">;
-+def R : JoinedOrSeparate<["-"], "R">, Flags<[RenderJoined]>;
- def S : Flag<["-"], "S">, Flags<[DriverOption,CC1Option]>, Group<Action_Group>,
-   HelpText<"Only run preprocess and compilation steps">;
- def Tbss : JoinedOrSeparate<["-"], "Tbss">, Group<T_Group>;
-@@ -1244,7 +1244,7 @@ def private__bundle : Flag<["-"], "private_bundle">;
- def pthreads : Flag<["-"], "pthreads">;
+--- tools/clang/include/clang/Driver/Options.td.orig	Fri Jul 31 00:47:41 2015
++++ tools/clang/include/clang/Driver/Options.td	Wed Sep  9 10:44:20 2015
+@@ -1560,7 +1560,7 @@ def pthreads : Flag<["-"], "pthreads">;
  def pthread : Flag<["-"], "pthread">, Flags<[CC1Option]>,
    HelpText<"Support POSIX threads in generated code">;
+ def no_pthread : Flag<["-"], "no-pthread">, Flags<[CC1Option]>;
 -def p : Flag<["-"], "p">;
 +def p : Flag<["-"], "p">, Alias<pg>;
  def pie : Flag<["-"], "pie">;
  def read__only__relocs : Separate<["-"], "read_only_relocs">;
  def remap : Flag<["-"], "remap">;
-@@ -1495,7 +1495,7 @@ def fprofile_dir : Joined<["-"], "fprofile-dir=">, Gro
- 
- defm profile_use : BooleanFFlag<"profile-use">, Group<clang_ignored_f_Group>;
- def fprofile_use_EQ : Joined<["-"], "fprofile-use=">, Group<clang_ignored_f_Group>;
--def fuse_ld_EQ : Joined<["-"], "fuse-ld=">, Group<clang_ignored_f_Group>;
-+def fuse_ld_EQ : Joined<["-"], "fuse-ld=">, Group<f_Group>;
- 
- defm align_functions : BooleanFFlag<"align-functions">, Group<clang_ignored_f_Group>;
- def falign_functions_EQ : Joined<["-"], "falign-functions=">, Group<clang_ignored_f_Group>;

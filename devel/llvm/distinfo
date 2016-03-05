@@ -1,2 +1,4 @@
-SHA256 (llvm-3.5.20140228.tar.xz) = vBFmbVEiY2CQZf7Boqcebh+s+ejpfpoZ8vY5c3cxgXw=
-SIZE (llvm-3.5.20140228.tar.xz) = 17945548
+SHA256 (cfe-3.7.1.src.tar.xz) = VuIWTHwqF3LV7So+V0hf9z/wbJff8S7b7qGsxEErBnQ=
+SHA256 (llvm-3.7.1.src.tar.xz) = vneU7QzsQtbGgsqONRdTW1RVWj3vq+yDVU28dNtUWtU=
+SIZE (cfe-3.7.1.src.tar.xz) = 9110616
+SIZE (llvm-3.7.1.src.tar.xz) = 14592544

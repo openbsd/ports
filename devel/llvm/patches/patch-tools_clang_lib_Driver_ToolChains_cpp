@@ -1,36 +1,54 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_cpp,v 1.4 2015/04/09 22:25:02 sthen Exp $
-
-r225958
-Use the integrated assembler by default on 32-bit PowerPC and SPARC.
-
-r211785
-Implement the -fuse-ld= option.
-
-This commit implements the -fuse-ld= option, so that the user
-can specify -fuse-ld=bfd to use ld.bfd.
-
---- tools/clang/lib/Driver/ToolChains.cpp.orig	Sun Mar  2 22:03:41 2014
-+++ tools/clang/lib/Driver/ToolChains.cpp	Thu Feb 26 07:06:45 2015
-@@ -2035,7 +2035,12 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
-          getTriple().getArch() == llvm::Triple::aarch64 ||
-          getTriple().getArch() == llvm::Triple::aarch64_be ||
-          getTriple().getArch() == llvm::Triple::arm ||
--         getTriple().getArch() == llvm::Triple::thumb;
-+         getTriple().getArch() == llvm::Triple::thumb ||
-+         getTriple().getArch() == llvm::Triple::ppc ||
-+         getTriple().getArch() == llvm::Triple::ppc64 ||
-+         getTriple().getArch() == llvm::Triple::ppc64le ||
-+         getTriple().getArch() == llvm::Triple::sparc ||
-+         getTriple().getArch() == llvm::Triple::sparcv9;
- }
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_cpp,v 1.5 2016/03/05 15:31:41 pascal Exp $
+--- tools/clang/lib/Driver/ToolChains.cpp.orig	Tue Jul 14 01:27:56 2015
++++ tools/clang/lib/Driver/ToolChains.cpp	Sat Sep 12 14:00:16 2015
+@@ -2538,6 +2538,50 @@ Tool *OpenBSD::buildAssembler() const {
  
- void Generic_ELF::addClangTargetOptions(const ArgList &DriverArgs,
-@@ -2850,7 +2855,7 @@ Linux::Linux(const Driver &D, const llvm::Triple &Trip
-   PPaths.push_back(Twine(GCCInstallation.getParentLibPath() + "/../" +
-                          GCCInstallation.getTriple().str() + "/bin").str());
+ Tool *OpenBSD::buildLinker() const { return new tools::openbsd::Linker(*this); }
  
--  Linker = GetProgramPath("ld");
-+  Linker = GetLinkerPath();
++ToolChain::CXXStdlibType OpenBSD::GetCXXStdlibType(const ArgList &Args) const {
++  if (Arg *A = Args.getLastArg(options::OPT_stdlib_EQ)) {
++    StringRef Value = A->getValue();
++    if (Value == "libstdc++")
++      return ToolChain::CST_Libstdcxx;
++    if (Value == "libc++")
++      return ToolChain::CST_Libcxx;
++
++    getDriver().Diag(diag::err_drv_invalid_stdlib_name) << A->getAsString(Args);
++  }
++  return ToolChain::CST_Libstdcxx;
++}
++
++void OpenBSD::AddClangCXXStdlibIncludeArgs(const ArgList &DriverArgs,
++                                          ArgStringList &CC1Args) const {
++  if (DriverArgs.hasArg(options::OPT_nostdlibinc) ||
++      DriverArgs.hasArg(options::OPT_nostdincxx))
++    return;
++
++  /* XXX handle libc++ includes */
++
++  addSystemInclude(DriverArgs, CC1Args,
++                   getDriver().SysRoot + "${LOCALBASE}/include/c++/${GCC_VER}");
++
++  addSystemInclude(DriverArgs, CC1Args,
++                   getDriver().SysRoot + "${LOCALBASE}/include/c++/${GCC_VER}/${GCC_CONFIG}");
++  addSystemInclude(DriverArgs, CC1Args,
++                   getDriver().SysRoot + "${LOCALBASE}/include/c++/${GCC_VER}/backward");
++}
++
++void OpenBSD::AddCXXStdlibLibArgs(const ArgList &Args,
++                                 ArgStringList &CmdArgs) const {
++ switch (GetCXXStdlibType(Args)) {
++  case ToolChain::CST_Libcxx:
++    CmdArgs.push_back("-lc++");
++    CmdArgs.push_back("-lc++abi");
++    CmdArgs.push_back("-lpthread");
++    break;
++  case ToolChain::CST_Libstdcxx:
++    CmdArgs.push_back("-lestdc++");
++    break;
++  }
++}
++
+ /// Bitrig - Bitrig tool chain which can call as(1) and ld(1) directly.
  
-   Distro Distro = DetectDistro(Arch);
- 
+ Bitrig::Bitrig(const Driver &D, const llvm::Triple &Triple, const ArgList &Args)
