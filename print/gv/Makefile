@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2016/03/05 17:42:01 sthen Exp $
 
 COMMENT= 	PostScript and PDF previewer
 
-DISTNAME=	gv-3.7.1
-REVISION=	1
+DISTNAME=	gv-3.7.4
 CATEGORIES=	print
 
 HOMEPAGE=	https://www.gnu.org/software/gv/
