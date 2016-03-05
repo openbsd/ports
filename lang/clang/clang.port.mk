@@ -1,6 +1,6 @@
-# $OpenBSD: clang.port.mk,v 1.15 2015/02/11 00:30:00 brad Exp $
+# $OpenBSD: clang.port.mk,v 1.16 2016/03/05 15:32:45 pascal Exp $
 
-MODCLANG_VERSION=	3.5.20140228p27
+MODCLANG_VERSION=	3.7.1
 
 MODCLANG_ARCHS ?=
 MODCLANG_LANGS ?=
@@ -35,6 +35,12 @@ _MODCLANG_LINKS = clang gcc clang cc
 
 .  if ${MODCLANG_LANGS:L:Mc++}
 _MODCLANG_LINKS += clang++ g++ clang++ c++
+# uses libestdc++
+MODULES += gcc4
+MODCLANG_CPPLIBDEP = ${MODGCC4_CPPLIBDEP}
+LIB_DEPENDS += ${MODCLANG_CPPLIBDEP}
+MODCLANG_CPPWANTLIB = ${MODGCC4_CPPWANTLIB}
+WANTLIB += ${MODCLANG_CPPWANTLIB}
 .  endif
 .endif
 
