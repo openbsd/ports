@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/30 17:03:32 rpe Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/05 14:34:20 rpe Exp $
 
 COMMENT =		unpack git fast-import streams into RCS file tree
 
@@ -25,8 +25,7 @@ NO_BUILD =		Yes
 NO_TEST =		Yes
 
 post-extract:
-	perl -pi -e 's/rcs /grcs /g;s/ci /gci /g;s/co /gco /g' \
-		${WRKSRC}/rcs-fast-import
+	sed -i -e 's/rcs /grcs /g;s/ci /gci /g;s/co /gco /g' ${WRKSRC}/rcs-fast-import
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rcs-fast-import ${PREFIX}/bin
