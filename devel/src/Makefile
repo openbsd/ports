@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2016/02/05 12:51:46 rpe Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/05 14:39:50 rpe Exp $
 
 COMMENT =		Simple Revision Control
 
-DISTNAME =		src-1.3
+DISTNAME =		src-1.11
 
 CATEGORIES =		devel
 
@@ -23,15 +23,24 @@ RUN_DEPENDS =		devel/grcs \
 TEST_DEPENDS =		devel/git \
 			${RUN_DEPENDS}
 
+USE_GMAKE =		Yes
 NO_BUILD =		Yes
+
 TEST_TARGET =		check
 
 post-extract:
-	perl -pi -e 's/rcs /grcs /g;s/rcsdiff /grcsdiff /g;' \
-		-e 's/ci /gci /g;s/co /gco /g' ${WRKSRC}/src
+	sed -i	-e 's/rcs /grcs /g;s/ci /gci /g;s/co /gco /g' ${WRKSRC}/src
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/src.1 ${PREFIX}/man/man1
+
+# Disable pylint in test, needs >= 1.0.0 that supports --msg-template.
+# Disable sscs and python 3.x tests.
+pre-test:
+	sed -i	-e 's/^check: pylint/check:/' \
+		-e 's/-p python2$$/-p '${MODPY_BIN:C/^.*\///}'/' \
+		-e '/srctest -b sccs/d ' \
+		-e '/p python3/d' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
