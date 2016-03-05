@@ -1,0 +1,41 @@
+$OpenBSD: patch-Agent_h,v 1.1 2016/03/05 18:53:39 jasper Exp $
+
+Agent.h: In member function 'int Agent::remoteCanRead(const fd_set*)':
+Agent.h:160: error: invalid conversion from 'const fd_set* const' to 'fd_set*'
+Agent.h:160: error:   initializing argument 2 of 'int __fd_isset(int, fd_set*)'
+Agent.h: In member function 'int Agent::remoteCanWrite(const fd_set*)':
+Agent.h:175: error: invalid conversion from 'const fd_set* const' to 'fd_set*'
+Agent.h:175: error:   initializing argument 2 of 'int __fd_isset(int, fd_set*)'
+Agent.h: In member function 'int Agent::proxyCanRead(const fd_set*)':
+Agent.h:212: error: invalid conversion from 'const fd_set* const' to 'fd_set*'
+Agent.h:212: error:   initializing argument 2 of 'int __fd_isset(int, fd_set*)'
+
+--- Agent.h.orig	Sat Mar  5 19:47:55 2016
++++ Agent.h	Sat Mar  5 19:49:34 2016
+@@ -147,7 +147,7 @@ class Agent
+     canRead_ = (proxy != NULL ? proxy -> canRead(localFd_) : 0);
+   }
+ 
+-  int remoteCanRead(const fd_set * const readSet)
++  int remoteCanRead(fd_set * const readSet)
+   {
+     #if defined(TEST) || defined(INFO)
+     *logofs << "Agent: remoteCanRead() is " <<
+@@ -161,7 +161,7 @@ class Agent
+                 transport_ -> dequeuable() != 0);
+   }
+ 
+-  int remoteCanWrite(const fd_set * const writeSet)
++  int remoteCanWrite(fd_set * const writeSet)
+   {
+     #if defined(TEST) || defined(INFO)
+     *logofs << "Agent: remoteCanWrite() is " <<
+@@ -201,7 +201,7 @@ class Agent
+     return (proxy -> canRead());
+   }
+ 
+-  int proxyCanRead(const fd_set * const readSet)
++  int proxyCanRead(fd_set * const readSet)
+   {
+     #if defined(TEST) || defined(INFO)
+     *logofs << "Agent: proxyCanRead() is "
