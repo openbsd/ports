@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.380 2016/03/01 18:42:09 mmcc Exp $
+# $OpenBSD: Makefile,v 1.381 2016/03/05 16:36:48 semarie Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -231,6 +231,7 @@
      SUBDIR += supervisor
      SUBDIR += supuner
      SUBDIR += symon
+     SUBDIR += sysclean
      SUBDIR += sysgen
      SUBDIR += syslog-ng
      SUBDIR += tabled
