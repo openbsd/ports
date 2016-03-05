@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/05/19 20:05:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/03/05 15:58:05 sthen Exp $
 bin/perlcritic
 ${P5SITE}/Perl/Critic/
 ${P5SITE}/Perl/Critic.pm
@@ -45,6 +45,7 @@ ${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitStringyEval.pm
 ${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitStringySplit.pm
 ${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitUniversalCan.pm
 ${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitUniversalIsa.pm
+${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitUselessTopic.pm
 ${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitVoidGrep.pm
 ${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/ProhibitVoidMap.pm
 ${P5SITE}/Perl/Critic/Policy/BuiltinFunctions/RequireBlockGrep.pm
@@ -74,6 +75,7 @@ ${P5SITE}/Perl/Critic/Policy/ControlStructures/ProhibitPostfixControls.pm
 ${P5SITE}/Perl/Critic/Policy/ControlStructures/ProhibitUnlessBlocks.pm
 ${P5SITE}/Perl/Critic/Policy/ControlStructures/ProhibitUnreachableCode.pm
 ${P5SITE}/Perl/Critic/Policy/ControlStructures/ProhibitUntilBlocks.pm
+${P5SITE}/Perl/Critic/Policy/ControlStructures/ProhibitYadaOperator.pm
 ${P5SITE}/Perl/Critic/Policy/Documentation/
 ${P5SITE}/Perl/Critic/Policy/Documentation/PodSpelling.pm
 ${P5SITE}/Perl/Critic/Policy/Documentation/RequirePackageMatchesPodName.pm
@@ -131,6 +133,7 @@ ${P5SITE}/Perl/Critic/Policy/RegularExpressions/ProhibitFixedStringMatches.pm
 ${P5SITE}/Perl/Critic/Policy/RegularExpressions/ProhibitSingleCharAlternation.pm
 ${P5SITE}/Perl/Critic/Policy/RegularExpressions/ProhibitUnusedCapture.pm
 ${P5SITE}/Perl/Critic/Policy/RegularExpressions/ProhibitUnusualDelimiters.pm
+${P5SITE}/Perl/Critic/Policy/RegularExpressions/ProhibitUselessTopic.pm
 ${P5SITE}/Perl/Critic/Policy/RegularExpressions/RequireBracesForMultiline.pm
 ${P5SITE}/Perl/Critic/Policy/RegularExpressions/RequireDotMatchAnything.pm
 ${P5SITE}/Perl/Critic/Policy/RegularExpressions/RequireExtendedFormatting.pm
@@ -223,6 +226,7 @@ ${P5SITE}/Perl/Critic/Utils/POD/ParseInteriorSequence.pm
 ${P5SITE}/Perl/Critic/Utils/PPI.pm
 ${P5SITE}/Perl/Critic/Utils/Perl.pm
 ${P5SITE}/Perl/Critic/Violation.pm
+${P5SITE}/Test/
 ${P5SITE}/Test/Perl/
 ${P5SITE}/Test/Perl/Critic/
 ${P5SITE}/Test/Perl/Critic/Policy.pm
@@ -263,6 +267,7 @@ ${P5SITE}/Test/Perl/Critic/Policy.pm
 @man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitStringySplit.3p
 @man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitUniversalCan.3p
 @man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitUniversalIsa.3p
+@man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitUselessTopic.3p
 @man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitVoidGrep.3p
 @man man/man3p/Perl::Critic::Policy::BuiltinFunctions::ProhibitVoidMap.3p
 @man man/man3p/Perl::Critic::Policy::BuiltinFunctions::RequireBlockGrep.3p
@@ -289,6 +294,7 @@ ${P5SITE}/Test/Perl/Critic/Policy.pm
 @man man/man3p/Perl::Critic::Policy::ControlStructures::ProhibitUnlessBlocks.3p
 @man man/man3p/Perl::Critic::Policy::ControlStructures::ProhibitUnreachableCode.3p
 @man man/man3p/Perl::Critic::Policy::ControlStructures::ProhibitUntilBlocks.3p
+@man man/man3p/Perl::Critic::Policy::ControlStructures::ProhibitYadaOperator.3p
 @man man/man3p/Perl::Critic::Policy::Documentation::PodSpelling.3p
 @man man/man3p/Perl::Critic::Policy::Documentation::RequirePackageMatchesPodName.3p
 @man man/man3p/Perl::Critic::Policy::Documentation::RequirePodAtEnd.3p
@@ -337,6 +343,7 @@ ${P5SITE}/Test/Perl/Critic/Policy.pm
 @man man/man3p/Perl::Critic::Policy::RegularExpressions::ProhibitSingleCharAlternation.3p
 @man man/man3p/Perl::Critic::Policy::RegularExpressions::ProhibitUnusedCapture.3p
 @man man/man3p/Perl::Critic::Policy::RegularExpressions::ProhibitUnusualDelimiters.3p
+@man man/man3p/Perl::Critic::Policy::RegularExpressions::ProhibitUselessTopic.3p
 @man man/man3p/Perl::Critic::Policy::RegularExpressions::RequireBracesForMultiline.3p
 @man man/man3p/Perl::Critic::Policy::RegularExpressions::RequireDotMatchAnything.3p
 @man man/man3p/Perl::Critic::Policy::RegularExpressions::RequireExtendedFormatting.3p

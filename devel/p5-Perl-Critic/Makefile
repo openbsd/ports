@@ -1,38 +1,39 @@
-# $OpenBSD: Makefile,v 1.17 2013/05/19 20:05:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/05 15:58:05 sthen Exp $
 
-COMMENT=	critique perl source code for best practices
+COMMENT =	critique Perl source code for best-practices
 
-MODULES=	cpan
-DISTNAME=	Perl-Critic-1.118
-CATEGORIES=	devel
+DISTNAME =	Perl-Critic-1.126
 
-# perl
-PERMIT_PACKAGE_CDROM=	Yes
+CATEGORIES =	devel
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/p5-B-Keywords \
-		devel/p5-Config-Tiny \
-		devel/p5-Exception-Class>=1.23 \
-		devel/p5-File-HomeDir \
-		textproc/p5-PPI>=1.208 \
-		devel/p5-Readonly-XS \
-		devel/p5-Set-Scalar \
-		devel/p5-String-Format \
-		devel/p5-Readonly \
-		devel/perltidy \
-		mail/p5-Email-Address \
-		sysutils/p5-File-Which \
-		textproc/p5-PPIx-Regexp>=0.034 \
-		textproc/p5-PPIx-Utilities \
-		textproc/p5-Pod-Spell
-TEST_DEPENDS=	 devel/p5-PadWalker \
-		devel/p5-Test-Deep \
-		devel/p5-Test-Memory-Cycle
+# Perl
+PERMIT_PACKAGE_CDROM =	Yes
 
-MAKE_ENV+=	TEST_POD=Yes
+MODULES =		cpan
+MODCPAN_EXAMPLES =	Yes
+MAKE_ENV =		TEST_POD=Yes
 
-CONFIGURE_STYLE=modbuild
+TEST_DEPENDS =		devel/p5-Test-Deep \
+			devel/p5-Test-Memory-Cycle
 
-MODCPAN_EXAMPLES=	Yes
+RUN_DEPENDS =		devel/p5-B-Keywords>=1.05 \
+			devel/p5-Config-Tiny>=2 \
+			devel/p5-Exception-Class>=1.23 \
+			devel/p5-File-HomeDir \
+			devel/p5-IO-String \
+			devel/p5-List-MoreUtils>=0.19 \
+			devel/p5-Module-Pluggable>=3.1 \
+			devel/p5-Readonly>=2 \
+			devel/p5-String-Format>=1.13 \
+			devel/p5-Task-Weaken \
+			devel/perltidy \
+			mail/p5-Email-Address>=1.889 \
+			sysutils/p5-File-Which \
+			textproc/p5-PPI>=1.220 \
+			textproc/p5-PPIx-Regexp>=0.027 \
+			textproc/p5-PPIx-Utilities>=1.001 \
+			textproc/p5-Pod-Spell>=1
+
+CONFIGURE_STYLE =	modbuild
 
 .include <bsd.port.mk>
