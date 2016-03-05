@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/18 22:32:12 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/05 12:54:31 czarkoff Exp $
 
 COMMENT =	simple webbrowser based on webkit/gtk+
 
-DISTNAME =	surf2-0.6.20151201
+DISTNAME =	surf2-0.6.20160302
 CATEGORIES =	www
 HOMEPAGE =	http://surf.suckless.org/
 
@@ -17,7 +17,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pthread soup-2.4 webkit2gtk-4.0
 
 GH_ACCOUNT =	czarkoff
 GH_PROJECT =	surf2
-GH_COMMIT =	934705c420a25054b9be55a5321e97d6d56579e2
+GH_COMMIT =	af7522006b2aa1b92081a474f831df52d6d9ff13
 
 MODULES =	devel/gettext
 

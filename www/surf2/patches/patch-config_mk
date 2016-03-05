@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_mk,v 1.1.1.1 2015/07/19 03:13:14 czarkoff Exp $
+$OpenBSD: patch-config_mk,v 1.2 2016/03/05 12:54:31 czarkoff Exp $
 --- config.mk.orig	Thu Jul  2 01:42:11 2015
 +++ config.mk	Thu Jul  2 01:43:20 2015
 @@ -5,26 +5,23 @@ VERSION = 0.6
@@ -25,7 +25,7 @@ $OpenBSD: patch-config_mk,v 1.1.1.1 2015/07/19 03:13:14 czarkoff Exp $
  # flags
  CPPFLAGS = -DVERSION=\"${VERSION}\" -D_DEFAULT_SOURCE
 -CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
--LDFLAGS = -g ${LIBS}
+-LDFLAGS = -s ${LIBS}
 +CFLAGS = -std=c99 ${INCS} ${CPPFLAGS}
 +LDFLAGS = ${LIBS}
  
