@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/03/30 03:01:51 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.10 2016/03/06 20:27:24 bentley Exp $
 @bin bin/netsurf
 share/applications/netsurf.desktop
 share/netsurf/
@@ -25,7 +25,6 @@ share/netsurf/en/welcome.html
 share/netsurf/favicon.png
 share/netsurf/fr/
 share/netsurf/fr/Messages
-share/netsurf/gtkdefault.css
 share/netsurf/history.gtk2.ui
 share/netsurf/hotlist.gtk2.ui
 share/netsurf/icons/
@@ -54,6 +53,9 @@ share/netsurf/netsurf.png
 share/netsurf/netsurf.xpm
 share/netsurf/nl/
 share/netsurf/nl/Messages
+share/netsurf/nl/credits.html
+share/netsurf/nl/licence.html
+share/netsurf/nl/welcome.html
 share/netsurf/options.gtk2.ui
 share/netsurf/password.gtk2.ui
 share/netsurf/quirks.css

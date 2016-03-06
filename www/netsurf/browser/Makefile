@@ -1,29 +1,29 @@
-# $OpenBSD: Makefile,v 1.23 2016/01/12 22:19:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/06 20:27:24 bentley Exp $
 
 COMMENT =		lightweight web browser
 
 NETSURF_PROJECT =	netsurf
-NETSURF_VERSION =	3.3
-REVISION =		1
+NETSURF_VERSION =	3.4
 
 HOMEPAGE=		http://www.netsurf-browser.org/
 MASTER_SITES =		http://download.netsurf-browser.org/netsurf/releases/source/
 
 MODULES =		devel/gettext
 
-BUILD_DEPENDS =		www/p5-HTML-Parser
-LIB_DEPENDS =		www/netsurf/hubbub>=0.3.1 \
-			www/netsurf/libcss>=0.5.0 \
-			www/netsurf/libnsgif>=0.1.2 \
-			www/netsurf/libnsbmp>=0.1.2 \
-			www/netsurf/libdom>=0.1.2 \
-			www/netsurf/libnsutils \
-			www/netsurf/libutf8proc \
-			graphics/libwebp \
+BUILD_DEPENDS =		www/netsurf/nsgenbind \
+			www/p5-HTML-Parser
+LIB_DEPENDS =		www/netsurf/hubbub>=0.3.3 \
+			www/netsurf/libcss>=0.6.0 \
+			www/netsurf/libnsgif>=0.1.3 \
+			www/netsurf/libnsbmp>=0.1.3 \
+			www/netsurf/libdom>=0.3.0 \
+			www/netsurf/libnsutils>=0.0.2 \
+			www/netsurf/libutf8proc>=1.3.1 \
 			x11/gtk+2 \
 			x11/gnome/librsvg \
 			net/curl
 RUN_DEPENDS =		devel/desktop-file-utils
+TEST_DEPENDS =		devel/check
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo crypto css curl dom
@@ -31,7 +31,7 @@ WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 hubbub jpeg m nsbmp nsgif pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 parserutils png pthread
-WANTLIB += rsvg-2 ssl utf8proc wapcaplet webp z nsutils
+WANTLIB += rsvg-2 ssl utf8proc wapcaplet z nsutils
 
 MAKE_FLAGS +=		NETSURF_USE_HARU_PDF=NO \
 			NETSURF_USE_LIBICONV_PLUG=NO \

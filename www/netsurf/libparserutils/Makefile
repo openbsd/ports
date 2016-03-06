@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2016/01/11 21:32:37 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/06 20:27:25 bentley Exp $
 
 COMMENT =		utility library for parser building
 
 NETSURF_PROJECT =	libparserutils
-NETSURF_VERSION =	0.2.1
-REVISION =		0
+NETSURF_VERSION =	0.2.3
 
 CATEGORIES =		devel
 SHARED_LIBS =		parserutils 2.0 #0.2.1
