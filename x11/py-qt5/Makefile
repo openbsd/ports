@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/26 00:32:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/06 11:57:17 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,6 +10,7 @@ DISTNAME=	PyQt-gpl-${V}
 PKGNAME=	py-qt5-${V}
 PKGNAME-main=	py-qt5-${V}
 PKGNAME-docs=	py-qt5-docs-${V}
+REVISION-main=	0
 
 CATEGORIES=	x11 devel
 
@@ -25,6 +26,7 @@ WANTLIB += Qt5OpenGL Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick
 WANTLIB += Qt5QuickWidgets Qt5Sensors Qt5SerialPort Qt5Sql Qt5Svg
 WANTLIB += Qt5Test Qt5WebChannel Qt5WebKit Qt5WebKitWidgets Qt5WebSockets
 WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns
+WANTLIB += Qt5Location Qt5Nfc
 
 MULTI_PACKAGES=	-main -docs
 
@@ -36,7 +38,7 @@ PKG_ARCH-docs=	*
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/py-sip>=4.16.5 \
 		x11/dbus-python
-LIB_DEPENDS=	${MODQT5_LIB_DEPENDS} \
+LIB_DEPENDS=	${MODQT5_LIB_DEPENDS}>=5.5 \
 		${MODPY_LIB_DEPENDS}
 
 NO_TEST=	Yes

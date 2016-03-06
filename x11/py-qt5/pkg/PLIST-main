@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2015/11/26 00:32:31 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2016/03/06 11:57:17 zhuk Exp $
 @bin bin/pylupdate5
 @bin bin/pyrcc5
 bin/pyuic5
@@ -11,9 +11,11 @@ lib/python${MODPY_VERSION}/site-packages/PyQt5/QtDBus.so
 lib/python${MODPY_VERSION}/site-packages/PyQt5/QtDesigner.so
 lib/python${MODPY_VERSION}/site-packages/PyQt5/QtGui.so
 lib/python${MODPY_VERSION}/site-packages/PyQt5/QtHelp.so
+lib/python${MODPY_VERSION}/site-packages/PyQt5/QtLocation.so
 lib/python${MODPY_VERSION}/site-packages/PyQt5/QtMultimedia.so
 lib/python${MODPY_VERSION}/site-packages/PyQt5/QtMultimediaWidgets.so
 lib/python${MODPY_VERSION}/site-packages/PyQt5/QtNetwork.so
+lib/python${MODPY_VERSION}/site-packages/PyQt5/QtNfc.so
 lib/python${MODPY_VERSION}/site-packages/PyQt5/QtOpenGL.so
 lib/python${MODPY_VERSION}/site-packages/PyQt5/QtPositioning.so
 lib/python${MODPY_VERSION}/site-packages/PyQt5/QtPrintSupport.so
@@ -407,6 +409,47 @@ share/sip/PyQt5/QtHelp/qhelpindexwidget.sip
 share/sip/PyQt5/QtHelp/qhelpsearchengine.sip
 share/sip/PyQt5/QtHelp/qhelpsearchquerywidget.sip
 share/sip/PyQt5/QtHelp/qhelpsearchresultwidget.sip
+share/sip/PyQt5/QtLocation/
+share/sip/PyQt5/QtLocation/QtLocationmod.sip
+share/sip/PyQt5/QtLocation/qgeocodereply.sip
+share/sip/PyQt5/QtLocation/qgeocodingmanager.sip
+share/sip/PyQt5/QtLocation/qgeocodingmanagerengine.sip
+share/sip/PyQt5/QtLocation/qgeomaneuver.sip
+share/sip/PyQt5/QtLocation/qgeoroute.sip
+share/sip/PyQt5/QtLocation/qgeoroutereply.sip
+share/sip/PyQt5/QtLocation/qgeorouterequest.sip
+share/sip/PyQt5/QtLocation/qgeoroutesegment.sip
+share/sip/PyQt5/QtLocation/qgeoroutingmanager.sip
+share/sip/PyQt5/QtLocation/qgeoroutingmanagerengine.sip
+share/sip/PyQt5/QtLocation/qgeoserviceprovider.sip
+share/sip/PyQt5/QtLocation/qlocation.sip
+share/sip/PyQt5/QtLocation/qplace.sip
+share/sip/PyQt5/QtLocation/qplaceattribute.sip
+share/sip/PyQt5/QtLocation/qplacecategory.sip
+share/sip/PyQt5/QtLocation/qplacecontactdetail.sip
+share/sip/PyQt5/QtLocation/qplacecontent.sip
+share/sip/PyQt5/QtLocation/qplacecontentreply.sip
+share/sip/PyQt5/QtLocation/qplacecontentrequest.sip
+share/sip/PyQt5/QtLocation/qplacedetailsreply.sip
+share/sip/PyQt5/QtLocation/qplaceeditorial.sip
+share/sip/PyQt5/QtLocation/qplaceicon.sip
+share/sip/PyQt5/QtLocation/qplaceidreply.sip
+share/sip/PyQt5/QtLocation/qplaceimage.sip
+share/sip/PyQt5/QtLocation/qplacemanager.sip
+share/sip/PyQt5/QtLocation/qplacemanagerengine.sip
+share/sip/PyQt5/QtLocation/qplacematchreply.sip
+share/sip/PyQt5/QtLocation/qplacematchrequest.sip
+share/sip/PyQt5/QtLocation/qplaceproposedsearchresult.sip
+share/sip/PyQt5/QtLocation/qplaceratings.sip
+share/sip/PyQt5/QtLocation/qplacereply.sip
+share/sip/PyQt5/QtLocation/qplaceresult.sip
+share/sip/PyQt5/QtLocation/qplacereview.sip
+share/sip/PyQt5/QtLocation/qplacesearchreply.sip
+share/sip/PyQt5/QtLocation/qplacesearchrequest.sip
+share/sip/PyQt5/QtLocation/qplacesearchresult.sip
+share/sip/PyQt5/QtLocation/qplacesearchsuggestionreply.sip
+share/sip/PyQt5/QtLocation/qplacesupplier.sip
+share/sip/PyQt5/QtLocation/qplaceuser.sip
 share/sip/PyQt5/QtMultimedia/
 share/sip/PyQt5/QtMultimedia/QtMultimediamod.sip
 share/sip/PyQt5/QtMultimedia/qabstractvideobuffer.sip
@@ -491,6 +534,19 @@ share/sip/PyQt5/QtNetwork/qsslsocket.sip
 share/sip/PyQt5/QtNetwork/qtcpserver.sip
 share/sip/PyQt5/QtNetwork/qtcpsocket.sip
 share/sip/PyQt5/QtNetwork/qudpsocket.sip
+share/sip/PyQt5/QtNfc/
+share/sip/PyQt5/QtNfc/QtNfcmod.sip
+share/sip/PyQt5/QtNfc/qndeffilter.sip
+share/sip/PyQt5/QtNfc/qndefmessage.sip
+share/sip/PyQt5/QtNfc/qndefnfcsmartposterrecord.sip
+share/sip/PyQt5/QtNfc/qndefnfctextrecord.sip
+share/sip/PyQt5/QtNfc/qndefnfcurirecord.sip
+share/sip/PyQt5/QtNfc/qndefrecord.sip
+share/sip/PyQt5/QtNfc/qnearfieldmanager.sip
+share/sip/PyQt5/QtNfc/qnearfieldsharemanager.sip
+share/sip/PyQt5/QtNfc/qnearfieldsharetarget.sip
+share/sip/PyQt5/QtNfc/qnearfieldtarget.sip
+share/sip/PyQt5/QtNfc/qqmlndefrecord.sip
 share/sip/PyQt5/QtOpenGL/
 share/sip/PyQt5/QtOpenGL/QtOpenGLmod.sip
 share/sip/PyQt5/QtOpenGL/qgl.sip
