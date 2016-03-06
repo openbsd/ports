@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2015/12/29 22:45:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2016/03/06 13:40:04 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	ICB plugin for irssi
 
 DISTNAME=	irssi-icb-0.15
+REVISION=	0
 
 CATEGORIES=     net
 

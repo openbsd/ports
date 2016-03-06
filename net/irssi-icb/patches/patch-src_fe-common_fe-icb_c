@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_fe-common_fe-icb_c,v 1.6 2016/03/06 13:40:04 sthen Exp $
+--- src/fe-common/fe-icb.c.orig	Sun Mar  6 13:36:59 2016
++++ src/fe-common/fe-icb.c	Sun Mar  6 13:37:47 2016
+@@ -531,3 +531,11 @@ void fe_icb_deinit(void)
+ 
+ 	signal_remove("server add fill", (SIGNAL_FUNC) sig_server_add_fill);
+ }
++
++#ifdef IRSSI_ABI_VERSION
++void
++fe_icb_abicheck(int * version)
++{
++	*version = IRSSI_ABI_VERSION;
++}
++#endif
