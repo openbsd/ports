@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/02/02 01:29:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/03/06 14:44:46 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:/var/www/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
@@ -26,6 +26,7 @@ icinga-web2/application/controllers/ConfigController.php
 icinga-web2/application/controllers/DashboardController.php
 icinga-web2/application/controllers/ErrorController.php
 icinga-web2/application/controllers/GroupController.php
+icinga-web2/application/controllers/IframeController.php
 icinga-web2/application/controllers/IndexController.php
 icinga-web2/application/controllers/LayoutController.php
 icinga-web2/application/controllers/ListController.php
@@ -175,6 +176,8 @@ icinga-web2/application/views/scripts/group/
 icinga-web2/application/views/scripts/group/form.phtml
 icinga-web2/application/views/scripts/group/list.phtml
 icinga-web2/application/views/scripts/group/show.phtml
+icinga-web2/application/views/scripts/iframe/
+icinga-web2/application/views/scripts/iframe/index.phtml
 icinga-web2/application/views/scripts/index/
 icinga-web2/application/views/scripts/index/welcome.phtml
 icinga-web2/application/views/scripts/inline.phtml
@@ -201,11 +204,8 @@ icinga-web2/application/views/scripts/user/
 icinga-web2/application/views/scripts/user/form.phtml
 icinga-web2/application/views/scripts/user/list.phtml
 icinga-web2/application/views/scripts/user/show.phtml
-icinga-web2/application/views/scripts/usergroupbackend/
-icinga-web2/application/views/scripts/usergroupbackend/list.phtml
 icinga-web2/bin/
 icinga-web2/bin/icingacli
-icinga-web2/bin/license_writer.py
 icinga-web2/changelog.py
 icinga-web2/doc/
 icinga-web2/doc/about.md
@@ -269,6 +269,7 @@ icinga-web2/library/Icinga/Application/Logger.php
 icinga-web2/library/Icinga/Application/Logger/LogWriter.php
 icinga-web2/library/Icinga/Application/Logger/Writer/
 icinga-web2/library/Icinga/Application/Logger/Writer/FileWriter.php
+icinga-web2/library/Icinga/Application/Logger/Writer/StderrWriter.php
 icinga-web2/library/Icinga/Application/Logger/Writer/StdoutWriter.php
 icinga-web2/library/Icinga/Application/Logger/Writer/SyslogWriter.php
 icinga-web2/library/Icinga/Application/Modules/
@@ -295,7 +296,6 @@ icinga-web2/library/Icinga/Authentication/User/UserBackend.php
 icinga-web2/library/Icinga/Authentication/User/UserBackendInterface.php
 icinga-web2/library/Icinga/Authentication/UserGroup/
 icinga-web2/library/Icinga/Authentication/UserGroup/DbUserGroupBackend.php
-icinga-web2/library/Icinga/Authentication/UserGroup/IniUserGroupBackend.php
 icinga-web2/library/Icinga/Authentication/UserGroup/LdapUserGroupBackend.php
 icinga-web2/library/Icinga/Authentication/UserGroup/UserGroupBackend.php
 icinga-web2/library/Icinga/Authentication/UserGroup/UserGroupBackendInterface.php
@@ -370,7 +370,9 @@ icinga-web2/library/Icinga/Data/Filter/FilterExpression.php
 icinga-web2/library/Icinga/Data/Filter/FilterGreaterThan.php
 icinga-web2/library/Icinga/Data/Filter/FilterLessThan.php
 icinga-web2/library/Icinga/Data/Filter/FilterMatch.php
+icinga-web2/library/Icinga/Data/Filter/FilterMatchCaseInsensitive.php
 icinga-web2/library/Icinga/Data/Filter/FilterMatchNot.php
+icinga-web2/library/Icinga/Data/Filter/FilterMatchNotCaseInsensitive.php
 icinga-web2/library/Icinga/Data/Filter/FilterNot.php
 icinga-web2/library/Icinga/Data/Filter/FilterNotEqual.php
 icinga-web2/library/Icinga/Data/Filter/FilterOr.php
@@ -430,6 +432,8 @@ icinga-web2/library/Icinga/File/Ini/Dom/Section.php
 icinga-web2/library/Icinga/File/Ini/IniParser.php
 icinga-web2/library/Icinga/File/Ini/IniWriter.php
 icinga-web2/library/Icinga/File/Pdf.php
+icinga-web2/library/Icinga/Legacy/
+icinga-web2/library/Icinga/Legacy/DashboardConfig.php
 icinga-web2/library/Icinga/Protocol/
 icinga-web2/library/Icinga/Protocol/Dns.php
 icinga-web2/library/Icinga/Protocol/File/
@@ -484,6 +488,7 @@ icinga-web2/library/Icinga/Util/EnumeratingFilterIterator.php
 icinga-web2/library/Icinga/Util/File.php
 icinga-web2/library/Icinga/Util/Format.php
 icinga-web2/library/Icinga/Util/String.php
+icinga-web2/library/Icinga/Util/StringHelper.php
 icinga-web2/library/Icinga/Util/TimezoneDetect.php
 icinga-web2/library/Icinga/Util/Translator.php
 icinga-web2/library/Icinga/Web/
@@ -528,6 +533,7 @@ icinga-web2/library/Icinga/Web/Form/Validator/InArray.php
 icinga-web2/library/Icinga/Web/Form/Validator/ReadablePathValidator.php
 icinga-web2/library/Icinga/Web/Form/Validator/TimeFormatValidator.php
 icinga-web2/library/Icinga/Web/Form/Validator/TriStateValidator.php
+icinga-web2/library/Icinga/Web/Form/Validator/UrlValidator.php
 icinga-web2/library/Icinga/Web/Form/Validator/WritablePathValidator.php
 icinga-web2/library/Icinga/Web/Helper/
 icinga-web2/library/Icinga/Web/Helper/CookieHelper.php
@@ -3067,15 +3073,6 @@ icinga-web2/modules/doc/public/img/doc/markdown.png
 icinga-web2/modules/doc/public/js/
 icinga-web2/modules/doc/public/js/module.js
 icinga-web2/modules/doc/run.php
-icinga-web2/modules/iframe/
-icinga-web2/modules/iframe/application/
-icinga-web2/modules/iframe/application/controllers/
-icinga-web2/modules/iframe/application/controllers/IndexController.php
-icinga-web2/modules/iframe/application/views/
-icinga-web2/modules/iframe/application/views/scripts/
-icinga-web2/modules/iframe/application/views/scripts/index/
-icinga-web2/modules/iframe/application/views/scripts/index/index.phtml
-icinga-web2/modules/iframe/module.info
 icinga-web2/modules/monitoring/
 icinga-web2/modules/monitoring/application/
 icinga-web2/modules/monitoring/application/clicommands/
@@ -3164,6 +3161,7 @@ icinga-web2/modules/monitoring/application/views/helpers/
 icinga-web2/modules/monitoring/application/views/helpers/CheckPerformance.php
 icinga-web2/modules/monitoring/application/views/helpers/ContactFlags.php
 icinga-web2/modules/monitoring/application/views/helpers/Customvar.php
+icinga-web2/modules/monitoring/application/views/helpers/EscapeComment.php
 icinga-web2/modules/monitoring/application/views/helpers/HostFlags.php
 icinga-web2/modules/monitoring/application/views/helpers/IconImage.php
 icinga-web2/modules/monitoring/application/views/helpers/Link.php
@@ -3427,6 +3425,7 @@ icinga-web2/modules/monitoring/library/Monitoring/Hook/
 icinga-web2/modules/monitoring/library/Monitoring/Hook/DataviewExtensionHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Hook/HostActionsHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Hook/IdoQueryExtensionHook.php
+icinga-web2/modules/monitoring/library/Monitoring/Hook/ObjectActionsHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Hook/ServiceActionsHook.php
 icinga-web2/modules/monitoring/library/Monitoring/Hook/TimelineProviderHook.php
 icinga-web2/modules/monitoring/library/Monitoring/MonitoringWizard.php
@@ -3652,7 +3651,6 @@ icinga-web2/public/css/icinga/about.less
 icinga-web2/public/css/icinga/animation.less
 icinga-web2/public/css/icinga/badges.less
 icinga-web2/public/css/icinga/base.less
-icinga-web2/public/css/icinga/colors.less
 icinga-web2/public/css/icinga/compat.less
 icinga-web2/public/css/icinga/controls.less
 icinga-web2/public/css/icinga/dev.less
@@ -3661,13 +3659,12 @@ icinga-web2/public/css/icinga/grid.less
 icinga-web2/public/css/icinga/layout-structure.less
 icinga-web2/public/css/icinga/layout.less
 icinga-web2/public/css/icinga/login.less
-icinga-web2/public/css/icinga/logo.less
-icinga-web2/public/css/icinga/main-content.less
 icinga-web2/public/css/icinga/main.less
 icinga-web2/public/css/icinga/menu.less
 icinga-web2/public/css/icinga/mixins.less
 icinga-web2/public/css/icinga/nav.less
 icinga-web2/public/css/icinga/print.less
+icinga-web2/public/css/icinga/responsive.less
 icinga-web2/public/css/icinga/setup.less
 icinga-web2/public/css/icinga/spinner.less
 icinga-web2/public/css/icinga/tabs.less
@@ -3676,6 +3673,7 @@ icinga-web2/public/css/pdf/
 icinga-web2/public/css/pdf/pdfprint.less
 icinga-web2/public/css/themes/
 icinga-web2/public/css/themes/Winter.less
+icinga-web2/public/css/themes/high-contrast.less
 icinga-web2/public/css/vendor/
 icinga-web2/public/css/vendor/normalize.css
 icinga-web2/public/css/vendor/tipsy.css
@@ -3876,7 +3874,7 @@ icinga-web2/test/php/library/Icinga/UserTest.php
 icinga-web2/test/php/library/Icinga/Util/
 icinga-web2/test/php/library/Icinga/Util/DimensionTest.php
 icinga-web2/test/php/library/Icinga/Util/FileTest.php
-icinga-web2/test/php/library/Icinga/Util/StringTest.php
+icinga-web2/test/php/library/Icinga/Util/StringHelperTest.php
 icinga-web2/test/php/library/Icinga/Util/TranslatorTest.php
 icinga-web2/test/php/library/Icinga/Web/
 icinga-web2/test/php/library/Icinga/Web/Form/
