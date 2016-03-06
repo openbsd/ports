@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2015/07/08 12:58:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/06 12:17:40 ajacoutot Exp $
 
 COMMENT =	remotely execute programs on a Windows host
 
 DISTNAME =	winexe-source-081123
 PKGNAME =	winexe-0.90
 
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	net
 
