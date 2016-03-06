@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/05 15:58:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/06 11:50:50 sthen Exp $
 
 COMMENT =	critique Perl source code for best-practices
 
@@ -15,6 +15,10 @@ MAKE_ENV =		TEST_POD=Yes
 
 TEST_DEPENDS =		devel/p5-Test-Deep \
 			devel/p5-Test-Memory-Cycle
+
+BUILD_DEPENDS =		devel/p5-B-Keywords>=1.05 \
+			devel/p5-List-MoreUtils>=0.19 \
+			devel/p5-Test-Deep
 
 RUN_DEPENDS =		devel/p5-B-Keywords>=1.05 \
 			devel/p5-Config-Tiny>=2 \
