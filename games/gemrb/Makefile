@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/02 11:56:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/06 20:28:36 kirby Exp $
 
 SHARED_ONLY = 		Yes
 
@@ -6,7 +6,7 @@ SHARED_LIBS += 		gemrb_core 0.0
 
 COMMENT =		open-source implementation of Bioware's Infinity Engine
 
-DISTNAME =		gemrb-0.8.3
+DISTNAME =		gemrb-0.8.4
 
 CATEGORIES =		games emulators x11
 
@@ -49,6 +49,5 @@ post-install:
 		${PREFIX}/share/gemrb/GUIScripts/{} \;
 	 ${SUBST_CMD} -m 444 -c ${FILESDIR}/baldurs_gate_1.cfg \
 		 ${PREFIX}/share/examples/gemrb/baldurs_gate_1.cfg
-	rm ${PREFIX}/share/gemrb/GUIScripts/bg1/GUIMOVIE.py.orig
 
 .include <bsd.port.mk>
