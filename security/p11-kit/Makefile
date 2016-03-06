@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2015/05/02 10:25:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2016/03/06 12:16:26 ajacoutot Exp $
 
 PORTROACH=	limitw:1,even
 
@@ -6,12 +6,11 @@ SHARED_ONLY=	Yes
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
 
-DISTNAME=	p11-kit-0.22.1
-REVISION=	1
+DISTNAME=	p11-kit-0.23.2
 
 CATEGORIES=	security
 
-SHARED_LIBS +=  p11-kit              1.2      # 0.0
+SHARED_LIBS +=  p11-kit              2.0      # 1.0
 
 HOMEPAGE=	http://p11-glue.freedesktop.org/
 
