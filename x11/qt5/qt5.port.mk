@@ -1,4 +1,4 @@
-# $OpenBSD: qt5.port.mk,v 1.6 2014/12/11 17:45:04 zhuk Exp $
+# $OpenBSD: qt5.port.mk,v 1.7 2016/03/06 23:59:51 zhuk Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt4/qt5 in a port.
@@ -9,15 +9,12 @@ MODQT5_LIBDIR =	${LOCALBASE}/lib/qt5
 MODQT_LIBDIR ?= ${MODQT5_LIBDIR}
 MODQT5_INCDIR =	${LOCALBASE}/include/X11/qt5
 MODQT_INCDIR ?= ${MODQT5_INCDIR}
-
 MODQT5_CONFIGURE_ARGS =	--with-qt-includes=${MODQT5_INCDIR} \
 			--with-qt-libraries=${MODQT5_LIBDIR}
 MODQT_CONFIGURE_ARGS ?=	${MODQT5_CONFIGURE_ARGS}
-
 _MODQT5_SETUP =	MOC=${MODQT5_MOC} \
 		MODQT_INCDIR=${MODQT5_INCDIR} \
 		MODQT_LIBDIR=${MODQT5_LIBDIR}
-
 .if ${MODQT5_OVERRIDE_UIC:L} == "yes"
 _MODQT5_SETUP +=UIC=${MODQT5_UIC}
 .endif
@@ -27,6 +24,8 @@ MODQT5_MOC =	${LOCALBASE}/bin/moc-qt5
 MODQT_MOC ?=	${MODQT5_MOC}
 MODQT5_UIC =	${LOCALBASE}/bin/uic-qt5
 MODQT_UIC ?=	${MODQT5_UIC}
+MODQT5_QMAKE =	${LOCALBASE}/bin/qmake-qt5
+MODQT_QMAKE ?=	${MODQT5_QMAKE}
 MODQT5_QTDIR =	${LOCALBASE}/lib/qt5
 MODQT_QTDIR ?=	${MODQT5_QTDIR}
 
@@ -86,4 +85,88 @@ MODQT5_USE_GCC4_MODULE ?=	Yes
   MODULES +=		gcc4
   MODGCC4_LANGS +=	c++
   MODGCC4_ARCHS ?=	*
+.endif
+
+.if ${CONFIGURE_STYLE:Mqmake} || ${CONFIGURE_STYLE:Mqmake5}
+MAKE_FLAGS +=	CC="${CC}" CXX="${CXX}"
+MAKE_FLAGS +=	PREFIX=${PREFIX}
+. for _l _v in ${SHARED_LIBS}
+MAKE_FLAGS +=	LIB${_l}_VERSION=${_v}
+. endfor
+.endif
+
+MODQMAKE_PROJECTS ?=	.
+MODQMAKE5_PROJECTS ?=	${MODQMAKE_PROJECTS}
+MODQMAKE_ARGS ?=
+MODQMAKE5_ARGS ?=	${MODQMAKE_ARGS}
+MODQMAKE5_ARGS +=	-recursive \
+			PREFIX=${PREFIX} \
+			QMAKE_CFLAGS="${CFLAGS}" \
+			QMAKE_CFLAGS_RELEASE="${CFLAGS}" \
+			QMAKE_CXX="${CXX}" \
+			QMAKE_CXXFLAGS="${CXXFLAGS}" \
+			QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}"
+
+MODQMAKE_INSTALL_ROOT ?=	${WRKINST}
+MODQMAKE5_INSTALL_ROOT ?=	${MODQMAKE_INSTALL_ROOT}
+_MODQT5_FAKE_FLAGS =		INSTALL_ROOT=${MODQMAKE5_INSTALL_ROOT}
+
+MODQMAKE5_configure =
+MODQMAKE5_build =
+MODQMAKE5_install =
+.for _qp in ${MODQMAKE5_PROJECTS}
+_MODQMAKE5_CD_${_qp:/=_} = \
+	cd ${WRKBUILD}; \
+	if [ -d ${WRKSRC}/${_qp} ]; then \
+		dir=${_qp}; \
+	else \
+		dir=$$(dirname ${_qp}); \
+	fi; \
+	mkdir -p $$dir; \
+	cd -- $$dir
+MODQMAKE5_configure += \
+	cd ${WRKSRC}; \
+	if [ -d ${_qp} ]; then \
+		pro=$$(echo ${_qp}/*.pro); \
+	else \
+		pro=${_qp}; \
+	fi; \
+	${_MODQMAKE5_CD_${_qp:/=_}}; \
+	echo >&2 ${MODQT5_QMAKE} ${MODQMAKE5_ARGS} ${WRKSRC}/$$pro; \
+	${MODQT5_QMAKE} ${MODQMAKE5_ARGS} ${WRKSRC}/$$pro;
+MODQMAKE5_build += \
+	${_MODQMAKE5_CD_${_qp:/=_}}; \
+	${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
+                ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET};
+MODQMAKE5_install += \
+	${_MODQMAKE5_CD_${_qp:/=_}}; \
+	umask 022; \
+	${_FAKESUDO} ${_SYSTRACE_CMD} \
+		${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
+		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} ${_MODQT5_FAKE_FLAGS} \
+		-f ${MAKE_FILE} ${FAKE_TARGET};
+.endfor
+MODQMAKE_configure ?=	${MODQMAKE5_configure}
+MODQMAKE_build ?=	${MODQMAKE5_build}
+MODQMAKE_install ?=	${MODQMAKE5_install}
+
+.if ${CONFIGURE_STYLE:Mqmake5} || ${CONFIGURE_STYLE:Mqmake}
+SEPARATE_BUILD ?=	Yes
+. if ${SEPARATE_BUILD:L} != "no"
+.  if ${SEPARATE_BUILD:L} != "yes"
+ERRORS +=	"Fatal: qmake supports only simple SEPARATE_BUILD builds."
+.  endif
+# "Shadow builds" of qmake can only work in subdirectory
+WRKBUILD ?=		${WRKSRC}/build-${MACHINE_ARCH}
+. endif
+
+. if !target(do-build) && "${CONFIGURE_STYLE:Nqmake:Nqmake5}" == ""
+do-build:
+	@${MODQMAKE5_build}
+. endif
+
+. if !target(do-install) && "${CONFIGURE_STYLE:Nqmake:Nqmake5}" == ""
+do-install:
+	@${MODQMAKE5_install}
+. endif
 .endif
