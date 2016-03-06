@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.209 2015/12/11 06:17:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.210 2016/03/06 08:53:26 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+2 CUPS print backend
 
-GNOME_VERSION=		2.24.29
+GNOME_VERSION=		2.24.30
 GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
@@ -11,8 +11,8 @@ PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS +=  gdk-x11-2.0          2400.0   # 2400.29
-SHARED_LIBS +=  gtk-x11-2.0          2400.0   # 2400.29
+SHARED_LIBS +=  gdk-x11-2.0          2400.0   # 2400.30
+SHARED_LIBS +=  gtk-x11-2.0          2400.0   # 2400.30
 SHARED_LIBS +=  gailutil             26.0     # 18.1
 
 HOMEPAGE=		http://www.gtk.org/
