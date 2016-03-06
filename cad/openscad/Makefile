@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/07 07:52:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/06 19:22:04 landry Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller#'
+BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
 
 V =			2015.03-2
 DISTNAME =		openscad-${V:S/-/./}
