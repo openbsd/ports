@@ -1,18 +1,18 @@
-$OpenBSD: patch-third_party_pdfium_pdfium_gyp,v 1.5 2016/01/23 18:49:31 robert Exp $
---- third_party/pdfium/pdfium.gyp.orig.port	Wed Jan 20 21:02:27 2016
-+++ third_party/pdfium/pdfium.gyp	Fri Jan 22 19:58:59 2016
-@@ -9,7 +9,7 @@
-     'pdf_use_skia%': 0,
+$OpenBSD: patch-third_party_pdfium_pdfium_gyp,v 1.6 2016/03/06 10:51:14 robert Exp $
+--- third_party/pdfium/pdfium.gyp.orig.port	Wed Mar  2 21:03:23 2016
++++ third_party/pdfium/pdfium.gyp	Thu Mar  3 09:43:26 2016
+@@ -10,7 +10,7 @@
      'pdf_enable_v8%': 1,
+     'pdf_enable_xfa%': 0, # Set to 1 by standalone.gypi in a standalone build.
      'conditions': [
 -      ['OS=="linux"', {
 +      ['OS=="linux" or os_bsd==1', {
          'bundle_freetype%': 0,
        }, {  # On Android there's no system FreeType. On Windows and Mac, only a
              # few methods are used from it.
-@@ -37,7 +37,7 @@
-       ['pdf_enable_v8==1', {
-         'defines': ['PDF_ENABLE_V8'],
+@@ -44,7 +44,7 @@
+       ['pdf_enable_xfa==1', {
+         'defines': ['PDF_ENABLE_XFA'],
        }],
 -      ['OS=="linux"', {
 +      ['OS=="linux" or os_bsd==1', {

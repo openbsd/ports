@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.274 2016/03/05 16:04:06 pascal Exp $
+# $OpenBSD: Makefile,v 1.275 2016/03/06 10:51:13 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			48.0.2564.116
+V=			49.0.2623.75
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -146,7 +145,6 @@ CARCH=		x86_64
 .endif
 
 REL!=		uname -r
-MAKE_ENV+=	CPATH=${LOCALBASE}/include/c++/${MODGCC4_VERSION}.3/bits/:${LOCALBASE}/include/c++/${MODGCC4_VERSION}.3/:${LOCALBASE}/include/c++/${MODGCC4_VERSION}.3/${CARCH}-unknown-openbsd${REL}/
 
 .if ${FLAVOR:Mdebug}
 GYP_DEFS+=	-Dremove_webcore_debug_symbols=1

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_utility_gypi,v 1.4 2015/10/14 16:42:07 robert Exp $
---- chrome/chrome_utility.gypi.orig.port	Wed Oct  7 04:42:09 2015
-+++ chrome/chrome_utility.gypi	Wed Oct 14 07:41:13 2015
-@@ -115,6 +115,7 @@
+$OpenBSD: patch-chrome_chrome_utility_gypi,v 1.5 2016/03/06 10:51:14 robert Exp $
+--- chrome/chrome_utility.gypi.orig.port	Wed Feb 24 00:01:59 2016
++++ chrome/chrome_utility.gypi	Thu Mar  3 09:43:26 2016
+@@ -117,6 +117,7 @@
        'variables': { 'enable_wexit_time_destructors': 1, },
        'dependencies': [
          '../base/base.gyp:base',

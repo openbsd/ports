@@ -1,7 +1,7 @@
-$OpenBSD: patch-media_audio_audio_input_controller_cc,v 1.4 2015/12/05 16:13:32 robert Exp $
---- media/audio/audio_input_controller.cc.orig.port	Fri Nov 13 12:04:18 2015
-+++ media/audio/audio_input_controller.cc	Wed Dec  2 08:18:32 2015
-@@ -15,6 +15,8 @@
+$OpenBSD: patch-media_audio_audio_input_controller_cc,v 1.5 2016/03/06 10:51:14 robert Exp $
+--- media/audio/audio_input_controller.cc.orig.port	Wed Feb 24 00:02:01 2016
++++ media/audio/audio_input_controller.cc	Thu Mar  3 09:43:26 2016
+@@ -17,6 +17,8 @@
  #include "media/audio/audio_input_writer.h"
  #include "media/base/user_input_monitor.h"
  

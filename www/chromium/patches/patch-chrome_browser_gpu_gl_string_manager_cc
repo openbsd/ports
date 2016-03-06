@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_gpu_gl_string_manager_cc,v 1.1 2013/10/29 06:51:34 robert Exp $
---- chrome/browser/gpu/gl_string_manager.cc.orig.port	Sun Oct 20 17:01:50 2013
-+++ chrome/browser/gpu/gl_string_manager.cc	Sun Oct 20 17:02:02 2013
-@@ -25,7 +25,7 @@ GLStringManager::~GLStringManager() {
+$OpenBSD: patch-chrome_browser_gpu_gl_string_manager_cc,v 1.2 2016/03/06 10:51:14 robert Exp $
+--- chrome/browser/gpu/gl_string_manager.cc.orig.port	Wed Feb 24 21:01:31 2016
++++ chrome/browser/gpu/gl_string_manager.cc	Thu Mar  3 09:43:25 2016
+@@ -26,7 +26,7 @@ GLStringManager::~GLStringManager() {
  
  void GLStringManager::Initialize() {
    // On MacOSX or Windows, preliminary GPUInfo is enough.

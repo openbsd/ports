@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gfx_codec_png_codec_cc,v 1.5 2013/09/29 19:04:07 robert Exp $
---- ui/gfx/codec/png_codec.cc.orig.port	Sun Sep 22 16:35:48 2013
-+++ ui/gfx/codec/png_codec.cc	Sun Sep 22 16:35:56 2013
-@@ -6,7 +6,7 @@
- 
+$OpenBSD: patch-ui_gfx_codec_png_codec_cc,v 1.6 2016/03/06 10:51:14 robert Exp $
+--- ui/gfx/codec/png_codec.cc.orig.port	Wed Feb 24 00:02:06 2016
++++ ui/gfx/codec/png_codec.cc	Thu Mar  3 09:43:26 2016
+@@ -9,7 +9,7 @@
  #include "base/logging.h"
+ #include "base/macros.h"
  #include "base/strings/string_util.h"
 -#include "third_party/libpng/png.h"
 +#include <png.h>

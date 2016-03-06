@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_pdfium_build_standalone_gypi,v 1.7 2016/01/23 18:49:31 robert Exp $
---- third_party/pdfium/build/standalone.gypi.orig.port	Wed Jan 20 21:02:27 2016
-+++ third_party/pdfium/build/standalone.gypi	Fri Jan 22 19:58:59 2016
-@@ -17,7 +17,7 @@
+$OpenBSD: patch-third_party_pdfium_build_standalone_gypi,v 1.8 2016/03/06 10:51:14 robert Exp $
+--- third_party/pdfium/build/standalone.gypi.orig.port	Wed Mar  2 21:03:23 2016
++++ third_party/pdfium/build/standalone.gypi	Thu Mar  3 09:43:26 2016
+@@ -18,7 +18,7 @@
        'variables': {
          'variables': {
            'conditions': [
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_pdfium_build_standalone_gypi,v 1.7 2016/01/23 18:49:
                # This handles the Unix platforms we generally deal with.
                # Anything else gets passed through, which probably won't work
                # very well; such hosts should pass an explicit target_arch
-@@ -128,7 +128,7 @@
+@@ -137,7 +137,7 @@
            },
          },
          'conditions': [

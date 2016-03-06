@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_process_singleton_posix_cc,v 1.5 2015/12/05 16:13:32 robert Exp $
---- chrome/browser/process_singleton_posix.cc.orig.port	Fri Nov 13 12:04:14 2015
-+++ chrome/browser/process_singleton_posix.cc	Wed Dec  2 08:18:32 2015
-@@ -84,11 +84,11 @@
+$OpenBSD: patch-chrome_browser_process_singleton_posix_cc,v 1.6 2016/03/06 10:51:14 robert Exp $
+--- chrome/browser/process_singleton_posix.cc.orig.port	Wed Feb 24 21:01:31 2016
++++ chrome/browser/process_singleton_posix.cc	Thu Mar  3 09:43:26 2016
+@@ -87,11 +87,11 @@
  #include "net/base/net_util.h"
  #include "ui/base/l10n/l10n_util.h"
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-chrome_browser_process_singleton_posix_cc,v 1.5 2015/12/05 16:13
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -313,7 +313,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
+@@ -315,7 +315,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
    if (g_disable_prompt)
      return false;
  
@@ -24,7 +24,7 @@ $OpenBSD: patch-chrome_browser_process_singleton_posix_cc,v 1.5 2015/12/05 16:13
    base::string16 relaunch_button_text = l10n_util::GetStringUTF16(
        IDS_PROFILE_IN_USE_LINUX_RELAUNCH);
    return ShowProcessSingletonDialog(error, relaunch_button_text);
-@@ -867,7 +867,7 @@ ProcessSingleton::NotifyResult ProcessSingleton::Notif
+@@ -869,7 +869,7 @@ ProcessSingleton::NotifyResult ProcessSingleton::Notif
      // The other process is shutting down, it's safe to start a new process.
      return PROCESS_NONE;
    } else if (strncmp(buf, kACKToken, arraysize(kACKToken) - 1) == 0) {

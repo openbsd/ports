@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_common_set_process_title_linux_cc,v 1.1 2013/10/29 06:51:34 robert Exp $
---- content/common/set_process_title_linux.cc.orig.port	Sun Oct 20 18:59:28 2013
-+++ content/common/set_process_title_linux.cc	Sun Oct 20 18:59:54 2013
-@@ -48,6 +48,8 @@
+$OpenBSD: patch-content_common_set_process_title_linux_cc,v 1.2 2016/03/06 10:51:14 robert Exp $
+--- content/common/set_process_title_linux.cc.orig.port	Wed Feb 24 00:02:00 2016
++++ content/common/set_process_title_linux.cc	Thu Mar  3 09:43:26 2016
+@@ -49,6 +49,8 @@
  extern char** environ;
  
  static char** g_main_argv = NULL;
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_common_set_process_title_linux_cc,v 1.1 2013/10/29 06:51
  static char* g_orig_argv0 = NULL;
  
  void setproctitle(const char* fmt, ...) {
-@@ -100,6 +102,7 @@ void setproctitle(const char* fmt, ...) {
+@@ -101,6 +103,7 @@ void setproctitle(const char* fmt, ...) {
    va_end(ap);
    g_main_argv[1] = NULL;
  }

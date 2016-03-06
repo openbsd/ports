@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.9 2016/03/06 10:51:14 robert Exp $
+--- chrome/app/generated_resources.grd.orig.port	Sat Mar  5 23:14:52 2016
++++ chrome/app/generated_resources.grd	Sat Mar  5 23:15:28 2016
+@@ -6566,7 +6566,7 @@ Keep your key file in a safe place. You will need it t
+       <message name="IDS_FLAGS_FORCE_UI_DIRECTION_RTL" desc="Name for the option to force right-to-left UI direction mode.">
+           Right-to-left
+       </message>
+-      <if expr="is_win or is_linux">
++      <if expr="is_win or is_linux or is_posix">
+         <message name="IDS_FLAGS_ENABLE_INPUT_IME_API_NAME" desc="Name of the flag to enable che chrome.input.ime API.">
+           Enable Input IME API
+         </message>

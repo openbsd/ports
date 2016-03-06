@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.27 2016/01/23 18:49:31 robert Exp $
---- chrome/app/chrome_main_delegate.cc.orig.port	Wed Jan 20 21:01:18 2016
-+++ chrome/app/chrome_main_delegate.cc	Fri Jan 22 19:58:58 2016
-@@ -76,7 +76,7 @@
- #include "components/crash/content/app/crash_reporter_client.h"
+$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.28 2016/03/06 10:51:14 robert Exp $
+--- chrome/app/chrome_main_delegate.cc.orig.port	Wed Feb 24 00:01:57 2016
++++ chrome/app/chrome_main_delegate.cc	Thu Mar  3 09:43:25 2016
+@@ -81,7 +81,7 @@
+ #include <signal.h>
  #endif
  
 -#if !defined(DISABLE_NACL) && defined(OS_LINUX)
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.27 2016/01/23 18:49:31 ro
  #include "components/nacl/common/nacl_paths.h"
  #include "components/nacl/zygote/nacl_fork_delegate_linux.h"
  #endif
-@@ -107,7 +107,7 @@
+@@ -116,7 +116,7 @@
  #include "components/crash/content/app/breakpad_linux.h"
  #endif
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.27 2016/01/23 18:49:31 ro
  #include "base/environment.h"
  #endif
  
-@@ -145,7 +145,7 @@ base::LazyInstance<ChromeContentBrowserClient> g_chrom
+@@ -154,7 +154,7 @@ base::LazyInstance<ChromeContentBrowserClient> g_chrom
      LAZY_INSTANCE_INITIALIZER;
  #endif
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.27 2016/01/23 18:49:31 ro
  base::LazyInstance<ChromeCrashReporterClient>::Leaky g_chrome_crash_client =
      LAZY_INSTANCE_INITIALIZER;
  #endif
-@@ -252,7 +252,7 @@ bool SubprocessNeedsResourceBundle(const std::string& 
+@@ -277,7 +277,7 @@ bool SubprocessNeedsResourceBundle(const std::string& 
        // Mac needs them for the plugin process name.
        process_type == switches::kPluginProcess ||
  #endif
@@ -37,7 +37,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.27 2016/01/23 18:49:31 ro
        // The zygote process opens the resources for the renderers.
        process_type == switches::kZygoteProcess ||
  #endif
-@@ -304,7 +304,7 @@ void HandleHelpSwitches(const base::CommandLine& comma
+@@ -329,7 +329,7 @@ void HandleHelpSwitches(const base::CommandLine& comma
  }
  #endif
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.27 2016/01/23 18:49:31 ro
  void SIGTERMProfilingShutdown(int signal) {
    Profiling::Stop();
    struct sigaction sigact;
-@@ -338,7 +338,7 @@ void InitializeUserDataDir() {
+@@ -363,7 +363,7 @@ void InitializeUserDataDir() {
    std::string process_type =
        command_line->GetSwitchValueASCII(switches::kProcessType);
  
@@ -55,7 +55,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.27 2016/01/23 18:49:31 ro
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -665,7 +665,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -693,7 +693,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    std::string process_type =
        command_line.GetSwitchValueASCII(switches::kProcessType);
  
@@ -64,7 +64,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.27 2016/01/23 18:49:31 ro
    crash_reporter::SetCrashReporterClient(g_chrome_crash_client.Pointer());
  #endif
  
-@@ -786,7 +786,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -814,7 +814,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    chrome::InitializePDF();
  #endif
  
@@ -73,7 +73,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.27 2016/01/23 18:49:31 ro
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -910,7 +910,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
+@@ -942,7 +942,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
  #endif
    return process_type == switches::kRelauncherProcess;
  }
@@ -81,4 +81,4 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.27 2016/01/23 18:49:31 ro
 +#elif defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_BSD)
  void ChromeMainDelegate::ZygoteStarting(
      ScopedVector<content::ZygoteForkDelegate>* delegates) {
- #if !defined(DISABLE_NACL)
+ #if defined(OS_CHROMEOS)

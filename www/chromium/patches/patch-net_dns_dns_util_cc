@@ -1,0 +1,12 @@
+$OpenBSD: patch-net_dns_dns_util_cc,v 1.1 2016/03/06 10:51:14 robert Exp $
+--- net/dns/dns_util.cc.orig.port	Thu Mar  3 12:21:06 2016
++++ net/dns/dns_util.cc	Thu Mar  3 12:21:33 2016
+@@ -11,6 +11,8 @@
+ 
+ #include "build/build_config.h"
+ 
++#include <sys/socket.h>
++
+ #if defined(OS_POSIX)
+ #include <netinet/in.h>
+ #if !defined(OS_NACL)

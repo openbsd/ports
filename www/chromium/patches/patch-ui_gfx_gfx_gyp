@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_gfx_gfx_gyp,v 1.7 2016/01/23 18:49:31 robert Exp $
---- ui/gfx/gfx.gyp.orig.port	Wed Jan 20 21:01:26 2016
-+++ ui/gfx/gfx.gyp	Fri Jan 22 19:58:59 2016
-@@ -446,7 +446,7 @@
+$OpenBSD: patch-ui_gfx_gfx_gyp,v 1.8 2016/03/06 10:51:14 robert Exp $
+--- ui/gfx/gfx.gyp.orig.port	Wed Mar  2 21:02:06 2016
++++ ui/gfx/gfx.gyp	Thu Mar  3 09:43:26 2016
+@@ -444,7 +444,7 @@
              '<(DEPTH)/build/linux/system.gyp:pangocairo',
            ],
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-ui_gfx_gfx_gyp,v 1.7 2016/01/23 18:49:31 robert Exp $
            'dependencies': [
              # font_render_params_linux.cc uses fontconfig
              '<(DEPTH)/build/linux/system.gyp:fontconfig',
-@@ -550,7 +550,7 @@
+@@ -549,7 +549,7 @@
              ['exclude', 'cocoa']
            ],
          }],

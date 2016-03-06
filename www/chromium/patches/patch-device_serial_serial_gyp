@@ -1,7 +1,7 @@
-$OpenBSD: patch-device_serial_serial_gyp,v 1.5 2015/01/22 11:16:41 robert Exp $
---- device/serial/serial.gyp.orig.port	Wed Dec  3 03:32:12 2014
-+++ device/serial/serial.gyp	Sat Dec  6 11:34:27 2014
-@@ -39,6 +39,12 @@
+$OpenBSD: patch-device_serial_serial_gyp,v 1.6 2016/03/06 10:51:14 robert Exp $
+--- device/serial/serial.gyp.orig.port	Wed Feb 24 21:01:32 2016
++++ device/serial/serial.gyp	Thu Mar  3 09:43:26 2016
+@@ -45,6 +45,12 @@
              'serial_device_enumerator_linux.h',
            ],
          }],

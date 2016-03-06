@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_web_applications_web_app_cc,v 1.17 2016/01/23 18:49:31 robert Exp $
---- chrome/browser/web_applications/web_app.cc.orig.port	Wed Jan 20 21:01:20 2016
-+++ chrome/browser/web_applications/web_app.cc	Fri Jan 22 19:58:58 2016
-@@ -53,7 +53,7 @@ namespace {
+$OpenBSD: patch-chrome_browser_web_applications_web_app_cc,v 1.18 2016/03/06 10:51:14 robert Exp $
+--- chrome/browser/web_applications/web_app.cc.orig.port	Wed Feb 24 21:01:32 2016
++++ chrome/browser/web_applications/web_app.cc	Thu Mar  3 09:43:26 2016
+@@ -58,7 +58,7 @@ namespace {
  #if defined(OS_MACOSX)
  const int kDesiredSizes[] = {16, 32, 128, 256, 512};
  const size_t kNumDesiredSizes = arraysize(kDesiredSizes);
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_web_applications_web_app_cc,v 1.17 2016/01/23 18:
  // Linux supports icons of any size. FreeDesktop Icon Theme Specification states
  // that "Minimally you should install a 48x48 icon in the hicolor theme."
  const int kDesiredSizes[] = {16, 32, 48, 128, 256, 512};
-@@ -491,7 +491,7 @@ void GetIconsInfo(const WebApplicationInfo& app_info,
+@@ -514,7 +514,7 @@ void GetIconsInfo(const WebApplicationInfo& app_info,
  }
  #endif
  
