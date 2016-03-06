@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtbase_src_network_ssl_qsslsocket_cpp,v 1.2 2015/04/19 13:18:28 zhuk Exp $
+$OpenBSD: patch-qtbase_src_network_ssl_qsslsocket_cpp,v 1.3 2016/03/06 11:56:42 zhuk Exp $
 Use the only valid SSL certs source on OpenBSD.
---- qtbase/src/network/ssl/qsslsocket.cpp.ports.orig	Tue Feb 17 07:56:38 2015
-+++ qtbase/src/network/ssl/qsslsocket.cpp	Wed Apr  8 00:38:30 2015
-@@ -2481,15 +2481,7 @@ bool QSslSocketPrivate::rootCertOnDemandLoadingSupport
+--- qtbase/src/network/ssl/qsslsocket.cpp.ports.orig	Tue Oct 13 07:35:28 2015
++++ qtbase/src/network/ssl/qsslsocket.cpp	Thu Dec 10 09:10:02 2015
+@@ -2591,14 +2591,7 @@ bool QSslSocketPrivate::rootCertOnDemandLoadingSupport
  */
  QList<QByteArray> QSslSocketPrivate::unixRootCertDirectories()
  {
@@ -12,10 +12,9 @@ Use the only valid SSL certs source on OpenBSD.
 -                               << "/usr/local/ssl/" // Normal OpenSSL Tarball
 -                               << "/var/ssl/certs/" // AIX
 -                               << "/usr/local/ssl/certs/" // Solaris
--                               << "/var/certmgr/web/user_trusted/" // BlackBerry Playbook
 -                               << "/etc/openssl/certs/" // BlackBerry
 -                               << "/opt/openssl/certs/"; // HP-UX
-+    return QList<QByteArray>() << "/etc/ssl/";
++    return QList<QByteArray>() <<  "/etc/ssl/";
  }
  
  /*!

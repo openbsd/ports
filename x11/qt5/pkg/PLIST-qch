@@ -1,8 +1,18 @@
-@comment $OpenBSD: PLIST-qch,v 1.1 2015/04/19 13:18:29 zhuk Exp $
+@comment $OpenBSD: PLIST-qch,v 1.2 2016/03/06 11:56:42 zhuk Exp $
 share/doc/qt5/
 share/doc/qt5/activeqt.qch
 share/doc/qt5/qdoc.qch
 share/doc/qt5/qmake.qch
+share/doc/qt5/qt3dcollision/
+share/doc/qt5/qt3dcollision.qch
+share/doc/qt5/qt3dcore/
+share/doc/qt5/qt3dcore.qch
+share/doc/qt5/qt3dlogic/
+share/doc/qt5/qt3dlogic.qch
+share/doc/qt5/qt3drenderer/
+share/doc/qt5/qt3drenderer.qch
+share/doc/qt5/qtcanvas3d/
+share/doc/qt5/qtcanvas3d.qch
 share/doc/qt5/qtandroidextras.qch
 share/doc/qt5/qtassistant.qch
 share/doc/qt5/qtbluetooth.qch
@@ -33,6 +43,8 @@ share/doc/qt5/qtqml.qch
 share/doc/qt5/qtquick.qch
 share/doc/qt5/qtquickcontrols.qch
 share/doc/qt5/qtquickdialogs.qch
+share/doc/qt5/qtquickextras/
+share/doc/qt5/qtquickextras.qch
 share/doc/qt5/qtquicklayouts.qch
 share/doc/qt5/qtscript.qch
 share/doc/qt5/qtscripttools.qch

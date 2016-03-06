@@ -1,9 +1,9 @@
-$OpenBSD: patch-qtactiveqt_src_activeqt_activeqt_pro,v 1.1 2015/04/19 13:18:28 zhuk Exp $
+$OpenBSD: patch-qtactiveqt_src_activeqt_activeqt_pro,v 1.2 2016/03/06 11:56:41 zhuk Exp $
 Unbreak build of documentation.
---- qtactiveqt/src/activeqt/activeqt.pro.ports.orig	Fri Apr 17 00:00:07 2015
-+++ qtactiveqt/src/activeqt/activeqt.pro	Fri Apr 17 00:00:10 2015
-@@ -9,5 +9,6 @@ win32:!winrt {
-     # fake project for creating the documentation
+--- qtactiveqt/src/activeqt/activeqt.pro.ports.orig	Tue Oct 13 07:37:01 2015
++++ qtactiveqt/src/activeqt/activeqt.pro	Thu Dec 10 09:01:21 2015
+@@ -9,5 +9,6 @@ win32:!winrt:!wince {
+     message("ActiveQt is a Windows Desktop-only module. Will just generate a docs target.")
      TEMPLATE = aux
      QMAKE_DOCS = $$PWD/doc/activeqt.qdocconf
 +    tagfile = ../../doc/activeqt/activeqt.tags

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2016/02/22 20:38:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.48 2016/03/06 11:56:41 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
-VERSION =		5.4.1
-ENGINIO_VERSION =	1.1.1
+VERSION =		5.5.1
+ENGINIO_VERSION =	1.2.1
 DISTNAME =		qt-everywhere-opensource-src-${VERSION}
 
 COMMENT-main =		C++ general-purpose toolkit
@@ -24,74 +24,77 @@ PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-qch =		qt5-qch-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
-REVISION-main =		10
-REVISION-examples =	2
-REVISION-html =		1
-REVISION-mysql =	0
-REVISION-psql =		0
-REVISION-qch =		0
-REVISION-sqlite2 =	0
-REVISION-tds =		0
 
 PKG_ARCH-html =		*
 PKG_ARCH-qch =		*
 
 DPB_PROPERTIES =	parallel nojunk
 
-SHARED_LIBS =		Enginio			1.0
-SHARED_LIBS +=		Qt5Bluetooth		1.0
-SHARED_LIBS +=		Qt5CLucene		1.0
-SHARED_LIBS +=		Qt5Concurrent		1.0
-SHARED_LIBS +=		Qt5Core			1.0
-SHARED_LIBS +=		Qt5DBus			1.0
-SHARED_LIBS +=		Qt5Declarative		1.0
-SHARED_LIBS +=		Qt5Designer		1.0
-SHARED_LIBS +=		Qt5DesignerComponents	1.0
-SHARED_LIBS +=		Qt5Gui			1.0
-SHARED_LIBS +=		Qt5Help			1.0
-SHARED_LIBS +=		Qt5Multimedia		1.0
-SHARED_LIBS +=		Qt5MultimediaQuick_p	1.0
-SHARED_LIBS +=		Qt5MultimediaWidgets	1.0
-SHARED_LIBS +=		Qt5Network		1.0
-SHARED_LIBS +=		Qt5Nfc			1.0
-SHARED_LIBS +=		Qt5OpenGL		1.0
-SHARED_LIBS +=		Qt5Positioning		1.0
-SHARED_LIBS +=		Qt5PrintSupport		1.0
-SHARED_LIBS +=		Qt5Qml			1.0
-SHARED_LIBS +=		Qt5Quick		1.0
-SHARED_LIBS +=		Qt5QuickParticles	1.0
-SHARED_LIBS +=		Qt5QuickTest		1.0
-SHARED_LIBS +=		Qt5QuickWidgets		1.0
-SHARED_LIBS +=		Qt5Script		1.0
-SHARED_LIBS +=		Qt5ScriptTools		1.0
-SHARED_LIBS +=		Qt5Sensors		1.0
-SHARED_LIBS +=		Qt5SerialPort		1.0
-SHARED_LIBS +=		Qt5Sql			1.0
-SHARED_LIBS +=		Qt5Svg			1.0
-SHARED_LIBS +=		Qt5Test			1.0
-SHARED_LIBS +=		Qt5WebKit		1.0
-SHARED_LIBS +=		Qt5WebKitWidgets	1.0
-SHARED_LIBS +=		Qt5WebSockets		1.0
-SHARED_LIBS +=		Qt5Widgets		1.0
-SHARED_LIBS +=		Qt5X11Extras		1.0
-SHARED_LIBS +=		Qt5Xml			1.0
-SHARED_LIBS +=		Qt5XmlPatterns		1.0
-#SHARED_LIBS +=		qgsttools_p		0.0
+SHARED_LIBS =	Enginio			1.1
+SHARED_LIBS +=	Qt5Bluetooth		1.1
+SHARED_LIBS +=	Qt5CLucene		1.1
+SHARED_LIBS +=	Qt5Concurrent		1.1
+SHARED_LIBS +=	Qt5Core			1.1
+SHARED_LIBS +=	Qt5DBus			1.1
+SHARED_LIBS +=	Qt5Declarative		1.1
+SHARED_LIBS +=	Qt5Designer		1.1
+SHARED_LIBS +=	Qt5DesignerComponents	1.1
+SHARED_LIBS +=	Qt5Gui			1.1
+SHARED_LIBS +=	Qt5Help			1.1
+SHARED_LIBS +=	Qt5Multimedia		1.1
+SHARED_LIBS +=	Qt5MultimediaQuick_p	1.1
+SHARED_LIBS +=	Qt5MultimediaWidgets	1.1
+SHARED_LIBS +=	Qt5Network		1.1
+SHARED_LIBS +=	Qt5Nfc			1.1
+SHARED_LIBS +=	Qt5OpenGL		1.1
+SHARED_LIBS +=	Qt5Positioning		1.1
+SHARED_LIBS +=	Qt5PrintSupport		1.1
+SHARED_LIBS +=	Qt5Qml			1.1
+SHARED_LIBS +=	Qt5Quick		1.1
+SHARED_LIBS +=	Qt5QuickParticles	1.1
+SHARED_LIBS +=	Qt5QuickTest		1.1
+SHARED_LIBS +=	Qt5QuickWidgets		1.1
+SHARED_LIBS +=	Qt5Script		1.1
+SHARED_LIBS +=	Qt5ScriptTools		1.1
+SHARED_LIBS +=	Qt5Sensors		1.1
+SHARED_LIBS +=	Qt5SerialPort		1.1
+SHARED_LIBS +=	Qt5Sql			1.1
+SHARED_LIBS +=	Qt5Svg			1.1
+SHARED_LIBS +=	Qt5Test			1.1
+SHARED_LIBS +=	Qt5WebKit		1.1
+SHARED_LIBS +=	Qt5WebKitWidgets	1.1
+SHARED_LIBS +=	Qt5WebSockets		1.1
+SHARED_LIBS +=	Qt5Widgets		1.1
+SHARED_LIBS +=	Qt5X11Extras		1.1
+SHARED_LIBS +=	Qt5Xml			1.1
+SHARED_LIBS +=	Qt5XmlPatterns		1.1
+#SHARED_LIBS +=	qgsttools_p		0.0
 
-SHARED_LIBS-examples =	fftreal			1.0
-SHARED_LIBS-examples +=	gruesensor		1.0
+SHARED_LIBS-examples =	fftreal			1.1
+SHARED_LIBS-examples +=	gruesensor		1.1
 SHARED_LIBS +=		${SHARED_LIBS-examples}
 
 # since 5.4
-SHARED_LIBS +=		Qt5Location		0.0
-SHARED_LIBS +=		Qt5WebChannel		0.0
+SHARED_LIBS +=	Qt5Location		0.1
+SHARED_LIBS +=	Qt5WebChannel		0.1
+
+# since 5.5
+SHARED_LIBS +=	Qt53DCollision		0.0
+SHARED_LIBS +=	Qt53DCore		0.0
+SHARED_LIBS +=	Qt53DInput		0.0
+SHARED_LIBS +=	Qt53DLogic		0.0
+SHARED_LIBS +=	Qt53DQuick		0.0
+SHARED_LIBS +=	Qt53DQuickRenderer	0.0
+SHARED_LIBS +=	Qt53DRenderer		0.0
+SHARED_LIBS +=	Qt5EglDeviceIntegration	0.0
+SHARED_LIBS +=	Qt5XcbQpa		0.0
 
 CATEGORIES =		x11 devel
 HOMEPAGE =		http://www.qt-project.org/
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
 
-WANTLIB-main =  ${WANTLIB}
+WANTLIB-main =  ${WANTLIB:Nperl}
 WANTLIB-main += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB-main += cups fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
@@ -103,6 +106,7 @@ WANTLIB-main += pangoft2-1.0 pcre16 png pthread pulse sqlite3 tiff
 WANTLIB-main += webp xcb xcb-glx xcb-icccm xcb-image xcb-keysyms xcb-randr
 WANTLIB-main += xcb-render xcb-render-util xcb-shape xcb-shm xcb-sync
 WANTLIB-main += xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11 xml2 xslt z
+WANTLIB-main += dbus-1 dbus-glib-1 geoclue harfbuzz proxy
 
 WANTLIB-examples =  ${MODGCC4_CPPWANTLIB} GL c m pthread
 WANTLIB-examples += Qt5Bluetooth Qt5Concurrent Qt5Core Qt5DBus Qt5Declarative
@@ -111,6 +115,7 @@ WANTLIB-examples += Qt5Nfc Qt5OpenGL Qt5Positioning Qt5PrintSupport Qt5Qml
 WANTLIB-examples += Qt5Quick Qt5QuickTest Qt5Script Qt5ScriptTools Qt5Sensors
 WANTLIB-examples += Qt5Sql Qt5Svg Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets
 WANTLIB-examples += Qt5Xml Qt5XmlPatterns Qt5Designer
+WANTLIB-examples += Qt53DCore Qt53DInput Qt53DQuick Qt53DRenderer Qt5Location
 
 WANTLIB-html =
 
@@ -152,6 +157,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			audio/pulseaudio \
 			databases/iodbc \
 			devel/atk \
+			devel/harfbuzz \
 			devel/libexecinfo \
 			devel/pango \
 			graphics/cairo \
@@ -209,10 +215,8 @@ RUN_DEPENDS-tds =
 # Not used in Qt itself (implementation considered unstable),
 # but used in QtWebKit.
 BUILD_DEPENDS +=	devel/gperf \
-			devel/harfbuzz \
 			devel/libsoup
 RUN_DEPENDS-main +=	devel/gperf \
-			devel/harfbuzz \
 			devel/libsoup
 
 DESTDIRNAME =		INSTALL_ROOT
@@ -284,6 +288,7 @@ CONFIGURE_ARGS +=	-c++11 \
 			-no-journald \
 			-no-mtdev \
 			-opengl desktop \
+			-system-harfbuzz \
 			-system-sqlite \
 			-system-xcb \
 
@@ -328,7 +333,7 @@ CONFIGURE_ARGS +=	-nomake tests
 .endif
 
 PROGRAMS5 =	assistant designer linguist lrelease lupdate moc pixeltool \
-		qdbus qdoc qmake qml qtdiag rcc uic
+		qcollectiongenerator qdbus qdoc qmake qml qtdiag rcc uic
 
 # still need to check if those should get it into ${PREFIX}/bin
 PROGRAMS_IGN =	lconvert \

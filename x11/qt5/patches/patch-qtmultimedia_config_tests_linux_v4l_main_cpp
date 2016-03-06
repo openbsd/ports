@@ -1,8 +1,8 @@
-$OpenBSD: patch-qtmultimedia_config_tests_linux_v4l_main_cpp,v 1.1 2014/12/10 21:23:54 zhuk Exp $
+$OpenBSD: patch-qtmultimedia_config_tests_linux_v4l_main_cpp,v 1.2 2016/03/06 11:56:42 zhuk Exp $
 Allow V4L layer to be used on OpenBSD.
---- qtmultimedia/config.tests/linux_v4l/main.cpp.ports.orig	Thu Dec 11 00:01:10 2014
-+++ qtmultimedia/config.tests/linux_v4l/main.cpp	Thu Dec 11 00:01:20 2014
-@@ -39,7 +39,11 @@
+--- qtmultimedia/config.tests/linux_v4l/main.cpp.ports.orig	Tue Oct 13 07:35:43 2015
++++ qtmultimedia/config.tests/linux_v4l/main.cpp	Thu Dec 10 09:05:23 2015
+@@ -31,7 +31,11 @@
  **
  ****************************************************************************/
  

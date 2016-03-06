@@ -1,12 +1,12 @@
-$OpenBSD: patch-qtbase_qmake_generators_unix_unixmake2_cpp,v 1.4 2015/10/20 21:37:26 zhuk Exp $
+$OpenBSD: patch-qtbase_qmake_generators_unix_unixmake2_cpp,v 1.5 2016/03/06 11:56:41 zhuk Exp $
 1. Un-hardcode system paths and compiler flags.
 2. Make sure some paths are listed before others, needed to
    make sure egcc won't pick up /usr/include before its own
    directories.
 3. Respect OpenBSD shared library naming rules.
---- qtbase/qmake/generators/unix/unixmake2.cpp.ports.orig	Fri May 29 23:30:27 2015
-+++ qtbase/qmake/generators/unix/unixmake2.cpp	Wed Oct  7 19:33:52 2015
-@@ -75,6 +75,10 @@ UnixMakefileGenerator::writeMakefile(QTextStream &t)
+--- qtbase/qmake/generators/unix/unixmake2.cpp.ports.orig	Tue Oct 13 07:35:09 2015
++++ qtbase/qmake/generators/unix/unixmake2.cpp	Thu Dec 10 09:22:47 2015
+@@ -74,6 +74,10 @@ UnixMakefileGenerator::writeMakefile(QTextStream &t)
      if (writeDummyMakefile(t))
          return true;
  
@@ -14,10 +14,10 @@ $OpenBSD: patch-qtbase_qmake_generators_unix_unixmake2_cpp,v 1.4 2015/10/20 21:3
 +      << "X11BASE="   << X11BASE   << endl
 +      << endl;
 +
-     if (project->values("TEMPLATE").first() == "app" ||
-         project->values("TEMPLATE").first() == "lib" ||
-         project->values("TEMPLATE").first() == "aux") {
-@@ -182,12 +186,12 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+     if (project->first("TEMPLATE") == "app" ||
+         project->first("TEMPLATE") == "lib" ||
+         project->first("TEMPLATE") == "aux") {
+@@ -181,12 +185,12 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
      t << "DEFINES       = "
        << varGlue("PRL_EXPORT_DEFINES","-D"," -D"," ")
        << varGlue("DEFINES","-D"," -D","") << endl;
@@ -31,36 +31,34 @@ $OpenBSD: patch-qtbase_qmake_generators_unix_unixmake2_cpp,v 1.4 2015/10/20 21:3
 -        const ProStringList &incs = project->values("INCLUDEPATH");
 +        ProStringList incs = project->values("QMAKE_INCDIR_PREPEND") + project->values("INCLUDEPATH");
          for(int i = 0; i < incs.size(); ++i) {
-             ProString inc = escapeFilePath(incs.at(i));
+             const ProString &inc = incs.at(i);
              if (inc.isEmpty())
-@@ -283,13 +287,20 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
-             t << "TARGETD       = " << escapeFilePath(var("TARGET_x.y")) << endl;
-             t << "TARGET0       = " << escapeFilePath(var("TARGET_")) << endl;
+@@ -286,12 +290,19 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+             t << "TARGET0       = " << fileVar("TARGET_") << endl;
          } else if (!project->isActiveConfig("unversioned_libname")) {
--            t << "TARGET0       = " << escapeFilePath(var("TARGET_")) << endl;
+             t << "TARGET0       = " << fileVar("TARGET_") << endl;
 -            if (project->isEmpty("QMAKE_HPUX_SHLIB")) {
--                t << "TARGETD       = " << escapeFilePath(var("TARGET_x.y.z")) << endl;
--                t << "TARGET1       = " << escapeFilePath(var("TARGET_x")) << endl;
--                t << "TARGET2       = " << escapeFilePath(var("TARGET_x.y")) << endl;
+-                t << "TARGETD       = " << fileVar("TARGET_x.y.z") << endl;
+-                t << "TARGET1       = " << fileVar("TARGET_x") << endl;
+-                t << "TARGET2       = " << fileVar("TARGET_x.y") << endl;
 +            if (!project->isEmpty("QMAKE_OPENBSD_SHLIB")) {
-+                t << "LIB" << var("QMAKE_ORIG_TARGET") << "_VERSION   = "
++                t << "LIB" << fileVar("QMAKE_ORIG_TARGET") << "_VERSION   = "
 +                  << project->first("VER_MAJ") << "." << project->first("VER_MIN")
 +                  << endl;
-+                t << "TARGETD       = " << escapeFilePath(var("TARGET_x.y")) << endl;
++                t << "TARGETD       = " << fileVar("TARGET_x.y") << endl;
              } else {
--                t << "TARGETD       = " << escapeFilePath(var("TARGET_x")) << endl;
-+                t << "TARGET0       = " << escapeFilePath(var("TARGET_")) << endl;
+-                t << "TARGETD       = " << fileVar("TARGET_x") << endl;
 +                if (project->isEmpty("QMAKE_HPUX_SHLIB")) {
-+                    t << "TARGETD       = " << escapeFilePath(var("TARGET_x.y.z")) << endl;
-+                    t << "TARGET1       = " << escapeFilePath(var("TARGET_x")) << endl;
-+                    t << "TARGET2       = " << escapeFilePath(var("TARGET_x.y")) << endl;
++                    t << "TARGETD       = " << fileVar("TARGET_x.y.z") << endl;
++                    t << "TARGET1       = " << fileVar("TARGET_x") << endl;
++                    t << "TARGET2       = " << fileVar("TARGET_x.y") << endl;
 +                } else {
-+                    t << "TARGETD       = " << escapeFilePath(var("TARGET_x")) << endl;
++                    t << "TARGETD       = " << fileVar("TARGET_x") << endl;
 +                }
              }
          }
      }
-@@ -615,7 +626,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -626,7 +637,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
              if(!project->isEmpty("QMAKE_POST_LINK"))
                  t << "\n\t" << var("QMAKE_POST_LINK");
              t << endl << endl;
@@ -70,7 +68,7 @@ $OpenBSD: patch-qtbase_qmake_generators_unix_unixmake2_cpp,v 1.4 2015/10/20 21:3
              t << "\n\t";
  
              if (!project->isActiveConfig("unversioned_libname"))
-@@ -649,7 +661,22 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -660,7 +672,22 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
              if(!project->isEmpty("QMAKE_POST_LINK"))
                  t << "\n\t" << var("QMAKE_POST_LINK");
              t << endl << endl;
@@ -93,7 +91,7 @@ $OpenBSD: patch-qtbase_qmake_generators_unix_unixmake2_cpp,v 1.4 2015/10/20 21:3
              t << "\n\t"
                << "-$(DEL_FILE) $(TARGET) $(TARGET0)\n\t"
                << var("QMAKE_LINK_SHLIB_CMD") << "\n\t";
-@@ -1202,6 +1229,11 @@ void UnixMakefileGenerator::init2()
+@@ -1239,6 +1266,11 @@ void UnixMakefileGenerator::init2()
                  project->values("TARGET_x").append("lib" + project->first("TARGET") + "." +
                                                          project->first("VER_MAJ"));
              project->values("TARGET") = project->values("TARGET_x");
@@ -105,35 +103,35 @@ $OpenBSD: patch-qtbase_qmake_generators_unix_unixmake2_cpp,v 1.4 2015/10/20 21:3
          } else if (!project->isEmpty("QMAKE_AIX_SHLIB")) {
              project->values("TARGET_").append(project->first("QMAKE_PREFIX_STATICLIB") + project->first("TARGET")
                      + "." + project->first("QMAKE_EXTENSION_STATICLIB"));
-@@ -1394,17 +1426,27 @@ UnixMakefileGenerator::writeLibtoolFile()
+@@ -1431,17 +1463,27 @@ UnixMakefileGenerator::writeLibtoolFile()
      t << "\n";
  
      t << "# The name that we can dlopen(3).\n"
--      << "dlname='" << var(project->isActiveConfig("plugin") ? "TARGET" : "TARGET_x")
+-      << "dlname='" << fileVar(project->isActiveConfig("plugin") ? "TARGET" : "TARGET_x")
 -      << "'\n\n";
 +      << "dlname='";
 +    if (project->isActiveConfig("plugin"))
-+        t << var("TARGET");
++        t << fileVar("TARGET");
 +    else if (!project->isEmpty("QMAKE_OPENBSD_SHLIB"))
-+        t << var("TARGET_x.y");
++        t << fileVar("TARGET_x.y");
 +    else
-+        t << var("TARGET_x");
++        t << fileVar("TARGET_x");
 +    t << "'\n\n";
  
      t << "# Names of this library.\n";
      t << "library_names='";
      if(project->isActiveConfig("plugin")) {
-         t << var("TARGET");
+         t << fileVar("TARGET");
      } else {
 -        if (project->isEmpty("QMAKE_HPUX_SHLIB"))
--            t << var("TARGET_x.y.z") << " ";
--        t << var("TARGET_x") << " " << var("TARGET_");
+-            t << fileVar("TARGET_x.y.z") << ' ';
+-        t << fileVar("TARGET_x") << ' ' << fileVar("TARGET_");
 +        if (!project->isEmpty("QMAKE_OPENBSD_SHLIB")) {
-+            t << var("TARGET_x.y") << " ";
++            t << fileVar("TARGET_x.y") << " ";
 +        } else {
 +            if (!project->isEmpty("QMAKE_HPUX_SHLIB"))
-+                t << var("TARGET_x.y.z") << " ";
-+            t << var("TARGET_x") << " " << var("TARGET_");
++                t << fileVar("TARGET_x.y.z") << " ";
++            t << fileVar("TARGET_x") << " " << fileVar("TARGET_");
 +        }
      }
      t << "'\n\n";
