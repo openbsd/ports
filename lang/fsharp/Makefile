@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/12/29 19:49:40 jasper Exp $
-
-BROKEN=		unreliable build, frequently hangs in dpb
+# $OpenBSD: Makefile,v 1.7 2016/03/06 00:53:20 abieber Exp $
 
 COMMENT=	functional-first programming language
 
 GH_ACCOUNT=	fsharp
 GH_PROJECT=	fsharp
-GH_TAGNAME=	3.1.1.32
-
+GH_TAGNAME=	4.0.1.1
 
 CATEGORIES=	lang devel
 
