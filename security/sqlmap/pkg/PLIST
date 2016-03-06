@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/11/28 16:35:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2016/03/06 13:34:26 sthen Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/extra/
@@ -539,6 +539,8 @@ share/sqlmap/tamper/concat2concatws.py
 share/sqlmap/tamper/concat2concatws.pyc
 share/sqlmap/tamper/equaltolike.py
 share/sqlmap/tamper/equaltolike.pyc
+share/sqlmap/tamper/escapequotes.py
+share/sqlmap/tamper/escapequotes.pyc
 share/sqlmap/tamper/greatest.py
 share/sqlmap/tamper/greatest.pyc
 share/sqlmap/tamper/halfversionedmorekeywords.py
@@ -857,8 +859,6 @@ share/sqlmap/udf/postgresql/windows/32/9.0/lib_postgresqludf_sys.dll_
 share/sqlmap/waf/
 share/sqlmap/waf/360.py
 share/sqlmap/waf/360.pyc
-share/sqlmap/waf/Newdefend.py
-share/sqlmap/waf/Newdefend.pyc
 share/sqlmap/waf/__init__.py
 share/sqlmap/waf/__init__.pyc
 share/sqlmap/waf/airlock.py
@@ -909,6 +909,8 @@ share/sqlmap/waf/netcontinuum.py
 share/sqlmap/waf/netcontinuum.pyc
 share/sqlmap/waf/netscaler.py
 share/sqlmap/waf/netscaler.pyc
+share/sqlmap/waf/newdefend.py
+share/sqlmap/waf/newdefend.pyc
 share/sqlmap/waf/paloalto.py
 share/sqlmap/waf/paloalto.pyc
 share/sqlmap/waf/profense.py
@@ -919,6 +921,8 @@ share/sqlmap/waf/radware.py
 share/sqlmap/waf/radware.pyc
 share/sqlmap/waf/requestvalidationmode.py
 share/sqlmap/waf/requestvalidationmode.pyc
+share/sqlmap/waf/safe3.py
+share/sqlmap/waf/safe3.pyc
 share/sqlmap/waf/safedog.py
 share/sqlmap/waf/safedog.pyc
 share/sqlmap/waf/secureiis.py
