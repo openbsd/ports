@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/08/25 13:18:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/07 10:18:24 zhuk Exp $
 
 COMMENT =	good looking terminal emulator which mimics old CRT displays
 DISTNAME =	cool-retro-term-1.0.0
@@ -15,22 +15,17 @@ WANTLIB += Qt5Widgets c m pthread
 
 MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
 
-MODULES =	gcc4 \
-		x11/qt5
-MODGCC4_ARCHS =	*
-MODGCC4_LANGS =	c++
+MODULES =		x11/qt5
+CONFIGURE_STYLE =	qmake5
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 MAKE_FLAGS =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -fPIC"
 
-FAKE_FLAGS =	INSTALL_ROOT="${DESTDIR}"
-
 NO_TEST =	Yes
 
-do-configure:
-	${SUBST_CMD} ${WRKSRC}/{app/app,cool-retro-term}.pro
-	cd ${WRKSRC} && qmake-qt5
+pre-configure:
+	 ${SUBST_CMD} ${WRKSRC}/{app/app,cool-retro-term}.pro
 
 .include <bsd.port.mk>
