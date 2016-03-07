@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_mainwindow_cpp,v 1.1 2016/03/07 13:50:21 zhuk Exp $
+Make enough room for next 10+ years.
+--- src/mainwindow.cpp.orig	Mon Mar  7 16:45:56 2016
++++ src/mainwindow.cpp	Mon Mar  7 16:45:24 2016
+@@ -123,7 +123,7 @@ void MainWindow::getrfc()
+   // Load a RFC number
+   bool bOK;
+   int iRFCNum = QInputDialog::getInteger(this, tr("Please enter a RFC number"),
+-                                             tr("RFC#:"), 0, 1, 5000, 1, &bOK);
++                                             tr("RFC#:"), 0, 1, 9999, 1, &bOK);
+   if (bOK)
+     RFCLoad( iRFCNum );
+ }
