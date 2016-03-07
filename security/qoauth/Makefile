@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/01 11:53:55 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/07 14:32:24 zhuk Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	OAuth support library for Qt-based applications
@@ -19,6 +19,10 @@ MASTER_SITES =		http://files.ayoy.net/qoauth/$V/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		x11/qt4
+CONFIGURE_STYLE =	qmake
+SEPARATE_BUILD =	No
+MODQMAKE_ARGS =		PREFIX=${PREFIX}
+
 LIB_DEPENDS =		security/qca2
 
 MAKE_FLAGS =		LIBqoauth_VERSION=${LIBqoauth_VERSION}
@@ -27,11 +31,6 @@ DESTDIRNAME =		INSTALL_ROOT
 # XXX wants to interact with external servers, too
 TEST_IS_INTERACTIVE =	X11
 TEST_NAMES =		ft_interface ut_interface
-
-do-configure:
-	cd ${WRKDIST} && ${LOCALBASE}/bin/qmake4 \
-		PREFIX=${PREFIX} \
-		qoauth.pro
 
 do-test:
 .for _t in ${TEST_NAMES}
