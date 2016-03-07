@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:01 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/07 12:06:14 zhuk Exp $
 
 COMMENT=	graphical file comparator
 
@@ -21,15 +21,12 @@ WRKDIST=	${WRKDIR}/beediff
 
 MODULES=	devel/gettext \
 		x11/qt4
+
+CONFIGURE_STYLE=	qmake
+
 NO_TEST=	Yes
 
-MAKE_FLAGS=	CXX=${CXX} \
-		QMAKE_CXXFLAGS="${CXXFLAGS} -g"
-
-do-configure:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/qmake4 beediff.pro
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/beediff ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/beediff ${PREFIX}/bin
 
 .include <bsd.port.mk>
