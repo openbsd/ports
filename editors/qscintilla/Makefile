@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/11/10 22:23:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/07 12:27:49 zhuk Exp $
 
 COMMENT =	Qt4 port of the Scintilla source code editor
 
@@ -22,10 +22,10 @@ MASTER_SITES =  ${MASTER_SITE_SOURCEFORGE:=pyqt/}
 
 MODULES = devel/gettext x11/qt4
 
+CONFIGURE_STYLE =	qmake
+SEPARATE_BUILD =	No
+
 CONFIGURE_ENV =	HOME=${WRKDIR}
-MAKE_FLAGS =	QMAKE_CXX=${CXX} QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}" \
-		HOME=${WRKDIR} INSTALL_ROOT=${DESTDIR} \
-		LIBqscintilla2_VERSION=${LIBqscintilla2_VERSION}
 
 WRKSRC =	${WRKDIST}/Qt4Qt5
 
@@ -33,9 +33,5 @@ NO_TEST =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/qscintilla.pro
-
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/qmake4 \
-		${MAKE_FLAGS} qscintilla.pro
 
 .include <bsd.port.mk>
