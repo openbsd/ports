@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_utils_h,v 1.7 2016/01/18 15:34:45 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_utils_h,v 1.8 2016/03/07 07:11:35 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -22,8 +22,12 @@ aacenc: switch to using the RNG from libavutil
 
 avcodec/aacenc_is: replace pow(x, 0.75) by x/sqrtf(sqrtf(x))
 
+lavc/aacenc_utils: replace sqrtf(Q*sqrtf(Q)) by precomputed value
+
+aacenc: avoid double in quantize_bands.
+
 --- libavcodec/aacenc_utils.h.orig	Wed Jan 13 15:27:48 2016
-+++ libavcodec/aacenc_utils.h	Thu Jan 14 20:12:52 2016
++++ libavcodec/aacenc_utils.h	Sun Mar  6 19:40:41 2016
 @@ -29,8 +29,8 @@
  #define AVCODEC_AACENC_UTILS_H
  
@@ -46,8 +50,26 @@ avcodec/aacenc_is: replace pow(x, 0.75) by x/sqrtf(sqrtf(x))
  /**
   * Quantize one coefficient.
   * @return absolute value of the quantized coefficient
-@@ -89,16 +94,62 @@ static inline int find_min_book(float maxval, int sf)
-     float Q34 = sqrtf(Q * sqrtf(Q));
+@@ -61,10 +66,9 @@ static inline void quantize_bands(int *out, const floa
+                                   const float rounding)
+ {
+     int i;
+-    double qc;
+     for (i = 0; i < size; i++) {
+-        qc = scaled[i] * Q34;
+-        out[i] = (int)FFMIN(qc + rounding, (double)maxval);
++        float qc = scaled[i] * Q34;
++        out[i] = (int)FFMIN(qc + rounding, (float)maxval);
+         if (is_signed && in[i] < 0.0f) {
+             out[i] = -out[i];
+         }
+@@ -85,20 +89,65 @@ static inline float find_max_val(int group_len, int sw
+ 
+ static inline int find_min_book(float maxval, int sf)
+ {
+-    float Q = ff_aac_pow2sf_tab[POW_SF2_ZERO - sf + SCALE_ONE_POS - SCALE_DIV_512];
+-    float Q34 = sqrtf(Q * sqrtf(Q));
++    float Q34 = ff_aac_pow34sf_tab[POW_SF2_ZERO - sf + SCALE_ONE_POS - SCALE_DIV_512];
      int qmaxval, cb;
      qmaxval = maxval * Q34 + C_QUANT;
 -    if      (qmaxval ==  0) cb = 0;
@@ -116,7 +138,7 @@ avcodec/aacenc_is: replace pow(x, 0.75) by x/sqrtf(sqrtf(x))
  /** Return the minimum scalefactor where the quantized coef does not clip. */
  static inline uint8_t coef2minsf(float coef)
  {
-@@ -128,6 +179,76 @@ static inline int quant_array_idx(const float val, con
+@@ -128,6 +177,76 @@ static inline int quant_array_idx(const float val, con
      return index;
  }
  
@@ -193,7 +215,7 @@ avcodec/aacenc_is: replace pow(x, 0.75) by x/sqrtf(sqrtf(x))
  #define ERROR_IF(cond, ...) \
      if (cond) { \
          av_log(avctx, AV_LOG_ERROR, __VA_ARGS__); \
-@@ -138,6 +259,5 @@ static inline int quant_array_idx(const float val, con
+@@ -138,6 +257,5 @@ static inline int quant_array_idx(const float val, con
      if (cond) { \
          av_log(avctx, AV_LOG_WARNING, __VA_ARGS__); \
      }
