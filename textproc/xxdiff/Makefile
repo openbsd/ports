@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/11/19 20:17:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2016/03/07 14:51:53 zhuk Exp $
 
 COMMENT=	graphical file comparator and merge tool
 
@@ -21,9 +21,8 @@ MODULES=	lang/python \
 		x11/qt4
 BUILD_DEPENDS=	devel/bison
 
-USE_GMAKE=	Yes
-# Skip build step from python.port.mk
-CONFIGURE_STYLE= none
+CONFIGURE_STYLE= qmake
+SEPARATE_BUILD=	No
 
 MODPY_ADJ_FILES= ../bin/termdiff
 
@@ -36,9 +35,8 @@ post-extract:
 	@rm ${WRKSRC}/getopt.c
 	@rm ${WRKSRC}/getopt1.c
 
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-	    -f Makefile.bootstrap QMAKE="${LOCALBASE}/bin/qmake4"
+post-configure:
+	cat ${WRKSRC}/Makefile.extra >>${WRKBUILD}/Makefile
 
 do-install:
 	cd ${WRKSRC}/../bin; \
