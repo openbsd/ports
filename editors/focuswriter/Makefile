@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/19 10:56:11 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/07 12:26:39 zhuk Exp $
 
 COMMENT =	simple, distraction-free writing environment
 
@@ -23,15 +23,9 @@ LIB_DEPENDS +=	textproc/hunspell
 WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 WANTLIB +=	QtNetwork z QtGui c m pthread stdc++ hunspell-1.3
 
-MAKE_FLAGS +=	CXX=${CXX} \
-		QMAKE_CXXFLAGS="${CXXFLAGS}"
-FAKE_FLAGS +=	INSTALL_ROOT=${DESTDIR}
+CONFIGURE_STYLE =	qmake
 
 NO_TEST =	Yes
-
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${CONFIGURE_ENV} \
-		${LOCALBASE}/bin/qmake4
 
 post-install:
 	mv ${PREFIX}/share/man/man1/focuswriter.1 ${PREFIX}/man/man1
