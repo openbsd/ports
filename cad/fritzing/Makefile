@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/01/18 16:49:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2016/03/07 11:54:12 zhuk Exp $
 
 COMMENT=	interactive electronics designing software
 
@@ -26,14 +26,20 @@ MASTER_SITES0= https://github.com/fritzing/fritzing-parts/archive/${GH_TAGNAME}/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES=        x11/qt4
+CONFIGURE_STYLE=qmake
 NO_TEST=	Yes
 
 LIB_DEPENDS=	comms/qtserialport
 BUILD_DEPENDS=	devel/boost
 RUN_DEPENDS=	devel/desktop-file-utils
 
+# avoid picking up /src/serialport/qt4support/serialport.prf
+MODQMAKE_ARGS+=	QTSERIALPORT_PROJECT_ROOT=${WRKDIR}
+
+post-extract:
+	mv ${WRKDIR}/fritzing-parts-${GH_TAGNAME}/* ${WRKSRC}/parts
+
 pre-configure:
-	cp -rp ${WRKDIR}/fritzing-parts-${GH_TAGNAME}/* ${WRKSRC}/parts
 	${SUBST_CMD} ${WRKSRC}/phoenix.pro ${WRKSRC}/src/fapplication.cpp
 
 WANTLIB += ICE QtGui QtNetwork QtSql QtSvg QtXml SM X11 Xext Xi
@@ -43,13 +49,10 @@ WANTLIB += z lib/qt4/QtSerialPort
 # -DLINUX_32 gets added to CFLAGS, though it's only used to figure out
 # if there is a newer version of the 32-bit Linux binary on the upstream
 # webpage. So it's safe to set it on all arches (for now).
-do-configure:
-	cd ${WRKSRC} && \
-		${LOCALBASE}/bin/qmake4 -o Makefile phoenix.pro
 
 do-install:
 	${SUBST_PROGRAM} ${FILESDIR}/fritzing.sh ${PREFIX}/bin/fritzing
-	${INSTALL_PROGRAM} ${WRKSRC}/Fritzing ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/Fritzing ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fritzing/
 	cd ${WRKSRC}; tar cf - bins help parts pdb resources sketches tools translations | \
 		tar xf - -C ${PREFIX}/share/fritzing/
