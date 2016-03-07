@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/01 15:37:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/07 10:58:49 sthen Exp $
 
 COMMENT=	TLS/SSL library and tools
 
 V=		1.0.2g
+REVISION=	0
 DISTNAME=	openssl-$V
 PKGNAME=	openssl-$V
 
@@ -31,7 +32,8 @@ CONFIGURE_SCRIPT=	config
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--openssldir=${PREFIX}/share/eopenssl \
 	                --install_prefix=${WRKINST} \
-			no-threads no-krb5
+			no-threads no-krb5 \
+			no-rc5 no-ssl2 no-ssl3
 
 # install to unusual directory name - this port is *not* intended to be
 # picked up by configure scripts without explicitly CPPFLAGS/LDFLAGS.
