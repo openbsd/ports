@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/10/25 18:47:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2016/03/07 07:14:44 ajacoutot Exp $
 @bin bin/mkvextract
 @bin bin/mkvinfo
 @bin bin/mkvmerge
@@ -37,6 +37,12 @@ man/nl/man1/
 @man man/nl/man1/mkvinfo.1
 @man man/nl/man1/mkvmerge.1
 @man man/nl/man1/mkvpropedit.1
+man/pl/
+man/pl/man1/
+@man man/pl/man1/mkvextract.1
+@man man/pl/man1/mkvinfo.1
+@man man/pl/man1/mkvmerge.1
+@man man/pl/man1/mkvpropedit.1
 man/uk/
 man/uk/man1/
 @man man/uk/man1/mkvextract.1

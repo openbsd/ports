@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.6 2015/10/25 18:47:32 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.7 2016/03/07 07:14:44 ajacoutot Exp $
 @bin bin/mkvtoolnix-gui
 @man man/ca/man1/mkvtoolnix-gui.1
 @man man/de/man1/mkvtoolnix-gui.1
@@ -6,6 +6,7 @@
 @man man/ja/man1/mkvtoolnix-gui.1
 @man man/man1/mkvtoolnix-gui.1
 @man man/nl/man1/mkvtoolnix-gui.1
+@man man/pl/man1/mkvtoolnix-gui.1
 @man man/uk/man1/mkvtoolnix-gui.1
 @man man/zh_CN/man1/mkvtoolnix-gui.1
 share/applications/mkvinfo.desktop
