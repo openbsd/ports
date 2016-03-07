@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:07:39 espie Exp $ 
+# $OpenBSD: Makefile,v 1.3 2016/03/07 12:51:49 zhuk Exp $ 
 COMMENT =		arcade-puzzle game
 V = 			0.3.2
 DISTNAME =		jag-${V}
@@ -16,17 +16,14 @@ MASTER_SITES = 		http://jag.xlabsoft.com/files/
 DISTFILES = 		jag-${V}-src.zip jag-${V}-data.zip
 
 MODULES =		x11/qt4
+CONFIGURE_STYLE =	qmake
 BUILD_DEPENDS = 	archivers/unzip
 LIB_DEPENDS =		devel/sdl \
 			devel/sdl-mixer
 WRKDIST =		${WRKDIR}/jag-${V}-src
-DESTDIRNAME = 		INSTALL_ROOT
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/Game.pro ${WRKSRC}/main.cpp
-
-do-configure:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/qmake4 Game.pro
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/jag
