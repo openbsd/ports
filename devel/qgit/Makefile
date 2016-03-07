@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/12/19 12:29:51 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/07 12:19:53 zhuk Exp $
 
 COMMENT =	qt git repository viewer
 
@@ -18,16 +18,14 @@ WANTLIB += freetype m pthread stdc++
 MASTER_SITES =	http://libre.tibirna.org/attachments/download/9/
 
 MODULES =	x11/qt4
+CONFIGURE_STYLE=qmake
 
 RUN_DEPENDS =	devel/git
 
 WRKSRC =	${WRKDIR}/redivivus
 
-do-configure:
-	cd ${WRKSRC} && qmake4 .
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/qgit ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/qgit ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qgit/
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/qgit/
 
