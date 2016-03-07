@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/23 10:43:32 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/07 12:37:28 zhuk Exp $
 
 COMMENT =		tile map editor
 
@@ -24,23 +24,13 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tiled/}
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 MODULES =		x11/qt4
+CONFIGURE_STYLE =	qmake
 
-MAKE_FLAGS =		CC="${CC}" \
-			CXX="${CXX}" \
-			CXXFLAGS="${CXXFLAGS} -fPIC" \
-			PREFIX="${PREFIX}" \
-			LIBtiled_VERSION="${LIBtiled_VERSION}"
-FAKE_FLAGS =		INSTALL_ROOT="${DESTDIR}"
-
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		qmake4 -makefile tiled.pro -config release
+# XXX qmake picks up Cocoa/Cocoa.h even though it's apparently unused
+DPB_PROPERTIES =	nojunk
 
 do-test:
 	cd ${WRKSRC}/tests/staggeredrenderer && ./staggeredrenderer && \
 	cd ${WRKSRC}/tests/mapreader && ./mapreader
-
-# XXX qmake picks up Cocoa/Cocoa.h even though it's apparently unused
-DPB_PROPERTIES =	nojunk
 
 .include <bsd.port.mk>
