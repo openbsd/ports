@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/08/25 14:03:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/07 09:37:06 zhuk Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -25,10 +25,13 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-CONFIGURE_STYLE =	simple
 MODULES =		x11/qt4 \
 			lang/python \
 			lang/lua
+CONFIGURE_STYLE =	qmake
+MODQMAKE_PROJECTS =	plugins-src/TWLuaPlugin/TWLuaPlugin.pro \
+			plugins-src/TWPythonPlugin/TWPythonPlugin.pro \
+			TeXworks.pro
 
 SHARED_ONLY =		Yes
 
@@ -69,30 +72,7 @@ NO_TEST =		Yes
 
 SUBST_VARS +=		WRKINST
 
-PLUGIN_SRC =		${WRKSRC}/plugins-src
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/TeXworks.pro
-	${SUBST_CMD} ${PLUGIN_SRC}/TWLuaPlugin/TWLuaPlugin.pro
-	${SUBST_CMD} ${PLUGIN_SRC}/TWPythonPlugin/TWPythonPlugin.pro
-
-do-configure:
-	cd ${PLUGIN_SRC}/TWPythonPlugin && qmake4
-	cd ${PLUGIN_SRC}/TWLuaPlugin && qmake4
-	cd ${WRKSRC} && qmake4
-
-# build plugins first
-pre-build:
-	cd ${PLUGIN_SRC}/TWPythonPlugin && ${MAKE_PROGRAM}
-	cd ${PLUGIN_SRC}/TWLuaPlugin && ${MAKE_PROGRAM}
-
-# install main stuff and then plugins
-PLUGIN_INSTALLS =	${PLUGIN_SRC}/TWPythonPlugin \
-			${PLUGIN_SRC}/TWLuaPlugin
-
-FAKE_FLAGS +=	INSTALL_ROOT=${WRKINST}
-post-install:
-	for i in ${PLUGIN_INSTALLS}; do \
-		cd $$i && ${MAKE_PROGRAM} -f ${MAKE_FILE} ${FAKE_TARGET} INSTALL_ROOT=${WRKINST}; \
-	done
+	cd ${WRKSRC}; ${SUBST_CMD} ${MODQMAKE_PROJECTS}
 
 .include <bsd.port.mk>
