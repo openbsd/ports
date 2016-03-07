@@ -1,0 +1,3 @@
+oledump.py is a program to analyze OLE files (Compound File Binary Format).
+These files contain streams of data. oledump allows you to analyze these
+streams.
