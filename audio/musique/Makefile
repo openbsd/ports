@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/10/07 05:50:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/07 11:34:24 zhuk Exp $
 
 COMMENT =	graphical music player focused on a clean ui
 DISTNAME =	musique-1.4
@@ -25,15 +25,12 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		multimedia/gstreamer-0.10/plugins-ffmpeg \
 		x11/gtk+3,-guic
 
+CONFIGURE_STYLE =	qmake
+
 WRKDIST =	${WRKDIR}/musique
-MAKE_FLAGS =	CXX="${CXX}"
-FAKE_FLAGS =	INSTALL_ROOT=${WRKINST}
 NO_TEST =	Yes
 
-do-configure:
-	cd ${WRKDIST} && env -i ${CONFIGURE_ENV} qmake4 PREFIX=${PREFIX}
-
-post-configure:
-	sed -i "s,/usr/include,${LOCALBASE}/include,g" ${WRKSRC}/Makefile
+pre-configure:
+	perl -pi.foo -e 's,/usr/include,${LOCALBASE}/include,' ${WRKSRC}/musique.pro
 
 .include <bsd.port.mk>
