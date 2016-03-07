@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2016/03/07 12:28:33 zhuk Exp $
 
 COMMENT =	powerful and simple qt4 editor
 
@@ -21,12 +21,11 @@ WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 MODULES =	x11/qt4
 CONFIGURE_ENV =	USE_ASPELL=true USE_HUNSPELL=false
 
+CONFIGURE_STYLE =	qmake
+
 NO_TEST =	Yes
 
-do-configure:
-	cd ${WRKSRC} && qmake4
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/tea ${PREFIX}/bin/tea
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/tea ${PREFIX}/bin/tea
 
 .include <bsd.port.mk>
