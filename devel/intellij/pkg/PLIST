@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2016/01/20 21:49:47 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.17 2016/03/07 13:25:17 zhuk Exp $
 bin/idea
 bin/intellij
 intellij/
@@ -287,6 +287,7 @@ intellij/plugins/Kotlin/kotlinc/lib/
 intellij/plugins/Kotlin/kotlinc/lib/android-compiler-plugin.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-android-sdk-annotations.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-ant.jar
+intellij/plugins/Kotlin/kotlinc/lib/kotlin-build-common.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-compiler.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-daemon-client.jar
 intellij/plugins/Kotlin/kotlinc/lib/kotlin-jdk-annotations.jar
