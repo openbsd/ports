@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2016/02/25 07:35:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2016/03/07 07:46:59 jasper Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	open source message broker implementing JMS 1.1
 
-V=		5.13.1
+V=		5.13.2
 DISTNAME=	apache-activemq-$V
 
 CATEGORIES=	net
