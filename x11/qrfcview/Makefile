@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/07/09 16:49:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/07 11:21:03 zhuk Exp $
 
 COMMENT=	viewer for IETF RFCs
 
@@ -21,10 +21,10 @@ EXTRACT_SUFX=	.tgz
 MODULES=	x11/qt4 devel/gettext
 NO_TEST=	Yes
 
-do-configure:
+CONFIGURE_STYLE=	qmake
+
+pre-configure:
 	perl -pi -e "s/!!CXXFLAGS!!/${CXXFLAGS}/" ${WRKSRC}/src/src.pro
-	cd ${WRKDIST} && \
-		${LOCALBASE}/bin/qmake4 rfcview.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/qRFCView ${PREFIX}/bin
