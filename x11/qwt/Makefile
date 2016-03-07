@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/10/05 09:49:14 zhuk Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/07 15:22:58 zhuk Exp $
 
 SHARED_ONLY =		Yes
 
@@ -17,10 +17,10 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qwt/}
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		x11/qt4
+CONFIGURE_STYLE =	qmake
+MODQMAKE4_INSTALL_ROOT =
 NO_TEST =		Yes
 USE_GMAKE =		Yes
-
-MAKE_FLAGS =		LIBqwt_VERSION=${LIBqwt_VERSION}
 
 WANTLIB +=	ICE QtDesigner QtGui QtScript QtXml SM X11 Xext Xi
 WANTLIB +=	Xinerama Xrender fontconfig freetype m pthread stdc++
@@ -35,9 +35,6 @@ SUBST_VARS =	WRKINST EXAMPLES
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/qwtconfig.pri ${WRKSRC}/designer/designer.pro \
 		${WRKSRC}/examples/examples.pri
-
-do-configure:
-	@cd ${WRKSRC} && qmake4
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/* ${PREFIX}/man/man3/
