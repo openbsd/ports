@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/02/16 22:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2016/03/07 13:58:28 zhuk Exp $
 
 COMMENT=		automatically create timetables
 
@@ -22,17 +22,16 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext \
 			x11/qt4
 
+CONFIGURE_STYLE=	qmake
+
 LIB_DEPENDS=		x11/qt4
 
 PORTHOME=		${WRKDIR}
 
 NO_TEST=		Yes
 
-do-configure:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/qmake4 fet.pro
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fet ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/fet ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fet
 	${INSTALL_DATA} ${WRKSRC}/doc/algorithm/* \
 		${PREFIX}/share/doc/fet 
