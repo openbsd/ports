@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_tls-openssl_c,v 1.1 2016/03/07 15:34:16 sthen Exp $
+
+https://bugs.exim.org/show_bug.cgi?id=1806
+
+--- src/tls-openssl.c.orig	Mon Mar  7 15:04:08 2016
++++ src/tls-openssl.c	Mon Mar  7 15:09:31 2016
+@@ -62,7 +62,9 @@ functions from the OpenSSL library. */
+     && (OPENSSL_VERSION_NUMBER & 0x0000ff000L) >= 0x000002000L
+ #  define EXIM_HAVE_OPENSSL_CHECKHOST
+ # endif
++#endif
+ 
++#if !defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER >= 0x20010000L
+ # if !defined(OPENSSL_NO_ECDH)
+ #  if OPENSSL_VERSION_NUMBER >= 0x0090800fL
+ #   define EXIM_HAVE_ECDH
