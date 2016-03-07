@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/12/04 13:58:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/07 17:34:44 landry Exp $
 
 COMMENT =		2D animation software studio
 BROKEN-alpha =		[keyframe_lock_past_on_icon.png] Bus error (core dumped)
 BROKEN-hppa =		Illegal instruction (core dumped)
+BROKEN-sparc64 =	terminate called after throwing an instance of 'synfig::Exception::IDNotFound'
 
 V =			1.0.1
 DISTNAME =		synfigstudio-$V
