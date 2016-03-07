@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/12/21 18:36:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/07 11:14:02 zhuk Exp $
 
 COMMENT=	generate and manipulate maps of your thoughts
 
@@ -19,6 +19,8 @@ WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m pthread
 MODULES=	devel/gettext \
 		x11/qt5
 
+CONFIGURE_STYLE=	qmake
+
 RUN_DEPENDS=	archivers/zip \
 		archivers/unzip \
 		textproc/libxslt
@@ -29,16 +31,12 @@ NO_TEST=	Yes
 SHARE_DIRS=	flags flags/freemind icons scripts styles
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/mainwindow.cpp ${WRKSRC}/main.cpp
-
-do-configure:
 	@echo "QMAKE_CXXFLAGS_RELEASE=${CXXFLAGS}" \
 		>> ${WRKSRC}/vym.pro
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		${LOCALBASE}/bin/qmake-qt5 DOCDIR="${PREFIX}/share/doc/vym" vym.pro
+	${SUBST_CMD} ${WRKSRC}/mainwindow.cpp ${WRKSRC}/main.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vym ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/vym ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vym/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vym/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${PREFIX}/share/doc/vym/
