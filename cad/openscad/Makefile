@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/06 19:22:04 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/07 12:24:17 zhuk Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller#'
 BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
@@ -38,8 +38,9 @@ LIB_DEPENDS =		devel/boost \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			fonts/liberation-fonts
 
-QMAKE_FLAGS =		VERSION=${V}
-MAKE_ENV =		INSTALL_ROOT=${DESTDIR}
+CONFIGURE_STYLE =	qmake
+MODQMAKE_ARGS =		VERSION=${V}
+SEPARATE_BUILD =	No
 
 NO_TEST =		Yes
 
@@ -47,9 +48,5 @@ WRKDIST =		${WRKDIR}/openscad-$V
 
 pre-configure:
 	ln -sf ${LOCALBASE}/bin/bison ${WRKDIR}/bin/yacc
-
-do-configure:
-	cd ${WRKSRC} && \
-	    ${SETENV} ${QMAKE_ENV} qmake4 ${QMAKE_FLAGS} openscad.pro
 
 .include <bsd.port.mk>
