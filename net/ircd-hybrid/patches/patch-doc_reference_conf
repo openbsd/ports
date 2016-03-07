@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_reference_conf,v 1.7 2015/12/17 10:30:00 ajacoutot Exp $
---- doc/reference.conf.orig	Thu Nov 19 14:34:36 2015
-+++ doc/reference.conf	Wed Dec 16 20:25:50 2015
-@@ -115,7 +115,7 @@ serverinfo {
+$OpenBSD: patch-doc_reference_conf,v 1.8 2016/03/07 07:13:20 ajacoutot Exp $
+--- doc/reference.conf.orig	Wed Feb 24 08:06:07 2016
++++ doc/reference.conf	Sun Mar  6 21:07:09 2016
+@@ -147,7 +147,7 @@ serverinfo {
  	 *    chown <ircd-user>.<ircd.group> rsa.key
  	 *    chmod 0600 rsa.key
  	 */
@@ -10,25 +10,25 @@ $OpenBSD: patch-doc_reference_conf,v 1.7 2015/12/17 10:30:00 ajacoutot Exp $
  
  	/*
  	 * ssl_certificate_file: the path to the file containing our
-@@ -135,7 +135,7 @@ serverinfo {
- 	 *    Common Name: irc.example.net
- 	 *    E-mail: email@example.net
+@@ -164,7 +164,7 @@ serverinfo {
+ 	 * GnuTLS:
+ 	 *    certtool --generate-self-signed --load-privkey rsa.key --outfile cert.pem
  	 */
 -#	ssl_certificate_file = "etc/cert.pem";
 +#	ssl_certificate_file = "${CONFDIR}/cert.pem";
  
  	/*
  	 * ssl_dh_param_file: path to the PEM encoded Diffie-Hellman
-@@ -150,7 +150,7 @@ serverinfo {
- 	 * regarding specific OpenSSL dhparam command-line options
- 	 * can be found in the OpenSSL manual.
+@@ -179,7 +179,7 @@ serverinfo {
+ 	 * GnuTLS:
+ 	 *    certtool --generate-dh-params --sec-param=medium --outfile dhparam.pem
  	 */
 -#	ssl_dh_param_file = "etc/dhparam.pem";
 +#	ssl_dh_param_file = "${CONFDIR}/dhparam.pem";
  
  	/*
  	 * ssl_dh_elliptic_curve: defines the curve to use for the
-@@ -322,7 +322,7 @@ motd {
+@@ -361,7 +361,7 @@ motd {
  	/*
  	 * file: path to the actual motd file.
  	 */
@@ -37,7 +37,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.7 2015/12/17 10:30:00 ajacoutot Exp $
  };
  
  /*
-@@ -987,7 +987,7 @@ serverhide {
+@@ -1039,7 +1039,7 @@ serverhide {
  	/*
  	 * flatten_links_file: path to the flatten links cache file.
  	 */
@@ -46,7 +46,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.7 2015/12/17 10:30:00 ajacoutot Exp $
  
  	/*
  	 * hidden: hide this server from a /links output on servers that
-@@ -1311,9 +1311,9 @@ modules {
+@@ -1363,9 +1363,9 @@ modules {
  	 * path: other paths to search for modules specified below
  	 * and in "/module load".
  	 */
@@ -59,7 +59,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.7 2015/12/17 10:30:00 ajacoutot Exp $
  
  	/* module: the name of a module to load on startup/rehash. */
  #	module = "some_module.la";
-@@ -1328,49 +1328,49 @@ log {
+@@ -1380,49 +1380,49 @@ log {
  
  	file {
  		type = oper;

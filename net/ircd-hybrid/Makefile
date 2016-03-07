@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2015/12/17 10:30:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2016/03/07 07:13:20 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Internet Relay Chat server
 
-DISTNAME =	ircd-hybrid-8.2.11
+DISTNAME =	ircd-hybrid-8.2.15
 CATEGORIES =	net
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ircd-hybrid/}
 EXTRACT_SUFX =	.tgz
