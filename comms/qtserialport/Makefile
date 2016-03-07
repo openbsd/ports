@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/11/24 14:57:48 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/07 12:01:19 zhuk Exp $
 
 COMMENT =		provides functions to access serial ports
 
@@ -21,6 +21,7 @@ MASTER_SITES =		https://deftly.net/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		x11/qt4
+CONFIGURE_STYLE =	qmake
 FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}
 NO_TEST =		Yes
 
@@ -29,9 +30,5 @@ WANTLIB += m pthread stdc++
 .for l v in $(SHARED_LIBS)
 MAKE_FLAGS +=   LIB$l_VERSION=$v
 .endfor
-
-do-configure:
-	cd ${WRKDIST} && env -i ${CONFIGURE_ENV} \
-		${LOCALBASE}/bin/qmake4 PREFIX=${PREFIX}
 
 .include <bsd.port.mk>
