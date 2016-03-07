@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2016/01/22 08:24:06 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.21 2016/03/07 09:06:18 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -122,6 +122,7 @@ share/highlight/langDefs/mod3.lang
 share/highlight/langDefs/modelica.lang
 share/highlight/langDefs/moon.lang
 share/highlight/langDefs/ms.lang
+share/highlight/langDefs/msl.lang
 share/highlight/langDefs/mssql.lang
 share/highlight/langDefs/mxml.lang
 share/highlight/langDefs/n3.lang
@@ -131,6 +132,7 @@ share/highlight/langDefs/nemerle.lang
 share/highlight/langDefs/netrexx.lang
 share/highlight/langDefs/nginx.lang
 share/highlight/langDefs/nice.lang
+share/highlight/langDefs/nim.lang
 share/highlight/langDefs/nsis.lang
 share/highlight/langDefs/nxc.lang
 share/highlight/langDefs/oberon.lang
