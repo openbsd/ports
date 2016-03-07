@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/03/27 08:13:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/07 13:54:36 zhuk Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		secure decentralised communication platform
@@ -19,6 +19,7 @@ WANTLIB += 	speexdsp ssh ssh_threads ssl stdc++ upnp xml2 xslt z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=retroshare/RetroShare/${V}/}
 MODULES =		x11/qt4
+CONFIGURE_STYLE =	qmake
 RUN_DEPENDS = 		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		audio/speex \
@@ -33,6 +34,9 @@ LIB_DEPENDS =		audio/speex \
 NO_TEST =		Yes
 WRKDIST =		${WRKDIR}/retroshare-${V:S/c$//}
 WRKSRC =		${WRKDIST}/src
+SEPARATE_BUILD =	No
+
+# TODO: time_t fixes needed in bitdht/bdquery.cc
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/libretroshare/src/libretroshare.pro \
@@ -41,17 +45,14 @@ post-patch:
 		${WRKSRC}/retroshare-gui/src/retroshare-gui.pro \
 		${WRKSRC}/retroshare-nogui/src/retroshare-nogui.pro
 
-do-configure:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/qmake4 RetroShare.pro
-
 # no install target provided...
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/retroshare-gui/src/RetroShare ${PREFIX}/bin/RetroShare
-	${INSTALL_PROGRAM} ${WRKSRC}/retroshare-nogui/src/retroshare-nogui ${PREFIX}/bin/retroshare-nogui
+	${INSTALL_PROGRAM} ${WRKBUILD}/retroshare-gui/src/RetroShare ${PREFIX}/bin/RetroShare
+	${INSTALL_PROGRAM} ${WRKBUILD}/retroshare-nogui/src/retroshare-nogui ${PREFIX}/bin/retroshare-nogui
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/retroshare/extensions
-	${INSTALL_DATA} ${WRKSRC}/plugins/VOIP/libVOIP.so.1.0 ${PREFIX}/lib/retroshare/extensions/libVOIP.so
-	${INSTALL_DATA} ${WRKSRC}/plugins/LinksCloud/libLinksCloud.so.1.0 ${PREFIX}/lib/retroshare/extensions/libLinksCloud.so
-	${INSTALL_DATA} ${WRKSRC}/plugins/FeedReader/libFeedReader.so.1.0 ${PREFIX}/lib/retroshare/extensions/libFeedReader.so
+	${INSTALL_DATA} ${WRKBUILD}/plugins/VOIP/libVOIP.so.1.0 ${PREFIX}/lib/retroshare/extensions/libVOIP.so
+	${INSTALL_DATA} ${WRKBUILD}/plugins/LinksCloud/libLinksCloud.so.1.0 ${PREFIX}/lib/retroshare/extensions/libLinksCloud.so
+	${INSTALL_DATA} ${WRKBUILD}/plugins/FeedReader/libFeedReader.so.1.0 ${PREFIX}/lib/retroshare/extensions/libFeedReader.so
 	${INSTALL_DATA_DIR} ${PREFIX}/share/retroshare/
 	${INSTALL_DATA} ${WRKSRC}/libbitdht/src/bitdht/bdboot.txt ${PREFIX}/share/retroshare
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
