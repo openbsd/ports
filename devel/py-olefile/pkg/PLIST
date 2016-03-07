@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/03/07 20:44:53 rpointel Exp $
+lib/python${MODPY_VERSION}/site-packages/OleFileIO_PL.py
+lib/python${MODPY_VERSION}/site-packages/olefile/
+lib/python${MODPY_VERSION}/site-packages/olefile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/olefile/CONTRIBUTORS.txt
+lib/python${MODPY_VERSION}/site-packages/olefile/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/olefile/README.html
+lib/python${MODPY_VERSION}/site-packages/olefile/README.rst
+lib/python${MODPY_VERSION}/site-packages/olefile/__init__.py
+lib/python${MODPY_VERSION}/site-packages/olefile/doc/
+lib/python${MODPY_VERSION}/site-packages/olefile/doc/API.html
+lib/python${MODPY_VERSION}/site-packages/olefile/doc/API.md
+lib/python${MODPY_VERSION}/site-packages/olefile/doc/Contribute.html
+lib/python${MODPY_VERSION}/site-packages/olefile/doc/Contribute.md
+lib/python${MODPY_VERSION}/site-packages/olefile/doc/Home.html
+lib/python${MODPY_VERSION}/site-packages/olefile/doc/Home.md
+lib/python${MODPY_VERSION}/site-packages/olefile/doc/Install.html
+lib/python${MODPY_VERSION}/site-packages/olefile/doc/Install.md
+lib/python${MODPY_VERSION}/site-packages/olefile/doc/License.html
+lib/python${MODPY_VERSION}/site-packages/olefile/doc/License.md
+lib/python${MODPY_VERSION}/site-packages/olefile/doc/OLE_Overview.html
+lib/python${MODPY_VERSION}/site-packages/olefile/doc/OLE_Overview.md
+lib/python${MODPY_VERSION}/site-packages/olefile/doc/OLE_VBA_sample.png
+lib/python${MODPY_VERSION}/site-packages/olefile/olefile.html
+lib/python${MODPY_VERSION}/site-packages/olefile/olefile.py
+lib/python${MODPY_VERSION}/site-packages/olefile/olefile2.html
+lib/python${MODPY_VERSION}/site-packages/olefile/olefile2.py
