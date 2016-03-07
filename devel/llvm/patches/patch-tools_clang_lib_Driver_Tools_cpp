@@ -1,19 +1,31 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.27 2016/03/05 15:31:41 pascal Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.28 2016/03/07 17:03:05 pascal Exp $
 --- tools/clang/lib/Driver/Tools.cpp.orig	Fri Nov  6 12:38:46 2015
-+++ tools/clang/lib/Driver/Tools.cpp	Thu Jan  7 19:18:59 2016
-@@ -6965,10 +6965,12 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
++++ tools/clang/lib/Driver/Tools.cpp	Sat Mar  5 20:15:05 2016
+@@ -6964,12 +6964,6 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+     }
    }
  
-   std::string Triple = getToolChain().getTripleString();
+-  std::string Triple = getToolChain().getTripleString();
 -  if (Triple.substr(0, 6) == "x86_64")
 -    Triple.replace(0, 6, "amd64");
+-  CmdArgs.push_back(
+-      Args.MakeArgString("-L/usr/lib/gcc-lib/" + Triple + "/4.2.1"));
+-
+   Args.AddAllArgs(CmdArgs, options::OPT_L);
+   Args.AddAllArgs(CmdArgs, options::OPT_T_Group);
+   Args.AddAllArgs(CmdArgs, options::OPT_e);
+@@ -6977,6 +6971,14 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+   Args.AddAllArgs(CmdArgs, options::OPT_t);
+   Args.AddAllArgs(CmdArgs, options::OPT_Z_Flag);
+   Args.AddAllArgs(CmdArgs, options::OPT_r);
++
++  std::string Triple = getToolChain().getTripleString();
 +  if (Triple.substr(0, 5) == "amd64")
 +    Triple.replace(0, 5, "x86_64");
-   CmdArgs.push_back(
--      Args.MakeArgString("-L/usr/lib/gcc-lib/" + Triple + "/4.2.1"));
++  CmdArgs.push_back(
 +      Args.MakeArgString("-L${LOCALBASE}/lib/gcc/" + Triple + "/${GCC_VER}"));
 +  CmdArgs.push_back(
 +      Args.MakeArgString("-L${LOCALBASE}/lib"));
  
-   Args.AddAllArgs(CmdArgs, options::OPT_L);
-   Args.AddAllArgs(CmdArgs, options::OPT_T_Group);
+   AddLinkerInputs(getToolChain(), Inputs, Args, CmdArgs);
+ 
