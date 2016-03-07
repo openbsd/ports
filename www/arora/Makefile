@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/26 13:05:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/07 14:48:32 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,6 +22,9 @@ WANTLIB += QtGui QtNetwork QtScript QtSql QtWebKit c m pthread stdc++
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
 MODULES=	x11/qt4
+
+CONFIGURE_STYLE=	qmake
+
 RUN_DEPENDS=	devel/desktop-file-utils \
 		multimedia/gstreamer-0.10/plugins-ffmpeg \
 		multimedia/gstreamer-0.10/plugins-good \
@@ -31,8 +34,5 @@ MAKE_FLAGS=	CC="${CC}" CXX="${CXX}" LINK="${CXX}"
 FAKE_FLAGS=	INSTALL_FILE="${INSTALL_DATA}" INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 DESTDIRNAME=	INSTALL_ROOT
-
-do-configure:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/qmake4 -r
 
 .include <bsd.port.mk>
