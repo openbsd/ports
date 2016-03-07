@@ -1,4 +1,4 @@
-# $OpenBSD: qt4.port.mk,v 1.8 2016/03/06 23:59:51 zhuk Exp $
+# $OpenBSD: qt4.port.mk,v 1.9 2016/03/07 10:13:32 zhuk Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt1/qt2/qt3 in a port.
@@ -92,12 +92,12 @@ MODQMAKE4_configure += \
 	${MODQT4_QMAKE} ${MODQMAKE4_ARGS} ${WRKSRC}/$$pro;
 MODQMAKE4_build += \
 	${_MODQMAKE4_CD_${_qp:/=_}}; \
-	${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
+	${_MODQMAKE4_build_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
                 ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET};
 MODQMAKE4_install += \
 	${_MODQMAKE4_CD_${_qp:/=_}}; \
 	umask 022; \
-	${_FAKESUDO} ${_SYSTRACE_CMD} \
+	${_FAKESUDO} ${_MODQMAKE4_install_SYSTRACE_CMD} \
 		${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} ${_MODQT4_FAKE_FLAGS} \
 		-f ${MAKE_FILE} ${FAKE_TARGET};
@@ -116,13 +116,21 @@ ERRORS +=	"Fatal: qmake supports only simple SEPARATE_BUILD builds."
 WRKBUILD ?=		${WRKSRC}/build-${MACHINE_ARCH}
 . endif
 
+# Could not add ${_SYSTRACE_CMD} unconditionally since in case of
+# do-build bsd.port.mk adds ${_SYSTRACE_CMD} itself.
 . if !target(do-build) && "${CONFIGURE_STYLE:Nqmake:Nqmake4}" == ""
 do-build:
 	@${MODQMAKE4_build}
+. else
+_MODQMAKE4_build_SYSTRACE_CMD =		${_SYSTRACE_CMD}
 . endif
 
+# Could not add ${_SYSTRACE_CMD} unconditionally since in case of
+# do-install bsd.port.mk adds ${_SYSTRACE_CMD} itself.
 . if !target(do-install) && "${CONFIGURE_STYLE:Nqmake:Nqmake4}" == ""
 do-install:
 	@${MODQMAKE4_install}
+. else
+_MODQMAKE4_install_SYSTRACE_CMD =	${_SYSTRACE_CMD}
 . endif
 .endif

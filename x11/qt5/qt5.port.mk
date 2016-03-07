@@ -1,4 +1,4 @@
-# $OpenBSD: qt5.port.mk,v 1.7 2016/03/06 23:59:51 zhuk Exp $
+# $OpenBSD: qt5.port.mk,v 1.8 2016/03/07 10:13:32 zhuk Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt4/qt5 in a port.
@@ -136,12 +136,12 @@ MODQMAKE5_configure += \
 	${MODQT5_QMAKE} ${MODQMAKE5_ARGS} ${WRKSRC}/$$pro;
 MODQMAKE5_build += \
 	${_MODQMAKE5_CD_${_qp:/=_}}; \
-	${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
+	${_MODQMAKE5_build_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
                 ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET};
 MODQMAKE5_install += \
 	${_MODQMAKE5_CD_${_qp:/=_}}; \
 	umask 022; \
-	${_FAKESUDO} ${_SYSTRACE_CMD} \
+	${_FAKESUDO} ${_MODQMAKE5_install_SYSTRACE_CMD} \
 		${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} ${_MODQT5_FAKE_FLAGS} \
 		-f ${MAKE_FILE} ${FAKE_TARGET};
@@ -160,13 +160,21 @@ ERRORS +=	"Fatal: qmake supports only simple SEPARATE_BUILD builds."
 WRKBUILD ?=		${WRKSRC}/build-${MACHINE_ARCH}
 . endif
 
+# Could not add ${_SYSTRACE_CMD} unconditionally since in case of
+# do-build bsd.port.mk adds ${_SYSTRACE_CMD} itself.
 . if !target(do-build) && "${CONFIGURE_STYLE:Nqmake:Nqmake5}" == ""
 do-build:
 	@${MODQMAKE5_build}
+. else
+_MODQMAKE5_build_SYSTRACE_CMD =		${_SYSTRACE_CMD}
 . endif
 
+# Could not add ${_SYSTRACE_CMD} unconditionally since in case of
+# do-install bsd.port.mk adds ${_SYSTRACE_CMD} itself.
 . if !target(do-install) && "${CONFIGURE_STYLE:Nqmake:Nqmake5}" == ""
 do-install:
 	@${MODQMAKE5_install}
+. else
+_MODQMAKE5_install_SYSTRACE_CMD =	${_SYSTRACE_CMD}
 . endif
 .endif
