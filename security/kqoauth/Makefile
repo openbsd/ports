@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/01 11:55:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/03/07 14:20:44 zhuk Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	OAuth support library for Qt-based applications
@@ -23,15 +23,12 @@ WRKDIST =	${WRKDIR}/kQOAuth-${V}
 
 MODULES =	x11/qt4
 
+CONFIGURE_STYLE =	qmake
+
 MAKE_FLAGS =	LIBkqoauth_VERSION=${LIBkqoauth_VERSION}
 DESTDIRNAME =	INSTALL_ROOT
 
 TEST_NAMES =	ft_kqoauth ut_kqoauth
-
-do-configure:
-	cd ${WRKDIST} && ${LOCALBASE}/bin/qmake4 \
-		PREFIX=${PREFIX} \
-		kqoauth.pro
 
 do-test:
 .for _t in ${TEST_NAMES}
