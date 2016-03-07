@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/02/25 16:01:39 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/07 11:58:49 zhuk Exp $
 
 SHARED_ONLY =		Yes
 
@@ -22,6 +22,8 @@ WANTLIB +=		lib/qt4/QtXml m opus portaudio protobuf
 WANTLIB +=		pthread sndfile speex speexdsp ssl stdc++
 
 MODULES =		x11/qt4
+CONFIGURE_STYLE =	qmake
+SEPARATE_BUILD =	No
 
 BUILD_DEPENDS =		audio/celt07 \
 			devel/boost
@@ -37,11 +39,7 @@ RUN_DEPENDS =		audio/celt07 \
 			devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-QMAKE_ARGS =		MUMBLE_PREFIX=${PREFIX} \
-			QMAKE_CC=${CC} \
-			QMAKE_CXX=${CXX} \
-			QMAKE_CFLAGS="${CFLAGS}" \
-			QMAKE_CXXFLAGS="${CXXFLAGS}" \
+MODQMAKE_ARGS =		MUMBLE_PREFIX=${PREFIX} \
 			QMAKE_LRELEASE=${LOCALBASE}/bin/lrelease4 \
 			CONFIG+=no-11x \
 			CONFIG+=no-alsa \
@@ -66,10 +64,6 @@ QMAKE_ARGS =		MUMBLE_PREFIX=${PREFIX} \
 ALL_TARGET =		release
 
 NO_TEST =		Yes
-
-do-configure:
-	cd ${WRKSRC}/ && QTDIR=${WRKDIR}/bin \
-		${LOCALBASE}/bin/qmake4 ${QMAKE_ARGS}
 
 pre-build:
 	cd ${WRKSRC}/src/mumble/ && QTDIR=${WRKDIR}/bin \
