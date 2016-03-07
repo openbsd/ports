@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.415 2016/03/02 08:33:49 kirby Exp $
+# $OpenBSD: Makefile,v 1.416 2016/03/07 21:07:23 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -124,6 +124,7 @@
      SUBDIR += oath-toolkit
      SUBDIR += ocaml-cryptokit
      SUBDIR += ocaml-ssl
+     SUBDIR += oledump
      SUBDIR += oletools
      SUBDIR += onesixtyone
      SUBDIR += opencdk
