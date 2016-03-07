@@ -1,7 +1,7 @@
-$OpenBSD: patch-includes_functions_php,v 1.1 2015/11/03 13:08:00 sthen Exp $
---- includes/functions.php.orig	Tue Nov  3 13:05:19 2015
-+++ includes/functions.php	Tue Nov  3 13:05:42 2015
-@@ -228,7 +228,7 @@ function delete_device($id) {
+$OpenBSD: patch-includes_functions_php,v 1.2 2016/03/07 16:43:03 sthen Exp $
+--- includes/functions.php.orig	Mon Mar  7 16:28:39 2016
++++ includes/functions.php	Mon Mar  7 16:28:49 2016
+@@ -235,7 +235,7 @@ function delete_device($id) {
          }
      }
  

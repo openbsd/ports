@@ -1,12 +1,12 @@
-$OpenBSD: patch-daily_sh,v 1.8 2016/02/25 00:46:35 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.9 2016/03/07 16:43:03 sthen Exp $
 
 - use ksh
 - patch php binary name
 - avoid ${cnf,,} bashism (converts to lowercase); actually the
 result was being ignored anyway
 
---- daily.sh.orig	Sun Feb 14 14:40:25 2016
-+++ daily.sh	Sun Feb 14 14:41:37 2016
+--- daily.sh.orig	Mon Mar  7 16:28:38 2016
++++ daily.sh	Mon Mar  7 16:30:13 2016
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/ksh
@@ -28,10 +28,10 @@ result was being ignored anyway
  if [ -z "$arg" ]; then
 -    up=$(php daily.php -f update >&2; echo $?)
 +    up=$(%PHP% daily.php -f update >&2; echo $?)
-     if [ "$up" -eq 1 ]; then
-         # Update to Master-Branch
-         status_run 'Updating to latest codebase' 'git pull --quiet'
-@@ -40,9 +40,9 @@ if [ -z "$arg" ]; then
+     if [ "$up" -eq 0 ]; then
+         $0 no-code-update
+         exit
+@@ -43,9 +43,9 @@ if [ -z "$arg" ]; then
          # Update to last Tag
          status_run 'Updating to latest release' 'git fetch --tags && git checkout $(git describe --tags $(git rev-list --tags --max-count=1))'
      fi
@@ -44,8 +44,14 @@ result was being ignored anyway
      if [ -z "$cnf" ] || [ "$cnf" == "0" ] || [ "$cnf" == "false" ]; then
          # Call ourself again in case above pull changed or added something to daily.sh
          $0 post-pull
-@@ -51,20 +51,20 @@ else
-     case $arg in
+@@ -55,25 +55,25 @@ else
+         no-code-update)
+             # Updates of the code are disabled, just check for schema updates
+             # and clean up the db.
+-            status_run 'Updating SQL-Schema' 'php includes/sql-schema/update.php'
++            status_run 'Updating SQL-Schema' '%PHP% includes/sql-schema/update.php'
+             status_run 'Cleaning up DB' "$0 cleanup"
+         ;;
          post-pull)
              # List all tasks to do after pull in the order of execution
 -            status_run 'Updating SQL-Schema' 'php includes/sql-schema/update.php'
@@ -73,7 +79,7 @@ result was being ignored anyway
          ;;
          submodules)
              # Init+Update our submodules
-@@ -73,7 +73,7 @@ else
+@@ -82,7 +82,7 @@ else
          ;;
          notifications)
              # Get notifications
