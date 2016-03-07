@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/02 11:56:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/07 14:29:02 zhuk Exp $
 
 SHARED_ONLY =		Yes
 
@@ -17,6 +17,7 @@ EXTRACT_SUFX =		.tar.bz2
 WANTLIB += m pthread qca2 stdc++
 
 MODULES =		x11/qt4
+CONFIGURE_STYLE =	qmake
 
 LIB_DEPENDS =		security/qca2
 
@@ -24,11 +25,9 @@ RUN_DEPENDS =		security/gnupg
 
 NO_TEST =		Yes
 
-QMAKE =			${LOCALBASE}/bin/qmake4
 SUBST_VARS +=		MODQT4_LIBDIR WRKINST
 
-do-configure:
+pre-configure:
 	${SUBST_CMD} -m 444 -c ${FILESDIR}/conf.pri ${WRKSRC}/conf.pri
-	cd ${WRKSRC} && ${QMAKE} qca-gnupg.pro
 
 .include <bsd.port.mk>
