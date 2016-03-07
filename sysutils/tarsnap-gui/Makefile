@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/28 10:21:21 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/07 10:52:30 zhuk Exp $
 
 COMMENT = 		frontend to the popular Tarsnap backup service
 
@@ -20,12 +20,10 @@ GH_PROJECT =		tarsnap-gui
 GH_TAGNAME =		v${V}
 
 MODULES =		x11/qt5
+CONFIGURE_STYLE =	qmake
 RUN_DEPENDS =		sysutils/tarsnap
 
-do-configure:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/qmake-qt5
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tarsnap-gui ${PREFIX}/bin/tarsnap-gui
+	${INSTALL_PROGRAM} ${WRKBUILD}/tarsnap-gui ${PREFIX}/bin/tarsnap-gui
 
 .include <bsd.port.mk>
