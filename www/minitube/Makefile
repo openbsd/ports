@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2015/12/21 13:44:29 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.45 2016/03/07 14:54:16 zhuk Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
@@ -17,6 +17,8 @@ MASTER_SITES =	https://distfiles.bsdfrog.org/
 
 MODULES =	x11/qt4
 
+CONFIGURE_STYLE =	qmake
+
 WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender c fontconfig
 WANTLIB +=	freetype lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB +=	lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtXml m
@@ -30,12 +32,6 @@ RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-good \
 MAKE_FLAGS =	CXX=${CXX} \
 		LINK=${CXX}
 
-FAKE_FLAGS =	INSTALL_ROOT=${WRKINST}
-
 NO_TEST =	Yes
-
-do-configure:
-	cd ${WRKDIST} && env -i ${CONFIGURE_ENV} \
-		${LOCALBASE}/bin/qmake4 PREFIX=${PREFIX}
 
 .include <bsd.port.mk>
