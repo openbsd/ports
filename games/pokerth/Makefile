@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2015/12/26 09:45:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2016/03/07 13:30:31 zhuk Exp $
 
 COMMENT=	texas hold'em poker game with online capabilities
 BROKEN-hppa =	needs atomic ops
@@ -28,6 +28,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pokerth/}
 MODULES=	converters/libiconv \
 		x11/qt4
 
+CONFIGURE_STYLE=	qmake
+MODQMAKE_PROJECTS=	pokerth.pro
+
 RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	devel/sdl-mixer \
 		devel/boost \
@@ -39,24 +42,12 @@ LIB_DEPENDS=	devel/sdl-mixer \
 
 CONFIGURE_ENV=	HOME=${WRKDIR}
 
-MAKE_FLAGS=	QMAKE_CXX=${CXX} \
-		QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}" \
-		HOME=${WRKDIR} \
-		PREFIX=${PREFIX}
-
-FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
-
-SEPARATE_BUILD=	Yes
-
 NO_TEST=	Yes
 USE_GMAKE=	Yes
 
-do-configure:
+pre-configure:
 	cd ${WRKSRC} && \
 		perl -pi -e 's,-std=gnu\+\+0x,,g' *.pro
-	cd ${WRKBUILD} && \
-		env -i ${CONFIGURE_ENV} qmake4 ${MAKE_FLAGS} \
-		${WRKSRC}/pokerth.pro
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/pokerth ${PREFIX}/bin
