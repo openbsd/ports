@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2015/12/03 14:21:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/08 17:30:43 edd Exp $
 
 COMMENT=	fetch, filter and deliver mail
 
 V=		1.9
+REVISION =	0
 DISTNAME=	fdm-$V
 CATEGORIES=	mail
 
