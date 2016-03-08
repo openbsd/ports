@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/05 16:04:06 pascal Exp $
+# $OpenBSD: Makefile,v 1.31 2016/03/08 20:04:02 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64 alpha
 # XXX remember to bump www/conkeror because it has a symlink pointing to lib/xulrunner-${MOZILLA_VER}
@@ -16,9 +16,9 @@ MOZILLA_LIBS =		mozgnome mozalloc xul
 
 # necessary glue to build with the correct compiler after fx 17
 MODULES +=		gcc4 lang/clang
-MODGCC4_ARCHS =		powerpc sparc64 alpha i386
+MODGCC4_ARCHS =		powerpc sparc64 alpha i386 amd64
 MODGCC4_LANGS =		c c++
-MODCLANG_ARCHS =	amd64
+MODCLANG_ARCHS =
 MODCLANG_LANGS =	c c++
 
 # to be able to link when building with clang on i386 or gcc on ppc
