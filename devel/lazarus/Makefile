@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/04 18:30:48 pascal Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/08 22:05:54 juanfra Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		Delphi compatible IDE
 
 V =			1.6.0
+REVISION =		0
 DISTNAME =		lazarus-${V}-0
 PKGNAME =		lazarus-${V}
 
@@ -30,6 +31,7 @@ BUILD_DEPENDS =		lang/fpc>=${FPC_V}
 RUN_DEPENDS =		lang/fpc>=${FPC_V} \
 			x11/gtk+3,-guic \
 			devel/desktop-file-utils \
+			devel/gmake \
 			misc/shared-mime-info
 LIB_DEPENDS =		x11/gtk+2
 
