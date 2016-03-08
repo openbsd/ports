@@ -1,6 +1,6 @@
-$OpenBSD: patch-qt_qtr_pro,v 1.6 2014/06/01 11:37:06 naddy Exp $
---- qt/qtr.pro.orig	Sun May 18 22:52:17 2014
-+++ qt/qtr.pro	Sat May 24 23:55:23 2014
+$OpenBSD: patch-qt_qtr_pro,v 1.7 2016/03/08 16:14:16 naddy Exp $
+--- qt/qtr.pro.orig	Mon Jan 25 17:10:14 2016
++++ qt/qtr.pro	Fri Feb  5 22:07:58 2016
 @@ -8,7 +8,7 @@ target.path = /bin
  INSTALLS += target
  
@@ -10,12 +10,12 @@ $OpenBSD: patch-qt_qtr_pro,v 1.6 2014/06/01 11:37:06 naddy Exp $
  man.files = transmission-qt.1
  
  CONFIG += qt thread debug link_pkgconfig c++11 warn_on
-@@ -30,7 +30,7 @@ LIBS += $${LIBUTP_LIBS}
- LIBS += $${TRANSMISSION_TOP}/third-party/dht/libdht.a
+@@ -34,7 +34,7 @@ LIBS += $${DHT_LIBS}
+ LIBS += $${LIBB64_LIBS}
  LIBS += $${LIBUPNP_LIBS}
  LIBS += $${LIBNATPMP_LIBS}
 -unix: LIBS += -L$${EVENT_TOP}/lib -lz -lrt
 +unix: LIBS += -L$${EVENT_TOP}/lib -lz -levent_core -levent_extra
- win32:DEFINES += QT_DBUS
  win32:LIBS += -levent-2.0 -lws2_32 -lintl
  win32:LIBS += -lidn -liconv -lwldap32 -liphlpapi
+ 

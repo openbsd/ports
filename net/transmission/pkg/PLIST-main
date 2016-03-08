@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2013/07/12 17:03:59 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2016/03/08 16:14:16 naddy Exp $
 @pkgpath net/transmission
 @newgroup _transmission:662
 @newuser _transmission:662:662:daemon:Transmission Account:/var/transmission:/sbin/nologin
@@ -30,10 +30,11 @@ share/transmission/web/javascript/file-row.js
 share/transmission/web/javascript/formatter.js
 share/transmission/web/javascript/inspector.js
 share/transmission/web/javascript/jquery/
-share/transmission/web/javascript/jquery/jquery.contextmenu.min.js
+share/transmission/web/javascript/jquery/jquery-migrate.min.js
+share/transmission/web/javascript/jquery/jquery-ui.min.js
 share/transmission/web/javascript/jquery/jquery.min.js
 share/transmission/web/javascript/jquery/jquery.transmenu.min.js
-share/transmission/web/javascript/jquery/jqueryui-1.8.16.min.js
+share/transmission/web/javascript/jquery/jquery.ui-contextmenu.min.js
 share/transmission/web/javascript/jquery/json2.min.js
 share/transmission/web/javascript/notifications.js
 share/transmission/web/javascript/prefs-dialog.js
@@ -44,14 +45,20 @@ share/transmission/web/javascript/transmission.js
 share/transmission/web/style/
 share/transmission/web/style/jqueryui/
 share/transmission/web/style/jqueryui/images/
+share/transmission/web/style/jqueryui/images/ui-bg_flat_0_aaaaaa_40x100.png
 share/transmission/web/style/jqueryui/images/ui-bg_flat_75_ffffff_40x100.png
+share/transmission/web/style/jqueryui/images/ui-bg_glass_55_fbf9ee_1x400.png
 share/transmission/web/style/jqueryui/images/ui-bg_glass_65_ffffff_1x400.png
 share/transmission/web/style/jqueryui/images/ui-bg_glass_75_dadada_1x400.png
 share/transmission/web/style/jqueryui/images/ui-bg_glass_75_e6e6e6_1x400.png
+share/transmission/web/style/jqueryui/images/ui-bg_glass_95_fef1ec_1x400.png
 share/transmission/web/style/jqueryui/images/ui-bg_highlight-soft_75_cccccc_1x100.png
 share/transmission/web/style/jqueryui/images/ui-icons_222222_256x240.png
+share/transmission/web/style/jqueryui/images/ui-icons_2e83ff_256x240.png
 share/transmission/web/style/jqueryui/images/ui-icons_454545_256x240.png
-share/transmission/web/style/jqueryui/jqueryui-1.8.16.css
+share/transmission/web/style/jqueryui/images/ui-icons_888888_256x240.png
+share/transmission/web/style/jqueryui/images/ui-icons_cd0a0a_256x240.png
+share/transmission/web/style/jqueryui/jquery-ui.min.css
 share/transmission/web/style/transmission/
 share/transmission/web/style/transmission/common.css
 share/transmission/web/style/transmission/images/
