@@ -1,7 +1,7 @@
-$OpenBSD: patch-wand_Wand_pc_in,v 1.4 2015/11/06 20:37:21 sthen Exp $
---- wand/Wand.pc.in.orig	Sat Oct 10 11:45:02 2015
-+++ wand/Wand.pc.in	Fri Oct 30 00:14:35 2015
-@@ -1,14 +1,14 @@
+$OpenBSD: patch-wand_Wand_pc_in,v 1.5 2016/03/08 00:27:03 sthen Exp $
+--- wand/Wand.pc.in.orig	Sun Mar  6 14:20:31 2016
++++ wand/Wand.pc.in	Mon Mar  7 14:21:02 2016
+@@ -1,8 +1,8 @@
  prefix=@prefix@
  exec_prefix=@exec_prefix@
  libdir=@libdir@
@@ -12,11 +12,11 @@ $OpenBSD: patch-wand_Wand_pc_in,v 1.4 2015/11/06 20:37:21 sthen Exp $
  libname=MagickWand-@MAGICK_MAJOR_VERSION@.@MAGICK_ABI_SUFFIX@
   
  Name: MagickWand
- Description: MagickCore - C API for ImageMagick (ABI @MAGICK_ABI_SUFFIX@)
+@@ -11,5 +11,5 @@ URL: https://www.imagemagick.org
  Version: @PACKAGE_VERSION@
  Requires: MagickCore
+ Cflags: -I${includearchdir} -I${includedir} @MAGICK_PCFLAGS@
 -Libs: -L${libdir} -l${libname}
 -Libs.private: -L${libdir} -l${libname} @MAGICK_LIBS@ @MATH_LIBS@
-+Libs: -L${libdir} -L${X11BASE}/lib -l${libname}
-+Libs.private: -L${libdir} -L${X11BASE}/lib -l${libname} @MAGICK_LIBS@ @MATH_LIBS@
- Cflags: -I${includearchdir} -I${includedir} @MAGICK_PCFLAGS@
++Libs: -L${X11BASE}/lib -L${libdir} -l${libname}
++Libs.private: -L${X11BASE}/lib -L${libdir} -l${libname} @MAGICK_LIBS@ @MATH_LIBS@

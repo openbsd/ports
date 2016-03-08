@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2016/01/07 23:44:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.49 2016/03/08 00:27:03 sthen Exp $
 @conflict p5-PerlMagick-*
 @pkgpath graphics/ImageMagick,no_x11
 bin/Magick++-config
@@ -350,6 +350,7 @@ share/doc/ImageMagick/www/Magick++/Exception.html
 share/doc/ImageMagick/www/Magick++/FormatCharacters.html
 share/doc/ImageMagick/www/Magick++/Future.html
 share/doc/ImageMagick/www/Magick++/Geometry.html
+share/doc/ImageMagick/www/Magick++/Image++.html
 share/doc/ImageMagick/www/Magick++/Image.fig
 share/doc/ImageMagick/www/Magick++/Image.html
 share/doc/ImageMagick/www/Magick++/Image.png
@@ -379,6 +380,7 @@ share/doc/ImageMagick/www/advanced-windows-installation.html
 share/doc/ImageMagick/www/animate.html
 share/doc/ImageMagick/www/api/
 share/doc/ImageMagick/www/api.html
+share/doc/ImageMagick/www/api/Image++.html
 share/doc/ImageMagick/www/api/MagickCore/
 share/doc/ImageMagick/www/api/MagickCore/ImageMagick_8h-source.html
 share/doc/ImageMagick/www/api/MagickCore/ImageMagick_8h.html
@@ -1121,6 +1123,7 @@ share/doc/ImageMagick/www/api/image-view.html
 share/doc/ImageMagick/www/api/image.html
 share/doc/ImageMagick/www/api/layer.html
 share/doc/ImageMagick/www/api/list.html
+share/doc/ImageMagick/www/api/magick++-classes.html
 share/doc/ImageMagick/www/api/magick-deprecate.html
 share/doc/ImageMagick/www/api/magick-image.html
 share/doc/ImageMagick/www/api/magick-property.html
