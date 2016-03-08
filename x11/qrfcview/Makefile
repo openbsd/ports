@@ -1,30 +1,29 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/07 13:50:21 zhuk Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/08 14:36:38 zhuk Exp $
 
 COMMENT=	viewer for IETF RFCs
 
 DISTNAME=	qrfcview-0.62
-REVISION=	9
+REVISION=	10
+MAINTAINER=	Vadim Zhukov <zhuk@openbsd.org>
 CATEGORIES=	x11
 
-# GPL
+# GPLv2 (everything except src/TitleModel.cpp is GPLv2+)
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig
-WANTLIB += freetype glib-2.0 gobject-2.0 gthread-2.0
-WANTLIB += m png pthread stdc++ z lib/qt4/QtGui lib/qt4/QtNetwork
+WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
+WANTLIB += QtGui QtNetwork c m pthread stdc++
 
-LIB_DEPENDS=	x11/qt4
+# requires qmake fix
+BUILD_DEPENDS=	x11/qt4>=4.8.7p6
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=qrfcview.berlios/}
-EXTRACT_SUFX=	.tgz
+GH_ACCOUNT=	saghul
+GH_PROJECT=	qrfcview-osx
+GH_COMMIT=	dff3ee489a6aca0c20800219f7c207884f918023
 
-MODULES=	x11/qt4 devel/gettext
+MODULES=	x11/qt4
 NO_TEST=	Yes
 
 CONFIGURE_STYLE=	qmake
-
-pre-configure:
-	perl -pi -e "s/!!CXXFLAGS!!/${CXXFLAGS}/" ${WRKSRC}/src/src.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/qRFCView ${PREFIX}/bin
