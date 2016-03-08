@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/07 18:57:55 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/08 20:31:21 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GIS WMTS/TMS tile caching server
 
-DISTNAME =	mapcache-1.4.0
+DISTNAME =	mapcache-1.4.1
 SHARED_LIBS +=	mapcache 1.0
 
 CATEGORIES=	geo www
@@ -27,7 +27,7 @@ LIB_DEPENDS=	devel/apr-util \
 		www/fcgi
 
 WANTLIB += apr-1 aprutil-1 c curl fcgi gdal geos_c jpeg m pixman-1
-WANTLIB += png pthread sqlite3
+WANTLIB += png pthread sqlite3 z
 
 CONFIGURE_ARGS +=	-DWITH_APACHE:Bool=Off
 
