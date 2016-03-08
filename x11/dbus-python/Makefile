@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2016/03/01 09:11:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2016/03/08 08:56:57 ajacoutot Exp $
 
 PORTROACH=		limitw:2,even
 
 COMMENT-main =		dbus bindings for Python
 COMMENT-common =	common files for py-dbus
 
-V =			1.2.2
+V =			1.2.4
 DISTNAME =		dbus-python-${V}
 
 PKGNAME-main =		py-dbus-${V}

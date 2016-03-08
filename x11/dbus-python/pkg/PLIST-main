@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2016/03/01 09:11:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2016/03/08 08:56:57 ajacoutot Exp $
 !%%python3%%
 lib/python${MODPY_VERSION}/site-packages/_dbus_bindings.so
 lib/python${MODPY_VERSION}/site-packages/_dbus_glib_bindings.so
@@ -13,8 +13,6 @@ lib/python${MODPY_VERSION}/site-packages/dbus/${MODPY_PYCACHE}_dbus.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/dbus/${MODPY_PYCACHE}_dbus.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/dbus/${MODPY_PYCACHE}_expat_introspect_parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dbus/${MODPY_PYCACHE}_expat_introspect_parser.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/dbus/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dbus/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/dbus/${MODPY_PYCACHE}bus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dbus/${MODPY_PYCACHE}bus.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/dbus/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}pyc
@@ -40,7 +38,6 @@ lib/python${MODPY_VERSION}/site-packages/dbus/${MODPY_PYCACHE}types.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/dbus/_compat.py
 lib/python${MODPY_VERSION}/site-packages/dbus/_dbus.py
 lib/python${MODPY_VERSION}/site-packages/dbus/_expat_introspect_parser.py
-lib/python${MODPY_VERSION}/site-packages/dbus/_version.py
 lib/python${MODPY_VERSION}/site-packages/dbus/bus.py
 lib/python${MODPY_VERSION}/site-packages/dbus/connection.py
 lib/python${MODPY_VERSION}/site-packages/dbus/decorators.py
