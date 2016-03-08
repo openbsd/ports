@@ -1,17 +1,17 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2015/09/07 19:05:30 landry Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2016/03/08 20:44:39 landry Exp $
 Ensure it uses our FindIconv.cmake module
---- CMakeLists.txt.orig	Fri Jul 24 09:59:36 2015
-+++ CMakeLists.txt	Sat Aug  8 14:36:14 2015
-@@ -317,7 +317,7 @@ find_package(Freetype)
+--- CMakeLists.txt.orig	Thu Feb 25 15:38:36 2016
++++ CMakeLists.txt	Tue Mar  8 21:22:39 2016
+@@ -346,7 +346,7 @@ find_package(Freetype)
  if(NOT FREETYPE_FOUND)
    report_mandatory_not_found(FREETYPE)
  endif(NOT FREETYPE_FOUND)
 -include_directories(${FREETYPE_INCLUDE_DIR})
 +include_directories(${FREETYPE_INCLUDE_DIRS})
  ms_link_libraries( ${FREETYPE_LIBRARY})
+ list(APPEND ALL_INCLUDE_DIRS ${FREETYPE_INCLUDE_DIR})
  
- 
-@@ -385,7 +385,7 @@ endif( USE_FRIBIDI AND NOT(USE_HARFBUZZ) )
+@@ -419,7 +419,7 @@ endif( USE_FRIBIDI AND NOT(USE_HARFBUZZ) )
  
  
  if(WITH_ICONV)
