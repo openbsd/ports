@@ -1,6 +1,11 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.16 2012/06/14 09:38:35 espie Exp $
---- qmake/generators/unix/unixmake2.cpp.orig	Thu Dec  8 06:06:02 2011
-+++ qmake/generators/unix/unixmake2.cpp	Thu Dec 15 20:09:13 2011
+$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.17 2016/03/08 13:32:24 zhuk Exp $
+1. Add support for LOCALBASE and X11BASE.
+2. Don't use "export" feature specific to GMake. Note that Qt5 already
+   uses a different mechanizm, but since those variables have no effect
+   on OpenBSD anyway, it's just easier to drop them.
+3. Implement OpenBSD-style shared library version handling.
+--- qmake/generators/unix/unixmake2.cpp.orig	Thu May  7 17:14:42 2015
++++ qmake/generators/unix/unixmake2.cpp	Tue Mar  8 16:12:55 2016
 @@ -80,6 +80,9 @@ UnixMakefileGenerator::writeMakefile(QTextStream &t)
  {
  
@@ -11,7 +16,22 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.16 2012/06/14 09:38:35 e
      if(!project->values("QMAKE_FAILED_REQUIREMENTS").isEmpty()) {
          t << "QMAKE    = " << var("QMAKE_QMAKE") << endl;
          QStringList &qut = project->values("QMAKE_EXTRA_TARGETS");
-@@ -247,10 +250,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -175,14 +178,7 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+     t << "MOVE          = " << var("QMAKE_MOVE") << endl;
+     t << "CHK_DIR_EXISTS= " << var("QMAKE_CHK_DIR_EXISTS") << endl;
+     t << "MKDIR         = " << var("QMAKE_MKDIR") << endl;
+-    if(!project->isEmpty("QMAKE_MACOSX_DEPLOYMENT_TARGET"))
+-        t << "export MACOSX_DEPLOYMENT_TARGET = " //exported to children processes
+-          << project->first("QMAKE_MACOSX_DEPLOYMENT_TARGET") << endl;
+ 
+-    if(!project->isEmpty("QMAKE_IPHONEOS_DEPLOYMENT_TARGET"))
+-        t << "export IPHONEOS_DEPLOYMENT_TARGET = " //exported to children processes
+-		<< project->first("QMAKE_IPHONEOS_DEPLOYMENT_TARGET") << endl;
+-	
+     if (!project->isEmpty("QMAKE_SYMBIAN_SHLIB")) {
+         t << "vpath %.dso " << project->values("QMAKE_LIBDIR").join(":") << endl;
+         t << "vpath %.lib " << project->values("QMAKE_LIBDIR").join(":") << endl;
+@@ -247,10 +243,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
          } else if(!project->isEmpty("QMAKE_SYMBIAN_SHLIB")) {
              t << "TARGETD       = " << escapeFilePath(var("TARGET")) << endl;
          } else if(project->isEmpty("QMAKE_HPUX_SHLIB")) {
@@ -24,7 +44,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.16 2012/06/14 09:38:35 e
          } else {
              t << "TARGETD       = " << escapeFilePath(var("TARGET_x")) << endl;
              t << "TARGET0       = " << escapeFilePath(var("TARGET_")) << endl;
-@@ -572,31 +573,22 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -572,31 +566,22 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
              t << endl << endl;
          } else if(project->isEmpty("QMAKE_HPUX_SHLIB")) {
              t << "\n\t"
@@ -59,7 +79,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.16 2012/06/14 09:38:35 e
              if(!project->isEmpty("QMAKE_POST_LINK"))
                  t << "\n\t" << var("QMAKE_POST_LINK");
              t << endl << endl;
-@@ -1019,6 +1011,13 @@ void UnixMakefileGenerator::init2()
+@@ -1019,6 +1004,13 @@ void UnixMakefileGenerator::init2()
      project->values("VER_MAJ").append(l[0]);
      project->values("VER_MIN").append(l[1]);
      project->values("VER_PAT").append(l[2]);
@@ -73,7 +93,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.16 2012/06/14 09:38:35 e
      if(project->isEmpty("QMAKE_FRAMEWORK_VERSION"))
          project->values("QMAKE_FRAMEWORK_VERSION").append(project->values("VER_MAJ").first());
  
-@@ -1159,7 +1158,7 @@ void UnixMakefileGenerator::init2()
+@@ -1159,7 +1151,7 @@ void UnixMakefileGenerator::init2()
                                                              project->first("VER_MIN") +  "." +
                                                              project->first("VER_PAT"));
              }
@@ -82,7 +102,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.16 2012/06/14 09:38:35 e
          }
          if(project->isEmpty("QMAKE_LN_SHLIB"))
              project->values("QMAKE_LN_SHLIB").append("ln -s");
-@@ -1304,18 +1303,31 @@ UnixMakefileGenerator::writeLibtoolFile()
+@@ -1304,18 +1296,31 @@ UnixMakefileGenerator::writeLibtoolFile()
        << QT_VERSION_STR << ") on: " << QDateTime::currentDateTime().toString();
  	t << "\n";
  
@@ -120,7 +140,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.16 2012/06/14 09:38:35 e
      }
      t << "'\n\n";
  
-@@ -1330,7 +1342,7 @@ UnixMakefileGenerator::writeLibtoolFile()
+@@ -1330,7 +1335,7 @@ UnixMakefileGenerator::writeLibtoolFile()
          libs << "QMAKE_LIBS"; //obvious one
      t << "dependency_libs='";
      for(QStringList::ConstIterator it = libs.begin(); it != libs.end(); ++it)
