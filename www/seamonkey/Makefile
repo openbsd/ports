@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2016/03/05 16:04:06 pascal Exp $
+# $OpenBSD: Makefile,v 1.184 2016/03/08 16:07:49 naddy Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -10,14 +10,13 @@ MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 EXTRACT_SUFX =		.tar.xz
-REVISION-main =	0
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-4.4
 EPOCH-lightning =	0
 REVISION-lightning =	0
-REVISION-main =		0
+REVISION-main =		1
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 
