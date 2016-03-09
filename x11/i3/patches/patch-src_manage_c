@@ -1,44 +1,23 @@
-$OpenBSD: patch-src_manage_c,v 1.17 2015/12/18 15:53:09 dcoppa Exp $
-
-Suppress no_focus for first window on a workspace.
-
-Fix multiple memory leaks with regular expressions.
-
---- src/manage.c.orig	Wed Sep 30 08:55:10 2015
-+++ src/manage.c	Fri Dec 18 13:58:58 2015
-@@ -294,6 +294,7 @@ void manage_window(xcb_window_t window, xcb_get_window
-         if (match != NULL && match->insert_where != M_BELOW) {
-             DLOG("Removing match %p from container %p\n", match, nc);
-             TAILQ_REMOVE(&(nc->swallow_head), match, matches);
-+            match_free(match);
-         }
-     }
+$OpenBSD: patch-src_manage_c,v 1.18 2016/03/09 09:25:51 dcoppa Exp $
+--- src/manage.c.orig	Sun Mar  6 16:17:18 2016
++++ src/manage.c	Tue Mar  8 13:31:05 2016
+@@ -468,10 +468,16 @@ void manage_window(xcb_window_t window, xcb_get_window
+     if (cwindow->dock)
+         want_floating = false;
  
-@@ -524,13 +525,23 @@ void manage_window(xcb_window_t window, xcb_get_window
-     /* Send an event about window creation */
-     ipc_send_window_event("new", nc);
- 
-+    if (set_focus && assignment_for(cwindow, A_NO_FOCUS) != NULL) {
-+        /* The first window on a workspace should always be focused. We have to
-+         * compare with == 1 because the container has already been inserted at
-+         * this point. */
-+        if (con_num_children(ws) == 1) {
-+            DLOG("This is the first window on this workspace, ignoring no_focus.\n");
-+        } else {
-+            DLOG("no_focus was set for con = %p, not setting focus.\n", nc);
-+            set_focus = false;
-+        }
-+    }
-+
-     /* Defer setting focus after the 'new' event has been sent to ensure the
-      * proper window event sequence. */
-     if (set_focus && !nc->window->doesnt_accept_focus && nc->mapped) {
--        if (assignment_for(cwindow, A_NO_FOCUS) == NULL) {
--            DLOG("Now setting focus.\n");
--            con_focus(nc);
--        }
-+        DLOG("Now setting focus.\n");
-+        con_focus(nc);
-     }
- 
-     tree_render();
+-    /* Plasma windows set their geometry in WM_SIZE_HINTS. */
++    /*
++     * Plasma windows set their geometry in WM_SIZE_HINTS.  Note that
++     * these fields are obsolete, so ignore unless there is a width and
++     * a height specified.
++     */
+     if ((wm_size_hints.flags & XCB_ICCCM_SIZE_HINT_US_POSITION || wm_size_hints.flags & XCB_ICCCM_SIZE_HINT_P_POSITION) &&
+-        (wm_size_hints.flags & XCB_ICCCM_SIZE_HINT_US_SIZE || wm_size_hints.flags & XCB_ICCCM_SIZE_HINT_P_SIZE)) {
+-        DLOG("We are setting geometry according to wm_size_hints x=%d y=%d w=%d h=%d\n",
++        (wm_size_hints.flags & XCB_ICCCM_SIZE_HINT_US_SIZE || wm_size_hints.flags & XCB_ICCCM_SIZE_HINT_P_SIZE) &&
++        wm_size_hints.width != 0 && wm_size_hints.height != 0) {
++        DLOG("We are setting geometry according to the obsolete wm_size_hints "
++             "x=%d y=%d w=%d h=%d\n",
+              wm_size_hints.x, wm_size_hints.y, wm_size_hints.width, wm_size_hints.height);
+         geom->x = wm_size_hints.x;
+         geom->y = wm_size_hints.y;
