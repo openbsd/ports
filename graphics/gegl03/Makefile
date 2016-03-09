@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/12/08 13:30:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/09 17:36:42 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ V=			0.3.4
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl03-${V}
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gegl-0.3             0.0      # 304.0
 
@@ -40,7 +40,7 @@ MODGNOME_TOOLS=		vala gobject-introspection
 
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		graphics/exiv2
+BUILD_DEPENDS=		graphics/libgexiv2
 
 LIB_DEPENDS=		devel/json-glib \
 			graphics/babl \
