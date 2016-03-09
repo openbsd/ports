@@ -1,4 +1,4 @@
-$OpenBSD: patch-boehm-gc_include_private_gcconfig_h,v 1.5 2013/06/07 07:54:23 pascal Exp $
+$OpenBSD: patch-boehm-gc_include_private_gcconfig_h,v 1.6 2016/03/09 18:45:52 jasper Exp $
 --- boehm-gc/include/private/gcconfig.h.orig	Fri Mar  2 19:21:41 2012
 +++ boehm-gc/include/private/gcconfig.h	Sat Apr 13 16:20:18 2013
 @@ -62,7 +62,7 @@
@@ -33,15 +33,6 @@ $OpenBSD: patch-boehm-gc_include_private_gcconfig_h,v 1.5 2013/06/07 07:54:23 pa
  # if defined(NETBSD) && (defined(m68k) || defined(__m68k__))
  #    define M68K
  #    define mach_type_known
-@@ -101,7 +105,7 @@
- #    define SH
- #    define mach_type_known
- # endif
--# if defined(vax)
-+# if defined(vax) || defined(__vax__)
- #    define VAX
- #    ifdef ultrix
- #	define ULTRIX
 @@ -119,7 +123,7 @@
  #    if defined(nec_ews) || defined(_nec_ews)
  #      define EWS4800

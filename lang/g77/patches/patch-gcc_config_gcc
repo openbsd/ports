@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.6 2014/03/23 17:30:20 pascal Exp $
+$OpenBSD: patch-gcc_config_gcc,v 1.7 2016/03/09 18:45:52 jasper Exp $
 --- gcc/config.gcc.orig	Sun Feb 24 16:51:55 2013
 +++ gcc/config.gcc	Sun Mar 23 17:44:53 2014
 @@ -1174,6 +1174,7 @@ i[34567]86-*-openbsd2* | i[34567]86-*-openbsd3.[0123])
@@ -17,20 +17,3 @@ $OpenBSD: patch-gcc_config_gcc,v 1.6 2014/03/23 17:30:20 pascal Exp $
  	tm_file="rs6000/rs6000.h rs6000/openbsd1.h dbxelf.h elfos.h svr4.h freebsd-spec.h rs6000/sysv4.h openbsd.h ${tm_file}"
  	tmake_file="${tmake_file} rs6000/t-ppcos rs6000/t-openbsd"
  	tm_file="${tm_file} exec-stack.h"
-@@ -2780,10 +2782,13 @@ vax-*-netbsd*)
- 	use_collect2=yes
- 	;;
- vax-*-openbsd*)
--	tmake_file="t-libc-ok t-openbsd"
--	tm_file="vax/vax.h vax/openbsd1.h openbsd.h ${tm_file}"
-+	tm_file="openbsd-libpthread.h vax/vax.h dbxelf.h elfos.h vax/openbsd1.h openbsd.h vax/elf.h vax/openbsdelf.h"
- #	tm_file="${tm_file} exec-stack.h"
--	use_collect2=yes
-+	tmake_file="t-libc-ok t-openbsd"
-+	if test x$enable_threads = xyes; then
-+		tmake_file="${tmake_file} t-openbsd-thread"
-+	fi
-+	float_format=vax
- 	;;
- vax-*-ultrix*)			# VAXen running ultrix
- 	tm_file="${tm_file} vax/ultrix.h"

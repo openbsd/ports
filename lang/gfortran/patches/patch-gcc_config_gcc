@@ -107,12 +107,3 @@
  	extra_options="${extra_options} sparc/little-endian.opt"
  	gas=yes gnu_ld=yes
  	with_cpu=ultrasparc
-@@ -2395,7 +2413,7 @@ vax-*-netbsd*)
- 	use_collect2=yes
- 	;;
- vax-*-openbsd*)
--	tm_file="vax/vax.h vax/openbsd1.h openbsd.h vax/openbsd.h"
-+	tm_file="vax/vax.h vax/openbsd1.h openbsd.h openbsd-libpthread.h vax/openbsd.h"
- 	use_collect2=yes
- 	;;
- vax-*-ultrix*)			# VAXen running ultrix
