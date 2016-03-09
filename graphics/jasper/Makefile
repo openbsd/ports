@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2016/02/04 10:08:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/09 15:16:05 jasper Exp $
 
 COMMENT =	reference implementation of JPEG-2000
 
 DISTNAME =	jasper-1.900.1
-REVISION =	4
+REVISION =	5
 SHARED_LIBS =	jasper		2.1
 
 CATEGORIES =	graphics
