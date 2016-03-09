@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2015/12/21 19:13:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.80 2016/03/09 19:11:35 naddy Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
@@ -27,8 +27,7 @@ AUTOCONF_VERSION=2.68
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
                 LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED:S/shared/dynamic/} \
-		--enable-zsh-mem \
+CONFIGURE_ARGS=	--enable-zsh-mem \
 		--enable-zsh-secure-free \
 		--enable-maildir-support \
 		--with-tcsetpgrp \

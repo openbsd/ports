@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2016/02/15 12:20:33 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.97 2016/03/09 19:11:35 naddy Exp $
 
 BROKEN-sparc=	Segmentation fault on any non-trivial script
 
@@ -25,7 +25,6 @@ MODULES=	devel/gettext
 WANTLIB=	c termcap 
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${NO_SHARED_LIBS:S/Yes/--enable-static-link/:S/No//}
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/support
 
 # Prefer system mktemp(3) and mkstemp(3) over homegrown replacements
