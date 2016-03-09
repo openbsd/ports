@@ -1,0 +1,44 @@
+$OpenBSD: patch-memcached_c,v 1.10 2016/03/09 14:50:11 giovanni Exp $
+--- memcached.c.orig	Thu Nov 19 08:19:56 2015
++++ memcached.c	Sun Mar  6 22:32:48 2016
+@@ -23,6 +23,7 @@
+ #include <sys/uio.h>
+ #include <ctype.h>
+ #include <stdarg.h>
++#include <unistd.h>
+ 
+ /* some POSIX systems need the following definition
+  * to get mlockall flags out of sys/mman.h.  */
+@@ -5766,6 +5767,32 @@ int main (int argc, char **argv) {
+ 
+     if (pid_file != NULL) {
+         save_pid(pid_file);
++    }
++
++    if (settings.socketpath != NULL) {
++        if (pid_file != NULL) {
++           if (pledge("stdio cpath unix", NULL) == -1) {
++              fprintf(stderr, "%s: pledge: %s\n", argv[0], strerror(errno));
++              exit(1);
++           }
++        } else {
++           if (pledge("stdio unix", NULL) == -1) {
++              fprintf(stderr, "%s: pledge: %s\n", argv[0], strerror(errno));
++              exit(1);
++           }
++        }
++    } else {
++        if (pid_file != NULL) {
++           if (pledge("stdio cpath inet", NULL) == -1) {
++              fprintf(stderr, "%s: pledge: %s\n", argv[0], strerror(errno));
++              exit(1);
++           }
++        } else {
++           if (pledge("stdio inet", NULL) == -1) {
++              fprintf(stderr, "%s: pledge: %s\n", argv[0], strerror(errno));
++              exit(1);
++           }
++        }
+     }
+ 
+     /* Drop privileges no longer needed */
