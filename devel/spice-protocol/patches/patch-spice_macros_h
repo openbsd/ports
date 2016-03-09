@@ -1,0 +1,25 @@
+$OpenBSD: patch-spice_macros_h,v 1.1 2016/03/09 11:58:29 jasper Exp $
+
+Use BYTE_ORDER to figure out the...byte order.
+http://austingroupbugs.net/view.php?id=162
+
+--- spice/macros.h.orig	Thu Sep  3 17:18:48 2015
++++ spice/macros.h	Wed Mar  9 11:58:10 2016
+@@ -370,6 +370,17 @@
+ #define SPICE_ENDIAN_BIG    1234
+ #define SPICE_ENDIAN_PDP    2143
+ 
++/* Lets see if we can use a standard header first... */
++#if defined(BYTE_ORDER) && defined(LITTLE_ENDIAN) \
++    && defined(BIG_ENDIAN)
++#  include <machine/endian.h>
++#  if BYTE_ORDER == LITTLE_ENDIAN
++#    define SPICE_ENDIAN SPICE_ENDIAN_LITTLE
++#  elif BYTE_ORDER == BIG_ENDIAN
++#    define SPICE_ENDIAN SPICE_ENDIAN_BIG
++#  endif
++#endif
++
+ /* gcc already defined these, use them */
+ #if defined(__BYTE_ORDER__) && defined(__ORDER_LITTLE_ENDIAN__) \
+     && defined(__ORDER_BIG_ENDIAN__) && defined(__ORDER_PDP_ENDIAN__)
