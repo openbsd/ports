@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.config.OpenBSD,v 1.10 2014/04/19 23:40:08 naddy Exp $
+# $OpenBSD: Makefile.config.OpenBSD,v 1.11 2016/03/09 18:22:52 naddy Exp $
 # Indented variables are unchanged from the defaults in Makefile.config.in.
 # Commented out variables are set in MAKE_FLAGS.
 #
@@ -62,7 +62,7 @@ X11HDR_DIR = $(X11BASE)/include
  SUFFIXMANUALS1 = 1
  SUFFIXMANUALS3 = 3
  SUFFIXMANUALS5 = 5
-#NETPBMLIBTYPE =
+ NETPBMLIBTYPE = unixshared
  NETPBMLIBSUFFIX = so
  STATICLIB_TOO = y
  STATICLIBSUFFIX = a

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2015/10/29 11:46:49 jca Exp $
+# $OpenBSD: Makefile,v 1.74 2016/03/09 18:22:52 naddy Exp $
 
 COMMENT=	toolkit for converting images between different formats
 
@@ -32,14 +32,6 @@ INSTALL_TARGET=	install.bin install.lib install.data \
 MAKE_FLAGS=	CC="${CC}" \
 		LIBnetpbm_VERSION=${LIBnetpbm_VERSION}
 FAKE_FLAGS=	PKGDIR="${WRKINST}${TRUEPREFIX}"
-
-.include <bsd.port.arch.mk>
-
-.if ${NO_SHARED_LIBS:L} == "yes"
-MAKE_FLAGS+=	NETPBMLIBTYPE=unixstatic
-.else
-MAKE_FLAGS+=	NETPBMLIBTYPE=unixshared
-.endif
 
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/pm_config.in.h
