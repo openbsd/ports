@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.366 2016/03/01 20:44:19 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.367 2016/03/09 01:15:58 bentley Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -397,6 +397,7 @@ my $stem_extensions = {
 	'py-fabric' => 'fabric',
 # 6.0
 	'cosmic-sans-neue-mono' => 'fantasque-sans',
+	'droid-fonts' => 'noto-fonts',
 };
 
 # reasons for obsolete packages
