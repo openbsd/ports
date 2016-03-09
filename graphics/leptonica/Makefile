@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/11/16 15:10:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/03/09 18:29:10 naddy Exp $
 
 COMMENT=	image processing and analysis library
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c gif jpeg m openjp2 png pthread tiff webp z
 
 MASTER_SITES=	${HOMEPAGE}/source/
-LIBM_CHECK =	powf expf
 
 LIB_DEPENDS=	graphics/libwebp \
 		graphics/giflib \
