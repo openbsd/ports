@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2012/11/05 20:27:52 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/09 18:31:36 jasper Exp $
 COMPONENT = lib/pixman
-NOT_FOR_ARCHS = vax landisk
+NOT_FOR_ARCHS = landisk
 XDEPS = lib/libpthread-stubs
 
 

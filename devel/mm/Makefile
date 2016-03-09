@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/11/24 09:11:04 jasper Exp $
-
-# XXX This will panic any vax
-NOT_FOR_ARCHS=	vax
+# $OpenBSD: Makefile,v 1.38 2016/03/09 18:31:36 jasper Exp $
 
 COMMENT=	shared memory lib for apps with pre-forked process model
 

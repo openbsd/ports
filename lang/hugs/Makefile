@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/02/16 22:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2016/03/09 18:31:36 jasper Exp $
 
 COMMENT =	Haskell 98 interpreter
 
@@ -14,9 +14,7 @@ MASTER_SITES0 =	http://openbsd.dead-parrot.de/distfiles/
 
 DISTFILES +=	${DISTNAME}.tar.gz ${DISTNAME}-tests.tar.gz:0
 
-.if ${MACHINE_ARCH} != "vax"
 CFLAGS +=	-fPIC
-.endif
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" CC="${CC}"

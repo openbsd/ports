@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/12/07 07:51:26 jasper Exp $
-
-# vax:	no fenv.h support
-NOT_FOR_ARCHS =		vax
+# $OpenBSD: Makefile,v 1.14 2016/03/09 18:31:36 jasper Exp $
 
 BROKEN-mips64 =		ICE on Interval_nt.h:98
 

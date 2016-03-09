@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/09/16 12:10:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/09 18:31:36 jasper Exp $
 
 COMMENT =	extremely fast password cracker, with community patches
 BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
@@ -56,8 +56,6 @@ ALL_TARGET=		openbsd-x86-any
 ALL_TARGET=		openbsd-x86-64
 .elif ${MACHINE_ARCH} == "sparc"
 ALL_TARGET=		openbsd-sparc
-.elif ${MACHINE_ARCH} == "vax"
-ALL_TARGET=		openbsd-vax
 .elif ${MACHINE_ARCH} == "alpha"
 ALL_TARGET=		openbsd-alpha
 .elif ${MACHINE_ARCH} == "powerpc"

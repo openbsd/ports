@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/24 09:11:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2016/03/09 18:31:36 jasper Exp $
 
 COMMENT=		stub DNS resolver library
 
@@ -18,12 +18,8 @@ MASTER_SITES=		http://www.corpit.ru/mjt/udns/ \
 
 WANTLIB += c
 
-.if ${MACHINE_ARCH} != "vax"
 ALL_TARGET=		sharedlib shared staticlib
 MAKE_FLAGS=		SOVER=${LIBudns_VERSION}
-.else
-ALL_TARGET=		staticlib static
-.endif
 
 CONFIGURE_STYLE=	simple
 NO_TEST=		Yes

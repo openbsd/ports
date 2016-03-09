@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile.inc,v 1.7 2016/02/02 10:17:44 bentley Exp $
+#	$OpenBSD: Makefile.inc,v 1.8 2016/03/09 18:31:36 jasper Exp $
 
 DIST_SUBDIR ?=	alephone
 
@@ -17,10 +17,9 @@ MASTER_SITES6 = https://github.com/Aleph-One-Marathon/alephone/releases/download
 
 RUN_DEPENDS =	games/alephone/alephone
 
-# technically not, but it saves recompressing 300MB on vax to make some
-# useless packages
+# technically not, but it saves recompressing 300MB on slower arches to make
+# some useless packages
 BUILD_DEPENDS += games/alephone/alephone
-
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/10 22:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2016/03/09 18:31:36 jasper Exp $
 
 COMMENT=	opensource Napster(tm) server
 
@@ -23,10 +23,6 @@ CONFIGURE_ARGS=	--enable-email \
 		--with-uid=_opennap \
 		--with-gid=_opennap
 #		--enable-chroot \  (breaks uid, gid, and ip lookup)
-
-.if ${MACHINE_ARCH} == "vax"
-CFLAGS+=	-O0 # XXX compiler bugs
-.endif
 
 DOCS=	FAQ README manual.html napster.txt
 
