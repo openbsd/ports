@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_c,v 1.13 2016/02/25 03:53:53 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_c,v 1.14 2016/03/09 17:29:36 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -74,8 +74,10 @@ aacenc: make a better estimate for the audio bitrate if not provided
 
 aacenc: temporarily disable Mid/Side coding with multichannel files
 
+aacenc: use generational cache instead of resetting.
+
 --- libavcodec/aacenc.c.orig	Wed Jan 13 15:27:48 2016
-+++ libavcodec/aacenc.c	Mon Feb 15 17:12:33 2016
++++ libavcodec/aacenc.c	Tue Mar  8 19:23:12 2016
 @@ -29,6 +29,7 @@
   * add sane pulse detection
   ***********************************/
@@ -98,24 +100,23 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
      //GASpecificConfig
      put_bits(&pb, 1, 0); //frame length - 1024 samples
      put_bits(&pb, 1, 0); //does not depend on core coder
-@@ -71,6 +73,16 @@ static void put_audio_specific_config(AVCodecContext *
+@@ -71,6 +73,15 @@ static void put_audio_specific_config(AVCodecContext *
      flush_put_bits(&pb);
  }
  
 +void ff_quantize_band_cost_cache_init(struct AACEncContext *s)
 +{
-+    int sf, g;
-+    for (sf = 0; sf < 256; sf++) {
-+        for (g = 0; g < 128; g++) {
-+            s->quantize_band_cost_cache[sf][g].bits = -1;
-+        }
++    ++s->quantize_band_cost_cache_generation;
++    if (s->quantize_band_cost_cache_generation == 0) {
++        memset(s->quantize_band_cost_cache, 0, sizeof(s->quantize_band_cost_cache));
++        s->quantize_band_cost_cache_generation = 1;
 +    }
 +}
 +
  #define WINDOW_FUNC(type) \
  static void apply_ ##type ##_window(AVFloatDSPContext *fdsp, \
                                      SingleChannelElement *sce, \
-@@ -140,7 +152,7 @@ static void apply_window_and_mdct(AACEncContext *s, Si
+@@ -140,7 +151,7 @@ static void apply_window_and_mdct(AACEncContext *s, Si
                                    float *audio)
  {
      int i;
@@ -124,7 +125,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
  
      apply_window[sce->ics.window_sequence[0]](s->fdsp, sce, audio);
  
-@@ -258,6 +270,8 @@ static void apply_intensity_stereo(ChannelElement *cpe
+@@ -258,6 +269,8 @@ static void apply_intensity_stereo(ChannelElement *cpe
                      start += ics->swb_sizes[g];
                      continue;
                  }
@@ -133,7 +134,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
                  for (i = 0; i < ics->swb_sizes[g]; i++) {
                      float sum = (cpe->ch[0].coeffs[start+i] + p*cpe->ch[1].coeffs[start+i])*scale;
                      cpe->ch[0].coeffs[start+i] = sum;
-@@ -279,7 +293,13 @@ static void apply_mid_side_stereo(ChannelElement *cpe)
+@@ -279,7 +292,13 @@ static void apply_mid_side_stereo(ChannelElement *cpe)
          for (w2 =  0; w2 < ics->group_len[w]; w2++) {
              int start = (w+w2) * 128;
              for (g = 0; g < ics->num_swb; g++) {
@@ -148,7 +149,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
                      start += ics->swb_sizes[g];
                      continue;
                  }
-@@ -424,6 +444,8 @@ static int encode_individual_channel(AVCodecContext *a
+@@ -424,6 +443,8 @@ static int encode_individual_channel(AVCodecContext *a
          put_ics_info(s, &sce->ics);
          if (s->coder->encode_main_pred)
              s->coder->encode_main_pred(s, sce);
@@ -157,7 +158,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
      }
      encode_band_info(s, sce);
      encode_scale_factors(avctx, s, sce);
-@@ -489,7 +511,9 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -489,7 +510,9 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
      float **samples = s->planar_samples, *samples2, *la, *overlap;
      ChannelElement *cpe;
      SingleChannelElement *sce;
@@ -168,7 +169,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
      int ms_mode = 0, is_mode = 0, tns_mode = 0, pred_mode = 0;
      int chan_el_counter[4];
      FFPsyWindowInfo windows[AAC_MAX_CHANNELS];
-@@ -517,10 +541,12 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -517,10 +540,12 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
          chans    = tag == TYPE_CPE ? 2 : 1;
          cpe      = &s->cpe[i];
          for (ch = 0; ch < chans; ch++) {
@@ -184,7 +185,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
              samples2 = overlap + 1024;
              la       = samples2 + (448+64);
              if (!frame)
-@@ -537,7 +563,7 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -537,7 +562,7 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                   */
                  ics->num_swb = s->samplerate_index >= 8 ? 1 : 3;
              } else {
@@ -193,7 +194,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
                                                ics->window_sequence[0]);
              }
              ics->window_sequence[1] = ics->window_sequence[0];
-@@ -571,25 +597,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -571,25 +596,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  ics->clip_avoidance_factor = 1.0f;
              }
  
@@ -235,7 +236,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
          memset(chan_el_counter, 0, sizeof(chan_el_counter));
          for (i = 0; i < s->chan_map[0]; i++) {
              FFPsyWindowInfo* wi = windows + start_ch;
-@@ -606,15 +641,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -606,15 +640,28 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  sce = &cpe->ch[ch];
                  coeffs[ch] = sce->coeffs;
                  sce->ics.predictor_present = 0;
@@ -265,7 +266,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
                  s->coder->search_for_quantizers(avctx, s, &cpe->ch[ch], s->lambda);
              }
              if (chans > 1
-@@ -632,14 +680,14 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -632,14 +679,14 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              for (ch = 0; ch < chans; ch++) { /* TNS and PNS */
                  sce = &cpe->ch[ch];
                  s->cur_channel = start_ch + ch;
@@ -282,7 +283,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
              }
              s->cur_channel = start_ch;
              if (s->options.intensity_stereo) { /* Intensity Stereo */
-@@ -656,8 +704,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -656,8 +703,8 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                          s->coder->search_for_pred(s, sce);
                      if (cpe->ch[ch].ics.predictor_present) pred_mode = 1;
                  }
@@ -293,7 +294,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
                  for (ch = 0; ch < chans; ch++) {
                      sce = &cpe->ch[ch];
                      s->cur_channel = start_ch + ch;
-@@ -666,22 +714,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -666,22 +713,34 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
                  }
                  s->cur_channel = start_ch;
              }
@@ -332,7 +333,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
                      encode_ms_info(&s->pb, cpe);
                      if (cpe->ms_mode) ms_mode = 1;
                  }
-@@ -693,36 +753,78 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
+@@ -693,36 +752,78 @@ static int aac_encode_frame(AVCodecContext *avctx, AVP
              start_ch += chans;
          }
  
@@ -431,7 +432,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
      if (!frame)
          s->last_frame++;
  
-@@ -738,6 +840,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
+@@ -738,6 +839,8 @@ static av_cold int aac_encode_end(AVCodecContext *avct
  {
      AACEncContext *s = avctx->priv_data;
  
@@ -440,7 +441,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
      ff_mdct_end(&s->mdct1024);
      ff_mdct_end(&s->mdct128);
      ff_psy_end(&s->psy);
-@@ -796,76 +900,123 @@ static av_cold int aac_encode_init(AVCodecContext *avc
+@@ -796,76 +899,123 @@ static av_cold int aac_encode_init(AVCodecContext *avc
      uint8_t grouping[AAC_MAX_CHANNELS];
      int lengths[2];
  
@@ -598,7 +599,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
      ff_af_queue_init(avctx, &s->afq);
  
      return 0;
-@@ -876,27 +1027,16 @@ fail:
+@@ -876,27 +1026,16 @@ fail:
  
  #define AACENC_FLAGS AV_OPT_FLAG_ENCODING_PARAM | AV_OPT_FLAG_AUDIO_PARAM
  static const AVOption aacenc_options[] = {
@@ -636,7 +637,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
      {NULL}
  };
  
-@@ -907,6 +1047,11 @@ static const AVClass aacenc_class = {
+@@ -907,6 +1046,11 @@ static const AVClass aacenc_class = {
      LIBAVUTIL_VERSION_INT,
  };
  
@@ -648,7 +649,7 @@ aacenc: temporarily disable Mid/Side coding with multichannel files
  AVCodec ff_aac_encoder = {
      .name           = "aac",
      .long_name      = NULL_IF_CONFIG_SMALL("AAC (Advanced Audio Coding)"),
-@@ -916,9 +1061,9 @@ AVCodec ff_aac_encoder = {
+@@ -916,9 +1060,9 @@ AVCodec ff_aac_encoder = {
      .init           = aac_encode_init,
      .encode2        = aac_encode_frame,
      .close          = aac_encode_end,

@@ -1,4 +1,4 @@
-$OpenBSD: patch-libavcodec_aacenc_h,v 1.6 2016/01/22 07:05:01 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_h,v 1.7 2016/03/09 17:29:36 ajacoutot Exp $
 
 aacenc: copy PRNG from the decoder
 
@@ -22,8 +22,10 @@ acenc: remove deprecated avctx->frame_bits use
 
 aacenc: remove FAAC-like coder
 
+aacenc: use generational cache instead of resetting.
+
 --- libavcodec/aacenc.h.orig	Wed Jan 13 15:27:48 2016
-+++ libavcodec/aacenc.h	Wed Jan 20 21:25:18 2016
++++ libavcodec/aacenc.h	Tue Mar  8 19:23:38 2016
 @@ -23,6 +23,7 @@
  #define AVCODEC_AACENC_H
  
@@ -85,10 +87,10 @@ aacenc: remove FAAC-like coder
 +typedef struct AACQuantizeBandCostCacheEntry {
 +    float rd;
 +    float energy;
-+    int bits; ///< -1 means uninitialized entry
++    int bits;
 +    char cb;
 +    char rtz;
-+    char padding[2]; ///< Keeps the entry size a multiple of 32 bits
++    uint16_t generation;
 +} AACQuantizeBandCostCacheEntry;
 +
  /**
@@ -104,7 +106,7 @@ aacenc: remove FAAC-like coder
  
      int profile;                                 ///< copied from avctx
      LPCContext lpc;                              ///< used by TNS
-@@ -96,18 +113,28 @@ typedef struct AACEncContext {
+@@ -96,18 +113,29 @@ typedef struct AACEncContext {
      FFPsyContext psy;
      struct FFPsyPreprocessContext* psypp;
      AACCoefficientsEncoder *coder;
@@ -122,6 +124,7 @@ aacenc: remove FAAC-like coder
      DECLARE_ALIGNED(16, int,   qcoefs)[96];      ///< quantized coefficients
      DECLARE_ALIGNED(32, float, scoefs)[1024];    ///< scaled coefficients
  
++    uint16_t quantize_band_cost_cache_generation;
 +    AACQuantizeBandCostCacheEntry quantize_band_cost_cache[256][128]; ///< memoization area for quantize_band_cost
 +
      struct {

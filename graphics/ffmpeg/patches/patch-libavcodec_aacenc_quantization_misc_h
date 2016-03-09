@@ -1,10 +1,12 @@
-$OpenBSD: patch-libavcodec_aacenc_quantization_misc_h,v 1.1 2015/10/13 05:44:18 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_aacenc_quantization_misc_h,v 1.2 2016/03/09 17:29:36 ajacoutot Exp $
 
 AAC encoder: memoize quantize_band_cost
 
---- libavcodec/aacenc_quantization_misc.h.orig	Mon Oct 12 22:00:26 2015
-+++ libavcodec/aacenc_quantization_misc.h	Mon Oct 12 22:05:24 2015
-@@ -0,0 +1,52 @@
+aacenc: use generational cache instead of resetting.
+
+--- libavcodec/aacenc_quantization_misc.h.orig	Tue Mar  8 19:20:55 2016
++++ libavcodec/aacenc_quantization_misc.h	Tue Mar  8 19:23:47 2016
+@@ -0,0 +1,53 @@
 +/*
 + * AAC encoder quantization
 + * Copyright (C) 2015 Claudio Freire
@@ -43,11 +45,12 @@ AAC encoder: memoize quantize_band_cost
 +    AACQuantizeBandCostCacheEntry *entry;
 +    av_assert1(scale_idx >= 0 && scale_idx < 256);
 +    entry = &s->quantize_band_cost_cache[scale_idx][w*16+g];
-+    if (entry->bits < 0 || entry->cb != cb || entry->rtz != rtz) {
++    if (entry->generation != s->quantize_band_cost_cache_generation || entry->cb != cb || entry->rtz != rtz) {
 +        entry->rd = quantize_band_cost(s, in, scaled, size, scale_idx,
 +                                       cb, lambda, uplim, &entry->bits, &entry->energy, rtz);
 +        entry->cb = cb;
 +        entry->rtz = rtz;
++        entry->generation = s->quantize_band_cost_cache_generation;
 +    }
 +    if (bits)
 +        *bits = entry->bits;
