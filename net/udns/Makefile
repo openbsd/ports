@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/09 18:31:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/09 18:36:26 jasper Exp $
 
 COMMENT=		stub DNS resolver library
 
@@ -30,11 +30,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/dnsget.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/rblcheck.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/libudns.a ${PREFIX}/lib
-.if ${MACHINE_ARCH} != "vax"
 	${INSTALL_PROGRAM} ${WRKSRC}/dnsget_s ${PREFIX}/bin/dnsget
 	${INSTALL_PROGRAM} ${WRKSRC}/rblcheck_s ${PREFIX}/bin/rblcheck
 	${INSTALL_DATA} ${WRKSRC}/libudns.so.${LIBudns_VERSION} ${PREFIX}/lib
-.else
 	${INSTALL_PROGRAM} ${WRKSRC}/dnsget ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/rblcheck ${PREFIX}/bin
 .endif 

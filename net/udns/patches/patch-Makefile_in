@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/10/23 22:55:01 sebastia Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2016/03/09 18:36:26 jasper Exp $
 
-run ranlib to fix build on vax and m88k
+run ranlib to fix build on m88k
 
 --- Makefile.in.orig	Sat Oct 23 11:42:57 2010
 +++ Makefile.in	Sat Oct 23 11:43:17 2010
