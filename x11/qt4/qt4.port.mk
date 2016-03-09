@@ -1,4 +1,4 @@
-# $OpenBSD: qt4.port.mk,v 1.9 2016/03/07 10:13:32 zhuk Exp $
+# $OpenBSD: qt4.port.mk,v 1.10 2016/03/09 16:54:28 zhuk Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt1/qt2/qt3 in a port.
@@ -93,14 +93,14 @@ MODQMAKE4_configure += \
 MODQMAKE4_build += \
 	${_MODQMAKE4_CD_${_qp:/=_}}; \
 	${_MODQMAKE4_build_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
-                ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET};
+                ${MAKE_PROGRAM} ${MAKE_FLAGS} -f Makefile ${ALL_TARGET};
 MODQMAKE4_install += \
 	${_MODQMAKE4_CD_${_qp:/=_}}; \
 	umask 022; \
 	${_FAKESUDO} ${_MODQMAKE4_install_SYSTRACE_CMD} \
 		${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} ${_MODQT4_FAKE_FLAGS} \
-		-f ${MAKE_FILE} ${FAKE_TARGET};
+		-f Makefile ${FAKE_TARGET};
 .endfor
 MODQMAKE_configure ?=	${MODQMAKE4_configure}
 MODQMAKE_build ?=	${MODQMAKE4_build}
