@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2016/03/02 11:54:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.146 2016/03/09 18:20:02 jasper Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -13,11 +13,6 @@ CATEGORIES=	editors
 MASTER_SITES=	https://github.com/vim/vim/archive/
 
 HOMEPAGE=	http://www.vim.org/
-
-# allow vim to build on vax?
-.if (${MACHINE_ARCH} == "vax")
-PATCH_LIST=	patch-* sup-vax-*
-.endif
 
 # donation-ware
 PERMIT_PACKAGE_CDROM=	Yes
