@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2016/01/30 01:15:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.68 2016/03/09 21:32:53 naddy Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -48,7 +48,6 @@
      SUBDIR += wy60
      SUBDIR += x3270
      SUBDIR += xastir
-     SUBDIR += xcept
      SUBDIR += xdx
      SUBDIR += xlog
      SUBDIR += zmtx-zmrx
