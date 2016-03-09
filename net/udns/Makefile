@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/09 18:36:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/09 21:15:35 naddy Exp $
 
 COMMENT=		stub DNS resolver library
 
@@ -33,8 +33,5 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnsget_s ${PREFIX}/bin/dnsget
 	${INSTALL_PROGRAM} ${WRKSRC}/rblcheck_s ${PREFIX}/bin/rblcheck
 	${INSTALL_DATA} ${WRKSRC}/libudns.so.${LIBudns_VERSION} ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/dnsget ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/rblcheck ${PREFIX}/bin
-.endif 
 
 .include <bsd.port.mk>
