@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/11 11:04:21 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/09 01:15:05 bentley Exp $
 
 COMMENT =		pan-unicode font family
 
 NOTO_PROJECT =		fonts
 
-REVISION =		0
+REVISION =		1
 
 RUN_DEPENDS =		fonts/noto/cjk \
 			fonts/noto/emoji

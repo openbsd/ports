@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/12/22 10:02:45 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2016/03/09 01:15:05 bentley Exp $
+@pkgpath fonts/droid-fonts
 share/fonts/noto/Arimo-Bold.ttf
 share/fonts/noto/Arimo-BoldItalic.ttf
 share/fonts/noto/Arimo-Italic.ttf
