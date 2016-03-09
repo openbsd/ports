@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.277 2016/03/09 13:18:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.278 2016/03/09 14:21:23 naddy Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -58,7 +58,7 @@ WANTLIB += atk-1.0 gmodule-2.0
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
-		fonts/noto-fonts \
+		fonts/noto/fonts \
 		graphics/libexif \
 		x11/gnome/libgnome-keyring \
 		x11/gtk+3,-guic
