@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/17 17:29:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/09 17:24:51 zhuk Exp $
 
 COMMENT-main =		highly accurate Game Boy Color emulator
 COMMENT-qt =		highly accurate Game Boy Color emulator with GUI
@@ -30,10 +30,11 @@ WANTLIB-qt =	${cWANTLIB} GL QtCore QtGui QtOpenGL X11 Xext Xrandr Xv ossaudio us
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gambatte/}
 
-MODULES =		lang/python
-.if ${BUILD_PACKAGES:M-qt}
-MODULES +=		x11/qt4
-.endif
+MODULES =		lang/python x11/qt4
+MODQMAKE_PROJECTS =	gambatte_qt
+SEPARATE_BUILD =	No
+CONFIGURE_STYLE =	qmake specific		# avoid qt4.port.mk add do-build
+
 LIB_DEPENDS-main =	devel/sdl
 
 TEST_DEPENDS =		graphics/png
@@ -53,14 +54,8 @@ MAKE_FLAGS =		CC="${CC}" \
 			CXXFLAGS="${CXXFLAGS} -DHAVE_STDINT_H" \
 			PYTHON="${MODPY_BIN}"
 
-do-configure:
-	cd ${WRKSRC}/gambatte_qt && qmake4 ${CONFIGURE_ARGS}
-
-do-build:
-	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} -C ${WRKDIST} ${MAKE_FLAGS} \
-		-f ${MAKE_FILE} ${ALL_TARGET}
-	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} -C ${WRKDIST}/gambatte_qt \
-		${MAKE_FLAGS} -f Makefile ${ALL_TARGET}
+post-build:
+	${MODQMAKE_build}
 
 do-install:
 	${INSTALL_DATA} ${FILESDIR}/gambatte_sdl.6 \
