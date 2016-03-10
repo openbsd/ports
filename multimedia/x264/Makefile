@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/01/02 07:49:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2016/03/10 22:51:45 naddy Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
@@ -33,7 +33,9 @@ BUILD_DEPENDS+=	devel/yasm
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ENV=	API=${LIBx264_VERSION}
-CONFIGURE_ARGS+=--disable-ffms \
+CONFIGURE_ARGS+=--enable-shared \
+		--system-libx264 \
+		--disable-ffms \
 		--disable-gpac \
 		--disable-lavf \
 		--disable-swscale \
@@ -47,8 +49,3 @@ CONFIGURE_ARGS+=--disable-asm
 NO_TEST=	Yes
 
 .include <bsd.port.mk>
-
-.if ${NO_SHARED_LIBS:L} == "no"
-CONFIGURE_ARGS+=--enable-shared \
-		--system-libx264
-.endif

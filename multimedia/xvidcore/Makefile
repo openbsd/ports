@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/10/13 07:11:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/10 22:51:45 naddy Exp $
 
 COMMENT=	ISO MPEG-4 compliant video codec
 
@@ -34,7 +34,3 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/xvid.h ${PREFIX}/include
 
 .include <bsd.port.mk>
-
-.if ${NO_SHARED_LIBS:L} == "yes"
-MAKE_FLAGS+=	SHARED_LIB=""
-.endif

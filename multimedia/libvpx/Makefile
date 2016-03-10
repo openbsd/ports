@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/05 16:04:06 pascal Exp $
+# $OpenBSD: Makefile,v 1.24 2016/03/10 22:51:45 naddy Exp $
 
 COMMENT=	Google VP8/VP9 video codec
 
@@ -32,7 +32,8 @@ MAKE_FLAGS=	LIBVPX_VERSION=${LIBvpx_VERSION} verbose=yes
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS+=--prefix=${PREFIX} \
+CONFIGURE_ARGS+=--enable-shared \
+		--prefix=${PREFIX} \
 		--disable-optimizations \
 		--disable-unit-tests
 CONFIGURE_ENV=	LD="${CC}"
@@ -56,7 +57,3 @@ post-install:
 	@chmod ${SHAREMODE} ${PREFIX}/lib/pkgconfig/vpx.pc
 
 .include <bsd.port.mk>
-
-.if ${NO_SHARED_LIBS:L} == "no"
-CONFIGURE_ARGS+=--enable-shared
-.endif
