@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2016/03/04 16:29:24 landry Exp $
+# $OpenBSD: Makefile,v 1.61 2016/03/10 19:29:25 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -66,11 +66,11 @@ do-test:
 		PATH="${NSSOBJ}/bin:${PATH}" \
 		LD_LIBRARY_PATH="${NSSOBJ}/lib" /bin/sh ./all.sh
 
-.include <bsd.port.mk>
+.include <bsd.port.arch.mk>
 
-.for _m in ${MACHINE_ARCH}
-. if !empty(LP64_ARCHS:M${_m})
+.if ${PROPERTIES:Mlp64}
 MAKE_ENV+=		USE_64=1
 OBJ64=			_64
-. endif
-.endfor
+.endif
+
+.include <bsd.port.mk>
