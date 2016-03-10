@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/03/10 07:20:10 bentley Exp $
+share/doc/dai-banna/
+share/doc/dai-banna/FONTLOG.txt
+share/doc/dai-banna/OFL.txt
+share/doc/dai-banna/README.txt
+share/fonts/
+@fontdir share/fonts/dai-banna/
+share/fonts/dai-banna/DBSILBB.ttf
+share/fonts/dai-banna/DBSILBC.ttf
+share/fonts/dai-banna/DBSILBO.ttf
+share/fonts/dai-banna/DBSILBR.ttf
+share/fonts/dai-banna/DBSILLB.ttf
+share/fonts/dai-banna/DBSILLC.ttf
+share/fonts/dai-banna/DBSILLO.ttf
+share/fonts/dai-banna/DBSILLR.ttf
