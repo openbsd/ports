@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/03/03 11:46:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/03/10 06:30:42 ajacoutot Exp $
 google-cloud-sdk/
 google-cloud-sdk/bin/
 google-cloud-sdk/bin/bootstrapping/
@@ -66,9 +66,6 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/fingerprinting.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/fingerprinting.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/loader.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/loader.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/ext_runtimes/runtime_defs/nodejs/.gitignore
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/flags.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/images/
@@ -721,6 +718,17 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/bigtableclusteradmin/v1/big
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/bigtableclusteradmin/v1/bigtableclusteradmin_v1_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/bigtableclusteradmin/v1/bigtableclusteradmin_v1_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/bigtableclusteradmin_v1.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbilling/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbilling/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbilling/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbilling/v1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbilling/v1/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbilling/v1/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbilling/v1/cloudbilling_v1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbilling/v1/cloudbilling_v1_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbilling/v1/cloudbilling_v1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbilling/v1/cloudbilling_v1_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbilling_v1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbuild/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbuild/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudbuild/__init__.pyc
@@ -2081,6 +2089,17 @@ google-cloud-sdk/lib/surface/container/clusters/upgrade.py
 google-cloud-sdk/lib/surface/container/clusters/upgrade.pyc
 google-cloud-sdk/lib/surface/container/get_server_config.py
 google-cloud-sdk/lib/surface/container/get_server_config.pyc
+google-cloud-sdk/lib/surface/container/nodepools/
+google-cloud-sdk/lib/surface/container/nodepools/__init__.py
+google-cloud-sdk/lib/surface/container/nodepools/__init__.pyc
+google-cloud-sdk/lib/surface/container/nodepools/create.py
+google-cloud-sdk/lib/surface/container/nodepools/create.pyc
+google-cloud-sdk/lib/surface/container/nodepools/delete.py
+google-cloud-sdk/lib/surface/container/nodepools/delete.pyc
+google-cloud-sdk/lib/surface/container/nodepools/describe.py
+google-cloud-sdk/lib/surface/container/nodepools/describe.pyc
+google-cloud-sdk/lib/surface/container/nodepools/list.py
+google-cloud-sdk/lib/surface/container/nodepools/list.pyc
 google-cloud-sdk/lib/surface/container/operations/
 google-cloud-sdk/lib/surface/container/operations/__init__.py
 google-cloud-sdk/lib/surface/container/operations/__init__.pyc
@@ -2430,6 +2449,8 @@ google-cloud-sdk/lib/surface/help.pyc
 google-cloud-sdk/lib/surface/iam/
 google-cloud-sdk/lib/surface/iam/__init__.py
 google-cloud-sdk/lib/surface/iam/__init__.pyc
+google-cloud-sdk/lib/surface/iam/list_grantable_roles.py
+google-cloud-sdk/lib/surface/iam/list_grantable_roles.pyc
 google-cloud-sdk/lib/surface/iam/service_accounts/
 google-cloud-sdk/lib/surface/iam/service_accounts/__init__.py
 google-cloud-sdk/lib/surface/iam/service_accounts/__init__.pyc
@@ -2567,6 +2588,8 @@ google-cloud-sdk/lib/surface/preview/app/modules/stop.pyc
 google-cloud-sdk/lib/surface/preview/app/services/
 google-cloud-sdk/lib/surface/preview/app/services/__init__.py
 google-cloud-sdk/lib/surface/preview/app/services/__init__.pyc
+google-cloud-sdk/lib/surface/preview/app/services/browse.py
+google-cloud-sdk/lib/surface/preview/app/services/browse.pyc
 google-cloud-sdk/lib/surface/preview/app/services/delete.py
 google-cloud-sdk/lib/surface/preview/app/services/delete.pyc
 google-cloud-sdk/lib/surface/preview/app/services/list.py
@@ -3281,6 +3304,11 @@ google-cloud-sdk/lib/third_party/oauth2client/client.py
 google-cloud-sdk/lib/third_party/oauth2client/client.pyc
 google-cloud-sdk/lib/third_party/oauth2client/clientsecrets.py
 google-cloud-sdk/lib/third_party/oauth2client/clientsecrets.pyc
+google-cloud-sdk/lib/third_party/oauth2client/contrib/
+google-cloud-sdk/lib/third_party/oauth2client/contrib/__init__.py
+google-cloud-sdk/lib/third_party/oauth2client/contrib/__init__.pyc
+google-cloud-sdk/lib/third_party/oauth2client/contrib/gce.py
+google-cloud-sdk/lib/third_party/oauth2client/contrib/gce.pyc
 google-cloud-sdk/lib/third_party/oauth2client/crypt.py
 google-cloud-sdk/lib/third_party/oauth2client/crypt.pyc
 google-cloud-sdk/lib/third_party/oauth2client/devshell.py
@@ -3919,18 +3947,9 @@ google-cloud-sdk/platform/ext-runtime/nodejs/lib/
 google-cloud-sdk/platform/ext-runtime/nodejs/lib/comm.py
 google-cloud-sdk/platform/ext-runtime/nodejs/lib/comm.pyc
 google-cloud-sdk/platform/ext-runtime/nodejs/runtime.yaml
-google-cloud-sdk/platform/ext-runtime/nodejs/setenv
-google-cloud-sdk/platform/ext-runtime/nodejs/setup.py
-google-cloud-sdk/platform/ext-runtime/nodejs/setup.pyc
 google-cloud-sdk/platform/ext-runtime/nodejs/test/
 google-cloud-sdk/platform/ext-runtime/nodejs/test/runtime_test.py
 google-cloud-sdk/platform/ext-runtime/nodejs/test/runtime_test.pyc
-google-cloud-sdk/platform/ext-runtime/nodejs/testdata/
-google-cloud-sdk/platform/ext-runtime/nodejs/testdata/minimal/
-google-cloud-sdk/platform/ext-runtime/nodejs/testdata/minimal/.dockerignore
-google-cloud-sdk/platform/ext-runtime/nodejs/testdata/minimal/Dockerfile
-google-cloud-sdk/platform/ext-runtime/nodejs/testdata/minimal/app.yaml
-google-cloud-sdk/platform/ext-runtime/nodejs/testdata/minimal/server.js
 google-cloud-sdk/platform/ext-runtime/nodejs/testing.md
 google-cloud-sdk/platform/gsutil/
 google-cloud-sdk/platform/gsutil/CHANGES.md
