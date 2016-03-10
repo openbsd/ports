@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/10/10 02:08:22 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2016/03/10 16:07:27 zhuk Exp $
 
 COMMENT-main=		GPS waypoint, track, and route conversion tool
 COMMENT-tk=		Tk front-end to gpsbabel
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		http://www.linklevel.net/distfiles/
 
 AUTOCONF_VERSION=	2.61
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	autoconf qmake
 CONFIGURE_ARGS+=	--with-zlib=system \
 			--with-shapefile=system \
 			--with-doc=./babelweb
@@ -37,6 +37,8 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 MULTI_PACKAGES=		-main -tk -qt
 
 MODULES=		x11/tk x11/qt4
+MODQMAKE_PROJECTS =	gui/app.pro
+SEPARATE_BUILD=		No
 
 BUILD_DEPENDS=		textproc/docbook-xsl
 LIB_DEPENDS-main=	devel/libusb-compat \
@@ -59,16 +61,14 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/guibabel
 	@perl -pi -e 's/gpsbabelfe-bin/guibabel-qt/' \
 		${WRKSRC}/gui/gpsbabel.desktop
-post-configure:
-	cd ${WRKSRC}/gui && ${SETENV} ${CONFIGURE_ENV} qmake4 \
-		app.pro
+
 post-build:
-	cd ${WRKSRC} && make doc
-	cd ${WRKSRC}/gui && make
+	cd ${WRKBUILD} && make doc
+	${MODQMAKE_build}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gpsbabel ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/gui/objects/gpsbabelfe-bin \
+	${INSTALL_PROGRAM} ${WRKBUILD}/gpsbabel ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/gui/objects/gpsbabelfe-bin \
 		${PREFIX}/bin/guibabel-qt
 	${INSTALL_SCRIPT} ${WRKSRC}/guibabel ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gpsbabel
