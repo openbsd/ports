@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.102 2015/12/26 20:56:44 zhuk Exp $
+# $OpenBSD: portcheck,v 1.103 2016/03/10 12:20:06 naddy Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1563,7 +1563,6 @@ check_lib_depends() {
 	done
 
 	# get deep list of LDEPs
-	# XXX won't work on ${NO_SHARED_ARCHS}, anybody cares?
 	local lmake_args="${make_args[@]}"
 	lmake_args[${#lmake_args[@]}]="RUN_DEPENDS="
 	lmake_args[${#lmake_args[@]}]="RUN_DEPENDS$subpkg="

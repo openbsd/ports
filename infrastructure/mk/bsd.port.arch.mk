@@ -1,4 +1,4 @@
-# $OpenBSD: bsd.port.arch.mk,v 1.11 2013/11/10 12:27:50 espie Exp $
+# $OpenBSD: bsd.port.arch.mk,v 1.12 2016/03/10 12:20:06 naddy Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -24,11 +24,6 @@ _MAKEFILE_INC_DONE = Yes
 .endif
 
 # Set NO_SHARED_LIBS for those machines that don't support shared libraries.
-.for _m in ${MACHINE_ARCH}
-.  if !empty(NO_SHARED_ARCHS:M${_m})
-NO_SHARED_LIBS ?= Yes
-.  endif
-.endfor
 NO_SHARED_LIBS ?= No
 
 # needs multi-packages (and default subpackage) for the rest

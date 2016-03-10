@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.24 2016/03/09 17:21:44 naddy Exp $
+# $OpenBSD: arch-defines.mk,v 1.25 2016/03/10 12:20:06 naddy Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -19,7 +19,6 @@ APM_ARCHS = amd64 arm i386 loongson macppc sparc sparc64 zaurus
 BE_ARCHS = hppa hppa64 m88k mips64 powerpc sparc sparc64
 LE_ARCHS = alpha amd64 arm i386 mips64el sh
 LP64_ARCHS = alpha amd64 hppa64 sparc64 mips64 mips64el
-NO_SHARED_ARCHS =
 GCC4_ARCHS = alpha amd64 arm armish armv7 i386 hppa hppa64 landisk loongson \
 	macppc mips64 mips64el octeon powerpc sgi sh socppc sparc sparc64 zaurus
 GCC3_ARCHS = aviion luna88k m88k
@@ -31,7 +30,7 @@ OCAML_NATIVE_DYNLINK_ARCHS = i386 amd64
 GO_ARCHS = amd64 i386
 
 
-.for PROP in ALL APM BE LE LP64 NO_SHARED GCC4 GCC3 MONO LLVM \
+.for PROP in ALL APM BE LE LP64 GCC4 GCC3 MONO LLVM \
                            OCAML_NATIVE OCAML_NATIVE_DYNLINK GO
 .  for A B in ${MACHINE_ARCH} ${ARCH}
 .    if !empty(${PROP}_ARCHS:M$A) || !empty(${PROP}_ARCHS:M$B)
