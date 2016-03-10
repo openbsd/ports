@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/25 18:46:05 jturner Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/10 17:37:31 jturner Exp $
 
 PORTROACH=		limit:.*[^a-z]$$
 
 COMMENT=		client for the tarsnap.com online encrypted backup service
-V=			1.0.36.1
+V=			1.0.37
 DISTNAME=		tarsnap-autoconf-${V}
 PKGNAME=		tarsnap-${V}
 CATEGORIES=		sysutils
