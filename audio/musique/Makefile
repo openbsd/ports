@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/07 11:34:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.12 2016/03/10 17:27:11 zhuk Exp $
 
 COMMENT =	graphical music player focused on a clean ui
 DISTNAME =	musique-1.4
@@ -31,6 +31,6 @@ WRKDIST =	${WRKDIR}/musique
 NO_TEST =	Yes
 
 pre-configure:
-	perl -pi.foo -e 's,/usr/include,${LOCALBASE}/include,' ${WRKSRC}/musique.pro
+	perl -pi -e 's,/usr/include,${LOCALBASE}/include,' ${WRKSRC}/musique.pro
 
 .include <bsd.port.mk>
