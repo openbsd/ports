@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2016/03/09 17:29:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.147 2016/03/10 20:41:22 naddy Exp $
 
 COMMENT=	audio/video converter and streamer
 
@@ -80,7 +80,7 @@ OPTFLAGS+=	-Wno-redundant-decls
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
+CONFIGURE_ARGS+= --enable-shared \
 		--arch=${FFMPEG_ARCH} \
 		--cc=${CC} \
 		--disable-altivec \
