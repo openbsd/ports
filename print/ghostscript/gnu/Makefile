@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2015/07/24 12:46:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.107 2016/03/10 20:26:03 naddy Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -6,7 +6,7 @@ VERSION=	9.07
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	15.0
-REVISION=	2
+REVISION=	3
 
 MASTER_SITES=	http://downloads.ghostscript.com/public/
 
@@ -84,12 +84,8 @@ MAKE_FLAGS=	BINDIR=./obj				\
 
 USE_GMAKE=	Yes
 
-# Hack to let ALL_TARGET etc. depend on the value of NO_SHARED_LIBS,
-# which is available only after the inclusion of bsd.port.mk.
-ALL_TARGET_NON_SHARED-No = 	so all ${ALL_TARGET_CUPS}
-ALL_TARGET_NON_SHARED-Yes = 	all
-INSTALL_TARGET_NON_SHARED-No =	install install-so
-INSTALL_TARGET_NON_SHARED-Yes =	install
+ALL_TARGET =		so all ${ALL_TARGET_CUPS}
+INSTALL_TARGET =	install install-so
 
 SOC_LIBS =			-liconv -pthread
 
@@ -116,7 +112,6 @@ WANTLIB+=	gobject-2.0 gtk-x11-2.0>=1000
 WANTLIB+=	pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread-stubs
 WANTLIB+=	xcb xcb-render xcb-shm
 WANTLIB+=	${MODGETTEXT_WANTLIB}
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 SOC_CFLAGS=	$$(pkg-config gtk+-2.0 --cflags)
 SOC_LIBS+=	$$(pkg-config gtk+-2.0 --libs)
 USE_GTK=	Yes
@@ -313,6 +308,3 @@ MAKE_FLAGS+=	CUPSCFLAGS="$$(cups-config --cflags)" \
 		CUPS_DATA="${LOCALBASE}/share/cups"
 
 .include <bsd.port.mk>
-
-ALL_TARGET =		${ALL_TARGET_NON_SHARED-${NO_SHARED_LIBS}}
-INSTALL_TARGET =	${INSTALL_TARGET_NON_SHARED-${NO_SHARED_LIBS}}

@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.28 2015/05/23 08:40:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2016/03/10 20:26:03 naddy Exp $
 @conflict gstoraster-*
 @pkgpath print/gstoraster
 @pkgpath print/ghostscript/afpl${FLAVOR_STRING}
 @pkgpath print/ghostscript/gnu${FLAVOR_STRING},cups
-%%SHARED%%
 bin/dvipdf
 bin/eps2eps
 bin/font2c
@@ -32,6 +31,11 @@ bin/ps2ps
 bin/ps2ps2
 bin/unix-lpr.sh
 bin/wftopfa
+include/ghostscript/
+include/ghostscript/gdevdsp.h
+include/ghostscript/iapi.h
+include/ghostscript/ierrors.h
+@lib lib/libgs.so.${LIBgs_VERSION}
 man/de/
 man/de/man1/
 @man man/de/man1/dvipdf.1
