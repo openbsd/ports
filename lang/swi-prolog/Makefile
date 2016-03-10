@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2016/02/21 16:17:26 jsg Exp $
+# $OpenBSD: Makefile,v 1.64 2016/03/10 11:50:13 naddy Exp $
 
 BROKEN-arm =		undefined reference to `__sync_fetch_and_add_4'
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
@@ -41,7 +41,7 @@ CONFIGURE_ARGS =	--enable-mt \
 			--disable-custom-flags \
 			--with-world \
 			--with-jpeg=${LOCALBASE} \
-			${CONFIGURE_SHARED}
+			--enable-shared
 
 USE_GMAKE =		Yes
 

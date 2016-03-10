@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.111 2015/10/08 07:18:24 rpointel Exp $
+# $OpenBSD: Makefile.inc,v 1.112 2016/03/10 11:50:13 naddy Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -109,7 +109,7 @@ WANTLIB-tkinter =	X11 pthread python${VERSION}${LIB_SUFX} \
 AUTOCONF_VERSION =	2.69
 
 CONFIGURE_STYLE =	autoconf
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS +=	--enable-shared
 # --srcdir is needed for systrace to work correctly
 CONFIGURE_ARGS +=	--srcdir=${WRKSRC} \
 			--with-fpectl \

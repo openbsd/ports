@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/10/10 12:30:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2016/03/10 11:50:13 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -64,7 +64,7 @@ BUILD_DEPENDS=	security/libsrtp
 
 CONFIGURE_STYLE= autoconf no-autoheader
 AUTOCONF_VERSION= 2.69
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS=	--enable-shared \
 		--disable-oss \
 		--disable-video \
 		--with-external-gsm \

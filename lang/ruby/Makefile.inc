@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2016/02/29 20:46:53 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2016/03/10 11:50:13 naddy Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP ?= Yes
 MASTER_SITES ?=	http://cache.ruby-lang.org/pub/ruby/${VERSION:R}/
 
 CONFIGURE_STYLE ?=	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS +=	--enable-shared
 CONFIGURE_ENV +=	PREFIX="${PREFIX}" \
 			CPPFLAGS="-DOPENSSL_NO_STATIC_ENGINE -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

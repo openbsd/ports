@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2015/08/25 13:18:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2016/03/10 11:50:13 naddy Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -34,7 +34,7 @@ LIB_DEPENDS=	graphics/jpeg \
 NO_TEST=	Yes
 CONFIGURE_STYLE=autoconf no-autoheader
 AUTOCONF_VERSION=2.69
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS=	--enable-shared \
 		--enable-threads
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

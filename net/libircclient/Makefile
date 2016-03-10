@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/04/09 07:51:43 sthen Exp $ 
+# $OpenBSD: Makefile,v 1.8 2016/03/10 11:50:13 naddy Exp $ 
 
 COMMENT =		library which implements the IRC protocol
 DISTNAME =		libircclient-1.8
@@ -18,7 +18,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libircclient/}
 NO_TEST =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS =	--enable-shared \
 			--enable-openssl \
 			--enable-ipv6
 

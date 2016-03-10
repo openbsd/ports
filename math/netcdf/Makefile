@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/03/16 18:07:50 naddy Exp $ 
+# $OpenBSD: Makefile,v 1.25 2016/03/10 11:50:13 naddy Exp $ 
 
 BROKEN-powerpc=	fails to build
 BROKEN-hppa =	fails to configure
@@ -29,7 +29,7 @@ MASTER_SITES=		ftp://ftp.unidata.ucar.edu/pub/netcdf/
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV=		CPPFLAGS="-Df2cFortran"
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS+=	--enable-shared \
 			--disable-f90
 
 USE_GMAKE=		Yes

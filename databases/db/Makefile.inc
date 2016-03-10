@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.35 2014/05/08 20:23:19 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.36 2016/03/10 11:50:13 naddy Exp $
 
 COMMENT-main=	Berkeley DB package, revision ${REV}
 COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REV}
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 
 CONFIGURE_SCRIPT=	../dist/configure
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS+=	--enable-shared \
 			--enable-compat185 \
 			--enable-dump185 \
 			--enable-cxx \
