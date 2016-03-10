@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2014/07/17 21:06:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/10 01:04:51 gsoares Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	lua binding to OpenSSL to provide TLS/SSL communication
-VERSION=	0.5
-REVISION=	1
+VERSION=	0.6
 DISTNAME=	luasec-${VERSION}
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/brunoos/luasec/archive/

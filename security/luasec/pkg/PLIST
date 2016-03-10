@@ -1,18 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/03/20 19:21:00 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.6 2016/03/10 01:04:51 gsoares Exp $
 lib/lua/${MODLUA_VERSION}/ssl.so
 share/examples/${FULLPKGNAME}/
 share/examples/${FULLPKGNAME}/README
 share/examples/${FULLPKGNAME}/certs/
+share/examples/${FULLPKGNAME}/certs/all.bat
+share/examples/${FULLPKGNAME}/certs/clientA.bat
 share/examples/${FULLPKGNAME}/certs/clientA.cnf
 share/examples/${FULLPKGNAME}/certs/clientA.sh
+share/examples/${FULLPKGNAME}/certs/clientB.bat
 share/examples/${FULLPKGNAME}/certs/clientB.cnf
 share/examples/${FULLPKGNAME}/certs/clientB.sh
+share/examples/${FULLPKGNAME}/certs/rootA.bat
 share/examples/${FULLPKGNAME}/certs/rootA.cnf
 share/examples/${FULLPKGNAME}/certs/rootA.sh
+share/examples/${FULLPKGNAME}/certs/rootB.bat
 share/examples/${FULLPKGNAME}/certs/rootB.cnf
 share/examples/${FULLPKGNAME}/certs/rootB.sh
+share/examples/${FULLPKGNAME}/certs/serverA.bat
 share/examples/${FULLPKGNAME}/certs/serverA.cnf
 share/examples/${FULLPKGNAME}/certs/serverA.sh
+share/examples/${FULLPKGNAME}/certs/serverB.bat
 share/examples/${FULLPKGNAME}/certs/serverB.cnf
 share/examples/${FULLPKGNAME}/certs/serverB.sh
 share/examples/${FULLPKGNAME}/chain/
@@ -44,6 +51,9 @@ share/examples/${FULLPKGNAME}/loop/server.lua
 share/examples/${FULLPKGNAME}/oneshot/
 share/examples/${FULLPKGNAME}/oneshot/client.lua
 share/examples/${FULLPKGNAME}/oneshot/server.lua
+share/examples/${FULLPKGNAME}/sni/
+share/examples/${FULLPKGNAME}/sni/client.lua
+share/examples/${FULLPKGNAME}/sni/server.lua
 share/examples/${FULLPKGNAME}/verification/
 share/examples/${FULLPKGNAME}/verification/fail-string/
 share/examples/${FULLPKGNAME}/verification/fail-string/client.lua
