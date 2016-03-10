@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2016/02/27 11:15:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2016/03/10 07:31:43 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk+
-GNOME_VERSION=		3.18.8
+GNOME_VERSION=		3.18.9
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
@@ -61,7 +61,7 @@ LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 RUN_DEPENDS-cups=	${MODGETTEXT_RUN_DEPENDS}
 
-WANTLIB-cups += ${WANTLIB} epoxy
+WANTLIB-cups += ${WANTLIB} epoxy idn
 WANTLIB-cups += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-cups += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-cups += cairo cairo-gobject dbus-1 expat fontconfig freetype
