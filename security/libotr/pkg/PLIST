@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/03/16 18:07:54 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2016/03/10 19:45:59 pascal Exp $
 @bin bin/otr_mackey
 @bin bin/otr_modify
 @bin bin/otr_parse
@@ -33,4 +33,5 @@ lib/pkgconfig/libotr.pc
 @man man/man1/otr_remac.1
 @man man/man1/otr_sesskeys.1
 @man man/man1/otr_toolkit.1
+share/aclocal/
 share/aclocal/libotr.m4

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2015/07/19 08:18:52 jca Exp $
+# $OpenBSD: Makefile,v 1.28 2016/03/10 19:45:59 pascal Exp $
 
 COMMENT=	portable OTR messaging library and toolkit
 
-DISTNAME=	libotr-4.1.0
+DISTNAME=	libotr-4.1.1
 CATEGORIES=	security
 
 SHARED_LIBS +=  otr                  4.1      # 6.0
