@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2014/04/08 13:59:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2016/03/10 21:58:51 naddy Exp $
 
 COMMENT =	lossless image compression library, with lightweight version
 
@@ -35,7 +35,3 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig{,85}.txt ${PREFIX}/share/doc/jbigkit
 
 .include <bsd.port.mk>
-
-.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV+=	NO_SHARED_LIBS=Yes
-.endif

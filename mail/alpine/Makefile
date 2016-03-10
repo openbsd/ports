@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/10/20 19:36:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2016/03/10 21:58:51 naddy Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -79,8 +79,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_search_regcomp=-lc \
 			ac_cv_search_SSL_library_init="`pkg-config --libs openssl`"
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-system-pinerc=${SYSCONFDIR}/pine.conf \
+CONFIGURE_ARGS=		--with-system-pinerc=${SYSCONFDIR}/pine.conf \
 			--with-system-fixed-pinerc=${SYSCONFDIR}/pine.conf.fixed \
 			--with-system-mail-directory=/var/mail \
 			--with-ssl-certs-dir=/etc/ssl \
@@ -142,7 +141,3 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/imap/src/mailutil/mailutil.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
-
-.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV +=		NO_SHARED_LIBS=Yes
-.endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2016/01/15 19:57:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2016/03/10 21:58:51 naddy Exp $
 
 COMMENT=	block-sorting file compressor, unencumbered
 
@@ -30,7 +30,3 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/manual.html ${PREFIX}/share/doc/bzip2
 
 .include <bsd.port.mk>
-
-.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV+=	NO_SHARED_LIBS=Yes
-.endif

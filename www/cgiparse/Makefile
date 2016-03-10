@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2015/03/16 18:07:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2016/03/10 21:58:52 naddy Exp $
 
 BROKEN-alpha=	Alpha architecture not yet supported
 
@@ -24,8 +24,3 @@ MAKE_ENV=	LIBcgiparse_VERSION=${LIBcgiparse_VERSION}
 FAKE_FLAGS=	MANDIR=${WRKINST}${PREFIX}/man
 
 .include <bsd.port.mk>
-
-.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-ALL_TARGET=	allstatic
-INSTALL_TARGET=	installstatic
-.endif

@@ -1,6 +1,6 @@
 --- Makefile.in.orig	Sun Sep 24 20:32:11 2000
-+++ Makefile.in	Fri Dec 30 22:47:00 2005
-@@ -30,10 +30,10 @@ AFLAGS = -Wall -I. -I$(srcdir) $(CPPFLAG
++++ Makefile.in	Thu Mar 10 22:45:07 2016
+@@ -30,10 +30,10 @@ AFLAGS = -Wall -I. -I$(srcdir) $(CPPFLAGS) $(DEBUG) $(
  
  MAJOR=1
  ARNAME = lib$(LIB).a
@@ -13,33 +13,3 @@
  exec_prefix = @exec_prefix@
  LIBDIR = @libdir@
  LIBOWN = 0
-@@ -52,6 +52,8 @@ MAN3 = cgigetvalue.3 cgiclose.3 cginewqu
- 
- all: $(ARNAME) $(SONAME) $(PANAME)
- 
-+allstatic: $(ARNAME) $(PANAME)
-+
- $(ARNAME): $(OBJS)
- 	$(AR) rc $@ $(OBJS)
- 
-@@ -74,6 +76,20 @@ clean:
- install: $(ARNAME) $(SONAME) $(PANAME) maninstall
- 	mkdir -p -m 755 $(LIBDIR)
- 	for i in $(ARNAME) $(SONAME) $(PANAME); do		\
-+		cp $$i $(LIBDIR);				\
-+		chown $(LIBOWN):$(LIBGRP) $(LIBDIR)/$$i;	\
-+		chmod $(LIBMOD) $(LIBDIR)/$$i;			\
-+	done
-+	mkdir -p -m 755 $(INCDIR)
-+	for i in $(INCS); do					\
-+		cp $$i $(INCDIR);				\
-+		chown $(INCOWN):$(INCGRP) $(INCDIR)/$$i;	\
-+		chmod $(INCMOD) $(INCDIR)/$$i;			\
-+	done
-+
-+installstatic: $(ARNAME) $(PANAME) maninstall
-+	mkdir -p -m 755 $(LIBDIR)
-+	for i in $(ARNAME) $(PANAME); do		\
- 		cp $$i $(LIBDIR);				\
- 		chown $(LIBOWN):$(LIBGRP) $(LIBDIR)/$$i;	\
- 		chmod $(LIBMOD) $(LIBDIR)/$$i;			\

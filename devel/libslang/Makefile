@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2015/06/17 08:56:42 bentley Exp $
+# $OpenBSD: Makefile,v 1.60 2016/03/10 21:58:51 naddy Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
 DISTNAME=	slang-2.2.4
-REVISION=	1
+REVISION=	2
 PKGNAME=	lib${DISTNAME}
 SHARED_LIBS=	slang 16.0
 
@@ -39,8 +39,3 @@ pre-configure:
 	cd ${AUTOCONF_DIR}; cp configure ..
 
 .include <bsd.port.mk>
-
-.if !${PROPERTIES:Mno_shared}
-ALL_TARGET= all elf
-INSTALL_TARGET= install-elf
-.endif

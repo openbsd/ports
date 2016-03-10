@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2011/09/21 22:01:56 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.17 2016/03/10 21:58:51 naddy Exp $
 @bin bin/slsh
 include/slang.h
 include/slcurses.h
@@ -7,6 +6,23 @@ include/slcurses.h
 lib/slang/
 lib/slang/v2/
 lib/slang/v2/modules/
+@comment lib/libslang.so
+@lib lib/libslang.so.${LIBslang_VERSION}
+lib/slang/v2/modules/csv-module.so
+lib/slang/v2/modules/fcntl-module.so
+lib/slang/v2/modules/fork-module.so
+lib/slang/v2/modules/iconv-module.so
+lib/slang/v2/modules/onig-module.so
+lib/slang/v2/modules/pcre-module.so
+lib/slang/v2/modules/png-module.so
+lib/slang/v2/modules/rand-module.so
+lib/slang/v2/modules/select-module.so
+lib/slang/v2/modules/slsmg-module.so
+lib/slang/v2/modules/socket-module.so
+lib/slang/v2/modules/sysconf-module.so
+lib/slang/v2/modules/termios-module.so
+lib/slang/v2/modules/varray-module.so
+lib/slang/v2/modules/zlib-module.so
 @man man/man1/slsh.1
 share/doc/slang/
 share/doc/slang/COPYING

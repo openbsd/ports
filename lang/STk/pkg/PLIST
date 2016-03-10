@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/04/20 20:08:19 schwarze Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.9 2016/03/10 21:58:51 naddy Exp $
 bin/snow
 bin/snow-${STK_VERSION}
 bin/stk
@@ -358,7 +357,17 @@ lib/stk/${STK_VERSION}/Images/vlines3
 lib/stk/${STK_VERSION}/Images/warning
 lib/stk/${STK_VERSION}/Images/warning.gif
 lib/stk/${STK_VERSION}/${STK_ARCH}/
+lib/stk/${STK_VERSION}/${STK_ARCH}/base64.so
+lib/stk/${STK_VERSION}/${STK_ARCH}/hash.so
+lib/stk/${STK_VERSION}/${STK_ARCH}/html.so
+lib/stk/${STK_VERSION}/${STK_ARCH}/jpeg.so
+lib/stk/${STK_VERSION}/${STK_ARCH}/locale.so
+lib/stk/${STK_VERSION}/${STK_ARCH}/pixmap.so
+lib/stk/${STK_VERSION}/${STK_ARCH}/posix.so
+lib/stk/${STK_VERSION}/${STK_ARCH}/process.so
 @bin lib/stk/${STK_VERSION}/${STK_ARCH}/snow
+lib/stk/${STK_VERSION}/${STK_ARCH}/socket.so
+lib/stk/${STK_VERSION}/${STK_ARCH}/sregexp.so
 @bin lib/stk/${STK_VERSION}/${STK_ARCH}/stk
 lib/stk/${STK_VERSION}/STk/
 lib/stk/${STK_VERSION}/STk/Balloon.stklos

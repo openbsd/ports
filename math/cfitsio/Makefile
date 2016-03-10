@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/12/03 21:24:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2016/03/10 21:58:52 naddy Exp $
 
 COMMENT=	library for handling FITS data
 CATEGORIES=	math graphics devel
@@ -19,7 +19,7 @@ AUTOCONF_VERSION=2.13
 # Mostly BSD-style, with two chunks of GPL code
 PERMIT_PACKAGE_CDROM=	Yes
 
-ALL_TARGET=	all fitscopy imcopy listhead
+ALL_TARGET=	all fitscopy imcopy listhead shared
 SHARED_LIBS=	cfitsio	0.0
 SHLIB_SUFFIX=	.so.${LIBcfitsio_VERSION}
 MAKE_FLAGS=	SHLIB_SUFFIX=${SHLIB_SUFFIX}
@@ -46,6 +46,3 @@ do-test:
 	cmp ${WRKBUILD}/testprog.fit ${WRKBUILD}/testprog.std
 	
 .include <bsd.port.mk>
-.if ${NO_SHARED_LIBS:L} == "no"
-ALL_TARGET+=shared
-.endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/03/16 18:07:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2016/03/10 21:58:51 naddy Exp $
 
 COMMENT=	collection of C routines to decode MPEG movies
 
@@ -23,7 +23,3 @@ do-test:
 	@cd ${WRKSRC} && env LD_LIBRARY_PATH=${WRKSRC} ./mpegtest -checksum test.mpg
 
 .include <bsd.port.mk>
-
-.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV+=	NO_SHARED_LIBS=Yes
-.endif
