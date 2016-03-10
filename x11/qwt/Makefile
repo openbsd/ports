@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/07 15:22:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/10 14:19:53 zhuk Exp $
 
 SHARED_ONLY =		Yes
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		x11/qt4
 CONFIGURE_STYLE =	qmake
-MODQMAKE4_INSTALL_ROOT =
+MODQMAKE_INSTALL_ROOT =
 NO_TEST =		Yes
 USE_GMAKE =		Yes
 
