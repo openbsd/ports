@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.184 2016/03/08 16:07:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.185 2016/03/10 02:41:49 sthen Exp $
+
+BROKEN-i386 =   wants __atomic_{store,fetch_add,load}_8, even with -march=i586
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
