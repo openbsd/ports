@@ -1,20 +1,15 @@
-$OpenBSD: README,v 1.4 2016/01/08 20:12:02 juanfra Exp $
+$OpenBSD: README,v 1.5 2016/03/10 02:35:29 juanfra Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-Known issues
-============
-
-Due to lack of thread-local storage support on OpenBSD, "places" and "futures"
-are disabled.
-
 Limitations
 ===========
 
 - Racket's JIT only supports CPUs with SSE2 extensions or PowerPC CPUs. There
-  is a "no_jit" flavor for i386, amd64 and powerpc.
+  is a "no_jit" flavor for i386 and amd64. The JIT on PowerPC is disabled by
+  default due to a bug which breaks the build.
 - Racket is slightly broken here and there on powerpc.
 - FFI is broken on sparc64.
 

@@ -1,21 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2016/02/10 01:59:03 juanfra Exp $
+# $OpenBSD: Makefile,v 1.14 2016/03/10 02:35:29 juanfra Exp $
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
 
 SHARED_ONLY =		Yes
 
-# Racket includes C fallback code for architectures without JIT support but
-# nobody tests regularly this code outside of amd64 (Linux/OSX). The code
-# is buggy and the devs can't fix the problems because they have not access
-# to these architectures. In addition, the C code is extremely slow compared
-# with the JIT.
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.3
-REVISION =		7
+V =			6.4
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -27,8 +21,8 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://www.cs.utah.edu/plt/installers/${V}/ \
-			http://mirror.racket-lang.org/installers/${V}/ \
+MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
+			https://www.cs.utah.edu/plt/installers/${V}/ \
 			http://www.eecs.northwestern.edu/racket/${V}/ \
 			http://mirror.informatik.uni-tuebingen.de/mirror/racket/${V}/ \
 			http://racket.infogroep.be/${V}/ \
@@ -64,15 +58,11 @@ CONFIGURE_ARGS +=	--enable-libffi \
 # - "backtrace" is expensive.
 #   http://article.gmane.org/gmane.comp.lang.racket.devel/6700
 # - disable "docs" to reduce the number of deps and the build time
-# - "places" and "futures" require thread-local storage and atomic CAS
-#   http://article.gmane.org/gmane.comp.lang.racket.user/16723
 # - The installation of shared libraries is not recommended.
 CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-docs \
 			--disable-libs \
-			--disable-shared \
-			--disable-places \
-			--disable-futures
+			--disable-shared
 
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
@@ -86,14 +76,32 @@ CONFIGURE_ARGS +=	--disable-strip \
 CFLAGS += -ggdb3
 .endif
 
+# - "places" and "futures" require thread-local storage, atomic CAS and JIT
+#   http://article.gmane.org/gmane.comp.lang.racket.user/16723
+# - Using gcc4 to enable "places". It broke Racket in the past.
+# - The JIT doesn't work on powerpc when TLS is enabled
+#   https://github.com/racket/racket/issues/1239
 .if ${FLAVOR:Mno_jit}
 ONLY_FOR_ARCHS =	amd64 i386
-CONFIGURE_ARGS +=	--disable-jit
+CONFIGURE_ARGS +=	--disable-jit \
+			--disable-places \
+			--disable-futures
+.elif ${MACHINE_ARCH} != "sparc64" && ${MACHINE_ARCH} != "powerpc"
+MODULES +=		gcc4
+MODGCC4_LANGS =		c c++
+MODGCC4_ARCHS =		amd64 i386
+CONFIGURE_ARGS +=	--enable-jit \
+			--enable-places \
+			--enable-futures
+.else
+CONFIGURE_ARGS +=	--disable-jit \
+			--disable-places \
+			--disable-futures
 .endif
 
 post-install:
+	@find ${PREFIX} -type f -name '*.orig' -exec rm -f {} \;
 	@perl -i -pe 's/installation-name . "snapshot"/installation-name . "$V"/g' ${WRKINST}/etc/racket/config.rktd
-	@perl -i -pe 's/"http:\/\/download.racket-lang.org\/releases\/6.3\/catalog\/"/"http:\/\/download.racket-lang.org\/patches\/web-server-1\/" "http:\/\/download.racket-lang.org\/releases\/6.3\/catalog\/"/g' ${WRKINST}/etc/racket/config.rktd
 	@mv ${WRKINST}/etc/racket ${PREFIX}/share/examples
 	@cp ${WRKDIR}/racket-openbsd/racket-user-bin-paths ${PREFIX}/bin
 
@@ -107,11 +115,6 @@ CONFIGURE_ARGS +=	--disable-extflonum
 .elif ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -msse -msse2 -mfpmath=sse"
 CONFIGURE_ARGS +=	--enable-extflonum
-.endif
-
-# Disable temporally the JIT. raco crashes during the installation of the main-distribution.
-.if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ARGS +=	--disable-jit
 .endif
 
 .include <bsd.port.mk>
