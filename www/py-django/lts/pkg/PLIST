@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/02/02 20:23:10 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.9 2016/03/10 09:31:07 jasper Exp $
 @comment bin/django-admin
 bin/${LNAME}-admin.py
 lib/python${MODPY_VERSION}/site-packages/Django-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -6556,6 +6556,7 @@ share/doc/${LNAME}/releases/1.7.8.txt
 share/doc/${LNAME}/releases/1.7.9.txt
 share/doc/${LNAME}/releases/1.7.txt
 share/doc/${LNAME}/releases/1.8.1.txt
+share/doc/${LNAME}/releases/1.8.10.txt
 share/doc/${LNAME}/releases/1.8.2.txt
 share/doc/${LNAME}/releases/1.8.3.txt
 share/doc/${LNAME}/releases/1.8.4.txt
