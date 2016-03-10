@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/12 09:22:08 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.4 2016/03/10 20:15:07 naddy Exp $
 
 COMMENT =		library for real-time audio and video processing
 
@@ -14,7 +14,7 @@ LIB_DEPENDS =		telephony/baresip/re
 MAKE_FLAGS =		LIB_SUFFIX=.so.${LIBrem_VERSION}
 MAKE_ENV +=		LIBS="-lm -lre"
 
-ALL_TARGET =		librem.a
+ALL_TARGET =		librem.a librem.so.${LIBrem_VERSION}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/rem
@@ -24,7 +24,3 @@ do-install:
 		${WRKBUILD}/librem.so.${LIBrem_VERSION} ${PREFIX}/lib
 
 .include <bsd.port.mk>
-
-.if ${NO_SHARED_LIBS} == No
-ALL_TARGET +=		librem.so.${LIBrem_VERSION}
-.endif

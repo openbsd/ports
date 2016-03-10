@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/02/28 13:18:42 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/10 20:15:07 naddy Exp $
 
 COMMENT =		portable library for real-time communications
 
@@ -12,7 +12,7 @@ WANTLIB = crypto pthread ssl z
 MAKE_ENV +=		LIB_SUFFIX=.so.${LIBre_VERSION}
 MAKE_ENV +=		LIBS="-lssl -lcrypto -lz -lpthread"
 
-ALL_TARGET =		libre.a
+ALL_TARGET =		libre.a libre.so.${LIBre_VERSION}
 TEST_TARGET =		test
 
 do-install:
@@ -23,7 +23,3 @@ do-install:
 		${WRKBUILD}/libre.so.${LIBre_VERSION} ${PREFIX}/lib
 
 .include <bsd.port.mk>
-
-.if ${NO_SHARED_LIBS} == No
-ALL_TARGET +=		libre.so.${LIBre_VERSION}
-.endif
