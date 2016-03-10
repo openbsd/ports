@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/03/16 18:07:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2016/03/10 19:03:35 naddy Exp $
 
 COMMENT=		text editor widget for FLTK
 
@@ -26,7 +26,7 @@ RUN_DEPENDS=		x11/fltk
 TEST_TARGET=		test
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS+=	--enable-shared \
 			--with-fltk=${LOCALBASE}
 MAKE_ENV=		LIBfleditor_VERSION=${LIBfleditor_VERSION}
 
@@ -38,16 +38,9 @@ post-patch:
 	@rmdir ${WRKSRC}/obj
 
 do-install:
-	@${install_shared_frag}
+	${INSTALL_DATA} ${WRKBUILD}/libfleditor.so* ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKBUILD}/libfleditor.a ${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/include/FL
 	${INSTALL_DATA} ${WRKSRC}/FL/*.[Hh] ${PREFIX}/include/FL
 
 .include <bsd.port.mk>
-
-.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-install_shared_frag= :
-.else
-install_shared_frag=\
-	${INSTALL_DATA} ${WRKBUILD}/libfleditor.so* ${PREFIX}/lib
-.endif
