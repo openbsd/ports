@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.487 2016/03/01 08:24:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.488 2016/03/10 01:16:00 awolk Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -87,6 +87,7 @@
      SUBDIR += iso8879
      SUBDIR += ispell
      SUBDIR += itstool
+     SUBDIR += jo
      SUBDIR += jq
      SUBDIR += latex2html
      SUBDIR += latexmk
