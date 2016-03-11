@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.99 2015/04/03 22:32:27 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.100 2016/03/11 20:07:49 naddy Exp $
 #
 # Module for GNOME related ports
 
@@ -17,7 +17,6 @@ USE_GMAKE?=		Yes
 .endif
 
 .if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
-     CONFIGURE_ARGS += ${CONFIGURE_SHARED}
      # https://mail.gnome.org/archives/desktop-devel-list/2011-September/msg00064.html
 .    if !defined(AUTOCONF_VERSION) && !defined(AUTOMAKE_VERSION)
          CONFIGURE_ARGS += --disable-maintainer-mode

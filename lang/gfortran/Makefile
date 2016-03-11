@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/12/20 00:16:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2016/03/11 20:07:49 naddy Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 SYSV =		4.2.1
@@ -96,8 +96,7 @@ CONFIGURE_ARGS += \
 	--disable-bootstrap \
 	--with-gnu-as \
 	--with-gnu-ld \
-	--disable-cpp \
-	${CONFIGURE_SHARED}
+	--disable-cpp
 
 SEPARATE_BUILD = Yes
 

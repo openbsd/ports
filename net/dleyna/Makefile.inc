@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2015/04/17 18:39:00 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2016/03/11 20:07:49 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -16,7 +16,6 @@ USE_GMAKE=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_STYLE ?=	gnu
-CONFIGURE_ARGS ?=	${CONFIGURE_SHARED}
 
 CONFIGURE_SCRIPT=	${LOCALBASE}/bin/bash configure
 BUILD_DEPENDS +=	shells/bash

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/06/26 19:37:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/11 20:07:49 naddy Exp $
 
 PORTROACH=	limit:[0-9]\.[0-9]\.[0-9][0-9]$
 
@@ -23,7 +23,6 @@ MODULES=	x11/qt3
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 

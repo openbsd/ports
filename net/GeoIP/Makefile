@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/03/01 00:06:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2016/03/11 20:07:49 naddy Exp $
 
 COMMENT-main=	find the country where IP address/hostname originates from
 COMMENT-db=	GeoIP GeoLite database: IPv4/v6 address to country
@@ -37,8 +37,7 @@ RUN_DEPENDS-main= net/GeoIP,-db
 
 CONFIGURE_STYLE= gnu
 SEPARATE_BUILD=	Yes
-CONFIGURE_ARGS=	--datadir=${LOCALSTATEDIR}/db \
-		${CONFIGURE_SHARED}
+CONFIGURE_ARGS=	--datadir=${LOCALSTATEDIR}/db
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/GeoIP/

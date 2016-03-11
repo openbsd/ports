@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/01/17 17:29:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2016/03/11 20:07:49 naddy Exp $
 
 COMMENT =		font rendering library for OpenGL applications
 
@@ -24,8 +24,7 @@ WRKDIST =		${WRKDIR}/${DISTNAME:S/-rc/~rc/}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ftgl/}
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}			\
-			--with-gl-inc=${X11BASE}/include	\
+CONFIGURE_ARGS +=	--with-gl-inc=${X11BASE}/include	\
 			--with-gl-lib=${X11BASE}/lib
 
 CONFIGURE_ENV +=	ac_cv_path_DOXYGEN=no

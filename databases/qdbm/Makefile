@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/09 18:31:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/11 20:07:49 naddy Exp $
 
 COMMENT=		high performance embedded database library
 
@@ -19,7 +19,7 @@ MODULES=		converters/libiconv
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-zlib \
-			--enable-iconv ${CONFIGURE_SHARED}
+			--enable-iconv
 
 MAKE_FLAGS=		LIBVER=${LIBqdbm_VERSION:R} LIBREV=${LIBqdbm_VERSION:E}
 
