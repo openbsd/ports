@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/11 19:59:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/11 21:27:08 mmcc Exp $
 
 COMMENT=	DSP library for telephony
 
 DISTNAME=	spandsp-0.0.6
 CATEGORIES=	telephony
 MASTER_SITES=	${HOMEPAGE}downloads/spandsp/
-EXTRACT_SUFX=	.tar.gz
 
 SHARED_LIBS=	spandsp	7.0
 
