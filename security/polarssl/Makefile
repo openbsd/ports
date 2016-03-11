@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/01/06 10:59:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/11 18:13:19 naddy Exp $
 
 COMMENT=	SSL library with an intuitive API and readable source code
 
@@ -26,11 +26,7 @@ MASTER_SITES=	https://tls.mbed.org/download/
 
 MODULES=	devel/cmake
 
-.include <bsd.port.arch.mk>
-
-.if ${NO_SHARED_LIBS:L} != "yes"
-CONFIGURE_ARGS+= -DUSE_SHARED_MBEDTLS_LIBRARY=ON
-.endif
+CONFIGURE_ARGS= -DUSE_SHARED_MBEDTLS_LIBRARY=ON
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mbedtls

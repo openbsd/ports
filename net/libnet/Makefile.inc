@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2013/03/11 12:27:54 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2016/03/11 18:13:19 naddy Exp $
 
 COMMENT=	raw IP packet construction library
 
@@ -18,8 +18,3 @@ TEST_IS_INTERACTIVE=	Yes
 
 post-test:
 	@cd ${WRKSRC}/test; ${SUDO} ./test-step.sh
-
-.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV+=	NO_SHARED_LIBS=Yes
-.endif
-

@@ -1,10 +1,10 @@
-$OpenBSD: patch-gtk_makefile,v 1.11 2015/09/24 04:33:06 ajacoutot Exp $
+$OpenBSD: patch-gtk_makefile,v 1.12 2016/03/11 18:13:19 naddy Exp $
 
 Drop `-pedantic'
 /usr/local/include/gtk-3.0/gdk/gdktypes.h:318: error: comma at end of enumerator list
 
 --- gtk/makefile.orig	Thu Nov 27 21:47:24 2014
-+++ gtk/makefile	Thu Sep 24 06:30:19 2015
++++ gtk/makefile	Fri Mar 11 18:05:48 2016
 @@ -6,15 +6,8 @@
  # Builds for GTK+ 2 and no longer supports GTK+ 1.
  # Also works with ming32-make on Windows.
@@ -47,7 +47,7 @@ Drop `-pedantic'
  
  ifdef NOTHREADS
  THREADFLAGS=-DG_THREADS_IMPL_NONE
-@@ -65,24 +61,48 @@ else
+@@ -65,24 +61,35 @@ else
  CTFLAGS=-DDEBUG -g $(CXXBASEFLAGS) $(THREADFLAGS)
  endif
  else
@@ -75,31 +75,18 @@ Drop `-pedantic'
  LEXOBJS:=$(addsuffix .o,$(basename $(notdir $(wildcard ../lexers/Lex*.cxx))))
  
 -all: $(COMPLIB)
-+ifeq (${NO_SHARED_LIBS},"yes")
-+all: static
-+else
-+all: static shared
-+endif
-+ 
-+static: $(COMPLIB) $(LEXERLIB)
-+shared: $(SHAREDLIB) $(SHAREDLEXER)
++all: $(COMPLIB) $(SHAREDLIB) $(LEXERLIB) $(SHAREDLEXER)
  
-+install: install-shared
++install:
 +	mkdir -p ${PREFIX}/include/scintilla
 +	install -m 444 ../include/*.h ${PREFIX}/include/scintilla
 +	install -m 444 ${COMPLIB} ${LEXERLIB} ${PREFIX}/lib
-+
-+ifeq (${NO_SHARED_LIBS},"yes")
-+install-shared:
-+else
-+install-shared:
 +	install -m 444 ${SHAREDLIB} ${SHAREDLEXER} ${PREFIX}/lib
-+endif
 +
  clean:
  	$(DEL) *.o $(COMPLIB) *.plist
  
-@@ -92,15 +112,26 @@ analyze:
+@@ -92,15 +99,26 @@ analyze:
  deps:
  	$(CXX) -MM $(CONFIGFLAGS) $(CXXTFLAGS) *.cxx ../src/*.cxx ../lexlib/*.cxx ../lexers/*.cxx | sed -e 's/\/usr.* //' | grep [a-zA-Z] >deps.mak
  

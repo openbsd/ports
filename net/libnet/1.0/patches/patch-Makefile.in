@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Feb  5 12:51:41 2001
-+++ Makefile.in	Fri Sep 10 16:04:46 2004
+--- Makefile.in.orig	Mon Feb  5 18:51:41 2001
++++ Makefile.in	Fri Mar 11 19:04:57 2016
 @@ -14,8 +14,8 @@ prefix      =   @prefix@
  exec_prefix =   @exec_prefix@
  srcdir      =   @srcdir@
@@ -50,17 +50,13 @@
  version.o: version.h
  version.h: ./VERSION
  	@rm -f $@
-@@ -91,25 +102,34 @@ util:    libnet install
+@@ -91,25 +102,29 @@ util:    libnet install
  example: libnet install
  	cd example; make
  
-+.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-+all: libnet
- install: libnet
-+.else
+-install: libnet
 +all: libnet $(SHLIB)
 +install: libnet $(SHLIB)
-+.endif
  	$(ENSUREDIR) $(DESTDIR)$(prefix) 755
  	$(ENSUREDIR) $(DESTDIR)$(LIB_PREFIX) 755
  	$(ENSUREDIR) $(DESTDIR)$(INC_PREFIX)$(LIBNET) 755

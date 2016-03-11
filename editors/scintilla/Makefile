@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/03/16 18:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/11 18:13:19 naddy Exp $
 
 COMMENT=	source code editing component for GTK+
 
@@ -25,7 +25,6 @@ NO_TEST=	Yes
 
 MAKE_FILE=	makefile
 MAKE_ENV=	CXX='${CXX}' CXXFLAGS='${CXXFLAGS}' \
-		NO_SHARED_LIBS='${NO_SHARED_LIBS:L}' \
 		CC='${CC}' GTK3=1
 
 WANTLIB=	m stdc++

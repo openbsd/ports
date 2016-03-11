@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.85 2016/01/07 21:14:06 jasper Exp $
+# $OpenBSD: python.port.mk,v 1.86 2016/03/11 18:13:19 naddy Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -114,9 +114,7 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=${MODPY_PI_DIR}/}
 HOMEPAGE ?=		https://pypi.python.org/pypi/${_MODPY_EGG_NAME}
 .endif
 
-.if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:L} != "yes"
 MODPY_TKINTER_DEPENDS =	lang/python/${MODPY_VERSION},-tkinter
-.endif
 
 MODPY_BIN =		${LOCALBASE}/bin/python${MODPY_VERSION}
 MODPY_INCDIR =		${LOCALBASE}/include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
