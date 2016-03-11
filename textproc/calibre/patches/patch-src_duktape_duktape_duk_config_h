@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_duktape_duktape_duk_config_h,v 1.1 2016/03/11 02:27:26 sthen Exp $
+--- src/duktape/duktape/duk_config.h.orig	Fri Mar 11 02:26:34 2016
++++ src/duktape/duktape/duk_config.h	Fri Mar 11 02:26:35 2016
+@@ -255,7 +255,7 @@
+ #endif
+ 
+ /* SPARC */
+-#if defined(sparc) || defined(__sparc) || defined(__sparc__)
++#if defined(sparc) || defined(__sparc) || defined(__sparc__) || defined(__sparc64__)
+ #define DUK_F_SPARC
+ #if defined(__LP64__) || defined(_LP64)
+ #define DUK_F_SPARC64
