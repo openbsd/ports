@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.19 2015/03/16 18:07:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2016/03/11 19:46:13 sthen Exp $
 
 COMMENT =	clone of backtrace facility found in the GNU libc
 
-V =		0.2
-DISTNAME =	backtrace-$V
+V =		0.3
+GH_TAGNAME=	BACKTRACE_${V:S/./_/g}
+GH_ACCOUNT=	conformal
+GH_PROJECT=	backtrace
+DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	libexecinfo-$V
-REVISION =	5
 EPOCH =		0
 CATEGORIES =	devel
 
 SHARED_LIBS =	execinfo	2.0
 
-HOMEPAGE =	http://opensource.conformal.com/wiki/Backtrace
-MASTER_SITES =	http://opensource.conformal.com/snapshots/backtrace/
-EXTRACT_SUFX =	.tgz
+HOMEPAGE =	https://github.com/conformal/backtrace/wiki
 
 # BSD
 PERMIT_PACKAGE_CDROM =		Yes
