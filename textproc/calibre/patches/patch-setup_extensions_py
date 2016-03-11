@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_extensions_py,v 1.9 2015/12/15 22:03:59 sthen Exp $
+$OpenBSD: patch-setup_extensions_py,v 1.10 2016/03/11 02:27:01 sthen Exp $
 
 - fix various header search paths
 - don't override compiler optimizer levels
@@ -9,8 +9,8 @@ if updating patches, watch out for X11BASE -> /usr/X11R6 in last chunk,
 and don't allow an updated patch to change the python shebang line,
 it's correct with "env" here (handled in infrastructure).
 
---- setup/extensions.py.orig	Fri Dec 11 02:52:47 2015
-+++ setup/extensions.py	Tue Dec 15 21:19:57 2015
+--- setup/extensions.py.orig	Fri Feb 26 03:04:36 2016
++++ setup/extensions.py	Fri Mar 11 02:26:23 2016
 @@ -9,7 +9,7 @@ __docformat__ = 'restructuredtext en'
  import textwrap, os, shlex, subprocess, glob, shutil, re, sys
  from distutils import sysconfig
@@ -34,7 +34,7 @@ it's correct with "env" here (handled in infrastructure).
          self.qt_private_headers = kwargs.get('qt_private', [])
  
      def preflight(self, obj_dir, compiler, linker, builder, cflags, ldflags):
-@@ -306,9 +299,10 @@ if isosx:
+@@ -303,9 +296,10 @@ if isosx:
                  ldflags=['-framework', 'CoreServices', '-framework', 'IOKit'])
              )
  
@@ -46,7 +46,7 @@ it's correct with "env" here (handled in infrastructure).
          libraries=['usb-1.0']
      ))
  
-@@ -322,6 +316,7 @@ if islinux or isosx:
+@@ -319,6 +313,7 @@ if islinux or isosx:
          'calibre/devices/mtp/unix/upstream/music-players.h',
          'calibre/devices/mtp/unix/upstream/device-flags.h',
          ],
@@ -54,7 +54,7 @@ it's correct with "env" here (handled in infrastructure).
          libraries=['mtp']
      ))
  
-@@ -349,8 +344,8 @@ if isbsd:
+@@ -346,8 +341,8 @@ if isbsd:
      cflags.append('-pthread')
      ldflags.append('-shared')
      cflags.append('-I'+sysconfig.get_python_inc())
