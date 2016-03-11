@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/05/02 09:42:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2016/03/11 15:26:45 naddy Exp $
 
 COMMENT=	CDDA reading utility with extra data verification features
 
@@ -32,8 +32,3 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/FAQ.txt ${PREFIX}/share/doc/cdparanoia
 
 .include <bsd.port.mk>
-
-.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} != "no"
-ALL_TARGET=	static
-INSTALL_TARGET=	sinstall
-.endif
