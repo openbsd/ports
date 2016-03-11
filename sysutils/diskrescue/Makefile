@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2015/02/16 22:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/03/11 19:47:15 sthen Exp $
 
 COMMENT =		fancy dd
 
-DISTNAME =		diskrescue-0.3
-REVISION =		1
-
+V =			0.4
+GH_TAGNAME =		DISKRESCUE_${V:S/./_/g}
+GH_ACCOUNT =		conformal
+GH_PROJECT =		diskrescue
+DISTNAME =		${GH_PROJECT}-${V}
 CATEGORIES =		sysutils
 
-HOMEPAGE =		http://opensource.conformal.com/wiki/Disk_Rescue
+HOMEPAGE =		https://github.com/conformal/diskrescue/wiki
 
 MAINTAINER =		Laurent Fanis <laurent.fanis@gmail.com>
 
@@ -15,10 +17,6 @@ MAINTAINER =		Laurent Fanis <laurent.fanis@gmail.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c
-
-MASTER_SITES =		http://opensource.conformal.com/snapshots/diskrescue/
-
-EXTRACT_SUFX =		.tgz
 
 NO_TEST=		Yes
 
