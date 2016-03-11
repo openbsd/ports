@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/01 20:36:40 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2016/03/11 11:48:28 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -24,7 +24,7 @@ LIB_DEPENDS =		x11/fltk \
 MAKE_ENV =		EDE_VERSION="${FULL_V}"
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS +=	--enable-shared
 CONFIGURE_ENV =		API_VER="${API_VER}"
 
 NO_TEST =		Yes

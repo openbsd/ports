@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/12/17 09:47:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2016/03/11 11:48:28 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,7 +42,7 @@ RUN_DEPENDS=		print/ghostscript/gnu \
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS+=	--enable-shared \
 			--with-gs-font-dir=${LOCALBASE}/share/fonts/ghostscript \
 			--with-ltdl-include=${LOCALBASE}/include \
 			--with-ltdl-lib=${LOCALBASE}/lib \
