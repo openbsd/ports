@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2013/11/20 15:58:31 sthen Exp $
-@lib lib/libexpect545.so.${LIBexpect545_VERSION}
-lib/tcl/
-lib/tcl/expect/
-@lib lib/tcl/expect/libexpect545.so.${LIBexpect545_VERSION}
-lib/tcl/expect/pkgIndex.tcl

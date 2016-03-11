@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2013/05/15 09:46:28 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.24 2016/03/11 23:31:56 naddy Exp $
 @pkgpath lang/expect,no_tk
 bin/autoexpect
 bin/autopasswd
@@ -6,8 +6,6 @@ bin/cryptdir
 bin/decryptdir
 bin/dislocate
 @bin bin/expect
-!%%SHARED%%
-%%SHARED%%
 bin/ftp-rfc
 bin/kibitz
 bin/lpunlock
@@ -28,6 +26,9 @@ include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
 include/tcldbg.h
+lib/tcl/expect/
+@lib lib/tcl/expect/libexpect545.so.${LIBexpect545_VERSION}
+lib/tcl/expect/pkgIndex.tcl
 @man man/man1/autoexpect.1
 @man man/man1/cryptdir.1
 @man man/man1/decryptdir.1
