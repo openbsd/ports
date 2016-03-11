@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1306 2016/03/09 17:21:44 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1307 2016/03/11 20:32:22 naddy Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1384,12 +1384,6 @@ _CONFIGURE_SCRIPT = ./${CONFIGURE_SCRIPT}
 .endif
 
 CONFIGURE_ENV += PATH=${PORTPATH}
-
-.if ${NO_SHARED_LIBS:L} == "yes"
-CONFIGURE_SHARED ?= --disable-shared
-.else
-CONFIGURE_SHARED ?= --enable-shared
-.endif
 
 FETCH_MANUALLY ?= No
 MISSING_FILES =
