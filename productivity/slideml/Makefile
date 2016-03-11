@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.7 2014/03/25 21:20:39 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2016/03/11 19:46:48 sthen Exp $
 
 COMMENT =		HTML slide generator based on SlideML
 
-DISTNAME =		slideml-1.1.0
-REVISION =		0
-
+V =			1.1.0
+REVISION =		1
+GH_TAGNAME =		SLIDEML_${V:S/./_/g}
+GH_ACCOUNT =		conformal
+GH_PROJECT =		slideml
+DISTNAME =		${GH_PROJECT}-${V}
 CATEGORIES =		productivity
 
-HOMEPAGE =		http://opensource.conformal.com/wiki/Slide_ML
+HOMEPAGE =		https://github.com/conformal/slideml/wiki
 
 MAINTAINER =		Laurent Fanis <laurent.fanis@gmail.com>
 
 #W3C Software Notice and License & BSD
 PERMIT_PACKAGE_CDROM =	Yes
-
-MASTER_SITES =		http://opensource.conformal.com/snapshots/slideml/
-EXTRACT_SUFX =		.tgz
 
 RUN_DEPENDS =		graphics/p5-Image-Size 
 
