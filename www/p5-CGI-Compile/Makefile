@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/04 08:20:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2016/03/11 13:13:19 nigel Exp $
 
 COMMENT=	compile .cgi scripts to a code reference
 
@@ -9,20 +9,12 @@ CATEGORIES=	www
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-CONFIGURE_STYLE=modbuild
+CONFIGURE_STYLE=modbuild tiny
 
-BUILD_DEPENDS =	${RUN_DEPENDS} \
-		devel/p5-Module-Build-Tiny>=0.039
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 RUN_DEPENDS =	devel/p5-File-pushd
 
 TEST_DEPENDS =	devel/p5-Test-NoWarnings
-
-do-install:
-	@cd ${WRKSRC} && perl \
-	    ${MODPERL_BUILD} ${FAKE_TARGET} \
-		--destdir "${PREFIX}" \
-		--install_path lib="libdata/perl5/site_perl" \
-		--install_path libdoc="man/man3p"
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/10 22:49:37 bluhm Exp $
+# $OpenBSD: Makefile,v 1.6 2016/03/11 13:13:19 nigel Exp $
 
 COMMENT =		high-performance preforking PSGI/Plack web server
 
@@ -13,7 +13,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 CPAN_AUTHOR =		MIYAGAWA
 
 BUILD_DEPENDS =		www/p5-libwww \
-			devel/p5-Module-Build-Tiny>=0.039 \
 			devel/p5-Test-Requires
 
 RUN_DEPENDS =		devel/p5-Data-Dump \
@@ -32,16 +31,6 @@ TEST_DEPENDS =		www/p5-HTTP-Message \
 			net/p5-Test-TCP \
 			www/p5-libwww
 
-CONFIGURE_STYLE =	modbuild
-
-# Module::Build::Tiny like "--" prefix for CLI options
-do-install:
-	@cd ${WRKSRC} && perl \
-	    ${MODPERL_BUILD} ${FAKE_TARGET} \
-		--destdir "${PREFIX}" \
-		--install_path lib="libdata/perl5/site_perl" \
-		--install_path=libdoc="man/man3p" \
-		--install_path=bindoc="man/man1" \
-		--install_path script="bin"
+CONFIGURE_STYLE =	modbuild tiny
 
 .include <bsd.port.mk>
